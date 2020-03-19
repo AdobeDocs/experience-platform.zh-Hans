@@ -1,0 +1,28 @@
+---
+title: 分段服务概述
+seo-title: Adobe实时客户数据平台中的细分服务
+description: 描述分段服务的概述。
+seo-description: 概述，介绍Adobe实时客户数据平台上的细分服务和细分。
+translation-type: tm+mt
+source-git-commit: bcb4279d04e39905fa64b817fdadd8a875e27697
+
+---
+
+
+# 实时客户数据平台中的细分服务
+
+实时客户数据平台（实时CDP）使您能够从多个来源获取数据，为客户提供协调一致的体验。 通过Adobe Experience Platform的一部分Segmentation Service，可以实现相关的个性化营销活动。
+
+实时CDP构建在Adobe Experience Platform之上，它利用了许多Experience Platform服务和功能。 使用分段服务，您可以将客户分为具有相似特征的较小组，从而提供定制营销。
+
+## 区段
+
+细分是定义由配置文件商店的一个子集共享的特定属性或行为的过程，以区分有价的人群和客户群。 例如，在名为“您忘记购买运动鞋吗？”的电子邮件营销活动中，您可能希望看到过去30天内搜索跑鞋但未完成购买的所有用户的受众。 使用不同的细分，您可以专注于不同的受众，从而提供更加自定义的营销体验。
+
+## 区段生成器
+
+平台允许您轻松创建和访问区段，并使用不同的构建块进一步描述区段。 有关如何使用区段生成器的详细信息，请阅读区段生成 [器指南](./segment-builder-guide.md)。
+
+## 后续步骤
+
+阅读此概述后，您现在应该了解实时CDP如何利用细分服务增强营销活动的自定义和个性化。 有关Segmentation Service的详细信息，请阅读Adobe I/O [上的Segmentation文档](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/segmentation/segmentation-overview.md)。
