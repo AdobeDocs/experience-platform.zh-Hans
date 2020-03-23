@@ -9,9 +9,9 @@ source-git-commit: 132bc9787a86045adba559c769b02927a6045b17
 ---
 
 
-# Destinations workspace {#destinations-workspace}
+# 目标工作区 {#destinations-workspace}
 
-In Adobe Real-time Customer Data Platform, select **Destinations** from the left navigation bar to access the Destinations workspace.
+在Adobe实时客户数据平台中，从左侧导航栏 **中选择** “目标”以访问“目标”工作区。
 
 “目标”工作区由四个部分组成： **目录**、浏 **览、帐**&#x200B;户 **、数据流，******&#x200B;这些部分在以下各节中介绍。
 
@@ -19,7 +19,7 @@ In Adobe Real-time Customer Data Platform, select **Destinations** from the left
 
 ## Catalog {#catalog}
 
-“目 **[!UICONTROL 录]** ”选项卡显示Adobe提供的所有目标列表，您可以将数据发送到这些目标。 在目录中选择一个目标以打开右边栏。 在此，您可以设置到目标(**Connect目标**)的连接，或通过查看文档（查看文档）了解有关每个目标的更&#x200B;**多详细信息**。
+该选 **[!UICONTROL Catalog]** 项卡显示Adobe提供的所有目标列表，您可以将数据发送到这些目标。 在目录中选择一个目标以打开右边栏。 在此，您可以设置到目标(**Connect目标**)的连接，或通过查看文档（查看文档）了解有关每个目标的更&#x200B;**多详细信息**。
 
 ![目标目录选项](/help/rtcdp/destinations/assets/destination-ui-catalog-options.png)
 
@@ -27,7 +27,7 @@ In Adobe Real-time Customer Data Platform, select **Destinations** from the left
 
 ## 浏览 {#browse}
 
-“浏 **[!UICONTROL 览]** ”选项卡显示您已与之建立连接的目标。 启用切换的目标将目标设置为活动，反之亦然。 You can also view the destinations where you have data flowing by selecting **Segments > Browse** and selecting a segment to inspect. See the table below for all the information that is provided for each destination in the Browse tab:
+该选 **[!UICONTROL Browse]** 项卡显示您已与之建立连接的目标。 启用切换的目标将目标设置为活动，反之亦然。 您还可以通过选择区段>浏览并选择要检查的区 **段** ，来查看有数据流动的目标。 请参阅下表，了解在“浏览”选项卡中为每个目标提供的所有信息：
 
 ![浏览选项卡](/help/rtcdp/destinations/assets/browse-tab.png)
 
@@ -45,11 +45,11 @@ In Adobe Real-time Customer Data Platform, select **Destinations** from the left
 
 ![单击目标行](/help/rtcdp/destinations/assets/click-destination-row.png)
 
-选择目标名称可查看有关激活到此目标的区段的信息。 单击 **[!UICONTROL 编辑激活]** ，以修改或添加到要发送到此目标的区段。
+选择目标名称可查看有关激活到此目标的区段的信息。 单 **[!UICONTROL Edit activation]** 击可修改或添加到要发送到此目标的区段。
 
 ## 帐户 {#accounts}
 
-在“帐 **[!UICONTROL 户]** ”选项卡中，您可以进一步了解您已与各种目标建立的连接。 请参阅下表，了解您可以获取的每个目标的所有信息：
+在选项卡 **[!UICONTROL Accounts]** 中，您可以进一步了解您与各种目标建立的连接。 请参阅下表，了解您可以获取的每个目标的所有信息：
 
 ![“帐户”选项卡](/help/rtcdp/destinations/assets/accounts-tab.png)
 
@@ -62,10 +62,10 @@ In Adobe Real-time Customer Data Platform, select **Destinations** from the left
 
 ## 数据流 {#data-flows}
 
-“ **[!UICONTROL 数据流]** ”选项卡显示您在实时客户数据平台中设置的激活流的图形表示。
+该 **[!UICONTROL Data flows]** 选项卡显示您在实时客户数据平台中设置的激活流程的图形表示。
 
 ![Data-flows1](/help/rtcdp/destinations/assets/data-flows1.png)
 
-选择页面上显示的任意目标，然后按“ **[!UICONTROL View flows]** ”（查看流）以查看您为每个目标设置的所有数据流的信息。
+选择页面上显示的任意目标，然后按 **[!UICONTROL View flows]** 键查看您为每个目标设置的所有数据流的信息。
 
 ![Data-flows2](/help/rtcdp/destinations/assets/data-flows2.png)
