@@ -154,7 +154,7 @@ Luma团队将所有的行为和客户数据放在一个位置。
 
    <!--    ![image](assets/luma-source-import.png) -->
 
-   例如，选择“联 **[!UICONTROL 系人]**”。 联系人数据的预览会自动加载，这样您就可以确保一切看起来都符合预期。
+   例如，选择 **[!UICONTROL Contacts]**。 联系人数据的预览会自动加载，这样您就可以确保一切看起来都符合预期。
 
    Adobe Experience Platform通过将标准字段自动映射到Experience Data Model(XDM)配置文件架构，从而完成了大量手动工作。
 
@@ -231,7 +231,7 @@ Loyalty member
 
 添加“放弃购物车赠送礼物”区段后，您可以大致了解该区段中有多少人。 您可以对其采取行动，并使其可用于跨渠道个性化。
 
-单击 **[!UICONTROL 发送到目标]**。
+单击 **[!UICONTROL Send to destinations]**。
 
 在Adobe实时CDP中，Luma可以根据受众细分无缝地执行个性化操作。\
 在此，我们看到了Luma可将此目标发送到Adobe和非Adobe解决方案的所有目标：
@@ -255,7 +255,7 @@ Loyalty member
 >[!NOTE]
 >（可选）如果单击日期字段，系统将自动计划90天外。
 
-单击 **[!UICONTROL 保存]** ，转到下一页。
+单 **[!UICONTROL Save]** 击以转到下一页。
 
 当此受众中的客户进行购买时，其对此受众的会员资格会被实时抑制。 他们不再符合条件，因为其状态已更改。
 
