@@ -19,16 +19,16 @@ source-git-commit: 3b9584cca8943c52bb3d8e4512d327d3dbeb9e04
 
 ## 连接目标 {#connect-destination}
 
-1. 在“连 **[!UICONTROL 接”>“目标]**”中，选择Oracle Responsys，然后选择 **[!UICONTROL Connect目标]**。
+1. 在中， **[!UICONTROL Connections > Destinations]**&#x200B;选择Oracle Responsys，然后选择 **[!UICONTROL Connect destination]**。
 
    ![连接到Responsys](/help/rtcdp/destinations/assets/connect-oracle-responsys.png)
 
-1. 在连接目标向导中，选择存储 **[!UICONTROL 位置的连接类型]** 。 对于Oracle Responsys，您可以在 **SFTP with Password** （口令）和 **SFTP with SSH Key（SSH密钥）之间进行选择**。 根据连接类型，填写以下信息，然后选择“连 **[!UICONTROL 接”]**。
+1. 在Connect目标向导中，选择存储 **[!UICONTROL Connection type]** 位置对应的。 对于Oracle Responsys，您可以在 **SFTP with Password** （口令）和 **SFTP with SSH Key（SSH密钥）之间进行选择**。 根据连接类型，填写以下信息，然后选择 **[!UICONTROL Connect]**。
 
    ![设置Responsys向导](/help/rtcdp/destinations/assets/responsys-wizard.png)
 
    对于 **SFTP(带密码连接** )，您必须提供域、端口、用户名和密码。
-对于 **SFTP与SSH密钥连接** ，您必须提供域、端口、用户名和SSH密钥。
+对于 **SFTP(带有SSH密钥连接** )，您必须提供域、端口、用户名和SSH密钥。
 
    ![填写Responsys信息](/help/rtcdp/destinations/assets/responsys-step2.png)
 
