@@ -3,7 +3,7 @@ product: adobe experience platform
 audience: user
 user-guide-title: Real-Time Customer Data Platform Help
 translation-type: tm+mt
-source-git-commit: 974ba457d1782d1ab6a65200255d0b83db7aa667
+source-git-commit: d42e4d60d273b08824e177f9aca0f208578ff099
 
 ---
 
@@ -31,7 +31,6 @@ source-git-commit: 974ba457d1782d1ab6a65200255d0b83db7aa667
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
       * 广告目标{#advertiser-destinations}
          * [广告目标概述](destinations/advertising-destinations.md)
-         * [Google](destinations/google-destination.md)
          * [Google广告](/help/rtcdp/destinations/google-ads-destination.md)
          * [Google广告经理](/help/rtcdp/destinations/google-ad-manager-destination.md)
          * [Google Display &amp; Video 360](/help/rtcdp/destinations/google-dv360-destination.md)
