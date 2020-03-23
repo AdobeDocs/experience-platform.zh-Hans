@@ -19,11 +19,11 @@ source-git-commit: 3b9584cca8943c52bb3d8e4512d327d3dbeb9e04
 
 ## 连接目标 {#connect-destination}
 
-1. 在“ **[!UICONTROL 连接”>“目标]**”中，选择Salesforce Marketing Cloud，然后选择 **[!UICONTROL Connect目标]**。
+1. 在中， **[!UICONTROL Connections > Destinations]**&#x200B;选择Salesforce Marketing Cloud，然后选择 **[!UICONTROL Connect destination]**。
 
    ![连接到Salesforce](/help/rtcdp/destinations/assets/connect-salesforce.png)
 
-1. 在连接目标向导中，选择存储 **[!UICONTROL 位置的连接类型]** 。 对于Salesforce Marketing Cloud，您可以在 **SFTP（带口令）和** SSH **FTP（带SSH密钥）之间进行选择**。 根据连接类型，填写以下信息，然后选择“连 **[!UICONTROL 接”]**。
+1. 在Connect目标向导中，选择存储 **[!UICONTROL Connection type]** 位置对应的。 对于Salesforce Marketing Cloud，您可以在 **SFTP（带口令）和** SSH **FTP（带SSH密钥）之间进行选择**。 根据连接类型，填写以下信息，然后选择 **[!UICONTROL Connect]**。
 
    ![设置Salesforce向导](/help/rtcdp/destinations/assets/salesforce-step1.png)
 
