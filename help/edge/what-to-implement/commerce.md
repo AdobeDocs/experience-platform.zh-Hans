@@ -119,7 +119,7 @@ alloy("event",{
 | [product](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproduct) | 强烈建议 | 产品的XDM ID。 |
 | [productAddMethod](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproductaddmethod) | 强烈建议 | 用于将产品项目添加到列表中的访客所使用的方法。 使用度 `productListAdds` 量设置，并且仅当将产品添加到列表时才应使用。 示例 `add to cart button`包括、 `quick add`和 `upsell`。 |
 | [productName](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmname) | 强烈建议 | 设置为产品的显示名称或可读名称。 |
-| [quantity](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmquantity) | 强烈建议 | 客户表示他们需要产品的套数。 应设置为 `productListAdds`、 `productListRemoves`、 `purchases`、 `saveForLaters`等等。 |
+| [数量](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmquantity) | 强烈建议 | 客户表示他们需要产品的套数。 应设置为 `productListAdds`、 `productListRemoves`、 `purchases`、 `saveForLaters`等等。 |
 | [SKU](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md) | 强烈建议 | 存储保持单元。 它是产品的唯一标识符。 |
 
 ## 示例
