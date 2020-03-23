@@ -15,11 +15,11 @@ source-git-commit: b4b02913467c43d004574a1aa5cb2f793964ad1e
 
 ## 目标和来源
 
-实时CDP的核心功能之一是摄取第一方数据并根据业务需求激活它。 使 **[!UICONTROL 用Sources]** （源）将数据引入实时CDP和 **** Destinations（目标），从实时CDP中导出数据。
+实时CDP的核心功能之一是摄取第一方数据并根据业务需求激活它。 使 **[!UICONTROL Sources]** 用将数据引入实时CDP中， **[!UICONTROL Destinations]** 并从实时CDP中导出数据。
 
 ## 目标步骤
 
-* 使用 **[!UICONTROL 目标]** 激活档案 [](/help/rtcdp/destinations/activate-destinations.md) ，并将其发送到营销自动化平台、数字广告平台等。
+* 使用 **[!UICONTROL Destinations]** 激活 [档案](/help/rtcdp/destinations/activate-destinations.md) ，并将其发送到营销自动化平台、数字广告平台等。
 * 从实时 [CDP中提供的所有目标的自助](/help/rtcdp/destinations/destinations-catalog.md) -服务目录中进行选择。
 * 计划定期向首选目标导出数据。
 
@@ -53,6 +53,6 @@ source-git-commit: b4b02913467c43d004574a1aa5cb2f793964ad1e
 
 ## 目标和访问控制
 
-实 **[!UICONTROL 时CDP中的]** “目标”功能与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以查看、管理和激活目标。 有关各个权限的信息，请参 [阅Adobe Experience Platform中的访问控制](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-overview.md) ，然后向下滚动到页面底部。
+实 **[!UICONTROL Destinations]** 时CDP中的功能与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以查看、管理和激活目标。 有关各个权限的信息，请参 [阅Adobe Experience Platform中的访问控制](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-overview.md) ，然后向下滚动到页面底部。
 
 有关访问控制的详细信息，请参阅 [访问控制用户指南](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-user-guide.md)。
