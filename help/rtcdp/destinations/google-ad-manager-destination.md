@@ -45,7 +45,7 @@ Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）�
 
 ## 创建目标
 
-1. 在“连 **[!UICONTROL 接”>“目标]**”中，选择“Google广告管理器”，然后选择“创 **[!UICONTROL 建目标”]**。
+1. 在中， **[!UICONTROL Connections > Destinations]**&#x200B;选择Google广告管理器，然后选择 **[!UICONTROL Create destination]**。
    ![连接Google Ad Manager目标](/help/rtcdp/destinations/assets/google-1-destination.png)
 
 2. 在创建目标向导中，填写目标的基本信息。
