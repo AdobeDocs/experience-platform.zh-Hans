@@ -48,7 +48,7 @@ Google暂停了与第三方供应商的任何新的Google Ads集成。 您必须
 
 ## 创建目标
 
-1. 在“ **[!UICONTROL 连接”>“目标]**”中，选择“Google广告”，然后选择“ **[!UICONTROL 创建目标”]**。
+1. 在中， **[!UICONTROL Connections > Destinations]**&#x200B;选择“Google广告”，然后选择 **[!UICONTROL Create destination]**。
    ![Connect Google广告目标](/help/rtcdp/destinations/assets/google-2-destination.png)
 
 2. 在创建目标向导中，填写目标的基本信息。
