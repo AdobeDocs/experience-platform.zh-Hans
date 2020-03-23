@@ -31,7 +31,7 @@ source-git-commit: b8eda33a88b81dff5f3b45a131a5585a062519c2
 
 首先，安装Adobe Experience Platform Web SDK扩展。
 
-1. In Launch, open the **[!UICONTROL Extensions]** tab.
+1. 在 Launch 中，打开 **[!UICONTROL Extensions]** 选项卡。
 
    ![image](assets/launch-overview.png)
 
@@ -48,13 +48,13 @@ source-git-commit: b8eda33a88b81dff5f3b45a131a5585a062519c2
    * **配置ID:** 指定您从Adobe代表处获得的配置ID。
    * **边缘域：** 指定您从Adobe代表处获得的边缘域。
 
-1. 单击 **[!UICONTROL 保存]** ，然后继续执行下一步。
+1. 单 **[!UICONTROL Save]** 击并继续下一步。
 
 ## 创建规则以告知Launch要发送哪些数据
 
 接下来，创建一个规则，让Launch知道您要将哪些数据发送到Adobe Experience Platform以及何时发送。
 
-1. 在“规 **[!UICONTROL 则]** ”选项卡下，配置一个事件，该事件将在启动库加载时在网站的每个新页面上触发。
+1. 在选项 **[!UICONTROL Rules]** 卡下，配置一个事件，该事件将在启动库加载时在网站的每个新页面上触发。
 
    ![image](assets/launch-make-a-rule.png)
 
@@ -66,7 +66,7 @@ source-git-commit: b8eda33a88b81dff5f3b45a131a5585a062519c2
 
    您发送的数据对象必须是有效的XDM，它将通过对与您的配置ID连接的数据集所使用的架构的验证。
 
-1. 单击 **[!UICONTROL Keep Changes]**.
+1. 单击 **[!UICONTROL Keep Changes]**。
 
 有关详细信息，请参阅 [启动文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html) 中的规则。
 
