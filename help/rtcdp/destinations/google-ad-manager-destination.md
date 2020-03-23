@@ -4,7 +4,7 @@ seo-title: Google Ad Manager目标
 description: 'Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的广告服务平台，它为出版商提供了通过视频和移动应用程序管理其网站上广告显示的方法。 '
 seo-description: 'Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的广告服务平台，它为出版商提供了通过视频和移动应用程序管理其网站上广告显示的方法。 '
 translation-type: tm+mt
-source-git-commit: d42e4d60d273b08824e177f9aca0f208578ff099
+source-git-commit: 3e510c891c84fb3dc1632bd1182ef1e010ea898f
 
 ---
 
@@ -46,10 +46,10 @@ Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）�
 ## 创建目标
 
 1. 在“连 **[!UICONTROL 接”>“目标]**”中，选择“Google广告管理器”，然后选择“创 **[!UICONTROL 建目标”]**。
-   ![连接Google Ad Manager目标](/help/rtcdp/destinations/assets/google-ad-manager-destination.png)
+   ![连接Google Ad Manager目标](/help/rtcdp/destinations/assets/google-1-destination.png)
 
 2. 在创建目标向导中，填写目标的基本信息。
-   ![基本信息Google广告经理](/help/rtcdp/destinations/assets/google-ad-manager-basic-information.png)
+   ![基本信息Google广告经理](/help/rtcdp/destinations/assets/google-1-basic-information.png)
 * **名称**:填写此目标的首选名称。
 * **说明**:可选。 例如，您可以提及要为此目标使用哪个营销活动。
 * **帐户类型**:根据您在Google上的帐户，选择一个选项：
