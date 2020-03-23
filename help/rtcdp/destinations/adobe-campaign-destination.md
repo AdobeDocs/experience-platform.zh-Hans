@@ -19,11 +19,11 @@ Adobe Campaign是一套解决方案，可帮助您跨所有线上和线下渠道
 
 ## 连接目标 {#connect-destination}
 
-1. 在“连 **[!UICONTROL 接”>“目标]**”中，选择“Adobe Campaign”，然后选择“ **[!UICONTROL Connect目标”]**。
+1. 在中， **[!UICONTROL Connections > Destinations]**&#x200B;选择Adobe Campaign，然后选择 **[!UICONTROL Connect destination]**。
 
    ![连接到Adobe Campaign](/help/rtcdp/destinations/assets/connect-adobe-campaign.png)
 
-1. 在连接目标向导中，选择存储 **[!UICONTROL 位置的连接类型]** 。 对于Adobe Campaign，您可以在 **Amazon S3**、 **SFTP with Password** 和 **SSH Key之间进行选择**。 根据连接类型，填写以下信息，然后选择“连 **[!UICONTROL 接”]**。
+1. 在Connect目标向导中，选择存储 **[!UICONTROL Connection type]** 位置对应的。 对于Adobe Campaign，您可以在 **Amazon S3**、 **SFTP with Password** 和 **SSH Key之间进行选择**。 根据连接类型，填写以下信息，然后选择 **[!UICONTROL Connect]**。
 
    ![设置营销活动向导](/help/rtcdp/destinations/assets/adobe-campaign-wizard.png)
 
