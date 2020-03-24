@@ -4,12 +4,14 @@ seo-title: 目标概述
 description: 目标是预建的与目标平台的集成，允许从实时客户数据平台无缝激活数据。 您可以使用Adobe实时客户数据平台中的目标来激活您的已知和未知数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他使用案例。
 seo-description: 目标是预建的与目标平台的集成，允许从实时客户数据平台无缝激活数据。 您可以使用Adobe实时客户数据平台中的目标来激活您的已知和未知数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他使用案例。
 translation-type: tm+mt
-source-git-commit: b4b02913467c43d004574a1aa5cb2f793964ad1e
+source-git-commit: e66f4df13afb3c9f9ddb440ccb5e479caeef2142
 
 ---
 
 
 # 目标概述
+
+![目标概述横幅](/help/rtcdp/destinations/assets/destinations-overview-banner.png)
 
 **目标** ，是与目标平台预建的集成，允许从实时客户数据平台无缝激活数据。 您可以使用 **目标** ，为跨渠道营销活动、电子邮件营销活动、定向广告和许多其他使用案例激活已知和未知的数据。
 
