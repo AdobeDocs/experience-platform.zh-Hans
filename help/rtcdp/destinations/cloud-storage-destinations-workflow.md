@@ -4,7 +4,7 @@ seo-title: 云存储目标工作流
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 translation-type: tm+mt
-source-git-commit: c4f1c0a6ef4d16e5fe763826016d56506fdca5dc
+source-git-commit: 60b10aa823af55d6f38651308dc93eeb57a7fee6
 
 ---
 
@@ -32,9 +32,7 @@ source-git-commit: c4f1c0a6ef4d16e5fe763826016d56506fdca5dc
 
    ![连接到Amazon S3云存储目标——身份验证步骤](/help/rtcdp/destinations/assets/cloud-destinations-setup-step.png)
 
-
-
-   <br>对于SFTP目标，插入 **[!UICONTROL Folder path]**
+   对于SFTP目标，插入 **[!UICONTROL Folder path]** 文件将传送到的位置。
 
    ![连接到SFTP云存储目标——身份验证步骤](/help/rtcdp/destinations/assets/sftp-destinations-setup-step.png)
 
