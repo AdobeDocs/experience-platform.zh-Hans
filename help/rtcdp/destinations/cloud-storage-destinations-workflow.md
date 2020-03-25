@@ -4,7 +4,7 @@ seo-title: 云存储目标工作流
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 translation-type: tm+mt
-source-git-commit: 60b10aa823af55d6f38651308dc93eeb57a7fee6
+source-git-commit: 7f6151535f30043413a2c111345b7e2c6367fd50
 
 ---
 
