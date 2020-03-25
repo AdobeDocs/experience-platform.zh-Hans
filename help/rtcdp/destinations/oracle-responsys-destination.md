@@ -1,10 +1,10 @@
 ---
 title: Oracle Responsys目标
 seo-title: Oracle Responsys目标
-description: Responsys是一款企业电子邮件营销工具，用于Oracle提供的跨渠道营销活动，用于在电子邮件、移动设备、展示广告和社交渠道之间实现个性化互动。
-seo-description: Responsys是一款企业电子邮件营销工具，用于Oracle提供的跨渠道营销活动，用于在电子邮件、移动设备、展示广告和社交渠道之间实现个性化互动。
+description: Responsys是面向跨渠道营销活动的企业电子邮件营销工具，Oracle为跨电子邮件、移动设备、展示广告和社交平台提供个性化互动服务。
+seo-description: Responsys是面向跨渠道营销活动的企业电子邮件营销工具，Oracle为跨电子邮件、移动设备、展示广告和社交平台提供个性化互动服务。
 translation-type: tm+mt
-source-git-commit: 3b9584cca8943c52bb3d8e4512d327d3dbeb9e04
+source-git-commit: fe56fe71c36e06f2eeed45436cb36b5a371d0484
 
 ---
 
@@ -13,9 +13,9 @@ source-git-commit: 3b9584cca8943c52bb3d8e4512d327d3dbeb9e04
 
 ## 概述
 
-[Responsys](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) 是Oracle为跨渠道营销活动提供的企业电子邮件营销工具，用于在电子邮件、移动设备、展示广告和社交渠道中实现个性化互动。
+[Responsys](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) 是面向跨渠道营销活动的企业电子邮件营销工具，Oracle提供此工具，可跨电子邮件、移动设备、展示广告和社交平台实现个性化互动。
 
-要向Oracle Responsys发送区段数据，您必须先在Adobe Real- [time Customer Data Platform中连接目标](#connect-destination) ，然后设置从存储位置到Oracle Responsys的 [数据导入](#import-data-into-responsys) 。
+要向Oracle Responsys发送区段数据，您必须先连接 [到Adobe Real](#connect-destination) Time Customer Data Platform中的目标，然后设置从存储位置到Oracle Responsys的数据导入 [](#import-data-into-responsys) 。
 
 ## 连接目标 {#connect-destination}
 
@@ -23,28 +23,26 @@ source-git-commit: 3b9584cca8943c52bb3d8e4512d327d3dbeb9e04
 
    ![连接到Responsys](/help/rtcdp/destinations/assets/connect-oracle-responsys.png)
 
-1. 在Connect目标向导中，选择存储 **[!UICONTROL Connection type]** 位置对应的。 对于Oracle Responsys，您可以在 **SFTP with Password** （口令）和 **SFTP with SSH Key（SSH密钥）之间进行选择**。 根据连接类型，填写以下信息，然后选择 **[!UICONTROL Connect]**。
-
-   ![设置Responsys向导](/help/rtcdp/destinations/assets/responsys-wizard.png)
+1. 在“身 **份验证** ”步骤中，如果您之前已设置到云存储目标的连接，请选择并 **[!UICONTROL Existing Account]** 选择您的现有连接。 或者，您也可以选 **[!UICONTROL New Account]** 择设置新连接。 填写帐户身份验证凭据并选择 **[!UICONTROL Connect to destination]**。 对于Oracle Responsys，您可以在 **SFTP with Password** （口令）和 **SFTP with SSH Key（SSH密钥）之间进行选择**。 根据连接类型，填写以下信息，然后选择 **[!UICONTROL Connect to destination]**。
 
    对于 **SFTP(带密码连接** )，您必须提供域、端口、用户名和密码。
 对于 **SFTP(带有SSH密钥连接** )，您必须提供域、端口、用户名和SSH密钥。
 
-   ![填写Responsys信息](/help/rtcdp/destinations/assets/responsys-step2.png)
+   ![填写Responsys信息](/help/rtcdp/destinations/assets/responsys-authentication.png)
 
-1. 在“ **基本信息**”中，填写目标的相关信息，如下所示：
+1. 在设置 **步骤中** ，填写目标的相关信息，如下所示：
    * **名称**:为目标选择相关名称。
    * **说明**:输入目标的说明。
-   * **文件夹路径**:在您的存储位置提供路径，实时CDP会将您的导出数据作为CSV或制表符分隔的文件存放。
+   * **文件夹路径**:在存储位置提供路径，实时CDP会将导出数据存储为CSV或制表符分隔的文件。
    * **文件格式**: **CSV** 或 **TAB_DELIMITED**。 选择要导出到存储位置的文件格式。
    ![Responsys基本信息](/help/rtcdp/destinations/assets/responsys-basic-information.png)
 
-1. 在“基 **本信息** ”中填写字段后，单 **击创建**。 您的目标现已连接，您可以将 [区段激活](/help/rtcdp/destinations/activate-destinations.md) 到目标。
+1. 在填 **写以上字段后** ，单击创建目标。 您的目标现已连接，您可以将 [区段激活](/help/rtcdp/destinations/activate-destinations.md) 到目标。
 
 ## 目标属性 {#destination-attributes}
 
-将区 [段激活到](/help/rtcdp/destinations/activate-destinations.md) Oracle Responsys目标时，建议您从联合架构中选择唯一 [标识符](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/unified_profile_architectural_overview/unified_profile_architectural_overview.md)。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参 [阅选择在电子邮件营销目标中导出的文件中用作目标属性的架构](/help/rtcdp/destinations/email-marketing-destinations.md#destination-attributes) 字段。
+将区 [段激活到](/help/rtcdp/destinations/activate-destinations.md) Oracle Responsys目标时，建议您从合并模式中选择唯一标 [识符](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/unified_profile_architectural_overview/unified_profile_architectural_overview.md)。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参 [阅选择在电子邮件营销目标中导出的文件中用作目标属性的模式](/help/rtcdp/destinations/email-marketing-destinations.md#destination-attributes) 。
 
 ## 设置Oracle Responsys的数据导入 {#import-data-into-responsys}
 
-在将实时CDP连接到Amazon S3或SFTP存储之后，您必须设置从存储位置到Oracle Responsys的数据导入。 要了解如何完成此操作，请参 [阅在Oracle Responsys帮助中心导入联系人](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCEA/Connect_WizardUpload.htm) 或帐户。
+在将实时CDP连接到Amazon S3或SFTP存储后，您必须设置从存储位置到Oracle Responsys的数据导入。 要了解如何完成此操作，请参 [阅在Oracle Responsys帮助中心导入联系人](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCEA/Connect_WizardUpload.htm) 或帐户。
