@@ -4,7 +4,7 @@ seo-title: Oracle Evolca目标
 description: Oracle Evolca是Oracle提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
 seo-description: Oracle Evolca是Oracle提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
 translation-type: tm+mt
-source-git-commit: fe56fe71c36e06f2eeed45436cb36b5a371d0484
+source-git-commit: c3fe5753fb23f99076f9c85b4e07af2d25a121a9
 
 ---
 
@@ -23,10 +23,10 @@ source-git-commit: fe56fe71c36e06f2eeed45436cb36b5a371d0484
 
    ![连接到Evolca](/help/rtcdp/destinations/assets/connect-oracle-eloqua.png)
 
-2. 在“身 **份验证** ”步骤中，如果您之前已设置到云存储目标的连接，请选择并 **[!UICONTROL Existing Account]** 选择您的现有连接。 或者，您也可以选 **[!UICONTROL New Account]** 择设置新连接。 填写帐户身份验证凭据并选择 **[!UICONTROL Connect to destination]**。 对于Oracle Evolca，您可以在 **SFTP with Password** （口令）和 **SSH Key(SFTP)之间进行选择**。 根据连接类型，填写以下信息，然后选择 **[!UICONTROL Connect to destination]**。
+2. 在“身 **份验证** ”步骤中，如果您之前已设置到云存储目标的连接，请选择并选 **[!UICONTROL Existing Account]** 择一个现有连接。 或者，您也可以选 **[!UICONTROL New Account]** 择设置新连接。 填写帐户身份验证凭据并选择 **[!UICONTROL Connect to destination]**。 对于Oracle Evolca，您可以在 **SFTP with Password** （口令）和 **SSH Key(SFTP)之间进行选择**。 根据连接类型，填写以下信息，然后选择 **[!UICONTROL Connect to destination]**。
 
    对于 **SFTP(带密码连接** )，您必须提供域、端口、用户名和密码。
-对于 **SFTP(带有SSH密钥连接** )，您必须提供域、端口、用户名和SSH密钥。
+对于 **SFTP与SSH密钥连接** ，您必须提供域、端口、用户名和SSH密钥。
 
    ![设置Elovay向导](/help/rtcdp/destinations/assets/eloqua-authentication.png)
 
