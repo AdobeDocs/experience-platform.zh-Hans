@@ -4,7 +4,7 @@ seo-title: 云存储目标工作流
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 translation-type: tm+mt
-source-git-commit: c3fe5753fb23f99076f9c85b4e07af2d25a121a9
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -19,7 +19,7 @@ source-git-commit: c3fe5753fb23f99076f9c85b4e07af2d25a121a9
 
    ![连接到云存储目标](/help/rtcdp/destinations/assets/connect-cloud-destination.png)
 
-2. 在“身 **份验证** ”步骤中，如果您之前已设置到云存储目标的连接，请选择并 **[!UICONTROL Existing Account]** 选择您的现有连接。 或者，您也可以选 **[!UICONTROL New Account]** 择设置到云存储目标的新连接。 填写帐户身份验证凭据并选择 **[!UICONTROL Connect to destination]**。 有关 [身份验证步骤中凭据输入的具体信息，请参阅](/help/rtcdp/destinations/amazon-s3-destination.md) Amazon S3目标和 [SFTP](/help/rtcdp/destinations/sftp-destination.md) 目标 **** 。
+2. 在该步 **[!UICONTROL Authentication]** 骤中，如果您之前已设置到云存储目标的连接，请选择并选 **[!UICONTROL Existing Account]** 择现有连接。 或者，您也可以选 **[!UICONTROL New Account]** 择设置到云存储目标的新连接。 填写帐户身份验证凭据并选择 **[!UICONTROL Connect to destination]**。 有关 [身份验证步骤中凭据输入的具体信息，请参阅](/help/rtcdp/destinations/amazon-s3-destination.md) Amazon S3目标和 [SFTP](/help/rtcdp/destinations/sftp-destination.md) 目标 **** 。
 
    >[!NOTE]
    >
