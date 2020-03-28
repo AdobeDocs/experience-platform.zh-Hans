@@ -4,7 +4,7 @@ seo-title: Google Ad Manager目标
 description: 'Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的广告服务平台，它为出版商提供了通过视频和移动应用程序管理其网站上广告显示的方法。 '
 seo-description: 'Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的广告服务平台，它为出版商提供了通过视频和移动应用程序管理其网站上广告显示的方法。 '
 translation-type: tm+mt
-source-git-commit: 3e510c891c84fb3dc1632bd1182ef1e010ea898f
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -21,11 +21,11 @@ Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）�
 
 * 您可以将以下身份发 [送到](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_namespace_overview/identity_namespace_overview.md) Google Ad Manager目标：Google **Cookie ID、IDFA、GAID、Roku ID、Microsoft ID、Amazon Fire TV ID**。
 * 激活的受众是在Google平台中以编程方式创建的。
-* Adobe实时CDP当前不包含用于验证成功激活的度量标准。 请参阅Google中的受众计数以验证集成并了解受众定位规模。
+* Adobe实时CDP当前不包含用于验证成功激活的度量标准。 请参阅Google中的受众计数，以验证集成并了解受众定位大小。
 
 >[!IMPORTANT]
 >
->如果您希望使用Google Ad Manager创建您的第一个目标，并且过去（使用Audience Manager或其他应用程序）未在 [Experience Cloud ID服务中启用](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) ID同步功能，请联系Adobe Consulting或客户关怀以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步将转入Adobe实时CDP。
+>如果您希望使用Google Ad Manager创建您的第一个目标，并且过去(使用受众管理器或其他应用程序)未启用 [Experience Cloud ID服务中的](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) ID同步功能，请联系Adobe Consulting或客户关怀以启用ID同步。 如果您之前在受众管理器中设置了Google集成，则您设置的ID同步会转到Adobe实时CDP。
 
 ## 先决条件
 
@@ -48,14 +48,14 @@ Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）�
 1. 在中， **[!UICONTROL Connections > Destinations]**&#x200B;选择Google广告管理器，然后选择 **[!UICONTROL Create destination]**。
    ![连接Google Ad Manager目标](/help/rtcdp/destinations/assets/google-1-destination.png)
 
-2. 在创建目标向导中，填写目标的基本信息。
+2. 在创建目标工作流中，填写目 [!UICONTROL Basic Information] 标的字段。
    ![基本信息Google广告经理](/help/rtcdp/destinations/assets/google-1-basic-information.png)
-* **名称**:填写此目标的首选名称。
-* **说明**:可选。 例如，您可以提及要为此目标使用哪个营销活动。
-* **帐户类型**:根据您在Google上的帐户，选择一个选项：
+* **[!UICONTROL Name]**:填写此目标的首选名称。
+* **[!UICONTROL Description]**: 可选. 例如，您可以提及要为此目标使用哪个活动。
+* **[!UICONTROL Account Type]**:根据您在Google上的帐户，选择一个选项：
    * 用 `DFP by Google` 于DoubleClick for Publishers
    * 用 `AdX buyer` 于Google AdX
-* **帐户ID**:使用Google填写您的帐户ID。 这可以是您的网络ID或受众链接ID。 通常，这是一个8位数字ID。
+* **[!UICONTROL Account ID]**:使用Google填写您的帐户ID。 这可以是您的网络ID或受众链接ID。 通常，这是一个8位数字ID。
 
 >[!NOTE]
 >
