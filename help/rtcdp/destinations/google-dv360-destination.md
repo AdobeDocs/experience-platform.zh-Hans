@@ -1,10 +1,10 @@
 ---
 title: Google Display & Video 360 Destination
 seo-title: Google Display & Video 360 Destination
-description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示屏、视频和移动库存源执行重定向和受众定向数字营销活动。
-seo-description: 'Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示屏、视频和移动库存源执行重定向和受众定向数字营销活动。 '
+description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示屏、视频和移动库存源执行重定位和受众目标数字活动。
+seo-description: 'Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示屏、视频和移动库存源执行重定位和受众目标数字活动。 '
 translation-type: tm+mt
-source-git-commit: 810028edc662a7f52484e37cf0fbdfafe5db650f
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -13,7 +13,7 @@ source-git-commit: 810028edc662a7f52484e37cf0fbdfafe5db650f
 
 ## 概述
 
-Display &amp; Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示屏、视频和移动库存源执行重定向和受众定向数字营销活动。
+Display &amp; Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示屏、视频和移动库存源执行重定位和受众目标数字活动。
 
 ## 目标规范
 
@@ -21,11 +21,11 @@ Display &amp; Video 360（以前称为DoubleClick Bid Manager）是一种工具�
 
 * 您可以将以下身份发 [送到](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_namespace_overview/identity_namespace_overview.md) Google Display &amp; Video 360目标：Google **Cookie ID、IDFA、GAID、Roku ID、Microsoft ID、Amazon Fire TV ID**。
 * 激活的受众是在Google平台中以编程方式创建的。
-* Adobe实时CDP当前不包含用于验证成功激活的度量标准。 请参阅Google中的受众计数以验证集成并了解受众定位规模。
+* Adobe实时CDP当前不包含用于验证成功激活的度量标准。 请参阅Google中的受众计数，以验证集成并了解受众定位大小。
 
 >[!IMPORTANT]
 >
->如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且以前（使用Adobe Audience Manager或其他应用程序）未启用 [Experience Cloud ID服务中的](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) ID同步功能，请联系Adobe Consulting或客户关怀以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步将转入Adobe实时CDP。
+>如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且以前(使用Adobe受众管理器或其他应用程序)未启用 [Experience Cloud ID服务中的](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) ID同步功能，请联系Adobe Consulting或客户关怀以启用ID同步。 如果您之前在受众管理器中设置了Google集成，则您设置的ID同步会转到Adobe实时CDP。
 
 ## 先决条件
 
@@ -46,14 +46,14 @@ Display &amp; Video 360（以前称为DoubleClick Bid Manager）是一种工具�
 1. 在中， **[!UICONTROL Connections > Destinations]**&#x200B;选择“Google Display &amp; Video 360”，然后选择 **[!UICONTROL Create destination]**。
    ![Connect Google显示和视频360目标](/help/rtcdp/destinations/assets/google-dv360-destination.png)
 
-2. 在创建目标向导中，填写目标的基本信息。
+2. 在创建目标工作流中，填写目 [!UICONTROL Basic Information] 标的字段。
    ![基本信息Google Display &amp; Video 360](/help/rtcdp/destinations/assets/google-dv360-basic-information.png)
-* **名称**:填写此目标的首选名称。
-* **说明**:可选。 例如，您可以提及要为此目标使用哪个营销活动。
-* **帐户类型**:根据您在Google上的帐户，选择一个选项：
-   * 使用 `Invite Advertiser` 可仅允许将受众共享到您的Display &amp; Video 360帐户中的特定品牌。
+* **[!UICONTROL Name]**:填写此目标的首选名称。
+* **[!UICONTROL Description]**: 可选. 例如，您可以提及要为此目标使用哪个活动。
+* **[!UICONTROL Account Type]**:根据您在Google上的帐户，选择一个选项：
+   * 使 `Invite Advertiser` 用此选项可仅允许受众共享到您的Display &amp; Video 360帐户中的特定品牌。
    * 使用 `Invite Partner` 可允许将受众共享到您的Display &amp; Video 360帐户中的所有品牌。
-* **帐户ID**:使用Google填 **[!DNL Invite partner]** 写您 **[!DNL Invite advertiser]** 的或帐户ID。 通常，这是一个6或7位数字ID。
+* **[!UICONTROL Account ID]**:使用Google填 **[!DNL Invite partner]** 写您 **[!DNL Invite advertiser]** 的或帐户ID。 通常，这是一个6或7位数字ID。
 
 >[!NOTE]
 >
