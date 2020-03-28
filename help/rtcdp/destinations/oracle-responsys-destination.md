@@ -4,7 +4,7 @@ seo-title: Oracle Responsys目标
 description: Responsys是面向跨渠道营销活动的企业电子邮件营销工具，Oracle为跨电子邮件、移动设备、展示广告和社交平台提供个性化互动服务。
 seo-description: Responsys是面向跨渠道营销活动的企业电子邮件营销工具，Oracle为跨电子邮件、移动设备、展示广告和社交平台提供个性化互动服务。
 translation-type: tm+mt
-source-git-commit: c3fe5753fb23f99076f9c85b4e07af2d25a121a9
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -23,21 +23,21 @@ source-git-commit: c3fe5753fb23f99076f9c85b4e07af2d25a121a9
 
    ![连接到Responsys](/help/rtcdp/destinations/assets/connect-oracle-responsys.png)
 
-2. 在“身 **份验证** ”步骤中，如果您之前已设置到云存储目标的连接，请选择并选 **[!UICONTROL Existing Account]** 择一个现有连接。 或者，您也可以选 **[!UICONTROL New Account]** 择设置新连接。 填写帐户身份验证凭据并选择 **[!UICONTROL Connect to destination]**。 对于Oracle Responsys，您可以在 **SFTP with Password** （口令）和 **SFTP with SSH Key（SSH密钥）之间进行选择**。 根据连接类型，填写以下信息，然后选择 **[!UICONTROL Connect to destination]**。
+2. 在该步 **[!UICONTROL Authentication]** 骤中，如果您之前已设置到云存储目标的连接，请选择并选 **[!UICONTROL Existing Account]** 择一个现有连接。 或者，您也可以选 **[!UICONTROL New Account]** 择设置新连接。 填写帐户身份验证凭据并选择 **[!UICONTROL Connect to destination]**。 对于Oracle Responsys，您可以在和之间 **[!UICONTROL SFTP with Password]** 进行选 **[!UICONTROL SFTP with SSH Key]**&#x200B;择。 根据连接类型，填写以下信息，然后选择 **[!UICONTROL Connect to destination]**。
 
-   对于 **SFTP(带密码连接** )，您必须提供域、端口、用户名和密码。
-对于 **SFTP与SSH密钥连接** ，您必须提供域、端口、用户名和SSH密钥。
+   对于 **[!UICONTROL SFTP with Password]** 连接，必须提供域、端口、用户名和密码。
+对于 **[!UICONTROL SFTP with SSH Key]** 连接，必须提供域、端口、用户名和SSH密钥。
 
    ![填写Responsys信息](/help/rtcdp/destinations/assets/responsys-authentication.png)
 
-3. 在设置 **步骤中** ，填写目标的相关信息，如下所示：
-   * **名称**:为目标选择相关名称。
-   * **说明**:输入目标的说明。
-   * **文件夹路径**:在存储位置提供路径，实时CDP会将导出数据存储为CSV或制表符分隔的文件。
-   * **文件格式**: **CSV** 或 **TAB_DELIMITED**。 选择要导出到存储位置的文件格式。
+3. 在该步 **[!UICONTROL Setup]** 骤中，填写目标的相关信息，如下所示：
+   * **[!UICONTROL Name]**:为目标选择相关名称。
+   * **[!UICONTROL Description]**:输入目标的说明。
+   * **[!UICONTROL Folder Path]**:在存储位置提供路径，实时CDP会将导出数据存储为CSV或制表符分隔的文件。
+   * **[!UICONTROL File Format]**: **CSV** 或 **TAB_DELIMITED**。 选择要导出到存储位置的文件格式。
    ![Responsys基本信息](/help/rtcdp/destinations/assets/responsys-basic-information.png)
 
-4. 在填 **写上述字段后** ，单击创建目标。 您的目标现已连接，您可以将 [区段激活](/help/rtcdp/destinations/activate-destinations.md) 到目标。
+4. 填写 **[!UICONTROL Create destination]** 上述字段后单击。 您的目标现已连接，您可以将 [区段激活](/help/rtcdp/destinations/activate-destinations.md) 到目标。
 
 ## 目标属性 {#destination-attributes}
 
