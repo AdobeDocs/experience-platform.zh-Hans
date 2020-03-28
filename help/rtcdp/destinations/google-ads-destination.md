@@ -4,7 +4,7 @@ seo-title: Google广告目标
 description: Google Ads（以前称为Google AdWords）是一项在线广告服务，允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示按点击付费广告。
 seo-description: Google Ads（以前称为Google AdWords）是一项在线广告服务，允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示按点击付费广告。
 translation-type: tm+mt
-source-git-commit: 3e510c891c84fb3dc1632bd1182ef1e010ea898f
+source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ---
 
@@ -21,11 +21,11 @@ Google Ads（以前称为Google AdWords）是一项在线广告服务，允许�
 
 * 您可以将以下身份发 [送到](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_namespace_overview/identity_namespace_overview.md) Google Ads目标：Google **Cookie ID、IDFA、GAID、Roku ID、Microsoft ID、Amazon Fire TV ID**。
 * 激活的受众是在Google平台中以编程方式创建的。
-* Adobe实时CDP当前不包含用于验证成功激活的度量标准。 请参阅Google中的受众计数以验证集成并了解受众定位规模。
+* Adobe实时CDP当前不包含用于验证成功激活的度量标准。 请参阅Google中的受众计数，以验证集成并了解受众定位大小。
 
 >[!IMPORTANT]
 >
->如果您希望使用Google Ads创建您的第一个目标，并且以前（使用Audience Manager或其他应用程序）未在 [Experience Cloud ID服务中启用](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) ID同步功能，请联系Adobe Consulting或客户关怀以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步将转入Adobe实时CDP。
+>如果您希望使用Google Ads创建您的第一个目标，并且以前(使用受众管理器或其他应用程序)未启用 [Experience Cloud ID服务中的](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) ID同步功能，请联系Adobe Consulting或客户关怀以启用ID同步。 如果您之前在受众管理器中设置了Google集成，则您设置的ID同步会转到Adobe实时CDP。
 
 ## 先决条件
 
@@ -51,12 +51,12 @@ Google暂停了与第三方供应商的任何新的Google Ads集成。 您必须
 1. 在中， **[!UICONTROL Connections > Destinations]**&#x200B;选择“Google广告”，然后选择 **[!UICONTROL Create destination]**。
    ![Connect Google广告目标](/help/rtcdp/destinations/assets/google-2-destination.png)
 
-2. 在创建目标向导中，填写目标的基本信息。
+2. 在创建目标工作流中，填写目 [!UICONTROL Basic Information] 标的字段。
    ![Google Ads的基本信息](/help/rtcdp/destinations/assets/google-2-basic-information.png)
-* **名称**:填写此目标的首选名称。
-* **说明**:可选。 例如，您可以提及要为此目标使用哪个营销活动。
-* **帐户类型**:AdWords是唯一可用的选项。
-* **帐户ID**:使用Google Ads填写您的帐户ID。 ID格式通常为123-456-7890。
+* **[!UICONTROL Name]**:填写此目标的首选名称。
+* **[!UICONTROL Description]**: 可选. 例如，您可以提及要为此目标使用哪个活动。
+* **[!UICONTROL Account Type]**:AdWords是唯一可用的选项。
+* **[!UICONTROL Account ID]**:使用Google Ads填写您的帐户ID。 ID格式通常为123-456-7890。
 
 ## 激活区段至Google广告
 
