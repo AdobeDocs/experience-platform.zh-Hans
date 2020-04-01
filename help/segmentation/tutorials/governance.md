@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 为受众细分强制实施数据使用合规性
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 76032cca825eb75f7a8056cbbbc230343bed27a0
+source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
 
 ---
 
@@ -52,7 +52,7 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台
 
 此工作流首先访问已知的受众区段。 在实时客户用户档案中启用的区段在其区段定义中包含合并策略ID。 此合并策略包含有关区段中要包含哪些数据集的信息，这些数据集又包含任何适用的数据使用标签。
 
-使用实 [时客户用户档案API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)，您可以按其ID查找区段定义以查找其关联的合并策略。
+使用分 [段API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)，您可以按其ID查找区段定义以查找其关联的合并策略。
 
 **API格式**
 
