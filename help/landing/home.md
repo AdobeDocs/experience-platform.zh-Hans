@@ -1,43 +1,52 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Adobe Experience Platform产品文档
+title: Adobe Experience Platform概述
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 4eea32af108c8e2655639b3a2d6202d3b791b4e4
+source-git-commit: 51aa09e5eff86c480946bcf706f10864b82841d2
 
 ---
 
 
-# Adobe Experience Platform
+# Adobe Experience Platform概述
 
-![](/help/assets/platform-banner-1.png)
+>[!NOTE]
+>Adobe Experience Platform文档最近已移动。 请花点时间查看新导航并更新任何现有书签。
 
-**[Adobe Experience Platform概述](https://www.adobe.io/apis/experienceplatform/home/overview.html)**<br/>Experience Platform使组织机构能够集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富的个性化体验的设计和交付。
+Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理可推动客户体验的完整解决方案。 Experience Platform使组织机构能够集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富的个性化体验的设计和投放。
 
-## 参考文档
-
-* **[发行说](https://www.adobe.io/apis/experienceplatform/home/services/release-notes.html#!end-user/markdown/release-notes/release-notes.md)**<br/>明获取有关最新版本的信息，并查看以前的版本。
-
-* **[术语表](https://www.adobe.io/apis/experienceplatform/home/services/acp-glossary.html)**<br/>查看Adobe Experience Platform术语。
-
-* **[疑难解答指](https://www.adobe.io/apis/experienceplatform/home/services/troubleshooting.html)**<br/>南了解常见错误和解决方案。
+Experience Platform构建于开放API之上，它向开发人员展示了系统的全部功能，支持使用熟悉的工具轻松集成企业解决方案。 Experience Platform还支持合作伙伴根据需要构建和集成自己的产品和技术。 这一强大功能和灵活性使Experience Platform在市场上独一无二。 它为合作伙伴、客户和开发人员社区提供了构建创新以推动体验式业务的基础：通过提供持续改善、完全个性化的体验超越客户期望，从客户及其个人偏好的360度视图中获得。
 
 ## Experience Platform文档
 
-* **[Experience Platform服务文档](https://www.adobe.io/apis/experienceplatform/home/services.html)**<br/>Experience Platform服务使您能够管理个人资料、数据、隐私以及对您的业务重要的其他项目。
+Experience Platform文档以多种格式提供，以支持各种功能和服务。 要进一步了解可用文档的类型，以及阅读每个平台服务的简要说明，请访问 [Experience Platform文档概述](documentation/overview.md)。 或者，要立即开始进一步了解特定平台服务，请从左侧导航的字母列表中选择指南。
 
-* **[实时客户数据平台](/help/rtcdp/overview.md)**<br/>Real-time CDP结合了多个企业数据源，以实时创建统一的档案，可用于跨所有渠道和设备提供一对一的个性化客户体验。
+## Experience Platform教程
 
-* **[API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)**<br/>有关每个Experience Platform API的详细信息。
+通过遵循从准备数据以获取数据到高级机器学习算法等一切内容的分步教程，快速轻松地开始使用平台。 这些教程旨在补充Experience Platform文档中的信息，以便在完成教程的同时保持文档在最佳效果。 访问 [Experience Platform教程](../tutorials/home.md) ，开始学习。
 
-* **[Experience Platform Launch](https://docs.adobe.com/content/help/en/launch/using/overview.html)**<br/>Launch为客户提供了部署和管理支持相关客户体验所需的所有分析、营销和广告标签的简单方法。
+## 参考文档和资源
 
-* **[Experience Platform Auditor](https://docs.adobe.com/content/help/en/auditor/using/overview.html)**<br/>Auditor对您的Adobe Experience Cloud实施进行评级，并提供如何改进它的指南。 Auditor 可帮助您从单个或多个 Adobe 产品中获取更多价值。
+* [**发行说明&#x200B;**](../release-notes/latest/latest.md)<br/>查找有关最新Experience Platform版本的信息并查看以前的版本。
 
-* **[Experience Cloud Debugger](https://docs.adobe.com/content/help/en/debugger/using/experience-cloud-debugger.html)**<br/>Chrome的Adobe Experience Cloud Debugger扩展可检查您的网页，并帮助您查找Experience Cloud解决方案的实施方式方面的问题。
+* [**术语表&#x200B;**](glossary.md)<br/>查看Adobe Experience Platform术语。
 
-<!--
+* [**疑难解答指&#x200B;**](troubleshooting.md)<br/>南查找常见错误的解决方法和常见问题解答。
+
+* [**API基础&#x200B;**](api-fundamentals.md)<br/>知识学习使用Platform API的基础知识。
+
+* [**API参考&#x200B;**](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)<br/>Discover Experience Platform API，包括标题、参数、示例请求和响应。*这些文档托管在Adobe I/O上。*
+
+
+
+
+
+
+
+
+
+<!-- 
 ## What's New
 
 * **[Privacy management](https://helpx.adobe.com/campaign/kb/campaign-privacy.html)**<br/>
@@ -106,5 +115,4 @@ Learn more about general guidelines for mobile deliveries.
 * [Technical notes](https://helpx.adobe.com/campaign/kb/acs-article-list.html)
 
 * [Adobe Campaign Standard Implementation guide](https://helpx.adobe.com/campaign/kb/campaign-standard-implementation-guide.html)
-
--->
+ -->
