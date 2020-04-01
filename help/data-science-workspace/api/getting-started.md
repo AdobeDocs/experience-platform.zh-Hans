@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Sensei Machine Learning API开发人员指南
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 9e12c8087524f692a123b3389df4fdc324c4238d
+source-git-commit: b0b44f4aaf365f58086cfa17d27fbba6ed2a2a97
 
 ---
 
@@ -37,10 +37,10 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台
 
 收集所需的身份验证凭据后，您可以继续阅读本开发人员指南的后续部分，获取对以下端点组的示例API调用：
 
-* [引擎](engines.md)
-* [实验](experiments.md)
-* [洞察](insights.md)
-* [MLInstances（方法）](mlinstances.md)
-* [MLServices](mlservices.md)
-* [模型](models.md)
-* [附录](appendix.md)
+* [引擎](./engines.md)
+* [实验](./experiments.md)
+* [洞察](./insights.md)
+* [MLInstances（方法）](./mlinstances.md)
+* [MLServices](./mlservices.md)
+* [模型](./models.md)
+* [附录](./appendix.md)
