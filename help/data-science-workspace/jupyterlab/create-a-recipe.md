@@ -133,7 +133,7 @@ data_access_sdk_python
 
 ### Platform SDK
 
-有关使用数据加载器的详细教 `platform_sdk` 程，请访问 [Platform SDK指南](../authoring/platform-sdk.md)。 本教程提供有关构建身份验证、基本读取数据和基本写入数据的信息。
+有关使用数据加载器的详细教 `platform_sdk` 程，请访问 [Platform SDK指南](../authoring/platform-sdk.md)。 本教程提供有关构建身份验证、基本数据读取和基本数据写入的信息。
 
 ### 外部来源
 
