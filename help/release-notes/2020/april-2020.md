@@ -1,0 +1,43 @@
+---
+title: Adobe Experience Platform 发行说明
+description: Experience Platform发行说明2020年4月8日
+doc-type: release notes
+last-update: March 4, 2020
+author: ens71067
+translation-type: tm+mt
+source-git-commit: 38acbb4a0130763fe0c565215eda7c0713e1ff6e
+
+---
+
+
+# Adobe Experience Platform 发行说明
+
+## 发行日期：2020 年 4 月 8 日
+
+## 访问控制
+
+Experience Platform利用 [](https://adminconsole.adobe.com) Adobe Admin Console产品用户档案将用户与权限和沙箱关联起来。 权限控制对各种平台功能的访问，包括数据建模、用户档案管理和沙箱管理。
+
+### 主要功能
+
+| 功能 | 描述 |
+|--- | ---|
+| 权限 | 在Admin Console中，平台产品用户档案中的 _Permissions_ （权限）选项卡允许您自定义哪些平台功能可供附加到该用户档案的用户使用。 可用的权限类别包括：数据建模、数据管理、用户档案管理、标识、数据监控、沙箱管理、目标、源。 |
+| 访问沙箱 | 平台 _产品用户档案_ 中的“权限”选项卡可授予用户对特定沙箱的访问权限。 有关详细信息，请参 [阅以下](#sandboxes) “沙箱”部分。 |
+
+有关详细信息，请参阅 [访问控制概述](../../access-control/home.md)。
+
+## 沙箱
+
+Experience Platform旨在在全球范围内丰富数字体验应用程序。 公司通常并行运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署，同时确保操作合规性。 为了满足这一需求，Experience Platform提供了沙箱，可将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+
+### 主要功能
+
+| 功能 | 描述 |
+|--- | ---|
+| 生产沙箱 | Experience Platform提供单个生产沙箱，无法删除或重置。 |
+| 非生产沙箱 | 可以为单个平台实例创建多个非生产沙箱，从而使您能够测试功能、运行实验和制作自定义配置，而不会影响生产沙箱。 |
+| 沙箱切换器 | 在Experience Platform用户界面中，屏幕左上角的沙箱切换器允许您通过下拉菜单在可用沙箱之间切换。 |
+| `x-sandbox-name` 标题 | 对Experience Platform API的所有调用现在必须包 `x-sandbox-name` 含新标头，其值引用将执行 `name` 操作的沙箱的属性。 |
+
+有关详细信息，请参阅沙 [箱概述](../../sandboxes/home.md)。
