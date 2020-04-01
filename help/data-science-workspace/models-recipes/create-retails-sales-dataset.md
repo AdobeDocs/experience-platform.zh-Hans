@@ -23,12 +23,12 @@ source-git-commit: 91c7b7e285a4745da20ea146f2334510ca11b994
    - x-gw-ims-org-id: `{IMS_ORG}`
    - 客户机密码： `{CLIENT_SECRET}`
    - 客户端证书： `{PRIVATE_KEY}`
-- 零售销售菜谱的示例数据 [和源文件](../pre-built-recipes/retail-sales.md)。 从 <a href="https://github.com/adobe/experience-platform-dsw-reference/" target="_blank">Adobe公共Git存储库下载本教程和其他数据科学工作区教程所需的资源</a>。
-- <a href="https://www.python.org/downloads/" target="_blank">Python >= 2.7</a> ，以及以下Python包：
-   - <a href="https://pypi.org/project/pip/" target="_blank">pip</a>
-   - <a href="https://pyyaml.org/" target="_blank">PyYAML</a>
-   - <a href="https://pypi.org/project/dictor/" target="_blank">字典</a>
-   - <a href="https://pypi.org/project/jwt/" target="_blank">JWT</a>
+- 零售销售菜谱的示例数据 [和源文件](../pre-built-recipes/retail-sales.md)。 从 [Adobe公共Git存储库下载本教程和其他数据科学工作区教程所需的资源](https://github.com/adobe/experience-platform-dsw-reference/)。
+- [Python >= 2.7](https://www.python.org/downloads/) ，以及以下Python包：
+   - [pip](https://pypi.org/project/pip/)
+   - [PyYAML](https://pyyaml.org/)
+   - [字典](https://pypi.org/project/dictor/)
+   - [JWT](https://pypi.org/project/jwt/)
 - 对本教程中使用的以下概念的有效理解：
    - [体验数据模型(XDM)](../../xdm/home.md)
    - [模式合成基础](../../xdm/schema/field-dictionary.md)
