@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 引擎
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 6153bfc5c2c868a10683b15afb1748a2abc597e9
+source-git-commit: 01cfbc86516a05df36714b8c91666983f7a1b0e8
 
 ---
 
@@ -191,7 +191,7 @@ curl -X POST \
 
 ## 使用二进制伪像创建功能管道引擎
 
-您可以通过执行POST请求来使用本地或二进制 `.jar``.egg` 伪像创建功能管道引擎，同时以多部分形式提供其元数据和伪像的路径。 PySpark或Spark Engine能够指定计算资源，如内核数或内存量。 有关详细信息，请参阅 [PySpark和Spark资源配置的附录部分](appendix.md#resource-config) 。
+您可以通过执行POST请求来使用本地或二进制 `.jar``.egg` 伪像创建功能管道引擎，同时以多部分形式提供其元数据和伪像的路径。 PySpark或Spark Engine能够指定计算资源，如内核数或内存量。 有关详细信息，请参阅 [PySpark和Spark资源配置的附录部分](./appendix.md#resource-config) 。
 
 **API格式**
 
@@ -257,7 +257,7 @@ curl -X POST \
 
 ## 检索引擎列表
 
-您可以通过执行单个GET请求来检索引擎列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅有关资产检索的查询参 [数的附录部分](appendix.md#query)。
+您可以通过执行单个GET请求来检索引擎列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅有关资产检索的查询参 [数的附录部分](./appendix.md#query)。
 
 **API格式**
 
