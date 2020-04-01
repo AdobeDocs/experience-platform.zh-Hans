@@ -13,7 +13,7 @@ source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
 
 合并(或合并视图)是系统生成的只读模式,聚合共享同一类(XDM ExperienceEvent或XDM个人用户档案)的所有模式的字段，并启用实时客户用户档案 [](../../profile/home.md)。
 
-本文档涵盖与模式注册表API中的合并协作的基本概念，包括各种操作的示例调用。 有关XDM中合并的更多一般信息，请参阅模式合成基础 [知识中的合并部分](../schema/composition.md#union)。
+本文档涵盖与模式注册表API中的合并协作的基本概念，包括各种操作的示例调用。 有关XDM中合并的更多一般信息，请参阅合并合成基础 [知识中的模式部分](../schema/composition.md#union)。
 
 ## 合并混合
 
