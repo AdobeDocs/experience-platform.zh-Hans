@@ -93,7 +93,7 @@ curl -X POST \
 | `type` | **（必需）** ，以字符串格式表示的作业类型。 支持的类型有 `batch_segmentation` 和 `export`。 |
 | `properties` | **（必需）** ，包含与计划相关的其他属性的对象。 |
 | `properties.segments` | **(等于时需`type`要)`batch_segmentation`** “使用” `["*"]` 可确保包括所有区段。 |
-| `schedule` | **（必需）** ，包含作业计划的字符串。 作业只能计划为每天运行一次，这意味着您不能将作业计划为在24小时内运行多次。 显示的示例(`0 0 1 * * ?`)是指每天1:00:00 UTC时触发作业。 有关详细信息，请查看cron [表达式格式文档](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) 。 |
+| `schedule` | **（必需）** ，包含作业计划的字符串。 作业只能计划为每天运行一次，这意味着您不能将作业计划为在24小时内运行多次。 显示的示例(`0 0 1 * * ?`)是指每天在UTC 1:00:00时触发作业。 有关详细信息，请查看cron [表达式格式文档](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) 。 |
 | `state` | *（可选）包含计划状态的字符串* 。 可用值： `active` 和 `inactive`。 默认值为 `inactive`。IMS组织只能创建一个计划。 更新计划的步骤将在本教程的稍后部分提供。 |
 
 **响应**
