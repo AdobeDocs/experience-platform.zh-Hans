@@ -123,7 +123,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 **对于基于UI的操作：**
 - 现代化、标准的Web浏览器。 虽然建议使用最新版本的Chrome，但还支持Firefox、Internet Explorer和Safari的当前版本和以前的主要版本。
-   - 每次发布新的主要版本时，支持最新版本的平台开始将停止支持最新版本的第三个最新版本。
+   - 每次发布新的主要版本时，支持最新版本的平台开始将会停止支持最新版本的第三个最新版本。
 - 所有浏览器都必须启用Cookie和JavaScript。
 
 **对于API和开发人员交互：**
