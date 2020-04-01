@@ -4,7 +4,7 @@ solution: Experience Platform
 title: MLInstances
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 71e257c85790a96b5017dea314b757ec4ee07bed
+source-git-commit: 01cfbc86516a05df36714b8c91666983f7a1b0e8
 
 ---
 
@@ -17,7 +17,7 @@ MLI实例是现有引擎与一组相应配置的配对，这些配置定义了�
 
 您可以通过执行POST请求来创建MLI实例，同时提供由有效的引擎ID(`{ENGINE_ID}`)和一组适当的默认配置组成的请求有效负荷。
 
-如果引擎ID引用PySpark或Spark引擎，则您可以配置计算资源量，如内核数或内存量。 如果引用了Python引擎，则您可以选择使用CPU或GPU进行培训和评分。 有关详细信息，请参 [阅PySpark和Spark资源配置](appendix.md#resource-config)[以及Python CPU和GPU配置的附录部分](appendix.md#cpu-gpu-config) 。
+如果引擎ID引用PySpark或Spark引擎，则您可以配置计算资源量，如内核数或内存量。 如果引用了Python引擎，则您可以选择使用CPU或GPU进行培训和评分。 有关详细信息，请参 [阅PySpark和Spark资源配置](./appendix.md#resource-config)[以及Python CPU和GPU配置的附录部分](./appendix.md#cpu-gpu-config) 。
 
 **API格式**
 
@@ -127,7 +127,7 @@ curl -X POST \
 
 ## 检索MLInstance的列表
 
-您可以通过执行单个GET请求来检索MLInstances的列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅有关资产检索的查询参 [数的附录部分](appendix.md#query)。
+您可以通过执行单个GET请求来检索MLInstances的列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅有关资产检索的查询参 [数的附录部分](./appendix.md#query)。
 
 **API格式**
 
@@ -139,7 +139,7 @@ GET /mlInstances?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUERY_PARAMETER}` | 用于筛选 [结果的可用查询](appendix.md#query) 参数之一。 |
+| `{QUERY_PARAMETER}` | 用于筛选 [结果的可用查询](./appendix.md#query) 参数之一。 |
 | `{VALUE}` | 前面查询参数的值。 |
 
 **请求**
