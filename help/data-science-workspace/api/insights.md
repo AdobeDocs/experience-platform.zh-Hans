@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 洞察
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 71e257c85790a96b5017dea314b757ec4ee07bed
+source-git-commit: 01cfbc86516a05df36714b8c91666983f7a1b0e8
 
 ---
 
@@ -15,7 +15,7 @@ source-git-commit: 71e257c85790a96b5017dea314b757ec4ee07bed
 
 ## 检索一列表洞察
 
-您可以通过向洞察端点执行单个GET请求来检索一列表洞察。  要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅有关资产检索的查询参 [数的附录部分](appendix.md#query)。
+您可以通过向洞察端点执行单个GET请求来检索一列表洞察。  要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅有关资产检索的查询参 [数的附录部分](./appendix.md#query)。
 
 **API格式**
 
@@ -105,7 +105,7 @@ curl -X GET \
 
 ## 检索特定Insight
 
-要查找特定的分析，请发出GET请求并在请求路径 `{INSIGHT_ID}` 中提供有效。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅有关资产检索的查询参 [数的附录部分](appendix.md#query)。
+要查找特定的分析，请发出GET请求并在请求路径 `{INSIGHT_ID}` 中提供有效。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅有关资产检索的查询参 [数的附录部分](./appendix.md#query)。
 
 **API格式**
 
