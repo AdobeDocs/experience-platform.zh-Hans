@@ -4,7 +4,7 @@ seo-title: Google广告目标
 description: Google Ads（以前称为Google AdWords）是一项在线广告服务，允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示按点击付费广告。
 seo-description: Google Ads（以前称为Google AdWords）是一项在线广告服务，允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示按点击付费广告。
 translation-type: tm+mt
-source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
+source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 
 ---
 
@@ -19,7 +19,7 @@ Google Ads（以前称为Google AdWords）是一项在线广告服务，允许�
 
 请注意Google Ads目标特有的以下详细信息：
 
-* 您可以将以下身份发 [送到](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_namespace_overview/identity_namespace_overview.md) Google Ads目标：Google **Cookie ID、IDFA、GAID、Roku ID、Microsoft ID、Amazon Fire TV ID**。
+* 您可以将以下身份发 [送到](../../identity-service/namespaces.md) Google Ads目标：Google **Cookie ID、IDFA、GAID、Roku ID、Microsoft ID、Amazon Fire TV ID**。
 * 激活的受众是在Google平台中以编程方式创建的。
 * Adobe实时CDP当前不包含用于验证成功激活的度量标准。 请参阅Google中的受众计数，以验证集成并了解受众定位大小。
 
