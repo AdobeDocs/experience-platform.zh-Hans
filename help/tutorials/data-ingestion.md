@@ -4,14 +4,18 @@ solution: Experience Platform
 title: 数据获取教程
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: eef56cfc20eb8e4ac131bee20c5c3afbf82971d2
+source-git-commit: 2020f4b88f81f2d4fe3cfbd91cd18119ae580f4f
 
 ---
 
 
 # 将数据引入Experience Platform
 
-Adobe Experience Platform将来自多个来源的数据整合在一起，以帮助营销人员更好地了解其客户的行为。 Adobe Experience Platform数据摄取表示平台从这些来源获取数据的多种方法，以及数据在数据湖中持续保存以供下游平台服务使用的方式。 数据摄取包括使用源连接器的批量摄取、流摄取和摄取。 要了解更多信息，请阅读 [数据摄取概述](../ingestion/home.md) 和 [源概述](../source-connectors/home.md)。
+Adobe Experience Platform将来自多个来源的数据整合在一起，以帮助营销人员更好地了解其客户的行为。 Adobe Experience Platform数据摄取表示平台从这些来源获取数据的多种方法，以及数据在数据湖中持续保存以供下游平台服务使用的方式。 数据摄取包括使用源连接器的批量摄取、流摄取和摄取。 要了解更多信息，请阅读 [数据摄取概述](../ingestion/home.md) ，或直接转到 [Sources文档](../source-connectors/home.md)。
+
+## 在UI和API中创建源连接器
+
+源连接器允许您从多个源中摄取数据，然后在这些源中使用平台服务进行标记、结构化和增强。 要开始使用UI创建连接器，请访问UI概 [述中的创建源连接器](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-ui-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/ui/sources-ui-tutorial.md)。 要使用API创建源连接器，请访 [问使用Flow Service API概述创建源连接器](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-api-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/api/sources-api-tutorial.md)。
 
 ## 摄取批量数据
 
@@ -37,7 +41,5 @@ Adobe Experience Platform允许您将数据作为批处理文件轻松导入到�
 
 将数据流化到Adobe Experience Platform时，进行大量HTTP调用可能非常昂贵。 例如，创建1KB负载的200个HTTP请求，而不是创建1KB负载的200个HTTP请求，创建1个HTTP请求，每个消息200条，单个负载200KB，效率更高。 正确使用时，在一个请求中对多个消息进行分组是优化发送到Experience Platform的数据的极好方法。 要了解如何使用流摄取在单个HTTP请求中向Experience Platform发送多条消息，请遵循发送 [多条消息教程](../ingestion/tutorials/streaming-multiple-messages.md)。
 
-## 在UI和API中创建源连接器
 
-源连接器允许您从多个源中摄取数据，然后在这些源中使用平台服务进行标记、结构化和增强。 要开始使用UI创建连接器，请访问UI概 [述中的创建源连接器](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-ui-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/ui/sources-ui-tutorial.md)。 要使用API创建源连接器，请访 [问使用Flow Service API概述创建源连接器](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-api-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/api/sources-api-tutorial.md)。
 
