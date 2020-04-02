@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 创建区段
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
+source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
 
 ---
 
@@ -53,7 +53,7 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台
 
 您可以通过在实时客户用户档案API中向端点发 `/segment/definitions` 出POST请求来创建新的区段定义。 以下示例概述了如何设置定义请求的格式，包括成功定义区段所需的信息。
 
-可以通过两种方式评估区段定义——批量分段和流分段。 批分段根据预设计划或手动触发评估时评估区段，而流分段则在数据被收录到平台后立即评估区段。 本教程将使用批 **量细分**。 有关流分段的更多信息，请阅读有关流 [分段的概述](../ui/streaming-segmentation.md)。
+可以通过两种方式评估区段定义——批量分段和流分段。 批分段根据预设计划或手动触发评估时评估区段，而流分段则在数据被收录到平台后立即评估区段。 本教程将使用批 **量细分**。 有关流分段的更多信息，请阅读有关流 [分段的概述](../api/streaming-segmentation.md)。
 
 **API格式**
 
