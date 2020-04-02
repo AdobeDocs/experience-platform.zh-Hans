@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 区段生成器UI指南
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: 902ba5efbb5f18a2de826fffd023195d804309cc
+source-git-commit: 91792f81a50d5752e46236d61b6ad645e3fda86c
 
 ---
 
@@ -173,6 +173,14 @@ Experience Platform使您能够将来自多个来源的数据整合在一起，�
 ![](../images/segment-builder/enable-streaming-segmentation.png)
 
 启用流细分后，必须建立基线（这是初始运行，之后区段将始终保持最新）。 系统会自动处理基线，但只有在已启用计划的分段时，才可能这样做。 有关启用计划分段的详细信息，请参 [阅本用户指南的上一节](#enable-scheduled-segmentation)。
+
+## 违反DULE策略
+
+>[!NOTE] DULE策略违规仅在创建已分配到目标的区段时适用。
+
+创建完细分后，细分将通过“数据管理”进行分析，以确保细分中不存在违反政策的情况。 有关DULE和策略违规的详细信息，请参阅数 [据使用标签概述](../../data-governance/labels/overview.md)。
+
+![](../images/segment-builder/segment-dule-policy-violations.png)
 
 ## 后续步骤
 
