@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Help
 translation-type: tm+mt
-source-git-commit: 63005d0fe03444c2c0e12bea3570441bf39ec75b
+source-git-commit: 2020f4b88f81f2d4fe3cfbd91cd18119ae580f4f
 
 ---
 
@@ -19,7 +19,7 @@ source-git-commit: 63005d0fe03444c2c0e12bea3570441bf39ec75b
    * [目录和数据集](https://docs.adobe.com/content/help/en/experience-platform/catalog/home.html)
    * [数据访问](https://docs.adobe.com/content/help/en/experience-platform/data-access/home.html)
    * [数据管理](https://docs.adobe.com/content/help/en/experience-platform/data-governance/home.html)
-   * [数据摄取（批处理和流处理）](https://docs.adobe.com/content/help/en/experience-platform/ingestion/home.html)
+   * [数据摄取](https://docs.adobe.com/content/help/en/experience-platform/ingestion/home.html)
    * [数据科学工作区](https://docs.adobe.com/content/help/en/experience-platform/data-science-workspace/home.html)
    * [Debugger](https://docs.adobe.com/content/help/en/debugger/using/experience-cloud-debugger.html)
    * [决策服务](https://docs.adobe.com/content/help/en/experience-platform/decisioning/home.html)
