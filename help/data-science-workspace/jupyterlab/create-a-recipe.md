@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用Jupyter笔记本创建菜谱
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 3190f2f01ae13d25cc3a3a540b83cc1fc0819f0a
+source-git-commit: 9f3fc3ec3ce560534b057185e3fef2cc2bc1234d
 
 ---
 
@@ -495,6 +495,6 @@ def save(configProperties, prediction):
 
 以下视频旨在支持您对构建和部署模型的理解。
 
->[!VIDEO](https://images-tv.adobe.com/mpcv3/65884d30-94fe-47ef-8d4e-efafe5303260_1578451719.1920x1080at3000_h264.mp4)
+>[!VIDEO](https://video.tv.adobe.com/v/30575?quality=12&enable10seconds=on&speedcontrol=on)
 
 
