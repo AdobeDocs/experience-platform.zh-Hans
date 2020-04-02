@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 评估区段
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
+source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
 
 ---
 
@@ -603,7 +603,7 @@ curl -X POST \
 | `filter.segments.segmentNs` | *（可选）* ，给定的区段命名空间 `segmentID`。 |
 | `filter.segments.status` | *（可选）* ，提供状态过滤器的字符串数组 `segmentID`。 默认情况下， `status` 该值将表示 `["realized", "existing"]` 当前时间属于该区段的所有用户档案。 可能的值包括： `"realized"`、 `"existing"`和 `"exited"`。 |
 | `filter.segmentQualificationTime` | *（可选）* Filter based on segment qualification time. 可以提供开始时间和／或结束时间。 |
-| `filter.segmentQualificationTime.startTime` | *（可选）* ，给定状态的区段ID的区段资格开始时间。 未提供，将不对区段ID资格的开始时间进行筛选。 时间戳必须以 [RFC 3339格式提供](https://tools.ietf.org/html/rfc3339) 。 |
+| `filter.segmentQualificationTime.startTime` | *（可选）* ，给定状态的区段ID的区段资格开始时间。 它未提供，对于区段ID资格的开始时间将不存在过滤器。 时间戳必须以 [RFC 3339格式提供](https://tools.ietf.org/html/rfc3339) 。 |
 | `filter.segmentQualificationTime.endTime` | *（可选）* ，给定状态的区段ID的区段资格结束时间。 它未提供，在区段ID资格的结束时间上不会有过滤器。 时间戳必须以 [RFC 3339格式提供](https://tools.ietf.org/html/rfc3339) 。 |
 | `filter.fromIngestTimestamp` | *（可选）* 将导出的用户档案限制为仅包括在此时间戳后更新的那些。 时间戳必须以 [RFC 3339格式提供](https://tools.ietf.org/html/rfc3339) 。 |
 | `filter.fromIngestTimestamp` **用户档案**，如果提供 | 包括所有合并的用户档案，其中合并的更新时间戳大于给定时间戳。 支持操 `greater_than` 作数。 |
@@ -951,7 +951,7 @@ curl -X GET \
 
 成功完成导出后，您的数据即可在Experience Platform的数据湖中使用。 然后，您可以使用 [Data Access API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) ，使用与导出相关 `batchId` 的访问数据。 根据区段的大小，数据可以以块为单位，而批可以由多个文件组成。
 
-有关如何使用Data Access API访问和下载批处理文件的分步说明，请遵循数据访 [问教程](../../data-access/api.md)。
+有关如何使用Data Access API访问和下载批处理文件的分步说明，请遵循数据访 [问教程](../../data-access/tutorials/dataset-data.md)。
 
 您还可以使用Adobe Experience Platform查询服务访问成功导出的细分数据。 使用UI或RESTful API,查询服务允许您在数据湖中编写、验证和运行查询。
 
