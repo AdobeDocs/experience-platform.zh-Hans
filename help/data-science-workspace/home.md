@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据科学工作区概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3190f2f01ae13d25cc3a3a540b83cc1fc0819f0a
+source-git-commit: 9f3fc3ec3ce560534b057185e3fef2cc2bc1234d
 
 ---
 
@@ -213,5 +213,5 @@ Adobe Experience Platform中的所有数据都符合标准化的XDM模式，无�
 
 以下视频旨在支持您对数据科学工作区的理解。
 
->[!VIDEO](https://images-tv.adobe.com/mpcv3/2fbf62c1-44ed-4162-8eed-f47ab8599701_1578435939.1920x1080at3000_h264.mp4)
+>[!VIDEO](https://video.tv.adobe.com/v/30567?quality=12&amp;enable10seconds=on&amp;speedcontrol=on)
 
