@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform细分服务
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
 
 ---
 
@@ -47,7 +47,7 @@ Adobe Experience Platform Segmentation Service提供用户界面和RESTful API�
 
 流细分是一个持续不断的数据选择过程，它会根据用户活动更新细分。 在构建并保存区段后，区段定义会针对传入数据应用到实时客户用户档案。 会定期处理细分增加和删除，确保您的目标受众保持相关性。
 
-要了解有关流细分的更多信息，请阅读流 [细分文档](./ui/streaming-segmentation.md)。
+要了解有关流细分的更多信息，请阅读流 [细分文档](./api/streaming-segmentation.md)。
 
 ### 批量分段
 
