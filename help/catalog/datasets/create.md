@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用API创建数据集
 topic: datasets
 translation-type: tm+mt
-source-git-commit: 6d24637dc6cc282f98288b6416e4a3b7cebe42ea
+source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
 
 ---
 
@@ -454,7 +454,7 @@ curl -X GET \
 
 您还可以使用Data Access API返回名称、大小（以字节为单位）以及下载文件或文件夹的链接。
 
-有关使用Data Access API的详细步骤，请参阅Data Access开发 [人员指南](../../data-access/api.md)。
+有关使用Data Access API的详细步骤，请参阅Data Access开发 [人员指南](../../data-access/home.md)。
 
 ## 更新数据集模式
 
