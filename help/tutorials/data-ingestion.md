@@ -31,7 +31,7 @@ Adobe Experience Platform允许您将数据作为批处理文件轻松导入到�
 
 ## 创建经过身份验证的流连接
 
-通过身份验证的数据收集，Adobe Experience Platform服务(如实时客户用户档案和身份)可区分来自可信来源和不可信来源的记录。 要开始，请按照教程创建经过 [身份验证的流连接](../ingestion/tutorials/create-authenticated-streaming-connection.md)。
+通过身份验证的数据收集，Adobe Experience Platform服务(如实时客户用户档案和身份)可区分来自可信来源和不可信来源的记录。 要开始使用，请按照教程创建 [经过身份验证的流连接](../ingestion/tutorials/create-authenticated-streaming-connection.md)。
 
 ## 流记录和时间序列数据
 
