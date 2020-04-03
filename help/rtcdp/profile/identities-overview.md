@@ -23,7 +23,7 @@ Adobe Experience Platform Identity Service通过跨设备和系统连接身份�
 
 标识图是不同标识命名空间之间关系的映射，可直观地呈现客户如何跨不同渠道与品牌互动。 所有客户标识图由Identity Service以近乎实时的方式统一管理和更新，以响应客户活动。
 
-Identity Service管理仅由您的组织可见并基于您的数据（称为专用图）构建的标识图。 当所摄取的数据记录包含多个标识时，Identity Service会增强您的专用图形，从而在找到的标识之间添加关系。
+Identity Service管理仅由您的组织可见并基于您的数据（称为专用图）构建的标识图。 当所摄取的数据记录包含多个标识时，Identity Service会增强您的专用图，从而在找到的标识之间添加关系。
 
 ## 后续步骤
 
