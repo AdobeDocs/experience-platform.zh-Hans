@@ -4,7 +4,7 @@ seo-title: Oracle Responsys目标
 description: Responsys是面向跨渠道营销活动的企业电子邮件营销工具，Oracle为跨电子邮件、移动设备、展示广告和社交平台提供个性化互动服务。
 seo-description: Responsys是面向跨渠道营销活动的企业电子邮件营销工具，Oracle为跨电子邮件、移动设备、展示广告和社交平台提供个性化互动服务。
 translation-type: tm+mt
-source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
+source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 
 ---
 
@@ -41,7 +41,7 @@ source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 
 ## 目标属性 {#destination-attributes}
 
-将区 [段激活到](/help/rtcdp/destinations/activate-destinations.md) Oracle Responsys目标时，建议您从合并模式中选择唯一标 [识符](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/unified_profile_architectural_overview/unified_profile_architectural_overview.md)。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参 [阅选择在电子邮件营销目标中导出的文件中用作目标属性的模式](/help/rtcdp/destinations/email-marketing-destinations.md#destination-attributes) 。
+将区 [段激活到](/help/rtcdp/destinations/activate-destinations.md) Oracle Responsys目标时，建议您从合并模式中选择唯一标 [识符](../../profile/home.md#profile-fragments-and-union-schemas)。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参 [阅选择在电子邮件营销目标中导出的文件中用作目标属性的模式](/help/rtcdp/destinations/email-marketing-destinations.md#destination-attributes) 。
 
 ## 设置Oracle Responsys的数据导入 {#import-data-into-responsys}
 
