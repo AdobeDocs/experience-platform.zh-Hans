@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 作业
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: 8102610e2733a75f22cf62d70c0408e3832d0803
 
 ---
 
@@ -105,7 +105,7 @@ curl -X POST \
 | `expandIDs` | 一个可选属性，当设置为 `true`时，它表示处理应用程序中ID的优化（目前仅受Analytics支持）。 If omitted, this value defaults to `false`. |
 | `priority` | Adobe Analytics使用的可选属性，用于设置处理请求的优先级。 接受的值 `normal` 是和 `low`。 如果 `priority` 忽略，则默认行为为 `normal`。 |
 | `analyticsDeleteMethod` | 一个可选属性，它指定Adobe Analytics如何处理个人数据。 此属性接受两个可能的值： <ul><li>`anonymize`:给定的用户ID集合引用的所有数据均设为匿名。 如果 `analyticsDeleteMethod` 忽略，则这是默认行为。</li><li>`purge`:所有数据都被完全删除。</li></ul> |
-| `regulation` **（必需）** | 请求的规定（必须为“gdpr”或“ccpa”）。 |
+| `regulation` **（必需）** | 要求的规定。 必须是以下三个值之一： <ul><li>gdpr</li><li>ccpa</li><li>pdpa_tha</li></ul> |
 
 **响应**
 
@@ -399,7 +399,7 @@ GET ?regulation={REGULATION}&page={PAGE}&size={SIZE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{REGULATION}` | 要查询的调节类型。 接受的值 `gdpr` 是和 `ccpa`。 |
+| `{REGULATION}` | 要查询的调节类型。 接受的 `gdpr`值为 `ccpa`、和 `pdpa_tha`。 |
 | `{PAGE}` | 要显示的数据页，使用基于0的编号。 默认值为 `0`。 |
 | `{SIZE}` | 每页上显示的结果数。 默认值为， `1` 最大值为 `100`。 超过最大值将导致API返回400代码错误。 |
 
