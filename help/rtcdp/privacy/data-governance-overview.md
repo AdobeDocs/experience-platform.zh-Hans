@@ -4,7 +4,7 @@ seo-title: 实时客户数据平台中的数据治理
 description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 seo-description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: e21cf6794e6c9ee522482cd9ccb95d66b06d330a
 
 ---
 
@@ -15,7 +15,7 @@ source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
 
 Adobe Experience Platform数据管理允许您管理客户数据并确保符合适用于数据使用的法规、限制和政策。 它在实时CDP中起着关键作用，允许您定义使用策略，根据这些策略对数据分类，以及在执行某些营销操作时检查是否存在策略违规。
 
-实时CDP构建在Adobe Experience Platform之上，因此Experience Platform文档中涵盖了大多数数据管理功能。 本文档旨在补充Experience Platform的“ [数据管理”概述](https://www.adobe.io/apis/experienceplatform/home/dule/duleservices.html#!api-specification/markdown/narrative/technical_overview/data_governance/dule_overview.md) ，并概述实时CDP中提供的“管理”功能。 涵盖以下主题：
+实时CDP构建在Adobe Experience Platform之上，因此Experience Platform文档中涵盖了大多数数据管理功能。 本文档旨在补充Experience Platform的“ [数据管理”概述](../../data-governance/home.md) ，并概述实时CDP中提供的“管理”功能。 涵盖以下主题：
 
 * [将使用标签应用于您的数据](#labels)
 * [管理数据使用策略](#policies)
@@ -25,7 +25,7 @@ Adobe Experience Platform数据管理允许您管理客户数据并确保符合�
 
 Data Governance允许您在数据集或数据集字段级别将使用标签应用于您的数据。 数据使用标签允许您根据适用于该数据的使用策略对数据进行分类。
 
-有关使用数据使用标签的详细信息，请参 [阅适用于Adobe Experience Platform的数据使用标签用户指南](https://www.adobe.io/apis/experienceplatform/home/dule/duleservices.html#!api-specification/markdown/narrative/tutorials/dule/dule_working_with_labels.md) 。
+有关使用数据使用标签的详细信息，请参 [阅适用于Adobe Experience Platform的数据使用标签用户指南](../../data-governance/labels/overview.md) 。
 
 ## 设置目标限制
 
@@ -36,9 +36,9 @@ Data Governance允许您在数据集或数据集字段级别将使用标签应�
 
 ## 管理数据使用策略 {#policies}
 
-为了使数据使用标签能够有效支持数据合规性，必须定义并启用数据使用策略。 数据使用策略是描述您允许或限制对实时CDP中的数据执行的营销操作类型的规则。 有关详细信息，请参阅Experience Platform [Data Governance概述中的“数据使](https://www.adobe.io/apis/experienceplatform/home/dule/duleservices.html#!api-specification/markdown/narrative/technical_overview/data_governance/dule_overview.md) 用策略”一节。
+为了使数据使用标签能够有效支持数据合规性，必须定义并启用数据使用策略。 数据使用策略是描述您允许或限制对实时CDP中的数据执行的营销操作类型的规则。 有关详细信息，请参阅Experience Platform [Data Governance概述中的“数据使](../../data-governance/home.md) 用策略”一节。
 
-Adobe Experience Platform为常见客户体 **验使用案例** 提供了若干核心策略。 通过向 [DULE Policy Service API发出请求可以查看这些策略](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)，如 [Policy Service Developer指南中的“列表所有策略”部分所示](https://www.adobe.io/apis/experienceplatform/home/dule/duleservices.html#!api-specification/markdown/narrative/technical_overview/data_governance/dule_policy_service_developer_guide.md)。 您还可以创建自己的自定 **义策略** ，以模拟自定义使用限制，如开发人员指南的“创建策略”部分中所示。
+Adobe Experience Platform为常见客户体 **验使用案例** 提供了若干核心策略。 通过向 [DULE Policy Service API发出请求可以查看这些策略](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)，如 [Policy Service Developer指南中的“列表所有策略”部分所示](../../data-governance/policies/overview.md)。 您还可以创建自己的自定 **义策略** ，以模拟自定义使用限制，如开发人员指南的“创建策略”部分中所示。
 
 ## （测试版）强制数据使用合规性 {#enforce-data-usage-compliance}
 
@@ -70,7 +70,7 @@ Adobe Experience Platform为常见客户体 **验使用案例** 提供了若干�
 
 触发违规后，激活的“保 **存** ”按钮将被禁用，直到相应的组件更新为符合数据使用策略。
 
-### 对激活的区段实施策略
+### 对激活的区段实施策略 {#policy-enforcement-for-activated-segments}
 
 策略实施仍适用于激活区段后的区段，从而限制对区段或其目标的任何可能导致策略违规的更改。 由于将区段激活到目标涉及大量组件，以下任何操作都可能触发违规：
 
@@ -83,4 +83,4 @@ Adobe Experience Platform为常见客户体 **验使用案例** 提供了若干�
 
 ## 后续步骤
 
-现在，您已经介绍了实时CDP上的主要数据管理功能以及Experience Platform如何使这些功能成为可能，请继续阅读Adobe Experience Platform上的 [数据管理文档](https://www.adobe.io/apis/experienceplatform/home/dule/duleservices.html)。 本文档概述了基本的“数据管理”概念，以及管理数据使用标签和策略的分步工作流。
+现在，您已经介绍了实时CDP上的主要数据管理功能以及Experience Platform如何使这些功能成为可能，请继续阅读Adobe Experience Platform上的 [数据管理文档](../../data-governance/home.md)。 本文档概述了基本的“数据管理”概念，以及管理数据使用标签和策略的分步工作流。
