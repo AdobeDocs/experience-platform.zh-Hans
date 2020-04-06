@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Source Connectors Help
+user-guide-title: Adobe Experience Platform源连接器帮助
 translation-type: tm+mt
-source-git-commit: e9b3ca0fa76456e2e6757bcc37cd813f3e64fbf7
+source-git-commit: 10893353215296546fffde109b6f87d90c4c1a55
 
 ---
 
@@ -11,10 +11,10 @@ source-git-commit: e9b3ca0fa76456e2e6757bcc37cd813f3e64fbf7
 # 源连接器 {#source-connectors}
 
 - [源连接器概述](home.md)
-- 源连接器UI {#ui}
-   - Adobe应用程序 {#adobe-applications}
-      - [分析数据连接器](ui/adobe-applications/analytics.md)
-      - [分析映射字段](ui/adobe-applications/analytics-mapping.md)
-      - [受众管理器连接器](ui/adobe-applications/audience-manager.md)
-      - [受众管理器映射字段](ui/adobe-applications/audience-manager-mapping.md)
-      - [目标映射字段](ui/adobe-applications/target-mapping.md)
+- Adobe应用程序连接器 {#adobe-applications}
+   - [Adobe Analytics连接器](ui/adobe-applications/analytics.md)
+   - [Adobe受众管理器连接器](ui/adobe-applications/audience-manager.md)
+   - 将Adobe应用程序连接器字段映射到XDM模式
+      - [Adobe Analytics](ui/adobe-applications/analytics-mapping.md)
+      - [Adobe Audience Manager](ui/adobe-applications/audience-manager-mapping.md)
+      - [Adobe Target](ui/adobe-applications/target-mapping.md)
