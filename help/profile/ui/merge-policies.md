@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: 合并策略用户指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: 83c7ff45af7266904121b7ff6edcb0f9b0559fee
+source-git-commit: 3669d740b22b650d4079d83026f122ffee42b9a0
 
 ---
 
@@ -86,6 +86,15 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ![](../images/merge-policies/edited.png)
 
+## 违反数据管理策略
+
+创建或更新合并策略时，将执行检查以确定合并策略是否违反了贵组织定义的任何数据使用策略。 数据使用策略是Adobe Experience Platform数据管理的一部分，是描述您允许或限制在特定平台数据上执行的营销操作类型的规则。 例如，如果合并策略用于创建激活到第三方目标的区段，而您的组织有数据使用策略，阻止将特定数据导出到第三方，则在尝试保存合并策略时，您会收到“检测到数据管理策略违规”通知。
+
+此通知包括已违反的数据使用策略列表，允许您通过从列表中选择策略来视图违规的详细信息。 选择违反的策略后，“数据世系 *”选项卡会提供违规原因和“受影响”激活*****，每个选项卡都会提供有关违反数据使用策略情况的详细信息。
+
+要进一步了解如何在Adobe Experience Platform中执行数据管理，请首先阅读数据管 [理概述](../../data-governance/home.md)。
+
+![](../images/merge-policies/policy-violation.png)
 
 ## 后续步骤
 
