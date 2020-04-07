@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: March 4, 2020
 author: ens71067
 translation-type: tm+mt
-source-git-commit: c3166bea873572fe6ee2e63dfd13bc64d81e252b
+source-git-commit: b3ee2839412c9949d67c2ae976e3df32fea7731e
 
 ---
 
@@ -31,6 +31,26 @@ source-git-commit: c3166bea873572fe6ee2e63dfd13bc64d81e252b
 * None
 
 有关隐私服务的更多信息，请阅读隐私服务 [概述开始](../../privacy-service/home.md)。
+
+## 来源
+
+Adobe Experience Platform可以从外部源中摄取数据，同时允许您使用平台服务来构建、标记和增强这些数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)获取数据。
+
+Experience Platform提供RESTful API和交互式UI，使您能轻松为各种数据提供者设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，为摄取运行设置时间，以及管理数据摄取吞吐量。
+
+### 新增功能
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 数据库的API和UI支持 | Apache Spark（在HDInsights上）、Azure Synapse Analytics、Azure Table存储、Hive（在HDInsights上）和Phoenix的新源连接器。 |
+| 对基于付款的应用程序的API和UI支持 | PayPal的新源连接器。 |
+| 对基于协议的应用程序的API和UI支持 | 通用OData的新源连接器。 |
+
+### 已知问题
+
+* None
+
+有关源的详细信息，请参阅 [源概述](../../source-connectors/home.md)。
 
 <!-- ## Access control
 
