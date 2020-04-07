@@ -1,91 +1,73 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: Experience Platform发行说明2020年3月11日
+description: Experience Platform发行说明2020年4月8日
 doc-type: release notes
-last-update: March 10, 2020
+last-update: April 7, 2020
 author: ens71067
 translation-type: tm+mt
-source-git-commit: 38acbb4a0130763fe0c565215eda7c0713e1ff6e
+source-git-commit: 7335a258a53d2685933b401dc4cd00bb60aa6c07
 
 ---
 
 
 # Adobe Experience Platform 发行说明
 
-## 发行日期：2020 年 3 月 11 日
+## 发行日期：2020 年 4 月 8 日
 
 ## 数据管理
 
-Experience Platform允许公司将来自多个企业系统的数据整合在一起，从而更好地使营销人员能够识别、理解和吸引客户。 Experience Platform包括端对端数据管理基础架构，包括数据使用标签和强制执行(DULE)，以确保在平台内以及在系统之间共享数据时正确使用数据。
-
 Adobe Experience Platform数据管理是用于管理客户数据并确保符合适用于数据使用的法规、限制和政策的一系列战略和技术。 它在Experience Platform的不同级别中起着关键作用，包括编目、数据谱系、数据使用标签、数据访问策略和营销操作的数据访问控制。
 
-### 新增功能
+要开始进行数据管理，您必须全面了解适用于客户数据的法规、合同义务和公司政策。 从那里，可以通过应用适当的数据使用标签来对数据进行分类，并且可以通过定义数据使用策略来控制其使用。
 
->[!NOTE]
->以下一些新增功能当前处于测试版中，并非所有用户都可使用。 测试版功能可能会发生变化。
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 自动执行实时客户数据平台的数据使用策略 | 数据使用策略现在在将数据激活到目标的工作流中得以实施。 在进行影响现有激活的更改（如对数据集标签、合并策略、区段定义等）时，也会嵌入并强制实施数据管理。 |
-| 用于实施的数据世系 | 当实时CDP中违反了数据使用策略时，UI会显示一条通知，其中包含数据谱系信息，以帮助用户了解违反策略的原因以及他们可以采取什么措施来解决该冲突。 |
-
-
-### 已知问题
-
-* None
-
-有关数据管理的详细信息，请参阅数 [据管理概述](../../data-governance/home.md)。
-
-## 数据摄取
-
-Adobe Experience Platform提供一组丰富的功能，用于摄取任何类型的数据和延迟。 Adobe Experience Platform Data Ingestion为获取数据提供了多种替代方法，包括批量API、流API、本机Adobe连接器、数据集成合作伙伴或Adobe Experience Platform UI。
+DULE框架通过Experience Platform用户界面和DULE Policy Service API简化了数据分类和创建数据使用策略的过程。
 
 ### 新增功能
 
 | 功能 | 描述 |
-|------- | -----------|
-| 部分批量摄取 | 部分批量摄取是指能够摄取包含错误的数据，最高可达到某个阈值。 借助此功能，用户可以成功地将其所有正确数据引入Adobe Experience Platform，同时单独分批其所有错误数据。 详细信息会添加到不成功的批中，以解释它们为何未通过验证。 有关部分批摄取的更多信息，请参阅部分 [批摄取文档](../../ingestion/batch-ingestion/partial.md)。 |
+| -----------| ---------- |
+| 在UI中管理数据使用策略 | 数据使用策略现在可以在Experience Platform UI的 _Policies_ （策略）工作区中管理。 有关详细 [信息，请参阅策略用户指南](../../data-governance/policies/user-guide.md) 。 |
 
-### 已知问题
+**已知问题**
 
-* None
+* 无.
 
-要了解有关将数据引入平台的更多信息，请访 [问Data Ingestion文档](../../ingestion/home.md)。
+有关详细信息，请参阅数 [据管理概述](../../data-governance/home.md)。
 
+## 智能服务
 
-## 目标
+智能服务使营销分析师和从业人员能够在客户体验使用案例中利用人工智能和机器学习的强大功能。 这使营销分析人员能够使用业务级配置设置特定于公司需求的预测，而无需数据科学专业知识。 此外，营销从业者可以在Adobe Experience Cloud、Adobe Experience Platform和第三方应用程序中激活预测。
 
-在 [Adobe实时客户数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台的集成，这些平台可以无缝地向这些合作伙伴激活数据。
-
-### 新目标
-
-您可以在新目标中激活Adobe Experience Platform数据。 有关详细信息，请参阅以下内容：
-
-| 目标 | 描述 |
-|--- | ---|
-| 云存储目标 | Adobe实时CDP现在可以将区段作为数据文件传送到Amazon S3或SFTP云存储位置。 这使您能够通过CSV或制表符分隔的文件，将受众及其用户档案属性发送到您的内部系统。 |
-| 广告目标 | Google目标卡现在分为三个目标卡，用于Adobe实时CDP中当前支持的三个不同的Google平台：Google Ads,Google广告经理，Google Display &amp; Video 360。 |
-
-要了解更多信息，请访问目 [标概述](../../rtcdp/destinations/destinations-overview.md)
-
-## 标识服务
-
-提供相关数字体验需要全面了解客户。 当客户数据在不同系统之间分散，导致每个客户似乎都具有多个“身份”时，这就变得更加困难。
-
-Adobe Experience Platform Identity Service通过跨设备和系统连接身份帮助您更好地视图客户及其行为，使您能够实时提供有影响力的个性化数字体验。
-
-### 新增功能
+**主要功能**
 
 | 功能 | 描述 |
-| ------- | ----------- |
-| 增强的专用图 | 专用图形功能已得到增强，可减少图形生成延迟，从每周批处理流程缩短为每日更新的图形，使Identity Service客户能够访问更多最新标识图形和链接。 |
+|---|---|
+| 客户人工智能 | 客户人工智能为营销人员提供了在个人级别生成客户预测的能力，并提供了解释。 在影响因素的帮助下，客户人工智能可以告诉您客户可能做什么以及原因。 此外，营销人员还可以从客户人工智能预测和洞察中受益，通过提供最合适的优惠和消息来个性化客户体验。 |
+| 归因人工智能 | 归因人工智能是一种多渠道的算法归因服务，它计算客户交互对特定结果的影响和增量影响。 利用Attribution AI，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。 |
 
-### 已知问题
+**已知问题**
+
+* 当前没有已知问题。
+
+有关智能服务及其要优惠的内容的详细信息，请参阅智能 [服务概述](../../intelligent-services/home.md)。
+
+## 隐私服务
+
+新的法律和组织法规授予用户根据请求从数据存储中访问或删除其个人数据的权利。 Adobe Experience Platform Privacy Service提供RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 通过隐私服务，您可以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| PDPA支持 | 现在，可以根据泰国的个人数据保护法(PDPA)创建和跟踪隐私请求。 在API中发出隐私请求时，数 `regulation` 组接受值“pdpa_tha”。 |
+| 命名空间UI中的类型 | 您现在可以在隐私服务UI的Request Builder中指定不同的命名空间类型。 有关详细 [信息，请参阅](../../privacy-service/ui/user-guide.md) 《用户指南》。 |
+| 旧端点弃用 | 旧API端点(`data/privacy/gdpr`)已弃用。 |
+
+已知问题
 
 * None
 
-有关Identity Service的详细信息，请参阅 [Identity Service概述](../../identity-service/home.md)。
+有关隐私服务的更多信息，请阅读隐私服务 [概述开始](../../privacy-service/home.md)。
 
 ## 来源
 
@@ -97,15 +79,12 @@ Experience Platform提供RESTful API和交互式UI，使您能轻松为各种数
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| Adobe受众管理器连接器的已弃用信号 | 将不再发送来自受众管理器的信号级数据。 请注意，“特征”和“区段”的区段成员资格仍将包含在内。 由于此更改，将不再生成入站数据集。 |
-| 重命名的数据集 | 由受众管理器连接器生成的数据集将具有更新的名称和说明。 |
-| 在用户档案管理器中启用受众切换 | 用户档案切换可启用或禁用，以将数据集提升到实时客户用户档案。 默认情况下将启用切换。 |
-| 云存储系统的UI支持 | UI中用于Azure Data Lake存储Gen2的新源连接器。 |
-| CRM系统的UI支持 | 在UI中为HubSpot、Salesforce Service Cloud和ServiceNow新增源连接器。 |
-| 数据库系统的UI支持 | 在UI中为AWS Redshift、Google BigQuery、MariaDB、Microsoft SQL Server和MySQL提供新的源连接器。 |
+| 数据库的API和UI支持 | Apache Spark（在HDInsights上）、Azure Synapse Analytics、Azure Table存储、Hive（在HDInsights上）和Phoenix的新源连接器。 |
+| 对基于付款的应用程序的API和UI支持 | PayPal的新源连接器。 |
+| 对基于协议的应用程序的API和UI支持 | 通用OData的新源连接器。 |
 
 ### 已知问题
 
 * None
 
-要进一步了解源，请参阅源 [概述](../../source-connectors/home.md)。
+有关源的详细信息，请参阅 [源概述](../../source-connectors/home.md)。
