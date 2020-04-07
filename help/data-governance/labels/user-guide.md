@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据使用标签用户指南
 topic: labels
 translation-type: tm+mt
-source-git-commit: 4a60956ade2d742ac83e138a2921a6a4893e06ef
+source-git-commit: a19a9a31743002eb5fd3a5ecb6668b4c760faa9a
 
 ---
 
@@ -98,6 +98,8 @@ source-git-commit: 4a60956ade2d742ac83e138a2921a6a4893e06ef
 ## 后续步骤
 
 现在，您已在数据集和字段级别添加了数据使用标签，可以开始将数据引入Experience Platform。 要了解更多信息，请阅读数据获取文 [档进行开始](../../ingestion/home.md)。
+
+您现在还可以根据已应用的标签定义数据使用策略。 有关详细信息，请参阅数 [据使用策略概述](../policies/overview.md)。
 
 ## Journey Orchestration
 
