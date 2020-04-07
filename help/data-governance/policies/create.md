@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 创建数据使用策略
 topic: policies
 translation-type: tm+mt
-source-git-commit: 04b2e07ba39df9f530c9c93c4bf1af9e2cf30169
+source-git-commit: da4fe8be360d5530d96078e4ef024bccf7f080f5
 
 ---
 
@@ -409,6 +409,8 @@ curl -X PATCH \
 
 ## 后续步骤
 
-通过遵循本教程，您已成功为营销操作创建了DULE策略。 您现在可以继续阅读关于强制 [实施DULE策略的教程](../enforcement/api-enforcement.md) ，了解如何检查策略违规并在体验应用程序中处理这些违规。
+通过遵循本教程，您已成功为营销操作创建了数据使用策略。 您现在可以继续阅读关于强制实施数 [据使用策略的教程](../enforcement/api-enforcement.md) ，了解如何检查策略违规并在体验应用程序中处理这些违规。
 
-有关Policy Service API中不同可用操作的详细信息，请参阅 [Policy Service开发人员指南](../api/getting-started.md)。 有关如何为实时客户用户档案数据实施DULE策略的信息，请参阅关于为受众细分强制实 [施数据使用合规性的教程](../../segmentation/tutorials/governance.md)。
+有关Policy Service API中不同可用操作的详细信息，请参阅 [Policy Service开发人员指南](../api/getting-started.md)。 有关如何为实时客户用户档案数据实施策略的信息，请参阅关于为受众区段强制 [实施数据使用合规性的教程](../../segmentation/tutorials/governance.md)。
+
+要了解如何在Experience Platform用户界面中管理使用策略，请参阅策 [略用户指南](user-guide.md)。
