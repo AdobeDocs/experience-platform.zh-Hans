@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 与PSQL连接
 topic: connect
 translation-type: tm+mt
-source-git-commit: 8310204071375a55329f661c9ac678f96979a594
+source-git-commit: f5bc9beb59e83b0411d98d901d5055122a124d07
 
 ---
 
@@ -65,7 +65,7 @@ psql (PostgreSQL) 9.5.14
 
 ![图像](../images/clients/psql/connect-bi.png)
 
-> [!IMPORTANT]:如果您在PC上，使用文本编辑器删除命令字符串中的换行符，然后复制该字符串。
+>[!IMPORTANT]:如果您在PC上，使用文本编辑器删除命令字符串中的换行符，然后复制该字符串。
 
 将命令字符串粘贴到终端或命令窗口中，然后按Enter。
 
