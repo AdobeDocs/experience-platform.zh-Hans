@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 为受众细分强制实施数据使用合规性
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
+source-git-commit: f5bc9beb59e83b0411d98d901d5055122a124d07
 
 ---
 
@@ -42,7 +42,7 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
-> [!NOTE] 有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>[!NOTE] 有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -253,7 +253,7 @@ curl -X GET \
 
 ## 过滤数据字段
 
-> [!NOTE] 此步骤是可选的。 如果您不希望根据您在查找数据使用标签的上一步中的发现调整区段中包含的数据 [](#lookup-data-usage-labels-for-the-source-datasets)，您可以跳到评估数据是否违反策略的最 [后一步](#evaluate-data-for-policy-violations)。
+>[!NOTE] 此步骤是可选的。 如果您不希望根据您在查找数据使用标签的上一步中的发现调整区段中包含的数据 [](#lookup-data-usage-labels-for-the-source-datasets)，您可以跳到评估数据是否违反策略的最 [后一步](#evaluate-data-for-policy-violations)。
 
 如果您希望调整包含在受众区段中的数据，可以使用以下两种方法之一进行调整：
 
