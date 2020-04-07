@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 评估区段
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
+source-git-commit: f5bc9beb59e83b0411d98d901d5055122a124d07
 
 ---
 
@@ -34,7 +34,7 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
-> [!NOTE] 有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>[!NOTE] 有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
 
 所有POST、PUT和PATCH请求都需要额外的标题：
 
@@ -52,7 +52,7 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台
 
 通过计划的评估，您的IMS组织可以创建循环计划以自动运行导出作业。
 
-> [!NOTE] 对于沙箱，对于XDM单个用户档案最多可以启用五(5)个合并策略的计划评估。 如果您的组织在单个沙箱环境中有五个以上的XDM单个用户档案合并策略，您将无法使用计划的评估。
+>[!NOTE] 对于沙箱，对于XDM单个用户档案最多可以启用五(5)个合并策略的计划评估。 如果您的组织在单个沙箱环境中有五个以上的XDM单个用户档案合并策略，您将无法使用计划的评估。
 
 ### 创建计划
 
@@ -93,7 +93,7 @@ curl -X POST \
 | `type` | **（必需）** ，以字符串格式表示的作业类型。 支持的类型有 `batch_segmentation` 和 `export`。 |
 | `properties` | **（必需）** ，包含与计划相关的其他属性的对象。 |
 | `properties.segments` | **(等于时需`type`要)`batch_segmentation`** “使用” `["*"]` 可确保包括所有区段。 |
-| `schedule` | **（必需）** ，包含作业计划的字符串。 作业只能计划为每天运行一次，这意味着您不能将作业计划为在24小时内运行多次。 显示的示例(`0 0 1 * * ?`)是指每天1:00:00 UTC时触发作业。 有关详细信息，请查看cron [表达式格式文档](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) 。 |
+| `schedule` | **（必需）** ，包含作业计划的字符串。 作业只能计划为每天运行一次，这意味着您不能将作业计划为在24小时内运行多次。 显示的示例(`0 0 1 * * ?`)是指每天在UTC 1:00:00时触发作业。 有关详细信息，请查看cron [表达式格式文档](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) 。 |
 | `state` | *（可选）包含计划状态的字符串* 。 可用值： `active` 和 `inactive`。 默认值为 `inactive`。IMS组织只能创建一个计划。 更新计划的步骤将在本教程的稍后部分提供。 |
 
 **响应**
