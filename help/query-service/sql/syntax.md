@@ -4,7 +4,7 @@ solution: Experience Platform
 title: SQL语法
 topic: syntax
 translation-type: tm+mt
-source-git-commit: 45da024d45b5eebdfc393ee14890e24aed6021ce
+source-git-commit: f5bc9beb59e83b0411d98d901d5055122a124d07
 
 ---
 
@@ -317,7 +317,7 @@ where option can be one of:
 - `FORMAT`:指定输出格式，可以是TEXT、XML、JSON或YAML。 非文本输出包含与文本输出格式相同的信息，但对于项目来说，这些信息更易于解析。 此参数默认为 `TEXT`。
 - `statement`:任 `SELECT`何、、 `INSERT`、 `UPDATE`或者说明 `DELETE`您想看的 `VALUES``EXECUTE``DECLARE``CREATE TABLE AS``CREATE MATERIALIZED VIEW AS` 、、、或者说明书。
 
-> [!IMPORTANT] 请记住，使用该选项时实际执行 `ANALYZE` 该语句。 尽管 `EXPLAIN` 放弃返回的任何输出， `SELECT` 但该语句的其他副作用仍如常发生。
+>[!IMPORTANT] 请记住，使用该选项时实际执行 `ANALYZE` 该语句。 尽管 `EXPLAIN` 放弃返回的任何输出， `SELECT` 但该语句的其他副作用仍如常发生。
 
 #### 示例
 
