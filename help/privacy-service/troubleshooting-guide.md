@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 隐私服务常见问题解答
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 7e2e36e13cffdb625b7960ff060f8158773c0fe3
+source-git-commit: 64cb2de507921fcb4aaade67132024a3fc0d3dee
 
 ---
 
@@ -14,6 +14,52 @@ source-git-commit: 7e2e36e13cffdb625b7960ff060f8158773c0fe3
 本文档提供有关Adobe Experience Platform Privacy Service的常见问题解答。
 
 隐私服务提供RESTful API和用户界面，帮助公司管理客户数据隐私请求。 通过隐私服务，您可以提交访问和删除私人或个人客户数据的请求，以便自动遵守组织和法律隐私法规。
+
+## 在API中发出隐私请求时，用户ID与用户ID之间有何区别？ {#user-ids}
+
+要在API中生成新的隐私作业，请求的JSON有效负荷必须包含一个数组，该数组列表适用于隐私请求的每个用户的特定信息。 `users` 数组中的每个项 `users` 都是一个表示特定用户的对象，该对象由其值标 `key` 识。
+
+反过来，每个用户对象(或 `key`)都包含其自己的数 `userIDs` 组。 此数组列表该特定 **用户的特定ID值**。
+
+Consider the following example `users` array:
+
+```json
+"users": [
+  {
+    "key": "DavidSmith",
+    "action": ["access"],
+    "userIDs": [
+      {
+        "namespace": "email",
+        "value": "dsmith@acme.com",
+        "type": "standard"
+      }
+    ]
+  },
+  {
+    "key": "user12345",
+    "action": ["access", "delete"],
+    "userIDs": [
+      {
+        "namespace": "email",
+        "value": "ajones@acme.com",
+        "type": "standard"
+      },
+      {
+        "namespace": "ECID",
+        "type": "standard",
+        "value":  "443636576799758681021090721276",
+        "isDeletedClientSide": false
+      }
+    ]
+  }
+]
+```
+
+该数组包含两个对象，表示由其值(“DavidSmith” `key` 和“user12345”)标识的各个用户。 “DavidSmith”只有一个列出的ID（其电子邮件地址），而“user12345”有两个（其电子邮件地址和ECID）。
+
+有关提供用户身份信息的详细信息，请参阅有关隐私 [请求的身份数据的指南](identity-data.md)。
+
 
 ## 我是否可以使用隐私服务来清理意外发送到平台的数据？
 
