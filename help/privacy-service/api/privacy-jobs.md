@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 作业
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: cde7acc2fd112b9a5d0b86b40b3bc712c6505064
+source-git-commit: 64cb2de507921fcb4aaade67132024a3fc0d3dee
 
 ---
 
@@ -100,7 +100,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `companyContexts` **（必需）** | 包含单位身份验证信息的数组。 列出的每个标识符都包括以下属性： <ul><li>`namespace`:标识符的命名空间。</li><li>`value`:标识符的值。</li></ul>必须 **使用** ，其中一个标识符 `imsOrgId` 作为其 `namespace`名称，并包含 `value` IMS组织的唯一ID。 <br/><br/>其他标识符可以是特定于产品的公司限定符(例如， `Campaign`)，用于标识与属于您组织的Adobe应用程序的集成。 潜在值包括帐户名、客户端代码、租户ID或其他应用程序标识符。 |
-| `users` **（必需）** | 一个数组，其中包含至少一个用户的集合，您希望访问或删除其信息。 在单个请求中最多可提供1000个用户ID。 每个用户对象都包含以下信息： <ul><li>`key`:用于限定响应数据中的单独作业ID的标识符。 为此值选择唯一、易于识别的字符串是最佳做法，这样便可轻松引用或稍后查找。</li><li>`action`:一个数组，它列表对数据执行所需的操作。 根据您要执行的操作，此数组必须包括、 `access`或 `delete`两者。</li><li>`userIDs`:特定用户的身份集合。 单个用户可以拥有的身份数量限制为9个。 每个标识都包 `namespace`含一个、 `value`一个和一个命名空间限定符(`type`)。 有关这些 [必需属性的更多详细信息](appendix.md) ，请参阅附录。</li></ul> |
+| `users` **（必需）** | 一个数组，其中包含至少一个用户的集合，您希望访问或删除其信息。 在单个请求中最多可提供1000个用户ID。 每个用户对象都包含以下信息： <ul><li>`key`:用户的标识符，用于限定响应数据中的单独作业ID。 为此值选择唯一、易于识别的字符串是最佳做法，这样便可轻松引用或稍后查找。</li><li>`action`:一个数组，它列表对用户数据执行的所需操作。 根据您要执行的操作，此数组必须包括、 `access`或 `delete`两者。</li><li>`userIDs`:用户的身份集合。 单个用户可以拥有的身份数量限制为9个。 每个标识都包 `namespace`含一个、 `value`一个和一个命名空间限定符(`type`)。 有关这些 [必需属性的更多详细信息](appendix.md) ，请参阅附录。</li></ul> 有关和的更详细说明 `users` ，请参 `userIDs`阅疑难解答 [指南](../troubleshooting-guide.md#user-ids)。 |
 | `include` **（必需）** | 要包含在您的处理中的一系列Adobe产品。 如果此值缺失或为空，则请求将被拒绝。 仅包括您的组织与之集成的产品。 有关详细信息，请 [参阅附录中](appendix.md) “已接受的产品值”一节。 |
 | `expandIDs` | 一个可选属性，当设置为 `true`时，它表示处理应用程序中ID的优化（目前仅受Analytics支持）。 If omitted, this value defaults to `false`. |
 | `priority` | Adobe Analytics使用的可选属性，用于设置处理请求的优先级。 接受的值 `normal` 是和 `low`。 如果 `priority` 忽略，则默认行为为 `normal`。 |
@@ -233,7 +233,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `companyContexts` **（必需）** | 包含单位身份验证信息的数组。 列出的每个标识符都包括以下属性： <ul><li>`namespace`:标识符的命名空间。</li><li>`value`:标识符的值。</li></ul>必须 **使用** ，其中一个标识符 `imsOrgId` 作为其 `namespace`名称，并包含 `value` IMS组织的唯一ID。 <br/><br/>其他标识符可以是特定于产品的公司限定符(例如， `Campaign`)，用于标识与属于您组织的Adobe应用程序的集成。 潜在值包括帐户名、客户端代码、租户ID或其他应用程序标识符。 |
-| `users` **（必需）** | 一个数组，其中包含至少一个用户的集合，您希望访问或删除其信息。 在单个请求中最多可提供1000个用户ID。 每个用户对象都包含以下信息： <ul><li>`key`:用于限定响应数据中的单独作业ID的标识符。 为此值选择唯一、易于识别的字符串是最佳做法，这样便可轻松引用或稍后查找。</li><li>`action`:一个数组，它列表对数据执行所需的操作。 对于选择退出销售请求，阵列必须仅包含该值 `opt-out-of-sale`。</li><li>`userIDs`:特定用户的身份集合。 单个用户可以拥有的身份数量限制为9个。 每个标识都包 `namespace`含一个、 `value`一个和一个命名空间限定符(`type`)。 有关这些 [必需属性的更多详细信息](appendix.md) ，请参阅附录。</li></ul> |
+| `users` **（必需）** | 一个数组，其中包含至少一个用户的集合，您希望访问或删除其信息。 在单个请求中最多可提供1000个用户ID。 每个用户对象都包含以下信息： <ul><li>`key`:用户的标识符，用于限定响应数据中的单独作业ID。 为此值选择唯一、易于识别的字符串是最佳做法，这样便可轻松引用或稍后查找。</li><li>`action`:一个数组，它列表对数据执行所需的操作。 对于选择退出销售请求，阵列必须仅包含该值 `opt-out-of-sale`。</li><li>`userIDs`:用户的身份集合。 单个用户可以拥有的身份数量限制为9个。 每个标识都包 `namespace`含一个、 `value`一个和一个命名空间限定符(`type`)。 有关这些 [必需属性的更多详细信息](appendix.md) ，请参阅附录。</li></ul> 有关和的更详细说明 `users` ，请参 `userIDs`阅疑难解答 [指南](../troubleshooting-guide.md#user-ids)。 |
 | `include` **（必需）** | 要包含在您的处理中的一系列Adobe产品。 如果此值缺失或为空，则请求将被拒绝。 仅包括您的组织与之集成的产品。 有关详细信息，请 [参阅附录中](appendix.md) “已接受的产品值”一节。 |
 | `expandIDs` | 一个可选属性，当设置为 `true`时，它表示处理应用程序中ID的优化（目前仅受Analytics支持）。 If omitted, this value defaults to `false`. |
 | `priority` | Adobe Analytics使用的可选属性，用于设置处理请求的优先级。 接受的值 `normal` 是和 `low`。 如果 `priority` 忽略，则默认行为为 `normal`。 |
