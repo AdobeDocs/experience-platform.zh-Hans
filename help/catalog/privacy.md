@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据湖中的隐私请求处理
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5f0e0deb4a2fae636ac4d2313a6541c25309c294
+source-git-commit: 409d98818888f2758258441ea2d993ced48caf9a
 
 ---
 
@@ -64,7 +64,6 @@ Adobe Experience Platform Privacy Service处理客户访问、销售或删除其
         "createdUser": "{USER_ID}",
         "updatedUser": "{USER_ID}",
         "viewId": "5d8e9cf5872f18164763f972",
-        "aspect": "production",
         "status": "enabled",
         "fileDescription": {
             "persisted": true,
