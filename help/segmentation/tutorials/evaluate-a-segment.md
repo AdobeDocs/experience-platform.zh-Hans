@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 评估区段
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: f5bc9beb59e83b0411d98d901d5055122a124d07
+source-git-commit: 8d77fc6c5b2824624ba308269f743a432a5288d2
 
 ---
 
@@ -504,8 +504,7 @@ curl -X POST \
         "persisted": true,
         "containerFormat": "parquet",
         "format": "parquet"
-    },
-    "aspect": "production"
+    }
 }'
 ```
 
@@ -603,7 +602,7 @@ curl -X POST \
 | `filter.segments.segmentNs` | *（可选）* ，给定的区段命名空间 `segmentID`。 |
 | `filter.segments.status` | *（可选）* ，提供状态过滤器的字符串数组 `segmentID`。 默认情况下， `status` 该值将表示 `["realized", "existing"]` 当前时间属于该区段的所有用户档案。 可能的值包括： `"realized"`、 `"existing"`和 `"exited"`。 |
 | `filter.segmentQualificationTime` | *（可选）* Filter based on segment qualification time. 可以提供开始时间和／或结束时间。 |
-| `filter.segmentQualificationTime.startTime` | *（可选）* ，给定状态的区段ID的区段资格开始时间。 未提供，将不对区段ID资格的开始时间进行筛选。 时间戳必须以 [RFC 3339格式提供](https://tools.ietf.org/html/rfc3339) 。 |
+| `filter.segmentQualificationTime.startTime` | *（可选）* ，给定状态的区段ID的区段资格开始时间。 它未提供，对于区段ID资格的开始时间将不存在过滤器。 时间戳必须以 [RFC 3339格式提供](https://tools.ietf.org/html/rfc3339) 。 |
 | `filter.segmentQualificationTime.endTime` | *（可选）* ，给定状态的区段ID的区段资格结束时间。 它未提供，在区段ID资格的结束时间上不会有过滤器。 时间戳必须以 [RFC 3339格式提供](https://tools.ietf.org/html/rfc3339) 。 |
 | `filter.fromIngestTimestamp` | *（可选）* 将导出的用户档案限制为仅包括在此时间戳后更新的那些。 时间戳必须以 [RFC 3339格式提供](https://tools.ietf.org/html/rfc3339) 。 |
 | `filter.fromIngestTimestamp` **用户档案**，如果提供 | 包括所有合并的用户档案，其中合并的更新时间戳大于给定时间戳。 支持操 `greater_than` 作数。 |
