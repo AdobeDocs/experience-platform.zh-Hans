@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 分段服务开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 38762fa57188ed018c4347c07765f3d09daef2e6
+source-git-commit: 3fbacf57d5f6741726cb54fb55eab05042046f49
 
 ---
 
@@ -40,7 +40,7 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->**注意：** 有关在Experience Platform中使用沙箱的更多信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>[!NOTE] 有关在Experience Platform中使用沙箱的更多信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
 
 <!-- ## Estimates
 
