@@ -4,7 +4,7 @@ seo-title: Experience Platform Launch扩展
 description: Launch 是 Adobe 推出的新一代标签管理功能。Launch 为客户提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标签。
 seo-description: Launch 是 Adobe 推出的新一代标签管理功能。Launch 为客户提供了一种简单的方式来部署和管理所有用来加强相关客户体验的分析、营销和广告标签。
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: 2a082dc46b50eba1a38eb9d6946e17f851b2fd3f
 
 ---
 
@@ -16,6 +16,12 @@ Experience Platform Launch 是 Adobe 推出的新一代标签管理功能。Laun
 有关Experience Platform Launch功能的介绍，请参阅以下资源：
 * Experience Platform Launch [documentation](https://docs.adobe.com/content/help/zh-Hans/launch/using/overview.translate.html)
 * 体验平台启动 [快速开始视频](https://docs.adobe.com/content/help/en/launch/using/intro/get-started/videos.html)。 开始 [Experience Platform Launch](https://www.youtube.com/embed/rwqqkG1SERU) and [Publishing流程概述](https://helpx.adobe.com/cn/analytics/how-to/adobe-launch-publishing-process.html)，然后转到下一个概念。
+
+## 如何在Adobe实时CDP界面中查找Launch扩展
+
+要在Adobe实时CDP界面中查找Launch扩展，请浏览到筛选器并 **[!UICONTROL Destinations > Catalog]** 在筛选 **[!UICONTROL Extensions]** 器中进行 **[!UICONTROL Types]** 选择。
+
+![界面中的扩展过滤器](/help/rtcdp/destinations/assets/extensions-filter.png)
 
 ## Launch扩展的工作方式
 
