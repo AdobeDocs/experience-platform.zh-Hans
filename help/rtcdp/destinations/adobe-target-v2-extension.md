@@ -4,12 +4,12 @@ seo-title: Adobe Target v2 扩展
 description: Adobe目标v2扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 seo-description: null
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: 51963edad2f903a4a91e1b7c5114bf81323346bc
 
 ---
 
 
-# Adobe目标v2扩展(#adobe-目标-v2-扩展)
+# Adobe Target v2 扩展 {#adobe-target-v2-extension}
 
 ## 概述 {#overview}
 
