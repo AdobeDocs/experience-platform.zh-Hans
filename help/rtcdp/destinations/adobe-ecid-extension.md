@@ -4,7 +4,7 @@ seo-title: Experience Cloud ID 服务扩展
 description: Experience Cloud ID服务扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 seo-description: Experience Cloud ID服务扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: 4b021ce8fd81708fac5de7508cd19d99295634d9
 
 ---
 
@@ -18,6 +18,8 @@ source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
 Experience Cloud ID服务是Adobe实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参阅 [Experience Platform Launch文档中的](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/id-service-extension/overview.html) Experience Cloud ID服务扩展页。
 
 此目标是Experience Platform Launch扩展。 有关Launch扩展在Adobe实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+
+![Adobe ECID扩展](/help/rtcdp/destinations/assets/adobe-ecid-extension.png)
 
 
 ## 先决条件 {#prerequisites}
