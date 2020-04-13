@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform可观性洞察
 topic: overview
 translation-type: tm+mt
-source-git-commit: 947955403a270914437d9172bca458f9c49ccd8f
+source-git-commit: d349ffab7c0de72d38b5195585c14a4a8f80e37c
 
 ---
 
@@ -13,7 +13,7 @@ source-git-commit: 947955403a270914437d9172bca458f9c49ccd8f
 
 可观性洞察是一个RESTful API，它允许您在Adobe Experience Platform中显示关键的可观性指标。 这些指标提供平台使用统计数据、平台服务运行状况检查、历史趋势以及各种平台功能的绩效指标的洞察。
 
-此文档演示了对Oncebility Insights API的示例调用，并提供了与服务兼容的公开指标的列表。 有关可观性端点的完整列表，请参阅可观 [性洞察API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/observability-insights.yaml)。
+此文档演示了对Opencibility Insights API的示例调用。 有关可观性端点的完整列表，请参阅可观 [性洞察API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/observability-insights.yaml)。
 
 ## 入门指南
 
@@ -23,11 +23,9 @@ source-git-commit: 947955403a270914437d9172bca458f9c49ccd8f
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台API的所有请求都需要一个头，它指定操作将在其中进行的沙箱的名称。 有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../sandboxes/home.md)。
 
 * x-sandbox-name: `{SANDBOX_NAME}`
-
->[!NOTE] 有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../sandboxes/home.md)。
 
 ## 检索可观测性指标
 
@@ -48,7 +46,7 @@ GET /metrics?metric={METRIC}&metric={METRIC_2}&id={ID}&dateRange={DATE_RANGE}
 | 参数 | 描述 |
 | --- | --- |
 | `{METRIC}` | 要公开的度量。 在单次调用中组合多个指标时，必须使用“和号”(`&`)分隔单个指标。 例如：`metric={METRIC_1}&metric={METRIC_2}`。 |
-| `{ID}` | 要公开其度量的特定平台资源的标识符。 此ID可能是可选的、必需的或不适用的，具体取决于所使用的度量。 有关可用度量的列表以及每个度量的受支持ID（必需和可选），请参阅以下可用度量的参考 [文档](metrics.md) 。 |
+| `{ID}` | 要公开其度量的特定平台资源的标识符。 此ID可能是可选的、必需的或不适用的，具体取决于所使用的度量。 有关可用度量的列表以及每个度量的受支持ID（必需和可选），请参阅可用度量的参考 [文档](metrics.md)。 |
 | `{DATE_RANGE}` | 要公开的指标的日期范围，ISO 8601格式(例如 `2018-10-01T07:00:00.000Z/2018-10-09T07:00:00.000Z`)。 |
 
 **请求**
