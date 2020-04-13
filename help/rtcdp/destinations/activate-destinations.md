@@ -4,7 +4,7 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
+source-git-commit: 2eddd5bb7b62dcc414ad906647b05ce10c766ac6
 
 ---
 
@@ -28,7 +28,14 @@ source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
 5. *视情况而定*. 此步骤仅适用于映射到电子邮件营销目标的区段。 <br> 在页 **[!UICONTROL Destination Attributes]** 面上，选 **[!UICONTROL Add new field]** 择并选择要发送到目标的属性。
 我们建议其中一个属性作为合并 [模式的唯一标识符](/help/rtcdp/destinations/email-marketing-destinations.md#identity) 。 有关必选属性的详细信息，请参阅电子邮件营销目标 [文章中的标识](/help/rtcdp/destinations/email-marketing-destinations.md#identity) 。
    ![destination-attributes](/help/rtcdp/destinations/assets/destination-attributes.png)
-6. 在该页 **[!UICONTROL Schedule]** 面上，您可以看到向目标发送数据的开始日期以及向目标发送数据的频率。
+6. 在该页 **[!UICONTROL Segment schedule]** 面上，您可以看到向目标发送数据的开始日期以及向目标发送数据的频率。
+
+   >[!IMPORTANT]
+   >
+   >对于社交目标，您必须在此步骤中选择受众的来源。 只有在选择下图中的选项之一后，才能继续执行下一步。
+
+   ![选择数据来源](/help/rtcdp/destinations/assets/choose-data-origin.png)
+
 7. 在页 **[!UICONTROL Review]** 面上，您可以看到所选内容的摘要。 选 **[!UICONTROL Cancel]** 择以分解流、修 **[!UICONTROL Back]** 改设置或确认您的选择 **[!UICONTROL Finish]** 并开始将数据发送到目标。
 
 ![确认选择](/help/rtcdp/destinations/assets/confirm-selection.png)
@@ -60,6 +67,10 @@ Salesforce_id3544_20191122124530.csv
 ### 广告目标
 
 检查您要激活数据的相应广告目标。 如果激活成功，则受众会填充到您的广告平台中。
+
+### 社交网络目标
+
+对于Facebook，成功的激活意味着将在 [Facebook Ads Manager中有计划地创建Facebook自定义受众](https://www.facebook.com/adsmanager/manage/)。 由于用户对已激活的区段具有资格或取消资格，因此将添加和删除受众中的区段成员资格。
 
 ## 禁用激活 {#disable-activation}
 
