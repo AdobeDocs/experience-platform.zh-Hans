@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 可用指标
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a988c990d3d4df706a44cdbc82f77bef20c2ea1
+source-git-commit: ff299a69a81f00cad3e90a83f7411e4b15d4f850
 
 ---
 
@@ -18,7 +18,7 @@ source-git-commit: 6a988c990d3d4df706a44cdbc82f77bef20c2ea1
 下表概述了Adobe Experience Platform数据摄取的指标。 粗体量 **度是流** 式摄取量度。
 
 | 洞察指标 | 描述 | ID查询参数 |
-| ---- | ---- | ---- | ---- |
+| ---- | ---- | ---- |
 | timeseries.ingestion.dataset.new.count | 创建的数据集总数。 | 不适用 |
 | timeseries.ingestion.dataset.size | 为一个或多个数据集摄取的所有数据的累积大小。 | 数据集ID（可选） |
 | timeseries.ingestion.dataset.dailysize | 针对一个数据集或所有数据集，以每日使用情况为基准摄取的数据大小。 | 数据集ID（可选） |
@@ -46,7 +46,7 @@ source-git-commit: 6a988c990d3d4df706a44cdbc82f77bef20c2ea1
 下表概述了Adobe Experience Platform Identity Service的指标。
 
 | 洞察指标 | 描述 | ID查询参数 |
-| ---- | ---- | ---- | ---- |
+| ---- | ---- | ---- |
 | timeseries.identity.dataset.recordsuccess.count | 由Identity Service为一个数据集或所有数据集写入其数据源的记录数。 | 数据集ID（可选） |
 | timeseries.identity.dataset.recordfailed.count | Identity Service为一个数据集或所有数据集失败的记录数。 | 数据集ID（可选） |
 | timeseries.identity.dataset.namespacecode.recordsuccess.count | 为命名空间成功摄取的身份记录数。 | 命名空间ID(**必需**) |
@@ -62,7 +62,7 @@ source-git-commit: 6a988c990d3d4df706a44cdbc82f77bef20c2ea1
 下表概述了Adobe Experience Platform隐私服务的指标。
 
 | 洞察指标 | 描述 | ID查询参数 |
-| ---- | ---- | ---- | ---- |
+| ---- | ---- | ---- |
 | timeseries.gdpr.jobs.totaljobs.count | 从GDPR创建的作业总数。 | ENV(必&#x200B;**需**) |
 | timeseries.gdpr.jobs.completedjobs.count | GDPR中已完成的作业总数。 | ENV(必&#x200B;**需**) |
 | timeseries.gdpr.jobs.errorjobs.count | GDPR中的错误作业总数。 | ENV(必&#x200B;**需**) |
@@ -72,7 +72,7 @@ source-git-commit: 6a988c990d3d4df706a44cdbc82f77bef20c2ea1
 下表概述了Adobe Experience Platform查询服务的指标。
 
 | 洞察指标 | 描述 | ID查询参数 |
-| ---- | ---- | ---- | ---- |
+| ---- | ---- | ---- |
 | timeseries.queryservice.query.scheduleonce.count | 非经常性计划查询总数。 | 不适用 |
 | timeseries.queryservice.query.scheduledrecurring.count | 重复计划查询的总数。 | 不适用 |
 | timeseries.queryservice.query.batchquery.count | 执行批查询总数。 | 不适用 |
@@ -85,7 +85,7 @@ source-git-commit: 6a988c990d3d4df706a44cdbc82f77bef20c2ea1
 下表概述了实时客户用户档案的指标。
 
 | 洞察指标 | 描述 | ID查询参数 |
-| ---- | ---- | ---- | ---- |
+| ---- | ---- | ---- |
 | timeseries.profiles.dataset.recordread.count | 按用户档案、一个数据集或所有数据集从数据湖读取的记录数。 | 数据集ID（可选） |
 | timeseries.profiles.dataset.recordsuccess.count | 按用户档案、一个数据集或所有数据集写入其数据源的记录数。 | 数据集ID（可选） |
 | timeseries.profiles.dataset.recordfailed.count | 按用户档案、一个数据集或所有数据集失败的记录数。 | 数据集ID（可选） |
