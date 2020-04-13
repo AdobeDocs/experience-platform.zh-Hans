@@ -4,7 +4,7 @@ seo-title: DoubleClick Floodlight（测试版）扩展
 description: DoubleClick Floodlight（测试版）扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 seo-description: DoubleClick Floodlight（测试版）扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
 
 ---
 
@@ -18,6 +18,8 @@ source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
 DoubleClick Floodlight（测试版）是Adobe实时客户数据平台中的一个广告扩展。 有关扩展功能的详细信息，请参阅DoubleClick Floodlight的Google支持 [文档](https://support.google.com/dcm/answer/2823388?hl=en)。
 
 此目标是Experience Platform Launch扩展。 有关Launch扩展在Adobe实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+
+![双击Floodlight扩展](assets/doubleclick-floodlight-extension.png)
 
 ## 先决条件 {#prerequisites}
 
