@@ -4,7 +4,7 @@ seo-title: 目标概述
 description: 目标是预建的与目标平台的集成，允许从实时客户数据平台无缝激活数据。 您可以使用Adobe实时客户数据平台中的目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 seo-description: 目标是预建的与目标平台的集成，允许从实时客户数据平台无缝激活数据。 您可以使用Adobe实时客户数据平台中的目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 translation-type: tm+mt
-source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
+source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
 
 ---
 
@@ -33,28 +33,14 @@ source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 * 创建、编辑、激活和禁用数据流至目录中的目标；
 * 在存储位置创建一个帐户或将实时CDP链接到目标平台中的帐户；
 * 选择应激活到目标的区段；
-* 在将区段 [激活到电子邮件营销目标时](../../xdm/home.md) ，选择要导出的体验数据模型(XDM)字段。
+* 在将区段 [激活到电子邮件营销目标时](https://www.adobe.io/apis/experienceplatform/home/xdm/xdmservices.html#!api-specification/markdown/narrative/technical_overview/schema_registry/xdm_system/xdm_system_in_experience_platform.md) ，选择要导出的体验数据模型(XDM)字段。
 
-## 目标类型和类别-视频概述
+## 目标类型和类别
 
-在Adobe实时CDP中，有两种目标类型：用户档案导出目标和区段导出目标。 以下视频介绍了两种目标类型。
-
->[!VIDEO](https://video.tv.adobe.com/v/29707?quality=12)
-
-### 用户档案导出目标
-
-用户档案导出目标生成包含用户档案和／或属性的文件。 这些目标使用原始数据，通常以电子邮件地址作为主要密钥。
-
-### 区段导出目标
-
-区段导出目标会发送用户档案及其符合条件的区段。 这些目标使用区段ID或用户ID。
-
-### 目标类别
-
-目标目录中的目 [标按目标类别](/help/rtcdp/destinations/destinations-catalog.md) (**Advertising**、 **Cloud存储**、Email Marketing ****)进行分组。 有关每个目标的详细信息，请参阅目 [标目录](/help/rtcdp/destinations/destinations-catalog.md)。
+有关详细信息，请参阅目 [标类型和类别概述](/help/rtcdp/destinations/destination-types.md)。
 
 ## 目标和访问控制
 
-实时CDP中的目标功能与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以视图、管理和激活目标。 有关各个权限的信息，请参 [阅Adobe Experience Platform中的访问控制](../../access-control/home.md) ，然后向下滚动到页面底部。
+实时CDP中的目标功能与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以视图、管理和激活目标。 有关各个权限的信息，请参 [阅Adobe Experience Platform中的访问控制](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-overview.md) ，然后向下滚动到页面底部。
 
-有关访问控制的详细信息，请参阅 [访问控制用户指南](../../access-control/ui/overview.md)。
+有关访问控制的详细信息，请参阅 [访问控制用户指南](https://www.adobe.io/apis/experienceplatform/home/permissions-and-sandboxes/permissions-and-sandboxes.html#!api-specification/markdown/narrative/technical_overview/access-control/access-control-user-guide.md)。
