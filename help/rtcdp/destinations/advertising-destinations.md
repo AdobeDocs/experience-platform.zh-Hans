@@ -4,7 +4,7 @@ seo-title: 广告目标
 description: 将您的实时客户数据平台连接到第三方广告平台（如DSP、广告网络、SSP），并与这些平台共享假名受众。
 seo-description: 将您的实时客户数据平台连接到第三方广告平台（如DSP、广告网络、SSP），并与这些平台共享假名受众。
 translation-type: tm+mt
-source-git-commit: 2eddd5bb7b62dcc414ad906647b05ce10c766ac6
+source-git-commit: 4b021ce8fd81708fac5de7508cd19d99295634d9
 
 ---
 
@@ -18,8 +18,8 @@ source-git-commit: 2eddd5bb7b62dcc414ad906647b05ce10c766ac6
 目前，实时CDP支持下面列出的广告目标。 有关如何连接到这些目标的信息，请参阅各个链接：
 
 * [Adobe Advertising Cloud（Experience Platform Launch扩展）](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
-* [Awin广告转换标签（Experience Platform Launch扩展）](/help/rtcdp/destinations/awin-conversiontag-extension.md)
-* [Awin广告Mastertag（Experience Platform Launch扩展）](/help/rtcdp/destinations/awin-mastertag-extension.md)
+* [Awin广告转化标签（Experience Platform Launch扩展）](/help/rtcdp/destinations/awin-conversiontag-extension.md)
+* [Awin Advertising Mastertag（Experience Platform Launch扩展）](/help/rtcdp/destinations/awin-mastertag-extension.md)
 * [Beemray（Experience Platform Launch扩展）](beemray-extension.md)
 * [Bing Ads通用事件跟踪（Experience Platform Launch扩展）](/help/rtcdp/destinations/bing-ads-extension.md)
 * [分支（Experience Platform Launch扩展）](/help/rtcdp/destinations/branch-extension.md)
