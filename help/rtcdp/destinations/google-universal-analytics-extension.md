@@ -4,7 +4,7 @@ seo-title: Google Universal Analytics扩展
 description: Google Universal Analytics扩展是Adobe Real-time Customer Data Platform中的一个分析目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 seo-description: Google Universal Analytics扩展是Adobe Real-time Customer Data Platform中的一个分析目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
 
 ---
 
@@ -18,6 +18,8 @@ Google Universal Analytics可让您衡量广告投资回报，并跟踪Flash、�
 Google Universal Analytics是Adobe Real-time Customer Data Platform中的分析扩展。 有关扩展功能的详细信息，请参阅 [Adobe Exchange上的扩展页](https://exchange.adobe.com/experiencecloud.details.102829.google-universal-analytics.html)。
 
 此目标是Experience Platform Launch扩展。 有关Launch扩展在Adobe实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+
+![Google Universal Analytics扩展](/help/rtcdp/destinations/assets/google-universal-analytics-extension.png)
 
 
 ## 先决条件 {#prerequisites}
