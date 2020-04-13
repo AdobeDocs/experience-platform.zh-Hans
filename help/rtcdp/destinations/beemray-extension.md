@@ -4,7 +4,7 @@ seo-title: Beemray扩展
 description: Beemray扩展是Adobe实时客户数据平台中的一个个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 seo-description: Beemray扩展是Adobe实时客户数据平台中的一个个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: 2a94444b35cac0c002d729798d96fd54aaafbacd
 
 ---
 
@@ -18,6 +18,8 @@ Beemray可帮助您利用情境情境加速产品。 使您能够获得洞察、
 Beemray是Adobe实时客户数据平台中的一个个性化扩展。 有关扩展功能的详细信息，请参阅 [Adobe Exchange上的扩展页](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html)。
 
 此目标是Experience Platform Launch扩展。 有关Launch扩展在Adobe实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+
+![Beemray扩展](assets/beemray-extension.png)
 
 ## 先决条件 {#prerequisites}
 
