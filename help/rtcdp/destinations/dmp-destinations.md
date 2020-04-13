@@ -1,0 +1,18 @@
+---
+title: 数据管理平台(DMP)目标
+seo-title: 数据管理平台(DMP)目标
+description: 数据管理平台(DMP)使广告商、出版商和代理商能够构建独特的受众用户档案，识别其最有价值的细分，并跨任何数字渠道使用它们。 这使您能够创建真正的360视图消费者用户档案，构建并激活有意义的受众。
+seo-description: 数据管理平台(DMP)使广告商、出版商和代理商能够构建独特的受众用户档案，识别其最有价值的细分，并跨任何数字渠道使用它们。 这使您能够创建真正的360视图消费者用户档案，构建并激活有意义的受众。
+translation-type: tm+mt
+source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+
+---
+
+
+# 数据管理平台(DMP)目标 {#dmp-destinations}
+
+数据管理平台(DMP)使广告商、出版商和代理商能够构建独特的受众用户档案，识别其最有价值的细分，并跨任何数字渠道使用它们。 这使您能够创建真正的360视图消费者用户档案，构建并激活有意义的受众。
+
+目前，Adobe实时客户数据平台支持下列数据管理平台(DMP)目标。 有关如何连接到这些目标的信息，请参阅各个链接：
+
+* [受众管理器DIL（Experience Platform Launch扩展）](/help/rtcdp/destinations/aam-dil-extension.md)
