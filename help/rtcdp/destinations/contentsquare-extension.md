@@ -4,7 +4,7 @@ seo-title: Contentsquare扩展
 description: Contentsquare扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 seo-description: Contentsquare扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
 
 ---
 
@@ -18,6 +18,8 @@ source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
 Contentsquare是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅 [Adobe Exchange上的扩展页](https://exchange.adobe.com/experiencecloud.details.100364.html)。
 
 此目标是Experience Platform Launch扩展。 有关Launch扩展在Adobe实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+
+![Contentsquare扩展](assets/contentsquare-extension.png)
 
 
 ## 先决条件 {#prerequisites}
