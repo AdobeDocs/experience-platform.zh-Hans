@@ -4,7 +4,7 @@ seo-title: 分支扩展
 description: 分支扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 seo-description: 分支扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: 2a94444b35cac0c002d729798d96fd54aaafbacd
 
 ---
 
@@ -18,6 +18,8 @@ Branch提供强大的链接和解决方案，帮助您跨所有设备、渠道�
 Branch是Adobe实时客户数据平台中的一个广告扩展。 有关扩展功能的详细信息，请参阅 [Branch网站上的](https://branch.io/features/) “功能”页。
 
 此目标是Experience Platform Launch扩展。 有关Launch扩展在Adobe实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+
+![分支扩展](assets/branch-extension.png)
 
 ## 先决条件 {#prerequisites}
 
