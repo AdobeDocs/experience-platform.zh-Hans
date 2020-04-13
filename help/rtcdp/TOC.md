@@ -3,7 +3,7 @@ product: adobe experience platform
 audience: user
 user-guide-title: 实时客户数据平台帮助
 translation-type: tm+mt
-source-git-commit: 51963edad2f903a4a91e1b7c5114bf81323346bc
+source-git-commit: ee2a490ebc802684a0761dc6589d6b30defc0398
 
 ---
 
@@ -133,7 +133,6 @@ source-git-commit: 51963edad2f903a4a91e1b7c5114bf81323346bc
    * [区段生成器指南](segmentation/segment-builder-guide.md)
 * 来源 {#sources}
    * [源概述](sources/sources-overview.md)
-   * [源教程](sources/sources-tutorials.md)
    * [使用Adobe Launch实施网站标记](sources/launch.md)
-* [发行说明](https://www.adobe.io/apis/experienceplatform/home/services/release-notes.html#!end-user/markdown/release-notes/release-notes.md)
-* [术语表](https://www.adobe.io/apis/experienceplatform/home/services/acp-glossary.html)
+* [发行说明](https://www.adobe.com/go/platform-release-notes-en)
+* [术语表](https://www.adobe.com/go/platform-glossary-en)
