@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: April 7, 2020
 author: ens71067
 translation-type: tm+mt
-source-git-commit: 7335a258a53d2685933b401dc4cd00bb60aa6c07
+source-git-commit: 61b2df88bfe8cadd975eaa0b98872710aa3832d3
 
 ---
 
@@ -33,6 +33,22 @@ DULE框架通过Experience Platform用户界面和DULE Policy Service API简化�
 * 无.
 
 有关详细信息，请参阅数 [据管理概述](../../data-governance/home.md)。
+
+
+## 目标
+
+在 [Adobe实时客户数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台的集成，这些平台可以无缝地向这些合作伙伴激活数据。
+
+### 新目标
+
+Adobe实时CDP现在支持对超过50个Experience Cloud Launch扩展的数据激活，支持分析、个性化和其他使用案例。 有关详细信息，请参阅以下内容：
+
+| 文档 | 描述 |
+|--- | ---|
+| [目标类型和类别](/help/rtcdp/destinations/destination-types.md) | 本文解释了Adobe实时CDP界面中的连接和扩展之间的区别，并建议何时使用这些目标。 |
+| [Experience Platform Launch扩展](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | 本页介绍Launch扩展是什么，列表使用这些扩展的用例，以及Adobe实时CDP中每个Launch扩展的文档链接。 |
+
+有关详细信息，请参阅目 [标概述](/help/rtcdp/destinations/destinations-overview.md)。
 
 ## 智能服务
 
