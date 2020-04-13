@@ -4,7 +4,7 @@ seo-title: KickFire扩展
 description: KickFire扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 seo-description: KickFire扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
 
 ---
 
@@ -18,6 +18,8 @@ KickFire的IP地址智能和B2B Firmographic数据使您能够将IP地址转换�
 KickFire是Adobe实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参 [阅Kickfire网站](https://www.kickfire.com/)。
 
 此目标是Experience Platform Launch扩展。 有关Launch扩展在Adobe实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+
+![Kickfire扩展](/help/rtcdp/destinations/assets/kickfire-extension.png)
 
 ## 先决条件 {#prerequisites}
 
