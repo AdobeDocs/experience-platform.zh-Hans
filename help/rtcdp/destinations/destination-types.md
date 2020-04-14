@@ -4,7 +4,7 @@ seo-title: 目标类型和类别
 description: '在Adobe实时客户数据平台中，用户档案/细分导出目标可捕获事件数据，将其与其他数据源组合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到多种类型的目标。 '
 seo-description: 在Adobe实时客户数据平台中，用户档案/细分导出目标可捕获事件数据，将其与其他数据源组合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到多种类型的目标。
 translation-type: tm+mt
-source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
+source-git-commit: bc3f57d636c363c94555b2a779f5bb98a9eca13f
 
 ---
 
@@ -23,7 +23,7 @@ source-git-commit: bfcbc56f05fa1c3b5fafd57b1166e50130b6007d
 
 ### 连接
 
-**用户档案Adobe实时客** 户数据平台中的导出和细分导出目标捕获事件数据，将其与其他数据源相结合以形成实时客户用户档案 ****[](https://docs.adobe.com/content/help/en/experience-platform/profile/home.html)，应用细分并将细分和合格用户档案导出到目标。
+**用户档案Adobe实时客** 户数据平台中的导出和细分导出目标捕获事件数据，将其与其他数据源相结合以形成实时客户用户档案 ****[](/help/profile/home.md)，应用细分并将细分和合格用户档案导出到目标。
 
 <br> 
 
@@ -68,7 +68,7 @@ Adobe实时CDP利用Experience Platform Launch的强大功能和灵活性，将L
 
 ## 目标类别
 
-目标目录中的目标和扩展按目标类别 [(](https://platform.adobe.com/destination/catalog) Advertising **、************** Cloud存储平台、调查平台、电子邮件营销等)进行分组，具体取决于您所实现的营销使用案例。 有关每个类别以及每个类别中包含的目标的详细信息，请参阅目标目 [录文档](/help/rtcdp/destinations/destinations-catalog.md)。
+目标目录中的连接和扩展按目标类别 [(](https://platform.adobe.com/destination/catalog) Advertising **、************** Cloud存储平台、调查平台、Email MarketingMarketingComplate等)进行分组，具体取决于您所实现的营销使用案例。 有关每个类别以及每个类别中包含的目标的详细信息，请参阅目标目 [录文档](/help/rtcdp/destinations/destinations-catalog.md)。
 
-![目标类别](/help/rtcdp/destinations/assets/destination-categories.png)
+![目标类别](/help/rtcdp/destinations/assets/destination-categories-menu.png)
 
