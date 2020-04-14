@@ -6,7 +6,7 @@ last-update: April 13, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: f90da5067121f7e00fd26a4dd5462cf567a7b09d
+source-git-commit: dc1c9b7dd9ff4c8b20de96e4ee123d90be4580cc
 
 ---
 
@@ -14,6 +14,28 @@ source-git-commit: f90da5067121f7e00fd26a4dd5462cf567a7b09d
 # Adobe Experience Platform 发行说明
 
 ## 发行日期：2020 年 4 月 8 日
+
+## 体验数据模型(XDM)系统
+
+标准化和互操作性是Experience Platform的主要概念。 Adobe推动的体验数据模型(XDM)旨在标准化客户体验数据并定义客户体验管理模式。
+
+XDM是一个公开的规范，旨在提高数字体验的强大功能。 它为与Adobe Experience Platform上的服务通信的任何应用程序提供了通用结构和定义。 通过遵守XDM标准，所有客户体验数据都可以整合到以更快、更集成的方式提供洞察的共同表现形式中。 您可以从客户行动中获得宝贵的洞察，通过细分定义客户受众，并将客户属性用于个性化目的。
+
+### 新增功能
+
+| 功能 | 描述 |
+| --- | --- |
+| 自动替代显示信息 | 模式注册表自动应用在描述符中配置的自定义标题和描述 `alternateDisplayInfo` 值。 |
+| 标量字段限制 | 模式注册表不允许在单个模式中超过6000个标量字段。 |
+| 性能检查 | 模式登记处经过全面改革，以更好地执行和满足体验平台的需求。 |
+
+**错误修复**
+
+* 将XDM更新为XED，转换为XDM，支持标准XDM中嵌套URI字段的更简洁的XED格式。
+
+**已知问题**
+
+* 已知
 
 ## 数据管理
 
