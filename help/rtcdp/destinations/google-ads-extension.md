@@ -4,12 +4,12 @@ seo-title: Google广告扩展
 description: Google Ads扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 seo-description: Google Ads扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
 translation-type: tm+mt
-source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
+source-git-commit: 98c3356db178507e0a8d94b47030e9490e721e46
 
 ---
 
 
-# Google广告目标
+# Google广告扩展
 
 ## 概述 {#overview}
 
@@ -19,7 +19,7 @@ Google Ads是Adobe实时客户数据平台中的一个广告扩展。 有关扩�
 
 此目标是Experience Platform Launch扩展。 有关Launch扩展在Adobe实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
-![Google广告扩展](/help/rtcdp/destinations/assets/google-ads-extension.png)
+![Google广告扩展](/help/rtcdp/destinations/assets/google-extension-2.png)
 
 ## 先决条件 {#prerequisites}
 
