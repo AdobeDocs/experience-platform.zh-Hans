@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案API开发人员指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: 5aad9fa71051a58fe1c4678553f47077d81d23fc
+source-git-commit: 21935bb36d8c2a0ef17e586c0909cf316ef026cf
 
 ---
 
@@ -418,7 +418,7 @@ curl -X POST \
 
 有关组 [成合并策略的各个元素的详细信息](#components-of-merge-policies) ，请参阅本文档开头的合并策略组件部分。
 
-## 更新合并策略
+## 更新合并策略 {#update}
 
 您可以通过编辑单个属性(PATCH)或用新属性(PUT)覆盖整个合并策略来修改现有的合并策略。 各示例如下。
 
