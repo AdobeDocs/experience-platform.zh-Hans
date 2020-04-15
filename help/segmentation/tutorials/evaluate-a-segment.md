@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 评估区段
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 8d77fc6c5b2824624ba308269f743a432a5288d2
+source-git-commit: 21935bb36d8c2a0ef17e586c0909cf316ef026cf
 
 ---
 
@@ -93,7 +93,7 @@ curl -X POST \
 | `type` | **（必需）** ，以字符串格式表示的作业类型。 支持的类型有 `batch_segmentation` 和 `export`。 |
 | `properties` | **（必需）** ，包含与计划相关的其他属性的对象。 |
 | `properties.segments` | **(等于时需`type`要)`batch_segmentation`** “使用” `["*"]` 可确保包括所有区段。 |
-| `schedule` | **（必需）** ，包含作业计划的字符串。 作业只能计划为每天运行一次，这意味着您不能将作业计划为在24小时内运行多次。 显示的示例(`0 0 1 * * ?`)是指每天在UTC 1:00:00时触发作业。 有关详细信息，请查看cron [表达式格式文档](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) 。 |
+| `schedule` | **（必需）** ，包含作业计划的字符串。 作业只能计划为每天运行一次，这意味着您不能将作业计划为在24小时内运行多次。 显示的示例(`0 0 1 * * ?`)是指每天1:00:00 UTC时触发作业。 有关详细信息，请查看cron [表达式格式文档](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) 。 |
 | `state` | *（可选）包含计划状态的字符串* 。 可用值： `active` 和 `inactive`。 默认值为 `inactive`。IMS组织只能创建一个计划。 更新计划的步骤将在本教程的稍后部分提供。 |
 
 **响应**
@@ -452,7 +452,7 @@ curl -X GET \
 
 如果您知道要访问的特定用户档案，则可以使用实时客户用户档案API进行访问。 使用用户档案API教程访问实时客户用户档案数据中 [提供了访问各个用户档案的完整步骤](../../profile/api/entities.md) 。
 
-## 导出区段
+## 导出区段 {#export}
 
 分段作业成功完成后(属性的值为 `status` “SUCCEEDED”)，您可以将受众导出到可在其中访问和执行操作的数据集。
 
@@ -602,7 +602,7 @@ curl -X POST \
 | `filter.segments.segmentNs` | *（可选）* ，给定的区段命名空间 `segmentID`。 |
 | `filter.segments.status` | *（可选）* ，提供状态过滤器的字符串数组 `segmentID`。 默认情况下， `status` 该值将表示 `["realized", "existing"]` 当前时间属于该区段的所有用户档案。 可能的值包括： `"realized"`、 `"existing"`和 `"exited"`。 |
 | `filter.segmentQualificationTime` | *（可选）* Filter based on segment qualification time. 可以提供开始时间和／或结束时间。 |
-| `filter.segmentQualificationTime.startTime` | *（可选）* ，给定状态的区段ID的区段资格开始时间。 它未提供，对于区段ID资格的开始时间将不存在过滤器。 时间戳必须以 [RFC 3339格式提供](https://tools.ietf.org/html/rfc3339) 。 |
+| `filter.segmentQualificationTime.startTime` | *（可选）* ，给定状态的区段ID的区段资格开始时间。 未提供，将不对区段ID资格的开始时间进行筛选。 时间戳必须以 [RFC 3339格式提供](https://tools.ietf.org/html/rfc3339) 。 |
 | `filter.segmentQualificationTime.endTime` | *（可选）* ，给定状态的区段ID的区段资格结束时间。 它未提供，在区段ID资格的结束时间上不会有过滤器。 时间戳必须以 [RFC 3339格式提供](https://tools.ietf.org/html/rfc3339) 。 |
 | `filter.fromIngestTimestamp` | *（可选）* 将导出的用户档案限制为仅包括在此时间戳后更新的那些。 时间戳必须以 [RFC 3339格式提供](https://tools.ietf.org/html/rfc3339) 。 |
 | `filter.fromIngestTimestamp` **用户档案**，如果提供 | 包括所有合并的用户档案，其中合并的更新时间戳大于给定时间戳。 支持操 `greater_than` 作数。 |
