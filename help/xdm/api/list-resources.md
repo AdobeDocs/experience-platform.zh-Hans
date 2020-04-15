@@ -4,33 +4,27 @@ solution: Experience Platform
 title: 列表资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1541b027a4e572dc5e4e64de1117a269c58bafab
+source-git-commit: fe7b6acf86ebf39da728bb091334785a24d86b49
 
 ---
 
 
 # 列表资源
 
-您可以通过执行单个GET请求来视图容器中所有资源(模式、类、混合或数据类型)的列表。 为了帮助筛选结果，模式注册表支持在列出资源时使用查询参数。
-
-最常见的查询参数包括：
-
-* `limit` -限制返回的资源数。 示例：将 `limit=5` 返回一列表五项资源。
-* `orderby` -按特定属性对结果排序。 示例：将 `orderby=title` 按标题按升序(A-Z)对结果排序。 在标题( `-` )之前添`orderby=-title`加一个选项将按标题按降序(Z-A)对项目进行排序。
-* `property` -对任何顶级属性筛选结果。 例如，仅 `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` 返回与XDM Individual用户档案类兼容的混音。
-
-组合多个查询参数时，必须用&amp;符号(`&`)分隔。
+您可以通过执行单个GET请求来视图容器中所有资源(模式、类、混合或数据类型)的列表。
 
 **API格式**
 
 ```http
 GET /{CONTAINER_ID}/{RESOURCE_TYPE}
+GET /{CONTAINER_ID}/{RESOURCE_TYPE}?{QUERY_PARAMS}
 ```
 
 | 参数 | 描述 |
 | --- | --- |
 | `{CONTAINER_ID}` | 资源所在的容器（“全局”或“租户”）。 |
 | `{RESOURCE_TYPE}` | 要从模式库检索的资源类型。 有效类 `datatypes`型有 `mixins`、 `schemas`和 `classes`。 |
+| `{QUERY_PARAMS`} | 可选查询参数，用于筛选结果。 有关详细信息，请 [参阅查询](#query) 参数一节。 |
 
 **请求**
 
@@ -73,3 +67,36 @@ curl -X GET \
   ]
 }
 ```
+
+## 使用查询参数 {#query}
+
+模式注册表支持在列出资源时使用查询参数进行页面和筛选结果。
+
+>[!NOTE] 组合多个查询参数时，必须用&amp;符号(`&`)分隔。
+
+### 分页
+
+用于分页的最常见的查询参数包括：
+
+| 参数 | 描述 |
+| --- | --- |
+| `start` | 指定列出的结果的起点。 示例：将 `start=2` 从第三个返回项目开始列表结果。 |
+| `limit` | 限制返回的资源数。 示例：将 `limit=5` 返回一列表五项资源。 |
+| `orderby` | 按特定属性对结果排序。 示例：将 `orderby=title` 按标题按升序(A-Z)对结果排序。 在标题( `-` )之前添`orderby=-title`加一个选项将按标题按降序(Z-A)对项目进行排序。 |
+
+### 筛选
+
+您可以使用参数筛选结果，该参 `property` 数用于对检索的资源中的给定JSON属性应用特定的运算符。 支持的运算符包括：
+
+| 运算符 | 描述 | 示例 |
+| --- | --- | --- |
+| `==` | 过滤器是否等于提供的值。 | `property=title==test` |
+| `!=` | 过滤器，即物业是否不等于提供值。 | `property=title!=test` |
+| `<` | 过滤器该物业是否低于提供价值。 | `property=version<5` |
+| `>` | 过滤器该属性是否大于提供的值。 | `property=version>5` |
+| `<=` | 过滤器该物业是否低于或等于提供值。 | `property=version<=5` |
+| `>=` | 过滤器该属性是否大于或等于提供的值。 | `property=version>=5` |
+| `~` | 过滤器，依据该物业是否与提供的常规表达式相匹配。 | `property=title~test$` |
+| (无) | 仅声明属性名称仅返回属性所在的条目。 | `property=title` |
+
+>[!TIP] 可以使用该参 `property` 数按其兼容类过滤混音。 例如，仅 `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` 返回与XDM Individual用户档案类兼容的混音。
