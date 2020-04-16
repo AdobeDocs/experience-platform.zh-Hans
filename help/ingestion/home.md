@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform数据摄取概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4817162fe2b7cbf4ae4c1ed325db2af31da5b5d3
+source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ---
 
@@ -35,8 +35,8 @@ Experience Platform允许您设置与各种数据提供商的源连接。 这些
 
 可以将源连接配置为从其他Adobe应用程序(如Adobe Analytics和Adobe受众管理器)、第三方云存储源（如Azure Blob、Amazon S3、FTP服务器和SFTP服务器）和第三方CRM系统（如Microsoft Dynamics和Salesforce）收集数据。
 
-有关详细 [信息，请参阅](../source-connectors/home.md) “源”概述。
+有关详细 [信息，请参阅](../sources/home.md) “源”概述。
 
 ## 后续步骤
 
-本文档简要介绍了Experience Platform中数据摄取的不同方面。 请继续阅读每种摄取方法的概述文档，以熟悉其不同功能、用例和最佳实践。 有关Experience Platform如何跟踪所摄取记录的元数据的信息，请参阅 [Catalog Service概述](../catalog/home.md)。
+本文档简要介绍了Experience Platform中数据摄取的不同方面。 请继续阅读每种摄取方法的概述文档，以熟悉其不同功能、使用案例和最佳实践。 有关Experience Platform如何跟踪所摄取记录的元数据的信息，请参阅 [Catalog Service概述](../catalog/home.md)。
