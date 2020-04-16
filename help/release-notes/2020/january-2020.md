@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 38acbb4a0130763fe0c565215eda7c0713e1ff6e
+source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ---
 
@@ -43,7 +43,7 @@ XDM是一个公开的规范，旨在提高数字体验的强大功能。 它为�
 |--- | ---|
 | Privacy Service重新品牌化 | 先前名为“GDPR服务”的服务已更名为隐私服务，因为该服务已发展为支持除GDPR外的其他法规。 |
 | 新的API端点 | 隐私服务API的基本路径已从更新 `/data/privacy/gdpr` 到 `/data/core/privacy/jobs`。 |
-| 新的必需 `regulation` 属性 | 在Privacy Service API中创建新作业时，必须在请求有效负荷中提供一个属性，以指 `regulation` 明要跟踪作业的规定。 接受的值 `gdpr` 是和 `ccpa`。 |
+| 新的必需 `regulation` 属性 | 在Privacy Service API中创建新作业时，必须在请求有效负荷中提供一个属性，以指示要跟踪作业的规定。 `regulation` 接受的值 `gdpr` 是和 `ccpa`。 |
 | 支持Adobe Primetime身份验证 | 隐私服务现在接受Adobe Primetime身份验证的访问／删除请求，并 `primetimeAuthentication` 将其作为产品价值。 |
 | 隐私服务UI增强功能 | 为GDPR和CCPA规定单独分别设置作业跟踪页面。 可在 __ GDPR和CCPA的跟踪数据之间切换的新调整类型下拉菜单。 |
 
@@ -78,7 +78,7 @@ Experience Platform提供RESTful API和交互式UI，使您能轻松为各种数
 
 * None
 
-有关源的详细信息，请参阅源 [概述](../../source-connectors/home.md)
+有关源的详细信息，请参阅源 [概述](../../sources/home.md)
 
 ## 目标
 
