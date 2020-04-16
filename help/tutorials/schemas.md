@@ -4,7 +4,7 @@ solution: Experience Platform
 title: XDM模式和描述符
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: ee08f43400fa72abce95ed52aff879f954f4b4d6
+source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ---
 
@@ -23,7 +23,7 @@ source-git-commit: ee08f43400fa72abce95ed52aff879f954f4b4d6
 
 ## 创建临时模式
 
-在特定情况下，可能需要创建一个体验数据模型(XDM)模式，其中的字段以仅由单个数据集使用的名称命名。 这称为&quot;临时&quot;模式。 Ad-hoc模式用于Experience Platform的各种数 [据获取](../ingestion/home.md) 工作流，包括获取CSV文件和创建某些类型的源 [连接](../source-connectors/home.md)。 创建临时模式是使用模式注册表API完成的，并准备与其他体验平台教程一起使用，这些教程需要创建临时模式作为其工作流程的一部分。 要开始创建点对点模式，请参阅使用API [创建点对点模式的教程](../xdm/tutorials/ad-hoc.md)。
+在特定情况下，可能需要创建一个体验数据模型(XDM)模式，其中的字段以仅由单个数据集使用的名称命名。 这称为&quot;临时&quot;模式。 Ad-hoc模式用于Experience Platform的各种数 [据获取](../ingestion/home.md) 工作流，包括获取CSV文件和创建某些类型的源 [连接](../sources/home.md)。 创建临时模式是使用模式注册表API完成的，并准备与其他体验平台教程一起使用，这些教程需要创建临时模式作为其工作流程的一部分。 要开始创建点对点模式，请参阅使用API [创建点对点模式的教程](../xdm/tutorials/ad-hoc.md)。
 
 ## 后续步骤
 
