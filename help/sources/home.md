@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform Source Connectors概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 92ba230d71e419e33567833ad562e6ffef996d0a
+source-git-commit: e81f138f933d4bb2c36260480e360dfacd412da0
 
 ---
 
@@ -26,9 +26,10 @@ Experience Platform中的源分为以下类别:
 Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics、Adobe受众管理器和Experience Platform Launch)中摄取数据。 有关详细信息，请参阅以下相关文档:
 
 - [Adobe受众管理器连接器概述](connectors/adobe-applications/audience-manager.md)
-- [在UI中创建Adobe受众管理器源连接器](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-ui-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/ui/adobe-applications/aam-ui-tutorial.md)
+- [在UI中创建Adobe受众管理器源连接器](./tutorials/ui/create/adobe-applications/audience-manager.md)
 - [Adobe Analytics数据连接器概述](connectors/adobe-applications/analytics.md)
-- [在UI中创建Adobe Analytics源连接器](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-ui-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/ui/adobe-applications/adobe-analytics-ui-tutorial.md)
+- [在UI中创建Adobe Analytics源连接器](./tutorials/ui/create/adobe-applications/analytics.md)
+- [在UI中创建客户属性源连接器](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 
 ### 广告
 
