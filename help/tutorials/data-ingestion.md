@@ -4,18 +4,18 @@ solution: Experience Platform
 title: 数据获取教程
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 2020f4b88f81f2d4fe3cfbd91cd18119ae580f4f
+source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
 
 ---
 
 
 # 将数据引入Experience Platform
 
-Adobe Experience Platform将来自多个来源的数据整合在一起，以帮助营销人员更好地了解其客户的行为。 Adobe Experience Platform数据摄取表示平台从这些来源获取数据的多种方法，以及数据在数据湖中持续保存以供下游平台服务使用的方式。 数据摄取包括使用源连接器的批量摄取、流摄取和摄取。 要了解更多信息，请阅读 [数据摄取概述](../ingestion/home.md) ，或直接转到 [Sources文档](../source-connectors/home.md)。
+Adobe Experience Platform将来自多个来源的数据整合在一起，以帮助营销人员更好地了解其客户的行为。 Adobe Experience Platform数据摄取表示平台从这些来源获取数据的多种方法，以及数据在数据湖中持续保存以供下游平台服务使用的方式。 数据摄取包括使用源连接器的批量摄取、流摄取和摄取。 要了解更多信息，请阅读 [数据摄取概述](../ingestion/home.md) ，或直接转到 [Sources文档](../sources/home.md)。
 
 ## 在UI和API中创建源连接器
 
-源连接器允许您从多个源中摄取数据，然后在这些源中使用平台服务进行标记、结构化和增强。 要开始使用UI创建连接器，请访问UI概 [述中的创建源连接器](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-ui-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/ui/sources-ui-tutorial.md)。 要使用API创建源连接器，请访 [问使用Flow Service API概述创建源连接器](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-api-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/api/sources-api-tutorial.md)。
+源连接器允许您从多个源中摄取数据，然后在这些源中使用平台服务进行标记、结构化和增强。 要开始创建源连接器，请参阅源 [概述](../sources/home.md)。
 
 ## 摄取批量数据
 
@@ -31,7 +31,7 @@ Adobe Experience Platform允许您将数据作为批处理文件轻松导入到�
 
 ## 创建经过身份验证的流连接
 
-通过身份验证的数据收集，Adobe Experience Platform服务(如实时客户用户档案和身份)可区分来自可信来源和不可信来源的记录。 要开始使用，请按照教程创建 [经过身份验证的流连接](../ingestion/tutorials/create-authenticated-streaming-connection.md)。
+通过身份验证的数据收集，Adobe Experience Platform服务(如实时客户用户档案和身份)可区分来自可信来源和不可信来源的记录。 要开始，请按照教程创建经过 [身份验证的流连接](../ingestion/tutorials/create-authenticated-streaming-connection.md)。
 
 ## 流记录和时间序列数据
 
