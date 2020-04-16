@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: December 12, 2019
 author: ens71067
 translation-type: tm+mt
-source-git-commit: 28a8fc496c85b334e89d0f0a130d3cc5c8956399
+source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ---
 
@@ -66,7 +66,7 @@ Experience Platform提供RESTful API和交互式UI，使您能轻松为各种数
 
 * 无.
 
-有关源的详细信息，请参阅 [源概述](../../source-connectors/home.md)。
+有关源的详细信息，请参阅 [源概述](../../sources/home.md)。
 
 ## 体验数据模型(XDM)系统
 
