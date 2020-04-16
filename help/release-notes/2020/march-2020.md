@@ -6,7 +6,7 @@ last-update: March 10, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: c2495b463d713f85ba621a7bf687c5959ec13adb
+source-git-commit: 33ce1e83514d7aa3cdc5fcee66f444d2fd203097
 
 ---
 
@@ -108,4 +108,4 @@ Experience Platform提供RESTful API和交互式UI，使您能轻松为各种数
 
 * None
 
-要进一步了解源，请参阅源 [概述](../../source-connectors/home.md)。
+要进一步了解源，请参阅源 [概述](../../sources/home.md)。
