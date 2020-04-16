@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform Source Connectors
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4817162fe2b7cbf4ae4c1ed325db2af31da5b5d3
+source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ---
 
@@ -15,4 +15,4 @@ Adobe Experience Platform允许从外部源中摄取数据，同时使您能够�
 
 Experience Platform提供RESTful API和交互式UI，使您能轻松设置与各种数据提供商的源连接。 这些源连接使您能够验证存储系统和CRM服务，为摄取运行设置时间并管理数据摄取吞吐量。
 
-有关这些源连接器的更多信息，请参阅源连 [接器文档](../source-connectors/home.md)。
+有关这些源连接器的更多信息，请参阅源连 [接器文档](../sources/home.md)。
