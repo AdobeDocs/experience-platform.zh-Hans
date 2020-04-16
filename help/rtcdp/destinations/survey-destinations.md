@@ -4,7 +4,7 @@ seo-title: 调查目标
 description: 调查平台可以检测调查事件，通过数据元素实时捕获客户反馈并与Adobe实时CDP共享数据。
 seo-description: 调查平台可以检测调查事件，通过数据元素实时捕获客户反馈并与Adobe实时CDP共享数据。
 translation-type: tm+mt
-source-git-commit: e3b7dd4788042deaeba68bfdbe08e8448b46c270
+source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
 
 ---
 
