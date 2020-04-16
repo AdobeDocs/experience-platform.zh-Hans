@@ -4,7 +4,7 @@ seo-title: 数据管理平台(DMP)目标
 description: 数据管理平台(DMP)使广告商、出版商和代理商能够构建独特的受众用户档案，识别其最有价值的细分，并跨任何数字渠道使用它们。 这使您能够创建真正的360视图消费者用户档案，构建并激活有意义的受众。
 seo-description: 数据管理平台(DMP)使广告商、出版商和代理商能够构建独特的受众用户档案，识别其最有价值的细分，并跨任何数字渠道使用它们。 这使您能够创建真正的360视图消费者用户档案，构建并激活有意义的受众。
 translation-type: tm+mt
-source-git-commit: e3b7dd4788042deaeba68bfdbe08e8448b46c270
+source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
 
 ---
 
