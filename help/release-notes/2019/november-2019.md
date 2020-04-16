@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 9bfb2ca8726421363c8446ecf581ed58d427eabf
+source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ---
 
@@ -98,7 +98,7 @@ Experience Platform提供RESTful API和交互式UI，使您能轻松为各种数
 
 * 用于基于云的存储的源连接器不支持摄取压缩文件。
 
-有关源的详细信息，请参阅 [源概述](../../source-connectors/home.md)。
+有关源的详细信息，请参阅 [源概述](../../sources/home.md)。
 
 ## 数据科学工作区
 
