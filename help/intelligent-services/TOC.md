@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Intelligent Services Help
+user-guide-title: 智能服务帮助
 translation-type: tm+mt
-source-git-commit: 0f6424c5afbf9b23016e1c40d156f6226f853cd6
+source-git-commit: 7d3f64db787aebe46179c0e08ad01878b0ad2877
 
 ---
 
@@ -11,6 +11,7 @@ source-git-commit: 0f6424c5afbf9b23016e1c40d156f6226f853cd6
 # Adobe Intelligent Services {#intelligent-services}
 
 * [智能服务概述](home.md)
+* [准备要在智能服务中使用的数据](data-preparation.md)
 * 归因人工智能 {#attribution-ai}
    * [概述](attribution-ai/overview.md)
    * [归因AI快速入门](attribution-ai/getting-started.md)
