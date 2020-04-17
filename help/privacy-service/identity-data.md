@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 隐私请求的标识数据
 topic: overview
 translation-type: tm+mt
-source-git-commit: f2fe9c01c8355d0b312a0236f76085d1743aa8cc
+source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 ---
 
@@ -23,13 +23,13 @@ source-git-commit: f2fe9c01c8355d0b312a0236f76085d1743aa8cc
 
 因此，发送到隐私服务的每个身份都必须附有一项命名空间 **** ，该通过将身份值与其来源系统相关联来提供上下文。 命名空间可以表示通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising Cloud ID(“AdCloud”)或Adobe目标ID(“TNTID”))关联。
 
-Adobe Experience Platform Identity Service维护着全球定义和用户定义标识命名空间的存储。 有关命名空间的更多详细信息，请参阅 [标识命名空间概述](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_namespace_overview/identity_namespace_overview.md)。 有关隐私服务中常用的标准命名空间和命名空间限定符的列表，请参阅开发人员指 [南中的附录](api/appendix.md) 。
+Adobe Experience Platform Identity Service维护着全球定义和用户定义标识命名空间的存储。 有关命名空间的更多详细信息，请参阅 [标识命名空间概述](../identity-service/namespaces.md)。 有关隐私服务中常用的标准命名空间和命名空间限定符的列表，请参阅开发人员指 [南中的附录](api/appendix.md) 。
 
 ## ECID和选择加入服务
 
-Adobe Experience Cloud Identity Service用作Experience Cloud的通用标识框架，并为每个站点访客分配一个唯一的永久ID。 Experience Cloud ID(ECID)通过使用第一方Cookie跟踪客户的活动，可以跨多个应用程序唯一标识设备，并允许您在不同的Experience Cloud应用程序中标识同一站点访客及其数据。 See the [Experience Cloud Identity Service overview](https://docs.adobe.com/content/help/en/id-service/using/intro/overview.html) for more information.
+Adobe Experience Cloud Identity Service用作Experience Cloud的通用标识框架，并为每个站点访客分配一个唯一的永久ID。 Experience Cloud ID(ECID)通过使用第一方Cookie跟踪客户的活动，可以跨多个应用程序唯一标识设备，并允许您在不同的Experience Cloud应用程序中标识同一站点访客及其数据。 See the [Experience Cloud Identity Service overview](https://docs.adobe.com/content/help/zh-Hans/id-service/using/intro/overview.html) for more information.
 
-Opt-in Service是Experience Cloud Identity Service的扩展，它允许您在应用程序上设置协议，让访客决定您是否可以在访客的设备或浏览器上设置Cookie。 有关选择加入服务的更多详细信息（包括如何为您的应用程序设置服务），请参阅 [选择加入服务文档](https://docs.adobe.com/content/help/en/id-service/using/implementation/opt-in-service/optin-overview.html)。
+Opt-in Service是Experience Cloud Identity Service的扩展，它允许您在应用程序上设置协议，让访客决定您是否可以在访客的设备或浏览器上设置Cookie。 有关选择加入服务的更多详细信息（包括如何为您的应用程序设置服务），请参阅 [选择加入服务文档](https://docs.adobe.com/content/help/zh-Hans/id-service/using/implementation/opt-in-service/optin-overview.html)。
 
 在为站点访客分配ECID后，您可以利用Adobe隐私JavaScript库检索这些ID以用于隐私请求，如下一节所述。
 
