@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 分析数据连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 9f0200af0310eafbcc1851b089cfc254cb34af8f
+source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 ---
 
@@ -37,7 +37,7 @@ XDM是一个公开的文档规范，它为应用程序提供了通用的结构�
 
 ## 如何将字段从Adobe Analytics映射到XDM?
 
-当建立源连接以使用平台用户界面将Analytics数据引入Experience Platform时，数据字段会在几分钟内自动映射并引入实时客户用户档案。 有关使用平台UI创建与Adobe Analytics的源连接的说明，请参阅 [Analytics数据连接器教程](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-ui-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/ui/adobe-applications/adobe-analytics-ui-tutorial.md)。
+当建立源连接以使用平台用户界面将Analytics数据引入Experience Platform时，数据字段会在几分钟内自动映射并引入实时客户用户档案。 有关使用平台UI创建与Adobe Analytics的源连接的说明，请参阅 [Analytics数据连接器教程](../../tutorials/ui/create/adobe-applications/analytics.md)。
 
 有关Analytics和Experience Platform之间的字段映射的详细信息，请访问 [Adobe Analytics字段映射指南](./analytics-mapping.md) 。
 
