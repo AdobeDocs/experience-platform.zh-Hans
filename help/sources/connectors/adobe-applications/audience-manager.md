@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 受众管理器连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 9f0200af0310eafbcc1851b089cfc254cb34af8f
+source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 ---
 
@@ -19,7 +19,7 @@ Adobe受众管理器数据连接器将在Adobe受众管理器中收集的第一�
 
 受众管理器连接器将这些数据类别映射到Experience Data Model(XDM)模式，并将其发送到平台。 实时数据和载入的数据作为XDM ExperienceEvent数据发送，而用户档案数据作为XDM单个用户档案发送。
 
-有关使用平台UI创建与Adobe受众管理器连接的说明，请参阅 [受众管理器连接器教程](https://www.adobe.io/apis/experienceplatform/home/tutorials/sources-ui-tutorials.html#!api-specification/markdown/narrative/tutorials/sources_tutorial/ui/adobe-applications/aam-ui-tutorial.md)。
+有关使用平台UI创建与Adobe受众管理器连接的说明，请参阅 [受众管理器连接器教程](../../tutorials/ui/create/adobe-applications/audience-manager.md)。
 
 ## 什么是体验数据模型(XDM)?
 
