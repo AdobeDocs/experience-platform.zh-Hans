@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据集用户指南
 topic: datasets
 translation-type: tm+mt
-source-git-commit: 5aad9fa71051a58fe1c4678553f47077d81d23fc
+source-git-commit: 7d3f64db787aebe46179c0e08ad01878b0ad2877
 
 ---
 
@@ -50,7 +50,7 @@ source-git-commit: 5aad9fa71051a58fe1c4678553f47077d81d23fc
 * [查询服务概述](../../query-service/home.md)
 * [JupyterLab用户指南](../../data-science-workspace/jupyterlab/overview.md)
 
-## 创建数据集
+## 创建数据集 {#create}
 
 要创建新数据集，请单击“数据集 **开始”中的** “创建数 *据集* ”仪表板。
 
