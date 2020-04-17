@@ -5,7 +5,7 @@ title: 隐私服务开发人员指南
 description: 使用RESTful API跨Adobe Experience Cloud应用程序管理数据主体的个人数据
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a28ad2725094e0748e2860276ab2e7581d790ac
+source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 ---
 
@@ -26,11 +26,11 @@ Adobe Experience Platform Privacy Service提供RESTful API和用户界面，允�
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这些包括路径、必需的标题和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑难解答指南 [中有关如何阅读示例API调用的部分](https://www.adobe.io/apis/experienceplatform/home/services/troubleshooting.html#!api-specification/markdown/narrative/technical_overview/platform_faq_and_troubleshooting/platform_faq_and_troubleshooting.md) 。
+本教程提供示例API调用，以演示如何设置请求的格式。 这些包括路径、必需的标题和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑难解答指南 [中有关如何阅读示例API调用的部分](../../landing/troubleshooting.md) 。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须首先完成身份验证 [教程](https://www.adobe.io/apis/experienceplatform/home/tutorials/alltutorials.html#!api-specification/markdown/narrative/tutorials/authenticate_to_acp_tutorial/authenticate_to_acp_tutorial.md)。 完成身份验证教程后，将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
+要调用平台API，您必须首先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程后，将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
 
 * 授权：承载人 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
