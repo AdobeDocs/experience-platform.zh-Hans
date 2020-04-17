@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 接受的身份命名空间和限定符
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d0fcae6b1b75584a2c26d6eee5b47e0d60a142ba
+source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 ---
 
@@ -13,7 +13,7 @@ source-git-commit: d0fcae6b1b75584a2c26d6eee5b47e0d60a142ba
 
 ## 标准标识命名空间
 
-发送到隐私服务的所有身份必须根据特定身份命名空间提供。 标识命名空间是 [Adobe Experience Platform Identity Service的一个组件](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_services_architectural_overview/identity_services_architectural_overview.md) ，用于指示标识与之相关的上下文。
+发送到隐私服务的所有身份必须根据特定身份命名空间提供。 标识命名空间是 [Adobe Experience Platform Identity Service的一个组件](../../identity-service/home.md) ，用于指示标识与之相关的上下文。
 
 下表概述了Experience Platform提供的几种常用预定义标识类型及其关联 `namespace` 值：
 
@@ -31,7 +31,7 @@ source-git-commit: d0fcae6b1b75584a2c26d6eee5b47e0d60a142ba
 
 >[!NOTE] 每个标识类型还有一个整 `namespaceId` 数值，当将标识的属性设置为“namespaceId”时，可以使用该整 `namespace``type` 数值代替字符串。 有关详细信息，请参 [阅命名空间限定](#namespace-qualifiers) 符一节。
 
-您可以通过向Identity Service API中的端点发出GET请求，检索您的组 `idnamespace/identities` 织正在使用的标识命名空间。 有关详细 [信息，请参阅Identity Service开发人员指南](https://www.adobe.io/apis/experienceplatform/home/profile-identity-segmentation/profile-identity-segmentation-services.html#!api-specification/markdown/narrative/technical_overview/identity_services_architectural_overview/identity_services_api.md) 。
+您可以通过向Identity Service API中的端点发出GET请求，检索您的组 `idnamespace/identities` 织正在使用的标识命名空间。 有关详细 [信息，请参阅Identity Service开发人员指南](../../identity-service/api/getting-started.md) 。
 
 ## 命名空间限定词
 
