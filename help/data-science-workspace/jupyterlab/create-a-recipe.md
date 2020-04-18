@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用Jupyter笔记本创建菜谱
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 9f3fc3ec3ce560534b057185e3fef2cc2bc1234d
+source-git-commit: 10f157e0c9f8ab6e487b7dc83416b9e3b2f324c4
 
 ---
 
@@ -38,9 +38,10 @@ source-git-commit: 9f3fc3ec3ce560534b057185e3fef2cc2bc1234d
 
 Recipe Builder笔记本电脑允许您在笔记本内运行培训和评分。 这使您能够灵活地在对培训和评分数据 `train()` 运行 `score()` 实验之间更改其和方法。 在您满意培训和评分的输出后，您可以创建一个菜谱，以便在Data Science Workspace中使用，该菜谱使用笔记本创建菜谱功能，该功能内置于Recipe Builder笔记本中。
 
->[!NOTE] Recipe Builder笔记本电脑支持使用所有文件格式，但目前“创建菜谱”功能仅支持Python。
+>[!NOTE]
+>Recipe Builder笔记本电脑支持使用所有文件格式，但目前“创建菜谱”功能仅支持Python。
 
-![](../images/jupyterlab/create-recipe/notebook_launcher.png)
+![](../images/jupyterlab/create-recipe/recipe-builder.png)
 
 单击启动器中的Recipe Builder笔记本时，该笔记本将在选项卡中打开。 笔记本中使用的模板是Python Retail Sales Forecasting Recipe，也可以在此公共存储库 [中找到它](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)
 
@@ -50,7 +51,6 @@ Recipe Builder笔记本电脑允许您在笔记本内运行培训和评分。 �
 
 ## 编辑菜谱文件
 
-<!-- Databricks update to recipe needed -->
 要编辑菜谱文件，请导航到Jupyter中与文件路径对应的单元格。 例如，如果要更改，请 `evaluator.py`查找 `%%writefile demo-recipe/evaluator.py`。
 
 开始对单元格进行必要的更改，完成后，只需运行单元格。 该 `%%writefile filename.py` 命令将单元格的内容写入 `filename.py`。 您必须手动为每个包含更改的文件运行单元格。
@@ -69,9 +69,6 @@ Recipe Builder笔记本电脑允许您在笔记本内运行培训和评分。 �
 - [求值器文件](#evaluator-file)
 - [数据保护程序文件](#data-saver-file)
 
-
-
-
 ### 要求文件
 
 要求文件用于声明您希望在菜谱中使用的其他库。 如果存在依赖关系，则可以指定版本号。 要查找其他库，请访问https://anaconda.org。 正在使用的主要库的列表包括：
@@ -84,9 +81,8 @@ numpy
 data_access_sdk_python
 ```
 
->[!NOTE] 您添加的库或特定版本可能与上述库不兼容。
-
-
+>[!NOTE]
+>您添加的库或特定版本可能与上述库不兼容。
 
 ### 配置文件
 
@@ -101,7 +97,7 @@ data_access_sdk_python
 
 要查找数据集和模式ID，请转到左侧导航栏（文件夹图标下）笔记本电脑中的数据选项卡。
 
-![](../images/jupyterlab/create-recipe/data_tab.png)
+![](../images/jupyterlab/create-recipe/datasets.png)
 
 在 [Adobe Experience Platform上的“模式”和“数据集](https://platform.adobe.com/) ”选项卡下可 **[找到相同](https://platform.adobe.com/schema)**的信息**[](https://platform.adobe.com/dataset/overview)** 。
 
@@ -111,8 +107,6 @@ data_access_sdk_python
 - `ML_FRAMEWORK_IMS_TOKEN`
 - `ML_FRAMEWORK_IMS_ML_TOKEN`
 - `ML_FRAMEWORK_IMS_TENANT_ID`
-
-
 
 ## 培训数据加载器
 
@@ -129,7 +123,8 @@ data_access_sdk_python
 - [Platform SDK](#platform-sdk)
 - [外部来源](#external-sources)
 
->[!NOTE] 在Recipe Builder笔记本中，数据通过数据加载器 `platform_sdk` 加载。
+>[!NOTE]
+>在Recipe Builder笔记本中，数据通过数据加载器 `platform_sdk` 加载。
 
 ### Platform SDK
 
@@ -155,11 +150,10 @@ df = pd.read_json(data)
 
 现在，您的数据位于数据帧对象中，可在下一节中分析和 [处理](#data-preparation-and-feature-engineering)。
 
-
-
 ### 从Data Access SDK（已弃用）
 
->[!CAUTION]  不 `data_access_sdk_python` 再推荐，请参阅将 [数据访问代码转换为Platform SDK](../authoring/platform-sdk.md) ，以获取有关使用数据加载器的 `platform_sdk` 指南。
+>[!CAUTION]
+> `data_access_sdk_python` 不再建议使用，请参 [阅将数据访问代码转换为平台SDK](../authoring/platform-sdk.md) ，以获取有关使用数据加载器 `platform_sdk` 的指南。
 
 用户可以使用数据访问SDK加载数据。 通过包含以下行，可以在页面顶部导入库：
 
@@ -176,7 +170,8 @@ df = prodreader.load(data_set_id=configProperties['trainingDataSetId'],
                      ims_org=configProperties['ML_FRAMEWORK_IMS_TENANT_ID'])
 ```
 
->[!NOTE] 如配置文 [件部分所述](#configuration-files)，当您从Experience Platform访问数据时，会为您设置以下配置参数：
+>[!NOTE]
+>如配置文 [件部分所述](#configuration-files)，当您从Experience Platform访问数据时，会为您设置以下配置参数：
 > - `ML_FRAMEWORK_IMS_USER_CLIENT_ID`
 > - `ML_FRAMEWORK_IMS_TOKEN`
 > - `ML_FRAMEWORK_IMS_ML_TOKEN`
@@ -297,17 +292,16 @@ df.dropna(0, inplace=True)
 
 评分 `load()` 数据加载器中的函数应以评分数据集作为输出。
 
-
-
 ### 管线文件
 
-该文 `pipeline.py` 件包括用于培训和评分的逻辑。 接下来的两节我们将对这两个部分进行介绍。
+该文 `pipeline.py` 件包括用于培训和评分的逻辑。
 
 ### 培训
 
 培训的目的是使用培训数据集中的功能和标签创建一个模型。
 
->[!NOTE]  功 _能_ ，是指机器学习模型用来预测标签的输入变 _量_。
+>[!NOTE]\
+>_特征_ ，是指机器学习模型用来预测标签的输入变 _量_。
 
 该功 `train()` 能应包括训练模型，并返回训练模型。 不同型号的一些示例可在 [scikit-learn用户指南文档中找到](https://scikit-learn.org/stable/user_guide.html)。
 
@@ -347,11 +341,9 @@ def train(configProperties, data):
 
 请注意，根据您的应用程序，您的函数中将包含参数 `GradientBoostingRegressor()` 。 `xTrainingDataset` 应包含用于培训的功能，而应 `yTrainingDataset` 包含您的标签。
 
-
-
 ### 评分
 
-该函 `score()` 数应包含评分算法并返回一个度量，以指示模型执行的成功程度。 该函 `score()` 数使用评分数据集标签和训练的模型来生成一组预测特征。 然后，将这些预测值与评分数据集中的实际特征进行比较。 在此示例中，函数使 `score()` 用经过训练的模型来使用评分数据集中的标签来预测特征。 返回预测特征。
+该函 `score()` 数应包含评分算法并返回一个度量，以指示模型执行的成功程度。 该函 `score()` 数使用评分数据集标签和训练模型来生成一组预测特征。 然后，将这些预测值与评分数据集中的实际特征进行比较。 在此示例中，函数使 `score()` 用经过训练的模型来使用评分数据集中的标签来预测特征。 返回预测特征。
 
 ```PYTHON
 def score(configProperties, data, model):
@@ -456,7 +448,6 @@ def save(configProperties, prediction):
     print(prediction)
 ```
 
-
 ## 培训和评分
 
 在对笔记本进行更改并要培训菜谱后，您可以单击栏顶部的关联按钮在单元格中创建培训运行。 单击该按钮后，培训脚本的命令和输出日志将显示在笔记本(位于单元 `evaluator.py` 格下)中。 Conda首先安装所有依赖项，然后开始培训。
@@ -467,7 +458,11 @@ def save(configProperties, prediction):
 
 ## 创建菜谱
 
-编辑菜谱并对培训／评分输出满意后，您可以按“创建菜谱”从笔记本创建菜 **谱**。 按下按钮后，将提示您输入菜谱名称。 此名称将表示在平台上创建的实际菜谱。
+编辑菜谱并对培训／评分输出满意后，您可以通过按右上方导航中的“创建菜谱 **** ”从笔记本创建菜谱。
+
+![](../images/jupyterlab/create-recipe/create-recipe.png)
+
+按下按钮后，系统会提示您输入菜谱名称。 此名称表示在平台上创建的实际菜谱。
 
 ![](../images/jupyterlab/create-recipe/enter_recipe_name.png)
 
