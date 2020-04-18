@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 配方和笔记本电脑迁移指南
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 105317c0b9a7cf74d55e3436a49e1dc6eeb31b32
+source-git-commit: bb6fe494933606d428d7bdf20ee38b7ac51c23ea
 
 ---
 
@@ -269,7 +269,7 @@ RUN cp /databricks/conda/envs/${DEFAULT_DATABRICKS_ROOT_CONDA_ENV}/lib/python3.6
 
 PySpark方法不再使用二进制伪像，而是需要构建Docker图像。 如果尚未这样做，请下载并安装 [Docker](https://www.docker.com/products/docker-desktop)。
 
-在提供的PySpark示例菜谱中，您可以找到脚本， `login.sh` 并 `build.sh` 位于 `experience-platform-dsw-reference/recipes/pyspark` 。 将这些文件复制并粘贴到您的现有菜谱中。
+在提供的PySpark范例菜谱中，您可以找到脚本， `login.sh` 并 `build.sh` 位于 `experience-platform-dsw-reference/recipes/pyspark` 。 将这些文件复制并粘贴到您的现有菜谱中。
 
 您的文件夹结构现在应类似于以下示例（高亮显示新添加的文件）:
 
@@ -427,11 +427,11 @@ pd0 = spark.read.format(&quot;com.adobe.platform.dataset&quot;)。option(dataset
 
 ![加载1](./images/migration/pyspark-migration/2.4-load.png)
 
-**PySpark 2.3中的平台数据加载体验功能——已弃用**
+**在PySpark 2.3中加载Experience Cloud Platform数据——已弃用**
 
 ![加载2](./images/migration/pyspark-migration/2.3-load-alt.png)
 
-**PySpark 2.4中的平台数据加载体验**
+**在PySpark 2.4中加载Experience Cloud Platform数据**
 
 借助PySpark 3(Spark 2.4), `org_id` 您 `dataset_id` 无需再定义And。 此外，已 `df = spark.read.format` 经用自定义功能取代了它， [`%dataset`](#magic) 使读取和写入数据集更简单。
 
