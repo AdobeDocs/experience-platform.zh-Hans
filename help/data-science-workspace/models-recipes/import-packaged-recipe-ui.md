@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 导入打包菜谱(UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: a7db31793d33d4571a867f5632243c59b5cb7975
 
 ---
 
@@ -15,7 +15,7 @@ source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
 
 ## 先决条件
 
-本教程要求以Docker图像URL或二进制文件的形式提供打包菜谱。 有关详细信息，请参 [阅有关如何将源文件打包到菜谱](./package-source-files-recipe.md) 的教程。
+本教程需要以Docker图像URL形式打包的菜谱。 有关详细信息，请参 [阅有关如何将源文件打包到菜谱](./package-source-files-recipe.md) 的教程。
 
 ## UI工作流程
 
@@ -23,10 +23,14 @@ source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
 
 导入包菜谱的工作流包括以下步骤：
 - [配置菜谱](#configure)
-- [导入基于二进制的菜谱- PySpark](#pyspark)
-- [导入基于二进制的菜谱- Scala Spark](#scala)
 - [导入基于Docker的菜谱- Python](#python)
 - [导入基于Docker的菜谱- R](#r)
+- [导入基于Docker的菜谱- PySpark](#pyspark)
+- [导入基于Docker的菜谱- Scala](#scala)
+
+已弃用的工作流:
+- [导入基于二进制的菜谱- PySpark](#pyspark-deprecated)
+- [导入基于二进制的菜谱- Scala Spark](#scala-deprecated)
 
 ### 配置菜谱 {#configure}
 
@@ -115,7 +119,147 @@ Data Science Workspace中的每个菜谱实例都附带一组配置，这些配�
 
 在本教程中，您可以保留数据科学工作区参考中零售销售菜谱的默认配置文件。
 
-### 导入基于二进制的菜谱- PySpark {#pyspark}
+### 导入基于Docker的菜谱- Python {#python}
+
+开始，方法是导 **航** ，并选择位于平台UI左上角的工作流。 接下来，选择“ *导入菜谱* ”，然后单 **击启动**。
+
+![](../images/models-recipes/import-package-ui/launch-import.png)
+
+此时将 *显示* “导入菜谱” *工作流的“配置* ”页。 输入菜谱的名称和说明，然后选择 **右上** 角的下一步。
+
+![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
+
+>[!NOTE]
+> 在将源文 [件打包到菜谱教程中](./package-source-files-recipe.md) ，使用Python源文件构建零售销售菜谱的结尾处提供了一个Docker URL。
+
+在“选择源 *”页上，将与使用Python源文件构建的打包菜谱对应的Docker URL粘贴到“源URL”* 字段中 **** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/python/retail/retail.config.json`。 在“运 **行时** ”下拉框中选 *择Python* ，在“类型放 **置”中选择**** “分类”。 填写完所有内容后，单击右 **上角的** “下一步”以继续“管理 *模式”*。
+
+>[!NOTE]
+> *类型&#x200B;*，支持&#x200B;**分类**和&#x200B;**回归**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**义**”。
+
+![](../images/models-recipes/import-package-ui/recipe_source_python.png)
+
+接下来，在“管理模式”部分下选择“零售模式”输入和输出 *，这些输入和输出是使用创建零售模式和数据集教程中提供的引导*&#x200B;脚本创建的 [](../models-recipes/create-retails-sales-dataset.md) 。
+
+![](../images/models-recipes/import-package-ui/recipe_schema.png)
+
+在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选择“输 **入功能** ”或“ **目标功能** ”来选择输入 **和输出功能** 。 在本教程中，请将 **weeklySales** (每周销售 **量** )设置为 **目标功能**，将其他所有内容设置为输入功能。 单击 **下一步** ，查看您新配置的菜谱。
+
+根据需要查看菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
+
+![](../images/models-recipes/import-package-ui/recipe_review.png)
+
+继续执行下 [一步](#next-steps) ，了解如何使用新创建的零售销售菜谱在Data Science Workspace中创建模型。
+
+### 导入基于Docker的菜谱- R {#r}
+
+开始，方法是导 **航** ，并选择位于平台UI左上角的工作流。 接下来，选择“ *导入菜谱* ”，然后单 **击启动**。
+
+![](../images/models-recipes/import-package-ui/launch-import.png)
+
+此时将 *显示* “导入菜谱” *工作流的“配置* ”页。 输入菜谱的名称和说明，然后选择 **右上** 角的下一步。
+
+![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
+
+>[!NOTE]
+> 在将源 [文件打包到菜谱教程中](./package-source-files-recipe.md) ，在使用R源文件构建零售销售菜谱的结尾处提供了一个Docker URL。
+
+在“选择源 *”页上，将与使用R源文件构建的打包菜谱对应的Docker URL粘贴到“源URL”* 字段中 **** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/R/Retail\ -\ GradientBoosting/retail.config.json`。 在“ **运行时***”下拉列表中选择R* ，在“类 **型下拉列表”中选择Classification** ** down。 填写完所有内容后，单击右 **上角的** “下一步”以继续“管理 *模式”*。
+
+>[!NOTE]
+> *类型&#x200B;*，支持&#x200B;**分类**和&#x200B;**回归**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**义**”。
+
+![](../images/models-recipes/import-package-ui/recipe_source_R.png)
+
+接下来，在“管理模式”部分下选择“零售模式”输入和输出 *，这些输入和输出是使用创建零售模式和数据集教程中提供的引导*&#x200B;脚本创建的 [](../models-recipes/create-retails-sales-dataset.md) 。
+
+![](../images/models-recipes/import-package-ui/recipe_schema.png)
+
+在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选择“输 **入功能** ”或“ **目标功能** ”来选择输入 **和输出功能** 。 在本教程中，请将 **weeklySales** (每周销售 **量** )设置为 **目标功能**，将其他所有内容设置为输入功能。 单击 **下一步** ，查看您新的已配置菜谱。
+
+根据需要查看菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
+
+![](../images/models-recipes/import-package-ui/recipe_review.png)
+
+继续执行下 [一步](#next-steps) ，了解如何使用新创建的零售销售菜谱在Data Science Workspace中创建模型。
+
+### 导入基于Docker的菜谱- PySpark {#pyspark}
+
+开始，方法是导 **航** ，并选择位于平台UI左上角的工作流。 接下来，选择“ *导入菜谱* ”，然后单 **击启动**。
+
+![](../images/models-recipes/import-package-ui/launch-import.png)
+
+此时将 *显示* “导入菜谱” *工作流的“配置* ”页。 为菜谱输入名称和说明，然后 **选择** 右上角的下一步以继续。
+
+![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
+
+>[!NOTE]
+> 在将源文 [件打包到菜谱教程中](./package-source-files-recipe.md) ，使用PySpark源文件构建零售销售菜谱的结尾处提供了一个Docker URL。
+
+在“选择源 *”页上，将与使用PySpark源文件构建的打包菜谱对应的Docker URL粘贴到“源URL”* 字段中 **** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/pyspark/retail/pipeline.json`。 在“ **运行时** ”下拉框中选 *择PySpark* 。 选择PySpark运行时后，默认伪像会自动填充到 **Docker**。 接下来，在 **类型***下拉框中选* 择分类。 填写完所有内容后，单击右 **上角的** “下一步”以继续“管理 *模式”*。
+
+>[!NOTE]
+> *类型&#x200B;*，支持&#x200B;**分类**和&#x200B;**回归**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**义**”。
+
+![](../images/models-recipes/import-package-ui/pyspark-databricks.png)
+
+接下来，在“管理模式”部分下选择“零售模式”输入和输出 *，这些输入和输出是使用创建零售模式和数据集教程中提供的引导*&#x200B;脚本创建的 [](../models-recipes/create-retails-sales-dataset.md) 。
+
+![](../images/models-recipes/import-package-ui/recipe_schema.png)
+
+在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选择“输 **入功能** ”或“ **目标功能** ”来选择输入 **和输出功能** 。 在本教程中，请将 **weeklySales** (每周销售 **量** )设置为 **目标功能**，将其他所有内容设置为输入功能。 单击 **下一步** ，查看您新配置的菜谱。
+
+根据需要查看菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
+
+![](../images/models-recipes/import-package-ui/recipe_review.png)
+
+继续执行下 [一步](#next-steps) ，了解如何使用新创建的零售销售菜谱在Data Science Workspace中创建模型。
+
+### 导入基于Docker的菜谱- Scala {#scala}
+
+开始，方法是导 **航** ，并选择位于平台UI左上角的工作流。 接下来，选择“ *导入菜谱* ”，然后单 **击启动**。
+
+![](../images/models-recipes/import-package-ui/launch-import.png)
+
+此时将 *显示* “导入菜谱” *工作流的“配置* ”页。 为菜谱输入名称和说明，然后 **选择** 右上角的下一步以继续。
+
+![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
+
+>[!NOTE]
+> 在将源文 [件打包到菜谱教程中](./package-source-files-recipe.md) ，使用Scala(Spark)源文件构建零售销售菜谱的结尾处提供了一个Docker URL。
+
+在“选择源 *”页上，粘贴与使用“源URL”字段中的“缩放源文件”构建的打包菜谱对应的Docker URL*** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/scala/retail/pipelineservice.json`。 在“ **运行时** ”下拉 *框中选择* “Spark”。 选择Spark运行时后，默认伪像会自动填充到 **Docker**。 接下来，从“ **类型** ”(Type ** )下拉菜单中选择“回归”(Regression)。 填写完所有内容后，单击右 **上角的** “下一步”以继续“管理 *模式”*。
+
+>[!NOTE]
+> *类型&#x200B;*，支持&#x200B;**分类**和&#x200B;**回归**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**义**”。
+
+![](../images/models-recipes/import-package-ui/scala-databricks.png)
+
+接下来，在“管理模式”部分下选择“零售模式”输入和输出 *，这些输入和输出是使用创建零售模式和数据集教程中提供的引导*&#x200B;脚本创建的 [](../models-recipes/create-retails-sales-dataset.md) 。
+
+![](../images/models-recipes/import-package-ui/recipe_schema.png)
+
+在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选择“输 **入功能** ”或“ **目标功能** ”来选择输入 **和输出功能** 。 在本教程中，请将 **weeklySales** (每周销售 **量** )设置为 **目标功能**，将其他所有内容设置为输入功能。 单击 **下一步** ，查看您新配置的菜谱。
+
+根据需要查看菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
+
+![](../images/models-recipes/import-package-ui/recipe_review.png)
+
+继续执行下 [一步](#next-steps) ，了解如何使用新创建的零售销售菜谱在Data Science Workspace中创建模型。
+
+## 后续步骤
+
+本教程提供了有关配置菜谱并将其导入到数据科学工作区的分析。 您现在可以使用新创建的菜谱创建、培训和评估模型。
+
+- [在UI中培训和评估模型](./train-evaluate-model-ui.md)
+- [使用API培训和评估模型](./train-evaluate-model-api.md)
+
+## 已弃用的工作流
+
+>[!CAUTION]
+>PySpark 3(Spark 2.4)和Scala(Spark 2.4)中不再支持导入基于二进制的方法。
+
+### 导入基于二进制的菜谱- PySpark {#pyspark-deprecated}
 
 在将源 [文件打包到Recipe教程中](./package-source-files-recipe.md) ，使用Retail Sales PySpark源文件构建 **EGG** 二进制文件。
 
@@ -132,10 +276,10 @@ Data Science Workspace中的每个菜谱实例都附带一组配置，这些配�
 5. 根据需要查看菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
    ![](../images/models-recipes/import-package-ui/recipe_review.png)
 
-恭喜，您已经创建了零售销售菜谱！ 继续执行下 [一步](#next-steps) ，了解如何使用新创建的零售销售菜谱在Data Science Workspace中创建模型。
+继续执行下 [一步](#next-steps) ，了解如何使用新创建的零售销售菜谱在Data Science Workspace中创建模型。
 
 
-### 导入基于二进制的菜谱- Scala Spark {#scala}
+### 导入基于二进制的菜谱- Scala Spark {#scala-deprecated}
 
 在将源文 [件打包到Recipe教程中](./package-source-files-recipe.md) ，使用Retail Sales Scala Spark源文件构建了 **JAR** 二进制文件。
 
@@ -151,39 +295,4 @@ Data Science Workspace中的每个菜谱实例都附带一组配置，这些配�
 5. 根据需要查看菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
    ![](../images/models-recipes/import-package-ui/recipe_review.png)
 
-恭喜，您已经创建了零售销售菜谱！ 继续执行下 [一步](#next-steps) ，了解如何使用新创建的零售销售菜谱在Data Science Workspace中创建模型。
-
-### 导入基于Docker的菜谱- Python {#python}
-
-在将源文 [件打包到菜谱教程中](./package-source-files-recipe.md) ，使用Python源文件构建零售销售菜谱的结尾处提供了一个Docker URL。
-
-1. 在“源URL”字段中粘贴与使用Python源文件构建的打包菜谱对应的 **Docker URL** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/python/retail/retail.config.json`。 当两 **个项目都提供** 时，单击“下一步”。
-   ![](../images/models-recipes/import-package-ui/recipe_source_python.png)
-2. 在“管理模式”部分下选择“零售模式”输入和输出 **，这些是使用创建零售模式和数据集教程中提供的引导**&#x200B;脚本创建的 [](../models-recipes/create-retails-sales-dataset.md) 。
-   ![](../images/models-recipes/import-package-ui/recipe_schema.png)
-在“功 **能管理** ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选择“输 **入功能** ”或“ **目标功能** ”来选择输入 **和输出功能** 。 在本教程中，请将 **weeklySales** (每周销售 **量** )设置为 **目标功能**，将其他所有内容设置为输入功能。 单击 **下一步** ，查看您新配置的菜谱。
-3. 根据需要查看菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
-   ![](../images/models-recipes/import-package-ui/recipe_review.png)
-
-恭喜，您已经创建了零售销售菜谱！ 继续执行下 [一步](#next-steps) ，了解如何使用新创建的零售销售菜谱在Data Science Workspace中创建模型。
-
-### 导入基于Docker的菜谱- R {#r}
-
-在将源 [文件打包到菜谱教程中](./package-source-files-recipe.md) ，在使用R源文件构建零售销售菜谱的结尾处提供了一个Docker URL。
-
-1. 在“源URL”字段中粘贴与使用R源文件构建的打包菜谱对应的 **Docker URL** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/R/Retail\ -\ GradientBoosting/retail.config.json`。 当两 **个项目都提供** 时，单击“下一步”。
-   ![](../images/models-recipes/import-package-ui/recipe_source_R.png)
-2. 在“管理模式”部分下选择“零售模式”输入和输出 **，这些是使用创建零售模式和数据集教程中提供的引导**&#x200B;脚本创建的 [](../models-recipes/create-retails-sales-dataset.md) 。
-   ![](../images/models-recipes/import-package-ui/recipe_schema.png)
-在“功 **能管理** ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选择“输 **入功能** ”或“ **目标功能** ”来选择输入 **和输出功能** 。 在本教程中，请将 **weeklySales** (每周销售 **量** )设置为 **目标功能**，将其他所有内容设置为输入功能。 单击 **下一步** ，查看您新配置的菜谱。
-3. 根据需要查看菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
-   ![](../images/models-recipes/import-package-ui/recipe_review.png)
-
-恭喜，您已经创建了零售销售菜谱！ 继续执行下 [一步](#next-steps) ，了解如何使用新创建的零售销售菜谱在Data Science Workspace中创建模型。
-
-## 后续步骤
-
-本教程提供了有关配置菜谱并将其导入到数据科学工作区的分析。 您现在可以使用新创建的菜谱创建、培训和评估模型。
-
-- [在UI中培训和评估模型](./train-evaluate-model-ui.md)
-- [使用API培训和评估模型](./train-evaluate-model-api.md)
+继续执行下 [一步](#next-steps) ，了解如何使用新创建的零售销售菜谱在Data Science Workspace中创建模型。
