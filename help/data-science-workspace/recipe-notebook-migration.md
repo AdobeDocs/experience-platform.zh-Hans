@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 配方和笔记本电脑迁移指南
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: bb6fe494933606d428d7bdf20ee38b7ac51c23ea
+source-git-commit: 61cf05b989bfbae4e26978fa915347f350d7364c
 
 ---
 
@@ -178,7 +178,7 @@ Spark方法不再使用二进制伪像，而是需要构建Docker图像。 如�
 
 本节概述了使用Adobe提供的 [helper.py示例读取数据集所需的更改](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/pyspark/pysparkretailapp/helper.py) 。
 
-对Spark方法进行更新后，需要添加和更改许多值。 首先， `DataSetOptions` 不再使用。 Replace `DataSetOptions` with `qs_option`. 此外，还需 `option` 要新参数。 这两 `qs_option.mode` 者都 `qs_option.datasetId` 是必需的。 最后， `orgId` 需 `serviceApiKey` 要将其更改为 `imsOrg` 和 `apiKey`。 查看下表以了解有关读取数据集的比较：
+对Spark方法进行更新后，需要添加和更改许多值。 首先， `DataSetOptions` 不再使用。 Replace `DataSetOptions` with `qs_option`. 此外，还需 `option` 要新参数。 这两 `qs_option.mode` 者都 `qs_option.datasetId` 是必需的。 最后， `orgId` 需 `serviceApiKey` 要将其更改为 `imsOrg` 和 `apiKey`。 查看下表，了解有关读取数据集的比较：
 
 <table>
   <th>旧的数据集阅读方式</th>
@@ -291,6 +291,10 @@ JupyterLab笔记本电脑的近期更改要求将现有PySpark和Spark 2.3笔记
 
 - [PySpark 2.3到2.4迁移指南](#pyspark-notebook-migration)
 - [Spark 2.3到Spark 2.4(Scala)迁移指南](#spark-notebook-migration)
+
+以下视频旨在进一步帮助理解JupyterLab笔记本电脑所需的更改：
+
+>[!VIDEO](https://video.tv.adobe.com/v/33444?quality=12&learn=on)
 
 ## PySpark 2.3到2.4笔记本电脑迁移指南 {#pyspark-notebook-migration}
 
