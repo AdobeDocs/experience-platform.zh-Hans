@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform源连接器帮助
 translation-type: tm+mt
-source-git-commit: 85af933c14b3768790100a649de05a5e6bdb8560
+source-git-commit: 2fb034dced679d48c90c41ab3254a30fc14b43e0
 
 ---
 
@@ -16,6 +16,10 @@ source-git-commit: 85af933c14b3768790100a649de05a5e6bdb8560
       - [分析数据连接器](connectors/adobe-applications/analytics.md)
       - [受众管理器连接器](connectors/adobe-applications/audience-manager.md)
       - [客户属性连接器](connectors/adobe-applications/customer-attributes.md)
+      - 映射Adobe应用程序字段 {#mapping}
+         - [分析映射字段](connectors/adobe-applications/mapping/analytics.md)
+         - [受众管理器映射字段](connectors/adobe-applications/mapping/audience-manager.md)
+         - [目标映射字段](connectors/adobe-applications/mapping/target.md)
    - 广告 {#advertising}
       - [Google Ads连接器](connectors/advertising/ads.md)
    - 云存储 {#cloud-storage}
