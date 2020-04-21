@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 受众管理器连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
+source-git-commit: 75c446aed75100bd2b5b4a3d365c090cb01dcc69
 
 ---
 
@@ -43,7 +43,7 @@ XDM是一个公开记录的规范，它提供了一个标准化框架，平台�
 
 ## 如何将字段从Adobe受众管理器映射到XDM?
 
-有关详细信息，请参 [阅受众管理器映射字段][audience-manager-mapping-fields] 的文档。
+有关详细信息，请参 [阅受众管理器映射字段](./mapping/audience-manager.md) 的文档。
 
 ## 数据管理平台
 
