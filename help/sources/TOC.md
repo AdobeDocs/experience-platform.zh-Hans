@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform源连接器帮助
 translation-type: tm+mt
-source-git-commit: fcab7fbb955e85006eeebe5fb45b2a62188adaa7
+source-git-commit: 85af933c14b3768790100a649de05a5e6bdb8560
 
 ---
 
@@ -21,10 +21,10 @@ source-git-commit: fcab7fbb955e85006eeebe5fb45b2a62188adaa7
    - 云存储 {#cloud-storage}
       - [Azure Data Lake存储Gen2连接器](connectors/cloud-storage/adls-gen2.md)
       - [Azure Blob和Amazon S3连接器](connectors/cloud-storage/blob-s3.md)
-      - [FTP and SFTP connector](connectors/cloud-storage/ftp-sftp.md)
-      - [Google Cloud Storage connector](connectors/cloud-storage/google-cloud-storage.md)
+      - [FTP和SFTP连接器](connectors/cloud-storage/ftp-sftp.md)
+      - [Google Cloud存储连接器](connectors/cloud-storage/google-cloud-storage.md)
    - CRM {#crm}
-      - [Microsoft Dynamics connector](connectors/crm/ms-dynamics.md)
+      - [Microsoft Dynamics连接器](connectors/crm/ms-dynamics.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
    - 客户成功 {#customer-success}
       - [Salesforce Service Cloud连接器](connectors/customer-success/salesforce-service-cloud.md)
@@ -105,8 +105,8 @@ source-git-commit: fcab7fbb955e85006eeebe5fb45b2a62188adaa7
 - UI教程 {#ui-tutorials}
    - 创建源连接器 {#create}
       - Adobe应用程序 {#adobe-applications}
-         - [Adobe受众管理器连接器](tutorials/ui/create/adobe-applications/analytics.md)
-         - [Adobe Analytics连接器](tutorials/ui/create/adobe-applications/audience-manager.md)
+         - [Adobe Analytics连接器](tutorials/ui/create/adobe-applications/analytics.md)
+         - [Adobe受众管理器连接器](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [客户属性连接器](tutorials/ui/create/adobe-applications/customer-attributes.md)
       - 广告 {#create}
          - [Google Ads连接器](tutorials/ui/create/advertising/ads.md)
