@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform数据管理帮助
 translation-type: tm+mt
-source-git-commit: 608f3f61764e6b578107f4ea7991bca12621330a
+source-git-commit: 30ea8b4eeeb5f11bfca65f2931902aae63e8f08e
 
 ---
 
@@ -13,7 +13,8 @@ source-git-commit: 608f3f61764e6b578107f4ea7991bca12621330a
 * [数据管理概述](home.md)
 * 数据使用标签 {#labels}
    * [数据使用标签概述](labels/overview.md)
-   * [数据使用标签用户指南](labels/user-guide.md)
+   * [在UI中管理数据使用标签](labels/user-guide.md)
+   * [管理API中的数据使用标签](labels/api.md)
    * [支持的数据使用标签](labels/reference.md)
 * 数据使用策略 {#policies}
    * [数据使用策略概述](policies/overview.md)
