@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据使用标签概述
 topic: labels
 translation-type: tm+mt
-source-git-commit: 4d817a439cbc277c3df03e08554d5003b9f68a76
+source-git-commit: 4411018aa1d531b53bbe2431df71829fa07fee75
 
 ---
 
@@ -25,4 +25,4 @@ source-git-commit: 4d817a439cbc277c3df03e08554d5003b9f68a76
 
 ## 后续步骤
 
-现在，您已经引入了数据使用标签，您可以继续阅读用户指南 [](user-guide.md) ，以了解如何在Experience Platform UI中管理标签。
+现在，您已经引入了数据使用标签，您可以继续阅读用户指南 [](user-guide.md) ，以了解如何在Experience Platform UI中管理标签。 有关如何使用API管理标签的步骤，请参阅目录服务开发人员指 [南中的相应部分](../../catalog/api/labels.md)。
