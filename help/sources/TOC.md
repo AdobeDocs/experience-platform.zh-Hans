@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform源连接器帮助
 translation-type: tm+mt
-source-git-commit: 5b036baba864b2b0f0c98d017d40f4d3c60ab80e
+source-git-commit: fcab7fbb955e85006eeebe5fb45b2a62188adaa7
 
 ---
 
@@ -17,14 +17,14 @@ source-git-commit: 5b036baba864b2b0f0c98d017d40f4d3c60ab80e
       - [受众管理器连接器](connectors/adobe-applications/audience-manager.md)
       - [客户属性连接器](connectors/adobe-applications/customer-attributes.md)
    - 广告 {#advertising}
-      - [Google AdWords连接器](connectors/advertising/ads.md)
+      - [Google Ads连接器](connectors/advertising/ads.md)
    - 云存储 {#cloud-storage}
       - [Azure Data Lake存储Gen2连接器](connectors/cloud-storage/adls-gen2.md)
       - [Azure Blob和Amazon S3连接器](connectors/cloud-storage/blob-s3.md)
-      - [FTP和SFTP连接器](connectors/cloud-storage/ftp-sftp.md)
-      - [Google Cloud存储连接器](connectors/cloud-storage/google-cloud-storage.md)
+      - [FTP and SFTP connector](connectors/cloud-storage/ftp-sftp.md)
+      - [Google Cloud Storage connector](connectors/cloud-storage/google-cloud-storage.md)
    - CRM {#crm}
-      - [Microsoft Dynamics连接器](connectors/crm/ms-dynamics.md)
+      - [Microsoft Dynamics connector](connectors/crm/ms-dynamics.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
    - 客户成功 {#customer-success}
       - [Salesforce Service Cloud连接器](connectors/customer-success/salesforce-service-cloud.md)
@@ -58,7 +58,6 @@ source-git-commit: 5b036baba864b2b0f0c98d017d40f4d3c60ab80e
          - [Google Cloud存储连接器](tutorials/api/create/cloud-storage/google.md)
          - [SFTP连接器](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
-         - [Google AdWords连接器](tutorials/api/create/crm/adwords.md)
          - [HubSpot连接器](tutorials/api/create/crm/hubspot.md)
          - [Microsoft Dynamics连接器](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce连接器](tutorials/api/create/crm/salesforce.md)
