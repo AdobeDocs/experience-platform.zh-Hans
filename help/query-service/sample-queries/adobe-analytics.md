@@ -4,14 +4,14 @@ solution: Experience Platform
 title: 示例查询
 topic: queries
 translation-type: tm+mt
-source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
+source-git-commit: 75c446aed75100bd2b5b4a3d365c090cb01dcc69
 
 ---
 
 
 # Adobe Analytics数据的示例查询
 
-来自选定Adobe Analytics报告套件的数据将转换为XDM ExperienceEvents，并作为数据集引入Adobe Experience Platform。 本文档概述了Adobe Experience Platform查询服务利用这些数据的许多使用案例，其中包含的示例查询应与您的Adobe Analytics数据集结合使用。 有关映射 [到XDM ExperienceEvents的更多信息](../../sources/connectors/adobe-applications/analytics-mapping.md) ，请参阅Analytics字段映射文档。
+来自选定Adobe Analytics报告套件的数据将转换为XDM ExperienceEvents，并作为数据集引入Adobe Experience Platform。 本文档概述了Adobe Experience Platform查询服务利用这些数据的许多使用案例，其中包含的示例查询应与您的Adobe Analytics数据集结合使用。 有关映射 [到XDM ExperienceEvents的更多信息](../../sources/connectors/adobe-applications/mapping/analytics.md) ，请参阅Analytics字段映射文档。
 
 ## 入门指南
 
@@ -192,7 +192,7 @@ ERROR: ErrorCode: 08P01 sessionId: XXXX queryId: XXXX Unknown error encountered.
 
 ## 销售变量（转换语法）
 
-在Adobe Analytics中找到的另一个类型是“转化语法”。 使用产品语法时，值会与产品同时收集，但这要求数据出现在同一页面上。 某些情况下，在与产品相关的转换或兴趣事件之前，数据会出现在页面上。 例如，考虑“产品查找方法”报告用例。
+在Adobe Analytics中找到的另一个类型是“转化语法”。 使用产品语法时，值会与产品同时收集，但这要求数据出现在同一页面上。 某些情况下，在与产品相关的转换或事件之前，数据会出现在页面上。 例如，考虑“产品查找方法”报告用例。
 
 1. 用户对“winter hat”执行内部搜索，将启用“转换语法”的“销售eVar6”设置为“内部搜索：winter hat”
 2. 用户单击“华夫饼”并登录到产品详细信息页面。\
