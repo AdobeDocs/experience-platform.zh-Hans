@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Catalog and Datasets Help
+user-guide-title: 目录和数据集帮助
 translation-type: tm+mt
-source-git-commit: ee500b03bc0984fa24666867867d19a5d7446ced
+source-git-commit: 30ea8b4eeeb5f11bfca65f2931902aae63e8f08e
 
 ---
 
@@ -22,6 +22,7 @@ source-git-commit: ee500b03bc0984fa24666867867d19a5d7446ced
    * [删除对象](api/delete-object.md)
    * [创建数据集](api/create-dataset.md)
    * [创建批](api/create-batch.md)
+   * [数据使用标签](api/labels.md)
    * [附录](api/appendix.md)
 * 数据集 {#datasets}
    * [数据集概述](datasets/overview.md)
