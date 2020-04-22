@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据科学工作区疑难解答指南
 topic: Troubleshooting
 translation-type: tm+mt
-source-git-commit: 1f756e7bc71c9ff227757aee64af29e0772c24af
+source-git-commit: ef7c37438990d3bc42024e7fb106d781a5ebbd12
 
 ---
 
@@ -15,9 +15,9 @@ source-git-commit: 1f756e7bc71c9ff227757aee64af29e0772c24af
 
 ## JupyterLab环境未在Google Chrome中加载
 
-将Google Chrome浏览器最新更新至版本80.x后，默认情况下将阻止所有第三方Cookie。 此新策略可以阻止JupyterLab在Adobe Experience Platform中加载。
+>[!IMPORTANT] 此问题已解决，但仍可能存在于Google Chrome 80.x浏览器中。 请确保您的Chrome浏览器是最新的。
 
->[!NOTE] 这是一个暂时的问题。 对第三方Cookie的依赖性设置为在将来的版本中删除。
+在Google Chrome浏览器版本80.x中，默认情况下会阻止所有第三方Cookie。 此策略可以阻止JupyterLab在Adobe Experience Platform中加载。
 
 要解决此问题，请执行以下步骤：
 
@@ -45,7 +45,19 @@ source-git-commit: 1f756e7bc71c9ff227757aee64af29e0772c24af
 
 ## 为什么我无法在Safari中访问JupyterLab?
 
-默认情况下，Safari会禁用第三方Cookie。 由于Jupyter虚拟机实例位于与其父帧不同的域上，因此Adobe Experience Platform当前要求启用第三方Cookie。 请启用第三方Cookie或切换到其他浏览器，如Google Chrome。
+默认情况下，Safari在Safari&lt; 12中禁用第三方Cookie。 由于Jupyter虚拟机实例位于与其父帧不同的域上，因此Adobe Experience Platform当前要求启用第三方Cookie。 请启用第三方Cookie或切换到其他浏览器，如Google Chrome。
+
+对于Safari 12，您需要将用户代理切换为“Chrome”或“Firefox”。 要切换用户代理，请打开 *Safari* 菜单并选择 **Preferences**。 随后将显示首选项窗口。
+
+![Safari首选项](./images/faq/preferences.png)
+
+在Safari首选项窗口中，选择高 **级**。 然后，选中菜 *单栏框中的“显示修改照片* ”菜单。 完成此步骤后，可关闭首选项窗口。
+
+![Safari高级](./images/faq/advanced.png)
+
+接下来，从顶部导航栏中选择“开 **发** ”菜单。 从“开发”下 *拉菜单* ，将指针悬停在“用 *户代理”上*。 您可以选择 **要使用的** Chrome或 **Firefox** “用户代理”字符串。
+
+![“开发”菜单](./images/faq/user-agent.png)
 
 ## 为什么在JupyterLab中上传或删除文件时，我会看到“403禁止”消息？
 
