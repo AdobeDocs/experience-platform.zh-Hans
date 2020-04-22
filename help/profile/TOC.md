@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Real-time Customer Profile Help
+user-guide-title: 实时客户用户档案帮助
 translation-type: tm+mt
-source-git-commit: d16d13fdec107d3654ff2ef5c8e18661763470f0
+source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
 
 ---
 
@@ -25,6 +25,7 @@ source-git-commit: d16d13fdec107d3654ff2ef5c8e18661763470f0
 * 教程 {#tutorials}
    * [向用户档案添加数据](tutorials/add-profile-data.md)
    * [为用户档案和标识配置数据集](tutorials/dataset-configuration.md)
-   * [更多教程](https://docs.adobe.com/content/help/en/experience-platform/tutorials/home.html)
+   * [更多教程](https://docs.adobe.com/content/help/zh-Hans/experience-platform/tutorials/home.html)
 * [隐私请求处理](privacy.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)
+* [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
