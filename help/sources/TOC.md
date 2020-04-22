@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform源连接器帮助
 translation-type: tm+mt
-source-git-commit: 2fb034dced679d48c90c41ab3254a30fc14b43e0
+source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
 
 ---
 
@@ -153,3 +153,4 @@ source-git-commit: 2fb034dced679d48c90c41ab3254a30fc14b43e0
       - [为协议连接器配置数据流](tutorials/ui/dataflow/protocols.md)
    - [激活入站数据以填充客户用户档案](tutorials/ui/profile.md)
    - [监视帐户和数据集流](tutorials/ui/monitor.md)
+- [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
