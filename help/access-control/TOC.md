@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Access Control in Adobe Experience Platform Help
+user-guide-title: 访问控制Adobe Experience Platform帮助
 translation-type: tm+mt
-source-git-commit: e146acd0f74937039b80fc43c6ea96cef7ddea4f
+source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
 
 ---
 
@@ -24,3 +24,4 @@ source-git-commit: e146acd0f74937039b80fc43c6ea96cef7ddea4f
    * [视图有效政策](api/effective-policies.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)
+* [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
