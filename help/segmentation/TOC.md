@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Segmentation Service Help
+user-guide-title: Adobe Experience Platform Segmentation Service帮助
 translation-type: tm+mt
-source-git-commit: 4db66d34afa814715cbcf6fdf409e01b3fe2c0b8
+source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
 
 ---
 
@@ -39,3 +39,4 @@ source-git-commit: 4db66d34afa814715cbcf6fdf409e01b3fe2c0b8
    - [创建数据集以导出数据](tutorials/create-dataset-export-segment.md)
    - [为细分强制实施数据使用合规性](tutorials/governance.md)
 - [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)
+- [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
