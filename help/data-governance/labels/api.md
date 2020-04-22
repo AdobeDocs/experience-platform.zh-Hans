@@ -4,7 +4,7 @@ solution: Experience Platform
 title: '使用API管理数据使用标签 '
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: cac6ab568f030cf86ee68a1df9e45a3ac9d421cb
+source-git-commit: d685f1851badf54ce1d1ac3cbacd69d62894c33f
 
 ---
 
@@ -143,8 +143,6 @@ curl -X POST \
 
 您可以通过发出DELETE请求来删除应用于数据集的标签。
 
->[!NOTE] 您只应在准备要删除的父数据集时使用此操作。
-
 **API格式**
 
 ```http
@@ -168,7 +166,7 @@ curl -X DELETE \
 
 **响应**
 
-成功响应HTTP状态200(OK)表示已删除标签。 您可以 [在单独的调用中查找数据集的现有标签](#lookup) ，以确认这一点。
+成功响应HTTP状态200(OK)，表示标签已被删除。 您可以 [在单独的调用中查找数据集的现有标签](#lookup) ，以确认这一点。
 
 ## 后续步骤
 
