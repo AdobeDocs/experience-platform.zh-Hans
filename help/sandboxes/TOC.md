@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Sandboxes in Adobe Experience Platform Help
+user-guide-title: Adobe Experience Platform帮助中的沙箱
 translation-type: tm+mt
-source-git-commit: 0910c653219d13e260aaf4aeab7c9f124e0e0fd9
+source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
 
 ---
 
@@ -26,3 +26,4 @@ source-git-commit: 0910c653219d13e260aaf4aeab7c9f124e0e0fd9
    * [删除沙箱](api/delete-sandbox.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml)
+* [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
