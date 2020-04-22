@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Edge Network Help
+user-guide-title: Adobe Experience Platform Edge Network帮助
 translation-type: tm+mt
-source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
 
 ---
 
@@ -12,7 +12,7 @@ source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
 
 * [Edge Network概述](home.md)
 * 入门指南 {#get-started}
-   * [快速入门](getting-started/quick-start-with-launch.md)
+   * [快速开始Launch](getting-started/quick-start-with-launch.md)
    * [部署所有产品](getting-started/deploying-all-products.md)
 * 基础知识 {#fundamentals}
    * [安装SDK](fundamentals/installing-the-sdk.md)
@@ -34,3 +34,4 @@ source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
 * 参考 {#ref}
    * [自动收集的信息](reference/automatic-information.md)
    * [检索库信息](reference/retrieving-library-information.md)
+* [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
