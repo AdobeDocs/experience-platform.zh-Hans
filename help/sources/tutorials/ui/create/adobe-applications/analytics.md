@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建Adobe Analytics源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: f09ff4d1b159a6989868c5cfc35b361cfb640a99
+source-git-commit: ac1e5dbe435d9e85e8ce3ad90c60dd31ba9248ff
 
 ---
 
@@ -23,7 +23,7 @@ source-git-commit: f09ff4d1b159a6989868c5cfc35b361cfb640a99
 
 >[!NOTE] 可以与源建立多个绑定连接以引入不同的数据。
 
-![](../../../..//images/tutorials/create/analytics/AA-source_activity.png)
+![](/help/sources/images/tutorials/create/analytics/AA-source_activity.png)
 
 从可用报表包的列表中，选择要引入平台的报表包，然后单击“下 **一步”**。
 
