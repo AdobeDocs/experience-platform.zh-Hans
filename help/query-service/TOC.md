@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Query Service Help
+user-guide-title: Adobe Experience Platform查询服务帮助
 translation-type: tm+mt
-source-git-commit: 41fdee979db32b97a5935a02e9ffcde3308b6d54
+source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
 
 ---
 
@@ -53,3 +53,4 @@ source-git-commit: 41fdee979db32b97a5935a02e9ffcde3308b6d54
    - [塔布洛](clients/tableau.md)
 - [疑难解答指南](troubleshooting-guide.md)
 - [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/qs-api.yaml)
+- [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
