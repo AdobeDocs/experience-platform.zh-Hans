@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 准备要在智能服务中使用的数据
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 03135f564bd72fb60e41b02557cb9ca9ec11e6e8
+source-git-commit: 702ac3860e06951574fe48f7d8771a11f68bedc4
 
 ---
 
@@ -23,32 +23,150 @@ source-git-commit: 03135f564bd72fb60e41b02557cb9ca9ec11e6e8
 
 可以在公共XDM存储库中找到混音的完整示例 [](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)，并应用作以下部分概述的关键字段的引用。
 
-### 关键字段
+## 关键字段
 
-下表突出显示了CEE Mix中应用的关键字段，以便智能服务生成有用的洞察，包括说明和指向参考文档的链接，以便进一步示例。
+以下各节重点介绍了CEE Mix中的关键字段，这些字段应用于智能服务以生成有用的洞察，包括说明和指向参考文档的链接，以获取更多示例。
 
-| XDM字段 | 描述 | 参考 |
-| --- | --- | --- |
-| `xdm:channel` | 与ExperienceEvent相关的营销渠道。 该字段包含有关渠道类型、媒体类型和位置类型的信息。 **必须提&#x200B;_供此字段_，才能让归因AI处理您的数据**。 有关某些 [示例映射](#example-channels) ，请参阅下表。 | [体验渠道模式](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/channels/channel.schema.md) |
-| `xdm:productListItems` | 代表客户选择的产品的一组项目，包括产品SKU、名称、价格和数量。 | [商务详细信息模式](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md) |
-| `xdm:commerce` | 包含有关ExperienceEvent的商务特定信息，包括采购订单编号和付款信息。 | [商务详细信息模式](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md) |
-| `xdm:web` | 表示与ExperienceEvent相关的Web详细信息，如交互、页面详细信息和推荐人。 | [ExperienceEvent Web详细信息模式](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-web.schema.md) |
+### xdm:渠道
 
-### 示例渠道 {#example-channels}
+此字段表示与ExperienceEvent相关的营销渠道。 该字段包含有关渠道类型、媒体类型和位置类型的信息。 **必须提&#x200B;_供此字段_，才能让归因AI处理您的数据**。
 
-该字 `xdm:channel` 段表示与ExperienceEvent相关的营销渠道。 下表提供了映射到XDM的营销渠道的一些示例：
+**示例模式**
 
-| Channel | `channel.mediaType` | `channel._type` | `channel.mediaAction` |
+```json
+{
+  "@id": "https://ns.adobe.com/xdm/channels/facebook-feed",
+  "@type": "https://ns.adobe.com/xdm/channel-types/social",
+  "xdm:mediaType": "earned",
+  "xdm:mediaAction": "clicks"
+}
+```
+
+有关每个必需子字段的完整信息，请 `xdm:channel`参阅体验渠道 [模式规范](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/channels/channel.schema.md) 。 有关某些映射的示例，请参 [阅下表](#example-channels)。
+
+#### 示例渠道映射 {#example-channels}
+
+下表提供映射到该渠道的营销模式的一些示 `xdm:channel` 例：
+
+| Channel | `@type` | `mediaType` | `mediaAction` |
 | --- | --- | --- | --- |
-| 付费搜索 | 付费 | 搜索 | 单击 |
-| 社交——营销 | 免费 | 社交 | 单击 |
-| 显示 | 付费 | 显示 | 单击 |
-| 电子邮件 | 付费 | 电子邮件 | 单击 |
-| 内部推荐人 | 自有 | 直接 | 单击 |
-| 显示浏览 | 付费 | 显示 | 印象 |
-| QR码重定向 | 自有 | 直接 | 单击 |
-| SMS文本消息 | 自有 | SMS | 单击 |
-| 移动设备 | 自有 | 移动 | 单击 |
+| 付费搜索 | https:/<span>/ns.adobe.com/xdm/渠道类型／搜索 | 已付 | 单击 |
+| 社交——营销 | https:/<span>/ns.adobe.com/xdm/渠道类型／社交 | 挣 | 单击 |
+| 显示 | https:/<span>/ns.adobe.com/xdm/渠道类型／显示 | 已付 | 单击 |
+| 电子邮件 | https:/<span>/ns.adobe.com/xdm/渠道类型／电子邮件 | 已付 | 单击 |
+| 内部推荐人 | https:/<span>/ns.adobe.com/xdm/渠道类型／直接 | 自有 | 单击 |
+| 显示浏览 | https:/<span>/ns.adobe.com/xdm/渠道类型／显示 | 已付 | 印象 |
+| QR码重定向 | https:/<span>/ns.adobe.com/xdm/渠道类型／直接 | 自有 | 单击 |
+| 移动设备 | https:/<span>/ns.adobe.com/xdm/渠道类型／移动 | 自有 | 单击 |
+
+### xdm:productListItems
+
+此字段是代表客户选择的产品的一组项目，包括产品SKU、名称、价格和数量。
+
+**示例模式**
+
+```json
+[
+  {
+    "xdm:SKU": "1002352692",
+    "xdm:lineItemId": "12345678",
+    "xdm:name": "24-Watt 8-Light Chrome Integrated LED Bath Light",
+    "xdm:currencyCode": "USD",
+    "xdm:quantity": 1,
+    "xdm:priceTotal": 159
+  },
+  {
+    "xdm:SKU": "3398033623",
+    "xdm:lineItemId": "48693817",
+    "xdm:name": "16ft RGB LED Strips",
+    "xdm:currencyCode": "USD",
+    "xdm:quantity": 1,
+    "xdm:priceTotal": 80
+  }
+]
+```
+
+有关每个必填字段的完整信息，请参 `xdm:productListItems`阅商务详细信 [息模式规范](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md) 。
+
+### xdm：商务
+
+此字段包含有关ExperienceEvent的商务特定信息，包括采购订单编号和付款信息。
+
+**示例模式**
+
+```json
+{
+    "xdm:order": {
+      "xdm:purchaseID": "a8g784hjq1mnp3",
+      "xdm:purchaseOrderNumber": "123456",
+      "xdm:payments": [
+        {
+          "xdm:transactionID": "transactid-a111",
+          "xdm:paymentAmount": 59,
+          "xdm:paymentType": "credit_card",
+          "xdm:currencyCode": "USD"
+        },
+        {
+          "xdm:transactionId": "transactid-a222",
+          "xdm:paymentAmount": 100,
+          "xdm:paymentType": "gift_card",
+          "xdm:currencyCode": "USD"
+        }
+      ],
+      "xdm:currencyCode": "USD",
+      "xdm:priceTotal": 159
+    },
+    "xdm:purchases": {
+      "xdm:value": 1
+    }
+  }
+```
+
+有关每个必填字段的完整信息，请参 `xdm:commerce`阅商务详细信 [息模式规范](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md) 。
+
+### xdm:web
+
+此字段表示与ExperienceEvent相关的Web详细信息，如交互、页面详细信息和推荐人。
+
+**示例模式**
+
+```json
+{
+  "xdm:webPageDetails": {
+    "xdm:siteSection": "Shopping Cart",
+    "xdm:server": "example.com",
+    "xdm:name": "Purchase Confirmation",
+    "xdm:URL": "https://www.example.com/orderConf",
+    "xdm:errorPage": false,
+    "xdm:homePage": false,
+    "xdm:pageViews": {
+      "xdm:value": 1
+    }
+  },
+  "xdm:webReferrer": {
+    "xdm:URL": "https://www.example.com/checkout",
+    "xdm:referrerType": "internal"
+  }
+}
+```
+
+有关每个必需子字段的完整信息，请参 `xdm:productListItems`阅ExperienceEvent Web详细信 [息模式规范](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-web.schema.md) 。
+
+### xdm：营销
+
+此字段包含与与接触点处于活动状态的营销活动相关的信息。
+
+**示例模式**
+
+```json
+{
+  "xdm:trackingCode": "marketingcampaign111",
+  "xdm:campaignGroup": "50%_DISCOUNT",
+  "xdm:campaignName": "50%_DISCOUNT_USA"
+}
+```
+
+有关每个必需子字段的完整信息，请 `xdm:productListItems`参阅市场营销部 [门规范](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/marketing.schema.md) 。
 
 ## 映射和摄取数据
 
