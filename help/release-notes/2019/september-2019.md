@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: September 13, 2019
 author: ens28527
 translation-type: tm+mt
-source-git-commit: 28a8fc496c85b334e89d0f0a130d3cc5c8956399
+source-git-commit: 26568ebbbe48b5a82e4f6b5cf035c354c11e8ed1
 
 ---
 
@@ -14,7 +14,13 @@ source-git-commit: 28a8fc496c85b334e89d0f0a130d3cc5c8956399
 
 ## 发行日期：2019 年 9 月 10 日
 
-## 数据摄取
+对Adobe Experience Platform中现有功能的更新：
+
+* [数据摄取](#ingestion)
+* [数据科学工作区](#dsw)
+* [查询服务](#query)
+
+## 数据摄取 {#ingestion}
 
 Adobe Experience Platform提供一组丰富的功能，用于摄取任何类型的数据和延迟。 Adobe Experience Platform Data Ingestion为获取数据提供了多种替代方法，包括批量API、流API、本机Adobe连接器、数据集成合作伙伴或Adobe Experience Platform UI。
 
@@ -26,7 +32,7 @@ Adobe Experience Platform提供一组丰富的功能，用于摄取任何类型�
 
 有关详细信息，请访问数 [据摄取文档](../../ingestion/home.md)。
 
-## 数据科学工作区
+## 数据科学工作区 {#dsw}
 
 Adobe Experience Platform Data Science Workspace是Experience Platform中的一项全面管理服务，它使数据科学家能够通过构建和操作机器学习模型，跨Adobe解决方案和第三方系统无缝地从数据和内容生成洞察。 数据科学工作区与平台紧密集成，支持端对端数据科学的生命周期，包括探索和准备XDM数据，然后开发并实施模型，以利用机器学习洞察自动丰富实时客户用户档案。
 
@@ -40,13 +46,13 @@ Adobe Experience Platform Data Science Workspace是Experience Platform中的一�
 
 **已知问题**
 
-* 当前，服务库中没有可用于删除现有服务的可访问方式。 同时，请参阅 [Sensei机器学习API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) ，以通过API调用删除现有服务。
+* 当前，服务库中没有可用于删除现有服务的可访问方式。 同时，请参阅 [Sensei机器学习API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) ，通过API调用删除现有服务。
 * 服务库不支持分页以过滤服务的培训和评分运行。
 * 在通过服务库配置计划的培训或评分时，将频率设置为每小时会阻止应用计划。
 
 有关详细信息，请访 [问Data Science Workspace概述](../../data-science-workspace/home.md)。
 
-## 查询服务
+## 查询服务 {#query}
 
 查询服务提供使用标准SQL在Adobe Experience Platform中查询数据的能力，以支持各种分析和数据管理用例。 它是一个无服务器工具，它允许您从数据湖连接数据集并将查询结果捕获为新数据集，以用于报告、数据科学工作区或引入实时客户用户档案。
 
