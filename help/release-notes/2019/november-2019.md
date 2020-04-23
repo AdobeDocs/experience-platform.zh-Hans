@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
+source-git-commit: 817f994fc0622b1c46e98f8d773a4d91c1064824
 
 ---
 
@@ -14,18 +14,18 @@ source-git-commit: 2f0f155beacbc6a4ba2892ae211a9c0305e969ac
 
 ## 发行日期：2019 年 11 月 18 日
 
-新版本：
-* [实时客户数据平台](#real-time-customer-data-platform)
+Adobe Experience Platform的新增功能：
+* [实时客户数据平台](#rtcdp)
 * [目标](#destinations)
 * [来源](#sources)
 
 对现有功能的更新：
-* [数据科学工作区](#data-science-workspace)
-* [体验数据模型(XDM)系统](#experience-data-model-xdm-system)
-* [实时客户资料](#real-time-customer-profile)
-* [分段服务](#segmentation-service)
+* [数据科学工作区](#dsw)
+* [体验数据模型(XDM)系统](#xdm)
+* [实时客户资料](#profile)
+* [分段服务](#segmentation)
 
-## 实时客户数据平台
+## Real-time Customer Data Platform {#rtcdp}
 
 Adobe实时客户数据平台(Real-time CDP)构建于Adobe Experience Platform之上，它帮助公司整合已知和未知的数据，在整个客户旅程中通过智能决策激活客户用户档案。 实时CDP结合了多个企业数据源，以实时创建统一的用户档案，这些数据可用于在所有渠道和设备上提供一对一的个性化客户体验。
 
@@ -37,12 +37,12 @@ Adobe连接到一个大型合作伙伴生态系统，更不用说与Adobe Experi
 
 * 通过从整个企业内流式收集客户数据，实现客户的单一视图。
 * 以负责任的方式管理对已知和未知标识符的可信管理和隐私控制的用户档案。
-* 借助由Adobe Sensei提供支持并为营销人员构建的人工智能和机器学习，生成可操作的洞察并扩展受众。
+* 借助由Adobe Sensei提供支持并为营销人员构建的人工智能和机器学习，生成可操作的洞察和扩展受众。
 * 在所有渠道和目标中实时提供个性化体验。
 
 有关详细信息，请参 [阅Adobe实时客户数据平台文档](../../rtcdp/overview.md)。
 
-### 主要功能
+**主要功能**
 
 | 功能 | 描述 |
 |---|---|
@@ -50,7 +50,7 @@ Adobe连接到一个大型合作伙伴生态系统，更不用说与Adobe Experi
 | 主页指标仪表板 | Adobe实时客户数据平台（实时CDP）主页包含一个指标仪表板，其中显示了有关用户档案和细分的信息。 该主页还包含指向学习材料的链接。 请参阅以下 [实时客户数据平台指标部分](#real-time-customer-data-platform-metrics) 。 |
 | 来源 | 您可以从各种来源(如Adobe解决方案、基于云的存储、第三方软件和您的CRM)中获取数据。 请参阅 [下面的](#sources) “源”部分以了解更多。 |
 
-### 实时客户数据平台指标
+**实时客户数据平台指标**
 
 Adobe实时客户数据平台（实时CDP）主页包含一个指标仪表板，在您登录到实时CDP时会显示该。
 
@@ -60,11 +60,11 @@ Adobe实时客户数据平台（实时CDP）主页包含一个指标仪表板，
 
 要了解更多信息，请参 [阅实时客户数据平台指标概述](../../rtcdp/home-page-dashboards.md)
 
-## 目标
+## 目标 {#destinations}
 
 目标是预建的与Adobe实时客户数据平台支持的目标平台集成，可无缝地向这些合作伙伴激活数据。 有关详细信息，请阅读目 [标概述](../../rtcdp/destinations/destinations-overview.md) 文章。
 
-### 可用目标
+**可用目标**
 
 在11月的发布中，Adobe的实时客户数据平台支持以下目标：
 
@@ -73,20 +73,20 @@ Adobe实时客户数据平台（实时CDP）主页包含一个指标仪表板，
 
 有关每 [个目标的信息](../../rtcdp/destinations/destinations-catalog.md) ，请参阅目标目录。
 
-### 已知限制
+**已知限制**
 
 * 在初始发行版中不提供允许在激活流 [程](../../rtcdp/destinations/activate-destinations.md#activate-data) (激活步骤)中进行自定义计划的控件。
 * 当前无法编辑或删除目标配置。 要绕过此限制，您可以启用或禁用目标详细信息页面右上角的 [目标](../../rtcdp/destinations/destination-details-page.md)。
 * 当前未对帐户详细信息、路径或凭据进行验证，以便连接到目标或存储帐户。 确保输入正确的凭据并对拼写错误或打字错误进行多次检查。
 * 在初始版本中没有进行凭据续订。 帐户过期或需要刷新后，您必须创建新的目标连接并重新映射之前映射的区段。
 
-## 来源
+## 来源 {#sources}
 
 Adobe Experience Platform可以从外部源中摄取数据，同时允许您使用平台服务来构建、标记和增强这些数据。 您可以从各种来源(如Adobe解决方案、基于云的存储、第三方软件和您的CRM系统)收集数据。
 
 Experience Platform提供RESTful API和交互式UI，使您能轻松为各种数据提供者设置源连接。 这些源连接允许您对存储系统和CRM服务进行身份验证，为摄取运行设置时间，并管理数据摄取吞吐量。
 
-### 主要功能
+**主要功能**
 
 | 功能 | 描述 |
 | ---------- | ------------ |
@@ -94,17 +94,17 @@ Experience Platform提供RESTful API和交互式UI，使您能轻松为各种数
 | 改进了CRM连接器的工作流 | 用于创建和管理Microsoft Dynamics和Salesforce连接器的全新直观UI工作流程。 |
 | 针对基于云的存储的连接器支持 | 连接器现在可以访问基于云的存储。 新来源包括Amazon S3、Azure Blob和FTP/SFTP服务器。 |
 
-### 已知问题
+**已知问题**
 
 * 用于基于云的存储的源连接器不支持摄取压缩文件。
 
 有关源的详细信息，请参阅 [源概述](../../sources/home.md)。
 
-## 数据科学工作区
+## 数据科学工作区 {#dsw}
 
 Adobe Experience Platform Data Science Workspace通过构建和操作机器学习模型，使数据科学家能够跨Adobe应用程序和第三方系统无缝地从数据和内容生成洞察。 数据科学工作区与平台紧密集成，支持端对端数据科学的生命周期，包括探索和准备XDM数据，然后开发并实施模型，以利用机器学习洞察自动丰富实时客户用户档案。
 
-### 新增功能
+**新增功能**
 
 | 功能 | 描述 |
 | -----------| ---------- |
@@ -113,13 +113,13 @@ Adobe Experience Platform Data Science Workspace通过构建和操作机器学�
 
 有关详细信息，请参阅数 [据科学工作区概述](../../data-science-workspace/home.md)。
 
-## 体验数据模型(XDM)系统
+## 体验数据模型(XDM)系统 {#xdm}
 
 标准化和互操作性是Experience Platform的主要概念。 Adobe推动的体验数据模型(XDM)旨在标准化客户体验数据并定义客户体验管理模式。
 
 XDM是一个公开的规范，旨在提高数字体验的强大功能。 它为与Adobe Experience Platform上的服务通信的任何应用程序提供了通用结构和定义。 通过遵守XDM标准，所有客户体验数据都可以整合到以更快、更集成的方式提供洞察的共同表现形式中。 您可以从客户行动中获得宝贵的洞察，通过细分定义客户受众，并将客户属性用于个性化目的。
 
-### 新增功能
+**新增功能**
 
 | 功能 | 描述 |
 | ---------- | ------------ |
@@ -130,13 +130,13 @@ XDM是一个公开的规范，旨在提高数字体验的强大功能。 它为�
 | 格式约束 `xdm:alternateDisplayInfo` | “标题”和“说明”字段必须同时 `xdm:alternateDisplayInfo` 是通过验证的字符串。 |
 | 名称更改：XDM个人用户档案 | “XDM用户档案”类的“标题”已更新为“XDM个人用户档案”。 班级的 `$id` 形式没有改变。 |
 
-### 已知问题
+**已知问题**
 
 * 无.
 
 要了解有关使用模式注册表API和模式编辑器用户界面使用XDM的更多信息，请阅读 [XDM系统文档](../../xdm/home.md)。
 
-## 实时客户资料
+## 实时客户资料 {#profile}
 
 Adobe Experience Platform使您能够在客户与品牌互动的任何地方或何时为其提供协调、一致和相关的体验。 通过实时客户用户档案，您可以看到每位客户的整体视图，该将来自多个渠道的数据（包括在线、离线、CRM和第三方数据）结合在一起。 用户档案允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供一个具有可操作性且时间戳记的帐户。
 
@@ -148,17 +148,17 @@ Adobe Experience Platform使您能够在客户与品牌互动的任何地方或�
 | 根据投影配置合并策略 | 应用程序现在可以根据预测配置合并策略，以生成由特定合并策略控制的数据视图。 |
 | 计算属性 | 计算的属性会根据其他值、计算和表达式自动计算字段的值。 计算的属性在用户档案级别上操作为基于传入事件、传入事件和用户档案数据或传入事件、用户档案数据和历史事件的聚合值，例如“总购买”、“生命周期值”或“漏斗状态”。 |
 
-### 错误修复
+**错误修复**
 
 * 简化了合并策略创建工作流中可用ID拼接策略的列表。
 
-### 已知问题
+**已知问题**
 
 * 无.
 
 有关实时客户用户档案的更多信息(包括使用用户档案数据的教程和最佳实践)，请阅读实 [时客户用户档案概述](../../profile/home.md)。
 
-## 分段服务
+## 分段服务 {#segmentation}
 
 Adobe Experience Platform Segmentation Service提供用户界面和RESTful API，使您能够构建细分并根据实时客户用户档案数据生成受众。 这些细分在平台上集中配置和维护，使任何Adobe应用程序都可轻松访问。
 
@@ -173,7 +173,7 @@ Adobe Experience Platform Segmentation Service提供用户界面和RESTful API�
 | RBAC支持 | 区段生成器现在支持基于角色的基本访问控制和权限。 |
 | 增强了对平台与Adobe解决方案之间外部受众共享的支持 | 在受众数量较大或先验未知的情况下，用户现在可以导入外部（非Experience Platform）受众元数据。 此版本包括对已配置解决方案连接器的客户的受众管理器元数据的访问。 此受众元数据可在Segment Builder中用于创建新的Experience Platform区段。 <br/><br/> 此外，在Experience Platform中创建的细分现在可用于集成的Adobe解决方案，包括受众管理器、目标和Ad Cloud。 |
 
-### 错误修复
+**错误修复**
 
 * 修复了在嵌套关系的情况下导致多实体分段返回零用户档案的问题。
 * 修复了排除逻辑返回误导性结果的问题。
@@ -181,7 +181,7 @@ Adobe Experience Platform Segmentation Service提供用户界面和RESTful API�
 * 修复了出现同一XDM文件夹的多个副本的间歇性问题。
 * 现在，产生消息以在区段估计不适用于所选合并策略时通知用户。
 
-### 已知问题
+**已知问题**
 
 * 无.
 
