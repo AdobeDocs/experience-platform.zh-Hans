@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 将模型发布为服务(API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -123,7 +123,7 @@ curl -X POST
 
 请注意，可以使用ML实例创建ML服务，而无需安排任何培训或评分实验。 此类ML服务将创建普通的实验实体和单个实验运行以进行培训和评分。
 
-### ML服务（带有计划评分实验）
+### ML服务（带有计划评分实验） {#ml-service-with-scheduled-experiment-for-scoring}
 
 通过发布具有计划实验运行的ML实例进行评分来创建ML服务，将导致创建用于培训的普通实验实体。 生成的培训实验运行将用于所有计划的评分实验运行。 确保您具有创 `mlInstanceId`建ML服务 `trainingDataSetId`所 `scoringDataSetId` 需的、和必需的值，并且这些值存在且是有效值。
 
@@ -197,7 +197,7 @@ curl -X POST
 
 根据响 `JSON` 应，键和建议 `trainingExperimentId` 为 `scoringExperimentId` 此ML服务创建了一个新的培训和评分实验实体。 对象的存在引 `scoringSchedule` 用了有关评分实验运行计划的详细信息。 响 `id` 应中的键指您刚刚创建的ML服务。
 
-### ML服务（包含针对培训和评分的定期实验）
+### ML服务（包含针对培训和评分的定期实验） {#ml-service-with-scheduled-experiments-for-training-and-scoring}
 
 要将现有ML实例作为具有计划培训和评分实验运行的ML服务发布，您需要提供培训和评分计划。 创建此配置的ML服务时，还会为培训和评分创建计划的实验实体。 请注意，培训和评分计划不一定相同。 在评分作业执行期间，将获取由计划培训实验运行生成的最新培训模型并将其用于计划的评分运行。
 
@@ -281,7 +281,7 @@ curl -X POST "https://platform-int.adobe.io/data/sensei/mlServices"
 
 在响应体中 `trainingExperimentId` 加入 `scoringExperimentId` 和加入，表明为培训和得分创建了实验实体。 上述用于培 `trainingSchedule` 训和评 `scoringSchedule` 分的实验实体是预定的实验。 响 `id` 应中的键指您刚刚创建的ML服务。
 
-## 检索ML服务
+## 检索ML服务 {#retrieving-ml-services}
 
 检索现有ML服务与向端点发出请求一样 `GET` 简单 `/mlServices` 。 确保您尝试检索的特定ML服务具有ML服务标识。
 
