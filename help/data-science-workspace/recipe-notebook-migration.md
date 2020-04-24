@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 配方和笔记本电脑迁移指南
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 057001b0b4488f578bdd07387a66c647a91798c8
+source-git-commit: 36305d9098f24b40efd333e7d8a331ebca41ca59
 
 ---
 
@@ -144,12 +144,12 @@ COPY target/ml-retail-sample-spark-*-jar-with-dependencies.jar /application.jar
 
 ### 更改依赖关系(Spark) {#change-dependencies-spark}
 
-如果您使用的是现有菜谱，则pom.xml文件中的依赖关系需要更改。 将model-authoring-sdk依赖关系版本更改为1.0.0。接下来，将pom文件中的Spark版本更新为2.4.3，将Scala版本更新为2.11.12。
+如果您使用的是现有菜谱，则pom.xml文件中的依赖关系需要更改。 将model-authoring-sdk依赖关系版本更改为2.0.0。接下来，将pom文件中的Spark版本更新为2.4.3，将Scala版本更新为2.11.12。
 
 ```json
 <groupId>com.adobe.platform.ml</groupId>
 <artifactId>authoring-sdk_2.11</artifactId>
-<version>1.0.0</version>
+<version>2.0.0</version>
 <classifier>jar-with-dependencies</classifier>
 ```
 
