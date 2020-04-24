@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在客户人工智能中下载分数
 topic: Downloading scores
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: 387cbdebccb9ae54a2907d1afe220e9711927ca6
 
 ---
 
@@ -34,7 +34,7 @@ source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
 
 ![数据集ID](./images/download-scores/access-scores.png)
 
-## 检索批ID
+## 检索批ID {#retrieve-your-batch-id}
 
 使用上一步中的数据集ID，您需要调用目录API以检索批ID。 此API调用使用其他查询参数，以返回单个批次，而不是属于您组织的列表批次。 有关可用查询参数类型的详细信息，请访问使用查询参数过 [滤目录数据的指南](../../catalog/api/filter-data.md)。
 
@@ -98,7 +98,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?dataSet=5
 }
 ```
 
-## 使用您的批ID检索下一个API调用
+## 使用您的批ID检索下一个API调用 {#retrieve-the-next-api-call-with-your-batch-id}
 
 获得批ID后，您便可以向发出新的GET请求 `/batches`。 该请求返回用作下一个API请求的链接。
 
@@ -152,7 +152,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/035e2520-5
 }
 ```
 
-## 检索文件
+## 检索文件 {#retrieving-your-files}
 
 使用上 `href` 一步中获得的值作为API调用，发出新的GET请求以检索文件目录。
 
