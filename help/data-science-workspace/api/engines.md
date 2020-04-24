@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 引擎
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 2940f69d193ff8a4ec6ad4a58813b5426201ef45
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -130,7 +130,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 引擎的所需名称。 与此引擎对应的菜谱将继承此值，该值将作为菜谱的名称显示在UI中。 |
-| `description` | 引擎的可选说明。 与此引擎对应的菜谱将继承此值，该值将作为菜谱的说明在UI中显示。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
+| `description` | 引擎的可选说明。 与此引擎对应的菜谱将继承此值，该值将作为菜谱的说明显示在UI中。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
 | `type` | 引擎的执行类型。 此值与构建Docker图像时所用的语言相对应。 该值可以设置为Spark或PySpark。 |
 | `mlLibrary` | 为PySpark和Scala菜谱创建引擎时需要的字段。 此字段必须设置为 `databricks-spark`。 |
 | `artifacts.default.image.location` | Docker图像的位置。 仅支持Azure ACR或公共（未验证）Dockerhub。 |
@@ -489,7 +489,7 @@ curl -X POST \
 }
 ```
 
-## 使用二进制伪像创建功能管道引擎——已弃用
+## 使用二进制伪像创建功能管道引擎——已弃用 {#create-a-feature-pipeline-engine-using-binary-artifacts}
 
 >[!IMPORTANT]
 >不再支持二进制伪像，并且设置为在以后的日期删除。
@@ -525,7 +525,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 引擎的所需名称。 与此引擎对应的菜谱将继承此值，该值将作为菜谱的名称显示在UI中。 |
-| `description` | 引擎的可选说明。 与此引擎对应的菜谱将继承此值，该值将作为菜谱的说明显示在UI中。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
+| `description` | 引擎的可选说明。 与此引擎对应的菜谱将继承此值，该值将作为菜谱的说明在UI中显示。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
 | `algorithm` | 指定机器学习算法类型的字符串。 将此值设置为“fp”，以将此创建指定为“特征管道引擎”。 |
 | `type` | 引擎的执行类型。 此值对应于构建二进制伪像的语言，可以是“PySpark”或“Spark”。 |
 
