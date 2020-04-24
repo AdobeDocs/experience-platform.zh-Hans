@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 将源文件打包到菜谱中
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4001e4fd6a2e04a04e7ea594175d9e3e5c8a00d6
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -29,7 +29,7 @@ source-git-commit: 4001e4fd6a2e04a04e7ea594175d9e3e5c8a00d6
 
 菜谱创建开始与打包源文件以构建存档文件。 源文件定义了用于解决现有特定问题的机器学习逻辑和算法，并以Python、R、PySpark或Scala编写。 构建的存档文件采用Docker图像的形式。 构建完毕后，打包的存档文件将导入Data Science Workspace中，以在UI中或 [使用API](./import-packaged-recipe-ui.md)[创建菜谱](./import-packaged-recipe-api.md)。
 
-### 基于Docker的模型创作
+### 基于Docker的模型创作 {#docker-based-model-authoring}
 
 Docker图像允许开发人员将应用程序与其所需的所有部件（如库和其他依赖项）打包，并将其作为一个包发布。
 
