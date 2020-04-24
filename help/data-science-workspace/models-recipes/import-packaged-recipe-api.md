@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 导入打包的菜谱(API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: ebf7c883ce89fdf8b0d468ab21d1c3a1ba8aca06
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -46,7 +46,7 @@ source-git-commit: ebf7c883ce89fdf8b0d468ab21d1c3a1ba8aca06
 - [使用Docker URL创建引擎](#create-an-engine-with-a-docker-url)
 - [使用二进制对象创建引擎（已弃用）](#create-an-engine-with-a-binary-artifact-deprecated)
 
-### 使用Docker URL创建引擎
+### 使用Docker URL创建引擎 {#create-an-engine-with-a-docker-url}
 
 要创建具有存储在Docker容器中的打包的Recipe文件的引擎，您必须为打包的Recipe文件提供Docker URL。
 
@@ -125,7 +125,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 引擎的所需名称。 与此引擎对应的菜谱将继承此值，该值将作为菜谱的名称显示在UI中。 |
-| `description` | 引擎的可选说明。 与此引擎对应的菜谱将继承此值，该值将作为菜谱的说明在UI中显示。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
+| `description` | 引擎的可选说明。 与此引擎对应的菜谱将继承此值，该值将作为菜谱的说明显示在UI中。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
 | `type` | 引擎的执行类型。 此值与在“PySpark”上构建Docker图像的语言相对应。 |
 | `mlLibrary` | 为PySpark和Scala菜谱创建引擎时需要的字段。 |
 | `artifacts.default.image.location` | 由Docker URL链接到的Docker图像的位置。 |
@@ -199,11 +199,11 @@ curl -X POST \
 
 成功的响应会显示包含有关新创建引擎的信息的JSON有效负荷。 该 `id` 键表示唯一的引擎标识符，在下一个教程中需要该键来创建MLI实例。 确保在继续执行后续步骤之前保存引擎标识符。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 您已使用API创建了引擎，并且作为响应体的一部分获得了唯一的引擎标识符。 在下一个教程中，您可以使用此引擎标识符，因为您将学习如 [何使用API创建、培训和评估模型](./train-evaluate-model-api.md)。
 
-### 使用二进制对象创建引擎（已弃用）
+### 使用二进制对象创建引擎（已弃用） {#create-an-engine-with-a-binary-artifact-deprecated}
 
 <!-- Will need to remove binary artifact documentation once the old flags are turned off -->
 
