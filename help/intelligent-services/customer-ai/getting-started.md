@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 客户AI快速入门
 topic: Getting started
 translation-type: tm+mt
-source-git-commit: 0eeb41fa06864cc28b3a76c2a69c76ea5430d45a
+source-git-commit: f7c59ef097c00073fbf9f6522b6e70ed24cc8bf1
 
 ---
 
@@ -13,7 +13,7 @@ source-git-commit: 0eeb41fa06864cc28b3a76c2a69c76ea5430d45a
 
 客户人工智能指南需要对使用客户人工智能所涉及的各种平台服务进行有效理解。 在开始之前，请查看以下文档:
 
-- [体验数据模型(XDM)系统概述](../../xdm/home.md):XDM是一个基本框架，它允许Adobe Experience Cloud以Experience Platform为后盾，在恰当的时机在正确的渠道上向正确的人员提供正确的信息。 构建Experience Platform的方法(XDM System)可操作Experience Data Model模式，供Platform服务使用。
+- [体验数据模型(XDM)系统概述](../../xdm/home.md):XDM是基本框架，它允许Adobe Experience Cloud以Experience Platform为后盾，在正确的渠道、恰当的时机向正确的人员提供正确的信息。 构建Experience Platform的方法(XDM System)可操作Experience Data Model模式，供Platform服务使用。
 - [模式合成的基础知识](../../xdm/schema/composition.md):本文档介绍了Experience Data Model(XDM)模式，以及构成要在Adobe Experience Platform中使用的模式的构件块、原则和最佳做法。
 - [建筑模式](../../xdm/tutorials/create-schema-ui.md):本教程介绍了在Experience Platform中使用模式编辑器创建模式的步骤。
 - [实时客户用户档案概述](../../rtcdp/overview.md):Adobe实时客户数据平台(Real-time CDP)构建于Adobe Experience Platform之上，可帮助公司整合已知和未知的数据，在整个客户旅程中通过智能决策激活客户用户档案。 实时CDP结合了多个企业数据源，以实时创建统一的用户档案，这些数据可用于在所有渠道和设备上提供一对一的个性化客户体验。
@@ -22,7 +22,7 @@ source-git-commit: 0eeb41fa06864cc28b3a76c2a69c76ea5430d45a
 
 ## 下载客户AI得分
 
->[!NOTE] 如果您不需要下载原始分数，可以跳过此步骤并继续阅读用户界面指南。
+>[!NOTE] 如果您不需要下载原始分数，可以跳过此步骤并继续阅读配置 [指南](./user-guide/configure.md)。
 
 通过组合API调用，可以下载客户AI得分。 要调用平台API，您必须首先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程后，将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
 
@@ -42,4 +42,4 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台
 
 ## 后续步骤
 
-准备就绪并准备好所有凭据和模式后，请遵循客户AI用户界面指 [南进行开始](./user-guide.md)。 本指南将指导您逐步创建实例，并提交该实例进行培训和评分。
+完成上述文档中所述的步骤后，请访问输 [入和输出文档](./input-output.md) 。 本文档简要概述了在客户人工智能中使用和生成的数据类型。
