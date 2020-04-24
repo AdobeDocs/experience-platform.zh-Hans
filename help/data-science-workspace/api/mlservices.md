@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 服务
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: dabeee04dd6ec2bbdd37a6987efcb54b285df7ca
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -15,7 +15,7 @@ MLService是一个经过培训的已发布模型，它使您的组织能够访�
 
 自动化培训和评分计划由开始时间戳、结束时间戳和表示为cron表达式的频率 <a href="https://en.wikipedia.org/wiki/Cron" target="_blank">定义</a>。 计划可在创建MLService [时定义](#create-an-mlservice) ，也可通过更新现 [有MLService来应用](#update-an-mlservice)。
 
-## 创建MLService
+## 创建MLService {#create-an-mlservice}
 
 您可以通过执行POST请求和提供服务名称和有效MLI实例ID的有效负荷来创建MLService。 用于创建MLService的MLInstance不需要具有现有的培训实验，但您可以通过提供相应的实验ID和培训运行ID来选择使用现有的培训模型创建MLService。
 
@@ -103,7 +103,7 @@ curl -X POST \
 }
 ```
 
-## 检索MLServices的列表
+## 检索MLServices的列表 {#retrieve-a-list-of-mlservices}
 
 您可以通过执行单个GET请求来检索MLServices的列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅有关资产检索的查询参 [数的附录部分](./appendix.md#query)。
 
@@ -162,7 +162,7 @@ curl -X GET \
 }
 ```
 
-## 检索特定MLService
+## 检索特定MLService {#retrieve-a-specific-mlservice}
 
 您可以通过执行在请求路径中包含所需MLService ID的GET请求来检索特定实验的详细信息。
 
@@ -206,7 +206,7 @@ curl -X GET \
 }
 ```
 
-## 更新MLService
+## 更新MLService {#update-an-mlservice}
 
 您可以通过PUT请求覆盖现有MLService的属性来更新它，该请求在请求路径中包括目标MLService的ID，并提供包含已更新属性的JSON有效负荷。
 
