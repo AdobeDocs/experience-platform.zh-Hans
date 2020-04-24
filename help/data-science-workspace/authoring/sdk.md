@@ -4,7 +4,7 @@ solution: Experience Platform
 title: SDK开发人员指南
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 897e897c80421c8eddd779222ddfa20298e72298
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -13,18 +13,9 @@ source-git-commit: 897e897c80421c8eddd779222ddfa20298e72298
 
 模型创作SDK使您能够开发可在Adobe Experience Platform Data Science Workspace中使用的自定义机器学习方法和功能管道，在PySpark和Spark中提供可实施的模板。
 
-本文档提供有关“模型创作SDK”中的各种类的信息：
+本文档提供有关“模型创作SDK”中的各种类的信息。
 
-- [DataLoader](#dataloader)
-   - [从平台数据集加载数据](#load-data-from-a-platform-dataset)
-- [DataSaver](#datasaver)
-   - [将数据保存到平台数据集](#save-data-to-a-platform-dataset)
-- [DatasetTransformer](#datasettransformer)
-- [FeaturePipelineFactory](#featurepipelinefactory)
-- [PipelineFactory](#pipelinefactory)
-- [MLE值器](#mlevaluator)
-
-## DataLoader
+## DataLoader {#dataloader}
 
 DataLoader类封装与检索、过滤和返回原始输入数据相关的任何内容。 输入数据的示例包括用于培训、评分或功能工程的数据。 数据加载程序扩展抽象类， `DataLoader` 并且必须覆盖抽象方法 `load`。
 
@@ -83,7 +74,7 @@ DataLoader类封装与检索、过滤和返回原始输入数据相关的任何�
     </tbody>
 </table>
 
-### 从平台数据集加载数据
+### 从平台数据集加载数据 {#load-data-from-a-platform-dataset}
 
 以下示例按ID检索平台数据并返回一个DataFrame，其中数据集ID(`datasetId`)是配置文件中定义的属性。
 
@@ -199,7 +190,7 @@ class MyDataLoader extends DataLoader {
 }
 ```
 
-## DataSaver
+## DataSaver {#datasaver}
 
 DataSaver类封装与存储输出数据相关的任何内容，包括来自评分或功能工程的输出数据。 数据保护程序扩展了抽象类， `DataSaver` 并且必须覆盖抽象方法 `save`。
 
@@ -258,7 +249,7 @@ DataSaver类封装与存储输出数据相关的任何内容，包括来自评�
     </tbody>
 </table>
 
-### 将数据保存到平台数据集
+### 将数据保存到平台数据集 {#save-data-to-a-platform-dataset}
 
 要将数据存储到平台数据集上，必须在配置文件中提供或定义属性：
 
@@ -398,7 +389,7 @@ class ScoringDataSaver extends DataSaver {
 }
 ```
 
-## DatasetTransformer
+## DatasetTransformer {#datasettransformer}
 
 DatasetTransformer类修改和转换数据集的结构。 Sensei机器学习运行时不需要定义此组件，并根据您的要求实施。
 
@@ -459,7 +450,7 @@ DatasetTransformer类修改和转换数据集的结构。 Sensei机器学习运�
     </tbody>
 </table>
 
-## FeaturePipelineFactory
+## FeaturePipelineFactory {#featurepipelinefactory}
 
 FeaturePipelineFactory类包含特征提取算法，并定义从开始到完成的特征管道的阶段。
 
@@ -541,7 +532,7 @@ FeaturePipelineFactory类包含特征提取算法，并定义从开始到完成�
     </tbody>
 </table>
 
-## PipelineFactory
+## PipelineFactory {#pipelinefactory}
 
 PipelineFactory类封装了模型培训和评分的方法和定义，其中培训逻辑和算法以Spark Pipeline的形式进行定义。
 
@@ -650,7 +641,7 @@ PipelineFactory类封装了模型培训和评分的方法和定义，其中培�
     </tbody>
 </table>
 
-## MLE值器
+## MLE值器 {#mlevaluator}
 
 MLEvaluator类提供了用于定义评估度量和确定培训和测试数据集的方法。
 
