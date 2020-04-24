@@ -4,7 +4,7 @@ solution: Experience Platform
 title: MLInstances
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 01cfbc86516a05df36714b8c91666983f7a1b0e8
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -13,7 +13,7 @@ source-git-commit: 01cfbc86516a05df36714b8c91666983f7a1b0e8
 
 MLI实例是现有引擎与一组相应配置的配对，这些配置定义了任何培训参数、评分参数或硬件资源配置。 [](./engines.md)
 
-## 创建MLInstance
+## 创建MLInstance {#create-an-mlinstance}
 
 您可以通过执行POST请求来创建MLI实例，同时提供由有效的引擎ID(`{ENGINE_ID}`)和一组适当的默认配置组成的请求有效负荷。
 
