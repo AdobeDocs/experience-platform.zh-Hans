@@ -5,14 +5,14 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 5199a344a66381ef9d7eea1ea8314e5de7152e3b
+source-git-commit: e5fa12b92f7006f2c5c428b25f81dade57733498
 
 ---
 
 
 # Adobe Experience Platform 发行说明
 
-## 发行日期：2020 年 1 月 15 日
+**发行日期：2020 年 1 月 15 日**
 
 对Adobe Experience Platform中现有功能的更新：
 
