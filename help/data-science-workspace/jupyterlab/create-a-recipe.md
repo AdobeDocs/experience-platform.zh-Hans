@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用Jupyter笔记本创建菜谱
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 10f157e0c9f8ab6e487b7dc83416b9e3b2f324c4
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -12,18 +12,6 @@ source-git-commit: 10f157e0c9f8ab6e487b7dc83416b9e3b2f324c4
 # 使用Jupyter笔记本创建菜谱
 
 本教程将分两个主要部分。 首先，您将使用JupyterLab Notebook中的模板创建机器学习模型。 接下来，您将在JupyterLab中练习笔记本到菜谱工作流程，以在Data Science Workspace中创建菜谱。
-- [开始使用JupyterLab笔记本环境](#get-started-with-the-jupyterlab-notebook-environment)
-- [编辑菜谱文件](#make-edits-to-recipe-files)
-- [Recipe Builder笔记本入门](#get-started-with-the-recipe-builder-notebook)
-   - [要求文件](#requirements-file)
-   - [配置文件](#configuration-files)
-   - [培训数据加载器](#training-data-loader)
-   - [评分数据加载器](#scoring-data-loader)
-   - [管线文件](#pipeline-file)
-   - [求值器文件](#evaluator-file)
-   - [数据保护程序文件](#data-saver-file)
-- [培训和评分](#training-and-scoring)
-- [创建菜谱](#create-recipe)
 
 ## 引入的概念：
 
@@ -45,7 +33,7 @@ Recipe Builder笔记本电脑允许您在笔记本内运行培训和评分。 �
 
 单击启动器中的Recipe Builder笔记本时，该笔记本将在选项卡中打开。 笔记本中使用的模板是Python Retail Sales Forecasting Recipe，也可以在此公共存储库 [中找到它](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)
 
-您会注意到，在工具栏中还有三个其他操作，即 **培训**、 **得分** 和 **创建菜谱**。 这些图标将仅显示在Recipe Builder笔记本中。 在笔记本中构建菜谱后，有关这些操 [作的更多信息将在培训和评分部分介绍](#training-and-scoring) 。
+您会注意到，在工具栏中还有三个其他操作，即- **[!UICONTROL Train]**、 **[!UICONTROL Score]** 和 **[!UICONTROL Create Recipe]**。 这些图标将仅显示在Recipe Builder笔记本中。 在笔记本中构建菜谱后，有关这些操 [作的更多信息将在培训和评分部分介绍](#training-and-scoring) 。
 
 ![](../images/jupyterlab/create-recipe/toolbar_actions.png)
 
@@ -69,7 +57,7 @@ Recipe Builder笔记本电脑允许您在笔记本内运行培训和评分。 �
 - [求值器文件](#evaluator-file)
 - [数据保护程序文件](#data-saver-file)
 
-### 要求文件
+### 要求文件 {#requirements-file}
 
 要求文件用于声明您希望在菜谱中使用的其他库。 如果存在依赖关系，则可以指定版本号。 要查找其他库，请访问https://anaconda.org。 正在使用的主要库的列表包括：
 
@@ -84,7 +72,7 @@ data_access_sdk_python
 >[!NOTE]
 >您添加的库或特定版本可能与上述库不兼容。
 
-### 配置文件
+### 配置文件 {#configuration-files}
 
 配置文件和 `training.conf` 用 `scoring.conf`于指定要用于培训和评分的数据集以及添加超参数。 培训和评分有不同的配置。
 
@@ -108,7 +96,7 @@ data_access_sdk_python
 - `ML_FRAMEWORK_IMS_ML_TOKEN`
 - `ML_FRAMEWORK_IMS_TENANT_ID`
 
-## 培训数据加载器
+## 培训数据加载器 {#training-data-loader}
 
 培训数据加载器的目的是实例化用于创建机器学习模型的数据。 通常，培训数据加载器将完成以下两个任务:
 - 从平台加载数据
@@ -116,7 +104,7 @@ data_access_sdk_python
 
 以下两个部分将重新加载数据和准备数据。
 
-### 加载数据
+### 加载数据 {#loading-data}
 
 这一步使用了 [熊猫数据框](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)。 可以使用Platform SDK(`platform_sdk`)从Adobe Experience Platform中的文件加载数据，或使用熊猫的或功能从外部源 `read_csv()` 加载 `read_json()` 数据。
 
@@ -126,11 +114,11 @@ data_access_sdk_python
 >[!NOTE]
 >在Recipe Builder笔记本中，数据通过数据加载器 `platform_sdk` 加载。
 
-### Platform SDK
+### Platform SDK {#platform-sdk}
 
 有关使用数据加载器的详细教 `platform_sdk` 程，请访问 [Platform SDK指南](../authoring/platform-sdk.md)。 本教程提供有关构建身份验证、基本读取数据和基本写入数据的信息。
 
-### 外部来源
+### 外部来源 {#external-sources}
 
 本节将向您介绍如何将JSON或CSV文件导入到熊猫对象。 熊猫图书馆的官方文件可在此处找到：
 - [read_csv](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)
@@ -180,7 +168,7 @@ df = prodreader.load(data_set_id=configProperties['trainingDataSetId'],
 
 现在您掌握了数据，您可以从数据准备和功能设计开始。
 
-### 数据准备和功能工程
+### 数据准备和功能工程 {#data-preparation-and-feature-engineering}
 
 在加载数据后，数据进行准备，然后被拆分到数据集 `train` 和数 `val` 据集。 示例代码如下所示：
 
@@ -222,7 +210,7 @@ dataframe.drop('date', axis=1, inplace=True)
 
 函 `load()` 数应以和数据集 `train` 作为 `val` 输出。
 
-### 评分数据加载器
+### 评分数据加载器 {#scoring-data-loader}
 
 加载用于评分的数据的过程类似于在函数中加载培训数 `split()` 据。 我们使用Data Access SDK从我们文件中的 `scoringDataSetId` 位置加载数 `recipe.conf` 据。
 
@@ -292,11 +280,11 @@ df.dropna(0, inplace=True)
 
 评分 `load()` 数据加载器中的函数应以评分数据集作为输出。
 
-### 管线文件
+### 管线文件 {#pipeline-file}
 
 该文 `pipeline.py` 件包括用于培训和评分的逻辑。
 
-### 培训
+### 培训 {#training}
 
 培训的目的是使用培训数据集中的功能和标签创建一个模型。
 
@@ -341,7 +329,7 @@ def train(configProperties, data):
 
 请注意，根据您的应用程序，您的函数中将包含参数 `GradientBoostingRegressor()` 。 `xTrainingDataset` 应包含用于培训的功能，而应 `yTrainingDataset` 包含您的标签。
 
-### 评分
+### 评分 {#scoring}
 
 该函 `score()` 数应包含评分算法并返回一个度量，以指示模型执行的成功程度。 该函 `score()` 数使用评分数据集标签和训练模型来生成一组预测特征。 然后，将这些预测值与评分数据集中的实际特征进行比较。 在此示例中，函数使 `score()` 用经过训练的模型来使用评分数据集中的标签来预测特征。 返回预测特征。
 
@@ -363,11 +351,11 @@ def score(configProperties, data, model):
     return data
 ```
 
-### 求值器文件
+### 求值器文件 {#evaluator-file}
 
 该 `evaluator.py` 文件包含如何评估培训菜谱以及如何拆分培训数据的逻辑。 在零售销售示例中，将包括加载和准备培训数据的逻辑。 我们将浏览以下两节。
 
-### 拆分数据集
+### 拆分数据集 {#split-the-dataset}
 
 培训的数据准备阶段需要拆分要用于培训和测试的数据集。 该数 `val` 据在训练后将被隐式用于评估模型。 此过程与评分分开。
 
@@ -386,7 +374,7 @@ def split(self, configProperties={}, dataframe=None):
     return train, val
 ```
 
-### 评估培训的模型
+### 评估培训的模型 {#evaluate-the-trained-model}
 
 该函 `evaluate()` 数在模型训练后执行，并将返回一个度量来指示模型执行的成功程度。 该函 `evaluate()` 数使用测试数据集标签和“培训”模型来预测一组特征。 然后，将这些预测值与测试数据集中的实际特征进行比较。 常见评分算法包括：
 - [平均绝对百分比误差(MAPE)](https://en.wikipedia.org/wiki/Mean_absolute_percentage_error)
@@ -415,7 +403,7 @@ def evaluate(self, data=[], model={}, configProperties={}):
 
 请注意，该函数返回一个 `metric` 包含一组评估度量的对象。 这些指标将用于评估经过培训的模型的表现。
 
-### 数据保护程序文件
+### 数据保护程序文件 {#data-saver-file}
 
 该文 `datasaver.py` 件包含在测 `save()` 试评分时保存预测的函数。 该函 `save()` 数将执行您的预测，并使用Experience Platform Catalog API，将数据写入您在文 `scoringResultsDataSetId` 件中指定的 `scoring.conf` 值。
 
@@ -448,17 +436,17 @@ def save(configProperties, prediction):
     print(prediction)
 ```
 
-## 培训和评分
+## 培训和评分 {#training-and-scoring}
 
 在对笔记本进行更改并要培训菜谱后，您可以单击栏顶部的关联按钮在单元格中创建培训运行。 单击该按钮后，培训脚本的命令和输出日志将显示在笔记本(位于单元 `evaluator.py` 格下)中。 Conda首先安装所有依赖项，然后开始培训。
 
-请注意，您必须至少运行一次培训才能运行评分。 单击“运 **行评分** ”按钮将对培训期间生成的培训模型进行得分。 评分脚本将显示在下 `datasaver.py`面。
+请注意，您必须至少运行一次培训才能运行评分。 单击该按 **[!UICONTROL Run Scoring]** 钮将对培训期间生成的受培训模型得分。 评分脚本将显示在下 `datasaver.py`面。
 
 出于调试目的，如果您希望看到隐藏的输出，请将 `debug` 其添加到输出单元格的末尾，然后重新运行它。
 
-## 创建菜谱
+## 创建菜谱 {#create-recipe}
 
-编辑菜谱并对培训／评分输出满意后，您可以通过按右上方导航中的“创建菜谱 **** ”从笔记本创建菜谱。
+编辑菜谱并对培训／评分输出满意后，您可以在右上方的导航中按键从笔记本 **[!UICONTROL Create Recipe]** 创建菜谱。
 
 ![](../images/jupyterlab/create-recipe/create-recipe.png)
 
@@ -466,7 +454,7 @@ def save(configProperties, prediction):
 
 ![](../images/jupyterlab/create-recipe/enter_recipe_name.png)
 
-按“确 **定** ”后，您将能够导航到 [Adobe Experience Platform上的新菜谱](https://platform.adobe.com/)。 您可以单击“ **视图菜谱** ”按钮，转到“ML模型”下的“ **菜谱****”选项卡**
+按下 **[!UICONTROL Ok]** 后，您将能够导航到 [Adobe Experience Platform上的新菜谱](https://platform.adobe.com/)。 您可以单击该按 **[!UICONTROL View Recipes]** 钮，转到下面的 **[!UICONTROL Recipes]** 选项卡 **[!UICONTROL ML Models]**
 
 ![](../images/jupyterlab/create-recipe/recipe_creation_started.png)
 
@@ -480,13 +468,13 @@ def save(configProperties, prediction):
 > - 请勿同时在不同的笔记本电脑中创建菜谱
 
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 通过完成本教程，您学习了如何在Recipe Builder笔记本中创建机器学习模型。 您还学习了如何在笔记本电脑中练习笔记本到菜谱工作流程，以在Data Science Workspace中创建菜谱。
 
 要继续学习如何在Data Science Workspace中使用资源，请访问Data Science Workspace方法和模型下拉列表。
 
-## Journey Orchestration
+## 其他资源 {#additional-resources}
 
 以下视频旨在支持您对构建和部署模型的理解。
 
