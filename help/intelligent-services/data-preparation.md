@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 准备要在智能服务中使用的数据
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 702ac3860e06951574fe48f7d8771a11f68bedc4
+source-git-commit: 1b367eb65d1e592412d601d089725671e42b7bbd
 
 ---
 
@@ -19,6 +19,10 @@ source-git-commit: 702ac3860e06951574fe48f7d8771a11f68bedc4
 
 消费者体验事件模式描述个人的行为，因为它与数字营销事件（Web或移动）以及在线或离线商务活动相关。 智能服务需要使用此模式，因为其语义上定义良好的字段（列），从而避免了任何未知名称，否则这些名称会使数据变得不那么清晰。
 
+智能服务利用此模式中的几个关键字段，根据您的营销事件数据生成洞察，所有这些洞察均可在根级别找到并展开，以显示其必需的子字段。
+
+![](./images/data-preparation/schema-expansion.gif)
+
 与所有XDM模式一样，CEE mixin是可扩展的。 换句话说，可以向CEE mixin添加其他字段，如果需要，可以在多个模式中包含不同的变体。
 
 可以在公共XDM存储库中找到混音的完整示例 [](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)，并应用作以下部分概述的关键字段的引用。
@@ -30,6 +34,8 @@ source-git-commit: 702ac3860e06951574fe48f7d8771a11f68bedc4
 ### xdm:渠道
 
 此字段表示与ExperienceEvent相关的营销渠道。 该字段包含有关渠道类型、媒体类型和位置类型的信息。 **必须提&#x200B;_供此字段_，才能让归因AI处理您的数据**。
+
+![](./images/data-preparation/channel.png)
 
 **示例模式**
 
@@ -63,25 +69,25 @@ source-git-commit: 702ac3860e06951574fe48f7d8771a11f68bedc4
 
 此字段是代表客户选择的产品的一组项目，包括产品SKU、名称、价格和数量。
 
+![](./images/data-preparation/productListItems.png)
+
 **示例模式**
 
 ```json
 [
   {
     "xdm:SKU": "1002352692",
-    "xdm:lineItemId": "12345678",
     "xdm:name": "24-Watt 8-Light Chrome Integrated LED Bath Light",
     "xdm:currencyCode": "USD",
     "xdm:quantity": 1,
-    "xdm:priceTotal": 159
+    "xdm:priceTotal": 159.45
   },
   {
     "xdm:SKU": "3398033623",
-    "xdm:lineItemId": "48693817",
     "xdm:name": "16ft RGB LED Strips",
     "xdm:currencyCode": "USD",
     "xdm:quantity": 1,
-    "xdm:priceTotal": 80
+    "xdm:priceTotal": 79.99
   }
 ]
 ```
@@ -91,6 +97,8 @@ source-git-commit: 702ac3860e06951574fe48f7d8771a11f68bedc4
 ### xdm：商务
 
 此字段包含有关ExperienceEvent的商务特定信息，包括采购订单编号和付款信息。
+
+![](./images/data-preparation/commerce.png)
 
 **示例模式**
 
@@ -128,6 +136,8 @@ source-git-commit: 702ac3860e06951574fe48f7d8771a11f68bedc4
 
 此字段表示与ExperienceEvent相关的Web详细信息，如交互、页面详细信息和推荐人。
 
+![](./images/data-preparation/web.png)
+
 **示例模式**
 
 ```json
@@ -155,6 +165,8 @@ source-git-commit: 702ac3860e06951574fe48f7d8771a11f68bedc4
 ### xdm：营销
 
 此字段包含与与接触点处于活动状态的营销活动相关的信息。
+
+![](./images/data-preparation/marketing.png)
 
 **示例模式**
 
