@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 导入打包菜谱(UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: a7db31793d33d4571a867f5632243c59b5cb7975
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -121,21 +121,21 @@ Data Science Workspace中的每个菜谱实例都附带一组配置，这些配�
 
 ### 导入基于Docker的菜谱- Python {#python}
 
-开始，方法是导 **航** ，并选择位于平台UI左上角的工作流。 接下来，选择“ *导入菜谱* ”，然后单 **击启动**。
+开始，方法是导 **[!UICONTROL Workflows]** 航并选择位于平台UI左上角的位置。 接下来，选择“ *导入菜谱* ”并单击 **[!UICONTROL Launch]**。
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
-此时将 *显示* “导入菜谱” *工作流的“配置* ”页。 输入菜谱的名称和说明，然后选择 **右上** 角的下一步。
+此时将 *显示* “导入菜谱” *工作流的“配置* ”页。 输入菜谱的名称和说明，然后 **[!UICONTROL Next]** 在右上角选择。
 
 ![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
 > 在将源文 [件打包到菜谱教程中](./package-source-files-recipe.md) ，使用Python源文件构建零售销售菜谱的结尾处提供了一个Docker URL。
 
-在“选择源 *”页上，将与使用Python源文件构建的打包菜谱对应的Docker URL粘贴到“源URL”* 字段中 **** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/python/retail/retail.config.json`。 在“运 **行时** ”下拉框中选 *择Python* ，在“类型放 **置”中选择**** “分类”。 填写完所有内容后，单击右 **上角的** “下一步”以继续“管理 *模式”*。
+在“选择源”页 *面上* ，在字段中粘贴与使用Python源文件构建的打包菜谱对应的Docker URL **[!UICONTROL Source URL]** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/python/retail/retail.config.json`。 在“ **[!UICONTROL Python]** 运行 *时* ”下拉列表和“ **[!UICONTROL Classification]** 类型 *”下拉列表中选* 择。 填写完所有内容后，单 **[!UICONTROL Next]** 击右上角的以继续“管理 *模式”*。
 
 >[!NOTE]
-> *类型&#x200B;*，支持&#x200B;**分类**和&#x200B;**回归**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**义**”。
+> *Type *supports **[!UICONTROL Classification]**and **[!UICONTROL Regression]**. 如果模型不属于这些类型之一，请选择&#x200B;**[!UICONTROL Custom]**。
 
 ![](../images/models-recipes/import-package-ui/recipe_source_python.png)
 
@@ -143,9 +143,9 @@ Data Science Workspace中的每个菜谱实例都附带一组配置，这些配�
 
 ![](../images/models-recipes/import-package-ui/recipe_schema.png)
 
-在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选择“输 **入功能** ”或“ **目标功能** ”来选择输入 **和输出功能** 。 在本教程中，请将 **weeklySales** (每周销售 **量** )设置为 **目标功能**，将其他所有内容设置为输入功能。 单击 **下一步** ，查看您新配置的菜谱。
+在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需功能并在右窗口中选择或选择 **[!UICONTROL Input Feature]** 输入 **[!UICONTROL Target Feature]** 和输出功 **[!UICONTROL Field Properties]** 能。 在本教程中，将其设置为， **[!UICONTROL weeklySales]** 并将其 **[!UICONTROL Target Feature]** 他项设置为 **[!UICONTROL Input Feature]**。 单击 **[!UICONTROL Next]** 查看您新配置的菜谱。
 
-根据需要查看菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
+根据需要查看菜谱、添加、修改或删除配置。 单击 **[!UICONTROL Finish]** 以创建菜谱。
 
 ![](../images/models-recipes/import-package-ui/recipe_review.png)
 
@@ -153,21 +153,21 @@ Data Science Workspace中的每个菜谱实例都附带一组配置，这些配�
 
 ### 导入基于Docker的菜谱- R {#r}
 
-开始，方法是导 **航** ，并选择位于平台UI左上角的工作流。 接下来，选择“ *导入菜谱* ”，然后单 **击启动**。
+开始，方法是导 **[!UICONTROL Workflows]** 航并选择位于平台UI左上角的位置。 接下来，选择“ *导入菜谱* ”并单击 **[!UICONTROL Launch]**。
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
-此时将 *显示* “导入菜谱” *工作流的“配置* ”页。 输入菜谱的名称和说明，然后选择 **右上** 角的下一步。
+此时将 *显示* “导入菜谱” *工作流的“配置* ”页。 输入菜谱的名称和说明，然后 **[!UICONTROL Next]** 在右上角选择。
 
 ![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
 > 在将源 [文件打包到菜谱教程中](./package-source-files-recipe.md) ，在使用R源文件构建零售销售菜谱的结尾处提供了一个Docker URL。
 
-在“选择源 *”页上，将与使用R源文件构建的打包菜谱对应的Docker URL粘贴到“源URL”* 字段中 **** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/R/Retail\ -\ GradientBoosting/retail.config.json`。 在“ **运行时***”下拉列表中选择R* ，在“类 **型下拉列表”中选择Classification** ** down。 填写完所有内容后，单击右 **上角的** “下一步”以继续“管理 *模式”*。
+在“选择源”页 *面上* ，粘贴与使用R源文件构建的打包菜谱对应的Docker URL（文档URL） **[!UICONTROL Source URL]** 字段。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/R/Retail\ -\ GradientBoosting/retail.config.json`。 在“ **[!UICONTROL R]** 运行 *时* ”下拉列表和 **[!UICONTROL Classification]** “类型 *”下拉列表中选* 择。 填写完所有内容后，单 **[!UICONTROL Next]** 击右上角的以继续“管理 *模式”*。
 
 >[!NOTE]
-> *类型&#x200B;*，支持&#x200B;**分类**和&#x200B;**回归**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**义**”。
+> *Type *supports **[!UICONTROL Classification]**and **[!UICONTROL Regression]**. 如果模型不属于这些类型之一，请选择&#x200B;**[!UICONTROL Custom]**。
 
 ![](../images/models-recipes/import-package-ui/recipe_source_R.png)
 
@@ -175,7 +175,7 @@ Data Science Workspace中的每个菜谱实例都附带一组配置，这些配�
 
 ![](../images/models-recipes/import-package-ui/recipe_schema.png)
 
-在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选择“输 **入功能** ”或“ **目标功能** ”来选择输入 **和输出功能** 。 在本教程中，请将 **weeklySales** (每周销售 **量** )设置为 **目标功能**，将其他所有内容设置为输入功能。 单击 **下一步** ，查看您新的已配置菜谱。
+在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需功能并在右窗口中选择或选择 **[!UICONTROL Input Feature]** 输入 **[!UICONTROL Target Feature]** 和输出功 **[!UICONTROL Field Properties]** 能。 在本教程中，将其设置为， **[!UICONTROL weeklySales]** 并将其 **[!UICONTROL Target Feature]** 他项设置为 **[!UICONTROL Input Feature]**。 单击 **[!UICONTROL Next]** 以查看您的新配置菜谱。
 
 根据需要查看菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
 
@@ -185,21 +185,21 @@ Data Science Workspace中的每个菜谱实例都附带一组配置，这些配�
 
 ### 导入基于Docker的菜谱- PySpark {#pyspark}
 
-开始，方法是导 **航** ，并选择位于平台UI左上角的工作流。 接下来，选择“ *导入菜谱* ”，然后单 **击启动**。
+开始，方法是导 **[!UICONTROL Workflows]** 航并选择位于平台UI左上角的位置。 接下来，选择“ *导入菜谱* ”并单击 **[!UICONTROL Launch]**。
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
-此时将 *显示* “导入菜谱” *工作流的“配置* ”页。 为菜谱输入名称和说明，然后 **选择** 右上角的下一步以继续。
+此时将 *显示* “导入菜谱” *工作流的“配置* ”页。 输入菜谱的名称和说明，然后 **[!UICONTROL Next]** 在右上角选择以继续。
 
 ![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
 > 在将源文 [件打包到菜谱教程中](./package-source-files-recipe.md) ，使用PySpark源文件构建零售销售菜谱的结尾处提供了一个Docker URL。
 
-在“选择源 *”页上，将与使用PySpark源文件构建的打包菜谱对应的Docker URL粘贴到“源URL”* 字段中 **** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/pyspark/retail/pipeline.json`。 在“ **运行时** ”下拉框中选 *择PySpark* 。 选择PySpark运行时后，默认伪像会自动填充到 **Docker**。 接下来，在 **类型***下拉框中选* 择分类。 填写完所有内容后，单击右 **上角的** “下一步”以继续“管理 *模式”*。
+在“选择源 *”页上后，请在字段中粘贴与使用PySpark源文件构建的打包菜谱对应的Docker URL***[!UICONTROL Source URL]** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/pyspark/retail/pipeline.json`。 在“ **[!UICONTROL PySpark]** 运行时 *”下拉框中* 选择。 选择PySpark运行时后，将自动填充默认伪像 **[!UICONTROL Docker]**。 接下来，在 **[!UICONTROL Classification]** 类型下拉 *框中* 选择。 填写完所有内容后，单 **[!UICONTROL Next]** 击右上角的以继续“管理 *模式”*。
 
 >[!NOTE]
-> *类型&#x200B;*，支持&#x200B;**分类**和&#x200B;**回归**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**义**”。
+> *Type *supports **[!UICONTROL Classification]**and **[!UICONTROL Regression]**. 如果模型不属于这些类型之一，请选择&#x200B;**[!UICONTROL Custom]**。
 
 ![](../images/models-recipes/import-package-ui/pyspark-databricks.png)
 
@@ -207,9 +207,9 @@ Data Science Workspace中的每个菜谱实例都附带一组配置，这些配�
 
 ![](../images/models-recipes/import-package-ui/recipe_schema.png)
 
-在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选择“输 **入功能** ”或“ **目标功能** ”来选择输入 **和输出功能** 。 在本教程中，请将 **weeklySales** (每周销售 **量** )设置为 **目标功能**，将其他所有内容设置为输入功能。 单击 **下一步** ，查看您新配置的菜谱。
+在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需功能并在右窗口中选择或选择 **[!UICONTROL Input Feature]** 输入 **[!UICONTROL Target Feature]** 和输出功 **[!UICONTROL Field Properties]** 能。 在本教程中，将其设置为， **[!UICONTROL weeklySales]** 并将其 **[!UICONTROL Target Feature]** 他项设置为 **[!UICONTROL Input Feature]**。 单击 **[!UICONTROL Next]** 查看您新配置的菜谱。
 
-根据需要查看菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
+根据需要查看菜谱、添加、修改或删除配置。 单击 **[!UICONTROL Finish]** 以创建菜谱。
 
 ![](../images/models-recipes/import-package-ui/recipe_review.png)
 
@@ -217,21 +217,21 @@ Data Science Workspace中的每个菜谱实例都附带一组配置，这些配�
 
 ### 导入基于Docker的菜谱- Scala {#scala}
 
-开始，方法是导 **航** ，并选择位于平台UI左上角的工作流。 接下来，选择“ *导入菜谱* ”，然后单 **击启动**。
+开始，方法是导 **[!UICONTROL Workflows]** 航并选择位于平台UI左上角的位置。 接下来，选择“ *导入菜谱* ”并单击 **[!UICONTROL Launch]**。
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
-此时将 *显示* “导入菜谱” *工作流的“配置* ”页。 为菜谱输入名称和说明，然后 **选择** 右上角的下一步以继续。
+此时将 *显示* “导入菜谱” *工作流的“配置* ”页。 输入菜谱的名称和说明，然后 **[!UICONTROL Next]** 在右上角选择以继续。
 
 ![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
 > 在将源文 [件打包到菜谱教程中](./package-source-files-recipe.md) ，使用Scala(Spark)源文件构建零售销售菜谱的结尾处提供了一个Docker URL。
 
-在“选择源 *”页上，粘贴与使用“源URL”字段中的“缩放源文件”构建的打包菜谱对应的Docker URL*** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/scala/retail/pipelineservice.json`。 在“ **运行时** ”下拉 *框中选择* “Spark”。 选择Spark运行时后，默认伪像会自动填充到 **Docker**。 接下来，从“ **类型** ”(Type ** )下拉菜单中选择“回归”(Regression)。 填写完所有内容后，单击右 **上角的** “下一步”以继续“管理 *模式”*。
+在“选择源 *”页上，粘贴与使用“源URL”字段中的“缩放源文件”构建的打包菜谱对应的Docker URL*** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/scala/retail/pipelineservice.json`。 在“ **[!UICONTROL Spark]** 运行时 *”下拉框中* 选择。 选择Spark运行时后，默认的伪像会自动填充到 **[!UICONTROL Docker]**。 接下来，从 **[!UICONTROL Regression]** 类型下拉 *框中选择* 。 填写完所有内容后，单 **[!UICONTROL Next]** 击右上角的以继续“管理 *模式”*。
 
 >[!NOTE]
-> *类型&#x200B;*，支持&#x200B;**分类**和&#x200B;**回归**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**义**”。
+> *Type *supports **[!UICONTROL Classification]**and **[!UICONTROL Regression]**. 如果模型不属于这些类型之一，请选择&#x200B;**[!UICONTROL Custom]**。
 
 ![](../images/models-recipes/import-package-ui/scala-databricks.png)
 
@@ -239,15 +239,15 @@ Data Science Workspace中的每个菜谱实例都附带一组配置，这些配�
 
 ![](../images/models-recipes/import-package-ui/recipe_schema.png)
 
-在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选择“输 **入功能** ”或“ **目标功能** ”来选择输入 **和输出功能** 。 在本教程中，请将 **weeklySales** (每周销售 **量** )设置为 **目标功能**，将其他所有内容设置为输入功能。 单击 **下一步** ，查看您新配置的菜谱。
+在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需功能并在右窗口中选择或选择 **[!UICONTROL Input Feature]** 输入 **[!UICONTROL Target Feature]** 和输出功 **[!UICONTROL Field Properties]** 能。 在本教程中，将其设置为， **[!UICONTROL weeklySales]** 并将其 **[!UICONTROL Target Feature]** 他项设置为 **[!UICONTROL Input Feature]**。 单击 **[!UICONTROL Next]** 查看您新配置的菜谱。
 
-根据需要查看菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
+根据需要查看菜谱、添加、修改或删除配置。 单击 **[!UICONTROL Finish]** 以创建菜谱。
 
 ![](../images/models-recipes/import-package-ui/recipe_review.png)
 
 继续执行下 [一步](#next-steps) ，了解如何使用新创建的零售销售菜谱在Data Science Workspace中创建模型。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 本教程提供了有关配置菜谱并将其导入到数据科学工作区的分析。 您现在可以使用新创建的菜谱创建、培训和评估模型。
 
