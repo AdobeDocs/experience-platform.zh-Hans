@@ -5,14 +5,14 @@ doc-type: release notes
 last-update: September 13, 2019
 author: ens28527
 translation-type: tm+mt
-source-git-commit: 26568ebbbe48b5a82e4f6b5cf035c354c11e8ed1
+source-git-commit: e5fa12b92f7006f2c5c428b25f81dade57733498
 
 ---
 
 
 # Adobe Experience Platform 发行说明
 
-## 发行日期：2019 年 9 月 10 日
+**发行日期：2019 年 9 月 10 日**
 
 对Adobe Experience Platform中现有功能的更新：
 
@@ -46,7 +46,7 @@ Adobe Experience Platform Data Science Workspace是Experience Platform中的一�
 
 **已知问题**
 
-* 当前，服务库中没有可用于删除现有服务的可访问方式。 同时，请参阅 [Sensei机器学习API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) ，通过API调用删除现有服务。
+* 当前，服务库中没有可用于删除现有服务的可访问方式。 同时，请参阅 [Sensei机器学习API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) ，以通过API调用删除现有服务。
 * 服务库不支持分页以过滤服务的培训和评分运行。
 * 在通过服务库配置计划的培训或评分时，将频率设置为每小时会阻止应用计划。
 
