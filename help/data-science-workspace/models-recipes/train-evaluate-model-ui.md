@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 培训和评估模型(UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -79,7 +79,7 @@ source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
 
 本教程向您介绍了在数据科学工作区中创建、培训和评估模型的过程。 到达优化模型后，您可以使用经过培训的模型，通过在UI教程中的模型得分 [来生成洞察](./score-model-ui.md) 。
 
-## 参考
+## 参考 {#reference}
 
 ### 零售销售菜谱配置
 
