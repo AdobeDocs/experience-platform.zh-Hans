@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 利用机器学习洞察丰富实时客户用户档案
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: b0b44f4aaf365f58086cfa17d27fbba6ed2a2a97
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -32,7 +32,7 @@ Adobe Experience Platform Data Science Workspace提供了用于创建、评估�
 * [模式合成的基础知识](../../xdm/schema/composition.md):介绍XDM模式、构件块、原则和最佳实践，以组成要在Experience Platform中使用的模式。
 * [模式编辑器教程](../../xdm/tutorials/create-schema-ui.md):提供有关使用Experience Platform中的模式编辑器创建模式的详细说明。
 
-## 创建输出模式和数据集
+## 创建输出模式和数据集 {#create-an-output-schema-and-dataset}
 
 通过评分洞察丰富实时客户用户档案的第一步是了解您的数据定义的真实对象（如人）。 了解数据使您能够描述和设计一种对数据有意义的结构，就像设计关系数据库一样。
 
@@ -73,7 +73,7 @@ Adobe Experience Platform Data Science Workspace提供了用于创建、评估�
 
 现在您已经创建了输出模式数据集，您可以继续到下一节来配置和启用它们以进行用户档案扩充。
 
-## 配置输出模式和数据集
+## 配置输出模式和数据集 {#configure-an-output-schema-and-dataset}
 
 在启用数据集进行用户档案之前，您需要先配置数据集的模式，使其具有主标识字段，然后启用模式进行用户档案。 如果要创建并启用新模式，可参阅有关使用模式编辑 [器创建模式的教程](../../xdm/tutorials/create-schema-ui.md)。 否则，请按照以下说明启用现有模式和数据集。
 
@@ -97,7 +97,7 @@ Adobe Experience Platform Data Science Workspace提供了用于创建、评估�
 
 当将数据引入支持用户档案的数据集时，同一数据也会作为用户档案记录被引入。 现在您的模式和数据集已准备好，可使用相应的模型执行评分运行，从而将一些数据生成到数据集中，并继续本教程以使用“区段生成器”创建分析区段。
 
-## 使用“区段生成器”创建区段
+## 使用“区段生成器”创建区段 {#create-segments-using-the-segment-builder}
 
 现在，您已经生成洞察并将其引入支持用户档案的数据集，您可以通过使用区段生成器识别相关元素的子集来管理这些数据。 请按照以下步骤构建您自己的细分。
 
@@ -117,6 +117,6 @@ Adobe Experience Platform Data Science Workspace提供了用于创建、评估�
    ![](../images/models-recipes/enrich-rtcdp/save_segment.png)
 
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 此文档指导您完成启用模式和数据集进行用户档案所需的步骤，并简要演示了使用区段生成器创建分析区段的工作流。 要进一步了解区段和区段生成器，请参阅分段 [服务概述](../../segmentation/home.md)。
