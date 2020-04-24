@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 计划模型(UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 541acd9e1df8a53ae372f71230a705fb6a95d92b
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -24,11 +24,11 @@ Adobe Experience Platform Data Science Workspace允许您在机器学习服务�
 
 本教程需要现有服务。 如果您没有可访问的服务可供使用，则可以通过在UI教程中按照“将模型发布为服务”来创建一项 [](./publish-model-service-ui.md) 。
 
-## 配置计划评分
+## 配置计划评分 {#configure-scheduled-scoring}
 
 模型评分可以配置为按计划进行自动化过程。 创建服务后，您可以按照以下步骤配置和应用评分计划:
 
-1. 在Adobe Experience Platform中，单击左侧导 **航列中的** “服务”选项卡以访问服 *务库*。 查找要计划评分运行的服务，然后单击“打 **开** ”以视图其 *概述页* 。
+1. 在Adobe Experience Platform中，单击左侧导 **航列中的** “服务”选项卡以访问服 *务库*。 查找要计划评分运行的服务，然后单击“打 **开** ”以视图其 *概述页面* 。
    ![](../images/models-recipes/schedule/click_to_open.png)
 
 2. “概述”页面显示服务的评分信息。 单击“ **更新计划** ”链接以配置评分计划。
@@ -41,7 +41,7 @@ Adobe Experience Platform Data Science Workspace允许您在机器学习服务�
    ![](../images/models-recipes/schedule/service_with_scoring_schedule.png)
 
 
-## 配置计划培训
+## 配置计划培训 {#configure-scheduled-training}
 
 在服务上配置计划的培训运行可确保机器学习模型更新为最新的数据模式。 每当计划的培训运行完成时，生成的培训模型将用于为服务提供动力，直到下次计划的培训运行。
 
