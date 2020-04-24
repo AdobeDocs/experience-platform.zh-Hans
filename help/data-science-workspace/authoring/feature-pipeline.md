@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 创建特征管线
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: b9b0578a43182650b3cfbd71f46bcb817b3b0cda
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -14,17 +14,6 @@ source-git-commit: b9b0578a43182650b3cfbd71f46bcb817b3b0cda
 Adobe Experience Platform允许您构建和创建自定义功能管道，通过Sensei机器学习框架运行时（以下简称“运行时”）大规模地执行功能工程。
 
 本文档介绍在功能管道中找到的各种类，并提供了一个分步教程，用于使用PySpark和Spark中的“模型创作SDK [](./sdk.md) ”创建自定义功能管道。
-
-本教程涵盖以下步骤：
-- [实现功能管道类](#implement-your-feature-pipeline-classes)
-   - [在配置文件中定义变量](#define-variables-in-the-configuration-json-file)
-   - [使用DataLoader准备输入数据](#prepare-the-input-data-with-dataloader)
-   - [使用DatasetTransformer转换数据集](#transform-a-dataset-with-datasettransformer)
-   - [使用FeaturePipelineFactory设计数据功能](#engineer-data-features-with-featurepipelinefactory)
-   - [使用DataSaver存储功能数据集](#store-your-feature-dataset-with-datasaver)
-   - [在应用程序文件中指定实现的类名](#specify-your-implemented-class-names-in-the-application-file)
-- [构建二进制伪像](#build-the-binary-artifact)
-- [使用API创建功能管道引擎](#create-a-feature-pipeline-engine-using-the-api)
 
 ## 特征管线类
 
@@ -44,11 +33,11 @@ Adobe Experience Platform允许您构建和创建自定义功能管道，通过S
 ![](../images/authoring/feature-pipeline/FeaturePipeline_Runtime_flow.png)
 
 
-## 实现功能管道类
+## 实现功能管道类 {#implement-your-feature-pipeline-classes}
 
 以下各节提供了有关为功能管道实现所需类的详细信息和示例。
 
-### 在配置JSON文件中定义变量
+### 在配置JSON文件中定义变量 {#define-variables-in-the-configuration-json-file}
 
 配置JSON文件由键值对组成，供您指定以后在运行时定义的任何变量。 这些键值对可以定义诸如输入数据集位置、输出数据集ID、租户ID、列标题等属性。
 
@@ -96,7 +85,7 @@ val input_dataset_id: String = configProperties.get("datasetId")
 ```
 
 
-### 使用DataLoader准备输入数据
+### 使用DataLoader准备输入数据 {#prepare-the-input-data-with-dataloader}
 
 DataLoader负责检索和过滤输入数据。 DataLoader的实现必须扩展抽象类 `DataLoader` 并覆盖抽象方法 `load`。
 
@@ -200,7 +189,7 @@ class MyDataLoader extends DataLoader {
 
 
 
-### 使用DatasetTransformer转换数据集
+### 使用DatasetTransformer转换数据集 {#transform-a-dataset-with-datasettransformer}
 
 DatasetTransformer提供用于转换输入DataFrame的逻辑并返回新派生的DataFrame。 可以实现此类以与FeaturePipelineFactory协同工作，作为唯一的特征工程组件工作，或者您可以选择不实现此类。
 
@@ -255,7 +244,7 @@ class MyDatasetTransformer extends DatasetTransformer {
 
 
 
-### 使用FeaturePipelineFactory设计数据功能
+### 使用FeaturePipelineFactory设计数据功能 {#engineer-data-features-with-featurepipelinefactory}
 
 FeaturePipelineFactory允许您通过Spark Pipeline定义一系列Spark Transporters并将其链接在一起，从而实现您的功能工程逻辑。 可以实现此类以与DatasetTransformer协同工作，作为唯一的特征工程组件，或者您可以选择不实现此类。
 
@@ -334,7 +323,7 @@ class MyFeaturePipelineFactory(uid:String) extends FeaturePipelineFactory(uid) {
 
 
 
-### 使用DataSaver存储功能数据集
+### 使用DataSaver存储功能数据集 {#store-your-feature-dataset-with-datasaver}
 
 DataSaver负责将生成的功能数据集存储到存储位置。 您对DataSaver的实现必须扩展抽象类 `DataSaver` 并覆盖抽象方法 `save`。
 
@@ -467,7 +456,7 @@ class MyDataSaver extends DataSaver {
 }
 ```
 
-### 在应用程序文件中指定实现的类名
+### 在应用程序文件中指定实现的类名 {#specify-your-implemented-class-names-in-the-application-file}
 
 既然已定义并实现了功能管道类，则必须在应用程序文件中指定类的名称。
 
@@ -515,7 +504,7 @@ feature.dataSaver=MyDataSaver
 
 
 
-## 构建二进制伪像
+## 构建二进制伪像 {#build-the-binary-artifact}
 
 现在，您的功能管道类已实现，您可以将其构建并编译为二进制对象，然后使用该对象通过API调用创建功能管道。
 
@@ -543,11 +532,11 @@ mvn clean install
 
 成功构建特征管道将在目录 `.jar` 中生成一 `/dist` 个对象，该对象用于创建特征管道。
 
-## 使用API创建功能管道引擎
+## 使用API创建功能管道引擎 {#create-a-feature-pipeline-engine-using-the-api}
 
 现在，您已经创作了功能管道并构建了二进制伪像，您可以 [使用Sensei机器学习API创建功能管道引擎](../api/engines.md#create-a-feature-pipeline-engine-using-binary-artifacts)。 成功创建特征管道引擎将提供引擎ID作为响应体的一部分，请确保在继续执行后续步骤之前保存此值。
 
-## 后续步骤
+## 后续步骤 {#next-steps}
 
 [//]: # (Next steps section should refer to tutorials on how to score data using the Feature Pipeline Engine. Update this document once those tutorials are available)
 
