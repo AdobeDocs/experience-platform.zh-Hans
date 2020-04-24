@@ -4,7 +4,7 @@ solution: Experience Platform
 title: JupyterLab用户指南
 topic: Overview
 translation-type: tm+mt
-source-git-commit: d42a5de7094d305249b05454ce4aba79776a46e1
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -51,16 +51,16 @@ Experience Platform的JupyterLab集成随附了架构更改、设计注意事项
 * [代码单元格](#code-cells)
 * [内核](#kernels)
 * [内核会话](#kernel-sessions)
-* [PySpark/Spark执行资源](#pysparkspark-execution-resource)
+* [PySpark/Spark执行资源](#execution-resource)
 * [启动器](#launcher)
 
-### 访问JupyterLab
+### 访问JupyterLab {#access-jupyterlab}
 
 在 [Adobe Experience Platform中](https://platform.adobe.com)，从左侧导航列 **中选择“笔记本电脑** ”。 为JupyterLab完全初始化留出时间。
 
 ![](../images/jupyterlab/user-guide/access_jupyterlab.png)
 
-### JupyterLab界面
+### JupyterLab界面 {#jupyterlab-interface}
 
 JupyterLab界面由菜单栏、可折叠的左侧提要栏和包含文档和活动选项卡的主工作区组成。
 
@@ -98,7 +98,7 @@ JupyterLab中的主要工作区域允许您将文档和其他活动排列到选�
 
 ![](../images/jupyterlab/user-guide/main_work_area.gif)
 
-### 代码单元格
+### 代码单元格 {#code-cells}
 
 代码单元是笔记本电脑的主要内容。 它们包含笔记本关联内核的语言和作为执行代码单元的结果的输出的源代码。 在表示其执行顺序的每个代码单元的右侧显示执行计数。
 
@@ -106,7 +106,7 @@ JupyterLab中的主要工作区域允许您将文档和其他活动排列到选�
 
 常见单元格操作如下所述：
 
-* **添加单元格：** 单击笔记本菜单中的加&#x200B;**号(+**)可添加空单元格。 新单元被放置在当前正在与之交互的单元下，或者如果没有特定单元处于焦点，则被放置在笔记本末尾。
+* **添加单元格：** 单击笔记本菜单中的加&#x200B;**号(+**)可添加空单元格。 新单元被放置在当前正在与之交互的单元下，或者如果没有特定单元处于焦点，则被放置在笔记本的末尾。
 
 * **移动单元格：** 将光标放在要移动的单元格的右侧，然后单击该单元格并将其拖动到新位置。 此外，将一个单元从一个笔记本移动到另一个单元将复制该单元及其内容。
 
@@ -130,7 +130,7 @@ JupyterLab中的主要工作区域允许您将文档和其他活动排列到选�
 | **Spark —— 已弃用** | 否 | <ul><li>Sensei ML框架</li><li>目录服务</li></ul> |
 | **斯卡拉** | 否 | <ul><li>Sensei ML框架</li><li>目录服务</li></ul> |
 
-### 内核会话
+### 内核会话 {#kernel-sessions}
 
 JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活动会话都可以通过从左侧提要栏中 **展开“运行终端和内核** ”选项卡找到。 通过观察笔记本界面的右上角，可以识别笔记本的内核的类型和状态。 在下图中，笔记本的关联内核是 **Python 3** ，其当前状态由右侧的灰色圆圈表示。 空心圆表示空闲内核，实心圆表示忙碌内核。
 
@@ -193,7 +193,7 @@ PySpark和Spark内核允许您使用configure命令(`%%configure`)在PySpark或S
 | name | 应用程序的名称 | 字符串 |
 | 会议 | Spark配置属性 | 键映射=val |
 
-### 启动器
+### 启动器 {#launcher}
 
 [//]: # (Talk about the different Notebooks, introduce that certain starter notebooks are limited to particular kernels)
 
@@ -799,7 +799,7 @@ timedf.show()
 | pyrom | 3.6.7 |
 | mkl-rt | 11.1 |
 
-## 查询服务的可选SQL标志
+## 查询服务的可选SQL标志 {#optional-sql-flags-for-query-service}
 
 此表概述了可用于查询服务的可选SQL标志。
 
