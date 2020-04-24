@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 创建和发布机器学习模型演练
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -47,7 +47,7 @@ Adobe Experience Platform Data Science Workspace提供了使用预建产品推�
    * 批：数据集由批量组成。 批是在一段时间内收集并作为单个单元一起处理的一组数据。
    * JupyterLab:JupyterLab [](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) 是Project Jupyter的一个基于Web的开放源代码界面，它紧密集成到Experience Platform中。
 
-## 准备数据
+## 准备数据 {#prepare-your-data}
 
 要创建可向客户推荐个性化产品的机器学习模型，必须分析您网站上先前的客户购买情况。 本节探讨如何通过Adobe Analytics将这些数据引入平台，以及如何将这些数据转换为功能数据集以供机器学习模型使用。
 
@@ -68,7 +68,7 @@ Adobe Experience Platform Data Science Workspace提供了使用预建产品推�
 | Recommendations输入数据集 | 推荐输入模式 | Analytics数据会使用功能管道转换为培训数据集。 此数据用于培训Product Recommendations机器学习模型。 `itemid` 与该 `userid` 客户购买的产品相对应。 |
 | Recommendations输出数据集 | 推荐输出模式 | 存储了评分结果的数据集，其中将包含每个客户推荐产品的列表。 |
 
-## 创作模型
+## 创作模型 {#author-your-model}
 
 数据科学工作区生命周期的第二个组件涉及创作方法和模型。 产品推荐菜谱旨在通过利用过去的购买数据和机器学习大规模生成产品推荐。
 
@@ -85,7 +85,7 @@ Adobe Experience Platform Data Science Workspace提供了使用预建产品推�
 
 您现在已复查了产品推荐方法所需的输入和输出模式。 您现在可以继续阅读下一节，了解如何创建、培训和评估产品推荐模型。
 
-## 培训和评估您的模型
+## 培训和评估您的模型 {#train-and-evaluate-your-model}
 
 现在您的数据已准备好并且菜谱已准备好使用，您可以创建、培训和评估您的机器学习模型。
 
@@ -130,7 +130,7 @@ Adobe Experience Platform Data Science Workspace提供了使用预建产品推�
 3. 您可以在右侧边栏上查看用于每个培训运行的数据集、模式和配置参数。
 4. 导航回“模型”页面，通过观察其评估指标确定运行效果最佳的培训。
 
-## 操作模型
+## 操作模型 {#operationalize-your-model}
 
 数据科学工作流程的最后一步是操作模型，以便从数据存储中得分和使用洞察。
 
