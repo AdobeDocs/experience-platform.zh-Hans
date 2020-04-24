@@ -4,18 +4,16 @@ solution: Experience Platform
 title: 列表资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 4b052cdd3aca9c771855b2dc2a97ca48c7b8ffb0
+source-git-commit: 58549241f05f1bd604f33762f681c60946fa52f5
 
 ---
 
 
 # 列表资源
 
-您可以通过执行单个GET请求来视图容器中所有资源(模式、类、混合或数据类型)的列表。
+您可以通过执行单个GET请求，视图容器中特定类型(类、混音、模式、数据类型或描述符)的所有模式注册表资源。
 
 >[!NOTE] 列出资源时，模式登记处将结果集限制为300项。 要返回超出此限制的资源，您必须使用分 [页参数](#paging)。 还建议使用查询参数筛选结 [果](#filtering) ，并减少返回的资源数。
->
-> 如果要完全覆盖300项限制，则必须使用“接受”标题以在单 `application/vnd.adobe.xdm-v2+json` 个请求中返回所有结果。
 
 **API格式**
 
@@ -27,7 +25,7 @@ GET /{CONTAINER_ID}/{RESOURCE_TYPE}?{QUERY_PARAMS}
 | 参数 | 描述 |
 | --- | --- |
 | `{CONTAINER_ID}` | 资源所在的容器（“全局”或“租户”）。 |
-| `{RESOURCE_TYPE}` | 要从模式库检索的资源类型。 有效类 `datatypes`型有 `mixins`、 `schemas`和 `classes`。 |
+| `{RESOURCE_TYPE}` | 要从模式库检索的资源类型。 有效类 `classes`型有 `mixins`、 `schemas`、 `datatypes`和 `descriptors`。 |
 | `{QUERY_PARAMS`} | 可选查询参数，用于筛选结果。 有关详细信息，请 [参阅查询](#query) 参数一节。 |
 
 **请求**
@@ -48,7 +46,7 @@ curl -X GET \
 | ------- | ------------ |
 | application/vnd.adobe.xed-id+json | 返回每个资源的简短摘要。 这是列表资源的建议标题。 (限制：300) |
 | application/vnd.adobe.xed+json | 返回每个资源的完整JSON模式，其中包含 `$ref` 原始 `allOf` 资源。 (限制：300) |
-| application/vnd.adobe.xdm-v2+json | 为单个请求中的所有结果返回完整的JSON模式，覆盖300项限制。 |
+| application/vnd.adobe.xdm-v2+json | 使用端点 `/descriptors` 时，必须使用此Accept头才能使用分页功能。 |
 
 **响应**
 
