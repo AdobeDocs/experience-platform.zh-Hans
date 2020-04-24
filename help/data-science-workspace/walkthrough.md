@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据科学工作区演练
 topic: Walkthrough
 translation-type: tm+mt
-source-git-commit: 1f756e7bc71c9ff227757aee64af29e0772c24af
+source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
 
 ---
 
@@ -45,7 +45,7 @@ source-git-commit: 1f756e7bc71c9ff227757aee64af29e0772c24af
 
 ![](./images/walkthrough/retail_sales.png)
 
-### 设置
+### 设置 {#setup}
 
 打开零售笔记本后，我们首先要做的就是加载工作流程所需的库。 以下列表将简短描述每种应用程序的用途：
 - **numpy** —— 可增加对大型、多维数组和矩阵支持的科学计算库
@@ -55,7 +55,7 @@ source-git-commit: 1f756e7bc71c9ff227757aee64af29e0772c24af
 - **sklearn** —— 具有分类、回归、支持向量和群集算法的机器学习库
 - **警告** -控制警告消息的库
 
-### 浏览数据
+### 浏览数据 {#exploring-data}
 
 #### 加载数据
 
@@ -129,7 +129,7 @@ df.describe()
 
 注意中心下方的对角线。 这说明在比较变量与自身时，它具有完全正相关性。 强正相关度将接近1，弱正相关度将接近0。 显示负相关，负系数显示逆趋势。
 
-### 特征工程
+### 特征工程 {#feature-engineering}
 
 在本节中，我们将修改我们的零售数据集。 我们将执行以下操作：
 
@@ -177,7 +177,7 @@ df.describe()
 
 ![](./images/walkthrough/df_info_new.png)
 
-### 培训和验证
+### 培训和验证 {#training-and-verification}
 
 现在，是时候创建一些数据模型，并选择哪个模型预测未来销售表现最佳。 我们将对以下5种算法进行评估：
 
