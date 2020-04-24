@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 列表资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: fe7b6acf86ebf39da728bb091334785a24d86b49
+source-git-commit: 4b052cdd3aca9c771855b2dc2a97ca48c7b8ffb0
 
 ---
 
@@ -12,6 +12,10 @@ source-git-commit: fe7b6acf86ebf39da728bb091334785a24d86b49
 # 列表资源
 
 您可以通过执行单个GET请求来视图容器中所有资源(模式、类、混合或数据类型)的列表。
+
+>[!NOTE] 列出资源时，模式登记处将结果集限制为300项。 要返回超出此限制的资源，您必须使用分 [页参数](#paging)。 还建议使用查询参数筛选结 [果](#filtering) ，并减少返回的资源数。
+>
+> 如果要完全覆盖300项限制，则必须使用“接受”标题以在单 `application/vnd.adobe.xdm-v2+json` 个请求中返回所有结果。
 
 **API格式**
 
@@ -42,8 +46,9 @@ curl -X GET \
 
 | 接受标题 | 描述 |
 | ------- | ------------ |
-| application/vnd.adobe.xed-id+json | 返回每个资源的简短摘要，通常是列表的首选标题 |
-| application/vnd.adobe.xed+json | 返回每个资源的完整JSON模式，其中包含 `$ref` 原始 `allOf` 资源 |
+| application/vnd.adobe.xed-id+json | 返回每个资源的简短摘要。 这是列表资源的建议标题。 (限制：300) |
+| application/vnd.adobe.xed+json | 返回每个资源的完整JSON模式，其中包含 `$ref` 原始 `allOf` 资源。 (限制：300) |
+| application/vnd.adobe.xdm-v2+json | 为单个请求中的所有结果返回完整的JSON模式，覆盖300项限制。 |
 
 **响应**
 
@@ -74,7 +79,7 @@ curl -X GET \
 
 >[!NOTE] 组合多个查询参数时，必须用&amp;符号(`&`)分隔。
 
-### 分页
+### 分页 {#paging}
 
 用于分页的最常见的查询参数包括：
 
@@ -84,7 +89,7 @@ curl -X GET \
 | `limit` | 限制返回的资源数。 示例：将 `limit=5` 返回一列表五项资源。 |
 | `orderby` | 按特定属性对结果排序。 示例：将 `orderby=title` 按标题按升序(A-Z)对结果排序。 在标题( `-` )之前添`orderby=-title`加一个选项将按标题按降序(Z-A)对项目进行排序。 |
 
-### 筛选
+### 筛选 {#filtering}
 
 您可以使用参数筛选结果，该参 `property` 数用于对检索的资源中的给定JSON属性应用特定的运算符。 支持的运算符包括：
 
