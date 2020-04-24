@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 模式注册API开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: eec5b07427aa9daa44d23f09cfaf1b38f8e811f3
+source-git-commit: 387cbdebccb9ae54a2907d1afe220e9711927ca6
 
 ---
 
@@ -52,7 +52,7 @@ Experience Platform中的所有资源(包括属于模式注册表的资源)都�
 
 * 内容类型：application/json
 
-## 了解您的TENANT_ID {#know-your-tenant-id}
+## 了解您的TENANT_ID {#know-your-tenant_id}
 
 在本指南中，您将看到对的引用 `TENANT_ID`。 此ID用于确保您创建的资源命名正确并包含在IMS组织中。 如果您不知道自己的ID，则可以通过执行以下GET请求来访问它：
 
