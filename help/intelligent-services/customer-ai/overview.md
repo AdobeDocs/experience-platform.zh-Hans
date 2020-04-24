@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 客户人工智能概述
 topic: Customer AI overview
 translation-type: tm+mt
-source-git-commit: 7987cec12c22e9b48ddc9fdc263d7cd28bd172f2
+source-git-commit: f4deee30f0f03b75dc7ee02152ceb6c519858c7c
 
 ---
 
@@ -42,4 +42,4 @@ source-git-commit: 7987cec12c22e9b48ddc9fdc263d7cd28bd172f2
 
 ## 后续步骤
 
-您可以按照入门指南 [开始](./getting-started.md) 。 本指南将指导您设置客户人工智能的所有必需预请求。 如果您已准备好所有凭据和数据，请访问客 [户人工智能用户指南](./user-guide.md)。 它提供了使用客户人工智能的步骤，并演示了如何使用倾向得分创建客户细分。
+您可以按照入门指南 [开始](./getting-started.md) 。 本指南将指导您设置客户人工智能的所有必需先决条件。 如果您已准备好所有凭据和数据，请访 [问配置客户AI实例](./user-guide/configure.md)。 它提供了使用客户人工智能的步骤。
