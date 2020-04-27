@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据使用策略用户指南
 topic: policies
 translation-type: tm+mt
-source-git-commit: 304a84b81758b2f2a343977533f9120857a1fb33
+source-git-commit: 235a43ad72dee45db1b3d35ae84ce9a1c4d729b8
 
 ---
 
@@ -66,4 +66,4 @@ Adobe Experience Platform Data Governance提供了一个用户界面，允许您
 
 ## 后续步骤
 
-本文档概述了如何在Experience Platform UI中管理数据使用策略。 有关如何使用DULE Policy API管理策略的步骤，请参阅 [API策略创建教程](./create.md)。 有关如何实施数据使用策略的信息，请参阅策 [略实施概述](../enforcement/overview.md)。
+本文档概述了如何在Experience Platform UI中管理数据使用策略。 有关如何使用DULE Policy API管理策略的步骤，请参阅开发人员 [指南](../api/getting-started.md)。 有关如何实施数据使用策略的信息，请参阅策 [略实施概述](../enforcement/overview.md)。
