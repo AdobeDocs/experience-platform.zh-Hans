@@ -1,8 +1,14 @@
 ---
-source-git-commit: 1cf1e9c814601bdd4c7198463593be78452004dc
+keywords: Experience Platform;insights; customer ai;popular topics
+solution: Experience Platform
+title: 利用预测得分创建客户细分
+topic: Create a segment
 translation-type: tm+mt
+source-git-commit: 66ccea896846c1da4310c1077e2dc7066a258063
 
 ---
+
+
 # 利用预测得分创建客户细分
 
 当预测运行完成时，预测倾向得分会由用户档案自动消耗。 利用客户AI得分丰富用户档案，可创建客户细分，以根据其倾向得分查找受众。 本节提供了使用区段生成器创建区段的步骤。 有关创建区段的更强大的教程，请参阅“区 [段生成器”用户指南](../../../segmentation/tutorials/create-a-segment.md)。
