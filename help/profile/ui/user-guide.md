@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案用户指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: b5412b891a9457fa5e801d1f0479fc59fb08bf1b
+source-git-commit: ab289f07475abcbe966c723423825fd392eb3615
 
 ---
 
@@ -73,7 +73,7 @@ source-git-commit: b5412b891a9457fa5e801d1f0479fc59fb08bf1b
 
 ![](../images/user-guide/profile-merge-policies.png)
 
-有关在UI中使用合并策略的详细信息，请参阅 [mMerge策略用户指南](merge-policies.md)。
+有关在UI中使用合并策略的详细信息，请参阅合 [并策略用户指南](merge-policies.md)。
 
 ## 合并模式
 
