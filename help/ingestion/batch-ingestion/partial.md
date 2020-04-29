@@ -4,19 +4,21 @@ solution: Experience Platform
 title: Adobe Experience Platform部分批量摄取概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5699022d1f18773c81a0a36d4593393764cb771a
+source-git-commit: d560e8dd07e9590376728ae6575766cc382325a5
 
 ---
 
 
 
-# 部分批量摄取
+# 部分批量摄取（测试版）
 
 部分批量摄取是指能够摄取包含错误的数据，最高可达到某个阈值。 借助此功能，用户可以成功地将其所有正确数据收录到Adobe Experience Platform中，同时单独分批其所有错误数据，并详细了解其无效原因。
 
 本文档提供了用于管理部分批摄取的教程。
 
-此外，本教程的附 [录](#partial-batch-ingestion-error-types) ，提供了部分批量摄取错误类型的参考。
+此外，本教程的附 [录](#appendix) ，提供了部分批量摄取错误类型的参考。
+
+>[!IMPORTANT] 此功能仅在使用API时存在。 请联系您的团队以获取此功能。
 
 ## 入门指南
 
@@ -47,7 +49,7 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台
 
 ## 在API中为部分批量摄取启用数据集
 
->[!NOTE] 本节介绍如何使用API为部分批量摄取启用数据集。 有关使用UI的说明，请阅读在UI [步骤中为部分批量提取启用数据集](#enable-a-dataset-for-partial-batch-ingestion-in-the-ui) 。
+<!-- >[!NOTE] This section describes enabling a dataset for partial batch ingestion using the API. For instructions on using the UI, please read the [enable a dataset for partial batch ingestion in the UI](#enable-a-dataset-for-partial-batch-ingestion-in-the-ui) step. -->
 
 您可以创建新数据集或修改启用了部分摄取的现有数据集。
 
@@ -71,35 +73,35 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台
 
 在数据集中，您需要添加上述标记。
 
-## 在UI中为部分批量摄取启用数据集
+<!-- ## Enable a dataset for partial batch ingestion in the UI
 
->[!NOTE] 本节介绍如何使用UI为部分批量摄取启用数据集。 如果您已使用API为部分批量摄取启用了数据集，则可跳到下一节。
+>[!NOTE] This section describes enabling a dataset for partial batch ingestion using the UI. If you have already enabled a dataset for partial batch ingestion using the API, you can skip ahead to the next section.
 
-要通过平台UI启用数据集以进行部分摄取，请单击左侧导 **航中的** “数据集”。 您可以创建 [新数据集](#create-a-new-dataset-with-partial-batch-ingestion-enabled) ，也 [可以修改现有数据集](#modify-an-existing-dataset-to-enable-partial-batch-ingestion)。
+To enable a dataset for partial ingestion through the Platform UI, click **Datasets** in the left navigation. You can either [create a new dataset](#create-a-new-dataset-with-partial-batch-ingestion-enabled) or [modify an existing dataset](#modify-an-existing-dataset-to-enable-partial-batch-ingestion).
 
-### 创建启用了部分批摄取的新数据集
+### Create a new dataset with partial batch ingestion enabled
 
-要创建新数据集，请按照数据集用户指南 [中的步骤操作](../../catalog/datasets/user-guide.md)。 进入配置数 *据集步骤后* ，请注意“部分摄取 *”和“错误诊* 断”字段 ** 。
+To create a new dataset, follow the steps in the [dataset user guide](../../catalog/datasets/user-guide.md). Once you reach the *Configure dataset* step, take note of the *Partial Ingestion* and *Error Diagnostics* fields.
 
 ![](../images/batch-ingestion/partial-ingestion/configure-dataset-focus.png)
 
-“部 *分摄取* ”切换允许您启用或禁用部分批摄取的使用。
+The *Partial ingestion* toggle allows you to enable or disable the use of partial batch ingestion.
 
-“Error *Diagnostics* （错误诊断） *”切换仅在“Partial Ingestion（部分摄取）* ”切换关闭时显示。 此功能允许平台生成有关所摄取批次的详细错误消息。 如果打开 *了“部分摄取* ”切换，将自动实施增强的错误诊断。
+The *Error Diagnostics* toggle only appears when the *Partial Ingestion* toggle is off. This feature allows Platform to generate detailed error messages about your ingested batches. If the *Partial Ingestion* toggle is turned on, enhanced error diagnostics are automatically enforced.
 
 ![](../images/batch-ingestion/partial-ingestion/configure-dataset-partial-ingestion-focus.png)
 
-“错 *误阈值* ”允许您在整个批次失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+The *Error threshold* allows you to set the percentage of acceptable errors before the entire batch will fail. By default, this value is set to 5%.
 
-### 修改现有数据集以启用部分批量摄取
+### Modify an existing dataset to enable partial batch ingestion
 
-要修改现有数据集，请选择要修改的数据集。 右侧的提要栏会填充有关数据集的信息。
+To modify an existing dataset, select the dataset you want to modify. The sidebar on the right populates with information about the dataset. 
 
 ![](../images/batch-ingestion/partial-ingestion/modify-dataset-focus.png)
 
-“部 *分摄取* ”切换允许您启用或禁用部分批摄取的使用。
+The *Partial ingestion* toggle allows you to enable or disable the use of partial batch ingestion.
 
-“错 *误阈值* ”允许您在整个批次失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+The *Error threshold* allows you to set the percentage of acceptable errors before the entire batch will fail. By default, this value is set to 5%. -->
 
 ## 检索部分批摄取错误
 
@@ -176,7 +178,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID}
 
 本教程介绍了如何创建或修改数据集以启用部分批量摄取。 有关批量摄取的详细信息，请阅读批量摄取 [开发人员指南](./api-overview.md)。
 
-## 部分批量摄取错误类型
+## 部分批量摄取错误类型 {#appendix}
 
 在摄取数据时，部分批量摄取有四种不同的错误类型。
 
