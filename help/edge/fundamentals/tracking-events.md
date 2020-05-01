@@ -4,7 +4,7 @@ seo-title: 跟踪Adobe Experience Platform Web SDK事件
 description: 了解如何跟踪Experience Platform Web SDK事件
 seo-description: 了解如何跟踪Experience Platform Web SDK事件
 translation-type: tm+mt
-source-git-commit: 3c6f9663ef5b83ceeb93539171017e2b282a613f
+source-git-commit: 45ee1f79ac5953b7c407083b4352b2c751e8aec9
 
 ---
 
@@ -43,7 +43,7 @@ alloy("event", {
 });
 ```
 
->[!Note]
+>[!NOTE]
 >在XDM字段的每个事件中发送的数据有32 KB的限制。
 
 ### 发送非XDM数据
