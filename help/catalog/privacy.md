@@ -4,194 +4,140 @@ solution: Experience Platform
 title: 数据湖中的隐私请求处理
 topic: overview
 translation-type: tm+mt
-source-git-commit: 409d98818888f2758258441ea2d993ced48caf9a
+source-git-commit: d3584202554baf46aad174d671084751e6557bbc
 
 ---
 
 
 # 数据湖中的隐私请求处理
 
-Adobe Experience Platform Privacy Service处理客户访问、销售或删除其个人数据的请求，这些请求由隐私法规(如《一般数据保护条例》(GDPR)和《加利福尼亚消费者隐私法》(CCPA))规定。
+Adobe Experience Platform隐私服务处理客户访问、选择退出出售或删除其法律和组织隐私法规规定的个人数据的请求。
 
-本文档涵盖与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
+此文档涵盖与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
 
 ## 入门指南
 
-在阅读本指南之前，建议您对以下Experience Platform服务有充分的了解：
+在阅读本指南之前，建议您对以下Experience Platform服务有一定的了解：
 
-* [隐私服务](../privacy-service/home.md):管理客户跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的请求。
-* [目录服务](home.md):Experience Platform中用于数据位置和世系的记录系统。 提供可用于更新数据集元数据的API。
-* [体验数据模型(XDM)系统](../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
+* [隐私服务](../privacy-service/home.md): 管理客户在Adobe Experience Cloud应用程序中访问、选择退出销售或删除其个人数据的请求。
+* [目录服务](home.md): Experience Platform中数据位置和世系的记录系统。 提供可用于更新数据集元数据的API。
+* [体验数据模型(XDM)系统](../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
+* [身份服务](../identity-service/home.md): 通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
 
-## 向数据集添加隐私标签 {#privacy-labels}
+## 了解身份命名空间 {#namespaces}
 
-要在数据湖的隐私请求中处理数据集，必须为数据集提供隐私标签。 隐私标签指示数据集关联模式中的哪些字段适用于您期望在隐私请求中发送的命名空间。
+Adobe Experience Platform Identity Service跨系统和设备连接客户身份数据。 身份服务 **使用身份命名空间** ，通过将身份值与其来源系统相关联来提供与身份值相关的上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising Cloud ID(“AdCloud”)或Adobe目标ID(“TNTID”))关联。
 
-本节演示如何向数据集添加隐私标签以用于Data Lake隐私请求。 首先，请考虑以下数据集：
+Identity Service维护全局定义（标准）和用户定义（自定义）标识命名空间的存储。 标准命名空间适用于所有组织（例如，“电子邮件”和“ECID”），而您的组织也可以创建自定义命名空间以满足其特定需求。
 
-```json
-{
-    "5d8e9cf5872f18164763f971": {
-        "name": "Loyalty Members",
-        "description": "Dataset for the Loyalty Members schema",
-        "imsOrg": "{IMS_ORG}",
-        "tags": {
-            "adobe/pqs/table": [
-                "loyalty_members"
-            ]
-        },
-        "namespace": "ACP",
-        "state": "DRAFT",
-        "id": "5d8e9cf5872f18164763f971",
-        "dule": {
-            "identity": [],
-            "contract": [
-                "C2",
-                "C5"
-            ],
-            "sensitive": [],
-            "contracts": [
-                "C2",
-                "C5"
-            ],
-            "identifiability": [],
-            "specialTypes": []
-        },
-        "version": "1.0.2",
-        "created": 1569627381749,
-        "updated": 1569880723282,
-        "createdClient": "acp_ui_platform",
-        "createdUser": "{USER_ID}",
-        "updatedUser": "{USER_ID}",
-        "viewId": "5d8e9cf5872f18164763f972",
-        "status": "enabled",
-        "fileDescription": {
-            "persisted": true,
-            "containerFormat": "parquet",
-            "format": "parquet"
-        },
-        "files": "@/dataSets/5d8e9cf5872f18164763f971/views/5d8e9cf5872f18164763f972/files",
-        "schemaMetadata": {
-            "primaryKey": [],
-            "delta": [],
-            "dule": [
-                {
-                    "path": "/properties/personalEmail/properties/address",
-                    "identity": [
-                        "I1"
-                    ],
-                    "contract": [],
-                    "sensitive": [],
-                    "contracts": [],
-                    "identifiability": [
-                        "I1"
-                    ],
-                    "specialTypes": []
-                }
-            ],
-            "gdpr": []
-        },
-        "schemaRef": {
-            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/2c66c3a4323128d3701289df4468e8a6",
-            "contentType": "application/vnd.adobe.xed-full+json;version=1"
-        }
-    }
-}
-```
+有关Experience Platform中身份命名空间的更多信息，请参阅 [身份命名空间概述](../identity-service/namespaces.md)。
 
-数 `schemaMetadata` 据集的属性包含一个数 `gdpr` 组，该数组当前为空。 要向数据集添加隐私标签，必须使用对 [Catalog Service API的PATCH请求更新此阵列](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)。
+## 向数据集添加标识数据
 
->[!NOTE] 尽管阵列已命名， `gdpr`但向其添加标签将允许GDPR和CCPA规定的隐私作业请求。
+创建数据湖的隐私请求时，必须为每个客户提供有效的身份值(及其关联命名空间)，以便找到其数据并相应地处理它们。 因此，所有受隐私请求约束的数据集都必须在其关联的 **XDM模式中** ，包含一个标识描述符。
+
+>[!NOTE] 当前无法在隐私请求中处理任何基于不支持身份描述符元数据的模式集（如临时数据集）。
+
+本节将逐步介绍向现有数据集的XDM模式添加标识描述符的步骤。 如果已有带有标识描述符的数据集，可跳到下一 [节](#nested-maps)。
+
+>[!IMPORTANT] 在确定要设置为标识的模式字段时，请记 [住使用嵌套映射类型字段的限制](#nested-maps)。
+
+有两种方法可将标识描述符添加到数据集模式:
+
+* [使用UI](#identity-ui)
+* [使用API](#identity-api)
+
+### 使用UI {#identity-ui}
+
+在Experience Platform用户界面中，您可 _[!UICONTROL Schemas]_以通过工作区编辑现有的XDM模式。 要向模式添加标识描述符，请从列表中选择模式，然后按照“模式编辑[器”教程中将模式字段设置为标识](../xdm/tutorials/create-schema-ui.md#identity-field)字段的步骤进行操作。
+
+在将模式中的相应字段设置为标识字段后，您可以继续执行下一节提交隐 [私请求](#submit)。
+
+### 使用API {#identity-api}
+
+>[!NOTE] 本节假定您知道数据集的XDM模式的唯一URI ID值。 如果您不知道此值，可以使用Catalog Service API检索它。 阅读开发人 [员指南](./api/getting-started.md) 的入门部分后，请按照中概述的步骤列出或查 [找Catalog对象](./api/list-objects.md) , [](./api/look-up-object.md) 以找到您的数据集。 模式ID可在 `schemaRef.id`
+>
+> 此部分包括对模式注册表API的调用。 有关使用API的重要信息(包括了解您 `{TENANT_ID}` 和容器概念)，请参 [阅开发人员](../xdm/api/getting-started.md) 指南的入门部分。
+
+可以通过向模式注册表API中的端点发出POST请求，将标识描述符添 `/descriptors` 加到数据集的XDM模式。
 
 **API格式**
 
 ```http
-PATCH /dataSets/{DATASET_ID}
+POST /descriptors
 ```
-
-| 参数 | 描述 |
-| --- | --- |
-| `{DATASET_ID}` | 要 `id` 更新的数据集的值。 |
 
 **请求**
 
-在此示例中，数据集在字段中包含电子邮件地址 `personalEmail.address` 。 要使此字段用作数据湖隐私请求的标识符，必须使用未注册命名空间的标签添加到其数 `gdpr` 组。
-
-以下请求会添加一个隐私标签，该标签将命名空间“email_label”分配给字 `personalEmail.address` 段。
-
->[!IMPORTANT] 对数据集的属性运行PATCH操作时，请 `schemaMetadata` 务必复制请求有效负荷内的任何现有子属性。 将任何现有值从有效负荷中排除将导致它们从数据集中删除。
+以下请求在示例模式的“电子邮件地址”字段上定义标识描述符。
 
 ```shell
-curl -X PATCH 'https://platform.adobe.io/data/foundation/catalog/dataSets/5d8e9cf5872f18164763f971' \
+curl -X POST \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/descriptors \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'Content-Type: application/json' \
-  -d '{ 
-    "schemaMetadata": { 
-      "primaryKey": [],
-      "delta": [],
-      "dule": [
-        {
-          "path": "/properties/personalEmail/properties/address",
-          "identity": [
-              "I1"
-          ],
-          "contract": [],
-          "sensitive": [],
-          "contracts": [],
-          "identifiability": [
-              "I1"
-          ],
-          "specialTypes": []
-        }
-      ],
-      "gdpr": [
-          {
-              "namespace": ["email_label"],
-              "path": "/properties/personalEmail/properties/address"
-          }
-      ]
-  }'
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '
+      {
+        "@type": "xdm:descriptorIdentity",
+        "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/fbc52b243d04b5d4f41eaa72a8ba58be",
+        "xdm:sourceVersion": 1,
+        "xdm:sourceProperty": "/personalEmail/address",
+        "xdm:namespace": "Email",
+        "xdm:property": "xdm:code",
+        "xdm:isPrimary": false
+      }'
 ```
 
 | 属性 | 描述 |
 | --- | --- |
-| `namespace` | 列出要与中指定的字段关联的命名空间的数组 `path`。 命名空间用于在隐私服务API中提交访问 [或删除请求时识别与隐私](#submit) 相关的字段。 |
-| `path` | 数据集关联模式中适用于该字段的字段路径 `namespace`。 理想情况下，隐私标签仅应用于“叶”字段（没有子字段的字段）。 |
+| `@type` | 所创建描述符的类型。 对于标识描述符，该值必须为“xdm:descriptorIdentity”。 |
+| `xdm:sourceSchema` | 数据集XDM模式的唯一URI ID。 |
+| `xdm:sourceVersion` | 中指定的XDM模式版本 `xdm:sourceSchema`。 |
+| `xdm:sourceProperty` | 模式符所应用的描述符字段的路径。 |
+| `xdm:namespace` | 隐私服 [务可识别的标准身份命名空间](../privacy-service/api/appendix.md#standard-namespaces) 之一，或您的组织定义的自定义命名空间。 |
+| `xdm:property` | “xdm:id”或“xdm:code”，具体取决于使用的命名空间 `xdm:namespace`。 |
+| `xdm:isPrimary` | 可选布尔值。 如果为true，则表示字段是主标识。 模式只能包含一个主标识。 如果不包括，则默认为false。 |
 
 **响应**
 
-成功的响应会返回HTTP状态200(OK)，其ID是在有效负荷中提供的数据集。 使用ID再次查找数据集会显示已添加隐私标签。
+成功的响应返回HTTP状态201（已创建）和新创建描述符的详细信息。
 
 ```json
-[
-    "@/dataSets/5d8e9cf5872f18164763f971"
-]
+{
+  "@type": "xdm:descriptorIdentity",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/fbc52b243d04b5d4f41eaa72a8ba58be",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "/personalEmail/address",
+  "xdm:namespace": "Email",
+  "xdm:property": "xdm:code",
+  "xdm:isPrimary": false,
+  "meta:containerId": "tenant",
+  "@id": "f3a1dfa38a4871cf4442a33074c1f9406a593407"
+}
 ```
-
-### 标记嵌套的映射类型字段
-
-请注意，有两种嵌套的映射类型字段不支持隐私标签：
-
-* 数组类型字段中的映射类型字段
-* 另一个映射类型字段中的映射类型字段
-
-上述两个示例中的任何一个的隐私作业处理最终都将失败。 因此，建议您避免使用嵌套的映射类型字段存储私人客户数据。 相关消费者ID应作为非映射数据类型存储在基于记录的数据集的字段（本身是映射类型字段）或基于时间序列的数据集的 `identityMap``endUserID` 字段中。
 
 ## 提交请求 {#submit}
 
->[!NOTE] 本节介绍如何设置数据湖的隐私请求的格式。 强烈建议您查看 [Privacy Service API](../privacy-service/api/getting-started.md) 或 [Privacy Service UI](../privacy-service/ui/overview.md) 文档，了解有关如何提交隐私作业的完整步骤，包括如何在请求负载中正确设置提交的用户标识数据的格式。
+>[!NOTE] 本节介绍如何格式化数据湖的隐私请求。 强烈建议您查看隐私服务 [UI](../privacy-service/ui/overview.md) 或 [](../privacy-service/api/getting-started.md) 隐私服务API文档，了解如何提交隐私作业的完整步骤，包括如何在请求负载中正确设置提交的用户身份数据的格式。
 
-以下部分概述了如何使用隐私服务API或UI向数据湖发出隐私请求。
+以下部分概述了如何使用隐私服务UI或API向数据湖发出隐私请求。
+
+### 使用UI
+
+在UI中创建作业请求时，请务必在 **产品下选择** AEP Data Lake和／或 **用户档案**__ ，以便分别处理存储在“数据湖”或“实时客户”用户档案中的数据的作业。
+
+<img src="images/privacy/product-value.png" width="450"><br>
 
 ### 使用API
 
-在API中创建作业请求时，提供的任 `userIDs` 何作业请求都必须使用特定的，并 `namespace` 且 `type` 取决于它们所应用的数据存储。 数据湖的ID必须使用“未注册”作为其 `type` 值，并且值与已添加到适用数据集的 `namespace` 隐私标签之 [一相](#privacy-labels) 匹配。
+在API中创建作业请求时，提 `userIDs` 供的任何作业请求都必须使用特 `namespace` 定 `type` 的，具体取决于它们所应用的数据存储。 数据湖的ID必须使用“未注册”作为其 `type` 值，并且值 `namespace` 与已添加到适用数据集的 [隐私标签之一](#privacy-labels) 匹配。
 
-此外，请求 `include` 有效负荷的数组必须包括请求所针对的不同数据存储的产品值。 向数据湖发出请求时，数组必须包含值“aepDataLake”。
+此外，请求 `include` 有效负荷的数组必须包含请求所针对的不同数据存储的产品值。 向数据湖发出请求时，数组必须包含值“aepDataLake”。
 
-以下请求使用未注册的“email_label”命名空间为数据湖创建新的隐私作业。 它还包括数组中数据湖的产品 `include` 值：
+以下请求使用未注册的“email_label”命名空间为数据湖创建新的隐私作业。 它还包括阵列中数据湖的产品 `include` 值：
 
 ```shell
 curl -X POST \
@@ -232,20 +178,27 @@ curl -X POST \
 }'
 ```
 
-### 使用UI
-
-在UI中创建作业请求时，请务必在 **Products下选择** AEP Data Lake **and/or**__ 用户档案，以便分别处理数据湖或实时客户用户档案中存储的数据的作业。
-
-<img src="images/privacy/product-value.png" width="450"><br>
-
 ## 删除请求处理
 
-当Experience Platform从隐私服务收到删除请求时，平台会向隐私服务发送确认消息，确认该请求已收到且受影响的数据已被标记为删除。 然后在七天内从数据湖中删除记录。 在该七天的窗口期内，数据会被软删除，因此任何平台服务都无法访问。
+当Experience Platform从隐私服务收到删除请求时，平台会向隐私服务发送确认消息，确认该请求已收到且受影响的数据已标记为删除。 然后在七天内从数据湖中删除记录。 在这七天的时间内，数据会被软删除，因此任何平台服务都无法访问。
 
-在将来的版本中，平台将在数据实际删除后向隐私服务发送确认。
+在将来的版本中，平台将在数据被物理删除后向隐私服务发送确认信息。
 
 ## 后续步骤
 
-阅读本文档后，您便了解了处理数据湖隐私请求的重要概念。 建议您继续阅读本指南中提供的文档，以加深您对如何管理身份数据和创建隐私工作的理解。
+通过阅读此文档，您了解了处理数据湖隐私请求时涉及的重要概念。 建议您继续阅读本指南中提供的文档，以加深您对如何管理身份数据和创建隐私工作的理解。
 
-有关处理文档商 [店隐私请求的步骤](../profile/privacy.md) ，请参阅实时客户用户档案的隐私请求处理用户档案。
+有关处理文档 [商店隐私请求的步骤](../profile/privacy.md) ，请参阅实时用户档案的隐私请求处理用户档案。
+
+## 附录
+
+以下部分包含有关在数据湖中处理隐私请求的其他信息。
+
+### 标记嵌套的映射类型字段 {#nested-maps}
+
+请务必注意，有两种嵌套的映射类型字段不支持隐私标签：
+
+* 数组类型字段中的映射类型字段
+* 另一个映射类型字段中的映射类型字段
+
+上述两个示例中的任何一个的隐私作业处理最终都将失败。 因此，建议您避免使用嵌套的映射类型字段存储私人客户数据。 对于基于记录的数据集，相关的消费者ID应 `identityMap` 作为字段（本身是映射类型字段）或基于时间序列的数据集 `endUserID` 的字段内的非映射数据类型存储。
