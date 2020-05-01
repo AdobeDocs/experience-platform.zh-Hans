@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform源连接器帮助
+user-guide-title: Adobe Experience Platform Source Connectors帮助
 translation-type: tm+mt
-source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
+source-git-commit: 30f36d18f0e670ede02041db04f1cc8be55d11a3
 
 ---
 
@@ -37,12 +37,15 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
       - [Amazon Redshift连接器](connectors/databases/redshift.md)
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
       - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
+      - [Azure Data Explorer连接器](connectors/databases/data-explorer.md)
       - [Azure Synapse Analytics连接器](connectors/databases/synapse-analytics.md)
       - [Azure表存储连接器](connectors/databases/ats.md)
       - [Google BigQuery连接器](connectors/databases/bigquery.md)
+      - [IBM DB2连接器](connectors/databases/ibm-db2.md)
       - [MariaDB连接器](connectors/databases/mariadb.md)
       - [Microsoft SQL Server连接器](connectors/databases/sql-server.md)
       - [MySQL连接器](connectors/databases/mysql.md)
+      - [Oracle连接器](connectors/databases/oracle.md)
       - [菲尼克斯连接器](connectors/databases/phoenix.md)
       - [PostgreSQL连接器](connectors/databases/postgres.md)
    - 营销自动化 {#marketing-automation}
@@ -70,13 +73,16 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
          - [ServiceNow连接器](tutorials/api/create/customer-success/servicenow.md)
       - 数据库 {#databases}
          - [Amazon Redshift连接器](tutorials/api/create/databases/redshift.md)
+         - [Azure HDInsights连接器上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights连接器上的Apache Spark](tutorials/api/create/databases/spark.md)
+         - [Azure Data Explorer连接器](tutorials/api/create/databases/data-explorer.md)
          - [Azure Synapse Analytics连接器](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure表存储连接器](tutorials/api/create/databases/ats.md)
          - [Google BigQuery连接器](tutorials/api/create/databases/bigquery.md)
-         - [蜂窝连接器](tutorials/api/create/databases/hive.md)
+         - [IBM DB2连接器](tutorials/api/create/databases/ibm-db2.md)
          - [MariaDB连接器](tutorials/api/create/databases/mariadb.md)
          - [MySQL连接器](tutorials/api/create/databases/mysql.md)
+         - [Oracle连接器](tutorials/api/create/databases/oracle.md)
          - [菲尼克斯连接器](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL连接器](tutorials/api/create/databases/postgres.md)
          - [SQL Server连接器](tutorials/api/create/databases/sql-server.md)
@@ -126,16 +132,16 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
          - [ServiceNow连接器](tutorials/ui/create/customer-success/servicenow.md)
       - 数据库 {#databases}
          - [Amazon Redshift连接器](tutorials/ui/create/databases/redshift.md)
+         - [Azure HDInsights连接器上的Apache Hive](tutorials/ui/create/databases/hive.md)
+         - [Azure HDInsights连接器上的Apache Spark](tutorials/ui/create/databases/spark.md)
          - [Azure Synapse Analytics连接器](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure表存储连接器](tutorials/ui/create/databases/ats.md)
          - [Google大查询连接器](tutorials/ui/create/databases/bigquery.md)
-         - [蜂窝连接器](tutorials/ui/create/databases/hive.md)
          - [MariaDB连接器](tutorials/ui/create/databases/mariadb.md)
          - [Microsoft SQL Server连接器](tutorials/ui/create/databases/sql-server.md)
          - [MySQL连接器](tutorials/ui/create/databases/mysql.md)
          - [菲尼克斯连接器](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL连接器](tutorials/ui/create/databases/postgres.md)
-         - [Spark连接器](tutorials/ui/create/databases/spark.md)
       - 营销自动化 {#marketing-automation}
          - [HubSpot连接器](tutorials/ui/create/marketing-automation/hubspot.md)
       - 付款 {#payments}
@@ -149,7 +155,7 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
       - [为CRM连接器配置数据流](tutorials/ui/dataflow/crm.md)
       - [为客户成功连接器配置数据流](tutorials/ui/dataflow/customer-success.md)
       - [为营销自动化连接器配置数据流](tutorials/ui/dataflow/marketing-automation.md)
-      - [为支付连接器配置数据流](tutorials/ui/dataflow/payments.md)
+      - [为付款连接器配置数据流](tutorials/ui/dataflow/payments.md)
       - [为协议连接器配置数据流](tutorials/ui/dataflow/protocols.md)
    - [激活入站数据以填充客户用户档案](tutorials/ui/profile.md)
    - [监视帐户和数据集流](tutorials/ui/monitor.md)
