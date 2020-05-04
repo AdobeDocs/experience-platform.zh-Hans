@@ -1,9 +1,14 @@
 ---
-source-git-commit: 792d6962154a8cdca74b3c4e72d6f7a7663cbd6f
+source-git-commit: 14cd3d17c7d9ba602d02925abddec9e0b246a8c8
 translation-type: tm+mt
 
 ---
 # 贡献内容
+
+| 生产 | 舞台 |
+|---|---|
+| [![生成状态](https://docs.ci.corp.adobe.com/job/experience-platform.en_production/badge/icon)](https://docs.ci.corp.adobe.com/job/experience-platform.en_production/lastBuild) | [![生成状态](https://docs.ci.corp.adobe.com/job/experience-platform.en_stage/badge/icon)](https://docs.ci.corp.adobe.com/job/experience-platform.en_stage/lastBuild) |
+| [输出产品](https://docs.adobe.com/content/help/zh-Hans/experience-platform/landing/home.html) | [输出Stg](https://docs-stg.corp.adobe.com/content/help/en/experience-platform/landing/home.html) |
 
 我们欢迎来自文档团队之外的社区成员和 Adobe 员工的参与内容撰写。
 
@@ -11,7 +16,7 @@ translation-type: tm+mt
 
 该项目采用了 [Adobe Open Source 行为准则](code-of-conduct.md)或 [.NET Foundation 行为准则](https://dotnetfoundation.org/code-of-conduct)。有关更多信息，请参阅[参与](contributing.md)文章。
 
-## 为Adobe内容作贡献的方式
+## 为Adobe内容作贡献的方法
 
 请参阅 [Adobe Docs 参与者指南](https://docs.adobe.com/help/en/contributor/contributor-guide/introduction.html)。
 
@@ -41,7 +46,7 @@ If you submit a pull request with significant changes to documentation and code 
 
 ## 联系Experience Platform文档团队
 
-如上所述，Adobe社区成员可以提交将分配给相应作者的问题。 如果您是Adobe员工，则可以提交问题或直接联系Experience Platform文档团队。 要查找特定平台区域的潜在客户编写器，请参阅 [Adobe Experience Platform文档维基百科](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+Documentation)。
+如上所述，Adobe社区成员可以提交分配给相应作者的问题。 如果您是Adobe员工，您可以提交问题或直接联系Experience Platform文档团队。 要查找特定平台区域的主要作者，请参 [阅Adobe Experience Platform文档维基](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+Documentation)。
 
 ## 工具和设置
 
