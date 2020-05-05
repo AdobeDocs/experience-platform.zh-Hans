@@ -1,10 +1,10 @@
 ---
 title: 快速开始Launch
-seo-title: Adobe Experience Platform Web SDK与Launch快速开始
+seo-title: Adobe Experience Platform Web SDK快速开始Launch
 description: 使用Experience Platform Web SDK扩展收集数据的快速开始指南
 seo-description: 使用Experience Platform Web SDK扩展收集数据的快速开始指南
 translation-type: tm+mt
-source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
+source-git-commit: e23b0ce9c20d5d2d770d1c1261fe08de5743325a
 
 ---
 
@@ -19,43 +19,40 @@ source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
 
 - 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经拥有Analytics的CNAME，则应使用该CNAME。
 - 有权使用Adobe Experience Platform
-- 使用最新版的访客ID服务
+- 正在使用最新版的访客ID服务
 
 ## 准备平台
 
-要能够将数据发送到Adobe Experience Platform，您必须创建XDM模式和使用该模式的数据集。
+要能够将数据发送到Adobe Experience Platform，您必须创建一个XDM模式和一个使用该模式的数据集。
 
-- [使用以下混音创建模式](../../xdm/tutorials/create-schema-ui.md) :
+- [使用以下混合](../../xdm/tutorials/create-schema-ui.md) 创建模式:
    - ExperienceEvent实施详细信息
    - ExperienceEvent环境详细信息
    - ExperienceEvent Web详细信息
 - 将Adobe Experience Platform Web SDK混合添加到您创建的模式
-- [使用模式创建数据集](https://platform.adobe.com/dataset/overview) ，以便将数据放入其中
+- [使用模式](https://platform.adobe.com/dataset/overview) 创建数据集，让数据登陆
 
-## 请求配置ID
+## 创建配置ID
 
-您必须具有配置ID才能使用SDK。 配置ID可确保您的数据路由到正确的位置。 您可以从顾问处或通过客户关怀获得配置ID。 他们需要以下信息：
+您可以在启动项中使用边缘配 [置工具创建配](../fundamentals/edge-configuration.md) 置ID。
 
-- **组织ID:** 您可以使用此处的说明找到 [它](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/manage-users-and-products/organizations.html)
-- **数据集ID:** 单击数据集时，该功能在数据集UI中可用
-- **模式ID:** 这在模式创建屏幕的URL中可用
-- **友好名称：** 这是将来用于此配置的UI中的易记名称
+>注意： 您的组织必须列入此功能的白名单。 请联系您的CSM，让列表参与最终的白名单。
 
 ## 在Launch中安装SDK
 
-登录到启动并安装扩 `AEP Web SDK` 展。 在安装SDK时，将提示您配置扩展。 输入您在上面请求的配置ID。 该扩展会自动填充您的组织ID。
+登录到启动并安装扩 `AEP Web SDK` 展。 在安装SDK时，将提示您配置扩展。 输入您在上面请求的配置ID。 该扩展将自动填充您的组织ID。
 
 有关不同配置选项的更多详细信息，请 [参阅配置SDK](../fundamentals/configuring-the-sdk.md)。
 
 ## 发送事件
 
-安装扩展后，开始通过从AEP Web SDK扩展添加“发送信标”动作来发送事件。 建议在每次加载页面时至少发送一个事件，并选中“在开始时发生”选项。
+安装扩展后，开始通过从AEP Web SDK扩展添加“发送信标”操作来发送事件。 建议在每次加载页面时至少发送一个事件，并选中“在视图的开始发生”选项。
 
-有关如何跟踪事件的详细信息，请参阅跟 [踪事件](../fundamentals/tracking-events.md)。
+有关如何跟踪事件的更多详细信息，请参阅 [跟踪事件](../fundamentals/tracking-events.md)。
 
 ## 发送数据
 
-您可以发送与之前创建的模式及事件匹配的数据。 例如，如果您拥有一个商务站点并将商务混音添加到您的模式，则当某人视图产品时，您会发送以下结构。
+您可以发送与您之前创建的模式及事件匹配的数据。 例如，如果您拥有一个商务站点并将商务混音添加到您的模式，则当某人视图产品时，您会发送以下结构。
 
 ```javascript
 {
