@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors帮助
 translation-type: tm+mt
-source-git-commit: 30f36d18f0e670ede02041db04f1cc8be55d11a3
+source-git-commit: 2d22f48cc8f461774a77c3351332f21849d56545
 
 ---
 
@@ -35,6 +35,7 @@ source-git-commit: 30f36d18f0e670ede02041db04f1cc8be55d11a3
       - [ServiceNow连接器](connectors/customer-success/servicenow.md)
    - 数据库 {#databases}
       - [Amazon Redshift连接器](connectors/databases/redshift.md)
+      - [Apache Cassandra连接器](connectors/databases/cassandra.md)
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
       - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
       - [Azure Data Explorer连接器](connectors/databases/data-explorer.md)
@@ -73,6 +74,7 @@ source-git-commit: 30f36d18f0e670ede02041db04f1cc8be55d11a3
          - [ServiceNow连接器](tutorials/api/create/customer-success/servicenow.md)
       - 数据库 {#databases}
          - [Amazon Redshift连接器](tutorials/api/create/databases/redshift.md)
+         - [Apache Cassandra连接器](tutorials/api/create/databases/cassandra.md)
          - [Azure HDInsights连接器上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights连接器上的Apache Spark](tutorials/api/create/databases/spark.md)
          - [Azure Data Explorer连接器](tutorials/api/create/databases/data-explorer.md)
