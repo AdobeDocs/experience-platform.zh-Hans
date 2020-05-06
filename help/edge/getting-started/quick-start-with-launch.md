@@ -4,7 +4,10 @@ seo-title: Adobe Experience Platform Web SDK快速开始Launch
 description: 使用Experience Platform Web SDK扩展收集数据的快速开始指南
 seo-description: 使用Experience Platform Web SDK扩展收集数据的快速开始指南
 translation-type: tm+mt
-source-git-commit: e23b0ce9c20d5d2d770d1c1261fe08de5743325a
+source-git-commit: 51acb07efe624c7cf1dfaabc4b03f04c76ac88f8
+workflow-type: tm+mt
+source-wordcount: '391'
+ht-degree: 4%
 
 ---
 
@@ -25,10 +28,7 @@ source-git-commit: e23b0ce9c20d5d2d770d1c1261fe08de5743325a
 
 要能够将数据发送到Adobe Experience Platform，您必须创建一个XDM模式和一个使用该模式的数据集。
 
-- [使用以下混合](../../xdm/tutorials/create-schema-ui.md) 创建模式:
-   - ExperienceEvent实施详细信息
-   - ExperienceEvent环境详细信息
-   - ExperienceEvent Web详细信息
+- [创建模式](../../xdm/tutorials/create-schema-ui.md)
 - 将Adobe Experience Platform Web SDK混合添加到您创建的模式
 - [使用模式](https://platform.adobe.com/dataset/overview) 创建数据集，让数据登陆
 
