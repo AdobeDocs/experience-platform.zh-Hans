@@ -3,7 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Edge Network帮助
 translation-type: tm+mt
-source-git-commit: db4bfec04a1116ce2b6a0be7ca0e8cb2f9639ad6
+source-git-commit: 44f8fceda91d4ee1044491d7eec363e501d46e70
+workflow-type: tm+mt
+source-wordcount: '89'
+ht-degree: 7%
 
 ---
 
@@ -27,6 +30,7 @@ source-git-commit: db4bfec04a1116ce2b6a0be7ca0e8cb2f9639ad6
    * [管理闪烁](fundamentals/managing-flicker.md)
    * [支持同意](fundamentals/supporting-consent.md)
    * [支持应用程序内浏览器](fundamentals/supporting-in-app-browsers.md)
+   * [检索Experience Cloud ID](fundamentals/retrieving-experience-cloud-id.md)
 * 实施什么 {#implement}
    * [产品](what-to-implement/commerce.md)
 * 解决方案特定注意事项 {#solutions}
