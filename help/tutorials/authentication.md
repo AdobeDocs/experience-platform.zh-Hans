@@ -1,23 +1,26 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 验证和访问Experience Platform API
+title: 验证和访问体验平台API
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: fca15ebf87559b08dd09e63b5df5655b57ef5977
+source-git-commit: e1ba476fffc164b78decd7168192714993c791bc
+workflow-type: tm+mt
+source-wordcount: '849'
+ht-degree: 1%
 
 ---
 
 
 # 验证和访问Experience Platform API
 
-本文档提供了一个分步教程，用于获取对Adobe Experience Platform开发人员帐户的访问权限，以便调用Experience Platform API。
+此文档提供了一个分步教程，用于获取对Adobe Experience Platform开发人员帐户的访问权限以调用Experience Platform API。
 
-## 通过身份验证进行API调用
+## 进行身份验证以进行API调用
 
 为了维护应用程序和用户的安全性，对Adobe I/O API的所有请求都必须使用OAuth和JSON Web令牌(JWT)等标准进行身份验证和授权。 然后，JWT与客户特定信息一起使用，以生成您的个人访问令牌。
 
-本教程介绍了通过创建以下流程图中概述的访问令牌进行身份验证的步骤：
+本教程介绍通过创建流程图中概述的访问令牌进行身份验证的步骤：
 ![](images/authentication/authentication-flowchart.png)
 
 ## 先决条件
@@ -26,36 +29,35 @@ source-git-commit: fca15ebf87559b08dd09e63b5df5655b57ef5977
 
 * 可访问Adobe Experience Platform的IMS组织
 * 注册的Adobe ID帐户
-* Admin Console管理员，可将您添加为 **开发人** 员 **和产品用户** 。
+* Admin Console管理员可将您添加为 **开发** 人 **员和** 产品用户。
 
-以下各节将介绍创建Adobe ID并成为组织的开发人员和用户的步骤。
+以下各节将逐步介绍创建Adobe ID以及成为组织的开发人员和用户的步骤。
 
 ### 创建Adobe ID
 
-如果您没有Adobe ID，则可以使用以下步骤创建一个：
+如果您没有Adobe ID，可以使用以下步骤创建一个：
 
-1. 转到 [Adobe I/O控制台](https://console.adobe.io)
+1. 转到Adobe [开发人员控制台](https://console.adobe.io)
 2. 单击 **创建新帐户**
 3. 完成注册过程
 
+## 成为组织的Experience Platform开发人员和用户
 
-### 成为组织的Experience Platform开发人员和用户
-
-在Adobe I/O上创建集成之前，您的帐户必须对IMS组织中的某个产品具有开发人员权限。 有关Admin Console上的开发人员帐户的详细信息，请参阅管理开发 [人员的支持文档](https://helpx.adobe.com/enterprise/using/manage-developers.html) 。
+在Adobe I/O上创建集成之前，您的帐户必须对IMS组织中的某个产品具有开发人员权限。 有关Admin Console上开发人员帐户的详细信息，请参阅管理开发 [人员的支](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html) 持文档。
 
 **获得开发人员访问权限**
 
-联系您组织中的Admin Console管理员，以使用 [Admin Console将您添加为您组织的某个产品的开发人员](https://adminconsole.adobe.com/)。
+联系您组织中的Admin Console管理员，以使用Admin Console将您添加为您组织的某个产品的开发 [人员](https://adminconsole.adobe.com/)。
 
 ![](images/authentication/assign-developer.png)
 
-管理员必须将您指定为开发人员，以至少分配一个产品用户档案才能继续。
+管理员必须将您指定为开发人员，以便至少让一个产品用户档案继续。
 
 ![](images/authentication/add-developer.png)
 
-一旦您被分配为开发人员，您将拥有在 [Adobe I/O上创建集成的访问权限](https://console.adobe.io/)。 这些集成是从外部应用程序和服务到Adobe API的管道。
+一旦您被分配为开发人员，您将拥有在Adobe I/O上创建集 [成的访问权限](https://www.adobe.com/go/devs_console_ui)。 这些集成是从外部应用程序和服务到Adobe API的管道。
 
-**获取用户访问权限**
+**获得用户访问权限**
 
 您的Admin Console管理员还必须以用户身份将您添加到产品中。
 
@@ -66,188 +68,54 @@ source-git-commit: fca15ebf87559b08dd09e63b5df5655b57ef5977
 ![](images/authentication/assign-user-details.png)
 
 
-## 一次性设置
+## 在Adobe Developer Console中生成访问凭据
 
-以下步骤只需执行一次：
+使用Adobe Developer Console，您必须生成以下三个访问凭据：
 
-* 登录到Adobe I/O控制台
-* 创建集成
-* 向下复制访问值
+* `{IMS_ORG}`
+* `{API_KEY}`
+* `{ACCESS_TOKEN}`
 
-一旦您拥有了集成和访问值，您将能够在将来重复使用这些值进行身份验证。 下面详细介绍了每个步骤。
+您 `{IMS_ORG}` 的 `{API_KEY}` 只需生成一次，以后的Platform API调用中即可重用。 但是，您的计 `{ACCESS_TOKEN}` 划是临时的，必须每24小时再生一次。
 
-### 登录到Adobe I/O控制台
+下面详细介绍了这些步骤。
 
-转到 [Adobe I/O控制台](https://console.adobe.io/) ，使用您的Adobe ID登录。
+### 一次性设置
 
-登录后，单击屏幕顶 **部的** “集成”选项卡。 集成是为所选IMS组织创建的服务帐户。 您只能调用创建集成的IMS组织。
+转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用您的Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
 
->[!NOTE]
->如果您的帐户与多个组织关联，则屏幕右上角的下拉菜单允许您在它们之间轻松切换。
+创建新项目后，单击“项 **[!UICONTROL 目概述]** ”屏 _幕上的“添加API_ ”。
 
-### 创建集成
+![](images/authentication/add-api-button.png)
 
-在“集 **成** ”页面中，单 **击“新建集成** ”以开始该过程。 该过程包含三个步骤：
-* 选择集成类型
-* 选择要与哪些Adobe服务集成
-* 添加集成详细信息、公钥和产品用户档案
+出 _现添加API_ 屏幕。 单击Adobe Experience Platform的产品图标，然后选择Experience **[!UICONTROL Platform API]** ，然后单击 **[!UICONTROL 下一步]**。
 
-![](images/authentication/integrations.png)
+![](images/authentication/add-platform-api.png)
 
-#### 选择集成类型
+选择Experience Platform作为要添加到项目的API后，请按照教程中介绍的使用服务帐户( [JWT)向项目添加API](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) （从“配置API”步骤开始）的步骤完成该过程。
 
-下一个屏幕询问您是要访问API还是接收近实时事件。 选择 **访问API** ，然后 **继续**。
+将API添加到项目后，“项 _目概述_ ”页将显示对Experience Platform API的所有调用中所需的以下凭据：
 
-![](images/authentication/create-new-integration.png)
+* `{API_KEY}` （客户端ID）
+* `{IMS_ORG}` (Organization ID)
 
-#### 选择要与哪些Adobe服务集成
+![](./images/authentication/api-key-ims-org.png)
 
-如果您的帐户与多个IMS组织关联，则可以使用右上方的下拉菜单在它们之间切换。 在 **** Adobe Experience Platform **下选择** Workshop **和Experience Platform API** ，以访问这些API。
+### 每个会话的身份验证
 
-![](images/authentication/integration-select-service.png)
+您必须收集的最终所需凭据是您的 `{ACCESS_TOKEN}`。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用平台API。
 
-单击 **继续** ，移至下一节。
+要生成新代码， `{ACCESS_TOKEN}`请按照“开发人 [员控制台凭据指南](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/credentials.md) ”中的步骤生成JWT令牌。
 
-#### 添加集成详细信息、公钥和产品用户档案
+## 测试访问凭据
 
-下一个屏幕会提示您填写集成详细信息，输入公钥证书，然后选择产品用户档案。
+收集所有三个必需凭据后，您可以尝试进行以下API调用。 此调用将列表模式注册表容器中的所有体验数据模型(XDM)类 `global` :
 
-![](images/authentication/integration-details.png)
+**API格式**
 
-首先，输入您的集成详细信息。 接下来，选择产品用户档案。 产品用户档案授予您对属于您在前面的步骤中选择的服务的一组功能的精细访问权限。
-
-对于证书部分，必须生成证书：
-
-**对于MacOS和Linux平台：**
-
-打开命令行并执行以下命令：
-
-`openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out certificate_pub.crt`
-
-
-**对于Windows平台：**
-
-1. 下载openssl客户端以生成公共证书(例如， [Openssl windows客户端](https://bintray.com/vszakats/generic/download_file?file_path=openssl-1.1.1-win64-mingw.zip))
-
-1. 解压该文件夹并将其复制到C:/libs/位置。
-
-1. 打开命令行提示并执行以下命令：
-
-   `set OPENSSL_CONF=C:/libs/openssl-1.1.1-win64-mingw/openssl.cnf`
-
-   `cd C:/libs/openssl-1.1.1-win64-mingw/`
-
-   `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out certificate_pub.crt`
-
-您将收到类似于以下内容的响应，提示您输入一些有关自己的信息：
-
+```http
+GET /global/classes
 ```
-Generating a 2048 bit RSA private key
-.................+++
-.......................................+++
-writing new private key to 'private.key'
------
-You are about to be asked to enter information that will be incorporated
-into your certificate request.
-What you are about to enter is what is called a Distinguished Name or a DN.
-There are quite a few fields but you can leave some blank
-For some fields there will be a default value,
-If you enter '.', the field will be left blank.
------
-Country Name (2 letter code) []:
-State or Province Name (full name) []:
-Locality Name (eg, city) []:
-Organization Name (eg, company) []:
-Organizational Unit Name (eg, section) []:
-Common Name (eg, fully qualified host name) []:
-Email Address []:
-```
-
-输入信息后，将生成两个文件： `certificate_pub.crt` 和 `private.key`。
-
->[!NOTE]
->`certificate_pub.crt` 将于365天后过期。 您可以通过更改上述命令中的值来延长 `days` 时间，但定 `openssl` 期旋转凭据是一个不错的安全实践。
-
-将 `private.key` 在后一节中用于生成JWT。
-
-用 `certificate_pub.crt` 于创建API密钥。 返回Adobe I/O控制台，单击“选 **择文件** ”以上传 `certificate_pub.crt` 文件。
-
-单击 **创建集成** ，以完成该过程。
-
-### 向下复制访问值
-
-创建集成后，您可以视图其详细信息。 单击 **“检索客户端机密** ”，您的屏幕将类似于：
-
-![](images/authentication/access-values.png)
-
-向下复制 `{API KEY}`组 `{IMS ORG}` 织ID的值，如 `{CLIENT SECRET}` 果这些值将在下一步中使用。
-
-## 每个会话的身份验证
-
-最后一步是生成您的 `{ACCESS_TOKEN}` API调用，该调用将用于验证您的API调用。 该访问令牌必须包含在您对Adobe Experience Platform进行的每个API调用的“授权”头中。 访问令牌在24小时后过期，之后必须生成新令牌才能继续使用API。
-
-### 创建JWT
-
-在Adobe I/O控制台中的集成详细信息页面中，导航到 **JWT** 选项卡：
-
-![](images/authentication/generate-jwt.png)
-
-该页面会提示您输入在上 `private.key` 一部分中创建的内容。 打开命令行以视图文件的内 `private.key` 容：
-
-```shell
-cat private.key
-```
-
-您的输出将类似于：
-
-```shell
------BEGIN PRIVATE KEY-----
-MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCYjPj18NrVlmrc
-H+YUTuwWrlHTiPfkBGM0P1HbIOdwrlSTCmPhmaNNG5+mEiULJLWlrhQpx/7uQVNW
-......
-xbWgBWatJ2hUhU5/K2iFlNJBVXyNy7rN0XzOagLRJ1uS2CM6Hn3vBOqLbHRG4Pen
-J1LvEocGunT12UJekLdEaQR4AKodIyjv5opvewrzxUZhVvUIIgeU5vUpg9smCXai
-wPW5MQjmygodzCh7+eGLrg==
------END PRIVATE KEY-----
-```
-
-复制整个输出并将其粘贴到文本字段中，然后单击“ **生成JWT”**。 复制生成的JWT以执行下一步。
-
-![](images/authentication/generated-jwt.png)
-
-### 生成访问令牌
-
-您可以通过cURL命令生成访问令牌。 如果未安装cURL，则可以使用安装 `npm install curl`。 您可以在此处阅读有关cURL的更多 [信息](https://curl.haxx.se/)
-
-安装cURL后，您需要将以下命令中的字段与您自己的、和 `{API_KEY}`交换 `{CLIENT_SECRET}`到一起 `{JWT_TOKEN}`:
-
-```SHELL
-curl -X POST "https://ims-na1.adobelogin.com/ims/exchange/jwt/" \
-  -F "client_id={API_KEY}" \
-  -F "client_secret={CLIENT_SECRET}" \
-  -F "jwt_token={JWT_TOKEN}"
-```
-
-如果输出成功，则输出将类似于：
-
-```JSON
-{
-  "token_type":"bearer",
-  "access_token":"eyJ4NXUiOiJpbXNfbmExLXN0ZzEta2V5LT2VyIiwiYWxnIjoiUlMyNTYifQ.eyJpZCI6IjE1MjAzMDU0ODY5MDhfYzMwM2JkODMtMWE1My00YmRiLThhNjctMWDhhNDJiNTE1X3VlMSIsImNsaWVudF9pZCI6ImYwNjY2Y2M4ZGVhNzQ1MWNiYzQ2ZmI2MTVkMzY1YzU0IiwidXNlcl9pZCI6IjA0ODUzMkMwNUE5ODg2QUQwQTQ5NDEzOUB0ZWNoYWNjdC5hZG9iZS5jb20iLCJzdGF0ZSI6IntcInNlc3Npb25cIjpcImh0dHBzOi8vaW1zLW5hMS1zdGcxLmFkb2JlbG9naW4uY29tL2ltcy9zZXNzaW9uL3YxL05UZzJZemM1TVdFdFlXWTNaUzAwT1RWaUxUZ3lPVFl0WkdWbU5EUTVOelprT0dFeUxTMHdORGcxTXpKRPVGc0TmtGRU1FRTBPVFF4TXpsQWRHVmphR0ZqWTNRdVlXUnZZbVV1WTI5dFwifSIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJhcyI6Imltcy1uYTEtc3RnMSIsImZnIjoiU0hRUlJUQ0ZTWFJJTjdSQjVVQ09NQ0lBWVU9PT09PT0iLCJtb2kiOiJhNTYwOWQ5ZiIsImMiOiJMeksySTBuZ2F2M1BhWWIxV0J3d3FRPT0iLCJleHBpcmVzX2luIjoiODY0MDAwMDAiLCJzY29wZSI6Im9wZW5pZCxzZXNzaW9uLEFkb2JlSUQscmVhZF9vcmdhbml6YXRpb25zLGFkZGl0aW9uYWxfaW5mby5wcm9qZWN0ZWRQcm9kdWN0Q29udGV4dCIsImNyZWF0ZWRfYXQiOiIxNTIwMzA1NDg2OTA4In0.EBgpw0JyKVzbjIBmH6fHDZUvJpvNG8xf8HUHNCK2l-dnVJqXxdi0seOk_kjVodkIa3evC54V560N60vi_mzt7gef-g954VH6l3gFh6XQ7yqRJD2LMW7G1lhQGhga4hrQCnJlfSQoztvIp9hkar9Zcu-MYgyEB5UlwK3KtB3elu7vJGk35F3T9OnqVL4PFj0Ix6zcuN_4gikgQgmtoUjuXULinbtu9Bkmdf7so9FvhapUd5ZTUTTMrAfJ36gEOQPqsuzlu9oUQaYTAn8v4B9TgoS0Paslo6WIksc4f_rSVWsbO6_TSUqIOi0e_RyL6GkMBA1ELA-Dkgbs-jUdkw",
-  "expires_in":86399947
-}
-```
-
-您的访问令牌是键下的 `access_token` 值。 此访问令牌 `expires_in` 86399947毫秒（24小时）。 之后，您必须按照上述步骤生成新访问令牌。
-
-您现在已准备好在Adobe Experience Platform中发出API请求！
-
-### 测试访问代码
-
-要测试访问令牌是否有效，可尝试进行以下API调用。 此调用将列表容器中的所有类 `global` :
-
->[!NOTE]
->`{API_KEY}` 并参 `{IMS_ORG}` 考您在上面生成的值。
 
 **请求**
 
@@ -259,8 +127,7 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
   -H 'x-gw-ims-org-id: {IMS_ORG}'
 ```
 
-
-如果您的响应与下面所示的响应类似，则表明您的 `access_token` 响应有效且有效。 （此响应已被截断，用于空间。）
+如果您的响应与下面显示的响应类似，则您的凭据有效且有效。 （此响应已被截断为空间。）
 
 **响应**
 
@@ -285,4 +152,10 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 
 ## 使用Postman进行JWT身份验证和API调用
 
-[Postman](https://www.getpostman.com/) 是一款使用RESTful API的常用工具。 本 [中篇文章介绍](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) ，如何设置邮递员以自动执行JWT身份验证，并使用它使用Adobe Experience Platform API。
+[Postman](https://www.getpostman.com/) 是使用REST风格的API的常用工具。 本 [中篇文章](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) 介绍如何设置邮递员以自动执行JWT身份验证，并使用它使用Adobe Experience Platform API。
+
+## 后续步骤
+
+通过阅读此文档，您已收集并成功测试了Platform API的访问凭据。 您现在可以按照文档中提供的示例API调 [用操作](../landing/documentation/overview.md)。
+
+除了在本教程中收集的身份验证值之外，许多平台API还要求以标 `{SANDBOX_NAME}` 头形式提供有效。 有关更多 [信息，请参](../sandboxes/home.md) 阅沙箱概述。
