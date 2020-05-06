@@ -3,7 +3,10 @@ product: adobe experience platform
 audience: user
 user-guide-title: 实时客户数据平台帮助
 translation-type: tm+mt
-source-git-commit: 6f27a5eb12991fce0fbeef2d77622dfcf4a97cae
+source-git-commit: e0807f32ff5f3d16a6805074951e3b09723c5181
+workflow-type: tm+mt
+source-wordcount: '407'
+ht-degree: 11%
 
 ---
 
@@ -24,8 +27,8 @@ source-git-commit: 6f27a5eb12991fce0fbeef2d77622dfcf4a97cae
    * [目标类型和类别](/help/rtcdp/destinations/destination-types.md)
    * 目标界面 {#destinations-interface}
       * [目标工作区](destinations/destinations-workspace.md)
-      * [“目标详细信息”页](destinations/destination-details-page.md)
-   * 目标目录 {#destinations-cat}
+      * [目标详细信息页](destinations/destination-details-page.md)
+   * 目标目录  {#destinations-cat}
       * [目标目录概述](destinations/destinations-catalog.md)
       * Adobe目标{#adobe-destinations}
          * [Adobe目标概述](destinations/adobe-destinations.md)
@@ -33,7 +36,7 @@ source-git-commit: 6f27a5eb12991fce0fbeef2d77622dfcf4a97cae
       * 广告目标{#advertising-destinations}
          * [广告目标概述](destinations/advertising-destinations.md)
          * [Adobe Advertising Cloud扩展](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
-         * [Awin广告转化标签扩展](/help/rtcdp/destinations/awin-conversiontag-extension.md)
+         * [Awin广告转换标签扩展](/help/rtcdp/destinations/awin-conversiontag-extension.md)
          * [Awin Advertising Mastertag扩展](/help/rtcdp/destinations/awin-mastertag-extension.md)
          * [Beemray扩展](/help/rtcdp/destinations/beemray-extension.md)
          * [Bing Ads Universal事件跟踪扩展](/help/rtcdp/destinations/bing-ads-extension.md)
@@ -48,7 +51,7 @@ source-git-commit: 6f27a5eb12991fce0fbeef2d77622dfcf4a97cae
          * [Google Gtag扩展](/help/rtcdp/destinations/gtag-advertising-extension.md)
          * [LinkedIn Insight标记扩展](/help/rtcdp/destinations/linkedin-extension.md)
          * [Pinterest转换跟踪扩展](destinations/pinterest-extension.md)
-         * [Twitter通用网站标记扩展](destinations/twitter-uwt-extension.md)
+         * [Twitter通用网站标签扩展](destinations/twitter-uwt-extension.md)
       * 分析目标 {#analytics-destinations}
          * [分析目标概述](destinations/analytics-destinations.md)
          * [Adform网站跟踪扩展](/help/rtcdp/destinations/adform-extension.md)
@@ -58,10 +61,10 @@ source-git-commit: 6f27a5eb12991fce0fbeef2d77622dfcf4a97cae
          * [Contentsquare扩展](/help/rtcdp/destinations/contentsquare-extension.md)
          * [分贝扩展](/help/rtcdp/destinations/decibel-extension.md)
          * [Demandbase扩展](/help/rtcdp/destinations/demandbase-extension.md)
-         * [Dialogtech extension](/help/rtcdp/destinations/dialogtech-extension.md)
-         * [Google Global Site Tag分析扩展](/help/rtcdp/destinations/gtag-analytics-extension.md)
+         * [Dialogtech扩展](/help/rtcdp/destinations/dialogtech-extension.md)
+         * [Google Global Site Tag Analytics扩展](/help/rtcdp/destinations/gtag-analytics-extension.md)
          * [Google Universal Analytics扩展](/help/rtcdp/destinations/google-universal-analytics-extension.md)
-         * [JW Player Analytics（测试版）扩展](/help/rtcdp/destinations/jw-player-analytics-extension.md)
+         * [JW Player分析（测试版）扩展](/help/rtcdp/destinations/jw-player-analytics-extension.md)
          * [Nielsen BSDK扩展](destinations/nielsen-bsdk-extension.md)
          * [Nielsen IMA Handler扩展](destinations/nielsen-ima-extension.md)
          * [Nielsen VideoJS播放器处理程序扩展](destinations/nielsen-videojs-extension.md)
@@ -69,13 +72,13 @@ source-git-commit: 6f27a5eb12991fce0fbeef2d77622dfcf4a97cae
          * [量子度量扩展](destinations/quantum-metric-extension.md)
          * [SessionCam扩展](destinations/sessioncam-extension.md)
          * [TMMData扩展](destinations/tmmdata-extension.md)
-         * [Yext Conversion Tracking扩展](destinations/yext-extension.md)
+         * [Yext转换跟踪扩展](destinations/yext-extension.md)
       * 云存储目标{#cloud-storage}
          * [云存储目标概述](destinations/cloud-storage-destinations.md)
          * [创建云存储目标的工作流](/help/rtcdp/destinations/cloud-storage-destinations-workflow.md)
          * [Amazon S3目标](destinations/amazon-s3-destination.md)
          * [SFTP目标](destinations/sftp-destination.md)
-      * 数据管理平台目标{dmp-destinations}
+      * 数据管理平台目标 {#dmp-destinations}
          * [数据管理平台目标概述](destinations/dmp-destinations.md)
          * [受众管理器DIL扩展](/help/rtcdp/destinations/aam-dil-extension.md)
       * 电子邮件营销目标{#email-destinations}
@@ -102,7 +105,7 @@ source-git-commit: 6f27a5eb12991fce0fbeef2d77622dfcf4a97cae
          * [Marketo Web Personalization扩展](destinations/marketo-web-personalization-extension.md)
       * 社交网络目标{#social-destinations}
          * [社交网络目标概述](/help/rtcdp/destinations/social-network-destinations.md)
-         * [社交网络目标身份验证流程](/help/rtcdp/destinations/social-network-destinations-workflow.md)
+         * [社交网络目标身份验证流](/help/rtcdp/destinations/social-network-destinations-workflow.md)
          * [Adobe Livefyre扩展](/help/rtcdp/destinations/adobe-livefyre-extension.md)
          * [Facebook目标](/help/rtcdp/destinations/facebook-destination.md)
       * 调查目标 {#survey-destinations}
@@ -111,8 +114,8 @@ source-git-commit: 6f27a5eb12991fce0fbeef2d77622dfcf4a97cae
          * [InMoment扩展](/help/rtcdp/destinations/inmoment-extension.md)
          * [Qualtrics网站反馈扩展](destinations/qualtrics-extension.md)
          * [Web截取调查- QuestionPro扩展](/help/rtcdp/destinations/web-intercept-surveys-extension.md)
-      * 客户目标之声 {#voice-of-customer-destinations}
-         * [客户目标之声概述](/help/rtcdp/destinations/voice-of-customer-destinations.md)
+      * 客户目的地之声 {#voice-of-customer-destinations}
+         * [客户目标语音概述](/help/rtcdp/destinations/voice-of-customer-destinations.md)
          * [确认数字反馈扩展](/help/rtcdp/destinations/confirmit-digital-feedback-extension.md)
          * [Invoca标记扩展](/help/rtcdp/destinations/invoca-extension.md)
          * [Medallia扩展](destinations/medallia-extension.md)
@@ -131,8 +134,8 @@ source-git-commit: 6f27a5eb12991fce0fbeef2d77622dfcf4a97cae
 * 区段 {#segmentation}
    * [细分概述](segmentation/segmentation-overview.md)
    * [区段生成器指南](segmentation/segment-builder-guide.md)
-* 来源 {#sources}
+* 源 {#sources}
    * [源概述](sources/sources-overview.md)
-   * [使用Adobe Launch实施网站标记](sources/launch.md)
+   * [使用Adobe Launch实施网站标签](sources/launch.md)
 * [发行说明](https://www.adobe.com/go/platform-release-notes-en)
 * [术语表](https://www.adobe.com/go/platform-glossary-en)
