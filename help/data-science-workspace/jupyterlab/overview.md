@@ -4,7 +4,7 @@ solution: Experience Platform
 title: JupyterLab用户指南
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 606ae8784760e54a597b189958889199f85ebd0d
+source-git-commit: 37213f29e8099f8587cde9eb66f9b75de3ad8a3a
 workflow-type: tm+mt
 source-wordcount: '3356'
 ht-degree: 5%
@@ -54,7 +54,7 @@ Experience Platform的JupyterLab集成随附架构更改、设计考虑事项、
 * [代码单元格](#code-cells)
 * [内核](#kernels)
 * [内核会话](#kernel-sessions)
-* [PySpark/Spark执行资源](#pyspark-spark-execution-resource)
+* [PySpark/Spark执行资源](#execution-resource)
 * [启动器](#launcher)
 
 ### 访问JupyterLab {#access-jupyterlab}
@@ -143,7 +143,7 @@ JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活
 
 ![](../images/jupyterlab/user-guide/switch_kernel.gif)
 
-### PySpark/Spark执行资源 {#pyspark-spark-execution-resource}
+### PySpark/Spark执行资源 {#execution-resource}
 
 >[!IMPORTANT]
 >将Spark 2.3过渡为Spark 2.4后，Spark和PySpark内核均已弃用。
