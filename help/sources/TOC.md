@@ -3,7 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors帮助
 translation-type: tm+mt
-source-git-commit: 2d22f48cc8f461774a77c3351332f21849d56545
+source-git-commit: de523ebef35564ebc2e5991ee14ae1c7284bf092
+workflow-type: tm+mt
+source-wordcount: '513'
+ht-degree: 0%
 
 ---
 
@@ -35,7 +38,6 @@ source-git-commit: 2d22f48cc8f461774a77c3351332f21849d56545
       - [ServiceNow连接器](connectors/customer-success/servicenow.md)
    - 数据库 {#databases}
       - [Amazon Redshift连接器](connectors/databases/redshift.md)
-      - [Apache Cassandra连接器](connectors/databases/cassandra.md)
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
       - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
       - [Azure Data Explorer连接器](connectors/databases/data-explorer.md)
@@ -74,7 +76,6 @@ source-git-commit: 2d22f48cc8f461774a77c3351332f21849d56545
          - [ServiceNow连接器](tutorials/api/create/customer-success/servicenow.md)
       - 数据库 {#databases}
          - [Amazon Redshift连接器](tutorials/api/create/databases/redshift.md)
-         - [Apache Cassandra连接器](tutorials/api/create/databases/cassandra.md)
          - [Azure HDInsights连接器上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights连接器上的Apache Spark](tutorials/api/create/databases/spark.md)
          - [Azure Data Explorer连接器](tutorials/api/create/databases/data-explorer.md)
@@ -112,8 +113,8 @@ source-git-commit: 2d22f48cc8f461774a77c3351332f21849d56545
       - [收集营销自动化数据](tutorials/api/collect/marketing-automation.md)
       - [收集付款数据](tutorials/api/collect/payments.md)
       - [收集协议数据](tutorials/api/collect/protocols.md)
-   - [从第三方云存储系统中摄取镶木数据](tutorials/api/create-dataset-base-connection.md)
-   - [使用Flow Service API创建数据集基础连接](tutorials/api/cloud-storage-parquet.md)
+   - [从第三方云存储系统中摄取镶木数据](tutorials/api/cloud-storage-parquet.md)
+   - [使用Flow Service API创建数据集基础连接](tutorials/api/create-dataset-base-connection.md)
 - UI教程 {#ui-tutorials}
    - 创建源连接器 {#create}
       - Adobe应用程序 {#adobe-applications}
