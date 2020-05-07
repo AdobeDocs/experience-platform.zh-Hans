@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用笔记本分析数据
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 606ae8784760e54a597b189958889199f85ebd0d
+source-git-commit: 37213f29e8099f8587cde9eb66f9b75de3ad8a3a
 workflow-type: tm+mt
 source-wordcount: '1746'
 ht-degree: 0%
@@ -54,7 +54,7 @@ ht-degree: 0%
 
 我们将从Adobe Experience Platform内部访问数据，从外部访问数据。 我们将使用库 `data_access_sdk_python` 访问内部数据，如数据集和XDM模式。 对于外部数据，我们将使用熊猫蟒蛇图书馆。
 
-#### 外部数据 {#external-data}
+#### 外部数据
 
 打开零售销售笔记本后，找到“加载数据”标题。 以下Python代码使用 `DataFrame` 熊猫的 [数据结构和read_csv()函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) ，将Github上托管的CSV读入DataFrame:
 
@@ -72,7 +72,7 @@ ht-degree: 0%
 
 现在，我们将重点介绍如何访问Experience Platform数据。
 
-#### 按数据集ID
+##### 按数据集ID
 
 对于此部分，我们使用零售销售数据集，该数据集与零售销售示例笔记本中使用的数据集相同。
 
@@ -98,7 +98,7 @@ df.head()
 
 如果您正在使用除Python之外的其他内核，请参 [阅本页](https://github.com/adobe/acp-data-services-dsw-reference/wiki/Accessing-Data-on-the-Platform) ，访问Adobe Experience Platform上的数据。
 
-选择可执行单元格，然后在工具栏中按播放按钮将运行可执行代码。 其输出 `head()` 将是一个表，其中数据集的键为列，数据集中的前n行为。 `head()` 接受整数参数以指定要输出的行数。 默认情况下，此值为5。
+选择可执行单元格，然后在工具栏中按播放按钮将运行可执行代码。 输出将 `head()` 是一个表，其中数据集的键为列，数据集中的前n行为。 `head()` 接受整数参数以指定要输出的行数。 默认情况下，此值为5。
 
 ![](../images/jupyterlab/analyze-data/datasetreader_head.png)
 
@@ -148,7 +148,7 @@ df.describe()
 
 这意味着22家店 `storeType` 有17 `A`家，6家有 `storeType``B``storeType``C`。
 
-### 数据可视化
+#### 数据可视化
 
 既然我们了解了数据帧值，我们想用可视化来补充这一点，使事情更清晰、更容易地识别模式。 在将结果传送到受众时，图形也很有用。 一些对可视化有用的Python库包括：
 - [马特普洛特利卜](https://matplotlib.org/)
@@ -167,7 +167,7 @@ df.describe()
 [ggplot](https://ggplot2.tidyverse.org/) 是也构建在matplotlib顶部的包。 但主要区别在于该工具是ggplot2的端口，与西博恩相似，其目标是改进matplotlib。 熟悉gplot2 for R的用户应考虑此库。
 
 
-### 单变量图
+##### 单变量图
 
 单变量图是单个变量的图。 常用的单变量图用于直观显示您的数据是方框和晶须图。
 
@@ -177,7 +177,7 @@ df.describe()
 
 用方框和晶须图显示数据的分布。 出图的外线显示上四分位数和下四分位数，而框横跨四分位数范围。 框中的线标记中间值。 高于上四分之一或下四分之一的任何数据点都标记为圆。 这些点被视为异常值。
 
-### 多变量图
+##### 多变量图
 
 多变量图用于查看变量之间的交互。 通过可视化，数据科学家可以发现变量之间是否存在关联或模式。 常用的多变量图是相关矩阵。 利用相关矩阵，用相关系数量化多变量之间的依赖关系。
 
