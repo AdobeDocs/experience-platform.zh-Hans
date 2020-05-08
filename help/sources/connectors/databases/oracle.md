@@ -4,21 +4,29 @@ solution: Experience Platform
 title: Oracle连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: c4162d88a688ce2028de08b63e7b7eab954a0e29
+source-git-commit: 2e10056a3dcbff1075d786327ea7a7ea2ccc776c
+workflow-type: tm+mt
+source-wordcount: '124'
+ht-degree: 0%
 
 ---
 
 
 # Oracle连接器
 
-Adobe Experience Platform允许从外部源摄取数据，同时提供使用平台服务构建、标记和增强传入数据的能力。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
+Adobe Experience Platform为Microsoft、MySQL和Azure等数据库提供商提供本机连接。 您可以将这些系统中的数据引入平台。
 
-Experience Platform支持从第三方数据库中摄取数据。 平台可以连接到不同类型的数据库，如关系型、NoSQL或数据仓库。 对数据库提供程序的支持包括Oracle。
+支持不同类型的第三方数据库，包括关系型数据库、 NoSQL数据库或数据仓库。 对数据库提供程序的支持包括Oracle。
 
-以下文档提供了如何使用API将Oracle连接到平台的信息：
+以下文档提供了如何使用API或用户界面将Oracle连接到平台的信息：
 
 ## 使用API将Oracle连接到平台
 
 - [使用Flow Service API创建Oracle连接器](../../tutorials/api/create/databases/oracle.md)
 - [使用Flow Service API浏览数据库系统](../../tutorials/api/explore/database-nosql.md)
 - [使用Flow Service API从数据库收集数据](../../tutorials/api/collect/database-nosql.md)
+
+## 使用UI将Oracle连接到平台
+
+- [在UI中创建Oracle源连接器](../../tutorials/ui/create/databases/oracle.md)
+- [在UI中为数据库连接器配置数据流](../../tutorials/ui/dataflow/databases.md)
