@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Azure Data Explorer连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1fb07723aedcf6dfd49765c10342b70b0a7d24f3
+source-git-commit: 58cc359527a590fce3825f41682cbb32be88f8d1
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%
@@ -28,5 +28,5 @@ Adobe Experience Platform为Microsoft、MySQL和Azure等数据库提供商提供
 
 ## 使用UI将Azure数据资源管理器连接到平台
 
-- [在UI中创建Azure Data Explorer源连接器](../../tutorials/ui/create/databases/ats.md)
+- [在UI中创建Azure Data Explorer源连接器](../../tutorials/ui/create/databases/data-explorer.md)
 - [在UI中为数据库连接器配置数据流](../../tutorials/ui/dataflow/databases.md)
