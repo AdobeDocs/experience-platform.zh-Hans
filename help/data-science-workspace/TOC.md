@@ -29,12 +29,6 @@ ht-degree: 2%
    * [MLServices](api/mlservices.md)
    * [洞察](api/insights.md)
    * [附录](api/appendix.md)
-* 实时机器学习(Alpha) {#real-time-machine-learning}
-   * [概述](real-time-machine-learning/home.md)
-   * [入门指南](real-time-machine-learning/getting-started.md)
-   * [培训实时ML模型](real-time-machine-learning/training-ml-model.md)
-   * [对实时ML模型评分](real-time-machine-learning/scoring-ml-model.md)
-   * [节点引用指南](real-time-machine-learning/node-reference.md)
 * 预建菜谱 {#pre-built-recipes}
    * [产品推荐处方](pre-built-recipes/product-recommendations.md)
    * [产品购买预测](pre-built-recipes/product-purchase-prediction.md)
