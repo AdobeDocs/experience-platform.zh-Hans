@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors帮助
 translation-type: tm+mt
-source-git-commit: 958decd19c0b2063e0e242dcd3ce321c02660707
+source-git-commit: e046054b871026c32858e06c022ea86f53fbafd5
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '522'
 ht-degree: 0%
 
 ---
@@ -137,6 +137,7 @@ ht-degree: 0%
          - [Amazon Redshift连接器](tutorials/ui/create/databases/redshift.md)
          - [Azure HDInsights连接器上的Apache Hive](tutorials/ui/create/databases/hive.md)
          - [Azure HDInsights连接器上的Apache Spark](tutorials/ui/create/databases/spark.md)
+         - [Azure Data Explorer连接器](tutorials/ui/create/databases/data-explorer.md)
          - [Azure Synapse Analytics连接器](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure表存储连接器](tutorials/ui/create/databases/ats.md)
          - [Google大查询连接器](tutorials/ui/create/databases/bigquery.md)
