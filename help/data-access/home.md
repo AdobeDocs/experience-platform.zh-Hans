@@ -4,20 +4,23 @@ solution: Experience Platform
 title: 数据访问概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4817162fe2b7cbf4ae4c1ed325db2af31da5b5d3
+source-git-commit: d9aa21a7439a6c40f6f51dfbdf5c7b3690c4593a
+workflow-type: tm+mt
+source-wordcount: '488'
+ht-degree: 4%
 
 ---
 
 
 # 数据访问概述
 
-Data Access API为用户提供RESTful界面，侧重于Experience Platform中摄取的数据集的可发现性和可访问性，从而支持Adobe Experience Platform。
+Data Access API为用户提供RESTful界面，侧重于Experience Platform内所摄取数据集的可发现性和可访问性，从而支持Adobe Experience Platform。
 
-![Experience Platform上的数据访问](images/Data_Access_Experience_Platform.png)
+![体验平台上的数据访问](images/Data_Access_Experience_Platform.png)
 
 ## API规范参考
 
-Swagger API参考文档可在此处找 [到](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。
+Swagger API参考文档可在此处 [找到](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。
 
 ## 术语
 
@@ -26,11 +29,11 @@ Swagger API参考文档可在此处找 [到](https://www.adobe.io/apis/experienc
 | 搜索词 | 描述 |
 | ----- | ------------ |
 | 数据集 | 包含模式和字段的数据集合。 |
-| 批处理 | 一组在一段时间内收集并作为单个单元一起处理的数据。 |
+| 批 | 在一段时间内收集的一组数据，并作为单个单元一起处理。 |
 
-## 检索批量文件的列表
+## 检索批中文件的列表
 
-通过使用批处理标识符(batchID),Data Access API可以检索属于该特定批次的一列表文件。
+通过使用批处理标识符(batchID)，数据访问API可以检索属于该特定批处理的一列表文件。
 
 **API格式**
 
@@ -40,7 +43,7 @@ GET /batches/{BATCH_ID}/files
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{BATCH_ID}` | 指定批次的ID。 |
+| `{BATCH_ID}` | 指定批的ID。 |
 
 **请求**
 
@@ -91,7 +94,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 }
 ```
 
-数 `"data"` 组包含指定批次中所有文件的列表。 返回的每个文件都有其自己唯一的ID(`{FILE_ID}`)包含在字段 `"dataSetFileId"` 中。 此唯一ID随后可用于访问或下载文件。
+数 `"data"` 组包含指定批次中所有文件的列表。 返回的每个文件在字段中都包`{FILE_ID}`含其自己的唯一 `"dataSetFileId"` ID()。 此唯一ID随后可用于访问或下载文件。
 
 | 属性 | 描述 |
 | -------- | ----------- |
@@ -100,7 +103,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 
 ## 批量访问和下载文件
 
-通过使用文件标识符(`{FILE_ID}`),Data Access API可用于访问文件的特定详细信息，包括其名称、大小（以字节为单位）和下载链接。
+通过使用文件标`{FILE_ID}`识符()，数据访问API可用于访问文件的特定详细信息，包括文件名称、大小（以字节为单位）和要下载的链接。
 
 响应将包含一个数据数组。 根据ID所指向的文件是单个文件还是目录，返回的数据数组可能包含属于该目录的单个条目或一列表文件。 每个文件元素都将包含文件的详细信息。
 
@@ -200,7 +203,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 ## 访问文件内容
 
-数据访问API还可用于访问文件内容。 然后，这可用于将内容下载到外部源。
+数据访问API还可用于访问文件的内容。 然后，这可用于将内容下载到外部源。
 
 **API格式**
 
@@ -225,7 +228,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{FILE_ID}` | 数据集中文件的ID。 |
-| `{FILE_NAME}` | 文件的全名(例如用户档案.csv)。 |
+| `{FILE_NAME}` | 文件的完整名称(例如用户档案.csv)。 |
 
 **响应**
 
@@ -233,11 +236,10 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 Contents of the file
 ```
 
-## 其他代码示例
+## 其他代码范例
 
 有关其他示例，请参阅数 [据访问教程](tutorials/dataset-data.md)。
 
-
 ## 订阅数据获取事件
 
-平台通过 [Adobe I/O控制台提供特定的高价值事件供订阅](https://console.adobe.io/)。 例如，您可以订阅数据摄取事件，以便收到潜在延迟和故障的通知。 有关使用Adobe I/O事件的更多信息，请参阅快 [速入门指南](https://www.adobe.io/apis/experienceplatform/events/docs.html)。
+平台通过Adobe开发人员控制台提供特定的高价 [值事件供订阅](https://www.adobe.com/go/devs_console_ui)。 例如，您可以订阅数据获取事件，以便收到潜在延迟和故障的通知。 有关详细信息，请 [参阅有关订阅数据获取通知](../ingestion/quality/subscribe-events.md) 的教程。
