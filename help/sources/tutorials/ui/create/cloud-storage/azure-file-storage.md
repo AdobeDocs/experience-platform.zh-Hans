@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建Azure文件存储源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: a5925c76ced3384e5eb3fc269dd8ffdbb2b820d2
+source-git-commit: aa1c6cb0f5702cfe444cb2046e4460e404f13e57
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%
@@ -25,7 +25,7 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
    - [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md): 了解如何使用模式编辑器UI创建自定义模式。
 - [实时客户用户档案](../../../../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
-如果您已经有文件存储连接，您可以跳过此文档的其余部分，继续学习配置数据 [流的教程](../../dataflow/cloud-storage.md)。
+如果您已经有文件存储连接，您可以跳过此文档的其余部分，继续学习配置数据 [流的教程](../../dataflow/batch/cloud-storage.md)。
 
 ### 收集所需的凭据
 
@@ -67,4 +67,4 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 ## 后续步骤
 
-通过遵循本教程，您已建立到Azure文件存储帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入平台](../../dataflow/cloud-storage.md)。
+通过遵循本教程，您已建立到Azure文件存储帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md)。
