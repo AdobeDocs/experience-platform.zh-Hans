@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors帮助
 translation-type: tm+mt
-source-git-commit: b3512cd4d1e024597a47e1aa52a2e23e5fce5e44
+source-git-commit: 1eb6883ec9b78e5d4398bb762bba05a61c0f8308
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '551'
 ht-degree: 0%
 
 ---
@@ -26,8 +26,10 @@ ht-degree: 0%
    - 广告 {#advertising}
       - [Google Ads连接器](connectors/advertising/ads.md)
    - 云存储 {#cloud-storage}
+      - [Amazon Kinesis连接器](connectors/cloud-storage/kinesis.md)
       - [Azure Data Lake存储Gen2连接器](connectors/cloud-storage/adls-gen2.md)
       - [Azure Blob和Amazon S3连接器](connectors/cloud-storage/blob-s3.md)
+      - [Azure事件集线器连接器](connectors/cloud-storage/eventhub.md)
       - [Azure文件存储连接器](connectors/cloud-storage/azure-file-storage.md)
       - [FTP和SFTP连接器](connectors/cloud-storage/ftp-sftp.md)
       - [Google Cloud存储连接器](connectors/cloud-storage/google-cloud-storage.md)
@@ -159,7 +161,8 @@ ht-degree: 0%
          - [通用OData连接器](tutorials/ui/create/protocols/odata.md)
    - 配置数据流 {#dataflow}
       - [为广告连接器配置数据流](tutorials/ui/dataflow/advertising.md)
-      - [为云存储连接器配置数据流](tutorials/ui/dataflow/cloud-storage.md)
+      - [为批处理云存储连接器配置数据流](tutorials/ui/dataflow/batch/cloud-storage.md)
+      - [为流式云存储连接器配置数据流](tutorials/ui/dataflow/streaming/cloud-storage.md)
       - [为数据库连接器配置数据流](tutorials/ui/dataflow/databases.md)
       - [为CRM连接器配置数据流](tutorials/ui/dataflow/crm.md)
       - [为客户成功连接器配置数据流](tutorials/ui/dataflow/customer-success.md)
