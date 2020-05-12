@@ -4,7 +4,10 @@ seo-title: 配置Adobe Experience Platform Web SDK
 description: 了解如何配置Experience Platform Web SDK
 seo-description: 了解如何配置Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+source-git-commit: 767f0e1bfdfcc898313b546c804ba1287f2aec50
+workflow-type: tm+mt
+source-wordcount: '765'
+ht-degree: 12%
 
 ---
 
@@ -13,12 +16,12 @@ source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform Web SDK目前为测试版，并非所有用户都可用。 文档和功能可能会发生更改。
+>Adobe Experience Platform Web SDK目前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
 
 SDK的配置是使用命令完 `configure` 成的。
 
->[!I重要]
->`configure` 应 _该始终_ 是第一个名为的命令。
+>[!I重要信息]
+>`configure` 应该 _始终_ 是第一个名为的命令。
 
 ```javascript
 alloy("configure", {
@@ -37,7 +40,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 字符串 | 是 | 无 |
 
-您分配的配置ID，它将SDK链接到相应的帐户和配置。  在单个页面中配置多个实例时，必须为每个实例配置 `configId` 不同的实例。
+您分配的配置ID，它将SDK链接到相应的帐户和配置。  在单个页面中配置多个实例时，必须为每个实例配 `configId` 置不同的实例。
 
 ### `context`
 
@@ -45,7 +48,7 @@ alloy("configure", {
 | ---------------- | ------------ | -------------------------------------------------- |
 | 字符串数组 | 否 | `["web", "device", "environment", "placeContext"]` |
 
-指示要自动收集的上下文类别，如自动信息 [中所述](../reference/automatic-information.md)。  如果未指定此配置，则默认情况下将使用所有类别。
+指示要自动收集的上下文类别，如自 [动信息中所述](../reference/automatic-information.md)。  如果未指定此配置，则默认情况下将使用所有类别。
 
 ### `debugEnabled`
 
@@ -57,7 +60,7 @@ alloy("configure", {
 
 | **功能** |  |  |
 | ---------------------- | ------------------ |
-| 同步验证 | 验证根据架构收集的数据，并在响应中返回以下标签下的错误： `collect:error OR success` |
+| 同步验证 | 验证根据模式收集的数据，并在以下标签下的响应中返回错误： `collect:error OR success` |
 | 控制台日志记录 | 允许调试消息显示在浏览器的JavaScript控制台中 |
 
 ### `edgeDomain`
@@ -66,15 +69,7 @@ alloy("configure", {
 | -------- | ------------ | ------------------ |
 | 字符串 | 否 | `beta.adobedc.net` |
 
-用于与Adobe服务交互的域。 仅当您有第一方域(CNAME)来代理向Adobe边缘基础结构发出的请求时，才会使用此方法。
-
-### `errorsEnabled`
-
-| **类型** | **必需** | **默认值** |
-| -------- | ------------ | ----------------- |
-| 布尔值 | 否 | `true` |
-
-指示是否应禁止错误。 如执行命 [令中所述](executing-commands.md)，无论Adobe Experience Platform Web SDK中是否启用调试，未捕获的 __ 错误都会记录到开发人员控制台中。 通过设 `errorsEnabled` 置为， `false`从Adobe Experience Platform Web SDK返回的承诺绝不会被拒绝，但是，如果在Adobe Experience Platform Web SDK中启用了日志记录，则错误仍会记录到控制台。
+用于与Adobe服务交互的域。 仅当您有第一方域(CNAME)来代理对Adobe边缘基础结构的请求时，才使用此方法。
 
 ### `orgId`
 
@@ -82,7 +77,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 字符串 | 是 | 无 |
 
-您分配的Experience Cloud组织ID。  在页面内配置多个实例时，必须为每个实例配置 `orgId` 不同的实例。
+您分配的Experience Cloud组织ID。  在页面内配置多个实例时，必须为每个实例配 `orgId` 置不同的实例。
 
 ## 数据收集
 
@@ -92,21 +87,21 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-指示是否应自动收集与链接单击关联的数据。 对于符合链接单击条件的单击，将收集 [以下Web交互](https://github.com/adobe/xdm/blob/master/docs/reference/context/webinteraction.schema.md) :
+指示是否应自动收集与链接单击关联的数据。 对于符合链接单击条件的单击，将收 [集以下Web](https://github.com/adobe/xdm/blob/master/docs/reference/context/webinteraction.schema.md) Interaction数据：
 
 | **属性** |  |
 | ------------ | ----------------------------------- |
 | 链接名称 | 由链接上下文确定的名称 |
-| URL 链接 | 标准化URL |
+| 链接URL | 标准化URL |
 | 链接类型 | 设置为下载、退出或其他 |
 
 ### `onBeforeEventSend`
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
-| 函数 | 否 | () => 未定义 |
+| 函数 | 否 | ()=>未定义 |
 
-设置此项可配置在发送每个事件之前为其调用的回调。  包含该字段的 `xdm` 对象将发送到回调。  修改xdm对象以更改发送的内容。  在回调中，对 `xdm` 象已在event命令中传递数据，并自动收集信息。  有关此回调的时间安排的详细信息和示例，请参阅全局 [修改事件](tracking-events.md#modifying-events-globally)。
+设置此设置可配置在发送每个事件之前调用的回调。  包含该字段的 `xdm` 对象将发送到回调。  修改xdm对象以更改发送的内容。  在回调中，对 `xdm` 象已在事件命令中传递数据，并自动收集信息。  有关此回调的时间安排的详细信息和示例，请参阅全局 [修改事件](tracking-events.md#modifying-events-globally)。
 
 ## 隐私选项
 
@@ -116,7 +111,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 对象 | 否 | `{"general": "in"}` |
 
-设置用户的默认同意。 当尚未为用户保存同意首选项时，将使用此选项。 另一个有效值是 `{"general": "pending"}`。 设置此项后，工作将排队，直到用户提供同意首选项。 提供用户首选项后，工作会根据用户的首选项继续或中止。 有关更 [多信息，请参阅](supporting-consent.md) “支持同意”。
+设置用户的默认同意。 当尚未为用户保存同意首选项时，将使用此选项。 另一个有效值是 `{"general": "pending"}`。 设置此项后，工作将排队，直到用户提供同意首选项。 提供用户首选项后，工作将根据用户的首选项继续或中止。 有关详 [细信息](supporting-consent.md) ，请参阅支持同意。
 
 ## 个性化选项
 
@@ -126,9 +121,9 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 字符串 | 否 | 无 |
 
-用于创建CSS样式定义，该定义在从服务器加载个性化内容时隐藏网页的内容区域。 如果未提供此选项，则在加载个性化内容时，SDK不会尝试隐藏任何内容区域，这可能会导致“闪烁”。
+用于创建CSS样式定义，该定义在从服务器加载个性化内容时隐藏网页的内容区域。 如果未提供此选项，则加载个性化内容时SDK不会尝试隐藏任何内容区域，这可能导致“闪烁”。
 
-例如，如果网页上的元素ID为，当从服务器加载个性化内容时，您希望隐藏其默认内容的 `container` ID，则预隐藏样式的示例如下：
+例如，如果网页上有一个元素，其ID为您想在从服务器加载个性化 `container` 内容时隐藏其默认内容，则预隐藏样式的示例如下：
 
 ```javascript
   prehidingStyle: "#container { opacity: 0 !important }"
@@ -142,7 +137,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-启用Cookie目标，这允许根据区段资格设置Cookie。
+启用Cookie目标，允许根据区段资格设置Cookie。
 
 ### `urlDestinationsEnabled`
 
@@ -150,7 +145,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-启用URL目标，它允许基于区段资格触发URL。
+启用URL目标，它允许基于段资格触发URL。
 
 ## 标识选项
 
@@ -160,7 +155,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 数值 | 否 | 无 |
 
-指定触发哪个ID同步的容器ID。 这是一个可从顾问处获取的非负整数。
+容器ID，指定触发哪个ID同步。 这是可从顾问处获取的非负整数。
 
 ### `idSyncEnabled`
 
@@ -176,4 +171,4 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | true |
 
-启用Adobe第三方Cookie的设置。 SDK能够将访客ID保留在第三方上下文中，以便允许跨站点使用相同的访客ID。 如果您有多个站点或希望与合作伙伴共享数据，则此功能很有用；但是，有时出于隐私原因而不需要这样做。
+启用Adobe第三方Cookie的设置。 SDK能够将访客ID保留在第三方上下文中，从而允许在站点之间使用相同的访客ID。 如果您有多个站点或希望与合作伙伴共享数据，则此功能非常有用； 但是，有时出于隐私原因而不需要这样做。
