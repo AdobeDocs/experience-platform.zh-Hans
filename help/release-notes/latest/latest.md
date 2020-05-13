@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: May 13, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 9d4c645e830790a7d5430fe3d514464ca8bef025
+source-git-commit: 47e03d3f58bd31b1aec45cbf268e3285dd5921ea
 workflow-type: tm+mt
-source-wordcount: '664'
-ht-degree: 4%
+source-wordcount: '875'
+ht-degree: 5%
 
 ---
 
@@ -19,9 +19,11 @@ ht-degree: 4%
 
 对Adobe Experience Platform中现有功能的更新：
 
-- [数据科学工作区](#dsw)
-- [Experience Platform Web SDK和Experience Platform Edge Network](#edge)
-- [源](#sources)
+- [Adobe Experience Platform 发行说明](#adobe-experience-platform-release-notes)
+   - [数据科学工作区 {#dsw}](#data-science-workspace-dsw)
+   - [目标 {#destinations}](#destinations-destinations)
+   - [Experience Platform Web SDK和Experience Platform Edge Network {#edge}](#experience-platform-web-sdk-and-experience-platform-edge-network-edge)
+   - [源 {#sources}](#sources-sources)
 
 ## 数据科学工作区 {#dsw}
 
@@ -37,6 +39,26 @@ ht-degree: 4%
 | 菜谱 | 新的PySpark和Spark菜谱现在采用类似于Python和R菜谱的Docker工作流程。 |
 
 有关迁移笔记本电脑和方法以使用Spark 2.4的更多信息，请参阅笔记本 [电脑迁移指南](../../data-science-workspace/recipe-notebook-migration.md)。 有关数据科学工作区的更多一般信息，请参阅 [概述文档](../../data-science-workspace/home.md)。
+
+## 目标 {#destinations}
+
+在 [Adobe实时客户数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
+
+**新目标**
+
+Adobe实时CDP现在支持将激活存储流化到云目标，允许您将受众数据和事件以JSON格式导出到这些目标。 然后，您可以在目标事件上描述业务逻辑。 有关详细信息，请参阅以下内容：
+
+>[!NOTE]
+>
+>Adobe [!DNL Amazon Kinesis] 实时 [!DNL Azure Event Hubs] CDP中的目标和目标目前都处于测试阶段。 文档和功能可能会发生变化。
+
+| 文档 | 描述 |
+|--- | ---|
+| [（测试版）Amazon Kinesis目标](/help/rtcdp/destinations/amazon-kinesis-destination.md) | 本文介绍如何创建与存储的实时出站连接， [!DNL Amazon Kinesis] 以从Adobe Experience Platform流化数据。 |
+| [（测试版）Azure事件集线器目标](/help/rtcdp/destinations/azure-event-hubs-destination.md) | 本文介绍如何创建与存储的实时出站连接， [!DNL Azure Event Hubs] 以从Adobe Experience Platform流化数据。 |
+| [API教程——连接到流目标并激活数据](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md) | 本教程演示如何使用API调用连接到您的Adobe Experience Platform存储、创建到流式云事件目标（Amazon Kinesis或Azure集线器）的连接、创建到新创建目标的数据流以及将数据激活到新创建的目标。 |
+
+有关详细信息，请参阅目 [标概述](/help/rtcdp/destinations/destinations-overview.md)。
 
 ## Experience Platform Web SDK和Experience Platform Edge Network {#edge}
 
