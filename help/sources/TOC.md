@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors帮助
 translation-type: tm+mt
-source-git-commit: 1eb6883ec9b78e5d4398bb762bba05a61c0f8308
+source-git-commit: 71080a1741ea0d660f63e2009f045c0e34f6c44b
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '563'
 ht-degree: 0%
 
 ---
@@ -65,9 +65,11 @@ ht-degree: 0%
       - 广告 {#advertising}
          - [Google Ads连接器](tutorials/api/create/advertising/ads.md)
       - 云存储 {#cloud-storage}
+         - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3连接器](tutorials/api/create/cloud-storage/s3.md)
          - [Azure Blob连接器](tutorials/api/create/cloud-storage/blob.md)
          - [Azure Data Lake存储Gen2连接器](tutorials/api/create/cloud-storage/adls-gen2.md)
+         - [Azure事件集线器连接器](tutorials/api/create/cloud-storage/eventhub.md)
          - [Azure文件存储连接器](tutorials/api/create/cloud-storage/azure-file-storage.md)
          - [Google Cloud存储连接器](tutorials/api/create/cloud-storage/google.md)
          - [SFTP连接器](tutorials/api/create/cloud-storage/sftp.md)
@@ -128,8 +130,10 @@ ht-degree: 0%
       - 广告 {#create}
          - [Google Ads连接器](tutorials/ui/create/advertising/ads.md)
       - 云存储 {#cloud-storage}
+         - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Azure Data Lake存储Gen2连接器](tutorials/ui/create/cloud-storage/adls-gen2.md)
          - [Azure Blob和Amazon S3连接器](tutorials/ui/create/cloud-storage/blob-s3.md)
+         - [Azure事件集线器连接器](tutorials/ui/create/cloud-storage/eventhub.md)
          - [Azure文件存储连接器](tutorials/ui/create/cloud-storage/azure-file-storage.md)
          - [FTP和SFTP连接器](tutorials/ui/create/cloud-storage/ftp-sftp.md)
          - [Google Cloud存储连接器](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
