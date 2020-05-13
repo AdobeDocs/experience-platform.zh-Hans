@@ -1,9 +1,12 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Privacy Service Help
+user-guide-title: Adobe Experience Platform隐私服务帮助
 translation-type: tm+mt
-source-git-commit: 1cb730f8663291d104d5fbe61ecbba7d0103b75d
+source-git-commit: 284768c0f5416972e51d2fa2078ad5267e1b8628
+workflow-type: tm+mt
+source-wordcount: '86'
+ht-degree: 9%
 
 ---
 
@@ -20,13 +23,16 @@ source-git-commit: 1cb730f8663291d104d5fbe61ecbba7d0103b75d
 * 隐私服务UI {#ui}
    * [隐私服务UI概述](ui/overview.md)
    * [隐私服务用户指南](ui/user-guide.md)
-* [隐私请求的标识数据](identity-data.md)
+* [隐私请求的身份数据](identity-data.md)
 * [订阅隐私事件](privacy-events.md)
 * GDPR指南 {#gdpr}
    * [GDPR 常见问题解答](gdpr/faq.md)
    * [GDPR 术语](gdpr/terminology.md)
-* CCPA指南 {#ccpa}
+* CCPA参考线 {#ccpa}
    * [CCPA常见问题解答](ccpa/faq.md)
+* PDPA（泰国）指南 {#pdpa-tha}
+   * [PDPA（泰国）常见问题解答](./pdpa-tha/faq.md)
+   * [PDPA（泰国）术语](./pdpa-tha/terminology.md)
 * [疑难解答指南](troubleshooting-guide.md)
-* [API参考](https://www.adobe.io/apis/experiencecloud/gdpr/api-reference.html)
+* [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml)
 * [发行说明](release-notes.md)
