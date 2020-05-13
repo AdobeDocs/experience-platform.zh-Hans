@@ -4,7 +4,10 @@ seo-title: Adobe Experience Platform Web SDK渲染个性化内容
 description: 了解如何使用Experience Platform Web SDK呈现个性化内容
 seo-description: 了解如何使用Experience Platform Web SDK呈现个性化内容
 translation-type: tm+mt
-source-git-commit: bb3841da8a566105fde1b7ac78dccd79a7ea15d4
+source-git-commit: 938e0e56111c96f6b0b378c9e14fb92af70c5e10
+workflow-type: tm+mt
+source-wordcount: '262'
+ht-degree: 3%
 
 ---
 
@@ -15,7 +18,7 @@ source-git-commit: bb3841da8a566105fde1b7ac78dccd79a7ea15d4
 >
 >Adobe Experience Platform Web SDK目前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
 
-Adobe Experience Platform Web SDK支持在Adobe查询个性化解决方案，包括Adobe目标。 有两种个性化模式： 检索可自动渲染的内容和开发人员必须渲染的内容。 SDK还提供管理闪 [烁的工具](managing-flicker.md)。
+Adobe Experience Platform Web SDK支持在Adobe查询个性化解决方案，包括Adobe目标。 有两种个性化模式： 检索可自动渲染的内容和开发人员必须渲染的内容。 SDK还提供管理闪 [烁的工具](../../edge/solution-specific/target/flicker-management.md)。
 
 ## 自动呈现内容
 
