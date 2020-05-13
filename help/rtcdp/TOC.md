@@ -3,10 +3,10 @@ product: adobe experience platform
 audience: user
 user-guide-title: 实时客户数据平台帮助
 translation-type: tm+mt
-source-git-commit: 72511172c07b79c485660d59595aa6c8fdd6bdaa
+source-git-commit: be885faf8c1408f372d2eb6cd8d6a8fa8fc69e14
 workflow-type: tm+mt
-source-wordcount: '413'
-ht-degree: 11%
+source-wordcount: '439'
+ht-degree: 10%
 
 ---
 
@@ -122,9 +122,12 @@ ht-degree: 11%
          * [Invoca标记扩展](/help/rtcdp/destinations/invoca-extension.md)
          * [Medallia扩展](destinations/medallia-extension.md)
          * [交谈URL收件箱扩展](destinations/talkurl-extension.md)
-   * 目标教程 {#dest-tutorials}
+   * 目标UI教程 {#dest-tutorials}
       * [连接到目标](/help/rtcdp/destinations/connect-destination.md)
       * [将用户档案和区段激活到目标](destinations/activate-destinations.md)
+   * 目标API教程{api-tutorials}
+      * [连接到流式目标(AWS Kinesis和Azure事件中心)并激活数据](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)
+      * [连接到电子邮件营销目标并激活数据](/help/tutorials/destinations/email-marketing-api.md)
 * 隐私和数据管理 {#privacy}
    * [隐私概述](privacy/privacy-overview.md)
    * [数据管理概述](privacy/data-governance-overview.md)
