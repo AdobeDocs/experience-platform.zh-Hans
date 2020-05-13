@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Edge Network帮助
 translation-type: tm+mt
-source-git-commit: 1d864707226087d63a8f0afd9156efed0e369742
+source-git-commit: e00dc3e8dec0117617081ca4fc9ffa752b01b3b7
 workflow-type: tm+mt
 source-wordcount: '91'
-ht-degree: 9%
+ht-degree: 12%
 
 ---
 
@@ -27,7 +27,6 @@ ht-degree: 9%
    * [调试](fundamentals/debugging.md)
    * [与多个属性交互](fundamentals/interacting-with-multiple-properties.md)
    * [呈现个性化内容](fundamentals/rendering-personalization-content.md)
-   * [管理闪烁](fundamentals/managing-flicker.md)
    * [支持同意](fundamentals/supporting-consent.md)
    * [支持应用程序内浏览器](fundamentals/supporting-in-app-browsers.md)
    * [身份](fundamentals/identity.md)
@@ -40,7 +39,8 @@ ht-degree: 9%
    * Audience Manager {#aam}
       * [受众管理器概述](solution-specific/audience-manager/audience-manager-overview.md)
    * Target {#target}
-      * [目标概述](solution-specific/target/target-overview.md)
+      * [Target 概述](solution-specific/target/target-overview.md)
+      * [闪变管理](solution-specific/target/flicker-management.md)
 * 参考 {#ref}
    * [自动收集的信息](reference/automatic-information.md)
    * [检索库信息](reference/retrieving-library-information.md)
