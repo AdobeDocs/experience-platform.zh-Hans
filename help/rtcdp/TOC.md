@@ -3,9 +3,9 @@ product: adobe experience platform
 audience: user
 user-guide-title: 实时客户数据平台帮助
 translation-type: tm+mt
-source-git-commit: e0807f32ff5f3d16a6805074951e3b09723c5181
+source-git-commit: 72511172c07b79c485660d59595aa6c8fdd6bdaa
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '413'
 ht-degree: 11%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 11%
    * 目标界面 {#destinations-interface}
       * [目标工作区](destinations/destinations-workspace.md)
       * [目标详细信息页](destinations/destination-details-page.md)
-   * 目标目录  {#destinations-cat}
+   * 目标目录 {#destinations-cat}
       * [目标目录概述](destinations/destinations-catalog.md)
       * Adobe目标{#adobe-destinations}
          * [Adobe目标概述](destinations/adobe-destinations.md)
@@ -76,7 +76,9 @@ ht-degree: 11%
       * 云存储目标{#cloud-storage}
          * [云存储目标概述](destinations/cloud-storage-destinations.md)
          * [创建云存储目标的工作流](/help/rtcdp/destinations/cloud-storage-destinations-workflow.md)
+         * [Amazon Kinesis目标](/help/rtcdp/destinations/amazon-kinesis-destination.md)
          * [Amazon S3目标](destinations/amazon-s3-destination.md)
+         * [Azure EventHubs目标](/help/rtcdp/destinations/azure-event-hubs-destination.md)
          * [SFTP目标](destinations/sftp-destination.md)
       * 数据管理平台目标 {#dmp-destinations}
          * [数据管理平台目标概述](destinations/dmp-destinations.md)
