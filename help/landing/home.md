@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform概述
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 96faba8d608d2fd057d256855b8b82af10558324
+source-git-commit: 7a36a3e3180c4ed4a9db23c0a33f6af3d7a3a5ec
 workflow-type: tm+mt
-source-wordcount: '503'
+source-wordcount: '505'
 ht-degree: 1%
 
 ---
@@ -31,7 +31,7 @@ Experience Platform文档以多种格式提供，以支持各种功能和服务�
 >
 >* 特色文章的链接
 >* 与上下文相关的文档建议
->* 提供有关文档和报告问题的反馈的能力
+>* 能够提供有关Experience Platform的反馈并报告问题
 >* 改进了搜索结果，其中还包括社区论坛和视频内容的结果。
 >
 > 
