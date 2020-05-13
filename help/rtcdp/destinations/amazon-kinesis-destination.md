@@ -4,15 +4,20 @@ seo-title: Amazon Kinesis目标
 description: 创建到Amazon Kinesis存储的实时出站连接以从Adobe Experience Platform流化数据。
 seo-description: 创建到Amazon Kinesis存储的实时出站连接以从Adobe Experience Platform流化数据。
 translation-type: tm+mt
-source-git-commit: a18f89531cf024f61b054b47a660bd26766bebf6
+source-git-commit: 47e03d3f58bd31b1aec45cbf268e3285dd5921ea
 workflow-type: tm+mt
-source-wordcount: '422'
-ht-degree: 0%
+source-wordcount: '446'
+ht-degree: 2%
 
 ---
 
 
-# Amazon Kinesis目标
+# （测试版）Amazon Kinesis目标
+
+
+>[!IMPORTANT]
+>
+>Adobe [!DNL Amazon Kinesis] Real-time CDP中的目标当前为测试版。 文档和功能可能会发生变化。
 
 ## 概述 {#overview}
 
@@ -21,7 +26,7 @@ Amazon [!DNL Kinesis Data Streams] Web Services提供的服务允许您实时收
 您可以创建到存储的实时出站连接， [!DNL Amazon Kinesis] 以便从Adobe Experience Platform流化数据。
 
 * 有关更多信 [!DNL Amazon Kinesis]息，请参 [阅Amazon文档](https://docs.aws.amazon.com/streams/latest/dev/introduction.html)。
-* 要使用API调 [!DNL Amazon Kinesis] 用连接到，请参阅流 [目标API教程]。
+* 要使用API调 [!DNL Amazon Kinesis] 用连接到，请参阅流 [目标API教程](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)。
 * 要使用Adobe [!DNL Amazon Kinesis] 实时CDP用户界面连接到，请参阅以下各节。
 
 ![UI中的Amazon Kinesis](/help/rtcdp/destinations/assets/aws-kinesis-destination.png)
@@ -97,7 +102,7 @@ Amazon [!DNL Kinesis Data Streams] Web Services提供的服务允许您实时收
 
 >[!MORELIKETHIS]
 >
->* 链接到Amazon Kinesis API教程
+>* [连接到Amazon Kinesis并使用API调用激活数据](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)
 >* [Azure事件集线器目标](/help/rtcdp/destinations/azure-event-hubs-destination.md)
 >* [目标类型和类别](/help/rtcdp/destinations/destination-types.md)
 
