@@ -4,14 +4,20 @@ solution: Experience Platform
 title: 使用Flow Service API创建SQL Server连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 173faf861ca8feb6dd4e2159b0708e41fa0f601f
+source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+workflow-type: tm+mt
+source-wordcount: '679'
+ht-degree: 1%
 
 ---
 
 
 # 使用Flow Service API创建Microsoft SQL Server连接器
 
-Flow Service用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+>[!NOTE]
+>Microsoft SQL Server连接器处于测试状态。 功能和文档可能会发生更改。
+
+Flow Service用于在Adobe Experience Platform内收集和集中来自不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
 本教程使用Flow Service API指导您完成将Experience Platform连接到Microsoft SQL Server（以下简称“SQL Server”）的步骤。
 
@@ -19,30 +25,30 @@ Flow Service用于收集和集中Adobe Experience Platform内不同来源的客�
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-* [来源](../../../../home.md):Experience Platform允许从各种来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。
-* [沙箱](../../../../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [来源](../../../../home.md): Experience Platform允许从各种来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。
+* [沙箱](../../../../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和改进数字体验应用程序。
 
-以下各节提供了使用Flow Service API成功连接到SQL Server所需了解的其他信息。
+以下各节提供了使用流服务API成功连接到SQL Server所需了解的其他信息。
 
 ### 收集所需的凭据
 
 要连接到SQL Server，必须提供以下连接属性：
 
-| 凭证 | 描述 |
+| 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 与您的SQL Server帐户关联的连接字符串。 |
+| `connectionString` | 与SQL Server帐户关联的连接字符串。 |
 
-有关SQL Server [快速入门的更多信息](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server) ，请参阅本文档。
+有关SQL Server [入门的详](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server) 细信息，请参阅此文档。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这些包括路径、必需的标题和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑难解答指南 [中有关如何阅读示例API调用的部分](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的部分。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须首先完成身份验证 [教程](../../../../../tutorials/authentication.md)。 完成身份验证教程后，将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
+要调用平台API，您必须先完成身份验证 [教程](../../../../../tutorials/authentication.md)。 完成身份验证教程后，将提供所有Experience Platform API调用中每个所需标头的值，如下所示：
 
-* 授权：承载人 `{ACCESS_TOKEN}`
+* 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -50,7 +56,7 @@ Experience Platform中的所有资源（包括属于流服务的资源）都与�
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标题：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
 * 内容类型： `application/json`
 
@@ -60,7 +66,7 @@ Experience Platform中的所有资源（包括属于流服务的资源）都与�
 
 **API格式**
 
-每个可用源都有其自己唯一的连接规范集，用于描述连接器属性，如身份验证要求。 向端点发送GET请求将返 `/connectionSpecs` 回所有可用源的连接规范。 您还可以包含获取SQL `property=name=="sql-server"` Server专用信息的查询。
+每个可用源都有其自己的唯一连接规范集，用于描述连接器属性，如身份验证要求。 向端点发送GET请求 `/connectionSpecs` 将返回所有可用源的连接规范。 您还可以包含获 `property=name=="sql-server"` 取SQL Server专用信息的查询。
 
 ```http
 GET /connectionSpecs
@@ -82,7 +88,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回SQL Server的连接规范，包括其唯一标识符(`id`)。 下一步中需要此ID才能创建基本连接。
+成功的响应返回SQL Server的连接规范，包括其唯一标识符(`id`)。 下一步需要此ID才能创建基本连接。
 
 ```json
 {
@@ -124,7 +130,7 @@ curl -X GET \
 
 ## 创建基本连接
 
-基本连接指定一个源并包含该源的凭据。 每个SQL Server帐户只需要一个基本连接，因为它可用于创建多个源连接器以导入不同的数据。
+基本连接指定源并包含该源的凭据。 每个SQL Server帐户只需要一个基本连接，因为它可用于创建多个源连接器以导入不同的数据。
 
 **API格式**
 
@@ -160,11 +166,11 @@ curl -X POST \
 | 属性 | 描述 |
 | --------- | ----------- |
 | `auth.params.connectionString` | 与SQL Server身份验证关联的连接字符串。 |
-| `connectionSpec.id` | 在上一步中收`id`集的连接规范()。 |
+| `connectionSpec.id` | 在上一步骤`id`中收集的连接规范()。 |
 
 **响应**
 
-成功的响应返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中浏览数据时需要此ID。
+成功的响应会返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中浏览数据时需要此ID。
 
 ```json
 {
@@ -175,4 +181,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过本教程，您使用Flow Service API创建了一个SQL Server基本连接，并获得了该连接的唯一ID值。 在下一个教程中，您可以使用此基本连接ID，因为您将学习如 [何使用Flow Service API浏览数据库或NoSQL系统](../../explore/database-nosql.md)。
+通过本教程，您已使用流服务API创建了SQL Server基本连接，并获得了该连接的唯一ID值。 在下一个教程中，您可以使用此基本连接ID，因为您将学习 [如何使用流服务API浏览数据库或NoSQL系统](../../explore/database-nosql.md)。
