@@ -4,15 +4,21 @@ seo-title: 安装SDK的Adobe Experience Platform Web SDK
 description: 了解如何安装Experience Platform Web SDK
 seo-description: 了解如何安装Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 5998473c665cb80ffddc092847533f51d81cf581
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '566'
 ht-degree: 0%
 
 ---
 
 
 # 安装SDK
+
+CDN中提供AEP Web SDK，供您使用。 您可以引用此文件或下载此文件并在自己的基础架构上托管它。 它提供微型和非微型版本。 非精简版本有助于进行调试。
+
+[https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js)[https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js)
+
+## 添加代码
 
 实施Adobe Experience Platform Web SDK的第一步是尽可能在HTML标签中复制并粘贴以下“基 `<head>` 本代码”:
 
@@ -23,7 +29,7 @@ ht-degree: 0%
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["alloy"]);
 </script>
-<script src="alloy.js" async></script>
+<script src="https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js" async></script>
 ```
 
 基本代码创建一个名为的全局函数 `alloy`。 使用此函数与SDK进行交互。 如果要将全局函数命名为其他名称，可以按如下方 `alloy` 式更改该名称：
@@ -35,7 +41,7 @@ ht-degree: 0%
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["mycustomname"]);
 </script>
-<script src="alloy.js" async></script>
+<script src="https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js" async></script>
 ```
 
 在此示例中，全局函数被重 `mycustomname`命名，而不是 `alloy`重命名。
@@ -80,5 +86,5 @@ ht-degree: 0%
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["alloy"]);
 </script>
-<script src="alloy.js"></script>
+<script src="https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js"></script>
 ```
