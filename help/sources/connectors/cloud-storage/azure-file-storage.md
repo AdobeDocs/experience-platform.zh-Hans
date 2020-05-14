@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Azure文件存储连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 70c8f4657fcc54e87b91f7b263b7da9e1e3d9677
+source-git-commit: b8ebe57482fdd10ccd8bdcf1a86009a373ea579e
 workflow-type: tm+mt
-source-wordcount: '176'
+source-wordcount: '177'
 ht-degree: 0%
 
 ---
 
 
-# Azure文件存储连接器
+# （测试版）Azure文件存储连接器
 
 Adobe Experience Platform为AWS、Google Cloud Platform和Azure等云提供商提供本机连接。 您可以将这些系统中的数据引入平台。
 
