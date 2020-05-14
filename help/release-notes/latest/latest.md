@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: May 13, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 0eca2f6e50024ec43c025dd75c34ca876d71c3f2
+source-git-commit: 53d72e6460c1ab3bc4459d8e108630f652b62dd6
 workflow-type: tm+mt
-source-wordcount: '959'
+source-wordcount: '961'
 ht-degree: 5%
 
 ---
@@ -87,7 +87,7 @@ Experience Platform Web SDK和Experience Platform Edge Network允许用户将数
 | Adobe Analytics | 通过边缘配置将数据发送到Analytics报表包。 XDM被拼合到上下文数据中，支持多套件标记 |
 | Adobe Target | 支持Adobe目标。 包括VEC、基于表单的书写器、A/B、XT、自动个性化、MVT |
 | Adobe受众管理器支持 | 支持受众管理器ID同步、URL目标和Cookie目标 |
-| `synceIdnetity` | 重命 `setCustomersIds` 名 `syncIdentity` 为，以便更加清楚 |
+| 身份同步 | 重命 `setCustomersIds` 名 `syncIdentity` 为，以便更加清楚 |
 | XDM Object Builder | 在启动扩展中，您现在可以将XDM对象构建为数据元素 |
 
 有关Platform Web SDK和Edge Network的更多信息，请参阅 [文档](../../edge/home.md)。
