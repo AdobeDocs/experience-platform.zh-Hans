@@ -4,7 +4,7 @@ seo-title: 跟踪Adobe Experience Platform Web SDK事件
 description: 了解如何跟踪Experience Platform Web SDK事件
 seo-description: 了解如何跟踪Experience Platform Web SDK事件
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
 workflow-type: tm+mt
 source-wordcount: '637'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 跟踪事件
 
-要将事件数据发送到Adobe Experience Cloud，请使用该命 `event` 令。 该 `event` 命令是将数据发送到Experience Cloud以及检索个性化内容、身份和受众目标的主要方式。
+要将事件数据发送到Adobe Experience Cloud，请使用该命 `sendEvent` 令。 该 `sendEvent` 命令是将数据发送到Experience Cloud以及检索个性化内容、身份和受众目标的主要方式。
 
 发送到Adobe Experience Cloud的数据分为两个类别:
 
@@ -28,7 +28,7 @@ XDM数据是一个内容和结构与您在Adobe Experience Platform中创建的�
 您希望成为分析、个性化、受众或目标一部分的任何XDM数据都应使用此选项进 `xdm` 行发送。
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "xdm": {
     "commerce": {
       "order": {
@@ -54,7 +54,7 @@ alloy("event", {
 在XDM体验事件中，有一个 `eventType` 字段。 它保存记录的主事件类型。 这可以作为选项的一部分传 `xdm` 入。
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "xdm": {
     "eventType": "commerce.purchases",
     "commerce": {
@@ -74,7 +74,7 @@ alloy("event", {
 ```javascript
 var myXDMData = { ... };
 
-alloy("event", {
+alloy("sendEvent", {
   "xdm": myXDMData,
   "type": "commerce.purchases"
 });
@@ -85,7 +85,7 @@ alloy("event", {
 在网页用户导航离开之前发送事件数据可能很棘手。 如果请求过长，浏览器可能会取消请求。 某些浏览器已实现一个调用的Web标 `sendBeacon` 准API，以便在此期间更轻松地收集数据。 使用时， `sendBeacon`浏览器在全局浏览上下文中发出Web请求。 这意味着浏览器在后台发出信标请求，并且不保留页面导航。 要告知Adobe Experience Platform Web SDK使用 `sendBeacon`，请将该选项 `"documentUnloading": true` 添加到事件命令。  示例如下：
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "documentUnloading": true,
   "xdm": {
     "commerce": {
@@ -107,7 +107,7 @@ alloy("event", {
 如果要处理事件的响应，可以通知您成功或失败，如下所示：
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "renderDecisions": true,
   "xdm": {
     "commerce": {
@@ -148,7 +148,7 @@ alloy("configure", {
 
 `xdm` 字段按此顺序设置：
 
-1. 作为选项传递到事件命令的值 `alloy("event", { xdm: ... });`
+1. 作为选项传递到事件命令的值 `alloy("sendEvent", { xdm: ... });`
 2. 自动收集的值。  (请参阅 [自动信息](../reference/automatic-information.md)。)
 3. 回调中所做的 `onBeforeEventSend` 更改。
 
