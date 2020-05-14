@@ -4,15 +4,18 @@ solution: Experience Platform
 title: 在UI中创建Azure文件存储源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: aa1c6cb0f5702cfe444cb2046e4460e404f13e57
+source-git-commit: b8ebe57482fdd10ccd8bdcf1a86009a373ea579e
 workflow-type: tm+mt
-source-wordcount: '503'
+source-wordcount: '517'
 ht-degree: 0%
 
 ---
 
 
 # 在UI中创建Azure文件存储源连接器
+
+>[!NOTE]
+>Azure表存储为测试版。 功能和文档可能会发生更改。
 
 Adobe Experience Platform中的源连接器提供按计划收集外部源数据的能力。 本教程提供了使用平台用户界面验证Azure文件存储源连接器的步骤。
 
