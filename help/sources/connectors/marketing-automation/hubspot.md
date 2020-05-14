@@ -4,16 +4,19 @@ solution: Experience Platform
 title: HubSpot连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1afa5e6acd5e4fd983505df11f4a76f6835ac30f
+source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
+workflow-type: tm+mt
+source-wordcount: '149'
+ht-degree: 0%
 
 ---
 
 
-# HubSpot连接器
+# （测试版）HubSpot连接器
 
-Adobe Experience Platform允许从外部源中摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)获取数据。
+Adobe Experience Platform允许从外部源摄取数据，同时提供使用平台服务构建、标记和增强传入数据的能力。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 
-Experience Platform支持从第三方营销自动化系统中摄取数据。 对营销自动化提供商的支持包括HubSpot。
+Experience Platform支持从第三方营销自动化系统中获取数据。 对营销自动化提供商的支持包括HubSpot。
 
 以下文档提供了如何使用API或用户界面将HubSpot连接到平台的信息：
 
