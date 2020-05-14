@@ -4,39 +4,34 @@ seo-title: Adobe Experience Platform Web SDK快速开始Launch
 description: 使用Experience Platform Web SDK扩展收集数据的快速开始指南
 seo-description: 使用Experience Platform Web SDK扩展收集数据的快速开始指南
 translation-type: tm+mt
-source-git-commit: 51acb07efe624c7cf1dfaabc4b03f04c76ac88f8
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
 workflow-type: tm+mt
-source-wordcount: '391'
-ht-degree: 4%
+source-wordcount: '529'
+ht-degree: 3%
 
 ---
 
 
-# （测试版）先决条件
+# 欢迎
 
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK目前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
+本指南将带您了解如何在Launch中设置Adobe Experience Platform Web SDK。 要能够使用此功能，您需要将其列入白名单。 如果您想继续等待列表，请联系您的CSM。
 
-目前，Adobe Experience Platform Web SDK仅支持使用XDM将数据发送到Adobe Experience Platform。 您必须满足以下先决条件。
-
-- 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经拥有Analytics的CNAME，则应使用该CNAME。
-- 有权使用Adobe Experience Platform
+- 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经拥有Analytics的CNAME，则应使用该CNAME。 在开发中测试无需CNAME即可正常工作，但在开始生产之前，您需要CNAME
+- 有权使用Adobe Experience Platform Data Platform。 如果您尚未购买平台，我们将为您提供Experience Platform Data Services Foundation，以便与SDK一起使用。
 - 正在使用最新版的访客ID服务
-
-## 准备平台
-
-要能够将数据发送到Adobe Experience Platform，您必须创建一个XDM模式和一个使用该模式的数据集。
-
-- [创建模式](../../xdm/tutorials/create-schema-ui.md)
-- 将Adobe Experience Platform Web SDK混合添加到您创建的模式
-- [使用模式](https://platform.adobe.com/dataset/overview) 创建数据集，让数据登陆
 
 ## 创建配置ID
 
-您可以在启动项中使用边缘配 [置工具创建配](../fundamentals/edge-configuration.md) 置ID。
+您可以在启动项中使用边缘配 [置工具创建配](../fundamentals/edge-configuration.md) 置ID。 这将允许边缘网络向各种解决方案发送数据。 有关如何查找每个选项的详细信息，请参阅 [边缘配置工具](../fundamentals/edge-configuration.md) 页。
 
 >注意： 您的组织必须列入此功能的白名单。 请联系您的CSM，让列表参与最终的白名单。
+
+## 准备模式
+
+Experience Platform Edge Network将数据作为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义边缘网络希望数据的格式。 要发送数据，您需要定义模式。
+
+- [创建模式](../../xdm/tutorials/create-schema-ui.md)
+- 将Adobe Experience Platform Web SDK混合添加到您创建的模式
 
 ## 在Launch中安装SDK
 
@@ -44,28 +39,25 @@ ht-degree: 4%
 
 有关不同配置选项的更多详细信息，请 [参阅配置SDK](../fundamentals/configuring-the-sdk.md)。
 
+## 根据您的模式创建数据元素
+
+在启动项中，通过将扩展更改为AEP Web SDK并将类型设置为XDM对象，创建引用模式的数据元素。 这将加载模式，并允许您将数据元素映射到模式的不同部分。
+
+![启动项中的日期元素](../../assets/edge_data_element.png)
+
 ## 发送事件
 
-安装扩展后，开始通过从AEP Web SDK扩展添加“发送信标”操作来发送事件。 建议在每次加载页面时至少发送一个事件，并选中“在视图的开始发生”选项。
+安装扩展后，开始通过将AEP Web SDK扩展的“sendEvent”操作添加到规则来发送事件。 请务必将刚创建的事件元素作为XDM数据添加到该数据中。 我们建议您在每次加载页面时至少发送一个事件。
 
 有关如何跟踪事件的更多详细信息，请参阅 [跟踪事件](../fundamentals/tracking-events.md)。
 
-## 发送数据
+## 后续步骤
 
-您可以发送与您之前创建的模式及事件匹配的数据。 例如，如果您拥有一个商务站点并将商务混音添加到您的模式，则当某人视图产品时，您会发送以下结构。
+数据流动后，您可以执行以下操作。
 
-```javascript
-{
-  "commerce": {
-    "productListAdds": {
-        "value":1
-    }
-  },
-  "productListItems":{
-      "name":"Floppy Green Hat",
-      "SKU":"HATFLP123",
-      "product":"1234567",
-      "quantity":2
-  }
-}
-```
+- [构建模式](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html)
+- 了解如何 [个性化体验](../fundamentals/rendering-personalization-content.md)
+- 了解如何将数据发送到多个解决方案
+   - [Adobe Analytics](../solution-specific/analytics/analytics-overview.md)
+   - [Adobe Audience Manager](../solution-specific/audience-manager/audience-manager-overview.md)
+   - [Adobe Target](../solution-specific/target/target-overview.md)
