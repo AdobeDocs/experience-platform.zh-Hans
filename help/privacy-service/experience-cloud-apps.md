@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 隐私服务和Experience Cloud应用程序
 topic: overview
 translation-type: tm+mt
-source-git-commit: 14cd3d17c7d9ba602d02925abddec9e0b246a8c8
+source-git-commit: f4a007b66806cb0d322226e1e1837cfce7ca4095
+workflow-type: tm+mt
+source-wordcount: '600'
+ht-degree: 14%
 
 ---
 
@@ -30,13 +33,11 @@ Adobe Experience Platform隐私服务专为支持多个Adobe Experience Cloud应
 | Adobe Analytics | ✓ | ✓ | <ul><li>[访问／删除文档](https://docs.adobe.com/content/help/en/analytics/admin/data-governance/an-gdpr-overview.html)</li><li>Analytics使用隐私报告变量处理退出 [请求](https://docs.adobe.com/content/help/zh-Hans/analytics/admin/data-governance/consent-variables.html)</li></ul> |
 | Adobe Audience Manager | ✓ | ✓ | <ul><li>[访问／删除文档](https://docs.adobe.com/content/help/zh-Hans/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html)</li><li>[退出文档](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/declared-ids.html)</li></ul> |
 | Adobe Campaign Standard | ✓ | ✓ | <ul><li>[访问／删除文档](https://docs.campaign.adobe.com/doc/standard/getting_started/en/ACS_GDPR.html)</li><li>[退出文档](../segmentation/honoring-opt-outs.md)</li></ul> |
+| Adobe客户属性(CRS) | ✓ | 不适用 | <ul><li>[访问／删除GDPR文档](https://docs.adobe.com/content/help/en/core-services/interface/customer-attributes/gdpr.html)</li><li>[CCPA的访问／删除文档](https://docs.adobe.com/content/help/en/core-services/interface/customer-attributes/ccpa.html)</li><li>客户属性无法传输数据，因此不适用退出销售请求。</li></ul> |
 | Adobe Experience Platform | ✓ | ✓ | <ul><li>[访问／删除数据湖文档](../catalog/privacy.md)</li><li>[访问／删除实时客户用户档案文档](../profile/privacy.md)</li><li>Experience Platform接受 [受众细分的退出请求](../segmentation/honoring-opt-outs.md)。</li></ul> |
 | Adobe Primetime身份验证 | ✓ | 不适用 | <ul><li>[访问／删除文档](http://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>Primetime无法传输数据，因此不适用选择退出销售请求。</li></ul> |
 | Adobe Target | ✓ | 不适用 | <ul><li>[访问／删除文档](https://docs.adobe.com/content/help/zh-Hans/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)</li><li>目标无法传输数据，因此不适用选择退出销售请求。</li></ul> |
 
-<!-- (To include once access/delete documentation is available)
-Adobe Customer Attributes (CRS) | ✓ | N/A | <ul><li>Customer Attributes does not have the capability to transfer data, therefore opt-out-of-sale requests are not applicable.</li></ul>
--->
 
 ## 自助应用程序 {#self-serve}
 
