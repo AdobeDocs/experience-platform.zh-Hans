@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Edge Network帮助
 translation-type: tm+mt
-source-git-commit: 4bea14d18ce119bdec0d428f885d240f92244cfc
+source-git-commit: 5998473c665cb80ffddc092847533f51d81cf581
 workflow-type: tm+mt
-source-wordcount: '85'
+source-wordcount: '89'
 ht-degree: 12%
 
 ---
@@ -16,6 +16,7 @@ ht-degree: 12%
 * [边缘网络概述](home.md)
 * 入门指南 {#get-started}
    * [快速开始Launch](getting-started/quick-start-with-launch.md)
+   * [快速开始，无需启动](getting-started/quick-start-without-launch.md)
 * 基本面 {#fundamentals}
    * [安装SDK](fundamentals/installing-the-sdk.md)
    * [执行命令](fundamentals/executing-commands.md)
