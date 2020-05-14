@@ -4,19 +4,15 @@ seo-title: 执行Adobe Experience Platform Web SDK命令
 description: 了解如何执行Experience Platform Web SDK命令
 seo-description: 了解如何执行Experience Platform Web SDK命令
 translation-type: tm+mt
-source-git-commit: 9bd6feb767e39911097bbe15eb2c370d61d9842a
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
 workflow-type: tm+mt
-source-wordcount: '445'
-ht-degree: 2%
+source-wordcount: '419'
+ht-degree: 0%
 
 ---
 
 
-# （测试版）执行命令
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK目前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
+# 执行命令
 
 在您的网页上实现基本代码后，您可以开始使用SDK执行命令。 您无需等待外部文件\(`alloy.js`\)从服务器加载，即可执行命令。 如果SDK尚未完成加载，SDK会尽快排队并处理命令。
 
