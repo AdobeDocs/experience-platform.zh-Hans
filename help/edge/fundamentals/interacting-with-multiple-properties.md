@@ -4,7 +4,7 @@ seo-title: 与多个属性交互的Adobe Experience Platform Web SDK
 description: 了解如何与多个Experience Platform Web SDK属性交互
 seo-description: 了解如何与多个Experience Platform Web SDK属性交互
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
 workflow-type: tm+mt
 source-wordcount: '256'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 与多个属性交互
 
-在某些情况下，您可能希望在同一页面上与两个不同的属性进行交互。 这些包括：
+在某些情况下，您可能希望在同一页面上与两个不同的属性交互。 这些包括：
 
 * 已获得并正在努力将其网站集成在一起的公司
 * 多个公司之间的数据共享关系
@@ -44,7 +44,7 @@ mycustomname1("configure", {
   "orgId": "ADB3LETTERSANDNUMBERS@AdobeOrg"
 });
 
-mycustomname1("event", {
+mycustomname1("sendEvent", {
   "data": {
     "key": "value"
   }
@@ -55,7 +55,7 @@ mycustomname2("configure", {
   "orgId": "ADB3NUMBERSANDLETTERS2@AdobeOrg"
 });
 
-mycustomname2("event", {
+mycustomname2("sendEvent", {
   "data": {
     "key": "value"
   }
