@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Web SDK和使用Adobe目标
 description: 了解如何使用Experience Platform Web SDK使用Adobe目标呈现个性化内容
 seo-description: 了解如何使用Experience Platform Web SDK使用Adobe目标呈现个性化内容
 translation-type: tm+mt
-source-git-commit: 9d66e926ff86f23b3dea34f37d3bb16ba97eb0ef
+source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
 workflow-type: tm+mt
 source-wordcount: '651'
 ht-degree: 2%
@@ -42,7 +42,7 @@ AEP Web SDK能够在Web上自动呈现通过Adobe目标的VEC定义的体验，�
 
 ```javascript
 alloy
-("event", 
+("sendEvent", 
   { 
   "renderDecisions": true, 
   "xdm": {
@@ -65,7 +65,7 @@ alloy
 
 ```javascript
 alloy
-  ("event", { 
+  ("sendEvent", { 
     decisionScopes: [
       "foo", "bar"], 
       "xdm": {
@@ -91,7 +91,7 @@ alloy
 AEP Web SDK提供了一项功能，在该功能中，您无需依赖AEP Web SDK来渲染VEC操作，即可检索VEC操作。 发送定义 `__view__` 为的事件 `decisionScopes`。
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   decisionScopes: [“__view__”,"foo", "bar"], 
   "xdm": { 
     "web": { 
