@@ -4,15 +4,18 @@ solution: Experience Platform
 title: 使用Flow Service API创建Azure文件存储连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 8beee3f15aa867026b28f9c395553d1c934ef7a3
+source-git-commit: 3a882656f93b86093b356be5dbc12b3e4321cfb8
 workflow-type: tm+mt
-source-wordcount: '621'
+source-wordcount: '636'
 ht-degree: 1%
 
 ---
 
 
 # 使用Flow Service API创建Azure文件存储连接器
+
+>[!NOTE]
+>Azure文件存储连接器处于测试状态。 功能和文档可能会发生更改。
 
 Flow Service用于在Adobe Experience Platform内收集和集中来自不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
