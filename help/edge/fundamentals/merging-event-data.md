@@ -4,19 +4,19 @@ seo-title: 合并Adobe Experience Platform Web SDK事件数据
 description: 了解如何合并Experience Platform Web SDK事件数据
 seo-description: 了解如何合并Experience Platform Web SDK事件数据
 translation-type: tm+mt
-source-git-commit: 767f0e1bfdfcc898313b546c804ba1287f2aec50
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
 workflow-type: tm+mt
-source-wordcount: '444'
-ht-degree: 2%
+source-wordcount: '436'
+ht-degree: 0%
 
 ---
 
 
-# （测试版）合并事件数据
+# 合并事件数据
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform Web SDK目前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
+>此功能仍在开发中，因此并非所有解决方案都能够合并此数据。
 
 有时，并非所有数据在发生事件时都可用。 您可能希望捕获您拥 _有的_ 数据，以便在用户关闭浏览器时不会丢失数据。 另一方面，您可能还会包含以后将可用的任何数据。
 
