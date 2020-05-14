@@ -4,19 +4,15 @@ seo-title: Adobe Experience Platform Web SDK检索Experience Cloud ID
 description: 了解如何获取Adobe Experience Cloud Id。
 seo-description: 了解如何获取Adobe Experience Cloud Id。
 translation-type: tm+mt
-source-git-commit: 9bd6feb767e39911097bbe15eb2c370d61d9842a
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
 workflow-type: tm+mt
-source-wordcount: '424'
-ht-degree: 7%
+source-wordcount: '398'
+ht-degree: 6%
 
 ---
 
 
-# （测试版）检索Experience Cloud ID
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK目前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
+# 检索Experience Cloud ID
 
 Adobe Experience Platform Web SDK利用Adobe [Identity Service](../../identity-service/ecid.md)。 这可确保每个设备都有一个唯一标识符，该标识符会保留在设备上，以便页面之间的活动可以绑定在一起。
 
