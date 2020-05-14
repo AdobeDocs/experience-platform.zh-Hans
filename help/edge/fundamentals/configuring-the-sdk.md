@@ -4,19 +4,15 @@ seo-title: 配置Adobe Experience Platform Web SDK
 description: 了解如何配置Experience Platform Web SDK
 seo-description: 了解如何配置Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: 767f0e1bfdfcc898313b546c804ba1287f2aec50
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
 workflow-type: tm+mt
-source-wordcount: '765'
-ht-degree: 12%
+source-wordcount: '739'
+ht-degree: 11%
 
 ---
 
 
-# （测试版）配置SDK
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK目前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
+# 配置SDK
 
 SDK的配置是使用命令完 `configure` 成的。
 
