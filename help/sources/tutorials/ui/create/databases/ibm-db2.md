@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建IBM DB2源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: e77dadb4257c16e19113f6224790fbb3b8207a52
+source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
 workflow-type: tm+mt
-source-wordcount: '517'
+source-wordcount: '532'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,9 @@ ht-degree: 0%
 
 
 # 在UI中创建IBM DB2源连接器
+
+> [!NOTE]
+> IBM DB2连接器处于测试阶段。 功能和文档可能会发生更改。
 
 Adobe Experience Platform中的源连接器提供按计划收集外部源数据的能力。 本教程提供了使用平台用户界面创建IBM DB2（以下简称“DB2”）源连接器的步骤。
 
