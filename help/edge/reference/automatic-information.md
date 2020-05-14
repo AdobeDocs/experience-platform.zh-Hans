@@ -4,18 +4,17 @@ seo-title: 由Adobe Experience Platform Web SDK自动收集的信息
 description: Adobe Experience Cloud SDK自动收集的每条信息的说明
 seo-description: Adobe Experience Cloud SDK自动收集的每条信息的说明
 translation-type: tm+mt
-source-git-commit: 0cc6e233646134be073d20e2acd1702d345ff35f
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+workflow-type: tm+mt
+source-wordcount: '382'
+ht-degree: 5%
 
 ---
 
 
-# （测试版）自动收集的信息
+# 自动收集的信息
 
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK目前为测试版，并非所有用户都可用。 文档和功能可能会发生更改。
-
-Adobe Experience Cloud SDK可自动收集大量信息，无需任何特殊配置。 但是，如果需要，可以使用命令中的选项禁 `context` 用此信 `configure` 息。 [请参阅配置SDK](../fundamentals/configuring-the-sdk.md)。 以下是这些信息的列表。 括号中的名称指示配置上下文时要使用的字符串。
+Adobe Experience Cloud SDK可自动收集大量信息，无需进行任何特殊配置。 但是，如果需要，可以使用命令中的 `context` 选项禁用此 `configure` 信息。 [请参阅配置SDK](../fundamentals/configuring-the-sdk.md)。 以下是这些信息的列表。 括号中的名称指示配置上下文时要使用的字符串。
 
 ## 设备 (`device`)
 
@@ -31,7 +30,7 @@ Adobe Experience Cloud SDK可自动收集大量信息，无需任何特殊配置
 
 ### 屏幕方向
 
-| **有效负荷中的路径：** | **可能值：** |
+| **有效负荷中的路径：** | **可能值:** |
 | --------------------------------------- | ------------------------- |
 | `events[].xdm.device.screenOrientation` | `landscape` 或 `portrait` |
 
@@ -57,7 +56,7 @@ Browser
 | ------------------------------- | ------------ |
 | `events[].xdm.environment.type` | `browser` |
 
-体验所通过的环境类型。 Adobe Experience Platform SDK for JavaScript始终可设置 `browser`。
+体验的环境类型。 针对JavaScript的Adobe Experience Platform SDK始终可以设置 `browser`。
 
 ### 视口高度
 
@@ -67,7 +66,7 @@ Browser
 
 浏览器内容区域的高度（以像素为单位）。
 
-### 视口宽度
+### 视区宽度
 
 | **有效负荷中的路径：** | **示例：** |
 | ------------------------------------------------------- | ------------ |
@@ -77,7 +76,7 @@ Browser
 
 ## 实施详细信息
 
-有关用于收集活动的SDK的信息。
+有关用于收集事件的SDK的信息。
 
 ### 名称
 
@@ -103,9 +102,9 @@ Browser
 | ------------------------------------- | ------------------------------- |
 | `events[].xdm.placeContext.localTime` | `2019-08-07T15:47:17.129-07:00` |
 
-最终用户的本地时间戳，采用简化的扩展ISO格式 [ISO 8601](https://tools.ietf.org/html/rfc3339#section-5.6)。
+最终用户采用简化的扩展ISO格式ISO 8601的本 [地时间戳](https://tools.ietf.org/html/rfc3339#section-5.6)。
 
-### 局部时区偏移
+### 本地时区偏移
 
 | **有效负荷中的路径：** | **示例：** |
 | ----------------------------------------------- | ------------ |
@@ -119,7 +118,7 @@ Browser
 | ------------------------ | -------------------------- |
 | `events[].xdm.timestamp` | `2019-08-07T22:47:17.129Z` |
 
-事件的时间戳。无法删除上下文的这一部分。
+事件的时间戳。  无法删除上下文的这一部分。
 
 最终用户的UTC时间戳，采用简化的扩展ISO格 [式ISO 8601](https://tools.ietf.org/html/rfc3339#section-5.6)。
 
@@ -135,7 +134,7 @@ Browser
 
 当前页面的URL。
 
-### 引用URL
+### 推荐人URL
 
 | **有效负荷中的路径：** | **示例：** |
 | ---------------------------------- | ----------------------------------------- |
