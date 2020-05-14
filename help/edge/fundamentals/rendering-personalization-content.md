@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Web SDK渲染个性化内容
 description: 了解如何使用Experience Platform Web SDK呈现个性化内容
 seo-description: 了解如何使用Experience Platform Web SDK呈现个性化内容
 translation-type: tm+mt
-source-git-commit: 4bea14d18ce119bdec0d428f885d240f92244cfc
+source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
 workflow-type: tm+mt
 source-wordcount: '236'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Adobe Experience Platform Web SDK支持在Adobe查询个性化解决方案，包
 当您将事件发送到服务器并设置为事件上的选项时，SDK `renderDecisions` 会自动 `true` 呈现个性化内容。
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "renderDecisions": true,
   "xdm": {
     "commerce": {
@@ -43,7 +43,7 @@ alloy("event", {
 您可以使用来请求作为对命令的承诺返回决策 `event` 的列表 `scopes`。 范围是让个性化解决方案知道您需要做出哪些决策的字符串。
 
 ```javascript
-alloy("event",{
+alloy("sendEvent",{
     xdm:{...},
     scopes:['demo-1', 'demo-2']
   }).then(function(result){
