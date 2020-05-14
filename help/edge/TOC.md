@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Edge Network帮助
 translation-type: tm+mt
-source-git-commit: e00dc3e8dec0117617081ca4fc9ffa752b01b3b7
+source-git-commit: 4bea14d18ce119bdec0d428f885d240f92244cfc
 workflow-type: tm+mt
-source-wordcount: '91'
+source-wordcount: '85'
 ht-degree: 12%
 
 ---
@@ -16,7 +16,6 @@ ht-degree: 12%
 * [边缘网络概述](home.md)
 * 入门指南 {#get-started}
    * [快速开始Launch](getting-started/quick-start-with-launch.md)
-   * [部署所有产品](getting-started/deploying-all-products.md)
 * 基本面 {#fundamentals}
    * [安装SDK](fundamentals/installing-the-sdk.md)
    * [执行命令](fundamentals/executing-commands.md)
@@ -28,7 +27,6 @@ ht-degree: 12%
    * [与多个属性交互](fundamentals/interacting-with-multiple-properties.md)
    * [呈现个性化内容](fundamentals/rendering-personalization-content.md)
    * [支持同意](fundamentals/supporting-consent.md)
-   * [支持应用程序内浏览器](fundamentals/supporting-in-app-browsers.md)
    * [身份](fundamentals/identity.md)
 * 实施什么 {#implement}
    * [产品](what-to-implement/commerce.md)
