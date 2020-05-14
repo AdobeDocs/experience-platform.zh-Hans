@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Data Science Workspace帮助
 translation-type: tm+mt
-source-git-commit: f38a2ba85248bbd12f5ef2487e8d8e6fe3319b32
+source-git-commit: 8f9454730e3bab451ac75070fcd1623698df9196
 workflow-type: tm+mt
-source-wordcount: '216'
+source-wordcount: '210'
 ht-degree: 2%
 
 ---
@@ -29,6 +29,11 @@ ht-degree: 2%
    * [MLServices](api/mlservices.md)
    * [洞察](api/insights.md)
    * [附录](api/appendix.md)
+* 实时机器学习(Alpha) {#real-time-machine-learning}
+   * [概述](real-time-machine-learning/home.md)
+   * [入门指南](real-time-machine-learning/getting-started.md)
+   * [RTML创作笔记本用户指南](real-time-machine-learning/rtml-authoring-notebook.md)
+   * [节点引用指南](real-time-machine-learning/node-reference.md)
 * 预建菜谱 {#pre-built-recipes}
    * [产品推荐处方](pre-built-recipes/product-recommendations.md)
    * [产品购买预测](pre-built-recipes/product-purchase-prediction.md)
