@@ -4,12 +4,18 @@ solution: Experience Platform
 title: 使用Flow Service API创建IBM DB2连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: c4162d88a688ce2028de08b63e7b7eab954a0e29
+source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+workflow-type: tm+mt
+source-wordcount: '596'
+ht-degree: 2%
 
 ---
 
 
 # 使用Flow Service API创建IBM DB2连接器
+
+>[!NOTE]
+>IBM DB2连接器处于测试阶段。 功能和文档可能会发生更改。
 
 Flow Service用于在Adobe Experience Platform内收集和集中来自不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
