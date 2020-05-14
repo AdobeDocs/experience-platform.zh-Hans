@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Azure Data Explorer连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 58cc359527a590fce3825f41682cbb32be88f8d1
+source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
 workflow-type: tm+mt
-source-wordcount: '140'
+source-wordcount: '141'
 ht-degree: 0%
 
 ---
 
 
-# Azure Data Explorer连接器
+# （测试版）Azure Data Explorer连接器
 
 Adobe Experience Platform为Microsoft、MySQL和Azure等数据库提供商提供本机连接。 您可以将这些系统中的数据引入平台。
 
