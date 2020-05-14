@@ -4,12 +4,18 @@ solution: Experience Platform
 title: 使用Flow Service API创建Azure表存储连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 9556b85b26e2eb3d4a2b3e41db5f0c3a14459d32
+source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+workflow-type: tm+mt
+source-wordcount: '578'
+ht-degree: 2%
 
 ---
 
 
 # 使用Flow Service API创建Azure表存储连接器
+
+>[!NOTE]
+>Azure表存储连接器为测试版。 功能和文档可能会发生更改。
 
 Flow Service用于在Adobe Experience Platform内收集和集中来自不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
