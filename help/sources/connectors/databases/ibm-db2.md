@@ -4,15 +4,15 @@ solution: Experience Platform
 title: IBM DB2连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: e77dadb4257c16e19113f6224790fbb3b8207a52
+source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
 workflow-type: tm+mt
-source-wordcount: '132'
+source-wordcount: '133'
 ht-degree: 0%
 
 ---
 
 
-# IBM DB2连接器
+# （测试版）IBM DB2连接器
 
 Adobe Experience Platform为Microsoft、MySQL和Azure等数据库提供商提供本机连接。 您可以将这些系统中的数据引入平台。
 
