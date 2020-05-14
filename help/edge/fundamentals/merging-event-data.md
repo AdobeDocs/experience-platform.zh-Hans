@@ -4,7 +4,7 @@ seo-title: 合并Adobe Experience Platform Web SDK事件数据
 description: 了解如何合并Experience Platform Web SDK事件数据
 seo-description: 了解如何合并Experience Platform Web SDK事件数据
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
 workflow-type: tm+mt
 source-wordcount: '436'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 在这种情况下，您可以将事件作为选项传递给 `eventMergeId` 以下命令，从而 `event` 将数据与先前的合并：
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "xdm": {
     "commerce": {
       "order": {
@@ -39,7 +39,7 @@ alloy("event", {
 
 // Time passes and more data becomes available
 
-alloy("event", {
+alloy("sendEvent", {
   "xdm": {
     "commerce": {
       "order": {
@@ -72,7 +72,7 @@ alloy("event", {
 var eventMergeIdPromise = alloy("createEventMergeId");
 
 eventMergeIdPromise.then(function(results) {
-  alloy("event", {
+  alloy("sendEvent", {
     "xdm": {
       "commerce": {
         "order": {
@@ -90,7 +90,7 @@ eventMergeIdPromise.then(function(results) {
 // Time passes and more data becomes available
 
 eventMergeIdPromise.then(function(results) {
-  alloy("event", {
+  alloy("sendEvent", {
     "xdm": {
       "commerce": {
         "order": {
@@ -126,7 +126,7 @@ eventMergeIdPromise.then(function(results) {
 在事件命令中， `mergeId` 实际将添加到有 `xdm` 效负荷。  如果需要， `mergeId` 可以将其作为xdm选项的一部分进行发送，如下所示：
 
 ```javascript
-alloy("event", {
+alloy("sendEvent", {
   "xdm": {
     "commerce": {
       "order": {
