@@ -4,16 +4,15 @@ seo-title: 跟踪Adobe Experience Platform Web SDK事件
 description: 了解如何跟踪Experience Platform Web SDK事件
 seo-description: 了解如何跟踪Experience Platform Web SDK事件
 translation-type: tm+mt
-source-git-commit: c49ac064d310fbe12e19d58b80c2267a35d585e8
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+workflow-type: tm+mt
+source-wordcount: '637'
+ht-degree: 0%
 
 ---
 
 
 # 跟踪事件
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK目前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
 
 要将事件数据发送到Adobe Experience Cloud，请使用该命 `event` 令。 该 `event` 命令是将数据发送到Experience Cloud以及检索个性化内容、身份和受众目标的主要方式。
 
