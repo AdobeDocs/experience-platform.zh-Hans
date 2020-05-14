@@ -4,16 +4,15 @@ seo-title: Experience Platform Web SDK的边缘配置
 description: '了解如何配置Experience Platform Edge Network。 '
 seo-description: '了解如何配置Experience Platform Edge Network。 '
 translation-type: tm+mt
-source-git-commit: efbc080117754cee01f21c9f9ec409204648e757
+source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+workflow-type: tm+mt
+source-wordcount: '883'
+ht-degree: 2%
 
 ---
 
 
-# （测试版）边缘配置
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK目前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
+# 边缘配置
 
 Adobe Experience Platfrom Web SDK的配置分为两个位置。 SDK [中的](configuring-the-sdk.md) configure命令控制必须在客户端处理的事项，如 `edgeDomain`。 边缘配置处理SDK的所有其他配置。 当请求发送到Adobe Experience Platform Edge Network时， `edgeConfigId` 将引用服务器端配置。 这样，您无需在网站上更改代码即可更新配置。
 
@@ -39,17 +38,17 @@ SDK中使用的ID，作为 `edgeConfigId` 一个指定配置和环境的复合ID
 
 以下是环境可用的各项设置。 大多数部分都可以启用或禁用。 禁用后，将保存您的设置，但不处于活动状态。
 
-#### [!UICONTROL Identity]
+#### [!UICONTROL 身份]
 
 标识部分是始终打开的唯一部分。 它有两个可用设置： ID同步已启用和ID同步容器ID。
 
 ![配置UI的标识部分](../../assets/edge_configuration_identity.png)
 
-##### [!UICONTROL ID Sync Enabled]
+##### [!UICONTROL 已启用ID同步]
 
 控制SDK是否与第三方合作伙伴执行身份同步。
 
-##### [!UICONTROL ID Sync Container ID]
+##### [!UICONTROL ID同步容器ID]
 
 ID同步可以分组为容器，以允许在不同时间运行不同的ID同步。 此控制为给定配置ID运行哪个容器的ID同步。
 
@@ -59,17 +58,17 @@ ID同步可以分组为容器，以允许在不同时间运行不同的ID同步�
 
 ![Adobe Experience Platform设置块](../../assets/edge_configuration_aep.png)
 
-##### [!UICONTROL Sandbox]
+##### [!UICONTROL 沙箱]
 
 沙箱是Adobe Experience Platform中的位置，允许客户将其数据和实施相互隔离。 沙箱文档中提供了有关它们工作方式的更 [多详细信息](../../sandboxes/home.md)。
 
 ##### [!UICONTROL Streaming Inlet]
 
-流入口是Adobe Experience Platform中的HTTP源。 这些API在Adobe [!UICONTROL Sources] Experience Platform的选项卡下创建为HTTP API。
+流入口是Adobe Experience Platform中的HTTP源。 这些API在Adobe Experience [!UICONTROL Platform的] “源”选项卡下创建为HTTP API。
 
-##### [!UICONTROL Event Dataset]
+##### [!UICONTROL 事件数据集]
 
-边缘配置支持将数据发送到具有类模式的数据集 [!UICONTROL Experience Event]。
+边缘配置支持将数据发送到具有类体验模式 [!UICONTROL 的事件]。
 
 #### Adobe Target
 
@@ -81,21 +80,21 @@ ID同步可以分组为容器，以允许在不同时间运行不同的ID同步�
 >
 >与客户端代码关联的组织必须与创建配置ID的组织匹配。
 
-##### [!UICONTROL Client Code]
+##### [!UICONTROL 客户端代码]
 
-目标帐户的唯一ID。 要找到此项，您可以导 [!UICONTROL Adobe Target] 航到> [!UICONTROL Setup]> [!UICONTROL Implementation] > [!UICONTROL edit settings] Button旁 [!UICONTROL download][!UICONTROL at.js] 边，或者 [!UICONTROL mbox.js]
+目标帐户的唯一ID。 要找到此项，您可以导航至 [!UICONTROL Adobe目标] > [!UICONTROL Setup Implementation][!UICONTROL >] Edit Settings [!UICONTROL >下一步，编辑Adobe Adobe下载按钮的Adobe Button，其中Adobe Js或Mbox.js的]
 
-##### [!UICONTROL Property Token]
+##### [!UICONTROL 属性令牌]
 
 目标允许客户通过使用属性来控制权限。 详细信息可在目标文 [档的“企业](https://docs.adobe.com/content/help/en/target/using/administer/manage-users/enterprise/properties-overview.html) 权限”部分找到。
 
-可以在> > UICONTROL属性中 [!UICONTROL Adobe Target] 找 [!UICONTROL setup] 到属 [性令牌]
+属性令牌可在Adobe目标 [!UICONTROL >设置] > [!UICONTROL UICONTROL属] 性中找 [到]
 
-##### [!UICONTROL Target Environment ID]
+##### [!UICONTROL 目标环境ID]
 
 [Adobe](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) 目标中的环境可帮助您管理整个开发阶段的实施。 此设置指定要与每个环境一起使用的环境。
 
-Adobe建议对每个配置环境、 `dev``stage`和边 `prod` 缘配置设置不同的设置。 但是，如果您已经定 [!UICONTROL Adobe Target environments] 义了，则可以使用这些。
+Adobe建议对每个配置环境、 `dev``stage`和边 `prod` 缘配置设置不同的设置。 但是，如果您已经定 [!UICONTROL 义了Adobe目标环境] ，则可以使用这些。
 
 #### Adobe Audience Manager
 
@@ -103,11 +102,11 @@ Adobe建议对每个配置环境、 `dev``stage`和边 `prod` 缘配置设置不
 
 ![Adobe受众管理设置块](../../assets/edge_configuration_aam.png)
 
-##### [!UICONTROL Cookie Destinations Enabled]
+##### [!UICONTROL 已启用Cookie目标]
 
 允许SDK通过受众管理器中的 [Cookie目标](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) 共享区段信息。
 
-##### [!UICONTROL URL Destinations Enabled]
+##### [!UICONTROL 已启用URL目标]
 
 允许SDK通过URL目标共享区 [段信息](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-url-destination.html)。 这些配置在受众管理器中。
 
@@ -117,6 +116,6 @@ Adobe建议对每个配置环境、 `dev``stage`和边 `prod` 缘配置设置不
 
 ![Adobe Analytics设置块](../../assets/edge_configuration_aa.png)
 
-##### [!UICONTROL Report Suite ID]
+##### [!UICONTROL 报表包 ID]
 
-报表包位于下方的“Adobe Analytics管理员”部分 [!UICONTROL Admin > ReportSuites]。 如果指定了多个报表包，则数据将复制到每个报表包。
+报表包位于Adobe Analytics管理员区域的管理员>报 [!UICONTROL 表包下]。 如果指定了多个报表包，则数据将复制到每个报表包。
