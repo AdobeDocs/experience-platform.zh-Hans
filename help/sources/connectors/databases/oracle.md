@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Oracle连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2e10056a3dcbff1075d786327ea7a7ea2ccc776c
+source-git-commit: 45ce6e876a42c5594ae4b7787757e5db7024a22f
 workflow-type: tm+mt
-source-wordcount: '124'
+source-wordcount: '125'
 ht-degree: 0%
 
 ---
 
 
-# Oracle连接器
+# （测试版）Oracle连接器
 
 Adobe Experience Platform为Microsoft、MySQL和Azure等数据库提供商提供本机连接。 您可以将这些系统中的数据引入平台。
 
