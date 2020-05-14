@@ -4,19 +4,15 @@ seo-title: 使用Adobe Experience Platform Web SDK将受众发送到Adobe Experi
 description: 了解如何使用Experience Platform Web SDK将受众发送到Adobe Design Manager
 seo-description: 了解如何使用Experience Platform Web SDK将受众发送到Adobe Design Manager
 translation-type: tm+mt
-source-git-commit: dfe9ea2889b3ba2e74f8b10296bfb2d123ad9d57
+source-git-commit: 4bea14d18ce119bdec0d428f885d240f92244cfc
 workflow-type: tm+mt
-source-wordcount: '318'
-ht-degree: 2%
+source-wordcount: '292'
+ht-degree: 0%
 
 ---
 
 
-# Experience Platform Edge Network上的（测试版）受众经理
-
->[!IMPORTANT]
->
->Adobe Experience Platform Web SDK目前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
+# Experience Platform Edge Network的受众经理
 
 Adobe Experience Platform Web SDK与Adobe受众管理器集成，支持从受众管理器、Cookie和URL目标以及ID同步发送和接收数据。
 
