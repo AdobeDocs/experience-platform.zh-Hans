@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform隐私服务帮助
 translation-type: tm+mt
-source-git-commit: 284768c0f5416972e51d2fa2078ad5267e1b8628
+source-git-commit: 63412f07b2e9237bbceaee8f1febef3ff655c286
 workflow-type: tm+mt
-source-wordcount: '86'
+source-wordcount: '87'
 ht-degree: 9%
 
 ---
@@ -19,6 +19,7 @@ ht-degree: 9%
 * Privacy Service API {#api}
    * [入门指南](api/getting-started.md)
    * [隐私工作](api/privacy-jobs.md)
+   * [同意](api/consent.md)
    * [附录](api/appendix.md)
 * 隐私服务UI {#ui}
    * [隐私服务UI概述](ui/overview.md)
