@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: May 13, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: e6731b54840eaf9dd2cdaeff5205e14277e78a3b
+source-git-commit: d41952e5905d4ebc579a29ad3282a8f732b7c331
 workflow-type: tm+mt
-source-wordcount: '1026'
+source-wordcount: '1075'
 ht-degree: 4%
 
 ---
@@ -55,7 +55,15 @@ Adobe Experience Platform将发布域和标题栏的更新，以改进您的体�
 
 在 [Adobe实时客户数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
 
-**新目标**
+**Facebook**
+
+Adobe实时CDP现在支持到Facebook的激活用户档案，允许您为Facebook活动激活，根据散列电子邮件进行受众定位、个性化和抑制。
+
+有关新功能的更多信息，请参 [阅Facebook目标页](/help/rtcdp/destinations/facebook-destination.md) 。
+
+<br> 
+
+**Amazon Kinesis和Azure事件中心流云存储目标**
 
 Adobe实时CDP现在支持将激活存储流化到云目标，允许您将受众数据和事件以JSON格式导出到这些目标。 然后，您可以在目标事件上描述业务逻辑。 有关详细信息，请参阅以下内容：
 
