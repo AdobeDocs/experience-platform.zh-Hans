@@ -4,9 +4,9 @@ seo-title: Facebook目标
 description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 seo-description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: faaa4eda5174bb8d27a76d767891df15df69e30a
+source-git-commit: 522014f8e5f3de0f553a69763d3a37482953b7c4
 workflow-type: tm+mt
-source-wordcount: '658'
+source-wordcount: '665'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,8 @@ ht-degree: 0%
 ## 概述 {#overview}
 
 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
+
+![实时CDP UI中的Facebook目标](/help/rtcdp/destinations/assets/facebook-destination.png)
 
 ## 用例
 
