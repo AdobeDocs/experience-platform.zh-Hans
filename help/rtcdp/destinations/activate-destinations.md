@@ -4,9 +4,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 7dafdf0dd1ad3af2defab3bf6b784fd37e777062
+source-git-commit: faaa4eda5174bb8d27a76d767891df15df69e30a
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '775'
 ht-degree: 0%
 
 ---
@@ -28,9 +28,12 @@ ht-degree: 0%
 3. 选择 **[!UICONTROL 激活]**;
 4. 在激活 **[!UICONTROL 目标工作流]** ，在选择 **[!UICONTROL 区段页面上]** ，选择要发送到目标的区段。
    ![细分到目标](/help/rtcdp/destinations/assets/select-segments.png)
-5. *视情况而定*. 此步骤仅适用于映射到云存储目标和电子邮件营销目标的细分。 <br> 在“目 **[!UICONTROL 标属性]** ”页上，选 **[!UICONTROL 择“添加新字段]** ”，然后选择要发送到目标的属性。
+5. *视情况而定*. 此步骤因激活区段的目标类型而异。 <br> 对于 *电子邮件营销**目标和云存储目标*，在“选择属 **[!UICONTROL 性”页面上，选]****** 择“添加新字段”并选择要发送到目标的属性。
 我们建议将其中一个属性作为合并 [模式的唯](/help/rtcdp/destinations/email-marketing-destinations.md#identity) 一标识符。 有关强制属性的详细信息，请参阅电子邮件营销目 [标文章中的标](/help/rtcdp/destinations/email-marketing-destinations.md#identity) 识。
-   ![目标属性](/help/rtcdp/destinations/assets/destination-attributes.png)
+   ![destination-attributes](/help/rtcdp/destinations/assets/select-attributes-step.png)对 *于社交网络目标*，在“标识 **[!UICONTROL 映射”步骤中]** ，选择要映射到目标标识的源属性。
+   ![填写字段前的身份映](/help/rtcdp/destinations/assets/facebook-identity-mapping-1.png)射在以下示例中，身份模式中的个人电子邮件地址已在引入时散列化到Experience Platform中，以符合Facebook电子邮件散 [列法要求](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements)。 选择 **[!UICONTROL 映射]** 后，按下一步。
+   ![填写字段后的身份映射](/help/rtcdp/destinations/assets/facebook-identity-mapping-2.png)
+
 6. 在“ **[!UICONTROL 区段计划]** ”页上，您可以看到向目标发送数据的开始日期以及向目标发送数据的频率。
 
    >[!IMPORTANT]
@@ -75,6 +78,10 @@ Salesforce_id3544_20191122124530.csv
 
 对于Facebook，成功的激活意味着将在Facebook Ads Manager中有计划地创建 [Facebook自定义受众](https://www.facebook.com/adsmanager/manage/)。 由于用户对已激活的区段具有资格或取消资格，因此将添加和删除该受众的区段成员资格。
 
+>[!TIP]
+>
+>Adobe实时CDP与Facebook之间的集成支持历史受众回填。 在将区段激活到目标时，所有历史区段资格都将发送至Facebook。
+
 ## 禁用激活 {#disable-activation}
 
 要禁用现有激活流，请执行以下步骤：
@@ -83,3 +90,4 @@ Salesforce_id3544_20191122124530.csv
 2. 单击右 **[!UICONTROL 边栏]** 中的“已启用”控件以更改激活流状态。
 3. 在“更 **新激活流状态** ”窗口中， **选择“确** 认”以禁用流。
 
+在AWS Kinesis中，生成一个访问密钥——秘密访问密钥对，以授予Adobe Real-time CDP对您的AWS Kinesis帐户的访问权限。 在AWS Kinesis文档中 [了解更多信息](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)。
