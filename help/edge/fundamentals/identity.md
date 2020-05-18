@@ -4,10 +4,10 @@ seo-title: Adobe Experience Platform Web SDK检索Experience Cloud ID
 description: 了解如何获取Adobe Experience Cloud Id。
 seo-description: 了解如何获取Adobe Experience Cloud Id。
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: a9dd5fd93397e57d0876bec334d54c517fa86939
 workflow-type: tm+mt
-source-wordcount: '398'
-ht-degree: 6%
+source-wordcount: '416'
+ht-degree: 7%
 
 ---
 
@@ -77,6 +77,14 @@ alloy("syncIdentity",{
 | 字符串 | 是 | 无 |
 
 这是您要为给定命名空间同步的ID。
+
+#### `authenticationState`
+
+| **类型** | **必需** | **默认值** | **可能值** |
+| -------- | ------------ | ----------------- | ------------------------------------ |
+| 字符串 | 是 | 模糊 | 不明确、已验证和已注销 |
+
+ID的身份验证状态。
 
 #### `primary`
 
