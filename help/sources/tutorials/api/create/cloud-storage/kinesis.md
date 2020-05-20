@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用Flow Service API创建Amazon Kinesis连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1eb6883ec9b78e5d4398bb762bba05a61c0f8308
+source-git-commit: dcd6293a71178fee14647f5b2c8b56d03d1ec7df
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '563'
 ht-degree: 2%
 
 ---
@@ -38,9 +38,10 @@ Flow Service用于在Adobe Experience Platform内收集和集中来自不同来�
 | ---------- | ----------- |
 | `accessKeyId` | 您的Kinesis帐户的访问密钥ID。 |
 | `secretKey` | Kinesis帐户的机密访问密钥。 |
+| `region` |  | 您的Kinesis帐户的区域。 |
 | `connectionSpec.id` | Kinesis连接规范ID: `86043421-563b-46ec-8e6c-e23184711bf6` |
 
-有关这些值的详细信息，请参 [阅此EventHub文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
+有关这些值的详细信息，请参 [阅此Kinesis文档](https://docs.aws.amazon.com/streams/latest/dev/getting-started.html)。
 
 ### 读取示例API调用
 
@@ -103,6 +104,7 @@ curl -X POST \
 | -------- | ----------- |
 | `auth.params.accessKeyId` | 您的Kinesis帐户的访问密钥ID。 |
 | `auth.params.secretKey` | Kinesis帐户的机密访问密钥。 |
+| `auth.params.region` | 您的Kinesis帐户的区域。 |
 | `connectionSpec.id` | Kinesis连接规范ID: `86043421-563b-46ec-8e6c-e23184711bf6` |
 
 **响应**
