@@ -3,9 +3,9 @@ product: adobe experience platform
 audience: user
 user-guide-title: 实时客户数据平台帮助
 translation-type: tm+mt
-source-git-commit: be885faf8c1408f372d2eb6cd8d6a8fa8fc69e14
+source-git-commit: 75581529ede3772606bc18fea683da5d396996c5
 workflow-type: tm+mt
-source-wordcount: '439'
+source-wordcount: '440'
 ht-degree: 10%
 
 ---
@@ -78,7 +78,7 @@ ht-degree: 10%
          * [创建云存储目标的工作流](/help/rtcdp/destinations/cloud-storage-destinations-workflow.md)
          * [Amazon Kinesis目标](/help/rtcdp/destinations/amazon-kinesis-destination.md)
          * [Amazon S3目标](destinations/amazon-s3-destination.md)
-         * [Azure EventHubs目标](/help/rtcdp/destinations/azure-event-hubs-destination.md)
+         * [Azure事件集线器目标](/help/rtcdp/destinations/azure-event-hubs-destination.md)
          * [SFTP目标](destinations/sftp-destination.md)
       * 数据管理平台目标 {#dmp-destinations}
          * [数据管理平台目标概述](destinations/dmp-destinations.md)
