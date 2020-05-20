@@ -3,7 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform帮助
 translation-type: tm+mt
-source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
+source-git-commit: 2c95e34b56b322f7cfb098b27210dd5242128803
+workflow-type: tm+mt
+source-wordcount: '296'
+ht-degree: 29%
 
 ---
 
@@ -19,13 +22,12 @@ source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
    * [目录和数据集](https://docs.adobe.com/content/help/en/experience-platform/catalog/home.html)
    * [数据访问](https://docs.adobe.com/content/help/en/experience-platform/data-access/home.html)
    * [数据管理](https://docs.adobe.com/content/help/en/experience-platform/data-governance/home.html)
-   * [数据摄取](https://docs.adobe.com/content/help/en/experience-platform/ingestion/home.html)
+   * [数据获取](https://docs.adobe.com/content/help/en/experience-platform/ingestion/home.html)
    * [数据科学工作区](https://docs.adobe.com/content/help/en/experience-platform/data-science-workspace/home.html)
    * [Debugger](https://docs.adobe.com/content/help/zh-Hans/debugger/using/experience-cloud-debugger.html)
    * [决策服务](https://docs.adobe.com/content/help/en/experience-platform/decisioning/home.html)
    * [目标](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html)
    * [ETL（提取、转换、加载）](https://docs.adobe.com/content/help/en/experience-platform/etl/home.html)
-   * [Experience Platform Web SDK（测试版）](https://docs.adobe.com/content/help/zh-Hans/experience-platform/edge/home.html)
    * [标识服务](https://docs.adobe.com/content/help/en/experience-platform/identity/home.html)
    * [智能服务](https://docs.adobe.com/content/help/en/experience-platform/intelligent-services/home.html)
    * [Launch](https://docs.adobe.com/content/help/zh-Hans/launch/using/overview.translate.html)
@@ -37,7 +39,8 @@ source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
    * [沙箱](https://docs.adobe.com/content/help/en/experience-platform/sandbox/home.html)
    * [区段](https://docs.adobe.com/content/help/en/experience-platform/segmentation/home.html)
    * [源（连接器）](https://docs.adobe.com/content/help/en/experience-platform/sources/home.html)
-   * [XDM（体验数据模型）](https://docs.adobe.com/content/help/en/experience-platform/xdm/home.html)
+   * [Web SDK](https://docs.adobe.com/content/help/zh-Hans/experience-platform/edge/home.html)
+   * [XDM（体验数据模型）](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/home.html)
 * [Experience Platform教程](https://docs.adobe.com/content/help/zh-Hans/experience-platform/tutorials/home.html)
 * [发行说明](https://docs.adobe.com/content/help/zh-Hans/experience-platform/release-notes/latest.html)
 * [术语表](glossary.md)
