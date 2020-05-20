@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建Amazon Kinesis源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1eb6883ec9b78e5d4398bb762bba05a61c0f8308
+source-git-commit: dcd6293a71178fee14647f5b2c8b56d03d1ec7df
 workflow-type: tm+mt
 source-wordcount: '451'
 ht-degree: 1%
@@ -50,7 +50,7 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 在云 *存储* 类别下，选 **择Amazon Kinesis** ，然 **** 后单击+图标(+)以创建新的Kinesis连接器。
 
-![](../../../../images/tutorials/create/eventhub/catalog.png)
+![](../../../../images/tutorials/create/kinesis/catalog.png)
 
 将显 *示“连接到Amazon* Kinesis”对话框。 在此页上，您可以使用新凭据或现有凭据。
 
@@ -58,13 +58,13 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 如果您使用新凭据，请选择“ **新帐户**”。 在显示的输入表单上，提供名称、可选说明和您的Kinesis凭据。 完成后，选 **择** Connect，然后允许一段时间建立新连接。
 
-![](../../../../images/tutorials/create/eventhub/new.png)
+![](../../../../images/tutorials/create/kinesis/new.png)
 
 ### 现有帐户
 
 要连接现有帐户，请选择要连接的Kinesis帐户，然后选择“下 **一步** ”继续。
 
-![](../../../../images/tutorials/create/eventhub/existing.png)
+![](../../../../images/tutorials/create/kinesis/existing.png)
 
 ## 后续步骤
 
