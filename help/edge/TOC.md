@@ -1,9 +1,9 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Edge Network帮助
+user-guide-title: Adobe Experience Platform Web SDK帮助
 translation-type: tm+mt
-source-git-commit: 5998473c665cb80ffddc092847533f51d81cf581
+source-git-commit: 73e0c245191c88025e59cf226ec5b07a55064b97
 workflow-type: tm+mt
 source-wordcount: '89'
 ht-degree: 12%
@@ -11,9 +11,9 @@ ht-degree: 12%
 ---
 
 
-# Adobe Experience Platform Edge Network {#edge}
+# Adobe Experience Platform Web SDK {#edge}
 
-* [边缘网络概述](home.md)
+* [Web SDK概述](home.md)
 * 入门指南 {#get-started}
    * [快速开始Launch](getting-started/quick-start-with-launch.md)
    * [快速开始，无需启动](getting-started/quick-start-without-launch.md)
