@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform源连接器概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1eb6883ec9b78e5d4398bb762bba05a61c0f8308
+source-git-commit: 7c94d7a0aace7525e776f13e2975f91cf2b29e23
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '758'
 ht-degree: 0%
 
 ---
@@ -77,6 +77,8 @@ Experience Platform支持从第三方数据库中摄取数据。 有关特定源
 - [Azure Synapse Analytics连接器](connectors/databases/synapse-analytics.md)
 - [Azure表存储连接器](connectors/databases/ats.md)
 - [Google BigQuery连接器](connectors/databases/bigquery.md)
+- [GreenPlum连接器](connectors/databases/greenplum.md)
+- [HP Vertica连接器](connectors/databases/hp-vertica.md)
 - [IBM DB2连接器](connectors/databases/ibm-db2.md)
 - [MariaDB连接器](connectors/databases/mariadb.md)
 - [Microsoft SQL Server连接器](connectors/databases/sql-server.md)
