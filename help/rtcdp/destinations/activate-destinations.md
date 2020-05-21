@@ -4,9 +4,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: faaa4eda5174bb8d27a76d767891df15df69e30a
+source-git-commit: 237ca5fc950b46ae4718850ab1360cdf52b8b112
 workflow-type: tm+mt
-source-wordcount: '775'
+source-wordcount: '889'
 ht-degree: 0%
 
 ---
@@ -30,9 +30,26 @@ ht-degree: 0%
    ![细分到目标](/help/rtcdp/destinations/assets/select-segments.png)
 5. *视情况而定*. 此步骤因激活区段的目标类型而异。 <br> 对于 *电子邮件营销**目标和云存储目标*，在“选择属 **[!UICONTROL 性”页面上，选]****** 择“添加新字段”并选择要发送到目标的属性。
 我们建议将其中一个属性作为合并 [模式的唯](/help/rtcdp/destinations/email-marketing-destinations.md#identity) 一标识符。 有关强制属性的详细信息，请参阅电子邮件营销目 [标文章中的标](/help/rtcdp/destinations/email-marketing-destinations.md#identity) 识。
-   ![destination-attributes](/help/rtcdp/destinations/assets/select-attributes-step.png)对 *于社交网络目标*，在“标识 **[!UICONTROL 映射”步骤中]** ，选择要映射到目标标识的源属性。
-   ![填写字段前的身份映](/help/rtcdp/destinations/assets/facebook-identity-mapping-1.png)射在以下示例中，身份模式中的个人电子邮件地址已在引入时散列化到Experience Platform中，以符合Facebook电子邮件散 [列法要求](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements)。 选择 **[!UICONTROL 映射]** 后，按下一步。
-   ![填写字段后的身份映射](/help/rtcdp/destinations/assets/facebook-identity-mapping-2.png)
+   ![目标属性](/help/rtcdp/destinations/assets/select-attributes-step.png)
+
+   <br> 
+
+   对于 *社交目标*，在标识 **[!UICONTROL 映射步骤中]** ，您可以选择要映射为目标中的目标标识的源属性。 此步骤为可选或必选，具体取决于您在模式中使用的主要标识。 <br> 
+
+   *电子邮件地址作为主要标识*: 如果您在模式中使用电子邮件地址作为主要标识，则可以跳过标识映射步骤，如下所示：
+
+   ![电子邮件地址作为标识](/help/rtcdp/destinations/assets/email-as-identity.gif)
+
+   <br> 
+
+   *另一个ID作为主标识*: 如果您正在将其他ID( *如奖励ID***&#x200B;或忠诚度ID)用作模式中的主要标识，您需要手动将身份模式中的电子邮件地址映射为社交目标中的目标标识，如下所示：
+
+   ![作为身份的忠诚度ID](/help/rtcdp/destinations/assets/rewardsid-as-identity.gif)
+
+
+   根据 `Email_LC_SHA256` Facebook电子邮件散列要求，如果您在将目标接收时将客户电子邮件地址哈希化到Adobe Experience Platform，则选择 [身份](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements)。 <br> 如果 `Email` 您使用的电子邮件地址没有散列，请选择作为目标标识。 Adobe实时CDP将散列电子邮件地址以符合Facebook要求。
+
+   ![填写字段后的身份映射](/help/rtcdp/destinations/assets/identity-mapping.png)
 
 6. 在“ **[!UICONTROL 区段计划]** ”页上，您可以看到向目标发送数据的开始日期以及向目标发送数据的频率。
 
