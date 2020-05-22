@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: May 13, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: d41952e5905d4ebc579a29ad3282a8f732b7c331
+source-git-commit: db3acec75c24a0cb75d1d88e7aa2171e794abc4f
 workflow-type: tm+mt
-source-wordcount: '1075'
-ht-degree: 4%
+source-wordcount: '1299'
+ht-degree: 5%
 
 ---
 
@@ -19,12 +19,12 @@ ht-degree: 4%
 
 对Adobe Experience Platform中现有功能的更新：
 
-- [Adobe Experience Platform 发行说明](#adobe-experience-platform-release-notes)
-   - [用户界面更新 {#ux}](#user-interface-updates-ux)
-   - [数据科学工作区 {#dsw}](#data-science-workspace-dsw)
-   - [目标 {#destinations}](#destinations-destinations)
-   - [Experience Platform Web SDK和Experience Platform Edge Network {#edge}](#experience-platform-web-sdk-and-experience-platform-edge-network-edge)
-   - [源 {#sources}](#sources-sources)
+- [用户界面更新](#ux)
+- [数据科学工作区](#dsw)
+- [目标](#destinations)
+- [Experience Platform Web SDK和Experience Platform Edge Network](#edge)
+- [实时客户资料](#profile)
+- [源](#sources)
 
 ## 用户界面更新 {#ux}
 
@@ -100,6 +100,29 @@ Experience Platform Web SDK和Experience Platform Edge Network允许用户将数
 
 有关Platform Web SDK和Edge Network的更多信息，请参阅 [文档](../../edge/home.md)。
 
+## 实时客户资料 {#profile}
+
+无论客户在何处或何时与您的品牌互动，Adobe Experience Platform都使您能够为客户提供协调、一致和相关的体验。 通过实时客户用户档案，您可以看到每个客户的整体视图，该将来自多个渠道的数据（包括在线、离线、CRM和第三方数据）相结合。 用户档案允许您将不同的客户数据整合到一个统一的视图中，为每次客户互动提供可操作、有时间戳的帐户。
+
+**新增功能**
+
+| 功能 | 描述 |
+| -----------| ---------- |
+| 新的用户档案导出指标 | 为用户档案导出作业添加了指标，这些指标显示每个命名空间中导出的用户档案总数和用户档案数。 |
+| 新的可观性洞察指标 | 可观性洞察API现在具有以下用于向用户档案流式引入的指标： 传入请求速率、成功摄取速率、摄取的记录大小。 |
+| 批量GET端点 | 为实时客户用户档案API添加了批量GET端点，以在单个API调用中检索多个结果。 您现在可以批量GET（最多100个ID），用于区段定义、区段作业和合并策略。 |
+| 按身份浏览用户档案 | 在平台UI中，您现在可以选择标识命名空间并提供标识值以浏览用户档案。 |
+
+**错误修复**
+
+- 无.
+
+**已知问题**
+
+- 无.
+
+有关实时客户用户档案的更多信息，包括使用用户档案数据的教程和最佳实践，请阅读 [实时客户用户档案概述](../../profile/home.md)。
+
 ## 源 {#sources}
 
 Adobe Experience Platform可以从外部源收集数据，同时允许您使用平台服务构建、标记和增强这些数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)收集数据。
@@ -116,6 +139,6 @@ Experience Platform提供REST风格的API和交互式UI，让您可以轻松为�
 
 **已知问题**
 
-- None
+- 无.
 
 要进一步了解源，请参阅 [源概述](../../sources/home.md)。
