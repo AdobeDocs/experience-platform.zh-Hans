@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Data Science Workspace帮助
 translation-type: tm+mt
-source-git-commit: 8f9454730e3bab451ac75070fcd1623698df9196
+source-git-commit: 8a613237d3d835039185954e580d3c86a5e465ae
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '215'
 ht-degree: 2%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 2%
    * [使用笔记本分析数据](jupyterlab/analyze-your-data.md)
    * [Jupyter笔记本中的查询服务](jupyterlab/query-service.md)
    * [使用Jupyter笔记本创建菜谱](jupyterlab/create-a-recipe.md)
+   * [在JupyterLab中使用Git进行协作](jupyterlab/using-git-for-collaboration.md)
 * Sensei Machine Learning API {#api}
    * [入门指南](api/getting-started.md)
    * [引擎](api/engines.md)
