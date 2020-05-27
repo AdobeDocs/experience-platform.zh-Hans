@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 使用Flow Service API创建PostgreSQL连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '656'
-ht-degree: 1%
+source-wordcount: '583'
+ht-degree: 2%
 
 ---
 
@@ -36,9 +36,10 @@ Flow Service用于在Adobe Experience Platform内收集和集中来自不同来�
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 与您的PSQL帐户关联的连接字符串。 |
+| `connectionString` | 与您的PSQL帐户关联的连接字符串。 PSQL连接字符串模式为： `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
+| `connectionSpec.id` | 用于生成连接的ID。 PSQL的固定连接规范ID为 `74a1c565-4e59-48d7-9d67-7c03b8a13137`。 |
 
-有关快速入门的详细信息，请参 [阅此PSQL文档](https://www.postgresql.org/docs/9.2/app-psql.html)。
+有关获取连接字符串的详细信息，请参 [阅此PSQL文档](https://www.postgresql.org/docs/9.2/app-psql.html)。
 
 ### 读取示例API调用
 
@@ -60,72 +61,9 @@ Experience Platform中的所有资源（包括属于流服务的资源）都与�
 
 * 内容类型： `application/json`
 
-## 查找连接规范
+## 创建连接
 
-要创建PSQL连接，流服务中必须存在一组PSQL连接规范。 将平台连接到PSQL的第一步是检索这些规范。
-
-**API格式**
-
-每个可用源都有其自己的唯一连接规范集，用于描述连接器属性，如身份验证要求。 向端点发送GET请求 `/connectionSpecs` 将返回所有可用源的连接规范。 您还可以包含获 `property=name=="postgre-sql"` 取PSQL专用信息的查询。
-
-```http
-GET /connectionSpecs
-GET /connectionSpecs?property=name=="postgre-sql"
-```
-
-**请求**
-
-以下请求检索PSQL的连接规范。
-
-```shell
-curl -X GET \
-    'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs?property=name=="postgre-sql"' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**响应**
-
-成功的响应返回PSQL的连接规范，包括其唯一标识符(`id`)。 下一步需要此ID才能创建基本连接。
-
-```json
-{
-    "items": [
-        {
-            "id": "74a1c565-4e59-48d7-9d67-7c03b8a13137",
-            "name": "postgre-sql",
-            "providerId": "0ed90a81-07f4-4586-8190-b40eccef1c5a",
-            "version": "1.0",
-            "authSpec": [
-                {
-                    "name": "Basic Authentication for PostgreSQL",
-                    "spec": {
-                        "$schema": "http://json-schema.org/draft-07/schema#",
-                        "type": "object",
-                        "description": "defines auth params required for connecting to PostgreSQL",
-                        "properties": {
-                            "connectionString": {
-                                "type": "string",
-                                "description": "An ODBC connection string to connect to Azure Database for PostgreSQL.",
-                                "format": "password"
-                            }
-                        },
-                        "required": [
-                            "connectionString"
-                        ]
-                    }
-                }
-            ],
-        }
-    ]
-}
-```
-
-## 创建基本连接
-
-基本连接指定源并包含该源的凭据。 每个PSQL帐户只需要一个基本连接，因为它可用于创建多个源连接器以导入不同的数据。
+连接指定源并包含该源的凭据。 每个PSQL帐户只需要一个连接，因为它可用于创建多个源连接器以导入不同的数据。
 
 **API格式**
 
@@ -134,6 +72,8 @@ POST /connections
 ```
 
 **请求**
+
+要创建PSQL连接，其唯一连接规范ID必须作为POST请求的一部分提供。 PSQL的连接规范ID为 `74a1c565-4e59-48d7-9d67-7c03b8a13137`。
 
 ```shell
 curl -X POST \
@@ -144,12 +84,12 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Base connection for PostgreSQL",
-        "description": "Base connection for PostgreSQL",
+        "name": "Test connection for PostgreSQL",
+        "description": "Test connection for PostgreSQL",
         "auth": {
             "specName": "Connection String Based Authentication",
             "params": {
-                "connectionString": "{CONNECTION_STRING}"
+                "connectionString": "Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}"
             }
         },
         "connectionSpec": {
@@ -161,8 +101,8 @@ curl -X POST \
 
 | 属性 | 描述 |
 | ------------- | --------------- |
-| `auth.params.connectionString` | 与您的PSQL帐户关联的连接字符串。 |
-| `connectionSpec.id` | 在上一步 `id` 中检索的PSQL帐户的连接规范。 |
+| `auth.params.connectionString` | 与您的PSQL帐户关联的连接字符串。 PSQL连接字符串模式为： `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
+| `connectionSpec.id` | PSQL的连接规范ID为： `74a1c565-4e59-48d7-9d67-7c03b8a13137`. |
 
 **响应**
 
@@ -177,4 +117,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过本教程，您已使用Flow Service API创建了PSQL基连接，并获得了该连接的唯一ID值。 在下一个教程中，您可以使用此基本连接ID，因为您将学习 [如何使用流服务API浏览数据库或NoSQL系统](../../explore/database-nosql.md)。
+通过本教程，您已使用Flow Service API创建了PSQL连接，并获得了该连接的唯一ID值。 在下一个教程中，您可以使用此连接ID，因为您将学习 [如何使用流服务API浏览数据库或NoSQL系统](../../explore/database-nosql.md)。
