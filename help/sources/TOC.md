@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors帮助
 translation-type: tm+mt
-source-git-commit: f23684ee152836bab85eeb8360436e4059f44417
+source-git-commit: 165d76224f4aeb292e72df1e2574ae1d0821c44c
 workflow-type: tm+mt
 source-wordcount: '578'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
          - [受众管理器映射字段](connectors/adobe-applications/mapping/audience-manager.md)
          - [目标映射字段](connectors/adobe-applications/mapping/target.md)
    - 广告 {#advertising}
-      - [Google Ads连接器](connectors/advertising/ads.md)
+      - [Google AdWords连接器](connectors/advertising/ads.md)
    - 云存储 {#cloud-storage}
       - [Amazon Kinesis连接器](connectors/cloud-storage/kinesis.md)
       - [Azure Data Lake存储Gen2连接器](connectors/cloud-storage/adls-gen2.md)
@@ -65,7 +65,7 @@ ht-degree: 0%
 - API教程 {#api-tutorials}
    - 创建源连接器 {#create}
       - 广告 {#advertising}
-         - [Google Ads连接器](tutorials/api/create/advertising/ads.md)
+         - [Google AdWords连接器](tutorials/api/create/advertising/ads.md)
       - 云存储 {#cloud-storage}
          - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3连接器](tutorials/api/create/cloud-storage/s3.md)
@@ -132,7 +132,7 @@ ht-degree: 0%
          - [Adobe受众管理器连接器](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [客户属性连接器](tutorials/ui/create/adobe-applications/customer-attributes.md)
       - 广告 {#create}
-         - [Google Ads连接器](tutorials/ui/create/advertising/ads.md)
+         - [Google AdWords连接器](tutorials/ui/create/advertising/ads.md)
       - 云存储 {#cloud-storage}
          - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Azure Data Lake存储Gen2连接器](tutorials/ui/create/cloud-storage/adls-gen2.md)
