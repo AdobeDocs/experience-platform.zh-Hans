@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Azure Blob或Amazon S3源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 799445eca080175e2bffc49c6714f0c812b9bbea
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '591'
 ht-degree: 1%
 
 ---
@@ -37,9 +37,22 @@ Experience Platform支持从外部存储摄取的以下文件格式：
 
 ### 收集所需的凭据
 
-要在平台上访问您的Blob存储，必须提供有效的 **Azure存储连接字符串**。 您可以进一步了解连接字符串，包括通过此Microsoft Azure文档获 <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string" target="_blank">取连接字符串的方法</a>。
+要在平台上访问您的Blob存储，您必须为以下凭据提供有效值：
 
-同样，在平台上访问S3存储段需要您提 **供S3访问密钥****和S3密钥**。 有关详细信息，请参 <a href="https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/" target="_blank">阅此AWS文档</a>。
+| 凭据 | 描述 |
+| ---------- | ----------- |
+| `connectionString` | 访问Blob存储中的数据所需的连接字符串。 Blob连接字符串模式为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
+
+有关快速入门的详细信息，请 [访问此Azure Blob文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string)。
+
+同样，在平台上访问S3存储段需要您为以下凭据提供有效值：
+
+| 凭据 | 描述 |
+| ---------- | ----------- |
+| `s3AccessKey` | S3存储的访问密钥ID。 |
+| `s3SecretKey` | S3存储的密钥ID。 |
+
+有关入门的更多信息，请访 [问此AWS文档](https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/)。
 
 ## 连接您的Blob或S3帐户
 
