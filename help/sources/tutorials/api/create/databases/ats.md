@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用Flow Service API创建Azure表存储连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '597'
 ht-degree: 2%
 
 ---
@@ -36,10 +36,10 @@ Flow Service用于在Adobe Experience Platform内收集和集中来自不同来�
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 要连接到Azure表存储实例的连接字符串。 |
-| `connectionSpec.id` | 创建连接所需的唯一标识符。 ATS的连接规范ID是 `ecde33f2-c56f-46cc-bdea-ad151c16cd69`。 |
+| `connectionString` | 用于连接到ATS实例的连接字符串。 ATS的连接字符串模式是： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
+| `connectionSpec.id` | 用于生成连接的ID。 ATS的固定连接规范ID为 `ecde33f2-c56f-46cc-bdea-ad151c16cd69`。 |
 
-有关快速入门的详细信息，请参 [阅此ATS文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction)。
+有关获取连接字符串的详细信息，请参 [阅此ATS文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction)。
 
 ### 读取示例API调用
 
@@ -73,7 +73,7 @@ POST /connections
 
 **请求**
 
-要创建ATS连接，其唯一连接规范ID必须作为POST请求的一部分提供。 ATS的连接规范ID是 `ecde33f2-c56f-46cc-bdea-ad151c16cd69`。
+要创建ATS连接，其唯一连接规范ID必须作为POST请求的一部分提供。 ATS的连接规范ID为 `ecde33f2-c56f-46cc-bdea-ad151c16cd69`。
 
 ```shell
 curl -X POST \
@@ -89,7 +89,7 @@ curl -X POST \
         "auth": {
             "specName": "Connection String Based Authentication",
             "params": {
-                "connectionString": "{CONNECTION_STRING}"
+                "connectionString": "DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}"
             }
         },
         "connectionSpec": {
@@ -101,8 +101,8 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `auth.params.connectionString` | 与您的ATS帐户关联的连接字符串。 |
-| `connectionSpec.id` | ATS连接规范ID: `ecde33f2-c56f-46cc-bdea-ad151c16cd69`. |
+| `auth.params.connectionString` | 用于连接到ATS实例的连接字符串。 ATS的连接字符串模式是： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
+| `connectionSpec.id` | ATS连接规范ID为： `ecde33f2-c56f-46cc-bdea-ad151c16cd69`. |
 
 **响应**
 
