@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Azure表存储源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '539'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 连接到Azure表存储实例的连接字符串。 |
+| `connectionString` | 连接到Azure表存储实例的连接字符串。 要连接到ATS实例的连接字符串。 ATS的连接字符串模式是 `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`。 |
 
 有关快速入门的详细信息，请参 [阅此Azure表存储文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-introduction)。
 
