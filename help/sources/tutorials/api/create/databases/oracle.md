@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用Flow Service API创建Oracle连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '555'
 ht-degree: 2%
 
 ---
@@ -32,7 +32,7 @@ Flow Service用于在Adobe Experience Platform内收集和集中来自不同来�
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 用于连接到Oracle的连接字符串。 Oracle连接字符串模式为： `Host=<host>;Port=<port>;Sid=<sid>;User Id=<username>;Password=<password>`. |
+| `connectionString` | 用于连接到Oracle的连接字符串。 Oracle连接字符串模式为： `Host={HOST};Port={PORT};Sid={SID};UserId={USERNAME};Password={PASSWORD}`. |
 | `connectionSpec.id` | 创建连接所需的唯一标识符。 Oracle的连接规范ID为 `d6b52d86-f0f8-475f-89d4-ce54c8527328`。 |
 
 有关快速入门的详细信息，请参 [阅此Oracle文档](https://docs.oracle.com/database/121/ODPNT/featConnecting.htm#ODPNT199)。
@@ -85,7 +85,7 @@ curl -X POST \
         "auth": {
             "specName": "ConnectionString",
             "params": {
-                    "connectionString": "{CONNECTION_STRING}"
+                    "connectionString": "Host={HOST};Port={PORT};Sid={SID};UserId={USERNAME};Password={PASSWORD}"
                 }
         },
         "connectionSpec": {
@@ -97,7 +97,7 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `auth.params.connectionString` | 与您的Oracle帐户关联的连接字符串。 |
+| `auth.params.connectionString` | 用于连接到Oracle数据库的连接字符串。 Oracle连接字符串模式为： `Host={HOST};Port={PORT};Sid={SID};UserId={USERNAME};Password={PASSWORD}`. |
 | `connectionSpec.id` | Oracle连接规范ID: `d6b52d86-f0f8-475f-89d4-ce54c8527328`. |
 
 **响应**
