@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 使用Flow Service API创建MySQL连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 37a5f035023cee1fc2408846fb37d64b9a3fc4b6
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '664'
-ht-degree: 1%
+source-wordcount: '586'
+ht-degree: 2%
 
 ---
 
@@ -36,9 +36,10 @@ Flow Service用于在Adobe Experience Platform内收集和集中来自不同来�
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 与您的帐户关联的MySQL连接字符串。 |
+| `connectionString` | 与您的帐户关联的MySQL连接字符串。 MySQL连接字符串模式为： `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionSpec.id` | 用于生成连接的ID。 MySQL的固定连接规范ID为 `26d738e0-8963-47ea-aadf-c60de735468a`。 |
 
-您可以通过阅读MySQL文档进一步了解连接字符串以及如何获 [取它们](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html)。
+有关获取连接字符串的详细信息，请参 [阅此MySQL文档](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html)。
 
 ### 读取示例API调用
 
@@ -60,77 +61,9 @@ Experience Platform中的所有资源（包括属于流服务的资源）都与�
 
 * 内容类型： `application/json`
 
-## 查找连接规范
+## 创建连接
 
-要创建MySQL连接，流服务中必须存在一组MySQL连接规范。 将平台连接到MySQL的第一步是检索这些规范。
-
-**API格式**
-
-每个可用源都有其自己的唯一连接规范集，用于描述连接器属性，如身份验证要求。 向端点发送GET请求 `/connectionSpecs` 将返回所有可用源的连接规范。 您还可以包含获 `property=name=="mysql"` 取MySQL专用信息的查询。
-
-```http
-GET /connectionSpecs
-GET /connectionSpecs?property=name=="mysql"
-```
-
-**请求**
-
-以下请求检索MySQL的连接规范。
-
-```shell
-curl -X GET \
-    'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs?property=name=="mysql"' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**响应**
-
-成功的响应返回MySQL的连接规范，包括其唯一标识符(`id`)。 在下一步创建基本连接时需要此ID。
-
-```json
-{
-    "items": [
-        {
-            "id": "26d738e0-8963-47ea-aadf-c60de735468a",
-            "name": "mysql",
-            "providerId": "0ed90a81-07f4-4586-8190-b40eccef1c5a",
-            "version": "1.0",
-            "authSpec": [
-                {
-                    "name": "Connection String Based Authentication",
-                    "type": "connectionStringAuth",
-                    "spec": {
-                        "$schema": "http://json-schema.org/draft-07/schema#",
-                        "type": "object",
-                        "description": "defines auth params required for connecting to MySql",
-                        "properties": {
-                            "connectionString": {
-                                "type": "string",
-                                "description": "connection string to connect to any MySql instance.",
-                                "format": "password",
-                                "pattern": "^([sS]erver=)(.*)( ?;[pP]ort=)(.*)(; ?[dD]atabase=)(.*)(; ?[uU]id=)(.*)(; ?[pP]wd=)(.*)(;)",
-                                "examples": [
-                                    "Server=myserver.mysql.database.azure.com; Port=3306; Database=my_sql_db; Uid=username; Pwd=password; SslMode=Preferred;"
-                                ]
-                            }
-                        },
-                        "required": [
-                            "connectionString"
-                        ]
-                    }
-                }
-            ]
-        }
-    ]
-}
-```
-
-## 创建基本连接
-
-基本连接指定源并包含该源的凭据。 每个MySQL帐户只需要一个基本连接，因为它可用于创建多个源连接器以导入不同的数据。
+连接指定源并包含该源的凭据。 每个MySQL帐户只需要一个连接，因为它可用于创建多个源连接器以导入不同的数据。
 
 **API格式**
 
@@ -139,6 +72,8 @@ POST /connections
 ```
 
 **请求**
+
+要创建MySQL连接，其唯一连接规范ID必须作为POST请求的一部分提供。 MySQL的连接规范ID为 `26d738e0-8963-47ea-aadf-c60de735468a`。
 
 ```shell
 curl -X POST \
@@ -154,7 +89,7 @@ curl -X POST \
         "auth": {
             "specName": "Connection String Based Authentication",
             "params": {
-                "connectionString": "{CONNECTION_STRING}"
+                "connectionString": "Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}"
             }
         },
         "connectionSpec": {
@@ -166,12 +101,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `auth.params.connectionString` | 与您的MySQL帐户关联的连接字符串。 |
-| `connectionSpec.id` | 与MySQL帐户关联的连接规范的ID。 |
+| `auth.params.connectionString` | 与您的帐户关联的MySQL连接字符串。 MySQL连接字符串模式为： `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionSpec.id` | MySQL的固定连接规范ID: `26d738e0-8963-47ea-aadf-c60de735468a`. |
 
 **响应**
 
-成功的响应会返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中浏览数据时需要此ID。
+成功的响应会返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中浏览数据库时需要此ID。
 
 ```json
 {
@@ -182,4 +117,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过本教程，您已使用流服务API创建了一个MySQL基连接，并获得了该连接的唯一ID值。 在下一个教程中，您可以使用此基本连接ID，因为您将学习 [如何使用流服务API浏览数据库或NoSQL系统](../../explore/database-nosql.md)。
+通过本教程，您已使用流服务API创建了一个MySQL连接，并获得了该连接的唯一ID值。 在下一个教程中，您可以使用此连接ID，因为您将学习 [如何使用流服务API浏览数据库或NoSQL系统](../../explore/database-nosql.md)。
