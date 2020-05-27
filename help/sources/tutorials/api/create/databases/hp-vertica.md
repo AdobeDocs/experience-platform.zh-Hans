@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 使用Flow Service API创建HP Vertica连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: a015d2612bc5a72004e15dc5706c7718617a0af4
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '622'
-ht-degree: 1%
+source-wordcount: '630'
+ht-degree: 3%
 
 ---
 
@@ -26,7 +26,7 @@ Flow Service用于在Adobe Experience Platform内收集和集中来自不同来�
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
 - [来源](https://docs.adobe.com/content/help/en/experience-platform/source-connectors/home.html): Experience Platform允许从各种来源摄取数据，同时使您能够使用平台服务构建、映射和增强传入数据。
-- [沙箱](https://docs.adobe.com/content/help/en/experience-platform/sandbox/home.html): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和改进数字体验应用程序。
+- [沙箱](https://docs.adobe.com/content/help/zh-Hans/experience-platform/sandbox/home.html): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和改进数字体验应用程序。
 
 以下各节提供了使用Flow Service API成功连接到HP Vertica所需的其他信息。
 
@@ -36,7 +36,7 @@ Flow Service用于在Adobe Experience Platform内收集和集中来自不同来�
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 用于连接到HP Vertica实例的连接字符串。 HP Vertica的连接字符串模式是 `Server=<server>;Port=<port>;Database=<database>;UID=<user name>;PWD=<password>` |
+| `connectionString` | 用于连接到HP Vertica实例的连接字符串。 HP Vertica的连接字符串模式是 `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}` |
 | `connectionSpec.id` | 创建连接所需的标识符。 HP Vertica的固定连接规范ID为： `a8b6a1a4-5735-42b4-952c-85dce0ac38b5` |
 
 有关获取连接字符串的详细信息，请参 [阅此HP Vertica文档](https://www.vertica.com/docs/9.2.x/HTML/Content/Authoring/ConnectingToVertica/ClientJDBC/CreatingAndConfiguringAConnection.htm)。
@@ -89,7 +89,7 @@ curl -X POST \
         "auth": {
             "specName": "Connection String Based Authentication",
             "params": {
-                "connectionString": "Server=<server>;Port=<port>;Database=<database>;UID=<user name>;PWD=<password>"
+                "connectionString": "Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}"
             }
         },
         "connectionSpec": {
@@ -101,7 +101,7 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `auth.params.connectionString` | 与您的HP Vertica帐户关联的连接字符串。 |
+| `auth.params.connectionString` | 与您的HP Vertica帐户关联的连接字符串。 HP Vertica的连接字符串模式为： `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
 | `connectionSpec.id` | HP Vertica连接规范ID: `a8b6a1a4-5735-42b4-952c-85dce0ac38b5`. |
 
 **响应**
