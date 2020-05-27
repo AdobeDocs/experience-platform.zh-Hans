@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用Flow Service API创建GreenPlum连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: a015d2612bc5a72004e15dc5706c7718617a0af4
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '559'
+source-wordcount: '566'
 ht-degree: 2%
 
 ---
@@ -32,7 +32,7 @@ Flow Service用于在Adobe Experience Platform内收集和集中来自不同来�
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 用于连接到GreenPlum实例的连接字符串。 GreenPlum的连接串模式为 `HOST=<server>;PORT=<port>;DB=<database>;UID=<user name>;PWD=<password>` |
+| `connectionString` | 用于连接到GreenPlum实例的连接字符串。 GreenPlum的连接串模式为 `HOST={SERVER};PORT={PORT};DB={DATABASE};UID={USERNAME};PWD={PASSWORD}` |
 | `connectionSpec.id` | 创建连接所需的标识符。 GreenPlum的固定连接规范ID为 `37b6bf40-d318-4655-90be-5cd6f65d334b`。 |
 
 有关获取连接字符串的详细信息，请参 [阅此GreenPlum文档](https://gpdb.docs.pivotal.io/580/security-guide/topics/Authenticate.html#topic_fzv_wb2_jr__config_ssl_client_conn)。
@@ -85,7 +85,7 @@ curl -X POST \
         "auth": {
             "specName": "Basic Authentication",
             "params": {
-                    "connectionString": "HOST=<server>;PORT=<port>;DB=<database>;UID=<user name>;PWD=<password>"
+                    "connectionString": "HOST={SERVER};PORT={PORT};DB={DATABASE};UID={USERNAME};PWD={PASSWORD}"
                 }
         },
         "connectionSpec": {
@@ -97,8 +97,8 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `auth.params.connectionString` | 与您的GreenPlum帐户关联的连接字符串。 |
-| `connectionSpec.id` | DB2连接规范ID: `37b6bf40-d318-4655-90be-5cd6f65d334b`. |
+| `auth.params.connectionString` | 用于连接到GreenPlum帐户的连接字符串。 连接字符串模式为： `HOST={SERVER};PORT={PORT};DB={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionSpec.id` | GreenPlum连接规范ID: `37b6bf40-d318-4655-90be-5cd6f65d334b`. |
 
 **响应**
 
