@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Azure突触分析源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '495'
 ht-degree: 1%
 
 ---
@@ -36,7 +36,7 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 与Synapse身份验证关联的连接字符串。 |
+| `connectionString` | 与Synapse身份验证关联的连接字符串。 Synapse连接字符串模式为 `Server=tcp:{SERVER_NAME}.database.windows.net,1433;Database={DATABASE};User ID={USERNAME}@{SERVER_NAME};Password={PASSWORD};Trusted_Connection=False;Encrypt=True;Connection Timeout=30`。 |
 
 有关此值的详细信息，请参 [阅此Synapse文档](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-sql-data-warehouse)。
 
