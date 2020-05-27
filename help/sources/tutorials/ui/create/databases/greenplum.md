@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建GreenPlum源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: a015d2612bc5a72004e15dc5706c7718617a0af4
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 1%
@@ -36,7 +36,7 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 用于连接到GreenPlum实例的连接字符串。 GreenPlum的连接串模式为 `HOST=<server>;PORT=<port>;DB=<database>;UID=<user name>;PWD=<password>` |
+| `connectionString` | 用于连接到GreenPlum实例的连接字符串。 GreenPlum的连接串模式为 `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}` |
 
 有关入门的详细信息，请参 [阅此GreenPlum文档](https://gpdb.docs.pivotal.io/580/security-guide/topics/Authenticate.html#topic_fzv_wb2_jr__config_ssl_client_conn)。
 
@@ -56,7 +56,7 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 ### 新帐户
 
-如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，为连接提供名称、可选说明和GreenPlum凭据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新帐户。
+如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供连接的名称、可选说明和GreenPlum凭据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新帐户。
 
 ![connect](../../../../images/tutorials/create/greenplum/new.png)
 
