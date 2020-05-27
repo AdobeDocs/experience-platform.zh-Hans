@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时机器学习入门
 topic: Getting started
 translation-type: tm+mt
-source-git-commit: dc63ad0c0764355aed267eccd1bcc4965b04dba4
+source-git-commit: 626bb7a0856a663e235ecd2b19954f4617fe9b6f
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 实时机器学习指南需要对Python 3、Jupyter笔记本、数 [据科学](../jupyterlab/overview.md)和机器学习进行有效的理解。
 
-主要条款：
+**主要条款：**
 
 - **DSL:** 域特定语言。
 - **边缘：** 实时机器学习评分服务可以在离您的激活和应用程序更近的Edge群集上运行。
