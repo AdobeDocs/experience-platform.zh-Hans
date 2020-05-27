@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform源连接器概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 7c94d7a0aace7525e776f13e2975f91cf2b29e23
+source-git-commit: 22425c33e39cf788eec6fd0a54f65fb89fdaff4f
 workflow-type: tm+mt
 source-wordcount: '758'
 ht-degree: 0%
@@ -38,7 +38,7 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics、Adob
 
 Experience Platform支持从第三方广告系统接收数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
 
-- [Google Ads连接器](connectors/advertising/ads.md)
+- [Google AdWords连接器](connectors/advertising/ads.md)
 
 ### 云存储
 
