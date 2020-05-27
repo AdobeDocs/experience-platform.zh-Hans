@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建MariaDB源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '489'
 ht-degree: 1%
 
 ---
@@ -36,7 +36,7 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 与您的MariaDB身份验证关联的连接字符串。 |
+| `connectionString` | 与您的MariaDB身份验证关联的连接字符串。 MariaDB连接字符串模式为： `Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
 
 有关MariaDB [入门的更](https://mariadb.com/kb/en/about-mariadb-connector-odbc/) 多信息，请参阅此文档。
 
