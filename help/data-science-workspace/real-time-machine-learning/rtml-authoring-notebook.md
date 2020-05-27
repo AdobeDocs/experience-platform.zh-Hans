@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 实时机器学习笔记本用户指南
 topic: Training and scoring a ML model
 translation-type: tm+mt
-source-git-commit: dc63ad0c0764355aed267eccd1bcc4965b04dba4
+source-git-commit: 695eba3885dc319a9b7f73eb710b2ada0b17d24d
 workflow-type: tm+mt
-source-wordcount: '1570'
+source-wordcount: '1659'
 ht-degree: 0%
 
 ---
@@ -82,6 +82,8 @@ pprint(nf.discover_nodes())
 >[!NOTE]
 >在Real- **time ML模板中** ，从Github [上获取汽车保险CSV数](https://github.com/adobe/experience-platform-dsw-reference/tree/master/datasets/insurance) 据集。
 
+![加载培训数据](../images/rtml/load_training.png)
+
 如果您希望从Adobe Experience Platform内使用数据集，请取消以下单元格的注释。 接下来，您需要用相 `DATASET_ID` 应的值替换。
 
 ![rtml数据集](../images/rtml/rtml-dataset.png)
@@ -114,7 +116,7 @@ config_properties = {
 需 *要修改实时* ML *模板Data Transformations* 单元格，才能处理您自己的数据集。 通常，这涉及重命名列、数据汇总以及数据准备／功能工程。
 
 >[!NOTE]
->以下示例已经过压缩，以便使用 `[ ... ]`。 请视图 *完整代码单元格* 的实时ML模板。
+>以下示例已经过压缩，以便使用 `[ ... ]`。 请视图并展开 *完整代码单元格的* “实时ML模板数据转换”部分。
 
 ```python
 df1.rename(columns = {config_properties['ten_id']+'.identification.ecid' : 'ecid',
@@ -189,7 +191,7 @@ cat_cols = ['age_bucket', 'gender', 'city', 'dayofweek', 'country', 'carbrand', 
 df_final = pd.get_dummies(df_final, columns = cat_cols)
 ```
 
-运行提供的单元格以查看示例结果。 从数据集返回的输出 `carinsurancedataset.csv` 表返回定义的修改。
+运行提供的单元格以查看示例结果。 从数据集返回的输 `carinsurancedataset.csv` 出表返回您定义的修改。
 
 ![数据转换示例](../images/rtml/table-return.png)
 
@@ -237,18 +239,23 @@ import skl2onnx, subprocess
 model.generate_onnx_resources()
 ```
 
+>[!NOTE]
+>更改 `model_path` 字符串值(`model.onnx`)以更改模型的名称。
+
 ```python
 model_path = "model.onnx"
+```
 
+>[!NOTE]
+>以下单元格不可编辑或删除，并且需要它才能使实时机器学习应用程序正常工作。
+
+```python
 model = ModelUpload(params={'model_path': model_path})
 msg_model = model.process(None, 1)
 model_id = msg_model.model['model_id']
  
 print("Model ID : ", model_id)
 ```
-
->[!NOTE]
->更改字 `model_path` 符串值以命名模型。
 
 ![ONNX模型](../images/rtml/onnx-model-rail.png)
 
@@ -272,7 +279,7 @@ print("Model ID : ", model_id)
 ### 节点创作
 
 >[!NOTE]
-> 您可能会根据所使用的数据类型有多个节点。 以下示例仅概述实时ML模 *板中的单个节点* 。 请视图 *完整代码单元格* 的实时ML模板。
+> 您可能会根据所使用的数据类型有多个节点。 以下示例仅概述实时ML模 *板中的单个节点* 。 请视图 *完整代码单元* 格的 *实时ML模板节* 点创作部分。
 
 下面的Apnotics节点 `"import": "map"` 将方法名称作为字符串导入参数中，然后输入参数作为映射函数。 以下示例通过使用实现 `{'arg': {'dataLayerNull': 'notgiven', 'no': 'no', 'yes': 'yes', 'notgiven': 'notgiven'}}`。 在将地图置于适当位置后，您可以选择将其 `inplace` 设置为 `True` 或 `False`。 设 `inplace` 置 `True` 为 `False` 还是基于是否要就地应用转换。 默认情 `"inplace": False` 况下，创建新列。 支持提供新列名称设置为在后续版本中添加。 最后一行 `cols` 可以是单列名称或列列表。 指定要应用转换的列。 在此示例中 `leasing` 指定。 有关可用节点以及如何使用这些节点的详细信息，请访问节 [点参考指南](./node-reference.md)。
 
@@ -323,7 +330,7 @@ nodes = [json_df_node,
 edges = [(nodes[i], nodes[i+1]) for i in range(len(nodes)-1)]
 ```
 
-连接节点后，构建图形。
+连接节点后，构建图形。 以下单元格为必填项，无法编辑或删除。
 
 ```python
 dsl = GraphBuilder.generate_dsl(nodes=nodes, edges=edges)
@@ -413,10 +420,33 @@ time.sleep(20)
 
 评分完成后，将返回Edge的Edge URL、Payload和Edge的已评分输出。
 
-## 从Edge中删除已部署的应用程序（可选）
+## 从Edge列表您部署的应用程序
 
->!![CAUTION]
-此单元格用于删除已部署的Edge应用程序。 除非需要删除已部署的Edge应用程序，否则不要使用以下单元格。
+要在边缘上生成当前部署的应用程序的列表，请运行以下代码单元格。 无法编辑或删除此单元格。
+
+```python
+services = edge_utils.list_deployed_services()
+print(services)
+```
+
+返回的响应是已部署服务的数组。
+
+```json
+[
+    {
+        "created": "2020-05-25T19:18:52.731Z",
+        "deprecated": false,
+        "id": "40eq76c0-1c6f-427a-8f8f-54y9cdf041b7",
+        "type": "edge",
+        "updated": "2020-05-25T19:18:52.731Z"
+    }
+]
+```
+
+## 从Edge中删除已部署的应用程序或服务ID（可选）
+
+>[!CAUTION]
+>此单元格用于删除已部署的Edge应用程序。 除非需要删除已部署的Edge应用程序，否则不要使用以下单元格。
 
 ```python
 if edge_utils.delete_from_edge(service_id=service_id):
