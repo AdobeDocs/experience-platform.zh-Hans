@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时机器学习概述
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 8f9454730e3bab451ac75070fcd1623698df9196
+source-git-commit: 626bb7a0856a663e235ecd2b19954f4617fe9b6f
 workflow-type: tm+mt
 source-wordcount: '513'
 ht-degree: 1%
@@ -61,7 +61,7 @@ ht-degree: 1%
 > Alpha限制：
 > - 目前，仅支持基于ONNX的模型。
 > - 节点中使用的函数无法序列化。 例如，在Pacnots节点中使用的lambda函数。
-> - 手动完成Edge部署后有60秒的睡眠时间。
+> - 手动完成Edge部署后有20秒的睡眠时间。
 > - 要进行深入学习，您需要以一种方式发送数据，即 `df.values` 在调用数据时，它返回一个DL模型可以接受的阵列。 这是因为ONNX模型评分节点使用 `df.values` 并发送输出以对模型进行评分。
 
 
