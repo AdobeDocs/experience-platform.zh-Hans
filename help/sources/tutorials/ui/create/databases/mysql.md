@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建MySQL源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 2162c66b1664ecaaf0b609fe3f7ccf58c4a5d31d
+source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '484'
 ht-degree: 1%
 
 ---
@@ -36,7 +36,7 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 与您的帐户关联的MySQL连接字符串。 |
+| `connectionString` | 与您的帐户关联的MySQL连接字符串。 MySQL连接字符串模式为： `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
 
 您可以通过阅读MySQL文档进一步了解连接字符串以及如何获 [取它们](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html)。
 
