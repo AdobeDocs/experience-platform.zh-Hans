@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Adobe Experience Platform概述
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 7a36a3e3180c4ed4a9db23c0a33f6af3d7a3a5ec
+source-git-commit: efc8598d14bcae9637ce80c25f1285d93aeee742
 workflow-type: tm+mt
-source-wordcount: '505'
-ht-degree: 1%
+source-wordcount: '526'
+ht-degree: 3%
 
 ---
 
@@ -15,13 +15,14 @@ ht-degree: 1%
 # Adobe Experience Platform概述
 
 >[!NOTE]
+>
 >Adobe Experience Platform文档最近已移动。 请花点时间查看新导航并更新任何现有书签。
 
 Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理可推动客户体验的完整解决方案。 Experience Platform使组织机构能够集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富的个性化体验的设计和投放。
 
 Experience Platform以开放式API为构建基础，它向开发人员展示了系统的全部功能，支持使用熟悉的工具轻松集成企业解决方案。 Experience Platform还支持合作伙伴根据需要构建和集成自己的产品和技术。 这一强大功能和灵活性使Experience Platform在市场上独一无二。 它为合作伙伴、客户和开发人员社区提供了构建创新推动体验式业务的基础： 通过提供从客户及其个人偏好的360度视图中获得的不断改进的完全个性化体验，超越客户期望。
 
-## Experience Platform文档
+## Experience Platform 文档
 
 Experience Platform文档以多种格式提供，以支持各种功能和服务。 要进一步了解可用的文档类型以及阅读每个平台服务的简要说明，请访问Experience Platform文 [档概述](documentation/overview.md)。 或者，要立即开始进一步了解特定平台服务，请从左侧导航的字母列表中选择指南。
 
@@ -42,6 +43,10 @@ Experience Platform文档以多种格式提供，以支持各种功能和服务�
 ## Experience Platform教程
 
 通过遵循从准备数据以获取数据到高级机器学习算法等一切内容的分步教程，快速轻松地开始使用平台。 这些教程旨在补充Experience Platform文档中的信息，以便在完成教程时保持文档在手。 请访问 [Experience Platform教程](../tutorials/home.md) ，开始使用。
+
+## 视频教程
+
+观看 [视频教程](https://docs.adobe.com/content/help/en/platform-learn/tutorials/overview.html) ，了解各种Experience Platform主题。
 
 ## 参考文档和资源
 
