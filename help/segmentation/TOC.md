@@ -3,7 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Segmentation Service帮助
 translation-type: tm+mt
-source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
+source-git-commit: 4eafccb54c07cba54ecef652ffdd1c9a4277f89f
+workflow-type: tm+mt
+source-wordcount: '100'
+ht-degree: 6%
 
 ---
 
@@ -14,6 +17,7 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
 - 分段API {#api}
    - [入门指南](api/getting-started.md)
    - [细分作业](api/segment-jobs.md)
+   - [区段搜索](api/segment-search.md)
    - [流细分](api/streaming-segmentation.md)
 - 分段UI {#ui}
    - [概述](ui/overview.md)
@@ -29,9 +33,9 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    - [算术函数](pql/arithmetic-functions.md)
    - [聚合函数](pql/aggregation-functions.md)
    - [日期和时间函数](pql/datetime-functions.md)
-   - [滤镜函数](pql/filter-functions.md)
+   - [过滤器函数](pql/filter-functions.md)
    - [逻辑量词](pql/logical-quantifiers.md)
-   - [其他函数](pql/misc-functions.md)
+   - [杂项函数](pql/misc-functions.md)
 - 教程 {#tutorials}
    - [创建区段](tutorials/create-a-segment.md)
    - [评估区段](tutorials/evaluate-a-segment.md)
