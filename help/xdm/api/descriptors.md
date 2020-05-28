@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 描述符
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: c8cc57a8629f04c7af68b6f5cfee365527caa3c1
+source-git-commit: c3d23ce0081932e61f50d426ac6d98ab7f4dfa3b
 workflow-type: tm+mt
 source-wordcount: '1499'
 ht-degree: 1%
@@ -334,7 +334,7 @@ curl -X DELETE \
 | `xdm:sourceProperty` | 将作为标识的特定属性的路径。 路径应以“/”开头，而不以“/”结尾。 不要在路径中包含“属性”（例如，使用“/personalEmail/address”而不是“/properties/personalEmail/properties/address”） |
 | `xdm:title` | 要为此字段显示的新标题，用标题大小写写写。 |
 | `xdm:description` | 可以随标题一起添加可选描述。 |
-| `meta:enum` | 如果由指示的字 `xdm:sourceProperty` 段是字符串字段， `meta:enum` 则确定Experience Platform UI中字段的建议值的列表。 请务必注意，不 `meta:enum` 要声明明细列表或为XDM字段提供任何数据验证。<br><br>这应仅用于Adobe定义的核心XDM字段。 如果源属性是您的组织定义的自定义字段，则应直接通过PUT请 `meta:enum` 求编辑该字段 [的属性](./update-resource.md)。 |
+| `meta:enum` | 如果由指示的字 `xdm:sourceProperty` 段是字符串字段， `meta:enum` 则确定Experience Platform UI中字段的建议值的列表。 请务必注意，不 `meta:enum` 要声明明细列表或为XDM字段提供任何数据验证。<br><br>这应仅用于Adobe定义的核心XDM字段。 如果源属性是您的组织定义的自定义字段，则应直接通过PATCH `meta:enum` 请求编辑该字段 [的属性](./update-resource.md)。 |
 
 #### 关系描述符
 
