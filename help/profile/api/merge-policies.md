@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案API开发人员指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: 824e9eda41488efc362a6105c552f522185c046d
+source-git-commit: 9600f315f162b6cd86e2dbe2fffc793cc91c9319
 workflow-type: tm+mt
 source-wordcount: '2057'
 ht-degree: 1%
@@ -45,8 +45,8 @@ Adobe Experience Platform使您能够将多个来源的数据整合在一起并�
         "attributeMerge": {
             "type": "{ATTRIBUTE_MERGE_TYPE}"
         },
-        "default": {BOOLEAN},
-        "updateEpoch": {UPDATE_TIME}
+        "default": "{BOOLEAN}",
+        "updateEpoch": "{UPDATE_TIME}"
     }
 ```
 
@@ -86,7 +86,7 @@ Adobe Experience Platform使您能够将多个来源的数据整合在一起并�
 
 ### 身份图 {#identity-graph}
 
-[Adobe Experience Platform Identity Service管理全球](../../identity-service/home.md) 、Experience Platform上每个组织使用的标识图。 合并 `identityGraph` 策略的属性定义如何确定用户的相关标识。
+[Adobe Experience Platform Identity Service管理](../../identity-service/home.md) Experience Platform上全球和每个组织使用的标识图。 合并 `identityGraph` 策略的属性定义如何确定用户的相关标识。
 
 **identityGraph对象**
 
@@ -149,7 +149,7 @@ Adobe Experience Platform使您能够将多个来源的数据整合在一起并�
     }
 ```
 
-### 模式 {#schema}
+### 架构 {#schema}
 
 模式对象指定为其创建此合并策略的XDM模式。
 
