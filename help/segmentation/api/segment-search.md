@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 分段API开发人员指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: 7c33ba8edc886d2b689e1125b5c378e16a487324
+source-git-commit: f489e9f9dfc9c7e94f76a6825e7ca24c41ee8a66
 workflow-type: tm+mt
-source-wordcount: '1198'
+source-wordcount: '1172'
 ht-degree: 2%
 
 ---
@@ -41,8 +41,8 @@ GET /search/namespaces?schema.name={SCHEMA}&s={SEARCH_TERM}
 
 | 参数 | 描述 |
 | ---------- | ----------- | 
-| schema.name={SCHEMA} | **(必需** )其中{模式}表示与搜索对象关联的模式类值。 目前，仅 `_xdm.context.segmentdefinition` 受支持。 |
-| s={SEARCH_TERM} | *(可选* )其中{SEARCH_TERM}表示符合Microsoft对Lucene搜索语法 [的实现的查询](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)。 如果未指定搜索词，则将返回与相关的所 `schema.name` 有记录。 本文档的附录中提供了更详 [细的](#appendix) 解释。 |
+| `schema.name={SCHEMA}` | **(必需** )其中{模式}表示与搜索对象关联的模式类值。 目前，仅 `_xdm.context.segmentdefinition` 受支持。 |
+| `s={SEARCH_TERM}` | *(可选* )其中{SEARCH_TERM}表示符合Microsoft对Lucene搜索语法 [的实现的查询](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)。 如果未指定搜索词，则将返回与相关的所 `schema.name` 有记录。 本文档的附录中提供了更详 [细的](#appendix) 解释。 |
 
 **请求**
 
@@ -65,18 +65,22 @@ curl -X GET \
 {
   "namespaces": [
     {
-      "name": "AAMTraits",
+      "namespace": "AAMTraits",
+      "displayName": "AAMTraits",
       "count": 45
     },
     {
-      "name": "AAMSegments",
+      "namespace": "AAMSegments",
+      "displayName": "AAMSegment",
       "count": 10
     },
     {
-      "name": "SegmentsAISegments",
+      "namespace": "SegmentsAISegments",
+      "displayName": "SegmentSAISegment",
       "count": 3
     }
   ],
+  "totalCount": 3,
   "status": {
     "message": "Success"
   }
@@ -97,12 +101,12 @@ GET /search/entities?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 
 | 参数 | 描述 |
 | ---------- | ----------- | 
-| schema.name={SCHEMA} | **（必需）** 其中{模式}包含与搜索对象关联的模式类值。 目前，仅 `_xdm.context.segmentdefinition` 受支持。 |
-| 命名空间={命名空间} | **（必需）** {命名空间}包含要在其中搜索的命名空间。 |
-| s={SEARCH_TERM} | *(可选* )其中{SEARCH_TERM}包含符合Microsoft实现Lucene搜索语 [法的查询](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)。 如果未指定搜索词，则将返回与相关的所 `schema.name` 有记录。 本文档的附录中提供了更详 [细的](#appendix) 解释。 |
-| entityId={ENTITY_ID} | *（可选）* 将搜索限制在指定文件夹内，该文件夹由{ENTITY_ID}指定。 |
-| limit={LIMIT} | *(可选* )其中{LIMIT}表示要返回的搜索结果数。 默认值为 50。 |
-| page={PAGE} | *（可选）其中* {PAGE}表示用于对搜索的查询结果进行分页的页码。 请注意，页码开始为 **0**。 |
+| `schema.name={SCHEMA}` | **（必需）** 其中{模式}包含与搜索对象关联的模式类值。 目前，仅 `_xdm.context.segmentdefinition` 受支持。 |
+| `namespace={NAMESPACE}` | **（必需）** {命名空间}包含要在其中搜索的命名空间。 |
+| `s={SEARCH_TERM}` | *(可选* )其中{SEARCH_TERM}包含符合Microsoft实现Lucene搜索语 [法的查询](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)。 如果未指定搜索词，则将返回与相关的所 `schema.name` 有记录。 本文档的附录中提供了更详 [细的](#appendix) 解释。 |
+| `entityId={ENTITY_ID}` | *（可选）* 将搜索限制在指定文件夹内，该文件夹由{ENTITY_ID}指定。 |
+| `limit={LIMIT}` | *(可选* )其中{LIMIT}表示要返回的搜索结果数。 默认值为 50。 |
+| `page={PAGE}` | *（可选）其中* {PAGE}表示用于对搜索的查询结果进行分页的页码。 请注意，页码开始为 **0**。 |
 
 
 **请求**
@@ -168,9 +172,9 @@ GET /search/taxonomy?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 
 | 参数 | 描述 |
 | ---------- | ----------- | 
-| schema.name={SCHEMA} | **（必需）** 其中{模式}包含与搜索对象关联的模式类值。 目前，仅 `_xdm.context.segmentdefinition` 受支持。 |
-| 命名空间={命名空间} | **（必需）** {命名空间}包含要在其中搜索的命名空间。 |
-| entityId={ENTITY_ID} | **(必需** )要获取相关结构信息的搜索对象的ID，用{ENTITY_ID}指定。 |
+| `schema.name={SCHEMA}` | **（必需）** 其中{模式}包含与搜索对象关联的模式类值。 目前，仅 `_xdm.context.segmentdefinition` 受支持。 |
+| `namespace={NAMESPACE}` | **（必需）** {命名空间}包含要在其中搜索的命名空间。 |
+| `entityId={ENTITY_ID}` | **(必需** )要获取相关结构信息的搜索对象的ID，用{ENTITY_ID}指定。 |
 
 **请求**
 
