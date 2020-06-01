@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 分段服务开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: e25ce403034a94d7024e8c244cb438bd9dfe0c5f
+source-git-commit: bbca6d8f4ab7a684e8bfb1d39b538d937a99244f
 workflow-type: tm+mt
-source-wordcount: '429'
+source-wordcount: '494'
 ht-degree: 0%
 
 ---
@@ -73,13 +73,13 @@ For more information on using this endpoint, please read the [PQL conversions de
 
 Schedules are a tool that can be used to automatically run export jobs once a day. You can use the `/config/schedules` endpoint to retrieve a list of schedules, create a new schedule, retrieve details of a specific schedule, update a specific schedule, or delete a specific schedule. 
 
-For more information on using this endpoint, please read the [schedules developer guide](./schedules.md).
+For more information on using this endpoint, please read the [schedules developer guide](./schedules.md). -->
 
-## Segment definitions
+## 细分定义
 
-Segment definitions define which profiles will be part of which audience segments. You can use the `/segment/definitions` endpoint to retrieve a list of segment definitions, create a new segment definition, retrieve details of a specific segment definition, delete a specific segment definition, or overwrite details of a specific segment definition.
+区段定义定义哪些用户档案将成为哪些受众区段的一部分。 您可以使用端点 `/segment/definitions` 检索段定义的列表、创建新段定义、检索特定段定义的详细信息、删除特定段定义或覆盖特定段定义的详细信息。
 
-For more information on using this endpoint, please read the [segment definitions developer guide](./segment-definitions.md). -->
+有关使用此端点的详细信息，请阅读段定 [义开发人员指南](./segment-definitions.md)。
 
 ## 细分作业
 
