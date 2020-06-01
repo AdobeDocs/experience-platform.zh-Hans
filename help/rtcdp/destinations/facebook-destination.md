@@ -4,7 +4,7 @@ seo-title: Facebook目标
 description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 seo-description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 522014f8e5f3de0f553a69763d3a37482953b7c4
+source-git-commit: 79aecf4955507622ac7879c148cdcd23e893dd65
 workflow-type: tm+mt
 source-wordcount: '665'
 ht-degree: 0%
@@ -35,8 +35,10 @@ ht-degree: 0%
 
 
 航空公司拥有不同的客户层（铜牌、银牌和金牌），希望通过社交平台为每层提供个性化优惠。 然而，并非所有客户都使用航空公司的移动应用程序，其中一些客户还没有登录该公司的网站。 公司有关这些客户的唯一标识符是会员ID和电子邮件地址。
-要跨社交媒体进行目标，他们可以将散列电子邮件地址作为标识符，将客户数据从CRM载入Adobe实时CDP。
-接下来，他们可以将线下活动数据与现有在线受众数据相结合，以建立新的细分，并通过Facebook目标进行目标。
+
+要跨社交媒体进行目标，他们可以将客户数据从CRM载入Adobe实时CDP，并将电子邮件地址作为标识符。
+
+接下来，他们可以使用其离线数据（包括关联的会员ID和客户层）来构建新的受众细分，以便通过Facebook目标进行目标。
 
 ## 目标特定信息 {#destination-specs}
 
