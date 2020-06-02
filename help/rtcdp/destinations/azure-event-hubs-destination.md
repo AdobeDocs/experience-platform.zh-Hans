@@ -4,9 +4,9 @@ seo-title: （测试版）Azure事件集线器目标
 description: 创建到Azure事件中心存储的实时出站连接，以从Experience Platform流化数据。
 seo-description: 创建到Azure事件中心存储的实时出站连接，以从Experience Platform流化数据。
 translation-type: tm+mt
-source-git-commit: 47e03d3f58bd31b1aec45cbf268e3285dd5921ea
+source-git-commit: 883bea4aba0548e96b891987f17b8535c4d2eba7
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '481'
 ht-degree: 2%
 
 ---
@@ -64,31 +64,45 @@ ht-degree: 2%
 
 ## 导出的数据 {#exported-data}
 
-导出的Experience Platform数据以JSON [!DNL Azure Event Hubs] 格式登录。 例如，包含已退出特定区段的事件的哈希电子邮件标识的受众流可能如下所示：
+导出的Experience Platform数据以JSON [!DNL Azure Event Hubs] 格式登录。 例如，以下事件包含符合特定区段资格并退出另一区段的受众的电子邮件地址用户档案属性。 此潜在客户的标识为ECID和电子邮件。
 
 ```
 {
-   "segmentMembership":{
-      "ups":{
-         "7841ba61-23c1-4bb3-a495-00d695fe1e93":{
-            "lastQualificationTime":"2020-03-03T21:24:39Z",
-            "status":"exited"
-         }
+  "person": {
+    "email": "yourstruly@adobe.con"
+  },
+  "segmentMembership": {
+    "ups": {
+      "7841ba61-23c1-4bb3-a495-00d3g5fe1e93": {
+        "lastQualificationTime": "2020-05-25T21:24:39Z",
+        "status": "exited"
+      },
+      "59bd2fkd-3c48-4b18-bf56-4f5c5e6967ae": {
+        "lastQualificationTime": "2020-05-25T23:37:33Z",
+        "status": "existing"
       }
-   }
-},
-"identityMap":{
-   "email_lc_sha256":[
+    }
+  },
+  "identityMap": {
+    "ecid": [
       {
-         "id":"655332b5fa2aea4498bf7a290cff017cb4"
+        "id": "14575006536349286404619648085736425115"
       },
       {
-         "id":"66baf76ef9de8b42df8903f00e0e3dc0b7"
+        "id": "66478888669296734530114754794777368480"
       }
-   ]
-},
+    ],
+    "email_lc_sha256": [
+      {
+        "id": "655332b5fa2aea4498bf7a290cff017cb4"
+      },
+      {
+        "id": "66baf76ef9de8b42df8903f00e0e3dc0b7"
+      }
+    ]
+  }
+}
 ```
-
 
 
 >[!MORELIKETHIS]
