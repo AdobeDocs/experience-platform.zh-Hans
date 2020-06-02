@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 连接到流目标并激活数据
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 47e03d3f58bd31b1aec45cbf268e3285dd5921ea
+source-git-commit: 883bea4aba0548e96b891987f17b8535c4d2eba7
 workflow-type: tm+mt
-source-wordcount: '1861'
-ht-degree: 1%
+source-wordcount: '1847'
+ht-degree: 2%
 
 ---
 
@@ -74,7 +74,7 @@ Experience Platform中的资源可以隔离到特定虚拟沙箱。 在对平台
 
 ![目标步骤概述步骤1](/help/rtcdp/destinations/assets/step1-create-streaming-destination-api.png)
 
-作为第一步，您应确定要激活数据的流目标。 首先，请执行呼叫以请求可连接和激活区段的可用目标列表。 对端点执行以下GET `connectionSpecs` 请求以返回可用目标列表:
+作为第一步，您应确定要激活数据的流目标。 首先，请执行呼叫以请求可连接和激活区段的可用目标列表。 对端点执行以下GET `connectionSpecs` 请求以返回可用目标的列表:
 
 **API格式**
 
@@ -310,8 +310,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "region": "{REGION}"
     },
     "params": { // use these values for Azure Event Hubs connections
-        "eventHubName": "{EVENT_HUB_NAME}",
-        "namespace": "EVENT_HUB_NAMESPACE"
+        "eventHubName": "{EVENT_HUB_NAME}"
     }
 }'
 ```
@@ -321,7 +320,6 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 * `{NAME_OF_DATA_STREAM}`: *用于Amazon Kinesis连接。* 在您的Amazon Kinesis帐户中提供现有数据流的名称。 Adobe实时CDP会将数据导出到此流。
 * `{REGION}`: *用于Amazon Kinesis连接。* 您的Amazon Kinesis帐户中的区域，Adobe实时CDP将在该区域流式传输您的数据。
 * `{EVENT_HUB_NAME}`: *用于Azure事件集线器连接。* 填写Azure事件中心名称，Adobe实时CDP将在该名称中流化您的数据。 有关详细信息，请 [参阅Microsoft文档中的](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) “创建事件中心”。
-* `{EVENT_HUB_NAMESPACE}`: *用于Azure事件集线器连接。* 填写Azure事件中心命名空间,Adobe实时CDP将在该中流化您的数据。 有关详细信息，请参 [阅Microsoft文档中的创建事件](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) 集线器命名空间。
 
 **响应**
 
@@ -376,7 +374,7 @@ curl -X POST \
     }
 ```
 
-* `{FLOW_SPEC_ID}`: 使用要连接到的流目标的流。 要获取流规范，请对端点执行GET操 `flowspecs` 作。 请参阅此处的Swagger文档： https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs。 在响应中，查 `upsTo` 找并复制要连接的流目标的相应ID。
+* `{FLOW_SPEC_ID}`: 基于用户档案的目标的流规范ID是 `71471eba-b620-49e4-90fd-23f1fa0174d8`。 在调用中使用此值。
 * `{SOURCE_CONNECTION_ID}`: 使用您在步骤Connect到您的Experience Platform中获 [得的源连接ID](#connect-to-your-experience-platform-data)。
 * `{TARGET_CONNECTION_ID}`: 使用您在步骤Connect中获得的目标连 [接ID到流目标](#connect-to-streaming-destination)。
 
@@ -392,7 +390,7 @@ curl -X POST \
 ```
 
 
-## 将数据激活到新目标
+## 将数据激活到新目标 {#activate-data}
 
 ![目标步骤概述步骤5](/help/rtcdp/destinations/assets/step5-create-streaming-destination-api.png)
 
@@ -451,6 +449,18 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
                 "path": "{PROFILE_ATTRIBUTE}"
             }
         }
+    },
+        },
+        {
+        "op": "add",
+        "path": "/transformations/0/params/profileSelectors/selectors/-",
+        "value": {
+            "type": "JSON_PATH",
+            "value": {
+                "operator": "EXISTS",
+                "path": "{PROFILE_ATTRIBUTE}"
+            }
+        }
     }
 ]
 ```
@@ -458,7 +468,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 * `{DATAFLOW_ID}`: 使用您在上一步中获得的数据流。
 * `{ETAG}`: 使用您在上一步中获得的标签。
 * `{SEGMENT_ID}`: 提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请转至https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/，在左侧导航 **菜单中选择** “分段服务API”，然后查找操 `GET /segment/jobs` 作。
-* `{PROFILE_ATTRIBUTE}`: 例如， `"person.lastName"`
+* `{PROFILE_ATTRIBUTE}`: 例如， `personalEmail.address` 或 `person.lastName`
 
 **响应**
 
@@ -503,8 +513,23 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
         "name": "GeneralTransform",
         "params": {
             "profileSelectors": {
-                "selectors": []
-            },
+                        "selectors": [
+                            {
+                                "type": "JSON_PATH",
+                                "value": {
+                                    "path": "personalEmail.address",
+                                    "operator": "EXISTS"
+                                }
+                            },
+                            {
+                                "type": "JSON_PATH",
+                                "value": {
+                                    "path": "person.lastname",
+                                    "operator": "EXISTS"
+                                }
+                            }
+                        ]
+                    },
             "segmentSelectors": {
                 "selectors": [
                     {
@@ -520,6 +545,50 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
         }
     }
 ],
+```
+
+**导出的数据**
+
+>[!IMPORTANT]
+>
+> 除了将用户档案激活到新目标中的属 [性和区段之外](#activate-data),AWS Kinesis和Azure事件中心中的导出数据还将包含有关标识映射的信息。 这表示导出用户档案的标识( [例如](https://docs.adobe.com/content/help/zh-Hans/id-service/using/intro/id-request.html)ECID、移动ID、Google ID、电子邮件地址等)。 请参阅以下示例。
+
+```
+{
+  "person": {
+    "email": "yourstruly@adobe.con"
+  },
+  "segmentMembership": {
+    "ups": {
+      "72ddd79b-6b0a-4e97-a8d2-112ccd81bd02": {
+        "lastQualificationTime": "2020-03-03T21:24:39Z",
+        "status": "exited"
+      },
+      "7841ba61-23c1-4bb3-a495-00d695fe1e93": {
+        "lastQualificationTime": "2020-03-04T23:37:33Z",
+        "status": "existing"
+      }
+    }
+  },
+  "identityMap": {
+    "ecid": [
+      {
+        "id": "14575006536349286404619648085736425115"
+      },
+      {
+        "id": "66478888669296734530114754794777368480"
+      }
+    ],
+    "email_lc_sha256": [
+      {
+        "id": "655332b5fa2aea4498bf7a290cff017cb4"
+      },
+      {
+        "id": "66baf76ef9de8b42df8903f00e0e3dc0b7"
+      }
+    ]
+  }
+}
 ```
 
 ## 后续步骤
