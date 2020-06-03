@@ -1,10 +1,13 @@
 ---
 title: 电子邮件营销目标
 seo-title: 电子邮件营销目标
-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，例如发送促销电子邮件活动。
-seo-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，例如发送促销电子邮件活动。
+description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
+seo-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 translation-type: tm+mt
-source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
+source-git-commit: 121ae74e9c352b1f6fc12093d815e711ebd817b8
+workflow-type: tm+mt
+source-wordcount: '498'
+ht-degree: 2%
 
 ---
 
@@ -15,23 +18,23 @@ source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 
 要向活动的电子邮件营销目标发送区段，Adobe实时CDP必须首先连接到目标。
 
-连接到电子邮件营销目标的过程分为三个步骤。 本页将进一步介绍每个步骤。
+连接到电子邮件营销目标的过程分为三步。 本页将进一步介绍每个步骤。
 
-在连接目标流中（如下面部分所述），连接到Amazon S3或SFTP。 实时CDP将区段导出为或文 `.csv` 件，并 `.txt` 将它们提交到首选位置。 计划在电子邮件营销平台中从实时CDP中启用的存储位置导入的数据。 导入数据的过程因每个合作伙伴而异。 有关详细信息，请参阅各个目标文章。
+在连接目标流中（如以下部分所述），连接到Amazon S3或SFTP。 实时CDP将您的细分作为或文 `.csv` 件导 `.txt` 出，并将它们提供给您的首选位置。 计划您在电子邮件营销平台中从实时CDP中启用的存储位置导入数据。 导入数据的过程因每个合作伙伴而异。 有关详细信息，请参阅各个目标文章。
 
 ## 第1步——连接目标 {#connect-destination}
 
-1. 在 **[!UICONTROL Connections > Destinations]**&#x200B;中，选择要连接到的电子邮件营销目标，然后选择 **[!UICONTROL Connect destination]**。
+1. 在“ **[!UICONTROL 连接”>]**“目标”中，选择要连接的电子邮件营销目标，然后选择“连 **[!UICONTROL 接目标”]**。
 
-   ![连接到目标](/help/rtcdp/destinations/assets/connect-destination.png)
+   ![连接到目标](/help/rtcdp/destinations/assets/connect-destination-1.png)
 
-2. 在“连接”向导中，选择 **[!UICONTROL Connection type]** 存储位置。 您可以在 **Amazon S3**、 **SFTP（带密码）和** SSH密钥(SFTP)之间进行选择 ****。 根据连接类型，填写以下信息，然后选择 **[!UICONTROL Connect]**。
+2. 在“连接”向导中，为存储 **[!UICONTROL 位置选择]** “连接类型”。 您可以在Amazon **S3**、 **SFTP（带口令）**、 **SFTP（带SSH密钥）之间进行选择**。 根据连接类型，填写以下信息，然后选择“ **[!UICONTROL Connect]**”。
 
-对于 **S3连接**，您必须提供访问密钥ID和机密访问密钥。
+对 **于S3连接**，必须提供访问密钥ID和秘密访问密钥。
 
-对于 **SFTP(带密码连接** )，您必须提供域、端口、用户名和密码。
+对 **于带口令的SFTP** ，您必须提供域、端口、用户名和密码。
 
-对于 **SFTP与SSH密钥连接** ，您必须提供域、端口、用户名和SSH密钥。
+对于 **具有SSH密钥连接** 的SFTP，您必须提供域、端口、用户名和密码。
 
 ## 第2步——选择要在导出的文件中用作目标属性的模式字段 {#destination-attributes}
 
@@ -41,7 +44,7 @@ source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 
 ### 身份 {#identity}
 
-我们建议您从合并模式中选择唯一标 [识符](../../profile/home.md#profile-fragments-and-union-schemas)。 这是用户身份已键出的字段。 最常用的字段是电子邮件地址，但也可以是忠诚度项目ID或电话号码。 请参见下表，了解统一模式中最常见的唯一标识符及其XDM字段。
+我们建议您从合并模式中选择唯一标 [识符](../../profile/home.md#profile-fragments-and-union-schemas)。 这是用户身份被锁定的字段。 最常用的字段是电子邮件地址，但也可以是忠诚度项目ID或电话号码。 请参见下表，了解统一模式中最常见的唯一标识符及其XDM字段。
 
 | 唯一标识符 | 统一模式中的XDM字段 |
 ---------|----------
@@ -51,9 +54,9 @@ source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 
 ### 其他目标属性
 
-在模式字段选择器中，选择要导出到电子邮件目标的其他字段。 推荐的选项包括：
+在模式字段选择器中，选择要导出到电子邮件目标的其他字段。 推荐的选项有：
 
-| 模式 | XDM字段 |
+| 架构 | XDM字段 |
 ---------|----------
 | 名字 | `person.name.firstName` |
 | 姓氏 | `person.name.lastName` |
@@ -74,4 +77,4 @@ source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
 
 ## 将区段激活到电子邮件营销目标
 
-有关如何将区段激活到电子邮件营销目标的说明，请参阅将 [数据激活到目标](/help/rtcdp/destinations/activate-destinations.md)。
+有关如何将区段激活到电子邮件营销目标的说明，请参 [阅将数据激活到目标](/help/rtcdp/destinations/activate-destinations.md)。
