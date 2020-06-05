@@ -4,7 +4,7 @@ seo-title: Adobe Experience Platform Web SDK调试
 description: 了解如何切换Experience Platform Web SDK调试
 seo-description: 了解如何切换Experience Platform Web SDK调试
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 31a527cb4ad1348262131f827c7e932404542c4b
 workflow-type: tm+mt
 source-wordcount: '323'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 默认情况下，调试处于禁用状态，但可以通过三种不同方式切换：
 
 * `configure` 命令
-* `debug` 命令
+* `setDebug` 命令
 * 查询字符串参数
 
 ## 使用“配置”命令切换调试
@@ -42,7 +42,7 @@ alloy("configure", {
 按如下方式使用单独的 `debug` 命令切换调试：
 
 ```javascript
-alloy("debug", {
+alloy("setDebug", {
   "enabled": true
 });
 ```
