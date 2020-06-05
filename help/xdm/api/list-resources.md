@@ -4,16 +4,19 @@ solution: Experience Platform
 title: 列表资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 58549241f05f1bd604f33762f681c60946fa52f5
+source-git-commit: b4d8a6f8006d55c7aac19d705c6880fec915c147
+workflow-type: tm+mt
+source-wordcount: '519'
+ht-degree: 2%
 
 ---
 
 
 # 列表资源
 
-您可以通过执行单个GET请求，视图容器中特定类型(类、混音、模式、数据类型或描述符)的所有模式注册表资源。
+您可以通过执行单个GET请求，视图某个容器中特定类型(类、混合、模式、数据类型或描述符)的所有模式注册表资源。
 
->[!NOTE] 列出资源时，模式登记处将结果集限制为300项。 要返回超出此限制的资源，您必须使用分 [页参数](#paging)。 还建议使用查询参数筛选结 [果](#filtering) ，并减少返回的资源数。
+>[!NOTE] 列出资源时，模式注册表将结果集限制为300项。 要返回超出此限制的资源，必须使用分 [页参数](#paging)。 还建议使用查询参数来筛 [选结果](#filtering) ，并减少返回的资源数。
 
 **API格式**
 
@@ -40,17 +43,17 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-响应格式取决于在请求中发送的Accept头。 列表资源可使用以下“接受”标题：
+响应格式取决于请求中发送的接受头。 下列接受标题可用于列出资源：
 
 | 接受标题 | 描述 |
 | ------- | ------------ |
-| application/vnd.adobe.xed-id+json | 返回每个资源的简短摘要。 这是列表资源的建议标题。 (限制：300) |
-| application/vnd.adobe.xed+json | 返回每个资源的完整JSON模式，其中包含 `$ref` 原始 `allOf` 资源。 (限制：300) |
+| application/vnd.adobe.xed-id+json | 返回每个资源的简短摘要。 这是列出资源的建议标头。 (限制： 300) |
+| application/vnd.adobe.xed+json | 返回每个资源的完整JSON模式，其中包 `$ref` 含原始 `allOf` 资源。 (限制： 300) |
 | application/vnd.adobe.xdm-v2+json | 使用端点 `/descriptors` 时，必须使用此Accept头才能使用分页功能。 |
 
 **响应**
 
-上述请求使用“接 `application/vnd.adobe.xed-id+json` 受”标题，因此响应仅包括每个资 `title`源的 `$id`、 `meta:altId`和 `version` 属性。 替换 `full` 到“接受”标题将返回每个资源的所有属性。 根据您在响应中需要的信息选择相应的“接受”标题。
+上述请求使用 `application/vnd.adobe.xed-id+json` Accept标题，因此响应只包括每个资 `title`源的 `$id`、 `meta:altId`和 `version` 属性。 替换 `full` 到“接受”标题将返回每个资源的所有属性。 根据您在响应中需要的信息选择相应的接受标题。
 
 ```JSON
 {
@@ -75,7 +78,7 @@ curl -X GET \
 
 模式注册表支持在列出资源时使用查询参数进行页面和筛选结果。
 
->[!NOTE] 组合多个查询参数时，必须用&amp;符号(`&`)分隔。
+>[!NOTE] 组合多个查询参数时，必须用和号(`&`)分隔。
 
 ### 分页 {#paging}
 
@@ -83,23 +86,23 @@ curl -X GET \
 
 | 参数 | 描述 |
 | --- | --- |
-| `start` | 指定列出的结果的起点。 示例：将 `start=2` 从第三个返回项目开始列表结果。 |
-| `limit` | 限制返回的资源数。 示例：将 `limit=5` 返回一列表五项资源。 |
-| `orderby` | 按特定属性对结果排序。 示例：将 `orderby=title` 按标题按升序(A-Z)对结果排序。 在标题( `-` )之前添`orderby=-title`加一个选项将按标题按降序(Z-A)对项目进行排序。 |
+| `start` | 指定列出的结果的开始位置。 此值可以从列表响 `_page.next` 应的属性中获取，并用于访问结果的下一页。 如果 `_page.next` 值为null，则没有其他页可用。 |
+| `limit` | 限制返回的资源数。 示例： `limit=5` 将返还列表5个资源。 |
+| `orderby` | 按特定属性对结果排序。 示例： `orderby=title` 将按标题按升序(A-Z)对结果排序。 在标 `-` 题()`orderby=-title`前添加一个标题将按标题以降序(Z-A)对项目排序。 |
 
 ### 筛选 {#filtering}
 
-您可以使用参数筛选结果，该参 `property` 数用于对检索的资源中的给定JSON属性应用特定的运算符。 支持的运算符包括：
+您可以使用参数筛选结 `property` 果，该参数用于对检索的资源中的给定JSON属性应用特定运算符。 支持的运算符包括：
 
 | 运算符 | 描述 | 示例 |
 | --- | --- | --- |
-| `==` | 过滤器是否等于提供的值。 | `property=title==test` |
-| `!=` | 过滤器，即物业是否不等于提供值。 | `property=title!=test` |
-| `<` | 过滤器该物业是否低于提供价值。 | `property=version<5` |
+| `==` | 过滤器属性是否等于提供的值。 | `property=title==test` |
+| `!=` | 过滤器：属性是否不等于提供的值。 | `property=title!=test` |
+| `<` | 过滤器该属性是否小于提供的值。 | `property=version<5` |
 | `>` | 过滤器该属性是否大于提供的值。 | `property=version>5` |
-| `<=` | 过滤器该物业是否低于或等于提供值。 | `property=version<=5` |
-| `>=` | 过滤器该属性是否大于或等于提供的值。 | `property=version>=5` |
-| `~` | 过滤器，依据该物业是否与提供的常规表达式相匹配。 | `property=title~test$` |
-| (无) | 仅声明属性名称仅返回属性所在的条目。 | `property=title` |
+| `<=` | 过滤器，该属性是否小于或等于提供的值。 | `property=version<=5` |
+| `>=` | 过滤器为属性是大于或等于提供的值。 | `property=version>=5` |
+| `~` | 过滤器，根据该属性是否与提供的常规表达式匹配。 | `property=title~test$` |
+| (无) | 仅声明属性名称只返回存在属性的条目。 | `property=title` |
 
->[!TIP] 可以使用该参 `property` 数按其兼容类过滤混音。 例如，仅 `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` 返回与XDM Individual用户档案类兼容的混音。
+>[!TIP] 可以使用该参 `property` 数按其兼容类过滤混音。 例如， `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` 仅返回与XDM单个用户档案类兼容的混音。
