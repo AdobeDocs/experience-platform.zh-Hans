@@ -4,9 +4,9 @@ solution: Experience Platform
 title: JupyterLab用户指南
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 37213f29e8099f8587cde9eb66f9b75de3ad8a3a
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
 workflow-type: tm+mt
-source-wordcount: '3356'
+source-wordcount: '3349'
 ht-degree: 5%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 # JupyterLab用户指南
 
-JupyterLab是Project Jupyter的基于Web的 <a href="https://jupyter.org/" target="_blank">用户界面</a> ，与Adobe Experience Platform紧密集成。 它为数据科学家提供一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起使用。
+JupyterLab是Project Jupyter的基于Web的 <a href="https://jupyter.org/" target="_blank">用户界面</a> ，紧密集成在其中 [!DNL Adobe Experience Platform]。 它为数据科学家提供一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起使用。
 
 本文档概述了JupyterLab及其功能以及执行常见操作的说明。
 
@@ -29,7 +29,7 @@ Experience Platform的JupyterLab集成随附架构更改、设计考虑事项、
 | **内核** | 内核提供笔记本和其他JupyterLab前端以不同编程语言执行和检查代码的能力。 Experience Platform提供额外的内核，支持Python、R、PySpark和Spark中的开发。 有关更多 [详细信息](#kernels) ，请参阅内核部分。 |
 | **数据访问** | 借助对读和写功能的完全支持，直接从JupyterLab中访问现有数据集。 |
 | **平台服务集成** | 内置集成功能允许您直接从JupyterLab中利用其他平台服务。 与其他平台服务集成部分提供支持的集 [成的完整列表](#service-integration)。 |
-| **身份验证** | 除了JupyterLab <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">的内置安全模型外</a>，您的应用程序与Experience Platform之间的每次交互（包括平台服务到服务通信）都会通过Adobe Identity Management System(IMS) <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">进行加密和验证</a>。 |
+| **身份验证** | 除了JupyterLab <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">的内置安全模型</a>，您的应用程序与Experience Platform之间的每次交互（包括平台服务到服务通信）都通过(IMS)进行加密和 <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] 验证</a>。 |
 | **开发库** | 在Experience Platform中，JupyterLab为Python、R和PySpark提供预装库。 有关受 [支持库](#supported-libraries) 的完整列表，请参阅附录。 |
 | **库控制器** | 当您需要预装的库时，可以为Python和R安装额外的库，并临时存储在隔离的容器中，以保持平台的完整性并保证数据的安全。 有关更多 [详细信息](#kernels) ，请参阅内核部分。 |
 
