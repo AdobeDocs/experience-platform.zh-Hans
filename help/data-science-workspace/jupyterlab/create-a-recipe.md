@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 使用Jupyter笔记本创建菜谱
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 1447196da7dbf59c1f498de40f12ed74c328c0e6
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '2330'
+ht-degree: 0%
 
 ---
 
@@ -22,7 +25,7 @@ source-git-commit: 1447196da7dbf59c1f498de40f12ed74c328c0e6
 
 ## 开始使用JupyterLab笔记本环境
 
-从头开始创建菜谱可以在数据科学工作区中完成。 要开始，请导 [航到Adobe](https://platform.adobe.com) Experience Platform **[!UICONTROL Notebooks]** ，然后单击左侧的选项卡。 从JupyterLab Launcher中选择Recipe Builder模板，创建新笔记本。
+从头开始创建菜谱可以在数据科学工作区中完成。 要开始，请导 [航到Adobe Experience](https://platform.adobe.com) Platform **[!UICONTROL ，然后单]** 击左侧的“笔记本”选项卡。 从JupyterLab Launcher中选择Recipe Builder模板，创建新笔记本。
 
 Recipe Builder笔记本可在笔记本内运行培训和评分运行。 这使您能够灵活地在对培训和评分 `train()` 数据 `score()` 运行实验之间更改其和方法。 一旦您对培训和评分的输出感到满意，您就可以创建要在Data Science Workspace中使用的菜谱，该菜谱使用笔记本来创建Recipe Builder笔记本中内置的菜谱功能。
 
@@ -33,7 +36,7 @@ Recipe Builder笔记本可在笔记本内运行培训和评分运行。 这使�
 
 当您从启动器单击Recipe Builder笔记本时，该笔记本将在选项卡中打开。 笔记本中使用的模板是Python Retail Sales Forecasting Recipe，您也可以在此公共存储库 [中找到它](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)
 
-您会注意到，在工具栏中还有三个其他操作， **[!UICONTROL Train]**&#x200B;即 **[!UICONTROL Score]** -和 **[!UICONTROL Create Recipe]**。 这些图标将仅显示在Recipe Builder笔记本中。 在笔记本中构建“菜谱”后，将在 [培训和评分部分讨论](#training-and-scoring) 有关这些操作的更多信息。
+您会注意到，在工具栏中有三个附加操作，即 **[!UICONTROL 培训]**、 **[!UICONTROL 得分]** 和 **[!UICONTROL 创建菜谱]**。 这些图标将仅显示在Recipe Builder笔记本中。 在笔记本中构建“菜谱”后，将在 [培训和评分部分讨论](#training-and-scoring) 有关这些操作的更多信息。
 
 ![](../images/jupyterlab/create-recipe/toolbar_actions.png)
 
@@ -106,7 +109,7 @@ data_access_sdk_python
 
 ### 加载数据 {#loading-data}
 
-这一步使用了 [熊猫数据框](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)。 数据可以使用Platform SDK()从Adobe Experience Platform中的文件加`platform_sdk`载，也可以使用熊猫的或功能从外部 `read_csv()` 源加 `read_json()` 载。
+这一步使用了 [熊猫数据框](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)。 数据可以使用Platform SDK( [!DNL Adobe Experience Platform] )从文件中加载，`platform_sdk`也可以使用熊猫的功能从外部 `read_csv()` 源加载 `read_json()` 数据。
 
 - [平台SDK](#platform-sdk)
 - [外部源](#external-sources)
@@ -440,13 +443,13 @@ def save(configProperties, prediction):
 
 在对笔记本进行更改并要培训菜谱后，您可以单击栏顶部的关联按钮在单元格中创建培训运行。 单击该按钮后，培训脚本的命令和输出日志将显示在笔记本(单元格 `evaluator.py` 下)中。 首先安装所有依赖项，然后启动培训。
 
-请注意，必须至少运行一次培训，然后才能运行评分。 单击该按 **[!UICONTROL Run Scoring]** 钮将对培训期间生成的培训模型得分。 评分脚本将显示在下方 `datasaver.py`。
+请注意，必须至少运行一次培训，然后才能运行评分。 单击“运 **[!UICONTROL 行评分]** ”按钮将对培训期间生成的培训模型进行得分。 评分脚本将显示在下方 `datasaver.py`。
 
 出于调试目的，如果要查看隐藏的输出，请将 `debug` 其添加到输出单元格的末尾，然后重新运行它。
 
 ## 创建菜谱 {#create-recipe}
 
-编辑完菜谱并满意培训／评分输出后，您可以按右上导航键从笔记本 **[!UICONTROL Create Recipe]** 创建菜谱。
+编辑完菜谱并对培训／评分输出感到满意后，您可以通过按右上方导航中的“创建菜谱” **[!UICONTROL 从笔记本]** 创建菜谱。
 
 ![](../images/jupyterlab/create-recipe/create-recipe.png)
 
@@ -454,7 +457,7 @@ def save(configProperties, prediction):
 
 ![](../images/jupyterlab/create-recipe/enter_recipe_name.png)
 
-按下 **[!UICONTROL Ok]** 后，您将能够导航到Adobe Experience Platform上 [的新菜谱](https://platform.adobe.com/)。 您可以单击该按 **[!UICONTROL View Recipes]** 钮，转到下面的 **[!UICONTROL Recipes]** 选项卡 **[!UICONTROL ML Models]**
+按“确 **[!UICONTROL 定]** ”后，您将能够导航到Adobe Experience Platform上 [的新菜谱](https://platform.adobe.com/)。 单击“视图菜 **[!UICONTROL 谱]** ”按钮可转到“ML模型 **[!UICONTROL ”下]** 的“菜 **[!UICONTROL 谱”选项卡]**
 
 ![](../images/jupyterlab/create-recipe/recipe_creation_started.png)
 
