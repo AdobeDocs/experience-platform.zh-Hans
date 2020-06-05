@@ -4,26 +4,29 @@ solution: Experience Platform
 title: 平台SDK指南
 topic: SDK authoring
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '451'
+ht-degree: 1%
 
 ---
 
 
 # 平台SDK指南
 
-本教程提供了有关在Python和R `data_access_sdk_python` 中转换为新 `platform_sdk` 的Python的信息。本教程提供了有关以下操作的信息：
+本教程提供有关在Python和R `data_access_sdk_python` 中转换为 `platform_sdk` 新Python的信息。本教程提供有关以下操作的信息：
 
 - [构建身份验证](#build-authentication)
 - [数据的基本读取](#basic-reading-of-data)
-- [基本的数据编写](#basic-writing-of-data)
+- [基本数据写入](#basic-writing-of-data)
 
 ## 构建身份验证 {#build-authentication}
 
-对Adobe Experience Platform进行调用需要身份验证，由API密钥、IMS组织ID、用户令牌和服务令牌组成。
+需要进行身份验证才能 [!DNL Adobe Experience Platform]进行调用，它由API密钥、IMS组织ID、用户令牌和服务令牌组成。
 
 ### Python
 
-如果您使用Jupyter Notebook，请使用以下代码构建 `client_context`:
+如果您使用Jupyter笔记本，请使用下面的代码构建 `client_context`:
 
 ```python
 client_context = PLATFORM_SDK_CLIENT_CONTEXT
@@ -41,7 +44,7 @@ client_context = ClientContext(api_key={API_KEY},
 
 ### R
 
-如果您使用Jupyter Notebook，请使用以下代码构建 `client_context`:
+如果您使用Jupyter笔记本，请使用下面的代码构建 `client_context`:
 
 ```r
 library(reticulate)
@@ -66,9 +69,9 @@ client_context <- psdk$client_context$ClientContext(api_key={API_KEY},
 
 ## 数据的基本读取 {#basic-reading-of-data}
 
-使用新的Platform SDK，最大读取大小为32 GB，最大读取时间为10分钟。
+使用新的Platform SDK，最大读取大小为32 GB，最长读取时间为10分钟。
 
-如果您的阅读时间过长，您可以尝试使用以下筛选选项之一：
+如果您的读取时间过长，您可以尝试使用以下筛选选项之一：
 
 - [按偏移和限制筛选数据](#filter-by-offset-and-limit)
 - [按日期筛选数据](#filter-by-date)
@@ -101,7 +104,7 @@ df
 
 ## 按偏移和限制过滤 {#filter-by-offset-and-limit}
 
-由于不再支持按批ID过滤，因此要对数据进行范围读取，您需要使用 `offset` 和 `limit`。
+由于不再支持按批ID过滤，因此，要对数据进行范围读取，您需要使用 `offset` 和 `limit`。
 
 ### Python
 
@@ -141,7 +144,7 @@ df2 <- dataset_reader$where(
 df2
 ```
 
-新的Platform SDK支持以下操作：
+新的平台SDK支持以下操作：
 
 | 操作 | 函数 |
 | --------- | -------- |
@@ -155,7 +158,7 @@ df2
 
 ## 按选定列过滤 {#filter-by-selected-columns}
 
-要进一步优化数据读取，您还可以按列名进行筛选。
+要进一步细化数据读取，还可以按列名进行筛选。
 
 ### Python
 
@@ -173,7 +176,7 @@ df <- dataset_reader$select(c('column-a','column-b'))$read()
 
 接收的结果可以按目标数据集的指定列和其顺序(asc/desc)分别排序。
 
-在以下示例中，数据帧按“column-a”第一个按升序排序。 对“column-a”具有相同值的行随后按“column-b”以降序排序。
+在以下示例中，数据帧按“column-a”首先以升序顺序排序。 对“column-a”具有相同值的行随后按“column-b”以降序排序。
 
 ### Python
 
@@ -187,7 +190,7 @@ df = dataset_reader.sort([('column-a', 'asc'), ('column-b', 'desc')])
 df <- dataset_reader$sort(c(('column-a', 'asc'), ('column-b', 'desc')))$read()
 ```
 
-## 基本的数据编写 {#basic-writing-of-data}
+## 基本数据写入 {#basic-writing-of-data}
 
 >[!NOTE] IMS组织在中设置 `client_context`。
 
@@ -214,4 +217,4 @@ write_tracker <- dataset_writer$write({PANDA_DATAFRAME}, file_format='json')
 
 ## 后续步骤
 
-配置数据加载 `platform_sdk` 器后，数据将进行准备，然后被拆分到数据 `train` 集和数 `val` 据集。 要了解数据准备和功能工程，请访问JupyterLab笔记本 [创建菜谱教程中有关数据准备和功能工程的部分](../jupyterlab/create-a-recipe.md#data-preparation-and-feature-engineering) 。
+配置数据加载 `platform_sdk` 器后，数据将进行准备，然后被拆分到数据 `train` 集和数 `val` 据集。 要了解数据准备和功能工程，请访 [问使用JupyterLab笔记](../jupyterlab/create-a-recipe.md#data-preparation-and-feature-engineering) 本创建菜谱的教程中，有关数据准备和功能工程的部分。
