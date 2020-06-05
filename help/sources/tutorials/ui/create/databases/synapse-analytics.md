@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建Azure突触分析源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
+source-git-commit: 75ba0bce7ce070af851bbf7e220dbf08febc4c20
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 1%
@@ -48,7 +48,7 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 在“数 *据库* ”类别下， **选择“Azure突触分析** ”以在屏幕右侧显示一个信息栏。 信息栏提供所选源的简短描述以及与源或视图其文档的选项。 要创建新的入站基本连接，请选择“ **连接源”**。
 
-![](../../../../images/tutorials/create/azure-synapse-analytics/sources-catalog.png)
+![](../../../../images/tutorials/create/azure-synapse-analytics/catalog.png)
 
 将显 *示“连接到Azure突触分析* ”页。 在此页上，您可以使用新凭据或现有凭据。
 
@@ -56,13 +56,13 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 如果您使用新凭据，请选择“ **新帐户**”。 在显示的输入表单上，为基本连接提供名称、可选说明和您的突触凭据。 完成后，选 **择** Connect，然后允许一段时间建立新的基本连接。
 
-![](../../../../images/tutorials/create/azure-synapse-analytics/new-credentials.png)
+![](../../../../images/tutorials/create/azure-synapse-analytics/new.png)
 
 ### 现有帐户
 
 要连接现有帐户，请选择要连接的突触帐户，然后选择“下 **一步** ”继续。
 
-![](../../../../images/tutorials/create/azure-synapse-analytics/existing-credentials.png)
+![](../../../../images/tutorials/create/azure-synapse-analytics/existing.png)
 
 ## 后续步骤
 
