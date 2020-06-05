@@ -4,42 +4,45 @@ solution: Experience Platform
 title: 创建特征管线
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '971'
+ht-degree: 0%
 
 ---
 
 
 # 创建特征管线
 
-Adobe Experience Platform允许您构建和创建自定义功能管道，通过Sensei机器学习框架运行时（以下简称“运行时”）大规模地执行功能工程。
+[!DNL Adobe Experience Platform] 允许您通过Sensei机器学习框架运行时（以下简称“运行时”）构建和创建自定义功能管道以大规模执行功能工程。
 
-本文档介绍在功能管道中找到的各种类，并提供了一个分步教程，用于使用PySpark和Spark中的“模型创作SDK [](./sdk.md) ”创建自定义功能管道。
+本文档描述了功能管道中的各种类，并提供了在PySpark和Spark中使用模型创作SDK创建自定 [义功能](./sdk.md) 管道的分步教程。
 
-## 特征管线类
+## 特征管道类
 
 下表描述了构建特征管线时必须扩展的主要抽象类：
 
-| 摘要类 | 描述 |
+| 抽象类 | 描述 |
 | -------------- | ----------- |
 | DataLoader | DataLoader类提供用于检索输入数据的实现。 |
-| DatasetTransformer | DatasetTransformer类提供用于转换输入数据集的实现。 您可以选择不提供DatasetTransformer类，而是在FeaturePipelineFactory类中实现您的功能工程逻辑。 |
-| FeaturePipelineFactory | FeaturePipelineFactory类构建一个Spark Pipeline，它包含一系列Spark Transporters，用于执行功能工程。 您可以选择不提供FeaturePipelineFactory类，而是在DatasetTransformer类中实施您的功能工程逻辑。 |
-| DataSaver | DataSaver类提供用于存储功能数据集的逻辑。 |
+| DatasetTransformer | DatasetTransformer类提供转换输入数据集的实现。 您可以选择不提供DatasetTransformer类，而是在FeaturePipelineFactory类中实施您的功能工程逻辑。 |
+| 功能管道工厂 | FeaturePipelineFactory类构建一个Spark Pipeline，它包含一系列Spark Transporters，用于执行特征工程。 您可以选择不提供FeaturePipelineFactory类，而是在DatasetTransformer类中实施您的功能工程逻辑。 |
+| 数据保护程序 | DataSaver类提供功能数据集存储的逻辑。 |
 
-启动功能管道作业时，运行时将首先执行DataLoader以作为DataFrame加载输入数据，然后通过执行DatasetTransformer或FeaturePipelineFactory或两者来修改DataFrame。 最后，生成的特征数据集通过DataSaver进行存储。
+启动功能管道作业时，运行时首先执行DataLoader以将输入数据加载为DataFrame，然后通过执行DatasetTransformer或FeaturePipelineFactory或两者来修改DataFrame。 最后，生成的特征数据集通过DataSaver进行存储。
 
-以下流程图显示了Runtime的执行顺序：
+以下流程图显示了运行时的执行顺序：
 
 ![](../images/authoring/feature-pipeline/FeaturePipeline_Runtime_flow.png)
 
 
-## 实现功能管道类 {#implement-your-feature-pipeline-classes}
+## 实施功能管道类 {#implement-your-feature-pipeline-classes}
 
-以下各节提供了有关为功能管道实现所需类的详细信息和示例。
+以下各节提供了有关实现特征管道所需类的详细信息和示例。
 
 ### 在配置JSON文件中定义变量 {#define-variables-in-the-configuration-json-file}
 
-配置JSON文件由键值对组成，供您指定以后在运行时定义的任何变量。 这些键值对可以定义诸如输入数据集位置、输出数据集ID、租户ID、列标题等属性。
+配置JSON文件由键值对组成，用于指定以后在运行时定义的任何变量。 这些键值对可以定义诸如输入数据集位置、输出数据集ID、租户ID、列标题等属性。
 
 以下示例演示了在配置文件中找到的键值对。 展开示例以查看详细信息：
 
@@ -89,7 +92,7 @@ val input_dataset_id: String = configProperties.get("datasetId")
 
 DataLoader负责检索和过滤输入数据。 DataLoader的实现必须扩展抽象类 `DataLoader` 并覆盖抽象方法 `load`。
 
-以下示例按ID检索平台数据集并将其返回为DataFrame，其中数据集ID(`datasetId`)是配置文件中定义的属性。 展开每个示例以查看详细信息：
+以下示例按ID检索平台数据集并将其返回为DataFrame，其中数据集ID()`datasetId`是配置文件中定义的属性。 展开每个示例以查看详细信息：
 
 
 **PySpark示例**
@@ -191,7 +194,7 @@ class MyDataLoader extends DataLoader {
 
 ### 使用DatasetTransformer转换数据集 {#transform-a-dataset-with-datasettransformer}
 
-DatasetTransformer提供用于转换输入DataFrame的逻辑并返回新派生的DataFrame。 可以实现此类以与FeaturePipelineFactory协同工作，作为唯一的特征工程组件工作，或者您可以选择不实现此类。
+DatasetTransformer提供用于转换输入DataFrame的逻辑并返回新的派生DataFrame。 可以实现此类，以与FeaturePipelineFactory协同工作，作为唯一的特征工程组件工作，也可以选择不实现此类。
 
 以下示例扩展了DatasetTransformer类。 展开每个示例以查看详细信息：
 
@@ -244,11 +247,11 @@ class MyDatasetTransformer extends DatasetTransformer {
 
 
 
-### 使用FeaturePipelineFactory设计数据功能 {#engineer-data-features-with-featurepipelinefactory}
+### 使用FeaturePipelineFactory工程数据功能 {#engineer-data-features-with-featurepipelinefactory}
 
-FeaturePipelineFactory允许您通过Spark Pipeline定义一系列Spark Transporters并将其链接在一起，从而实现您的功能工程逻辑。 可以实现此类以与DatasetTransformer协同工作，作为唯一的特征工程组件，或者您可以选择不实现此类。
+FeaturePipelineFactory允许您通过Spark Pipeline定义一系列Spark Transformers并将它们链接在一起，从而实现您的功能工程逻辑。 此类可以实现为与DatasetTransformer协同工作、作为唯一的特征工程组件工作，或者选择不实现此类。
 
-以下示例扩展了FeaturePipelieFactory类，并在Spark Pipeline中将一系列Spark变压器作为多个级实现。 展开每个示例以查看详细信息：
+以下示例扩展了FeaturePipelieFactory类，并在Spark Pipeline中将一系列Spark变压器作为多个级实施。 展开每个示例以查看详细信息：
 
 
 **PySpark示例**
@@ -323,9 +326,9 @@ class MyFeaturePipelineFactory(uid:String) extends FeaturePipelineFactory(uid) {
 
 
 
-### 使用DataSaver存储功能数据集 {#store-your-feature-dataset-with-datasaver}
+### 使用DataSaver存储您的功能数据集 {#store-your-feature-dataset-with-datasaver}
 
-DataSaver负责将生成的功能数据集存储到存储位置。 您对DataSaver的实现必须扩展抽象类 `DataSaver` 并覆盖抽象方法 `save`。
+DataSaver负责将您生成的功能数据集存储到存储位置。 DataSaver的实现必须扩展抽象类 `DataSaver` 并覆盖抽象方法 `save`。
 
 以下示例扩展了按ID将数据存储到平台数据集的DataSaver类，其中数据集ID(`featureDatasetId`)和租户ID(`tenantId`)是配置文件中定义的属性。 展开每个示例以查看详细信息：
 
@@ -458,7 +461,7 @@ class MyDataSaver extends DataSaver {
 
 ### 在应用程序文件中指定实现的类名 {#specify-your-implemented-class-names-in-the-application-file}
 
-既然已定义并实现了功能管道类，则必须在应用程序文件中指定类的名称。
+现在定义和实现了功能管道类，您必须在应用程序文件中指定类的名称。
 
 以下示例指定实现的类名。 展开示例以查看详细信息：
 
@@ -506,23 +509,23 @@ feature.dataSaver=MyDataSaver
 
 ## 构建二进制伪像 {#build-the-binary-artifact}
 
-现在，您的功能管道类已实现，您可以将其构建并编译为二进制对象，然后使用该对象通过API调用创建功能管道。
+现在，您的功能管道类已经实现，您可以将其构建并编译为二进制对象，然后使用二进制对象通过API调用创建功能管道。
 
 **PySpark**
 
-要构建PySpark功能管道，请运行位于“模型创作SDK” `setup.py` 根目录中的Python脚本。
+要构建PySpark功能管道，请运 `setup.py` 行位于“模型创作SDK”根目录中的Python脚本。
 
->[!NOTE] 构建PySpark功能管道要求您的计算机上安装Python 3。
+>[!NOTE] 构建PySpark功能管道需要您在机器上安装Python 3。
 
 ```shell
 python3 setup.py bdist_egg
 ```
 
-成功构建特征管道将在目录 `.egg` 中生成一 `/dist` 个对象，该对象用于创建特征管道。
+成功构建特征管道将在目 `.egg` 录中生成 `/dist` 一个对象，该对象用于创建特征管道。
 
 **Spark**
 
-要构建Spark功能管道，请在“模型创作SDK”的根目录中运行以下控制台命令：
+要构建Spark功能管道，请在“模型创作SDK”的根目录下运行以下控制台命令：
 
 >[!NOTE] 要构建Spark功能管道，您必须在计算机上安装Scala和sbt。
 
@@ -530,14 +533,14 @@ python3 setup.py bdist_egg
 mvn clean install
 ```
 
-成功构建特征管道将在目录 `.jar` 中生成一 `/dist` 个对象，该对象用于创建特征管道。
+成功构建特征管道将在目 `.jar` 录中生成 `/dist` 一个对象，该对象用于创建特征管道。
 
-## 使用API创建功能管道引擎 {#create-a-feature-pipeline-engine-using-the-api}
+## 使用API创建特征管道引擎 {#create-a-feature-pipeline-engine-using-the-api}
 
-现在，您已经创作了功能管道并构建了二进制伪像，您可以 [使用Sensei机器学习API创建功能管道引擎](../api/engines.md#create-a-feature-pipeline-engine-using-binary-artifacts)。 成功创建特征管道引擎将提供引擎ID作为响应体的一部分，请确保在继续执行后续步骤之前保存此值。
+现在，您已经创作了功能管道并构建了二进制伪像，您 [可以使用Sensei Machine Learning API创建功能管道引擎](../api/engines.md#create-a-feature-pipeline-engine-using-binary-artifacts)。 成功创建特征管道引擎将提供引擎ID作为响应体的一部分，请确保在继续执行后续步骤之前保存此值。
 
 ## 后续步骤 {#next-steps}
 
 [//]: # (Next steps section should refer to tutorials on how to score data using the Feature Pipeline Engine. Update this document once those tutorials are available)
 
-通过阅读此文档，您使用模型创作SDK创作了功能管道，构建了二进制对象，并使用该对象通过API调用创建了功能管道引擎。 您现在可以使用新创 [建的引擎和开始大规模转换数据集和提取数据特征来创建功能管道模型](../api/mlinstances.md#create-an-mlinstance) 。
+通过阅读此文档，您使用模型创作SDK创作了功能管道，构建了二进制对象，并使用该对象通过API调用创建了功能管道引擎。 您现在可以使用新创 [建的引擎和开始转换数据集](../api/mlinstances.md#create-an-mlinstance) ，并大规模地提取数据特征来创建功能管道模型。
