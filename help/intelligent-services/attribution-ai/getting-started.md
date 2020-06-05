@@ -4,17 +4,20 @@ solution: Experience Platform
 title: 归因AI快速入门
 topic: Getting started
 translation-type: tm+mt
-source-git-commit: 6161f5a9ca0df341272a96a8a19ce6c34f6d5d3e
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '499'
+ht-degree: 0%
 
 ---
 
 
 # 归因AI快速入门
 
-以下指南需要了解使用归因AI时涉及的各种Adobe Experience Platform服务。 在开始教程之前，请查看以下文档:
+以下指南需要了解使用归因 [!DNL Adobe Experience Platform] AI时涉及的各种服务。 在开始教程之前，请查看以下文档:
 
-- [体验数据模型(XDM)系统概述](../../xdm/home.md): XDM是基本框架，它允许Adobe Experience Cloud以Experience Platform为后盾，在正确的渠道、恰当的时机向正确的人群提供正确的信息。 构建Experience Platform的方法体系XDM系统可操作Experience Data Model模式，供平台服务使用。
-- [模式合成基础](../../xdm/schema/composition.md): 本文档介绍Experience Data Model(XDM)模式，以及构建要在Adobe Experience Platform中使用的模式的构件、原则和最佳实践。
+- [体验数据模型(XDM)系统概述](../../xdm/home.md): XDM是基本框架，它 [!DNL Adobe Experience Cloud]允许在Experience Platform的支持下，在正确的渠道、恰当的时机向正确的人群提供正确的信息。 构建Experience Platform的方法体系XDM系统可操作Experience Data Model模式，供平台服务使用。
+- [模式合成基础](../../xdm/schema/composition.md): 本文档介绍了体验数据模型(XDM)模式，以及构成要用于的模式的构件、原则和最佳做法 [!DNL Adobe Experience Platform]。
 - [构建模式](../../xdm/tutorials/create-schema-ui.md): 本教程介绍使用Experience Platform中的模式编辑器创建模式的步骤。
 
 归因AI要求数据集符合消费者体验事件(CEE)模式，该是体验数据模型(XDM) [中的一个组](../../xdm/home.md) 合体。 请通过attributionai-support@adobe.com与Adobe支持部门联系，以实施或更改此数据。 如果存在媒体支出数据，您可以进行进一步的分析，如增加收入和ROI。 如果客户用户档案数据可用，您可以进一步将积分归因到客户用户档案级别。
