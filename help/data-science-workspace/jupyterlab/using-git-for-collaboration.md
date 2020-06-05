@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在JupyterLab中使用Git进行协作
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 0134c21bc35c0cb1bde7f0201a33517a81addae3
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
 workflow-type: tm+mt
-source-wordcount: '276'
+source-wordcount: '273'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ Git是一种分布式版本控制系统，用于跟踪软件开发过程中源�
 
 ## 将Git连接到数据科学工作区JupyterLab笔记本环境
 
-开始，启动Adobe Experience Platform并导航到 [JupyterLabs Notebooks](https://platform.adobe.com/notebooks/jupyterLab) 环境。
+开始, [!DNL Adobe Experience Platform] 启动并导航至 [JupyterLabs笔记本](https://platform.adobe.com/notebooks/jupyterLab) 环境。
 
 在JupyterLab中，选择“ **[!UICONTROL 文件]** ”，然后悬停在“ **[!UICONTROL 新建”上]**。 从显示的下拉菜单中，选择 **[!UICONTROL 终端]**。
 
