@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在归因人工智能中发现洞察
 topic: Attribution AI insights
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: 0ea96de956adb5a6c5286433a547772118c43aee
 workflow-type: tm+mt
 source-wordcount: '1164'
 ht-degree: 1%
@@ -57,7 +57,7 @@ ht-degree: 1%
 
 ![编辑跨窗格](./images/insights/edit-popover.png)
 
-### 更多操作
+### 更多操作 {#more-actions}
 
 “ *更多* ”操作按钮位于“编辑”旁的右上导 *航中*。 单击 **更多操作** ，将打开一个下拉列表，通过该下拉列表可以选择下列操作之一：
 
