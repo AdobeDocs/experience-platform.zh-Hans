@@ -4,14 +4,17 @@ solution: Experience Platform
 title: 利用机器学习洞察丰富实时客户用户档案
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '1220'
+ht-degree: 0%
 
 ---
 
 
 # 利用机器学习洞察丰富实时客户用户档案
 
-Adobe Experience Platform Data Science Workspace提供用于创建、评估和利用机器学习模型生成数据预测和洞察的工具和资源。 当机器学习洞察被引入支持用户档案的数据集时，同一数据也被引入用户档案记录，然后，通过使用Experience Platform Segmentation Service将这些数据细分为相关元素的子集。
+[!DNL Adobe Experience Platform] 数据科学工作区提供用于创建、评估和利用机器学习模型以生成数据预测和洞察的工具和资源。 当机器学习洞察被引入支持用户档案的数据集时，同一数据也被引入用户档案记录，然后，通过使用Experience Platform Segmentation Service将这些数据细分为相关元素的子集。
 
 此文档提供分步教程，用于通过机器学习洞察丰富实时客户用户档案，步骤分为以下几节：
 
@@ -21,7 +24,7 @@ Adobe Experience Platform Data Science Workspace提供用于创建、评估和�
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform的各个方面进行有效的了解，这些方面涉及用户档案数据的获取和细分的创建。 在开始本教程之前，请查看以下服务的相关文档：
+本教程需要对用户档案数据的获取和区段的创 [!DNL Adobe Experience Platform] 建所涉及的各个方面进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
 
 * [实时客户用户档案](../../rtcdp/overview.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 * [身份服务](../../identity-service/home.md): 通过将来自不同数据源的身份融入平台，实现实时客户用户档案。
@@ -38,37 +41,37 @@ Adobe Experience Platform Data Science Workspace提供用于创建、评估和�
 
 编写模式从指定类开始。 类定义模式将包含的数据的行为方面（记录或时间序列）。 本节提供使用模式生成器创建模式的基本说明。 有关更详细的教程，请参阅有关使用 [模式编辑器创建模式的教程](../../xdm/tutorials/create-schema-ui.md)。
 
-1. 在Adobe Experience Platform上，单击选 **[!UICONTROL Schema]** 项卡以访问模式浏览器。 单击 **[!UICONTROL Create Schema]** 访问模式 *编辑器*，您可以在该编辑器中交互构建和创建模式。
+1. 在Adobe Experience Platform上，单击 **[!UICONTROL 模式]** 选项卡以访问模式浏览器。 单击 **[!UICONTROL 创建模式]** ，访问 *模式编辑器*，您可以在此交互构建和创建模式。
    ![](../images/models-recipes/enrich-rtcdp/schema_browser.png)
 
-2. 在“合 *成* ”窗口中， **[!UICONTROL Assign]** 单击以浏览可用类。
-   * 要分配现有类，请单击并突出显示所需的类，然后单击 **[!UICONTROL Assign Class]**。
+2. 在“合 *成* ”窗口中， **[!UICONTROL 单击“]** 分配”以浏览可用的类。
+   * 要分配现有类，请单击并高亮显示所需的类，然后单击“ **[!UICONTROL 分配类”]**。
       ![](../images/models-recipes/enrich-rtcdp/existing_class.png)
 
-   * 要创建自定义类，请单 **[!UICONTROL Create New Class]** 击浏览器窗口中心顶部附近的。 提供类名、说明，然后选择类的行为。 完成 **[!UICONTROL Assign Class]** 后单击。
+   * 要创建自定义类，请单 **[!UICONTROL 击浏览器窗口]** 中心顶部附近的“新建类”。 提供类名、说明，然后选择类的行为。 完 **[!UICONTROL 成后]** ，单击“分配类”。
       ![](../images/models-recipes/enrich-rtcdp/create_new_class.png)
    此时，模式的结构应包含一些类字段，您可以指定混音。 混音是由一个或多个字段组成的组，用于描述特定概念。
 
-3. 在“合 *成* ”窗口中， **[!UICONTROL Add]** 单击“ *Mixins* ”子部分。
-   * 要指定现有混音，请单击并高亮显示所需的混音，然后单击 **[!UICONTROL Add Mixin]**。 与类不同，只要适合，多个混音就可以分配给单个模式。
+3. 在“合 *成* ”窗口 **[!UICONTROL 中]** ，单击 *“Mixins* ”子部分中的“添加”。
+   * 要分配现有混音，请单击并高亮显示所需的混音，然后单击“添 **[!UICONTROL 加混音”]**。 与类不同，只要适合，多个混音就可以分配给单个模式。
       ![](../images/models-recipes/enrich-rtcdp/existing_mixin.png)
 
-   * 要创建新混音，请单击 **[!UICONTROL Create New Mixin]** 浏览器窗口中心顶部附近的“找到”。 提供混音的名称和说明，然后 **[!UICONTROL Assign Mixin]** 单击完成。
+   * 要创建新混音，请单 **[!UICONTROL 击浏览器窗口]** 中心顶部附近的“新建混音”。 提供混音的名称和说明，然后在完成 **[!UICONTROL 后单击]** “分配混音”。
       ![](../images/models-recipes/enrich-rtcdp/create_new_mixin.png)
 
-   * 要添加混音字段，请在“合成”窗口中单击混音 *的名* 称。 随后，将提供通过单击“结构”窗口添加混 **[!UICONTROL Add Field]** 音字段 *的选* 项。 确保相应地提供混合属性。
+   * 要添加混音字段，请在“合成”窗口中单击混音 *的名* 称。 随后，将通过单击“结构”窗口中的“添加字段”, **[!UICONTROL 为您提供添加]** 混合字 *段的选* 项。 确保相应地提供混合属性。
       ![](../images/models-recipes/enrich-rtcdp/mixin_properties.png)
 
-4. 构建完模式后，在“结构”窗口中单击模式的顶 *级字段* ，在右侧属性窗口中显示模式的属性。 提供名称和说明，然后单击 **[!UICONTROL Save]** 以创建模式。
+4. 构建完模式后，在“结构”窗口中单击模式的顶 *级字段* ，在右侧属性窗口中显示模式的属性。 提供名称和说明，然后单击“ **[!UICONTROL 保存]** ”以创建模式。
    ![](../images/models-recipes/enrich-rtcdp/save_schema.png)
 
-5. 使用新创建的模式创建输出数据集， **[!UICONTROL Datasets]** 方法是从左侧导航列单击，然后单 **[!UICONTROL Create dataset]**&#x200B;击。 在下一个屏幕上，选择 **[!UICONTROL Create dataset from schema]**。
+5. 使用新创建的模式创建输出数据集，方 **[!UICONTROL 法是]** ，单击左侧导航列中的数据集，然 **[!UICONTROL 后单击创建数据集]**。 在下一个屏幕上，选择“从 **[!UICONTROL 模式创建数据集”]**。
    ![](../images/models-recipes/enrich-rtcdp/dataset_overview.png)
 
-6. 使用模式浏览器，找到并选择新创建的模式，然后单击 **[!UICONTROL Next]**。
+6. 使用模式浏览器，找到并选择新创建的模式，然后单击“下 **[!UICONTROL 一步]**”。
    ![](../images/models-recipes/enrich-rtcdp/choose_schema.png)
 
-7. 提供名称和可选说明，然后单击 **[!UICONTROL Finish]** 以创建数据集。
+7. 提供名称和可选描述，然后单击 **[!UICONTROL 完成]** 以创建数据集。
    ![](../images/models-recipes/enrich-rtcdp/configure_dataset.png)
 
 现在您已创建输出模式数据集，您可以继续下一节，配置并启用这些数据集以进行用户档案扩充。
@@ -83,16 +86,16 @@ Adobe Experience Platform Data Science Workspace提供用于创建、评估和�
 2. 展开模式结构并查找要设置为主标识符的相应字段。 单击所需字段以显示其属性。
    ![](../images/models-recipes/enrich-rtcdp/schema_structure.png)
 
-3. 通过启用字段的属性、属性，然后选 **[!UICONTROL Identity]** 择相 **[!UICONTROL Primary Identity]** 应的字段，将字段设置为主标识 **[!UICONTROL Identity Namespace]**。 进行 **[!UICONTROL Apply]** 更改后单击。
+3. 通过启用字段的Identity属性、Primary Identity **[!UICONTROL 属性]** ，然后选 **[!UICONTROL 择相应的Identity]** 命名空间，将字段设 **[!UICONTROL 置为主标识]**。 进行更改 **[!UICONTROL 后]** ，单击“应用”。
    ![](../images/models-recipes/enrich-rtcdp/set_identity.png)
 
-4. 单击模式结构的顶级对象以显示模式属性，并通过切换开关启用用户档案 **[!UICONTROL Profile]** 。 单 **[!UICONTROL Save]** 击以完成更改，现在可以启用使用此模式创建的数据集进行用户档案。
+4. 单击模式结构的顶级对象以显示模式属性，并通过切换模式开关启用用户档案 **[!UICONTROL 用户档案]** 。 单击 **[!UICONTROL 保存]** 以完成更改，现在可以启用使用此模式创建的数据集进行用户档案。
    ![](../images/models-recipes/enrich-rtcdp/enable_schema.png)
 
 5. 使用数据集浏览器查找要启用用户档案的数据集，并单击其名称以访问其详细信息。
    ![](../images/models-recipes/enrich-rtcdp/datasets.png)
 
-6. 通过切换右侧信息列中 **[!UICONTROL Profile]** 的开关来启用用户档案集。
+6. 通过切换右侧信息列中的 **[!UICONTROL 用户档案]** 开关，启用用户档案集。
    ![](../images/models-recipes/enrich-rtcdp/enable_dataset.png)
 
 当数据被收录到启用用户档案的数据集中时，同一数据也被收录为用户档案记录。 现在您的模式和数据集已准备就绪，可使用适当的模型执行评分运行，从而将一些数据生成到数据集中，并继续本教程以使用“区段生成器”创建洞察区段。
@@ -101,7 +104,7 @@ Adobe Experience Platform Data Science Workspace提供用于创建、评估和�
 
 现在，您已经生成并引入了对支持用户档案的数据集的洞察，您可以通过使用区段生成器识别相关元素的子集来管理这些数据。 按照以下步骤构建您自己的细分。
 
-1. 在Adobe Experience Platform上，单击选 **[!UICONTROL Segments]** 项卡，然 **[!UICONTROL Create Segment]** 后单击选项卡以访问Segment Builder。
+1. 在Adobe Experience Platform上，单击“区 **[!UICONTROL 段]** ”选项卡 **[!UICONTROL 后跟]** “创建区段”以访问区段生成器。
    ![](../images/models-recipes/enrich-rtcdp/segments_overview.png)
 
 2. 在区段生成器中，左边栏提供对核心区段构建块的访问： 属性、事件和现有细分。 每个构件块都显示在各自的选项卡中。 选择您的启用用户档案的模式所扩展的类，然后浏览并查找您的区段的构建块。
@@ -113,7 +116,7 @@ Adobe Experience Platform Data Science Workspace提供用于创建、评估和�
 4. 在构建细分时，您可以通过观察“细分属性”面板来预览估 *计的细分* 结果。
    ![](../images/models-recipes/enrich-rtcdp/preview_segment.gif)
 
-5. 选择适当 **[!UICONTROL Merge Policy]**&#x200B;的区段，提供名称和可选说明，然后 **[!UICONTROL Save]** 单击以完成新区段。
+5. 选择适当的 **[!UICONTROL 合并策略]**，提供名称和可选说明，然后单 **[!UICONTROL 击保存]** 以完成您的新区段。
    ![](../images/models-recipes/enrich-rtcdp/save_segment.png)
 
 
