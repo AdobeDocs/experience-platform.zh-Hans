@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Azure Blob或Amazon S3源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
+source-git-commit: 9fd00ec198f61843bb9a395103215e5441b23745
 workflow-type: tm+mt
-source-wordcount: '591'
+source-wordcount: '644'
 ht-degree: 1%
 
 ---
@@ -56,18 +56,30 @@ Experience Platform支持从外部存储摄取的以下文件格式：
 
 ## 连接您的Blob或S3帐户
 
-云存储凭据准备就绪后，您可以按照以下步骤创建新的入站基础连接，以将您的Blob或S3帐户链接到平台。
+收集所需凭据后，您可以按照以下步骤创建新的Blob或S3帐户以连接到平台。
 
-登录到 <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> ，然后从左 **侧导航栏** 中选择“源”以访问源工作区。 “目 *录* ”屏幕显示可为其创建入站基本连接的各种源，每个源显示与它们关联的现有基本连接数。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中 *[!UICONTROL 选择“源]* ”以访问“源”工作区。 “ *[!UICONTROL 目录]* ”屏幕显示可为其创建入站帐户的各种源，每个源显示与它们关联的现有帐户和数据流的数量。
 
-在云 *存储* 类别下，选 **择Azure Blob存储** 或 **Amazon S3** ，在屏幕右侧显示一个信息栏。 信息栏提供所选源的简短说明以及视图其文档或与源连接的选项。 要创建新的入站基本连接，请单击“ **连接源”**。
+您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
-![](../../../../images/tutorials/create/s3/s3_sources_catalog.png)
+在“数 *[!UICONTROL 据库]* ”类别 **[!UICONTROL 下]** ，选择Azure Blob **[!UICONTROL 存储或]** Amazon S3 **，单** 击+图标(+)以创建新的Blob或S3连接器。
 
-在输入表单上，为基本连接提供名称、可选说明以及Blob或S3凭据。 最后，单 **击** “连接”，然后允许一些时间建立新的基本连接。
+![目录](../../../../images/tutorials/create/blob/catalog.png)
 
-![](../../../../images/tutorials/create/s3/s3_credentials.png)
+将显 *[!UICONTROL 示“连接到Azure Blob存储]* ”页。 在此页上，您可以使用新凭据或现有凭据。
+
+### 新帐户
+
+如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供连接的名称、可选说明以及Blob或S3凭据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新帐户。
+
+![connect](../../../../images/tutorials/create/blob/new.png)
+
+### 现有帐户
+
+要连接现有帐户，请选择要连接的Blob或S3帐户，然后选择下 **[!UICONTROL 一步]** 以继续。
+
+![现有](../../../../images/tutorials/create/blob/existing.png)
 
 ## 后续步骤
 
-通过本教程，您已建立到Azure Blob或Amazon S3帐户的基本连接。 您现在可以继续阅读下一个教程， [并配置数据流以将数据引入平台](../../dataflow/batch/cloud-storage.md)。
+通过遵循本教程，您已建立到Blob或S3帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md)。
