@@ -4,14 +4,17 @@ solution: Experience Platform
 title: 智能服务概述
 topic: Intelligent Services overview
 translation-type: tm+mt
-source-git-commit: c9d1fca0b14607f83657d5d8a751c2d0cc46bea0
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '428'
+ht-degree: 0%
 
 ---
 
 
 # 智能服务概述
 
-智能服务使营销分析师和从业人员能够在客户体验使用案例中利用人工智能和机器学习的强大功能。 这使营销分析师能够使用业务级配置设置特定于公司需求的预测，而无需数据科学专业知识。 此外，营销从业者可以在Adobe Experience Cloud、Adobe Experience Platform和第三方应用程序中激活预测。
+智能服务使营销分析师和从业人员能够在客户体验使用案例中利用人工智能和机器学习的强大功能。 这使营销分析师能够使用业务级配置设置特定于公司需求的预测，而无需数据科学专业知识。 此外，营销从业人员还可以在 [!DNL Adobe Experience Cloud]、和 [!DNL Adobe Experience Platform]第三方应用程序中激活预测。
 
 以下视频旨在支持您对智能服务的理解。 通过示例业务使用案例，此视频将说明一个高级工作流程，并概述归因AI和客户AI的功能。
 
@@ -19,7 +22,7 @@ source-git-commit: c9d1fca0b14607f83657d5d8a751c2d0cc46bea0
 
 ## 智能服务的优势
 
-基于Adobe Experience Platform的智能服务为负责客户体验的营销人员提供了AI即服务的访问，使任何人都能轻松预测客户行为、衡量活动影响或确保每项投资获得更好的回报。 下面列出了智能服务提供的一些优势。
+以智能服务为基 [!DNL Adobe Experience Platform]础，为负责客户体验的营销人员提供AI即服务的访问，使任何人都能轻松预测客户行为、衡量活动影响或确保每项投资获得更好的回报。 下面列出了智能服务提供的一些优势。
 
 ### 经济高效的上市速度
 
@@ -37,7 +40,7 @@ Adobe拥有AI/ML专业知识和深厚的CXM体验，而Intelligent Services是�
 
 ### 收录
 
-通过Adobe Experience Platform上的体验数据模型(XDM)采集和转换客户数据。 要进一步了解XDM，请访 [问XDM概述](../xdm/home.md)。
+客户数据在上通过体验数据模型(XDM)进行摄取和转换 [!DNL Adobe Experience Platform]。 要进一步了解XDM，请访 [问XDM概述](../xdm/home.md)。
 
 ### 配置
 
@@ -49,7 +52,7 @@ Adobe拥有AI/ML专业知识和深厚的CXM体验，而Intelligent Services是�
 
 ### 采取行动
 
-最后，您可以决定对预测采取什么措施，如消费洞察、在Adobe Experience Cloud中激活应用程序以及构建自定义仪表板。
+最后，您可以决定对预测采取什么操作，如消费洞察、跨平台激活应用程 [!DNL Adobe Experience Cloud]序以及构建自定义仪表板。
 
 ## 后续步骤
 
