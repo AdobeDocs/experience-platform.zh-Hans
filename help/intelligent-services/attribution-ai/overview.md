@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 归因人工智能概述
 topic: Attribution AI
 translation-type: tm+mt
-source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '654'
+ht-degree: 1%
 
 ---
 
@@ -19,7 +22,7 @@ source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
 
 归因人工智能输出可以跨不同维度进行分离，并可以在客户旅程的不同阶段进行利用。 这无需将业务需求转化为机器学习问题、选择算法、培训或部署模型即可完成。
 
-归因AI数据可以来自Adobe（例如Analytics）或非Adobe数据源。
+归因AI数据可以来自Adobe(例如， [!DNL Analytics])或非Adobe数据源。
 
 归因AI支持两类别分数，即算法和基于规则。 算法得分包括增量得分和受影响得分。 基于规则的得分包括“首次触控”、“最后触控”、“线性”、“U形”和“时间衰减”。
 
@@ -57,7 +60,7 @@ source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
 
 ### 其他功能
 
-归因AI还优惠与其他Adobe解决方案（如Adobe Analytics）的集成。 这使您能够使用这些解决方案来利用可自定义的算法模型来评估媒体性能并提供分析见解。
+归因AI还优惠与其他Adobe解决方案的集成，如 [!DNL Adobe Analytics]: 这使您能够使用这些解决方案来利用可自定义的算法模型来评估媒体性能并提供分析见解。
 
 ## 后续步骤
 
