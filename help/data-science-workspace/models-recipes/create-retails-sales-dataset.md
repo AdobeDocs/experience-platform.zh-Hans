@@ -1,31 +1,34 @@
 ---
 keywords: Experience Platform;retail sales recipe;Data Science Workspace;popular topics
 solution: Experience Platform
-title: 创建零售模式和数据集
+title: 创建零售销售模式和数据集
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 91c7b7e285a4745da20ea146f2334510ca11b994
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '526'
+ht-degree: 0%
 
 ---
 
 
-# 创建零售模式和数据集
+# 创建零售销售模式和数据集
 
-本教程为您提供了所有其他Adobe Experience Platform Data Science Workspace教程所需的入门项目和资源。 完成后，您和您的IMS组织的Experience Platform成员将获得零售模式和数据集。
+本教程为您提供了所有其他数据科学工作区教程所需 [!DNL Adobe Experience Platform] 的先决条件和资源。 完成后，您和您的IMS组织在Experience Platform上的成员将获得零售销售模式和数据集。
 
 ## 入门指南
 
-在开始本教程之前，您必须具备以下先决条件：
-- 访问Adobe Experience Platform。 如果您无权访问Experience Platform中的IMS组织，请在继续操作之前与系统管理员联系。
-- 授权进行Experience Platform API调用。 完成 [身份验证并访问Adobe Experience Platform API](../../tutorials/authentication.md) ，获取以下值以成功完成本教程：
+在开始本教程之前，您必须具有以下先决条件：
+- 访问 [!DNL Adobe Experience Platform]。 如果您无权访问Experience Platform中的IMS组织，请在继续操作前与系统管理员联系。
+- 进行Experience Platform API调用的授权。 请完成 [身份验证并访问Adobe Experience Platform](../../tutorials/authentication.md) API教程，获取以下值以成功完成本教程：
    - 授权： `{ACCESS_TOKEN}`
    - x-api-key: `{API_KEY}`
    - x-gw-ims-org-id: `{IMS_ORG}`
    - 客户机密码： `{CLIENT_SECRET}`
    - 客户端证书： `{PRIVATE_KEY}`
-- 零售销售菜谱的示例数据 [和源文件](../pre-built-recipes/retail-sales.md)。 从 [Adobe公共Git存储库下载本教程和其他数据科学工作区教程所需的资源](https://github.com/adobe/experience-platform-dsw-reference/)。
-- [Python >= 2.7](https://www.python.org/downloads/) ，以及以下Python包：
-   - [pip](https://pypi.org/project/pip/)
+- 零售销售处方的示例数 [据和源文件](../pre-built-recipes/retail-sales.md)。 从Adobe公共Git存储库下载本教程和其他数据科学工作区教 [程所需的资源](https://github.com/adobe/experience-platform-dsw-reference/)。
+- [Python >= 2.7](https://www.python.org/downloads/) 和以下Python包：
+   - [画](https://pypi.org/project/pip/)
    - [PyYAML](https://pyyaml.org/)
    - [字典](https://pypi.org/project/dictor/)
    - [JWT](https://pypi.org/project/jwt/)
@@ -39,8 +42,8 @@ source-git-commit: 91c7b7e285a4745da20ea146f2334510ca11b994
 
 ### 配置文件
 
-1. 在Experience Platform教程资源包中，导航到该目录，然 `bootstrap`后使用相应的文 `config.yaml` 本编辑器打开。
-2. 在该部 `Enterprise` 分下，输入以下值：
+1. 在Experience Platform教程资源包中，导航到该目录， `bootstrap`然后使用相 `config.yaml` 应的文本编辑器打开。
+2. 在该部 `Enterprise` 分下输入以下值：
 
    ```yaml
    Enterprise:
@@ -51,7 +54,7 @@ source-git-commit: 91c7b7e285a4745da20ea146f2334510ca11b994
        priv_key_filename: {PRIVATE_KEY}
    ```
 
-3. 编辑在下面示例的部 `Platform` 分下找到的值：
+3. 编辑在“示例”部分下 `Platform` 找到的值，如下所示：
 
    ```yaml
    Platform:
@@ -62,13 +65,13 @@ source-git-commit: 91c7b7e285a4745da20ea146f2334510ca11b994
        kernel_type: Python
    ```
 
-   - `platform_gateway` :API调用的基本路径。 请勿修改此值。
-   - `ims_token` :你 `{ACCESS_TOKEN}` 来这。
-   - `ingest_data` :在本教程中，请将此值设置为，以 `"True"` 便创建零售模式和数据集。 值将仅 `"False"` 创建模式。
-   - `build_recipe_artifacts` :为了在本教程中，请将此值设置为，以 `"False"` 防止脚本生成Recipe对象。
-   - `kernel_type` :Recipe对象的执行类型。 将此值保留 `Python` 为 `build_recipe_artifacts` 设置，否则 `"False"`请指定正确的执行类型。
+   - `platform_gateway` : API调用的基本路径。 请勿修改此值。
+   - `ims_token` : 你 `{ACCESS_TOKEN}` 来这。
+   - `ingest_data` : 在本教程中，请将此值设 `"True"` 置为创建零售销售模式和数据集。 值将仅 `"False"` 创建模式。
+   - `build_recipe_artifacts` : 为在本教程中起作用，请将此值设 `"False"` 置为阻止脚本生成Recipe项目。
+   - `kernel_type` : Recipe对象的执行类型。 将此值保留 `Python` 为 `build_recipe_artifacts` ，否则 `"False"`请指定正确的执行类型。
 
-4. 在该部 `Titles` 分下，为零售销售示例数据提供相应的以下信息，在进行编辑后保存并关闭文件。 示例如下：
+4. 在部分 `Titles` 下，为零售销售示例数据提供相应的以下信息，在编辑到位后保存并关闭文件。 示例如下：
 
    ```yaml
    Titles:
@@ -88,8 +91,8 @@ source-git-commit: 91c7b7e285a4745da20ea146f2334510ca11b994
 
 ### 运行引导脚本
 
-1. 打开您的终端应用程序，然后导航到Experience Platform教程资源目录。
-2. 将目 `bootstrap` 录设置为当前工作路径，并输入以 `bootstrap.py` 下命令运行python脚本：
+1. 打开您的终端应用程序并导航到Experience Platform教程资源目录。
+2. 将目 `bootstrap` 录设置为当前工作路径，并输 `bootstrap.py` 入以下命令运行python脚本：
 
    ```bash
    python bootstrap.py
@@ -99,12 +102,12 @@ source-git-commit: 91c7b7e285a4745da20ea146f2334510ca11b994
 
 ## 后续步骤
 
-成功完成引导脚本后，可在Experience Platform上查看零售销售的输入和输出模式以及数据集。 有关详细 [信息，请参阅预览](./preview-schema-data.md)模式数据教程。
+成功完成引导脚本后，可在Experience Platform上查看零售销售的输入和输出模式和数据集。 有关详细 [信息，请参](./preview-schema-data.md)阅预览模式数据教程。
 
 您还使用提供的引导脚本成功地将零售销售示例数据引入Experience Platform。
 
-要继续使用摄取的数据，请执行以下操作：
+要继续处理所摄取的数据：
 - [使用Jupyter笔记本分析数据](../jupyterlab/analyze-your-data.md)
-   - 使用Data Science Workspace中的Jupyter笔记本电脑访问、探索、可视化和了解您的数据。
+   - 在数据科学工作区中使用Jupyter笔记本，访问、探索、可视化和了解您的数据。
 - [将源文件打包到菜谱中](./package-source-files-recipe.md)
    - 按照本教程学习如何通过将源文件打包到可导入的Recipe文件中，将您自己的模型引入数据科学工作区。
