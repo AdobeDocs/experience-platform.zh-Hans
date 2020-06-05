@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 归因AI用户指南
 topic: User guide
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: 0ea96de956adb5a6c5286433a547772118c43aee
 workflow-type: tm+mt
 source-wordcount: '1430'
 ht-degree: 0%
@@ -52,7 +52,7 @@ ht-degree: 0%
 - **回顾窗口：** 提供一个时间范围，指明在转换事件接触点之前应包含多少天。
 - **触点：** 收件人、个人或cookie级营销事件，用于评估转化的数字或基于收入的影响。
 
-### 定义转换事件
+### 定义转换事件 {#define-conversion-events}
 
 要定义转换事件，您需要为事件指定名称，并通过单击“输入字段名称”下 **拉菜单选择** 事件类型。
 
@@ -144,7 +144,7 @@ ht-degree: 0%
 
 ![时钟图标](./images/user-guide/time_of_day.png)
 
-### 基于区域的建模（可选）
+### 基于区域的建模（可选） {#region-based-modeling-optional}
 
 客户的行为可能因国家／地区和地理区域而有很大不同。 对于全球企业，使用基于国家或基于区域的模型可以提高归因准确性。 添加的每个区域都使用该区域的数据创建新模型。
 
