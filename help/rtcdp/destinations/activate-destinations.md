@@ -4,7 +4,7 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 237ca5fc950b46ae4718850ab1360cdf52b8b112
+source-git-commit: 24e4746b28620210c138a1e803b6afadff79ab30
 workflow-type: tm+mt
 source-wordcount: '889'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 先决条件 {#prerequisites}
 
-要将数据激活到目标，您必须已成 [功连接目标](/help/rtcdp/destinations/assets/connect-destination.png)。 如果尚未这样做，请转到目标目 [录](/help/rtcdp/destinations/destinations-catalog.md)，浏览支持的目标，然后设置一个或多个目标。
+要将数据激活到目标，您必须已成 [功连接目标](/help/rtcdp/destinations/assets/connect-destination-1.png)。 如果尚未这样做，请转到目标目 [录](/help/rtcdp/destinations/destinations-catalog.md)，浏览支持的目标，然后设置一个或多个目标。
 
 ## 激活数据 {#activate-data}
 
