@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 归因AI用户指南
 topic: User guide
 translation-type: tm+mt
-source-git-commit: 3e1e7bea7113b5db6b9bd02ce0dbe8cfd486206c
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '1430'
+ht-degree: 0%
 
 ---
 
@@ -17,7 +20,7 @@ source-git-commit: 3e1e7bea7113b5db6b9bd02ce0dbe8cfd486206c
 
 ## 创建实例
 
-在Adobe Experience Platform UI中，单击左 **侧导** 航中的“服务”。 出现 *服务* 浏览器并显示可用的Adobe智能服务。 在归因AI的容器中，单击 **打开**。
+在UI [!DNL Adobe Experience Platform] 中，单击左 **侧导** 航中的“服务”。 出现 *服务* 浏览器并显示可用的Adobe智能服务。 在归因AI的容器中，单击 **打开**。
 
 ![访问实例](./images/user-guide/open_Attribution_ai.png)
 
@@ -177,6 +180,6 @@ source-git-commit: 3e1e7bea7113b5db6b9bd02ce0dbe8cfd486206c
 
 ## Journey Orchestration
 
-以下视频概述了用于在Attribution AI中创建新实例的端到端工作流程。
+以下视频概述了在Attribution AI中创建新实例的端到端工作流程。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32668?learn=on&quality=12)
