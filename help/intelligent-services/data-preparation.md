@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 准备要在Intelligent Services中使用的数据
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 8e24c7c50d700bc3644ce710f77073e537207a6f
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
 workflow-type: tm+mt
-source-wordcount: '1445'
+source-wordcount: '1437'
 ht-degree: 0%
 
 ---
@@ -191,7 +191,7 @@ ht-degree: 0%
 
 在确定要发送的数据范围后，请与Adobe咨询服务部门联系，帮助将数据映射到模式并将其引入服务。
 
-如果您拥有Adobe Experience Platform订阅并希望自己映射和摄取数据，请按照以下部分中概述的步骤操作。
+如果您有 [!DNL Adobe Experience Platform] 订阅并希望自己映射和摄取数据，请按照以下部分中概述的步骤操作。
 
 ### 使用Adobe Experience Platform
 
@@ -217,7 +217,7 @@ ht-degree: 0%
 
 #### 向数据集添加主标识命名空间标记
 
-如果您从Adobe受众管理器、Adobe Analytics或其他外部源导入数据，则必须向数据集 `primaryIdentityNameSpace` 添加一个标记。 这可以通过向Catalog Service API发出PATCH请求来完成。
+如果导入来自、或 [!DNL Adobe Audience Manager]其 [!DNL Adobe Analytics]他外部源的数据，则必须向数据集 `primaryIdentityNameSpace` 添加标记。 这可以通过向Catalog Service API发出PATCH请求来完成。
 
 如果从本地CSV文件中摄取数据，可跳到有关映射和摄取数据的下 [一节](#ingest)。
 
