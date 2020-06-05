@@ -4,56 +4,59 @@ solution: Experience Platform
 title: Jupyter笔记本中的查询服务
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 1447196da7dbf59c1f498de40f12ed74c328c0e6
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '799'
+ht-degree: 1%
 
 ---
 
 
 # Jupyter笔记本中的查询服务
 
-Adobe Experience Platform将查询服务作为标准功能集成到JupyterLab中，使您能在数据科学工作区中使用结构化查询语(SQL)。
+[!DNL Adobe Experience Platform] 通过将查询服务作为标准功能集成到JupyterLab中，允许您在数据科学工作区中使用结构化查询语言(SQL)。
 
-本教程演示了用于探索、转换和分析Adobe Analytics数据的常见用例的SQL查询示例。
+本教程演示了用于浏览、转换和分析数据的常见用例的SQL查询 [!DNL Adobe Analytics] 示例。
 
 ## 入门指南
 
 在开始本教程之前，您必须具有以下先决条件：
 
-- 访问Adobe Experience Platform。 如果您无权访问Experience Platform中的IMS组织，请在继续操作之前与系统管理员联系
+- 访问 [!DNL Adobe Experience Platform]。 如果您无权访问Experience Platform中的IMS组织，请在继续操作之前与系统管理员联系
 
-- Adobe Analytics数据集
+- 数据 [!DNL Adobe Analytics] 集
 
 - 对本教程中使用的下列主要概念的有效理解：
    - [体验数据模型(XDM)和XDM系统](../../xdm/home.md)
    - [查询服务](../../query-service/home.md)
    - [查询服务SQL语法](../../query-service/sql/overview.md)
-   - Adobe Analytics
+   - [!DNL Adobe Analytics]
 
 ## 访问JupyterLab和查询服务 {#access-jupyterlab-and-query-service}
 
-1. 在 [Experience Platform](https://platform.adobe.com)中，从 **[!UICONTROL Notebooks]** 左侧导航列导航到。 请稍等片刻，JupyterLab将加载。
+1. 在 [Experience Platform](https://platform.adobe.com)，从左 **[!UICONTROL 侧导航]** 列导航到“笔记本”。 请稍等片刻，JupyterLab将加载。
 
    ![](../images/jupyterlab/query/jupyterlab_launcher.png)
 
-   > [!NOTE] 如果未自动显示新的启动器选项卡，则通过单击，然后选择以打开新的启动 **[!UICONTROL File]** 器选项卡 **[!UICONTROL New Launcher]**。
+   > [!NOTE] 如果未自动显示新的启动器选项卡，请通过单击文件打开新的启动器选项卡， **[!UICONTROL 然后选]** 择新 **[!UICONTROL 建启动器]**。
 
-2. 在“启动器”选项卡 **[!UICONTROL Blank]** 中，单击Python 3环境中的图标以打开空笔记本。
+2. 在“启动器”选项卡中， **[!UICONTROL 单击]** Python 3环境中的“空白”图标以打开空笔记本。
 
    ![](../images/jupyterlab/query/blank_notebook.png)
 
    > [!NOTE] Python 3目前是笔记本电脑中唯一受支持的查询服务环境。
 
-3. 在左侧选择边栏上，单击图 **[!UICONTROL Data]** 标并多次，单击 **[!UICONTROL Datasets]** 目录以列表所有数据集。
+3. 在左侧选择边栏上，单击“数 **[!UICONTROL 据]** ”图标，多次单 **[!UICONTROL 击“数据集]** ”目录以列表所有数据集。
 
    ![](../images/jupyterlab/query/dataset.png)
 
-4. 查找要浏览的Adobe Analytics数据集并右键单击列表，单 **[!UICONTROL Query Data in Notebook]** 击以在空笔记本中生成SQL查询。
+4. 查找要 [!DNL Adobe Analytics] 浏览的数据集并右键单击列表，单击“笔记本 **[!UICONTROL 中的查询数据]** ”，在空笔记本中生成SQL查询。
 
 5. 单击包含该函数的第一个生成的单 `qs_connect()` 元格，并通过单击播放按钮来执行它。 此函数在笔记本实例与查询服务之间建立连接。
 
    ![](../images/jupyterlab/query/execute.png)
 
-6. 从第二个生成的SQL查询下复制Adobe Analytics数据集名称，它将是后面的值 `FROM`。
+6. 从第二个生 [!DNL Adobe Analytics] 成的SQL查询中复制数据集名称，它将是后面的值 `FROM`。
 
    ![](../images/jupyterlab/query/dataset_name.png)
 
@@ -78,21 +81,22 @@ Adobe Experience Platform将查询服务作为标准功能集成到JupyterLab中
    target_day = "01"
    ```
 
-   - `target_table` : 您的Adobe Analytics数据集的名称。
+   - `target_table` : 数据集的 [!DNL Adobe Analytics] 名称。
    - `target_year` : 目标数据的特定年份。
    - `target_month` : 目标的特定月份。
    - `target_day` : 目标数据的特定日期。
+
    >[!NOTE] 您可以随时更改这些值。 执行此操作时，请确保为要应用的更改执行变量单元格。
 
 ## 查询数据 {#query-your-data}
 
-在单个笔记本单元格中输入以下SQL查询。 通过单击查询的单元格，然后单击该按钮，执行 **[!UICONTROL play]** 该操作。 成功的查询结果或错误日志显示在执行的单元格下方。
+在单个笔记本单元格中输入以下SQL查询。 通过单击查询的单元格，然后单击播放按 **[!UICONTROL 钮]** 。 成功的查询结果或错误日志显示在执行的单元格下方。
 
-当笔记本处于长期非活动状态时，笔记本与查询服务之间的连接可能会中断。 在这种情况下，请单击右上角 **[!UICONTROL Power]** 的按钮，重新启动JupyterLab。
+当笔记本处于长期非活动状态时，笔记本与查询服务之间的连接可能会中断。 在这种情况下，请单击右上角的 **[!UICONTROL Power]** （电源）按钮，重新启动JupyterLab。
 
 ![](../images/jupyterlab/query/restart_button.png)
 
-笔记本内核将重置，但单元格将保留，重 **[!UICONTROL all]** 新运行单元格以继续离开的位置。
+笔记本内核将重置，但单元格将保留，重 **[!UICONTROL 新运行]** 所有单元格以继续您离开的位置。
 
 ### 每小时访客计数 {#hourly-visitor-count}
 
