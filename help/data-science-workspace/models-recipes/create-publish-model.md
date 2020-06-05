@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 创建并发布机器学习模型演练
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '1582'
+ht-degree: 0%
 
 ---
 
@@ -15,7 +18,7 @@ source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 假装您拥有在线零售网站。 当您的客户在您的零售网站上购物时，您希望向他们提供个性化的产品建议，以展示您的业务优惠的各种其他产品。 在您网站的存在期间，您不断收集客户数据，并希望以某种方式利用这些数据生成个性化的产品推荐。
 
-Adobe Experience Platform Data Science Workspace提供了使用预建产品推荐菜谱实现您 [目标的方法](../pre-built-recipes/product-recommendations.md)。 按照本教程，了解如何访问和了解您的零售数据、创建和优化机器学习模型以及在数据科学工作区中生成洞察。
+[!DNL Adobe Experience Platform] 数据科学工作区提供了使用预建产品推荐菜谱实现 [目标的方法](../pre-built-recipes/product-recommendations.md)。 按照本教程，了解如何访问和了解您的零售数据、创建和优化机器学习模型以及在数据科学工作区中生成洞察。
 
 本教程介绍了数据科学工作区的工作流程，并涵盖了创建机器学习模型的以下步骤：
 
@@ -28,7 +31,7 @@ Adobe Experience Platform Data Science Workspace提供了使用预建产品推�
 
 在开始本教程之前，您必须具有以下先决条件：
 
-* 访问Adobe Experience Platform。 如果您无权访问Experience Platform中的IMS组织，请在继续操作前与系统管理员联系。
+* 访问 [!DNL Adobe Experience Platform]。 如果您无权访问Experience Platform中的IMS组织，请在继续操作前与系统管理员联系。
 
 * Enablement Assets。 请联系您的客户代表，为您提供以下项目。
    * 推荐方法
@@ -49,20 +52,20 @@ Adobe Experience Platform Data Science Workspace提供了使用预建产品推�
 
 ## 准备数据 {#prepare-your-data}
 
-要创建能够向客户提供个性化产品建议的机器学习模型，必须分析您网站上先前的客户购买情况。 本节探讨如何通过Adobe Analytics将此数据引入平台，以及如何将该数据转换为功能数据集以供机器学习模型使用。
+要创建能够向客户提供个性化产品建议的机器学习模型，必须分析您网站上先前的客户购买情况。 本部分探讨如何通过将此数据引入平 [!DNL Adobe Analytics]台，以及如何将该数据转换为要由机器学习模型使用的特征数据集。
 
 ### 浏览数据并了解模式
 
-1. 登录到 [Adobe Experience Platform](https://platform.adobe.com/) ，单击 **[!UICONTROL Datasets]** 以列表所有现有数据集并选择要浏览的数据集。 在这种情况下，Analytics数据集 **Golden Data Set postValues**。
+1. 登录Adobe [Experience Platform](https://platform.adobe.com/) ，单击 **[!UICONTROL Dataset]** （数据集）以列表所有现有数据集并选择要浏览的数据集。 在这种情况下，Analytics数据集 **Golden Data Set postValues**。
    ![](../images/models-recipes/model-walkthrough/datasets_110.png)
-2. 选 **[!UICONTROL Preview Dataset]** 择右上角附近的示例记录，然后单击 **[!UICONTROL Close]**。
+2. 选择 **[!UICONTROL 右上方]** 的预览数据集以检查示例记录，然后单击 **[!UICONTROL 关闭]**。
    ![](../images/models-recipes/model-walkthrough/golden_data_set_110.png)
 3. 选择右边栏中模式下的链接以视图数据集的模式，然后返回数据集详细信息页面。”
    ![](../images/models-recipes/model-walkthrough/golden_schema_110.png)
 
 其他数据集已预先填充了批，以便进行预览。 您可以重复上述步骤来视图这些数据集。
 
-| 数据集名称 | 模式 | 描述 |
+| 数据集名称 | 架构 | 描述 |
 | ----- | ----- | ----- |
 | 黄金数据集postValues | 黄金数据集模式 | 分析网站的源数据 |
 | Recommendations输入数据集 | 建议输入模式 | Analytics数据会使用功能管道转换为培训数据集。 此数据用于培训产品推荐机器学习模型。 `itemid` 与该 `userid` 客户所购买的产品相对应。 |
@@ -76,11 +79,11 @@ Adobe Experience Platform Data Science Workspace提供了使用预建产品推�
 
 ### 浏览产品推荐菜谱
 
-1. 在Adobe Experience Platform中，从左侧导 **[!UICONTROL Models]** 航列导航到，然后单击顶 **[!UICONTROL Recipes]** 部的以视图组织的可用菜谱列表。
+1. 在中 [!DNL Adobe Experience Platform]，从左 **[!UICONTROL 侧导航列导航]** 到“模型”，然后单击顶 **[!UICONTROL 部的菜谱]** ，以视图组织的一列表可用菜谱。
    ![](../images/models-recipes/model-walkthrough/browse_recipes.png)
-2. 单击提供的名称， **[!UICONTROL Recommendations Recipe]** 找到并打开它。
+2. 单击提供的推荐菜 **[!UICONTROL 谱名称]** ，找到并打开它。
    ![](../images/models-recipes/model-walkthrough/recommendations_recipe_110.png)
-3. 在右边栏中，单击以 **[!UICONTROL Recommendations Input Schema]** 视图为菜谱提供动力的模式。 模式字 **[!UICONTROL itemId]** 段 **[!UICONTROL userId]** 和在特定时间()购&#x200B;**[!UICONTROL interactionType]**&#x200B;买()的产品相对应&#x200B;**[!UICONTROL timestamp]**。 按照相同的步骤查看字段 **[!UICONTROL Recommendations Output Schema]**。
+3. 在右侧边栏中，单击“ **[!UICONTROL 推荐输入模式]** ”以视图为菜谱提供动力的模式。 模式字 **[!UICONTROL 段itemId]****[!UICONTROL 和userId与客户在特定时间(timestamp]** ID)购买的产品(**[!UICONTROL interactionType]******)相对应。 按照相同的步骤查看“Recommendations Output（建议输出）” **[!UICONTROL 模式的字段]**。
    ![](../images/models-recipes/model-walkthrough/preview_schemas.png)
 
 您现在已审核了产品推荐方法所需的输入和输出模式。 您现在可以继续阅读下一节，了解如何创建、培训和评估产品推荐模型。
@@ -93,13 +96,13 @@ Adobe Experience Platform Data Science Workspace提供了使用预建产品推�
 
 模型是处方的一个实例，使您能够大规模地对数据进行培训和评分。
 
-1. 在Adobe Experience Platform中，从左 **[!UICONTROL Models]** 侧导航列导航至该列，然 **[!UICONTROL Recipes]** 后单击页面顶部以显示您组织的所有可用菜谱的列表。
+1. 在中 [!DNL Adobe Experience Platform]，从左 **[!UICONTROL 侧导航列导航]** 到“模型”，然后单击页面顶 **[!UICONTROL 部的菜谱]** ，以显示组织中所有可用菜谱的列表。
    ![](../images/models-recipes/model-walkthrough/browse_recipes.png)
-2. 通过单击提供的 **[!UICONTROL Recommendations Recipe]** 名称，输入菜谱的概述页面，找到并打开该菜谱。 单 **[!UICONTROL Create a Model]** 击中心（如果没有现有模型）或菜谱概述页面右上方的。
+2. 通过单击处方名称 **[!UICONTROL 并输入]** “处方”的概述页面，查找并打开提供的推荐处方。 单 **[!UICONTROL 击中心]** （如果没有现有模型）或从“处方概览”页的右上方创建模型。
    ![](../images/models-recipes/model-walkthrough/recommendations_recipe_110.png)
-3. 将显示培训的可用输入数据集的列表，选择 **[!UICONTROL Recommendations Input Dataset]** 并单击 **[!UICONTROL Next]**。
+3. 将显示培训的可用输入数据集的列表，选择“ **[!UICONTROL Recommendations Input Dataset]** ”，然后单 **[!UICONTROL 击“Next]**”。
    ![](../images/models-recipes/model-walkthrough/select_dataset.png)
-4. 为模型提供名称，例如“产品推荐模型”。 此时会列出模型的可用配置，其中包含模型的默认培训和评分行为的设置。 由于这些配置特定于您的组织，因此无需进行任何更改。 查看配置并单击 **[!UICONTROL Finish]**。
+4. 为模型提供名称，例如“产品推荐模型”。 此时会列出模型的可用配置，其中包含模型的默认培训和评分行为的设置。 由于这些配置特定于您的组织，因此无需进行任何更改。 查看配置，然后单击 **[!UICONTROL 完成]**。
    ![](../images/models-recipes/model-walkthrough/configure_model.png)
 5. 模型现已创建，新生成的培训运行中 *会显* 示模型的“概述”页面。 默认情况下，创建模型时会生成培训运行。
    ![](../images/models-recipes/model-walkthrough/model_post_creation.png)
@@ -108,13 +111,13 @@ Adobe Experience Platform Data Science Workspace提供了使用预建产品推�
 
 ### 使用自定义超参数训练模型
 
-1. 在“模 *型概述* ”页面上， **[!UICONTROL Train]** 单击右上方附近以创建新的培训运行。 选择创建“模型”时使用的同一输入数据集，然后单击 **[!UICONTROL Next]**。
+1. 在“模 *型概述* ”页上， **[!UICONTROL 单击右]** 上方附近的“培训”以创建新的培训运行。 选择创建模型时使用的同一输入数据集，然后单击“下 **[!UICONTROL 一步”]**。
    ![](../images/models-recipes/model-walkthrough/training_select_dataset.png)
 2. 此时将 *显示* “配置”页。 您可以在此配置培训运行的 **[!UICONTROL num_recommendations]** 值，也称为超级参数。 经过训练和优化的模型将根据训练结果使用性能最佳的超参数。
 
    无法学习超参数，因此必须在进行培训之前分配超参数。 调整超参数可能会改变训练模型的精度。 由于优化模型是一个迭代过程，因此在获得满意的评估之前可能需要多次培训运行。
 
-   >[!TIP] 设置为 **[!UICONTROL num_recommendations]** 10。
+   >[!TIP] 将 **[!UICONTROL num_recommendations]** 设置为10。
 
    ![](../images/models-recipes/model-walkthrough/configure_hyperparameter.png)
 3. 新培训运行完成后，模型评估图表上将显示一个额外的数据点，这可能需要几分钟时间。
@@ -137,12 +140,12 @@ Adobe Experience Platform Data Science Workspace提供了使用预建产品推�
 ### 评分和生成洞察
 
 1. 在产品推荐模型 *概述* 页面上，单击性能最佳的培训运行的名称，其中具有最高的召回率和精确度值。
-2. 在培训运行详细信息页面的右上角，单击 **[!UICONTROL Score]**。
-3. 选择该 **[!UICONTROL Recommendations Input Dataset]** 数据集作为评分输入数据集，该数据集与您创建模型并执行其培训运行时使用的数据集相同。 Then, click **[!UICONTROL Next]**.
+2. 在培训运行详细信息页面的右上方，单击“得分 **[!UICONTROL ”]**。
+3. 选择Recommendations **[!UICONTROL 输入数据集]** ，作为评分输入数据集，该数据集与您创建Model并执行其培训运行时使用的数据集相同。 然后，单击“下 **[!UICONTROL 一步]**”。
    ![](../images/models-recipes/model-walkthrough/scoring_input.png)
-4. 选择评 **[!UICONTROL Recommendations Output Dataset]** 分输出数据集。 评分结果将作为批处理存储在此数据集中。
+4. 选择Recommendations **[!UICONTROL 输出数据集]** ，作为评分输出数据集。 评分结果将作为批处理存储在此数据集中。
    ![](../images/models-recipes/model-walkthrough/scoring_output.png)
-5. 查看评分配置。 这些参数包含先前选择的输入和输出数据集以及相应的模式。 单击 **[!UICONTROL Finish]** 以开始计分运行。 运行可能需要几分钟才能完成。
+5. 查看评分配置。 这些参数包含先前选择的输入和输出数据集以及相应的模式。 单击 **[!UICONTROL 完成]** ，开始评分运行。 运行可能需要几分钟才能完成。
    ![](../images/models-recipes/model-walkthrough/scoring_configure.png)
 
 
@@ -150,9 +153,9 @@ Adobe Experience Platform Data Science Workspace提供了使用预建产品推�
 
 评分运行成功完成后，您将能够预览结果并视图生成的洞察。
 
-1. 在评分运行页面上，单击已完成的评分运行，然 **[!UICONTROL Preview Scoring Results Dataset]** 后单击右边栏。
+1. 在评分运行页面上，单击已完成的评分运行，然后单击右边 **[!UICONTROL 栏上的预览评分结果]** 数据集。
    ![](../images/models-recipes/model-walkthrough/score_complete.png)
-2. 在预览表中，每行都包含针对特定客户的产品推荐，分别标记为 **[!UICONTROL recommendations]** 和 **[!UICONTROL userId]** 标签。 由于 **[!UICONTROL num_recommendations]** 示例屏幕截图中的“超级参数”设置为10，因此每行推荐最多可包含10个产品标识，用数字符号(#)分隔。
+2. 在预览表中，每行都包含特定客户的产品推荐，分别标记为 **[!UICONTROL 推荐]****[!UICONTROL 和userId]** 。 由于 **[!UICONTROL 在示例屏幕截图中]** ,num_recommendations Hyperparameter设置为10，因此每行推荐最多可包含10个产品标识，用数字符号(#)分隔。
    ![](../images/models-recipes/model-walkthrough/preview_score_results.png)
 
 ## 后续步骤 {#next-steps}
