@@ -4,49 +4,52 @@ solution: Experience Platform
 title: 使用Flow Service API创建Microsoft Dynamics连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6c86cec91774f3444dc90042cd7ad5c71429aabd
+source-git-commit: 72c1d53295d5c4204c02959c857edc06f246534c
+workflow-type: tm+mt
+source-wordcount: '729'
+ht-degree: 1%
 
 ---
 
 
 # 使用Flow Service API创建Microsoft Dynamics连接器
 
-Flow Service用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+Flow Service用于在Adobe Experience Platform内收集和集中来自不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
 本教程使用Flow Service API指导您完成将Platform连接到Microsoft Dynamics（以下简称“Dynamics”）帐户以收集CRM数据的步骤。
 
-如果您希望使用Experience Platform中的用户界面， [Dynamics或Salesforce源连接器UI教程将提供执行类似操作的分步说明](../../../ui/create/crm/dynamics-salesforce.md) 。
+如果您希望使用Experience Platform中的用户界面，Dynamics [源连接器UI教程](../../../ui/create/crm/dynamics.md) ，提供了执行类似操作的分步说明。
 
 ## 入门指南
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-* [来源](../../../../home.md):Experience Platform允许从各种来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。
-* [沙箱](../../../../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [来源](../../../../home.md): Experience Platform允许从各种来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。
+* [沙箱](../../../../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和改进数字体验应用程序。
 
 以下各节提供您需要了解的其他信息，以便使用Flow Service API将平台成功连接到Dynamics帐户。
 
 ### 收集所需的凭据
 
-要使Flow Service连接到Dynamics，您必须为以下连接属性提供值：
+要使流服务连接到Dynamics，必须为以下连接属性提供值：
 
-| 凭证 | 描述 |
+| 凭据 | 描述 |
 | ---------- | ----------- |
-| `serviceUri` | 您的Dynamics实例的服务URL。 |
+| `serviceUri` | Dynamics实例的服务URL。 |
 | `username` | 您的Dynamics用户帐户的用户名。 |
-| `password` | 您的Dynamics帐户的密码。 |
+| `password` | Dynamics帐户的密码。 |
 
 有关快速入门的更多信息，请访 [问此Dynamics文档](https://docs.microsoft.com/en-us/powerapps/developer/common-data-service/authenticate-oauth)。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这些包括路径、必需的标题和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑难解答指南 [中有关如何阅读示例API调用的部分](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的部分。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须首先完成身份验证 [教程](../../../../../tutorials/authentication.md)。 完成身份验证教程后，将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
+要调用平台API，您必须先完成身份验证 [教程](../../../../../tutorials/authentication.md)。 完成身份验证教程后，将提供所有Experience Platform API调用中每个所需标头的值，如下所示：
 
-* 授权：承载人 `{ACCESS_TOKEN}`
+* 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -54,7 +57,7 @@ Experience Platform中的所有资源（包括属于流服务的资源）都与�
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标题：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
 * 内容类型： `application/json`
 
@@ -62,7 +65,7 @@ Experience Platform中的所有资源（包括属于流服务的资源）都与�
 
 在将平台连接到Dynamics帐户之前，必须验证Dynamics是否存在连接规范。 如果连接规范不存在，则无法建立连接。
 
-每个可用源都有其自己唯一的连接规范集，用于描述连接器属性，如身份验证要求。 您可以通过执行GET请求和使用查询参数来查找Dynamics的连接规范。
+每个可用源都有其自己的唯一连接规范集，用于描述连接器属性，如身份验证要求。 您可以通过执行GET请求和使用查询参数来查找Dynamics的连接规范。
 
 **API格式**
 
@@ -88,7 +91,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回Dynamics的连接规范，包括其唯一标识符(`id`)。 下一步中需要此ID才能创建基本连接。
+成功的响应会返回Dynamics的连接规范，包括其唯一标识符(`id`)。 下一步需要此ID才能创建基本连接。
 
 ```json
 {
@@ -139,7 +142,7 @@ curl -X GET \
 
 ## 创建基本连接
 
-基本连接指定一个源并包含该源的凭据。 每个Dynamics帐户只需要一个基本连接，因为它可用于创建多个源连接器以导入不同的数据。
+基本连接指定源并包含该源的凭据。 每个Dynamics帐户只需要一个基本连接，因为它可用于创建多个源连接器以导入不同的数据。
 
 执行以下POST请求以创建基本连接。
 
@@ -179,14 +182,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `auth.params.serviceUri` | 与您的Dynamics实例关联的服务URI。 |
+| `auth.params.serviceUri` | 与Dynamics实例关联的服务URI。 |
 | `auth.params.username` | 与您的Dynamics帐户关联的用户名。 |
 | `auth.params.password` | 与您的Dynamics帐户关联的密码。 |
 | `connectionSpec.id` | 在上一步 `id` 中检索的Dynamics帐户的连接规范。 |
 
 **响应**
 
-成功的响应包含基本连接的唯一标识符(`id`)。 在下一个教程中浏览数据时需要此ID。
+成功的响应包含基连接的唯一标识符(`id`)。 在下一个教程中浏览数据时需要此ID。
 
 ```json
 {
@@ -197,4 +200,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过本教程，您已使用API为Dynamics帐户创建了基本连接，并且作为响应体的一部分获得了唯一ID。 在下一个教程中，您可以使用此基本连接ID，因为您将学习如何 [使用Flow Service API浏览CRM系统](../../explore/crm.md)。
+通过本教程，您已使用API为Dynamics帐户创建了基本连接，并且作为响应主体的一部分获得了唯一ID。 在下一个教程中，您可以使用此基本连接ID，因为您将学习 [如何使用流服务API浏览CRM系统](../../explore/crm.md)。
