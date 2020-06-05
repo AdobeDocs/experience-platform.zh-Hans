@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 客户人工智能概述
 topic: Customer AI overview
 translation-type: tm+mt
-source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+workflow-type: tm+mt
+source-wordcount: '487'
+ht-degree: 0%
 
 ---
 
@@ -32,7 +35,7 @@ source-git-commit: ec0de4c8775367be9e6016529471254ad9f8f453
 
 - 不应使用客户人工智能来预测动态定价或客户将购买的价格点。
 - 客户人工智能无法确定提供优惠是否会使客户更有可能购买物品。 虽然您可能决定根据倾向得分发送折扣优惠，但它不一定是转化这些客户的最佳方式。
-- 客户人工智能不是产品推荐工具。 如果您有数千个SKU，请不要将客户AI用作真实产品推荐解决方案(如Adobe目标)的代理。
+- 客户人工智能不是产品推荐工具。 如果您有数千个SKU，请不要将客户AI用作实际产品推荐解决方案(如 [!DNL Adobe Target])。
 - 客户人工智能无法预测客户在购买旅程的哪个阶段，例如，他们处于“认知”、“考虑”、“购买”或“保留”阶段。
 - 不要使用客户人工智能来确定将来可能购买产品发布的客户。 这要求客户人工智能过去必须具备某些成功事件，才能根据您的数据成功培训机器学习算法。
 
