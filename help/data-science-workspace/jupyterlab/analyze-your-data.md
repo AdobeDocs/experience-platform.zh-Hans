@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用笔记本分析数据
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 37213f29e8099f8587cde9eb66f9b75de3ad8a3a
+source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
 workflow-type: tm+mt
-source-wordcount: '1746'
+source-wordcount: '1729'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 介绍了以下概念：
 
-- **JupyterLab:** [JupyterLab是](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) Project Jupyter的下一代基于Web的界面，与Adobe Experience Platform紧密集成。
+- **JupyterLab:** [JupyterLab是](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) Project Jupyter的下一代基于Web的界面，并紧密集成到其中 [!DNL Adobe Experience Platform]。
 - **批：** 数据集由批量组成。 批是在一段时间内收集的一组数据，并作为单个单元一起处理。 将数据添加到数据集时会创建新批。
 - **数据访问SDK（已弃用）:** 数据访问SDK现已弃用。 请使用平 [台SDK](../authoring/platform-sdk.md) 指南。
 
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 ### 创建新笔记本
 
-在Adobe Experience Platform UI中，单击顶部菜单中的“数据科学”选项卡，转到“数据科学工作区”。 在此页中，单击将打开JupyterLab启动器的JupyterLab选项卡。 您应当看到一个类似于此的页面。
+在UI [!DNL Adobe Experience Platform] 中，单击顶部菜单中的“数据科学”选项卡，转到“数据科学工作区”。 在此页中，单击将打开JupyterLab启动器的JupyterLab选项卡。 您应当看到一个类似于此的页面。
 
 ![](../images/jupyterlab/analyze-data/jupyterlab_launcher.png)
 
@@ -52,7 +52,7 @@ ht-degree: 0%
 
 >[!NOTE] 已 `data_access_sdk_python` 弃用，不再推荐。 要转换代码， [请参阅将数据访问SDK转换](../authoring/platform-sdk.md) 为平台SDK教程。 下面的步骤仍然适用于本教程。
 
-我们将从Adobe Experience Platform内部访问数据，从外部访问数据。 我们将使用库 `data_access_sdk_python` 访问内部数据，如数据集和XDM模式。 对于外部数据，我们将使用熊猫蟒蛇图书馆。
+我们将从内部访问数据，从 [!DNL Adobe Experience Platform] 外部访问数据。 我们将使用库 `data_access_sdk_python` 访问内部数据，如数据集和XDM模式。 对于外部数据，我们将使用熊猫蟒蛇图书馆。
 
 #### 外部数据
 
@@ -70,7 +70,7 @@ ht-degree: 0%
 
 #### 体验平台数据
 
-现在，我们将重点介绍如何访问Experience Platform数据。
+现在，我们将重点介绍如何访问 [!DNL Experience Platform] 数据。
 
 ##### 按数据集ID
 
@@ -96,9 +96,9 @@ df = reader.load(data_set_id="xxxxxxxx", ims_org="xxxxxxxx@AdobeOrg")
 df.head()
 ```
 
-如果您正在使用除Python之外的其他内核，请参 [阅本页](https://github.com/adobe/acp-data-services-dsw-reference/wiki/Accessing-Data-on-the-Platform) ，访问Adobe Experience Platform上的数据。
+如果您正在使用除Python之外的其他内核，请参 [阅本页](https://github.com/adobe/acp-data-services-dsw-reference/wiki/Accessing-Data-on-the-Platform) ，访问上的数据 [!DNL Adobe Experience Platform]。
 
-选择可执行单元格，然后在工具栏中按播放按钮将运行可执行代码。 输出将 `head()` 是一个表，其中数据集的键为列，数据集中的前n行为。 `head()` 接受整数参数以指定要输出的行数。 默认情况下，此值为5。
+选择可执行单元格，然后在工具栏中按播放按钮将运行可执行代码。 其输出 `head()` 将是一个表，其中数据集的键为列，数据集中的前n行为。 `head()` 接受整数参数以指定要输出的行数。 默认情况下，此值为5。
 
 ![](../images/jupyterlab/analyze-data/datasetreader_head.png)
 
@@ -190,7 +190,7 @@ df.describe()
 
 ## 后续步骤
 
-本教程讲述如何在数据科学工作区中创建新的Jupyter笔记本，以及如何从外部以及从Adobe Experience Platform访问数据。 具体来说，我们进行了以下几步：
+本教程讲述如何在数据科学工作区中创建新的Jupyter笔记本，以及如何从外部和从中访问数据 [!DNL Adobe Experience Platform]。 具体来说，我们进行了以下几步：
 - 创建新的Jupyter笔记本
 - 访问数据集和模式
 - 浏览数据集
