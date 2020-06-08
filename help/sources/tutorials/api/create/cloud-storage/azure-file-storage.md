@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用Flow Service API创建Azure文件存储连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3a882656f93b86093b356be5dbc12b3e4321cfb8
+source-git-commit: 0ed2ed3b08f262100746f255a78c248a1748eb5e
 workflow-type: tm+mt
-source-wordcount: '636'
+source-wordcount: '622'
 ht-degree: 1%
 
 ---
@@ -75,7 +75,8 @@ POST /connections
 
 **请求**
 
-要创建Azure文件存储连接，其唯一连接规范ID必须作为POST请求的一部分提供。 Azure文件存储的连接规范ID为 `be5ec48c-5b78-49d5-b8fa-7c89ec4569b8`。
+以下请求创建新的Azure文件存储连接，该连接由负载中提供的属性进行配置：
+
 
 ```shell
 curl -X POST \
