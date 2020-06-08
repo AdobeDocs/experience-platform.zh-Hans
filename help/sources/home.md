@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform源连接器概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 22425c33e39cf788eec6fd0a54f65fb89fdaff4f
+source-git-commit: f181d544e93f0924bf4c239fad93d78c974afdc0
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
@@ -51,6 +51,7 @@ Experience Platform支持从第三方广告系统接收数据。 有关特定源
 - [Azure文件存储连接器](connectors/cloud-storage/azure-file-storage.md)
 - [FTP和SFTP连接器](connectors/cloud-storage/ftp-sftp.md)
 - [Google Cloud存储连接器](connectors/cloud-storage/google-cloud-storage.md)
+- [HDFS连接器](connectors/cloud-storage/hdfs.md)
 
 ### 客户关系管理(CRM)
 
@@ -76,6 +77,7 @@ Experience Platform支持从第三方数据库中摄取数据。 有关特定源
 - [Azure Data Explorer连接器](connectors/databases/data-explorer.md)
 - [Azure Synapse Analytics连接器](connectors/databases/synapse-analytics.md)
 - [Azure表存储连接器](connectors/databases/ats.md)
+- [CouchBase连接器](connectors/databases/couchbase.md)
 - [Google BigQuery连接器](connectors/databases/bigquery.md)
 - [GreenPlum连接器](connectors/databases/greenplum.md)
 - [HP Vertica连接器](connectors/databases/hp-vertica.md)
