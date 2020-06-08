@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Azure文件存储连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: b8ebe57482fdd10ccd8bdcf1a86009a373ea579e
+source-git-commit: 0ed2ed3b08f262100746f255a78c248a1748eb5e
 workflow-type: tm+mt
-source-wordcount: '177'
+source-wordcount: '176'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # （测试版）Azure文件存储连接器
 
-Adobe Experience Platform为AWS、Google Cloud Platform和Azure等云提供商提供本机连接。 您可以将这些系统中的数据引入平台。
+Adobe Experience Platform为AWS、Google Cloud Platform和Azure等云提供商提供本机连接，让您能够从这些系统中获取数据。
 
 云存储源可以将您自己的数据导入平台，而无需下载、格式化或上传。 摄取的数据可格式化为XDM JSON、XDM镶木地板或分隔。 流程的每个步骤都集成到源工作流中。 平台允许您通过批量从Azure文件存储导入数据。
 
