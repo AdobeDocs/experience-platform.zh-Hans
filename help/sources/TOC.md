@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform Source Connectors帮助
 translation-type: tm+mt
-source-git-commit: 328b897c54453f23ad7b68fb2a288712cb4fe538
+source-git-commit: bfbaaf0367b601c4ad521f42cd5ff6bdd25a8274
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '586'
 ht-degree: 0%
 
 ---
@@ -33,6 +33,7 @@ ht-degree: 0%
       - [Azure文件存储连接器](connectors/cloud-storage/azure-file-storage.md)
       - [FTP和SFTP连接器](connectors/cloud-storage/ftp-sftp.md)
       - [Google Cloud存储连接器](connectors/cloud-storage/google-cloud-storage.md)
+      - [HDFS连接器](connectors/cloud-storage/hdfs.md)
    - CRM {#crm}
       - [Microsoft Dynamics连接器](connectors/crm/ms-dynamics.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
@@ -46,6 +47,7 @@ ht-degree: 0%
       - [Azure Data Explorer连接器](connectors/databases/data-explorer.md)
       - [Azure Synapse Analytics连接器](connectors/databases/synapse-analytics.md)
       - [Azure表存储连接器](connectors/databases/ats.md)
+      - [CouchBase连接器](connectors/databases/couchbase.md)
       - [Google BigQuery连接器](connectors/databases/bigquery.md)
       - [GreenPlum连接器](connectors/databases/greenplum.md)
       - [HP Vertica连接器](connectors/databases/hp-vertica.md)
@@ -74,6 +76,7 @@ ht-degree: 0%
          - [Azure事件集线器连接器](tutorials/api/create/cloud-storage/eventhub.md)
          - [Azure文件存储连接器](tutorials/api/create/cloud-storage/azure-file-storage.md)
          - [Google Cloud存储连接器](tutorials/api/create/cloud-storage/google.md)
+         - [HDFS连接器](tutorials/api/create/cloud-storage/hdfs.md)
          - [SFTP连接器](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
          - [HubSpot连接器](tutorials/api/create/crm/hubspot.md)
@@ -89,6 +92,7 @@ ht-degree: 0%
          - [Azure Data Explorer连接器](tutorials/api/create/databases/data-explorer.md)
          - [Azure Synapse Analytics连接器](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure表存储连接器](tutorials/api/create/databases/ats.md)
+         - [CouchBase连接器](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery连接器](tutorials/api/create/databases/bigquery.md)
          - [GreenPlum连接器](tutorials/api/create/databases/greenplum.md)
          - [HP Vertica连接器](tutorials/api/create/databases/hp-vertica.md)
