@@ -4,10 +4,10 @@ solution: Experience Platform
 title: JupyterLab用户指南
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
 workflow-type: tm+mt
-source-wordcount: '3349'
-ht-degree: 5%
+source-wordcount: '2773'
+ht-degree: 6%
 
 ---
 
@@ -119,9 +119,7 @@ JupyterLab中的主要工作区域允许您将文档和其他活动排列到选�
 
 ### 内核 {#kernels}
 
-笔记本电脑内核是处理笔记本电脑单元的语言专用计算引擎。 除了Python,JupyterLab还在R、PySpark和Spark中提供其他语言支持。 打开笔记本文档时，将启动关联的内核。 当执行笔记本单元时，内核执行计算并产生可能消耗大量CPU和内存资源的结果。 请注意，在内核关闭之前，不会释放已分配的内存。
-
->[!IMPORTANT] 从Spark 2.3更新到Spark 2.4的JupyterLab Launcher。Spark 2.4笔记本不再支持Spark和PySpark内核。
+笔记本电脑内核是处理笔记本电脑单元的语言专用计算引擎。 除了Python,JupyterLab还在R、PySpark和Spark(Scala)中提供其他语言支持。 打开笔记本文档时，将启动关联的内核。 当执行笔记本单元时，内核执行计算并产生可能消耗大量CPU和内存资源的结果。 请注意，在内核关闭之前，不会释放已分配的内存。
 
 某些特性和功能仅限于下表所述的特定内核：
 
@@ -129,8 +127,6 @@ JupyterLab中的主要工作区域允许您将文档和其他活动排列到选�
 | :----: | :--------------------------: | :-------------------- |
 | **Python** | 是 | <ul><li>Sensei ML框架</li><li>目录服务</li><li>查询服务</li></ul> |
 | **R** | 是 | <ul><li>Sensei ML框架</li><li>目录服务</li></ul> |
-| **PySpark —— 已弃用** | 否 | <ul><li>Sensei ML框架</li><li>目录服务</li></ul> |
-| **Spark —— 已弃用** | 否 | <ul><li>Sensei ML框架</li><li>目录服务</li></ul> |
 | **斯卡拉** | 否 | <ul><li>Sensei ML框架</li><li>目录服务</li></ul> |
 
 ### 内核会话 {#kernel-sessions}
@@ -142,59 +138,6 @@ JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活
 如果内核长时间处于关闭或非活动状态，则无 **内核！** 显示实心圆。 通过单击内核状态并选择相应的内核类型来激活内核，如下所示：
 
 ![](../images/jupyterlab/user-guide/switch_kernel.gif)
-
-### PySpark/Spark执行资源 {#execution-resource}
-
->[!IMPORTANT]
->将Spark 2.3过渡为Spark 2.4后，Spark和PySpark内核均已弃用。
->
->新的PySpark 3(Spark 2.4)笔记本电脑使用Python3 Kernel。 有关更新现有 [笔记本电脑的详细教程，请参阅将Pyspark 3(Spark 2.3)转换为PySpark 3(Spark 2.4](../recipe-notebook-migration.md) )指南。
->
->新的Spark笔记本应利用Scala内核。 有关更新现有笔记本 [电脑的详细教程，请参阅将Spark 2.3转换为Scala(Spark 2.4](../recipe-notebook-migration.md) )指南。
-
-PySpark和Spark内核允许您使用configure命令()在PySpark或Spark笔记本中配置Spark群集资源，并`%%configure`提供一列表配置。 理想情况下，这些配置是在Spark应用程序初始化之前定义的。 在Spark应用程序处于活动状态时修改配置需要在命令()之后添加一个额外的强制标志，该命令(`%%configure -f`)将重新启动应用程序以便应用更改，如下所示：
-
->[!CAUTION]
->PySpark 3(Spark 2.4)和Scala(Spark 2.4)笔记本不再支持 `%%` sparkmagic。 不能再使用以下操作：
-* `%%help`
-* `%%info`
-* `%%cleanup`
-* `%%delete`
-* `%%configure`
-* `%%local`
-
-```python
-%%configure -f 
-{
-    "numExecutors": 10,
-    "executorMemory": "8G",
-    "executorCores":4,
-    "driverMemory":"2G",
-    "driverCores":2,
-    "conf": {
-        "spark.cores.max": "40"
-    }
-}
-```
-
-下表列出了所有可配置属性：
-
-| 属性 | 描述 | 类型 |
-| :------- | :---------- | :-----:|
-| 一种 | 会话类型（必需） | `session kind`_ |
-| proxyUser | 要模拟运行此会话的用户（例如bob） | 字符串 |
-| 罐 | 要放置在java上的文件 `classpath` | 路径列表 |
-| pyFiles | 要放置在 `PYTHONPATH` | 路径列表 |
-| 文件 | 要放置在执行器工作目录中的文件 | 路径列表 |
-| 驱动程序内存 | 驱动程序的内存（MB或GB）（例如1000M、2G） | 字符串 |
-| driverCores | 驱动程序使用的芯数（仅限HAIR模式） | int |
-| 执行器内存 | 执行器的内存（以兆字节或千兆字节为单位）（例如1000M、2G） | 字符串 |
-| executorCores | 执行器使用的核数 | int |
-| numExecutors | 执行者数量（仅限HAIR模式） | int |
-| 档案 | 要在执行器工作目录中解压缩的存档（仅限HAIR模式） | 路径列表 |
-| 队列 | 要提交的HAIR队列（仅限CHAIR模式） | 字符串 |
-| name | 应用程序的名称 | 字符串 |
-| 会议 | Spark配置属性 | 键的映射=val |
 
 ### 启动器 {#launcher}
 
@@ -252,30 +195,6 @@ PySpark和Spark内核允许您使用configure命令()在PySpark或Spark笔记本
         <td >否</td>
         <td >否</td>
         <td >否</td>
-    </tr>
-    <tr>
-        <th  ><strong>PySpark 3（Spark 2.3 —— 已弃用）</strong></th>
-        <td >是</td>
-        <td >是</td>
-        <td >否</td>
-        <td >否</td>
-        <td >否</td>
-        <td >否</td>
-        <td >是</td>
-        <td >是</td>
-        <td >否</td>
-    </tr>
-    <tr>
-        <th ><strong>Spark（Spark 2.3 —— 已弃用）</strong></th>
-        <td >是</td>
-        <td >是</td>
-        <td >否</td>
-        <td >否</td>
-        <td >否</td>
-        <td >否</td>
-        <td >否</td>
-        <td >否</td>
-        <td >是</td>
     </tr>
       <tr>
         <th  ><strong>PySpark 3(Spark 2.4)</strong></th>
@@ -377,28 +296,9 @@ df <- dataset_reader$limit(100L)$offset(10L)$read()
 
 * `{DATASET_ID}`: 要访问的数据集的唯一标识
 
-### 从PySpark/Spark/Scala中的数据集中读取
+### 从PySpark/Scala中的数据集中读取
 
->[!IMPORTANT]
->将Spark 2.3过渡为Spark 2.4后，Spark和PySpark内核均已弃用。
->
->新的PySpark 3(Spark 2.4)笔记本电脑使用Python3 Kernel。 如果您希望转 [换现有Spark 2.3代码，请参阅将Pyspark 3(Spark 2.3)转换为PySpark 3(Spark 2.4](../recipe-notebook-migration.md) )的指南。 新笔记本应遵循 [以下PySpark 3(Spark 2.4)](#pyspark2.4) 示例。
->
->新的Spark笔记本应利用Scala内核。 如果您希望转换 [现有的Spark 2.3代码，请参阅将Spark 2.3转换为Scala](../recipe-notebook-migration.md) (Spark 2.4)的指南。 新笔记本应遵循 [以下Scala(Spark 2.4)示例](#spark2.4) 。
-
-打开活动的PySpark或Spark笔记本，从左侧提要栏展开 **“多次** ”选项卡，然后单击“数 **据集** ”以视图可用数据集的列表。 右键单击要访问的数据集列表，然后单击“在笔记本 **中浏览数据”**。 将生成以下代码单元格：
-
-#### PySpark（Spark 2.3 —— 已弃用）
-
-```python
-# PySpark 3 (Spark 2.3 - deprecated)
-
-pd0 = spark.read.format("com.adobe.platform.dataset").\
-    option('orgId', "YOUR_IMS_ORG_ID@AdobeOrg").\
-    load("{DATASET_ID}")
-pd0.describe()
-pd0.show(10, False)
-```
+打开活动的PySpark或Scala笔记本时，从左侧提要栏 **展开** “数据浏览器”选项卡，并单 **击多次集** ,视图可用数据集的列表。 右键单击要访问的数据集列表，然后单击“在笔记本 **中浏览数据”**。 将生成以下代码单元格：
 
 #### PySpark(Spark 2.4) {#pyspark2.4}
 
@@ -410,20 +310,6 @@ pd0.show(10, False)
 %dataset read --datasetId {DATASET_ID} --dataFrame pd0
 pd0.describe()
 pd0.show(10, False)
-```
-
-#### Spark（Spark 2.3 —— 已弃用）
-
-```scala
-// Spark (Spark 2.3 - deprecated)
-
-import com.adobe.platform.dataset.DataSetOptions
-val dataFrame = spark.read.
-    format("com.adobe.platform.dataset").
-    option(DataSetOptions.orgId, "YOUR_IMS_ORG_ID@AdobeOrg").
-    load("{DATASET_ID}")
-dataFrame.printSchema()
-dataFrame.show()
 ```
 
 #### Scala(Spark 2.4) {#spark2.4}
@@ -560,34 +446,9 @@ df <- dataset_reader$
 
 ### 在PySpark/Spark中过滤ExperienceEvent数据
 
->[!IMPORTANT]
->将Spark 2.3过渡为Spark 2.4后，Spark和PySpark内核均已弃用。
->
->新的PySpark 3(Spark 2.4)笔记本电脑使用Python3 Kernel。 有关转换现有代 [码的更多信息，请参阅将Pyspark 3(Spark 2.3)转换为PySpark 3(Spark 2.4](../recipe-notebook-migration.md) )指南。 如果要创建新的PySpark笔记本，请使 [用PySpark 3(spark 2.4)示例](#pyspark3-spark2.4) ，以过滤ExperienceEvent数据。
->
->新的Spark笔记本应利用Scala内核。 有关转换现有代 [码的更多信息，请参阅将Spark 2.3转换为Scala](../recipe-notebook-migration.md) (Spark 2.4)指南。 如果要创建新的Spark笔记本，请使 [用Scala(spark 2.4)示例](#scala-spark) ，以过滤ExperienceEvent数据。
-
-在PySpark或Spark笔记本中访问和过滤ExperienceEvent数据集时，需要您提供数据集标识(`{DATASET_ID}`)、组织的IMS标识以及定义特定时间范围的过滤器规则。 过滤时间范围是使用函数定义的， `spark.sql()`其中函数参数是SQL查询字符串。
+在PySpark或Scala笔记本中访问和过滤ExperienceEvent数据集时，需要您提供数据集标识(`{DATASET_ID}`)、组织的IMS标识以及定义特定时间范围的过滤器规则。 过滤时间范围是使用函数定义的， `spark.sql()`其中函数参数是SQL查询字符串。
 
 以下单元格将ExperienceEvent数据集筛选为2019年1月1日至2019年12月31日之间仅存的数据。
-
-#### PySpark 3（Spark 2.3 —— 已弃用）
-
-```python
-# PySpark 3 (Spark 2.3 - deprecated)
-
-pd = spark.read.format("com.adobe.platform.dataset").\
-    option("orgId", "YOUR_IMS_ORG_ID@AdobeOrg").\
-    load("{DATASET_ID}")
-
-pd.createOrReplaceTempView("event")
-timepd = spark.sql("""
-    SELECT *
-    FROM event
-    WHERE timestamp > CAST('2019-01-01 00:00:00.0' AS TIMESTAMP)
-    AND timestamp < CAST('2019-12-31 23:59:59.9' AS TIMESTAMP)
-""")
-```
 
 #### PySpark 3(Spark 2.4) {#pyspark3-spark2.4}
 
@@ -607,26 +468,6 @@ timepd = spark.sql("""
     AND timestamp < CAST('2019-12-31 23:59:59.9' AS TIMESTAMP)
 """)
 timepd.show()
-```
-
-#### Spark（Spark 2.3 —— 已弃用）
-
-```scala
-// Spark (Spark 2.3 - deprecated)
-
-import com.adobe.platform.dataset.DataSetOptions
-val dataFrame = spark.read.
-    format("com.adobe.platform.dataset").
-    option(DataSetOptions.orgId, "YOUR_IMS_ORG_ID@AdobeOrg").
-    load("{DATASET_ID}")
-
-dataFrame.createOrReplaceTempView("event")
-val timedf = spark.sql("""
-    SELECT * 
-    FROM event 
-    WHERE timestamp > CAST('2019-01-01 00:00:00.0' AS TIMESTAMP)
-    AND timestamp < CAST('2019-12-31 23:59:59.9' AS TIMESTAMP)
-""")
 ```
 
 #### Scala(Spark 2.4) {#scala-spark}
