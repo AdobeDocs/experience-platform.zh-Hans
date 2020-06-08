@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform产品文档
 topic: getting started
 translation-type: tm+mt
-source-git-commit: a5268c2d31d356ce479bdcc143050cd513259235
+source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
 workflow-type: tm+mt
-source-wordcount: '6973'
+source-wordcount: '6961'
 ht-degree: 0%
 
 ---
@@ -212,7 +212,7 @@ ht-degree: 0%
 
 **环境:** 在Experience Platform Launch中，环境是一组部署说明，指定构建的主机投放和文件格式。 库必须与环境配对，才能构建。
 
-**事件** 在Experience Platform Launch中，事件是特定类型的规则组件，在客户端设备上发生，用于开始执行规则的触发器。
+**事件** 在Experience Platform Launch中，事件是特定类型的规则组件，是在客户端设备上发生的用于开始执行规则的触发器。
 
 **事件:** 事件是与用户档案关联的行为数据。
 
@@ -318,7 +318,7 @@ ht-degree: 0%
 
 ## M
 
-**机器学习(ML):** 机器学习是一个研究领域，它使计算机能够在不明确编程的情况下学习。
+**机器学习(ML):** 机器学习是一个研究领域，它使计算机能够学习，而无需明确编程。
 
 **机器学习模型：** 机器学习模型是机器学习配方的实例，该配方使用历史数据和配置进行培训，以便为业务用例进行解决。 在Adobe Data Science Workspace中，机器学习模型称为菜谱。
 
@@ -418,7 +418,7 @@ ht-degree: 0%
 
 **表示：** 在决策服务中，表示法是渠道使用的信息，如显示优惠的位置或语言。
 
-**资源：** 在Experience Platform Launch中，资源是一个通用术语，它引用了Launch用户可在客户端环境中配置的选项，包括扩展、数据元素和规则。
+**资源：** 在Experience Platform Launch中，资源是一个通用术语，它指的是Launch用户可以在客户端环境中配置的选项，包括扩展、数据元素和规则。
 
 **基于角色的访问控制:** 基于角色的访问控制使管理员能够向Experience Platform的用户分配访问权限和权限。 权限包括视图和／或使用Experience Platform功能的能力，如创建沙箱、定义模式和管理数据集。
 
@@ -426,7 +426,7 @@ ht-degree: 0%
 
 **规则组件：** 在Experience Platform Launch中，规则组件是构成规则的事件、条件和操作。
 
-**运行时：** 运行时为机器学习菜谱指定运行时环境。 Spark和PySpark运行时允许直接上传二进制菜谱源(.jar)文件。 Python、R和Tensorflow运行时支持将URL输入到菜谱源的Docker图像。
+**运行时：** 运行时为机器学习菜谱指定运行时环境。 Python、R、Spark、PySpark和Tensorflow运行时支持将URL输入到菜谱源的文档处理者图像。
 
 [返回页首](#adobe-experience-platform-glossary)
 
