@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 将源文件打包到菜谱中
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+workflow-type: tm+mt
+source-wordcount: '1106'
+ht-degree: 0%
 
 ---
 
@@ -35,24 +38,24 @@ Docker图像允许开发人员将应用程序与其所需的所有部件（如�
 
 内置的Docker图像将使用在菜谱创建工作流程中提供给您的凭据推送到Azure容器注册表。
 
-要获取您的Azure容器注册表凭据，请登 <a href="https://platform.adobe.com" target="_blank">录Adobe Experience Platform</a>。 在左侧导航列上，导航到 **[!UICONTROL Workflows]**。 选择 **[!UICONTROL Import Recipe]** 后，选择 **[!UICONTROL Launch]**。 请参阅下面的屏幕快照。
+要获取您的Azure容器注册表凭据，请登 <a href="https://platform.adobe.com" target="_blank">录Adobe Experience Platform</a>。 在左侧导航列中，导航到 **[!UICONTROL 工作流]**。 选择 **[!UICONTROL 导入菜谱]** ，然后选择 **[!UICONTROL 启动]**。 请参阅下面的屏幕快照。
 
 ![](../images/models-recipes/package-source-files/import.png)
 
-此时将 *打开* “配置”页。 提供适当 *的处方名*（例如“零售销售处方”），并（可选）提供说明或文档URL。 完成后，单击 **[!UICONTROL Next]**。
+此时将 *打开* “配置”页。 提供适当 *的处方名*（例如“零售销售处方”），并（可选）提供说明或文档URL。 完成后，单击“下 **[!UICONTROL 一步]**”。
 
 ![](../images/models-recipes/package-source-files/configure.png)
 
-选择相应的 *运行时*，然后选择 **[!UICONTROL Classification]** 类型 *选项*。 完成后，将生成您的Azure容器注册表凭据。
+选择适当的 *运行时*，然后选择类 **[!UICONTROL 型的]** “分 *类”*。 完成后，将生成您的Azure容器注册表凭据。
 
 >[!NOTE]
 >*类型&#x200B;*，是机器学习问题的类，它是为菜谱设计的，经过培训后，用来帮助定制对培训运行的评估。
 
 >[!TIP]
->- 对于Python菜谱，请选择运 **[!UICONTROL Python]** 行时。
->- 对于R菜谱，请选择运 **[!UICONTROL R]** 行时。
->- 对于PySpark菜谱，请选择运 **[!UICONTROL PySpark]** 行时。 自动填充对象类型。
->- 对于Scala菜谱，请选择运 **[!UICONTROL Spark]** 行时。 自动填充对象类型。
+>- 对于Python菜谱，选择 **[!UICONTROL Python]** runtime。
+>- 对于R菜谱，请选 **[!UICONTROL 择]** R运行时。
+>- 对于PySpark菜谱，请选 **[!UICONTROL 择PySpark]** 运行时。 自动填充对象类型。
+>- 对于Scala菜谱，请选择 **[!UICONTROL Spark]** runtime。 自动填充对象类型。
 
 
 ![](../images/models-recipes/package-source-files/docker-creds.png)
@@ -193,46 +196,3 @@ git clone https://github.com/adobe/experience-platform-dsw-reference.git
 
 - [在UI中导入打包的菜谱](./import-packaged-recipe-ui.md)
 - [使用API导入打包的菜谱](./import-packaged-recipe-api.md)
-
-## 构建二进制文件（已弃用）
-
->[!CAUTION]
-> 新的PySpark和Scala方法中不支持二进制文件，并且设置为在将来的版本中删除。 在使用PySpark [和Scala时](#docker-based-model-authoring) ，请遵循Docker工作流。 以下工作流仅适用于Spark 2.3菜谱。
-
-### 构建PySpark二进制文件（已弃用）
-
-如果尚未这样做，请使用以下命令将github存储库克隆到本地系统上：
-
-```BASH
-git clone https://github.com/adobe/experience-platform-dsw-reference.git
-```
-
-导航到本地系统上的克隆存储库，并运行以下命令以构建导入PySpark菜 `.egg` 谱所需的文件：
-
-```BASH
-cd recipes/pyspark
-./build.sh
-```
-
-文件 `.egg` 将在文件夹中 `dist` 生成。
-
-您现在可以继续执行下 [一步操作](#next-steps)。
-
-#### 构建Scala二进制文件（已弃用）
-
-如果尚未执行此操作，请运行以下命令将Github存储库克隆到本地系统：
-
-```BASH
-git clone https://github.com/adobe/experience-platform-dsw-reference.git
-```
-
-要构建用 `.jar` 于导入Scala菜谱的对象，请导航到克隆的存储库，然后按照以下步骤操作：
-
-```BASH
-cd recipes/scala/
-./build.sh
-```
-
-目录中 `.jar` 会找到生成的具有依赖项的 `/target` 对象。
-
-您现在可以继续执行下 [一步操作](#next-steps)。
