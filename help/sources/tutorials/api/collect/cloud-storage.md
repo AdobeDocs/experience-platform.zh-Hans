@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 通过源连接器和API收集云存储数据
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4a66be0b49bdcd765fd5dcbd0e646d35df54c7e4
+source-git-commit: 2a8e8f2deffca06782f0ad9b8154ee763c05f06d
 workflow-type: tm+mt
-source-wordcount: '1688'
+source-wordcount: '1689'
 ht-degree: 1%
 
 ---
@@ -668,7 +668,7 @@ curl -X POST \
 - [实时客户用户档案概述](../../../../profile/home.md)
 - [数据科学工作区概述](../../../../data-science-workspace/home.md)
 
-## 附录
+## 附录 {#appendix}
 
 以下部分列表不同的云存储源连接器及其连接规范。
 
@@ -683,4 +683,5 @@ curl -X POST \
 | Azure事件集线器(事件集线器) | `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 | Azure文件存储 | `be5ec48c-5b78-49d5-b8fa-7c89ec4569b8` |
 | Google Cloud存储 | `32e8f412-cdf7-464c-9885-78184cb113fd` |
+| HDFS | `54e221aa-d342-4707-bcff-7a4bceef0001` |
 | SFTP | `bf367b0d-3d9b-4060-b67b-0d3d9bd06094` |
