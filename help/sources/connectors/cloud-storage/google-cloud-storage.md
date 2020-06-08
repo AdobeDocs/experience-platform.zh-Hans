@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Google Cloud存储连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 256a193e56e69078d1c01c622656f0b1a18e73ff
+source-git-commit: 0ed2ed3b08f262100746f255a78c248a1748eb5e
 workflow-type: tm+mt
-source-wordcount: '377'
+source-wordcount: '376'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Google Cloud存储连接器
 
-Adobe Experience Platform为AWS、Google Cloud Platform和Azure等云提供商提供本机连接。 您可以将这些系统中的数据引入平台。
+Adobe Experience Platform为AWS、Google Cloud Platform和Azure等云提供商提供本机连接，让您能够从这些系统中获取数据。
 
 云存储源可以将您自己的数据导入平台，而无需下载、格式化或上传。 摄取的数据可格式化为XDM JSON、XDM镶木地板或分隔。 流程的每个步骤都集成到源工作流中。 平台允许您通过批量方式从Google Cloud存储导入数据。
 
