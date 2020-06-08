@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用Flow Service API创建Google AdWords连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 00f785577999d2ec3147a3cc2b8edd1028be2471
+source-git-commit: 0ed2ed3b08f262100746f255a78c248a1748eb5e
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '632'
 ht-degree: 1%
 
 ---
@@ -74,7 +74,8 @@ POST /connections
 
 **请求**
 
-要创建Google AdWords连接，其唯一连接规范ID必须作为POST请求的一部分提供。 Google AdWords的连接规范ID为 `221c7626-58f6-4eec-8ee2-042b0226f03b`。
+以下请求创建新的AdWords连接，该连接由有效负荷中提供的属性进行配置：
+
 
 ```shell
 curl -X POST \
