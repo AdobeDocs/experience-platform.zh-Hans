@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 数据科学工作区疑难解答指南
 topic: Troubleshooting
 translation-type: tm+mt
-source-git-commit: 1447196da7dbf59c1f498de40f12ed74c328c0e6
+source-git-commit: e77b76bdcfa5137d9bd77400b15f2fe8db3b7c0b
+workflow-type: tm+mt
+source-wordcount: '704'
+ht-degree: 0%
 
 ---
 
@@ -35,7 +38,7 @@ source-git-commit: 1447196da7dbf59c1f498de40f12ed74c328c0e6
 
 ![chrome advanced](./images/faq/toggle-off.png)
 
->[!NOTE] 或者，您也可以禁用第三方Cookie和白名 [单*。]ds.adobe.net
+>[!NOTE] 或者，您也可以禁用第三方cookie并添加 [*。]ds.adobe.net转到允许列表。
 
 导览至地址栏中的“chrome://flags/”。 使用右侧的下拉菜单 *搜索并禁用标题为* “默认SameSite by cookies”的标志。
 
@@ -61,7 +64,7 @@ source-git-commit: 1447196da7dbf59c1f498de40f12ed74c328c0e6
 
 ## 为什么在JupyterLab中上传或删除文件时，我会看到“403禁止”消息？
 
-如果您的浏览器启用了广告阻止软件（如Ghostery或AdBlock Plus），则域“\*.adobe.net”必须在每个广告阻止软件中列入白名单，JupyterLab才能正常运行。 这是因为JupyterLab虚拟机在与Experience Platform域不同的域上运行。
+如果您的浏览器启用了广告阻止软件（如Ghostery或AdBlock Plus），则必须允许每个广告阻止软件中的域“\*.adobe.net”,JupyterLab才能正常运行。 这是因为JupyterLab虚拟机在与Experience Platform域不同的域上运行。
 
 ## 为什么我的Jupyter笔记本的某些部分看起来变乱了，或者没有作为代码呈现？
 
