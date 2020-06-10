@@ -4,9 +4,9 @@ seo-title: Google Ad Manager目标
 description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的广告服务平台，它使出版商能够通过视频和移动应用程序管理其网站上广告的显示。 '
 seo-description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的广告服务平台，它使出版商能够通过视频和移动应用程序管理其网站上广告的显示。 '
 translation-type: tm+mt
-source-git-commit: 121ae74e9c352b1f6fc12093d815e711ebd817b8
+source-git-commit: dc5ee796ca390d06fc8e08bd6c30e88a0d96dd53
 workflow-type: tm+mt
-source-wordcount: '588'
+source-wordcount: '599'
 ht-degree: 0%
 
 ---
@@ -32,13 +32,13 @@ Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是G
 
 ## 先决条件
 
-### 白名单
+### 允许列表
 
 >[!NOTE]
 >
->在Adobe实时CDP中设置您的第一个Google Ad Manager目标之前，必须填写白名单。 在创建目标之前，请确保Google已完成下面描述的白名单过程。
+>在Adobe实时CDP中设置您的第一个Google Ad Manager目标之前，允许列表是必需的。 在创建目标之前，请确保Google已完成下面描述的允许列表过程。
 
-在Adobe实时CDP中创建Google Ad Manager目标之前，您必须联系Google，要求将Adobe列为白名单数据提供者，并将您的帐户列入白名单。 联系Google并提供以下信息：
+在Adobe实时CDP中创建Google Ad Manager目标之前，您必须联系Google，让Adobe承担允许的数据提供者列表，并将您的帐户添加到允许的列表。 联系Google并提供以下信息：
 
 * **帐户ID** : 这是Adobe在Google上的帐户ID。 要获取此ID，请与Adobe客户服务或Adobe代表联系。
 * **客户ID** : 这是Adobe在Google上的客户帐户ID。 要获取此ID，请与Adobe客户服务或Adobe代表联系。
@@ -52,6 +52,7 @@ Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是G
    ![连接Google Ad Manager目标](/help/rtcdp/destinations/assets/google-1-destination.png)
 
 2. 在创建目标工作流中，填写目 [!UICONTROL 标的基本] 信息。 <br>
+
    ![基本信息Google Ad Manager](/help/rtcdp/destinations/assets/google-1-basic-information.png)
 * **[!UICONTROL 名称]**: 填写此目标的首选名称。
 * **[!UICONTROL 描述]**: 可选。 例如，您可以提到您使用此目标的活动。
