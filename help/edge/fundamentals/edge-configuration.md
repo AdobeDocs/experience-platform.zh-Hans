@@ -4,9 +4,9 @@ seo-title: Experience Platform Web SDK的边缘配置
 description: '了解如何配置Experience Platform Edge Network。 '
 seo-description: '了解如何配置Experience Platform Edge Network。 '
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 2d58f7f95c6ad125e66856350aee2f29a0499061
 workflow-type: tm+mt
-source-wordcount: '883'
+source-wordcount: '886'
 ht-degree: 2%
 
 ---
@@ -24,7 +24,7 @@ Adobe Experience Platfrom Web SDK的配置分为两个位置。 SDK [中的](con
 
 >[!NOTE]
 >
->无论客户是否将Launch用作标签管理器，白名单客户都可以使用边缘配置工具。 此外，用户需要在Launch中具有“开发”权限。 有关更多 [详细信息](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/user-permissions.html) ，请参阅启动文档中的用户权限文章。
+>无论客户是否使用Launch作为标签管理器，边缘配置工具都可在允许列表上供客户使用。 此外，用户需要在Launch中具有“开发”权限。 有关更多 [详细信息](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/user-permissions.html) ，请参阅启动文档中的用户权限文章。
 
 单击屏幕右上角的“UICONTROL **[新边缘配置]** ”可创建边缘配置。 提供名称和说明后，系统会要求您为每个环境提供默认设置。
 
