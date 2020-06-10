@@ -4,17 +4,17 @@ seo-title: 'Adobe Experience Platform Web SDK快速开始 '
 description: 使用Experience Platform Web SDK收集数据的快速开始指南
 seo-description: 使用Experience Platform Web SDK收集数据的快速开始指南
 translation-type: tm+mt
-source-git-commit: 7c5d4306f9964553cf48a208166fce265dcdd94d
+source-git-commit: 2d58f7f95c6ad125e66856350aee2f29a0499061
 workflow-type: tm+mt
-source-wordcount: '511'
-ht-degree: 3%
+source-wordcount: '515'
+ht-degree: 5%
 
 ---
 
 
 # 欢迎
 
-本指南引导您通过不同方式设置Adobe Experience Platform Web SDK。 要能够使用此功能，您需要将其列入白名单。 如果您想继续等待列表，请联系您的客户经理。
+本指南引导您通过不同方式设置Adobe Experience Platform Web SDK。 要能够使用此功能，您需要处于允许列表。 如果您想继续等待列表，请联系您的客户经理。
 
 - 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经拥有Analytics的CNAME，则应使用该CNAME。 在开发中测试无需CNAME即可正常工作，但在开始生产之前您需要CNAME
 - 有权使用Adobe Experience Platform Data Platform。  如果您尚未购买Platform，我们将为您提供Experience Platform Data Services Foundation，以便在SDK中以有限方式使用，不收取任何额外费用。
@@ -26,7 +26,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->您的组织必须列入此功能的白名单。 请联系您的CSM，让列表参与最终的白名单。
+>您的组织必须处于允许列表才能使用该功能。 请联系您的CSM以接受允许列表。
 
 ## 准备模式
 
@@ -92,7 +92,7 @@ alloy("sendEvent", {
 
 在数据流动后，您可以执行以下操作：
 
-- [构建模式](https://docs.adobe.com/content/help/en/experience-platform/xdm/schema/composition.html)
+- [构建模式](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/schema/composition.html)
 - [了解调试](../fundamentals/debugging.md)
 - 了解如何 [个性化体验](../fundamentals/rendering-personalization-content.md)
 - 了解如何将数据发送到多个解决方案
