@@ -4,9 +4,9 @@ seo-title: Google广告目标
 description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 seo-description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 translation-type: tm+mt
-source-git-commit: 121ae74e9c352b1f6fc12093d815e711ebd817b8
+source-git-commit: dc5ee796ca390d06fc8e08bd6c30e88a0d96dd53
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '544'
 ht-degree: 0%
 
 ---
@@ -34,15 +34,15 @@ Google Ads（以前称为Google AdWords）是一种在线广告服务，允许�
 
 ### 现有Google Ads帐户
 
-谷歌暂停了任何与第三方供应商集成的新Google Ads。 您必须已与Google Ads集成，才能执行下一节中的白名单步骤，并在Adobe实时CDP中创建Google Ads目标。
+谷歌暂停了任何与第三方供应商集成的新Google Ads。 您必须已与Google Ads集成，才能执行下一节中的允许列表步骤，并在Adobe实时CDP中创建Google Ads目标。
 
-### 白名单
+### 允许列表
 
 >[!NOTE]
 >
->在Adobe实时CDP中设置您的第一个Google Ads目标之前，必须填写白名单。 在创建目标之前，请确保Google已完成下面描述的白名单过程。
+>在Adobe实时CDP中设置您的第一个Google Ads目标之前，允许列表是必需的。 在创建目标之前，请确保Google已完成下面描述的允许列表过程。
 
-在Adobe实时CDP中创建Google Ads目标之前，您必须联系Google，要求将Adobe列入白名单并将您的帐户列入白名单。 联系Google并提供以下信息：
+在Adobe实时CDP中创建Google Ads目标之前，您必须联系Google，让Adobe承担允许的数据提供商列表，并将您的帐户添加到允许的列表。 联系Google并提供以下信息：
 
 * **帐户ID** : 这是Adobe在Google上的帐户ID。 要获取此ID，请与Adobe客户服务或Adobe代表联系。
 * **客户ID** : 这是Adobe在Google上的客户帐户ID。 要获取此ID，请与Adobe客户服务或Adobe代表联系。
@@ -55,6 +55,7 @@ Google Ads（以前称为Google AdWords）是一种在线广告服务，允许�
    ![连接Google广告目标](/help/rtcdp/destinations/assets/google-2-destination.png)
 
 2. 在创建目标工作流中，填写目 [!UICONTROL 标的基本] 信息。 <br>
+
    ![Google Ads的基本信息](/help/rtcdp/destinations/assets/google-2-basic-information.png)
 * **[!UICONTROL 名称]**: 填写此目标的首选名称。
 * **[!UICONTROL 描述]**: 可选。 例如，您可以提到您使用此目标的活动。
