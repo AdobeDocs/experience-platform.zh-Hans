@@ -4,9 +4,9 @@ seo-title: Google Display & Video 360 Destination
 description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。
 seo-description: 'Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。 '
 translation-type: tm+mt
-source-git-commit: 121ae74e9c352b1f6fc12093d815e711ebd817b8
+source-git-commit: dc5ee796ca390d06fc8e08bd6c30e88a0d96dd53
 workflow-type: tm+mt
-source-wordcount: '574'
+source-wordcount: '586'
 ht-degree: 0%
 
 ---
@@ -32,13 +32,13 @@ Display &amp; Video 360（以前称为DoubleClick Bid Manager）是一种工具�
 
 ## 先决条件
 
-### 白名单
+### 允许列表
 
 >[!NOTE]
 >
->在Adobe实时CDP中设置您的第一个Google Display &amp; Video 360目标之前，必须填写白名单。 在创建目标之前，请确保Google已完成下面描述的白名单过程。
+>在Adobe实时CDP中设置您的第一个Google Display &amp; Video 360目标之前，允许列表是必需的。 在创建目标之前，请确保Google已完成下面描述的允许列表过程。
 
-在Adobe实时CDP中创建Google Display &amp; Video 360目标之前，您必须联系Google，要求将Adobe列入白名单，并将您的帐户列入白名单。 联系Google并提供以下信息：
+在Adobe实时CDP中创建Google Display &amp; Video 360目标之前，您必须联系Google，要求Adobe对允许的数据提供者进行列表，并将您的帐户添加到允许列表。 联系Google并提供以下信息：
 
 * **帐户ID** : 这是Adobe在Google上的帐户ID。 要获取此ID，请与Adobe客户服务或Adobe代表联系。
 * **客户ID** : 这是Adobe在Google上的客户帐户ID。 要获取此ID，请与Adobe客户服务或Adobe代表联系。
