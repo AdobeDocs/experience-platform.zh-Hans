@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: June 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: b6cfdf56c20065bdc3e8a9fedf6007ddd74eaeaa
+source-git-commit: 35af498a41d779cc155cff7f030cccb57f68b8fa
 workflow-type: tm+mt
-source-wordcount: '306'
-ht-degree: 6%
+source-wordcount: '429'
+ht-degree: 5%
 
 ---
 
@@ -20,6 +20,7 @@ ht-degree: 6%
 对Adobe Experience Platform中现有功能的更新：
 
 - [数据科学工作区](#dsw)
+- [区段](#segmentation)
 - [源](#sources)
 
 ## 数据科学工作区 {#dsw}
@@ -35,6 +36,20 @@ ht-degree: 6%
 | JupyterLab Launcher实时ML启动器 | JupyterLab Launcher现在包括一个用于实时机器学习(Alpha)的Python笔记本启动器。 |
 
 有关实时机器学习alpha的更多信息，请参 [阅实时机器学习概述](../../data-science-workspace/real-time-machine-learning/home.md)。
+
+## 区段 {#segmentation}
+
+Adobe Experience Platform Segmentation Service提供用户界面和RESTful API，使您能够构建细分并根据实时客户受众数据生成用户档案。 这些细分在平台上集中配置和维护，使任何Adobe应用程序都能轻松访问。
+
+分段服务通过描述区分客户群中可销售人群的标准来定义特定的用户档案子集。 细分可以基于记录数据（如人口统计信息）或表示客户与您品牌互动的时间序列事件。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 日期字段 | 添加了日期功能的“周年”功能，使用户能够评估不带年份的日期。 |
+
+有关分段的详细信息，请参阅分 [段概述](../../segmentation/home.md)
 
 ## 源 {#sources}
 
