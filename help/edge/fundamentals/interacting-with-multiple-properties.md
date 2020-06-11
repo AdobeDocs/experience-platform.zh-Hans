@@ -4,7 +4,7 @@ seo-title: 与多个属性交互的Adobe Experience Platform Web SDK
 description: 了解如何与多个Experience Platform Web SDK属性交互
 seo-description: 了解如何与多个Experience Platform Web SDK属性交互
 translation-type: tm+mt
-source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
+source-git-commit: 7d4f364ebb9df1ce58481a35007ea75f86ab7825
 workflow-type: tm+mt
 source-wordcount: '256'
 ht-degree: 0%
@@ -40,7 +40,7 @@ SDK允许您通过在基本代码中向数组添加另一个名称，为每个�
 
 ```javascript
 mycustomname1("configure", {
-  "configId": "ebebf826-a01f-4458-8cec-ef61de241c93",
+  "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
   "orgId": "ADB3LETTERSANDNUMBERS@AdobeOrg"
 });
 
@@ -51,7 +51,7 @@ mycustomname1("sendEvent", {
 });
 
 mycustomname2("configure", {
-  "configId": "f46e981f-fd03-4bdd-a9d9-73ce4447f870",
+  "edgeConfigId": "f46e981f-fd03-4bdd-a9d9-73ce4447f870",
   "orgId": "ADB3NUMBERSANDLETTERS2@AdobeOrg"
 });
 
@@ -66,4 +66,4 @@ mycustomname2("sendEvent", {
 
 ## 限制
 
-为避免与cookies发生冲突，页面中只有一个Adobe Experience Platform Web SDK实例可以具有特定实例 `configId`。  同样，只有一个Adobe Experience Platform Web SDK实例可以具有特定实例 `orgId`。
+为避免与cookies发生冲突，页面中只有一个Adobe Experience Platform Web SDK实例可以具有特定实例 `edgeConfigId`。  同样，只有一个Adobe Experience Platform Web SDK实例可以具有特定实例 `orgId`。
