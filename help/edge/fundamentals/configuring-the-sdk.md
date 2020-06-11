@@ -4,7 +4,7 @@ seo-title: 配置Adobe Experience Platform Web SDK
 description: 了解如何配置Experience Platform Web SDK
 seo-description: 了解如何配置Experience Platform Web SDK
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 7d4f364ebb9df1ce58481a35007ea75f86ab7825
 workflow-type: tm+mt
 source-wordcount: '739'
 ht-degree: 11%
@@ -21,7 +21,7 @@ SDK的配置是使用命令完 `configure` 成的。
 
 ```javascript
 alloy("configure", {
-  "configId": "ebebf826-a01f-4458-8cec-ef61de241c93",
+  "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
   "orgId":"ADB3LETTERSANDNUMBERS@AdobeOrg"
 });
 ```
@@ -30,13 +30,13 @@ alloy("configure", {
 
 ## 常规选项
 
-### `configId`
+### `edgeConfigId`
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
 | 字符串 | 是 | 无 |
 
-您分配的配置ID，它将SDK链接到相应的帐户和配置。  在单个页面中配置多个实例时，必须为每个实例配 `configId` 置不同的实例。
+您分配的配置ID，它将SDK链接到相应的帐户和配置。  在单个页面中配置多个实例时，必须为每个实例配 `edgeConfigId` 置不同的实例。
 
 ### `context`
 
