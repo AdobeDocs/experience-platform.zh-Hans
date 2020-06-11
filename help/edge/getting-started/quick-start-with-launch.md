@@ -4,10 +4,10 @@ seo-title: Adobe Experience Platform Web SDK快速开始Launch
 description: 使用Experience Platform Web SDK扩展收集数据的快速开始指南
 seo-description: 使用Experience Platform Web SDK扩展收集数据的快速开始指南
 translation-type: tm+mt
-source-git-commit: dc5ee796ca390d06fc8e08bd6c30e88a0d96dd53
+source-git-commit: 62b18ed8f70ad87b04f60ade5730ff30d8985415
 workflow-type: tm+mt
-source-wordcount: '548'
-ht-degree: 4%
+source-wordcount: '511'
+ht-degree: 5%
 
 ---
 
@@ -17,7 +17,6 @@ ht-degree: 4%
 本指南将指导您逐步了解如何在Launch中设置Adobe Experience Platform Web SDK。 要能够使用此功能，您需要具有权限并处于允许列表。 如果您想继续等待列表，请联系您的CSM。
 
 - 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经拥有Analytics的CNAME，则应使用该CNAME。 在开发中测试无需CNAME即可正常工作，但在开始生产之前，您需要CNAME
-- 有权使用Adobe Experience Platform Data Platform。 如果您尚未购买Platform，我们将为您提供Experience Platform Data Services Foundation，以便在SDK中以有限方式使用，不收取任何额外费用。
 - 正在使用最新版的访客ID服务
 
 ## 创建配置ID
