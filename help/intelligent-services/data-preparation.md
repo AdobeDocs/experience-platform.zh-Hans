@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 准备要在Intelligent Services中使用的数据
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: 9a2e6f7db441b804f17ec91d06d359439c3d5da5
 workflow-type: tm+mt
-source-wordcount: '1437'
+source-wordcount: '1595'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,26 @@ ht-degree: 0%
 
 此文档提供有关将营销事件数据从多个渠道映射到此模式的一般指南，概述模式中重要字段的信息，以帮助您确定如何有效地将数据映射到其结构。
 
-## 了解CEE模式
+## 工作流摘要
+
+准备过程因数据是存储在Adobe Experience Platform中还是存储在外部而异。 本节总结了在任一情况下需要采取的必要步骤。
+
+### 外部数据准备
+
+如果数据存储在外部， [!DNL Experience Platform]请按照以下步骤操作：
+
+1. 联系Adobe Consulting Services以请求专用Azure Blob存储容器的访问凭据。
+1. 使用访问凭据，将数据上传到Blob容器。
+1. 与Adobe Consulting Services合作，将您的数据映射到 [Consumer ExperienceEvent模式](#cee-schema) ，并将其引入智能服务。
+
+### [!DNL Experience Platform] 数据准备
+
+如果数据已存储在中， [!DNL Platform]请按照以下步骤操作：
+
+1. 查看“消费者体验 [事件”模式的结构](#cee-schema) ，并确定数据是否可以映射到其字段。
+1. 联系Adobe Consulting Services以帮助将数据映射到模式并将其引入智能服务 [中，或者如果您自己想要映射](#mapping) ，请按照本指南中的步骤操作。
+
+## 了解CEE模式 {#cee-schema}
 
 消费者体验事件模式描述个人的行为，因为它与数字营销事件（Web或移动）以及在线或离线商务活动相关。 智能服务需要使用此模式，因为其语义上定义良好的字段（列），从而避免了任何未知名称，否则这些名称会使数据变得不那么清晰。
 
@@ -185,7 +204,7 @@ ht-degree: 0%
 
 有关每个必需子字段的完整信息，请 `xdm:productListItems`参阅市场营销 [规范](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/marketing.schema.md) 。
 
-## 映射和摄取数据
+## 映射和摄取数据(#mapping)
 
 确定营销事件数据是否可映射到CEE模式后，下一步是确定要将哪些数据引入智能服务。 智能服务中使用的所有历史数据必须在四个月数据的最短时间窗口中，加上计划作为回顾期的天数。
 
@@ -237,7 +256,7 @@ PATCH /dataSets/{DATASET_ID}
 
 根据您从哪个源接收数据，您必须在请求有效负荷 `primaryIdentityNamespace` 中提 `sourceConnectorId` 供适当的和标记值。
 
-以下请求为受众管理器添加适当的标记值：
+以下请求为Audience Manager添加适当的标记值：
 
 ```shell
 curl -X PATCH \
