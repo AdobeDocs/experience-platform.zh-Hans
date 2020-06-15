@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;Tutorial;Feature Pipeline;Data Science Workspace;popular topics
-solution: Experience Platform
+keywords: Experience Platform;Tutorial;feature pipeline;Data Science Workspace;popular topics
+solution: Adobe Experience Platform Data Science Workspace
 title: 创建特征管线
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: 20e26c874204da75cac7e8d001770702658053f1
 workflow-type: tm+mt
-source-wordcount: '971'
+source-wordcount: '1380'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,34 @@ ht-degree: 0%
 
 # 创建特征管线
 
-[!DNL Adobe Experience Platform] 允许您通过Sensei机器学习框架运行时（以下简称“运行时”）构建和创建自定义功能管道以大规模执行功能工程。
+>[!IMPORTANT]
+> 功能管道当前仅通过API可用。
 
-本文档描述了功能管道中的各种类，并提供了在PySpark和Spark中使用模型创作SDK创建自定 [义功能](./sdk.md) 管道的分步教程。
+Adobe Experience Platform允许您通过Sensei机器学习框架运行时（以下简称“运行时”）构建和创建自定义功能管道，以大规模执行功能工程。
 
-## 特征管道类
+本文档描述了在功能管道中找到的各种类，并提供了一个分步教程，用于在PySpark中使用“模型创作SDK”创 [建自定义功能](./sdk.md) 管道。
+
+在运行特征管线时，将发生以下工作流：
+
+1. 菜谱将数据集加载到管道中。
+2. 对数据集进行特征转换并写回Adobe Experience Platform。
+3. 所转换的数据被加载用于培训。
+4. 特征管道以梯度提升回归器为模型定义阶段。
+5. 该管道用于拟合训练数据并创建训练模型。
+6. 该模型与评分数据集进行转换。
+7. 然后，选择输出中有趣的列，并将其保存回与 [!DNL Experience Platform] 相关的数据。
+
+## 入门指南
+
+要在任何组织中运行菜谱，必须具备以下条件：
+- 输入数据集。
+- 数据集的模式。
+- 经过转换的模式和基于该模式的空数据集。
+- 输出模式和基于该模式的空数据集。
+
+以上所有数据集都需要上传到 [!DNL Platform] UI。 要进行设置，请使用Adobe提供的引导 [脚本](https://github.com/adobe/experience-platform-dsw-reference/tree/master/bootstrap)。
+
+## 特征管线类
 
 下表描述了构建特征管线时必须扩展的主要抽象类：
 
@@ -29,7 +52,7 @@ ht-degree: 0%
 | 功能管道工厂 | FeaturePipelineFactory类构建一个Spark Pipeline，它包含一系列Spark Transporters，用于执行特征工程。 您可以选择不提供FeaturePipelineFactory类，而是在DatasetTransformer类中实施您的功能工程逻辑。 |
 | 数据保护程序 | DataSaver类提供功能数据集存储的逻辑。 |
 
-启动功能管道作业时，运行时首先执行DataLoader以将输入数据加载为DataFrame，然后通过执行DatasetTransformer或FeaturePipelineFactory或两者来修改DataFrame。 最后，生成的特征数据集通过DataSaver进行存储。
+启动功能管线作业时，运行时首先执行DataLoader以将输入数据加载为DataFrame，然后通过执行DatasetTransformer、FeaturePipelineFactory或两者来修改DataFrame。 最后，生成的特征数据集通过DataSaver进行存储。
 
 以下流程图显示了运行时的执行顺序：
 
@@ -44,8 +67,7 @@ ht-degree: 0%
 
 配置JSON文件由键值对组成，用于指定以后在运行时定义的任何变量。 这些键值对可以定义诸如输入数据集位置、输出数据集ID、租户ID、列标题等属性。
 
-以下示例演示了在配置文件中找到的键值对。 展开示例以查看详细信息：
-
+以下示例演示了在配置文件中找到的键值对：
 
 **配置JSON示例**
 
@@ -55,7 +77,7 @@ ht-degree: 0%
         "name": "fp",
         "parameters": [
             {
-                "key": "datasetId",
+                "key": "dataset_id",
                 "value": "000"
             },
             {
@@ -71,132 +93,74 @@ ht-degree: 0%
 ]
 ```
 
-
-
-您可以通过定义为参数的任何类方法访 `configProperties` 问配置JSON。 例如：
+您可以通过定义为参数的任何类方法访 `config_properties` 问配置JSON。 例如：
 
 **PySpark**
 
 ```python
-input_dataset_id = str(configProperties.get("datasetId"))
+dataset_id = str(config_properties.get(dataset_id))
 ```
 
-**Spark**
-
-```scala
-val input_dataset_id: String = configProperties.get("datasetId")
-```
-
+有关更 [深入的配置示例](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/feature_pipeline_recipes/pyspark/pipeline.json) ，请参阅数据科学工作区提供的pipeline.json文件。
 
 ### 使用DataLoader准备输入数据 {#prepare-the-input-data-with-dataloader}
 
 DataLoader负责检索和过滤输入数据。 DataLoader的实现必须扩展抽象类 `DataLoader` 并覆盖抽象方法 `load`。
 
-以下示例按ID检索平台数据集并将其返回为DataFrame，其中数据集ID()`datasetId`是配置文件中定义的属性。 展开每个示例以查看详细信息：
-
+以下示例按ID检 [!DNL Platform] 索数据集并将其返回为DataFrame，其中数据集ID(`dataset_id`)是配置文件中定义的属性。
 
 **PySpark示例**
 
 ```python
 # PySpark
 
-from sdk.data_loader import DataLoader
+from pyspark.sql.types import StringType, TimestampType
+from pyspark.sql.functions import col, lit, struct
+import logging
 
 class MyDataLoader(DataLoader):
-    def load(self, configProperties, spark):
+    def load_dataset(config_properties, spark, tenant_id, dataset_id):
+    PLATFORM_SDK_PQS_PACKAGE = "com.adobe.platform.query"
+    PLATFORM_SDK_PQS_INTERACTIVE = "interactive"
 
-        # preliminary checks
-        if configProperties is None :
-            raise ValueError("configProperties parameter is null")
-        if spark is None:
-            raise ValueError("spark parameter is null")
+    service_token = str(spark.sparkContext.getConf().get("ML_FRAMEWORK_IMS_ML_TOKEN"))
+    user_token = str(spark.sparkContext.getConf().get("ML_FRAMEWORK_IMS_TOKEN"))
+    org_id = str(spark.sparkContext.getConf().get("ML_FRAMEWORK_IMS_ORG_ID"))
+    api_key = str(spark.sparkContext.getConf().get("ML_FRAMEWORK_IMS_CLIENT_ID"))
 
-        # prepare variables
-        dataset_id = str(
-            configProperties.get("datasetId"))
-        service_token = str(
-            spark.sparkContext.getConf().get("ML_FRAMEWORK_IMS_ML_TOKEN"))
-        user_token = str(
-            spark.sparkContext.getConf().get("ML_FRAMEWORK_IMS_TOKEN"))
-        org_id = str(
-            spark.sparkContext.getConf().get("ML_FRAMEWORK_IMS_ORG_ID"))
-        api_key = str(
-            spark.sparkContext.getConf().get("ML_FRAMEWORK_IMS_CLIENT_ID"))
+    dataset_id = str(config_properties.get(dataset_id))
 
-        # validate variables
-        for arg in ['dataset_id', 'service_token', 'user_token', 'org_id', 'api_key']:
-            if eval(arg) == 'None':
-                raise ValueError("%s is empty" % arg)
+    for arg in ['service_token', 'user_token', 'org_id', 'dataset_id', 'api_key']:
+        if eval(arg) == 'None':
+            raise ValueError("%s is empty" % arg)
 
-        # load dataset through Spark session
-        df = spark.read.format("com.adobe.platform.dataset") \
-            .option('serviceToken', service_token) \
-            .option('userToken', user_token) \
-            .option('orgId', org_id) \
-            .option('serviceApiKey', api_key) \
-            .load(dataset_id)
+    query_options = get_query_options(spark.sparkContext)
 
-        # return as DataFrame
-        return df
+    pd = spark.read.format(PLATFORM_SDK_PQS_PACKAGE) \
+        .option(query_options.userToken(), user_token) \
+        .option(query_options.serviceToken(), service_token) \
+        .option(query_options.imsOrg(), org_id) \
+        .option(query_options.apiKey(), api_key) \
+        .option(query_options.mode(), PLATFORM_SDK_PQS_INTERACTIVE) \
+        .option(query_options.datasetId(), dataset_id) \
+        .load()
+    pd.show()
+
+    # Get the distinct values of the dataframe
+    pd = pd.distinct()
+
+    # Flatten the data
+    if tenant_id in pd.columns:
+        pd = pd.select(col(tenant_id + ".*"))
+
+    return pd
 ```
-
-
-
-
-**Spark示例**
-
-```scala
-// Spark
-
-import com.adobe.platform.ml.config.ConfigProperties
-import com.adobe.platform.ml.sdk.DataLoader
-import org.apache.spark.sql.{DataFrame, SparkSession}
-
-class MyDataLoader extends DataLoader {
-    override def load(configProperties: ConfigProperties, sparkSession: SparkSession): DataFrame = {
-
-        // preliminary checks
-        require(configProperties != null)
-        require(sparkSession != null)
-
-        // prepare variables
-        val dataSetId: String = configProperties
-            .get("datasetId").getOrElse("")
-        val serviceToken: String = sparkSession.sparkContext.getConf
-            .get("ML_FRAMEWORK_IMS_ML_TOKEN", "").toString
-        val userToken: String = sparkSession.sparkContext.getConf
-            .get("ML_FRAMEWORK_IMS_TOKEN", "").toString
-        val orgId: String = sparkSession.sparkContext.getConf
-            .get("ML_FRAMEWORK_IMS_ORG_ID", "").toString
-        val apiKey: String = sparkSession.sparkContext.getConf
-            .get("ML_FRAMEWORK_IMS_CLIENT_ID", "").toString
-
-        // validate variables
-        List(dataSetId, serviceToken, userToken, orgId, apiKey).foreach(
-            value => required(value != "")
-        )
-
-        // load dataset through Spark session
-        var df = sparkSession.read.format("com.adobe.platform.dataset")
-            .option(DataSetOptions.orgId, orgId)
-            .option(DataSetOptions.serviceToken, serviceToken)
-            .option(DataSetOptions.userToken, userToken)
-            .option(DataSetOptions.serviceApiKey, apiKey)
-            .load(dataSetId)
-        
-        // return as DataFrame
-        df
-    }
-}
-```
-
-
 
 ### 使用DatasetTransformer转换数据集 {#transform-a-dataset-with-datasettransformer}
 
 DatasetTransformer提供用于转换输入DataFrame的逻辑并返回新的派生DataFrame。 可以实现此类，以与FeaturePipelineFactory协同工作，作为唯一的特征工程组件工作，也可以选择不实现此类。
 
-以下示例扩展了DatasetTransformer类。 展开每个示例以查看详细信息：
+以下示例扩展了DatasetTransformer类：
 
 
 **PySpark示例**
@@ -205,54 +169,59 @@ DatasetTransformer提供用于转换输入DataFrame的逻辑并返回新的派�
 # PySpark
 
 from sdk.dataset_transformer import DatasetTransformer
+from pyspark.ml.feature import StringIndexer
+from pyspark.sql.types import IntegerType
+from pyspark.sql.functions import unix_timestamp, from_unixtime, to_date, lit, lag, udf, date_format, lower, col, split, explode
+from pyspark.sql import Window
+from .helper import setupLogger
 
 class MyDatasetTransformer(DatasetTransformer):
+    logger = setupLogger(__name__)
 
-    def transform(self, configProperties, dataset):
-        transformed = dataset
+    def transform(self, config_properties, dataset):
+        tenant_id = str(config_properties.get("tenantId"))
 
-        '''
-        Transformations
-        '''
+        # Flatten the data
+        if tenant_id in dataset.columns:
+            self.logger.info("Flatten the data before transformation")
+            dataset = dataset.select(col(tenant_id + ".*"))
+            dataset.show()
 
-        # return new DataFrame
-        return transformed
+        # Convert isHoliday boolean value to Int
+        # Rename the column to holiday and drop isHoliday
+        pd = dataset.withColumn("holiday", col("isHoliday").cast(IntegerType())).drop("isHoliday")
+        pd.show()
+
+        # Get the week and year from date
+        pd = pd.withColumn("week", date_format(to_date("date", "MM/dd/yy"), "w").cast(IntegerType()))
+        pd = pd.withColumn("year", date_format(to_date("date", "MM/dd/yy"), "Y").cast(IntegerType()))
+
+        # Convert the date to TimestampType
+        pd = pd.withColumn("date", to_date(unix_timestamp(pd["date"], "MM/dd/yy").cast("timestamp")))
+
+        # Convert categorical data
+        indexer = StringIndexer(inputCol="storeType", outputCol="storeTypeIndex")
+        pd = indexer.fit(pd).transform(pd)
+
+        # Get the WeeklySalesAhead and WeeklySalesLag column values
+        window = Window.orderBy("date").partitionBy("store")
+        pd = pd.withColumn("weeklySalesLag", lag("weeklySales", 1).over(window)).na.drop(subset=["weeklySalesLag"])
+        pd = pd.withColumn("weeklySalesAhead", lag("weeklySales", -1).over(window)).na.drop(subset=["weeklySalesAhead"])
+        pd = pd.withColumn("weeklySalesScaled", lag("weeklySalesAhead", -1).over(window)).na.drop(subset=["weeklySalesScaled"])
+        pd = pd.withColumn("weeklySalesDiff", (pd['weeklySales'] - pd['weeklySalesLag'])/pd['weeklySalesLag'])
+
+        pd = pd.na.drop()
+        self.logger.debug("Transformed dataset count is %s " % pd.count())
+
+        # return transformed dataframe
+        return pd
 ```
-
-
-
-
-**Spark示例**
-
-```scala
-// Spark
-
-import com.adobe.platform.ml.config.ConfigProperties
-import com.adobe.platform.ml.sdk.DatasetTransformer
-
-class MyDatasetTransformer extends DatasetTransformer {
-
-    override def transform(configProperties: ConfigProperties, dataset: Dataset[_]): Dataset[_] = {
-        val transformed = dataset
-
-        /*
-        transformations
-        */
-        
-        // return new DataFrame
-        transformed
-    }
-}
-```
-
-
 
 ### 使用FeaturePipelineFactory工程数据功能 {#engineer-data-features-with-featurepipelinefactory}
 
 FeaturePipelineFactory允许您通过Spark Pipeline定义一系列Spark Transformers并将它们链接在一起，从而实现您的功能工程逻辑。 此类可以实现为与DatasetTransformer协同工作、作为唯一的特征工程组件工作，或者选择不实现此类。
 
-以下示例扩展了FeaturePipelieFactory类，并在Spark Pipeline中将一系列Spark变压器作为多个级实施。 展开每个示例以查看详细信息：
-
+以下示例扩展了FeaturePipelineFactory类：
 
 **PySpark示例**
 
@@ -260,78 +229,64 @@ FeaturePipelineFactory允许您通过Spark Pipeline定义一系列Spark Transfor
 # PySpark
 
 from pyspark.ml import Pipeline
-from pyspark.ml.feature import HashingTF, Tokenizer
-from sdk.feature_pipeline_factory import FeaturePipelineFactory
+from pyspark.ml.regression import GBTRegressor
+from pyspark.ml.feature import VectorAssembler
+
+import numpy as np
+
+from sdk.pipeline_factory import PipelineFactory
 
 class MyFeaturePipelineFactory(FeaturePipelineFactory):
 
-    def create_pipeline(self, configProperties):
+    def apply(self, config_properties):
+        if config_properties is None:
+            raise ValueError("config_properties parameter is null")
 
-        # Spark Transformers
-        tokenizer = Tokenizer(inputCol="lower_text", outputCol="words")
-        hashingTF = HashingTF(inputCol=tokenizer.getOutputCol(), outputCol="features")
+        tenant_id = str(config_properties.get("tenantId"))
+        input_features = str(config_properties.get("ACP_DSW_INPUT_FEATURES"))
 
-        # Chain together Spark Transformers as Spark Pipeline Stages
-        pipeline = Pipeline(stages=[tokenizer, hashingTF])
+        if input_features is None:
+            raise ValueError("input_features parameter is null")
+        if input_features.startswith(tenant_id):
+            input_features = input_features.replace(tenant_id + ".", "")
 
-        # return a Spark Pipeline
+        learning_rate = float(config_properties.get("learning_rate"))
+        n_estimators = int(config_properties.get("n_estimators"))
+        max_depth = int(config_properties.get("max_depth"))
+
+        feature_list = list(input_features.split(","))
+        feature_list.remove("date")
+        feature_list.remove("storeType")
+
+        cols = np.array(feature_list)
+
+        # Gradient-boosted tree estimator
+        gbt = GBTRegressor(featuresCol='features', labelCol='weeklySalesAhead', predictionCol='prediction',
+                       maxDepth=max_depth, maxBins=n_estimators, stepSize=learning_rate)
+
+        # Assemble the fields to a vector
+        assembler = VectorAssembler(inputCols=cols, outputCol="features")
+
+        # Construct the pipeline
+        pipeline = Pipeline(stages=[assembler, gbt])
+
         return pipeline
 
-    def get_param_map(self, configProperties, sparkSession):
+    def train(self, config_properties, dataframe):
         pass
+
+    def score(self, config_properties, dataframe, model):
+        pass
+
+    def getParamMap(self, config_properties, sparkSession):
+        return None
 ```
-
-
-
-
-**Spark示例**
-
-```scala
-// Spark
-
-import com.adobe.platform.ml.config.ConfigProperties
-import com.adobe.platform.ml.sdk.FeaturePipelineFactory
-import org.apache.spark.ml.feature.{HashingTF, Tokenizer}
-import org.apache.spark.ml.Pipeline
-import org.apache.spark.ml.param.ParamMap
-import org.apache.spark.sql.SparkSession
-
-class MyFeaturePipelineFactory(uid:String) extends FeaturePipelineFactory(uid) {
-    def this() = this("MyFeaturePipeline")
-
-    override def createPipeline(configProperties: ConfigProperties): Pipeline = {
-        
-        // Spark Transformers
-        val tokenizer = new Tokenizer()
-            .setInputCol("lower_text")
-            .setOutputCol("words")
-        val hashingTF = new HashingTF()
-            .setInputCol(tokenizer.getOutputCol())
-            .setOutputCol("features")
-
-        // Chain together Spark Transformers as Spark Pipeline Stages
-        val pipeline = new Pipeline()
-            .setStages(Array(tokenizer, hashingTF))
-        
-        // return a Spark Pipeline
-        pipeline
-    }
-
-    override def getParamMap(configProperties: ConfigProperties, sparkSession: SparkSession): ParamMap = {
-        val map = new ParamMap()
-        map
-    }
-}
-```
-
-
 
 ### 使用DataSaver存储您的功能数据集 {#store-your-feature-dataset-with-datasaver}
 
 DataSaver负责将您生成的功能数据集存储到存储位置。 DataSaver的实现必须扩展抽象类 `DataSaver` 并覆盖抽象方法 `save`。
 
-以下示例扩展了按ID将数据存储到平台数据集的DataSaver类，其中数据集ID(`featureDatasetId`)和租户ID(`tenantId`)是配置文件中定义的属性。 展开每个示例以查看详细信息：
-
+以下示例扩展了按ID将数据存储到数 [!DNL Platform] 据集的DataSaver类，其中数据集ID(`featureDatasetId`)和租户ID(`tenantId`)是配置中定义的属性。
 
 **PySpark示例**
 
@@ -395,152 +350,89 @@ class MyDataSaver(DataSaver):
 ```
 
 
-
-
-**Spark示例**
-
-```scala
-// Spark
-
-import com.adobe.platform.dataset.DataSetOptions
-import com.adobe.platform.ml.config.ConfigProperties
-import com.adobe.platform.ml.impl.Constants
-import com.adobe.platform.ml.sdk.DataSaver
-import org.apache.spark.sql.DataFrame
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.types.TimestampType
-
-class MyDataSaver extends DataSaver {
-    override def save(configProperties: ConfigProperties, dataFrame: DataFrame): Unit =  {
-
-        // Spark session
-        val sparkSession = dataFrame.sparkSession
-
-        // preliminary checks
-        require(configProperties != null)
-        require(dataFrame != null)
-
-        // prepare variables
-        val timestamp:String = "2019-01-01 00:00:00"
-        val output_dataset_id: String = configProperties
-            .get("featureDatasetId").getOrElse("")
-        val tenant_id:String = configProperties
-            .get("tenantId").getOrElse("")
-        val serviceToken: String = sparkSession.sparkContext.getConf
-            .get("ML_FRAMEWORK_IMS_ML_TOKEN", "").toString
-        val userToken: String = sparkSession.sparkContext.getConf
-            .get("ML_FRAMEWORK_IMS_TOKEN", "").toString
-        val orgId: String = sparkSession.sparkContext.getConf
-            .get("ML_FRAMEWORK_IMS_ORG_ID", "").toString
-        val apiKey: String = sparkSession.sparkContext.getConf
-            .get("ML_FRAMEWORK_IMS_CLIENT_ID", "").toString
-
-        // validate variables
-        List(output_dataset_id, tenant_id, serviceToken, userToken, orgId, apiKey).foreach(
-            value => require(value != "")
-        )
-
-        // create and prepare DataFrame with valid columns
-        import sparkSession.implicits._
-
-        var output_df  = dataFrame.withColumn("date", $"date".cast("String"))
-        output_df = output_df.withColumn("timestamp", lit(timestamp).cast(TimestampType))
-        output_df = output_df.withColumn("_id", lit("empty"))
-        output_df = output_df.withColumn("eventType", lit("empty"))
-
-        // store data into dataset
-        output_df.select(tenant_id, "_id", "eventType", "timestamp").write.format("com.adobe.platform.dataset")
-            .option(DataSetOptions.orgId, orgId)
-            .option(DataSetOptions.serviceToken, serviceToken)
-            .option(DataSetOptions.userToken, userToken)
-            .option(DataSetOptions.serviceApiKey, apiKey)
-            .save(output_dataset_id)
-    }
-}
-```
-
 ### 在应用程序文件中指定实现的类名 {#specify-your-implemented-class-names-in-the-application-file}
 
-现在定义和实现了功能管道类，您必须在应用程序文件中指定类的名称。
+现在定义并实现了功能管线类，您必须在应用程序YAML文件中指定类的名称。
 
-以下示例指定实现的类名。 展开示例以查看详细信息：
-
+以下示例指定实现的类名：
 
 **PySpark示例**
 
 ```yaml
-# application.yaml
+#Name of the class which contains implementation to get the input data.
+feature.dataLoader: InputDataLoaderForFeaturePipeline
 
-# Name of the implementation of DataLoader abstract class
-feature.dataLoader: MyDataLoader
-
-# Name of the implementation of DatasetTransformer abstract class
+#Name of the class which contains implementation to get the transformed data.
 feature.dataset.transformer: MyDatasetTransformer
 
-# Name of the implementation of FeaturePipelineFactory abstract class
-feature.pipeline.class: MyFeaturePipelineFactory
+#Name of the class which contains implementation to save the transformed data.
+feature.dataSaver: DatasetSaverForTransformedData
 
-# Name of the implementation of DataSaver abstract class
-feature.dataSaver: MyDataSaver
+#Name of the class which contains implementation to get the training data
+training.dataLoader: TrainingDataLoader
+
+#Name of the class which contains pipeline. It should implement PipelineFactory.scala
+pipeline.class: TrainPipeline
+
+#Name of the class which contains implementation for evaluation metrics.
+evaluator: Evaluator
+evaluateModel: True
+
+#Name of the class which contains implementation to get the scoring data.
+scoring.dataLoader: ScoringDataLoader
+
+#Name of the class which contains implementation to save the scoring data.
+scoring.dataSaver: MyDatasetSaver
 ```
 
+## 使用API创建功能管道引擎 {#create-feature-pipeline-engine-api}
 
+既然您已经创作了功能管道，您需要创建Docker图像，以调用Sensei Machine Learning API中的功能管道端点。 需要Docker图像URL才能调用功能管线端点。
 
+>[!TIP]
+>如果您没有Docker URL，请访 [问将源文件打包到菜谱教程](../models-recipes/package-source-files-recipe.md) ，以逐步演练创建Docker主机URL。
 
-**Spark示例**
+或者，您也可以使用以下Postman集合来帮助完成功能管道API工作流：
 
-```properties
-# application.properties
+https://www.getpostman.com/collections/c5fc0d1d5805a5ddd41a
 
-# Name of the implementation of DataLoader abstract class
-feature.pipeline.class=MyDataLoader
+### 创建特征管线引擎 {#create-engine-api}
 
-# Name of the implementation of DatasetTransformer abstract class
-feature.dataset.transformer=MyDatasetTransformer
+在获得Docker图像位置后，您可以 [通过执行POST](../api/engines.md#feature-pipeline-docker) ，使用Sensei机器学习API创建功能管道引擎 `/engines`。 成功创建功能管道引擎可为您提供引擎唯一标识符(`id`)。 请确保在继续之前保存此值。
 
-# Name of the implementation of FeaturePipelineFactory abstract class
-feature.dataLoader=MyFeaturePipelineFactory
+### 创建MLInstance {#create-mlinstance}
 
-# Name of the implementation of DataSaver abstract class
-feature.dataSaver=MyDataSaver
-```
+使用新创 `engineID`建的实例 [，需要通过向端点发出](../api/mlinstances.md#create-an-mlinstance) POST请求来创建MLI `/mlInstance` stance。 成功的响应返回一个有效负荷，它包含新创建的MLI实例的详细信息，包括在下一个API调用中`id`使用的唯一标识符()。
 
+### 创建实验 {#create-experiment}
 
+接下来，您需要 [创建实验](../api/experiments.md#create-an-experiment)。 要创建实验，您需要具有MLIstance唯一标识符(`id`)并向端点发出POST请 `/experiment` 求。 成功的响应返回一个有效负荷，其中包含新创建实验的详细信息，包括其在下一个API调`id`用中使用的唯一标识符()。
 
-## 构建二进制伪像 {#build-the-binary-artifact}
+### 指定“实验”运行功能管线任务 {#specify-feature-pipeline-task}
 
-现在，您的功能管道类已经实现，您可以将其构建并编译为二进制对象，然后使用二进制对象通过API调用创建功能管道。
+创建实验后，必须将实验的模式更改为 `featurePipeline`。 要更改模式，请对您和主体发 [`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring) 送进 `EXPERIMENT_ID` 行额外的POST，以指 `{ "mode":"featurePipeline"}` 定特征管线“实验”运行。
 
-**PySpark**
+完成后，发出GET请求 `/experiments/{EXPERIMENT_ID}` 以检 [索实验状态](../api/experiments.md#retrieve-specific) ，并等待实验状态更新完成。
 
-要构建PySpark功能管道，请运 `setup.py` 行位于“模型创作SDK”根目录中的Python脚本。
+### 指定“实验”运行培训任务 {#training}
 
->[!NOTE] 构建PySpark功能管道需要您在机器上安装Python 3。
+接下来，您需要 [指定培训运行任务](../api/experiments.md#experiment-training-scoring)。 将POST设置 `experiments/{EXPERIMENT_ID}/runs` 为并在正文中将模式设置为 `train` 并发送包含培训参数的一组任务。 成功的响应会返回包含所请求实验的详细信息的有效负荷。
 
-```shell
-python3 setup.py bdist_egg
-```
+完成后，发出GET请求 `/experiments/{EXPERIMENT_ID}` 以检 [索实验状态](../api/experiments.md#retrieve-specific) ，并等待实验状态更新完成。
 
-成功构建特征管道将在目 `.egg` 录中生成 `/dist` 一个对象，该对象用于创建特征管道。
+### 指定“实验”运行评分任务 {#scoring}
 
-**Spark**
+>[!NOTE]
+> 要完成此步骤，您至少需要有一个成功的培训运行与您的实验相关联。
 
-要构建Spark功能管道，请在“模型创作SDK”的根目录下运行以下控制台命令：
+成功运行培训后，您需要指 [定评分运行任务](../api/experiments.md#experiment-training-scoring)。 将POST设置为 `experiments/{EXPERIMENT_ID}/runs` 正文，在正文中将属 `mode` 性设置为“score”。 这将开始您的评分实验运行。
 
->[!NOTE] 要构建Spark功能管道，您必须在计算机上安装Scala和sbt。
+完成后，发出GET请求 `/experiments/{EXPERIMENT_ID}` 以检 [索实验状态](../api/experiments.md#retrieve-specific) ，并等待实验状态更新完成。
 
-```shell
-mvn clean install
-```
-
-成功构建特征管道将在目 `.jar` 录中生成 `/dist` 一个对象，该对象用于创建特征管道。
-
-## 使用API创建特征管道引擎 {#create-a-feature-pipeline-engine-using-the-api}
-
-现在，您已经创作了功能管道并构建了二进制伪像，您 [可以使用Sensei Machine Learning API创建功能管道引擎](../api/engines.md#create-a-feature-pipeline-engine-using-binary-artifacts)。 成功创建特征管道引擎将提供引擎ID作为响应体的一部分，请确保在继续执行后续步骤之前保存此值。
+评分完成后，您的功能管道应可运行。
 
 ## 后续步骤 {#next-steps}
 
-[//]: # (Next steps section should refer to tutorials on how to score data using the Feature Pipeline Engine. Update this document once those tutorials are available)
+[//]: # (Next steps section should refer to tutorials on how to score data using the feature pipeline Engine. Update this document once those tutorials are available)
 
-通过阅读此文档，您使用模型创作SDK创作了功能管道，构建了二进制对象，并使用该对象通过API调用创建了功能管道引擎。 您现在可以使用新创 [建的引擎和开始转换数据集](../api/mlinstances.md#create-an-mlinstance) ，并大规模地提取数据特征来创建功能管道模型。
+通过阅读此文档，您使用“模型创作SDK”创作了一个功能管道，创建了Docker图像，并使用Docker图像URL通过Sensei Machine Learning API创建了一个功能管道模型。 现在，您可以使用Sensei Machine Learning API继续大规模转换数据集和 [提取数据功能](../api/getting-started.md)。
