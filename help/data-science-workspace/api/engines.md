@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 引擎
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+source-git-commit: d9f4649f5946fa3eea8d6a2ab65a07568f9c697f
 workflow-type: tm+mt
-source-wordcount: '1114'
+source-wordcount: '1118'
 ht-degree: 3%
 
 ---
@@ -202,7 +202,7 @@ curl -X POST \
                 "executionType": "PySpark",
                 "packagingType": "docker"
             },
-           "defaultMLInstanceConfigs": [
+           "defaultMLInstanceConfigs": [ ...
            ]
        }
    }
@@ -219,6 +219,7 @@ curl -X POST \
 | `artifacts.default.image.location` | Docker图像的位置。 仅支持Azure ACR或公共（未验证）Dockerhub。 |
 | `artifacts.default.image.executionType` | 引擎的执行类型。 此值与Docker图像所基于的语言相对应。 这可以是“Spark”或“PySpark”。 |
 | `artifacts.default.image.packagingType` | 引擎的打包类型。 此值应设置为 `docker`。 |
+| `artifacts.default.defaultMLInstanceConfigs` | 您的 `pipeline.json` 配置文件参数。 |
 
 **响应**
 
@@ -242,7 +243,8 @@ curl -X POST \
                 "name": "datatransformation",
                 "executionType": "PySpark",
                 "packagingType": "docker"
-            }
+            },
+        "defaultMLInstanceConfigs": [ ... ]
         }
     }
 }
@@ -468,7 +470,7 @@ curl -X PUT \
 
 ## 删除引擎
 
-在请求路径中指定目标引擎的ID时，可以执行DELETE请求来删除引擎。 删除引擎将级联删除引用该引擎的所有MLI实例，包括属于这些MLI实例的任何实验和实验运行。
+您可以通过执行DELETE请求来删除引擎，同时在请求路径中指定目标引擎的ID。 删除引擎将级联删除引用该引擎的所有MLI实例，包括属于这些MLI实例的任何实验和实验运行。
 
 **API格式**
 
