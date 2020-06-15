@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 导入打包的菜谱(API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+source-git-commit: 20e26c874204da75cac7e8d001770702658053f1
 workflow-type: tm+mt
-source-wordcount: '974'
+source-wordcount: '976'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 本教程使 [用Sensei Machine Learning](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) API创建 [引擎](../api/engines.md)，在用户界面中也称为Recipe。
 
-在入门之前，请务必注意，Adobe Experience Platform Data Science Workspace使用不同术语来引用API和UI中的类似元素。 本教程中使用API术语，下表概述了相关术语：
+在入门之前，请务必注意，Adobe Experience Platform数据科学工作区使用不同的术语来引用API和UI中的类似元素。 本教程中使用API术语，下表概述了相关术语：
 
 | UI术语 | API术语 |
 | ---- | ---- |
@@ -35,24 +35,22 @@ ht-degree: 2%
 
 - `{DOCKER_URL}`: 智能服务的Docker映像的URL地址。
 
-本教程要求您完成Adobe [Experience Platform身份验证教程](../../tutorials/authentication.md) ，以便成功调用平台API。 完成身份验证教程后，将提供所有Experience Platform API调用中每个所需标头的值，如下所示：
+本教程要求您完成“对Adobe Experience Platform [的身份验证](../../tutorials/authentication.md) ”教程，以便成功调用PlatformAPI。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 - `{ACCESS_TOKEN}`: 身份验证后提供的特定载体令牌值。
 - `{IMS_ORG}`: 您的IMS组织凭据可在您独特的Adobe Experience Platform集成中找到。
-- `{API_KEY}`: 您在独特的Adobe Experience Platform集成中可找到特定API密钥价值。
+- `{API_KEY}`: 在您独特的Adobe Experience Platform集成中找到您的特定API密钥值。
 
 ## 创建引擎
 
-根据打包的菜谱文件的形式（要作为API请求的一部分），引擎通过以下两种方式之一创建：
-
-- [使用Docker URL创建引擎](#create-an-engine-with-a-docker-url)
+可以通过向/engine端点发出POST请求来创建引擎。 创建的引擎基于打包的处方文件的形式进行配置，该文件必须作为API请求的一部分提供。
 
 ### 使用Docker URL创建引擎 {#create-an-engine-with-a-docker-url}
 
 要创建包含存储在Docker容器中的打包Recipe文件的引擎，您必须为打包Recipe文件提供Docker URL。
 
 >[!CAUTION]
-> 如果您使用的是Python或R，请使用下面的请求。 如果您使用PySpark或Scala，请使用位于Python/R示例下方的PySpark/Scala请求示例。
+> 如果您使用的是Python或R，请使用下面的请求。 如果您使用PySpark或Scala，请使用位于Python/R示例下的PySpark/Scala请求示例。
 
 **API格式**
 
