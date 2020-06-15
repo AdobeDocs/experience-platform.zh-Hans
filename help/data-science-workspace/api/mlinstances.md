@@ -4,20 +4,23 @@ solution: Experience Platform
 title: MLInstances
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 19823c7cf0459e045366f0baae2bd8a98416154c
+source-git-commit: 0197c2f5e304f2fc194289b064cc37c91bb658c8
+workflow-type: tm+mt
+source-wordcount: '575'
+ht-degree: 4%
 
 ---
 
 
 # MLInstances
 
-MLI实例是现有引擎与一组相应配置的配对，这些配置定义了任何培训参数、评分参数或硬件资源配置。 [](./engines.md)
+MLInstance是现有引擎与一组 [适当的配置](./engines.md) （定义任何培训参数、评分参数或硬件资源配置）的配对。
 
 ## 创建MLInstance {#create-an-mlinstance}
 
-您可以通过执行POST请求来创建MLI实例，同时提供由有效的引擎ID(`{ENGINE_ID}`)和一组适当的默认配置组成的请求有效负荷。
+您可以通过执行POST请求来创建MLInstance，同时提供由有效的引擎ID()和一组适当的默认配置`{ENGINE_ID}`组成的请求有效负荷。
 
-如果引擎ID引用PySpark或Spark引擎，则您可以配置计算资源量，如内核数或内存量。 如果引用了Python引擎，则您可以选择使用CPU或GPU进行培训和评分。 有关详细信息，请参 [阅PySpark和Spark资源配置](./appendix.md#resource-config)[以及Python CPU和GPU配置的附录部分](./appendix.md#cpu-gpu-config) 。
+如果引擎ID引用PySpark或Spark引擎，则您可以配置计算资源量，如核心数或内存量。 如果引用了Python引擎，您可以选择使用CPU或GPU进行培训和评分。 有关更多信息，请参 [阅PySpark和Spark资源配置](./appendix.md#resource-config)[以及Python CPU和GPU配置的附录](./appendix.md#cpu-gpu-config) 部分。
 
 **API格式**
 
@@ -38,7 +41,7 @@ curl -X POST \
     -d '{
         "name": "A name for this MLInstance",
         "description": "A description for this MLInstance",
-        "engineId": "{ENGINE_ID}",
+        "engineId": "22f4166f-85ba-4130-a995-a2b8e1edde32",
         "tasks": [
             {
                 "name": "train",
@@ -73,21 +76,21 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | MLInstance的所需名称。 与此MLI实例对应的模型将继承此值，该值将作为模型的名称显示在UI中。 |
-| `description` | MLInstance的可选描述。 与此MLI实例对应的模型将继承此值，并作为模型的描述显示在UI中。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
+| `name` | MLInstance的所需名称。 与此MLInstance对应的模型将继承此值，该值将作为模型的名称显示在UI中。 |
+| `description` | MLInstance的可选描述。 与此MLInstance对应的模型将继承此值，并作为模型的描述显示在UI中。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
 | `engineId` | 现有引擎的ID。 |
 | `tasks` | 用于培训、评分或功能管道的一组配置。 |
 
 **响应**
 
-成功的响应返回包含新创建的MLI实例(包括其唯一标识符(`id`))的详细信息的有效负荷。
+成功的响应返回包含新创建的MLI实例的详细信息(包括其唯一标识符(`id`))的有效负荷。
 
 ```json
 {
-    "id": "{MLINSTANCE_ID}",
+    "id": "46986c8f-7739-4376-8509-0178bdf32cda",
     "name": "A name for this MLInstance",
     "description": "A description for this MLInstance",
-    "engineId": "{ENGINE_ID}",
+    "engineId": "22f4166f-85ba-4130-a995-a2b8e1edde32",
     "created": "2019-01-01T00:00:00.000Z",
     "createdBy": {
         "userId": "Jane_Doe@AdobeID"
@@ -125,9 +128,9 @@ curl -X POST \
 }
 ```
 
-## 检索MLInstance的列表
+## 检索一列表MLInstance
 
-您可以通过执行单个GET请求来检索MLInstances的列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅有关资产检索的查询参 [数的附录部分](./appendix.md#query)。
+您可以通过执行单个GET请求来检索MLInstances的列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅附录部分中有关资产检 [索查询参数的部分](./appendix.md#query)。
 
 **API格式**
 
@@ -140,7 +143,7 @@ GET /mlInstances?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 | 参数 | 描述 |
 | --- | --- |
 | `{QUERY_PARAMETER}` | 用于筛选 [结果的可用查询](./appendix.md#query) 参数之一。 |
-| `{VALUE}` | 前面查询参数的值。 |
+| `{VALUE}` | 前一查询参数的值。 |
 
 **请求**
 
@@ -155,16 +158,16 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回一列表MLInstances及其详细信息。
+成功的响应会返回MLI实例的列表及其详细信息。
 
 ```json
 {
     "children": [
         {
-            "id": "{MLINSTANCE_ID}",
+            "id": "46986c8f-7739-4376-8509-0178bdf32cda",
             "name": "A name for this MLInstance",
             "description": "A description for this MLInstance",
-            "engineId": "{ENGINE_ID}",
+            "engineId": "22f4166f-85ba-4130-a995-a2b8e1edde32",
             "created": "2019-01-01T00:00:00.000Z",
             "createdBy": {
                 "displayName": "Jane Doe",
@@ -173,10 +176,10 @@ curl -X GET \
             "updated": "2019-01-01T00:00:00.000Z"
         },
         {
-            "id": "{MLINSTANCE_ID}",
+            "id": "56986c8f-7739-4376-8509-0178bdf32cda",
             "name": "Retail Sales Model",
             "description": "A Model created with the Retail Sales Recipe",
-            "engineId": "{ENGINE_ID}",
+            "engineId": "32f4166f-85ba-4130-a995-a2b8e1edde32",
             "created": "2019-01-01T00:00:00.000Z",
             "createdBy": {
                 "displayName": "Jane Doe",
@@ -195,7 +198,7 @@ curl -X GET \
 
 ## 检索特定MLInstance {#retrieve-specific}
 
-您可以通过执行GET请求来检索特定MLI实例的详细信息，该请求在请求路径中包含所需MLI实例的ID。
+您可以通过执行GET请求来检索特定MLInstance的详细信息，该请求在请求路径中包含所需MLInstance的ID。
 
 **API格式**
 
@@ -211,7 +214,7 @@ GET /mlInstances/{MLINSTANCE_ID}
 
 ```shell
 curl -X GET \
-    https://platform.adobe.io/data/sensei/mlInstances/{MLINSTANCE_ID} \
+    https://platform.adobe.io/data/sensei/mlInstances/46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -224,10 +227,10 @@ curl -X GET \
 
 ```json
 {
-    "id": "{MLINSTANCE_ID}",
+    "id": "46986c8f-7739-4376-8509-0178bdf32cda",
     "name": "A name for this MLInstance",
     "description": "A description for this MLInstance",
-    "engineId": "{ENGINE_ID}",
+    "engineId": "22f4166f-85ba-4130-a995-a2b8e1edde32",
     "created": "2019-01-01T00:00:00.000Z",
     "createdBy": {
         "displayName": "Jane Doe",
@@ -254,7 +257,7 @@ curl -X GET \
             ]
         },
         {
-            "name": "fp",
+            "name": "featurePipeline",
             "parameters": [
                 {
                     "key": "feature pipeline parameter",
@@ -268,9 +271,9 @@ curl -X GET \
 
 ## 更新MLInstance
 
-您可以通过PUT请求覆盖现有MLI实例的属性，该请求在请求路径中包括目标MLInstance的ID并提供包含已更新属性的JSON有效负荷，从而更新现有MLI实例。
+您可以通过PUT请求覆盖现有MLInstance的属性，该请求在请求路径中包含目标MLInstance的ID，并提供包含已更新属性的JSON有效负荷，从而更新现有MLInstance。
 
->[!TIP] 为了确保此PUT请求成功，建议首先执行GET请求以按ID [检索MLI实例](#retrieve-specific)。 然后，修改并更新返回的JSON对象，并应用修改后的JSON对象的整个作为PUT请求的有效负荷。
+>[!TIP] 为确保此PUT请求成功，建议首先执行GET请求以 [按ID检索MLInstance](#retrieve-specific)。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
 
 以下示例API调用将在最初具有这些属性时更新MLInstance的培训和评分参数：
 
@@ -321,7 +324,7 @@ PUT /mlInstances/{MLINSTANCE_ID}
 
 ```shell
 curl -X PUT \
-    https://platform.adobe.io/data/sensei/mlInstances/{MLINSTANCE_ID} \
+    https://platform.adobe.io/data/sensei/mlInstances/46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -365,7 +368,7 @@ curl -X PUT \
 
 ```json
 {
-    "id": "{MLINSTANCE_ID}",
+    "id": "46986c8f-7739-4376-8509-0178bdf32cda",
     "name": "A name for this MLInstance",
     "description": "A description for this MLInstance",
     "engineId": "00000000-0000-0000-0000-000000000000",
@@ -400,7 +403,7 @@ curl -X PUT \
 
 ## 按引擎ID删除MLInstances
 
-您可以通过执行DELETE请求来删除共享同一引擎的所有MLI实例，该请求将引擎ID作为查询参数。
+您可以通过执行将引擎ID作为DELETE参数包含在内的查询请求，删除共享同一引擎的所有MLI实例。
 
 **API格式**
 
@@ -416,7 +419,7 @@ DELETE /mlInstances?engineId={ENGINE_ID}
 
 ```shell
 curl -X DELETE \
-    https://platform.adobe.io/data/sensei/mlInstances?engineId={ENGINE_ID} \
+    https://platform.adobe.io/data/sensei/mlInstances?engineId=22f4166f-85ba-4130-a995-a2b8e1edde32 \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -435,7 +438,7 @@ curl -X DELETE \
 
 ## 删除MLInstance
 
-您可以通过执行DELETE请求来删除单个MLI实例，该请求在请求路径中包含目标MLInstance的ID。
+您可以通过执行DELETE请求来删除单个MLInstance，该请求在请求路径中包含目标MLInstance的ID。
 
 **API格式**
 
@@ -451,7 +454,7 @@ DELETE /mlInstances/{MLINSTANCE_ID}
 
 ```shell
 curl -X DELETE \
-    https://platform.adobe.io/data/sensei/mlInstances/{MLINSTANCE_ID} \
+    https://platform.adobe.io/data/sensei/mlInstances/46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
