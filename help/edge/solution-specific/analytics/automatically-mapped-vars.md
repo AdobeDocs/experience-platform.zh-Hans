@@ -1,23 +1,58 @@
 ---
-title: 在Analytics中自动映射变量
-seo-title: 使用Adobe Experience Platform Web SDK在分析中自动映射变量
-description: 了解在Analytics中使用Experience Platform Web SDK自动映射哪些变量
-seo-description: 了解在Analytics中使用Experience Platform Web SDK自动映射哪些变量
+title: 在Analytics自动映射变量
+seo-title: 使用Adobe Experience PlatformWeb SDK在Analytics自动映射变量
+description: 了解在Analytics使用Experience PlatformWeb SDK自动映射哪些变量
+seo-description: 了解在Analytics使用Experience PlatformWeb SDK自动映射哪些变量
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: a7c8830c5c8152b1f21373a506b2fff97d43c40a
 workflow-type: tm+mt
-source-wordcount: '312'
-ht-degree: 0%
+source-wordcount: '550'
+ht-degree: 2%
 
 ---
 
 
-# 在Analytics中自动映射变量
+# 在Analytics自动映射变量
 
-以下是Adobe Experience Platform Edge Network自动映射到Analytics的变量列表。
+以下是列表边缘网络自动映射到Analytics的变量Adobe Experience Platform。
 
-| XDM字段路径 | 分析查询字符串/HTTP头 | 描述 |
+| XDM字段路径 | Analytics查询字符串/HTTP头 | 描述 |
 | ---------- | ------------------------- | -------- |
+| `commerce.order.purchaseID` | `pi` | AppMeasurement查询参数PURCHASEID映射。 |
+| `commerce.order.currencyCode` | `cc` | AppMeasurement查询参数CURRENCY映射。 |
+| `commerce.purchases.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_PURCHASE `,`。 |
+| `commerce.productViews.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_PROD_视图 `,`。 |
+| `commerce.productListOpens.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_OPEN `,`。 |
+| `commerce.productListViews.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_视图 `,`。 |
+| `commerce.checkouts.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_CHECKOUT `,`。 |
+| `commerce.productListAdds.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_ADD `,`。 |
+| `commerce.productListRemovals.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_REMOVE `,`。 |
+| `commerce.productViews.id` | `events` | `prodView` 事件序列化. |
+| `commerce.productListOpens.id` | `events` | `scOpen` 事件序列化. |
+| `commerce.productListViews.id` | `events` | `scView` 事件序列化. |
+| `commerce.productListAdds.id` | `events` | `scAdd` 事件序列化. |
+| `commerce.productListRemovals.id` | `events` | `scRemove` 事件序列化. |
+| `commerce.checkouts.id` | `events` | `scCheckout` 事件序列化. |
+| `device.screenHeight` | `s` | AppMeasurement查询参数屏幕分辨率映射。 |
+| `device.screenWidth` | `s` | AppMeasurement查询参数屏幕分辨率映射。 |
+| `productlistitems.[N].lineitemid` | `products` | AppMeasurement查询参数产品类别映射。 |
+| `productlistitems.[N].name` | `products` | AppMeasurement查询参数产品名称映射。 |
+| `productlistitems.[N].quantity` | `products` | AppMeasurement查询参数产品数量映射。 |
+| `productlistitems.[N].pricetotal` | `products` | AppMeasurement查询参数产品价格映射。 |
+| `media.mediaTimed.primaryAssetViewDetails.@id` | `c.a.media.vsid` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.primaryAssetReference.@id` | `c.a.media.asset` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.primaryAssetReference.iptc4xmpExt:Rating.[N].iptc4xmpExt:RatingValue` | `c.a.media.rating` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.primaryAssetReference.iptc4xmpExt:Genre` | `c.a.media.genre` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.primaryAssetReference.iptc4xmpExt:Creator.[N].iptc4xmpExt:Name` | `c.a.media.originator` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.starts.value` | `c.a.media.view` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.progress10.value` | `c.a.media.progress10` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.firstQuartiles.value` | `c.a.media.progress25` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.midpoints.value` | `c.a.media.progress50` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.thirdQuartiles.value` | `c.a.media.progress75` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.progress95.value` | `c.a.media.progress95` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.completes.value` | `c.a.media.complete` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.mediaSegmentView.value` | `c.a.media.segmentView` | AppMeasurement上下文数据。 |
+| `media.mediaTimed.dropBeforeStart.value` | `c.a.media.view`, `c.a.media.timePlayed`, `c.a.media.play` | AppMeasurement上下文数据。 |
 | `environment.browserDetails.userAgent` | `User-Agent` | 这是HTTP头映射，HEADER_USER_AGENT。 |
 | `environment.browserDetails.acceptLanguage` | `Accept-Language` | 这是HTTP头映射，HEADER_ACCEPT_LANGUAGE。 |
 | `environment.browserDetails.cookiesEnabled` | `k` | 转换为BOOLEAN_TO_YN的AppMeasurement查询参数COOKIE映射。 |
@@ -36,11 +71,14 @@ ht-degree: 0%
 | `web.webPageDetails.URL` | `g` | AppMeasurement查询参数PAGE_URL映射。 |
 | `web.webPageDetails.homePage` | `hp` | AppMeasurement查询参数HOMEPAGE映射（转换为BOOLEAN_TO_YN）。 |
 | `web.webReferrer.URL` | `r` | AppMeasurement查询参数推荐人映射。 |
+| `web.webInteraction.type` | `pe` | AppMeasurement查询参数PAGE_事件映射（转换为CLICK_MAP_TYPE）。 |
+| `web.webInteraction.URL` | `pev1` | AppMeasurement查询参数PAGE_事件_VAR1映射。 |
+| `web.webInteraction.name` | `pev2` | AppMeasurement查询参数PAGE_事件_VAR2映射。 |
+| `web.webPageDetails.siteSection` | `ch` | AppMeasurement查询参数渠道映射。 |
+| `web.webPageDetails.errorPage` | `pageType` | AppMeasurement查询参数PAGE_TYPE_FULL映射（转换ERROR_PAGE_TYPE）。 |
 | `application.id` | `c.a.appid` | AppMeasurement上下文数 `c.a.appid` 据映射。 |
 | `application.launches.value` | `c.a.launches` | AppMeasurement上下文数 `c.a.launches` 据映射。 |
 | `marketing.trackingCode` | `v0` | AppMeasurement查询参数活动映射。 |
-| `commerce.purchaseID` | `pi` | AppMeasurement查询参数PURCHASEID映射。 |
-| `commerce.currencyCode` | `cc` | AppMeasurement查询参数CURRENCY映射。 |
 | `media.mediaTimed.primaryAssetReference.iptc4xmpExt:Series.iptc4xmpExt:Identifier` | `a.media.name` | AppMeasurement上下文数 `a.media.name` 据映射。 |
 | `media.mediaTimed.primaryAssetReference.xmpDM:duration` | `c.a.media.length` | AppMeasurement上下文数 `c.a.media.length` 据映射。 |
 | `media.mediaTimed.primaryAssetViewDetails.broadcastContentType` | `c.a.contentType` | AppMeasurement上下文数 `c.a.contentType` 据映射。 |
@@ -62,4 +100,5 @@ ht-degree: 0%
 | `media.mediaTimed.pauses.value` | `c.a.media.pauseCount` | AppMeasurement上下文数 `c.a.media.pauseCount` 据映射。 |
 | `media.mediaTimed.pauseTime.value` | `c.a.media.pauseTime` | AppMeasurement上下文数 `c.a.media.pauseTime` 据映射。 |
 | `media.mediaTimed.resumes.value` | `c.a.media.resume` | AppMeasurement上下文数 `c.a.media.resume` 据映射。 |
-| `identitymap.ecid.[0].id` | `mid` | AppMeasurement查询参数MID映射。 |
+| `media.mediaTimed.primaryAssetReference.showType` | `c.a.media.type` | 转换为VIDEO_ `c.a.media.type` SHOW_TYPE的AppMeasurement上下文数据映射。 |
+| `identityMap.ECID.[0].id` | `mid` | AppMeasurement查询参数MID映射。 |
