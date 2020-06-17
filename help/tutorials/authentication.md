@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 验证和访问体验平台API
+title: 验证和访问Experience PlatformAPI
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 8c73363e88aab242ae258037deb80eeec872e519
+source-git-commit: 280456e68f54f49ce4a0134e226af89ad1f849a4
 workflow-type: tm+mt
-source-wordcount: '849'
+source-wordcount: '877'
 ht-degree: 1%
 
 ---
 
 
-# 验证和访问Experience Platform API
+# 验证和访问Experience PlatformAPI
 
-此文档提供了一个分步教程，用于获取对Adobe Experience Platform开发人员帐户的访问权限以调用Experience Platform API。
+此文档提供了一个分步教程，用于获取对Adobe Experience Platform开发者帐户的访问权，以便调用Experience PlatformAPI。
 
 ## 进行身份验证以进行API调用
 
@@ -25,13 +25,13 @@ ht-degree: 1%
 
 ## 先决条件
 
-为了成功调用Experience Platform API，您需要：
+为了成功调用Experience PlatformAPI，您需要：
 
 * 可访问Adobe Experience Platform的IMS组织
 * 注册的Adobe ID帐户
-* Admin Console管理员可将您添加为 **开发** 人 **员和** 产品用户。
+* Admin Console管理员将您添加为 **开发** 人 **员** 和产品用户。
 
-以下各节将逐步介绍创建Adobe ID以及成为组织的开发人员和用户的步骤。
+以下部分将逐步介绍创建Adobe ID以及成为组织的开发人员和用户的步骤。
 
 ### 创建Adobe ID
 
@@ -43,11 +43,11 @@ ht-degree: 1%
 
 ## 成为组织的Experience Platform开发人员和用户
 
-在Adobe I/O上创建集成之前，您的帐户必须对IMS组织中的某个产品具有开发人员权限。 有关Admin Console上开发人员帐户的详细信息，请参阅管理开发 [人员的支](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html) 持文档。
+在Adobe I/O上创建集成之前，您的帐户必须对IMS组织中的某个产品具有开发人员权限。 有关该Admin Console的开发人员帐户的详细信息，请参阅 [支持文档](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html) ，以管理开发人员。
 
 **获得开发人员访问权限**
 
-联系您组织中的Admin Console管理员，以使用Admin Console将您添加为您组织的某个产品的开发 [人员](https://adminconsole.adobe.com/)。
+与组织中的Admin Console管理员联系，将您添加为使用Admin Console的贵组织某个产品的开发 [人员](https://adminconsole.adobe.com/)。
 
 ![](images/authentication/assign-developer.png)
 
@@ -67,8 +67,9 @@ ht-degree: 1%
 
 ![](images/authentication/assign-user-details.png)
 
-
 ## 在Adobe Developer Console中生成访问凭据
+
+>[!NOTE] 如果您正在从文档开发人 [员指南中遵循此Privacy Service](../privacy-service/api/getting-started.md)，您现在可返回该指南以生成Privacy Service特有的访问凭据。
 
 使用Adobe Developer Console，您必须生成以下三个访问凭据：
 
@@ -76,25 +77,25 @@ ht-degree: 1%
 * `{API_KEY}`
 * `{ACCESS_TOKEN}`
 
-您 `{IMS_ORG}` 的 `{API_KEY}` 只需生成一次，以后的Platform API调用中即可重用。 但是，您的计 `{ACCESS_TOKEN}` 划是临时的，必须每24小时再生一次。
+您 `{IMS_ORG}` 的 `{API_KEY}` 只需生成一次，并且以后可以重用PlatformAPI调用。 但是，您的计 `{ACCESS_TOKEN}` 划是临时的，必须每24小时再生一次。
 
 下面详细介绍了这些步骤。
 
 ### 一次性设置
 
-转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用您的Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
+转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
 
 创建新项目后，单击“项 **[!UICONTROL 目概述]** ”屏 _幕上的“添加API_ ”。
 
 ![](images/authentication/add-api-button.png)
 
-出 _现添加API_ 屏幕。 单击Adobe Experience Platform的产品图标，然后选择Experience **[!UICONTROL Platform API]** ，然后单击 **[!UICONTROL 下一步]**。
+出 _现添加API_ 屏幕。 单击Adobe Experience Platform的产品图标，然后选择 **[!UICONTROL Experience PlatformAPI]** ，然后单 **[!UICONTROL 击下一]**&#x200B;步。
 
 ![](images/authentication/add-platform-api.png)
 
-选择Experience Platform作为要添加到项目的API后，请按照教程中介绍的使用服务帐户( [JWT)向项目添加API](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) （从“配置API”步骤开始）的步骤完成该过程。
+选择Experience Platform作为要添加到项目的API后，请按照教程中概述的步骤，使用服务帐户( [JWT)](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) （从“配置API”步骤开始）将API添加到项目，以完成该过程。
 
-将API添加到项目后，“项 _目概述_ ”页将显示对Experience Platform API的所有调用中所需的以下凭据：
+将API添加到项目后，“项目 _概述_ ”页将显示对Experience PlatformAPI的所有调用中所需的以下凭据：
 
 * `{API_KEY}` （客户端ID）
 * `{IMS_ORG}` (Organization ID)
@@ -103,7 +104,7 @@ ht-degree: 1%
 
 ### 每个会话的身份验证
 
-您必须收集的最终所需凭据是您的 `{ACCESS_TOKEN}`。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用平台API。
+您必须收集的最终所需凭据是您的 `{ACCESS_TOKEN}`。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用PlatformAPI。
 
 要生成新代码， `{ACCESS_TOKEN}`请按照“开发人 [员控制台凭据指南](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/credentials.md) ”中的步骤生成JWT令牌。
 
@@ -152,10 +153,10 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 
 ## 使用Postman进行JWT身份验证和API调用
 
-[Postman](https://www.getpostman.com/) 是使用REST风格的API的常用工具。 本 [中篇文章](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) 介绍如何设置邮递员以自动执行JWT身份验证，并使用它使用Adobe Experience Platform API。
+[Postman](https://www.getpostman.com/) 是使用REST风格的API的常用工具。 此 [中篇文章](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) 介绍如何设置邮递员以自动执行JWT身份验证，并使用它使用Adobe Experience PlatformAPI。
 
 ## 后续步骤
 
-通过阅读此文档，您已收集并成功测试了Platform API的访问凭据。 您现在可以按照文档中提供的示例API调 [用操作](../landing/documentation/overview.md)。
+通过阅读此文档，您已收集并成功测试了PlatformAPI的访问凭据。 您现在可以按照文档中提供的示例API调 [用操作](../landing/documentation/overview.md)。
 
-除了在本教程中收集的身份验证值之外，许多平台API还要求以标 `{SANDBOX_NAME}` 头形式提供有效。 有关更多 [信息，请参](../sandboxes/home.md) 阅沙箱概述。
+除了在本教程中收集的身份验证值之外，许多PlatformAPI还要求以头 `{SANDBOX_NAME}` 形式提供有效的身份验证值。 有关更多 [信息，请参](../sandboxes/home.md) 阅沙箱概述。
