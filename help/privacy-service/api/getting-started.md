@@ -1,45 +1,101 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 隐私服务开发人员指南
+title: Privacy Service开发人员指南
 description: 使用RESTful API跨Adobe Experience Cloud应用程序管理数据主体的个人数据
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: a1161630c8edae107b784f32ee20af225f9f8c46
+source-git-commit: 6f93191defad6a79a3f6623da3492ab405787b5c
+workflow-type: tm+mt
+source-wordcount: '793'
+ht-degree: 0%
 
 ---
 
 
-# 隐私服务开发人员指南
+# Privacy Service开发人员指南
 
-Adobe Experience Platform Privacy Service提供RESTful API和用户界面，允许您跨Adobe Experience Cloud应用程序管理（访问和删除）数据主体（客户）的个人数据。 隐私服务还提供了一个中央审核和记录机制，允许您访问涉及Experience Cloud应用程序的作业的状态和结果。
+Adobe Experience Platform Privacy Service提供RESTful API和用户界面，允许您跨Adobe Experience Cloud应用程序管理（访问和删除）数据主体（客户）的个人数据。 Privacy Service还提供了一个中央审计和记录机制，允许您访问涉及Experience Cloud应用程序的作业的状态和结果。
 
-本指南介绍如何使用Privacy Service API。 有关如何使用UI的详细信息，请参阅隐 [私服务UI概述](../ui/overview.md)。 有关隐私服务API中所有可用端点的全面列表，请参阅 [API参考](https://www.adobe.io/apis/experiencecloud/gdpr/api-reference.html)。
+本指南介绍如何使用Privacy ServiceAPI。 有关如何使用UI的详细信息，请参阅 [Privacy ServiceUI概述](../ui/overview.md)。 有关Privacy ServiceAPI中所有可用端点的全面列表，请参阅 [API参考](https://www.adobe.io/apis/experiencecloud/gdpr/api-reference.html)。
 
 ## 入门指南
 
 本指南需要了解以下Experience Platform功能：
 
-* [隐私服务](../home.md):提供RESTful API和用户界面，使您能够跨Adobe Experience Cloud应用程序管理来自数据主体（客户）的访问和删除请求。
+* [Privacy Service](../home.md): 提供REST风格的API和用户界面，允许您跨Adobe Experience Cloud应用程序管理来自数据主体（客户）的访问和删除请求。
 
-以下各节提供了成功调用隐私服务API所需了解的其他信息。
+以下各节提供了成功调用Privacy ServiceAPI所需了解的其他信息。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这些包括路径、必需的标题和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑难解答指南 [中有关如何阅读示例API调用的部分](../../landing/troubleshooting.md) 。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md) 用的章节。
 
-### 收集所需标题的值
+## 收集所需标题的值
 
-要调用平台API，您必须首先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程后，将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
+要调用Privacy ServiceAPI，必须首先收集要在所需标头中使用的访问凭据：
 
-* 授权：承载人 `{ACCESS_TOKEN}`
+* 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+这包括在AdobeAdmin Console中获取Experience Platform的开发人员权限，然后在Adobe开发人员控制台中生成凭据。
 
-* 内容类型：application/json
+### 获得开发人员访问Experience Platform
+
+要获得开发人员对Platform的访问权，请按照Experience Platform身份验证教程中 [的开始步骤](../../tutorials/authentication.md)。 在执行步骤“在Adobe开发人员控制台中生成访问凭据”后，请返回本教程以生成特定于Privacy Service的凭据。
+
+### 生成访问凭据
+
+使用Adobe Developer Console，您必须生成以下三个访问凭据：
+
+* `{IMS_ORG}`
+* `{API_KEY}`
+* `{ACCESS_TOKEN}`
+
+您 `{IMS_ORG}` 的 `{API_KEY}` 只需生成一次，以后的API调用中可以重复使用。 但是，您的计 `{ACCESS_TOKEN}` 划是临时的，必须每24小时再生一次。
+
+生成这些值的步骤详见下文。
+
+#### 一次性设置
+
+转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
+
+创建新项目后，单击“项 **[!UICONTROL 目概述]** ”屏 _[!UICONTROL 幕上的“添加API]_”。
+
+![](../images/api/getting-started/add-api-button.png)
+
+出 _[!UICONTROL 现添加API]_屏幕。 在单**[!UICONTROL &#x200B;击&#x200B;]**“下一步”之前，从可用API的列表中选择**[!UICONTROL  Privacy ServiceAPI ]**。
+
+![](../images/api/getting-started/add-privacy-service-api.png)
+
+将出 _[!UICONTROL 现配置]_API屏幕。 选择“Generate a**[!UICONTROL  key pair ]**（生成键对）”选**[!UICONTROL &#x200B;项，然后单击右&#x200B;]**下角的“Generate keypair（生成键对）”。
+
+![](../images/api/getting-started/generate-key-pair.png)
+
+将自动生成密钥对，并将包含私钥和公共证书的ZIP文件下载到您的本地计算机（稍后将使用）。 选择 **[!UICONTROL 保存配置的]** API以完成配置。
+
+![](../images/api/getting-started/key-pair-generated.png)
+
+将API添加到项目后，项目页面将重新显示在 _Privacy ServiceAPI概述_ 页面。 从此处向下滚动到服 _[!UICONTROL 务帐户(JWT)部分]_，该部分提供对Privacy ServiceAPI的所有调用所需的以下访问凭据：
+
+* **[!UICONTROL 客户端ID]**: 客户端ID是必须 `{API_KEY}` 在x-api-key头中提供的客户端ID。
+* **[!UICONTROL 组织ID]**: 组织ID是 `{IMS_ORG}` 必须在x-gw-ims-org-id标题中使用的值。
+
+![](../images/api/getting-started/jwt-credentials.png)
+
+#### 每个会话的身份验证
+
+您必须收集的最终必需凭 `{ACCESS_TOKEN}`据是您的，在授权头中使用。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用PlatformAPI。
+
+要生成新密 `{ACCESS_TOKEN}`钥，请打开之前下载的私钥，并将其内容粘贴到“生成访问令牌”旁的 _[!UICONTROL 文本框中]_，然后单**[!UICONTROL &#x200B;击“生成令牌”]**。
+
+![](../images/api/getting-started/paste-private-key.png)
+
+将生成新访问令牌，并提供一个按钮以将令牌复制到剪贴板。 此值用于所需的授权头，并且必须以格式提供 `Bearer {ACCESS_TOKEN}`。
+
+![](../images/api/getting-started/generated-access-token.png)
 
 ## 后续步骤
 
-现在，您已经了解要使用哪些标头，可以开始调用隐私服务API了。 隐私工作 [文档](privacy-jobs.md) ，将逐步介绍您可以使用隐私服务API进行的各种API调用。 每个示例调用包括常规API格式、显示所需标题的示例请求和示例响应。
+现在，您已经了解要使用哪些标头，开始调用Privacy ServiceAPI。 隐私工作 [文档](privacy-jobs.md) 将逐步介绍您可以使用Privacy ServiceAPI进行的各种API调用。 每个示例调用都包括常规API格式、显示所需标头的示例请求和示例响应。
