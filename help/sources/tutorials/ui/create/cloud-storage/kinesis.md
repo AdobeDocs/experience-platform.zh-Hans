@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Amazon Kinesis源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: dcd6293a71178fee14647f5b2c8b56d03d1ec7df
+source-git-commit: 855f543a1cef394d121502f03471a60b97eae256
 workflow-type: tm+mt
-source-wordcount: '451'
+source-wordcount: '454'
 ht-degree: 1%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 1%
 # 在UI中创建Amazon Kinesis源连接器
 
 >[!NOTE]
-> Amazon Kinesis连接器为测试版。 功能和文档可能会发生更改。
+>Amazon Kinesis连接器为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-Adobe Experience Platform中的源连接器提供按计划收集外部源数据的能力。 本教程提供使用平台用户界面验证Amazon Kinesis（以下称“Kinesis”）源连接器的步骤。
+Adobe Experience Platform中的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用Platform用户界面验证Amazon Kinesis（以下称“Kinesis”）源连接器的步骤。
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform的以下组件有充分的了解：
+本教程需要对Adobe Experience Platform的以下组件有一定的了解：
 
 - [体验数据模型(XDM)系统](../../../../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
    - [模式合成基础](../../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
@@ -44,9 +44,9 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 ## 连接您的Kinesis帐户
 
-收集所需凭据后，您可以按照以下步骤将Kinesis帐户链接到平台。
+收集所需凭据后，您可以按照以下步骤将Kinesis帐户链接到Platform。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **侧导航栏** 中 *选择“源* ”以访问“源”工作区。 “目 *录* ”选项卡显示可连接到平台的各种源。 每个来源显示与其关联的现有帐户数。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **侧导航栏** 中选 *择源* ，以访问源工作区。 “目 *录* ”选项卡显示可连接到Platform的各种源。 每个来源显示与其关联的现有帐户数。
 
 在云 *存储* 类别下，选 **择Amazon Kinesis** ，然 **** 后单击+图标(+)以创建新的Kinesis连接器。
 
@@ -68,4 +68,4 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 ## 后续步骤
 
-通过遵循本教程，您已将Kinesis帐户连接到平台。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入平台](../../dataflow/streaming/cloud-storage.md)。
+通过遵循本教程，您已将Kinesis帐户连接到Platform。 您现在可以继续阅读下一个教程 [并配置数据流，将云存储中的数据引入Platform](../../dataflow/streaming/cloud-storage.md)。
