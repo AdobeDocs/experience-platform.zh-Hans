@@ -4,10 +4,10 @@ solution: Experience Platform
 title: JupyterLab用户指南
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 440310339003bf23c9fcfc69a6ec1eacddc9f413
+source-git-commit: 49f0678cf8bf4349d0b63f3525a1f707f725ede9
 workflow-type: tm+mt
-source-wordcount: '3672'
-ht-degree: 11%
+source-wordcount: '3782'
+ht-degree: 10%
 
 ---
 
@@ -18,31 +18,31 @@ JupyterLab是Project Jupyter的基于Web的 <a href="https://jupyter.org/" targe
 
 本文档概述了JupyterLab及其功能以及执行常见操作的说明。
 
-## JupyterLab on Experience Platform
+## JupyterLab在Experience Platform方面
 
-Experience Platform的JupyterLab集成随附架构更改、设计考虑事项、自定义笔记本扩展、预安装库和Adobe主题界面。
+Experience Platform的JupyterLab集成随附架构更改、设计注意事项、自定义笔记本扩展、预安装库和Adobe主题界面。
 
-以下列表概述了JupyterLab在平台上独有的一些功能：
+以下列表概述了Platform上JupyterLab特有的一些功能：
 
 | 功能 | 描述 |
 | --- | --- |
 | **内核** | 内核提供笔记本和其他JupyterLab前端以不同编程语言执行和检查代码的能力。 Experience Platform提供额外的内核，支持Python、R、PySpark和Spark中的开发。 有关更多 [详细信息](#kernels) ，请参阅内核部分。 |
 | **数据访问** | 借助对读和写功能的完全支持，直接从JupyterLab中访问现有数据集。 |
-| **平台服务集成** | 内置集成功能允许您直接从JupyterLab中利用其他平台服务。 与其他平台服务集成部分提供支持的集 [成的完整列表](#service-integration)。 |
-| **身份验证** | 除了JupyterLab <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">的内置安全模型</a>，您的应用程序与Experience Platform之间的每次交互（包括平台服务到服务通信）都通过(IMS)进行加密和 <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] 验证</a>。 |
+| **Platform服务集成** | 内置集成允许您直接从JupyterLab中利用其他Platform服务。 与其他Platform服务集成部分提供了受支持集 [成的完整列表](#service-integration)。 |
+| **身份验证** | 除了JupyterLab <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">的内置安全模型</a>，您的应用程序与Experience Platform之间的每次交互(包括Platform服务到服务通信)都通过(IMS)进行加密和 <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] 验证</a>。 |
 | **开发库** | 在Experience Platform中，JupyterLab为Python、R和PySpark提供预装库。 有关受 [支持库](#supported-libraries) 的完整列表，请参阅附录。 |
-| **库控制器** | 当您需要预装的库时，可以为Python和R安装额外的库，并临时存储在隔离的容器中，以保持平台的完整性并保证数据的安全。 有关更多 [详细信息](#kernels) ，请参阅内核部分。 |
+| **库控制器** | 当您需要预装的库时，可以为Python和R安装额外的库，并临时存储在隔离容器中，以保持Platform的完整性并保证数据的安全。 有关更多 [详细信息](#kernels) ，请参阅内核部分。 |
 
 >[!NOTE] 其他库仅可用于安装它们的会话。 启动新会话时，必须重新安装所需的任何其他库。
 
-## 与其他平台服务集成 {#service-integration}
+## 与其他Platform服务集成 {#service-integration}
 
 标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 JupyterLab作为嵌入式IDE [!DNL Platform] 的集成使它能够与其他服务交互， [!DNL Platform] 从而使您能够充分 [!DNL Platform] 利用其潜能。 JupyterLab [!DNL Platform] 提供以下服务：
 
 * **目录服务：** 使用读写功能访问和浏览数据集。
 * **查询服务：** 使用SQL访问和浏览数据集，在处理大量数据时提供更低的数据访问开销。
 * **Sensei ML框架：** 模型开发，能够对数据进行培训和评分，并且只需单击一下即可创建菜谱。
-* **体验数据模型(XDM):** 标准化和互操作性是Adobe Experience Platform的主要概念。 [Adobe推动的体验数据模型](https://www.adobe.com/go/xdm-home-en)(XDM)旨在实现客户体验数据标准化并定义客户体验管理模式。
+* **体验数据模型(XDM):** 标准化和互操作性是Adobe Experience Platform背后的关键概念。 [Adobe推动的体验数据模型](https://www.adobe.com/go/xdm-home-en)(XDM)旨在实现客户体验数据标准化并定义客户体验管理模式。
 
 >[!NOTE] JupyterLab [!DNL Platform] 上的某些服务集成仅限于特定内核。 有关详细信息，请 [参阅](#kernels) “内核”一节。
 
@@ -60,7 +60,7 @@ Experience Platform的JupyterLab集成随附架构更改、设计考虑事项、
 
 ### 访问JupyterLab {#access-jupyterlab}
 
-在 [Adobe Experience Platform中](https://platform.adobe.com)，从左 **侧导航列** 中选择“笔记本”。 给JupyterLab留出一些时间来完全初始化。
+在 [Adobe Experience Platform](https://platform.adobe.com)，从左 **侧导** 航列中选择“笔记本”。 给JupyterLab留出一些时间来完全初始化。
 
 ![](../images/jupyterlab/user-guide/access_jupyterlab.png)
 
@@ -124,7 +124,7 @@ JupyterLab中的主要工作区域允许您将文档和其他活动排列到选�
 
 某些特性和功能仅限于下表所述的特定内核：
 
-| 内核 | 库安装支持 | 平台集成 |
+| 内核 | 库安装支持 | Platform集成 |
 | :----: | :--------------------------: | :-------------------- |
 | **Python** | 是 | <ul><li>Sensei ML框架</li><li>目录服务</li><li>查询服务</li></ul> |
 | **R** | 是 | <ul><li>Sensei ML框架</li><li>目录服务</li></ul> |
@@ -227,9 +227,18 @@ JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活
 
 ![](../images/jupyterlab/user-guide/new_launcher.gif)
 
-## 使用笔记本访问平台数据
+### Python/R中的GPU和内存服务器配置
 
-每个支持的内核都提供内置功能，允许您从笔记本内的数据集中读取平台数据。 但是，对分页数据的支持仅限于Python和R笔记本。
+在 [!DNL JupyterLab] 中，选择右上角的齿轮图标以打开笔记本 *服务器配置*。 您可以打开GPU并使用滑块分配所需的内存量。 您可以分配的内存量取决于您的组织已配置的内存量。 选择 **[!UICONTROL 要保存]** 的更新配置。
+
+>[!NOTE]
+>每个组织只为笔记本提供一个GPU。 如果GPU正在使用，您需要等待当前已保留GPU的用户释放它。 这可以通过注销或将GPU置于空闲状态四小时或更长时间来完成。
+
+![](../images/jupyterlab/user-guide/notebook-gpu-config.png)
+
+## 使用笔记本访问Platform数据
+
+每个支持的内核都提供内置功能，允许您从笔记本中的数据集读取Platform数据。 但是，对分页数据的支持仅限于Python和R笔记本。
 
 ### 笔记本数据限制
 
@@ -439,7 +448,7 @@ dataFrame.show()
 
 ### 查询查询服务在Python中的应用
 
-JupyterLab on Platform允许您在Python笔记本中使用SQL通过Adobe Experience Platform <a href="https://www.adobe.com/go/query-service-home-en" target="_blank">查询服务访问数据</a>。 通过查询服务访问数据对于处理大型数据集非常有用，因为它具有出色的运行时间。 建议使用查询服务查询数据的处理时间限制为十分钟。
+JupyterLab的Platform功能允许您在Python笔记本中使用SQL通过Adobe Experience Platform <a href="https://www.adobe.com/go/query-service-home-en" target="_blank">查询服务访问数据</a>。 通过查询服务访问数据对于处理大型数据集非常有用，因为它具有出色的运行时间。 建议使用查询服务查询数据的处理时间限制为十分钟。
 
 在JupyterLab中使用查询服务之前，请确保您对查询服务SQL语法 <a href="https://www.adobe.com/go/query-service-sql-syntax-en" target="_blank">有正确的了解</a>。
 
