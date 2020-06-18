@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Couchbase源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: adb9c46e7337897e2336971e58ebc90b0e497ea0
+source-git-commit: 5ad763d2167c68f3293a2813248efaee22230a52
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '479'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 # 在UI中创建Couchbase源连接器
 
 > [!NOTE]
-> Couchbase连接器为测试版。 功能和文档可能会发生更改。
+> Couchbase连接器为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
 中的源连 [!DNL Adobe Experience Platform] 接器提供按计划接收外部源数据的能力。 本教程提供了使用用户界面创建Couchbase源连接器 [!DNL Platform] 的步骤。
 
@@ -42,7 +42,7 @@ ht-degree: 1%
 
 收集所需凭据后，您可以按照以下步骤创建新的Couchbase帐户以连接到 [!DNL Platform]。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中 *[!UICONTROL 选择“源]* ”以访问“源”工作区。 “目 *[!UICONTROL 录]* ”屏幕显示可为其创建入站帐户的各种源，每个源显示与它们关联的现有帐户和数据集流的数量。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选 *[!UICONTROL 择源]* ，以访问源工作区。 “目 *[!UICONTROL 录]* ”屏幕显示可为其创建入站帐户的各种源，每个源显示与它们关联的现有帐户和数据集流的数量。
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
@@ -66,4 +66,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-通过遵循本教程，您已建立了与Couchbase帐户的连接。 您现在可以继续阅读下一个教程， [并配置数据流以将数据引入平台](../../dataflow/databases.md)。
+通过遵循本教程，您已建立了与Couchbase帐户的连接。 您现在可以继续学习下一个教程并 [配置数据流以将数据引入Platform](../../dataflow/databases.md)。
