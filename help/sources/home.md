@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform源连接器概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: e5789a10c49b2933a0727692dedf2601a214dbc2
+source-git-commit: a9ce046d6ee8622e23f31edbbf777b045109c13b
 workflow-type: tm+mt
-source-wordcount: '763'
+source-wordcount: '906'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # 源连接器概述
 
-Adobe Experience Platform允许从外部源摄取数据，同时提供使用平台服务构建、标记和增强传入数据的能力。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
+Adobe Experience Platform允许从外部源摄取数据，同时使您能够使用Platform服务构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 
-Experience Platform提供REST风格的API和交互式UI，让您轻松设置与各种数据提供商的源连接。 这些源连接使您能够验证您的第三方系统，设置摄取运行的时间并管理数据摄取吞吐量。
+Experience Platform提供RESTful API和交互式UI，使您能轻松设置与各种数据提供者的源连接。 这些源连接使您能够验证您的第三方系统，设置摄取运行的时间并管理数据摄取吞吐量。
 
-借助Experience Platform，您可以集中从不同来源收集的数据，并利用从中获得的洞察完成更多工作。
+利用Experience Platform，您可以集中从不同来源收集的数据，并利用从中获得的洞察做更多工作。
 
 ## 源类型
 
@@ -26,23 +26,23 @@ Experience Platform中的源分为以下类别:
 
 ### Adobe应用程序
 
-Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics、Adobe受众管理器和Experience Platform Launch)中摄取数据。 有关更多信息，请参阅以下相关文档:
+Experience Platform允许从其他Adobe应用程序(包括AdobeAnalytics、Adobe Audience Manager和Experience Platform Launch)中摄取数据。 有关更多信息，请参阅以下相关文档:
 
-- [Adobe受众管理器连接器概述](connectors/adobe-applications/audience-manager.md)
-- [在UI中创建Adobe受众管理器源连接器](./tutorials/ui/create/adobe-applications/audience-manager.md)
-- [Adobe Analytics数据连接器概述](connectors/adobe-applications/analytics.md)
-- [在UI中创建Adobe Analytics源连接器](./tutorials/ui/create/adobe-applications/analytics.md)
+- [Adobe Audience Manager连接器概述](connectors/adobe-applications/audience-manager.md)
+- [在UI中创建Adobe Audience Manager源连接器](./tutorials/ui/create/adobe-applications/audience-manager.md)
+- [AdobeAnalytics数据连接器概述](connectors/adobe-applications/analytics.md)
+- [在UI中创建AdobeAnalytics源连接器](./tutorials/ui/create/adobe-applications/analytics.md)
 - [在UI中创建客户属性源连接器](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 
 ### 广告
 
-Experience Platform支持从第三方广告系统接收数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
+Experience Platform支持从第三方广告系统中获取数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
 
 - [Google AdWords连接器](connectors/advertising/ads.md)
 
 ### 云存储
 
-云存储源可以将您自己的数据导入平台，而无需下载、格式化或上传。 摄取的数据可格式化为XDM JSON、XDM镶木地板或分隔。 该过程的每个步骤都使用用户界面集成到源工作流中。 有关更多信息，请参阅以下相关文档:
+云存储源可以将您自己的数据引入Platform中，而无需下载、格式化或上传。 摄取的数据可格式化为XDM JSON、XDM镶木地板或分隔。 该过程的每个步骤都使用用户界面集成到源工作流中。 有关更多信息，请参阅以下相关文档:
 
 - [Azure Data Lake存储Gen2连接器](connectors/cloud-storage/adls-gen2.md)
 - [Azure Blob和Amazon S3连接器](connectors/cloud-storage/blob-s3.md)
@@ -55,7 +55,7 @@ Experience Platform支持从第三方广告系统接收数据。 有关特定源
 
 ### 客户关系管理(CRM)
 
-CRM系统提供的数据有助于建立客户关系，进而创造忠诚度并推动客户保留。 Experience Platform提供从Microsoft Dynamics 365和Salesforce获取CRM数据的支持。 有关更多信息，请参阅以下相关文档:
+CRM系统提供的数据有助于建立客户关系，进而创造忠诚度并推动客户保留。 Experience Platform支持从Microsoft Dynamics 365和Salesforce获取CRM数据。 有关更多信息，请参阅以下相关文档:
 
 - [Microsoft Dynamics连接器](connectors/crm/ms-dynamics.md)
 - [Salesforce连接器](connectors/crm/salesforce.md)
@@ -75,7 +75,7 @@ Experience Platform支持从第三方数据库中摄取数据。 有关特定源
 - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
 - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
 - [Azure Data Explorer连接器](connectors/databases/data-explorer.md)
-- [Azure Synapse Analytics连接器](connectors/databases/synapse-analytics.md)
+- [Azure突触Analytics连接器](connectors/databases/synapse-analytics.md)
 - [Azure表存储连接器](connectors/databases/ats.md)
 - [Couchbase连接器](connectors/databases/couchbase.md)
 - [Google BigQuery连接器](connectors/databases/bigquery.md)
@@ -109,7 +109,7 @@ Experience Platform支持从第三方协议系统接收数据。 有关特定源
 
 ## 访问控制数据获取中的源
 
-可以在Adobe Admin Console中管理数据获取中的源的权限。 您可以通过特定产品用户档案 *中的* “权限”选项卡访问权限。 从“编 **辑权限** ”面板中，可以通过数据获取菜单条目访问与 *源相关的* 权限。 “ **视图源** ”权限授予对“目录”选项卡中可用源的只读访问权，并在“浏览”选项卡中通过身份验证的源 *，而“管理源******* ”权限则授予对读取、创建、编辑和禁用源的完全访问权限。
+可以在AdobeAdmin Console中管理数据获取中的源的权限。 您可以通过特定产品用户档案 *中的* “权限”选项卡访问权限。 从“编 **辑权限** ”面板中，可以通过数据获取菜单条目访问与 *源相关的* 权限。 “ **视图源** ”权限授予对“目录”选项卡中可用源的只读访问权，并在“浏览”选项卡中通过身份验证的源 *，而“管理源******* ”权限则授予对读取、创建、编辑和禁用源的完全访问权限。
 
 下表概述了UI根据这些权限的不同组合而表现的方式：
 
@@ -120,3 +120,13 @@ Experience Platform支持从第三方协议系统接收数据。 有关特定源
 | **视图源** Off和 **管理源** Off | 撤销对源的所有访问权限。 |
 
 有关通过Admin Console授予的可用权限（包括这四个来源）的详细信息，请参阅 [访问控制概述](../access-control/home.md)。
+
+## 条款和条件 {#terms-and-conditions}
+
+通过使用任何标为测试版（“测试版”）的来源，您特此确认测试版按“原样”提 ***供，并且不作任何形式的担保***。
+
+Adobe没有义务维护、更正、更新、更改、修改或以其他方式支持测试版。 建议您务必小心，不要以任何方式依赖此类测试版和／或随附材料的正确功能或性能。 测试版被视为Adobe的机密信息。
+
+您向Adobe提供的任何“反馈”（有关测试版的信息，包括但不限于您在使用测试版、建议、改进和建议时遇到的问题或缺陷），包括对此类反馈的所有权利、所有权和兴趣，均已分配给Adobe。
+
+提交开放式反馈或创建支持票证以共享您的建议或报告错误，寻求功能增强。
