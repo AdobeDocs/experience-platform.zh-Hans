@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Apache HDFS源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: adb9c46e7337897e2336971e58ebc90b0e497ea0
+source-git-commit: 855f543a1cef394d121502f03471a60b97eae256
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '490'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 # 在UI中创建Apache HDFS源连接器
 
 >[!NOTE]
->Apache HDFS为Beta版。 功能和文档可能会发生更改。
+>Apache HDFS连接器处于测试状态。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
 中的源连 [!DNL Adobe Experience Platform] 接器提供按计划接收外部源数据的能力。 本教程提供使用用户界面验证Apache Hadoop分布式文件系统（以下称“HDFS”）源连接器的 [!DNL Platform] 步骤。
 
@@ -42,7 +42,7 @@ ht-degree: 1%
 
 收集所需凭据后，您可以按照以下步骤创建新的HDFS帐户以连接到 [!DNL Platform]。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中 *[!UICONTROL 选择“源]* ”以访问“源”工作区。 “ *[!UICONTROL 目录]* ”屏幕显示可为其创建入站帐户的各种源，每个源显示与它们关联的现有帐户和数据流的数量。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选 *[!UICONTROL 择源]* ，以访问源工作区。 “ *[!UICONTROL 目录]* ”屏幕显示可为其创建入站帐户的各种源，每个源显示与它们关联的现有帐户和数据流的数量。
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
@@ -66,4 +66,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-按照本教程，您已建立了与HDFS帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md)。
+按照本教程，您已建立了与HDFS帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将云存储中的数据引入Platform](../../dataflow/batch/cloud-storage.md)。
