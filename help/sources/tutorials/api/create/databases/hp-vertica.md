@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用Flow Service API创建HP Vertica连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0a2247a9267d4da481b3f3a5dfddf45d49016e61
+source-git-commit: e4ed6ae3ee668cd0db741bd07d2fb7be593db4c9
 workflow-type: tm+mt
-source-wordcount: '630'
+source-wordcount: '633'
 ht-degree: 3%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 3%
 # 使用Flow Service API创建HP Vertica连接器
 
 >[!NOTE]
->HP Vertica连接器处于测试阶段。 功能和文档可能会发生更改。
+>HP Vertica连接器处于测试阶段。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-Flow Service用于在Adobe Experience Platform内收集和集中来自不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+流服务用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
 本教程使用Flow Service API指导您完成将HP Vertica连接到Experience Platform的步骤。
 
@@ -25,8 +25,8 @@ Flow Service用于在Adobe Experience Platform内收集和集中来自不同来�
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-- [来源](https://docs.adobe.com/content/help/en/experience-platform/source-connectors/home.html): Experience Platform允许从各种来源摄取数据，同时使您能够使用平台服务构建、映射和增强传入数据。
-- [沙箱](https://docs.adobe.com/content/help/zh-Hans/experience-platform/sandbox/home.html): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和改进数字体验应用程序。
+- [来源](https://docs.adobe.com/content/help/en/experience-platform/source-connectors/home.html): Experience Platform允许从各种来源摄取数据，同时使您能够使用Platform服务构建、映射和增强传入数据。
+- [沙箱](https://docs.adobe.com/content/help/zh-Hans/experience-platform/sandbox/home.html): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了使用Flow Service API成功连接到HP Vertica所需的其他信息。
 
@@ -43,17 +43,17 @@ Flow Service用于在Adobe Experience Platform内收集和集中来自不同来�
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](https://docs.adobe.com/content/help/en/experience-platform/landing/troubleshooting.html#reading-example-api-calls) 用的部分。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](https://docs.adobe.com/content/help/en/experience-platform/landing/troubleshooting.html#reading-example-api-calls) 用的章节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成身份验证 [教程](https://docs.adobe.com/content/help/en/experience-platform/tutorials/authentication.html)。 完成身份验证教程后，将提供所有Experience Platform API调用中每个所需标头的值，如下所示：
+要调用PlatformAPI，您必须先完成身份验证 [教程](https://docs.adobe.com/content/help/en/experience-platform/tutorials/authentication.html)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 - 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源（包括源连接器）都与特定虚拟沙箱隔离。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+Experience Platform中的所有资源（包括源连接器）都与特定虚拟沙箱隔离。 对PlatformAPI的所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
