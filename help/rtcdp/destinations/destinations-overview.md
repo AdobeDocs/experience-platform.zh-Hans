@@ -1,34 +1,34 @@
 ---
 title: 目标概述
 seo-title: 目标概述
-description: 目标是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以在Adobe实时客户数据平台中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
-seo-description: 目标是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以在Adobe实时客户数据平台中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
+description: 目标是预建的与目标平台的集成，允许从实时激活Platform无缝地数据。 您可以在Adobe实时客户Platform中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
+seo-description: 目标是预建的与目标平台的集成，允许从实时激活Platform无缝地数据。 您可以在Adobe实时客户Platform中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 translation-type: tm+mt
-source-git-commit: 49479cd1520bd2407ecd5140265661aefe0817a3
+source-git-commit: a61a2a4d9d51c402bb50153c06a93d255a3613cb
 workflow-type: tm+mt
-source-wordcount: '393'
-ht-degree: 0%
+source-wordcount: '532'
+ht-degree: 1%
 
 ---
 
 
-# 目标概述
+# 目标概述 {#overview}
 
 ![目标概述横幅](/help/rtcdp/destinations/assets/destinations-overview-banner.png)
 
-**目标** 是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
+**目标** 是预建的与目标平台集成，允许从实时客户数据Platform无缝激活数据。 您可以使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 
-## 目标和来源
+## 目标和来源 {#destinations-and-sources}
 
 实时CDP的一个核心功能是接收第一方数据并根据业务需求激活它。 使用源将数据引入实时CDP中，并使用目标从实时CDP中导出数据。
 
-## 目标步骤
+## 目标步骤 {#steps}
 
 * 从实时 [CDP中提供](/help/rtcdp/destinations/destinations-catalog.md) 的所有目标的自助服务目录中进行选择。
 * 使 **[!UICONTROL 用目]** 的地 [激活用户档案](/help/rtcdp/destinations/activate-destinations.md) 或细分，并将其发送到营销自动化平台、数字广告平台等。
 * 计划定期导出到首选目标。
 
-## 控件
+## 控件 {#controls}
 
 “目标”工作区 [中的控件](/help/rtcdp/destinations/destinations-workspace.md) ，允许您：
 
@@ -38,24 +38,32 @@ ht-degree: 0%
 * 选择应将哪些区段激活到目标；
 * 在将区段 [激活到电子邮件营销目标时](../../xdm/home.md) ，选择要导出的体验数据模型(XDM)字段。
 
-## 目标类型和类别
+## Destination types and categories {#types-and-categories}
 
 有关详细信息，请参 [阅目标类型和类别概述](/help/rtcdp/destinations/destination-types.md)。
 
-## 目标和访问控制
+## 目标和访问控制 {#access-controls}
 
-实时CDP中的目标功能可与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以视图、管理和激活目标。 有关各个权限的信息，请参 [阅Adobe Experience Platform中的访问控制](../../access-control/home.md) ，然后向下滚动到页面底部。
+实时CDP中的目标功能可与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以视图、管理和激活目标。 有关各个权限的信息，请参 [阅Adobe Experience Platform中的](../../access-control/home.md) 访问控制，然后向下滚动到页面底部。
 
 有关访问控制的详细信息，请参阅 [访问控制用户指南](../../access-control/ui/overview.md)。
 
-<!--
+## 将数据激活到目标的数据管理限制 {#data-governance}
 
-// Commenting out DULE in Destinations service
+通过以下方式为实时CDP目标实施数据管理：
 
-## Destinations and Data Usage Labeling and Enforcement (DULE)
+* *您可以在创建* 、目标工作流中选择的营销用例；
+* *数据使用策略* ，可限制包含某些使用标签的数据被激活到具有某些市场营销用例的目标。
 
-Data Usage Labeling and Enforcement (DULE) is the core mechanism of Adobe Experience Platform Data Governance. DULE is currently *not* enforced in Adobe Real-time CDP destinations.
+有关营销使用案例和解决违反数据策略的情况的更 [多信息，请参](/help/rtcdp/privacy/data-governance-overview.md#destinations) 阅 [实时CDP中的数据管理文档](/help/rtcdp/privacy/data-governance-overview.md#enforcement)。
 
-You are responsible for understanding the limitations and obligations of your data and how you use that data in Experience Platform.
+有关在创建目标工作流中选择营销用例的详细信息，请参阅实时CDP中不同目标类型的以下页面：
 
--->
+* [广告目标-Google Ad Manager ](/help/rtcdp/destinations/google-ad-manager-destination.md)
+* [广告目的地- Google广告](/help/rtcdp/destinations/google-ads-destination.md)
+* [广告目标- Google Display &amp; Video 360 ](/help/rtcdp/destinations/google-dv360-destination.md)
+* [云存储目标](/help/rtcdp/destinations/cloud-storage-destinations-workflow.md)
+* [电子邮件营销目标](/help/rtcdp/destinations/email-marketing-destinations.md)
+* [社交网络目标](/help/rtcdp/destinations/social-network-destinations-workflow.md)
+
+有关区段激活工作流中违反数据策略的详细信息，请参阅将和区段 [激活到目标用户档案中的步骤7](/help/rtcdp/destinations/activate-destinations.md)。
