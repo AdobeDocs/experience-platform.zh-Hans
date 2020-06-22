@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案用户指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: da3793a528fa919633e777423d77e7be9cbc0154
+source-git-commit: 4589d0cdca36992feea208850abdda1a9dc246c0
 workflow-type: tm+mt
-source-wordcount: '1206'
+source-wordcount: '1208'
 ht-degree: 0%
 
 ---
@@ -32,19 +32,21 @@ ht-degree: 0%
 
 ![](../images/user-guide/profiles-overview.png)
 
-## 用户档案浏览
+## 浏览
 
-单击“ **浏览** ”选项卡，按标识浏览用户档案。
+选择“ *浏览* ”选项卡，按标识浏览用户档案。
+
+![](../images/user-guide/profiles-browse.png)
 
 ### 用户档案指标 {#profile-metrics}
 
-在“浏览”选项卡的右侧 **是** ，与用户档案数据相关的几个重要命名空间指标，包括您的总 [用户档案数](#profile-count) ，以及按用户档案列出 [的用户档案](#profiles-by-namespace)。
+在“浏览”选项卡的右侧 *是与用户档案* 相关的几个重要指标，包括您的总 [用户档案数](#profile-count) ，以及按命名空间 [列出用户档案](#profiles-by-namespace)。
 
 这些用户档案量度是使用单位的默认合并策略评估的。 有关使用合并策略（包括如何定义默认合并策略）的详细信息，请参阅合 [并策略用户指南](merge-policies.md)。
 
 除了这些指标外，用户档案指标部分还提供上次 *更新的日* 期和时间，显示上次评估指标的时间。
 
-![](../images/user-guide/profiles-browse.png)
+![](../images/user-guide/profiles-profile-metrics.png)
 
 ### 用户档案计数 {#profile-count}
 
@@ -92,13 +94,13 @@ ht-degree: 0%
 
 ![](../images/user-guide/profiles-profile-detail.png)
 
-您可以视图与用户档案相关的附加信息，包括用户档案是其成员的属性、事件和区段。
+您可以视图与用户档案相关的其他信 *息*, *包括属*&#x200B;性 *、事件* 和用户档案所属的区段。
 
 ![](../images/user-guide/profiles-attributes-events-segments.png)
 
 ## 合并策略
 
-单击 **合并策略** ，以视图属于您组织的一列表合并策略。 每个列出的策略都显示其名称，无论它是否为默认合并策略，以及它所应用的模式。
+选择“ *合并策略* ”选项卡以视图属于您的组织的合并策略列表。 每个列出的策略都显示其名称，无论它是否为默认合并策略，以及它所应用的模式。
 
 有关合并策略的详细信息，请参 [阅合并策略用户指南](merge-policies.md)。
 
@@ -106,7 +108,7 @@ ht-degree: 0%
 
 ## 合并模式
 
-单 **击合并** 模式以视图用户档案商店的合并模式。 合并模式是同一类下所有体验数据模型(XDM)字段的合并，该类模式已被允许用于实时客户用户档案。 单击左侧列表中的类，在画布中视图其合并模式的结构。
+选择 *合并模式* 选项卡，以视图用户档案商店的合并模式。 合并模式是同一类下所有体验数据模型(XDM)字段的合并，该类模式已被允许用于实时客户用户档案。 在左侧列表中选择一个类，以在画布中视图其合并模式的结构。
 
 例如，选择“XDM用户档案”将显示XDM单个用户档案类的合并模式。
 
