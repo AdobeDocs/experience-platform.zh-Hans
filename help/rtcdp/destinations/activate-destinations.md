@@ -1,12 +1,12 @@
 ---
 title: 将用户档案和区段激活到目标
 seo-title: 将用户档案和区段激活到目标
-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
-seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
+description: 通过将区段映射到目标，激活您在Adobe实时客户Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
+seo-description: 通过将区段映射到目标，激活您在Adobe实时客户Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 24e4746b28620210c138a1e803b6afadff79ab30
+source-git-commit: b1f8cbe245f73e31a8941fc45cefcee595968a70
 workflow-type: tm+mt
-source-wordcount: '889'
+source-wordcount: '1019'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # 将用户档案和区段激活到目标
 
-通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
+通过将区段映射到目标，激活您在Adobe实时客户Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 
 ## 先决条件 {#prerequisites}
 
-要将数据激活到目标，您必须已成 [功连接目标](/help/rtcdp/destinations/assets/connect-destination-1.png)。 如果尚未这样做，请转到目标目 [录](/help/rtcdp/destinations/destinations-catalog.md)，浏览支持的目标，然后设置一个或多个目标。
+要将数据激活到目标，您必须已成 [功连接目标](/help/rtcdp/destinations/connect-destination.md)。 如果尚未这样做，请转到目标目 [录](/help/rtcdp/destinations/destinations-catalog.md)，浏览支持的目标，然后设置一个或多个目标。
 
 ## 激活数据 {#activate-data}
 
@@ -27,9 +27,19 @@ ht-degree: 0%
    ![activate-flow](/help/rtcdp/destinations/assets/activate-flow.png)请注意，如果目标激活流已存在，您可以看到当前发送到目标的区段。 选 **[!UICONTROL 择右边栏]** 中的编辑激活，然后按照以下步骤修改激活详细信息。
 3. 选择 **[!UICONTROL 激活]**;
 4. 在激活 **[!UICONTROL 目标工作流]** ，在选择 **[!UICONTROL 区段页面上]** ，选择要发送到目标的区段。
-   ![细分到目标](/help/rtcdp/destinations/assets/select-segments.png)
+   ![细分到目标](/help/rtcdp/destinations/assets/email-select-segments.png)
 5. *视情况而定*. 此步骤因激活区段的目标类型而异。 <br> 对于 *电子邮件营销**目标和云存储目标*，在“选择属 **[!UICONTROL 性”页面上，选]****** 择“添加新字段”并选择要发送到目标的属性。
 我们建议将其中一个属性作为合并 [模式的唯](/help/rtcdp/destinations/email-marketing-destinations.md#identity) 一标识符。 有关强制属性的详细信息，请参阅电子邮件营销目 [标文章中的标](/help/rtcdp/destinations/email-marketing-destinations.md#identity) 识。
+
+   >[!NOTE]
+   > 
+   >如果任何激活使用标签已应用于数据集（而非整个数据集）中的某些字段，则在以下条件下将执行这些字段级别标签：
+   >* 这些字段用在段定义中。
+   >* 字段将配置为目标目标的预计属性。
+
+   >
+   > 请考虑以下屏幕截图。 例如，如果字段具有与目 `person.name.first.Name` 标的营销用例冲突的特定数据使用标签，则在审核步骤（第7步）中将显示数据使用策略违规。 有关详细信息，请参 [阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations)
+
    ![目标属性](/help/rtcdp/destinations/assets/select-attributes-step.png)
 
    <br> 
@@ -47,7 +57,7 @@ ht-degree: 0%
    ![作为身份的忠诚度ID](/help/rtcdp/destinations/assets/rewardsid-as-identity.gif)
 
 
-   根据 `Email_LC_SHA256` Facebook电子邮件散列要求，如果您在将目标接收时将客户电子邮件地址哈希化到Adobe Experience Platform，则选择 [身份](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements)。 <br> 如果 `Email` 您使用的电子邮件地址没有散列，请选择作为目标标识。 Adobe实时CDP将散列电子邮件地址以符合Facebook要求。
+   如果 `Email_LC_SHA256` 您根据Facebook电子邮件散列法的要求，将目标接收时的客户电子邮件地址散列成Adobe Experience Platform，请 [选择身份](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements)。 <br> 如果 `Email` 您使用的电子邮件地址没有散列，请选择作为目标标识。 Adobe实时CDP将散列电子邮件地址以符合Facebook要求。
 
    ![填写字段后的身份映射](/help/rtcdp/destinations/assets/identity-mapping.png)
 
@@ -61,7 +71,17 @@ ht-degree: 0%
 
 7. 在“审 **[!UICONTROL 阅]** ”页面上，您可以看到所选内容的摘要。 选 **[!UICONTROL 择取消]** (Cancel **[!UICONTROL )以分解流，选择]** 返回 **[!UICONTROL (Back)以修改设置，或选择]** 完成(Finish)以确认选择并开始将数据发送到目标。
 
+   >[!IMPORTANT]
+   >
+   >在此步骤中，实时CDP会检查数据使用策略违规。 下面显示了违反策略的示例。 在解决违规之前，您无法完成区段激活工作流。 有关如何解决违反策略的信息，请参 [阅数据管理](/help/rtcdp/privacy/data-governance-overview.md#enforcement) 文档部分中的策略实施。
+
+![确认选择](/help/rtcdp/destinations/assets/data-policy-violation.png)
+
+如果未检测到任何违反策略的情况，请选 **[!UICONTROL 择“完成]** ”以确认您的选择，并让开始将数据发送到目标。
+
 ![确认选择](/help/rtcdp/destinations/assets/confirm-selection.png)
+
+
 
 ## 编辑激活 {#edit-activation}
 
@@ -106,5 +126,3 @@ Salesforce_id3544_20191122124530.csv
 1. 在左 **[!UICONTROL 侧导航]** 栏中选择目标，然后单击 **[!UICONTROL 浏览]** 选项卡，然后单击目标名称。
 2. 单击右 **[!UICONTROL 边栏]** 中的“已启用”控件以更改激活流状态。
 3. 在“更 **新激活流状态** ”窗口中， **选择“确** 认”以禁用流。
-
-在AWS Kinesis中，生成一个访问密钥——秘密访问密钥对，以授予Adobe Real-time CDP对您的AWS Kinesis帐户的访问权限。 在AWS Kinesis文档中 [了解更多信息](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)。
