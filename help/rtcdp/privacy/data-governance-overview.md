@@ -1,12 +1,12 @@
 ---
 title: 数据管理概述
-seo-title: 实时客户数据平台中的数据治理
+seo-title: 实时客户数据Platform中的数据治理
 description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 seo-description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 translation-type: tm+mt
-source-git-commit: af7fa6048fa60392a98975fe6fc36e8302355a05
+source-git-commit: c81723d00f6b0a9338c8dd3be8c79385677b4e93
 workflow-type: tm+mt
-source-wordcount: '946'
+source-wordcount: '1085'
 ht-degree: 1%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 1%
 
 # 实时CDP中的数据管理
 
-实时客户数据平台(Real-time CDP)将多个企业系统的数据整合在一起，使营销人员能够更好地识别、理解和吸引客户。 此数据可能受组织或法律法规定义的使用限制的约束。 因此，在处理数据时，务必确保实时CDP符合使用策略。
+实时客户数据Platform（实时CDP）将来自多个企业系统的数据整合在一起，使营销人员能够更好地识别、理解和吸引客户。 此数据可能受组织或法律法规定义的使用限制的约束。 因此，在处理数据时，务必确保实时CDP符合使用策略。
 
-Adobe Experience Platform数据管理允许您管理客户数据并确保符合适用于数据使用的法规、限制和政策。 它在实时CDP中起着关键作用，允许您定义使用策略，根据这些策略对数据进行分类，并在执行某些营销操作时检查是否存在违反策略的情况。
+Adobe Experience Platform数据治理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 它在实时CDP中起着关键作用，允许您定义使用策略，根据这些策略对数据进行分类，并在执行某些营销操作时检查是否存在违反策略的情况。
 
-实时CDP构建在Adobe Experience Platform的基础上，因此Experience Platform文档中涵盖了大多数数据管理功能。 本文档旨在补充Experience Platform的 [“数据治理](../../data-governance/home.md) ”概述，并概述实时CDP中提供的“治理”功能。 涵盖下列主题：
+实时CDP构建于Adobe Experience Platform之上，因此Experience Platform文档中涵盖了大多数数据治理功能。 本文档旨在补充 [的“Experience Platform治理”概述](../../data-governance/home.md) ，并概述实时CDP中提供的“治理”功能。 涵盖下列主题：
 
 * [将使用标签应用于您的数据](#labels)
 * [管理数据使用策略](#policies)
@@ -28,20 +28,24 @@ Adobe Experience Platform数据管理允许您管理客户数据并确保符合�
 
 Data Governance允许您在数据集或数据集字段级别对数据应用使用标签。 数据使用标签允许您根据适用于该数据的使用策略对数据进行分类。
 
-有关使用数据使用标签的详细信息，请参 [阅适用于Adobe Experience Platform的数据使用](../../data-governance/labels/overview.md) 标签用户指南。
+有关使用数据使用标签的详细信息，请参 [阅Adobe Experience Platform使用标签用户指南](../../data-governance/labels/overview.md) 。
 
-## 设置目标限制
+## 为目标配置营销用例 {#destinations}
 
-您可以通过为目标定义市场营销用例来设置目标的数据使用限制。 定义目标的使用案例允许您检查是否存在使用策略违规，并确保发送到该目标的任何用户档案或区段均与数据管理规则兼容。
+您可以通过为目标定义营销用例（也称为营销活动）来设置目标的数据使用限制。 目标的市场营销用例指明将导出到该目标的数据的用途。
 
-市场营销用例可以在编辑目标工作 _流的_ “设置” _阶段定义_ 。 有关详细信息，请参阅目标文档。
+>[!NOTE] 有关营销操作及其在数据使用策略中的使用的更多信息，请参 [阅Experience Platform文档中的](../../data-governance/policies/overview.md) “数据使用策略”概述。
+
+在目标上定义营销使用案例，可确保发送到这些目标的任何用户档案或区段均符合数据使用策略。 因此，您应根据组织对激活实施策略限制的需要，向您的目标添加适当的营销使用案例。
+
+只有在首次设置目标时，才能选择市场营销用例。 根据您所处理的目标类型，配置营销用例的机会将显示在设置工作流的不同位置。 有关如何 [配置特定目标](../destinations/destinations-overview.md) ，请参阅目标文档。
 
 
 ## 管理数据使用策略 {#policies}
 
-为了使数据使用标签能够有效支持数据合规性，必须定义并启用数据使用策略。 数据使用策略是描述您允许在实时CDP内对数据执行的或从中限制的营销操作种类的规则。 有关详细信息，请参阅Experience Platform数据管理概述 [中的“数据使用策](../../data-governance/home.md) 略”部分。
+为了使数据使用标签能够有效支持数据合规性，必须定义并启用数据使用策略。 数据使用策略是描述您允许在实时CDP内对数据执行的或从中限制的营销操作种类的规则。 有关详细信息，请参阅Experience Platform数据管理概述 [中的“使用](../../data-governance/home.md) 策略”一节。
 
-Adobe Experience Platform为常见客户 **体验使用** 案例提供了多个核心策略。 通过向DULE Policy Service API发出请 [求可查看这些策略](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)，如Policy Service Developer Guide中的“列表所有策 [略”部分所示](../../data-governance/policies/overview.md)。 您还可以创建自己的自 **定义策略** ，以模拟自定义使用限制，如开发人员指南的“创建策略”部分所示。
+Adobe Experience Platform为常见 **客户体验使** 用案例提供了若干核心策略。 通过导航到“策略”工作区并选择“浏览”选 **[!UICONTROL 项卡]** ，可以在UI中 **[!UICONTROL 查看这些]** 策略。 有关在 [UI中使用策略](../../data-governance/policies/user-guide.md) （包括如何制定您自己的自定义策略）的更详细步骤，请参阅Experience Platform文档中的策略用户指南。
 
 ## （测试版）强制数据使用合规性 {#enforce-data-usage-compliance}
 
@@ -58,6 +62,11 @@ Adobe Experience Platform为常见客户 **体验使用** 案例提供了多个�
 
 * 应用于要激活的区段中的字段和数据集的数据使用标签。
 * 目标的营销目的。
+
+>[!NOTE] 如果激活集（而非整个数据集）中的某些字段只应用了数据使用标签，则只有在以下条件下才会对这些字段级别标签进行强制执行：
+>* 这些字段用在段定义中。
+>* 字段将配置为目标目标的预计属性。
+
 
 ### 策略违规消息 {#enforcement}
 
@@ -86,7 +95,7 @@ Adobe Experience Platform为常见客户 **体验使用** 案例提供了多个�
 
 ## 后续步骤
 
-现在，您已经介绍了实时CDP上的主要数据管理功能以及Experience Platform如何支持这些功能，请继续阅读Adobe [Experience Platform上的数据管理文档](../../data-governance/home.md)。 本文档概述了基本的“数据管理”概念，以及管理数据使用标签和策略的分步工作流。
+现在，您已经介绍了实时CDP上的主要数据管理功能以及Experience Platform如何使这些功能成为可能，请继续阅读有关Adobe Experience Platform [的数据管理文档](../../data-governance/home.md)。 本文档概述了基本的“数据管理”概念，以及管理数据使用标签和策略的分步工作流。
 
 以下视频概述了实时CDP中的工作流治理，包括在目标上使用营销用例以及针对不同情景使用示例：
 
