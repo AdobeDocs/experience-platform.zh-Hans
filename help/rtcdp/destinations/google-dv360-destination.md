@@ -4,9 +4,9 @@ seo-title: Google Display & Video 360 Destination
 description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。
 seo-description: 'Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。 '
 translation-type: tm+mt
-source-git-commit: dc5ee796ca390d06fc8e08bd6c30e88a0d96dd53
+source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '668'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Display &amp; Video 360（以前称为DoubleClick Bid Manager）是一种工具�
 
 >[!IMPORTANT]
 >
->如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且过去(使用Adobe受众管理器或其他应用程序 [](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) )未在Experience Cloud ID服务中启用ID同步功能，请联系Adobe Consulting或客户关怀以启用ID同步。 如果您以前在受众管理器中设置Google集成，则您设置的ID同步将结转到Adobe实时CDP。
+>如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且过去(使用 [Experience Cloud或其他应用程序](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) )未在Adobe Audience ManagerID服务中启用ID同步功能，请联系Adobe Consulting或客户关怀以启用ID同步。 如果您以前在Audience Manager中设置Google集成，则您设置的ID同步将结转到Adobe实时CDP。
 
 ## 先决条件
 
@@ -36,7 +36,7 @@ Display &amp; Video 360（以前称为DoubleClick Bid Manager）是一种工具�
 
 >[!NOTE]
 >
->在Adobe实时CDP中设置您的第一个Google Display &amp; Video 360目标之前，允许列表是必需的。 在创建目标之前，请确保Google已完成下面描述的允许列表过程。
+>在Adobe实时CDP中设置您的第一个Google Display &amp; Video 360目标之前，允许列表是必填的。 在创建目标之前，请确保Google已完成下面描述的允许列表过程。
 
 在Adobe实时CDP中创建Google Display &amp; Video 360目标之前，您必须联系Google，要求Adobe对允许的数据提供者进行列表，并将您的帐户添加到允许列表。 联系Google并提供以下信息：
 
@@ -49,14 +49,16 @@ Display &amp; Video 360（以前称为DoubleClick Bid Manager）是一种工具�
 1. 在“ **[!UICONTROL 连接”>“目标]**”中，选择“Google Display &amp; Video 360”，然后选择“创 **[!UICONTROL 建目标”]**。
    ![Connect Google Display &amp; Video 360目标](/help/rtcdp/destinations/assets/google-dv360-destination.png)
 
-2. 在创建目标工作流中，填写目 [!UICONTROL 标的基本] 信息。 <br>
-   ![基本信息Google Display &amp; Video 360](/help/rtcdp/destinations/assets/google-dv360-basic-information.png)
+2. 在创 **建目标** 工作流的设置步骤中，填写目标的 [!UICONTROL 基本信息] ，以及应应用于此目标的市场营销用例。 <br>
+
+   ![基本信息Google Display &amp; Video 360](/help/rtcdp/destinations/assets/dv360-setup-step.png)
 * **[!UICONTROL 名称]**: 填写此目标的首选名称。
 * **[!UICONTROL 描述]**: 可选。 例如，您可以提到您使用此目标的活动。
 * **[!UICONTROL 帐户类型]**: 根据您在Google上的帐户选择一个选项：
    * 使 `Invite Advertiser` 用以仅允许受众共享到您的显示和视频360帐户中的特定品牌。
    * 使 `Invite Partner` 用，允许受众共享到您的Display &amp; Video 360帐户中的所有品牌。
 * **[!UICONTROL 帐户ID]**: 使用Google填 **[!DNL Invite partner]** 写您 **[!DNL Invite advertiser]** 的或帐户ID。 通常，这是一个6或7位数字ID。
+* **[!UICONTROL 营销用例]**: 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关Adobe定义的个别营销用例的信息，请参阅数 [据使用策略概述](/help/data-governance/policies/overview.md#core-actions)。
 
 >[!NOTE]
 >
