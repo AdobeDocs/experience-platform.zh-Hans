@@ -4,17 +4,19 @@ solution: Experience Platform
 title: 数据使用策略用户指南
 topic: policies
 translation-type: tm+mt
-source-git-commit: af7fa6048fa60392a98975fe6fc36e8302355a05
+source-git-commit: c4554e3fbc0dd527606b81e2767cb5777b6e81e7
 workflow-type: tm+mt
-source-wordcount: '435'
-ht-degree: 2%
+source-wordcount: '739'
+ht-degree: 1%
 
 ---
 
 
 # 数据使用策略用户指南
 
-Adobe Experience Platform Data Governance提供一个用户界面，允许您创建和管理数据使用策略。 此文档概述了您可以在Experience Platform UI的“策略 _”工作_ 区中执行的操作。
+Adobe Experience Platform数据管理提供了一个用户界面，允许您创建和管理数据使用策略。 此文档概述了在Experience Platform用户界面的“策略 _”工作区_ 中可以执行的操作。
+
+>[!IMPORTANT] 默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 要考虑实施单个策略，必须手动启用该策略。 有关如何在UI [中执行](#enable) 此操作的步骤，请参阅启用策略一节。
 
 ## 先决条件
 
@@ -23,9 +25,9 @@ Adobe Experience Platform Data Governance提供一个用户界面，允许您创
 - [数据管理](../home.md)
 - [数据使用策略](./overview.md)
 
-## 视图数据使用策略
+## 视图数据使用策略 {#view-policies}
 
-在Experience Platform UI中，单击“策 **[!UICONTROL 略]** ”以打开“ *[!UICONTROL 策略]* ”工作区。 在“浏 **[!UICONTROL 览]** ”选项卡中，您可以看到可用策略的列表，包括其关联的标签、营销操作和状态。
+在Experience PlatformUI中，单击 **[!UICONTROL 策略]** 以打开策 *[!UICONTROL 略工作区]* 。 在“浏 **[!UICONTROL 览]** ”选项卡中，您可以看到可用策略的列表，包括其关联的标签、营销操作和状态。
 
 ![](../images/policies/browse-policies.png)
 
@@ -33,9 +35,9 @@ Adobe Experience Platform Data Governance提供一个用户界面，允许您创
 
 ![](../images/policies/policy-details.png)
 
-## 创建自定义数据使用策略
+## 创建自定义数据使用策略 {#create-policy}
 
-要创建新的自定义数据使用策略，请 **[!UICONTROL 单击]** “策略”工作区右上角的 *“创建策* 略”。
+要创建新的自定义数据使用策略，请 **[!UICONTROL 单击]** “策略”工作区中“浏览”选 **[!UICONTROL 项卡右]** 上角的 *“创建* 策略”。
 
 ![](../images/policies/create-policy-button.png)
 
@@ -63,14 +65,50 @@ Adobe Experience Platform Data Governance提供一个用户界面，允许您创
 
 ## 启用或禁用数据使用策略 {#enable}
 
-您可以在“策略”工作区的“浏览”选项卡上 *[!UICONTROL 启用或禁用]* “自定义数 *[!UICONTROL 据使用策]* 略”。 从列表中选择自定义策略，在右侧显示其详细信息。 在“ *[!UICONTROL 状态]*”下，选择切换按钮以启用或禁用策略。
+默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 要考虑实施单个策略，必须通过API或UI手动启用该策略。
+
+您可以从“策略”工作区的“浏 *[!UICONTROL 览]* ”选项卡中启用或禁用 *[!UICONTROL 策略]* 。 从列表中选择自定义策略，在右侧显示其详细信息。 在“ *[!UICONTROL 状态]*”下，选择切换按钮以启用或禁用策略。
 
 ![](../images/policies/enable-policy.png)
 
+## 视图营销行动 {#view-marketing-actions}
+
+在“策 **[!UICONTROL 略]** ”工作区中，选择“ **[!UICONTROL 营销操作]** ”选项卡，以视图由Adobe和您自己的组织定义的一列表可用的营销操作。
+
+![](../images/policies/marketing-actions.png)
+
+## 创建营销操作 {#create-marketing-action}
+
+要创建新的自定义营销操作，请单 **[!UICONTROL 击“策略]** ”工作区中“营销操作”选 **[!UICONTROL 项卡右上角的]** “创建营 *[!UICONTROL 销操作]* ”。
+
+![](../images/policies/create-marketing-action.png)
+
+此时将 *[!UICONTROL 显示创建营销]* 操作对话框。 输入营销活动的名称和说明，然后单击 **[!UICONTROL 创建]**。
+
+![](../images/policies/create-marketing-action-details.png)
+
+新创建的操作会显示在“营销 *[!UICONTROL 操作”选]* 项卡中。 您现在可以在创建新数据使用策 [略时使用营销操作](#create-policy)。
+
+![](../images/policies/created-marketing-action.png)
+
+## 编辑或删除营销操作 {#edit-delete-marketing-action}
+
+>[!NOTE] 只能编辑您的组织定义的自定义营销操作。 不能更改或删除Adobe定义的营销操作。
+
+在“策 **[!UICONTROL 略]** ”工作区中，选择“ **[!UICONTROL 营销操作]** ”选项卡，以视图由Adobe和您自己的组织定义的一列表可用的营销操作。 从列表中选择自定义营销操作，然后使用右侧部分中提供的字段编辑营销操作的详细信息。
+
+![](../images/policies/edit-marketing-action.png)
+
+如果任何现有的使用策略未使用营销活动，则可以单击删除营 **[!UICONTROL 销活动来删除它]**。
+
+>[!NOTE] 尝试删除现有策略正在使用的营销操作将导致显示错误消息，指示删除尝试失败。
+
+![](../images/policies/delete-marketing-action.png)
+
 ## 后续步骤
 
-此文档概述了如何在Experience Platform UI中管理数据使用策略。 有关如何使用DULE Policy API管理策略的步骤，请参阅开发 [人员指南](../api/getting-started.md)。 有关如何实施数据使用策略的信息，请参阅策 [略实施概述](../enforcement/overview.md)。
+此文档概述了如何在Experience PlatformUI中管理数据使用策略。 有关如何使用DULE Policy API管理策略的步骤，请参阅开发 [人员指南](../api/getting-started.md)。 有关如何实施数据使用策略的信息，请参阅策 [略实施概述](../enforcement/overview.md)。
 
-以下视频演示了如何在Experience Platform UI中使用使用策略：
+以下视频演示了如何在Experience PlatformUI中使用使用策略：
 
 >[!VIDEO](https://video.tv.adobe.com/v/32977?quality=12&learn=on)
