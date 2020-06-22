@@ -1,10 +1,10 @@
 ---
 title: Amazon Kinesis目标
 seo-title: Amazon Kinesis目标
-description: 创建到Amazon Kinesis存储的实时出站连接以从Adobe Experience Platform流化数据。
-seo-description: 创建到Amazon Kinesis存储的实时出站连接以从Adobe Experience Platform流化数据。
+description: 创建到Amazon Kinesis存储的实时出站连接，以流式传输Adobe Experience Platform数据。
+seo-description: 创建到Amazon Kinesis存储的实时出站连接，以流式传输Adobe Experience Platform数据。
 translation-type: tm+mt
-source-git-commit: 883bea4aba0548e96b891987f17b8535c4d2eba7
+source-git-commit: e93bfc028d5e23c3add55677c4003ca549a902c6
 workflow-type: tm+mt
 source-wordcount: '458'
 ht-degree: 2%
@@ -23,7 +23,7 @@ ht-degree: 2%
 
 Amazon [!DNL Kinesis Data Streams] Web Services提供的服务允许您实时收集和处理大流数据记录。
 
-您可以创建到存储的实时出站连接， [!DNL Amazon Kinesis] 以便从Adobe Experience Platform流化数据。
+您可以创建到存储的实时出站连接，以 [!DNL Amazon Kinesis] 流式传输来自Adobe Experience Platform的数据。
 
 * 有关更多信 [!DNL Amazon Kinesis]息，请参 [阅Amazon文档](https://docs.aws.amazon.com/streams/latest/dev/introduction.html)。
 * 要使用API调 [!DNL Amazon Kinesis] 用连接到，请参阅流 [目标API教程](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)。
@@ -44,20 +44,20 @@ Amazon [!DNL Kinesis Data Streams] Web Services提供的服务允许您实时收
 
 对于 [!DNL Amazon Kinesis] 目标，在创建目标工作流中输入以下信息：
 
-### 在帐户步骤中 {#account-step}
+### 在身份验证步骤中 {#authentication-step}
 
 * **Amazon Web Services访问密钥和密钥**: 在中 [!DNL Amazon Web Services]，生成一个访问密钥——秘密访问密钥对，以授予Adobe对您帐户的实时CDP访 [!DNL Amazon Kinesis] 问权。 了解Amazon Web Services文 [档中的更多信息](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)。
 * **区域**: 指示要 [!DNL Amazon Web Services] 将数据流化到的区域。
 
 ![帐户步骤中的输入字段](/help/rtcdp/destinations/assets/aws-kinesis-account-step.png)
 
-### 在身份验证步骤中 {#authentication-step}
+### 在设置步骤中 {#setup-step}
 
 * **名称**: 提供连接的名称 [!DNL Amazon Kinesis]
 * **描述**: 提供与的连接说明 [!DNL Amazon Kinesis]。
-* **stream**: 在帐户中提供现有数据流的 [!DNL Amazon Kinesis] 名称。 Adobe实时CDP会将数据导出到此流。
+* **stream**: 提供帐户中现有数据流的名 [!DNL Amazon Kinesis] 称。 Adobe实时CDP会将数据导出到此流。
 
-![验证步骤中的输入字段](/help/rtcdp/destinations/assets/aws-kinesis-authentication-step.png)
+![验证步骤中的输入字段](/help/rtcdp/destinations/assets/aws-kinesis-setup-step.png)
 
 <!--
 
@@ -73,7 +73,7 @@ Amazon [!DNL Kinesis Data Streams] Web Services提供的服务允许您实时收
 
 ## 导出的数据 {#exported-data}
 
-导出的Experience Platform数据以JSON [!DNL Amazon Kinesis] 格式登录。 例如，以下事件包含符合特定区段资格并退出另一区段的受众的电子邮件地址用户档案属性。 此潜在客户的标识为ECID和电子邮件。
+导出的Experience Platform数据以 [!DNL Amazon Kinesis] JSON格式登录。 例如，以下事件包含符合特定区段资格并退出另一区段的受众的电子邮件地址用户档案属性。 此潜在客户的标识为ECID和电子邮件。
 
 ```
 {
