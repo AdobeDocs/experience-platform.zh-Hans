@@ -4,21 +4,21 @@ solution: Experience Platform
 title: 连接到流目标并激活数据
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 883bea4aba0548e96b891987f17b8535c4d2eba7
+source-git-commit: ed9d6eadeb00db51278ea700f7698a1b5590632f
 workflow-type: tm+mt
-source-wordcount: '1847'
+source-wordcount: '1857'
 ht-degree: 2%
 
 ---
 
 
-# 在Adobe的实时客户数据平台中使用API连接到流目标并激活数据
+# 在Adobe的实时客户Platform中使用API连接到流目标并激活数据
 
 >[!NOTE]
 >
 >Adobe [!DNL Amazon Kinesis] 实时 [!DNL Azure Event Hubs] CDP中的目标和目标目前都处于测试阶段。 文档和功能可能会发生变化。
 
-本教程演示如何使用API调用连接到您的Adobe Experience Platform存储、创建到流式云目标([Amazon Kinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md) 或 [Azure事件集线器](/help/rtcdp/destinations/azure-event-hubs-destination.md))的连接、创建到新创建目标的数据流以及将数据激活到新创建的目标。
+本教程演示如何使用API调用连接到您的Adobe Experience Platform数据、创建到流式云存储目标([Amazon Kinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md)[或Azure事件集线器](/help/rtcdp/destinations/azure-event-hubs-destination.md))的连接、创建到新创建目标的数据流以及将数据激活到新创建的目标。
 
 本教程在所 [!DNL Amazon Kinesis] 有示例中都使用目标，但步骤相同 [!DNL Azure Event Hubs]。
 
@@ -31,8 +31,8 @@ ht-degree: 2%
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
 * [体验数据模型(XDM)系统](../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
-* [目录服务](../../catalog/home.md): Catalog是Experience Platform中数据位置和世系的记录系统。
-* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和改进数字体验应用程序。
+* [目录服务](../../catalog/home.md): 目录是Experience Platform内数据位置和谱系的记录系统。
+* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了在Adobe实时CDP中将数据激活到流目标时需要了解的其他信息。
 
@@ -45,22 +45,22 @@ ht-degree: 2%
 
 ### 读取示例API调用 {#reading-sample-api-calls}
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的部分。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
 
 ### 收集必需和可选标题的值 {#gather-values}
 
-要调用平台API，您必须先完成身份验证 [教程](/help/tutorials/authentication.md)。 完成身份验证教程后，将提供所有Experience Platform API调用中每个所需标头的值，如下所示：
+要调用PlatformAPI，您必须先完成身份验证 [教程](/help/tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 * 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的资源可以隔离到特定虚拟沙箱。 在对平台API的请求中，您可以指定操作将在其中进行的沙箱的名称和ID。 这些是可选参数。
+Experience Platform中的资源可以隔离到特定虚拟沙箱。 在对PlatformAPI的请求中，您可以指定操作将在其中进行的沙箱的名称和ID。 这些是可选参数。
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!Note]
->有关Experience Platform中沙箱的更多信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>有关Experience Platform中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
@@ -68,13 +68,13 @@ Experience Platform中的资源可以隔离到特定虚拟沙箱。 在对平台
 
 ### Swagger文档 {#swagger-docs}
 
-您可以在Swagger的本教程中找到所有API调用的随附参考文档。 请参阅https://platform.adobe.io/data/foundation/flowservice/swagger#/。 我们建议您同时使用本教程和Swagger文档页面。
+您可以在Swagger的本教程中找到所有API调用的随附参考文档。 请参阅 [Adobe.io上的Flow Service API文档](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)。 我们建议您同时使用本教程和Swagger文档页面。
 
 ## 获得可用流目标的列表 {#get-the-list-of-available-streaming-destinations}
 
 ![目标步骤概述步骤1](/help/rtcdp/destinations/assets/step1-create-streaming-destination-api.png)
 
-作为第一步，您应确定要激活数据的流目标。 首先，请执行呼叫以请求可连接和激活区段的可用目标列表。 对端点执行以下GET `connectionSpecs` 请求以返回可用目标的列表:
+作为第一步，您应确定要激活数据的流目标。 首先，请执行呼叫以请求可连接和激活区段的可用目标列表。 对端点执行以下GET `connectionSpecs` 请求以返回可用目标列表:
 
 **API格式**
 
@@ -114,17 +114,17 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 }
 ```
 
-## 连接到您的Experience Platform数据 {#connect-to-your-experience-platform-data}
+## 连接到Experience Platform数据 {#connect-to-your-experience-platform-data}
 
 ![目标步骤概述步骤2](/help/rtcdp/destinations/assets/step2-create-streaming-destination-api.png)
 
 接下来，您必须连接到Experience Platform数据，以便导出用户档案数据并在首选目标中激活它。 这包括两个子步骤，如下所述。
 
-1. 首先，您必须通过设置基本连接来执行对Experience Platform中的数据授权访问的调用。
+1. 首先，必须通过设置基本连接，在Experience Platform中执行授权访问数据的调用。
 2. 然后，使用基本连接ID，您将再次进行调用，在其中创建源连接，从而建立与Experience Platform数据的连接。
 
 
-### 授权在Experience Platform中访问您的数据
+### 授权访问Experience Platform中的数据
 
 **API格式**
 
@@ -164,7 +164,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }
 ```
 
-### 连接到您的Experience Platform数据
+### 连接到Experience Platform数据
 
 **API格式**
 
@@ -335,7 +335,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ![目标步骤概述步骤4](/help/rtcdp/destinations/assets/step4-create-streaming-destination-api.png)
 
-现在，使用您在前面的步骤中获得的ID，您可以在Experience Platform数据和要激活数据的目标之间创建数据流。 将此步骤想象为构建Experience Platform与您所需目标之间的数据稍后将通过管道流动的管道。
+现在，使用您在前面的步骤中获得的ID，您可以在Experience Platform数据和要激活数据的目标之间创建数据流。 将此步骤想象为构建Experience Platform和目标之间的管道，数据随后将通过管道流动。
 
 要创建数据流，请执行如下所示的POST请求，同时在有效负荷中提供以下所述的值。
 
@@ -375,7 +375,7 @@ curl -X POST \
 ```
 
 * `{FLOW_SPEC_ID}`: 基于用户档案的目标的流规范ID是 `71471eba-b620-49e4-90fd-23f1fa0174d8`。 在调用中使用此值。
-* `{SOURCE_CONNECTION_ID}`: 使用您在步骤Connect到您的Experience Platform中获 [得的源连接ID](#connect-to-your-experience-platform-data)。
+* `{SOURCE_CONNECTION_ID}`: 使用在步骤Connect中获得的源连接 [ID连接到Experience Platform](#connect-to-your-experience-platform-data)。
 * `{TARGET_CONNECTION_ID}`: 使用您在步骤Connect中获得的目标连 [接ID到流目标](#connect-to-streaming-destination)。
 
 **响应**
