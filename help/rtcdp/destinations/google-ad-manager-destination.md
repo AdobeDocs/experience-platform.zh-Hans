@@ -4,7 +4,7 @@ seo-title: Google Ad Manager目标
 description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的广告服务平台，它使出版商能够通过视频和移动应用程序管理其网站上广告的显示。 '
 seo-description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的广告服务平台，它使出版商能够通过视频和移动应用程序管理其网站上广告的显示。 '
 translation-type: tm+mt
-source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
+source-git-commit: db2084024f7c25cb1f914f9b8da35298691fd95f
 workflow-type: tm+mt
 source-wordcount: '668'
 ht-degree: 0%
@@ -53,7 +53,7 @@ Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是G
 
 2. 在创建 **目标** 工作流的设置步骤中，填写目 [!UICONTROL 标的基本信] 息。 <br>
 
-   ![基本信息Google Ad Manager](/help/rtcdp/destinations/assets/ad-manager-setup-step.png)
+   ![基本信息Google Ad Manager](/help/rtcdp/destinations/assets/google-1-destination-setup-step.png)
 * **[!UICONTROL 名称]**: 填写此目标的首选名称。
 * **[!UICONTROL 描述]**: 可选。 例如，您可以提到您使用此目标的活动。
 * **[!UICONTROL 帐户类型]**: 根据您在Google上的帐户选择一个选项：
