@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 区段生成器UI指南
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: 822f43b139b68b96b02f9a5fe0549736b2524ab7
+source-git-commit: d00973a07c5fb137f756040fb1dc6eac5a1630f5
 workflow-type: tm+mt
 source-wordcount: '2562'
 ht-degree: 0%
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 - [!DNL Segmentation Service](../home.md): 分段服务允许您将与个人( [!DNL Experience Platform] 如客户、潜在客户、用户或组织)相关的存储在其中的数据划分为具有相似特征并将响应类似营销策略的较小组。
 - [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-- [!DNL Identity Service](../../identity-service/home.md): 通过 [!DNL Real-time Customer Profile] 将来自不同数据源的身份引入Platform来实现。
+- [!DNL Identity Service](../../identity-service/home.md): 通过将 [!DNL Real-time Customer Profile] 来自被引入平台的不同数据源的身份连接到平台，可实现此目的。
 - [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 了解本文档使用的两个关键术语并了解它们之间的区别也很重要：
@@ -103,7 +103,7 @@ ht-degree: 0%
 
 您可以将受众从受众选项卡拖 *[!UICONTROL 放到]* 规则构建器画布上，以在新的区段定义中引用受众成员身份。 这允许您将受众成员资格作为属性加入或排除到新区段规则中。
 
-对 [!DNL Platform] 于使用区段生成器创建的受众，您可以选择将受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，然后可以修改该逻辑，而不会影响原始段定义。
+对 [!DNL Platform] 于使用区段生成器创建的受众，您可以选择将受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，然后可以修改该副本，而不会影响原始段定义。
 
 >[!NOTE] 从外部源添加受众时，只引用受众成员身份。 无法将受众转换为规则，因此在新区段定义中无法修改用于创建原始受众的规则。
 
@@ -165,7 +165,7 @@ ht-degree: 0%
 
 ![](../images/segment-builder/scheduled-segmentation.png)
 
-## 流细分
+## 流细分 {#streaming-segmentation}
 
 >[!NOTE] 为了让流式分段正常工作，客户需要为组织启用计划分段。 有关启用计划分段的详细信息，请参 [阅本用户指南的上一节](#enable-scheduled-segmentation)。
 
