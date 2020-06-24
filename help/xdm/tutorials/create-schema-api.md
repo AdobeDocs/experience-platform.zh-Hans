@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用模式注册表API创建模式
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 7cf873d19d26df9ebb70d11ee6e6513173ab45bb
+source-git-commit: b3fa5a17c3a5c2406d368d165da63f2f8c01154d
 workflow-type: tm+mt
 source-wordcount: '2418'
 ht-degree: 1%
@@ -14,9 +14,9 @@ ht-degree: 1%
 
 # 使用模式注册表API创建模式
 
-模式注册表用于访问Adobe Experience Platform中的模式库。 模式库包含Adobe、Experience Platform合作伙伴以及您所使用的应用程序供应商为您提供的资源。 注册表提供用户界面和RESTful API，可从中访问所有可用的库资源。
+模式注册表用于访问Adobe Experience Platform中的模式库。 模式库包含Adobe、Experience Platform合作伙伴以及您使用其应用程序的供应商为您提供的资源。 注册表提供用户界面和RESTful API，可从中访问所有可用的库资源。
 
-本教程使用模式注册表API指导您完成使用标准类构建模式的步骤。 如果您希望使用Experience Platform中的用户界面，模式编 [辑器教程将提供分步说明](create-schema-ui.md) ，以在模式编辑器中执行类似操作。
+本教程使用模式注册表API指导您完成使用标准类构建模式的步骤。 如果您希望在Experience Platform中使用用户界面， [模式编辑器教程](create-schema-ui.md) (Tutorial Editor Tutorial)提供在模式编辑器中执行类似操作的分步说明。
 
 ## 入门指南
 
@@ -25,7 +25,7 @@ ht-degree: 1%
 * [体验数据模型(XDM)系统](../home.md): Experience Platform组织客户体验数据的标准化框架。
    * [模式合成基础](../schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
 * [实时客户用户档案](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和改进数字体验应用程序。
+* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
 在开始本教程之前，请查阅开 [发人员指南](../api/getting-started.md) ，了解成功调用模式注册表API所需了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
 
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 ## 使用标准类编写模式
 
-可以将模式视为您希望引入Experience Platform的数据的蓝图。 每个模式由一个类和零个或多个混音组成。 换句话说，您不必添加混音来定义模式，但在大多数情况下至少使用一个混音。
+可以将模式视为要收录到Experience Platform中的数据的蓝图。 每个模式由一个类和零个或多个混音组成。 换句话说，您不必添加混音来定义模式，但在大多数情况下至少使用一个混音。
 
 ### 分配类
 
@@ -135,7 +135,7 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed+json; version=1'
 ```
 
-**响应 **
+**响应**
 
 响应格式取决于随请求一起发送的Accept头。 尝试使用不同的“接受”标题，看看哪个标题最适合您的需求。
 
@@ -952,9 +952,9 @@ curl -X PATCH \
 
 ### 定义标识描述符
 
-模式用于将数据引入Experience Platform。 此视图最终可跨多个服务使用，以创建单一、统一的个人数据。 为帮助完成此过程，关键字段可标记为“身份”，在数据获取时，这些字段中的数据将插入到该个人的“身份图”中。 然后，实时客户用户档案和其 [他体验平台服务可以访问图形](../../profile/home.md) ，为每位客户提供一个拼接的视图。
+模式用于将数据引入Experience Platform。 此视图最终可跨多个服务使用，以创建单一、统一的个人数据。 为帮助完成此过程，关键字段可标记为“身份”，在数据获取时，这些字段中的数据将插入到该个人的“身份图”中。 然后，实时客户用户档案和其 [他Experience Platform服务可以访问图形](../../profile/home.md) ，以提供每个客户的拼接视图。
 
-通常标为“身份”的字段包括： 电子邮件地址、电 [话号码、Experience Cloud ID(ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)、CRM ID或其他唯一ID字段。
+通常标为“身份”的字段包括： 电子邮件地址、电话号 [码、Experience CloudID(ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)、CRM ID或其他唯一ID字段。
 
 考虑您的组织特定的所有唯一标识符，因为它们可能也是良好的标识字段。
 
@@ -970,7 +970,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求在“loyaltyId”字段上定义标识描述符。 这会告知Experience Platform使用唯一的忠诚度项目会员标识符（本例中为会员的电子邮件地址）来帮助拼凑有关个人的信息。
+以下请求在“loyaltyId”字段上定义标识描述符。 这会告知Experience Platform使用唯一的忠诚度项目成员标识符（本例中为会员的电子邮件地址）来帮助拼合有关个人的信息。
 
 ```SHELL
 curl -X POST \
@@ -1169,7 +1169,7 @@ curl -X GET \
 
 在本教程中创建的完整“忠诚会员”模式，可在以下附录中找到。 当您查看模式时，您可以了解混音对总体结构的贡献以及哪些字段可用于数据获取。
 
-创建多个模式后，您可以使用关系描述符定义它们之间的关系。 有关详细信息， [请参阅定义两个模式之间关系](relationship-api.md) 的教程。 有关如何在注册表中执行所有操作（GET、POST、PUT、PATCH和DELETE）的详细示例，请在使用API时参阅 [模式注册表开发人员指南](../api/getting-started.md) 。
+创建多个模式后，您可以使用关系描述符定义它们之间的关系。 有关详细信息， [请参阅定义两个模式之间关系](relationship-api.md) 的教程。 有关如何在注册表中执行所有操作(GET、POST、PUT、PATCH和DELETE)的详细示例，请在使用API时参阅 [模式注册表开发人员指南](../api/getting-started.md) 。
 
 ## 附录 {#appendix}
 
