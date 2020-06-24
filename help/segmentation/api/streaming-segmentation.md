@@ -4,15 +4,17 @@ solution: Experience Platform
 title: 流细分
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 822f43b139b68b96b02f9a5fe0549736b2524ab7
+source-git-commit: d00973a07c5fb137f756040fb1dc6eac5a1630f5
 workflow-type: tm+mt
-source-wordcount: '1343'
+source-wordcount: '1370'
 ht-degree: 1%
 
 ---
 
 
 # 利用流细分快速实时评估事件
+
+>[!NOTE] 以下文档说明了如何使用API使用流分段。 有关使用UI使用流式分段的信息，请阅读“段 [生成器指南”](../ui/overview.md#streaming-segmentation)。
 
 基于的流 [!DNL Adobe Experience Platform] 式细分允许客户在关注数据丰富性的同时近乎实时地进行细分。 利用流细分，当数据进入时，细分资格现在会 [!DNL Platform]发生，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传入时评估大多数细分规则， [!DNL Platform]这意味着，在不运行计划的细分作业的情况下，区段成员关系将保持最新状态。
 
