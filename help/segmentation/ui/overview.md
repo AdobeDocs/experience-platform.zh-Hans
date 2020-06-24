@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: d00973a07c5fb137f756040fb1dc6eac5a1630f5
+source-git-commit: b5a425714b6d69ca241c8ad81eff779b993633a5
 workflow-type: tm+mt
-source-wordcount: '2562'
+source-wordcount: '2683'
 ht-degree: 0%
 
 ---
@@ -103,11 +103,23 @@ ht-degree: 0%
 
 您可以将受众从受众选项卡拖 *[!UICONTROL 放到]* 规则构建器画布上，以在新的区段定义中引用受众成员身份。 这允许您将受众成员资格作为属性加入或排除到新区段规则中。
 
-对 [!DNL Platform] 于使用区段生成器创建的受众，您可以选择将受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，然后可以修改该副本，而不会影响原始段定义。
+对于 [!DNL Platform] 使用区 [!UICONTROL 段生成器创建的受众]，您可以选择将受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，然后可以修改该副本，而不会影响原始段定义。 在将区段定义转换为规则逻辑之前，请确保已保存对区段定义的任何最近更改。
 
 >[!NOTE] 从外部源添加受众时，只引用受众成员身份。 无法将受众转换为规则，因此在新区段定义中无法修改用于创建原始受众的规则。
 
 ![](../images/segment-builder/add-audience-to-segment.png)
+
+如果将受众转换为规则时发生 [!UICONTROL 任何冲突] ,Segment Builder将尝试保留现有选项，以尽其所能。
+
+### 代码视图
+
+或者，也可以视图在区段生成器中创建的规则的基于代 [!UICONTROL 码的版本]。 在规则构建器画布中创建规则后，您可以选择“代 **[!UICONTROL 码视图]** ”，将区段视为PQL。
+
+![](../images/segment-builder/code-view.png)
+
+代码视图提供一个按钮，允许您复制段值以在API调用中使用。 要获取区段的最新版本，请确保您已将最新更改保存到区段。
+
+![](../images/segment-builder/copy-code.png)
 
 ## 容器
 
@@ -201,7 +213,7 @@ ht-degree: 0%
 
 ![](../images/segment-builder/monitoring-streaming-segment.png)
 
-具体而言，将显示有关 *[!UICONTROL 合格受众总大小的]* 详细信息。 如果作业在过去24小时内运行，则除了添加的受众的 **[!UICONTROL 折线图外]** ，还会显示作业的受众总大小。 否则，除了 **[!UICONTROL 可视化趋势线]** ，还会显示估计受众大小。
+具体而言，将显示有关 *[!UICONTROL 合格受众总大小的]* 详细信息。 如果作业在过去24小时内运行，则除了添加的受众的 **[!UICONTROL 折线图外]** ，还会显示作业的受众总大小。 否则，除 **[!UICONTROL 了显示趋势线]** ，还会显示“估计受众大小”。
 
 ![](../images/segment-builder/monitoring-streaming-segment-graph.png)
 
