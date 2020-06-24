@@ -1,26 +1,26 @@
 ---
-title: 安装Adobe Experience Platform Web SDK
-seo-title: 安装SDK的Adobe Experience Platform Web SDK
-description: 了解如何安装Experience Platform Web SDK
-seo-description: 了解如何安装Experience Platform Web SDK
+title: 安装Adobe Experience PlatformWeb SDK
+seo-title: Adobe Experience PlatformWeb SDK安装SDK
+description: 了解如何安装Experience PlatformWeb SDK
+seo-description: 了解如何安装Experience PlatformWeb SDK
 translation-type: tm+mt
-source-git-commit: 5998473c665cb80ffddc092847533f51d81cf581
+source-git-commit: e0dee4e39143ae9d7f5e4aaf9c352555f1c7f5d0
 workflow-type: tm+mt
-source-wordcount: '566'
-ht-degree: 0%
+source-wordcount: '571'
+ht-degree: 1%
 
 ---
 
 
 # 安装SDK
 
-CDN中提供AEP Web SDK，供您使用。 您可以引用此文件或下载此文件并在自己的基础架构上托管它。 它提供微型和非微型版本。 非精简版本有助于进行调试。
+Adobe Experience PlatformWeb SDK可在内容投放网络(CDN)上提供，供您使用。 您可以引用此文件或下载此文件并在自己的基础架构上托管它。 它提供微型和非微型版本。 非精简版本有助于进行调试。
 
 [https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js)[https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js)
 
 ## 添加代码
 
-实施Adobe Experience Platform Web SDK的第一步是尽可能在HTML标签中复制并粘贴以下“基 `<head>` 本代码”:
+实施Adobe Experience PlatformWeb SDK的第一步是尽可能在HTML标签中复制并粘贴以下“基 `<head>` 本代码”:
 
 ```markup
 <script>
@@ -53,7 +53,7 @@ CDN中提供AEP Web SDK，供您使用。 您可以引用此文件或下载此�
 
 ## 支持Internet Explorer
 
-本SDK利用承诺，即一种通信异步任务完成的方法。 SDK使 [用的](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) Promise实现本机上受除Internet Explorer以外的所有目标浏览器支持。 要在Internet Explorer上使用SDK，您需要填 `window.Promise` 充 [SDK](https://remysharp.com/2010/10/08/what-is-a-polyfill)。
+本SDK利用承诺，即一种通信异步任务完成的方法。 SDK使 [用的](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) Promise实现本机上受除Internet Explorer以外的所有目标浏览器支持。 要在Internet Explorer上使用SDK，您需要填 `window.Promise` 充 [SDK](https://remysharp.com/2010/10/08/what-is-a-polyfill)。
 
 要确定您是否已填充 `window.Promise` 填充：
 
