@@ -4,23 +4,21 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案API开发人员指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: 9600f315f162b6cd86e2dbe2fffc793cc91c9319
+source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
 workflow-type: tm+mt
-source-wordcount: '1694'
+source-wordcount: '1690'
 ht-degree: 1%
 
 ---
 
 
-# 实体(用户档案访问)
+# 实体端点(用户档案访问)
 
-Adobe Experience Platform使您能够使用REST风格的API或用户界面访问实时客户用户档案数据。 本指南概述了如何使用API访问实体(通常称为“用户档案”)。 有关使用平台UI访问用户档案数据的详细信息，请参阅 [用户档案用户指南](../ui/user-guide.md)。
+Adobe Experience Platform使您能够使用RESTful API或用户界面访问实时客户用户档案数据。 本指南概述了如何使用API访问实体(通常称为“用户档案”)。 有关使用平台UI访问用户档案的详细信息，请参阅 [用户档案用户指南](../ui/user-guide.md)。
 
 ## 入门指南
 
-本指南中使用的API端点是实时客户用户档案API的一部分。 在继续之前，请查 [看实时客户用户档案API开发人员指南](getting-started.md)。
-
-特别是，用户档案开 [发人员指南的](getting-started.md#getting-started) “入门”部分包括相关主题的链接、阅读此文档中示例API调用的指南，以及成功调用任何Experience Platform API所需标头的重要信息。
+本指南中使用的API端点是实 [时客户用户档案API的一部分](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何Experience PlatformAPI所需标头的重要信息。
 
 ## 按身份访问用户档案数据
 
@@ -766,7 +764,7 @@ curl -X POST \
 }`
 ```
 
-在此示例响应中，第一个列出的用户档案(“GkouAW-yD9aoRCPhRYROJ-TetAFW”)为提供一个值 `_links.next.payload`，表示此用户档案还有其他的结果页。 有关如何访问这些附 [加结果的详细信息](#access-additional-results) ，请参阅以下有关访问其他结果的部分。
+在此示例响应中，第一个列出的用户档案(“GkouAW-yD9aoRCPhRYROJ-TetAFW”)为提供一个值 `_links.next.payload`，表示此用户档案还有其他的结果页。 有关如何访问这些附 [加结果的详细信息](#access-additional-results) ，请参阅访问其他结果的下一节。
 
 ### 访问其他结果 {#access-additional-results}
 
@@ -776,7 +774,7 @@ curl -X POST \
 
 ## 访问多个事件实体中的时间序列模式
 
-您可以访问通过关系描述符连接的多个实体。 以下示例API调用假定两个模式之间已定义关系。 有关关系描述符的详细信息，请阅读模式注册表API开发人员指 [南描述符子指南](../../xdm/api/descriptors.md)。
+您可以访问通过关系描述符连接的多个实体。 以下示例API调用假定两个模式之间已定义关系。 有关关系描述符的详细信息，请阅读模式注册表API开发人员指南描述 [符端点指南](../../xdm/api/descriptors.md)。
 
 您可以在请求路径中包含查询参数，以指定要访问的数据。 可以包含多个参数，以和号(&amp;)分隔。 附录的“列表参数”部分提供了 [有效参数](#query-parameters) 的完整查询。
 
