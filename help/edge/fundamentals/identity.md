@@ -1,28 +1,28 @@
 ---
-title: 检索Experience Cloud ID
-seo-title: Adobe Experience Platform Web SDK检索Experience Cloud ID
+title: 检索Experience CloudID
+seo-title: Adobe Experience PlatformWeb SDK检索Experience CloudID
 description: 了解如何获取Adobe Experience Cloud Id。
 seo-description: 了解如何获取Adobe Experience Cloud Id。
 translation-type: tm+mt
-source-git-commit: a9dd5fd93397e57d0876bec334d54c517fa86939
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
-source-wordcount: '416'
-ht-degree: 7%
+source-wordcount: '412'
+ht-degree: 9%
 
 ---
 
 
-# 检索Experience Cloud ID
+# 标识——检索Experience CloudID
 
-Adobe Experience Platform Web SDK利用Adobe [Identity Service](../../identity-service/ecid.md)。 这可确保每个设备都有一个唯一标识符，该标识符会保留在设备上，以便页面之间的活动可以绑定在一起。
+Adobe Experience PlatformWeb SDK利用 [Adobe Identity Service](../../identity-service/ecid.md)。 这可确保每个设备都有一个唯一标识符，该标识符会保留在设备上，以便页面之间的活动可以绑定在一起。
 
 ## 第一方身份
 
-ID服务将标识存储在第一方域的cookie中。 如果ID服务失败，则ID服务将尝试使用域上的HTTP头设置cookie，而ID服务将回退到通过Javascript设置cookie。 Adobe建议您设置CNAME，以确保您的Cookie不受客户端ITP限制的限制。
+该标 [!DNL Identity Service] 识存储在第一方域的cookie中。 尝 [!DNL Identity Service] 试使用域上的HTTP头设置cookie。 如果失败， [!DNL Identity Service] 将返回到通过Javascript设置Cookie。 Adobe建议您设置CNAME，以确保您的Cookie不受客户端ITP限制的限制。
 
 ## 第三方身份
 
-ID服务能够将ID与第三方域(demdex.net)同步，以启用跨站点跟踪。 启用此功能后，将向demdex.net发出对访客（例如，某个没有ECID的人）的第一个请求。 此操作将仅在允许其使用的浏览器（如Chrome）上完成，并由配置中 `thirdPartyCookiesEnabled` 的参数控制。 如果您要全部禁用此功能，请将其 `thirdPartyCookiesEnabled` 设置为false。
+该 [!DNL Identity Service] 软件能够将ID与第三方域(demdex.net)同步，以启用跨站点跟踪。 启用此功能后，将向demdex.net发出对访客（例如，某个没有ECID的人）的第一个请求。 此操作将仅在允许其使用的浏览器（如Chrome）上完成，并由配置中 `thirdPartyCookiesEnabled` 的参数控制。 如果您希望全部禁用此功能，请将其 `thirdPartyCookiesEnabled` 设置为false。
 
 ## 检索访客ID
 
@@ -30,7 +30,7 @@ ID服务能够将ID与第三方域(demdex.net)同步，以启用跨站点跟踪�
 
 >[!NOTE]
 >
->此方法通常用于需要读取Experience Cloud ID的自定义解决方案。 标准实施不使用它。
+>此方法通常用于需要读取Experience CloudID的自定义解决方案。 标准实施不使用该函数。
 
 ```javascript
 alloy("getIdentity")
@@ -45,7 +45,7 @@ alloy("getIdentity")
 
 ## 同步身份
 
-此外，Identity Service允许您使用命令将您自己的标识符与ECID同 `syncIdentity` 步。
+此外，该 [!DNL Identity Service] 命令还允许您使用命令将您自己的标识符与ECID `syncIdentity` 同步。
 
 ```javascript
 alloy("syncIdentity",{
@@ -68,7 +68,7 @@ alloy("syncIdentity",{
 | -------- | ------------ | ----------------- |
 | 字符串 | 是 | 无 |
 
-对象的键是标识 [命名空间符](../../identity-service/namespaces.md) 。 您可以在Adobe Experience Platform UI的“身份”下找到此列表。
+对象的键是标识 [命名空间符](../../identity-service/namespaces.md) 。 您可以在“身份”下的Adobe Experience Platform用户界面中找到此 [!UICONTROL 列表]。
 
 #### `id`
 
@@ -92,7 +92,7 @@ ID的身份验证状态。
 | -------- | ------------ | ----------------- |
 | 布尔值 | 可选 | false |
 
-此标识是否应用作统一用户档案中的主片段。 默认情况下，ECID设置为用户的主标识符。
+确定是否应将此标识用作统一用户档案中的主片段。 默认情况下，ECID设置为用户的主标识符。
 
 #### `hashEnabled`
 
