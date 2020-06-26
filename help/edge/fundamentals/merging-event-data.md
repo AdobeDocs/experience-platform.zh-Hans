@@ -1,12 +1,12 @@
 ---
 title: 合并事件数据
-seo-title: 合并Adobe Experience Platform Web SDK事件数据
-description: 了解如何合并Experience Platform Web SDK事件数据
-seo-description: 了解如何合并Experience Platform Web SDK事件数据
+seo-title: 合并Adobe Experience PlatformWeb SDK事件数据
+description: 了解如何合并Experience PlatformWeb SDK事件数据
+seo-description: 了解如何合并Experience PlatformWeb SDK事件数据
 translation-type: tm+mt
-source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
-source-wordcount: '436'
+source-wordcount: '411'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->此功能仍在开发中，因此并非所有解决方案都能够合并此数据。
+>此功能仍在开发中。 并非所有解决方案都能够按本页所述合并事件数据。
 
 有时，并非所有数据在发生事件时都可用。 您可能希望捕获您拥 _有的_ 数据，以便在用户关闭浏览器时不会丢失数据。 另一方面，您可能还会包含以后将可用的任何数据。
 
@@ -58,15 +58,15 @@ alloy("sendEvent", {
 });
 ```
 
-通过在本例中将相同的事件合并ID值传递给两个事件命令，将第二个事件命令中的数据增强为先前在第一个事件命令上发送的数据。 每个事件命令的记录都在Experience Data Platform中创建，但在报告期间，这些记录使用事件合并ID连接在一起并显示为单个事件。
+通过在本例中 `eventMergeID` 将相同的值传递给两个事件命令，将第二事件命令中的数据增强为先前通过第一事件命令发送的数据。 每个事件命令的记录都在Experience Data Platform中创建，但在报告期间，这些记录使用连接在一起， `eventMergeID` 并显示为单个事件。
 
-如果要将特定事件的相关数据发送给第三方提供商，您也可以将同一事件合并ID与该数据包含在一起。 稍后，如果您选择将第三方数据导入Adobe Experience Platform,事件合并ID将用于合并因您网页上发生的离散事件而收集的所有数据。
+如果您向第三方提供商发送有关特定事件的数据，则也可以在该数 `eventMergeID` 据中包含相同的数据。 稍后，如果您选择将第三方Adobe Experience Platform导入事件，则将用于将因您网页上发生的离散而收集的所有数据合并在一起。 `eventMergeID`
 
-## 生成事件合并ID
+## 生成 `eventMergeID`
 
-事件合并ID值可以是您选择的任何字符串，但请记住，使用同一ID发送的所有事件都报告为单个事件，因此，当事件不应合并时，请务必强制唯一性。 如果希望SDK代表您生成唯一的事件合并ID(遵循广泛采用的 [UUID v4规范](https://www.ietf.org/rfc/rfc4122.txt))，可以使用 `createEventMergeId` 该命令执行此操作。
+该值 `eventMergeID` 可以是您选择的任何字符串，但请记住，使用相同ID发送的所有事件都报告为单个事件，因此，当事件不应合并时，请务必强制唯一性。 如果您希望SDK代表您生成唯 `eventMergeID` 一值(遵循被广泛采 [用的UUID v4规范](https://www.ietf.org/rfc/rfc4122.txt))，则可以 `createEventMergeId` 使用该命令。
 
-与所有命令一样，将返回承诺，因为您可能在SDK完成加载之前执行该命令。 承诺将尽快用唯一的事件合并ID解决。 您可以等待承诺得到解决，然后将数据发送到服务器，如下所示：
+与所有命令一样，将返回承诺，因为您可能在SDK完成加载之前执行该命令。 这一承诺将尽快以 `eventMergeID` 独一无二的方式解决。 您可以等待承诺得到解决，然后将数据发送到服务器，如下所示：
 
 ```javascript
 var eventMergeIdPromise = alloy("createEventMergeId");
@@ -110,7 +110,7 @@ eventMergeIdPromise.then(function(results) {
 });
 ```
 
-如果您出于其他原因想要访问事件合并ID（例如，将其发送给第三方提供商），请遵循相同的模式：
+如果您出于其他原因想要访问该应用程序( `eventMergeID` 例如，将其发送给第三方提供商)，请遵循相同的模式：
 
 ```javascript
 var eventMergeIdPromise = alloy("createEventMergeId");
