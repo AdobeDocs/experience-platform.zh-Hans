@@ -1,12 +1,12 @@
 ---
 title: 跟踪事件
-seo-title: 跟踪Adobe Experience Platform Web SDK事件
-description: 了解如何跟踪Experience Platform Web SDK事件
-seo-description: 了解如何跟踪Experience Platform Web SDK事件
+seo-title: 跟踪Adobe Experience PlatformWeb SDK事件
+description: 了解如何跟踪Experience PlatformWeb SDK事件
+seo-description: 了解如何跟踪Experience PlatformWeb SDK事件
 translation-type: tm+mt
-source-git-commit: 7d4f364ebb9df1ce58481a35007ea75f86ab7825
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
-source-wordcount: '637'
+source-wordcount: '638'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 跟踪事件
 
-要将事件数据发送到Adobe Experience Cloud，请使用该命 `sendEvent` 令。 该 `sendEvent` 命令是将数据发送到Experience Cloud以及检索个性化内容、身份和受众目标的主要方式。
+要将事件数据发送到Adobe Experience Cloud，请使用该命 `sendEvent` 令。 该命 `sendEvent` 令是向Experience Cloud发送数据以及检索个性化内容、身份和受众目标的主要方式。
 
 发送到Adobe Experience Cloud的数据分为两个类别:
 
@@ -23,9 +23,9 @@ ht-degree: 0%
 
 ## 发送XDM数据
 
-XDM数据是一个内容和结构与您在Adobe Experience Platform中创建的模式相匹配的对象。 [进一步了解如何创建模式。](../../xdm/tutorials/create-schema-ui.md)
+XDM数据是一个对象，其内容和结构与您在模式中创建的Adobe Experience Platform相匹配。 [进一步了解如何创建模式。](../../xdm/tutorials/create-schema-ui.md)
 
-您希望成为分析、个性化、受众或目标一部分的任何XDM数据都应使用此选项进 `xdm` 行发送。
+您希望成为分析、个性化、受众或目标的一部分的任何XDM数据都应使用此选项进 `xdm` 行发送。
 
 ```javascript
 alloy("sendEvent", {
@@ -82,7 +82,7 @@ alloy("sendEvent", {
 
 ## 使用sendBeacon API
 
-在网页用户导航离开之前发送事件数据可能很棘手。 如果请求过长，浏览器可能会取消请求。 某些浏览器已实现一个调用的Web标 `sendBeacon` 准API，以便在此期间更轻松地收集数据。 使用时， `sendBeacon`浏览器在全局浏览上下文中发出Web请求。 这意味着浏览器在后台发出信标请求，并且不保留页面导航。 要告知Adobe Experience Platform Web SDK使用 `sendBeacon`，请将该选项 `"documentUnloading": true` 添加到事件命令。  示例如下：
+在网页用户导航离开之前发送事件数据可能很棘手。 如果请求过长，浏览器可能会取消请求。 某些浏览器已实现一个调用的Web标 `sendBeacon` 准API，以便在此期间更轻松地收集数据。 使用时， `sendBeacon`浏览器在全局浏览上下文中发出Web请求。 这意味着浏览器在后台发出信标请求，并且不保留页面导航。 要告诉Adobe Experience PlatformWeb SDK使 `sendBeacon`用，请将该选 `"documentUnloading": true` 项添加到事件命令。  示例如下：
 
 ```javascript
 alloy("sendEvent", {
@@ -100,7 +100,7 @@ alloy("sendEvent", {
 });
 ```
 
-浏览器已对一次可发送的数据量 `sendBeacon` 施加限制。 在许多浏览器中，限制为64K。 如果浏览器由于负载过大而拒绝事件，则Adobe Experience Platform Web SDK将回退到使用其常规传输方法（例如，提取）。
+浏览器已对一次可发送的数据量 `sendBeacon` 施加限制。 在许多浏览器中，限制为64K。 如果浏览器由于负载过大而拒绝事件,Adobe Experience PlatformWeb SDK将回退到使用其常规传输方法（例如，提取）。
 
 ## 处理来自事件的响应
 
