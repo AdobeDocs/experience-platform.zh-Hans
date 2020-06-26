@@ -4,21 +4,22 @@ seo-title: Adobe Experience PlatformWeb SDK安装SDK
 description: 了解如何安装Experience PlatformWeb SDK
 seo-description: 了解如何安装Experience PlatformWeb SDK
 translation-type: tm+mt
-source-git-commit: e0dee4e39143ae9d7f5e4aaf9c352555f1c7f5d0
+source-git-commit: 90afc28d41878cbed90fc05176276a30d8aebe09
 workflow-type: tm+mt
-source-wordcount: '571'
+source-wordcount: '580'
 ht-degree: 1%
 
 ---
 
 
-# 安装SDK
+# 安装SDK {#installing-the-sdk}
 
 Adobe Experience PlatformWeb SDK可在内容投放网络(CDN)上提供，供您使用。 您可以引用此文件或下载此文件并在自己的基础架构上托管它。 它提供微型和非微型版本。 非精简版本有助于进行调试。
 
-[https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js)[https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js)
+* 简化版本： [https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js)
+* 非精简版本： [https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js)
 
-## 添加代码
+## 添加代码 {#adding-the-code}
 
 实施Adobe Experience PlatformWeb SDK的第一步是尽可能在HTML标签中复制并粘贴以下“基 `<head>` 本代码”:
 
@@ -51,7 +52,7 @@ Adobe Experience PlatformWeb SDK可在内容投放网络(CDN)上提供，供您�
 
 除了创建全局函数外，此基本代码还加载包含在服务器上托管的外部文件\(`alloy.js`\)中的其他代码。 默认情况下，此代码以异步方式加载，以使您的网页尽可能高效。 这是建议的实施。
 
-## 支持Internet Explorer
+## 支持Internet Explorer {#support-internet-explore}
 
 本SDK利用承诺，即一种通信异步任务完成的方法。 SDK使 [用的](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) Promise实现本机上受除Internet Explorer以外的所有目标浏览器支持。 要在Internet Explorer上使用SDK，您需要填 `window.Promise` 充 [SDK](https://remysharp.com/2010/10/08/what-is-a-polyfill)。
 
@@ -71,9 +72,9 @@ Adobe Experience PlatformWeb SDK可在内容投放网络(CDN)上提供，供您�
 
 这会加载一个脚本，确保 `window.Promise` 该脚本是有效的Promise实现。
 
-## 同步加载JavaScript文件
+## 同步加载JavaScript文件 {#loading-javascript-synchronously}
 
-如前所述，您复制并粘贴到网站HTML的基本代码会加载一个包含其他代码的外部文件。 此附加代码包含SDK的核心功能。 在加载此文件时尝试执行的任何命令都将排队，然后在加载文件后进行处理。 这是最高性能的安装方法。
+如添加代码一 [节中所述](#adding-the-code)，您复制并粘贴到网站HTML中的基本代码将加载一个包含其他代码的外部文件。 此附加代码包含SDK的核心功能。 在加载此文件时尝试执行的任何命令都将排队，然后在加载文件后进行处理。 这是最高性能的安装方法。
 
 但是，在某些情况下，您可能希望同步加载文件\（以后将记录有关这些情况的更多详细信息\）。 这样做会阻止浏览器解析和呈现HTML文档的其余部分，直到加载和执行外部文件。 通常不建议在向用户显示主要内容之前再延迟一次，但具体情况会有所不同。
 
