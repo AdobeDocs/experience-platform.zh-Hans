@@ -1,12 +1,12 @@
 ---
 title: 配置SDK
-seo-title: 配置Adobe Experience Platform Web SDK
-description: 了解如何配置Experience Platform Web SDK
-seo-description: 了解如何配置Experience Platform Web SDK
+seo-title: 配置Adobe Experience PlatformWeb SDK
+description: 了解如何配置Experience PlatformWeb SDK
+seo-description: 了解如何配置Experience PlatformWeb SDK
 translation-type: tm+mt
-source-git-commit: 7d4f364ebb9df1ce58481a35007ea75f86ab7825
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
-source-wordcount: '739'
+source-wordcount: '743'
 ht-degree: 11%
 
 ---
@@ -16,8 +16,9 @@ ht-degree: 11%
 
 SDK的配置是使用命令完 `configure` 成的。
 
->[!I重要信息]
->`configure` 应该 _始终_ 是第一个名为的命令。
+>[!IMPORTANT]
+>
+>`configure` 应该 *始终* 是第一个名为的命令。
 
 ```javascript
 alloy("configure", {
@@ -54,7 +55,7 @@ alloy("configure", {
 
 指示是否应启用调试。 将此配置设置 `true` 为启用以下功能：
 
-| **功能** |  |  |
+| **功能** | **函数** |
 | ---------------------- | ------------------ |
 | 同步验证 | 验证根据模式收集的数据，并在以下标签下的响应中返回错误： `collect:error OR success` |
 | 控制台日志记录 | 允许调试消息显示在浏览器的JavaScript控制台中 |
@@ -85,7 +86,7 @@ alloy("configure", {
 
 指示是否应自动收集与链接单击关联的数据。 对于符合链接单击条件的单击，将收 [集以下Web](https://github.com/adobe/xdm/blob/master/docs/reference/context/webinteraction.schema.md) Interaction数据：
 
-| **属性** |  |
+| **属性** | **描述** |
 | ------------ | ----------------------------------- |
 | 链接名称 | 由链接上下文确定的名称 |
 | 链接URL | 标准化URL |
@@ -97,7 +98,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 函数 | 否 | ()=>未定义 |
 
-设置此设置可配置在发送每个事件之前调用的回调。  包含该字段的 `xdm` 对象将发送到回调。  修改xdm对象以更改发送的内容。  在回调中，对 `xdm` 象已在事件命令中传递数据，并自动收集信息。  有关此回调的时间安排的详细信息和示例，请参阅全局 [修改事件](tracking-events.md#modifying-events-globally)。
+设置此设置可配置在发送每个事件之前调用的回调。  包含该字段的 `xdm` 对象将发送到回调。  修改对 `xdm` 象以更改发送的内容。  在回调中，对 `xdm` 象已在事件命令中传递数据，并自动收集信息。  有关此回调的时间安排的详细信息和示例，请参阅全局 [修改事件](tracking-events.md#modifying-events-globally)。
 
 ## 隐私选项
 
@@ -133,7 +134,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-启用Cookie目标，允许根据区段资格设置Cookie。
+启用Audience Manager [!UICONTROL cookie目标]，允许根据区段资格设置cookie。
 
 ### `urlDestinationsEnabled`
 
@@ -141,7 +142,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-启用URL目标，它允许基于段资格触发URL。
+启用Audience Manager [!UICONTROL URL目标]，这允许基于区段资格触发URL。
 
 ## 标识选项
 
@@ -167,4 +168,4 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | true |
 
-启用Adobe第三方Cookie的设置。 SDK能够将访客ID保留在第三方上下文中，从而允许在站点之间使用相同的访客ID。 如果您有多个站点或希望与合作伙伴共享数据，则此功能非常有用； 但是，有时出于隐私原因而不需要这样做。
+启用Adobe第三方Cookie的设置。 SDK能够将访客ID保留在第三方上下文中，从而允许在多个站点上使用相同的访客ID。 如果您有多个站点或希望与合作伙伴共享数据，则此功能非常有用； 但是，有时出于隐私原因而不需要这样做。
