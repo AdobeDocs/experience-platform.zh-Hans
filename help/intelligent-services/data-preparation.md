@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 准备要在Intelligent Services中使用的数据
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 9a2e6f7db441b804f17ec91d06d359439c3d5da5
+source-git-commit: 9905f0248fe88bac5194560318cf8eced32ba93c
 workflow-type: tm+mt
-source-wordcount: '1595'
+source-wordcount: '1878'
 ht-degree: 0%
 
 ---
@@ -20,15 +20,15 @@ ht-degree: 0%
 
 ## 工作流摘要
 
-准备过程因数据是存储在Adobe Experience Platform中还是存储在外部而异。 本节总结了在任一情况下需要采取的必要步骤。
+准备过程因Adobe Experience Platform存储还是外部存储数据而异。 本节总结了在任一情况下需要采取的必要步骤。
 
 ### 外部数据准备
 
 如果数据存储在外部， [!DNL Experience Platform]请按照以下步骤操作：
 
-1. 联系Adobe Consulting Services以请求专用Azure Blob存储容器的访问凭据。
+1. 联系Adobe咨询服务部门以请求专用Azure Blob存储容器的访问凭据。
 1. 使用访问凭据，将数据上传到Blob容器。
-1. 与Adobe Consulting Services合作，将您的数据映射到 [Consumer ExperienceEvent模式](#cee-schema) ，并将其引入智能服务。
+1. 使用Adobe Consulting Services将您的数据映射到 [Consumer ExperienceEvent模式](#cee-schema) ，并引入智能服务。
 
 ### [!DNL Experience Platform] 数据准备
 
@@ -41,6 +41,8 @@ ht-degree: 0%
 
 消费者体验事件模式描述个人的行为，因为它与数字营销事件（Web或移动）以及在线或离线商务活动相关。 智能服务需要使用此模式，因为其语义上定义良好的字段（列），从而避免了任何未知名称，否则这些名称会使数据变得不那么清晰。
 
+与所有XDM ExperienceEvent模式一样， CEE模式在发生事件(或一组事件)时捕获基于时间序列的系统状态，包括时间点和相关主题的身份。 体验事件是事实记录，因此它们是不可改变的，代表所发生的事情，而不经过聚合或解释。
+
 智能服务利用此模式中的几个关键字段从您的营销事件数据中生成洞察，所有这些数据都可以在根级别找到并展开以显示其必需的子字段。
 
 ![](./images/data-preparation/schema-expansion.gif)
@@ -51,13 +53,38 @@ ht-degree: 0%
 
 ## 键字段
 
-以下各节重点介绍了CEE混音中的关键字段，这些字段应用于智能服务以生成有用的洞察，包括说明和指向参考文档的链接，以供进一步示例使用。
+CEE混音中有几个关键字段应用，以便智能服务生成有用的洞察。 本节介绍这些字段的用例和预期数据，并提供参考文档的链接以获取更多示例。
 
->[!IMPORTANT] 为 `xdm:channel` 了使归因AI能够处理您的数 **据** ，字段（如下面第一节所述）是必需的，而客户AI没有任何必填字段。 强烈建议使用所有其他键字段，但不是强制使用。
+### 必填字段
 
-### xdm:渠道
+强烈建议使用所有关键字段，但有两个字段是必填 **字段** ，以使智能服务正常工作：
 
-此字段表示与ExperienceEvent相关的营销渠道。 该字段包括有关渠道类型、媒体类型和位置类型的信息。 **必须提&#x200B;_供此字_段，Attribution AI才能处理您的数据**。
+* [主标识字段](#identity)
+* [xdm:timestamp](#timestamp)
+* [xdm:渠道](#channel) （仅对归因AI强制使用）
+
+#### 主要身份 {#identity}
+
+您模式中的其中一个字段必须设置为主标识字段，这允许智能服务将时间序列数据的每个实例链接到单个人。
+
+您必须根据数据的来源和性质确定用作主要标识的最佳字段。 标识字段必须包含标 **识命名空间** ，该标识指示字段期望作为值的标识数据类型。 一些有效的命名空间值包括：
+
+* &quot;电子邮件&quot;
+* &quot;phone&quot;
+* “mcid”(用于Adobe Audience ManagerID)
+* “aaid”(针对AdobeAnalyticsID)
+
+如果您不确定应将哪个字段用作主要标识，请与Adobe咨询服务部门联系以确定最佳解决方案。
+
+#### xdm:timestamp {#timestamp}
+
+此字段表示发生事件的日期时间。 必须按照ISO 8601标准将此值作为字符串提供。
+
+#### xdm:渠道 {#channel}
+
+>[!NOTE] 仅当使用归因AI时，此字段才是必填字段。
+
+此字段表示与ExperienceEvent相关的营销渠道。 该字段包括有关渠道类型、媒体类型和位置类型的信息。
 
 ![](./images/data-preparation/channel.png)
 
@@ -74,7 +101,7 @@ ht-degree: 0%
 
 有关每个必需子字段的完整信息，请 `xdm:channel`参阅体验渠道 [模式规范](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/channels/channel.schema.md) 。 有关某些示例映射，请参 [阅下表](#example-channels)。
 
-#### 渠道映射示例 {#example-channels}
+##### 渠道映射示例 {#example-channels}
 
 下表提供映射到该渠道的营销模式的一些示 `xdm:channel` 例：
 
@@ -89,7 +116,11 @@ ht-degree: 0%
 | QR码重定向 | https:/<span>/ns.adobe.com/xdm/渠道类型／直接 | 自 | 点击 |
 | 移动设备 | https:/<span>/ns.adobe.com/xdm/渠道类型／移动 | 自 | 点击 |
 
-### xdm:productListItems
+### 推荐字段
+
+本节概述了其余的关键字段。 尽管这些字段不一定是智能服务工作所必需的，但强烈建议您尽可能多地使用这些字段以获得更丰富的洞察。
+
+#### xdm:productListItems
 
 此字段是表示客户选择的产品的一组项目，包括产品SKU、名称、价格和数量。
 
@@ -118,7 +149,7 @@ ht-degree: 0%
 
 有关每个必需子字段的完整信息， `xdm:productListItems`请参阅商务详细 [信息模式规范](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md) 。
 
-### xdm：商务
+#### xdm：商务
 
 此字段包含有关ExperienceEvent的商务特定信息，包括采购订单编号和付款信息。
 
@@ -156,7 +187,7 @@ ht-degree: 0%
 
 有关每个必需子字段的完整信息， `xdm:commerce`请参阅商务详细 [信息模式规范](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md) 。
 
-### xdm:web
+#### xdm:web
 
 此字段表示与ExperienceEvent相关的Web详细信息，如交互、页面详细信息和推荐人。
 
@@ -186,7 +217,7 @@ ht-degree: 0%
 
 有关每个必需子字段的完整信息，请 `xdm:productListItems`参阅ExperienceEvent Web详 [细信息模式规范](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-web.schema.md) 。
 
-### xdm：营销
+#### xdm：营销
 
 此字段包含与与触点处于活动状态的营销活动相关的信息。
 
@@ -216,7 +247,7 @@ ht-degree: 0%
 
 >[!NOTE] 以下步骤需要订阅Experience Platform。 如果您无权访问平台，请跳到下一 [步部分](#next-steps) 。
 
-本节概述了将数据映射到Experience Platform以用于智能服务的工作流程，包括指向教程的链接以了解详细步骤。
+本节概述了将数据映射到Experience Platform并将其引入智能服务中的工作流程，包括指向教程的详细步骤链接。
 
 #### 创建CEE模式和数据集
 
@@ -234,7 +265,13 @@ ht-degree: 0%
 * [在UI中创建数据集](../catalog/datasets/user-guide.md#create) (按照工作流使用现有模式)
 * [在API中创建数据集](../catalog/datasets/create.md)
 
+创建数据集后，您可以在数据集工作区的平台UI中找 *[!UICONTROL 到它]* 。
+
+![](images/data-preparation/dataset-location.png)
+
 #### 向数据集添加主标识命名空间标记
+
+>[!NOTE] 智能服务的未来版本将将 [Adobe Experience Platform身份服务](../identity-service/home.md) 集成到其客户识别功能中。 因此，以下概述的步骤可能会发生变化。
 
 如果导入来自、或 [!DNL Adobe Audience Manager]其 [!DNL Adobe Analytics]他外部源的数据，则必须向数据集 `primaryIdentityNameSpace` 添加标记。 这可以通过向Catalog Service API发出PATCH请求来完成。
 
