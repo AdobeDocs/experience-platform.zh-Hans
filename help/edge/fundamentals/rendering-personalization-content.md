@@ -1,12 +1,12 @@
 ---
 title: 呈现个性化内容
-seo-title: Adobe Experience Platform Web SDK渲染个性化内容
-description: 了解如何使用Experience Platform Web SDK呈现个性化内容
-seo-description: 了解如何使用Experience Platform Web SDK呈现个性化内容
+seo-title: Adobe Experience PlatformWeb SDK渲染个性化内容
+description: 了解如何使用Experience PlatformWeb SDK呈现个性化内容
+seo-description: 了解如何使用Experience PlatformWeb SDK呈现个性化内容
 translation-type: tm+mt
-source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 个性化选项概述
 
-Adobe Experience Platform Web SDK支持在Adobe查询个性化解决方案，包括Adobe目标。 有两种个性化模式： 检索可自动渲染的内容和开发人员必须渲染的内容。 SDK还提供管理闪 [烁的工具](../../edge/solution-specific/target/flicker-management.md)。
+Adobe Experience PlatformWeb SDK支持在Adobe查询个性化解决方案，包括Adobe Target。 有两种个性化模式： 检索可自动渲染的内容和开发人员必须渲染的内容。 SDK还提供管理闪 [烁的工具](../../edge/solution-specific/target/flicker-management.md)。
 
 ## 自动呈现内容
 
@@ -36,7 +36,7 @@ alloy("sendEvent", {
 });
 ```
 
-个性化内容的呈现是异步的，因此当特定内容片段是页面的一部分时，不应存在任何假设。
+呈现个性化内容是异步的，因此当特定内容是页面的一部分时，不应存在任何假设。
 
 ## 手动呈现内容
 
@@ -90,9 +90,10 @@ alloy("sendEvent",{
 }
 ```
 
-{info}如果您使用目标作用域在服务器上变为mBoxes，则只有它们一次是所有请求，而不是单独请求。 全局mbox始终会发送。
-{info}
+>[!TIP]
+>
+> 如果您使用目标范围成为服务器上的mBox，则只有它们一次是所有请求，而不是单独请求。 全局mbox始终会发送。
 
 ### 检索自动内容
 
-如果您希望包含 `result.decisions` 可渲染的自动决策，可以将 `renderDecisions` 其设置为false并包含特殊范围 `__view__`
+如果希望包含 `result.decisions` 自动可渲染决策，可将 `renderDecisions` 其设置为false并包含特殊范围 `__view__`。
