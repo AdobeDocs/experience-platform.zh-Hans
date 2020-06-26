@@ -1,12 +1,12 @@
 ---
 title: 调试
-seo-title: Adobe Experience Platform Web SDK调试
-description: 了解如何切换Experience Platform Web SDK调试
-seo-description: 了解如何切换Experience Platform Web SDK调试
+seo-title: Adobe Experience PlatformWeb SDK调试
+description: 了解如何切换Experience PlatformWeb SDK调试
+seo-description: 了解如何切换Experience PlatformWeb SDK调试
 translation-type: tm+mt
-source-git-commit: 7d4f364ebb9df1ce58481a35007ea75f86ab7825
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
-source-wordcount: '323'
+source-wordcount: '324'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,8 @@ alloy("configure", {
 });
 ```
 
->[!Hint]
+>[!TIP]
+>
 >这允许为网页的所有用户（而不是仅为您的个人浏览器）进行调试。
 
 ## 使用“调试”命令切换调试
@@ -61,7 +62,7 @@ http://example.com/?alloy_debug=true
 
 ## 优先级和持续时间
 
-当通过命令或查询字 `debug` 符串参数设置调试时，它将覆盖在命 `debug` 令中设置的任何 `configure` 选项。 在这两种情况下，调试在会话期间也保持切换状态。 换言之，如果您使用debug命令或查询字符串参数启用调试，它将一直处于启用状态，直到出现以下情况之一：
+当通过命令或查询字 `debug` 符串参数设置调试时，它将覆盖在命 `debug` 令中设置的任何 `configure` 选项。 在这两种情况下，调试在会话期间也保持开启状态。 换言之，如果您使用debug命令或查询字符串参数启用调试，它将一直处于启用状态，直到出现以下情况之一：
 
 * 会话结束
 * 您运行命 `debug` 令
