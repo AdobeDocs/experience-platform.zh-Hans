@@ -4,21 +4,21 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案API开发人员指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: 9600f315f162b6cd86e2dbe2fffc793cc91c9319
+source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
 workflow-type: tm+mt
-source-wordcount: '1940'
+source-wordcount: '1919'
 ht-degree: 2%
 
 ---
 
 
-# 边缘目标和预测
+# 边缘投影配置和目标端点
 
-为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用边缘功能实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe目标和Adobe Campaign等Adobe应用程序利用边缘来实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 本指南提供使用实时客户用户档案API处理边缘预测（包括目标和配置）的详细说明。
+为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe Target和Adobe Campaign等Adobe应用程序使用边缘来实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 本指南提供使用实时客户用户档案API处理边缘预测（包括目标和配置）的详细说明。
 
 ## 入门指南
 
-本指南中使用的API端点是实时客户用户档案API的一部分。 在继续之前，请查阅实 [时客户用户档案开发人员指南](getting-started.md)。 特别是，用户档案开 [发人员指南的](getting-started.md#getting-started) “入门”部分包括相关主题的链接、阅读此文档中示例API调用的指南，以及成功调用任何Experience Platform API所需标头的重要信息。
+本指南中使用的API端点是实 [时客户用户档案API的一部分](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何Experience PlatformAPI所需标头的重要信息。
 
 >[!NOTE]
 >包含有效负荷(POST、PUT、PATCH)的请求需要标 `Content-Type` 头。 此文档 `Content-Type` 中使用了多个。 请特别注意示例调用中的标头，以确保您对每个请求使用 `Content-Type` 正确的标头。
@@ -107,7 +107,7 @@ curl -X GET \
 
 有关单个目标的属性的详细信息，请参阅下面有关创 [建目标的](#create-a-destination) 一节。
 
-### 创建目标 {#create-a-destination}
+### Create a destination {#create-a-destination}
 
 如果所需的目标尚不存在，则可以通过向端点发出POST请求来创建新的投影目 `/config/destinations` 标。
 
@@ -292,7 +292,7 @@ curl -X PUT \
 
 ### 删除目标
 
-如果您的组织不再需要投影目标，可以通过向端点发出DELETE请求并在请求路径中 `/config/destinations` 包含要删除的目标ID来删除该目标。
+如果您的组织不再需要投影目标，可以通过向终结点发出DELETE请求并在请求路径中 `/config/destinations` 包含要删除的目标ID来删除该目标。
 
 >[!CAUTION]
 >对删除请求的API响应是即时的，但边缘上数据的实际更改是异步进行的。 换言之，用户档案数据将从所有边缘(在投影目标中 `dataCenters` 指定)中删除，但该过程需要时间来完成。
@@ -639,4 +639,4 @@ curl -X POST \
 
 ## 后续步骤
 
-本指南向您展示了配置边缘投影和目标所涉及的步骤，包括如何正确设置参数 `selector` 格式。 您现在可以根据组织的需求新建边缘目标和预测。 要发现通过用户档案API可用的其他操作，请参 [阅实时用户档案API开发人员指南](getting-started.md)。
+本指南向您展示了配置投影和目标所涉及的步骤，包括如何正确设置参数 `selector` 格式。 您现在可以根据组织的需求新建投影目标和配置。
