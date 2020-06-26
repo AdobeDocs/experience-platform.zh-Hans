@@ -1,13 +1,13 @@
 ---
 title: 执行命令
-seo-title: 执行Adobe Experience Platform Web SDK命令
-description: 了解如何执行Experience Platform Web SDK命令
-seo-description: 了解如何执行Experience Platform Web SDK命令
+seo-title: 执行Adobe Experience PlatformWeb SDK命令
+description: 了解如何执行Experience PlatformWeb SDK命令
+seo-description: 了解如何执行Experience PlatformWeb SDK命令
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
 workflow-type: tm+mt
 source-wordcount: '419'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -26,7 +26,7 @@ alloy("commandName", options);
 
 ## 承诺的便条
 
-[承诺](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) 是SDK如何与您网页上的代码通信的基础。 承诺是一种通用的编程结构，并非特定于此SDK甚至JavaScript。 承诺充当创建承诺时未知的值的代理。 一旦知道该值，承诺即与该值“解析”。 处理函数可以与承诺相关联，以便在承诺已解析或在解决承诺过程中出错时向您发送通知。 要进一步了解承诺，请阅 [读本教程](https://javascript.info/promise-basics) ，或Web上的任何其他资源。
+[承诺](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 是SDK如何与您网页上的代码通信的基础。 承诺是一种通用的编程结构，并非特定于此SDK甚至JavaScript。 承诺充当创建承诺时未知的值的代理。 一旦知道该值，承诺即与该值“解析”。 处理函数可以与承诺相关联，以便在承诺已解析或在解决承诺过程中出错时向您发送通知。 要进一步了解承诺，请阅 [读本教程](https://javascript.info/promise-basics) ，或Web上的任何其他资源。
 
 ## 处理成功或失败
 
