@@ -4,14 +4,17 @@ solution: Experience Platform
 title: 数据湖中的隐私请求处理
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3584202554baf46aad174d671084751e6557bbc
+source-git-commit: 327be13cbaaa40e4d0409cbb49a051b7067759bf
+workflow-type: tm+mt
+source-wordcount: '1275'
+ht-degree: 0%
 
 ---
 
 
 # 数据湖中的隐私请求处理
 
-Adobe Experience Platform隐私服务处理客户访问、选择退出出售或删除其法律和组织隐私法规规定的个人数据的请求。
+Adobe Experience Platform Privacy Service处理客户访问、销选择退出售或删除法律和组织隐私法规规定的个人数据的请求。
 
 此文档涵盖与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
 
@@ -19,14 +22,14 @@ Adobe Experience Platform隐私服务处理客户访问、选择退出出售或�
 
 在阅读本指南之前，建议您对以下Experience Platform服务有一定的了解：
 
-* [隐私服务](../privacy-service/home.md): 管理客户在Adobe Experience Cloud应用程序中访问、选择退出销售或删除其个人数据的请求。
-* [目录服务](home.md): Experience Platform中数据位置和世系的记录系统。 提供可用于更新数据集元数据的API。
+* [Privacy Service](../privacy-service/home.md): 管理客户在Adobe Experience Cloud应用程序中访问、选择退出销售或删除其个人数据的请求。
+* [目录服务](home.md): Experience Platform内数据位置和谱系的记录系统。 提供可用于更新数据集元数据的API。
 * [体验数据模型(XDM)系统](../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
 * [身份服务](../identity-service/home.md): 通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
 
 ## 了解身份命名空间 {#namespaces}
 
-Adobe Experience Platform Identity Service跨系统和设备连接客户身份数据。 身份服务 **使用身份命名空间** ，通过将身份值与其来源系统相关联来提供与身份值相关的上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising Cloud ID(“AdCloud”)或Adobe目标ID(“TNTID”))关联。
+Adobe Experience Platform身份服务可以跨系统和设备连接客户身份数据。 身份服务 **使用身份命名空间** ，通过将身份值与其来源系统相关联来提供与身份值相关的上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如AdobeAdvertising CloudID(“AdCloud”)或Adobe TargetID(“TNTID”))关联。
 
 Identity Service维护全局定义（标准）和用户定义（自定义）标识命名空间的存储。 标准命名空间适用于所有组织（例如，“电子邮件”和“ECID”），而您的组织也可以创建自定义命名空间以满足其特定需求。
 
@@ -40,7 +43,9 @@ Identity Service维护全局定义（标准）和用户定义（自定义）标�
 
 本节将逐步介绍向现有数据集的XDM模式添加标识描述符的步骤。 如果已有带有标识描述符的数据集，可跳到下一 [节](#nested-maps)。
 
->[!IMPORTANT] 在确定要设置为标识的模式字段时，请记 [住使用嵌套映射类型字段的限制](#nested-maps)。
+>[!IMPORTANT]
+>
+>在确定要设置为标识的模式字段时，请记 [住使用嵌套映射类型字段的限制](#nested-maps)。
 
 有两种方法可将标识描述符添加到数据集模式:
 
@@ -49,7 +54,7 @@ Identity Service维护全局定义（标准）和用户定义（自定义）标�
 
 ### 使用UI {#identity-ui}
 
-在Experience Platform用户界面中，您可 _[!UICONTROL Schemas]_以通过工作区编辑现有的XDM模式。 要向模式添加标识描述符，请从列表中选择模式，然后按照“模式编辑[器”教程中将模式字段设置为标识](../xdm/tutorials/create-schema-ui.md#identity-field)字段的步骤进行操作。
+在Experience Platform用户界面中， _[!UICONTROL 模式]_工作区允许您编辑现有XDM模式。 要向模式添加标识描述符，请从列表中选择模式，然后按照“模式编辑[器”教程中将模式字段设置为标识](../xdm/tutorials/create-schema-ui.md#identity-field)字段的步骤进行操作。
 
 在将模式中的相应字段设置为标识字段后，您可以继续执行下一节提交隐 [私请求](#submit)。
 
@@ -97,7 +102,7 @@ curl -X POST \
 | `xdm:sourceSchema` | 数据集XDM模式的唯一URI ID。 |
 | `xdm:sourceVersion` | 中指定的XDM模式版本 `xdm:sourceSchema`。 |
 | `xdm:sourceProperty` | 模式符所应用的描述符字段的路径。 |
-| `xdm:namespace` | 隐私服 [务可识别的标准身份命名空间](../privacy-service/api/appendix.md#standard-namespaces) 之一，或您的组织定义的自定义命名空间。 |
+| `xdm:namespace` | 由命名空间 [识别的标准身份Privacy Service](../privacy-service/api/appendix.md#standard-namespaces) ，或由您的组织定义的自定义命名空间。 |
 | `xdm:property` | “xdm:id”或“xdm:code”，具体取决于使用的命名空间 `xdm:namespace`。 |
 | `xdm:isPrimary` | 可选布尔值。 如果为true，则表示字段是主标识。 模式只能包含一个主标识。 如果不包括，则默认为false。 |
 
@@ -121,9 +126,9 @@ curl -X POST \
 
 ## 提交请求 {#submit}
 
->[!NOTE] 本节介绍如何格式化数据湖的隐私请求。 强烈建议您查看隐私服务 [UI](../privacy-service/ui/overview.md) 或 [](../privacy-service/api/getting-started.md) 隐私服务API文档，了解如何提交隐私作业的完整步骤，包括如何在请求负载中正确设置提交的用户身份数据的格式。
+>[!NOTE] 本节介绍如何格式化数据湖的隐私请求。 强烈建议您查看Privacy Service [UI](../privacy-service/ui/overview.md) 或 [](../privacy-service/api/getting-started.md) Privacy ServiceAPI文档，了解如何提交隐私作业的完整步骤，包括如何在请求负载中正确设置提交的用户标识数据的格式。
 
-以下部分概述了如何使用隐私服务UI或API向数据湖发出隐私请求。
+以下部分概述了如何使用Privacy ServiceUI或API向数据湖发出隐私请求。
 
 ### 使用UI
 
@@ -180,9 +185,9 @@ curl -X POST \
 
 ## 删除请求处理
 
-当Experience Platform从隐私服务收到删除请求时，平台会向隐私服务发送确认消息，确认该请求已收到且受影响的数据已标记为删除。 然后在七天内从数据湖中删除记录。 在这七天的时间内，数据会被软删除，因此任何平台服务都无法访问。
+当Experience Platform从Privacy Service收到删除请求时，平台会向Privacy Service发送确认，确认已收到请求并且受影响的数据已被标记为删除。 然后在七天内从数据湖中删除记录。 在这七天的时间内，数据会被软删除，因此任何平台服务都无法访问。
 
-在将来的版本中，平台将在数据被物理删除后向隐私服务发送确认信息。
+在以后的版本中，平台将在Privacy Service被物理删除后向客户发送确认信息。
 
 ## 后续步骤
 
