@@ -4,14 +4,17 @@ solution: Experience Platform
 title: 删除对象
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6c17351b04fedefd4b57b9530f1d957da8183a68
+source-git-commit: 327be13cbaaa40e4d0409cbb49a051b7067759bf
+workflow-type: tm+mt
+source-wordcount: '178'
+ht-degree: 2%
 
 ---
 
 
 # 删除对象
 
-可以通过在DELETE请求的路径中提供Catalog对象的ID来删除它。
+您可以通过在DELETE请求的路径中提供目录对象的ID来删除该对象。
 
 >[!WARNING] 删除对象时要格外小心，因为此操作无法撤消，并且可能会在Experience Platform的其他位置产生破坏性更改。
 
@@ -21,16 +24,18 @@ source-git-commit: 6c17351b04fedefd4b57b9530f1d957da8183a68
 DELETE /{OBJECT_TYPE}/{OBJECT_ID}
 ```
 
->[!IMPORTANT] 端 `DELETE /batches/{ID}` 点已弃用。 要删除批，您应使用批 [摄取API](../../ingestion/batch-ingestion/api-overview.md#delete-a-batch)。
+>[!IMPORTANT]
+>
+>终 `DELETE /batches/{ID}` 结点已弃用。 要删除批，您应使用批 [摄取API](../../ingestion/batch-ingestion/api-overview.md#delete-a-batch)。
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要删除的Catalog对象的类型。 有效对象包括： <ul><li>`accounts`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要删除的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
 
-以下请求将删除在请求路径中指定其ID的数据集。
+以下请求将删除在请求路径中指定ID的数据集。
 
 ```shell
 curl -X DELETE \
@@ -43,7 +48,7 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应会返回HTTP状态200(OK)和包含已删除数据集ID的数组。 此ID应与在DELETE请求中发送的ID匹配。 对已删除的对象执行GET请求将返回HTTP状态404（未找到），确认已成功删除数据集。
+成功的响应返回HTTP状态200(OK)和包含已删除数据集ID的数组。 此ID应与在DELETE请求中发送的ID匹配。 对已删除的对象执行GET请求将返回HTTP状态404（未找到），确认数据集已成功删除。
 
 ```json
 [
@@ -51,4 +56,4 @@ curl -X DELETE \
 ]
 ```
 
->[!NOTE] 如果没有与请求中提供的ID匹配的Catalog对象，您仍可能收到HTTP状态代码200，但响应数组将为空。
+>[!NOTE] 如果没有与请求中提供的ID匹配的目录对象，您仍可能收到HTTP状态代码200，但响应数组为空。
