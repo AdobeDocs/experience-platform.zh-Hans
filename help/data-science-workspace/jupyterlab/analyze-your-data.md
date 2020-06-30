@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用笔记本分析数据
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '1729'
+source-wordcount: '1702'
 ht-degree: 0%
 
 ---
@@ -18,31 +18,31 @@ ht-degree: 0%
 
 介绍了以下概念：
 
-- **JupyterLab:** [JupyterLab是](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) Project Jupyter的下一代基于Web的界面，并紧密集成到其中 [!DNL Adobe Experience Platform]。
+- **[!DNL JupyterLab]:**[!DNL JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906)是Project Jupyter的下一代基于web的界面，并紧密集成到其中[!DNL Adobe Experience Platform]。
 - **批：** 数据集由批量组成。 批是在一段时间内收集的一组数据，并作为单个单元一起处理。 将数据添加到数据集时会创建新批。
-- **数据访问SDK（已弃用）:** 数据访问SDK现已弃用。 请使用平 [台SDK](../authoring/platform-sdk.md) 指南。
+- **数据访问SDK（已弃用）:** 数据访问SDK现已弃用。 请使用指 [!DNL Platform SDK](../authoring/platform-sdk.md) 南。
 
 ## 在数据科学工作区中探索笔记本
 
 在本节中，将探索以前引入零售销售模式的数据。
 
-数据科学工作区允许用户通过JupyterLab平台创建Jupyter笔记本，在该平台上他们可以创建和编辑机器学习工作流。 JupyterLab是一种服务器——客户端协作工具，它允许用户通过Web浏览器编辑笔记本文档。 这些笔记本电脑可同时包含可执行代码和富文本元素。 为了我们的目的，我们将使用Markdown进行分析描述，并可执行Python代码来执行数据探索和分析。
+数据科学工作区允许用户通 [!DNL Jupyter Notebooks] 过平台 [!DNL JupyterLab] 进行创作，在该平台中创建和编辑机器学习工作流。 [!DNL JupyterLab] 是一种服务器——客户端协作工具，允许用户通过Web浏览器编辑笔记本文档。 这些笔记本电脑可同时包含可执行代码和富文本元素。 为了我们的目的，我们将使用Markdown进行分析描述和可执 [!DNL Python] 行代码，以执行分析。
 
 ### 选择工作区
 
-在启动JupyterLab时，我们为Jupyter笔记本提供了一个基于Web的界面。 根据我们选择的笔记本类型，将启动相应的内核。
+在启动 [!DNL JupyterLab]时，我们将为Jupyter笔记本提供一个基于Web的界面。 根据我们选择的笔记本类型，将启动相应的内核。
 
-在比较要使用的环境时，我们必须考虑每项服务的限制。 例如，如果我们将熊猫库 [与Python一起](https://pandas.pydata.org/) ，作为普通用户，RAM限制为2 GB。 即使作为电源用户，我们也将限制为20 GB的RAM。 如果处理较大的计算，则使用Spark(优惠为1.5 TB，与所有笔记本实例共享)是明智的。
+在比较要使用的环境时，我们必须考虑每项服务的限制。 例如，如果我们将熊猫 [图书馆](https://pandas.pydata.org/) 与 [!DNL Python]一起使用，作为普通用户，RAM限制为2 GB。 即使作为电源用户，我们也将限制为20 GB的RAM。 如果处理较大的计算，则使用与所 [!DNL Spark] 有笔记本实例共享的1.5 TB优惠是合理的。
 
 默认情况下，Tensorflow菜谱在GPU群集中工作，Python在CPU群集中运行。
 
 ### 创建新笔记本
 
-在UI [!DNL Adobe Experience Platform] 中，单击顶部菜单中的“数据科学”选项卡，转到“数据科学工作区”。 在此页中，单击将打开JupyterLab启动器的JupyterLab选项卡。 您应当看到一个类似于此的页面。
+在UI [!DNL Adobe Experience Platform] 中，单击顶部菜单中的“数据科学”选项卡，转到“数据科学工作区”。 在此页中，单击将打 [!DNL JupyterLab] 开启动器的选 [!DNL JupyterLab] 项卡。 您应当看到一个类似于此的页面。
 
 ![](../images/jupyterlab/analyze-data/jupyterlab_launcher.png)
 
-在我们的教程中，我们将使用Jupyter笔记本中的Python 3演示如何访问和浏览数据。 在“启动器”页面中，提供了示例笔记本。 我们将使用Python 3的零售销售菜谱。
+在我们的教程中，我们将 [!DNL Python] 使用Jupyter笔记本中的3来显示如何访问和浏览数据。 在“启动器”页面中，提供了示例笔记本。 我们将使用零售销售菜谱3 [!DNL Python] 。
 
 ![](../images/jupyterlab/analyze-data/retail_sales.png)
 
@@ -52,11 +52,11 @@ ht-degree: 0%
 
 >[!NOTE] 已 `data_access_sdk_python` 弃用，不再推荐。 要转换代码， [请参阅将数据访问SDK转换](../authoring/platform-sdk.md) 为平台SDK教程。 下面的步骤仍然适用于本教程。
 
-我们将从内部访问数据，从 [!DNL Adobe Experience Platform] 外部访问数据。 我们将使用库 `data_access_sdk_python` 访问内部数据，如数据集和XDM模式。 对于外部数据，我们将使用熊猫蟒蛇图书馆。
+我们将从内部访问数据，从 [!DNL Adobe Experience Platform] 外部访问数据。 我们将使用库 `data_access_sdk_python` 访问内部数据，如数据集和XDM模式。 外部数据，我们用熊猫库 [!DNL Python] 来。
 
 #### 外部数据
 
-打开零售销售笔记本后，找到“加载数据”标题。 以下Python代码使用 `DataFrame` 熊猫的 [数据结构和read_csv()函数](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv) ，将Github上托管的CSV读入DataFrame:
+打开零售销售笔记本后，找到“加载数据”标题。 以下代 [!DNL Python] 码使用熊猫 `DataFrame` 的数据结构和 [read_csv()函数将上托管的CSV读](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html#pandas.read_csv)[!DNL Github] 入数据框：
 
 ![](../images/jupyterlab/analyze-data/read_csv.png)
 
@@ -68,7 +68,7 @@ ht-degree: 0%
 
 ![](../images/jupyterlab/analyze-data/df_head.png)
 
-#### 体验平台数据
+#### [!DNL Experience Platform] 数据
 
 现在，我们将重点介绍如何访问 [!DNL Experience Platform] 数据。
 
@@ -86,7 +86,7 @@ ht-degree: 0%
 
 现在，我们可以右键单击数 `Retail-Training-<your-alias>` 据集并在下拉菜单中选择“浏览笔记本中的数据”选项。 可执行代码条目将显示在您的笔记本中。
 
->[!TIP] 请参阅平 [台SDK](../authoring/platform-sdk.md) 指南来转换代码。
+>[!TIP] 请参阅指 [!DNL Platform SDK](../authoring/platform-sdk.md) 南以转换代码。
 
 ```PYTHON
 from data_access_sdk_python.reader import DataSetReader
@@ -96,7 +96,7 @@ df = reader.load(data_set_id="xxxxxxxx", ims_org="xxxxxxxx@AdobeOrg")
 df.head()
 ```
 
-如果您正在使用除Python之外的其他内核，请参 [阅本页](https://github.com/adobe/acp-data-services-dsw-reference/wiki/Accessing-Data-on-the-Platform) ，访问上的数据 [!DNL Adobe Experience Platform]。
+如果您正在使用除外的其 [!DNL Python]他内核，请 [参阅本页](https://github.com/adobe/acp-data-services-dsw-reference/wiki/Accessing-Data-on-the-Platform) ，访问上的数据 [!DNL Adobe Experience Platform]。
 
 选择可执行单元格，然后在工具栏中按播放按钮将运行可执行代码。 其输出 `head()` 将是一个表，其中数据集的键为列，数据集中的前n行为。 `head()` 接受整数参数以指定要输出的行数。 默认情况下，此值为5。
 
@@ -122,7 +122,7 @@ df.head()
 
 #### 统计摘要
 
-我们可以利用Python的熊猫库来获取每个属性的数据类型。 以下调用的输出将提供有关每个列的条目数和数据类型的信息：
+我们可以利 [!DNL Python's] 用熊猫库来获取每个属性的数据类型。 以下调用的输出将提供有关每个列的条目数和数据类型的信息：
 
 ```PYTHON
 df.info()
@@ -142,7 +142,7 @@ df.describe()
 
 通过这个，我们可以看到每个特征有6435个实例。 给出了平均、标准偏差(std)、最小、最大和间隔等统计信息。 这给出了有关数据偏差的信息。 在下一节中，我们将重点介绍可视化功能，这些功能与这些信息一起使用，以便我们更好地了解我们的数据。
 
-从最小值和最大值看 `store`，我们可以看到有45个数据表示的唯一存储。 店也 `storeTypes` 有差别。 通过执行以下操作， `storeTypes` 可以查看分发内容：
+从最小值和最大值看 `store`，我们可以看到有45个数据表示的唯一存储。 店也 `storeTypes` 有差别。 通过执行以下操作， `storeTypes` 我们可以查看分发内容：
 
 ![](../images/jupyterlab/analyze-data/df_groupby.png)
 
@@ -150,7 +150,7 @@ df.describe()
 
 #### 数据可视化
 
-既然我们了解了数据帧值，我们想用可视化来补充这一点，使事情更清晰、更容易地识别模式。 在将结果传送到受众时，图形也很有用。 一些对可视化有用的Python库包括：
+既然我们了解了数据帧值，我们想用可视化来补充这一点，使事情更清晰、更容易地识别模式。 在将结果传送到受众时，图形也很有用。 对可 [!DNL Python] 视化有用的库包括：
 - [马特普洛特利卜](https://matplotlib.org/)
 - [熊猫](https://pandas.pydata.org/)
 - [西伯恩](https://seaborn.pydata.org/)
@@ -158,7 +158,7 @@ df.describe()
 
 在本节中，我们将快速介绍使用每个库的一些优势。
 
-[Matplotlib是](https://matplotlib.org/) 最古老的Python可视化包。 他们的目标是让“简单易事、困难事情成为可能”。 这往往是事实，因为该软件包非常强大，但也带有复杂性。 在不花费大量时间和精力的情况下，获得一个合理的外观图并不总是件容易的事。
+[Matplotlib](https://matplotlib.org/) 是最旧的 [!DNL Python] 可视化包。 他们的目标是让“简单易事、困难事情成为可能”。 这往往是事实，因为该软件包非常强大，但也带有复杂性。 在不花费大量时间和精力的情况下，获得一个合理的外观图并不总是件容易的事。
 
 [Applicts](https://pandas.pydata.org/) 主要用于其DataFrame对象，它允许通过集成索引进行数据操作。 不过，熊猫还包括一个基于matplotlib的内置绘图功能。
 
