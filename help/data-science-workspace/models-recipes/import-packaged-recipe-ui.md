@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 导入打包的菜谱(UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
 workflow-type: tm+mt
-source-wordcount: '1798'
+source-wordcount: '1760'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 导入打包的菜谱(UI)
 
-本教程通过提供的零售销售示例提供有关如何配置和导入打包菜谱的分析。 在本教程结束时，您将准备好在Adobe Experience Platform Data Science Workspace中创建、培训和评估模型。
+本教程通过提供的零售销售示例提供有关如何配置和导入打包菜谱的分析。 在本教程结束时，您将准备好以Adobe Experience Platform创建、培训和评估模型 [!DNL Data Science Workspace]。
 
 ## 先决条件
 
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## UI工作流程
 
-将打包的菜谱导入Data Science Workspace需要特定菜谱配置，并编译为单个JavaScript对象表示法(JSON)文件，此菜谱配置编译称为配 **置文件**。 具有特定配置集的打包菜谱称为菜 **谱实例**。 一个菜谱可用于在数据科学工作区中创建多个菜谱实例。
+将打包的菜谱导 [!DNL Data Science Workspace] 入需要特定菜谱配置，并编译为单个JavaScript对象表示法(JSON)文件，此菜谱配置编译称为配 **置文件**。 具有特定配置集的打包菜谱称为菜 **谱实例**。 一个菜谱可用于在中创建多个菜谱实例 [!DNL Data Science Workspace]。
 
 导入包菜谱的工作流包含以下步骤：
 - [配置菜谱](#configure)
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 ### 配置菜谱 {#configure}
 
-数据科学工作区中的每个菜谱实例都附带一组配置，这些配置可根据特定用例定制菜谱实例。 配置文件定义使用此菜谱实例创建的模型的默认培训和评分行为。
+中的每个菜谱 [!DNL Data Science Workspace] 实例都附带一组配置，这些配置根据特定用例定制菜谱实例。 配置文件定义使用此菜谱实例创建的模型的默认培训和评分行为。
 
 >[!NOTE] 配置文件是特定于菜谱和大小写的。
 
@@ -116,11 +116,11 @@ ht-degree: 0%
 | `evaluation.metrics` | 字符串 | 用于评估模型的评估指标的逗号分隔列表。 |
 | `ACP_DSW_SCORING_RESULTS_XDM_SCHEMA` | 字符串 | 用于对模型进行评分的输出模式。 在UI中导入时将此留空，在使用API导入时替换为评分SchemaID。 |
 
-在本教程中，您可以保留数据科学工作区参考中零售销售菜谱的默认配置文件。
+在本教程中，您可以保留“零售销售”菜谱的默认配置文件(在“参考” [!DNL Data Science Workspace] 中)，方式为：
 
-### 导入基于Docker的菜谱- Python {#python}
+### 导入基于Docker的菜谱- [!DNL Python] {#python}
 
-开始，方 **[!UICONTROL 法]** 是导航并选择位于平台UI左上角的工作流。 然后，选择“ *导入菜谱* ”并单 **[!UICONTROL 击启动]**。
+开始，方 **[!UICONTROL 法]** 是导航并选择UI左上角的 [!DNL Platform] 工作流。 然后，选择“ *导入菜谱* ”并单 **[!UICONTROL 击启动]**。
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
@@ -131,7 +131,7 @@ ht-degree: 0%
 >[!NOTE]
 > 在将源 [文件打包到菜谱教程中](./package-source-files-recipe.md) ，在使用Python源文件构建零售销售菜谱结束时提供了一个Docker URL。
 
-在“选择源”页 *面上* ，在“源URL”字段中粘贴与使用Python源文件构建的打包菜谱对应的 **[!UICONTROL Docker URL]** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/python/retail/retail.config.json`。 在“ **[!UICONTROL 运行时]** ”下拉 *框中选* 择Python **[!UICONTROL ，在“类]** 型 *”下拉框中选* 择“分类”。 填写完所有内容后，单 **[!UICONTROL 击]** 右上角的“下一步”，继续 *管理模式*。
+在“选择源”页 *面上* ，将与使用源URL字段中的源文件构建的打包菜谱 [!DNL Python] 对应的Docker **[!UICONTROL URL粘贴]** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/python/retail/retail.config.json`。 在“ **[!UICONTROL 运行时]** ”下拉 *框中选* 择Python **[!UICONTROL ，在“类]** 型 *”下拉框中选* 择“分类”。 填写完所有内容后，单 **[!UICONTROL 击]** 右上角的“下一步”，继续 *管理模式*。
 
 >[!NOTE]
 > *类型&#x200B;*支持&#x200B;**[!UICONTROL 分类]**和&#x200B;**[!UICONTROL 回归]**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**[!UICONTROL 义”]**。
@@ -148,11 +148,11 @@ ht-degree: 0%
 
 ![](../images/models-recipes/import-package-ui/recipe_review.png)
 
-继续执行 [后续步骤](#next-steps) ，了解如何使用新创建的零售销售菜谱在数据科学工作区中创建模型。
+继续执行 [后续步骤](#next-steps) ，了解如何使用新创建的零售 [!DNL Data Science Workspace] 销售菜谱创建模型。
 
 ### 导入基于Docker的菜谱- R {#r}
 
-开始，方 **[!UICONTROL 法]** 是导航并选择位于平台UI左上角的工作流。 然后，选择“ *导入菜谱* ”并单 **[!UICONTROL 击启动]**。
+开始，方 **[!UICONTROL 法]** 是导航并选择UI左上角的 [!DNL Platform] 工作流。 然后，选择“ *导入菜谱* ”并单 **[!UICONTROL 击启动]**。
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
@@ -180,11 +180,11 @@ ht-degree: 0%
 
 ![](../images/models-recipes/import-package-ui/recipe_review.png)
 
-继续执行 [后续步骤](#next-steps) ，了解如何使用新创建的零售销售菜谱在数据科学工作区中创建模型。
+继续执行 [后续步骤](#next-steps) ，了解如何使用新创建的零售 [!DNL Data Science Workspace] 销售菜谱创建模型。
 
 ### 导入基于Docker的菜谱- PySpark {#pyspark}
 
-开始，方 **[!UICONTROL 法]** 是导航并选择位于平台UI左上角的工作流。 然后，选择“ *导入菜谱* ”并单 **[!UICONTROL 击启动]**。
+开始，方 **[!UICONTROL 法]** 是导航并选择UI左上角的 [!DNL Platform] 工作流。 然后，选择“ *导入菜谱* ”并单 **[!UICONTROL 击启动]**。
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
@@ -212,11 +212,11 @@ ht-degree: 0%
 
 ![](../images/models-recipes/import-package-ui/recipe_review.png)
 
-继续执行 [后续步骤](#next-steps) ，了解如何使用新创建的零售销售菜谱在数据科学工作区中创建模型。
+继续执行 [后续步骤](#next-steps) ，了解如何使用新创建的零售 [!DNL Data Science Workspace] 销售菜谱创建模型。
 
 ### 导入基于Docker的菜谱- Scala {#scala}
 
-开始，方 **[!UICONTROL 法]** 是导航并选择位于平台UI左上角的工作流。 然后，选择“ *导入菜谱* ”并单 **[!UICONTROL 击启动]**。
+开始，方 **[!UICONTROL 法]** 是导航并选择UI左上角的 [!DNL Platform] 工作流。 然后，选择“ *导入菜谱* ”并单 **[!UICONTROL 击启动]**。
 
 ![](../images/models-recipes/import-package-ui/launch-import.png)
 
@@ -225,9 +225,9 @@ ht-degree: 0%
 ![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
-> 在将源 [文件打包到菜谱教程中](./package-source-files-recipe.md) ，在使用Scala(Spark)源文件构建零售销售菜谱结束时，会提供一个Docker URL。
+> 在将源 [文件打包到菜谱教程中](./package-source-files-recipe.md) ，在使用Scala()源文件构建零售销售菜谱结束时提供了一个Docker[!DNL Spark]URL。
 
-在“选择源”页 *面上* ，粘贴与使用“源URL”字段中的“缩放源文件”生成的打包菜谱对应的 *Docker URL* 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/scala/retail/pipelineservice.json`。 在“ **[!UICONTROL 运行时]** ”下拉 *框中选* 择“Spark”。 选择Spark运行时后，默认工件会自动填充 **[!UICONTROL 到Docker]**。 然后，从“ **[!UICONTROL 类型]** ”下 *拉框中* 选择“回归”。 填写完所有内容后，单 **[!UICONTROL 击]** 右上角的“下一步”，继续 *管理模式*。
+在“选择源”页 *面上* ，粘贴与使用“源URL”字段中的“缩放源文件”生成的打包菜谱对应的 *Docker URL* 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/scala/retail/pipelineservice.json`。 在“ **[!UICONTROL 运行时]** ”下拉 *框中选* 择“Spark”。 选择运 [!DNL Spark] 行时后，默认对象会自动填充到 **[!UICONTROL Docker]**。 然后，从“ **[!UICONTROL 类型]** ”下 *拉框中* 选择“回归”。 填写完所有内容后，单 **[!UICONTROL 击]** 右上角的“下一步”，继续 *管理模式*。
 
 >[!NOTE]
 > *类型&#x200B;*支持&#x200B;**[!UICONTROL 分类]**和&#x200B;**[!UICONTROL 回归]**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**[!UICONTROL 义”]**。
@@ -244,11 +244,11 @@ ht-degree: 0%
 
 ![](../images/models-recipes/import-package-ui/recipe_review.png)
 
-继续执行 [后续步骤](#next-steps) ，了解如何使用新创建的零售销售菜谱在数据科学工作区中创建模型。
+继续执行 [后续步骤](#next-steps) ，了解如何使用新创建的零售 [!DNL Data Science Workspace] 销售菜谱创建模型。
 
 ## 后续步骤 {#next-steps}
 
-本教程提供了有关配置菜谱并将其导入到数据科学工作区的见解。 您现在可以使用新创建的菜谱创建、培训和评估模型。
+本教程提供了有关配置菜谱并将其导入的见解 [!DNL Data Science Workspace]。 您现在可以使用新创建的菜谱创建、培训和评估模型。
 
 - [在UI中培训和评估模型](./train-evaluate-model-ui.md)
 - [使用API培训和评估模型](./train-evaluate-model-api.md)
