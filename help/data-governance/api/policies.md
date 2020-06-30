@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 策略
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: ba9d4b31cfc3b7924879a91bd125f72159e55fc4
+source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
 workflow-type: tm+mt
-source-wordcount: '866'
+source-wordcount: '862'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 策略
 
-数据使用策略是贵组织采用的规则，用于描述您允许或限制对Experience Platform内数据执行的营销操作类型。
+数据使用策略是贵组织采用的规则，用于描述您允许或限制对内部数据执行的营销操作的类型 [!DNL Experience Platform]。
 
 端点 `/policies` 用于与查看、创建、更新或删除数据使用策略相关的所有API调用。
 
@@ -406,7 +406,7 @@ curl -X PUT \
 
 可以使用PATCH请求更新策略的特定部分。 与重写策略 _的PUT_ 请求不同，PATCH请求只更新请求主体中指定的路径。 当您要启用或禁用策略时，这特别有用，因为您只需发送要更新()的特定路径`/status`及其值(`ENABLE` 或 `DISABLE`)。
 
-策略服务API当前支持“添加”、“替换”和“删除”PATCH操作，并允许您通过将多个更新作为对象添加到阵列中，将它们组合到单个调用中，如以下示例所示。
+该 [!DNL Policy Service] API当前支持“添加”、“替换”和“删除”PATCH操作，并允许您通过将多个更新作为对象添加到阵列中，将它们组合到单个调用中，如以下示例所示。
 
 **API格式**
 
