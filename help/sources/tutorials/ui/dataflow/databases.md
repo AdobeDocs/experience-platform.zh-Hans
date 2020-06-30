@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为数据库连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 415b59fc3fa20c09372549e92571c1b41006e540
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
 workflow-type: tm+mt
-source-wordcount: '1049'
+source-wordcount: '1043'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform的以下组件有充分的了解：
+本教程需要对Adobe Experience Platform的以下组件有一定的了解：
 
 - [体验数据模型(XDM)系统](../../../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
    - [模式合成基础](../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
@@ -131,10 +131,10 @@ ht-degree: 0%
 
 ![](../../../images/tutorials/dataflow/databases/list-of-dataflows.png)
 
-“ *属性* ”列显示在屏幕的右侧，包括“已启用” **[!UICONTROL 切换按]** 钮。 选择切换以禁用数据流。 在禁用数据流后，可以使用相同的切换重新启用数据流。
+“ *[!UICONTROL 属性]* ”列显示在屏幕的右侧，包括“已启用” **[!UICONTROL 切换按]** 钮。 选择切换以禁用数据流。 在禁用数据流后，可以使用相同的切换重新启用数据流。
 
 ![](../../../images/tutorials/dataflow/databases/disable.png)
 
-### 为用户档案填充激活入站数据
+### 激活入站数据以进行 [!DNL Profile] 填充
 
-来自源连接器的入站数据可用于丰富和填充实时客户用户档案数据。 有关填充实际客户用户档案数据的更多信息，请参阅关于用户档案填充 [的教程](../profile.md)。
+来自源连接器的入站数据可用于丰富和填充数 [!DNL Real-time Customer Profile] 据。 有关填充数据的更 [!DNL Real-time Customer Profile] 多信息，请参阅用户档案填 [充教程](../profile.md)。
