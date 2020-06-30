@@ -1,58 +1,61 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 使用Flow Service API浏览协议系统
+title: 使用流服务API浏览协议系统
 topic: overview
 translation-type: tm+mt
-source-git-commit: 95779ae70c723c20370f9636032de366ccd928ca
+source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+workflow-type: tm+mt
+source-wordcount: '567'
+ht-degree: 1%
 
 ---
 
 
-# 使用Flow Service API浏览协议系统
+# 使用API浏览协议系 [!DNL Flow Service] 统
 
-Flow Service用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程使用Flow Service API浏览协议应用程序。
+本教程使用API [!DNL Flow Service] 浏览协议应用程序。
 
 ## 入门指南
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-* [来源](../../../home.md):Experience Platform允许从各种来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。
-* [沙箱](../../../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [来源](../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+* [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供了使用Flow Service API成功连接到协议应用程序时需要了解的其他信息。
+以下各节提供您需要了解的其他信息，以便使用API成功连接到协议应用程 [!DNL Flow Service] 序。
 
 ### 获取基本连接
 
-要使用平台API探索您的协议系统，您必须拥有有效的基本连接ID。 如果您还没有要使用的协议系统的基本连接，则可以通过以下教程创建一个：
+要使用API探索协议系 [!DNL Platform] 统，您必须拥有有效的基本连接ID。 如果您还没有要使用的协议系统的基本连接，则可以通过以下教程创建一个：
 
 * [通用OData](../create/protocols/odata.md)
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这些包括路径、必需的标题和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑难解答指南 [中有关如何阅读示例API调用的部分](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须首先完成身份验证 [教程](../../../../tutorials/authentication.md)。 完成身份验证教程后，将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权：承载人 `{ACCESS_TOKEN}`
+* 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源（包括属于Flow Service的资源）都与特定虚拟沙箱隔离。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+中的所有资 [!DNL Experience Platform]源(包括属于这些资 [!DNL Flow Service]源)都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标题：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
 * 内容类型： `application/json`
 
 ## 浏览数据表
 
-使用协议应用程序的连接ID，您可以通过执行GET请求来浏览数据表。 使用以下调用查找要检查或收录到平台中的表的路径。
+使用协议应用程序的连接ID，您可以通过执行GET请求来浏览数据表。 使用以下调用查找要检查或收录到的表的路径 [!DNL Platform]。
 
 **API格式**
 
@@ -62,7 +65,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=root
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BASE_CONNECTION_ID}` | 协议基本连接的ID。 |
+| `{BASE_CONNECTION_ID}` | 协议基础连接的ID。 |
 
 **请求**
 
@@ -77,7 +80,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会从协议应用程序返回一组表。 查找要引入平台的表并记下其属性，因为您需要在下一 `path` 步中提供它以检查其结构。
+成功的响应会从协议应用程序返回一组表。 查找要引入的表并 [!DNL Platform] 记下其属 `path` 性，因为您需要在下一步中提供它来检查其结构。
 
 ```json
 [
@@ -138,7 +141,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定表的结构。 有关每个表列的详细信息位于数组的元素 `columns` 中。
+成功的响应会返回指定表的结构。 有关每个表列的详细信息位于数组元素 `columns` 中。
 
 ```json
 {
@@ -186,4 +189,4 @@ curl -X GET \
 
 ## 后续步骤
 
-通过本教程，您探索了协议应用程序，找到了要收录到平台中的表的路径，并获取了有关其结构的信息。 您可以在下一个教程中使用此信息从 [协议应用程序收集数据并将其引入平台](../collect/protocols.md)。
+通过本教程，您探索了协议应用程序，找到了要收录到的表的路径，并获 [!DNL Platform]得了有关其结构的信息。 您可以在下一个教程中使用此信 [息从协议应用程序收集数据并将其引入平台](../collect/protocols.md)。
