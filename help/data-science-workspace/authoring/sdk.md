@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SDK开发人员指南
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 564603fdec6050463937c6e162cdff00cda506c4
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '951'
+source-wordcount: '930'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # SDK开发人员指南
 
-模型创作SDK使您能够开发可在Data Science Workspace中使用的自定义机器学习方法和功 [!DNL Adobe Experience Platform] 能管道，在PySpark和Spark(Scala)中提供可实施的模板。
+模型创作SDK使您能够开发可在Data Science Workspace中使用的自定义机器学习方法和功 [!DNL Adobe Experience Platform] 能管道，在和中提供可实施 [!DNL PySpark] 的模板 [!DNL Spark (Scala)]。
 
 此文档提供有关“模型创作SDK”中的各种类的信息。
 
@@ -52,7 +52,7 @@ DataLoader类封装与检索、过滤和返回原始输入数据相关的任何�
 
 **Spark**
 
-下表描述了Spark Data Loader类的抽象方法：
+下表描述了Data Loader类的抽 [!DNL Spark] 象方法：
 
 <table>
     <thead>
@@ -77,9 +77,9 @@ DataLoader类封装与检索、过滤和返回原始输入数据相关的任何�
     </tbody>
 </table>
 
-### 从平台数据集加载数据 {#load-data-from-a-platform-dataset}
+### 从数据集加载数 [!DNL Platform] 据 {#load-data-from-a-platform-dataset}
 
-以下示例按ID检索平台数据并返回一个DataFrame，其中数据集ID()`datasetId`是配置文件中定义的属性。
+以下示例按 [!DNL Platform] ID检索数据并返回DataFrame，其中数据集ID(`datasetId`)是配置文件中定义的属性。
 
 **PySpark**
 
@@ -198,7 +198,7 @@ DataSaver类封装与存储输出数据相关的任何内容，包括来自评�
 
 **PySpark**
 
-下表描述了PySpark数据保护程序类的抽象方法：
+下表描述了数据保护程序类的 [!DNL PySpark] 抽象方法：
 
 <table>
     <thead>
@@ -226,7 +226,7 @@ DataSaver类封装与存储输出数据相关的任何内容，包括来自评�
 
 **Spark(Scala)**
 
-下表描述了Spark Data Saver类的抽象方法：
+下表描述了数据保护程序类的 [!DNL Spark] 抽象方法：
 
 <table>
     <thead>
@@ -251,14 +251,14 @@ DataSaver类封装与存储输出数据相关的任何内容，包括来自评�
     </tbody>
 </table>
 
-### 将数据保存到平台数据集 {#save-data-to-a-platform-dataset}
+### 将数据保存到数 [!DNL Platform] 据集 {#save-data-to-a-platform-dataset}
 
-要将数据存储到平台数据集上，必须在配置文件中提供或定义属性：
+要将数据存储到数据集 [!DNL Platform] 上，必须在配置文件中提供或定义属性：
 
-- 要存储数据的有效平台数据集ID
+- 要存储数 [!DNL Platform] 据的有效数据集ID
 - 属于您的组织的租户ID
 
-以下示例将数据(`prediction`)存储到平台数据集上，其中数据集ID()`datasetId`和租户ID()`tenantId`是配置文件中定义的属性。
+以下示例将数据(`prediction`)存储到数 [!DNL Platform] 据集上，其中数据集ID(`datasetId`)和租户ID()是配置文`tenantId`件中定义的属性。
 
 
 **PySpark**
@@ -394,7 +394,7 @@ class ScoringDataSaver extends DataSaver {
 
 ## DatasetTransformer {#datasettransformer}
 
-DatasetTransformer类修改和转换数据集的结构。 Sensei机器学习运行时不需要定义此组件，它是根据您的要求实现的。
+DatasetTransformer类修改和转换数据集的结构。 该组 [!DNL Sensei Machine Learning Runtime] 件不需要定义，并且根据您的要求实施。
 
 对于特征管线，数据集转换器可以与特征管线工厂协同使用，为特征工程准备数据。
 
@@ -428,7 +428,7 @@ DatasetTransformer类修改和转换数据集的结构。 Sensei机器学习运�
 
 **Spark(Scala)**
 
-下表描述了Spark数据集转换器类的抽象方法：
+下表描述了数据集转换器类 [!DNL Spark] 的抽象方法：
 
 <table>
     <thead>
@@ -499,7 +499,7 @@ FeaturePipelineFactory类包含功能提取算法，并定义从开始到完成�
 
 **Spark(Scala)**
 
-下表描述了Spark FeaturePipelineFactory的类方法：
+下表描述了FeaturePipelineFactory的类方 [!DNL Spark] 法：
 
 <table>
     <thead>
@@ -537,7 +537,7 @@ FeaturePipelineFactory类包含功能提取算法，并定义从开始到完成�
 
 ## PipelineFactory {#pipelinefactory}
 
-PipelineFactory类封装了模型培训和评分的方法和定义，其中培训逻辑和算法以Spark Pipeline的形式进行定义。
+PipelineFactory类封装了模型培训和评分的方法和定义，其中培训逻辑和算法以管道的形式进 [!DNL Spark] 行定义。
 
 **PySpark**
 
@@ -608,7 +608,7 @@ PipelineFactory类封装了模型培训和评分的方法和定义，其中培�
 
 **Spark(Scala)**
 
-下表描述了Spark PipelineFactory的类方法：
+下表描述了PipelineFactory的类方 [!DNL Spark] 法：
 
 <table>
     <thead>
@@ -692,7 +692,7 @@ MLEvaluator类提供了定义评估度量以及确定培训和测试数据集的
 
 **Spark(Scala)**
 
-下表描述了Spark MLvalueator的类方法：
+下表描述了MLEvaluator的类方 [!DNL Spark] 法：
 
 <table>
     <thead>
