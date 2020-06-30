@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建零售销售模式和数据集
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '497'
 ht-degree: 0%
 
 ---
@@ -14,26 +14,26 @@ ht-degree: 0%
 
 # 创建零售销售模式和数据集
 
-本教程为您提供了所有其他数据科学工作区教程所需 [!DNL Adobe Experience Platform] 的先决条件和资源。 完成后，您和您的IMS组织在Experience Platform上的成员将获得零售销售模式和数据集。
+本教程为您提供所有其他教程所需的入门项目和 [!DNL Adobe Experience Platform] 资 [!DNL Data Science Workspace] 源。 完成后，您和您的IMS组织成员将获得零售销售模式和数据集 [!DNL Experience Platform]。
 
 ## 入门指南
 
 在开始本教程之前，您必须具有以下先决条件：
-- 访问 [!DNL Adobe Experience Platform]。 如果您无权访问Experience Platform中的IMS组织，请在继续操作前与系统管理员联系。
-- 进行Experience Platform API调用的授权。 请完成 [身份验证并访问Adobe Experience Platform](../../tutorials/authentication.md) API教程，获取以下值以成功完成本教程：
+- 访问 [!DNL Adobe Experience Platform]。 如果您无权访问中的IMS组织，请在继 [!DNL Experience Platform]续操作之前与系统管理员联系。
+- 进行API调 [!DNL Experience Platform] 用的授权。 请完成 [身份验证和访问Adobe Experience Platform](../../tutorials/authentication.md) API教程，获取以下值以成功完成本教程：
    - 授权： `{ACCESS_TOKEN}`
    - x-api-key: `{API_KEY}`
    - x-gw-ims-org-id: `{IMS_ORG}`
    - 客户机密码： `{CLIENT_SECRET}`
    - 客户端证书： `{PRIVATE_KEY}`
-- 零售销售处方的示例数 [据和源文件](../pre-built-recipes/retail-sales.md)。 从Adobe公共Git存储库下载本教程和其他数据科学工作区教 [程所需的资源](https://github.com/adobe/experience-platform-dsw-reference/)。
-- [Python >= 2.7](https://www.python.org/downloads/) 和以下Python包：
+- 零售销售处方的示例数 [据和源文件](../pre-built-recipes/retail-sales.md)。 从Adobe公共Git存储库下载本教程 [!DNL Data Science Workspace] 和其他教 [程所需的资源](https://github.com/adobe/experience-platform-dsw-reference/)。
+- [Python >= 2.7](https://www.python.org/downloads/) 和以下 [!DNL Python] 包：
    - [画](https://pypi.org/project/pip/)
    - [PyYAML](https://pyyaml.org/)
    - [字典](https://pypi.org/project/dictor/)
    - [JWT](https://pypi.org/project/jwt/)
 - 对本教程中使用的以下概念的有效理解：
-   - [体验数据模型(XDM)](../../xdm/home.md)
+   - [!DNL Experience Data Model (XDM)](../../xdm/home.md)
    - [模式合成基础](../../xdm/schema/field-dictionary.md)
 
 ## 创建零售销售模式和数据集
@@ -42,7 +42,7 @@ ht-degree: 0%
 
 ### 配置文件
 
-1. 在Experience Platform教程资源包中，导航到该目录， `bootstrap`然后使用相 `config.yaml` 应的文本编辑器打开。
+1. 在教程 [!DNL Experience Platform] 资源包中，导航到目录，然 `bootstrap`后使用相 `config.yaml` 应的文本编辑器打开。
 2. 在该部 `Enterprise` 分下输入以下值：
 
    ```yaml
@@ -91,8 +91,8 @@ ht-degree: 0%
 
 ### 运行引导脚本
 
-1. 打开您的终端应用程序并导航到Experience Platform教程资源目录。
-2. 将目 `bootstrap` 录设置为当前工作路径，并输 `bootstrap.py` 入以下命令运行python脚本：
+1. 打开您的终端应用程序并导航到 [!DNL Experience Platform] 教程资源目录。
+2. 将目 `bootstrap` 录设置为当前工作路径，并输入以 `bootstrap.py` 下命 [!DNL Python] 令运行脚本：
 
    ```bash
    python bootstrap.py
@@ -102,12 +102,12 @@ ht-degree: 0%
 
 ## 后续步骤
 
-成功完成引导脚本后，可在Experience Platform上查看零售销售的输入和输出模式和数据集。 有关详细 [信息，请参](./preview-schema-data.md)阅预览模式数据教程。
+成功完成引导脚本后，可以在上查看零售销售的输入和输出模式和数据集 [!DNL Experience Platform]。 有关详细 [信息，请参](./preview-schema-data.md)阅预览模式数据教程。
 
-您还使用提供的引导脚本成功地将零售销售示例数据引入Experience Platform。
+您还使用提供的引导脚本成功将零售 [!DNL Experience Platform] 销售示例数据引入。
 
 要继续处理所摄取的数据：
 - [使用Jupyter笔记本分析数据](../jupyterlab/analyze-your-data.md)
    - 在数据科学工作区中使用Jupyter笔记本，访问、探索、可视化和了解您的数据。
 - [将源文件打包到菜谱中](./package-source-files-recipe.md)
-   - 按照本教程学习如何通过将源文件打包到可导入的Recipe文件中，将您自己的模型引入数据科学工作区。
+   - 请按照本教程学习如何通过将源文件打包到可 [!DNL Data Science Workspace] 导入的Recipe文件中，将自己的Model引入其中。
