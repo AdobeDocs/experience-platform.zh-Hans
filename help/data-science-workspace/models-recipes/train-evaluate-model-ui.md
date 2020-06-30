@@ -4,61 +4,64 @@ solution: Experience Platform
 title: 培训和评估模型(UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+workflow-type: tm+mt
+source-wordcount: '975'
+ht-degree: 2%
 
 ---
 
 
 # 培训和评估模型(UI)
 
-在Adobe Experience Platform Data Science Workspace中，机器学习模型是通过整合与模型意图相适应的现有“处方”来创建的。 然后，对模型进行训练和评估，通过微调其相关的超参数来优化其运行效率和功效。 菜谱是可重用的，这意味着可以使用单个菜谱创建多个模型并针对特定用途进行定制。
+在Adobe Experience Platform数据科学工作区中，机器学习模型是通过整合与模型意图相适应的现有Recipe来创建的。 然后，对模型进行训练和评估，通过微调其相关的超参数来优化其运行效率和功效。 菜谱是可重用的，这意味着可以使用单个菜谱创建多个模型并针对特定用途进行定制。
 
 本教程将逐步介绍创建、培训和评估模型的步骤。
 
 ## 入门指南
 
-要完成本教程，您必须具有Experience Platform的访问权限。 如果您无权访问Experience Platform中的IMS组织，请在继续操作前与系统管理员联系。
+要完成本教程，您必须具有访问权限 [!DNL Experience Platform]。 如果您无权访问中的IMS组织，请在继 [!DNL Experience Platform]续操作之前与系统管理员联系。
 
 本教程需要现有的“菜谱”。 如果您没有菜谱，请按照UI教 [程中的导入打包的菜谱](./import-packaged-recipe-ui.md) ，然后继续。
 
 ## 创建模型
 
-1. 在Adobe Experience Platform中，单击左 **[!UICONTROL Models]** 侧导航列中的链接以列表所有现有模型。 单 **[!UICONTROL Create Model]** 击页面右上方附近以开始“模型”(Model)创建过程。
+1. 在Adobe Experience Platform中，单击左 **[!UICONTROL 侧导航]** 列中的“模型”链接，以列表所有现有的“模型”。 单 **[!UICONTROL 击页面右上]** 方附近的“创建模型”(Create Model)，开始“模型”(Model)创建过程。
    ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
-2. 浏览现有菜谱的列表，找到并选择要用于创建模型的菜谱，然后单击 **[!UICONTROL Next]**。
+2. 浏览现有菜谱的列表，找到并选择要用于创建模型的菜谱，然后单击下 **[!UICONTROL 一步]**。
    ![](../images/models-recipes/train-evaluate-ui/select_recipe.png)
 
-3. 选择适当的输入数据集并单击 **[!UICONTROL Next]**。 这将设置“模型”的默认输入培训数据集。
+3. 选择适当的输入数据集，然后单击“ **[!UICONTROL 下一步]**”。 这将设置“模型”的默认输入培训数据集。
    ![](../images/models-recipes/train-evaluate-ui/select_dataset.png)
 
-4. 为“模型”提供名称并查看默认的“模型”配置。 在创建处方时应用了默认配置，通过多次单击这些值来检查和修改配置值。 要提供新的配置集，请单 **[!UICONTROL Upload New Config]** 击并将包含模型配置的JSON文件拖至浏览器窗口。 单 **[!UICONTROL Finish]** 击以创建模型。
+4. 为“模型”提供名称并查看默认的“模型”配置。 在创建处方时应用了默认配置，通过多次单击这些值来检查和修改配置值。 要提供新的配置集，请单击“ **[!UICONTROL 上传新配置]** ”，并将包含“模型”配置的JSON文件拖至浏览器窗口中。 单击 **[!UICONTROL “完]** 成”(Finish)以创建“模型”(Model)。
    >[!NOTE]配置是唯一的，且特定于其预期的处方，这意味着零售销售处方的配置将不适用于产品推荐处方。 有关零售 [销售](#reference) 处方配置的列表，请参阅参考部分。
 
    ![](../images/models-recipes/train-evaluate-ui/name_and_configure.png)
 
 ## 创建培训运行
 
-1. 在Adobe Experience Platform中，单击左 **[!UICONTROL Models]** 侧导航列中的链接以列表所有现有模型。 查找并单击要培训的模型的名称。
+1. 在Adobe Experience Platform中，单击左 **[!UICONTROL 侧导航]** 列中的“模型”链接，以列表所有现有的“模型”。 查找并单击要培训的模型的名称。
    ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
-2. 将列出所有具有当前培训状态的现有培训运行。 对于使用数据科学工作区用户界面创建的模型，将使用默认配置和输入培训数据集自动生成并执行培训运行。
+2. 将列出所有具有当前培训状态的现有培训运行。 对于使用用户界面创 [!DNL Data Science Workspace] 建的模型，将使用默认配置和输入培训数据集自动生成并执行培训运行。
    ![](../images/models-recipes/train-evaluate-ui/model_overview.png)
 
-3. 单击“模型概述”页 **[!UICONTROL Train]** 面右上方附近，创建新的培训运行。
+3. 单击“模型概述”页 **[!UICONTROL 面右上]** 方附近的“培训”，创建新的培训运行。
    ![](../images/models-recipes/train-evaluate-ui/training_input.png)
 
-4. 为培训运行选择培训输入数据集并单击 **[!UICONTROL Next]**。
+4. 为培训运行选择培训输入数据集，然后单击“下 **[!UICONTROL 一步”]**。
    ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
-5. 在“模型”(Model)创建过程中提供的默认配置将显示出来，通过多次单击这些值，相应地更改和修改这些配置。 单击 **[!UICONTROL Finish]** 以创建并执行培训运行。
+5. 在“模型”(Model)创建过程中提供的默认配置将显示出来，通过多次单击这些值，相应地更改和修改这些配置。 单击 **[!UICONTROL “完成]** ”以创建并执行培训运行。
    >[!NOTE]配置是唯一的，且特定于其预期的处方，这意味着零售销售处方的配置将不适用于产品推荐处方。 有关零售 [销售](#reference) 处方配置的列表，请参阅参考部分。
 
    ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
 ## 评估模型
 
-1. 在Adobe Experience Platform中，单击左 **[!UICONTROL Models]** 侧导航列中的链接以列表所有现有模型。 查找并单击要评估的模型的名称。
+1. 在Adobe Experience Platform中，单击左 **[!UICONTROL 侧导航]** 列中的“模型”链接，以列表所有现有的“模型”。 查找并单击要评估的模型的名称。
    ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
 2. 将列出所有具有当前培训状态的现有培训运行。 对于多个已完成的培训运行，可以在模型评估图表中比较不同培训运行的评估指标，使用图表上方的下拉列表选择评估指标。
@@ -77,7 +80,7 @@ source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 ## 后续步骤
 
-本教程向您介绍了如何在数据科学工作区中创建、培训和评估模型。 到达优化模型后，您可以使用经过培训的模型，通过在UI教程中 [对模型评分来生成洞察](./score-model-ui.md) 。
+本教程将指导您在中创建、培训和评估模型 [!DNL Data Science Workspace]。 到达优化模型后，您可以使用经过培训的模型，通过在UI教程中 [对模型评分来生成洞察](./score-model-ui.md) 。
 
 ## 参考 {#reference}
 
