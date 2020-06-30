@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Google Cloud存储连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0ed2ed3b08f262100746f255a78c248a1748eb5e
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '337'
 ht-degree: 0%
 
 ---
@@ -14,17 +14,17 @@ ht-degree: 0%
 
 # Google Cloud存储连接器
 
-Adobe Experience Platform为AWS、Google Cloud Platform和Azure等云提供商提供本机连接，让您能够从这些系统中获取数据。
+Adobe Experience Platform为AWS等云提供商提 [!DNL Google Cloud Platform]供本 [!DNL Azure]机连接，允许您从这些系统获取数据。
 
-云存储源可以将您自己的数据导入平台，而无需下载、格式化或上传。 摄取的数据可格式化为XDM JSON、XDM镶木地板或分隔。 流程的每个步骤都集成到源工作流中。 平台允许您通过批量方式从Google Cloud存储导入数据。
+云存储源无需下载、格式化 [!DNL Platform] 或上传即可将您自己的数据导入其中。 摄取的数据可格式化为XDM JSON、XDM镶木地板或分隔。 流程的每个步骤都集成到源工作流中。 [!DNL Platform] 允许您从批中导入 [!DNL Google Cloud Storage] 数据。
 
-## 连接Google Cloud存储帐户的先决条件设置
+## 连接帐户的入门项目设 [!DNL Google Cloud Storage] 置
 
-要连接到平台，您必须首先为Google Cloud存储帐户启用互操作性。 要访问互操作性设置，请打开Google Cloud Platform，然 **[!UICONTROL 后从导航面]** 板的 **[!UICONTROL “存储]** ”选项中选择“设置”。
+要连接到，您必 [!DNL Platform]须首先为您的帐户启用互操作 [!DNL Google Cloud Storage] 性。 要访问互操作性设置，请打 [!DNL Google Cloud Platform] 开并从导 **[!UICONTROL 航面板]** 的存储 **[!UICONTROL 选项中选]** 择“设置”。
 
 ![](../../images/tutorials/create/google-cloud-storage/nav.png)
 
-将显 **[!UICONTROL 示]** “设置”页。 从此处，您可以看到有关Google项目ID的信息和有关Google Cloud存储帐户的详细信息。 要访问互操作性设置，请 **[!UICONTROL 从顶部]** 标题中选择互操作性。
+将显 **[!UICONTROL 示]** “设置”页。 从此处，您可以看到有关项目ID的 [!DNL Google] 信息以及有关帐户的详细 [!DNL Google Cloud Storage] 信息。 要访问互操作性设置，请 **[!UICONTROL 从顶部]** 标题中选择互操作性。
 
 ![](../../images/tutorials/create/google-cloud-storage/project-access.png)
 
@@ -34,13 +34,13 @@ Adobe Experience Platform为AWS、Google Cloud Platform和Azure等云提供商�
 
 ![](../../images/tutorials/create/google-cloud-storage/interoperability.png)
 
-您可以使用新生成的访问密钥ID和秘密访问密钥将您的Google Cloud存储帐户连接到平台。
+您可以使用新生成的访问密钥ID和秘密访问密钥将您的帐户 [!DNL Google Cloud Storage] 连接到 [!DNL Platform]。
 
-以下文档提供了如何使用API或用户界面将Google Cloud存储连接到平台的信息：
+以下文档提供了如何使用API [!DNL Google Cloud Storage] 或 [!DNL Platform] 用户界面连接的信息：
 
-## 将Google Cloud存储连接到平台
+## 连接 [!DNL Google Cloud Storage] 到 [!DNL Platform]
 
-以下文档提供了如何使用API或用户界面将Google Cloud存储连接到平台的信息：
+以下文档提供了如何使用API [!DNL Google Cloud Storage] 或 [!DNL Platform] 用户界面连接的信息：
 
 ### 使用API
 
