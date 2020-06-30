@@ -4,53 +4,56 @@ solution: Experience Platform
 title: 使用Flow Service API创建Apache Cassandra连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: accbb95234085c7c1969e9fecc4f5db52426c8b7
+source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+workflow-type: tm+mt
+source-wordcount: '588'
+ht-degree: 2%
 
 ---
 
 
-# 使用Flow Service API创建Apache Cassandra连接器
+# 使用API [!DNL Apache Cassandra] 创建连接 [!DNL Flow Service] 器
 
-Flow Service用于在Adobe Experience Platform内收集和集中来自不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程使用Flow Service API指导您完成将Apache Cassandra（以下简称“Cassandra”）连接到Experience Platform的步骤。
+本教程使 [!DNL Flow Service] 用API指导您完成将 [!DNL Apache Cassandra] 其连接（以下称为“Cassandra”）的步骤 [!DNL Experience Platform]。
 
 ## 入门指南
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-* [来源](../../../../home.md): Experience Platform允许从各种来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。
-* [沙箱](../../../../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和改进数字体验应用程序。
+* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+* [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供您需要了解的其他信息，以便使用流服务API成功连接到Cassandra。
+以下各节提供您需要了解的其他信息，以便使用API成功连接到Cassandra [!DNL Flow Service] 。
 
 ### 收集所需的凭据
 
-要使流服务与Cassandra连接，您必须为以下连接属性提供值：
+要连接 [!DNL Flow Service] ，必须 [!DNL Cassandra]为以下连接属性提供值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `host` | Cassandra服务器的IP地址或主机名。 |
-| `port` | Cassandra服务器用于侦听客户端连接的TCP端口。 The default port is `9042`. |
-| `username` | 用于连接到Cassandra服务器进行身份验证的用户名。 |
-| `password` | 连接到Cassandra服务器进行身份验证的口令。 |
-| `connectionSpec.id` | 创建连接所需的唯一标识符。 Cassandra的连接规范ID为 `a8f4d393-1a6b-43f3-931f-91a16ed857f4`。 |
+| `host` | 服务器的IP地址或主 [!DNL Cassandra] 机名。 |
+| `port` | 服务器用于侦 [!DNL Cassandra] 听客户端连接的TCP端口。 The default port is `9042`. |
+| `username` | 用于连接到服务器进行身 [!DNL Cassandra] 份验证的用户名。 |
+| `password` | 连接到服务器进行身 [!DNL Cassandra] 份验证的口令。 |
+| `connectionSpec.id` | 创建连接所需的唯一标识符。 连接规范ID [!DNL Cassandra] 为 `a8f4d393-1a6b-43f3-931f-91a16ed857f4`。 |
 
 有关快速入门的详细信息，请参 [阅此Cassandra文档](https://cassandra.apache.org/doc/latest/operating/security.html#authentication)。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的部分。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成身份验证 [教程](../../../../../tutorials/authentication.md)。 完成身份验证教程后，将提供所有Experience Platform API调用中每个所需标头的值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
 * 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源（包括属于流服务的资源）都与特定虚拟沙箱隔离。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+中的所有资 [!DNL Experience Platform]源(包括属于这些资源 [!DNL Flow Service]的资源)都隔离到特定虚拟沙箱。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -60,7 +63,7 @@ Experience Platform中的所有资源（包括属于流服务的资源）都与�
 
 ## 创建连接
 
-连接指定源并包含该源的凭据。 每个Cassandra帐户只需一个连接器，因为它可用于创建多个源连接器以导入不同的数据。
+连接指定源并包含该源的凭据。 每个帐户只需要一 [!DNL Cassandra] 个连接器，因为它可用于创建多个源连接器以导入不同的数据。
 
 **API格式**
 
@@ -70,7 +73,7 @@ POST /connections
 
 **请求**
 
-要创建Cassandra连接，其唯一连接规范ID必须作为POST请求的一部分提供。 Cassandra的连接规范ID为 `a8f4d393-1a6b-43f3-931f-91a16ed857f4`。
+要创建连接， [!DNL Cassandra] 其唯一连接规范ID必须作为POST请求的一部分提供。 连接规范ID [!DNL Cassandra] 为 `a8f4d393-1a6b-43f3-931f-91a16ed857f4`。
 
 ```shell
 curl -X POST \
@@ -101,11 +104,11 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `auth.params.host` | Cassandra服务器的IP地址或主机名。 |
-| `auth.params.port` | Cassandra服务器用于侦听客户端连接的TCP端口。 The default port is `9042`. |
-| `auth.params.username` | 用于连接到Cassandra服务器进行身份验证的用户名。 |
-| `auth.params.password` | 连接到Cassandra服务器进行身份验证的口令。 |
-| `connectionSpec.id` | Cassandra连接规范ID: `a8f4d393-1a6b-43f3-931f-91a16ed857f4`. |
+| `auth.params.host` | 服务器的IP地址或主 [!DNL Cassandra] 机名。 |
+| `auth.params.port` | 服务器用于侦 [!DNL Cassandra] 听客户端连接的TCP端口。 The default port is `9042`. |
+| `auth.params.username` | 用于连接到服务器进行身 [!DNL Cassandra] 份验证的用户名。 |
+| `auth.params.password` | 连接到服务器进行身 [!DNL Cassandra] 份验证的口令。 |
+| `connectionSpec.id` | 连接 [!DNL Cassandra] 规范ID: `a8f4d393-1a6b-43f3-931f-91a16ed857f4`. |
 
 **响应**
 
@@ -120,4 +123,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过本教程，您已使用流服务API创建了Cassandra连接，并已获得该连接的唯一ID值。 在下一个教程中，您可以使用此ID，因为您将学习如 [何使用流服务API浏览数据库](../../explore/database-nosql.md)。
+通过本教程，您已使用 [!DNL Cassandra] API创建了 [!DNL Flow Service] 一个连接，并已获得该连接的唯一ID值。 在下一个教程中，您可以使用此ID，因为您将学习如 [何使用流服务API浏览数据库](../../explore/database-nosql.md)。
