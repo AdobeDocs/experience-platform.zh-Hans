@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 将源文件打包到菜谱中
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
 workflow-type: tm+mt
-source-wordcount: '1106'
+source-wordcount: '1077'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 将源文件打包到菜谱中
 
-本教程提供有关如何将提供的零售销售示例源文件打包到存档文件中的说明，该存档文件可用于通过在UI中或使用API遵循菜谱导入工作流在Adobe Experience Platform Data Science Workspace中创建菜谱。
+本教程提供了有关如何将提供的零售销售示例源文件打包到存档文件中的说明，该存档文件可用于通过在UI中或使用API遵循菜谱导 [!DNL Data Science Workspace] 入工作流在Adobe Experience Platform中创建菜谱。
 
 要了解的概念：
 
@@ -23,14 +23,14 @@ ht-degree: 0%
 
 ## 先决条件
 
-- [Docker](https://docs.docker.com/install/#supported-platforms)
-- [Python 3和pip](https://docs.conda.io/en/latest/miniconda.html)
-- [斯卡拉](https://www.scala-sbt.org/download.html?_ga=2.42231906.690987621.1558478883-2004067584.1558478883)
-- [马文](https://maven.apache.org/install.html)
+- [!DNL Docker](https://docs.docker.com/install/#supported-platforms)
+- [!DNL Python 3 and pip](https://docs.conda.io/en/latest/miniconda.html)
+- [!DNL Scala](https://www.scala-sbt.org/download.html?_ga=2.42231906.690987621.1558478883-2004067584.1558478883)
+- [!DNL Maven](https://maven.apache.org/install.html)
 
 ## 菜谱创建
 
-菜谱创建开始与打包源文件一起构建存档文件。 源文件定义了用于解决现有特定问题的机器学习逻辑和算法，并以Python、R、PySpark或Scala编写。 构建的存档文件采用Docker图像的形式。 构建后，打包的存档文件将导入到Data Science Workspace中，以在UI [中或使用](./import-packaged-recipe-ui.md) API [创建菜谱](./import-packaged-recipe-api.md)。
+菜谱创建开始与打包源文件一起构建存档文件。 源文件定义用于解决现有特定问题的机器学习逻辑和算法，并以R、PySpark或 [!DNL Python]Scala格式编写。 构建的存档文件采用Docker图像的形式。 构建后，打包的存档文件将导入 [!DNL Data Science Workspace] 其中，以在 [UI中或](./import-packaged-recipe-ui.md)[使用API创建菜谱](./import-packaged-recipe-api.md)。
 
 ### 基于Docker的模型创作 {#docker-based-model-authoring}
 
@@ -38,7 +38,7 @@ Docker图像允许开发人员将应用程序与其所需的所有部件（如�
 
 内置的Docker图像将使用在菜谱创建工作流程中提供给您的凭据推送到Azure容器注册表。
 
-要获取您的Azure容器注册表凭据，请登 <a href="https://platform.adobe.com" target="_blank">录Adobe Experience Platform</a>。 在左侧导航列中，导航到 **[!UICONTROL 工作流]**。 选择 **[!UICONTROL 导入菜谱]** ，然后选择 **[!UICONTROL 启动]**。 请参阅下面的屏幕快照。
+要获取您的Azure容器注册表凭据，请登录 <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a>。 在左侧导航列中，导航到 **[!UICONTROL 工作流]**。 选择 **[!UICONTROL 导入菜谱]** ，然后选择 **[!UICONTROL 启动]**。 请参阅下面的屏幕快照。
 
 ![](../images/models-recipes/package-source-files/import.png)
 
@@ -52,7 +52,7 @@ Docker图像允许开发人员将应用程序与其所需的所有部件（如�
 >*类型&#x200B;*，是机器学习问题的类，它是为菜谱设计的，经过培训后，用来帮助定制对培训运行的评估。
 
 >[!TIP]
->- 对于Python菜谱，选择 **[!UICONTROL Python]** runtime。
+>- 对于 [!DNL Python] 菜谱，请选 **[!UICONTROL 择Python]** runtime。
 >- 对于R菜谱，请选 **[!UICONTROL 择]** R运行时。
 >- 对于PySpark菜谱，请选 **[!UICONTROL 择PySpark]** 运行时。 自动填充对象类型。
 >- 对于Scala菜谱，请选择 **[!UICONTROL Spark]** runtime。 自动填充对象类型。
@@ -60,29 +60,29 @@ Docker图像允许开发人员将应用程序与其所需的所有部件（如�
 
 ![](../images/models-recipes/package-source-files/docker-creds.png)
 
-请注意Docker主 *机、**用户名*&#x200B;和密 *码值*。 它们用于在下面概述的工作流中构建和推送Docker图像。
+请注意Docker主 *机、**用户名*&#x200B;和密 *码值*。 它们用于在下面概述的工作流 [!DNL Docker] 中构建和推送您的图像。
 
 >[!NOTE]
 >完成以下步骤后，将提供源URL。 配置文件将在后续步骤中的后续教程中 [进行说明](#next-steps)。
 
 ### 打包源文件
 
-开始，获取Experience Platform Data Science Workspace参 <a href="https://github.com/adobe/experience-platform-dsw-reference" target="_blank">考存储库中的示例代码库</a> 。
+开始，方法是获取Experience Platform科学工作区参 <a href="https://github.com/adobe/experience-platform-dsw-reference" target="_blank">考存储库中的示例代码</a> 。
 
 - [构建Python Docker图像](#python-docker)
 - [构建R Docker图像](#r-docker)
 - [构建PySpark Docker图像](#pyspark-docker)
 - [构建Scala(Spark)Docker图像](#scala-docker)
 
-### 构建Python Docker图像 {#python-docker}
+### 构建 [!DNL Python] Docker图像 {#python-docker}
 
-如果尚未这样做，请使用以下命令将github存储库克隆到本地系统上：
+如果尚未这样做，请使用以下命 [!DNL GitHub] 令将存储库克隆到本地系统上：
 
 ```shell
 git clone https://github.com/adobe/experience-platform-dsw-reference.git
 ```
 
-Navigate to the directory `experience-platform-dsw-reference/recipes/python/retail`. 在此，您将找到用于登 `login.sh` 录 `build.sh` Docker和构建python Docker图像的脚本。 如果您的Docker凭 [据已准备](#docker-based-model-authoring) ，请按顺序输入以下命令：
+Navigate to the directory `experience-platform-dsw-reference/recipes/python/retail`. 在此，您将找到用于 `login.sh` 登 `build.sh` 录Docker和构建图像的脚本 [!DNL Python Docker] 。 如果您的Docker凭 [据已准备](#docker-based-model-authoring) ，请按顺序输入以下命令：
 
 ```BASH
 # for logging in to Docker
@@ -103,9 +103,9 @@ Navigate to the directory `experience-platform-dsw-reference/recipes/python/reta
 
 复制此URL并转到下 [一步](#next-steps)。
 
-### 构建R Docker图像 {#r-docker}
+### 构建R图 [!DNL Docker] 像 {#r-docker}
 
-如果尚未这样做，请使用以下命令将github存储库克隆到本地系统上：
+如果尚未这样做，请使用以下命 [!DNL GitHub] 令将存储库克隆到本地系统上：
 
 ```BASH
 git clone https://github.com/adobe/experience-platform-dsw-reference.git
@@ -134,7 +134,7 @@ git clone https://github.com/adobe/experience-platform-dsw-reference.git
 
 ### 构建PySpark Docker图像 {#pyspark-docker}
 
-开始，使用以下命令将github存储库克隆到本地系统上：
+开始，方法是 [!DNL GitHub] 使用以下命令将存储库克隆到本地系统上：
 
 ```shell
 git clone https://github.com/adobe/experience-platform-dsw-reference.git
@@ -163,7 +163,7 @@ Navigate to the directory `experience-platform-dsw-reference/recipes/pyspark/ret
 
 ### 构建Scala Docker图像 {#scala-docker}
 
-开始，使用终端中的以下命令将github存储库克隆到本地系统上：
+开始，在终端 [!DNL GitHub] 中使用以下命令将存储库克隆到本地系统上：
 
 ```shell
 git clone https://github.com/adobe/experience-platform-dsw-reference.git
@@ -192,7 +192,7 @@ git clone https://github.com/adobe/experience-platform-dsw-reference.git
 
 ## 后续步骤 {#next-steps}
 
-本教程重点介绍将源文件打包到“菜谱”（将“菜谱”导入“数据科学工作区”的先决条件）。 您现在应在Azure容器注册表中拥有Docker图像以及相应的图像URL。 您现在可以开始将打包菜谱导入数据科学工作区的教程。 选择以下教程链接之一以开始：
+本教程重点介绍将源文件打包到菜谱中，这是将菜谱导入的先决条件步骤 [!DNL Data Science Workspace]。 您现在应在Azure容器注册表中拥有Docker图像以及相应的图像URL。 现在，您可以开始将打包的菜谱导入的教程了 [!DNL Data Science Workspace]。 选择以下教程链接之一以开始：
 
 - [在UI中导入打包的菜谱](./import-packaged-recipe-ui.md)
 - [使用API导入打包的菜谱](./import-packaged-recipe-api.md)
