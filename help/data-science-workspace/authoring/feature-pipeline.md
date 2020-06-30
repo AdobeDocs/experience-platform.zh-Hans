@@ -4,9 +4,9 @@ solution: Adobe Experience Platform Data Science Workspace
 title: 创建特征管线
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 20e26c874204da75cac7e8d001770702658053f1
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '1380'
+source-wordcount: '1367'
 ht-degree: 0%
 
 ---
@@ -387,7 +387,7 @@ scoring.dataSaver: MyDatasetSaver
 
 ## 使用API创建功能管道引擎 {#create-feature-pipeline-engine-api}
 
-既然您已经创作了功能管道，您需要创建Docker图像，以调用Sensei Machine Learning API中的功能管道端点。 需要Docker图像URL才能调用功能管线端点。
+既然您已经创作了功能管道，您需要创建Docker图像以调用API中的功能管道端点 [!DNL Sensei Machine Learning] 。 需要Docker图像URL才能调用功能管线端点。
 
 >[!TIP]
 >如果您没有Docker URL，请访 [问将源文件打包到菜谱教程](../models-recipes/package-source-files-recipe.md) ，以逐步演练创建Docker主机URL。
@@ -398,7 +398,7 @@ https://www.getpostman.com/collections/c5fc0d1d5805a5ddd41a
 
 ### 创建特征管线引擎 {#create-engine-api}
 
-在获得Docker图像位置后，您可以 [通过执行POST](../api/engines.md#feature-pipeline-docker) ，使用Sensei机器学习API创建功能管道引擎 `/engines`。 成功创建功能管道引擎可为您提供引擎唯一标识符(`id`)。 请确保在继续之前保存此值。
+在获得Docker图像位置后，您可以 [通过执行POST](../api/engines.md#feature-pipeline-docker)[!DNL Sensei Machine Learning] ，使用API创建功能管道引擎 `/engines`。 成功创建功能管道引擎可为您提供引擎唯一标识符(`id`)。 请确保在继续之前保存此值。
 
 ### 创建MLInstance {#create-mlinstance}
 
@@ -435,4 +435,4 @@ https://www.getpostman.com/collections/c5fc0d1d5805a5ddd41a
 
 [//]: # (Next steps section should refer to tutorials on how to score data using the feature pipeline Engine. Update this document once those tutorials are available)
 
-通过阅读此文档，您使用“模型创作SDK”创作了一个功能管道，创建了Docker图像，并使用Docker图像URL通过Sensei Machine Learning API创建了一个功能管道模型。 现在，您可以使用Sensei Machine Learning API继续大规模转换数据集和 [提取数据功能](../api/getting-started.md)。
+通过阅读此文档，您使用“模型创作SDK”创作了一个功能管道，创建了Docker图像，并使用Docker图像URL通过API创建了一个功能管道 [!DNL Sensei Machine Learning] 模型。 现在，您可以继续使用进行数据集转换和大规模提取数据功能 [!DNL Sensei Machine Learning API](../api/getting-started.md)。
