@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用Jupyter笔记本创建菜谱
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '2330'
+source-wordcount: '2292'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 使用Jupyter笔记本创建菜谱
 
-本教程将分两个主要部分。 首先，您将使用JupyterLab Notebook中的模板创建机器学习模型。 接下来，您将在JupyterLab中练习笔记本到菜谱工作流程，以便在数据科学工作区中创建菜谱。
+本教程将分两个主要部分。 首先，您将使用中的模板创建机器学习模型 [!DNL JupyterLab Notebook]。 接下来，您将练习笔记本到菜谱工作流程， [!DNL JupyterLab] 在中创建菜谱 [!DNL Data Science Workspace]。
 
 ## 引入的概念：
 
@@ -23,20 +23,20 @@ ht-degree: 0%
 - **培训：** 培训是从标记数据中学习模式和洞察的过程。
 - **评分：** 评分是指使用经过培训的模型从数据生成洞察的过程。
 
-## 开始使用JupyterLab笔记本环境
+## 开始使用笔记本 [!DNL JupyterLab] 环境
 
-从头开始创建菜谱可以在数据科学工作区中完成。 要开始，请导 [航到Adobe Experience](https://platform.adobe.com) Platform **[!UICONTROL ，然后单]** 击左侧的“笔记本”选项卡。 从JupyterLab Launcher中选择Recipe Builder模板，创建新笔记本。
+您可以在中从头开始创建菜谱 [!DNL Data Science Workspace]。 要进行开始，请导 [航到](https://platform.adobe.com) “Adobe Experience Platform”，然 **[!UICONTROL 后单击左]** 侧的“笔记本”选项卡。 从中选择Recipe Builder模板，创建新笔记本 [!DNL JupyterLab Launcher]。
 
-Recipe Builder笔记本可在笔记本内运行培训和评分运行。 这使您能够灵活地在对培训和评分 `train()` 数据 `score()` 运行实验之间更改其和方法。 一旦您对培训和评分的输出感到满意，您就可以创建要在Data Science Workspace中使用的菜谱，该菜谱使用笔记本来创建Recipe Builder笔记本中内置的菜谱功能。
+Recipe Builder [!UICONTROL 笔记本] ，可在笔记本内运行培训和评分运行。 这使您能够灵活地在对培训和评分 `train()` 数据 `score()` 运行实验之间更改其和方法。 一旦您对培训和评分的输出感到满意，您就可以创建一个菜谱，用于使用笔记本 [!DNL Data Science Workspace] 将内置到Recipe Builder笔记本的菜谱功能。
 
 >[!NOTE]
->Recipe Builder笔记本支持处理所有文件格式，但目前“创建菜谱”功能仅支持Python。
+>Recipe Builder笔记本支持处理所有文件格式，但当前“创建菜谱”功能仅支持 [!DNL Python]。
 
 ![](../images/jupyterlab/create-recipe/recipe-builder.png)
 
 当您从启动器单击Recipe Builder笔记本时，该笔记本将在选项卡中打开。 笔记本中使用的模板是Python Retail Sales Forecasting Recipe，您也可以在此公共存储库 [中找到它](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)
 
-您会注意到，在工具栏中有三个附加操作，即 **[!UICONTROL 培训]**、 **[!UICONTROL 得分]** 和 **[!UICONTROL 创建菜谱]**。 这些图标将仅显示在Recipe Builder笔记本中。 在笔记本中构建“菜谱”后，将在 [培训和评分部分讨论](#training-and-scoring) 有关这些操作的更多信息。
+您会注意到，在工具栏中有三个附加操作，即 **[!UICONTROL 培训]**、 **[!UICONTROL 得分]** 和 **[!UICONTROL 创建菜谱]**。 这些图标将仅显示在 [!UICONTROL Recipe Builder笔记本] 中。 在笔记本中构建“菜谱”后，将在 [培训和评分部分讨论](#training-and-scoring) 有关这些操作的更多信息。
 
 ![](../images/jupyterlab/create-recipe/toolbar_actions.png)
 
@@ -50,7 +50,7 @@ Recipe Builder笔记本可在笔记本内运行培训和评分运行。 这使�
 
 ## 开始使用Recipe Builder笔记本
 
-现在您已经了解了JupyterLab笔记本环境的基础知识，可以开始查看构成机器学习模型菜谱的文件。 我们将讨论的文件显示在此处：
+现在您已了解笔记本环境的 [!DNL JupyterLab] 基础知识，可开始查看构成机器学习模型菜谱的文件。 我们将讨论的文件显示在此处：
 
 - [要求文件](#requirements-file)
 - [配置文件](#configuration-files)
@@ -90,7 +90,7 @@ data_access_sdk_python
 
 ![](../images/jupyterlab/create-recipe/datasets.png)
 
-在Adobe Experience Platform上的“模式 [和数据集](https://platform.adobe.com/) ”选项 **[卡下](https://platform.adobe.com/schema)**，可**[以找到相](https://platform.adobe.com/dataset/overview)** 同的信息。
+在Adobe Experience Platform和模式集选项卡 [下](https://platform.adobe.com/) ，可 **[以找](https://platform.adobe.com/schema)**到相**[同](https://platform.adobe.com/dataset/overview)** 的信息。
 
 默认情况下，在访问数据时会为您设置以下配置参数：
 
@@ -102,22 +102,22 @@ data_access_sdk_python
 ## 培训数据加载器 {#training-data-loader}
 
 培训数据加载器的目的是实例化用于创建机器学习模型的数据。 通常，培训数据加载器将完成以下两个任务:
-- 从平台加载数据
+- 从 [!DNL Platform]
 - 数据准备和功能工程
 
 以下两个部分将重新加载数据和准备数据。
 
 ### 加载数据 {#loading-data}
 
-这一步使用了 [熊猫数据框](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)。 数据可以使用Platform SDK( [!DNL Adobe Experience Platform] )从文件中加载，`platform_sdk`也可以使用熊猫的功能从外部 `read_csv()` 源加载 `read_json()` 数据。
+这一步使用了 [熊猫数据框](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)。 数据可以使用SDK() [!DNL Adobe Experience Platform] 从文件中加 [!DNL Platform] 载，也可`platform_sdk`以使用熊猫的功能从外部 `read_csv()` 源加载 `read_json()` 数据。
 
-- [平台SDK](#platform-sdk)
+- [!DNL Platform SDK](#platform-sdk)
 - [外部源](#external-sources)
 
 >[!NOTE]
 >在Recipe Builder笔记本中，数据通过数据加载 `platform_sdk` 器加载。
 
-### 平台SDK {#platform-sdk}
+### [!DNL Platform] SDK {#platform-sdk}
 
 有关使用数据加载器的详细 `platform_sdk` 教程，请访问 [Platform SDK指南](../authoring/platform-sdk.md)。 本教程提供有关构建身份验证、基本数据读取和基本数据写入的信息。
 
@@ -162,7 +162,7 @@ df = prodreader.load(data_set_id=configProperties['trainingDataSetId'],
 ```
 
 >[!NOTE]
->如配置文 [件部分所述](#configuration-files)，当您从Experience Platform访问数据时，将为您设置以下配置参数：
+>如配置文 [件部分所述](#configuration-files)，当您从中访问数据时，将为您设置以下配置参数 [!DNL Experience Platform]:
 > - `ML_FRAMEWORK_IMS_USER_CLIENT_ID`
 > - `ML_FRAMEWORK_IMS_TOKEN`
 > - `ML_FRAMEWORK_IMS_ML_TOKEN`
@@ -203,7 +203,7 @@ dataframe.drop('date', axis=1, inplace=True)
 - 抵 `weeklySales` 销以获得未来和过去销售价值
 - 按日期拆分数据至 `train` 和数 `val` 据
 
-首先， `week` 创建 `year` 列，并将原始列 `date` 转换为Python日 [期时间](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html)。 周值和年值从日期时间对象中提取。
+首先， `week` 创建列 `year` ，并将原始列转 `date` 换为日期 [!DNL Python] 时 [间](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html)。 周值和年值从日期时间对象中提取。
 
 接下来 `storeType` ，将转换为表示三种不同存储类型(`A`、 `B`和)的三 `C`列。 每个值都将包含一个布尔值，它 `storeType` 为true。 将 `storeType` 删除该列。
 
@@ -408,7 +408,7 @@ def evaluate(self, data=[], model={}, configProperties={}):
 
 ### 数据保护程序文件 {#data-saver-file}
 
-该文 `datasaver.py` 件包含在测 `save()` 试评分时保存预测的函数。 该函 `save()` 数将执行您的预测，并使用Experience Platform Catalog API，将数据写入您在文 `scoringResultsDataSetId` 件中指定的 `scoring.conf` 值。
+该文 `datasaver.py` 件包含在测 `save()` 试评分时保存预测的函数。 该函 `save()` 数将执行您的预测， [!DNL Experience Platform Catalog] 并使用API将数据写入 `scoringResultsDataSetId` 您在文件中指定的 `scoring.conf` 值。
 
 在零售销售示例菜谱中使用的示例在此处可见。 请注意使用 `DataSetWriter` 库将数据写入平台：
 
@@ -453,11 +453,11 @@ def save(configProperties, prediction):
 
 ![](../images/jupyterlab/create-recipe/create-recipe.png)
 
-按下按钮后，系统会提示您输入菜谱名称。 此名称表示在平台上创建的实际菜谱。
+按下按钮后，系统会提示您输入菜谱名称。 此名称表示在上创建的实际菜谱 [!DNL Platform]。
 
 ![](../images/jupyterlab/create-recipe/enter_recipe_name.png)
 
-按“确 **[!UICONTROL 定]** ”后，您将能够导航到Adobe Experience Platform上 [的新菜谱](https://platform.adobe.com/)。 单击“视图菜 **[!UICONTROL 谱]** ”按钮可转到“ML模型 **[!UICONTROL ”下]** 的“菜 **[!UICONTROL 谱”选项卡]**
+按“确 **[!UICONTROL 定]** ”后 [，您将能够导航到Adobe Experience Platform上的新菜](https://platform.adobe.com/)谱。 单击“视图菜 **[!UICONTROL 谱]** ”按钮可转到“ML模型 **[!UICONTROL ”下]** 的“菜 **[!UICONTROL 谱”选项卡]**
 
 ![](../images/jupyterlab/create-recipe/recipe_creation_started.png)
 
@@ -473,9 +473,9 @@ def save(configProperties, prediction):
 
 ## 后续步骤 {#next-steps}
 
-完成本教程后，您学会了如何在Recipe Builder笔记本中创建机器学习模型。 您还学习了如何在笔记本中练习笔记本到菜谱工作流程，以便在数据科学工作区中创建菜谱。
+完成本教程后，您学会了如何在Recipe Builder笔记本中创建机器学习模型。 您还学习了如何在笔记本中练习笔记本到菜谱工作流，以便在中创建菜谱 [!DNL Data Science Workspace]。
 
-要继续学习如何在数据科学工作区中使用资源，请访问数据科学工作区方法和模型下拉列表。
+要继续了解如何在中使用资源， [!DNL Data Science Workspace]请访问菜谱 [!DNL Data Science Workspace] 和模型下拉列表。
 
 ## 其他资源 {#additional-resources}
 
