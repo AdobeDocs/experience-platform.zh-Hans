@@ -4,21 +4,21 @@ solution: Experience Platform
 title: 在UI中创建Google Cloud存储源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 75ba0bce7ce070af851bbf7e220dbf08febc4c20
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '540'
 ht-degree: 1%
 
 ---
 
 
-# 在UI中创建Google Cloud存储源连接器
+# 在UI [!DNL Google Cloud Storage] 中创建源连接器
 
-Adobe Experience Platform中的源连接器提供按计划收集外部源数据的能力。 本教程提供了使用平台用户界面创建Google Cloud存储（以下称“GCS”）源连接器的步骤。
+Adobe Experience Platform中的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用用 [!DNL Google Cloud Storage] 户界面创建（下称“GCS”）源连接器 [!DNL Platform] 的步骤。
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform的以下组件有充分的了解：
+本教程需要对Adobe Experience Platform的以下组件有一定的了解：
 
 * [体验数据模型(XDM)系统](../../../../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
    * [模式合成基础](../../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
@@ -29,7 +29,7 @@ Adobe Experience Platform中的源连接器提供按计划收集外部源数据�
 
 ### 支持的文件格式
 
-Experience Platform支持从外部存储摄取的以下文件格式：
+[!DNL Experience Platform] 支持从外部存储摄取的以下文件格式：
 
 * 分隔符分隔值(DSV): 目前，对DSV格式化数据文件的支持仅限于逗号分隔的值。 DSV格式化文件中字段标题的值只能由字母数字字符和下划线组成。 今后将提供对一般DSV文件的支持。
 * JavaScript对象表示法(JSON): JSON格式数据文件必须符合XDM。
@@ -37,13 +37,13 @@ Experience Platform支持从外部存储摄取的以下文件格式：
 
 ### 收集所需的凭据
 
-要在平台上访问GCS数据，您必须提供有效的GCS **访问密钥ID** 和 **机密**。 您可以阅读Google Cloud的服务器对服务器身份验证指 <a href="https://cloud.google.com/docs/authentication/production" target="_blank">南，进一步了解如何获取这些</a> 值。
+要访问上的GCS数据， [!DNL Platform]必须提供有效的GCS **访问密钥ID** 和 **机密**。 您可以通过阅读的服务器到服务器身份验证指 <a href="https://cloud.google.com/docs/authentication/production" target="_blank">南进一步了解如何获取这些值</a>[!DNL Google Cloud]。
 
 ## 连接您的GCS帐户
 
-收集所需凭据后，您可以按照以下步骤创建新GCS帐户以连接到平台。
+收集所需凭据后，您可以按照以下步骤创建要连接的新GCS帐户 [!DNL Platform]。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中 *[!UICONTROL 选择“源]* ”以访问“源”工作区。 “ *[!UICONTROL 目录]* ”屏幕显示可为其创建入站帐户的各种源，每个源显示与它们关联的现有帐户和数据流的数量。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选 *[!UICONTROL 择源]* ，以访问源工作区。 “ *[!UICONTROL 目录]* ”屏幕显示可为其创建入站帐户的各种源，每个源显示与它们关联的现有帐户和数据流的数量。
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
