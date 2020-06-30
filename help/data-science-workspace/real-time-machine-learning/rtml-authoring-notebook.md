@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 实时机器学习笔记本用户指南
 topic: Training and scoring a ML model
 translation-type: tm+mt
-source-git-commit: 695eba3885dc319a9b7f73eb710b2ada0b17d24d
+source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
 workflow-type: tm+mt
-source-wordcount: '1659'
+source-wordcount: '1637'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 ## 创建实时机器学习笔记本
 
-在Adobe Experience Platform UI中，从数 **[!UICONTROL 据科]** 学中选择 *笔记本*。 接下来， **[!UICONTROL 选择Jupyter]** Lab，并允许一段时间加载环境。
+在Adobe Experience PlatformUI中，从数 **[!UICONTROL 据]** Data Science中 *选择Notebooks*。 接下来， **[!UICONTROL 选择Jupyter]** Lab，并允许一段时间加载环境。
 
 ![打开JupyterLab](../images/rtml/open-jupyterlab.png)
 
-出现JupyterLab启动器。 向下滚动 *到“Real-Time Learning* (实时机学 **习)”并选择“Real-time ML(实** 时ML)”笔记本。 此时将打开一个模板，其中包含带有示例数据集的示例笔记本单元格。
+将出 [!DNL JupyterLab] 现启动器。 向下滚动 *到“Real-Time Learning* (实时机学 **[!UICONTROL 习)”并选择“Real-time ML(实]** 时ML)”笔记本。 此时将打开一个模板，其中包含带有示例数据集的示例笔记本单元格。
 
 ![空白python](../images/rtml/authoring-notebook.png)
 
@@ -70,7 +70,7 @@ pprint(nf.discover_nodes())
 
 ## 实时机器学习模型的训练
 
-使用以下选项之一，您将编写Python代码来读取、预处理和分析数据。 接下来，您需要培训自己的ML模型，将其序列化为ONNX格式，然后将其上传到Real-time Machine Learning模型商店。
+使用以下选项之一，您将编写代码 [!DNL Python] 来读取、预处理和分析数据。 接下来，您需要培训自己的ML模型，将其序列化为ONNX格式，然后将其上传到Real-time Machine Learning模型商店。
 
 - [在JupyterLab笔记本中培训您自己的型号](#training-your-own-model)
 - [将您自己经过培训的ONNX型号上传到JupyterLab笔记本](#pre-trained-model-upload)
@@ -80,15 +80,15 @@ pprint(nf.discover_nodes())
 开始。
 
 >[!NOTE]
->在Real- **time ML模板中** ，从Github [上获取汽车保险CSV数](https://github.com/adobe/experience-platform-dsw-reference/tree/master/datasets/insurance) 据集。
+>在实时 **ML模板中** ，从 [车险CSV数据集中](https://github.com/adobe/experience-platform-dsw-reference/tree/master/datasets/insurance) 获取 [!DNL Github]。
 
 ![加载培训数据](../images/rtml/load_training.png)
 
-如果您希望从Adobe Experience Platform内使用数据集，请取消以下单元格的注释。 接下来，您需要用相 `DATASET_ID` 应的值替换。
+如果您希望从Adobe Experience Platform中使用数据集，请取消以下单元格的注释。 接下来，您需要用相 `DATASET_ID` 应的值替换。
 
 ![rtml数据集](../images/rtml/rtml-dataset.png)
 
-要访问JupyterLab笔记本中的数据集，请选 **择** JupyterLab左侧导航中的“数据”选项卡。 出 *现Dataset**和* 模式目录。 选 **[!UICONTROL 择数据集]** ，右键单击，然后从要使用的数据集 **[!UICONTROL 的下拉菜单中选择浏览笔记本中的数据]** 。 可执行代码条目显示在笔记本的底部。 这个手机里有你的 `dataset_id`。
+要访问笔记本中的数 [!DNL JupyterLab] 据集，请选 **择** “数据”选项卡（位于的左侧导航中） [!DNL JupyterLab]。 出 *[!UICONTROL 现Dataset]**[!UICONTROL 和]* 模式目录。 选 **[!UICONTROL 择数据集]** ，右键单击，然后从要使用的数据集 **[!UICONTROL 的下拉菜单中选择浏览笔记本中的数据]** 。 可执行代码条目显示在笔记本的底部。 这个手机里有你的 `dataset_id`。
 
 ![数据集访问](../images/rtml/access-dataset.png)
 
@@ -109,11 +109,11 @@ config_properties = {
 
 ### 准备模型
 
-使用 *实时ML模板* ，您需要分析、预处理、培训和评估ML模型。 这是通过应用数据转换和构建培训管道来完成的。
+使用 *[!UICONTROL 实时ML模板]* ，您需要分析、预处理、培训和评估ML模型。 这是通过应用数据转换和构建培训管道来完成的。
 
 **数据转换**
 
-需 *要修改实时* ML *模板Data Transformations* 单元格，才能处理您自己的数据集。 通常，这涉及重命名列、数据汇总以及数据准备／功能工程。
+需 *[!UICONTROL 要修改实时]* ML *模板Data Transformations* 单元格，才能处理您自己的数据集。 通常，这涉及重命名列、数据汇总以及数据准备／功能工程。
 
 >[!NOTE]
 >以下示例已经过压缩，以便使用 `[ ... ]`。 请视图并展开 *完整代码单元格的* “实时ML模板数据转换”部分。
@@ -261,7 +261,7 @@ print("Model ID : ", model_id)
 
 ### 上传您自己的预先培训的ONNX模型 {#pre-trained-model-upload}
 
-使用JupyterLab笔记本中的上传按钮，将您经过培训的ONNX模型上传到Data Science Workspace笔记本环境。
+使用笔记本中的上 [!DNL JupyterLab] 传按钮，将经过培训的ONNX型号上传到笔记本 [!DNL Data Science Workspace] 环境。
 
 ![上传图标](../images/rtml/upload.png)
 
@@ -321,7 +321,7 @@ nodes = [json_df_node,
         onnx_node]
 ```
 
-然后，将节点与边连接。 每个元组都是边连接。
+然后，将节点与边连接。 每个元组都是 [!DNL Edge] 连接。
 
 >[!TIP]
 > 由于节点之间是线性依赖的（每个节点都取决于前一个节点的输出），您可以使用简单的Python列表理解创建链接。 如果节点依赖多个输入，请添加您自己的连接。
@@ -346,10 +346,10 @@ pprint(json.loads(dsl))
 >[!NOTE]
 >实时机器学习临时部署到Adobe Experience Platform Hub并由其管理。 有关更多详细信息，请访问“实时机 [学习体系结构”的概述部分](./home.md#architecture)。
 
-现在您已创建了DSL图形，可将图形部署到Edge。
+现在您已创建了DSL图形，可将图形部署到 [!DNL Edge]。
 
 >[!IMPORTANT]
->不要经常发布到Edge，这会使Edge节点过载。 建议不要多次发布同一模型。
+>不要经常发 [!DNL Edge] 布，这会使节点过载 [!DNL Edge] 。 建议不要多次发布同一模型。
 
 ```python
 edge_utils = EdgeUtils()
@@ -365,7 +365,7 @@ print(f'Service ID: {service_id}')
 >[!NOTE]
 >仅当您希望更新已发布到Edge的现有DSL时，才需要以下单元格。
 
-您的模型可能会继续发展。 与其创建全新服务，不如使用新模型更新现有服务。 您可以定义要更新的节点，为其指定新ID，然后将新DSL重新上传到Edge。
+您的模型可能会继续发展。 与其创建全新服务，不如使用新模型更新现有服务。 您可以定义要更新的节点，为其分配新ID，然后将新DSL重新上传到 [!DNL Edge]。
 
 在以下示例中，节点0将更新为新的ID。
 
@@ -397,7 +397,7 @@ print(f'Updated dsl: {updated_dsl}')
 
 ## 评分 {#scoring}
 
-发布到Edge后，评分由客户端的POST请求完成。 通常，这可以从需要ML分数的客户端应用程序中完成。 您也可以从邮递员处进行。 实 *时ML模板使用* EdgeUtils演示此过程。
+发布到后， [!DNL Edge]评分由客户端的POST请求完成。 通常，这可以从需要ML分数的客户端应用程序中完成。 您也可以从邮递员处进行。 实 *[!UICONTROL 时ML模板使用]* EdgeUtils演示此过程。
 
 >[!NOTE]
 >在对开始评分之前，需要一小段处理时间。
@@ -414,15 +414,15 @@ time.sleep(20)
 
 ### 对Edge端点进行得分
 
-使用实时ML模板中 *的以下单元格* ，根据您的Edge服务进行得分。
+使用实时ML模板中 *的以下单元格* ，根据您的服务进行 [!DNL Edge] 得分。
 
 ![对边缘得分](../images/rtml/scoring-edge.png)
 
-评分完成后，将返回Edge的Edge URL、Payload和Edge的已评分输出。
+评分完成后，将返 [!DNL Edge] 回URL、有效负荷和来自的计分 [!DNL Edge] 输出。
 
-## 从Edge列表您部署的应用程序
+## 列表已部署的应用程序 [!DNL Edge]
 
-要在边缘上生成当前部署的应用程序的列表，请运行以下代码单元格。 无法编辑或删除此单元格。
+要在上生成当前部署的应用程序的列表 [!DNL Edge]，请运行以下代码单元格。 无法编辑或删除此单元格。
 
 ```python
 services = edge_utils.list_deployed_services()
@@ -443,10 +443,10 @@ print(services)
 ]
 ```
 
-## 从Edge中删除已部署的应用程序或服务ID（可选）
+## 从中删除已部署的应用程序或服 [!DNL Edge] 务ID（可选）
 
 >[!CAUTION]
->此单元格用于删除已部署的Edge应用程序。 除非需要删除已部署的Edge应用程序，否则不要使用以下单元格。
+>此单元格用于删除已部署的Edge应用程序。 除非需要删除已部署的应用程序，否则不要使用以下 [!DNL Edge] 单元格。
 
 ```python
 if edge_utils.delete_from_edge(service_id=service_id):
