@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据使用策略概述
 topic: policies
 translation-type: tm+mt
-source-git-commit: 92092620a7ba9129eef4bde852b1e0afc6612d74
+source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
 workflow-type: tm+mt
-source-wordcount: '985'
+source-wordcount: '979'
 ht-degree: 0%
 
 ---
@@ -14,24 +14,24 @@ ht-degree: 0%
 
 # 数据使用策略概述
 
-为了使数据使用标签能够有效支持数据合规性，必须实施数据使用策略。 数据使用策略是描述您允许或限制对Experience Platform内数据执行的营销操作种类的规则。
+为了使数据使用标签能够有效支持数据合规性，必须实施数据使用策略。 数据使用策略是描述允许或限制您对中的数据执行的营销操作种类的规则 [!DNL Experience Platform]。
 
 此文档提供了数据使用策略的高级概述，并提供了在UI或API中使用策略的进一步文档的链接。
 
 ## 营销操作 {#marketing-actions}
 
-**Experience Platform数据**&#x200B;消费者可以采取的行 **为(也称为营销使用案例**)，您的组织希望为这些行为限制数据使用。 因此，数据使用策略由以下各项定义：
+**数据治理**&#x200B;框架中的营销 **操作(也称为营销使用案例**)是数据消费者可以采取的操作，您的组织 [!DNL Experience Platform] 希望为此限制数据使用。 因此，数据使用策略由以下各项定义：
 
 1. 特定营销活动
 2. 限制不执行操作的数据使用标签
 
-营销行动的一个例子可能是希望将数据集导出到第三方服务。 如果有策略表明无法导出特定类型的数据(如个人身份信息(PII))，并且您尝试导出包含“I”标签（身份数据）的数据集，您将收到来自策略服务的响应，通知您数据使用策略已被违反。
+营销行动的一个例子可能是希望将数据集导出到第三方服务。 如果有策略表明无法导出特定类型的数据(如个人身份信息(PII))，并且您尝试导出包含“I”标签（身份数据）的数据集，您将收到来自通知您已违反数据使用 [!DNL Policy Service] 策略的响应。
 
 >[!NOTE] 营销活动本身并不限制数据使用。 必须将它们包含在启用的数据使用策略中，才能评估这些操作是否违反了策略。
 
 当组织的服务中发生数据使用情况时，应指示相关的营销操作，以便识别任何违反策略的行为。 然后，您可以使用 [DULE Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) ，检查集成中是否存在策略违规。
 
->[!NOTE] 如果您使用实时客户数据Platform，则可以在目标上设置营销使用案例，以自动执行策略。 有关详细信 [息，请参见实时CDP中的文档](../../rtcdp/privacy/data-governance-overview.md) “数据治理”。
+>[!NOTE] 如果您使用实时客户数据平台，则可以在目标上设置营销使用案例以自动执行策略。 有关详细信 [息，请参见实时CDP中的文档](../../rtcdp/privacy/data-governance-overview.md) “数据治理”。
 
 请参阅本文档的附录，了解一列表可 [用的Adobe定义的营销操作](#core-actions)。 您还可以使用DULE Policy Service API或Experience Platform用户界面定义您自己的自定义营销操作。 下一节提供了有关使用营销操作和策略的更多信息。
 
@@ -51,7 +51,7 @@ For a reference on how specific Data Export Controls map to marketing actions in
 
 有关在API中使用营销操作和数据使用策略的分步说明，请参阅有关创建和评估数 [据使用策略的教程](create.md)。 有关Policy Service API提供的关键操作的详细信息，请参阅Policy Service [Developer Guide](../api/getting-started.md)。
 
-有关如何在PlatformUI中使用营销操作和策略的信息，请参阅数据 [使用策略用户指南](./user-guide.md)。
+有关如何在平台UI中使用营销操作和策略的信息，请参阅数 [据使用策略用户指南](./user-guide.md)。
 
 ## 后续步骤
 
