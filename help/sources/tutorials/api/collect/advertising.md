@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 通过源连接器和API收集广告数据
 topic: overview
 translation-type: tm+mt
-source-git-commit: 577027e52041d642e03ca5abf5cb8b05c689b9f2
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
 workflow-type: tm+mt
-source-wordcount: '1596'
+source-wordcount: '1544'
 ht-degree: 1%
 
 ---
@@ -14,38 +14,38 @@ ht-degree: 1%
 
 # 通过源连接器和API收集广告数据
 
-Flow Service用于在Adobe Experience Platform内收集和集中来自不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程介绍从第三方广告应用程序检索数据并通过源连接器和API将其引入平台的步骤。
+本教程介绍了从第三方广告应用程序检索数据并通过源连接器和API [!DNL Platform] 导入数据的步骤。
 
 ## 入门指南
 
-本教程要求您提供有关要引入平台的文件的信息，包括文件的路径和结构。 如果您没有此信息，请在尝试本教程 [之前参阅教程，了解如何使用Flow Service](../../api/create/advertising/ads.md) API浏览广告应用程序。
+本教程要求您提供有关要引入的文件的信息， [!DNL Platform]包括文件的路径和结构。 如果您没有此信息，请在尝试本教程 [之前参阅教程，了解如何使用Flow Service](../../api/create/advertising/ads.md) API浏览广告应用程序。
 
 本教程还要求您对Adobe Experience Platform的以下组件有充分的了解：
 
-* [体验数据模型(XDM)系统](../../../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
+* [!DNL Experience Data Model (XDM) System](../../../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
    * [模式合成基础](../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式注册开发人员指南](../../../../xdm/api/getting-started.md): 包括成功执行对模式注册表API的调用时需要了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
-* [目录服务](../../../../catalog/home.md): Catalog是Experience Platform中数据位置和世系的记录系统。
-* [批量摄取](../../../../ingestion/batch-ingestion/overview.md): Batch Ingestion API允许您将数据作为批处理文件导入到Experience Platform中。
-* [沙箱](../../../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和改进数字体验应用程序。
+* [!DNL Catalog Service](../../../../catalog/home.md): 目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
+* [!DNL Batch ingestion](../../../../ingestion/batch-ingestion/overview.md): 批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
+* [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供您需要了解的其他信息，以便成功连接到使用Flow Service API的广告系统。
+以下各节提供您需要了解的其他信息，以便成功连接到使用API的广告系 [!DNL Flow Service] 统。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的部分。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成身份验证 [教程](../../../../tutorials/authentication.md)。 完成身份验证教程后，将提供所有Experience Platform API调用中每个所需标头的值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
 * 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源（包括属于流服务的资源）都与特定虚拟沙箱隔离。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+中的所有资 [!DNL Experience Platform]源(包括属于这些资 [!DNL Flow Service]源)都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -55,7 +55,7 @@ Experience Platform中的所有资源（包括属于流服务的资源）都与�
 
 ## 创建点对点XDM类和模式
 
-要通过源连接器将外部数据引入平台，必须为原始源数据创建一个临时XDM类和模式。
+要通过源连接器将外 [!DNL Platform] 部数据引入，必须为原始源数据创建专门的XDM类和模式。
 
 要创建点对点类和模式，请按照点对点模式教 [程中概述的步骤操作](../../../../xdm/tutorials/ad-hoc.md)。 创建点对点类时，必须在请求主体中描述源数据中找到的所有字段。
 
@@ -63,7 +63,7 @@ Experience Platform中的所有资源（包括属于流服务的资源）都与�
 
 ## 创建源连接 {#source}
 
-创建点对点XDM模式后，现在可以使用对流服务API的POST请求创建源连接。 源连接由基本连接、源数据文件和对描述源模式的引用组成。
+创建点对点XDM模式后，现在可以使用对API的POST请求创建源连 [!DNL Flow Service] 接。 源连接由基本连接、源数据文件和对描述源模式的引用组成。
 
 要创建源连接，还必须为数据格式属性定义枚举值。
 
@@ -134,9 +134,9 @@ curl -X POST \
 
 ## 创建目标XDM模式 {#target}
 
-在前面的步骤中，创建了一个专门的XDM模式来构造源数据。 要在平台中使用源模式，还必须创建一个目标，以根据您的需求构建源数据。 然后，目标模式用于创建包含源数据的平台数据集。
+在前面的步骤中，创建了一个专门的XDM模式来构造源数据。 为了在中使用源数据，还必 [!DNL Platform]须创建目标模式，以根据您的需要构建源数据。 然后，目标模式用于创建包含 [!DNL Platform] 源数据的数据集。
 
-通过对目标注册表API执行POST请求，可以创 [建模式XDM模式](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。 如果您希望使用Experience Platform中的用户界面，模式编 [辑器教程提供了在模式编辑器中](../../../../xdm/tutorials/create-schema-ui.md) ，执行类似操作的分步说明。
+通过对目标注册表API执行POST请求，可以创 [建模式XDM模式](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。 如果您希望在中使用用户界 [!DNL Experience Platform]面， [模式编辑器教程](../../../../xdm/tutorials/create-schema-ui.md) 提供了在模式编辑器中执行类似操作的分步说明。
 
 **API格式**
 
@@ -294,7 +294,7 @@ curl -X POST \
 
 目标连接表示到所摄取数据所进入的目的地的连接。 要创建目标连接，必须提供与数据库关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-您现在将唯一标识符作为目标模式目标集和连接规范ID到数据湖。 使用这些标识符，您可以使用流服务API创建目标连接，以指定将包含入站源数据的数据集。
+您现在将唯一标识符作为目标模式目标集和连接规范ID到数据湖。 使用这些标识符，您可以使用API创建目标 [!DNL Flow Service] 连接，以指定将包含入站源数据的数据集。
 
 **API格式**
 
@@ -346,7 +346,7 @@ curl -X POST \
 
 ## 创建映射 {#mapping}
 
-为了将源数据引入目标数据集，必须首先将其映射到目标数据集所附加的目标模式。 这是通过在请求有效负荷中定义数据映射来执行对转换服务API的POST请求来实现的。
+为了将源数据引入目标数据集，必须首先将其映射到目标数据集所附加的目标模式。 这是通过对API执行POST请求而实 [!DNL Conversion Service] 现的，该POST请求具有在请求有效负荷中定义的数据映射。
 
 **API格式**
 
@@ -419,7 +419,7 @@ curl -X POST \
 
 ## 查找数据流规范 {#specs}
 
-数据流负责从源收集数据并将其引入平台。 要创建数据流，必须先获得负责收集广告数据的数据流规范。
+数据流负责从源收集数据并将其引入 [!DNL Platform]。 要创建数据流，必须先获得负责收集广告数据的数据流规范。
 
 **API格式**
 
@@ -439,7 +439,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回负责将广告系统中的数据引入平台的数据流规范的详细信息。 按照下一步 `id` 中创建新数据流时的要求存储字段值。
+成功的响应会返回负责将广告系统中的数据引入的数据流规范的详细信息 [!DNL Platform]。 按照下一步 `id` 中创建新数据流时的要求存储字段值。
 
 ```json
 {
@@ -642,7 +642,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过遵循本教程，您已创建了源连接器以按计划从广告系统收集数据。 现在，下游平台服务(如实时客户用户档案和数据科学工作区)可以使用传入数据。 有关更多详细信息，请参阅以下文档:
+通过遵循本教程，您已创建了源连接器以按计划从广告系统收集数据。 现在，下游服务（如和）可 [!DNL Platform] 以使用传入 [!DNL Real-time Customer Profile] 数据 [!DNL Data Science Workspace]。 有关更多详细信息，请参阅以下文档:
 
 * [实时客户用户档案概述](../../../../profile/home.md)
 * [数据科学工作区概述](../../../../data-science-workspace/home.md)
