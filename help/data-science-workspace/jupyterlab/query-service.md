@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Jupyter笔记本中的查询服务
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '799'
+source-wordcount: '764'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Jupyter笔记本中的查询服务
 
-[!DNL Adobe Experience Platform] 通过将查询服务作为标准功能集成到JupyterLab中，允许您在数据科学工作区中使用结构化查询语言(SQL)。
+[!DNL Adobe Experience Platform] 允许您通过集成到标准功能中来 [!DNL Data Science Workspace] 使用结 [!DNL Query Service] 构化 [!DNL JupyterLab] 查询语言(SQL)。
 
 本教程演示了用于浏览、转换和分析数据的常见用例的SQL查询 [!DNL Adobe Analytics] 示例。
 
@@ -22,19 +22,19 @@ ht-degree: 1%
 
 在开始本教程之前，您必须具有以下先决条件：
 
-- 访问 [!DNL Adobe Experience Platform]。 如果您无权访问Experience Platform中的IMS组织，请在继续操作之前与系统管理员联系
+- 访问 [!DNL Adobe Experience Platform]。 如果您无权访问中的IMS组织，请在继 [!DNL Experience Platform]续操作之前与系统管理员联系
 
 - 数据 [!DNL Adobe Analytics] 集
 
 - 对本教程中使用的下列主要概念的有效理解：
-   - [体验数据模型(XDM)和XDM系统](../../xdm/home.md)
-   - [查询服务](../../query-service/home.md)
-   - [查询服务SQL语法](../../query-service/sql/overview.md)
-   - [!DNL Adobe Analytics]
+   - [!DNL Experience Data Model (XDM) and XDM System](../../xdm/home.md)
+   - [!DNL Query Service](../../query-service/home.md)
+   - [!DNL Query Service SQL Syntax](../../query-service/sql/overview.md)
+   - [Adobe Analytics]
 
-## 访问JupyterLab和查询服务 {#access-jupyterlab-and-query-service}
+## 访问 [!DNL JupyterLab] 和 [!DNL Query Service] {#access-jupyterlab-and-query-service}
 
-1. 在 [Experience Platform](https://platform.adobe.com)，从左 **[!UICONTROL 侧导航]** 列导航到“笔记本”。 请稍等片刻，JupyterLab将加载。
+1. 在 [!DNL Experience Platform](https://platform.adobe.com)中，从左 **[!UICONTROL 侧导航]** 列导航到笔记本。 请稍等片刻，JupyterLab将加载。
 
    ![](../images/jupyterlab/query/jupyterlab_launcher.png)
 
@@ -52,7 +52,7 @@ ht-degree: 1%
 
 4. 查找要 [!DNL Adobe Analytics] 浏览的数据集并右键单击列表，单击“笔记本 **[!UICONTROL 中的查询数据]** ”，在空笔记本中生成SQL查询。
 
-5. 单击包含该函数的第一个生成的单 `qs_connect()` 元格，并通过单击播放按钮来执行它。 此函数在笔记本实例与查询服务之间建立连接。
+5. 单击包含该函数的第一个生成的单 `qs_connect()` 元格，并通过单击播放按钮来执行它。 此函数在笔记本实例和实例之间建立连接 [!DNL Query Service]。
 
    ![](../images/jupyterlab/query/execute.png)
 
@@ -85,14 +85,13 @@ ht-degree: 1%
    - `target_year` : 目标数据的特定年份。
    - `target_month` : 目标的特定月份。
    - `target_day` : 目标数据的特定日期。
-
    >[!NOTE] 您可以随时更改这些值。 执行此操作时，请确保为要应用的更改执行变量单元格。
 
 ## 查询数据 {#query-your-data}
 
 在单个笔记本单元格中输入以下SQL查询。 通过单击查询的单元格，然后单击播放按 **[!UICONTROL 钮]** 。 成功的查询结果或错误日志显示在执行的单元格下方。
 
-当笔记本处于长期非活动状态时，笔记本与查询服务之间的连接可能会中断。 在这种情况下，请单击右上角的 **[!UICONTROL Power]** （电源）按钮，重新启动JupyterLab。
+当笔记本处于长期非活动状态时，笔记本与笔记本之间的连接可能 [!DNL Query Service] 断开。 在这种情况下，请 [!DNL JupyterLab] 单击右上 **[!UICONTROL 角的]** “Power（电源）”按钮。
 
 ![](../images/jupyterlab/query/restart_button.png)
 
@@ -120,7 +119,7 @@ ORDER  BY Hour;
 
 在上述查询中，子 `_acp_year` 句中 `WHERE` 的目标设置为值 `target_year`。 通过将变量包含在大括号()中，在SQL查询中`{}`包括变量。
 
-查询的第一行包含可选变量 `hourly_visitor`。 查询结果将作为Pactys数据帧存储在此变量中。 将结果存储在查询帧中允许您以后使用所需的Python包可视化数据结果。 在新单元格中执行以下Python代码以生成条形图：
+查询的第一行包含可选变量 `hourly_visitor`。 查询结果将作为Pactys数据帧存储在此变量中。 将结果存储在查询帧中允许您稍后使用所需的包可视化结 [!DNL Python] 果。 在新单元格 [!DNL Python] 中执行以下代码以生成条形图：
 
 ```python
 trace = go.Bar(
@@ -210,7 +209,7 @@ GROUP BY aaid_sess_key
 ORDER BY Count DESC;
 ```
 
-执行以下Python代码，为每次访问会话的事件数生成直方图：
+执行以下代 [!DNL Python] 码以生成每次访问会话事件数的直方图：
 
 ```python
 data = [go.Histogram(x = events_per_session['Count'])]
@@ -284,4 +283,4 @@ LIMIT  10;
 
 ## 后续步骤 <!-- omit in toc -->
 
-本教程演示了在Jupyter笔记本中利用查询服务的一些示例用例。 请按照 [使用Jupyter Notebooks教程分析数据](./analyze-your-data.md) ，了解如何使用Data Access SDK执行类似操作。
+本教程演示了在笔记本中使用的一些示 [!DNL Query Service] 例用 [!DNL Jupyter] 例。 请按照 [使用Jupyter Notebooks教程分析数据](./analyze-your-data.md) ，了解如何使用Data Access SDK执行类似操作。
