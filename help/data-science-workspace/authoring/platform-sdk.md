@@ -4,15 +4,15 @@ solution: Experience Platform
 title: 平台SDK指南
 topic: SDK authoring
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '451'
+source-wordcount: '447'
 ht-degree: 1%
 
 ---
 
 
-# 平台SDK指南
+# [!DNL Platform] SDK指南
 
 本教程提供有关在Python和R `data_access_sdk_python` 中转换为 `platform_sdk` 新Python的信息。本教程提供有关以下操作的信息：
 
@@ -69,7 +69,7 @@ client_context <- psdk$client_context$ClientContext(api_key={API_KEY},
 
 ## 数据的基本读取 {#basic-reading-of-data}
 
-使用新的Platform SDK，最大读取大小为32 GB，最长读取时间为10分钟。
+使用新的 [!DNL Platform] SDK，最大读取大小为32 GB，最长读取时间为10分钟。
 
 如果您的读取时间过长，您可以尝试使用以下筛选选项之一：
 
@@ -144,7 +144,7 @@ df2 <- dataset_reader$where(
 df2
 ```
 
-新的平台SDK支持以下操作：
+新SDK [!DNL Platform] 支持以下操作：
 
 | 操作 | 函数 |
 | --------- | -------- |
@@ -217,4 +217,4 @@ write_tracker <- dataset_writer$write({PANDA_DATAFRAME}, file_format='json')
 
 ## 后续步骤
 
-配置数据加载 `platform_sdk` 器后，数据将进行准备，然后被拆分到数据 `train` 集和数 `val` 据集。 要了解数据准备和功能工程，请访 [问使用JupyterLab笔记](../jupyterlab/create-a-recipe.md#data-preparation-and-feature-engineering) 本创建菜谱的教程中，有关数据准备和功能工程的部分。
+配置数据加载 `platform_sdk` 器后，数据将进行准备，然后被拆分到数据 `train` 集和数 `val` 据集。 要了解数据准备和功能工程，请访问教程中有关 [数据准备和功能工程的部分](../jupyterlab/create-a-recipe.md#data-preparation-and-feature-engineering) ，该教程旨在使用笔记本创建 [!DNL JupyterLab] 菜谱。
