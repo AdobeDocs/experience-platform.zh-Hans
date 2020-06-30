@@ -4,51 +4,51 @@ solution: Experience Platform
 title: JupyterLab用户指南
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 49f0678cf8bf4349d0b63f3525a1f707f725ede9
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '3782'
-ht-degree: 10%
+source-wordcount: '3647'
+ht-degree: 11%
 
 ---
 
 
-# JupyterLab用户指南
+# [!DNL JupyterLab] 用户指南
 
-JupyterLab是Project Jupyter的基于Web的 <a href="https://jupyter.org/" target="_blank">用户界面</a> ，紧密集成在其中 [!DNL Adobe Experience Platform]。 它为数据科学家提供一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起使用。
+[!DNL JupyterLab] 是Project Jupyter的基于web的用 <a href="https://jupyter.org/" target="_blank">户界面</a> ，并紧密集成在 [!DNL Adobe Experience Platform]中 它为数据科学家提供一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起使用。
 
-本文档概述了JupyterLab及其功能以及执行常见操作的说明。
+本文档概述其 [!DNL JupyterLab] 功能以及执行常见操作的说明。
 
-## JupyterLab在Experience Platform方面
+## [!DNL JupyterLab] on [!DNL Experience Platform]
 
 Experience Platform的JupyterLab集成随附架构更改、设计注意事项、自定义笔记本扩展、预安装库和Adobe主题界面。
 
-以下列表概述了Platform上JupyterLab特有的一些功能：
+以下列表概述了JupyterLab在平台上独有的一些功能：
 
 | 功能 | 描述 |
 | --- | --- |
-| **内核** | 内核提供笔记本和其他JupyterLab前端以不同编程语言执行和检查代码的能力。 Experience Platform提供额外的内核，支持Python、R、PySpark和Spark中的开发。 有关更多 [详细信息](#kernels) ，请参阅内核部分。 |
-| **数据访问** | 借助对读和写功能的完全支持，直接从JupyterLab中访问现有数据集。 |
-| **Platform服务集成** | 内置集成允许您直接从JupyterLab中利用其他Platform服务。 与其他Platform服务集成部分提供了受支持集 [成的完整列表](#service-integration)。 |
-| **身份验证** | 除了JupyterLab <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">的内置安全模型</a>，您的应用程序与Experience Platform之间的每次交互(包括Platform服务到服务通信)都通过(IMS)进行加密和 <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] 验证</a>。 |
-| **开发库** | 在Experience Platform中，JupyterLab为Python、R和PySpark提供预装库。 有关受 [支持库](#supported-libraries) 的完整列表，请参阅附录。 |
-| **库控制器** | 当您需要预装的库时，可以为Python和R安装额外的库，并临时存储在隔离容器中，以保持Platform的完整性并保证数据的安全。 有关更多 [详细信息](#kernels) ，请参阅内核部分。 |
+| **内核** | 内核提供笔记本和 [!DNL JupyterLab] 其他前端以不同编程语言执行和检查代码的能力。 [!DNL Experience Platform] 提供额外的内核， [!DNL Python]支持在、R、PySpark和中进行开发 [!DNL Spark]。 有关更多 [详细信息](#kernels) ，请参阅内核部分。 |
+| **数据访问** | 完全支持读写功能， [!DNL JupyterLab] 直接从内部访问现有数据集。 |
+| **[!DNL Platform]服务集成&#x200B;** | 内置集成功能允许您直接从内 [!DNL Platform] 部利用其他服务 [!DNL JupyterLab]。 与其他平台服务集成部分提供支持的集 [成的完整列表](#service-integration)。 |
+| **身份验证** | 除了JupyterLab <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">的内置安全模型</a>，您的应用程序与Experience Platform之间的每次交互（包括平台服务到服务通信）都经过加密，并通过 <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)进行验证</a>。 |
+| **开发库** | 在 [!DNL Experience Platform]中 [!DNL JupyterLab] ，提供预装的 [!DNL Python]PySpark、R和PySpark库。 有关受 [支持库](#supported-libraries) 的完整列表，请参阅附录。 |
+| **库控制器** | 当您需要预装的库时，可以为Python和R安装额外的库，并临时存储在隔离的容器中，以保持数据的完整性 [!DNL Platform] 和安全性。 有关更多 [详细信息](#kernels) ，请参阅内核部分。 |
 
 >[!NOTE] 其他库仅可用于安装它们的会话。 启动新会话时，必须重新安装所需的任何其他库。
 
-## 与其他Platform服务集成 {#service-integration}
+## 与其他服务集 [!DNL Platform] 成 {#service-integration}
 
-标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 JupyterLab作为嵌入式IDE [!DNL Platform] 的集成使它能够与其他服务交互， [!DNL Platform] 从而使您能够充分 [!DNL Platform] 利用其潜能。 JupyterLab [!DNL Platform] 提供以下服务：
+标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 集成到 [!DNL JupyterLab] 作 [!DNL Platform] 为嵌入式IDE，可以与其他服务交互， [!DNL Platform] 使您能够充分利用 [!DNL Platform] 其潜能。 以下服 [!DNL Platform] 务可在以下网站 [!DNL JupyterLab]提供：
 
-* **目录服务：** 使用读写功能访问和浏览数据集。
-* **查询服务：** 使用SQL访问和浏览数据集，在处理大量数据时提供更低的数据访问开销。
-* **Sensei ML框架：** 模型开发，能够对数据进行培训和评分，并且只需单击一下即可创建菜谱。
-* **体验数据模型(XDM):** 标准化和互操作性是Adobe Experience Platform背后的关键概念。 [Adobe推动的体验数据模型](https://www.adobe.com/go/xdm-home-en)(XDM)旨在实现客户体验数据标准化并定义客户体验管理模式。
+* **[!DNL Catalog Service]:**使用读写功能访问和浏览数据集。
+* **[!DNL Query Service]:**使用SQL访问和浏览数据集，在处理大量数据时提供更低的数据访问开销。
+* **[!DNL Sensei ML Framework]:**模型开发，能够对数据进行培训和评分，并且只需单击一下即可创建菜谱。
+* **[!DNL Experience Data Model (XDM)]:**标准化和互操作性是Adobe Experience Platform背后的关键概念。[Adobe推动的体验数据模型](https://www.adobe.com/go/xdm-home-en)(XDM)旨在实现客户体验数据标准化并定义客户体验管理模式。
 
->[!NOTE] JupyterLab [!DNL Platform] 上的某些服务集成仅限于特定内核。 有关详细信息，请 [参阅](#kernels) “内核”一节。
+>[!NOTE] 上的 [!DNL Platform] 某些服务集 [!DNL JupyterLab] 成仅限于特定内核。 有关详细信息，请 [参阅](#kernels) “内核”一节。
 
 ## 主要功能和常见操作
 
-有关JupyterLab的主要功能以及执行常见操作的说明的信息，请参见以下各节：
+以下各节提供了 [!DNL JupyterLab] 有关执行常见操作的主要功能和说明的信息：
 
 * [访问JupyterLab](#access-jupyterlab)
 * [JupyterLab接口](#jupyterlab-interface)
@@ -58,28 +58,28 @@ Experience Platform的JupyterLab集成随附架构更改、设计注意事项、
 * [PySpark/Spark执行资源](#execution-resource)
 * [启动器](#launcher)
 
-### 访问JupyterLab {#access-jupyterlab}
+### 访问 [!DNL JupyterLab] {#access-jupyterlab}
 
-在 [Adobe Experience Platform](https://platform.adobe.com)，从左 **侧导** 航列中选择“笔记本”。 给JupyterLab留出一些时间来完全初始化。
+在 [Adobe Experience Platform](https://platform.adobe.com)，从左 **侧导** 航列中选择“笔记本”。 允许一些时间 [!DNL JupyterLab] 进行完全初始化。
 
 ![](../images/jupyterlab/user-guide/access_jupyterlab.png)
 
-### JupyterLab接口 {#jupyterlab-interface}
+### [!DNL JupyterLab] 界面 {#jupyterlab-interface}
 
-JupyterLab界面由菜单栏、可折叠的左侧提要栏和包含文档和活动选项卡的主工作区组成。
+界 [!DNL JupyterLab] 面由菜单栏、可折叠的左侧提要栏和包含文档和活动选项卡的主工作区组成。
 
 **菜单栏**
 
-界面顶部的菜单栏有顶级菜单，这些菜单显示JupyterLab中可用的操作及其键盘快捷键：
+界面顶部的菜单栏有顶级菜单，这些菜单显示使用键盘快捷键 [!DNL JupyterLab] 可执行的操作：
 
 * **文件：** 与文件和目录相关的操作
 * **编辑：** 与编辑文档和其他活动相关的操作
-* **视图:** 改变JupyterLab外观的操作
+* **视图:** 改变外观的动作 [!DNL JupyterLab]
 * **运行：** 在不同活动（如笔记本电脑和代码控制台）中运行代码的操作
 * **内核：** 用于管理内核的操作
 * **选项卡：** 一列表开放式文档和活动
 * **设置：** 常用设置和高级设置编辑器
-* **帮助：** 列表JupyterLab和内核帮助链接
+* **帮助：** 列表和内 [!DNL JupyterLab] 核帮助链接
 
 **左侧提要栏**
 
@@ -98,7 +98,7 @@ JupyterLab界面由菜单栏、可折叠的左侧提要栏和包含文档和活�
 
 **主要工作区**
 
-JupyterLab中的主要工作区域允许您将文档和其他活动排列到选项卡面板中，这些选项卡可以调整大小或进行细分。 将选项卡拖动到选项卡面板的中心，以迁移选项卡。 将选项卡拖至面板的左侧、右侧、顶部或底部，以划分面板：
+中的主要工作区 [!DNL JupyterLab] 域允许您将文档和其他活动排列到选项卡的面板中，这些选项卡可以调整大小或细分。 将选项卡拖动到选项卡面板的中心，以迁移选项卡。 将选项卡拖至面板的左侧、右侧、顶部或底部，以划分面板：
 
 ![](../images/jupyterlab/user-guide/main_work_area.gif)
 
@@ -120,19 +120,19 @@ JupyterLab中的主要工作区域允许您将文档和其他活动排列到选�
 
 ### 内核 {#kernels}
 
-笔记本电脑内核是处理笔记本电脑单元的语言专用计算引擎。 除了Python,JupyterLab还在R、PySpark和Spark(Scala)中提供其他语言支持。 打开笔记本文档时，将启动关联的内核。 当执行笔记本单元时，内核执行计算并产生可能消耗大量CPU和内存资源的结果。 请注意，在内核关闭之前，不会释放已分配的内存。
+笔记本电脑内核是处理笔记本电脑单元的语言专用计算引擎。 此外，还 [!DNL Python]在 [!DNL JupyterLab] R、PySpark和(Scala)中提供 [!DNL Spark] 其他语言支持。 打开笔记本文档时，将启动关联的内核。 当执行笔记本单元时，内核执行计算并产生可能消耗大量CPU和内存资源的结果。 请注意，在内核关闭之前，不会释放已分配的内存。
 
 某些特性和功能仅限于下表所述的特定内核：
 
-| 内核 | 库安装支持 | Platform集成 |
+| 内核 | 库安装支持 | [!DNL Platform] 集成 |
 | :----: | :--------------------------: | :-------------------- |
-| **Python** | 是 | <ul><li>Sensei ML框架</li><li>目录服务</li><li>查询服务</li></ul> |
-| **R** | 是 | <ul><li>Sensei ML框架</li><li>目录服务</li></ul> |
-| **斯卡拉** | 否 | <ul><li>Sensei ML框架</li><li>目录服务</li></ul> |
+| **[!DNL Python]** | 是 | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li><li>[!DNL Query Service]</li></ul> |
+| **R** | 是 | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li></ul> |
+| **斯卡拉** | 否 | <ul><li>[!DNL Sensei ML Framework]</li><li>[!DNL Catalog Service]</li></ul> |
 
 ### 内核会话 {#kernel-sessions}
 
-JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活动会话都可以通过从左侧提要栏 **扩展“运行终端和内核** ”选项卡找到。 通过观察笔记本界面的右上角，可以识别笔记本的内核类型和状态。 在下图中，笔记本的关联内核为 **Python** 3，其当前状态由右侧的灰色圆圈表示。 空心圆表示空闲内核，实心圆表示忙碌内核。
+每个活动笔记本或活动 [!DNL JupyterLab] 都使用内核会话。 所有活动会话都可以通过从左侧提要栏 **扩展“运行终端和内核** ”选项卡找到。 通过观察笔记本界面的右上角，可以识别笔记本的内核类型和状态。 在下图中，笔记本的关联内核为 **[!DNL Python]3 **，其当前状态由右侧的灰色圆圈表示。 空心圆表示空闲内核，实心圆表示忙碌内核。
 
 ![](../images/jupyterlab/user-guide/kernel_and_state_1.png)
 
@@ -151,8 +151,8 @@ JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活
 | 空白 | 一个空的笔记本文件。 |
 | 入门 | 一种预填的笔记本，用样本数据演示数据探索。 |
 | 零售销售 | 预填的笔记本，其中包含使 <a href="https://adobe.ly/2wOgO3L" target="_blank">用示例数据的“零售</a> 销售菜谱”。 |
-| Recipe Builder | 用于在JupyterLab中创建菜谱的笔记本模板。 它预填了演示和描述菜谱创建过程的代码和评注。 有关详细的 <a href="https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en" target="_blank">演练，请参阅笔记本</a> ，参阅菜谱教程。 |
-| 查询服务 | 一种预填充的笔记本，直接在JupyterLab中演示查询服务的使用，它提供了可大规模分析数据的示例工作流。 |
+| Recipe Builder | 用于在中创建菜谱的笔记本模 [!DNL JupyterLab]板。 它预填了演示和描述菜谱创建过程的代码和评注。 有关详细的 <a href="https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en" target="_blank">演练，请参阅笔记本</a> ，参阅菜谱教程。 |
+| [!DNL Query Service] | 一种预填充的笔记本，其演示直接在 [!DNL Query Service] 提供的 [!DNL JupyterLab] 样本工作流中使用，该样本可大规模分析数据。 |
 | XDM事件 | 预填的笔记本，展示对后值体验事件数据的数据探索，侧重于数据结构中的常见功能。 |
 | XDM查询 | 预填的笔记本，展示关于体验查询数据的示例业务事件。 |
 | 聚合 | 预先填充的笔记本，展示将大量数据聚合为较小、可管理的块的样本工作流。 |
@@ -167,14 +167,14 @@ JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活
         <th><strong>入门</strong></th>
         <th><strong>零售销售</strong></th>
         <th><strong>Recipe Builder</strong></th>
-        <th><strong>查询服务</strong></th>
+        <th><strong>[!DNL查询服务]</strong></th>
         <th><strong>XDM事件</strong></th>
         <th><strong>XDM查询</strong></th>
         <th><strong>聚合</strong></th>
         <th><strong>聚类</strong></th>
     </tr>
     <tr>
-        <th><strong>Python</strong></th>
+        <th><strong>[!DNL Python]</strong></th>
         <td >是</td>
         <td >是</td>
         <td >是</td>
@@ -198,7 +198,7 @@ JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活
         <td >否</td>
     </tr>
       <tr>
-        <th  ><strong>PySpark 3(Spark 2.4)</strong></th>
+        <th  ><strong>PySpark 3([!DNL Spark] 2.4)</strong></th>
         <td >否</td>
         <td >是</td>
         <td >否</td>
@@ -227,7 +227,7 @@ JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活
 
 ![](../images/jupyterlab/user-guide/new_launcher.gif)
 
-### Python/R中的GPU和内存服务器配置
+### /R中的GPU和内存服 [!DNL Python]务器配置
 
 在 [!DNL JupyterLab] 中，选择右上角的齿轮图标以打开笔记本 *服务器配置*。 您可以打开GPU并使用滑块分配所需的内存量。 您可以分配的内存量取决于您的组织已配置的内存量。 选择 **[!UICONTROL 要保存]** 的更新配置。
 
@@ -236,19 +236,19 @@ JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活
 
 ![](../images/jupyterlab/user-guide/notebook-gpu-config.png)
 
-## 使用笔记本访问Platform数据
+## 使用笔 [!DNL Platform] 记本电脑访问数据
 
-每个支持的内核都提供内置功能，允许您从笔记本中的数据集读取Platform数据。 但是，对分页数据的支持仅限于Python和R笔记本。
+每个支持的内核都提供内置功能，允许您从笔记本 [!DNL Platform] 中的数据集读取数据。 但是，对分页数据的支持仅限于 [!DNL Python] 和R笔记本。
 
 ### 笔记本数据限制
 
-以下信息定义可读取的最大数据量、已使用的数据类型以及读取数据所需的估计时间范围。 对于Python和R，使用配置为40GB RAM的笔记本服务器作为基准。 对于PySpark和Scala，以下基准测试使用的数据库群集配置为64GB RAM、8个核心、2 DBU（最多4个工作程序）。
+以下信息定义可读取的最大数据量、已使用的数据类型以及读取数据所需的估计时间范围。 对 [!DNL Python] 于基准测试和R，使用配置为40GB RAM的笔记本电脑服务器。 对于PySpark和Scala，以下基准测试使用的数据库群集配置为64GB RAM、8个核心、2 DBU（最多4个工作程序）。
 
-使用的ExperienceEvent模式数据在大小上各不相同，从1000(1K)行开始，范围最多可达10亿(1B)行。 请注意，对于PySpark和Spark指标，XDM数据使用10天的日期范围。
+使用的ExperienceEvent模式数据在大小上各不相同，从1000(1K)行开始，范围最多可达10亿(1B)行。 请注意，对于PySpark [!DNL Spark] 和指标，XDM数据使用10天的日期范围。
 
-临时模式数据已使用查询服务创建表作为选择(CTAS)进行预处理。 此数据也从1000行(1K)开始，范围最多为10亿行(1B)。
+临时模式数据已使用“创建表为选 [!DNL Query Service] 择”(CTAS)进行预处理。 此数据也从1000行(1K)开始，范围最多为10亿行(1B)。
 
-#### Python笔记本数据限制
+#### [!DNL Python] 笔记本数据限制
 
 **XDM体验事件模式:** 在22分钟内，您最多应能读取200万行（磁盘上约6.1 GB数据）的XDM数据。 添加其他行可能会导致错误。
 
@@ -280,7 +280,7 @@ JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活
 | 磁盘大小(MB) | 0.082 | 0.612 | 9.0 | 91 | 188 | 293 |
 | R SDK（秒） | 7.7 | 4.58 | 35.9 | 233 | 470.5 | 603 |
 
-#### PySpark（Python内核）笔记本数据限制：
+#### PySpark(内[!DNL Python] 核)笔记本数据限制：
 
 **XDM体验事件模式:** 在交互模式下，您应能在约20分钟内读取最多500万行（磁盘上约13.42GB数据）的XDM数据。 交互模式仅支持多达500万行。 如果您希望读取较大的数据集，建议您切换到“批处理”模式。 在“批处理”模式下，您应该能够在约14小时内读取最多5亿行XDM数据（磁盘上约1.31TB数据）。
 
@@ -298,7 +298,7 @@ JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活
 | SDK交互模式（以秒为单位） | 28.2s | 18.6s | 20.8s | 20.9s | 23.8s | 21.7s | 24.7s | 22s | 28.4s | 40s | 97.4s | 154.5s |
 | SDK批处理模式（秒） | 428.8s | 578.8s | 641.4s | 538.5s | 630.9s | 467.3s | 411s | 675s | 702s | 719.2s | 1022.1s | 1122.3s |
 
-#### Spark（Scala内核）笔记本数据限制：
+#### [!DNL Spark] （Scala内核）笔记本数据限制：
 
 **XDM体验事件模式:** 在交互模式下，您应该能够在大约18分钟内读取最多500万行（磁盘上的13.42GB数据）的XDM数据。 交互模式仅支持多达500万行。 如果您希望读取较大的数据集，建议您切换到“批处理”模式。 在“批处理”模式下，您应该能够在约14小时内读取最多5亿行XDM数据（磁盘上约1.31TB数据）。
 
@@ -316,13 +316,13 @@ JupyterLab上的每个活动笔记本或活动都使用内核会话。 所有活
 | SDK交互模式（以秒为单位） | 35.7s | 31s | 19.5s | 25.3s | 23s | 33.2s | 25.5s | 29.2s | 29.7s | 36.9s | 83.5s | 139s |
 | SDK批处理模式（秒） | 448.8s | 459.7s | 519s | 475.8s | 599.9s | 347.6s | 407.8s | 397s | 518.8s | 487.9s | 760.2s | 975.4s |
 
-### 从Python/R中的数据集中读取
+### 在/R中读取数 [!DNL Python]据集
 
-Python和R笔记本允许您在访问数据集时对数据进行分页。 读取有分页和无分页数据的示例代码如下所示。
+[!DNL Python] 而R型笔记本电脑允许您在访问数据集时对数据进行分页。 读取有分页和无分页数据的示例代码如下所示。
 
 [//]: # (In the following samples, the first step is currently required but once the SDK is complete, users are no longer required to explicitly define client_context)
 
-#### 在Python/R中读取数据集，无需分页
+#### 在/R中读取数 [!DNL Python]据集，无分页
 
 执行以下代码将读取整个数据集。 如果执行成功，则数据将保存为变量引用的Pactis数据帧 `df`。
 
@@ -352,7 +352,7 @@ df
 
 * `{DATASET_ID}`: 要访问的数据集的唯一标识
 
-#### 使用分页从Python/R中的数据集读取
+#### 在/R中读取 [!DNL Python]带有分页的数据集
 
 执行以下代码将从指定的数据集中读取数据。 分页是通过分别通过函数和函数限制和偏移数据 `limit()` 来实现 `offset()` 的。 限制数据指要读取的数据点的最大数，而偏移指在读取数据之前要跳过的数据点的数量。 如果读取操作成功执行，则数据将保存为变量引用的Pactis数据帧 `df`。
 
@@ -382,11 +382,11 @@ df <- dataset_reader$limit(100L)$offset(10L)$read()
 
 * `{DATASET_ID}`: 要访问的数据集的唯一标识
 
-### 从PySpark/Spark/Scala中的数据集中读取
+### 从PySpark//Scala中的数据集[!DNL Spark]中读取
 
 打开活动的PySpark或Scala笔记本时，从左侧提要栏 **展开** “数据浏览器”选项卡，并单 **击多次集** ,视图可用数据集的列表。 右键单击要访问的数据集列表，然后单击“在笔记本 **中浏览数据”**。 将生成以下代码单元格：
 
-#### PySpark(Spark 2.4) {#pyspark2.4}
+#### PySpark([!DNL Spark] 2.4) {#pyspark2.4}
 
 随着Spark 2.4的推出，提供 [`%dataset`](#magic) 了自定义幻灯。
 
@@ -398,7 +398,7 @@ pd0.describe()
 pd0.show(10, False)
 ```
 
-#### Scala(Spark 2.4) {#spark2.4}
+#### Scala([!DNL Spark] 2.4) {#spark2.4}
 
 ```scala
 // Scala (Spark 2.4)
@@ -422,9 +422,9 @@ dataFrame.show()
 >[!TIP]
 >在Scala中，您可 `sys.env()` 以使用从中声明和返回值 `option`。
 
-### 在PySpark 3(Spark 2.4)笔记本中使用%dataset魔术 {#magic}
+### 在PySpark 3(2.4)笔记本中使[!DNL Spark] 用%dataset magic {#magic}
 
-随着Spark 2.4的推出，自 `%dataset` 定义魔术功能已提供给新的PySpark 3(Spark 2.4)笔记本（Python 3内核）。
+随着2.4 [!DNL Spark] 的推出， `%dataset` 自定义魔术功能将被提供用于新的PySpark 3(2.4)[!DNL Spark] 笔记本([!DNL Python] 3内核)。
 
 **使用情况**
 
@@ -432,7 +432,7 @@ dataFrame.show()
 
 **描述**
 
-用于从Python笔记本（Python 3内核）读取或写入数据集的自定义数据科学工作区魔术命令。
+用于从 [!DNL Data Science Workspace] 笔记本（3内核）读取或写入数据集 [!DNL Python] 的自定[!DNL Python] 义魔术命令。
 
 * **{action}**: 要对数据集执行的操作类型。 两个操作可用于“读取”或“写入”。
 * **—datasetId {id}**: 用于提供要读或写的数据集的id。 这是必需参数。
@@ -446,22 +446,22 @@ dataFrame.show()
 * **阅读示例**: `%dataset read --datasetId 5e68141134492718af974841 --dataFrame pd0`
 * **编写示例**: `%dataset write --datasetId 5e68141134492718af974842 --dataFrame pd0`
 
-### 查询查询服务在Python中的应用
+### 查询数据使 [!DNL Query Service] 用 [!DNL Python]
 
-JupyterLab的Platform功能允许您在Python笔记本中使用SQL通过Adobe Experience Platform <a href="https://www.adobe.com/go/query-service-home-en" target="_blank">查询服务访问数据</a>。 通过查询服务访问数据对于处理大型数据集非常有用，因为它具有出色的运行时间。 建议使用查询服务查询数据的处理时间限制为十分钟。
+[!DNL JupyterLab] on允 [!DNL Platform] 许您在笔记本中使 [!DNL Python] 用SQL通过Adobe Experience Platform <a href="https://www.adobe.com/go/query-service-home-en" target="_blank">查询服务访问数据</a>。 通过访问数 [!DNL Query Service] 据对于处理大型数据集很有用，因为它具有出色的运行时间。 请注意，使用查询 [!DNL Query Service] 数据的处理时间限制为十分钟。
 
-在JupyterLab中使用查询服务之前，请确保您对查询服务SQL语法 <a href="https://www.adobe.com/go/query-service-sql-syntax-en" target="_blank">有正确的了解</a>。
+在中使 [!DNL Query Service] 用 [!DNL JupyterLab]之前，请确保您对SQL语法有 <a href="https://www.adobe.com/go/query-service-sql-syntax-en" target="_blank">[!DNL Query Service] 正确的了解</a>。
 
-使用查询服务查询数据需要您提供目标数据集的名称。 您可以使用数据资源管理器查找所需的数据集，从而生成必 **要的代码单元**。 右键单击数据集列表，然后单 **击笔记本中的查询** ，以在笔记本中生成以下两个代码单元格：
+使用查询 [!DNL Query Service] 数据需要您提供目标数据集的名称。 您可以使用数据资源管理器查找所需的数据集，从而生成必 **要的代码单元**。 右键单击数据集列表，然后单 **击笔记本中的查询** ，以在笔记本中生成以下两个代码单元格：
 
 
-为了在JupyterLab中利用查询服务，您必须首先在工作的Python笔记本和查询服务之间建立连接。 这可以通过执行第一生成的单元来实现。
+要在中利用 [!DNL Query Service] , [!DNL JupyterLab]您必须先在工作笔记本和之间创建 [!DNL Python] 连接 [!DNL Query Service]。 这可以通过执行第一生成的单元来实现。
 
 ```python
 qs_connect()
 ```
 
-在第二个生成的单元格中，必须在SQL查询之前定义第一行。 默认情况下，生成的单元格定义一个可选变量(`df0`)，该变量将查询结果保存为Apnotics数据帧。 <br>该参 `-c QS_CONNECTION` 数是必需的，它告知内核对查询服务执行SQL查询。 有关一 [列表其](#optional-sql-flags-for-query-service) 他参数，请参见附录。
+在第二个生成的单元格中，必须在SQL查询之前定义第一行。 默认情况下，生成的单元格定义一个可选变量(`df0`)，该变量将查询结果保存为Apnotics数据帧。 <br>该 `-c QS_CONNECTION` 参数是必需的，它告诉内核执行SQL查询 [!DNL Query Service]。 有关一 [列表其](#optional-sql-flags-for-query-service) 他参数，请参见附录。
 
 ```python
 %%read_sql df0 -c QS_CONNECTION
@@ -484,9 +484,9 @@ SELECT {table_columns}
 FROM {table_name}
 ```
 
-### 在Python/R中过滤ExperienceEvent数据
+### 在/R中过滤ExperienceEvent [!DNL Python]数据
 
-要访问和过滤Python或R笔记本中的ExperienceEvent数据集，您必须提供数据集(`{DATASET_ID}`)的ID以及使用逻辑运算符定义特定时间范围的过滤器规则。 定义时间范围时，将忽略任何指定的分页，并考虑整个数据集。
+要访问和过滤或R笔记本 [!DNL Python] 中的ExperienceEvent数据集，您必须提供数据集(`{DATASET_ID}`)的ID以及使用逻辑运算符定义特定时间范围的过滤器规则。 定义时间范围时，将忽略任何指定的分页，并考虑整个数据集。
 
 筛选操作符的列表说明如下：
 
@@ -530,13 +530,13 @@ df <- dataset_reader$
 )$read()
 ```
 
-### 在PySpark/Spark中过滤ExperienceEvent数据
+### 在PySpark/[!DNL Spark]
 
 在PySpark或Scala笔记本中访问和过滤ExperienceEvent数据集时，需要您提供数据集标识(`{DATASET_ID}`)、组织的IMS标识以及定义特定时间范围的过滤器规则。 过滤时间范围是使用函数定义的， `spark.sql()`其中函数参数是SQL查询字符串。
 
 以下单元格将ExperienceEvent数据集筛选为2019年1月1日至2019年12月31日之间仅存的数据。
 
-#### PySpark 3(Spark 2.4) {#pyspark3-spark2.4}
+#### PySpark 3([!DNL Spark] 2.4) {#pyspark3-spark2.4}
 
 ```python
 # PySpark 3 (Spark 2.4)
@@ -556,7 +556,7 @@ timepd = spark.sql("""
 timepd.show()
 ```
 
-#### Scala(Spark 2.4) {#scala-spark}
+#### Scala([!DNL Spark] 2.4) {#scala-spark}
 
 ```scala
 // Spark (Spark 2.4)
@@ -606,7 +606,7 @@ timedf.show()
 
 ## 支持的库 {#supported-libraries}
 
-### Python / R
+### [!DNL Python] / R
 
 | 库 | 版本 |
 | :------ | :------ |
@@ -687,7 +687,7 @@ timedf.show()
 | graphviz | 2.40.1 |
 | python-graphviz | 0.11.1 |
 | azure存储 | 0.36.0 |
-| jupterlab | 1.0.4 |
+| [!DNL jupyterlab] | 1.0.4 |
 | 熊猫_ml | 0.6.1 |
 | tensorflow-gpu | 1.14.0 |
 | nodejs | 12.3.0 |
@@ -726,12 +726,12 @@ timedf.show()
 | 派箭 | 0.8.0 |
 | boto3 | 1.5.18 |
 | azure-存储-blob | 1.4.0 |
-| python | 3.6.7 |
+| [!DNL python] | 3.6.7 |
 | mkl-rt | 11.1 |
 
-## 查询服务的可选SQL标志 {#optional-sql-flags-for-query-service}
+## 可选的SQL标志 [!DNL Query Service] {#optional-sql-flags-for-query-service}
 
-此表概述了可用于查询服务的可选SQL标志。
+此表概述了可用于的可选SQL标志 [!DNL Query Service]。
 
 | **标志** | **描述** |
 | --- | --- |
