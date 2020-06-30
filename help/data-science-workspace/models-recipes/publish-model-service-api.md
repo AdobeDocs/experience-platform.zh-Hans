@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 将模型发布为服务(API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 967ca85efba315819c6241d034dc3c25a5b1fc70
+source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
 workflow-type: tm+mt
-source-wordcount: '1487'
+source-wordcount: '1478'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 将模型发布为服务(API)
 
-本教程介绍使用Sensei Machine Learning API将模型作为服务发 [布的过程](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)。
+本教程介绍使用发布模型作为服务的过程 [!DNL Sensei Machine Learning API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)。
 
 ## 入门指南
 
@@ -22,13 +22,13 @@ ht-degree: 1%
 
 要执行本教程，您必须拥有现有的ML引擎、ML实例和实验。 有关如何在API中创建这些菜谱的步骤，请参阅有关导入 [打包菜谱的教程](./import-packaged-recipe-api.md)。
 
-最后，在开始本教程之前，请查看开 [发人员指南的](../api/getting-started.md) “入门”部分，了解成功调用Sensei机器学习API所需的重要信息，包括本教程中使用的所需标头：
+最后，在开始本教程之前，请查看开 [发人员指南](../api/getting-started.md) “入门”部分，了解成功调用API所需的重要信息，包括本教程中使用的 [!DNL Sensei Machine Learning] 所需标头：
 
 - `{ACCESS_TOKEN}`
 - `{IMS_ORG}`
 - `{API_KEY}`
 
-所有POST、PUT和PATCH请求都需要额外的标头：
+所有POST、PUT和PATCH请求都需要额外的标题：
 
 - 内容类型： application/json
 
@@ -38,7 +38,7 @@ ht-degree: 1%
 
 | 搜索词 | 定义 |
 --- | ---
-| **机器学习实例（ML实例）** | 特定租户的Sensei引擎实例，包含特定数据、参数和Sensei代码。 |
+| **机器学习实例（ML实例）** | 特定租户的 [!DNL Sensei] 引擎实例，包含特定数据、参数和代 [!DNL Sensei] 码。 |
 | **实验** | 用于保持培训实验运行、评分实验运行或两者的伞形实体。 |
 | **计划实验** | 描述由用户定义的计划管理的培训或评分实验运行的自动化术语。 |
 | **实验运行** | 培训或评分实验的特定实例。 特定实验的多个实验运行可能在用于培训或评分的数据集值上有所不同。 |
