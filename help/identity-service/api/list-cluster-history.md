@@ -1,22 +1,25 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 获取标识的群集历史记录
+title: 获取身份的群集历史记录
 topic: API guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+workflow-type: tm+mt
+source-wordcount: '303'
+ht-degree: 1%
 
 ---
 
 
-# 获取标识的群集历史记录
+# 获取身份的群集历史记录
 
-身份可以在各种设备图形运行过程中移动群集。 Identity Service提供特定标识的群集关联随时间变化的可见性。
+身份可以在各种设备图形运行过程中移动群集。 [!DNL Identity Service] 提供特定身份的群集关联随时间变化的可见性。
 
-使用可 `graph-type` 选参数指示从中获取群集的输出类型。 选项包括：
+使用可 `graph-type` 选参数指示要从中获取群集的输出类型。 选项有：
 
 - `None` -不执行身份拼接。
-- `Private Graph` -根据您的个人身份图执行身份拼接。 如果未 `graph-type` 提供，则这是默认值。
+- `Private Graph` -根据您的个人身份图进行身份拼接。 如果未 `graph-type` 提供，则此为默认值。
 
 ## 获取单个标识的群集历史记录
 
@@ -28,7 +31,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/cluster/history
 
 **请求**
 
-选项1:将标识作为命名空间(`nsId`按ID)和ID值(`id`)提供。
+选项1: 将标识作为命名空间(`nsId`按ID)和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -39,7 +42,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2:将标识作为命名空间(`ns`按名称)和ID值(`id`)提供。
+选项2: 将标识作为命名空间(`ns`按名称)和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -50,7 +53,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3:提供XID()身份`xid`证。 有关如何获取身份XID的详细信息，请参阅本文档中有关获取身份 [XID的部分](./list-native-id.md)。
+选项3: 提供XID()身`xid`份。 有关如何获取身份的XID的详细信息，请参阅此文档中 [有关获取身份的XID的部分](./list-native-id.md)。
 
 ```shell
 curl -X GET \
@@ -63,9 +66,9 @@ curl -X GET \
 
 ## 获取多个身份的群集历史记录
 
-将该方 `POST` 法用作上述方法的批量等效 `GET` 值，以返回多个标识的簇历史。
+将该方 `POST` 法用作上述方法的批 `GET` 量等效值，以返回多个身份的簇历史。
 
->[!NOTE] 请求应指示最多1000个身份。 超过1000个身份的请求将生成400个状态代码。
+>[!NOTE] 请求应最多指明1000个身份。 超过1000个身份的请求将生成400个状态代码。
 
 **API格式**
 
@@ -75,7 +78,7 @@ POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 
 **请求主体**
 
-选项1:提供要检索其群集成员的XID列表。
+选项1: 提供要检索群集成员的XID列表。
 
 ```shell
 {
@@ -84,7 +87,7 @@ POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 }
 ```
 
-选项2:提供身份列表作为复合ID，其中每个ID值都由命名空间代码命名，命名空间。
+选项2: 提供身份列表作为复合ID，其中每个ID值都由命名空间代码命名，命名空间。
 
 ```shell
 {
@@ -104,7 +107,7 @@ POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 
 **存根请求**
 
-使用标 `x-uis-cst-ctx: stub` 题将返回无效响应。 这是一个临时解决方案，在服务完成的同时促进早期一体化发展进程。 当不再需要时，将弃用此选项。
+使用标题 `x-uis-cst-ctx: stub` 将返回一个无效响应。 这是一个临时解决方案，在服务完成的同时，促进早期的一体化发展进程。 当不再需要时，将弃用此选项。
 
 ```shell
 curl -X POST \
@@ -207,8 +210,8 @@ curl -X POST \
 }
 ```
 
->[!NOTE] 无论请求的XID是否属于同一群集，或者如果一个或多个XID与任何群集相关联，响应始终为请求中提供的每个XID具有一个条目。
+>[!NOTE] 无论请求的XID是属于同一群集，还是一个或多个具有任何关联的群集，响应始终为请求中提供的每个XID包含一个条目。
 
 ## 后续步骤
 
-继续执行下一个教程以 [列表标识映射](./list-identity-mappings.md)
+继续到下一个教程以 [列表标识映射](./list-identity-mappings.md)
