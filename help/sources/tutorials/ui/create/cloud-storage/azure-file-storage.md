@@ -4,26 +4,26 @@ solution: Experience Platform
 title: 在UI中创建Azure文件存储源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: ced839f64bea48703c530c83d8592f3842c17e53
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
 workflow-type: tm+mt
-source-wordcount: '522'
-ht-degree: 0%
+source-wordcount: '485'
+ht-degree: 1%
 
 ---
 
 
-# 在UI中创建Azure文件存储源连接器
+# 在UI [!DNL Azure File Storage] 中创建源连接器
 
 >[!NOTE]
->Azure文件存储连接器处于测试状态。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
+>连接 [!DNL Azure File Storage] 器为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-Adobe Experience Platform中的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用存储用户界面验证Azure文件Platform源连接器的步骤。
+Adobe Experience Platform中的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用用户界面 [!DNL Azure File Storage] 验证源连接器的 [!DNL Platform] 步骤。
 
 ## 入门指南
 
 本教程需要对Adobe Experience Platform的以下组件有一定的了解：
 
-- [体验数据模型(XDM)系统](../../../../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
+- [体验数据模型(XDM)系统](../../../../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    - [模式合成基础](../../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    - [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md): 了解如何使用模式编辑器UI创建自定义模式。
 - [实时客户用户档案](../../../../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
@@ -32,19 +32,19 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 ### 收集所需的凭据
 
-要验证您的Azure文件存储源连接器，必须为以下连接属性提供值：
+要验证源连接器的 [!DNL Azure File Storage] 身份，必须为以下连接属性提供值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `host` | 您正在访问的Azure文件存储实例的端点。 |
-| `userId` | 对Azure文件存储端点具有足够访问权限的用户。 |
-| `password` | Azure文件存储访问密钥。 |
+| `host` | 您访问的实 [!DNL Azure File Storage] 例的端点。 |
+| `userId` | 对端点具有足够访问权限的 [!DNL Azure File Storage] 用户。 |
+| `password` | 访 [!DNL Azure File Storage] 问密钥。 |
 
 有关入门的详细信息，请参 [阅此Azure文件存储文档](https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-windows)。
 
-## 连接您的Azure文件存储帐户
+## 连接帐 [!DNL Azure File Storage] 户
 
-收集所需凭据后，您可以按照以下步骤创建新的Azure文件存储帐户以连接到Platform。
+收集所需凭据后，您可以按照以下步骤创建要连 [!DNL Azure File Storage] 接的新帐户 [!DNL Platform]。
 
 登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选 *[!UICONTROL 择源]* ，以访问源工作区。 “ *[!UICONTROL 目录]* ”屏幕显示可为其创建入站帐户的各种源，每个源显示与它们关联的现有帐户和数据流的数量。
 
@@ -64,10 +64,10 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 ### 现有帐户
 
-要连接现有帐户，请选择要连接的Azure文件存储帐户，然后选择 **[!UICONTROL 下]** 一步以继续。
+要连接现有帐户，请选 [!DNL Azure File Storage] 择要连接的帐户，然后选择 **[!UICONTROL 下一]** 步以继续。
 
 ![现有](../../../../images/tutorials/create/azure-file-storage/existing.png)
 
 ## 后续步骤
 
-通过遵循本教程，您已建立到Azure文件存储帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将云存储中的数据引入Platform](../../dataflow/batch/cloud-storage.md)。
+按照本教程，您已建立了与帐户的 [!DNL Azure File Storage] 连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md)。
