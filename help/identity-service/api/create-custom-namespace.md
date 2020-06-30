@@ -4,16 +4,19 @@ solution: Experience Platform
 title: 创建自定义命名空间
 topic: API guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+workflow-type: tm+mt
+source-wordcount: '75'
+ht-degree: 5%
 
 ---
 
 
 # 创建自定义命名空间
 
-使用Identity命名空间API，您可以创建只适用于您的组织的自定义标识命名空间。
+使用 [!DNL Identity Namespace] API，您可以创建仅对您的组织可用的自定义标识命名空间。
 
-有关创建自定义命名空间的建议，请参 [阅Identity Service常见问题解答文档](../troubleshooting-guide.md)。
+有关创建自定义命名空间的建议，请 [参阅Identity Service常见问题解答文档](../troubleshooting-guide.md)。
 
 >[!NOTE] 命名空间是身份的限定符。 因此，一旦创建了命名空间，便无法删除它。
 
@@ -59,4 +62,4 @@ curl -X POST \
 
 ## 后续步骤
 
-继续到下一个教程， [列表标识的本机ID](./list-native-id.md)
+继续到下一个教程 [以列表标识的本机ID](./list-native-id.md)
