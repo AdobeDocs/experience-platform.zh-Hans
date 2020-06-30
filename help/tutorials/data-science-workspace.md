@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据科学工作区教程
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 4d7d61660e6691d77701db1c089b84eee7f60974
+source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
 workflow-type: tm+mt
-source-wordcount: '1253'
+source-wordcount: '1252'
 ht-degree: 0%
 
 ---
@@ -137,7 +137,7 @@ Adobe Experience Platform允许您通过Sensei机器学习框架运行时构建�
 
 ## 构建实时机器学习应用程序(alpha)
 
-在集线器和边缘上的无缝计算相结合可显着减少过去在为超级个性化体验提供相关性和响应性方面所涉及的延迟。 因此，实时机器学习为同步决策提供了极低延迟的推理。 示例包括呈现个性化网页内容、呈现优惠和折扣，以减少客户流失并提高网店转化率。
+在集线器和集线器上进行无缝计算的组合 [!DNL Edge] 可显着减少通常用于为超级个性化体验提供相关性和响应性的延迟。 因此，实时机器学习为同步决策提供了极低延迟的推理。 示例包括呈现个性化网页内容、呈现优惠和折扣，以减少客户流失并提高网店转化率。
 
 **本指南将帮助您：**
 - 了解实时机器学习架构。
