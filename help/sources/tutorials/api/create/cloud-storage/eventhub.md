@@ -4,58 +4,58 @@ solution: Experience Platform
 title: 使用流服务API创建Azure事件集线器连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 855f543a1cef394d121502f03471a60b97eae256
+source-git-commit: 11431ffcfc2204931fe3e863bfadc7878a40b49c
 workflow-type: tm+mt
-source-wordcount: '593'
+source-wordcount: '536'
 ht-degree: 2%
 
 ---
 
 
-# 使用流服务API创建Azure事件集线器连接器
+# 使用API [!DNL Azure Event Hubs] 创建连接 [!DNL Flow Service] 器
 
 >[!NOTE]
-> Azure事件集线器连接器处于测试状态。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
+> 连接 [!DNL Azure Event Hubs] 器为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-流服务用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程使用Flow Service API指导您完成将Experience Platform连接到Azure事件中心帐户的步骤。
+本教程使 [!DNL Flow Service] 用API指导您完成连接帐户 [!DNL Experience Platform] 的步 [!DNL Azure Event Hubs] 骤。
 
 ## 入门指南
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-- [来源](../../../../home.md): Experience Platform允许从各种来源摄取数据，同时使您能够使用Platform服务来构建、标记和增强传入数据。
-- [沙箱](../../../../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+- [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+- [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供您需要了解的其他信息，以便使用流服务API成功连接到Azure事件中心帐户。
+以下各节提供您需要了解的其他信息，以便使用API成 [!DNL Azure Event Hubs] 功连接到帐 [!DNL Flow Service] 户。
 
 ### 收集所需的凭据
 
-要使流服务与您的Azure事件中心帐户连接，您必须为以下连接属性提供值：
+要与您 [!DNL Flow Service] 的帐户连接， [!DNL Azure Event Hubs] 您必须为以下连接属性提供值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
 | `sasKeyName` | 授权规则的名称，也称为SAS密钥名称。 |
 | `sasKey` | 生成的共享访问签名。 |
 | `namespace` | 您访问的事件中心的命名空间。 |
-| `connectionSpec.id` | Azure事件集线器连接规范ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+| `connectionSpec.id` | 连接 [!DNL Azure Event Hubs] 规范ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
 有关这些值的详细信息，请参阅 [此事件中心文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ### 收集所需标题的值
 
-要调用PlatformAPI，您必须先完成身份验证 [教程](../../../../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
 - 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源（包括属于流服务的资源）都与特定虚拟沙箱隔离。 对PlatformAPI的所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
+中的所有资 [!DNL Experience Platform]源(包括属于这些资源 [!DNL Flow Service]的资源)都隔离到特定虚拟沙箱。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -65,7 +65,7 @@ Experience Platform中的所有资源（包括属于流服务的资源）都与�
 
 ## 创建连接
 
-连接指定源并包含该源的凭据。 每个Azure事件集线器帐户只需要一个连接，因为它可用于创建多个源连接器以引入不同的数据。
+连接指定源并包含该源的凭据。 每个帐户只需要一 [!DNL Azure Event Hubs] 个连接，因为它可用于创建多个源连接器以导入不同的数据。
 
 **API格式**
 
@@ -105,8 +105,8 @@ curl -X POST \
 | -------- | ----------- |
 | `auth.params.sasKeyName` | 授权规则的名称，也称为SAS密钥名称。 |
 | `auth.params.sasKey` | 生成的共享访问签名。 |
-| `namespace` | 您访问的事件中心的命名空间。 |
-| `connectionSpec.id` | Azure事件集线器连接规范ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+| `namespace` | 您访问的 [!DNL Event Hubs] 命名空间。 |
+| `connectionSpec.id` | 连接 [!DNL Azure Event Hubs] 规范ID: `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
 **响应**
 
@@ -121,4 +121,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过本教程，您已使用API创建了Azure事件集线器连接，并且作为响应主体的一部分获得了唯一ID。 您可以使用此连接ID [来使用流服务API浏览云存储](../../explore/cloud-storage.md)。
+通过本教程，您已使用API [!DNL Azure Event Hubs] 创建了连接，并且作为响应主体的一部分获得了唯一ID。 您可以使用此连接ID [来使用流服务API浏览云存储](../../explore/cloud-storage.md)。
