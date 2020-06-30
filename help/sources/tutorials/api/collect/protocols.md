@@ -4,61 +4,64 @@ solution: Experience Platform
 title: 通过源连接器和API收集协议数据
 topic: overview
 translation-type: tm+mt
-source-git-commit: a5c4c78fe12141e7292fbb94fc37465319ba2bc8
+source-git-commit: 84ea3e45a3db749359f3ce4a0ea25429eee8bb66
+workflow-type: tm+mt
+source-wordcount: '1415'
+ht-degree: 1%
 
 ---
 
 
 # 通过源连接器和API收集协议数据
 
-Flow Service用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程介绍了从协议应用程序检索数据并通过源连接器和API将其引入平台的步骤。
+本教程介绍从协议应用程序检索数据并通过源连接器和API [!DNL Platform] 将其引入的步骤。
 
 ## 入门指南
 
-本教程要求您通过有效的基本连接以及要引入平台的文件的相关信息（包括表的路径和结构）来访问协议系统。 如果您没有此信息，请在尝试本教程之前， [参阅教程中有关使用Flow Service API探索协议系统](../explore/protocols.md) 。
+本教程要求您通过有效的基本连接以及要引入的文件（包括表的路径和结构）的相关信息 [!DNL Platform]来访问协议系统。 如果您没有此信息，请在尝试本教程 [之前参阅教程，了解如何使用流服务](../explore/protocols.md) API浏览协议系统。
 
-* [体验数据模型(XDM)系统](../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-   * [模式合成的基础知识](../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
-   * [模式注册开发人员指南](../../../../xdm/api/getting-started.md):包括成功执行对模式注册表API的调用所需了解的重要信息。 这包括您 `{TENANT_ID}`的“容器”概念以及发出请求所需的标题（特别注意“接受”标题及其可能的值）。
-* [目录服务](../../../../catalog/home.md):Catalog是Experience Platform中用于数据位置和世系的记录系统。
-* [批量摄取](../../../../ingestion/batch-ingestion/overview.md):Batch Ingestion API允许您将数据作为批处理文件导入到Experience Platform中。
-* [沙箱](../../../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [体验数据模型(XDM)系统](../../../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+   * [模式合成基础](../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
+   * [模式注册开发人员指南](../../../../xdm/api/getting-started.md): 包括成功执行对模式注册表API的调用时需要了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
+* [目录服务](../../../../catalog/home.md): 目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
+* [批量摄取](../../../../ingestion/batch-ingestion/overview.md): 批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
+* [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供了使用Flow Service API成功连接到协议应用程序时需要了解的其他信息。
+以下各节提供您需要了解的其他信息，以便使用API成功连接到协议应用程 [!DNL Flow Service] 序。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这些包括路径、必需的标题和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑难解答指南 [中有关如何阅读示例API调用的部分](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须首先完成身份验证 [教程](../../../../tutorials/authentication.md)。 完成身份验证教程后，将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权：承载人 `{ACCESS_TOKEN}`
+* 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源（包括属于Flow Service的资源）都与特定虚拟沙箱隔离。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+中的所有资 [!DNL Experience Platform]源(包括属于这些资 [!DNL Flow Service]源)都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标题：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
 * 内容类型： `application/json`
 
 ## 创建点对点XDM类和模式
 
-要通过源连接器将外部数据引入平台，必须为原始源数据创建一个专门的XDM类和模式。
+要通过源连接器将外 [!DNL Platform] 部数据引入，必须为原始源数据创建专门的XDM类和模式。
 
-要创建点对点类和模式，请按照点对点模式教程中 [概述的步骤操作](../../../../xdm/tutorials/ad-hoc.md)。 创建点对点类时，在源数据中找到的所有字段都必须在请求主体中进行说明。
+要创建点对点类和模式，请按照点对点模式教 [程中概述的步骤操作](../../../../xdm/tutorials/ad-hoc.md)。 创建点对点类时，必须在请求主体中描述源数据中找到的所有字段。
 
-继续按照开发人员指南中所述的步骤操作，直到您创建临时模式。 获取并存储ad-hoc模式的唯一标识符(`$id`)，然后继续执行本教程的下一步。
+继续按照开发人员指南中概述的步骤操作，直到您创建临时模式。 获取并存储点对点模式`$id`的唯一标识符()，然后继续执行本教程的下一步。
 
 ## 创建源连接 {#source}
 
-创建点对点XDM模式后，现在可以使用对Flow Service API的POST请求创建源连接。 源连接由连接ID、源数据文件和对描述源数据的模式的引用组成。
+创建点对点XDM模式后，现在可以使用对API的POST请求创建源连 [!DNL Flow Service] 接。 源连接由连接ID、源数据文件和对描述源模式的引用组成。
 
 **API格式**
 
@@ -106,7 +109,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新创建的源连接的唯`id`一标识符()。 此ID是后续步骤中创建目标连接时必需的。
+成功的响应会返回新创建的源`id`连接的唯一标识符()。 此ID是后续步骤中创建目标连接时必需的。
 
 ```json
 {
@@ -117,9 +120,9 @@ curl -X POST \
 
 ## 创建目标XDM模式 {#target}
 
-在前面的步骤中，创建了一个专门的XDM模式来构造源数据。 为了使源数据在平台中使用，还必须创建目标模式，以根据您的需求构建源数据。 然后，目标模式用于创建包含源数据的平台数据集。 此目标XDM模式还扩展了XDM单个用户档案类。
+在前面的步骤中，创建了一个专门的XDM模式来构造源数据。 为了在中使用源数据，还必 [!DNL Platform]须创建目标模式，以根据您的需要构建源数据。 然后，目标模式用于创建包含 [!DNL Platform] 源数据的数据集。 此目标XDM模式还扩展了XDM [!DNL Individual Profile] 类。
 
-通过对目标注册表API执行POST请求，可以创建 [模式XDM模式](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。 如果您希望使用Experience Platform中的用户界面， [模式编辑器教程将提供在模式编辑器中执行类似操作的分步说明](../../../../xdm/tutorials/create-schema-ui.md) 。
+通过对目标注册表API执行POST请求，可以创 [建模式XDM模式](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。 如果您希望在中使用用户界 [!DNL Experience Platform]面， [模式编辑器教程](../../../../xdm/tutorials/create-schema-ui.md) 提供了在模式编辑器中执行类似操作的分步说明。
 **API格式**
 
 ```http
@@ -128,7 +131,7 @@ POST /tenant/schemas
 
 **请求**
 
-以下示例请求创建一个XDM模式，它扩展了XDM单个用户档案类。
+以下示例请求创建一个扩展XDM类的XDM模式 [!DNL Individual Profile] 符。
 
 ```shell
 curl -X POST \
@@ -165,7 +168,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应返回新创建的模式的详细信息，包括其唯一标识符(`$id`)。 后续步骤中需要此ID才能创建目标数据集、映射和数据流。
+成功的响应会返回新创建模式的详细信息，包括其唯一标识符(`$id`)。 后续步骤中需要此ID才能创建目标数据集、映射和数据流。
 
 ```json
 {
@@ -231,7 +234,7 @@ curl -X POST \
 
 ## 创建目标数据集
 
-通过向 [Catalog Service API执行POST请求](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，提供有效负荷内目标模式的ID，可以创建目标数据集。
+通过对Catalog Service API执行POST请求，提供有效负 [荷内目标模式的ID](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，可以创建目标数据集。
 
 **API格式**
 
@@ -264,7 +267,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回一个数组，其中包含格式中新创建的数据集的ID `"@/datasets/{DATASET_ID}"`。 数据集ID是系统生成的只读字符串，用于在API调用中引用数据集。 按照后续步骤中的要求存储目标数据集ID，以创建目标连接和数据流。
+成功的响应会返回一个数组，其中包含格式为新创建数据集的ID `"@/datasets/{DATASET_ID}"`。 数据集ID是由系统生成的只读字符串，用于在API调用中引用数据集。 按照后续步骤中的要求存储目标数据集ID，以创建目标连接和数据流。
 
 ```json
 [
@@ -274,15 +277,15 @@ curl -X POST \
 
 ## 创建数据集基础连接
 
-为了将外部数据引入Platform中，必须首先获取Experience Platform数据集基础连接。
+为了将外部数据引入，必 [!DNL Platform]须先获 [!DNL Experience Platform] 取数据集基础连接。
 
-要创建数据集基础连接，请按照数据集基础连接教 [程中所述的步骤操作](../create-dataset-base-connection.md)。
+要创建数据集基础连接，请按照数据集基础连接教 [程中概述的步骤操作](../create-dataset-base-connection.md)。
 
-继续按照开发人员指南中所述的步骤操作，直到您创建了数据集基础连接。 获取并存储唯一标识符(`$id`)，然后在下一步中继续将其用作连接ID以创建目标连接。
+继续按照开发人员指南中所述的步骤操作，直到您创建了数据集基础连接。 获取并存储唯一标识`$id`符()，然后在下一步中继续将其用作连接ID以创建目标连接。
 
 ## 创建目标连接
 
-您现在拥有数据集基础连接、目标模式和目标数据集的唯一标识符。 您现在可以使用Flow Service API创建目标连接，以指定将包含入站源数据的数据集。
+您现在具有数据集基础连接、目标模式和目标数据集的唯一标识符。 您现在可以使用API创建目标 [!DNL Flow Service] 连接，以指定将包含入站源数据的数据集。
 
 **API格式**
 
@@ -329,7 +332,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新目标连接的唯一标识符(`id`)。 此值是后续步骤中创建数据流所必需的。
+成功的响应会返回新目标连接的唯一标识符(`id`)。 此值是后续步骤中创建数据流的必需值。
 
 ```json
 {
@@ -340,7 +343,7 @@ curl -X POST \
 
 ## 创建映射 {#mapping}
 
-为了将源数据引入目标数据集，必须首先将其映射到目标数据集所附加的目标模式。 这是通过对转换服务API执行POST请 [求而实现的](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/mapping-service-api.yaml) ，该POST请求在请求有效负荷中定义了数据映射。
+为了将源数据引入目标数据集，必须首先将其映射到目标数据集所附加的目标模式。 这是通过对转换服务API执行POST请 [求(在请求有效负荷中](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/mapping-service-api.yaml) 定义了数据映射)来实现的。
 
 **API格式**
 
@@ -406,7 +409,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应返回新创建的映射的详细信息，包括其唯一标识符(`id`)。 以后的步骤中需要此ID才能创建数据流。
+成功的响应会返回新创建的映射的详细信息，包括其唯一标识符(`id`)。 此ID是后续步骤中创建数据流的必需ID。
 
 ```json
 {
@@ -421,7 +424,7 @@ curl -X POST \
 
 ## 查找数据流规范 {#specs}
 
-数据流负责从源收集数据并将其引入平台。 要创建数据流，必须首先通过对Flow Service API执行GET请求来获取数据流规范。 数据流规范负责从外部协议应用程序收集数据。
+数据流负责从源收集数据并将其引入 [!DNL Platform]。 要创建数据流，必须首先通过对API执行GET请求来获取数据流规 [!DNL Flow Service] 范。 数据流规范负责从外部协议应用程序收集数据。
 
 **API格式**
 
@@ -442,7 +445,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回数据流规范的详细信息，该规范负责将协议应用程序中的数据引入平台。 下一步中需要此ID才能创建新数据流。
+成功的响应会返回数据流规范的详细信息，该规范负责将协议应用程序中的数据引入 [!DNL Platform]。 下一步中需要此ID才能创建新数据流。
 
 ```json
 {
@@ -632,7 +635,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新创 `id` 建的数据流的ID。
+成功的响应会返回新 `id` 创建的数据流的ID。
 
 ```json
 {
@@ -642,7 +645,7 @@ curl -X POST \
 
 ## 后续步骤
 
-按照本教程，您已创建了一个源连接器，以按计划从协议应用程序收集数据。 现在，下游平台服务(如实时客户用户档案和数据科学工作区)可以使用传入的数据。 有关更多详细信息，请参阅以下文档:
+通过遵循本教程，您已创建了一个源连接器来按计划从协议应用程序收集数据。 现在，下游服务（如和）可 [!DNL Platform] 以使用传入 [!DNL Real-time Customer Profile] 数据 [!DNL Data Science Workspace]。 有关更多详细信息，请参阅以下文档:
 
 * [实时客户用户档案概述](../../../../profile/home.md)
 * [数据科学工作区概述](../../../../data-science-workspace/home.md)
