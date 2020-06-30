@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 列表可用命名空间
 topic: API guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+workflow-type: tm+mt
+source-wordcount: '68'
+ht-degree: 5%
 
 ---
 
@@ -30,9 +33,9 @@ curl -X GET \
 
 **响应**
 
-响应包括对象的数组，每个对象表示可用命名空间。 “自定义”值为“false”的命名空间是标准命名空间，而“自定义”值为“true”的命名空间是您的组织创建的。
+响应包括对象的数组，每个对象表示可用命名空间。 值为“[!UICONTROL false]”的命名空间是标准[!UICONTROL 命名空间，而值为“]true[!UICONTROL ”的是]您的组织创建的命名空间。
 
->[!NOTE] 此响应已被截断到空间。
+>[!NOTE] 此响应已被截断为空间。
 
 ```json
 [
@@ -74,4 +77,4 @@ curl -X GET \
 
 ## 后续步骤
 
-继续到下一个教程以 [创建自定义命名空间](./create-custom-namespace.md)
+继续到下一个教程， [创建自定义命名空间](./create-custom-namespace.md)
