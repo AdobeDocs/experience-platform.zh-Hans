@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建数据使用策略
 topic: policies
 translation-type: tm+mt
-source-git-commit: ba9d4b31cfc3b7924879a91bd125f72159e55fc4
+source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
 workflow-type: tm+mt
-source-wordcount: '1216'
+source-wordcount: '1194'
 ht-degree: 2%
 
 ---
@@ -16,22 +16,22 @@ ht-degree: 2%
 
 Adobe Experience Platform使用标签和执行(DULE)是数据管理的核心机制。 DULE [策略服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) 允许您创建和管理DULE策略，以确定可以对包含某些DULE标签的数据执行哪些营销操作。
 
-此文档提供了使用策略服务API创建DULE策略的分步教程。 有关API中提供的不同操作的更全面的指南，请参 [阅策略服务开发人员指南](../api/getting-started.md)。
+此文档提供了使用API创建DULE策略的分步教 [!DNL Policy Service] 程。 有关API中提供的不同操作的更全面的指南，请参 [阅策略服务开发人员指南](../api/getting-started.md)。
 
 ## 入门指南
 
 本教程需要对创建和评估DULE策略时涉及的下列主要概念有一个有效的了解：
 
-* [数据治理](../home.md): Platform强制执行数据使用合规性的框架。
+* [数据治理](../home.md): 强制执行数据使 [!DNL Platform] 用合规性的框架。
 * [数据使用标签](../labels/overview.md): 数据使用标签应用于XDM数据字段，指定如何访问该数据的限制。
-* [体验数据模型(XDM)](../../xdm/home.md): Platform组织客户体验数据的标准化框架。
-* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [体验数据模型(XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-在开始本教程之前，请查阅开发 [人员指南](../api/getting-started.md) ，了解成功调用DULE Policy Service API需要了解的重要信息，包括必需的头以及如何读取示例API调用。
+在开始本教程之前，请查阅开发 [人员指南](../api/getting-started.md) ，了解成功调用DULE API所需了解的重要信息，包括必需的头 [!DNL Policy Service] 以及如何读取示例API调用。
 
 ## 定义营销活动 {#define-action}
 
-在Experience Platform治理框架中，营销操作是数据使用者采取的操作，需要检查是否存在违反数据使用策略的情况。
+在框 [!DNL Data Governance] 架中，营销操作是数据使用者执 [!DNL Experience Platform] 行的操作，需要检查是否存在违反数据使用策略的情况。
 
 创建DULE策略的第一步是确定策略将评估的营销操作。 可以使用以下选项之一执行此操作：
 
@@ -44,7 +44,7 @@ Adobe Experience Platform使用标签和执行(DULE)是数据管理的核心机�
 
 **API格式**
 
-根据您查找的是由Experience Platform提供的营销活动还是由您的组织创建的自定义营销活动，请分别 `marketingActions/core` 使用 `marketingActions/custom` 这些或端点。
+根据您查找的是由您的组织提供的营销 [!DNL Experience Platform] 操作还是由您的组织创建的自定义营销操作，请分别使 `marketingActions/core` 用 `marketingActions/custom` 这些或端点。
 
 ```http
 GET /marketingActions/core
@@ -414,6 +414,6 @@ curl -X PATCH \
 
 通过遵循本教程，您已成功为营销操作创建了数据使用策略。 现在，您可以继续阅读关于强制 [使用数据策略的教程](../enforcement/api-enforcement.md) ，了解如何检查策略违规并在体验应用程序中处理这些违规。
 
-有关Policy Service API中不同可用操作的详细信息，请参阅Policy Service [Developer Guide](../api/getting-started.md)。 有关如何为实时用户档案数据实施策略的信息，请参阅关于为受众区段强制实 [施数据使用合规性的教程](../../segmentation/tutorials/governance.md)。
+有关API中不同可用操作的详细信 [!DNL Policy Service] 息，请参阅策略 [服务开发人员指南](../api/getting-started.md)。 有关如何为数据实施策略的信 [!DNL Real-time Customer Profile] 息，请参阅关于为受众 [段强制实现数据使用合规性的教程](../../segmentation/tutorials/governance.md)。
 
-要了解如何在Experience Platform用户界面中管理使用策略，请参阅策 [略用户指南](user-guide.md)。
+要了解如何在用户界面中管理使 [!DNL Experience Platform] 用策略，请参阅 [策略用户指南](user-guide.md)。
