@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform数据管理
 topic: overview
 translation-type: tm+mt
-source-git-commit: 42d4fe7eecf1f64fab1c9554cfdc4bfeb42ffdeb
+source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
 workflow-type: tm+mt
-source-wordcount: '1462'
+source-wordcount: '1448'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 # 数据管理概述
 
-Adobe Experience Platform的核心功能之一是将多个企业系统中的数据整合在一起，以更好地让营销人员识别、理解和吸引客户。 此数据可能受组织或法律法规定义的使用限制的约束。 因此，务必确保Platform内的数据操作符合数据使用策略。
+Adobe Experience Platform的核心功能之一是将多个企业系统中的数据整合在一起，以更好地让营销人员识别、理解和吸引客户。 此数据可能受组织或法律法规定义的使用限制的约束。 因此，务必确保您的数据操作符 [!DNL Platform] 合数据使用策略。
 
-Adobe Experience Platform数据治理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 它在Experience Platform的各个层次（包括编目、数据谱系、数据使用标签、数据使用策略）中起关键作用，并控制数据在营销活动中的使用。
+Adobe Experience Platform数据治理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 它在各个级别(包括编目、 [!DNL Experience Platform] 数据谱系、数据使用标签、数据使用策略)中起关键作用，并控制数据在营销活动中的使用。
 
 ## 数据管理角色
 
@@ -44,7 +44,7 @@ Adobe Experience Platform数据治理允许您管理客户数据并确保遵守�
 
 ## DULE框架
 
-Experience Platform使用标签和执行(DULE)是数据管理的核心框架。 DULE简化并简化了数据分类和创建数据使用策略的过程。 应用数据标签和数据使用策略后，可以评估营销行动以确保正确使用数据。
+数据使用标签和执行(DULE)是数据治理的核 [!DNL Experience Platform] 心框架。 DULE简化并简化了数据分类和创建数据使用策略的过程。 应用数据标签和数据使用策略后，可以评估营销行动以确保正确使用数据。
 
 DULE框架有三个关键元素： 标签、策略和强制。
 
@@ -66,17 +66,17 @@ DULE框架包括预定义的数据使用标签，这些标签可用于以三种�
 
 >[!NOTE] 有关可用标签的 [完整列表](labels/reference.md) ，请参阅支持的数据使用标签指南以及每个标签类型的定义。
 
-可随时应用标签，在数据管理方式上提供灵活性。 最佳实践是鼓励在数据被引入Experience Platform或数据在Platform中可用时立即标记数据。
+可随时应用标签，在数据管理方式上提供灵活性。 最佳实践是鼓励在数据被引入或 [!DNL Experience Platform]数据在中可用时立即添加标签 [!DNL Platform]。
 
 有关详细信息，请 [参阅有关数据](./labels/overview.md) 使用标签的概述。
 
 ## 数据使用策略
 
-为了使数据使用标签能够有效支持数据合规性，必须实施数据使用策略。 数据使用策略是描述您允许或限制对Experience Platform内数据执行的营销操作种类的规则。
+为了使数据使用标签能够有效支持数据合规性，必须实施数据使用策略。 数据使用策略是描述允许或限制您对中的数据执行的营销操作种类的规则 [!DNL Experience Platform]。
 
 营销行动的一个例子可能是希望将数据集导出到第三方服务。 如果有策略表明无法导出特定类型的数据(如个人身份信息(PII))，且数据集已应用“I”标签（身份数据），则您将收到来自策略服务的响应，通知您数据使用策略已被违反。
 
-应用数据使用标签后，数据管理者可以使用DULE Policy Service API或Experience Platform用户界面创建策略。
+应用数据使用标签后，数据管理者可以使用DULE Policy Service API或用户界面创 [!DNL Experience Platform] 建策略。
 
 >[!IMPORTANT] 默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 要考虑实施单个策略，必须手动启用该策略。
 
@@ -117,7 +117,7 @@ Data Governance目前支持两级（数据集和字段）的DULE标签。 Data G
 | **地理科学** | 地理围栏是由GPS或RFID技术定义的虚拟地理边界，它使软件能够在移动设备进入或离开特定区域时触发响应。 |
 | **标识标签** | 标识“I”标签用于对能够识别或联系特定人的数据进行分类。 |
 | **基于兴趣的定位** | 满足以下三个条件时，即基于兴趣的定位（也称为个性化）: 在站点上收集的数据用于推断用户的兴趣，用于其他上下文，如在其他站点或应用程序（非站点）上，并用于根据这些推断选择提供哪些内容或广告。 |
-| **营销活动** | 在Experience Platform治理框架中的营销行为是数据使用者采取的行为，需要检查是否存在违反数据使用策略的情况 |
+| **营销活动** | 在数据治理框架中的营销行为是数据消费者 [!DNL Experience Platform] 采取的行为，需要检查是否存在违反数据使用策略的情况 |
 | **策略** | 在数据治理框架中，策略是描述允许或不允许对特定数据采取何种营销行动的规则。 |
 | **敏感标签** | 敏感的“S”标签用于对您和您的组织认为敏感的数据进行分类。 |
 
