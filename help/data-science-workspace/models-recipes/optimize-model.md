@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 优化模型
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 7dc5075d3101b4780af92897c0381e73a9c5aef0
+source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
 workflow-type: tm+mt
-source-wordcount: '1242'
+source-wordcount: '1219'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 使用模型洞察框架优化模型
 
-模型洞察框架为数据科学家提供数据科学工作区中的工具，以便快速、明智地选择基于实验的最优机器学习模型。 该框架将提高机器学习工作流程的速度和效率，并提高数据科学家的易用性。 这是通过为每个机器学习算法类型提供一个默认模板来辅助模型调整来完成的。 最终结果使数据科学家和公民数据科学家能够为最终客户做出更好的模型优化决策。
+模型洞察框架为数据科学家提供了各种工具， [!DNL Data Science Workspace] 以便快速、明智地选择基于实验的最优机器学习模型。 该框架将提高机器学习工作流程的速度和效率，并提高数据科学家的易用性。 这是通过为每个机器学习算法类型提供一个默认模板来辅助模型调整来完成的。 最终结果使数据科学家和公民数据科学家能够为最终客户做出更好的模型优化决策。
 
 ## 什么是指标？
 
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 目前，Model Insights Framework支持以下运行时：
 - [斯卡拉](#scala)
-- [Python/Tensorflow](#pythontensorflow)
+- [!DNL Python/Tensorflow](#pythontensorflow)
 - [R](#r)
 
 菜谱的示例代码位于 [experience-platform-dsw-reference存储库](https://github.com/adobe/experience-platform-dsw-reference) 的 `recipes`。 本教程将引用此存储库中的特定文件。
@@ -95,19 +95,19 @@ evaluation.metrics=com.adobe.platform.ml.impl.Constants.FSCORE
 evaluation.class=com.adobe.platform.ml.Evaluator
 ```
 
-在数据科学工作区中，用户将能够在实验页面的“评估指标”选项卡中查看洞察。
+在中， [!DNL Data Science Workspace]用户将能够在实验页面的“评估指标”选项卡中查看洞察。
 
-### Python/Tensorflow {#pythontensorflow}
+### [!DNL Python/Tensorflow] {#pythontensorflow}
 
-到目前为止，Python或Tensorflow没有默认的评估指标。 因此，要获得Python或Tensorflow的评估指标，您需要创建自定义的评估指标。 这可以通过实现类来 `Evaluator` 实现。
+到目前为止，没有或的默认评估 [!DNL Python] 指标 [!DNL Tensorflow]。 因此，要获得或的评估 [!DNL Python] 指标， [!DNL Tensorflow]您需要创建自定义的评估指标。 这可以通过实现类来 `Evaluator` 实现。
 
-#### Python的自定义评估指标
+#### 自定义评估指标 [!DNL Python]
 
 对于自定义评估指标，需要为评估器实现两种主要方法： `split()` 和 `evaluate()`。
 
-对于Python，这些方法将在 [类的evaluator](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) .py中定 `Evaluator` 义。 请按照 [evaluator](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) .py链接查看示例 `Evaluator`。
+对 [!DNL Python]于，这些方法将在类 [的evaluator](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) .py中定 `Evaluator` 义。 请按照 [evaluator](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/python/retail/retail/evaluator.py) .py链接查看示例 `Evaluator`。
 
-在Python中创建评估指标需要用户实施 `evaluate()` 和 `split()` 方法。
+在中创建评 [!DNL Python] 估指标需要用户实施 `evaluate()` 和 `split()` 方法。
 
 该方 `evaluate()` 法返回包含属性为、和的度量对象数组 `name`的度 `value`量对象 `valueType`。
 
@@ -117,7 +117,7 @@ evaluation.class=com.adobe.platform.ml.Evaluator
 
 #### Tensorflow的自定义评估指标
 
-对于Tensorflow，与Python类似， `evaluate()` 需要 `split()` 实现 `Evaluator` 方法和类中的方法。 例 `evaluate()`如，在返回培训和测试 `split()` 数据集时应返回度量。
+因 [!DNL Tensorflow]为，类 [!DNL Python]似地，需要实 `evaluate()` 现方 `split()` 法和类 `Evaluator` 中的方法。 例 `evaluate()`如，在返回培训和测试 `split()` 数据集时应返回度量。
 
 ```PYTHON
 from ml.runtime.python.Interfaces.AbstractEvaluator import AbstractEvaluator
@@ -152,7 +152,7 @@ class Evaluator(AbstractEvaluator):
 
 ## 使用预建指标和可视化图表
 
-Sensei模型分析框架将支持每种机器学习算法的一个默认模板。 下表显示了常见的高级机器学习算法类以及相应的评估指标和可视化。
+该模 [!DNL Sensei Model Insights Framework] 板将支持每种机器学习算法的一个默认模板。 下表显示了常见的高级机器学习算法类以及相应的评估指标和可视化。
 
 | ML算法类型 | 评估指标 | 可视化图表 |
 --- | --- | ---
