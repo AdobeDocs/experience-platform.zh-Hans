@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 实时机器学习节点参考指南
 topic: Nodes reference
 translation-type: tm+mt
-source-git-commit: dc63ad0c0764355aed267eccd1bcc4965b04dba4
+source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '594'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 发现要在ML管道中使用的节点
 
-将以下代码复制到Python笔记本中，以视图所有可用节点。
+将以下代码复制到 [!DNL Python] 笔记本中，以视图所有可用节点。
 
 ```python
 from pprint import pprint
