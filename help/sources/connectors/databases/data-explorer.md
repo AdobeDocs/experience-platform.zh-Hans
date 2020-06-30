@@ -4,32 +4,32 @@ solution: Experience Platform
 title: Azure Data Explorer连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: b92f33627636b351dbd7b490e461d4f6b2866310
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
 workflow-type: tm+mt
-source-wordcount: '160'
+source-wordcount: '136'
 ht-degree: 0%
 
 ---
 
 
-# （测试版）Azure Data Explorer连接器
+# （测试版）连 [!DNL Azure Data Explorer] 接器
 
 >[!NOTE]
->Azure Data Explorer连接器处于测试状态。 有关使用 [测试版标记](../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
+>连接 [!DNL Azure Data Explorer] 器为测试版。 有关使用 [测试版标记](../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-Adobe Experience Platform为Microsoft、MySQL和Azure等数据库提供程序提供本机连接。 您可以将这些系统中的数据引入Platform。
+Adobe Experience Platform为数据库提供者(如 [!DNL Microsoft]MySQL和)提供本机连接 [!DNL Azure]。 您可以将数据从这些系统导入 [!DNL Platform]。
 
-支持不同类型的第三方数据库，包括关系型、NoSQL或data warehouse。 对数据库提供者的支持包括Azure Data Explorer。
+支持不同类型的第三方数据库，包括关系型、NoSQL或data warehouse。 对数据库提供者的支持包 [!DNL Azure Data Explorer]括。
 
-以下文档提供了如何使用API或用户界面将Azure Data Explorer连接到Platform的信息：
+以下文档提供了如何使用API [!DNL Azure Data Explorer] 或 [!DNL Platform] 用户界面连接的信息：
 
-## 将AzurePlatform资源管理器连接到使用API的数据
+## 连接 [!DNL Azure Data Explorer] 到 [!DNL Platform] 使用API
 
 - [使用Flow Service API创建Azure Data Explorer连接器](../../tutorials/api/create/databases/data-explorer.md)
 - [使用Flow Service API浏览数据库系统](../../tutorials/api/explore/database-nosql.md)
 - [使用Flow Service API从数据库收集数据](../../tutorials/api/collect/database-nosql.md)
 
-## 使用UI将AzurePlatform资源管理器连接到
+## 连接 [!DNL Azure Data Explorer] 到 [!DNL Platform] 使用UI
 
 - [在UI中创建Azure Data Explorer源连接器](../../tutorials/ui/create/databases/data-explorer.md)
 - [在UI中为数据库连接器配置数据流](../../tutorials/ui/dataflow/databases.md)
