@@ -4,20 +4,20 @@ solution: Experience Platform
 title: 在UI中创建Apache HDFS源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 855f543a1cef394d121502f03471a60b97eae256
+source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
 workflow-type: tm+mt
-source-wordcount: '490'
+source-wordcount: '483'
 ht-degree: 1%
 
 ---
 
 
-# 在UI中创建Apache HDFS源连接器
+# 在UI [!DNL Apache] 中创建HDFS源连接器
 
 >[!NOTE]
->Apache HDFS连接器处于测试状态。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
+>HDFS [!DNL Apache] 接口为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-中的源连 [!DNL Adobe Experience Platform] 接器提供按计划接收外部源数据的能力。 本教程提供使用用户界面验证Apache Hadoop分布式文件系统（以下称“HDFS”）源连接器的 [!DNL Platform] 步骤。
+中的源连 [!DNL Adobe Experience Platform] 接器提供按计划接收外部源数据的能力。 本教程提供了使用用 [!DNL Apache Hadoop Distributed File System] 户界面验证源连接器（以下称“HDFS”）的 [!DNL Platform] 步骤。
 
 ## 入门指南
 
@@ -66,4 +66,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-按照本教程，您已建立了与HDFS帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将云存储中的数据引入Platform](../../dataflow/batch/cloud-storage.md)。
+按照本教程，您已建立了与HDFS帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md)。
