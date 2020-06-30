@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建并发布机器学习模型演练
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
 workflow-type: tm+mt
-source-wordcount: '1582'
+source-wordcount: '1542'
 ht-degree: 0%
 
 ---
@@ -18,9 +18,9 @@ ht-degree: 0%
 
 假装您拥有在线零售网站。 当您的客户在您的零售网站上购物时，您希望向他们提供个性化的产品建议，以展示您的业务优惠的各种其他产品。 在您网站的存在期间，您不断收集客户数据，并希望以某种方式利用这些数据生成个性化的产品推荐。
 
-[!DNL Adobe Experience Platform] 数据科学工作区提供了使用预建产品推荐菜谱实现 [目标的方法](../pre-built-recipes/product-recommendations.md)。 按照本教程，了解如何访问和了解您的零售数据、创建和优化机器学习模型以及在数据科学工作区中生成洞察。
+[!DNL Adobe Experience Platform] [!DNL Data Science Workspace] 提供了使用预建产品推荐菜谱实现您 [目标的方法](../pre-built-recipes/product-recommendations.md)。 请按照本教程，了解如何访问和了解您的零售数据、创建和优化机器学习模型以及在中生成洞察 [!DNL Data Science Workspace]。
 
-本教程介绍了数据科学工作区的工作流程，并涵盖了创建机器学习模型的以下步骤：
+本教程反映了机器学习 [!DNL Data Science Workspace]模型的工作流程，并涵盖创建机器学习模型的以下步骤：
 
 1. [准备数据](#prepare-your-data)
 2. [创作模型](#author-your-model)
@@ -31,7 +31,7 @@ ht-degree: 0%
 
 在开始本教程之前，您必须具有以下先决条件：
 
-* 访问 [!DNL Adobe Experience Platform]。 如果您无权访问Experience Platform中的IMS组织，请在继续操作前与系统管理员联系。
+* 访问 [!DNL Adobe Experience Platform]。 如果您无权访问中的IMS组织，请在继 [!DNL Experience Platform]续操作之前与系统管理员联系。
 
 * Enablement Assets。 请联系您的客户代表，为您提供以下项目。
    * 推荐方法
@@ -42,21 +42,21 @@ ht-degree: 0%
    * 黄金数据集postValues
    * 黄金数据集模式
 
-* 从Adobe公共Git存储库下载三个必 <a href="https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs" target="_blank">需的Jupyter Notebook文件</a>，这些文件将用于演示Data Science Workspace中的JupyterLab工作流程。
+* 从Adobe公共存 [!DNL Jupyter Notebook] 储库下 <a href="https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs" target="_blank">载三个必 [!DNL Git] 需文件</a>，这些文件将用于演示 [!DNL JupyterLab] 中的工作流 [!DNL Data Science Workspace]程。
 
 * 对本教程中使用的下列主要概念的有效理解：
-   * [体验数据模型](../../xdm/home.md): 由Adobe领导的标准化工作，为客户体验管理定义标准模式，如用户档案和ExperienceEvent。
+   * [!DNL Experience Data Model](../../xdm/home.md): 由Adobe领导的标准化工作，为客户体验管理定 [!DNL Profile] 义标准模式，如和ExperienceEvent。
    * 数据集： 实际数据的存储和管理结构。 XDM模式的物理实例 [化实例](../../xdm/schema/field-dictionary.md)。
    * 批： 数据集由批量组成。 批是在一段时间内收集的一组数据，并作为单个单元一起处理。
-   * JupyterLab: [JupyterLab是](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) Project Jupyter的一个基于Web的开放源代码界面，它紧密集成到Experience Platform中。
+   * [!DNL JupyterLab]: [!DNL JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) 是一个面向Project的开放源码、基于web的界 [!DNL Jupyter] 面，并紧密集成到 [!DNL Experience Platform]中
 
 ## 准备数据 {#prepare-your-data}
 
-要创建能够向客户提供个性化产品建议的机器学习模型，必须分析您网站上先前的客户购买情况。 本部分探讨如何通过将此数据引入平 [!DNL Adobe Analytics]台，以及如何将该数据转换为要由机器学习模型使用的特征数据集。
+要创建能够向客户提供个性化产品建议的机器学习模型，必须分析您网站上先前的客户购买情况。 本节探讨如何将这些数据引入 [!DNL Platform] 到 [!DNL Adobe Analytics]其中，以及如何将这些数据转换为要由机器学习模型使用的特征数据集。
 
 ### 浏览数据并了解模式
 
-1. 登录Adobe [Experience Platform](https://platform.adobe.com/) ，单击 **[!UICONTROL Dataset]** （数据集）以列表所有现有数据集并选择要浏览的数据集。 在这种情况下，Analytics数据集 **Golden Data Set postValues**。
+1. 登录 [Adobe Experience Platform](https://platform.adobe.com/) ，单击数 **[!UICONTROL 据集]** ,列表所有现有数据集并选择要浏览的数据集。 在这种情况下，数 [!DNL Analytics] 据 **集Golden Data Set postValues**。
    ![](../images/models-recipes/model-walkthrough/datasets_110.png)
 2. 选择 **[!UICONTROL 右上方]** 的预览数据集以检查示例记录，然后单击 **[!UICONTROL 关闭]**。
    ![](../images/models-recipes/model-walkthrough/golden_data_set_110.png)
@@ -67,13 +67,13 @@ ht-degree: 0%
 
 | 数据集名称 | 架构 | 描述 |
 | ----- | ----- | ----- |
-| 黄金数据集postValues | 黄金数据集模式 | 分析网站的源数据 |
-| Recommendations输入数据集 | 建议输入模式 | Analytics数据会使用功能管道转换为培训数据集。 此数据用于培训产品推荐机器学习模型。 `itemid` 与该 `userid` 客户所购买的产品相对应。 |
+| 黄金数据集postValues | 黄金数据集模式 | [!DNL Analytics] 您网站的源数据 |
+| Recommendations输入数据集 | 建议输入模式 | 使用 [!DNL Analytics] 特征管道将数据转换为培训数据集。 此数据用于培训产品推荐机器学习模型。 `itemid` 与该 `userid` 客户所购买的产品相对应。 |
 | Recommendations输出数据集 | 推荐输出模式 | 存储了评分结果的数据集，它将包含每个客户推荐产品的列表。 |
 
 ## 创作模型 {#author-your-model}
 
-数据科学工作区生命周期的第二个组件涉及创作方法和模型。 产品推荐菜谱旨在通过利用过去的购买数据和机器学习大规模生成产品推荐。
+生命周期的第二个组 [!DNL Data Science Workspace] 件涉及创作菜谱和模型。 产品推荐菜谱旨在通过利用过去的购买数据和机器学习大规模生成产品推荐。
 
 菜谱是模型的基础，因为它们包含机器学习算法和用于解决特定问题的逻辑。 更重要的是，菜谱使您能够在整个组织内实现机器学习的大众化，使其他用户能够访问针对不同用例的模型，而无需编写任何代码。
 
@@ -140,7 +140,7 @@ ht-degree: 0%
 ### 评分和生成洞察
 
 1. 在产品推荐模型 *概述* 页面上，单击性能最佳的培训运行的名称，其中具有最高的召回率和精确度值。
-2. 在培训运行详细信息页面的右上方，单击“得分 **[!UICONTROL ”]**。
+2. 在培训运行详细信息页面的右上角，单击“得分 **[!UICONTROL ”]**。
 3. 选择Recommendations **[!UICONTROL 输入数据集]** ，作为评分输入数据集，该数据集与您创建Model并执行其培训运行时使用的数据集相同。 然后，单击“下 **[!UICONTROL 一步]**”。
    ![](../images/models-recipes/model-walkthrough/scoring_input.png)
 4. 选择Recommendations **[!UICONTROL 输出数据集]** ，作为评分输出数据集。 评分结果将作为批处理存储在此数据集中。
@@ -162,4 +162,4 @@ ht-degree: 0%
 
 做得好，您已成功生成产品推荐！
 
-本教程向您介绍了数据科学工作区的工作流程，演示如何通过机器学习将未经处理的原始数据转换为有用的信息。 要进一步了解如何使用数据科学工作区，请继续阅读有关创建零 [售销售模式和数据集的下一个指南](./create-retails-sales-dataset.md)。
+本教程向您介绍了如何通过机 [!DNL Data Science Workspace]器学习将未经处理的原始数据转换为有用信息。 要进一步了解如何使 [!DNL Data Science Workspace]用，请继续阅读下一 [个指南，创建零售模式和数据集](./create-retails-sales-dataset.md)。
