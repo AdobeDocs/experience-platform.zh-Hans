@@ -4,16 +4,19 @@ solution: Experience Platform
 title: 获取标识的本机ID
 topic: API guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+workflow-type: tm+mt
+source-wordcount: '151'
+ht-degree: 1%
 
 ---
 
 
-# 获取XID以获取身份
+# 获取身份的XID
 
-标识数据通常作为ID字符串值和在摄取的XDM数据中的标识命名空间提供，并且当提供标识以用于API调用时。 当身份在Identity Service中保留时，将生成一个ID并将其分配给该标识，称为本机XID。 需要标识数据支持的平台API使用这个更紧凑的表单来表示聚集的ID和命名空间。 XID是一个base64编码的字符串。
+标识命名空间通常作为ID字符串值和在所摄取的XDM数据中的标识提供，并且当提供用于API调用的标识时。 当身份被保留在 [!DNL Identity Service]中时，将生成一个ID并将其分配给该标识，称为本机XID。 [!DNL Platform] 需要标识数据支持的API，使用这种更紧凑的表单来表示聚合的ID和命名空间。 XID是一个base64编码的字符串。
 
->[!NOTE] 此格式主要供内部Adobe使用。 本机XID作为单值更加有空间效率，是平台解决方案内部用于存储和序列化的内容。 但是，它不是人类可读的，它是不透明的，并且需要单独的调用才能使用它。
+>[!NOTE] 此格式主要供内部Adobe使用。 本机XID作为奇异值，空间效率更高，它是内部在解决方案中用 [!DNL Platform] 于存储和序列化的内容。 但是，它不是人类可读的，是不透明的，并且需要单独的调用才能使用它。
 
 使用本节所述的服务获取给定ID值和命名空间的XID。
 
