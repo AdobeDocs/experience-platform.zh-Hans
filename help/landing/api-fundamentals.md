@@ -1,21 +1,24 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Adobe Experience Platform API基础知识
+title: Adobe Experience PlatformAPI基础知识
 topic: getting started
 translation-type: tm+mt
-source-git-commit: c94f065a5d56ac495dd2d541531aaec94c187612
+source-git-commit: 2e5668a8b1d5fb831188fbd4e453b9f4aa7474df
+workflow-type: tm+mt
+source-wordcount: '425'
+ht-degree: 0%
 
 ---
 
 
-# Adobe Experience Platform API基础知识
+# Adobe Experience PlatformAPI基础知识
 
-Adobe Experience Platform API采用了若干重要的底层技术和语法，以便有效管理基于JSON的平台资源。 本文档简要概述了这些技术，并提供了指向外部文档的链接以了解更多信息。
+Adobe Experience PlatformAPI采用若干基础技术和语法，这些技术和语法对于有效管理基于JSON的资源非常重要。 [!DNL Platform] 本文档简要概述了这些技术，并提供了指向外部文档的链接以了解更多信息。
 
 ## JSON指针 {#json-pointer}
 
-JSON指针是用于标识JSON文档中特定值的标准化字符串语法([RFC 6901](https://tools.ietf.org/html/rfc6901))。 JSON指针是由字符分隔的令牌字符串，它指定对象键或数组索引，令牌可以是字符串或数字。 `/` JSON指针字符串用于平台API的许多PATCH操作，如本文档后面所述。 有关JSON指针的详细信息，请参阅 [JSON指针概述文档](https://rapidjson.org/md_doc_pointer.html)。
+JSON指针是用于标识JSON文档中特[定值的标准字符串语法](https://tools.ietf.org/html/rfc6901)(RFC 6901)。 JSON指针是由字符分隔的标记 `/` 字符串，它指定对象键或数组索引，标记可以是字符串或数字。 JSON指针字符串用于API的许多PATCH [!DNL Platform] 操作，如本文档后面所述。 有关JSON指针的详细信息，请参阅JSON [指针概述文档](https://rapidjson.org/md_doc_pointer.html)。
 
 ### JSON模式对象示例
 
@@ -78,13 +81,13 @@ JSON指针是用于标识JSON文档中特定值的标准化字符串语法([RFC 
 | `"/definitions/loyalty/properties/_{TENANT_ID}/properties/loyaltyLevel/enum/0"` | `"platinum"` |
 
 >[!Note]
->处理Experience Data Model(XDM) `xdm:sourceProperty` 描述符 `xdm:destinationProperty` 的和属性时，必须从JSON Pointer字符串中排 `properties` 除任 **何键** 。 有关详细信息，请参阅模式注册API开发人员指南 [子指南](../xdm/api/descriptors.md) 。
+>处理(XDM)描 `xdm:sourceProperty` 述符 `xdm:destinationProperty` 的和属 [!DNL Experience Data Model] 性时，必须从JSON指 `properties` 针字符串 **中排除任** 何键。 有关详细信息，请参阅模式注册表API开发人员指 [南子](../xdm/api/descriptors.md) -指南。
 
 ## JSON修补程序
 
-平台API有许多PATCH操作，它们接受JSON修补对象的请求负载。 JSON修补程序是用于描述对JSON文档所做更改的标准化格式([RFC 6902](https://tools.ietf.org/html/rfc6902))。 它允许您定义对JSON的部分更新，无需在请求主体中发送整个文档。
+对于API，有许多PATCH操 [!DNL Platform] 作接受JSON修补对象的请求负载。 JSON修补程序是用于描述对JSON[文档所做更改的标准化格式](https://tools.ietf.org/html/rfc6902)(RFC 6902)。 它允许您定义JSON的部分更新，无需在请求主体中发送整个文档。
 
-### JSON修补对象示例
+### JSON修补程序对象示例
 
 ```json
 {
@@ -93,21 +96,21 @@ JSON指针是用于标识JSON文档中特定值的标准化字符串语法([RFC 
 }
 ```
 
-* `op`:修补操作的类型。 虽然JSON修补程序支持多种不同的操作类型，但并非平台API中的所有PATCH操作都与每种操作类型兼容。 可用的操作类型有：
+* `op`: 修补操作的类型。 虽然JSON修补程序支持多种不同的操作类型，但API中的所有PATCH操 [!DNL Platform] 作并不与每种操作类型兼容。 可用的操作类型有：
    * `add`
    * `remove`
    * `replace`
    * `copy`
    * `move`
    * `test`
-* `path`:要更新的JSON结构部分，使用 [JSON指针表示法进行标识](#json-pointer) 。
+* `path`: 要更新的JSON结构部分，使用JSON指针 [表示法标](#json-pointer) 识。
 
-根据中指示的操作类 `op`型，JSON Patch对象可能需要其他属性。 有关不同JSON修补程序操作及其所需语法的详细信息，请参阅 [JSON修补程序文档](http://jsonpatch.com/)。
+JSON Patch对象可能需 `op`要其他属性，具体取决于中所示的操作类型。 有关不同JSON修补程序操作及其所需语法的详细信息，请参阅JSON [修补程序文档](http://jsonpatch.com/)。
 
 ## JSON模式
 
-JSON模式是用于描述和验证JSON数据结构的格式。 [体验数据模型(XDM)](../xdm/home.md) 利用JSON模式功能对所摄取的客户体验数据的结构和格式实施限制。 有关JSON模式的详细信息，请参阅官 [方文档](https://json-schema.org/)。
+JSON模式是一种用于描述和验证JSON数据结构的格式。 [体验模式模型](../xdm/home.md) (XDM)利用JSON功能对所摄取的客户体验数据的结构和格式实施限制。 有关JSON模式的更多信息，请参阅 [官方文档](https://json-schema.org/)。
 
 ## 后续步骤
 
-此文档引入了与管理Experience Platform的基于JSON的资源相关的一些技术和语法。 有关使用Platform API的更多信息（包括最佳实践和常见问题解答），请参阅 [Platform疑难解答指南](troubleshooting.md)。
+此文档引入了与为管理基于JSON的资源相关的一些技术和语法 [!DNL Experience Platform]。 有关使用API的更多信 [!DNL Platform] 息（包括最佳实践和常见问题解答），请参阅平台疑 [难解答指南](troubleshooting.md)。
