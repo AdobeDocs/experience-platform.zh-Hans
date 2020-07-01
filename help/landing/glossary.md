@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform产品文档
 topic: getting started
 translation-type: tm+mt
-source-git-commit: f2a7300d4ad75e3910abbdf2ecc2946a2dfe553c
+source-git-commit: 2e5668a8b1d5fb831188fbd4e453b9f4aa7474df
 workflow-type: tm+mt
-source-wordcount: '6961'
+source-wordcount: '6594'
 ht-degree: 0%
 
 ---
@@ -16,33 +16,33 @@ ht-degree: 0%
 
 ## A
 
-**访问控制:** {#access-control} Experience Platform访问控制通过Adobe Admin Console中的产品用户档案将具有访问权限和沙箱环境的用户链接到一起。
+**访问控制:** {#access-control} 访问控制 [!DNL Experience Platform] 用于通过AdobeAdmin Console中的产品用户档案链接具有访问权限和沙箱环境的用户。
 
 **访问密钥ID:** 访问密钥ID是与Amazon S3秘密访问密钥关联的唯一标识符。 访问密钥ID和秘密访问密钥一起用于签署AWS请求。
 
-**操作：** 在Experience Platform Launch中，操作是一种特定类型的规则组件，它定义在发生事件并评估和传递条件后应发生的情况。
+**操作：** 在中 [!DNL Experience Platform Launch]，操作是一种特定类型的规则组件，它定义在发生事件并评估和传递条件后应发生的情况。
 
-**激活：** 在实时客户数据平台中，激活是用户将区段或用户档案映射到目标（如Oracle Evolca、Google或Salesforce Marketing Cloud）所采取的操作。
+**激活：** 在 [!DNL Real-time Customer Data Platform]中，激活是用户将区段或用户档案映射到目标（如、或） [!DNL Oracle Eloqua]所执 [!DNL Google]行的操作 [!DNL Salesforce Marketing Cloud]。
 
-**活动:** 在决策服务中，活动是营销人员希望决策引擎从中选择最佳优惠的一组优惠。
+**活动:** 在中， [!DNL Decisioning Service]活动是营销人员希望决策引擎从中选择最佳优惠的一组优惠。
 
-**Adobe Admin Console:** Adobe Admin Console提供一个中心位置，用于管理组织的访问和功能权限。
+**AdobeAdmin Console:** AdobeAdmin Console为组织提供了管理访问和功能权限的中心位置。
 
-**Adobe Experience Platform:** Adobe Experience Platform在整个企业内实现数据和内容标准化，为实时消费者用户档案提供强大动力，实现数据科学并加快内容速度，从而在客户旅程中推动体验个性化。
+**Adobe Experience Platform:** Adobe Experience Platform在整个企业内实现数据和内容标准化，为实时消费用户档案提供强大动力，实现数据科学并加快内容速度，从而在客户旅程中推动体验个性化。
 
-**Adobe Connectors:** Adobe Connectors是由Adobe创建的预配置连接，用于使数据能够流入和流出Experience Platform。 连接器包括Microsoft Dynamics、Salesforce、Amazon S3和Azure Blob。
+**Adobe Connectors:** Adobe Connectors是由Adobe创建的预配置连接，用于使数据能够进出 [!DNL Experience Platform]。 连接器 [!DNL Microsoft Dynamics]包括 [!DNL Salesforce]、 [!DNL Amazon S3]、和 [!DNL Azure Blob]。
 
-**Adobe Intelligent Services:** Adobe Sensei是支持Experience Platform的智能框架。 它还提供一套人工智能服务，使品牌能够增强其提供实时、个性化客户体验的能力。
+**Adobe Intelligent Services:** Adobe Sensei是强大的智能框架 [!DNL Experience Platform]。 它还提供一套人工智能服务，使品牌能够增强其提供实时、个性化客户体验的能力。
 
-**Adobe I/O:** Adobe I/O是Experience Platform的一部分，它提供对开发人员集成、扩展和自定义Adobe Experience Platform所需的一切的访问，包括API、事件、开发人员控制台和实用工具。
+**Adobe I/O:** Adobe I/O是开发人员集成、扩 [!DNL Experience Platform] 展和自定义Adobe Experience Platform(包括API、事件、开发人员控制台和有用的工具)所需的一切功能的一部分，并提供对这些功能的访问。
 
-**Adobe Sensei:** Adobe Sensei是支持Experience Platform的智能框架。 它还提供一套人工智能服务，使品牌能够增强其提供实时、个性化客户体验的能力。
+**Adobe Sensei:** Adobe Sensei是强大的智能框架 [!DNL Experience Platform]。 它还提供一套人工智能服务，使品牌能够增强其提供实时、个性化客户体验的能力。
 
-**Amazon S3存储桶：** Amazon S3存储段是存储在Amazon生态系统中的数据的基本容器。 存储段包含对象，每个对象都使用由开发人员指定的唯一密钥进行存储和检索。
+**Amazon S3存储桶：** [!DNL Amazon S3] 存储段是存储在生态系统中的数据的基本 [!DNL Amazon] 容器。 存储段包含对象，每个对象都使用由开发人员指定的唯一密钥进行存储和检索。
 
-**Amazon S3连接器：** Amazon S3连接器使Experience Platform的客户能够安全地连接和访问其Amazon S3数据。
+**Amazon S3连接器：** [!DNL Amazon] S3连接器使客户能 [!DNL Experience Platform] 够安全地连接和访问 [!DNL Amazon] 其S3数据。
 
-**附加保存策略：** 保存 `Append` 策略是指定第三方数据通过连接进行摄取，并在数据集末尾附加任何新数据或行时使用的选项。 以前摄取的行将保持不变，只会将自上次计划运行后创建的行引入Experience Platform。 源系统中更改的任何行在Experience Platform上都保持不变。
+**附加保存策略：** 保存 `Append` 策略是指定第三方数据通过连接进行摄取，并在数据集末尾附加任何新数据或行时使用的选项。 以前摄取的行保持不变，只将自上次调度运行后创建的行引入 [!DNL Experience Platform]。 在源系统中更改的所有行在上保持不变 [!DNL Experience Platform]。
 
 **应用程序生命周期管理：** 应用程序生命周期管理能够创建单独的虚拟环境来开发和发展数字体验应用程序。
 
@@ -54,7 +54,7 @@ ht-degree: 0%
 
 **属性合并：** 属性合并定义在发生用户档案冲突时合并策略如何优先处理数据属性值。
 
-**归因人工智能：** 归因人工智能是一种Adobe Sensei服务，可在整个客户生命周期内提供算法多渠道归因功能。
+**归因人工智能：** [!DNL Attribution AI] 是一款Adobe Sensei服务，可在整个客户生命周期内提供算法多渠道归因功能。
 
 **受众**: 受众是生成的一组符合区段定义标准的用户档案。
 
@@ -64,47 +64,47 @@ ht-degree: 0%
 
 ## B
 
-**回填：** 在实时客户数据平台中，在计划的源连接中，回填可以获取历史数据。
+**回填：** 在计 [!DNL Real-time Customer Data Platform]划的源连接中，回填可以获取历史数据。
 
-**回填期：** `Backfill period` 是一个选项，用于设置通过连接接收第三方历史数据的时间长度。 选择永远的回填期，会将源数据的整个历史记录收集到Experience Platform。
+**回填期：** `Backfill period` 是一个选项，用于设置通过连接接收第三方历史数据的时间长度。 选择永远的回填期将收集源数据的整个历史记录 [!DNL Experience Platform]。
 
 **批：** 批是在一段时间内收集的一组数据，以单个单位一起处理。
 
 **批ID:** 批ID是Adobe为一批数据生成的标识符。
 
-**批摄取：** 批量摄取允许用户摄取数PB的数据，并使其可用于企业系统。 借助最新技术，用户现在可以将任何模式XDM和非XDM引入Experience Platform。
+**批摄取：** 批量摄取允许用户摄取数PB的数据，并使其可用于企业系统。 借助最新技术，用户现在可以将任何模式XDM和非XDM引入 [!DNL Experience Platform]。
 
 **批分段：** 批量细分是当前数据选择流程的替代方法，它通过细分定义一次性移动所有用户档案数据以生成相应的受众。 创建后，将保存并存储此段，以便导出以供使用。
 
-**构建：** 在Experience Platform Launch中，内部版本是已部署的库。 内部版本是一个文件或一组文件，其中包含执行该库中包含的业务逻辑所需的所有配置和代码。
+**构建：** 在 [!DNL Experience Platform Launch]中，内部版本是部署的库。 内部版本是一个文件或一组文件，其中包含执行该库中包含的业务逻辑所需的所有配置和代码。
 
-**商业智能工具：** 商业智能（也称为“BI”工具）主要与Experience Platform查询服务集成。 BI工具是从内部和外部系统收集和处理大量非结构化数据的应用程序软件类型。
+**Business Intelligence工具：** 商业智能（也称为“BI”工具）主要与集成在一起 [!DNL Experience Platform Query Service]。 BI工具是从内部和外部系统收集和处理大量非结构化数据的应用程序软件类型。
 
 [返回页首](#adobe-experience-platform-glossary)
 
 ## C
 
-**限制：** 在决策服务中，在决策规则中使用上限来定义优惠的显示次数。 有两种类型的上限，即在合并的优惠受众中，可以提出目标的次数（也称为“Global Cap”），以及向同一最终用户建议优惠的次数(也称为“用户档案上限”)。
+**限制：** 在中， [!DNL Decisioning Service]在决策规则中使用上限来定义显示优惠的次数。 有两种类型的上限，即在合并的优惠受众中，可以提出目标的次数（也称为“Global Cap”），以及向同一最终用户建议优惠的次数(也称为“用户档案上限”)。
 
-**目录：** 在实时客户数据平台中，在源和目标中，目录是可与Adobe应用程序和第三方技术连接的图库。
+**目录：** 在 [!DNL Real-time Customer Data Platform]源和目标中，目录是图库，可与Adobe应用程序和第三方技术建立连接。
 
 **类：** 类定义用于构建模式的最小字段集，它是描述业务对象的基本行为。
 
-**客户端：** 客户端是通过postgres协议或HTTP API连接到查询服务的外部工具或应用程序。
+**客户端：** 客户端是通过postgres协议或HTTP API连接 [!DNL Query Service] 到的外部工具或应用程序。
 
-**集合：** 在决策服务中，集合是优惠的子集，这些子集基于由营销人员定义的预定义条件，如优惠的类别。
+**集合：** 在集 [!DNL Decisioning Service]合中，集合是优惠的子集，这些子集基于由营销人员定义的预定义条件，如优惠的类别。
 
-**命令行界面：** 命令行界面是用于连接到查询服务以执行原始查询的命令行工具。
+**命令行界面：** 命令行界面是用于连接到的命令行工具，用 [!DNL Query Service] 于执行原始查询。
 
 **合成**: 组合是组件的分组，这些组件一起构成模式。
 
-**连接：** 连接是一种虚拟管道，它允许数据进出Experience Platform。 连接现在由源替换。
+**连接：** 连接是允许数据进出的虚拟管道 [!DNL Experience Platform]。 连接现在由源替换。
 
-**连接器：** Adobe Experience Platform Source连接器帮助用户轻松从多个源中获取数据，允许使用Experience Platform Services构建、标记和增强数据。 可以从各种来源(如基于云的存储、第三方软件和CRM系统)中摄取数据。
+**连接器：** Adobe Experience Platform源连接器帮助用户轻松从多个源中获取数据，从而允许使用数据进行结构化、标记和增强 [!DNL Experience Platform Services]。 可以从各种来源(如基于云的存储、第三方软件和CRM系统)中摄取数据。
 
-**条件：** 在Experience Platform Launch中，条件是一个规则组件，用于评估必须返回或的逻辑 `true` 语句 `false`。 执行对规则执行 `true` 任何操作之前，所有条件 `false` 都必须评估为，所有例外条件都必须评估为。
+**条件：** 在Experience Platform Launch中，条件是一个规则组件，它计算必须返回或的逻辑 `true` 语句 `false`。 执行对规则执行 `true` 任何操作之前，所有条件 `false` 都必须评估为，所有例外条件都必须评估为。
 
-**控制台：** 在查询服务中，控制台提供有关查询的状态和操作的信息。 控制台显示与查询服务的连接状态、正在执行的查询操作以及这些查询产生的任何错误消息。
+**控制台：** 在 [!DNL Query Service]中，控制台提供有关查询的状态和操作的信息。 控制台显示连接状态、 [!DNL Query Service]正在执行的查询操作以及这些查询产生的任何错误消息。
 
 **合同数据“C”标签：** 合同 `C` 标签用于对有合同义务或与客户的数据管理策略相关的数据进行分类。
 
@@ -128,7 +128,7 @@ ht-degree: 0%
 
 **创建日期列：** 通过 `Created Date` 连接指定第三方数据时，选择列是一个选项。 当选择附加保存策略且数据集包含多个与日期相关的模式时，用户必须从可用的日期／时间模式中进行选择以指定 `Created Date` 关键列。 `Created Date` 选项在选择覆盖保存策略时不可用。
 
-**按选择创建表：** Create Table as Select是SQL命令，作为完整有效SQL查询的一部分执行时，该命令将指示查询服务将查询结果保留在数据湖上的数据集中。 选项包括： 新建、覆盖所有上一页和追加到上一页。
+**按选择创建表：** Create Table as Select是SQL命令，作为完整有效SQL查询的一部分执行时，该命令将指示将查询结果保留在数据湖上的数据集中。 [!DNL Query Service] 选项包括： 新建、覆盖所有上一页和追加到上一页。
 
 **跨站点数据：** 跨站点数据是来自多个站点的数据的组合，包括现场数据和非现场数据的组合，或来自多个非现场源的数据的组合。
 
@@ -140,25 +140,25 @@ ht-degree: 0%
 
 ## D
 
-**数据字典：** 在Experience Platform Launch中，数据字典是在属性中定义的一组数据元素。
+**数据字典：** 在 [!DNL Experience Platform Launch]中，数据字典是在属性中定义的一组数据元素。
 
-**数据元素：** 在Experience Platform Launch中，数据元素是指针，用于规则和扩展，指向客户端设备上存在的特定数据。
+**数据元素：** 在 [!DNL Experience Platform Launch]中，数据元素是在规则和扩展中使用的指针，用于指向客户端设备上存在的特定数据。
 
-**数据层：** 在Experience Platform Launch中，数据层是客户端设备上存在的数据结构，其中包含有关查看页面或屏幕的上下文的元数据。
+**数据层：** 在 [!DNL Experience Platform Launch]中，数据层是客户端设备上存在的数据结构，其中包含有关查看页面或屏幕的上下文的元数据。
 
 **数据映射：** 数据映射是将源数据字段映射到与目标相关的目标字段的过程。
 
 **数据流：** 数据流是共享相同模式并由同一源发送的消息集或集合。
 
-**数据治理：** 数据治理包括用于确保数据遵守有关数据使用的法规和组织政策的战略和技术。
+**数据治理：** [!DNL Data governance] 包括用于确保数据符合有关数据使用的法规和组织政策的战略和技术。
 
-**数据管理标签：** 数据管理标签为用户提供了对数据进行分类的能力，这些数据反映与隐私相关的考虑因素和符合法规和公司政策的合同条件。 添加到数据集的数据管理标签会继承下来或应用到该数据集中的所有字段。  数据管理标签也可以直接应用于字段。
+**数据管理标签：** [!DNL Data governance] 标签允许用户对反映隐私权相关考虑事项和合同条件的数据进行分类，以符合法规和公司政策。 [!DNL Data governance] 添加到数据集的标签将被继承或应用到该数据集中的所有字段。 [!DNL Data governance] 标签也可直接应用于字段。
 
-**数据集成合作伙伴：** 数据集成合作伙伴无需编写代码，即可简化大量数据从200多个源到Experience Platform的加载和转换，并实现自动化。
+**数据集成合作伙伴：** 数据集成合作伙伴可简化和自动化从200多个源到无需编写代码的大量数据的加 [!DNL Experience Platform] 载和转换。
 
 **数据集标签：** 数据使用标签可以添加到数据集。 该数据集中的所有字段都将继承该数据集的标签。
 
-**数据科学工作区：** Experience Platform中的数据科学工作区使客户能够跨Experience Platform和Adobe应用程序利用数据创建机器学习模型，从而生成智能洞察和预测，从而融入令人愉悦的最终用户数字体验。
+**数据科学工作区：** [!DNL Data Science Workspace] 使客 [!DNL Experience Platform] 户能够创建机器学习模型，利用跨Adobe应用 [!DNL Experience Platform] 程序和Adobe应用程序的数据，生成智能洞察和预测，从而打造令人愉悦的最终用户数字体验。
 
 **数据源：** 数据源是用户指定的来源数据。 数据源的示例包括移动应用程序、用户档案和／或体验事件、网站用户档案事件或CRM。
 
@@ -168,29 +168,29 @@ ht-degree: 0%
 
 **数据使用标签：** 数据使用标签为用户提供了分类数据的能力，这些数据反映与隐私相关的考虑事项和符合法规和公司政策的合同条件。
 
-**数据流：** 在实时客户数据平台中，数据流是从源流到目的地流入平台的虚拟数据管道。
+**数据流：** 在 [!DNL Real-time Customer Data Platform]中，数据流是从源流入到目的 [!DNL Platform] 地的虚拟数据管道。
 
 **数据集：** 数据集是存储和管理构建，用于模式集合，通常是表，其中包含（列）和字段（行）。
 
 **数据集ID:** Adobe为摄取的数据集生成的标识符。
 
-**数据集输出：** 数据集输出提供了一种机制，用于确定 *将“创建表作为选择* ”选项用于特定查询服务运行。
+**数据集输出：** 数据集输出提供了一种机制，用于确定 *将什么“创建表为选择* ”选项用于特定 [!DNL Query Service] 运行。
 
 **决策事件:** 决策事件用于捕获关于决策活动的结果和背景的观察。 决策事件捕获关于作出决定的方式、决定发生时、建议（选择）哪些选择以及在决策过程中影响决策或可以观察到的情景状态的信息。 决策事件还捕获命题ID，全局唯一标识符，其可用于将决策与其他事件关联。
 
-**决策规则：** 在决策服务中，决策规则是定义和控制向最终用户展示优惠的内容、时间、地点和方式的逻辑。
+**决策规则：** 在中， [!DNL Decisioning Service]决策规则是定义和控制向最终用户展示优惠的内容、时间、地点和方式的逻辑。
 
-**决策服务：** 决策服务是服务和UI的集合，使营销人员能够使用业务逻辑和决策规则跨渠道和应用程序创建和提供最终用户个性化优惠体验。
+**决策服务：** 这是 [!DNL Decisioning Service] 服务和UI的集合，使营销人员能够使用业务逻辑和决策规则跨渠道和应用程序创建和提供最终用户个性化优惠体验。
 
-**增量列：** 在实时客户数据平台中，增量列支持为增量摄取的时间戳选择源数据字段
+**增量列：** 在中， [!DNL Real-time Customer Data Platform]增量列支持为增量摄取的时间戳选择源数据字段
 
-**增量保存策略：** `Delta save strategy` 是通过连接接收第三方数据的选项。 该选项允许用户指定新行或更改的源数据行被引入Experience Platform。 新行会添加到数据集的末尾，更改的行会在Experience Platform上的数据集中更新。
+**增量保存策略：** `Delta save strategy` 是通过连接接收第三方数据的选项。 该选项允许用户指定接收源数据的新行或更改的行 [!DNL Experience Platform]。 新行将添加到数据集的末尾，更改的行将在上的数据集中更新 [!DNL Experience Platform]。
 
-**目标：** 在实时客户数据平台中，目标是任何系统(如激活和交付受众的Adobe应用程序、广告服务器或广告网络)的常用术语。
+**目标：** 目 [!DNL Real-time Customer Data Platform] 标是任何系统(如激活和交付受众的Adobe应用程序、广告服务器或广告网络)的一般术语。
 
-**目标类别:** 目标类别是具有相似特征的实时客户数据平台目标的分组。
+**目标类别:** 目标类别是具有相似特 [!DNL Real-time Customer Data Platform] 征的目标的分组。
 
-**目标目录：** 目标目录是实时列表平台中可用目标的。
+**目标目录：** 目标目录是中可用目标的列表 [!DNL Real-time Customer Data Platform]。
 
 **显示名称：** 显示名称是UI中显示的字段的用户友好名称。
 
@@ -202,41 +202,41 @@ ht-degree: 0%
 
 **错误诊断：** 错误诊断允许为摄取的批生成详细的错误消息。 错误阈值允许在整个批处理失败之前配置可接受错误的百分比。
 
-**合格优惠:** 在决策服务中，合格的优惠符合上游定义的约束，这些约束可以一致地提供给用户档案。
+**合格优惠:** 在中，符 [!DNL Decisioning Service]合条件的优惠符合上游定义的约束，这些约束可以一致地提供给用户档案。
 
-**符合条件的规则：** 在决策服务中，合格规则应用于与日历、计划和限制约束相关的用户档案。
+**符合条件的规则：** 在中， [!DNL Decisioning Service]合格规则应用于与日历、计划和限制约束相关的用户档案。
 
-**嵌入代码：** 在Experience Platform Launch中，嵌入代码是放置在站点或环境的HTML中的脚本标签。 嵌入代码指示浏览器在何处检索内部版本。
+**嵌入代码：** 在 [!DNL Experience Platform Launch]中，嵌入代码是放置在站点或环境的HTML中的脚本标签。 嵌入代码指示浏览器在何处检索内部版本。
 
 **明细列表:** 枚举是表示字段有效列表的值的。
 
-**环境:** 在Experience Platform Launch中，环境是一组部署说明，指定构建的主机投放和文件格式。 库必须与环境配对，才能构建。
+**环境:** 在 [!DNL Experience Platform Launch]中，环境是一组部署指令，它指定构建的主机投放和文件格式。 库必须与环境配对，才能构建。
 
-**事件** 在Experience Platform Launch中，事件是特定类型的规则组件，是在客户端设备上发生的用于开始执行规则的触发器。
+**事件** 在 [!DNL Experience Platform Launch]中，事件是特定类型的规则组件，是在客户端设备上发生的用于开始执行规则的触发器。
 
 **事件:** 事件是与用户档案关联的行为数据。
 
-**体验数据模型(XDM):** 体验模式模型(XDM)是使用标准数据统一数据以便与Experience Platform和Adobe Experience Cloud应用程序一起使用的概念。 XDM实现数据结构的标准化，并加快速度并简化从大量数据中获取洞察的过程。
+**体验数据模型(XDM):** [!DNL Experience Data Model] (XDM)是使用标准模式统一数据以与Adobe Experience Cloud应用程 [!DNL Experience Platform] 序一起使用的概念。 XDM实现数据结构的标准化，并加快速度并简化从大量数据中获取洞察的过程。
 
-**体验平台发布：** Launch是一个标签和SDK管理生态系统，与Experience Platform和Experience Cloud应用程序集成。 Launch提供了部署、统一和管理分析、营销和广告集成的工具，这些集成是在所有客户端设备上提供相关客户体验所必需的。
+**Experience Platform Launch:** [!DNL Launch] 是一个标签和SDK管理生态系统，与应用程序 [!DNL Experience Platform] 集成 [!DNL Experience Cloud] 在一起。 [!DNL Launch] 提供部署、统一和管理分析、营销和广告集成的工具，这些工具是在所有客户端设备上提供相关客户体验所必需的。
 
-**Experience Platform Launch扩展：** Experience Platform Launch扩展支持将原始事件数据直接投放到实时客户数据平台目标。 安装Launch扩展需要访问Launch属性。
+**Experience Platform Launch扩展：** [!DNL Experience Platform Launch] 扩展使原始事件数据能够直接投放到 [!DNL Real-time Customer Data Platform] 目标。 安装扩 [!DNL Launch] 展需要访问属 [!DNL Launch] 性。
 
 **实验：** 实验是通过用实时生产数据的样本部分训练实例来创建训练模型的过程。
 
 **实验：** 实验是将训练好的模型应用于小部分实时生产数据以验证其性能的过程。 这不同于针对未结合测试数据集测试的经过培训的模型。 这也不同于某些ML框架中的实验概念，它实际上意味着示例建模项目。
 
-**体验事件：** ExperienceEvent是一种Experience Platform标准模式，可捕获观察，包括时间点和相关主题的身份。 体验事件是事实记录，表示所发生的事情，而不是汇总或解释。
+**体验事件：** ExperienceEvent是一 [!DNL Experience Platform] 种标准模式，用于捕获观察，包括时间点和相关主题的身份。 体验事件是事实记录，表示所发生的事情，而不是汇总或解释。
 
-**扩展：** 在Experience Platform Launch中，扩展是添加到Launch属性的一个功能包。  扩展通常以特定营销或分析解决方案为中心，提供将该技术部署到客户环境所需的工具。
+**扩展：** 在 [!DNL Experience Platform Launch]中，扩展是添加到属性的功能 [!DNL Launch] 包。  扩展通常以特定营销或分析解决方案为中心，提供将该技术部署到客户环境所需的工具。
 
-**扩展包：** 在Experience Platform Launch中，扩展包是由扩展开发人员创建和上传的。zip文件，它提供Launch用户在其属性中安装扩展所需的一切。  扩展包包含一个清单，该清单指定最终用户配置启动扩展和交付到客户端环境的可执行JavaScript的行为所需的扩展、HTML和JavaScript信息。
+**扩展包：** 在中 [!DNL Experience Platform Launch]，扩展包是由扩展开发人员创建和上传的。zip文件，它提供用户在其属性 [!DNL Launch] 中安装扩展所需的一切。  扩展包包含一个清单，它指定最终用户配置扩展行为和交付到客户环境的可执行JavaScript（如果需要）所需 [!DNL Launch] 的扩展、HTML和JavaScript的相关信息。
 
 [返回页首](#adobe-experience-platform-glossary)
 
 ## F
 
-**回退优惠:** 在决策服务中，回退优惠是当最终用户没有资格使用所使用集合中的任何优惠时显示的默认优惠。
+**回退优惠:** 在中， [!DNL Decisioning Service]回退优惠是当最终用户没有资格使用所使用集合中的任何优惠时显示的默认优惠。
 
 **功能映射：** 特征映射是指将特征从数据映射到机器学习模型所需的输入和目标特征的过程。
 
@@ -246,7 +246,7 @@ ht-degree: 0%
 
 **字段名称：** 字段是用于引用查询和服务中的字段的名称。
 
-**频率：** 频率决定循环计划查询服务查询的运行频率。
+**频率：** 频率决定循环的计划查询 [!DNL Query Service] 的运行频率。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -262,7 +262,7 @@ ht-degree: 0%
 
 ## H
 
-**主机：** 在Experience Platform Launch中，主机指定Launch传送构建所需的位置、域和用户凭据。
+**主机：** 在 [!DNL Experience Platform Launch]中，主机指定传送内部版本所需的位置、域 [!DNL Launch] 和用户凭据。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -274,9 +274,9 @@ ht-degree: 0%
 
 **身份图：** 标识图是拼接和链接标识之间关系的映射，可随客户活动实时更新。
 
-**身份命名空间:** 标识命名空间是一个标识符，如cookie ID、设备ID或电子邮件ID，用于指示数据来源的上下文，并用于识别和链接Experience Cloud中的标识。
+**身份命名空间:** 标识命名空间是诸如cookie ID、设备ID或电子邮件ID之类的标识符，用于指示数据来源的上下文，并用于识别和链接跨平台的标识 [!DNL Experience Cloud]。
 
-**标识服务：** Experience Platform Identity Service UI支持创建和管理身份类型，以实现跨设备和渠道的身份链接，从实时客户用户档案获得完整的用户视图。
+**标识服务：** [!DNL Experience Platform Identity Service] UI允许创建和管理身份类型，以跨设备和渠道链接身份，从而实现完整的用户视图 [!DNL Real-time Customer Profile]。
 
 **身份拼接：** 身份拼接是识别数据片段并将其拼接在一起，形成完整的用户档案记录的过程。
 
@@ -288,13 +288,13 @@ ht-degree: 0%
 
 **I2数据标签：** 数据 `I2` 标签用于对可与任何其它数据结合使用的间接可识别数据进行分类，以识别或联系特定人。
 
-**收录：** Ingestion是将数据从源添加到Experience Platform的过程。 可以通过多种方式将数据摄取到Experience Platform，包括流式、批量处理或通过连接器添加数据。
+**收录：** 摄取是将数据从源添加到的过程 [!DNL Experience Platform]。 可以通过多种方 [!DNL Experience Platform] 式（包括流式、批量或通过连接器添加）摄取数据。
 
-**摄取计划:** 摄取计划在从源平台向Experience Platform进行摄取时提供基于时间的选项。
+**摄取计划:** 摄取计划在从源到源进行摄取时提供基于时间的选项 [!DNL Experience Platform]。
 
 **输入功能：** 在特征映射中指定输入特征，并由机器学习模型用于预测。
 
-**智能服务：** 智能服务（如Attribution.ai和Customer.ai）是机器学习，基于人工智能的专门构建模型，需要Experience Platform运行和运行。
+**智能服务：** [!DNL Intelligent Services] 例如 [!DNL Attribution AI] 和 [!DNL Customer AI] 机器学习、基于人工智能的专门构建的模型，它 [!DNL Experience Platform] 们需要运行和操作。
 
 **基于兴趣的定位或个性化：** 满足以下三个条件时，即基于兴趣的定位（也称为个性化）: 现场收集的数据用于推断用户的兴趣，数据用于其他上下文，如其他站点或应用程序（非现场），以及数据用于根据这些推断选择提供哪些内容或广告。
 
@@ -302,9 +302,9 @@ ht-degree: 0%
 
 ## J
 
-**JupyterLab:** 适用于Project Jupyter的基于Web的开放源代码界面，并紧密集成到Experience Platform中。
+**[!DNL JupyterLab]:**适用于Project的基于Web的开放源[!DNL Jupyter]代码界面，并紧密集成到[!DNL Experience Platform]中。
 
-**Jupyter Notebook:** 一个开放源代码Web应用程序，它使用户能够创建和共享包含实时代码、等式、可视化和叙述文本的文档。
+**[!DNL Jupyter Notebook]:**一个开放源代码Web应用程序，它使用户能够创建和共享包含实时代码、等式、可视化和叙述文本的文档。
 
 ## K
 
@@ -312,7 +312,7 @@ ht-degree: 0%
 
 ## L
 
-**库：** 在Experience Platform Launch中，库是一组业务逻辑，其中包含有关Launch库在客户端设备上的行为的说明。
+**库：** 在 [!DNL Experience Platform Launch]中，库是一组业务逻辑，包含有关库在客户端设备上 [!DNL Launch] 的行为方式的说明。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -320,21 +320,21 @@ ht-degree: 0%
 
 **机器学习(ML):** 机器学习是一个研究领域，它使计算机能够学习，而无需明确编程。
 
-**机器学习模型：** 机器学习模型是机器学习配方的实例，该配方使用历史数据和配置进行培训，以便为业务用例进行解决。 在Adobe Data Science Workspace中，机器学习模型称为菜谱。
+**机器学习模型：** 机器学习模型是机器学习配方的实例，该配方使用历史数据和配置进行培训，以便为业务用例进行解决。 在Adobe中， [!DNL Data Science Workspace]机器学习模型称为菜谱。
 
-**映射：** 在实时目标平台中，数据映射是将源数据字段映射到目标相关数据字段的过程。
+**映射：** 在 [!DNL Real-time Customer Data Platform]中，数据映射是将源数据字段映射到目标相关目标字段的过程。
 
-**营销操作：** 在数据治理框架中的营销行为是Experience Platform数据使用者采取的行为，需要检查是否存在违反数据使用策略的情况。
+**营销操作：** 在数据治理框架中的营销行为是数据消费者 [!DNL Experience Platform] 采取的行为，需要检查是否存在违反数据使用策略的情况。
 
 **合并方法：** A是 `merge method` 一个合并策略选项，它支持对数据片段进行合并的优先顺序。 合并方法选项按数据集优先级或数据集时间戳进行合并。
 
-**合并策略：** 合并策略是用户档案使用的规则集，用于确定数据在特定条件下如何按优先级排列并合并为统一视图。
+**合并策略：** 合并策略是一组规则，用于确定在 [!DNL Profile] 某些条件下如何对数据进行优先级排序并合并为一个统一视图。
 
 **Mixin:** 混音允许用户扩展可重用字段，这些字段包含用于定义一个或多个属性的变量，这些属性要被包括在模式中或添加到类中。
 
 **修改日期列：** 通过 `Modified Date` 连接指定第三方数据时，选择列是一个选项。 选择保 `Delta` 存策略且数据集包含多个与日期相关的模式时，用户必须从可用的日期／时间类型模式中进行选择以指定修改后的日期键列。 `Modified Date` 选择保存策略 `Overwrite` 时，选项不可用。
 
-**模块：** 在Experience Platform Launch中，模块是扩展提供的可执行JavaScript的片段，该扩展在客户端环境中执行操作，无需Launch用户创建规则。
+**模块：** 在 [!DNL Experience Platform Launch]中，模块是由扩展提供的可执行JavaScript的片段，它在客户端环境中执行操作而不需要用户 [!DNL Launch] 创建规则。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -342,21 +342,21 @@ ht-degree: 0%
 
 **非生产沙箱：** 非生产沙箱是一种数据虚拟化的形式，它允许您将数据与其他沙箱隔离开来，并通常用于开发实验、测试或试用。 可以重置和删除非生产沙箱。
 
-**笔记本：** 笔记本是使用Jupyter *笔记本创作* ，包含分析描述和结果，并可运行它以执行分析。
+**[!DNL Notebooks]:**[!DNL Notebooks]是使用分析&#x200B;*[!DNL Jupyter Notebook]*描述和包含分析描述和结果创作的，并且可以运行以执行数据。
 
 [返回页首](#adobe-experience-platform-glossary)
 
 ## O
 
-**优惠:** 在决策服务中，优惠是一条营销消息，其中可能包含与其关联的规则，这些规则指定谁有资格查看优惠。
+**优惠:** 在中， [!DNL Decisioning Service]优惠是一条营销消息，其中可能包含与其关联的规则，以指定谁有资格查看优惠。
 
-**优惠决策：** 在决策服务中，优惠决策使营销人员能够根据跨渠道和应用程序收集的数据，在与最终用户互动时管理优惠建议的规则和经过培训的模型。
+**优惠决策：** 优惠决 [!DNL Decisioning Service]策使营销人员能够根据跨渠道和应用程序收集的数据与最终用户互动时，管理优惠建议的规则和经过培训的模型。
 
-**优惠库：** 在决策服务中，优惠库是用于管理个性化和备用优惠、决策规则和活动的中央库。
+**优惠库：** 在中， [!DNL Decisioning Service]优惠库是用于管理个性化和备用优惠、决策规则和活动的中央库。
 
 **组织：** 组织是用于在Adobe产品中标识公司或公司内特定组的名称。 管理员可以配置和管理对组织用户的功能的访问权限。
 
-**覆盖保存策略：** `Overwrite` 保存策略是用于通过连接接收第三方数据的选项，其中用户指定是否在指定的计划覆盖所摄取的数据。 Experience Platform将从第三方源中摄取指定数据集并覆盖Experience Platform上的数据集。
+**覆盖保存策略：** `Overwrite` 保存策略是用于通过连接接收第三方数据的选项，其中用户指定是否在指定的计划覆盖所摄取的数据。 [!DNL Experience Platform] 将从第三方源中摄取指定数据集并覆盖上的数据集 [!DNL Experience Platform]。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -366,31 +366,31 @@ ht-degree: 0%
 
 **拼花文件：** 拼花文件是具有复杂嵌套存储结构的柱式文件格式。 添加数据以填充模式数据集需要拼花文件。
 
-**个性化优惠:** 在决策服务中，个性化优惠是基于合格规则和约束的可自定义营销信息。
+**个性化优惠:** 在中，个 [!DNL Decisioning Service]性化优惠是基于合格规则和约束的可自定义营销信息。
 
-**位置：** 在决策服务中，位置是最终用户在其中显示优惠的位置和上下文。
+**位置：** 在中， [!DNL Decisioning Service]位置是最终用户在其中显示优惠的位置和上下文。
 
-**政策：** 数据使用策略是一条规则，它指定根据数据使用标签在Experience Platform中数据的应用而限制的营销操作。
+**政策：** 数据使用策略是一条规则，它指定根据数据使用标签在中的数据上的应用而限制的营销操作 [!DNL Experience Platform]。
 
 **主键：** 主键是模式中用于唯一标识所有记录的指定。
 
-**优先级：** 在决策服务中，优先级用于对满足所有约束（如资格、日历和上限）的优惠进行排名。
+**优先级：** 在中， [!DNL Decisioning Service]优先级用于对满足所有约束（如资格、日历和上限）的优惠进行排名。
 
 **私有身份图：** 私有身份图是拼接和链接身份之间关系的私人地图，仅由您的组织可见并基于第一方数据构建。
 
-**产品用户档案:** 产品用户档案使管理员能够授予用户对与Experience Platform相关的所有或一部分服务的访问权限。
+**产品用户档案:** 产品用户档案使管理员能够授予用户对与相关的全部或部分服务的访问权限 [!DNL Experience Platform]。
 
 **生产沙箱：** 在无法重置或删除的平台上隔离虚拟数据的生产沙箱。
 
-**用户档案:** 用户档案是Experience Platform标准数据模型，用于定义消费者的属性。 用户档案也可以是事件数据和与个人或设备相关的属性的聚合。
+**用户档案:** [!DNL Profile] 是用于 [!DNL Experience Platform] 定义用户属性的标准数据模型。 用户档案也可以是事件数据和与个人或设备相关的属性的聚合。
 
-**用户档案导出：** 用户档案导出是实时客户数据平台中的两种目标类型之一。 用户档案导出会生成包含用户档案和属性的文件，并将原始PII数据与电子邮件结合使用，并用于与营销和电子邮件自动化平台集成。
+**用户档案导出：** [!DNL Profile] 出口是其中的两种目的之一 [!DNL Real-time Customer Data Platform][!DNL Profile] “导出”会生成包含用户档案和属性的文件，并将原始PII数据与电子邮件结合使用，并用于与营销和电子邮件自动化平台集成。
 
 **用户档案FProfile分组：** 用户档案片段是特定用户所存在身份列表中仅一个身份的用户档案信息。
 
 **用户档案ID:** 用户档案ID是与标识类型关联的自动生成的标识符，它表示用户档案。
 
-**属性：** 在Experience Platform Launch中，属性是部署一组标记所需的一切的容器。
+**属性：** 在 [!DNL Experience Platform Launch]中，属性是部署一组标记所需一切的容器。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -398,35 +398,35 @@ ht-degree: 0%
 
 **查询:** 查询是从数据库表请求数据。
 
-**查询编辑器：** 查询编辑器是一种用于在查询服务中编写、验证和提交SQL语句的工具。
+**查询编辑器：** 查询编辑器是用于在中编写、验证和提交SQL语句的工具 [!DNL Query Service]。
 
-**Adobe Experience Platform查询服务：** *Experience Platform查询服务* ，使数据分析师能够查询ExperienceEvents和XDM，以用于分析和机器学习。 借助查询服务，数据科学家和分析师将能够提取存储在Experience Platform中的所有数据集——包括行为数据、销售点(POS)、客户关系管理(CRM)等——并查询这些数据集以回答有关数据的特定问题。
+**查询服务Adobe Experience Platform:** *[!DNL Experience Platform Query Service]* 使数据分析师能 [!DNL ExperienceEvents] 够查询和XDM，用于分析和机器学习。 数据 [!DNL Query Service]科学家和分析师将能够抽取存储在其中的所有数据集 [!DNL Experience Platform] ，包括行为数据、销售点(POS)、客户关系管理(CRM)等，并查询这些数据集以回答有关数据的特定问题。
 
 [返回页首](#adobe-experience-platform-glossary)
 
 ## R
 
-**实时客户数据平台：** Adobe的实时客户数据平台将已知和未知的客户数据整合在一起，通过简化集成、智能细分和跨数字客户旅程的实时用户档案创建可信的客户激活。
+**实时客户数据平台：** Adobe的客户用户档案 [!DNL Real-time Customer Data Platform] 集成了已知和未知的客户数据，通过简化的集成、智能细分和跨数字客户旅程的实时激活创建可信的客户。
 
-**实时客户用户档案:** 实时客户用户档案是集中式用户档案，用于有针对性的个性化体验管理。
+**实时客户用户档案:** [!DNL Real-time Customer Profile] 是针对有针对性的个性化体验管理的集中用户档案。
 
 **菜谱：** 处方是Adobe的模型规范术语，是代表特定机器学习、AI算法或算法集成、处理逻辑和配置的顶级容器，构建和执行经过培训的模型时需要它们，因此有助于解决特定的业务问题。
 
 **记录：** 记录是数据集中作为行持续存在的数据。
 
-**重复：** 循环定义查询服务查询是计划仅运行一次还是定期运行。
+**重复：** 循环定义查询 [!DNL Query Service] 是计划仅运行一次还是定期运行。
 
-**表示：** 在决策服务中，表示法是渠道使用的信息，如显示优惠的位置或语言。
+**表示：** 在中， [!DNL Decisioning Service]表示法是渠道使用的信息，如用于显示优惠的位置或语言。
 
-**资源：** 在Experience Platform Launch中，资源是一个通用术语，它指的是Launch用户可以在客户端环境中配置的选项，包括扩展、数据元素和规则。
+**资源：** 在 [!DNL Experience Platform Launch]中，资源是一个通用术语，它指用户可 [!DNL Launch] 以在客户端环境中配置的选项，包括扩展、数据元素和规则。
 
-**基于角色的访问控制:** 基于角色的访问控制使管理员能够向Experience Platform的用户分配访问权限和权限。 权限包括视图和／或使用Experience Platform功能的能力，如创建沙箱、定义模式和管理数据集。
+**基于角色的访问控制:** 基于角色的访问控制使管理员能够向用户分配访问权限和权 [!DNL Experience Platform]限。 权限包括视图和／或使用功 [!DNL Experience Platform] 能，如创建沙箱、定义模式和管理数据集。
 
-**规则：** 在Experience Platform Launch中，规则是规则组件的集合，用于定义应按逻辑分组的特定事件、条件和操作集。
+**规则：** 在 [!DNL Experience Platform Launch]中，规则是规则组件的集合，它定义了应逻辑分组的特定事件、条件和操作集。
 
-**规则组件：** 在Experience Platform Launch中，规则组件是构成规则的事件、条件和操作。
+**规则组件：** 在 [!DNL Experience Platform Launch]中，规则组件是组成规则的事件、条件和操作。
 
-**运行时：** 运行时为机器学习菜谱指定运行时环境。 Python、R、Spark、PySpark和Tensorflow运行时支持将URL输入到菜谱源的文档处理者图像。
+**运行时：** 运行时为机器学习菜谱指定运行时环境。 [!DNL Python]、R、 [!DNL Spark]PySpark和Tensorflow运行时支持将URL输入至处方源的文档程序图像。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -434,25 +434,25 @@ ht-degree: 0%
 
 **示例数据：** 示例数据是预览文件（通常是前100行）的模式，为数据科学家或工程师提供数据文件中的或数据的概念。
 
-**沙箱：** 沙箱是在Experience Platform上的用户组织内隔离虚拟数据的一种形式。
+**沙箱：** 沙箱是在上的用户组织内隔离虚拟数据的一种形式 [!DNL Experience Platform]。
 
 **沙箱重置：** 沙箱重置，删除沙箱内的所有数据，包括数据、用户档案和段。 沙箱重置可能影响连接到内部或外部目标的数据。
 
-**沙箱切换器：** Experience Platform中的沙箱切换器控件允许用户在他们有权访问的沙箱之间导航。 切换沙箱将更改所有内容，并可能根据权限更改功能访问。
+**沙箱切换器：** 中的沙箱切换 [!DNL Experience Platform] 器控件允许用户在他们有权访问的沙箱之间导航。 切换沙箱将更改所有内容，并可能根据权限更改功能访问。
 
-**计划:** 计划是用户定义的关于从第三方数据源到Adobe Experience Platform的数据接收频率或节奏的规范。
+**计划:** 计划是用户定义的关于从第三方数据源到Adobe的数据接收频率或节奏的规范 [!DNL Experience Platform]。
 
 **评分：** 评分是指使用经过培训的模型从数据生成洞察的过程。
 
 **模式:** 模式由类和可选混合组成，用于创建数据集和数据流。 模式包括行为属性、时间戳、身份、属性定义和关系。
 
-**模式描述符：** 模式描述符是与模式相关的附加元数据，它描述Experience Platform可用来了解预期模式行为(如两个模式之间的关系)的行为。
+**模式描述符：** 模式描述符是与模式相关的附加元数据，用于描述可用于了 [!DNL Experience Platform] 解预期模式行为(如两个模式之间的关系)的行为。
 
-**机密访问密钥：** 秘密访问密钥是与访问密钥ID结合使用的Amazon S3密钥，用于签署AWS请求。
+**机密访问密钥：** 秘密访问密钥是与 [!DNL Amazon] 访问密钥ID结合使用的S3密钥，用于签署AWS请求。
 
 **细分：** 区段是一组规则，其中包括属性和事件数据，这些数据使许多用户档案成为受众。
 
-**区段生成器：** Segment Builder是可视的开发环境，用于构建细分定义，是所有使用Experience Platform上实时客户用户档案细分的应用程序的常用组件。
+**区段生成器：** [!DNL Segment Builder] 是可视开发环境，用于构建细分定义，并作为所有使用细分的应用程序的 [!DNL Real-time Customer Profile] 通用组件 [!DNL Experience Platform]。
 
 **细分定义：** 段定义是用于描述目标受众的关键特性或行为的规则集。 概念化后，使用细分定义中概述的规则确定某个细分的合格受众成员。
 
@@ -466,11 +466,11 @@ ht-degree: 0%
 
 **细分规则：** 区段规则是用户定义用户档案对区段的资格的位置和方式。
 
-**区段类型：** 有两种类型的细分： 一个是可随Experience Platform数据更改动态更新的细分，另一个是可捕获所有用户档案会议细分规则的受众快照，这些规则不会更改。
+**区段类型：** 有两种类型的细分： 一个是随数据变化动态更 [!DNL Experience Platform] 新的区段，另一个是受众快照，用于捕获所有用户档案会议区段规则，这些规则不会更改。
 
 **细分：** 细分是将大量客户、潜在客户或消费者分成小组的过程，这些小组具有相似的属性并将响应类似的营销策略。
 
-**Sensei ML框架：** Sensei ML框架是跨Adobe的统一机器学习框架，它利用Experience Platform上的数据，以更快、可扩展和可重用的方式支持数据科学家开发机器学习驱动的智能服务。
+**Sensei ML框架：** Sensei ML框架是跨Adobe的统一机器学习框架，它利用上的数据 [!DNL Experience Platform] ，以更快、可扩展、可重用的方式支持数据科学家开发机器学习驱动的智能服务。
 
 **敏感数据标签：** 敏感的“S”标签用于对被视为敏感的数据进行分类，例如您希望标记为敏感的不同类型的行为或地理数据。
 
@@ -480,29 +480,29 @@ ht-degree: 0%
 
 **S2数据标签：** `S2` 数据标签用于对可用于确定广义地理围栏区域的数据进行分类。
 
-**来源：** Source是实时客户数据平台中任何输入连接器的一般术语。
+**来源：** Source是中任何输入连接器的一般术语 [!DNL Real-time Customer Data Platform]。
 
 **源属性：** 源属性是源数据集中的字段。  源属性映射到目标模式字段。
 
-**源连接器：** Adobe Experience Platform Source连接器帮助用户轻松从多个源中获取数据，允许使用Experience Platform Services构建、标记和增强数据。 可以从各种来源(如基于云的存储、第三方软件和CRM系统)中摄取数据。
+**源连接器：** Adobe Experience Platform源连接器帮助用户轻松从多个源中获取数据，从而允许使用数据进行结构化、标记和增强 [!DNL Experience Platform Services]。 可以从各种来源(如基于云的存储、第三方软件和CRM系统)中摄取数据。
 
-**源类别:** 源类别是具有相似特征的实时客户数据平台源的分组。
+**源类别:** 源类别是具有相似特 [!DNL Real-time Customer Data Platform] 征的源的分组。
 
-**源目录：** 源目录是实时客户数据平台中可用源的列表。
+**源目录：** 源目录是中可用源的列表 [!DNL Real-time Customer Data Platform]。
 
 **标准身份命名空间:** 标准标识命名空间是Adobe预定义的标识符，包括Adobe和用于标识用户的行业标准解决方案。
 
 **标准模式:** 标准模式由类和混合组成，旨在重复使用。
 
-**流摄取：** 流摄取为用户提供了一种将数据从客户端和服务器端设备实时发送到Experience Platform的方法。
+**流摄取：** 流摄取为用户提供了一种将数据从客户端和服务器端设备实时 [!DNL Experience Platform] 发送到的方法。
 
-**流端点URL:** 流端点URL是Adobe提供的一个唯一端点，它绑定到客户的IMS组织以将数据流化到Experience Platform。
+**流端点URL:** 流端点URL是Adobe提供的唯一端点，它绑定到客户的IMS组织以将数据流化到 [!DNL Experience Platform]。
 
-**流细分：** 流细分是一种持续不断的数据选择过程，它可根据用户活动更新细分。 在构建并保存区段后，会将区段定义应用于传入数据，以便实时用户档案客户。 会定期处理细分添加和删除，确保您的目标受众保持相关性。
+**流细分：** 流细分是一种持续不断的数据选择过程，它可根据用户活动更新细分。 在构建并保存区段后，会将区段定义应用于传入的数据 [!DNL Real-time Customer Profile]。 会定期处理细分添加和删除，确保您的目标受众保持相关性。
 
 **符号：** Symbol是标识命名空间的缩写，可在API中用作引用。
 
-**系统视图:** 系统视图是源数据集的可视表示形式，这些数据集通过实时客户用户档案流向目标。
+**系统视图:** 系统视图是源数据集的可视表示形式，这些数据集流 [!DNL Real-time Customer Profile] 向目标。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -512,7 +512,7 @@ ht-degree: 0%
 
 **培训模型：** 训练模型表示模型训练过程的可执行输出，其中一组训练数据被应用到模型实例。 经过培训的模型将保留对从其创建的任何智能Web服务的引用。 该模型适合于评分和创建智能Web服务。 可以将训练模型的修改作为新版本进行跟踪。
 
-**令牌：** 令牌是一种双因素身份验证安全性类型，可用于授权使用具有查询服务的计算机服务。
+**令牌：** 令牌是一种双因素身份验证安全性类型，可用于授权使用计算机服务 [!DNL Query Service]。
 
 **类型：** 类型是机器学习问题的类别，它是为菜谱设计的，在培训后用于帮助定制评估培训运行。
 
@@ -520,7 +520,7 @@ ht-degree: 0%
 
 ## U
 
-**合并模式:** 合并模式是对已启用实时客户用户档案的模式的整合。
+**合并模式:** 合并模式是已启用的模式的合并 [!DNL Real-time Customer Profile]。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -534,15 +534,15 @@ ht-degree: 0%
 
 ## X
 
-**XDM（体验数据模型）:** XDM(Experience Data Model)是使用标准模式统一数据以与Experience Platform和Adobe Experience Cloud应用程序一起使用的概念。 XDM是一种正式的规范，用于以单一语言或标准数据模型表示所有客户体验数据，并实现数据结构的标准化，加快速度并简化从大量数据中获得洞察的过程。
+**XDM（体验数据模型）:** XDM(体验模式模型)是使用标准数据统一数据以与Adobe Experience Cloud应用程 [!DNL Experience Platform] 序一起使用的概念。 XDM是一种正式的规范，用于以单一语言或标准数据模型表示所有客户体验数据，并实现数据结构的标准化，加快速度并简化从大量数据中获取洞察的过程。
 
 **XDM决策事件：** 决策事件用于捕获关于决策活动的结果和背景的观察，包括关于决策是如何作出的、何时作出、提出（和选择）哪些选择以及在决策过程中影响决策或可以观察到的情景状态的信息。 决策事件还捕获命题ID，这是一个全局唯一标识符，可用于将决策关联到其他事件。 DecisionEvents不仅与影响决策的体验事件相关，还与直接回应建议的ExperienceEvents相关。 在每个受这些建议影响的ExperienceEvent中，应用程序都会引用建议ID。 使用命题ID维护单个用户档案中的命题——响应历史。
 
 **XDM体验事件：** ExperienceEvent是已发生事件的事实记录，包括时间点和相关个人的身份。 ExperienceEvent可以是显式（直接可观察的人为行为）或隐式（在没有直接人为行为的情况下提出），并且记录时不进行汇总或解释。 它们对于时域分析至关重要，因为它们允许观察和分析给定时间窗口中发生的更改以及比较多个时间窗口以跟踪趋势。
 
-**XDM个人用户档案:** XDM个人用户档案对已识别和部分识别个人的属性和兴趣形成单一表示。 未识别的用户档案可能只包含匿名行为信号，如浏览器cookie，而高度识别的用户档案可能包含详细的个人信息，如姓名、出生日期、地点和电子邮件地址。 随着用户档案的增长，它将成为一个可靠的个人信息、身份信息、联系人详细信息和个人通信首选项存储库。
+**XDM个人用户档案:** XDM形 [!DNL Individual Profile] 成对已识别和部分识别个体的属性和兴趣的单一表示。 未识别的用户档案可能只包含匿名行为信号，如浏览器cookie，而高度识别的用户档案可能包含详细的个人信息，如姓名、出生日期、地点和电子邮件地址。 随着用户档案的增长，它将成为一个可靠的个人信息、身份信息、联系人详细信息和个人通信首选项存储库。
 
-**XDM系统：** XDM系统是Experience Platform中由标准模式提供支持的基础架构、数据语义和工作流。
+**XDM系统：** XDM系统是由标准模式提供支持的基础架构、 [!DNL Experience Platform] 数据语义和工作流程。
 
 [返回页首](#adobe-experience-platform-glossary)
 
