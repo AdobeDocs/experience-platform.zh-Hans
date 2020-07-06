@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案概述
 topic: guide
 translation-type: tm+mt
-source-git-commit: e34b0b92a8fdf0986b10753d6c983b66dde42503
+source-git-commit: 4d853dfee931789ca1badd410ce0b4b73c8c2803
 workflow-type: tm+mt
-source-wordcount: '1796'
+source-wordcount: '1795'
 ht-degree: 1%
 
 ---
@@ -54,7 +54,7 @@ Adobe Experience Platform细分服务提供为每位客户提供体验所需的�
 
 当整合来自多个来源的数据并将其合并，以便了解每个客户的完整视图时，合并策略是平台用来确定数据的优先级和合并哪些数据以创建统一视图的规则。 使用REST风格的API或用户界面，您可以创建新的合并策略、管理现有策略并为组织设置默认的合并策略。 有关使用实时客户用户档案API处理合并策略的详细信息，请参阅合 [并策略端点指南](api/merge-policies.md)。 要使用Experience PlatformUI处理合并策略，请参阅合 [并策略用户指南](ui/merge-policies.md)。
 
-## (Alpha)配置计算属性
+### (Alpha)配置计算属性
 
 >[!IMPORTANT]
 >此文档中概述的计算属性功能在alpha中。 文档和功能可能会发生变化。
@@ -80,7 +80,7 @@ Adobe Experience Platform细分服务提供为每位客户提供体验所需的�
 >[!Note]
 >通过Adobe解决方案(包括Analytics云、Marketing Cloud和Advertising Cloud)收集的数据会流入Experience Platform并被引入用户档案。
 
-### 用户档案流摄取指标
+### 用户档案摄取指标
 
 可观性洞察使您能够揭示Adobe Experience Platform中的关键指标。 除了平台使用情况统计和各种平台功能的性能指标外，还有特定的与用户档案相关的指标，使您能够深入了解传入请求率、成功摄取率、摄取的记录大小等。 要了解更多信息，请首先阅读可观 [性洞察概述](../observability/home.md)，然后阅读用户档案指标的完整列表，参阅可用 [指标文档](../observability/metrics.md)。
 
