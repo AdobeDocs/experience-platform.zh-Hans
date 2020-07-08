@@ -4,16 +4,21 @@ solution: Experience Platform
 title: 删除沙箱
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 974e93b1c24493734848151b9be00758f6a84578
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '84'
+ht-degree: 4%
 
 ---
 
 
 # 删除沙箱
 
-可以通过发出DELETE请求来删除沙箱，该请求在请求路径 `name` 中包含沙箱。
+可以通过发出DELETE请求来删除沙箱，该请求将沙箱 `name` 包含在请求路径中。
 
->[!NOTE] 发出此API调用会将沙箱的属 `status` 性更新为“已删除”并将其停用。 GET请求在删除沙箱后仍可检索其详细信息。
+>[!NOTE]
+>
+>发出此API调用会将沙箱的属 `status` 性更新为“已删除”并将其停用。 删除沙箱后，GET请求仍可检索其详细信息。
 
 **API格式**
 
@@ -23,7 +28,7 @@ DELETE /sandboxes/{SANDBOX_NAME}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SANDBOX_NAME}` | 要 `name` 删除的沙箱的沙箱。 |
+| `{SANDBOX_NAME}` | 要 `name` 删除的沙箱的位置。 |
 
 **请求**
 
@@ -40,7 +45,7 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应将返回沙箱的更新详细信息，显示其 `state` 已“删除”。
+成功的响应返回沙箱的更新详细信息，显示其 `state` 已“删除”。
 
 ```json
 {
