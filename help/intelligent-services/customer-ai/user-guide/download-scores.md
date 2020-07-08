@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 在客户AI中下载分数
 topic: Downloading scores
 translation-type: tm+mt
-source-git-commit: 7c892d92a50312fb4b733431737b796651689804
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '933'
+ht-degree: 2%
 
 ---
 
@@ -26,7 +29,7 @@ source-git-commit: 7c892d92a50312fb4b733431737b796651689804
 
 ## Find your dataset ID {#dataset-id}
 
-在您的客户AI洞察服务实例中，单击右 *上方导航* 中的更多操作下拉菜单，然后选择 **[!UICONTROL Access scores]**。
+在您的客户AI洞察服务实例中，单击右 *上方导航* 中的更多操作下拉框，然后选择 **[!UICONTROL 访问得分]**。
 
 ![更多操作](../images/insights/more-actions.png)
 
@@ -240,7 +243,9 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
 
 要下载文件数据，请对您在上一步检索 `"href"` 文件时复制的值发出 [GET请求](#retrieving-your-files)。
 
->[!NOTE] 如果您直接在命令行中发出此请求，可能会提示您在请求标头后添加输出。 以下请求示例使用 `--output {FILENAME.FILETYPE}`。
+>[!NOTE]
+>
+>如果您直接在命令行中发出此请求，可能会提示您在请求标头后添加输出。 以下请求示例使用 `--output {FILENAME.FILETYPE}`。
 
 **API格式**
 
@@ -264,7 +269,9 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
   -O 'filename.parquet'
 ```
 
->[!TIP] 在发出GET请求之前，请确保您位于要保存文件的正确目录或文件夹中。
+>[!TIP]
+>
+>在发出GET请求之前，请确保您位于要保存文件的正确目录或文件夹中。
 
 **响应**
 
@@ -276,7 +283,9 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
 
 下载得分数据的另一种方法是将受众导出到数据集。 分段作业成功完成后(属性的 `status` 值为“SUCCEEDED”)，您可以将受众导出到数据集，在该数据集中可以访问并执行操作。 要了解有关细分的更多信息，请访 [问细分概述](../../../segmentation/home.md)。
 
->[!IMPORTANT] 要利用此导出方法，需要为数据集启用实时客户用户档案。
+>[!IMPORTANT]
+>
+>要利用此导出方法，需要为数据集启用实时客户用户档案。
 
 区段 [评估指南中](../../../segmentation/tutorials/evaluate-a-segment.md) “导出区段”部分涵盖导出受众数据集所需的步骤。 本指南概述并提供以下示例：
 
