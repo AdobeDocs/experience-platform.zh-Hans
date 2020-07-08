@@ -4,62 +4,67 @@ solution: Experience Platform
 title: 数据访问概述
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 4817162fe2b7cbf4ae4c1ed325db2af31da5b5d3
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1367'
+ht-degree: 2%
 
 ---
 
 
-# 使用Data Access API查询数据集数据
+# 查询数据集数据（使用Data Access API）
 
-本文档提供了一个分步教程，其中涵盖如何使用Adobe Experience Platform中的Data Access API查找、访问和下载数据集中存储的数据。 您还将介绍Data Access API的一些独特功能，如分页和部分下载。
+此文档提供了一个分步教程，其中涵盖如何使用Adobe Experience Platform中的数据访问API查找、访问和下载数据集中存储的数据。 您还将介绍Data Access API的一些独特功能，如分页和部分下载。
 
 ## 入门指南
 
-本教程旨在了解如何创建和填充数据集。 有关详细 [信息，请参阅数据集创建教程](../../catalog/datasets/create.md) 。
+本教程旨在了解如何创建和填充数据集。 有关详细 [信息，请参阅数据集](../../catalog/datasets/create.md) 创建教程。
 
 以下各节提供了成功调用平台API所需了解的其他信息。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这些包括路径、必需的标题和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑难解答指南 [中有关如何阅读示例API调用的部分](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须首先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程后，将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
+要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
-- 授权：承载人 `{ACCESS_TOKEN}`
+- 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] 有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>[!NOTE]
+>
+>有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
-- 内容类型：application/json
+- 内容类型： application/json
 
 ## 序列图
 
-本教程遵循以下序列图中概述的步骤，突出显示Data Access API的核心功能。</br>
+本教程遵循以下序列图中概述的步骤，重点介绍Data Access API的核心功能。</br>
 ![](../images/sequence_diagram.png)
 
-Catalog API允许您检索有关批处理和文件的信息。 数据访问API允许您通过HTTP访问和下载这些文件，作为完整或部分下载，具体取决于文件的大小。
+Catalog API允许您检索有关批处理和文件的信息。 数据访问API允许您通过HTTP以完整或部分下载方式访问和下载这些文件，具体取决于文件的大小。
 
 ## 定位数据
 
-在开始使用数据访问API之前，您需要先确定要访问的数据的位置。 在目录API中，您可以使用两个端点浏览组织的元数据并检索要访问的批处理或文件的ID:
+在开始使用数据访问API之前，您需要先确定要访问的数据的位置。 在目录API中，有两个端点，您可以使用这些端点浏览组织的元数据并检索要访问的批处理或文件的ID:
 
-- `GET /batches`:返回组织下的批列表
-- `GET /dataSetFiles`:返回单位下的列表文件
+- `GET /batches`: 返回组织下的批列表
+- `GET /dataSetFiles`: 返回组织下的列表文件
 
 有关目录API中端点的全面列表，请参阅 [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)。
 
 ## 检索IMS组织下的批列表
 
-使用目录API，您可以返回组织下的一列表批：
+使用目录API，您可以返回组织下的批列表:
 
 **API格式**
 
@@ -79,7 +84,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches/' \
 
 **响应**
 
-响应包括一个对象，该对象列表与IMS组织相关的所有批，每个顶级值表示一个批。 单个批处理对象包含该特定批处理的详细信息。 以下响应已最小化为空间。
+响应包括一个对象，该对象列表与IMS组织相关的所有批，每个顶级值代表一个批。 单个批处理对象包含该特定批处理的详细信息。 以下响应已最小化为空间。
 
 ```json
 {
@@ -102,7 +107,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches/' \
 
 ### 筛选批列表
 
-过滤器通常需要查找特定批次才能检索特定用例的相关数据。 可以将参数添加到请 `GET /batches` 求中以过滤返回的响应。 以下请求将返回在指定时间后创建的所有批，这些批在特定数据集中按创建时间排序。
+过滤器通常需要查找特定批，才能检索特定用例的相关数据。 可以将参数添加到 `GET /batches` 请求中以过滤返回的响应。 以下请求将返回在指定时间后创建的所有批，这些批在特定数据集中按创建时间排序。
 
 **API格式**
 
@@ -186,11 +191,11 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?createdAf
 }
 ```
 
-可在目录API参考中找到参数和过滤器的完 [整列表](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)。
+参数和过滤器的完整列表可在目录API [参考中找到](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)。
 
-## 检索属于特定批次的所有文件的列表
+## 检索属于特定批的所有文件的列表
 
-现在，您拥有要访问的批次的ID，您可以使用数据访问API获取属于该批次的一列表文件。
+现在，您拥有要访问的批的ID，您可以使用数据访问API获取属于该批的一列表文件。
 
 **API格式**
 
@@ -243,11 +248,11 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/5c6f332168
 | -------- | ----------- |
 | `data._links.self.href` | 访问此文件的URL。 |
 
-响应包含一个数据数组，它列表指定批次中的所有文件。 文件由其文件ID引用，该文件ID位于字段 `dataSetFileId` 下。
+响应包含一个列表指定批次中所有文件的数据数组。 文件由其文件ID引用，该ID位于字段 `dataSetFileId` 下。
 
 ## 使用文件ID访问文件
 
-获得唯一的文件ID后，您可以使用Data Access API访问有关该文件的特定详细信息，包括其名称、大小（以字节为单位）以及用于下载该文件的链接。
+获得唯一的文件ID后，您可以使用数据访问API访问有关该文件的特定详细信息，包括其名称、大小（以字节为单位）以及下载该文件的链接。
 
 **API格式**
 
@@ -269,9 +274,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-根据文件ID指向单个文件还是目录，返回的数据数组可能包含属于该目录的单个条目或一列表文件。 每个文件元素都将包含详细信息，如文件名、大小（以字节为单位）以及用于下载文件的链接。
+根据文件ID是指向单个文件还是目录，返回的数据数组可能包含属于该目录的单个条目或一列表文件。 每个文件元素都将包含详细信息，如文件名、大小（以字节为单位）以及用于下载文件的链接。
 
-**案例1:文件ID指向单个文件**
+**案例1: 文件ID指向单个文件**
 
 **响应**
 
@@ -300,7 +305,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 | `{FILE_NAME}.parquet` | 文件的名称。 |
 | `_links.self.href` | 用于下载文件的URL。 |
 
-**案例2:文件ID指向目录**
+**案例2: 文件ID指向目录**
 
 **响应**
 
@@ -343,9 +348,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 
 | 属性 | 描述 |
 | -------- | ----------- | 
-| `data._links.self.href` | 用于下载关联文件的URL。 |
+| `data._links.self.href` | 用于下载相关文件的URL。 |
 
-此响应返回一个包含两个单独文件（ID和）的 `{FILE_ID_2}` 目录 `{FILE_ID_3}`。 在此方案中，您需要按照每个文件的URL访问该文件。
+此响应返回一个包含两个单独文件（ID和）的 `{FILE_ID_2}` 目录 `{FILE_ID_3}`。 在这种情况下，您需要按照每个文件的URL来访问该文件。
 
 ## 检索文件的元数据
 
@@ -360,7 +365,7 @@ HEAD /files/{FILE_ID}?path={FILE_NAME}
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{FILE_ID}` | 文件的标识符。 |
-| `{FILE_NAME`} | 文件名(例如，用户档案.parce) |
+| `{FILE_NAME`} | 文件名(例如，用户档案.parke) |
 
 **请求**
 
@@ -374,9 +379,9 @@ curl -I 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb2-44
 
 **响应**
 
-响应标题包含查询的文件的元数据，包括：
-- `Content-Length`:指示有效负荷的大小（以字节为单位）
-- `Content-Type`:指示文件的类型。
+响应标头包含查询的文件的元数据，包括：
+- `Content-Length`: 指示有效负荷的大小（以字节为单位）
+- `Content-Type`: 指示文件类型。
 
 ## 访问文件内容
 
@@ -391,7 +396,7 @@ GET /files/{FILE_ID}?path={FILE_NAME}
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{FILE_ID}` | 文件的标识符。 |
-| `{FILE_NAME`} | 文件名(例如，用户档案.parce)。 |
+| `{FILE_NAME`} | 文件名(例如，用户档案.parke)。 |
 
 **请求**
 
@@ -409,9 +414,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 
 ## 下载文件的部分内容
 
-Data Access API允许以块为单位下载文件。 在请求从文件下载特定范围的字 `GET /files/{FILE_ID}` 节时，可以指定范围标题。 如果未指定范围，则默认情况下，API将下载整个文件。
+数据访问API允许下载块中的文件。 在请求从文件下载特定范围的字 `GET /files/{FILE_ID}` 节时，可以指定范围标头。 如果未指定范围，则默认情况下API将下载整个文件。
 
-上一节中的HEAD示 [例给出特定文件的大小](#retrieve-the-metadata-of-a-file) （以字节为单位）。
+上一节的HEAD示 [例给出](#retrieve-the-metadata-of-a-file) 特定文件的大小（以字节为单位）。
 
 **API格式**
 
@@ -422,7 +427,7 @@ GET /files/{FILE_ID}?path={FILE_NAME}
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{FILE_ID} ` | 文件的标识符。 |
-| `{FILE_NAME}` | 文件名(例如，用户档案.parce) |
+| `{FILE_NAME}` | 文件名(例如，用户档案.parke) |
 
 **请求**
 
@@ -441,19 +446,19 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 
 **响应**
 
-响应主体包括文件的前100字节（由请求中的“范围”标题指定）和HTTP状态206（部分内容）。 响应还包括以下标题：
+响应主体包括文件的前100字节（由请求中的“范围”标头指定）和HTTP状态206（部分内容）。 响应还包含以下标题：
 
-- 内容长度：100（返回的字节数）
-- 内容类型：application/parke（请求的是镶木文件，因此响应内容类型为镶木）
-- 内容范围：字节0-99/249058(在总字节数中请求的范围(0-99)(249058))
+- 内容长度： 100（返回的字节数）
+- 内容类型： application/parke（请求的是镶木文件，因此响应内容类型为镶木）
+- 内容范围： 字节0-99/249058(在字节总数中请求的范围(0-99)(249058))
 
 ## 配置API响应分页
 
-数据访问API中的响应将分页。 默认情况下，每页最多可输入100个条目。 分页参数可用于修改默认行为。
+数据访问API中的响应将分页。 默认情况下，每页最大条目数为100。 分页参数可用于修改默认行为。
 
-- `limit`:您可以使用“limit”参数根据您的要求指定每页的条目数。
-- `start`:偏移量可以由“开始”查询参数设置。
-- `&`:您可以使用“和号”在单个调用中组合多个参数。
+- `limit`: 您可以使用“limit”参数根据您的要求指定每页的条目数。
+- `start`: 偏移量可由“开始”查询参数设置。
+- `&`: 您可以使用和号在单个调用中组合多个参数。
 
 **API格式**
 
@@ -467,7 +472,7 @@ GET /batches/{BATCH_ID}/files?start={OFFSET}&limit={LIMIT}
 | -------- | ----------- |
 | `{BATCH_ID}` | 您尝试访问的批的批的批标识符。 |
 | `{OFFSET}` | 用于开始结果数组的指定索引(例如，开始=0) |
-| `{LIMIT}` | 控制在结果数组中返回的结果数（例如，limit=1） |
+| `{LIMIT}` | 控制结果数组中返回的结果数（例如，limit=1） |
 
 **请求**
 
@@ -481,9 +486,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/5c102cac7c
 
 **响应**:
 
-响应包含一个 `"data"` 具有单个元素的数组，由request参数指定 `limit=1`。 此元素是包含第一个可用文件的详细信息的对象，如请求中的参数所指定（请记住，在从零开始的编号中，第一个元素是“0”）。 `start=0`
+响应包含一个 `"data"` 具有单个元素的数组，如请求参数所指定 `limit=1`。 此元素是包含第一个可用文件的详细信息的对象，如请求中的 `start=0` 参数所指定（请记住，在从零开始的编号中，第一个元素为“0”）。
 
-该 `_links.next.href` 值包含指向下一页响应的链接，您可以在该页看到该参 `start` 数已高级到 `start=1`。
+该 `_links.next.href` 值包含指向下一页响应的链接，在该页可以看到该参 `start` 数已高级到 `start=1`。
 
 ```json
 {
