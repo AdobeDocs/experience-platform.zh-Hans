@@ -4,7 +4,7 @@ seo-title: 实时客户数据平台中的数据治理
 description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 seo-description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 translation-type: tm+mt
-source-git-commit: c4e5e8ccac1af976c890adb1c9f0ff7f7b5ed9b4
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1085'
 ht-degree: 1%
@@ -34,7 +34,9 @@ Data Governance允许您在数据集或数据集字段级别对数据应用使�
 
 您可以通过为目标定义营销用例（也称为营销活动）来设置目标的数据使用限制。 目标的市场营销用例指明将导出到该目标的数据的用途。
 
->[!NOTE] 有关营销操作及其在数据使用策略中的使用的更多信息，请参 [阅Experience Platform文档中的](../../data-governance/policies/overview.md) “数据使用策略”概述。
+>[!NOTE]
+>
+>有关营销操作及其在数据使用策略中的使用的更多信息，请参 [阅Experience Platform文档中的](../../data-governance/policies/overview.md) “数据使用策略”概述。
 
 在目标上定义营销使用案例，可确保发送到这些目标的任何用户档案或区段均符合数据使用策略。 因此，您应根据组织对激活实施策略限制的需要，向您的目标添加适当的营销使用案例。
 
@@ -63,7 +65,9 @@ Adobe Experience Platform为常见 **客户体验使** 用案例提供了若干�
 * 应用于要激活的区段中的字段和数据集的数据使用标签。
 * 目标的营销目的。
 
->[!NOTE] 如果激活集（而非整个数据集）中的某些字段只应用了数据使用标签，则只有在以下条件下才会对这些字段级别标签进行强制执行：
+>[!NOTE]
+>
+>如果激活集（而非整个数据集）中的某些字段只应用了数据使用标签，则只有在以下条件下才会对这些字段级别标签进行强制执行：
 >* 这些字段用在段定义中。
 >* 字段将配置为目标目标的预计属性。
 
