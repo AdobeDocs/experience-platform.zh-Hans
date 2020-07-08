@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据科学工作区疑难解答指南
 topic: Troubleshooting
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '665'
 ht-degree: 0%
@@ -18,7 +18,9 @@ ht-degree: 0%
 
 ## [!DNL JupyterLab] 环境未加载 [!DNL Google Chrome]
 
->[!IMPORTANT] 此问题已解决，但仍可能存在于Google Chrome 80.x浏览器中。 请确保您的Chrome浏览器是最新的。
+>[!IMPORTANT]
+>
+>此问题已解决，但仍可能存在于Google Chrome 80.x浏览器中。 请确保您的Chrome浏览器是最新的。
 
 浏览 [!DNL Google Chrome] 器版本80.x默认情况下会阻止所有第三方Cookie。 此策略可以阻止 [!DNL JupyterLab] 在Adobe Experience Platform中加载。
 
@@ -38,7 +40,9 @@ ht-degree: 0%
 
 ![chrome advanced](./images/faq/toggle-off.png)
 
->[!NOTE] 或者，您也可以禁用第三方cookie并添加 [*。]ds.adobe.net添加到允许列表。
+>[!NOTE]
+>
+>或者，您也可以禁用第三方cookie并添加 [*。]ds.adobe.net到允许列表。
 
 导览至地址栏中的“chrome://flags/”。 使用右侧的下拉菜单 *搜索并禁用标题为* “默认SameSite by cookies”的标志。
 
