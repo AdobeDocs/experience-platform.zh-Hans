@@ -4,14 +4,17 @@ solution: Experience Platform
 title: 重置沙箱
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 974e93b1c24493734848151b9be00758f6a84578
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '122'
+ht-degree: 4%
 
 ---
 
 
 # 重置沙箱
 
-开发沙箱具有“工厂重置”功能，该功能会从沙箱中删除所有非默认资源。 可以通过发出PUT请求来重置沙箱，该请求在请 `name` 求路径中包含沙箱。
+开发沙箱具有“工厂重置”功能，可从沙箱中删除所有非默认资源。 可以通过发出PUT请求来重置沙箱，该请求在请 `name` 求路径中包含沙箱。
 
 **API格式**
 
@@ -25,7 +28,7 @@ PUT /sandboxes/{SANDBOX_NAME}
 
 **请求**
 
-以下请求将重置名为“dev-2”的沙箱。
+以下请求重置名为“dev-2”的沙箱。
 
 ```shell
 curl -X PUT \
@@ -42,11 +45,11 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `action` | 为了重置沙箱，必须在请求有效负荷中提供此参数，其值为“reset”。 |
+| `action` | 此参数必须在请求负载中提供值为“reset”，才能重置沙箱。 |
 
 **响应**
 
-成功的响应会返回更新沙箱的详细信息，表明其 `state` 正在“重置”。
+成功的响应会返回更新沙箱的详细信息，显示其 `state` 正在“重置”。
 
 ```json
 {
@@ -59,4 +62,6 @@ curl -X PUT \
 }
 ```
 
->[!NOTE] 重置沙箱后，系统需要大约15分钟才能进行设置。 设置沙箱后，沙箱的 `state` 变为“活动”或“失败”。
+>[!NOTE]
+>
+>重置沙箱后，系统需要大约15分钟才能进行设置。 设置沙箱后，沙箱 `state` 的变为“活动”或“失败”。
