@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据使用策略用户指南
 topic: policies
 translation-type: tm+mt
-source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '727'
 ht-degree: 0%
@@ -16,7 +16,9 @@ ht-degree: 0%
 
 Adobe Experience Platform数据管理提供了一个用户界面，允许您创建和管理数据使用策略。 此文档概述了在用户界面的“策略”工 _作区_ 中可执行 [!DNL Experience Platform] 的操作。
 
->[!IMPORTANT] 默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 要考虑实施单个策略，必须手动启用该策略。 有关如何在UI [中执行](#enable) 此操作的步骤，请参阅启用策略一节。
+>[!IMPORTANT]
+>
+>默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 要考虑实施单个策略，必须手动启用该策略。 有关如何在UI [中执行](#enable) 此操作的步骤，请参阅启用策略一节。
 
 ## 先决条件
 
@@ -51,7 +53,9 @@ Adobe Experience Platform数据管理提供了一个用户界面，允许您创�
 
 此时将 *[!UICONTROL 显示选择营销]* 操作步骤。 从提供的列表中选择适当的营销操作，然后单 **[!UICONTROL 击下]** 一步继续。
 
->[!NOTE] 选择多个营销活动时，策略会将其解释为“OR”规则。 换言之，如果执行了任 _何选定_ 的营销操作，则此策略适用。
+>[!NOTE]
+>
+>选择多个营销活动时，策略会将其解释为“OR”规则。 换言之，如果执行了任 _何选定_ 的营销操作，则此策略适用。
 
 ![](../images/policies/add-marketing-actions.png)
 
@@ -93,7 +97,9 @@ Adobe Experience Platform数据管理提供了一个用户界面，允许您创�
 
 ## 编辑或删除营销操作 {#edit-delete-marketing-action}
 
->[!NOTE] 只能编辑您的组织定义的自定义营销操作。 不能更改或删除Adobe定义的营销操作。
+>[!NOTE]
+>
+>只能编辑您的组织定义的自定义营销操作。 不能更改或删除Adobe定义的营销操作。
 
 在“策 **[!UICONTROL 略]** ”工作区中，选择“ **[!UICONTROL 营销操作]** ”选项卡，以视图由Adobe和您自己的组织定义的一列表可用的营销操作。 从列表中选择自定义营销操作，然后使用右侧部分中提供的字段编辑营销操作的详细信息。
 
@@ -101,7 +107,9 @@ Adobe Experience Platform数据管理提供了一个用户界面，允许您创�
 
 如果任何现有的使用策略未使用营销活动，则可以单击删除营 **[!UICONTROL 销活动来删除它]**。
 
->[!NOTE] 尝试删除现有策略正在使用的营销操作将导致显示错误消息，指示删除尝试失败。
+>[!NOTE]
+>
+>尝试删除现有策略正在使用的营销操作将导致显示错误消息，指示删除尝试失败。
 
 ![](../images/policies/delete-marketing-action.png)
 
