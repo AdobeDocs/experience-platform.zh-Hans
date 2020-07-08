@@ -4,23 +4,26 @@ solution: Experience Platform
 title: Adobe定义的函数
 topic: queries
 translation-type: tm+mt
-source-git-commit: 41fdee979db32b97a5935a02e9ffcde3308b6d54
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '248'
+ht-degree: 6%
 
 ---
 
 
 # 使用Adobe定义的函数
 
-Adobe的主要优势之一是他们了解体验数据以及客户需要如何处理这些数据。 您可以利用这一理解来构建助手功能，使您的工作更轻松。
+Adobe的主要优势之一是他们了解体验数据以及客户需要如何处理这些数据。 您可以利用这种理解来构建助手功能，使您的工作更轻松。
 
-本文档涵盖Adobe定义的功能(ADF)，以支持三个关键的Analytics活动:
+本文档涵盖Adobe定义的功能(ADF)，可支持三个关键的Analytics活动:
 - [会话化](#sessionization)
 - [归因](#attribution)
 - [路径分析](#pathing)
 
 ## 会话化
 
-重现 `SESS_TIMEOUT()` 使用Adobe Analytics进行的访问分组。 它执行类似的基于时间的分组，但具有可自定义的参数。
+重现 `SESS_TIMEOUT()` 与AdobeAnalytics的访问组。 它执行类似的基于时间的分组，但具有可自定义的参数。
 
 **语法：**
 
@@ -30,7 +33,7 @@ Adobe的主要优势之一是他们了解体验数据以及客户需要如何处
 
 具有字段的结构 `(timestamp_diff, num, is_new, depth)`
 
-### 浏览行级和输 `SESS_TIMEOUT()` 出
+### 浏览行级和 `SESS_TIMEOUT()` 输出
 
 ```sql
 SELECT analyticsVisitor,
@@ -84,15 +87,17 @@ LIMIT 31;
 
 ## 归因
 
-归因是您如何为营销工作分配指标或转化，如收入、订单或注册。
+归因是您如何为营销工作分配指标或转化率，如收入、订单或注册。
 
-在Adobe Analytics中，归因设置是使用eVar等变量配置的，并在摄取数据时生成。
+在AdobeAnalytics，属性设置是使用eVar等变量配置的，并在摄取数据时生成。
 
 在查询服务中找到的归因ADF允许在查询时定义和生成这些分配。
 
-此示例重点介绍最近联系归因，但Adobe也优惠了首次联系归因。
+此示例重点介绍最近接触归因，但Adobe也优惠了首次接触归因。
 
->[!NOTE] 其他超时选项和基于事件的过期选项将在未来版本的查询服务中可用。
+>[!NOTE]
+>
+>未来版本的事件服务中将提供其他超时和基于查询的过期选项。
 
 **语法：**
 
@@ -121,7 +126,7 @@ LIMIT 50;
 
 ![图像](../images/queries/adobe-functions/row-level-attribution.png)
 
-### 创建按上一成员级别(eVar10)划分的订单
+### 创建按最后成员级别(eVar10)划分的订单
 
 ```sql
 SELECT
@@ -147,7 +152,7 @@ LIMIT 25;
 
 ## 路径分析
 
-路径分析有助于了解客户如何浏览您的网站。 ADF和 `NEXT()``PREVIOUS()` ADF使这成为可能。
+寻路功能有助于了解客户如何浏览您的网站。 ADF `NEXT()` 和 `PREVIOUS()` ADF使这成为可能。
 
 **语法：**
 
@@ -179,7 +184,7 @@ LIMIT 10;
 
 ![图像](../images/queries/adobe-functions/select-current-page.png)
 
-### 在会话的条目中为前五个页面名称创建细分报告
+### 创建会话条目中前五个页面名称的细分报告
 
 ```sql
   SELECT 
