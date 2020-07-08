@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform身份服务疑难解答指南
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2225'
 ht-degree: 1%
@@ -50,7 +50,7 @@ ht-degree: 1%
 
 ## 某些字段不应标记为身份的上下文是否存在？
 
-标识字段应保留为每个个人唯一的值。 例如，考虑客户忠诚度项目的数据集。 “忠诚度级别”字段（金、银、铜牌）不是有用的身份领域，而忠诚度ID（唯一值）则是。
+标识字段应保留为每个个人唯一的值。 例如，考虑客户忠诚度项目的数据集。 “忠诚度级别”字段（金、银、铜牌）将不是有用的身份域，而忠诚度ID（唯一值）将是。
 
 ZIP代码和IP地址等字段不应标记为个人身份，因为这些值可以应用于多个个人。 这些领域只应被标记为家庭级营销策略的标识。
 
@@ -120,7 +120,9 @@ Identity Service在持久值之前创建PII的强单向加密哈希。 “电话
 
 The following table describes when the recommended approach for including identity data in your XDM would be identity map and when an identity field is the better method.
 
->[!NOTE] An advantage `identityMap` has is the ability to include multiple identity values for a single namespace.
+>[!NOTE]
+>
+>An advantage `identityMap` has is the ability to include multiple identity values for a single namespace.
 
 Write|XDM identity field|`identityMap`
 ---|---|---
