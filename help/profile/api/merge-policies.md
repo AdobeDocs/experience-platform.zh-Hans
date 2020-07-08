@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
 solution: Adobe Experience Platform
-title: 实时客户用户档案API开发人员指南
+title: 合并策略——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
+source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
 workflow-type: tm+mt
-source-wordcount: '2052'
+source-wordcount: '2053'
 ht-degree: 1%
 
 ---
 
 
-# 合并策略
+# 合并策略端点
 
 Adobe Experience Platform使您能够将来自多个来源的数据整合在一起，并将其合并，以便了解每个客户的完整视图。 整合这些数据时，合并策略是平台用来确定数据的优先级以及将哪些数据合并以创建统一视图的规则。 使用REST风格的API或用户界面，您可以创建新的合并策略、管理现有策略并为组织设置默认的合并策略。 本指南显示了使用API处理合并策略的步骤。 要使用UI处理合并策略，请参阅合 [并策略用户指南](../ui/merge-policies.md)。
 
@@ -720,7 +720,7 @@ curl -X DELETE \
 
 **响应**
 
-成功删除请求将返回HTTP状态200(OK)和空的响应主体。 要确认删除成功，您可以执行GET请求以按合并策略的ID视图该合并策略。 如果合并策略被删除，您将收到HTTP状态404（找不到）错误。
+成功删除请求将返回HTTP状态200(OK)和空的响应主体。 要确认删除成功，您可以执行GET请求，按合并策略的ID视图该策略。 如果合并策略被删除，您将收到HTTP状态404（找不到）错误。
 
 ## 后续步骤
 
