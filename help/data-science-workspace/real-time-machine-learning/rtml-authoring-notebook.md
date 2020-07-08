@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时机器学习笔记本用户指南
 topic: Training and scoring a ML model
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1637'
 ht-degree: 0%
@@ -274,6 +274,8 @@ print("Model ID : ", model_id)
 本节概述了如何创建DSL。 您将创作包含任何数据预处理的节点以及ONNX节点。 然后，使用节点和边创建DSL图。 边缘使用基于元组的格式(node_1、node_2)连接节点。 图形不应具有循环。
 
 >[!IMPORTANT]
+>
+>
 >必须使用ONNX节点。 如果没有ONNX节点，应用程序将失败。
 
 ### 节点创作
