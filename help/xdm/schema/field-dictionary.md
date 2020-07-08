@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 体验数据模型(XDM)字段字典
 topic: overview
 translation-type: tm+mt
-source-git-commit: b3fa5a17c3a5c2406d368d165da63f2f8c01154d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '25199'
 ht-degree: 3%
@@ -23,7 +23,9 @@ ht-degree: 3%
 
 您可以使用模式编辑器中的搜索功能视图这些资源的详细信息，如 [模式编辑器教程所示](../tutorials/create-schema-ui.md)。
 
->[!NOTE] 如果字段被标记&#x200B;**为“** DEPRECATED”，则表示该字段不应再用于新实施。 该字段仍可用于向后兼容，但将来版本中不再支持。
+>[!NOTE]
+>
+>如果字段被标记&#x200B;**为“** DEPRECATED”，则表示该字段不应再用于新实施。 该字段仍可用于向后兼容，但将来版本中不再支持。
 
 | 字段名称 | 标题 | 描述 | 类型 | 格式 | XDM类型 | 包含在 |
 |----------|----|------|--------|-----|-----------|--------------|
@@ -97,7 +99,7 @@ ht-degree: 3%
 | xdm:bitrateAverage | 平均比特率 | 与播放会话期间发生的播放持续时间相关的所有比特率值的加权平均值。 | 对象 |  | 对象 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/experienceevent-media, https://ns.adobe.com/xdm/context/media-timed-asset-view-details |
 | xdm:bitrateChanges | 比特率更改 | 播放会话期间发生的比特率更改事件数。 | 对象 |  | 对象 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/experienceevent-media, https://ns.adobe.com/xdm/context/media-timed-asset-view-details |
 | xdm：弹回 | 退回 | 已作为接收系统暂时无法传递的消息返回的异步消息。 | 对象 |  | 对象 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/campaign/experienceevent-all, https://ns.adobe.com/experience/campaign/mutationevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/experienceevent-directmarketing |
-| xdm：品牌 | 品牌 | 主／变型产品的品牌。 | 字符串 |  | 字符串 | https://ns.adobe.com/xdm/context/product |
+| xdm：品牌 | 品牌 | 主控/变型产品的品牌。 | 字符串 |  | 字符串 | https://ns.adobe.com/xdm/context/product |
 | xdm:broadcastChannel | 分发渠道 | 内容播放位置的分发渠道。 | 字符串 |  | 字符串 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/experienceevent-media, https://ns.adobe.com/xdm/context/media-timed-asset-view-details |
 | xdm:broadcastContentType | 广播内容类型 | 流投放的类型。 | 字符串 |  | 字符串 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/experienceevent-media, https://ns.adobe.com/xdm/context/media-timed-asset-view-details |
 | xdm:broadcastNetwork | 广播网络 | 程序员网络名称。 | 字符串 |  | 字符串 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/experienceevent-media, https://ns.adobe.com/xdm/context/media-timed-asset-view-details |
@@ -269,10 +271,10 @@ ht-degree: 3%
 | xdm:manufacturerName | 制造商名称 | 产品的制造商。 | 字符串 |  | 字符串 | https://ns.adobe.com/xdm/context/product |
 | xdm：营销 | 营销 | 与与接触点活动的营销活动相关的信息。 | 对象 |  | 对象 | https://ns.adobe.com/experience/adcloud-experienceevent、https://ns.adobe.com/experience/analytics-experienceevent、https://ns.adobe.com/experience/campaign-experienceevent、https://ns.adobe.com/experience/target-experienceevent、https://ns.adobe.com/xdm/context/experienceevent-marketing |
 | xdm:marketSegment | 市场领域 | 组织参与的指定市场细分。 这是一个自由表单字段，建议对查询使用结构化值或使用属 `xdm:identifier` 性。 | 字符串 |  | 字符串 | https://ns.adobe.com/xdm/common/organization |
-| xdm:masterProductDescription | 主产品说明 | 产品说明。 | 字符串 |  | 字符串 | https://ns.adobe.com/xdm/context/product |
-| xdm:masterProductID | 主产品标识符 | 商务后端系统中产品的内部唯一ID。 | 字符串 | uri | 字符串 | https://ns.adobe.com/xdm/context/product |
-| xdm:masterProductName | 主产品名称 | 产品的本地化名称。 | 字符串 |  | 字符串 | https://ns.adobe.com/xdm/context/product |
-| xdm:masterProductSKU | 主产品SKU | 由供应商或制造商分配（要更新）的主产品的唯一SKU（库存单位）。 | 字符串 |  | 字符串 | https://ns.adobe.com/xdm/context/product |
+| xdm:masterProductDescription | 主控产品说明 | 产品说明。 | 字符串 |  | 字符串 | https://ns.adobe.com/xdm/context/product |
+| xdm:masterProductID | 主控产品标识符 | 商务后端系统中产品的内部唯一ID。 | 字符串 | uri | 字符串 | https://ns.adobe.com/xdm/context/product |
+| xdm:masterProductName | 主控产品名称 | 产品的本地化名称。 | 字符串 |  | 字符串 | https://ns.adobe.com/xdm/context/product |
+| xdm:masterProductSKU | 主控产品SKU | 供应商或制造商分配的主控产品的唯一SKU（库存单位）（要更新）。 | 字符串 |  | 字符串 | https://ns.adobe.com/xdm/context/product |
 | xdm:measuredAdNotVisible | 测量广告不可见 | 广告不可见的指标，由可见性库在印象时测量。 | 对象 |  | 对象 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/advertising, https://ns.adobe.com/xdm/context/experienceevent-advertising |
 | xdm:measuredMuted | 已测量静音 | 广告在印象时由可见性库测量的静音指示符。 | 对象 |  | 对象 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/advertising, https://ns.adobe.com/xdm/context/experienceevent-advertising |
 | xdm:measuredWindowInactive | 测量窗口无效 | 在印象时间由可见性库测量的不活动窗口中显示的广告指示器。 | 对象 |  | 对象 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/advertising, https://ns.adobe.com/xdm/context/experienceevent-advertising |
@@ -389,7 +391,7 @@ ht-degree: 3%
 | xdm:props | Prop |  | 对象 |  | 对象 | https://ns.adobe.com/experience/analytics-experienceevent,https://ns.adobe.com/experience/analytics/experienceevent-all |
 | xdm:proximity | 信标接近度 | 估计与信标的距离。 | 字符串 |  | 字符串 | https://ns.adobe.com/experience/aam-experienceevent, https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/beacon-interaction-details, https://ns.adobe.com/xdm/context/experienceevent-environment-details |
 | xdm:proximityUUID | Proximity UUID | 配置为信标（如果多个信标在某个区域中运行，则配置为多个信标）的UUID将传输到范围内的移动设备，以标识组织信标。 | 字符串 |  | 字符串 | https://ns.adobe.com/experience/aam-experienceevent, https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/beacon-interaction-details, https://ns.adobe.com/xdm/context/experienceevent-environment-details |
-| xdm:purchaseID | 购买 ID | 卖家为此购买或合同分配的唯一标识符。 无法保证ID是唯一的。 | 字符串 |  | 字符串 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/commerce, https://ns.adobe.com/xdm/context/experienceevent-commerce |
+| xdm:purchaseID | Purchase ID | 卖家为此购买或合同分配的唯一标识符。 无法保证ID是唯一的。 | 字符串 |  | 字符串 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/commerce, https://ns.adobe.com/xdm/context/experienceevent-commerce |
 | xdm:purchaseOrderNumber | 采购订单编号 | 购买者为此购买或合同分配的唯一标识符。 | 字符串 |  | 字符串 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/commerce, https://ns.adobe.com/xdm/context/experienceevent-commerce |
 | xdm：购买 | 购买 | 已接受命令。 购买是商务转换中唯一的必需操作。 购买必须引用产品列表。 | 对象 |  | 对象 | https://ns.adobe.com/experience/adcloud-experienceevent, https://ns.adobe.com/experience/analytics-experienceevent, https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/target-experienceevent, https://ns.adobe.com/xdm/context/commerce, https://ns.adobe.com/xdm/context/experienceevent-commerce |
 | xdm:pushNotificationTokens | 推送通知令牌 | 推送通知令牌用于与安装在设备或SaaS应用程序帐户上的应用程序进行通信。 | 阵列 |  | 阵列 | https://ns.adobe.com/experience/campaign-experienceevent、https://ns.adobe.com/experience/campaign/experienceevent-all、https://ns.adobe.com/experience/campaign/experienceevent-profile-push-details、https://ns.adobe.com/experience/campaign/profile-snapshot、https://ns.adobe.com/xdm/context/profile-push-details |
