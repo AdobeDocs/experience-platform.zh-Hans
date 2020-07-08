@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据科学工作区教程
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1252'
 ht-degree: 0%
@@ -60,6 +60,8 @@ Docker图像允许您将应用程序打包到它需要的所有部件。 这包�
 ## 导入菜谱
 
 >[!NOTE]
+>
+>
 >本教程要求您具有Docker源文件URL。 如果您 [没有Docker源文件URL](../data-science-workspace/models-recipes/package-source-files-recipe.md) ，请访问将源文件打包到菜谱教程中。
 
 导入菜谱教程提供有关如何配置和导入打包菜谱的洞察。 在本教程的结尾，您可以在Adobe Experience Platform数据科学工作区中创建、培训和评估模型。
