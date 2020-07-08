@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 归因AI用户指南
 topic: User guide
 translation-type: tm+mt
-source-git-commit: 0ea96de956adb5a6c5286433a547772118c43aee
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1430'
 ht-degree: 0%
@@ -60,11 +60,13 @@ ht-degree: 0%
 
 选择事件后，其右侧将显示新的下拉列表。 第二个下拉菜单用于通过使用操作为事件提供更多上下文。 对于此转换事件，使用默 *认操* 作。
 
->[!NOTE] 转换名称下 *的字符串* ，将在您定义事件时更新。
+>[!NOTE]
+>
+>转换名称下 *的字符串* ，将在您定义事件时更新。
 
 ![无下拉菜单](./images/user-guide/conversion_event_1.png)
 
-“添 *加事件* ”和“ *添加组* ”按钮用于进一步定义转换。 根据您所定义的转换，您可能需要使用“添加 *事件* ”和“ *添加组* ”按钮来提供更多上下文。
+“添 *加事件* ”和“ *添加组* ”按钮用于进一步定义转换。 根据您要定义的转换，您可能需要使用“添加 *事件* ”和“ *添加组* ”按钮来提供更多上下文。
 
 ![添加事件](./images/user-guide/add_event.png)
 
@@ -98,7 +100,9 @@ ht-degree: 0%
 
 选择触点的运算符后，“输 *入字段值* ”即可用。 “输入字段值 *”的下拉值* ，根据您先前选择的运算符和触点值填充。 如果某个值未填充到下拉列表中，则可以手动键入该值。 单击下拉框并选 **择CLICK**。
 
->[!NOTE] 运算符“exists”和“not exists”没有与它们关联的字段值。
+>[!NOTE]
+>
+>运算符“exists”和“not exists”没有与它们关联的字段值。
 
 ![触点下拉列表](./images/user-guide/touchpoint_dropdown.png)
 
@@ -112,7 +116,9 @@ ht-degree: 0%
 
 ![触点概述](./images/user-guide/add_group_touchpoint.png)
 
->[!NOTE] 使用触点名 *称下的字符* 串，快速了解您的触点。 请注意，该字符串与触点的名称匹配。
+>[!NOTE]
+>
+>使用触点名 *称下的字符* 串，快速了解您的触点。 请注意，该字符串与触点的名称匹配。
 
 ![](./images/user-guide/touchpoint_string.png)
 
@@ -140,7 +146,9 @@ ht-degree: 0%
 
 要更改要进行评分的一天中的时间，请单击时钟图标。 在显示的新叠加中，输入要进行评分的日期。 在叠加外部单击以关闭它。
 
->[!NOTE] 完成每个评分过程最多可能需要24小时。
+>[!NOTE]
+>
+>完成每个评分过程最多可能需要24小时。
 
 ![时钟图标](./images/user-guide/time_of_day.png)
 
@@ -158,7 +166,9 @@ ht-degree: 0%
 
 最后，在“输入字段值”下拉框 *中键入国家／地* 区代码。
 
->[!NOTE] 国家代码长度为两个字符。 ISO 3166-1 alpha-2 [提供完整列表](https://datahub.io/core/country-list)。
+>[!NOTE]
+>
+>国家代码长度为两个字符。 ISO 3166-1 alpha-2 [提供完整列表](https://datahub.io/core/country-list)。
 
 ![地区](./images/user-guide/region-based.png)
 
@@ -166,7 +176,9 @@ ht-degree: 0%
 
 为确保您获得尽可能最准确的模型，必须使用代表您业务的历史数据来培训您的模型。 默认情况下，该模型使用2个季度（6个月）的数据进行培训。 选择下拉菜单以更改默认设置。 您可以选择用一到四个季度的数据（3-12个月）进行培训。
 
->[!NOTE] 较短的培训窗口对近期趋势更敏感，而较长的培训窗口则创建更可靠的模型，对近期趋势更不敏感。
+>[!NOTE]
+>
+>较短的培训窗口对近期趋势更敏感，而较长的培训窗口则创建更可靠的模型，对近期趋势更不敏感。
 
 ![培训窗口](./images/user-guide/training_window.png)
 
