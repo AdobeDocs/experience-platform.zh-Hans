@@ -4,7 +4,7 @@ solution: Experience Platform
 title: JupyterLab用户指南
 topic: Overview
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '3647'
 ht-degree: 11%
@@ -33,7 +33,9 @@ Experience Platform的JupyterLab集成随附架构更改、设计注意事项、
 | **开发库** | 在 [!DNL Experience Platform]中 [!DNL JupyterLab] ，提供预装的 [!DNL Python]PySpark、R和PySpark库。 有关受 [支持库](#supported-libraries) 的完整列表，请参阅附录。 |
 | **库控制器** | 当您需要预装的库时，可以为Python和R安装额外的库，并临时存储在隔离的容器中，以保持数据的完整性 [!DNL Platform] 和安全性。 有关更多 [详细信息](#kernels) ，请参阅内核部分。 |
 
->[!NOTE] 其他库仅可用于安装它们的会话。 启动新会话时，必须重新安装所需的任何其他库。
+>[!NOTE]
+>
+>其他库仅可用于安装它们的会话。 启动新会话时，必须重新安装所需的任何其他库。
 
 ## 与其他服务集 [!DNL Platform] 成 {#service-integration}
 
@@ -44,7 +46,9 @@ Experience Platform的JupyterLab集成随附架构更改、设计注意事项、
 * **[!DNL Sensei ML Framework]:**模型开发，能够对数据进行培训和评分，并且只需单击一下即可创建菜谱。
 * **[!DNL Experience Data Model (XDM)]:**标准化和互操作性是Adobe Experience Platform背后的关键概念。[Adobe推动的体验数据模型](https://www.adobe.com/go/xdm-home-en)(XDM)旨在实现客户体验数据标准化并定义客户体验管理模式。
 
->[!NOTE] 上的 [!DNL Platform] 某些服务集 [!DNL JupyterLab] 成仅限于特定内核。 有关详细信息，请 [参阅](#kernels) “内核”一节。
+>[!NOTE]
+>
+>上的 [!DNL Platform] 某些服务集 [!DNL JupyterLab] 成仅限于特定内核。 有关详细信息，请 [参阅](#kernels) “内核”一节。
 
 ## 主要功能和常见操作
 
@@ -426,7 +430,7 @@ dataFrame.show()
 
 随着2.4 [!DNL Spark] 的推出， `%dataset` 自定义魔术功能将被提供用于新的PySpark 3(2.4)[!DNL Spark] 笔记本([!DNL Python] 3内核)。
 
-**使用情况**
+**用法**
 
 `%dataset {action} --datasetId {id} --dataFrame {df}`
 
@@ -598,6 +602,8 @@ timedf.show()
 ```
 
 >[!TIP]
+>
+>
 >在Scala中，您可 `sys.env()` 以使用从中声明和返回值 `option`。 这样，如果您知道变量将仅用于一次，就无需定义变量。 以下示例从上 `val userToken` 述示例中开始，并将其在行中声明 `option` 为替代内容：
 > 
 ```scala
