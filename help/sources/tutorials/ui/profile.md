@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 激活入站源数据以填充客户用户档案
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '481'
 ht-degree: 0%
@@ -61,7 +61,9 @@ ht-degree: 0%
 
 启用模式和数据集后， [!DNL Profile]引入该数据集的数据现在也将填充客户用户档案。
 
->[!NOTE] 最近启用的数据集中的现有数据不被 [!DNL Profile]
+>[!NOTE]
+>
+>最近启用的数据集中的现有数据不被 [!DNL Profile]
 
 ## 后续步骤
 
