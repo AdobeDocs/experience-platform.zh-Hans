@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用Jupyter笔记本创建菜谱
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2292'
 ht-degree: 0%
@@ -30,6 +30,8 @@ ht-degree: 0%
 Recipe Builder [!UICONTROL 笔记本] ，可在笔记本内运行培训和评分运行。 这使您能够灵活地在对培训和评分 `train()` 数据 `score()` 运行实验之间更改其和方法。 一旦您对培训和评分的输出感到满意，您就可以创建一个菜谱，用于使用笔记本 [!DNL Data Science Workspace] 将内置到Recipe Builder笔记本的菜谱功能。
 
 >[!NOTE]
+>
+>
 >Recipe Builder笔记本支持处理所有文件格式，但当前“创建菜谱”功能仅支持 [!DNL Python]。
 
 ![](../images/jupyterlab/create-recipe/recipe-builder.png)
@@ -46,7 +48,9 @@ Recipe Builder [!UICONTROL 笔记本] ，可在笔记本内运行培训和评分
 
 开始对单元格进行必要的更改，完成后，只需运行单元格。 命 `%%writefile filename.py` 令将单元格的内容写入 `filename.py`。 您必须手动为每个文件运行更改的单元格。
 
->[!NOTE] 如果适用，您应手动运行单元格。
+>[!NOTE]
+>
+>如果适用，您应手动运行单元格。
 
 ## 开始使用Recipe Builder笔记本
 
@@ -73,6 +77,8 @@ data_access_sdk_python
 ```
 
 >[!NOTE]
+>
+>
 >您添加的库或特定版本可能与上述库不兼容。
 
 ### 配置文件 {#configuration-files}
@@ -115,6 +121,8 @@ data_access_sdk_python
 - [外部源](#external-sources)
 
 >[!NOTE]
+>
+>
 >在Recipe Builder笔记本中，数据通过数据加载 `platform_sdk` 器加载。
 
 ### [!DNL Platform] SDK {#platform-sdk}
@@ -144,6 +152,8 @@ df = pd.read_json(data)
 ### 从数据访问SDK（已弃用）
 
 >[!CAUTION]
+>
+>
 > `data_access_sdk_python` 不再推荐，请参阅将 [数据访问代码转换为平台SDK](../authoring/platform-sdk.md) ，以获取有关使用数据加载器 `platform_sdk` 的指南。
 
 用户可以使用数据访问SDK加载数据。 通过包含以下行，可以在页面顶部导入库：
@@ -162,6 +172,8 @@ df = prodreader.load(data_set_id=configProperties['trainingDataSetId'],
 ```
 
 >[!NOTE]
+>
+>
 >如配置文 [件部分所述](#configuration-files)，当您从中访问数据时，将为您设置以下配置参数 [!DNL Experience Platform]:
 > - `ML_FRAMEWORK_IMS_USER_CLIENT_ID`
 > - `ML_FRAMEWORK_IMS_TOKEN`
@@ -291,7 +303,9 @@ df.dropna(0, inplace=True)
 
 培训的目的是使用培训数据集中的功能和标签创建模型。
 
->[!NOTE]\
+>[!NOTE]
+>
+> 
 >_特征_ ，是指机器学习模型用来预测标签的输入变 _量_。
 
 该 `train()` 功能应包括训练模型和返回训练模型。 不同型号的一些示例可在scikit-learn [用户指南文档中找到](https://scikit-learn.org/stable/user_guide.html)。
