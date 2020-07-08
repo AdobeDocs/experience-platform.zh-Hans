@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 更新资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 0d3bee939226d9ef4ac1672b71e0d240f32c5dcf
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '379'
+ht-degree: 2%
 
 ---
 
@@ -15,11 +18,13 @@ source-git-commit: 0d3bee939226d9ef4ac1672b71e0d240f32c5dcf
 
 有关JSON修补程序（包括可用操作）的详细信息，请参阅官方 [JSON修补程序文档](http://jsonpatch.com/)。
 
->[!NOTE] 如果要用新值替换整个资源，而不是更新单个字段，请参阅使用PUT [操作替换资源的文档](replace-resource.md)。
+>[!NOTE]
+>
+>如果要用新值替换整个资源，而不是更新单个字段，请参阅使用 [PUT操作替换资源的文档](replace-resource.md)。
 
 ## 向模式添加混音
 
-最常见的PATCH操作之一涉及向XDM模式添加以前定义的混音，如下面的示例所示。
+最常见的PATCH操作之一是将以前定义的混音添加到XDM模式，如以下示例所示。
 
 **API格式**
 
@@ -29,14 +34,14 @@ PATCH /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RESOURCE_TYPE}` | 要从模式库更新的资源类型。 有效类 `datatypes`型有 `mixins`、 `schemas`和 `classes`。 |
-| `{RESOURCE_ID}` | 资源的URL编 `$id` 码的URI `meta:altId` 或URI。 |
+| `{RESOURCE_TYPE}` | 要从模式库更新的资源类型。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
+| `{RESOURCE_ID}` | 资源的URL编 `$id` 码的 `meta:altId` URI或URI。 |
 
 **请求**
 
-使用PATCH操作，可以更新模式以包含在先前创建的混音中定义的字段。 为此，必须使用模式的URL编码URI或URL编 `meta:altId` 码的URI向该域执行PATCH请 `$id` 求。
+使用PATCH操作，可以更新模式以包含在先前创建的混音中定义的字段。 为此，必须使用模式的URL编码URI或PATCH `meta:altId` 请求执行 `$id` PATCH。
 
-请求主体包括您要执行的操作(`op`)、您要执行操作的位置(`path`)以及要包含在操作中的信息(`value`)。 在此示例中，mixin的值 `$id` 将添加到目标模式的 `meta:extends` 和 `allOf` 字段中。
+请求主体包括`op`要执行的操作(`path`)、要执行操作的位置()以及要包括在操作中的信息(`value`)。 在此示例中，mixin的值 `$id` 将添加到目标模式的 `meta:extends` 和 `allOf` 字段中。
 
 ```SHELL
 curl -X PATCH\
@@ -54,7 +59,7 @@ curl -X PATCH\
 
 **响应**
 
-响应显示这两个操作都成功执行。 混音 `$id` 已添加到数组中， `meta:extends` 并且对混音的引用(`$ref`)现在显示在数 `$id` 组中 `allOf` 。
+响应显示两个操作都成功执行。 混音已 `$id` 添加到数组 `meta:extends` 中，现在在数组中显示对混`$ref`音的引用( `$id``allOf` )。
 
 ```JSON
 {
@@ -105,12 +110,12 @@ PATCH /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RESOURCE_TYPE}` | 要从模式库更新的资源类型。 有效类 `datatypes`型有 `mixins`、 `schemas`和 `classes`。 |
-| `{RESOURCE_ID}` | 资源的URL编 `$id` 码的URI `meta:altId` 或URI。 |
+| `{RESOURCE_TYPE}` | 要从模式库更新的资源类型。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
+| `{RESOURCE_ID}` | 资源的URL编 `$id` 码的 `meta:altId` URI或URI。 |
 
 **请求**
 
-请求主体包括更新混`op`音所需的操作(`path`)、位置()和信息(`value`)。 此请求将更新“属性详细信息”混音，以删除“propertyCity”字段并添加新的“propertyAddress”字段，该字段引用包含地址信息的标准数据类型。 它还会添加一个新的“emailAddress”字段，该字段引用带有电子邮件信息的标准数据类型。
+请求主体包括更新`op`混音所需的操作`path`()、位置(`value`)和信息()。 此请求更新“属性详细信息”混音，以删除“propertyCity”字段并添加新的“propertyAddress”字段，该字段引用包含地址信息的标准数据类型。 它还会添加一个新的“emailAddress”字段，该字段引用带有电子邮件信息的标准数据类型。
 
 ```SHELL
 curl -X PATCH \
@@ -141,7 +146,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应表明，由于新字段存在且“propertyCity”字段已被删除，操作已成功完成。
+成功的响应表明操作已成功完成，因为新字段存在且“propertyCity”字段已被删除。
 
 ```JSON
 {
