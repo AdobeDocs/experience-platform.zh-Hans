@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中为云存储批处理连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1184'
 ht-degree: 0%
@@ -48,7 +48,9 @@ ht-degree: 0%
 
 预览窗口填充后，您可以单击“下 **[!UICONTROL 一步]** ”以上传选定文件夹中的所有文件。 如果要上传到特定文件，请在单击“下一步”之前从列表中选择该 **[!UICONTROL 文件]**。
 
->[!NOTE] 支持的文件格式包括CSV、JSON和Parke。 JSON和Parke文件必须符合XDM标准。
+>[!NOTE]
+>
+>支持的文件格式包括CSV、JSON和Parke。 JSON和Parke文件必须符合XDM标准。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-next.png)
 
