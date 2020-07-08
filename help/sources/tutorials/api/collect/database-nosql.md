@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 通过源连接器和API从第三方数据库收集数据
 topic: overview
 translation-type: tm+mt
-source-git-commit: 84ea3e45a3db749359f3ce4a0ea25429eee8bb66
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1522'
 ht-degree: 1%
@@ -323,7 +323,9 @@ curl -X POST \
 | `params.dataSetId` | 目标数据集的ID。 |
 | `connectionSpec.id` | 第三方数据库的连接规范ID。 |
 
->[!NOTE] 创建目标连接时，请确保将数据集基础连接值用于基础连接，而 `id` 非第三方源连接器的基础连接。
+>[!NOTE]
+>
+>创建目标连接时，请确保将数据集基础连接值用于基础连接，而 `id` 非第三方源连接器的基础连接。
 
 **响应**
 
