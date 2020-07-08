@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 列表资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b4d8a6f8006d55c7aac19d705c6880fec915c147
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '519'
 ht-degree: 2%
@@ -16,7 +16,9 @@ ht-degree: 2%
 
 您可以通过执行单个GET请求，视图某个容器中特定类型(类、混合、模式、数据类型或描述符)的所有模式注册表资源。
 
->[!NOTE] 列出资源时，模式注册表将结果集限制为300项。 要返回超出此限制的资源，必须使用分 [页参数](#paging)。 还建议使用查询参数来筛 [选结果](#filtering) ，并减少返回的资源数。
+>[!NOTE]
+>
+>列出资源时，模式注册表将结果集限制为300项。 要返回超出此限制的资源，必须使用分 [页参数](#paging)。 还建议使用查询参数来筛 [选结果](#filtering) ，并减少返回的资源数。
 
 **API格式**
 
@@ -78,7 +80,9 @@ curl -X GET \
 
 模式注册表支持在列出资源时使用查询参数进行页面和筛选结果。
 
->[!NOTE] 组合多个查询参数时，必须用和号(`&`)分隔。
+>[!NOTE]
+>
+>组合多个查询参数时，必须用和号(`&`)分隔。
 
 ### 分页 {#paging}
 
@@ -105,4 +109,6 @@ curl -X GET \
 | `~` | 过滤器，根据该属性是否与提供的常规表达式匹配。 | `property=title~test$` |
 | (无) | 仅声明属性名称只返回存在属性的条目。 | `property=title` |
 
->[!TIP] 可以使用该参 `property` 数按其兼容类过滤混音。 例如， `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` 仅返回与XDM单个用户档案类兼容的混音。
+>[!TIP]
+>
+>可以使用该参 `property` 数按其兼容类过滤混音。 例如， `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` 仅返回与XDM单个用户档案类兼容的混音。
