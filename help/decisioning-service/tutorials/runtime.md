@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用API使用决策服务运行时
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1985'
 ht-degree: 0%
@@ -43,7 +43,9 @@ ht-degree: 0%
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] 有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../tutorials/authentication.md)。
+>[!NOTE]
+>
+>有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../tutorials/authentication.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -53,7 +55,9 @@ ht-degree: 0%
 
 - x-request-id: `{UUID}`
 
->[!NOTE] `UUID` 是UUID格式的字符串，它全局唯一，不能对不同的API调用重用
+>[!NOTE]
+>
+>`UUID` 是UUID格式的字符串，它全局唯一，不能对不同的API调用重用
 
 [!DNL Decisioning Service] 由多个彼此相关的业务对象控制。 所有业务对象都存储在 [!DNL Platform’s] 业务对象存储库XDM核心对象存储库中。 此存储库的一个主要功能是API与业务对象类型正交。 除了使用指示其API端点中资源类型的POST、GET、PUT、PATCH或DELETEAPI外，只有6个通用端点，但它们接受或返回一个参数，该参数指示在需要消歧时对象的类型。 模式必须向存储库注册，但除此之外，存储库还可用于一组开放式对象类型。
 
