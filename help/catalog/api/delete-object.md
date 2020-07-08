@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 删除对象
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 327be13cbaaa40e4d0409cbb49a051b7067759bf
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '178'
 ht-degree: 2%
@@ -16,7 +16,9 @@ ht-degree: 2%
 
 您可以通过在DELETE请求的路径中提供目录对象的ID来删除该对象。
 
->[!WARNING] 删除对象时要格外小心，因为此操作无法撤消，并且可能会在Experience Platform的其他位置产生破坏性更改。
+>[!WARNING]
+>
+>删除对象时要格外小心，因为此操作无法撤消，并且可能会在Experience Platform的其他位置产生破坏性更改。
 
 **API格式**
 
@@ -56,4 +58,6 @@ curl -X DELETE \
 ]
 ```
 
->[!NOTE] 如果没有与请求中提供的ID匹配的目录对象，您仍可能收到HTTP状态代码200，但响应数组为空。
+>[!NOTE]
+>
+>如果没有与请求中提供的ID匹配的目录对象，您仍可能收到HTTP状态代码200，但响应数组为空。
