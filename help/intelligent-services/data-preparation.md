@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 准备要在Intelligent Services中使用的数据
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: 9905f0248fe88bac5194560318cf8eced32ba93c
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1878'
 ht-degree: 0%
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 如果数据存储在外部， [!DNL Experience Platform]请按照以下步骤操作：
 
-1. 联系Adobe咨询服务部门以请求专用Azure Blob存储容器的访问凭据。
+1. 联系Adobe Consulting Services以请求专用Azure Blob存储容器的访问凭据。
 1. 使用访问凭据，将数据上传到Blob容器。
 1. 使用Adobe Consulting Services将您的数据映射到 [Consumer ExperienceEvent模式](#cee-schema) ，并引入智能服务。
 
@@ -82,7 +82,9 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 
 #### xdm:渠道 {#channel}
 
->[!NOTE] 仅当使用归因AI时，此字段才是必填字段。
+>[!NOTE]
+>
+>仅当使用归因AI时，此字段才是必填字段。
 
 此字段表示与ExperienceEvent相关的营销渠道。 该字段包括有关渠道类型、媒体类型和位置类型的信息。
 
@@ -245,7 +247,9 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 
 ### 使用Adobe Experience Platform
 
->[!NOTE] 以下步骤需要订阅Experience Platform。 如果您无权访问平台，请跳到下一 [步部分](#next-steps) 。
+>[!NOTE]
+>
+>以下步骤需要订阅Experience Platform。 如果您无权访问平台，请跳到下一 [步部分](#next-steps) 。
 
 本节概述了将数据映射到Experience Platform并将其引入智能服务中的工作流程，包括指向教程的详细步骤链接。
 
@@ -256,7 +260,9 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 * [在UI中创建模式](../xdm/tutorials/create-schema-ui.md)
 * [在API中创建模式](../xdm/tutorials/create-schema-api.md)
 
->[!IMPORTANT] 以上教程遵循创建模式的通用工作流程。 为模式选择类时，必须使用 **XDM ExperienceEvent类**。 选择此类后，您可以将CEE混音添加到模式。
+>[!IMPORTANT]
+>
+>以上教程遵循创建模式的通用工作流程。 为模式选择类时，必须使用 **XDM ExperienceEvent类**。 选择此类后，您可以将CEE混音添加到模式。
 
 在将CEE混音添加到模式后，您可以根据数据中其他字段的需要添加其他混音。
 
@@ -271,7 +277,9 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 
 #### 向数据集添加主标识命名空间标记
 
->[!NOTE] 智能服务的未来版本将将 [Adobe Experience Platform身份服务](../identity-service/home.md) 集成到其客户识别功能中。 因此，以下概述的步骤可能会发生变化。
+>[!NOTE]
+>
+>智能服务的未来版本将将 [Adobe Experience Platform身份服务](../identity-service/home.md) 集成到其客户识别功能中。 因此，以下概述的步骤可能会发生变化。
 
 如果导入来自、或 [!DNL Adobe Audience Manager]其 [!DNL Adobe Analytics]他外部源的数据，则必须向数据集 `primaryIdentityNameSpace` 添加标记。 这可以通过向Catalog Service API发出PATCH请求来完成。
 
@@ -329,7 +337,9 @@ curl -X PATCH \
       }'
 ```
 
->[!NOTE] 有关在平台中使用身份命名空间的更多信息，请参阅 [身份命名空间概述](../identity-service/namespaces.md)。
+>[!NOTE]
+>
+>有关在平台中使用身份命名空间的更多信息，请参阅 [身份命名空间概述](../identity-service/namespaces.md)。
 
 **响应**
 
