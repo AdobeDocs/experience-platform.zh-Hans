@@ -4,7 +4,7 @@ solution: Experience Platform
 title: MLInstances
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 0197c2f5e304f2fc194289b064cc37c91bb658c8
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '575'
 ht-degree: 4%
@@ -273,7 +273,9 @@ curl -X GET \
 
 您可以通过PUT请求覆盖现有MLInstance的属性，该请求在请求路径中包含目标MLInstance的ID，并提供包含已更新属性的JSON有效负荷，从而更新现有MLInstance。
 
->[!TIP] 为确保此PUT请求成功，建议首先执行GET请求以 [按ID检索MLInstance](#retrieve-specific)。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
+>[!TIP]
+>
+>为确保此PUT请求成功，建议首先执行GET请求以 [按ID检索MLInstance](#retrieve-specific)。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
 
 以下示例API调用将在最初具有这些属性时更新MLInstance的培训和评分参数：
 
