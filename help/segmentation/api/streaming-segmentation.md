@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 流细分
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d00973a07c5fb137f756040fb1dc6eac5a1630f5
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1370'
 ht-degree: 1%
@@ -14,7 +14,9 @@ ht-degree: 1%
 
 # 利用流细分快速实时评估事件
 
->[!NOTE] 以下文档说明了如何使用API使用流分段。 有关使用UI使用流式分段的信息，请阅读“段 [生成器指南”](../ui/overview.md#streaming-segmentation)。
+>[!NOTE]
+>
+>以下文档说明了如何使用API使用流分段。 有关使用UI使用流式分段的信息，请阅读“段 [生成器指南”](../ui/overview.md#streaming-segmentation)。
 
 基于的流 [!DNL Adobe Experience Platform] 式细分允许客户在关注数据丰富性的同时近乎实时地进行细分。 利用流细分，当数据进入时，细分资格现在会 [!DNL Platform]发生，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传入时评估大多数细分规则， [!DNL Platform]这意味着，在不运行计划的细分作业的情况下，区段成员关系将保持最新状态。
 
@@ -46,7 +48,9 @@ ht-degree: 1%
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] 有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
+>[!NOTE]
+>
+>有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -56,7 +60,9 @@ ht-degree: 1%
 
 ### 支持流式分段的查询类型 {#streaming-segmentation-query-types}
 
->[!NOTE] 您需要为组织启用计划分段才能使流式分段正常工作。 有关启用计划分段的信息，请参阅启用计 [划分段部分。](#enable-scheduled-segmentation)
+>[!NOTE]
+>
+>您需要为组织启用计划分段才能使流式分段正常工作。 有关启用计划分段的信息，请参阅启用计 [划分段部分。](#enable-scheduled-segmentation)
 
 要使用流分段来评估区段，查询必须遵循以下准则。
 
@@ -232,7 +238,9 @@ curl -X POST \
 }'
 ```
 
->[!NOTE] 这是标准的“创建区段”请求。 有关创建区段定义的详细信息，请阅读有关创建区段 [的教程](../tutorials/create-a-segment.md)。
+>[!NOTE]
+>
+>这是标准的“创建区段”请求。 有关创建区段定义的详细信息，请阅读有关创建区段 [的教程](../tutorials/create-a-segment.md)。
 
 **响应**
 
@@ -280,7 +288,9 @@ curl -X POST \
 
 启用流评估后，必须创建基线（在此之后，区段将始终保持最新）。 必须首先启用计划评估（也称为计划分段），系统才能自动执行基线设置。 通过计划的细分，您的IMS组织可以遵守循环计划，自动运行导出作业以评估细分。
 
->[!NOTE] 对于XDM单个用户档案，最多可以为五(5)个合并策略的沙箱启用计划评估。 如果您的组织在单个沙箱用户档案内有五个以上的XDM单个环境的合并策略，您将无法使用计划的评估。
+>[!NOTE]
+>
+>对于XDM单个用户档案，最多可以为五(5)个合并策略的沙箱启用计划评估。 如果您的组织在单个沙箱用户档案内有五个以上的XDM单个环境的合并策略，您将无法使用计划的评估。
 
 ### 创建计划
 
