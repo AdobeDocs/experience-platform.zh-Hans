@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 菜谱和笔记本迁移指南
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '3311'
 ht-degree: 0%
@@ -324,7 +324,9 @@ PySpark菜谱不再使用二进制伪像，而是需要构建Docker图像。 如
 
 随着PySpark 2.4的推出， [!DNL JupyterLab Notebooks]带 [!DNL Python] 有PySpark 2.4的新笔记本现在使用 [!DNL Python] 3内核而不是PySpark 3内核。 这意味着PySpark 2.3上运行的现有代码在PySpark 2.4中不受支持。
 
->[!IMPORTANT] PySpark 2.3已弃用，并且设置为在后续版本中删除。 所有现有示例均设置为替换为PySpark 2.4示例。
+>[!IMPORTANT]
+>
+>PySpark 2.3已弃用，并且设置为在后续版本中删除。 所有现有示例均设置为替换为PySpark 2.4示例。
 
 要将现有PySpark 3(2.[!DNL Spark] 3)笔记本转换为 [!DNL Spark] 2.4，请按照以下示例操作：
 
@@ -388,7 +390,7 @@ PySpark 3([!DNL Spark] 2.4)笔记本使用Python 3 Kernel，而不是PySpark 3�
 
 随着2.4 [!DNL Spark] 的推出， `%dataset` 自定义魔术功能将被提供用于新的PySpark 3(2.4)[!DNL Spark] 笔记本([!DNL Python] 3内核)。
 
-**使用情况**
+**用法**
 
 `%dataset {action} --datasetId {id} --dataFrame {df}`
 
@@ -458,7 +460,9 @@ pd0 = spark.read.format("com.adobe.platform.dataset")
 | ------- | ----------- |
 | [%dataset](#magic) | 在3个内核中实现数据访 [!DNL Python] 问的自定义魔法。 |
 
->[!TIP] —mode可设置为 `interactive` 或 `batch`。 —mode的缺省值为 `interactive`。 建议在读取大 `batch` 量数据时使用模式。
+>[!TIP]
+>
+>—mode可设置为 `interactive` 或 `batch`。 —mode的缺省值为 `interactive`。 建议在读取大 `batch` 量数据时使用模式。
 
 ## 创建本地数据帧
 
@@ -511,7 +515,9 @@ sample_df = df.sample(fraction)
    </tr>
 </table>
 
->[!TIP] 您还可以指定可选种子样本，如布尔值withReplacement、多次分数或长种子。
+>[!TIP]
+>
+>您还可以指定可选种子样本，如布尔值withReplacement、多次分数或长种子。
 
 以下图像突出了在PySpark 2.3和PySpark 2.4中创建本地数据帧的主要区别。此示例使用中提供的 *Aggregation* starter笔记本 [!DNL JupyterLab Launcher]。
 
@@ -559,7 +565,9 @@ pd0.show(10, False)
 | pd0 | 要使用或创建的熊猫数据框对象的名称。 |
 | [%dataset](#magic) | 在3个内核中实现数据访 [!DNL Python] 问的自定义魔法。 |
 
->[!TIP] —mode可设置为 `interactive` 或 `batch`。 —mode的缺省值为 `interactive`。 建议在读取大 `batch` 量数据时使用模式。
+>[!TIP]
+>
+>—mode可设置为 `interactive` 或 `batch`。 —mode的缺省值为 `interactive`。 建议在读取大 `batch` 量数据时使用模式。
 
 以下图像突出了在PySpark 2.3和PySpark 2.4中将数 [!DNL Platform] 据写回的主要区别。此示例使用中提 *供的* Aggregation起动笔记本 [!DNL JupyterLab Launcher]。
 
@@ -575,9 +583,11 @@ pd0.show(10, False)
 
 ## [!DNL Spark] 2.3到2. [!DNL Spark] 4(Scala)笔记本迁移指南 {#spark-notebook-migration}
 
-随着2.4 [!DNL Spark] 的引入，现 [!DNL JupyterLab Notebooks]有 [!DNL Spark] (2.3)笔记本现在使用Scala内核，而不是[!DNL Spark][!DNL Spark] 内核。 这意味着在(2. [!DNL Spark] 3)[!DNL Spark] 上运行的现有代码在Scala([!DNL Spark] 2.4)中不受支持。 此外，所有新 [!DNL Spark] 笔记本都应在[!DNL Spark] 中使用Scala(2.4) [!DNL JupyterLab Launcher]。
+随着2.4的 [!DNL Spark] 引入，现 [!DNL JupyterLab Notebooks]有 [!DNL Spark] (2.3)笔记本现在使用Scala内核而不是[!DNL Spark][!DNL Spark] 内核。 这意味着在(2. [!DNL Spark] 3)[!DNL Spark] 上运行的现有代码在Scala([!DNL Spark] 2.4)中不受支持。 此外，所有新 [!DNL Spark] 笔记本都应在[!DNL Spark] 中使用Scala(2.4) [!DNL JupyterLab Launcher]。
 
->[!IMPORTANT] [!DNL Spark] ([!DNL Spark] 2.3)已弃用，并且设置为在后续版本中删除。 所有现有示例都设置为用Scala(2.[!DNL Spark] 4)示例替换。
+>[!IMPORTANT]
+>
+>[!DNL Spark] ([!DNL Spark] 2.3)已弃用，并且设置为在后续版本中删除。 所有现有示例都设置为用Scala(2.[!DNL Spark] 4)示例替换。
 
 要将现有( [!DNL Spark] 2.[!DNL Spark] 3)笔记本转换为Scala([!DNL Spark] 2.4)，请按照以下示例操作：
 
@@ -619,7 +629,7 @@ Scala(Spark 2.4)笔记本使用Scala Kernel，而不是(2.3 —— 已弃 [!DNL 
   </td>
   <td>
   <pre class="JSON language-JSON hljs">
-导入org.apache.spark.sql。{ SparkSession }val spark = SparkSession .builder()。master("local")。getOrCreate()
+导入org.apache.spark.sql。{ SparkSession }val spark = SparkSession .builder()。主控("local")。getOrCreate()
 </pre>
   </td>
   </tr>
@@ -756,7 +766,9 @@ Scala(2.[!DNL Spark] 4)笔记本使用Scala内核，该内核在设置时需要�
 
 ![加载spark 2.4](./images/migration/spark-scala/load-2.4.png)
 
->[!TIP] 在Scala中，您可 `sys.env()` 以使用从中声明和返回值 `option`。 这样，如果您知道变量将仅用于一次，就无需定义变量。 以下示例在上 `val userToken` 面的示例中进行演示，并在其中内行声明 `option`:
+>[!TIP]
+>
+>在Scala中，您可 `sys.env()` 以使用从中声明和返回值 `option`。 这样，如果您知道变量将仅用于一次，就无需定义变量。 以下示例在上 `val userToken` 面的示例中进行演示，并在其中内行声明 `option`:
 > 
 ```scala
 > .option("user-token", sys.env("PYDASDK_IMS_USER_TOKEN"))
