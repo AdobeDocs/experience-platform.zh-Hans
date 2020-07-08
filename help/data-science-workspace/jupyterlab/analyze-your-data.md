@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用笔记本分析数据
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1702'
 ht-degree: 0%
@@ -50,7 +50,9 @@ ht-degree: 0%
 
 ### 访问数据
 
->[!NOTE] 已 `data_access_sdk_python` 弃用，不再推荐。 要转换代码， [请参阅将数据访问SDK转换](../authoring/platform-sdk.md) 为平台SDK教程。 下面的步骤仍然适用于本教程。
+>[!NOTE]
+>
+>已 `data_access_sdk_python` 弃用，不再推荐。 要转换代码， [请参阅将数据访问SDK转换](../authoring/platform-sdk.md) 为平台SDK教程。 下面的步骤仍然适用于本教程。
 
 我们将从内部访问数据，从 [!DNL Adobe Experience Platform] 外部访问数据。 我们将使用库 `data_access_sdk_python` 访问内部数据，如数据集和XDM模式。 外部数据，我们用熊猫库 [!DNL Python] 来。
 
@@ -86,7 +88,9 @@ ht-degree: 0%
 
 现在，我们可以右键单击数 `Retail-Training-<your-alias>` 据集并在下拉菜单中选择“浏览笔记本中的数据”选项。 可执行代码条目将显示在您的笔记本中。
 
->[!TIP] 请参阅指 [!DNL Platform SDK](../authoring/platform-sdk.md) 南以转换代码。
+>[!TIP]
+>
+>请参阅指 [!DNL Platform SDK](../authoring/platform-sdk.md) 南以转换代码。
 
 ```PYTHON
 from data_access_sdk_python.reader import DataSetReader
@@ -98,7 +102,7 @@ df.head()
 
 如果您正在使用除外的其 [!DNL Python]他内核，请 [参阅本页](https://github.com/adobe/acp-data-services-dsw-reference/wiki/Accessing-Data-on-the-Platform) ，访问上的数据 [!DNL Adobe Experience Platform]。
 
-选择可执行单元格，然后在工具栏中按播放按钮将运行可执行代码。 其输出 `head()` 将是一个表，其中数据集的键为列，数据集中的前n行为。 `head()` 接受整数参数以指定要输出的行数。 默认情况下，此值为5。
+选择可执行单元格，然后在工具栏中按播放按钮将运行可执行代码。 输出将 `head()` 是一个表，其中数据集的键为列，数据集中的前n行为。 `head()` 接受整数参数以指定要输出的行数。 默认情况下，此值为5。
 
 ![](../images/jupyterlab/analyze-data/datasetreader_head.png)
 
@@ -142,7 +146,7 @@ df.describe()
 
 通过这个，我们可以看到每个特征有6435个实例。 给出了平均、标准偏差(std)、最小、最大和间隔等统计信息。 这给出了有关数据偏差的信息。 在下一节中，我们将重点介绍可视化功能，这些功能与这些信息一起使用，以便我们更好地了解我们的数据。
 
-从最小值和最大值看 `store`，我们可以看到有45个数据表示的唯一存储。 店也 `storeTypes` 有差别。 通过执行以下操作， `storeTypes` 我们可以查看分发内容：
+从最小值和最大值看 `store`，我们可以看到有45个数据表示的唯一存储。 店也 `storeTypes` 有差别。 通过执行以下操作， `storeTypes` 可以查看分发内容：
 
 ![](../images/jupyterlab/analyze-data/df_groupby.png)
 
