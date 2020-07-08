@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 决策服务
 topic: overview
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1592'
 ht-degree: 0%
@@ -60,7 +60,7 @@ ht-degree: 0%
 
 与 [!DNL Decisioning Service]其他服务 [!DNL Platform] 一样，该服务采用API优先理念。 这意味着API是通过API提供所有功能（包括管理功能）的主要接口。 这也意味着其 [!DNL Platform] 他服务、Adobe解决方案和第三方集成使用相同的API。
 
-您可以在 [!DNL Decisioning Service] 由简单的HTTP REST API提供的同步请求——响应交互模式下使用。 API调用为单个用户档案返回当前最佳选项。 “当前最佳选项”选择将根据应用于给定活动所考虑的所有选项的规则和约束而改变。 REST API允许同时为多个活动获得下一个最佳选项。 这允许在渠道之间仲裁选项。 当同时获得多个活动的响应时，可应用附加规则。
+您可以在 [!DNL Decisioning Service] 由简单的HTTP REST API提供的同步请求——响应交互模式下使用。 API调用为单个用户档案返回当前最佳选项。 “当前最佳选项”选择将根据应用于给定活动所考虑的所有选项的规则和约束而改变。 REST API允许同时为多个活动获得次优选项。 这允许在渠道之间仲裁选项。 当同时获得多个活动的响应时，可应用附加规则。
 
 ![决策API](./images/decisioning-API.png)
 
@@ -68,7 +68,9 @@ ht-degree: 0%
 
 使用是 [!DNL Decisioning Service] 可选的，除了创建和管理实体所需的典型步骤外，只需执行 [!DNL Profile] 几个步骤。
 
->[!NOTE] 为了充分利用，该 [!DNL Real-time Customer Profile]服务器 [!DNL Decisioning Service] 直接与用户档案商店集成。 API调用只需为给定用户档案指示一个标识。
+>[!NOTE]
+>
+>为了充分利用，该 [!DNL Real-time Customer Profile]服务器 [!DNL Decisioning Service] 直接与用户档案商店集成。 API调用只需为给定用户档案指示一个标识。
 
 构建开始的典型步骤顺序：
 
