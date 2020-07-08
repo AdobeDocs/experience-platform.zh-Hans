@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 列表可用命名空间
 topic: API guide
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '68'
 ht-degree: 5%
@@ -35,7 +35,9 @@ curl -X GET \
 
 响应包括对象的数组，每个对象表示可用命名空间。 值为“[!UICONTROL false]”的命名空间是标准[!UICONTROL 命名空间，而值为“]true[!UICONTROL ”的是]您的组织创建的命名空间。
 
->[!NOTE] 此响应已被截断为空间。
+>[!NOTE]
+>
+>此响应已被截断为空间。
 
 ```json
 [
