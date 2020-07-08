@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 模型
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 33f8c424c208bb61319b49e7ecb30e3144ef108a
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '821'
 ht-degree: 4%
@@ -220,7 +220,9 @@ curl -X POST \
 
 您可以通过以下方式更新现有模型：通过PUT请求覆盖其属性，该请求在请求路径中包含目标模型的ID，并提供包含已更新属性的JSON有效负荷。
 
->[!TIP] 为确保此PUT请求成功，建议首先执行GET请求以按ID检索模型。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
+>[!TIP]
+>
+>为确保此PUT请求成功，建议首先执行GET请求以按ID检索模型。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
 
 **API格式**
 
@@ -396,7 +398,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回一个包含json对象的有效负荷，其列表为在模型上执行的每个转码。 每个转码模型接收唯一标识符(`id`)。
+成功的响应返回一个包含json对象的有效负荷，其列表为在模型上执行的每个转码。 每个转码模型接收一个唯一标识符(`id`)。
 
 ```json
 {
