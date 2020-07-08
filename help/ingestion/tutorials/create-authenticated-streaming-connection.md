@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 创建经过身份验证的流连接
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: d9ce9506e43c4deed01f18e5913fda5a5c3cee84
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '649'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 创建经过身份验证的流连接
 
-通过实名数据收集，Adobe Experience Platform服务(如实时客户用户档案和身份)可以区分来自可信来源和不可信来源的记录。 要发送个人身份信息(PII)的客户可以通过作为POST请求的一部分发送访问令牌来发送个人身份信息。
+经身份验证的数据收集允许Adobe Experience Platform服务(如实时用户档案和身份)区分来自可信来源和不可信来源的记录。 要发送个人身份信息(PII)的客户可以通过作为POST请求的一部分发送访问令牌来发送个人身份信息。
 
 ## 入门指南
 
@@ -22,7 +22,7 @@ ht-degree: 2%
 
 注册流连接后，作为数据生成者，您将拥有一个唯一的URL，可用于将数据流化到平台。
 
-本教程还需要掌握各种Adobe Experience Platform服务的相关工作知识。 在开始本教程之前，请查看以下服务的相关文档：
+本教程还需要对各种Adobe Experience Platform服务具有相关的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
 - [体验数据模型(XDM)](../../xdm/home.md): 平台组织体验数据的标准化框架。
 - [实时客户用户档案](../../profile/home.md): 根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
@@ -31,21 +31,23 @@ ht-degree: 2%
 
 ### 读取示例API调用
 
-本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的部分。
+本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程后，将提供所有Experience Platform API调用中每个所需标头的值，如下所示：
+要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 - 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都与特定虚拟沙箱相隔离。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] 有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>[!NOTE]
+>
+>有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -63,7 +65,9 @@ POST /flowservice/connections
 
 **请求**
 
->[!NOTE] 必须如示例 `providerId` 所 `connectionSpec` 示使 **用** 列出的值和值，因为它们是您为流接收创建流连接的API的指定值。
+>[!NOTE]
+>
+>必须如示例 `providerId` 所 `connectionSpec` 示使 **用** 列出的值和值，因为它们是您为流接收创建流连接的API的指定值。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
