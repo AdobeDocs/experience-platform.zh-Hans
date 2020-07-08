@@ -1,10 +1,10 @@
 ---
 title: 产品
-seo-title: 使用Adobe Experience Platform Web SDK支持产品
-description: 了解如何通过Experience Platform Web SDK添加产品或购物车中的数据
-seo-description: 了解如何通过Experience Platform Web SDK添加产品或购物车中的数据
+seo-title: 使用Adobe Experience PlatformWeb SDK支持产品
+description: 了解如何在您有产品或购物车时添加Experience PlatformWeb SDK
+seo-description: 了解如何在您有产品或购物车时添加Experience PlatformWeb SDK
 translation-type: tm+mt
-source-git-commit: 4bff4b20ccc1913151aa1783d5123ffbb141a7d0
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1314'
 ht-degree: 5%
@@ -19,13 +19,17 @@ ht-degree: 5%
 此文档使用 [ExperienceEvent商务详细信](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) 息混合。 混 `commerce` 合物分为两部分： 对 `commerce` 象和数 `productListItems` 组。 该对 `commerce` 象允许您指示正在对数组执行哪些 `productListItems` 操作。
 
 >[!Tip]
->如果您熟悉Adobe Analytics，则与 `commerce` 该变量关系最 `events` 密切。 该 `productListItems` 变量与变量更为 `products` 相关。
+>
+>
+>如果您熟悉AdobeAnalytics，则 `commerce` 该变量与该变量关系最 `events` 密切。 该 `productListItems` 变量与变量更为 `products` 相关。
 
 ## 与产品相关的操作
 
 以下是对象 `measures` 中可用的 `commerce` 列表。
 
 >[!Tip]
+>
+>
 >度量包含两个字段： `id` 和 `value`。 大多数情况下，您只 `value` 使用字段(例如 `'value':1`)。 该 `id` 字段允许您设置唯一标识符，以便跟踪度量的发送时间。 请参阅XDM文档以 [进行衡量](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/measure.schema.md)。
 
 | **度量** | **推荐** | **描述** |
@@ -116,7 +120,7 @@ alloy("sendEvent",{
 | [currencyCode](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmcurrencycode) | 可选 | 产 [品的ISO](https://en.wikipedia.org/wiki/ISO_4217) 4217货币。 仅当您可以拥有具有不同货币代码的产品并且产品适用时，此功能才有用。 例如，当有购买或添加到购物车时。 |
 | [priceTotal](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmpricetotal) | 强烈建议 | 应仅在适用时进行设置。 例如，可能无法设置为开，因 `productView` 为不同的产品变体可能具有不同的价格，但是对于 `productListAdds`。 |
 | [产品](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproduct) | 强烈建议 | 产品的XDM ID。 |
-| [productAddMethod](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproductaddmethod) | 强烈建议 | 用于向列表添加产品项目的访客。 通过度 `productListAdds` 量进行设置，并且仅当将产品添加到列表时才应使用。 示例 `add to cart button`包括 `quick add`、和 `upsell`。 |
+| [productAddMethod](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproductaddmethod) | 强烈建议 | 用于向列表添加产品项目的访客。 通过度 `productListAdds` 量进行设置，并且仅当将产品添加到列表时才应使用。 Examples include `add to cart button`, `quick add`, and `upsell`. |
 | [productName](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmname) | 强烈建议 | 它设置为产品的显示名称或用户可读名称。 |
 | [数量](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmquantity) | 强烈建议 | 客户表示他们需要产品的套数。 应该设置 `productListAdds`、 `productListRemoves`、 `purchases`、 `saveForLaters`等等。 |
 | [SKU](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md) | 强烈建议 | 存储保持单元。 它是产品的唯一标识符。 |
