@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
 solution: Adobe Experience Platform
-title: 实时客户用户档案API开发人员指南
+title: 用户档案系统作业——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
+source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
 workflow-type: tm+mt
-source-wordcount: '1501'
+source-wordcount: '1503'
 ht-degree: 2%
 
 ---
 
 
-# 用户档案系统作业（删除请求）
+# 用户档案系统作业端点（删除请求）
 
 Adobe Experience Platform使您能够从多个来源收集数据，并为各个客户构建强大的用户档案。 引入平台的数据存储在数据湖和实时客户用户档案数据存储中。 有时可能需要从用户档案库中删除数据集或批处理，以删除不再需要或错误添加的数据。 这需要使用实时用户档案API创建用户档案系统作业（也称为“删除请求”），如果需要，也可以修改、监视或删除该作业。
 
