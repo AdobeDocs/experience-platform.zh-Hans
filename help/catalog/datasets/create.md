@@ -4,60 +4,65 @@ solution: Experience Platform
 title: 使用API创建数据集
 topic: datasets
 translation-type: tm+mt
-source-git-commit: a6a1ecd9ce49c0a55e14b0d5479ca7315e332904
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1263'
+ht-degree: 1%
 
 ---
 
 
 # 使用API创建数据集
 
-此文档提供了使用Adobe Experience Platform API创建数据集和使用文件填充数据集的一般步骤。
+此文档提供了使用Adobe Experience PlatformAPI创建数据集和使用文件填充数据集的一般步骤。
 
 ## 入门指南
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-* [批量摄取](../../ingestion/batch-ingestion/overview.md):Experience Platform允许您将数据作为批处理文件进行收录。
-* [体验数据模型(XDM)系统](../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-* [沙箱](../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [批量摄取](../../ingestion/batch-ingestion/overview.md): Experience Platform允许您将数据作为批处理文件进行收录。
+* [体验数据模型(XDM)系统](../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
+* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了成功调用平台API所需了解的其他信息。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这些包括路径、必需的标题和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑难解答指南 [中有关如何阅读示例API调用的部分](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须首先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程后，将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
+要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
-* 授权：承载人 `{ACCESS_TOKEN}`
+* 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] 有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>[!NOTE]
+>
+>有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
-* 内容类型：application/json
+* 内容类型： application/json
 
 ## 教程
 
-要创建数据集，必须先定义模式。 模式是帮助表示数据的一组规则。 除了描述数据结构外，模式还提供了约束和期望，当数据在系统之间移动时，这些约束和期望可以被应用并用于验证数据。
+要创建数据集，必须先定义模式。 模式是一组规则，可帮助表示数据。 除了描述数据结构外，模式还提供约束和期望，当数据在系统之间移动时，这些约束和期望可以被应用并用于验证数据。
 
-这些标准定义允许一致地解释数据，而不考虑来源，并且无需跨应用程序进行翻译。 有关合成模式的详细信息，请参阅有关模式合成基 [础知识的指南](../../xdm/schema/composition.md)
+这些标准定义允许一致地解释数据，而不管来源如何，并且无需跨应用程序进行翻译。 有关模式合成的更多信息，请参阅模式合成 [基础知识指南](../../xdm/schema/composition.md)
 
 ## 查找数据集模式
 
-本教程从模式注册 [表API教程结束的位置开始](../../xdm/tutorials/create-schema-api.md) ，并利用在该教程中创建的“忠诚会员”模式。
+本教程从模式注 [册表API教程结束的位置开始](../../xdm/tutorials/create-schema-api.md) ，并利用在本教程中创建的“忠诚会员”模式。
 
-如果您尚未完成模式注册教程，请开始该教程，并仅在您编写了必要的模式后继续此数据集教程。
+如果您尚未完成模式注册教程，请开始该模式并仅在您编写了必要的后继续使用此数据集教程。
 
-以下调用可用于视图您在模式注册表API教程中创建的忠诚度会员模式:
+以下调用可用于视图您在模式注册表API教程中创建的Loyalty Members模式:
 
 **API格式**
 
@@ -79,7 +84,7 @@ curl -X GET \
 
 **响应**
 
-响应对象的格式取决于请求中发送的接受头。 此响应中的各个属性已针对空间最小化。
+响应对象的格式取决于请求中发送的接受头。 此响应中的各个属性已最小化为空间。
 
 ```JSON
 {
@@ -175,7 +180,7 @@ curl -X GET \
 
 ## 创建数据集
 
-现在，在“忠诚度成员”模式到位后，您可以创建引用该模式的数据集。
+现在，在“忠诚度成员”模式下，您可以创建引用该模式的数据集。
 
 **API格式**
 
@@ -207,11 +212,13 @@ curl -X POST \
 }'
 ```
 
->[!NOTE] 本教程对其所 [有示例](https://parquet.apache.org/documentation/latest/) ，使用镶木地板文件格式。 使用JSON文件格式的示例可在批量摄取开发人 [员指南中找到](../../ingestion/batch-ingestion/api-overview.md)
+>[!NOTE]
+>
+>本教程对其所 [有示例](https://parquet.apache.org/documentation/latest/) 都使用镶木地板文件格式。 使用JSON文件格式的示例可在批量摄取开发人 [员指南中找到](../../ingestion/batch-ingestion/api-overview.md)
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建）和一个响应对象，该对象由一个数组组成，该数组包含格式为新创建数据集的ID `"@/datasets/{DATASET_ID}"`。 数据集ID是系统生成的只读字符串，用于在API调用中引用数据集。
+成功的响应会返回“HTTP状态201（已创建）”和一个响应对象，该对象由一个数组组成，该数组包含格式为新创建数据集的ID `"@/datasets/{DATASET_ID}"`。 数据集ID是由系统生成的只读字符串，用于在API调用中引用数据集。
 
 ```JSON
 [
@@ -221,7 +228,7 @@ curl -X POST \
 
 ## 创建批
 
-在向数据集添加数据之前，必须先创建一个链接到数据集的批。 然后，该批将用于上传。
+在向数据集添加数据之前，必须先创建一个链接到该数据集的批。 然后，该批将用于上传。
 
 **API格式**
 
@@ -231,7 +238,7 @@ POST /batches
 
 **请求**
 
-请求主体包括“datasetId”字段，其值是在上一步 `{DATASET_ID}` 中生成的。
+请求主体包括“datasetId”字段，其值是上一步 `{DATASET_ID}` 中生成的。
 
 ```SHELL
 curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
@@ -248,7 +255,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建）和包含新创建的批次详细信息的响应对象，包括其只读 `id`、系统生成的字符串。
+成功的响应会返回HTTP状态201（已创建）和包含新创建批的详细信息的响应对象，包括其只读 `id`系统生成的字符串。
 
 ```JSON
 {
@@ -287,9 +294,11 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 ## 将文件上传到批
 
-在成功创建新批量以进行上传后，您现在可以将文件上传到特定数据集。 务必记住，在定义数据集时，您将文件格式指定为镶木地板。 因此，您上传的文件必须采用该格式。
+在成功创建要上传的新批后，您现在可以将文件上传到特定数据集。 请务必记住，在定义数据集时，您将文件格式指定为镶木地板。 因此，您上传的文件必须采用该格式。
 
->[!NOTE] 支持的最大数据上传文件为512 MB。 如果您的数据文件大于此值，则需要将其分为不大于512 MB的块，以便一次上传一个。 可以对每个文件重复此步骤，使用相同的批ID，以同一批次上传每个文件。 如果文件可以作为批量的一部分上传，则该数字不受限制。
+>[!NOTE]
+>
+>支持的最大数据上传文件为512 MB。 如果数据文件大于此值，则需要将其分为不大于512 MB的块，以一次上载一个。 您可以对每个文件重复此步骤，使用相同的批ID，以同一批次上传每个文件。 如果文件可以作为批处理的一部分上传，则该数字不受限制。
 
 **API格式**
 
@@ -300,7 +309,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | 参数 | 描述 |
 | --- | --- |
 | `{BATCH_ID}` | 您 `id` 要上传到的批。 |
-| `{DATASET_ID}` | 批 `id` 量将保留在的数据集中。 |
+| `{DATASET_ID}` | 批 `id` 处理将保留的数据集。 |
 | `{FILE_NAME}` | 您正在上传的文件的名称。 |
 
 **请求**
@@ -318,9 +327,9 @@ curl -X PUT 'https://platform.adobe.io/data/foundation/import/batches/5d01230fc7
 
 成功上传的文件返回空的响应正文和HTTP状态200（确定）。
 
-## 信号批量完成
+## 信号批处理完成
 
-将所有数据文件上传到该批后，您可以向该批发出完成信号。 信令完成导致服务为上传的文 `DataSetFile` 件创建目录条目，并将这些条目与先前生成的批次相关联。 “目录”批被标记为成功，这将触发任何下游流，然后这些流可以处理当前可用的数据。
+将所有数据文件上传到批后，可以发出批完成的信号。 信号完成导致服务为已上传 `DataSetFile` 的文件创建目录条目并将它们与先前生成的批处理关联。 目录批处理标记为成功，这将触发任何下游流，然后这些流可以处理当前可用的数据。
 
 **API格式**
 
@@ -330,7 +339,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BATCH_ID}` | 您标 `id` 记为完成的批次的值。 |
+| `{BATCH_ID}` | 您 `id` 标记为完成的批。 |
 
 **请求**
 
@@ -343,11 +352,11 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/5d01230fc
 
 **响应**
 
-成功完成的批处理将返回空白响应正文和HTTP状态200（确定）。
+成功完成的批处理返回空的响应正文和HTTP状态200（确定）。
 
-## 监控摄取
+## 监视摄取
 
-根据数据的大小，批次摄取的时间长度不同。 您可以通过将包含批ID的请求参数附加 `batch` 到请求来监视批的状 `GET /batches` 态。 API会从摄取到响应中指示完成(“成功” `status` 或“失败”)，对数据集进行轮询以确定批次的状态。
+根据数据的大小，批需要不同的时间才能进行摄取。 您可以通过将包含批ID的请求参 `batch` 数附加到请求来监视批的 `GET /batches` 状态。 API会从摄取到响应中指示完成(“成 `status` 功”或“失败”)，对数据集轮询批处理状态。
 
 **API格式**
 
@@ -357,7 +366,7 @@ GET /batches?batch={BATCH_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BATCH_ID}` | 要监 `id` 视的批次的数量。 |
+| `{BATCH_ID}` | 要 `id` 监视的批次的值。 |
 
 **请求**
 
@@ -404,7 +413,7 @@ curl -X GET \
 }
 ```
 
-负响应返回的对象在其属性中的值 `"failed"` 为，并包 `"status"` 含任何相关的错误消息：
+负响应返回属性中值为的对 `"failed"` 象，并 `"status"` 包含任何相关错误消息：
 
 ```JSON
 {
@@ -446,22 +455,24 @@ curl -X GET \
 }
 ```
 
->[!NOTE] 建议的轮询间隔为两分钟。
+>[!NOTE]
+>
+>建议的轮询间隔为两分钟。
 
 ## 从数据集读取数据
 
-使用批处理ID，您可以使用数据访问API进行回读并验证上传到该批处理的所有文件。 该响应返回一个包含文件ID列表的数组，每个ID引用批处理中的文件。
+使用批处理ID，您可以使用数据访问API进行回读并验证上传到该批处理的所有文件。 该响应返回一个包含文件ID列表的数组，每个ID都引用批处理中的文件。
 
 您还可以使用Data Access API返回名称、大小（以字节为单位）以及下载文件或文件夹的链接。
 
-有关使用Data Access API的详细步骤，请参阅Data Access开发 [人员指南](../../data-access/home.md)。
+有关使用Data Access API的详细步骤，请参阅Data Access开 [发人员指南](../../data-access/home.md)。
 
 ## 更新数据集模式
 
-您可以添加字段并将其他数据摄取到您创建的数据集中。 为此，您首先需要通过添加定义新数据的其他属性来更新模式。 这可以使用PATCH和／或PUT操作来更新现有模式。
+您可以添加字段并将其他数据引入您创建的数据集。 为此，您首先需要通过添加定义新模式的其他属性来更新数据。 这可以使用PATCH和／或PUT操作来更新现有模式。
 
-有关更新模式的详细信息，请参阅《 [模式注册API开发人员指南》](../../xdm/api/getting-started.md)。
+有关更新模式的详细信息，请参阅 [模式注册API开发人员指南](../../xdm/api/getting-started.md)。
 
-更新模式后，您可以重新按照本教程中的步骤来获取符合修改后模式的新数据。
+更新模式后，您可以重新执行本教程中的步骤，以获取符合修订模式的新数据。
 
-必须记住，模式演化纯粹是加性的，这意味着一旦将模式保存到注册表并用于数据摄取，就不能对其进行突破性更改。 要进一步了解编写模式以与Adobe Experience Platform一起使用的最佳实践，请参阅模式排版基 [础知识指南](../../xdm/schema/composition.md)。
+必须记住，模式进化纯粹是累加的，这意味着一旦模式保存到注册表并用于数据获取，您就不能对其引入突破性的更改。 要进一步了解编写模式以用于Adobe Experience Platform的最佳实践，请参阅关于模式排 [版基础的指南](../../xdm/schema/composition.md)。
