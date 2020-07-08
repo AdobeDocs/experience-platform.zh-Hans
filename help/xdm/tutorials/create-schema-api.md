@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用模式注册表API创建模式
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: b3fa5a17c3a5c2406d368d165da63f2f8c01154d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2418'
 ht-degree: 1%
@@ -256,7 +256,9 @@ curl -X PATCH \
 
 您现在可以使用另一个混音重复这些步骤，从而添加另一个标准混音。
 
->[!TIP] 值得查看所有可用的混音，以熟悉其中包含的字段。 您可以对“全局”和“租户”列表执行请求，只返回那些“meta:intededToExtend”字段与您所使用的类匹配的混合，从而容器(GET)可用于特定类的所有混合。 在这种情况下，它是XDM个人用户档案类，因此使用XDM个人用户档案 `$id` :
+>[!TIP]
+>
+>值得查看所有可用的混音，以熟悉其中包含的字段。 您可以对“全局”和“租户”列表执行请求，只返回那些“meta:intededToExtend”字段与您所使用的类匹配的混合，从而容器(GET)可用于特定类的所有混合。 在这种情况下，它是XDM个人用户档案类，因此使用XDM个人用户档案 `$id` :
 
 ```http
 GET /global/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
@@ -991,7 +993,9 @@ curl -X POST \
       }'
 ```
 
->[!NOTE] 您可以列表可用的“xdm:命名空间”值，或使用Identity Service API创建 [新值](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)。 “xdm:property”的值可以是“xdm:code”或“xdm:id”，具体取决于使用的“xdm:命名空间”。
+>[!NOTE]
+>
+>您可以列表可用的“xdm:命名空间”值，或使用Identity Service API创建 [新值](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)。 “xdm:property”的值可以是“xdm:code”或“xdm:id”，具体取决于使用的“xdm:命名空间”。
 
 **响应**
 
