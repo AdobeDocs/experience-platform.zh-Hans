@@ -4,14 +4,17 @@ solution: Experience Platform
 title: 查找资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 71c73a3899ccdd1c024a811b36c411915a3b14be
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '176'
+ht-degree: 2%
 
 ---
 
 
 # 查找资源
 
-您可以通过发出GET请求来查找特定资源，该请求在请 `$id` 求路径中包含该资源的（URL编码的URI）。
+您可以通过发出GET请求来查找特定资源，该请求 `$id` 在请求路径中包含该资源的（URL编码的URI）。
 
 **API格式**
 
@@ -22,8 +25,8 @@ GET /{CONTAINER_ID}/{RESOURCE_TYPE}/{RESOURCE_ID}
 | 参数 | 描述 |
 | --- | --- |
 | `{CONTAINER_ID}` | 资源所在的容器（“全局”或“租户”）。 |
-| `{RESOURCE_TYPE}` | 要从模式库检索的资源类型。 有效类 `datatypes`型有 `mixins`、 `schemas`和 `classes`。 |
-| `{RESOURCE_ID}` | 资源的URL编 `$id` 码的URI `meta:altId` 或URI。 |
+| `{RESOURCE_TYPE}` | 要从模式库检索的资源类型。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
+| `{RESOURCE_ID}` | 资源的URL编 `$id` 码的 `meta:altId` URI或URI。 |
 
 **请求**
 
@@ -41,17 +44,19 @@ curl -X GET \
 
 | 接受 | 描述 |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | 原始数 `$ref` 据包 `allOf`含和，有标题和说明。 |
-| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` 并且 `allOf` 有标题和描述。 |
-| `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | 原始数 `$ref` 据，无 `allOf`标题或说明。 |
-| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` 并且 `allOf` 不会解析标题或说明。 |
-| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` 和已 `allOf` 解析的描述符。 |
+| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | 包含和 `$ref` 的 `allOf`原始数据，有标题和说明。 |
+| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` 并 `allOf` 且有标题和说明。 |
+| `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | 原始数 `$ref` 据， `allOf`无标题或说明。 |
+| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` 并解 `allOf` 析，无标题或说明。 |
+| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` 和包 `allOf` 含的描述符。 |
 
->[!NOTE] 如果仅提 `major` 供版本（1、2、3等），注册表将自动返回最 `minor` 新版本（.1、.2、.3等）。
+>[!NOTE]
+>
+>如果仅提 `major` 供版本（1、2、3等），注册表将自动返回最 `minor` 新版本（.1、.2、.3等）。
 
 **响应**
 
-成功的响应会返回资源的详细信息。 返回的字段取决于请求中发送的接受标题。 尝试不同的接受标题以比较响应并确定最适合您的用例的标题。
+成功的响应会返回资源的详细信息。 返回的字段取决于请求中发送的接受标头。 尝试不同的接受标题以比较响应并确定最适合您的用例的标题。
 
 ```JSON
 {
