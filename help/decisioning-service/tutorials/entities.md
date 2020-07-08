@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用API管理决策服务实体
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '7207'
 ht-degree: 0%
@@ -48,7 +48,9 @@ ht-degree: 0%
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] 有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
+>[!NOTE]
+>
+>有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -102,7 +104,9 @@ API有效负荷格式与或标 `Accept` 头协 `Content-Type` 商。 {FORMAT}取
 
 容器的上 [!DNL Platform][!DNL Decisioning Service] 下文当前为 `dma_offers`。
 
->[!NOTE] 情境很 [!DNL Platform Decisioning Containers] 快会变成 `acp`。 筛选是可选的，但过滤器只需在 `dma_offers` 将来的版本中进行编辑。 要准备进行此更改，客户端应不使用过滤器，或应用两个产品上下文作为其筛选器。
+>[!NOTE]
+>
+>情境很 [!DNL Platform Decisioning Containers] 快会变成 `acp`。 筛选是可选的，但过滤器只需在 `dma_offers` 将来的版本中进行编辑。 要准备进行此更改，客户端应不使用过滤器，或应用两个产品上下文作为其筛选器。
 
 **请求**
 
@@ -233,7 +237,9 @@ curl -X GET {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
   -H 'x-request-id: {NEW_UUID}'  
 ```
 
->[!NOTE] 尽管 `instanceId` 应用程序被指定为路径参数，但应尽可能不要自己构建路径，而应按照列表和搜索操作中包含的实例的链接进行操作。 有关详细信息‎，请参阅‎第6.4.4和6.4.6节。
+>[!NOTE]
+>
+>尽管 `instanceId` 应用程序被指定为路径参数，但应尽可能不要自己构建路径，而应按照列表和搜索操作中包含的实例的链接进行操作。 有关详细信息‎，请参阅‎第6.4.4和6.4.6节。
 
 **响应**
 
@@ -326,7 +332,9 @@ curl -X GET {ENDPOINT_PATH}/{CONTAINER_ID}/instances?schema="{SCHEMA_ID}" \
 }
 ```
 
->[!NOTE] 结果包含给定模式或此列表的第一页的实例。 请注意，实例可以符合多个模式，因此可以以多个列表显示。
+>[!NOTE]
+>
+>结果包含给定模式或此列表的第一页的实例。 请注意，实例可以符合多个模式，因此可以以多个列表显示。
 
 页面资源为临时资源，为只读； 无法更新或删除它们。 寻呼模型在延长的时间段内提供对大列表子集的随机访问，而不保持任何每个客户端状态。
 
@@ -347,8 +355,7 @@ curl -X GET {ENDPOINT_PATH}/{CONTAINER_ID}/instances?schema="{SCHEMA_ID}" \
 过滤列表结果是可能的，并且独立于分页机制进行。 过滤器只需按照列表的顺序跳过实例，或明确要求仅包括满足给定条件的实例。 客户端可以请求要用作过滤器的属性表达式，也可以指定要用作实例主键值的URI列表。
 
 - **`property`**: 包含一个属性名称路径，后跟一个比较运算符，后跟一个值。 <br/>
-返回的实例列表包含表达式计算结果为true的实例。 例如，假定实例具有有效负荷属性 
-`status` 可能的值是， `draft`然后 `approved`查询 `archived` 参 `deleted` 数将仅返回 `property=_instance.status==approved` 已批准状态的实例。 <br/>
+返回的实例列表包含表达式计算结果为true的实例。 例如，假定实例具有有效负荷属 `status` 性，并且可能的值 `draft`是 `approved`，然后 `archived` 查询参数只 `deleted``property=_instance.status==approved` 返回已批准状态的实例。 <br/>
 <br/>
 要与给定值进行比较的属性被标识为路径。 单个路径组件由“.”分隔，如： “_instance.xdm:prop1.xdm:prop1_1.xdm:prop1_1`<br/>
 
@@ -571,7 +578,9 @@ curl -X DELETE {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
 }
 ```
 
->[!NOTE] 出于简单原因，在所有JSON片段中，只显示实例属性，并且仅在需要时显示信封属性和_links部分。
+>[!NOTE]
+>
+>出于简单原因，在所有JSON片段中，只显示实例属性，并且仅在需要时显示信封属性和_links部分。
 
 ### 常规优惠属性
 
