@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 区段生成器UI指南
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: b5a425714b6d69ca241c8ad81eff779b993633a5
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2683'
 ht-degree: 0%
@@ -69,7 +69,9 @@ ht-degree: 0%
 
 可以通过在搜索栏中键入组件名称来搜索任何类型的组件，该名称使 [用Lucene的搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)。 输入整个单词后，搜索结果开始填充。 例如，要根据XDM字段构建规则，请 `ExperienceEvent.commerce.productViews`在搜索字段中开始键入“产品视图”。 键入“product”一词后，搜索结果开始显示。 每个结果都包括它所属的对象层次结构。
 
->[!NOTE] 您的组织定义的自定义模式字段可能需要24小时才能显示，并可用于构建规则。
+>[!NOTE]
+>
+>您的组织定义的自定义模式字段可能需要24小时才能显示，并可用于构建规则。
 
 然后，您可以轻松地将 [!DNL ExperienceEvents] 事件类型 [!UICONTROL 拖放] 到区段定义中。
 
@@ -105,7 +107,9 @@ ht-degree: 0%
 
 对于 [!DNL Platform] 使用区 [!UICONTROL 段生成器创建的受众]，您可以选择将受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，然后可以修改该副本，而不会影响原始段定义。 在将区段定义转换为规则逻辑之前，请确保已保存对区段定义的任何最近更改。
 
->[!NOTE] 从外部源添加受众时，只引用受众成员身份。 无法将受众转换为规则，因此在新区段定义中无法修改用于创建原始受众的规则。
+>[!NOTE]
+>
+>从外部源添加受众时，只引用受众成员身份。 无法将受众转换为规则，因此在新区段定义中无法修改用于创建原始受众的规则。
 
 ![](../images/segment-builder/add-audience-to-segment.png)
 
@@ -137,7 +141,9 @@ ht-degree: 0%
 
 单击“取 **[!UICONTROL 消容器]** ”后，将删除子容器并内嵌条件。
 
->[!NOTE] 展开容器时，请注意逻辑继续满足所需的段定义。
+>[!NOTE]
+>
+>展开容器时，请注意逻辑继续满足所需的段定义。
 
 ![](../images/segment-builder/unwrapped-container-inline.png)
 
@@ -147,7 +153,7 @@ ht-degree: 0%
 
 您可以选择与此受众的营销目的匹配的合并策略，或使用由提供的默认合并策略 [!DNL Platform]。 您可以创建组织特有的多个合并策略，包括创建您自己的默认合并策略。 有关为组织创建合并策略的分步说明，请参阅使用UI [处理合并策略的教程](../../profile/ui/merge-policies.md)。
 
-要为段定义选择合并策略，请单击“字段”选项卡上 *[!UICONTROL 的齿轮]* 图标，然后使用“合 *[!UICONTROL 并策略]”下拉菜单&#x200B;*，以选择要使用的合并策略。
+要为段定义选择合并策略，请单击“字段”选项卡上 *[!UICONTROL 的齿轮]* 图标，然后使用“合并策 *[!UICONTROL 略]”下拉菜单&#x200B;*，以选择要使用的合并策略。
 
 ![](../images/segment-builder/merge-policy-selector.png)
 
@@ -161,7 +167,9 @@ ht-degree: 0%
 
 ![](../images/segment-builder/segment-properties.png)
 
->[!NOTE] 受众估计是使用当天样本数据的样本大小生成的。 如果您的用户档案存储中少于100万个实体，则使用完整的数据集； 100万至2000万个单位使用100万个单位； 超过2000万个单位，占全部单位的5%。 有关生成区段估计的更多信息，请参 [阅区段创建教程](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 的估计生成部分。
+>[!NOTE]
+>
+>受众估计是使用当天样本数据的样本大小生成的。 如果您的用户档案存储中少于100万个实体，则使用完整的数据集； 100万至2000万个单位使用100万个单位； 超过2000万个单位，占全部单位的5%。 有关生成区段估计的更多信息，请参 [阅区段创建教程](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 的估计生成部分。
 
 ## 启用计划分段 {#enable-scheduled-segmentation}
 
@@ -171,7 +179,9 @@ ht-degree: 0%
 
 可以使用UI或API为计划评估启用区段定义。 在UI中，返回至“区段” *[!UICONTROL 中的]* “浏 **[!UICONTROL 览”选]** 项卡 **[!UICONTROL ，然后]**&#x200B;打开“评估所有区段”。 这将导致所有区段都根据您的组织设置的计划进行评估。
 
->[!NOTE] 对于最多五(5)个合并策略的沙箱，可启用计划评估 [!DNL XDM Individual Profile]。 如果您的组织在单个沙箱环境内 [!DNL XDM Individual Profile] 有五个以上的合并策略，您将无法使用计划的评估。
+>[!NOTE]
+>
+>对于最多五(5)个合并策略的沙箱，可启用计划评估 [!DNL XDM Individual Profile]。 如果您的组织在单个沙箱环境内 [!DNL XDM Individual Profile] 有五个以上的合并策略，您将无法使用计划的评估。
 
 计划当前只能使用API创建。 有关使用API创建、编辑和使用计划的详细步骤，请按照教程来评估和访问区段结果，特别是使用API进 [行计划评估的部分](../tutorials/evaluate-a-segment.md#scheduled-evaluation)。
 
@@ -179,7 +189,9 @@ ht-degree: 0%
 
 ## 流细分 {#streaming-segmentation}
 
->[!NOTE] 为了让流式分段正常工作，客户需要为组织启用计划分段。 有关启用计划分段的详细信息，请参 [阅本用户指南的上一节](#enable-scheduled-segmentation)。
+>[!NOTE]
+>
+>为了让流式分段正常工作，客户需要为组织启用计划分段。 有关启用计划分段的详细信息，请参 [阅本用户指南的上一节](#enable-scheduled-segmentation)。
 
 如果查询符合以下任何条件，则将使用流分段自动评估该数据：
 
@@ -223,7 +235,9 @@ ht-degree: 0%
 
 ## 违反DULE策略
 
->[!NOTE] 仅当创建已分配到目标的区段时，DULE策略违规才适用。
+>[!NOTE]
+>
+>仅当创建已分配到目标的区段时，DULE策略违规才适用。
 
 创建完区段后，将对区段进行分析，以 [!DNL Data Governance] 确保区段内没有违反策略的情况。 有关DULE和策略违规的详细信息，请参阅数 [据使用标签概述](../../data-governance/labels/overview.md)。
 
