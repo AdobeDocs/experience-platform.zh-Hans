@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用API导出数据
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: d0b9223aebca0dc510a7457e5a5c65ac4a567933
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1953'
 ht-degree: 1%
@@ -20,34 +20,36 @@ ht-degree: 1%
 
 ## 入门指南
 
-本教程需要对处理用户档案数据时涉及的各种Adobe Experience Platform服务有充分的了解。 在开始本教程之前，请查看以下服务的相关文档：
+本教程需要对使用Adobe Experience Platform数据时涉及的各种用户档案服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
 
 - [实时客户用户档案](../../profile/home.md): 根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
-- [Adobe Experience Platform Segmentation Service](../home.md): 允许您根据实时受众数据构建用户档案细分。
+- [Adobe Experience Platform分段服务](../home.md): 允许您根据实时受众数据构建用户档案细分。
 - [体验数据模型(XDM)](../../xdm/home.md): 平台组织客户体验数据的标准化框架。
-- [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和改进数字体验应用程序。
+- [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
 ### 所需的标题
 
-本教程还要求您完成身份验证 [教程](../../tutorials/authentication.md) ，以便成功调用平台API。 完成身份验证教程后，将提供所有Experience Platform API调用中每个所需标头的值，如下所示：
+本教程还要求您完成身份验证 [教程](../../tutorials/authentication.md) ，以便成功调用平台API。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 - 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都与特定虚拟沙箱相隔离。 对平台API的请求需要一个标头，它指定操作将在中进行的沙箱的名称：
+Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的请求需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] 有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>[!NOTE]
+>
+>有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
 
-所有POST、PUT和PATCH请求都需要额外的标头：
+所有POST、PUT和PATCH请求都需要额外的标题：
 
 - 内容类型： application/json
 
 ## 创建导出作业
 
-导出用户档案数据需要先创建要将数据导出到的数据集，然后启动新的导出作业。 这两个步骤都可以使用Experience Platform API(前者使用目录服务API，后者使用实时客户用户档案API)来实现。 有关完成每个步骤的详细说明，请参阅以下各节。
+导出用户档案数据需要先创建要将数据导出到的数据集，然后启动新的导出作业。 这两个步骤都可以使用Experience PlatformAPI实现，前者使用目录服务API，后者使用实时客户用户档案API。 有关完成每个步骤的详细说明，请参阅以下各节。
 
 - [创建目标数据集](#create-a-target-dataset) -创建数据集以保存导出的数据。
 - [启动新的导出作业](#initiate-export-job) -使用XDM单个用户档案数据填充数据集。
@@ -197,7 +199,9 @@ curl -X POST \
 | `schema.name` | **(必需** )与要导出数据的数据集关联的模式的名称。 |
 | `evaluationInfo.segmentation` | *(可选* )布尔值，如果未提供，则默认为 `false`。 值表示 `true` 需要在导出作业中完成分段。 |
 
->[!NOTE] 要仅导出用户档案数据而不包括相关的ExperienceEvent数据，请从请求中删除“additionalFields”对象。
+>[!NOTE]
+>
+>要仅导出用户档案数据而不包括相关的ExperienceEvent数据，请从请求中删除“additionalFields”对象。
 
 **响应**
 
@@ -529,7 +533,7 @@ curl -X GET \
 
 ## 取消导出作业
 
-Experience Platform允许您取消现有的导出作业，这可能有用，原因包括导出作业未完成或在处理阶段卡住。 要取消导出作业，您可以对端点执行DELETE `/export/jobs` 请求，并将 `id` 要取消的导出作业包含在请求路径中。
+Experience Platform允许您取消现有的导出作业，这可能有多种原因，包括导出作业未完成或在处理阶段卡住。 要取消导出作业，您可以对终结点执行DELETE `/export/jobs` 请求，并将要 `id` 取消的导出作业包含到请求路径中。
 
 **API格式**
 
@@ -558,7 +562,7 @@ curl -X POST \
 
 ## 后续步骤
 
-成功完成导出后，您的数据便可在Experience Platform的数据湖中使用。 然后，您可以使用 [数据访问](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) API，使用与导出 `batchId` 关联的数据访问数据。 根据导出的大小，数据可能以块为单位，而批可能由多个文件组成。
+成功完成导出后，您的数据即可在Experience Platform的数据湖中使用。 然后，您可以使用 [数据访问](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) API，使用与导出 `batchId` 关联的数据访问数据。 根据导出的大小，数据可能以块为单位，而批可能由多个文件组成。
 
 有关如何使用数据访问API访问和下载批处理文件的分步说明，请遵循数据 [访问教程](../../data-access/tutorials/dataset-data.md)。
 
