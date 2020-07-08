@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据使用策略概述
 topic: policies
 translation-type: tm+mt
-source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '979'
 ht-degree: 0%
@@ -27,11 +27,15 @@ ht-degree: 0%
 
 营销行动的一个例子可能是希望将数据集导出到第三方服务。 如果有策略表明无法导出特定类型的数据(如个人身份信息(PII))，并且您尝试导出包含“I”标签（身份数据）的数据集，您将收到来自通知您已违反数据使用 [!DNL Policy Service] 策略的响应。
 
->[!NOTE] 营销活动本身并不限制数据使用。 必须将它们包含在启用的数据使用策略中，才能评估这些操作是否违反了策略。
+>[!NOTE]
+>
+>营销活动本身并不限制数据使用。 必须将它们包含在启用的数据使用策略中，才能评估这些操作是否违反了策略。
 
 当组织的服务中发生数据使用情况时，应指示相关的营销操作，以便识别任何违反策略的行为。 然后，您可以使用 [DULE Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) ，检查集成中是否存在策略违规。
 
->[!NOTE] 如果您使用实时客户数据平台，则可以在目标上设置营销使用案例以自动执行策略。 有关详细信 [息，请参见实时CDP中的文档](../../rtcdp/privacy/data-governance-overview.md) “数据治理”。
+>[!NOTE]
+>
+>如果您使用实时客户数据平台，则可以在目标上设置营销使用案例以自动执行策略。 有关详细信 [息，请参见实时CDP中的文档](../../rtcdp/privacy/data-governance-overview.md) “数据治理”。
 
 请参阅本文档的附录，了解一列表可 [用的Adobe定义的营销操作](#core-actions)。 您还可以使用DULE Policy Service API或Experience Platform用户界面定义您自己的自定义营销操作。 下一节提供了有关使用营销操作和策略的更多信息。
 
@@ -47,7 +51,9 @@ For a reference on how specific Data Export Controls map to marketing actions in
 
 应用数据使用标签后，数据管理员可以使用DULE策略服务API或Experience PlatformUI来管理和评估与对包含数据使用标签的数据进行营销操作相关的策略。 您可以创建和更新策略、确定策略状态以及使用营销操作来评估特定操作是否违反了数据使用策略。
 
->[!IMPORTANT] 默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 要考虑实施单个策略，必须通过API或UI手动启用该策略。
+>[!IMPORTANT]
+>
+>默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 要考虑实施单个策略，必须通过API或UI手动启用该策略。
 
 有关在API中使用营销操作和数据使用策略的分步说明，请参阅有关创建和评估数 [据使用策略的教程](create.md)。 有关Policy Service API提供的关键操作的详细信息，请参阅Policy Service [Developer Guide](../api/getting-started.md)。
 
@@ -65,7 +71,9 @@ For a reference on how specific Data Export Controls map to marketing actions in
 
 下表描述了Adobe开箱即用的核心营销行动。
 
->[!NOTE] 应将核心营销活动视为起点，以帮助您确定要创建和检查违规的使用策略。 定义及其解释方式取决于贵组织的需求和策略。
+>[!NOTE]
+>
+>应将核心营销活动视为起点，以帮助您确定要创建和检查违规的使用策略。 定义及其解释方式取决于贵组织的需求和策略。
 
 | 营销活动 | 描述 |
 | --- | --- |
