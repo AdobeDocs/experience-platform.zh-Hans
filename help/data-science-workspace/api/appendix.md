@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 附录
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '298'
 ht-degree: 4%
@@ -27,7 +27,9 @@ API [!DNL Sensei Machine Learning] 支持检索资产时的查询参数。 下�
 | `orderby` | 指示按优先级顺序排序的属性。 在属性名&#x200B;**称前加**&#x200B;上短划线(-)以按降序排序，否则，结果将按升序排序。 | `orderby=created` |
 | `property` | 指示要返回对象必须满足的比较表达式。 | `property=deleted==false` |
 
->[!NOTE] 组合多个查询参数时，必须用和号(&amp;**P)**&#x200B;分隔。
+>[!NOTE]
+>
+>组合多个查询参数时，必须用和号(&amp;**P)**&#x200B;分隔。
 
 ## Python CPU和GPU配置 {#cpu-gpu-config}
 
@@ -66,7 +68,9 @@ Python引擎能够选择CPU或GPU进行培训或评分，并在MLInstance上定 
 ]
 ```
 
->[!NOTE] 和的 `cpus` 值不 `gpus` 表示CPU或GPU的数量，而是表示物理机的数量。 这些值是可 `"1"` 能的，否则将引发异常。
+>[!NOTE]
+>
+>和的 `cpus` 值不 `gpus` 表示CPU或GPU的数量，而是表示物理机的数量。 这些值是可 `"1"` 能的，否则将引发异常。
 
 ## PySpark和Spark资源配置 {#resource-config}
 
