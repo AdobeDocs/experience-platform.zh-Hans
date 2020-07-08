@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在归因人工智能中发现洞察
 topic: Attribution AI insights
 translation-type: tm+mt
-source-git-commit: 0ea96de956adb5a6c5286433a547772118c43aee
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1164'
 ht-degree: 1%
@@ -30,7 +30,9 @@ ht-degree: 1%
 
 此时将显示“归因AI”服务页。 本页列表归因AI的服务实例并显示相关信息，包括实例名称、转换事件、实例运行频率以及上次更新的状态。 单击服务实例名称开始。
 
->[!NOTE] 只能选择已成功完成评分运行的服务实例。
+>[!NOTE]
+>
+>只能选择已成功完成评分运行的服务实例。
 
 ![创建实例](./images/insights/select-service-instance.png)
 
@@ -72,7 +74,9 @@ ht-degree: 1%
 
 归因人工智能洞察允许您过滤数据并根据选定过滤器自动更新UI视觉元素。
 
->[!NOTE] 默认情况下，每个筛选器都设置为“全部”，但“归 *因模型* ”筛选器设置为“增量和受影响的归因转换”。
+>[!NOTE]
+>
+>默认情况下，每个筛选器都设置为“全部”，但“归 *因模型* ”筛选器设置为“增量和受影响的归因转换”。
 
 ### 转换事件
 
@@ -98,11 +102,15 @@ ht-degree: 1%
 
 “地 *理位置* ”筛选器根据基于区域的模型填充国家代码。 根据您的数据，此过滤器可能存在，也可能不存在。
 
->[!NOTE] 国家代码长度为两个字符。 ISO 3166-1 alpha-2 [提供完整列表](https://datahub.io/core/country-list)。
+>[!NOTE]
+>
+>国家代码长度为两个字符。 ISO 3166-1 alpha-2 [提供完整列表](https://datahub.io/core/country-list)。
 
 ### 地区
 
->[!NOTE] 仅当您在创建服务实例时在Attribution AI用户界面指 [南中执行了可选的基于](./user-guide.md#region-based-modeling-optional) 步骤区域的建模时，才会出现此过滤器。
+>[!NOTE]
+>
+>仅当您在创建服务实例时在Attribution AI用户界面指 [南中执行了可选的基于](./user-guide.md#region-based-modeling-optional) 步骤区域的建模时，才会出现此过滤器。
 
 此过滤器允许您选择在实例创建过程中设置的任何区域。
 
