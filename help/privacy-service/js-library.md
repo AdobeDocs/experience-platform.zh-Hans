@@ -4,47 +4,54 @@ solution: Experience Platform
 title: Adobe隐私JavaScript库概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3b916ac5529db6ca383bf8bad56961bb1b8a0b0c
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '972'
+ht-degree: 5%
 
 ---
 
 
 # Adobe隐私JavaScript库概述
 
-作为数据处理者，Adobe会根据您的公司的许可和指示处理个人数据。 作为“数据控制者”，您可以决定 Adobe 代表您处理和存储的个人数据。根据您选择通过Adobe Experience Cloud解决方案发送的信息，Adobe可以存储适用于隐私法规(如一般数据保护规定(GDPR)和加利福尼亚消费者隐私法(CCPA))的隐私信息。 有关Experience Cloud解决方案 [如何收集私人数据的更多信息](https://www.adobe.com/privacy/marketing-cloud.html) ，请参阅Adobe Experience Cloud中的隐私文档。
+作为数据处理者，Adobe会根据公司的许可和指示处理个人数据。 作为“数据控制者”，您可以决定 Adobe 代表您处理和存储的个人数据。根据您选择通过Adobe Experience Cloud解决方案发送的信息，Adobe可以存储适用于隐私法规(如一般数据保护规定(GDPR)和加利福尼亚消费者隐私法(CCPA))的隐私信息。 有关Experience Cloud解决方 [案如何收集私人文档](https://www.adobe.com/privacy/marketing-cloud.html) ，请参阅Adobe Experience Cloud中的隐私。
 
-Adobe隐 **** 私JavaScript库允许数据控制者自动检索由Experience Cloud解决方案为特定域生成的所有数据主体身份。 使用 [Adobe Experience Platform Privacy Service提供的API](home.md)，这些标识随后可用于创建对属于这些数据主体的私人数据的访问和删除请求。
+Adobe **隐私JavaScript库** ，允许数据控制者自动检索由特定域的Experience Cloud解决方案生成的所有数据主体身份。 使用Adobe Experience Platform Privacy Service提 [供的](home.md)API，这些标识随后可用于为属于这些数据主体的私有数据创建访问和删除请求。
 
->[!NOTE] 通常，隐私JS库只需安装在与隐私相关的页面上，而不需要安装在网站或域的所有页面上。
+>[!NOTE]
+>
+>一般情况下，隐私JS库只需安装在与隐私相关的页面上，而不需要安装在网站或域的所有页面上。
 
 ## 函数
 
-隐私JS库提供了在隐私服务中管理身份的若干功能。 这些功能只能用于管理存储在浏览器中的特定访客的身份。 不能使用它们直接向Experience Cloud Central服务提交信息。
+隐私JS库提供多种功能，用于管理Privacy Service中的身份。 这些函数只能用于管理存储在浏览器中的特定访客的身份。 不能直接用于向Experience Cloud中心提交信息。
 
 下表概述了库提供的不同功能：
 
 | 函数 | 描述 |
 | --- | --- |
-| `retrieveIdentities` | 返回从隐私服务检索的一组匹配标识(`validIds`)，以及一组未找到的标识(`failedIds`)。 |
-| `removeIdentities` | 从浏览器中删除每个匹配（有效）标识。 返回匹配标识(`validIds`)的数组，每个标识都包含一个布尔值，该布尔值指示 `isDeleteClientSide` 此ID是否已删除。 |
-| `retrieveThenRemoveIdentities` | 检索一组匹配标识(`validIds`)，然后从浏览器中删除这些标识。 尽管此功能与类似，但最好在您使用的Adobe解决方案要求访问请求才能删除（例如，在删除请求中提供唯一标识符之前必须检索该标识符）时使用此功能。 `removeIdentities` |
+| `retrieveIdentities` | 返回从Privacy Service检索`validIds`的匹配标识()数组以及未找到的标识(`failedIds`)数组。 |
+| `removeIdentities` | 从浏览器中删除每个匹配（有效）标识。 返回匹配标识()的`validIds`数组，每个标识都包含一个布尔值， `isDeleteClientSide` 该布尔值指示此ID是否已被删除。 |
+| `retrieveThenRemoveIdentities` | 检索一组匹配标识(`validIds`)，然后从浏览器中删除这些标识。 虽然此函数与类似， `removeIdentities`但最好在您使用的Adobe解决方案在删除之前需要访问请求（例如，在删除请求中提供唯一标识符之前必须检索到该标识符）时使用此函数。 |
 
->[!NOTE] 并且 `removeIdentities` 只 `retrieveThenRemoveIdentities` 从浏览器中删除支持这些身份的特定Adobe解决方案的身份。 例如，Adobe受众管理器不删除存储在第三方Cookie中的demdex ID，而Adobe目标会删除存储其ID的所有Cookie。
+>[!NOTE]
+>
+>`removeIdentities` 并且只 `retrieveThenRemoveIdentities` 从浏览器中删除支持这些身份的特定Adobe解决方案。 例如，Adobe Audience Manager不会删除存储在第三方Cookie中的demdex ID，而Adobe Target会删除存储其ID的所有Cookie。
 
-由于这三个函数都表示异步进程，因此必须使用回调或承诺处理任何检索到的身份。
+由于所有三个函数都表示异步进程，因此任何检索到的身份都必须使用回调或承诺来处理。
 
 
 ## 安装
 
-要开始使用隐私JS库，您必须使用以下方法之一将其安装到计算机上：
+要开始使用隐私JS库，您必须使用以下方法之一将其安装到您的计算机上：
 
-* 通过运行以下命令使用npm进行安装： `npm install @adobe/adobe-privacy`
+* 使用npm运行以下命令进行安装： `npm install @adobe/adobe-privacy`
 * 使用名称下的Adobe Launch Extension `AdobePrivacy`
 * 从https://github.com/Adobe-Marketing-Cloud/adobe-privacy下 [载](https://github.com/Adobe-Marketing-Cloud/adobe-privacy)
 
 ## 实例化隐私JS库
 
-使用隐私JS库的所有应用程序都必须实例化新 `AdobePrivacy` 对象，该对象必须配置为特定的Adobe解决方案。 例如，Adobe Analytics的实例化将类似于：
+所有使用隐私JS库的应用程序都必须实例化新 `AdobePrivacy` 对象，该对象必须配置为特定的Adobe解决方案。 例如，Adobe Analytics的实例化类似于：
 
 ```js
 var adobePrivacy = new AdobePrivacy({
@@ -56,15 +63,15 @@ var adobePrivacy = new AdobePrivacy({
 });
 ```
 
-有关不同Adobe解决方案所支持参数的完整列表，请参阅附录部分，其中介绍受支持 [Adobe解决方案配置参数](#adobe-solution-configuration-parameters)。
+有关不同Adobe解决方案支持的参数的完整列表，请参阅附录部分，其中 [介绍支持的Adobe解决方案配置参数](#adobe-solution-configuration-parameters)。
 
 ## 代码示例
 
-以下代码示例演示了如何在不使用Launch或DTM的情况下，将隐私JS库用于多种常见场景。
+以下代码示例演示了如何在未使用Launch或DTM的情况下，将隐私JS库用于多种常见情形。
 
 ### Retrieve identities
 
-此示例演示如何从Experience Cloud检索一列表身份。
+此示例演示如何从Experience Cloud检索身份列表。
 
 #### JavaScript
 
@@ -86,11 +93,11 @@ adobePrivacy.retrieveIdentities().then(handleRetrievedIDs);
 | Variable | 描述 |
 | --- | --- |
 | `validIds` | 一个JSON对象，其中包含已成功检索的所有ID。 |
-| `failedIDs` | 一个JSON对象，其中包含从隐私服务中检索的所有ID，或者无法找到这些ID。 |
+| `failedIDs` | 一个JSON对象，包含所有未从Privacy Service检索的ID，或者找不到其他ID。 |
 
 #### 结果
 
-如果代码成功执行， `validIDs` 则将填充一列表已检索的标识。
+如果代码成功执行， `validIDs` 则将填充检索到的身份列表。
 
 ```json
 {
@@ -113,11 +120,11 @@ adobePrivacy.retrieveIdentities().then(handleRetrievedIDs);
 
 ### Remove identities
 
-此示例演示如何从浏览器中删除一列表身份。
+此示例演示如何从浏览器中删除身份列表。
 
 #### JavaScript
 
-以下代码定义了一个函数， `handleRemovedIDs`它将用作回调或承诺处理从浏览器删除后 `removeIdentities` 检索到的身份。
+以下代码定义一个函 `handleRemovedIDs`数，该函数用作回调或承诺处理在从浏览器中删除 `removeIdentities` 后由其检索到的身份。
 
 ```javascript
 function handleRemovedIDs(ids) {
@@ -135,11 +142,11 @@ adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 | Variable | 描述 |
 | --- | --- |
 | `validIds` | 一个JSON对象，其中包含已成功检索的所有ID。 |
-| `failedIDs` | 一个JSON对象，其中包含从隐私服务中检索的所有ID，或者无法找到这些ID。 |
+| `failedIDs` | 一个JSON对象，包含所有未从Privacy Service检索的ID，或者找不到其他ID。 |
 
 #### 结果
 
-如果代码成功执行， `validIDs` 则将填充一列表已检索的标识。
+如果代码成功执行， `validIDs` 则将填充检索到的身份列表。
 
 ```json
 {
@@ -164,7 +171,7 @@ adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 
 ## 后续步骤
 
-阅读本文档，您便了解了隐私JS库的核心功能。 使用库检索身份列表后，您可以使用这些身份创建数据访问和删除对Privacy Service API的请求。 有关详细信息， [请参阅隐私服务开发人员指南](api/getting-started.md) 。
+阅读本文档，您已了解隐私JS库的核心功能。 使用库检索身份列表后，您可以使用这些身份创建Privacy Service访问和删除对该身份API的请求。 有关更多 [信息，请参](api/getting-started.md) 阅Privacy Service开发人员指南。
 
 ## 附录
 
@@ -172,14 +179,14 @@ adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 
 ### Adobe解决方案配置参数
 
-以下是受支持Adobe解决方案的已接受配置参数的列表，在实例化AdobePrivacy [对象时使用这些参数](#instantiate-the-privacy-js-library)。
+以下是受支持Adobe解决方案的已接受配置参数的列表，在实例化 [AdobePrivacy对象时使用](#instantiate-the-privacy-js-library)。
 
 **Adobe Analytics**
 
 | 参数 | 描述 |
 | --- | --- |
 | `cookieDomainPeriods` | 域中用于cookie跟踪的句点数（默认为2）。 |
-| `dataCenter` | Adobe数据收集数据中心。 仅当在JavaScript Web信标中指定时，才应包含此内容。 潜在值为： <ul><li>&quot;d1&quot;:圣何塞数据中心。</li><li>&quot;d2&quot;:达拉斯数据中心。</li></ul> |
+| `dataCenter` | Adobe数据收集数据中心。 仅当在JavaScript Web信标中指定时，才应包含此内容。 潜在值为： <ul><li>&quot;d1&quot;: 圣何塞数据中心。</li><li>&quot;d2&quot;: 达拉斯数据中心。</li></ul> |
 | `reportSuite` | 在JavaScript Web信标中指定的报表包ID（例如，“s_code.js”或“dtm”）。 |
 | `trackingServer` | 数据收集域（非SSL）。 仅当在JavaScript Web信标中指定时，才应包含此内容。 |
 | `trackingServerSecure` | 数据收集域(SSL)。 仅当在JavaScript Web信标中指定时，才应包含此内容。 |
@@ -189,15 +196,15 @@ adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 
 | 参数 | 描述 |
 | --- | --- |
-| `clientCode` | 在Adobe目标系统中标识客户端的客户端代码。 |
+| `clientCode` | 在Adobe Target系统中标识客户端的客户端代码。 |
 
 **Adobe Audience Manager**
 
 | 参数 | 描述 |
 | --- | --- |
-| `aamUUIDCookieName` | 包含从Adobe受众管理器返回的唯一用户ID的第一方Cookie的名称。 |
+| `aamUUIDCookieName` | 包含从Adobe Audience Manager返回的唯一用户ID的第一方Cookie的名称。 |
 
-**Adobe ID Service(ECID)**
+**Adobe ID服务(ECID)**
 
 | 参数 | 描述 |
 | --- | --- |
