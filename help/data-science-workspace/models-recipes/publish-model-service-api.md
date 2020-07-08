@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 将模型发布为服务(API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1478'
 ht-degree: 1%
@@ -28,7 +28,7 @@ ht-degree: 1%
 - `{IMS_ORG}`
 - `{API_KEY}`
 
-所有POST、PUT和PATCH请求都需要额外的标题：
+所有POST、PUT和PATCH请求都需要额外的标头：
 
 - 内容类型： application/json
 
@@ -338,7 +338,9 @@ curl -X GET 'https://platform.adobe.io/data/sensei/mlServices/{SERVICE_ID}'
 }
 ```
 
->[!NOTE] 检索不同的ML服务可能返回具有或多或少键值对的响应。 以上响应是ML服务的表示，该服 [务同时具有计划的培训和评分实验运行](#ml-service-with-scheduled-experiments-for-training-and-scoring)。
+>[!NOTE]
+>
+>检索不同的ML服务可能返回具有或多或少键值对的响应。 以上响应是ML服务的表示，该服 [务同时具有计划的培训和评分实验运行](#ml-service-with-scheduled-experiments-for-training-and-scoring)。
 
 
 ## 计划培训或评分
@@ -388,7 +390,9 @@ curl -X PUT 'https://platform.adobe.io/data/sensei/mlServices/{SERVICE_ID}'
       }'
 ```
 
->[!WARNING] 请勿尝试修改现有计划 `startTime` 培训和评分作业上的作业。 如果必 `startTime` 须修改，请考虑发布相同的模型并重新计划培训和评分任务。
+>[!WARNING]
+>
+>请勿尝试修改现有计划 `startTime` 培训和评分作业上的作业。 如果必 `startTime` 须修改，请考虑发布相同的模型并重新计划培训和评分任务。
 
 **响应**
 
