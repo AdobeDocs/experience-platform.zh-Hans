@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 导入打包的菜谱(UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1760'
 ht-degree: 0%
@@ -35,7 +35,9 @@ ht-degree: 0%
 
 中的每个菜谱 [!DNL Data Science Workspace] 实例都附带一组配置，这些配置根据特定用例定制菜谱实例。 配置文件定义使用此菜谱实例创建的模型的默认培训和评分行为。
 
->[!NOTE] 配置文件是特定于菜谱和大小写的。
+>[!NOTE]
+>
+>配置文件是特定于菜谱和大小写的。
 
 以下是显示零售销售菜谱的默认培训和评分行为的示例配置文件。
 
