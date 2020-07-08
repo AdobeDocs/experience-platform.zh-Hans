@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 验证和访问Experience PlatformAPI
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 280456e68f54f49ce4a0134e226af89ad1f849a4
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '877'
 ht-degree: 1%
@@ -69,7 +69,9 @@ ht-degree: 1%
 
 ## 在Adobe Developer Console中生成访问凭据
 
->[!NOTE] 如果您正在从文档开发人 [员指南中遵循此Privacy Service](../privacy-service/api/getting-started.md)，您现在可返回该指南以生成Privacy Service特有的访问凭据。
+>[!NOTE]
+>
+>如果您正在从文档开发人 [员指南中遵循此Privacy Service](../privacy-service/api/getting-started.md)，您现在可返回该指南以生成Privacy Service特有的访问凭据。
 
 使用Adobe Developer Console，您必须生成以下三个访问凭据：
 
@@ -77,7 +79,7 @@ ht-degree: 1%
 * `{API_KEY}`
 * `{ACCESS_TOKEN}`
 
-您 `{IMS_ORG}` 的 `{API_KEY}` 只需生成一次，并且以后可以重用PlatformAPI调用。 但是，您的计 `{ACCESS_TOKEN}` 划是临时的，必须每24小时再生一次。
+您 `{IMS_ORG}` 的 `{API_KEY}` 只需生成一次，以后的Platform API调用中即可重用。 但是，您的计 `{ACCESS_TOKEN}` 划是临时的，必须每24小时再生一次。
 
 下面详细介绍了这些步骤。
 
@@ -104,7 +106,7 @@ ht-degree: 1%
 
 ### 每个会话的身份验证
 
-您必须收集的最终所需凭据是您的 `{ACCESS_TOKEN}`。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用PlatformAPI。
+您必须收集的最终所需凭据是您的 `{ACCESS_TOKEN}`。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用平台API。
 
 要生成新代码， `{ACCESS_TOKEN}`请按照“开发人 [员控制台凭据指南](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/credentials.md) ”中的步骤生成JWT令牌。
 
@@ -157,6 +159,6 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 
 ## 后续步骤
 
-通过阅读此文档，您已收集并成功测试了PlatformAPI的访问凭据。 您现在可以按照文档中提供的示例API调 [用操作](../landing/documentation/overview.md)。
+通过阅读此文档，您已收集并成功测试了Platform API的访问凭据。 您现在可以按照文档中提供的示例API调 [用操作](../landing/documentation/overview.md)。
 
-除了在本教程中收集的身份验证值之外，许多PlatformAPI还要求以头 `{SANDBOX_NAME}` 形式提供有效的身份验证值。 有关更多 [信息，请参](../sandboxes/home.md) 阅沙箱概述。
+除了在本教程中收集的身份验证值之外，许多平台API还要求以标 `{SANDBOX_NAME}` 头形式提供有效。 有关更多 [信息，请参](../sandboxes/home.md) 阅沙箱概述。
