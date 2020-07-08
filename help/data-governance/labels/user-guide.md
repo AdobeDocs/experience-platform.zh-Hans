@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据使用标签用户指南
 topic: labels
 translation-type: tm+mt
-source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '975'
 ht-degree: 0%
@@ -26,7 +26,9 @@ ht-degree: 0%
 
 ### 创建新数据集
 
->[!NOTE] 在此示例中，使用预配置的体验数据模型(XDM)模式创建数据集。 有关XDM模式的详细信息，请参 [阅XDM系统概述](../../xdm/home.md)[和模式合成基础知识](../../xdm/schema/composition.md)。
+>[!NOTE]
+>
+>在此示例中，使用预配置的体验数据模型(XDM)模式创建数据集。 有关XDM模式的详细信息，请参 [阅XDM系统概述](../../xdm/home.md)[和模式合成基础知识](../../xdm/schema/composition.md)。
 
 要创建新数据集，请单 **[!UICONTROL 击Datasets]** 工作区右上角的“创建 _[!UICONTROL 数据集]_”。
 
