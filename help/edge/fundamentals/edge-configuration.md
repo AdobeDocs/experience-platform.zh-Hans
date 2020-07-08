@@ -4,7 +4,7 @@ seo-title: Experience PlatformWeb SDK的边缘配置
 description: '了解如何配置Experience Platform边缘网络。 '
 seo-description: '了解如何配置Experience Platform边缘网络。 '
 translation-type: tm+mt
-source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '882'
 ht-degree: 2%
@@ -24,7 +24,9 @@ Adobe Experience PlatformWeb SDK的配置分为两个位置。 SDK [中的](conf
 
 >[!NOTE]
 >
->无论客户是否使用标签管理器，都可以在允许列表上使用 [!DNL Launch] 边缘配置工具。 此外，用户需要中的“开发”权 [!DNL Launch]限。 有关更多 [详细信息](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/user-permissions.html) ，请参 [!DNL Launch] 阅文档中的“用户权限”文章。
+>
+>
+>无论客户是否使用标签管理器，允许列表上的客户都可 [!DNL Launch] 以使用边缘配置工具。 此外，用户需要中的“开发”权 [!DNL Launch]限。 有关更多 [详细信息](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/user-permissions.html) ，请参 [!DNL Launch] 阅文档中的“用户权限”文章。
 
 单击屏幕右上角的“UICONTROL **[新边缘配置]** ”可创建边缘配置。 提供名称和说明后，系统会要求您为每个环境提供默认设置。
 
@@ -77,6 +79,8 @@ ID同步可以分组为容器，以允许在不同时间运行不同的ID同步�
 ![Adobe Target设置块](../../assets/edge_configuration_target.png)
 
 >[!NOTE]
+>
+>
 >
 >与客户端代码关联的组织必须与创建配置ID的组织匹配。
 
