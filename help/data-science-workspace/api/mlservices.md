@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 服务
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: 33f8c424c208bb61319b49e7ecb30e3144ef108a
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '811'
 ht-degree: 2%
@@ -213,7 +213,9 @@ curl -X GET \
 
 您可以通过PUT请求覆盖现有MLService的属性，该请求在请求路径中包含目标MLService的ID，并提供包含已更新属性的JSON有效负荷，从而更新现有MLService。
 
->[!TIP] 为确保此PUT请求成功，建议先执行GET请求，以 [按ID检索MLService](#retrieve-a-specific-mlservice)。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
+>[!TIP]
+>
+>为确保此PUT请求成功，建议先执行GET请求，以 [按ID检索MLService](#retrieve-a-specific-mlservice)。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
 
 **API格式**
 
