@@ -1,10 +1,10 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
 solution: Adobe Experience Platform
-title: 实时客户用户档案API开发人员指南
+title: 计算属性——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
+source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
 workflow-type: tm+mt
 source-wordcount: '2431'
 ht-degree: 1%
@@ -50,7 +50,7 @@ Adobe Experience Platform使您能够轻松导入和合并来自多个来源的�
 >[!NOTE]
 >计算属性无法添加到Adobe定义的混音中的字段。 该字段必须在命名空间 `tenant` 中，这意味着它必须是您定义并添加到模式的字段。
 
-要成功定义计算属性字段，必须启用模式以用户档案，并作为合并所基于的类的模式模式的一部分显示。 有关启用用户档案的模式和合并的详细信息，请查阅模式注册表开发人员指南部分中有关启 [用用户档案和查看合并模式的](../../xdm/api/getting-started.md)部分。 还建议在合并构图基 [础文档中](../../xdm/schema/composition.md) ，查看有关模式的部分。
+要成功定义计算属性字段，必须启用模式以用户档案，并作为合并所基于的类的模式模式的一部分显示。 有关启用用户档案的模式和合并的详细信息，请查阅模式注册表开发人员指南部分中有关启 [用用户档案和查看合并模式的](../../xdm/api/getting-started.md)部分。 还建议在合并构图基 [础文档中](../../xdm/schema/composition.md) ，查看模式部分。
 
 本教程中的工作流使用启用用户档案的模式，并遵循定义包含计算属性字段的新混音并确保它是正确命名空间的步骤。 如果已在启用用户档案的模式中有一个命名空间正确的字段，您可以直接继续执行创建计算属性 [的步骤](#create-a-computed-attribute)。
 
@@ -483,6 +483,8 @@ curl -X PATCH \
 也可以使用API删除计算属性。 这是通过向端点发出DELETE请 `/config/computedAttributes` 求并在请求路径中包括要删除的计算属性的ID来完成的。
 
 >[!Note]
+>
+>
 >删除计算属性时请务必小心，因为该属性可能正在多个模式中使用，并且DELETE操作无法撤消。
 
 **API格式**
