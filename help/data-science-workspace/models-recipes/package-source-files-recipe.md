@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 将源文件打包到菜谱中
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: 45461e3420f3b7e227f80fe775d80b8442a1069c
 workflow-type: tm+mt
-source-wordcount: '1077'
+source-wordcount: '1097'
 ht-degree: 0%
 
 ---
@@ -169,7 +169,7 @@ Navigate to the directory `experience-platform-dsw-reference/recipes/pyspark/ret
 git clone https://github.com/adobe/experience-platform-dsw-reference.git
 ```
 
-接下来，导航到可 `experience-platform-dsw-reference/recipes/scala/retail` 以找到脚本和的目 `login.sh` 录 `build.sh`。 这些脚本用于登录Docker并构建Docker图像。 如果您的Docker凭 [据已准备](#docker-based-model-authoring) ，请按顺序将以下命令输入终端：
+接下来，导航到可 `experience-platform-dsw-reference/recipes/scala` 以找到脚本和的目 `login.sh` 录 `build.sh`。 这些脚本用于登录Docker并构建Docker图像。 如果您的Docker凭 [据已准备](#docker-based-model-authoring) ，请按顺序将以下命令输入终端：
 
 ```BASH
 # for logging in to Docker
@@ -178,6 +178,9 @@ git clone https://github.com/adobe/experience-platform-dsw-reference.git
 # for building Docker image
 ./build.sh
 ```
+
+>[!TIP]
+>如果您在尝试使用脚本登录Docker时收到权限错 `login.sh` 误，请尝试使用命令 `bash login.sh`。
 
 执行登录脚本时，您需要提供Docker主机、用户名和密码。 在构建时，您需要提供Docker主机和版本标记。
 
@@ -192,7 +195,7 @@ git clone https://github.com/adobe/experience-platform-dsw-reference.git
 
 ## 后续步骤 {#next-steps}
 
-本教程重点介绍将源文件打包到菜谱中，这是将菜谱导入的先决条件步骤 [!DNL Data Science Workspace]。 您现在应在Azure容器注册表中拥有Docker图像以及相应的图像URL。 现在，您可以开始将打包的菜谱导入的教程了 [!DNL Data Science Workspace]。 选择以下教程链接之一以开始：
+本教程重点介绍将源文件打包到菜谱中，这是将菜谱导入的先决条件步骤 [!DNL Data Science Workspace]。 您现在应在Azure容器注册表中拥有Docker图像以及相应的图像URL。 您现在可以开始将打包的菜谱导入的教程了 [!DNL Data Science Workspace]。 选择以下教程链接之一以开始：
 
 - [在UI中导入打包的菜谱](./import-packaged-recipe-ui.md)
 - [使用API导入打包的菜谱](./import-packaged-recipe-api.md)
