@@ -1,32 +1,35 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 创建临时模式
+title: 创建点对点模式
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 956d1e5b4a994c9ea52d818f3dd6d3ff88cb16b6
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '742'
+ht-degree: 2%
 
 ---
 
 
-# 创建临时模式
+# 创建点对点模式
 
-在特定情况下，可能需要创建一个体验数据模型(XDM)模式，其中的字段以仅由单个数据集使用的名称命名。 这称为&quot;临时&quot;模式。 Ad-hoc模式用于Experience Platform的各种数据摄取工作流，包括摄取CSV文件和创建某些类型的源连接。
+在特定情况下，可能需要创建一个体验数据模型(XDM)模式，其中的字段以仅由单个数据集使用的名称命名。 这称为“临时”模式。 临时模式用于各种Experience Platform数据获取工作流，包括获取CSV文件和创建某些类型的源连接。
 
-此文档提供了使用模式注册表API创建临时模式的一 [般步骤](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。 它旨在与其他需要在工作流程中创建临时模式的Experience Platform教程结合使用。 每个文档都提供有关如何为其特定用例正确配置临时模式的详细信息。
+此文档提供了使用模式注册表API创建点对点模式的 [一般步骤](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。 它旨在与其他需要在工作流中创建点对点Experience Platform的模式教程结合使用。 这些文档中的每一个都提供了有关如何为其特定用例正确配置点对点模式的详细信息。
 
 ## 入门指南
 
 本教程需要对体验数据模型(XDM)系统有一个有效的了解。 在开始本教程之前，请查看以下XDM文档：
 
-- [XDM系统概述](../home.md):XDM及其在Experience Platform中实施的高级概述。
-- [模式合成的基础知识](../schema/composition.md):XDM模式的基本组件概述。
+- [XDM系统概述](../home.md): XDM及其在Experience Platform中实现的高级概述。
+- [模式合成基础](../schema/composition.md): XDM模式的基本组件概述。
 
-在开始本教程之前，请查看开 [发人员指南](../api/getting-started.md) ，了解成功调用模式注册表API所需了解的重要信息。 这包括您 `{TENANT_ID}`的“容器”概念以及发出请求所需的标题（特别注意“接受”标题及其可能的值）。
+在开始本教程之前，请查阅开 [发人员指南](../api/getting-started.md) ，了解成功调用模式注册表API所需了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
 
 ## 创建点对点类
 
-XDM模式的数据行为由其基础类决定。 创建临时模式的第一步是根据行为创建类。 `adhoc` 这是通过向端点发出POST请求来完 `/tenant/classes` 成的。
+XDM模式的数据行为由其基础类决定。 创建点对点模式的第一步是根据行为创建类 `adhoc` 。 这是通过向端点发出POST请求来完 `/tenant/classes` 成的。
 
 **API格式**
 
@@ -36,9 +39,11 @@ POST /tenant/classes
 
 **请求**
 
-以下请求将创建一个新的XDM类，该类由有效负荷中提供的属性进行配置。 通过提供 `$ref` 数组中设置 `https://ns.adobe.com/xdm/data/adhoc` 的属 `allOf` 性，该类继承了行 `adhoc` 为。 该请求还定义一 `_adhoc` 个对象，该对象包含类的自定义字段。
+以下请求将创建一个新的XDM类，该类由有效负荷中提供的属性进行配置。 通过提供 `$ref` 数组中 `https://ns.adobe.com/xdm/data/adhoc` 的属 `allOf` 性集，此类继承行 `adhoc` 为。 该请求还定义一 `_adhoc` 个对象，它包含类的自定义字段。
 
->[!NOTE] 根据临时模式的 `_adhoc` 用例，在下定义的自定义字段会有所不同。 请参考相应教程中的特定工作流，以了解根据用例需要的自定义字段。
+>[!NOTE]
+>
+>在下定义的自定 `_adhoc` 义字段因临时模式的用例而异。 请参考相应教程中的特定工作流，以了解根据用例需要的自定义字段。
 
 ```shell
 curl -X POST \
@@ -78,11 +83,11 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `$ref` | 新类的数据行为。 对于点对点类，此值必须设置为 `https://ns.adobe.com/xdm/data/adhoc`。 |
-| `properties._adhoc` | 包含类的自定义字段的对象，表示为字段名和数据类型的键值对。 |
+| `properties._adhoc` | 包含类的自定义字段的对象，表示为字段名称和数据类型的键值对。 |
 
 **响应**
 
-成功的响应返回新类的详细信息，将对象的名称替换为GUID，该GUID是系统生成的类的只读唯一标识符。 `properties._adhoc` 该属 `meta:datasetNamespace` 性也会自动生成并包含在响应中。
+成功的响应会返回新类的详细信息，将对 `properties._adhoc` 象的名称替换为系统生成的、只读的类唯一标识符的GUID。 该 `meta:datasetNamespace` 属性也自动生成并包含在响应中。
 
 ```json
 {
@@ -139,11 +144,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `$id` | 用作新ad-hoc类的只读、系统生成的唯一标识符的URI。 该值用于创建临时模式的下一步。 |
+| `$id` | 用作新ad-hoc类的只读、系统生成的唯一标识符的URI。 此值用于创建临时模式的下一步。 |
 
-## 创建临时模式
+## 创建点对点模式
 
-创建点对点类后，可以创建新模式，通过向端点发出POST请求来实现该类。 `/tenant/schemas`
+创建点对点类后，可以创建新模式，通过向端点发出POST请求来实现该 `/tenant/schemas` 类。
 
 **API格式**
 
@@ -153,7 +158,7 @@ POST /tenant/schemas
 
 **请求**
 
-以下请求创建新模式，提供(`$ref`)对其有效负荷中先前 `$id` 创建的临时类的引用。
+以下请求创建新模式，提`$ref`供() `$id` 对其负载中先前创建的点对点类的引用。
 
 ```shell
 curl -X POST \
@@ -177,7 +182,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新创建的模式的详细信息，包括其系统生成的只读内容 `$id`。
+成功的响应会返回新创建模式的详细信息，包括其系统生成的只读 `$id`。
 
 ```json
 {
@@ -214,11 +219,13 @@ curl -X POST \
 }
 ```
 
-## 视图全面特设模式
+## 视图完整临时模式
 
->[!NOTE] 此步骤是可选的。 如果您不想检查临时模式的字段结构，可跳到本教程结 [尾的后续步骤](#next-steps) 。
+>[!NOTE]
+>
+>此步骤是可选的。如果您不想检查临时模式的字段结构，可跳到本教 [程末尾的](#next-steps) “下一步”部分。
 
-创建临时模式后，您可以发出查找(GET)请求，以视图其展开形式的模式。 在GET请求中使用适当的“接受”标头即可完成此操作，如下所示。
+创建临时模式后，您可以发出查找(GET)请求，以视图模式的扩展形式。 在GET请求中使用相应的“接受”标头即可完成此操作，如下所示。
 
 **API格式**
 
@@ -228,11 +235,11 @@ GET /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | URL编码的 `$id` URI或 `meta:altId` 要访问的临时模式的URI。 |
+| `{SCHEMA_ID}` | 要访问的 `$id` URL编 `meta:altId` 码的URI或临时模式的URI。 |
 
 **请求**
 
-以下请求使用“接受”标 `application/vnd.adobe.xed-full+json; version=1`题，它返回模式的扩展形式。 请注意，从模式注册表检索特定资源时，请求的“接受”标题必须包含相关资源的主要版本。
+以下请求使用“接受” `application/vnd.adobe.xed-full+json; version=1`标题，它返回模式的扩展形式。 请注意，从模式注册表检索特定资源时，请求的“接受”标题必须包括相关资源的主要版本。
 
 ```shell
 curl -X GET \
@@ -246,7 +253,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回模式的详细信息，包括嵌套在下面的所有字段 `properties`。
+成功的响应会返回模式的详细信息，包括嵌套在下的所有字段 `properties`。
 
 ```json
 {
@@ -296,6 +303,6 @@ curl -X GET \
 
 ## 后续步骤 {#next-steps}
 
-通过遵循本教程，您已成功创建了一个新的临时模式。 如果您是作为另一个教程的一部分被带到本文档的，您现在可以使用临时模式按照指示完成工作流。 `$id`
+通过遵循本教程，您已成功创建了新的临时模式。 如果您是作为另一个教程的一部分被带到此文档的，您现在可以 `$id` 使用临时模式按照指示完成工作流。
 
-有关使用模式注册表API的详细信息，请参阅开发人 [员指南](../api/getting-started.md)。
+有关使用模式注册表API的详细信息，请参阅开发 [人员指南](../api/getting-started.md)。
