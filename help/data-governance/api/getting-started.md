@@ -4,7 +4,7 @@ solution: Experience Platform
 title: DULE Policy Service API开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '678'
 ht-degree: 0%
@@ -50,7 +50,9 @@ Adobe Experience Platform使用标签和执行(DULE)是数据管理的核心机�
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] 有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
+>[!NOTE]
+>
+>有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
