@@ -4,16 +4,21 @@ solution: Experience Platform
 title: 更新沙箱
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 974e93b1c24493734848151b9be00758f6a84578
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '87'
+ht-degree: 4%
 
 ---
 
 
 # 更新沙箱
 
-可以通过发出PATCH请求来更新沙箱中的一个或多个字段，该请求在请求路径中包含沙箱的 `name` 请求，并在请求有效负荷中包含要更新的属性。
+您可以通过发出PATCH请求来更新沙箱中的一个或多个字段，该请求在请求路径 `name` 中包含沙箱的请求，并在请求负载中包含要更新的属性。
 
->[!NOTE] 当前只能更新沙 `title` 箱的属性。
+>[!NOTE]
+>
+>当前只能更新沙 `title` 箱的属性。
 
 **API格式**
 
