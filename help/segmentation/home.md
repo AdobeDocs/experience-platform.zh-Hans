@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform分段服务
 topic: overview
 translation-type: tm+mt
-source-git-commit: b0ef50e25c27aba121bb01c602867953eb2a5f7e
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2386'
 ht-degree: 0%
@@ -40,7 +40,9 @@ Adobe Experience Platform细分服务提供用户界面和RESTful API，允许�
 
 有关使用API构建区段定义的信息，请参阅有关使用 [API创建受众区段的教程](./tutorials/create-a-segment.md)。
 
->[!NOTE] 在扩展事件中，所有将来的上传必须相应更新新添加的字段。 有关自定义体验数据模型(XDM)的更多信息，请访问 [模式编辑器教程](../xdm/tutorials/create-schema-ui.md)。
+>[!NOTE]
+>
+>在扩展事件中，所有将来的上传必须相应更新新添加的字段。 有关自定义体验数据模型(XDM)的更多信息，请访问 [模式编辑器教程](../xdm/tutorials/create-schema-ui.md)。
 
 ## 评估区段
 
@@ -70,14 +72,18 @@ Adobe Experience Platform细分服务提供用户界面和RESTful API，允许�
 
 创建新区段时，您需要提供区段名称。 区段名称用于标识由分段服务构建的集合中的特定区段。 因此，区段名称应具有描述性、简洁性和唯一性。
 
->[!NOTE] 在规划区段时，请记住，区段可以从任何其他区段进行引用，并与之组合。 在选择名称时，请考虑您的区段是否可能包含可重用部分。
+>[!NOTE]
+>
+>在规划区段时，请记住，区段可以从任何其他区段进行引用，并与之组合。 在选择名称时，请考虑您的区段是否可能包含可重用部分。
 
 ### 合并策略
 
 合并策略是用户档案使用的规则，用于确定数据在特定条件下如何按优先顺序排列并合并为统一视图。
 如果未定义合并策略，则使用默认的平台合并策略。 如果您希望使用特定于您的组织的合并策略，您可以创建自己的策略并将其标记为您的组织的默认策略。
 
->[!NOTE] 受众大小的估计基于组织的默认用户档案合并策略。
+>[!NOTE]
+>
+>受众大小的估计基于组织的默认用户档案合并策略。
 
 ### 其他细分元数据
 
@@ -138,7 +144,9 @@ Adobe Experience Platform细分服务提供用户界面和RESTful API，允许�
 
 **解决方案**
 
->[!NOTE] 在此示例中，我们假定数据架构师已经建立了ID命名空间。
+>[!NOTE]
+>
+>在此示例中，我们假定数据架构师已经建立了ID命名空间。
 
 使用API，数据架构师将ExperienceEvent模式的密钥与“产品”类关联。 这样，数据架构师就可以像使用ExperienceEvent模式中的本机字段一样，使用“产品”类中的其他字段。 作为配置工作的最后一步，数据架构师需要将适当的数据引入实时客户用户档案。 这是通过启用“产品”数据集以与用户档案一起使用来实现的。 配置工作完成后，数据架构师或营销人员都可以在区段生成器中构建目标区段。
 
