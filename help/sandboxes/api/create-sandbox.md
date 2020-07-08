@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 创建沙箱
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: ef423a8c1b412315d03cddf7d8c351a232eb509b
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '136'
+ht-degree: 2%
 
 ---
 
@@ -40,13 +43,13 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 将在将来请求中用于访问沙箱的标识符。 此值必须是唯一的，最佳实践是使其尽可能具有描述性。 不能包含任何空格或大写字母。 |
+| `name` | 将来请求中用于访问沙箱的标识符。 此值必须是唯一的，最佳实践是使其尽可能具有描述性。 不能包含任何空格或大写字母。 |
 | `title` | 用于平台用户界面中显示目的的可读名称。 |
 | `type` | 要创建的沙箱类型。 目前，组织只能创建“开发”类型沙箱。 |
 
 **响应**
 
-成功的响应会返回新创建的沙箱的详细信息，表明其 `state` 正在“创建”。
+成功的响应会返回新创建的沙箱的详细信息，显示其 `state` 正在“创建”。
 
 ```json
 {
@@ -58,4 +61,6 @@ curl -X POST \
 }
 ```
 
->[!NOTE] 沙箱由系统提供大约需要15分钟，之后它们 `state` 将变为“活动”或“失败”。
+>[!NOTE]
+>
+>沙箱需要大约15分钟时间才能由系统进行配置，之后 `state` 沙箱将变为“活动”或“失败”。
