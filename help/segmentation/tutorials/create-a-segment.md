@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 创建区段
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 822f43b139b68b96b02f9a5fe0549736b2524ab7
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1328'
 ht-degree: 2%
@@ -24,9 +24,9 @@ ht-degree: 2%
 
 - [实时客户用户档案](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 - [Adobe Experience Platform分段服务](../home.md): 允许您根据实时受众数据构建用户档案细分。
-- [体验数据模型(XDM)](../../xdm/home.md): Platform组织客户体验数据的标准化框架。
+- [体验数据模型(XDM)](../../xdm/home.md): 平台组织客户体验数据的标准化框架。
 
-以下各节提供了成功调用PlatformAPI所需了解的其他信息。
+以下各节提供了成功调用平台API所需了解的其他信息。
 
 ### 读取示例API调用
 
@@ -34,17 +34,19 @@ ht-degree: 2%
 
 ### 收集所需标题的值
 
-要调用PlatformAPI，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 - 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对PlatformAPI的所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
+Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] 有关Platform中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>[!NOTE]
+>
+>有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -54,9 +56,9 @@ Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对Platfo
 
 分段的第一步是定义分段，在称为段定义的构造中 **表示**。 段定义是封装用用户档案查询语言(PQL)编写的查询的对象。 此对象也称为 **PQL谓词**。 PQL谓词根据与您提供给实时客户用户档案的任何记录或时间序列数据相关的条件定义段规则。 有关编写 [PQL查询](../pql/overview.md) ，请参阅PQL指南。
 
-您可以通过在实时客户用户档案API中向端点 `/segment/definitions` 发出POST请求来创建新的区段定义。 以下示例概述了如何设置定义请求的格式，包括成功定义区段所需的信息。
+您可以通过在实时客户用户档案API中向端点发 `/segment/definitions` 出POST请求来创建新的区段定义。 以下示例概述了如何设置定义请求的格式，包括成功定义区段所需的信息。
 
-区段定义可通过两种方式进行评估——批处理分段和流式分段。 批分段根据预设计划或手动触发评估时评估区段，而流分段则在Platform中摄取数据后立即评估区段。 本教程将使用批 **分段**。 有关流分段的更多信息，请阅读 [流分段概述](../api/streaming-segmentation.md)。
+区段定义可通过两种方式进行评估——批处理分段和流式分段。 批分段根据预设计划或手动触发评估时评估区段，而流分段则在数据被收录到平台后立即评估区段。 本教程将使用批 **分段**。 有关流分段的更多信息，请阅读 [流分段概述](../api/streaming-segmentation.md)。
 
 **API格式**
 
