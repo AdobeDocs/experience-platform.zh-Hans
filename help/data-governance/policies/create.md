@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 创建数据使用策略
 topic: policies
 translation-type: tm+mt
-source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1194'
 ht-degree: 2%
@@ -217,7 +217,9 @@ curl -X PUT \
 }
 ```
 
->[!NOTE] 仅支持OR和AND运算符。
+>[!NOTE]
+>
+>仅支持OR和AND运算符。
 
 配置策略表达式后，可以通过向端点发出POST请求来创建新的DULE策 `/policies/custom` 略。
 
@@ -322,7 +324,9 @@ curl -X POST \
 
 ## 启用DULE策略
 
->[!NOTE] 如果您希望使DULE策略处于状态，则此步骤是可选 `DRAFT` 的，请注意，默认情况下，策略必须将其状态设置为 `ENABLED` ，才能参与评估。 有关如何为处于状 [态的策略设](../enforcement/api-enforcement.md) 置例外的信息，请参阅有关强制实施DULE策略的 `DRAFT` 教程。
+>[!NOTE]
+>
+>如果您希望使DULE策略处于状态，则此步骤是可选 `DRAFT` 的，请注意，默认情况下，策略必须将其状态设置为 `ENABLED` ，才能参与评估。 有关如何为处于状 [态的策略设](../enforcement/api-enforcement.md) 置例外的信息，请参阅有关强制实施DULE策略的 `DRAFT` 教程。
 
 默认情况下，其属性设置 `status` 为不参 `DRAFT` 与评估的DULE策略。 您可以通过向端点发出PATCH请求并在请求路径 `/policies/custom/` 末尾提供策略的唯一标识符，来启用策略进行评估。
 
@@ -338,7 +342,7 @@ PATCH /policies/custom/{POLICY_ID}
 
 **请求**
 
-以下请求对DULE策略的属性执 `status` 行PATCH操作，将其值从更改为 `DRAFT` 值 `ENABLED`。
+以下请求对DULE策略的属性执 `status` 行PATCH操作，将其值从更改为 `DRAFT` 该值 `ENABLED`。
 
 ```shell
 curl -X PATCH \
