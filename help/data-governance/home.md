@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform数据管理
 topic: overview
 translation-type: tm+mt
-source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1448'
 ht-degree: 0%
@@ -64,7 +64,9 @@ DULE框架包括预定义的数据使用标签，这些标签可用于以三种�
 * **标识“I”数据标签：** 对可识别或联系特定人员的数据进行标签和分类。
 * **敏感“S”数据标签：** 对与敏感数据（如地理数据）相关的数据进行标签和分类。
 
->[!NOTE] 有关可用标签的 [完整列表](labels/reference.md) ，请参阅支持的数据使用标签指南以及每个标签类型的定义。
+>[!NOTE]
+>
+>有关可用标签的 [完整列表](labels/reference.md) ，请参阅支持的数据使用标签指南以及每个标签类型的定义。
 
 可随时应用标签，在数据管理方式上提供灵活性。 最佳实践是鼓励在数据被引入或 [!DNL Experience Platform]数据在中可用时立即添加标签 [!DNL Platform]。
 
@@ -78,7 +80,9 @@ DULE框架包括预定义的数据使用标签，这些标签可用于以三种�
 
 应用数据使用标签后，数据管理者可以使用DULE Policy Service API或用户界面创 [!DNL Experience Platform] 建策略。
 
->[!IMPORTANT] 默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 要考虑实施单个策略，必须手动启用该策略。
+>[!IMPORTANT]
+>
+>默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 要考虑实施单个策略，必须手动启用该策略。
 
 有关数据使用策略和营销操作的更多信息，请参阅 [策略概述](./policies/overview.md)。
 
