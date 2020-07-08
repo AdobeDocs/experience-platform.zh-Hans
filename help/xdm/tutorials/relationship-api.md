@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 使用模式注册表API定义两个模式之间的关系
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 7e867ee12578f599c0c596decff126420a9aca01
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '1504'
+ht-degree: 1%
 
 ---
 
@@ -12,28 +15,28 @@ source-git-commit: 7e867ee12578f599c0c596decff126420a9aca01
 # 使用模式注册表API定义两个模式之间的关系
 
 
-了解客户之间的关系以及他们与不同渠道品牌之间的交互是Adobe Experience Platform的重要组成部分。 在体验数据模型(XDM)模式的结构中定义这些关系使您能够获得对客户数据的复杂洞察。
+了解不同渠道客户之间的关系及其与您品牌的互动是Adobe Experience Platform的重要组成部分。 在体验数据模型(XDM)模式结构中定义这些关系，使您能够获得对客户数据的复杂洞察。
 
-本文档提供了一个教程，用于定义组织使用模式注册表API定义的两个模式之间的一对一 [关系](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
+本文档提供了一个教程，用于定义组织使用模式注册表API定义的两个模式之间的一 [对一关系](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
 
 ## 入门指南
 
-本教程需要对体验数据模型(XDM)和XDM系统有良好的了解。 在开始本教程之前，请查看以下文档：
+本教程需要对体验数据模型(XDM)和XDM系统进行有效的了解。 在开始本教程之前，请查阅以下文档：
 
-* [体验平台中的XDM系统](../home.md):XDM及其在Experience Platform中实施的概述。
-   * [模式合成的基础知识](../schema/composition.md):介绍XDM模式的构件。
-* [实时客户用户档案](../../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
-* [沙箱](../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [Experience Platform中的XDM系统](../home.md): XDM及其在Experience Platform中实现的概述。
+   * [模式合成基础](../schema/composition.md): 介绍XDM模式的构件。
+* [实时客户用户档案](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
-在开始本教程之前，请查看开 [发人员指南](../api/getting-started.md) ，了解成功调用模式注册表API所需了解的重要信息。 这包括您 `{TENANT_ID}`的“容器”概念以及发出请求所需的标题（特别注意“接受”标题及其可能的值）。
+在开始本教程之前，请查阅开 [发人员指南](../api/getting-started.md) ，了解成功调用模式注册表API所需了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
 
 ## 定义源和目标模式 {#define-schemas}
 
-您应已创建将在关系中定义的两个模式。 本教程在组织的当前忠诚度项目(在“忠诚度会员”模式中定义)的成员与其喜爱的酒店(在“酒店”模式中定义)之间建立了关系。
+您应已创建将在关系中定义的两个模式。 本教程在组织的当前忠诚度项目(在“忠诚度会员”模式中定义)的成员与其喜爱的酒店(在“酒店”模式中定义)之间建立关系。
 
-模式关系由具有引 **用目标模式内的其他字段的** 源模式 **表示**。 在接下来的步骤中，“忠诚会员”将作为源模式，而“酒店”将作为目的地模式。
+模式关系由源 **模式表示** ，该源具有引用目标模式中的另 **一个字段**。 在接下来的步骤中，“忠诚会员”将是源模式，而“酒店”将充当目标模式。
 
-要定义两个模式之间的关系，您必须首先获取两个模式 `$id` 的值。 如果您知道模式的显示名称(`title`)，则可以通过向注册表API中的端点发出GET请求来查 `$id``/tenant/schemas` 找这些模式的值。
+要定义两个模式之间的关系，您必须首先获取两个 `$id` 模式的值。 如果您知道模式的显`title`示名称()，则可以通过向模式注册 `$id` 表API中的端点发出GET请求 `/tenant/schemas` 来查找其值。
 
 **API格式**
 
@@ -53,11 +56,13 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed-id+json'
 ```
 
->[!NOTE] “接受” `application/vnd.adobe.xed-id+json` 标题仅返回所生成模式的标题、ID和版本。
+>[!NOTE]
+>
+>“接受” `application/vnd.adobe.xed-id+json` 标题仅返回结果模式的标题、ID和版本。
 
 **响应**
 
-成功的响应会返回由您的组织定义的一列表模式, `name`包括 `$id`其、 `meta:altId`和 `version`。
+成功的响应会返回由您的组织定义的列表, `name`包括 `$id`其、 `meta:altId`和模式 `version`。
 
 ```json
 {
@@ -95,21 +100,23 @@ curl -X GET \
 }
 ```
 
-记录 `$id` 要定义之间关系的两个模式的值。 这些值将用于后续步骤。
+记录 `$id` 要定义之间关系的两个模式的值。 这些值将在后续步骤中使用。
 
 ## 定义两个模式的引用字段
 
-在模式注册表中，关系描述符的工作方式与SQL表中的外键类似：源模式中的字段用作对目标模式的字段的引用。 定义关系时，每个模式必须有一个专用字段作为对其他模式的引用。
+在模式注册表中，关系描述符的工作方式与SQL表中的外键类似： 源模式中的字段用作对目标模式的字段的引用。 定义关系时，每个模式必须有一个专用字段，用作对其他模式的引用。
 
->[!IMPORTANT] 如果要启用模式以在实时客户 [用户档案中使用](../../profile/home.md)，则目标模式的引用字段必须是其主要 **标识**。 本教程的稍后部分将对此进行更详细的说明。
+>[!IMPORTANT]
+>
+>如果要启用模式以在实 [时用户档案中使用](../../profile/home.md)，则目标模式的引用字段必须是 **主标识**。 本教程稍后将对此进行更详细的说明。
 
-如果任一模式没有用于此目的的字段，您可能需要使用新字段创建混音并将其添加到模式。 此新字段的值必 `type` 须为“string”。
+如果任一模式没有用于此目的的字段，您可能需要使用新字段创建混音并将其添加到模式。 此新字段的值 `type` 必须为“string”。
 
-就本教程而言，目标模式“酒店”已包含一个用于此目的的字段： `hotelId`. 但是，源模式“忠诚会员”没有此字段，并且必须给予新混音，以在其命名空间下添加 `favoriteHotel`新字 `TENANT_ID` 段。
+在本教程中，目标模式“酒店”已包含一个用于此目的的字段： `hotelId`. 但是，源模式“忠诚会员”没有此字段，必须给出一个新混音，在其命名空间下添加 `favoriteHotel`一个新 `TENANT_ID` 字段。
 
 ### 创建新混音
 
-要向模式添加新字段，必须首先在混音中定义该字段。 您可以通过向端点发出POST请求来创建新混音 `/tenant/mixins` 符。
+要向模式添加新字段，必须先在混音中定义该字段。 可以通过向端点发出POST请求来创建新混音 `/tenant/mixins` 符。
 
 **API格式**
 
@@ -119,7 +126,7 @@ POST /tenant/mixins
 
 **请求**
 
-以下请求将创建一个新的混音，该混音 `favoriteHotel` 在它添加到的 `TENANT_ID` 任何模式的命名空间下添加字段。
+以下请求将创建一个新的混音，该混音 `favoriteHotel` 将在其 `TENANT_ID` 添加到的任何命名空间的模式下添加一个字段。
 
 ```shell
 curl -X POST\
@@ -215,11 +222,11 @@ curl -X POST\
 | --- | --- |
 | `$id` | 只读，系统生成新混音的唯一标识符。 采用URI的形式。 |
 
-记录 `$id` mixin的URI，以在将mixin添加到源模式的下一步中使用。
+记录 `$id` 混音的URI，在将混音添加到源模式的下一步中使用。
 
 ### 将混音添加到源模式
 
-创建混音后，可以通过向端点发出PATCH请求将其添加到源模式 `/tenant/schemas/{SCHEMA_ID}` 中。
+创建混音后，可通过向端点发出PATCH请求将其添加到源模式 `/tenant/schemas/{SCHEMA_ID}` 中。
 
 **API格式**
 
@@ -257,12 +264,12 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `op` | 要执行的PATCH操作。 此请求使用该 `add` 操作。 |
-| `path` | 添加新资源的模式字段的路径。 向模式添加混音时，值必须为 `/allOf/-`。 |
-| `value.$ref` | 要 `$id` 添加的混音的范围。 |
+| `path` | 将添加新资源的模式字段的路径。 向模式添加混音时，值必须为 `/allOf/-`。 |
+| `value.$ref` | 要 `$id` 添加的混音。 |
 
 **响应**
 
-成功的响应会返回更新的模式的详细信息，该详细信息现在包括其 `$ref` 数组下添加的混音的 `allOf` 值。
+成功的响应会返回更新模式的详细信息，该现在 `$ref` 包括其数组下添加的混音的 `allOf` 值。
 
 ```json
 {
@@ -323,11 +330,13 @@ curl -X PATCH \
 
 ## 为两个模式定义主标识字段
 
->[!NOTE] 此步骤仅对启用在实时客户模式中 [的用户档案是必需的](../../profile/home.md)。 如果您不希望任何模式参与合并，或者如果您的模式已定义主标识，则可以跳到为目标模式创建引用标识描述符的下 [一步](#create-descriptor) 。
+>[!NOTE]
+>
+>此步骤仅对于启用在实时客户模式中 [使用的用户档案是必需的](../../profile/home.md)。 如果您不希望模式参与合并，或者如果模式已定义主标识，则可跳到为目标模式创建引 [用标识描述符的下](#create-descriptor) 一步。
 
-要使模式能够在实时客户用户档案中使用，他们必须定义主要标识。 此外，关系的目标模式必须使用其主要标识作为其引用字段。
+要使模式能够在实时客户用户档案中使用，他们必须定义主标识。 此外，关系的目标模式必须使用其主要身份作为其引用字段。
 
-就本教程而言，源模式已定义主标识，但目标模式没有。 可以通过创建标识描述符将模式字段标记为主标识字段。 这是通过向端点发出POST请求来完 `/tenant/descriptors` 成的。
+就本教程而言，源模式已定义主标识，但目标模式未定义。 您可以通过创建标识描述符将模式字段标记为主标识字段。 这是通过向端点发出POST请求来完 `/tenant/descriptors` 成的。
 
 **API格式**
 
@@ -337,7 +346,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求创建了一个新的标识描述符，该描述符将目标模式“ `hotelId` Hotels”的字段定义为主标识字段。
+以下请求创建新的标识描述符，该描述符将目 `hotelId` 标模式“Hotels”的字段定义为主标识字段。
 
 ```shell
 curl -X POST \
@@ -360,12 +369,12 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `@type` | 要创建的描述符的类型。 标识 `@type` 描述符的值是 `xdm:descriptorIdentity`。 |
-| `xdm:sourceSchema` | 目标 `$id` 模式的值，在上一步中获 [得](#define-schemas)。 |
+| `@type` | 要创建的描述符的类型。 身 `@type` 份描述符的值为 `xdm:descriptorIdentity`。 |
+| `xdm:sourceSchema` | 目标 `$id` 模式的值，在上一步中 [获得](#define-schemas)。 |
 | `xdm:sourceVersion` | 模式的版本号。 |
-| `sourceProperty` | 将用作模式主标识的特定字段的路径。 此路径应以“/”开头，而不以“/”结尾，同时也排除任何“属性”命名空间。 例如，上述请求使 `/_{TENANT_ID}/hotelId` 用代替 `/properties/_{TENANT_ID}/properties/hotelId`。 |
+| `sourceProperty` | 将用作模式主标识的特定字段的路径。 此路径应以“/”开头，而不以“/”结尾，同时也排除任何“属性”命名空间。 例如，上述请求使用 `/_{TENANT_ID}/hotelId` 而非 `/properties/_{TENANT_ID}/properties/hotelId`。 |
 | `xdm:namespace` | 标识字段的标识命名空间。 `hotelId` 是本例中的ECID值，因此使用“ECID”命名空间。 有关可 [用命名空间的列表](../../identity-service/home.md) ，请参阅标识命名空间概述。 |
-| `xdm:isPrimary` | 一个布尔属性，用于确定标识字段是否将是模式的主要标识。 由于此请求定义主标识，因此值设置为true。 |
+| `xdm:isPrimary` | 一个布尔属性，用于确定标识字段是否将是模式的主标识。 由于此请求定义主标识，因此值设置为true。 |
 
 **响应**
 
@@ -387,9 +396,9 @@ curl -X POST \
 
 ## 创建引用标识描述符
 
-如果模式字段用作关系中其他模式的引用，则必须对它们应用引用标识描述符。 由于“ `favoriteHotel` 忠诚会员”中的字段将引用“酒店” `hotelId` 中的字段，因此必须为 `hotelId` 该字段提供引用标识描述符。
+如果模式字段用作关系中其他模式的引用，则必须对其应用引用标识描述符。 由于“ `favoriteHotel` 忠诚会员”中的字段将引用“ `hotelId` 酒店”中的字段，因此 `hotelId` 必须为该字段指定引用标识描述符。
 
-通过向端点发出POST请求，为目标模式创建引用描述 `/tenant/descriptors` 符。
+通过向端点发出POST请求，为目标模式创建引用描 `/tenant/descriptors` 述符。
 
 **API格式**
 
@@ -399,7 +408,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求为目标模式“Hotels”中的 `hotelId` 字段创建引用描述符。
+以下请求为目标模式“Hotels” `hotelId` 中的字段创建引用描述符。
 
 ```shell
 curl -X POST \
@@ -453,7 +462,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求将创建一个新的关系描述符，其中“忠诚会员”作为源模式,“传统忠诚会员”作为目标模式。
+以下请求将创建新的关系描述符，其中“Loyalty Members”作为源模式,“Legacy Loyalty Members”作为目标模式。
 
 ```shell
 curl -X POST \
@@ -476,7 +485,7 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `@type` | 要创建的描述符的类型。 关系 `@type` 描述符的值为 `xdm:descriptorOneToOne`。 |
+| `@type` | 要创建的描述符的类型。 关系 `@type` 描述符的值是 `xdm:descriptorOneToOne`。 |
 | `xdm:sourceSchema` | 源 `$id` 模式的URL。 |
 | `xdm:sourceVersion` | 源模式的版本号。 |
 | `sourceProperty`： | 源模式中引用字段的路径。 |
@@ -504,4 +513,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过遵循本教程，您成功地创建了两个模式之间的一对一关系。 有关使用模式注册表API使用描述符的详细信息，请参阅《模式注册 [表开发人员指南》](../api/getting-started.md)。 有关如何在UI中定义模式关系的步骤，请参阅有关使用模式编 [辑器定义模式关系的教程](relationship-ui.md)。
+通过遵循本教程，您成功地创建了两个模式之间的一对一关系。 有关使用模式注册表API使用描述符的详细信息，请参阅“模式注 [册表开发人员指南](../api/getting-started.md)”。 有关如何在UI中定义模式关系的步骤，请参阅使用模式编 [辑器定义模式关系的教程](relationship-ui.md)。
