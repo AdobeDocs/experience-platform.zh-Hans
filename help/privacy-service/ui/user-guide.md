@@ -1,10 +1,10 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 隐私服务用户指南
+title: Privacy Service用户指南
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: 9fc95dd9194dca0fada603643c3de949764b2f17
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1088'
 ht-degree: 0%
@@ -12,19 +12,19 @@ ht-degree: 0%
 ---
 
 
-# 隐私服务用户指南
+# Privacy Service用户指南
 
-本文档提供使用隐私服务用户界面创建和管理隐私请求的步骤。
+此文档提供使用Privacy Service用户界面创建和管理隐私请求的步骤。
 
-## 浏览隐私服务UI仪表板
+## 浏览Privacy ServiceUI仪表板
 
-隐私服务UI的仪表板提供了两个构件，允许您视图隐私作业的状态： **状态报告** 和 **作业请求**。 仪表板还显示所显示作业的当前选定规则。
+Privacy ServiceUI的仪表板提供了两个构件，允许您视图隐私作业的状态： **状态报告** 和 **作业请求**。 仪表板还显示所显示作业的当前选定规则。
 
 ![UI仪表板](../images/user-guide/dashboard.png)
 
 ### 调整类型
 
-隐私服务支持三种法规类型的工作请求：
+Privacy Service支持三种法规类型的工作请求：
 
 * 欧洲合并的一般数据保护规定(GDPR)
 * 加利福尼亚消费者隐私法(CCPA)
@@ -54,13 +54,17 @@ ht-degree: 0%
 
 ![从构件中应用滤镜](../images/user-guide/apply-filter.png)
 
->[!NOTE] 将过滤器应用到“作业请求”构件后，可以通过单击筛选药片上的 **X** 来删除过滤器。 然后，作业请求返回默认跟踪列表。
+>[!NOTE]
+>
+>将过滤器应用到“作业请求”构件后，可以通过单击筛选药片上的 **X** 来删除过滤器。 然后，作业请求返回默认跟踪列表。
 
 ### 作业请求
 
 作业请求构件列表您组织中所有可用的作业请求，包括请求类型、当前状态、到期日期和申请人电子邮件等详细信息。
 
->[!NOTE] 之前创建的作业的数据仅在完成日期后30天内可访问。
+>[!NOTE]
+>
+>之前创建的作业的数据仅在完成日期后30天内可访问。
 
 您可以在“工作请求”标题下方的搜索栏中键入关键字来筛选列表。 列表会在您键入时自动过滤器，显示包含与搜索词匹配的值的请求。 您还可以使用“ **请求时间** ”下拉菜单来选择列出的作业的时间范围。
 
@@ -70,7 +74,7 @@ ht-degree: 0%
 
 ![GDPR UI作业详细信息](../images/user-guide/job-details.png)
 
-此对话框包含有关每个Experience Cloud解决方案的状态信息，以及与整个作业相关的其当前状态。 由于每个隐私作业都是异步的，因此该页面会显示每个解决方案的最新通信日期和时间(GMT)，因为有些解决方案需要的时间比其他解决方案多。
+该对话框包含有关每个Experience Cloud解决方案的状态信息，以及与整个作业相关的其当前状态。 由于每个隐私作业都是异步的，因此该页面会显示每个解决方案的最新通信日期和时间(GMT)，因为有些解决方案需要的时间比其他解决方案多。
 
 如果解决方案提供了任何其他数据，则可在此对话框中查看。 您可以通过单击各个产品行来视图此数据。
 
@@ -78,9 +82,11 @@ ht-degree: 0%
 
 ## 创建新的隐私作业请求
 
->[!NOTE] 要创建隐私作业请求，您必须为要访问或删除其数据的特定客户提供身份信息。 请在继续本节之前 [查看隐私请求的身份](../identity-data.md) 文档。
+>[!NOTE]
+>
+>要创建隐私作业请求，您必须为要访问或删除其数据的特定客户提供身份信息。 请在继续本节之前 [查看隐私请求的身份](../identity-data.md) 文档。
 
-隐私服务UI提供两种创建新作业请求的方法：
+Privacy ServiceUI提供了两种创建新作业请求的方法：
 
 * [使用Request Builder](#request-builder)
 * [上传JSON文件](#json)
@@ -103,7 +109,7 @@ ht-degree: 0%
 
 <img src="../images/user-guide/type-and-products.png" width="500" /><br/>
 
-在 *命名空间类*&#x200B;型下，为发送到隐私服务的客户ID选择适当的命名空间类型。
+在 *命名空间类*&#x200B;型下，为要发送到Privacy Service的客户ID选择适当的命名空间类型。
 
 <img src="../images/user-guide/namespace-type.png" width="500" /><br/>
 
@@ -145,6 +151,6 @@ ht-degree: 0%
 
 ### 后续步骤
 
-通过阅读此文档，您学习了如何使用隐私服务UI创建隐私作业、视图作业的详细信息并监视其处理状态，以及在完成后下载结果。
+通过阅读此文档，您学习了如何使用Privacy ServiceUI创建隐私作业、视图作业的详细信息并监视其处理状态，以及在完成后下载结果。
 
-有关如何使用隐私服务API以编程方式执行这些操作的步骤，请参阅开发 [人员指南](../api/getting-started.md)。
+有关如何使用Privacy ServiceAPI以编程方式执行这些操作的步骤，请参阅开发 [人员指南](../api/getting-started.md)。
