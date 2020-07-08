@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 替换资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 67826f838951b3202a6a04321c28daa8ee883d20
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '207'
+ht-degree: 1%
 
 ---
 
@@ -15,7 +18,9 @@ source-git-commit: 67826f838951b3202a6a04321c28daa8ee883d20
 
 如果要同时更新资源中的大量信息，此方法特别有用。
 
->[!NOTE] 如果只想更新部分资源而不是完全替换它，请参阅使用PATCH [操作更新资源的文档](update-resource.md)。
+>[!NOTE]
+>
+>如果只想更新某个资源的一部分而不是完全替换它，请参阅使用PATCH [操作更新某个资源的文档](update-resource.md)。
 
 **API格式**
 
@@ -27,12 +32,12 @@ PUT /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RESOURCE_TYPE}` | 要从模式库更新的资源类型。 有效类 `datatypes`型有 `mixins`、 `schemas`和 `classes`。 |
-| `{RESOURCE_ID}` | 资源的URL编 `$id` 码的URI `meta:altId` 或URI。 |
+| `{RESOURCE_TYPE}` | 要从模式库更新的资源类型。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
+| `{RESOURCE_ID}` | 资源的URL编 `$id` 码的 `meta:altId` URI或URI。 |
 
 **请求**
 
-此示例请求替换在上一个示例中创建的“属性构造”数据类型。 请求主体的外观与用于创建数据类型的POST请求类似，只是它现在包含一组更新的字段，这些字段包含新值，替换了先前定义的值。
+此示例请求替换在上一个示例中创建的属性构造数据类型。 请求主体与用于创建数据类型的POST请求类似，只是它现在包含一组更新的字段，这些字段具有新值来替换先前定义的字段。
 
 ```SHELL
 curl -X PUT \
@@ -84,7 +89,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回数据类型的详细信息，其中显示请求中提供的更新字段和值。
+成功的响应会返回数据类型的详细信息，显示请求中提供的更新字段和值。
 
 ```JSON
 {
