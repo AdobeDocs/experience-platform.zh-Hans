@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform Identity Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1530'
 ht-degree: 0%
@@ -94,7 +94,9 @@ PII（如电子邮件地址和电话号码）用于直接识别客户。 因此�
 
 优惠 [!DNL Experience Platform] 各种标准命名空间时，您可能需要创建其他命名空间来正确地对您的身份进行分类。 有关详细信息，请参阅标识 [命名空间概述中有关查看和创](./namespaces.md) 建组织命名空间的部分。
 
->[!NOTE] 身份命名空间是身份的限定符。 因此，一旦创建了命名空间，就无法删除它。
+>[!NOTE]
+>
+>身份命名空间是身份的限定符。 因此，一旦创建了命名空间，就无法删除它。
 
 ### 在(XDM)中包 [!DNL Experience Data Model] 含标识数据
 
@@ -109,7 +111,9 @@ PII（如电子邮件地址和电话号码）用于直接识别客户。 因此�
 如果标识字段共享通用PII数据，则还允许标识链接。
 例如，通过将电话号码字段标记为标识字段， [!DNL Identity Service] 自动绘制与使用相同电话号码的其他个人的关系图。
 
->[!NOTE] 在标记字段时提供所得身份的命名空间。
+>[!NOTE]
+>
+>在标记字段时提供所得身份的命名空间。
 
 ### 为 [!DNL Identity Service]
 
