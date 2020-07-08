@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案概述
 topic: guide
 translation-type: tm+mt
-source-git-commit: 4d853dfee931789ca1badd410ce0b4b73c8c2803
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1795'
 ht-degree: 1%
@@ -129,6 +129,8 @@ Experience Platform有一系列指导方针，以便有效地使用用户档案�
 --->
 
 >[!NOTE]
+>
+>
 >非人员实体是指不属于用户档案的 **任何** XDM类。
 
 ## 后续步骤和其他资源
