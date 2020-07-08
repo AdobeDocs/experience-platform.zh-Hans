@@ -4,23 +4,26 @@ solution: Experience Platform
 title: 列表群集标识
 topic: API guide
 translation-type: tm+mt
-source-git-commit: df85ea955b7a308e6be1e2149fcdfb4224facc53
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '312'
+ht-degree: 1%
 
 ---
 
 
 # 列表群集中的所有身份
 
-在标识图中相关的标识(无论命名空间如何)被视为该标识图中同一“群集”的一部分。 以下选项提供了访问所有群集成员的方法。
+在标识图中相关的标识，无论命名空间如何，都被视为该标识图中同一“群集”的一部分。 以下选项提供访问所有群集成员的方法。
 
 ## 获取单个身份的关联身份
 
 检索所有群集成员以获得单个标识。
 
-您可以使用可选参 `graph-type` 数指示标识图以从中获取群集。 选项包括：
+您可以使用可选参 `graph-type` 数指示标识图以从中获取群集。 选项有：
 
 - 无——不执行身份拼接。
-- 私人图——根据您的个人身份图执行身份拼接。 如果未 `graph-type` 提供，则这是默认值。
+- 专用图——根据您的专用标识图执行身份拼接。 如果未 `graph-type` 提供，则此为默认值。
 
 **API格式**
 
@@ -30,7 +33,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/cluster/members?{PARAM
 
 **请求**
 
-选项1:将标识作为命名空间(`nsId`按ID)和ID值(`id`)提供。
+选项1: 将标识作为命名空间(`nsId`按ID)和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -41,7 +44,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2:将标识作为命名空间(`ns`按名称)和ID值(`id`)提供。
+选项2: 将标识作为命名空间(`ns`按名称)和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -52,7 +55,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3:提供XID()身份`xid`证。 有关如何获取身份XID的详细信息，请参阅本文档中有关获取身份 [XID的部分](./list-native-id.md)。
+选项3: 提供XID()身`xid`份。 有关如何获取身份的XID的详细信息，请参阅此文档中 [有关获取身份的XID的部分](./list-native-id.md)。
 
 ```shell
 curl -X GET \
@@ -65,9 +68,11 @@ curl -X GET \
 
 ## 获取多个身份的关联身份
 
-使用 `POST` 上述方法的批量等效 `GET` 值来返回多个标识的簇中的标识。
+使用 `POST` 作为上述方法的批 `GET` 量等效值，以返回多个身份的簇中的身份。
 
->[!NOTE] 请求应指示最多1000个身份。 超过1000个身份的请求将生成400个状态代码。
+>[!NOTE]
+>
+>请求应最多指明1000个身份。 超过1000个身份的请求将生成400个状态代码。
 
 **API格式**
 
@@ -77,11 +82,11 @@ POST https://platform-{REGION}.adobe.io/data/core/identity/clusters/members
 
 **请求**
 
-以下请求演示了如何为其提供列表的XID来检索群集成员。
+以下请求演示如何提供要检索群集成员的XID列表。
 
 **存根请求**
 
-使用标 `x-uis-cst-ctx: stub` 题将返回无效响应。 这是一个临时解决方案，在服务完成的同时促进早期一体化发展进程。 当不再需要时，将弃用此选项。
+使用标题 `x-uis-cst-ctx: stub` 将返回一个无效响应。 这是一个临时解决方案，在服务完成的同时，促进早期的一体化发展进程。 当不再需要时，将弃用此选项。
 
 ```shell
 curl -X POST \
@@ -97,7 +102,7 @@ curl -X POST \
 }'
 ```
 
-**使用XID拨叫**
+**使用XID进行呼叫**
 
 ```shell
 curl -X POST \
@@ -113,7 +118,7 @@ curl -X POST \
 }' | json_pp
 ```
 
-**使用UID调用**
+**使用UID进行调用**
 
 ```shell
 curl -X POST \
@@ -179,7 +184,7 @@ curl -X POST \
 }
 ```
 
-**完全响应**
+**完整响应**
 
 ```json
 {
@@ -231,8 +236,10 @@ curl -X POST \
 }
 ```
 
->[!NOTE] 无论请求的XID是否属于同一群集，或者如果一个或多个XID与任何群集相关联，响应始终为请求中提供的每个XID具有一个条目。
+>[!NOTE]
+>
+>无论请求的XID是属于同一群集，还是一个或多个具有任何关联的群集，响应始终为请求中提供的每个XID包含一个条目。
 
 ## 后续步骤
 
-继续下一个教程以 [列表身份的群集历史](./list-cluster-history.md)
+继续到下一个教程 [列表身份的群集历史](./list-cluster-history.md)
