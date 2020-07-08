@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案API开发人员指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: fd6516d1c1d3792b41de65d0f44d78af1124ccc7
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '666'
 ht-degree: 0%
@@ -23,6 +23,8 @@ ht-degree: 0%
 ## (Alpha)计算属性
 
 >[!IMPORTANT]
+>
+>
 >计算的属性功能位于alpha中，并非所有用户都可用。 文档和功能可能会更改。
 
 通过计算属性，您可以根据其他值、计算和表达式自动计算字段的值。 计算属性在用户档案级别上操作，这意味着您可以跨所有记录和事件聚合值。 每个计算属性都包含一个表达式，即“规则”，用于评估传入的数据，并将结果值存储在用户档案属性或事件中。 这些计算有助于您轻松回答与终身购买价值、购买间隔时间或应用程序打开次数等相关的问题，无需在每次需要信息时手动执行复杂的计算。 您可以使用端点创建、视图、编辑和删除计算属 `config/computedAttributes` 性。 要了解如何使用此端点，请访问计算 [属性端点指南](computed-attributes.md)。
