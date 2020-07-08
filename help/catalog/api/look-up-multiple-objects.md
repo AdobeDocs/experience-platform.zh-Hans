@@ -4,16 +4,21 @@ solution: Experience Platform
 title: 查找多个对象
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: f3e9da9ab3d02006c07c59b17751c971a95d49bc
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '183'
+ht-degree: 1%
 
 ---
 
 
 # 查找多个对象
 
-如果您希望视图多个特定对象，而不是对每个对象发出一个请求，则“目录”为请求同一类型的多个对象提供了一个简单的快捷方式。 您可以使用单个GET请求，通过包含以逗号分隔的ID列表来返回多个特定对象。
+如果您希望视图多个特定对象，而不是对每个对象发出一个请求，目录为请求同一类型的多个对象提供了一个简单的快捷方式。 您可以通过包含以逗号分隔的ID列表，使用单个GET请求返回多个特定对象。
 
->[!NOTE] 即使在请求特定的Catalog对象时，最好还是 `properties` 查询参数以仅返回所需的属性。
+>[!NOTE]
+>
+>即使请求特定的Catalog对象，最好还是 `properties` 查询参数以仅返回所需的属性。
 
 **API格式**
 
@@ -22,11 +27,12 @@ GET /{OBJECT_TYPE}/{ID_1},{ID_2},{ID_3},{ID_4}
 GET /{OBJECT_TYPE}/{ID_1},{ID_2},{ID_3},{ID_4}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 ```
 
-| `{OBJECT_TYPE}` |要检索的Catalog对象的类型。 有效对象包括： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> || `{ID}` |要检索的某个特定对象的标识符。 |
+| `{OBJECT_TYPE}` |要检索的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{ID}` |要检索的特定对象的标识符。 |
 
 **请求**
 
-以下请求包括以逗号分隔的数据集ID列表，以及要为每个数据集返回的属性以逗号分隔的列表。
+以下请求包括以逗号分隔的列表集ID以及要为每个数据集返回的属性的以逗号分隔的列表。
 
 ```shell
 curl -X GET \
@@ -39,9 +45,11 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定数据集的列表，其中仅包含每个数据集所请求的`name`属 `description`性( `files`、和)。
+成功的响应会返回指定数据集的列表，其中只包含每个数据集所`name`请求的 `description`属性( `files`、和)。
 
->[!NOTE] 如果返回的对象不包含查询指示的一个或多个所请求属性，则响应将仅返回其包含的所请求属性，如下面的“示例数据集3”和“示例数据集4”中所示。 `properties`
+>[!NOTE]
+>
+>如果返回的对象不包含查询所指示的一个或多个请求属性，则响应将仅返回它所包含的请求属性 `properties` ，如下面的“示例数据集3”和“示例数据集4”所示。
 
 ```json
 {
