@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据科学工作区概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2569'
 ht-degree: 0%
@@ -123,7 +123,9 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 访问控制 [!DNL Experience Platform] 通过Adobe [Admin Console管理](https://adminconsole.adobe.com)。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。 有关更多 [信息](../access-control/home.md) ，请参阅访问控制概述。
 
->[!IMPORTANT] 要使用，必 [!DNL Data Science Workspace]须启 [!UICONTROL 用“管理数据科学工作区] ”权限。
+>[!IMPORTANT]
+>
+>要使用，必 [!DNL Data Science Workspace]须启 [!UICONTROL 用“管理数据科学工作区] ”权限。
 
 下表概述了启用或禁用此权限的效果：
 
