@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 在归因AI中获得分数
 topic: Accessing scores
 translation-type: tm+mt
-source-git-commit: 01a500959802aa8c02bdaa8f024a9849ec23be51
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '983'
+ht-degree: 2%
 
 ---
 
@@ -21,7 +24,7 @@ source-git-commit: 01a500959802aa8c02bdaa8f024a9849ec23be51
 
 ## Find your dataset ID {#dataset-id}
 
-在Attribution AI洞察的服务实例中，单击右 *上方导航* 中的更多操作下拉菜单，然后选择 **[!UICONTROL Access scores]**。
+在您的Attribution AI分析服务实例中，单击右 *上方导航* 中的“更多操作”下拉框，然后选择 **[!UICONTROL 访问得分]**。
 
 ![更多操作](./images/download-scores/more-actions.png)
 
@@ -220,7 +223,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/01E5QSWCAASF
 
 要下载文件数据，请对您在上一步检索 `"href"` 文件时复制的值发出 [GET请求](#retrieving-your-files)。
 
->[!NOTE] 如果您直接在命令行中发出此请求，可能会提示您在请求标头后添加输出。 以下请求示例使用 `--output {FILENAME.FILETYPE}`。
+>[!NOTE]
+>
+>如果您直接在命令行中发出此请求，可能会提示您在请求标头后添加输出。 以下请求示例使用 `--output {FILENAME.FILETYPE}`。
 
 **API格式**
 
@@ -244,7 +249,9 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
   -O 'file.parquet'
 ```
 
->[!TIP] 在发出GET请求之前，请确保您位于要保存文件的正确目录或文件夹中。
+>[!TIP]
+>
+>在发出GET请求之前，请确保您位于要保存文件的正确目录或文件夹中。
 
 **响应**
 
@@ -258,7 +265,9 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
 
 ## 使用雪花获得分数
 
->[!IMPORTANT] 有关使用SnowFlake访问分数的更多详细信息，请与attributionai-support@adobe.com联系。
+>[!IMPORTANT]
+>
+>有关使用SnowFlake访问分数的更多详细信息，请与attributionai-support@adobe.com联系。
 
 您可以通过雪花访问聚集的归因人工智能得分。 目前，您需要向attributionai-support@adobe.com发送电子邮件至Adobe支持，以设置并接收Snowflake的读者帐户凭据。
 
@@ -268,7 +277,9 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
 - 用户名
 - 密码
 
->[!NOTE] Reader帐户用于使用支持JDBC连接器的sql客户端、工作表和BI解决方案查询数据。
+>[!NOTE]
+>
+>Reader帐户用于使用支持JDBC连接器的sql客户端、工作表和BI解决方案查询数据。
 
 获得凭据和URL后，您可以查询模型表，按触点日期或转换日期进行聚合。
 
