@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 查询服务开发人员指南
 topic: runs for scheduled queries
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '659'
+ht-degree: 2%
 
 ---
 
@@ -13,11 +16,11 @@ source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
 
 ## 示例API调用
 
-既然您了解了要使用哪些标头，就可以开始调用查询服务API了。 以下各节将介绍您可以使用查询服务API进行的各种API调用。 每个调用包括常规API格式、显示所需标题的示例请求和示例响应。
+现在，您已经了解要使用哪些标头，可以开始调用查询服务API。 以下各节将介绍您可以使用查询服务API进行的各种API调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
 
-### 检索指定计划列表的所有运行的查询
+### 检索指定计划列表的所有运行查询
 
-您可以检索特定计划查询的所有运行的列表，而不管这些运行当前正在运行还是已完成。 这是通过向端点发出GET请求来完 `/schedules/{SCHEDULE_ID}/runs` 成的，其 `{SCHEDULE_ID}` 中是 `id` 要检索其运行的计划查询的值。
+您可以检索特定计划查询的所有运行的列表，而不管这些运行当前正在运行还是已完成。 这是通过向端点发出GET请 `/schedules/{SCHEDULE_ID}/runs` 求来完成的， `{SCHEDULE_ID}` 其中 `id` 是要检索其运行的计划查询的值。
 
 **API格式**
 
@@ -29,18 +32,18 @@ GET /schedules/{SCHEDULE_ID}/runs?{QUERY_PARAMETERS}
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{SCHEDULE_ID}` | 要 `id` 检索的计划查询的值。 |
-| `{QUERY_PARAMETERS}` | (可&#x200B;*选*)添加到请求路径的参数，用于配置在响应中返回的结果。 可以包括多个参数，由&amp;符号(`&`)分隔。 以下列出了可用参数。 |
+| `{QUERY_PARAMETERS}` | (可&#x200B;*选*)添加到请求路径的参数，这些参数配置在响应中返回的结果。 可以包括多个参数，用和号(`&`)分隔。 以下列出了可用参数。 |
 
 **查询参数**
 
-以下是可用查询参数的列表，用于列出指定计划查询的运行。 所有这些参数都是可选的。 调用此端点时不带参数，将检索所有可用于指定计划查询的运行。
+以下是可用查询参数的列表，用于列出指定计划查询的运行。 所有这些参数都是可选的。 调用此端点时，无参数将检索所有可用于指定计划查询的运行。
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定对结果排序的字段。 支持的字段有 `created` 和 `updated`。 例如，将 `orderby=created` 按创建的升序对结果进行排序。 在创建 `-` 之前(`orderby=-created`)添加项目将按降序排序。 |
-| `limit` | 指定页面大小限制，以控制包含在页面中的结果数。 (*Default value: 20*) |
-| `start` | 使用从零开始的编号来偏移响应列表。 例如，将 `start=2` 返回一个从列出的第三个列表开始的查询。 (*Default value: 0*) |
-| `property` | 根据字段筛选结果。 过滤器 **必须** HTML转义。 逗号用于组合多组过滤器。 支持的字段 `created`有、 `state`和 `externalTrigger`。 支持的操作符的列表 `>` 为（大于）、 `<` （小于）和 `==` （等于）和 `!=` （不等于）。 例如，将 `externalTrigger==true,state==SUCCESS,created>2019-04-20T13:37:00Z` 返回在2019年4月20日之后手动创建、成功和创建的所有运行。 |
+| `orderby` | 指定对结果进行排序的字段。 支持的字段 `created` 有 `updated`。 例如，将 `orderby=created` 按创建的升序对结果进行排序。 添加创 `-` 建前(`orderby=-created`)将按降序创建项排序。 |
+| `limit` | 指定页面大小限制以控制页面中包含的结果数。 (*Default value: 20*) |
+| `start` | 使用从零开始的编号，偏移响应列表。 例如，将 `start=2` 返回从第三个列出的列表开始的查询。 (*Default value: 0*) |
+| `property` | 根据字段筛选结果。 过滤器 **必须** 为HTML转义。 逗号用于组合多组过滤器。 支持的字段 `created`有 `state`、和 `externalTrigger`。 支持的运算符的 `>` 列表是(大 `<` 于)、（小于） `==` 和（等于），以 `!=` 及（不等于）。 例如，将 `externalTrigger==true,state==SUCCESS,created>2019-04-20T13:37:00Z` 返回在2019年4月20日之后手动创建、成功和创建的所有运行。 |
 
 **请求**
 
@@ -56,7 +59,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a
 
 **响应**
 
-成功的响应将返回HTTP状态200，并将指定的计划查询的运行列表为JSON。 以下响应返回指定计划查询的最后四次运行。
+成功的响应会返回HTTP状态200，并将指定计划查询的列表运行为JSON。 以下响应返回指定计划查询的最后四次运行。
 
 ```json
 {
@@ -144,11 +147,13 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a
 }
 ```
 
->[!NOTE] 您可以使用值 `_links.cancel` 停 [止指定计划查询的运行](#immediately-stop-a-run-for-a-specific-scheduled-query)。
+>[!NOTE]
+>
+>您可以使用值 `_links.cancel` 停 [止指定计划查询的运行](#immediately-stop-a-run-for-a-specific-scheduled-query)。
 
 ### 立即触发特定计划查询的运行
 
-您可以通过向端点发出POST请求立即触发指定计划查询的运行，其中 `/schedules/{SCHEDULE_ID}/runs``{SCHEDULE_ID}``id` 是要触发其运行的计划查询的值。
+您可以通过向端点发出POST请求，立即触发指定计划查询的 `/schedules/{SCHEDULE_ID}/runs` 运行，其 `{SCHEDULE_ID}` 中 `id` 是要触发其运行的计划查询的值。
 
 **API格式**
 
@@ -177,9 +182,9 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules/e95186d65
 }
 ```
 
-### 检索特定计划查询的运行详细信息
+### 检索特定计划查询的运行的详细信息
 
-您可以通过向端点发出GET请求并提供计划查询的ID和请求路径中的运行，检索有关特定计划查询运行的详细信息。 `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}`
+通过向端点发出GET请求并提供计划查询的ID和请求路径中的运行，可 `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` 以检索有关特定计划查询运行的详细信息。
 
 **API格式**
 
@@ -189,7 +194,7 @@ GET /schedules/{SCHEDULE_ID}/runs/{RUN_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | 运行 `id` 要检索其详细信息的计划查询的值。 |
+| `{SCHEDULE_ID}` | 要 `id` 检索其运行详细信息的计划查询的值。 |
 | `{RUN_ID}` | 要 `id` 检索的运行的值。 |
 
 **请求**
@@ -204,7 +209,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a
 
 **响应**
 
-成功的响应会返回HTTP状态200，其中包含指定运行的详细信息。
+成功的响应返回HTTP状态200，其中包含指定运行的详细信息。
 
 ```json
 {
@@ -240,7 +245,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a
 
 ### 立即停止特定计划查询的运行
 
-通过向端点发出PATCH请求并提供计划查询的ID和请求路径中的运行，可以立即停止特定计划查询的运行。 `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}`
+通过向端点发出PATCH请求并提供计划查询的ID和请求路径中的运行， `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` 可以立即停止特定计划查询的运行。
 
 **API格式**
 
@@ -250,12 +255,12 @@ PATCH /schedules/{SCHEDULE_ID}/runs/{RUN_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | 运行 `id` 要检索其详细信息的计划查询的值。 |
+| `{SCHEDULE_ID}` | 要 `id` 检索其运行详细信息的计划查询的值。 |
 | `{RUN_ID}` | 要 `id` 检索的运行的值。 |
 
 **请求**
 
-此API请求使用JSON修补程序语法处理其有效负荷。 有关JSON修补程序工作原理的更多信息，请阅读API基础知识文档。
+此API请求使用JSON修补程序语法处理其有效负荷。 有关JSON修补程序工作原理的更多信息，请阅读API基础文档。
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d65a28abf00a495d82_28e74200-e3de-11e9-8f5d-7f27416c5f0d_sample_scheduled_query7omob151bm_birvwm/runs/c2NoZWR1bGVkX18yMDIwLTAxLTA4VDIwOjQ1OjAwKzAwOjAw
