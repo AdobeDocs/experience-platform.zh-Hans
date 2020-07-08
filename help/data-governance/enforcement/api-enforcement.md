@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用策略服务API实施数据使用策略
 topic: enforcement
 translation-type: tm+mt
-source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '875'
 ht-degree: 2%
@@ -16,7 +16,9 @@ ht-degree: 2%
 
 为数据创建数据使用标签并针对这些标签创建市场营销操作的使用策略后，您可以使用 [DULE Policy Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) API评估对数据集或任意标签组执行的营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。
 
->[!NOTE] 默认情况下，只有状态设置为的策略才 `ENABLED` 能参与评估。 要允许 `DRAFT` 策略参与评估，必须在请求路径中包含 `includeDraft=true` 查询参数。
+>[!NOTE]
+>
+>默认情况下，只有状态设置为的策略才 `ENABLED` 能参与评估。 要允许 `DRAFT` 策略参与评估，必须在请求路径中包含 `includeDraft=true` 查询参数。
 
 此文档提供了如何使用API检查 [!DNL Policy Service] 不同情况下是否存在策略违规的步骤。
 
@@ -51,7 +53,9 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints?duleLabels={LAB
 
 以下请求会根据标 `exportToThirdParty` 签和测试营销 `C1` 操作 `C3`。 由于您在本教程前面创建的数据使用策略将标 `C1` 签定义为其策略表达式 `deny` 中的一个条件，因此营销操作应触发策略违规。
 
->[!NOTE] 数据使用标签区分大小写。 只有在策略表达式中定义的标签完全匹配时，才会发生策略违规。 在此示例中，标 `C1` 签将触发违规，而标 `c1` 签则不会触发。
+>[!NOTE]
+>
+>数据使用标签区分大小写。 只有在策略表达式中定义的标签完全匹配时，才会发生策略违规。 在此示例中，标 `C1` 签将触发违规，而标 `c1` 签则不会触发。
 
 ```shell
 curl -X GET \
