@@ -4,20 +4,25 @@ solution: Experience Platform
 title: 数据集与表和模式
 topic: queries
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '183'
+ht-degree: 1%
 
 ---
 
 
 # 数据集与表和模式
 
-查看 [Adobe Experience Platform UI中可用数据集的列表](https://platform.adobe.com/datasets)，确保观察数据集名称。
->[!NOTE] 某些数据集名称有空格，否则可能不是SQL安全。
+检查列表UI中可用的 [数据集Adobe Experience Platform](https://platform.adobe.com/datasets)，确保观察数据集名称。
+>[!NOTE]
+>
+>某些数据集名称有空格，否则可能不是SQL安全。
 
 ![](../images/queries/datasets-and-tables/dataset-names.png)
 
 
-通过单击数据集表中的模式名称，在UI中查看数据集模式的层次结构。
+单击数据集表中的模式名，查看UI中数据集模式的层次结构。
 
 ![](../images/queries/datasets-and-tables/schema-information.png)
 
@@ -25,7 +30,7 @@ source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
 
 ![](../images/clients/psql/connect-bi.png)
 
-要将平台上的可用表与SQL视图，可以使用或 `\d` 执行 `SHOW TABLES;`。
+要使用SQL视图平台上的可用表，可以使用或 `\d` 进行 `SHOW TABLES;`。
 
 
 `\d` 显示标准PostgreSQL视图
@@ -39,7 +44,7 @@ source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
 (2 rows)
 ```
 
-`SHOW TABLES;` 是一个自定义命令，它提供更详细的视图并显示表以及在平台UI中找到的数据集名称。
+`SHOW TABLES;` 是一个自定义命令，它提供更详细的视图并显示表以及平台UI中的数据集名称。
 
 ```
        name      |        dataSetId         |     dataSet    | description | resolved 
@@ -49,9 +54,11 @@ source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
 (2 rows)
 ```
 
-要视图表的根模式，请使用该命 `\d table_name` 令。
+要视图表的根模式，请使用命 `\d table_name` 令。
 
->[!NOTE] 显示的模式显示根字段，其中大多数是复杂的，在数据集模式UI中指的是对象类型。
+>[!NOTE]
+>
+>显示的模式显示根字段，其中大多数是复杂的，在数据集模式UI中指的是对象类型。
 
 `\d luma_midvalues`
 
@@ -76,7 +83,7 @@ source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
  search            | search                      |           |          | 
 ```
 
-要进一步进入模式，请使用下划线(`_`)在要描述的表中声明列。 例如：`\d table_name_column`
+要进一步进入模式，请使`_`用下划线()在表中声明要描述的列。 例如：`\d table_name_column`
 
 `\d luma_midvalues_web`
 
