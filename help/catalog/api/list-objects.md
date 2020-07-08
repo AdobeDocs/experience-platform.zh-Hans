@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 列表对象
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 71c73a3899ccdd1c024a811b36c411915a3b14be
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '204'
+ht-degree: 1%
 
 ---
 
@@ -22,12 +25,12 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要列出的Catalog对象的类型。 有效对象包括： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
-| `{FILTER}` | 用于过滤响应中返回的结果的查询参数。 多个参数由&amp;符号(`&`)分隔。 有关详细信息，请 [参阅有关筛选目录数据](filter-data.md) 的指南。 |
+| `{OBJECT_TYPE}` | 要列出的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{FILTER}` | 用于筛选在响应中返回的结果的查询参数。 多个参数由和符()`&`分隔。 有关详细信息，请 [参阅有关筛选目录](filter-data.md) 数据的指南。 |
 
 **请求**
 
-以下示例请求检索数据集列表，其中过滤器将响应减少到五个结果， `limit` 过滤器将限制每个数据 `properties` 集显示的属性。
+下面的示例请求检索数据集的列表，其中 `limit` 有一个过滤器将响应减少到五个结果，以及一个 `properties` 过滤器限制每个数据集显示的属性。
 
 ```shell
 curl -X GET \
@@ -40,9 +43,11 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回按请求中提供的列表参数筛选的键值对形式的Catalog对象查询。 对于每个键值对，该键表示所涉及Catalog对象的唯一标识符，然后该标识符可用于另一个调用，以 [视图该特定对象](look-up-object.md) ，以获取更多详细信息。
+成功的响应以键值对的形式返回目录对象的列表，按请求中提供的查询参数筛选。 对于每个键值对，该键代表所涉及的Catalog对象的唯一标识符，然后该标识符可用于对该特定对象进行 [视图的另一调用](look-up-object.md) ，以获取更多详细信息。
 
->[!NOTE] 如果返回的对象不包含由查询指示的一个或多个所请求属性，则响应将仅返回其包含的所请求属性，如下面的“示例数据集3”和“示例数据集4”中所示。 `properties`
+>[!NOTE]
+>
+>如果返回的对象不包含查询所指示的一个或多个请求属性，则响应将仅返回它所包含的请求属性，如下面的“示例数据集3”和“示例数据集4”所示。 `properties`
 
 ```json
 {
