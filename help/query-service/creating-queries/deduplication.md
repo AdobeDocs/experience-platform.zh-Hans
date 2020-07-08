@@ -4,20 +4,23 @@ solution: Experience Platform
 title: 数据外部重复数据删除
 topic: queries
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '414'
+ht-degree: 1%
 
 ---
 
 
-# 查询服务中的数据外部重复数据删除
+# 查询服务中的外部重复数据删除
 
-当可能需要从计算中删除整个行或忽略特定的字段集时，Adobe Experience Platform查询服务支持数据外部重复数据删除，因为行中只有一部分数据是重复。 外部重复数据删除的常见模式包括在按顺序时间(使用体验数据模型(XDM)字段)跨窗口使用ID或ID对的函数来返回表示检测到重复的次数的新字段。 `ROW_NUMBER()``timestamp` 当此值为时， `1`即表示原始实例，在大多数情况下，即您希望使用的实例，忽略其他每个实例。 这通常在子选择中完成，外部重复数据删除在更高级别中完成，如执 `SELECT` 行聚合计数。
+Adobe Experience Platform查询服务支持当可能需要从计算中删除整个行或忽略特定字段集时的数据外部重复数据删除，因为行中的数据只有一部分是重复。 外部重复数据删除的常见模式包括在按顺序 `ROW_NUMBER()` 的时间(使用体验数据模型(XDM)字段)跨窗口使用ID或ID对的函数 `timestamp` ，以返回表示检测到重复的次数的新字段。 当此值为 `1`时，即指原始实例，在大多数情况下，即您希望使用的实例，忽略其他所有实例。 这通常在子选择中完成，外部重复数据删除在更高级别完成，如执 `SELECT` 行聚合计数。
 
 ## 用例
 
-某些外部重复数据删除用例在日期范围内是全局的，有些用例在日期范围内限制为单个访客或最终用户ID `identityMap`。
+某些外部重复数据删除用例在日期范围内是全局的，有些用例在日期范围内受限于单个访客或最终用户ID `identityMap`。
 
-此文档概述了用于消除重复三个常见用例的子选择和完整的查询示例：
+此文档概述了用于消除重复的三个常见用例的子选择和完整的查询示例：
 - [ExperienceEvents](#experienceevents)
 - [购买](#purchases)
 - [量度](#metrics)
@@ -26,9 +29,11 @@ source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
 
 对于重复ExperienceEvents，您可能希望忽略整行。
 
->[!CAUTION] Experience Platform中的许多数据集（包括Adobe Analytics Data Connector生成的数据集）已应用ExperienceEvent级外部重复数据删除。 因此，重新应用此外部重复数据删除级别是不必要的，并会降低您的查询。 了解数据集的来源并了解ExperienceEvent级别的外部重复数据删除是否已应用，这一点很重要。 对于流化的任何数据集(例如，来自Adobe目标的数据集)，您需要应用ExperienceEvent级外部重复数据删除，因为这些数据源具有“至少一次”语义。
+>[!CAUTION]
+>
+>Experience Platform中的许多数据集(包括由AdobeAnalytics数据连接器生成的数据集)已应用ExperienceEvent级外部重复数据删除。 因此，重新应用此外部重复数据删除级别是不必要的，并会降低查询速度。 了解数据集的来源并了解ExperienceEvent级别的外部重复数据删除是否已应用，这一点很重要。 对于流化的任何数据集(例如，来自Adobe Target的数据集)，您需要应用ExperienceEvent级外部重复数据删除，因为这些数据源具有“至少一次”语义。
 
-**范围：** Global
+**范围：** 全球
 
 **窗口键：** id
 
@@ -58,7 +63,7 @@ SELECT COUNT(*) AS num_events FROM (
 
 ### 购买 {#purchases}
 
-如果您有重复购买，您可能希望保留大部分ExperienceEvent行，但忽略与购买关联的字段(如度 `commerce.orders` 量)。 对于购买，有一个用于购买ID的特殊字段。 此字段为 `commerce.order.purchaseID`。
+如果您有重复购买，您可能希望保留大多数ExperienceEvent行，但忽略与购买相关的字段(如度 `commerce.orders` 量)。 对于购买，有一个用于购买ID的特殊字段。 此字段是 `commerce.order.purchaseID`。
 
 **范围：** 访客
 
@@ -98,7 +103,7 @@ SELECT SUM(commerce.purchases.value) AS num_purchases FROM (
 
 ### 量度 {#metrics}
 
-如果您有一个使用可选唯一ID的度量，并显示该ID的重复，您可能希望忽略该度量值并保留ExperienceEvent的其余部分。 在XDM中，几乎所有指标都使用 `Measure` 数据类型，该数据类型包含可用 `id` 于外部重复数据删除的可选字段。
+如果您有使用可选唯一ID的度量，并且显示该ID的重复，您可能希望忽略该度量值并保留ExperienceEvent的其余部分。 在XDM中，几乎所有度量都使用 `Measure` 包含可选字段的 `id` 数据类型，您可以使用该字段进行外部重复数据删除。
 
 **范围：** 访客
 
