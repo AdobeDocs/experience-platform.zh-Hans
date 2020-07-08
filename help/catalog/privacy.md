@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据湖中的隐私请求处理
 topic: overview
 translation-type: tm+mt
-source-git-commit: 327be13cbaaa40e4d0409cbb49a051b7067759bf
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1275'
 ht-degree: 0%
@@ -39,7 +39,9 @@ Identity Service维护全局定义（标准）和用户定义（自定义）标�
 
 创建数据湖的隐私请求时，必须为每个客户提供有效的身份值(及其关联命名空间)，以便找到其数据并相应地处理它们。 因此，所有受隐私请求约束的数据集都必须在其关联的 **XDM模式中** ，包含一个标识描述符。
 
->[!NOTE] 当前无法在隐私请求中处理任何基于不支持身份描述符元数据的模式集（如临时数据集）。
+>[!NOTE]
+>
+>当前无法在隐私请求中处理任何基于不支持身份描述符元数据的模式集（如临时数据集）。
 
 本节将逐步介绍向现有数据集的XDM模式添加标识描述符的步骤。 如果已有带有标识描述符的数据集，可跳到下一 [节](#nested-maps)。
 
@@ -60,7 +62,9 @@ Identity Service维护全局定义（标准）和用户定义（自定义）标�
 
 ### 使用API {#identity-api}
 
->[!NOTE] 本节假定您知道数据集的XDM模式的唯一URI ID值。 如果您不知道此值，可以使用Catalog Service API检索它。 阅读开发人 [员指南](./api/getting-started.md) 的入门部分后，请按照中概述的步骤列出或查 [找Catalog对象](./api/list-objects.md) , [](./api/look-up-object.md) 以找到您的数据集。 模式ID可在 `schemaRef.id`
+>[!NOTE]
+>
+>本节假定您知道数据集的XDM模式的唯一URI ID值。 如果您不知道此值，可以使用Catalog Service API检索它。 阅读开发人 [员指南](./api/getting-started.md) 的入门部分后，请按照中概述的步骤列出或查 [找Catalog对象](./api/list-objects.md) , [](./api/look-up-object.md) 以找到您的数据集。 模式ID可在 `schemaRef.id`
 >
 > 此部分包括对模式注册表API的调用。 有关使用API的重要信息(包括了解您 `{TENANT_ID}` 和容器概念)，请参 [阅开发人员](../xdm/api/getting-started.md) 指南的入门部分。
 
@@ -126,7 +130,9 @@ curl -X POST \
 
 ## 提交请求 {#submit}
 
->[!NOTE] 本节介绍如何格式化数据湖的隐私请求。 强烈建议您查看Privacy Service [UI](../privacy-service/ui/overview.md) 或 [](../privacy-service/api/getting-started.md) Privacy ServiceAPI文档，了解如何提交隐私作业的完整步骤，包括如何在请求负载中正确设置提交的用户标识数据的格式。
+>[!NOTE]
+>
+>本节介绍如何格式化数据湖的隐私请求。 强烈建议您查看Privacy Service [UI](../privacy-service/ui/overview.md) 或 [](../privacy-service/api/getting-started.md) Privacy ServiceAPI文档，了解如何提交隐私作业的完整步骤，包括如何在请求负载中正确设置提交的用户标识数据的格式。
 
 以下部分概述了如何使用Privacy ServiceUI或API向数据湖发出隐私请求。
 
