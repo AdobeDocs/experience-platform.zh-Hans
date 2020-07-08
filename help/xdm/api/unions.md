@@ -4,42 +4,47 @@ solution: Experience Platform
 title: 合并
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 7f61cee8fb5160d0f393f8392b4ce2462d602981
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '806'
+ht-degree: 1%
 
 ---
 
 
 # 合并
 
-合并(或合并视图)是系统生成的只读模式,聚合共享同一类(XDM ExperienceEvent或XDM个人用户档案)的所有模式的字段，并启用实时客户用户档案 [](../../profile/home.md)。
+合并(或合并视图)是系统生成的只读模式,聚合共享相同类(XDM ExperienceEvent或XDM个人用户档案)的所有模式的字段，并启用实时 [客户用户档案](../../profile/home.md)。
 
-本文档涵盖与模式注册表API中的合并协作的基本概念，包括各种操作的示例调用。 有关XDM中合并的更多一般信息，请参阅合并合成基础 [知识中的模式部分](../schema/composition.md#union)。
+此文档涵盖在模式注册表API中与合并协作的基本概念，包括各种操作的示例调用。 有关XDM中合并的更多一般信息，请参阅模式合成基 [础知识中的合并部分](../schema/composition.md#union)。
 
 ## 合并混合
 
-模式注册处自动在合并模式中包括三个混音： `identityMap`、 `timeSeriesEvents`和 `segmentMembership`。
+模式注册表在合并模式中自动包含三个混音： `identityMap`、 `timeSeriesEvents`和 `segmentMembership`。
 
 ### 身份映射
 
-合并模式 `identityMap` 是合并相关记录模式中已知身份的表示。 标识映射将标识分为由命名空间键控的不同数组。 列出的每个标识本身都是一个包含唯一值的 `id` 对象。
+合并 `identityMap` 模式是合并相关记录模式中已知身份的表示。 标识图将标识分为由命名空间键控的不同数组。 列出的每个标识本身都是包含唯一值的 `id` 对象。
 
 See the [Identity Service documentation](../../identity-service/home.md) for more information.
 
-### 时间序列事件
+### 时间系列事件
 
-该 `timeSeriesEvents` 阵列是与与该列表相关联的记录模式相关的时间序列事件的合并。 将用户档案数据导出到数据集时，每个记录都包含此数组。 这对于各种用例（如机器学习）很有用，其中模型除了记录属性外还需要用户档案的整个行为历史记录。
+阵 `timeSeriesEvents` 列是与与列表相关联的记录模式相关的时间序列事件的合并。 将用户档案数据导出到数据集时，每个记录都包含此数组。 这对于各种用例都很有用，例如机器学习，其中模型除了记录属性外还需要用户档案的整个行为历史记录。
 
 ### 区段成员关系图
 
-该 `segmentMembership` 地图存储分部评估的结果。 当使用分段API成功运行段作 [业时](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)，将更新映射。 `segmentMembership` 还存储任何被引入平台的预评估受众细分，允许与Adobe受众管理器等其他解决方案集成。
+该 `segmentMembership` 地图存储分部评估的结果。 使用分段API成功运行段作 [业时](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)，将更新映射。 `segmentMembership` 还存储任何预评估的受众细分，这些细分被引入平台，允许与Adobe Audience Manager等其他解决方案集成。
 
-有关详细信息，请 [参阅有关使用API创建区段](../../segmentation/tutorials/create-a-segment.md) 的教程。
+有关详细信息， [请参阅有关使用API创建](../../segmentation/tutorials/create-a-segment.md) 区段的教程。
 
-## 为模式会员资格启用合并
+## 启用模式以成为合并会员
 
-要使模式包含在合并合并视图中，必须将“合并”标签添加到模式的 `meta:immutableTags` 属性中。 这是通过PATCH请求完成的，该请求用于更新模式并 `meta:immutableTags` 添加值为“合并”的阵列。
+要将模式包含在合并合并视图中，必须将“合并”标记添加到模式 `meta:immutableTags` 的属性中。 这是通过PATCH请求完成的，该请求用于更新模式 `meta:immutableTags` 并添加值为“合并”的阵列。
 
->[!NOTE] 不可改变的标记是要设置但从不删除的标记。
+>[!NOTE]
+>
+>不可变标记是要设置但从不删除的标记。
 
 **API格式**
 
@@ -49,7 +54,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | URL编码的 `$id` URI或 `meta:altId` 要启用以在用户档案中使用的模式。 |
+| `{SCHEMA_ID}` | URL编码 `$id` 的URI `meta:altId` 或要启用以在用户档案中使用的模式。 |
 
 **请求**
 
@@ -68,7 +73,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应会返回更新的模式的详细信息，该更新现在包括一个 `meta:immutableTags` 包含字符串值“合并”的数组。
+成功的响应会返回更新模式的详细信息，该现在包 `meta:immutableTags` 含一个包含字符串值“合并”的数组。
 
 ```JSON
 {
@@ -112,7 +117,7 @@ curl -X PATCH \
 
 ## 列表合并
 
-在模式上设置“合并”标签时，模式注册表会自动为该模式所基于的类创建和维护一个合并。 合并 `$id` 与类的标准相似，唯一的区别是 `$id` 附加两个下划线和单词“合并”(`"__union"`)。
+在模式上设置“合并”标记时，模式注册表会自动为模式所基于的类创建和维护合并。 合并 `$id` 的与类的标准相似，唯一 `$id` 的区别是用两个下划线和单词“合并”(`"__union"`)附加。
 
 要视图可用合并的列表，可以对端点执行GET请 `/unions` 求。
 
@@ -136,7 +141,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回HTTP状态200(OK)和响 `results` 应体中的数组。 如果已定义合并，则每 `title`个合并的、 `$id`、 `meta:altId`和 `version` 将作为数组中的对象提供。 如果尚未定义合并，则仍会返回HTTP状态200（确定），但数 `results` 组将为空。
+成功的响应返回HTTP状态200(OK)和响 `results` 应主体中的数组。 如果已定义合并，则 `title`每个 `$id`的 `meta:altId`、、和 `version` 合并都作为数组中的对象提供。 如果尚未定义合并，则仍返回HTTP状态200（确定），但数 `results` 组将为空。
 
 ```JSON
 {
@@ -159,9 +164,11 @@ curl -X GET \
 
 ## 查找特定合并
 
-您可以通过执行GET请求来视图特定合并，该请求包含和(取决于 `$id` Accept头)，该合并的部分或全部详细信息。
+您可以通过执行GET请求来视图特定合并，该请求 `$id` 包括和（取决于“接受”标题）合并的部分或全部详细信息。
 
->[!NOTE] 合并查找可使用和 `/unions` 端点 `/schemas` 来启用它们，以便在用户档案导出到数据集中时使用。
+>[!NOTE]
+>
+>合并查找可使用和 `/unions` 端点 `/schemas` 来启用它们，以便在用户档案导出到数据集中时使用。
 
 **API格式**
 
@@ -172,7 +179,7 @@ GET /tenant/schemas/{UNION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{UNION_ID}` | 要查找的合并的URL `$id` 编码URI。 合并模式的URI后面附加有“__合并”。 |
+| `{UNION_ID}` | 要查找的 `$id` 合并的URL编码URI。 合并模式的URI附加“__合并”。 |
 
 **请求**
 
@@ -186,20 +193,20 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed+json; version=1'
 ```
 
-合并查找请求需 `version` 要包含在“接受”标题中。
+合并查找请求 `version` 需要包含在Accept头中。
 
-以下“接受”标题可用于合并模式查找：
+以下接受标题可用于合并模式查找：
 
 | 接受 | 描述 |
 | -------|------------ |
-| application/vnd.adobe.xed+json;version={MAJOR_VERSION} | Raw with `$ref` and `allOf`. 包括标题和说明。 |
-| application/vnd.adobe.xed-full+json;version={MAJOR_VERSION} | `$ref` 属性和已 `allOf` 解析。 包括标题和说明。 |
+| application/vnd.adobe.xed+json; version={MAJOR_VERSION} | 原始 `$ref` 和 `allOf`。 包括标题和说明。 |
+| application/vnd.adobe.xed-full+json; version={MAJOR_VERSION} | `$ref` 属性和已 `allOf` 解析。 包括标题和说明。 |
 
 **响应**
 
-成功的响应将返回实现请求路径中提供的类的所有合并 `$id` 的模式视图。
+成功的响应返回实现请求路径中提供的类的所有合并 `$id` 的模式视图。
 
-响应格式取决于在请求中发送的Accept头。 尝试不同的接受标题以比较响应并确定最适合您的用例的标题。
+响应格式取决于请求中发送的接受头。 尝试不同的接受标题以比较响应并确定最适合您的用例的标题。
 
 ```JSON
 {
@@ -242,9 +249,9 @@ curl -X GET \
 
 ## 列表模式
 
-为了查看哪些模式是特定合并的一部分，您可以使用查询参数在租户容器中过滤模式，从而执行GET请求。
+为了查看哪些模式是特定合并的一部分，您可以使用查询参数来过滤租户容器中的模式，从而执行GET请求。
 
-使用 `property` 查询参数，您可以配置响应，以仅返回包含字段和等于您正在访问其合并的 `meta:immutableTags``meta:class` 类的模式。
+使用 `property` 查询参数，您可以配置响应以仅返回包含字段和等于 `meta:immutableTags` 您正在访 `meta:class` 问其合并的类的模式。
 
 **API格式**
 
@@ -258,7 +265,7 @@ GET /tenant/schemas?property=meta:immutableTags==union&property=meta:class=={CLA
 
 **请求**
 
-以下请求查找属于XDM单个模式类合并的所有用户档案。
+以下请求会查找属于XDM单个模式类合并的所有用户档案。
 
 ```SHELL
 curl -X GET \
@@ -272,7 +279,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应将返回筛选后的模式列表，该仅包含满足这两个要求的响应。 请记住，在使用多个查询参数时，会假定AND关系。 响应的格式取决于请求中发送的接受头。
+成功的响应会返回已过滤的模式列表，只包含满足这两个要求的。 请记住，使用多个查询参数时，会假定AND关系。 响应的格式取决于请求中发送的接受头。
 
 ```JSON
 {
