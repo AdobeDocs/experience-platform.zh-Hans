@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 优化模型
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1219'
 ht-degree: 0%
@@ -62,7 +62,9 @@ training.evaluate=true
 evaluation.metrics.com=com.adobe.platform.ml.impl.Constants.DEFAULT
 ```
 
->[!NOTE] 如果未定义度量，则默认度量将处于活动状态。
+>[!NOTE]
+>
+>如果未定义度量，则默认度量将处于活动状态。
 
 可通过更改的值来启用特定度量 `evaluation.metrics.com`。 在以下示例中，启用了F-Score量度。
 
@@ -83,7 +85,9 @@ evaluation.metrics=com.adobe.platform.ml.impl.Constants.FSCORE
 
 可通过扩展文件中的接口来提供自 `MLEvaluator.scala` 定义计 `Evaluator.scala` 算器。 在示例Evaluator [.scala文件中](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/Evaluator.scala) ，我们定义自 `split()` 定义和 `evaluate()` 函数。 我们 `split()` 的函数以8:2的比率随机拆分我们的数据，我们的函数 `evaluate()` 定义并返回3个度量： MAPE、MAE和RMSE。
 
->[!IMPORTANT] 对于类 `MLMetric` ，创建新 `"measures"` 度量 `valueType` 时不要使用，否则 `MLMetric` 该度量不会填充到自定义评估度量表中。
+>[!IMPORTANT]
+>
+>对于类 `MLMetric` ，创建新 `"measures"` 度量 `valueType` 时不要使用，否则 `MLMetric` 该度量不会填充到自定义评估度量表中。
 >  
 > 执行以下操作： `metrics.add(new MLMetric("MAPE", mape, "double"))`\
 > 不是： `metrics.add(new MLMetric("MAPE", mape, "measures"))`
