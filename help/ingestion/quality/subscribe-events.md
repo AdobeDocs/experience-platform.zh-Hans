@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 订阅数据获取事件
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1498739d753bdb569e0d3e091e4160bdae40a32f
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '851'
 ht-degree: 1%
@@ -14,17 +14,19 @@ ht-degree: 1%
 
 # 数据获取通知
 
-将数据引入Adobe Experience Platform的过程由多个步骤组成。 确定需要引入平台的数据文件后，摄取过程开始并连续执行每个步骤，直到成功摄取或失败。 可以使用Adobe Experience Platform Data Ingestion API或 [使用Experience Platform用户界面启动](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) “摄取过程”。
+将数据引入Adobe Experience Platform的过程由多个步骤组成。 确定需要引入平台的数据文件后，摄取过程开始并连续执行每个步骤，直到成功摄取或失败。 可以使用Adobe Experience Platform数据摄取API [或使用Experience Platform用户界面](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) ，来启动摄取过程。
 
 加载到平台中的数据必须经过多个步骤才能到达其目标、数据湖或实时客户用户档案数据存储。 每个步骤都包括处理数据、验证数据，然后在将数据传递到下一步之前存储数据。 根据所摄取的数据量，这可能会成为一个耗时的过程，并且始终有由于验证、语义或处理错误而导致该过程失败的可能。 在故障事件，需要修复数据问题，然后必须使用更正的数据文件重新启动整个摄取过程。
 
-为了帮助监视摄取过程，Experience Platform允许订阅一组在该过程的每个步骤发布的事件，通知您所摄取数据的状态和任何可能的故障。
+为了帮助监视摄取过程，Experience Platform允许订阅在该过程的每个步骤发布的一组事件，通知您所摄取数据的状态和任何可能的故障。
 
 ## 可用状态通知事件
 
 以下是可订阅的可用数据获取状态通知列表。
 
->[!NOTE] 只为所有数据获取通知提供一个事件主题。 为了区分不同的状态，可以使用事件代码。
+>[!NOTE]
+>
+>只为所有数据获取通知提供一个事件主题。 为了区分不同的状态，可以使用事件代码。
 
 | 平台服务 | 状态 | 事件描述 | 事件代码 |
 | ---------------- | ------ | ----------------- | ---------- |
@@ -45,15 +47,15 @@ ht-degree: 1%
 
 ### 在Adobe开发人员控制台中创建新项目
 
-转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用您的Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
+转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
 
-### 将Experience Platform事件添加到项目
+### 向项目添加Experience Platform事件
 
 创建新项目后，导航到该项目的概述屏幕。 在此处，单击“ **[!UICONTROL 添加事件]**”。
 
 ![](../images/quality/subscribe-events/add-event-button.png)
 
-将出 _[!UICONTROL 现“添加事件]_”对话框。 单击**[!UICONTROL  Experience Platform ]**，以过滤可用选项的列表，然后单击**[!UICONTROL &#x200B;平台通知&#x200B;]**，再单**[!UICONTROL &#x200B;击下一步&#x200B;]**。
+将出 _[!UICONTROL 现“添加事件]_”对话框。 单击**[!UICONTROL  Experience Platform ]**，以过滤可用选项的列表，然后单击平台**[!UICONTROL &#x200B;通知&#x200B;]**，然后单击**[!UICONTROL &#x200B;下一步&#x200B;]**。
 
 ![](../images/quality/subscribe-events/select-platform-events.png)
 
