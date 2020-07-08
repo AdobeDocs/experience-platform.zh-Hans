@@ -4,14 +4,17 @@ solution: Experience Platform
 title: 模式合成基础
 topic: overview
 translation-type: tm+mt
-source-git-commit: 14cd3d17c7d9ba602d02925abddec9e0b246a8c8
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '2761'
+ht-degree: 0%
 
 ---
 
 
 # 模式合成基础
 
-本文档介绍Experience Data Model(XDM)模式，以及构建要在Adobe Experience Platform中使用的模式的构件、原则和最佳实践。 有关XDM及其在平台中的使用方式的一般信息，请参 [阅XDM系统概述](../home.md)。
+本文档介绍了体验数据模型(XDM)模式，以及构成要用于Adobe Experience Platform的模式的构件、原则和最佳做法。 有关XDM及其在平台中的使用方式的一般信息，请参 [阅XDM系统概述](../home.md)。
 
 ## 了解模式
 
@@ -19,7 +22,7 @@ source-git-commit: 14cd3d17c7d9ba602d02925abddec9e0b246a8c8
 
 除了描述数据结构外，模式还对数据应用约束和期望，这样当数据在系统之间移动时，就可以验证数据。 这些标准定义允许一致地解释数据，而不管来源如何，并且无需跨应用程序进行翻译。
 
-Experience Platform通过使用模式来保持这种语义规范化。 模式是在Experience Platform中描述数据的标准方法，它允许与模式相符的所有数据在整个组织内重复使用，而不会发生冲突，甚至可以在多个组织之间共享。
+Experience Platform通过使用模式来保持这种语义规范化。 模式是描述Experience Platform中数据的标准方法，它允许符合模式的所有数据在整个组织内重复使用，而不会发生冲突，甚至可以在多个组织之间共享。
 
 ### 关系表与嵌入式对象
 
@@ -33,11 +36,11 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 模式通过允许从多个来源集成数据、通过通用结构和定义进行标准化并跨解决方案共享数据来解决这一问题。 这允许后续过程和服务回答任何类型的数据问题，从传统的数据建模方法转向数据建模方法，在该方法中，将要询问数据的所有问题都预先知道，并且数据被建模以符合这些期望。
 
-### Experience Platform中基于模式的工作流
+### 基于模式的Experience Platform
 
-标准化是Experience Platform的一个关键概念。 XDM由Adobe推动，旨在实现客户体验数据标准化并为客户体验管理定义标准模式。
+标准化是Experience Platform的关键概念。 XDM由Adobe推动，旨在实现客户体验数据标准化并为客户体验管理定义标准模式。
 
-构建Experience Platform的基础架构（称为XDM System）简化了基于模式的工作流，包括模式注册表、模式编辑器、模式元数据和服务消费模式。 See the [XDM System overview](../home.md) for more information.
+构建Experience Platform的基础架构（称为XDM系统）简化了基于模式的工作流，包括模式注册表、模式编辑器、模式元数据和服务消耗模式。 See the [XDM System overview](../home.md) for more information.
 
 ## 规划模式
 
@@ -45,7 +48,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 ### Experience Platform中的数据行为
 
-计划在Experience Platform中使用的数据分为两种行为类型：
+用于Experience Platform的数据分为两种行为类型：
 
 * **记录数据**: 提供有关主题属性的信息。 主题可以是组织或个人。
 * **时间序列数据**: 提供记录主体直接或间接采取操作时系统的快照。
@@ -58,9 +61,9 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 模式用于将数据引入Experience Platform。 此视图可跨多个服务使用，以创建单个实体的单一统一数据。 因此，在考虑模式时，必须考虑“身份”以及哪些字段可用于识别主题，而不管数据来自何处。
 
-要帮助处理此过程，关键字段可标记为“Identity”。 在获取数据时，这些字段中的数据将插入该个人的“身份图”中。 然后，实时客户用户档案和 [其他体验平台服务可以访问](../../profile/home.md) ，从而为每位客户提供拼接视图。
+要帮助处理此过程，关键字段可标记为“Identity”。 在获取数据时，这些字段中的数据将插入该个人的“身份图”中。 然后，实时客户用户档案和其 [他Experience Platform服务可以访问图形](../../profile/home.md) ，以提供每个客户的拼接视图。
 
-通常标为“身份”的字段包括： 电子邮件地址、电 [话号码、Experience Cloud ID(ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)、CRM ID或其他唯一ID字段。 您还应考虑组织特有的所有唯一标识符，因为它们可能也是良好的“身份”字段。
+通常标为“身份”的字段包括： 电子邮件地址、电话号 [码、Experience CloudID(ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)、CRM ID或其他唯一ID字段。 您还应考虑组织特有的所有唯一标识符，因为它们可能也是良好的“身份”字段。
 
 在模式规划阶段考虑客户身份非常重要，这有助于确保整合数据以构建最可靠的用户档案。 请参阅 [Identity Service概述](../../identity-service/home.md) ，进一步了解身份信息如何帮助您向客户提供数字体验。
 
@@ -68,21 +71,23 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 随着数字体验的性质不断发展，用来代表数字体验的模式也必须如此。 因此，设计良好的模式能够根据需要进行调整和发展，而不会对模式的先前版本造成破坏性的改变。
 
-由于保持向后兼容性对模式发展至关重要，Experience Platform强制采用纯附加的版本控制原则，以确保对模式的任何修订只会导致无损的更新和更改。 换言之，不 **支持中断更改。**
+由于保持向后兼容性对于模式发展至关重要，Experience Platform强制采用纯附加的版本控制原则，以确保对模式的任何修订只会导致无损的更新和更改。 换言之，不 **支持中断更改。**
 
 | 支持的更改 | 中断更改（不支持） |
 |------------------------------------|---------------------------------|
 | <ul><li>向现有模式添加新字段</li><li>使必填字段成为可选字段</li></ul> | <ul><li>删除以前定义的字段</li><li>引入新的必填字段</li><li>重命名或重定义现有字段</li><li>删除或限制以前支持的字段值</li><li>将属性移动到树中的其他位置</li></ul> |
 
->[!NOTE] 如果模式尚未用于将数据引入Experience Platform，您可能会对该模式引入突破性的更改。 但是，一旦在平台中使用了模式，它就必须遵守附加的版本控制策略。
+>[!NOTE]
+>
+>如果模式尚未用于将数据引入Experience Platform，您可能会对该模式引入突破性的更改。 但是，一旦在平台中使用了模式，它就必须遵守附加的版本控制策略。
 
 ### 模式和数据获取
 
-要将数据引入Experience Platform，必须先创建数据集。 数据集是Catalog Service的数据转换和跟踪的 [构造块](../../catalog/home.md)，通常表示包含所摄取数据的表或文件。 所有数据集都基于现有的XDM模式，它们为所摄取的数据应包含的内容以及如何构建提供约束。 有关更多信 [息，请参阅Adobe Experience Platform](../../ingestion/home.md) Data Ingestion概述。
+要将数据引入Experience Platform，必须先创建数据集。 数据集是Catalog Service的数据转换和跟踪的 [构造块](../../catalog/home.md)，通常表示包含所摄取数据的表或文件。 所有数据集都基于现有的XDM模式，它们为所摄取的数据应包含的内容以及如何构建提供约束。 有关详细信息， [请参阅Adobe Experience Platform](../../ingestion/home.md) 数据获取概述。
 
 ## 模式积木
 
-Experience Platform采用组合方法，将标准构件块组合在一起以创建模式。 这种方法促进现有组件的可重用性，并推动整个行业的标准化，以支持平台中的供应商模式和组件。
+Experience Platform使用一种合成方法，其中将标准构件块组合在一起以创建模式。 这种方法促进现有组件的可重用性，并推动整个行业的标准化，以支持平台中的供应商模式和组件。
 
 模式使用以下公式组成：
 
@@ -96,7 +101,7 @@ Experience Platform采用组合方法，将标准构件块组合在一起以创�
 
 类还决定哪些混音符合在模式中使用的条件。 下面的mixin部分将更详细 [地讨论](#mixin) 此问题。
 
-Experience Platform的每个集成都提供标准类，称为“行业”类。 行业类别是公认的行业标准，适用于各种使用案例。 行业类的示例包括Adobe提供的XDM个人用户档案和XDM ExperienceEvent类。
+有标准类，它们提供Experience Platform的每个集成，称为“行业”类。 行业类别是公认的行业标准，适用于各种使用案例。 行业类的示例包括Adobe提供的XDM个人用户档案和XDM ExperienceEvent类。
 
 Experience Platform还允许“供应商”类，这些类是Experience Platform合作伙伴定义的类，并提供给在平台中使用该供应商服务或应用程序的所有客户。
 
@@ -116,11 +121,11 @@ Experience Platform还允许“供应商”类，这些类是Experience Platform
 
 请记住，模式由“零个或更多”混音组成，因此这意味着您无需使用任何混音即可构建有效的模式。
 
-### 数据类型 {#data-type}
+### Data type {#data-type}
 
 数据类型在类或模式中用作引用字段类型的方式与基本文本字段相同。 关键区别在于数据类型可以定义多个子字段。 与混音类似，数据类型允许多字段结构的一致使用，但比混音具有更大的灵活性，因为通过将数据类型添加为字段的“模式类型”，可以在的任意位置包含数据类型。
 
-Experience Platform作为模式注册表的一部分提供许多常见数据类型，以支持使用标准模式描述常见数据结构。 这在模式注册表教程中有更详细的说明，当您逐步定义数据类型时，它将变得更加清晰。
+Experience Platform作为模式登记处的一部分提供了许多常见数据类型，以支持使用标准模式描述常见数据结构。 这在模式注册表教程中有更详细的说明，当您逐步定义数据类型时，它将变得更加清晰。
 
 ### 字段
 
@@ -143,7 +148,9 @@ Experience Platform作为模式注册表的一部分提供许多常见数据类�
 * 日期时间
 * 地图
 
->[!NOTE] “映射”字段类型允许键值对数据，包括单个键的多个值。 映射只能在系统级别定义，这意味着您可能在行业或供应商定义的模式中遇到映射，但该映射不能用于您定义的字段。 模式 [注册表API开发人员指南](../api/getting-started.md) ，包含有关定义字段类型的更多信息。
+>[!NOTE]
+>
+>“映射”字段类型允许键值对数据，包括单个键的多个值。 映射只能在系统级别定义，这意味着您可能在行业或供应商定义的模式中遇到映射，但该映射不能用于您定义的字段。 模式 [注册表API开发人员指南](../api/getting-started.md) ，包含有关定义字段类型的更多信息。
 
 下游服务和应用程序使用的某些数据操作对特定字段类型强制实施限制。 受影响的服务包括但不限于：
 
@@ -157,11 +164,11 @@ Experience Platform作为模式注册表的一部分提供许多常见数据类�
 
 ### XDM字段
 
-除了基本字段和定义您自己的数据类型的能力之外，XDM还提供标准的字段和数据类型集，这些字段和数据类型被Experience Platform服务隐含地理解，并在跨平台组件使用时提供更高的一致性。
+除了基本字段和定义您自己的数据类型的能力之外，XDM还提供标准的字段和数据类型集，这些字段和数据类型由Experience Platform服务隐式理解，并在跨平台组件使用时提供更高的一致性。
 
 这些字段（如“名字”和“电子邮件地址”）包含除基本标量字段类型之外的附加含义，告知平台共享相同XDM数据类型的任何字段将以相同的方式行事。 无论数据来自何处，或数据使用在何种平台服务中，都可以相信此行为是一致的。
 
-有关可 [用XDM字段的完整列表](field-dictionary.md) ，请参阅XDM字段字典。 建议尽可能使用XDM字段和数据类型，以支持跨体验平台的一致性和标准化。
+有关可 [用XDM字段的完整列表](field-dictionary.md) ，请参阅XDM字段字典。 建议尽可能使用XDM字段和数据类型，以支持跨Experience Platform的一致性和标准化。
 
 ## 合成示例
 
@@ -177,7 +184,7 @@ Experience Platform作为模式注册表的一部分提供许多常见数据类�
 
 ### 合并 {#union}
 
-Experience Platform允许您针对特定用例编写模式，还允许您查看特定类类型的模式的“合并”。 上图显示了两个基于XDM ExperienceEvent类的模式，以及两个基于XDM Individual用户档案类的模式。 合并，如下所示，聚合共享同一类的所有模式的字段(分别为XDM ExperienceEvent和XDM Individual用户档案)。
+Experience Platform允许您为特定用例编写模式，但也允许您查看特定类类型的模式的“合并”。 上图显示了两个基于XDM ExperienceEvent类的模式，以及两个基于XDM Individual用户档案类的模式。 合并，如下所示，聚合共享同一类的所有模式的字段(分别为XDM ExperienceEvent和XDM Individual用户档案)。
 
 ![](../images/schema-composition/union.png)
 
@@ -193,7 +200,7 @@ Experience Platform允许您针对特定用例编写模式，还允许您查看�
 
 现在，您已经了解了模式合成的基础知识，可以开始使用模式注册表构建模式。
 
-模式注册表用于访问Adobe Experience Platform中的模式库，并提供可从中访问所有可用库资源的用户界面和RESTful API。 模式库包含由Adobe定义的行业资源、由Experience Platform合作伙伴定义的供应商资源以及由组织成员组成的类、混合、数据类型和模式。
+模式注册表用于访问Adobe Experience Platform中的模式库，并提供可从中访问所有可用库资源的用户界面和RESTful API。 模式库包含Adobe定义的行业资源、Experience Platform合作伙伴定义的供应商资源以及由组织成员组成的类、混音、数据类型和模式。
 
 要开始使用UI编写模式，请按照模式编 [辑器教程](../tutorials/create-schema-ui.md) ，构建本文档中提到的“忠诚会员”模式。
 
