@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 利用客户人工智能发掘洞察
 topic: Discovering insights
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1059'
 ht-degree: 0%
@@ -30,7 +30,9 @@ ht-degree: 0%
 
 出现“Customer AI service（客户人工智能服务）”页面。 此页列表客户AI的服务实例并显示相关信息，包括实例的名称、倾向类型、实例的运行频率以及上次更新的状态。
 
->[!NOTE] 只有已成功完成评分运行的服务实例才具有洞察。
+>[!NOTE]
+>
+>只有已成功完成评分运行的服务实例才具有洞察。
 
 ![创建实例](../images/insights/dashboard.png)
 
@@ -51,7 +53,9 @@ ht-degree: 0%
 
 ![右边栏](../images/insights/success-run.png)
 
->[!NOTE] 在评分运行失败的事件中，会提供错误消息。 错误消息列在右边栏 *的“上次运行* ”详细信息下，该详细信息仅对失败运行可见。
+>[!NOTE]
+>
+>在评分运行失败的事件中，会提供错误消息。 错误消息列在右边栏 *的“上次运行* ”详细信息下，该详细信息仅对失败运行可见。
 
 ![失败运行消息](../images/insights/failed-run.png)
 
@@ -85,7 +89,9 @@ ht-degree: 0%
 
 评分汇总显示已评分的用户档案总数，并将其分类为包含高倾向、中倾向和低倾向的时段。 倾向桶根据得分范围确定，低小于24，中为25至74，高大于74。 每个桶都有与图例对应的颜色。
 
->[!NOTE] 如果是转化倾向得分，则高分以绿色显示，低分以红色显示。 如果您预测客户流失倾向，则高分为红色，低分为绿色。 无论您选择哪种倾向类型，中时段都保持黄色。
+>[!NOTE]
+>
+>如果是转化倾向得分，则高分以绿色显示，低分以红色显示。 如果您预测客户流失倾向，则高分为红色，低分为绿色。 无论您选择哪种倾向类型，中时段都保持黄色。
 
 ![得分摘要](../images/insights/scoring-summary.png)
 
