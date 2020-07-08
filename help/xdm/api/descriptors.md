@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 描述符
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: c3d23ce0081932e61f50d426ac6d98ab7f4dfa3b
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '1499'
 ht-degree: 1%
@@ -22,7 +22,9 @@ ht-degree: 1%
 
 此文档提供描述符的示例API调用，以及可用描述符的完整列表以及定义每种类型所需的字段。
 
->[!NOTE] 描述符需要用唯一的“接受”标 `xed` 头替换， `xdm`但在其它方面与“接受”标题在模式注册表中其他位置使用非常相似。 以下示例调用中包含了正确的接受标头，但要确保使用正确的标头，请格外小心。
+>[!NOTE]
+>
+>描述符需要用唯一的“接受”标 `xed` 头替换， `xdm`但在其它方面与“接受”标题在模式注册表中其他位置使用非常相似。 以下示例调用中包含了正确的接受标头，但要确保使用正确的标头，请格外小心。
 
 ## 列表描述符
 
@@ -141,7 +143,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求在示例模式的“电子邮件地址”字段上定义标识描述符。 这会告知Experience Platform将电子邮件地址用作标识符，以帮助拼合有关个人的信息。
+以下请求在示例模式的“电子邮件地址”字段上定义标识描述符。 这会告知Experience Platform使用电子邮件地址作为标识符来帮助拼合有关个人的信息。
 
 ```SHELL
 curl -X POST \
@@ -236,7 +238,7 @@ curl -X PUT \
 
 ## 删除描述符
 
-有时您可能需要从模式注册表中删除已定义的描述符。 这是通过引用要删除的描 `@id` 述符的DELETE请求来完成的。
+有时您可能需要从模式注册表中删除已定义的描述符。 这是通过引用要删除的描述符 `@id` 的DELETE请求来完成的。
 
 **API格式**
 
@@ -277,7 +279,7 @@ curl -X DELETE \
 
 #### 标识描述符
 
-标识描述符表示“sourceSchema”的“sourceProperty”是Adobe Experience Platform Identity Service描述的 [“标识”字段](../../identity-service/home.md)。
+标识描述符表示“sourceSchema”的“sourceProperty”是由Adobe Experience Platform标识服务描述的标识 [字段](../../identity-service/home.md)。
 
 ```json
 {
@@ -334,7 +336,7 @@ curl -X DELETE \
 | `xdm:sourceProperty` | 将作为标识的特定属性的路径。 路径应以“/”开头，而不以“/”结尾。 不要在路径中包含“属性”（例如，使用“/personalEmail/address”而不是“/properties/personalEmail/properties/address”） |
 | `xdm:title` | 要为此字段显示的新标题，用标题大小写写写。 |
 | `xdm:description` | 可以随标题一起添加可选描述。 |
-| `meta:enum` | 如果由指示的字 `xdm:sourceProperty` 段是字符串字段， `meta:enum` 则确定Experience Platform UI中字段的建议值的列表。 请务必注意，不 `meta:enum` 要声明明细列表或为XDM字段提供任何数据验证。<br><br>这应仅用于Adobe定义的核心XDM字段。 如果源属性是您的组织定义的自定义字段，则应直接通过PATCH `meta:enum` 请求编辑该字段 [的属性](./update-resource.md)。 |
+| `meta:enum` | 如果以字符串 `xdm:sourceProperty` 字段表示的字段， `meta:enum` 则确定Experience PlatformUI中字段的建议值列表。 请务必注意，不 `meta:enum` 要声明明细列表或为XDM字段提供任何数据验证。<br><br>这应仅用于Adobe定义的核心XDM字段。 如果源属性是您的组织定义的自定义字段，则应直接通过PATCH `meta:enum` 请求编辑该字段 [的属性](./update-resource.md)。 |
 
 #### 关系描述符
 
