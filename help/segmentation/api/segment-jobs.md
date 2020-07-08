@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 细分作业
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b0554d931718bb6a8dd7d4f971daf3652a19a2a8
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '657'
 ht-degree: 3%
@@ -22,7 +22,7 @@ ht-degree: 3%
 
 本指南中使用的API端点是分段API的一部分。 在继续之前，请查阅分段开 [发人员指南](./getting-started.md)。
 
-特别是，分段开 [发人员指南的](./getting-started.md#getting-started) “入门”部分包括相关主题的链接、在文档中阅读示例API调用的指南，以及成功调用任何Experience Platform API所需标头的重要信息。
+特别是，分段开 [发人员指南的](./getting-started.md#getting-started) “入门”部分包括相关主题的链接、在文档中阅读示例API调用的指南，以及成功调用任何Experience PlatformAPI所需的头的重要信息。
 
 ## 检索列表段作业
 
@@ -63,7 +63,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 成功的响应会返回HTTP状态200，并将指定IMS组织的段作业列表为JSON。 以下响应返回IMS组织所有成功的段作业的列表。
 
->[!NOTE] 以下响应已被截断为空间，并且将仅显示第一个返回的作业。
+>[!NOTE]
+>
+>以下响应已被截断为空间，并且将仅显示第一个返回的作业。
 
 ```json
 {
@@ -361,7 +363,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
 
 成功的响应会返回请求的段作业的HTTP状态207。
 
->[!NOTE] 以下响应已被截断为空间，仅显示每个区段作业的部分详细信息。 完整响应将列表所请求区段作业的完整详细信息。
+>[!NOTE]
+>
+>以下响应已被截断为空间，仅显示每个区段作业的部分详细信息。 完整响应将列表所请求区段作业的完整详细信息。
 
 ```json
 {
