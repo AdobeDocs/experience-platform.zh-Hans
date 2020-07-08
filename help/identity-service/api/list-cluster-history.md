@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 获取身份的群集历史记录
 topic: API guide
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '303'
 ht-degree: 1%
@@ -68,7 +68,9 @@ curl -X GET \
 
 将该方 `POST` 法用作上述方法的批 `GET` 量等效值，以返回多个身份的簇历史。
 
->[!NOTE] 请求应最多指明1000个身份。 超过1000个身份的请求将生成400个状态代码。
+>[!NOTE]
+>
+>请求应最多指明1000个身份。 超过1000个身份的请求将生成400个状态代码。
 
 **API格式**
 
@@ -210,7 +212,9 @@ curl -X POST \
 }
 ```
 
->[!NOTE] 无论请求的XID是属于同一群集，还是一个或多个具有任何关联的群集，响应始终为请求中提供的每个XID包含一个条目。
+>[!NOTE]
+>
+>无论请求的XID是属于同一群集，还是一个或多个具有任何关联的群集，响应始终为请求中提供的每个XID包含一个条目。
 
 ## 后续步骤
 
