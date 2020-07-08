@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 平台SDK指南
 topic: SDK authoring
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '447'
 ht-degree: 1%
@@ -78,7 +78,9 @@ client_context <- psdk$client_context$ClientContext(api_key={API_KEY},
 - [按列过滤数据](#filter-by-selected-columns)
 - [获取排序结果](#get-sorted-results)
 
->[!NOTE] IMS组织在中设置 `client_context`。
+>[!NOTE]
+>
+>IMS组织在中设置 `client_context`。
 
 ### Python
 
@@ -192,7 +194,9 @@ df <- dataset_reader$sort(c(('column-a', 'asc'), ('column-b', 'desc')))$read()
 
 ## 基本数据写入 {#basic-writing-of-data}
 
->[!NOTE] IMS组织在中设置 `client_context`。
+>[!NOTE]
+>
+>IMS组织在中设置 `client_context`。
 
 要在Python和R中写入数据，请使用以下示例之一：
 
