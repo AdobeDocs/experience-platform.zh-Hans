@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 营销操作
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '536'
 ht-degree: 1%
@@ -97,7 +97,7 @@ curl -X GET \
 
 ## 查找特定的营销活动
 
-您还可以执行查找(GET)请求，以视图特定营销活动的详细信息。 这是使用营销 `name` 操作完成的。 如果名称未知，则可使用以前显示的列表(GET)请求找到该名称。
+您还可以执行查找(GET)请求，以视图特定营销操作的详细信息。 这是使用营销 `name` 操作完成的。 如果名称未知，则可使用以前显示的列表(GET)请求找到该名称。
 
 **API格式**
 
@@ -154,7 +154,9 @@ PUT /marketingActions/custom/{marketingActionName}
 
 在随后的请求中，请注 `name` 意请求有效负荷中的与API调 `{marketingActionName}` 用中的相同。 与只 `id` 读策略和系统生成的策略不同，创建营销操作需要您在创建 _时_ 提供营销操作的预期名称。
 
->[!NOTE] 无法在调 `{marketingActionName}` 用中提供，将导致405错误（不允许使用方法），因为不允许您直接对端点执行 `/marketingActions/custom` PUT。 此外，如 `name` 果有效负荷中的与路径 `{marketingActionName}` 中的不匹配，您将收到400错误（错误请求）。
+>[!NOTE]
+>
+>无法在调 `{marketingActionName}` 用中提供，将导致405错误（不允许使用方法），因为不允许您直接对端点执行 `/marketingActions/custom` PUT。 此外，如 `name` 果有效负荷中的与路径 `{marketingActionName}` 中的不匹配，您将收到400错误（错误请求）。
 
 ```SHELL
 curl -X PUT \
@@ -197,7 +199,9 @@ curl -X PUT \
 
 您可以通过向要删除的营销活动发送DELETE请 `{marketingActionName}` 求来删除营销活动。
 
->[!NOTE] 您无法删除由现有策略引用的营销操作。 尝试执行此操作将导致400错误（错误请求）和错误消息，该错误消息包括任何策略(或 `id` 策略)的（或多个ID），其中包含对您尝试删除的营销操作的引用。
+>[!NOTE]
+>
+>您无法删除由现有策略引用的营销操作。 尝试执行此操作将导致400错误（错误请求）和错误消息，该错误消息包括任何策略(或 `id` 策略)的（或多个ID），其中包含对您尝试删除的营销操作的引用。
 
 **API格式**
 
