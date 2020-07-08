@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
 solution: Adobe Experience Platform
-title: 实时客户用户档案API开发人员指南
+title: 实体——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: d464a6b4abd843f5f8545bc3aa8000f379a86c6d
+source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
 workflow-type: tm+mt
-source-wordcount: '1690'
+source-wordcount: '1689'
 ht-degree: 1%
 
 ---
@@ -764,7 +764,7 @@ curl -X POST \
 }`
 ```
 
-在此示例响应中，第一个列出的用户档案(“GkouAW-yD9aoRCPhRYROJ-TetAFW”)为提供一个值 `_links.next.payload`，表示此用户档案还有其他的结果页。 有关如何访问这些附 [加结果的详细信息](#access-additional-results) ，请参阅访问其他结果的下一节。
+在此示例响应中，第一个列出的用户档案(“GkouAW-yD9aoRCPhRYROJ-TetAFW”)为提供一个值 `_links.next.payload`，表示此用户档案还有其他的结果页。 有关如何访问这些附 [加结果的详细信息](#access-additional-results) ，请参阅以下有关访问其他结果的部分。
 
 ### 访问其他结果 {#access-additional-results}
 
