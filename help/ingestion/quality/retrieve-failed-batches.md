@@ -4,49 +4,54 @@ solution: Experience Platform
 title: 检索失败的批
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4817162fe2b7cbf4ae4c1ed325db2af31da5b5d3
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+workflow-type: tm+mt
+source-wordcount: '623'
+ht-degree: 1%
 
 ---
 
 
 # 使用API检索失败的批
 
-Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以使用批量摄取，它允许您使用各种文件类型（如CSV）插入其数据；或者流摄取，它允许您使用流端点将其数据实时插入平台。
+Adobe Experience Platform提供了两种上传和摄取数据的方法。 您可以使用批处理摄取，它允许您使用各种文件类型（如CSV）插入其数据；或者使用流摄取，它允许您使用流式端点将其数据实时插入平台。
 
-本教程介绍了使用Data Ingestion API检索有关失败批次的信息的步骤。
+本教程介绍了使用数据摄取API检索有关失败批次的信息的步骤。
 
 ## 入门指南
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-- [体验数据模型(XDM)系统](../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-- [数据摄取](../home.md):将数据发送到Experience Platform的方法。
+- [体验数据模型(XDM)系统](../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
+- [数据摄取](../home.md): 将数据发送到Experience Platform的方法。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这些包括路径、必需的标题和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑难解答指南 [中有关如何阅读示例API调用的部分](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须首先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程后，将为所有Experience Platform API调用中的每个所需标头提供值，如下所示：
+要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
-- 授权：承载人 `{ACCESS_TOKEN}`
+- 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源(包括属于模式注册表的资源)都隔离到特定虚拟沙箱。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+Experience Platform中的所有资源，包括属于模式注册表的资源，都与特定虚拟沙箱隔离。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] 有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>[!NOTE]
+>
+>有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
 - 内容类型： `application/json`
 
-### 样本失败批次
+### 失败批处理示例
 
-本教程将使用格式错误的时间戳的示例数据，该时间戳将月值设置为 **00**，如下所示：
+本教程将使用格式不正确的时间戳的示例数据，该时间戳将月值设 **置为** 00，如下所示：
 
 ```json
 {
@@ -71,7 +76,7 @@ Experience Platform中的所有资源(包括属于模式注册表的资源)都�
 }
 ```
 
-由于时间戳格式错误，上述有效负荷将无法针对XDM模式正确验证。
+由于时间戳格式错误，上述负载无法针对XDM模式进行正确验证。
 
 ## 检索失败的批
 
@@ -128,7 +133,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 }
 ```
 
-通过以上响应，您可以看到批次中成功和失败的块。 从此响应中，您可以看到文件包含 `part-00000-44c7b669-5e38-43fb-b56c-a0686dabb982-c000.json` 失败的批次。
+通过上述响应，您可以看到批处理的哪些块成功和失败。 从此响应中，您可以看到文件包 `part-00000-44c7b669-5e38-43fb-b56c-a0686dabb982-c000.json` 含失败的批。
 
 ## 下载失败的批
 
@@ -142,8 +147,8 @@ GET /batches/{BATCH_ID}/failed?path={FAILED_FILE}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{BATCH_ID}` | 包含失败文件的批次的ID。 |
-| `{FAILED_FILE}` | 具有失败格式的文件的名称。 |
+| `{BATCH_ID}` | 包含失败文件的批处理的ID。 |
+| `{FAILED_FILE}` | 格式化失败的文件的名称。 |
 
 **请求**
 
@@ -179,19 +184,19 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 
 ## 后续步骤
 
-阅读本教程后，您学习了如何从失败的批次中检索错误。 有关批量摄取的详细信息，请阅读批量摄取 [开发人员指南](../batch-ingestion/overview.md)。 有关流摄取的详细信息，请阅读创建 [流连接教程](../tutorials/create-streaming-connection.md)。
+阅读本教程后，您学习了如何从失败的批中检索错误。 有关批量摄取的详细信息，请阅读批 [量摄取开发人员指南](../batch-ingestion/overview.md)。 有关流摄取的更多信息，请阅读 [创建流连接教程](../tutorials/create-streaming-connection.md)。
 
 ## 附录
 
-本节包含有关可能发生的其他摄取错误类型的信息。
+本节包含可能发生的其他摄取错误类型的相关信息。
 
 ### 格式不正确的XDM
 
-与上一个示例流中的时间戳错误一样，这些错误是由于格式不正确的XDM造成的。 这些错误消息会因问题的性质而异。 因此，不能显示特定的错误示例。
+与上一个示例流中的时间戳错误一样，这些错误是由于格式不正确的XDM造成的。 这些错误消息会因问题的性质而异。 因此，不能显示特定错误示例。
 
-### IMS组织ID缺失或无效
+### 缺少IMS组织ID或无效
 
-如果IMS组织ID在有效负荷中缺失或无效，则显示此错误。
+如果有效负荷中缺少IMS组织ID，则显示此错误。
 
 ```json
 {
@@ -206,7 +211,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 
 ### 缺少XDM模式
 
-如果缺少for的，则显 `schemaRef` 示此 `xdmMeta` 错误。
+如果缺少的 `schemaRef` 错误，则 `xdmMeta` 显示此错误。
 
 ```json
 {
@@ -221,7 +226,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 
 ### 缺少源名称
 
-如果标题中的缺 `source` 少该错误，则显示此错误 `name`。
+如果标题中缺少 `source` 此错误，则显示此错误 `name`。
 
 ```json
 {
@@ -237,7 +242,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 
 ### 缺少XDM实体
 
-如果不存在，则显示此错 `xdmEntity` 误。
+如果不存在，则显示此 `xdmEntity` 错误。
 
 ```json
 {
