@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 评估区段
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 822f43b139b68b96b02f9a5fe0549736b2524ab7
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '2841'
 ht-degree: 1%
@@ -22,24 +22,26 @@ ht-degree: 1%
 
 - [实时客户用户档案](../../profile/home.md): 根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
 - [Adobe Experience Platform分段服务](../home.md): 允许您根据实时受众数据构建用户档案细分。
-- [体验数据模型(XDM)](../../xdm/home.md): Platform组织客户体验数据的标准化框架。
-- [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+- [体验数据模型(XDM)](../../xdm/home.md): 平台组织客户体验数据的标准化框架。
+- [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
 ### 所需的标题
 
-本教程还要求您完成身份验证教 [程](../../tutorials/authentication.md) ，以便成功调用PlatformAPI。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+本教程还要求您完成身份验证 [教程](../../tutorials/authentication.md) ，以便成功调用平台API。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 - 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对PlatformAPI的请求需要一个标头，它指定操作将在中进行的沙箱的名称：
+Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的请求需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
->[!NOTE] 有关Platform中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>[!NOTE]
+>
+>有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
 
-所有POST、PUT和PATCH请求都需要额外的标头：
+所有POST、PUT和PATCH请求都需要额外的标题：
 
 - 内容类型： application/json
 
@@ -55,7 +57,9 @@ Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对Platfo
 
 通过计划的评估，您的IMS组织可以创建循环计划以自动运行导出作业。
 
->[!NOTE] 对于XDM单个用户档案，最多可以为五(5)个合并策略的沙箱启用计划评估。 如果您的组织在单个沙箱用户档案内有五个以上的XDM单个环境的合并策略，您将无法使用计划的评估。
+>[!NOTE]
+>
+>对于XDM单个用户档案，最多可以为五(5)个合并策略的沙箱启用计划评估。 如果您的组织在单个沙箱用户档案内有五个以上的XDM单个环境的合并策略，您将无法使用计划的评估。
 
 ### 创建计划
 
@@ -413,7 +417,7 @@ curl -X GET \
 
 ## 解释区段结果
 
-成功运行区段作业时，将 `segmentMembership` 更新区段中包含的每个用户档案的映射。 `segmentMembership` 还存储任何被引入Platform的预评估受众细分，允许与Adobe Audience Manager等其他解决方案集成。
+成功运行区段作业时，将 `segmentMembership` 更新区段中包含的每个用户档案的映射。 `segmentMembership` 还存储任何预评估的受众细分，这些细分被引入平台，允许与Adobe Audience Manager等其他解决方案集成。
 
 以下示例显示了各个 `segmentMembership` 用户档案记录的属性的外观：
 
