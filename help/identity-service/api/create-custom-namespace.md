@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 创建自定义命名空间
 topic: API guide
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
 workflow-type: tm+mt
 source-wordcount: '75'
 ht-degree: 5%
@@ -18,7 +18,9 @@ ht-degree: 5%
 
 有关创建自定义命名空间的建议，请 [参阅Identity Service常见问题解答文档](../troubleshooting-guide.md)。
 
->[!NOTE] 命名空间是身份的限定符。 因此，一旦创建了命名空间，便无法删除它。
+>[!NOTE]
+>
+>命名空间是身份的限定符。 因此，一旦创建了命名空间，便无法删除它。
 
 **API格式**
 
