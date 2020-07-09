@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform帮助
 translation-type: tm+mt
-source-git-commit: 2c95e34b56b322f7cfb098b27210dd5242128803
+source-git-commit: a2726bfc5ef7feac374e57af9c986a9c521efa48
 workflow-type: tm+mt
-source-wordcount: '296'
-ht-degree: 29%
+source-wordcount: '306'
+ht-degree: 37%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 29%
 
 * [Experience Platform概述](home.md)
 * [入门指南](get-started.md)
-* Experience Platform documentation {#documentation}
+* Experience Platform 文档 {#documentation}
    * [文档概述](documentation/overview.md)
    * [访问控制](https://docs.adobe.com/content/help/en/experience-platform/access-control/home.html)
    * [Auditor](https://docs.adobe.com/content/help/en/auditor/using/overview.html)
@@ -25,18 +25,19 @@ ht-degree: 29%
    * [数据获取](https://docs.adobe.com/content/help/en/experience-platform/ingestion/home.html)
    * [数据科学工作区](https://docs.adobe.com/content/help/en/experience-platform/data-science-workspace/home.html)
    * [Debugger](https://docs.adobe.com/content/help/zh-Hans/debugger/using/experience-cloud-debugger.html)
+   * [调试器2.0（测试版）](https://docs.adobe.com/content/help/en/debugger/using-v2/experience-cloud-debugger.html)
    * [决策服务](https://docs.adobe.com/content/help/en/experience-platform/decisioning/home.html)
    * [目标](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html)
    * [ETL（提取、转换、加载）](https://docs.adobe.com/content/help/en/experience-platform/etl/home.html)
-   * [标识服务](https://docs.adobe.com/content/help/en/experience-platform/identity/home.html)
+   * [标识服务](https://docs.adobe.com/content/help/zh-Hans/experience-platform/identity/home.html)
    * [智能服务](https://docs.adobe.com/content/help/en/experience-platform/intelligent-services/home.html)
    * [Launch](https://docs.adobe.com/content/help/zh-Hans/launch/using/overview.translate.html)
    * [可观性洞察](https://docs.adobe.com/content/help/en/experience-platform/observability/home.html)
-   * [隐私服务](https://docs.adobe.com/content/help/en/experience-platform/privacy/home.html)
-   * [用户档案(实时客户用户档案)](https://docs.adobe.com/content/help/en/experience-platform/profile/home.html)
+   * [Privacy Service](https://docs.adobe.com/content/help/en/experience-platform/privacy/home.html)
+   * [用户档案(实时客户用户档案)](https://docs.adobe.com/content/help/zh-Hans/experience-platform/profile/home.html)
    * [查询服务](https://docs.adobe.com/content/help/en/experience-platform/query/home.html)
    * [实时客户数据平台](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)
-   * [沙箱](https://docs.adobe.com/content/help/en/experience-platform/sandbox/home.html)
+   * [沙箱](https://docs.adobe.com/content/help/zh-Hans/experience-platform/sandbox/home.html)
    * [区段](https://docs.adobe.com/content/help/en/experience-platform/segmentation/home.html)
    * [源（连接器）](https://docs.adobe.com/content/help/en/experience-platform/sources/home.html)
    * [Web SDK](https://docs.adobe.com/content/help/zh-Hans/experience-platform/edge/home.html)
