@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用架构编辑器创建架构
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d55dc9776968099901325c58506c5e322449368e
 workflow-type: tm+mt
-source-wordcount: '3409'
+source-wordcount: '3462'
 ht-degree: 0%
 
 ---
@@ -289,13 +289,25 @@ More information about relationships and other schema metadata can be found in t
 >
 >模式启用“实时客户”用户档案并保存后，便无法禁用它。
 
-## 后续步骤
+## 后续步骤和其他资源
 
 现在您已完成“忠诚会员”模式的编写，您可以在编辑器的“结构”部分 *看到* 完整的模式。 单 **击** “保存”,模式将保存到模式库，模式注册表可访问该库。
 
 您的新模式现在可用于将数据引入平台。 请记住，一旦模式被用于摄取数据，只能进行附加更改。 有关模式 [版本控制的更多信息](../schema/composition.md) ，请参阅模式合成的基础知识。
 
 “Loyalt Members”模式还可用于使用模式注册表API查看和管理。 要开始使用API，请阅读开始注册表API开 [发人员指南进行模式](../api/getting-started.md)。
+
+>[!WARNING]
+>
+>以 [!DNL Platform] 下视频中显示的UI已过期。 有关最新的UI屏幕截图和功能，请参阅上面的文档。
+
+以下视频演示如何在UI中创建简单 [!DNL Platform] 模式。
+
+>[!VIDEO](https://video.tv.adobe.com/v/27012?quality=12&learn=on)
+
+以下视频旨在加深您对使用混音和类的理解。
+
+>[!VIDEO](https://video.tv.adobe.com/v/27013?quality=12&learn=on)
 
 ## 附录
 
