@@ -1,12 +1,12 @@
 ---
 title: 使用纯javascript快速开始
-seo-title: 'Adobe Experience Platform Web SDK快速开始 '
-description: 使用Experience Platform Web SDK收集数据的快速开始指南
-seo-description: 使用Experience Platform Web SDK收集数据的快速开始指南
+seo-title: 'Adobe Experience PlatformWeb SDK快速开始 '
+description: 使用开始Web SDK收集数据的快速Experience Platform指南
+seo-description: 使用开始Web SDK收集数据的快速Experience Platform指南
 translation-type: tm+mt
-source-git-commit: f401780aa6b11f230506bfca1a747839fc6ae389
+source-git-commit: 9b8bddf39301cdc39bfa5370ef98d99434fc64f8
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '537'
 ht-degree: 5%
 
 ---
@@ -14,10 +14,10 @@ ht-degree: 5%
 
 # 欢迎
 
-本指南引导您通过不同方式设置Adobe Experience Platform Web SDK。 要能够使用此功能，您需要处于允许列表。 如果您想继续等待列表，请联系您的客户经理。
+本指南指导您通过各种方法设置Adobe Experience PlatformWeb SDK。 要使用此功能，您需要在允许列表上。 如果您想继续等待列表，请联系您的客户经理。
 
-- 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经拥有Analytics的CNAME，则应使用该CNAME。 在开发中测试无需CNAME即可正常工作，但在开始生产之前您需要CNAME
-- 有权使用Adobe Experience Platform Data Platform。  如果您尚未购买Platform，我们将为您提供Experience Platform Data Services Foundation，以便在SDK中以有限方式使用，不收取任何额外费用。
+- 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经有Analytics的CNAME，您应该使用它。 在开发中测试无需CNAME即可正常工作，但在开始生产之前您需要CNAME
+- 有权使用Adobe Experience Platform数据平台。  如果您尚未购买Platform，我们将为您提供Experience Platform数据服务基础，以便在SDK中以有限方式使用，而不收取额外费用。
 - 正在使用最新版的访客ID服务
 
 ## 创建配置ID
@@ -26,14 +26,18 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->您的组织必须处于允许列表才能使用该功能。 请联系您的CSM以接受允许列表。
+>您的组织必须具有此功能的允许列表。 请联系您的CSM以接受允许列表。
 
 ## 准备模式
 
-Experience Platform Edge Network将数据作为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义边缘网络希望数据的格式。 要发送数据，您需要定义模式。
+Experience Platform边缘网络将数据作为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义边缘网络希望数据的格式。 要发送数据，您需要定义模式。
 
 - [创建模式](../../xdm/tutorials/create-schema-ui.md)
-- 将Adobe Experience Platform Web SDK混合添加到您创建的模式
+- 将Adobe Experience PlatformWeb SDK混合添加到您创建的模式
+
+以下视频旨在支持您为Web SDK数据创建模式、数据集和流源连接器。
+
+>[!VIDEO](https://video.tv.adobe.com/v/35395?quality=12&learn=on)
 
 ## 安装SDK
 
