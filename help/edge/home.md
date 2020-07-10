@@ -4,9 +4,9 @@ seo-title: Adobe Experience PlatformWeb SDK帮助
 description: 了解什么是Adobe Experience PlatformWeb SDK以及如何使用它。
 seo-description: 允许Adobe Experience Cloud客户与Experience Cloud中的各种服务进行交互。
 translation-type: tm+mt
-source-git-commit: 3f52def8318f57cfc6534e15415d172e768a8614
+source-git-commit: 9b8bddf39301cdc39bfa5370ef98d99434fc64f8
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '453'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,10 @@ ht-degree: 0%
 # 什么是Adobe Experience PlatformWeb SDK
 
 Adobe Experience PlatformWeb SDK是客户端JavaScript库，允许Adobe Experience Cloud客户通过Adobe Experience Platform边缘网络与Experience Cloud中的各种服务交互。
+
+以下视频概述了Adobe Experience PlatformWeb SDK和Edge Network。
+
+>[!VIDEO](https://video.tv.adobe.com/v/34141?quality=12&learn=on)
 
 ## SDK被Adobe Experience PlatformWeb SDK所取代
 
@@ -28,6 +32,11 @@ Adobe Experience PlatformWeb SDK替换以下SDK:
 这不仅仅是现有库的包装。 这完全是重写。 其目的是通过以下方式结束挑战：以正确的顺序触发标记、与库版本控制挑战不一致以及更好地进行依赖管理。 它是实现Experience Cloud的一种新方式，是开 [放源](https://github.com/adobe/alloy)。
 
 除了新的库，还有一个新的端点，可简化对Adobe解决方案的HTTP请求。 以前，访客.js向访客ID服务发送阻止调用，然后AT.js向Adobe Target发送呼叫，DIL.js向Adobe Audience Manager发送呼叫，最后，AppMeasurement.js向AdobeAnalytics发送呼叫。 此新库和端点可以检索ID、获取体 [!DNL Target] 验、向Audience Manager发送数据，并通过一次调用将数据传递到Adobe Experience Platform。
+
+以下视频演示了Adobe Experience PlatformWeb SDK和Edge Network的实际操作情况。 该视频示例使用对Adobe的单个调用，该调用将数据发送到Experience Platform、Analytics、Audience Manager和目标。
+
+>[!VIDEO](https://video.tv.adobe.com/v/34148?quality=12&learn=on)
+
 
 ## 入门指南
 
