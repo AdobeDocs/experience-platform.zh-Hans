@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 用户档案系统作业——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
+source-git-commit: c0b059d6654a98b74be5bc6a55f360c4dc2f216b
 workflow-type: tm+mt
-source-wordcount: '1503'
+source-wordcount: '1466'
 ht-degree: 2%
 
 ---
@@ -38,10 +38,10 @@ GET /system/jobs?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `start` | 根据请求的创建时间，偏移返回的结果页面。 示例: `start=4` |
-| `limit` | 限制返回的结果数。 示例: `limit=10` |
-| `page` | 按照请求的创建时间返回特定的结果页面。 示例: `page=2` |
-| `sort` | 按特定字段按升序()或降`asc`序()顺序对结`desc`果排序。 返回多页结果时，排序参数不起作用。 示例: `sort=batchId:asc` |
+| `start` | 根据请求的创建时间，偏移返回的结果页面。 示例: *`start=4`* |
+| `limit` | 限制返回的结果数。 示例: *`limit=10`* |
+| `page` | 按照请求的创建时间返回特定的结果页面。 示例: ***`page=2`*** |
+| `sort` | 按特定字段按升序()或降&#x200B;*`asc`*&#x200B;序()顺序对结&#x200B;**`desc`**&#x200B;果排序。 返回多页结果时，排序参数不起作用。 示例: `sort=batchId:asc` |
 
 **请求**
 
@@ -91,11 +91,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| _page.count | 请求总数。 此响应已被截断为空间。 |
-| _page.next | 如果存在其他结果页，请将查找请求中的ID值替换为提供的“ [下一](#view-a-specific-delete-request) ”值，以视图下一页结果。 |
-| jobType | 所创建作业的类型。 在这种情况下，它将始终返回“DELETE”。 |
-| 状态 | 删除请求的状态。 可能的值为“NEW”、“PROCESSING”、“COMPLETED”、“ERROR”。 |
-| 指标 | 一个对象，包括已处理的记录数(“recordsProcessed”)和请求已处理的时间（以秒为单位），或请求完成所用的时间(“timeTakenInSec”)。 |
+| `_page.count` | 请求总数。 此响应已被截断为空间。 |
+| `_page.next` | 如果存在其他结果页，则通过将查找请求中的ID值替换为提供的值来视图 [下一页](#view-a-specific-delete-request)`"next"` 的结果。 |
+| `jobType` | 所创建作业的类型。 在这种情况下，它将始终返回 `"DELETE"`。 |
+| `status` | 删除请求的状态。 可能的 `"NEW"`值为 `"PROCESSING"`、 `"COMPLETED"`、 `"ERROR"`。 |
+| `metrics` | 一个对象，包括已处理的记录数(`"recordsProcessed"`)和请求已处理的时间（秒），或完成请求所用的时间(`"timeTakenInSec"`)。 |
 
 ## 创建删除请求 {#create-a-delete-request}
 
@@ -131,11 +131,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| dataSetId | **(必需** )要删除的数据集的ID。 |
+| `dataSetId` | **(必需** )要删除的数据集的ID。 |
 
 **响应**
 
-成功的响应会返回新创建的删除请求的详细信息，包括该请求的唯一、由系统生成的只读ID。 这可用于查找请求并检查其状态。 创 `status` 建时请求在开始处理 `"NEW"` 之前一直有效。 响 `dataSetId` 应中的值应与请求 `dataSetId` 中发送的值匹配。
+成功的响应会返回新创建的删除请求的详细信息，包括该请求的唯一、由系统生成的只读ID。 这可用于查找请求并检查其状态。 创 **`status`** 建时请求在开始处理 *`"NEW"`* 之前一直有效。 响 **`dataSetId`** 应中的值应与请求 ***`dataSetId`*** 中发送的值匹配。
 
 ```json
 {
@@ -151,8 +151,8 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| id | 删除请求的唯一、由系统生成的只读ID。 |
-| dataSetId | 数据集的ID，在POST请求中指定。 |
+| `id` | 删除请求的唯一、由系统生成的只读ID。 |
+| `dataSetId` | 数据集的ID，在POST请求中指定。 |
 
 ### 删除批
 
@@ -186,11 +186,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| batchId | **(必需** )要删除的批的ID。 |
+| `batchId` | **(必需** )要删除的批的ID。 |
 
 **响应**
 
-成功的响应会返回新创建的删除请求的详细信息，包括该请求的唯一、由系统生成的只读ID。 这可用于查找请求并检查其状态。 创建请求时的“状态”为“NEW”，直到开始处理。 响应中的“batchId”应与请求中发送的“batchId”匹配。
+成功的响应会返回新创建的删除请求的详细信息，包括该请求的唯一、由系统生成的只读ID。 这可用于查找请求并检查其状态。 创 `"status"` 建时请求在开始处理 `"NEW"` 之前一直有效。 响 `"batchId"` 应中的值应与请求 `"batchId"` 中发送的值匹配。
 
 ```json
 {
@@ -206,8 +206,8 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| id | 删除请求的唯一、由系统生成的只读ID。 |
-| batchId | 批的ID，在POST请求中指定。 |
+| `id` | 删除请求的唯一、由系统生成的只读ID。 |
+| `batchId` | 批的ID，在POST请求中指定。 |
 
 如果尝试为“记录”数据集批启动删除请求，您将遇到400级错误，如下所示：
 
@@ -237,7 +237,7 @@ GET /system/jobs/{DELETE_REQUEST_ID}
 
 | 参数 | 描述 |
 |---|---|
-| {DELETE_请求_ID} | **(必需** )您要视图的删除请求的ID。 |
+| `{DELETE_REQUEST_ID}` | **(必需** )您要视图的删除请求的ID。 |
 
 **请求**
 
@@ -269,11 +269,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| jobType | 所创建作业的类型，在此例中，它将始终返回“DELETE”。 |
-| 状态 | 删除请求的状态。 可能的值： “新”、“处理”、“已完成”、“错误”。 |
-| 指标 | 一个数组，包括已处理的记录数(“recordsProcessed”)和请求已处理的时间（以秒为单位），或请求完成所用的时间(“timeTakenInSec”)。 |
+| `jobType` | 所创建作业的类型，在此情况下，它将始终返回 `"DELETE"`。 |
+| `status` | 删除请求的状态。 Possible values: `"NEW"`, `"PROCESSING"`, `"COMPLETED"`, `"ERROR"`. |
+| `metrics` | 一个数组，包括已处理的记录数(`"recordsProcessed"`)和请求已处理的时间（秒），或完成请求所用的时间(`"timeTakenInSec"`)。 |
 
-删除请求状态为“已完成”后，您可以通过尝试使用数据访问API访问已删除的数据来确认该数据已被删除。 有关如何使用Data Access API访问数据集和批次的说明，请查阅Data Access [文档](../../data-access/home.md)。
+删除请求状态一旦 `"COMPLETED"` 生效，您就可以通过尝试使用数据访问API访问已删除的数据来确认该数据已被删除。 有关如何使用Data Access API访问数据集和批次的说明，请查阅Data Access [文档](../../data-access/home.md)。
 
 ## 删除删除请求
 
