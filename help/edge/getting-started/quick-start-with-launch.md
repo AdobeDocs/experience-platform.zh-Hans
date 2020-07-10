@@ -4,17 +4,17 @@ seo-title: Adobe Experience PlatformWeb SDK快速开始Launch
 description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
 seo-description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
 translation-type: tm+mt
-source-git-commit: 3f52def8318f57cfc6534e15415d172e768a8614
+source-git-commit: 9b8bddf39301cdc39bfa5370ef98d99434fc64f8
 workflow-type: tm+mt
-source-wordcount: '531'
-ht-degree: 5%
+source-wordcount: '553'
+ht-degree: 4%
 
 ---
 
 
 # 欢迎
 
-本指南将指导您完成如何在Adobe Launch中设置Adobe Experience PlatformWeb SDK的不同步骤。 您需要具有权限，并且要使用此功能，您必须在允许列表中。 如果您想继续等待列表，请联系您的客户经理。 此外，要使用此功能，您需要：
+本指南将指导您完成如何在Adobe Launch中设置Adobe Experience PlatformWeb SDK的不同步骤。 您需要具有权限并处于允许列表才能使用此功能。 如果您想继续等待列表，请联系您的客户经理。 此外，要使用此功能，您需要：
 
 - 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经拥有Adobe Analytics的CNAME，则应使用该CNAME。 在开发中测试无需CNAME即可正常工作，但在开始生产之前，您需要CNAME
 - 正在使用最新版的访客ID服务
@@ -25,7 +25,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->您的组织必须位于该功能的允许列表中。 请联系您的CSM以添加到允许列表。
+>您的组织必须具有此功能的允许列表。 请联系您的CSM以添加到允许列表。
 
 ## 准备模式
 
@@ -33,6 +33,10 @@ Experience Platform边缘网络将数据作为XDM。 XDM是一种数据格式，
 
 - [创建模式](../../xdm/tutorials/create-schema-ui.md)
 - 将Adobe Experience PlatformWeb SDK混合添加到您创建的模式
+
+以下视频旨在支持您为Web SDK数据创建模式、数据集和流源连接器。
+
+>[!VIDEO](https://video.tv.adobe.com/v/35395?quality=12&learn=on)
 
 ## 在Adobe Launch中安装SDK
 
