@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案API开发人员指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c0b059d6654a98b74be5bc6a55f360c4dc2f216b
 workflow-type: tm+mt
-source-wordcount: '666'
+source-wordcount: '668'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 Adobe Experience Platform通过使数据易于在战略性位置称为“边缘”的服务器上访问，实现客户体验的实时个性化。 实时客户用户档案API为通过称为“预测”的组件处理边缘提供端点。 这包括用于确定应将哪些数据投影到每个边缘的投影配置，以及用于定义将投影路由到何处的投影目标。 有关使用边缘投影的详细信息，请访问投 [影配置和目标端点指南](edge-projections.md)。
 
-## 实体
+## 实体(用户档案访问) {#entities}
 
 通过Adobe Experience Platform，您可以使用RESTful API或用户界面访问实时客户用户档案数据。 要了解如何使用API访问实体(更常称为“用户档案”)，请遵循实体端点指南中 [概述的步骤](entities.md)。 要使用平台UI访问用户档案，请参阅 [用户档案用户指南](../ui/user-guide.md)。
 
