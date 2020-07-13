@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe定义的函数
 topic: queries
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: cc101b1a439408861961c6fcd0899ca7c48bfa04
 workflow-type: tm+mt
-source-wordcount: '248'
+source-wordcount: '292'
 ht-degree: 6%
 
 ---
@@ -107,7 +107,7 @@ LIMIT 31;
 
 具有场的结构 `(value)`
 
-### 浏览行级归因
+### 探索行级归因
 
 ```sql
 SELECT
@@ -240,4 +240,10 @@ LIMIT 10;
 ```
 
 ![图像](../images/queries/adobe-functions/create-breakdown-report.png)
+
+## Journey Orchestration
+
+以下视频演示如何在查询接口和PSQL客户端中运行Adobe Experience Platform。 此外，该视频还使用涉及XDM对象中各个属性的示例、使用Adobe定义的函数以及使用CREATE TABLE AS SELECT(CTAS)。
+
+>[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
