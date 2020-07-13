@@ -5,7 +5,7 @@ title: Privacy Service开发人员指南
 description: 使用RESTful API跨Adobe Experience Cloud应用程序管理数据主体的个人数据
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6f93191defad6a79a3f6623da3492ab405787b5c
+source-git-commit: b45fdfff70ce4ba857f23e7116812a07825871bc
 workflow-type: tm+mt
 source-wordcount: '793'
 ht-degree: 0%
@@ -19,7 +19,7 @@ Adobe Experience Platform Privacy Service提供RESTful API和用户界面，允�
 
 本指南介绍如何使用Privacy ServiceAPI。 有关如何使用UI的详细信息，请参阅 [Privacy ServiceUI概述](../ui/overview.md)。 有关Privacy ServiceAPI中所有可用端点的全面列表，请参阅 [API参考](https://www.adobe.io/apis/experiencecloud/gdpr/api-reference.html)。
 
-## 入门指南
+## 入门指南 {#getting-started}
 
 本指南需要了解以下Experience Platform功能：
 
@@ -43,7 +43,7 @@ Adobe Experience Platform Privacy Service提供RESTful API和用户界面，允�
 
 ### 获得开发人员访问Experience Platform
 
-要获得开发人员对Platform的访问权，请按照Experience Platform身份验证教程中 [的开始步骤](../../tutorials/authentication.md)。 在执行步骤“在Adobe开发人员控制台中生成访问凭据”后，请返回本教程以生成特定于Privacy Service的凭据。
+要获得开发人员对平台的访问权限，请按照Experience Platform身份验证教程中 [的开始步骤](../../tutorials/authentication.md)。 在执行步骤“在Adobe开发人员控制台中生成访问凭据”后，请返回本教程以生成特定于Privacy Service的凭据。
 
 ### 生成访问凭据
 
@@ -86,7 +86,7 @@ Adobe Experience Platform Privacy Service提供RESTful API和用户界面，允�
 
 #### 每个会话的身份验证
 
-您必须收集的最终必需凭 `{ACCESS_TOKEN}`据是您的，在授权头中使用。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用PlatformAPI。
+您必须收集的最终必需凭 `{ACCESS_TOKEN}`据是您的，在授权头中使用。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用平台API。
 
 要生成新密 `{ACCESS_TOKEN}`钥，请打开之前下载的私钥，并将其内容粘贴到“生成访问令牌”旁的 _[!UICONTROL 文本框中]_，然后单**[!UICONTROL &#x200B;击“生成令牌”]**。
 
