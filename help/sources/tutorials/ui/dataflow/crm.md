@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为CRM连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 3f1c3c77a0755a3e305da0fb8a234be0f0ee1863
 workflow-type: tm+mt
-source-wordcount: '1073'
+source-wordcount: '1112'
 ht-degree: 1%
 
 ---
@@ -123,10 +123,16 @@ ht-degree: 1%
 
 ## 后续步骤
 
-通过遵循本教程，您成功创建了一个数据流，以从CRM导入数据并获得了有关监视数据集的洞察。 现在，下游服务（如和）可 [!DNL Platform] 以使用传入 [!DNL Real-time Customer Profile] 数据 [!DNL Data Science Workspace]。 有关更多详细信息，请参阅以下文档:
+通过遵循本教程，您成功创建了一个数据流，以从CRM导入数据并获得了有关监视数据集的洞察。 要进一步了解如何创建数据流，您可以通过观看以下视频来补充您的学习。 此外，传入数据现在可供下游服务 [!DNL Platform] （如和） [!DNL Real-time Customer Profile] 使用 [!DNL Data Science Workspace]。 有关更多详细信息，请参阅以下文档:
 
 * [实时客户用户档案概述](../../../../profile/home.md)
 * [数据科学工作区概述](../../../../data-science-workspace/home.md)
+
+>[!WARNING]
+>
+> 以 [!DNL Platform] 下视频中显示的UI已过期。 有关最新的UI屏幕截图和功能，请参阅上面的文档。
+
+>[!VIDEO](https://video.tv.adobe.com/v/29711?quality=12&learn=on)
 
 ## 附录
 
