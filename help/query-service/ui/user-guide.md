@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform查询服务查询编辑器指南
 topic: query editor
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: cc101b1a439408861961c6fcd0899ca7c48bfa04
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1106'
 ht-degree: 1%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 1%
 
 ![图像](../images/queries/query-editor-overview/editor.png)
 
-为最大限度地缩短开发时间，建议您开发具有返回行限制的查询。 例如：`SELECT fields FROM table WHERE conditions LIMIT number_of_rows`。验证查询生成预期输出后，请删除限制并运行查询，以 `CREATE TABLE tablename AS SELECT` 使用输出生成数据集。
+为最大限度地缩短开发时间，建议您开发具有返回行限制的查询。 例如：`SELECT fields FROM table WHERE conditions LIMIT number_of_rows`。验证查询生成预期输出后，请删除限制并运行查询以 `CREATE TABLE tablename AS SELECT` 生成包含输出的数据集。
 
 ### 在查询编辑器中编写工具
 
@@ -112,9 +112,15 @@ ht-degree: 1%
 
 ### 查询结果
 
-查询完成后，结果将显示在“结果”选 *项卡* (“控制台”选 *项卡旁* )。 此视图显示查询的表格输出，最多显示100行。 此视图允许您验证查询是否生成预期输出。 要使用查询生成数据集，请删除对返回行的限制，然后使用运 `CREATE TABLE tablename AS SELECT` 行查询以生成带有输出的数据集。 有关如何 [在查询编辑器中][query-service-create-datasets] 从查询结果生成数据集的说明，请参阅生成数据集教程。
+查询完成后，结果将显示在“结果”选 *项卡* (“控制台”选 *项卡旁* )。 此视图显示查询的表格输出，最多显示100行。 此视图允许您验证查询是否生成预期输出。 要使用查询生成数据集，请删除对返回行的限制，然后使用运行查询 `CREATE TABLE tablename AS SELECT` 生成带有输出的数据集。 有关如何 [在查询编辑器中][query-service-create-datasets] 从查询结果生成数据集的说明，请参阅生成数据集教程。
 
 ![图像](../images/queries/query-editor-overview/query-results.png)
+
+## 使用查询服务教程视频运行查询
+
+以下视频演示如何在查询接口和PSQL客户端中运行Adobe Experience Platform。 此外，还演示了在XDM对象中使用单个属性、使用Adobe定义的函数以及使用CREATE TABLE AS SELECT(CTAS)。
+
+>[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
 ## 后续步骤
 
