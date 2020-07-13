@@ -4,25 +4,66 @@ solution: Experience Platform
 title: 作业
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: df36d88de8ac117206d8d744cfcdd7804fcec61e
 workflow-type: tm+mt
-source-wordcount: '1669'
-ht-degree: 2%
+source-wordcount: '1807'
+ht-degree: 1%
 
 ---
 
 
 # 隐私工作
 
-以下各节将演练您可以使用Privacy ServiceAPI中 `/jobs` 的端点进行的调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
+本文档介绍如何使用API调用处理隐私作业。 具体而言，它涵盖在Privacy ServiceAPI `/job` 中端点的使用。 在阅读本指南之前，请参 [阅入门部分](./getting-started.md#getting-started) ，了解成功调用API所需的重要信息，包括必需的头以及如何读取示例API调用。
+
+## 列表所有作业 {#list}
+
+您可以通过向端点发出GET请求，视图组织内所有可用隐私工作的 `/jobs` 列表。
+
+**API格式**
+
+此请求格式在端 `regulation` 点上使用查询 `/jobs` 参数，因此它以问号()开`?`头，如下所示。 对响应进行分页，以便您使用其他查询参数(`page` 和 `size`)筛选响应。 您可以使用和号()分隔多个`&`参数。
+
+```http
+GET /jobs?regulation={REGULATION}
+GET /jobs?regulation={REGULATION}&page={PAGE}
+GET /jobs?regulation={REGULATION}&size={SIZE}
+GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `{REGULATION}` | 查询的调节类型。 接受的 `gdpr`值 `ccpa`有、和 `pdpa_tha`。 |
+| `{PAGE}` | 要显示的数据页，使用基于0的编号。 默认值为 `0`。 |
+| `{SIZE}` | 每页上显示的结果数。 默认值为， `1` 最大值为 `100`。 超过最大值将导致API返回400代码错误。 |
+
+**请求**
+
+以下请求从页面大小为50的第三页开始检索IMS组织内所有作业的分页列表。
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/core/privacy/jobs?regulation=gdpr&page=2&size=50 \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}'
+```
+
+**响应**
+
+成功的响应会返回一列表作业，每个作业都包含详细信息(如 `jobId`。 在此示例中，响应将包含50个作业的列表，从结果的第三页开始。
+
+### 访问后续页面
+
+要在分页响应中获取下一组结果，您必须对同一端点进行另一个API调用，同时将查询参数 `page` 增加1。
 
 ## 创建隐私工作 {#create-job}
 
-在创建新作业请求之前，您必须先收集有关要访问、删除或销售其数据的数据主体选择退出的标识信息。 获得所需数据后，必须在POST请求到根端点的有效负荷中提供该数据。
+在创建新作业请求之前，您必须先收集有关要访问、删除或销售其数据的数据主体选择退出的标识信息。 获得所需数据后，必须在POST请求到端点的有效负荷中提供该 `/jobs` 数据。
 
 >[!NOTE]
 >
->兼容的Adobe Experience Cloud应用程序使用不同的值来识别数据主体。 有关应用程序 [所需标识符的更](../experience-cloud-apps.md) 多信息，请参阅Privacy Service和Experience Cloud应用程序指南。
+>兼容的Adobe Experience Cloud应用程序使用不同的值来识别数据主体。 有关应用程序 [所需标识符的更](../experience-cloud-apps.md) 多信息，请参阅Privacy Service和Experience Cloud应用程序指南。 有关确定要发送给Privacy Service的ID的更一般指导，请参阅隐私请 [求中的身份文档](../identity-data.md)。
 
 Privacy ServiceAPI支持两种个人数据的作业请求：
 
@@ -290,7 +331,7 @@ curl -X POST \
 
 ## 检查作业的状态 {#check-status}
 
-使用上一步 `jobId` 中返回的值之一，您可以检索有关该作业的信息，如其当前处理状态。
+通过将特定作业包含在GET请求到端点的路径中，可以检索有关该作 `jobId` 业的信息(如其当前处理状 `/jobs` 态)。
 
 >[!IMPORTANT]
 >
@@ -304,7 +345,7 @@ GET /jobs/{JOB_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{JOB_ID}` | 要查找的作业的ID，在上一步 `jobId` 的响应下 [返回](#create-job)。 |
+| `{JOB_ID}` | 要查找的工作的ID。 此ID在成功的API `jobId` 响应中返回， [用于创建作业](#create-job) 并 [列出所有作业](#list)。 |
 
 **请求**
 
@@ -324,12 +365,12 @@ curl -X GET \
 
 ```json
 {
-    "jobId": "527ef92d-6cd9-45cc-9bf1-477cfa1e2ca2",
+    "jobId": "6fc09b53-c24f-4a6c-9ca2-c6076b0842b6",
     "requestId": "15700479082313109RX-899",
     "userKey": "David Smith",
     "action": "access",
-    "status": "error",
-    "submittedBy": "02b38adf-6573-401e-b4cc-6b08dbc0e61c@techacct.adobe.com",
+    "status": "complete",
+    "submittedBy": "{ACCOUNT_ID}",
     "createdDate": "10/02/2019 08:25 PM GMT",
     "lastModifiedDate": "10/02/2019 08:25 PM GMT",
     "userIds": [
@@ -354,8 +395,21 @@ curl -X GET \
             "retryCount": 0,
             "processedDate": "10/02/2019 08:25 PM GMT",
             "productStatusResponse": {
-                "status": "submitted",
-                "message": "processing"
+                "status": "complete",
+                "message": "Success",
+                "responseMsgCode": "PRVCY-6000-200",
+                "responseMsgDetail": "Finished successfully."
+            }
+        },
+        {
+            "product": "Profile",
+            "retryCount": 0,
+            "processedDate": "10/02/2019 08:25 PM GMT",
+            "productStatusResponse": {
+                "status": "complete",
+                "message": "Success",
+                "responseMsgCode": "PRVCY-6000-200",
+                "responseMsgDetail": "Success dataSetIds = [5dbb87aad37beb18a96feb61], Failed dataSetIds = []"
             }
         },
         {
@@ -363,8 +417,14 @@ curl -X GET \
             "retryCount": 0,
             "processedDate": "10/02/2019 08:25 PM GMT",
             "productStatusResponse": {
-                "status": "submitted",
-                "message": "processing"
+                "status": "complete",
+                "message": "Success",
+                "responseMsgCode": "PRVCY-6054-200",
+                "responseMsgDetail": "PARTIALLY COMPLETED- Data not found for some requests, check results for more info.",
+                "results": {
+                  "processed": ["1123A4D5690B32A"],
+                  "ignored": ["dsmith@acme.com"]
+                }
             }
         }
     ],
@@ -375,64 +435,28 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `productStatusResponse` | 作业的当前状态。 下表提供了有关每种可能状态的详细信息。 |
+| `productStatusResponse` | 数组中的每个 `productResponses` 对象都包含有关特定应用程序的作业当前状态的 [!DNL Experience Cloud] 信息。 |
+| `productStatusResponse.status` | 作业的当前状态类别。 请参见下表，了解可用状 [态类别的列表](#status-categories) 及其相应含义。 |
+| `productStatusResponse.message` | 作业的特定状态，对应于状态类别。 |
+| `productStatusResponse.responseMsgCode` | 由Privacy Service接收的产品响应消息的标准代码。 消息的详细信息在下面提供 `responseMsgDetail`。 |
+| `productStatusResponse.responseMsgDetail` | 对工作状态的更详细说明。 处于相似状态的消息可能因产品而异。 |
+| `productStatusResponse.results` | 对于某些状态，某些产品可能会返回 `results` 一个对象，该对象提供未涵盖的其他信 `responseMsgDetail`息。 |
 | `downloadURL` | 如果作业的状态为 `complete`，则此属性提供URL以ZIP文件形式下载作业结果。 作业完成后60天内可下载此文件。 |
 
-### 作业状态响应
+### 作业状态类别 {#status-categories}
 
-下表列表了不同的可能任务状态及其相应含义：
+下表列表了不同的可能作业状态类别及其相应含义：
 
-| 状态代码 | 状态消息 | 意义 |
-| ----------- | -------------- | -------- |
-| 1 | 完成 | 作业已完成，并且（如果需要）文件从每个应用程序上传。 |
-| 2 | 处理时间 | 应用程序已确认该作业，并且当前正在处理。 |
-| 3 | 已提交 | 工作会提交到每个适用的应用程序。 |
-| 4 | 错误 | 处理作业时出现故障——通过检索单个作业详细信息可获得更具体的信息。 |
+| 状态类别 | 意义 |
+| -------------- | -------- |
+| 完成 | 作业已完成，并且（如果需要）文件从每个应用程序上传。 |
+| 处理时间 | 应用程序已确认该作业，并且当前正在处理。 |
+| 已提交 | 工作会提交到每个适用的应用程序。 |
+| 错误 | 处理作业时出现故障——通过检索单个作业详细信息可获得更具体的信息。 |
 
 >[!NOTE]
 >
 >如果提交的作业具有仍在处理的从属子作业，则该作业可能仍处于处理状态。
-
-## 列表所有作业
-
-您可以通过向根()端点发出GET请求，视图组织内所有可用作业请`/`求的列表。
-
-**API格式**
-
-此请求格式在根( `regulation` )端点上使用查询`/`参数，因此它以问号()开头，`?`如下所示。 对响应进行分页，以便您使用其他查询参数(`page` 和 `size`)筛选响应。 您可以使用和号()分隔多个`&`参数。
-
-```http
-GET /jobs?regulation={REGULATION}
-GET /jobs?regulation={REGULATION}&page={PAGE}
-GET /jobs?regulation={REGULATION}&size={SIZE}
-GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
-```
-
-| 参数 | 描述 |
-| --- | --- |
-| `{REGULATION}` | 查询的调节类型。 接受的 `gdpr`值 `ccpa`有、和 `pdpa_tha`。 |
-| `{PAGE}` | 要显示的数据页，使用基于0的编号。 默认值为 `0`。 |
-| `{SIZE}` | 每页上显示的结果数。 默认值为， `1` 最大值为 `100`。 超过最大值将导致API返回400代码错误。 |
-
-**请求**
-
-以下请求从页面大小为50的第三页开始检索IMS组织内所有作业的分页列表。
-
-```shell
-curl -X GET \
-  https://platform.adobe.io/data/core/privacy/jobs?regulation=gdpr&page=2&size=50 \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
-```
-
-**响应**
-
-成功的响应会返回一列表作业，每个作业都包含详细信息(如 `jobId`。 在此示例中，响应将包含50个作业的列表，从结果的第三页开始。
-
-### 访问后续页面
-
-要在分页响应中获取下一组结果，您必须对同一端点进行另一个API调用，同时将查询参数 `page` 增加1。
 
 ## 后续步骤
 
