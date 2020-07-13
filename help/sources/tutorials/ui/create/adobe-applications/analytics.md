@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中创建AdobeAnalytics源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3f1c3c77a0755a3e305da0fb8a234be0f0ee1863
 workflow-type: tm+mt
-source-wordcount: '726'
-ht-degree: 2%
+source-wordcount: '769'
+ht-degree: 1%
 
 ---
 
@@ -95,7 +95,7 @@ ht-degree: 2%
 
 ![](../../../../images/tutorials/create/analytics/labels.png)
 
-## 后续步骤
+## 后续步骤和其他资源
 
 创建连接后，将自动创建目标模式和数据集流以包含传入数据。 此外，还会进行数据回填，并摄取至多 13 个月的历史数据。当初始摄取完成时，Analytics数据被下游平台服务(如实时客户用户档案和细分服务)使用。 有关更多详细信息，请参阅以下文档:
 
@@ -103,3 +103,12 @@ ht-degree: 2%
 * [分段服务概述](../../../../../segmentation/home.md)
 * [数据科学工作区概述](../../../../../data-science-workspace/home.md)
 * [查询服务概述](../../../../../query-service/home.md)
+
+以下视频旨在支持您对使用AdobeAnalytics源连接器接收数据的理解：
+
+>[!WARNING]
+>
+> 以 [!DNL Platform] 下视频中显示的UI已过期。 有关最新的UI屏幕截图和功能，请参阅上面的文档。
+
+>[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
+
