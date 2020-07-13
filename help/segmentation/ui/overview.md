@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 1c9b50f8f71e917b86c34b061df7e2da6fe475a2
 workflow-type: tm+mt
-source-wordcount: '2683'
+source-wordcount: '2766'
 ht-degree: 0%
 
 ---
@@ -233,6 +233,12 @@ ht-degree: 0%
 
 ![](../images/segment-builder/info-bubble.png)
 
+### 流分段视频演示
+
+以下视频旨在支持您对流细分的理解。 它展示了一个客户体验示例，然后快速浏览界面中的主要 [!DNL Platform] 功能。
+
+>[!VIDEO](https://video.tv.adobe.com/v/36184?quality=12&learn=on)
+
 ## 违反DULE策略
 
 >[!NOTE]
@@ -243,7 +249,7 @@ ht-degree: 0%
 
 ![](../images/segment-builder/segment-dule-policy-violations.png)
 
-## 后续步骤
+## 后续步骤和其他资源 {#next-steps}
 
 区段生成器提供丰富的工作流，允许您从数据中分离可销售的受众 [!DNL Real-time Customer Profile] 信息。 阅读本指南后，您现在应能够：
 
@@ -253,4 +259,16 @@ ht-degree: 0%
 - 为计划分段启用所有段定义。
 - 为流分段启用指定的段定义。
 
-有关使用API的分步说明， [!DNL Segmentation Service] 请参 [!DNL Segmentation Service] 阅使用API [创建受众段教程](../tutorials/create-a-segment.md) 。
+要了解更多相 [!DNL Segmentation Service]关信息，请继续阅读文档并通过观看以下视频补充您的学习内容。 有关使用API的分步说明， [!DNL Segmentation Service] 请参 [!DNL Segmentation Service] 阅使用API [创建受众段教程](../tutorials/create-a-segment.md) 。
+
+>[!WARNING]
+>
+> 以 [!DNL Platform] 下视频中显示的UI已过期。 有关最新的UI屏幕截图和功能，请参阅上面的文档。
+
+**创建区段：**
+
+>[!VIDEO](https://video.tv.adobe.com/v/27254?quality=12&learn=on)
+
+**创建动态区段：**
+
+>[!VIDEO](https://video.tv.adobe.com/v/27428?quality=12&learn=on)
