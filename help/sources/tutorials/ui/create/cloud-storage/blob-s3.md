@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Azure Blob或Amazon S3源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 3f1c3c77a0755a3e305da0fb8a234be0f0ee1863
 workflow-type: tm+mt
-source-wordcount: '628'
+source-wordcount: '631'
 ht-degree: 1%
 
 ---
@@ -80,6 +80,6 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 ![现有](../../../../images/tutorials/create/blob/existing.png)
 
-## 后续步骤
+## 后续步骤和其他资源
 
 按照本教程，您已建立了与您或S3 [!DNL Blob] 帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md)。
