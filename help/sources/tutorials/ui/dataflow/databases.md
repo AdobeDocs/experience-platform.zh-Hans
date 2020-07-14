@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为数据库连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
 workflow-type: tm+mt
-source-wordcount: '1043'
+source-wordcount: '1048'
 ht-degree: 0%
 
 ---
@@ -108,9 +108,9 @@ ht-degree: 0%
 
 ![](../../../images/tutorials/dataflow/databases/review.png)
 
-## 监视数据流
+## 监视和删除数据流
 
-创建数据流后，您可以监视通过它摄取的数据。 有关如何监视数据流的详细信息，请参阅有关帐户和数 [据流的教程](../monitor.md)。
+创建数据流后，您可以监视通过它摄取的数据。 有关如何监视和删除数据流的详细信息，请参阅有关监视和删除 [数据流的教程](../monitor.md)。
 
 ## 后续步骤
 
