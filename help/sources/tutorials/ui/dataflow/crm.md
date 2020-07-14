@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为CRM连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3f1c3c77a0755a3e305da0fb8a234be0f0ee1863
+source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
 workflow-type: tm+mt
-source-wordcount: '1112'
+source-wordcount: '1024'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 在UI中为CRM连接器配置数据流
 
-数据流是从源中检索数据并将其引入数据集的计划任务 [!DNL Platform] 符。 本教程提供了使用CRM基连接器配置新数据流的步骤。
+数据流是从源中检索数据并将其引入数据集的计划任务 [!DNL Platform] 符。 本教程提供了使用CRM连接器配置新数据流的步骤。
 
 ## 入门指南
 
@@ -103,23 +103,9 @@ ht-degree: 1%
 
 ![审查](../../../images/tutorials/dataflow/crm/review.png)
 
-## 监视数据流
+## 监视和删除数据流
 
-创建数据流后，您可以监视通过它摄取的数据。 请按照以下步骤访问数据流的数据集监视器。
-
-在“ _源_ ”工作区中，选择要在CRM视图下类别的 *[!UICONTROL CRM]* 源。 选择 *[!UICONTROL Connect Source]* ，启动身份验证界面。 要视图现有数据流，请选 *择“现有* ”帐户，然后选择要访问的帐户。
-
-![monitor](../../../images/tutorials/dataflow/crm/monitor.png)
-
-出现 *[!UICONTROL “源活动]* ”屏幕。 在此处，单击要监视其活动的数据集的名称。
-
-![select-dataflow-dataset](../../../images/tutorials/dataflow/crm/select-dataflow-dataset.png)
-
-出现 *[!UICONTROL 数据集活动]* 屏幕。 此页以图表形式显示消息的消费率。
-
-![数据集活动](../../../images/tutorials/dataflow/crm/dataset-activity.png)
-
-有关监视数据集和摄取的详细信息，请参阅有关监视流数据 [流的教程](../../../../ingestion/quality/monitor-data-flows.md)。
+创建数据流后，您可以监视通过它摄取的数据。 有关如何监视和删除数据流的详细信息，请参阅有关监视和删除 [数据流的教程](../monitor.md)。
 
 ## 后续步骤
 
