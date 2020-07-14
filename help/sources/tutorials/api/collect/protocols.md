@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 通过源连接器和API收集协议数据
 topic: overview
 translation-type: tm+mt
-source-git-commit: 84ea3e45a3db749359f3ce4a0ea25429eee8bb66
+source-git-commit: d5a21462b9f0362414dfe4f73a6c4e4a2c92af61
 workflow-type: tm+mt
-source-wordcount: '1415'
+source-wordcount: '1605'
 ht-degree: 1%
 
 ---
@@ -63,6 +63,18 @@ ht-degree: 1%
 
 创建点对点XDM模式后，现在可以使用对API的POST请求创建源连 [!DNL Flow Service] 接。 源连接由连接ID、源数据文件和对描述源模式的引用组成。
 
+要创建源连接，还必须为数据格式属性定义枚举值。
+
+对基于文件的连接器使 **用以下枚举值**:
+
+| Data.format | 枚举值 |
+| ----------- | ---------- |
+| 分隔文件 | `delimited` |
+| JSON文件 | `json` |
+| 镶木文件 | `parquet` |
+
+对于所 **有基于表的连接器** ，请使用枚举值： `tabular`.
+
 **API格式**
 
 ```http
@@ -84,7 +96,7 @@ curl -X POST \
         "baseConnectionId": "a5c6b647-e784-4b58-86b6-47e784ab580b",
         "description": "Protocols source connection to ingest Orders",
         "data": {
-            "format": "parquet_xdm",
+            "format": "tabular",
             "schema": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/9e800522521c1ed7d05d3782897f6bd78ee8c2302169bc19",
                 "version": "application/vnd.adobe.xed-full-notext+json; version=1"
@@ -275,17 +287,11 @@ curl -X POST \
 ]
 ```
 
-## 创建数据集基础连接
-
-为了将外部数据引入，必 [!DNL Platform]须先获 [!DNL Experience Platform] 取数据集基础连接。
-
-要创建数据集基础连接，请按照数据集基础连接教 [程中概述的步骤操作](../create-dataset-base-connection.md)。
-
-继续按照开发人员指南中所述的步骤操作，直到您创建了数据集基础连接。 获取并存储唯一标识`$id`符()，然后在下一步中继续将其用作连接ID以创建目标连接。
-
 ## 创建目标连接
 
-您现在具有数据集基础连接、目标模式和目标数据集的唯一标识符。 您现在可以使用API创建目标 [!DNL Flow Service] 连接，以指定将包含入站源数据的数据集。
+目标连接表示到所摄取数据所进入的目的地的连接。 要创建目标连接，必须提供与数据库关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+
+您现在将唯一标识符作为目标模式目标集和连接规范ID到数据湖。 使用这些标识符，您可以使用API创建目标 [!DNL Flow Service] 连接，以指定将包含入站源数据的数据集。
 
 **API格式**
 
@@ -304,7 +310,6 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "baseConnectionId": "a5c6b647-e784-4b58-86b6-47e784ab580b",
         "name": "Target Connection for protocols",
         "description": "Target Connection for protocols",
         "data": {
@@ -325,10 +330,9 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `baseConnectionId` | 数据集基础连接的ID。 |
 | `data.schema.id` | 目标 `$id` XDM模式。 |
 | `params.dataSetId` | 目标数据集的ID。 |
-| `connectionSpec.id` | 协议应用程序的连接规范ID。 |
+| `connectionSpec.id` | 到数据湖的固定连接规范ID。 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
 **响应**
 
@@ -441,7 +445,6 @@ curl -X GET \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
-
 
 **响应**
 
@@ -578,6 +581,9 @@ curl -X GET \
 
 数据流负责从源调度和收集数据。 您可以通过执行POST请求来创建数据流，同时在有效负荷中提供以前提到的值。
 
+要计划摄取，您必须首先将开始时间值设置为纪元时间（以秒为单位）。 然后，您必须将频率值设置为以下五个选项之一： `once`、 `minute`、 `hour`、 `day`或 `week`。 间隔值指定两个连续摄取之间的周期，并且创建一次摄取不需要设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`。
+
+
 **API格式**
 
 ```http
@@ -633,13 +639,25 @@ curl -X POST \
     }'
 ```
 
+| 属性 | 描述 |
+| -------- | ----------- |
+| `flowSpec.id` | 与第三方协议源关联的数据流规范ID。 |
+| `sourceConnectionIds` | 与第三方协议源关联的源连接ID。 |
+| `targetConnectionIds` | 与第三方协议源关联的目标连接ID。 |
+| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 增量数据将根据所选列的时间戳被摄取。 |
+| `transformations.params.mappingId` | 与第三方协议源关联的映射ID。 |
+| `scheduleParams.startTime` | 开始数据流的时间（以秒为单位）。 |
+| `scheduleParams.frequency` | 可选频率值包括： `once`、 `minute`、 `hour`、 `day`或 `week`。 |
+| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，间隔不 `once` 是必需的，对于其他频率值， `15` 间隔应大于或等于。 |
+
 **响应**
 
 成功的响应会返回新 `id` 创建的数据流的ID。
 
 ```json
 {
-    "id": "8256cfb4-17e6-432c-a469-6aedafb16cd5"
+    "id": "8256cfb4-17e6-432c-a469-6aedafb16cd5",
+    "etag": "\"04004fe9-0000-0200-0000-5ebc4c8b0000\""
 }
 ```
 
