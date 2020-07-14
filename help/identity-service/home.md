@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform Identity Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d02f12202e51b00453f719604052a54f6fcfe4ab
 workflow-type: tm+mt
-source-wordcount: '1530'
+source-wordcount: '1672'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,14 @@ PII（如电子邮件地址和电话号码）用于直接识别客户。 因此�
 您的客户可以通过线上和线下渠道的组合与您的品牌进行互动，从而面临如何将这些分散的互动整合为单一客户身份的难题。
 
 [!DNL Experience Platform] 通过两个概念解决此难题： [身份命名空间](#identity-namespaces) 和 [身份图](#identity-graphs)。
+
+以下视频旨在支持您对身份和身份图的理解。 以下视频介绍Identity Collection、Identity Graphs和API的三种功能。 同时介绍了确定性和概率算法在构建私有身份图时的应用，讨论了私有身份图、Adobe Experience Platform身份服务合作图和第三方图的作用。
+
+>[!IMPORTANT]
+>
+> 概率专用图仍在开发中，并计划在以后发布。
+
+>[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
 
 ### 身份命名空间
 
@@ -122,6 +130,14 @@ PII（如电子邮件地址和电话号码）用于直接识别客户。 因此�
 ### 将数据收录到 [!DNL Identity Service]
 
 [!DNL Identity Service] 通过批量摄取或流摄 [!DNL Experience Platform] 取，消 [耗发送到](../ingestion/batch-ingestion/overview.md) 的符合 [XDM的数据](../ingestion/streaming-ingestion/overview.md)。
+
+以下视频旨在支持您对Identity Service的理解。 此视频向您展示如何将数据字段标记为身份、摄取身份数据，然后验证数据是否已写入Adobe Experience Platform身份服务专用图。
+
+>[!WARNING]
+>
+> 以 [!DNL Platform] 下视频中显示的UI已过期。 有关最新的UI屏幕截图和功能，请参阅文档。
+
+>[!VIDEO](https://video.tv.adobe.com/v/28167?quality=12&learn=on)
 
 ## 数据管理
 
