@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为客户成功连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
 workflow-type: tm+mt
-source-wordcount: '1111'
+source-wordcount: '1022'
 ht-degree: 0%
 
 ---
@@ -104,23 +104,9 @@ ht-degree: 0%
 
 ![审查](../../../images/tutorials/dataflow/customer-success/review.png)
 
-## 监视数据流
+## 监视和删除数据流
 
-创建数据流后，您可以监视通过它摄取的数据。 请按照以下步骤访问数据流的数据集监视器。
-
-在“源 ** ”工作区中，在“客户成功视图”下选择要的客户 *[!UICONTROL 成功类别]* 。 选择 *[!UICONTROL Connect Source]* ，启动身份验证界面。 要视图现有数据流，请选 *[!UICONTROL 择“现有]* ”帐户，然后选择要访问的帐户。
-
-![monitor](../../../images/tutorials/dataflow/customer-success/monitor.png)
-
-出现 *[!UICONTROL “源活动]* ”屏幕。 在此处，单击要监视其活动的数据集的名称。
-
-![select-dataflow-dataset](../../../images/tutorials/dataflow/customer-success/select-dataflow-dataset.png)
-
-出现 *[!UICONTROL 数据集活动]* 屏幕。 此页以图表形式显示消息的消费率。
-
-![数据集活动](../../../images/tutorials/dataflow/customer-success/dataset-activity.png)
-
-有关监视数据集和摄取的详细信息，请参阅有关监视流数据 [流的教程](../../../../ingestion/quality/monitor-data-flows.md)。
+创建数据流后，您可以监视通过它摄取的数据。 有关如何监视和删除数据流的详细信息，请参阅有关监视和删除 [数据流的教程](../monitor.md)。
 
 ## 后续步骤
 
