@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为数据库连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
+source-git-commit: c3d85485d0c4a910e7ba777858e2f6cf7185ef54
 workflow-type: tm+mt
-source-wordcount: '1048'
+source-wordcount: '1060'
 ht-degree: 0%
 
 ---
@@ -80,7 +80,7 @@ ht-degree: 0%
 | --- | --- |
 | 频率 | 可选频率包括分钟、小时、天和周。 |
 | 间隔 | 一个整数，它为所选频率设置间隔。 |
-| 开始时间 | UTC时间戳，将对其进行第一次摄取。 |
+| 开始时间 | UTC时间戳，将对其进行第一次摄取。 开始时间值必须以纪元时间（以秒为单位）设置。 |
 | 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *启用* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *禁用* “回填”，则只会摄取在首次摄取和开始时间之间加 *载的文件* 。 在开始时间之 *前加载的文* 件将不会被摄取。 |
 | 增量列 | 具有筛选的源模式字段集类型、日期或时间的选项。 此字段用于区分新数据和现有数据。 增量数据将根据所选列的时间戳被摄取。 |
 
