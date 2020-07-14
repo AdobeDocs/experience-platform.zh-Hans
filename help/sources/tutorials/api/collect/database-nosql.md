@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 通过源连接器和API从第三方数据库收集数据
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: a5b5e1f9a1465a3ec252bac9ba376abc8f2781b1
 workflow-type: tm+mt
-source-wordcount: '1522'
+source-wordcount: '1652'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 通过源连接器和API从第三方数据库收集数据
 
-[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+[!DNL Flow Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
 本教程介绍从第三方数据库检索数据并通过源连接器和API [!DNL Platform] 将其引入的步骤。
 
@@ -31,7 +31,7 @@ ht-degree: 1%
 * [批量摄取](../../../../ingestion/batch-ingestion/overview.md): 批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
 * [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供了使用流服务API成功连接到数据库或NoSQL系统所需了解的其他信息。
+以下各节提供您需要了解的其他信息，以便使用API成功连接到第三方数据 [!DNL Flow Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 库。
 
 ### 读取示例API调用
 
@@ -63,7 +63,19 @@ ht-degree: 1%
 
 ## 创建源连接 {#source}
 
-创建点对点XDM模式后，现在可以使用对API的POST请求创建源连 [!DNL Flow Service] 接。 源连接由基本连接、源数据文件和对描述源模式的引用组成。
+创建点对点XDM模式后，现在可以使用对API的POST请求创建源连 [!DNL Flow Service] 接。 源连接由连接ID、源数据文件和对描述源模式的引用组成。
+
+要创建源连接，还必须为数据格式属性定义枚举值。
+
+对基于文件的连接器使 **用以下枚举值**:
+
+| Data.format | 枚举值 |
+| ----------- | ---------- |
+| 分隔文件 | `delimited` |
+| JSON文件 | `json` |
+| 镶木文件 | `parquet` |
+
+对于所 **有基于表的连接器** ，请使用枚举值： `tabular`.
 
 **API格式**
 
@@ -82,32 +94,32 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Source Connection for database or NoSQL",
-        "baseConnectionId": "54c22133-3a01-4d3b-8221-333a01bd3b03",
-        "description": "Source Connection for database or NoSQL to ingest test1.Mytable",
+        "name": "Database Source Connector",
+        "baseConnectionId": "d5cbb5bc-44cc-41a2-8bb5-bc44ccf1a2fb",
+        "description": "A test source connector for a third-party database",
         "data": {
-            "format": "parquet_xdm",
+            "format": "tabular",
             "schema": {
-                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/c8c2b32d6f6a53d5ffc7212c37b3a9369282404a7bd551e8",
+                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/21b30fa2c00a2a8d7c3010272dffa16d3cc9eec504aa6c7",
                 "version": "application/vnd.adobe.xed-full-notext+json; version=1"
             }
         },
         "params": {
-            "path": "test1.Mytable"
+            "path": "ADMIN.E2E"
         },
         "connectionSpec": {
-            "id": "3c9b37f8-13a6-43d8-bad3-b863b941fedd",
+            "id": "d6b52d86-f0f8-475f-89d4-ce54c8527328",
             "version": "1.0"
         }
-}'
+    }'
 ```
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `baseConnectionId` | 数据库连接的ID。 |
+| `baseConnectionId` | 第三方数据库源的连接ID。 |
 | `data.schema.id` | 临 `$id` 时XDM模式。 |
 | `params.path` | 源文件的路径。 |
-| `connectionSpec.id` | 数据库或NoSQL系统的连接规范ID。 |
+| `connectionSpec.id` | 第三方数据库源的连接规范ID。 有关列表 [库规](#appendix) 范ID的，请参见附录。 |
 
 **响应**
 
@@ -115,8 +127,8 @@ curl -X POST \
 
 ```json
 {
-    "id": "beefc650-f2dc-45e2-afc6-50f2dcc5e2b8",
-    "etag": "\"1600f153-0000-0200-0000-5e4710880000\""
+    "id": "2f7356d9-a866-47ea-b356-d9a86687ea7a",
+    "etag": "\"c8006055-0000-0200-0000-5ecd79520000\""
 }
 ```
 
@@ -146,8 +158,8 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "type": "object",
-        "title": "Target schema for database or NoSQL",
-        "description": "Target schema for database or NoSQL",
+        "title": "Database Source Connector Target Schema",
+        "description": "Target schema for a third-party database",
         "allOf": [
             {
                 "$ref": "https://ns.adobe.com/xdm/context/profile"
@@ -159,6 +171,10 @@ curl -X POST \
                 "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details"
             }
         ],
+        "meta:containerId": "tenant",
+        "meta:resourceType": "schemas",
+        "meta:xdmType": "object",
+        "meta:class": "https://ns.adobe.com/xdm/context/profile"
     }'
 ```
 
@@ -168,13 +184,13 @@ curl -X POST \
 
 ```json
 {
-    "$id": "https://ns.adobe.com/{TENANT}/schemas/a9d63c5e3fab2687e064577959d0b91e274823f91f2f578e",
-    "meta:altId": "_{TENANT}.schemas.a9d63c5e3fab2687e064577959d0b91e274823f91f2f578e",
+    "$id": "https://ns.adobe.com/{TENANT_ID}/schemas/c44dd18673370dbf16243ba6e6fd9ae62c7916ec10477727",
+    "meta:altId": "_{TENANT_ID}.schemas.c44dd18673370dbf16243ba6e6fd9ae62c7916ec10477727",
     "meta:resourceType": "schemas",
     "version": "1.0",
-    "title": "Target schema for database or NoSQL",
+    "title": "Target schema for an Oracle connector 5/26/20",
     "type": "object",
-    "description": "Target schema for database or NoSQL",
+    "description": "Target schema for Database",
     "allOf": [
         {
             "$ref": "https://ns.adobe.com/xdm/context/profile",
@@ -205,22 +221,22 @@ curl -X POST \
         "https://ns.adobe.com/xdm/context/profile-personal-details",
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/data/record",
-        "https://ns.adobe.com/xdm/context/profile",
-        "https://ns.adobe.com/xdm/common/extensible"
+        "https://ns.adobe.com/xdm/context/profile"
     ],
     "meta:xdmType": "object",
     "meta:registryMetadata": {
-        "repo:createdDate": 1581716110281,
-        "repo:lastModifiedDate": 1581716110281,
+        "repo:createdDate": 1590523478581,
+        "repo:lastModifiedDate": 1590523478581,
         "xdm:createdClientId": "{CREATED_CLIENT_ID}",
         "xdm:lastModifiedClientId": "{LAST_MODIFIED_CLIENT_ID}",
         "xdm:createdUserId": "{CREATED_USER_ID}",
         "xdm:lastModifiedUserId": "{LAST_MODIFIED_USER_ID}",
-        "eTag": "6360f2175b40462ff25ec8735dc93a7e3af6a8faadd80a1cc500a59721e1a424"
+        "eTag": "34fdf36fc3029999a07270c4e7719d8a627f7e93e2fbc13888b3c11fb08983c0",
+        "meta:globalLibVersion": "1.10.2.1"
     },
     "meta:class": "https://ns.adobe.com/xdm/context/profile",
     "meta:containerId": "tenant",
-    "meta:tenantNamespace": "{TENANT_ID}"
+    "meta:tenantNamespace": "_{TENANT_ID}"
 }
 ```
 
@@ -245,9 +261,9 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Target Dataset for database or NoSQL",
+        "name": "Target dataset for a third-party database source connector",
         "schemaRef": {
-            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/a9d63c5e3fab2687e064577959d0b91e274823f91f2f578e",
+            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/c44dd18673370dbf16243ba6e6fd9ae62c7916ec10477727",
             "contentType": "application/vnd.adobe.xed-full-notext+json; version=1"
         }
     }'
@@ -263,21 +279,13 @@ curl -X POST \
 
 ```json
 [
-    "@/dataSets/5e47161fa49bb818ad7f47bd"
+    "@/dataSets/5ecd766e4bab17191b78e892"
 ]
 ```
 
-## 创建数据集基础连接
-
-为了将外部数据引入，必 [!DNL Platform]须先获 [!DNL Experience Platform] 取数据集基础连接。
-
-要创建数据集基础连接，请按照数据集基础连接教 [程中概述的步骤操作](../create-dataset-base-connection.md)。
-
-继续按照开发人员指南中所述的步骤操作，直到您创建了数据集基础连接。 获取并存储唯一标识符(`$id`)，然后在下一步中继续将它用作基本连接ID以创建目标连接。
-
 ## 创建目标连接
 
-您现在具有数据集基础连接、目标模式和目标数据集的唯一标识符。 使用这些标识符，您可以使用API创建目标 [!DNL Flow Service] 连接，以指定将包含入站源数据的数据集。
+您现在具有数据集基础连接、目标模式和目标数据集的唯一标识符。 使用这些标识符，您可以使用API创建目标 [!DNL Flow Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 连接，以指定将包含入站源数据的数据集。
 
 **API格式**
 
@@ -296,21 +304,19 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "baseConnectionId": "d6c3988d-14ef-4000-8398-8d14ef000021",
-        "name": "Target Connection for database or NoSQL",
-        "description": "Target Connection for database or NoSQL",
+        "name": "Target Connection for a third-party database source connector",
+        "description": "Target Connection for a third-party database source connector",
         "data": {
-            "format": "parquet_xdm",
             "schema": {
-                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/a9d63c5e3fab2687e064577959d0b91e274823f91f2f578e",
+                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/c44dd18673370dbf16243ba6e6fd9ae62c7916ec10477727",
                 "version": "application/vnd.adobe.xed-full+json;version=1.0"
             }
         },
         "params": {
-            "dataSetId": "5e47161fa49bb818ad7f47bd"
+            "dataSetId": "5ecd766e4bab17191b78e892"
         },
-        "connectionSpec": {
-            "id": "3c9b37f8-13a6-43d8-bad3-b863b941fedd",
+            "connectionSpec": {
+            "id": "c604ff05-7f1a-43c0-8e18-33bf874cb11c",
             "version": "1.0"
         }
     }'
@@ -318,14 +324,9 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `baseConnectionId` | 数据集基础连接的ID。 |
 | `data.schema.id` | 目标 `$id` XDM模式。 |
-| `params.dataSetId` | 目标数据集的ID。 |
-| `connectionSpec.id` | 第三方数据库的连接规范ID。 |
-
->[!NOTE]
->
->创建目标连接时，请确保将数据集基础连接值用于基础连接，而 `id` 非第三方源连接器的基础连接。
+| `params.dataSetId` | 在上一步收集的目标数据集的ID。 |
+| `connectionSpec.id` | 数据湖的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
 
 **响应**
 
@@ -333,8 +334,8 @@ curl -X POST \
 
 ```json
 {
-    "id": "4f3845b6-87d9-4702-b845-b687d9270297",
-    "etag": "\"2a007aa8-0000-0200-0000-5e597aaf0000\""
+    "id": "e66fdb22-06df-48ac-afdb-2206dff8ac10",
+    "etag": "\"7e03773a-0000-0200-0000-5ecd768d0000\""
 }
 ```
 
@@ -360,29 +361,29 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "version": 0,
-        "xdmSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/a9d63c5e3fab2687e064577959d0b91e274823f91f2f578e",
+        "xdmSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/c44dd18673370dbf16243ba6e6fd9ae62c7916ec10477727",
         "xdmVersion": "1.0",
         "id": null,
         "mappings": [
             {
-                "destinationXdmPath": "person.name",
-                "sourceAttribute": "Name",
+                "destinationXdmPath": "person.name.fullName",
+                "sourceAttribute": "NAME",
                 "identity": false,
                 "identityGroup": null,
                 "namespaceCode": null,
                 "version": 0
             },
             {
-                "destinationXdmPath": "mobilePhone.number",
-                "sourceAttribute": "Phone",
+                "destinationXdmPath": "_repo.createDate",
+                "sourceAttribute": "DOB",
                 "identity": false,
                 "identityGroup": null,
                 "namespaceCode": null,
                 "version": 0
             },
             {
-                "destinationXdmPath": "personalEmail.address",
-                "sourceAttribute": "email",
+                "destinationXdmPath": "_id",
+                "sourceAttribute": "ID",
                 "identity": false,
                 "identityGroup": null,
                 "namespaceCode": null,
@@ -402,75 +403,18 @@ curl -X POST \
 
 ```json
 {
-    "id": "ab91c736-1f3d-4b09-8424-311d3d3e3cea",
-    "version": 1,
-    "createdDate": 1568047685000,
-    "modifiedDate": 1568047703000,
-    "inputSchemaRef": {
-        "id": null,
-        "contentType": null
-    },
-    "outputSchemaRef": {
-        "id": "https://ns.adobe.com/{TENANT_ID}/schemas/efea012ad5deefcdf51afd23ceb3583f",
-        "contentType": "1.0"
-    },
-    "mappings": [
-        {
-            "id": "7bbea5c0f0ef498aa20aa2e2e5c22290",
-            "version": 0,
-            "createdDate": 1568047685000,
-            "modifiedDate": 1568047685000,
-            "sourceType": "text/x.schema-path",
-            "source": "Id",
-            "destination": "_id",
-            "identity": false,
-            "primaryIdentity": false,
-            "matchScore": 0.0,
-            "sourceAttribute": "Id",
-            "destinationXdmPath": "_id"
-        },
-        {
-            "id": "def7fd7db2244f618d072e8315f59c05",
-            "version": 0,
-            "createdDate": 1568047685000,
-            "modifiedDate": 1568047685000,
-            "sourceType": "text/x.schema-path",
-            "source": "FirstName",
-            "destination": "person.name.firstName",
-            "identity": false,
-            "primaryIdentity": false,
-            "matchScore": 0.0,
-            "sourceAttribute": "FirstName",
-            "destinationXdmPath": "person.name.firstName"
-        },
-        {
-            "id": "e974986b28c74ed8837570f421d0b2f4",
-            "version": 0,
-            "createdDate": 1568047685000,
-            "modifiedDate": 1568047685000,
-            "sourceType": "text/x.schema-path",
-            "source": "LastName",
-            "destination": "person.name.lastName",
-            "identity": false,
-            "primaryIdentity": false,
-            "matchScore": 0.0,
-            "sourceAttribute": "LastName",
-            "destinationXdmPath": "person.name.lastName"
-        }
-    ],
-    "status": "PUBLISHED",
-    "xdmVersion": "1.0",
-    "schemaRef": {
-        "id": "https://ns.adobe.com/{TENANT_ID}/schemas/2574494fdb01fa14c25b52d717ccb828",
-        "contentType": "1.0"
-    },
-    "xdmSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/2574494fdb01fa14c25b52d717ccb828"
+    "id": "d9d94124417d4df48ea3d00e28eb4327",
+    "version": 0,
+    "createdDate": 1590523552440,
+    "modifiedDate": 1590523552440,
+    "createdBy": "{CREATED_BY}",
+    "modifiedBy": "{MODIFIED_BY}"
 }
 ```
 
 ## 检索数据流规范 {#specs}
 
-数据流负责从源收集数据并将其引入 [!DNL Platform]。 要创建数据流，必须首先通过对API执行GET请求来获取数据流规 [!DNL Flow Service] 范。 数据流规范负责从外部数据库或NoSQL系统收集数据。
+数据流负责从源收集数据并将其引入 [!DNL Platform]。 要创建数据流，必须首先通过对API执行GET请求来获取数据流规 [!DNL Flow Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 范。 数据流规范负责从外部数据库或NoSQL系统收集数据。
 
 **API格式**
 
@@ -623,6 +567,8 @@ curl -X GET \
 
 数据流负责从源调度和收集数据。 您可以通过执行POST请求来创建数据流，同时在有效负荷中提供以前提到的值。
 
+要计划摄取，您必须首先将开始时间值设置为纪元时间（以秒为单位）。 然后，您必须将频率值设置为以下五个选项之一： `once`、 `minute`、 `hour`、 `day`或 `week`。 间隔值指定两个连续摄取之间的周期，并且创建一次摄取不需要设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`。
+
 **API格式**
 
 ```http
@@ -639,31 +585,38 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Dataflow between database or NoSQL Platform",
-        "description": "Inbound data to Platform",
+        "name": "Dataflow for a third-party database and Platform,
+        "description": "collecting ADMIN.E2E",
         "flowSpec": {
             "id": "14518937-270c-4525-bdec-c2ba7cce3860",
             "version": "1.0"
         },
         "sourceConnectionIds": [
-            "beefc650-f2dc-45e2-afc6-50f2dcc5e2b8"
+            "89cf81c9-47b4-463a-8f81-c947b4863afb"
         ],
         "targetConnectionIds": [
-            "4f3845b6-87d9-4702-b845-b687d9270297"
+            "e66fdb22-06df-48ac-afdb-2206dff8ac10"
         ],
         "transformations": [
             {
+                "name": "Copy",
+                "params": {
+                    "deltaColumn": "date-time"
+                }
+            },
+            {
                 "name": "Mapping",
                 "params": {
-                    "mappingId": "ab91c736-1f3d-4b09-8424-311d3d3e3cea",
+                    "mappingId": "d9d94124417d4df48ea3d00e28eb4327",
                     "mappingVersion": "0"
                 }
             }
         ],
         "scheduleParams": {
-            "startTime": "1567411548",
+            "startTime": "1590523836",
             "frequency":"minute",
-            "interval":"30"
+            "interval":"15",
+            "backfill": "true"
         }
     }'
 ```
@@ -673,7 +626,11 @@ curl -X POST \
 | `flowSpec.id` | 与数据库关联的数据流规范ID。 |
 | `sourceConnectionIds` | 与数据库关联的源连接ID。 |
 | `targetConnectionIds` | 与目标库关联的数据连接ID。 |
+| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 增量数据将根据所选列的时间戳被摄取。 |
 | `transformations.params.mappingId` | 与数据库关联的映射ID。 |
+| `scheduleParams.startTime` | 开始数据流的时间（以秒为单位）。 |
+| `scheduleParams.frequency` | 可选频率值包括： `once`、 `minute`、 `hour`、 `day`或 `week`。 |
+| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，间隔不 `once` 是必需的，对于其他频率值， `15` 间隔应大于或等于。 |
 
 **响应**
 
@@ -681,7 +638,8 @@ curl -X POST \
 
 ```json
 {
-    "id": "8256cfb4-17e6-432c-a469-6aedafb16cd5"
+    "id": "e0bd8463-0913-4ca1-bd84-6309134ca1f6",
+    "etag": "\"04004fe9-0000-0200-0000-5ebc4c8b0000\""
 }
 ```
 
