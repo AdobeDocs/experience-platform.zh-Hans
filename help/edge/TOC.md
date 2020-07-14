@@ -1,17 +1,17 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Web SDK帮助
+user-guide-title: Adobe Experience PlatformWeb SDK帮助
 translation-type: tm+mt
-source-git-commit: 73e0c245191c88025e59cf226ec5b07a55064b97
+source-git-commit: 71193ad346c3976f80b14ee0d6e5b12055a17473
 workflow-type: tm+mt
-source-wordcount: '89'
-ht-degree: 12%
+source-wordcount: '94'
+ht-degree: 14%
 
 ---
 
 
-# Adobe Experience Platform Web SDK {#edge}
+# Adobe Experience PlatformWeb SDK {#edge}
 
 * [Web SDK概述](home.md)
 * 入门指南 {#get-started}
@@ -33,10 +33,11 @@ ht-degree: 12%
    * [产品](what-to-implement/commerce.md)
 * 解决方案特定注意事项 {#solutions}
    * Analytics {#analytics}
-      * [分析概述](solution-specific/analytics/analytics-overview.md)
+      * [Analytics概述](solution-specific/analytics/analytics-overview.md)
+      * [在Analytics手动映射变量](solution-specific/analytics/manually-mapping-variables.md)
       * [自动映射的变量](solution-specific/analytics/automatically-mapped-vars.md)
    * Audience Manager {#aam}
-      * [受众管理器概述](solution-specific/audience-manager/audience-manager-overview.md)
+      * [Audience Manager 概述](solution-specific/audience-manager/audience-manager-overview.md)
    * Target {#target}
       * [Target 概述](solution-specific/target/target-overview.md)
       * [闪变管理](solution-specific/target/flicker-management.md)
