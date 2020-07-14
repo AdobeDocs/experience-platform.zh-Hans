@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为协议连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
 workflow-type: tm+mt
-source-wordcount: '1073'
+source-wordcount: '1071'
 ht-degree: 1%
 
 ---
@@ -85,19 +85,19 @@ ht-degree: 1%
 | 开始时间 | UTC时间戳，将对其进行第一次摄取。 |
 | 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *[!UICONTROL 启用]* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *[!UICONTROL 禁用]* “回填”，则只会摄取在首次摄取和开始时间之间加 *[!UICONTROL 载的文件]* 。 在开始时间之 *[!UICONTROL 前加载的文]* 件将不会被摄取。 |
 
-数据集流设计为按计划自动摄取数据。 如果您希望通过此工作流只收录一次，可以将 **[!UICONTROL Frequency]** （频率）配置为“Day”，并为Interval（间隔）应用一个非常大的 **[!UICONTROL 数字]**，如10000或类似。
+数据流设计为按计划自动摄取数据。 如果您希望通过此工作流只收录一次，可以将 **[!UICONTROL Frequency]** （频率）配置为“Day”，并为Interval（间隔）应用一个非常大的 **[!UICONTROL 数字]**，如10000或类似。
 
 为计划提供值，然后单击“下 **[!UICONTROL 一步]**”。
 
 ![调度](../../../images/tutorials/dataflow/protocols/scheduling.png)
 
-## 命名数据集流
+## 命名数据流
 
 出现 *[!UICONTROL 数据集流详细信]* 息步骤，您必须在该步骤中为数据集流提供名称和可选描述。 完成后，单击&#x200B;**[!UICONTROL 下一步]**。
 
 ![dataset-flow-details](../../../images/tutorials/dataflow/protocols/dataset-flow-details.png)
 
-## 查看数据集流
+## 查看数据流
 
 此时 *[!UICONTROL 会出现]* “审阅”步骤，允许您在创建新数据流之前对其进行查看。 详细信息按以下类别分组：
 
@@ -109,9 +109,9 @@ ht-degree: 1%
 
 ![审查](../../../images/tutorials/dataflow/protocols/review.png)
 
-## 监控数据集流
+## 监视和删除数据流
 
-创建数据集流后，您可以监视通过它摄取的数据。 有关如何监视数据集流的详细信息，请参阅有关帐户和数据集流 [的教程](../monitor.md)。
+创建数据流后，您可以监视通过它摄取的数据。 有关如何监视和删除数据流的详细信息，请参阅有关监视和删除 [数据流的教程](../monitor.md)。
 
 ## 后续步骤
 
