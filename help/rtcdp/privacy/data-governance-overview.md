@@ -4,10 +4,10 @@ seo-title: 实时客户数据平台中的数据治理
 description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 seo-description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 7f6612f7dd649d68aa7ebe5b971b72d7b433b1e3
 workflow-type: tm+mt
-source-wordcount: '1085'
-ht-degree: 1%
+source-wordcount: '1056'
+ht-degree: 0%
 
 ---
 
@@ -49,10 +49,7 @@ Data Governance允许您在数据集或数据集字段级别对数据应用使�
 
 Adobe Experience Platform为常见 **客户体验使** 用案例提供了若干核心策略。 通过导航到“策略”工作区并选择“浏览”选 **[!UICONTROL 项卡]** ，可以在UI中 **[!UICONTROL 查看这些]** 策略。 有关在 [UI中使用策略](../../data-governance/policies/user-guide.md) （包括如何制定您自己的自定义策略）的更详细步骤，请参阅Experience Platform文档中的策略用户指南。
 
-## （测试版）强制数据使用合规性 {#enforce-data-usage-compliance}
-
->[!IMPORTANT]
->此功能当前为测试版，并非所有用户都可使用。 可以根据请求启用它。 文档和功能可能会发生变化。
+## 强制实施数据使用合规性 {#enforce-data-usage-compliance}
 
 在标记数据并定义使用策略后，您可以强制数据使用符合策略。 在实时CDP中将受众段激活到目标时，如果发生任何违规行为，数据管理将自动实施使用策略。
 
