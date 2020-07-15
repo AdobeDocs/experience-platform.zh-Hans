@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform数据管理
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 7f6612f7dd649d68aa7ebe5b971b72d7b433b1e3
 workflow-type: tm+mt
-source-wordcount: '1448'
+source-wordcount: '1434'
 ht-degree: 0%
 
 ---
@@ -92,7 +92,6 @@ Data Governance目前支持两级（数据集和字段）的DULE标签。 Data G
 
 后续版本将提供以下功能：
 
-* 自定义数据使用标签： 根据您组织的需求创建新标签和定义。
 * 策略实施： 使用策略框架，在不同的数据访问模式中建议并实施策略。
 * 审计： 监控数据访问活动，识别并报告合规性问题。
 
