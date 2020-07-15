@@ -4,9 +4,9 @@ solution: Experience Platform
 title: '使用API管理数据使用标签 '
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1fce86193bc1660d0f16408ed1b9217368549f6c
+source-git-commit: b51a13e2eab967099c84d1cca2233e2ace554e01
 workflow-type: tm+mt
-source-wordcount: '610'
+source-wordcount: '995'
 ht-degree: 3%
 
 ---
@@ -14,19 +14,223 @@ ht-degree: 3%
 
 # 使用API管理数据使用标签
 
-数据集服务API允许您以编程方式管理数据集的使用标签。 它是Adobe Experience Platform的数据目录功能的一部分，但与管理数据集元数据的Catalog Service API分开。
+此文档提供了如何使用策略服务API和数据集服务API管理数据使用标签的步骤。
 
-此文档提供有关如何使用数据集服务API管理数据集和字段级别的数据使用标签的步骤。
+策 [略服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) 提供了多个端点，允许您为组织创建和管理数据使用标签。
+
+数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的Catalog Service API分开。
 
 ## 入门指南
 
 在阅读本指南之前，请按照目录开发人 [员指南](../../catalog/api/getting-started.md) “入门”部分中概述的步骤收集所需凭据以调用 [!DNL Platform] API。
 
-要调用以下各节中概述的端点，您必须具有特定数 `id` 据集的唯一值。 如果没有此值，请参阅列出目录对 [象的指南](../../catalog/api/list-objects.md) ，以查找现有数据集的ID。
+要调用此文档中概述的数据集服务端点，您必须具有特定 `id` 数据集的唯一值。 如果没有此值，请参阅列出目录对 [象的指南](../../catalog/api/list-objects.md) ，以查找现有数据集的ID。
 
-## 查找数据集的标签 {#lookup}
+## 列表所有标签 {#list-labels}
 
-您可以通过发出GET请求来查找已应用于现有数据集的数据使用标签。
+使用 [!DNL Policy Service] API，您可以通过分别向 `core` 或 `custom` 发出GET请求来列表所 `/labels/core` 有或 `/labels/custom`标签。
+
+**API格式**
+
+```http
+GET /labels/core
+GET /labels/custom
+```
+
+**请求**
+
+以下请求将列表在您的组织下创建的所有自定义标签。
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/dulepolicy/labels/custom' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**响应**
+
+成功的响应返回从系统检索的一列表自定义标签。 由于上面的示例请求是向 `/labels/custom`的，因此下面的响应仅显示自定义标签。
+
+```json
+{
+    "_page": {
+        "count": 2
+    },
+    "_links": {
+        "page": {
+            "href": "https://platform.adobe.io:443/data/foundation/dulepolicy/labels/custom?{?limit,start,property}",
+            "templated": true
+        }
+    },
+    "children": [
+        {
+            "name": "L1",
+            "category": "Custom",
+            "friendlyName": "Banking Information",
+            "description": "Data containing banking information for a customer.",
+            "imsOrg": "{IMS_ORG}",
+            "sandboxName": "{SANDBOX_NAME}",
+            "created": 1594396718731,
+            "createdClient": "{CLIENT_ID}",
+            "createdUser": "{USER_ID}",
+            "updated": 1594396718731,
+            "updatedClient": "{CLIENT_ID}",
+            "updatedUser": "{USER_ID}",
+            "_links": {
+                "self": {
+                    "href": "https://platform.adobe.io:443/data/foundation/dulepolicy/labels/custom/L1"
+                }
+            }
+        },
+        {
+            "name": "L2",
+            "category": "Custom",
+            "friendlyName": "Purchase History Data",
+            "description": "Data containing information on past transactions",
+            "imsOrg": "{IMS_ORG}",
+            "sandboxName": "{SANDBOX_NAME}",
+            "created": 1594397415663,
+            "createdClient": "{CLIENT_ID}",
+            "createdUser": "{USER_ID}",
+            "updated": 1594397728708,
+            "updatedClient": "{CLIENT_ID}",
+            "updatedUser": "{USER_ID}",
+            "_links": {
+                "self": {
+                    "href": "https://platform.adobe.io:443/data/foundation/dulepolicy/labels/custom/L2"
+                }
+            }
+        }
+    ]
+}
+```
+
+## 查找标签 {#look-up-label}
+
+通过将该标签的属性包含在到策略服 `name` 务API的GET请求的路径中，可以查找特定标签。
+
+**API格式**
+
+```http
+GET /labels/core/{LABEL_NAME}
+GET /labels/custom/{LABEL_NAME}
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `{LABEL_NAME}` | 要 `name` 查找的自定义标签的属性。 |
+
+**请求**
+
+以下请求将检索自定 `L2`义标签，如路径所示。
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/dulepolicy/labels/custom/L2' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**响应**
+
+成功的响应会返回自定义标签的详细信息。
+
+```json
+{
+    "name": "L2",
+    "category": "Custom",
+    "friendlyName": "Purchase History Data",
+    "description": "Data containing information on past transactions",
+    "imsOrg": "{IMS_ORG}",
+    "sandboxName": "{SANDBOX_NAME}",
+    "created": 1594397415663,
+    "createdClient": "{CLIENT_ID}",
+    "createdUser": "{USER_ID}",
+    "updated": 1594397728708,
+    "updatedClient": "{CLIENT_ID}",
+    "updatedUser": "{USER_ID}",
+    "_links": {
+        "self": {
+            "href": "https://platform.adobe.io:443/data/foundation/dulepolicy/labels/custom/L2"
+        }
+    }
+}
+```
+
+## 创建或更新自定义标签 {#create-update-label}
+
+要创建或更新自定义标签，必须向策略服务API发出PUT请求。
+
+**API格式**
+
+```http
+PUT /labels/custom/{LABEL_NAME}
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `{LABEL_NAME}` | 自 `name` 定义标签的属性。 如果不存在具有此名称的自定义标签，则将创建新标签。 如果存在，则该标签将更新。 |
+
+**请求**
+
+以下请求创建新标签， `L3`该标签旨在描述包含与客户所选付款计划相关的信息的数据。
+
+```shell
+curl -X PUT \
+  'https://platform.adobe.io/data/foundation/dulepolicy/labels/custom/L3' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+        "name": "L3",
+        "category": "Custom",
+        "friendlyName": "Payment Plan",
+        "description": "Data containing information on selected payment plans."
+      }'
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `name` | 标签的唯一字符串标识符。 此值用于查找目的并将标签应用于数据集和字段，因此建议它简短而简明。 |
+| `category` | 标签的类别。 虽然您可以为自定义标签创建自己的类别，但强烈建议您 `Custom` 在UI中显示标签时使用。 |
+| `friendlyName` | 用于显示目的的标签的友好名称。 |
+| `description` | （可选）用于提供更多上下文的标签描述。 |
+
+**响应**
+
+成功的响应会返回自定义标签的详细信息，如果更新了现有标签，则返回HTTP代码200（确定）；如果创建了新标签，则返回201（已创建）。
+
+```json
+{
+  "name": "L3",
+  "category": "Custom",
+  "friendlyName": "Payment Plan",
+  "description": "Data containing information on selected payment plans.",
+  "imsOrg": "{IMS_ORG}",
+  "sandboxName": "{SANDBOX_NAME}",
+  "created": 1529696681413,
+  "createdClient": "{CLIENT_ID}",
+  "createdUser": "{USER_ID}",
+  "updated": 1529697651972,
+  "updatedClient": "{CLIENT_ID}",
+  "updatedUser": "{USER_ID}",
+  "_links": {
+    "self": {
+      "href": "https://platform.adobe.io:443/data/foundation/dulepolicy/labels/custom/L3"
+    }
+  }
+}
+```
+
+## 查找数据集的标签 {#look-up-dataset-labels}
+
+通过向Dataset Service API发出GET请求，可以查找已应用于现有数据集的数据使用标签。
 
 **API格式**
 
@@ -77,9 +281,9 @@ curl -X GET \
 | `labels` | 应用于数据集的列表数据使用标签。 |
 | `optionalLabels` | 列表数据集中已应用数据使用标签的各个字段。 |
 
-## 将标签应用于数据集
+## 将标签应用于数据集 {#apply-dataset-labels}
 
-您可以通过在POST或PUT请求的有效负荷中提供数据集的标签集来创建这些标签。 使用以下任一方法将覆盖任何现有标签，并用有效负荷中提供的标签替换它们。
+您可以通过在POST或PUT请求的有效负荷中为数据集创建一组标签到数据集服务API。 使用以下任一方法将覆盖任何现有标签，并用有效负荷中提供的标签替换它们。
 
 **API格式**
 
@@ -105,18 +309,18 @@ curl -X POST \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
-  "labels": [ "C1", "C2", "C3", "I1", "I2" ],
-  "optionalLabels": [
-    {
-      "option": {
-        "id": "https://ns.adobe.com/{TENANT_ID}/schemas/c6b1b09bc3f2ad2627c1ecc719826836",
-        "contentType": "application/vnd.adobe.xed-full+json;version=1",
-        "schemaPath": "/properties/repositoryCreatedBy"
-      },
-      "labels": [ "S1", "S2" ]
-    }
-  ]
-}'
+        "labels": [ "C1", "C2", "C3", "I1", "I2" ],
+        "optionalLabels": [
+          {
+            "option": {
+              "id": "https://ns.adobe.com/{TENANT_ID}/schemas/c6b1b09bc3f2ad2627c1ecc719826836",
+              "contentType": "application/vnd.adobe.xed-full+json;version=1",
+              "schemaPath": "/properties/repositoryCreatedBy"
+            },
+            "labels": [ "S1", "S2" ]
+          }
+        ]
+      }'
 ```
 
 | 属性 | 描述 |
@@ -144,9 +348,9 @@ curl -X POST \
 }
 ```
 
-## 删除数据集的标签
+## 从数据集中删除标签 {#remove-dataset-labels}
 
-您可以通过发出DELETE请求删除应用于数据集的标签。
+您可以通过向Dataset Service API发出DELETE请求来删除应用于数据集的标签。
 
 **API格式**
 
@@ -171,11 +375,13 @@ curl -X DELETE \
 
 **响应**
 
-成功响应HTTP状态200(OK)，表示标签已被删除。 您可以 [在单独的调用中查找](#lookup) 数据集的现有标签以确认这一点。
+成功响应HTTP状态200(OK)，表示标签已被删除。 您可以 [在单独的调用中查找](#look-up-dataset-labels) 数据集的现有标签以确认这一点。
 
 ## 后续步骤
 
-现在，您已在数据集和字段级别添加了数据使用标签，可以开始将数据引入Experience Platform。 要了解更多信息，请阅读开始 [获取文档](../../ingestion/home.md)。
+通过阅读此文档，您学习了如何使用API管理数据使用标签。
+
+在数据集和字段级别添加数据使用标签后，您可以开始将数据引入Experience Platform。 要了解更多信息，请阅读开始 [获取文档](../../ingestion/home.md)。
 
 您现在还可以根据已应用的标签定义数据使用策略。 有关详细信息，请参阅 [数据使用策略概述](../policies/overview.md)。
 
