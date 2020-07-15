@@ -3,18 +3,19 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 发行说明
 translation-type: tm+mt
-source-git-commit: b6cfdf56c20065bdc3e8a9fedf6007ddd74eaeaa
+source-git-commit: c59acbe9acce65ab81a53cfe8f8f3373cf9ae388
 workflow-type: tm+mt
-source-wordcount: '23'
-ht-degree: 95%
+source-wordcount: '24'
+ht-degree: 100%
 
 ---
 
 
 # Adobe Experience Platform 发行说明 {#release-notes}
 
-* [2020 年 6 月](latest/latest.md)
-* [2020年5月](2020/may-2020.md)
+* [2020 年 7 月](latest/latest.md)
+* [2020 年 6 月](2020/june-2020.md)
+* [2020 年 5 月](2020/may-2020.md)
 * [2020 年 4 月](2020/april-2020.md)
 * [2020 年 3 月](2020/march-2020.md)
 * [2020 年 2 月](2020/february-2020.md)
