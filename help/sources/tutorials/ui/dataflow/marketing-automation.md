@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为营销自动化连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
+source-git-commit: 3a1ecca49809a6ebbc94bbbef93eef56c8faf118
 workflow-type: tm+mt
-source-wordcount: '1022'
+source-wordcount: '1164'
 ht-degree: 0%
 
 ---
@@ -80,16 +80,29 @@ ht-degree: 0%
 
 | 字段 | 描述 |
 | --- | --- |
-| 频率 | 可选频率包括分钟、小时、天和周。 |
+| 频率 | 可选频率包括一次、分钟、小时、天和周。 |
 | 间隔 | 一个整数，它为所选频率设置间隔。 |
-| 开始时间 | UTC时间戳，将对其进行第一次摄取。 |
-| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *[!UICONTROL 启用]* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *[!UICONTROL 禁用]* “回填”，则只会摄取在首次摄取和开始时间之间加 *[!UICONTROL 载的文件]* 。 在开始时间之 *[!UICONTROL 前加载的文]* 件将不会被摄取。 |
+| 开始时间 | UTC时间戳，指示何时设置第一次摄取 |
+| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *启用* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *禁用* “回填”，则只会摄取在首次摄取和开始时间之间加 *载的文件* 。 在开始时间之 *前加载的文* 件将不会被摄取。 |
+| 增量列 | 具有筛选的源模式字段集类型、日期或时间的选项。 此字段用于区分新数据和现有数据。 增量数据将根据所选列的时间戳被摄取。 |
 
-数据流设计为按计划自动摄取数据。 如果您希望通过此工作流只收录一次，可以将 **[!UICONTROL Frequency]** （频率）配置为“Day”，并为Interval（间隔）应用一个非常大的 **[!UICONTROL 数字]**，如10000或类似。
+数据流设计为按计划自动摄取数据。 开始。 然后，设置时间间隔以指定两个流运行之间的周期。 间隔的值应为非零整数，并应设置为大于或等于15。
 
-为计划提供值，然后单击“下 **[!UICONTROL 一步]**”。
+要设置摄取的开始时间，请调整开始时间框中显示的日期和时间。 或者，也可以选择日历图标以编辑开始时间值。 开始时间必须大于或等于当前UTC时间。
 
-![调度](../../../images/tutorials/dataflow/marketing-automation/scheduling.png)
+选择 **[!UICONTROL 加载增量数据]** ，以分配增量列。 此字段区分新数据和现有数据。
+
+![](../../../images/tutorials/dataflow/databases/schedule-interval-on.png)
+
+### 设置一次性摄取数据流
+
+要设置一次性摄取，请选择频率下拉箭头，然后选择“ **[!UICONTROL 一次]**”。
+
+>[!TIP] **[!UICONTROL 在一]** 次性摄取 **** 期间，间隔和回填不可见。
+
+![](../../../images/tutorials/dataflow/databases/schedule-once.png)
+
+向计划提供适当的值后，选择“下 **[!UICONTROL 一步]**”。
 
 ## 查看数据流
 
