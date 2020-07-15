@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据使用标签用户指南
 topic: labels
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: b36f67fd7d597d5d6a8cd514d95908ae26189c83
 workflow-type: tm+mt
-source-wordcount: '975'
+source-wordcount: '1112'
 ht-degree: 0%
 
 ---
@@ -99,6 +99,30 @@ ht-degree: 0%
 ![选择多个字段以同时应用字段级标签。](../images/labels/fields_select_multiple.png)
 
 请务必记住，继承仅从顶级向下（数据集→字段）移动，这意味着在字段级别应用的标签不会传播到其他字段或数据集。
+
+## 管理自定义标签
+
+您可以在UI的“策略”工作区中创 *[!UICONTROL 建您自己]* 的自定义使 [!DNL Experience Platform] 用标签。 单击 **[!UICONTROL 左侧导]** 航中的“策略”，然后单击“ **[!UICONTROL 标签]** ”以视图现有标签的列表。 在此处，单击“ **[!UICONTROL 创建标签]**”。
+
+![](../images/labels/create-label-btn.png)
+
+将出 *[!UICONTROL 现“创建]* 标签”对话框。 从此处，为新标签提供以下信息：
+
+* **[!UICONTROL 标识符]**: 标签的唯一标识符。 此值用于查找目的，因此应简短而简明。
+* **[!UICONTROL 名称]**: 标签的友好显示名称。
+* **[!UICONTROL 描述]**: （可选）用于提供更多上下文的标签的说明。
+
+完成后，单击“ **[!UICONTROL 创建]**”。
+
+![](../images/labels/create-label.png)
+
+对话框关闭，新创建的自定义标签显示在列表的“标签” *[!UICONTROL 选项卡]* 下。
+
+![](../images/labels/label-created.png)
+
+现在，在编辑数据集和字段的使 *[!UICONTROL 用标签时]* ，或在创建数据使用策略时，可以在“自定义标签”下选择该标签。
+
+<img src="../images/labels/add-custom-label.png" width="600" /><br>
 
 ## 后续步骤
 
