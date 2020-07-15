@@ -4,9 +4,9 @@ seo-title: Experience PlatformWeb SDK的边缘配置
 description: '了解如何配置Experience Platform边缘网络。 '
 seo-description: '了解如何配置Experience Platform边缘网络。 '
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 013e6abb0922e39bd6b9da6a66bba9a1bcefdd25
 workflow-type: tm+mt
-source-wordcount: '882'
+source-wordcount: '881'
 ht-degree: 2%
 
 ---
@@ -28,7 +28,7 @@ Adobe Experience PlatformWeb SDK的配置分为两个位置。 SDK [中的](conf
 >
 >无论客户是否使用标签管理器，允许列表上的客户都可 [!DNL Launch] 以使用边缘配置工具。 此外，用户需要中的“开发”权 [!DNL Launch]限。 有关更多 [详细信息](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/user-permissions.html) ，请参 [!DNL Launch] 阅文档中的“用户权限”文章。
 
-单击屏幕右上角的“UICONTROL **[新边缘配置]** ”可创建边缘配置。 提供名称和说明后，系统会要求您为每个环境提供默认设置。
+单击屏幕右上方区域的“ **[!UICONTROL 新建边缘配置]** ”可创建边缘配置。 提供名称和说明后，系统会要求您为每个环境提供默认设置。
 
 ### 默认环境设置
 
