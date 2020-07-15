@@ -4,17 +4,17 @@ solution: Experience Platform
 title: 在UI中为协议连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
+source-git-commit: 2590c28df6d0fff3e207eb232a02abe16830ee17
 workflow-type: tm+mt
-source-wordcount: '1071'
-ht-degree: 1%
+source-wordcount: '1205'
+ht-degree: 0%
 
 ---
 
 
 # 在UI中为协议连接器配置数据流
 
-数据集流是从源中检索数据并将其摄取到任务数据集的计划Adobe Experience Platform。 本教程提供使用协议帐户配置新数据集流的步骤。
+数据流是从源中检索数据并将其引入Adobe Experience Platform数据集的计划任务。 本教程提供使用协议帐户配置新数据流的步骤。
 
 ## 入门指南
 
@@ -70,30 +70,45 @@ ht-degree: 1%
 
 根据您的需要，您可以选择直接映射字段，或使用映射器函数转换源数据以导出计算值或计算值。 有关数据映射和映射器功能的详细信息，请参阅将CSV数据 [映射到XDM模式字段的教程](../../../../ingestion/tutorials/map-a-csv-file.md)。
 
-“ *[!UICONTROL 映射]* ”屏幕还允许您设 *[!UICONTROL 置“增量”列]*。 创建数据集流时，您可以设置任何时间戳字段作为确定在计划增量摄取中要摄取哪些记录的基础。
+“ *[!UICONTROL 映射]* ”屏幕还允许您设 *[!UICONTROL 置“增量”列]*。 创建数据流时，您可以将任何时间戳字段设置为基准，以决定在计划的增量摄取中摄取哪些记录。
 
 映射源数据后，单击“下 **[!UICONTROL 一步]**”。
 
 ![](../../../images/tutorials/dataflow/protocols/mapping.png)
 
+## 计划摄取运行
+
 此时 *[!UICONTROL 将显示]* “计划”步骤，允许您配置摄取计划，以使用配置的映射自动摄取所选源数据。 下表概述了用于计划的不同可配置字段：
 
 | 字段 | 描述 |
 | --- | --- |
-| 频率 | 可选频率包括分钟、小时、天和周。 |
+| 频率 | 可选频率包括一次、分钟、小时、天和周。 |
 | 间隔 | 一个整数，它为所选频率设置间隔。 |
-| 开始时间 | UTC时间戳，将对其进行第一次摄取。 |
-| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *[!UICONTROL 启用]* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *[!UICONTROL 禁用]* “回填”，则只会摄取在首次摄取和开始时间之间加 *[!UICONTROL 载的文件]* 。 在开始时间之 *[!UICONTROL 前加载的文]* 件将不会被摄取。 |
+| 开始时间 | UTC时间戳，指示何时设置第一次摄取 |
+| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *启用* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *禁用* “回填”，则只会摄取在首次摄取和开始时间之间加 *载的文件* 。 在开始时间之 *前加载的文* 件将不会被摄取。 |
+| 增量列 | 具有筛选的源模式字段集类型、日期或时间的选项。 此字段用于区分新数据和现有数据。 增量数据将根据所选列的时间戳被摄取。 |
 
-数据流设计为按计划自动摄取数据。 如果您希望通过此工作流只收录一次，可以将 **[!UICONTROL Frequency]** （频率）配置为“Day”，并为Interval（间隔）应用一个非常大的 **[!UICONTROL 数字]**，如10000或类似。
+数据流设计为按计划自动摄取数据。 开始。 然后，设置时间间隔以指定两个流运行之间的周期。 间隔的值应为非零整数，并应设置为大于或等于15。
 
-为计划提供值，然后单击“下 **[!UICONTROL 一步]**”。
+要设置摄取的开始时间，请调整开始时间框中显示的日期和时间。 或者，也可以选择日历图标以编辑开始时间值。 开始时间必须大于或等于当前UTC时间。
 
-![调度](../../../images/tutorials/dataflow/protocols/scheduling.png)
+选择 **[!UICONTROL 加载增量数据]** ，以分配增量列。 此字段区分新数据和现有数据。
+
+![](../../../images/tutorials/dataflow/databases/schedule-interval-on.png)
+
+### 设置一次性摄取数据流
+
+要设置一次性摄取，请选择频率下拉箭头，然后选择“ **[!UICONTROL 一次]**”。
+
+>[!TIP] **[!UICONTROL 在一]** 次性摄取 **** 期间，间隔和回填不可见。
+
+![](../../../images/tutorials/dataflow/databases/schedule-once.png)
+
+向计划提供适当的值后，选择“下 **[!UICONTROL 一步]**”。
 
 ## 命名数据流
 
-出现 *[!UICONTROL 数据集流详细信]* 息步骤，您必须在该步骤中为数据集流提供名称和可选描述。 完成后，单击&#x200B;**[!UICONTROL 下一步]**。
+出现 *[!UICONTROL 数据流详细]* 信息步骤，您必须在该步骤中为数据流提供名称和可选说明。 完成后，单击&#x200B;**[!UICONTROL 下一步]**。
 
 ![dataset-flow-details](../../../images/tutorials/dataflow/protocols/dataset-flow-details.png)
 
@@ -115,7 +130,7 @@ ht-degree: 1%
 
 ## 后续步骤
 
-通过遵循本教程，您成功创建了数据集流，从营销自动化系统导入数据并获得了有关监视数据集的见解。 现在，下游服务（如和）可 [!DNL Platform] 以使用传入 [!DNL Real-time Customer Profile] 数据 [!DNL Data Science Workspace]。 有关更多详细信息，请参阅以下文档:
+通过遵循本教程，您成功创建了一个数据流以从营销自动化系统导入数据并获得了有关监视数据集的洞察。 现在，下游服务（如和）可 [!DNL Platform] 以使用传入 [!DNL Real-time Customer Profile] 数据 [!DNL Data Science Workspace]。 有关更多详细信息，请参阅以下文档:
 
 - [实时客户用户档案概述](../../../../profile/home.md)
 - [数据科学工作区概述](../../../../data-science-workspace/home.md)
@@ -124,11 +139,11 @@ ht-degree: 1%
 
 以下部分提供了有关使用源连接器的其他信息。
 
-### 禁用数据集流
+### 禁用数据流
 
-创建数据集流时，数据集流会立即变为活动状态，并根据给定的计划来收集数据。 您可以按照以下说明随时禁用活动数据集流。
+创建数据流时，它会立即变为活动状态，并根据给定的计划接收数据。 您可以按照以下说明随时禁用活动数据流。
 
-在“数 *[!UICONTROL 据集流]* ”屏幕中，选择要禁用的数据集流的名称。
+在“数 *[!UICONTROL 据流]* ”屏幕中，选择要禁用的数据流的名称。
 
 ![browse-dataset-flow](../../../images/tutorials/dataflow/protocols/view-dataset-flows.png)
 
