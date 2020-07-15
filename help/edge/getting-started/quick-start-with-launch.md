@@ -4,9 +4,9 @@ seo-title: Adobe Experience PlatformWeb SDK快速开始Launch
 description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
 seo-description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
 translation-type: tm+mt
-source-git-commit: 9b8bddf39301cdc39bfa5370ef98d99434fc64f8
+source-git-commit: 9d58693646f472e84f04a64c4ad66f61dc5d3eba
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '560'
 ht-degree: 4%
 
 ---
@@ -31,8 +31,9 @@ ht-degree: 4%
 
 Experience Platform边缘网络将数据作为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义边缘网络希望数据的格式。 要发送数据，您需要定义模式。 确保您完成以下操作：
 
-- [创建模式](../../xdm/tutorials/create-schema-ui.md)
-- 将Adobe Experience PlatformWeb SDK混合添加到您创建的模式
+1. [创建模式](../../xdm/tutorials/create-schema-ui.md)
+2. 将AEP Web SDK ExperienceEvent Mixin添加到您创建的模式。
+3. 根据您创建的模式创建数据集。
 
 以下视频旨在支持您为Web SDK数据创建模式、数据集和流源连接器。
 
