@@ -4,9 +4,9 @@ seo-title: Experience PlatformWeb SDK的边缘配置
 description: '了解如何配置Experience Platform边缘网络。 '
 seo-description: '了解如何配置Experience Platform边缘网络。 '
 translation-type: tm+mt
-source-git-commit: 013e6abb0922e39bd6b9da6a66bba9a1bcefdd25
+source-git-commit: 2d47a00c91000c68c7331f88015264259a4e6323
 workflow-type: tm+mt
-source-wordcount: '881'
+source-wordcount: '880'
 ht-degree: 2%
 
 ---
@@ -92,7 +92,7 @@ ID同步可以分组为容器，以允许在不同时间运行不同的ID同步�
 
 目标允许客户通过使用属性来控制权限。 详细信息可在目标文 [档的“企业](https://docs.adobe.com/content/help/en/target/using/administer/manage-users/enterprise/properties-overview.html) 权限”部分找到。
 
-可以在Adobe Target>设置> [!UICONTROL UICONTROL属性中][!UICONTROL 找到] 属性 [令牌]
+可以在“Adobe Target”>“设置” [!UICONTROL >“属性] ” [!UICONTROL 中找到属] 性令 [!UICONTROL 牌]
 
 ##### [!UICONTROL 目标环境ID]
 
