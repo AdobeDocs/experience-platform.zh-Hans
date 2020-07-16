@@ -4,9 +4,9 @@ solution: Experience Platform
 title: PDPA（泰国）常见问题解答
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: ccfc90fe6de80ab050c3b937be7626be4e90db1c
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
 workflow-type: tm+mt
-source-wordcount: '449'
+source-wordcount: '445'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # PDPA（泰国）常见问题解答
 
-本文档提供有关泰国个人数据保护法(PDPA)及其在Adobe Experience Cloud中实施的常见问题的解答。
+本文档提供有关泰国(PDPA) [!DNL Personal Data Protection Act] 及其在Adobe Experience Cloud中实施的常见问题的解答。
 
 在本文档中使用的与PDPA相关的各个术语的定义可在PDPA(泰 [国)术语文章中找到](./terminology.md) 。
 
