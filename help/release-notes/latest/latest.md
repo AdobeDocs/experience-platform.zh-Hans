@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: July 15, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: e864073c27ba20ce32c962c469aed52608f199ac
+source-git-commit: 9fbd30adcb29c8925f02745be924477eb4e3fe2a
 workflow-type: tm+mt
-source-wordcount: '686'
+source-wordcount: '681'
 ht-degree: 4%
 
 ---
@@ -73,7 +73,7 @@ Experience Platform提供RESTful API和交互式UI，使您能轻松为各种数
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 用于删除数据流的API和UI支持 | 现在，可通过API或使用UI删除出错或变得不必要的数据流。 |
+| UI支持删除数据流 | 现在，可以通过UI删除有错误或已变得不必要的数据流。 |
 | 对一次性摄取的API和UI支持 | 现在，可以通过API或使用UI执行数据流的一次性摄取，其中仅提供开始日期，不计划将来的摄取。 |
 
 要进一步了解源，请参阅 [源概述](../../sources/home.md)。
