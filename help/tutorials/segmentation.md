@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 分段教程
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: b0ef50e25c27aba121bb01c602867953eb2a5f7e
+source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
 workflow-type: tm+mt
-source-wordcount: '556'
+source-wordcount: '538'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # 分段教程
 
-Adobe Experience Platform细分服务提供用户界面和RESTful API，允许您根据实时客户用户档案数据构建细分和生成受众。 这些细分在平台上集中配置和维护，任何Adobe解决方案均可轻松访问。 要了解有关分段的更多信息，请首先阅读分段 [服务概述](../segmentation/home.md)。
+Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTful API，使您能够根据数据构建细分和生成 [!DNL Real-time Customer Profile] 受众。 这些细分集中进行配置和维 [!DNL Platform]护，任何Adobe解决方案都可轻松访问。 要了解有关分段的更多信息，请首先阅读分段 [服务概述](../segmentation/home.md)。
 
 ## 创建区段定义
 
-段定义是用于描述目标受众的关键特性或行为的规则集。 概念化后，使用细分定义中概述的规则确定某个细分的合格受众成员。 可以使用平台用户界面或API完成段定义的开发、测试、预览和保存。 要创建区段定义，请按照创 [建区段API教程](../segmentation/tutorials/create-a-segment.md) 或区 [段生成器UI用户指南进行操作](../segmentation/ui/overview.md)。
+段定义是用于描述目标受众的关键特性或行为的规则集。 概念化后，使用细分定义中概述的规则确定某个细分的合格受众成员。 可以使用用户界面或API完成区段定义的开发、测 [!DNL Platform] 试、预览和保存。 要创建区段定义，请按照创 [建区段API教程](../segmentation/tutorials/create-a-segment.md) 或区 [段生成器UI用户指南进行操作](../segmentation/ui/overview.md)。
 
 ## 评估区段和访问结果
 
@@ -26,15 +26,15 @@ Adobe Experience Platform细分服务提供用户界面和RESTful API，允许�
 
 ## 导出区段数据
 
-导出包含用户档案数据的区段 [需要先创建要将导出到的数据集](../segmentation/tutorials/create-dataset-export-segment.md)，然后启动新的导出作业。 有关生成导出作业的步骤，请参阅导 [出API教程](../segmentation/tutorials/export-data.md)。
+导出包含数 [!DNL Profile] 据的段 [需要先创建要将数据导出到的数据集](../segmentation/tutorials/create-dataset-export-segment.md)，然后启动新的导出作业。 有关生成导出作业的步骤，请参阅导 [出API教程](../segmentation/tutorials/export-data.md)。
 
 ## 配置合并策略
 
-Adobe Experience Platform使您能够将来自多个来源的数据整合在一起，并将其合并，以便了解每个客户的完整视图。 整合这些数据时，合并策略是平台用来确定数据的优先级以及将哪些数据合并以创建统一视图的规则。 使用REST风格的API或用户界面，您可以创建新的合并策略、管理现有策略并为组织设置默认的合并策略。 要在平台UI中使用合并策略，请访问合 [并策略用户指南](../profile/ui/merge-policies.md)。 要使用实时客户用户档案API处理合并策略，请参阅合并策 [略开发人员指南](../profile/api/merge-policies.md)。
+Adobe Experience Platform使您能够将来自多个来源的数据整合在一起，并将其合并，以便了解每个客户的完整视图。 将数据整合在一起时，合并策略是确定 [!DNL Platform] 数据的优先级以及合并哪些数据以创建统一视图的规则。 使用REST风格的API或用户界面，您可以创建新的合并策略、管理现有策略并为组织设置默认的合并策略。 要在UI中使用合并策 [!DNL Platform] 略，请访问合 [并策略用户指南](../profile/ui/merge-policies.md)。 要使用API处理合并策略，请 [!DNL Real-time Customer Profile] 参阅合并策 [略开发人员指南](../profile/api/merge-policies.md)。
 
 ## 为细分强制实施数据使用合规性
 
-在实时客户用户档案中启用的区段在其区段定义中包含一个合并策略ID。 此合并策略包含有关区段中要包含哪些数据集的信息，这些数据集又包含任何适用的数据使用标签。 有关强制受众区段遵守数据使用规范的具体步骤，请遵循区 [段的数据使用规范实施教程](../segmentation/tutorials/governance.md)。
+允许在中使用的区段 [!DNL Real-time Customer Profile] 在其区段定义中包含合并策略ID。 此合并策略包含有关区段中要包含哪些数据集的信息，这些数据集又包含任何适用的数据使用标签。 有关强制受众区段遵守数据使用规范的具体步骤，请遵循区 [段的数据使用规范实施教程](../segmentation/tutorials/governance.md)。
 
 ## 流细分
 
@@ -42,4 +42,4 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ## 多实体分割
 
-多实体细分是指能够根据产品、商店或其他非用户档案类扩展用户档案数据和附加数据。 连接后，来自其他类的数据将变得像用户档案模式的本机数据一样可用。 要了解移动，请参 [阅多实体细分文档](../segmentation/multi-entity-segmentation.md)。
+多实体细分是指能够根据产 [!DNL Profile] 品、商店或其他非用户档案类使用额外数据扩展数据。 连接后，来自其他类的数据将变得像模式本身一样可 [!DNL Profile] 用。 要了解移动，请参 [阅多实体细分文档](../segmentation/multi-entity-segmentation.md)。
