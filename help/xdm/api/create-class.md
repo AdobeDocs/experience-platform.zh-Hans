@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建类
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 模式的主要构建块是类。 类包含必须定义的最小字段集，才能捕获模式的核心数据。 例如，如果你为汽车和卡车设计模式，他们很可能使用一个叫做Vehicle的类，它描述了所有车辆的基本公共属性。
 
-Adobe和其他Experience Platform合作伙伴提供了多个标准类，但您也可以定义自己的类并将它们保存到模式注册表。 然后，您可以构建实现您创建的类的模式，并定义与新定义的类兼容的混音。
+Adobe和其他合作伙伴提供了多个标准 [!DNL Experience Platform] 类，但您也可以定义自己的类并将它们保存到 [!DNL Schema Registry]。 然后，您可以构建实现您创建的类的模式，并定义与新定义的类兼容的混音。
 
 >[!NOTE]
 >
@@ -83,12 +83,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `_{TENANT_ID}` | 组 `TENANT_ID` 织的命名空间。 您的组织创建的所有资源都必须包含此属性，以避免与模式注册表中的其他资源发生冲突。 |
+| `_{TENANT_ID}` | 组 `TENANT_ID` 织的命名空间。 您的组织创建的所有资源都必须包含此属性，以避免与中的其他资源发生冲突 [!DNL Schema Registry]。 |
 | `allOf` | 新类要继承其属性的资源列表。 数组中 `$ref` 的一个对象定义类的行为。 在此示例中，类继承“记录”行为。 |
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建）和包含新创建类的详细信息（包括、和） `$id`的 `meta:altId`有效负荷 `version`。 这三个值是只读的，由模式注册表指定。
+成功的响应会返回HTTP状态201（已创建）和包含新创建类的详细信息（包括、和） `$id`的 `meta:altId`有效负荷 `version`。 这三个值是只读的，由指定 [!DNL Schema Registry]。
 
 ```JSON
 {
