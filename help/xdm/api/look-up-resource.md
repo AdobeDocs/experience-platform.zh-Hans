@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查找资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '176'
+source-wordcount: '174'
 ht-degree: 2%
 
 ---
@@ -25,7 +25,7 @@ GET /{CONTAINER_ID}/{RESOURCE_TYPE}/{RESOURCE_ID}
 | 参数 | 描述 |
 | --- | --- |
 | `{CONTAINER_ID}` | 资源所在的容器（“全局”或“租户”）。 |
-| `{RESOURCE_TYPE}` | 要从模式库检索的资源类型。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
+| `{RESOURCE_TYPE}` | 要从中检索的资源的类型 [!DNL Schema Library]。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
 | `{RESOURCE_ID}` | 资源的URL编 `$id` 码的 `meta:altId` URI或URI。 |
 
 **请求**
