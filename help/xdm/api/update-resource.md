@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 更新资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '379'
+source-wordcount: '373'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 更新资源
 
-您可以使用PATCH请求修改或更新租户容器中的资源。 模式注册表支持所有标准JSON修补程序操作，包括添加、删除和替换。
+您可以使用PATCH请求修改或更新租户容器中的资源。 支持 [!DNL Schema Registry] 所有标准JSON修补程序操作，包括添加、删除和替换。
 
 有关JSON修补程序（包括可用操作）的详细信息，请参阅官方 [JSON修补程序文档](http://jsonpatch.com/)。
 
@@ -34,7 +34,7 @@ PATCH /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RESOURCE_TYPE}` | 要从模式库更新的资源类型。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
+| `{RESOURCE_TYPE}` | 要从中更新的资源类型 [!DNL Schema Library]。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
 | `{RESOURCE_ID}` | 资源的URL编 `$id` 码的 `meta:altId` URI或URI。 |
 
 **请求**
@@ -110,7 +110,7 @@ PATCH /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RESOURCE_TYPE}` | 要从模式库更新的资源类型。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
+| `{RESOURCE_TYPE}` | 要从中更新的资源类型 [!DNL Schema Library]。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
 | `{RESOURCE_ID}` | 资源的URL编 `$id` 码的 `meta:altId` URI或URI。 |
 
 **请求**
