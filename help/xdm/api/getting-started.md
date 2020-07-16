@@ -4,54 +4,54 @@ solution: Experience Platform
 title: 模式注册表API开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '1246'
+source-wordcount: '1195'
 ht-degree: 0%
 
 ---
 
 
-# 模式注册表API开发人员指南
+# [!DNL Schema Registry] API开发人员指南
 
-模式注册表用于访问Adobe Experience Platform中的模式库，提供可从中访问所有可用库资源的用户界面和RESTful API。
+该 [!DNL Schema Registry] 应用程序用于访问Adobe Experience Platform中的模式库，提供用户界面和RESTful API，可从中访问所有可用的库资源。
 
-使用模式注册表API，您可以执行基本的CRUD操作，以视图和管理Adobe Experience Platform内所有可用的模式和相关资源。 这包括由Adobe、Experience Platform合作伙伴以及您使用其应用程序的供应商定义的应用程序。 您还可以使用API调用为您的组织创建新模式和资源，以及视图和编辑您已定义的资源。
+使用模式注册表API，您可以执行基本的CRUD操作，以视图和管理Adobe Experience Platform内所有可用的模式和相关资源。 这包括由Adobe、合作伙伴和您 [!DNL Experience Platform] 所使用应用程序的供应商定义的应用程序。 您还可以使用API调用为您的组织创建新模式和资源，以及视图和编辑您已定义的资源。
 
-此开发人员指南提供帮助您使用模式注册表API进行开始的步骤。 然后，该指南提供了使用模式注册表执行键操作的示例API调用。
+此开发人员指南提供帮助您使用API进行开始 [!DNL Schema Registry] 的步骤。 然后，该指南提供使用执行键操作的示例API调用 [!DNL Schema Registry]。
 
 ## 先决条件
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-* [体验数据模型(XDM)系统](../home.md): Experience Platform组织客户体验数据的标准化框架。
+* [!DNL Experience Data Model (XDM) System](../home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    * [模式合成基础](../schema/composition.md): 了解XDM模式的基本构件。
-* [实时客户用户档案](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供了成功调用模式注册表API所需了解的其他信息。
+以下各节提供了成功调用API所需了解的其他信 [!DNL Schema Registry] 息。
 
 ## 读取示例API调用
 
-本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
+本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ## 收集所需标题的值
 
-要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
 * 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源，包括属于模式注册表的资源，都与特定虚拟沙箱隔离。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+中的所有资 [!DNL Experience Platform]源(包括属于这些资源 [!DNL Schema Registry]的资源)都隔离到特定虚拟沙箱。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-对模式注册表的所有查找(GET)请求都需要附加的“接受”头，其值决定API返回的信息格式。 有关更多详 [细信息](#accept) ，请参阅下面的接受标题部分。
+对该API的所有查找(GET) [!DNL Schema Registry] 请求都需要一个附加的“接受”头，其值决定API返回的信息格式。 有关更多详 [细信息](#accept) ，请参阅下面的接受标题部分。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -80,7 +80,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回有关贵组织使用模式注册表的信息。 这包括一 `tenantId` 个属性，其值是您的属 `TENANT_ID`性。
+成功的响应会返回有关您的组织使用的信息 [!DNL Schema Registry]。 这包括一 `tenantId` 个属性，其值是您的属 `TENANT_ID`性。
 
 ```JSON
 {
@@ -161,17 +161,17 @@ curl -X GET \
 
 ## 了解 `CONTAINER_ID` {#container}
 
-调用模式注册表API需要使用 `CONTAINER_ID`。 有两种容器可以对其进行API调用： 全 **局容器** 和租 **户容器**。
+调用 [!DNL Schema Registry] API需要使用 `CONTAINER_ID`。 有两种容器可以对其进行API调用： 全 **局容器** 和租 **户容器**。
 
 ### 全球容器
 
-全球容器包含所有标准Adobe和Experience Platform合作伙伴提供的类、混音、数据类型和模式。 您只能对全局列表执行容器和查找(GET)请求。
+全球容器包含所有标准Adobe [!DNL Experience Platform] 及合作伙伴提供的类、混音、数据类型和模式。 您只能对全局列表执行容器和查找(GET)请求。
 
 ### 租户容器
 
 不要与您的独特性混淆，租 `TENANT_ID`户容器包含由IMS组织定义的所有类、混合、数据类型、模式和描述符。 这是每个组织特有的，这意味着它们不会被其他IMS组织看到或管理。 您可以对您在租户容器中创建的资源执行所有CRUD操作(GET、POST、PUT、PATCH、DELETE)。
 
-在租户容器中创建类、混音、模式或数据类型时，该类会保存到模式注册表，并为其分配一个 `$id` 包含您的URI `TENANT_ID`。 它 `$id` 在整个API中用于引用特定资源。 值的示 `$id` 例在下一节中提供。
+在租户容器中创建类、混音、模式或数据类型时，该类会保存到中，并 [!DNL Schema Registry] 为其分配 `$id` 一个包含您的URI `TENANT_ID`。 它 `$id` 在整个API中用于引用特定资源。 值的示 `$id` 例在下一节中提供。
 
 ## 模式识别 {#schema-identification}
 
@@ -189,7 +189,7 @@ curl -X GET \
 
 ## 接受标题 {#accept}
 
-在模式注册表API中执行列表和查找(GET)操作时，需要一个“接受”标头来确定API返回的数据格式。 查找特定资源时，“接受”标题中还必须包含版本号。
+在API中执行列表和查找(GET)操 [!DNL Schema Registry] 作时，需要一个Accept头来确定API返回的数据的格式。 查找特定资源时，“接受”标题中还必须包含版本号。
 
 下表列表兼容的Accept头值，包括版本号，以及API在使用时将返回的描述。
 
@@ -242,4 +242,4 @@ curl -X GET \
 
 ## 后续步骤
 
-此文档涵盖了调用模式注册表API所需的必备知识，包括必需的身份验证凭据。 您现在可以继续访问本开发人员指南中提供的示例调用，并按照其说明进行操作。 有关如何在API中制作模式的完整分步演练，请参阅以下教 [程](../tutorials/create-schema-api.md)。
+此文档涵盖了调用API所需的必备知识， [!DNL Schema Registry] 包括所需的身份验证凭据。 您现在可以继续访问本开发人员指南中提供的示例调用，并按照其说明进行操作。 有关如何在API中制作模式的完整分步演练，请参阅以下教 [程](../tutorials/create-schema-api.md)。
