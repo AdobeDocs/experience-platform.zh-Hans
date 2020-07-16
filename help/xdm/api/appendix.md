@@ -4,23 +4,23 @@ solution: Experience Platform
 title: 模式注册开发人员附录
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '1296'
-ht-degree: 3%
+source-wordcount: '1265'
+ht-degree: 4%
 
 ---
 
 
 # 附录
 
-本文档提供与使用模式注册表API相关的补充信息。
+本文档提供与使用API相关的补充 [!DNL Schema Registry] 信息。
 
 ## 兼容性模式
 
-体验数据模型(XDM)是一个公开记录的规范，由Adobe推动，旨在提高数字体验的互操作性、表现力和强大功能。 Adobe在GitHub上的一个开放源项目中维护 [源代码和正式的XDM定义](https://github.com/adobe/xdm/)。 这些定义以XDM标准表示法编写，使用JSON-LD（链接数据的JavaScript对象表示法）和JSON模式作为定义XDM模式的语法。
+[!DNL Experience Data Model] (XDM)是一个公开记录的规范，由Adobe推动，旨在提高数字体验的互操作性、表现力和强大功能。 Adobe在GitHub上的一个开放源项目中维护 [源代码和正式的XDM定义](https://github.com/adobe/xdm/)。 这些定义以XDM标准表示法编写，使用JSON-LD（链接数据的JavaScript对象表示法）和JSON模式作为定义XDM模式的语法。
 
-在公共存储库中查看正式的XDM定义时，您会发现标准XDM与您在Adobe Experience Platform中看到的不同。 您在Experience Platform中看到的称为兼容性模式，它提供了标准XDM与平台内使用方式之间的简单映射。
+在公共存储库中查看正式的XDM定义时，您会发现标准XDM与您在Adobe Experience Platform中看到的不同。 您在中看到的 [!DNL Experience Platform] 内容称为兼容性模式，它提供了标准XDM与内部使用方式之间的简单映射 [!DNL Platform]。
 
 ### 兼容性模式的工作原理
 
@@ -51,15 +51,15 @@ ht-degree: 3%
 
 Adobe Experience Platform设计为使用多个解决方案和服务，每个解决方案和服务都有各自的技术挑战和限制（例如，某些技术如何处理特殊特性）。 为了克服这些限制，开发了兼容模式。
 
-大多数Experience Platform服务(包括目录、数据湖和实时用户档案)都使用兼容性模式代替标准XDM。 模式注册表API还使用兼容性模式，此文档中的示例都使用兼容性模式显示。
+大多 [!DNL Experience Platform] 数服 [!DNL Catalog]务，包括 [!DNL Data Lake]、和 [!DNL Real-time Customer Profile] 用于 [!DNL Compatibility Mode] 替代标准XDM。 该 [!DNL Schema Registry] API还使 [!DNL Compatibility Mode]用，此文档中的示例都使用 [!DNL Compatibility Mode]。
 
-值得了解的是，标准XDM与在Experience Platform中操作它的方式之间存在映射，但它不应影响您对平台服务的使用。
+应该知道标准XDM与其操作方式之间存在映射，但 [!DNL Experience Platform]它不应影响您对服务的使 [!DNL Platform] 用。
 
-开放源项目可供您使用，但在通过模式注册表与资源交互时，此文档中的API示例提供您应了解和遵循的最佳实践。
+开放源项目可供您使用，但在涉及通过与资源交互时，此文档中的 [!DNL Schema Registry]API示例提供您应了解和遵循的最佳实践。
 
 ## 在API中定义XDM字段类型 {#field-types}
 
-XDM模式是使用JSON模式标准和基本字段类型定义的，并且对字段名称有附加约束，这些约束由Experience Platform实施。 XDM允许您通过使用格式和可选约束定义其他字段类型。 XDM字段类型由字段级属性公开 `meta:xdmType`。
+XDM模式是使用JSON模式标准和基本字段类型定义的，并且对字段名称有附加约束，这些约束由强制实 [!DNL Experience Platform]施。 XDM允许您通过使用格式和可选约束定义其他字段类型。 XDM字段类型由字段级属性公开 `meta:xdmType`。
 
 >[!NOTE]
 >
@@ -221,7 +221,7 @@ XDM模式是使用JSON模式标准和基本字段类型定义的，并且对字�
   <tr>
     <td>地图</td>
     <td>类型： 对<br/><br/><strong>象注</strong><br/>意：“map”数据类型的使用是为行业和供应商模式的使用而保留的，不可用于租户定义的字段。 当数据表示为映射到某个值的键时，或者在静态模式中无法合理包含键并且必须作为数据值时，它将在标准模式中使用。</td>
-    <td>“map”不能定义任何属性。 它必须定义单个“additionalProperties”模式来描述“map”中包含的值类型。 XDM中的“map”只能包含单个数据类型。 值可以是任何有效的XDM模式定义，包括数组或对象，或作为对其他模式的引用（通过$ref）。<br/><br/>具有“string”类型值的映射字段：
+    <td>“map”不能定义任何属性。 它必须定义单个“[!UICONTROL additionalProperties]”模式来描述“map”中包含的值类型。 XDM中的“map”只能包含单个数据类型。 值可以是任何有效的XDM模式定义，包括数组或对象，或作为对其他模式的引用（通过$ref）。<br/><br/>具有“string”类型值的映射字段：
       <pre class="JSON language-JSON hljs">
         "sampleField": { "type": "object", "additionalProperties":{ "type": "string" } }
       </pre>
@@ -243,7 +243,7 @@ XDM模式是使用JSON模式标准和基本字段类型定义的，并且对字�
 
 下表描述了“meta:xdmType”与其他序列化格式之间的映射。
 
-| XDM类型<br>(meta:xdmType) | JSON<br>(JSON模式) | Parke<br>（类型／注释） | Spark SQL | Java | 斯卡拉 | .NET | CosmosDB | MongoDB | 塞式飞行器 | Protobuf 2 |
+| XDM类型<br>(meta:xdmType) | JSON<br>(JSON模式) | Parke<br>（类型／注释） | [!DNL Spark] SQL | Java | 斯卡拉 | .NET | CosmosDB | MongoDB | 塞式飞行器 | Protobuf 2 |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 字符串 | 类型：字符串 | BYTE_ARRAY/UTF8 | 字符串类型 | java.lang.String | 字符串 | System.String | 字符串 | 字符串 | 字符串 | 字符串 |
 | 数字 | 类型：数字 | 多次 | DoubleType | java.lang.Double | 双精度 | System.Double | 数值 | 多次 | 双精度 | 多次 |
