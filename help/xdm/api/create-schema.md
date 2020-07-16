@@ -4,16 +4,19 @@ solution: Experience Platform
 title: 创建模式
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 162316c3b908ffa87d8df4dff72e26ba237993db
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+workflow-type: tm+mt
+source-wordcount: '235'
+ht-degree: 1%
 
 ---
 
 
 # 创建模式
 
-可以将模式视为要收录到Experience Platform中的数据的蓝图。 每个模式由类和零个或多个混音组成。 换句话说，您不必添加混音来定义模式，但在大多数情况下，将至少使用一个混音。
+可以将模式视为要收录到中的数据的蓝图 [!DNL Experience Platform]。 每个模式由一个类和零个或多个混音组成。 换句话说，您不必添加混音来定义模式，但在大多数情况下，至少会使用一个混音。
 
-模式合成过程首先指定一个类。 该类定义数据（记录或时间序列）的关键行为方面以及描述将要摄取的数据所需的最小字段。
+模式合成流程从分配类开始。 该类定义数据（记录或时间序列）的关键行为方面以及描述将要摄取的数据所需的最小字段。
 
 **API格式**
 
@@ -23,7 +26,7 @@ POST /tenant/schemas
 
 **请求**
 
-请求必须包含 `allOf` 引用类的 `$id` 属性。 此属性定义模式将实现的“基类”。 在此示例中，基类是先前创建的“属性信息”类。
+请求必须包含引 `allOf` 用类的属 `$id` 性的属性。 此属性定义模式将实现的“基类”。 在此示例中，基类是先前创建的“属性信息”类。
 
 ```SHELL
 curl -X POST \
@@ -51,7 +54,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建）和包含新创建模式的详细信息（包括、和）的 `$id`有效 `meta:altId`负荷 `version`。 这些值是只读的，由模式注册表分配。
+成功的响应会返回HTTP状态201（已创建）和包含新创建模式的详细信息（包括、和） `$id`的 `meta:altId`有效负荷 `version`。 这些值是只读的，由指定 [!DNL Schema Registry]。
 
 ```JSON
 {
@@ -86,4 +89,4 @@ curl -X POST \
 }
 ```
 
-执行GET请求以列表租户容器中的所有模式现在将包括属性信息模式，或者您可以使用URL编码的 `$id` URI执行查找(GET)请求以直接视图新模式。 请记住，在“接 `version` 受”标题中包含所有查找请求。
+对租户容器中的所有列表执行GET请求现在将包括属性信息模式，或者您可以使用URL编码的URI执行查找( `$id` GET)请求以直接视图新模式。 请记住，在“接 `version` 受”标题中包含所有查找请求。
