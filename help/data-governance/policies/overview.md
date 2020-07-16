@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据使用策略概述
 topic: policies
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '964'
 ht-degree: 0%
 
 ---
@@ -35,9 +35,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->如果您使用实时客户数据平台，则可以在目标上设置营销使用案例以自动执行策略。 有关详细信 [息，请参见实时CDP中的文档](../../rtcdp/privacy/data-governance-overview.md) “数据治理”。
+>如果您使用的 [!DNL Real-time Customer Data Platform]是，您可以在目标上设置营销使用案例，以自动执行策略。 有关详细信 [息，请参见实时CDP中的文档](../../rtcdp/privacy/data-governance-overview.md) “数据治理”。
 
-请参阅本文档的附录，了解一列表可 [用的Adobe定义的营销操作](#core-actions)。 您还可以使用DULE Policy Service API或Experience Platform用户界面定义您自己的自定义营销操作。 下一节提供了有关使用营销操作和策略的更多信息。
+请参阅本文档的附录，了解一列表可 [用的Adobe定义的营销操作](#core-actions)。 您还可以使用DULE API或用户界面定义自 [!DNL Policy Service] 定义营销 [!DNL Experience Platform ]操作。 下一节提供了有关使用营销操作和策略的更多信息。
 
 <!-- (Add after AAM DEC mapping doc is published)
 ### Inheritance from Adobe Audience Manager Data Export Controls
@@ -49,15 +49,15 @@ For a reference on how specific Data Export Controls map to marketing actions in
 
 ## 管理数据使用策略 {#manage}
 
-应用数据使用标签后，数据管理员可以使用DULE策略服务API或Experience PlatformUI来管理和评估与对包含数据使用标签的数据进行营销操作相关的策略。 您可以创建和更新策略、确定策略状态以及使用营销操作来评估特定操作是否违反了数据使用策略。
+应用数据使用标签后，数据管理人员可以使用DULE [!DNL Policy Service] API或 [!DNL Experience Platform] UI来管理和评估与对包含数据使用标签的数据进行营销操作相关的策略。 您可以创建和更新策略、确定策略状态以及使用营销操作来评估特定操作是否违反了数据使用策略。
 
 >[!IMPORTANT]
 >
 >默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 要考虑实施单个策略，必须通过API或UI手动启用该策略。
 
-有关在API中使用营销操作和数据使用策略的分步说明，请参阅有关创建和评估数 [据使用策略的教程](create.md)。 有关Policy Service API提供的关键操作的详细信息，请参阅Policy Service [Developer Guide](../api/getting-started.md)。
+有关在API中使用营销操作和数据使用策略的分步说明，请参阅有关创建和评估数 [据使用策略的教程](create.md)。 有关API提供的关键操作的详细信 [!DNL Policy Service] 息，请参阅“策略 [服务开发人员指南”](../api/getting-started.md)。
 
-有关如何在平台UI中使用营销操作和策略的信息，请参阅数 [据使用策略用户指南](./user-guide.md)。
+有关如何在UI中使用营销操作和策略的 [!DNL Platform] 信息，请参阅 [数据使用策略用户指南](./user-guide.md)。
 
 ## 后续步骤
 
