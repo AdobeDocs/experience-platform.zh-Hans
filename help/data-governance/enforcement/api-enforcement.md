@@ -4,17 +4,17 @@ solution: Experience Platform
 title: 使用策略服务API实施数据使用策略
 topic: enforcement
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '869'
 ht-degree: 2%
 
 ---
 
 
-# 使用策略服务API实施数据使用策略
+# 使用API实施数据使用策 [!DNL Policy Service] 略
 
-为数据创建数据使用标签并针对这些标签创建市场营销操作的使用策略后，您可以使用 [DULE Policy Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) API评估对数据集或任意标签组执行的营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。
+为数据创建数据使用标签并针对这些标签创建市场营销操作的使用策略后，您便可以使用 [!DNL DULE Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) 评估对数据集或任意标签组执行的市场营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。
 
 >[!NOTE]
 >
