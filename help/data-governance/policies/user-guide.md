@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据使用策略用户指南
 topic: policies
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '727'
+source-wordcount: '725'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 数据使用策略用户指南
 
-Adobe Experience Platform数据管理提供了一个用户界面，允许您创建和管理数据使用策略。 此文档概述了在用户界面的“策略”工 _作区_ 中可执行 [!DNL Experience Platform] 的操作。
+Adobe Experience Platform [!DNL Data Governance] 提供了一个用户界面，允许您创建和管理数据使用策略。 此文档概述了在用户界面的“策略”工 _作区_ 中可执行 [!DNL Experience Platform] 的操作。
 
 >[!IMPORTANT]
 >
