@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 替换资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '207'
+source-wordcount: '203'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 替换资源
 
-模式注册表允许您通过PUT操作替换整个资源。 此操作实质上重写了资源，因此请求主体必须包含使用POST请求创建新资源时所需的所有字段。
+它 [!DNL Schema Registry] 允许您通过PUT操作替换整个资源。 此操作实质上重写了资源，因此请求主体必须包含使用POST请求创建新资源时所需的所有字段。
 
 如果要同时更新资源中的大量信息，此方法特别有用。
 
@@ -32,7 +32,7 @@ PUT /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RESOURCE_TYPE}` | 要从模式库更新的资源类型。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
+| `{RESOURCE_TYPE}` | 要从中更新的资源类型 [!DNL Schema Library]。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
 | `{RESOURCE_ID}` | 资源的URL编 `$id` 码的 `meta:altId` URI或URI。 |
 
 **请求**
