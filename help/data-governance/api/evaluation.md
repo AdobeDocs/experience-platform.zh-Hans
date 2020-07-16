@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 策略
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1a835c6c20c70bf03d956c601e2704b68d4f90fa
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '938'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 策略评估
 
-创建市场营销操作并定义策略后，您可以使用策略服务API评估某些操作是否违反了任何策略。 返回的约束采用一组策略的形式，这些策略会尝试对包含数据使用标签的指定数据执行营销操作而违反。
+创建营销操作并定义策略后，您可以使用 [!DNL Policy Service] API评估某些操作是否违反了任何策略。 返回的约束采用一组策略的形式，这些策略会尝试对包含数据使用标签的指定数据执行营销操作而违反。
 
 默认情 **况下，只有状态设置为“ENABLED”的策略才能参与评估**，但您可以使用查询参数 `?includeDraft=true` 在评估中包括“DRAFT”策略。
 
