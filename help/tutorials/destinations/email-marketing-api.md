@@ -4,15 +4,15 @@ solution: Experience Platform
 title: 创建电子邮件营销目标
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: ed9d6eadeb00db51278ea700f7698a1b5590632f
+source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
 workflow-type: tm+mt
-source-wordcount: '1670'
+source-wordcount: '1611'
 ht-degree: 1%
 
 ---
 
 
-# 在Adobe的实时客户数据Platform中创建电子邮件营销目标并激活数据
+# 在Adobe的 [!DNL Real-time Customer Data Platform]
 
 本教程演示了如何使用API调用连接到Adobe Experience Platform数据、创建电子邮件营 [销目标](../../rtcdp/destinations/email-marketing-destinations.md)、创建到新创建目标的数据流以及将数据激活到新创建的目标。
 
@@ -26,9 +26,9 @@ ht-degree: 1%
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-* [体验数据模型(XDM)系统](../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
-* [目录服务](../../catalog/home.md): 目录是Experience Platform内数据位置和谱系的记录系统。
-* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [!DNL Catalog Service](../../catalog/home.md): [!DNL Catalog] 是数据位置和谱系的记录系统 [!DNL Experience Platform]。
+* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了在Adobe实时CDP中将数据激活到电子邮件营销目标时需要了解的其他信息。
 
@@ -36,27 +36,27 @@ ht-degree: 1%
 
 要完成本教程中的步骤，您应准备好以下凭据，具体取决于要连接和激活区段的目标类型。
 
-* 对于Amazon S3与电子邮件营销平台的连接： `accessId`, `secretKey`
+* 对于 [!DNL Amazon] S3与电子邮件营销平台的连接： `accessId`, `secretKey`
 * 对于与电子邮件营销平台的SFTP连接： `domain`、 `port`、 `username`或 `password``ssh key` （取决于到FTP位置的连接方法）
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ### 收集必需和可选标题的值
 
-要调用PlatformAPI，您必须先完成身份验证 [教程](../authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
 * 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的资源可以隔离到特定虚拟沙箱。 在对PlatformAPI的请求中，您可以指定操作将在其中进行的沙箱的名称和ID。 这些是可选参数。
+中的资 [!DNL Experience Platform] 源可以隔离到特定虚拟沙箱。 在对API [!DNL Platform] 的请求中，您可以指定操作将在其中进行的沙箱的名称和ID。 这些是可选参数。
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!Note]
->有关Experience Platform中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>有关中沙箱的详细信 [!DNL Experience Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
@@ -134,17 +134,17 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 }
 ```
 
-## 连接到Experience Platform数据 {#connect-to-your-experience-platform-data}
+## 连接到数 [!DNL Experience Platform] 据 {#connect-to-your-experience-platform-data}
 
 ![目标步骤概述步骤2](../images/destinations/flow-api-destinations-step2.png)
 
-接下来，您必须连接到Experience Platform数据，以便导出用户档案数据并在首选目标中激活它。 这包括两个子步骤，如下所述。
+接下来，您必须连接到您 [!DNL Experience Platform] 的用户档案，以便导出数据并在首选目标中激活它。 这包括两个子步骤，如下所述。
 
-1. 首先，必须通过设置基本连接，在Experience Platform中执行授权访问数据的调用。
-2. 然后，使用基本连接ID，您将再次进行调用，在其中创建源连接，从而建立与Experience Platform数据的连接。
+1. 首先，必须通过设置基本连接，执行 [!DNL Experience Platform]授权访问数据的调用。
+2. 然后，使用基本连接ID，您将再次进行调用，在其中创建源连接，从而建立与数据的 [!DNL Experience Platform] 连接。
 
 
-### 授权访问Experience Platform中的数据
+### 授权访问 [!DNL Experience Platform]
 
 **API格式**
 
@@ -208,7 +208,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }
 ```
 
-### 连接到Experience Platform数据
+### 连接到数 [!DNL Experience Platform] 据
 
 **API格式**
 
@@ -270,11 +270,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{BASE_CONNECTION_ID}`: 使用您在上一步中获得的ID。
-* `{CONNECTION_SPEC_ID}`: 使用统一用户档案服务的连接规范ID - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
+* `{CONNECTION_SPEC_ID}`: 将连接规范ID用 [!DNL Unified Profile Service] 于- `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
 
 **响应**
 
-成功的响应会返回新创建的源`id`连接到统一用户档案服务的唯一标识符()。 这将确认您已成功连接到Experience Platform数据。 在以后的步骤中存储此值。
+成功的响应会返回新创建的`id`源连接的唯一标识符() [!DNL Unified Profile Service]。 这将确认您已成功连接到数 [!DNL Experience Platform] 据。 在以后的步骤中存储此值。
 
 ```json
 {
@@ -359,8 +359,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{CONNECTION_SPEC_ID}`: 使用您在获取可用目标的列表 [步骤中获得的连接规范ID](#get-the-list-of-available-destinations)。
 * `{S3 or SFTP}`: 为此目标填写所需的连接类型。 在目 [标目录中](../../rtcdp/destinations/destinations-catalog.md)，滚动到您的首选目标，查看是否支持S3和／或SFTP连接类型。
-* `{ACCESS_ID}`: 您的Amazon S3存储位置的访问ID。
-* `{SECRET_KEY}`: 您的Amazon S3存储位置的密钥。
+* `{ACCESS_ID}`: 您的S3存储 [!DNL Amazon] 位置的访问ID。
+* `{SECRET_KEY}`: 您S3存储位 [!DNL Amazon] 置的密钥。
 
 **响应**
 
@@ -448,8 +448,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{BASE_CONNECTION_ID}`: 使用您在上述步骤中获得的基本连接ID。
 * `{CONNECTION_SPEC_ID}`: 使用您在获取可用目标列表 [步骤中获得的连接规范](#get-the-list-of-available-destinations)。
-* `{BUCKETNAME}`: 您的Amazon S3存储桶，实时CDP将存放数据导出。
-* `{FILEPATH}`: Amazon S3存储桶目录中的路径，实时CDP将存放数据导出。
+* `{BUCKETNAME}`: 您 [!DNL Amazon] 的S3存储桶，实时CDP将存放数据导出。
+* `{FILEPATH}`: S3存储段目 [!DNL Amazon] 录中的路径，实时CDP将存放数据导出。
 
 **响应**
 
@@ -465,7 +465,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ![目标步骤概述步骤4](../images/destinations/flow-api-destinations-step4.png)
 
-现在，使用您在前面的步骤中获得的ID，您可以在Experience Platform数据和要激活数据的目标之间创建数据流。 将此步骤想象为构建Experience Platform和目标之间的管道，数据随后将通过管道流动。
+现在，使用您在前面的步骤中获得的ID，您可以在数据和要激活 [!DNL Experience Platform] 数据的目标之间创建数据流。 将此步骤想象为构建数据稍后将通过的管道，在您和您所需的目 [!DNL Experience Platform] 标之间流动。
 
 要创建数据流，请执行如下所示的POST请求，同时在有效负荷中提供以下所述的值。
 
