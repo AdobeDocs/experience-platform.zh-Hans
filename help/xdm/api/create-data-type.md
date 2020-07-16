@@ -4,16 +4,19 @@ solution: Experience Platform
 title: 创建数据类型
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b0d8c8ee4df11d601d8feb122c70a9cd5d7d5b77
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+workflow-type: tm+mt
+source-wordcount: '200'
+ht-degree: 1%
 
 ---
 
 
 # 创建数据类型
 
-如果您的组织希望以多种方式使用常见的数据结构，您可能希望定义一种数据类型。 数据类型允许一致地使用多字段结构，比混音更灵活，因为可以通过将它们作为字段添加到模式的任意位置来包 `type` 含它们。
+如果您的组织希望以多种方式使用常见的数据结构，您可能希望定义一种数据类型。 数据类型允许多字段结构的一致使用，比混音更灵活，因为通过将它们添加为字段，可以将它们包含在模式的任 `type` 何位置。
 
-换句话说，数据类型允许您定义对象层次结构一次，并在字段中引用它的方式与任何其他标量类型相同。
+换言之，数据类型允许您定义对象层次结构一次，并以与任何其他标量类型相同的方式在字段中引用它。
 
 **API格式**
 
@@ -23,7 +26,7 @@ POST /tenant/datatypes
 
 **请求**
 
-定义数据类型不需要或字 `meta:extends` 段， `meta:intendedToExtend` 也不需要嵌套字段以避免冲突。
+定义数据类型不需要 `meta:extends` 或字 `meta:intendedToExtend` 段，也无需嵌套字段以避免冲突。
 
 ```SHELL
 curl -X POST \
@@ -64,7 +67,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建）和包含新创建数据类型的详细信息（包括、和）的 `$id`有效 `meta:altId`负荷 `version`。 这三个值是只读的，由模式注册表分配。
+成功的响应会返回HTTP状态201（已创建）和包含新创建数据类型详细信息（包括、和） `$id`的 `meta:altId`有效负荷 `version`。 这三个值是只读的，由指定 [!DNL Schema Registry]。
 
 ```JSON
 {
@@ -113,4 +116,4 @@ curl -X POST \
 }
 ```
 
-执行GET请求以列表租户容器中的所有数据类型现在将包括“属性构建”数据类型。 您还可以使用URL编码的 `$id` URI执行查找(GET)请求以直接视图新数据类型。 请务必在查找请 `version` 求的“接受”标题中包含该标题。
+执行GET请求以列表租户容器中的所有数据类型现在将包括属性构建数据类型。 您还可以使用URL编码的URI执行查找(GET)请 `$id` 求以直接视图新数据类型。 请务必在查找请 `version` 求的“接受”标题中包含该标题。
