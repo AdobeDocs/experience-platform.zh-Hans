@@ -4,14 +4,17 @@ solution: Experience Platform
 title: 删除资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d9ab2b1226b051be43f8fc0dd222bc075caed6f0
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+workflow-type: tm+mt
+source-wordcount: '133'
+ht-degree: 7%
 
 ---
 
 
 # 删除资源
 
-有时可能需要从模式注册表中删除（删除）资源。 只能删除您在租户容器中创建的资源。 这是通过使用要删除的资 `$id` 源执行DELETE请求来完成的。
+有时可能需要从中删除(DELETE)资源 [!DNL Schema Registry]。 只能删除您在租户容器中创建的资源。 这是通过使用要删除的资 `$id` 源执行DELETE请求来完成的。
 
 **API格式**
 
@@ -21,12 +24,12 @@ DELETE /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RESOURCE_TYPE}` | 要从模式库中删除的资源类型。 有效类 `datatypes`型有 `mixins`、 `schemas`和 `classes`。 |
-| `{RESOURCE_ID}` | 资源的URL编 `$id` 码的URI `meta:altId` 或URI。 |
+| `{RESOURCE_TYPE}` | 要从中删除的资源类型 [!DNL Schema Library]。 有效类 `datatypes`型 `mixins`有、 `schemas`和 `classes`。 |
+| `{RESOURCE_ID}` | 资源的URL编 `$id` 码的 `meta:altId` URI或URI。 |
 
 **请求**
 
-DELETE请求不需要接受标题。
+DELETE请求不需要接受标头。
 
 ```SHELL
 curl -X DELETE \
@@ -39,6 +42,6 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应会返回HTTP状态204（无内容）和空白正文。
+成功的响应返回HTTP状态204（无内容）和空白正文。
 
-您可以通过尝试对资源进行查找(GET)请求来确认删除。 您需要在请求中包含一个“接受”标头，但应接收HTTP状态404（“找不到”），因为该资源已从模式注册表中删除。
+您可以通过尝试对资源进行查找(GET)请求来确认删除。 您需要在请求中包含一个“接受”头，但应收到HTTP状态404（未找到），因为该资源已从中删除 [!DNL Schema Registry]。
