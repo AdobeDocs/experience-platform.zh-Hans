@@ -4,26 +4,29 @@ solution: Experience Platform
 title: 体验数据模型(XDM)系统疑难解答指南
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 14cd3d17c7d9ba602d02925abddec9e0b246a8c8
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+workflow-type: tm+mt
+source-wordcount: '1826'
+ht-degree: 0%
 
 ---
 
 
-# 体验数据模型(XDM)系统疑难解答指南
+# [!DNL Experience Data Model] (XDM)系统故障排除指南
 
-本文档提供有关体验数据模型(XDM)系统的常见问题解答，以及常见错误的疑难解答指南。 有关Adobe Experience Platform中其他服务的相关问题和疑难解答，请参阅Experience Platform疑 [难解答指南](../landing/troubleshooting.md)。
+此文档提供有关(XDM)系统的常 [!DNL Experience Data Model] 见问题的解答，以及常见错误的疑难解答指南。 有关Adobe Experience Platform中其他服务的相关问题和疑难解答，请参阅Experience Platform疑 [难解答指南](../landing/troubleshooting.md)。
 
-**体验模式模型(XDM** )是一种开放源码规范，它为客户体验管理定义了标准化的。 构建Experience Platform的方法体系 **XDM系统**，可操作Experience Data Model模式，供平台服务使用。 模式 **注册表** (Experience Registry)提供用户界面和RESTful API，用于访问Experience Platform **中的** 模式库。 See the [XDM documentation](home.md) for more information.
+**[!DNL Experience Data Model](XDM)是一种开放源&#x200B;**，它为客户体验管理定义了标准化模式。 构建XDM系统[!DNL Experience Platform]的方法**将模式运&#x200B;**行，供服务[!DNL Experience Data Model][!DNL Platform]使用。 提供&#x200B;**[!DNL Schema Registry]**一个用户界面和一个REST风格的API，用于访问&#x200B;**[!DNL Schema Library]**内部[!DNL Experience Platform]。 See the[XDM documentation](home.md)for more information.
 
 ## 常见问题解答
 
-以下是有关XDM系统和模式注册表API使用的常见问题的列表解答。
+以下是有关XDM系统和API使用的常见问题的一列表解 [!DNL Schema Registry] 答。
 
 ### 如何向模式添加字段？
 
-您可以使用混音将字段添加到模式。 每个混音符与一个或多个类兼容，允许混音符用于实现这些兼容类之一的任何模式。 虽然Adobe Experience Platform提供多个行业混音以及它们自己的预定义字段，但您可以通过使用API或用户界面创建新混音来将自己的字段添加到模式。
+您可以使用混音将字段添加到模式。 每个混音符与一个或多个类兼容，允许混音符用于实现这些兼容类之一的任何模式。 Adobe Experience Platform为多个行业混音提供其自己的预定义字段，您可以通过使用API或用户界面创建新混音，将您自己的字段添加到模式。
 
-有关在API中创建新混音的详细信息，请参 [阅模式注册表](api/create-mixin.md) API开发人员指南中的“创建混音”文档。 如果您使用的是UI，请参阅 [模式编辑器教程](./tutorials/create-schema-ui.md)。
+有关在API中创建新混音的详细信息，请参 [阅API开发人员指南](api/create-mixin.md) 中的“创 [!DNL Schema Registry] 建混音”文档。 如果您使用的是UI，请参阅 [模式编辑器教程](./tutorials/create-schema-ui.md)。
 
 ### 混音与数据类型的最佳用途是什么？
 
@@ -33,23 +36,23 @@ source-git-commit: 14cd3d17c7d9ba602d02925abddec9e0b246a8c8
 
 ### 模式的唯一ID是什么？
 
-所有模式注册表资源(模式、混合、数据类型、类)都有一个URI，它充当一个唯一ID，用于引用和查找。 在API中查看模式时，可以在顶级和属性中找 `$id` 到 `meta:altId` 它。
+所 [!DNL Schema Registry] 有资源(模式、混音、数据类型、类)都有一个URI，它充当唯一ID，用于引用和查找目的。 在API中查看模式时，可以在顶级和属性中找 `$id` 到 `meta:altId` 它。
 
-有关详细信息，请参阅 [模式注册](api/getting-started.md#schema-identification) API开发人员指南中的模式标识部分。
+有关详细信息，请参 [阅API开发](api/getting-started.md#schema-identification) 人员指南 [!DNL Schema Registry] 中的模式标识部分。
 
 ### 模式开始何时阻止中断更改？
 
-只要模式从未用于创建数据集或启用在实时客户用户档案中使用，就可以对其进行 [突破性更改](../profile/home.md)。 一旦模式被用于数据集创建或启用与实时客户用户档案一起使用，模式演化规则就 [会被系统](schema/composition.md#evolution) 严格执行。
+只要模式从未在创建数据集时使用过或启用在中使用过，就可以对其进行中断更改 [!DNL Real-time Customer Profile](../profile/home.md)。 一旦模式被用于数据集创建或启用与一起使 [!DNL Real-time Customer Profile]用，模式进化规 [则就会被系](schema/composition.md#evolution) 统严格执行。
 
 ### 长字段类型的最大大小是多少？
 
 长场类型是一个最大大小为53(+1)位的整数，它的势范围为-9007199254740992和9007199254740992。 这是由于JSON的JavaScript实现如何表示长整数存在限制。
 
-有关字段类型的详细信息，请参 [阅模式注册表](api/appendix.md#field-types) API开发人员指南中的定义XDM字段类型部分。
+有关字段类型的详细信息，请参 [阅API开发人员指南](api/appendix.md#field-types) 中的定 [!DNL Schema Registry] 义XDM字段类型部分。
 
 ### 如何定义模式的身份？
 
-在Experience Platform中，身份用于标识主体（通常是个人），而不管解释的数据来源如何。 通过将键字段标记为“Identity”，在模式中定义这些字段。 常用的标识字段包括电子邮件地址、电 [话号码、Experience Cloud ID(ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)、CRM ID和其他唯一ID字段。
+在 [!DNL Experience Platform]中，无论被解释的数据来源如何，都使用身份来标识主体（通常是个人）。 通过将键字段标记为“Identity”，在模式中定义这些字段。 常用的标识字段包括电子邮件地址、电 [!DNL Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)话号码、CRM ID和其他唯一ID字段。
 
 字段可以使用API或用户界面标记为标识。
 
@@ -59,48 +62,48 @@ source-git-commit: 14cd3d17c7d9ba602d02925abddec9e0b246a8c8
 
 标识描述符由对/descriptors端点的POST请求创建。 如果成功，您将收到一个HTTP状态201（已创建）和一个包含新描述符详细信息的响应对象。
 
-有关在API中创建标识描述符的更多详细信息，请参阅“文档注册 [表](api/descriptors.md) ”开发人员指南中的“描述符”一节。
+有关在API中创建标识描述符的更多详细信息，请参阅开发人 [员指南](api/descriptors.md) “描述符 [!DNL Schema Registry] 文档”一节。
 
 #### 在UI中定义标识
 
-在模式编辑器中打开模式后，单击该编辑器的“结 **构** ”部分中要标记为标识的字段。 在 **右侧的** “字段属性”下，单击“标识” **复选框** 。
+在模式编辑器中打开模式后，单击该编辑器的“结 **[!UICONTROL 构]** ”部分中要标记为标识的字段。 在 **[!UICONTROL 右侧的]** “字段属性”下，单击“标识” **[!UICONTROL 复选框]** 。
 
 有关在UI中管理身份的更多详细信息，请参阅模式编 [辑器教程中](./tutorials/create-schema-ui.md#identity-field) “定义身份字段”一节。
 
 ### 我的模式需要主要身份吗？
 
-主身份是可选的，因为模式可能有0或1个身份。 但是，模式必须具有主要身份，才能启用模式在实时客户用户档案中使用。 有关详细 [信息](./tutorials/create-schema-ui.md#identity-field) ，请参阅模式编辑器教程的标识部分。
+主身份是可选的，因为模式可能有0或1个身份。 但是，模式必须具有主标识，才能启用模式在中使用 [!DNL Real-time Customer Profile]。 有关详细 [信息](./tutorials/create-schema-ui.md#identity-field) ，请参阅模式编辑器教程的标识部分。
 
-### 如何启用模式以在实时客户用户档案中使用？
+### 如何启用模式以在中使用 [!DNL Real-time Customer Profile]?
 
-模式可通过添 [加“合并](../profile/home.md) ”标签(位于“模式”属性中) `meta:immutableTags` ，在实时客户用户档案中使用。 可以使用API或用户界面启用模式以与用户档案一起使用。
+模式可通过添 [!DNL Real-time Customer Profile](../profile/home.md) 加“合并”标签(位于模式的属性中) `meta:immutableTags` 在中使用。 可以使用API或 [!DNL Profile] 用户界面启用模式以与一起使用。
 
-#### 使用API启用现有模式进行用户档案
+#### 启用现有模式 [!DNL Profile] 以使用API
 
 发出PATCH请求以更新模式并将属 `meta:immutableTags` 性添加为包含值“合并”的数组。 如果更新成功，则响应将显示更新的模式，该合并现在包含该更新标记。
 
-有关使用API启用模式以在实时客户用户档案中使用的详细信息，请参阅模式注册 [表开发人](./api/unions.md) 员指南的合并文档。
+有关使用API启用模式以在中使用的详细信 [!DNL Real-time Customer Profile]息，请参 [阅开发人](./api/unions.md) 员指南的 [!DNL Schema Registry] 合并文档。
 
-#### 使用UI启用现有模式进行用户档案
+#### 启用现有模式 [!DNL Profile] 以使用UI
 
-在Experience Platform中，单 **击左侧导** 航中的模式，然后从模式列表中选择要启用的模式的名称。 然后，在编辑器的右侧的“模式属性 **”下**，单击 **用户档案** ，以将其打开。
+在 [!DNL Experience Platform]中，单 **[!UICONTROL 击左侧导航]** 中的模式，并从模式列表中选择要启用的模式的名称。 然后，在编辑器的右侧的“模式属性 **[!UICONTROL ”下]**，单击 **[!UICONTROL 用户档案]** ，以将其打开。
 
 
-有关详细信息，请参阅用户档案 [编辑器教程中的“实时模式](./tutorials/create-schema-ui.md#profile) ”中的使用一节。
+有关详细信息，请参阅 [模式编辑器教程中的“实时用户档案](./tutorials/create-schema-ui.md#profile) ”中 [!UICONTROL 的使用部分] 。
 
 ### 能否直接编辑合并模式?
 
 合并模式是只读的，由系统自动生成。 不能直接编辑。 合并模式是在将“合并”标签添加到实现该类的模式时为特定类创建的。
 
-有关XDM中合并的详细信息，请参 [阅模式](./api/unions.md) “注册表API开发人员指南”中的“合并”部分。
+有关XDM中合并的更多信息，请参 [阅](./api/unions.md) API开发人 [!DNL Schema Registry] 员指南中的合并部分。
 
 ### 如何格式化数据文件以将数据引入模式?
 
-Experience Platform接受Parke或JSON格式的数据文件。 这些文件的内容必须符合数据集引用的模式。 有关数据文件摄取的最佳实践的详细信息，请参 [阅批处理摄取概述](../ingestion/home.md)。
+[!DNL Experience Platform] 接受或JSON格 [!DNL Parquet] 式的数据文件。 这些文件的内容必须符合数据集引用的模式。 有关数据文件摄取的最佳实践的详细信息，请参 [阅批处理摄取概述](../ingestion/home.md)。
 
 ## 错误和疑难解答
 
-以下是一列表错误消息，在使用模式注册表API时可能会遇到这些错误消息。
+以下是您在使用API时可能遇到的一列表错误 [!DNL Schema Registry] 消息。
 
 ### 找不到对象
 
@@ -116,7 +119,7 @@ Experience Platform接受Parke或JSON格式的数据文件。 这些文件的内
 
 系统找不到特定资源时显示此错误。 资源可能已被删除，或API调用中的路径无效。 在再次尝试之前，请确保已为API调用输入有效路径。 您可能需要检查是否已为资源输入了正确的ID，以及路径是否以适当的容器（全局或租户）命名。
 
-有关在API中构建查找路径的详细信息，请参阅 [容器](./api/getting-started.md#container)[和模式](api/getting-started.md#schema-identification) 标识部分(在模式注册表开发人员指南中)。
+有关在API中构建查找路径的详细信息，请参 [阅开发](./api/getting-started.md#container) 人员指 [南中](api/getting-started.md#schema-identification)[!DNL Schema Registry] 的容器和模式识别部分。
 
 ### 标题必须唯一
 
@@ -145,12 +148,12 @@ Experience Platform接受Parke或JSON格式的数据文件。 这些文件的内
 }
 ```
 
-当您尝试创建名称不正确的字段的新混音时，会显示此错误消息。 IMS组织定义的混音必须用a命名空间其字段，以 `TENANT_ID` 避免与其他行业和供应商资源发生冲突。 有关mixin的正确文档结构的详细示例，请参阅“模式注册 [表API开发人员指南](api/create-mixin.md) ”中的“创建mixin”一节。
+当您尝试创建名称不正确的字段的新混音时，会显示此错误消息。 IMS组织定义的混音必须用a命名空间其字段，以 `TENANT_ID` 避免与其他行业和供应商资源发生冲突。 有关混合的正确文档结构的详细示例，请参阅API开发 [人员指南中](api/create-mixin.md) “创建混合 [!DNL Schema Registry] ”一节。
 
 
-### 实时客户用户档案错误
+### [!DNL Real-time Customer Profile] 错误
 
-以下错误消息与启用模式以进行实时客户用户档案所涉及的操作相关。 有关详 [细信息](./api/unions.md) ，请参阅模式注册表API开发人员指南中的“合并”部分。
+以下错误消息与启用模式时涉及的操作相关 [!DNL Real-time Customer Profile]。 有关更 [多信息](./api/unions.md) ，请参 [!DNL Schema Registry] 阅API开发人员指南中的“合并”部分。
 
 #### 要启用用户档案数据集，模式应有效
 
@@ -163,7 +166,7 @@ Experience Platform接受Parke或JSON格式的数据文件。 这些文件的内
 }
 ```
 
-当您尝试为尚未启用实时用户档案的模式启用用户档案数据集时，将显示此错误消息。 在启用模式集之前，请确保该合并包含一个数据标记。
+当您尝试为尚未启用的用户档案启用模式数据集时，将显示此错误消息 [!DNL Real-time Customer Profile]。 在启用模式集之前，请确保该合并包含一个数据标记。
 
 #### 必须有引用标识描述符
 
@@ -178,7 +181,7 @@ Experience Platform接受Parke或JSON格式的数据文件。 这些文件的内
 }
 ```
 
-当您尝试为模式启用用户档案，并且其其中一个属性包含没有引用标识描述符的关系描述符时，将显示此错误消息。 将引用标识描述符添加到相关模式字段以解决此错误。
+当您尝试为模式启用时，将显示此错误 [!DNL Profile] 消息，其其中一个属性包含没有引用标识描述符的关系描述符。 将引用标识描述符添加到相关模式字段以解决此错误。
 
 #### 引用标识描述符字段的命名空间和目标模式必须匹配
 
@@ -196,13 +199,13 @@ Experience Platform接受Parke或JSON格式的数据文件。 这些文件的内
 }
 ```
 
-要启用包含关系描述符的模式以在用户档案中使用，源字段的命名空间和目标字段的主命名空间必须相同。 当您尝试启用包含引用标识描述符的不匹配模式的命名空间时，将显示此错误消息。 确保目 `xdm:namespace` 标模式的标识字段的值与源字段的引用标 `xdm:identityNamespace` 识描述符中的属性的值相匹配，以解决此问题。
+为了使包含关系描述符的模式能够 [!DNL Profile]在中使用，源字段的命名空间和目标字段的主命名空间必须相同。 当您尝试启用包含引用标识描述符的不匹配模式的命名空间时，将显示此错误消息。 确保目 `xdm:namespace` 标模式的标识字段的值与源字段的引用标 `xdm:identityNamespace` 识描述符中的属性的值相匹配，以解决此问题。
 
 有关受支持身份命名空间代码的列表，请参阅标 [识命名空间概](../identity-service/namespaces.md) 述中“标准命名空间”一节。
 
 ### 接受标题错误
 
-模式注册表API中的大多数GET请求都需要一个“接受”头，以便系统确定如何格式化响应。 以下是与“接受”标题关联的常见错误列表。 有关不同API请求的一列表兼容的“接受”标头，请参阅“模式注册表开发人 [员指南”中的相应部分](api/getting-started.md)。
+API中的大多数GET [!DNL Schema Registry] 请求都需要一个Accept头，以便系统确定如何格式化响应。 以下是与“接受”标题关联的常见错误列表。 有关不同API请求的一列表兼容的“接受”标头，请参阅“模式注册表开发人 [员指南”中的相应部分](api/getting-started.md)。
 
 #### 需要接受头参数
 
@@ -261,7 +264,7 @@ Experience Platform接受Parke或JSON格式的数据文件。 这些文件的内
 application/vnd.adobe.xed+json; version=1
 ```
 
-有关受支持的接受标头的列表，请参 [阅模式注册表](api/getting-started.md#accept) “开发人员指南”中的接受标头部分。
+有关受支持的接受标头的列表，请参 [阅开发人员指南](api/getting-started.md#accept) 中的接 [!DNL Schema Registry] 受标头部分。
 
 #### Accept头中不能提供版本
 
