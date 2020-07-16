@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 隐私服务常见问题解答
+title: Privacy Service常见问题解答
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 5921f89ce551a4bdec4c5038d579cebd0451f5f2
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '856'
 ht-degree: 0%
 
 ---
 
 
-# 隐私服务疑难解答指南
+# [!DNL Privacy Service] 疑难解答指南
 
-Adobe Experience Platform Privacy Service提供RESTful API和用户界面，帮助公司管理客户数据隐私请求。 通过隐私服务，您可以提交访问和删除私人或个人客户数据的请求，从而促进自动遵守组织和法律隐私法规。
+Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和用户界面，帮助公司管理客户数据隐私请求。 您可 [!DNL Privacy Service]以提交访问和删除私人或个人客户数据的请求，以便自动遵守组织和法律隐私法规。
 
-本文档提供有关隐私服务的常见问题解答，以及API中常见错误的相关信息。
+此文档提供有关常见问题的 [!DNL Privacy Service]解答，以及API中常见错误的相关信息。
 
 ## 在API中发出隐私请求时，用户ID和用户ID之间有何区别？ {#user-ids}
 
@@ -64,49 +64,49 @@ Consider the following example `users` array:
 有关提供用户身份信息的详细信息，请参阅隐私 [请求身份数据指南](identity-data.md)。
 
 
-## 我是否可以使用隐私服务来清理意外发送到平台的数据？
+## 我是否可 [!DNL Privacy Service] 以使用清除意外发送到的数据 [!DNL Platform]?
 
-Adobe不支持使用隐私服务清除意外提交到产品的数据。 隐私服务旨在帮助您履行数据主体（或消费者）访问或删除请求的义务。 这些请求是时间敏感的，并且与适用的隐私法相关。 提交不属于数据主体／消费者访问或删除请求的请求会影响所有隐私服务客户以及隐私服务支持适当法律时间表的能力。
+Adobe不支持使用清 [!DNL Privacy Service] 除意外提交到产品的数据。 [!DNL Privacy Service] 旨在帮助您履行对数据主体（或消费者）访问或删除请求的义务。 这些请求是时间敏感的，并且与适用的隐私法相关。 提交不属于数据主体／消费者访问或删除请求的请求会影响所 [!DNL Privacy Service] 有客户以及支持适当 [!DNL Privacy Service] 法律时限的能力。
 
 请联系您的客户经理(CDM)，协调并提供删除任何PII或数据问题的工作水平。
 
 ## 如何获取有关隐私请求或工作状态的信息？
 
-您可以使用隐私服务API或用户界面检索有关特定作业的详细信息。
+您可以使用API或用户界面检索有关特定作 [!DNL Privacy Service] 业的详细信息。
 
 ### 使用API
 
-要使用隐私服务API检索特定作业的状态，请使用请求路径中的作业`GET /`ID向根()端点发出请求。 有关详细信息，请参阅隐私 [服务开发人员指南中](api/privacy-jobs.md#check-the-status-of-a-job) “检查作业状态”一节。
+要使用API检索特定作业的状态， [!DNL Privacy Service] 请使用请求路径中的作`GET /`业ID向根()端点发出请求。 有关详细信息，请参阅开发 [人员指南中有关检查作业](api/privacy-jobs.md#check-the-status-of-a-job) 状态 [!DNL Privacy Service] 的部分。
 
 ### 使用UI
 
-所有活动作业请求都列在隐 **私服务** UI仪表板的作业请求构件中。 每个作业请求的状态显示在“状态” **列下** 。 有关在UI中查看作业请求的详细信息，请参阅隐 [私服务用户指南](ui/user-guide.md)。
+所有活动作业请求都列在 **[!UICONTROL UI仪表板]** 的作业请求 [!DNL Privacy Service] 构件中。 每个作业请求的状态显示在“状态” **[!UICONTROL 列下]** 。 有关在UI中查看作业请求的详细信息，请参阅 [Privacy Service用户指南](ui/user-guide.md)。
 
 ## 如何下载已完成的隐私工作的结果？
 
-隐私服务API和用户界面都提供了以ZIP格式下载完成作业结果的方法。
+API [!DNL Privacy Service] 和用户界面都提供了以ZIP格式下载完成作业结果的方法。
 
 ### 使用API
 
-使用要在请求路径`GET /`中下载其结果的作业的ID，向Privacy Service API中的根()端点发出请求。 如果作业状态为完成，则API将在响应主体 `downloadURL` 中包含一个属性。 此属性包含一个URL，您可以将其粘贴到浏览器的地址栏中以下载ZIP文件。
+使用要在请求路径`GET /`中下载其结 [!DNL Privacy Service] 果的作业的ID，向API中的根()端点发出请求。 如果作业状态为完成，则API将在响应主体 `downloadURL` 中包含一个属性。 此属性包含一个URL，您可以将其粘贴到浏览器的地址栏中以下载ZIP文件。
 
-有关详细信息，请参阅隐 [私服务开发人员指南中有关](api/privacy-jobs.md#check-the-status-of-a-job) “通过ID查找作业”的部分。
+有关详细信息，请参阅开发 [人员指南中关于按作业ID](api/privacy-jobs.md#check-the-status-of-a-job) 查找作 [!DNL Privacy Service] 业的部分。
 
 ### 使用UI
 
-在隐私服务UI仪表板下，从作业请求构件中找到要下 **载的作** 业。 单击作业的ID以打开“作业详 _细信息_ ”页。 从此处， **单击** 右上角的“下载”以下载ZIP文件。 有关更 [详细的步骤](ui/user-guide.md) ，请参阅隐私服务用户指南。
+在UI [!DNL Privacy Service] 仪表板中，从作业请求构件中找到要下载 **的作业** 。 单击作业的ID以打开“作业详 _细信息_ ”页。 从此处， **单击** 右上角的“下载”以下载ZIP文件。 有关更详 [细的步骤](ui/user-guide.md) ，请参阅Privacy Service用户指南。
 
 ## 常见错误消息
 
-下表概述了隐私服务中的一些常见错误，并提供了帮助解决其各自问题的说明。
+下表概述了中的一些常见错 [!DNL Privacy Service]误，并提供了帮助解决各自问题的说明。
 
 | 错误消息 | 描述 |
 | --- | --- |
 | 找不到用户ID。 | 找不到请求中提供的某些用户ID，已跳过。 确保在请求有效负荷中使用正确的命名空间和ID值。 有关提供身份数 [据的文档](./identity-data.md) ，请参阅此，以获取更详细的说明。 |
-| 无效命名空间 | 为用户ID提供的标识命名空间无效。 有关已接受的命名空间 [的列表，请参阅](./api/appendix.md#standard-namespaces) 《隐私服务开发人员指南》附录中有关标准标识命名空间的部分。 如果您使用的是自定义命名空间，请确保将ID的属 `type` 性设置为“custom”。 |
+| 无效命名空间 | 为用户ID提供的标识命名空间无效。 有关已接受的 [命名空间的列表](./api/appendix.md#standard-namespaces) ，请参 [!DNL Privacy Service] 阅开发人员指南附录中有关标准标识命名空间的部分。 如果您使用的是自定义命名空间，请确保将ID的属 `type` 性设置为“custom”。 |
 | 部分完成 | 作业已成功完成，但某些数据不适用于给定请求，已被跳过。 |
 | 数据不是所需格式。 | 指定应用程序的一个或多个数据值格式不正确。 有关详细信息，请查看作业详细信息。 |
-| 尚未配置IMS组织。 | 未为您的IMS组织设置隐私服务时，会出现此消息。 有关详细信息，请与管理员联系。 |
-| 需要访问权限。 | 使用隐私服务需要访问权限。 请与管理员联系以获取访问权限。 |
+| 尚未配置IMS组织。 | 当您的IMS组织尚未设置时，会出现此消息 [!DNL Privacy Service]。 有关详细信息，请与管理员联系。 |
+| 需要访问权限。 | 需要访问权限才能使用 [!DNL Privacy Service]。 请与管理员联系以获取访问权限。 |
 | 上传和存档访问数据时出现问题。 | 发生此错误时，请重新上传访问数据，然后重试。 |
 | 已超出当前文档率限制的工作量。 | 出现此错误时，请降低提交率，然后重试。 |
