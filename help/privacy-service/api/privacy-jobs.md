@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 作业
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: df36d88de8ac117206d8d744cfcdd7804fcec61e
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
 workflow-type: tm+mt
-source-wordcount: '1807'
+source-wordcount: '1795'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 隐私工作
 
-本文档介绍如何使用API调用处理隐私作业。 具体而言，它涵盖在Privacy ServiceAPI `/job` 中端点的使用。 在阅读本指南之前，请参 [阅入门部分](./getting-started.md#getting-started) ，了解成功调用API所需的重要信息，包括必需的头以及如何读取示例API调用。
+本文档介绍如何使用API调用处理隐私作业。 具体而言，它涵盖API中 `/job` 端点的使 [!DNL Privacy Service] 用。 在阅读本指南之前，请参 [阅入门部分](./getting-started.md#getting-started) ，了解成功调用API所需的重要信息，包括必需的头以及如何读取示例API调用。
 
 ## 列表所有作业 {#list}
 
@@ -63,9 +63,9 @@ curl -X GET \
 
 >[!NOTE]
 >
->兼容的Adobe Experience Cloud应用程序使用不同的值来识别数据主体。 有关应用程序 [所需标识符的更](../experience-cloud-apps.md) 多信息，请参阅Privacy Service和Experience Cloud应用程序指南。 有关确定要发送给Privacy Service的ID的更一般指导，请参阅隐私请 [求中的身份文档](../identity-data.md)。
+>兼容的Adobe Experience Cloud应用程序使用不同的值来识别数据主体。 有关应用程序 [所需标识符的更](../experience-cloud-apps.md) 多信息，请参阅Privacy Service和Experience Cloud应用程序指南。 有关确定要发送哪些ID的更一般指 [!DNL Privacy Service]南，请参阅隐私 [请求中的身份文档](../identity-data.md)。
 
-Privacy ServiceAPI支持两种个人数据的作业请求：
+API [!DNL Privacy Service] 支持两种对个人数据的作业请求：
 
 * [访问和／或删除](#access-delete): 访问（读取）或删除个人数据。
 * [选择退出销售](#opt-out): 将个人数据标记为不出售。
@@ -150,7 +150,7 @@ curl -X POST \
 | `companyContexts` **（必需）** | 包含组织身份验证信息的数组。 每个列出的标识符都包含以下属性： <ul><li>`namespace`: 标识符的命名空间。</li><li>`value`: 标识符的值。</li></ul>必须 **使用** 其中一个标识符 `imsOrgId` 作为其 `namespace`的标识符，其 `value` 中包含IMS组织的唯一ID。 <br/><br/>其他标识符可以是特定于产品的公司限定符( `Campaign`例如)，它们标识与属于您的组织的Adobe应用程序的集成。 潜在值包括帐户名、客户端代码、租户ID或其他应用程序标识符。 |
 | `users` **（必需）** | 包含至少一个用户集合的数组，您希望访问或删除其信息。 单个请求中最多可提供1000个用户ID。 每个用户对象都包含以下信息： <ul><li>`key`: 用户的标识符，用于限定响应数据中单独的作业ID。 为此值选择唯一、易于识别的字符串是最佳做法，这样便可以方便地引用或稍后查找。</li><li>`action`: 列表用户数据所需操作的数组。 根据您要执行的操作，此数组必须包括或 `access`同时 `delete`包括这两个操作。</li><li>`userIDs`: 用户的身份集合。 单个用户可以拥有的身份数量限制为9个。 每个标识都包 `namespace`含一个、 `value`一个和一个命名空间限定符(`type`)。 有关这些 [必需属性](appendix.md) 的更多详细信息，请参阅附录。</li></ul> 有关和的更详细说 `users` 明， `userIDs`请参阅故 [障排除指南](../troubleshooting-guide.md#user-ids)。 |
 | `include` **（必需）** | 要包含在您处理中的一组Adobe产品。 如果此值缺失或为空，则请求将被拒绝。 仅包含您的组织已集成的产品。 有关详细信息，请 [参阅附录](appendix.md) 中有关已接受产品值的部分。 |
-| `expandIDs` | 一个可选属性，当设置为 `true`时，它表示处理应用程序中ID的优化(目前仅受Analytics支持)。 If omitted, this value defaults to `false`. |
+| `expandIDs` | 一个可选属性，当设置为 `true`时，它表示处理应用程序中ID的优化(当前仅受支 [!DNL Analytics]持)。 If omitted, this value defaults to `false`. |
 | `priority` | Adobe Analytics使用的一个可选属性，它设置处理请求的优先级。 接受的值 `normal` 是和 `low`。 如 `priority` 果省略，则默认行为为 `normal`。 |
 | `analyticsDeleteMethod` | 一个可选属性，它指定Adobe Analytics如何处理个人数据。 此属性接受两个可能的值： <ul><li>`anonymize`: 给定用户ID集合引用的所有数据均为匿名数据。 如果 `analyticsDeleteMethod` 省略，则这是默认行为。</li><li>`purge`: 所有数据都被完全删除。</li></ul> |
 | `regulation` **（必需）** | 申请的规定。 必须是以下三个值之一： <ul><li>gdpr</li><li>ccpa</li><li>pdpa_tha</li></ul> |
@@ -283,7 +283,7 @@ curl -X POST \
 | `companyContexts` **（必需）** | 包含组织身份验证信息的数组。 每个列出的标识符都包含以下属性： <ul><li>`namespace`: 标识符的命名空间。</li><li>`value`: 标识符的值。</li></ul>必须 **使用** 其中一个标识符 `imsOrgId` 作为其 `namespace`的标识符，其 `value` 中包含IMS组织的唯一ID。 <br/><br/>其他标识符可以是特定于产品的公司限定符( `Campaign`例如)，它们标识与属于您的组织的Adobe应用程序的集成。 潜在值包括帐户名、客户端代码、租户ID或其他应用程序标识符。 |
 | `users` **（必需）** | 包含至少一个用户集合的数组，您希望访问或删除其信息。 单个请求中最多可提供1000个用户ID。 每个用户对象都包含以下信息： <ul><li>`key`: 用户的标识符，用于限定响应数据中单独的作业ID。 为此值选择唯一、易于识别的字符串是最佳做法，这样便可以方便地引用或稍后查找。</li><li>`action`: 列表对数据执行所需操作的数组。 对于退出销售请求，阵列只能包含值 `opt-out-of-sale`。</li><li>`userIDs`: 用户的身份集合。 单个用户可以拥有的身份数量限制为9个。 每个标识都包 `namespace`含一个、 `value`一个和一个命名空间限定符(`type`)。 有关这些 [必需属性](appendix.md) 的更多详细信息，请参阅附录。</li></ul> 有关和的更详细说 `users` 明， `userIDs`请参阅故 [障排除指南](../troubleshooting-guide.md#user-ids)。 |
 | `include` **（必需）** | 要包含在您处理中的一组Adobe产品。 如果此值缺失或为空，则请求将被拒绝。 仅包含您的组织已集成的产品。 有关详细信息，请 [参阅附录](appendix.md) 中有关已接受产品值的部分。 |
-| `expandIDs` | 一个可选属性，当设置为 `true`时，它表示处理应用程序中ID的优化(目前仅受Analytics支持)。 If omitted, this value defaults to `false`. |
+| `expandIDs` | 一个可选属性，当设置为 `true`时，它表示处理应用程序中ID的优化(当前仅受支 [!DNL Analytics]持)。 If omitted, this value defaults to `false`. |
 | `priority` | Adobe Analytics使用的一个可选属性，它设置处理请求的优先级。 接受的值 `normal` 是和 `low`。 如 `priority` 果省略，则默认行为为 `normal`。 |
 | `analyticsDeleteMethod` | 一个可选属性，它指定Adobe Analytics如何处理个人数据。 此属性接受两个可能的值： <ul><li>`anonymize`: 给定用户ID集合引用的所有数据均为匿名数据。 如果 `analyticsDeleteMethod` 省略，则这是默认行为。</li><li>`purge`: 所有数据都被完全删除。</li></ul> |
 | `regulation` **（必需）** | 申请的规定。 必须是以下三个值之一： <ul><li>gdpr</li><li>ccpa</li><li>pdpa_tha</li></ul> |
@@ -438,7 +438,7 @@ curl -X GET \
 | `productStatusResponse` | 数组中的每个 `productResponses` 对象都包含有关特定应用程序的作业当前状态的 [!DNL Experience Cloud] 信息。 |
 | `productStatusResponse.status` | 作业的当前状态类别。 请参见下表，了解可用状 [态类别的列表](#status-categories) 及其相应含义。 |
 | `productStatusResponse.message` | 作业的特定状态，对应于状态类别。 |
-| `productStatusResponse.responseMsgCode` | 由Privacy Service接收的产品响应消息的标准代码。 消息的详细信息在下面提供 `responseMsgDetail`。 |
+| `productStatusResponse.responseMsgCode` | 接收的产品响应消息的标准代码 [!DNL Privacy Service]。 消息的详细信息在下面提供 `responseMsgDetail`。 |
 | `productStatusResponse.responseMsgDetail` | 对工作状态的更详细说明。 处于相似状态的消息可能因产品而异。 |
 | `productStatusResponse.results` | 对于某些状态，某些产品可能会返回 `results` 一个对象，该对象提供未涵盖的其他信 `responseMsgDetail`息。 |
 | `downloadURL` | 如果作业的状态为 `complete`，则此属性提供URL以ZIP文件形式下载作业结果。 作业完成后60天内可下载此文件。 |
@@ -460,4 +460,4 @@ curl -X GET \
 
 ## 后续步骤
 
-您现在了解如何使用Privacy ServiceAPI创建和监视隐私作业。 有关如何使用用户界面执行相同任务的信息，请参阅 [Privacy ServiceUI概述](../ui/overview.md)。
+您现在了解如何使用API创建和监视隐私工 [!DNL Privacy Service] 作。 有关如何使用用户界面执行相同任务的信息，请参阅 [Privacy ServiceUI概述](../ui/overview.md)。
