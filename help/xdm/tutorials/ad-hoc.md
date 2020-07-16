@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建点对点模式
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '724'
 ht-degree: 2%
 
 ---
@@ -14,18 +14,18 @@ ht-degree: 2%
 
 # 创建点对点模式
 
-在特定情况下，可能需要创建一个体验数据模型(XDM)模式，其中的字段以仅由单个数据集使用的名称命名。 这称为“临时”模式。 临时模式用于各种Experience Platform数据获取工作流，包括获取CSV文件和创建某些类型的源连接。
+在特定情况下，可能需要创建一个( [!DNL Experience Data Model] XDM)模式，其中的字段以名称命名，仅供单个数据集使用。 这称为“临时”模式。 临时模式用于各种数据获取工作流, [!DNL Experience Platform]包括获取CSV文件和创建某些类型的源连接。
 
-此文档提供了使用模式注册表API创建点对点模式的 [一般步骤](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。 它旨在与其他需要在工作流中创建点对点Experience Platform的模式教程结合使用。 这些文档中的每一个都提供了有关如何为其特定用例正确配置点对点模式的详细信息。
+此文档提供了使用模式注册表API创建点对点模式的 [一般步骤](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。 它旨在与需要在工作流程中创 [!DNL Experience Platform] 建临时模式的其他教程结合使用。 这些文档中的每一个都提供了有关如何为其特定用例正确配置点对点模式的详细信息。
 
 ## 入门指南
 
-本教程需要对体验数据模型(XDM)系统有一个有效的了解。 在开始本教程之前，请查看以下XDM文档：
+本教程需要对(XDM)系 [!DNL Experience Data Model] 统有良好的了解。 在开始本教程之前，请查看以下XDM文档：
 
-- [XDM系统概述](../home.md): XDM及其在Experience Platform中实现的高级概述。
+- [XDM系统概述](../home.md): XDM及其实施的高级概述 [!DNL Experience Platform]。
 - [模式合成基础](../schema/composition.md): XDM模式的基本组件概述。
 
-在开始本教程之前，请查阅开 [发人员指南](../api/getting-started.md) ，了解成功调用模式注册表API所需了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
+在开始本教程之前，请查 [看开发人员指南](../api/getting-started.md) ，了解成功调用API所需了解的重要 [!DNL Schema Registry] 信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
 
 ## 创建点对点类
 
@@ -239,7 +239,7 @@ GET /tenant/schemas/{SCHEMA_ID}
 
 **请求**
 
-以下请求使用“接受” `application/vnd.adobe.xed-full+json; version=1`标题，它返回模式的扩展形式。 请注意，从模式注册表检索特定资源时，请求的“接受”标题必须包括相关资源的主要版本。
+以下请求使用“接受” `application/vnd.adobe.xed-full+json; version=1`标题，它返回模式的扩展形式。 请注意，从中检索特定资源时，请 [!DNL Schema Registry]求的“接受”标题必须包含相关资源的主要版本。
 
 ```shell
 curl -X GET \
@@ -305,4 +305,4 @@ curl -X GET \
 
 通过遵循本教程，您已成功创建了新的临时模式。 如果您是作为另一个教程的一部分被带到此文档的，您现在可以 `$id` 使用临时模式按照指示完成工作流。
 
-有关使用模式注册表API的详细信息，请参阅开发 [人员指南](../api/getting-started.md)。
+有关使用API的详细 [!DNL Schema Registry] 信息，请参阅开发 [人员指南](../api/getting-started.md)。
