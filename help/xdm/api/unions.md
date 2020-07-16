@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 合并
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '806'
+source-wordcount: '788'
 ht-degree: 1%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 1%
 
 # 合并
 
-合并(或合并视图)是系统生成的只读模式,聚合共享相同类(XDM ExperienceEvent或XDM个人用户档案)的所有模式的字段，并启用实时 [客户用户档案](../../profile/home.md)。
+合并(或合并视图)是系统生成的只读模式，它聚合共享同一类（或）并启用的所[!DNL XDM ExperienceEvent] 有模式 [!DNL XDM Individual Profile]的字段 [!DNL Real-time Customer Profile](../../profile/home.md)。
 
 此文档涵盖在模式注册表API中与合并协作的基本概念，包括各种操作的示例调用。 有关XDM中合并的更多一般信息，请参阅模式合成基 [础知识中的合并部分](../schema/composition.md#union)。
 
 ## 合并混合
 
-模式注册表在合并模式中自动包含三个混音： `identityMap`、 `timeSeriesEvents`和 `segmentMembership`。
+在合并 [!DNL Schema Registry] 模式中，自动包含三个混音： `identityMap`、 `timeSeriesEvents`和 `segmentMembership`。
 
 ### 身份映射
 
@@ -30,7 +30,7 @@ See the [Identity Service documentation](../../identity-service/home.md) for mor
 
 ### 时间系列事件
 
-阵 `timeSeriesEvents` 列是与与列表相关联的记录模式相关的时间序列事件的合并。 将用户档案数据导出到数据集时，每个记录都包含此数组。 这对于各种用例都很有用，例如机器学习，其中模型除了记录属性外还需要用户档案的整个行为历史记录。
+阵 `timeSeriesEvents` 列是与与列表相关联的记录模式相关的时间序列事件的合并。 当数 [!DNL Profile] 据导出到数据集时，每个记录都包含此数组。 这对于各种用例都很有用，例如机器学习，其中模型除了记录属性外还需要用户档案的整个行为历史记录。
 
 ### 区段成员关系图
 
@@ -54,7 +54,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | URL编码 `$id` 的URI `meta:altId` 或要启用以在用户档案中使用的模式。 |
+| `{SCHEMA_ID}` | URL编码 `$id` 的URI `meta:altId` 或要在中启用的模式的URI [!DNL Profile]。 |
 
 **请求**
 
@@ -117,7 +117,7 @@ curl -X PATCH \
 
 ## 列表合并
 
-在模式上设置“合并”标记时，模式注册表会自动为模式所基于的类创建和维护合并。 合并 `$id` 的与类的标准相似，唯一 `$id` 的区别是用两个下划线和单词“合并”(`"__union"`)附加。
+在模式上设置“合并”标签时，将自 [!DNL Schema Registry] 动为模式所基于的类创建和维护合并。 合并 `$id` 的与类的标准相似，唯一 `$id` 的区别是用两个下划线和单词“合并”(`"__union"`)附加。
 
 要视图可用合并的列表，可以对端点执行GET请 `/unions` 求。
 
@@ -168,7 +168,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->合并查找可使用和 `/unions` 端点 `/schemas` 来启用它们，以便在用户档案导出到数据集中时使用。
+>合并查找可使用 `/unions` 和 `/schemas` 端点，以便在导出到数 [!DNL Profile] 据集时使用。
 
 **API格式**
 
@@ -265,7 +265,7 @@ GET /tenant/schemas?property=meta:immutableTags==union&property=meta:class=={CLA
 
 **请求**
 
-以下请求会查找属于XDM单个模式类合并的所有用户档案。
+以下请求会查找属于类模式的所 [!DNL XDM Individual Profile] 有合并。
 
 ```SHELL
 curl -X GET \
