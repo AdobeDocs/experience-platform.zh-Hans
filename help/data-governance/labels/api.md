@@ -4,9 +4,9 @@ solution: Experience Platform
 title: '使用API管理数据使用标签 '
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b51a13e2eab967099c84d1cca2233e2ace554e01
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '995'
+source-wordcount: '967'
 ht-degree: 3%
 
 ---
@@ -14,17 +14,17 @@ ht-degree: 3%
 
 # 使用API管理数据使用标签
 
-此文档提供了如何使用策略服务API和数据集服务API管理数据使用标签的步骤。
+此文档提供了如何使用API和API管理数据使用 [!DNL Policy Service] 标签的 [!DNL Dataset Service] 步骤。
 
-策 [略服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) 提供了多个端点，允许您为组织创建和管理数据使用标签。
+提供 [!DNL Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) 了多个端点，允许您创建和管理组织的数据使用标签。
 
-数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的Catalog Service API分开。
+API [!DNL Dataset Service] 允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元 [!DNL Catalog Service] 数据的API相分离。
 
 ## 入门指南
 
 在阅读本指南之前，请按照目录开发人 [员指南](../../catalog/api/getting-started.md) “入门”部分中概述的步骤收集所需凭据以调用 [!DNL Platform] API。
 
-要调用此文档中概述的数据集服务端点，您必须具有特定 `id` 数据集的唯一值。 如果没有此值，请参阅列出目录对 [象的指南](../../catalog/api/list-objects.md) ，以查找现有数据集的ID。
+要调用此文档中概 [!DNL Dataset Service] 述的端点，您必须具有特定数 `id` 据集的唯一值。 如果没有此值，请参阅列出目录对 [象的指南](../../catalog/api/list-objects.md) ，以查找现有数据集的ID。
 
 ## 列表所有标签 {#list-labels}
 
@@ -110,7 +110,7 @@ curl -X GET \
 
 ## 查找标签 {#look-up-label}
 
-通过将该标签的属性包含在到策略服 `name` 务API的GET请求的路径中，可以查找特定标签。
+通过在GET请求到API的路径中包含该标 `name` 签的属性，可以查找特定标 [!DNL Policy Service] 签。
 
 **API格式**
 
@@ -164,7 +164,7 @@ curl -X GET \
 
 ## 创建或更新自定义标签 {#create-update-label}
 
-要创建或更新自定义标签，必须向策略服务API发出PUT请求。
+要创建或更新自定义标签，您必须向API发出PUT请 [!DNL Policy Service] 求。
 
 **API格式**
 
@@ -230,7 +230,7 @@ curl -X PUT \
 
 ## 查找数据集的标签 {#look-up-dataset-labels}
 
-通过向Dataset Service API发出GET请求，可以查找已应用于现有数据集的数据使用标签。
+您可以通过向API发出GET请求来查找已应用于现有数据集的数据使用标 [!DNL Dataset Service] 签。
 
 **API格式**
 
@@ -283,7 +283,7 @@ curl -X GET \
 
 ## 将标签应用于数据集 {#apply-dataset-labels}
 
-您可以通过在POST或PUT请求的有效负荷中为数据集创建一组标签到数据集服务API。 使用以下任一方法将覆盖任何现有标签，并用有效负荷中提供的标签替换它们。
+您可以通过在POST或PUT请求的有效负荷中向API提供数据集的标签集来创 [!DNL Dataset Service] 建标签。 使用以下任一方法将覆盖任何现有标签，并用有效负荷中提供的标签替换它们。
 
 **API格式**
 
@@ -326,7 +326,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `labels` | 要添加到数据集的列表数据使用标签。 |
-| `optionalLabels` | 列表数据集中要添加标签的任何单个字段。 此数组中的每个项目都必须具有以下属性： <br/><br/>`option`: 包含字段的体验数据模型(XDM)属性的对象。 以下三个属性是必需的：<ul><li>id</code>: 与字段关联的</code> 模式的URI $id值。</li><li>contentType</code>: 模式的内容类型和版本号。 这应采用XDM查找请求的有效 <a href="../../xdm/api/look-up-resource.md">接受标头</a> 之一的形式。</li><li>schemaPath</code>: 数据集模式中字段的路径。</li></ul>`labels`: 要添加到字段的列表数据使用标签。 |
+| `optionalLabels` | 列表数据集中要添加标签的任何单个字段。 此数组中的每个项目都必须具有以下属性： <br/><br/>`option`: 包含字段 [!DNL Experience Data Model] (XDM)属性的对象。 以下三个属性是必需的：<ul><li>id</code>: 与字段关联的</code> 模式的URI $id值。</li><li>contentType</code>: 模式的内容类型和版本号。 这应采用XDM查找请求的有效 <a href="../../xdm/api/look-up-resource.md">接受标头</a> 之一的形式。</li><li>schemaPath</code>: 数据集模式中字段的路径。</li></ul>`labels`: 要添加到字段的列表数据使用标签。 |
 
 **响应**
 
@@ -350,7 +350,7 @@ curl -X POST \
 
 ## 从数据集中删除标签 {#remove-dataset-labels}
 
-您可以通过向Dataset Service API发出DELETE请求来删除应用于数据集的标签。
+您可以通过向API发出DELETE请求来删除应用于数据集的标 [!DNL Dataset Service] 签。
 
 **API格式**
 
@@ -381,7 +381,7 @@ curl -X DELETE \
 
 通过阅读此文档，您学习了如何使用API管理数据使用标签。
 
-在数据集和字段级别添加数据使用标签后，您可以开始将数据引入Experience Platform。 要了解更多信息，请阅读开始 [获取文档](../../ingestion/home.md)。
+在数据集和字段级别添加数据使用标签后，您可以开始将数据收集到中 [!DNL Experience Platform]。 要了解更多信息，请阅读开始 [获取文档](../../ingestion/home.md)。
 
 您现在还可以根据已应用的标签定义数据使用策略。 有关详细信息，请参阅 [数据使用策略概述](../policies/overview.md)。
 
