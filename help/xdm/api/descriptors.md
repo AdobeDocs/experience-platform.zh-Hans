@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 描述符
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '1499'
+source-wordcount: '1477'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->描述符需要用唯一的“接受”标 `xed` 头替换， `xdm`但在其它方面与“接受”标题在模式注册表中其他位置使用非常相似。 以下示例调用中包含了正确的接受标头，但要确保使用正确的标头，请格外小心。
+>描述符需要用替换的唯一“接 `xed` 受” `xdm`标头，但在其它方面与“接受”标头非常相似 [!DNL Schema Registry]。 以下示例调用中包含了正确的接受标头，但要确保使用正确的标头，请格外小心。
 
 ## 列表描述符
 
@@ -48,7 +48,7 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xdm-link+json'
 ```
 
-响应格式取决于请求中发送的接受头。 请注意，该 `/descriptors` 端点使用的接受标头与模式注册表API中的所有其他端点不同。
+响应格式取决于请求中发送的接受头。 请注意， `/descriptors` 端点使用与API中所有其他端点不同的接受 [!DNL Schema Registry] 头。
 
 描述符接受标头 `xed` 替换 `xdm`为，并优惠 `link` 描述符特有的选项。
 
@@ -133,7 +133,7 @@ curl -X GET \
 
 ## 创建描述符
 
-模式注册表允许您定义几种不同的描述符类型。 每个描述符类型都要求在POST请求中发送其自己的特定字段。 描述符的完整列表以及定义描述符所需的字段，可在定义描述符的附录部分 [中找到](#defining-descriptors)。
+它允 [!DNL Schema Registry] 许您定义几种不同的描述符类型。 每个描述符类型都要求在POST请求中发送其自己的特定字段。 描述符的完整列表以及定义描述符所需的字段，可在定义描述符的附录部分 [中找到](#defining-descriptors)。
 
 **API格式**
 
@@ -143,7 +143,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求在示例模式的“电子邮件地址”字段上定义标识描述符。 这会告知Experience Platform使用电子邮件地址作为标识符来帮助拼合有关个人的信息。
+以下请求在示例模式的“电子邮件地址”字段上定义标识描述符。 这会告 [!DNL Experience Platform] 诉您使用电子邮件地址作为标识符来帮助拼合有关个人的信息。
 
 ```SHELL
 curl -X POST \
@@ -167,7 +167,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建）和新创建描述符的详细信息，包括其详细信 `@id`息。 是 `@id` 由模式注册表分配的只读字段，用于在API中引用描述符。
+成功的响应会返回HTTP状态201（已创建）和新创建描述符的详细信息，包括其详细信 `@id`息。 是 `@id` 由分配的只读字段，用 [!DNL Schema Registry] 于在API中引用描述符。
 
 ```JSON
 {
@@ -238,7 +238,7 @@ curl -X PUT \
 
 ## 删除描述符
 
-有时您可能需要从模式注册表中删除已定义的描述符。 这是通过引用要删除的描述符 `@id` 的DELETE请求来完成的。
+有时您可能需要删除已在中定义的描述符 [!DNL Schema Registry]。 这是通过引用要删除的描述符 `@id` 的DELETE请求来完成的。
 
 **API格式**
 
@@ -267,11 +267,11 @@ curl -X DELETE \
 
 成功的响应返回HTTP状态204（无内容）和空白正文。
 
-要确认描述符已被删除，您可以对描述符执行查找请求 `@id`。 该响应返回HTTP状态404（未找到），因为描述符已从模式注册表中删除。
+要确认描述符已被删除，您可以对描述符执行查找请求 `@id`。 该响应返回HTTP状态404（未找到），因为描述符已从中删除 [!DNL Schema Registry]。
 
 ## 附录
 
-下节提供有关在模式注册表API中使用描述符的其他信息。
+下节提供有关在API中使用描述符的其他 [!DNL Schema Registry] 信息。
 
 ### 定义描述符
 
@@ -279,7 +279,7 @@ curl -X DELETE \
 
 #### 标识描述符
 
-标识描述符表示“sourceSchema”的“sourceProperty”是由Adobe Experience Platform标识服务描述的标识 [字段](../../identity-service/home.md)。
+标识描述符表示“sourceSchema[!UICONTROL ”的]“sourceProperty[!UICONTROL ”是]由Adobe Experience Platform标识服务描 [!DNL Identity] 述的字段 [](../../identity-service/home.md)。
 
 ```json
 {
@@ -300,7 +300,7 @@ curl -X DELETE \
 | `xdm:sourceSchema` | 定 `$id` 义描述符的模式的URI。 |
 | `xdm:sourceVersion` | 源模式的主版本。 |
 | `xdm:sourceProperty` | 将作为标识的特定属性的路径。 路径应以“/”开头，而不以“/”结尾。 不要在路径中包含“属性”（例如，使用“/personalEmail/address”而不是“/properties/personalEmail/properties/address”） |
-| `xdm:namespace` | 标 `id` 识命名空间 `code` 的或值。 使用Identity Service API可以找到一列表 [命名空间](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)。 |
+| `xdm:namespace` | 标 `id` 识命名空间 `code` 的或值。 列表的命名空间可使用找到。 [!DNL Identity Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml) |
 | `xdm:property` | 或 `xdm:id` , `xdm:code`具体取决于使 `xdm:namespace` 用。 |
 | `xdm:isPrimary` | 可选布尔值。 如果为true，则将字段指示为主标识。 模式只能包含一个主标识。 |
 
@@ -336,7 +336,7 @@ curl -X DELETE \
 | `xdm:sourceProperty` | 将作为标识的特定属性的路径。 路径应以“/”开头，而不以“/”结尾。 不要在路径中包含“属性”（例如，使用“/personalEmail/address”而不是“/properties/personalEmail/properties/address”） |
 | `xdm:title` | 要为此字段显示的新标题，用标题大小写写写。 |
 | `xdm:description` | 可以随标题一起添加可选描述。 |
-| `meta:enum` | 如果以字符串 `xdm:sourceProperty` 字段表示的字段， `meta:enum` 则确定Experience PlatformUI中字段的建议值列表。 请务必注意，不 `meta:enum` 要声明明细列表或为XDM字段提供任何数据验证。<br><br>这应仅用于Adobe定义的核心XDM字段。 如果源属性是您的组织定义的自定义字段，则应直接通过PATCH `meta:enum` 请求编辑该字段 [的属性](./update-resource.md)。 |
+| `meta:enum` | 如果以字符 `xdm:sourceProperty` 串字段表示， `meta:enum` 则确定UI中字段的建议值 [!DNL Experience Platform] 列表。 请务必注意，不 `meta:enum` 要声明明细列表或为XDM字段提供任何数据验证。<br><br>这应仅用于Adobe定义的核心XDM字段。 如果源属性是您的组织定义的自定义字段，则应直接通过PATCH `meta:enum` 请求编辑该字段 [的属性](./update-resource.md)。 |
 
 #### 关系描述符
 
