@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 列表资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '519'
+source-wordcount: '508'
 ht-degree: 2%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 2%
 
 # 列表资源
 
-您可以通过执行单个GET请求，视图某个容器中特定类型(类、混合、模式、数据类型或描述符)的所有模式注册表资源。
+您可以通过执行单个 [!DNL Schema Registry] GET请求来视图容器中某种类型(类、混合、模式、数据类型或描述符)的所有资源的列表。
 
 >[!NOTE]
 >
->列出资源时，模式注册表将结果集限制为300项。 要返回超出此限制的资源，必须使用分 [页参数](#paging)。 还建议使用查询参数来筛 [选结果](#filtering) ，并减少返回的资源数。
+>列出资源时， [!DNL Schema Registry] 结果集限制为300项。 要返回超出此限制的资源，必须使用分 [页参数](#paging)。 还建议使用查询参数来筛 [选结果](#filtering) ，并减少返回的资源数。
 
 **API格式**
 
@@ -30,7 +30,7 @@ GET /{CONTAINER_ID}/{RESOURCE_TYPE}?{QUERY_PARAMS}
 | 参数 | 描述 |
 | --- | --- |
 | `{CONTAINER_ID}` | 资源所在的容器（“全局”或“租户”）。 |
-| `{RESOURCE_TYPE}` | 要从模式库检索的资源类型。 有效类 `classes`型有 `mixins`、 `schemas`、 `datatypes`和 `descriptors`。 |
+| `{RESOURCE_TYPE}` | 要从中检索的资源的类型 [!DNL Schema Library]。 有效类 `classes`型有 `mixins`、 `schemas`、 `datatypes`和 `descriptors`。 |
 | `{QUERY_PARAMS`} | 可选查询参数，用于筛选结果。 有关详细信息，请 [参阅查询](#query) 参数一节。 |
 
 **请求**
@@ -78,7 +78,7 @@ curl -X GET \
 
 ## 使用查询参数 {#query}
 
-模式注册表支持在列出资源时使用查询参数进行页面和筛选结果。
+支 [!DNL Schema Registry] 持在列出资源时使用查询参数进行页面和筛选结果。
 
 >[!NOTE]
 >
@@ -111,4 +111,4 @@ curl -X GET \
 
 >[!TIP]
 >
->可以使用该参 `property` 数按其兼容类过滤混音。 例如， `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` 仅返回与XDM单个用户档案类兼容的混音。
+>可以使用该参 `property` 数按其兼容类过滤混音。 例如， `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` 只返回与类兼容的混 [!DNL XDM Individual Profile] 合。
