@@ -4,23 +4,26 @@ solution: Experience Platform
 title: 创建混音
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b2ceac3de73ac622dc885eb388e46e93551f43a8
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+workflow-type: tm+mt
+source-wordcount: '303'
+ht-degree: 0%
 
 ---
 
 
 # 创建混音
 
-Mixin是用于描述特定概念的一组字段，如“地址”或“用户档案首选项”。 有许多标准混音可用，或者，当您希望捕获贵组织特有的信息时，您可以定义自己的混音。 每个混音都包 `meta:intendedToExtend` 含一个字段，该字段列表混音所兼容的类。
+Mixin是用于描述特定概念的一组字段，如“地址”或“用户档案首选项”。 有许多标准混音可用，或者您可以定义您自己的混音，以便在您希望捕获组织特有的信息时进行定义。 每个混音都包 `meta:intendedToExtend` 含一个字段，该字段列表混音所兼容的类。
 
-您可能会发现查看所有可用的混音很有帮助，以熟悉其中包含的字段。 您可以列表(GET)与特定类兼容的所有混音，方法是对“全局”和“租户”容器执行请求，只返回那些“meta:intenedToExtend”字段与您使用的类匹配的混音。 以下示例将返回可与XDM单个用户档案类一起使用的所有混音：
+您可能会发现查看所有可用的混音很有帮助，以熟悉其中包含的字段。 您可以对“全局”和“租户”容器执行请求，只返回“meta:intededToExtend”字段与您所使用的类匹配的那些混音，从而列表(GET)与特定类兼容的所有混音。 以下示例将返回可与类一起使用的所有混 [!DNL XDM Individual Profile] 音：
 
 ```http
 GET /global/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
 GET /tenant/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
 ```
 
-下面的示例API请求在租户容器中创建新的混音。
+下面的示例API请求在租户容器中创建新混音。
 
 **API格式**
 
@@ -30,7 +33,7 @@ POST /tenant/mixins
 
 **请求**
 
-定义新的混音时，它必须包含一 `meta:intendedToExtend` 个属性，并列出 `$id` 与混音兼容的类。 在此示例中，mixin与您先前定义的Property类兼容。 自定义字段必须嵌套在 `_{TENANT_ID}` （如示例所示）下，以避免与类模式中的其他混音或字段发生任何冲突。 请注意， `propertyConstruction` 该字段是对在上一个调用中创建的数据类型的引用。
+定义新的混音时，它必须包含一 `meta:intendedToExtend` 个属性，并 `$id` 列出与混音兼容的类。 在此示例中，mixin与您之前定义的Property类兼容。 自定义字段必须嵌套在 `_{TENANT_ID}` 下面（如示例所示），以避免与类模式中的其他混音或字段发生任何冲突。 请注意， `propertyConstruction` 该字段是对在上一次调用中创建的数据类型的引用。
 
 ```SHELL
 curl -X POST \
@@ -99,7 +102,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建）和包含新创建混音的详细信息（包括、和） `$id`的 `meta:altId`有效负荷 `version`。 这些值是只读的，由模式注册表分配。
+成功的响应会返回HTTP状态201（已创建）和包含新创建混合的详细信息（包括、和）的 `$id`有 `meta:altId`效负荷 `version`。 这些值是只读的，由指定 [!DNL Schema Registry]。
 
 ```JSON
 {
@@ -183,4 +186,4 @@ curl -X POST \
 }
 ```
 
-执行GET请求以列表租户容器中的所有混音现在将包括“车辆详细信息”混音，或者您可以使用URL编码的 `$id` URI执行查找(GET)请求以直接视图新混音。 请记住，在“接 `version` 受”标题中包含所有查找请求。
+执行GET请求以列表租户容器中的所有混音现在将包括车辆详细信息混音，或者您可以使用URL编码的URI执行查找( `$id` GET)请求以直接视图新混音。 请记住，在“接 `version` 受”标题中包含所有查找请求。
