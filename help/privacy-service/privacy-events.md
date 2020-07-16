@@ -4,28 +4,28 @@ solution: Experience Platform
 title: 订阅隐私事件
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: ab29c7771122267634dea24582b07f605abd7ed8
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
 workflow-type: tm+mt
-source-wordcount: '861'
+source-wordcount: '843'
 ht-degree: 1%
 
 ---
 
 
-# 订阅隐私事件
+# 订阅 [!DNL Privacy Events]
 
-隐私事件是Adobe Experience Platform Privacy Service提供的消息，利用发送到已配置网络挂接的Adobe I/O事件来促进高效的作业请求自动化。 它们减少或消除了轮询隐私服务API的需求，以便检查作业是否完成或是否已到达工作流中的特定里程碑。
+[!DNL Privacy Events] 是由Adobe Experience Platform提供的 [!DNL Privacy Service]消息，利用发送到已配置网络挂接的Adobe I/O事件来促进高效的作业请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。
 
 当前有四种类型的通知与隐私作业请求生命周期相关：
 
 | 类型 | 描述 |
 --- | ---
-| 作业完成 | 所有Experience Cloud解决方案都已报告回来，作业的整体或全局状态已标记为完成。 |
+| 作业完成 | 所有 [!DNL Experience Cloud] 解决方案都已报告，作业的整体或全局状态已标记为完成。 |
 | 作业错误 | 处理请求时，一个或多个解决方案报告了错误。 |
 | 产品完成 | 与此作业相关的解决方案之一已完成其工作。 |
 | 产品错误 | 其中一个解决方案在处理请求时报告了错误。 |
 
-本文档提供在Adobe I/O中设置隐私服务通知集成的步骤。 有关隐私服务及其功能的高级概述，请参阅隐 [私服务概述](home.md)。
+此文档提供在Adobe I/O中设置通 [!DNL Privacy Service] 知集成的步骤。 有关其功能的高 [!DNL Privacy Service] 级概述，请参阅 [Privacy Service概述](home.md)。
 
 ## 入门指南
 
@@ -74,7 +74,7 @@ app.listen(app.get('port'), function() {
 
 ## 在Adobe开发人员控制台中创建新项目
 
-转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用您的Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
+转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
 
 ## 将隐私事件添加到项目
 
@@ -82,7 +82,7 @@ app.listen(app.get('port'), function() {
 
 ![](./images/privacy-events/add-event-button.png)
 
-将出 _现“添加事件_ ”对话框。 选 **[!UICONTROL 择Experience Cloud]** ，以筛选可用事件类型的列表，然后选择隐 **[!UICONTROL 私服务事件，然后单击]** “下 **[!UICONTROL 一步”]**。
+将出 _现“添加事件_ ”对话框。 选择 **[!UICONTROL Experience Cloud]** ，以筛选可用事件类型的列表，然后选择 **[!UICONTROL Privacy Service事件]** ，然后单 **[!UICONTROL 击下一]**&#x200B;步。
 
 ![](./images/privacy-events/add-privacy-events.png)
 
@@ -110,11 +110,11 @@ app.listen(app.get('port'), function() {
 
 ![](./images/privacy-events/webhook-details.png)
 
-项目的详细信息页面将重新显示，隐私事件显示在左 _[!UICONTROL 侧导航]_的事件下。
+项目的详细信息页面将重新显示， [!DNL Privacy Events] 在左 _[!UICONTROL 侧导航]_的事件下显示。
 
 ## 视图事件数据
 
-在您已对项目注册了隐私事件并且已处理了隐私作业后，您可以视图收到的任何有关该注册的通知。 从开发人 **[!UICONTROL 员控制]** 台的“项目”选项卡中，从列表中选择您的项目以打开“ _产品概述_ ”页。 从此处，从左 **[!UICONTROL 侧导航]** 中选择隐私事件。
+在您注册了项 [!DNL Privacy Events] 目并处理了隐私工作后，您可以视图收到的任何有关该注册的通知。 从开发人 **[!UICONTROL 员控制]** 台的“项目”选项卡中，从列表中选择您的项目以打开“ _产品概述_ ”页。 从此处，从左 **[!UICONTROL 侧导航]** 中选择隐私事件。
 
 ![](./images/privacy-events/events-left-nav.png)
 
