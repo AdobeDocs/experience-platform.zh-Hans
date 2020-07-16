@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 同意
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '220'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 同意
 
-某些法规要求客户明确同意后才能收集其个人数据。 Privacy Service `/consent` API中的端点允许您处理客户同意请求并将其集成到您的隐私工作流程中。
+某些法规要求客户明确同意后才能收集其个人数据。 API `/consent` 中的端点允许您 [!DNL Privacy Service] 处理客户同意请求并将其集成到您的隐私工作流程中。
 
 在使用本指南之前，请参阅 [入门部分](./getting-started.md) ，了解以下示例API调用中显示的所需身份验证头。
 
@@ -68,8 +68,8 @@ curl -X POST \
 
 >[!NOTE]
 >
->有关如何确定要发送给Privacy Service的客户身份值的详细信息，请参阅提供身份 [数据指南](../identity-data.md)。
+>有关如何确定要发送给哪些客户身份值的更多信息， [!DNL Privacy Service]请参阅有关提供身 [份数据的指南](../identity-data.md)。
 
 **响应**
 
-成功的响应返回没有有效负荷的HTTP状态202（已接受），表示请求已被Privacy Service接受并正在处理。
+成功的响应返回没有有效负荷的HTTP状态202（已接受），表示请求已被接受并正 [!DNL Privacy Service] 在处理中。
