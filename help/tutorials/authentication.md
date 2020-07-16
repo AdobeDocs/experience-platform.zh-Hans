@@ -4,17 +4,17 @@ solution: Experience Platform
 title: 验证和访问Experience PlatformAPI
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
 workflow-type: tm+mt
-source-wordcount: '877'
+source-wordcount: '850'
 ht-degree: 1%
 
 ---
 
 
-# 验证和访问Experience PlatformAPI
+# 验证和访问 [!DNL Experience Platform] API
 
-此文档提供了一个分步教程，用于获取对Adobe Experience Platform开发者帐户的访问权，以便调用Experience PlatformAPI。
+此文档提供了一个分步教程，用于获取对Adobe Experience Platform开发者帐户的访问权，以便对API进行 [!DNL Experience Platform] 调用。
 
 ## 进行身份验证以进行API调用
 
@@ -25,7 +25,7 @@ ht-degree: 1%
 
 ## 先决条件
 
-为了成功调用Experience PlatformAPI，您需要：
+为了成功调用API, [!DNL Experience Platform] 您需要：
 
 * 可访问Adobe Experience Platform的IMS组织
 * 注册的Adobe ID帐户
@@ -38,16 +38,16 @@ ht-degree: 1%
 如果您没有Adobe ID，可以使用以下步骤创建一个：
 
 1. 转到Adobe [开发人员控制台](https://console.adobe.io)
-2. 单击 **创建新帐户**
+2. 单击 **[!UICONTROL 创建新帐户]**
 3. 完成注册过程
 
-## 成为组织的Experience Platform开发人员和用户
+## 成为组织的开发人 [!DNL Experience Platform] 员和用户
 
 在Adobe I/O上创建集成之前，您的帐户必须对IMS组织中的某个产品具有开发人员权限。 有关该Admin Console的开发人员帐户的详细信息，请参阅 [支持文档](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html) ，以管理开发人员。
 
 **获得开发人员访问权限**
 
-与组织中的Admin Console管理员联系，将您添加为使用Admin Console的贵组织某个产品的开发 [人员](https://adminconsole.adobe.com/)。
+请与您 [!DNL Admin Console] 组织中的管理员联系，以使用将您添加为您组织的某个产品的开发人员 [!DNL Admin Console](https://adminconsole.adobe.com/)。
 
 ![](images/authentication/assign-developer.png)
 
@@ -59,7 +59,7 @@ ht-degree: 1%
 
 **获得用户访问权限**
 
-您的Admin Console管理员还必须以用户身份将您添加到产品中。
+您的 [!DNL Admin Console] 管理员还必须以用户身份将您添加到产品中。
 
 ![](images/authentication/assign-users.png)
 
@@ -71,7 +71,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->如果您正在从文档开发人 [员指南中遵循此Privacy Service](../privacy-service/api/getting-started.md)，您现在可返回该指南以生成Privacy Service特有的访问凭据。
+>如果您正在从文档开发人 [员指南中遵循此Privacy Service](../privacy-service/api/getting-started.md)，您现在可以返回该指南以生成特定于的访问凭据 [!DNL Privacy Service]。
 
 使用Adobe Developer Console，您必须生成以下三个访问凭据：
 
@@ -79,7 +79,7 @@ ht-degree: 1%
 * `{API_KEY}`
 * `{ACCESS_TOKEN}`
 
-您 `{IMS_ORG}` 的 `{API_KEY}` 只需生成一次，以后的Platform API调用中即可重用。 但是，您的计 `{ACCESS_TOKEN}` 划是临时的，必须每24小时再生一次。
+您 `{IMS_ORG}` 的 `{API_KEY}` 只需生成一次，以后的API调用中 [!DNL Platform] 可重用。 但是，您的计 `{ACCESS_TOKEN}` 划是临时的，必须每24小时再生一次。
 
 下面详细介绍了这些步骤。
 
@@ -95,9 +95,9 @@ ht-degree: 1%
 
 ![](images/authentication/add-platform-api.png)
 
-选择Experience Platform作为要添加到项目的API后，请按照教程中概述的步骤，使用服务帐户( [JWT)](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) （从“配置API”步骤开始）将API添加到项目，以完成该过程。
+选择要添加 [!DNL Experience Platform] 到项目的API后，请按照教程中介绍的步 [骤，使用服务帐户(JWT)](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/services-add-api-jwt.md) （从“配置API”步骤开始）将API添加到项目以完成该过程。
 
-将API添加到项目后，“项目 _概述_ ”页将显示对Experience PlatformAPI的所有调用中所需的以下凭据：
+将API添加到项目后，“项目 _概述_ ”页将显示对API的所有调用中所需的以 [!DNL Experience Platform] 下凭据：
 
 * `{API_KEY}` （客户端ID）
 * `{IMS_ORG}` (Organization ID)
@@ -106,13 +106,13 @@ ht-degree: 1%
 
 ### 每个会话的身份验证
 
-您必须收集的最终所需凭据是您的 `{ACCESS_TOKEN}`。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用平台API。
+您必须收集的最终所需凭据是您的 `{ACCESS_TOKEN}`。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用 [!DNL Platform] API。
 
 要生成新代码， `{ACCESS_TOKEN}`请按照“开发人 [员控制台凭据指南](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/credentials.md) ”中的步骤生成JWT令牌。
 
 ## 测试访问凭据
 
-收集所有三个必需凭据后，您可以尝试进行以下API调用。 此调用将列表模式注册表容器中的所有体验数据模型(XDM)类 `global` :
+收集所有三个必需凭据后，您可以尝试进行以下API调用。 此调用将列表 [!DNL Experience Data Model] 模式注册表容器中的所有(XDM)类 `global` :
 
 **API格式**
 
@@ -159,6 +159,6 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 
 ## 后续步骤
 
-通过阅读此文档，您已收集并成功测试了Platform API的访问凭据。 您现在可以按照文档中提供的示例API调 [用操作](../landing/documentation/overview.md)。
+通过阅读此文档，您已收集并成功测试了API的访问凭 [!DNL Platform] 据。 您现在可以按照文档中提供的示例API调 [用操作](../landing/documentation/overview.md)。
 
-除了在本教程中收集的身份验证值之外，许多平台API还要求以标 `{SANDBOX_NAME}` 头形式提供有效。 有关更多 [信息，请参](../sandboxes/home.md) 阅沙箱概述。
+除了在本教程中收集的身份验证值之外，许多 [!DNL Platform] API还要求以头 `{SANDBOX_NAME}` 形式提供有效的API。 有关更多 [信息，请参](../sandboxes/home.md) 阅沙箱概述。
