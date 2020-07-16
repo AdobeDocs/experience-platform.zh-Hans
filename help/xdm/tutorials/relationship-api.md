@@ -4,39 +4,39 @@ solution: Experience Platform
 title: 使用模式注册表API定义两个模式之间的关系
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
 workflow-type: tm+mt
-source-wordcount: '1504'
+source-wordcount: '1467'
 ht-degree: 1%
 
 ---
 
 
-# 使用模式注册表API定义两个模式之间的关系
+# 使用API定义两个模式之间的关 [!DNL Schema Registry] 系
 
 
-了解不同渠道客户之间的关系及其与您品牌的互动是Adobe Experience Platform的重要组成部分。 在体验数据模型(XDM)模式结构中定义这些关系，使您能够获得对客户数据的复杂洞察。
+了解不同渠道客户之间的关系及其与您品牌的互动是Adobe Experience Platform的重要组成部分。 在(XDM)模式结构中定 [!DNL Experience Data Model] 义这些关系，使您能够对客户数据获得复杂的洞察。
 
-本文档提供了一个教程，用于定义组织使用模式注册表API定义的两个模式之间的一 [对一关系](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
+本文档提供了一个教程，用于定义组织使用定义的两个模式之间的一对一关系 [!DNL Schema Registry API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
 
 ## 入门指南
 
-本教程需要对体验数据模型(XDM)和XDM系统进行有效的了解。 在开始本教程之前，请查阅以下文档：
+本教程需要对(XDM) [!DNL Experience Data Model] 和进行有效的了解 [!DNL XDM System]。 在开始本教程之前，请查阅以下文档：
 
 * [Experience Platform中的XDM系统](../home.md): XDM及其在Experience Platform中实现的概述。
    * [模式合成基础](../schema/composition.md): 介绍XDM模式的构件。
-* [实时客户用户档案](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-在开始本教程之前，请查阅开 [发人员指南](../api/getting-started.md) ，了解成功调用模式注册表API所需了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
+在开始本教程之前，请查 [看开发人员指南](../api/getting-started.md) ，了解成功调用API所需了解的重要 [!DNL Schema Registry] 信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
 
 ## 定义源和目标模式 {#define-schemas}
 
 您应已创建将在关系中定义的两个模式。 本教程在组织的当前忠诚度项目(在“忠诚度会员”模式中定义)的成员与其喜爱的酒店(在“酒店”模式中定义)之间建立关系。
 
-模式关系由源 **模式表示** ，该源具有引用目标模式中的另 **一个字段**。 在接下来的步骤中，“忠诚会员”将是源模式，而“酒店”将充当目标模式。
+模式关系由源 **[!UICONTROL 模式表示]** ，该源具有引用目标模式内的另 **[!UICONTROL 一个字段]**。 在接下来的步骤中，“[!UICONTROL 忠诚会员]”将作为源模式，而“[!UICONTROL Hotels]”将作为目的模式。
 
-要定义两个模式之间的关系，您必须首先获取两个 `$id` 模式的值。 如果您知道模式的显`title`示名称()，则可以通过向模式注册 `$id` 表API中的端点发出GET请求 `/tenant/schemas` 来查找其值。
+要定义两个模式之间的关系，您必须首先获取两个 `$id` 模式的值。 如果您知道模式的显`title`示名称()，则可以通过 `$id` 在API中向端点发出GET请求 `/tenant/schemas` 来查找其 [!DNL Schema Registry] 值。
 
 **API格式**
 
@@ -104,11 +104,11 @@ curl -X GET \
 
 ## 定义两个模式的引用字段
 
-在模式注册表中，关系描述符的工作方式与SQL表中的外键类似： 源模式中的字段用作对目标模式的字段的引用。 定义关系时，每个模式必须有一个专用字段，用作对其他模式的引用。
+在中，关 [!DNL Schema Registry]系描述符的工作方式与SQL表中的外键类似： 源模式中的字段用作对目标模式的字段的引用。 定义关系时，每个模式必须有一个专用字段，用作对其他模式的引用。
 
 >[!IMPORTANT]
 >
->如果要启用模式以在实 [时用户档案中使用](../../profile/home.md)，则目标模式的引用字段必须是 **主标识**。 本教程稍后将对此进行更详细的说明。
+>如果要启用模式以在中使 [!DNL Real-time Customer Profile](../../profile/home.md)用，则目标模式的引用字段必须是其主 **[!UICONTROL 要标识]**。 本教程稍后将对此进行更详细的说明。
 
 如果任一模式没有用于此目的的字段，您可能需要使用新字段创建混音并将其添加到模式。 此新字段的值 `type` 必须为“string”。
 
@@ -332,9 +332,9 @@ curl -X PATCH \
 
 >[!NOTE]
 >
->此步骤仅对于启用在实时客户模式中 [使用的用户档案是必需的](../../profile/home.md)。 如果您不希望模式参与合并，或者如果模式已定义主标识，则可跳到为目标模式创建引 [用标识描述符的下](#create-descriptor) 一步。
+>此步骤仅对将启用在中使用的模式是必需的 [!DNL Real-time Customer Profile](../../profile/home.md)。 如果您不希望模式参与合并，或者如果模式已定义主标识，则可跳到为目标模式创建引 [用标识描述符的下](#create-descriptor) 一步。
 
-要使模式能够在实时客户用户档案中使用，他们必须定义主标识。 此外，关系的目标模式必须使用其主要身份作为其引用字段。
+要使模式能够在中使用， [!DNL Real-time Customer Profile]必须定义主标识。 此外，关系的目标模式必须使用其主要身份作为其引用字段。
 
 就本教程而言，源模式已定义主标识，但目标模式未定义。 您可以通过创建标识描述符将模式字段标记为主标识字段。 这是通过向端点发出POST请求来完 `/tenant/descriptors` 成的。
 
@@ -513,4 +513,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过遵循本教程，您成功地创建了两个模式之间的一对一关系。 有关使用模式注册表API使用描述符的详细信息，请参阅“模式注 [册表开发人员指南](../api/getting-started.md)”。 有关如何在UI中定义模式关系的步骤，请参阅使用模式编 [辑器定义模式关系的教程](relationship-ui.md)。
+通过遵循本教程，您成功地创建了两个模式之间的一对一关系。 有关使用API使用描述符的更 [!DNL Schema Registry] 多信息，请参 [阅模式注册开发人员指南](../api/getting-started.md)。 有关如何在UI中定义模式关系的步骤，请参阅使用模式编 [辑器定义模式关系的教程](relationship-ui.md)。
