@@ -5,45 +5,45 @@ title: Privacy Service开发人员指南
 description: 使用RESTful API跨Adobe Experience Cloud应用程序管理数据主体的个人数据
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b45fdfff70ce4ba857f23e7116812a07825871bc
+source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
 workflow-type: tm+mt
-source-wordcount: '793'
+source-wordcount: '759'
 ht-degree: 0%
 
 ---
 
 
-# Privacy Service开发人员指南
+# [!DNL Privacy Service] 开发人员指南
 
-Adobe Experience Platform Privacy Service提供RESTful API和用户界面，允许您跨Adobe Experience Cloud应用程序管理（访问和删除）数据主体（客户）的个人数据。 Privacy Service还提供了一个中央审计和记录机制，允许您访问涉及Experience Cloud应用程序的作业的状态和结果。
+Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户界面，允许您跨Adobe Experience Cloud应用程序管理（访问和删除）数据主体（客户）的个人数据。 [!DNL Privacy Service] 还提供了一个中央审计和日志记录机制，允许您访问涉及应用程序的作业的状态和 [!DNL Experience Cloud] 结果。
 
-本指南介绍如何使用Privacy ServiceAPI。 有关如何使用UI的详细信息，请参阅 [Privacy ServiceUI概述](../ui/overview.md)。 有关Privacy ServiceAPI中所有可用端点的全面列表，请参阅 [API参考](https://www.adobe.io/apis/experiencecloud/gdpr/api-reference.html)。
+本指南介绍如何使用 [!DNL Privacy Service] API。 有关如何使用UI的详细信息，请参阅 [Privacy ServiceUI概述](../ui/overview.md)。 有关API中所有可用端点的全面 [!DNL Privacy Service] 列表，请参阅 [API参考](https://www.adobe.io/apis/experiencecloud/gdpr/api-reference.html)。
 
 ## 入门指南 {#getting-started}
 
-本指南需要了解以下Experience Platform功能：
+本指南需要了解以下功 [!DNL Experience Platform] 能：
 
-* [Privacy Service](../home.md): 提供REST风格的API和用户界面，允许您跨Adobe Experience Cloud应用程序管理来自数据主体（客户）的访问和删除请求。
+* [!DNL Privacy Service](../home.md): 提供REST风格的API和用户界面，允许您跨Adobe Experience Cloud应用程序管理来自数据主体（客户）的访问和删除请求。
 
 以下各节提供了成功调用Privacy ServiceAPI所需了解的其他信息。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md) 用的章节。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../landing/troubleshooting.md) 用 [!DNL Experience Platform] 一节。
 
 ## 收集所需标题的值
 
-要调用Privacy ServiceAPI，必须首先收集要在所需标头中使用的访问凭据：
+要调用API，您必 [!DNL Privacy Service] 须首先收集要在所需标头中使用的访问凭据：
 
 * 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-这包括在AdobeAdmin Console中获取Experience Platform的开发人员权限，然后在Adobe开发人员控制台中生成凭据。
+这包括在AdobeAdmin Console中获 [!DNL Experience Platform] 取开发人员权限，然后在Adobe开发人员控制台中生成凭据。
 
-### 获得开发人员访问Experience Platform
+### 获得开发人员访问 [!DNL Experience Platform]
 
-要获得开发人员对平台的访问权限，请按照Experience Platform身份验证教程中 [的开始步骤](../../tutorials/authentication.md)。 在执行步骤“在Adobe开发人员控制台中生成访问凭据”后，请返回本教程以生成特定于Privacy Service的凭据。
+要获得开发人员访 [!DNL Platform]问权限，请按照Experience Platform身份验证教 [程中的开始步骤](../../tutorials/authentication.md)。 在执行步骤“在Adobe开发人员控制台中生成访问凭据”后，请返回本教程以生成特定于的凭据 [!DNL Privacy Service]。
 
 ### 生成访问凭据
 
@@ -77,7 +77,7 @@ Adobe Experience Platform Privacy Service提供RESTful API和用户界面，允�
 
 ![](../images/api/getting-started/key-pair-generated.png)
 
-将API添加到项目后，项目页面将重新显示在 _Privacy ServiceAPI概述_ 页面。 从此处向下滚动到服 _[!UICONTROL 务帐户(JWT)部分]_，该部分提供对Privacy ServiceAPI的所有调用所需的以下访问凭据：
+将API添加到项目后，项目页面将重新显示在 _Privacy ServiceAPI概述_ 页面。 从此处向下滚动到服 _[!UICONTROL 务帐户(JWT)]_，该部分提供对API的所有调用所需的以下访问凭[!DNL Privacy Service]据：
 
 * **[!UICONTROL 客户端ID]**: 客户端ID是必须 `{API_KEY}` 在x-api-key头中提供的客户端ID。
 * **[!UICONTROL 组织ID]**: 组织ID是 `{IMS_ORG}` 必须在x-gw-ims-org-id标题中使用的值。
@@ -86,7 +86,7 @@ Adobe Experience Platform Privacy Service提供RESTful API和用户界面，允�
 
 #### 每个会话的身份验证
 
-您必须收集的最终必需凭 `{ACCESS_TOKEN}`据是您的，在授权头中使用。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用平台API。
+您必须收集的最终必需凭 `{ACCESS_TOKEN}`据是您的，在授权头中使用。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用 [!DNL Platform] API。
 
 要生成新密 `{ACCESS_TOKEN}`钥，请打开之前下载的私钥，并将其内容粘贴到“生成访问令牌”旁的 _[!UICONTROL 文本框中]_，然后单**[!UICONTROL &#x200B;击“生成令牌”]**。
 
@@ -98,4 +98,4 @@ Adobe Experience Platform Privacy Service提供RESTful API和用户界面，允�
 
 ## 后续步骤
 
-现在，您已经了解要使用哪些标头，开始调用Privacy ServiceAPI。 隐私工作 [文档](privacy-jobs.md) 将逐步介绍您可以使用Privacy ServiceAPI进行的各种API调用。 每个示例调用都包括常规API格式、显示所需标头的示例请求和示例响应。
+现在，您已经了解要使用哪些标头，便可开始调用 [!DNL Privacy Service] API。 隐私工作 [文档](privacy-jobs.md) ，将遍历您可以使用API进行的各种API [!DNL Privacy Service] 调用。 每个示例调用都包括常规API格式、显示所需标头的示例请求和示例响应。
