@@ -4,21 +4,21 @@ solution: Experience Platform
 title: Privacy Service发行说明
 topic: release notes
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 4cfa64e3371496e2408fe8fee64d49883334917c
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '511'
 ht-degree: 5%
 
 ---
 
 
-# Privacy Service发行说明
+# [!DNL Privacy Service] 发行说明
 
-本文档包含有关Adobe Experience Platform Privacy Service新增功能、增强功能和重要错误修复的信息。
+此文档包含有关Adobe Experience Platform新增功能 [!DNL Privacy Service]的信息，以及增强和重要错误修复。
 
 >[!NOTE]
 >
->有关其他Experience Platform服务的最新发行说明，请 [访问](../release-notes/latest/latest.md)。
+>其他服务的最新 [!DNL Experience Platform] 发行说明可在此 [找到](../release-notes/latest/latest.md)。
 
 ## 2020 年 4 月 8 日
 
@@ -26,8 +26,8 @@ ht-degree: 5%
 
 | 功能 | 描述 |
 | --- | --- |
-| PDPA支持 | 现在，可以根据泰国的个人数据保护法(PDPA)创建和跟踪隐私请求。 在API中发出隐私请求时， `regulation` 阵列接受值“pdpa_tha”。 |
-| UI中的命名空间类型 | 您现在可以在命名空间UI的请求生成器中指定不同的Privacy Service类型。 有关详细 [信息](ui/user-guide.md) ，请参阅用户指南。 |
+| PDPA支持 | [!DNL Privacy] 现在，可以根据泰国的个人数据保护法(PDPA)创建和跟踪请求。 在API中发出隐私请求时， `regulation` 阵列接受值“pdpa_tha”。 |
+| UI中的命名空间类型 | 您现在可以在UI的Request Builder中指定不同的命名空间 [!DNL Privacy Service] 类型。 有关详细 [信息](ui/user-guide.md) ，请参阅用户指南。 |
 | 旧端点弃用 | 旧API端点(`data/privacy/gdpr`)已弃用。 |
 
 ## 2020 年 1 月 14 日
@@ -36,14 +36,14 @@ ht-degree: 5%
 
 | 功能 | 描述 |
 | --- | --- |
-| Privacy Service品牌重塑 | 由于服务已发展为支持除GDPR外的其他法规，先前被命名为“GDPR服务”已重新更名为Privacy Service。 |
-| 新的API端点 | Privacy ServiceAPI的基本路径已从更新 `/data/privacy/gdpr` 到 `/data/core/privacy/jobs` |
-| 新的必需 `regulation` 属性 | 在Privacy ServiceAPI中创建新作业时，必须在请 `regulation` 求有效负荷中提供一个属性，以指示要跟踪作业的法规。 接受的值 `gdpr` 是和 `ccpa`。 有关详细信息，请 [参阅Privacy Service开](api/privacy-jobs.md) 发人员指南中有关隐私工作的文档。 |
-| 支持Adobe Primetime身份验证 | Privacy Service现在接受来自Adobe Primetime身份验证的访问／删除请求， `primetimeAuthentication` 并将其作为产品价值。 See the [Primetime Authentication documentation](http://tve.helpdocsonline.com/how-to-make-a-privacy-request) for more information. |
+| [!DNL Privacy Service] 重新品牌 | 由于服务已发展为支持除GDPR外的其 [!DNL Privacy Service] 他法规，先前命名的“GDPR服务”已重新命名为。 |
+| 新的API端点 | API的基本路 [!DNL Privacy Service] 径已从更新 `/data/privacy/gdpr` 到 `/data/core/privacy/jobs` |
+| 新的必需 `regulation` 属性 | 在API中创建新作业时，必 [!DNL Privacy Service] 须在请求 `regulation` 有效负荷中提供一个属性，以指示要跟踪作业的法规。 接受的值 `gdpr` 是和 `ccpa`。 有关详细信息， [请参阅](api/privacy-jobs.md) “开发 [!DNL Privacy Service] 人员指南”中的隐私工作文档。 |
+| 支持Adobe Primetime身份验证 | [!DNL Privacy Service] 现在接受来自Adobe Primetime身份验证的访问／删除请求，并 `primetimeAuthentication` 将其作为产品价值。 See the [Primetime Authentication documentation](http://tve.helpdocsonline.com/how-to-make-a-privacy-request) for more information. |
 
 ### 增强功能
 
-* Privacy ServiceUI增强：
+* [!DNL Privacy Service] UI增强：
    * 为GDPR和CCPA规定分别设置工作跟踪页面。
    * 新的 _规章类_ 型下拉菜单，用于在GDPR和CCPA的跟踪数据之间切换。
 
@@ -53,21 +53,21 @@ ht-degree: 5%
 
 | 功能 | 描述 |
 | --- | --- |
-| 请求度量仪表板 | Privacy ServiceUI中的新指标仪表板可以查看已提交、出错和完成的GDPR请求。 |
-| 请求生成器 | 为同时具有提交GDPR请求的技术用户和非技术用户的组织提供服务，UI中已添加“创建请求”功能。 对于希望继续使用JSON文件的组织，Privacy ServiceUI中仍提供JSON文件提交功能。 |
-| GDPR工作事件通知 | 关于GDPR工作状态的事件通知对许多工作流来说是一个关键元素。 虽然以前通知是使用单独的电子邮件通知发送的，但GDPR事件通知是利用Adobe I/O事件的消息，这些通知会发送到已配置的Webhook，以促进作业请求自动化。 Privacy ServiceUI用户可以订阅Adobe I/O GDPR事件，以便在产品或GDPR作业完成后接收更新。 |
+| 请求度量仪表板 | UI中的新指标仪表板 [!DNL Privacy Service] 可以查看已提交、出错和完成的GDPR请求。 |
+| 请求生成器 | 为同时具有提交GDPR请求的技术用户和非技术用户的组织提供服务，UI中已添加“创建请求”功能。 对于希望继续使用JSON文件的组织， [!DNL Privacy Service] UI中仍提供JSON文件提交功能。 |
+| GDPR工作事件通知 | 关于GDPR工作状态的事件通知对许多工作流来说是一个关键元素。 虽然以前通知是使用单独的电子邮件通知发送的，但GDPR事件通知是利用Adobe I/O事件的消息，这些通知会发送到已配置的Webhook，以促进作业请求自动化。 [!DNL Privacy Service] UI用户可以订阅Adobe I/O GDPR事件，以便在产品或GDPR作业完成后接收更新。 |
 
 ## 2019 年 18 月 4 日
 
 ### 增强功能
 
-* Privacy ServiceUI中状态表的默认范围已修改为7天。
+* UI中状态表的默认 [!DNL Privacy Service] 范围已修改为7天。
 * 更好的内部异常处理。
 * 通过为低数据更改率的常见内部调用引入缓存，提高了性能。
 
 ### 错误修复
 
-* 在查询API中为端点添加了筛选Privacy Service `GET /` 的缺失日志记录信息。
+* 为API中的端点的筛选查询添加 `GET /` 了缺失的日志 [!DNL Privacy Service] 记录信息。
 
 ## 2019 年 11 月 4 日
 
@@ -92,4 +92,4 @@ ht-degree: 5%
 
 ### 错误修复
 
-* 修复了客户无法加载Privacy ServiceUI的问题。
+* 修复了客户无法加载UI的 [!DNL Privacy Service] 问题。
