@@ -4,9 +4,9 @@ solution: Experience Platform
 title: DULE Policy Service API开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '678'
+source-wordcount: '655'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 # DULE [!DNL Policy Service] API开发人员指南
 
-Adobe Experience Platform使用标签和执行(DULE)是数据管理的核心机制。 DULE策略服务提供一个RESTful API，它允许您创建和管理数据使用策略，以确定可以对已标记有特定数据使用标签的数据采取哪些营销操作。
+数据使用标签与强制(DULE)是Adobe Experience Platform的核心机制 [!DNL Data Governance]。 DULE提 [!DNL Policy Service] 供一个RESTful API，它允许您创建和管理数据使用策略，以确定可以对带有特定数据使用标签的数据进行哪些营销操作。
 
-此文档提供了有关执行策略服务API中可用的关键操作的说明。 如果您尚未这样做，请首先查看“数据管 [理”概述](../home.md) ，以熟悉DULE框架。 有关创建和实施DULE策略的分步说明，请参阅 [DULE策略教程](../policies/create.md)。
+此文档提供了有关执行API中可用的关键操作的 [!DNL Policy Service] 说明。 如果您尚未这样做，请首先查看“数据管 [理”概述](../home.md) ，以熟悉DULE框架。 有关创建和实施DULE策略的分步说明，请参阅 [DULE策略教程](../policies/create.md)。
 
-本文档介绍了在尝试调用策略服务API之前需要了解的核心概念。
+此文档介绍了在尝试调用API之前需要了解的核心概 [!DNL Policy Service] 念。
 
 ## DULE快速入门 [!DNL Policy Service]
 
@@ -28,11 +28,11 @@ Adobe Experience Platform使用标签和执行(DULE)是数据管理的核心机�
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-* [数据治理](../home.md): 强制执行数据使 [!DNL Experience Platform] 用合规性的框架。
-   * [DULE标签](../labels/overview.md): 数据使用标签将应用于体验数据模型(XDM)数据字段，从而指定如何访问该数据的限制。
-* [体验数据模型(XDM)系统](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-* [实时客户用户档案](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个平台实例分为单独的虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [!DNL Data Governance](../home.md): 强制执行数据使 [!DNL Experience Platform] 用合规性的框架。
+   * [DULE标签](../labels/overview.md): 数据使用标签应用 [!DNL Experience Data Model] 于(XDM)数据字段，指定如何访问该数据的限制。
+* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 ## 读取示例API调用
 
