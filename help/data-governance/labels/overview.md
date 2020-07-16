@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据使用标签概述
 topic: labels
 translation-type: tm+mt
-source-git-commit: f4b3148db3b4a17d071c1c8ad2aff8dd64ddd0b7
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 # 数据使用标签概述
 
-Adobe Experience Platform使用标签和执行(DULE)是数据管理的核心机制。 DULE功能允许您将数据使用标签应用到数据集和字段，并根据相关的数据使用策略对每个标签进行分类。
+数据使用标签与强制(DULE)是Adobe Experience Platform的核心机制 [!DNL Data Governance]。 DULE功能允许您将数据使用标签应用到数据集和字段，并根据相关的数据使用策略对每个标签进行分类。
 
 此文档概述中的数据使用标签（也称为DULE标签） [!DNL Experience Platform]。 在阅读本指南之前，请参 [阅数据管理概述](../home.md) ，以获得DULE框架的更强健的介绍。
 
 ## 了解数据使用标签
 
-数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 可随时应用标签，在数据管理方式上提供灵活性。 最佳实践是，在数据被引入或 [!DNL Experience Platform]数据可供使用时，立即添加标签 [!DNL Platform]。
+数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 可随时应用标签，在数据管理方式上提供灵活性。 最佳实践是，在数据被引入或 [!DNL Experience Platform]数据可用时，立即添加标签 [!DNL Platform]。
 
 在数据集级别应用的数据使用标签将传播到数据集中的所有字段。 标签还可以直接应用于数据集中的各个字段（列标题），而不会传播。
 
@@ -38,9 +38,9 @@ Adobe Experience Platform使用标签和执行(DULE)是数据管理的核心机�
 
 ### 从Adobe Audience Manager数据导出控件继承
 
-Experience Platform能够与Adobe Audience Manager共享细分。 已应用于Audience Manager细分的任何数据导出控制均转换为Experience Platform数据管理所确认的对等标签和营销操作。
+[!DNL Experience Platform] 能够与Adobe Audience Manager共享细分。 已应用于Audience Manager段的任何数据导出控制均转换为公认的等效标签和营销操 [!DNL Experience Platform][!DNL Data Governance]作。
 
-有关特定数据导出控件如何映射到平台中数据使用标签的参考，请参阅 [Audience Manager文档](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep)。
+有关特定数据导出控件如何映射到中的数据使用标签的 [!DNL Platform]参考，请参阅 [Audience Manager文档](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep)。
 
 
 ## 后续步骤
