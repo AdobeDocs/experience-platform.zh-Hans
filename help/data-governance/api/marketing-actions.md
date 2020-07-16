@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 营销操作
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
 workflow-type: tm+mt
-source-wordcount: '536'
+source-wordcount: '534'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 营销操作
 
-在Adobe Experience Platform数据治理的环境中，营销行为是消费者采取的行 [!DNL Experience Platform] 为，需要检查是否存在违反数据使用策略的情况。
+在Adobe Experience Platform环境中的营销操 [!DNL Data Governance]作是 [!DNL Experience Platform] 用户执行的操作，需要检查是否存在违反数据使用策略的情况。
 
 在API中处理营销操作需要您使用终 `/marketingActions` 点。
 
@@ -97,7 +97,7 @@ curl -X GET \
 
 ## 查找特定的营销活动
 
-您还可以执行查找(GET)请求，以视图特定营销操作的详细信息。 这是使用营销 `name` 操作完成的。 如果名称未知，则可使用以前显示的列表(GET)请求找到该名称。
+您还可以执行查找(GET)请求，以视图特定营销活动的详细信息。 这是使用营销 `name` 操作完成的。 如果名称未知，则可使用以前显示的列表(GET)请求找到该名称。
 
 **API格式**
 
