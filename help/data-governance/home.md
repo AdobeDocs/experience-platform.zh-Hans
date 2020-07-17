@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform数据管理
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
+source-git-commit: 53225525feb1878aae58939338c1a94f98ec1607
 workflow-type: tm+mt
-source-wordcount: '1406'
+source-wordcount: '1342'
 ht-degree: 0%
 
 ---
@@ -85,15 +85,6 @@ DULE框架包括预定义的数据使用标签，这些标签可用于以三种�
 >默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 要考虑实施单个策略，必须手动启用该策略。
 
 有关数据使用策略和营销操作的更多信息，请参阅 [策略概述](./policies/overview.md)。
-
-## 未来版本
-
-[!DNL Data Governance] 当前支持两级（数据集和字段）的DULE标签。 [!DNL Data Governance] 还支持通过DULE API创建和管理数据使用策略和营销 [!DNL Policy Service] 操作。
-
-后续版本将提供以下功能：
-
-* 策略实施： 使用策略框架，在不同的数据访问模式中建议并实施策略。
-* 审计： 监控数据访问活动，识别并报告合规性问题。
 
 ## 后续步骤
 
