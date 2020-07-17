@@ -1,19 +1,20 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Segmentation Service帮助
+user-guide-title: Adobe Experience Platform分段服务帮助
 translation-type: tm+mt
-source-git-commit: 58781fb5622564b29cf250459a9149cf25672bfa
+source-git-commit: a1f80b86a1e761c15d567821b13c7533b7fcf622
 workflow-type: tm+mt
-source-wordcount: '102'
+source-wordcount: '103'
 ht-degree: 5%
 
 ---
 
 
-# Adobe Experience Platform Segmentation Service帮助 {#segmentation}
+# Adobe Experience Platform分段服务帮助 {#segmentation}
 
 - [概述](home.md)
+- [分段数据类型](data-types.md)
 - 分段API {#api}
    - [入门指南](api/getting-started.md)
    - [细分定义](api/segment-definitions.md)
@@ -40,7 +41,6 @@ ht-degree: 5%
 - 教程 {#tutorials}
    - [创建区段](tutorials/create-a-segment.md)
    - [评估区段](tutorials/evaluate-a-segment.md)
-   - [导出数据](tutorials/export-data.md)
    - [创建数据集以导出数据](tutorials/create-dataset-export-segment.md)
    - [为细分强制实施数据使用合规性](tutorials/governance.md)
 - [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)
