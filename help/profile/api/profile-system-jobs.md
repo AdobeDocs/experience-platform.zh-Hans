@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 用户档案系统作业——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: c0b059d6654a98b74be5bc6a55f360c4dc2f216b
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '1466'
+source-wordcount: '1420'
 ht-degree: 2%
 
 ---
@@ -14,14 +14,14 @@ ht-degree: 2%
 
 # 用户档案系统作业端点（删除请求）
 
-Adobe Experience Platform使您能够从多个来源收集数据，并为各个客户构建强大的用户档案。 引入平台的数据存储在数据湖和实时客户用户档案数据存储中。 有时可能需要从用户档案库中删除数据集或批处理，以删除不再需要或错误添加的数据。 这需要使用实时用户档案API创建用户档案系统作业（也称为“删除请求”），如果需要，也可以修改、监视或删除该作业。
+Adobe Experience Platform使您能够从多个来源收集数据，并为各个客户构建强大的用户档案。 所摄取的 [!DNL Platform] 数据被存储 [!DNL Data Lake] 在数据存储 [!DNL Real-time Customer Profile] 器中。 有时可能需要从用户档案库中删除数据集或批处理，以删除不再需要或错误添加的数据。 这需要使用 [!DNL Real-time Customer Profile] API创建 [!DNL Profile] 系统作业(也称为“[!DNL delete request]”)，如果需要，也可以修改、监视或删除。
 
 >[!NOTE]
->如果您尝试从数据湖中删除数据集或批，请访问目录 [服务概述](../../catalog/home.md) ，以获取说明。
+>如果您尝试从中删除数据集或批次，请 [!DNL Data Lake]访问目录服 [务概述](../../catalog/home.md) ，以获取说明。
 
 ## 入门指南
 
-本指南中使用的API端点是实 [时客户用户档案API的一部分](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的API端点是的一部分 [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
 
 ## 视图删除请求
 
@@ -103,10 +103,10 @@ curl -X POST \
 
 ### 删除数据集
 
-要删除数据集，数据集ID必须包含在POST请求的正文中。 此操作将删除给定数据集的ALL数据。 Experience Platform允许您根据记录和时间序列模式删除数据集。
+要删除数据集，数据集ID必须包含在POST请求的正文中。 此操作将删除给定数据集的ALL数据。 [!DNL Experience Platform] 允许您根据记录和时间序列模式删除数据集。
 
 >[!CAUTION]
-> 当尝试使用用户档案UI删除启用Experience Platform的数据集时，将禁用该数据集以进行摄取，但直到使用API创建删除请求后，才会删除该数据集。 有关详细信息，请参 [阅本文档](#appendix) 的附录。
+> 尝试使用UI删 [!DNL Profile]除启用的数据集时，将禁 [!DNL Experience Platform] 用数据集以进行摄取，但直到使用API创建删除请求后，才会删除该数据集。 有关详细信息，请参 [阅本文档](#appendix) 的附录。
 
 **API格式**
 
@@ -161,7 +161,7 @@ curl -X POST \
 >[!NOTE]
 > 无法根据记录模式删除数据集批的原因是记录类型数据集批覆盖以前的记录，因此无法“撤消”或删除。 要消除基于记录模式的数据集中错误批次的影响，唯一的方法是使用正确的数据重新收录批次，以覆盖错误的记录。
 
-有关记录和时间序列行为的详细信息，请查看XDM [系统概述中有关XDM](../../xdm/home.md#data-behaviors) 数据行为的一节。
+有关记录和时间序列行为的详细信息，请查看概 [述中有关XDM数据行为](../../xdm/home.md#data-behaviors) 的一 [!DNL XDM System] 节。
 
 **API格式**
 
@@ -277,7 +277,7 @@ curl -X POST \
 
 ## 删除删除请求
 
-Experience Platform允许您删除以前的请求，这可能由于许多原因（包括删除作业未完成或在处理阶段卡住）而有用。 为了删除删除请求，您可以对端点执行DELETE请求 `/system/jobs` ，并包括您要删除到请求路径的删除请求的ID。
+[!DNL Experience Platform] 允许您删除以前的请求，这可能由于许多原因（包括删除作业未完成或在处理阶段卡住）而有用。 为了删除删除请求，您可以对端点执行DELETE请求 `/system/jobs` ，并包括您要删除到请求路径的删除请求的ID。
 
 **API格式**
 
@@ -306,19 +306,19 @@ curl -X POST \
 
 ## 后续步骤
 
-现在，您已了解从Experience Platform内的用户档案商店删除数据集和批处理时涉及的步骤，因此您可以安全地删除错误添加的数据或组织不再需要的数据。 请注意，删除请求无法撤消，因此您应仅删除您确信现在不需要且将来不需要的数据。
+现在，您已了解从中删除数据集和批处理时 [!DNL Profile Store] 涉及 [!DNL Experience Platform]的步骤，因此可以安全地删除已错误添加或组织不再需要的数据。 请注意，删除请求无法撤消，因此您应仅删除您确信现在不需要且将来不需要的数据。
 
 ## 附录 {#appendix}
 
-以下信息是从用户档案库删除数据集操作的补充。
+以下信息是从中删除数据集操作的补充 [!DNL Profile Store]。
 
-### 使用Experience PlatformUI删除数据集
+### 使用UI删除数 [!DNL Experience Platform] 据集
 
-当使用Experience Platform用户界面删除已启用用户档案的数据集时，会打开一个对话框，询问“您确定要从体验数据湖中删除此数据集吗？ 使用“用户档案系统作业”API从用户档案服务中删除此数据集。”
+当使用用 [!DNL Experience Platform] 户界面删除已启用的数据集时，会打 [!DNL Profile]开一个对话框，询问“是否确实要从中删除此数据集 [!DNL Experience Data Lake]? 使用“p[!DNL rofile systems jobs]” API从中删除此数 [!DNL Profile Service]据集。”
 
-在UI **中单击** “删除”将禁用数据集以进行摄取，但“不”会自动删除后端中的数据集。 要永久删除数据集，必须使用本指南中创建删除请求的步骤手动 [创建删除请求](#create-a-delete-request)。
+在UI **[!UICONTROL 中单击]** “删除”将禁用数据集以进行摄取，但“不”会自动删除后端中的数据集。 要永久删除数据集，必须使用本指南中创建删除请求的步骤手动 [创建删除请求](#create-a-delete-request)。
 
-下图显示了尝试使用UI删除启用用户档案的数据集时的警告。
+下图显示了尝试使用UI删除启用 [!DNL Profile]的数据集时的警告。
 
 ![](../images/delete-profile-dataset.png)
 
