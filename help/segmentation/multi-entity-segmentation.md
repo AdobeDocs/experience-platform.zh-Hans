@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 多实体分割
 topic: overview
 translation-type: tm+mt
-source-git-commit: 7110be2654e55ea411580f8c9e2e92bb52badab5
+source-git-commit: f44e42a4faa3b10f147dbaf929048054ce0bec42
 workflow-type: tm+mt
-source-wordcount: '406'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -34,14 +34,14 @@ ht-degree: 0%
 
 此过程可以使用模式注册表API或模式编辑器完成。 有关使用API定义两个模式之间关系的详细指南，请阅 [读有关使用API定义两个模式之间关系的教程](../xdm/tutorials/relationship-api.md)。 有关使用模式编辑器定义两个模式之间关系的详细指南，请阅 [读使用模式编辑器定义两个模式之间关系的教程](../xdm/tutorials/relationship-ui.md)。
 
-## 如何使用创建使用XDM关系的细分
+## 如何创建使用XDM关系的细分
 
-定义XDM关系后，您可以使用实时客户用户档案API构建细分。
+定义XDM关系后，您可以使用分段服务API构建区段。
 
-此过程可以使用实时客户用户档案API或区段生成器来完成。 有关使用API构建区段的详细指南，请阅 [读有关使用实时客户用户档案API创建区段的教程](./tutorials/create-a-segment.md)。 有关使用区段生成器构建区段的详细指南，请阅 [读区段生成器用户指南](./ui/overview.md)。
+此过程可以使用Segmentation API或Segment Builder用户界面完成。 有关使用API构建区段的详细指南，请阅 [读有关使用分段API创建区段的教程](./tutorials/create-a-segment.md)。 有关使用区段生成器构建区段的详细指南，请阅 [读区段生成器用户指南](./ui/overview.md)。
 
 ## 如何评估和访问多实体细分的细分
 
-创建区段后，您可以使用实时客户用户档案API评估和访问区段结果。 评估多实体细分与评估常规细分非常相似。
+创建区段后，您可以使用API评估和访问区段 [!DNL Segmentation Service] 结果。 评估多实体细分与评估常规细分非常相似。
 
-此过程只能使用实时客户用户档案API完成。 有关使用API评估和访问区段的详细指南，请阅读 [有关评估和访问区段的教程](./tutorials/evaluate-a-segment.md)。
+此过程只能使用API完 [!DNL Segmentation Service] 成。 有关使用API评估和访问区段的详细指南，请阅读有关评估和访 [问区段的教程](./tutorials/evaluate-a-segment.md)。
