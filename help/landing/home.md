@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform概述
 topic: getting started
 translation-type: tm+mt
-source-git-commit: b73bd7e163c2861c751b1b505894923f70c99755
+source-git-commit: 6c90e68bde1fb8474ba23127ecf7b6fd617c7765
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '747'
 ht-degree: 2%
 
 ---
@@ -22,7 +22,7 @@ Adobe Experience Platform是市场上功能最强大、最灵活、最开放的�
 
 构建于开放式API上 [!DNL Experience Platform] ，将系统的全部功能呈现给开发人员，支持使用熟悉的工具轻松集成企业解决方案。 [!DNL Experience Platform] 还支持合作伙伴根据需要构建和集成自己的产品和技术。 这种强大和灵活性使 [!DNL Experience Platform] 其在市场上独一无二。 它为合作伙伴、客户和开发人员社区提供了构建创新推动体验式业务的基础： 通过提供从客户及其个人偏好的360度视图中获得的不断改进的完全个性化体验，超越客户期望。
 
-以下视频概括了一个假设性的Adobe Experience Platform体验，从客户的角度来看。 了解如 [!DNL Experience Platform] 何创建丰富、相关的实时体验。
+以下视频概述了 [!DNL Experience Platform] 如何创建丰富、相关的实时体验，首先从客户角度，然后从幕后技术角度。
 
 **客户视角：**
 
