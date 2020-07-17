@@ -4,34 +4,32 @@ solution: Experience Platform
 title: 分段服务开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c0eacfba2feea66803e63ed55ad9d0a97e9ae47c
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '462'
 ht-degree: 0%
 
 ---
 
 
-# 分段服务开发人员指南
+# Getting started with [!DNL Segmentation Service] {#getting-started}
 
-细分允许您根据实时客户受众数据构建细分并在Adobe Experience Platform中生成用户档案。
+Adobe Experience Platform细分服务允许您根据数据构建细分并在Adobe Experience Platform中生成 [!DNL Real-time Customer Profile] 受众。
 
-## 入门指南
+开发人员指南要求对与使用相关的各种Experience Platform服务进行有效的了解 [!DNL Segmentation Service]。
 
-本指南要求对使用分段时涉及的各种Adobe Experience Platform服务进行有效的了解。
-
-- [细分](../home.md): 允许您根据实时受众数据构建用户档案细分。
-- [体验数据模型(XDM)系统](../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
-- [实时客户用户档案](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [!DNL Segmentation](../home.md): 允许您根据实时受众数据构建用户档案细分。
+- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
+- [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 - [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
-以下各节提供您需要了解的其他信息，以便使用API成功使用分段。
+以下各节提供了成功使用API所需了解的其他信 [!DNL Segmentation] 息。
 
-### 读取示例API调用
+## 读取示例API调用
 
-Segmentation Service API文档提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
+API文 [!DNL Segmentation Service] 档提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
 
-### 所需的标题
+## 所需的标题
 
 API文档还要求您完成身份验证教 [程](../../tutorials/authentication.md) ，以便成功调用平台端点。 完成身份验证教程后，将为Experience PlatformAPI调用中每个所需标头提供值，如下所示：
 
@@ -39,13 +37,13 @@ API文档还要求您完成身份验证教 [程](../../tutorials/authentication.
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的所有请求都需要一个标头，它指定将在其中执行操作的沙箱的名称：
+中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定要在其中执行操作的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关在Experience Platform中使用沙箱的更多信息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
+>有关在中使用沙箱的更多信 [!DNL Experience Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
 <!-- ## Estimates
 
@@ -95,4 +93,4 @@ For more information on using this endpoint, please read the [schedules develope
 
 ## 后续步骤
 
-要开始使用分段API进行调用，请选择其中一个子指南来了解如何使用特定的分段相关端点。 要进一步了解如何使用平台UI处理区段，请参阅 [分段用户指南](../ui/overview.md)。
+要使用API进行调 [!DNL Segmentation Service] 用，请使用左侧导航或在开发人员指南概述中选择一个可 [用端点指南](./overview.md)
