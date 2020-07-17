@@ -4,15 +4,15 @@ solution: Experience Platform
 title: 区段生成器UI指南
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: 1c9b50f8f71e917b86c34b061df7e2da6fe475a2
+source-git-commit: f44e42a4faa3b10f147dbaf929048054ce0bec42
 workflow-type: tm+mt
-source-wordcount: '2766'
+source-wordcount: '2750'
 ht-degree: 0%
 
 ---
 
 
-# [!UICONTROL 区段生成器] 用户指南
+# [!DNL Segment Builder] 用户指南
 
 [!DNL Adobe Experience Platform Segmentation Service] 提供RESTful API和用户界面，用于从数据创建区段 [!DNL Real-time Customer Profile] 定义。
 
@@ -41,9 +41,9 @@ ht-degree: 0%
 
 ![](../images/segment-builder/segment-browse.png)
 
-## [!UICONTROL 区段生成器工作区] (Segment Builder)
+## [!DNL Segment Builder] 工作区
 
-[!UICONTROL 区段生成器] 提供丰富的工作区，允许您与数据元素 [!DNL Profile] 交互。 工作区提供用于构建和编辑规则的直观控件，如用于表示数据属性的拖放拼贴。
+[!DNL Segment Builder] 提供丰富的工作区，允许您与数据元素 [!DNL Profile] 交互。 工作区提供用于构建和编辑规则的直观控件，如用于表示数据属性的拖放拼贴。
 
 ![](../images/segment-builder/segment-builder.png)
 
@@ -51,7 +51,7 @@ ht-degree: 0%
 
 段定义的基本构件是属性 **[!UICONTROL 和]****[!UICONTROL 事件]**。 此外，现有事件中包含的属性 **[!UICONTROL 和受众]** ，也可用作新定义的组件。
 
-您可以在Segment Builder工作区左 *侧的* “字段”部分查 [!UICONTROL 看这些构] 件块。 *[!UICONTROL 字段]* 包含每个主要构造块的选项卡： **[!UICONTROL 属性]**、 **[!UICONTROL 事件]**&#x200B;和 **[!UICONTROL 受众]**。
+您可以在工作区左侧的 *[!UICONTROL “字段]* ”(Fields)部分查看这些构 [!DNL Segment Builder] 件。 *[!UICONTROL 字段]* 包含每个主要构造块的选项卡： **[!UICONTROL 属性]**、 **[!UICONTROL 事件]**&#x200B;和 **[!UICONTROL 受众]**。
 
 ![](../images/segment-builder/segment-fields.png)
 
@@ -95,7 +95,7 @@ ht-degree: 0%
 
 ## 规则构建器画布 {#rule-builder-canvas}
 
-区段定义是用于描述目标受众的关键特征或行为的规则集合。 这些规则是使用位于 *[!UICONTROL 区段生成器]*（位于区段生成器）中 [!UICONTROL 心的规则生成器画布创建的]。
+区段定义是用于描述目标受众的关键特征或行为的规则集合。 这些规则是使用位于 *[!UICONTROL 中心的规则]*&#x200B;构建器画布创建的 [!DNL Segment Builder]。
 
 要向区段定义添加新规则，请从“字段”选项卡中拖 *[!UICONTROL 动拼贴]* ，并将其放到规则构建器画布上。 然后，将根据要添加的数据类型向您显示上下文特定选项。 可用数据类型包括： 字符串、日期 [!DNL ExperienceEvents]、 [!UICONTROL 事件类型]和 [!UICONTROL 受众]。
 
@@ -105,7 +105,7 @@ ht-degree: 0%
 
 您可以将受众从受众选项卡拖 *[!UICONTROL 放到]* 规则构建器画布上，以在新的区段定义中引用受众成员身份。 这允许您将受众成员资格作为属性加入或排除到新区段规则中。
 
-对于 [!DNL Platform] 使用区 [!UICONTROL 段生成器创建的受众]，您可以选择将受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，然后可以修改该副本，而不会影响原始段定义。 在将区段定义转换为规则逻辑之前，请确保已保存对区段定义的任何最近更改。
+对 [!DNL Platform] 于使用创 [!DNL Segment Builder]建的受众，您可以选择将受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，然后可以修改该副本，而不会影响原始段定义。 在将区段定义转换为规则逻辑之前，请确保已保存对区段定义的任何最近更改。
 
 >[!NOTE]
 >
@@ -113,11 +113,11 @@ ht-degree: 0%
 
 ![](../images/segment-builder/add-audience-to-segment.png)
 
-如果将受众转换为规则时发生 [!UICONTROL 任何冲突] ,Segment Builder将尝试保留现有选项，以尽其所能。
+如果在将受众转换为规则时发生任何冲 [!DNL Segment Builder] 突，将尝试保留现有选项以尽其所能。
 
 ### 代码视图
 
-或者，也可以视图在区段生成器中创建的规则的基于代 [!UICONTROL 码的版本]。 在规则构建器画布中创建规则后，您可以选择“代 **[!UICONTROL 码视图]** ”，将区段视为PQL。
+或者，也可以视图在中创建的规则的基于代码的版本 [!DNL Segment Builder]。 在规则构建器画布中创建规则后，您可以选择“代 **[!UICONTROL 码视图]** ”，将区段视为PQL。
 
 ![](../images/segment-builder/code-view.png)
 
@@ -153,7 +153,7 @@ ht-degree: 0%
 
 您可以选择与此受众的营销目的匹配的合并策略，或使用由提供的默认合并策略 [!DNL Platform]。 您可以创建组织特有的多个合并策略，包括创建您自己的默认合并策略。 有关为组织创建合并策略的分步说明，请参阅使用UI [处理合并策略的教程](../../profile/ui/merge-policies.md)。
 
-要为段定义选择合并策略，请单击“字段”选项卡上 *[!UICONTROL 的齿轮]* 图标，然后使用“合并策 *[!UICONTROL 略]”下拉菜单&#x200B;*，以选择要使用的合并策略。
+要为段定义选择合并策略，请单击“字段”选项卡上 *[!UICONTROL 的齿轮]* 图标，然后使用“合 *[!UICONTROL 并策略]”下拉菜单&#x200B;*，以选择要使用的合并策略。
 
 ![](../images/segment-builder/merge-policy-selector.png)
 
@@ -225,7 +225,7 @@ ht-degree: 0%
 
 ![](../images/segment-builder/monitoring-streaming-segment.png)
 
-具体而言，将显示有关 *[!UICONTROL 合格受众总大小的]* 详细信息。 如果作业在过去24小时内运行，则除了添加的受众的 **[!UICONTROL 折线图外]** ，还会显示作业的受众总大小。 否则，除 **[!UICONTROL 了显示趋势线]** ，还会显示“估计受众大小”。
+具体而言，将显示有关 *[!UICONTROL 合格受众总大小的]* 详细信息。 如果作业在过去24小时内运行，则除了添加的受众的 **[!UICONTROL 折线图外]** ，还会显示作业的受众总大小。 否则，除了 **[!UICONTROL 可视化趋势线]** ，还会显示估计受众大小。
 
 ![](../images/segment-builder/monitoring-streaming-segment-graph.png)
 
