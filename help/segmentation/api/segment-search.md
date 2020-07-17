@@ -1,30 +1,28 @@
 ---
 keywords: Experience Platform;segmentation;segmentation service;troubleshooting;API;seg;
 solution: Adobe Experience Platform
-title: 分段API开发人员指南
+title: 段搜索端点指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: f489e9f9dfc9c7e94f76a6825e7ca24c41ee8a66
+source-git-commit: 41a5d816f9dc6e7c26141ff5e9173b1b5631d75e
 workflow-type: tm+mt
-source-wordcount: '1172'
+source-wordcount: '1141'
 ht-degree: 2%
 
 ---
 
 
-# 区段搜索
+# 段搜索端点指南
 
-“细分搜索”用于搜索和索引各个数据源中包含的可配置字段，并近乎实时地返回它们。
+区段搜索用于搜索包含在各种数据源中的字段，并近乎实时地返回它们。
 
 本指南提供相关信息，帮助您更好地了解细分搜索，并包含使用API执行基本操作的示例API调用。
 
 ## 入门指南
 
-本指南中使用的API端点是分段API的一部分。 在继续之前，请查阅分段开 [发人员指南](getting-started.md)。
+本指南中使用的端点是API的一 [!DNL Adobe Experience Platform Segmentation Service] 部分。 在继续之前，请查 [看入门指南](./getting-started.md) ，了解成功调用API需要了解的重要信息，包括必需的头以及如何读取示例API调用。
 
-特别是，分段开 [发人员指南的](getting-started.md) “入门”部分包括相关主题的链接、阅读此文档中示例API调用的指南，以及成功调用Experience Platform API所需标头的重要信息。
-
-除了入门部分中概述的所需标头外，对Segment Search API的所有请求都需要以下附加标头：
+除了入门部分中概述的所需标题外，对“段搜索”端点的所有请求都需要以下附加标题：
 
 - x-ups-search-version: “1.0”
 
@@ -223,7 +221,7 @@ curl -X GET \
 
 ## 后续步骤
 
-阅读本指南后，您现在可以更好地了解区段搜索的工作方式。 有关分段的详细信息，请阅读分段 [概述](../home.md)。
+阅读本指南后，您现在可以更好地了解区段搜索的工作方式。
 
 ## 附录 {#appendix}
 
