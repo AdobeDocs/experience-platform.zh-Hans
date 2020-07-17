@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform产品文档
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 2e5668a8b1d5fb831188fbd4e453b9f4aa7474df
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '6594'
+source-wordcount: '6593'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 **访问控制:** {#access-control} 访问控制 [!DNL Experience Platform] 用于通过AdobeAdmin Console中的产品用户档案链接具有访问权限和沙箱环境的用户。
 
-**访问密钥ID:** 访问密钥ID是与Amazon S3秘密访问密钥关联的唯一标识符。 访问密钥ID和秘密访问密钥一起用于签署AWS请求。
+**访问密钥ID:** 访问密钥ID是与S3秘密访问密钥关 [!DNL Amazon] 联的唯一标识符。 访问密钥ID和秘密访问密钥一起用于签署AWS请求。
 
 **操作：** 在中 [!DNL Experience Platform Launch]，操作是一种特定类型的规则组件，它定义在发生事件并评估和传递条件后应发生的情况。
 
@@ -230,7 +230,7 @@ ht-degree: 0%
 
 **扩展：** 在 [!DNL Experience Platform Launch]中，扩展是添加到属性的功能 [!DNL Launch] 包。  扩展通常以特定营销或分析解决方案为中心，提供将该技术部署到客户环境所需的工具。
 
-**扩展包：** 在中 [!DNL Experience Platform Launch]，扩展包是由扩展开发人员创建和上传的。zip文件，它提供用户在其属性 [!DNL Launch] 中安装扩展所需的一切。  扩展包包含一个清单，它指定最终用户配置扩展行为和交付到客户环境的可执行JavaScript（如果需要）所需 [!DNL Launch] 的扩展、HTML和JavaScript的相关信息。
+**扩展包：** 在中 [!DNL Experience Platform Launch]，扩展包是由扩展开发人员创建和上传的。zip文件，它提供用户在其属性中安 [!DNL Launch] 装该扩展所需的一切。  扩展包包含一个清单，它指定最终用户配置扩展行为和交付到客户环境的可执行JavaScript（如果需要）所需 [!DNL Launch] 的扩展、HTML和JavaScript的相关信息。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -312,7 +312,7 @@ ht-degree: 0%
 
 ## L
 
-**库：** 在 [!DNL Experience Platform Launch]中，库是一组业务逻辑，包含有关库在客户端设备上 [!DNL Launch] 的行为方式的说明。
+**库：** 在 [!DNL Experience Platform Launch]中，库是一组业务逻辑，其中包含有关库在客户端设备 [!DNL Launch] 上的行为方式的说明。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -542,7 +542,7 @@ ht-degree: 0%
 
 **XDM个人用户档案:** XDM形 [!DNL Individual Profile] 成对已识别和部分识别个体的属性和兴趣的单一表示。 未识别的用户档案可能只包含匿名行为信号，如浏览器cookie，而高度识别的用户档案可能包含详细的个人信息，如姓名、出生日期、地点和电子邮件地址。 随着用户档案的增长，它将成为一个可靠的个人信息、身份信息、联系人详细信息和个人通信首选项存储库。
 
-**XDM系统：** XDM系统是由标准模式提供支持的基础架构、 [!DNL Experience Platform] 数据语义和工作流程。
+**XDM系统：** XDM系统是由标准模式提供支持的基础架构、 [!DNL Experience Platform] 数据语义和工作流。
 
 [返回页首](#adobe-experience-platform-glossary)
 
