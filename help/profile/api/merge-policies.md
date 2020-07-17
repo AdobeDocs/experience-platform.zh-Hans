@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 合并策略——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '2053'
+source-wordcount: '2035'
 ht-degree: 1%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 1%
 
 # 合并策略端点
 
-Adobe Experience Platform使您能够将来自多个来源的数据整合在一起，并将其合并，以便了解每个客户的完整视图。 整合这些数据时，合并策略是平台用来确定数据的优先级以及将哪些数据合并以创建统一视图的规则。 使用REST风格的API或用户界面，您可以创建新的合并策略、管理现有策略并为组织设置默认的合并策略。 本指南显示了使用API处理合并策略的步骤。 要使用UI处理合并策略，请参阅合 [并策略用户指南](../ui/merge-policies.md)。
+Adobe Experience Platform使您能够将来自多个来源的数据整合在一起，并将其合并，以便了解每个客户的完整视图。 将数据整合在一起时，合并策略是确定 [!DNL Platform] 数据的优先级以及合并哪些数据以创建统一视图的规则。 使用REST风格的API或用户界面，您可以创建新的合并策略、管理现有策略并为组织设置默认的合并策略。 本指南显示了使用API处理合并策略的步骤。 要使用UI处理合并策略，请参阅合 [并策略用户指南](../ui/merge-policies.md)。
 
 ## 入门指南
 
-本指南中使用的API端点是实 [时客户用户档案API的一部分](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的API端点是的一部分 [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
 
 ## 合并策略的组件 {#components-of-merge-policies}
 
-合并策略是IMS组织专用的策略，允许您创建不同的策略，以便以您需要的特定方式合并模式。 访问用户档案数据的任何API都需要合并策略，但如果未明确提供合并策略，则将使用默认策略。 平台提供默认的合并策略，或者您可以为特定模式创建合并策略并将其标记为组织的默认策略。 每个组织可能具有每个模式的多个合并策略，但每个模式只能有一个默认的合并策略。 在提供模式名和需要但未提供合并策略的情况下，将使用任何设置为默认的合并策略。 当您将合并策略设置为默认策略时，之前设置为默认策略的任何现有合并策略都将自动更新为不再用作默认策略。
+合并策略是IMS组织专用的策略，允许您创建不同的策略，以便以您需要的特定方式合并模式。 任何访问数 [!DNL Profile] 据的API都需要合并策略，但如果未明确提供，则将使用默认策略。 [!DNL Platform] 提供默认的合并策略，或者您可以为特定模式创建合并策略并将其标记为组织的默认策略。 每个组织可能具有每个模式的多个合并策略，但每个模式只能有一个默认的合并策略。 在提供模式名和需要但未提供合并策略的情况下，将使用任何设置为默认的合并策略。 当您将合并策略设置为默认策略时，之前设置为默认策略的任何现有合并策略都将自动更新为不再用作默认策略。
 
 ### 完整合并策略对象
 
@@ -59,7 +59,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 | `attributeMerge` | [属性合并](#attribute-merge) 对象，指示在发生用户档案冲突时合并策略优先处理属性值的方式。 |
 | `schema` | 可 [以使用](#schema) 合并策略的模式对象。 |
 | `default` | 指示此合并策略是否为指定模式的默认值的布尔值。 |
-| `version` | 平台维护的合并策略版本。 只读值在更新合并策略时递增。 |
+| `version` | [!DNL Platform] 维护的合并策略版本。 只读值在更新合并策略时递增。 |
 | `updateEpoch` | 合并策略的上次更新日期。 |
 
 **合并策略示例**
@@ -86,7 +86,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ### 身份图 {#identity-graph}
 
-[Adobe Experience Platform标识服务](../../identity-service/home.md) ，管理全局使用的标识图以及Experience Platform上每个组织的标识图。 合并 `identityGraph` 策略的属性定义如何确定用户的相关标识。
+[Adobe Experience Platform身份服务](../../identity-service/home.md) ，管理全局使用的身份图以及上的每个组织的身份 [!DNL Experience Platform]图。 合并 `identityGraph` 策略的属性定义如何确定用户的相关标识。
 
 **identityGraph对象**
 
@@ -173,7 +173,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ## 访问合并策略 {#access-merge-policies}
 
-使用实时用户档案API，端点允许您执行查找请求，以按其ID视图特定的合并策略，或访问IMS组织中按特定条件筛选的所有合并策略。 `/config/mergePolicies` 您还可以使用端点 `/config/mergePolicies/bulk-get` 来通过其ID检索多个合并策略。 以下各节概述了执行这些调用的步骤。
+使用 [!DNL Real-time Customer Profile] API，端点允许您 `/config/mergePolicies` 执行查找请求，以按其ID视图特定合并策略，或访问IMS组织中按特定条件筛选的所有合并策略。 您还可以使用端点 `/config/mergePolicies/bulk-get` 来通过其ID检索多个合并策略。 以下各节概述了执行这些调用的步骤。
 
 ### 按ID访问单个合并策略
 
@@ -720,11 +720,11 @@ curl -X DELETE \
 
 **响应**
 
-成功删除请求将返回HTTP状态200(OK)和空的响应主体。 要确认删除成功，您可以执行GET请求，按合并策略的ID视图该策略。 如果合并策略被删除，您将收到HTTP状态404（找不到）错误。
+成功删除请求将返回HTTP状态200(OK)和空的响应主体。 要确认删除成功，您可以执行GET请求以按合并策略的ID视图该合并策略。 如果合并策略被删除，您将收到HTTP状态404（找不到）错误。
 
 ## 后续步骤
 
-现在，您知道如何为IMS组织创建和配置合并策略，可以使用它们根据实时受众用户档案数据创建细分。 请参阅Adobe Experience Platform [分段服务文档](../../segmentation/home.md) ，开始定义和使用区段。
+现在，您知道如何为IMS组织创建和配置合并策略，可以使用它们根据受众创建 [!DNL Real-time Customer Profile] 段。 请参阅Adobe Experience Platform [分段服务文档](../../segmentation/home.md) ，开始定义和使用区段。
 
 
 
