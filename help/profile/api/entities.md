@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 实体——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '1689'
+source-wordcount: '1671'
 ht-degree: 1%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 1%
 
 # 实体端点(用户档案访问)
 
-Adobe Experience Platform使您能够使用RESTful API或用户界面访问实时客户用户档案数据。 本指南概述了如何使用API访问实体(通常称为“用户档案”)。 有关使用平台UI访问用户档案的详细信息，请参阅 [用户档案用户指南](../ui/user-guide.md)。
+Adobe Experience Platform使您能 [!DNL Real-time Customer Profile] 够使用RESTful API或用户界面访问数据。 本指南概述了如何使用API访问实体(通常称为“用户档案”)。 有关使用UI访问用户档案的详 [!DNL Platform] 细信息，请参阅 [用户档案用户指南](../ui/user-guide.md)。
 
 ## 入门指南
 
-本指南中使用的API端点是实 [时客户用户档案API的一部分](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的API端点是的一部分 [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
 
 ## 按身份访问用户档案数据
 
-您可以通过向端点发出GET请求并以一系 `/access/entities` 列用户档案参数的形式提供该实体的标识来访问查询实体。 此标识由ID值()`entityId`和标识命名空间(`entityIdNS`)组成。
+您可以通过 [!DNL Profile] 向端点发出GET请求并 `/access/entities` 将实体的标识作为一系列查询参数提供来访问实体。 此标识由ID值()`entityId`和标识命名空间(`entityIdNS`)组成。
 
 查询路径中提供的数据参数指定要访问的数据。 可以包含多个参数，以和号(&amp;)分隔。 附录的“列表参数”部分提供了 [有效参数](#query-parameters) 的完整查询。
 
@@ -764,7 +764,7 @@ curl -X POST \
 }`
 ```
 
-在此示例响应中，第一个列出的用户档案(“GkouAW-yD9aoRCPhRYROJ-TetAFW”)为提供一个值 `_links.next.payload`，表示此用户档案还有其他的结果页。 有关如何访问这些附 [加结果的详细信息](#access-additional-results) ，请参阅以下有关访问其他结果的部分。
+在此示例响应中，第一个列出的用户档案(“GkouAW-yD9aoRCPhRYROJ-TetAFW”)为提供一个值 `_links.next.payload`，表示此用户档案还有其他的结果页。 有关如何访问这些附 [加结果的详细信息](#access-additional-results) ，请参阅访问其他结果的下一节。
 
 ### 访问其他结果 {#access-additional-results}
 
@@ -774,7 +774,7 @@ curl -X POST \
 
 ## 访问多个事件实体中的时间序列模式
 
-您可以访问通过关系描述符连接的多个实体。 以下示例API调用假定两个模式之间已定义关系。 有关关系描述符的详细信息，请阅读模式注册表API开发人员指南描述 [符端点指南](../../xdm/api/descriptors.md)。
+您可以访问通过关系描述符连接的多个实体。 以下示例API调用假定两个模式之间已定义关系。 有关关系描述符的详细信息，请阅读API开 [!DNL Schema Registry] 发人员指南描述 [符端点指南](../../xdm/api/descriptors.md)。
 
 您可以在请求路径中包含查询参数，以指定要访问的数据。 可以包含多个参数，以和号(&amp;)分隔。 附录的“列表参数”部分提供了 [有效参数](#query-parameters) 的完整查询。
 
@@ -884,11 +884,11 @@ curl -X GET \
 
 ## 后续步骤
 
-按照本指南，您成功访问了实时客户用户档案数据字段、用户档案和时间序列数据。 要了解如何访问存储在平台中的其他数据资源，请参 [阅数据访问概述](../../data-access/home.md)。
+按照本指南，您成功访问 [!DNL Real-time Customer Profile] 了数据字段、用户档案和时间序列数据。 要了解如何访问存储在中的其他数据资 [!DNL Platform]源，请参 [阅数据访问概述](../../data-access/home.md)。
 
 ## 附录 {#appendix}
 
-下节提供有关使用API访问用户档案数据的补充信息。
+下节提供有关使用API访 [!DNL Profile] 问数据的补充信息。
 
 ### 查询参数 {#query-parameters}
 
