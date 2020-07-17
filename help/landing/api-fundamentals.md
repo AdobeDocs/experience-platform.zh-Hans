@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Adobe Experience PlatformAPI基础知识
 topic: getting started
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '425'
-ht-degree: 0%
+source-wordcount: '423'
+ht-degree: 2%
 
 ---
 
@@ -83,7 +83,7 @@ JSON指针是用于标识JSON文档中特[定值的标准字符串语法](https:
 >[!Note]
 >
 >
->处理(XDM)描 `xdm:sourceProperty` 述符 `xdm:destinationProperty` 的和属 [!DNL Experience Data Model] 性时，必须从JSON指 `properties` 针字符串 **中排除任** 何键。 有关详细信息，请参阅模式注册表API开发人员指 [南子](../xdm/api/descriptors.md) -指南。
+>处理(XDM)描 `xdm:sourceProperty` 述符 `xdm:destinationProperty` 的和属 [!DNL Experience Data Model] 性时，必须从JSON指 `properties` 针字符串 **中排除任** 何键。 有关详 [!DNL Schema Registry] 细信息，请参阅描述符的API开 [发人](../xdm/api/descriptors.md) 员指南子指南。
 
 ## JSON修补程序
 
