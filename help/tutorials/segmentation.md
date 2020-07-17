@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 分段教程
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: ae244711ed89f4c7d6f87fd38bf7f8324e9b64be
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '540'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTf
 
 ## 导出区段数据
 
-导出包含数 [!DNL Profile] 据的段 [需要先创建要将数据导出到的数据集](../segmentation/tutorials/create-dataset-export-segment.md)，然后启动新的导出作业。 有关生成导出作业的步骤，请参阅导 [出API教程](../segmentation/tutorials/export-data.md)。
+导出包含数 [!DNL Profile] 据的段 [需要先创建要将数据导出到的数据集](../segmentation/tutorials/create-dataset-export-segment.md)，然后启动新的导出作业。 有关生成导出作业的步骤，请参阅评估区段 [的教程](../segmentation/tutorials/evaluate-a-segment.md)。
 
 ## 配置合并策略
 
