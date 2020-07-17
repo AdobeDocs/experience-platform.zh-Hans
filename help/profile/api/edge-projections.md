@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 边缘预测——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: d1656635b6d082ce99f1df4e175d8dd69a63a43a
+source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
 workflow-type: tm+mt
-source-wordcount: '1919'
+source-wordcount: '1900'
 ht-degree: 2%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 2%
 
 # 边缘投影配置和目标端点
 
-为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe Target和Adobe Campaign等Adobe应用程序使用边缘来实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 本指南提供使用实时客户用户档案API处理边缘预测（包括目标和配置）的详细说明。
+为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe Target和Adobe Campaign等Adobe应用程序使用边缘来实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 本指南提供有关使用API处理 [!DNL Real-time Customer Profile] 边缘投影的详细说明，包括目标和配置。
 
 ## 入门指南
 
-本指南中使用的API端点是实 [时客户用户档案API的一部分](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的API端点是的一部分 [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
 
 >[!NOTE]
 >包含有效负荷(POST、PUT、PATCH)的请求需要标 `Content-Type` 头。 此文档 `Content-Type` 中使用了多个。 请特别注意示例调用中的标头，以确保您对每个请求使用 `Content-Type` 正确的标头。
@@ -325,7 +325,7 @@ curl -X DELETE \
 
 ## 投影配置
 
-投影配置提供关于每个边缘上哪些数据可用的信息。 投影不会将完整的体验模式模型(XDM)投影到边缘，而只提供模式中的特定数据或字段。 您的组织可以为每个XDM模式定义多个投影配置。
+投影配置提供关于每个边缘上哪些数据可用的信息。 投影不是将完 [!DNL Experience Data Model] 整的(XDM)模式投影到边缘，而是只提供模式中的特定数据或场。 您的组织可以为每个XDM模式定义多个投影配置。
 
 ### 列表所有投影配置
 
@@ -349,7 +349,7 @@ GET /config/projections?schemaName={SCHEMA_NAME}&name={PROJECTION_NAME}
 
 **请求**
 
-以下请求列表与体验数据模型模式类(XDM单个用户档案)关联的所有投影配置。 有关XDM及其在平台中的角色的更多信息，请首先阅读XDM [系统概述](../../xdm/home.md)。
+以下请求将列表与模式类关联的所 [!DNL Experience Data Model] 有投影配置 [!DNL XDM Individual Profile]。 有关XDM及其在中的角色的更 [!DNL Platform]多信息，请阅读XDM [系统概述](../../xdm/home.md)。
 
 ```shell
 curl -X GET \
