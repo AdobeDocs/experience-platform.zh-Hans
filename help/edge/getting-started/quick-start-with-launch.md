@@ -4,9 +4,9 @@ seo-title: Adobe Experience PlatformWeb SDK快速开始Launch
 description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
 seo-description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
 translation-type: tm+mt
-source-git-commit: 9d58693646f472e84f04a64c4ad66f61dc5d3eba
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '543'
 ht-degree: 4%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 # 欢迎
 
-本指南将指导您完成如何在Adobe Launch中设置Adobe Experience PlatformWeb SDK的不同步骤。 您需要具有权限并处于允许列表才能使用此功能。 如果您想继续等待列表，请联系您的客户经理。 此外，要使用此功能，您需要：
+本指南将指导您完成如何在Adobe Launch中设置Adobe Experience Platform的 [!DNL Web SDK] 不同步骤。 您需要具有权限并处于允许列表才能使用此功能。 如果您想继续等待列表，请联系您的客户经理。 此外，要使用此功能，您需要：
 
 - 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经拥有Adobe Analytics的CNAME，则应使用该CNAME。 在开发中测试无需CNAME即可正常工作，但在开始生产之前，您需要CNAME
 - 正在使用最新版的访客ID服务
@@ -29,13 +29,13 @@ ht-degree: 4%
 
 ## 准备模式
 
-Experience Platform边缘网络将数据作为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义边缘网络希望数据的格式。 要发送数据，您需要定义模式。 确保您完成以下操作：
+将 [!DNL Experience Platform Edge Network] 数据视为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义预 [!DNL Edge Network] 期数据的格式。 要发送数据，您需要定义模式。 确保您完成以下操作：
 
 1. [创建模式](../../xdm/tutorials/create-schema-ui.md)
-2. 将AEP Web SDK ExperienceEvent Mixin添加到您创建的模式。
+2. 将AEP Mixin [!DNL Web SDK ExperienceEvent] 添加到您创建的模式。
 3. 根据您创建的模式创建数据集。
 
-以下视频旨在支持您为Web SDK数据创建模式、数据集和流源连接器。
+以下视频旨在支持您为模式创建数据集、数据集和流源连接器。 [!DNL Web SDK]
 
 >[!VIDEO](https://video.tv.adobe.com/v/35395?quality=12&learn=on)
 
@@ -47,13 +47,13 @@ Experience Platform边缘网络将数据作为XDM。 XDM是一种数据格式，
 
 ## 根据您的模式创建数据元素
 
-在Adobe Launch中，通过将扩展更改为AEP Web SDK并将类型设置为XDM对象，创建引用模式的数据元素。 这将加载模式，并允许您将数据元素映射到模式的不同部分。
+在Adobe Launch中，通过将扩展名更改为AEP并将类型设置为XDM对象，创建引 [!DNL Web SDK] 用模式的数据元素。 这将加载模式，并允许您将数据元素映射到模式的不同部分。
 
 ![启动项中的日期元素](../../assets/edge_data_element.png)
 
 ## 发送事件
 
-安装扩展后，开始通过将AEP Web SDK扩展的“sendEvent”操作添加到规则来发送事件。 请务必将刚创建的事件元素作为XDM数据添加到该数据中。 我们建议您在每次加载页面时至少发送一个事件。
+安装扩展后，开始通过将AEP扩展的“sendEvent”操作添加到规则来 [!DNL Web SDK] 发送事件。 请务必将刚创建的事件元素作为XDM数据添加到该数据中。 我们建议您在每次加载页面时至少发送一个事件。
 
 有关如何跟踪事件的更多详细信息，请参阅 [跟踪事件](../fundamentals/tracking-events.md)。
 
