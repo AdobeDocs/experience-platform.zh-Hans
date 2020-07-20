@@ -4,34 +4,37 @@ solution: Experience Platform
 title: 示例查询
 topic: queries
 translation-type: tm+mt
-source-git-commit: 33282b1c8ab1129344bd4d7054e86fed75e7b899
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+workflow-type: tm+mt
+source-wordcount: '227'
+ht-degree: 2%
 
 ---
 
 
-# Adobe查询数据示例
+# Adobe Target查询示例
 
-来自Adobe目标的数据将转换为Experience事件XDM模式，并作为数据集引入Experience Platform。 有许多用例用于使用此数据查询服务，以下示例查询应与您的Adobe目标数据集一起使用。
+来自Adobe Target的数据将转换为体验事件XDM模式，并作为数 [!DNL Experience Platform] 据集引入您。 此查询有许多用 [!DNL Query Service] 例，以下示例应使用Adobe Target数据集。
 
 >[!NOTE]
->在以下示例中，您需要编辑SQL，以根据您感兴趣的数据集、变量或评估时间范围为查询填写预期参数。 在SQL中可以看到的位 `{ }` 置提供参数。
+>在以下示例中，您将需要编辑SQL，以根据您感兴趣的数据集、变量或评估时间范围来填写查询的预期参数。 在SQL中可以看到的 `{ }` 任何位置提供参数。
 
-## 平台上目标数据源的标准数据集名称：
+## 目标数据源的标准数据集名称 [!DNL Platform]:
 
-Adobe目标体验事件（易记名称） <br>`adobe_target_experience_events` (用于查询的名称)
+Adobe Target体验事件(友好名 <br>称`adobe_target_experience_events` )(用于查询的名称)
 
 ## 高级部分XDM场映射
 
-使用表示 `[ ]` 数组
+使用表 `[ ]` 示数组
 
 | 名称 | XDM字段 | 注释 |
 | ---- | --------- | ----- |
 | mboxName | `_experience.target.mboxname` |  |
 | 活动 ID | `_experience.target.activities.activityID` |  |
-| 体验ID | `_experience.target.activities[].activityEvents[]._experience.target.activity.activityevent.context.experienceID` |  |
+| 体验 ID | `_experience.target.activities[].activityEvents[]._experience.target.activity.activityevent.context.experienceID` |  |
 | 区段ID | `_experience.target.activities[].activityEvents[].segmentEvents[].segmentID._id` |  |
 | 事件范围 | `_experience.target.activities[].activityEvents[].eventScope` | 跟踪新访客和访问 |
-| 步骤ID | `_experience.target.activities[].activityEvents[]._experience.target.activity.activityevent.context.stepID` | 自定义步骤ID以进行活动 |
+| 步骤ID | `_experience.target.activities[].activityEvents[]._experience.target.activity.activityevent.context.stepID` | 活动的自定义步骤ID |
 | 价格合计 | `commerce.order.priceTotal` |  |
 
 ## 给定日的每小时活动计数
@@ -110,7 +113,7 @@ ORDER BY Day DESC, Instances DESC
 LIMIT 20
 ```
 
-## 按每个列表ID在指定日期按实例返回事件范围(访客、访问、印象)的活动
+## 按每个列表ID在指定一天按实例返回事件范围(访客、访问、印象)的活动
 
 ```sql
 SELECT
@@ -142,7 +145,7 @@ ORDER BY Day DESC, Instances DESC
 LIMIT 30
 ```
 
-## 特定日期内每个访客的回访次数、访问次数和印象数
+## 给定一天内每个访客的活动、访问次数和展示次数的返回计数
 
 ```sql
 SELECT
@@ -168,7 +171,7 @@ ORDER BY Hour DESC, Visitors DESC
 LIMIT 30
 ```
 
-## 特定日期的回访访客、访问、体验ID、区段ID和EventScope印象
+## 在指定的一天内返回访客、访问、体验ID、区段ID和EventScope的展示次数
 
 ```sql
 SELECT
@@ -215,7 +218,7 @@ ORDER BY Day DESC, Activities.activityID, ExperienceID ASC, SegmentID._id ASC, V
 LIMIT 20
 ```
 
-## 返回给定日期的mbox名称和记录计数
+## 返回给定日的mbox名称和记录计数
 
 ```sql
 SELECT
