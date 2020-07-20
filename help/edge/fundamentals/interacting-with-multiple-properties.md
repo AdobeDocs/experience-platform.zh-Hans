@@ -1,12 +1,12 @@
 ---
 title: 与多个属性交互
-seo-title: 与多个属性交互的Adobe Experience Platform Web SDK
-description: 了解如何与多个Experience Platform Web SDK属性交互
-seo-description: 了解如何与多个Experience Platform Web SDK属性交互
+seo-title: Adobe Experience PlatformWeb SDK与多个属性交互
+description: 了解如何与多个Experience PlatformWeb SDK属性交互
+seo-description: 了解如何与多个Experience PlatformWeb SDK属性交互
 translation-type: tm+mt
-source-git-commit: 7d4f364ebb9df1ce58481a35007ea75f86ab7825
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '256'
+source-wordcount: '252'
 ht-degree: 0%
 
 ---
@@ -66,4 +66,4 @@ mycustomname2("sendEvent", {
 
 ## 限制
 
-为避免与cookies发生冲突，页面中只有一个Adobe Experience Platform Web SDK实例可以具有特定实例 `edgeConfigId`。  同样，只有一个Adobe Experience Platform Web SDK实例可以具有特定实例 `orgId`。
+为避免与Cookies冲突，页面中只 [!DNL Web SDK] 有一个Adobe Experience Platform实例可以具有特定 `edgeConfigId`。  同样，只有一个Adobe Experience Platform实 [!DNL Web SDK] 例可以具有特定 `orgId`。
