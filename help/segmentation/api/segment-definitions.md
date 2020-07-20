@@ -4,15 +4,15 @@ solution: Experience Platform
 title: 细分定义
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 41a5d816f9dc6e7c26141ff5e9173b1b5631d75e
+source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
 workflow-type: tm+mt
-source-wordcount: '1042'
+source-wordcount: '1041'
 ht-degree: 4%
 
 ---
 
 
-# 段定义端点指南
+# 段定义端点
 
 Adobe Experience Platform允许您创建区段，这些区段从一组用户档案定义一组特定属性或行为。 段定义是封装写入(PQL)的查询 [!DNL Profile Query Language] 的对象。 此对象也称为PQL谓词。 PQL谓词根据与您提供给的任何记录或时间序列数据相关的条件定义段规则 [!DNL Real-time Customer Profile]。 有关编写 [PQL查询](../pql/overview.md) ，请参阅PQL指南。
 
