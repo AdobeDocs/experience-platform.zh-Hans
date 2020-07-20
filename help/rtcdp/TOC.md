@@ -3,18 +3,18 @@ product: adobe experience platform
 audience: user
 user-guide-title: 实时客户数据平台帮助
 translation-type: tm+mt
-source-git-commit: fc8bdc6a46e0b64f29d89a36b0810f7312200616
+source-git-commit: b0068c0ef0897d5d4ec578f0c97b20aef3b2931c
 workflow-type: tm+mt
-source-wordcount: '439'
-ht-degree: 10%
+source-wordcount: '440'
+ht-degree: 11%
 
 ---
 
 
 # Real-time Customer Data Platform Help {#rtcdp}
 
-* [产品概述](overview.md)
-* Real-time Customer Data Platform {#intro}
+* [实时CDP概述](overview.md)
+* 入门指南 {#intro}
    * [入门指南](get-started.md)
    * [量度概述](home-page-dashboards.md)
 * 管理 {#admin}
@@ -30,12 +30,12 @@ ht-degree: 10%
       * [目标详细信息页](destinations/destination-details-page.md)
    * 目标目录 {#destinations-cat}
       * [目标目录概述](destinations/destinations-catalog.md)
-      * Adobe目标{#adobe-destinations}
+      * Adobe destinations{#adobe-destinations}
          * [Adobe目标概述](destinations/adobe-destinations.md)
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
       * 广告目标{#advertising-destinations}
          * [广告目标概述](destinations/advertising-destinations.md)
-         * [Adobe Advertising Cloud扩展](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
+         * [AdobeAdvertising Cloud扩展](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
          * [Awin广告转换标签扩展](/help/rtcdp/destinations/awin-conversiontag-extension.md)
          * [Awin Advertising Mastertag扩展](/help/rtcdp/destinations/awin-mastertag-extension.md)
          * [Beemray扩展](/help/rtcdp/destinations/beemray-extension.md)
@@ -52,10 +52,10 @@ ht-degree: 10%
          * [LinkedIn Insight标记扩展](/help/rtcdp/destinations/linkedin-extension.md)
          * [Pinterest转换跟踪扩展](destinations/pinterest-extension.md)
          * [Twitter通用网站标签扩展](destinations/twitter-uwt-extension.md)
-      * 分析目标 {#analytics-destinations}
-         * [分析目标概述](destinations/analytics-destinations.md)
+      * Analytics目的地 {#analytics-destinations}
+         * [Analytics目标概述](destinations/analytics-destinations.md)
          * [Adform网站跟踪扩展](/help/rtcdp/destinations/adform-extension.md)
-         * [Adobe Analytics扩展](/help/rtcdp/destinations/adobe-analytics-extension.md)
+         * [Adobe Analytics 扩展](/help/rtcdp/destinations/adobe-analytics-extension.md)
          * [Adobe Media Analytics for Audio and Video 扩展](/help/rtcdp/destinations/adobe-video-analytics-extension.md)
          * [Clicktale扩展](/help/rtcdp/destinations/clicktale-extension.md)
          * [Contentsquare扩展](/help/rtcdp/destinations/contentsquare-extension.md)
@@ -63,12 +63,12 @@ ht-degree: 10%
          * [Demandbase扩展](/help/rtcdp/destinations/demandbase-extension.md)
          * [Dialogtech扩展](/help/rtcdp/destinations/dialogtech-extension.md)
          * [Google Global Site Tag Analytics扩展](/help/rtcdp/destinations/gtag-analytics-extension.md)
-         * [Google Universal Analytics扩展](/help/rtcdp/destinations/google-universal-analytics-extension.md)
-         * [JW Player分析（测试版）扩展](/help/rtcdp/destinations/jw-player-analytics-extension.md)
+         * [Google UniversalAnalytics扩展](/help/rtcdp/destinations/google-universal-analytics-extension.md)
+         * [JW PlayerAnalytics（测试版）扩展](/help/rtcdp/destinations/jw-player-analytics-extension.md)
          * [Nielsen BSDK扩展](destinations/nielsen-bsdk-extension.md)
          * [Nielsen IMA Handler扩展](destinations/nielsen-ima-extension.md)
          * [Nielsen VideoJS播放器处理程序扩展](destinations/nielsen-videojs-extension.md)
-         * [Parse.ly Analytics扩展](destinations/parsely-extension.md)
+         * [Parse.lyAnalytics扩展](destinations/parsely-extension.md)
          * [量子度量扩展](destinations/quantum-metric-extension.md)
          * [SessionCam扩展](destinations/sessioncam-extension.md)
          * [TMMData扩展](destinations/tmmdata-extension.md)
@@ -82,11 +82,11 @@ ht-degree: 10%
          * [SFTP目标](destinations/sftp-destination.md)
       * 数据管理平台目标 {#dmp-destinations}
          * [数据管理平台目标概述](destinations/dmp-destinations.md)
-         * [受众管理器DIL扩展](/help/rtcdp/destinations/aam-dil-extension.md)
+         * [Audience ManagerDIL扩展](/help/rtcdp/destinations/aam-dil-extension.md)
       * 电子邮件营销目标{#email-destinations}
          * [电子邮件营销目标概述](destinations/email-marketing-destinations.md)
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
-         * [Bizible Analytics扩展](/help/rtcdp/destinations/bizible-extension.md)
+         * [Analytics分机](/help/rtcdp/destinations/bizible-extension.md)
          * [Marketo扩展](destinations/marketo-extension.md)
          * [Marketo Munchkin 扩展](destinations/marketo-munchkin-extension.md)
          * [Oracle Evolca](destinations/oracle-eloqua-destination.md)
@@ -131,7 +131,7 @@ ht-degree: 10%
 * 隐私和数据管理 {#privacy}
    * [隐私概述](privacy/privacy-overview.md)
    * [数据管理概述](privacy/data-governance-overview.md)
-* 实时客户资料 {#profile}
+* 用户档案 {#profile}
    * [用户档案概述](profile/profile-overview.md)
    * [身份与身份命名空间](profile/identities-overview.md)
    * [合并策略](profile/merge-policies.md)
@@ -142,5 +142,5 @@ ht-degree: 10%
 * 源 {#sources}
    * [源概述](sources/sources-overview.md)
    * [使用Adobe Launch实施网站标签](sources/launch.md)
-* [发行说明](https://www.adobe.com/go/platform-release-notes-en)
-* [术语表](https://www.adobe.com/go/platform-glossary-en)
+* [Experience Platform发行说明](https://www.adobe.com/go/platform-release-notes-en)
+* [Experience Platform词汇表](https://www.adobe.com/go/platform-glossary-en)
