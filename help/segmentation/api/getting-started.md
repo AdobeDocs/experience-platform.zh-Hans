@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 分段服务开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: c0eacfba2feea66803e63ed55ad9d0a97e9ae47c
+source-git-commit: aff81a4f3243ef77cbdfc776220a5de46e360084
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '305'
 ht-degree: 0%
 
 ---
@@ -44,52 +44,6 @@ API文档还要求您完成身份验证教 [程](../../tutorials/authentication.
 >[!NOTE]
 >
 >有关在中使用沙箱的更多信 [!DNL Experience Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
-
-<!-- ## Estimates
-
-Estimates provides statistical information for a segment definition, such as projected audience size and confidence interval. You can use the `/estimate` endpoint to view an estimate of a segment definition. 
-
-For more information on using this endpoint, please read the [estimates developer guide](./estimates.md). 
-
-## Export jobs
-
-Export jobs are asynchronous processes that are used to persist audience segment members to datasets. You can use the `/export/jobs` endpoint to retrieve all export jobs, create a new export job, retrieve details of a specific export job, or cancel a specific export job.
-
-For more information on using this endpoint, please read the [export jobs developer guide](./export-jobs.md).
-
-## Previews
-
-Previews provide a paginated list of qualifying profiles for a segment definition, allowing you to compare the results against what you expect. You can use the `/preview` endpoint to create a new preview job, look up results of a specific preview job, or delete a specific preview job.
-
-For more information on using this endpoint, please read the [previews developer guide](./previews.md).
-
-## PQL conversions
-
-Profile Query Language (PQL) conversions allows you to convert your formatting between `pql/text` and `pql/json`. You can do this by using the `/segment/conversion` endpoint.
-
-For more information on using this endpoint, please read the [PQL conversions developer guide](./pql-conversions.md).
-
-## Schedules
-
-Schedules are a tool that can be used to automatically run export jobs once a day. You can use the `/config/schedules` endpoint to retrieve a list of schedules, create a new schedule, retrieve details of a specific schedule, update a specific schedule, or delete a specific schedule. 
-
-For more information on using this endpoint, please read the [schedules developer guide](./schedules.md). -->
-
-## 细分定义
-
-区段定义定义哪些用户档案将成为哪些受众区段的一部分。 您可以使用端点 `/segment/definitions` 检索段定义的列表、创建新段定义、检索特定段定义的详细信息、删除特定段定义或覆盖特定段定义的详细信息。
-
-有关使用此端点的详细信息，请阅读段定 [义开发人员指南](./segment-definitions.md)。
-
-## 细分作业
-
-细分作业流程以前建立的细分定义以生成受众细分。 您可以使用端 `/segment/jobs` 点来检索区段作业的列表、创建新的区段作业、检索特定区段作业的详细信息或删除特定区段作业。
-
-有关使用此端点的详细信息，请阅读段作 [业开发人员指南](./segment-jobs.md)。
-
-## 区段搜索
-
-段搜索用于搜索和索引包含在各种数据源中的可配置字段，并近乎实时地返回它们。 要开始使用区段搜索，请参阅搜索开 [发人员指南](segment-search.md)
 
 ## 后续步骤
 
