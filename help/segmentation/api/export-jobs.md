@@ -1,20 +1,24 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 导出作业端点指南
+title: 导出作业端点
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 3e39333207ef6c94b6d792be33a4605f185ff5ab
+source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
 workflow-type: tm+mt
-source-wordcount: '1469'
+source-wordcount: '1497'
 ht-degree: 2%
 
 ---
 
 
-# 导出作业端点指南
+# 导出作业端点
 
 导出作业是异步进程，用于将受众段成员保留到数据集。 您可以在Adobe Experience Platform `/export/jobs` 分段API中使用端点，它允许您以编程方式检索、创建和取消导出作业。
+
+>[!NOTE]
+>
+>本指南涵盖导出作业在中的使用 [!DNL Segmentation API]。 有关如何管理用户档案导出作业的 [!DNL Real-time Customer Profile] 信息，请参阅API [中的导出作业指南](../../profile/api/export-jobs.md)
 
 ## 入门指南
 
