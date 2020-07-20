@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform分段服务帮助
 translation-type: tm+mt
-source-git-commit: a1f80b86a1e761c15d567821b13c7533b7fcf622
+source-git-commit: 82067c3bfa6d80cd5f5dcc6644cdbcacbae85053
 workflow-type: tm+mt
-source-wordcount: '103'
-ht-degree: 5%
+source-wordcount: '111'
+ht-degree: 6%
 
 ---
 
@@ -15,8 +15,11 @@ ht-degree: 5%
 
 - [概述](home.md)
 - [分段数据类型](data-types.md)
-- 分段API {#api}
+- 分段API开发人员指南{#api}
+   - [概述](api/overview.md)
    - [入门指南](api/getting-started.md)
+   - [导出作业](api/export-jobs.md)
+   - [预览和估计](api/previews-and-estimates.md)
    - [细分定义](api/segment-definitions.md)
    - [细分作业](api/segment-jobs.md)
    - [区段搜索](api/segment-search.md)
