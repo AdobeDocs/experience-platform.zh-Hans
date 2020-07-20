@@ -1,12 +1,12 @@
 ---
 title: 支持同意
-seo-title: 支持Adobe Experience Platform Web SDK同意首选项
-description: 了解如何通过Experience Platform Web SDK支持同意首选项
-seo-description: 了解如何通过Experience Platform Web SDK支持同意首选项
+seo-title: 支持Adobe Experience PlatformWeb SDK同意首选项
+description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
+seo-description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
 translation-type: tm+mt
-source-git-commit: c86ae6d887f52d8bb4b78dadc06060791c7a02c0
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '516'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ alloy("setConsent", {
 
 >[!NOTE]
 >
->目前，SDK仅支持此目 `general` 的。 尽管我们计划构建一套更强大的用途或类别，这些用途或将与不同的Adobe功能和产品产品相对应，但当前的实施只是选择加入的一种全部或全部方法。  这仅适用于Adobe Experience Platform Web SDK，而不适用于其他Adobe JavaScript库。
+>目前，SDK仅支持此目 `general` 的。 尽管我们计划构建一套更强大的用途或类别，这些用途或将与不同的Adobe功能和产品产品相对应，但当前的实施只是选择加入的一种全部或全部方法。  这仅适用于Adobe Experience Platform, [!DNL Web SDK] 而不适用于其他Adobe JavaScript库。
 
 ## 同意偏好的持续存在
 
