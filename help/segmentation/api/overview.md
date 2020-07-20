@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: Adobe Experience Platform分段服务开发人员指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: 41a5d816f9dc6e7c26141ff5e9173b1b5631d75e
+source-git-commit: aff81a4f3243ef77cbdfc776220a5de46e360084
 workflow-type: tm+mt
 source-wordcount: '469'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Adobe Experience Platform Segmentation Service] 允许您根据数据构建细分 [!DNL Adobe Experience Platform] 和生成 [!DNL Real-time Customer Profile] 受众。
 
-API提 [!DNL Segmentation Service] 供多个端点，允许您在中以编程方式管理您的分段操作 [!DNL Experience Platform]。 此概述文档提供了每个端点的高级介绍，以及指向其关联端点指南的链接以获取详细信息。 在阅读各个端点指南之前，请参 [阅入门指南](getting-started.md) ，了解有关所需标题、读取示例API调用等的重要信息。
+API提 [!DNL Segmentation Service] 供多个端点，允许您在中以编程方式管理您的分段操作 [!DNL Experience Platform]。 此概述文档提供了每个端点的高级介绍，以及指向其关联端点指南的链接以获取详细信息。 在阅读各个端点指南之前，请参 [阅入门指南](./getting-started.md) ，了解有关所需标题、读取示例API调用等的重要信息。
 
 要视图所有可用的端点和CRUD操作，请参阅分段 [服务API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)。
 
