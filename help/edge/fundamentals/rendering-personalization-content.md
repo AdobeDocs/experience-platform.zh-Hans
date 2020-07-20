@@ -4,9 +4,9 @@ seo-title: Adobe Experience PlatformWeb SDK渲染个性化内容
 description: 了解如何使用Experience PlatformWeb SDK呈现个性化内容
 seo-description: 了解如何使用Experience PlatformWeb SDK呈现个性化内容
 translation-type: tm+mt
-source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 个性化选项概述
 
-Adobe Experience PlatformWeb SDK支持在Adobe查询个性化解决方案，包括Adobe Target。 有两种个性化模式： 检索可自动渲染的内容和开发人员必须渲染的内容。 SDK还提供管理闪 [烁的工具](../../edge/solution-specific/target/flicker-management.md)。
+Adobe Experience Platform支 [!DNL Web SDK] 持在Adobe查询个性化解决方案，包括Adobe Target。 有两种个性化模式： 检索可自动渲染的内容和开发人员必须渲染的内容。 SDK还提供管理闪 [烁的工具](../../edge/solution-specific/target/flicker-management.md)。
 
 ## 自动呈现内容
 
@@ -92,7 +92,7 @@ alloy("sendEvent",{
 
 >[!TIP]
 >
-> 如果您使用目标范围成为服务器上的mBox，则只有它们一次是所有请求，而不是单独请求。 全局mbox始终会发送。
+> 如果您使用 [!DNL Target] 作用域在服务器上变为mBox，则只有它们一次是所有请求，而不是单独请求。 全局mbox始终会发送。
 
 ### 检索自动内容
 
