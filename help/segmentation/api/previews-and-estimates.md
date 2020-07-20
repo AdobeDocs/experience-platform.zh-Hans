@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 预览和估计端点指南
+title: 预览和估计端点
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 41a5d816f9dc6e7c26141ff5e9173b1b5631d75e
+source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
 workflow-type: tm+mt
-source-wordcount: '752'
+source-wordcount: '750'
 ht-degree: 2%
 
 ---
 
 
-# 预览和估计端点指南
+# 预览和估计端点
 
 在开发细分定义时，您可以使用中的估计和预览工具来 [!DNL Adobe Experience Platform] 视图摘要级别信息，以帮助确保隔离预期受众。 **预览** 为区段定义提供符合条件的列表的分页用户档案，使您能够将结果与预期进行比较。 **估计** 提供关于区段定义的统计信息，如预测受众大小、置信区间和误差标准偏差。
 
