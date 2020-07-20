@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform常见问题解答和疑难解答指南
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 2e5668a8b1d5fb831188fbd4e453b9f4aa7474df
+source-git-commit: 635f8cf8173cc7db2032f2181848b0ce1e9095cc
 workflow-type: tm+mt
-source-wordcount: '1959'
+source-wordcount: '1962'
 ht-degree: 2%
 
 ---
@@ -248,6 +248,6 @@ API中的许多PATCH [!DNL Platform] 操作都 [使用JSON指针](https://tools.
 | 体验数据模型(XDM) | [模式注册表API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) | [XDM系统常见问题解答和疑难解答指南](../xdm/troubleshooting-guide.md) |
 | 标识服务 | [Identity Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml) | [Identity Service疑难解答指南](../identity-service/troubleshooting-guide.md) |
 | 查询服务 | [查询服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/qs-api.yaml) | [查询服务疑难解答指南](../query-service/troubleshooting-guide.md) |
-| 实时客户资料 | [实时客户用户档案API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml) |  |
+| 实时客户资料 | [实时客户用户档案API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml) | [用户档案疑难解答指南](../profile/troubleshooting.md) |
 | 沙箱 | [沙箱API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) | [沙箱疑难解答指南](../sandboxes/troubleshooting-guide.md) |
 | 区段 | [分段API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml) |
