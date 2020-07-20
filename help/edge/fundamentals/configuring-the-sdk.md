@@ -4,9 +4,9 @@ seo-title: 配置Adobe Experience PlatformWeb SDK
 description: 了解如何配置Experience PlatformWeb SDK
 seo-description: 了解如何配置Experience PlatformWeb SDK
 translation-type: tm+mt
-source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '743'
+source-wordcount: '737'
 ht-degree: 11%
 
 ---
@@ -74,7 +74,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 字符串 | 是 | 无 |
 
-您分配的Experience Cloud组织ID。  在页面内配置多个实例时，必须为每个实例配 `orgId` 置不同的实例。
+Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个实例时，必须为每个实例配 `orgId` 置不同的实例。
 
 ## 数据收集
 
@@ -134,7 +134,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-启用Audience Manager [!UICONTROL cookie目标]，允许根据区段资格设置cookie。
+启 [!DNL Audience Manager] 用 [!UICONTROL Cookie目标]，允许根据细分资格设置Cookie。
 
 ### `urlDestinationsEnabled`
 
@@ -142,7 +142,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-启用Audience Manager [!UICONTROL URL目标]，这允许基于区段资格触发URL。
+启 [!DNL Audience Manager] 用 [!UICONTROL URL目标]，它允许基于段资格触发URL。
 
 ## 标识选项
 
