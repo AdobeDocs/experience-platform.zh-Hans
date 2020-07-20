@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: 实时客户用户档案帮助
 translation-type: tm+mt
-source-git-commit: 93aae0e394e1ea9b6089d01c585a94871863818e
+source-git-commit: 635f8cf8173cc7db2032f2181848b0ce1e9095cc
 workflow-type: tm+mt
-source-wordcount: '81'
+source-wordcount: '83'
 ht-degree: 18%
 
 ---
@@ -30,5 +30,6 @@ ht-degree: 18%
    * [为用户档案和身份配置数据集](tutorials/dataset-configuration.md)
    * [更多教程](https://docs.adobe.com/content/help/zh-Hans/experience-platform/tutorials/home.html)
 * [隐私请求处理](privacy.md)
+* [疑难解答指南](troubleshooting.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
