@@ -4,15 +4,15 @@ solution: Experience Platform
 title: 细分作业
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 2327ce9a87647fb2416093d4a27eb7d4dc4aa4d7
+source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
 workflow-type: tm+mt
-source-wordcount: '994'
+source-wordcount: '993'
 ht-degree: 3%
 
 ---
 
 
-# 段作业端点指南
+# 段作业端点
 
 段作业是创建新受众段的异步进程。 它引用区 [段定义](./segment-definitions.md)，以及任何合并策 [略](../../profile/api/merge-policies.md) ，控制如何在用户档案片段 [!DNL Real-time Customer Profile] 中合并重叠属性。 当区段作业成功完成时，您可以收集有关区段的各种信息，如处理过程中可能发生的任何错误以及受众的最终大小。
 
