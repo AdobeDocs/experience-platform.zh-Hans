@@ -4,9 +4,9 @@ seo-title: Adobe Experience PlatformWeb SDK检索Experience CloudID
 description: 了解如何获取Adobe Experience Cloud Id。
 seo-description: 了解如何获取Adobe Experience Cloud Id。
 translation-type: tm+mt
-source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '412'
+source-wordcount: '408'
 ht-degree: 9%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 9%
 
 # 标识——检索Experience CloudID
 
-Adobe Experience PlatformWeb SDK利用 [Adobe Identity Service](../../identity-service/ecid.md)。 这可确保每个设备都有一个唯一标识符，该标识符会保留在设备上，以便页面之间的活动可以绑定在一起。
+Adobe Experience Platform [!DNL Web SDK] 利用 [Adobe Identity Service](../../identity-service/ecid.md)。 这可确保每个设备都有一个唯一标识符，该标识符会保留在设备上，以便页面之间的活动可以绑定在一起。
 
 ## 第一方身份
 
@@ -30,7 +30,7 @@ Adobe Experience PlatformWeb SDK利用 [Adobe Identity Service](../../identity-s
 
 >[!NOTE]
 >
->此方法通常用于需要读取Experience CloudID的自定义解决方案。 标准实施不使用该函数。
+>此方法通常用于需要读取ID的自定义解决 [!DNL Experience Cloud] 方案。 标准实施不使用该函数。
 
 ```javascript
 alloy("getIdentity")
