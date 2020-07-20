@@ -355,7 +355,8 @@ curl -X GET {ENDPOINT_PATH}/{CONTAINER_ID}/instances?schema="{SCHEMA_ID}" \
 过滤列表结果是可能的，并且独立于分页机制进行。 过滤器只需按照列表的顺序跳过实例，或明确要求仅包括满足给定条件的实例。 客户端可以请求要用作过滤器的属性表达式，也可以指定要用作实例主键值的URI列表。
 
 - **`property`**: 包含一个属性名称路径，后跟一个比较运算符，后跟一个值。 <br/>
-返回的实例列表包含表达式计算结果为true的实例。 例如，假定实例具有有效负荷属 `status` 性，并且可能的值 `draft`是 `approved`，然后 `archived` 查询参数只 `deleted``property=_instance.status==approved` 返回已批准状态的实例。 <br/>
+返回的实例列表包含表达式计算结果为true的实例。 例如，假定实例具有有效负荷属性 
+`status` 可能的值是， `draft`然后 `approved`查询 `archived` 参 `deleted` 数将仅返回 `property=_instance.status==approved` 已批准状态的实例。 <br/>
 <br/>
 要与给定值进行比较的属性被标识为路径。 单个路径组件由“.”分隔，如： “_instance.xdm:prop1.xdm:prop1_1.xdm:prop1_1`<br/>
 
@@ -897,7 +898,7 @@ curl -X PATCH {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
 ]' 
 ```
 
-对于这两种情况，请 [参阅更新实例和为实例打](#updating-and-patching-instances) 补丁，以了解完整的cURL语法。 参 `schemaId` 数必须为 `https://ns.adobe.com/experience/offer-management/personalized-offer`。
+对于这两种情况，请 [参阅更新实例和修补实](#updating-and-patching-instances) 例以了解完整的cURL语法。 参 `schemaId` 数必须为 `https://ns.adobe.com/experience/offer-management/personalized-offer`。
 
 请注意， `xdm:tags` 要成功添加操作，该属性必须已存在。 实例中不存在标记，PATCH操作可以先添加数组属性，然后添加对该数组的标记引用。
 
