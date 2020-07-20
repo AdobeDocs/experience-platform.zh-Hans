@@ -4,19 +4,19 @@ seo-title: 使用Adobe Experience PlatformWeb SDK在Analytics自动映射变量
 description: 了解在Analytics使用Experience PlatformWeb SDK自动映射哪些变量
 seo-description: 了解在Analytics使用Experience PlatformWeb SDK自动映射哪些变量
 translation-type: tm+mt
-source-git-commit: a7c8830c5c8152b1f21373a506b2fff97d43c40a
+source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
-source-wordcount: '550'
+source-wordcount: '543'
 ht-degree: 2%
 
 ---
 
 
-# 在Analytics自动映射变量
+# 自动映射到的变量 [!DNL Analytics]
 
-以下是列表边缘网络自动映射到Analytics的变量Adobe Experience Platform。
+下面是列表自动映射到的 [!DNL Edge Network] 变量Adobe Experience Platform [!DNL Analytics]。
 
-| XDM字段路径 | Analytics查询字符串/HTTP头 | 描述 |
+| XDM字段路径 | [!DNL Analytics Query String] / HTTP 标头 | 描述 |
 | ---------- | ------------------------- | -------- |
 | `commerce.order.purchaseID` | `pi` | AppMeasurement查询参数PURCHASEID映射。 |
 | `commerce.order.currencyCode` | `cc` | AppMeasurement查询参数CURRENCY映射。 |
