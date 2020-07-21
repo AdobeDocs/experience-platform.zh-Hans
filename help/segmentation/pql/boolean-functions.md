@@ -4,14 +4,17 @@ solution: Experience Platform
 title: 布尔函数
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 902ba5efbb5f18a2de826fffd023195d804309cc
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+workflow-type: tm+mt
+source-wordcount: '223'
+ht-degree: 6%
 
 ---
 
 
 # 布尔函数
 
-Boolean函数用于对用户档案查询语言(PQL)中的不同元素执行布尔逻辑。  有关其他PQL函数的更多信息，请参阅 [用户档案查询语言概述](./overview.md)。
+布尔函数用于对(PQL)中的不同元素执行 [!DNL Profile Query Language] 布尔逻辑。  有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
 
 ## 和
 
@@ -25,7 +28,7 @@ Boolean函数用于对用户档案查询语言(PQL)中的不同元素执行布�
 
 **示例**
 
-以下PQL查询将返回所有以加拿大为母国的人和1985年出生年。
+以下PQL查询将返回所有在加拿大和1985年出生的人。
 
 ```sql
 homeAddress.countryISO = "CA" and person.birthYear = 1985
@@ -33,7 +36,7 @@ homeAddress.countryISO = "CA" and person.birthYear = 1985
 
 ## 或
 
-函数 `or` 用于创建逻辑分离。
+函 `or` 数用于创建逻辑分离。
 
 **格式**
 
@@ -51,7 +54,7 @@ homeAddress.countryISO = "CA" or person.birthYear = 1985
 
 ## 非
 
-( `not` 或 `!`)函数用于创建逻辑取反。
+( `not` 或) `!`函数用于创建逻辑取反。
 
 **格式**
 
@@ -62,7 +65,7 @@ not ({QUERY})
 
 **示例**
 
-以下PQL查询将返回所有没有加拿大作为其祖国的人。
+以下PQL查询将返回所有没有加拿大作为母国的人员。
 
 ```sql
 not (homeAddress.countryISO = "CA")
@@ -70,7 +73,7 @@ not (homeAddress.countryISO = "CA")
 
 ## 如果
 
-函 `if` 数用于根据指定的条件是否为真解析表达式。
+函 `if` 数用于根据指定的条件是否为真来解析表达式。
 
 **格式**
 
@@ -81,12 +84,12 @@ if ({TEST_EXPRESSION}, {TRUE_EXPRESSION}, {FALSE_EXPRESSION})
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{TEST_EXPRESSION}` | 正在测试的布尔表达式。 |
-| `{TRUE_EXPRESSION}` | 如果为true，则使用其值 `{TEST_EXPRESSION}` 的表达式。 |
-| `{FALSE_EXPRESSION}` | 如果为false，则使用其值 `{TEST_EXPRESSION}` 的表达式。 |
+| `{TRUE_EXPRESSION}` | 值为true时将使用的 `{TEST_EXPRESSION}` 表达式。 |
+| `{FALSE_EXPRESSION}` | 如果为false，则使用其 `{TEST_EXPRESSION}` 值的表达式。 |
 
 **示例**
 
-以下PQL查询将设置该值，如 `1` 果母国是加拿大，而 `2` 如果母国不是加拿大。
+以下PQL查询将设置此值， `1` 如果母国是加拿大， `2` 如果母国不是加拿大。
 
 ```sql
 if (homeAddress.countryISO = "CA", 1, 2)
@@ -94,4 +97,4 @@ if (homeAddress.countryISO = "CA", 1, 2)
 
 ## 后续步骤
 
-现在您已经学习了布尔函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [用户档案查询语概述](./overview.md)。
+现在您已经了解了布尔函数，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请阅读 [用户档案查询语概述](./overview.md)。
