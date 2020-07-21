@@ -4,21 +4,21 @@ solution: Experience Platform
 title: 创建数据集
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '203'
-ht-degree: 1%
+source-wordcount: '197'
+ht-degree: 2%
 
 ---
 
 
 # 创建数据集
 
-要使用Catalog API创建数据集，您必须知道 `$id` 数据集所基于的体验数据模型(XDM)模式的值。 获得模式ID后，您可以通过向目录API中的端点发出POST请 `/datasets` 求来创建数据集。
+要使用API创建数 [!DNL Catalog] 据集，您必 `$id` 须知道 [!DNL Experience Data Model] 数据集所基于的(XDM)模式的值。 获得模式ID后，您可以通过向API中的端点发出POST请 `/datasets` 求来创建数 [!DNL Catalog] 据集。
 
 >[!NOTE]
 >
->此文档仅介绍如何在Catalog中创建数据集对象。 有关如何创建、填充和监视数据集的完整步骤，请参阅以下 [教程](../datasets/create.md)。
+>此文档仅涵盖如何在中创建数据集对象 [!DNL Catalog]。 有关如何创建、填充和监视数据集的完整步骤，请参阅以下 [教程](../datasets/create.md)。
 
 **API格式**
 
