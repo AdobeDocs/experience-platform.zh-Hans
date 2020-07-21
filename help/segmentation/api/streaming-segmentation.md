@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 流细分
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '1370'
+source-wordcount: '1364'
 ht-degree: 1%
 
 ---
@@ -290,7 +290,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->对于XDM单个用户档案，最多可以为五(5)个合并策略的沙箱启用计划评估。 如果您的组织在单个沙箱用户档案内有五个以上的XDM单个环境的合并策略，您将无法使用计划的评估。
+>对于最多五(5)个合并策略的沙箱，可启用计划评估 [!DNL XDM Individual Profile]。 如果您的组织在单个沙箱环境内 [!DNL XDM Individual Profile] 有五个以上的合并策略，您将无法使用计划的评估。
 
 ### 创建计划
 
