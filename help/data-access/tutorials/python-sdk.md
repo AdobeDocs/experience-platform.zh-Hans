@@ -4,21 +4,21 @@ solution: Experience Platform
 title: 安全Python数据访问SDK
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 49aa2e2664fe658d89b6279d1f869eb30c48ccad
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '478'
 ht-degree: 1%
 
 ---
 
 
-# 安全Python [!DNL Data Access] SDK
+# 安全 [!DNL Python][!DNL Data Access] SDK
 
-Secure Python SDK是 [!DNL Data Access] 一个软件开发工具包，它支持读取和写入来自Adobe Experience Platform的数据集。
+Secure SDK [!DNL Python] 是一 [!DNL Data Access] 个软件开发工具包，它支持读取和写入Adobe Experience Platform数据集。
 
 ## 入门指南
 
-您必须已完成身 [份验证](../../tutorials/authentication.md) 教程，才能访问这些值以调用Secure Python [!DNL Data Access] SDK:
+您必须已完成身份 [验证](../../tutorials/authentication.md) 教程，才能访问这些值以调用安全 [!DNL Python][!DNL Data Access] SDK:
 
 - `{ACCESS_TOKEN}`
 - `{API_KEY}`
@@ -55,7 +55,7 @@ Secure Python SDK是 [!DNL Data Access] 一个软件开发工具包，它支持�
 
 ## 安装
 
-所有包装在建筑后输 `./dist` 出到。
+所有包装在建筑后 `./dist` 输出。
 
 ### 车轮
 
@@ -63,7 +63,7 @@ Secure Python SDK是 [!DNL Data Access] 一个软件开发工具包，它支持�
 python3 setup.py bdist_wheel --universal
 ```
 
-从项目目录，将轮载到Python 3环境。
+从项目目录，将轮载到您的 [!DNL Python] 3环境。
 
 ```python
 pip3 install ./dist/<name_of_wheel_file>.whl
@@ -148,7 +148,7 @@ df = dataset_reader.where(experience_ds['timestamp'].gt(87879779797).And(experie
 
 ### ORDER BY子句
 
-ORDER BY子句允许按指定列按特定顺序（升序或降序）对接收结果进行排序。 在Python SDK中，这是使用函数完 `sort()` 成的。
+ORDER BY子句允许按指定列按特定顺序（升序或降序）对接收结果进行排序。 在SDK [!DNL Python] 中，这是使用函数完 `sort()` 成的。
 
 使用函数的示 `sort()` 例如下所示：
 
