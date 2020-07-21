@@ -4,15 +4,15 @@ solution: Experience Platform
 title: 连接到流目标并激活数据
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: ed9d6eadeb00db51278ea700f7698a1b5590632f
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
-source-wordcount: '1857'
+source-wordcount: '1810'
 ht-degree: 2%
 
 ---
 
 
-# 在Adobe的实时客户Platform中使用API连接到流目标并激活数据
+# 在Adobe的实时客户数据平台中使用API连接到流目标并激活数据
 
 >[!NOTE]
 >
@@ -30,9 +30,9 @@ ht-degree: 2%
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-* [体验数据模型(XDM)系统](../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
-* [目录服务](../../catalog/home.md): 目录是Experience Platform内数据位置和谱系的记录系统。
-* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个Platform实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
+* [!DNL Catalog Service](../../catalog/home.md): [!DNL Catalog] 是Experience Platform内数据位置和谱系的记录系统。
+* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了在Adobe实时CDP中将数据激活到流目标时需要了解的其他信息。
 
@@ -49,13 +49,13 @@ ht-degree: 2%
 
 ### 收集必需和可选标题的值 {#gather-values}
 
-要调用PlatformAPI，您必须先完成身份验证 [教程](/help/tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用平台API，您必须先完成身份验证 [教程](/help/tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 * 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的资源可以隔离到特定虚拟沙箱。 在对PlatformAPI的请求中，您可以指定操作将在其中进行的沙箱的名称和ID。 这些是可选参数。
+Experience Platform中的资源可以隔离到特定虚拟沙箱。 在对平台API的请求中，您可以指定操作将在其中进行的沙箱的名称和ID。 这些是可选参数。
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -261,12 +261,12 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{CONNECTION_SPEC_ID}`: 使用您在获取可用目标的列表 [步骤中获得的连接规范ID](#get-the-list-of-available-destinations)。
 * `{AUTHENTICATION_CREDENTIALS}`: 填写流目标的名称，例如： `Amazon Kinesis authentication credentials` 或 `Azure Event Hubs authentication credentials`者
-* `{ACCESS_ID}`: *用于Amazon Kinesis连接。* 您的Amazon Kinesis存储位置的访问ID。
-* `{SECRET_KEY}`: *用于Amazon Kinesis连接。* 您的Amazon Kinesis存储位置的密钥。
-* `{REGION}`: *用于Amazon Kinesis连接。* 您的Amazon Kinesis帐户中的区域，Adobe实时CDP将在该区域流式传输您的数据。
-* `{SAS_KEY_NAME}`: *用于Azure事件集线器连接。* 填写您的SAS密钥名称。 了解Microsoft文档 [!DNL Azure Event Hubs] 中有关使用SAS密钥进 [行身份验证](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
-* `{SAS_KEY}`: *用于Azure事件集线器连接。* 填写您的SAS密钥。 了解Microsoft文档 [!DNL Azure Event Hubs] 中有关使用SAS密钥进 [行身份验证](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
-* `{EVENT_HUB_NAMESPACE}`: *用于Azure事件集线器连接。* 填写Azure事件中心命名空间,Adobe实时CDP将在该中流化您的数据。 有关详细信息，请参 [阅Microsoft文档中的创建事件](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) 集线器命名空间。
+* `{ACCESS_ID}`: *用于[!DNL Amazon Kinesis]连接。* 您的Amazon Kinesis存储位置的访问ID。
+* `{SECRET_KEY}`: *用于[!DNL Amazon Kinesis]连接。* 您的Amazon Kinesis存储位置的密钥。
+* `{REGION}`: *用于[!DNL Amazon Kinesis]连接。* 您帐户中 [!DNL Amazon Kinesis] Adobe实时CDP将流化您的数据的区域。
+* `{SAS_KEY_NAME}`: *用于[!DNL Azure Event Hubs]连接。* 填写您的SAS密钥名称。 了解Microsoft文档 [!DNL Azure Event Hubs] 中有关使用SAS密钥进 [行身份验证](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
+* `{SAS_KEY}`: *用于[!DNL Azure Event Hubs]连接。* 填写您的SAS密钥。 了解Microsoft文档 [!DNL Azure Event Hubs] 中有关使用SAS密钥进 [行身份验证](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
+* `{EVENT_HUB_NAMESPACE}`: *用于[!DNL Azure Event Hubs]连接。* 填写Adobe [!DNL Azure Event Hubs] 实时CDP将流化您的数据的命名空间。 有关详细信息，请参 [阅文档中的创建事件中](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) 心 [!DNL Microsoft] 命名空间。
 
 **响应**
 
@@ -317,9 +317,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{BASE_CONNECTION_ID}`: 使用您在上述步骤中获得的基本连接ID。
 * `{CONNECTION_SPEC_ID}`: 使用您在获取可用目标列表 [步骤中获得的连接规范](#get-the-list-of-available-destinations)。
-* `{NAME_OF_DATA_STREAM}`: *用于Amazon Kinesis连接。* 在您的Amazon Kinesis帐户中提供现有数据流的名称。 Adobe实时CDP会将数据导出到此流。
-* `{REGION}`: *用于Amazon Kinesis连接。* 您的Amazon Kinesis帐户中的区域，Adobe实时CDP将在该区域流式传输您的数据。
-* `{EVENT_HUB_NAME}`: *用于Azure事件集线器连接。* 填写Azure事件中心名称，Adobe实时CDP将在该名称中流化您的数据。 有关详细信息，请 [参阅Microsoft文档中的](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) “创建事件中心”。
+* `{NAME_OF_DATA_STREAM}`: *用于[!DNL Amazon Kinesis]连接。* 在帐户中提供现有数据流的 [!DNL Amazon Kinesis] 名称。 Adobe实时CDP会将数据导出到此流。
+* `{REGION}`: *用于[!DNL Amazon Kinesis]连接。* 您的Amazon Kinesis帐户中的区域，Adobe实时CDP将在该区域流式传输您的数据。
+* `{EVENT_HUB_NAME}`: *用于[!DNL Azure Event Hubs]连接。* 填写Adobe [!DNL Azure Event Hub] 实时CDP将在其中流式传送您的数据的名称。 有关详细信息，请 [参阅文档中的](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) “创建事件 [!DNL Microsoft] 中心”。
 
 **响应**
 
@@ -467,7 +467,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 * `{DATAFLOW_ID}`: 使用您在上一步中获得的数据流。
 * `{ETAG}`: 使用您在上一步中获得的标签。
-* `{SEGMENT_ID}`: 提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请转至https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/，在左侧导航 **菜单中选择** “分段服务API”，然后查找操 `GET /segment/jobs` 作。
+* `{SEGMENT_ID}`: 提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请转至https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/，在左侧导航 **[!UICONTROL 菜单中选择]** “分段服务API”，然后查找操 `GET /segment/jobs` 作。
 * `{PROFILE_ATTRIBUTE}`: 例如， `personalEmail.address` 或 `person.lastName`
 
 **响应**
@@ -551,7 +551,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 >[!IMPORTANT]
 >
-> 除了将用户档案激活到新目标中的属 [性和区段之外](#activate-data),AWS Kinesis和Azure事件中心中的导出数据还将包含有关标识映射的信息。 这表示导出用户档案的标识( [例如](https://docs.adobe.com/content/help/zh-Hans/id-service/using/intro/id-request.html)ECID、移动ID、Google ID、电子邮件地址等)。 请参阅以下示例。
+> 除了将用户档案激活到新目标中的属 [性和区段外](#activate-data)，以及中导出的数 [!DNL AWS Kinesis] 据还将包 [!DNL Azure Event Hubs] 含有关标识映射的信息。 这表示导出用户档案的标识( [例如](https://docs.adobe.com/content/help/zh-Hans/id-service/using/intro/id-request.html)ECID、移动ID、Google ID、电子邮件地址等)。 请参阅以下示例。
 
 ```
 {
