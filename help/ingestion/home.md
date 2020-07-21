@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform数据摄取概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3f1c3c77a0755a3e305da0fb8a234be0f0ee1863
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '420'
+source-wordcount: '417'
 ht-degree: 10%
 
 ---
@@ -36,7 +36,7 @@ Adobe Experience Platform将来自多个来源的数据整合在一起，以帮�
 
 [!DNL Experience Platform] 允许您设置与各种数据提供者的源连接。 这些连接使您能够验证到外部数据源、设置摄取运行的时间以及管理摄取吞吐量。
 
-可以配置源连接以从其他Adobe应用程序(如AdobeAnalytics和Adobe Audience Manager)、第三方云存储源(如 [!DNL Azure Blob]S3、 [!DNL Amazon] FTP服务器和SFTP服务器)以及第三方CRM系统（如Microsoft Dynamics和Salesforce）收集数据。
+源连接可配置为从其他Adobe应用程序(如AdobeAnalytics和Adobe Audience Manager)、第三方云存储源(如 [!DNL Azure Blob]S3、 [!DNL Amazon] FTP服务器和SFTP服务器)以及第三方CRM系统(如 [!DNL Microsoft Dynamics] 和 [!DNL Salesforce])收集数据。
 
 有关更多 [信息](../sources/home.md) ，请参阅源概述。
 
