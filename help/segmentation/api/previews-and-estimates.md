@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 预览和估计端点
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
+source-git-commit: 995fadef9abacf22d0561e0590dfbe172adf0a43
 workflow-type: tm+mt
-source-wordcount: '750'
+source-wordcount: '742'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 2%
 
 ## 入门指南
 
-本指南中使用的端点是API的一 [!DNL Adobe Experience Platform Segmentation Service] 部分。 在继续之前，请查 [看入门指南](./getting-started.md) ，了解成功调用API需要了解的重要信息，包括必需的头以及如何读取示例API调用。
+本指南中使用的端点是API的一 [!DNL Adobe Experience Platform Segmentation Service] 部分。 在继续之前，请查 [看入门指南](./getting-started.md) ，了解成功调用API所需的重要信息，包括必需的头以及如何读取示例API调用。
 
 ## 估计的生成方式
 
@@ -71,7 +71,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | -------- | ----------- |
 | `predicateExpression` | 查询数据的PQL表达式。 |
 | `predicateType` | 查询表达式的谓词类型 `predicateExpression`。 当前，此属性唯一接受的值是 `pql/text`。 |
-| `predicateModel` | 模式用户档案数据的体验数据模型(XDM)的名称。 |
+| `predicateModel` | 用户档案数据 [!DNL Experience Data Model] 所基于的模式(XDM)的名称。 |
 
 **响应**
 
@@ -167,7 +167,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `results` | 实体ID的列表及其相关身份。 提供的链接可用于使用用户档案访问API查找指定 [的实体](../../profile/api/entities.md)。 |
+| `results` | 实体ID的列表及其相关身份。 提供的链接可用于使用查找指定的实体 [!DNL Profile Access API](../../profile/api/entities.md)。 |
 
 ## 检索特定评估作业的结果 {#get-estimate}
 
@@ -226,4 +226,4 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 ## 后续步骤
 
-阅读本指南后，您现在可以更好地了解如何处理预览和评估。 要进一步了解其他Segmentation Service API端点，请阅读Segmentation Service开 [发人员指南概述](./overview.md)。
+阅读本指南后，您现在可以更好地了解如何处理预览和评估。 要进一步了解其他API [!DNL Segmentation Service] 端点，请阅读分段服务 [开发人员指南概述](./overview.md)。
