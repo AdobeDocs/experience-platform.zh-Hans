@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Adobe Experience Platform批摄取概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1144'
 ht-degree: 2%
 
 ---
 
 
-# 批摄取概述
+# [!DNL Batch Ingestion]概述
 
-批处理摄取API允许您将数据作为批处理文件导入到Adobe Experience Platform中。 所摄取的用户档案可以是CRM系统中平面文件（如拼花文件）中的模式数据，也可以是与体验数据模型(XDM)注册表中的已知数据相符的数据。
+API [!DNL Batch Ingestion] 允许您将数据作为批处理文件引入Adobe Experience Platform。 所摄取的用户档案可以是CRM系统中的平面文件（如拼花文件）中的模式数据，或符合(XDM)注册表中的已知的 [!DNL Experience Data Model] 数据。
 
 数据 [摄取API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) ，提供了有关这些API调用的其他信息。
 
@@ -24,17 +24,17 @@ ht-degree: 2%
 
 ## 使用API
 
-数据摄取API允许您通过三个基本步骤将数据作为批量（由一个或多个要作为单个单元摄取的文件组成的数据单元）摄取到Experience Platform中：
+API [!DNL Data Ingestion] 允许您通过以下三个基本步骤将数据作为批处理(由一个或多个要作为单个单元摄取的文件组成的数 [!DNL Experience Platform] 据单元)进行：
 
 1. 创建新批。
 2. 将文件上传到与数据的XDM模式匹配的指定数据集。
 3. 发出批次结束的信号。
 
 
-### 数据获取先决条件
+### [!DNL Data Ingestion] 先决条件
 
 - 要上传的数据必须采用Parke或JSON格式。
-- 在目录服务中创建 [的数据集](../../catalog/home.md)。
+- 在中创建的数据集 [!DNL Catalog services](../../catalog/home.md)。
 - 拼花文件的内容必须与要上传到的数据集的模式的子集匹配。
 - 在验证后拥有您的独特访问令牌。
 
@@ -47,23 +47,23 @@ ht-degree: 2%
 
 ### 读取示例API调用
 
-本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
+本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
 - 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -237,7 +237,7 @@ curl -X PATCH "https://platform.adobe.io/data/foundation/import/batches/{BATCH_I
 
 ## 信号批处理完成
 
-在所有文件都上传到该批后，可以指示该批完成。 通过执行此操作，将 **为已完成的文件** 创建Catalog DataSetFile条目，并与上面生成的批关联。 然后，目录批被标记为成功，这将触发下游流以获取可用数据。
+在所有文件都上传到该批后，可以指示该批完成。 通过执行此操作 [!DNL Catalog] ，将为已完 **** 成的文件创建DataSetFile条目，并与上面生成的批相关联。 然 [!DNL Catalog] 后将批标记为成功，这会触发下游流以获取可用数据。
 
 **请求**
 
