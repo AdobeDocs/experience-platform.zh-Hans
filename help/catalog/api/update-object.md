@@ -4,17 +4,17 @@ solution: Experience Platform
 title: 更新对象
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '316'
-ht-degree: 2%
+source-wordcount: '313'
+ht-degree: 3%
 
 ---
 
 
 # 更新对象
 
-您可以通过在PATCH请求的路径中包含Catalog对象的ID来更新其部分。 此文档涵盖对目录对象执行PATCH操作的两种方法：
+通过在PATCH请求的路 [!DNL Catalog] 径中包含对象的ID，可以更新对象的一部分。 此文档涵盖对目录对象执行PATCH操作的两种方法：
 
 * 使用字段
 * 使用JSON修补程序表示法
@@ -35,7 +35,7 @@ PATCH /{OBJECT_TYPE}/{OBJECT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要更新的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要更新 [!DNL Catalog] 的对象类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
@@ -84,7 +84,7 @@ PATCH /{OBJECT_TYPE}/{OBJECT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要更新的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要更新 [!DNL Catalog] 的对象类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
