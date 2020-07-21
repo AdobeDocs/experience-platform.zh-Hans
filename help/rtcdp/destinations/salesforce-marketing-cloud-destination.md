@@ -1,48 +1,52 @@
 ---
 title: Salesforce Marketing Cloud
 seo-title: Salesforce Marketing Cloud
-description: Salesforce Marketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
-seo-description: Salesforce Marketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
+description: Salesforce Marketing Cloud是一款以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
+seo-description: Salesforce Marketing Cloud是一款以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 translation-type: tm+mt
-source-git-commit: 50e6b39c1eb0bda4f3b30991515fb1c13fa9ff87
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+workflow-type: tm+mt
+source-wordcount: '450'
+ht-degree: 0%
 
 ---
 
 
-# Salesforce Marketing Cloud
+# [!DNL Salesforce Marketing Cloud]
 
 ## 概述
 
-[Salesforce Marketing Cloud是一款以前称为ExactTarget的数字营销套件](https://www.salesforce.com/products/marketing-cloud/email-marketing/) ，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
+[!DNL Salesforce Marketing Cloud](https://www.salesforce.com/products/marketing-cloud/email-marketing/) 是一款以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 
-要将区段数据发送到Salesforce Marketing Cloud，您必须首先在 [Adobe实时CDP中连接目标](#connect-destination) ，然后设置从您的存储位置导入到Salesforce Marketing Cloud的数据 [](#import-data-into-salesforce) 。
+要将区段数据发 [!DNL Salesforce Marketing Cloud]送到，您必 [须先在Adobe Real](#connect-destination) -time CDP中连接目标，然后 [将存储位置的数据导入](#import-data-into-salesforce) 设置到中 [!DNL Salesforce Marketing Cloud]。
 
 ## 连接目标 {#connect-destination}
 
-1. 在中， **[!UICONTROL Connections > Destinations]**&#x200B;选择Salesforce Marketing Cloud，然后选择 **[!UICONTROL Connect destination]**。
+1. 在“ **[!UICONTROL 连接”>“目标]**”中， [!DNL Salesforce Marketing Cloud]选择，然后选 **[!UICONTROL 择“连接目标”]**。
 
    ![连接到Salesforce](/help/rtcdp/destinations/assets/connect-salesforce.png)
 
-2. 在该步 **[!UICONTROL Authentication]** 骤中，如果您之前已设置到云存储目标的连接，请选择并选 **[!UICONTROL Existing Account]** 择一个现有连接。 或者，您也可以选 **[!UICONTROL New Account]** 择设置新连接。 填写帐户身份验证凭据并选择 **[!UICONTROL Connect to destination]**。 对于Salesforce Marketing Cloud，您可以在和之间进 **[!UICONTROL SFTP with Password]** 行选 **[!UICONTROL SFTP with SSH Key]**&#x200B;择。 根据连接类型，填写以下信息，然后选择 **[!UICONTROL Connect to destination]**。
+2. 在身份 **[!UICONTROL 验证]** 步骤中，如果您之前已设置到云存储目标的连接，请选择现 **[!UICONTROL 有帐户]** ，然后选择现有连接之一。 或者，您也可以选 **[!UICONTROL 择“新建帐户]** ”来设置新连接。 填写帐户身份验证凭据，然后选 **[!UICONTROL 择连接到目标]**。 对于 [!DNL Salesforce Marketing Cloud]，您可以在带密 **[!UICONTROL 码的SFTP和]****[!UICONTROL 带SSH密钥的SFTP之间进行选择]**。 根据连接类型填写以下信息，然后选择“连 **[!UICONTROL 接到目标”]**。
 
-   对于 **[!UICONTROL SFTP with Password]** 连接，必须提供域、端口、用户名和密码。
-对于 **[!UICONTROL SFTP with SSH Key]** 连接，必须提供域、端口、用户名和SSH密钥。
+   对 **[!UICONTROL 于带口令的SFTP]** ，您必须提供域、端口、用户名和密码。
+对于 **[!UICONTROL 具有SSH密钥连接]** 的SFTP，您必须提供域、端口、用户名和密码。
 
    ![填写Salesforce信息](/help/rtcdp/destinations/assets/salesforce-authenticate.png)
 
-3. 在该步 **[!UICONTROL Setup]** 骤中，填写目标的相关信息，如下所示：
-   * **[!UICONTROL Name]**:为目标选择相关名称。
-   * **[!UICONTROL Description]**:输入目标的说明。
-   * **[!UICONTROL Folder Path]**:在存储位置提供路径，实时CDP会将导出数据存储为CSV或制表符分隔的文件。
-   * **[!UICONTROL File Format]**:或 **[!UICONTROL CSV]** 者 **[!UICONTROL TAB_DELIMITED]**。 选择要导出到存储位置的文件格式。
+3. 在设 **[!UICONTROL 置步]** 骤中，填写目标的相关信息，如下所示：
+   * **[!UICONTROL 名称]**: 为目标选择相关名称。
+   * **[!UICONTROL 描述]**: 输入目标的说明。
+   * **[!UICONTROL 文件夹路径]**: 在存储位置提供路径，实时CDP会将导出数据存储为CSV或制表符分隔的文件。
+   * **[!UICONTROL 文件格式]**: **[!UICONTROL CSV]** 或 **[!UICONTROL TAB_DELIMITED]**。 选择要导出到存储位置的文件格式。
+
    ![Salesforce基本信息](/help/rtcdp/destinations/assets/salesforce-basic-information.png)
 
-4. 填写 **[!UICONTROL Create destination]** 上述字段后单击。 您的目标现已连接，您可以将 [区段激活](/help/rtcdp/destinations/activate-destinations.md) 到目标。
+4. 填写 **[!UICONTROL 上述字段]** 后，单击创建目标。 您的目标现已连接，您可 [以将区段](/help/rtcdp/destinations/activate-destinations.md) 激活到目标。
 
 ## 目标属性 {#destination-attributes}
 
-将区 [段激活到](/help/rtcdp/destinations/activate-destinations.md) Salesforce Marketing Cloud目标时，建议您从合并模式中选择唯一标 [识符](../../profile/home.md#profile-fragments-and-union-schemas)。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参 [阅选择在电子邮件营销目标中导出的文件中用作目标属性的模式](/help/rtcdp/destinations/email-marketing-destinations.md#destination-attributes) 。
+在将 [区段激](/help/rtcdp/destinations/activate-destinations.md) 活到目 [!DNL Salesforce Marketing Cloud] 标时 [，建议您从合并模式中选择唯一标](../../profile/home.md#profile-fragments-and-union-schemas)识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参 [阅选择在电子邮件营销目标中的导出文件中用作目标属性](/help/rtcdp/destinations/email-marketing-destinations.md#destination-attributes) 的模式字段。
 
-## 设置数据导入到Salesforce Marketing Cloud {#import-data-into-salesforce}
+## 将数据导入设置为 [!DNL Salesforce Marketing Cloud] {#import-data-into-salesforce}
 
-在将实时CDP连接到Amazon S3或SFTP存储后，您必须设置从存储位置导入到Salesforce Marketing Cloud的数据。 要了解如何实现此目标，请参 [阅将订阅者从Salesforce帮助中心的文件导入](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&type=5) Marketing Cloud。
+在将实时CDP连接到Amazon S3或SFTP存储后，您必须设置从存储位置导入到的数据 [!DNL Salesforce Marketing Cloud]。 要了解如何完成此操作，请参 [阅中的将订阅者从文件导入](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5) Marketing Cloud [!DNL Salesforce Help Center]。
