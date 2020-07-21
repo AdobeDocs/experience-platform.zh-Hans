@@ -4,9 +4,9 @@ seo-title: 'Adobe Experience PlatformWeb SDK快速开始 '
 description: 使用开始Web SDK收集数据的快速Experience Platform指南
 seo-description: 使用开始Web SDK收集数据的快速Experience Platform指南
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 8574a2d54c00f1bd3c41780fb12ff739a7d98fc3
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '517'
 ht-degree: 5%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 5%
 
 # 欢迎
 
-本指南将引导您了解设置Adobe Experience Platform的不同方法 [!DNL Web SDK]。 要使用此功能，您需要在允许列表上。 如果您想继续等待列表，请联系您的客户经理。
+本指南指导您通过各种方法设置Adobe Experience PlatformWeb SDK。 要使用此功能，您需要将其列入白名单。 如果您想继续等待列表，请联系您的客户经理。
 
-- 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经有CNAME, [!DNL Analytics]则应使用该CNAME。 在开发中测试无需CNAME即可正常工作，但在开始生产之前您需要CNAME
-- 有权获得Adobe Experience Platform [!DNL Data Platform]。  如果您尚未购买Platform，我们将免费为您 [!DNL Experience Platform Data Services Foundation] 在SDK中以有限方式使用Platform。
-- 正在使用最新版的访客ID服务
+- 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经有Analytics的CNAME，则应使用该CNAME。 在开发中测试无需CNAME即可正常工作，但在开始生产之前，您需要CNAME。
+- 有权获得Adobe Experience Platform。  如果您尚未购买Platform,Adobe将为您提供Experience Platform数据服务基础，以便在SDK中以有限方式使用，并且不收取额外费用。
+- 使用最新版的访客ID服务。
 
 ## 创建配置ID
 
@@ -30,7 +30,7 @@ ht-degree: 5%
 
 ## 准备模式
 
-将 [!DNL Experience Platform Edge Network] 数据视为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义预 [!DNL Edge Network] 期数据的格式。 要发送数据，您需要定义模式。
+将 [!DNL Experience Platform Edge Network] 数据视为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义 [!DNL Edge Network] 数据的格式。 要发送数据，您需要定义模式。
 
 - [创建模式](../../xdm/tutorials/create-schema-ui.md)
 - 将Adobe Experience Platform混 [!DNL Web SDK] 合添加到您创建的模式
