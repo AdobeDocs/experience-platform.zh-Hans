@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform部分批摄取概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 0be45675e4a2e3308cb77a8bbe3189f09c2b6fd8
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '1243'
+source-wordcount: '1237'
 ht-degree: 1%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 1%
 本教程需要掌握与部分批量摄取相关的各种Adobe Experience Platform服务的相关工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
 - [批量摄取](./overview.md): 从数据文 [!DNL Platform] 件（如CSV和Parke）中摄取和存储数据的方法。
-- [体验数据模型(XDM)](../../xdm/home.md): 平台组织客户体验数据的标准化框架。
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
@@ -42,7 +42,7 @@ ht-degree: 1%
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
@@ -115,7 +115,7 @@ ht-degree: 1%
 
 ### 使用“将[!UICONTROL CSV映射到XDM模式]”流 {#map-flow}
 
-要使用“将[!UICONTROL CSV映射到XDM模式]”流程，请按照映射CSV文件教 [程中列出的步骤操作](../tutorials/map-a-csv-file.md)。 进入“添加数 *据* ”步骤后，请注意“部 *[!UICONTROL 分摄取]* ”和“ *[!UICONTROL 错误诊断]* ”字段。
+要使用“将[!UICONTROL CSV映射到XDM模式]”流程，请按照映射CSV文件教 [程中列出的步骤操作](../tutorials/map-a-csv-file.md)。 进入“添加数 *[!UICONTROL 据]* ”步骤后，请注意“部 *[!UICONTROL 分摄取]* ”和“ *[!UICONTROL 错误诊断]* ”字段。
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow.png)
 
