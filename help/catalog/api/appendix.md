@@ -4,21 +4,21 @@ solution: Experience Platform
 title: 目录服务开发人员指南附录
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '908'
+source-wordcount: '893'
 ht-degree: 0%
 
 ---
 
 
-# 目录服务开发人员指南附录
+# [!DNL Catalog Service] 开发人员指南附录
 
-此文档包含帮助您使用目录API的其他信息。
+此文档包含帮助您使用API的其他 [!DNL Catalog] 信息。
 
 ## 视图相关对象 {#view-interrelated-objects}
 
-某些Catalog对象可以与其他Catalog对象相关联。 响应有效负荷中前缀 `@` 的任何字段都表示相关对象。 这些字段的值采用URI的形式，URI可在单独的GET请求中使用，以检索它们表示的相关对象。
+某些 [!DNL Catalog] 对象可以与其他对象相 [!DNL Catalog] 关联。 响应有效负荷中前缀 `@` 的任何字段都表示相关对象。 这些字段的值采用URI的形式，URI可在单独的GET请求中使用，以检索它们表示的相关对象。
 
 查找特定数据集时在文档 [中返回的示例数据集](look-up-object.md) ，包 `files` 含具有以下URI值的字段： `"@/dataSets/5ba9452f7de80400007fc52a/views/5ba9452f7de80400007fc52b/files"`. 可以使用 `files` 此URI作为新GET请求的路径来查看字段的内容。
 
@@ -92,9 +92,9 @@ curl -X GET \
 
 ## 在一次呼叫中发出多个请求
 
-目录API的根端点允许在单个调用中发出多个请求。 请求有效负荷包含表示通常是单个请求的对象的数组，然后按顺序执行。
+API的根端点 [!DNL Catalog] 允许在单个调用中发出多个请求。 请求有效负荷包含表示通常是单个请求的对象的数组，然后按顺序执行。
 
-如果这些请求是对目录的修改或添加，并且任何更改都失败，则所有更改都将恢复。
+如果这些请求是对的修改或添加， [!DNL Catalog] 并且任何一项更改都失败，则所有更改都将恢复。
 
 **API格式**
 
@@ -144,14 +144,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 用户提供的ID，该ID附加到响应对象，以便您能够匹配对响应的请求。 目录不存储此值，只是在响应中返回它以供参考。 |
-| `resource` | 相对于目录API根的资源路径。 协议和域不应是此值的一部分，它应前缀为“/”。 <br/><br/> 将PATCH或DELETE用作子请求时， `method`在资源路径中包含对象ID。 请勿将资源路径与用户提 `id`供的内容混淆，资源路径使用目录对象本身的ID(例如 `resource: "/dataSets/1234567890"`)。 |
+| `id` | 用户提供的ID，该ID附加到响应对象，以便您能够匹配对响应的请求。 [!DNL Catalog] 不存储此值，只是将其返回到响应中以供参考。 |
+| `resource` | 相对于API根的资源路 [!DNL Catalog] 径。 协议和域不应是此值的一部分，它应前缀为“/”。 <br/><br/> 将PATCH或DELETE用作子请求时， `method`在资源路径中包含对象ID。 请勿将资源路径与用户提 `id`供的内容混淆，资源路径使 [!DNL Catalog] 用对象本身的ID(例如 `resource: "/dataSets/1234567890"`)。 |
 | `method` | 与请求中所执行的操作相关的方法的名称(GET、PUT、POST、PATCH或DELETE)。 |
 | `body` | 通常作为POST、PUT或PATCH请求中的有效负荷传递的JSON文档。 GET或DELETE请求不需要此属性。 |
 
 **响应**
 
-成功的响应会返回一组对象，其中 `id` 包含您为每个请求分配的对象、单个请求的HTTP状态代码以及响应 `body`。 由于三个范例请求都是为了创建新对象，因此每个对象的 `body` 数组只包含新创建对象的ID，与目录中POST响应最成功的标准一样。
+成功的响应会返回一组对象，其中 `id` 包含您分配给每个请求的对象、单个请求的HTTP状态代码以及响应 `body`。 由于三个范例请求都是为创建新对象而发出的，因此每个对象的 `body` 数组只包含新创建对象的ID，这也是中最成功的POST响应的标准 [!DNL Catalog]。
 
 ```json
 [
@@ -176,7 +176,7 @@ curl -X POST \
 
 ## 其他请求标头
 
-目录提供了多种标题约定，帮助您在更新过程中保持数据的完整性。
+[!DNL Catalog] 提供了多种标题约定，帮助您在更新过程中保持数据的完整性。
 
 ### If-Match
 
@@ -192,6 +192,6 @@ curl -X POST \
 
 ## 数据压缩
 
-压缩是一种Experience Platform服务，可将小文件中的数据合并到大文件中，而不会更改任何数据。 出于性能原因，有时将一组小文件合并为较大的文件，以便在查询时能够更快地访问数据。
+压缩是一种将 [!DNL Experience Platform] 小文件中的数据合并到大文件中，而不更改任何数据的服务。 出于性能原因，有时将一组小文件合并为较大的文件，以便在查询时能够更快地访问数据。
 
-当摄取的批次中的文件已压缩时，其关联的目录对象将更新以用于监视目的。
+当摄取的批次中的文件已压缩时，其关联对 [!DNL Catalog] 象将更新以用于监视。
