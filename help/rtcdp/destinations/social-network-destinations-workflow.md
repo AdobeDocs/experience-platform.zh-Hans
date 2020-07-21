@@ -4,9 +4,9 @@ seo-title: 社交网络目标工作流
 description: 连接到社交网络广告帐户的说明
 seo-description: 连接到社交网络广告帐户的说明
 translation-type: tm+mt
-source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '464'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 ## 创建社交网络目标的工作流
 
-本教程以Facebook为例，但Adobe实时客户数据Platform中的工作流对于所有社交网络目标将保持不变，然后再添加到产品中。
+本教程以 [!DNL Facebook] 此为例，但Adobe实时客户数据平台中的工作流对于所有社交网络目标将保持不变，然后再添加到产品中。
 
 1. 在“ **[!UICONTROL 目标”>]**“目录”中，滚 **[!UICONTROL 动到Social]** 类别。 选择首选社交网络目标，然后选择 **[!UICONTROL Connect目标]**。
 
@@ -39,7 +39,7 @@ ht-degree: 0%
    >[!IMPORTANT]
    >
    > * 默认 *情况下，对于社交网络目标* ,“单一身份个性化”营销用例处于选中状态，无法删除。
-   > * 适用于Facebook目标。 **[!UICONTROL 帐户ID]** 是您的Facebook广告帐户ID。 您可以在Facebook广告管理器中找到此ID。 在ID前加上 `act_` 如下前缀：
+   > * 针对目 [!DNL Facebook] 的地。 **[!UICONTROL 帐户ID]** 是您的 [!DNL Facebook Ad Account ID]。 您可以在中找到此ID [!DNL Facebook Ads Manager]。 在ID前加上 `act_` 如下前缀：
 
 
    ![连接到社交网络目标——设置步骤](/help/rtcdp/destinations/assets/social-networks-setup-step.png)
