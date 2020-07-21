@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL语法
 topic: syntax
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '1957'
+source-wordcount: '1940'
 ht-degree: 1%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 1%
 
 # SQL语法
 
-查询服务提供对语句和其他有限命令使 `SELECT` 用标准ANSI SQL的功能。 此文档显示查询服务支持的SQL语法。
+[!DNL Query Service] 提供对语句和其他有限命令使 `SELECT` 用标准ANSI SQL的能力。 此文档显示支持的SQL语 [!DNL Query Service]法。
 
 ## 定义SELECT查询
 
-以下语法定义查询 `SELECT` 服务支持的查询:
+以下语法定义 `SELECT` 支持的查询 [!DNL Query Service]:
 
 ```
 [ WITH with_query [, ...] ]
@@ -111,7 +111,7 @@ SELECT statement 2
 
 ## 按选择创建表
 
-以下语法定义 `CREATE TABLE AS SELECT` 查询服务支持的(CTAS)查询:
+以下语法定义 `CREATE TABLE AS SELECT` 支持的(CTAS)查询 [!DNL Query Service]:
 
 ```
 CREATE TABLE table_name [ WITH (schema='target_schema_title') ] AS (select_query)
@@ -136,7 +136,7 @@ CREATE TABLE Chairs WITH (schema='target schema title') AS (SELECT color, count(
 
 ## 插入
 
-以下语法定义了 `INSERT INTO` 查询服务支持的查询:
+以下语法定义 `INSERT INTO` 支持的查询 [!DNL Query Service]:
 
 ```
 INSERT INTO table_name select_query
@@ -170,7 +170,7 @@ DROP [TEMP] TABLE [IF EXISTS] [db_name.]table_name
 
 ## 创建视图
 
-以下语法定义查询 `CREATE VIEW` 服务支持的查询:
+以下语法定义 `CREATE VIEW` 支持的查询 [!DNL Query Service]:
 
 ```
 CREATE [ OR REPLACE ] VIEW view_name AS select_query
@@ -187,7 +187,7 @@ CREATE OR REPLACE VIEW V1 AS SELECT model, version FROM Inventory
 
 ### DROP视图
 
-以下语法定义查询 `DROP VIEW` 服务支持的查询:
+以下语法定义 `DROP VIEW` 支持的查询 [!DNL Query Service]:
 
 ```
 DROP VIEW [IF EXISTS] view_name
@@ -202,7 +202,7 @@ DROP VIEW v1
 DROP VIEW IF EXISTS v1
 ```
 
-## Spark SQL命令
+## [!DNL Spark] SQL命令
 
 ### 设置
 
@@ -242,7 +242,7 @@ CLOSE { name }
 
 ### 提交
 
-在查询服务中，不会作为对commit事务语句的响应而执行任何操作。
+不执行任何操 [!DNL Query Service] 作作为对commit事务语句的响应。
 
 ```
 COMMIT [ WORK | TRANSACTION ]
