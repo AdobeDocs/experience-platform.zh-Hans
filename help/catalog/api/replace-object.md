@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 替换对象
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '138'
 ht-degree: 2%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 2%
 
 # 替换对象
 
-您可以使用PUT请求覆盖Catalog对象的内容，其中整个资源将替换为请求有效负荷。
+您可以使用PUT请求覆 [!DNL Catalog] 盖对象的内容，其中整个资源将替换为请求有效负荷。
 
 >[!NOTE]
 >
->如果您只需更新Catalog对象中的几个特定字段，则使用PATCH请求可能会更加有效。
+>如果您只需要更新对象中的几个特定字 [!DNL Catalog] 段，使用PATCH请求可能会更高效。
 
 **API格式**
 
@@ -28,7 +28,7 @@ PUT /{OBJECT_TYPE}/{OBJECT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要替换的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要替换 [!DNL Catalog] 的对象类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
