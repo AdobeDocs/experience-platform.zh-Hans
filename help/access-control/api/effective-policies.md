@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 视图有效策略
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '273'
+source-wordcount: '265'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 视图有效策略
 
-要视图当前用户的有效策略，请在访问控制API中向 `/acl/effective-policies` 端点发出POST请求。 您要检索的权限和资源类型必须以数组形式在请求有效负荷中提供。 以下示例API调用中演示了这一点。
+要视图当前用户的有效策略，请向API中的端点 `/acl/effective-policies` 发出POST [!DNL Access Control] 请求。 您要检索的权限和资源类型必须以数组形式在请求有效负荷中提供。 以下示例API调用中演示了这一点。
 
 **API格式**
 
@@ -24,7 +24,7 @@ POST /acl/effective-policies
 
 **请求**
 
-以下请求会检索有关“管理模式集”权限的信息，并访问当前用户的“数据集”资源类型。
+以下请求检索有关“管理[!UICONTROL 数据集]”权限的信息，并访问当前[!UICONTROL 用户的]“模式”资源类型。
 
 ```shell
 curl -X POST \
@@ -65,11 +65,11 @@ curl -X POST \
 
 ## 后续步骤
 
-此文档介绍了如何调用访问控制API以返回有关资源类型的活动权限和相关策略的信息。 有关访问控制Experience Platform的详细信息，请参阅 [访问控制概述](../home.md)。
+此文档介绍了如何调用API [!DNL Access Control] 以返回有关资源类型的活动权限和相关策略的信息。 有关访问控制的详细信 [!DNL Experience Platform]息，请参阅 [访问控制概述](../home.md)。
 
 ## 附录
 
-本节提供使用访问控制API的补充信息。
+本节提供有关使用API的补充 [!DNL Access Control] 信息。
 
 ### 接受的权限和资源类型
 
