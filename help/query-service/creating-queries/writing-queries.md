@@ -4,27 +4,27 @@ solution: Experience Platform
 title: 编写查询
 topic: queries
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '643'
 ht-degree: 1%
 
 ---
 
 
-# 查询服务中执行查询的一般指南
+# 查询执行的一般指南 [!DNL Query Service]
 
-本文档详细介绍了在Adobe Experience Platform查询服务中编写查询时应了解的重要信息。
+此文档详细介绍了在以Adobe Experience Platform编写查询时应了解的重要细节 [!DNL Query Service]。
 
-有关查询服务中使用的SQL语法的详细信息，请阅读 [SQL语法文档](../sql/syntax.md)。
+有关中使用的SQL语法的详细 [!DNL Query Service]信息，请阅 [读SQL语法文档](../sql/syntax.md)。
 
 ## 查询执行模型
 
-Adobe Experience Platform查询服务有两种查询执行模式： 交互和非交互。 交互式执行用于商业智能工具中的查询开发和报告生成，而非交互式用于作为数据处理工作流的一部分的较大作业和操作查询。
+Adobe Experience Platform [!DNL Query Service] 有两种查询执行模式： 交互和非交互。 交互式执行用于商业智能工具中的查询开发和报告生成，而非交互式用于作为数据处理工作流的一部分的较大作业和操作查询。
 
 ### 交互式查询执行
 
-查询可以通过查询服务UI或连接的客户端提交，从 [而以交互方式执行](../clients/overview.md)。 当通过连接的客户端运行查询服务时，在客户端和查询服务之间运行一个活动会话，直到提交的查询返回或超时。
+查询可以通过UI或通过连接的客户端 [!DNL Query Service] 提交， [以交互方式执行](../clients/overview.md)。 当通过 [!DNL Query Service] 连接的客户端运行时，在客户端之间运行活动会话， [!DNL Query Service] 直到提交的查询返回或超时。
 
 交互式查询执行有以下限制：
 
@@ -38,11 +38,11 @@ Adobe Experience Platform查询服务有两种查询执行模式： 交互和非
 >
 >要覆盖最大行限制，请在 `LIMIT 0` 查询中包含。 查询超时仍适用10分钟。
 
-默认情况下，交互式查询的结果将返回给客户端并且不 **会** 保留。 要将结果作为Experience Platform数据集保留，查询必须使用语 `CREATE TABLE AS SELECT` 法。
+默认情况下，交互式查询的结果将返回给客户端并且不 **会** 保留。 要将结果作为数据集保留在中， [!DNL Experience Platform]查询必须使用语 `CREATE TABLE AS SELECT` 法。
 
 ### 非交互式查询执行
 
-通过查询服务API提交的查询将以非交互方式运行。 非交互式执行是指查询服务接收API调用并按其接收顺序执行查询。 非交互式查询通常导致在Experience Platform中生成新数据集以接收结果，或将新行插入现有数据集。
+通过API提交 [!DNL Query Service] 的查询将以非交互方式运行。 非交互执行指接 [!DNL Query Service] 收API调用并按其接收顺序执行查询。 非交互式查询通常导致生成新数据集以 [!DNL Experience Platform] 接收结果，或将新行插入现有数据集。
 
 ## 访问对象中的特定字段
 
@@ -189,4 +189,4 @@ LIMIT 10
 
 ## 后续步骤
 
-阅读本文档，您在使用查询服务编写查询时已经受到一些重要考虑。 有关如何使用SQL语法编写您自己的查询的详细信息，请阅读SQL [语法文档](../sql/syntax.md)。
+阅读此文档，您在使用编写查询时已受到一些重要考虑 [!DNL Query Service]。 有关如何使用SQL语法编写您自己的查询的详细信息，请阅读SQL [语法文档](../sql/syntax.md)。
