@@ -4,15 +4,15 @@ seo-title: （测试版）Azure事件集线器目标
 description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 seo-description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 translation-type: tm+mt
-source-git-commit: e93bfc028d5e23c3add55677c4003ca549a902c6
+source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
-source-wordcount: '481'
+source-wordcount: '467'
 ht-degree: 2%
 
 ---
 
 
-# （测试版）Azure事件集线器目标
+# （测试版）目 [!DNL Azure Event Hubs] 标
 
 >[!IMPORTANT]
 >
@@ -32,9 +32,9 @@ ht-degree: 2%
 
 ## 用例 {#use-cases}
 
-通过使用Azure事件中心等流目标，您可以轻松地将高价值细分事件和相关用户档案属性馈送到您选择的系统中。
+通过使用流目标， [!DNL Azure Event Hubs]您可以轻松地将高价值细分事件和相关用户档案属性馈送到您选择的系统中。
 
-例如，潜在客户下载了一份白皮书，使其符合“高倾向转换”区段的条件。 通过将潜在客户所属的区段映射到Azure事件集线器目标，您将在Azure事件集线器中收到此事件。 在这里，您可以采用自行操作的方法，在事件上描述业务逻辑，就像您认为最适合企业IT系统一样。
+例如，潜在客户下载了一份白皮书，使其符合“高倾向转换”区段的条件。 通过映射潜在客户所属的区段到目 [!DNL Azure Event Hubs] 标，您将在收到此事件 [!DNL Azure Event Hubs]。 在这里，您可以采用自行操作的方法，在事件上描述业务逻辑，就像您认为最适合企业IT系统一样。
 
 ## 连接目标 {#connect-destination}
 
@@ -64,7 +64,7 @@ ht-degree: 2%
 
 ## 导出的数据 {#exported-data}
 
-导出的Experience Platform数据以 [!DNL Azure Event Hubs] JSON格式登录。 例如，以下事件包含符合特定区段资格并退出另一区段的受众的电子邮件地址用户档案属性。 此潜在客户的标识为ECID和电子邮件。
+导出的 [!DNL Experience Platform] 数据以JSON [!DNL Azure Event Hubs] 格式登录。 例如，以下事件包含符合特定区段资格并退出另一区段的受众的电子邮件地址用户档案属性。 此潜在客户的标识为ECID和电子邮件。
 
 ```
 {
