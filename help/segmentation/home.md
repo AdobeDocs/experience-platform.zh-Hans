@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Adobe Experience Platform分段服务
 topic: overview
 translation-type: tm+mt
-source-git-commit: f44e42a4faa3b10f147dbaf929048054ce0bec42
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '1986'
+source-wordcount: '1971'
 ht-degree: 0%
 
 ---
 
 
-# Adobe Experience Platform分段服务概述
+# Adobe Experience Platform [!DNL Segmentation Service] overview
 
-Adobe Experience Platform分段服务提供用户界面和RESTful API，允许您根据数据构建细分和生成 [!DNL Real-time Customer Profile] 受众。 这些细分在平台上集中配置和维护，任何Adobe解决方案均可轻松访问。
+Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTful API，使您能够根据数据构建细分和生成 [!DNL Real-time Customer Profile] 受众。 这些细分集中进行配置和维 [!DNL Platform]护，任何Adobe解决方案都可轻松访问。
 
 此文档概述了它 [!DNL Segmentation Service] 在Adobe Experience Platform中的作用。
 
@@ -128,7 +128,7 @@ Adobe Experience Platform分段服务提供用户界面和RESTful API，允许�
 
 ## 多实体分割 {#multi-entity}
 
-借助高级的多实体细分功能，您可以使用多个XDM类创建细分，从而为人员模式添加扩展。 因此，分段服务可以在段定义期间访问其他字段，就像它们是用户档案数据存储的本机字段一样。
+借助高级的多实体细分功能，您可以使用多个XDM类创建细分，从而为人员模式添加扩展。 因此，在区段定 [!DNL Segmentation Service] 义期间，可以像用户档案数据存储本身一样访问其他字段。
 
 多实体细分提供了根据与业务需求相关的数据识别受众所需的灵活性。 无需查询数据库方面的专业知识，即可快速轻松地完成此过程。 这样，您无需对数据流进行代价高昂的更改或等待后端数据合并，即可将关键数据添加到细分中。
 
@@ -140,7 +140,7 @@ Adobe Experience Platform分段服务提供用户界面和RESTful API，允许�
 
 要说明此高级细分功能的价值，请考虑与营销人员协作的数据架构师。
 
-在此示例中，数据架构师使用键将个人(由XDM个人模式和XDM ExperienceEvent作为其基类的用户档案组成)的数据连接到另一个类。 加入后，数据架构师或营销人员可以在区段定义期间使用这些新字段，就像它们是基类模式的本机字段一样。
+在此示例中，数据架构师使用键将个人(由具有和作为基类的模式 [!DNL XDM Individual Profile] 组 [!DNL XDM ExperienceEvent] 成)的数据连接到另一个类。 加入后，数据架构师或营销人员可以在区段定义期间使用这些新字段，就像它们是基类模式的本机字段一样。
 
 **问题**
 
@@ -154,7 +154,7 @@ Adobe Experience Platform分段服务提供用户界面和RESTful API，允许�
 >
 >在此示例中，我们假定数据架构师已经建立了ID命名空间。
 
-使用API，数据架构师将ExperienceEvent模式的密钥与“产品”类关联。 这样，数据架构师就可以像使用ExperienceEvent模式中的本机字段一样，使用“产品”类中的其他字段。 作为配置工作的最后一步，数据架构师需要将适当的数据引入其中 [!DNL Real-time Customer Profile]。 这是通过启用“产品”数据集以与一起使用来实现的 [!DNL Profile]。 配置工作完成后，数据架构师或营销人员均可在中构建目标细分 [!DNL Segment Builder]。
+使用API，数据架构师将模式的 [!DNL ExperienceEvent] 密钥与“产品”类关联。 这样，数据架构师就可以像模式本身一样使用“产品”类中的其他字段。 [!DNL ExperienceEvent] 作为配置工作的最后一步，数据架构师需要将适当的数据引入其中 [!DNL Real-time Customer Profile]。 这是通过启用“产品”数据集以与一起使用来实现的 [!DNL Profile]。 配置工作完成后，数据架构师或营销人员均可在中构建目标细分 [!DNL Segment Builder]。
 
 请参阅 [模式合成概述](../xdm/schema/composition.md#union) ，了解如何定义跨XDM类的关系。
 
@@ -225,6 +225,6 @@ Adding this specific data to the segment itself allows execution engines to pers
 - [!DNL Segmentation] 是从用户档案商店定义用户档案子集的过程，它允许您描述所需可销售组的行为或属性。 [!DNL Segmentation Service] 使这一过程成为可能。
 - 在规划区段时，请牢记，区段可以从任何其他区段中引用，并与之组合。
 - 区段可以基于用户档案数据、相关时间序列数据或两者的规则构建。
-- 区段可按需评估或持续评估。 在按需评估时，所有用户档案数据都会一次通过区段定义。 连续评估时，数据流在进入平台时通过细分定义。
+- 区段可按需评估或持续评估。 在按需评估时，所有用户档案数据都会一次通过区段定义。 连续评估时，数据流会在进入时通过段定义 [!DNL Platform]。
 
 要了解如何在UI中定义区段，请参阅“区 [段生成器”指南](./ui/overview.md)。 有关使用API构建段定义的信息，请参阅有关使用 [API创建段的教程](./tutorials/create-a-segment.md)。
