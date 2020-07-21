@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案API开发人员指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: 57ef7df4b9323b58a90660d515ade61a3974779f
+source-git-commit: d80d49df9c5ac197bdc7f851bbfff18d9b3019d4
 workflow-type: tm+mt
-source-wordcount: '690'
+source-wordcount: '704'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,9 @@ ht-degree: 0%
 
 该API [!DNL Real-time Customer Profile] 包括多个端点，如下所述。 请访问各个端点指南获取详细信息，并参 [阅入门指南](getting-started.md) ，获取有关所需标头、读取示例API调用等的重要信息。
 
-要视图所有可用端点和CRUD操作，请参 [阅实时用户档案API参考Swagger](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。
+要视图所有可用端点和CRUD操作，请访 [问实时用户档案API参考Swagger](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。
+
+有关在UI中处理数 [!DNL Real-time Customer Profile] 据的指 [!DNL Experience Platform] 南，请参阅“ [用户档案用户指南”](../ui/user-guide.md)。
 
 ## (Alpha)计算属性 {#computed-attributes}
 
@@ -52,4 +54,4 @@ Adobe Experience Platform通过使数据易于在战略性位置称为“边缘�
 
 ## 后续步骤 {#next-steps}
 
-要开始使用API进行调 [!DNL Real-time Customer Profile] 用，请阅读 [入门指南](getting-started.md) ，然后选择一个端点指南，以了解如何使用特定的 [!DNL Profile]相关端点。 要进一步了解如何 [!DNL Profile] 使用UI [!DNL Platform] 处理数据，请 [参阅实时客户用户档案用户指南](../ui/user-guide.md)。
+要开始使用API进行调 [!DNL Real-time Customer Profile] 用，请阅读 [入门指南](getting-started.md) ，然后选择一个端点指南，以了解如何使用特定的 [!DNL Profile]相关端点。 要使用 [!DNL Profile] UI处理 [!DNL Experience Platform] 用户档案，请参阅实 [时客户用户指南](../ui/user-guide.md)。
