@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 支持退出
 topic: overview
 translation-type: tm+mt
-source-git-commit: f156679601c2ed0bb933a66a56661c29c1b9c778
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '954'
+source-wordcount: '945'
 ht-degree: 0%
 
 ---
@@ -68,13 +68,13 @@ ht-degree: 0%
 
 要视图混音的完整结 [!DNL Profile Privacy] 构，请参阅 [XDM公共GitHub存储库](https://github.com/adobe/xdm/blob/master/schemas/context/profile-privacy.schema.json) ，或使用平台UI预览混音。
 
-### 用户档案首选项详细信息
+### [!DNL Profile Preferences Details]
 
-用户档案首选项详细信息混合提供多个字段，它们表示客户用户档案的首选项(如电子邮件格式、首选语言和时区)。 此混音中包含的一个字段`optInOut`OptInOut()允许为单个渠道设置退出值。
+混 [!DNL Profile Preferences Details] 音提供了几个表示客户用户档案偏好的字段(如电子邮件格式、首选语言和时区)。 此混音中包含的一个字段`optInOut`OptInOut()允许为单个渠道设置退出值。
 
 ![](images/opt-outs/profile-preferences-details.png)
 
-“用户档案首选项详细信息”混合包含与退出相关的以下字段：
+混 [!DNL Profile Preferences Details] 音包含与退出相关的以下字段：
 
 - 退出(`optInOut`): 一个对象，其中每个键代表通信渠道的有效已知URI以及每个渠道的退出活动状态。 每个渠道可能具有以下四种可能值之一：
    - 未提供(`not_provided`): 尚未为此渠道提供退出请求。
