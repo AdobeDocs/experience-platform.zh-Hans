@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建用于导出受众段的数据集
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: cb6a2f91eb6c18835bd9542e5b66af4682227491
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '751'
+source-wordcount: '733'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 入门指南
 
-要导出区段，数据集必须基于XDM个人用户档案合并模式。 合并模式是系统生成的只读模式，它聚合共享同一类的所有模式的字段，在本例中为XDM单个用户档案类。 有关合并视图模式的更多信息，请参 [阅模式注册开发人员指南的实时客户用户档案部分](../../xdm/schema/composition.md#union)。
+要导出区段，数据集必须基于 [!DNL XDM Individual Profile Union Schema]。 合并模式是系统生成的只读模式，它聚合共享同一类的所有模式的字段，在本例中为类 [!DNL XDM Individual Profile] 。 有关合并视图模式的更多信息，请参 [阅模式注册开发人员指南的实时客户用户档案部分](../../xdm/schema/composition.md#union)。
 
 要在UI中视图合并模式 **[!UICONTROL ，请单击左侧导航中的]** 用户档案 **[!UICONTROL ，然后单击合并模式]** 选项卡，如下所示。
 
@@ -53,7 +53,7 @@ UI中的数据集工 [!DNL Experience Platform] 作区允许您视图和管理IM
 
 ## 选择XDM单独用户档案合并模式
 
-要选择要在数据集中使用的XDM个人用户档案合并模式，请在“选[!UICONTROL 择模式]”屏幕上找到类型为“[!UICONTROL 合并]*[!UICONTROL ”的“]* XDM个人用户档案”模式。
+要选择要 [!DNL XDM Individual Profile Union Schema] 在数据集中使用的用户档案，请在“选[!UICONTROL 择模式”屏幕上查找类型为“]合并[!UICONTROL ”的“XDM]Individual Signidual ** ”模式。
 
 选择了“XDM Individual Adobile **[!UICONTROL 用户档案”旁边的单选按钮]**，然后 **[!UICONTROL 单击右]** 上角的“下一步”。
 
@@ -84,6 +84,6 @@ UI中的数据集工 [!DNL Experience Platform] 作区允许您视图和管理IM
 
 ## 后续步骤
 
-现在，您已基于XDM个人用户档案合并模式创建了数据集 **[!UICONTROL ，可以使用数据集]** ID继 [续评估和访问区段结果教程](./evaluate-a-segment.md) 。
+现在，您已基于创建了数据集 [!DNL XDM Individual Profile Union Schema]，可以使用 **[!UICONTROL 数据集ID]** 继续 [评估和访问区段结果教程](./evaluate-a-segment.md) 。
 
 此时，请返回评估区段结果教程，并从导出区段工作流 [的用户档案成员生成受众](./evaluate-a-segment.md#generate-profiles) ，步骤中进行选择。
