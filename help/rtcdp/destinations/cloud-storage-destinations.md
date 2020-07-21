@@ -4,9 +4,9 @@ seo-title: 云存储目标
 description: Adobe实时CDP可以将您的细分作为数据文件传送到您的Amazon S3、AWS Kinesis、Azure事件中心或SFTP云存储位置。
 seo-description: Adobe实时CDP可以将您的细分作为数据文件传送到您的Amazon S3、AWS Kinesis、Azure事件中心或SFTP云存储位置。
 translation-type: tm+mt
-source-git-commit: 75581529ede3772606bc18fea683da5d396996c5
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
-source-wordcount: '185'
+source-wordcount: '178'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 云存储目标 {#cloud-storage-destinations}
 
-Adobe实时CDP可以将您的细分作为数据文件提供给您的云存储位置。 这使您能够通过CSV或制表符分隔的文件，将受众及其用户档案属性发送到您的内部系统，这些文件适用于Amazon S3和SFTP。 对于AWS Kinesis和Azure事件中心目标，数据以JSON格式从Experience Platform中流化。
+Adobe实时CDP可以将您的细分作为数据文件提供给您的云存储位置。 这使您能够通过CSV或制表符分隔的文件将受众及其用户档案属性发送到您的内部系 [!DNL Amazon S3] 统和SFTP。 对于 [!DNL AWS Kinesis] 和 [!DNL Azure Event Hubs] 目标，数据以JSON格式从Experience Platform中流出。
 
 ![Adobe Cloud存储目标](/help/rtcdp/destinations/assets/cloud-storage-destinations.png)
 
