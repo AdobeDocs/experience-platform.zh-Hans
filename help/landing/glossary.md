@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform产品文档
 topic: getting started
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 1ecff21343c8b39070afdb4f486d0961c024235a
 workflow-type: tm+mt
-source-wordcount: '6593'
+source-wordcount: '6665'
 ht-degree: 0%
 
 ---
@@ -192,6 +192,8 @@ ht-degree: 0%
 
 **目标目录：** 目标目录是中可用目标的列表 [!DNL Real-time Customer Data Platform]。
 
+**直接呼叫规则：** 在中 [!DNL Experience Platform Launch]，您可以设置一 [!UICONTROL 个直接调用规] 则，该规则在从页面直接  调用时执行。 如果页面加载或网站操作非常简单，或者它是唯一的，并且每次都可以执行一组特定指令(设置 [!DNL eVar4] 为X并 [!DNL event2] 每次触发)，则可以使用直 [!UICONTROL 接呼] 叫规则 。 请参 [!DNL Launch] 阅有关创建直接 [!UICONTROL 呼叫规] 则 [!UICONTROL 的文档]。
+
 **显示名称：** 显示名称是UI中显示的字段的用户友好名称。
 
 **计划：** DULE是“数据使用标 *签和强制”的缩写*。 DULE是数据治理的一个关键部分，它集合了一些关键功能，允许根据组织内的管理需要标记数据使用并应用数据访问策略。
@@ -312,7 +314,7 @@ ht-degree: 0%
 
 ## L
 
-**库：** 在 [!DNL Experience Platform Launch]中，库是一组业务逻辑，其中包含有关库在客户端设备 [!DNL Launch] 上的行为方式的说明。
+**库：** 在 [!DNL Experience Platform Launch]中，库是一组业务逻辑，包含有关库在客户端设备上 [!DNL Launch] 的行为方式的说明。
 
 [返回页首](#adobe-experience-platform-glossary)
 
