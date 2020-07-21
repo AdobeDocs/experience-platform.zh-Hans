@@ -1,21 +1,24 @@
 ---
 title: KickFire扩展
 seo-title: KickFire扩展
-description: KickFire扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
-seo-description: KickFire扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
+description: KickFire扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
+seo-description: KickFire扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: ff91395844c239415123a33d65fa0deb2221ae25
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+workflow-type: tm+mt
+source-wordcount: '533'
+ht-degree: 5%
 
 ---
 
 
-# KickFire扩展 {#kickfire-extension}
+# [!DNL KickFire] 扩展 {#kickfire-extension}
 
 ## 概述 {#overview}
 
-KickFire的IP地址智能和B2B Firmographic数据使您能够将IP地址转换为公司，识别匿名Web访客，并将帐户数据集成到您的技术堆栈中——所有这些都基于公司的IP地址。
+[!DNL KickFire's] IP地址智能和B2B云数据允许您将IP地址转换为公司、识别匿名Web访客并将帐户数据集成到您的技术堆栈中——所有这些都基于公司的IP地址。
 
-KickFire是Adobe实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参 [阅Kickfire网站](https://www.kickfire.com/)。
+[!DNL KickFire] 是Adobe实时客户数据平台中的个性化扩展。 有关扩展功能的更多信息，请参 [阅Kickfire网站](https://www.kickfire.com/)。
 
 此目标是Experience Platform Launch扩展。 有关Launch扩展在Adobe实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
@@ -23,27 +26,27 @@ KickFire是Adobe实时客户数据平台中的个性化扩展。 有关扩展功
 
 ## 先决条件 {#prerequisites}
 
-此扩展位于“目标”目录中，可供所有已购买Adobe实时CDP的客户使用。
+此扩展可在目录 [!DNL Destinations] 中找到已购买Adobe实时CDP的所有客户。
 
-要使用此扩展，您需要访问Experience Platform Launch。 Experience Platform Launch作为附带的增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对Launch的访问权限，并要求他们授予您权限， **[!UICONTROL manage_properties]** 以便您可以安装扩展。
+要使用此扩展，您需要访问Experience Platform Launch。 Experience Platform Launch作为附带的增值功能提供给Adobe Experience Cloud客户。 请与您的组织管理员联系以获取Launch访问权限，并要求他们授予您 **[!UICONTROL manage_properties]** （管理属性）权限，以便您可以安装扩展。
 
 ## 安装扩展 {#install-extension}
 
-安装KickFire扩展：
+安装扩 [!DNL KickFire] 展：
 
-1. 在 [Adobe实时CDP界面中](http://platform.adobe.com/)，转到 **[!UICONTROL Destinations > Catalog]**。
+1. 在Adobe [实时CDP界面中](http://platform.adobe.com/)，转到“目 **[!UICONTROL 标”>“目录”]**。
 2. 从目录中选择扩展或使用搜索栏。
-3. 单击目标以高亮显示它，然后在右 **[!UICONTROL Install Extension]** 边栏中选择。 如果控 **[!UICONTROL Install Extension]** 件灰显，则表示您缺少该权 **[!UICONTROL manage_properties]** 限。 请参阅 [先决条件](#prerequisites)。
-4. 在窗 **[!UICONTROL Select available Launch property]** 口中，选择要在其中安装扩展的启动项属性。 您还可以选择在启动项中创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解启动文档的“ [属性”页面部分](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) 中的属性。
+3. 单击目标以选中它，然后在右边栏 **[!UICONTROL 中选择]** “安装扩展”。 如果“安 **[!UICONTROL 装扩展]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties]** 权限。 请参 [阅先决条件](#prerequisites)。
+4. 在“选 **[!UICONTROL 择可用的启动项属性]** ”窗口中，选择要在其中安装扩展的启动项属性。 您还可以在启动项中选择创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解启动文档的“ [属性”页](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) 面部分中的属性。
 5. 该工作流将引导您进入Launch以完成安装。
 
-您还可以直接在 [Experience Platform Launch界面中安装扩展](https://launch.adobe.com/)。 请参 [阅启动文档中的](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension) “添加新扩展”。
+您还可以直接在Experience Platform Launch界面中安 [装扩展](https://launch.adobe.com/)。 请参 [阅启动文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension) 中的添加新扩展。
 
 ## 如何使用扩展 {#how-to-use}
 
-安装扩展后，您可以在Launch中直接开始为其设置规则。
+安装扩展后，您可以直接在启动中开始为其设置规则。
 
-在Launch中，您可以为已安装的扩展设置规则，以便仅在某些情况下才将事件数据发送到扩展目标。 有关为扩展设置规则的详细信息，请参阅规 [则文档](https://docs.adobe.com/help/zh-Hans/launch/using/reference/manage-resources/rules.html)。
+在启动中，您可以为已安装的扩展设置规则，以便仅在特定情况下将事件数据发送到扩展目标。 有关为扩展设置规则的详细信息，请参阅规 [则文档](https://docs.adobe.com/help/zh-Hans/launch/using/reference/manage-resources/rules.html)。
 
 ## 配置、升级和删除扩展 {#configure-upgrade-delete}
 
@@ -51,6 +54,6 @@ KickFire是Adobe实时客户数据平台中的个性化扩展。 有关扩展功
 
 >[!TIP]
 >
->如果某个属性上已安装该扩展，则仍会显示该扩展的Adobe实时CDP **[!UICONTROL Install]** 用户界面。 启动安装工作流程(如安装扩 [展中所述](#install-extension) )，以转到启动并配置或删除您的扩展。
+>如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显示该 **[!UICONTROL 扩展]** 的安装。 启动安装工作流程(如安装扩 [展中所述](#install-extension) )，以开始启动并配置或删除您的扩展。
 
-要升级您的扩展，请参阅 [Launch文档中的](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/extension-upgrade.html) “扩展升级”。
+要升级您的扩展，请参 [阅Launch文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/extension-upgrade.html) 中的扩展升级。
