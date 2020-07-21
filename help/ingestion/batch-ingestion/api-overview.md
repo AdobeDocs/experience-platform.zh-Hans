@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform批量摄取开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '2577'
+source-wordcount: '2552'
 ht-degree: 6%
 
 ---
@@ -27,28 +27,28 @@ ht-degree: 6%
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
 - [批量摄取](./overview.md): 允许您将数据作为批处理文件引入Adobe Experience Platform。
-- [体验数据模型(XDM)系统](../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
-- [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 ### 读取示例API调用
 
-本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
+本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
 - 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
 包含有效负荷(POST、PUT、PATCH)的请求可能需要额外的标 `Content-Type` 头。 在呼叫参数中提供特定于每个呼叫的已接受值。 本指南中使用以下内容类型：
 
@@ -57,7 +57,7 @@ Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台
 
 ## 类型
 
-在获取数据时，了解体验数据模型(XDM)模式的工作方式非常重要。 有关XDM字段类型如何映射到不同格式的更多信息，请阅读《 [模式注册开发人员指南](../../xdm/api/getting-started.md)》。
+在获取数据时，了解(XDM)模式的工 [!DNL Experience Data Model] 作方式很重要。 有关XDM字段类型如何映射到不同格式的更多信息，请阅读《 [模式注册开发人员指南](../../xdm/api/getting-started.md)》。
 
 收录数据时具有一定的灵活性——如果某个类型与目标模式中的内容不匹配，则数据将转换为表示的目标类型。 如果无法，则将使用a使批处理失败 `TypeCompatibilityException`。
 
@@ -1003,7 +1003,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ### 用于批量摄取的数据转换
 
-要将数据文件引入Experience Platform中，文件的分层结构必须符合与要上传到的数据集 [关联的体验数据模型](../../xdm/home.md) (XDM)模式。
+要将数据文件引入，文 [!DNL Experience Platform]件的分层结构必须符合与要上传到的 [数据集关联的体验数据模型(XDM](../../xdm/home.md) )模式。
 
 有关如何映射CSV文件以符合XDM模式的信息，请参阅示例转 [换文档](../../etl/transformations.md) ，以及格式正确的JSON数据文件示例。 文档中提供的示例文件可在以下位置找到：
 
