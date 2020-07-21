@@ -1,45 +1,48 @@
 ---
-title: 教程使用Adobe Launch实施网站标记
-seo-title: 使用Adobe Launch实施网站标记
+title: 教程使用Adobe Launch实施网站标签
+seo-title: 使用Adobe Launch实施网站标签
 description: 使用Adobe Launch在Adobe Experience Platform中实施网站标记
 seo-description: 使用Adobe Launch在Adobe Experience Platform中实施网站标记
 translation-type: tm+mt
-source-git-commit: b8eda33a88b81dff5f3b45a131a5585a062519c2
+source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+workflow-type: tm+mt
+source-wordcount: '481'
+ht-degree: 9%
 
 ---
 
 
-# 教程：使用Adobe Launch实施网站标记
+# 教程： 使用Adobe Launch实施网站标签
 
-本教程介绍如何实施网站标签，以使用Adobe Launch将数据发送到Adobe Experience Platform。
+本教程介绍如何实施网站标签，以便使用Adobe Launch将数据发送到Adobe Experience Platform。
 
 ## 先决条件
 
-* 必需的架构和数据集在平台中创建。
+* 必要的模式和数据集在中创建 [!DNL Platform]。
 * 必要的配置已部署在Experience Edge中，且具有匹配的配置ID和Edge域。
-* 公司CMS已配置为在每个页面上传送包含您需要发送到平台的数据的JavaScript对象。
+* 公司CMS已配置为在每个页面上传送一个JavaScript对象，其中包含您需要发送到平台的数据。
 
 ## 步骤
 
 本教程包含以下步骤：
 
-1. 安装Adobe Experience Platform Web SDK扩展。
-1. 创建规则以告知启动要发送的数据。
+1. 安装Adobe Experience Platform [!DNL Web SDK] 扩展。
+1. 创建规则，告诉 [!DNL Launch] 要发送的数据。
 1. 捆绑库中的扩展和规则。
 
-## 安装Adobe Experience Platform Web SDK扩展
+## 安装Adobe Experience Platform扩 [!DNL Web SDK] 展
 
-首先，安装Adobe Experience Platform Web SDK扩展。
+首先，安装Adobe Experience Platform [!DNL Web SDK] 扩展。
 
-1. 在 Launch 中，打开 **[!UICONTROL Extensions]** 选项卡。
+1. 在中 [!DNL Launch]，打开“扩 **[!UICONTROL 展]** ”选项卡。
 
    ![image](assets/launch-overview.png)
 
-1. 从“启动扩展目录”中选择Adobe Experience Platform Web SDK扩展。此时将打开配置屏幕。
+1. 从“启动扩展目录”中选择Adobe Experience PlatformWeb SDK扩展。此时将打开配置屏幕。
 
    ![image](assets/launch-extension-install.png)
 
-   有关详细信息，请参 [阅Launch文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html) 中的扩展。
+   有关详细信息，请参 [阅文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html) 中的 [!DNL Launch] 扩展。
 
 1. 配置扩展.
 
@@ -48,31 +51,31 @@ source-git-commit: b8eda33a88b81dff5f3b45a131a5585a062519c2
    * **配置ID:** 指定您从Adobe代表处获得的配置ID。
    * **边缘域：** 指定您从Adobe代表处获得的边缘域。
 
-1. 单 **[!UICONTROL Save]** 击并继续下一步。
+1. 单击 **[!UICONTROL “保存]** ”，然后继续执行下一步。
 
-## 创建规则以告知Launch要发送哪些数据
+## 创建规则，告诉 [!DNL Launch] 要发送的数据
 
-接下来，创建一个规则，让Launch知道您要将哪些数据发送到Adobe Experience Platform以及何时发送。
+接下来，创建一条规 [!DNL Launch] 则，告诉您要向Adobe Experience Platform发送哪些数据以及何时发送这些数据。
 
-1. 在选项 **[!UICONTROL Rules]** 卡下，配置一个事件，该事件将在启动库加载时在网站的每个新页面上触发。
+1. 在“规 **[!UICONTROL 则]** ”选项卡下，配置一个事件，该将在库加载时在网站的每个新页面上触 [!DNL Launch] 发。
 
    ![image](assets/launch-make-a-rule.png)
 
 1. 添加操作.
 
-   要配置操作，请告诉启动项在何处查找数据层。 数据层是页面上存在的一个JavaScript对象，该对象是从呈现网页的相同CMS传送的。 提供数据对象的JavaScript路径。
+   要配置操作，请告 [!DNL Launch] 诉数据层的位置。 数据层是页面上存在的一个JavaScript对象，它通过呈现网页的同一CMS提供。 提供数据对象的JavaScript路径。
 
    ![image](assets/launch-add-aep-action.png)
 
-   您发送的数据对象必须是有效的XDM，它将通过对与您的配置ID连接的数据集所使用的架构的验证。
+   您发送的模式对象必须是有效的XDM，它将对连接到您的配置ID的数据集所使用的数据进行验证。
 
-1. 单击 **[!UICONTROL Keep Changes]**。
+1. 单击 **[!UICONTROL Keep Changes]**.
 
-有关详细信息，请参阅 [启动文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html) 中的规则。
+有关详细信息，请参 [阅文档](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/manage-resources/rules.html) 中的 [!DNL Launch] 规则。
 
 ## 捆绑库中的扩展和规则
 
-然后， [将扩展和新规则捆绑到库中](https://docs.adobe.com/content/help/en/launch/using/reference/publish/overview.html) ，并在开发环境中测试这些更改。
+然后， [将扩展和新规](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/publish/overview.html) 则捆绑到库中，并在开发环境中测试这些更改。
 
 ![image](assets/launch-add-changes-to-library.png)
 
@@ -80,4 +83,4 @@ source-git-commit: b8eda33a88b81dff5f3b45a131a5585a062519c2
 
 ![image](assets/launch-promote-library.png)
 
-有关详细信息，请参 [阅Launch文档](https://docs.adobe.com/content/help/en/launch/using/reference/publish/libraries.html) 中的库。
+有关详细信息，请参 [阅文档](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/publish/libraries.html) 中的 [!DNL Launch] 库。
