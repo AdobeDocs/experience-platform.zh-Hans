@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据访问开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: f7714b8bebe37b29290794a48314962e42b24058
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '486'
+source-wordcount: '485'
 ht-degree: 4%
 
 ---
@@ -203,7 +203,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 ## 访问文件内容
 
-The [!DNL Data Access] API can also be used to access the contents of a file. This can then be used to download the contents to an external source.
+该 [!DNL Data Access] API还可用于访问文件的内容。 然后，这可用于将内容下载到外部源。
 
 **API格式**
 
@@ -213,7 +213,7 @@ GET /files/{dataSetFileId}?path={FILE_NAME}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{FILE_NAME}` | The name of the file you are trying to access. |
+| `{FILE_NAME}` | 您尝试访问的文件的名称。 |
 
 **请求**
 
@@ -236,10 +236,10 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 Contents of the file
 ```
 
-## Additional code samples
+## 其他代码范例
 
 有关其他示例，请参阅数 [据访问教程](tutorials/dataset-data.md)。
 
 ## 订阅数据获取事件
 
-平台通过Adobe开发人员控制台提供特定的高价 [值事件供订阅](https://www.adobe.com/go/devs_console_ui)。 例如，您可以订阅数据获取事件，以便收到潜在延迟和故障的通知。 有关详细信息，请 [参阅有关订阅数据获取通知](../ingestion/quality/subscribe-events.md) 的教程。
+[!DNL Platform] 通过Adobe开发人员控制台提供特定的高价 [值事件供订阅](https://www.adobe.com/go/devs_console_ui)。 例如，您可以订阅数据获取事件，以便收到潜在延迟和故障的通知。 有关详细信息，请 [参阅有关订阅数据获取通知](../ingestion/quality/subscribe-events.md) 的教程。
