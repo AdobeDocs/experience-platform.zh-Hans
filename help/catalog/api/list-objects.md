@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 列表对象
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '204'
-ht-degree: 1%
+source-wordcount: '197'
+ht-degree: 2%
 
 ---
 
@@ -25,7 +25,7 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要列出的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要列出 [!DNL Catalog] 的对象类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{FILTER}` | 用于筛选在响应中返回的结果的查询参数。 多个参数由和符()`&`分隔。 有关详细信息，请 [参阅有关筛选目录](filter-data.md) 数据的指南。 |
 
 **请求**
@@ -43,11 +43,11 @@ curl -X GET \
 
 **响应**
 
-成功的响应以键值对的形式返回目录对象的列表，按请求中提供的查询参数筛选。 对于每个键值对，该键代表所涉及的Catalog对象的唯一标识符，然后该标识符可用于对该特定对象进行 [视图的另一调用](look-up-object.md) ，以获取更多详细信息。
+成功的响应以键值对 [!DNL Catalog] 的形式返回对象列表，按请求中提供的查询参数过滤。 对于每个键值对，键表示所涉及对象的唯一标识符， [!DNL Catalog] 然后该标识符可用于对特定对象进行视图的 [另一调用](look-up-object.md) ，以获取更多详细信息。
 
 >[!NOTE]
 >
->如果返回的对象不包含查询所指示的一个或多个请求属性，则响应将仅返回它所包含的请求属性，如下面的“示例数据集3”和“示例数据集4”所示。 `properties`
+>如果返回的对象不包含查询所指示的一个或多个请求属性， `properties` 则响应将仅返回它所包含的请求属性，如 ***`Sample Dataset 3`*** 下 ***`Sample Dataset 4`*** 所示。
 
 ```json
 {
