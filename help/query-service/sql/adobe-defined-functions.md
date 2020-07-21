@@ -4,22 +4,25 @@ solution: Experience Platform
 title: Adobe定义的函数
 topic: functions
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+workflow-type: tm+mt
+source-wordcount: '2156'
+ht-degree: 3%
 
 ---
 
 
 # Adobe定义的函数
 
-Adobe定义的功能(ADF)是查询服务中预建的功能，可帮助对ExperienceEvent数据执行常见的业务相关任务。 这些功能包括会话化和归因功能，如Adobe Analytics中的功能。 有关Adobe Analytics的更多信息 [](https://docs.adobe.com/content/help/en/analytics/landing/home.html) ，请参阅Adobe Analytics文档以及本页中定义的ADF背后的概念。 本文档提供查询服务中可用的Adobe定义功能的信息。
+Adobe定义的功能(ADF)是预建的功能，可帮 [!DNL Query Service] 助对数据执行常见的业务相关 [!DNL ExperienceEvent] 任务。 这些功能包括会话化和归因功能，如AdobeAnalytics中的功能。 有关Adobe [Analytics和](https://docs.adobe.com/content/help/zh-Hans/analytics/landing/home.html) ADF在本页中定义的概念的更多信息，请参阅AdobeAnalytics文档。 本文档提供中提供的Adobe定义函数的信息 [!DNL Query Service]。
 
-## 窗口功能
+## 窗口函数
 
-大部分业务逻辑需要为客户收集接触点并按时订购。 此支持由Spark SQL以窗口函数的形式提供。 Window函数是标准SQL的一部分，并受许多其他SQL引擎的支持。
+大多数业务逻辑要求为客户收集接触点并按时订购。 此支持由SQL以 [!DNL Spark] 窗口函数的形式提供。 窗口函数是标准SQL的一部分，并受许多其他SQL引擎支持。
 
-窗口功能可更新汇总，并为有序子集中的每行返回一个项目。 最基本的聚合函数是 `SUM()`。 `SUM()` 将您的行取出，并总计给您一个。 如果改为应 `SUM()` 用到窗口，将其转换为窗口函数，则每行将收到累积总和。
+窗口函数会更新聚合，并为有序子集中的每行返回单个项目。 最基本的聚合函数是 `SUM()`。 `SUM()` 取行，总计给您一次。 如果改为应 `SUM()` 用到窗口，将其转换为窗口函数，则每行将收到累计和。
 
-大多数Spark SQL帮助程序都是窗口函数，可更新窗口中每一行，并添加该行的状态。
+大多数SQL帮 [!DNL Spark] 助程序都是窗口函数，可更新窗口中的每一行，并添加该行的状态。
 
 ### 规范
 
@@ -28,14 +31,14 @@ Adobe定义的功能(ADF)是查询服务中预建的功能，可帮助对Experie
 | 参数 | 描述 |
 | --- | --- |
 | [分区] | 基于列或可用字段的行的子组。 示例, `PARTITION BY endUserIds._experience.mcid.id` |
-| [order] | 用于对子集或行排序的列或可用字段。 示例, `ORDER BY timestamp` |
+| [订单] | 用于对子集或行排序的列或可用字段。 示例, `ORDER BY timestamp` |
 | [帧] | 分区中行的子组。 示例, `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` |
 
 ## 会话化
 
-当您处理源自网站、移动应用程序、交互式语音响应系统或任何其他客户交互渠道的ExperienceEvent数据时，如果可以围绕相关的活动期对事件进行分组，则会有所帮助。 通常，您有一个特定意图驱动您的活动，如研究产品、支付账单、检查帐户余额、填写应用程序等。 此分组有助于关联事件，以揭示更多关于客户体验的上下文。
+当您处理来自网站 [!DNL ExperienceEvent] 、移动应用程序、交互语音应答系统或任何其他客户交互渠道的数据时，如果事件可以围绕相关的活动周期进行分组，则会有所帮助。 通常，您具有驱动活动的特定意图，如研究产品、支付账单、检查帐户余额、填写应用程序等。 此分组有助于关联事件，以发现有关客户体验的更多上下文。
 
-有关Adobe Analytics中会话化的更多信息，请参阅有关上下文感 [知会话的文档](https://docs.adobe.com/content/help/en/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html)。
+有关AdobeAnalytics中会话化的详细信息，请参阅有关上下 [文感知会话的文档](https://docs.adobe.com/content/help/en/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html)。
 
 ### 规范
 
@@ -44,13 +47,13 @@ Adobe定义的功能(ADF)是查询服务中预建的功能，可帮助对Experie
 | 参数 | 描述 |
 | --- | --- |
 | `timestamp` | 在数据集中找到时间戳字段 |
-| `expirationInSeconds` | 事件结束当前会话和开始新会话之间需要的秒数 |
+| `expirationInSeconds` | 事件之间需要的秒数，以确定当前会话的结束和新会话的开始 |
 
 | 返回的对象参数 | 描述 |
 | ---------------------- | ------------- |
 | `timestamp_diff` | 当前记录与先前记录之间的时间（以秒为单位） |
-| `num` | 窗口函数中定义的键的唯一会话编号，从1 `PARTITION BY` 开始。 |
-| `is_new` | 用于标识记录是否是会话中的第一个的布尔值 |
+| `num` | 窗口函数中定义的键的唯一会话编号，从 `PARTITION BY` 1开始。 |
+| `is_new` | 用于标识记录是否是会话的第一个的布尔值 |
 | `depth` | 会话中当前记录的深度 |
 
 #### 示例查询
@@ -89,15 +92,15 @@ LIMIT 10
 
 ## 归因
 
-将客户行动与成功关联起来，是了解影响客户体验的因素的重要部分。 以下ADF支持“第一个”和“最后一个”归因，其过期设置不同。
+将客户行动与成功关联是了解影响客户体验的因素的重要部分。 以下ADF支持具有不同过期设置的“第一个”和“最后一个”属性。
 
-有关Adobe Analytics中归因的更多信息，请参阅《分析 [指南》中的“归因](https://docs.adobe.com/content/help/en/analytics/analyze/analysis-workspace/panels/attribution.html) IQ”概述。
+有关AdobeAnalytics中归因的更多信息，请参 [阅分析指南中](https://docs.adobe.com/content/help/en/analytics/analyze/analysis-workspace/panels/attribution.html) 的归 [!DNL Analytics] 因IQ概述。
 
-### 首次联系归因
+### 首次触碰归因
 
-返回目标ExperienceEvent数据集中单个渠道的首次触摸归因值和详细信息。 查询返回一个对 `struct` 象，该对象具有为所选渠道返回的每行的首次触摸值、时间戳和属性。
+返回渠道数据集中单个目标的首次触摸归因值和详细 [!DNL ExperienceEvent] 信息。 该查询返回一 `struct` 个对象，该对象具有为选定渠道返回的每行返回的首次触摸值、时间戳和属性。
 
-如果您想了解哪些交互导致了一系列客户操作，此查询非常有用。 在以下示例中，ExperienceEvent数据中的初始跟踪代码(`em:946426`)被归为客户操作的100%(`1.0`)责任，因为它是第一次交互。
+如果您想了解哪些交互导致了一系列客户操作，此查询非常有用。 在以下示例中，数据中的初始跟踪`em:946426`代码( [!DNL ExperienceEvent] )由客户操作的100%(`1.0`)责任来归因，因为它是第一次交互。
 
 ### 规范
 
@@ -106,15 +109,15 @@ LIMIT 10
 | 参数 | 描述 |
 | --- | --- |
 | `timestamp` | 在数据集中找到时间戳字段 |
-| `channelName` | 要用作返回对象中标签的易记名称 |
+| `channelName` | 在返回的对象中用作标签的友好名称 |
 | `channelValue` | 作为目标渠道的列或字段 |
 
 
 | 返回的对象参数 | 描述 |
 | ---------------------- | ------------- |
 | `name` | 在 `channelName` ADF中输入为标签 |
-| `value` | ExperienceEvent中 `channelValue` 首次触及的值 |
-| `timestamp` | 发生首次触摸的ExperienceEvent的时间戳 |
+| `value` | 来自的 `channelValue` 值是 [!DNL ExperienceEvent] |
+| `timestamp` | 首次触 [!DNL ExperienceEvent] 摸的时间戳 |
 | `fraction` | 首次接触的归因表示为分数信用 |
 
 #### 示例查询
@@ -151,9 +154,9 @@ LIMIT 10
 
 ### 上次联系归因
 
-返回目标ExperienceEvent数据集中单个渠道的上次触摸归因值和详细信息。 查询返回一个对 `struct` 象，该对象具有为所选渠道返回的每行的上次触摸值、时间戳和属性。
+返回目标数据集中单个渠道的上次触摸归因值和详细 [!DNL ExperienceEvent] 信息。 查询返回一个 `struct` 对象，该对象具有为所选渠道返回的每行的上次触摸值、时间戳和属性。
 
-如果您希望查看一系列客户操作中的最终交互，此查询非常有用。 在以下示例中，返回对象中的跟踪代码是每个ExperienceEvent记录中的上次交互。 每个代码都归因于客户操作的100%(`1.0`)责任，因为这是最后一次交互。
+如果您希望在一系列客户操作中看到最终交互，则此查询很有用。 在以下示例中，返回对象中的跟踪代码是每个记录中的最后一次 [!DNL ExperienceEvent] 交互。 每个代码都由客户行`1.0`动的100%()责任来承担，因为它是上次交互。
 
 ### 规范
 
@@ -162,15 +165,15 @@ LIMIT 10
 | 参数 | 描述 |
 | --- | --- |
 | `timestamp` | 在数据集中找到时间戳字段 |
-| `channelName` | 要用作返回对象中标签的易记名称 |
+| `channelName` | 在返回的对象中用作标签的友好名称 |
 | `channelValue` | 作为目标渠道的列或字段 |
 
 
 | 返回的对象参数 | 描述 |
 | ---------------------- | ------------- |
 | `name` | 在 `channelName` ADF中输入为标签 |
-| `value` | ExperienceEvent中 `channelValue` 的上次触摸值 |
-| `timestamp` | 使用ExperienceEvent的时 `channelValue` 间戳 |
+| `value` | 该值 `channelValue` 是 [!DNL ExperienceEvent] |
+| `timestamp` | 使用时间 [!DNL ExperienceEvent] 的时 `channelValue` 间戳 |
 | `fraction` | 最后一次接触的归因表示为分数信用 |
 
 #### 示例查询
@@ -204,11 +207,11 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-### 具有到期条件的首次联系归因
+### 具有过期条件的首次联系归因
 
-返回目标ExperienceEvent数据集中单个渠道的首次触摸归因值和详细信息，该属性值在条件之后或之前过期。 查询返回一个对 `struct` 象，该对象具有为所选渠道返回的每行的首次触摸值、时间戳和属性。
+返回渠道数据集中单个目标的首次触摸归因值和详细信息，该在某个条 [!DNL ExperienceEvent] 件之后或之前过期。 该查询返回一 `struct` 个对象，该对象具有为选定渠道返回的每行返回的首次触摸值、时间戳和属性。
 
-如果您想要查看哪些交互导致了ExperienceEvent数据集的一部分中的一系列客户操作（由您选择的条件决定），此查询非常有用。 在以下示例中，将(`commerce.purchases.value IS NOT NULL`)在结果（7月15日、21日、23日和29日）中显示的四天中的每天记录购买，并且每天的初始跟踪代码将对客户操作承担100%(`1.0`)责任。
+如果您想要查看哪些交互导致在数据集中由选择条件决定的一部分内执行一系列 [!DNL ExperienceEvent] 客户操作，此查询很有用。 在以下示例中，将(`commerce.purchases.value IS NOT NULL`)在结果（7月15日、21日、23日和29日）显示的四天中的每天记录购买，并且每天的初始跟踪代码将对客户操作承担100%(`1.0`)责任。
 
 #### 规范
 
@@ -217,16 +220,16 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 | 参数 | 描述 |
 | --- | --- |
 | `timestamp` | 在数据集中找到时间戳字段 |
-| `channelName` | 要用作返回对象中标签的易记名称 |
+| `channelName` | 在返回的对象中用作标签的友好名称 |
 | `channelValue` | 作为目标渠道的列或字段 |
 | `expCondition` | 确定渠道到期点的条件 |
-| `expBefore` | 默认为 `false`。用于指示渠道在满足指定条件之前还是之后过期的布尔值。 主要针对会话到期条件(例如 `sess.depth = 1, true`)启用，以确保不从上一会话中选择第一次触摸。 |
+| `expBefore` | 默认为 `false`。用于指示渠道在满足指定条件之前还是之后过期的布尔值。 主要针对会话到期条件启用( `sess.depth = 1, true`例如)，以确保不从上一个会话中选择第一次触摸。 |
 
 | 返回的对象参数 | 描述 |
 | ---------------------- | ------------- |
 | `name` | 在 `channelName` ADF中输入为标签 |
-| `value` | 该值是 `channelValue` ExperienceEvent中在 `expCondition` |
-| `timestamp` | 发生首次触摸的ExperienceEvent的时间戳 |
+| `value` | 该值 `channelValue`[!DNL ExperienceEvent] 是 `expCondition` |
+| `timestamp` | 首次触 [!DNL ExperienceEvent] 摸的时间戳 |
 | `fraction` | 首次接触的归因表示为分数信用 |
 
 #### 示例查询
@@ -260,9 +263,9 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 (10 rows)
 ```
 
-### 具有过期超时的首次联系归因
+### 具有过期超时的首次触摸归因
 
-返回指定时间段内目标ExperienceEvent数据集中单个渠道的首次触摸归因值和详细信息。 查询返回一个对 `struct` 象，该对象具有为所选渠道返回的每行的首次触摸值、时间戳和属性。 如果您希望查看在选定的时间间隔内导致客户操作的交互情况，此查询非常有用。 在以下示例中，每次客户操作返回的第一次接触是前七天(`expTimeout = 86400 * 7`)内最早的交互。
+返回指定时间段内渠道数据集中单个目标的首次触 [!DNL ExperienceEvent] 摸归因值和详细信息。 该查询返回一 `struct` 个对象，该对象具有为选定渠道返回的每行返回的首次触摸值、时间戳和属性。 如果您想要查看在选定时间间隔内导致客户操作的交互情况，此查询很有用。 在以下示例中，每次客户操作返回的第一次接触是前七天()内的最早交互`expTimeout = 86400 * 7`操作。
 
 #### 规范
 
@@ -271,15 +274,15 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 | 参数 | 描述 |
 | --- | --- |
 | `timestamp` | 在数据集中找到时间戳字段 |
-| `channelName` | 要用作返回对象中标签的易记名称 |
+| `channelName` | 在返回的对象中用作标签的友好名称 |
 | `channelValue` | 作为目标渠道的列或字段 |
-| `expTimeout` | 渠道事件前的时间窗口（以秒为单位）,查询搜索第一次触摸事件 |
+| `expTimeout` | 渠道事件前查询搜索第一次触摸事件的时间窗口（以秒为单位） |
 
 | 返回的对象参数 | 描述 |
 | ---------------------- | ------------- |
 | `name` | 在 `channelName` ADF中输入为标签 |
 | `value` | 在指定 `channelValue` 间隔内首次触摸的值 `expTimeout` 。 |
-| `timestamp` | 发生首次触摸的ExperienceEvent的时间戳 |
+| `timestamp` | 首次触 [!DNL ExperienceEvent] 摸的时间戳 |
 | `fraction` | 首次接触的归因表示为分数信用 |
 
 #### 示例查询
@@ -315,7 +318,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 ### 具有过期条件的上次联系归因
 
-返回目标ExperienceEvent数据集中单个渠道的上次触摸归因值和详细信息，该属性值在条件之后或之前过期。 查询返回一个对 `struct` 象，该对象具有为所选渠道返回的每行的上次触摸值、时间戳和属性。 如果您希望查看ExperienceEvent数据集的一部分中由您选择的条件确定的一系列客户操作中的最后一次交互，则此查询很有用。 在以下示例中，将(`commerce.purchases.value IS NOT NULL`)在结果（7月15日、21日、23日和29日）中显示的四天中的每天记录购买，并且每天的最后跟踪代码将客户操作的100%(`1.0`)责任归于其中。
+返回渠道数据集中单个目标的上次触摸归因值和详细信 [!DNL ExperienceEvent] 息，该值在条件之后或之前过期。 查询返回一个 `struct` 对象，该对象具有为所选渠道返回的每行的上次触摸值、时间戳和属性。 如果您希望查看由选择条件决定的数据集的一部分中的一系列客户操作中的 [!DNL ExperienceEvent] 最后一次交互，此查询很有用。 在以下示例中，将(`commerce.purchases.value IS NOT NULL`)在结果（7月15日、21日、23日和29日）显示的四天中的每天记录购买，并将每天的最后跟踪代码归为客户操作的100%(`1.0`)责任。
 
 #### 规范
 
@@ -324,16 +327,16 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 | 参数 | 描述 |
 | --- | --- |
 | `timestamp` | 在数据集中找到时间戳字段 |
-| `channelName` | 要用作返回对象中标签的易记名称 |
+| `channelName` | 在返回的对象中用作标签的友好名称 |
 | `channelValue` | 作为目标渠道的列或字段 |
 | `expCondition` | 确定渠道到期点的条件 |
-| `expBefore` | 默认为 `false`。用于指示渠道在满足指定条件之前还是之后过期的布尔值。 主要针对会话到期条件(例如 `sess.depth = 1, true`)启用，以确保不从上一会话中选择上次触摸。 |
+| `expBefore` | 默认为 `false`。用于指示渠道在满足指定条件之前还是之后过期的布尔值。 主要针对会话到期条件启用( `sess.depth = 1, true`例如)，以确保不从上一个会话中选择上次触摸。 |
 
 | 返回的对象参数 | 描述 |
 | ---------------------- | ------------- |
 | `name` | 在 `channelName` ADF中输入为标签 |
-| `value` | 该值是 `channelValue` ExperienceEvent中在 `expCondition` |
-| `timestamp` | 发生上次触摸的ExperienceEvent的时间戳 |
+| `value` | 该值 `channelValue`[!DNL ExperienceEvent] 是 `expCondition` |
+| `timestamp` | 上次触 [!DNL ExperienceEvent] 摸的时间戳 |
 | `percentage` | 最后一次接触的归因表示为分数信用 |
 
 #### 示例查询
@@ -369,7 +372,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 ### 具有过期超时的上次联系归因
 
-返回指定时间段内目标ExperienceEvent数据集中单个渠道的上次触摸归因值和详细信息。 查询返回一个对 `struct` 象，该对象具有为所选渠道返回的每行的上次触摸值、时间戳和属性。 如果您希望查看所选时间间隔内的上次交互，此查询很有用。 在以下示例中，每次客户操作的上次触碰返回是后七天(`expTimeout = 86400 * 7`)内的最终交互。
+返回指定时间段内渠道数据集中单个目标的上次触 [!DNL ExperienceEvent] 摸归因值和详细信息。 查询返回一个 `struct` 对象，该对象具有为所选渠道返回的每行的上次触摸值、时间戳和属性。 如果要查看所选时间间隔内的最后一次交互，此查询很有用。 在以下示例中，每次客户操作返回的最后一次联系是后七天()内的最终交互`expTimeout = 86400 * 7`操作。
 
 #### 规范
 
@@ -378,15 +381,15 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 | 参数 | 描述 |
 | --- | --- |
 | `timestamp` | 在数据集中找到时间戳字段 |
-| `channelName` | 要用作返回对象中标签的易记名称 |
+| `channelName` | 在返回的对象中用作标签的友好名称 |
 | `channelValue` | 作为目标渠道的列或字段 |
-| `expTimeout` | 渠道事件之后的时间窗口（以秒为单位）,查询会搜索最后一次触摸事件 |
+| `expTimeout` | 渠道在事件搜索最后一次触摸事件后的时间窗口（以秒为单位） |
 
 | 返回的对象参数 | 描述 |
 | ---------------------- | ------------- |
 | `name` | 在 `channelName` ADF中输入为标签 |
-| `value` | 在指定的 `channelValue` 间隔内的上次触摸的值 `expTimeout` 。 |
-| `timestamp` | 发生上次触摸的ExperienceEvent的时间戳 |
+| `value` | 在指定 `channelValue` 间隔内的上次触摸的值 `expTimeout` 。 |
+| `timestamp` | 上次触 [!DNL ExperienceEvent] 摸的时间戳 |
 | `percentage` | 最后一次接触的归因表示为分数信用 |
 
 #### 示例查询
@@ -422,11 +425,11 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 ## 上一次／下一次触摸
 
-了解客户如何在体验中导航非常重要。 它可用于了解客户的深度参与度、确认体验的预期步骤是否按设计运行并确定影响客户的潜在痛点。 以下ADF支持根据其“上一个”和“下一个”关系建立路径视图。 您将能够创建上一页和下一页，或者遍历多个事件以创建路径。
+了解客户如何在体验中导航非常重要。 它可用于了解客户的深度参与度、确认体验的预期步骤是否按设计方式运行并确定影响客户的潜在痛点。 以下ADF支持根据“上一个”和“下一个”关系建立路径视图。 您将能够创建上一页和下一页，或分步创建多个事件。
 
 ### 上一次触摸
 
-确定特定字段的上一个值，该值在窗口内定义的步骤数。 在示例中，请注意， `WINDOW` “函数”配置了一个框架，该框架将ADF设 `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` 置为查看当前行以及前面的所有行。
+确定特定字段的上一个值以及在窗口内定义的多个步骤。 在示例中，请注 `WINDOW` 意，“函数”配置了一 `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` 个框架，设置ADF查看当前行以及之前的所有行。
 
 #### 规范
 
@@ -474,9 +477,9 @@ ORDER BY endUserIds._experience.mcid.id, _experience.analytics.session.num, time
 (10 rows)
 ```
 
-### 下一次触控
+### 下一次触摸
 
-确定特定字段的下一个值，该值在窗口内定义的步骤数。 在示例中，请注意， `WINDOW` “函数”配置了一个框架，该框架将ADF设置为查看当 `ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING` 前行以及它之后的所有行。
+确定特定字段的下一个值，即在窗口内定义数量的步骤。 在示例中，请注 `WINDOW` 意，“函数”配置了 `ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING` 一个框架，设置ADF查看当前行，并查看其后的所有行。
 
 #### 规范
 
@@ -527,11 +530,11 @@ LIMIT 10
 
 ## 中间时间
 
-中间时间允许您探索事件发生前后的某个时间段内的潜在客户行为。 查看所有客户在活动或其他类型事件后7天内的事件情况。
+中间时间允许您在事件发生之前或之后的一段时间内探索潜在的客户行为。 查看所有客户在活动或其他类型事件后7天内的事件。
 
-### 上次匹配的间隔时间
+### 上次匹配的时间间隔
 
-提供新的维度，该维度测量自特定事件以来经过的时间。
+提供新的维度，它测量自特定事件以来经过的时间。
 
 #### 规范
 
@@ -540,10 +543,10 @@ LIMIT 10
 | 参数 | 描述 |
 | --- | --- |
 | `timestamp` | 在所有事件上填充的数据集中找到时间戳字段。 |
-| `eventDefintion` | 表达式以符合上一事件。 |
-| `timeUnit` | 输出单位：天、小时、分钟和秒。 默认为秒。 |
+| `eventDefintion` | 表达式，以限定前一个事件。 |
+| `timeUnit` | 输出单位： 天、小时、分钟和秒。 默认为秒。 |
 
-输出：返回一个数字，表示自查看上一个匹配事件以来的时间单位；如果找不到匹配事件，则返回数字保留为空。
+输出： 返回一个数字，表示自查看上一个匹配事件以来的时间单位；如果未找到匹配事件，则返回为null。
 
 #### 示例查询
 
@@ -587,9 +590,9 @@ LIMIT 10
 (10 rows)
 ```
 
-### 下次匹配时间间隔
+### 下次匹配的时间间隔
 
-提供新的维度，它测量特定事件发生前的时间。
+提供新维度，它测量特定事件发生前的时间。
 
 #### 规范
 
@@ -598,10 +601,10 @@ LIMIT 10
 | 参数 | 描述 |
 | --- | --- |
 | `timestamp` | 在所有事件上填充的数据集中找到时间戳字段。 |
-| `eventDefintion` | 表达式以符合下一个事件。 |
-| `timeUnit` | 输出单位：天、小时、分钟和秒。 默认为秒。 |
+| `eventDefintion` | 表达式以确定下一个事件。 |
+| `timeUnit` | 输出单位： 天、小时、分钟和秒。 默认为秒。 |
 
-输出：返回一个负数，表示下一个匹配事件后的时间单位；如果找不到匹配事件，则返回null。
+输出： 返回一个负数，表示下一个匹配事件后的时间单位；如果找不到匹配事件，则返回null。
 
 #### 示例查询
 
@@ -647,4 +650,4 @@ LIMIT 10
 
 ## 后续步骤
 
-使用此处描述的函数，您可以编写查询来使用查询服务访问您自己的ExperienceEvent数据集。 有关在查询服务中创作查询的更多信息，请参阅有关创建查询 [的文档](../creating-queries/creating-queries.md)。
+使用此处描述的函数，您可以编写查询来使用访问您自己 [!DNL ExperienceEvent] 的数据集 [!DNL Query Service]。 有关在中创作查询的详 [!DNL Query Service]细信息，请参阅有关创建 [查询的文档](../creating-queries/creating-queries.md)。
