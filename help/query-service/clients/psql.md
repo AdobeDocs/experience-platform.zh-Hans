@@ -4,18 +4,21 @@ solution: Experience Platform
 title: 与PSQL连接
 topic: connect
 translation-type: tm+mt
-source-git-commit: f5bc9beb59e83b0411d98d901d5055122a124d07
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+workflow-type: tm+mt
+source-wordcount: '170'
+ht-degree: 1%
 
 ---
 
 
 # 与PSQL连接
 
-PSQL是在计算机上安装Postgres时附带的命令行界面。 您可以按照以下说明安装它。
+PSQL是在计算机上安装时附带的命 [!DNL Postgres] 令行界面。 您可以按照以下说明安装它。
 
 ## 在Mac上安装Postgres
 
-打开一个终端窗口并发出以下三个命令：
+打开终端窗口并发出以下三个命令：
 
 ```shell
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -29,21 +32,21 @@ brew install postgres
 which psql
 ```
 
-发出这些命令后，您应看到以下内容：
+发出这些命令后，您应当看到以下内容：
 
 ```shell
 /usr/local/bin/psql
 ```
 
-## 在PC上安装Postgres
+## 安装 [!DNL Postgres] 在PC上
 
-从此位置下载并安装 [Postgres](https://www.postgresql.org/download/windows/)。
+从此位 [!DNL Postgres] 置下载和 [安装](https://www.postgresql.org/download/windows/)。
 
 编辑路径变量：
 
 ![图像](../images/clients/psql/path.png)
 
-添加显示的包含“Postgres”的两行。
+添加显示的包含“”的两[!DNL Postgres]行。
 
 保存更新，然后打开命令提示符并键入：
 
@@ -51,21 +54,21 @@ which psql
 psql -V
 ```
 
-您应当看到以下内容：
+您应该看到这样的内容：
 
 ```shell
 psql (PostgreSQL) 9.5.14
 ```
 
-## Connect PSQL和查询服务
+## Connect PSQL和 [!DNL Query Service]
 
-返回“Connect BI工具”页面上的平台UI。
+返回Connect [!DNL Platform] BI“工 *[!UICONTROL 具”页面上的]* UI。
 
-单 **击** “PSQL命令”的复制。
+单击 **[!UICONTROL “复制]***[!UICONTROL PSQL命令”]*。
 
 ![图像](../images/clients/psql/connect-bi.png)
 
->[!IMPORTANT]:如果您在PC上，使用文本编辑器删除命令字符串中的换行符，然后复制该字符串。
+>[!IMPORTANT]: 如果您在电脑上，使用文本编辑器删除命令字符串中的换行符，然后复制该字符串。
 
 将命令字符串粘贴到终端或命令窗口中，然后按Enter。
 
