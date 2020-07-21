@@ -4,51 +4,51 @@ solution: Experience Platform
 title: 与Power BI连接
 topic: connect
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '366'
+source-wordcount: '333'
 ht-degree: 0%
 
 ---
 
 
-# 使用Power BI(PC)连接
+# 连接 [!DNL Power BI] (PC)
 
-PC用户可以从https://powerbi.microsoft.com/en-us/desktop/安装 [Power BI](https://powerbi.microsoft.com/en-us/desktop/)。
+PC用户可从https://powerbi.microsoft.com/en-us/desktop/ [!DNL Power BI] 进行 [安装](https://powerbi.microsoft.com/en-us/desktop/)。
 
-## 设置Power Bi
+## Set up [!DNL Power BI]
 
-安装Power BI后，需要设置支持PostgreSQL连接器的必要组件。 按照以下步骤操作：
+安装完 [!DNL Power BI] 毕后，需要设置必要的组件以支持PostgreSQL连接器。 按照以下步骤操作：
 
 - 查找并安 `npgsql`装一个。NET驱动程序包，用于PostgreSQL，这是PowerBI连接的正式方式。
 
 - 选择v4.0.10（更新版本当前导致错误）。
 
-- 在“自定义设置”屏幕的“Npgsql GAC安装”下，选 **择“将安装在本地硬盘上”**。 未安装GAC将导致Power BI稍后失败。
+- 在“自定义设置”屏幕的“Npgsql GAC安装”下，选 **[!UICONTROL 择“将安装在本地硬盘上”]**。 未安装GAC将导致Power BI稍后失败。
 
 - 重新启动Windows。
 
-- 查找PowerBI Desktop评估版。
+- Find the [!DNL PowerBI] Desktop evaluation version.
 
-## 将Power BI连接到查询服务
+## 连接 [!DNL Power BI] 到 [!DNL Query Service]
 
-执行这些准备步骤后，您可以将Power BI连接到查询服务：
+After performing those preparatory steps, you can connect [!DNL Power BI] to [!DNL Query Service]:
 
-- 打开Power BI。
+- Open [!DNL Power BI].
 
-- 单击 **顶部菜单** 功能区中的“获取数据”。
+- Click **[!UICONTROL Get Data]** in the top menu ribbon.
 
-- 选择 **PostgreSQL数据库**，然后单击 **“连接”**。
+- 选择 **[!UICONTROL PostgreSQL数据库]**，然后单击 **[!UICONTROL “连接”]**。
 
-- 输入服务器和数据库的值。 **服务器** 是在连接详细信息下找到的主机。 对于生产，请向 `:80` 主机字符串的末尾添加端口。 **数据库** 可以是“all”或数据集表名。 （尝试一个CTAS派生的数据集。）
+- 输入服务器和数据库的值。 **[!UICONTROL 服务器]** 是在连接详细信息下找到的主机。 对于生产，请向 `:80` 主机字符串的末尾添加端口。 **[!UICONTROL 数据库]** 可以是“all”或数据集表名。 （尝试一个CTAS派生的数据集。）
 
-- 单击 **高级选项**，然后取消选 **中包括关系列**。 请勿选中使 **用完整层次结构导航**。
+- 单击 **[!UICONTROL 高级选项]**，然后取消选 **[!UICONTROL 中包括关系列]**。 请勿选中使 **[!UICONTROL 用完整层次结构导航]**。
 
 - *(为数据库声明“all”时为可选，但建议使用* )输入SQL语句。
 
 >[!NOTE]
 >
->如果未提供SQL语句，则Power BI将预览数据库中的所有表。 对于分层数据，应使用自定义SQL语句。 如果表模式为平面，则它将使用或不使用自定义SQL语句。 Power BI尚不支持复合类型——要从复合类型中获取基元类型，您需要编写SQL语句才能导出它们。
+>如果未提供SQL语句，则将 [!DNL Power BI] 预览数据库中的所有表。 对于分层数据，应使用自定义SQL语句。 如果表模式为平面，则它将使用或不使用自定义SQL语句。 复合类型尚不受支 [!DNL Power BI] 持——要从复合类型获取基元类型，您需要编写SQL语句来导出它们。
 
 ```sql
 SELECT web.webPageDetails.name AS Page_Name, 
@@ -60,8 +60,8 @@ ORDER BY SUM(web.webPageDetails.pageviews.value) DESC
 LIMIT 10
 ```
 
-- 选择 **DirectQuery** 或 **导入** 模式。 在“ **导入** ”模式下，数据将以power BI导入。 在 **DirectQuery** 模式下，所有查询都将发送到查询服务以执行。
+- 选择 **[!UICONTROL DirectQuery]** 或 **[!UICONTROL 导入]** 模式。 在 **[!UICONTROL 导入]** 模式下，数据将导入 [!DNL Power BI]。 在 **[!UICONTROL DirectQuery]** 模式下，所有查询都将发送到以 [!DNL Query Service] 执行。
 
-- 单击&#x200B;**确定**。现在，Power BI连接到查询服务，并在没有错误时生成预览。 预览呈现数字列存在已知问题。 继续执行下一步。
+- 单击&#x200B;**[!UICONTROL 确定]**。现在， [!DNL Power BI] 连接到 [!DNL Query Service] 并在没有错误时生成预览。 预览呈现数字列存在已知问题。 继续执行下一步。
 
-- 单击 **Load** （加载）以将数据集导入Power BI。
+- 单击 **[!UICONTROL 加载]** ，将数据集导入 [!DNL Power BI]。
