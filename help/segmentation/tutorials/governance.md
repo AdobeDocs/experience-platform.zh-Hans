@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 为受众区段强制实施数据使用合规性
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: cb6a2f91eb6c18835bd9542e5b66af4682227491
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '1325'
+source-wordcount: '1323'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 1%
 本教程需要对以下组件有一个有效的了解 [!DNL Adobe Experience Platform]:
 
 - [!DNL Real-time Customer Profile](../../profile/home.md): [!DNL Real-time Customer Profile] 是通用查找实体存储，用于管理 [!DNL Experience Data Model] (XDM)中的数 [!DNL Platform]据 用户档案可以跨各种企业数据资产合并数据，并以统一的表示形式提供对该数据的访问。
-   - [合并策略](../../profile/api/merge-policies.md): 用于确定 [!DNL Real-time Customer Profile] 哪些数据可在特定条件下合并为统一视图的规则。 可以为“数据管理”配置合并策略。
+   - [合并策略](../../profile/api/merge-policies.md): 用于确定 [!DNL Real-time Customer Profile] 哪些数据可在特定条件下合并为统一视图的规则。 可以配置合并策略以 [!DNL Data Governance] 用于目的。
 - [!DNL Segmentation](../home.md): 如何 [!DNL Real-time Customer Profile] 将用户档案商店中包含的大量个人划分为拥有相似特征并将对营销策略做出类似反应的较小群体。
 - [!DNL Data Governance](../../data-governance/home.md): [!DNL Data Governance] 使用以下组件为数据使用标签和强制实施(DULE)提供基础架构：
    - [数据使用标签](../../data-governance/labels/user-guide.md): 标签用于根据处理数据集和字段各自数据的敏感程度描述数据集和字段。
