@@ -1,14 +1,17 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Adobe Experience Platform Streaming Ingestion开发人员指南
+title: Adobe Experience Platform流摄取开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 54fea3a25d72c2950c5fce6ee1a71b6a61454383
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+workflow-type: tm+mt
+source-wordcount: '24'
+ht-degree: 0%
 
 ---
 
 
-# 流摄取开发人员指南
+# 流式摄取开发人员指南
 
-此文档可能不存在，因为使用Flow Service API进行了引用更新。
+此文档可能不存在，原因是使用API获取更 [!DNL Flow Service] 新。
