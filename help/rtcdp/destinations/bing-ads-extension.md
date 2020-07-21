@@ -1,60 +1,63 @@
 ---
 title: Bing Ads Universal事件跟踪(UET)扩展
 seo-title: Bing Ads Universal事件跟踪(UET)扩展
-description: Bing Ads Universal事件跟踪(UET)扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页面。
+description: Bing Ads Universal Customer Data Tracking(UET)扩展是Adobe Real-time Customer Data Platform中的一个广告目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
 seo-description: null
 translation-type: tm+mt
-source-git-commit: 98c3356db178507e0a8d94b47030e9490e721e46
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+workflow-type: tm+mt
+source-wordcount: '550'
+ht-degree: 4%
 
 ---
 
 
-# Bing Ads Universal事件跟踪(UET)扩展 {#bing-ads-extension}
+# [!DNL Bing Ads Universal Event Tracking] (UET)扩展 {#bing-ads-extension}
 
 ## 概述 {#overview}
 
-Experience Platform Launch的Bing Ads通用事件跟踪(UET)是跟踪某人点击您的搜索广告后发生情况的有用方法。 通过使用单个UET标签记录客户在您的网站上的行为，您可以利用该数据，从而使用再营销列表跟踪转化率或目标受众。
+[!DNL Bing Ads Universal Event Tracking] (UET)for是 [!DNL Experience Platform Launch] 跟踪某人点击您的搜索广告后发生情况的有用方法。 通过使用单个UET标签记录客户在您的网站上的行为，您可以利用该数据，从而使用再营销列表跟踪转化或目标受众。
 
-Bing Ads Universal事件跟踪(UET)是Adobe实时客户数据平台中的一个广告扩展。 有关扩展功能的详细信息，请参阅 [Adobe Exchange上的扩展页](https://exchange.adobe.com/experiencecloud.details.100154.html)。
+[!DNL Bing Ads Universal Event Tracking] (UET)是Adobe实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100154.html)。
 
-此目标是Experience Platform Launch扩展。 有关Launch扩展在Adobe实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+此目标是扩 [!DNL Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Launch] 实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
-![Bing Ads扩展](assets/bing-extension.png)
+![必应广告扩展](assets/bing-extension.png)
 
 
 ## 先决条件 {#prerequisites}
 
-此扩展位于“目标”目录中，可供所有已购买Adobe实时CDP的客户使用。
+此扩展可在目录 [!DNL Destinations] 中找到已购买Adobe实时CDP的所有客户。
 
-要使用此扩展，您需要访问Experience Platform Launch。 Experience Platform Launch作为附带的增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对Launch的访问权限，并要求他们授予您权限， **[!UICONTROL manage_properties]** 以便您可以安装扩展。
+要使用此扩展，您需要访问 [!DNL Experience Platform Launch]。 [!DNL Experience Platform Launch] 作为附带的增值功能提供给Adobe Experience Cloud客户。 请与您的组织管理员联系以 [!DNL Launch] 获取访问权限，并请他们授予 **[!UICONTROL 您manage_properties]** 权限，以便您可以安装扩展。
 
 ## 安装扩展 {#install-extension}
 
-安装Bing Ads通用事件跟踪(UET)扩展：
+安装( [!DNL Bing Ads Universal Event Tracking] UET)扩展：
 
-1. 在 [Adobe实时CDP界面中](http://platform.adobe.com/)，转到 **[!UICONTROL Destinations > Catalog]**。
+1. 在Adobe [实时CDP界面中](http://platform.adobe.com/)，转到“目 **[!UICONTROL 标”>“目录”]**。
 2. 从目录中选择扩展或使用搜索栏。
-3. 单击目标以高亮显示它，然后在右 **[!UICONTROL Install Extension]** 边栏中选择。 如果控 **[!UICONTROL Install Extension]** 件灰显，则表示您缺少该权 **[!UICONTROL manage_properties]** 限。 请参阅 [先决条件](#prerequisites)。
-4. 在窗 **[!UICONTROL Select available Launch property]** 口中，选择要在其中安装扩展的启动项属性。 您还可以选择在启动项中创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解启动文档的“ [属性”页面部分](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) 中的属性。
-5. 该工作流将引导您进入Launch以完成安装。
+3. 单击目标以选中它，然后在右边栏 **[!UICONTROL 中选择]** “安装扩展”。 如果“安 **[!UICONTROL 装扩展]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties]** 权限。 请参 [阅先决条件](#prerequisites)。
+4. 在“选 **[!UICONTROL 择可用的启动项]** ”属性窗口中， [!DNL Launch] 选择要安装扩展的属性。 您还可以在中选择创建新属性 [!DNL Launch]。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解文档的“属 [性”页面部分](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) 中的 [!DNL Launch] 属性。
+5. 该工作流将帮 [!DNL Launch] 您完成安装。
 
-有关扩展配置选项和安装支持的信息，请参阅Adobe Exchange上的 [Bing Ads通用事件跟踪(UET)页](https://exchange.adobe.com/experiencecloud.details.100154.html)。
+有关扩展配置选项和安装支持的信息，请参 [阅Adobe Exchange上的Bing Ads Universal](https://exchange.adobe.com/experiencecloud.details.100154.html)事件跟踪(UET)页面。
 
-您还可以直接在 [Experience Platform Launch界面中安装扩展](https://launch.adobe.com/)。 请参 [阅启动文档中的](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension) “添加新扩展”。
+您还可以直接在Experience Platform Launch界面中安 [装扩展](https://launch.adobe.com/)。 请参 [阅在文档中添加](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension) 新的 [!DNL Launch] 扩展。
 
 
 ## 如何使用扩展 {#how-to-use}
 
-安装扩展后，您可以在Launch中直接开始为其设置规则。
+安装扩展后，您可以直接在中开始为它设置规则 [!DNL Launch]。
 
-在Launch中，您可以为已安装的扩展设置规则，以便仅在某些情况下才将事件数据发送到扩展目标。 有关为扩展设置规则的详细信息，请参阅规 [则文档](https://docs.adobe.com/help/zh-Hans/launch/using/reference/manage-resources/rules.html)。
+在中 [!DNL Launch]，您可以为已安装的扩展设置规则，以便仅在某些情况下才将事件数据发送到扩展目标。 有关为扩展设置规则的详细信息，请参阅规 [则文档](https://docs.adobe.com/help/zh-Hans/launch/using/reference/manage-resources/rules.html)。
 
 ## 配置、升级和删除扩展 {#configure-upgrade-delete}
 
-您可以在启动界面中配置、升级和删除扩展。
+您可以在界面中配置、升级和删除扩 [!DNL Launch] 展。
 
 >[!TIP]
 >
->如果某个属性上已安装该扩展，则仍会显示该扩展的Adobe实时CDP **[!UICONTROL Install]** 用户界面。 启动安装工作流程(如安装扩 [展中所述](#install-extension) )，以转到启动并配置或删除您的扩展。
+>如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显示该 **[!UICONTROL 扩展]** 的安装。 按照安装扩展中的说明启 [动安装](#install-extension) 工作流 [!DNL Launch] 程，以获取并配置或删除扩展。
 
-要升级您的扩展，请参阅 [Launch文档中的](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/extension-upgrade.html) “扩展升级”。
+要升级您的扩展，请参 [阅文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/extension-upgrade.html) 中的扩 [!DNL Launch] 展升级。
