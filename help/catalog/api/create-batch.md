@@ -4,14 +4,17 @@ solution: Experience Platform
 title: 创建数据集
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: a25ca22fb8ec9eb95f74e4fd76a7f18e87343085
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+workflow-type: tm+mt
+source-wordcount: '86'
+ht-degree: 4%
 
 ---
 
 
 # 创建批
 
-为了使数据集能够摄取数据，它必须具有与其关联的批量。 使用现 `id` 有数据集的值，可以通过向目录API中的端点发出POST请求 `/batches` 来创建批量。
+为了使数据集能够摄取数据，它必须具有与其关联的批。 使用现 `id` 有数据集的值，您可以通过向API中的端点发出POST请 `/batches` 求来创建批 [!DNL Catalog] 量。
 
 **API格式**
 
@@ -36,11 +39,11 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 | 属性 | 描述 |
 | --- | --- |
-| `datasetId` | 将 `id` 与批处理关联的数据集。 |
+| `datasetId` | 批 `id` 处理将关联的数据集。 |
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建）和包含新创建的批次详细信息的响应对象，包括其只读 `id`、系统生成的字符串。
+成功的响应会返回HTTP状态201（已创建）和包含新创建批的详细信息的响应对象，包括其只读 `id`系统生成的字符串。
 
 ```JSON
 {
