@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 日期和时间函数
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '471'
+source-wordcount: '468'
 ht-degree: 4%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 # 日期和时间函数
 
-日期和时间函数用于对用户档案查询语言(PQL)中的值执行日期和时间操作。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
+日期和时间函数用于对(PQL)中的值执行日期和 [!DNL Profile Query Language] 时间操作。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
 
 ## 当月
 
