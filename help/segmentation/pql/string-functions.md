@@ -4,14 +4,17 @@ solution: Experience Platform
 title: 字符串函数
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 92f92f480f29f7d6440f4e90af3225f9a1fcc3d0
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+workflow-type: tm+mt
+source-wordcount: '757'
+ht-degree: 6%
 
 ---
 
 
 # 字符串函数
 
-用户档案查询语(PQL)优惠函数，可简化与字符串的交互。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语言概述](./overview.md)。
+[!DNL Profile Query Language] (PQL)优惠函数可简化与字符串的交互。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
 
 ## 喜欢
 
@@ -26,7 +29,7 @@ source-git-commit: 92f92f480f29f7d6440f4e90af3225f9a1fcc3d0
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{STRING_1}` | 要执行检查的字符串。 |
-| `{STRING_2}` | 要与第一个字符串匹配的表达式。 有两个支持的特殊字符用于创建表达式: `%` 和 `_`。 <ul><li>`%` 用于表示零个或多个字符。</li><li>`_` 仅用于表示一个字符。</li></ul> |
+| `{STRING_2}` | 要与第一个字符串匹配的表达式。 有两个支持的特殊字符用于创建表达式: `%` 和 `_`。 <ul><li>`%` 用于表示零个或多个字符。</li><li>`_` 用于表示一个字符。</li></ul> |
 
 **示例**
 
@@ -38,7 +41,7 @@ city like "%es%"
 
 ## 开始于
 
-该函 `startsWith` 数用于确定字符串是否与指定的子字符串开始。
+函 `startsWith` 数用于确定字符串是否开始有指定的子字符串。
 
 **格式**
 
@@ -62,7 +65,7 @@ person.name.startsWith("Joe")
 
 ## 不开始
 
-函 `doesNotStartWith` 数用于确定字符串是否不与指定的子字符串开始。
+函 `doesNotStartWith` 数用于确定字符串是否不与指定子字符串开始。
 
 **格式**
 
@@ -102,7 +105,7 @@ person.name.doesNotStartWith("Joe")
 
 **示例**
 
-以下PQL查询区分大小写确定此人的电子邮件地址是否以“.com”结尾。
+以下PQL查询区域根据大小写确定人员的电子邮件地址是否以“.com”结尾。
 
 ```sql
 person.emailAddress.endsWith(".com")
@@ -126,7 +129,7 @@ person.emailAddress.endsWith(".com")
 
 **示例**
 
-以下PQL查询根据大小写区分确定人员的电子邮件地址是否以“.com”结尾。
+以下PQL查询区域根据大小写确定人员的电子邮件地址是否以“.com”结尾。
 
 ```sql
 person.emailAddress.doesNotEndWith(".com")
@@ -182,7 +185,7 @@ person.emailAddress.doesNotContain("2010@gm")
 
 ## 等于
 
-函 `equals` 数用于确定字符串是否等于指定的字符串。
+函 `equals` 数用于确定字符串是否等于指定字符串。
 
 **格式**
 
@@ -197,7 +200,7 @@ person.emailAddress.doesNotContain("2010@gm")
 
 **示例**
 
-以下PQL查询根据大小写区分确定此人的姓名是否为“John”。
+以下PQL查询根据大小写确定人员的姓名是否为“John”。
 
 ```sql
 person.name.equals("John")
@@ -205,7 +208,7 @@ person.name.equals("John")
 
 ## 不等于
 
-函 `notEqualTo` 数用于确定字符串是否不等于指定的字符串。
+函 `notEqualTo` 数用于确定字符串是否不等于指定字符串。
 
 **格式**
 
@@ -220,7 +223,7 @@ person.name.equals("John")
 
 **示例**
 
-以下PQL查询根据大小写区分确定此人的姓名不是“John”。
+以下PQL查询区分大小写确定人员的姓名不是“John”。
 
 ```sql
 person.name.notEqualTo("John")
@@ -228,7 +231,7 @@ person.name.notEqualTo("John")
 
 ## 匹配
 
-该函 `matches` 数用于确定字符串是否与特定常规表达式匹配。 请参阅本 [文档](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html) ，了解有关常规表达式中匹配模式的更多信息。
+该函 `matches` 数用于确定字符串是否与特定常规表达式匹配。 请参阅此 [文档](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html) ，了解有关常规表达式中匹配模式的更多信息。
 
 **格式**
 
@@ -238,7 +241,7 @@ person.name.notEqualTo("John")
 
 **示例**
 
-以下PQL查询在不区分大小写的情况下确定此人的姓名开始是否为“John”。
+以下PQL查询将确定人员的姓名开始是否带有“John”，但不区分大小写。
 
 ```sql
 person.name.matches("(?i)^John")
@@ -256,7 +259,7 @@ person.name.matches("(?i)^John")
 
 **示例**
 
-以下PQL查询用于从电子邮件地址中提取域名。
+以下PQL查询用于从电子邮件地址提取域名。
 
 ```sql
 emailAddress.regexGroup("@(\w+)", 1)
@@ -264,5 +267,5 @@ emailAddress.regexGroup("@(\w+)", 1)
 
 ## 后续步骤
 
-现在您已经学习了字符串函数，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [用户档案查询语概述](./overview.md)。
+现在您已经了解了字符串函数，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请阅读 [用户档案查询语概述](./overview.md)。
 
