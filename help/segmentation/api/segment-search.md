@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 段搜索端点
 topic: guide
 translation-type: tm+mt
-source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
+source-git-commit: 995fadef9abacf22d0561e0590dfbe172adf0a43
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1138'
 ht-degree: 2%
 
 ---
@@ -225,7 +225,7 @@ curl -X GET \
 
 ## 附录 {#appendix}
 
-以下各节提供了有关搜索词工作原理的更多信息。 搜索查询的编写方式如下： `s={FieldName}:{SearchExpression}`. 因此，例如，要搜索名为AAM或平台的区段，您应使用以下搜索查询: `s=segmentName:AAM%20OR%20Platform`.
+以下各节提供了有关搜索词工作原理的更多信息。 搜索查询的编写方式如下： `s={FieldName}:{SearchExpression}`. 因此，例如，要搜索名为AAM的区段， [!DNL Platform]您应使用以下搜索查询: `s=segmentName:AAM%20OR%20Platform`.
 
 > !![NOTE] 为获得最佳实践，搜索表达式应进行HTML编码，如上面所示的示例。
 
