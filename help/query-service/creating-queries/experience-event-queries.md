@@ -4,20 +4,23 @@ solution: Experience Platform
 title: ExperienceEvent查询
 topic: queries
 translation-type: tm+mt
-source-git-commit: 45da024d45b5eebdfc393ee14890e24aed6021ce
+source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+workflow-type: tm+mt
+source-wordcount: '275'
+ht-degree: 0%
 
 ---
 
 
-# ExperienceEvent查询
+# [!DNL ExperienceEvent] 查询
 
-除了标准SQL查询,Adobe Experience Platform查询服务还支持使用ExperienceEvents编写查询。 ExperienceEvent是体验数据模型(XDM)类，它表示当用户与网站或服务交互时系统的不可改变的非聚集快照，因此可用于时域分析。 有关XDM和体验事件的更多信息，请参阅XDM系统概述。 通过将查询服务与ExperienceEvents相结合，您可以有效跟踪用户中的行为趋势。 以下文档提供了涉及ExperienceEvents的查询示例。
+除了标准SQL查询,Adobe Experience Platform还支 [!DNL Query Service] 持使用编写查询 [!DNL ExperienceEvents]。 是 [!DNL ExperienceEvent] 一个 [!DNL Experience Data Model] (XDM)类，它表示当用户与网站或服务交互时系统的不可改变的非聚集快照，因此可用于时域分析。 有关XDM的更多信 [!DNL Experience Events] 息，请参阅概 [!DNL XDM System] 述。 通过结 [!DNL Query Service] 合， [!DNL ExperienceEvents]您可以有效跟踪用户的行为趋势。 以下文档提供了涉及的查询的示例 [!DNL ExperienceEvents]。
 
-## 按天创建特定日期范围内的事件趋势报告
+## 按天创建特定日期范围内的事件趋势报表
 
-以下示例创建了按日期分组的指定日期范围内的事件趋势报表。 具体而言，它将各种分析值汇总为A、B和C，然后总结已查看parka的次数。
+以下示例创建按日期分组的指定日期范围内事件的趋势报表。 具体而言，它将各种分析值汇总为A、B和C，然后汇总已查看parka的次数。
 
-在体验事件数据集中找到的时间戳列以UTC为单位。 以下示例使用该函 `from_utc_timestamp()` 数将时间戳从UTC转换为EDT。 然后，它使用 `date_format()` 该函数将日期与时间戳的其余部分隔离。
+数据集中的时间戳 [!DNL Experience Event] 列以UTC为单位。 以下示例使用该函 `from_utc_timestamp()` 数将时间戳从UTC转换为EDT。 然后，它使用 `date_format()` 该函数将日期与时间戳的其余部分隔离。
 
 ```sql
 SELECT 
@@ -77,7 +80,7 @@ ORDER BY Day ASC, pageViews DESC;
 
 ## 检索按页面列表数组织的访客视图。
 
-以下示例创建一个报告，该报告列表查看最多页面的用户的ID。
+以下示例创建一个报告，其中列表了已查看最多页面的用户的ID。
 
 ```sql
 SELECT 
@@ -182,5 +185,5 @@ ORDER BY pageViews DESC;
 
 ## 后续步骤
 
-有关使用Adobe定义功能(ADF)的示例查询的更多信息，请阅读《Adobe定义功能指南》。 有关查询执行的一般指南，请阅读有关 [查询服务中查询执行的指南](./writing-queries.md)。
+有关使用Adobe定义函数(ADF)的示例查询的更多信息，请阅读《Adobe定义函数》指南。 有关查询执行的一般指南，请阅读 [关于查询在查询服务中执行的指南](./writing-queries.md)。
 
