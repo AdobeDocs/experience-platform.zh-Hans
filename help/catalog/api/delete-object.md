@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 删除对象
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '178'
+source-wordcount: '173'
 ht-degree: 2%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 2%
 
 # 删除对象
 
-您可以通过在DELETE请求的路径中提供目录对象的ID来删除该对象。
+您可以通过 [!DNL Catalog] 在DELETE请求路径中提供对象ID来删除对象。
 
 >[!WARNING]
 >
->删除对象时要格外小心，因为此操作无法撤消，并且可能会在Experience Platform的其他位置产生破坏性更改。
+>删除对象时要格外小心，因为此操作无法撤消，并且可能会在其他位置产生破坏性的更改 [!DNL Experience Platform]。
 
 **API格式**
 
@@ -32,7 +32,7 @@ DELETE /{OBJECT_TYPE}/{OBJECT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要删除的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要删除 [!DNL Catalog] 的对象类型。 有效对象有： <ul><li>`accounts`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
@@ -60,4 +60,4 @@ curl -X DELETE \
 
 >[!NOTE]
 >
->如果没有与请求中提供的ID匹配的目录对象，您仍可能收到HTTP状态代码200，但响应数组为空。
+>如果没 [!DNL Catalog] 有与请求中提供的ID匹配的对象，您仍可能收到HTTP状态代码200，但响应数组为空。
