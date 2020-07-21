@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数组、列表和设置函数
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '740'
+source-wordcount: '737'
 ht-degree: 5%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 # 数组、列表和设置函数
 
-用户档案查询语言(PQL)优惠函数可简化与数组、列表和字符串的交互。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
+[!DNL Profile Query Language] (PQL)优惠函数可简化与数组、列表和字符串的交互。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
 
 ## 输入
 
