@@ -4,17 +4,17 @@ solution: Experience Platform
 title: Spark SQL函数
 topic: spark sql functions
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '4903'
+source-wordcount: '4900'
 ht-degree: 5%
 
 ---
 
 
-# Spark SQL函数
+# [!DNL Spark] SQL函数
 
-Spark SQL帮助程序提供内置的Spark SQL函数以扩展SQL功能。
+SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL功能。
 
 参考： [Spark SQL函数文档](https://spark.apache.org/docs/2.4.0/api/sql/index.html)
 
