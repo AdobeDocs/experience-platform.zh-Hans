@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建经过身份验证的流连接
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '649'
+source-wordcount: '624'
 ht-degree: 2%
 
 ---
@@ -14,40 +14,40 @@ ht-degree: 2%
 
 # 创建经过身份验证的流连接
 
-经身份验证的数据收集允许Adobe Experience Platform服务(如实时用户档案和身份)区分来自可信来源和不可信来源的记录。 要发送个人身份信息(PII)的客户可以通过作为POST请求的一部分发送访问令牌来发送个人身份信息。
+经过身份验证的Adobe Experience Platform收集允许服 [!DNL Real-time Customer Profile] 务( [!DNL Identity]如和)区分来自可信源和不可信源的记录。 要发送个人身份信息(PII)的客户可以通过作为POST请求的一部分发送访问令牌来发送个人身份信息。
 
 ## 入门指南
 
 要将流数据开始到Adobe Experience Platform，需要流连接注册。 注册流连接时，您需要提供一些关键详细信息，如流数据源。
 
-注册流连接后，作为数据生成者，您将拥有一个唯一的URL，可用于将数据流化到平台。
+注册流连接后，作为数据生成者，您将拥有一个可用于将数据流化到的唯一URL [!DNL Platform]。
 
 本教程还需要对各种Adobe Experience Platform服务具有相关的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [体验数据模型(XDM)](../../xdm/home.md): 平台组织体验数据的标准化框架。
-- [实时客户用户档案](../../profile/home.md): 根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织体验数据 [!DNL Platform] 的标准化框架。
+- [!DNL Real-time Customer Profile](../../profile/home.md): 根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
 
 以下各节提供了成功调用流式摄取API所需了解的其他信息。
 
 ### 读取示例API调用
 
-本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
+本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
 - 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -177,7 +177,7 @@ curl -X GET https://platform.adobe.io/data/foundation/flowservice/connections/{C
 
 ## 后续步骤
 
-现在您已创建经过身份验证的流连接，您可以流式传输时间序列或记录数据，从而可以在平台内摄取数据。 要了解如何将时间系列数据流式传输到平台，请转 [到流时间系列数据教程](./streaming-time-series-data.md)。 要了解如何将记录数据流化到平台，请转至流 [记录数据教程](./streaming-record-data.md)。
+现在您已创建经过身份验证的流连接，您可以流式传输时间序列或记录数据，从而在中收集数据 [!DNL Platform]。 要了解如何将时间系列数据流式传 [!DNL Platform]输到，请转 [到流式时间序列数据教程](./streaming-time-series-data.md)。 要了解如何将记录数据流化 [!DNL Platform]到，请转到流 [化记录数据教程](./streaming-record-data.md)。
 
 ## 附录
 
