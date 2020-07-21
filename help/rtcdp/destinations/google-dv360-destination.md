@@ -4,25 +4,25 @@ seo-title: Google Display & Video 360 Destination
 description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。
 seo-description: 'Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。 '
 translation-type: tm+mt
-source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
-source-wordcount: '668'
+source-wordcount: '633'
 ht-degree: 0%
 
 ---
 
 
-# Google Display &amp; Video 360 Destination
+# [!DNL Google Display & Video 360] 目标
 
 ## 概述
 
-Display &amp; Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示屏、视频和移动库存源执行重定位和受众目标数字活动。
+[!DNL Display & Video 360]它以前称为 [!DNL DoubleClick Bid Manager]工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。
 
 ## 目标规范
 
-请注意Google Display &amp; Video 360目标特有的以下详细信息：
+请注意特定于目标的以下详细 [!DNL Google Display & Video 360] 信息：
 
-* 您可以将以下身份 [发送](../../identity-service/namespaces.md) 到Google Display &amp; Video 360目标： **Google Cookie ID、IDFA、GAID、Roku ID、Microsoft ID、Amazon Fire TV ID**。
+* 您可以将以下身份 [发送](../../identity-service/namespaces.md) 到目 [!DNL Google Display & Video 360] 标： **Google Cookie ID、IDFA、GAID、Roku ID、Microsoft ID、Amazon Fire TV ID**。
 * 激活的受众是在Google平台中以编程方式创建的。
 * Adobe实时CDP当前不包含用于验证成功激活的度量。 请参阅Google中的受众计数，验证集成并了解受众定位大小。
 
@@ -36,9 +36,9 @@ Display &amp; Video 360（以前称为DoubleClick Bid Manager）是一种工具�
 
 >[!NOTE]
 >
->在Adobe实时CDP中设置您的第一个Google Display &amp; Video 360目标之前，允许列表是必填的。 在创建目标之前，请确保Google已完成下面描述的允许列表过程。
+>在Adobe实时CDP中设置您的第 [!DNL Google Display & Video 360] 一个目标之前，此允许列表是必需的。 在创建目标之前，请确保Google已完成下面描述的允许列表过程。
 
-在Adobe实时CDP中创建Google Display &amp; Video 360目标之前，您必须联系Google，要求Adobe对允许的数据提供者进行列表，并将您的帐户添加到允许列表。 联系Google并提供以下信息：
+在Adobe [!DNL Google Display & Video 360] 实时CDP中创建目标之前，您必须联系Google，要求Adobe对允许的数据提供者进行列表，并将您的帐户添加到允许列表。 联系Google并提供以下信息：
 
 * **帐户ID** : 这是Adobe在Google上的帐户ID。 要获取此ID，请与Adobe客户服务或Adobe代表联系。
 * **客户ID** : 这是Adobe在Google上的客户帐户ID。 要获取此ID，请与Adobe客户服务或Adobe代表联系。
@@ -46,7 +46,7 @@ Display &amp; Video 360（以前称为DoubleClick Bid Manager）是一种工具�
 
 ## 创建目标
 
-1. 在“ **[!UICONTROL 连接”>“目标]**”中，选择“Google Display &amp; Video 360”，然后选择“创 **[!UICONTROL 建目标”]**。
+1. 在“连 **[!UICONTROL 接”>“目标]**”中，选 [!DNL Google Display & Video 360]择并选择“创 **[!UICONTROL 建目标”]**。
    ![Connect Google Display &amp; Video 360目标](/help/rtcdp/destinations/assets/google-dv360-destination.png)
 
 2. 在创 **建目标** 工作流的设置步骤中，填写目标的 [!UICONTROL 基本信息] ，以及应应用于此目标的市场营销用例。 <br>
@@ -62,8 +62,8 @@ Display &amp; Video 360（以前称为DoubleClick Bid Manager）是一种工具�
 
 >[!NOTE]
 >
->设置Google Display &amp; Video 360目标时，请与您的Google客户经理或Adobe代表联系，了解您的帐户类型。
+>设置目标时， [!DNL Google Display & Video 360] 请与您或Adobe [!DNL Google Account Manager] 代表联系，了解您拥有的帐户类型。
 
-## 将区段激活到Google Display &amp; Video 360
+## 将区段激活到 [!DNL Google Display & Video 360]
 
-有关如何将区段激活到Google Display &amp; Video 360的说明，请参阅将 [数据激活到目标](/help/rtcdp/destinations/activate-destinations.md)。
+有关如何将区段激活到目的地的说 [!DNL Google Display & Video 360]明，请 [参阅将数据激活到目标](/help/rtcdp/destinations/activate-destinations.md)。
