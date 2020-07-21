@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe定义的函数
 topic: queries
 translation-type: tm+mt
-source-git-commit: cc101b1a439408861961c6fcd0899ca7c48bfa04
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '287'
 ht-degree: 6%
 
 ---
@@ -16,14 +16,14 @@ ht-degree: 6%
 
 Adobe的主要优势之一是他们了解体验数据以及客户需要如何处理这些数据。 您可以利用这种理解来构建助手功能，使您的工作更轻松。
 
-本文档涵盖Adobe定义的功能(ADF)，可支持三个关键的Analytics活动:
+此文档涵盖Adobe定义的功能(ADF)，以支持三个关键 [!DNL Analytics] 活动:
 - [会话化](#sessionization)
 - [归因](#attribution)
 - [路径分析](#pathing)
 
 ## 会话化
 
-重现 `SESS_TIMEOUT()` 与AdobeAnalytics的访问组。 它执行类似的基于时间的分组，但具有可自定义的参数。
+重 `SESS_TIMEOUT()` 现与AdobeAnalytics的访问分组。 它执行类似的基于时间的分组，但具有可自定义的参数。
 
 **语法：**
 
@@ -89,15 +89,15 @@ LIMIT 31;
 
 归因是您如何为营销工作分配指标或转化率，如收入、订单或注册。
 
-在AdobeAnalytics，属性设置是使用eVar等变量配置的，并在摄取数据时生成。
+在AdobeAnalytics中，属性设置是使用eVar等变量配置的，并在摄取数据时生成。
 
-在查询服务中找到的归因ADF允许在查询时定义和生成这些分配。
+中找到的归因 [!DNL Query Service] ADF允许在查询时定义和生成这些分配。
 
 此示例重点介绍最近接触归因，但Adobe也优惠了首次接触归因。
 
 >[!NOTE]
 >
->未来版本的事件服务中将提供其他超时和基于查询的过期选项。
+>其他超时选项和基于事件的过期选项将在以后的版本中可用 [!DNL Query Service]。
 
 **语法：**
 
