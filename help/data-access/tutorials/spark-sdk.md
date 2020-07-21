@@ -4,27 +4,27 @@ solution: Experience Platform
 title: 安全Spark数据访问SDK
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: f7714b8bebe37b29290794a48314962e42b24058
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '516'
 ht-degree: 1%
 
 ---
 
 
-# 安全Spark数据访问SDK
+# 安全 [!DNL Spark Data Access] SDK
 
-Secure Spark SDK是 [!DNL Data Access] 一个软件开发工具包，它支持读取和写入Adobe Experience Platform数据集。
+Secure SDK [!DNL Spark] 是一 [!DNL Data Access] 个软件开发工具包，它支持读取和写入Adobe Experience Platform数据集。
 
 ## 入门指南
 
-您必须已完成身 [份验证](../../tutorials/authentication.md) 教程，才能访问这些值以调用安全Spark [!DNL Data Access] SDK:
+您必须已完成身份 [验证](../../tutorials/authentication.md) 教程，才能访问这些值以调用安全 [!DNL Spark][!DNL Data Access] SDK:
 
 - `{ACCESS_TOKEN}`
 - `{API_KEY}`
 - `{IMS_ORG}`
 
-中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 使用Spark SDK需要操作将在以下位置进行的沙箱的名称和ID:
+中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 使用 [!DNL Spark] SDK需要操作将在以下位置进行的沙箱的名称和ID:
 
 - `{SANDBOX_NAME}`
 - `{SANDBOX_ID}`
@@ -83,7 +83,7 @@ spark.sql.extensions = com.adobe.platform.query.QSSparkSessionExtensions
 
 SDK [!DNL Spark] 支持两种阅读模式： 交互式和批处理。
 
-交互模式创建与的Java数据库连接(JDBC) [!DNL Query Service] 连接，并通过自动转换为的常规 `ResultSet` JDBC获取结果 `DataFrame`。 此模式的工作方式与内置的Spark方法类似 `spark.read.jdbc()`。 此模式仅适用于小数据集，并且仅需要用户令牌进行身份验证。
+交互模式创建与的Java数据库连接(JDBC) [!DNL Query Service] 连接，并通过自动转换为的常规 `ResultSet` JDBC获取结果 `DataFrame`。 此模式的工作方式与内置方 [!DNL Spark] 法类似 `spark.read.jdbc()`。 此模式仅适用于小数据集，并且仅需要用户令牌进行身份验证。
 
 批处理模 [!DNL Query Service]式使用的COPY命令在共享位置生成Parce结果集。 然后，可以进一步处理这些Parke文件。 此模式需要用户令牌和具有该范围的服务 `acp.foundation.catalog.credentials` 令牌。
 
@@ -174,7 +174,7 @@ df = df.limit(100)
 
 ## 写入数据集
 
-SDK支 [!DNL Spark] 持编写数据集。 Users will first need to retrieve a previous dataset to write to a new dataset.
+SDK支 [!DNL Spark] 持编写数据集。 用户首先需要检索以前的数据集才能写入新数据集。
 
 ```scala
 val df = spark.read
