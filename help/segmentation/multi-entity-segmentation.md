@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 多实体分割
 topic: overview
 translation-type: tm+mt
-source-git-commit: f44e42a4faa3b10f147dbaf929048054ce0bec42
+source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
 workflow-type: tm+mt
-source-wordcount: '396'
+source-wordcount: '372'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 多实体分割
 
-多实体细分是指能够根据产品、商店或其他非用户档案类扩展用户档案数据和附加数据。 连接后，来自其他类的数据将变得像用户档案模式的本机数据一样可用。
+多实体细分是指能够根据产 [!DNL Profile] 品、商店或其他非用户档案类使用额外数据扩展数据。 连接后，来自其他类的数据将变得像模式本身一样可 [!DNL Profile] 用。
 
 要进一步了解多实体细分，请继续阅读文档，并通过观看以下视频或浏览细分概述来补充 [您的学习](./home.md)。]
 
@@ -24,21 +24,21 @@ ht-degree: 0%
 
 本教程需要对使用分段时涉及的各种Adobe Experience Platform服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [实时客户用户档案](../profile/home.md): 根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+- [!DNL Real-time Customer Profile](../profile/home.md): 根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
 - [Adobe Experience Platform分段服务](./home.md): 允许您从实时客户用户档案构建细分。
-- [体验数据模型(XDM)](../xdm/home.md): 平台组织客户体验数据的标准化框架。
+- [!DNL Experience Data Model (XDM)](../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 ## 如何定义XDM关系
 
-定义与体验模式模型(XDM)结构的关系是细分创建的重要组成部分。
+定义与(XDM)模式结 [!DNL Experience Data Model] 构的关系是段创建的重要和不可或缺的一部分。
 
-此过程可以使用模式注册表API或模式编辑器完成。 有关使用API定义两个模式之间关系的详细指南，请阅 [读有关使用API定义两个模式之间关系的教程](../xdm/tutorials/relationship-api.md)。 有关使用模式编辑器定义两个模式之间关系的详细指南，请阅 [读使用模式编辑器定义两个模式之间关系的教程](../xdm/tutorials/relationship-ui.md)。
+此过程可以使用API [!DNL Schema Registry] 或API完 [!DNL Schema Editor]成。 有关使用API定义两个模式之间关系的详细指南，请阅 [读有关使用API定义两个模式之间关系的教程](../xdm/tutorials/relationship-api.md)。 有关使用定义两个模式之 [!DNL Schema Editor] 间关系的详细指南，请阅 [读使用模式编辑器定义两个模式之间关系的教程](../xdm/tutorials/relationship-ui.md)。
 
 ## 如何创建使用XDM关系的细分
 
-定义XDM关系后，您可以使用分段服务API构建区段。
+定义XDM关系后，您可以使用 [!DNL Segmentation Service] API构建细分。
 
-此过程可以使用Segmentation API或Segment Builder用户界面完成。 有关使用API构建区段的详细指南，请阅 [读有关使用分段API创建区段的教程](./tutorials/create-a-segment.md)。 有关使用区段生成器构建区段的详细指南，请阅 [读区段生成器用户指南](./ui/overview.md)。
+此过程可以使用API [!DNL Segmentation] 或用户界面 [!DNL Segment Builder] 完成。 有关使用API构建区段的详细指南，请阅 [读有关使用分段API创建区段的教程](./tutorials/create-a-segment.md)。 有关使用区段生成器构建区段的详细指南，请阅 [读区段生成器用户指南](./ui/overview.md)。
 
 ## 如何评估和访问多实体细分的细分
 
