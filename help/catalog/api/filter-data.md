@@ -4,23 +4,23 @@ solution: Experience Platform
 title: 使用查询参数筛选目录数据
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '2060'
+source-wordcount: '2033'
 ht-degree: 1%
 
 ---
 
 
-# 使用查询参数筛选目录数据
+# 使用查询 [!DNL Catalog] 参数筛选数据
 
-Catalog Service API允许通过使用请求查询参数筛选响应数据。 目录的最佳实践之一是在所有API调用中使用过滤器，因为它们可减少API的负载并帮助提高整体性能。
+API [!DNL Catalog Service] 允许通过使用请求查询参数过滤响应数据。 最佳实践的一 [!DNL Catalog] 部分是在所有API调用中使用过滤器，因为它们可减少API的负载并帮助提高整体性能。
 
-此文档概述了在API中筛选Catalog对象的最常用方法。 建议您在阅读目录开发人员指南时参 [考此文档](getting-started.md) ，进一步了解如何与目录API交互。 有关目录服务的更多一般信息，请参阅 [目录概述](../home.md)。
+此文档概述了筛选API中对象 [!DNL Catalog] 的最常用方法。 建议您在阅读目录开发人员指南时参 [考此文档](getting-started.md) ，进一步了解如何与API [!DNL Catalog] 交互。 有关的更多一般信 [!DNL Catalog Service]息，请参阅 [目录概述](../home.md)。
 
 ## 限制返回的对象
 
-查询 `limit` 参数限制在响应中返回的对象数。 根据配置的限制自动按量收费目录响应：
+查询 `limit` 参数限制在响应中返回的对象数。 [!DNL Catalog] 根据配置的限制自动按量收费：
 
 * 如果未 `limit` 指定参数，则每个响应有效负荷的最大对象数为20。
 * 对于数据集查询, `observableSchema` 如果使用查询参数请 `properties` 求，则返回的最大数据集数为20。
@@ -36,7 +36,7 @@ GET /{OBJECT_TYPE}?limit={LIMIT}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要检索的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要检索 [!DNL Catalog] 的对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{LIMIT}` | 一个整数，表示要返回的对象数，范围从1到100。 |
 
 **请求**
@@ -104,9 +104,9 @@ GET /{OBJECT_TYPE}/{OBJECT_ID}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要检索的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要检索 [!DNL Catalog] 的对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{PROPERTY}` | 要包含在响应主体中的属性的名称。 |
-| `{OBJECT_ID}` | 正在检索的特定Catalog对象的唯一标识符。 |
+| `{OBJECT_ID}` | 正在检索的特定对象的 [!DNL Catalog] 唯一标识符。 |
 
 **请求**
 
@@ -123,7 +123,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回一列表目录对象，只显示所请求的属性。
+成功的响应返回一列表 [!DNL Catalog] 对象，只显示所请求的属性。
 
 ```json
 {
@@ -205,9 +205,9 @@ curl -X GET \
 * 目前唯一支持标记的目录对象是数据集、批次和连接。
 * 标记名称对于您的IMS组织是唯一的。
 * Adobe流程可能会利用某些行为的标签。 这些标记的名称前缀有“adobe”作为标准。 因此，在声明标记名称时应避免此约定。
-* 以下标记名称保留为在Experience Platform中使用，因此不能声明为组织的标记名称：
-   * `unifiedProfile`: 此标记名称是为实时客户用户档案要摄 [取的数据集保留的](../../profile/home.md)。
-   * `unifiedIdentity`: 此标记名称是为Identity Service要摄取的数据集 [保留的](../../identity-service/home.md)。
+* 以下标记名称是保留的，可供 [!DNL Experience Platform]在整个组织中使用，因此不能声明为组织的标记名称：
+   * `unifiedProfile`: 此标记名称保留给要摄取的数据集 [!DNL Real-time Customer Profile](../../profile/home.md)。
+   * `unifiedIdentity`: 此标记名称保留给要摄取的数据集 [!DNL Identity Service](../../identity-service/home.md)。
 
 以下是包含属性的数据集的 `tags` 示例。 该属性中的标记采用键值对的形式，每个标记值都显示为包含单个字符串的数组：
 
@@ -261,7 +261,7 @@ GET /{OBJECT_TYPE}?tags={TAG_NAME}:*
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要检索的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li></ul> |
+| `{OBJECT_TYPE}` | 要检索 [!DNL Catalog] 的对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li></ul> |
 | `{TAG_NAME}` | 要筛选的标记的名称。 |
 | `{TAG_VALUE}` | 要筛选的标记的值。 支持通配符(`*`)。 |
 
@@ -332,7 +332,7 @@ curl -X GET \
 
 ## 按日期范围筛选
 
-目录API中的某些端点具有允许范围查询的查询参数，大多数情况下是在日期情况下。
+API中的某些 [!DNL Catalog] 端点具有允许范围查询的查询参数，大多数情况下是日期。
 
 **API格式**
 
@@ -359,7 +359,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应包含列表的Catalog对象，该对象在指定的日期范围内。 除非还指定了限制，否则响应最多包含20个对象。
+成功的响应包含一列表 [!DNL Catalog] 在指定日期范围内的对象。 除非还指定了限制，否则响应最多包含20个对象。
 
 ```json
 {
@@ -427,7 +427,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应包含一列表Catalog对象，这些对象根据参数进行排序 `orderBy` 。 除非还指定了限制，否则响应最多包含20个对象。
+成功的响应包含一列表 [!DNL Catalog] 对象，这些对象根据参数进行 `orderBy` 排序。 除非还指定了限制，否则响应最多包含20个对象。
 
 ```json
 {
@@ -472,7 +472,7 @@ curl -X GET \
 
 ## 按属性筛选
 
-目录提供了两种按属性筛选的方法，下面各节进一步介绍了这些方法：
+[!DNL Catalog] 提供了两种按属性筛选的方法，下面各节进一步介绍了这些方法：
 
 * [使用简单过滤器](#using-simple-filters): 按特定属性是否与特定值匹配进行筛选。
 * [使用属性参数](#using-the-property-parameter): 使用条件表达式根据属性是否存在，或者某个属性的值是否与其他指定值或常规表达式匹配、近似或比较，进行筛选。
@@ -496,7 +496,7 @@ GET /{OBJECT_TYPE}?{PROPERTY_NAME}=!{VALUE_1},{VALUE_2},{VALUE_3}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要检索的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要检索 [!DNL Catalog] 的对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{PROPERTY_NAME}` | 要筛选其值的属性的名称。 |
 | `{VALUE}` | 一个属性值，它确定要包括(或排除，具体取决于查询)的结果。 |
 
@@ -572,7 +572,7 @@ GET /{OBJECT_TYPE}?property={CONDITION}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要检索的Catalog对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要检索 [!DNL Catalog] 的对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{CONDITION}` | 一个条件表达式，它指示要查询的属性以及如何评估其值。 示例如下。 |
 
 该参数的值支 `property` 持几种不同的条件表达式。 下表概述了受支持表达式的基本语法：
