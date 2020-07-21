@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务开发人员指南
 topic: query templates
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '639'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 ## 示例API调用
 
-现在，您已经了解要使用哪些标头，可以开始调用查询服务API。 以下各节将介绍您可以使用查询服务API进行的各种API调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
+现在，您已经了解要使用哪些标头，便可开始调用 [!DNL Query Service] API。 以下各节将介绍您可以使用API进行的各种API [!DNL Query Service] 调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
 
 ### 检索列表查询模板
 
