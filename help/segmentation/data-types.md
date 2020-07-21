@@ -4,15 +4,15 @@ solution: Experience Platform
 title: Adobe Experience Platform分段服务数据类型
 topic: overview
 translation-type: tm+mt
-source-git-commit: cb6a2f91eb6c18835bd9542e5b66af4682227491
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '406'
 ht-degree: 2%
 
 ---
 
 
-# Adobe Experience Platform分段服务支持的数据类型
+# Adobe Experience Platform支 [!DNL Segmentation Service] 持的数据类型
 
 中支持所有XDM数据类型 [!DNL Segmentation Service]。 构成区段定义的规则根据以下数据类型进行情境化。
 
@@ -39,7 +39,7 @@ ht-degree: 2%
 
 ## 体验事件
 
-作为Adobe Experience Platform模式,XDM ExperienceEvents记录了与集成应用程序的显 [!DNL Platform]式和隐式客户交互，包括交互发生时系统的快照。 ExperienceEvents是事实记录。 因此，在段定义过程中，它们是可供您使用的数据源。
+作为Adobe Experience Platform模式, [!DNL XDM ExperienceEvents] 记录与集成应用程序的显 [!DNL Platform]式和隐式客户交互，包括交互发生时系统的快照。 [!DNL ExperienceEvents] 是事实记录。 因此，在段定义过程中，它们是可供您使用的数据源。
 
 如下表所示，事件数据使用关键字呈现，这些关键字有助于优化事件行为和指定事件属性。
 
