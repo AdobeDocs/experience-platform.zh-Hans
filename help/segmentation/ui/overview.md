@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: f44e42a4faa3b10f147dbaf929048054ce0bec42
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '2750'
+source-wordcount: '2745'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 0%
 
 使用细分定义需要了解与细分相关 [!DNL Experience Platform] 的各种服务。 在阅读本用户指南之前，请查阅以下服务的文档：
 
-- [!DNL Segmentation Service](../home.md): 分段服务允许您将与个人( [!DNL Experience Platform] 如客户、潜在客户、用户或组织)相关的存储在其中的数据划分为具有相似特征并将响应类似营销策略的较小组。
+- [!DNL Segmentation Service](../home.md): [!DNL Segmentation Service] 允许您将与个人(如 [!DNL Experience Platform] 客户、潜在客户、用户或组织)相关的存储数据划分为具有相似特征且响应类似营销策略的较小组。
 - [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-- [!DNL Identity Service](../../identity-service/home.md): 通过将 [!DNL Real-time Customer Profile] 来自被引入平台的不同数据源的身份连接到平台，可实现此目的。
+- [!DNL Identity Service](../../identity-service/home.md): 通过将 [!DNL Real-time Customer Profile] 来自被引入的不同数据源的身份连接到其中，实现 [!DNL Platform]了。
 - [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 了解本文档使用的两个关键术语并了解它们之间的区别也很重要：
@@ -63,7 +63,7 @@ ht-degree: 0%
 
 ### 事件
 
-通过 **[!UICONTROL 事件]** 选项卡，您可以根据使用XDM ExperienceEvent数据元素进行的事件或操作创建受众。 您还可以在事件类型选 **[!UICONTROL 项卡]** (事件选项卡是常用事件的集合)上查找，以便您更快地创建区段。
+事件 **[!UICONTROL 选项卡]** ，允许您根据使用数据元素进行的事件或操作创建 [!DNL XDM ExperienceEvent] 受众。 您还可以在事件类型选 **[!UICONTROL 项卡]** (事件选项卡是常用事件的集合)上查找，以便您更快地创建区段。
 
 除了能够浏览元素外， [!DNL ExperienceEvent] 您还可以搜索事件类型。 事件类型使用与之相同的编 [!DNL ExperienceEvents]码逻辑，无需您在类中搜索 [!DNL XDM ExperienceEvent] 以寻找正确的事件。 例如，使用搜索栏搜索“购物车”会返回事件类型“[!UICONTROL AddCart]”和“[!UICONTROL RemoveCart]”，这两个操作是构建区段定义时最常用的操作。
 
