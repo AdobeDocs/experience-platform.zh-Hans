@@ -4,7 +4,10 @@ solution: Experience Platform
 title: 查询服务开发人员指南
 topic: connection parameters
 translation-type: tm+mt
-source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+workflow-type: tm+mt
+source-wordcount: '122'
+ht-degree: 1%
 
 ---
 
@@ -13,11 +16,11 @@ source-git-commit: 7d5d98d8e32607abf399fdc523d2b3bc99555507
 
 ## 示例API调用
 
-既然您了解了要使用哪些标头，就可以开始调用查询服务API了。 以下各节将介绍您可以使用查询服务API进行的各种API调用。 每个调用包括常规API格式、显示所需标题的示例请求和示例响应。
+现在，您已经了解要使用哪些标头，便可开始调用 [!DNL Query Service] API。 以下各节将介绍您可以使用API进行的各种API [!DNL Query Service] 调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
 
 ### 请求交互式服务的连接参数
 
-可以通过向端点发出GET请求 [来检索连接参数](../creating-queries/writing-queries.md) ，以便使用交互式 `/connection_parameters` 服务。 有关使用连接参数通过交互式服务连接的客户端的详细信息，请阅读有关 [查询服务客户端的文档](../clients/overview.md)。
+通过向端点发出GET请求，可 [以检索连接](../creating-queries/writing-queries.md) 参数以使用交互式 `/connection_parameters` 服务。 有关使用连接参数通过交互式服务连接的客户端的详细信息，请阅读有关查询服务客户端 [的文档](../clients/overview.md)。
 
 **API格式**
 
