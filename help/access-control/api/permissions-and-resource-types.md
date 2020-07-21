@@ -4,16 +4,19 @@ solution: Experience Platform
 title: 列表权限和资源类型的名称
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 7b354a96d70332cf7a7e9eff322cd3d6ee0fc96a
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+workflow-type: tm+mt
+source-wordcount: '123'
+ht-degree: 1%
 
 ---
 
 
 # 列表权限和资源类型的名称
 
-您可以通过向端点发出GET请求来列表所有权限和资源类型的 `/acl/reference` 名称。 然后，这些名称可用于API调用中，以 [视图当前用户的有](./effective-policies.md) 效策略。
+您可以通过向端点发出GET请求来列表所有权限和资源类型的 `/acl/reference` 名称。 然后，这些名称可用于API调用，以 [视图当前用户](./effective-policies.md) 的有效策略。
 
-权 **限是通过** Adobe Admin Console管理的策略，并映射到零个或多个资源类型策略。 资 **源类型** ，是一种为特定类型的平台资源(如数据集或模式)启用读、写和／或删除功能的策略。
+权 **限** 是通过AdobeAdmin Console管理的策略，映射到零个或多个资源类型策略。 资 **源类型** 是一种策略，它为特定类型的资源(如数据集或模式)启用读 [!DNL Platform] 取、写入和／或删除功能。
 
 **API格式**
 
@@ -33,7 +36,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回一 `permissions` 个对象和一个对 `resource-types` 象，每个对象分别包含访问权限或资源类型名称的完整列表。
+成功的响应返回 `permissions` 对象和对 `resource-types` 象，每个对象分别包含访问权限或资源类型名称的完整列表。
 
 ```json
 {
