@@ -4,19 +4,19 @@ solution: Experience Platform
 title: 与Looker连接
 topic: connect
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '217'
+source-wordcount: '202'
 ht-degree: 0%
 
 ---
 
 
-# 与Looker连接
+# 连接 [!DNL Looker]
 
-要在Adobe Experience Platform时将Looker与Adobe查询服务连接，请按照以下步骤操作：
+要连接 [!DNL Looker] Adobe Experience Platform [!DNL Query Service] ，请按照以下步骤操作：
 
-登录到Looker后，单击“管 **理**”，然后单击 **“连接”**。
+登录后， [!DNL Looker]单击“管 **[!UICONTROL 理]**”，然后 **[!UICONTROL 单击“连接]**”。
 
 ![](../images/clients/looker/click-admin-connections.png)
 
@@ -29,19 +29,19 @@ ht-degree: 0%
 ![](../images/clients/looker/new-connection.png)
 
 - **名称：** 连接的名称。
-- **方言：** 用于SQL数据库的方言。 查询服务 **使用PostgreSQL**。
-- **主机和端口：** 主机端点及其查询服务端口。
+- **方言：** 用于SQL数据库的方言。 [!DNL Query Service] 使用 **[!DNL PostgreSQL]**。
+- **主机和端口：** 主机端点及其端口 [!DNL Query Service]。
 - **数据库：** 将使用的数据库。
 - **用户名和密码：** 将使用的登录凭据。 用户名将采用以下形式 `ORG_ID@AdobeOrg`。
 
 >[!NOTE]
 >
->有关查找主机和端口、数据库名称和登录凭据的详细信息，请访 [问平台上的凭据页](https://platform.adobe.com/query/configuration)。 要查找凭据，请登录平台，单击 **查询**，然后单 **击凭据**。
+>有关查找主机和端口、数据库名称和登录凭据的详细信息，请访 [问平台上的凭据页](https://platform.adobe.com/query/configuration)。 要查找凭据，请登录， [!DNL Platform]单击 **[!UICONTROL 查询]**，然后单 **[!UICONTROL 击凭据]**。
 
-输入连接详细信息后，单击“ **测试这些设置** ”以确保凭据正常工作。 如果他们这样做，将在下面显示一条消息，告知您可以连接。 如果连接确实成功，请单击“添 **加连接** ”以创建连接。
+输入连接详细信息后，单击“ **[!UICONTROL 测试这些设置]** ”以确保凭据正常工作。 如果他们这样做，将在下面显示一条消息，告知您可以连接。 如果连接确实成功，请单击“添 **[!UICONTROL 加连接]** ”以创建连接。
 
 ![](../images/clients/looker/click-test-connection.png)
 
 ## 后续步骤
 
-现在您已连接查询服务，可以使用Looker编写查询。 有关如何编写和运行查询的更多信息，请阅读运 [行查询指南](../creating-queries/creating-queries.md)。
+现在您已连接 [!DNL Query Service]，可以 [!DNL Looker] 编写查询。 有关如何编写和运行查询的更多信息，请阅读运 [行查询指南](../creating-queries/creating-queries.md)。
