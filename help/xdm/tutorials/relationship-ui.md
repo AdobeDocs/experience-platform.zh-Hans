@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用模式模式编辑器定义两个模式之间的关系
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 1445646be8fa3416a34408205eadca0a792290c6
 workflow-type: tm+mt
 source-wordcount: '811'
 ht-degree: 0%
@@ -32,7 +32,7 @@ ht-degree: 0%
 
 模式关系由源 **[!UICONTROL 模式表示]** ，该源具有引用目标模式内的另 **[!UICONTROL 一个字段]**。 在接下来的步骤中，“[!UICONTROL 忠诚会员]”将作为源模式，而“酒店”将充当目标模式。
 
-为便于参考，以下各节将介绍在定义关系之前本教程中使用的每个模式的结构。
+为便于参考，以下各节将介绍本教程中在定义关系之前使用的每个模式的结构。
 
 ### [!UICONTROL 忠诚会员] 模式
 
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 <img src="../images/tutorials/relationship/loyalty-create-new-mixin.png" width="750"><br>
 
-画布将重新显示，“[!UICONTROL 忠诚度]”将显示在 _Mixins部分_ 。 单击混音名称，然后单 **[!UICONTROL 击根级]** “Loyalty Members”字段旁[!UICONTROL 的“添加]字段”。
+画布将重新显示，“[!UICONTROL Favorite Hotel]”将出现在 _Mixins部分_ 。 单击混音名称，然后单 **[!UICONTROL 击根级]** “Loyalty Members”字段旁[!UICONTROL 的“添加]字段”。
 
 ![](../images/tutorials/relationship/loyalty-add-field.png)
 
@@ -74,7 +74,7 @@ ht-degree: 0%
 
 ![](../images/tutorials/relationship/relationship-field-apply.png)
 
-更新的“[!UICONTROL loyaltyRelation]”字段将显示在画布中。 单击 **[!UICONTROL 保存]** ，以完成对模式所做的更改。
+更新的“[!UICONTROL favoriteHotel]”字段显示在画布中。 单击 **[!UICONTROL 保存]** ，以完成对模式所做的更改。
 
 ![](../images/tutorials/relationship/relationship-field-save.png)
 
