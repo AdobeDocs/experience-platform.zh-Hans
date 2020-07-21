@@ -4,9 +4,9 @@ seo-title: 云存储目标工作流
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 translation-type: tm+mt
-source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
+source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
-source-wordcount: '503'
+source-wordcount: '493'
 ht-degree: 0%
 
 ---
@@ -16,13 +16,13 @@ ht-degree: 0%
 
 ## 概述
 
-本页介绍如何连接到Adobe实时存储Platform中的云位置。
+本页介绍如何连接到Adobe实时存储平台中的云数据位置。
 
 1. 在“ **[!UICONTROL 连接”>“目标]**”中，选择首选云存储目标，然后选择 **[!UICONTROL Connect目标]**。
 
    ![连接到云存储目标](/help/rtcdp/destinations/assets/connect-cloud-destination.png)
 
-2. 在身份 **[!UICONTROL 验证]** 步骤中，如果您之前已设置到云存储目标的连接，请选择现 **[!UICONTROL 有帐户]** ，然后选择现有连接。 或者，您也可以选 **[!UICONTROL 择新帐户]** ，以设置到云存储目标的新连接。 填写帐户身份验证凭据，然后选 **[!UICONTROL 择连接到目标]**。 <br> 请参 [阅Amazon](/help/rtcdp/destinations/amazon-s3-destination.md) S3 [目标](/help/rtcdp/destinations/amazon-kinesis-destination.md) 、Amazon Kinesis目标、Azure [事件目标和SS目标，以了](/help/rtcdp/destinations/azure-event-hubs-destination.md)[](/help/rtcdp/destinations/sftp-destination.md)**** 解在FTP步骤中输入的凭据的具体信息。
+2. 在身份 **[!UICONTROL 验证]** 步骤中，如果您之前已设置到云存储目标的连接，请选择现 **[!UICONTROL 有帐户]** ，然后选择现有连接。 或者，您也可以选 **[!UICONTROL 择新帐户]** ，以设置到云存储目标的新连接。 填写帐户身份验证凭据，然后选 **[!UICONTROL 择连接到目标]**。 <br> 请参 [阅Amazon](/help/rtcdp/destinations/amazon-s3-destination.md) S3目标 [!DNL Amazon Kinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md) 、目 [!DNL Azure Event Hubs](/help/rtcdp/destinations/azure-event-hubs-destination.md) 标、目标和 [SFTP目标](/help/rtcdp/destinations/sftp-destination.md) ，了解AuthenticationStep中凭据输入 **** 的具体信息。
 
    >[!NOTE]
    >
@@ -40,11 +40,11 @@ ht-degree: 0%
 
    ![连接到SFTP云存储目标——身份验证步骤](/help/rtcdp/destinations/assets/sftp-destinations-setup-step.png)
 
-   对于Amazon Kinesis目标，请在您的帐户中提供现有数据流的 [!DNL Amazon Kinesis] 名称。 Adobe实时CDP会将数据导出到此流。 在 **[!UICONTROL 填写上述字]** 段后，选择创建目标。
+   对于 [!DNL Amazon Kinesis] 目标，请在帐户中提供现有数据流的 [!DNL Amazon Kinesis] 名称。 Adobe实时CDP会将数据导出到此流。 在 **[!UICONTROL 填写上述字]** 段后，选择创建目标。
 
    ![连接到Kinesis云存储目标——身份验证步骤](/help/rtcdp/destinations/assets/kinesis-destinations-setup-step.png)
 
-   对于Azure事件中心目标，请在您的帐户中提供现有数据流的 [!DNL Amazon Kinesis] 名称。 Adobe实时CDP会将数据导出到此流。 在 **[!UICONTROL 填写上述字]** 段后，选择创建目标。
+   对于 [!DNL Azure Event Hubs] 目标，请在帐户中提供现有数据流的 [!DNL Amazon Kinesis] 名称。 Adobe实时CDP会将数据导出到此流。 在 **[!UICONTROL 填写上述字]** 段后，选择创建目标。
 
    ![连接到Kinesis云存储目标——身份验证步骤](/help/rtcdp/destinations/assets/eventhubs-destinations-setup-step.png)
 
