@@ -1,12 +1,12 @@
 ---
 title: 将用户档案和区段激活到目标
 seo-title: 将用户档案和区段激活到目标
-description: 通过将区段映射到目标，激活您在Adobe实时客户Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
-seo-description: 通过将区段映射到目标，激活您在Adobe实时客户Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
+description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
+seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: b1f8cbe245f73e31a8941fc45cefcee595968a70
+source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
-source-wordcount: '1019'
+source-wordcount: '1013'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 将用户档案和区段激活到目标
 
-通过将区段映射到目标，激活您在Adobe实时客户Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
+通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
 
 ## 先决条件 {#prerequisites}
 
@@ -57,7 +57,7 @@ ht-degree: 0%
    ![作为身份的忠诚度ID](/help/rtcdp/destinations/assets/rewardsid-as-identity.gif)
 
 
-   如果 `Email_LC_SHA256` 您根据Facebook电子邮件散列法的要求，将目标接收时的客户电子邮件地址散列成Adobe Experience Platform，请 [选择身份](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements)。 <br> 如果 `Email` 您使用的电子邮件地址没有散列，请选择作为目标标识。 Adobe实时CDP将散列电子邮件地址以符合Facebook要求。
+   如果 `Email_LC_SHA256` 您根据电子邮件散列法要求将目标接收时的客户电子邮件地址哈希化为Adobe Experience Platform，则 [!DNL Facebook] 选择 [作为身份](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements)。 <br> 如果 `Email` 您使用的电子邮件地址没有散列，请选择作为目标标识。 Adobe实时CDP将散列电子邮件地址以符合要 [!DNL Facebook] 求。
 
    ![填写字段后的身份映射](/help/rtcdp/destinations/assets/identity-mapping.png)
 
@@ -113,11 +113,11 @@ Salesforce_id3544_20191122124530.csv
 
 ### 社交网络目标
 
-对于Facebook，成功的激活意味着将在Facebook Ads Manager中有计划地创建 [Facebook自定义受众](https://www.facebook.com/adsmanager/manage/)。 由于用户对已激活的区段具有资格或取消资格，因此将添加和删除该受众的区段成员资格。
+例 [!DNL Facebook]如，成功的激活意味着 [!DNL Facebook] 将在Facebook Ads Manager中有计划地 [创建自定义受众](https://www.facebook.com/adsmanager/manage/)。 由于用户对已激活的区段具有资格或取消资格，因此将添加和删除该受众的区段成员资格。
 
 >[!TIP]
 >
->Adobe实时CDP与Facebook之间的集成支持历史受众回填。 在将区段激活到目标时，所有历史区段资格都将发送至Facebook。
+>Adobe实时CDP与历史受众回 [!DNL Facebook] 填的集成。 在将区段激活到目标时， [!DNL Facebook] 所有历史区段资格都将发送至。
 
 ## 禁用激活 {#disable-activation}
 
