@@ -4,11 +4,14 @@ solution: Experience Platform
 title: 数据使用标签
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 30ea8b4eeeb5f11bfca65f2931902aae63e8f08e
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+workflow-type: tm+mt
+source-wordcount: '46'
+ht-degree: 0%
 
 ---
 
 
 # 数据使用标签
 
-Catalog Service API提供了用于管理数据集的数据使用标签的端点。 有关如何调用这些端点的步骤，请参阅Adobe Experience Platform Data Governance文档中 [有关使用API管理数据使用标签的指南](../../data-governance/labels/overview.md) 。
+API提 [!DNL Catalog Service] 供用于管理数据集数据使用标签的端点。 有关如何调用这些端点的步骤，请参阅Adobe Experience Platform文档中 [有关使用API管理数据使用标签](../../data-governance/labels/overview.md) 的指 [!DNL Data Governance] 南。
