@@ -1,22 +1,22 @@
 ---
 title: 目标概述
 seo-title: 目标概述
-description: 目标是预建的与目标平台的集成，允许从实时激活Platform无缝地数据。 您可以在Adobe实时客户Platform中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
-seo-description: 目标是预建的与目标平台的集成，允许从实时激活Platform无缝地数据。 您可以在Adobe实时客户Platform中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
+description: 目标是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以在Adobe实时客户数据平台中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
+seo-description: 目标是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以在Adobe实时客户数据平台中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 translation-type: tm+mt
-source-git-commit: a61a2a4d9d51c402bb50153c06a93d255a3613cb
+source-git-commit: 7aa15772003cce1dfc7c3636048bce9a35bf8197
 workflow-type: tm+mt
-source-wordcount: '532'
-ht-degree: 1%
+source-wordcount: '526'
+ht-degree: 0%
 
 ---
 
 
-# 目标概述 {#overview}
+# [!DNL Destinations]概述{#overview}
 
 ![目标概述横幅](/help/rtcdp/destinations/assets/destinations-overview-banner.png)
 
-**目标** 是预建的与目标平台集成，允许从实时客户数据Platform无缝激活数据。 您可以使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
+**[!DNL Destinations]** 是预建的与目标平台的集成，允许从实时客户数据平台无缝激活数据。 您可以使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 
 ## 目标和来源 {#destinations-and-sources}
 
@@ -48,14 +48,14 @@ ht-degree: 1%
 
 有关访问控制的详细信息，请参阅 [访问控制用户指南](../../access-control/ui/overview.md)。
 
-## 将数据激活到目标的数据管理限制 {#data-governance}
+## [!DNL Data Governance] 将数据激活到目标的限制 {#data-governance}
 
 通过以下方式为实时CDP目标实施数据管理：
 
 * *您可以在创建* 、目标工作流中选择的营销用例；
 * *数据使用策略* ，可限制包含某些使用标签的数据被激活到具有某些市场营销用例的目标。
 
-有关营销使用案例和解决违反数据策略的情况的更 [多信息，请参](/help/rtcdp/privacy/data-governance-overview.md#destinations) 阅 [实时CDP中的数据管理文档](/help/rtcdp/privacy/data-governance-overview.md#enforcement)。
+有关营销 [!DNL Data Governance] 用例和解决违反数据策略的情况的更 [多信息](/help/rtcdp/privacy/data-governance-overview.md#destinations) ，请 [参见实时CDP文档](/help/rtcdp/privacy/data-governance-overview.md#enforcement)。
 
 有关在创建目标工作流中选择营销用例的详细信息，请参阅实时CDP中不同目标类型的以下页面：
 
