@@ -4,25 +4,28 @@ solution: Experience Platform
 title: 示例ETL转换
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4817162fe2b7cbf4ae4c1ed325db2af31da5b5d3
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+workflow-type: tm+mt
+source-wordcount: '466'
+ht-degree: 1%
 
 ---
 
 
 # 示例ETL转换
 
-本文演示了提取、转换、加载(ETL)开发人员可能遇到的以下示例转换。
+本文演示了以下示例转换，这些转换是提取、转换、加载(ETL)开发人员可能遇到的。
 
 ## 将CSV简化为层次结构
 
 ### 示例文件
 
-范例CSV和JSON文件可从Adobe维护的公共ETL参考GitHub存储库获得：
+CSV和JSON示例文件可从Adobe维护的公共ETL参 [!DNL GitHub] 考回购中获得：
 
 - [CRM_用户档案.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_用户档案.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)
 
-### 示例CSV
+### CSV 示例
 
 以下CRM数据已导出为 `CRM_profiles.csv`:
 
@@ -41,25 +44,25 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 
 下表概述了CRM数据的映射要求，并包含以下转换：
 - 属性的标识 `identityMap` 列
-- 出生日期(DOB)至年和月
+- 出生日期(DOB)至年和月日
 - 多次或短整数的字符串。
 
 | CSV列 | XDM路径 | 数据格式 |
 | ---------- | -------- | --------------- |
-| 标题 | person.name.courtyTitle | 复制为字符串 |
+| 标题 | person.name.courtesyTitle | 复制为字符串 |
 | F_NAME | person.name.firstName | 复制为字符串 |
 | L_NAME | person.name.lastName | 复制为字符串 |
 | 性别 | person.gender | 将性别转换为相应的人。性别枚举值 |
-| DOB | person.byrthDayAndMonth:“MM-DD”<br/>person.birthDate:“YYYY-MM-DD”<br/>person.birthYear:YYYY | 将birthDayAndMonth转换为<br/>string将birthDate转换<br/>为string将birthYear转换为short int |
+| DOB | person.byrthDayAndMonth: “MM-DD”<br/>person.birthDate: &quot;YYYY-MM-DD&quot;<br/>person.birthYear: YYYY | 将birthDayAndMonth转换为<br/>string将birthDate转换<br/>为string将birthYear转换为short int |
 | 电子邮件 | personalEmail.address | 复制为字符串 |
-| CRMID | identityMap.CRMID[{&quot;id&quot;:x, primary:false}] | 将identityMap中的CRMID数组复制为字符串并将“主”设置为false |
-| ECID | identityMap.ECID[{&quot;id&quot;:x，主：false}] | 复制为字符串并将“主”设置为false（在identityMap中复制为ECID数组中的第一个条目） |
-| Loyaltyid | identityMap.LOYALTYID[{&quot;id&quot;:x, primary:true}] | 在identityMap中复制为字符串并将“主”设置为true |
-| ECID2 | identityMap.ECID[{&quot;id&quot;:x, primary:false}] | 将identityMap中的ECID数组中的第二个条目复制为字符串，并将“主”设置为false |
+| CRMID | identityMap.CRMID[{&quot;id&quot;:x, primary:false}] | 复制为字符串并将Primary设置为false（在identityMap中复制为字符串）到CRMID数组 |
+| ECID | identityMap.ECID[{&quot;id&quot;:x，主： false] | 复制为字符串并将Primary设置为false（在identityMap中复制为ECID数组中的第一个条目） |
+| 洛亚尔蒂 | identityMap.LOYALTYID[{&quot;id&quot;:x, primary:true}] | 复制为字符串并将“主”设置为true（在identityMap中复制为字符串）到LOYALTYID数组 |
+| ECID2 | identityMap.ECID[{&quot;id&quot;:x, primary:false}] | 将“作为字符串”复制到identityMap中ECID数组中的第二个条目，并将“主”设置为false |
 | 电话 | homePhone.number | 复制为字符串 |
 | STREET | homeAddress.street1 | 复制为字符串 |
 | 城市 | homeAddress.city | 复制为字符串 |
-| STATE | homeAddress.stateProvince | 复制为字符串 |
+| 州 | homeAddress.stateProvince | 复制为字符串 |
 | 国家／地区 | homeAddress.country | 复制为字符串 |
 | ZIP | homeAddress.postalCode | 复制为字符串 |
 | LAT | homeAddress.latitude | 转换为多次 |
@@ -170,11 +173,11 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 
 ## 数据帧到XDM模式
 
-数据帧的层次结构（如Parce文件）必须与要上传到的XDM模式的层次结构相匹配。
+数据帧的层次结构（如Parke文件）必须与要上传到的XDM模式的层次结构相匹配。
 
 ### 数据帧示例
 
-以下示例数据帧的结构已映射到实现XDM单个用户档案类的模式，并包含与该类型模式关联的最常见字段。
+以下示例模式帧的结构已映射到实现类的，并 [!DNL XDM Individual Profile] 且包含与该类型模式关联的最常见字段。
 
 ```python
 [
@@ -247,11 +250,11 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 ]
 ```
 
-在构建用于Adobe Experience Platform的数据帧时，务必确保其分层结构与现有XDM模式的分层结构完全匹配，以便字段能够正确映射。
+在构建用于Adobe Experience Platform的数据帧时，务必确保其分层结构与现有XDM模式的分层结构精确匹配，以便字段能够正确映射。
 
 ## 标识到标识映射
 
-### 身份数组
+### 身份阵列
 
 ```json
 [
@@ -282,13 +285,13 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 
 | 标识字段 | identityMap字段 | 数据类型 |
 | -------------- | ----------------- | --------- |
-| identities[0].id | identityMapEmail[][{"id"}] | 复制为字符串 |
+| identities[0].id | [identityMapEmail][{"id"}] | 复制为字符串 |
 | identities[1].id | [identityMapCRMID][{"id"}] | 复制为字符串 |
 | identities[2].id | [identityMapLOYALTYID][{"id"}] | 复制为字符串 |
 
 ### 输出XDM
 
-下面是转换为XDM的标识的数组：
+下面是转换为XDM的身份的数组：
 
 ```JSON
 "identityMap": {
