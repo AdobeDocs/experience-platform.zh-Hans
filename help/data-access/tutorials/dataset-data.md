@@ -4,17 +4,17 @@ solution: Experience Platform
 title: 数据访问概述
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '1367'
-ht-degree: 2%
+source-wordcount: '1332'
+ht-degree: 3%
 
 ---
 
 
-# 查询数据集数据（使用Data Access API）
+# 查询数据集数据(使用 [!DNL Data Access] API)
 
-此文档提供了一个分步教程，其中涵盖如何使用Adobe Experience Platform中的数据访问API查找、访问和下载数据集中存储的数据。 您还将介绍Data Access API的一些独特功能，如分页和部分下载。
+此文档提供了一个分步教程，其中涵盖如何使用Adobe Experience Platform中的API查找、访问和下载数据集中存储 [!DNL Data Access] 的数据。 您还将介绍API的一些独特功能， [!DNL Data Access] 如分页和部分下载。
 
 ## 入门指南
 
@@ -24,23 +24,23 @@ ht-degree: 2%
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
 - 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -48,23 +48,23 @@ Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台
 
 ## 序列图
 
-本教程遵循以下序列图中概述的步骤，重点介绍Data Access API的核心功能。</br>
+本教程遵循以下序列图中概述的步骤，重点介绍API的核心功 [!DNL Data Access] 能。</br>
 ![](../images/sequence_diagram.png)
 
-Catalog API允许您检索有关批处理和文件的信息。 数据访问API允许您通过HTTP以完整或部分下载方式访问和下载这些文件，具体取决于文件的大小。
+API [!DNL Catalog] 允许您检索有关批处理和文件的信息。 API [!DNL Data Access] 允许您通过HTTP访问和下载这些文件，作为完整或部分下载，具体取决于文件的大小。
 
 ## 定位数据
 
-在开始使用数据访问API之前，您需要先确定要访问的数据的位置。 在目录API中，有两个端点，您可以使用这些端点浏览组织的元数据并检索要访问的批处理或文件的ID:
+在开始使用API之 [!DNL Data Access] 前，您需要先确定要访问的数据的位置。 在API [!DNL Catalog] 中，您可以使用两个端点来浏览组织的元数据并检索要访问的批处理或文件的ID:
 
 - `GET /batches`: 返回组织下的批列表
 - `GET /dataSetFiles`: 返回组织下的列表文件
 
-有关目录API中端点的全面列表，请参阅 [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)。
+有关API中端点的全 [!DNL Catalog] 面列表，请参阅 [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)。
 
 ## 检索IMS组织下的批列表
 
-使用目录API，您可以返回组织下的批列表:
+使用 [!DNL Catalog] API，您可以返回组织下的一列表批：
 
 **API格式**
 
@@ -195,7 +195,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?createdAf
 
 ## 检索属于特定批的所有文件的列表
 
-现在，您拥有要访问的批的ID，您可以使用数据访问API获取属于该批的一列表文件。
+现在，您已拥有要访问的批的ID，可以使用 [!DNL Data Access] API获取属于该批的文件列表。
 
 **API格式**
 
@@ -252,7 +252,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/5c6f332168
 
 ## 使用文件ID访问文件
 
-获得唯一的文件ID后，您可以使用数据访问API访问有关该文件的特定详细信息，包括其名称、大小（以字节为单位）以及下载该文件的链接。
+获得唯一的文件ID后，您可以使用 [!DNL Data Access] API访问有关该文件的特定详细信息，包括其名称、大小（以字节为单位）以及下载该文件的链接。
 
 **API格式**
 
@@ -385,7 +385,7 @@ curl -I 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb2-44
 
 ## 访问文件内容
 
-您还可以使用数据访问API访问文件的内容。
+您还可以使用API访问文件的内 [!DNL Data Access] 容。
 
 **API格式**
 
@@ -414,7 +414,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 
 ## 下载文件的部分内容
 
-数据访问API允许下载块中的文件。 在请求从文件下载特定范围的字 `GET /files/{FILE_ID}` 节时，可以指定范围标头。 如果未指定范围，则默认情况下API将下载整个文件。
+API允 [!DNL Data Access] 许下载块中的文件。 在请求从文件下载特定范围的字 `GET /files/{FILE_ID}` 节时，可以指定范围标头。 如果未指定范围，则默认情况下API将下载整个文件。
 
 上一节的HEAD示 [例给出](#retrieve-the-metadata-of-a-file) 特定文件的大小（以字节为单位）。
 
@@ -454,7 +454,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 
 ## 配置API响应分页
 
-数据访问API中的响应将分页。 默认情况下，每页最大条目数为100。 分页参数可用于修改默认行为。
+API中的响 [!DNL Data Access] 应将分页。 默认情况下，每页最大条目数为100。 分页参数可用于修改默认行为。
 
 - `limit`: 您可以使用“limit”参数根据您的要求指定每页的条目数。
 - `start`: 偏移量可由“开始”查询参数设置。
