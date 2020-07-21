@@ -4,19 +4,19 @@ solution: Experience Platform
 title: 与RStudio连接
 topic: connect
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '222'
+source-wordcount: '209'
 ht-degree: 2%
 
 ---
 
 
-# 与RStudio连接
+# 连接 [!DNL RStudio]
 
-此文档将逐步介绍将R Studio与Adobe Experience Platform查询服务相连接的步骤。
+此文档逐步介绍将R Studio与Adobe Experience Platform连接的步骤 [!DNL Query Service]。
 
-安装RStudio后，您首 *先需要* 在出现的“控制台”屏幕上准备R脚本以使用PostgreSQL。
+安装 [!DNL RStudio]后，在显 *示的* “控制台”屏幕上，您首先需要准备要使用的R脚本 [!DNL PostgreSQL]。
 
 ```r
 install.packages("RPostgreSQL")
@@ -25,7 +25,7 @@ require("RPostgreSQL")
 require("rstudioapi")
 ```
 
-一旦您准备好R脚本以使用PostgreSQL，您现在可以通过加载PostgreSQL驱动程序将RStudio连接到查询服务。
+准备好R脚本使用后， [!DNL PostgreSQL]现在可以通过加 [!DNL RStudio] 载驱 [!DNL Query Service] 动程序连接到 [!DNL PostgreSQL] 。
 
 ```r
 drv <- dbDriver("PostgreSQL")
@@ -45,11 +45,11 @@ con <- dbConnect(drv,
 
 >[!NOTE]
 >
->有关查找数据库名称、主机、端口和登录凭据的详细信息，请访 [问平台上的凭据页](https://platform.adobe.com/query/configuration)。 要查找凭据，请登录平台，单击 **查询**，然后单 **击凭据**。
+>有关查找数据库名称、主机、端口和登录凭据的详细信息，请访 [问平台上的凭据页](https://platform.adobe.com/query/configuration)。 要查找凭据，请登录， [!DNL Platform]单击 **[!UICONTROL 查询]**，然后单 **[!UICONTROL 击凭据]**。
 
 ## 后续步骤
 
-现在您已连接到查询服务，您可以编写查询以执行和编辑SQL语句。 例如，您可以使 `dbGetQuery(con, sql)` 用执行查询, `sql` 其中是要运行的SQL查询。
+现在，您已连接 [!DNL Query Service]到，可以编写查询以执行和编辑SQL语句。 例如，您可以使 `dbGetQuery(con, sql)` 用执行查询, `sql` 其中是要运行的SQL查询。
 
 以下查询使用包含 [ExperienceEvents的](../creating-queries/experience-event-queries.md) ，并根据设备的屏幕高度创建网站的页面视图直方图。
 
