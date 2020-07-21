@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用API创建数据集
 topic: datasets
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
 workflow-type: tm+mt
-source-wordcount: '1263'
+source-wordcount: '1234'
 ht-degree: 1%
 
 ---
@@ -20,31 +20,31 @@ ht-degree: 1%
 
 本指南需要对Adobe Experience Platform的以下组件有充分的了解：
 
-* [批量摄取](../../ingestion/batch-ingestion/overview.md): Experience Platform允许您将数据作为批处理文件进行收录。
-* [体验数据模型(XDM)系统](../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
-* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [批量摄取](../../ingestion/batch-ingestion/overview.md): [!DNL Experience Platform] 允许您将数据作为批处理文件进行收录。
+* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供了成功调用平台API所需了解的其他信息。
+以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
 * 授权： 承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -58,11 +58,11 @@ Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台
 
 ## 查找数据集模式
 
-本教程从模式注 [册表API教程结束的位置开始](../../xdm/tutorials/create-schema-api.md) ，并利用在本教程中创建的“忠诚会员”模式。
+本教程从模式注 [册表API教程结束的位置开始](../../xdm/tutorials/create-schema-api.md) ，并利用在该教程中创建的“忠诚会员”模式。
 
-如果您尚未完成模式注册教程，请开始该模式并仅在您编写了必要的后继续使用此数据集教程。
+如果您尚未完成教程， [!DNL Schema Registry] 请在此开始并仅在您编写了必要的模式后继续此数据集教程。
 
-以下调用可用于视图您在模式注册表API教程中创建的Loyalty Members模式:
+以下调用可用于视图您在API教程中创建的“忠诚会员” [!DNL Schema Registry] 模式:
 
 **API格式**
 
@@ -329,7 +329,7 @@ curl -X PUT 'https://platform.adobe.io/data/foundation/import/batches/5d01230fc7
 
 ## 信号批处理完成
 
-将所有数据文件上传到批后，可以发出批完成的信号。 信号完成导致服务为已上传 `DataSetFile` 的文件创建目录条目并将它们与先前生成的批处理关联。 目录批处理标记为成功，这将触发任何下游流，然后这些流可以处理当前可用的数据。
+将所有数据文件上传到批后，可以发出批完成的信号。 信令完成导致服务为已上 [!DNL Catalog] 传的文 `DataSetFile` 件创建条目并将它们与先前生成的批处理关联。 批 [!DNL Catalog] 标记为成功，这将触发任何下游流，这些流随后可处理现有可用数据。
 
 **API格式**
 
