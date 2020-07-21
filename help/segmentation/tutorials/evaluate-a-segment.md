@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 评估区段
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: c0eacfba2feea66803e63ed55ad9d0a97e9ae47c
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
 workflow-type: tm+mt
-source-wordcount: '1543'
+source-wordcount: '1519'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->对于XDM单个用户档案，最多可以为五(5)个合并策略的沙箱启用计划评估。 如果您的组织在单个沙箱用户档案内有五个以上的XDM单个环境的合并策略，您将无法使用计划的评估。
+>对于最多五(5)个合并策略的沙箱，可启用计划评估 [!DNL XDM Individual Profile]。 如果您的组织在单个沙箱环境内 [!DNL XDM Individual Profile] 有五个以上的合并策略，您将无法使用计划的评估。
 
 ### 创建计划
 
@@ -157,11 +157,11 @@ ht-degree: 0%
 
 导出受众时，必须先创建目标数据集。 必须正确配置数据集以确保导出成功。
 
-一个主要考虑事项是数据集所基于的模式(在`schemaRef.id` 下面的API示例请求中)。 要导出区段，数据集必须基于XDM个人用户档案合并模式(`https://ns.adobe.com/xdm/context/profile__union`)。 合并模式是系统生成的只读模式，它聚合共享同一类的模式的字段，在本例中为XDM个人用户档案类。 有关合并视图模式的更多信息，请参 [阅模式注册开发人员指南的实时客户用户档案部分](../../xdm/api/getting-started.md)。
+一个主要考虑事项是数据集所基于的模式(在`schemaRef.id` 下面的API示例请求中)。 要导出区段，数据集必须基于( [!DNL XDM Individual Profile Union Schema] )`https://ns.adobe.com/xdm/context/profile__union`。 合并模式是系统生成的只读模式，它聚合共享同一类的模式的字段，在本例中为XDM个人用户档案类。 有关合并视图模式的更多信息，请参 [阅模式注册开发人员指南的实时客户用户档案部分](../../xdm/api/getting-started.md)。
 
 有两种方法可创建必需的数据集：
 
-- **使用API:** 本教程中遵循的步骤概述了如何使用目录API创建引用XDM单个用户档案合并模式的数据集。
+- **使用API:** 本教程中接下来的步骤概述了如何创建使用API引 [!DNL XDM Individual Profile Union Schema] 用的数 [!DNL Catalog] 据集。
 - **使用UI:** 要使用用 [!DNL Adobe Experience Platform] 户界面创建引用合并模式的数据集，请按照UI教程中的步骤 [操作](../ui/overview.md) ，然后返回本教程，继续执行生成受众 [用户档案的步骤](#generate-xdm-profiles-for-audience-members)。
 
 如果您已经有一个兼容数据集并且知道其ID，则可以直接继续执行生成受众 [用户档案的步骤](#generate-xdm-profiles-for-audience-members)。
@@ -228,10 +228,10 @@ curl -X POST \
 
 ## 后续步骤
 
-成功完成导出后，数据即可在中的数据湖中使用 [!DNL Experience Platform]。 然后，您可以使用 [数据访问](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) API，使用与导出 `batchId` 关联的数据访问数据。 根据区段的大小，数据可能以块为单位，而批可能由多个文件组成。
+成功完成导出后，您的数据便可在中 [!DNL Data Lake] 使用 [!DNL Experience Platform]。 然后，您可以使用 [!DNL Data Access API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) 与导出相关联的 `batchId` 访问数据。 根据区段的大小，数据可能以块为单位，而批可能由多个文件组成。
 
 有关如何使用API访问和下载批处理文 [!DNL Data Access] 件的分步说明，请遵循数 [据访问教程](../../data-access/tutorials/dataset-data.md)。
 
-您还可以使用访问成功导出的区段数 [!DNL Adobe Experience Platform Query Service]据。 使用UI或RESTful API, [!DNL Query Service] 您可以对数据湖中的数据编写、验证和运行查询。
+您还可以使用访问成功导出的区段数 [!DNL Adobe Experience Platform Query Service]据。 使用UI或RESTful API, [!DNL Query Service] 可以对中的数据编写、验证和运行查询 [!DNL Data Lake]。
 
 有关如何查询受众数据的更多信息，请查看相关文档 [!DNL Query Service](../../query-service/home.md)。
