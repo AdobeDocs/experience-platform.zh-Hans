@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 订阅数据获取事件
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
 workflow-type: tm+mt
-source-wordcount: '851'
+source-wordcount: '832'
 ht-degree: 1%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 1%
 
 # 数据获取通知
 
-将数据引入Adobe Experience Platform的过程由多个步骤组成。 确定需要引入平台的数据文件后，摄取过程开始并连续执行每个步骤，直到成功摄取或失败。 可以使用Adobe Experience Platform数据摄取API [或使用Experience Platform用户界面](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) ，来启动摄取过程。
+将数据引入Adobe Experience Platform的过程由多个步骤组成。 确定需要摄取的数据文件后，摄取过 [!DNL Platform]程将开始，每个步骤将连续进行，直到数据被成功摄取或失败。 可以使用Adobe Experience Platform数据摄取API [或使用用户界面](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) ，启动 [!DNL Experience Platform] 摄取过程。
 
-加载到平台中的数据必须经过多个步骤才能到达其目标、数据湖或实时客户用户档案数据存储。 每个步骤都包括处理数据、验证数据，然后在将数据传递到下一步之前存储数据。 根据所摄取的数据量，这可能会成为一个耗时的过程，并且始终有由于验证、语义或处理错误而导致该过程失败的可能。 在故障事件，需要修复数据问题，然后必须使用更正的数据文件重新启动整个摄取过程。
+加载到的 [!DNL Platform] 数据必须经过多个步骤才能到达其目标、 [!DNL Data Lake] 或数据存储 [!DNL Real-time Customer Profile] 区。 每个步骤都包括处理数据、验证数据，然后在将数据传递到下一步之前存储数据。 根据所摄取的数据量，这可能会成为一个耗时的过程，并且始终有由于验证、语义或处理错误而导致该过程失败的可能。 在故障事件，需要修复数据问题，然后必须使用更正的数据文件重新启动整个摄取过程。
 
-为了帮助监视摄取过程，Experience Platform允许订阅在该过程的每个步骤发布的一组事件，通知您所摄取数据的状态和任何可能的故障。
+为了帮助监视摄取过程， [!DNL Experience Platform] 可以订阅在该过程的每个步骤发布的一组事件，通知您所摄取数据的状态和任何可能的故障。
 
 ## 可用状态通知事件
 
@@ -39,23 +39,23 @@ ht-degree: 1%
 
 ## 通知有效负荷模式
 
-数据摄取通知事件模式是一个体验数据模型(XDM)模式，包含提供有关所摄取数据状态的详细信息的字段和值。 请访问公共XDM GitHub回购协议，以视图最新通知 [有效负荷模式](https://github.com/adobe/xdm/blob/master/schemas/common/notifications/ingestion.schema.json)。
+数据摄取通知事件 [!DNL Experience Data Model] 模式是一个(XDM)模式，包含提供关于所摄取数据状态的详细信息的字段和值。 请访问公共XDM [!DNL GitHub] 回购协议，以视图最新 [的通知有效负荷模式](https://github.com/adobe/xdm/blob/master/schemas/common/notifications/ingestion.schema.json)。
 
 ## 订阅数据获取状态通知
 
-通 [过Adobe I/O事件](https://www.adobe.io/apis/experienceplatform/events.html)，您可以使用网络挂接订阅多种通知类型。 以下各节概述了使用Adobe开发人员控制台为数据获取事件订阅平台通知的步骤。
+通 [过Adobe I/O事件](https://www.adobe.io/apis/experienceplatform/events.html)，您可以使用网络挂接订阅多种通知类型。 以下各节概述了使用Adobe开发人 [!DNL Platform] 员控制台订阅数据获取事件通知的步骤。
 
 ### 在Adobe开发人员控制台中创建新项目
 
 转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
 
-### 向项目添加Experience Platform事件
+### 向 [!DNL Experience Platform] 项目添加事件
 
 创建新项目后，导航到该项目的概述屏幕。 在此处，单击“ **[!UICONTROL 添加事件]**”。
 
 ![](../images/quality/subscribe-events/add-event-button.png)
 
-将出 _[!UICONTROL 现“添加事件]_”对话框。 单击**[!UICONTROL  Experience Platform ]**，以过滤可用选项的列表，然后单击平台**[!UICONTROL &#x200B;通知&#x200B;]**，然后单击**[!UICONTROL &#x200B;下一步&#x200B;]**。
+将显 _[!UICONTROL 示“添加事件]_”对话框。 单击**[!UICONTROL  Experience Platform ]**，以过滤可用选项的列表，然后单击平台**[!UICONTROL &#x200B;通知&#x200B;]**，然后单击**[!UICONTROL &#x200B;下一步&#x200B;]**。
 
 ![](../images/quality/subscribe-events/select-platform-events.png)
 
@@ -91,4 +91,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-将平台通知注册到项目后，您便可以视图从项目仪表板收到的事件。 有关如何跟 [踪事件的详细说明](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) ，请参阅“跟踪Adobe I/O事件”指南。
+在将通知注 [!DNL Platform] 册到项目后，您可以视图从项目仪表板收到的事件。 有关如何跟 [踪事件的详细说明](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) ，请参阅“跟踪Adobe I/O事件”指南。
