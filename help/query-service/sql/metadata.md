@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 元数据命令
 topic: metadata
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '299'
+source-wordcount: '297'
 ht-degree: 0%
 
 ---
@@ -43,5 +43,5 @@ ht-degree: 0%
 
 可以组合所有开始 `\d` 的命令。 例如，您可以发出 `\dtsn` 问题，显示所有表、序列和模式的列表。 `\d` 仅显示所有可见表、视图、实体化视图和序列。
 
-有关上述命令的更多信息，请参阅postgresql.org [上的文档](https://www.postgresql.org/docs/10/app-psql.html)。 但是，请注意，并非PostgreSQL文档中显示的所有选项都受Experience Platform支持。
+有关上述命令的更多信息，请参阅postgresql.org [上的文档](https://www.postgresql.org/docs/10/app-psql.html)。 但请注意，并非PostgreSQL文档中显示的所有选项都受支持 [!DNL Experience Platform]。
 
