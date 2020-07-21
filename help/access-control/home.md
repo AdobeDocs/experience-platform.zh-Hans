@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
 workflow-type: tm+mt
-source-wordcount: '1177'
+source-wordcount: '1097'
 ht-degree: 3%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 3%
 
 # 访问控制概述
 
-Experience Platform访问控制通过Adobe [Admin Console提供](https://adminconsole.adobe.com)。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。
+访问控制 [!DNL Experience Platform] 通过Adobe [Admin Console提供](https://adminconsole.adobe.com)。 此功能利用中的产品用户档案, [!DNL Admin Console]将用户与权限和沙箱关联起来。
 
 ## 访问控制层次结构和工作流
 
-要为访问控制配置Experience Platform，您必须对具有Experience Platform产品集成的组织具有管理员权限。 授予或撤销权限的最低角色是产品 **用户档案管理员**。 其他可以管理权限的管理员角色 **包括产品管理员** (可以管理产品中的所有用户档案 **)和系统管** 理员（无限制）。 有关详细信息，请参阅Adobe [帮助中心](https://helpx.adobe.com/enterprise/using/admin-roles.html) 有关管理角色的文章。
+要配置访问控制, [!DNL Experience Platform]您必须对具有产品集成的组织具有管 [!DNL Experience Platform] 理员权限。 授予或撤销权限的最低角色是产品 **[!UICONTROL 用户档案管理员]**。 其他可以管理权限的管理员角色 **[!UICONTROL 包括产品管理员]** (可以管理产品中的所有用户档案 **[!UICONTROL )和系统管]** 理员（无限制）。 有关详细信息，请参阅Adobe [帮助中心](https://helpx.adobe.com/enterprise/using/admin-roles.html) 有关管理角色的文章。
 
 >[!NOTE]
 >
@@ -30,35 +30,35 @@ Experience Platform访问控制通过Adobe [Admin Console提供](https://adminco
 - 管理员登录到 [AdobeAdmin Console](#adobe-admin-console) ，并从 **概述页** 面上的产品列表中选择“Adobe Experience Platform”。
 - 管理员可以视图默 [认产品用户档案](#product-profiles) ，或根据需要创建新的客户产品用户档案。
 - 管理员可以编辑任何现有产品用户档案的权限和用户。
-- 在创建或编辑产品用户档案时，管理员使用“用户”选项卡将用户添加到用户档案 **中** ，并通过访问“权限”选项卡为这些用户授予权限(如“读取数据集”或“管理模式” **)** 。 同样，管理员也可以使用相同的权限选项卡将访问权限分配给沙箱。
-- 当用户登录到Experience Platform用户界面时，他们对平台功能的访问由步骤2授予他们的权限驱动。 例如，如果用户没有“视图集”权限，则侧面菜单中 *的* “数据集”选项卡对该用户将不可见。
+- 在创建或编辑产品用户档案时，管理员使用“用户”选项卡将用户添加到用户档案 **[!UICONTROL 中]** ，并通过访问“permissions[!UICONTROL adets]”选项卡，向这些用户(如“Read Datasets[!UICONTROL ”或“]Manage模式 **[!UICONTROL ”)授予]** 权限。 同样，管理员也可以使用相同的权限选项卡将访问权限分配给沙箱。
+- 当用户登录到用 [!DNL Experience Platform] 户界面时，其 [!DNL Platform] 权能的访问权限由步骤2授予的权限驱动。 例如，如果用户没有“[!UICONTROL 视图集]”权限，则侧面菜单中的 *[!UICONTROL Datasets]* 选项卡对该用户将不可见。
 
-有关如何在Experience Platform中管理访问控制的更详细步骤，请参阅 [访问控制用户指南](./ui/overview.md)。
+有关如何在中管理访问控制的更详细步 [!DNL Experience Platform]骤，请参阅 [访问控制用户指南](./ui/overview.md)。
 
-所有对Experience PlatformAPI的调用均经过验证以获得权限，如果在当前用户上下文中找不到相应的权限，则将返回错误。 在UI中，元素将被隐藏或更改，具体取决于授予当前用户的权限。
+对API的所 [!DNL Experience Platform] 有调用都经过验证以获得权限，如果在当前用户上下文中找不到相应的权限，则将返回错误。 在UI中，元素将被隐藏或更改，具体取决于授予当前用户的权限。
 
 ## Adobe Admin Console
 
-AdobeAdmin Console提供一个中心位置，用于管理Adobe产品授权和访问您的组织。 通过控制台，您可以授予用户组对各种平台功能(如“管理数据集”、“视图数据集”或“管理用户档案”)的访问权限。
+AdobeAdmin Console提供一个中心位置，用于管理Adobe产品授权和访问您的组织。 通过控制台，您可以授予用户组对各种功能(如“管 [!DNL Platform] 理数据集[!UICONTROL ”、]“视图数据集[!UICONTROL ”或“管理]用户档案[!UICONTROL ”)的访]问权限。
 
 ### 产品用户档案
 
-在Admin Console中，通过使用产品用户档案将权限分配给 **用户**。 产品用户档案允许您向一个或多个用户授予权限，还可以包含他们对通过产品用户档案分配给他们的沙箱范围的访问权限。 可以将用户分配给属于您组织的一个或多个产品用户档案。
+在中， [!DNL Admin Console]通过使用产品用户档案将权限分配给 **[!UICONTROL 用户]**。 产品用户档案允许您向一个或多个用户授予权限，还可以包含他们对通过产品用户档案分配给他们的沙箱范围的访问权限。 可以将用户分配给属于您组织的一个或多个产品用户档案。
 
 ### 默认产品用户档案
 
-Experience Platform包含两个预配置的默认产品用户档案。 下表概述了每个默认用户档案中提供的内容，包括它们授予访问权限的沙箱以及它们在该沙箱的范围内授予的权限。
+[!DNL Experience Platform] 附带两个预配置的默认产品用户档案。 下表概述了每个默认用户档案中提供的内容，包括它们授予访问权限的沙箱以及它们在该沙箱的范围内授予的权限。
 
 | 产品配置文件 | 沙箱访问 | 权限 |
 | --- | --- | --- |
-| 默认生产——全部访问 | 生产 | 除“沙箱管理”权限外，适用于Experience Platform的所有权限。 |
+| 默认生产——全部访问 | 生产 | 除“沙箱管理”权 [!DNL Experience Platform]限外，所有适用的权限。 |
 | 默认沙箱管理 | 不适用 | 仅提供对“沙箱管理”权限的访问。 |
 
 ## 沙箱和权限
 
-Experience Platform提供对一个生产沙箱的访问，并允许您创建非生产沙 **箱**。 非生产沙箱是数据虚拟化的一种形式，它允许您将数据与其他沙箱隔离，并通常用于开发实验、测试或试用。 产品用户档案 **的权限** ,用户档案的用户有权访问他们已获得访问权限的沙箱环境内的平台功能。
+[!DNL Experience Platform] 提供对一个生产沙箱的访问，并允许您创建非生产沙 **箱**。 非生产沙箱是数据虚拟化的一种形式，它允许您将数据与其他沙箱隔离，并通常用于开发实验、测试或试用。 产品用户档案 **[!UICONTROL 的权限]** ，使用户档案的用户能够访 [!DNL Platform] 问沙箱环境中授予他们访问权限的功能。
 
-有关Experience Platform中沙箱的更多信息，请参阅沙 [箱概述](../sandboxes/home.md)。
+有关中沙箱的详 [!DNL Experience Platform]细信息，请参阅沙 [箱概述](../sandboxes/home.md)。
 
 ### 访问沙箱
 
@@ -74,34 +74,34 @@ Experience Platform提供对一个生产沙箱的访问，并允许您创建非�
 
 ![](./images/permissions-overview.png)
 
-通过Admin Console授予的权限按类别排序，并授予对几个低级功能的访问权限。
+通过类别授予的权 [!DNL Admin Console] 限按排序，并授予对几个低级功能的访问权限。
 
-下表概述了Admin Console中Experience Platform的可用权限，以及他们授予访问的特定平台功能的说明。 有关如何向产品用户档案添加权限的详细步骤，请参阅 [访问控制用户指南](./ui/overview.md)。
+下表概述了中的可用权 [!DNL Experience Platform] 限， [!DNL Admin Console]以及这些权限授予的 [!DNL Platform] 特定权能的说明。 有关如何向产品用户档案添加权限的详细步骤，请参阅 [访问控制用户指南](./ui/overview.md)。
 
 | 类别 | 权限 | 描述 |
 | --- | --- | --- |
-| 数据建模 | 管理模式 | 访问读取、创建、编辑和删除模式及相关资源。 |
-| 数据建模 | 查看架构 | 对模式和相关资源的只读访问。 |
-| 数据管理 | 管理数据集 | 访问读取、创建、编辑和删除数据集。 模式的只读访问。 |
-| 数据管理 | 查看数据集 | 数据集和模式的只读访问。 |
-| 数据管理 | 数据监控 | 对监视数据集和流的只读访问。 |
-| 用户档案管理 | 管理用户档案 | 访问用于客户用户档案的读取、创建、编辑和删除数据集。 对可用用户档案的只读访问。 |
-| 用户档案管理 | 视图用户档案 | 对可用用户档案的只读访问。 |
-| 用户档案管理 | 导出区段受众 | 能够将评估的受众段导出到数据集。 |
-| 身份 | 管理身份命名空间 | 访问读取、创建、编辑和删除身份命名空间。 |
-| 身份 | 视图身份命名空间 | 身份命名空间的只读访问。 |
-| 沙箱管理 | 管理沙箱 | 访问读取、创建、编辑和删除沙箱。 |
-| 沙箱管理 | 查看沙盒 | 对属于您组织的沙箱的只读访问权限。 |
-| 沙箱管理 | 重置沙箱 | 能够重置沙箱。 |
-| 目标 | 管理目标 | 访问读取、创建、编辑和禁用目标。* |
-| 目标 | 视图目标 | 对“目录”选项卡中可用目标和“浏 *览* ”选项卡中已验证目标的只 *读访问* 。* |
-| 目标 | 激活目标 | 能够将数据激活到已创建的活动目标。 此权限要求向将激活目标的用户授予“视图目标”或“管理目标”。* |
-| 数据获取 | 管理源 | 访问读取、创建、编辑和禁用源。 |
-| 数据获取 | 视图源 | 对“目录”选项卡中的可用源和“浏览” *选项卡中* 经过身份验证的源进行只 *读访问* 。 |
-| 数据科学工作区 | 管理数据科学工作区 | 在数据科学工作区中访问读取、创建、编辑和删除功能。 |
+| [!DNL Data Modeling] | [!UICONTROL 管理模式] | 访问读取、创建、编辑和删除模式及相关资源。 |
+| [!DNL Data Modeling] | [!UICONTROL 查看架构] | 对模式和相关资源的只读访问。 |
+| [!DNL Data Management] | [!UICONTROL 管理数据集] | 访问读取、创建、编辑和删除数据集。 模式的只读访问。 |
+| [!DNL Data Management] | [!UICONTROL 查看数据集] | 数据集和模式的只读访问。 |
+| [!DNL Data Management] | [!UICONTROL 数据监控] | 对监视数据集和流的只读访问。 |
+| [!DNL Profile Management] | [!UICONTROL 管理用户档案] | 访问用于客户用户档案的读取、创建、编辑和删除数据集。 对可用用户档案的只读访问。 |
+| [!DNL Profile Management] | [!UICONTROL 视图用户档案] | 对可用用户档案的只读访问。 |
+| [!DNL Profile Management] | [!UICONTROL 导出区段受众] | 能够将评估的受众段导出到数据集。 |
+| [!DNL Identities] | [!UICONTROL 管理身份命名空间] | 访问读取、创建、编辑和删除身份命名空间。 |
+| [!DNL Identities] | [!UICONTROL 视图身份命名空间] | 身份命名空间的只读访问。 |
+| [!DNL Sandbox Administration] | [!UICONTROL 管理沙箱] | 访问读取、创建、编辑和删除沙箱。 |
+| [!DNL Sandbox Administration] | [!UICONTROL 查看沙盒] | 对属于您组织的沙箱的只读访问权限。 |
+| [!DNL Sandbox Administration] | [!UICONTROL 重置沙箱] | 能够重置沙箱。 |
+| [!DNL Destinations] | [!UICONTROL 管理目标] | 访问读取、创建、编辑和禁用目标。* |
+| [!DNL Destinations] | [!UICONTROL 视图目标] | 对“目录”选项卡中可用目标和“浏 *[!UICONTROL 览]* ”选项卡中已验证目标的只 *[!UICONTROL 读访问]* 。* |
+| [!DNL Destinations] | [!UICONTROL 激活目标] | 能够将数据激活到已创建的活动目标。 此权限要求向将激活目标 [!UICONTROL 的用户] 授予“视图目标”或“管理目标”。* |
+| [!DNL Data Ingestion] | [!UICONTROL 管理源] | 访问读取、创建、编辑和禁用源。 |
+| [!DNL Data Ingestion] | [!UICONTROL 视图源] | 对“目录”选项卡中的可用源和“浏览” *[!UICONTROL 选项卡中]* 经过身份验证的源进行只 *[!UICONTROL 读访问]* 。 |
+| [!DNL Data Science Workspace] | [!UICONTROL 管理数据科学工作区] | 在中访问读取、创建、编辑和删除 [!DNL Data Science Workspace]。 |
 
-_(*)此许可要求对实时客户数据平台进行规定。 有关实时CDP的详细信息，请首先阅读实[时CDP概述](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)。_
+_(*)本许可要求对此作出规定[!DNL Real-time Customer Data Platform]。 有关实时CDP的详细信息，请首先阅读实[时CDP概述](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)。_
 
 ## 后续步骤
 
-阅读本指南，您便了解了访问控制的主要原则。 您现在可以继续阅读 [访问控制用户指南](./ui/overview.md) ，详细了解如何使用Admin Console创建产品用户档案和为平台分配权限。
+阅读本指南，您便了解了访问控制的主要原则 [!DNL Experience Platform]。 您现在可以继续阅读 [访问控制用户指南](./ui/overview.md) ，详细了解如何使用 [!DNL Admin Console] 创建产品用户档案和为其分配权限 [!DNL Platform]。
