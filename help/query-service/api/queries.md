@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务开发人员指南
 topic: queries
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
 workflow-type: tm+mt
-source-wordcount: '647'
+source-wordcount: '645'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 ## 示例API调用
 
-以下各节将介绍您可以使用查询服务API `/queries` 中的端点进行的调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
+以下各节将演练您可以使用API中的 `/queries` 端点进行的 [!DNL Query Service] 调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
 
 ### 检索列表查询
 
