@@ -4,18 +4,21 @@ solution: Experience Platform
 title: 逻辑量词
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 92f92f480f29f7d6440f4e90af3225f9a1fcc3d0
+source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+workflow-type: tm+mt
+source-wordcount: '188'
+ht-degree: 5%
 
 ---
 
 
 # 逻辑量词函数
 
-逻辑量化符可用于用用户档案查询语言(PQL)中的数组声明条件。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语言概述](./overview.md)。
+逻辑量化器可用于在(PQL)中用数组 [!DNL Profile Query Language] 声明条件。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
 
 ## 存在
 
-该函 `exists` 数确定阵列中的项的存在，只要满足所提供的条件。
+该函 `exists` 数确定在数组中的项的存在，只要它满足所提供的条件。
 
 **格式**
 
@@ -28,11 +31,11 @@ exists {VARIABLE} from {EXPRESSION} : {CONDITION}
 | ---------- | ----------- |
 | `{VARIABLE}` | 变量的名称。 |
 | `{EXPRESSION}` | 正在检查的数组。 |
-| `{CONDITION}` | 一个可选表达式，它过滤器数组中返回的值。 |
+| `{CONDITION}` | 一个可选表达式,过滤器数组中返回的值。 |
 
 **示例**
 
-以下PQL查询可获取所有价格高于50美元或SKU为“PS”的事件。
+以下PQL查询可获取所有价格高于$50或SKU为“PS”的事件。
 
 ```sql
 exists E from xEvent where (E.commerce.item.price > 50), I from E.productListItems where I.SKU = "PS"
@@ -53,11 +56,11 @@ forall {VARIABLE} from {EXPRESSION} : {CONDITION}
 | ---------- | ----------- |
 | `{VARIABLE}` | 变量的名称。 |
 | `{EXPRESSION}` | 正在检查的数组。 |
-| `{CONDITION}` | 一个可选表达式，它过滤器数组中返回的值。 |
+| `{CONDITION}` | 一个可选表达式,过滤器数组中返回的值。 |
 
 **示例**
 
-以下PQL查询可获取所有价格高于50美元且SKU为“PS”的事件。
+以下PQL查询可获取所有价格高于$50且SKU为“PS”的事件。
 
 ```sql
 forall E from xEvent where (E.commerce.item.price > 50), I from E.productListItems where I.SKU = "PS"
@@ -65,4 +68,4 @@ forall E from xEvent where (E.commerce.item.price > 50), I from E.productListIte
 
 ## 后续步骤
 
-现在您已经了解了逻辑量词，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [用户档案查询语概述](./overview.md)。
+现在您已经了解了逻辑量词，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请阅读 [用户档案查询语概述](./overview.md)。
