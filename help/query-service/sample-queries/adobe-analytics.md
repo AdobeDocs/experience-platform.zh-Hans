@@ -4,18 +4,21 @@ solution: Experience Platform
 title: 示例查询
 topic: queries
 translation-type: tm+mt
-source-git-commit: 75c446aed75100bd2b5b4a3d365c090cb01dcc69
+source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+workflow-type: tm+mt
+source-wordcount: '862'
+ht-degree: 1%
 
 ---
 
 
-# Adobe Analytics数据的示例查询
+# Adobe查询Analytics数据示例
 
-来自选定Adobe Analytics报告套件的数据将转换为XDM ExperienceEvents，并作为数据集引入Adobe Experience Platform。 本文档概述了Adobe Experience Platform查询服务利用这些数据的许多使用案例，其中包含的示例查询应与您的Adobe Analytics数据集结合使用。 有关映射 [到XDM ExperienceEvents的更多信息](../../sources/connectors/adobe-applications/mapping/analytics.md) ，请参阅Analytics字段映射文档。
+选定AdobeAnalytics报表包中的数据将转换为XDM [!DNL ExperienceEvents] 并作为数据集引入Adobe Experience Platform。 此文档概括了Adobe Experience Platform利用此数据的 [!DNL Query Service] 许多用例，其中包含的示例查询应与您的AdobeAnalytics数据集配合使用。 有关映射 [到XDM的更多信息](../../sources/connectors/adobe-applications/mapping/analytics.md) ，请参阅Analytics字段映射文档 [!DNL ExperienceEvents]。
 
 ## 入门指南
 
-本文档中的SQL示例要求您编辑SQL并根据您感兴趣的评估数据集、eVar、事件或时间范围为查询填写预期参数。 在随后的SQL示例 `{ }` 中，随时提供参数。
+此文档中的SQL示例要求您编辑SQL，并根据您感兴趣的查询集、eVar、事件或时间范围为填写预期参数。 在后面的SQL示例 `{ }` 中提供参数。
 
 ## 常用SQL示例
 
@@ -33,7 +36,7 @@ GROUP BY Day, Hour
 ORDER BY Hour;
 ```
 
-### 指定日期前10个查看页面
+### 给定一天内查看的前10个页面
 
 ```sql
 SELECT web.webpagedetails.name AS Page_Name, 
@@ -61,7 +64,7 @@ ORDER BY Count DESC
 LIMIT  10;
 ```
 
-### 按用户活动列出的10大城市
+### 按用户划分的十大城市活动
 
 ```sql
 SELECT concat(placeContext.geo.stateProvince, ' - ', placeContext.geo.city) AS state_city, 
@@ -92,7 +95,7 @@ ORDER BY Total_Product_Views DESC
 LIMIT  10;
 ```
 
-### 前10大订单收入
+### 前10个订单总收入
 
 ```sql
 SELECT Purchase_ID, 
@@ -109,7 +112,7 @@ ORDER BY total_order_revenue DESC
 LIMIT  10;
 ```
 
-### 事件按日计数
+### 事件数（按日）
 
 ```sql
 SELECT Substring(from_utc_timestamp(timestamp, 'America/New_York'), 1, 10) AS Day, 
@@ -126,9 +129,9 @@ ORDER BY Hour;
 
 ## 销售变量（产品语法）
 
-在Adobe Analytics中，可以通过称为“销售变量”的特殊配置变量收集自定义产品级数据。 这些事件基于eVar或自定义变量。 这些变量与其标准用法的区别在于，它们代表在点击中找到的每个产品的单独值，而不是仅代表点击的单个值。 这些变量称为产品语法销售变量。 这允许在客户的搜索结果中收集每个产品的“折扣额”或有关产品“页面位置”的信息。
+在AdobeAnalytics中，可以通过称为“销售变量”的专门配置的变量来收集自定义产品级数据。 这些事件基于eVar或自定义变量。 这些变量与其标准用途的不同之处在于它们代表在点击中找到的每个产品的单独值，而不是只代表点击的单个值。 这些变量称为产品语法推销变量。 这允许在客户的搜索结果中收集每个产品的“折扣额”或产品的“页面位置”等信息。
 
-以下是用于访问Analytics数据集中的销售变量的XDM字段：
+以下是用于访问数据集中销售变量的XDM [!DNL Analytics] 字段：
 
 ### eVar
 
@@ -136,7 +139,7 @@ ORDER BY Hour;
 productListItems[#]._experience.analytics.customDimensions.evars.evar#
 ```
 
-其中 `[#]` 是数组索引， `evar#` 是特定的eVar变量。
+其中 `[#]` 是数组索引， `evar#` 并且是特定的eVar变量。
 
 ### 自定义事件
 
@@ -148,7 +151,7 @@ productListItems[#]._experience.analytics.event1to100.event#.value
 
 ### 示例查询
 
-以下是返回销售eVar的示例查询，以及中找到的第一个产品的事件 `productListItems`。
+以下是返回销售eVar的示例查询，以及在中找到的第一个产品的事件 `productListItems`。
 
 ```sql
 SELECT
@@ -162,7 +165,7 @@ WHERE _ACP_YEAR=2019 AND _ACP_MONTH=7 AND _ACP_DAY=23
 LIMIT 10
 ```
 
-下一个查询“爆炸”每个 `productListItems` 商品的eVar和事件，并返回每个产品。 该字 `_id` 段包含在内，用于显示与原始点击的关系。 该 `_id` 值是ExperienceEvent数据集中唯一的主键。
+下一个查询“爆炸” `productListItems` 并返回每个销售eVar和事件。 该 `_id` 字段用于显示与原始点击的关系。 该 `_id` 值是数据集中唯一的主键 [!DNL ExperienceEvent] 。
 
 ```sql
 SELECT
@@ -184,7 +187,7 @@ LIMIT 20
 
 ### 实施示例查询时的常见错误
 
-当您尝试检索当前数据集中不存在的字段时，会遇到“No suct field”（无此类结构字段）错误。 评估错误消息中返回的原因以标识可用字段，然后更新查询并重新运行。
+当您尝试检索当前数据集中不存在的字段时，会遇到“无此类结构字段”错误。 评估错误消息中返回的原因以标识可用字段，然后更新查询并重新运行。
 
 ```
 ERROR: ErrorCode: 08P01 sessionId: XXXX queryId: XXXX Unknown error encountered. Reason: [No such struct field evar1 in eVar10, eVar13, eVar62, eVar88, eVar2;]
@@ -192,28 +195,28 @@ ERROR: ErrorCode: 08P01 sessionId: XXXX queryId: XXXX Unknown error encountered.
 
 ## 销售变量（转换语法）
 
-在Adobe Analytics中找到的另一个类型是“转化语法”。 使用产品语法时，值会与产品同时收集，但这要求数据出现在同一页面上。 某些情况下，在与产品相关的转换或事件之前，数据会出现在页面上。 例如，考虑“产品查找方法”报告用例。
+AdobeAnalytics中的另一种类型推销变量是转换语法。 使用产品语法时，值会与产品同时收集，但这要求数据出现在同一页面上。 在转换或事件与产品相关的兴趣之前，会在页面上发生数据。 例如，考虑“产品查找方法”报告用例。
 
-1. 用户对“winter hat”执行内部搜索，将启用“转换语法”的“销售eVar6”设置为“内部搜索：winter hat”
-2. 用户单击“华夫饼”并登录到产品详细信息页面。\
-   a.在这里登陆，就 `Product View` 会以12.99美元的价格，为“华夫饼豆”卖事件。\
-   b.由于 `Product View` 被配置为绑定事件，因此产品“华夫饼”现在绑定到“internal search:winter hat”的eVar6值。 收集“华夫饼”产品后，它将与“内部搜索：温特帽”关联，直到(1)达到到期设置或(2)设置新的eVar6值并再次与该产品发生绑定事件。
-3. 用户将产品添加到其购物车，并触发 `Cart Add` 事件。
-4. 用户对“夏季衬衫”执行另一次内部搜索，该搜索将启用“转换语法”的“销售eVar6”设置为“内部搜索：夏季衬衫”
-5. 用户单击“sporty t-shirt”并登录到产品详细信息页面。\
-   a.在这里登陆， `Product View` 事件上写着“运动T恤，售价19.99美元”。\
-   b.该事件 `Product View` 仍是我们的绑定事件，因此现在，产品“sporty t-shirt”与“internal search:summer shirt”的eVar6值绑定，而先前产品“华夫饼”仍与“internal search:waffle beanie”的eVar6值绑定。
-6. 用户将产品添加到其购物车，并触发 `Cart Add` 事件。
-7. 用户将注销这两个产品。
+1. 用户执行“winter hat”的内部搜索，该搜索将启用“转换语法”的“推销eVar6”设置为“内部搜索：winter hat”
+2. 用户单击“华夫饼”并登录产品详细信息页面。\
+   a. 在这里登陆， `Product View` 以12.99美元的价格事件“华夫饼豆”。\
+   b. 由于 `Product View` 已配置为绑定事件，因此产品“华夫饼”现在绑定到“internal search:winter hat”的eVar6值。 收集“华夫豆奶”产品后，它将与“内部搜索：冬季帽”关联，直到(1)达到到期设置或(2)设置新的eVar6值，并再次对该产品发生绑定事件。
+3. 用户将产品添加到购物车，并触发 `Cart Add` 事件。
+4. 用户对“夏季衬衫”执行另一个内部搜索，该搜索将启用“转换语法”的“推销eVar6”设置为“内部搜索：夏季衬衫”
+5. 用户单击“sporty t-shirt”并登录产品详细信息页面。\
+   a. 登陆这里， `Product View` 事件上的T恤售价19.99美元。\
+   b. 该事件 `Product View` 仍是我们的有约束力的事件，因此现在，产品“sporty t-shirt”与“internal search:summer shirt”的eVar6值相绑定，而先前产品“华夫饼”仍与“internal search:waffle beanie”的eVar6值相绑定。
+6. 用户将产品添加到购物车，并触发 `Cart Add` 事件。
+7. 用户签出这两种产品。
 
-在报告中，订单、收入、产品视图和购物车加货将针对eVar6进行报告，并与绑定产品的活动保持一致。
+在报告中，订单、收入、产品视图和购物车添加将根据eVar6进行报告，并与绑定产品的活动保持一致。
 
-| eVar6（产品查找方法） | 收入 | 订单 | 产品视图 | 购物车加货 |
+| eVar6（产品查找方法） | 收入 | 订单 | 产品视图 | 购物车 |
 |---|---|---|---|---|
 | 内部搜索：夏季衬衫 | 19.99 | 1 | 1 | 1 |
-| 内部搜索：冬帽 | 12.99 | 1 | 1 | 1 |
+| 内部搜索：冬季帽 | 12.99 | 1 | 1 | 1 |
 
-以下是在Analytics数据集中生成“转换语法”的XDM字段：
+以下是要在数据集中生成“转换语法”的XDM [!DNL Analytics] 字段：
 
 ### eVar
 
@@ -229,7 +232,7 @@ _experience.analytics.customDimensions.evars.evar#
 productListItems[#].sku
 ```
 
-其中 `[#]` 是数组索引。
+数组 `[#]` 索引的位置。
 
 ### 示例查询
 
@@ -252,7 +255,7 @@ WHERE commerce.productViews.value = 1 OR commerce.purchases.value = 1 OR _experi
 LIMIT 100
 ```
 
-下面是一个示例查询，它将绑定值保持到相应产品的后续出现。 最低子查询在所声明的绑定事件上建立与产品的值关系。 下一个子查询在与相应产品的后续交互中执行该绑定值的归因。 顶级选择聚合结果以生成报告。
+以下是将绑定值保持到相应产品后续出现的示例查询。 最低子查询在所声明的绑定事件上建立与产品的值关系。 下一个子查询在与相应产品的后续交互中执行该绑定值的归因。 顶层选择聚合结果以生成报告。
 
 ```sql
 SELECT
