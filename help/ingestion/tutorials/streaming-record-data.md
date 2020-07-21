@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 流记录数据
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 6a371aab5435bac97f714e5cf96a93adf4aa0303
+source-git-commit: 80392190c7fcae9b6e73cc1e507559f834853390
 workflow-type: tm+mt
-source-wordcount: '1107'
+source-wordcount: '1059'
 ht-degree: 2%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 2%
 
 # 流记录数据到Adobe Experience Platform
 
-本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform数据摄取服务API的一部分。
+本教程将帮助您开始使用流式摄取API，它是Adobe Experience PlatformAPI的一 [!DNL Data Ingestion Service] 部分。
 
 ## 入门指南
 
 本教程需要掌握各种Adobe Experience Platform服务的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [体验数据模型(XDM)](../../xdm/home.md): 平台组织体验数据的标准化框架。
-- [实时客户用户档案](../../profile/home.md): 根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
-- [模式注册开发人员指南](../../xdm/api/getting-started.md): 全面的指南，涵盖模式注册表API的每个可用端点以及如何调用它们。 这包括了解您 `{TENANT_ID}`在本教程中的调用，以及了解如何创建模式，该数据用于创建用于摄取的数据集。
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织体验数据 [!DNL Platform] 的标准化框架。
+- [!DNL Real-time Customer Profile](../../profile/home.md): 根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+- [模式注册开发人员指南](../../xdm/api/getting-started.md): 全面的指南，涵盖API的每个可用端点 [!DNL Schema Registry] 以及如何向它们发出调用。 这包括了解您 `{TENANT_ID}`在本教程中的调用，以及了解如何创建模式，该数据用于创建用于摄取的数据集。
 
 此外，本教程要求您已创建流连接。 有关创建流连接的详细信息，请阅读创 [建流连接教程](./create-streaming-connection.md)。
 
@@ -30,31 +30,31 @@ ht-degree: 2%
 
 ### 读取示例API调用
 
-本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
+本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
 - 授权： 承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关平台中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
+>有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
 - 内容类型： application/json
 
-## 基于XDM个人模式类编写用户档案
+## 根据类编写模式 [!DNL XDM Individual Profile]
 
-要创建数据集，您首先需要创建实现XDM单个模式类的新用户档案。 有关如何创建模式的更多信息，请阅读 [模式注册API开发人员指南](../../xdm/api/getting-started.md)。
+要创建数据集，您首先需要创建实现该类的新模式 [!DNL XDM Individual Profile] 集。 有关如何创建模式的更多信息，请阅读 [模式注册API开发人员指南](../../xdm/api/getting-started.md)。
 
 **API格式**
 
@@ -96,7 +96,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 | -------- | ----------- |
 | `title` | 要用于模式的名称。 此名称必须唯一。 |
 | `description` | 您正在创建的模式的有意义描述。 |
-| `meta:immutableTags` | 在此示例中，标 `union` 签用于将您的数据保 [留到实时客户用户档案](../../profile/home.md)。 |
+| `meta:immutableTags` | 在本例中，标 `union` 签用于将数据保留到 [!DNL Real-time Customer Profile](../../profile/home.md)。 |
 
 **响应**
 
@@ -161,7 +161,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 
 1. 工作电子邮件地址将成为必填字段。 这意味着，未使用此字段发送的消息将无法通过验证，且不会被摄取。
 
-2. 实时客户用户档案将使用工作电子邮件地址作为标识符，帮助拼凑有关该个人的更多信息。
+2. [!DNL Real-time Customer Profile] 将使用工作电子邮件地址作为标识符，帮助拼凑有关该个人的更多信息。
 
 ### 请求
 
@@ -221,7 +221,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/des
 
 >[!NOTE]
 >
->此数据集将启用 **实时客户用户档案****和Identity Service**。
+>此数据集将启用 **[!DNL Real-time Customer Profile]** 和 **[!DNL Identity Service]**。
 
 **API格式**
 
@@ -264,7 +264,7 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
 
 ## 将记录数据引入流连接
 
-数据集和流连接就位后，您可以收录XDM格式的JSON记录以将记录数据录入平台。
+在数据集和流连接到位后，您可以收录XDM格式的JSON记录，将记录数据录入 [!DNL Platform]。
 
 **API格式**
 
@@ -326,7 +326,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
 
 **响应**
 
-成功的响应会返回HTTP状态200，其中包含新流用户档案的详细信息。
+成功的响应会返回HTTP状态200，其中包含新流的详细信息 [!DNL Profile]。
 
 ```json
 {
@@ -348,11 +348,11 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
 
 ## 检索新摄取的记录数据
 
-要验证之前摄取的记录，可以使 [用用户档案访问](../../profile/api/entities.md) API检索记录数据。
+要验证之前摄取的记录，您可以使用 [!DNL Profile Access API](../../profile/api/entities.md) 该记录检索记录数据。
 
 >[!NOTE]
 >
->如果未定义合并策略ID和模式。</span>name或relatedSchema</span>.name是 `_xdm.context.profile`,用户档案访问将获取所 **有相关** 的身份。
+>如果未定义合并策略ID和模式。</span>name或relatedSchema</span>.name是 `_xdm.context.profile`，将 [!DNL Profile Access] 获取所 **有相关** 的身份。
 
 **API格式**
 
@@ -431,7 +431,7 @@ curl -X GET 'https://platform.adobe.io/data/core/ups/access/entities?schema.name
 
 ## 后续步骤
 
-通过阅读此文档，您现在了解如何使用流连接将记录数据引入平台。 您可以尝试使用不同的值进行更多调用并检索更新的值。 此外，您还可以通过平台UI开始监视所摄数据。 有关详细信息，请阅读监 [视数据获取指南](../quality/monitor-data-flows.md) 。
+通过阅读此文档，您现在了解如何使用流连接将记录 [!DNL Platform] 数据引入。 您可以尝试使用不同的值进行更多调用并检索更新的值。 此外，您还可以通过UI开始监视所摄 [!DNL Platform] 数据。 有关详细信息，请阅读监 [视数据获取指南](../quality/monitor-data-flows.md) 。
 
 有关流摄取的详细信息，请阅读流摄 [取概述](../streaming-ingestion/overview.md)。
 
