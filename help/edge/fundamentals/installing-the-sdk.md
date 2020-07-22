@@ -4,9 +4,9 @@ seo-title: Adobe Experience PlatformWeb SDK安装SDK
 description: 了解如何安装Experience PlatformWeb SDK
 seo-description: 了解如何安装Experience PlatformWeb SDK
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: c5afced244c661b0ec0bcf0109191a2dacf886aa
 workflow-type: tm+mt
-source-wordcount: '570'
+source-wordcount: '583'
 ht-degree: 1%
 
 ---
@@ -71,6 +71,10 @@ Adobe Experience Platform [!DNL Web SDK] 可在内容投放网络(CDN)上使用�
 ```
 
 这会加载一个脚本，确保 `window.Promise` 该脚本是有效的Promise实现。
+
+>[!NOTE]
+>
+>如果选择加载其他承诺实施，请确保它支持 `Promise.prototype.finally`。
 
 ## 同步加载JavaScript文件 {#loading-javascript-synchronously}
 
