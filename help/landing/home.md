@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Adobe Experience Platform概述
 topic: getting started
 translation-type: tm+mt
-source-git-commit: efde1b9bf65bde1a55084774c845b8d5585272d4
+source-git-commit: 444185df28026bf2045afcdadf29f9255885dafb
 workflow-type: tm+mt
-source-wordcount: '844'
-ht-degree: 3%
+source-wordcount: '820'
+ht-degree: 5%
 
 ---
 
@@ -34,34 +34,13 @@ Adobe Experience Platform是市场上功能最强大、最灵活、最开放的�
 
 ## 浏览器支持
 
-Adobe Experience Platform网站和相关网站(如AdobeAdmin Console)均设计为在最新版Google Chrome、Safari、Firefox和Microsoft Edge中发挥最佳效果。 在旧版本的浏览器上使用某些功能时可能遇到问题。
+Adobe Experience Platform网站和相关网站(如AdobeAdmin Console)均设计为在最新版Google Chrome、 **Safari** 、Firefox和Microsoft Edge中发挥最佳效果。 在旧版本的浏览器上使用某些功能时可能遇到问题。
 
-<table>
-<tr>
-  <th>Operating system</th>
-  <th>支持的浏览器</th>
-  <th></th>
-  <th></th>
-</tr>
-<tr>
-  <td>Mac OS X</td>
-  <td>最新版Google Chrome</td>
-  <td>最新版Safari</td>
-  <td>最新版Firefox</td>
-</tr>
-<tr>
-  <td>Windows 10</td>
-  <td>最新版Google Chrome</td>
-  <td>最新版Microsoft Edge</td>
-  <td>最新版Firefox</td>
-</tr>
-<tr>
-  <td>Windows 7</td>
-  <td>最新版Google Chrome</td>
-  <td> </td>
-  <td>最新版Firefox</td>
-</tr>
-</table>
+| Operating system | 支持的浏览器 |  |  |
+|---|---|---|---|
+| Mac OS X | Google Chrome | Safari | Firefox |
+| Windows 10 | Google Chrome | Microsoft Edge | Firefox |
+| Windows 7 | Google Chrome |  | Firefox&lt; |
 
 不受支持:
 
