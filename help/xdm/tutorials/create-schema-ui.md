@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用架构编辑器创建架构
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 661789fa15ea11b0e42060b1b90d74785c04fa1f
 workflow-type: tm+mt
 source-wordcount: '3376'
 ht-degree: 0%
@@ -156,7 +156,7 @@ ht-degree: 0%
 
 单 **[!UICONTROL 击“Loyalty]** Members”旁[!UICONTROL 的“添加字段]”，在结构中创建新节点。 此节点（在本示例中称为“_tenantId”）表示您的IMS组织的租户ID，前面有下划线。 租户ID的存在表示您正在添加的字段包含在您组织的命名空间中。
 
-换言之，您添加的字段对您的组织来说是独一无二的，并将保存在仅可 [!DNL Schema Registry] 供您的IMS组织访问的特定区域中。 您定义的字段必须始终添加到您的命名空间中，以防止与来自其他标准类、混音、数据类型和字段的名称发生冲突。
+换言之，您添加的字段对您的组织来说是独一无二的，并将保存在仅可 [!DNL Schema Registry] 供IMS组织访问的特定区域中。 您定义的字段必须始终添加到您的命名空间中，以防止与来自其他标准类、混音、数据类型和字段的名称发生冲突。
 
 在该命名空间节点中有一个“[!UICONTROL 新字段]”。 这是“忠诚度细[!UICONTROL 节]”混合的开始。
 
@@ -273,7 +273,7 @@ More information about relationships and other schema metadata can be found in t
 
 要使模式能够与之一起使用， [!DNL Real-time Customer Profile]必须定义主标识。 如果您尝试启用模式而未先定义主标识，则会收到“缺少主标识”错误消息。
 
-![](../images/tutorials/create-schema/missing_primary_identity.png)
+<img src="../images/tutorials/create-schema/missing_primary_identity.png" width="600" /><br>
 
 要启用“忠诚会员”模式以在 [!DNL Profile]中使用，请首先单击编辑器“结构” *部分* 中的“忠诚会员”。
 
