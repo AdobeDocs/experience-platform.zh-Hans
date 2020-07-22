@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用模式注册表API创建模式
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: b021b6813af18e29f544dc55541f23dd7dd57d47
 workflow-type: tm+mt
 source-wordcount: '2322'
 ht-degree: 1%
@@ -1015,7 +1015,7 @@ curl -X POST \
 }
 ```
 
-## 启用模式以在 [!DNL Real-time Customer Profile]
+## 启用模式以在 [!DNL Real-time Customer Profile] {#profile}
 
 通过向属性添加“合并”标 `meta:immutableTags` 签，您可以启用“忠诚会员”模式供用户使用 [!DNL Real-time Customer Profile]。
 
