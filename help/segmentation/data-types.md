@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Adobe Experience Platform分段服务数据类型
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 96b6f820e5d372446c4927e7719aedadb2b11bc9
 workflow-type: tm+mt
-source-wordcount: '406'
-ht-degree: 2%
+source-wordcount: '456'
+ht-degree: 3%
 
 ---
 
@@ -50,15 +50,15 @@ ht-degree: 2%
 | “应用时间规则”切换按钮 | 整合日期数据。 |
 | 等于、不等于、开始与、不开始与、结尾与、不结尾与、包含、不包含、存在、不存在 | 合并字符串数据。 |
 
-## 区段
-
-现有区段定义也可用作新区段定义的组件，从而将其属性和基于事件的规则添加到新区段。
-
-## 受众
+### 受众共享
 
 外部受众还可用作新区段定义的组件，从而将其属性规则添加到新区段。
 
-目前，只支持Adobe Audience Manager作为受众。 将来将启用其他源。
+目前，只支持将Adobe Audience Manager作为外部受众，未来将启用其他源。 有关将Adobe Audience Manager受众与平台结合使用的更多信息，请参 [阅Adobe Audience Manager文档中的受众共享指南](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)。
+
+### 区段共享
+
+在平台中创建的细分可用于其 [他Adobe Experience Cloud核心服务](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/experience-cloud.html)。 要启用此功能，您需要联系您的解决方案架构师或顾问。
 
 ## 其他数据类型
 
