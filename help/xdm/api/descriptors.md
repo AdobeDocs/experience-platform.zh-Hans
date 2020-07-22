@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 描述符
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: b021b6813af18e29f544dc55541f23dd7dd57d47
 workflow-type: tm+mt
 source-wordcount: '1477'
 ht-degree: 1%
@@ -24,7 +24,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->描述符需要用替换的唯一“接 `xed` 受” `xdm`标头，但在其它方面与“接受”标头非常相似 [!DNL Schema Registry]。 以下示例调用中包含了正确的接受标头，但要确保使用正确的标头，请格外小心。
+>描述符需要用唯一的“接受”标 `xed` 头替换， `xdm`但在其它情况下，它与“接受”标题在中其他位置使用非常相似 [!DNL Schema Registry]。 以下示例调用中包含了正确的接受标头，但要确保使用正确的标头，请格外小心。
 
 ## 列表描述符
 
@@ -369,7 +369,7 @@ curl -X DELETE \
 
 #### 引用标识描述符
 
-引用标识描述符为模式字段提供引用上下文，允许其与目标模式的主标识字段链接。 字段必须已用标识描述符进行标记，然后才能将引用描述符应用于这些字段。
+引用标识描述符提供对模式字段主标识的引用上下文，允许其被其他模式中的字段引用。 字段必须已用标识描述符进行标记，然后才能将引用描述符应用于这些字段。
 
 ```json
 {
