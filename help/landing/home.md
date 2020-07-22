@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Adobe Experience Platform概述
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 6c90e68bde1fb8474ba23127ecf7b6fd617c7765
+source-git-commit: efde1b9bf65bde1a55084774c845b8d5585272d4
 workflow-type: tm+mt
-source-wordcount: '747'
-ht-degree: 2%
+source-wordcount: '844'
+ht-degree: 3%
 
 ---
 
@@ -31,6 +31,43 @@ Adobe Experience Platform是市场上功能最强大、最灵活、最开放的�
 **幕后：**
 
 >[!VIDEO](https://video.tv.adobe.com/v/28144?quality=12&learn=on)
+
+## 浏览器支持
+
+Adobe Experience Platform网站和相关网站(如AdobeAdmin Console)均设计为在最新版Google Chrome、Safari、Firefox和Microsoft Edge中发挥最佳效果。 在旧版本的浏览器上使用某些功能时可能遇到问题。
+
+<table>
+<tr>
+  <th>Operating system</th>
+  <th>支持的浏览器</th>
+  <th></th>
+  <th></th>
+</tr>
+<tr>
+  <td>Mac OS X</td>
+  <td>最新版Google Chrome</td>
+  <td>最新版Safari</td>
+  <td>最新版Firefox</td>
+</tr>
+<tr>
+  <td>Windows 10</td>
+  <td>最新版Google Chrome</td>
+  <td>最新版Microsoft Edge</td>
+  <td>最新版Firefox</td>
+</tr>
+<tr>
+  <td>Windows 7</td>
+  <td>最新版Google Chrome</td>
+  <td> </td>
+  <td>最新版Firefox</td>
+</tr>
+</table>
+
+不受支持:
+
+* Internet Explorer 10
+* Windows 8
+* Opera
 
 ## 语言支持
 
@@ -110,7 +147,7 @@ Adobe Experience Platform文档提供多种语言版本。 要更改语言，请
 
 >[!VIDEO](https://video.tv.adobe.com/v/32554?quality=12&learn=on)
 
-Adobe Experience Platform提供的主要优势之一是它能够与其他现有Adobe服务相集成。 以下视频概述了服务如 [!DNL Experience Platform] 何与Adobe Analytics [!DNL Experience Cloud] 、Adobe Target、Adobe Campaign、Adobe Experience Manager、、以及 [!DNL Customer Attributes][!DNL Audience Library][!DNL Experience Platform Launch]等应用程序和功能相集成。
+Adobe Experience Platform提供的主要优势之一是它能够与其他现有Adobe服务相集成。 以下视频概述了服务如 [!DNL Experience Platform] 何与AdobeAnalytics [!DNL Experience Cloud] 、Adobe Target、Adobe Campaign、Adobe Experience Manager、、和 [!DNL Customer Attributes][!DNL Audience Library][!DNL Experience Platform Launch]等应用程序和功能集成。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32553?quality=12&learn=on)
 
