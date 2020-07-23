@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Adobe Experience Platform概述
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 444185df28026bf2045afcdadf29f9255885dafb
+source-git-commit: 0c4395556a546915df4718a0e812b38b15e04735
 workflow-type: tm+mt
-source-wordcount: '820'
-ht-degree: 5%
+source-wordcount: '812'
+ht-degree: 4%
 
 ---
 
@@ -34,7 +34,7 @@ Adobe Experience Platform是市场上功能最强大、最灵活、最开放的�
 
 ## 浏览器支持
 
-Adobe Experience Platform网站和相关网站(如AdobeAdmin Console)均设计为在最新版Google Chrome、 **Safari** 、Firefox和Microsoft Edge中发挥最佳效果。 在旧版本的浏览器上使用某些功能时可能遇到问题。
+该Adobe Experience Platform设计为可在最新版 **Google Chrome** 、Safari、Firefox和Microsoft Edge中发挥最佳作用。 在旧版本的浏览器上使用某些功能时可能遇到问题。
 
 | Operating system | 支持的浏览器 |  |  |
 |---|---|---|---|
@@ -42,7 +42,7 @@ Adobe Experience Platform网站和相关网站(如AdobeAdmin Console)均设计�
 | Windows 10 | Google Chrome | Microsoft Edge | Firefox |
 | Windows 7 | Google Chrome |  | Firefox&lt; |
 
-不受支持:
+不支持以下浏览器：
 
 * Internet Explorer 10
 * Windows 8
