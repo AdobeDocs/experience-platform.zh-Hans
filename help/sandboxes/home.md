@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 沙箱概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c52d8cdbc5a4ee6fab8c2b1b284efea5f735d424
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '677'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ In order to address this need, Experience Platform provides **sandboxes** which 
 
 ## 沙箱访问控制
 
-默认情况下，组织的所有用户都有权访问生产沙箱。 对非生产沙箱的访问权限必须由系统管理员、产品管理员或产品用户档案管理员通过AdobeAdmin Console [授予](https://adminconsole.adobe.com)。
+默认情况下，组织的所有用户都有权访问生产沙箱。 对非生产沙箱的访问权限必须由系统管理员、产品管理员或产品用户档案管理员通过Adobe [Admin Console授予](https://adminconsole.adobe.com)。
 
 要视图、创建、更新或删除非生产沙箱，用户还必须获得“沙箱管理”权限。
 
@@ -46,11 +46,11 @@ In order to address this need, Experience Platform provides **sandboxes** which 
 
 ## Experience PlatformUI中的沙箱
 
-在Experience Platform [用户界面中](https://platform.adobe.com)，用户可以使用屏幕左上角的沙箱切换器 **控件** ，在他们可以访问的沙箱之间切换。  具有“沙箱管理”权限的用户还可以访问左 **侧导航** 中的“沙箱”选项卡，在该选项卡中，他们可以视图和管理组织的沙箱。 有关如何在UI中使用沙箱的详细信息，请参阅沙 [箱用户指南](ui/overview.md)。
+在Experience Platform [用户界面中](https://platform.adobe.com)，用户可以使用屏幕左上角的沙箱切换器 **控件** ，在他们可以访问的沙箱之间切换。  具有“沙箱管理”权限的用户还可以访问左 **[!UICONTROL 侧导航]** 中的“沙箱”选项卡，在该选项卡中，他们可以视图和管理组织的沙箱。 有关如何在UI中使用沙箱的详细信息，请参阅沙 [箱用户指南](ui/overview.md)。
 
 ## Experience PlatformAPI中的沙箱
 
-在调用Experience PlatformAPI时，必须在头下提供沙箱名称 `x-sandbox-name`。 例如，当调用Catalog Service API [来视图](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) “生产”沙箱内的所有数据集时，沙箱的名称(“prod”)将作为API请求中的头提供：
+在调用Experience PlatformAPI时，必须在头下提供沙箱名称 `x-sandbox-name`。 例如，当调用以视图生产沙 [!DNL Catalog Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) 箱内的所有数据集时，沙箱的名称(“prod”)将作为API请求中的头提供：
 
 ```shell
 curl -X GET \
@@ -71,4 +71,4 @@ curl -X GET \
 
 通过阅读此文档，您了解了Experience Platform中沙箱的基本概念。 有关如何管理沙箱的详细步骤，请参 [阅UI](ui/overview.md) 用户指南或 [API开发人](./api/getting-started.md) 员指南。
 
-沙箱是为开发团队隔离平台环境的宝贵工具，您还可以使用AdobeAdmin Console管理更精细的访问控制。 有关更多 [信息](../access-control/home.md) ，请参阅访问控制概述。
+沙箱是为开发团队隔离平台环境的宝贵工具，您还可以使用Adobe Admin Console管理更精细的访问控制。 有关更多 [信息](../access-control/home.md) ，请参阅访问控制概述。
