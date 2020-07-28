@@ -26,7 +26,7 @@ ht-degree: 0%
    - x-gw-ims-org-id: `{IMS_ORG}`
    - 客户机密码： `{CLIENT_SECRET}`
    - 客户端证书： `{PRIVATE_KEY}`
-- 零售销售处方的示例数 [据和源文件](../pre-built-recipes/retail-sales.md)。 从Adobe公共Git存储库下载本教程 [!DNL Data Science Workspace] 和其他教 [程所需的资源](https://github.com/adobe/experience-platform-dsw-reference/)。
+- 零售销售处方的示例数 [据和源文件](../pre-built-recipes/retail-sales.md)。 从Adobe公共Git存储库下载本教程 [!DNL Data Science Workspace] 和其他教程 [所需的资源](https://github.com/adobe/experience-platform-dsw-reference/)。
 - [Python >= 2.7](https://www.python.org/downloads/) 和以下 [!DNL Python] 包：
    - [画](https://pypi.org/project/pip/)
    - [PyYAML](https://pyyaml.org/)
