@@ -20,7 +20,7 @@ ht-degree: 1%
 
 ### 示例文件
 
-CSV和JSON示例文件可从Adobe维护的公共ETL参 [!DNL GitHub] 考回购中获得：
+示例CSV和JSON文件可从由Adobe维护的公共ETL参 [!DNL GitHub] 考回购中获得：
 
 - [CRM_用户档案.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_用户档案.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)
