@@ -38,7 +38,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 ### 模式工作流 [!DNL Experience Platform]
 
-标准化是背后的一个关键概念 [!DNL Experience Platform]。 XDM由Adobe推动，旨在实现客户体验数据标准化并为客户体验管理定义标准模式。
+标准化是背后的一个关键概念 [!DNL Experience Platform]。 XDM由Adobe驱动，旨在实现客户体验数据标准化并为客户体验管理定义标准模式。
 
 所构建的基 [!DNL Experience Platform] 础结构( [!DNL XDM System]称为模式)方便了基于的工作流，并包括 [!DNL Schema Registry]、 [!DNL Schema Editor]模式元数据和服务消耗模式。 See the [XDM System overview](../home.md) for more information.
 
@@ -107,7 +107,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 还有一些类用于描述内部单个组织的更具体的用 [!DNL Platform]例，称为“客户”类。 当没有可用于描述唯一用例的行业或供应商类时，客户类由组织定义。
 
-例如，代表忠诚度项目成员的模式描述个人的记录数据，因此可以基于该类(由Adobe定义的 [!DNL XDM Individual Profile] 标准行业类)。
+例如，代表“忠诚度”项目成员的模式描述了有关个人的记录数据，因此可以基于该类(由Adobe定义的 [!DNL XDM Individual Profile] 标准“行业”类)。
 
 ### Mixin {#mixin}
 
@@ -182,7 +182,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 ![](../images/schema-composition/composition.png)
 
-### 合并 {#union}
+### Union {#union}
 
 您 [!DNL Experience Platform] 可以为特定用例编写模式，也可以查看特定类类型的模式的“合并”。 上图显示了两个基于XDM ExperienceEvent类的模式和两个基于类的 [!DNL XDM Individual Profile] 模式。 合并，如下所示，聚合共享同一类的所有模式的字段([!DNL XDM ExperienceEvent] 和 [!DNL XDM Individual Profile]分别)。
 
@@ -200,7 +200,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 现在，您已经了解了模式合成的基础知识，可以开始使用构建模式 [!DNL Schema Registry]。
 
-该 [!DNL Schema Registry] 工具用于访问Adobe Experience Platform [!DNL Schema Library] 中的资源，并提供一个用户界面和RESTful API，可从中访问所有可用的库资源。 它包 [!DNL Schema Library] 含由Adobe定义的行业资源、由合作伙伴定义的 [!DNL Experience Platform] 供应商资源以及由您的组织成员组成的类、混合、数据类型和模式。
+该 [!DNL Schema Registry] 工具用于访问Adobe Experience Platform [!DNL Schema Library] 中的资源，并提供一个用户界面和RESTful API，可从中访问所有可用的库资源。 它包 [!DNL Schema Library] 含由Adobe定义的行业资源、由合作伙伴定 [!DNL Experience Platform] 义的供应商资源以及由您的组织成员组成的类、混合、数据类型和模式。
 
 要开始使用UI编写模式，请按照模式编 [辑器教程](../tutorials/create-schema-ui.md) ，构建本文档中提到的“忠诚会员”模式。
 
