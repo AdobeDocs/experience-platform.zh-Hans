@@ -16,7 +16,7 @@ ht-degree: 0%
 
 智能服务使营销分析师和从业人员能够在客户体验使用案例中利用人工智能和机器学习的强大功能。 这使营销分析师能够使用业务级配置设置特定于公司需求的预测，而无需数据科学专业知识。 此外，营销从业人员还可以在 [!DNL Adobe Experience Cloud]、和 [!DNL Adobe Experience Platform]第三方应用程序中激活预测。
 
-以下视频旨在支持您对智能服务的理解。 通过示例业务使用案例，此视频将说明一个高级工作流程，并概述归因AI和客户AI的功能。
+以下视频旨在支持您对智能服务的理解。 通过示例业务使用案例，此视频将说明一个高级工作流程，并概述Attribution AI和客户人工智能的功能。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32654?learn=on&quality=12)
 
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 ### 经济高效的上市速度
 
-Adobe拥有AI/ML专业知识和深厚的CXM体验，而Intelligent Services是专为营销人员设计的，可让AI/ML立即投入常见营销用例，而无需雇佣稀缺和昂贵的数据科学家，加快了上市速度和行动能力。
+Adobe拥有AI/ML专业知识和深厚的CXM体验，而智能服务是专门为营销人员设计的，可让AI/ML立即投入常见的营销用例，而无需雇用稀缺和昂贵的数据科学家，加快了上市速度和行动能力。
 
 ### 预测性洞察更准确
 
@@ -56,4 +56,4 @@ Adobe拥有AI/ML专业知识和深厚的CXM体验，而Intelligent Services是�
 
 ## 后续步骤
 
-目前，智能服务优惠归因AI和客户AI。 归因AI使营销人员能够智能地提高渠道和活动的营销有效性。 要进一步了解归因AI，请访问归 [因AI概述](./attribution-ai/overview.md)。 客户人工智能使营销人员能够高度个性化的客户体验。 要了解有关客户人工智能的更多信息，请 [访问客户人工智能概述](./customer-ai/overview.md)。
+目前，智能服务优惠Attribution AI和客户人工智能。 Attribution AI使营销人员能够智能地提高渠道和活动的营销有效性。 要了解有关Attribution AI的更多信息，请访 [问Attribution AI概述](./attribution-ai/overview.md)。 客户人工智能使营销人员能够高度个性化的客户体验。 要了解有关客户人工智能的更多信息，请 [访问客户人工智能概述](./customer-ai/overview.md)。
