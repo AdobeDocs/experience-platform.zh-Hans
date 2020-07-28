@@ -146,7 +146,7 @@ ht-degree: 0%
 }
 ```
 
-在发送POST或PUT请求时，Content-Type头无效，会发生此错误。 多次-检查您是否正在为您所使用的端点提供有效的Content-Type值。
+在发送具有无效Content-Type头的POST或PUT请求时，会发生此错误。 多次-检查您是否正在为您所使用的端点提供有效的Content-Type值。
 
 大多数用户档案端点接受其Content-Type头的“application/json”，但以下情况除外：
 
