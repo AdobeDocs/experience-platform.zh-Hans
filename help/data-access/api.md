@@ -242,4 +242,4 @@ Contents of the file
 
 ## 订阅数据获取事件
 
-[!DNL Platform] 通过Adobe开发人员控制台提供特定的高价 [值事件供订阅](https://www.adobe.com/go/devs_console_ui)。 例如，您可以订阅数据获取事件，以便收到潜在延迟和故障的通知。 有关详细信息，请 [参阅有关订阅数据获取通知](../ingestion/quality/subscribe-events.md) 的教程。
+[!DNL Platform] 通过事件开发人员控制台提供特定的高 [价值订阅](https://www.adobe.com/go/devs_console_ui)。 例如，您可以订阅数据获取事件，以便收到潜在延迟和故障的通知。 有关详细信息，请 [参阅有关订阅数据获取通知](../ingestion/quality/subscribe-events.md) 的教程。
