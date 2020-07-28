@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ## 了解数据使用标签
 
-数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 可随时应用标签，在数据管理方式上提供灵活性。 最佳实践是，在数据被引入或 [!DNL Experience Platform]数据可用时，立即添加标签 [!DNL Platform]。
+数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 可随时应用标签，在数据管理方式上提供灵活性。 最佳实践是，在数据被引入或 [!DNL Experience Platform]数据可供使用时，立即添加标签 [!DNL Platform]。
 
 在数据集级别应用的数据使用标签将传播到数据集中的所有字段。 标签还可以直接应用于数据集中的各个字段（列标题），而不会传播。
 
@@ -34,7 +34,7 @@ ht-degree: 0%
 
 除了继承数据集级别标签外，默认情况下，区段还会继承其关联数据集中的所有字段级别标签。 根据您的基于应 [!DNL Platform]用程序对段的使用情况，您可以潜在地指定使用哪些字段，从而阻止该段从被排除的字段继承标签。
 
-有关自动执行如何在实时CDP中工作的更多信息，请参 [阅Adobe实时CDP数据管理概述](../../rtcdp/privacy/data-governance-overview.md#enforce-data-usage-compliance)。
+有关自动执行在实时CDP中的工作方式的更多信息，请参 [阅Adobe实时CDP数据管理概述](../../rtcdp/privacy/data-governance-overview.md#enforce-data-usage-compliance)。
 
 ### 从Adobe Audience Manager数据导出控件继承
 
