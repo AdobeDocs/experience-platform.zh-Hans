@@ -108,7 +108,7 @@ curl -X POST \
 
 ## 检索MLServices的列表 {#retrieve-a-list-of-mlservices}
 
-您可以通过执行单个GET请求来检索MLServices的列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅附录部分中有关资产检 [索查询参数的部分](./appendix.md#query)。
+您可以通过执行单个列表请求来检索MLServicesGET。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅附录部分中有关资产检 [索查询参数的部分](./appendix.md#query)。
 
 **API格式**
 
@@ -167,7 +167,7 @@ curl -X GET \
 
 ## 检索特定MLService {#retrieve-a-specific-mlservice}
 
-您可以通过执行GET请求来检索特定实验的详细信息，该请求在请求路径中包含所需的MLService ID。
+通过执行在请求路径中包含所需MLService ID的GET请求，可以检索特定实验的详细信息。
 
 **API格式**
 
@@ -211,11 +211,11 @@ curl -X GET \
 
 ## 更新MLService {#update-an-mlservice}
 
-您可以通过PUT请求覆盖现有MLService的属性，该请求在请求路径中包含目标MLService的ID，并提供包含已更新属性的JSON有效负荷，从而更新现有MLService。
+您可以通过以下方式更新现有MLService：通过PUT请求覆盖其属性，该请求在请求路径中包含目标MLService的ID，并提供包含已更新属性的JSON有效负荷。
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议先执行GET请求，以 [按ID检索MLService](#retrieve-a-specific-mlservice)。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
+>为确保此PUT请求成功，建议您首先执行GET请求以 [按ID检索MLService](#retrieve-a-specific-mlservice)。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
 
 **API格式**
 
