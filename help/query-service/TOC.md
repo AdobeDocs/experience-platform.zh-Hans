@@ -4,6 +4,9 @@ audience: user
 user-guide-title: Adobe Experience Platform查询服务帮助
 translation-type: tm+mt
 source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
+workflow-type: tm+mt
+source-wordcount: '134'
+ht-degree: 4%
 
 ---
 
@@ -23,7 +26,7 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    - [UI概述](ui/overview.md)
    - [查询编辑器用户指南](ui/user-guide.md)
 - 创建查询 {#creating-queries}
-   - [Adobe定义的函数](creating-queries/using-adobe-defined-functions.md)
+   - [Adobe定义函数](creating-queries/using-adobe-defined-functions.md)
    - [创建查询概述](creating-queries/creating-queries.md)
    - [数据集与表和模式](creating-queries/datasets-and-tables.md)
    - [执行查询的一般指南](creating-queries/writing-queries.md)
@@ -31,10 +34,10 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    - [加入数据集](creating-queries/joining-datasets.md)
    - [数据外部重复数据删除](creating-queries/deduplication.md)
 - [根据查询结果生成数据集](creating-queries/create-datasets.md)
-- SQL参考 {#sql}
+- SQL引用 {#sql}
    - [SQL概述](sql/overview.md)
    - [SQL语法](sql/syntax.md)
-   - [Adobe定义的函数](sql/adobe-defined-functions.md)
+   - [Adobe定义函数](sql/adobe-defined-functions.md)
    - [Spark SQL函数](sql/spark-sql-functions.md)
    - [元数据命令](sql/metadata.md)
    - [准备的声明](sql/prepared-statements.md)
@@ -46,7 +49,7 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
    - [客户端连接概述](clients/overview.md)
    - [Aqua Data Studio](clients/aqua-data-studio.md)
    - [Looker](clients/looker.md)
-   - [Postico(Mac)](clients/postico.md)
+   - [波斯蒂科(Mac)](clients/postico.md)
    - [Power BI(PC)](clients/power-bi.md)
    - [PSQL](clients/psql.md)
    - [RStudio](clients/rstudio.md)
