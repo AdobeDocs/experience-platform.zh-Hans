@@ -44,7 +44,7 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 收集所需凭据后，您可以按照以下步骤创建新的入站基础连接，将ADLS Gen2帐户链接到 [!DNL Platform]。
 
-登录到 <a href="https://platform.adobe.com" target="_blank">Adobe [!DNL Experience Platform]</a> ，然后从左 **[!UICONTROL 侧导]** 航栏中选择“源 *[!UICONTROL ”以访问“源]* ”工作区。 “目 *[!UICONTROL 录]* ”选项卡显示各种源，可用于创建入站基本连接。 每个源显示与它们关联的现有基本连接数。
+登录到 <a href="https://platform.adobe.com" target="_blank">Adobe [!DNL Experience Platform]</a> ，然后从左 **[!UICONTROL 侧导航栏]** 中选 *[!UICONTROL 择源]* ，访问源工作区。 “目 *[!UICONTROL 录]* ”选项卡显示各种源，可用于创建入站基本连接。 每个源显示与它们关联的现有基本连接数。
 
 在“ *[!UICONTROL 云存储]* ”类别下， **[!UICONTROL 选择Azure Data Lake Gen2]** ，在屏幕的右侧显示一个信息栏。 信息栏提供所选源的简短说明，以及与源视图连接的选项（其文档）。 要创建新的入站基本连接，请单击“ **[!UICONTROL 连接源”]**。
 
