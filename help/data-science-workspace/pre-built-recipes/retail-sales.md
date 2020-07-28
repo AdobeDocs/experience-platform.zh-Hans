@@ -5,6 +5,9 @@ title: 零售销售处方
 topic: overview
 translation-type: tm+mt
 source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+workflow-type: tm+mt
+source-wordcount: '523'
+ht-degree: 2%
 
 ---
 
@@ -30,7 +33,7 @@ source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
 
 您可以按照本教程进 [行](../jupyterlab/create-a-recipe.md)。
 
-本教程将在Jupyter笔记本中创建零售销售菜谱，并使用笔记本到菜谱工作流程在Adobe Experience Platform中创建菜谱。
+本教程将在Jupyter笔记本中创建零售销售菜谱，并使用笔记本创建菜谱工作流程在Adobe Experience Platform中创建菜谱。
 
 ## 数据模式
 
