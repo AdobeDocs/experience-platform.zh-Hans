@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 在UI中创建Azure Blob或Amazon S3源连接器
+title: 在UI中创建Azure Blob或AmazonS3源连接器
 topic: overview
 translation-type: tm+mt
 source-git-commit: 3f1c3c77a0755a3e305da0fb8a234be0f0ee1863
@@ -62,7 +62,7 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
-在“数 *[!UICONTROL 据库]* ”类别 **[!UICONTROL 下]** ，选择Azure Blob **[!UICONTROL 存储或]** Amazon S3 **，单击+图标(**[!DNL Blob] +)以创建新的或S3连接器。
+在“数 *[!UICONTROL 据库]* ”类别 **[!UICONTROL 下]** ，选择Azure Blob **[!UICONTROL 存储或]** AmazonS3 **，单击+**[!DNL Blob] 图标(+)以创建新的或S3连接器。
 
 ![目录](../../../../images/tutorials/create/blob/catalog.png)
 
