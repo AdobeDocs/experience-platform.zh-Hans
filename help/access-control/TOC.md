@@ -4,11 +4,14 @@ audience: user
 user-guide-title: 访问控制Adobe Experience Platform帮助
 translation-type: tm+mt
 source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
+workflow-type: tm+mt
+source-wordcount: '82'
+ht-degree: 3%
 
 ---
 
 
-# 访问控制 {#access-control}
+# Access control {#access-control}
 
 * [访问控制概述](home.md)
 * 访问控制UI {#ui}
@@ -21,7 +24,7 @@ source-git-commit: c60f374fddb7c2d0ae35c5a5e085ddc0e2f7b78f
 * 访问控制API {#api}
    * [入门指南](api/getting-started.md)
    * [列表权限和资源类型的名称](api/permissions-and-resource-types.md)
-   * [视图有效政策](api/effective-policies.md)
+   * [视图有效策略](api/effective-policies.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
