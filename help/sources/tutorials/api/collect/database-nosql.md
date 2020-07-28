@@ -242,7 +242,7 @@ curl -X POST \
 
 ## 创建目标数据集
 
-通过对Catalog Service API执行POST请求，提供有效负 [荷内目标模式的ID](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，可以创建目标数据集。
+通过向Catalog Service API执行目标请求 [，提供有效负荷中POST模式的ID](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，可以创建目标数据集。
 
 **API格式**
 
@@ -341,7 +341,7 @@ curl -X POST \
 
 ## 创建映射 {#mapping}
 
-为了将源数据引入目标数据集，必须首先将其映射到目标数据集所附加的目标模式。 这是通过对API执行POST请求而实现的，该POST请 [!DNL Conversion Service] 求具有在请求有效负荷中定义的数据映射。
+为了将源数据引入目标数据集，必须首先将其映射到目标数据集所附加的目标模式。 这是通过对API执行POST请求而实现的，该请 [!DNL Conversion Service] 求具有在请求有效负荷中定义的数据映射。
 
 **API格式**
 
@@ -565,7 +565,7 @@ curl -X GET \
 * [映射ID](#mapping)
 * [数据流规范ID](#specs)
 
-数据流负责从源调度和收集数据。 您可以通过执行POST请求来创建数据流，同时在有效负荷中提供以前提到的值。
+数据流负责从源调度和收集数据。 通过在有效负荷中提供先前提到的值时执行POST请求，可以创建数据流。
 
 要计划摄取，您必须首先将开始时间值设置为纪元时间（以秒为单位）。 然后，您必须将频率值设置为以下五个选项之一： `once`、 `minute`、 `hour`、 `day`或 `week`。 间隔值指定两个连续摄取之间的周期，并且创建一次摄取不需要设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`。
 
