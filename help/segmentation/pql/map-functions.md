@@ -20,7 +20,7 @@ ht-degree: 5%
 
 函 `get` 数用于检索给定键的映射值。
 
-**格式**
+**Format**
 
 ```sql
 {MAP}.get({STRING})
@@ -38,7 +38,7 @@ identityMap.get("example@example.com")
 
 函数 `keys` 用于检索给定映射的所有键。
 
-**格式**
+**Format**
 
 ```sql
 {MAP}.keys()
@@ -56,7 +56,7 @@ identityMap.keys()
 
 函 `values` 数用于检索给定映射的所有值。
 
-**格式**
+**Format**
 
 ```sql
 {MAP}.values()
