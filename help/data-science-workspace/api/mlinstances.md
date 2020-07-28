@@ -130,7 +130,7 @@ curl -X POST \
 
 ## 检索一列表MLInstance
 
-您可以通过执行单个GET请求来检索MLInstances的列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅附录部分中有关资产检 [索查询参数的部分](./appendix.md#query)。
+您可以通过执行单个列表请求来检索MLInstances的GET。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅附录部分中有关资产检 [索查询参数的部分](./appendix.md#query)。
 
 **API格式**
 
@@ -271,11 +271,11 @@ curl -X GET \
 
 ## 更新MLInstance
 
-您可以通过PUT请求覆盖现有MLInstance的属性，该请求在请求路径中包含目标MLInstance的ID，并提供包含已更新属性的JSON有效负荷，从而更新现有MLInstance。
+您可以通过以下方式更新现有MLInstance：通过PUT请求覆盖其属性，该请求在请求路径中包含目标MLInstance的ID，并提供包含已更新属性的JSON有效负荷。
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议首先执行GET请求以 [按ID检索MLInstance](#retrieve-specific)。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
+>为确保此PUT请求成功，建议您首先执行GET请求，以 [按ID检索MLInstance](#retrieve-specific)。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
 
 以下示例API调用将在最初具有这些属性时更新MLInstance的培训和评分参数：
 
