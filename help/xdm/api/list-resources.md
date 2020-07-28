@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 列表资源
 
-您可以通过执行单个 [!DNL Schema Registry] GET请求来视图容器中某种类型(类、混合、模式、数据类型或描述符)的所有资源的列表。
+您可以通过执行单个 [!DNL Schema Registry] GET请求，视图容器中特定类型(类、混合、模式、数据类型或描述符)的所有资源的列表。
 
 >[!NOTE]
 >
@@ -107,7 +107,7 @@ curl -X GET \
 | `<=` | 过滤器，该属性是否小于或等于提供的值。 | `property=version<=5` |
 | `>=` | 过滤器为属性是大于或等于提供的值。 | `property=version>=5` |
 | `~` | 过滤器，根据该属性是否与提供的常规表达式匹配。 | `property=title~test$` |
-| (无) | 仅声明属性名称只返回存在属性的条目。 | `property=title` |
+| (None) | 仅声明属性名称只返回存在属性的条目。 | `property=title` |
 
 >[!TIP]
 >
