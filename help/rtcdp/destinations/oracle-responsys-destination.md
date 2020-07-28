@@ -18,7 +18,7 @@ ht-degree: 0%
 
 [Responsys](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) 是面向跨渠道营销活动的企业电子邮件营销工具，可通过 [!DNL Oracle] 在电子邮件、移动设备、展示广告和社交渠道实现个性化互动。
 
-要将区段数据发 [!DNL Oracle Responsys]送到，您必 [须先连接到Adobe Real](#connect-destination) -time Customer Data Platform中的目标，然 [后设置从存储位置导入](#import-data-into-responsys) 到的数据 [!DNL Oracle Responsys]。
+要将区段数据发 [!DNL Oracle Responsys]送到，您必 [须先连接到Adobe实时平台中的目](#connect-destination) 标，然后设置存储位置中的 [导入](#import-data-into-responsys)[!DNL Oracle Responsys]。
 
 ## 连接目标 {#connect-destination}
 
@@ -49,4 +49,4 @@ ht-degree: 0%
 
 ## 将数据导入设置为 [!DNL Oracle Responsys] {#import-data-into-responsys}
 
-在将实时CDP连接到Amazon S3或SFTP存储后，您必须设置从存储位置导入到的数据 [!DNL Oracle Responsys]。 要了解如何完成此操作，请参阅 [中的导入联系人](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCEA/Connect_WizardUpload.htm) 或帐户 [!DNL Oracle Responsys Help Center]。
+在将实时CDP连接到您的AmazonS3或SFTP存储后，您必须设置从存储位置导入到的数据 [!DNL Oracle Responsys]。 要了解如何完成此操作，请参阅 [中的导入联系人](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCEA/Connect_WizardUpload.htm) 或帐户 [!DNL Oracle Responsys Help Center]。
