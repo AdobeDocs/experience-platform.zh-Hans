@@ -69,9 +69,9 @@ ht-degree: 1%
 
 **API格式**
 
-每个可用源都有其自己的唯一连接规范集，用于描述连接器属性，如身份验证要求。 您可以通过执行GET请求 [!DNL BigQuery] 和使用查询参数查找连接规范。
+每个可用源都有其自己的唯一连接规范集，用于描述连接器属性，如身份验证要求。 您可以通过执行GET请求 [!DNL BigQuery] 和使用查询参数来查找连接规范。
 
-发送不带查询参数的GET请求将返回所有可用源的连接规范。 您可以包含查询 `property=name=="google-big-query"` 以获取专门用于的信息 [!DNL BigQuery]。
+发送不带GET参数的查询请求将返回所有可用源的连接规范。 您可以包含查询 `property=name=="google-big-query"` 以获取专门用于的信息 [!DNL BigQuery]。
 
 ```http
 GET /connectionSpecs
