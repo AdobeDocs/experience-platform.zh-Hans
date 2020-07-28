@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 创建经过身份验证的流连接
 
-经过身份验证的Adobe Experience Platform收集允许服 [!DNL Real-time Customer Profile] 务( [!DNL Identity]如和)区分来自可信源和不可信源的记录。 要发送个人身份信息(PII)的客户可以通过作为POST请求的一部分发送访问令牌来发送个人身份信息。
+经过身份验证的Adobe Experience Platform收集允许服 [!DNL Real-time Customer Profile] 务( [!DNL Identity]如和)区分来自可信源和不可信源的记录。 要发送个人身份信息(PII)的客户可以通过作为访问令牌请求的一部分发送POST来发送个人身份信息。
 
 ## 入门指南
 
@@ -49,7 +49,7 @@ ht-degree: 2%
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 - 内容类型： application/json
 
