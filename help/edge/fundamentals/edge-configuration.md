@@ -18,7 +18,7 @@ Adobe Experience Platform的配置 [!DNL Web SDK] 分为两个位置。 SDK [中
 
 ## 创建边缘配置ID
 
-可在Adobe中使用边缘配 [!DNL Launch] 置工具创建边缘配置ID。 此工具允许您创建边缘配置以及这些配置中的环境。
+可使用边缘配置工具在Adobe [!DNL Launch] 中创建边缘配置ID。 此工具允许您创建边缘配置以及这些配置中的环境。
 
 ![边缘配置工具导航](../../assets/edge_configuration_nav.png)
 
@@ -98,7 +98,7 @@ ID同步可以分组为容器，以允许在不同时间运行不同的ID同步�
 
 [环境](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) -Adobe Target-帮助您管理整个开发阶段的实施。 此设置指定要与每个环境一起使用的环境。
 
-Adobe建议对每个配置环境、 `dev``stage`和边 `prod` 缘配置设置不同的设置。 但是，如果您已经定 [!UICONTROL 义了Adobe Target] 环境，则可以使用这些。
+Adobe建议对每个配置、 `dev`和边 `stage`缘配置 `prod` 环境进行不同的设置，以简化操作。 但是，如果您已经定 [!UICONTROL 义了Adobe Target] 环境，则可以使用这些。
 
 #### Adobe Audience Manager
 
@@ -116,10 +116,10 @@ Adobe建议对每个配置环境、 `dev``stage`和边 `prod` 缘配置设置不
 
 #### Adobe Analytics
 
-控制数据是否发送到AdobeAnalytics。 更多详细信息请参 [阅Analytics概述](../solution-specific/analytics/analytics-overview.md)。
+控制数据是否发送到Adobe Analytics。 其他详细信息请参 [阅Analytics概述](../solution-specific/analytics/analytics-overview.md)。
 
-![AdobeAnalytics设置块](../../assets/edge_configuration_aa.png)
+![Adobe Analytics设置块](../../assets/edge_configuration_aa.png)
 
 ##### [!UICONTROL 报表包 ID]
 
-报表包位于AdobeAnalytics管理员区域的“管理员”>“ [!UICONTROL 报表包”下]。 如果指定了多个报表包，则数据将复制到每个报表包。
+报表包位于“管理员”>“报表包”下的“Adobe Analytics [!UICONTROL 管理员”部分]。 如果指定了多个报表包，则数据将复制到每个报表包。
