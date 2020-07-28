@@ -24,11 +24,11 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->描述符需要用唯一的“接受”标 `xed` 头替换， `xdm`但在其它情况下，它与“接受”标题在中其他位置使用非常相似 [!DNL Schema Registry]。 以下示例调用中包含了正确的接受标头，但要确保使用正确的标头，请格外小心。
+>描述符需要用替换的唯一“接 `xed` 受” `xdm`标头，但在其它方面与“接受”标头非常相似 [!DNL Schema Registry]。 以下示例调用中包含了正确的接受标头，但要确保使用正确的标头，请格外小心。
 
 ## 列表描述符
 
-单个GET请求可用于返回由您的组织定义的所有描述符的列表。
+单个GET请求可用于返回您的组织定义的所有描述符的列表。
 
 **API格式**
 
@@ -133,7 +133,7 @@ curl -X GET \
 
 ## 创建描述符
 
-它允 [!DNL Schema Registry] 许您定义几种不同的描述符类型。 每个描述符类型都要求在POST请求中发送其自己的特定字段。 描述符的完整列表以及定义描述符所需的字段，可在定义描述符的附录部分 [中找到](#defining-descriptors)。
+它允 [!DNL Schema Registry] 许您定义几种不同的描述符类型。 每个描述符类型都需要在POST请求中发送其自己的特定字段。 描述符的完整列表以及定义描述符所需的字段，可在定义描述符的附录部分 [中找到](#defining-descriptors)。
 
 **API格式**
 
@@ -185,7 +185,7 @@ curl -X POST \
 
 ## 更新描述符
 
-可以通过发出引用要在请求路径中更新的 `@id` 描述符的PUT请求来更新描述符。
+可以通过发出引用要在请求路径中更新的描述 `@id` 符的PUT请求来更新描述符。
 
 **API格式**
 
@@ -199,7 +199,7 @@ PUT /tenant/descriptors/{DESCRIPTOR_ID}
 
 **请求**
 
-此请求基 _本上重写描述符_ ，因此请求主体必须包括定义该类型的描述符所需的所有字段。 换言之，要更新描述符的请求有效负荷(PUT)与要创建相同类型描述符的有效负荷(POST)相同。
+此请求基 _本上重写描述符_ ，因此请求主体必须包括定义该类型的描述符所需的所有字段。 换言之，要更新(PUT)描述符的请求有效负荷与要创建(POST)相同类型描述符的有效负荷相同。
 
 在此示例中，标识描述符正被更新为引 `xdm:sourceProperty` 用其他（“手机”）并将 `xdm:namespace` 其更改为“Phone”。
 
@@ -234,7 +234,7 @@ curl -X PUT \
 }
 ```
 
-执行查找(GET)请求以视图描述符将显示字段现已更新以反映PUT请求中发送的更改。
+执行查找(GET)请求以视图描述符将显示字段现已更新，以反映在PUT请求中发送的更改。
 
 ## 删除描述符
 
@@ -336,7 +336,7 @@ curl -X DELETE \
 | `xdm:sourceProperty` | 将作为标识的特定属性的路径。 路径应以“/”开头，而不以“/”结尾。 不要在路径中包含“属性”（例如，使用“/personalEmail/address”而不是“/properties/personalEmail/properties/address”） |
 | `xdm:title` | 要为此字段显示的新标题，用标题大小写写写。 |
 | `xdm:description` | 可以随标题一起添加可选描述。 |
-| `meta:enum` | 如果以字符 `xdm:sourceProperty` 串字段表示， `meta:enum` 则确定UI中字段的建议值 [!DNL Experience Platform] 列表。 请务必注意，不 `meta:enum` 要声明明细列表或为XDM字段提供任何数据验证。<br><br>这应仅用于Adobe定义的核心XDM字段。 如果源属性是您的组织定义的自定义字段，则应直接通过PATCH `meta:enum` 请求编辑该字段 [的属性](./update-resource.md)。 |
+| `meta:enum` | 如果以字符 `xdm:sourceProperty` 串字段表示， `meta:enum` 则确定UI中字段的建议值 [!DNL Experience Platform] 列表。 请务必注意，不 `meta:enum` 要声明明细列表或为XDM字段提供任何数据验证。<br><br>这应仅用于由Adobe定义的核心XDM字段。 如果源属性是您的组织定义的自定义字段，则应直接通过PATCH `meta:enum` 请求编辑该字段 [的属性](./update-resource.md)。 |
 
 #### 关系描述符
 
