@@ -24,7 +24,7 @@ ht-degree: 3%
 
 ## 检索列表段作业 {#retrieve-list}
 
-您可以通过向端点发出GET请求，为IMS组织检索所有段作业的列表 `/segment/jobs` 符。
+您可以通过向端点发出列表请求，为IMS组织检索所有段作业的GET `/segment/jobs` 符。
 
 **API格式**
 
@@ -164,7 +164,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 
 ## 创建新区段作业 {#create}
 
-您可以通过向端点发出POST请求并在主体中包 `/segment/jobs` 含要从中创建新受众的段定义的ID来创建新段作业。
+您可以通过向端点发出POST请求并在正文中包 `/segment/jobs` 含要从中创建新受众的段定义的ID来创建新段作业。
 
 **API格式**
 
@@ -258,7 +258,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 ## 检索特定的区段作业 {#get}
 
-您可以通过向端点发出GET请求并提供您希望在请求路径中检索的 `/segment/jobs` 段作业的ID，来检索有关特定段作业的详细信息。
+您可以通过向端点发出GET请求并提供您希望在请求路径中检索的段作业的 `/segment/jobs` ID，来检索有关特定段作业的详细信息。
 
 **API格式**
 
