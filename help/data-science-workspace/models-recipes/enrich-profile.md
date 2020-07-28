@@ -50,6 +50,7 @@ ht-degree: 0%
 
    * 要创建自定义类，请单 **[!UICONTROL 击浏览器窗口]** 中心顶部附近的“新建类”。 提供类名、说明，然后选择类的行为。 完 **[!UICONTROL 成后]** ，单击“分配类”。
       ![](../images/models-recipes/enrich-rtcdp/create_new_class.png)
+
    此时，模式的结构应包含一些类字段，您可以指定混音。 混音是由一个或多个字段组成的组，用于描述特定概念。
 
 3. 在“合 *成* ”窗口 **[!UICONTROL 中]** ，单击 *“Mixins* ”子部分中的“添加”。
