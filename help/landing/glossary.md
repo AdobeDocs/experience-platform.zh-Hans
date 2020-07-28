@@ -16,7 +16,7 @@ ht-degree: 0%
 
 ## A
 
-**访问控制:** {#access-control} 访问控制 [!DNL Experience Platform] 用于通过AdobeAdmin Console中的产品用户档案链接具有访问权限和沙箱环境的用户。
+**访问控制:** {#access-control} 访问控制, [!DNL Experience Platform] 用于通过Adobe Admin Console的产品用户档案链接具有访问权限和沙箱环境的用户。
 
 **访问密钥ID:** 访问密钥ID是与S3秘密访问密钥关 [!DNL Amazon] 联的唯一标识符。 访问密钥ID和秘密访问密钥一起用于签署AWS请求。
 
@@ -26,21 +26,21 @@ ht-degree: 0%
 
 **活动:** 在中， [!DNL Decisioning Service]活动是营销人员希望决策引擎从中选择最佳优惠的一组优惠。
 
-**AdobeAdmin Console:** AdobeAdmin Console为组织提供了管理访问和功能权限的中心位置。
+**Adobe Admin Console:** Adobe Admin Console为您的组织提供了一个中心位置，用于管理访问和功能权限。
 
 **Adobe Experience Platform:** Adobe Experience Platform在整个企业内实现数据和内容标准化，为实时消费用户档案提供强大动力，实现数据科学并加快内容速度，从而在客户旅程中推动体验个性化。
 
-**Adobe Connectors:** Adobe Connectors是由Adobe创建的预配置连接，用于使数据能够进出 [!DNL Experience Platform]。 连接器 [!DNL Microsoft Dynamics]包括 [!DNL Salesforce]、 [!DNL Amazon S3]、和 [!DNL Azure Blob]。
+**Adobe连接器：** Adobe连接器是由Adobe创建的预配置连接，用于使数据能够进出 [!DNL Experience Platform]。 连接器 [!DNL Microsoft Dynamics]包括 [!DNL Salesforce]、 [!DNL Amazon S3]、和 [!DNL Azure Blob]。
 
-**Adobe Intelligent Services:** Adobe Sensei是强大的智能框架 [!DNL Experience Platform]。 它还提供一套人工智能服务，使品牌能够增强其提供实时、个性化客户体验的能力。
+**Adobe智能服务：** Adobe Sensei是权力的情报框架 [!DNL Experience Platform]。 它还提供一套人工智能服务，使品牌能够增强其提供实时、个性化客户体验的能力。
 
-**Adobe I/O:** Adobe I/O是开发人员集成、扩 [!DNL Experience Platform] 展和自定义Adobe Experience Platform(包括API、事件、开发人员控制台和有用的工具)所需的一切功能的一部分，并提供对这些功能的访问。
+**AdobeI/O:** AdobeI/O是开发人员集 [!DNL Experience Platform] 成、扩展和自定义Adobe Experience Platform(包括API、事件、开发人员控制台和实用工具)所需的一切功能的一部分，并提供对这些功能的访问。
 
-**Adobe Sensei:** Adobe Sensei是强大的智能框架 [!DNL Experience Platform]。 它还提供一套人工智能服务，使品牌能够增强其提供实时、个性化客户体验的能力。
+**Adobe Sensei:** Adobe Sensei是权力的情报框架 [!DNL Experience Platform]。 它还提供一套人工智能服务，使品牌能够增强其提供实时、个性化客户体验的能力。
 
-**Amazon S3存储桶：** [!DNL Amazon S3] 存储段是存储在生态系统中的数据的基本 [!DNL Amazon] 容器。 存储段包含对象，每个对象都使用由开发人员指定的唯一密钥进行存储和检索。
+**AmazonS3桶：** [!DNL Amazon S3] 存储段是存储在生态系统中的数据的基本 [!DNL Amazon] 容器。 存储段包含对象，每个对象都使用由开发人员指定的唯一密钥进行存储和检索。
 
-**Amazon S3连接器：** [!DNL Amazon] S3连接器使客户能 [!DNL Experience Platform] 够安全地连接和访问 [!DNL Amazon] 其S3数据。
+**AmazonS3连接器：** [!DNL Amazon] S3连接器使客户能 [!DNL Experience Platform] 够安全地连接和访问 [!DNL Amazon] 其S3数据。
 
 **附加保存策略：** 保存 `Append` 策略是指定第三方数据通过连接进行摄取，并在数据集末尾附加任何新数据或行时使用的选项。 以前摄取的行保持不变，只将自上次调度运行后创建的行引入 [!DNL Experience Platform]。 在源系统中更改的所有行在上保持不变 [!DNL Experience Platform]。
 
@@ -54,7 +54,7 @@ ht-degree: 0%
 
 **属性合并：** 属性合并定义在发生用户档案冲突时合并策略如何优先处理数据属性值。
 
-**归因人工智能：** [!DNL Attribution AI] 是一款Adobe Sensei服务，可在整个客户生命周期内提供算法多渠道归因功能。
+**Attribution AI:** [!DNL Attribution AI] 是一项Adobe Sensei服务，可在整个客户生命周期内提供算法多渠道归因功能。
 
 **受众**: 受众是生成的一组符合区段定义标准的用户档案。
 
@@ -70,7 +70,7 @@ ht-degree: 0%
 
 **批：** 批是在一段时间内收集的一组数据，以单个单位一起处理。
 
-**批ID:** 批ID是Adobe为一批数据生成的标识符。
+**批ID:** 批ID是Adobe生成的批数据标识符。
 
 **批摄取：** 批量摄取允许用户摄取数PB的数据，并使其可用于企业系统。 借助最新技术，用户现在可以将任何模式XDM和非XDM引入 [!DNL Experience Platform]。
 
@@ -84,7 +84,7 @@ ht-degree: 0%
 
 ## C
 
-**限制：** 在中， [!DNL Decisioning Service]在决策规则中使用上限来定义显示优惠的次数。 有两种类型的上限，即在合并的优惠受众中，可以提出目标的次数（也称为“Global Cap”），以及向同一最终用户建议优惠的次数(也称为“用户档案上限”)。
+**限制：** 在中， [!DNL Decisioning Service]在决策规则中使用上限设置来定义显示优惠的次数。 有两种类型的上限，即在合并的优惠受众中，可以提出目标的次数（也称为“Global Cap”），以及向同一最终用户建议优惠的次数(也称为“用户档案上限”)。
 
 **目录：** 在 [!DNL Real-time Customer Data Platform]源和目标中，目录是图库，可与Adobe应用程序和第三方技术建立连接。
 
@@ -108,7 +108,7 @@ ht-degree: 0%
 
 **合同数据“C”标签：** 合同 `C` 标签用于对有合同义务或与客户的数据管理策略相关的数据进行分类。
 
-**C1合同标签：** `C1` 合同数据管理标签指定只能以聚合形式从Adobe Experience Cloud导出数据，而不包括个人或设备标识符。 例如，源自社交网络的数据。
+**C1合同标签：** `C1` 合同数据管理标签指定数据只能以汇总形式从Adobe Experience Cloud导出，而不包括个人或设备标识符。 例如，源自社交网络的数据。
 
 **C2合同标签：** `C2` “合同数据管理”标签指定无法导出到第三方的数据。 一些数据提供者在其合同中有条款禁止从最初收集数据的地方出口数据。  例如，社交网络合同通常会限制您从它们收到的数据的传输。 C2比C1更具限制性，C1只需要聚合和匿名数据。
 
@@ -134,7 +134,7 @@ ht-degree: 0%
 
 **自定义身份命名空间:** 自定义标识命名空间是客户创建的标识符，用于表示特定组织或业务案例的标识。
 
-**客户人工智能：** 客户人工智能是一项Adobe Sensei服务，它通过基于人工智能的倾向丰富客户用户档案，并支持客户细分和定位工作。
+**客户人工智能：** 客户AI是一项Adobe Sensei服务，它通过基于AI的倾向丰富客户用户档案，并支持客户细分和定位工作。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -158,7 +158,7 @@ ht-degree: 0%
 
 **数据集标签：** 数据使用标签可以添加到数据集。 该数据集中的所有字段都将继承该数据集的标签。
 
-**数据科学工作区：** [!DNL Data Science Workspace] 使客 [!DNL Experience Platform] 户能够创建机器学习模型，利用跨Adobe应用 [!DNL Experience Platform] 程序和Adobe应用程序的数据，生成智能洞察和预测，从而打造令人愉悦的最终用户数字体验。
+**数据科学工作区：** [!DNL Data Science Workspace] 使客 [!DNL Experience Platform] 户能够创建机器学习模型，利用跨Adobe和应 [!DNL Experience Platform] 用程序的数据，生成智能洞察和预测，从而打造令人愉悦的最终用户数字体验。
 
 **数据源：** 数据源是用户指定的来源数据。 数据源的示例包括移动应用程序、用户档案和／或体验事件、网站用户档案事件或CRM。
 
@@ -172,7 +172,7 @@ ht-degree: 0%
 
 **数据集：** 数据集是存储和管理构建，用于模式集合，通常是表，其中包含（列）和字段（行）。
 
-**数据集ID:** Adobe为摄取的数据集生成的标识符。
+**数据集ID:** Adobe生成的摄取数据集的标识符。
 
 **数据集输出：** 数据集输出提供了一种机制，用于确定 *将什么“创建表为选择* ”选项用于特定 [!DNL Query Service] 运行。
 
@@ -186,7 +186,7 @@ ht-degree: 0%
 
 **增量保存策略：** `Delta save strategy` 是通过连接接收第三方数据的选项。 该选项允许用户指定接收源数据的新行或更改的行 [!DNL Experience Platform]。 新行将添加到数据集的末尾，更改的行将在上的数据集中更新 [!DNL Experience Platform]。
 
-**目标：** 目 [!DNL Real-time Customer Data Platform] 标是任何系统(如激活和交付受众的Adobe应用程序、广告服务器或广告网络)的一般术语。
+**目标：** 在目 [!DNL Real-time Customer Data Platform] 标中是任何系统(如Adobe应用程序、广告服务器或广告网络)的一般术语，其中受众被激活和交付。
 
 **目标类别:** 目标类别是具有相似特 [!DNL Real-time Customer Data Platform] 征的目标的分组。
 
@@ -218,7 +218,7 @@ ht-degree: 0%
 
 **事件:** 事件是与用户档案关联的行为数据。
 
-**体验数据模型(XDM):** [!DNL Experience Data Model] (XDM)是使用标准模式统一数据以与Adobe Experience Cloud应用程 [!DNL Experience Platform] 序一起使用的概念。 XDM实现数据结构的标准化，并加快速度并简化从大量数据中获取洞察的过程。
+**体验数据模型(XDM):** [!DNL Experience Data Model] (XDM)是使用标准模式统一数据以便与和Adobe Experience Cloud应用程 [!DNL Experience Platform] 序一起使用的概念。 XDM实现数据结构的标准化，并加快速度并简化从大量数据中获取洞察的过程。
 
 **Experience Platform Launch:** [!DNL Launch] 是一个标签和SDK管理生态系统，与应用程序 [!DNL Experience Platform] 集成 [!DNL Experience Cloud] 在一起。 [!DNL Launch] 提供部署、统一和管理分析、营销和广告集成的工具，这些工具是在所有客户端设备上提供相关客户体验所必需的。
 
@@ -314,15 +314,15 @@ ht-degree: 0%
 
 ## L
 
-**库：** 在 [!DNL Experience Platform Launch]中，库是一组业务逻辑，包含有关库在客户端设备上 [!DNL Launch] 的行为方式的说明。
+**库：** 在 [!DNL Experience Platform Launch]中，库是一组业务逻辑，其中包含有关库在客户端设备 [!DNL Launch] 上的行为方式的说明。
 
 [返回页首](#adobe-experience-platform-glossary)
 
 ## M
 
-**机器学习(ML):** 机器学习是一个研究领域，它使计算机能够学习，而无需明确编程。
+**机器学习(ML):** 机器学习是一个研究领域，它使计算机能够在不明确编程的情况下学习。
 
-**机器学习模型：** 机器学习模型是机器学习配方的实例，该配方使用历史数据和配置进行培训，以便为业务用例进行解决。 在Adobe中， [!DNL Data Science Workspace]机器学习模型称为菜谱。
+**机器学习模型：** 机器学习模型是机器学习配方的实例，该配方使用历史数据和配置进行培训，以便为业务用例进行解决。 在Adobe [!DNL Data Science Workspace]中，机器学习模型称为菜谱。
 
 **映射：** 在 [!DNL Real-time Customer Data Platform]中，数据映射是将源数据字段映射到目标相关目标字段的过程。
 
@@ -356,7 +356,7 @@ ht-degree: 0%
 
 **优惠库：** 在中， [!DNL Decisioning Service]优惠库是用于管理个性化和备用优惠、决策规则和活动的中央库。
 
-**组织：** 组织是用于在Adobe产品中标识公司或公司内特定组的名称。 管理员可以配置和管理对组织用户的功能的访问权限。
+**组织：** 组织是用于在公司产品中标识公司或Adobe中特定组的名称。 管理员可以配置和管理对组织用户的功能的访问权限。
 
 **覆盖保存策略：** `Overwrite` 保存策略是用于通过连接接收第三方数据的选项，其中用户指定是否在指定的计划覆盖所摄取的数据。 [!DNL Experience Platform] 将从第三方源中摄取指定数据集并覆盖上的数据集 [!DNL Experience Platform]。
 
@@ -408,11 +408,11 @@ ht-degree: 0%
 
 ## R
 
-**实时客户数据平台：** Adobe的客户用户档案 [!DNL Real-time Customer Data Platform] 集成了已知和未知的客户数据，通过简化的集成、智能细分和跨数字客户旅程的实时激活创建可信的客户。
+**实时客户数据平台：** Adobe [!DNL Real-time Customer Data Platform] 将已知和未知的客户用户档案整合在一起，通过简化的集成、智能细分和跨数字客户旅程的实时激活创建可信的客户。
 
 **实时客户用户档案:** [!DNL Real-time Customer Profile] 是针对有针对性的个性化体验管理的集中用户档案。
 
-**菜谱：** 处方是Adobe的模型规范术语，是代表特定机器学习、AI算法或算法集成、处理逻辑和配置的顶级容器，构建和执行经过培训的模型时需要它们，因此有助于解决特定的业务问题。
+**菜谱：** 处方是模型规范的Adobe术语，是代表特定机器学习、AI算法或算法集合、处理逻辑和配置的顶级容器，用于构建和执行经过培训的模型，从而帮助解决特定的业务问题。
 
 **记录：** 记录是数据集中作为行持续存在的数据。
 
@@ -472,11 +472,11 @@ ht-degree: 0%
 
 **细分：** 细分是将大量客户、潜在客户或消费者分成小组的过程，这些小组具有相似的属性并将响应类似的营销策略。
 
-**Sensei ML框架：** Sensei ML框架是跨Adobe的统一机器学习框架，它利用上的数据 [!DNL Experience Platform] ，以更快、可扩展、可重用的方式支持数据科学家开发机器学习驱动的智能服务。
+**Sensei ML框架：** Sensei ML框架是跨Adobe的统一机器学习框架，它利用上的数据 [!DNL Experience Platform] ，以更快、可扩展和可重用的方式支持数据科学家开发机器学习驱动的智能服务。
 
 **敏感数据标签：** 敏感的“S”标签用于对被视为敏感的数据进行分类，例如您希望标记为敏感的不同类型的行为或地理数据。
 
-**服务：** 利用Adobe Intelligent Services实现AI和ML服务的强大框架。 服务提供实时、个性化的客户体验或实现自定义智能服务。
+**服务：** 利用Adobe智能服务实现AI和ML服务的强大框架。 服务提供实时、个性化的客户体验或实现自定义智能服务。
 
 **S1数据标签：** `S1` 数据标签用于对指定纬度和经度的数据进行分类，这些经度和经度可用于确定设备的精确位置。
 
@@ -492,13 +492,13 @@ ht-degree: 0%
 
 **源目录：** 源目录是中可用源的列表 [!DNL Real-time Customer Data Platform]。
 
-**标准身份命名空间:** 标准标识命名空间是Adobe预定义的标识符，包括Adobe和用于标识用户的行业标准解决方案。
+**标准身份命名空间:** 标准标识命名空间是Adobe预定义的标识符，包括用于标识用户的Adobe和行业标准解决方案。
 
 **标准模式:** 标准模式由类和混合组成，旨在重复使用。
 
 **流摄取：** 流摄取为用户提供了一种将数据从客户端和服务器端设备实时 [!DNL Experience Platform] 发送到的方法。
 
-**流端点URL:** 流端点URL是Adobe提供的唯一端点，它绑定到客户的IMS组织以将数据流化到 [!DNL Experience Platform]。
+**流端点URL:** 流端点URL是Adobe提供的唯一端点，它绑定到客户的IMS组织以将数据流化到中 [!DNL Experience Platform]。
 
 **流细分：** 流细分是一种持续不断的数据选择过程，它可根据用户活动更新细分。 在构建并保存区段后，会将区段定义应用于传入的数据 [!DNL Real-time Customer Profile]。 会定期处理细分添加和删除，确保您的目标受众保持相关性。
 
@@ -536,7 +536,7 @@ ht-degree: 0%
 
 ## X
 
-**XDM（体验数据模型）:** XDM(体验模式模型)是使用标准数据统一数据以与Adobe Experience Cloud应用程 [!DNL Experience Platform] 序一起使用的概念。 XDM是一种正式的规范，用于以单一语言或标准数据模型表示所有客户体验数据，并实现数据结构的标准化，加快速度并简化从大量数据中获取洞察的过程。
+**XDM（体验数据模型）:** XDM(体验模式模型)是使用标准数据统一数据以便与和Adobe Experience Cloud应用程 [!DNL Experience Platform] 序一起使用的概念。 XDM是一种正式的规范，用于以单一语言或标准数据模型表示所有客户体验数据，并实现数据结构的标准化，加快速度并简化从大量数据中获得洞察的过程。
 
 **XDM决策事件：** 决策事件用于捕获关于决策活动的结果和背景的观察，包括关于决策是如何作出的、何时作出、提出（和选择）哪些选择以及在决策过程中影响决策或可以观察到的情景状态的信息。 决策事件还捕获命题ID，这是一个全局唯一标识符，可用于将决策关联到其他事件。 DecisionEvents不仅与影响决策的体验事件相关，还与直接回应建议的ExperienceEvents相关。 在每个受这些建议影响的ExperienceEvent中，应用程序都会引用建议ID。 使用命题ID维护单个用户档案中的命题——响应历史。
 
