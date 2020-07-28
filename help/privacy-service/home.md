@@ -18,7 +18,7 @@ ht-degree: 2%
 
 Adobe Experience Platform [!DNL Privacy Service] 是为响应企业管理其客户个人数据的方式的根本性转变而开发的。 其核心目的 [!DNL Privacy Service] 是自动遵守数据隐私法规，一旦违反这些法规，可能会对您的业务造成重大罚款和中断数据操作。
 
-[!DNL Privacy Service] 提供RESTful API和用户界面，帮助您管理客户数据请求。 您 [!DNL Privacy Service]可以提交从Adobe Experience Cloud应用程序访问和删除个人客户数据的请求，以便自动遵守法律和组织隐私法规。
+[!DNL Privacy Service] 提供RESTful API和用户界面，帮助您管理客户数据请求。 您可 [!DNL Privacy Service]以提交从Adobe Experience Cloud应用程序访问和删除个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
 
 ## Getting started with [!DNL Privacy Service] {#getting-started}
 
@@ -31,7 +31,7 @@ Adobe Experience Platform [!DNL Privacy Service] 是为响应企业管理其客�
 1. **我是否正确标记了我的数据？**
    * 必须正确标记数据，以便服务确定在隐私作业期间要访问或删除哪些字段。 有关详细信息，请 [参阅](#label) “标记数据”一节。
 1. **我知道要发送的ID吗[!DNL Privacy Service]?**
-   * 发送隐私请求时，必须提供特定Adobe应用程序的个别客户ID。 有关详细信息，请 [参阅有关提供身](#identity)[份数据和提](#requests) 出隐私请求的章节。
+   * 在发送隐私请求时，必须提供特定Adobe应用程序的特定客户ID。 有关详细信息，请 [参阅有关提供身](#identity)[份数据和提](#requests) 出隐私请求的章节。
 1. **如何跟踪我的隐私工作？**
    * 提出隐私请求后，有多种选项可用于跟踪其状态和结果。 有关详细信息，请 [参阅“监视隐私](#monitor) ”作业一节。
 
@@ -55,15 +55,15 @@ Adobe Experience Platform [!DNL Privacy Service] 是为响应企业管理其客�
 
 ### 为隐私请求标签数据 {#label}
 
-根据您使 [!DNL Experience Cloud] 用的应用程序，您必须标记应根据隐私请求访问或删除的特定数据字段。 标记数据的过程因应用程序而异。 要了解如何为每个受支持的Adobe应用程序标记数据，请参阅文档 [Experience Cloud应用程序](./experience-cloud-apps.md)。
+根据您使 [!DNL Experience Cloud] 用的应用程序，您必须标记应根据隐私请求访问或删除的特定数据字段。 标记数据的过程因应用程序而异。 要了解如何为每个受支持的Adobe应用程序标记数据，请参阅Experience Cloud应用 [程序文档](./experience-cloud-apps.md)。
 
 ### 确定要发送到的身份数据类型 [!DNL Privacy Service] {#identity}
 
 为了处 [!DNL Privacy Service] 理客户的隐私请求，该客户的至少一个唯一标识值必须在请求本身中提供。 唯一标识值是可用于识别个人及其存储在数据存储中的个人数据的任何 [!DNL Experience Cloud] 信息。 [!DNL Privacy Service] 根据请求的性质（访问、删除或选择退出），使用此身份信息查找和处理客户的个人数据。
 
-根据您的CRM [!DNL Experience Cloud] 系统所使用的应用程序，您必须为每位客户提供的标识值的类型和数量将有所不同。 一些应用程序使用其自己的内部客户ID值(如Adobe TargetID)，而其他解决方案依赖Adobe(ECID)的全局标识符， [!DNL Experience Cloud Identity Service] 该标识符跟踪所有应用程序中的客户 [!DNL Experience Cloud] 活动。 此外，电子邮件地址或电话号码等通用个人信息也可以作为有效身份数据。
+根据您的CRM [!DNL Experience Cloud] 系统所使用的应用程序，您必须为每位客户提供的标识值的类型和数量将有所不同。 一些应用程序使用其自己的内部客户ID值(如Adobe TargetID)，而其他解决方案则依赖来自Adobe(ECID)的全局标识符，该标识符跟踪所有应用 [!DNL Experience Cloud Identity Service] 程序中的客户活动 [!DNL Experience Cloud] 情况。 此外，电子邮件地址或电话号码等通用个人信息也可以作为有效身份数据。
 
-隐私请 [求的身份文档](./identity-data.md) ，提供了有关接受的身份信息类型的更多详细信息 [!DNL Privacy Service]。 该文档还指导您如何在客户与您的网站交互时利用Adobe技术从他们有效检索适当的身份信息，并在API请求中将这些数据发 [!DNL Privacy Service] 送给客户。
+隐私请 [求的身份文档](./identity-data.md) ，提供了有关接受的身份信息类型的更多详细信息 [!DNL Privacy Service]。 该文档还提供有关如何利用Adobe技术在客户与您的网站交互时从他们有效检索适当的身份信息以及在API请求中将这些数据发 [!DNL Privacy Service] 送到的指导。
 
 ### 开始提出隐私请求 {#requests}
 
@@ -95,7 +95,7 @@ UI [!DNL Privacy Service] 允许您使用图形界面创建和监视隐私作业
 | --- | --- |
 | [!DNL Privacy Service] UI | UI [!DNL Privacy Service] 提供了监视仪表板，允许您视图所有活动请求状态的可视表示形式。 有关详细 [信息，请参](ui/overview.md) 阅Privacy Service用户指南。 |
 | [!DNL Privacy Service] API | 您可以使用API提供的查找端点以编程方式监视隐私作业的 [!DNL Privacy Service] 状态。 有关如何 [使用API的详细步骤](./api/getting-started.md) ，请参阅Privacy Service开发人员指南。 |
-| [!DNL Privacy Events] | [!DNL Privacy Events] 利用发送到已配置网络挂接的Adobe I/O事件，以促进高效的作业请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。 有关详细信息，请 [参阅订阅隐私事件](./privacy-events.md) 的教程。 |
+| [!DNL Privacy Events] | [!DNL Privacy Events] 利用发送到已配置网页挂接的AdobeI/O事件，以便有效地实现作业请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。 有关详细信息，请 [参阅订阅隐私事件](./privacy-events.md) 的教程。 |
 
 ## 后续步骤
 
