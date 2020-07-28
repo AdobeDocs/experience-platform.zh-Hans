@@ -66,7 +66,7 @@ ht-degree: 1%
 
 **API格式**
 
-每个可用源都有其自己的唯一连接规范集，用于描述连接器属性，如身份验证要求。 向端点发送GET请求 `/connectionSpecs` 将返回所有可用源的连接规范。 您还可以包含查询, `property=name=="hubspot"` 以获取专门用于的信息 [!DNL HubSpot]。
+每个可用源都有其自己的唯一连接规范集，用于描述连接器属性，如身份验证要求。 向端点发送GET请 `/connectionSpecs` 求将返回所有可用源的连接规范。 您还可以包含查询, `property=name=="hubspot"` 以获取专门用于的信息 [!DNL HubSpot]。
 
 ```http
 GET /connectionSpecs
