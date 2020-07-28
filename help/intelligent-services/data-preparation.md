@@ -26,16 +26,16 @@ ht-degree: 0%
 
 如果数据存储在外部， [!DNL Experience Platform]请按照以下步骤操作：
 
-1. 联系Adobe Consulting Services以请求专用Azure Blob存储容器的访问凭据。
+1. 联系Adobe咨询服务以请求专用Azure Blob存储容器的访问凭据。
 1. 使用访问凭据，将数据上传到Blob容器。
-1. 使用Adobe Consulting Services将您的数据映射到 [Consumer ExperienceEvent模式](#cee-schema) ，并引入智能服务。
+1. 使用Adobe咨询服务，将您的数据映射到消 [费者体验事件模式](#cee-schema) ，并引入智能服务。
 
 ### [!DNL Experience Platform] 数据准备
 
 如果数据已存储在中， [!DNL Platform]请按照以下步骤操作：
 
 1. 查看“消费者体验 [事件”模式的结构](#cee-schema) ，并确定数据是否可以映射到其字段。
-1. 联系Adobe Consulting Services以帮助将数据映射到模式并将其引入智能服务 [中，或者如果您自己想要映射](#mapping) ，请按照本指南中的步骤操作。
+1. 联系Adobe咨询服务，帮助将您的数据映射到模式并将其引入智能服务，或 [者，如果您自己想要映射数据](#mapping) ，请按照本指南中的步骤操作。
 
 ## 了解CEE模式 {#cee-schema}
 
@@ -61,7 +61,7 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 
 * [主标识字段](#identity)
 * [xdm:timestamp](#timestamp)
-* [xdm:渠道](#channel) （仅对归因AI强制使用）
+* [xdm:渠道](#channel) (仅对Attribution AI强制)
 
 #### 主要身份 {#identity}
 
@@ -72,7 +72,7 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 * &quot;电子邮件&quot;
 * &quot;phone&quot;
 * “mcid”(用于Adobe Audience ManagerID)
-* “aaid”(针对AdobeAnalyticsID)
+* “aaid”(针对Adobe AnalyticsID)
 
 如果您不确定应将哪个字段用作主要标识，请与Adobe咨询服务部门联系以确定最佳解决方案。
 
@@ -84,7 +84,7 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 
 >[!NOTE]
 >
->仅当使用归因AI时，此字段才是必填字段。
+>仅当使用Attribution AI时，此字段才是必填字段。
 
 此字段表示与ExperienceEvent相关的营销渠道。 该字段包括有关渠道类型、媒体类型和位置类型的信息。
 
@@ -241,7 +241,7 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 
 确定营销事件数据是否可映射到CEE模式后，下一步是确定要将哪些数据引入智能服务。 智能服务中使用的所有历史数据必须在四个月数据的最短时间窗口中，加上计划作为回顾期的天数。
 
-在确定要发送的数据范围后，请与Adobe咨询服务部门联系，帮助将数据映射到模式并将其引入服务。
+在确定要发送的Adobe范围后，请与模式咨询服务部门联系，帮助将数据映射到并将其引入服务。
 
 如果您有 [!DNL Adobe Experience Platform] 订阅并希望自己映射和摄取数据，请按照以下部分中概述的步骤操作。
 
@@ -363,5 +363,5 @@ curl -X PATCH \
 
 成功填充包含客户体验数据的数据集后，即可使用Intelligent Services生成洞察。 请参阅以下文档以开始：
 
-* [归因人工智能概述](./attribution-ai/overview.md)
+* [Attribution AI概述](./attribution-ai/overview.md)
 * [客户人工智能概述](./customer-ai/overview.md)
