@@ -7,14 +7,14 @@ translation-type: tm+mt
 source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
 source-wordcount: '634'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 
 # [!DNL Real-time Customer Data Platform] 度量概述
 
-Adobe实时客户数据平台(Real-time CDP)主页包括一个指标仪表板，在您登录到实时CDP时会显示该。
+Adobe实时客户数据平台(Real-time CDP)主页，在您登录到实时CDP时会显示该，其中包括一个指标仪表板。
 
 主页只是显示度量卡的位置之一。 实时CDP在您的整个体验中提供度量卡。 这些指标会通知您系统中的数据、用户档案和细分受众。
 
@@ -47,7 +47,7 @@ Some information is shown in different ways on both the leaderboard and metric c
 
 有关数据集的更多信息，请参 [阅数据集概述](../catalog/datasets/overview.md)。
 
-### 用户档案
+### 配置文件
 
 用户档案 **[!UICONTROL 数]** 显示包含用户档案的人员的总数 [!DNL Real-time Customer Profile]。 它不包含用户档案片段。 这是您的可寻址受众。
 
