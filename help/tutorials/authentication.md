@@ -18,7 +18,7 @@ ht-degree: 1%
 
 ## 进行身份验证以进行API调用
 
-为了维护应用程序和用户的安全性，对Adobe I/O API的所有请求都必须使用OAuth和JSON Web令牌(JWT)等标准进行身份验证和授权。 然后，JWT与客户特定信息一起使用，以生成您的个人访问令牌。
+为了维护应用程序和用户的安全性，对AdobeI/O API的所有请求都必须使用OAuth和JSON Web令牌(JWT)等标准进行身份验证和授权。 然后，JWT与客户特定信息一起使用，以生成您的个人访问令牌。
 
 本教程介绍通过创建流程图中概述的访问令牌进行身份验证的步骤：
 ![](images/authentication/authentication-flowchart.png)
@@ -37,13 +37,13 @@ ht-degree: 1%
 
 如果您没有Adobe ID，可以使用以下步骤创建一个：
 
-1. 转到Adobe [开发人员控制台](https://console.adobe.io)
+1. 转到 [Adobe开发人员控制台](https://console.adobe.io)
 2. 单击 **[!UICONTROL 创建新帐户]**
 3. 完成注册过程
 
 ## 成为组织的开发人 [!DNL Experience Platform] 员和用户
 
-在Adobe I/O上创建集成之前，您的帐户必须对IMS组织中的某个产品具有开发人员权限。 有关该Admin Console的开发人员帐户的详细信息，请参阅 [支持文档](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html) ，以管理开发人员。
+在AdobeI/O上创建集成之前，您的帐户必须对IMS组织中的某个产品具有开发人员权限。 有关该Admin Console的开发人员帐户的详细信息，请参阅 [支持文档](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html) ，以管理开发人员。
 
 **获得开发人员访问权限**
 
@@ -55,7 +55,7 @@ ht-degree: 1%
 
 ![](images/authentication/add-developer.png)
 
-一旦您被分配为开发人员，您将拥有在Adobe I/O上创建集 [成的访问权限](https://www.adobe.com/go/devs_console_ui)。 这些集成是从外部应用程序和服务到Adobe API的管道。
+一旦您被分配为开发人员，您将拥有在AdobeI/O上创建集 [成的访问权限](https://www.adobe.com/go/devs_console_ui)。 这些集成是从外部应用程序和服务到AdobeAPI的管道。
 
 **获得用户访问权限**
 
@@ -67,13 +67,13 @@ ht-degree: 1%
 
 ![](images/authentication/assign-user-details.png)
 
-## 在Adobe Developer Console中生成访问凭据
+## 在Adobe开发人员控制台中生成访问凭据
 
 >[!NOTE]
 >
 >如果您正在从文档开发人 [员指南中遵循此Privacy Service](../privacy-service/api/getting-started.md)，您现在可以返回该指南以生成特定于的访问凭据 [!DNL Privacy Service]。
 
-使用Adobe Developer Console，您必须生成以下三个访问凭据：
+使用Adobe开发人员控制台，您必须生成以下三个访问凭据：
 
 * `{IMS_ORG}`
 * `{API_KEY}`
@@ -85,7 +85,7 @@ ht-degree: 1%
 
 ### 一次性设置
 
-转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
+转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台，使用Adobe ID登录。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
 
 创建新项目后，单击“项 **[!UICONTROL 目概述]** ”屏 _幕上的“添加API_ ”。
 
