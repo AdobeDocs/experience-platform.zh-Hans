@@ -20,7 +20,7 @@ ht-degree: 3%
 
 ### 检索列表计划查询
 
-您可以通过向端点发出GET请求，检索IMS组织的所有计划列表的 `/schedules` 查询。
+您可以通过向端点发出列表请求，为IMS组织检索所有计划查询的 `/schedules` GET。
 
 **API格式**
 
@@ -124,7 +124,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules?limit=1
 
 ### 创建新的计划查询
 
-您可以通过向端点发出POST请求来创建新的计划查询 `/schedules` 。
+您可以通过向端点发出查询请求来创建新的计划 `/schedules` POST。
 
 **API格式**
 
@@ -223,7 +223,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules
 
 ### 指定计划查询的请求详细信息
 
-您可以通过向端点发出GET请求并在请求路径中提 `/schedules` 供其ID来检索特定计划查询的信息。
+您可以通过向端点发出查询请求并在请求路径中提供其ID来检 `/schedules` 索特定计划GET的信息。
 
 **API格式**
 
@@ -306,7 +306,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a
 
 ### 更新指定计划查询的详细信息
 
-您可以通过向端点发出PATCH请求并在请求路径中提 `/schedules` 供其ID来更新指定计划查询的详细信息。
+您可以通过向端点发出查询请求并在请求路径中提供其ID来更 `/schedules` 新指定计划PATCH的详细信息。
 
 PATCH请求支持两个不同的路径： `/state` 和 `/schedule/schedule`。
 
