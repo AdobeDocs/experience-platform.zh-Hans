@@ -22,7 +22,7 @@ ht-degree: 2%
 
 ## 什么是 [!DNL Experience Platform] API? {#what-are-experience-platform-apis}
 
-[!DNL Experience Platform] 优惠多个使用HTTP请求访问资源的RESTful [!DNL Platform] API。 这些服务API每个都公开多个端点，并允许您对列表(GET)、查找(GET)、编辑（PUT和／或修补）和删除(DELETE)资源执行操作。 有关每个服务可用的特定端点和操作的详细信息，请参 [阅Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/api-reference.html) 上的API参考文档。
+[!DNL Experience Platform] 优惠多个使用HTTP请求访问资源的RESTful [!DNL Platform] API。 这些服务API每个都公开多个端点，并允许您对列表(GET)、查找(GET)、编辑(PUT和／或PATCH)和删除(DELETE)资源执行操作。 有关每个服务可用的特定端点和操作的详细信息，请参 [阅AdobeI/O的](https://www.adobe.io/apis/experienceplatform/home/api-reference.html) API参考文档。
 
 ## 如何设置API请求的格式？ {#how-do-i-format-an-api-request}
 
@@ -88,11 +88,11 @@ curl -X GET \
 
 ## 我的IMS组织是什么？ {#what-is-my-ims-organization}
 
-IMS组织是客户的Adobe代表。 任何获得许可的Adobe解决方案都与此客户组织集成。 当IMS组织有权访问时， [!DNL Experience Platform]它可以将访问权限分配给开发人员。 IMS组织ID(`x-gw-ims-org-id`)表示应执行API调用的组织，因此作为所有API请求的头是必需的。 可以通过Adobe开发人员控 [制台找到此ID](https://www.adobe.com/go/devs_console_ui): 在“集 **成** ”选项卡中，导 **航至任何特定集** 成 **的“概述”部分，以在“客户端凭据”**&#x200B;下查找ID。 有关如何进行身份验证的分步演练，请参 [!DNL Platform]阅身份验证 [教程](../tutorials/authentication.md)。
+IMS组织是Adobe的代表。 任何许可的Adobe解决方案都与此客户组织集成。 当IMS组织有权访问时， [!DNL Experience Platform]它可以将访问权限分配给开发人员。 IMS组织ID(`x-gw-ims-org-id`)表示应执行API调用的组织，因此作为所有API请求的头是必需的。 此ID可通过Adobe开发人 [员控制台找到](https://www.adobe.com/go/devs_console_ui): 在“集 **成** ”选项卡中，导 **航至任何特定集** 成 **的“概述”部分，以在“客户端凭据”**&#x200B;下查找ID。 有关如何进行身份验证的分步演练，请参 [!DNL Platform]阅身份验证 [教程](../tutorials/authentication.md)。
 
 ## 在哪里可以找到我的API密钥？ {#where-can-i-find-my-api-key}
 
-所有API请求中都需要API密钥作为头。 可通过Adobe开发人员控 [制台找到](https://www.adobe.com/go/devs_console_ui)。 在控制台中，在“集 **成** ”选项卡上，导航到特定集 **成的“概述** ”部分，您将在“客户端凭据” **下找到密钥**。 有关如何进行身份验证的分步演练，请参 [!DNL Platform]阅身份验证 [教程](../tutorials/authentication.md)。
+所有API请求中都需要API密钥作为头。 它可以通过Adobe开发 [人员控制台找到](https://www.adobe.com/go/devs_console_ui)。 在控制台中，在“集 **成** ”选项卡上，导航到特定集 **成的“概述** ”部分，您将在“客户端凭据” **下找到密钥**。 有关如何进行身份验证的分步演练，请参 [!DNL Platform]阅身份验证 [教程](../tutorials/authentication.md)。
 
 ## 如何获得访问令牌? {#how-do-i-get-an-access-token}
 
@@ -114,7 +114,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 ## 如何在PATCH请求中指示要更新的JSON字段？ {#how-do-i-indicate-a-json-field-to-update-in-a-patch-request}
 
-API中的许多PATCH [!DNL Platform] 操作都 [使用JSON指针](https://tools.ietf.org/html/rfc6901) 字符串指示要更新的JSON属性。 这些修补程序通常包含在使用JSON修补程 [序格式的请求负载](https://tools.ietf.org/html/rfc6902) 中。 有关这些 [技术所需语法的详](api-fundamentals.md) 细信息，请参阅API基础知识指南。
+API中的许多PATCH [!DNL Platform] 操作 [都使用JSON指](https://tools.ietf.org/html/rfc6901) 针字符串，以指示要更新的JSON属性。 这些修补程序通常包含在使用JSON修补程 [序格式的请求负载](https://tools.ietf.org/html/rfc6902) 中。 有关这些 [技术所需语法的详](api-fundamentals.md) 细信息，请参阅API基础知识指南。
 
 ## 我是否可以使用邮递员调用 [!DNL Platform] API? {#how-do-i-use-postman-to-make-calls-to-platform-apis}
 
@@ -172,7 +172,7 @@ API中的许多PATCH [!DNL Platform] 操作都 [使用JSON指针](https://tools.
 }
 ```
 
-当标题中提供的访问令牌无效时 `Authorization` 显示此错误消息。 确保已正确输入令牌，或 [在Adobe I/O控制](../tutorials/authentication.md) 台中生成新令牌。
+当标题中提供的访问令牌无效时 `Authorization` 显示此错误消息。 确保已正确输入令牌，或 [在AdobeI](../tutorials/authentication.md) /O控制台中生成新令牌。
 
 ### 需要API密钥
 
@@ -194,7 +194,7 @@ API中的许多PATCH [!DNL Platform] 操作都 [使用JSON指针](https://tools.
 }
 ```
 
-当提供的API密钥头()的值无效时，将显`x-api-key`示此错误消息。 再次尝试之前，请确保输入的密钥正确无误。 如果您不知道您的API密钥，可以在Adobe I/O控 [制台中找到它](https://console.adobe.io): 在“集 **成** ”选项卡中，导 **航到“概述** ”部分，以查找特定集成的API密钥在“客户端凭据” **下的位置**。
+当提供的API密钥头()的值无效时，将显`x-api-key`示此错误消息。 再次尝试之前，请确保输入的密钥正确无误。 如果您不知道您的API密钥，可以在AdobeI/O控 [制台中找到它](https://console.adobe.io): 在“集 **成** ”选项卡中，导 **航到“概述** ”部分，以查找特定集成的API密钥在“客户端凭据” **下的位置**。
 
 
 ### 缺少标题
@@ -217,7 +217,7 @@ API中的许多PATCH [!DNL Platform] 操作都 [使用JSON指针](https://tools.
 }
 ```
 
-当用户或Adobe I/O集成(标题中的 [访问令牌](#how-do-i-get-an-access-token) ) `Authorization` 无权调用标题中提 [!DNL Experience Platform] 供的IMS组织的API时，将显示此错 `x-gw-ims-org-id` 误消息。 在再次尝试之前，请确保已在头中为IMS组织提供了正确的ID。 如果您不知道您的组织ID，可以在Adobe I/O控 [制台中找到它](https://console.adobe.io): 在“集 **成** ”选项卡中，导 **航至“概述** ”部分，以查找特定集成的“客户端凭据 **”下的ID**。
+当用户或AdobeI/O集成(标题中的 [访问令牌](#how-do-i-get-an-access-token)`Authorization` 标识)无权调用标题中提 [!DNL Experience Platform] 供的IMS组织的API时，将显示此错 `x-gw-ims-org-id` 误消息。 在再次尝试之前，请确保已在头中为IMS组织提供了正确的ID。 如果您不知道您的组织ID，您可以在AdobeI/O控 [制台中找到它](https://console.adobe.io): 在“集 **成** ”选项卡中，导 **航至“概述** ”部分，以查找特定集成的“客户端凭据 **”下的ID**。
 
 ### 未指定有效的内容类型
 
@@ -230,7 +230,7 @@ API中的许多PATCH [!DNL Platform] 操作都 [使用JSON指针](https://tools.
 }
 ```
 
-当POST、PUT或PATCH请求的标头无效或缺失时，将显示此错误 `Content-Type` 消息。 确保请求中包含标题，并且其值为 `application/json`。
+当POST、PUT或PATCH请求标头无效或缺失时，将显示此错误 `Content-Type` 消息。 确保请求中包含标题，并且其值为 `application/json`。
 
 
 ## 服务疑难解答目录 {#service-troubleshooting-directory}
