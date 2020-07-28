@@ -24,7 +24,7 @@ Adobe Experience Platform的新增功能：
 
 ## [!DNL Access control] {#access-control}
 
-[!DNL Experience Platform] 利用 [AdobeAdmin Console](https://adminconsole.adobe.com) 、产品用户档案将用户与权限和沙箱关联起来。 权限控制对各种平台功能的访问，包括数据建模、用户档案管理和沙箱管理。
+[!DNL Experience Platform] 利用 [Adobe Admin Console](https://adminconsole.adobe.com) ()产品用户档案将用户与权限和沙箱关联起来。 权限控制对各种平台功能的访问，包括数据建模、用户档案管理和沙箱管理。
 
 **主要功能**
 
@@ -44,7 +44,7 @@ Adobe Experience Platform的新增功能：
 | 功能 | 描述 |
 |--- | ---|
 | 生产沙箱 | [!DNL Experience Platform] 提供一个无法删除或重置的生产沙箱。 |
-| 非生产沙箱 | 可以为单个实例创建多个非生产沙箱， [!DNL Platform] 使您能够测试功能、运行实验并制作自定义配置，而不会影响生产沙箱。 |
+| 非生产沙箱 | 可以为单个实例创建多个非生产沙箱， [!DNL Platform] 使您能够测试功能、运行实验并制作自定义配置，而不会影响您的生产沙箱。 |
 | 沙箱切换器 | 在用 [!DNL Experience Platform] 户界面中，屏幕左上角的沙箱切换器允许您通过下拉菜单在可用沙箱之间切换。 |
 | `x-sandbox-name` 标题 | 对API的所 [!DNL Experience Platform] 有调用现在必须包 `x-sandbox-name` 括新标头，其值引 `name` 用将执行操作的沙箱的属性。 |
 
