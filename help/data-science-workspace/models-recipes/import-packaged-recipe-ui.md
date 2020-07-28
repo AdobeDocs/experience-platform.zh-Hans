@@ -133,7 +133,7 @@ ht-degree: 0%
 >[!NOTE]
 > 在将源 [文件打包到菜谱教程中](./package-source-files-recipe.md) ，在使用Python源文件构建零售销售菜谱结束时提供了一个Docker URL。
 
-在“选择源”页 *面上* ，将与使用源URL字段中的源文件构建的打包菜谱 [!DNL Python] 对应的Docker **[!UICONTROL URL粘贴]** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/python/retail/retail.config.json`。 在“ **[!UICONTROL 运行时]** ”下拉 *框中选* 择Python **[!UICONTROL ，在“类]** 型 *”下拉框中选* 择“分类”。 填写完所有内容后，单 **[!UICONTROL 击]** 右上角的“下一步”，继续 *管理模式*。
+在“选择源”页 *面上* ，将与使用源URL字段中的源文件生成的打包菜谱 [!DNL Python] 对应的Docker **[!UICONTROL URL粘贴]** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/python/retail/retail.config.json`。 在“ **[!UICONTROL 运行时]** ”下拉 *框中选* 择Python **[!UICONTROL ，在“类]** 型 *”下拉框中选* 择“分类”。 填写完所有内容后，单 **[!UICONTROL 击]** 右上角的“下一步”，继续 *管理模式*。
 
 >[!NOTE]
 > *类型&#x200B;*支持&#x200B;**[!UICONTROL 分类]**和&#x200B;**[!UICONTROL 回归]**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**[!UICONTROL 义”]**。
