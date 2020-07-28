@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Azure Blob和Amazon S3连接器
+title: Azure Blob和AmazonS3连接器
 topic: overview
 translation-type: tm+mt
 source-git-commit: 340f5d0611e9e9eb4676018ee10c8a8aa08dbb2d
@@ -12,7 +12,7 @@ ht-degree: 0%
 ---
 
 
-# Azure Blob和Amazon S3连接器
+# Azure Blob和AmazonS3连接器
 
 Adobe Experience Platform为AWS、和等云提供商提供 [!DNL Google Cloud Platform]本机连 [!DNL Azure]接。 您可以将数据从这些系统导入 [!DNL Platform]。
 
@@ -61,5 +61,5 @@ Adobe Experience Platform为AWS、和等云提供商提供 [!DNL Google Cloud Pl
 
 ## 连接 [!DNL Blob] 和S3以使 [!DNL Platform] 用UI
 
-- [在UI中创建Azure Blob或Amazon S3源连接器](../../tutorials/ui/create/cloud-storage/blob-s3.md)
+- [在UI中创建Azure Blob或AmazonS3源连接器](../../tutorials/ui/create/cloud-storage/blob-s3.md)
 - [在UI中为云存储连接器配置数据流](../../tutorials/ui/dataflow/batch/cloud-storage.md)
