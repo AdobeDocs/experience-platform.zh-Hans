@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Amazon Kinesis连接器
+title: AmazonKinesis连接器
 topic: overview
 translation-type: tm+mt
 source-git-commit: 340f5d0611e9e9eb4676018ee10c8a8aa08dbb2d
@@ -57,11 +57,11 @@ Adobe Experience Platform为AWS、和等云提供商提供 [!DNL Google Cloud Pl
 
 ## 连接 [!DNL Amazon Kinesis] 到 [!DNL Platform] 使用API
 
-- [使用Flow Service API创建Amazon Kinesis连接器](../../tutorials/api/create/cloud-storage/kinesis.md)
+- [使用Flow Service API创建AmazonKinesis连接器](../../tutorials/api/create/cloud-storage/kinesis.md)
 - [使用Flow Service API浏览云存储系统](../../tutorials/api/explore/cloud-storage.md)
 - [使用流服务API收集云存储数据](../../tutorials/api/collect/cloud-storage.md)
 
 ## 连接 [!DNL Amazon Kinesis] 到 [!DNL Platform] 使用UI
 
-- [在UI中创建Amazon Kinesis源连接器](../../tutorials/ui/create/cloud-storage/kinesis.md)
+- [在UI中创建AmazonKinesis源连接器](../../tutorials/ui/create/cloud-storage/kinesis.md)
 - [在UI中为云存储连接器配置数据流](../../tutorials/ui/dataflow/streaming/cloud-storage.md)
