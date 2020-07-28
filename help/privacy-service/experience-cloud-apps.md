@@ -14,7 +14,7 @@ ht-degree: 20%
 
 # [!DNL Privacy Service] 和应 [!DNL Experience Cloud] 用
 
-Adobe Experience Platform [!DNL Privacy Service] 旨在支持多个Adobe Experience Cloud应用程序的隐私请求。 每个应用程序都支持不同的产品值和ID，用于识别数据主体。
+Adobe Experience Platform [!DNL Privacy Service] 旨在支持针对多个Adobe Experience Cloud应用程序的隐私请求。 每个应用程序都支持不同的产品值和ID，用于识别数据主体。
 
 此文档可作为应用程序文 [!DNL Experience Cloud] 档的参考，其中概述了如何配置该应用程序进行与隐私相关的操作。 这包括如何格式化和标记数据。 涵盖两类别应用程序：
 
@@ -35,7 +35,7 @@ Adobe Experience Platform [!DNL Privacy Service] 旨在支持多个Adobe Experie
 | Adobe Campaign Standard | ✓ | ✓ | <ul><li>[访问／删除文档](https://docs.campaign.adobe.com/doc/standard/getting_started/en/ACS_GDPR.html)</li><li>[退出文档](../segmentation/honoring-opt-outs.md)</li></ul> |
 | Adobe客户属性(CRS) | ✓ | 不适用 | <ul><li>[访问／删除GDPR文档](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/customer-attributes/gdpr.html)</li><li>[CCPA的访问／删除文档](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/customer-attributes/ccpa.html)</li><li>客户属性无法传输数据，因此不适用退出销售请求。</li></ul> |
 | Adobe Experience Platform | ✓ | ✓ | <ul><li>[访问／删除数据湖文档](../catalog/privacy.md)</li><li>[访问／删除实时客户用户档案文档](../profile/privacy.md)</li><li>[!DNL Experience Platform] 接受 [受众区段的退出请求](../segmentation/honoring-opt-outs.md)。</li></ul> |
-| Adobe Primetime身份验证 | ✓ | 不适用 | <ul><li>[访问／删除文档](http://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>[!DNL Primetime] 无法传输数据，因此不适用退出销售请求。</li></ul> |
+| Adobe Primetime认证 | ✓ | 不适用 | <ul><li>[访问／删除文档](http://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>[!DNL Primetime] 无法传输数据，因此不适用退出销售请求。</li></ul> |
 | Adobe Target | ✓ | 不适用 | <ul><li>[访问／删除文档](https://docs.adobe.com/content/help/zh-Hans/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)</li><li>[!DNL Target] 无法传输数据，因此不适用退出销售请求。</li></ul> |
 
 
@@ -45,8 +45,8 @@ Adobe Experience Platform [!DNL Privacy Service] 旨在支持多个Adobe Experie
 
 | 应用程序 | 文档说明 |
 | ------- | ----------- |
-| [Adobe Campaign Classic](https://docs.campaign.adobe.com/doc/AC/getting_started/EN/ACC_GDPR.html) | Adobe Campaign经典GDPR功能概述。 |
-| [Adobe Dynamic Tag Manager](https://docs.adobe.com/content/help/zh-Hans/dtm/using/tools/opt-in.html) | 防止在获得同意前触发Adobe标记的步骤。 |
+| [Adobe Campaign Classic](https://docs.campaign.adobe.com/doc/AC/getting_started/EN/ACC_GDPR.html) | Adobe Campaign ClassicGDPR功能概述。 |
+| [Adobe动态标签管理器](https://docs.adobe.com/content/help/zh-Hans/dtm/using/tools/opt-in.html) | 防止Adobe标签在获得同意前激发的步骤。 |
 | [Adobe Experience Manager](https://helpx.adobe.com/experience-manager/6-4/managing/using/gdpr-compliance.html) | 概述客户隐私管理员或AEM管理员如何处理GDPR请求。 |
 | [Adobe Experience ManagerLivefyre](https://docs.adobe.com/content/help/en/livefyre/using/settings-other/privacy-requests/c-gdpr-compliance.html) | 使用Livefyre进行GDPR访问和删除请求的步骤。 |
 | [Adobe Experience Platform Launch](https://docs.adobelaunch.com/client-side-information/deploy-javascript-tags-to-opt-in-to-launch) | 介绍开发人员如何使用扩展功能和规则生成器，来定义“选择加入”和“选择退出”解决方案。 |
