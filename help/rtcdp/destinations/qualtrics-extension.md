@@ -1,8 +1,8 @@
 ---
 title: Qualtrics网站反馈扩展
 seo-title: Qualtrics网站反馈扩展
-description: Th Qualtrics网站反馈扩展是Adobe实时调查平台中的一个目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
-seo-description: Qualtrics网站反馈扩展是Adobe实时调查平台中的一个目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
+description: The Qualtrics网站反馈扩展是Adobe实时客户数据平台中的调查目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Qualtrics网站反馈扩展是Adobe实时客户数据平台中的调查目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
 source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
@@ -20,15 +20,15 @@ ht-degree: 4%
 
 使用直观的指向并单击界面，在几分钟内创建和部署目标明确、具有品牌的Web消息。 您从网站收集的数据和洞察会与所有渠道的客户反馈数据一起呈现，这些视图提供客户体验的完整——所有这一切均在一个平台上实现。
 
-[!DNL Qualtrics Website Feedback] 是Adobe实时客户数据平台中的调查扩展。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101569.qualtrics-website-feedback.html)。
+[!DNL Qualtrics Website Feedback] 是Adobe实时客户数据平台的调查扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101569.qualtrics-website-feedback.html)。
 
-此目标是Experience Platform Launch扩展。 有关Launch扩展在Adobe实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+此目标是Experience Platform Launch扩展。 有关Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
 ![Qualtrics网站反馈扩展](assets/qualtrics-extension.png)
 
 ## 先决条件 {#prerequisites}
 
-此扩展可在目录 [!DNL Destinations] 中找到已购买Adobe实时CDP的所有客户。
+此扩展位于目录 [!DNL Destinations] 中，面向所有已购买Adobe实时CDP的客户。
 
 要使用此扩展，您需要访问Experience Platform Launch。 Experience Platform Launch作为附带的增值功能提供给Adobe Experience Cloud客户。 请与您的组织管理员联系以获取Launch访问权限，并要求他们授予您 **[!UICONTROL manage_properties]** （管理属性）权限，以便您可以安装扩展。
 
@@ -42,7 +42,7 @@ ht-degree: 4%
 4. 在“选 **[!UICONTROL 择可用的启动项属性]** ”窗口中，选择要在其中安装扩展的启动项属性。 您还可以在启动项中选择创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解启动文档的“ [属性”页](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) 面部分中的属性。
 5. 该工作流将引导您进入Launch以完成安装。
 
-有关扩展配置选项和安装支持的信息，请参 [阅Adobe Exchange上的Qualtrics网站反馈页](https://exchange.adobe.com/experiencecloud.details.101569.qualtrics-website-feedback.html)。
+有关扩展配置选项和安装支持的信息，请参阅 [AdobeExchange上的Qualtrics网站反馈页](https://exchange.adobe.com/experiencecloud.details.101569.qualtrics-website-feedback.html)。
 
 您还可以直接在Experience Platform Launch界面中安 [装扩展](https://launch.adobe.com/)。 请参 [阅启动文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension) 中的添加新扩展。
 
@@ -58,6 +58,6 @@ ht-degree: 4%
 
 >[!TIP]
 >
->如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显示该 **[!UICONTROL 扩展]** 的安装。 启动安装工作流程(如安装扩 [展中所述](#install-extension) )，以开始启动并配置或删除您的扩展。
+>如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显 **[!UICONTROL 示]** 该扩展的安装。 启动安装工作流程(如安装扩 [展中所述](#install-extension) )，以开始启动并配置或删除您的扩展。
 
 要升级您的扩展，请参 [阅Launch文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/extension-upgrade.html) 中的扩展升级。
