@@ -54,7 +54,7 @@ ht-degree: 0%
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 * 内容类型： application/json
 
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 在API [!DNL Policy Service] 中，所有策略和营销操作称为 `core` 或资 `custom` 源。
 
-资 `core` 源由Adobe定义和维护，而资源由 `custom` 个别客户创建和维护，因此，资源是唯一的，仅对创建资源的IMS组织可见。 因此，列表和查找操作(`GET`)是允许对资源执行的唯一 `core` 操作，而列表、查找和更新操作(`POST`、 `PUT`、 `PATCH`和 `DELETE`)可用于资 `custom` 源。
+资 `core` 源是由Adobe定义和维护的，而资源是由个 `custom` 别客户创建和维护的，因此，资源是唯一的，仅对创建资源的因特网管理系统组织可见。 因此，列表和查找操作(`GET`)是允许对资源执行的唯一 `core` 操作，而列表、查找和更新操作(`POST`、 `PUT`、 `PATCH`和 `DELETE`)可用于资 `custom` 源。
 
 ## 策略状态
 
