@@ -20,7 +20,7 @@ ht-degree: 5%
 
 函数 `isNull` 确定对象引用是否不存在。
 
-**格式**
+**Format**
 
 ```sql
 {OBJECT}.isNull()
@@ -38,7 +38,7 @@ person.homeAddress.isNull()
 
 该函 `isNotNull` 数确定对象引用是否存在。
 
-**格式**
+**Format**
 
 ```sql
 {OBJECT}.isNotNull()
