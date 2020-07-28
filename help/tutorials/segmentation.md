@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 分段教程
 
-Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTful API，使您能够根据数据构建细分和生成 [!DNL Real-time Customer Profile] 受众。 这些细分集中进行配置和维 [!DNL Platform]护，任何Adobe解决方案都可轻松访问。 要了解有关分段的更多信息，请首先阅读分段 [服务概述](../segmentation/home.md)。
+Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTful API，使您能够根据数据构建细分和生成 [!DNL Real-time Customer Profile] 受众。 这些细分集中配置和维护， [!DNL Platform]并且任何Adobe解决方案都可轻松访问。 要了解有关分段的更多信息，请首先阅读分段 [服务概述](../segmentation/home.md)。
 
 ## 创建区段定义
 
