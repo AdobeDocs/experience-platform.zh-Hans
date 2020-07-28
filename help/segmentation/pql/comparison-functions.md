@@ -5,19 +5,22 @@ title: 比较函数
 topic: developer guide
 translation-type: tm+mt
 source-git-commit: 92f92f480f29f7d6440f4e90af3225f9a1fcc3d0
+workflow-type: tm+mt
+source-wordcount: '295'
+ht-degree: 5%
 
 ---
 
 
 # 比较函数
 
-比较函数用于比较不同的表达式和值、返回或相 `true` 应的 `false` 值。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语言概述](./overview.md)。
+比较函数用于比较不同的表达式和值、返回或相 `true` 应的 `false` 值。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
 
 ## 等于
 
-(等 `=` 于)函数检查一个值或表达式是否等于另一个值或表达式。
+( `=` 等于)函数检查一个值或表达式是否等于另一个值或表达式。
 
-**格式**
+**Format**
 
 ```sql
 {EXPRESSION} = {VALUE}
@@ -33,9 +36,9 @@ homeAddress.countryISO = "CA"
 
 ## 不等于
 
-( `!=` 不相等)函数检查一个值或表达式是否 **不等于** 其他值或表达式。
+( `!=` 不相等)函数检查一个值或表达式是否 **不等** 于另一个值或表达式。
 
-**格式**
+**Format**
 
 ```sql
 {EXPRESSION} != {VALUE}
@@ -51,9 +54,9 @@ homeAddress.countryISO != "CA"
 
 ## 大于
 
-该 `>` （大于）函数用于检查第一值是否大于第二值。
+( `>` 大于)函数用于检查第一值是否大于第二值。
 
-**格式**
+**Format**
 
 ```sql
 {EXPRESSION} > {EXPRESSION} 
@@ -69,9 +72,9 @@ person.birthMonth > 2
 
 ## 大于或等于
 
-该 `>=` （大于或等于）函数用于检查第一值是否大于或等于第二值。
+( `>=` 大于或等于)函数用于检查第一值是否大于或等于第二值。
 
-**格式**
+**Format**
 
 ```sql
 {EXPRESSION} >= {EXPRESSION} 
@@ -87,9 +90,9 @@ person.birthMonth >= 3
 
 ## 小于
 
-该 `<` （小于）比较函数用于检查第一值是否小于第二值。
+比 `<` 较函数（小于）用于检查第一值是否小于第二值。
 
-**格式**
+**Format**
 
 ```sql
 {EXPRESSION} < {EXPRESSION} 
@@ -107,7 +110,7 @@ person.birthMonth < 2
 
 比 `<=` 较函数（小于或等于）用于检查第一值是否小于或等于第二值。
 
-**格式**
+**Format**
 
 ```sql
 {EXPRESSION} <= {EXPRESSION} 
@@ -123,4 +126,4 @@ person.birthMonth <= 2
 
 ## 后续步骤
 
-现在您已经了解了比较功能，可以在PQL查询中使用它们。 有关其他PQL功能的更多信息，请阅读 [用户档案查询语概述](./overview.md)。
+现在您已经了解了比较功能，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请阅读 [用户档案查询语概述](./overview.md)。
