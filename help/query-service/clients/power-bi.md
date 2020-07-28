@@ -28,15 +28,15 @@ PC用户可从https://powerbi.microsoft.com/en-us/desktop/ [!DNL Power BI] 进�
 
 - 重新启动Windows。
 
-- Find the [!DNL PowerBI] Desktop evaluation version.
+- 查找桌 [!DNL PowerBI] 面评估版。
 
 ## 连接 [!DNL Power BI] 到 [!DNL Query Service]
 
-After performing those preparatory steps, you can connect [!DNL Power BI] to [!DNL Query Service]:
+执行这些准备步骤后，您可以连 [!DNL Power BI] 接到 [!DNL Query Service]:
 
 - Open [!DNL Power BI].
 
-- Click **[!UICONTROL Get Data]** in the top menu ribbon.
+- 单击 **[!UICONTROL 顶部菜单]** 功能区中的“获取数据”。
 
 - 选择 **[!UICONTROL PostgreSQL数据库]**，然后单击 **[!UICONTROL “连接”]**。
 
