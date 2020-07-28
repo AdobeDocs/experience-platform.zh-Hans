@@ -52,13 +52,13 @@ ht-degree: 0%
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 - 内容类型： application/json
 
 ## 存储库API惯例
 
-[!DNL Decisioning Service] 由多个彼此相关的业务对象控制。 所有业务对象都存储在业务 [!DNL Platform’s] 对象存储库中。 此存储库的一个主要功能是API与业务对象类型正交。 除了使用指示其API端点中资源类型的POST、GET、PUT、PATCH或DELETEAPI外，只有6个通用端点，但它们接受或返回一个参数，该参数指示在需要消歧时对象的类型。 模式必须向存储库注册，但除此之外，存储库还可用于一组开放式对象类型。
+[!DNL Decisioning Service] 由多个彼此相关的业务对象控制。 所有业务对象都存储在业务 [!DNL Platform’s] 对象存储库中。 此存储库的一个主要功能是API与业务对象类型正交。 除了使用POST、GET、PUT、PATCH或DELETEAPI来指示其API端点中资源的类型，它们只有6个通用端点，但它们接受或返回一个参数，该参数在需要消歧时指示对象的类型。 模式必须向存储库注册，但除此之外，存储库还可用于一组开放式对象类型。
 
 除了上面列出的标头之外，用于创建、读取、更新、删除和查询存储库对象的API还有以下约定：
 
@@ -69,7 +69,7 @@ API有效负荷格式与或标 `Accept` 头协 `Content-Type` 商。 {FORMAT}取
 | FORMAT变体 | 请求或响应实体的说明 |
 | --- | --- |
 | <br>后跟参数 `schema={schemaId}` | 消息包含由JSON模式描述的实例，该实例由格式参数模式表示。 实例打包在JSON属性中 `_instance`。 响应有效负荷中的其他顶级属性指定可用于所有资源的存储库信息。  符合HAL格式的消息具有包含HAL `_links` 格式的引用的属性。 |
-| `patch.hal` | 消息包含JSON PATCH有效负荷，假定要修补的实例符合HAL。 这意味着不仅可以修补实例自己的实例属性，还可以修补实例的HAL链接。 请注意，客户端对哪些属性可以更新存在限制。 |
+| `patch.hal` | 消息包含JSONPATCH有效负荷，假定要修补的实例符合HAL。 这意味着不仅可以修补实例自己的实例属性，还可以修补实例的HAL链接。 请注意，客户端对哪些属性可以更新存在限制。 |
 | `home.hal` | 邮件包含存储库的主文档资源的JSON格式表示形式。 |
 | xdm.receipt | 该消息包含用于创建、更新（完整和修补程序）或删除操作的JSON格式响应。 接收包含以ETag形式指示实例修订的控制数据。 |
 
@@ -90,11 +90,11 @@ API有效负荷格式与或标 `Accept` 头协 `Content-Type` 商。 {FORMAT}取
 
 `ContainerId` 是实例API的第一个路径参数。 所有业务实体都居住在称为容器的环境中。 容器是一种隔离机制，可以分开不同的关注点。 存储库实例API的第一个路径元素是常规端点之后的 `containerId`。 从呼叫者可访问的容器的列表获取标识符。 例如，用于在容器中创建实例的API是 `POST https://platform.adobe.io/data/core/xcore/{containerId}/instances`。
 
-可访问容器的列表是通过使用标准标头使用HTTP GET请求调用存储库根端点“/”来获得的。
+可访问容器的列表是通过使用标准标头使用HTTPGET请求调用存储库根端点“/”来获得的。
 
 ## 管理对容器的访问
 
-管理员可以将类似的承担者、资源和访问权限分组到用户档案中。 这减轻了管理负担，并且受 [到AdobeAdmin ConsoleUI的支持](https://adminconsole.adobe.com)。 您必须是组织中的Adobe Experience Platform的产品管理员，才能创建用户档案并为其分配用户。
+管理员可以将类似的承担者、资源和访问权限分组到用户档案中。 这减轻了管理负担，并受 [Adobe的Admin ConsoleUI支持](https://adminconsole.adobe.com)。 您必须是组织中的Adobe Experience Platform的产品管理员，才能创建用户档案并为其分配用户。
 
 只需一次性创建与某些权限匹配的产品用户档案，然后将用户添加到这些用户档案即可。 用户档案充当已被授予权限的组，该组中的每个真正用户或技术用户都继承这些权限。
 
@@ -218,7 +218,7 @@ curl -X POST {ENDPOINT_PATH}/{CONTAINER_ID}/instances \
 
 REST响应将有一个位置标题，其中包含一个URL组件，该组件可用于检索刚刚创建的实例。 此组件是相对URI引用，需要应用于存储库的基本URI。 基本URI在标头中返 `Content-Base` 回。
 
-属 `repo:etag` 性指定实例的修订版本。 此值可用于更新操作，以实施一致性。 HTTP头可 `If-Match` 用于向PUT或PATCH API调用添加一个条件，以确保对实例没有可能意外被覆盖的其他更改。 每次 `repo:etag` 创建、读取、更新、删除和查询调用时都会返回该值。 根据RFC7232第3.1节，该 ` If-Match` 值用作 [标题中的值](https://tools.ietf.org/html/rfc7232#section-3.1)。
+属 `repo:etag` 性指定实例的修订版本。 此值可用于更新操作，以实施一致性。 HTTP头可 `If-Match` 用于向PUT或PATCHAPI调用添加一个条件，以确保对实例没有可能意外被覆盖的其他更改。 每次 `repo:etag` 创建、读取、更新、删除和查询调用时都会返回该值。 根据RFC7232第3.1节，该 ` If-Match` 值用作 [标题中的值](https://tools.ietf.org/html/rfc7232#section-3.1)。
 
 其余属性指示创建和上次修改实例时使用的帐户和API密钥。 由于实例是由此调用创建的，因此各个值都是请求的值。
 
@@ -472,7 +472,7 @@ curl -X GET {ENDPOINT_PATH}/{CONTAINER_ID}/queries/core/search?schema="{SCHEMA_I
 
 ### 更新和修补实例
 
-要更新实例，客户端可以一次覆盖属性的完整列表，或使用JSON PATCH请求处理包括列表在内的各个属性值。
+要更新实例，客户端可以一次覆盖属性的完整列表，或使用JSONPATCH请求处理包括列表在内的各个属性值。
 
 在这两种情况下，请求的URL都指定物理实例的路径，在这两种情况下，响应都将是JSON接收负载，就像创建操作返回的 [负载一样](#create-instances)。 客户端最好将其 `Location` 从此对象的先前API调用中收到的头或HAL链接用作此API的完整URL路径。 如果这不可能，则客户端可以从和构 `containerId` 建URL `instanceId`。
 
@@ -496,7 +496,7 @@ curl -X PUT {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
 }'  
 ```
 
-**请求** （修补程序）
+**请求** (PATCH)
 
 ```shell
 curl -X PATCH {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \ 
@@ -513,7 +513,7 @@ curl -X PATCH {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
 ]'
 ```
 
-PATCH请求应用这些指令，然后根据模式和与PUT请求相同的实体和引用完整性规则验证生成的实体。
+PATCH请求应用指令，然后根据模式和与PUT请求相同的实体和引用完整性规则验证生成的实体。
 
 **控制属性值编辑**
 
@@ -612,7 +612,7 @@ curl -X DELETE {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
 
 - **`xdm:status`** -此属性用于实例的生命周期管理。 该值表示一个工作流状态，用于指示优惠是否仍在建设中（值=草稿），运行时通常可以考虑（值=已批准），或者它是否不应再使用（值=存档）。
 
-对实例执行简单的PATCH操作通常用于只操作属 `xdm:status` 性：
+实例上的简单PATCH操作通常用于只操作属 `xdm:status` 性：
 
 ```json
 [
@@ -686,7 +686,7 @@ Placement **实例** 可具有以下属性：
 - 优惠库UI客户 `xdm:components` 端在阵列中的每个项目中添加以下属性。 如果不了解对UI的影响，则不应删除或处理这些属性：
    - **`offerui:previewThumbnail`** -这是优惠库UI用来显示资产呈现的可选属性。 此演绎版与资产本身不同。 例如，内容可以是HTML，而再现是仅显示其近似值的位图图像。 此（低质量）再现显示在优惠的表示块中。
 
-优惠实例上的PATCH操作示例说明如何操作表示：
+PATCH实例上的优惠操作示例说明如何操作表示：
 
 ```json
 [
@@ -709,7 +709,7 @@ Placement **实例** 可具有以下属性：
 
 有关 [完整的cURL语法](#updating-and-patching-instances) ，请参阅更新和打补丁实例。 参 `schemaId` 数必须是 `https://ns.adobe.com/experience/offer-management/personalized-offer` 或 `https://ns.adobe.com/experience/offer-management/fallback-offer` 优惠是回退优惠。
 
-当还没有属性时，PATCH操作可能会失 `xdm:representations` 败。 在这种情况下，上述添加操作前面可能会有另一个添加操作，该操作创建数 `xdm:representations` 组或单个添加操作直接设置数组。
+PATCH操作可能在尚无属性时失 `xdm:representations` 败。 在这种情况下，上述添加操作前面可能会有另一个添加操作，该操作创建数 `xdm:representations` 组或单个添加操作直接设置数组。
 描述的模式和属性用于所有优惠类型、个性化优惠和备用优惠。 以下两节介绍个性化优惠各方面的限制和决策规则。
 
 ## 设置优惠约束
@@ -722,7 +722,7 @@ Placement **实例** 可具有以下属性：
 尚未达到其开始日期和时间的决策选项在决策中尚未被视为合格。
 - **`xdm:endDate`** -此属性指示结束日期和时间。 该值是根据RFC 3339规则格式化的字符串，如此时间戳： “2019-07-13T11:00:00.000Z”已通过其结束日期和时间的决策选项在决策过程中不再被视为符合资格。
 
-更改日历约束可以通过以下PATCH调用实现：
+更改日历约束可以通过以下PATCH调用完成：
 
 ```json
 [
@@ -898,9 +898,9 @@ curl -X PATCH {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
 ]' 
 ```
 
-对于这两种情况，请 [参阅更新实例和修补实](#updating-and-patching-instances) 例以了解完整的cURL语法。 参 `schemaId` 数必须为 `https://ns.adobe.com/experience/offer-management/personalized-offer`。
+对于这两种情况，请 [参阅更新实例和为实例打](#updating-and-patching-instances) 补丁，以了解完整的cURL语法。 参 `schemaId` 数必须为 `https://ns.adobe.com/experience/offer-management/personalized-offer`。
 
-请注意， `xdm:tags` 要成功添加操作，该属性必须已存在。 实例中不存在标记，PATCH操作可以先添加数组属性，然后添加对该数组的标记引用。
+请注意， `xdm:tags` 要成功添加操作，该属性必须已存在。 PATCH操作可以先添加数组属性，然后添加对该数组的标记引用，实例中不存在标记。
 
 ### 为优惠集定义过滤器
 
