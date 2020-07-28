@@ -26,7 +26,7 @@ ht-degree: 0%
 
 使用批量摄取上传 [!DNL Platform] 到的所有数据都上传到单个数据集。 在此数据可供使用之 [!DNL Real-time Customer Profile]前，必须明确配置相关数据集。 有关完整说明，请参阅有关为 [用户档案和标识服务配置数据集的教程](dataset-configuration.md)。
 
-配置数据集后，您可以将开始引入数据。 有关如何上 [传不同格式文件的详细步骤](../../ingestion/batch-ingestion/api-overview.md) ，请参阅批量摄取开发人员指南。
+配置数据集后，您可以将开始引入数据。 有关如何上 [传不同格式文件的详细步骤](../../ingestion/batch-ingestion/api-overview.md) ，请参阅批处理摄取开发人员指南。
 
 ## 使用流摄取添加数据
 
