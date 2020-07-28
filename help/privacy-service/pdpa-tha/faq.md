@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # PDPA（泰国）常见问题解答
 
-本文档提供有关泰国(PDPA) [!DNL Personal Data Protection Act] 及其在Adobe Experience Cloud中实施的常见问题的解答。
+本文档回答了关于泰国(PDPA) [!DNL Personal Data Protection Act] 及其在Adobe Experience Cloud的执行情况的常见问题。
 
 在本文档中使用的与PDPA相关的各个术语的定义可在PDPA(泰 [国)术语文章中找到](./terminology.md) 。
 
