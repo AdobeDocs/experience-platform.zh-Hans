@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 在UI中创建Azure Data Explorer源连接器
+title: 在UI中创建AzureData Explorer源连接器
 topic: overview
 translation-type: tm+mt
 source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
@@ -39,10 +39,10 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 | `endpoint` | 服务器的端 [!DNL Data Explorer] 点。 |
 | `database` | 数据库的 [!DNL Data Explorer] 名称。 |
 | `tenant` | 用于连接数据库的唯一租户 [!DNL Data Explorer] ID。 |
-| `servicePrincipalId` | 用于连接到Data Explorer数据库的唯一服务主体ID。 |
-| `servicePrincipalKey` | 用于连接到Data Explorer数据库的唯一服务主体键。 |
+| `servicePrincipalId` | 用于连接到Data Explorer库的唯一服务主体ID。 |
+| `servicePrincipalKey` | 用于连接到Data Explorer库的唯一服务主体键。 |
 
-有关快速入门的详细信息，请参 [阅此数据浏览器文档](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad)。
+有关快速入门的详细信息，请参 [阅此Data Explorer文档](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad)。
 
 ## 连接帐 [!DNL Azure Data Explorer] 户
 
@@ -52,11 +52,11 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
-在“数 *[!UICONTROL 据库]* ”类别下，选 **[!UICONTROL 择Azure Data Explorer]** ，然 **** 后单击+图标(+)以创建新的Data Explorer连接器。
+在“数 *[!UICONTROL 据库]* ”类别下，选 **[!UICONTROL 择Azure]** Data Explorer **，然** 后单击+图标(+)以创建新Data Explorer连接器。
 
 ![目录](../../../../images/tutorials/create/data-explorer/catalog.png)
 
-将显 *[!UICONTROL 示“连接到Azure Data Explorer]* ”页面。 在此页上，您可以使用新凭据或现有凭据。
+将显 *[!UICONTROL 示“连接到AzureData Explorer]* ”页。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
