@@ -69,7 +69,7 @@ POST /connections
 
 **请求**
 
-要创建连接， [!DNL Oracle] 其唯一的连接规范ID必须作为POST请求的一部分提供。 连接规范ID [!DNL Oracle] 为 `d6b52d86-f0f8-475f-89d4-ce54c8527328`。
+要创建连接， [!DNL Oracle] 其唯一连接规范ID必须作为POST请求的一部分提供。 连接规范ID [!DNL Oracle] 为 `d6b52d86-f0f8-475f-89d4-ce54c8527328`。
 
 ```shell
 curl -X POST \
