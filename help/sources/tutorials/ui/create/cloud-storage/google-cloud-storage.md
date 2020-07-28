@@ -67,4 +67,4 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 ## 后续步骤
 
-通过遵循本教程，您已建立了与GCS帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md)。
+按照本教程，您已建立了与GCS帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md)。
