@@ -46,7 +46,7 @@ ht-degree: 1%
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 - 内容类型： application/json
 
@@ -199,7 +199,7 @@ curl -X GET \
 
 ### 启用数据集 {#enable-the-dataset}
 
-如果尚未为或启用现有数 [!DNL Profile] 据集 [!DNL Identity Service]，则可以使用数据集ID发出PATCH请求来启用它。
+如果尚未为或启用现有数 [!DNL Profile] 据集 [!DNL Identity Service]，则可以通过使用数据集ID发出PATCH请求来启用它。
 
 **API格式**
 
@@ -231,7 +231,7 @@ curl -X PATCH \
 
 请求主体包括一 `tags` 个属性，它包含两个子属性： `"unifiedProfile"` 和 `"unifiedIdentity"`。 这些子属性的值是包含字符串的数组 `"enabled:true"`。
 
-**响应** PATCH请求成功返回HTTP状态200(OK)和包含更新数据集ID的数组。 此ID应与在PATCH请求中发送的ID匹配。 现在 `"unifiedProfile"` 已添 `"unifiedIdentity"` 加和标记，并且用户档案和标识服务启用了数据集。
+**响应**&#x200B;成功的PATCH请求返回HTTP状态200(OK)和包含更新数据集ID的数组。 此ID应与在PATCH请求中发送的ID匹配。 现在 `"unifiedProfile"` 已添 `"unifiedIdentity"` 加和标记，并且用户档案和标识服务启用了数据集。
 
 ```json
 [
