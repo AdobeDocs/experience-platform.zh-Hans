@@ -35,8 +35,8 @@ ht-degree: 2%
 3. 选择适当的输入数据集，然后单击“ **[!UICONTROL 下一步]**”。 这将设置“模型”的默认输入培训数据集。
    ![](../images/models-recipes/train-evaluate-ui/select_dataset.png)
 
-4. 为“模型”提供名称并查看默认的“模型”配置。 在创建处方时应用了默认配置，通过多次单击这些值来检查和修改配置值。 要提供新的配置集，请单击“ **[!UICONTROL 上传新配置]** ”，并将包含“模型”配置的JSON文件拖至浏览器窗口中。 单击 **[!UICONTROL “完]** 成”(Finish)以创建“模型”(Model)。
-   >[!NOTE]配置是唯一的，且特定于其预期的处方，这意味着零售销售处方的配置将不适用于产品推荐处方。 有关零售 [销售](#reference) 处方配置的列表，请参阅参考部分。
+4. 为“模型”提供名称并查看默认的“模型”配置。 在“处方”创建过程中应用了默认配置，通过多次单击这些值来检查和修改配置值。 要提供新的配置集，请单击“ **[!UICONTROL 上传新配置]** ”，并将包含“模型”配置的JSON文件拖至浏览器窗口中。 单击 **[!UICONTROL “完]** 成”(Finish)以创建“模型”(Model)。
+   >[!NOTE]配置是唯一的，且特定于其预期的处方，这意味着零售销售处方的配置将不适用于产品Recommendations处方。 有关零售 [销售](#reference) 处方配置的列表，请参阅参考部分。
 
    ![](../images/models-recipes/train-evaluate-ui/name_and_configure.png)
 
@@ -55,7 +55,7 @@ ht-degree: 2%
    ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
 5. 在“模型”(Model)创建过程中提供的默认配置将显示出来，通过多次单击这些值，相应地更改和修改这些配置。 单击 **[!UICONTROL “完成]** ”以创建并执行培训运行。
-   >[!NOTE]配置是唯一的，且特定于其预期的处方，这意味着零售销售处方的配置将不适用于产品推荐处方。 有关零售 [销售](#reference) 处方配置的列表，请参阅参考部分。
+   >[!NOTE]配置是唯一的，且特定于其预期的处方，这意味着零售销售处方的配置将不适用于产品Recommendations处方。 有关零售 [销售](#reference) 处方配置的列表，请参阅参考部分。
 
    ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
