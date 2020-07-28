@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 创建零售销售模式和数据集
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
 workflow-type: tm+mt
 source-wordcount: '497'
 ht-degree: 0%
@@ -98,7 +98,7 @@ ht-degree: 0%
    python bootstrap.py
    ```
 
-   > [!NOTE] 完成脚本可能需要几分钟。
+   >[!NOTE] 完成脚本可能需要几分钟。
 
 ## 后续步骤
 
