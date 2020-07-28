@@ -38,7 +38,7 @@ In order to address this need, Experience Platform provides **sandboxes** which 
 
 ## 沙箱访问控制
 
-默认情况下，组织的所有用户都有权访问生产沙箱。 对非生产沙箱的访问权限必须由系统管理员、产品管理员或产品用户档案管理员通过Adobe [Admin Console授予](https://adminconsole.adobe.com)。
+默认情况下，组织的所有用户都有权访问生产沙箱。 对非生产沙箱的访问权限必须由系统管理员、产品管理员或产品用户档案管理员通过 [Adobe Admin Console](https://adminconsole.adobe.com)。
 
 要视图、创建、更新或删除非生产沙箱，用户还必须获得“沙箱管理”权限。
 
