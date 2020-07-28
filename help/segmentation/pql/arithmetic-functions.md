@@ -20,7 +20,7 @@ ht-degree: 5%
 
 ( `+` addition)函数用于查找两个参数表达式的和。
 
-**格式**
+**Format**
 
 ```sql
 {NUMBER} + {NUMBER}
@@ -38,7 +38,7 @@ product1.price + product2.price
 
 ( `*` multiplication)函数用于查找两个参数表达式的乘积。
 
-**格式**
+**Format**
 
 ```sql
 {NUMBER} * {NUMBER}
@@ -56,7 +56,7 @@ product.inventory * product.price
 
 利用 `-` （减法）函数来寻找两个参数表达式的差值。
 
-**格式**
+**Format**
 
 ```sql
 {NUMBER} - {NUMBER}
@@ -74,7 +74,7 @@ product1.price - product2.price
 
 用 `/` （除法）函数求两个参数表达式的商。
 
-**格式**
+**Format**
 
 ```sql
 {NUMBER} / {NUMBER}
@@ -92,7 +92,7 @@ totalProduct.price / totalProduct.sold
 
 ( `%` modulo/remainder)函数用于在将两个参数表达式除以后查找余数。
 
-**格式**
+**Format**
 
 ```sql
 {NUMBER} % {NUMBER}
