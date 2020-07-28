@@ -31,7 +31,7 @@ ht-degree: 2%
 
 要使用API探索第三方云存储, [!DNL Platform] 您必须拥有有效的基本连接ID。 如果尚未为要使用的存储建立基本连接，则可通过以下教程创建一个：
 
-* [Amazon S3](../create/cloud-storage/s3.md)
+* [AmazonS3](../create/cloud-storage/s3.md)
 * [Azure Blob](../create/cloud-storage/blob.md)
 * [Azure数据湖存储Gen2](../create/cloud-storage/adls-gen2.md)
 * [Google Cloud商店](../create/cloud-storage/google.md)
@@ -110,9 +110,9 @@ curl -X GET \
 ]
 ```
 
-## 检查文件结构
+## Inspect文件结构
 
-要从云存储检查数据文件的结构，请在提供文件路径作为查询参数时执行GET请求。
+要从云存储检查GET文件的结构，请在提供文件路径作为查询参数时执行数据请求。
 
 **API格式**
 
