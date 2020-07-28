@@ -16,11 +16,11 @@ ht-degree: 0%
 
 此文档提供有关Adobe Experience Platform中访问控制的常见问题解答。 有关其他服务的问题和疑 [!DNL Platform] 难解答，请参阅Experience Platform [疑难解答指南](../landing/troubleshooting.md)。
 
-[!DNL Experience Platform] 利用Adobe用户档案中的 [产品Admin Console](http://adminconsole.adobe.com) ，提供基于角色 **的访问控制**，将用户与权限和沙箱关联。  有关更多 [信息](home.md) ，请参阅访问控制概述。
+[!DNL Experience Platform] 利用Adobe Admin Console的产品 [用户档案](http://adminconsole.adobe.com) ，提供基于角色 **的访问控制**，将用户与权限和沙箱关联起来。  有关更多 [信息](home.md) ，请参阅访问控制概述。
 
 ## 在哪里可以找到我当前的访问权限？
 
-如果您是IMS组织的系统管理员、产品管理员或产品用户档案管理员，您可以视图您分配的产品用户档案及其在AdobeAdmin Console中提供的权限。 有关如何 [导航到访问控制](./ui/overview.md) ，请参阅用户指南 [!DNL Admin Console] ，以获取有关如何导航到视图产品用户档案权限的说明。
+如果您是IMS组织的系统管理员、产品管理员或产品用户档案管理员，您可以视图您分配的产品用户档案及其在Adobe Admin Console内提供的权限。 有关如何 [导航到访问控制](./ui/overview.md) ，请参阅用户指南 [!DNL Admin Console] ，以获取有关如何导航到视图产品用户档案权限的说明。
 
 如果您不是管理员，您仍可以通过向视图API中的端点发送请求来访问控制您 `/acl/effective-policies` 当前的访问权限。 有关详细信息，请参阅视图开发人 [员指南中的](./api/effective-policies.md) “访问控制有效策略”部分。
 
