@@ -1,7 +1,7 @@
 ---
 title: Adobe Target 扩展
 seo-title: Adobe Target 扩展
-description: Adobe Target扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
+description: Adobe Target扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: null
 translation-type: tm+mt
 source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
@@ -18,17 +18,17 @@ ht-degree: 16%
 
 Adobe Target 是一种 Adobe Experience Cloud 解决方案，可为您提供定制和个性化客户体验所需的一切功能，从而最大限度地增加您的 Web 和移动设备网站、应用程序、社交媒体及其他数字渠道的收入。
 
-Adobe Target是Adobe实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100162.html)。
+Adobe Target是Adobe实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100162.html)。
 
-此目标是扩 [!DNL Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Launch] 实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+此目标是扩 [!DNL Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Launch] 实时CDP中的工作方式的更多信息，请参 [阅Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
 ![Adobe Target 扩展](/help/rtcdp/destinations/assets/adobe-target-extension.png)
 
 ## 先决条件 {#prerequisites}
 
-此扩展可在目录 [!DNL Destinations] 中找到已购买Adobe实时CDP的所有客户。
+此扩展位于目录 [!DNL Destinations] 中，面向所有已购买Adobe实时CDP的客户。
 
-要使用此扩展，您需要访问 [!DNL Experience Platform Launch]。 [!DNL Experience Platform Launch] 作为附带的增值功能提供给Adobe Experience Cloud客户。 请与您的组织管理员联系以 [!DNL Launch] 获取访问权限，并请他们授予 **[!UICONTROL 您manage_properties]** 权限，以便您可以安装扩展。
+要使用此扩展，您需要访问 [!DNL Experience Platform Launch]。 [!DNL Experience Platform Launch] 作为附带的增值功能提供给Adobe Experience Cloud客户。 请与您的组织管理员联系以 [!DNL Launch] 获取访问权限，并要求他们授予 **[!UICONTROL 您manage_properties]** 权限，以便您可以安装扩展。
 
 ## 安装扩展 {#install-extension}
 
@@ -57,6 +57,6 @@ Adobe Target是Adobe实时客户数据平台中的个性化扩展。 有关扩�
 
 >[!TIP]
 >
->如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显示该 **[!UICONTROL 扩展]** 的安装。 按照安装扩展中的说明启 [动安装](#install-extension) 工作流 [!DNL Launch] 程，以获取并配置或删除扩展。
+>如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显 **[!UICONTROL 示]** 该扩展的安装。 按照安装扩展中的说明启 [动安装](#install-extension) 工作流 [!DNL Launch] 程，以获取并配置或删除扩展。
 
 要升级您的扩展，请参 [阅文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/extension-upgrade.html) 中的扩 [!DNL Launch] 展升级。
