@@ -20,7 +20,7 @@ ht-degree: 1%
 
 ## 列表所有营销行动
 
-要视图所有营销活动的列表，可以向指定发出GET请求， `/marketingActions/core` 或者 `/marketingActions/custom` 返回指定容器的所有策略。
+要视图所有营销活动的列表，可以向指定GET发出请求， `/marketingActions/core` 或者 `/marketingActions/custom` 返回指定容器的所有策略。
 
 **API格式**
 
@@ -97,7 +97,7 @@ curl -X GET \
 
 ## 查找特定的营销活动
 
-您还可以执行查找(GET)请求，以视图特定营销活动的详细信息。 这是使用营销 `name` 操作完成的。 如果名称未知，则可使用以前显示的列表(GET)请求找到该名称。
+您还可以执行查找(GET)请求，以视图特定营销活动的详细信息。 这是使用营销 `name` 操作完成的。 如果名称未知，则可以使用以前显示的列表(GET)请求找到该名称。
 
 **API格式**
 
@@ -142,7 +142,7 @@ curl -X GET \
 
 ## 创建或更新营销活动
 
-API [!DNL Policy Service] 允许您定义自己的营销操作，并更新现有的营销操作。 创建和更新操作均使用PUT操作完成，并将其用于营销操作的名称。
+API [!DNL Policy Service] 允许您定义自己的营销操作，并更新现有的营销操作。 创建和更新操作均使用PUT操作来完成。
 
 **API格式**
 
@@ -156,7 +156,7 @@ PUT /marketingActions/custom/{marketingActionName}
 
 >[!NOTE]
 >
->无法在调 `{marketingActionName}` 用中提供，将导致405错误（不允许使用方法），因为不允许您直接对端点执行 `/marketingActions/custom` PUT。 此外，如 `name` 果有效负荷中的与路径 `{marketingActionName}` 中的不匹配，您将收到400错误（错误请求）。
+>无法在调用 `{marketingActionName}` 中提供PUT将导致405错误（不允许使用方法），因为不允许您直接对端点执 `/marketingActions/custom` 行。 此外，如 `name` 果有效负荷中的与路径 `{marketingActionName}` 中的不匹配，您将收到400错误（错误请求）。
 
 ```SHELL
 curl -X PUT \
@@ -224,4 +224,4 @@ curl -X DELETE \
 
 如果营销操作已成功删除，则响应正文将为空，并显示HTTP状态200（确定）。
 
-您可以通过尝试查找(GET)营销操作来确认删除。 您应会收到HTTP状态404（未找到）和“找不到”错误消息，因为营销操作已被删除。
+您可以通过尝试查找(GET)营销活动来确认删除。 您应会收到HTTP状态404（未找到）和“找不到”错误消息，因为营销操作已被删除。
