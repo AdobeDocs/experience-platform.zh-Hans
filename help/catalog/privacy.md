@@ -22,14 +22,14 @@ Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、销选择�
 
 在阅读本指南之前，建议您对以下服 [!DNL Experience Platform] 务有一定的了解：
 
-* [!DNL Privacy Service](../privacy-service/home.md): 管理客户在Adobe Experience Cloud应用程序中访问、选择退出销售或删除其个人数据的请求。
+* [!DNL Privacy Service](../privacy-service/home.md): 管理跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的客户请求。
 * [!DNL Catalog Service](home.md): 数据位置和谱系的记录系统 [!DNL Experience Platform]。 提供可用于更新数据集元数据的API。
 * [!DNL Experience Data Model (XDM) System](../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
 * [!DNL Identity Service](../identity-service/home.md): 通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
 
 ## 了解身份命名空间 {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service] 跨系统和设备连接客户身份数据。 [!DNL Identity Service] 使用 **[!UICONTROL 身份命名空间]** ，通过将身份值与其来源系统相关联来提供与身份值相关的上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如AdobeAdvertising CloudID(“AdCloud”)或Adobe TargetID(“TNTID”))关联。
+Adobe Experience Platform [!DNL Identity Service] 跨系统和设备连接客户身份数据。 [!DNL Identity Service] 使用 **[!UICONTROL 身份命名空间]** ，通过将身份值与其来源系统相关联来提供与身份值相关的上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising CloudID(“AdCloud”)或Adobe TargetID(“TNTID”))关联。
 
 [!DNL Identity Service] 维护全局定义（标准）和用户定义（自定义）标识命名空间的存储。 标准命名空间适用于所有组织（例如，“电子邮件”和“ECID”），而您的组织也可以创建自定义命名空间以满足其特定需求。
 
@@ -68,7 +68,7 @@ Adobe Experience Platform [!DNL Identity Service] 跨系统和设备连接客户
 >
 > 此部分包括对模式注册表API的调用。 有关使用API的重要信息(包括了解您 `{TENANT_ID}` 和容器概念)，请参 [阅开发人员](../xdm/api/getting-started.md) 指南的入门部分。
 
-您可以通过向API中的端点发出POST请求，将标识描述符添加 `/descriptors` 到数据集的XDM [!DNL Schema Registry] 模式。
+您可以通过向API中的端点发出模式请求，将标识描述符添加 `/descriptors` 到数据集的XDM [!DNL Schema Registry] POST。
 
 **API格式**
 
