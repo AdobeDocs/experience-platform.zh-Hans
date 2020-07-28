@@ -26,12 +26,12 @@ Adobe Experience Platform允许从外部源摄取数据，同时使您能够使�
 
 ### Adobe应用程序
 
-[!DNL Experience Platform] 允许从其他Adobe应用程序(包括AdobeAnalytics、Adobe Audience Manager和Adobe)中摄取数据 [!DNL Experience Platform Launch]。 有关更多信息，请参阅以下相关文档:
+[!DNL Experience Platform] 允许从其他Adobe应用程序(包括Adobe Analytics、Adobe Audience Manager和)中摄取数据 [!DNL Experience Platform Launch]。 有关更多信息，请参阅以下相关文档:
 
 - [Adobe Audience Manager连接器概述](connectors/adobe-applications/audience-manager.md)
 - [在UI中创建Adobe Audience Manager源连接器](./tutorials/ui/create/adobe-applications/audience-manager.md)
-- [AdobeAnalytics数据连接器概述](connectors/adobe-applications/analytics.md)
-- [在UI中创建AdobeAnalytics源连接器](./tutorials/ui/create/adobe-applications/analytics.md)
+- [Adobe Analytics数据连接器概述](connectors/adobe-applications/analytics.md)
+- [在UI中创建Adobe Analytics源连接器](./tutorials/ui/create/adobe-applications/analytics.md)
 - [在UI中创建客户属性源连接器](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 
 ### 广告
@@ -109,7 +109,7 @@ CRM系统提供的数据有助于建立客户关系，进而创造忠诚度并�
 
 ## 访问控制数据获取中的源
 
-可以在AdobeAdmin Console中管理数据获取中的源的权限。 您可以通过特定产品用户档案 *[!UICONTROL 中的]* “权限”选项卡访问权限。 从“编 **[!UICONTROL 辑权限]** ”面板中，可以通过数据获取菜单条目访问与 *[!UICONTROL 源相关的]* 权限。 “ **[!UICONTROL 视图源]** ”权限授予对“目录”选项卡中可用源的只读访问权，并在“浏览”选项卡中通过身份验证的源 *[!UICONTROL ，而“管理源]******* ”权限则授予对读取、创建、编辑和禁用源的完全访问权限。
+可在Adobe Admin Console内管理数据获取来源的权限。 您可以通过特定产品用户档案 *[!UICONTROL 中的]* “权限”选项卡访问权限。 从“编 **[!UICONTROL 辑权限]** ”面板中，可以通过数据获取菜单条目访问与 *[!UICONTROL 源相关的]* 权限。 “ **[!UICONTROL 视图源]** ”权限授予对“目录”选项卡中可用源的只读访问权，并在“浏览”选项卡中通过身份验证的源 *[!UICONTROL ，而“管理源]******* ”权限则授予对读取、创建、编辑和禁用源的完全访问权限。
 
 下表概述了UI根据这些权限的不同组合而表现的方式：
 
@@ -127,6 +127,6 @@ CRM系统提供的数据有助于建立客户关系，进而创造忠诚度并�
 
 Adobe没有义务维护、更正、更新、更改、修改或以其他方式支持测试版。 建议您务必小心，不要以任何方式依赖此类测试版和／或随附材料的正确功能或性能。 测试版被视为Adobe的机密信息。
 
-您向Adobe提供的任何“反馈”（有关测试版的信息，包括但不限于您在使用测试版、建议、改进和建议时遇到的问题或缺陷），包括对此类反馈的所有权利、所有权和兴趣，均已分配给Adobe。
+您向Adobe提供的任何“反馈”（有关测试版的信息，包括但不限于您在使用测试版时遇到的问题或缺陷、建议、改进和建议），现将分配给Adobe，包括该反馈中和该反馈的所有权利、所有权和兴趣。
 
 提交开放式反馈或创建支持票证以共享您的建议或报告错误，寻求功能增强。
