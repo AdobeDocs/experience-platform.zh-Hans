@@ -51,7 +51,7 @@ ht-degree: 1%
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 - 内容类型： application/json
 
@@ -126,7 +126,7 @@ curl -X GET \
 
 ## 从合并策略中查找源数据集 {#datasets}
 
-合并策略包含有关其源数据集的信息，而源数据集又包含数据使用标签。 通过向API提供GET请求中的合并策略ID，可以查找合并策略的详细 [!DNL Profile] 信息。 有关合并策略的详细信息，请参阅合 [并策略端点指南](../../profile/api/merge-policies.md)。
+合并策略包含有关其源数据集的信息，而源数据集又包含数据使用标签。 通过在向API提供GET请求中提供合并策略ID，可以查找合并策略的详细 [!DNL Profile] 信息。 有关合并策略的详细信息，请参阅合 [并策略端点指南](../../profile/api/merge-policies.md)。
 
 **API格式**
 
@@ -189,7 +189,7 @@ curl -X GET \
 
 获得合并策略的源数据集的ID后，您可以使用 [DULE Policy Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) API根据特定营销操作评估这些数据集，以检查数据使用策略违规。
 
-要评估数据集，您必须在POST请求路径中提供营销操作的名称，同时在请求主体中提供数据集ID，如下例所示。
+要评估POST集，您必须在请求主体中提供数据集ID时，在请求请求路径中提供营销操作的名称，如下例所示。
 
 **API格式**
 
@@ -200,7 +200,7 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MARKETING_ACTION_NAME}` | 与要评估数据集的数据使用策略关联的营销操作的名称。 根据策略是由Adobe还是您的组织定义，您必须分别使 `/marketingActions/core` 用 `/marketingActions/custom`或使用。 |
+| `{MARKETING_ACTION_NAME}` | 与要评估数据集的数据使用策略关联的营销操作的名称。 根据策略是由Adobe定义还是由您的组织定义，您必须分 `/marketingActions/core` 别使 `/marketingActions/custom`用或。 |
 
 **请求**
 
