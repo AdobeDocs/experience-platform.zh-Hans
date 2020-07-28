@@ -18,7 +18,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 所有技能级别的数据科学家都将发现复杂、易用的工具，它们支持机器学习方法的快速开发、培训和调整——人工智能技术的所有优势，而不必复杂。
 
-借助 [!DNL Data Science Workspace]数据科学家可以轻松创建由机器学习提供支持的智能服务API。 这些服务可与其他Adobe服务(包括Adobe Target和Adobe Design Cloud)配合使用，帮助您在Web、桌面和移动应用程序中自动实现个性化、有针对性的数字体验。
+借助 [!DNL Data Science Workspace]数据科学家可以轻松创建由机器学习提供支持的智能服务API。 这些服务与包括Adobe Target和Adobe Analytics Cloud在内的其他Adobe服务协同工作，帮助您在Web、桌面和移动应用程序中自动实现个性化、有针对性的数字体验。
 
 本指南概述了与之相关的主要概念 [!DNL Data Science Workspace]。
 
@@ -44,13 +44,13 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 | 搜索词 | 定义 |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [!DNL Data Science Workspace] | [!DNL Data Science Workspace] 使客 [!DNL Experience Platform] 户能够创建机器学习模型，利用跨渠道 [!DNL Experience Platform] 的数据和Adobe解决方案生成智能洞察和预测，从而打造令人愉悦的最终用户数字体验。 |
+| [!DNL Data Science Workspace] | [!DNL Data Science Workspace] 使客 [!DNL Experience Platform] 户能够创建机器学习模型，利用跨Adobe和解决 [!DNL Experience Platform] 方案的数据，生成智能洞察和预测，从而打造令人愉悦的最终用户数字体验。 |
 | 人工智能 | 人工智能是计算机系统的理论和发展，能够执行通常需要人类智能的任务，如视觉感知、语音识别、决策和语言之间的翻译。 |
-| 机器学习 | 机器学习是一个研究领域，它使计算机能够在不明确编程的情况下学习。 |
-| [!DNL Sensei] ML Framework | [!DNL Sensei] ML Framework是跨Adobe的统一机器学习框架，它利用上的数据，以更快、可扩展 [!DNL Experience Platform] 、可重用的方式支持数据科学家开发机器学习驱动的智能服务。 |
-| [!DNL Experience Data Model] | [!DNL Experience Data Model] (XDM)是Adobe牵头进行的标准化工作，旨在为客户体验管理定 [!DNL Profile] 义标 [!DNL ExperienceEvent]准模式，如和。 |
+| 机器学习 | 机器学习是一个研究领域，它使计算机能够学习，而无需明确编程。 |
+| [!DNL Sensei] ML Framework | [!DNL Sensei] ML Framework是跨Adobe的统一机器学习框架，它利用相关数据 [!DNL Experience Platform] ，以更快、可扩展和可重用的方式支持数据科学家开发机器学习驱动的智能服务。 |
+| [!DNL Experience Data Model] | [!DNL Experience Data Model] (XDM)是由Adobe牵头的标准化工作，旨在为客户体验管 [!DNL Profile] 理定 [!DNL ExperienceEvent]义标准模式，如和。 |
 | [!DNL JupyterLab] | [!DNL JupyterLab] 是Project Jupyter的一个基于web的开放源代码界面，并紧密集成到其中 [!DNL Experience Platform]。 |
-| 菜谱 | 处方是Adobe的模型规范术语，是代表特定机器学习、AI算法或算法集成、处理逻辑和配置的顶级容器，构建和执行经过培训的模型时需要它们，因此有助于解决特定的业务问题。 |
+| 菜谱 | 处方是模型规范的Adobe术语，是代表特定机器学习、AI算法或算法集合、处理逻辑和配置的顶级容器，用于构建和执行经过培训的模型，从而帮助解决特定的业务问题。 |
 | 模型 | 模型是机器学习配方的实例，该配方使用历史数据和配置进行培训，以便为业务用例进行解决。 |
 | 培训 | 培训是从标记数据中学习模式和洞察的过程。 |
 | 训练模型 | 训练模型表示模型训练过程的可执行输出，其中一组训练数据被应用到模型实例。 经过培训的模型将保留对从其创建的任何智能Web服务的引用。 该模型适合于评分和创建智能Web服务。 可以将训练模型的修改作为新版本进行跟踪。 |
@@ -107,7 +107,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 ### 操作化
 
-当您对菜谱感到满意时，只需点击几下即可创建智能服务。 无需编码——您无需注册开发人员或工程师即可自行完成。 最后，将智能服务发布到Adobe IO，让您的数字体验团队可以享用。
+当您对菜谱感到满意时，只需点击几下即可创建智能服务。 无需编码——您无需注册开发人员或工程师即可自行完成。 最后，将智能服务发布到AdobeIO，您的数字体验团队就可以使用它。
 
 <!--You can also publish your intelligent service to the Service Gallery, where it's available to specific people, specific organizations, or everyone who develops data solutions on Adobe Experience Platform. You can even share it with your external partners, and they can share their intelligent service with you. And the next time you're starting a new recipe, you can check the Service Gallery to see if there's a similar intelligent service you can use to get started. -->
 
@@ -121,7 +121,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 ### 访问控制 [!DNL Data Science Workspace]
 
-访问控制 [!DNL Experience Platform] 通过Adobe [Admin Console管理](https://adminconsole.adobe.com)。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。 有关更多 [信息](../access-control/home.md) ，请参阅访问控制概述。
+访问控制 [!DNL Experience Platform] 通过Adobe Admin Console [管理](https://adminconsole.adobe.com)。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。 有关更多 [信息](../access-control/home.md) ，请参阅访问控制概述。
 
 >[!IMPORTANT]
 >
@@ -135,7 +135,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 ### 安全与心安
 
-保护数据是Adobe的首要任务。 Adobe通过为帮助遵守行业公认的标准、法规和认证而开发的安全流程和控制来保护您的数据。
+保护Adobe是重中之重。 Adobe通过为帮助遵守行业公认的标准、法规和认证而开发的安全流程和控制来保护您的数据。
 
 作为Adobe安全产品生命周期的一部分，软件和服务中内置了安全性。
 要了解Adobe数据和软件安全性、合规性等信息，请访问安全页面：https://www.adobe.com/security.html。
@@ -207,9 +207,9 @@ Adobe Experience Platform中的所有数据都符合标准化的XDM模式，无�
 
 [!DNL Data Science Workspace] 帮助所有技能水平的数据科学家简化数据科学工作流程，从数据收集到算法再到智能服务。 借助精良的工 [!DNL Data Science Workspace] 具，您可以大幅缩短从数据到洞察的时间。
 
-更重要的 [!DNL Data Science Workspace] 是，将Adobe领先营销平台的数据科学和算法优化能力交给企业数据科学家。 企业首次将专有算法引入该平台，充分利用Adobe强大的机器学习和AI功能大规模提供高度个性化的客户体验。
+更重要的是 [!DNL Data Science Workspace] ，将Adobe领先营销平台的数据科学和算法优化能力交给企业数据科学家。 企业首次可以将专有算法引入该平台，利用Adobe强大的机器学习和AI功能大规模提供高度个性化的客户体验。
 
-凭借品牌专业知识和Adobe的机器学习和AI技能的结合，企业能够在客户提出要求之前为客户提供他们想要的东西，从而推动更多业务价值和品牌忠诚度。
+将品牌专业知识和Adobe的机器学习和人工智能技能结合在一起，企业有能力在客户提出要求之前为客户提供他们想要的东西，从而提升商业价值和品牌忠诚度。
 
 有关其他信息（如完整的日常工作流程），请首先阅读数 [据科学工作区漫步文档](./walkthrough.md) 。
 
