@@ -1,7 +1,7 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Data Science Workspace帮助
+user-guide-title: Adobe Experience Platform数据科学工作区帮助
 translation-type: tm+mt
 source-git-commit: 8a613237d3d835039185954e580d3c86a5e465ae
 workflow-type: tm+mt
