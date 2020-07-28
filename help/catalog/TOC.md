@@ -4,6 +4,9 @@ audience: user
 user-guide-title: 目录和数据集帮助
 translation-type: tm+mt
 source-git-commit: e135bc33e6c3daa411e85cb37e407322fd0bca5b
+workflow-type: tm+mt
+source-wordcount: '93'
+ht-degree: 3%
 
 ---
 
@@ -11,9 +14,9 @@ source-git-commit: e135bc33e6c3daa411e85cb37e407322fd0bca5b
 # 目录和数据集 {#catalog}
 
 * [目录服务概述](home.md)
-* Catalog Service API {#api}
+* 目录服务API {#api}
    * [入门指南](api/getting-started.md)
-   * [使用查询参数过滤目录数据](api/filter-data.md)
+   * [使用查询参数筛选目录数据](api/filter-data.md)
    * [列表对象](api/list-objects.md)
    * [查找对象](api/look-up-object.md)
    * [查找多个对象](api/look-up-multiple-objects.md)
