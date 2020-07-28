@@ -34,7 +34,7 @@ ht-degree: 14%
 * 解决方案特定注意事项 {#solutions}
    * Analytics {#analytics}
       * [Analytics概述](solution-specific/analytics/analytics-overview.md)
-      * [在Analytics手动映射变量](solution-specific/analytics/manually-mapping-variables.md)
+      * [在Analytics中手动映射变量](solution-specific/analytics/manually-mapping-variables.md)
       * [自动映射的变量](solution-specific/analytics/automatically-mapped-vars.md)
    * Audience Manager {#aam}
       * [Audience Manager 概述](solution-specific/audience-manager/audience-manager-overview.md)
