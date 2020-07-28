@@ -26,7 +26,7 @@ ht-degree: 5%
 
 ## [!DNL Segmentation Service] {#segmentation}
 
-Adobe Experience Platform分段服务提供用户界面和RESTful API，允许您根据数据构建细分和生成 [!DNL Real-time Customer Profile] 受众。 这些细分集中进行配置和维护， [!DNL Platform]使任何Adobe应用程序都能轻松访问它们。
+Adobe Experience Platform分段服务提供用户界面和RESTful API，允许您根据数据构建细分和生成 [!DNL Real-time Customer Profile] 受众。 这些细分集中配置并维护， [!DNL Platform]使任何Adobe应用程序都能轻松访问它们。
 
 [!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准，定义特定的用户档案子集。 细分可以基于记录数据（如人口统计信息）或表示客户与您品牌互动的时间序列事件。
 
@@ -55,7 +55,7 @@ Adobe Experience Platform [!DNL Decisioning Service] 能够以编程方式智能
 
 **已知问题**
 
-* 无。
+* None.
 
 有关服 [务的完整介绍](../../decisioning-service/home.md) ，请参阅决策服务概述。
 
@@ -74,13 +74,13 @@ Adobe Experience Platform可以从外部源收集数据，同时允许您使用�
 
 **已知问题**
 
-* 无。
+* None.
 
 有关源的详细信息，请参阅 [源概述](../../sources/home.md)。
 
 ## [!DNL Experience Data Model] (XDM)系统 {#xdm}
 
-标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 [!DNL Experience Data Model] (XDM)由Adobe推动，旨在实现客户体验数据标准化并为客户体验管理定义模式。
+标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 [!DNL Experience Data Model] (XDM)由Adobe驱动，旨在实现客户体验数据标准化并定义客户体验管理模式。
 
 XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 它为在Adobe Experience Platform上与服务通信的任何应用程序提供了通用结构和定义。 通过遵守XDM标准，所有客户体验数据都可以整合到一个通用表现形式中，以更快、更集成的方式提供洞察。 您可以从客户行动中获得宝贵的洞察，通过细分定义客户受众，并将客户属性用于个性化目的。
 
