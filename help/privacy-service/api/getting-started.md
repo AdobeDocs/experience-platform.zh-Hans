@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Privacy Service] 开发人员指南
 
-Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户界面，允许您跨Adobe Experience Cloud应用程序管理（访问和删除）数据主体（客户）的个人数据。 [!DNL Privacy Service] 还提供了一个中央审计和日志记录机制，允许您访问涉及应用程序的作业的状态和 [!DNL Experience Cloud] 结果。
+Adobe Experience Platform [!DNL Privacy Service] 提供了一个RESTful API和用户界面，允许您跨Adobe Experience Cloud应用程序管理（访问和删除）数据主体（客户）的个人数据。 [!DNL Privacy Service] 还提供了一个中央审计和日志记录机制，允许您访问涉及应用程序的作业的状态和 [!DNL Experience Cloud] 结果。
 
 本指南介绍如何使用 [!DNL Privacy Service] API。 有关如何使用UI的详细信息，请参阅 [Privacy ServiceUI概述](../ui/overview.md)。 有关API中所有可用端点的全面 [!DNL Privacy Service] 列表，请参阅 [API参考](https://www.adobe.io/apis/experiencecloud/gdpr/api-reference.html)。
 
@@ -39,15 +39,15 @@ Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户�
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
-这包括在AdobeAdmin Console中获 [!DNL Experience Platform] 取开发人员权限，然后在Adobe开发人员控制台中生成凭据。
+这包括在Adobe Admin Console获取开 [!DNL Experience Platform] 发人员权限，然后在Adobe开发人员控制台中生成凭据。
 
 ### 获得开发人员访问 [!DNL Experience Platform]
 
-要获得开发人员访 [!DNL Platform]问权限，请按照Experience Platform身份验证教 [程中的开始步骤](../../tutorials/authentication.md)。 在执行步骤“在Adobe开发人员控制台中生成访问凭据”后，请返回本教程以生成特定于的凭据 [!DNL Privacy Service]。
+要获得开发人员访 [!DNL Platform]问权限，请按照Experience Platform身份验证教 [程中的开始步骤](../../tutorials/authentication.md)。 在进入步骤“在Adobe开发人员控制台中生成访问凭据”后，请返回本教程以生成特定于的凭据 [!DNL Privacy Service]。
 
 ### 生成访问凭据
 
-使用Adobe Developer Console，您必须生成以下三个访问凭据：
+使用Adobe开发人员控制台，您必须生成以下三个访问凭据：
 
 * `{IMS_ORG}`
 * `{API_KEY}`
@@ -59,7 +59,7 @@ Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户�
 
 #### 一次性设置
 
-转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
+转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台，使用Adobe ID登录。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
 
 创建新项目后，单击“项 **[!UICONTROL 目概述]** ”屏 _[!UICONTROL 幕上的“添加API]_”。
 
