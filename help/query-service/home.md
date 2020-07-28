@@ -30,7 +30,7 @@ Adobe Experience Platform从各种来源获取数据。 营销人员面临的一
 
 ### [!DNL Data Science Workspace]
 
-Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人工智能从存储在其中的数据获得 [!DNL Experience Platform]洞察。 [!DNL Data Science Workspace] 使数据科学家能够根据有关客户及其活动的记录和时间序列数据来构建食谱，从而促进购买倾向等预测以及个人可能欣赏和使用的推荐优惠。 通过集成到中， [!DNL Data Science Workspace] 您可 [!DNL Query Service] 以在 [!DNL JupyterLab]中使用SQL，从而探索、转换和分析AdobeAnalytics数据。 请阅读概 [!DNL Data Science Workspace] 述以了解更多信息， [!DNL Data Science Workspace]并阅读集成指 [!DNL Query Service] 南以了解有关如何与之交互 [!DNL Data Science Workspace] 的更多信 [!DNL Query Service]息。
+Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人工智能从存储在其中的数据获得 [!DNL Experience Platform]洞察。 [!DNL Data Science Workspace] 使数据科学家能够根据有关客户及其活动的记录和时间序列数据来构建食谱，从而促进购买倾向等预测以及个人可能欣赏和使用的推荐优惠。 通过集成到中， [!DNL Data Science Workspace] 您可 [!DNL Query Service] 以在 [!DNL JupyterLab]中使用SQL，从而探索、转换和分析Adobe Analytics数据。 请阅读概 [!DNL Data Science Workspace] 述以了解更多信息， [!DNL Data Science Workspace]并阅读集成指 [!DNL Query Service] 南以了解有关如何与之交互 [!DNL Data Science Workspace] 的更多信 [!DNL Query Service]息。
 
 ### [!DNL Segmentation Service]
 
