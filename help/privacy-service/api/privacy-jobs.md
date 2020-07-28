@@ -18,7 +18,7 @@ ht-degree: 1%
 
 ## 列表所有作业 {#list}
 
-您可以通过向端点发出GET请求，视图组织内所有可用隐私工作的 `/jobs` 列表。
+您可以通过向端点发出视图请求来列表组织内所有可用隐私作业的GET `/jobs` 程序。
 
 **API格式**
 
@@ -147,12 +147,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `companyContexts` **（必需）** | 包含组织身份验证信息的数组。 每个列出的标识符都包含以下属性： <ul><li>`namespace`: 标识符的命名空间。</li><li>`value`: 标识符的值。</li></ul>必须 **使用** 其中一个标识符 `imsOrgId` 作为其 `namespace`的标识符，其 `value` 中包含IMS组织的唯一ID。 <br/><br/>其他标识符可以是特定于产品的公司限定符( `Campaign`例如)，它们标识与属于您的组织的Adobe应用程序的集成。 潜在值包括帐户名、客户端代码、租户ID或其他应用程序标识符。 |
+| `companyContexts` **（必需）** | 包含组织身份验证信息的数组。 每个列出的标识符都包含以下属性： <ul><li>`namespace`: 标识符的命名空间。</li><li>`value`: 标识符的值。</li></ul>必须 **使用** 其中一个标识符 `imsOrgId` 作为其 `namespace`的标识符，其 `value` 中包含IMS组织的唯一ID。 <br/><br/>其他标识符可以是特定于产品的公司限定符( `Campaign`例如)，它们标识与属于您组织的Adobe应用程序的集成。 潜在值包括帐户名、客户端代码、租户ID或其他应用程序标识符。 |
 | `users` **（必需）** | 包含至少一个用户集合的数组，您希望访问或删除其信息。 单个请求中最多可提供1000个用户ID。 每个用户对象都包含以下信息： <ul><li>`key`: 用户的标识符，用于限定响应数据中单独的作业ID。 为此值选择唯一、易于识别的字符串是最佳做法，这样便可以方便地引用或稍后查找。</li><li>`action`: 列表用户数据所需操作的数组。 根据您要执行的操作，此数组必须包括或 `access`同时 `delete`包括这两个操作。</li><li>`userIDs`: 用户的身份集合。 单个用户可以拥有的身份数量限制为9个。 每个标识都包 `namespace`含一个、 `value`一个和一个命名空间限定符(`type`)。 有关这些 [必需属性](appendix.md) 的更多详细信息，请参阅附录。</li></ul> 有关和的更详细说 `users` 明， `userIDs`请参阅故 [障排除指南](../troubleshooting-guide.md#user-ids)。 |
-| `include` **（必需）** | 要包含在您处理中的一组Adobe产品。 如果此值缺失或为空，则请求将被拒绝。 仅包含您的组织已集成的产品。 有关详细信息，请 [参阅附录](appendix.md) 中有关已接受产品值的部分。 |
+| `include` **（必需）** | 要包含在处理中的Adobe产品阵列。 如果此值缺失或为空，则请求将被拒绝。 仅包含您的组织已集成的产品。 有关详细信息，请 [参阅附录](appendix.md) 中有关已接受产品值的部分。 |
 | `expandIDs` | 一个可选属性，当设置为 `true`时，它表示处理应用程序中ID的优化(当前仅受支 [!DNL Analytics]持)。 If omitted, this value defaults to `false`. |
 | `priority` | Adobe Analytics使用的一个可选属性，它设置处理请求的优先级。 接受的值 `normal` 是和 `low`。 如 `priority` 果省略，则默认行为为 `normal`。 |
-| `analyticsDeleteMethod` | 一个可选属性，它指定Adobe Analytics如何处理个人数据。 此属性接受两个可能的值： <ul><li>`anonymize`: 给定用户ID集合引用的所有数据均为匿名数据。 如果 `analyticsDeleteMethod` 省略，则这是默认行为。</li><li>`purge`: 所有数据都被完全删除。</li></ul> |
+| `analyticsDeleteMethod` | 一个可选属性，指定Adobe Analytics如何处理个人数据。 此属性接受两个可能的值： <ul><li>`anonymize`: 给定用户ID集合引用的所有数据均为匿名数据。 如果 `analyticsDeleteMethod` 省略，则这是默认行为。</li><li>`purge`: 所有数据都被完全删除。</li></ul> |
 | `regulation` **（必需）** | 申请的规定。 必须是以下三个值之一： <ul><li>gdpr</li><li>ccpa</li><li>pdpa_tha</li></ul> |
 
 **响应**
@@ -280,12 +280,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `companyContexts` **（必需）** | 包含组织身份验证信息的数组。 每个列出的标识符都包含以下属性： <ul><li>`namespace`: 标识符的命名空间。</li><li>`value`: 标识符的值。</li></ul>必须 **使用** 其中一个标识符 `imsOrgId` 作为其 `namespace`的标识符，其 `value` 中包含IMS组织的唯一ID。 <br/><br/>其他标识符可以是特定于产品的公司限定符( `Campaign`例如)，它们标识与属于您的组织的Adobe应用程序的集成。 潜在值包括帐户名、客户端代码、租户ID或其他应用程序标识符。 |
+| `companyContexts` **（必需）** | 包含组织身份验证信息的数组。 每个列出的标识符都包含以下属性： <ul><li>`namespace`: 标识符的命名空间。</li><li>`value`: 标识符的值。</li></ul>必须 **使用** 其中一个标识符 `imsOrgId` 作为其 `namespace`的标识符，其 `value` 中包含IMS组织的唯一ID。 <br/><br/>其他标识符可以是特定于产品的公司限定符( `Campaign`例如)，它们标识与属于您组织的Adobe应用程序的集成。 潜在值包括帐户名、客户端代码、租户ID或其他应用程序标识符。 |
 | `users` **（必需）** | 包含至少一个用户集合的数组，您希望访问或删除其信息。 单个请求中最多可提供1000个用户ID。 每个用户对象都包含以下信息： <ul><li>`key`: 用户的标识符，用于限定响应数据中单独的作业ID。 为此值选择唯一、易于识别的字符串是最佳做法，这样便可以方便地引用或稍后查找。</li><li>`action`: 列表对数据执行所需操作的数组。 对于退出销售请求，阵列只能包含值 `opt-out-of-sale`。</li><li>`userIDs`: 用户的身份集合。 单个用户可以拥有的身份数量限制为9个。 每个标识都包 `namespace`含一个、 `value`一个和一个命名空间限定符(`type`)。 有关这些 [必需属性](appendix.md) 的更多详细信息，请参阅附录。</li></ul> 有关和的更详细说 `users` 明， `userIDs`请参阅故 [障排除指南](../troubleshooting-guide.md#user-ids)。 |
-| `include` **（必需）** | 要包含在您处理中的一组Adobe产品。 如果此值缺失或为空，则请求将被拒绝。 仅包含您的组织已集成的产品。 有关详细信息，请 [参阅附录](appendix.md) 中有关已接受产品值的部分。 |
+| `include` **（必需）** | 要包含在处理中的Adobe产品阵列。 如果此值缺失或为空，则请求将被拒绝。 仅包含您的组织已集成的产品。 有关详细信息，请 [参阅附录](appendix.md) 中有关已接受产品值的部分。 |
 | `expandIDs` | 一个可选属性，当设置为 `true`时，它表示处理应用程序中ID的优化(当前仅受支 [!DNL Analytics]持)。 If omitted, this value defaults to `false`. |
 | `priority` | Adobe Analytics使用的一个可选属性，它设置处理请求的优先级。 接受的值 `normal` 是和 `low`。 如 `priority` 果省略，则默认行为为 `normal`。 |
-| `analyticsDeleteMethod` | 一个可选属性，它指定Adobe Analytics如何处理个人数据。 此属性接受两个可能的值： <ul><li>`anonymize`: 给定用户ID集合引用的所有数据均为匿名数据。 如果 `analyticsDeleteMethod` 省略，则这是默认行为。</li><li>`purge`: 所有数据都被完全删除。</li></ul> |
+| `analyticsDeleteMethod` | 一个可选属性，指定Adobe Analytics如何处理个人数据。 此属性接受两个可能的值： <ul><li>`anonymize`: 给定用户ID集合引用的所有数据均为匿名数据。 如果 `analyticsDeleteMethod` 省略，则这是默认行为。</li><li>`purge`: 所有数据都被完全删除。</li></ul> |
 | `regulation` **（必需）** | 申请的规定。 必须是以下三个值之一： <ul><li>gdpr</li><li>ccpa</li><li>pdpa_tha</li></ul> |
 
 **响应**
@@ -331,7 +331,7 @@ curl -X POST \
 
 ## 检查作业的状态 {#check-status}
 
-通过将特定作业包含在GET请求到端点的路径中，可以检索有关该作 `jobId` 业的信息(如其当前处理状 `/jobs` 态)。
+通过将特定作业包含在到端点的GET请求路径中，可以检索有关该作业( `jobId` 如其当前处理状态)的 `/jobs` 信息。
 
 >[!IMPORTANT]
 >
@@ -451,7 +451,7 @@ curl -X GET \
 | -------------- | -------- |
 | 完成 | 作业已完成，并且（如果需要）文件从每个应用程序上传。 |
 | 处理时间 | 应用程序已确认该作业，并且当前正在处理。 |
-| 已提交 | 工作会提交到每个适用的应用程序。 |
+| 已提交 | 职务将提交到每个适用的申请。 |
 | 错误 | 处理作业时出现故障——通过检索单个作业详细信息可获得更具体的信息。 |
 
 >[!NOTE]
