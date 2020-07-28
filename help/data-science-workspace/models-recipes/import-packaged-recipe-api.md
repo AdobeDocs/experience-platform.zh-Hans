@@ -43,7 +43,7 @@ ht-degree: 2%
 
 ## 创建引擎
 
-可以通过向/engine端点发出POST请求来创建引擎。 创建的引擎基于打包的处方文件的形式进行配置，该文件必须作为API请求的一部分提供。
+可以通过向/engines端点发出POST请求来创建引擎。 创建的引擎基于打包的处方文件的形式进行配置，该文件必须作为API请求的一部分提供。
 
 ### 使用Docker URL创建引擎 {#create-an-engine-with-a-docker-url}
 
