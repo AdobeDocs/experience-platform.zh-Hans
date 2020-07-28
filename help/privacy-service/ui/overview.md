@@ -20,7 +20,7 @@ Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和用户界�
 
 您必须具有Adobe ID才能验证到 [!DNL Privacy Service] UI。 此外，您必须在Adobe ID所关联的组织内具有系统管理员权限。
 
-导航到Adobe Experience Cloud登录页面，网址为https://experience.adobe.com。 单击 **[!UICONTROL 使用Adobe ID登录]** ，并在出现提示时输入Adobe ID凭据。
+导航到Adobe Experience Cloud登录页面https://experience.adobe.com。 单击 **[!UICONTROL 使用Adobe ID登录]** ，并在出现提示时输入Adobe ID凭据。
 
 登录后，单击“隐 **[!UICONTROL 私UI”]**。
 
