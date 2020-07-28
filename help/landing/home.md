@@ -118,7 +118,7 @@ Adobe Experience Platform文档提供多种语言版本。 要更改语言，请
 
 * [**API基础&#x200B;**](api-fundamentals.md)<br/>知识学习使用API的基础[!DNL Platform]知识。
 
-* [**API引用&#x200B;**](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)<br/>发[!DNL Experience Platform]现API，包括标题、参数、示例请求和响应。*这些文档托管在Adobe I/O上。*
+* [**API引用&#x200B;**](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)<br/>发[!DNL Experience Platform]现API，包括标题、参数、示例请求和响应。*这些文档托管在AdobeI/O上。*
 
 ## Adobe Experience Platform集成视频资源
 
@@ -126,7 +126,7 @@ Adobe Experience Platform文档提供多种语言版本。 要更改语言，请
 
 >[!VIDEO](https://video.tv.adobe.com/v/32554?quality=12&learn=on)
 
-Adobe Experience Platform提供的主要优势之一是它能够与其他现有Adobe服务相集成。 以下视频概述了服务如 [!DNL Experience Platform] 何与AdobeAnalytics [!DNL Experience Cloud] 、Adobe Target、Adobe Campaign、Adobe Experience Manager、、和 [!DNL Customer Attributes][!DNL Audience Library][!DNL Experience Platform Launch]等应用程序和功能集成。
+Adobe Experience Platform提供的一个主要好处是其与其他现有Adobe服务集成的能力。 以下视频概述了服务如 [!DNL Experience Platform] 何与应用 [!DNL Experience Cloud] 程序和功能(如Adobe Analytics、Adobe Target、Adobe Campaign、Adobe Experience Manager [!DNL Customer Attributes]、 [!DNL Audience Library]和)集成 [!DNL Experience Platform Launch]。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32553?quality=12&learn=on)
 
