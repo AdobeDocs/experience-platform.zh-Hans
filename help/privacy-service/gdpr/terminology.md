@@ -74,9 +74,9 @@ __承诺组：__ 控制性事业及其控制性事业。
 
 ## I
 
-__Identity Management服务(IMS):__ Adobe实施Federated ID和OAuth 2.0，用于Adobe ID用户身份验证和Adobe资源授权。 您必须将 IMS 与 Adobe 应用程序或服务相集成，用户才能登录并访问 Adobe 服务。Users can log in directly with Renga (the Adobe identity services provider), or log in through a trusted third party authentication domain (such as [!DNL Google], [!DNL Facebook], or a corporate/organization LDAP).
+__Identity Management服务(IMS):__ Adobe实现Federated ID和OAuth 2.0，用于Adobe ID用户的身份验证和Adobe资源的授权。 您必须将 IMS 与 Adobe 应用程序或服务相集成，用户才能登录并访问 Adobe 服务。Users can log in directly with Renga (the Adobe identity services provider), or log in through a trusted third party authentication domain (such as [!DNL Google], [!DNL Facebook], or a corporate/organization LDAP).
 
-__IMS组织ID:__ 指Adobe授权令牌，用于服务对服务身份验证，它不需要用户登录。 它被发布到IMS客户端，并且没有相关用户。 IMS客户端需要服务令牌来授权服务之间的回渠道请求。 （术语“系统令牌”有时用于表示服务令牌。）
+__IMS组织ID:__ 引用服务到服务身份验证的Adobe授权令牌，它不需要用户登录。 它被发布到IMS客户端，并且没有相关用户。 IMS客户端需要服务令牌来授权服务之间的回渠道请求。 （术语“系统令牌”有时用于表示服务令牌。）
 
 ## J
 
