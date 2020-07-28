@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;user guide;attribution ai;popular topics
 solution: Experience Platform
-title: 归因AI用户指南
+title: Attribution AI用户指南
 topic: User guide
 translation-type: tm+mt
 source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
@@ -12,23 +12,23 @@ ht-degree: 0%
 ---
 
 
-# 归因AI用户指南
+# Attribution AI用户指南
 
-归因AI作为智能服务的一部分是一种多渠道、算法归因服务，用于计算客户交互对特定结果的影响和增量影响。 利用归因AI，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
+Attribution AI作为智能服务的一部分，是一种多渠道算法归因服务，用于计算客户交互对特定结果的影响和增量影响。 利用Attribution AI，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
 
-此文档可作为在智能服务用户界面中与归因AI交互的指南。
+此文档用作与Intelligent Services用户界面中的Attribution AI交互的指南。
 
 ## 创建实例
 
-在UI [!DNL Adobe Experience Platform] 中，单击左 **侧导** 航中的“服务”。 出现 *服务* 浏览器并显示可用的Adobe智能服务。 在归因AI的容器中，单击 **打开**。
+在UI [!DNL Adobe Experience Platform] 中，单击左 **侧导** 航中的“服务”。 出现 *服务浏览器* ，并显示可用的Adobe智能服务。 在Attribution AI容器中，单击 **打开**。
 
 ![访问实例](./images/user-guide/open_Attribution_ai.png)
 
-此时将显示“归因AI”服务页。 本页列表归因AI的服务实例并显示相关信息，包括实例名称、转换事件、实例运行频率以及上次更新的状态。 单击 **创建实例** ，开始。
+将显示Attribution AI服务页面。 此页列表Attribution AI的服务实例并显示其相关信息，包括实例名称、转换事件、实例的运行频率以及上次更新的状态。 单击 **创建实例** ，开始。
 
 ![创建实例](./images/user-guide/landing_page.png)
 
-接下来，将显示归因AI的设置页面，您可以在该页面中提供基本信息并为实例指定数据集。
+接下来，将显示Attribution AI的设置页面，您可以在该页面提供基本信息并为实例指定数据集。
 
 ![设置页面](./images/user-guide/setup_attribution.png)
 
@@ -40,7 +40,7 @@ ht-degree: 0%
 
 ### 选择数据集
 
-填写基本信息后，单击标记为“选择数 **据集”的下拉框** ，以选择您的数据集。 数据集用于训练模型并对其生成的后续数据进行评分。 从下拉选择器中选择数据集时，只列出与归因AI兼容并符合体验数据模型(XDM)模式的数据集。 选择数据集后，单击 **右上** 角的“下一步”以继续进入定义事件页。
+填写基本信息后，单击标记为“选择数 **据集”的下拉框** ，以选择您的数据集。 数据集用于训练模型并对其生成的后续数据进行评分。 从下拉选择器中选择数据集时，只列出与Attribution AI兼容且符合体验数据模型(XDM)模式的数据集。 选择数据集后，单击 **右上** 角的“下一步”以继续进入定义事件页。
 
 ![设置页面](./images/user-guide/initial_creation_attribution.png)
 
@@ -66,7 +66,7 @@ ht-degree: 0%
 
 ![无下拉菜单](./images/user-guide/conversion_event_1.png)
 
-“添 *加事件* ”和“ *添加组* ”按钮用于进一步定义转换。 根据您要定义的转换，您可能需要使用“添加 *事件* ”和“ *添加组* ”按钮来提供更多上下文。
+“添 *加事件* ”和“ *添加组* ”按钮用于进一步定义转换。 根据您所定义的转换，您可能需要使用“添加 *事件* ”和“ *添加组* ”按钮来提供更多上下文。
 
 ![添加事件](./images/user-guide/add_event.png)
 
@@ -132,7 +132,7 @@ ht-degree: 0%
 
 ## 高级培训和评分设置
 
-归因AI中的最后一页是用 *于设置* 培训和评分的高级页面。
+Attribution AI中的最后一页是 *用于* 设置培训和评分的高级页面。
 
 ![新页面高级](./images/user-guide/advanced_settings.png)
 
@@ -188,10 +188,10 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过遵循本教程，您已成功在归因AI中创建了服务实例。 实例完成评分（最多允许24小时）后，您就可以发现归 [因人工智能洞察](./discover-insights.md)。 此外，如果您希望下载评分结果，请访问下载 [原始得分文档](./download-scores.md) 。
+按照本教程，您已成功地在Attribution AI中创建了服务实例。 实例完成评分后（最多允许24小时），您就可以发现 [Attribution AI洞察](./discover-insights.md)。 此外，如果您希望下载评分结果，请访问下载 [原始得分文档](./download-scores.md) 。
 
 ## Journey Orchestration
 
-以下视频概述了在Attribution AI中创建新实例的端到端工作流程。
+以下视频概述了用于在Attribution AI中创建新实例的端到端工作流。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32668?learn=on&quality=12)
