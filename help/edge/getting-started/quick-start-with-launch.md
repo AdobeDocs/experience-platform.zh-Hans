@@ -17,7 +17,7 @@ ht-degree: 5%
 本指南将引导您通过不同方式在Launch中设置Adobe Experience PlatformWeb SDK。 要使用此功能，您需要将其列入白名单。 如果您想继续等待列表，请联系您的客户经理。
 
 - 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经有Analytics的CNAME，则应使用该CNAME。 在开发中进行测试没有CNAME，但您在开始生产之前需要一个CNAME。
-- 有权获得Adobe Experience Platform。 如果您尚未购买Platform,Adobe将为您提供Experience Platform数据服务基础，以便在SDK中以有限方式使用，并且不收取额外费用。
+- 有权获得Adobe Experience Platform。 如果您尚未购买平台，Adobe将为您提供Experience Platform数据服务基础，以便在SDK中以有限方式使用，并且不收取额外费用。
 - 使用最新版的访客ID服务。
 
 ## 创建配置ID
