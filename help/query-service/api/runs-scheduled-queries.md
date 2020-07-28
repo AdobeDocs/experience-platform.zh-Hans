@@ -153,7 +153,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a
 
 ### 立即触发特定计划查询的运行
 
-您可以通过向端点发出POST请求，立即触发指定计划查询的 `/schedules/{SCHEDULE_ID}/runs` 运行，其 `{SCHEDULE_ID}` 中 `id` 是要触发其运行的计划查询的值。
+您可以通过向端点发出查询请求来立即触发指定计划POST的运行 `/schedules/{SCHEDULE_ID}/runs` ，其中 `{SCHEDULE_ID}` 是 `id` 要触发其运行的计划查询的值。
 
 **API格式**
 
@@ -184,7 +184,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules/e95186d65
 
 ### 检索特定计划查询的运行的详细信息
 
-通过向端点发出GET请求并提供计划查询的ID和请求路径中的运行，可 `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` 以检索有关特定计划查询运行的详细信息。
+通过向端点发出GET请求并提供计划查询的ID和请求路径中的运行， `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` 可以检索特定计划查询的运行的详细信息。
 
 **API格式**
 
@@ -245,7 +245,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a
 
 ### 立即停止特定计划查询的运行
 
-通过向端点发出PATCH请求并提供计划查询的ID和请求路径中的运行， `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` 可以立即停止特定计划查询的运行。
+您可以立即停止特定计划查询的运行，方法是向端点发出PATCH请求 `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` ，并提供计划查询的ID和请求路径中的运行。
 
 **API格式**
 
