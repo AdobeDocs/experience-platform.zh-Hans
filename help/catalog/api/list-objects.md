@@ -26,7 +26,7 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 | 参数 | 描述 |
 | --- | --- |
 | `{OBJECT_TYPE}` | 要列出 [!DNL Catalog] 的对象类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
-| `{FILTER}` | 用于筛选在响应中返回的结果的查询参数。 多个参数由和符()`&`分隔。 有关详细信息，请 [参阅有关筛选目录](filter-data.md) 数据的指南。 |
+| `{FILTER}` | 用于筛选在响应中返回的结果的查询参数。 多个参数由和符()`&`分隔。 有关详细信息，请参 [阅有关筛选目录](filter-data.md) 数据的指南。 |
 
 **请求**
 
