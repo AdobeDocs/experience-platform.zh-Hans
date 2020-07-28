@@ -26,7 +26,7 @@ ht-degree: 2%
 
 ## 检索导出作业列表 {#retrieve-list}
 
-您可以通过向端点发出GET请求，为IMS组织检索所有导出作业的列表 `/export/jobs` 符。
+您可以通过向端点发出列表请求，为IMS组织检索所有导出作业的GET `/export/jobs` 符。
 
 **API格式**
 
@@ -379,7 +379,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/export/jobs \
 
 ## 检索特定导出作业 {#get}
 
-您可以通过向端点发出GET请求并提供您希望在请求路径中检索的 `/export/jobs` 导出作业的ID来检索有关特定导出作业的详细信息。
+您可以通过向端点发出GET请求并提供您希望在请求路径中检索的导出作业的 `/export/jobs` ID，来检索有关特定导出作业的详细信息。
 
 **API格式**
 
