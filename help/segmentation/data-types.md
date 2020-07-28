@@ -58,7 +58,7 @@ ht-degree: 3%
 
 ### 区段共享
 
-在平台中创建的细分可用于其 [他Adobe Experience Cloud核心服务](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/experience-cloud.html)。 要启用此功能，您需要联系您的解决方案架构师或顾问。
+在平台中创建的细分可用于其他 [Adobe Experience Cloud核心服务](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/experience-cloud.html)。 要启用此功能，您需要联系您的解决方案架构师或顾问。
 
 ## 其他数据类型
 
