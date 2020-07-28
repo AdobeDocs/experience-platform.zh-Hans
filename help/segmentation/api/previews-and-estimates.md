@@ -18,7 +18,7 @@ ht-degree: 2%
 
 ## 入门指南
 
-本指南中使用的端点是API的一 [!DNL Adobe Experience Platform Segmentation Service] 部分。 在继续之前，请查 [看入门指南](./getting-started.md) ，了解成功调用API所需的重要信息，包括必需的头以及如何读取示例API调用。
+本指南中使用的端点是API的一 [!DNL Adobe Experience Platform Segmentation Service] 部分。 在继续之前，请查 [看入门指南](./getting-started.md) ，了解成功调用API需要了解的重要信息，包括必需的头以及如何读取示例API调用。
 
 ## 估计的生成方式
 
@@ -40,7 +40,7 @@ ht-degree: 2%
 
 ## Create a new preview {#create-preview}
 
-可以通过向端点发出POST请求来创建新 `/preview` 预览。
+可以通过向端点发出预览请求来创建新POST `/preview` 。
 
 >[!NOTE] 在创建预览作业时，会自动创建评估作业。 这两个作业将共享同一ID。
 
@@ -94,7 +94,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 
 ## 检索特定预览的结果 {#get-preview}
 
-您可以通过向端点发出GET请求并在请求路径中提 `/preview` 供预览ID来检索有关特定预览的详细信息。
+您可以通过向端点发出预览请求并在请求路径中提 `/preview` 供预览ID来检索有关特定GET的详细信息。
 
 **API格式**
 
@@ -171,7 +171,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 
 ## 检索特定评估作业的结果 {#get-estimate}
 
-创建预览作业后，可以在GET请求到端点的路径中使 `previewId` 用它来有关段定义的 `/estimate` 视图统计信息，包括预计受众大小、置信间隔和错误标准偏差。
+创建预览作业后，您可以在GET请求路径中 `previewId``/estimate` 使用其到端点的视图，以有关段定义的统计信息，包括预计受众大小、置信间隔和错误标准偏差。
 
 **API格式**
 
