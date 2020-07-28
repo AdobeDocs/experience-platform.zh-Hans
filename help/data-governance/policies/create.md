@@ -221,7 +221,7 @@ curl -X PUT \
 >
 >仅支持OR和AND运算符。
 
-配置策略表达式后，可以通过向端点发出POST请求来创建新的DULE策 `/policies/custom` 略。
+配置策略表达式后，您可以通过向端点发出POST请求来创建新的DULE策 `/policies/custom` 略。
 
 **API格式**
 
@@ -328,7 +328,7 @@ curl -X POST \
 >
 >如果您希望使DULE策略处于状态，则此步骤是可选 `DRAFT` 的，请注意，默认情况下，策略必须将其状态设置为 `ENABLED` ，才能参与评估。 有关如何为处于状 [态的策略设](../enforcement/api-enforcement.md) 置例外的信息，请参阅有关强制实施DULE策略的 `DRAFT` 教程。
 
-默认情况下，其属性设置 `status` 为不参 `DRAFT` 与评估的DULE策略。 您可以通过向端点发出PATCH请求并在请求路径 `/policies/custom/` 末尾提供策略的唯一标识符，来启用策略进行评估。
+默认情况下，其属性设置 `status` 为不参 `DRAFT` 与评估的DULE策略。 您可以通过向端点发出PATCH请求并在请求路径 `/policies/custom/` 的末尾提供策略的唯一标识符来启用策略评估。
 
 **API格式**
 
