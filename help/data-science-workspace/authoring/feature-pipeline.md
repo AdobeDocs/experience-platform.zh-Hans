@@ -39,7 +39,7 @@ Adobe Experience Platform允许您通过Sensei机器学习框架运行时（以�
 - 经过转换的模式和基于该模式的空数据集。
 - 输出模式和基于该模式的空数据集。
 
-以上所有数据集都需要上传到 [!DNL Platform] UI。 要进行设置，请使用Adobe提供的引导 [脚本](https://github.com/adobe/experience-platform-dsw-reference/tree/master/bootstrap)。
+以上所有数据集都需要上传到 [!DNL Platform] UI。 要设置此设置，请使用Adobe提供的 [引导脚本](https://github.com/adobe/experience-platform-dsw-reference/tree/master/bootstrap)。
 
 ## 特征管线类
 
@@ -398,36 +398,36 @@ https://www.getpostman.com/collections/c5fc0d1d5805a5ddd41a
 
 ### 创建特征管线引擎 {#create-engine-api}
 
-在获得Docker图像位置后，您可以 [通过执行POST](../api/engines.md#feature-pipeline-docker)[!DNL Sensei Machine Learning] ，使用API创建功能管道引擎 `/engines`。 成功创建功能管道引擎可为您提供引擎唯一标识符(`id`)。 请确保在继续之前保存此值。
+在获得Docker图像位置后，您可以 [通过执行POST](../api/engines.md#feature-pipeline-docker) ，使用 [!DNL Sensei Machine Learning] API创建功能管道引擎 `/engines`。 成功创建功能管道引擎可为您提供引擎唯一标识符(`id`)。 请确保在继续之前保存此值。
 
 ### 创建MLInstance {#create-mlinstance}
 
-使用新创 `engineID`建的实例 [，需要通过向端点发出](../api/mlinstances.md#create-an-mlinstance) POST请求来创建MLI `/mlInstance` stance。 成功的响应返回一个有效负荷，它包含新创建的MLI实例的详细信息，包括在下一个API调用中`id`使用的唯一标识符()。
+使用新创建 `engineID`的实例， [您需要通过向端点发出POST](../api/mlinstances.md#create-an-mlinstance) 请求来创建MLIstance `/mlInstance` 。 成功的响应返回一个有效负荷，它包含新创建的MLI实例的详细信息，包括在下一个API调用中`id`使用的唯一标识符()。
 
 ### 创建实验 {#create-experiment}
 
-接下来，您需要 [创建实验](../api/experiments.md#create-an-experiment)。 要创建实验，您需要具有MLIstance唯一标识符(`id`)并向端点发出POST请 `/experiment` 求。 成功的响应返回一个有效负荷，其中包含新创建实验的详细信息，包括其在下一个API调`id`用中使用的唯一标识符()。
+接下来，您需要 [创建实验](../api/experiments.md#create-an-experiment)。 要创建实验，您需要具有MLIstance唯一标识符(`id`)并向端点发出POST `/experiment` 请求。 成功的响应返回一个有效负荷，其中包含新创建实验的详细信息，包括其在下一个API调`id`用中使用的唯一标识符()。
 
 ### 指定“实验”运行功能管线任务 {#specify-feature-pipeline-task}
 
-创建实验后，必须将实验的模式更改为 `featurePipeline`。 要更改模式，请对您和主体发 [`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring) 送进 `EXPERIMENT_ID` 行额外的POST，以指 `{ "mode":"featurePipeline"}` 定特征管线“实验”运行。
+创建实验后，必须将实验的模式更改为 `featurePipeline`。 要更改模式，请对您和主体发 [`experiments/{EXPERIMENT_ID}/runs`](../api/experiments.md#experiment-training-scoring) 送进 `EXPERIMENT_ID` 行附加POST，以指 `{ "mode":"featurePipeline"}` 定特征管线“实验”运行。
 
-完成后，发出GET请求 `/experiments/{EXPERIMENT_ID}` 以检 [索实验状态](../api/experiments.md#retrieve-specific) ，并等待实验状态更新完成。
+完成后，发出GET请 `/experiments/{EXPERIMENT_ID}` 求 [以检索实验状态](../api/experiments.md#retrieve-specific) ，并等待实验状态更新完成。
 
 ### 指定“实验”运行培训任务 {#training}
 
-接下来，您需要 [指定培训运行任务](../api/experiments.md#experiment-training-scoring)。 将POST设置 `experiments/{EXPERIMENT_ID}/runs` 为并在正文中将模式设置为 `train` 并发送包含培训参数的一组任务。 成功的响应会返回包含所请求实验的详细信息的有效负荷。
+接下来，您需要 [指定培训运行任务](../api/experiments.md#experiment-training-scoring)。 在正文中设 `experiments/{EXPERIMENT_ID}/runs` 置POST，将模式设 `train` 置为并发送包含培训参数的一组任务。 成功的响应会返回包含所请求实验的详细信息的有效负荷。
 
-完成后，发出GET请求 `/experiments/{EXPERIMENT_ID}` 以检 [索实验状态](../api/experiments.md#retrieve-specific) ，并等待实验状态更新完成。
+完成后，发出GET请 `/experiments/{EXPERIMENT_ID}` 求 [以检索实验状态](../api/experiments.md#retrieve-specific) ，并等待实验状态更新完成。
 
 ### 指定“实验”运行评分任务 {#scoring}
 
 >[!NOTE]
 > 要完成此步骤，您至少需要有一个成功的培训运行与您的实验相关联。
 
-成功运行培训后，您需要指 [定评分运行任务](../api/experiments.md#experiment-training-scoring)。 将POST设置为 `experiments/{EXPERIMENT_ID}/runs` 正文，在正文中将属 `mode` 性设置为“score”。 这将开始您的评分实验运行。
+成功运行培训后，您需要指 [定得分运行任务](../api/experiments.md#experiment-training-scoring)。 将POST设 `experiments/{EXPERIMENT_ID}/runs` 置为，在正文中将 `mode` 属性设置为“score”。 这将开始您的评分实验运行。
 
-完成后，发出GET请求 `/experiments/{EXPERIMENT_ID}` 以检 [索实验状态](../api/experiments.md#retrieve-specific) ，并等待实验状态更新完成。
+完成后，发出GET请 `/experiments/{EXPERIMENT_ID}` 求 [以检索实验状态](../api/experiments.md#retrieve-specific) ，并等待实验状态更新完成。
 
 评分完成后，您的功能管道应可运行。
 
