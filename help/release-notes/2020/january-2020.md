@@ -26,7 +26,7 @@ ht-degree: 6%
 
 ## [!DNL Experience Data Model] (XDM)系统 {#xdm}
 
-标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 [!DNL Experience Data Model] (XDM)由Adobe推动，旨在实现客户体验数据标准化并为客户体验管理定义模式。
+标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 [!DNL Experience Data Model] (XDM)由Adobe驱动，旨在实现客户体验数据标准化并定义客户体验管理模式。
 
 XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 它为在Adobe Experience Platform上与服务通信的任何应用程序提供了通用结构和定义。 通过遵守XDM标准，所有客户体验数据都可以整合到一个通用表现形式中，以更快、更集成的方式提供洞察。 您可以从客户行动中获得宝贵的洞察，通过细分定义客户受众，并将客户属性用于个性化目的。
 
@@ -45,7 +45,7 @@ XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 �
 
 ## [!DNL Privacy Service] {#privacy}
 
-新的法律和组织法规授予用户根据请求从数据存储中访问或删除其个人数据的权利。 Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 您 [!DNL Privacy Service]可以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，以便自动遵守法律和组织隐私法规。
+新的法律和组织法规授予用户根据请求从数据存储中访问或删除其个人数据的权利。 Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 您可 [!DNL Privacy Service]以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
 
 **新增功能**
 
@@ -54,7 +54,7 @@ XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 �
 | [!DNL Privacy Service] 重新品牌 | 由于服务已发展为支持除GDPR外的其 [!DNL Privacy Service] 他法规，先前命名的“GDPR服务”已重新命名为。 |
 | 新的API端点 | API的基本路 [!DNL Privacy Service] 径已从更新 `/data/privacy/gdpr` 为 `/data/core/privacy/jobs`。 |
 | 新的必需 `regulation` 属性 | 在API中创建新作业时，必 [!DNL Privacy Service] 须在请求 `regulation` 有效负荷中提供一个属性，以指示要跟踪作业的法规。 接受的值 `gdpr` 是和 `ccpa`。 |
-| 支持 [!DNL Adobe Primetime Authentication] | [!DNL Privacy Service] 现在接受Adobe的访问／删除请 [!DNL Primetime Authentication]求，并 `primetimeAuthentication` 将其作为产品价值。 |
+| 支持 [!DNL Adobe Primetime Authentication] | [!DNL Privacy Service] 现在接受来自Adobe的访问／删 [!DNL Primetime Authentication]除请求， `primetimeAuthentication` 使用作其产品价值。 |
 | Privacy ServiceUI增强 | 为GDPR和CCPA规定分别设置工作跟踪页面。 新的 _规章类_ 型下拉菜单，用于在GDPR和CCPA的跟踪数据之间切换。 |
 
 **已知问题**
@@ -92,7 +92,7 @@ Adobe Experience Platform可以从外部源收集数据，同时允许您使用�
 
 ## 目标 {#destinations}
 
-在 [Adobe实时CDP中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
+在 [Adobe实时CDP中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式将数据激活给这些合作伙伴。
 
 **新增功能**
 
