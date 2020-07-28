@@ -69,7 +69,7 @@ model_id = msg_model.model['model_id']
 
 ### ONNXNode
 
-ONNXode是一个内部Adobe节点，它使用模型ID拉取预先训练好的ONNX模型，并使用它对传入数据进行评分。
+ONNXode是一个内部Adobe节点，它使用模型ID拉取预先训练的ONNX模型，并使用它对传入数据进行评分。
 
 >[!TIP]
 >按您希望将数据发送到ONNX模型以得分的相同顺序指定列。
@@ -128,7 +128,7 @@ msg6 = model_train.process(msg5)
 | params.model_params | 模型超参数，请参 [阅sklearn API(map/dict)文档](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) ，以了解更多信息。 |
 | node_instance.process(data_message_from_previous_node) | 该方法 `process()` 从前一个节点获取DataMsg并应用转换。 这取决于当前使用的节点。 |
 
-### 拆分
+### Split
 
 使用以下节点将数据帧拆分为培训并通过或进行 `train_size` 测试 `test_size`。 这将返回具有多索引的数据帧。 您可以使用以下示例访问培训和测试数据帧 `msg5.data.xs(“train”)`。
 
