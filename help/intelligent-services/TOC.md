@@ -11,13 +11,13 @@ ht-degree: 3%
 ---
 
 
-# Adobe Intelligent Services {#intelligent-services}
+# Adobe智能服务 {#intelligent-services}
 
 * [智能服务概述](home.md)
 * [准备要在Intelligent Services中使用的数据](data-preparation.md)
-* 归因人工智能 {#attribution-ai}
+* Attribution AI {#attribution-ai}
    * [概述](attribution-ai/overview.md)
-   * [归因AI快速入门](attribution-ai/getting-started.md)
+   * [Attribution AI入门](attribution-ai/getting-started.md)
    * [用户界面指南](attribution-ai/user-guide.md)
    * [发现洞察](attribution-ai/discover-insights.md)
    * [访问得分](attribution-ai/download-scores.md)
