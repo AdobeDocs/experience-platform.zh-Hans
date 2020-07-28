@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建MariaDB源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
 workflow-type: tm+mt
 source-wordcount: '473'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 在UI [!DNL MariaDB] 中创建源连接器
 
-> [!NOTE]
+>[!NOTE]
 > 连接 [!DNL MariaDB] 器为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
 Adobe Experience Platform中的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用用户界面创建Maria DB源连接器 [!DNL Platform] 的步骤。
