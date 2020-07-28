@@ -185,5 +185,5 @@ ORDER BY pageViews DESC;
 
 ## 后续步骤
 
-有关使用Adobe定义函数(ADF)的示例查询的更多信息，请阅读《Adobe定义函数》指南。 有关查询执行的一般指南，请阅读 [关于查询在查询服务中执行的指南](./writing-queries.md)。
+有关使用Adobe定义函数(ADF)的示例查询的更多信息，请阅读Adobe定义函数指南。 有关查询执行的一般指南，请阅读 [关于查询在查询服务中执行的指南](./writing-queries.md)。
 
