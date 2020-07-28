@@ -1,28 +1,28 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 受众管理器连接器
+title: Audience Manager连接器
 topic: overview
 translation-type: tm+mt
 source-git-commit: fb4ffa2c95365905f5417586fa7ecf88523009a0
 workflow-type: tm+mt
 source-wordcount: '742'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
 
-# 受众管理器连接器
+# Audience Manager连接器
 
-Adobe受众管理器数据连接器将在Adobe受众管理器中收集的第一方数据流化到Adobe Experience Platform。 受众管理器连接器将三类别数据引入平台：
+Adobe Audience Manager数据连接器将以Adobe Audience Manager收集的第一方数据流化到Adobe Experience Platform。 Audience Manager连接器将三类别数据引入平台：
 
-- **实时数据：** 在受众管理器的数据收集服务器上实时捕获数据。 此数据用于受众管理器中以填充基于规则的特征，并将在最短的延迟时间内在平台中显示。
-- **已载入（入站）数据：** 这些是用户上传到由受众管理器托管的Amazon S3位置的文件。 受众管理器使用此数据来使用入站文件方法填充载入的特征，并会有一些延迟。
-- **用户档案数据：** 受众经理使用实时和载入的数据来推导客户用户档案。 这些用户档案用于填充区段实现上的身份图和特征。
+- **实时数据：** 在Audience Manager的数据收集服务器上实时捕获数据。 此数据用于Audience Manager以填充基于规则的特征，并将在最短的延迟时间内在平台中显示。
+- **已载入（入站）数据：** 这些是用户上传到由Audience Manager托管的AmazonS3位置的文件。 Audience Manager使用此数据使用入站文件方法填充已载入的特征，并会有一些延迟。
+- **用户档案数据：** Audience Manager使用实时和载入的数据来推导客户用户档案。 这些用户档案用于填充区段实现上的身份图和特征。
 
-受众管理器连接器将这些类别映射到体验数据模型(XDM)模式，并将其发送到平台。 实时数据和载入的用户档案以XDM ExperienceEvent数据的形式发送，而用户档案数据以XDM单个的形式发送。
+Audience Manager连接器将这些类别映射到体验数据模型(XDM)模式，并将其发送到平台。 实时数据和载入的用户档案以XDM ExperienceEvent数据的形式发送，而用户档案数据以XDM单个的形式发送。
 
-有关使用平台UI创建与Adobe受众管理器连接的说明，请参阅 [受众管理器连接器教程](../../tutorials/ui/create/adobe-applications/audience-manager.md)。
+有关使用平台UI创建Adobe Audience Manager连接的说明，请参阅 [Audience Manager连接器教程](../../tutorials/ui/create/adobe-applications/audience-manager.md)。
 
 ## 什么是体验数据模型(XDM)?
 
@@ -34,7 +34,7 @@ XDM是一个公开记录的规范，它提供一个标准化框架，平台通�
 
 ## XDM模式示例
 
-以下是映射到XDM ExperienceEvent和XDM平台中单个受众的用户档案管理器结构示例。
+以下是映射到XDM ExperienceEvent和XDM Individual Platform的Audience Manager结构示例。
 
 ### ExperienceEvent —— 用于实时数据和载入的数据
 
@@ -44,37 +44,37 @@ XDM是一个公开记录的规范，它提供一个标准化框架，平台通�
 
 ![](images/aam-profile-xdm-for-profile-data.png)
 
-## 如何将字段从Adobe受众管理器映射到XDM?
+## 如何将字段从Adobe Audience Manager映射到XDM?
 
-有关详细信息，请参 [阅受众管理器映射](./mapping/audience-manager.md) 字段的文档。
+有关详细信息，请参 [阅Audience Manager映射](./mapping/audience-manager.md) 字段的文档。
 
 ## 数据管理平台
 
 ### 数据集
 
-数据集是存储和管理结构，用于模式集合，通常是表，它包含（列）和字段（行），并由数据连接提供。 受众管理器数据包括实时数据、入站数据和用户档案数据。 要查找受众管理器数据集，请在UI中使用搜索功能，并针对每种类型的数据提供命名约定。
+数据集是存储和管理结构，用于模式集合，通常是表，它包含（列）和字段（行），并由数据连接提供。 Audience Manager数据包括实时数据、入站数据和用户档案数据。 要查找Audience Manager数据集，请在UI中使用搜索功能，并针对每种类型的数据提供命名约定。
 
-受众管理器数据集默认为用户档案禁用，用户可以根据自己的使用案例启用或禁用数据集。 不建议禁用将用于用户档案中段成员资格的数据集。
+Audience Manager数据集在默认情况下处于禁用状态，并且用户能够根据其使用案例启用或禁用数据集。 不建议禁用将用于用户档案中段成员资格的数据集。
 
 | 数据集名称 | 描述 |
 | ------------ | ----------- |
-| 受众管理器实时 | 此数据集包含由受众管理器DCS端点上的直接点击收集的数据以及受众管理器用户档案的标识图。 启用此数据集进行用户档案摄取。 |
-| 受众管理器实时用户档案更新 | 此数据集支持受众管理器特征和区段的实时定位。 它包含Edge区域路由、特征和区段成员资格的信息。 启用此数据集进行用户档案摄取。 |
-| 受众管理器设备数据 | 具有ECID的设备数据以及在受众管理器中聚集的相应细分实现。 |
-| 受众管理器设备用户档案数据 | 用于受众管理器连接器诊断。 |
-| 受众管理器已验证用户档案 | 此数据集包含受众管理器已验证的用户档案。 |
-| 受众管理器已验证用户档案元数据 | 用于受众管理器连接器诊断。 |
-| 受众管理器入站{数据源ID} **（已弃用）** | 此数据集通过入站文件方法表示受众管理器中已载入的记录。 此数据流已弃用，将在后续版本中删除。 |
-| 受众管理器入站元数 **据（已弃用）** | 用于受众管理器连接器诊断。 此数据流已弃用，将在后续版本中删除。 |
+| Audience Manager实时 | 此数据集包含由Audience ManagerDCS端点上的直接点击收集的数据和Audience Manager用户档案的标识图。 启用此数据集进行用户档案摄取。 |
+| Audience Manager实时用户档案更新 | 此数据集支持Audience Manager特征和区段的实时定位。 它包含Edge区域路由、特征和区段成员资格的信息。 启用此数据集进行用户档案摄取。 |
+| Audience Manager设备数据 | 具有ECID的设备数据以及在Audience Manager中聚集的相应细分实现。 |
+| Audience Manager设备用户档案数据 | 用于Audience Manager连接器诊断。 |
+| Audience Manager验证用户档案 | 此数据集包含经Audience Manager验证的用户档案。 |
+| Audience Manager认证用户档案元数据 | 用于Audience Manager连接器诊断。 |
+| Audience Manager入站{数据源ID} **（已弃用）** | 此数据集通过入站文件方法表示Audience Manager中已载入的记录。 此数据流已弃用，将在后续版本中删除。 |
+| Audience Manager入站元数 **据（已弃用）** | 用于Audience Manager连接器诊断。 此数据流已弃用，将在后续版本中删除。 |
 
 ### 连接
 
-Adobe受众管理器在目录中创建一个连接： **受众管理器连接**。 目录是Adobe Experience Platform中数据位置和谱系记录的系统。 连接是Connectors客户特定实例的Catalog对象。 有关目录、 [连接和连接器](../../../catalog/home.md) ，请参阅目录服务概述。
+Adobe Audience Manager在目录中创建一个连接： **Audience Manager连接**。 目录是Adobe Experience Platform内数据位置和谱系的记录系统。 连接是Connectors客户特定实例的Catalog对象。 有关目录、 [连接和连接器](../../../catalog/home.md) ，请参阅目录服务概述。
 
-## 平台上的受众管理器数据预期的延迟是什么？
+## 平台上Audience Manager数据的预期延迟是什么？
 
-| 受众管理器数据 | 延迟 | 注释 |
+| Audience Manager数据 | 延迟 | 注释 |
 | --- | --- | --- |
 | 实时数据 | &lt; 35 分钟. | 从在Realtime节点捕获到在Platform Data Lake上显示的时间。 |
-| 入站数据 | &lt; 13小时 | 从在S3存储桶捕获到在平台数据湖上显示的时间。 |
+| 入站数据 | &lt; 13 小时 | 从在S3存储桶捕获到在平台数据湖上显示的时间。 |
 | 用户档案数据 | &lt; 2 天 | 从实时／入站数据捕获到添加到用户用户档案并最终显示在平台数据湖上的时间。 |
