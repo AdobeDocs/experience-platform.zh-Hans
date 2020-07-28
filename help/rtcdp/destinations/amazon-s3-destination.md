@@ -1,8 +1,8 @@
 ---
-title: Amazon S3目标
-seo-title: Amazon S3目标
-description: 创建到Amazon Web Services(AWS)S3存储的实时出站连接，定期将制表符分隔或CSVAdobe Experience Platform文件从导出到您自己的S3存储段。
-seo-description: 创建到Amazon Web Services(AWS)S3存储的实时出站连接，定期将制表符分隔或CSVAdobe Experience Platform文件从导出到您自己的S3存储段。
+title: AmazonS3目的地
+seo-title: AmazonS3目的地
+description: 创建到您的AmazonWeb服务(AWS)S3存储的实时出站连接，定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储段。
+seo-description: 创建到您的AmazonWeb服务(AWS)S3存储的实时出站连接，定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储段。
 translation-type: tm+mt
 source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
@@ -30,4 +30,4 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Adobe实时CDP需要对 `write` 将在其中传送导出文件的存储桶对象具有权限。
+>Adobe实时CDP需 `write` 要存储段对象的权限，以便交付导出文件。
