@@ -20,7 +20,7 @@ ht-degree: 11%
 
 ## [!DNL JupyterLab] on [!DNL Experience Platform]
 
-Experience Platform的JupyterLab集成随附架构更改、设计注意事项、自定义笔记本扩展、预安装库和Adobe主题界面。
+Experience Platform的JupyterLab集成包含架构更改、设计注意事项、自定义笔记本扩展、预安装库和Adobe主题界面。
 
 以下列表概述了JupyterLab在平台上独有的一些功能：
 
@@ -44,7 +44,7 @@ Experience Platform的JupyterLab集成随附架构更改、设计注意事项、
 * **[!DNL Catalog Service]:**使用读写功能访问和浏览数据集。
 * **[!DNL Query Service]:**使用SQL访问和浏览数据集，在处理大量数据时提供更低的数据访问开销。
 * **[!DNL Sensei ML Framework]:**模型开发，能够对数据进行培训和评分，并且只需单击一下即可创建菜谱。
-* **[!DNL Experience Data Model (XDM)]:**标准化和互操作性是Adobe Experience Platform背后的关键概念。[Adobe推动的体验数据模型](https://www.adobe.com/go/xdm-home-en)(XDM)旨在实现客户体验数据标准化并定义客户体验管理模式。
+* **[!DNL Experience Data Model (XDM)]:**标准化和互操作性是Adobe Experience Platform背后的关键概念。[体验Adobe模型(XDM](https://www.adobe.com/go/xdm-home-en))由驱动，旨在实现客户体验数据标准化并定义客户体验管理模式。
 
 >[!NOTE]
 >
@@ -388,7 +388,7 @@ df <- dataset_reader$limit(100L)$offset(10L)$read()
 
 ### 从PySpark//Scala中的数据集[!DNL Spark]中读取
 
-打开活动的PySpark或Scala笔记本时，从左侧提要栏 **展开** “数据浏览器”选项卡，并单 **击多次集** ,视图可用数据集的列表。 右键单击要访问的数据集列表，然后单击“在笔记本 **中浏览数据”**。 将生成以下代码单元格：
+打开活动的PySpark或Scala笔记本时，从左侧提要栏展开 **Data Explorer** 选项卡，然后单击“数 **据集** ”以视图可用数据集的列表。 右键单击要访问的数据集列表，然后单击“在笔记本 **中浏览数据”**。 将生成以下代码单元格：
 
 #### PySpark([!DNL Spark] 2.4) {#pyspark2.4}
 
