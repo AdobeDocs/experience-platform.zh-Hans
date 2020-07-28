@@ -74,7 +74,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ## 编辑合并策略
 
-通过单击要编辑的合并策略的 *[!UICONTROL 策略名]* ，可以通过合并 *[!UICONTROL 策略选]* 项卡修改现有的合并策略。
+通过单击要编辑的合并策略的 *[!UICONTROL 策略名]* ，可以通过合并 *[!UICONTROL 策略选]* 项卡修改现有合并策略。
 
 ![合并策略登陆页](../images/merge-policies/select-edit.png)
 
