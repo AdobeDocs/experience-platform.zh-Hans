@@ -1,7 +1,7 @@
 ---
 title: Bing Ads Universal事件跟踪(UET)扩展
 seo-title: Bing Ads Universal事件跟踪(UET)扩展
-description: Bing Ads Universal Customer Data Tracking(UET)扩展是Adobe Real-time Customer Data Platform中的一个广告目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
+description: 必应广告通用事件跟踪(UET)扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: null
 translation-type: tm+mt
 source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
@@ -18,18 +18,18 @@ ht-degree: 4%
 
 [!DNL Bing Ads Universal Event Tracking] (UET)for是 [!DNL Experience Platform Launch] 跟踪某人点击您的搜索广告后发生情况的有用方法。 通过使用单个UET标签记录客户在您的网站上的行为，您可以利用该数据，从而使用再营销列表跟踪转化或目标受众。
 
-[!DNL Bing Ads Universal Event Tracking] (UET)是Adobe实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100154.html)。
+[!DNL Bing Ads Universal Event Tracking] (UET)是Adobe实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100154.html)。
 
-此目标是扩 [!DNL Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Launch] 实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+此目标是扩 [!DNL Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Launch] 实时CDP中的工作方式的更多信息，请参 [阅Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
 ![必应广告扩展](assets/bing-extension.png)
 
 
 ## 先决条件 {#prerequisites}
 
-此扩展可在目录 [!DNL Destinations] 中找到已购买Adobe实时CDP的所有客户。
+此扩展位于目录 [!DNL Destinations] 中，面向所有已购买Adobe实时CDP的客户。
 
-要使用此扩展，您需要访问 [!DNL Experience Platform Launch]。 [!DNL Experience Platform Launch] 作为附带的增值功能提供给Adobe Experience Cloud客户。 请与您的组织管理员联系以 [!DNL Launch] 获取访问权限，并请他们授予 **[!UICONTROL 您manage_properties]** 权限，以便您可以安装扩展。
+要使用此扩展，您需要访问 [!DNL Experience Platform Launch]。 [!DNL Experience Platform Launch] 作为附带的增值功能提供给Adobe Experience Cloud客户。 请与您的组织管理员联系以 [!DNL Launch] 获取访问权限，并要求他们授予 **[!UICONTROL 您manage_properties]** 权限，以便您可以安装扩展。
 
 ## 安装扩展 {#install-extension}
 
@@ -41,7 +41,7 @@ ht-degree: 4%
 4. 在“选 **[!UICONTROL 择可用的启动项]** ”属性窗口中， [!DNL Launch] 选择要安装扩展的属性。 您还可以在中选择创建新属性 [!DNL Launch]。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解文档的“属 [性”页面部分](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) 中的 [!DNL Launch] 属性。
 5. 该工作流将帮 [!DNL Launch] 您完成安装。
 
-有关扩展配置选项和安装支持的信息，请参 [阅Adobe Exchange上的Bing Ads Universal](https://exchange.adobe.com/experiencecloud.details.100154.html)事件跟踪(UET)页面。
+有关扩展配置选项和安装支持的信息，请参 [阅Adobe交换上的Bing Ads Universal](https://exchange.adobe.com/experiencecloud.details.100154.html)事件跟踪(UET)页。
 
 您还可以直接在Experience Platform Launch界面中安 [装扩展](https://launch.adobe.com/)。 请参 [阅在文档中添加](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension) 新的 [!DNL Launch] 扩展。
 
@@ -58,6 +58,6 @@ ht-degree: 4%
 
 >[!TIP]
 >
->如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显示该 **[!UICONTROL 扩展]** 的安装。 按照安装扩展中的说明启 [动安装](#install-extension) 工作流 [!DNL Launch] 程，以获取并配置或删除扩展。
+>如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显 **[!UICONTROL 示]** 该扩展的安装。 按照安装扩展中的说明启 [动安装](#install-extension) 工作流 [!DNL Launch] 程，以获取并配置或删除扩展。
 
 要升级您的扩展，请参 [阅文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/extension-upgrade.html) 中的扩 [!DNL Launch] 展升级。
