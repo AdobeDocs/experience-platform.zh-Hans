@@ -43,11 +43,11 @@ ht-degree: 1%
 
 ## 订阅数据获取状态通知
 
-通 [过Adobe I/O事件](https://www.adobe.io/apis/experienceplatform/events.html)，您可以使用网络挂接订阅多种通知类型。 以下各节概述了使用Adobe开发人 [!DNL Platform] 员控制台订阅数据获取事件通知的步骤。
+通 [过AdobeI/O事件](https://www.adobe.io/apis/experienceplatform/events.html)，您可以使用网络挂接订阅多种通知类型。 以下各节概述了使用Adobe开发人 [!DNL Platform] 员控制台订阅数据获取事件通知的步骤。
 
 ### 在Adobe开发人员控制台中创建新项目
 
-转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
+转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台，使用Adobe ID登录。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
 
 ### 向 [!DNL Experience Platform] 项目添加事件
 
@@ -79,7 +79,7 @@ ht-degree: 1%
 
 ![](../images/quality/subscribe-events/registration-details.png)
 
-在同一屏幕的下方，您可以选择配置如何接收事件。 **[!UICONTROL Webhook]** 允许您提供自定义Webhook地址来接收事件，而 **[!UICONTROL Runtime操作]** 则允许您使用Adobe I/O [Runtime进行相同操作](https://www.adobe.io/apis/experienceplatform/runtime/docs.html)。
+在同一屏幕的下方，您可以选择配置如何接收事件。 **[!UICONTROL Webhook]** 允许您提供自定义Webhook地址来接收事件，而 **[!UICONTROL Runtime操作]** 则允许您使用 [Adobe I/O Runtime](https://www.adobe.io/apis/experienceplatform/runtime/docs.html)。
 
 本教程将跳过此可选配置步骤。 完成后，单击“保 **[!UICONTROL 存配置的事件]** ”以完成事件注册。
 
@@ -91,4 +91,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-在将通知注 [!DNL Platform] 册到项目后，您可以视图从项目仪表板收到的事件。 有关如何跟 [踪事件的详细说明](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) ，请参阅“跟踪Adobe I/O事件”指南。
+在将通知注 [!DNL Platform] 册到项目后，您可以视图从项目仪表板收到的事件。 有关如何跟 [踪Adobe的详细说明](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) ，请参阅跟踪事件I/O事件指南。
