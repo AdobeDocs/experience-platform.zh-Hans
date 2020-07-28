@@ -20,7 +20,7 @@ ht-degree: 3%
 
 ### 检索列表查询模板
 
-您可以通过向端点发出GET请求，检索IMS组织的所有查询模板的列表 `/query-templates` 符。
+您可以通过向端点发出列表请求，为IMS组织检索所有查询模板的GET `/query-templates` 符。
 
 **API格式**
 
@@ -111,7 +111,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/query-templates?limi
 
 ### 创建查询模板
 
-您可以通过向端点发出POST请求来创建查询 `/query-templates` 模板。
+您可以通过向端点发出查询请求来创建POST `/query-templates` 模板。
 
 **API格式**
 
@@ -174,7 +174,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/query-templates
 
 ### 检索指定的查询模板
 
-您可以通过向端点发出GET请求并在请求路径 `/query-templates/{TEMPLATE_ID}` 中提供查询模板的ID来检索特定查询模板。
+您可以通过向端点发出查询请求并在请求路径 `/query-templates/{TEMPLATE_ID}` 中提供GET模板的ID来检索特定的查询模板。
 
 **API格式**
 
@@ -232,7 +232,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/query-templates/0094
 
 ### 更新指定的查询模板
 
-您可以通过向端点发出PUT请求并在请求路径 `/query-templates/{TEMPLATE_ID}` 中提供查询模板的ID来更新特定查询模板。
+您可以通过向端点发出查询请求并在请求路径 `/query-templates/{TEMPLATE_ID}` 中提供PUT模板的ID来更新特定的查询模板。
 
 **API格式**
 
