@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Mixin是用于描述特定概念的一组字段，如“地址”或“用户档案首选项”。 有许多标准混音可用，或者您可以定义您自己的混音，以便在您希望捕获组织特有的信息时进行定义。 每个混音都包 `meta:intendedToExtend` 含一个字段，该字段列表混音所兼容的类。
 
-您可能会发现查看所有可用的混音很有帮助，以熟悉其中包含的字段。 您可以对“全局”和“租户”容器执行请求，只返回“meta:intededToExtend”字段与您所使用的类匹配的那些混音，从而列表(GET)与特定类兼容的所有混音。 以下示例将返回可与类一起使用的所有混 [!DNL XDM Individual Profile] 音：
+您可能会发现查看所有可用的混音很有帮助，以熟悉其中包含的字段。 您可以对“全局”和“租户”列表执行请求，以容器(GET)与特定类兼容的所有混音，只返回那些“meta:intededToExtend”字段与您所使用的类匹配的混音。 以下示例将返回可与类一起使用的所有混 [!DNL XDM Individual Profile] 音：
 
 ```http
 GET /global/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
@@ -186,4 +186,4 @@ curl -X POST \
 }
 ```
 
-执行GET请求以列表租户容器中的所有混音现在将包括车辆详细信息混音，或者您可以使用URL编码的URI执行查找( `$id` GET)请求以直接视图新混音。 请记住，在“接 `version` 受”标题中包含所有查找请求。
+执行GET请求以列表租户容器中的所有混音现在将包括车辆详细信息混音，或者您可以使用URL编码的URI执行查找(GET)请求以直接视图新混音。 `$id` 请记住，在“接 `version` 受”标题中包含所有查找请求。
