@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 在UI中创建Amazon Redshift源连接器
+title: 在UI中创建AmazonRedshift源连接器
 topic: overview
 translation-type: tm+mt
 source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
@@ -49,11 +49,11 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 登录到 <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> ，然后从左 **[!UICONTROL 侧导航栏]** 中选 *[!UICONTROL 择源]* ，以访问源工作区。 “目 *[!UICONTROL 录]* ”屏幕显示可为其创建入站基本连接的各种源，每个源显示与它们关联的现有基本连接数。
 
-在“数 *[!UICONTROL 据库]* ”类别下， **[!UICONTROL 选择Amazon Redshift]** ，在屏幕右侧显示一个信息栏。 信息栏提供所选源的简短描述以及与源或视图其文档的选项。 要创建新的入站基本连接，请选择“ **[!UICONTROL 连接源”]**。
+在“数 *[!UICONTROL 据库]* ”类别下， **[!UICONTROL 选择“]** Amazon红移”以显示屏幕右侧的信息栏。 信息栏提供所选源的简短描述以及与源或视图其文档的选项。 要创建新的入站基本连接，请选择“ **[!UICONTROL 连接源”]**。
 
 ![](../../../../images/tutorials/create/redshift/catalog.png)
 
-将显 *[!UICONTROL 示“连接到Amazon]* Redshift”页。 在此页上，您可以使用新凭据或现有凭据。
+将显 *[!UICONTROL 示“连接到AmazonRedshift]* ”页面。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
