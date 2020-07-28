@@ -22,7 +22,7 @@ ht-degree: 3%
 
 ## 检索列表计划 {#retrieve-list}
 
-您可以通过向端点发出GET请求，检索IMS组织的所有计划的列表 `/config/schedules` 符。
+您可以通过向端点发出列表请求，为IMS组织检索所有计划的 `/config/schedules` GET。
 
 **API格式**
 
@@ -103,7 +103,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
 
 ## Create a new schedule {#create}
 
-可以通过向端点发出POST请求来创建新 `/config/schedules` 计划。
+可以通过向端点发出计划请求来创建新POST `/config/schedules` 。
 
 **API格式**
 
@@ -173,7 +173,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
 
 ## 检索特定计划 {#get}
 
-您可以通过向端点发出GET请求并提供您希望在请求路径中检索的计划的 `/config/schedules` ID，来检索有关特定计划的详细信息。
+您可以通过向端点发出计划请求并提供您希望在请求路径中检索的GET的 `/config/schedules` ID，来检索有关特定计划的详细信息。
 
 **API格式**
 
@@ -234,9 +234,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules/4e538382-db
 
 ## 更新特定计划的详细信息 {#update}
 
-您可以通过向端点发出PATCH请求并提 `/config/schedules` 供您尝试在请求路径中更新的计划的ID来更新特定计划。
+您可以通过向端点发出计划请求并提 `/config/schedules` 供您尝试在请求路径中更新的计划的ID，来更新特定PATCH。
 
-PATCH请求允许您更新单个 [计划的](#update-state) 状态 [](#update-schedule) 或cron计划。
+PATCH请求允许您更新单 [个计划](#update-state)[的状态](#update-schedule) 或cron计划。
 
 ### 更新计划状态 {#update-state}
 
