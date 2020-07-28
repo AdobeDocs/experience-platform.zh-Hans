@@ -51,7 +51,7 @@ ht-degree: 2%
 
 要使用API收录拼花 [!DNL Platform] 存储，您必须对您访问的第三方云数据源具有有效连接。 如果您尚未连接要使用的存储，则可以通过以下教程创建一个连接：
 
-- [Amazon S3](./create/cloud-storage/s3.md)
+- [AmazonS3](./create/cloud-storage/s3.md)
 - [Azure Blob](./create/cloud-storage/blob.md)
 - [Azure数据湖存储Gen2](./create/cloud-storage/adls-gen2.md)
 - [Google Cloud商店](./create/cloud-storage/google.md)
@@ -265,7 +265,7 @@ curl -X POST \
 
 ## 创建目标数据集
 
-通过对Catalog Service API执行POST请求，提供有效负 [荷内目标模式的ID](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，可以创建目标数据集。
+通过向Catalog Service API执行目标请求 [，提供有效负荷中POST模式的ID](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，可以创建目标数据集。
 
 **API格式**
 
@@ -374,7 +374,7 @@ curl -X POST \
 - [源连接ID](#source)
 - [目标连接ID](#target)
 
-数据流负责从源调度和收集数据。 您可以通过执行POST请求来创建数据流，同时在有效负荷中提供以前提到的值。
+数据流负责从源调度和收集数据。 通过在有效负荷中提供先前提到的值时执行POST请求，可以创建数据流。
 
 **API格式**
 
