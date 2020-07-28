@@ -54,7 +54,7 @@ ht-degree: 0%
 
 #### 阅读数据集
 
-本节概述读取数据集并使用Adobe提供 [的helper](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/helper/Helper.scala) .scala示例所需的更改。
+本节概述读取数据集时需要进行的更改，并使 [用Adobe提供](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/helper/Helper.scala) 的helper.scala示例。
 
 **旧的阅读数据方式**
 
@@ -88,7 +88,7 @@ var df = sparkSession.read.format("com.adobe.platform.query")
 
 #### 写入数据集
 
-本节概述使用Adobe提供的ScoringDataSaver.scala示 [例编写数据集所需](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/ScoringDataSaver.scala) 的更改。
+本节概述使用Adobe提供的ScaringDataSaver.scala示 [例编写数据集所需](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/ScoringDataSaver.scala) 的更改。
 
 **旧的写数据方式**
 
@@ -225,7 +225,7 @@ pd = sparkSession.read.format("com.adobe.platform.query")
 
 #### 写入数据集
 
-本节概述使用Adobe提供的data_saver.py [示例编写数据集](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/pyspark/pysparkretailapp/data_saver.py) 所需的更改。
+本节概述使用Adobe提供的data_saver.py [示例编写数据集所需](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/pyspark/pysparkretailapp/data_saver.py) 的更改。
 
 **旧的写数据方式**
 
@@ -583,7 +583,7 @@ pd0.show(10, False)
 
 ## [!DNL Spark] 2.3到2. [!DNL Spark] 4(Scala)笔记本迁移指南 {#spark-notebook-migration}
 
-随着2.4的 [!DNL Spark] 引入，现 [!DNL JupyterLab Notebooks]有 [!DNL Spark] (2.3)笔记本现在使用Scala内核而不是[!DNL Spark][!DNL Spark] 内核。 这意味着在(2. [!DNL Spark] 3)[!DNL Spark] 上运行的现有代码在Scala([!DNL Spark] 2.4)中不受支持。 此外，所有新 [!DNL Spark] 笔记本都应在[!DNL Spark] 中使用Scala(2.4) [!DNL JupyterLab Launcher]。
+随着2.4 [!DNL Spark] 的引入，现 [!DNL JupyterLab Notebooks]有 [!DNL Spark] (2.3)笔记本现在使用Scala内核，而不是[!DNL Spark][!DNL Spark] 内核。 这意味着在(2. [!DNL Spark] 3)[!DNL Spark] 上运行的现有代码在Scala([!DNL Spark] 2.4)中不受支持。 此外，所有新 [!DNL Spark] 笔记本都应在[!DNL Spark] 中使用Scala(2.4) [!DNL JupyterLab Launcher]。
 
 >[!IMPORTANT]
 >
