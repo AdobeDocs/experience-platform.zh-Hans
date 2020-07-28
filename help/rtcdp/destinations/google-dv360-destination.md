@@ -22,13 +22,13 @@ ht-degree: 0%
 
 请注意特定于目标的以下详细 [!DNL Google Display & Video 360] 信息：
 
-* 您可以将以下身份 [发送](../../identity-service/namespaces.md) 到目 [!DNL Google Display & Video 360] 标： **Google Cookie ID、IDFA、GAID、Roku ID、Microsoft ID、Amazon Fire TV ID**。
+* 您可以将以下身份 [发送](../../identity-service/namespaces.md) 到目 [!DNL Google Display & Video 360] 标： **Google Cookie ID、IDFA、GAID、Roku ID、Microsoft ID、Amazon火电电视ID**。
 * 激活的受众是在Google平台中以编程方式创建的。
 * Adobe实时CDP当前不包含用于验证成功激活的度量。 请参阅Google中的受众计数，验证集成并了解受众定位大小。
 
 >[!IMPORTANT]
 >
->如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且过去(使用 [Experience Cloud或其他应用程序](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) )未在Adobe Audience ManagerID服务中启用ID同步功能，请联系Adobe Consulting或客户关怀以启用ID同步。 如果您以前在Audience Manager中设置Google集成，则您设置的ID同步将结转到Adobe实时CDP。
+>如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且过去(使用Experience Cloud或其他应用程序 [](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) )Adobe Audience ManagerID服务中未启用ID同步功能，请联系Adobe咨询或客户关怀以启用ID同步。 如果您以前在Audience Manager中设置Google集成，则您设置的ID同步将转入Adobe实时CDP。
 
 ## 先决条件
 
@@ -36,12 +36,12 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->在Adobe实时CDP中设置您的第 [!DNL Google Display & Video 360] 一个目标之前，此允许列表是必需的。 在创建目标之前，请确保Google已完成下面描述的允许列表过程。
+>在允许列表实时CDP中设置您的 [!DNL Google Display & Video 360] 第一个目标之前，必须进行Adobe。 在创建目标之前，请确保Google已完成下面描述的允许列表过程。
 
-在Adobe [!DNL Google Display & Video 360] 实时CDP中创建目标之前，您必须联系Google，要求Adobe对允许的数据提供者进行列表，并将您的帐户添加到允许列表。 联系Google并提供以下信息：
+在Adobe实 [!DNL Google Display & Video 360] 时CDP中创建目标之前，您必须联系Google，要求Adobe在允许的数据提供者列表上，并且要将您的帐户添加到允许列表。 联系Google并提供以下信息：
 
-* **帐户ID** : 这是Adobe在Google上的帐户ID。 要获取此ID，请与Adobe客户服务或Adobe代表联系。
-* **客户ID** : 这是Adobe在Google上的客户帐户ID。 要获取此ID，请与Adobe客户服务或Adobe代表联系。
+* **帐户ID** : 这是Adobe在谷歌的帐户ID。 请联系Adobe客户服务或您的Adobe代表以获取此ID。
+* **客户ID** : 这是Adobe的Google客户帐户ID。 请联系Adobe客户服务或您的Adobe代表以获取此ID。
 * **您的帐户类型**: 使 **[!DNL Invite advertiser]** 用以仅允许受众共享到您的Display &amp; Video 360帐户中的特定品牌，或 **[!DNL Invite partner]** 者使用以允许受众共享到您的Display &amp; Video 360帐户中的所有品牌。
 
 ## 创建目标
@@ -58,11 +58,11 @@ ht-degree: 0%
    * 使 `Invite Advertiser` 用以仅允许受众共享到您的显示和视频360帐户中的特定品牌。
    * 使 `Invite Partner` 用，允许受众共享到您的Display &amp; Video 360帐户中的所有品牌。
 * **[!UICONTROL 帐户ID]**: 使用Google填 **[!DNL Invite partner]** 写您 **[!DNL Invite advertiser]** 的或帐户ID。 通常，这是一个6或7位数字ID。
-* **[!UICONTROL 营销用例]**: 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关Adobe定义的个别营销用例的信息，请参阅数 [据使用策略概述](/help/data-governance/policies/overview.md#core-actions)。
+* **[!UICONTROL 营销用例]**: 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。
 
 >[!NOTE]
 >
->设置目标时， [!DNL Google Display & Video 360] 请与您或Adobe [!DNL Google Account Manager] 代表联系，了解您拥有的帐户类型。
+>设置目标时，请 [!DNL Google Display & Video 360] 与您的或Adobe [!DNL Google Account Manager] 代表联系，了解您的帐户类型。
 
 ## 将区段激活到 [!DNL Google Display & Video 360]
 
