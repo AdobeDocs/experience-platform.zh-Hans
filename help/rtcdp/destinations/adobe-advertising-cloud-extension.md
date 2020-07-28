@@ -1,7 +1,7 @@
 ---
-title: AdobeAdvertising Cloud扩展
-seo-title: AdobeAdvertising Cloud扩展
-description: AdobeAdvertising Cloud扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
+title: Adobe Advertising Cloud延伸
+seo-title: Adobe Advertising Cloud分机
+description: Adobe Advertising Cloud分机是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: null
 translation-type: tm+mt
 source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
@@ -12,17 +12,17 @@ ht-degree: 5%
 ---
 
 
-# AdobeAdvertising Cloud扩展 {#adobe-advertising-cloud-extension}
+# Adobe Advertising Cloud分机 {#adobe-advertising-cloud-extension}
 
 ## 概述 {#overview}
 
-这是用于 [!DNL Advertising Cloud] 为DSP和 [!DNL Advertising Cloud] 搜索（目前不支持DCO）实现转换和细分标记的扩展。
+这是用于 [!DNL Advertising Cloud] 为DSP和 [!DNL Advertising Cloud] Search实施转换和细分标记的扩展（目前不支持DCO）。
 
-AdobeAdvertising Cloud是Adobe实时客户数据平台中的一种广告扩展。
+Adobe Advertising Cloud公司是Adobe实时客户数据平台的广告扩展。
 
-此目标是扩 [!DNL Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Launch] 实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+此目标是扩 [!DNL Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Launch] 实时CDP中的工作方式的更多信息，请参 [阅Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
-![AdobeAdvertising Cloud扩展](/help/rtcdp/destinations/assets/adobe-advertising-cloud-extension.png)
+![Adobe Advertising Cloud延伸](/help/rtcdp/destinations/assets/adobe-advertising-cloud-extension.png)
 
 ## 先决条件 {#prerequisites}
 
@@ -32,7 +32,7 @@ AdobeAdvertising Cloud是Adobe实时客户数据平台中的一种广告扩展�
 
 ## 安装扩展 {#install-extension}
 
-安装AdobeAdvertising Cloud扩展：
+安装Adobe Advertising Cloud扩展：
 
 1. 在Adobe [实时CDP界面中](http://platform.adobe.com/)，转到“目 **[!UICONTROL 标”>“目录”]**。
 2. 从目录中选择扩展或使用搜索栏。
@@ -55,6 +55,6 @@ AdobeAdvertising Cloud是Adobe实时客户数据平台中的一种广告扩展�
 
 >[!TIP]
 >
->如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显示该 **[!UICONTROL 扩展]** 的安装。 按照安装扩展中的说明启 [动安装](#install-extension) 工作流 [!DNL Launch] 程，以获取并配置或删除扩展。
+>如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显 **[!UICONTROL 示]** 该扩展的安装。 按照安装扩展中的说明启 [动安装](#install-extension) 工作流 [!DNL Launch] 程，以获取并配置或删除扩展。
 
 要升级您的扩展，请参 [阅文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/extension-upgrade.html) 中的扩 [!DNL Launch] 展升级。
