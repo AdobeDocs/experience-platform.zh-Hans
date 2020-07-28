@@ -1,7 +1,7 @@
 ---
 title: Facebook像素扩展
 seo-title: Facebook像素扩展
-description: Facebook Pixel扩展是Adobe Real-time Customer Data Platform中的一个广告目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
+description: Facebook Pixel扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: null
 translation-type: tm+mt
 source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
@@ -20,13 +20,13 @@ ht-degree: 5%
 
 [!DNL Facebook Pixel] 是Adobe实时客户数据平台中的广告扩展。 有关扩展功能的更多信息，请参 [阅Facebook Pixel网站](https://developers.facebook.com/docs/facebook-pixel/)。
 
-此目标是Experience Platform Launch扩展。 有关Launch扩展在Adobe实时CDP中的工作方式的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+此目标是Experience Platform Launch扩展。 有关Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
 ![Facebook像素扩展](assets/facebook-pixel-extension.png)
 
 ## 先决条件 {#prerequisites}
 
-此扩展可在目录 [!DNL Destinations] 中找到已购买Adobe实时CDP的所有客户。
+此扩展位于目录 [!DNL Destinations] 中，面向所有已购买Adobe实时CDP的客户。
 
 要使用此扩展，您需要访问Experience Platform Launch。 Experience Platform Launch作为附带的增值功能提供给Adobe Experience Cloud客户。 请与您的组织管理员联系以获取Launch访问权限，并要求他们授予您 **[!UICONTROL manage_properties]** （管理属性）权限，以便您可以安装扩展。
 
@@ -55,6 +55,6 @@ ht-degree: 5%
 
 >[!TIP]
 >
->如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显示该 **[!UICONTROL 扩展]** 的安装。 启动安装工作流程(如安装扩 [展中所述](#install-extension) )，以开始启动并配置或删除您的扩展。
+>如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显 **[!UICONTROL 示]** 该扩展的安装。 启动安装工作流程(如安装扩 [展中所述](#install-extension) )，以开始启动并配置或删除您的扩展。
 
 要升级您的扩展，请参 [阅Launch文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/extension-upgrade.html) 中的扩展升级。
