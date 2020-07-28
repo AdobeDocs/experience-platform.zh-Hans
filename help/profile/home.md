@@ -71,14 +71,14 @@ Adobe Experience Platform [!DNL Segmentation Service] 可以创造受众，为�
 
 ### 边缘投影配置和目标
 
-为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe Target和Adobe Campaign等Adobe应用程序使用边缘来实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 要了解更多信息并开始使用API处理 [!DNL Real-time Customer Profile] 投影，请参阅 [边缘投影端点指南](api/edge-projections.md)。
+为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 要了解更多信息并开始使用API处理 [!DNL Real-time Customer Profile] 投影，请参阅 [边缘投影端点指南](api/edge-projections.md)。
 
 ## 将数据添加到 [!DNL Real-time Customer Profile]
 
 [!DNL Platform] 可以配置为将记录和时间序列数据发送到 [!DNL Profile]，支持实时流摄取和批量摄取。 有关详细信息，请参阅概述如何 [向实时客户用户档案添加数据的教程](tutorials/add-profile-data.md)。
 
 >[!Note]
->通过Adobe解决方案收集的 [!DNL Analytics Cloud]数据， [!DNL Marketing Cloud]包括 [!DNL Advertising Cloud]、和，流 [!DNL Experience Platform] 入并被引入 [!DNL Profile]。
+>通过Adobe解决方案收集的 [!DNL Analytics Cloud]数据 [!DNL Marketing Cloud]，包括 [!DNL Advertising Cloud]、和，流 [!DNL Experience Platform] 入并被引入 [!DNL Profile]。
 
 ### [!DNL Profile] 摄取指标
 
@@ -88,7 +88,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 可以创造受众，为�
 
 [!DNL Data governance] 是用于管理客户数据并确保遵守适用于数据使用的法规、限制和政策的一系列战略和技术。
 
-在数据访问方面，数据管理在不同级别中起 [!DNL Experience Platform] 着关键作用：
+在数据访问方面，数据管理在不同层次中起 [!DNL Experience Platform] 着关键作用：
 * 数据使用标签
 * 数据访问策略
 * 访问控制营销行动的数据
