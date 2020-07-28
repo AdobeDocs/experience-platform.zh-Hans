@@ -28,7 +28,7 @@ Adobe Experience Platform提 [!DNL Query Service] 供一个用户界面，可用
 
 ## 浏览
 
-“浏 *[!UICONTROL 览]* ”选项卡显示由单位中的用户保存的查询。 将这些视为查询项目是有用的，因为保存在这里的查询可能仍在建设中。 查询在“浏 *[!UICONTROL 览]* ”选项卡上显示，如果以前由执行，则在“ *[!UICONTROL 日志]* ”选项卡中也显示为运行查询 [!DNL Query Service]。
+“浏 *[!UICONTROL 览]* ”选项卡显示由单位中的用户保存的查询。 将这些视为查询项目是有用的，因为保存在这里的查询可能仍在建设中。 查询在“浏 *[!UICONTROL 览]* ”选项卡上显示，如果之前由执行，则在“ *[!UICONTROL 日志]* ”选项卡中也显示为运行查询 [!DNL Query Service]。
 
 ![图像](../images/queries/ui-overview/browse.png)
 
@@ -49,7 +49,7 @@ Adobe Experience Platform提 [!DNL Query Service] 供一个用户界面，可用
 | --- | --- |
 | **[!UICONTROL 名称]** | 查询名称，由SQL查询的前几个字符组成。 单击该名称会打 [!DNL Query Editor]开查询，允许您编辑该名称。 您可以使用搜索栏搜索查询的名称。 搜索区分大小写。 |
 | **[!UICONTROL 创建者]** | 创建查询的人的姓名。 |
-| **[!UICONTROL 客户端]** | 用于查询的客户端。 |
+| **[!UICONTROL 客户]** | 用于查询的客户端。 |
 | **[!UICONTROL 数据集]** | 查询使用的输入数据集。 单击数据集可转到输入数据集详细信息屏幕。 |
 | **[!UICONTROL 状态]** | 查询的当前状态。 |
 | **[!UICONTROL 上次运行]** | 查询最后运行时。 单击此列上的箭头，可以按升序或降序对列表进行排序。 |
