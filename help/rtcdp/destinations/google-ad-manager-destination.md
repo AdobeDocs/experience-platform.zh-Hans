@@ -22,13 +22,13 @@ ht-degree: 0%
 
 请注意特定于目标的以下详细 [!DNL Google Ad Manager] 信息：
 
-* 您可以将以下身份 [发送](../../identity-service/namespaces.md) 到目 [!DNL Google Ad Manager] 标： **Google Cookie ID、IDFA、GAID、Roku ID、Microsoft ID、Amazon Fire TV ID**。
+* 您可以将以下身份 [发送](../../identity-service/namespaces.md) 到目 [!DNL Google Ad Manager] 标： **Google Cookie ID、IDFA、GAID、Roku ID、Microsoft ID、Amazon火电电视ID**。
 * 激活的受众在平台中以编程方式 [!DNL Google] 创建。
 * Adobe实时CDP当前不包含用于验证成功激活的度量。 请参阅Google中的受众计数，验证集成并了解受众定位大小。
 
 >[!IMPORTANT]
 >
->如果您希望创建您的第一个目标， [!DNL Google Ad Manager] 并且过去(使用Experience Cloud [ID或其他应用程序](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) )未启用Audience ManagerID服务中的ID同步功能，请联系Adobe Consulting或客户服务部以启用ID同步。 如果您以前在Audience Manager [!DNL Google] 中设置集成，则您设置的ID同步将结转到Adobe实时CDP。
+>如果您希望创建您的第一个目标， [!DNL Google Ad Manager] 并且过去(使用Experience Cloud [ID或其他应用程序)未启用Audience ManagerID服务中的](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) ID同步功能，请联系Adobe咨询或客户服务部以启用ID同步。 如果您以前在Audience Manager [!DNL Google] 中设置集成，则您设置的ID同步将转入Adobe实时CDP。
 
 ## 先决条件
 
@@ -36,12 +36,12 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->在Adobe实时CDP中设置您的第 [!DNL Google Ad Manager] 一个目标之前，此允许列表是必需的。 在创建目标之前，请确保已完成下面 [!DNL Google] 描述的允许列表过程。
+>在允许列表实时CDP中设置您的 [!DNL Google Ad Manager] 第一个目标之前，必须进行Adobe。 在创建目标之前，请确保已完成下面 [!DNL Google] 描述的允许列表过程。
 
-在Adobe实 [!DNL Google Ad Manager] 时CDP中创建目标之前，您必须联系 [!DNL Google] Adobe，让其承担允许的数据提供者的列表，并将您的帐户添加到允许列表。 联系 [!DNL Google] 并提供以下信息：
+在Adobe实 [!DNL Google Ad Manager] 时CDP中创建目标之前，您必须联系 [!DNL Google] Adobe，让进入允许的数据提供者列表，并将您的帐户添加到允许列表。 联系 [!DNL Google] 并提供以下信息：
 
-* **帐户ID** : 这是Adobe的帐户ID [!DNL Google]。 要获取此ID，请与Adobe客户服务或Adobe代表联系。
-* **客户ID** : 这是Adobe的客户帐户ID [!DNL Google]。 要获取此ID，请与Adobe客户服务或Adobe代表联系。
+* **帐户ID** : 这是Adobe的帐户ID [!DNL Google]请联系Adobe客户服务或您的Adobe代表以获取此ID。
+* **客户ID** : 这是Adobe的客户帐户ID [!DNL Google]请联系Adobe客户服务或您的Adobe代表以获取此ID。
 * **网络ID** : 这是您的帐户 [!DNL Google Ad Manager]
 * **受众链接ID** : 这是您的帐户 [!DNL Google Ad Manager]
 * 您的帐户类型。 **Google或AdX** 购 **买者的DFP**。
@@ -60,11 +60,11 @@ ht-degree: 0%
    * 供发 `DFP by Google` 布 [!DNL DoubleClick] 者使用
    * 用 `AdX buyer` 于 [!DNL Google AdX]
 * **[!UICONTROL 帐户ID]**: 用填写您的帐户ID [!DNL Google]。 这可以是您的网络ID或受众链接ID。 通常，这是一个8位数字的ID。
-* **[!UICONTROL 营销用例]**: 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关Adobe定义的个别营销用例的信息，请参阅数 [据使用策略概述](/help/data-governance/policies/overview.md#core-actions)。
+* **[!UICONTROL 营销用例]**: 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。
 
 >[!NOTE]
 >
-> 设置目标时， [!DNL Google Ad Manager] 请与您或Adobe [!DNL Google Account Manager] 代表联系，了解您拥有的帐户类型。
+> 设置目标时，请 [!DNL Google Ad Manager] 与您的或Adobe [!DNL Google Account Manager] 代表联系，了解您的帐户类型。
 
 ## 将区段激活到 [!DNL Google Ad Manager]
 
