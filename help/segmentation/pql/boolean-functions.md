@@ -20,7 +20,7 @@ ht-degree: 6%
 
 函数 `and` 用于创建逻辑连接。
 
-**格式**
+**Format**
 
 ```sql
 {QUERY} and {QUERY}
@@ -38,7 +38,7 @@ homeAddress.countryISO = "CA" and person.birthYear = 1985
 
 函 `or` 数用于创建逻辑分离。
 
-**格式**
+**Format**
 
 ```sql
 {QUERY} or {QUERY}
@@ -56,7 +56,7 @@ homeAddress.countryISO = "CA" or person.birthYear = 1985
 
 ( `not` 或) `!`函数用于创建逻辑取反。
 
-**格式**
+**Format**
 
 ```sql
 not ({QUERY})
@@ -75,7 +75,7 @@ not (homeAddress.countryISO = "CA")
 
 函 `if` 数用于根据指定的条件是否为真来解析表达式。
 
-**格式**
+**Format**
 
 ```sql
 if ({TEST_EXPRESSION}, {TRUE_EXPRESSION}, {FALSE_EXPRESSION})
