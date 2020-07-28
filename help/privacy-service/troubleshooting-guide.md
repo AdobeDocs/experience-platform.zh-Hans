@@ -66,7 +66,7 @@ Consider the following example `users` array:
 
 ## 我是否可 [!DNL Privacy Service] 以使用清除意外发送到的数据 [!DNL Platform]?
 
-Adobe不支持使用清 [!DNL Privacy Service] 除意外提交到产品的数据。 [!DNL Privacy Service] 旨在帮助您履行对数据主体（或消费者）访问或删除请求的义务。 这些请求是时间敏感的，并且与适用的隐私法相关。 提交不属于数据主体／消费者访问或删除请求的请求会影响所 [!DNL Privacy Service] 有客户以及支持适当 [!DNL Privacy Service] 法律时限的能力。
+Adobe不支持使 [!DNL Privacy Service] 用清除意外提交到产品的数据。 [!DNL Privacy Service] 旨在帮助您履行对数据主体（或消费者）访问或删除请求的义务。 这些请求是时间敏感的，并且与适用的隐私法相关。 提交不属于数据主体／消费者访问或删除请求的请求会影响所 [!DNL Privacy Service] 有客户以及支持适当 [!DNL Privacy Service] 法律时限的能力。
 
 请联系您的客户经理(CDM)，协调并提供删除任何PII或数据问题的工作水平。
 
