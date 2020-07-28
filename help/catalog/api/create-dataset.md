@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 创建数据集
 
-要使用API创建数 [!DNL Catalog] 据集，您必 `$id` 须知道 [!DNL Experience Data Model] 数据集所基于的(XDM)模式的值。 获得模式ID后，您可以通过向API中的端点发出POST请 `/datasets` 求来创建数 [!DNL Catalog] 据集。
+要使用API创建数 [!DNL Catalog] 据集，您必 `$id` 须知道 [!DNL Experience Data Model] 数据集所基于的(XDM)模式的值。 获得模式ID后，您可以通过向API中的端点发出POST请求 `/datasets` 来创建数 [!DNL Catalog] 据集。
 
 >[!NOTE]
 >
