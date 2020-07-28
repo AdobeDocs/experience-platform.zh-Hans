@@ -12,7 +12,7 @@ ht-degree: 1%
 ---
 
 
-# 在Adobe的 [!DNL Real-time Customer Data Platform]
+# 创建电子邮件营销目标并激活Adobe中的数据 [!DNL Real-time Customer Data Platform]
 
 本教程演示了如何使用API调用连接到Adobe Experience Platform数据、创建电子邮件营 [销目标](../../rtcdp/destinations/email-marketing-destinations.md)、创建到新创建目标的数据流以及将数据激活到新创建的目标。
 
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 ![概述——创建目标和激活区段的步骤](../images/destinations/flow-api-destinations-steps-overview.png)
 
-如果您希望使用Adobe实时CDP中的用户界面连接目标并激活数据，请参 [阅连接目标](../../rtcdp/destinations/connect-destination.md)[并激活用户档案和区段到目标教程](../../rtcdp/destinations/activate-destinations.md) 。
+如果您希望使用Adobe实时CDP中的用户界面来连接目标并激活数据，请参 [阅连接目标](../../rtcdp/destinations/connect-destination.md)[并激活用户档案和区段到目标教程](../../rtcdp/destinations/activate-destinations.md) 。
 
 ## 快速入门
 
@@ -86,7 +86,7 @@ Before starting this tutorial, familiarize yourself with the following terms whi
 
 ![目标步骤概述步骤1](../images/destinations/flow-api-destinations-step1.png)
 
-作为第一步，您应确定要激活数据的电子邮件营销目标。 首先，请执行呼叫以请求可连接和激活区段的可用目标列表。 对端点执行以下GET `connectionSpecs` 请求以返回可用目标列表:
+作为第一步，您应确定要激活数据的电子邮件营销目标。 首先，请执行呼叫以请求可连接和激活区段的可用目标列表。 对端点执行以下GET请 `connectionSpecs` 求，以返回可用目标的列表:
 
 **API格式**
 
@@ -467,7 +467,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 现在，使用您在前面的步骤中获得的ID，您可以在数据和要激活 [!DNL Experience Platform] 数据的目标之间创建数据流。 将此步骤想象为构建数据稍后将通过的管道，在您和您所需的目 [!DNL Experience Platform] 标之间流动。
 
-要创建数据流，请执行如下所示的POST请求，同时在有效负荷中提供以下所述的值。
+要创建POST流，请执行如下所示的数据请求，同时在有效负荷中提供以下所述的值。
 
 执行以下POST请求以创建数据流。
 
@@ -517,7 +517,7 @@ curl -X POST \
     }
 ```
 
-* `{FLOW_SPEC_ID}`: 使用要连接到的电子邮件营销目标的流程。 要获取流规范，请对端点执行GET操 `flowspecs` 作。 请参阅此处的Swagger文档： https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs。 在响应中，查找 `upsTo` 并复制要连接到的电子邮件营销目标的相应ID。 例如，对于Adobe Campaign，请查 `upsToCampaign` 找并复制 `id` 参数。
+* `{FLOW_SPEC_ID}`: 使用要连接到的电子邮件营销目标的流程。 要获取流规范，请对端点执行GET `flowspecs` 操作。 请参阅此处的Swagger文档： https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs。 在响应中，查找 `upsTo` 并复制要连接到的电子邮件营销目标的相应ID。 例如，对于Adobe Campaign，请查 `upsToCampaign` 找并复制 `id` 参数。
 * `{SOURCE_CONNECTION_ID}`: 使用在步骤Connect中获得的源连接 [ID连接到Experience Platform](#connect-to-your-experience-platform-data)。
 * `{TARGET_CONNECTION_ID}`: 使用您在步骤Connect中获取的目标连 [接ID到电子邮件营销目标](#connect-to-email-marketing-destination)。
 
@@ -539,7 +539,7 @@ curl -X POST \
 
 创建了所有连接和数据流后，您现在可以将用户档案数据激活到电子邮件营销平台。 在此步骤中，您可以选择要发送到目标的区段和用户档案属性，还可以计划数据并将数据发送到目标。
 
-要将区段激活到新目标，您必须执行JSON修补程序操作，如下例所示。 您可以在一次调用中激活多个段和用户档案属性。 要进一步了解JSON修补程序，请参阅 [RFC规范](https://tools.ietf.org/html/rfc6902)。
+要将区段激活到新目标，您必须执行JSONPATCH操作，如下例所示。 您可以在一次调用中激活多个段和用户档案属性。 要进一步了解JSONPATCH，请参阅 [RFC规范](https://tools.ietf.org/html/rfc6902)。
 
 **API格式**
 
@@ -611,7 +611,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 作为教程的最后一步，您应验证区段和用户档案属性确实已正确映射到数据流。
 
-要验证此请求，请执行以下GET请求：
+要验证此GET，请执行以下验证请求：
 
 **API格式**
 
