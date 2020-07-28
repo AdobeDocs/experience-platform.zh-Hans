@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 使用Flow Service API创建Amazon Kinesis连接器
+title: 使用Flow Service API创建AmazonKinesis连接器
 topic: overview
 translation-type: tm+mt
 source-git-commit: 11431ffcfc2204931fe3e863bfadc7878a40b49c
@@ -41,7 +41,7 @@ ht-degree: 2%
 | `region` |  | 您帐户的 [!DNL Kinesis] 地区。 |
 | `connectionSpec.id` | 连接 [!DNL Kinesis] 规范ID: `86043421-563b-46ec-8e6c-e23184711bf6` |
 
-有关这些值的详细信息，请参 [阅此Kinesis文档](https://docs.aws.amazon.com/streams/latest/dev/getting-started.html)。
+有关这些值的详细信息，请参 [阅本Kinesis文档](https://docs.aws.amazon.com/streams/latest/dev/getting-started.html)。
 
 ### 读取示例API调用
 
