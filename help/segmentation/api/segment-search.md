@@ -225,7 +225,7 @@ curl -X GET \
 
 ## 附录 {#appendix}
 
-以下各节提供了有关搜索词工作原理的更多信息。 搜索查询的编写方式如下： `s={FieldName}:{SearchExpression}`. 因此，例如，要搜索名为AAM的区段， [!DNL Platform]您应使用以下搜索查询: `s=segmentName:AAM%20OR%20Platform`.
+以下各节提供了有关搜索词工作原理的更多信息。 搜索查询的编写方式如下： `s={FieldName}:{SearchExpression}`. 因此，例如，要搜索名为AAM或的区段， [!DNL Platform]您应使用以下搜索查询: `s=segmentName:AAM%20OR%20Platform`.
 
 > !![NOTE] 为获得最佳实践，搜索表达式应进行HTML编码，如上面所示的示例。
 
