@@ -69,7 +69,7 @@ POST /connections
 
 **请求**
 
-以下请求将创建新 [!DNL Couchbase] 连接，该连接由有效负荷中提供的属性进行配置：
+以下请求将创建由 [!DNL Couchbase] 有效负荷中提供的属性配置的新连接：
 
 ```shell
 curl -X POST \
