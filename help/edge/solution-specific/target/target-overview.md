@@ -61,7 +61,7 @@ alloy
 
 ## 使用基于表单的书写器
 
-基于表单的体验书写器是一个非可视界面，可用于配置A/B测试、自 [!DNL Experience Targeting]动个性化和推荐活动，这些具有不同的响应类型，如JSON、HTML、图像等。 根据Adobe Target返回的响应类型或决策，可以执行您的核心业务逻辑。 要检索基于表单的书写器活动的决策，请发送包含所有要检索决策的“决策范围”的事件。
+基于表单的体验书写器是一个非可视界面，可用于配置A/B测试、 [!DNL Experience Targeting]Automated Personalization和Recommendations活动（JSON、HTML、图像等不同响应类型）。 根据Adobe Target返回的响应类型或决策，可以执行您的核心业务逻辑。 要检索基于表单的书写器活动的决策，请发送包含所有要检索决策的“决策范围”的事件。
 
 ```javascript
 alloy
