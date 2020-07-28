@@ -52,7 +52,7 @@ ht-degree: 1%
 
 Adobe Experience Platform提供了可供所有组织使用的多个身份命名空间。 这些命名空间称为标准，可通过API [!DNL Identity Service] 或通过UI [!DNL Platform] 查看。
 
-要在UI中视图标准命名空间 **[!UICONTROL ，请单击左边栏中的“标]** 识 *[!UICONTROL ”，然后单击“浏览”]* 选项卡。 您的组织可访问的所有身份命名空间都将显示出来，但“标[!UICONTROL 准]”为“所有者[!UICONTROL ”的命名空间是]Adobe提供的标准。
+要在UI中视图标准命名空间 **[!UICONTROL ，请单击左边栏中的“标]** 识 *[!UICONTROL ”，然后单击“浏览”]* 选项卡。 您的组织可访问的所有身份命名空间都将显示，但“标[!UICONTROL 准]”为“所有者”的命名空间是Adobe提供的标准。
 
 然后，您可以单击列出的命名空间之一以了解视图详细信息。
 
