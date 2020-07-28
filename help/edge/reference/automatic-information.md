@@ -1,20 +1,20 @@
 ---
 title: 自动收集的信息
-seo-title: 由Adobe Experience Platform Web SDK自动收集的信息
-description: Adobe Experience Cloud SDK自动收集的每条信息的说明
-seo-description: Adobe Experience Cloud SDK自动收集的每条信息的说明
+seo-title: 由Adobe Experience PlatformWeb SDK自动收集的信息
+description: Adobe Experience CloudSDK自动收集的每条信息的描述
+seo-description: Adobe Experience CloudSDK自动收集的每条信息的描述
 translation-type: tm+mt
 source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
 workflow-type: tm+mt
 source-wordcount: '382'
-ht-degree: 5%
+ht-degree: 8%
 
 ---
 
 
 # 自动收集的信息
 
-Adobe Experience Cloud SDK可自动收集大量信息，无需进行任何特殊配置。 但是，如果需要，可以使用命令中的 `context` 选项禁用此 `configure` 信息。 [请参阅配置SDK](../fundamentals/configuring-the-sdk.md)。 以下是这些信息的列表。 括号中的名称指示配置上下文时要使用的字符串。
+Adobe Experience CloudSDK可自动收集大量信息，无需任何特殊配置。 但是，如果需要，可以使用命令中的 `context` 选项禁用此 `configure` 信息。 [请参阅配置SDK](../fundamentals/configuring-the-sdk.md)。 以下是这些信息的列表。 括号中的名称指示配置上下文时要使用的字符串。
 
 ## 设备 (`device`)
 
@@ -50,13 +50,13 @@ Adobe Experience Cloud SDK可自动收集大量信息，无需进行任何特殊
 
 ### 环境类型
 
-Browser
+浏览器
 
 | **有效负荷中的路径：** | **示例：** |
 | ------------------------------- | ------------ |
 | `events[].xdm.environment.type` | `browser` |
 
-体验的环境类型。 针对JavaScript的Adobe Experience Platform SDK始终可以设置 `browser`。
+体验的环境类型。 Adobe Experience PlatformSDK for JavaScript始终会进行设 `browser`置。
 
 ### 视口高度
 
