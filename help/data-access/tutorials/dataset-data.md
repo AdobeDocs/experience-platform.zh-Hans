@@ -42,7 +42,7 @@ ht-degree: 3%
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 - 内容类型： application/json
 
@@ -416,7 +416,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 
 API允 [!DNL Data Access] 许下载块中的文件。 在请求从文件下载特定范围的字 `GET /files/{FILE_ID}` 节时，可以指定范围标头。 如果未指定范围，则默认情况下API将下载整个文件。
 
-上一节的HEAD示 [例给出](#retrieve-the-metadata-of-a-file) 特定文件的大小（以字节为单位）。
+上一节中的HEAD [示例](#retrieve-the-metadata-of-a-file) ，以字节为单位给出特定文件的大小。
 
 **API格式**
 
