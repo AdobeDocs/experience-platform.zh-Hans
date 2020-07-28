@@ -20,7 +20,7 @@ ht-degree: 1%
 
 ### 请求交互式服务的连接参数
 
-通过向端点发出GET请求，可 [以检索连接](../creating-queries/writing-queries.md) 参数以使用交互式 `/connection_parameters` 服务。 有关使用连接参数通过交互式服务连接的客户端的详细信息，请阅读有关查询服务客户端 [的文档](../clients/overview.md)。
+通过向端点发出GET请求 [，可以检索连接参数以](../creating-queries/writing-queries.md) 使用交互式 `/connection_parameters` 服务。 有关使用连接参数通过交互式服务连接的客户端的详细信息，请阅读有关查询服务客户端 [的文档](../clients/overview.md)。
 
 **API格式**
 
