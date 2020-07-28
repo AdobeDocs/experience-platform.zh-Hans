@@ -20,7 +20,7 @@ ht-degree: 5%
 
 该函 `count` 数返回给定数组中的元素数。
 
-**格式**
+**Format**
 
 ```sql
 {ARRAY}.count()
@@ -38,7 +38,7 @@ orders.count()
 
 函 `sum` 数返回数组中所有选定值的和。
 
-**格式**
+**Format**
 
 ```sql
 {ARRAY}.sum()
@@ -56,7 +56,7 @@ orders.sum(order.price)
 
 该函 `average` 数返回数组中所有选定值的算术平均值。
 
-**格式**
+**Format**
 
 ```sql
 {ARRAY}.average()
@@ -74,7 +74,7 @@ orders.average(order.price)
 
 该函 `min` 数返回数组中所有选定值的最小值。
 
-**格式**
+**Format**
 
 ```sql
 {ARRAY}.min()
@@ -92,7 +92,7 @@ orders.min(order.price)
 
 该函 `max` 数返回数组中所有选定值中的最大值。
 
-**格式**
+**Format**
 
 ```sql
 {ARRAY}.max()
