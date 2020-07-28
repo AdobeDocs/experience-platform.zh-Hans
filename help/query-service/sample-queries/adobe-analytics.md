@@ -12,13 +12,13 @@ ht-degree: 1%
 ---
 
 
-# Adobe查询Analytics数据示例
+# Adobe Analytics数据查询示例
 
-选定AdobeAnalytics报表包中的数据将转换为XDM [!DNL ExperienceEvents] 并作为数据集引入Adobe Experience Platform。 此文档概括了Adobe Experience Platform利用此数据的 [!DNL Query Service] 许多用例，其中包含的示例查询应与您的AdobeAnalytics数据集配合使用。 有关映射 [到XDM的更多信息](../../sources/connectors/adobe-applications/mapping/analytics.md) ，请参阅Analytics字段映射文档 [!DNL ExperienceEvents]。
+来自选定Adobe Analytics报告套组的数据将转换为XDM [!DNL ExperienceEvents] 并作为数据集引入Adobe Experience Platform。 此文档概括了Adobe Experience Platform利用此数据的许 [!DNL Query Service] 多用例，其中包含的示例查询应与您的Adobe Analytics数据集配合使用。 有关映射 [到XDM的更多信息](../../sources/connectors/adobe-applications/mapping/analytics.md) ，请参阅Analytics字段映射文档 [!DNL ExperienceEvents]。
 
 ## 入门指南
 
-此文档中的SQL示例要求您编辑SQL，并根据您感兴趣的查询集、eVar、事件或时间范围为填写预期参数。 在后面的SQL示例 `{ }` 中提供参数。
+此文档中的SQL示例要求您编辑SQL，并根据您想要评估的数据集、eVar、事件或时间范围为查询填写预期参数。 在后面的SQL示例 `{ }` 中提供参数。
 
 ## 常用SQL示例
 
@@ -129,7 +129,7 @@ ORDER BY Hour;
 
 ## 销售变量（产品语法）
 
-在AdobeAnalytics中，可以通过称为“销售变量”的专门配置的变量来收集自定义产品级数据。 这些事件基于eVar或自定义变量。 这些变量与其标准用途的不同之处在于它们代表在点击中找到的每个产品的单独值，而不是只代表点击的单个值。 这些变量称为产品语法推销变量。 这允许在客户的搜索结果中收集每个产品的“折扣额”或产品的“页面位置”等信息。
+在Adobe Analytics，可通过称为“销售变量”的特殊配置变量收集定制产品级数据。 这些eVar或自定义事件。 这些变量与其标准用途的不同之处在于它们代表在点击中找到的每个产品的单独值，而不是只代表点击的单个值。 这些变量称为产品语法推销变量。 这允许在客户的搜索结果中收集每个产品的“折扣额”或产品的“页面位置”等信息。
 
 以下是用于访问数据集中销售变量的XDM [!DNL Analytics] 字段：
 
@@ -139,7 +139,7 @@ ORDER BY Hour;
 productListItems[#]._experience.analytics.customDimensions.evars.evar#
 ```
 
-其中 `[#]` 是数组索引， `evar#` 并且是特定的eVar变量。
+其中 `[#]` 是数组索引， `evar#` 是特定的eVar变量。
 
 ### 自定义事件
 
@@ -151,7 +151,7 @@ productListItems[#]._experience.analytics.event1to100.event#.value
 
 ### 示例查询
 
-以下是返回销售eVar的示例查询，以及在中找到的第一个产品的事件 `productListItems`。
+以下是示例查询，返回在中找到的第一个产品的销售eVar和事件 `productListItems`。
 
 ```sql
 SELECT
@@ -165,7 +165,7 @@ WHERE _ACP_YEAR=2019 AND _ACP_MONTH=7 AND _ACP_DAY=23
 LIMIT 10
 ```
 
-下一个查询“爆炸” `productListItems` 并返回每个销售eVar和事件。 该 `_id` 字段用于显示与原始点击的关系。 该 `_id` 值是数据集中唯一的主键 [!DNL ExperienceEvent] 。
+下一个查询“爆炸” `productListItems` 并返回每个产品的销售eVar和事件。 该 `_id` 字段用于显示与原始点击的关系。 该 `_id` 值是数据集中唯一的主键 [!DNL ExperienceEvent] 。
 
 ```sql
 SELECT
@@ -195,17 +195,17 @@ ERROR: ErrorCode: 08P01 sessionId: XXXX queryId: XXXX Unknown error encountered.
 
 ## 销售变量（转换语法）
 
-AdobeAnalytics中的另一种类型推销变量是转换语法。 使用产品语法时，值会与产品同时收集，但这要求数据出现在同一页面上。 在转换或事件与产品相关的兴趣之前，会在页面上发生数据。 例如，考虑“产品查找方法”报告用例。
+在Adobe Analytics找到的另一种类型推销变量是转换语法。 使用产品语法时，值会与产品同时收集，但这要求数据出现在同一页面上。 在转换或事件与产品相关的兴趣之前，会在页面上发生数据。 例如，考虑“产品查找方法”报告用例。
 
-1. 用户执行“winter hat”的内部搜索，该搜索将启用“转换语法”的“推销eVar6”设置为“内部搜索：winter hat”
+1. 用户执行“winter hat”的内部搜索，将启用“转换语法”的“推销eVar6”设置为“内部搜索：winter hat”
 2. 用户单击“华夫饼”并登录产品详细信息页面。\
    a. 在这里登陆， `Product View` 以12.99美元的价格事件“华夫饼豆”。\
-   b. 由于 `Product View` 已配置为绑定事件，因此产品“华夫饼”现在绑定到“internal search:winter hat”的eVar6值。 收集“华夫豆奶”产品后，它将与“内部搜索：冬季帽”关联，直到(1)达到到期设置或(2)设置新的eVar6值，并再次对该产品发生绑定事件。
+   b. 由于 `Product View` 已配置为绑定事件，因此产品“华夫饼”现在绑定到“内部搜索：冬季帽”的eVar6值。 收集“华夫饼”产品后，它将与“内部搜索：冬季帽子”关联，直到(1)达到到期设置或(2)设置新eVar6值，并再次对该产品发生绑定事件。
 3. 用户将产品添加到购物车，并触发 `Cart Add` 事件。
 4. 用户对“夏季衬衫”执行另一个内部搜索，该搜索将启用“转换语法”的“推销eVar6”设置为“内部搜索：夏季衬衫”
 5. 用户单击“sporty t-shirt”并登录产品详细信息页面。\
    a. 登陆这里， `Product View` 事件上的T恤售价19.99美元。\
-   b. 该事件 `Product View` 仍是我们的有约束力的事件，因此现在，产品“sporty t-shirt”与“internal search:summer shirt”的eVar6值相绑定，而先前产品“华夫饼”仍与“internal search:waffle beanie”的eVar6值相绑定。
+   b. 事件 `Product View` 仍是我们的有约束力的事件，因此现在，产品“sporty T-shirt”与“内部搜索：夏季衬衫”的eVar6价值相绑定，而前一产品“华夫燕”仍与“内部搜索：华夫燕”的eVar6价值相绑定。
 6. 用户将产品添加到购物车，并触发 `Cart Add` 事件。
 7. 用户签出这两种产品。
 
