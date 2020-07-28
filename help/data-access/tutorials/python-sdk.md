@@ -55,7 +55,7 @@ Secure SDK [!DNL Python] 是一 [!DNL Data Access] 个软件开发工具包，�
 
 ## 安装
 
-所有包装在建筑后 `./dist` 输出。
+所有包装在建筑后输 `./dist` 出到。
 
 ### 车轮
 
