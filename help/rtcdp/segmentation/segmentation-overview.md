@@ -2,7 +2,7 @@
 title: 分段服务概述
 seo-title: Adobe实时客户数据平台中的细分服务
 description: 描述分段服务的概述。
-seo-description: 概述，介绍Adobe实时客户数据平台上的细分服务和细分。
+seo-description: 概述介绍Adobe实时客户数据平台上的细分服务和细分。
 translation-type: tm+mt
 source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
