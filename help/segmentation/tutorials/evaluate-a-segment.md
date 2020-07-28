@@ -41,7 +41,7 @@ ht-degree: 0%
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-所有POST、PUT和PATCH请求都需要额外的标头：
+所有POST、PUT和PATCH请求都需要额外的标题：
 
 - 内容类型： application/json
 
@@ -69,7 +69,7 @@ ht-degree: 0%
 
 ### 启用计划
 
-默认情况下，创建计划时处于非活动状态，除 `state` 非属性设置 `active` 为创建(POST)请求主体中。 您可以通过向端点发出PATCH请求并在路 `state` 径中包 `active``/config/schedules` 含计划的ID来启用计划（将设置为）。
+默认情况下，创建计划时，处于非活动状 `state` 态，除非属性在 `active` create(POST)请求主体中设置为。 您可以通过向端点发出计划请求并在路 `state` 径中包含PATCH的ID，来启 `active``/config/schedules` 用计划（将设置为）。
 
 有关使用此端点的更多详细信息，请参阅 [计划端点指南](../api/schedules.md#update-state)
 
@@ -87,14 +87,14 @@ ht-degree: 0%
 
 段作业是创建新受众段的异步进程。 它引用区段定义以及任何合并策略，控制如何合并用户档案 [!DNL Real-time Customer Profile] 片段中重叠的属性。 当区段作业成功完成时，您可以收集有关区段的各种信息，如处理过程中可能发生的任何错误以及受众的最终大小。
 
-您可以通过向API中的端点发出POST请求来 `/segment/jobs` 创建新段作 [!DNL Real-time Customer Profile] 业。
+您可以通过向API中的端点发出POST请求来创 `/segment/jobs` 建新的段作 [!DNL Real-time Customer Profile] 业。
 
 有关使用此端点的更多详细信息，请参阅段作 [业端点指南](../api/segment-jobs.md#create)
 
 
 ### 查找区段作业状态
 
-您可以使用 `id` 特定段作业的查找请求(GET)来视图作业的当前状态。
+您可以使用 `id` 特定段作业的视图请求(GET)，以作业的当前状态。
 
 有关使用此端点的更多详细信息，请参阅段作 [业端点指南](../api/segment-jobs.md#get)
 
@@ -216,7 +216,7 @@ curl -X POST \
 
 ### 为用户档案成员生成受众 {#generate-profiles}
 
-一旦有合并持久数据集，您可以创建一个导出作业，通过向API中的端点发出POST请求并提供要导出的区段的集ID和区段信息，将受众成员保留到数据集。 `/export/jobs`[!DNL Real-time Customer Profile]
+一旦有合并持久数据集，您可以创建一个导出作业，通过向API中的端点发出POST请求并提供要导出的受众段的数据集ID和段信息，将成员保留到数据集。 `/export/jobs`[!DNL Real-time Customer Profile]
 
 有关使用此端点的更多详细信息，请参阅“导出作 [业端点指南”](../api/export-jobs.md#create)
 
