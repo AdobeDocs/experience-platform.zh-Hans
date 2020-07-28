@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;insights;attribution ai;popular topics
 solution: Experience Platform
-title: 在归因人工智能中发现洞察
+title: 在Attribution AI中发掘洞察
 topic: Attribution AI insights
 translation-type: tm+mt
 source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
@@ -12,23 +12,23 @@ ht-degree: 1%
 ---
 
 
-# 在归因人工智能中发现洞察
+# 在Attribution AI中发掘洞察
 
-归因AI服务实例提供的洞察可用于帮助制定和衡量与营销绩效和投资回报相关的营销决策。 选择服务实例可提供可视化和过滤器，帮助您了解客户旅程每个阶段每次客户互动的影响。
+Attribution AI服务实例提供的洞察有助于制定和衡量与营销绩效和投资回报相关的营销决策。 选择服务实例可提供可视化和过滤器，帮助您了解客户旅程每个阶段每次客户互动的影响。
 
-此文档可作为与Adobe Intelligent Services用户界面中的服务实例洞察交互的指南。
+此文档可作为与Adobe智能服务用户界面中的服务实例洞察交互的指南。
 
 ## 入门指南
 
-为了利用归因AI的洞察，您需要有一个运行状态成功的服务实例。 要创建新服务实例，请访 [问Attribution AI用户界面指南](./user-guide.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分中，请允许24小时，它才能完成运行。
+为了利用Attribution AI洞察，您需要有一个运行状态成功的服务实例。 要创建新服务实例，请访问 [Attribution AI用户界面指南](./user-guide.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分中，请允许24小时，它才能完成运行。
 
 ## 服务实例洞察概述
 
-在UI [!DNL Adobe Experience Platform] 中，单击左 **侧导** 航中的“服务”。 将显 *示* “服务”浏览器并显示可用的Adobe Intelligent Services。 在归因AI的容器中，单击 **打开**。
+在UI [!DNL Adobe Experience Platform] 中，单击左 **侧导** 航中的“服务”。 出现 *服务浏* 览器并显示可用的Adobe智能服务。 在Attribution AI容器中，单击 **打开**。
 
 ![访问实例](./images/insights/open_Attribution_ai.png)
 
-此时将显示“归因AI”服务页。 本页列表归因AI的服务实例并显示相关信息，包括实例名称、转换事件、实例运行频率以及上次更新的状态。 单击服务实例名称开始。
+将显示Attribution AI服务页面。 此页列表Attribution AI的服务实例并显示其相关信息，包括实例名称、转换事件、实例的运行频率以及上次更新的状态。 单击服务实例名称开始。
 
 >[!NOTE]
 >
@@ -46,7 +46,7 @@ ht-degree: 1%
 
 ![显示更多](./images/insights/show-more.png)
 
-将显示详细列表。 有关所列任何属性的详细信息，请访 [问Attribution AI用户指南](./user-guide.md)。
+将显示详细列表。 有关所列任何属性的详细信息，请访问 [Attribution AI用户指南](./user-guide.md)。
 
 ![显示详细信息](./images/insights/advanced-details.png)
 
@@ -65,14 +65,14 @@ ht-degree: 1%
 
 - **删除**: 删除实例。
 - **下载摘要数据**: 下载包含摘要数据的CSV文件。
-- **访问分数**: 单击 *访问得分* ，将您重定向到 [归因AI教程的访问得分](./download-scores.md)。
+- **访问分数**: 单击“ *访问得分* ”将您重定向到 [Attribution AI教程的访问得分](./download-scores.md)。
 - **视图运行历史**: 此时会显示一个列表，其中包含与服务实例关联的所有评分运行。
 
 ![更多操作](./images/insights/more-actions.png)
 
 ## 筛选数据
 
-归因人工智能洞察允许您过滤数据并根据选定过滤器自动更新UI视觉元素。
+Attribution AI洞察使您能够过滤数据并根据选定过滤器自动更新UI可视内容。
 
 >[!NOTE]
 >
@@ -80,7 +80,7 @@ ht-degree: 1%
 
 ### 转换事件
 
-当您在归因AI中创建新实例时，其中一个必填字段是“转换事件”。 转化事件是确定营销活动（如电子商务订单、店内购买和网站访问）影响的业务目标。
+在Attribution AI中创建新实例时，其中一个必填字段是“转换事件”。 转化事件是确定营销活动（如电子商务订单、店内购买和网站访问）影响的业务目标。
 
 在实例中，“转 *换事件* ”下拉菜单允许您选择为实例定义的任何事件，以便筛选数据。 选择特定事件会更改UI可视化，以仅填充属于这些事件的转换。
 
@@ -88,7 +88,7 @@ ht-degree: 1%
 
 ### 归因模型
 
-单击 *归因模型* ，将打开一个下拉菜单，其中提供所有不同的归因模型。 您可以选择多个模型来比较结果。 有关不同归因模型及其工作方式的更多信息，请访 [问归因](./overview.md) AI概述，其中包含一个表，其中包含有关每个模型的信息。
+单击 *归因模型* ，将打开一个下拉菜单，其中提供所有不同的归因模型。 您可以选择多个模型来比较结果。 有关不同归因模型及其工作方式的更多信息，请访 [问Attribution AI](./overview.md) 概述，其中包含一个包含每个模型相关信息的表。
 
 ![归因模型](./images/insights/attribution-model.png)
 
@@ -98,7 +98,7 @@ ht-degree: 1%
 
 ![产品过滤器](./images/insights/product-filter.png)
 
-### 地理
+### Geography
 
 “地 *理位置* ”筛选器根据基于区域的模型填充国家代码。 根据您的数据，此过滤器可能存在，也可能不存在。
 
@@ -110,7 +110,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->仅当您在创建服务实例时在Attribution AI用户界面指 [南中执行了可选的基于](./user-guide.md#region-based-modeling-optional) 步骤区域的建模时，才会出现此过滤器。
+>仅当您在创建服务实例时在Attribution AI用户界面指 [南中执行了可选步骤](./user-guide.md#region-based-modeling-optional) 、基于区域的建模时，此过滤器才存在。
 
 此过滤器允许您选择在实例创建过程中设置的任何区域。
 
@@ -162,10 +162,10 @@ ht-degree: 1%
 
 ## 后续步骤
 
-过滤完数据并能够显示相应的信息后，您便可以选择访问分数。 有关如何获取分数的详细指南，请访问归因AI教 [程中的访问分数](./download-scores.md) 。 此外，您还可以下载摘要数据，如更多操作 [中所示](#more-actions)。 选择“下载摘要数据”将下载按日期聚集的摘要数据。
+过滤完数据并能够显示相应的信息后，您便可以选择访问分数。 有关如何访问得分的详细指南，请访问Attribution AI教 [程中的访问得分](./download-scores.md) 。 此外，您还可以下载摘要数据，如更多操作 [中所示](#more-actions)。 选择“下载摘要数据”将下载按日期聚集的摘要数据。
 
 ## Journey Orchestration
 
-以下视频旨在帮助学习如何使用归因人工智能洞察页面了解营销渠道和活动的ROI。
+以下视频旨在帮助学习如何使用Attribution AI洞察页面了解营销渠道和活动的ROI。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32669?learn=on&quality=12)
