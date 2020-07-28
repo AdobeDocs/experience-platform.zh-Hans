@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 使用Flow Service API创建Azure Data Explorer连接器
+title: 使用流服务API创建AzureData Explorer连接器
 topic: overview
 translation-type: tm+mt
 source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 [!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程使 [!DNL Flow Service] 用API指导您完成连接( [!DNL Azure Data Explorer] 以下称“数据浏览器”)的步骤 [!DNL Experience Platform]。
+本教程使 [!DNL Flow Service] 用API指导您完成将 [!DNL Azure Data Explorer] 其连接(以下称“Data Explorer”)的步骤 [!DNL Experience Platform]。
 
 ## 入门指南
 
@@ -43,7 +43,7 @@ ht-degree: 1%
 | `servicePrincipalKey` | 用于连接到数据库的唯一服务主体 [!DNL Data Explorer] 键。 |
 | `connectionSpec.id` | 创建连接所需的唯一标识符。 连接规范ID [!DNL Data Explorer] 为 `0479cc14-7651-4354-b233-7480606c2ac3`。 |
 
-有关快速入门的详细信息，请参 [阅此数据浏览器文档](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad)。
+有关快速入门的详细信息，请参 [阅此Data Explorer文档](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/access-control/how-to-authenticate-with-aad)。
 
 ### 读取示例API调用
 
