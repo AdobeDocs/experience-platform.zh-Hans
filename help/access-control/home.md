@@ -14,11 +14,11 @@ ht-degree: 3%
 
 # 访问控制概述
 
-访问控制 [!DNL Experience Platform] 通过Adobe [Admin Console提供](https://adminconsole.adobe.com)。 此功能利用中的产品用户档案, [!DNL Admin Console]将用户与权限和沙箱关联起来。
+访问控制 [!DNL Experience Platform] 通过Adobe Admin Console [提供](https://adminconsole.adobe.com)。 此功能利用中的产品用户档案, [!DNL Admin Console]将用户与权限和沙箱关联起来。
 
 ## 访问控制层次结构和工作流
 
-要配置访问控制, [!DNL Experience Platform]您必须对具有产品集成的组织具有管 [!DNL Experience Platform] 理员权限。 授予或撤销权限的最低角色是产品 **[!UICONTROL 用户档案管理员]**。 其他可以管理权限的管理员角色 **[!UICONTROL 包括产品管理员]** (可以管理产品中的所有用户档案 **[!UICONTROL )和系统管]** 理员（无限制）。 有关详细信息，请参阅Adobe [帮助中心](https://helpx.adobe.com/enterprise/using/admin-roles.html) 有关管理角色的文章。
+要配置访问控制, [!DNL Experience Platform]您必须对具有产品集成的组织具有管 [!DNL Experience Platform] 理员权限。 授予或撤销权限的最低角色是产品 **[!UICONTROL 用户档案管理员]**。 其他可以管理权限的管理员角色 **[!UICONTROL 包括产品管理员]** (可以管理产品中的所有用户档案 **[!UICONTROL )和系统管]** 理员（无限制）。 有关更多信息，请参 [阅Adobe Help Center](https://helpx.adobe.com/enterprise/using/admin-roles.html) 《行政角色》一文。
 
 >[!NOTE]
 >
@@ -27,7 +27,7 @@ ht-degree: 3%
 获取和分配访问权限的高级工作流可概括如下：
 
 - 订阅Adobe Experience Platform后，将向注册表单中指定的管理员发送电子邮件。
-- 管理员登录到 [AdobeAdmin Console](#adobe-admin-console) ，并从 **概述页** 面上的产品列表中选择“Adobe Experience Platform”。
+- 管理员登录到 [Adobe Admin Console](#adobe-admin-console) ，并从 **概述页** 面上的产品列表中选择Adobe Experience Platform。
 - 管理员可以视图默 [认产品用户档案](#product-profiles) ，或根据需要创建新的客户产品用户档案。
 - 管理员可以编辑任何现有产品用户档案的权限和用户。
 - 在创建或编辑产品用户档案时，管理员使用“用户”选项卡将用户添加到用户档案 **[!UICONTROL 中]** ，并通过访问“permissions[!UICONTROL adets]”选项卡，向这些用户(如“Read Datasets[!UICONTROL ”或“]Manage模式 **[!UICONTROL ”)授予]** 权限。 同样，管理员也可以使用相同的权限选项卡将访问权限分配给沙箱。
@@ -39,7 +39,7 @@ ht-degree: 3%
 
 ## Adobe Admin Console
 
-AdobeAdmin Console提供一个中心位置，用于管理Adobe产品授权和访问您的组织。 通过控制台，您可以授予用户组对各种功能(如“管 [!DNL Platform] 理数据集[!UICONTROL ”、]“视图数据集[!UICONTROL ”或“管理]用户档案[!UICONTROL ”)的访]问权限。
+Adobe Admin Console为管理Adobe产品授权和访问您的组织提供了一个中心位置。 通过控制台，您可以授予用户组对各种功能(如“管 [!DNL Platform] 理数据集[!UICONTROL ”、]“视图数据集[!UICONTROL ”或“管理]用户档案[!UICONTROL ”)的访]问权限。
 
 ### 产品用户档案
 
