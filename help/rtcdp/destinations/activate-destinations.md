@@ -1,8 +1,8 @@
 ---
 title: 将用户档案和区段激活到目标
 seo-title: 将用户档案和区段激活到目标
-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
-seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
+description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
+seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
 source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 将用户档案和区段激活到目标
 
-通过将细分映射到目标，激活您在Adobe实时客户数据平台中的数据。 要完成此操作，请按照以下步骤操作。
+通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 
 ## 先决条件 {#prerequisites}
 
@@ -117,7 +117,7 @@ Salesforce_id3544_20191122124530.csv
 
 >[!TIP]
 >
->Adobe实时CDP与历史受众回 [!DNL Facebook] 填的集成。 在将区段激活到目标时， [!DNL Facebook] 所有历史区段资格都将发送至。
+>Adobe实时CDP与历史受众回填之 [!DNL Facebook] 间的集成。 在将区段激活到目标时， [!DNL Facebook] 所有历史区段资格都将发送至。
 
 ## 禁用激活 {#disable-activation}
 
