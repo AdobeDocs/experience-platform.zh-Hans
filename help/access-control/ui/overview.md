@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 访问控制用户指南
 
-访问控制Adobe Experience Platform允许您使用AdobeAdmin Console管理各 [!DNL Platform] 种功能的角 [色和权限](https://adminconsole.adobe.com)。 此文档用于指导如何导航以管 [!DNL Admin Console] 理访问控制 [!DNL Platform]。 有关中访问控制的高级概述， [!DNL Experience Platform]请参阅 [访问控制概述](./../home.md)。
+访问控制Adobe Experience Platform允许您使用Adobe Admin Console管理各 [!DNL Platform] 种功能的角色和 [权限](https://adminconsole.adobe.com)。 此文档用于指导如何导航以管 [!DNL Admin Console] 理访问控制 [!DNL Platform]。 有关中访问控制的高级概述， [!DNL Experience Platform]请参阅 [访问控制概述](./../home.md)。
 
 涵盖以下任务:
 
