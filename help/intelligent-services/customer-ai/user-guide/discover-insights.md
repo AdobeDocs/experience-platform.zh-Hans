@@ -130,7 +130,7 @@ ht-degree: 0%
 
 ## 后续步骤
 
-本文档概述了客户人工智能服务实例提供的洞察。 您现在可以继续阅读教程， [在客户AI中下载分](./download-scores.md) ，或浏览提 [供的其他Adobe](../../home.md) 智能服务指南。
+本文档概述了客户人工智能服务实例提供的洞察。 您现在可以继续学习在客户AI [中下载分数的教程](./download-scores.md) ，或浏览提 [供的其他Adobe智](../../home.md) 能服务指南。
 
 ## Journey Orchestration
 
