@@ -37,7 +37,7 @@ Adobe Experience Platform提供了丰富的功能集，用于采集任何类型�
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Adobe Experience Platform [!DNL Data Science Workspace] 是一项完全托管的服务， [!DNL Experience Platform] 它使数据科学家能够构建和运行机器学习模型，跨Adobe解决方案和第三方系统无缝地从数据和内容生成洞察。 [!DNL Data Science Workspace] 与端对端数 [!DNL Platform] 据科学生命周期紧密集成，并为其提供强大动力，包括探索和准备XDM数据，然后开发和运行模型以自动丰富机器学习 [!DNL Real-time Customer Profile] 的洞察。
+Adobe Experience Platform [!DNL Data Science Workspace] 是一种完全受管的服务，它 [!DNL Experience Platform] 使Adobe科学家能够通过构建和运行机器学习模型，跨解决方案和第三方系统无缝地从数据和内容生成洞察。 [!DNL Data Science Workspace] 与端对端数 [!DNL Platform] 据科学生命周期紧密集成，并为其提供强大动力，包括探索和准备XDM数据，然后开发和运行模型以自动丰富机器学习 [!DNL Real-time Customer Profile] 的洞察。
 
 **新增功能**
 
@@ -66,7 +66,7 @@ You can use [!DNL Query Service] to build data analysis ecosystems, creating a p
 | 功能 | 描述 |
 | -----------| ---------- |
 | 改进功能 [!DNL Query Editor] | 添加了保存功能，允许您保存查询并稍后处理它。 在Adobe Experience Platform上的用户界面中添加了“ [!DNL Query Service] 浏览”选项卡，该选项卡显示由您组织中的用户保存的查询。 已实现“查询详细信息”面板，其中显示有关正在查看的查询的有用元数据。 |
-| 新的归因函数 | Adobe定义的函数，用 [!DNL Query Service] 于查询中的渠道归因及到期参数。 |
+| 新的归因函数 | Adobe定义的函数， [!DNL Query Service] 用于查询具有到期参数的渠道归因。 |
 | SQL语法的增强 | 支持iLike语法。 |
 | 使用定义的XDM模式生成数据集 | 在“创建表为选择(CTAS)”查询中添加了一个新子句，该子句允许您指定目标模式。 |
 
