@@ -120,7 +120,7 @@ curl -X GET \
 
 ### 创建新混音
 
-要向模式添加新字段，必须先在混音中定义该字段。 可以通过向端点发出POST请求来创建新混音 `/tenant/mixins` 符。
+要向模式添加新字段，必须先在混音中定义该字段。 可以通过向端点发出POST请求来创建新混 `/tenant/mixins` 音。
 
 **API格式**
 
@@ -230,7 +230,7 @@ curl -X POST\
 
 ### 将混音添加到源模式
 
-创建混音后，可通过向端点发出PATCH请求将其添加到源模式 `/tenant/schemas/{SCHEMA_ID}` 中。
+创建混音后，可以通过向端点发出模式请求将其添加到源PATCH `/tenant/schemas/{SCHEMA_ID}` 中。
 
 **API格式**
 
@@ -336,7 +336,7 @@ curl -X PATCH \
 
 如果模式字段用作关系中其他模式的引用，则必须对其应用引用标识描述符。 由于“ `favoriteHotel` ”中的字[!DNL Loyalty Members]段将引用“”中的字段，因 `email` 此必须[!DNL Hotels]`email` 为其提供引用标识描述符。
 
-通过向端点发出POST请求，为目标模式创建引用描 `/tenant/descriptors` 述符。
+通过向端点发出模式请求，为目标POST创建引用描述 `/tenant/descriptors` 符。
 
 **API格式**
 
@@ -391,7 +391,7 @@ curl -X POST \
 
 ## 创建关系描述符 {#create-descriptor}
 
-关系描述符建立源模式和目标模式之间的一对一关系。 为目标模式定义引用描述符后，可以通过向端点发出POST请求来创建新的关系描述符。 `/tenant/descriptors`
+关系描述符建立源模式和目标模式之间的一对一关系。 为目标模式定义引用描述符后，可以通过向端点发出POST请求来创建新的关系描述符 `/tenant/descriptors` 。
 
 **API格式**
 
