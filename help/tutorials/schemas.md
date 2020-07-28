@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 使用( [!DNL Experience Data Model] XDM)模式和关系描述符
 
-标准化和互操作性是Adobe Experience Platform背后的关键概念。 [!DNL Experience Data Model] (XDM)由Adobe推动，旨在实现客户体验数据标准化并为客户体验管理定义模式。 模式是描述中数据的标准方法，它允 [!DNL Experience Platform]许所有符合模式的数据可重复使用，而不会在组织内发生冲突，甚至可以在多个组织之间共享。 要进一步了解XDM模式，请阅读XDM系统 [概述开始](../xdm/home.md)。
+标准化和互操作性是Adobe Experience Platform背后的关键概念。 [!DNL Experience Data Model] (XDM)由Adobe驱动，旨在实现客户体验数据标准化并定义客户体验管理模式。 模式是描述中数据的标准方法，它允 [!DNL Experience Platform]许所有符合模式的数据可重复使用，而不会在组织内发生冲突，甚至可以在多个组织之间共享。 要进一步了解XDM模式，请阅读XDM系统 [概述开始](../xdm/home.md)。
 
 ## 使用模式注册表创建模式
 
