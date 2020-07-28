@@ -1,8 +1,8 @@
 ---
-title: 将数据发送到AdobeAnalytics
-seo-title: 使用Adobe Experience PlatformWeb SDK将数据发送到AdobeAnalytics
-description: 了解如何使用Experience PlatformWeb SDK将数据发送到AdobeAnalytics
-seo-description: 了解如何使用Experience PlatformWeb SDK将数据发送到AdobeAnalytics
+title: 将数据发送到Adobe Analytics
+seo-title: 使用Adobe Experience PlatformWeb SDK向Adobe Analytics发送数据
+description: 了解如何使用Experience PlatformWeb SDK将数据发送到Adobe Analytics
+seo-description: 了解如何使用Experience PlatformWeb SDK将数据发送到Adobe Analytics
 translation-type: tm+mt
 source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
@@ -12,13 +12,13 @@ ht-degree: 0%
 ---
 
 
-# 将数据发送到AdobeAnalytics
+# 将数据发送到Adobe Analytics
 
-Adobe Experience Platform可 [!DNL Web SDK] 以将数据发送到AdobeAnalytics。 此功能可转 `xdm` 换为AdobeAnalytics可以使用的格式。
+Adobe Experience Platform可 [!DNL Web SDK] 以向Adobe Analytics发送数据。 这可以翻译成 `xdm` Adobe Analytics可以使用的格式。
 
 ## 设置
 
-如果您在客户配置UI中映射了报表包，AdobeAnalytics会自动获取您要发送的数据。 您可以在此将一个或多个报告映射到给定配置。 映射报表包后，数据将自动开始流动。
+如果您在客户配置UI中映射了报表包，Adobe Analytics会自动获取您要发送的数据。 您可以在此将一个或多个报告映射到给定配置。 映射报表包后，数据将自动开始流动。
 
 ## 自动映射的数据
 
