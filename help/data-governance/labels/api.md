@@ -110,7 +110,7 @@ curl -X GET \
 
 ## 查找标签 {#look-up-label}
 
-通过在GET请求到API的路径中包含该标 `name` 签的属性，可以查找特定标 [!DNL Policy Service] 签。
+通过在向API请求GET的路径中包 `name` 含该标签的属性，可以查找特定 [!DNL Policy Service] 标签。
 
 **API格式**
 
@@ -164,7 +164,7 @@ curl -X GET \
 
 ## 创建或更新自定义标签 {#create-update-label}
 
-要创建或更新自定义标签，您必须向API发出PUT请 [!DNL Policy Service] 求。
+要创建或更新自定义标签，您必须向API发出PUT [!DNL Policy Service] 请求。
 
 **API格式**
 
@@ -283,7 +283,7 @@ curl -X GET \
 
 ## 将标签应用于数据集 {#apply-dataset-labels}
 
-您可以通过在POST或PUT请求的有效负荷中向API提供数据集的标签集来创 [!DNL Dataset Service] 建标签。 使用以下任一方法将覆盖任何现有标签，并用有效负荷中提供的标签替换它们。
+您可以通过在POST或PUT请求的有效负荷中提供数据集的标签集来为API创建一组标 [!DNL Dataset Service] 签。 使用以下任一方法将覆盖任何现有标签，并用有效负荷中提供的标签替换它们。
 
 **API格式**
 
