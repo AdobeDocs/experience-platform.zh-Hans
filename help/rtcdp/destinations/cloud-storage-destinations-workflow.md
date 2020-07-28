@@ -22,19 +22,19 @@ ht-degree: 0%
 
    ![连接到云存储目标](/help/rtcdp/destinations/assets/connect-cloud-destination.png)
 
-2. 在身份 **[!UICONTROL 验证]** 步骤中，如果您之前已设置到云存储目标的连接，请选择现 **[!UICONTROL 有帐户]** ，然后选择现有连接。 或者，您也可以选 **[!UICONTROL 择新帐户]** ，以设置到云存储目标的新连接。 填写帐户身份验证凭据，然后选 **[!UICONTROL 择连接到目标]**。 <br> 请参 [阅Amazon](/help/rtcdp/destinations/amazon-s3-destination.md) S3目标 [!DNL Amazon Kinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md) 、目 [!DNL Azure Event Hubs](/help/rtcdp/destinations/azure-event-hubs-destination.md) 标、目标和 [SFTP目标](/help/rtcdp/destinations/sftp-destination.md) ，了解AuthenticationStep中凭据输入 **** 的具体信息。
+2. 在身份 **[!UICONTROL 验证]** 步骤中，如果您之前已设置到云存储目标的连接，请选择现 **[!UICONTROL 有帐户]** ，然后选择现有连接。 或者，您也可以选 **[!UICONTROL 择新帐户]** ，以设置到云存储目标的新连接。 填写帐户身份验证凭据，然后选 **[!UICONTROL 择连接到目标]**。 <br> 请参 [阅AmazonS](/help/rtcdp/destinations/amazon-s3-destination.md) 3目标 [!DNL Amazon Kinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md) 、目 [!DNL Azure Event Hubs](/help/rtcdp/destinations/azure-event-hubs-destination.md) 标、目标和SFTP目标 [，了解身份验证步骤中凭据](/help/rtcdp/destinations/sftp-destination.md) 输入的 **** 具体信息。
 
    >[!NOTE]
    >
-   >Adobe实时CDP支持身份验证过程中的凭据验证，如果您向云存储位置输入了不正确的凭据，则会显示错误消息。 这可确保您没有使用错误的凭据完成工作流。
+   >Adobe实时CDP支持身份验证过程中的凭据验证，如果您向云存储位置输入了不正确的凭据，则会显示一条错误消息。 这可确保您没有使用错误的凭据完成工作流。
 
    ![连接到云存储目标——身份验证步骤](/help/rtcdp/destinations/assets/cloud-destinations-authentication-step.png)
 
 3. 在设 **[!UICONTROL 置步]** 骤中，输入 **[!UICONTROL 激活流]** 的名 **[!UICONTROL 称和]** 说明。 <br>
-此外，在此步骤中，您还可以选 **[!UICONTROL 择应用于此目标]** 的任何Marketing用例。 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关Adobe定义的个别营销用例的信息，请参阅数 [据使用策略概述](/help/data-governance/policies/overview.md#core-actions)。 <br>
-对于Amazon S3目标，在云存储 **[!UICONTROL 目标中]** ，插 **[!UICONTROL 入存储段名]** 称和文件夹路径，文件将从中传送。 在 **[!UICONTROL 填写上述字]** 段后，选择创建目标。
+此外，在此步骤中，您还可以选 **[!UICONTROL 择应用于此目标]** 的任何Marketing用例。 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。 <br>
+对于AmazonS3目标，请在云 **[!UICONTROL 存储目]** 标中插入存储段 **** 名称和文件夹路径，文件将从中传送。 在 **[!UICONTROL 填写上述字]** 段后，选择创建目标。
 
-   ![连接到Amazon S3云存储目标——身份验证步骤](/help/rtcdp/destinations/assets/amazon-s3-setup-step.png)
+   ![连接到AmazonS3云存储目标——身份验证步骤](/help/rtcdp/destinations/assets/amazon-s3-setup-step.png)
 
    对于SFTP目标，插入 **[!UICONTROL 文件传送]** “文件夹”路径。 在 **[!UICONTROL 填写上述字]** 段后，选择创建目标。
 
