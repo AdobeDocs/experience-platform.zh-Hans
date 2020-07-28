@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 订阅 [!DNL Privacy Events]
 
-[!DNL Privacy Events] 是由Adobe Experience Platform提供的 [!DNL Privacy Service]消息，利用发送到已配置网络挂接的Adobe I/O事件来促进高效的作业请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。
+[!DNL Privacy Events] 是由Adobe Experience Platform提供的消 [!DNL Privacy Service]息，该消息利用发送到已配置webhook的AdobeI/O事件，以便于高效的作业请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。
 
 当前有四种类型的通知与隐私作业请求生命周期相关：
 
@@ -25,7 +25,7 @@ ht-degree: 1%
 | 产品完成 | 与此作业相关的解决方案之一已完成其工作。 |
 | 产品错误 | 其中一个解决方案在处理请求时报告了错误。 |
 
-此文档提供在Adobe I/O中设置通 [!DNL Privacy Service] 知集成的步骤。 有关其功能的高 [!DNL Privacy Service] 级概述，请参阅 [Privacy Service概述](home.md)。
+此文档提供在AdobeI/O中设置通 [!DNL Privacy Service] 知集成的步骤。 有关其功能的高 [!DNL Privacy Service] 级概述，请参阅 [Privacy Service概述](home.md)。
 
 ## 入门指南
 
@@ -74,7 +74,7 @@ app.listen(app.get('port'), function() {
 
 ## 在Adobe开发人员控制台中创建新项目
 
-转到 [Adobe Developer Console](https://www.adobe.com/go/devs_console_ui) ，使用Adobe ID登录。 接下来，按照教程中概述的步 [骤操作，在Adobe](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) Developer Console文档中创建空项目。
+转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台，使用Adobe ID登录。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
 
 ## 将隐私事件添加到项目
 
