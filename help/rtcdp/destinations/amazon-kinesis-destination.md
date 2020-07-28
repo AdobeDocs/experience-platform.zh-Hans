@@ -1,8 +1,8 @@
 ---
-title: Amazon Kinesis目标
-seo-title: Amazon Kinesis目标
-description: 创建到Amazon Kinesis存储的实时出站连接，以流式传输Adobe Experience Platform数据。
-seo-description: 创建到Amazon Kinesis存储的实时出站连接，以流式传输Adobe Experience Platform数据。
+title: AmazonKinesis目的地
+seo-title: AmazonKinesis目的地
+description: 创建到您的AmazonKinesis存储的实时出站连接以流式传输来自Adobe Experience Platform的数据。
+seo-description: 创建到您的AmazonKinesis存储的实时出站连接以流式传输来自Adobe Experience Platform的数据。
 translation-type: tm+mt
 source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Adobe [!DNL Amazon Kinesis] Real-time CDP中的目标当前为测试版。 文档和功能可能会发生变化。
+>Adobe [!DNL Amazon Kinesis] 实时CDP中的目标当前处于测试阶段。 文档和功能可能会发生变化。
 
 ## 概述 {#overview}
 
@@ -25,11 +25,11 @@ ht-degree: 2%
 
 您可以创建到存储的实时出站连接，以 [!DNL Amazon Kinesis] 流式传输来自Adobe Experience Platform的数据。
 
-* 有关更多信 [!DNL Amazon Kinesis]息，请参 [阅Amazon文档](https://docs.aws.amazon.com/streams/latest/dev/introduction.html)。
+* 有关详细信息， [!DNL Amazon Kinesis]请参阅 [Amazon文档](https://docs.aws.amazon.com/streams/latest/dev/introduction.html)。
 * 要使用API调 [!DNL Amazon Kinesis] 用连接到，请参阅流 [目标API教程](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)。
 * 要使用Adobe [!DNL Amazon Kinesis] 实时CDP用户界面连接到，请参阅以下各节。
 
-![UI中的Amazon Kinesis](/help/rtcdp/destinations/assets/aws-kinesis-destination.png)
+![AmazonKinesis在用户界面](/help/rtcdp/destinations/assets/aws-kinesis-destination.png)
 
 
 ## 用例 {#use-cases}
@@ -46,7 +46,7 @@ ht-degree: 2%
 
 ### 在身份验证步骤中 {#authentication-step}
 
-* **[!DNL Amazon Web Services]访问密钥和密钥&#x200B;**: 在中[!DNL Amazon Web Services]，生成一个访问密钥——秘密访问密钥对，以授予Adobe对您帐户的实时CDP访[!DNL Amazon Kinesis]问权。 了解Amazon Web Services文[档中的更多信息](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)。
+* **[!DNL Amazon Web Services]访问密钥和密钥&#x200B;**: 在中[!DNL Amazon Web Services]，生成一个访问密钥——秘密访问密钥对，以授予Adobe对您帐户的实时CDP访[!DNL Amazon Kinesis]问权。 在AmazonWeb服务文[档中了解更多信息](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)。
 * **区域**: 指示要 [!DNL Amazon Web Services] 将数据流化到的区域。
 
 ![帐户步骤中的输入字段](/help/rtcdp/destinations/assets/aws-kinesis-account-step.png)
@@ -117,7 +117,7 @@ ht-degree: 2%
 
 >[!MORELIKETHIS]
 >
->* [连接到Amazon Kinesis并使用API调用激活数据](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)
+>* [连接到AmazonKinesis并使用API调用激活数据](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)
 >* [Azure事件集线器目标](/help/rtcdp/destinations/azure-event-hubs-destination.md)
 >* [目标类型和类别](/help/rtcdp/destinations/destination-types.md)
 
