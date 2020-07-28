@@ -18,7 +18,7 @@ ht-degree: 0%
 
 [Eloca](https://www.oracle.com/marketingcloud/products/marketing-automation/) 是一个软件即服务(SaaS)平台，旨在实现B2B营销人员和组织对营销活动和销售线索生成的 [!DNL Oracle] 管理，并提供营销自动化。
 
-要将区段数据发 [!DNL Oracle Eloqua]送到，您必 [须先在Adobe实时客户数据平台](#connect-destination) 中连接目标，然后 [设置从存储位置导入](#import-data-into-eloqua) 到的数据 [!DNL Oracle Eloqua]。
+要将区段数据发 [!DNL Oracle Eloqua]送到，您必 [须先在Adobe实时平台中](#connect-destination) 连接目标 [，然后设置从存储位置](#import-data-into-eloqua) 导入到的中 [!DNL Oracle Eloqua]。
 
 ## 连接到目标 {#connect-destination}
 
@@ -49,4 +49,4 @@ ht-degree: 0%
 
 ## 将数据导入设置为 [!DNL Oracle Eloqua] {#import-data-into-eloqua}
 
-在将实时CDP连接到Amazon S3或SFTP存储后，您必须设置从存储位置导入到的数据 [!DNL Oracle Eloqua]。 要了解如何完成此操作，请参阅 [中的导入联系人](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/DataImportExport/Tasks/ImportingContactsOrAccounts.htm) 或帐户 [!DNL Oracle Eloqua Help Center]。
+在将实时CDP连接到您的AmazonS3或SFTP存储后，您必须设置从存储位置导入到的数据 [!DNL Oracle Eloqua]。 要了解如何完成此操作，请参阅 [中的导入联系人](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/DataImportExport/Tasks/ImportingContactsOrAccounts.htm) 或帐户 [!DNL Oracle Eloqua Help Center]。
