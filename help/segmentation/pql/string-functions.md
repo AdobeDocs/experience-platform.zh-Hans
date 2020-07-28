@@ -20,7 +20,7 @@ ht-degree: 6%
 
 该函 `like` 数用于确定字符串是否与指定的模式匹配。
 
-**格式**
+**Format**
 
 ```sql
 {STRING_1} like {STRING_2}
@@ -43,7 +43,7 @@ city like "%es%"
 
 函 `startsWith` 数用于确定字符串是否开始有指定的子字符串。
 
-**格式**
+**Format**
 
 ```sql
 {STRING_1}.startsWith({STRING_2}, {BOOLEAN})
@@ -67,7 +67,7 @@ person.name.startsWith("Joe")
 
 函 `doesNotStartWith` 数用于确定字符串是否不与指定子字符串开始。
 
-**格式**
+**Format**
 
 ```sql
 {STRING_1}.doesNotStartWith({STRING_2}, {BOOLEAN})
@@ -91,7 +91,7 @@ person.name.doesNotStartWith("Joe")
 
 该函 `endsWith` 数用于确定字符串是否以指定的子字符串结尾。
 
-**格式**
+**Format**
 
 ```sql
 {STRING_1}.endsWith({STRING_2}, {BOOLEAN})
@@ -115,7 +115,7 @@ person.emailAddress.endsWith(".com")
 
 函 `doesNotEndWith` 数用于确定字符串是否以指定的子字符串结尾。
 
-**格式**
+**Format**
 
 ```sql
 {STRING_1}.doesNotEndWith({STRING_2}, {BOOLEAN})
@@ -139,7 +139,7 @@ person.emailAddress.doesNotEndWith(".com")
 
 函数 `contains` 用于确定字符串是否包含指定的子字符串。
 
-**格式**
+**Format**
 
 ```sql
 {STRING_1}.contains({STRING_2}, {BOOLEAN})
@@ -163,7 +163,7 @@ person.emailAddress.contains("2010@gm")
 
 函 `doesNotContain` 数用于确定字符串是否不包含指定的子字符串。
 
-**格式**
+**Format**
 
 ```sql
 {STRING_1}.doesNotContain({STRING_2}, {BOOLEAN})
@@ -187,7 +187,7 @@ person.emailAddress.doesNotContain("2010@gm")
 
 函 `equals` 数用于确定字符串是否等于指定字符串。
 
-**格式**
+**Format**
 
 ```sql
 {STRING_1}.equals({STRING_2})
@@ -210,7 +210,7 @@ person.name.equals("John")
 
 函 `notEqualTo` 数用于确定字符串是否不等于指定字符串。
 
-**格式**
+**Format**
 
 ```sql
 {STRING_1}.notEqualTo({STRING_2})
@@ -233,7 +233,7 @@ person.name.notEqualTo("John")
 
 该函 `matches` 数用于确定字符串是否与特定常规表达式匹配。 请参阅此 [文档](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html) ，了解有关常规表达式中匹配模式的更多信息。
 
-**格式**
+**Format**
 
 ```sql
 {STRING_1}.matches(STRING_2})
@@ -251,7 +251,7 @@ person.name.matches("(?i)^John")
 
 该函 `regexGroup` 数用于基于所提供的常规表达式提取特定信息。
 
-**格式**
+**Format**
 
 ```sql
 {STRING}.regexGroup({EXPRESSION})
