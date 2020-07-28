@@ -6,13 +6,13 @@ topic: tutorial
 translation-type: tm+mt
 source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '470'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Data Governance] 和教 [!DNL Privacy] 程
+# [!DNL Data Governance] 和 [!DNL Privacy] Tutorials
 
 [!DNL Data Usage Labeling and Enforcement] (DULE)是Adobe Experience Platform的核心机 [!DNL Data Governanc]制。 DULE功能允许您将数据使用标签应用到数据集和字段，并根据相关的数据使用策略对每个标签进行分类。 在开始使用标签之前，请参 [阅数据管理概述](../data-governance/home.md) ，以更加可靠地介绍中的DULE框架 [!DNL Platform]。
 
