@@ -53,7 +53,7 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 ## 监视数据流
 
-数据流可以直接从“目录”页 *[!UICONTROL 访问]* ，而无需查看 *[!UICONTROL 帐户]*。 从顶 *[!UICONTROL 部标题]* 中选择数据流，以视图现有数据流的列表。
+数据流可以直接从“目录”页 *[!UICONTROL 访问]* ，无需查看 *[!UICONTROL 帐户]*。 从顶 *[!UICONTROL 部标题]* 中选择数据流，以视图现有数据流的列表。
 
 ![catalog-dataflows](../../images/tutorials/monitor/catalog-dataflows.png)
 
