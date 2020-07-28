@@ -204,7 +204,7 @@ curl -X GET \
 
 * 目前唯一支持标记的目录对象是数据集、批次和连接。
 * 标记名称对于您的IMS组织是唯一的。
-* Adobe流程可能会利用某些行为的标签。 这些标记的名称前缀有“adobe”作为标准。 因此，在声明标记名称时应避免此约定。
+* Adobe过程可能会利用某些行为的标签。 这些标记的名称前缀有“adobe”作为标准。 因此，在声明标记名称时应避免此约定。
 * 以下标记名称是保留的，可供 [!DNL Experience Platform]在整个组织中使用，因此不能声明为组织的标记名称：
    * `unifiedProfile`: 此标记名称保留给要摄取的数据集 [!DNL Real-time Customer Profile](../../profile/home.md)。
    * `unifiedIdentity`: 此标记名称保留给要摄取的数据集 [!DNL Identity Service](../../identity-service/home.md)。
@@ -579,7 +579,7 @@ GET /{OBJECT_TYPE}?property={CONDITION}
 
 | 符号 | 描述 | 示例 |
 | --- | --- | --- |
-| (无) | 声明不带运算符的属性名称只会返回存在该属性的对象，而不管其值如何。 | `property=name` |
+| (None) | 声明不带运算符的属性名称只会返回存在该属性的对象，而不管其值如何。 | `property=name` |
 | ! | 将“”`!`前缀为参数值 `property` 只返回属性不存在的 **对象** 。 | `property=!name` |
 | ~ | 仅返回其属性值（字符串）与在代字符()符号后提供的常规表达式符`~`匹配的对象。 | `property=name~^example` |
 | == | 仅返回其属性值与在等于多次符号()之后提供的字符串完全匹配的`==`对象。 | `property=name==exampleName` |
