@@ -32,7 +32,7 @@ ht-degree: 2%
 
 ## 检索可观性指标
 
-您可以通过在Opencibility Insights API中向端点发出GET请求 `/metrics` 来检索可观性指标。
+您可以通过在Opencibility Insights API中向端点发出GET请求， `/metrics` 来检索可观测性指标。
 
 **API格式**
 
