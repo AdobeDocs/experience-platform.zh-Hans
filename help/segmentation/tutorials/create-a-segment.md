@@ -48,7 +48,7 @@ ht-degree: 0%
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 - 内容类型： application/json
 
@@ -56,7 +56,7 @@ ht-degree: 0%
 
 分段的第一步是定义分段，在称为段定义的构造中 **表示**。 段定义是封装写入(PQL)的查询 [!DNL Profile Query Language] 的对象。 此对象也称为 **PQL谓词**。 PQL谓词根据与您提供给的任何记录或时间序列数据相关的条件定义段规则 [!DNL Real-time Customer Profile]。 有关编写 [PQL查询](../pql/overview.md) ，请参阅PQL指南。
 
-您可以通过向API中的端点发出POST请求来创 `/segment/definitions` 建新的段定 [!DNL Segmentation] 义。 以下示例概述了如何设置定义请求的格式，包括成功定义区段所需的信息。
+您可以通过向API中的端点发出POST请求来 `/segment/definitions` 创建新的段 [!DNL Segmentation] 定义。 以下示例概述了如何设置定义请求的格式，包括成功定义区段所需的信息。
 
 有关如何定义区段的详细说明，请阅读区段定 [义开发人员指南](../api/segment-definitions.md#create)。
 
@@ -87,7 +87,7 @@ ht-degree: 0%
 
 ### 创建预览作业
 
-您可以通过向端点发出POST请求来创建新预览 `/preview` 作业。
+您可以通过向端点发出预览请求来创建新的POST `/preview` 作业。
 
 有关创建预览作业的详细说明，请参阅“预览 [和评估终端指南”](../api/previews-and-estimates.md#create-preview)。
 
