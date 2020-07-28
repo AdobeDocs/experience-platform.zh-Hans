@@ -1,8 +1,8 @@
 ---
 title: 目标类型和类别
 seo-title: 目标类型和类别
-description: '在Adobe实时用户档案数据平台中，事件/细分导出目标捕获数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到几种类型的目标。 '
-seo-description: 在Adobe实时用户档案数据平台中，事件/细分导出目标捕获数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到几种类型的目标。
+description: '在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到几种类型的目标。 '
+seo-description: 在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到几种类型的目标。
 translation-type: tm+mt
 source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
@@ -26,13 +26,13 @@ ht-degree: 0%
 
 ### 连接
 
-**[!UICONTROL 用户档案]** Real **[!UICONTROL -time Customer Data Platform中的事件导出和细分导出目标捕获数据，将其与其他数据源相结合以形成实时]** 客户用户档案 [](/help/profile/home.md)，应用细分并将细分和合格用户档案导出到目标。
+**[!UICONTROL 用户档案导出]****[!UICONTROL 和细分导出目标Adobe实时客户数据平台捕获事件数据，将其与其他数据源相结合，形成实时]** 客户用户档案 [](/help/profile/home.md)，应用细分并将细分和合格用户档案导出到目标。
 
 <br> 
 
 #### 用户档案导出目标
 
-用户档案导出目标生成包含用户档案和／或属性的文件。 这些目标使用原始数据，通常以电子邮件地址作为主要密钥。 Amazon [S3云存储目标](/help/rtcdp/destinations/amazon-s3-destination.md) ，是一个可以存放包含用户档案导出的文件的目标示例。
+用户档案导出目标生成包含用户档案和／或属性的文件。 这些目标使用原始数据，通常以电子邮件地址作为主要密钥。 Amazon [S3云存储目标](/help/rtcdp/destinations/amazon-s3-destination.md) ，是一个可以存放包含用户档案导出的文件的目标。
 
 #### 区段导出目标
 
@@ -48,7 +48,7 @@ ht-degree: 0%
 
 ### 扩展
 
-Adobe实时CDP利用Experience Platform Launch的强大功能和灵活性将Launch扩展包含在Adobe实时CDP界面中。
+Adobe实时CDP利用Experience Platform Launch的强大功能和灵活性将Launch扩展包括在Adobe实时CDP界面中。
 
 >[!TIP]
 >
