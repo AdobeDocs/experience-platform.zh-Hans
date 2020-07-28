@@ -20,7 +20,7 @@ ht-degree: 2%
 
 ### 检索列表查询
 
-您可以通过向端点发出GET请求，检索IMS组织的所有查询的列表 `/queries` 符。
+您可以通过向端点发出列表请求，为IMS组织检索所有查询的 `/queries` GET。
 
 **API格式**
 
@@ -119,7 +119,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/queries?limit=1 \
 
 ### 创建查询
 
-可以通过向端点发出POST请求来创建新 `/queries` 查询。
+可以通过向端点发出查询请求来创建新POST `/queries` 。
 
 **API格式**
 
@@ -202,7 +202,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 
 ### 按ID检索查询
 
-您可以通过向端点发出GET请求并在请求路径中提 `/queries` 供查询值来检索特 `id` 定查询的详细信息。
+您可以通过向端点发出查询请求并在请求路径中提供GET值来检 `/queries` 索有关特定查询 `id` 的详细信息。
 
 **API格式**
 
@@ -273,7 +273,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/queries/4d64cd49-cf8
 
 ### 取消查询
 
-您可以通过向端点发出PATCH请求并在请求路径中提 `/queries` 供查询值来请求删 `id` 除指定的查询。
+您可以通过向端点发出查询请求并在请求路径中提 `/queries` 供PATCH值来请求 `id` 删除指定的查询。
 
 **API格式**
 
