@@ -24,11 +24,11 @@ ht-degree: 10%
 | --- | --- | --- |
 | 电子邮件 | 电子邮件 | 6 |
 | Phone | Phone | 7 |
-| AdobeAdvertising CloudID | AdCloud | 411 |
+| Adobe Advertising CloudID | AdCloud | 411 |
 | Adobe Audience ManagerUUID | CORE | 0 |
 | Adobe Experience Cloud ID | ECID | 4 |
-| Adobe TargetID | TNTID | 9 |
-| [!DNL Apple] 广告商的ID | IDFA | 20915 |
+| Adobe Target ID | TNTID | 9 |
+| [!DNL Apple] ID for Advertisers | IDFA | 20915 |
 | [!DNL Google] 广告 ID | GAID | 20914 |
 | [!DNL Windows] AID | WAID | 8 |
 
@@ -36,7 +36,7 @@ ht-degree: 10%
 >
 >每个标识类型还有 `namespaceId` 一个整数值，在将标识的属性设置为 `namespace` “namespaceId”时，可以使用 `type` 它代替字符串。 有关详细信息，请参 [阅命名空间限](#namespace-qualifiers) 定符一节。
 
-您可以通过向API中的端点发出GET请求，检索您的组织所使 `idnamespace/identities` 用的一列表标 [!DNL Identity Service] 识命名空间。 有关详细 [信息，请参阅Identity](../../identity-service/api/getting-started.md) Service开发人员指南。
+您可以通过向API中的端点发出列表请求，检索您的组织所使 `idnamespace/identities` 用的一GET标 [!DNL Identity Service] 识命名空间。 有关详细 [信息，请参阅Identity](../../identity-service/api/getting-started.md) Service开发人员指南。
 
 ## 命名空间限定符
 
@@ -44,7 +44,7 @@ ht-degree: 10%
 
 | 限定符 | 定义 |
 | --------- | ---------- |
-| 标准 | 全球定义的标准命名空间之一，不与单个组织数据集（例如，电子邮件、电话号码等）关联。 命名空间ID已提供。 |
+| 标准 | One of the standard namespaces defined globally, not tied to an individual organization data set (for example, email, phone number, etc.). 命名空间ID已提供。 |
 | 自定义 | 在组织上下文中创建的唯一命名空间，不在整个组织中共享 [!DNL Experience Cloud]。 该值表示要搜索的友好名称（“名称”字段）。 命名空间ID已提供。 |
 | integrationCode | 集成代码——与“自定义”类似，但明确定义为要搜索的数据源的集成代码。 命名空间ID已提供。 |
 | namespaceId | 指示该值是通过命名空间服务创建或映射的命名空间的实际ID。 |
@@ -54,7 +54,7 @@ ht-degree: 10%
 
 ## 接受的产品值
 
-下表概述了在作业创建请求的属性中指定Adobe `include` 产品的已接受值。
+下表概述了在作业创建请求的属性中指定Adobe产品 `include` 的已接受值。
 
 | 产品 | 在属性中使用的 `include` 值 |
 --- | ---
@@ -63,7 +63,7 @@ ht-degree: 10%
 | Adobe Audience Manager | “AudienceManager” |
 | Adobe Campaign | &quot;Campaign&quot; |
 | Adobe Experience Platform | &quot;aepDataLake&quot; |
-| Adobe Primetime身份验证 | “primetime身份验证” |
+| Adobe Primetime认证 | “primetime身份验证” |
 | Adobe Target | &quot;Target&quot; |
 | 客户记录服务 | &quot;CRS&quot; |
 | 实时客户资料 | &quot;ProfileService&quot; |
