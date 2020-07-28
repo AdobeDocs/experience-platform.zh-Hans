@@ -6,7 +6,7 @@ translation-type: tm+mt
 source-git-commit: a2726bfc5ef7feac374e57af9c986a9c521efa48
 workflow-type: tm+mt
 source-wordcount: '306'
-ht-degree: 37%
+ht-degree: 39%
 
 ---
 
@@ -25,7 +25,7 @@ ht-degree: 37%
    * [数据获取](https://docs.adobe.com/content/help/en/experience-platform/ingestion/home.html)
    * [数据科学工作区](https://docs.adobe.com/content/help/en/experience-platform/data-science-workspace/home.html)
    * [Debugger](https://docs.adobe.com/content/help/zh-Hans/debugger/using/experience-cloud-debugger.html)
-   * [调试器2.0（测试版）](https://docs.adobe.com/content/help/en/debugger/using-v2/experience-cloud-debugger.html)
+   * [调试器2.0（测试版）](https://docs.adobe.com/content/help/zh-Hans/debugger/using-v2/experience-cloud-debugger.html)
    * [决策服务](https://docs.adobe.com/content/help/en/experience-platform/decisioning/home.html)
    * [目标](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html)
    * [ETL（提取、转换、加载）](https://docs.adobe.com/content/help/en/experience-platform/etl/home.html)
