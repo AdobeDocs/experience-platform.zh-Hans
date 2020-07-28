@@ -50,7 +50,7 @@ ht-degree: 6%
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-包含有效负荷(POST、PUT、PATCH)的请求可能需要额外的标 `Content-Type` 头。 在呼叫参数中提供特定于每个呼叫的已接受值。 本指南中使用以下内容类型：
+包含有效负荷(POST、PUT、PATCH)的请求可能需要额外的 `Content-Type` 头。 在呼叫参数中提供特定于每个呼叫的已接受值。 本指南中使用以下内容类型：
 
 - 内容类型： application/json
 - 内容类型： application/octet-stream
@@ -472,7 +472,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ### 上传大文件块
 
-现在已创建文件，所有后续区块都可以通过重复发出PATCH请求来上传，每个区域对应一个请求。
+现在已创建文件，所有后续区块都可以通过重复的PATCH请求上传，每个区域对应一个请求。
 
 **API格式**
 
@@ -821,7 +821,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## 删除批 {#delete-a-batch}
 
-通过对要删除的批的ID执行以下POST请 `action=REVERT` 求并使用查询参数，可以删除该批。 批被标记为“非活动”，因此符合垃圾收集条件。 将异步收集批，此时该批将标记为“已删除”。
+通过对要删除的批的ID执行以下带POST `action=REVERT` 参数的查询请求，可以删除该批。 批被标记为“非活动”，因此符合垃圾收集条件。 将异步收集批，此时该批将标记为“已删除”。
 
 **API格式**
 
