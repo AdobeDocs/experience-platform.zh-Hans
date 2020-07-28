@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 在UI中创建Amazon Kinesis源连接器
+title: 在UI中创建AmazonKinesis源连接器
 topic: overview
 translation-type: tm+mt
 source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
@@ -40,7 +40,7 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 | `Secret access key` | 帐户的秘密访问 [!DNL Kinesis] 密钥。 |
 | `region` | 您的AWS服务器所在的区域。 |
 
-有关这些值的详细信息，请参 [阅此Kinesis文档](https://docs.aws.amazon.com/streams/latest/dev/getting-started.html)。
+有关这些值的详细信息，请参 [阅本Kinesis文档](https://docs.aws.amazon.com/streams/latest/dev/getting-started.html)。
 
 ## 连接帐 [!DNL Kinesis] 户
 
@@ -48,11 +48,11 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选 *择源* ，以访问源工作区。 “目 *录* ”选项卡显示可连接到的各种源 [!DNL Platform]。 每个来源显示与其关联的现有帐户数。
 
-在云 *[!UICONTROL 存储]* 类别下，选 **[!UICONTROL 择Amazon]** Kinesis **，然** 后单击+图标(+)以创建新连 [!DNL Kinesis] 接器。
+在“云 *[!UICONTROL 存储]* ”类别下 **[!UICONTROL ，选择]** Amazon· **Kinesis,** 然后单击+图标(+)以创建新连 [!DNL Kinesis] 接器。
 
 ![](../../../../images/tutorials/create/kinesis/catalog.png)
 
-将显 *[!UICONTROL 示“连接到Amazon]* Kinesis”对话框。 在此页上，您可以使用新凭据或现有凭据。
+出现 *[!UICONTROL “连接到Amazon·Kinesis]* ”对话框。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
