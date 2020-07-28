@@ -4,17 +4,42 @@ seo-title: Adobe Experience PlatformWeb SDK帮助
 description: 了解什么是Adobe Experience PlatformWeb SDK以及如何使用它。
 seo-description: 允许Adobe Experience Cloud的客户与该Experience Cloud的各种服务进行交互。
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: fc8b26e237821d5fa2d72fb38189894ed0b05271
 workflow-type: tm+mt
-source-wordcount: '429'
-ht-degree: 0%
+source-wordcount: '702'
+ht-degree: 2%
 
 ---
 
 
 # 什么是Adobe Experience PlatformWeb SDK
 
-Adobe Experience PlatformWeb SDK是客户端JavaScript库，它允许Adobe Experience Cloud的客户通过Adobe与各种服务 [!DNL Experience Cloud] 进行交互 [!DNL Experience Platform Edge Network]。
+Adobe Experience PlatformWeb SDK是客户端JavaScript库，它允许Adobe Experience Cloud的客户通过Adobe与各种服务 [!DNL Experience Cloud] 进行交互 [!DNL Experience Platform Edge Network]。 除了JavaScript库，还有一个Launch扩 [展](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/aep-extension/overview.html) ，可帮助您进行Web SDK配置。
+
+## Experience Edge
+
+[!DNL Adobe Experience Platform Web SDK] 是组成Experience Edge的集合的一部分。 Experience Edge包含三种技术：
+
+* **[!DNL Adobe Experience Platform Web SDK]:**可大幅简化部署[!DNL Launch]技术的JavaScript SDK和扩[!DNL Adobe]展
+* **Adobe Experience Platform移动SDK:** v5移动SDK的扩展，允许客户使用新的部署方法
+* **[!DNL Adobe Experience Platform Edge Network]:**支持部署产品的新方法的全球分布式服务器网[!DNL Adobe]络
+
+这是 [!DNL Adobe Experience Edge] 一个新的框架，用于在所有可寻址渠道中进行低延迟数据收集、可插拔计算和快速激活。
+
+[!DNL Adobe Experience Edge] 为每个渠道（JavaScript、移动、服务器端）提供一个统一的SDK，它将数据发送到通用Adobe域(`adobedc.net`)，并为数据和体验投放接收单个负载返回。
+
+在服务器端，统一的边缘网关和通用平台服务框架使得在这个实时计算环境中插入和部署新功能变得很容易。  此架构：
+
+* 缩短客户价值转化时间
+* 结束对“点”集成的需求
+* 与旧库相比，性能得到提高
+* 降低成本
+* 提高创新速度
+* 为Adobe客户创造持续的竞争优势
+
+通过单一整合的边缘系统，客户可以作为集成体验管理所有渠道的广告、营销或个性化活动。  它允许 [!DNL Adobe] 客户以更低的总体拥有成本提供服务。  它还通过使实时边缘可插拔，允许及其客户更快地向该实时系统 [!DNL Adobe] 添加新功能和客户定义的逻辑，帮助提高产品创新的速度。
+
+## 视频概述
 
 以下视频概述了Adobe Experience Platform [!DNL Web SDK] 和 [!DNL Edge Network]。
 
@@ -37,14 +62,13 @@ Adobe Experience PlatformWeb SDK替换以下SDK:
 
 >[!VIDEO](https://video.tv.adobe.com/v/34148?quality=12&learn=on)
 
-
 ## 入门指南
 
 我们强烈建议您 [查看我们的入门指南](getting-started/quick-start-with-launch.md) ，快速学习如何开始使用Adobe启动。
 
 本产品不断发展和增长，以支持越来越多的用例。 为了跟上最新的步伐，请查看我们支持 [的使用案例展示板](https://github.com/adobe/alloy/projects/5)。 我们会根据我们目前支持的使用案例以及我们正在努力帮助您做出最佳决策的案例，不断更新这些案例。
 
-* __尚未支持的用例__ -这些用例是我们今后将支持的路线图中的用例。
-* __使用案例进行中__ -这些是团队当前正在完成以释放的使用案例。
-* __支持的用例__ -这些用例是现在支持和可用的。
-* __我们不支持的使用案例__ -这些是我们决定不支持的使用案例。
+* **尚不支持用例：** 这些使用案例将在我们的路线图上提供支持。
+* **正在使用案例：** 这些是团队当前正在完成的释放用例。
+* **支持的用例：** 这些是现在支持并有效的使用案例。
+* **我们不支持的使用案例：** 这些是我们决定不支持的使用案例。
