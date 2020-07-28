@@ -1,8 +1,8 @@
 ---
-title: 在Analytics自动映射变量
-seo-title: 使用Adobe Experience PlatformWeb SDK在Analytics自动映射变量
-description: 了解在Analytics使用Experience PlatformWeb SDK自动映射哪些变量
-seo-description: 了解在Analytics使用Experience PlatformWeb SDK自动映射哪些变量
+title: 变量自动映射到Analytics
+seo-title: 用Adobe Experience PlatformWeb SDK在Analytics中自动映射变量
+description: 了解哪些变量通过Experience PlatformWeb SDK在Analytics中自动映射
+seo-description: 了解哪些变量通过Experience PlatformWeb SDK在Analytics中自动映射
 translation-type: tm+mt
 source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
