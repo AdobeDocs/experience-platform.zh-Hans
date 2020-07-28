@@ -18,5 +18,5 @@ ht-degree: 0%
 
 Adobe实时客户数据平台目前支持以下社交网络目标：
 
-* [Adobe Livefyre扩展](/help/rtcdp/destinations/adobe-livefyre-extension.md)
+* [AdobeLivefyre扩展](/help/rtcdp/destinations/adobe-livefyre-extension.md)
 * [!DNL Facebook](/help/rtcdp/destinations/facebook-destination.md)
