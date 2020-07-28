@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 使用 [!DNL Schema Editor]
 
-提供 [!DNL Schema Registry] 了一个用户界面和RESTful API，您可以从中视图和管理Adobe Experience Platform中的所有资源 [!DNL Schema Library]。 它 [!DNL Schema Library] 包含Adobe、Experience Platform合作伙伴、您所使用应用程序的供应商为您提供的资源，以及您定义并保存到的资源 [!DNL Schema Registry]。
+提供 [!DNL Schema Registry] 了一个用户界面和RESTful API，您可以从中视图和管理Adobe Experience Platform中的所有资源 [!DNL Schema Library]。 它包 [!DNL Schema Library] 含由Adobe、Experience Platform合作伙伴和您使用的应用程序的供应商提供给您的资源，以及您定义并保存到的资源 [!DNL Schema Registry]。
 
 本教程介绍使用模式编辑器创建模式的步骤 [!DNL Experience Platform]。 如果您希望使用模式注册表API编写模式，请先阅读模式注册表开 [发人员指南](../api/getting-started.md) ，然后再 [尝试使用API创建模式](create-schema-api.md)。
 
@@ -70,7 +70,7 @@ ht-degree: 0%
 
 ![](../images/tutorials/create-schema/assign_class_button.png)
 
-将显 *[!UICONTROL 示“指定类]* ”对话框。 此窗口显示所有可用类的列表，包括您的组织定义的任何类（所有者是“客户”）以及Adobe定义的标准类。
+将显 *[!UICONTROL 示“指定类]* ”对话框。 此窗口显示所有可用类的列表，包括组织定义的任何类（所有者是“客户”）以及Adobe定义的标准类。
 
 单击类名称可显示类的说明。 您还可以选择 **[!UICONTROL 预览类结构]** ，以查看与类关联的字段和元数据。
 
