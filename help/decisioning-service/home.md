@@ -58,9 +58,9 @@ ht-degree: 0%
 
 ## 使用 [!DNL Decisioning Service]
 
-与 [!DNL Decisioning Service]其他服务 [!DNL Platform] 一样，该服务采用API优先理念。 这意味着API是通过API提供所有功能（包括管理功能）的主要接口。 这也意味着其 [!DNL Platform] 他服务、Adobe解决方案和第三方集成使用相同的API。
+与 [!DNL Decisioning Service]其他服务 [!DNL Platform] 一样，该服务采用API优先理念。 这意味着API是通过API提供所有功能（包括管理功能）的主要接口。 它还意味着其 [!DNL Platform] 他服务、Adobe解决方案和第三方集成使用相同的API。
 
-您可以在 [!DNL Decisioning Service] 由简单的HTTP REST API提供的同步请求——响应交互模式下使用。 API调用为单个用户档案返回当前最佳选项。 “当前最佳选项”选择将根据应用于给定活动所考虑的所有选项的规则和约束而改变。 REST API允许同时为多个活动获得次优选项。 这允许在渠道之间仲裁选项。 当同时获得多个活动的响应时，可应用附加规则。
+您可以在 [!DNL Decisioning Service] 由简单的HTTP REST API提供的同步请求——响应交互模式下使用。 API调用为单个用户档案返回当前最佳选项。 “当前最佳选项”选择将根据应用于给定活动所考虑的所有选项的规则和约束而改变。 REST API允许同时为多个活动获得下一个最佳选项。 这允许在渠道之间仲裁选项。 当同时获得多个活动的响应时，可应用附加规则。
 
 ![决策API](./images/decisioning-API.png)
 
