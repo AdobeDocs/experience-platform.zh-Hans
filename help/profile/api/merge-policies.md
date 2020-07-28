@@ -177,7 +177,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ### 按ID访问单个合并策略
 
-通过向端点发出GET请求并在请求路径中包含，可以通 `/config/mergePolicies` 过其ID访 `mergePolicyId` 问单个合并策略。
+通过向端点发出GET请求并将该请求包含在请求路径中，您可 `/config/mergePolicies` 以通过其ID访 `mergePolicyId` 问单个合并策略。
 
 **API格式**
 
@@ -261,7 +261,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回“HTTP状态207（多状态）”和其ID在POST请求中提供的合并策略的详细信息。
+成功的响应会返回“HTTP状态207（多状态）”和合并策略的详细信息，这些策略的ID已在POST请求中提供。
 
 ```json
 { 
@@ -324,7 +324,7 @@ curl -X POST \
 
 ### 列表多个按标准合并策略
 
-您可以列表IMS组织内的多个合并策略，方法是向端点发出GET请求 `/config/mergePolicies` ，并使用可选的查询参数来筛选、排序和分页响应。 可以包括多个参数，用和号(&amp;)分隔。 调用此端点（不含参数）将检索组织可用的所有合并策略。
+您可以列表IMS组织内的多个合并策略，方法是向端点发出GET请求， `/config/mergePolicies` 并使用可选的查询参数来筛选、排序和分页响应。 可以包括多个参数，用和号(&amp;)分隔。 调用此端点（不含参数）将检索组织可用的所有合并策略。
 
 **API格式**
 
@@ -520,7 +520,7 @@ curl -X POST \
 
 ## 更新合并策略 {#update}
 
-您可以通过编辑单个属性(PATCH)或用新属性(PUT)覆盖整个合并策略来修改现有的合并策略。 各示例如下。
+您可以通过编辑单个属性(PATCH)或用新属性覆盖整个合并策略(PUT)来修改现有合并策略。 各示例如下。
 
 ### 编辑单个合并策略字段
 
@@ -557,7 +557,7 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 |---|---|
-| `op` | 指定要执行的操作。 JSON修补程序文档中可找到其他PATCH [操作的示例](http://jsonpatch.com) |
+| `op` | 指定要执行的操作。 其他PATCH操作的示例可在JSON修补程 [序文档中找到](http://jsonpatch.com) |
 | `path` | 要更新的字段的路径。 接受的值为： &quot;/name&quot;、&quot;/identityGraph.type&quot;、&quot;/attributeMerge.type&quot;、&quot;/schema.name&quot;、&quot;/version&quot;、&quot;/default&quot; |
 | `value` | 要将指定字段设置为的值。 |
 
@@ -720,7 +720,7 @@ curl -X DELETE \
 
 **响应**
 
-成功删除请求将返回HTTP状态200(OK)和空的响应主体。 要确认删除成功，您可以执行GET请求以按合并策略的ID视图该合并策略。 如果合并策略被删除，您将收到HTTP状态404（找不到）错误。
+成功删除请求将返回HTTP状态200(OK)和空的响应主体。 要确认删除成功，您可以执行GET请求以按合并策略的ID视图合并策略。 如果合并策略被删除，您将收到HTTP状态404（找不到）错误。
 
 ## 后续步骤
 
