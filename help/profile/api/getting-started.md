@@ -44,7 +44,7 @@ API文档还要求您完成身份验证教 [程](../../tutorials/authentication.
 
 有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-请求主体中具有有效负荷的所有请求（如POST、PUT和PATCH调用）都必须包含标 `Content-Type` 头。 在每个呼叫参数中提供特定于每个呼叫的已接受值。
+请求主体中具有有效负荷的所有请求(如POST、PUT和PATCH调用)都必须包含 `Content-Type` 标头。 在每个呼叫参数中提供特定于每个呼叫的已接受值。
 
 ## 后续步骤
 
