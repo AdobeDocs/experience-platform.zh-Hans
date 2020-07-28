@@ -39,7 +39,7 @@ ht-degree: 5%
 | [!DNL Privacy Service] 重新品牌 | 由于服务已发展为支持除GDPR外的其 [!DNL Privacy Service] 他法规，先前命名的“GDPR服务”已重新命名为。 |
 | 新的API端点 | API的基本路 [!DNL Privacy Service] 径已从更新 `/data/privacy/gdpr` 到 `/data/core/privacy/jobs` |
 | 新的必需 `regulation` 属性 | 在API中创建新作业时，必 [!DNL Privacy Service] 须在请求 `regulation` 有效负荷中提供一个属性，以指示要跟踪作业的法规。 接受的值 `gdpr` 是和 `ccpa`。 有关详细信息， [请参阅](api/privacy-jobs.md) “开发 [!DNL Privacy Service] 人员指南”中的隐私工作文档。 |
-| 支持Adobe Primetime身份验证 | [!DNL Privacy Service] 现在接受来自Adobe Primetime身份验证的访问／删除请求，并 `primetimeAuthentication` 将其作为产品价值。 See the [Primetime Authentication documentation](http://tve.helpdocsonline.com/how-to-make-a-privacy-request) for more information. |
+| 支持Adobe Primetime身份验证 | [!DNL Privacy Service] 现在接受来自Adobe Primetime身份验证的访问／删除请 `primetimeAuthentication` 求，并将其用作产品值。 See the [Primetime Authentication documentation](http://tve.helpdocsonline.com/how-to-make-a-privacy-request) for more information. |
 
 ### 增强功能
 
@@ -55,7 +55,7 @@ ht-degree: 5%
 | --- | --- |
 | 请求度量仪表板 | UI中的新指标仪表板 [!DNL Privacy Service] 可以查看已提交、出错和完成的GDPR请求。 |
 | 请求生成器 | 为同时具有提交GDPR请求的技术用户和非技术用户的组织提供服务，UI中已添加“创建请求”功能。 对于希望继续使用JSON文件的组织， [!DNL Privacy Service] UI中仍提供JSON文件提交功能。 |
-| GDPR工作事件通知 | 关于GDPR工作状态的事件通知对许多工作流来说是一个关键元素。 虽然以前通知是使用单独的电子邮件通知发送的，但GDPR事件通知是利用Adobe I/O事件的消息，这些通知会发送到已配置的Webhook，以促进作业请求自动化。 [!DNL Privacy Service] UI用户可以订阅Adobe I/O GDPR事件，以便在产品或GDPR作业完成后接收更新。 |
+| GDPR工作事件通知 | 关于GDPR工作状态的事件通知对许多工作流来说是一个关键元素。 虽然之前通知是使用单独的电子邮件通知发送的，但GDPR事件通知是利用AdobeI/O事件发送的消息，这些消息会发送到已配置的Webhook，以促进作业请求自动化。 [!DNL Privacy Service] UI用户可以订阅AdobeI/O GDPR事件，以便在产品或GDPR作业完成后接收更新。 |
 
 ## 2019 年 18 月 4 日
 
@@ -87,7 +87,7 @@ ht-degree: 5%
 
 ### 增强功能
 
-* 在每次 `include` POST提交中强制执行此字段。
+* 在每次POST `include` 提交时强制执行此字段。
 * 上传JSON `include` 时强制执行此字段。
 
 ### 错误修复
