@@ -87,7 +87,7 @@ JSON指针是用于标识JSON文档中特[定值的标准字符串语法](https:
 
 ## JSON修补程序
 
-对于API，有许多PATCH操 [!DNL Platform] 作接受JSON修补对象的请求负载。 JSON修补程序是用于描述对JSON[文档所做更改的标准化格式](https://tools.ietf.org/html/rfc6902)(RFC 6902)。 它允许您定义JSON的部分更新，无需在请求主体中发送整个文档。
+API有许多PATCH操作， [!DNL Platform] 它们接受JSON修补程序对象的请求负载。 JSON修补程序是用于描述对JSON[文档所做更改的标准化格式](https://tools.ietf.org/html/rfc6902)(RFC 6902)。 它允许您定义JSON的部分更新，无需在请求主体中发送整个文档。
 
 ### JSON修补程序对象示例
 
@@ -98,7 +98,7 @@ JSON指针是用于标识JSON文档中特[定值的标准字符串语法](https:
 }
 ```
 
-* `op`: 修补操作的类型。 虽然JSON修补程序支持多种不同的操作类型，但API中的所有PATCH操 [!DNL Platform] 作并不与每种操作类型兼容。 可用的操作类型有：
+* `op`: 修补操作的类型。 虽然JSON修补程序支持多种不同的操作类型，但API中的所有PATCH操 [!DNL Platform] 作并非与每种操作类型都兼容。 可用的操作类型有：
    * `add`
    * `remove`
    * `replace`
