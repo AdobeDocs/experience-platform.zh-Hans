@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 访问控制
 
-访问控制通过Adobe [Admin Console管理](http://adminconsole.adobe.com)。 此功能利用中的产品用户档案 [!DNL Admin Console]，允许您将用户与权限和沙箱关联起来。 使用此功能，管理员可以授予或限制对已定义用户集的特定实时CDP功能的访问权。
+访问控制通过 [Adobe Admin Console](http://adminconsole.adobe.com)。 此功能利用中的产品用户档案 [!DNL Admin Console]，允许您将用户与权限和沙箱关联起来。 使用此功能，管理员可以授予或限制对已定义用户集的特定实时CDP功能的访问权。
 
 要进一步了解访问控制，请参阅 [文档中](../../access-control/home.md) 的访问控制 [!DNL Experience Platform] 概述。
 
