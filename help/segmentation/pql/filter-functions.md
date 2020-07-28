@@ -20,7 +20,7 @@ ht-degree: 4%
 
 该 `[]` （过滤器）函数允许将过滤器应用于数组并返回与指定条件匹配的数组子集。
 
-**格式**
+**Format**
 
 ```sql
 {ARRAY}[filter]
@@ -38,7 +38,7 @@ xEvent[productListItems[SKU="PS"]]
 
 ( `^` up)运算符允许您引用过滤器上层的属性。
 
-**格式**
+**Format**
 
 ```sql
 {ARRAY}[{FILTER_1}[{FILTER_2} or ^{PROPERTY}]]
