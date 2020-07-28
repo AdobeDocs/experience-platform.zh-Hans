@@ -14,9 +14,9 @@ ht-degree: 0%
 
 # Adobe实时客户数据平台入门
 
-本入门指南引导您完成Adobe实时客户数据平台（实时CDP）的示例实施。 在设置自己的实现时，可以将它作为一个示例。 虽然本指南显示了特定示例，但它链接到您在创建安装程序时可以使用的其他信息。
+本快速入门指南将引导您完成Adobe实时客户数据平台（实时CDP）的示例实施。 在设置自己的实现时，可以将它作为一个示例。 虽然本指南显示了特定示例，但它链接到您在创建安装程序时可以使用的其他信息。
 
-此示例展示了以Adobe Experience Platform为后盾的Adobe实时客户数据平台的强大功能：
+此示例展示了Adobe实时客户数据平台(由Adobe Experience Platform提供支持)的强大功能：
 
 * 从多个源摄取数据
 * 将它们合并为一个 [!DNL real-time customer profile]
@@ -67,7 +67,7 @@ ht-degree: 0%
 
 ![image](assets/luma-site.png)
 
-数据在导航时会实时捕获，不仅会发送到AdobeAnalytics中的报表包，还会直接发送到Adobe Experience Platform。 在收集数据时，您会开始根据中的行为数据，形成消费者的单一视图 [!DNL Experience Platform's real-time customer profile]。
+在导航时，数据会实时捕获，并且不仅会发送到Adobe Analytics的报表包，还会直接发送给Adobe Experience Platform。 在收集数据时，您会开始根据中的行为数据，形成消费者的单一视图 [!DNL Experience Platform's real-time customer profile]。
 
 网站的许多访客可能重复以前从Luma购买的客户。  对Luma来说，为满足新客户和重复访客以及已知客户的需求而个性化消息和产品非常重要。
 
@@ -77,7 +77,7 @@ ht-degree: 0%
 
 ![image](assets/luma-sweatshirts.png)
 
-当客户点击以进一步了解这些产品时，这些产品视图会在AdobeAnalytics中收集并发送至 [!DNL Experience Platform]。
+当客户点击以进一步了解这些产品时，这些产品视图会在Adobe Analytics收集并发送至 [!DNL Experience Platform]。
 
 <!--![image](assets/luma-shirt-detail.png)-->
 
@@ -110,7 +110,7 @@ Sarah受到欢迎，并感谢她成为铜牌会员，详细了解她的益处以
 
 Sarah会根据主页情况动态提供个性化的Adobe Experience Platform [!DNL Real-time Customer Profile] 体验。
 
-凭借Adobe Target中以Adobe Sensei为后盾的个性化，她可以看到相关内容，这要考虑到她过去购买的服装和服装的关联。 Luma还根据她最近的浏览，为男性定制了男性跑步用品目录。
+Adobe Sensei推动的Adobe Target个性化让她看到了相关内容，这要归功于她过去购买服装和服装的关联。 Luma还根据她最近的浏览，为男性定制了男性跑步用品目录。
 
 在下一页，Sarah将看到特色产品，并根据她最近查看过的产品推出新的推荐托盘。
 
@@ -120,7 +120,7 @@ Sarah会根据主页情况动态提供个性化的Adobe Experience Platform [!DN
 
 莎拉分心了，离开了网站，结束了她的研习会。 Luma可以利用她的Adobe Experience Platform数据帮助她返回网站。
 
-以Adobe Experience Platform为后盾的Adobe实时客户数据平台专为客户体验管理而构建。 它使组织能够：
+Adobe实时客户数据平台由Adobe Experience Platform提供支持，专为客户体验管理而构建。 它使组织能够：
 
 * 简化数据集成和激活
 * 管理已知和未知的数据使用
@@ -135,7 +135,7 @@ Luma团队将所有的行为和客户数据放在一个位置。
 他们可以从以下所有源中收集数据：
 
 * 现有Adobe Experience Cloud解决方案数据
-* 非Adobe来源，如Luma的忠诚度项目、呼叫中心和销售点系统数据
+* 非Adobe来源，如Luma的忠诚项目、呼叫中心和销售点系统数据
 * 来自Luma数据源的实时流数据
 * 来自Adobe解决方案的实时数据（无需新标签）
 
@@ -236,8 +236,8 @@ Loyalty member
 
 单击“ **[!UICONTROL 发送到目标”]**。
 
-在Adobe实时CDP中，Luma可以无缝地对其受众细分执行个性化操作。\
-在此，我们将看到Luma可以将此目标发送给Adobe和非Adobe解决方案的所有目标：
+在Adobe实时CDP中，Luma可以无缝地对受众细分采取行动，以实现个性化。\
+在此，我们将看到Luma可以将此目标发送到的所有目标，包括Adobe和非Adobe解决方案：
 
 ![image](assets/luma-dest.png)
 
