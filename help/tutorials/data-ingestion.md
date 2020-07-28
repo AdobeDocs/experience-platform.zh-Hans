@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 将数据收录到 [!DNL Experience Platform]
 
-Adobe Experience Platform将来自多个来源的数据整合在一起，以帮助营销人员更好地了解其客户的行为。 Adobe [!DNL Experience Platform Data Ingestion] 表示从这些源 [!DNL Platform] 收集数据的多种方法，以及数据在数据湖中如何保留以供下游使用 [!DNL Platform services]。 [!DNL Data Ingestion] 包括使用源连接器进行批量摄取、流式摄取和摄取。 要了解更多信息，请阅 [读数据摄取概述](../ingestion/home.md) ，或直接转到 [源文档](../sources/home.md)。
+Adobe Experience Platform将来自多个来源的数据整合在一起，以帮助营销人员更好地了解其客户的行为。 Adobe [!DNL Experience Platform Data Ingestion] 表示从这些源 [!DNL Platform] 收集数据的多种方法，以及数据在数据湖中保留以供下游使用的方 [!DNL Platform services]法。 [!DNL Data Ingestion] 包括使用源连接器进行批量摄取、流式摄取和摄取。 要了解更多信息，请阅 [读数据摄取概述](../ingestion/home.md) ，或直接转到 [源文档](../sources/home.md)。
 
 ## 在UI和API中创建源连接器
 
