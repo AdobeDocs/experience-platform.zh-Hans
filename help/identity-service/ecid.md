@@ -26,7 +26,7 @@ ht-degree: 9%
 
 如果您使用移动应用程序，请了解如何使用ECID [跟踪应用程序和移动Web之间的访客](https://docs.adobe.com/content/help/en/mobile-services/ios/sdk-reference-ios/hybrid-app.html)。
 
-如果您使用Adobe Launch，则部署这些工具可以简单 [易用](https://docs.adobe.com/content/help/zh-Hans/launch/using/overview.translate.html)。
+如果您使用Adobe启动，部署这些工具可以非常简单且易于 [管理](https://docs.adobe.com/content/help/zh-Hans/launch/using/overview.translate.html)。
 
 此外，请参阅 [Privacy Service文档](../privacy-service/identity-data.md) ，了解有关使用ECID符合GDPR的信息。
 
