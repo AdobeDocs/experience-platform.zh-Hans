@@ -1,8 +1,8 @@
 ---
 title: 检索Experience CloudID
 seo-title: Adobe Experience PlatformWeb SDK检索Experience CloudID
-description: 了解如何获取Adobe Experience Cloud Id。
-seo-description: 了解如何获取Adobe Experience Cloud Id。
+description: 了解如何获得Adobe Experience CloudID。
+seo-description: 了解如何获得Adobe Experience CloudID。
 translation-type: tm+mt
 source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
 workflow-type: tm+mt
@@ -14,7 +14,7 @@ ht-degree: 9%
 
 # 标识——检索Experience CloudID
 
-Adobe Experience Platform [!DNL Web SDK] 利用 [Adobe Identity Service](../../identity-service/ecid.md)。 这可确保每个设备都有一个唯一标识符，该标识符会保留在设备上，以便页面之间的活动可以绑定在一起。
+Adobe Experience Platform [!DNL Web SDK] 利用 [Adobe标识服务](../../identity-service/ecid.md)。 这可确保每个设备都有一个唯一标识符，该标识符会保留在设备上，以便页面之间的活动可以绑定在一起。
 
 ## 第一方身份
 
