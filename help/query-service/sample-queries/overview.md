@@ -14,9 +14,9 @@ ht-degree: 0%
 
 # 示例查询
 
-Adobe Experience Cloud解决方案数据可在本机中获 [!DNL Experience Platform]得。 您首次能够从同一数据存储中查询AdobeAnalytics、Adobe Target、Adobe Campaign和Adobe Audience Manager数据，而无需移动数据。 当数据从解决方案中摄取到Adobe Experience Platform时，它会转 [!DNL Experience Event Experience Data Model] 换为(体验事件XDM)。 这提供了模式标准化层。
+Adobe Experience Cloud解决方案数据在本机提供 [!DNL Experience Platform]。 您首次能够从同一数据存储中查询Adobe Analytics、Adobe Target、Adobe Campaign和Adobe Audience Manager数据，而无需移动数据。 当数据从解决方案中摄取到Adobe Experience Platform时，它会转 [!DNL Experience Event Experience Data Model] 换为(体验事件XDM)。 这提供了模式标准化层。
 
-您可能希望针对Adobe数据运行许多标准查询。 请参阅以下文档，了解AdobeAnalytics和Adobe Target的示例查询。 其他解决方案数据的示例查询将在将来添加。
+您可能希望针对您的查询数据运行许多标准Adobe。 请参阅以下文档，了解Adobe Analytics和Adobe Target的查询示例。 其他解决方案数据的示例查询将在将来添加。
 
-- [AdobeAnalytics示例查询](adobe-analytics.md)
+- [Adobe Analytics样品查询](adobe-analytics.md)
 - [Adobe Target示例查询](adobe-target.md)
