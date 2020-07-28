@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # [!DNL Access control] 开发人员指南
 
-[!DNL Access control] [!DNL Experience Platform] 通过AdobeAdmin Console [进行管理](https://adminconsole.adobe.com)。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。 有关更多 [信息](../home.md) ，请参阅访问控制概述。
+[!DNL Access control] 通 [!DNL Experience Platform] 过Adobe Admin Console [管](https://adminconsole.adobe.com)。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。 有关更多 [信息](../home.md) ，请参阅访问控制概述。
 
 此开发人员指南提供有关如何设置请求格式的信 [!DNL Access Control API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)息，并涵盖以下操作：
 
@@ -45,7 +45,7 @@ ht-degree: 1%
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 - 内容类型： application/json
 
