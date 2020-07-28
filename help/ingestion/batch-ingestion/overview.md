@@ -65,7 +65,7 @@ API [!DNL Data Ingestion] 允许您通过以下三个基本步骤将数据作为
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 - 内容类型： application/json
 
@@ -200,7 +200,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 
 ### 大文件上传——上传后续部分
 
-创建文件后，可以通过重复发出PATCH请求来上传所有后续区块，每个区域对应一个请求。
+创建文件后，可以通过重复的PATCH请求上传所有后续区块，每个区域对应一个请求。
 
 ```http
 PATCH /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
