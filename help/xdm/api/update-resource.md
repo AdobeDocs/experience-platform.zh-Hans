@@ -24,7 +24,7 @@ ht-degree: 2%
 
 ## 向模式添加混音
 
-最常见的PATCH操作之一是将以前定义的混音添加到XDM模式，如以下示例所示。
+最常见的PATCH操作之一是向XDM模式添加以前定义的混音，如下例所示。
 
 **API格式**
 
@@ -39,7 +39,7 @@ PATCH /tenant/{RESOURCE_TYPE}/{RESOURCE_ID}
 
 **请求**
 
-使用PATCH操作，可以更新模式以包含在先前创建的混音中定义的字段。 为此，必须使用模式的URL编码URI或PATCH `meta:altId` 请求执行 `$id` PATCH。
+使用PATCH操作，您可以更新模式以包含在先前创建的混音中定义的字段。 为此，必须使用PATCH的URI或URL编码的URI `meta:altId` 对模式执行 `$id` 请求。
 
 请求主体包括`op`要执行的操作(`path`)、要执行操作的位置()以及要包括在操作中的信息(`value`)。 在此示例中，mixin的值 `$id` 将添加到目标模式的 `meta:extends` 和 `allOf` 字段中。
 
@@ -100,7 +100,7 @@ curl -X PATCH\
 
 ## 更新资源的各个字段
 
-您还可以发送对模式注册表资源中的各个字段进行多次更改的PATCH请求。
+您还可以发送对PATCH注册表资源中的各个字段进行多次更改的模式请求。
 
 **API格式**
 
