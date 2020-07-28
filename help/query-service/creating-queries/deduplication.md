@@ -31,7 +31,7 @@ Adobe Experience Platform [!DNL Query Service] 支持外部重复数据删除，
 
 >[!CAUTION]
 >
->中的许 [!DNL Experience Platform]多Analytics集（包括由Adobe Data Connector生成的数据集）已应用ExperienceEvent级外部重复数据删除。 因此，重新应用此外部重复数据删除级别是不必要的，并会降低查询速度。 了解数据集的来源并了解ExperienceEvent级别的外部重复数据删除是否已应用，这一点很重要。 对于流化的任何数据集(例如，来自Adobe Target的数据集)，您需要应用ExperienceEvent级外部重复数据删除，因为这些数据源具有“至少一次”语义。
+>中的许多 [!DNL Experience Platform]数据集(包括由Adobe Analytics数据连接器生成的数据集)已应用了ExperienceEvent级外部重复数据删除。 因此，重新应用此外部重复数据删除级别是不必要的，并会降低查询速度。 了解数据集的来源并了解ExperienceEvent级别的外部重复数据删除是否已应用，这一点很重要。 对于流化的任何数据集(例如，来自Adobe Target的数据集)，您需要应用ExperienceEvent级外部重复数据删除，因为这些数据源具有“至少一次”语义。
 
 **范围：** 全球
 
@@ -103,7 +103,7 @@ SELECT SUM(commerce.purchases.value) AS num_purchases FROM (
 
 ### 量度 {#metrics}
 
-如果您有使用可选唯一ID的度量，并且显示该ID的重复，您可能希望忽略该度量值并保留ExperienceEvent的其余部分。 在XDM中，几乎所有度量都使 `Measure` 用包括可选字段的 `id` 数据类型，您可以使用该字段进行外部重复数据删除。
+如果您有使用可选唯一ID的度量，并且显示该ID的重复，您可能希望忽略该度量值并保留ExperienceEvent的其余部分。 在XDM中，几乎所有度量都使用 `Measure` 包含可选字段的 `id` 数据类型，您可以使用该字段进行外部重复数据删除。
 
 **范围：** 访客
 
