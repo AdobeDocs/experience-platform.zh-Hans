@@ -16,7 +16,7 @@ ht-degree: 0%
 
 该 [!DNL Schema Registry] 应用程序用于访问Adobe Experience Platform中的模式库，提供用户界面和RESTful API，可从中访问所有可用的库资源。
 
-使用模式注册表API，您可以执行基本的CRUD操作，以视图和管理Adobe Experience Platform内所有可用的模式和相关资源。 这包括由Adobe、合作伙伴和您 [!DNL Experience Platform] 所使用应用程序的供应商定义的应用程序。 您还可以使用API调用为您的组织创建新模式和资源，以及视图和编辑您已定义的资源。
+使用模式注册表API，您可以执行基本的CRUD操作，以视图和管理Adobe Experience Platform内所有可用的模式和相关资源。 这包括由Adobe、合作伙伴和您使 [!DNL Experience Platform] 用其应用程序的供应商定义的应用程序。 您还可以使用API调用为您的组织创建新模式和资源，以及视图和编辑您已定义的资源。
 
 此开发人员指南提供帮助您使用API进行开始 [!DNL Schema Registry] 的步骤。 然后，该指南提供使用执行键操作的示例API调用 [!DNL Schema Registry]。
 
@@ -51,15 +51,15 @@ ht-degree: 0%
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-对该API的所有查找(GET) [!DNL Schema Registry] 请求都需要一个附加的“接受”头，其值决定API返回的信息格式。 有关更多详 [细信息](#accept) ，请参阅下面的接受标题部分。
+所有对请求的查找(GET) [!DNL Schema Registry] 请求都需要一个附加的“接受”标头，其值决定API返回的信息格式。 有关更多详 [细信息](#accept) ，请参阅下面的接受标题部分。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 * 内容类型： application/json
 
 ## 了解您的TENANT_ID {#know-your-tenant_id}
 
-在本指南中，您将看到对的引用 `TENANT_ID`。 此ID用于确保您创建的资源命名正确且包含在IMS组织中。 如果您不知道自己的ID，可以通过执行以下GET请求来访问它：
+在本指南中，您将看到对的引用 `TENANT_ID`。 此ID用于确保您创建的资源命名正确且包含在IMS组织中。 如果您不知道您的ID，则可以通过执行以下GET请求来访问它：
 
 **API格式**
 
@@ -165,7 +165,7 @@ curl -X GET \
 
 ### 全球容器
 
-全球容器包含所有标准Adobe [!DNL Experience Platform] 及合作伙伴提供的类、混音、数据类型和模式。 您只能对全局列表执行容器和查找(GET)请求。
+全球容器包含所有标准Adobe [!DNL Experience Platform] 和合作伙伴提供的类、混合、数据类型和模式。 您只能对全局列表执行GET和查找(容器)请求。
 
 ### 租户容器
 
@@ -189,7 +189,7 @@ curl -X GET \
 
 ## 接受标题 {#accept}
 
-在API中执行列表和查找(GET)操 [!DNL Schema Registry] 作时，需要一个Accept头来确定API返回的数据的格式。 查找特定资源时，“接受”标题中还必须包含版本号。
+在API中执行列表和查找(GET)操 [!DNL Schema Registry] 作时，需要一个“接受”标头来确定API返回的数据的格式。 查找特定资源时，“接受”标题中还必须包含版本号。
 
 下表列表兼容的Accept头值，包括版本号，以及API在使用时将返回的描述。
 
