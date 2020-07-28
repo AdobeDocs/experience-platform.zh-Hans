@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Adobe定义的函数
+title: Adobe定义函数
 topic: queries
 translation-type: tm+mt
 source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
@@ -23,7 +23,7 @@ Adobe的主要优势之一是他们了解体验数据以及客户需要如何处
 
 ## 会话化
 
-重 `SESS_TIMEOUT()` 现与AdobeAnalytics的访问分组。 它执行类似的基于时间的分组，但具有可自定义的参数。
+重现 `SESS_TIMEOUT()` 了与Adobe Analytics的访问组。 它执行类似的基于时间的分组，但具有可自定义的参数。
 
 **语法：**
 
@@ -89,11 +89,11 @@ LIMIT 31;
 
 归因是您如何为营销工作分配指标或转化率，如收入、订单或注册。
 
-在AdobeAnalytics中，属性设置是使用eVar等变量配置的，并在摄取数据时生成。
+在Adobe Analytics，属性设置使用eVar等变量进行配置，并在摄取数据时生成。
 
 中找到的归因 [!DNL Query Service] ADF允许在查询时定义和生成这些分配。
 
-此示例重点介绍最近接触归因，但Adobe也优惠了首次接触归因。
+此示例重点介绍最后一次触碰归因，但Adobe也会优惠第一次触碰归因。
 
 >[!NOTE]
 >
@@ -107,7 +107,7 @@ LIMIT 31;
 
 具有场的结构 `(value)`
 
-### 探索行级归因
+### 浏览行级归因
 
 ```sql
 SELECT
@@ -126,7 +126,7 @@ LIMIT 50;
 
 ![图像](../images/queries/adobe-functions/row-level-attribution.png)
 
-### 创建按最后成员级别(eVar10)划分的订单
+### 按上一成员层创建订单细分(eVar10)
 
 ```sql
 SELECT
@@ -243,7 +243,7 @@ LIMIT 10;
 
 ## Journey Orchestration
 
-以下视频演示如何在查询接口和PSQL客户端中运行Adobe Experience Platform。 此外，该视频还使用涉及XDM对象中各个属性的示例、使用Adobe定义的函数以及使用CREATE TABLE AS SELECT(CTAS)。
+以下视频演示如何在查询接口和PSQL客户端中运行Adobe Experience Platform。 此外，视频还使用涉及XDM对象中各个属性的示例，使用Adobe定义的函数，以及使用CREATE TABLE AS SELECT(CTAS)。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
