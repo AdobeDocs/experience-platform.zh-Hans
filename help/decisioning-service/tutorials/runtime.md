@@ -47,7 +47,7 @@ ht-degree: 0%
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../tutorials/authentication.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 - 内容类型： application/json
 
@@ -59,7 +59,7 @@ ht-degree: 0%
 >
 >`UUID` 是UUID格式的字符串，它全局唯一，不能对不同的API调用重用
 
-[!DNL Decisioning Service] 由多个彼此相关的业务对象控制。 所有业务对象都存储在 [!DNL Platform’s] 业务对象存储库XDM核心对象存储库中。 此存储库的一个主要功能是API与业务对象类型正交。 除了使用指示其API端点中资源类型的POST、GET、PUT、PATCH或DELETEAPI外，只有6个通用端点，但它们接受或返回一个参数，该参数指示在需要消歧时对象的类型。 模式必须向存储库注册，但除此之外，存储库还可用于一组开放式对象类型。
+[!DNL Decisioning Service] 由多个彼此相关的业务对象控制。 所有业务对象都存储在 [!DNL Platform’s] 业务对象存储库XDM核心对象存储库中。 此存储库的一个主要功能是API与业务对象类型正交。 除了使用POST、GET、PUT、PATCH或DELETEAPI来指示其API端点中资源的类型，它们只有6个通用端点，但它们接受或返回一个参数，该参数在需要消歧时指示对象的类型。 模式必须向存储库注册，但除此之外，存储库还可用于一组开放式对象类型。
 
 所有XDM核心对象存储库API开始的端点路 `https://platform.adobe.io/data/core/ode/`径。
 
@@ -181,7 +181,7 @@ REST API是运行在顶部的应用程序的路由之一 [!DNL Platform] ，根�
 
 有可能有两个不同的活动提出与他们的“最佳”相同的选择。 为避免重复合成的体验，默认情况 [!DNL Decisioning Service] 下，在同一请求中引用的活动之间进行仲裁。 仲裁意味着，对于每个活动，其前N个选项都会被考虑，但在这些活动中，不会多次提出任何选项。 如果两个活动有相同的排名最高的选项，其中一个将被选为使用其排名第二的选项或排名第三的选项，依此类推。 这些重复数据消除规则会尽量避免任何活动必须使用其回退选项。
 
-决定请求包含其POST请求的正文。 正文的格式为JSON标 `Content-Type` 题值 `application/vnd.adobe.xdm+json; schema="{REQUEST_SCHEMA_AND_VERSION}"`
+决策请求包含其POST请求主体的参数。 正文的格式为JSON标 `Content-Type` 题值 `application/vnd.adobe.xdm+json; schema="{REQUEST_SCHEMA_AND_VERSION}"`
 
 此时支持的请求模式和版本 `https://ns.adobe.com/experience/offer-management/decision-request;version=0.9`。 今后将提供其他请求模式或版本。
 
