@@ -1,7 +1,7 @@
 ---
-title: 在Analytics手动映射变量
-seo-title: 使用Web SDK在Analytics手动映射变量
-description: 如何用处理规则将变量手动映射到Analytics
+title: 在Analytics中手动映射变量
+seo-title: 使用Web SDK在Analytics中手动映射变量
+description: 如何使用处理规则将变量手动映射到Analytics
 seo-description: 使用带有Web SDK的处理规则将变量手动映射到Analytics
 translation-type: tm+mt
 source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
@@ -12,7 +12,7 @@ ht-degree: 11%
 ---
 
 
-# 在Analytics手动映射变量
+# 在Analytics中手动映射变量
 
 Adobe Experience Platform(AEP)可以自 [!DNL Web SDK] 动映射某些变量，但必须手动映射自定义变量。
 
@@ -51,7 +51,7 @@ Adobe Experience Platform(AEP)可以自 [!DNL Web SDK] 动映射某些变量，�
 
 边缘网络收集的所有数据都可以通过处理 [规则访问](https://docs.adobe.com/content/help/zh-Hans/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html)。 在中 [!DNL Analytics]，您可以使用处理规则将上下文数据合并到变 [!DNL Analytics] 量中。
 
-例如，在以下规则中，Analytics设置为 **用与a.x_atag.search.term(Context Data)关联的数** 据填充内部搜索词(eVar2) ****。
+例如，在以下规则中，Analytics设置为用与 **a.x_atag.search.term(Context Data** )关联的数 **据填充内部搜索词(eVar2)**。
 
 ![](assets/examplerule.png)
 
