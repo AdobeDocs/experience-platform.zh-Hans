@@ -70,7 +70,7 @@ ETL连接器集成涉及多个Experience Platform组件。 以下列表概述了
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 - 内容类型： application/json
 
@@ -168,7 +168,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets?limit=3&
 
 XDM模式是您在需要向用户显示可写入的所有可用字段的列表时使用的模式。
 
-上一个响应对象()中的第一个“schemaRef.id”`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`值是指向中的特定XDM模式的URI [!DNL Schema Registry]。 通过对API发出查找(GET)请求，可以检索模式 [!DNL Schema Registry] 。
+上一个响应对象()中的第一个“schemaRef.id”`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`值是指向中的特定XDM模式的URI [!DNL Schema Registry]。 可以通过对API发出查找(模式)请求来检索GET [!DNL Schema Registry] 。
 
 >[!NOTE]
 >
@@ -198,7 +198,7 @@ curl -X GET \
 
 | 接受 | 描述 |
 | ------ | ----------- |
-| `application/vnd.adobe.xed-id+json` | 列表(GET)请求、标题、ID和版本 |
+| `application/vnd.adobe.xed-id+json` | 列表(GET)请求、标题、id和版本 |
 | `application/vnd.adobe.xed-full+json; version={major version}` | $refs and allOf已解析，有标题和说明 |
 | `application/vnd.adobe.xed+json; version={major version}` | 带有$ref和allOf的原始数据包含标题和说明 |
 | `application/vnd.adobe.xed-notext+json; version={major version}` | 带有$ref和allOf的原始数据，无标题或描述 |
@@ -326,7 +326,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets?limit=1&
 
 ### 列表使用“files”属性的数据集文件
 
-您还可以使用GET请求来获取使用“files”属性的文件详细信息。
+您还可以使用GET请求来使用“files”属性获取文件详细信息。
 
 **API格式**
 
@@ -552,7 +552,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{FILE_ID}" \
 
 ### 访问文件内容
 
-可 [!DNL Data Access API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) 用于访问特定文件的内容。 要获取内容，使用使用文件ID访问文件时返回 `_links.self.href` 的值发出GET请求。
+可 [!DNL Data Access API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) 用于访问特定文件的内容。 要获取内容，使用使用文件ID访问文件时返 `_links.self.href` 回的值进行GET请求。
 
 **请求**
 
@@ -674,7 +674,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches?limit=1&s
 
 ### 按ID获取上一批状态
 
-通过使用GET请求，可以 [!DNL Catalog Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) 通过该检索单个批状态 `{BATCH_ID}`。 使 `{BATCH_ID}` 用的ID与创建批时返回的ID相同。
+通过使用该GET请求，可以 [!DNL Catalog Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) 通过该检索单个批处理状态 `{BATCH_ID}`。 使 `{BATCH_ID}` 用的ID与创建批时返回的ID相同。
 
 **请求**
 
@@ -757,7 +757,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID
 
 ## 批处理重放和数据重新处理
 
-如果客户发现过去“n”天中，正在处理的数据未按预期发生或源数据本身可能不正确，则可能需要进行批量重放和数据重新处理。
+如果客户发现过去“n”天中，ETL处理的数据未按预期发生，或源数据本身可能不正确，则可能需要进行批量重放和数据重新处理。
 
 为此，客户端的数据管理员将使用UI删 [!DNL Platform] 除包含损坏数据的批。 然后，ETL可能需要重新运行，从而使用正确的数据重新填充。 如果源本身有损坏的数据，数据工程师／管理员需要更正源批次并重新摄取数据(输入Adobe Experience Platform或通过ETL连接器)。
 
