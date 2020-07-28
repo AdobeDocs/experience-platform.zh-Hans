@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 跟踪事件
 
-要将事件数据发送到Adobe Experience Cloud，请使用该命 `sendEvent` 令。 该 `sendEvent` 命令是将数据发送到并检索个 [!DNL Experience Cloud]性化内容、身份和受众目标的主要方式。
+要将事件数据发送到Adobe Experience Cloud，请使用该 `sendEvent` 命令。 该 `sendEvent` 命令是将数据发送到并检索个 [!DNL Experience Cloud]性化内容、身份和受众目标的主要方式。
 
 发送到Adobe Experience Cloud的数据分为两个类别:
 
