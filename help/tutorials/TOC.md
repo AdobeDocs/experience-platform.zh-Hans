@@ -1,17 +1,20 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Tutorials
+user-guide-title: Adobe Experience Platform 教程
 translation-type: tm+mt
 source-git-commit: ee08f43400fa72abce95ed52aff879f954f4b4d6
+workflow-type: tm+mt
+source-wordcount: '52'
+ht-degree: 9%
 
 ---
 
 
 # Adobe Experience Platform tutorials {#tutorials}
 
-* [教程概述](home.md)
-* [验证到Experience Platform API](authentication.md)
+* [Tutorials概述](home.md)
+* [验证到Experience PlatformAPI](authentication.md)
 * [访问平台数据](data-access.md)
 * [数据管理和隐私](data-governance-privacy.md)
 * [数据科学工作区](data-science-workspace.md)
