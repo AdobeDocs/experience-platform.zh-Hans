@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 实时CDP中的隐私保护
 
-[!DNL Real-time Customer Data Platform] （实时CDP）可帮助营销人员将来自多个企业系统的数据整合在一起，使他们能够更好地识别、理解和吸引客户。 Adobe将消费者数据隐私视为基本的设计原则，并提供各种控件来帮助营销人员管理其客户的数据隐私。
+[!DNL Real-time Customer Data Platform] （实时CDP）可帮助营销人员将来自多个企业系统的数据整合在一起，使他们能够更好地识别、理解和吸引客户。 Adobe将消费者数据隐私视为一项基本的设计原则，并提供各种控件来帮助营销人员管理其客户的数据隐私。
 
 大多数实时CDP功能都由Adobe Experience Platform提供支持。 本文档提供有关实时CDP支持的各种隐私增强技术的信息，并提供文档链 [!DNL Experience Platform] 接以了解更多信息。
 
