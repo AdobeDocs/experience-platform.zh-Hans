@@ -18,7 +18,7 @@ ht-degree: 2%
 
 本教程使 [!DNL Flow Service] 用API指导您完成连接到 [!DNL Experience Platform] 存储 [!DNL Azure Blob] （以下称“Blob”）的步骤。
 
-如果您希望使用中的 [!DNL Experience Platform]用户 [界面，Azure Blob或Amazon S3源连接器UI教程将提供执行类似操作的分步说明](../../../ui/create/cloud-storage/blob-s3.md) 。
+如果您希望使用中的用户 [!DNL Experience Platform]界面， [Azure Blob或AmazonS3源连接](../../../ui/create/cloud-storage/blob-s3.md) 器UI教程将提供执行类似操作的分步说明。
 
 ## 入门指南
 
