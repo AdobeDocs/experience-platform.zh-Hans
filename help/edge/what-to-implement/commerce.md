@@ -14,20 +14,20 @@ ht-degree: 5%
 
 # 产品
 
-如果您的网站上有产品，则这是您可能希望发送的默认内容集，以启用Adobe提供的大多数功能。 尽管这是一个建议，但它直接从开始提供了一组非常强大的数据。
+如果您的网站上有产品，则这是您可能希望发送的默认内容集，以启用Adobe提供的最多功能。 尽管这是一个建议，但它直接从开始提供了一组非常强大的数据。
 
 此文档使用 [ExperienceEvent商务详细信](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) 息混合。 混 `commerce` 合物分为两部分： 对 `commerce` 象和数 `productListItems` 组。 该对 `commerce` 象允许您指示正在对数组执行哪些 `productListItems` 操作。
 
->[!Tip]
+>[!TIP]
 >
 >
->如果您熟悉AdobeAnalytics，则 `commerce` 该变量与该变量关系最 `events` 密切。 该 `productListItems` 变量与变量更为 `products` 相关。
+>如果您熟悉Adobe Analytics, `commerce` 则与变量关系最 `events` 密切。 该 `productListItems` 变量与变量更为 `products` 相关。
 
 ## 与产品相关的操作
 
 以下是对象 `measures` 中可用的 `commerce` 列表。
 
->[!Tip]
+>[!TIP]
 >
 >
 >度量包含两个字段： `id` 和 `value`。 大多数情况下，您只 `value` 使用字段(例如 `'value':1`)。 该 `id` 字段允许您设置唯一标识符，以便跟踪度量的发送时间。 请参阅XDM文档以 [进行衡量](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/measure.schema.md)。
