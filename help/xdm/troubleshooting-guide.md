@@ -60,7 +60,7 @@ ht-degree: 0%
 
 在API中，通过创建标识描述符来建立标识。 标识描述符表示模式的特定属性是唯一标识符。
 
-标识描述符由对/descriptors端点的POST请求创建。 如果成功，您将收到一个HTTP状态201（已创建）和一个包含新描述符详细信息的响应对象。
+标识描述符由POST请求创建到/descriptors端点。 如果成功，您将收到一个HTTP状态201（已创建）和一个包含新描述符详细信息的响应对象。
 
 有关在API中创建标识描述符的更多详细信息，请参阅开发人 [员指南](api/descriptors.md) “描述符 [!DNL Schema Registry] 文档”一节。
 
@@ -80,7 +80,7 @@ ht-degree: 0%
 
 #### 启用现有模式 [!DNL Profile] 以使用API
 
-发出PATCH请求以更新模式并将属 `meta:immutableTags` 性添加为包含值“合并”的数组。 如果更新成功，则响应将显示更新的模式，该合并现在包含该更新标记。
+发出PATCH请求以更新模式，并将属 `meta:immutableTags` 性添加为包含值“合并”的数组。 如果更新成功，则响应将显示更新的模式，该合并现在包含该更新标记。
 
 有关使用API启用模式以在中使用的详细信 [!DNL Real-time Customer Profile]息，请参 [阅开发人](./api/unions.md) 员指南的 [!DNL Schema Registry] 合并文档。
 
@@ -205,7 +205,7 @@ ht-degree: 0%
 
 ### 接受标题错误
 
-API中的大多数GET [!DNL Schema Registry] 请求都需要一个Accept头，以便系统确定如何格式化响应。 以下是与“接受”标题关联的常见错误列表。 有关不同API请求的一列表兼容的“接受”标头，请参阅“模式注册表开发人 [员指南”中的相应部分](api/getting-started.md)。
+API中的大多数GET [!DNL Schema Registry] 请求都需要一个“接受”头，以便系统确定如何格式化响应。 以下是与“接受”标题关联的常见错误列表。 有关不同API请求的一列表兼容的“接受”标头，请参阅“模式注册表开发人 [员指南”中的相应部分](api/getting-started.md)。
 
 #### 需要接受头参数
 
