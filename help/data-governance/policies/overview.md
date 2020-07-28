@@ -37,7 +37,7 @@ ht-degree: 0%
 >
 >如果您使用的 [!DNL Real-time Customer Data Platform]是，您可以在目标上设置营销使用案例，以自动执行策略。 有关详细信 [息，请参见实时CDP中的文档](../../rtcdp/privacy/data-governance-overview.md) “数据治理”。
 
-请参阅本文档的附录，了解一列表可 [用的Adobe定义的营销操作](#core-actions)。 您还可以使用DULE API或用户界面定义自 [!DNL Policy Service] 定义营销 [!DNL Experience Platform ]操作。 下一节提供了有关使用营销操作和策略的更多信息。
+请参阅本文档的附录，了解一列表可 [用的Adobe定义营销操作](#core-actions)。 您还可以使用DULE API或用户界面定义自 [!DNL Policy Service] 定义营销 [!DNL Experience Platform ]操作。 下一节提供了有关使用营销操作和策略的更多信息。
 
 <!-- (Add after AAM DEC mapping doc is published)
 ### Inheritance from Adobe Audience Manager Data Export Controls
@@ -53,7 +53,7 @@ For a reference on how specific Data Export Controls map to marketing actions in
 
 >[!IMPORTANT]
 >
->默认情况下，所有数据使用策略（包括Adobe提供的核心策略）都处于禁用状态。 要考虑实施单个策略，必须通过API或UI手动启用该策略。
+>默认情况下，所有数据使用策略(包括Adobe提供的核心策略)都处于禁用状态。 要考虑实施单个策略，必须通过API或UI手动启用该策略。
 
 有关在API中使用营销操作和数据使用策略的分步说明，请参阅有关创建和评估数 [据使用策略的教程](create.md)。 有关API提供的关键操作的详细信 [!DNL Policy Service] 息，请参阅“策略 [服务开发人员指南”](../api/getting-started.md)。
 
@@ -67,9 +67,9 @@ For a reference on how specific Data Export Controls map to marketing actions in
 
 以下部分提供了有关数据使用策略的其他信息。
 
-### Adobe定义的营销行动 {#core-actions}
+### Adobe定义的营销活动 {#core-actions}
 
-下表描述了Adobe开箱即用的核心营销行动。
+下表描述了按Adobe提供的现成核心营销活动。
 
 >[!NOTE]
 >
