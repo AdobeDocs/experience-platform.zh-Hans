@@ -18,7 +18,7 @@ ht-degree: 0%
 
 假装您拥有在线零售网站。 当您的客户在您的零售网站上购物时，您希望向他们提供个性化的产品建议，以展示您的业务优惠的各种其他产品。 在您网站的存在期间，您不断收集客户数据，并希望以某种方式利用这些数据生成个性化的产品推荐。
 
-[!DNL Adobe Experience Platform] [!DNL Data Science Workspace] 提供了使用预建产品推荐菜谱实现您 [目标的方法](../pre-built-recipes/product-recommendations.md)。 请按照本教程，了解如何访问和了解您的零售数据、创建和优化机器学习模型以及在中生成洞察 [!DNL Data Science Workspace]。
+[!DNL Adobe Experience Platform] [!DNL Data Science Workspace] 借助预建的产品Recommendations菜谱，提供实现您 [目标的方法](../pre-built-recipes/product-recommendations.md)。 请按照本教程，了解如何访问和了解您的零售数据、创建和优化机器学习模型以及在中生成洞察 [!DNL Data Science Workspace]。
 
 本教程反映了机器学习 [!DNL Data Science Workspace]模型的工作流程，并涵盖创建机器学习模型的以下步骤：
 
@@ -34,18 +34,18 @@ ht-degree: 0%
 * 访问 [!DNL Adobe Experience Platform]。 如果您无权访问中的IMS组织，请在继 [!DNL Experience Platform]续操作之前与系统管理员联系。
 
 * Enablement Assets。 请联系您的客户代表，为您提供以下项目。
-   * 推荐方法
+   * Recommendations菜谱
    * Recommendations输入数据集
-   * 建议输入模式
+   * Recommendations输入模式
    * Recommendations输出数据集
-   * 推荐输出模式
+   * Recommendations产出模式
    * 黄金数据集postValues
    * 黄金数据集模式
 
-* 从Adobe公共存 [!DNL Jupyter Notebook] 储库下 <a href="https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs" target="_blank">载三个必 [!DNL Git] 需文件</a>，这些文件将用于演示 [!DNL JupyterLab] 中的工作流 [!DNL Data Science Workspace]程。
+* 从Adobe公 [!DNL Jupyter Notebook] 共存储 <a href="https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs" target="_blank">库下载三个必 [!DNL Git] 需文件</a>，这些文件将用于演示 [!DNL JupyterLab] 中的工作流 [!DNL Data Science Workspace]。
 
 * 对本教程中使用的下列主要概念的有效理解：
-   * [!DNL Experience Data Model](../../xdm/home.md): 由Adobe领导的标准化工作，为客户体验管理定 [!DNL Profile] 义标准模式，如和ExperienceEvent。
+   * [!DNL Experience Data Model](../../xdm/home.md): 由Adobe领导的标准化工作，为客户体验管理定 [!DNL Profile] 义标准模式，如ExperienceEvent。
    * 数据集： 实际数据的存储和管理结构。 XDM模式的物理实例 [化实例](../../xdm/schema/field-dictionary.md)。
    * 批： 数据集由批量组成。 批是在一段时间内收集的一组数据，并作为单个单元一起处理。
    * [!DNL JupyterLab]: [!DNL JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) 是一个面向Project的开放源码、基于web的界 [!DNL Jupyter] 面，并紧密集成到 [!DNL Experience Platform]中
@@ -68,25 +68,25 @@ ht-degree: 0%
 | 数据集名称 | 架构 | 描述 |
 | ----- | ----- | ----- |
 | 黄金数据集postValues | 黄金数据集模式 | [!DNL Analytics] 您网站的源数据 |
-| Recommendations输入数据集 | 建议输入模式 | 使用 [!DNL Analytics] 特征管道将数据转换为培训数据集。 此数据用于培训产品推荐机器学习模型。 `itemid` 与该 `userid` 客户所购买的产品相对应。 |
-| Recommendations输出数据集 | 推荐输出模式 | 存储了评分结果的数据集，它将包含每个客户推荐产品的列表。 |
+| Recommendations输入数据集 | Recommendations输入模式 | 使用 [!DNL Analytics] 特征管道将数据转换为培训数据集。 此数据用于培训产品Recommendations机器学习模型。 `itemid` 与该 `userid` 客户所购买的产品相对应。 |
+| Recommendations输出数据集 | Recommendations产出模式 | 存储了评分结果的数据集，它将包含每个客户推荐产品的列表。 |
 
 ## 创作模型 {#author-your-model}
 
-生命周期的第二个组 [!DNL Data Science Workspace] 件涉及创作菜谱和模型。 产品推荐菜谱旨在通过利用过去的购买数据和机器学习大规模生成产品推荐。
+生命周期的第二个组 [!DNL Data Science Workspace] 件涉及创作菜谱和模型。 产品Recommendations处方旨在通过利用过去的购买数据和机器学习大规模生成产品推荐。
 
 菜谱是模型的基础，因为它们包含机器学习算法和用于解决特定问题的逻辑。 更重要的是，菜谱使您能够在整个组织内实现机器学习的大众化，使其他用户能够访问针对不同用例的模型，而无需编写任何代码。
 
-### 浏览产品推荐菜谱
+### 浏览产品Recommendations秘方
 
 1. 在中 [!DNL Adobe Experience Platform]，从左 **[!UICONTROL 侧导航列导航]** 到“模型”，然后单击顶 **[!UICONTROL 部的菜谱]** ，以视图组织的一列表可用菜谱。
    ![](../images/models-recipes/model-walkthrough/browse_recipes.png)
-2. 单击提供的推荐菜 **[!UICONTROL 谱名称]** ，找到并打开它。
+2. 通过单击提供的 **[!UICONTROL Recommendations菜谱]** ，找到并打开它。
    ![](../images/models-recipes/model-walkthrough/recommendations_recipe_110.png)
-3. 在右侧边栏中，单击“ **[!UICONTROL 推荐输入模式]** ”以视图为菜谱提供动力的模式。 模式字 **[!UICONTROL 段itemId]****[!UICONTROL 和userId与客户在特定时间(timestamp]** ID)购买的产品(**[!UICONTROL interactionType]******)相对应。 按照相同的步骤查看“Recommendations Output（建议输出）” **[!UICONTROL 模式的字段]**。
+3. 在右侧边栏中，单击“ **[!UICONTROL Recommendations输入模式]** ”以视图为菜谱加电的模式。 模式字 **[!UICONTROL 段itemId]****[!UICONTROL 和userId与客户在特定时间(timestamp]** ID)购买的产品(**[!UICONTROL interactionType]******)相对应。 按照相同的步骤查看“Recommendations输出” **[!UICONTROL 模式的字段]**。
    ![](../images/models-recipes/model-walkthrough/preview_schemas.png)
 
-您现在已审核了产品推荐方法所需的输入和输出模式。 您现在可以继续阅读下一节，了解如何创建、培训和评估产品推荐模型。
+您现在已查看了“产品Recommendations处方”要求的输入和输出模式。 您现在可以继续阅读下一节，了解如何创建、培训和评估产品Recommendations模型。
 
 ## 培训和评估您的模型 {#train-and-evaluate-your-model}
 
@@ -98,11 +98,11 @@ ht-degree: 0%
 
 1. 在中 [!DNL Adobe Experience Platform]，从左 **[!UICONTROL 侧导航列导航]** 到“模型”，然后单击页面顶 **[!UICONTROL 部的菜谱]** ，以显示组织中所有可用菜谱的列表。
    ![](../images/models-recipes/model-walkthrough/browse_recipes.png)
-2. 通过单击处方名称 **[!UICONTROL 并输入]** “处方”的概述页面，查找并打开提供的推荐处方。 单 **[!UICONTROL 击中心]** （如果没有现有模型）或从“处方概览”页的右上方创建模型。
+2. 通过单击菜谱的 **[!UICONTROL 名称]** ，输入菜谱的概述页面，找到并打开提供的Recommendations菜谱。 单 **[!UICONTROL 击中心]** （如果没有现有模型）或从“处方概览”页的右上方创建模型。
    ![](../images/models-recipes/model-walkthrough/recommendations_recipe_110.png)
-3. 将显示培训的可用输入数据集的列表，选择“ **[!UICONTROL Recommendations Input Dataset]** ”，然后单 **[!UICONTROL 击“Next]**”。
+3. 将显示培训的可用输入数据集列表，选择“ **[!UICONTROL Recommendations输入数据集]** ”并单 **[!UICONTROL 击“下一步]**”。
    ![](../images/models-recipes/model-walkthrough/select_dataset.png)
-4. 为模型提供名称，例如“产品推荐模型”。 此时会列出模型的可用配置，其中包含模型的默认培训和评分行为的设置。 由于这些配置特定于您的组织，因此无需进行任何更改。 查看配置，然后单击 **[!UICONTROL 完成]**。
+4. 提供模型的名称，例如“产品Recommendations模型”。 此时会列出模型的可用配置，其中包含模型的默认培训和评分行为的设置。 由于这些配置特定于您的组织，因此无需进行任何更改。 查看配置，然后单击 **[!UICONTROL 完成]**。
    ![](../images/models-recipes/model-walkthrough/configure_model.png)
 5. 模型现已创建，新生成的培训运行中 *会显* 示模型的“概述”页面。 默认情况下，创建模型时会生成培训运行。
    ![](../images/models-recipes/model-walkthrough/model_post_creation.png)
@@ -140,10 +140,10 @@ ht-degree: 0%
 ### 评分和生成洞察
 
 1. 在产品推荐模型 *概述* 页面上，单击性能最佳的培训运行的名称，其中具有最高的召回率和精确度值。
-2. 在培训运行详细信息页面的右上角，单击“得分 **[!UICONTROL ”]**。
-3. 选择Recommendations **[!UICONTROL 输入数据集]** ，作为评分输入数据集，该数据集与您创建Model并执行其培训运行时使用的数据集相同。 然后，单击“下 **[!UICONTROL 一步]**”。
+2. 在培训运行详细信息页面的右上方，单击“得分 **[!UICONTROL ”]**。
+3. 选择 **[!UICONTROL Recommendations输入数据集]** ，作为评分输入数据集，该数据集与您创建模型并执行其培训运行时使用的数据集相同。 然后，单击“下 **[!UICONTROL 一步]**”。
    ![](../images/models-recipes/model-walkthrough/scoring_input.png)
-4. 选择Recommendations **[!UICONTROL 输出数据集]** ，作为评分输出数据集。 评分结果将作为批处理存储在此数据集中。
+4. 选择 **[!UICONTROL Recommendations输出数据集]** ，作为评分输出数据集。 评分结果将作为批处理存储在此数据集中。
    ![](../images/models-recipes/model-walkthrough/scoring_output.png)
 5. 查看评分配置。 这些参数包含先前选择的输入和输出数据集以及相应的模式。 单击 **[!UICONTROL 完成]** ，开始评分运行。 运行可能需要几分钟才能完成。
    ![](../images/models-recipes/model-walkthrough/scoring_configure.png)
