@@ -20,7 +20,7 @@ ht-degree: 5%
 
 该函 `exists` 数确定在数组中的项的存在，只要它满足所提供的条件。
 
-**格式**
+**Format**
 
 ```sql
 exists {VARIABLE} from {EXPRESSION} where {CONDITION}
@@ -35,7 +35,7 @@ exists {VARIABLE} from {EXPRESSION} : {CONDITION}
 
 **示例**
 
-以下PQL查询可获取所有价格高于$50或SKU为“PS”的事件。
+以下PQL查询可获取价格高于50美元或SKU为“PS”的所有事件。
 
 ```sql
 exists E from xEvent where (E.commerce.item.price > 50), I from E.productListItems where I.SKU = "PS"
@@ -45,7 +45,7 @@ exists E from xEvent where (E.commerce.item.price > 50), I from E.productListIte
 
 该函 `forall` 数确定数组中满足所有给定条件的所有项。
 
-**格式**
+**Format**
 
 ```sql
 forall {VARIABLE} from {EXPRESSION} where {CONDITION}
