@@ -1,8 +1,8 @@
 ---
-title: Salesforce Marketing Cloud
-seo-title: Salesforce Marketing Cloud
-description: Salesforce Marketing Cloud是一款以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
-seo-description: Salesforce Marketing Cloud是一款以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
+title: SalesforceMarketing Cloud
+seo-title: SalesforceMarketing Cloud
+description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
+seo-description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 translation-type: tm+mt
 source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
 workflow-type: tm+mt
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 [!DNL Salesforce Marketing Cloud](https://www.salesforce.com/products/marketing-cloud/email-marketing/) 是一款以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 
-要将区段数据发 [!DNL Salesforce Marketing Cloud]送到，您必 [须先在Adobe Real](#connect-destination) -time CDP中连接目标，然后 [将存储位置的数据导入](#import-data-into-salesforce) 设置到中 [!DNL Salesforce Marketing Cloud]。
+要向其发送细 [!DNL Salesforce Marketing Cloud]分数据，您必 [须先在Adobe实时CDP中连接](#connect-destination) 目标 [，然后将存储位置中的](#import-data-into-salesforce) 导入设置为 [!DNL Salesforce Marketing Cloud]。
 
 ## 连接目标 {#connect-destination}
 
@@ -49,4 +49,4 @@ ht-degree: 0%
 
 ## 将数据导入设置为 [!DNL Salesforce Marketing Cloud] {#import-data-into-salesforce}
 
-在将实时CDP连接到Amazon S3或SFTP存储后，您必须设置从存储位置导入到的数据 [!DNL Salesforce Marketing Cloud]。 要了解如何完成此操作，请参 [阅中的将订阅者从文件导入](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5) Marketing Cloud [!DNL Salesforce Help Center]。
+在将实时CDP连接到您的AmazonS3或SFTP存储后，您必须设置从存储位置导入到的数据 [!DNL Salesforce Marketing Cloud]。 要了解如何完成此操作，请参 [阅中的将订阅者从文件导入Marketing Cloud](https://help.salesforce.com/articleView?id=mc_es_import_subscribers_from_file.htm&amp;type=5) (位于 [!DNL Salesforce Help Center])。
