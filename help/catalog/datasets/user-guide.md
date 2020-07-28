@@ -98,7 +98,7 @@ ht-degree: 0%
 
 ## 为实时客户用户档案启用数据集
 
-每个数据集都能用摄取的数据丰富客户用户档案。 为此，数据集附带的模式必须兼容才能在中使用 [!DNL Real-time Customer Profile]。 兼容模式满足以下要求：
+每个数据集都能用其摄取的数据丰富客户用户档案。 为此，数据集附带的模式必须兼容才能在中使用 [!DNL Real-time Customer Profile]。 兼容模式满足以下要求：
 
 * 该模式至少具有一个指定为标识属性的属性。
 * 模式具有定义为主标识的标识属性。
@@ -121,7 +121,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->无法删除由Adobe应用程序和服务(如AdobeAnalytics、Adobe Audience Manager或)创 [!DNL Decisioning Service]建和利用的数据集。
+>无法删除由Adobe应用程序和服务(如Adobe Analytics、Adobe Audience Manager或)创建和 [!DNL Decisioning Service]利用的数据集。
 
 ![](../images/datasets/user-guide/delete_dataset.png)
 
