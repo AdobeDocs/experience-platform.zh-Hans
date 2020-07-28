@@ -1,8 +1,8 @@
 ---
 title: 检索库信息
-seo-title: 使用Adobe Experience Platform Web SDK检索库信息
+seo-title: 使用Adobe Experience PlatformWeb SDK检索库信息
 description: 了解如何检索有关加载到网站上的库的信息
-seo-description: 了解如何通过Adobe Experience Cloud SDK自动收集加载到网站上的库的相关信息
+seo-description: 了解如何通过Adobe Experience CloudSDK自动收集加载到网站上的图书馆信息
 translation-type: tm+mt
 source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
 workflow-type: tm+mt
