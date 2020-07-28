@@ -118,13 +118,13 @@ ht-degree: 1%
 
 ## 使用教程视频运 [!DNL Query Service] 行查询
 
-以下视频演示如何在查询接口和PSQL客户端中运行Adobe Experience Platform。 此外，还演示了在XDM对象中使用单个属性、使用Adobe定义的函数以及使用CREATE TABLE AS SELECT(CTAS)。
+以下视频演示如何在查询接口和PSQL客户端中运行Adobe Experience Platform。 此外，还演示了在XDM对象中使用单个属性、使用Adobe定义函数以及使用CREATE TABLE AS SELECT(CTAS)。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
 ## 后续步骤
 
-现在，您已经了解了应用程序中的 [!DNL Query Editor] 哪些功能以及如何导航，您可以直接在中开始创作自己的查询 [!DNL Platform]。 有关针对中的数据集运行SQL查询的 [!DNL Data Lake]详细信息，请参阅运行查询 [的指南][query-service-running-queries]。 有关使用Adobe查询和Adobe Target数据的示例SQLAnalytics，请参阅示 [例查询参考][query-service-sample-queries]。
+现在，您已经了解了应用程序中的 [!DNL Query Editor] 哪些功能以及如何导航，您可以直接在中开始创作自己的查询 [!DNL Platform]。 有关针对中的数据集运行SQL查询的 [!DNL Data Lake]详细信息，请参阅运行查询 [的指南][query-service-running-queries]。 有关使用Adobe Analytics和Adobe Target数据的示例SQL查询，请参阅示 [例查询参考][query-service-sample-queries]。
 
 [query-service-overview]: ../home.md
 [query-service-ui]: overview.md
