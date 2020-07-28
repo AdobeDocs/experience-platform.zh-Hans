@@ -20,7 +20,7 @@ ht-degree: 4%
 
 该函 `currentMonth` 数将当月返回为整数。
 
-**格式**
+**Format**
 
 ```sql
 currentMonth()
@@ -38,7 +38,7 @@ person.birthMonth = currentMonth()
 
 该函 `getMonth` 数根据给定的时间戳以整数形式返回月份。
 
-**格式**
+**Format**
 
 ```sql
 {TIMESTAMP}.getMonth()
@@ -56,7 +56,7 @@ person.birthdate.getMonth() = 6
 
 该函 `currentYear` 数以整数形式返回当前年份。
 
-**格式**
+**Format**
 
 ```sql
 currentYear()
@@ -74,7 +74,7 @@ product.saleYear = currentYear()
 
 该函 `getYear` 数根据给定的时间戳以整数形式返回年份。
 
-**格式**
+**Format**
 
 ```sql
 {TIMESTAMP}.getYear()
@@ -92,7 +92,7 @@ person.birthday.getYear() in [1991, 1992, 1993, 1994, 1995]
 
 函 `currentDayOfMonth` 数以整数形式返回当月的当天。
 
-**格式**
+**Format**
 
 ```sql
 currentDayOfMonth()
@@ -110,7 +110,7 @@ person.birthDay = currentDayOfMonth()
 
 该函 `getDayOfMonth` 数根据给定的时间戳以整数形式返回该日。
 
-**格式**
+**Format**
 
 ```sql
 {TIMESTAMP}.getDayOfMonth()
@@ -128,7 +128,7 @@ product.sale.getDayOfMonth() <= 15
 
 该 `occurs` 函数将给定时间戳函数与固定时间段进行比较。
 
-**格式**
+**Format**
 
 函 `occurs` 数可以使用以下任一格式编写：
 
