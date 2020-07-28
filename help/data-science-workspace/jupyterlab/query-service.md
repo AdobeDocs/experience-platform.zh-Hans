@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Jupyter笔记本中的查询服务
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
 workflow-type: tm+mt
 source-wordcount: '764'
 ht-degree: 1%
@@ -38,13 +38,13 @@ ht-degree: 1%
 
    ![](../images/jupyterlab/query/jupyterlab_launcher.png)
 
-   > [!NOTE] 如果未自动显示新的启动器选项卡，请通过单击文件打开新的启动器选项卡， **[!UICONTROL 然后选]** 择新 **[!UICONTROL 建启动器]**。
+   >[!NOTE] 如果未自动显示新的启动器选项卡，请通过单击文件打开新的启动器选项卡， **[!UICONTROL 然后选]** 择新 **[!UICONTROL 建启动器]**。
 
 2. 在“启动器”选项卡中， **[!UICONTROL 单击]** Python 3环境中的“空白”图标以打开空笔记本。
 
    ![](../images/jupyterlab/query/blank_notebook.png)
 
-   > [!NOTE] Python 3目前是笔记本电脑中唯一受支持的查询服务环境。
+   >[!NOTE] Python 3目前是笔记本电脑中唯一受支持的查询服务环境。
 
 3. 在左侧选择边栏上，单击“数 **[!UICONTROL 据]** ”图标，多次单 **[!UICONTROL 击“数据集]** ”目录以列表所有数据集。
 
@@ -85,6 +85,7 @@ ht-degree: 1%
    - `target_year` : 目标数据的特定年份。
    - `target_month` : 目标的特定月份。
    - `target_day` : 目标数据的特定日期。
+
    >[!NOTE] 您可以随时更改这些值。 执行此操作时，请确保为要应用的更改执行变量单元格。
 
 ## 查询数据 {#query-your-data}
