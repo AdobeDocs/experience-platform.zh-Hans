@@ -244,7 +244,7 @@ curl -X POST \
 
 ## 创建目标数据集
 
-通过对Catalog Service API执行POST请求，提供有效负 [荷内目标模式的ID](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，可以创建目标数据集。
+通过向Catalog Service API执行目标请求 [，提供有效负荷中POST模式的ID](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，可以创建目标数据集。
 
 **API格式**
 
@@ -345,7 +345,7 @@ curl -X POST \
 
 ## 创建映射 {#mapping}
 
-为了将源数据引入目标数据集，必须首先将其映射到目标数据集所附加的目标模式。 这是通过对API执行POST请求而实现的，该POST请 [!DNL Conversion Service] 求具有在请求有效负荷中定义的数据映射。
+为了将源数据引入目标数据集，必须首先将其映射到目标数据集所附加的目标模式。 这是通过对API执行POST请求而实现的，该请 [!DNL Conversion Service] 求具有在请求有效负荷中定义的数据映射。
 
 **API格式**
 
@@ -418,7 +418,7 @@ curl -X POST \
 
 ## 检索数据流规范 {#specs}
 
-数据流负责从源收集数据并将其引入平台。 要创建数据流，必须首先通过对Flow Service API执行GET请求来获取数据流规范。 数据流规范负责从第三方客户成功系统收集数据。
+数据流负责从源收集数据并将其引入平台。 要创建数据流，必须首先对Flow Service API执行GET请求，以获得数据流规范。 数据流规范负责从第三方客户成功系统收集数据。
 
 **API格式**
 
