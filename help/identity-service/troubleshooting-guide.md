@@ -79,7 +79,7 @@ ZIP代码和IP地址等字段不应标记为个人身份，因为这些值可以
 | 显示名称 | ID | 代码 | 描述 |
 | ------------ | --- | --- | ----------- |
 | CORE | 0 | CORE | 旧名称： “Adobe AudienceManager” |
-| ECID | 4 | ECID | 别名： “Adobe Marketing CloudID”、“Adobe Experience Cloud ID”、“Adobe Experience PlatformID” |
+| ECID | 4 | ECID | 别名： &quot;Adobe Marketing CloudID&quot;、&quot;Adobe Experience CloudID&quot;、&quot;Adobe Experience PlatformID&quot; |
 | 电子邮件 | 6 | 电子邮件 |  |
 | 电子邮件（SHA256，小写） | 11 | 电子邮件 | 预散列电子邮件的标准命名空间。 此命名空间中提供的值在使用SHA-256进行哈希处理前转换为小写。 |
 | Phone | 7 | Phone |  |
@@ -91,11 +91,11 @@ ZIP代码和IP地址等字段不应标记为个人身份，因为这些值可以
 
 ## 在哪里可以找到可用于我的组织的身份命名空间的列表?
 
-使用 [Identity Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)，您可以通过向端点发出GET请求，列表组织的所有可用标识 `/idnamespace/identities` 命名空间。 有关详细信息， [请参阅](./api/list-namespaces.md) Identity Service API概述中列出可用命名空间的部分。
+使用 [Identity Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)，您可以通过向端点发出GET请求来列表组织的所有可用标识 `/idnamespace/identities` 命名空间。 有关详细信息， [请参阅](./api/list-namespaces.md) Identity Service API概述中列出可用命名空间的部分。
 
 ## 如何为我的组织创建自定义命名空间?
 
-使用 [Identity Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)，您可以通过向端点发出POST请求，为组织创建自定义标识 `/idnamespace/identities` 命名空间。 有关详细信息， [请参阅Identity Service](./api/create-custom-namespace.md) API概述中有关创建自定义命名空间的部分。
+使用 [Identity Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)，您可以通过向端点发出POST请求为组织创建自定义标识 `/idnamespace/identities` 命名空间。 有关详细信息， [请参阅Identity Service](./api/create-custom-namespace.md) API概述中有关创建自定义命名空间的部分。
 
 ## 什么是组合身份和XID?
 
