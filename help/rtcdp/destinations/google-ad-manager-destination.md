@@ -4,7 +4,7 @@ seo-title: Google Ad Manager目标
 description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的广告服务平台，它使出版商能够通过视频和移动应用程序管理其网站上广告的显示。 '
 seo-description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的广告服务平台，它使出版商能够通过视频和移动应用程序管理其网站上广告的显示。 '
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
 workflow-type: tm+mt
 source-wordcount: '610'
 ht-degree: 0%
@@ -62,7 +62,7 @@ ht-degree: 0%
 * **[!UICONTROL 帐户ID]**: 用填写您的帐户ID [!DNL Google]。 这可以是您的网络ID或受众链接ID。 通常，这是一个8位数字的ID。
 * **[!UICONTROL 营销用例]**: 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关Adobe定义的个别营销用例的信息，请参阅数 [据使用策略概述](/help/data-governance/policies/overview.md#core-actions)。
 
-> [!NOTE]
+>[!NOTE]
 >
 > 设置目标时， [!DNL Google Ad Manager] 请与您或Adobe [!DNL Google Account Manager] 代表联系，了解您拥有的帐户类型。
 
