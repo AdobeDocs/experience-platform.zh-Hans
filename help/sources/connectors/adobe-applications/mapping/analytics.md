@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Analytics地图场
+title: Analytics映射字段
 topic: overview
 translation-type: tm+mt
 source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
@@ -12,23 +12,23 @@ ht-degree: 12%
 ---
 
 
-# Analytics地图场
+# Analytics映射字段
 
-Adobe Experience Platform允许您通过Analytics数据连接器(ADC)获取AdobeAnalytics数据。 通过ADC摄取的一些数据可以直接从Analytics域映射到体验数据模型(XDM)域，而其他数据需要转换和特定函数才能成功映射。
+Adobe Experience Platform允许您通过Analytics数据连接器(ADC)获取Adobe Analytics数据。 通过ADC摄取的一些数据可以直接从Analytics字段映射到体验数据模型(XDM)字段，而其他数据需要转换和特定函数才能成功映射。
 
 ![](../images/analytics-data-experience-platform.png)
 
 ## 直接映射字段
 
-选择的字段将直接从Adobe Analytics映射到体验数据模型(XDM)。
+选择字段会直接从Adobe Analytics映射到体验数据模型(XDM)。
 
-下表包括显示Analytics字段(*Analytics字段*)名称、相应XDM字段(XDM字段&#x200B;*)及其类型(* XDM类型)的列，以及字段的说明(说&#x200B;****&#x200B;明说明)。
+下表包含显示Analytics字段(Analytics字段)的名称、相应的XDM字段(*字段*)及其类型(XDM类型&#x200B;*)的列，以及该字段的说明(说*****&#x200B;明CompricationSyde)。
 
 >[!NOTE]
 >
 >请向左／向右滚动以视图表的完整内容。
 
-| Analytics田 | XDM字段 | XDM类型 | 描述 |
+| Analytics字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ---------- |
 | m_evar1 - m_evar250 | _experience.analytics.customDimensions.eVars.eVar1 - _experience.analytics.customDimensions.eVars.eVar250 | 字符串 | 自定义变量，范围为1-250。 每个组织都将以不同方式使用这些自定义eVar。 |
 | m_prop1 - m_prop75 | _experience.analytics.customDimensions.prop1 - _experience.analytics.customDimensions.prop75 | 字符串 | 自定义流量变量，范围从1到75。 |
@@ -127,7 +127,7 @@ Adobe Experience Platform允许您通过Analytics数据连接器(ADC)获取Adobe
 
 这些字段有单个源，但映射到 **多个** XDM位置。
 
-| Analytics田 | XDM字段 | XDM类型 | 描述 |
+| Analytics字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ---------- |
 | s_resolution | device.screenWidth、device.screenHeight | 整数 | 表示显示器分辨率的数字ID。 |
 | mobileosversion | 环境.operatingSystem、环境.operatingSystemVersion | 字符串 | 移动操作系统版本。 |
@@ -135,15 +135,15 @@ Adobe Experience Platform允许您通过Analytics数据连接器(ADC)获取Adobe
 
 ## 生成的映射字段
 
-需要转换来自ADC的特定字段，需要Adobe Analytics的直接副本之外的逻辑才能在XDM中生成。
+需要转换来自ADC的选择字段，需要逻辑超越来自Adobe Analytics的直接拷贝才能在XDM中生成。
 
-下表包括显示Analytics字段(*Analytics字段*)名称、相应XDM字段(XDM字段&#x200B;*)及其类型(* XDM类型)的列，以及字段的说明(说&#x200B;****&#x200B;明说明)。
+下表包含显示Analytics字段(Analytics字段)的名称、相应的XDM字段(*字段*)及其类型(XDM类型&#x200B;*)的列，以及该字段的说明(说*****&#x200B;明CompricationSyde)。
 
 >[!NOTE]
 >
 >请向左／向右滚动以视图表的完整内容。
 
-| Analytics田 | XDM字段 | XDM类型 | 描述 |
+| Analytics字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ----------- |
 | m_prop1 - m_prop75 | _experience.analytics.customDimensions.listprops.prop1 - _experience.analytics.customDimensions.listprops.prop75 | 对象 | 自定义流量变量，范围从1到75 | {} |
 | m_hier1 - m_hier5 | _experience.analytics.customDimensions.hierarchies.hier1 - _experience.analytics.customDimensions.hier5 | 对象 | 由层次结构变量使用。 它包含 | 分隔值列表。 | {values(array), delimiter(string)} |
@@ -179,7 +179,7 @@ Adobe Experience Platform允许您通过Analytics数据连接器(ADC)获取Adobe
 | hit_time_gmt | receivedTimestamp | 字符串 | 点击的时间戳，以Unix时间为基础。 |
 | hitid_high + hitid_low | _id | 字符串 | 用于标识点击的唯一标识符。 |
 | hitid_low | _id | 字符串 | 与hitid_high结合使用以唯一标识点击。 |
-| ip | environment.ipV4 | 字符串 | IP地址，基于图像请求的HTTP头。 |
+| IP | environment.ipV4 | 字符串 | IP地址，基于图像请求的HTTP头。 |
 | j_jscript | environment.browserDetails.javaScriptEnabled | 布尔 | 使用的JavaScript版本。 |
 | mcvisid_high + mcvisid_low | identityMap | 对象 | Experience Cloud访客ID。 |
 | mcvisid_high + mcvisid_low | endUserID。_experience.mcid.id | 字符串 | Experience Cloud访客ID。 |
@@ -193,17 +193,17 @@ Adobe Experience Platform允许您通过Analytics数据连接器(ADC)获取Adobe
 
 ## 高级映射字段
 
-选择字段（称为“后置值”）需要更高级的转换，然后才能将它们从AdobeAnalytics字段成功映射到体验数据模型(XDM)。 执行这些高级转换需要使用Adobe Experience Platfrom查询服务和预建函数（称为Adobe定义的函数）进行会话化、归因和外部重复数据删除。
+选择字段（称为“后置值”）需要更高级的转换，然后才能将它们从Adobe Analytics字段成功映射到体验数据模型(XDM)。 执行这些高级转换需要使用Adobe Experience Platfrom查询服务和预建函数(称为Adobe定义函数)进行会话化、归因和外部重复数据删除。
 
-要了解有关使用查询服务执行此转换的更多信息，请 [访问Adobe定义的函数文档](../../../../query-service/sql/adobe-defined-functions.md) 。
+要了解有关使用查询服务执行此转换的更多信息，请访 [问Adobe定义的函数](../../../../query-service/sql/adobe-defined-functions.md) 文档。
 
-下表包括显示Analytics字段(*Analytics字段*)名称、相应XDM字段(XDM字段&#x200B;*)及其类型(* XDM类型)的列，以及字段的说明(说&#x200B;****&#x200B;明说明)。
+下表包含显示Analytics字段(Analytics字段)的名称、相应的XDM字段(*字段*)及其类型(XDM类型&#x200B;*)的列，以及该字段的说明(说*****&#x200B;明CompricationSyde)。
 
 >[!NOTE]
 >
 >请向左／向右滚动以视图表的完整内容。
 
-| Analytics田 | XDM字段 | XDM类型 | 描述 |
+| Analytics字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ---------- |
 | post_evar1 - post_evar250 | _experience.analytics.customDimensions.eVars.eVar1 - _experience.analytics.customDimensions.eVars.eVar250 | 字符串 | 自定义变量，范围为1-250。 每个组织都将以不同方式使用这些自定义eVar。 |
 | post_prop1 - post_prop75 | _experience.analytics.customDimensions.prop1 - _experience.analytics.customDimensions.prop75 | 字符串 | 自定义流量变量，范围从1到75。 |
