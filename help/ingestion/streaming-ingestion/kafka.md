@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Adobe Experience Platform流连接器基于 [!DNL Apache Kafka Connect]。 此库可用于将JSON事件从数 [!DNL Kafka] 据中心主题直接流 [!DNL Experience Platform] 到实时流。
 
-流连接器是接收器（单向）连接器，将数据从主题传 [!DNL Kafka] 送到上的注册端点 [!DNL Experience Platform]。 要使用此连接器，您必须下载库，将其添 [!DNL Kafka] 加到现有部 [!DNL Kafka] 署，并将主题配置到Adobe流HTTP URL。 不需要其 **他代** 码。 连接器支持以下功能：
+流连接器是接收器（单向）连接器，将数据从主题传 [!DNL Kafka] 送到上的注册端点 [!DNL Experience Platform]。 要使用此连接器，您必须下载库，将其添 [!DNL Kafka] 加到现有部署，并 [!DNL Kafka] 将主题配置到Adobe流HTTP URL。 不需要其 **他代** 码。 连接器支持以下功能：
 
 - 已验证的数据集合
 - 对消息进行批处理以减少网络调用并提高吞吐量
