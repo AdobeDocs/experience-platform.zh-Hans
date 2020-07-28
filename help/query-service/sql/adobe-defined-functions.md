@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Adobe定义的函数
+title: Adobe定义函数
 topic: functions
 translation-type: tm+mt
 source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
@@ -12,9 +12,9 @@ ht-degree: 3%
 ---
 
 
-# Adobe定义的函数
+# Adobe定义函数
 
-Adobe定义的功能(ADF)是预建的功能，可帮 [!DNL Query Service] 助对数据执行常见的业务相关 [!DNL ExperienceEvent] 任务。 这些功能包括会话化和归因功能，如AdobeAnalytics中的功能。 有关Adobe [Analytics和](https://docs.adobe.com/content/help/zh-Hans/analytics/landing/home.html) ADF在本页中定义的概念的更多信息，请参阅AdobeAnalytics文档。 本文档提供中提供的Adobe定义函数的信息 [!DNL Query Service]。
+Adobe定义的函数(ADF)是预建的函数，可 [!DNL Query Service] 帮助对数据执行常见的业务相关 [!DNL ExperienceEvent] 任务。 这些功能包括会话化和归因功能，如Adobe Analytics的功能。 请参阅 [Adobe Analytics文档](https://docs.adobe.com/content/help/zh-Hans/analytics/landing/home.html) ，进一步了解Adobe Analytics以及本页中定义的ADF背后的概念。 此文档提供中提供的Adobe定义函数的信息 [!DNL Query Service]。
 
 ## 窗口函数
 
@@ -38,7 +38,7 @@ Adobe定义的功能(ADF)是预建的功能，可帮 [!DNL Query Service] 助对
 
 当您处理来自网站 [!DNL ExperienceEvent] 、移动应用程序、交互语音应答系统或任何其他客户交互渠道的数据时，如果事件可以围绕相关的活动周期进行分组，则会有所帮助。 通常，您具有驱动活动的特定意图，如研究产品、支付账单、检查帐户余额、填写应用程序等。 此分组有助于关联事件，以发现有关客户体验的更多上下文。
 
-有关AdobeAnalytics中会话化的详细信息，请参阅有关上下 [文感知会话的文档](https://docs.adobe.com/content/help/en/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html)。
+有关Adobe Analytics会话的更多信息，请参阅上下文感 [知会话的相关文档](https://docs.adobe.com/content/help/en/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html)。
 
 ### 规范
 
@@ -94,7 +94,7 @@ LIMIT 10
 
 将客户行动与成功关联是了解影响客户体验的因素的重要部分。 以下ADF支持具有不同过期设置的“第一个”和“最后一个”属性。
 
-有关AdobeAnalytics中归因的更多信息，请参 [阅分析指南中](https://docs.adobe.com/content/help/en/analytics/analyze/analysis-workspace/panels/attribution.html) 的归 [!DNL Analytics] 因IQ概述。
+有关Adobe Analytics归因的更多信息，请参 [阅分析指](https://docs.adobe.com/content/help/en/analytics/analyze/analysis-workspace/panels/attribution.html) 南中的 [!DNL Analytics] Attribution IQ概述。
 
 ### 首次触碰归因
 
