@@ -40,7 +40,7 @@ See the [Identity Service documentation](../../identity-service/home.md) for mor
 
 ## 启用模式以成为合并会员
 
-要将模式包含在合并合并视图中，必须将“合并”标记添加到模式 `meta:immutableTags` 的属性中。 这是通过PATCH请求完成的，该请求用于更新模式 `meta:immutableTags` 并添加值为“合并”的阵列。
+要将模式包含在合并合并视图中，必须将“合并”标记添加到模式 `meta:immutableTags` 的属性中。 这是通过PATCH请求来更新模式并添 `meta:immutableTags` 加值为“合并”的数组。
 
 >[!NOTE]
 >
@@ -164,7 +164,7 @@ curl -X GET \
 
 ## 查找特定合并
 
-您可以通过执行GET请求来视图特定合并，该请求 `$id` 包括和（取决于“接受”标题）合并的部分或全部详细信息。
+您可以通过执行包含和的视图请求来GET特 `$id` 定合并，具体取决于“接受”标题，包括合并的部分或全部详细信息。
 
 >[!NOTE]
 >
@@ -249,7 +249,7 @@ curl -X GET \
 
 ## 列表模式
 
-为了查看哪些模式是特定合并的一部分，您可以使用查询参数来过滤租户容器中的模式，从而执行GET请求。
+为了查看哪些模式是特定合并的一部分，您可以使用查询参数来执行GET请求，以在租户容器内过滤模式。
 
 使用 `property` 查询参数，您可以配置响应以仅返回包含字段和等于 `meta:immutableTags` 您正在访 `meta:class` 问其合并的类的模式。
 
