@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 使用Flow Service API创建Amazon Redshift连接器
+title: 使用Flow Service API创建AmazonRedshift连接器
 topic: overview
 translation-type: tm+mt
 source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
@@ -69,9 +69,9 @@ ht-degree: 1%
 
 **API格式**
 
-每个可用源都有其自己的唯一连接规范集，用于描述连接器属性，如身份验证要求。 您可以通过执行GET请求 [!DNL Redshift] 和使用查询参数查找连接规范。
+每个可用源都有其自己的唯一连接规范集，用于描述连接器属性，如身份验证要求。 您可以通过执行GET请求 [!DNL Redshift] 和使用查询参数来查找连接规范。
 
-发送不带查询参数的GET请求将返回所有可用源的连接规范。 您可以包含查询 `property=name=="amazon-redshift"` 以获取专门用于的信息 [!DNL Redshift]。
+发送不带GET参数的查询请求将返回所有可用源的连接规范。 您可以包含查询 `property=name=="amazon-redshift"` 以获取专门用于的信息 [!DNL Redshift]。
 
 ```http
 GET /connectionSpecs
