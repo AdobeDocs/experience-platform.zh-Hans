@@ -18,7 +18,7 @@ ht-degree: 4%
 
 ## 兼容性模式
 
-[!DNL Experience Data Model] (XDM)是一个公开记录的规范，由Adobe推动，旨在提高数字体验的互操作性、表现力和强大功能。 Adobe在GitHub上的一个开放源项目中维护 [源代码和正式的XDM定义](https://github.com/adobe/xdm/)。 这些定义以XDM标准表示法编写，使用JSON-LD（链接数据的JavaScript对象表示法）和JSON模式作为定义XDM模式的语法。
+[!DNL Experience Data Model] (XDM)是一个公开的文档规范，它由Adobe驱动，旨在提高数字体验的互操作性、表现力和强大功能。 Adobe在GitHub上的开放源项目中维护 [源代码和正式的XDM定义](https://github.com/adobe/xdm/)。 这些定义以XDM标准表示法编写，使用JSON-LD（链接数据的JavaScript对象表示法）和JSON模式作为定义XDM模式的语法。
 
 在公共存储库中查看正式的XDM定义时，您会发现标准XDM与您在Adobe Experience Platform中看到的不同。 您在中看到的 [!DNL Experience Platform] 内容称为兼容性模式，它提供了标准XDM与内部使用方式之间的简单映射 [!DNL Platform]。
 
