@@ -32,7 +32,7 @@ API为数 [!DNL Sensei Machine Learning] 据科学家提供了组织和管理机
 
 有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 * 内容类型： application/json
 
