@@ -30,7 +30,7 @@ Adobe Experience Platform的新增功能：
 
 ## [!DNL Intelligent Services] {#intelligent}
 
-[!DNL Intelligent Services] 使营销分析师和从业人员能够在客户体验使用案例中利用人工智能和机器学习的强大功能。 这使营销分析师能够使用业务级配置设置特定于公司需求的预测，而无需数据科学专业知识。 此外，营销从业人员可以在Adobe Experience Cloud、Adobe Experience Platform和第三方应用程序中激活预测。
+[!DNL Intelligent Services] 使营销分析师和从业人员能够在客户体验使用案例中利用人工智能和机器学习的强大功能。 这使营销分析师能够使用业务级配置设置特定于公司需求的预测，而无需数据科学专业知识。 此外，营销从业者可以在Adobe Experience Cloud、Adobe Experience Platform和第三方应用程序中激活预测。
 
 **主要功能**
 
@@ -47,7 +47,7 @@ Adobe Experience Platform的新增功能：
 
 ## [!DNL Experience Data Model] (XDM)系统 {#xdm}
 
-标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 [!DNL Experience Data Model] (XDM)由Adobe推动，旨在实现客户体验数据标准化并为客户体验管理定义模式。
+标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 [!DNL Experience Data Model] (XDM)由Adobe驱动，旨在实现客户体验数据标准化并定义客户体验管理模式。
 
 XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 它为在Adobe Experience Platform上与服务通信的任何应用程序提供了通用结构和定义。 通过遵守XDM标准，所有客户体验数据都可以整合到一个通用表现形式中，以更快、更集成的方式提供洞察。 您可以从客户行动中获得宝贵的洞察，通过细分定义客户受众，并将客户属性用于个性化目的。
 
@@ -83,14 +83,14 @@ DULE框架通过用户界面和DULE API简化了对数据进行分类和创建�
 
 **已知问题**
 
-* 无。
+* None.
 
 有关详细信息，请参阅数 [据管理概述](../../data-governance/home.md)。
 
 
 ## 目标 {#destinations}
 
-在 [Adobe实时客户数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
+在 [Adobe实时数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
 
 **新目标**
 
@@ -98,14 +98,14 @@ Adobe实时CDP现在支持向50多个扩展进行数据激活 [!DNL Experience C
 
 | 文档 | 描述 |
 |--- | ---|
-| [目标类型和类别](/help/rtcdp/destinations/destination-types.md) | 本文介绍Adobe实时CDP界面中连接和扩展之间的区别，并建议何时使用这些目标。 |
-| [Experience Platform Launch扩展](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | 本页介绍什 [!DNL Launch] 么是扩展，列表使用这些扩展的用例，以及指向Adobe实时CDP中每 [!DNL Launch] 个扩展的文档的链接。 |
+| [目标类型和类别](/help/rtcdp/destinations/destination-types.md) | 本文介绍了Adobe实时CDP接口中连接和扩展之间的区别，并建议何时使用这些目标。 |
+| [Experience Platform Launch扩展](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | 本页介绍什 [!DNL Launch] 么是扩展，列表使用这些扩展的用例，以及Adobe实时CDP中每个扩 [!DNL Launch] 展的文档链接。 |
 
 有关详细信息，请参阅目 [标概述](/help/rtcdp/destinations/destinations-overview.md)。
 
 ## [!DNL Privacy Service] {#privacy}
 
-新的法律和组织法规授予用户根据请求从数据存储中访问或删除其个人数据的权利。 Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 您 [!DNL Privacy Service]可以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，以便自动遵守法律和组织隐私法规。
+新的法律和组织法规授予用户根据请求从数据存储中访问或删除其个人数据的权利。 Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 您可 [!DNL Privacy Service]以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
 
 **新增功能**
 
