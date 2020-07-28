@@ -114,7 +114,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?dataSet=5
 
 ## 使用您的批ID检索下一个API调用 {#retrieve-the-next-api-call-with-your-batch-id}
 
-获得批ID后，您便可以向发出新的GET请求 `/batches`。 该请求返回用作下一个API请求的链接。
+获得批ID后，您便可以向发出新GET请求 `/batches`。 该请求返回用作下一个API请求的链接。
 
 **API格式**
 
@@ -241,7 +241,7 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
 
 ## 下载文件数据
 
-要下载文件数据，请对您在上一步检索 `"href"` 文件时复制的值发出 [GET请求](#retrieving-your-files)。
+要下载文件数据，请对上一步检索文 `"href"` 件时复制的值发出GET [请求](#retrieving-your-files)。
 
 >[!NOTE]
 >
