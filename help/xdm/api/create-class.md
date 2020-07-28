@@ -30,7 +30,7 @@ POST /tenant/classes
 
 **请求**
 
-创建类(POST)的请求必须包含一个 `allOf` 属性，该属 `$ref` 性包含两个值之一： `https://ns.adobe.com/xdm/data/record` 或 `https://ns.adobe.com/xdm/data/time-series`者 这些值表示类所基于的行为（分别是记录或时间序列）。 有关记录数据与时间序列数据之间差异的详细信息，请参阅模式合成基础知识中有关 [行为类型的部分](../schema/composition.md)。
+创建(POST)类的请求必须包含一个 `allOf` 属性，该属 `$ref` 性包含两个值之一： `https://ns.adobe.com/xdm/data/record` 或 `https://ns.adobe.com/xdm/data/time-series`者 这些值表示类所基于的行为（分别是记录或时间序列）。 有关记录数据与时间序列数据之间差异的详细信息，请参阅模式合成基础知识中有关 [行为类型的部分](../schema/composition.md)。
 
 在定义类时，您还可以在类定义中包含混音或自定义字段。 这将导致添加的混音和字段包含在实现该类的所有模式中。 以下示例请求定义一个名为“Property”的类，它捕获有关公司拥有和操作的不同属性的信息。 它包括 `propertyId` 每次使用类时要包含的字段。
 
