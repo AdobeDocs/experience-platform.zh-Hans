@@ -1,8 +1,8 @@
 ---
-title: 教程使用Adobe Launch实施网站标签
-seo-title: 使用Adobe Launch实施网站标签
-description: 使用Adobe Launch在Adobe Experience Platform中实施网站标记
-seo-description: 使用Adobe Launch在Adobe Experience Platform中实施网站标记
+title: 教程使用Adobe启动实施网站标签
+seo-title: 通过Adobe启动实施网站标记
+description: 使用Adobe启动在Adobe Experience Platform中实施网站标记
+seo-description: 使用Adobe启动在Adobe Experience Platform中实施网站标记
 translation-type: tm+mt
 source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
 workflow-type: tm+mt
@@ -12,9 +12,9 @@ ht-degree: 9%
 ---
 
 
-# 教程： 使用Adobe Launch实施网站标签
+# 教程： 通过Adobe启动实施网站标记
 
-本教程介绍如何实施网站标签，以便使用Adobe Launch将数据发送到Adobe Experience Platform。
+本教程介绍如何实施网站标签，以使用Adobe启动将数据发送到Adobe Experience Platform。
 
 ## 先决条件
 
