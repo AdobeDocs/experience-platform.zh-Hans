@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建PostgreSQL源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 在UI [!DNL PostgreSQL] 中创建源连接器
 
-> [!NOTE]
+>[!NOTE]
 > 连接 [!DNL PostgreSQL] 器为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
 Adobe Experience Platform中的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用用 [!DNL PostgreSQL] 户界面创建（下称“PSQL”）源连接器 [!DNL Platform] 的步骤。
@@ -38,7 +38,7 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 | ---------- | ----------- |
 | `connectionString` | 与您的PSQL帐户关联的连接字符串。 PSQL连接字符串模式为： `Server={SERVER};Database={DATABASE};Port={PORT};UID={USERNAME};Password={PASSWORD}`. |
 
-有关快速入门的详细信息，请参 [阅此PSQL文档](https://www.postgresql.org/docs/9.2/app-psql.html)。
+有关快速入门的详细信息，请参阅此 [PSQL文档](https://www.postgresql.org/docs/9.2/app-psql.html)。
 
 ## 连接您的PSQL帐户
 
