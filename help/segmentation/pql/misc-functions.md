@@ -14,13 +14,13 @@ ht-degree: 3%
 
 # 杂项函数
 
-以下函数是(PQL)的一 [!DNL Profile Query Language] 个杂项函数。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
+The following function is a miscellaneous function for [!DNL Profile Query Language] (PQL). 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
 
-## 让
+## Let
 
 该 `let` 函数允许将表达式存储为变量，以便以后在查询中使用。
 
-**格式**
+**Format**
 
 ```sql
 let {VARIABLE} = {EXPRESSION}
@@ -28,7 +28,7 @@ let {VARIABLE} = {EXPRESSION}
 
 **示例**
 
-以下PQL查询以美元表示，以下PQL客户获取交易的所有产品总额，其中总额大于100美元，小于1000美元。
+The following PQL query gets all sums of product totals with the transaction in USD where the sum is greater than $100 and less than $1000.
 
 ```sql
 let S = (sum X.commerce.order.priceTotal over X from xEvent where X.commerce.order.currencyCode = "USD") in (S > 100 and S < 1000)
