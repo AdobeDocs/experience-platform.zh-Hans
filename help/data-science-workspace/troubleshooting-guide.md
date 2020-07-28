@@ -78,7 +78,7 @@ ht-degree: 0%
 
 ## 如何安装自定义 [!DNL Python] 库？
 
-该内 [!DNL Python] 核随许多流行的机器学习库预装。 但是，可以通过在代码单元格中执行以下命令来安装其他自定义库：
+该 [!DNL Python] 内核预装了许多流行的机器学习库。 但是，可以通过在代码单元格中执行以下命令来安装其他自定义库：
 
 ```shell
 !pip install {LIBRARY_NAME}
