@@ -73,7 +73,7 @@ curl -X POST \
 
 ### 接受的权限和资源类型
 
-以下是权限和资源类型的列表，您可以在POST请求到端点的有效负荷中包含这些 `/acl/active-permissions` 权限。
+以下是权限和资源类型的列表，您可以在到端点的POST请求的有效负荷中包含这些 `/acl/active-permissions` 权限。
 
 **Permissions**
 
