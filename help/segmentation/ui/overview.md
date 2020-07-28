@@ -20,7 +20,7 @@ ht-degree: 0%
 
 使用细分定义需要了解与细分相关 [!DNL Experience Platform] 的各种服务。 在阅读本用户指南之前，请查阅以下服务的文档：
 
-- [!DNL Segmentation Service](../home.md): [!DNL Segmentation Service] 允许您将与个人(如 [!DNL Experience Platform] 客户、潜在客户、用户或组织)相关的存储数据划分为具有相似特征且响应类似营销策略的较小组。
+- [!DNL Segmentation Service](../home.md): [!DNL Segmentation Service] 允许您将与个人(如 [!DNL Experience Platform] 客户、潜在客户、用户或组织)相关的数据分为具有相似特征且响应类似营销策略的较小组。
 - [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 - [!DNL Identity Service](../../identity-service/home.md): 通过将 [!DNL Real-time Customer Profile] 来自被引入的不同数据源的身份连接到其中，实现 [!DNL Platform]了。
 - [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
@@ -105,7 +105,7 @@ ht-degree: 0%
 
 您可以将受众从受众选项卡拖 *[!UICONTROL 放到]* 规则构建器画布上，以在新的区段定义中引用受众成员身份。 这允许您将受众成员资格作为属性加入或排除到新区段规则中。
 
-对 [!DNL Platform] 于使用创 [!DNL Segment Builder]建的受众，您可以选择将受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，然后可以修改该副本，而不会影响原始段定义。 在将区段定义转换为规则逻辑之前，请确保已保存对区段定义的任何最近更改。
+对 [!DNL Platform] 于使用创 [!DNL Segment Builder]建的受众，您可以选择将受众转换为在该受众的区段定义中使用的规则集。 此转换会生成规则逻辑的副本，然后可以修改该逻辑，而不会影响原始段定义。 在将区段定义转换为规则逻辑之前，请确保已保存对区段定义的任何最近更改。
 
 >[!NOTE]
 >
@@ -209,7 +209,7 @@ ht-degree: 0%
 | ---------- | ------- | 
 | 相对时间窗口内的传入点击 | 如果区段定义引用的事件不 **是** 在最 **近七天的时间段内**。 例如，在过去 **两周内**。 | ![](../images/segment-builder/relative-hit-failure.png) |
 | 指相对窗口中的用户档案的传入点击 | 以下选项将不 **支持** 流分段：<ul><li>未在最 **后** 七 **天内到达的事件**。</li><li>包括区段或特征 [!DNL Adobe Audience Manager (AAM)] 的区段定义。</li></ul> | ![](../images/segment-builder/profile-relative-failure.png) |
-| 引用事件的多个用户档案 | 以下选项将不 **支持** 流分段：<ul><li>在过去24 **小时** 内 **不发生的事件**。</li><li>包含Adobe Audience Manager(AAM)区段或特征的区段定义。</li></ul> | ![](../images/segment-builder/event-history-failure.png) |
+| 引用事件的多个用户档案 | 以下选项将不 **支持** 流分段：<ul><li>在过去24 **小时** 内 **不发生的事件**。</li><li>包括Adobe Audience Manager(AAM)区段或特征的区段定义。</li></ul> | ![](../images/segment-builder/event-history-failure.png) |
 | 多实体查询 | 整体而言，多实体查询不 **受流** 分段支持。 |  |
 
 此外，执行流分段时还会应用一些准则：
