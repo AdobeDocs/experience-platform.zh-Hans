@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Amazon Redshift连接器
+title: Amazon红移连接器
 topic: overview
 translation-type: tm+mt
 source-git-commit: 3b5e76afea5689dbd59f64f6192e6ef2a6acb7d3
@@ -57,11 +57,11 @@ Adobe Experience Platform允许从外部源摄取数据，同时使您能够使�
 
 ## 连接 [!DNL Amazon Redshift] 到 [!DNL Platform] 使用API
 
-- [使用Flow Service API创建Amazon Redshift连接器](../../tutorials/api/create/databases/redshift.md)
+- [使用Flow Service API创建AmazonRedshift连接器](../../tutorials/api/create/databases/redshift.md)
 - [使用Flow Service API浏览数据库系统](../../tutorials/api/explore/database-nosql.md)
 - [使用Flow Service API从数据库收集数据](../../tutorials/api/collect/database-nosql.md)
 
 ## 连接 [!DNL Amazon Redshift] 到 [!DNL Platform] 使用UI
 
-- [在UI中创建Amazon Redshift源连接器](../../tutorials/ui/create/databases/redshift.md)
+- [在UI中创建AmazonRedshift源连接器](../../tutorials/ui/create/databases/redshift.md)
 - [在UI中为数据库连接器配置数据流](../../tutorials/ui/dataflow/databases.md)
