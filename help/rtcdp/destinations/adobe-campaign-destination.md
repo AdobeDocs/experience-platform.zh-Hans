@@ -16,9 +16,9 @@ ht-degree: 1%
 
 ## 概述
 
-Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。 有关 [更多信息](https://docs.adobe.com/content/help/en/campaign-classic/using/getting-started/starting-with-adobe-campaign/about-adobe-campaign-classic.html) ，请参阅关于Adobe Campaign经典。
+Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。 请参 [阅关于Adobe Campaign Classic](https://docs.adobe.com/content/help/en/campaign-classic/using/getting-started/starting-with-adobe-campaign/about-adobe-campaign-classic.html) ，以了解更多信息。
 
-要向Adobe Campaign发送细分数据，您必 [须先在Adobe](#connect-destination) Real-time Customer Data Platform中连接目标，然 [后设置从存储位置导入到](#import-data-into-campaign) Adobe Campaign的数据。
+要向Adobe Campaign发送细分数据，您必须先 [在Adobe实时平台](#connect-destination) ，然后设置从您的 [存储位置导入到Adobe Campaign的数据](#import-data-into-campaign) 。
 
 ## 连接目标 {#connect-destination}
 
@@ -26,11 +26,11 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 
    ![连接到adobe活动](/help/rtcdp/destinations/assets/connect-adobe-campaign.png)
 
-1. 在Connect目标工作流中，选择 **[!UICONTROL 存储位置]** 的连接类型。 对于Adobe Campaign，您可以在Amazon **[!UICONTROL S3]**、 **[!UICONTROL SFTP（带口令）和]** SFTP( **[!UICONTROL 带SSH密钥)之间进行选择]**。 根据连接类型，填写以下信息，然后选择“ **[!UICONTROL Connect]**”。
+1. 在Connect目标工作流中，选择 **[!UICONTROL 存储位置]** 的连接类型。 对于Adobe Campaign，您可以在 **[!UICONTROL AmazonS3]**、 **[!UICONTROL 带口令的SFTP]** 和 **[!UICONTROL 带SSH密钥的SFTP之间进行选择]**。 根据连接类型，填写以下信息，然后选择“ **[!UICONTROL Connect]**”。
 
    ![设置活动向导](/help/rtcdp/destinations/assets/adobe-campaign-wizard.png)
 
-   对 **[!UICONTROL 于Amazon S3]** 连接，您必须提供访问密钥ID和秘密访问密钥。
+   对 **[!UICONTROL 于AmazonS]** 3连接，您必须提供访问密钥ID和秘密访问密钥。
 对 **[!UICONTROL 于带口令的SFTP]** ，您必须提供域、端口、用户名和密码。
 对于 **[!UICONTROL 具有SSH密钥连接]** 的SFTP，您必须提供域、端口、用户名和密码。
 
