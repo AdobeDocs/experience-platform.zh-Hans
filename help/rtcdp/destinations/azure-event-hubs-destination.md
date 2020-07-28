@@ -16,7 +16,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Adobe [!DNL Azure Event Hubs] Real-time CDP中的目标当前为测试版。 文档和功能可能会发生变化。
+>Adobe [!DNL Azure Event Hubs] 实时CDP中的目标当前处于测试阶段。 文档和功能可能会发生变化。
 
 ## 概述 {#overview}
 
@@ -28,7 +28,7 @@ ht-degree: 2%
 * 要使用API调 [!DNL Azure Event Hubs] 用连接到，请参阅流 [目标API教程](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)。
 * 要使用Adobe [!DNL Azure Event Hubs] 实时CDP用户界面连接到，请参阅以下各节。
 
-![AWS Kinesis在UI中](/help/rtcdp/destinations/assets/azure-event-hubs-destination.png)
+![AWSKinesisUI](/help/rtcdp/destinations/assets/azure-event-hubs-destination.png)
 
 ## 用例 {#use-cases}
 
@@ -108,5 +108,5 @@ ht-degree: 2%
 >[!MORELIKETHIS]
 >
 >* [连接到Azure事件中心，并使用API调用激活数据](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)
->* [AWS Kinesis目标](/help/rtcdp/destinations/amazon-kinesis-destination.md)
+>* [AWSKinesis目标](/help/rtcdp/destinations/amazon-kinesis-destination.md)
 >* [目标类型和类别](/help/rtcdp/destinations/destination-types.md)
