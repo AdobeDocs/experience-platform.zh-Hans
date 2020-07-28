@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;attribution ai;access scores;popular topics
 solution: Experience Platform
-title: 在归因AI中获得分数
+title: 访问Attribution AI中的得分
 topic: Accessing scores
 translation-type: tm+mt
 source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
@@ -12,19 +12,19 @@ ht-degree: 2%
 ---
 
 
-# 在归因AI中下载得分
+# 下载Attribution AI中的得分
 
-此文档用作下载归因AI得分的指南。
+此文档可作为下载Attribution AI分数的指南。
 
 ## 入门指南
 
-归因AI允许您以镶木地板文件格式下载分数。 本教程要求您已阅读并完成入门指南中的下载归因AI [得分部](./getting-started.md) 分。
+Attribution AI允许您以镶木地板文件格式下载分数。 本教程要求您已阅读并完成入门指南中的下载Attribution AI [得分](./getting-started.md) 。
 
-此外，要访问归因AI的得分，您需要有一个运行状态成功的服务实例可用。 要创建新服务实例，请访 [问Attribution AI用户指南](./user-guide.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分中，请允许24小时，它才能完成运行。
+此外，要访问Attribution AI的分数，您需要有一个运行状态成功的服务实例可用。 要创建新服务实例，请访问 [Attribution AI用户指南](./user-guide.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分中，请允许24小时，它才能完成运行。
 
 ## Find your dataset ID {#dataset-id}
 
-在您的Attribution AI分析服务实例中，单击右 *上方导航* 中的“更多操作”下拉框，然后选择 **[!UICONTROL 访问得分]**。
+在服务实例中，单击右上方导 *航中的* “更多操作”下拉框，然后选择 **[!UICONTROL 访问得分]**。
 
 ![更多操作](./images/download-scores/more-actions.png)
 
@@ -112,7 +112,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?&dataSet=
 
 ## 使用您的批ID检索下一个API调用 {#retrieve-the-next-api-call-with-your-batch-id}
 
-获得批ID后，您便可以向发出新的GET请求 `/batches`。 该请求返回用作下一个API请求的链接。
+获得批ID后，您便可以向发出新GET请求 `/batches`。 该请求返回用作下一个API请求的链接。
 
 **API格式**
 
@@ -221,7 +221,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/01E5QSWCAASF
 
 ## 下载文件数据
 
-要下载文件数据，请对您在上一步检索 `"href"` 文件时复制的值发出 [GET请求](#retrieving-your-files)。
+要下载文件数据，请对上一步检索文 `"href"` 件时复制的值发出GET [请求](#retrieving-your-files)。
 
 >[!NOTE]
 >
@@ -261,19 +261,19 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
 
 ## 后续步骤
 
-此文档概述了下载归因AI得分所需的步骤。 您现在可以继续浏览提供 [的其他](../home.md) “智能服务”和指南。
+此文档概述了下载Attribution AI分数所需的步骤。 您现在可以继续浏览提供 [的其他](../home.md) “智能服务”和指南。
 
-## 使用雪花获得分数
+## 使用Snowflake访问得分
 
 >[!IMPORTANT]
 >
->有关使用SnowFlake访问分数的更多详细信息，请与attributionai-support@adobe.com联系。
+>有关使用Snowflake访问分数的更多详细信息，请与attributionai-support@adobe.com联系。
 
-您可以通过雪花访问聚集的归因人工智能得分。 目前，您需要向attributionai-support@adobe.com发送电子邮件至Adobe支持，以设置并接收Snowflake的读者帐户凭据。
+您可以通过Snowflake访问聚集的Attribution AI得分。 目前，您需要通过电子邮件向attributionai-support@adobe.com发送Adobe支持，以设置并接收您的读者帐户的Snowflake凭据。
 
-在Adobe支持部门处理您的请求后，将为您提供Snowflake的读者帐户URL和下面的相应凭据：
+Adobe支持处理您的请求后，将为您提供一个URL，供读者帐户Snowflake，并在下面提供相应的凭据：
 
-- 雪花URL
+- SnowflakeURL
 - 用户名
 - 密码
 
@@ -283,9 +283,9 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
 
 获得凭据和URL后，您可以查询模型表，按触点日期或转换日期进行聚合。
 
-### 在雪花里寻找模式
+### 在Snowflake中查找模式
 
-使用提供的凭据登录雪花。 单击左 **上角** 的主导航中的“工作表”选项卡，然后导航到左面板中的数据库目录。
+使用提供的凭据登录到Snowflake。 单击左 **上角** 的主导航中的“工作表”选项卡，然后导航到左面板中的数据库目录。
 
 ![工作表和导航](./images/download-scores/edited_snowflake_1.png)
 
@@ -293,12 +293,12 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
 
 ![查找模式](./images/download-scores/edited_snowflake_2.png)
 
-## 将PowerBI连接到雪花（可选）
+## 将PowerBI连接到Snowflake（可选）
 
-您的雪花凭据可用于在PowerBI桌面和雪花数据库之间建立连接。
+您的Snowflake凭据可用于在PowerBI桌面和Snowflake数据库之间建立连接。
 
-首先，在“服 *务器* ”框下，键入雪花URL。 然后，在“ *仓库*”下键入“XSMALL”。 然后，键入用户名和密码。
+首先，在“服 *务器* ”框下键入SnowflakeURL。 然后，在“ *仓库*”下键入“XSMALL”。 然后，键入用户名和密码。
 
 ![POWERBI示例](./images/download-scores/powerbi-snowflake.png)
 
-建立连接后，选择Snowflake模式库，然后选择相应的数据。 您现在可以加载所有表。
+建立连接后，选择Snowflake库，然后选择相应的模式。 您现在可以加载所有表。
