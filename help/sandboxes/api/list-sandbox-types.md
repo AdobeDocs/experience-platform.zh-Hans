@@ -5,13 +5,16 @@ title: 列表支持的沙箱类型
 topic: developer guide
 translation-type: tm+mt
 source-git-commit: b4741cdfd065bbaed7f2feeafe8619191e4b8f6c
+workflow-type: tm+mt
+source-wordcount: '47'
+ht-degree: 4%
 
 ---
 
 
 # 列表支持的沙箱类型
 
-您可以通过向端点发出GET请求，为组织检索一列表受支持的沙箱类 `/sandboxTypes` 型。
+您可以通过向端点发出列表请求，为组织检索支持的沙箱类型 `/sandboxTypes` GET。
 
 **API格式**
 
@@ -32,7 +35,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回组织支持的列表沙箱类型。
+成功的响应会返回一列表您的组织支持的沙箱类型。
 
 ```json
 {
