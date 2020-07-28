@@ -69,7 +69,7 @@ Adobe Experience Platform提供了丰富的功能集，用于采集任何类型�
 
 ## 目标 {#destinations}
 
-在 [Adobe实时客户数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
+在 [Adobe实时数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
 
 **新目标**
 
@@ -77,8 +77,8 @@ Adobe Experience Platform提供了丰富的功能集，用于采集任何类型�
 
 | 目标 | 描述 |
 |--- | ---|
-| 云存储目标 | Adobe实时CDP现在可以将细分作为数据文件提供到您的或SFTP [!DNL Amazon S3] 云存储位置。 这使您能够通过CSV或制表符分隔的文件，将受众及其用户档案属性发送到您的内部系统。 |
-| 广告目标 | 目 [!DNL Google] 标卡现在分为三个目标卡，对于Adobe Real- [!DNL Google] time CDP中当前支持的三个不同平台： [!DNL Google Ads]、 [!DNL Google Ad Manager]显示 [!DNL Google] 和视频360。 |
+| 云存储目标 | Adobe实时CDP现在可以将细分作为数据文件提供到您或SFTP [!DNL Amazon S3] 云存储位置。 这使您能够通过CSV或制表符分隔的文件，将受众及其用户档案属性发送到您的内部系统。 |
+| 广告目标 | 目 [!DNL Google] 标卡现在分为三个目标卡，用于Adobe实时 [!DNL Google] CDP中当前支持的三个不同平台： [!DNL Google Ads]、 [!DNL Google Ad Manager]显示 [!DNL Google] 和视频360。 |
 
 要了解更多信息，请访问目 [标概述](../../rtcdp/destinations/destinations-overview.md)
 
