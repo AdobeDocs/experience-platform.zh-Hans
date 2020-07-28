@@ -50,7 +50,7 @@ Adobe Experience Platform使您能够轻松导入和合并来自多个源的数�
 >[!NOTE]
 >计算属性无法添加到Adobe定义的混音中的字段。 该字段必须在命名空间 `tenant` 中，这意味着它必须是您定义并添加到模式的字段。
 
-为了成功定义计算属性字段，必须为模式启用该，并 [!DNL Profile] 将其作为该模式所基于的类的合并模式的一部分显示。 有关启用模式 [!DNL Profile]和合并的详细信息，请查阅开发人员指南部 [!DNL Schema Registry] 分中关于启 [用模式以进行用户档案和查看合并模式的](../../xdm/api/getting-started.md)部分。 还建议在合并构图基 [础文档中](../../xdm/schema/composition.md) ，查看有关模式的部分。
+为了成功定义计算属性字段，必须为模式启用该，并 [!DNL Profile] 将其作为该模式所基于的类的合并模式的一部分显示。 有关启用模式 [!DNL Profile]和合并的详细信息，请查阅开发人员指南部 [!DNL Schema Registry] 分中关于启 [用模式以进行用户档案和查看合并模式的](../../xdm/api/getting-started.md)部分。 还建议在合并构图基 [础文档中](../../xdm/schema/composition.md) ，查看模式部分。
 
 本教程中的工作流使 [!DNL Profile]用启用模式，并遵循定义包含计算属性字段的新混音并确保它是正确命名空间的步骤。 如果已在启用用户档案的模式中有一个命名空间正确的字段，您可以直接继续执行创建计算属性 [的步骤](#create-a-computed-attribute)。
 
@@ -223,7 +223,7 @@ curl -X POST \
 
 ### 列表计算属性 {#list-computed-attributes}
 
-您的IMS组织可以创建多个计算属性，并且对端点执行GET请 `/config/computedAttributes` 求允许您列表组织的所有现有计算属性。
+您的IMS组织可以创建多个计算属性，并且对终结点执行GET请 `/config/computedAttributes` 求允许您列表组织的所有现有计算属性。
 
 **API格式**
 
@@ -357,11 +357,11 @@ curl -X GET \
 | `_page.pageSize` | 在此结果页上返回的计算属性数。 如 `pageSize` 果等于 `totalCount`，则表示只有一页结果，且已返回所有计算属性。 如果它们不相等，则可以访问其他结果页面。 See `_links.next` for details. |
 | `children` | 由一个或多个对象组成的数组，每个对象包含单个计算属性的详细信息。 如果尚未定义计算属性，则数 `children` 组为空。 |
 | `id` | 在创建计算属性时自动分配给计算属性的唯一只读系统生成的值。 有关计算属性对象的组件的详细信息，请参阅本教程前 [面有关创建计算属性](#create-a-computed-attribute) 的一节。 |
-| `_links.next` | 如果返回计算属性的单页， `_links.next` 则为空对象，如上面的示例响应所示。 如果您的组织有许多计算属性，您可以通过对值发出GET请求访问的多个页面上会返回这些 `_links.next` 属性。 |
+| `_links.next` | 如果返回计算属性的单页， `_links.next` 则为空对象，如上面的示例响应所示。 如果您的组织具有许多计算属性，则这些属性将返回到多个页面，您可以通过向该值发出GET请求来访问 `_links.next` 这些页面。 |
 
 ### 视图计算属性 {#view-a-computed-attribute}
 
-您还可以通过向端点发出GET请求并在请求路径中 `/config/computedAttributes` 包含计算属性ID来视图特定的计算属性。
+您还可以通过向端点发出视图请求并在请求路径中包 `/config/computedAttributes` 括计算属性ID来GET特定的计算属性。
 
 **API格式**
 
@@ -432,7 +432,7 @@ curl -X GET \
 
 ## 更新计算属性
 
-如果您发现需要更新现有计算属性，可以通过向端点发出PATCH请求并在请求路径中 `/config/computedAttributes` 包括要更新的计算属性的ID来完成此操作。
+如果您发现需要更新现有的计算属性，可以通过向端点发出PATCH请求并在请求路径中包含要更新的计算属性的 `/config/computedAttributes` ID来完成此操作。
 
 **API格式**
 
@@ -476,7 +476,7 @@ curl -X PATCH \
 
 **响应**
 
-成功更新会返回HTTP状态204（无内容）和空的响应主体。 如果要确认更新成功，可以执行GET请求，以按计算属性的ID视图该属性。
+成功更新会返回HTTP状态204（无内容）和空的响应主体。 如果要确认更新成功，可以执行GET请求以按计算属性的ID视图该属性。
 
 ## 删除计算属性
 
