@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # GDPR 常见问题解答
 
-此文档为有关(GDPR)及其在Adobe [!DNL General Data Protection Regulation] Experience Cloud中实施的常见问题提供解答。
+本文档为有关(GDPR)及其在Adobe Experience Cloud实 [!DNL General Data Protection Regulation] 施的常见问题提供解答。
 
 有关本文档中使用的与GDPR相关的各个术语的定义，请参阅GDPR [术语文章](terminology.md) 。
 
