@@ -48,7 +48,7 @@ ht-degree: 2%
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
 - 内容类型： application/json
 
@@ -342,7 +342,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{CONNECTION_ID}` | 先前创建的流连接的ID。 |
-| `xactionId` | 您刚刚发送的记录在服务器端生成的唯一标识符。 此ID可帮助Adobe跟踪记录在各种系统和调试过程中的生命周期。 |
+| `xactionId` | 您刚刚发送的记录在服务器端生成的唯一标识符。 此ID可帮助Adobe跟踪记录在各种系统中的生命周期并进行调试。 |
 | `receivedTimeMs` | 显示接收请求的时间的时间戳（以毫秒为单位）。 |
 | `synchronousValidation.status` | 由于添加了查询 `synchronousValidation=true` 参数，因此将显示此值。 如果验证成功，则状态为 `pass`。 |
 
