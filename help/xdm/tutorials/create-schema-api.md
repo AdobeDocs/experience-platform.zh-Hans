@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 使用API创建模式 [!DNL Schema Registry]
 
-用 [!DNL Schema Registry] 于访问Adobe Experience Platform [!DNL Schema Library] 中的。 其中 [!DNL Schema Library] 包含Adobe、合作伙伴以及您所使用的 [!DNL Experience Platform] 应用程序的供应商为您提供的资源。 注册表提供用户界面和RESTful API，可从中访问所有可用的库资源。
+用 [!DNL Schema Registry] 于访问Adobe Experience Platform [!DNL Schema Library] 中的。 它包 [!DNL Schema Library] 含由Adobe、合作伙伴和您所使用的 [!DNL Experience Platform] 应用程序供应商为您提供的资源。 注册表提供用户界面和RESTful API，可从中访问所有可用的库资源。
 
 本教程使 [!DNL Schema Registry] 用API指导您逐步使用标准类构建模式。 如果您希望在中使用用户界 [!DNL Experience Platform]面， [](create-schema-ui.md) 模式编辑器教程将提供在模式编辑器中执行类似操作的分步说明。
 
@@ -39,9 +39,9 @@ ht-degree: 1%
 
 模式合成过程从选择类开始。 该类定义数据的关键行为方面（记录与时间序列）以及描述将要摄取的数据所需的最小字段。
 
-您在本教程中所做的模式使用 [!DNL XDM Individual Profile] 类。 [!DNL XDM Individual Profile] 是Adobe为定义记录行为提供的标准类。 有关行为的更多信息，请参 [阅模式合成基础](../schema/composition.md)。
+您在本教程中所做的模式使用 [!DNL XDM Individual Profile] 类。 [!DNL XDM Individual Profile] 是由Adobe提供的用于定义记录行为的标准类。 有关行为的更多信息，请参 [阅模式合成基础](../schema/composition.md)。
 
-要分配类，将进行API调用以在租户容器中创建(POST)新模式。 此调用包括模式将实现的类。 每个模式只能实现一个类。
+要分配类，将进行API调用，以在租户容器中创建(POST)新模式。 此调用包括模式将实现的类。 每个模式只能实现一个类。
 
 **API格式**
 
@@ -115,7 +115,7 @@ curl -X POST \
 
 ### 查找模式
 
-要视图新创建的模式，请使用模式的或URL编 `meta:altId` 码的URI执 `$id` 行查找(GET)请求。
+要视图新创建的模式，请使用GET的或URL编 `meta:altId` 码的URI执 `$id` 行查找(模式)请求。
 
 **API格式**
 
@@ -191,7 +191,7 @@ PATCH /tenant/schemas/{schema meta:altId or url encoded $id URI}
 
 **请求**
 
-此请求更新(PATCH)“忠诚会员”模式，以在“用户档案-人——详细信息”混合中包含字段。
+此项请求更新(PATCH)“忠诚会员”模式，以在“用户档案-人——详细信息”混合中包含字段。
 
 通过添加“用户档案-人——细节”混音，忠诚度会员模式现在可以捕获有关忠诚度项目会员的信息，如其名字、姓氏和生日。
 
@@ -258,7 +258,7 @@ curl -X PATCH \
 
 >[!TIP]
 >
->值得查看所有可用的混音，以熟悉其中包含的字段。 您可以对“全局”和“租户”列表执行请求，只返回那些“meta:intededToExtend”字段与您所使用的类匹配的混合，从而容器(GET)可用于特定类的所有混合。 在本例中，它是类 [!DNL XDM Individual Profile] ，因此使 [!DNL XDM Individual Profile] 用 `$id` 它：
+>值得查看所有可用的混音，以熟悉其中包含的字段。 您可以对“全局”和“租户”容器执行请求，只返回“meta:intededToExtend”字段与您所使用的类匹配的那些混音，从而列表(GET)可与特定类一起使用的所有混音。 在本例中，它是类 [!DNL XDM Individual Profile] ，因此使 [!DNL XDM Individual Profile] 用 `$id` 它：
 
 ```http
 GET /global/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
@@ -273,7 +273,7 @@ PATCH /tenant/schemas/{schema meta:altId or url encoded $id URI}
 
 **请求**
 
-此请求更新(PATCH)“忠诚会员”模式以在“用户档案-个人详细信息”混音中包含字段，并向模式添加“家庭地址”、“电子邮件地址”和“家庭电话”字段。
+此请求更新(PATCH)“忠诚会员”模式以在“用户档案-个人——详细信息”混音中包含字段，并向模式添加“家庭地址”、“电子邮件地址”和“家庭电话”字段。
 
 ```SHELL
 curl -X PATCH \
@@ -344,7 +344,7 @@ Loyalty Members模式现在应包含 `$ref` 数组中的三 `allOf` 个值： �
 
 通 [!DNL Schema Registry] 过允许您在租户容器中定义您自己的混音，可以说明这一点。 这些混合是您的组织特有的，IMS组织外的任何人都无法看到或编辑。
 
-要创建(POST)新的混音，您的请求必须包含一个字 `meta:intendedToExtend` 段，其中 `$id` 包含混音与之兼容的基类以及混音将包含的属性。
+要创建(POST)新的混音，您的请求必须包含 `meta:intendedToExtend` 一个字 `$id` 段，其中包含混音与之兼容的基类以及混音将包含的属性。
 
 任何自定义属性都必须嵌套在您的 `TENANT_ID` 下方，以避免与其他混音或字段发生冲突。
 
@@ -506,7 +506,7 @@ PATCH /tenant/schemas/{schema meta:altId or url encoded $id URI}
 
 **请求**
 
-此请求更新(PATCH)“忠诚会员”模式，以在新的“忠诚会员详细信息”混合中包含字段。
+此项请求更新(PATCH)“忠诚会员”模式，以将字段包含在新的“忠诚会员详细信息”混合中。
 
 ```SHELL
 curl -X PATCH \
@@ -816,11 +816,11 @@ curl -X POST \
 }
 ```
 
-您可以使用URL编码的URI执行查找(GET)请 `$id` 求，以直接视图新数据类型。 请务必在查找请 `version` 求的“接受”标题中包含该标题。
+您可以使用URL编码的URI执行查找(GET)请 `$id` 求，以直接视图新的数据类型。 请务必在查找请 `version` 求的“接受”标题中包含该标题。
 
 ### 在模式中使用数据类型
 
-现在已创建“忠诚度详细信息”数据类型，您可以更新(PATCH)您创建的混音中的“loyalty”字段，以引用数据类型代替之前所在的字段。
+现在已创建“忠诚度详细信息”数据类型，您可以更新(PATCH)您创建的混音中的“loyalty”字段，以引用数据类型代替之前存在的字段。
 
 **API格式**
 
@@ -908,7 +908,7 @@ curl -X PATCH \
 }
 ```
 
-执行GET请求以查找模式，现在在“properties/_{TENANT_ID}”下显示对数据类型的引用，如下所示：
+执行GET请求以查找模式时，现在在“properties/_{TENANT_ID}”下显示对数据类型的引用，如下所示：
 
 ```JSON
 "_{TENANT_ID}": {
@@ -1023,7 +1023,7 @@ curl -X POST \
 
 ### 添加“合并”标记
 
-要将模式包含在合并合并视图中，必须将“合并”标记添加到模式 `meta:immutableTags` 的属性中。 这是通过PATCH请求完成的，该请求用于更新模式 `meta:immutableTags` 并添加值为“合并”的阵列。
+要将模式包含在合并合并视图中，必须将“合并”标记添加到模式 `meta:immutableTags` 的属性中。 这是通过PATCH请求来更新模式并添 `meta:immutableTags` 加值为“合并”的数组。
 
 **API格式**
 
@@ -1103,7 +1103,7 @@ curl -X PATCH \
 
 ### 列表模式
 
-您现在已成功将模式添加到 [!DNL XDM Individual Profile] 合并。 为了查看属于同一合并的所有模式的列表，您可以使用查询参数来过滤响应，从而执行GET请求。
+您现在已成功将模式添加到 [!DNL XDM Individual Profile] 合并。 要查看属于同一合并的所有模式的列表，您可以使用查询参数来过滤响应，以执行GET请求。
 
 使用 `property` 查询参数，可以指定只返回包含 `meta:immutableTags` 字段且与类 `meta:class` 相等 `$id`[!DNL XDM Individual Profile] 的模式。
 
@@ -1173,7 +1173,7 @@ curl -X GET \
 
 在本教程中创建的完整“忠诚会员”模式，可在以下附录中找到。 当您查看模式时，您可以了解混音对总体结构的贡献以及哪些字段可用于数据获取。
 
-创建多个模式后，您可以使用关系描述符定义它们之间的关系。 有关详细信息， [请参阅定义两个模式之间关系](relationship-api.md) 的教程。 有关如何在注册表中执行所有操作(GET、POST、PUT、PATCH和DELETE)的详细示例，请在使用API时参阅 [模式注册表开发人员指南](../api/getting-started.md) 。
+创建多个模式后，您可以使用关系描述符定义它们之间的关系。 有关详细信息， [请参阅定义两个模式之间关系](relationship-api.md) 的教程。 有关如何在注册表中执行所有操作(GET、POST、PUT、PATCH和DELETE)的详细示例，请在使用API时参 [阅模式注册表开发人员指南](../api/getting-started.md) 。
 
 ## 附录 {#appendix}
 
