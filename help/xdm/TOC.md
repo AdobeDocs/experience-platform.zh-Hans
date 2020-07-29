@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: 体验数据模型(XDM)系统帮助
 translation-type: tm+mt
-source-git-commit: d4ed33ea4684049e8604ce214cb351d0cb949ed4
+source-git-commit: ef11e3c4f0a3be42e17080f8b2deb464ae6fcd2a
 workflow-type: tm+mt
 source-wordcount: '115'
 ht-degree: 5%
@@ -17,7 +17,7 @@ ht-degree: 5%
 * XDM模式 {#schema}
    * [模式合成基础](schema/composition.md)
    * [XDM字段字典](schema/field-dictionary.md)
-   * 模式使用案例
+   * 模式使用案例 {#use-cases}
       * [隐私同意混合](schema/privacy-consent.md)
 * 模式注册表API {#api}
    * [入门指南](api/getting-started.md)
