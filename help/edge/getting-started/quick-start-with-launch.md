@@ -4,7 +4,7 @@ seo-title: Adobe Experience PlatformWeb SDK快速开始Launch
 description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
 seo-description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
 translation-type: tm+mt
-source-git-commit: d958e323df2535c168edd3a35b878fcc4bb73370
+source-git-commit: bc18ca26da37ecfca2ade9403be22d7de222facb
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 5%
@@ -29,6 +29,9 @@ Experience Platform边缘网络将数据作为XDM。 XDM是一种数据格式，
 3. 根据您创建的模式创建数据集。
 
 以下视频旨在支持您为模式创建数据集、数据集和流源连接器。 [!DNL Web SDK]
+
+
+>[!VIDEO](https://video.tv.adobe.com/v/35395?quality=12&learn=on)
 
 登录到启动并安装扩 `AEP Web SDK` 展。 安装SDK时，系统会提示您配置扩展。 输入您在上面请求的配置ID。 该扩展将自动填充您的组织ID。
 
