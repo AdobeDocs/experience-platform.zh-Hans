@@ -4,7 +4,7 @@ seo-title: 'Adobe Experience PlatformWeb SDK快速开始 '
 description: 使用开始Web SDK收集数据的快速Experience Platform指南
 seo-description: 使用开始Web SDK收集数据的快速Experience Platform指南
 translation-type: tm+mt
-source-git-commit: 8574a2d54c00f1bd3c41780fb12ff739a7d98fc3
+source-git-commit: d958e323df2535c168edd3a35b878fcc4bb73370
 workflow-type: tm+mt
 source-wordcount: '517'
 ht-degree: 5%
@@ -20,14 +20,6 @@ ht-degree: 5%
 - 有权获得Adobe Experience Platform。  如果您尚未购买平台，Adobe将为您提供Experience Platform数据服务基础，以便在SDK中以有限方式使用，并且不收取额外费用。
 - 使用最新版的访客ID服务。
 
-## 创建配置ID
-
-您可以在Adobe启动中使用 [边缘配置工具](../fundamentals/edge-configuration.md) ，创建配置ID，即使您没有使用标签管理功能。 这样，您便能够将数 [!DNL Edge Network] 据发送到各种解决方案。 有关如何查找每个选项的详细信息，请参阅 [边缘配置工具](../fundamentals/edge-configuration.md) 页。
-
->[!NOTE]
->
->您的组织必须具有此功能的允许列表。 请联系您的CSM以接受允许列表。
-
 ## 准备模式
 
 将 [!DNL Experience Platform Edge Network] 数据视为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义预 [!DNL Edge Network] 期数据的格式。 要发送数据，您需要定义模式。
@@ -38,6 +30,14 @@ ht-degree: 5%
 以下视频旨在支持您为模式创建数据集、数据集和流源连接器。 [!DNL Web SDK]
 
 >[!VIDEO](https://video.tv.adobe.com/v/35395?quality=12&learn=on)
+
+## 创建配置ID
+
+您可以在Adobe启动中使用 [边缘配置工具](../fundamentals/edge-configuration.md) ，创建配置ID，即使您没有使用标签管理功能。 这样，您便能够将数 [!DNL Edge Network] 据发送到各种解决方案。 有关如何查找每个选项的详细信息，请参阅 [边缘配置工具](../fundamentals/edge-configuration.md) 页。
+
+>[!NOTE]
+>
+>您的组织必须具有此功能的允许列表。 请联系您的CSM以接受允许列表。
 
 ## 安装SDK
 
