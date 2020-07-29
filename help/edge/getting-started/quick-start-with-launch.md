@@ -4,7 +4,7 @@ seo-title: Adobe Experience PlatformWeb SDK快速开始Launch
 description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
 seo-description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
 translation-type: tm+mt
-source-git-commit: 8574a2d54c00f1bd3c41780fb12ff739a7d98fc3
+source-git-commit: d958e323df2535c168edd3a35b878fcc4bb73370
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 5%
@@ -20,14 +20,6 @@ ht-degree: 5%
 - 有权获得Adobe Experience Platform。 如果您尚未购买平台，Adobe将为您提供Experience Platform数据服务基础，以便在SDK中以有限方式使用，并且不收取额外费用。
 - 使用最新版的访客ID服务。
 
-## 创建配置ID
-
-您可以使用启动项中的边缘配 [置工具创建配](../fundamentals/edge-configuration.md) 置ID。 这样，边缘网络就可以将数据发送到各种解决方案。 有关如何查找每个选项的详细信息，请参阅 [边缘配置工具](../fundamentals/edge-configuration.md) 页。
-
->[!NOTE]
->
->您的组织必须列入此功能的白名单。 请联系您的CSM，让列表参与最终的白名单。
-
 ## 准备模式
 
 Experience Platform边缘网络将数据作为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义边缘网络希望数据的格式。 要发送数据，您必须定义模式。
@@ -42,6 +34,14 @@ Experience Platform边缘网络将数据作为XDM。 XDM是一种数据格式，
 
 
 有关不同配置选项的更多详细信息，请 [参阅配置SDK](../fundamentals/configuring-the-sdk.md)。
+
+## 创建配置ID
+
+您可以使用启动项中的边缘配 [置工具创建配](../fundamentals/edge-configuration.md) 置ID。 这样，边缘网络就可以将数据发送到各种解决方案。 有关如何查找每个选项的详细信息，请参阅 [边缘配置工具](../fundamentals/edge-configuration.md) 页。
+
+>[!NOTE]
+>
+>您的组织必须列入此功能的白名单。 请联系您的CSM，让列表参与最终的白名单。
 
 ## 根据您的模式创建数据元素
 
