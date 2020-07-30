@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为云存储批处理连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 168ac3a3ab9f475cb26dc8138cbc90a3e35c836d
+source-git-commit: f532bd6393bfad84fa09c2fc753d1d5c5b39d013
 workflow-type: tm+mt
-source-wordcount: '1226'
+source-wordcount: '1482'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 在UI中为云存储批处理连接器配置数据流
 
-数据流是从源中检索数据并将其引入数据集的计划任务 [!DNL Platform] 符。 本教程提供使用云存储库连接器配置新数据流的步骤。
+数据流是从源中检索数据并将其引入数据集的计划任务 [!DNL Platform] 符。 本教程提供使用云存储帐户配置新数据流的步骤。
 
 ## 入门指南
 
@@ -25,7 +25,7 @@ ht-degree: 0%
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md): 了解如何使用模式编辑器UI创建自定义模式。
 * [实时客户用户档案](../../../../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
-此外，本教程要求您已创建云存储连接器。 有关在UI中创建不同云存储连接器的列表教程，请参阅源连接 [器概述](../../../../home.md)。
+此外，本教程要求您具有已建立的云存储帐户。 有关在UI中创建不同云存储帐户的列表教程，请参阅源连接 [器概述](../../../../home.md)。
 
 ### 支持的文件格式
 
@@ -37,22 +37,28 @@ ht-degree: 0%
 
 ## 选择数据
 
-创建云存储连接器后，将显 *[!UICONTROL 示选择]* 步骤，为您提供一个交互式界面来浏览您的云存储层次结构。
+创建云存储帐户后，将显 *[!UICONTROL 示选择]* 步骤，为您提供一个交互界面来浏览您的云存储层次结构。
 
 * 界面的左半部分是目录浏览器，显示服务器的文件和目录。
 * 界面的右半部分允许您从一个兼容文件预览多达100行数据。
 
-单击列出的文件夹可将文件夹层次结构遍历到更深层文件夹。 选择兼容文件或文件夹后，将显示“选 **[!UICONTROL 择预览格式]** ”下拉框，您可以在“”窗口中选择显示数据的格式。
+通过选择列出的文件夹，您可以将文件夹层次结构遍历到更深层的文件夹。 选择兼容文件或文件夹后，将显示“选 **[!UICONTROL 择预览格式]** ”下拉框，您可以在“”窗口中选择显示数据的格式。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data.png)
 
-预览窗口填充后，您可以单击“下 **[!UICONTROL 一步]** ”以上传选定文件夹中的所有文件。 如果要上传到特定文件，请在单击“下一步”之前从列表中选择该 **[!UICONTROL 文件]**。
+预览窗口填充后，您可以选 **[!UICONTROL 择]** “下一步”上传选定文件夹中的所有文件。 如果要上传到特定文件，请在选择“下一步”之前从列表中选择该 **[!UICONTROL 文件]**。
 
->[!NOTE]
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-preview.png)
+
+### 收录Parke或JSON文件
+
+云存储帐户支持的文件格式还包括JSON和Parke。 JSON和Parke文件必须符合XDM标准。 要收录JSON或Parke文件，请从目录浏览器中选择适当的文件格式，并从正确的界面应用兼容的数据格式。 选择 **[!UICONTROL 下一]** 步以继续。
+
+>[!IMPORTANT]
 >
->支持的文件格式包括CSV、JSON和Parke。 JSON和Parke文件必须符合XDM标准。
+>与分隔文件类型不同，JSON和Permage格式文件不可用于预览。
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-next.png)
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-parquet.png)
 
 ## 将数据字段映射到XDM模式
 
@@ -62,27 +68,27 @@ ht-degree: 0%
 
 **使用现有数据集**
 
-要将数据引入现有数据集，请选择 **[!UICONTROL 使用现有数据集]**，然后单击数据集图标。
+要将数据引入现有数据集，请选择 **[!UICONTROL 现有数据集]**，然后选择数据集图标。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/use-existing-data.png)
 
-此时将 _显示“选择数据集_ ”对话框。 找到您要使用的数据集，选择它，然后单击“继 **[!UICONTROL 续”]**。
+此时将 *[!UICONTROL 显示“选择数据集]* ”对话框。 找到您要使用的数据集，选择它，然后单击“继 **[!UICONTROL 续”]**。
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-existing-data.png)
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-existing-dataset.png)
 
 **使用新数据集**
 
-要将数据引入新数据集，请选 **[!UICONTROL 择创建新数据集]** ，并在提供的字段中输入数据集的名称和说明。 然后，单击模式图标。
+要将数据引入新数据集，请选 **[!UICONTROL 择新数据集]** ，并在提供的字段中输入数据集的名称和说明。 要添加模式，您可以在“选择模式”对话框中输 *[!UICONTROL 入现有模式]* 名称。 或者，您也可以选择 **[!UICONTROL 模式高级搜索]** ，以搜索相应的模式。
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/use-new-schema.png)
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/use-new-dataset.png)
 
-将出 _现“选择模式_ ”对话框。 选择要应用于新数据集的模式，然后单击 **[!UICONTROL 完成]**。
+将出 *[!UICONTROL 现“选择模式]* ”对话框。 选择要应用于新数据集的模式，然后选择 **[!UICONTROL 完成]**。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-schema.png)
 
 根据您的需要，您可以选择直接映射字段，或使用映射器函数转换源数据以导出计算值或计算值。 有关数据映射和映射器功能的详细信息，请参阅将CSV数据 [映射到XDM模式字段的教程](../../../../../ingestion/tutorials/map-a-csv-file.md)。
 
-映射源数据后，单击“下 **[!UICONTROL 一步]**”。
+映射源数据后，选择“下 **[!UICONTROL 一步]**”。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping.png)
 
@@ -92,32 +98,46 @@ ht-degree: 0%
 
 | 字段 | 描述 |
 | --- | --- |
-| 频率 | 可选频率包括分钟、小时、天和周。 |
+| 频率 | 可选频率 `Once`包括 `Minute`、 `Hour`、 `Day`和 `Week`。 |
 | 间隔 | 一个整数，它为所选频率设置间隔。 |
-| 开始时间 | UTC时间戳，将对其进行第一次摄取。 |
-| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *[!UICONTROL 启用]* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *[!UICONTROL 禁用]* “回填”，则只会摄取在首次摄取和开始时间之间加 *[!UICONTROL 载的文件]* 。 在开始时间之 *[!UICONTROL 前加载的文]* 件将不会被摄取。 |
+| 开始时间 | UTC时间戳，指示何时设置第一次摄取。 |
+| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *[!UICONTROL 启用]* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *禁用* “回填”，则只会摄取在首次摄取和开始时间之间加 *[!UICONTROL 载的文件]* 。 在开始时间之 *[!UICONTROL 前加载的文]* 件将不会被摄取。 |
 
-数据流设计为按计划自动摄取数据。 如果您希望通过此工作流只收录一次，可以将 **[!UICONTROL Frequency]** （频率）配置为“Day”，并为Interval（间隔）应用一个非常大的 **[!UICONTROL 数字]**，如10000或类似。
+数据流设计为按计划自动摄取数据。 开始。 然后，设置时间间隔以指定两个流运行之间的周期。 间隔的值应为非零整数，并应设置为大于或等于15。
 
-为计划提供值，然后单击“下 **一步**”。
+要设置摄取的开始时间，请调整开始时间框中显示的日期和时间。 或者，也可以选择日历图标以编辑开始时间值。 开始时间必须大于或等于以UTC表示的当前时间。
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/scheduling.png)
+为计划提供值，然后选择“下 **[!UICONTROL 一步]**”。
 
-## 命名数据流
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/scheduling-interval-on.png)
 
-随 *[!UICONTROL 后将出现]* “命名流”步骤，允许您命名新数据流并给出简要描述。
+### 设置一次性摄取数据流
 
-提供数据流的值，然后单击“下 **[!UICONTROL 一步]**”。
+要设置一次性摄取，请选择频率下拉箭头，然后选择“ **[!UICONTROL 一次]**”。 只要开始时间在将来保持不变，您就可以继续编辑数据流集以进行一次频率摄取。 一旦开始时间过去，就不能再编辑一次频率值。
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/name-your-dataflow.png)
+>[!TIP] **[!UICONTROL 在一]** 次性摄取 **** 期间，间隔和回填不可见。
 
-### 查看数据流
+向计划提供适当的值后，选择“下 **[!UICONTROL 一步]**”。
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/scheduling-once.png)
+
+## 提供数据流详细信息
+
+此时 *[!UICONTROL 会显示]* “数据流详细信息”步骤，允许您命名新数据流并简要描述新数据流。
+
+在此过程中，您还可以启用“部 *[!UICONTROL 分摄取]* ”和“ *[!UICONTROL 错误诊断”]*。 启用 *[!UICONTROL 部分摄取]* ，可以摄取包含错误的数据，最高可以设置特定阈值。 启用 *[!UICONTROL 错误诊断]* ，将提供单独分批的任何错误数据的详细信息。 有关详细信息，请参 [阅部分批摄取概述](../../../../../ingestion/batch-ingestion/partial.md)。
+
+为数据流提供值，然后选择 **[!UICONTROL 下一步]**。
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/dataflow-detail.png)
+
+## 查看数据流
 
 此时 *[!UICONTROL 会出现]* “审阅”步骤，允许您在创建新数据流之前对其进行查看。 详细信息按以下类别分组：
 
-* *[!UICONTROL 源详细信息]*: 显示源类型、所选源文件的相关路径以及该源文件中的列数。
-* *[!UICONTROL 目标详细信息]*: 显示接收源数据的数据集，包括数据集附带的模式。
-* *[!UICONTROL 计划详细信息]*: 显示摄取计划的活动周期、频率和间隔。
+* *[!UICONTROL 连接]*: 显示源类型、所选源文件的相关路径以及该源文件中的列数。
+* *[!UICONTROL 分配数据集和地图字段]*: 显示接收源数据的数据集，包括数据集附带的模式。
+* *[!UICONTROL 计划]*: 显示摄取计划的活动周期、频率和间隔。
 
 查看数据流后，单击 **[!UICONTROL 完成]** ，并允许一段时间创建数据流。
 
