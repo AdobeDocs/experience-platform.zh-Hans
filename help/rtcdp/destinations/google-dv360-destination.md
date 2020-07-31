@@ -4,9 +4,9 @@ seo-title: Google Display & Video 360 Destination
 description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。
 seo-description: 'Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。 '
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 7f3df12da5e93c3d0cc53eed1aa603ddbafdb0b2
 workflow-type: tm+mt
-source-wordcount: '633'
+source-wordcount: '659'
 ht-degree: 0%
 
 ---
@@ -67,3 +67,7 @@ ht-degree: 0%
 ## 将区段激活到 [!DNL Google Display & Video 360]
 
 有关如何将区段激活到目的地的说 [!DNL Google Display & Video 360]明，请 [参阅将数据激活到目标](/help/rtcdp/destinations/activate-destinations.md)。
+
+## 导出的数据
+
+要验证数据是否已成功导出到目 [!DNL Google Display & Video 360] 标，请检查您的 [!DNL Google Display & Video 360] 帐户。 如果激活成功，则受众将填充到您的帐户中。
