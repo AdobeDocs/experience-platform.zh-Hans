@@ -4,9 +4,9 @@ seo-title: Oracle Responsys目标
 description: Responsys是面向跨渠道营销活动的企业电子邮件营销工具，由Oracle提供，用于在电子邮件、移动设备、展示广告和社交平台之间实现个性化互动。
 seo-description: Responsys是面向跨渠道营销活动的企业电子邮件营销工具，由Oracle提供，用于在电子邮件、移动设备、展示广告和社交平台之间实现个性化互动。
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
 workflow-type: tm+mt
-source-wordcount: '434'
+source-wordcount: '487'
 ht-degree: 0%
 
 ---
@@ -43,10 +43,34 @@ ht-degree: 0%
 
 4. 填写 **[!UICONTROL 上述字段]** 后，单击创建目标。 您的目标现已连接，您可 [以将区段](/help/rtcdp/destinations/activate-destinations.md) 激活到目标。
 
+## 激活区段 {#activate-segments}
+
+有关 [区段用户档案工作流的信息](/help/rtcdp/destinations/activate-destinations.md) ，请参阅将激活和区段激活到目标。
+
 ## 目标属性 {#destination-attributes}
 
 在将 [区段激](/help/rtcdp/destinations/activate-destinations.md) 活到目 [!DNL Oracle Responsys] 标时 [，建议您从合并模式中选择唯一标](../../profile/home.md#profile-fragments-and-union-schemas)识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参 [阅选择在电子邮件营销目标中的导出文件中用作目标属性](/help/rtcdp/destinations/email-marketing-destinations.md#destination-attributes) 的模式字段。
 
+## 导出的数据 {#exported-data}
+
+对 [!DNL Oracle Responsys] 于目标，Adobe实时CDP会在您提供的存储位置创建制 `.txt` 表符 `.csv` 分隔的或文件。 有关这些文件的详细信息，请参 [阅区段存储教程中的电子邮件营销目](/help/rtcdp/destinations/activate-destinations.md#esp-and-cloud-storage) 标和云激活目标。
+
+<!--
+
+Expect a new file to be created in your storage location every day. The file format is:
+
+`Oracle_Responsys_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
+
+```
+Oracle_Responsys_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv
+Oracle_Responsys_segment12341e18-abcd-49c2-836d-123c88e76c39_20200409052200.csv
+Oracle_Responsys_segment12341e18-abcd-49c2-836d-123c88e76c39_20200410061130.csv
+```
+
+The presence of these files in your storage location is confirmation of successful activation. To understand how the exported files are structured, you can [download a sample .csv file](/help/rtcdp/destinations/assets/sample_export_file_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv). This sample file includes the profile attributes `person.firstname`, `person.lastname`, `person.gender`, `person.birthyear`, and `personalEmail.address`.
+
+-->
+
 ## 将数据导入设置为 [!DNL Oracle Responsys] {#import-data-into-responsys}
 
-在将实时CDP连接到您的AmazonS3或SFTP存储后，您必须设置从存储位置导入到的数据 [!DNL Oracle Responsys]。 要了解如何完成此操作，请参阅 [中的导入联系人](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCEA/Connect_WizardUpload.htm) 或帐户 [!DNL Oracle Responsys Help Center]。
+在将实时CDP连接到您的 [!DNL Amazon S3] 或SFTP存储后，您必须设置从存储位置导入到的数据 [!DNL Oracle Responsys]。 要了解如何完成此操作，请参阅 [中的导入联系人](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCEA/Connect_WizardUpload.htm) 或帐户 [!DNL Oracle Responsys Help Center]。
