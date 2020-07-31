@@ -4,9 +4,9 @@ seo-title: Google广告目标
 description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 seo-description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 7f3df12da5e93c3d0cc53eed1aa603ddbafdb0b2
 workflow-type: tm+mt
-source-wordcount: '572'
+source-wordcount: '598'
 ht-degree: 0%
 
 ---
@@ -67,3 +67,6 @@ ht-degree: 0%
 
 有关如何将区段激活到目的地的说 [!DNL Google Ads]明，请 [参阅将数据激活到目标](/help/rtcdp/destinations/activate-destinations.md)。
 
+## 导出的数据
+
+要验证数据是否已成功导出到目 [!DNL Google Ads] 标，请检查您的 [!DNL Google Ads] 帐户。 如果激活成功，则受众将填充到您的帐户中。
