@@ -4,9 +4,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
 workflow-type: tm+mt
-source-wordcount: '1013'
+source-wordcount: '1036'
 ht-degree: 0%
 
 ---
@@ -92,20 +92,20 @@ ht-degree: 0%
 
 ## 验证区段激活成功 {#verify-activation}
 
-### 电子邮件营销目标和云存储目标
+### 电子邮件营销目标和云存储目标 {#esp-and-cloud-storage}
 
 对于电子邮件营销目标和云存储目标，Adobe实时CDP会在您提供的存储位 `.txt` 置 `.csv` 创建制表符分隔或文件。 希望每天在存储位置创建新文件。 The file format is:
-`<destination name>id<destination id><timestamp-yyyymmddhhmmss>`
+`<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
 
 您连续三天收到的文件可能如下所示：
 
 ```
-Salesforce_id3544_20191120110000.csv
-Salesforce_id3544_20191121123000.csv
-Salesforce_id3544_20191122124530.csv
+Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv
+Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200409052200.csv
+Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200410061130.csv
 ```
 
-这些文件在您的存储位置是确认成功激活。
+这些文件在您的存储位置是确认成功激活。 要了解导出的文件的结构，您可 [以下载示例。csv文件](/help/rtcdp/destinations/assets/sample_export_file_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv)。 此示例文件包括用户档案 `person.firstname`属性 `person.lastname`、 `person.gender`、 `person.birthyear`和 `personalEmail.address`。
 
 ### 广告目标
 
