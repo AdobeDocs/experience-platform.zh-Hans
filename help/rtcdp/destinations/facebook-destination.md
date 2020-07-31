@@ -4,9 +4,9 @@ seo-title: Facebook目标
 description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 seo-description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 7f3df12da5e93c3d0cc53eed1aa603ddbafdb0b2
 workflow-type: tm+mt
-source-wordcount: '652'
+source-wordcount: '722'
 ht-degree: 2%
 
 ---
@@ -93,3 +93,11 @@ ht-degree: 2%
 ## 将区段激活到 [!DNL Facebook] {#activate-segments}
 
 有关如何将区段激活到目的地的说 [!DNL Facebook]明，请 [参阅将数据激活到目标](/help/rtcdp/destinations/activate-destinations.md)。
+
+## 导出的数据 {#exported-data}
+
+对 [!DNL Facebook]于，成功的激活意味着 [!DNL Facebook] 将在[!DNL Facebook Ads Manager] [中以编程方式创建自定义受众](https://www.facebook.com/adsmanager/manage/)。 由于用户对已激活的区段具有资格或取消资格，因此将添加和删除该受众的区段成员资格。
+
+>[!TIP]
+>
+>Adobe实时CDP与历史受众回填之 [!DNL Facebook] 间的集成。 在将区段激活到目标时， [!DNL Facebook] 所有历史区段资格都将发送至。
