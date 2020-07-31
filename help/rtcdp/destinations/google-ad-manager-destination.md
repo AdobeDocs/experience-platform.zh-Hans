@@ -4,9 +4,9 @@ seo-title: Google Ad Manager目标
 description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的广告服务平台，它使出版商能够通过视频和移动应用程序管理其网站上广告的显示。 '
 seo-description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的广告服务平台，它使出版商能够通过视频和移动应用程序管理其网站上广告的显示。 '
 translation-type: tm+mt
-source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
+source-git-commit: f23d7dae7883cc14dc8b54d8b1ba2d94f0786cbc
 workflow-type: tm+mt
-source-wordcount: '610'
+source-wordcount: '636'
 ht-degree: 0%
 
 ---
@@ -69,3 +69,7 @@ ht-degree: 0%
 ## 将区段激活到 [!DNL Google Ad Manager]
 
 有关如何将区段激活到目的地的说 [!DNL Google Ad Manager]明，请 [参阅将数据激活到目标](/help/rtcdp/destinations/activate-destinations.md)。
+
+## 导出的数据
+
+要验证数据是否已成功导出到目 [!DNL Google Ad Manager] 标，请检查您的 [!DNL Google Ad Manager] 帐户。 如果激活成功，则受众将填充到您的帐户中。
