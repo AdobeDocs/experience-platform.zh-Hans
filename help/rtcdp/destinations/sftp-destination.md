@@ -4,9 +4,9 @@ seo-title: SFTP目标
 description: 创建到SFTP服务器的实时出站连接，以定期从Experience Platform导出分隔的数据文件。
 seo-description: 创建到SFTP服务器的实时出站连接，以定期从Experience Platform导出分隔的数据文件。
 translation-type: tm+mt
-source-git-commit: c3fe5753fb23f99076f9c85b4e07af2d25a121a9
+source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
 workflow-type: tm+mt
-source-wordcount: '132'
+source-wordcount: '170'
 ht-degree: 0%
 
 ---
@@ -29,3 +29,7 @@ ht-degree: 0%
 * **主持人**: SFTP存储位置的地址
 * **用户名**: 登录SFTP存储的用户名
 * **密码**: 登录SFTP存储的口令
+
+## 导出的数据 {#exported-data}
+
+对 [!SFTP] 于目标，Adobe实时CDP会在您提供的存储位置创建制 `.txt` 表符 `.csv` 分隔的或文件。 有关这些文件的详细信息，请参 [阅区段存储教程中的电子邮件营销目](/help/rtcdp/destinations/activate-destinations.md#esp-and-cloud-storage) 标和云激活目标。
