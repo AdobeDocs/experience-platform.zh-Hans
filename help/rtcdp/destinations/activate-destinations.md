@@ -4,7 +4,7 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 08b6fd2d43e8ca9d0208ac1bfadc2db15e3f2e90
+source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
 workflow-type: tm+mt
 source-wordcount: '1039'
 ht-degree: 0%
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 激活数据 {#activate-data}
 
-1. 在 **[!UICONTROL 目标>浏览]**，选择要激活区段的目标。
+1. 在 **[!UICONTROL 目标]** >浏 **[!UICONTROL 览中]**，选择要激活区段的目标。
 2. 单击目标的名称。 此操作将带您进入激活流程。
    ![activate-flow](/help/rtcdp/destinations/assets/activate-flow.png)请注意，如果目标激活流已存在，您可以看到当前发送到目标的区段。 选 **[!UICONTROL 择右边栏]** 中的编辑激活，然后按照以下步骤修改激活详细信息。
 3. 选择 **[!UICONTROL 激活]**;
