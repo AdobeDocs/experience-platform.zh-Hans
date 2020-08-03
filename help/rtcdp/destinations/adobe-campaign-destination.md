@@ -4,7 +4,7 @@ seo-title: Adobe Campaign
 description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 seo-description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 translation-type: tm+mt
-source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '517'
 ht-degree: 1%
@@ -22,7 +22,7 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 
 ## 连接目标 {#connect-destination}
 
-1. 在“ **[!UICONTROL 连接”>“目标]**”中，选择“Adobe Campaign”，然 **[!UICONTROL 后选择Connect目标]**。
+1. 在“ **[!UICONTROL 连接]** ”>“目 **[!UICONTROL 标”中]**，选择“Adobe Campaign”，然 **[!UICONTROL 后选择Connect目标]**。
 
    ![连接到adobe活动](/help/rtcdp/destinations/assets/connect-adobe-campaign.png)
 
