@@ -4,7 +4,7 @@ seo-title: 目标工作区
 description: 在Adobe实时客户数据平台中，从左侧导航栏中选择目标以访问目标工作区。
 seo-description: 在Adobe实时客户数据平台中，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: 336aa90cf1e059a92a36dd0ef3222ef6a6f5123b
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 3%
@@ -34,7 +34,7 @@ ht-degree: 3%
 
 ## [!UICONTROL 浏览] {#browse}
 
-“浏 **[!UICONTROL 览]** ”选项卡显示您已建立连接的目标。 启用切换 **[!UICONTROL 的目]** 标将目标设置为活动，反之亦然。 您还可以通过选择区段>浏览并选择要检查的区 **[!UICONTROL 段，视图有]** 数据流动的目标。 有关在“浏览”选项卡中为每个目标提供的所有信息，请参阅下表：
+“浏 **[!UICONTROL 览]** ”选项卡显示您已建立连接的目标。 启用切换 **[!UICONTROL 的目]** 标将目标设置为活动，反之亦然。 您还可以通过选择“区段”>“浏览”并选择要检 **[!UICONTROL 查的区段]** ，来 **[!UICONTROL 视图您拥]** 有数据流动的目标。 有关在“浏览”选项卡中为每个目标提供的所有信息，请参阅下表：
 
 ![浏览选项卡](/help/rtcdp/destinations/assets/browse-tab.png)
 
