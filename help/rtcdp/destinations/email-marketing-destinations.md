@@ -4,7 +4,7 @@ seo-title: 电子邮件营销目标
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 seo-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 translation-type: tm+mt
-source-git-commit: 3c598454a868139b7604c5c7ca2b98fa0f1bb961
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '731'
 ht-degree: 1%
@@ -24,7 +24,7 @@ ht-degree: 1%
 
 ## 第1步——连接目标 {#connect-destination}
 
-1. 在“ **[!UICONTROL 连接”>]**“目标”中，选择要连接的电子邮件营销目标，然后选择“连 **[!UICONTROL 接目标”]**。
+1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标”中]**，选择要连接的电子邮件营销目标，然后选择“ **[!UICONTROL 连接目标”]**。
 
    ![连接到目标](/help/rtcdp/destinations/assets/connect-email-marketing.png)
 
@@ -59,7 +59,7 @@ ht-degree: 1%
 
 | 唯一标识符 | 统一模式中的XDM字段 |
 ---------|----------
-| 电子邮件地址 | `personalEmail.address` |
+| Email Address | `personalEmail.address` |
 | Phone | `mobilePhone.number` |
 | 忠诚度项目ID | `Customer-defined XDM field` |
 
