@@ -4,7 +4,7 @@ seo-title: 云存储目标工作流
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '493'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 本页介绍如何连接到Adobe实时存储平台中的云数据位置。
 
-1. 在“ **[!UICONTROL 连接”>“目标]**”中，选择首选云存储目标，然后选择 **[!UICONTROL Connect目标]**。
+1. 在“ **[!UICONTROL 连接]** ”>“目 **[!UICONTROL 标”中]**，选择首选云存储目标，然后选择 **[!UICONTROL Connect目标]**。
 
    ![连接到云存储目标](/help/rtcdp/destinations/assets/connect-cloud-destination.png)
 
