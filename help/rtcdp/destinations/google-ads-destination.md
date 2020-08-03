@@ -4,7 +4,7 @@ seo-title: Google广告目标
 description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 seo-description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 translation-type: tm+mt
-source-git-commit: 7f3df12da5e93c3d0cc53eed1aa603ddbafdb0b2
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '598'
 ht-degree: 0%
@@ -51,7 +51,7 @@ ht-degree: 0%
 
 ## 创建目标
 
-1. 在“连 **[!UICONTROL 接”>“目标]**”中，选 [!DNL Google Ads]择并选择“创 **[!UICONTROL 建目标”]**。
+1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中 [!DNL Google Ads]，选 **[!UICONTROL 择并选择“创]**建目标”。
    ![连接Google广告目标](/help/rtcdp/destinations/assets/google-2-destination.png)
 
 2. 在创建 **目标** 工作流的设置步骤中，填写目 [!UICONTROL 标的基本信] 息。 <br>
