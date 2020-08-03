@@ -4,7 +4,7 @@ seo-title: Oracle Evolca目标
 description: Oracle Elova是Oracle提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
 seo-description: Oracle Elova是Oracle提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
 translation-type: tm+mt
-source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '517'
 ht-degree: 0%
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 连接到目标 {#connect-destination}
 
-1. 在“ **[!UICONTROL 连接”>“目标]**”中， [!DNL Oracle Eloqua]选择，然后选 **[!UICONTROL 择“连接目标”]**。
+1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中 [!DNL Oracle Eloqua]，选 **[!UICONTROL 择，然后选择]**“连接目标”。
 
    ![连接到Elovica](/help/rtcdp/destinations/assets/connect-oracle-eloqua.png)
 
