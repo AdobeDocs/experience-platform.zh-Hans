@@ -4,7 +4,7 @@ seo-title: SalesforceMarketing Cloud
 description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 seo-description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 translation-type: tm+mt
-source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
+source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 连接目标 {#connect-destination}
 
-1. 在“ **[!UICONTROL 连接”>“目标]**”中， [!DNL Salesforce Marketing Cloud]选择，然后选 **[!UICONTROL 择“连接目标”]**。
+1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中 [!DNL Salesforce Marketing Cloud]，选 **[!UICONTROL 择，然后选择]**“连接目标”。
 
    ![连接到Salesforce](/help/rtcdp/destinations/assets/connect-salesforce.png)
 
