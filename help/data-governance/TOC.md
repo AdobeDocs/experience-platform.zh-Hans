@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform数据治理帮助
 translation-type: tm+mt
-source-git-commit: e135bc33e6c3daa411e85cb37e407322fd0bca5b
+source-git-commit: 876ac35f6366411adda821805bf628470839f80e
 workflow-type: tm+mt
-source-wordcount: '103'
-ht-degree: 3%
+source-wordcount: '106'
+ht-degree: 4%
 
 ---
 
@@ -16,9 +16,9 @@ ht-degree: 3%
 * [数据管理概述](home.md)
 * 数据使用标签 {#labels}
    * [数据使用标签概述](labels/overview.md)
+   * [核心数据使用标签](labels/reference.md)
    * [在UI中管理数据使用标签](labels/user-guide.md)
-   * [管理API中的数据使用标签](labels/api.md)
-   * [支持的数据使用标签](labels/reference.md)
+   * [使用API管理数据集和字段的标签](labels/dataset-api.md)
 * 数据使用策略 {#policies}
    * [数据使用策略概述](policies/overview.md)
    * [数据使用策略用户指南](policies/user-guide.md)
@@ -26,8 +26,9 @@ ht-degree: 3%
 * 策略实施 {#enforcement}
    * [策略实施概述](enforcement/overview.md)
    * [使用策略服务API实施数据使用策略](enforcement/api-enforcement.md)
-* DULE策略服务API {#api}
+* 策略服务API开发人员指南 {#api}
    * [入门指南](api/getting-started.md)
+   * [标签](api/labels.md)
    * [策略](api/policies.md)
    * [营销操作](api/marketing-actions.md)
    * [评估](api/evaluation.md)
