@@ -4,10 +4,10 @@ solution: Experience Platform
 title: '使用API管理数据集的数据使用标签 '
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 2f35765c0dfadbfb4782b6c3904e33ae7a330b2f
+source-git-commit: 3b6f46c5a81e1b6e8148bf4b78ae2560723f9d20
 workflow-type: tm+mt
-source-wordcount: '653'
-ht-degree: 3%
+source-wordcount: '912'
+ht-degree: 2%
 
 ---
 
@@ -94,16 +94,21 @@ PUT /datasets/{DATASET_ID}/labels
 
 **请求**
 
-以下POST请求会向数据集添加一系列标签以及该数据集中的特定字段。 有效负荷中提供的字段与PUT请求所需的字段相同。
+以下PUT请求更新数据集的现有标签以及该数据集中的特定字段。 有效负荷中提供的字段与POST请求所需的字段相同。
+
+>[!IMPORTANT]
+>
+>在向终 `If-Match` 点发出PUT请求时，必须提供有效的 `/datasets/{DATASET_ID}/labels` 头。 有关使用 [所需标题](#if-match) ，请参阅附录部分。
 
 ```shell
-curl -X POST \
+curl -X PUT \
   'https://platform.adobe.io/data/foundation/dataset/datasets/5abd49645591445e1ba04f87/labels' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
+  -H 'If-Match: 8f00d38e-0000-0200-0000-5ef4fc6d0000' \
   -d '{
         "labels": [ "C1", "C2", "C3", "I1", "I2" ],
         "optionalLabels": [
@@ -160,13 +165,20 @@ DELETE /datasets/{DATASET_ID}/labels
 
 **请求**
 
+以下请求将删除路径中指定的数据集的标签。
+
+>[!IMPORTANT]
+>
+>在向终 `If-Match` 点发出DELETE请求时，必须提供有效的 `/datasets/{DATASET_ID}/labels` 头。 有关使用 [所需标题](#if-match) ，请参阅附录部分。
+
 ```shell
 curl -X DELETE \
   'https://platform.adobe.io/data/foundation/dataset/datasets/5abd49645591445e1ba04f87/labels' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'If-Match: 8f00d38e-0000-0200-0000-5ef4fc6d0000'
 ```
 
 **响应**
@@ -182,3 +194,17 @@ curl -X DELETE \
 您现在还可以根据已应用的标签定义数据使用策略。 有关详细信息，请参阅 [数据使用策略概述](../policies/overview.md)。
 
 有关管理中数据集的更 [!DNL Experience Platform]多信息，请参 [阅数据集概述](../../catalog/datasets/overview.md)。
+
+## 附录 {#appendix}
+
+以下部分包含有关使用Dataset Service API处理标签的其他信息。
+
+### [!DNL If-Match] 标题 {#if-match}
+
+在发出更新数据集(PUT和DELETE)现有标签的API调用时，必 `If-Match` 须包含一个标题，指示数据集服务中数据集标签实体的当前版本。 为防止数据冲突，仅当包含的字符串与系统为该数据集生成的最 `If-Match` 新版本标签相匹配时，服务才会更新数据集实体。
+
+>[!NOTE]
+>
+>如果当前不存在相关数据集的标签，则只能通过POST请求添加新标签，这不需要标 `If-Match` 头。 将标签添加到数据集后，会 `etag` 分配一个值，该值可用于以后更新或删除标签。
+
+要检索数据集标签实体的最新版本，请向端 [点发出](#look-up) GET `/datasets/{DATASET_ID}/labels` 请求。 当前值将在响应中的标题下 `etag` 返回。 更新现有数据集标签时，最佳做法是首先对数据集执行查找请求，以在后续PUT或DELETE请求的标 `etag` 题中使用该值之前 `If-Match` 获取其最新值。
