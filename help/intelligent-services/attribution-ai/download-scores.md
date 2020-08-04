@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问Attribution AI中的得分
 topic: Accessing scores
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 24449d0138ab449dbc01aecbbe9f70e05c781c89
 workflow-type: tm+mt
-source-wordcount: '983'
+source-wordcount: '1028'
 ht-degree: 2%
 
 ---
@@ -259,9 +259,11 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
 
 ![终端](./images/download-scores/terminal-output.png)
 
+下载的分数将采用镶木格式，需要一个 [!DNL Spark]外壳或镶木阅读器来视图分数。 查看原始分数时，可以使用镶 [木工具](https://github.com/apache/parquet-mr/tree/master/parquet-tools)。 拼花工具可以分析数据 [!DNL Spark]。
+
 ## 后续步骤
 
-此文档概述了下载Attribution AI分数所需的步骤。 您现在可以继续浏览提供 [的其他](../home.md) “智能服务”和指南。
+此文档概述了下载Attribution AI分数所需的步骤。 有关得分输出的详细信息，请访 [问属性AI输入和输出文](./input-output.md) 档。
 
 ## 使用Snowflake访问得分
 
