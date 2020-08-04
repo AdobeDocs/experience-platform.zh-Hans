@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 支持的数据使用标签
+title: 核心数据使用标签
 topic: labels
 translation-type: tm+mt
-source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
+source-git-commit: 876ac35f6366411adda821805bf628470839f80e
 workflow-type: tm+mt
-source-wordcount: '1878'
+source-wordcount: '1869'
 ht-degree: 2%
 
 ---
 
 
-# 支持的数据使用标签
+# 核心数据使用标签
 
-Adobe Experience Platform包括以数据使用标签和执行(DULE)为核心的数据治理基础架构。  DULE功能允许将数据使用标签应用到数据集和字段，以便根据应用于该数据的使用策略的类型对数据进行分类。
+数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 Adobe Experience Platform数据管理提供了多种现成的核心数据使用标签，可用于开始数据分类。
 
-此文档概述了当前支持的所有数据使用标签 [!DNL Experience Platform]。 有关和DULE的 [!DNL Data Governance] 更多信息，请参阅“数据管 [理”概述](../home.md)。
+此文档概述了当前由提供的核心数据使用标签 [!DNL Experience Platform]。 有关更多信 [!DNL Data Governance] 息，请参阅“数 [据管理”概述](../home.md)。
 
 ## 合同标签
 
