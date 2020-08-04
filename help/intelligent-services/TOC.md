@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: 智能服务帮助
 translation-type: tm+mt
-source-git-commit: a0b85809d0703c0366c73ed6d66319af0f62cb27
+source-git-commit: 24449d0138ab449dbc01aecbbe9f70e05c781c89
 workflow-type: tm+mt
-source-wordcount: '64'
-ht-degree: 3%
+source-wordcount: '67'
+ht-degree: 2%
 
 ---
 
@@ -18,6 +18,7 @@ ht-degree: 3%
 * Attribution AI {#attribution-ai}
    * [概述](attribution-ai/overview.md)
    * [Attribution AI入门](attribution-ai/getting-started.md)
+   * [输入和输出](attribution-ai/input-output.md)
    * [用户界面指南](attribution-ai/user-guide.md)
    * [发现洞察](attribution-ai/discover-insights.md)
    * [访问得分](attribution-ai/download-scores.md)
