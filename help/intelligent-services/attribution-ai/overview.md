@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Attribution AI概述
 topic: Attribution AI
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: 7fc121d310509739c7ee81f7d6657ea8f3963b69
 workflow-type: tm+mt
-source-wordcount: '654'
-ht-degree: 1%
+source-wordcount: '407'
+ht-degree: 0%
 
 ---
 
@@ -29,24 +29,6 @@ Attribution AI支持两类别分，算法和基于规则。 算法得分包括�
 以下视频旨在支持您对Attribution AI的理解。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32667?learn=on&quality=12)
-
-## Attribution AI算法得分
-
-Attribution AI支持两类别归因得分、算法得分和基于规则的得分。
-
-Attribution AI产生两种不同类型的算法得分，增量和影响。 受影响的得分是每个营销接触点负责的转化率的一部分。 增量得分是营销接触点直接造成的边际影响量。 增量得分和受影响得分之间的主要区别在于增量得分将基准效果考虑在内。 它不假定转化纯粹是由之前的营销接触点引起的。
-
-有关这些归因得分的更多详细信息，请参阅下表：
-
-| 归因得分 | 描述 |
-| ----- | ----------- |
-| 首次接触 | 基于规则的归因得分，可在转化路径上将所有积分分配给初始触点。 |
-| 最后接触 | 基于规则的归因得分，将所有信用分配给最接近转化的触点。 |
-| 线性 | 基于规则的归因得分，为转化路径上的每个接触点分配相等的积分。 |
-| U 型 | 基于规则的归因得分，将40%的积分分配给第一个触点，40%的积分分配给最后一个触点，而其他接触点将其余20%平分。 |
-| 时间衰减 | 基于规则的归因得分，即离转化更近的接触点获得的积分比距离转化更远的接触点多。 |
-| 受影响（算法） | 受影响的得分是每个营销接触点负责的转化率的一部分。 |
-| 增量（算法） | 增量得分是营销接触点直接造成的边际影响量。 |
 
 ## 业务使用案例示例
 
