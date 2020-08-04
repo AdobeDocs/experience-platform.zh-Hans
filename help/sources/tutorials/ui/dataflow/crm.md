@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为CRM连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 737f3b0fe9bbc04029fc1002613d4efc0bb3f5bd
+source-git-commit: 91714bea4e165d64bcc33e32e73d1d32a505ba00
 workflow-type: tm+mt
-source-wordcount: '1167'
+source-wordcount: '1276'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 在UI中为CRM连接器配置数据流
 
-数据流是从源中检索数据并将其引入数据集的计划任务 [!DNL Platform] 符。 本教程提供了使用CRM连接器配置新数据流的步骤。
+数据流是从源中检索数据并将其引入数据集的计划任务 [!DNL Platform] 符。 本教程提供了使用CRM帐户配置新数据流的步骤。
 
 ## 入门指南
 
@@ -25,11 +25,11 @@ ht-degree: 0%
    * [模式编辑器教程](../../../../xdm/tutorials/create-schema-ui.md): 了解如何使用模式编辑器UI创建自定义模式。
 * [实时客户用户档案](../../../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
-此外，本教程要求您已创建CRM连接器。 有关在UI中创建不同CRM连接器的列表教程，请参阅源连接 [器概述](../../../home.md)。
+此外，本教程要求您已创建CRM帐户。 有关在UI中创建不同CRM连接器的列表教程，请参阅源连接 [器概述](../../../home.md)。
 
 ## 选择数据
 
-创建CRM连接器后，将显 *示选择* 数据步骤，为您提供一个交互界面来浏览文件层次结构。
+创建CRM帐户后，将显 *示选择* 数据步骤，为您提供一个交互界面来浏览文件层次结构。
 
 * 界面的左半部分是目录浏览器，显示服务器的文件和目录。
 * 界面的右半部分允许您从一个兼容文件预览多达100行数据。
@@ -40,7 +40,7 @@ ht-degree: 0%
 
 ## 将数据字段映射到XDM模式
 
-将显 *示* “映射”步骤，提供一个交互界面来将源数据映射到数 [!DNL Platform] 据集。
+将显 *[!UICONTROL 示]* “映射”步骤，提供一个交互界面来将源数据映射到数 [!DNL Platform] 据集。
 
 选择要收录到的入站数据的数据集。 您可以使用现有数据集或创建新数据集。
 
@@ -50,17 +50,19 @@ ht-degree: 0%
 
 ![use-existing-dataset](../../../images/tutorials/dataflow/crm/use-existing-dataset.png)
 
-此时将 _显示“选择数据集_ ”对话框。 找到您要使用的数据集，选择它，然后单击“继 **[!UICONTROL 续”]**。
+此时将 *[!UICONTROL 显示“选择数据集]* ”对话框。 找到您要使用的数据集，选择它，然后单击“继 **[!UICONTROL 续”]**。
 
 ![select-existing-dataset](../../../images/tutorials/dataflow/crm/select-existing-dataset.png)
 
 ### 使用新数据集
 
-要将数据引入新数据集，请选 **[!UICONTROL 择创建新数据集]** ，并在提供的字段中输入数据集的名称和说明。 然后，单击模式图标。
+要将数据引入新数据集，请选 **[!UICONTROL 择创建新数据集]** ，并在提供的字段中输入数据集的名称和说明。
 
-![use-new-dataset](../../../images/tutorials/dataflow/crm/use-new-dataset.png)
+您可以在“选择模式”搜索栏中输入模式名 **[!UICONTROL 称来附加模式]** 字段。 您还可以选择下拉图标以查看现有列表的模式。 或者，您也可以选择“ **[!UICONTROL 高级搜索]** ”来访问现有模式的屏幕，包括其各自的详细信息。
 
-将出 _现“选择模式_ ”对话框。 选择要应用于新数据集的模式，然后单击 **[!UICONTROL 完成]**。
+![create-new-dataset](../../../images/tutorials/dataflow/all-tabular/new-target-dataset.png)
+
+将出 *[!UICONTROL 现“选择模式]* ”对话框。 选择要应用于新数据集的模式，然后单击 **[!UICONTROL 完成]**。
 
 ![select-模式](../../../images/tutorials/dataflow/crm/select-schema.png)
 
@@ -68,16 +70,18 @@ ht-degree: 0%
 
 映射源数据后，单击“下 **[!UICONTROL 一步]**”。
 
+![](../../../images/tutorials/dataflow/all-tabular/mapping-updated.png)
+
 ## 计划摄取运行
 
 此时 *[!UICONTROL 将显示]* “计划”步骤，允许您配置摄取计划，以使用配置的映射自动摄取所选源数据。 下表概述了用于计划的不同可配置字段：
 
 | 字段 | 描述 |
 | --- | --- |
-| 频率 | 可选频率包括一次、分钟、小时、天和周。 |
+| 频度 | 可选频率 `Once`包括 `Minute`、 `Hour`、 `Day`和 `Week`。 |
 | 间隔 | 一个整数，它为所选频率设置间隔。 |
-| 开始时间 | UTC时间戳，指示何时设置第一次摄取 |
-| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *启用* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *禁用* “回填”，则只会摄取在首次摄取和开始时间之间加 *载的文件* 。 在开始时间之 *前加载的文* 件将不会被摄取。 |
+| 开始时间 | UTC时间戳，指示何时设置第一次摄取。 |
+| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *[!UICONTROL 启用]* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *禁用* “回填”，则只会摄取在首次摄取和开始时间之间加 *[!UICONTROL 载的文件]* 。 在开始时间之 *[!UICONTROL 前加载的文]* 件将不会被摄取。 |
 | 增量列 | 具有筛选的源模式字段集类型、日期或时间的选项。 此字段用于区分新数据和现有数据。 增量数据将根据所选列的时间戳被摄取。 |
 
 数据流设计为按计划自动摄取数据。 开始。 然后，设置时间间隔以指定两个流运行之间的周期。 间隔的值应为非零整数，并应设置为大于或等于15。
@@ -94,15 +98,19 @@ ht-degree: 0%
 
 >[!TIP] **[!UICONTROL 在一]** 次性摄取 **** 期间，间隔和回填不可见。
 
-![计划一次](../../../images/tutorials/dataflow/databases/schedule-once.png)
-
 向计划提供适当的值后，选择“下 **[!UICONTROL 一步]**”。
 
-## 命名数据流
+![计划一次](../../../images/tutorials/dataflow/databases/schedule-once.png)
 
-将 *出现* “名称流”步骤，您必须在其中为数据流提供名称和可选描述。 完成后，单击&#x200B;**[!UICONTROL 下一步]**。
+## 提供数据流详细信息
 
-![name-dataflow](../../../images/tutorials/dataflow/crm/name-dataflow.png)
+此时 *[!UICONTROL 会显示]* “数据流详细信息”步骤，允许您命名新数据流并简要描述新数据流。
+
+在此过程中，您还可以启用“部 *[!UICONTROL 分摄取]* ”和“ *[!UICONTROL 错误诊断”]*。 启用 *[!UICONTROL 部分摄取]* ，可以摄取包含错误且达到特定阈值的数据。 启 *[!UICONTROL 用部分摄取]* ，请拖动错误 *[!UICONTROL 阈值%dial以调整批]* 错误阈值。 或者，也可以通过选择输入框手动调整阈值。 有关详细信息，请参 [阅部分批摄取概述](../../../../ingestion/batch-ingestion/partial.md)。
+
+为数据流提供值，然后选择 **[!UICONTROL 下一步]**。
+
+![dataflow-details](../../../images/tutorials/dataflow/all-tabular/dataflow-detail.png)
 
 ## 查看数据流
 
