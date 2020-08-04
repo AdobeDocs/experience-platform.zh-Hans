@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为营销自动化连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3a1ecca49809a6ebbc94bbbef93eef56c8faf118
+source-git-commit: 91714bea4e165d64bcc33e32e73d1d32a505ba00
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1244'
 ht-degree: 0%
 
 ---
@@ -58,11 +58,9 @@ ht-degree: 0%
 
 要将数据引入新数据集，请选 **[!UICONTROL 择创建新数据集]** ，并在提供的字段中输入数据集的名称和说明。
 
-在此过程中，您还可以启用“部 *[!UICONTROL 分摄取]* ”和“ *[!UICONTROL 错误诊断”]*。 启用 *[!UICONTROL 部分摄取]* ，可以摄取包含错误的数据，最高可以设置特定阈值。 启用错误诊断可提供有关单独分批的任何错误数据的详细信息。 有关详细信息，请参 [阅部分批摄取概述](../../../../ingestion/batch-ingestion/partial.md)。
+您可以在“选择模式”搜索栏中输入模式名 **[!UICONTROL 称来附加模式]** 字段。 您还可以选择下拉图标以查看现有列表的模式。 或者，您也可以选择“ **[!UICONTROL 高级搜索]** ”来访问现有模式的屏幕，包括其各自的详细信息。
 
-完成后，单击模式图标。
-
-![use-new-dataset](../../../images/tutorials/dataflow/marketing-automation/use-new-dataset.png)
+![create-new-dataset](../../../images/tutorials/dataflow/all-tabular/new-target-dataset.png)
 
 将出 *[!UICONTROL 现“选择模式]* ”对话框。 选择要应用于新数据集的模式，然后单击 **[!UICONTROL 完成]**。
 
@@ -72,7 +70,7 @@ ht-degree: 0%
 
 映射源数据后，单击“下 **[!UICONTROL 一步]**”。
 
-![](../../../images/tutorials/dataflow/marketing-automation/mapping.png)
+![](../../../images/tutorials/dataflow/all-tabular/mapping-updated.png)
 
 ## 计划摄取运行
 
@@ -80,10 +78,10 @@ ht-degree: 0%
 
 | 字段 | 描述 |
 | --- | --- |
-| 频率 | 可选频率包括一次、分钟、小时、天和周。 |
+| 频度 | 可选频率 `Once`包括 `Minute`、 `Hour`、 `Day`和 `Week`。 |
 | 间隔 | 一个整数，它为所选频率设置间隔。 |
-| 开始时间 | UTC时间戳，指示何时设置第一次摄取 |
-| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *启用* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *禁用* “回填”，则只会摄取在首次摄取和开始时间之间加 *载的文件* 。 在开始时间之 *前加载的文* 件将不会被摄取。 |
+| 开始时间 | UTC时间戳，指示何时设置第一次摄取。 |
+| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *[!UICONTROL 启用]* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *禁用* “回填”，则只会摄取在首次摄取和开始时间之间加 *[!UICONTROL 载的文件]* 。 在开始时间之 *[!UICONTROL 前加载的文]* 件将不会被摄取。 |
 | 增量列 | 具有筛选的源模式字段集类型、日期或时间的选项。 此字段用于区分新数据和现有数据。 增量数据将根据所选列的时间戳被摄取。 |
 
 数据流设计为按计划自动摄取数据。 开始。 然后，设置时间间隔以指定两个流运行之间的周期。 间隔的值应为非零整数，并应设置为大于或等于15。
@@ -100,9 +98,19 @@ ht-degree: 0%
 
 >[!TIP] **[!UICONTROL 在一]** 次性摄取 **** 期间，间隔和回填不可见。
 
+向计划提供适当的值后，选择“下 **[!UICONTROL 一步]**”。
+
 ![](../../../images/tutorials/dataflow/databases/schedule-once.png)
 
-向计划提供适当的值后，选择“下 **[!UICONTROL 一步]**”。
+## 提供数据流详细信息
+
+此时 *[!UICONTROL 会显示]* “数据流详细信息”步骤，允许您命名新数据流并简要描述新数据流。
+
+在此过程中，您还可以启用“部 *[!UICONTROL 分摄取]* ”和“ *[!UICONTROL 错误诊断”]*。 启用 *[!UICONTROL 部分摄取]* ，可以摄取包含错误且达到特定阈值的数据。 启 *[!UICONTROL 用部分摄取]* ，请拖动错误 *[!UICONTROL 阈值%dial以调整批]* 错误阈值。 或者，也可以通过选择输入框手动调整阈值。 有关详细信息，请参 [阅部分批摄取概述](../../../../ingestion/batch-ingestion/partial.md)。
+
+为数据流提供值，然后选择 **[!UICONTROL 下一步]**。
+
+![dataflow-details](../../../images/tutorials/dataflow/all-tabular/dataflow-detail.png)
 
 ## 查看数据流
 
