@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案用户指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 5c2429f10dfed8cc927914572c690a0536ddae99
 workflow-type: tm+mt
 source-wordcount: '1147'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Real-time Customer Profile] 为每位客户创建全面视图，将来自多个渠道（包括在线、离线、CRM和第三方数据）的数据相结合。
 
-此文档用作在用户界面 [!DNL Real-time Customer Profile] 中与Adobe Experience Platform交互的指南。
+此文档用作在Adobe Experience Platform用户界 [!DNL Real-time Customer Profile] 面中进行交互的指南。
 
 ## 入门指南
 
@@ -88,7 +88,7 @@ ht-degree: 0%
 
 ![](../images/user-guide/profiles-display-profile.png)
 
-### 用户档案详细信息
+### 用户档案详细信息 {#profile-detail}
 
 选择用户档案 **[!UICONTROL ID后]**，将打 _[!UICONTROL 开“详细信]_息”选项卡。 此页显示有关所选用户档案的信息，包括基本属性、链接身份和可用的联系渠道。 显示的用户档案信息已从多个用户档案片段合并到一起，以形成单个客户的单个视图。
 
