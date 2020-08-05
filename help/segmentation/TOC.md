@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform分段服务帮助
 translation-type: tm+mt
-source-git-commit: c5880153f4ba9a6518423985e42fb1b3b71cd862
+source-git-commit: e351a2d489730c1f1bd5f87be8d85612090bc009
 workflow-type: tm+mt
-source-wordcount: '112'
-ht-degree: 6%
+source-wordcount: '116'
+ht-degree: 7%
 
 ---
 
@@ -27,6 +27,8 @@ ht-degree: 6%
    - [流细分](api/streaming-segmentation.md)
 - 分段UI {#ui}
    - [概述](ui/overview.md)
+   - [区段生成器](ui/segment-builder.md)
+   - [流细分](ui/streaming-segmentation.md)
 - [支持退出](honoring-opt-outs.md)
 - [多实体分割](multi-entity-segmentation.md)
 - 用户档案查询语 {#pql}
