@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 流细分
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: e351a2d489730c1f1bd5f87be8d85612090bc009
 workflow-type: tm+mt
-source-wordcount: '1364'
+source-wordcount: '1365'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->以下文档说明了如何使用API使用流分段。 有关使用UI使用流式分段的信息，请阅读“段 [生成器指南”](../ui/overview.md#streaming-segmentation)。
+>以下文档说明了如何使用API使用流分段。 有关使用UI使用流式分段的信息，请阅读流式 [分段UI指南](../ui/streaming-segmentation.md)。
 
 基于的流 [!DNL Adobe Experience Platform] 式细分允许客户在关注数据丰富性的同时近乎实时地进行细分。 利用流细分，当数据进入时，细分资格现在会 [!DNL Platform]发生，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传入时评估大多数细分规则， [!DNL Platform]这意味着，在不运行计划的细分作业的情况下，区段成员关系将保持最新状态。
 
@@ -403,4 +403,4 @@ curl -X POST \
 
 现在，您已经为流式分段启用了新区段和现有区段，并启用了计划分段以开发基线和执行重复评估，因此您可以开始为组织创建区段。
 
-要了解如何使用Adobe Experience Platform用户界面执行类似操作和处理区段，请访 [问区段生成器用户指南](../ui/overview.md)。
+要了解如何使用Adobe Experience Platform用户界面执行类似操作和处理区段，请访 [问区段生成器用户指南](../ui/segment-builder.md)。
