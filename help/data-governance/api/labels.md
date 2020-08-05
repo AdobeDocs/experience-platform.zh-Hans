@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 标签端点
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: ec743484028e537fa28706b0c8ec3a1f1f1d2ba3
+source-git-commit: 80526bc0fea9e1854174a2edf9389ff0c4e98f71
 workflow-type: tm+mt
 source-wordcount: '489'
 ht-degree: 3%
@@ -22,7 +22,7 @@ ht-degree: 3%
 
 ## 入门指南
 
-本指南中使用的API端点是的一部分 [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
+本指南中使用的API端点是的一部分 [!DNL Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
 
 ## 检索标签列表 {#list}
 
