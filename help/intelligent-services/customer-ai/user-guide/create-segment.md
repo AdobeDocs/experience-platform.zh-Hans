@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 根据预测得分创建客户细分
 topic: Create a segment
 translation-type: tm+mt
-source-git-commit: fba6ae701a38737812dccbf4f63e5a07f935ad8b
+source-git-commit: e351a2d489730c1f1bd5f87be8d85612090bc009
 workflow-type: tm+mt
 source-wordcount: '272'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 根据预测得分创建客户细分
 
-当预测运行完成时，用户档案会自动消耗预测倾向得分。 利用客户AI得分丰富用户档案，可以创建客户细分，根据受众的倾向得分查找客户。 本节提供使用区段生成器创建区段的步骤。 有关创建区段的更强大教程，请参阅“区 [段生成器”用户指南](../../../segmentation/ui/overview.md)。
+当预测运行完成时，用户档案会自动消耗预测倾向得分。 利用客户AI得分丰富用户档案，可以创建客户细分，根据受众的倾向得分查找客户。 本节提供使用区段生成器创建区段的步骤。 有关创建区段的更强大教程，请参阅“区 [段生成器”用户指南](../../../segmentation/ui/segment-builder.md)。
 
 >[!IMPORTANT]
 >
