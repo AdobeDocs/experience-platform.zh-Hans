@@ -4,10 +4,10 @@ seo-title: 配置Adobe Experience PlatformWeb SDK
 description: 了解如何配置Experience PlatformWeb SDK
 seo-description: 了解如何配置Experience PlatformWeb SDK
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: abd72993577f298141ed0d25b6c4abc42050b68e
 workflow-type: tm+mt
-source-wordcount: '737'
-ht-degree: 11%
+source-wordcount: '749'
+ht-degree: 10%
 
 ---
 
@@ -146,21 +146,13 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 
 ## 标识选项
 
-### `idSyncContainerId`
+### `idMigrationEnabled`
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
-| 数值 | 否 | 无 |
+| 布尔值 | 否 | true |
 
-容器ID，指定触发哪个ID同步。 这是可从顾问处获取的非负整数。
-
-### `idSyncEnabled`
-
-| **类型** | **必需** | **默认值** |
-| -------- | ------------ | ----------------- |
-| 布尔值 | 否 | `true` |
-
-启用ID同步功能，该功能允许触发URL以将Adobe唯一用户ID与第三方数据源的唯一用户ID同步。
+如果为真，则SDK将阅读并设置旧版AMCV cookie。 这有助于过渡到使用AEP Web SDK，而站点的某些部分可能仍在使用访客.js。 此外，如果页面上定义了访客API，则SDK将查询ECID的访客API。 这使您能够使用AEP Web SDK对两个标签页添加标签，同时仍具有相同的ECID。
 
 ### `thirdPartyCookiesEnabled`
 
