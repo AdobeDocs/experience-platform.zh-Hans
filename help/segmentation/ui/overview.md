@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 分段服务用户指南
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: ab43c677ab45c7aa047a50049c0dd8613b003403
+source-git-commit: e7266fba14b2dffe46ce77428ad6fe0dd92abdf5
 workflow-type: tm+mt
-source-wordcount: '1361'
+source-wordcount: '1365'
 ht-degree: 0%
 
 ---
@@ -47,7 +47,7 @@ ht-degree: 0%
 
 ![](../images/ui/overview/segment-browse-segments.png)
 
-页面顶部有将所有区段添 **[!UICONTROL 加到计划和创建]****[!UICONTROL 区段的选项]**。
+页面顶部有选项，可向计划添加所有区段和创建新区段。
 
 将所 **[!UICONTROL 有区段添加到计划]** ，将启用计划分段。 有关计划分段的详细信息，请参 [阅本用户指南的计划分段部分](#scheduled-segmentation)。
 
@@ -73,9 +73,9 @@ ht-degree: 0%
 
 ### 细分摘要
 
-区段 *[!UICONTROL 摘要]* 部分提供诸如ID、名称、说明和属性详细信息等信息。
+区段 **[!UICONTROL 摘要]** 部分提供诸如ID、名称、说明和属性详细信息等信息。
 
-此外，您还可以选择编辑区段。 选择 **[!UICONTROL 编辑区段]** ，将转到 [!DNL Segment Builder]。 有关使用工作区的更 [!DNL Segment Builder] 多详细信息，请阅 [[!DNL Segment Builder] 读用户指南](./segment-builder.md)。
+此外，您还可以选择编辑区段。 选择 **[!UICONTROL 编辑区段]** ，将转到 [!DNL Segment Builder]。 有关使用工作区的更多详 [!DNL Segment Builder] 细信息，请阅读 [[!DNL Segment Builder] 用户指南](./segment-builder.md)。
 
 ### 细分受众总数
 
