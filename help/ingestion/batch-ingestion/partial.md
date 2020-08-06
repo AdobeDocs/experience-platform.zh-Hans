@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: Adobe Experience Platform部分批摄取概述
+title: Adobe Experience Platform分批摄取概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: df6a6e20733953a0983bbfdf66ca2abc6f03e977
 workflow-type: tm+mt
-source-wordcount: '1237'
+source-wordcount: '1420'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 # 部分批摄取
 
-部分批量摄取是指能够摄取包含错误的数据，最高可达到某个阈值。 借助此功能，用户可以成功将其所有正确数据引入Adobe Experience Platform，同时单独对其所有错误数据进行批处理，并详细了解其无效原因。
+部分批量摄取是指能够摄取包含错误的数据，最高可达到某个阈值。 借助此功能，用户可以成功将其所有正确数据引入Adobe Experience Platform，同时单独对其所有错误数据进行分组，并详细说明其无效原因。
 
 此文档提供了管理部分批摄取的教程。
 
@@ -23,10 +23,10 @@ ht-degree: 1%
 
 ## 入门指南
 
-本教程需要掌握与部分批量摄取相关的各种Adobe Experience Platform服务的相关工作知识。 在开始本教程之前，请查看以下服务的相关文档：
+本教程需要对涉及部分批量摄取的Adobe Experience Platform各项服务有一定的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
 - [批量摄取](./overview.md): 从数据文 [!DNL Platform] 件（如CSV和Parke）中摄取和存储数据的方法。
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [[!DNL Experience Data Model] (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
@@ -58,14 +58,12 @@ ht-degree: 1%
 
 您可以创建启用了部分摄取的新批。
 
-要创建新批，请按照批摄取开发人员指 [南中的步骤操作](./api-overview.md)。 到达创建批 *处理步骤* 后，在请求主体中添加以下字段：
+要创建新批，请按照批摄取开发人员指 [南中的步骤操作](./api-overview.md)。 到达创建批 **[!UICONTROL 处理步骤]** 后，在请求主体中添加以下字段：
 
 ```json
 {
-    ...
     "enableErrorDiagnostics": true,
     "partialIngestionPercentage": 5
-    ...
 }
 ```
 
@@ -85,17 +83,17 @@ ht-degree: 1%
 
 ### 创建新源连接 {#new-source}
 
-要创建新的源连接，请按照“源”概述中列出 [的步骤操作](../../sources/home.md)。 进入“数据 *[!UICONTROL 流详细信息]* ”步骤后，请注意“部 *[!UICONTROL 分摄取]* ”和“ *[!UICONTROL 错误诊断]* ”字段。
+要创建新的源连接，请按照“源”概述中列出 [的步骤操作](../../sources/home.md)。 进入“数据 **[!UICONTROL 流详细信息]** ”步骤后，请注意“部 **[!UICONTROL 分摄取]** ”和“ **[!UICONTROL 错误诊断]** ”字段。
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch.png)
 
-“部 *[!UICONTROL 分摄取]* ”切换允许您启用或禁用部分批摄取。
+“部 **[!UICONTROL 分摄取]** ”切换允许您启用或禁用部分批摄取。
 
-仅当 *[!UICONTROL “部分摄取]* ”切换关闭时，才 *[!UICONTROL 会显示]* “错误诊断”切换。 此功能允许 [!DNL Platform] 生成有关所摄取批的详细错误消息。 如果打 *[!UICONTROL 开“部分摄取]* ”切换，将自动实施增强的错误诊断。
+仅当 **[!UICONTROL “部分摄取]** ”切换关闭时，才 **[!UICONTROL 会显示]** “错误诊断”切换。 此功能允许 [!DNL Platform] 生成有关所摄取批的详细错误消息。 如果打 *[!UICONTROL 开“部分摄取]* ”切换，将自动实施增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch-partial-ingestion-focus.png)
 
-“错 *[!UICONTROL 误阈值]* ”允许您在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+“错 **[!UICONTROL 误阈值]** ”允许您在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
 
 ### 使用现有数据集 {#existing-dataset}
 
@@ -103,29 +101,103 @@ ht-degree: 1%
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset.png)
 
-“部 *[!UICONTROL 分摄取]* ”切换允许您启用或禁用部分批摄取。
+“部 **[!UICONTROL 分摄取]** ”切换允许您启用或禁用部分批摄取。
 
-仅当 *[!UICONTROL “部分摄取]* ”切换关闭时，才 *[!UICONTROL 会显示]* “错误诊断”切换。 此功能允许 [!DNL Platform] 生成有关所摄取批的详细错误消息。 如果打 *[!UICONTROL 开“部分摄取]* ”切换，将自动实施增强的错误诊断。
+仅当 **[!UICONTROL “部分摄取]** ”切换关闭时，才 **[!UICONTROL 会显示]** “错误诊断”切换。 此功能允许 [!DNL Platform] 生成有关所摄取批的详细错误消息。 如果打 **[!UICONTROL 开“部分摄取]** ”切换，将自动实施增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset-partial-ingestion-focus.png)
 
-“错 *[!UICONTROL 误阈值]* ”允许您在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+“错 **[!UICONTROL 误阈值]** ”允许您在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
 
 现在，您可以使用“添加数 **据”按钮** ，并且将使用部分摄取来摄取数据。
 
 ### 使用“将[!UICONTROL CSV映射到XDM模式]”流 {#map-flow}
 
-要使用“将[!UICONTROL CSV映射到XDM模式]”流程，请按照映射CSV文件教 [程中列出的步骤操作](../tutorials/map-a-csv-file.md)。 进入“添加数 *[!UICONTROL 据]* ”步骤后，请注意“部 *[!UICONTROL 分摄取]* ”和“ *[!UICONTROL 错误诊断]* ”字段。
+要使用“将[!UICONTROL CSV映射到XDM模式]”流程，请按照映射CSV文件教 [程中列出的步骤操作](../tutorials/map-a-csv-file.md)。 进入“添加数 **[!UICONTROL 据]** ”步骤后，请注意“部 **[!UICONTROL 分摄取]** ”和“ **[!UICONTROL 错误诊断]** ”字段。
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow.png)
 
-“部 *[!UICONTROL 分摄取]* ”切换允许您启用或禁用部分批摄取。
+“部 **[!UICONTROL 分摄取]** ”切换允许您启用或禁用部分批摄取。
 
-仅当 *[!UICONTROL “部分摄取]* ”切换关闭时，才 *[!UICONTROL 会显示]* “错误诊断”切换。 此功能允许 [!DNL Platform] 生成有关所摄取批的详细错误消息。 如果打 *[!UICONTROL 开“部分摄取]* ”切换，将自动实施增强的错误诊断。
+仅当 **[!UICONTROL “部分摄取]** ”切换关闭时，才 **[!UICONTROL 会显示]** “错误诊断”切换。 此功能允许 [!DNL Platform] 生成有关所摄取批的详细错误消息。 如果打 **[!UICONTROL 开“部分摄取]** ”切换，将自动实施增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow-partial-ingestion-focus.png)
 
-“错 *[!UICONTROL 误阈值]* ”允许您在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+“错 **[!UICONTROL 误阈值]** ”允许您在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+
+## 下载文件级元数据 {#download-metadata}
+
+Adobe Experience Platform允许用户下载输入文件的元数据。 元数据将在最 [!DNL Platform] 多30天内保留。
+
+### 列表输入文件 {#list-files}
+
+以下请求将允许您视图定稿批次中提供的所有文件的列表。
+
+**请求**
+
+```shell
+curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/meta?path=input_files \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**响应**
+
+成功的响应将返回HTTP状态200，其中JSON对象包含详细描述元数据保存位置的路径对象。
+
+```json
+{
+    "_page": {
+        "count": 1,
+        "limit": 100
+    },
+    "data": [
+        {
+            "_links": {
+                "self": {
+                    "href": "https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/meta?path=input_files/fileMetaData1.json"
+                }
+            },
+            "length": "1337",
+            "name": "fileMetaData1.json"
+        },
+                {
+            "_links": {
+                "self": {
+                    "href": "https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/meta?path=input_files/fileMetaData2.json"
+                }
+            },
+            "length": "1042",
+            "name": "fileMetaData2.json"
+        }
+    ]
+}
+```
+
+### 检索输入文件元数据 {#retrieve-metadata}
+
+检索到所有不同输入文件的列表后，可以使用以下端点检索单个文件的元数据。
+
+**请求**
+
+```shell
+curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/meta?path=input_files/fileMetaData1.json \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**响应**
+
+成功的响应将返回HTTP状态200，其中JSON对象包含详细描述元数据保存位置的路径对象。
+
+```json
+{"path": "F1.json"}
+{"path": "etc/F2.json"}
+```
 
 ## 检索部分批摄取错误 {#retrieve-errors}
 
@@ -155,7 +227,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID}
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-**响应**
+**无错误响应**
 
 成功的响应返回HTTP状态200，其中包含有关批处理状态的详细信息。
 
@@ -164,10 +236,8 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID}
     "af838510-2233-11ea-acf0-f3edfcded2d2": {
         "status": "success",
         "tags": {
-            ...
             "acp_enableErrorDiagnostics": true,
             "acp_partialIngestionPercent": 5
-            ...
         },
         "relatedObjects": [
             {
@@ -186,7 +256,8 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID}
             "inputByteSize": 568,
             "inputFileCount": 4,
             "inputRecordCount": 519,
-            "outputRecordCount": 497
+            "outputRecordCount": 497,
+            "failedRecordCount": 0
         },
         "completed": 1576741722026,
         "created": 1576741597205,
@@ -199,7 +270,86 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID}
 }
 ```
 
-如果批处理有错误并启用了错误诊断，状态将“成功”，并在可下载的错误文件中提供更多有关错误的信息。
+| 属性 | 描述 |
+| -------- | ----------- |
+| `metrics.failedRecordCount` | 由于分析、转换或验证而无法处理的行数。 此值可通过从中减去 `inputRecordCount` 来导 `outputRecordCount`出。 无论是否启用，都将在所有批上生成 `errorDiagnostics` 此值。 |
+
+**有错误的响应**
+
+如果批处理有一个或多个错误并且启用了错误诊断，则状态将包含有关在响 `success` 应中和可下载的错误文件中提供的错误的更多信息。
+
+```json
+{
+    "01E8043CY305K2MTV5ANH9G1GC": {
+        "status": "success",
+        "tags": {
+            "acp_enableErrorDiagnostics": true,
+            "acp_partialIngestionPercent": 5
+        },
+        "relatedObjects": [
+            {
+                "type": "dataSet",
+                "id": "5deac2648a19d218a888d2b1"
+            }
+        ],
+        "id": "01E8043CY305K2MTV5ANH9G1GC",
+        "externalId": "01E8043CY305K2MTV5ANH9G1GC",
+        "inputFormat": {
+            "format": "parquet"
+        },
+        "imsOrg": "{IMS_ORG}",
+        "started": 1576741718543,
+        "metrics": {
+            "inputByteSize": 568,
+            "inputFileCount": 4,
+            "inputRecordCount": 519,
+            "outputRecordCount": 514,
+            "failedRecordCount": 5
+        },
+        "completed": 1576741722026,
+        "created": 1576741597205,
+        "createdClient": "{API_KEY}",
+        "createdUser": "{USER_ID}",
+        "updatedUser": "{USER_ID}",
+        "updated": 1576741722644,
+        "version": "1.0.5",
+        "errors": [
+           {
+             "code": "INGEST-1212-400",
+             "description": "Encountered 5 errors in the data. Successfully ingested 514 rows. Please review the associated diagnostic files for more details."
+           },
+           {
+             "code": "INGEST-1401-400",
+             "description": "The row has corrupted data and cannot be read or parsed. Fix the corrupted data and try again.",
+             "recordCount": 2
+           },
+           {
+             "code": "INGEST-1555-400",
+             "description": "A required field is either missing or has a value of null. Add the required field to the input row and try again.",
+             "recordCount": 3
+           }
+        ]
+    }
+}
+```
+
+| 属性 | 描述 |
+| -------- | ----------- |
+| `metrics.failedRecordCount` | 由于分析、转换或验证而无法处理的行数。 此值可通过从中减去 `inputRecordCount` 来导 `outputRecordCount`出。 无论是否启用，都将在所有批上生成 `errorDiagnostics` 此值。 |
+| `errors.recordCount` | 指定错误代码失败的行数。 此值仅在 **启用** 后 `errorDiagnostics` 生成。 |
+
+>[!NOTE]
+>
+>如果错误诊断不可用，将显示以下错误消息：
+> 
+```json
+> {
+>         "errors": [{
+>                 "code": "INGEST-1211-400",
+>                 "description": "Encountered errors while parsing, converting or otherwise validating the data. Please resend the data with error diagnostics enabled to collect additional information on failure types"
+>         }]
+> }
+> ```
 
 ## 后续步骤 {#next-steps}
 
@@ -207,12 +357,11 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID}
 
 ## 部分批摄取错误类型 {#appendix}
 
-部分批量摄取在摄取数据时有四种不同的错误类型。
+部分批量摄取在摄取数据时有三种不同的错误类型。
 
 - [不可读文件](#unreadable)
 - [模式或标题无效](#schemas-headers)
 - [不可分行](#unparsable)
-- [XDM转换无效](#conversion)
 
 ### 不可读文件 {#unreadable}
 
@@ -229,7 +378,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID}
 **API格式**
 
 ```http
-GET /export/batches/{BATCH_ID}/failed?path=parse_errors
+GET /export/batches/{BATCH_ID}/meta?path=row_errors
 ```
 
 | 参数 | 描述 |
@@ -239,7 +388,7 @@ GET /export/batches/{BATCH_ID}/failed?path=parse_errors
 **请求**
 
 ```shell
-curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/failed?path=parse_errors \
+curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/meta?path=row_errors \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -252,68 +401,11 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 
 ```json
 {
-    "_corrupt_record":"{missingQuotes:"v1"}",
+    "_corrupt_record": "{missingQuotes:"v1"}",
     "_errors": [{
-         "code":"1401",
-         "message":"Row is corrupted and cannot be read, please fix and resend."
+         "code": "1401",
+         "message": "Row is corrupted and cannot be read, please fix and resend."
     }],
     "_filename": "a1.json"
-}
-```
-
-### XDM转换无效 {#conversion}
-
-如果所摄取的批处理具有无效的XDM转换，则批处理的错误将存储在文件中，可通过以下端点访问该文件。
-
-**API格式**
-
-```http
-GET /export/batches/{BATCH_ID}/failed?path=conversion_errors
-```
-
-| 参数 | 描述 |
-| --------- | ----------- |
-| `{BATCH_ID}` | 要 `id` 从中检索错误信息的批的值。 |
-
-**请求**
-
-```shell
-curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/failed?path=conversion_errors \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
-```
-
-**响应**
-
-成功的响应返回HTTP状态200，其中包含XDM转换失败的详细信息。
-
-```json
-{
-    "col1":"v1",
-    "col2":"v2",
-    "col3":[{
-        "g1":"h1"
-    }],
-    "_errors":[{
-        "column":"col3",
-        "code":"123",
-        "message":"Cannot convert array element from Object to String"
-    }],
-    "_filename":"a1.json"
-},
-{
-    "col1":"v1",
-    "col2":"v2",
-    "col3":[{
-        "g1":"h1"
-    }],
-    "_errors":[{
-        "column":"col1",
-        "code":"100",
-        "message":"Cannot convert string to float"
-    }],
-    "_filename":"a2.json"
 }
 ```
