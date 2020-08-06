@@ -4,9 +4,9 @@ seo-title: 支持Adobe Experience PlatformWeb SDK同意首选项
 description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
 seo-description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 0869c6c54e8936a1ac1225cf6510f7139dce1936
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '756'
 ht-degree: 0%
 
 ---
@@ -39,17 +39,17 @@ alloy("configure", {
 
 此时，您可能希望让用户在您的用选择加入户界面中找到某处。 在收集用户的首选项后，将这些首选项告知SDK。
 
-## 交流同意偏好
+## 通过Adobe标准交流同意偏好
 
 如果用户选择，则执行 `setConsent` 将选项 `general` 设置为 `in` 如下的命令：
 
 ```javascript
 alloy("setConsent", {
-    consent: [{ 
+    consent: [{
       standard: "Adobe",
       version: "1.0",
-      value: { 
-        general: "in" 
+      value: {
+        general: "in"
       }
     }]
 });
@@ -61,11 +61,11 @@ alloy("setConsent", {
 
 ```javascript
 alloy("setConsent", {
-    consent: [{ 
+    consent: [{
       standard: "Adobe",
       version: "1.0",
-      value: { 
-        general: "out" 
+      value: {
+        general: "out"
       }
     }]
 });
@@ -75,12 +75,55 @@ alloy("setConsent", {
 >
 >用户选择退出后，SDK将不允许您设置用户同意 `in`。
 
-由于用户选择选择退出了，从先前排队的命令返回的承诺将被拒绝。 取决于用户选择加入的将来命令将返回同样被拒绝的承诺。 有关处理或隐藏错误的详细信息，请参阅 [执行命令](executing-commands.md)。
+由于用户选择选择退出了，从先前排队的命令返回的承诺将被拒绝。 取决于用户选择加入的将来命令将返回同样被拒绝的承诺。 有关处理或隐藏错误的详细信息，请参阅执 [行命令](executing-commands.md)。
 
 >[!NOTE]
 >
->目前，SDK仅支持此目 `general` 的。 尽管我们计划构建一套更可靠的用途或类别，这些用途或Adobe将与不同的功能和产品产品相对应，但当前的实施只是选择加入的全部或全部方法。  这仅适用于Adobe Experience Platform，而 [!DNL Web SDK] 不适用于其他AdobeJavaScript库。
+>目前，SDK仅支持此目 `general` 的。 尽管我们计划构建一套更可靠的用途或类别，这些用途或Adobe将与不同的功能和产品产品相对应，但当前的实施只是选择加入的全部或全部方法。  这仅适用于Adobe Experience Platform, [!DNL Web SDK] 而不适用于其他AdobeJavaScript库。
+
+## 通过IAB TCF标准交流同意偏好
+
+SDK支持记录通过交互式广告局欧洲(IAB)透明度和同意框架(TCF)标准提供的用户同意偏好。 同意字符串可通过上述相同的setConnence命令进行设置，如下所示：
+
+```javascript
+alloy("setConsent", {
+    consent: [{
+      standard: "IAB TCF",
+      version: "2.0",
+      value: "CO1Z4yuO1Z4yuAcABBENArCsAP_AAH_AACiQGCNX_T5eb2vj-3Zdt_tkaYwf55y3o-wzhhaIse8NwIeH7BoGP2MwvBX4JiQCGBAkkiKBAQdtHGhcCQABgIhRiTKMYk2MjzNKJLJAilsbe0NYCD9mnsHT3ZCY70--u__7P3fAwQgkwVLwCRIWwgJJs0ohTABCOICpBwCUEIQEClhoACAnYFAR6gAAAIDAACAAAAEEEBAIABAAAkIgAAAEBAKACIBAACAEaAhAARIEAsAJEgCAAVA0JACKIIQBCDgwCjlACAoAAAAA.YAAAAAAAAAAA",
+      gdprApplies: true
+    }]
+});
+```
+
+以这种方式设置同意后，将使用同意信息更新统一用户档案。 要使此用户档案正常工作，XDM模式需要包含 [用户档案隐私混合](https://github.com/adobe/xdm/blob/master/docs/reference/context/profile-privacy.schema.md)。 发送事件时，需要将IAB同意信息手动添加到事件xdm对象。 SDK不会自动在事件中包含同意信息。 要在事件中发送同意信息， [需要将“体验事件隐](https://github.com/adobe/xdm/blob/master/docs/reference/context/experienceevent-privacy.schema.md) 私混合”添加到体验事件模式。
+
+## 在一个请求中发送两个标准
+
+SDK还支持在请求中发送多个同意对象。
+
+```javascript
+alloy("setConsent", {
+    consent: [{
+      standard: "Adobe",
+      version: "1.0",
+      value: {
+        general: "in"
+      }
+    },{
+      standard: "IAB TCF",
+      version: "2.0",
+      value: "CO1Z4yuO1Z4yuAcABBENArCsAP_AAH_AACiQGCNX_T5eb2vj-3Zdt_tkaYwf55y3o-wzhhaIse8NwIeH7BoGP2MwvBX4JiQCGBAkkiKBAQdtHGhcCQABgIhRiTKMYk2MjzNKJLJAilsbe0NYCD9mnsHT3ZCY70--u__7P3fAwQgkwVLwCRIWwgJJs0ohTABCOICpBwCUEIQEClhoACAnYFAR6gAAAIDAACAAAAEEEBAIABAAAkIgAAAEBAKACIBAACAEaAhAARIEAsAJEgCAAVA0JACKIIQBCDgwCjlACAoAAAAA.YAAAAAAAAAAA",
+      gdprApplies: true
+    }]
+});
+```
 
 ## 同意偏好的持续存在
 
-在您使用命令向SDK传达用户首 `setConsent` 选项后，SDK会将用户首选项保留为cookie。 下次用户在浏览器中加载您的网站时，SDK将检索并使用这些保留的首选项。 无需再执行该命 `setConsent` 令，只需传达用户首选项的更改即可，您可以随时执行此操作。
+在您使用命令向SDK传达用户首 `setConsent` 选项后，SDK会将用户首选项保留为cookie。 下次用户在浏览器中加载您的网站时，SDK将检索并使用这些保留的首选项来确定是否可以将事件发送到Adobe。 无需再执行该命 `setConsent` 令，只需传达用户首选项的更改即可，您可以随时执行此操作。
+
+## 设置同意时同步身份
+
+当默认同意待决时，“setConnence”可能是发出并确定身份的第一个请求。 因此，在第一个请求上同步身份可能很重要。 可以像在“sendEvent”命令中一样将标识图添加到“setConnence”命令中。 请参 [阅检索Experience CloudID](./identity.md)
+
