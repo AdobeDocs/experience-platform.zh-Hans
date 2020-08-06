@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience PlatformWeb SDK帮助
 translation-type: tm+mt
-source-git-commit: 71193ad346c3976f80b14ee0d6e5b12055a17473
+source-git-commit: c12d854f272c6775ae940b7a4056d0f527c5dd01
 workflow-type: tm+mt
-source-wordcount: '94'
-ht-degree: 14%
+source-wordcount: '96'
+ht-degree: 16%
 
 ---
 
@@ -33,7 +33,7 @@ ht-degree: 14%
    * [产品](what-to-implement/commerce.md)
 * 解决方案特定注意事项 {#solutions}
    * Analytics {#analytics}
-      * [Analytics概述](solution-specific/analytics/analytics-overview.md)
+      * [分析概述](solution-specific/analytics/analytics-overview.md)
       * [在Analytics中手动映射变量](solution-specific/analytics/manually-mapping-variables.md)
       * [自动映射的变量](solution-specific/analytics/automatically-mapped-vars.md)
    * Audience Manager {#aam}
@@ -44,4 +44,5 @@ ht-degree: 14%
 * 参考 {#ref}
    * [自动收集的信息](reference/automatic-information.md)
    * [检索库信息](reference/retrieving-library-information.md)
+* [发行说明](release-notes.md)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
