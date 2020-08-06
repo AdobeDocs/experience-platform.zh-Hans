@@ -4,9 +4,9 @@ seo-title: 由Adobe Experience PlatformWeb SDK自动收集的信息
 description: Adobe Experience CloudSDK自动收集的每条信息的描述
 seo-description: Adobe Experience CloudSDK自动收集的每条信息的描述
 translation-type: tm+mt
-source-git-commit: e9fb726ddb84d7a08afb8c0f083a643025b0f903
+source-git-commit: ccd47e024f3ea53507454b7785528c031746d681
 workflow-type: tm+mt
-source-wordcount: '382'
+source-wordcount: '387'
 ht-degree: 8%
 
 ---
@@ -56,7 +56,7 @@ Adobe Experience CloudSDK可自动收集大量信息，无需任何特殊配置�
 | ------------------------------- | ------------ |
 | `events[].xdm.environment.type` | `browser` |
 
-体验的环境类型。 Adobe Experience PlatformSDK for JavaScript始终会进行设 `browser`置。
+体验的环境类型。 Adobe Experience PlatformSDK for JavaScript始终可以设置 `browser`。
 
 ### 视口高度
 
@@ -91,6 +91,13 @@ Adobe Experience CloudSDK可自动收集大量信息，无需任何特殊配置�
 | **有效负荷中的路径：** | **示例：** |
 | -------------------------------------------- | ------------ |
 | `events[].xdm.implementationDetails.version` | `0.11.0` |
+
+### 环境
+
+| **有效负荷中的路径：** | **示例：** |
+| ------------------------------------------------ | ------------ |
+| `events[].xdm.implementationDetails.environment` | `browser` |
+
 
 ## 放置上下文(`placeContext`)
 
