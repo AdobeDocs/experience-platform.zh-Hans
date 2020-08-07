@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 连接到流目标并激活数据
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: dce9a7040ad25d5bb08de95fce7655f1fec7c226
 workflow-type: tm+mt
-source-wordcount: '1810'
+source-wordcount: '1809'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 2%
 >
 >Adobe [!DNL Amazon Kinesis] 实时 [!DNL Azure Event Hubs] CDP中的目标和目标目前处于测试阶段。 文档和功能可能会发生变化。
 
-本教程演示了如何使用API调用连接到您的Adobe Experience Platform存储、创建到流式云目标([AmazonKinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md) 或 [Azure事件集线器](/help/rtcdp/destinations/azure-event-hubs-destination.md))的连接、创建到新创建目标的数据流以及将数据激活到新创建的目标。
+本教程演示如何使用API调用连接到您的Adobe Experience Platform存储、创建到流云目标([AmazonKinesis](/help/rtcdp/destinations/amazon-kinesis-destination.md)[或Azure事件中心](/help/rtcdp/destinations/azure-event-hubs-destination.md))的连接、创建到新创建目标的数据流以及将数据激活到新创建的目标。
 
 本教程在所 [!DNL Amazon Kinesis] 有示例中都使用目标，但步骤相同 [!DNL Azure Event Hubs]。
 
@@ -28,11 +28,11 @@ ht-degree: 2%
 
 ## 快速入门
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
+* [!DNL Experience Data Model (XDM) System](../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
 * [!DNL Catalog Service](../../catalog/home.md): [!DNL Catalog] 是Experience Platform内数据位置和谱系的记录系统。
-* [沙箱](../../sandboxes/home.md): Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [沙箱](../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了在Adobe实时CDP中将数据激活到流目标时需要了解的其他信息。
 
@@ -51,7 +51,7 @@ ht-degree: 2%
 
 要调用平台API，您必须先完成身份验证 [教程](/help/tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -59,7 +59,8 @@ Experience Platform中的资源可以隔离到特定虚拟沙箱。 在对平台
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
->[!Note]
+>[!NOTE]
+>
 >有关Experience Platform中沙箱的详细信息，请参阅沙 [箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
@@ -152,7 +153,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 
-* `{CONNECTION_SPEC_ID}`: 使用统一用户档案服务的连接规范ID - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
+* `{CONNECTION_SPEC_ID}`:使用统一用户档案服务的连接规范ID - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
 
 **响应**
 
@@ -196,8 +197,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-* `{BASE_CONNECTION_ID}`: 使用您在上一步中获得的ID。
-* `{CONNECTION_SPEC_ID}`: 使用统一用户档案服务的连接规范ID - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
+* `{BASE_CONNECTION_ID}`:使用您在上一步中获得的ID。
+* `{CONNECTION_SPEC_ID}`:使用统一用户档案服务的连接规范ID - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
 
 **响应**
 
@@ -259,8 +260,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-* `{CONNECTION_SPEC_ID}`: 使用您在获取可用目标的列表 [步骤中获得的连接规范ID](#get-the-list-of-available-destinations)。
-* `{AUTHENTICATION_CREDENTIALS}`: 填写流目标的名称，例如： `Amazon Kinesis authentication credentials` 或 `Azure Event Hubs authentication credentials`者
+* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标的列表 [步骤中获得的连接规范ID](#get-the-list-of-available-destinations)。
+* `{AUTHENTICATION_CREDENTIALS}`:填写流目标的名称，例如： `Amazon Kinesis authentication credentials` 或 `Azure Event Hubs authentication credentials`者
 * `{ACCESS_ID}`: *用于[!DNL Amazon Kinesis]连接。* 您的AmazonKinesis存储位置的访问ID。
 * `{SECRET_KEY}`: *用于[!DNL Amazon Kinesis]连接。* 你AmazonKinesis存储所的秘钥。
 * `{REGION}`: *用于[!DNL Amazon Kinesis]连接。* Adobe实时 [!DNL Amazon Kinesis] CDP将流化您的数据所在的区域。
@@ -315,8 +316,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-* `{BASE_CONNECTION_ID}`: 使用您在上述步骤中获得的基本连接ID。
-* `{CONNECTION_SPEC_ID}`: 使用您在获取可用目标列表 [步骤中获得的连接规范](#get-the-list-of-available-destinations)。
+* `{BASE_CONNECTION_ID}`:使用您在上述步骤中获得的基本连接ID。
+* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标列表 [步骤中获得的连接规范](#get-the-list-of-available-destinations)。
 * `{NAME_OF_DATA_STREAM}`: *用于[!DNL Amazon Kinesis]连接。* 在帐户中提供现有数据流的 [!DNL Amazon Kinesis] 名称。 Adobe实时CDP会将数据导出到此流。
 * `{REGION}`: *用于[!DNL Amazon Kinesis]连接。* 您的AmazonKinesis客户所在的Adobe实时CDP将流化您的数据的地区。
 * `{EVENT_HUB_NAME}`: *用于[!DNL Azure Event Hubs]连接。* 填写Adobe [!DNL Azure Event Hub] 实时CDP将流化您的数据的名称。 有关详细信息，请 [参阅文档中的](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) “创建事件 [!DNL Microsoft] 中心”。
@@ -374,9 +375,9 @@ curl -X POST \
     }
 ```
 
-* `{FLOW_SPEC_ID}`: 基于用户档案的目标的流规范ID是 `71471eba-b620-49e4-90fd-23f1fa0174d8`。 在调用中使用此值。
-* `{SOURCE_CONNECTION_ID}`: 使用在步骤Connect中获得的源连接 [ID连接到Experience Platform](#connect-to-your-experience-platform-data)。
-* `{TARGET_CONNECTION_ID}`: 使用您在步骤Connect中获得的目标连 [接ID到流目标](#connect-to-streaming-destination)。
+* `{FLOW_SPEC_ID}`:基于用户档案的目标的流规范ID是 `71471eba-b620-49e4-90fd-23f1fa0174d8`。 在调用中使用此值。
+* `{SOURCE_CONNECTION_ID}`:使用在步骤Connect中获得的源连接 [ID连接到Experience Platform](#connect-to-your-experience-platform-data)。
+* `{TARGET_CONNECTION_ID}`:使用您在步骤Connect中获得的目标连 [接ID到流目标](#connect-to-streaming-destination)。
 
 **响应**
 
@@ -465,10 +466,10 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 ]
 ```
 
-* `{DATAFLOW_ID}`: 使用您在上一步中获得的数据流。
-* `{ETAG}`: 使用您在上一步中获得的标签。
-* `{SEGMENT_ID}`: 提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请转至https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/，在左侧导航 **[!UICONTROL 菜单中选择]** “分段服务API”，然后查找操 `GET /segment/jobs` 作。
-* `{PROFILE_ATTRIBUTE}`: 例如， `personalEmail.address` 或 `person.lastName`
+* `{DATAFLOW_ID}`:使用您在上一步中获得的数据流。
+* `{ETAG}`:使用您在上一步中获得的标签。
+* `{SEGMENT_ID}`:提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请转至https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/，在左侧导航 **[!UICONTROL 菜单中选择]** “分段服务API”，然后查找操 `GET /segment/jobs` 作。
+* `{PROFILE_ATTRIBUTE}`:例如， `personalEmail.address` 或 `person.lastName`
 
 **响应**
 
@@ -500,8 +501,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 --header 'If-Match: "{ETAG}"' 
 ```
 
-* `{DATAFLOW_ID}`: 使用上一步中的数据流。
-* `{ETAG}`: 使用上一步中的标记。
+* `{DATAFLOW_ID}`:使用上一步中的数据流。
+* `{ETAG}`:使用上一步中的标记。
 
 **响应**
 
