@@ -5,7 +5,7 @@ title: Attribution AI输入和输出
 topic: Input and Output data for Attribution AI
 description: 以下文档概述了Attribution AI中使用的不同输入和输出。
 translation-type: tm+mt
-source-git-commit: 5126ef74330d9cee7234ccd1ee7260b09db9e78c
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '2174'
 ht-degree: 3%
@@ -134,7 +134,7 @@ Attribution AI以尽可能最精细的级别输出归因得分，以便您可以
 | receivedTimestamp(DateTime) | True | 已收到转换的时间戳。 <br> **示例：** 2020-06-09T00:01:51.000Z |
 | skuId（字符串） | True | 库存单位(SKU)，供应商定义的产品的唯一标识符。 <br> **示例：** MJ-03-XS-Black |
 | timestamp(DateTime) | True | 转换的时间戳。 <br> **示例：** 2020-06-09T00:01:51.000Z |
-| passThrough（对象） | True | 配置模型时用户指定的其他得分数据集列。 |
+| passThrough（对象） | True | 配置模型时由用户指定的其他得分数据集列。 |
 | commerce_order_purchaseCity（字符串） | True | Additional Score数据集列。 <br> **示例：** 城市： 圣何塞 |
 | customerProfile（对象） | False | 用于构建模型的用户的身份详细信息。 |
 | identity（对象） | False | 包含用于构建模型的用户的详细信息，如 `id` 和 `namespace`。 |
@@ -164,7 +164,7 @@ Attribution AI支持两类别归因得分、算法得分和基于规则的得分
 
 Attribution AI产生两种不同类型的算法得分，增量和影响。 受影响的得分是每个营销接触点负责的转化率的一部分。 增量得分是营销接触点直接造成的边际影响量。 增量得分和受影响得分之间的主要区别在于增量得分将基准效果考虑在内。 它不假定转化纯粹是由之前的营销接触点引起的。
 
-以下是Attribution AIUI中的模式输出示例：
+以下是Adobe Experience PlatformUI中的Attribution AI模式输出示例：
 
 ![](./images/input-output/schema_screenshot.png)
 
