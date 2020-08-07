@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 安全Python数据访问SDK
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '478'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 安全 [!DNL Python][!DNL Data Access] SDK
 
-Secure SDK [!DNL Python] 是一 [!DNL Data Access] 个软件开发工具包，它支持读取和写入Adobe Experience Platform数据集。
+Secure SDK [!DNL Python] 是一 [!DNL Data Access] 个软件开发工具包，它支持读取和写入来自Adobe Experience Platform的数据集。
 
 ## 入门指南
 
@@ -128,7 +128,9 @@ df = dataset_reader.select(['column-a']).distinct().read()
 
 SDK [!DNL Python] 支持某些操作符以帮助过滤数据集。
 
->[!NOTE] 用于筛选的函数区分大小写。
+>[!NOTE]
+>
+>用于筛选的函数区分大小写。
 
 ```python
 eq() = '='
