@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 预览和估计端点
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 995fadef9abacf22d0561e0590dfbe172adf0a43
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '742'
 ht-degree: 2%
@@ -36,13 +36,17 @@ ht-degree: 2%
 | 1000万到2000万 | 100万 |
 | 2000多万 | 总共5% |
 
->[!NOTE] 估计通常需要10到15秒才能运行，首先是粗略估计，然后随着读取更多记录而优化。
+>[!NOTE]
+>
+>估计通常需要10到15秒才能运行，首先是粗略估计，然后随着读取更多记录而优化。
 
 ## Create a new preview {#create-preview}
 
 可以通过向端点发出预览请求来创建新POST `/preview` 。
 
->[!NOTE] 在创建预览作业时，会自动创建评估作业。 这两个作业将共享同一ID。
+>[!NOTE]
+>
+>在创建预览作业时，会自动创建评估作业。 这两个作业将共享同一ID。
 
 **API格式**
 
