@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 创建零售销售模式和数据集
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '497'
 ht-degree: 0%
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 在开始本教程之前，您必须具有以下先决条件：
 - 访问 [!DNL Adobe Experience Platform]。 如果您无权访问中的IMS组织，请在继 [!DNL Experience Platform]续操作之前与系统管理员联系。
-- 进行API调 [!DNL Experience Platform] 用的授权。 请完成 [身份验证和访问Adobe Experience Platform](../../tutorials/authentication.md) API教程，获取以下值以成功完成本教程：
+- 进行API调 [!DNL Experience Platform] 用的授权。 请完成 [身份验证和访问Adobe Experience PlatformAPI](../../tutorials/authentication.md) (Authenticate and access Methonic API)教程，获取以下值以成功完成本教程：
    - 授权： `{ACCESS_TOKEN}`
    - x-api-key: `{API_KEY}`
    - x-gw-ims-org-id: `{IMS_ORG}`
@@ -98,7 +98,9 @@ ht-degree: 0%
    python bootstrap.py
    ```
 
-   >[!NOTE] 完成脚本可能需要几分钟。
+   >[!NOTE]
+   >
+   >完成脚本可能需要几分钟。
 
 ## 后续步骤
 
