@@ -1,26 +1,26 @@
 ---
-keywords: Experience Platform;home;intelligent services;popular topics
+keywords: Experience Platform;home;Intelligent Services;popular topics
 solution: Experience Platform
 title: 准备要在Intelligent Services中使用的数据
 topic: Intelligent Services
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 88e4a183422dd1bc625fd842e24c2604fb249c91
 workflow-type: tm+mt
-source-wordcount: '1878'
+source-wordcount: '1924'
 ht-degree: 0%
 
 ---
 
 
-# 准备要在Intelligent Services中使用的数据
+# 准备要在 [!DNL Intelligent Services]
 
-为了使智能服务能够从您的营销事件数据中发掘洞察，必须以标准结构从语义上丰富和维护数据。 智能服务利用体验数据模型(XDM)模式来实现此目标。 具体而言，智能服务中使用的所有数据集必须符 **合消费者体验事件** (CEE)XDM模式。
+要从营销 [!DNL Intelligent Services] 事件数据中发掘洞察，必须以标准结构从语义上丰富和维护数据。 [!DNL Intelligent Services] 利 [!DNL Experience Data Model] 用(XDM)模式实现这一目标。 具体而言，中使用的所有数 [!DNL Intelligent Services] 据集必须符 **合Consumer ExperienceEvent(CEE)** XDM模式。
 
 此文档提供有关将营销事件数据从多个渠道映射到此模式的一般指南，概述模式中重要字段的信息，以帮助您确定如何有效地将数据映射到其结构。
 
 ## 工作流摘要
 
-准备过程因Adobe Experience Platform存储还是外部存储数据而异。 本节总结了在任一情况下需要采取的必要步骤。
+准备过程因数据是存储在Adobe Experience Platform还是外部而异。 本节总结了在任一情况下需要采取的必要步骤。
 
 ### 外部数据准备
 
@@ -28,36 +28,36 @@ ht-degree: 0%
 
 1. 联系Adobe咨询服务以请求专用Azure Blob存储容器的访问凭据。
 1. 使用访问凭据，将数据上传到Blob容器。
-1. 使用Adobe咨询服务，将您的数据映射到消 [费者体验事件模式](#cee-schema) ，并引入智能服务。
+1. 使用Adobe咨询服务，将您的数据映射到消 [费者体验事件模式](#cee-schema) ，并引入 [!DNL Intelligent Services]中。
 
 ### [!DNL Experience Platform] 数据准备
 
 如果数据已存储在中， [!DNL Platform]请按照以下步骤操作：
 
 1. 查看“消费者体验 [事件”模式的结构](#cee-schema) ，并确定数据是否可以映射到其字段。
-1. 联系Adobe咨询服务，帮助将您的数据映射到模式并将其引入智能服务，或 [者，如果您自己想要映射数据](#mapping) ，请按照本指南中的步骤操作。
+1. 联系Adobe咨询服务以帮助将您的数据映射到并将其 [!DNL Intelligent Services]引入 [模式，如果您想亲自映射数据，请遵循本指南中的步骤](#mapping) 。
 
 ## 了解CEE模式 {#cee-schema}
 
-消费者体验事件模式描述个人的行为，因为它与数字营销事件（Web或移动）以及在线或离线商务活动相关。 智能服务需要使用此模式，因为其语义上定义良好的字段（列），从而避免了任何未知名称，否则这些名称会使数据变得不那么清晰。
+消费者体验事件模式描述个人的行为，因为它与数字营销事件（Web或移动）以及在线或离线商务活动相关。 由于此模式的语义定义良好 [!DNL Intelligent Services] 的字段（列），因此需要使用此，避免使用任何未知名称，否则会使数据变得不那么清晰。
 
 与所有XDM ExperienceEvent模式一样， CEE模式在发生事件(或一组事件)时捕获基于时间序列的系统状态，包括时间点和相关主题的身份。 体验事件是事实记录，因此它们是不可改变的，代表所发生的事情，而不经过聚合或解释。
 
-智能服务利用此模式中的几个关键字段从您的营销事件数据中生成洞察，所有这些数据都可以在根级别找到并展开以显示其必需的子字段。
+[!DNL Intelligent Services] 利用此模式中的几个关键字段从营销事件数据中生成洞察，所有这些数据都可以在根级别找到并展开以显示其必需的子字段。
 
 ![](./images/data-preparation/schema-expansion.gif)
 
 与所有XDM模式一样， CEE混合是可扩展的。 换言之，CEE混音中可添加其他字段，如果需要，可在多个模式中包含不同的变体。
 
-在公共XDM存储库中可以找到混 [合的完整示例](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)，并应用作以下部分概述的关键字段的引用。
+在公共XDM存储库中可以找到混合 [的完整示例](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)。 此外，您还可以视图并复制以 [下JSON文件](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) ，以了解如何构建数据以符合CEE模式。 当您了解下面部分中概述的关键字段时，请参阅这两个示例，以确定如何将您自己的数据映射到模式。
 
 ## 键字段
 
-CEE混音中有几个关键字段应用，以便智能服务生成有用的洞察。 本节介绍这些字段的用例和预期数据，并提供参考文档的链接以获取更多示例。
+CEE混音中有几个关键字段应用于生成有用 [!DNL Intelligent Services] 的洞察。 本节介绍这些字段的用例和预期数据，并提供参考文档的链接以获取更多示例。
 
 ### 必填字段
 
-强烈建议使用所有关键字段，但有两个字段是必填 **字段** ，以使智能服务正常工作：
+强烈建议使用所有关键字段，但有两个字段是必 **填** ，才能 [!DNL Intelligent Services] 工作：
 
 * [主标识字段](#identity)
 * [xdm:timestamp](#timestamp)
@@ -65,13 +65,13 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 
 #### 主要身份 {#identity}
 
-您模式中的其中一个字段必须设置为主标识字段，这允许智能服务将时间序列数据的每个实例链接到单个人。
+模式中的其中一个字段必须设置为主标识字段，该字段允许 [!DNL Intelligent Services] 将时间序列数据的每个实例关联到个人。
 
 您必须根据数据的来源和性质确定用作主要标识的最佳字段。 标识字段必须包含标 **识命名空间** ，该标识指示字段期望作为值的标识数据类型。 一些有效的命名空间值包括：
 
 * &quot;电子邮件&quot;
 * &quot;phone&quot;
-* “mcid”(用于Adobe Audience ManagerID)
+* “mcid”(针对Adobe Audience ManagerID)
 * “aaid”(针对Adobe AnalyticsID)
 
 如果您不确定应将哪个字段用作主要标识，请与Adobe咨询服务部门联系以确定最佳解决方案。
@@ -120,7 +120,7 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 
 ### 推荐字段
 
-本节概述了其余的关键字段。 尽管这些字段不一定是智能服务工作所必需的，但强烈建议您尽可能多地使用这些字段以获得更丰富的洞察。
+本节概述了其余的关键字段。 虽然这些字段不一定需要 [!DNL Intelligent Services] 才能使用，但强烈建议您尽可能多地使用它们以获得更丰富的洞察。
 
 #### xdm:productListItems
 
@@ -239,7 +239,7 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 
 ## 映射和摄取数据(#mapping)
 
-确定营销事件数据是否可映射到CEE模式后，下一步是确定要将哪些数据引入智能服务。 智能服务中使用的所有历史数据必须在四个月数据的最短时间窗口中，加上计划作为回顾期的天数。
+确定营销事件数据是否可映射到CEE模式后，下一步是确定要引入哪些数据 [!DNL Intelligent Services]。 使用的所有历史数 [!DNL Intelligent Services] 据都必须在4个月数据的最短时间窗口内，加上计划作为回顾期的天数。
 
 在确定要发送的Adobe范围后，请与模式咨询服务部门联系，帮助将数据映射到并将其引入服务。
 
@@ -251,7 +251,7 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 >
 >以下步骤需要订阅Experience Platform。 如果您无权访问平台，请跳到下一 [步部分](#next-steps) 。
 
-本节概述了将数据映射到Experience Platform并将其引入智能服务中的工作流程，包括指向教程的详细步骤链接。
+本节概述了将数据映射到Experience Platform并将其引入以供使用的工作流程， [!DNL Intelligent Services]包括指向教程的链接，以了解详细步骤。
 
 #### 创建CEE模式和数据集
 
@@ -279,7 +279,7 @@ CEE混音中有几个关键字段应用，以便智能服务生成有用的洞�
 
 >[!NOTE]
 >
->智能服务的未来版本将将 [Adobe Experience Platform身份服务](../identity-service/home.md) 集成到其客户识别功能中。 因此，以下概述的步骤可能会发生变化。
+>未来版本 [!DNL Intelligent Services] 将整合Adobe Experience Platform [身份服务](../identity-service/home.md) ，使其客户识别能力。 因此，以下概述的步骤可能会发生变化。
 
 如果导入来自、或 [!DNL Adobe Audience Manager]其 [!DNL Adobe Analytics]他外部源的数据，则必须向数据集 `primaryIdentityNameSpace` 添加标记。 这可以通过向Catalog Service API发出PATCH请求来完成。
 
@@ -353,15 +353,17 @@ curl -X PATCH \
 
 #### 映射和摄取数据 {#ingest}
 
-创建CEE模式和数据集后，您可以开始将数据表映射到模式，并将数据引入平台。 有关如何在 [UI中执行此操作的步骤](../ingestion/tutorials/map-a-csv-file.md) ，请参阅将CSV文件映射到XDM模式的教程。 填充数据集后，可以使用同一数据集来摄取其他数据文件。
+创建CEE模式和数据集后，您可以开始将数据表映射到模式，并将数据引入平台。 有关如何在 [UI中执行此操作的步骤](../ingestion/tutorials/map-a-csv-file.md) ，请参阅将CSV文件映射到XDM模式的教程。 在使用您自己的数 [据之前](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) ，可以使用以下示例JSON文件测试摄取过程。
 
-如果您的数据存储在支持的第三方应用程序中，您还可以选择创建源 [连接器](../sources/home.md) ，以实时将营销事件数据引入平台。
+填充数据集后，可以使用同一数据集来摄取其他数据文件。
+
+如果您的数据存储在支持的第三方应用程序中，您还可以选择创建源 [连接器](../sources/home.md) ，将营销事件数据实 [!DNL Platform] 时收集到中。
 
 ## 后续步骤 {#next-steps}
 
-本文档提供了有关准备数据以用于智能服务的一般指导。 如果您需要根据您的用例进行其他咨询，请与Adobe咨询支持联系。
+本文档提供了有关准备数据以供使用的一般指导 [!DNL Intelligent Services]。 如果您需要根据您的用例进行其他咨询，请与Adobe咨询支持联系。
 
-成功填充包含客户体验数据的数据集后，即可使用Intelligent Services生成洞察。 请参阅以下文档以开始：
+成功填充包含客户体验数据的数据集后，即可用 [!DNL Intelligent Services] 于生成洞察。 请参阅以下文档以开始：
 
 * [Attribution AI概述](./attribution-ai/overview.md)
 * [客户人工智能概述](./customer-ai/overview.md)
