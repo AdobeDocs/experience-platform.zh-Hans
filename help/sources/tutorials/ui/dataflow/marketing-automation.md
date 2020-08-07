@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中为营销自动化连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 91714bea4e165d64bcc33e32e73d1d32a505ba00
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1244'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
 - [体验数据模型(XDM)系统](../../../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    - [模式合成基础](../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
@@ -96,7 +96,9 @@ ht-degree: 0%
 
 要设置一次性摄取，请选择频率下拉箭头，然后选择“ **[!UICONTROL 一次]**”。
 
->[!TIP] **[!UICONTROL 在一]** 次性摄取 **** 期间，间隔和回填不可见。
+>[!TIP]
+>
+>**[!UICONTROL 在一]** 次性摄取 **** 期间，间隔和回填不可见。
 
 向计划提供适当的值后，选择“下 **[!UICONTROL 一步]**”。
 
