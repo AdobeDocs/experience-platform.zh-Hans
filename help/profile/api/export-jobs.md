@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: 导出作业——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 2c0466bf0534d09e3cad54caef213def122d948b
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1494'
 ht-degree: 2%
@@ -146,7 +146,9 @@ curl -X POST \
 | `destination` | **（必需）导出** 数据的目标信息：<ul><li>`destination.datasetId`: **(必需** )要导出数据的数据集的ID。</li><li>`destination.segmentPerBatch`: *(可选* )布尔值，如果未提供，则默认为 `false`。 值将所 `false` 有段ID导出为单个批ID。 值将一个 `true` 段ID导出为一个批ID。 请注意，将值设置为可能 `true` 会影响批量导出性能。</li></ul> |
 | `schema.name` | **(必需** )与要导出数据的数据集关联的模式的名称。 |
 
->[!NOTE] 要仅导出用户档案数据而不包括相关的时间序列数据，请从请求中删除“additionalFields”对象。
+>[!NOTE]
+>
+>要仅导出用户档案数据而不包括相关的时间序列数据，请从请求中删除“additionalFields”对象。
 
 **响应**
 
