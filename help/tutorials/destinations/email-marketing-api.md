@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建电子邮件营销目标
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: accc94ae8f19ca3a1575b4408f85155a17741335
 workflow-type: tm+mt
-source-wordcount: '1611'
+source-wordcount: '1610'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 创建电子邮件营销目标并激活Adobe中的数据 [!DNL Real-time Customer Data Platform]
 
-本教程演示了如何使用API调用连接到Adobe Experience Platform数据、创建电子邮件营 [销目标](../../rtcdp/destinations/email-marketing-destinations.md)、创建到新创建目标的数据流以及将数据激活到新创建的目标。
+本教程演示如何使用API调用连接到您的Adobe Experience Platform数据、创建电子邮件 [营销目标](../../rtcdp/destinations/email-marketing-destinations.md)、创建到新创建目标的数据流以及将数据激活到新创建的目标。
 
 本教程在所有示例中都使用Adobe Campaign目标，但所有电子邮件营销目标的步骤都相同。
 
@@ -24,9 +24,9 @@ ht-degree: 1%
 
 ## 快速入门
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [!DNL Experience Data Model (XDM) System](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
 * [!DNL Catalog Service](../../catalog/home.md): [!DNL Catalog] 是数据位置和谱系的记录系统 [!DNL Experience Platform]。
 * [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
@@ -47,7 +47,7 @@ ht-degree: 1%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -55,7 +55,8 @@ ht-degree: 1%
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
->[!Note]
+>[!NOTE]
+>
 >有关中沙箱的详细信 [!DNL Experience Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
@@ -196,7 +197,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 
-* `{CONNECTION_SPEC_ID}`: 使用统一用户档案服务的连接规范ID - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
+* `{CONNECTION_SPEC_ID}`:使用统一用户档案服务的连接规范ID - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
 
 **响应**
 
@@ -269,8 +270,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-* `{BASE_CONNECTION_ID}`: 使用您在上一步中获得的ID。
-* `{CONNECTION_SPEC_ID}`: 将连接规范ID用 [!DNL Unified Profile Service] 于- `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
+* `{BASE_CONNECTION_ID}`:使用您在上一步中获得的ID。
+* `{CONNECTION_SPEC_ID}`:将连接规范ID用 [!DNL Unified Profile Service] 于- `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
 
 **响应**
 
@@ -357,10 +358,10 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-* `{CONNECTION_SPEC_ID}`: 使用您在获取可用目标的列表 [步骤中获得的连接规范ID](#get-the-list-of-available-destinations)。
-* `{S3 or SFTP}`: 为此目标填写所需的连接类型。 在目 [标目录中](../../rtcdp/destinations/destinations-catalog.md)，滚动到您的首选目标，查看是否支持S3和／或SFTP连接类型。
-* `{ACCESS_ID}`: 您的S3存储 [!DNL Amazon] 位置的访问ID。
-* `{SECRET_KEY}`: 您S3存储位 [!DNL Amazon] 置的密钥。
+* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标的列表 [步骤中获得的连接规范ID](#get-the-list-of-available-destinations)。
+* `{S3 or SFTP}`:为此目标填写所需的连接类型。 在目 [标目录中](../../rtcdp/destinations/destinations-catalog.md)，滚动到您的首选目标，查看是否支持S3和／或SFTP连接类型。
+* `{ACCESS_ID}`:您的S3存储 [!DNL Amazon] 位置的访问ID。
+* `{SECRET_KEY}`:您S3存储位 [!DNL Amazon] 置的密钥。
 
 **响应**
 
@@ -446,10 +447,10 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-* `{BASE_CONNECTION_ID}`: 使用您在上述步骤中获得的基本连接ID。
-* `{CONNECTION_SPEC_ID}`: 使用您在获取可用目标列表 [步骤中获得的连接规范](#get-the-list-of-available-destinations)。
-* `{BUCKETNAME}`: 您 [!DNL Amazon] 的S3存储桶，实时CDP将存放数据导出。
-* `{FILEPATH}`: S3存储段目 [!DNL Amazon] 录中的路径，实时CDP将存放数据导出。
+* `{BASE_CONNECTION_ID}`:使用您在上述步骤中获得的基本连接ID。
+* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标列表 [步骤中获得的连接规范](#get-the-list-of-available-destinations)。
+* `{BUCKETNAME}`:您 [!DNL Amazon] 的S3存储桶，实时CDP将存放数据导出。
+* `{FILEPATH}`:S3存储段目 [!DNL Amazon] 录中的路径，实时CDP将存放数据导出。
 
 **响应**
 
@@ -517,9 +518,9 @@ curl -X POST \
     }
 ```
 
-* `{FLOW_SPEC_ID}`: 使用要连接到的电子邮件营销目标的流程。 要获取流规范，请对端点执行GET `flowspecs` 操作。 请参阅此处的Swagger文档： https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs。 在响应中，查找 `upsTo` 并复制要连接到的电子邮件营销目标的相应ID。 例如，对于Adobe Campaign，请查 `upsToCampaign` 找并复制 `id` 参数。
-* `{SOURCE_CONNECTION_ID}`: 使用在步骤Connect中获得的源连接 [ID连接到Experience Platform](#connect-to-your-experience-platform-data)。
-* `{TARGET_CONNECTION_ID}`: 使用您在步骤Connect中获取的目标连 [接ID到电子邮件营销目标](#connect-to-email-marketing-destination)。
+* `{FLOW_SPEC_ID}`:使用要连接到的电子邮件营销目标的流程。 要获取流规范，请对端点执行GET `flowspecs` 操作。 请参阅此处的Swagger文档：https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs。 在响应中，查找 `upsTo` 并复制要连接到的电子邮件营销目标的相应ID。 例如，对于Adobe Campaign，请查 `upsToCampaign` 找并复制 `id` 参数。
+* `{SOURCE_CONNECTION_ID}`:使用在步骤Connect中获得的源连接 [ID连接到Experience Platform](#connect-to-your-experience-platform-data)。
+* `{TARGET_CONNECTION_ID}`:使用您在步骤Connect中获取的目标连 [接ID到电子邮件营销目标](#connect-to-email-marketing-destination)。
 
 **响应**
 
@@ -596,10 +597,10 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 ]
 ```
 
-* `{DATAFLOW_ID}`: 使用您在上一步中获得的数据流。
-* `{ETAG}`: 使用您在上一步中获得的标签。
-* `{SEGMENT_ID}`: 提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请转到https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/并查找操 `GET /segment/jobs` 作。
-* `{PROFILE_ATTRIBUTE}`: 例如， `"person.lastName"`
+* `{DATAFLOW_ID}`:使用您在上一步中获得的数据流。
+* `{ETAG}`:使用您在上一步中获得的标签。
+* `{SEGMENT_ID}`:提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请转到https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/并查找操 `GET /segment/jobs` 作。
+* `{PROFILE_ATTRIBUTE}`:例如， `"person.lastName"`
 
 **响应**
 
@@ -631,8 +632,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 --header 'If-Match: "{ETAG}"' 
 ```
 
-* `{DATAFLOW_ID}`: 使用上一步中的数据流。
-* `{ETAG}`: 使用上一步中的标记。
+* `{DATAFLOW_ID}`:使用上一步中的数据流。
+* `{ETAG}`:使用上一步中的标记。
 
 **响应**
 
