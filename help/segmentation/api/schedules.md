@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 计划
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1171'
 ht-degree: 3%
@@ -55,7 +55,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
 
 成功的响应会返回HTTP状态200，并将指定IMS组织的列表计划返回为JSON。
 
->[!NOTE] 以下响应已被截断为空格，并且只显示返回的第一个计划。
+>[!NOTE]
+>
+>以下响应已被截断为空格，并且只显示返回的第一个计划。
 
 ```json
 {
