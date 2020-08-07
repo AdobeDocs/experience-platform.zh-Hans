@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用模式注册表API定义两个模式之间的关系
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 849142e44c56f2958e794ca6aefaccd5670c28ba
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1274'
 ht-degree: 1%
@@ -15,7 +15,7 @@ ht-degree: 1%
 # 使用API定义两个模式之间的关 [!DNL Schema Registry] 系
 
 
-了解不同渠道客户之间的关系及其与您品牌的互动是Adobe Experience Platform的重要组成部分。 在(XDM)模式结构中定 [!DNL Experience Data Model] 义这些关系，使您能够对客户数据获得复杂的洞察。
+了解不同渠道客户之间的关系及其与您品牌的互动是Adobe Experience Platform的重要部分。 在(XDM)模式结构中定 [!DNL Experience Data Model] 义这些关系，使您能够对客户数据获得复杂的洞察。
 
 虽然模式关系可以通过使用合并模式来推断， [!DNL Real-time Customer Profile]但这仅适用于共享同一类的模式。 要在属于不同类的两个模式之间建立关系，必 **须向源模式** (引用目标模式的标识)中添加一个专用的关系字段。
 
@@ -36,9 +36,11 @@ ht-degree: 1%
 
 您应已创建将在关系中定义的两个模式。 本教程在组织的当前忠诚度项目(在“”模式中定义)的成员与其喜爱的酒店(在“”模式中定义)之[!DNL Loyalty Members]间创建了[!DNL Hotels]一种关系。
 
-模式关系由源 **模式表示** ，该源具有引用目标模式内的另 **一个字段**。 在接下来的步骤中，[!DNL Loyalty Members]“”将作为源模式，而“[!DNL Hotels]”将作为目标模式。
+模式关系由源 **模式表示** ，该源具有引用目标模式中的另 **一个字段**。 在接下来的步骤中，[!DNL Loyalty Members]“”将是源模式，而“[!DNL Hotels]”将充当目标模式。
 
->[!IMPORTANT] 要建立关系，两个模式必须定义主身份并启用 [!DNL Real-time Customer Profile]。 如果您需要有关如何 [相应配置模式的指导](./create-schema-api.md#profile) ，请参阅模式创建教程中有关启用模式以在用户档案中使用的部分。
+>[!IMPORTANT]
+>
+>要建立关系，两个模式必须定义主身份并启用 [!DNL Real-time Customer Profile]。 如果您需要有关如何 [相应配置模式的指导](./create-schema-api.md#profile) ，请参阅模式创建教程中有关启用模式以在用户档案中使用的部分。
 
 要定义两个模式之间的关系，您必须首先获取两个 `$id` 模式的值。 如果您知道模式的显`title`示名称()，则可以通过 `$id` 在API中向端点发出GET请求 `/tenant/schemas` 来查找其 [!DNL Schema Registry] 值。
 
@@ -116,7 +118,9 @@ curl -X GET \
 
 在本教程中，目标模式“[!DNL Hotels]”包含 `email` 一个用作模式主标识的字段，因此也将用作其引用字段。 但是，源模式“[!DNL Loyalty Members]”没有要用作引用的专用字段，并且必须给出一个新的混音，以向模式添加新字段： `favoriteHotel`.
 
->[!NOTE] 如果您的源模式已经有一个您计划用作引用字段的专用字段，则可以跳到创建引用描述符 [的步骤](#reference-identity)。
+>[!NOTE]
+>
+>如果您的源模式已经有一个您计划用作引用字段的专用字段，则可以跳到创建引用描述符 [的步骤](#reference-identity)。
 
 ### 创建新混音
 
