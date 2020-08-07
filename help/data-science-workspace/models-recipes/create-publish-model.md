@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 创建并发布机器学习模型演练
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1542'
 ht-degree: 0%
@@ -56,7 +56,7 @@ ht-degree: 0%
 
 ### 浏览数据并了解模式
 
-1. 登录 [Adobe Experience Platform](https://platform.adobe.com/) ，单击数 **[!UICONTROL 据集]** ,列表所有现有数据集并选择要浏览的数据集。 在这种情况下，数 [!DNL Analytics] 据 **集Golden Data Set postValues**。
+1. 登录到 [Adobe Experience Platform](https://platform.adobe.com/) ，单击“ **[!UICONTROL 数据集]** ”列表所有现有数据集并选择要浏览的数据集。 在这种情况下，数 [!DNL Analytics] 据 **集Golden Data Set postValues**。
    ![](../images/models-recipes/model-walkthrough/datasets_110.png)
 2. 选择 **[!UICONTROL 右上方]** 的预览数据集以检查示例记录，然后单击 **[!UICONTROL 关闭]**。
    ![](../images/models-recipes/model-walkthrough/golden_data_set_110.png)
@@ -117,7 +117,9 @@ ht-degree: 0%
 
    无法学习超参数，因此必须在进行培训之前分配超参数。 调整超参数可能会改变训练模型的精度。 由于优化模型是一个迭代过程，因此在获得满意的评估之前可能需要多次培训运行。
 
-   >[!TIP] 将 **[!UICONTROL num_recommendations]** 设置为10。
+   >[!TIP]
+   >
+   >将 **[!UICONTROL num_recommendations]** 设置为10。
 
    ![](../images/models-recipes/model-walkthrough/configure_hyperparameter.png)
 3. 新培训运行完成后，模型评估图表上将显示一个额外的数据点，这可能需要几分钟时间。
