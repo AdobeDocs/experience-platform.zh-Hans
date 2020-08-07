@@ -4,7 +4,7 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1039'
 ht-degree: 0%
@@ -57,7 +57,7 @@ ht-degree: 0%
    ![作为身份的忠诚度ID](/help/rtcdp/destinations/assets/rewardsid-as-identity.gif)
 
 
-   如果 `Email_LC_SHA256` 您根据电子邮件散列法要求将目标接收时的客户电子邮件地址哈希化为Adobe Experience Platform，则 [!DNL Facebook] 选择 [作为身份](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements)。 <br> 如果 `Email` 您使用的电子邮件地址没有散列，请选择作为目标标识。 Adobe实时CDP将散列电子邮件地址以符合要 [!DNL Facebook] 求。
+   如果 `Email_LC_SHA256` 您根据电子邮件散列要求对目标接收时的客户电子邮件地址进行散列处理以进入Adobe Experience Platform, [!DNL Facebook] 请选择 [身份](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements)。 <br> 如果 `Email` 您使用的电子邮件地址没有散列，请选择作为目标标识。 Adobe实时CDP将散列电子邮件地址以符合要 [!DNL Facebook] 求。
 
    ![填写字段后的身份映射](/help/rtcdp/destinations/assets/identity-mapping.png)
 
