@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 与PSQL连接
 topic: connect
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: 1214728063c5835510fda1a16bf1fdcca4abee48
 workflow-type: tm+mt
 source-wordcount: '170'
 ht-degree: 1%
@@ -68,7 +68,9 @@ psql (PostgreSQL) 9.5.14
 
 ![图像](../images/clients/psql/connect-bi.png)
 
->[!IMPORTANT]: 如果您在电脑上，使用文本编辑器删除命令字符串中的换行符，然后复制该字符串。
+>[!IMPORTANT]
+>
+>如果您在电脑上，使用文本编辑器删除命令字符串中的换行符，然后复制该字符串。
 
 将命令字符串粘贴到终端或命令窗口中，然后按Enter。
 
