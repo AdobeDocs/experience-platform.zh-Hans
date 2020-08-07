@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中为云存储批处理连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: f532bd6393bfad84fa09c2fc753d1d5c5b39d013
+source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
 workflow-type: tm+mt
 source-wordcount: '1482'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
 * [体验数据模型(XDM)系统](../../../../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    * [模式合成基础](../../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
@@ -98,7 +98,7 @@ ht-degree: 0%
 
 | 字段 | 描述 |
 | --- | --- |
-| 频率 | 可选频率 `Once`包括 `Minute`、 `Hour`、 `Day`和 `Week`。 |
+| 频度 | 可选频率 `Once`包括 `Minute`、 `Hour`、 `Day`和 `Week`。 |
 | 间隔 | 一个整数，它为所选频率设置间隔。 |
 | 开始时间 | UTC时间戳，指示何时设置第一次摄取。 |
 | 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *[!UICONTROL 启用]* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *禁用* “回填”，则只会摄取在首次摄取和开始时间之间加 *[!UICONTROL 载的文件]* 。 在开始时间之 *[!UICONTROL 前加载的文]* 件将不会被摄取。 |
@@ -115,7 +115,9 @@ ht-degree: 0%
 
 要设置一次性摄取，请选择频率下拉箭头，然后选择“ **[!UICONTROL 一次]**”。 只要开始时间在将来保持不变，您就可以继续编辑数据流集以进行一次频率摄取。 一旦开始时间过去，就不能再编辑一次频率值。
 
->[!TIP] **[!UICONTROL 在一]** 次性摄取 **** 期间，间隔和回填不可见。
+>[!TIP]
+>
+>**[!UICONTROL 在一]** 次性摄取 **** 期间，间隔和回填不可见。
 
 向计划提供适当的值后，选择“下 **[!UICONTROL 一步]**”。
 
