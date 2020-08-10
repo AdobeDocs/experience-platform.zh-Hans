@@ -1,12 +1,12 @@
 ---
-title: 向Adobe Audience Manager发送数据
+title: 将数据发送到Adobe Audience Manager
 seo-title: 使用Adobe Experience PlatformWeb SDK向Adobe Audience Manager发送数据
 description: 了解如何使用Experience PlatformWeb SDK将数据发送到Adobe Audience Manager
 seo-description: 了解如何使用Experience PlatformWeb SDK将数据发送到Adobe Audience Manager
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: b87b1f8a979e028c5ebf57cecf0213a075df90a6
 workflow-type: tm+mt
-source-wordcount: '257'
+source-wordcount: '256'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Audience Manager] 在 [!DNL Experience Platform Edge Network]
 
-该Adobe Experience Platform [!DNL Web SDK] 与Adobe Audience Manager集成，并支持从、Cookie和URL目 [!DNL Audience Manager]标以及ID同步发送和接收数据。
+Adobe Experience Platform [!DNL Web SDK] 与Adobe Audience Manager集成，支持从Cookie和URL目的地和ID同 [!DNL Audience Manager]步发送和接收数据。
 
 ## 启用 [!DNL Audience Manager]
 
@@ -26,12 +26,12 @@ ht-degree: 0%
 
 ## 同步身份
 
-Adobe Experience Platform [!DNL Web SDK] 支持通过SyncIdentity命令声明客户ID及其身份验证 [状态](../../fundamentals/identity.md) 。
+Adobe Experience PlatformWeb SDK支持通过sendEvent命令声明客户ID及其身份验证 [状态](../../fundamentals/identity.md#syncing-identities) 。
 
-syncIdentity方法使 [用Identity Service命名空间](../../../identity/../identity-service/namespaces.md) ，以指示与身份相关的上下文。 作为客 [!DNL Audience Manager] 户，您使用ID类型的所有现有数据源： 跨设备将自动拥有相应的设备 [!DNL Identity Namespace]。 要查找相应 [!DNL Identity Namespace] 的Adobe Experience Platform [!DNL Audience Manager Data Source]，请登录到该并导航到该 [!DNL Identities] 部分。
+从Identity Service命名空间 [中选择命名空间](../../../identity/../identity-service/namespaces.md) ，以使用“标识符”列中的值指示标识与之相关的上下文：
 
-![视图命名空间UI](../../../assets/edge_configuration_identity.png)
+![视图命名空间UI](../../../assets/edge_namespaceUI_identity-symbol.png)
 
-您可以在此按名称搜 [!DNL Audience Manager] 索数据源。 syncIdentity方法使用Identity Symbol来声明命名空间。
+作为Audience Manager客户，您所有使用ID类型的现有数据源：跨设备会自动拥有相应的身份命名空间。 要查找您的Audience Manager数据源的相应身份命名空间，请登录到Adobe Experience Platform并导航到“身份”部分。
 
-使用ID [!DNL Audience Manager] 类型的任何新数据源： 跨设备将生成相应的标识命名空间。 当前不支持数据源ID类型Cookie和设备广告ID。 此外，在Adobe Experience Platform中创建的任何身份命名空间都将生成相 [!DNL Audience Manager] 应的数据源，但请注意，syncIdentity方法仅支持命名空间身份符号。
+使用ID [!DNL Audience Manager] 类型的任何新数据源：跨设备将生成相应的标识命名空间。 当前不支持数据源ID类型Cookie和设备广告ID。 此外，在Adobe Experience Platform创建的任何身份命名空间都将生成相 [!DNL Audience Manager] 应的数据源，但请注意，syncIdentity方法仅支持命名空间身份符号。
