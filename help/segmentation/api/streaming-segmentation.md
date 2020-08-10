@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 流细分
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: e351a2d489730c1f1bd5f87be8d85612090bc009
+source-git-commit: 2adadad855edd01436a6961cc9be3e58e6483732
 workflow-type: tm+mt
-source-wordcount: '1365'
+source-wordcount: '1377'
 ht-degree: 1%
 
 ---
@@ -26,9 +26,9 @@ ht-degree: 1%
 
 此开发人员指南需要对流分段所涉及的各 [!DNL Adobe Experience Platform] 种服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [!DNL Real-time Customer Profile](../../profile/home.md): 根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
-- [!DNL Segmentation](../home.md): 提供根据数据创建细分和受众的 [!DNL Real-time Customer Profile] 能力。
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [!DNL Real-time Customer Profile](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+- [!DNL Segmentation](../home.md):提供根据数据创建细分和受众的 [!DNL Real-time Customer Profile] 能力。
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
@@ -40,7 +40,7 @@ ht-degree: 1%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -54,7 +54,7 @@ ht-degree: 1%
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 完成特定请求可能需要其他标题。 此文档中的每个示例都显示正确的标题。 请特别注意示例请求，以确保包含所有必需的标题。
 
@@ -70,6 +70,7 @@ ht-degree: 1%
 | ---------- | ------- |
 | 传入点击 | 任何区段定义，指没有时间限制的单个传入事件。 |
 | 相对时间窗口内的传入点击 | 指过去七天内单个传入事件 **的任何区段定义**。 |
+| 仅用户档案 | 只引用用户档案属性的任何区段定义。 |
 | 指用户档案 | 引用单个传入事件（无时间限制）和一个或多个用户档案属性的任何区段定义。 |
 | 指相对时间窗口内用户档案的传入点击 | 在过去七天内引用单个传入事件和一个或多个属性 **的任何用户档案定义**。 |
 | 引用事件的多个用户档案 | 任何引用过去24小时内的多个事件 **并且(可选** )具有一个或多个用户档案属性的定义。 |
