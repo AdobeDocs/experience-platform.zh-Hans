@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 流细分
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: ab43c677ab45c7aa047a50049c0dd8613b003403
+source-git-commit: 2adadad855edd01436a6961cc9be3e58e6483732
 workflow-type: tm+mt
-source-wordcount: '656'
+source-wordcount: '668'
 ht-degree: 0%
 
 ---
@@ -32,6 +32,7 @@ ht-degree: 0%
 | ---------- | ------- | ------- |
 | 传入点击 | 任何区段定义，指没有时间限制的单个传入事件。 | ![](../images/ui/streaming-segmentation/incoming-hit.png) |
 | 相对时间窗口内的传入点击 | 指过去七天内单个传入事件 **的任何区段定义**。 | ![](../images/ui/streaming-segmentation/relative-hit-success.png) |
+| 仅用户档案 | 只引用用户档案属性的任何区段定义。 |  |
 | 指用户档案 | 引用单个传入事件（无时间限制）和一个或多个用户档案属性的任何区段定义。 | ![](../images/ui/streaming-segmentation/profile-hit.png) |
 | 指相对时间窗口内用户档案的传入点击 | 在过去七天内引用单个传入事件和一个或多个属性 **的任何用户档案定义**。 | ![](../images/ui/streaming-segmentation/profile-relative-success.png) |
 | 引用事件的多个用户档案 | 任何引用过去24小时内的多个事件 **并且(可选** )具有一个或多个用户档案属性的定义。 | ![](../images/ui/streaming-segmentation/event-history-success.png) |
