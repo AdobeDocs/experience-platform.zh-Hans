@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建Microsoft SQL Server源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 4f7d7e2bf255afe1588dbe7cfb2ec055f2dcbf75
+source-git-commit: 598b29f681ac930a4e1781f7f298608c8344d807
 workflow-type: tm+mt
 source-wordcount: '508'
 ht-degree: 0%
@@ -17,16 +17,16 @@ ht-degree: 0%
 >[!NOTE]
 > SQL [!DNL Microsoft] Server连接器处于测试状态。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-Adobe Experience Platform中的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用用 [!DNL Microsoft] 户界面创建SQL Server（以下称“SQL Server”）源连接器 [!DNL Platform] 的步骤。
+Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用用 [!DNL Microsoft] 户界面创建SQL Server（以下称“SQL Server”）源连接器 [!DNL Platform] 的步骤。
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-* [体验数据模型(XDM)系统](../../../../../xdm/home.md): Experience Platform组织客户体验数据的标准化框架。
-   * [模式合成基础](../../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
-   * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md): 了解如何使用模式编辑器UI创建自定义模式。
-* [实时客户用户档案](../../../../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [体验数据模型(XDM)系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
+   * [模式合成基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
+   * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
+* [实时客户用户档案](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 如果已有SQL Server基本连接，您可以跳过此文档的其余部分，继续学习有关配置 [数据流的教程](../../dataflow/databases.md)。
 
@@ -44,9 +44,9 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 收集所需凭据后，您可以按照以下步骤创建新的入站基本连接，以将SQL Server帐户链接到 [!DNL Platform]。
 
-登录到 <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> ，然后从左 **[!UICONTROL 侧导航栏]** 中选 *[!UICONTROL 择源]* ，以访问源工作区。 “目 *[!UICONTROL 录]* ”屏幕显示可为其创建入站基本连接的各种源，每个源显示与它们关联的现有基本连接数。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 *[!UICONTROL “源”以访问]* “源”工作区。 “目 *[!UICONTROL 录]* ”屏幕显示可为其创建入站基本连接的各种源，每个源显示与它们关联的现有基本连接数。
 
-在“数 *[!UICONTROL 据库]* ”类别 **[!UICONTROL 下]** ，选择“Microsoft SQL Server”，在屏幕右侧显示一个信息栏。 信息栏提供所选源的简短描述以及与源或视图其文档的选项。 要创建新的入站基本连接，请选择“ **[!UICONTROL 连接源”]**。
+在“数 *[!UICONTROL 据库]* ”类别 **[!UICONTROL 下]** ，选择“Microsoft SQL Server”，在屏幕右侧显示一个信息栏。 信息栏提供所选源的简短描述以及与源或视图其文档的选项。 要创建新的入站基本连接，请选择“添 **[!UICONTROL 加数据”]**。
 
 ![](../../../../images/tutorials/create/microsoft-sql-server/catalog.png)
 
