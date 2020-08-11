@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform源连接器帮助
 translation-type: tm+mt
-source-git-commit: 23653949cd16e9d4ee8c3f345cbee74f147263cd
+source-git-commit: b019b6b8b69e0bfac6fc8840da350d92733dc97c
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '606'
 ht-degree: 0%
 
 ---
@@ -27,13 +27,15 @@ ht-degree: 0%
       - [Google AdWords连接器](connectors/advertising/ads.md)
    - 云存储 {#cloud-storage}
       - [AmazonKinesis连接器](connectors/cloud-storage/kinesis.md)
+      - [AmazonS3连接器](connectors/cloud-storage/s3.md)
       - [Apache HDFS连接器](connectors/cloud-storage/hdfs.md)
       - [Azure Data Lake存储Gen2连接器](connectors/cloud-storage/adls-gen2.md)
-      - [Azure Blob和AmazonS3连接器](connectors/cloud-storage/blob-s3.md)
+      - [Azure Blob连接器](connectors/cloud-storage/blob.md)
       - [Azure事件集线器连接器](connectors/cloud-storage/eventhub.md)
       - [Azure文件存储连接器](connectors/cloud-storage/azure-file-storage.md)
       - [FTP和SFTP连接器](connectors/cloud-storage/ftp-sftp.md)
       - [Google Cloud存储连接器](connectors/cloud-storage/google-cloud-storage.md)
+      - [AmazonS3和Azure Blob连接器](connectors/cloud-storage/blob-s3.md)
    - CRM {#crm}
       - [Microsoft Dynamics连接器](connectors/crm/ms-dynamics.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
@@ -139,13 +141,15 @@ ht-degree: 0%
          - [Google AdWords连接器](tutorials/ui/create/advertising/ads.md)
       - 云存储 {#cloud-storage}
          - [AmazonKinesis连接器](tutorials/ui/create/cloud-storage/kinesis.md)
+         - [AmazonS3连接器](tutorials/ui/create/cloud-storage/s3.md)
          - [Apache HDFS连接器](tutorials/ui/create/cloud-storage/hdfs.md)
          - [Azure Data Lake存储Gen2连接器](tutorials/ui/create/cloud-storage/adls-gen2.md)
-         - [Azure Blob和AmazonS3连接器](tutorials/ui/create/cloud-storage/blob-s3.md)
+         - [Azure Blob连接器](tutorials/ui/create/cloud-storage/blob.md)
          - [Azure事件集线器连接器](tutorials/ui/create/cloud-storage/eventhub.md)
          - [Azure文件存储连接器](tutorials/ui/create/cloud-storage/azure-file-storage.md)
          - [FTP和SFTP连接器](tutorials/ui/create/cloud-storage/ftp-sftp.md)
          - [Google Cloud存储连接器](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
+         - [AmazonS3和Blob连接器](tutorials/ui/create/cloud-storage/blob-s3.md)
       - CRM {#crm}
          - [Microsoft Dynamics连接器](tutorials/ui/create/crm/dynamics.md)
          - [Salesforce连接器](tutorials/ui/create/crm/salesforce.md)
