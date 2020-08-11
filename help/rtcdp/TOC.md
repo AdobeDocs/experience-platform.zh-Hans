@@ -3,9 +3,9 @@ product: adobe experience platform
 audience: user
 user-guide-title: 实时客户数据平台帮助
 translation-type: tm+mt
-source-git-commit: b0068c0ef0897d5d4ec578f0c97b20aef3b2931c
+source-git-commit: 836feb48c62e0e0ed11248846d63021125796b76
 workflow-type: tm+mt
-source-wordcount: '440'
+source-wordcount: '443'
 ht-degree: 11%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 11%
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
       * 广告目标{#advertising-destinations}
          * [广告目标概述](destinations/advertising-destinations.md)
-         * [Adobe Advertising Cloud分机](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
+         * [Adobe Advertising Cloud延伸](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
          * [Awin广告转换标签扩展](/help/rtcdp/destinations/awin-conversiontag-extension.md)
          * [Awin Advertising Mastertag扩展](/help/rtcdp/destinations/awin-mastertag-extension.md)
          * [Beemray扩展](/help/rtcdp/destinations/beemray-extension.md)
@@ -47,13 +47,14 @@ ht-degree: 11%
          * [Google广告](/help/rtcdp/destinations/google-ads-destination.md)
          * [Google广告扩展](/help/rtcdp/destinations/google-ads-extension.md)
          * [Google广告经理](/help/rtcdp/destinations/google-ad-manager-destination.md)
+         * [Google客户匹配](/help/rtcdp/destinations/google-customer-match-destination.md)
          * [Google Display &amp; Video 360](/help/rtcdp/destinations/google-dv360-destination.md)
          * [Google Gtag扩展](/help/rtcdp/destinations/gtag-advertising-extension.md)
          * [LinkedIn Insight标记扩展](/help/rtcdp/destinations/linkedin-extension.md)
          * [Pinterest转换跟踪扩展](destinations/pinterest-extension.md)
          * [Twitter通用网站标签扩展](destinations/twitter-uwt-extension.md)
-      * Analytics目标 {#analytics-destinations}
-         * [Analytics目标概述](destinations/analytics-destinations.md)
+      * 分析目标 {#analytics-destinations}
+         * [分析目标概述](destinations/analytics-destinations.md)
          * [Adform网站跟踪扩展](/help/rtcdp/destinations/adform-extension.md)
          * [Adobe Analytics 扩展](/help/rtcdp/destinations/adobe-analytics-extension.md)
          * [Adobe Media Analytics for Audio and Video 扩展](/help/rtcdp/destinations/adobe-video-analytics-extension.md)
@@ -63,12 +64,12 @@ ht-degree: 11%
          * [Demandbase扩展](/help/rtcdp/destinations/demandbase-extension.md)
          * [Dialogtech扩展](/help/rtcdp/destinations/dialogtech-extension.md)
          * [Google Global Site Tag Analytics扩展](/help/rtcdp/destinations/gtag-analytics-extension.md)
-         * [Google通用Analytics扩展](/help/rtcdp/destinations/google-universal-analytics-extension.md)
-         * [JW PlayerAnalytics（测试版）扩展](/help/rtcdp/destinations/jw-player-analytics-extension.md)
+         * [Google Universal Analytics扩展](/help/rtcdp/destinations/google-universal-analytics-extension.md)
+         * [JW Player分析（测试版）扩展](/help/rtcdp/destinations/jw-player-analytics-extension.md)
          * [Nielsen BSDK扩展](destinations/nielsen-bsdk-extension.md)
          * [Nielsen IMA Handler扩展](destinations/nielsen-ima-extension.md)
          * [Nielsen VideoJS播放器处理程序扩展](destinations/nielsen-videojs-extension.md)
-         * [Parse.lyAnalytics扩展](destinations/parsely-extension.md)
+         * [Parse.ly Analytics扩展](destinations/parsely-extension.md)
          * [量子度量扩展](destinations/quantum-metric-extension.md)
          * [SessionCam扩展](destinations/sessioncam-extension.md)
          * [TMMData扩展](destinations/tmmdata-extension.md)
@@ -86,7 +87,7 @@ ht-degree: 11%
       * 电子邮件营销目标{#email-destinations}
          * [电子邮件营销目标概述](destinations/email-marketing-destinations.md)
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
-         * [可见Analytics扩展](/help/rtcdp/destinations/bizible-extension.md)
+         * [Bizible Analytics扩展](/help/rtcdp/destinations/bizible-extension.md)
          * [Marketo扩展](destinations/marketo-extension.md)
          * [Marketo Munchkin 扩展](destinations/marketo-munchkin-extension.md)
          * [Oracle Evolca](destinations/oracle-eloqua-destination.md)
