@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 将源文件打包到菜谱中
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 45461e3420f3b7e227f80fe775d80b8442a1069c
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
 source-wordcount: '1097'
 ht-degree: 0%
@@ -14,12 +14,12 @@ ht-degree: 0%
 
 # 将源文件打包到菜谱中
 
-本教程提供了有关如何将提供的零售销售示例源文件打包到存档文件中的说明，该存档文件可用于通过在UI中或使用API遵循菜谱导 [!DNL Data Science Workspace] 入工作流在Adobe Experience Platform中创建菜谱。
+本教程提供了有关如何将提供的零售销售示例源文件打包到存档文件中的说明，该存档文件可用于在Adobe Experience Platform通过在UI中或使用API遵循菜谱导 [!DNL Data Science Workspace] 入工作流程来创建菜谱。
 
 要了解的概念：
 
-- **菜谱**: 配方是“模型”规范的Adobe术语，是代表特定机器学习、人工智能算法或算法集合、处理逻辑和配置的顶级容器，构建和执行经过培训的模型，从而帮助解决特定的业务问题。
-- **源文件**: 项目中包含菜谱逻辑的各个文件。
+- **菜谱**:配方是“模型”规范的Adobe术语，是代表特定机器学习、人工智能算法或算法集合、处理逻辑和配置的顶级容器，构建和执行经过培训的模型，从而帮助解决特定的业务问题。
+- **源文件**:项目中包含菜谱逻辑的各个文件。
 
 ## 先决条件
 
@@ -38,7 +38,7 @@ Docker图像允许开发人员将应用程序与其所需的所有部件（如�
 
 内置的Docker图像将使用在菜谱创建工作流程中提供给您的凭据推送到Azure容器注册表。
 
-要获取您的Azure容器注册表凭据，请登录 <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a>。 在左侧导航列中，导航到 **[!UICONTROL 工作流]**。 选择 **[!UICONTROL 导入菜谱]** ，然后选择 **[!UICONTROL 启动]**。 请参阅下面的屏幕快照。
+要获取您的Azure容器注册表凭据，请登录 [Adobe Experience Platform](https://platform.adobe.com)。 在左侧导航列中，导航到 **[!UICONTROL 工作流]**。 选择 **[!UICONTROL 导入菜谱]** ，然后选择 **[!UICONTROL 启动]**。 请参阅下面的屏幕快照。
 
 ![](../images/models-recipes/package-source-files/import.png)
 
