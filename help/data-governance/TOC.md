@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform数据治理帮助
 translation-type: tm+mt
-source-git-commit: 876ac35f6366411adda821805bf628470839f80e
+source-git-commit: de79706be6303f82c6d0e68cdf2c9d389f23d9a8
 workflow-type: tm+mt
-source-wordcount: '106'
-ht-degree: 4%
+source-wordcount: '107'
+ht-degree: 5%
 
 ---
 
@@ -27,6 +27,7 @@ ht-degree: 4%
    * [策略实施概述](enforcement/overview.md)
    * [使用策略服务API实施数据使用策略](enforcement/api-enforcement.md)
 * 策略服务API开发人员指南 {#api}
+   * [概述](api/overview.md)
    * [入门指南](api/getting-started.md)
    * [标签](api/labels.md)
    * [策略](api/policies.md)
