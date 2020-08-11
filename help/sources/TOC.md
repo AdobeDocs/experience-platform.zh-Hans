@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform源连接器帮助
 translation-type: tm+mt
-source-git-commit: 03fd716d6f743d839bc24ff99660efdf47b187a0
+source-git-commit: 23653949cd16e9d4ee8c3f345cbee74f147263cd
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '595'
 ht-degree: 0%
 
 ---
@@ -16,11 +16,11 @@ ht-degree: 0%
 - [源连接器概述](home.md)
 - 可用源连接器 {#connectors}
    - Adobe应用程序 {#adobe-applications}
-      - [Analytics数据连接器](connectors/adobe-applications/analytics.md)
+      - [分析数据连接器](connectors/adobe-applications/analytics.md)
       - [Audience Manager连接器](connectors/adobe-applications/audience-manager.md)
       - [客户属性连接器](connectors/adobe-applications/customer-attributes.md)
       - 映射Adobe应用程序字段 {#mapping}
-         - [Analytics映射字段](connectors/adobe-applications/mapping/analytics.md)
+         - [分析映射字段](connectors/adobe-applications/mapping/analytics.md)
          - [Audience Manager映射字段](connectors/adobe-applications/mapping/audience-manager.md)
          - [目标映射字段](connectors/adobe-applications/mapping/target.md)
    - 广告 {#advertising}
@@ -45,7 +45,7 @@ ht-degree: 0%
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
       - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
       - [AzureData Explorer连接器](connectors/databases/data-explorer.md)
-      - [Azure突触Analytics连接器](connectors/databases/synapse-analytics.md)
+      - [Azure Synapse Analytics连接器](connectors/databases/synapse-analytics.md)
       - [Azure表存储连接器](connectors/databases/ats.md)
       - [Couchbase连接器](connectors/databases/couchbase.md)
       - [Google BigQuery连接器](connectors/databases/bigquery.md)
@@ -90,7 +90,7 @@ ht-degree: 0%
          - [Azure HDInsights连接器上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights连接器上的Apache Spark](tutorials/api/create/databases/spark.md)
          - [AzureData Explorer连接器](tutorials/api/create/databases/data-explorer.md)
-         - [Azure突触Analytics连接器](tutorials/api/create/databases/synapse-analytics.md)
+         - [Azure Synapse Analytics连接器](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure表存储连接器](tutorials/api/create/databases/ats.md)
          - [Couchbase连接器](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery连接器](tutorials/api/create/databases/bigquery.md)
@@ -157,7 +157,7 @@ ht-degree: 0%
          - [Azure HDInsights连接器上的Apache Hive](tutorials/ui/create/databases/hive.md)
          - [Azure HDInsights连接器上的Apache Spark](tutorials/ui/create/databases/spark.md)
          - [AzureData Explorer连接器](tutorials/ui/create/databases/data-explorer.md)
-         - [Azure突触Analytics连接器](tutorials/ui/create/databases/synapse-analytics.md)
+         - [Azure Synapse Analytics连接器](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure表存储连接器](tutorials/ui/create/databases/ats.md)
          - [Couchbase连接器](tutorials/ui/create/databases/couchbase.md)
          - [Google大查询连接器](tutorials/ui/create/databases/bigquery.md)
@@ -187,5 +187,6 @@ ht-degree: 0%
       - [为付款连接器配置数据流](tutorials/ui/dataflow/payments.md)
       - [为协议连接器配置数据流](tutorials/ui/dataflow/protocols.md)
    - [激活入站数据以填充客户用户档案](tutorials/ui/profile.md)
-   - [监视帐户和数据集流](tutorials/ui/monitor.md)
+   - [监视帐户和数据流](tutorials/ui/monitor.md)
+   - [删除数据流](tutorials/ui/delete.md)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
