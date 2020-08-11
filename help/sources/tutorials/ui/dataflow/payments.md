@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为付款连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: d80622aaa8408d640a1a80b6a37f4083344e7fa1
 workflow-type: tm+mt
-source-wordcount: '1224'
+source-wordcount: '1273'
 ht-degree: 0%
 
 ---
@@ -20,10 +20,10 @@ ht-degree: 0%
 
 本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-- [体验数据模型(XDM)系统](../../../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-   - [模式合成基础](../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
-   - [模式编辑器教程](../../../../xdm/tutorials/create-schema-ui.md): 了解如何使用模式编辑器UI创建自定义模式。
-- [实时客户用户档案](../../../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [体验数据模型(XDM)系统](../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+   - [模式合成基础](../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
+   - [模式编辑器教程](../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
+- [实时客户用户档案](../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 此外，本教程要求您已创建付款帐户。 有关在UI中创建不同付款连接器的列表教程，请参阅源 [连接器概述](../../../home.md)。
 
@@ -118,17 +118,21 @@ ht-degree: 0%
 
 此时 *[!UICONTROL 会出现]* “审阅”步骤，允许您在创建新数据流之前对其进行查看。 详细信息按以下类别分组：
 
-- *[!UICONTROL 连接]*: 显示源类型、所选源文件的相关路径以及该源文件中的列数。
-- *[!UICONTROL 分配数据集和地图字段]*: 显示接收源数据的数据集，包括数据集附带的模式。
-- *[!UICONTROL 计划]*: 显示摄取计划的活动周期、频率和间隔。
+- *[!UICONTROL 连接]*:显示源类型、所选源文件的相关路径以及该源文件中的列数。
+- *[!UICONTROL 分配数据集和地图字段]*:显示接收源数据的数据集，包括数据集附带的模式。
+- *[!UICONTROL 计划]*:显示摄取计划的活动周期、频率和间隔。
 
 查看数据流后，单击 **[!UICONTROL 完成]** ，并允许一段时间创建数据流。
 
 ![审查](../../../images/tutorials/dataflow/payments/review.png)
 
-## 监视和删除数据流
+## 监视数据流
 
-创建数据流后，您可以监视通过它摄取的数据。 有关如何监视和删除数据流的详细信息，请参阅有关监视和删除 [数据流的教程](../monitor.md)。
+创建数据流后，您可以监视通过它摄取的数据，以查看有关摄取率、成功和错误的信息。 有关如何监视数据流的详细信息，请参阅UI中 [关于监视帐户和数据流的教程](../monitor.md)。
+
+## 删除数据流
+
+您可以删除不再需要的或使用Dataflows工作区中提供的Delete ** （删除）功能创建的 *[!UICONTROL 数据流]* 。 有关如何删除数据流的详细信息，请参阅有关在UI [中删除数据流的教程](../delete.md)。
 
 ## 后续步骤
 
