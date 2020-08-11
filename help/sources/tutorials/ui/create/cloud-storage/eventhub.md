@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Azure事件集线器源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
-source-wordcount: '449'
+source-wordcount: '448'
 ht-degree: 1%
 
 ---
@@ -17,16 +17,16 @@ ht-degree: 1%
 >[!NOTE]
 > 连接 [!DNL Azure Event Hubs] 器为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-Adobe Experience Platform中的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用用户 [!DNL Azure Event Hubs] 界面验证源连接器([!DNL Event Hubs]以下称“”) [!DNL Platform] 的步骤。
+Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用用户 [!DNL Azure Event Hubs] 界面验证源连接器([!DNL Event Hubs]以下称“”) [!DNL Platform] 的步骤。
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-- [体验数据模型(XDM)系统](../../../../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-   - [模式合成基础](../../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
-   - [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md): 了解如何使用模式编辑器UI创建自定义模式。
-- [实时客户用户档案](../../../../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [体验数据模型(XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+   - [模式合成基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
+   - [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
+- [实时客户用户档案](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 如果您已经有 [!DNL Event Hubs] 帐户，您可以跳过此文档的其余部分，继续学习有关配置 [数据流的教程](../../dataflow/streaming/cloud-storage.md)。
 
@@ -46,9 +46,9 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 收集所需凭据后，您可以按照以下步骤将帐户链 [!DNL Event Hubs] 接到 [!DNL Platform]。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选 *择源* ，以访问源工作区。 “目 *[!UICONTROL 录]* ”选项卡显示可连接到的各种源 [!DNL Platform]。 每个来源显示与其关联的现有帐户数。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 *“源”以访问* “源”工作区。 “目 *[!UICONTROL 录]* ”选项卡显示可连接到的各种源 [!DNL Platform]。 每个来源显示与其关联的现有帐户数。
 
-在云 *[!UICONTROL 存储]* 类别下，选 **[!UICONTROL 择Azure事件集线器]** ，然 **** 后单击+图标(+)以创建新的事件集线器连接器。
+在“云 *[!UICONTROL 存储]* ”类别下，选 **[!UICONTROL 择Azure事件集线器]** ，然后 **[!UICONTROL 选择添加数据]** ，以创建新的事件集线器连接器。
 
 ![](../../../../images/tutorials/create/eventhub/catalog.png)
 
