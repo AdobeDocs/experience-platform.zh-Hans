@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建Adobe Audience Manager源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: f09ff4d1b159a6989868c5cfc35b361cfb640a99
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
 source-wordcount: '269'
 ht-degree: 2%
@@ -14,29 +14,29 @@ ht-degree: 2%
 
 # 在UI中创建Adobe Audience Manager源连接器
 
-本教程将指导您逐步创建源连接器，供Adobe Audience Manager使用，以便使用用户界面将消费者体验事件数据导入平台。
+本教程将指导您逐步为Adobe Audience Manager创建源连接器，以便使用用户界面将消费者体验事件数据导入平台。
 
-## 使用Adobe Audience Manager创建源连接
+## 创建与Adobe Audience Manager的源连接
 
-登录到 <a href="https://platform.adobe.com" target="_blank">Adobe Experience Platform</a> ，然后从左 **侧导航栏** 中选择“源”以访问源工作区。 “目 *录* ”屏幕显示可为其创建源连接的各种源，每个源显示与它们关联的现有连接数。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **侧导航栏** 中选择“源”以访问源工作区。 “目 *录* ”屏幕显示可为其创建源连接的各种源，每个源显示与它们关联的现有连接数。
 
-在Adobe *应用程序* 类别下，选择 **Adobe Audience Manager** ，以在屏幕右侧显示一个信息栏。 信息栏提供所选源的简短说明以及视图其文档或与源连接的选项。
+在Adobe *应用程序* 类别下，选 **择“** Adobe Audience Manager”以在屏幕右侧显示一个信息栏。 信息栏提供所选源的简短说明以及视图其文档或与源连接的选项。
 
-要创建新的源连接器进行Adobe Audience Manager，请单击“ **连接源”**。
+要为Adobe Audience Manager创建新的源连接器，请单击“添 **加数据”**。
 
-![](../../../../images/tutorials/create/aam/aam_catalog.png)
+![](../../../../images/tutorials/create/aam/catalog.png)
 
 将显示一个对话框。单 **击** “连接”创建连接。
 
-![](../../../../images/tutorials/create/aam/aam_connect_full.png)
+![](../../../../images/tutorials/create/aam/connect_full.png)
 
-如果已建立与Adobe Audience Manager的源连接，则显 *示Audience Manager* 连接器的“源活动”页。
+如果与Adobe Audience Manager建立了源连接，则显 *示Audience Manager连* 接器的“源活动”页。
 
-![](../../../../images/tutorials/create/aam/aam_flow.png)
+![](../../../../images/tutorials/create/aam/flow.png)
 
 如果要暂停传入Audience Manager数据，可以单击流列表，并从右侧的“属性”列 *切换* 其“状 *态* ”。
 
-![](../../../../images/tutorials/create/aam/aam_flow_disable.png)
+![](../../../../images/tutorials/create/aam/flow_disable.png)
 
 ## 后续步骤
 
