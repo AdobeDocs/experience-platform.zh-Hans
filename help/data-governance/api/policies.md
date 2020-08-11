@@ -4,23 +4,25 @@ solution: Experience Platform
 title: 策略
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d4964231ee957349f666eaf6b0f5729d19c408de
+source-git-commit: 7bc7050d64727f09d3a13d803d532a9a3ba5d1a7
 workflow-type: tm+mt
-source-wordcount: '862'
-ht-degree: 1%
+source-wordcount: '1756'
+ht-degree: 2%
 
 ---
 
 
-# 策略
+# 策略端点
 
-数据使用策略是贵组织采用的规则，用于描述您允许或限制对内部数据执行的营销操作的类型 [!DNL Experience Platform]。
+数据使用策略是描述允许或限制您对中的数据执行的营销操作种类的规则 [!DNL Experience Platform]。 中的 `/policies` 端点允许您 [!DNL Policy Service API] 以编程方式管理组织的数据使用策略。
 
-端点 `/policies` 用于与查看、创建、更新或删除数据使用策略相关的所有API调用。
+## 入门指南
 
-## 列表所有策略
+本指南中使用的API端点是API的一 [[!DNL Policy Service] 部分](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
 
-要视图策略列表，可以向指定GET请求或 `/policies/core` 返回 `/policies/custom` 指定容器的所有策略。
+## 检索一列表策略 {#list}
+
+您可以通过分别 `core` 向或 `custom` 者发出列表请求来GET `/policies/core` 所有或 `/policies/custom`策略。
 
 **API格式**
 
@@ -31,7 +33,9 @@ GET /policies/custom
 
 **请求**
 
-```SHELL
+以下请求检索由您的组织定义的一列表自定义策略。
+
+```sh
 curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/policies/custom \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -42,7 +46,7 @@ curl -X GET \
 
 **响应**
 
-该响应包括一个“计数”，显示指定容器内策略的总数以及每个策略的详细信息(包括其 `id`)。 该字 `id` 段用于执行查找请求以视图特定策略，以及执行更新和删除操作。
+成功的响应包括一个 `children` 数组，它列表每个检索到的策略的详细信息，包括其 `id` 值。 您可以使用特 `id` 定策略的字段来执行 [查找](#lookup)、更 [新和删](#update)除该策 [略的请求](#delete) 。
 
 ```JSON
 {
@@ -85,11 +89,11 @@ curl -X GET \
             },
             "imsOrg": "{IMS_ORG}",
             "created": 1550691551888,
-            "createdClient": "string",
-            "createdUser": "string",
+            "createdClient": "{CLIENT_ID}",
+            "createdUser": "{USER_ID}",
             "updated": 1550701472910,
-            "updatedClient": "string",
-            "updatedUser": "string",
+            "updatedClient": "{CLIENT_ID}",
+            "updatedUser": "{USER_ID}",
             "_links": {
                 "self": {
                     "href": "https://platform.adobe.io/data/foundation/dulepolicy/policies/custom/5c6dacdf685a4913dc48937c"
@@ -117,11 +121,11 @@ curl -X GET \
             },
             "imsOrg": "{IMS_ORG}",
             "created": 1550703519823,
-            "createdClient": "string",
-            "createdUser": "string",
+            "createdClient": "{CLIENT_ID}",
+            "createdUser": "{USER_ID}",
             "updated": 1550714340335,
-            "updatedClient": "string",
-            "updatedUser": "string",
+            "updatedClient": "{CLIENT_ID}",
+            "updatedUser": "{USER_ID}",
             "_links": {
                 "self": {
                     "href": "https://platform.adobe.io/data/foundation/dulepolicy/policies/custom/5c6ddb9f5c404513dc2dc454"
@@ -133,20 +137,33 @@ curl -X GET \
 }
 ```
 
-## 查找策略
+| 属性 | 描述 |
+| --- | --- |
+| `_page.count` | 检索的策略总数。 |
+| `name` | 策略的显示名称。 |
+| `status` | 策略的当前状态。 有三种可能的状态： `DRAFT`、 `ENABLED`或 `DISABLED`。 默认情况下，只 `ENABLED` 有策略参与评估。 有关详细信息，请 [参阅](../enforcement/overview.md) “策略评估”概述。 |
+| `marketingActionRefs` | 列表策略所有适用营销操作的URI的数组。 |
+| `description` | 可选描述，它提供策略用例的进一步上下文。 |
+| `deny` | 一个对象，它描述策略的关联营销操作被限制在其上执行的特定数据使用标签。 有关此属性的 [详细信息](#create-policy) ，请参阅创建策略一节。 |
 
-每个策略都包 `id` 含一个字段，可用于请求特定策略的详细信息。 如果策 `id` 略未知，则可以使用列表(GET)请求列表特定容器（或）内的所有策略，如上`core` 一 `custom`步所示。
+## 查找策略 {#look-up}
+
+通过在GET请求路径中包含该策略的属 `id` 性，可以查找特定策略。
 
 **API格式**
 
 ```http
-GET /policies/core/{id}
-GET /policies/custom/{id}
+GET /policies/core/{POLICY_ID}
+GET /policies/custom/{POLICY_ID}
 ```
+
+| 参数 | 描述 |
+| --- | --- |
+| `{POLICY_ID}` | 要 `id` 查看的策略。 |
 
 **请求**
 
-```SHELL
+```sh
 curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/policies/custom/5c6dacdf685a4913dc48937c \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -157,7 +174,7 @@ curl -X GET \
 
 **响应**
 
-响应包含策略的详细信息，包括关键字段( `id` 此字段应与请求中发送的 `id` 字段相匹配)、 `name`、 `status`和 `description`，以及指向策略所基于的营销操作的引用链接(`marketingActionRefs`)。
+成功的响应会返回策略的详细信息。
 
 ```JSON
 {
@@ -187,12 +204,12 @@ curl -X GET \
         ]
     },
     "imsOrg": "{IMS_ORG}",
-    "created": 1550691551888,
-    "createdClient": "string",
-    "createdUser": "string",
-    "updated": 1550701472910,
-    "updatedClient": "string",
-    "updatedUser": "string",
+    "created": 1550703519823,
+    "createdClient": "{CLIENT_ID}",
+    "createdUser": "{USER_ID}",
+    "updated": 1550714340335,
+    "updatedClient": "{CLIENT_ID}",
+    "updatedUser": "{USER_ID}",
     "_links": {
         "self": {
             "href": "https://platform.adobe.io/data/foundation/dulepolicy/policies/custom/5c6dacdf685a4913dc48937c"
@@ -202,11 +219,34 @@ curl -X GET \
 }
 ```
 
-## 创建策略 {#create-policy}
+| 属性 | 描述 |
+| --- | --- |
+| `name` | 策略的显示名称。 |
+| `status` | 策略的当前状态。 有三种可能的状态： `DRAFT`、 `ENABLED`或 `DISABLED`。 默认情况下，只 `ENABLED` 有策略参与评估。 有关详细信息，请 [参阅](../enforcement/overview.md) “策略评估”概述。 |
+| `marketingActionRefs` | 列表策略所有适用营销操作的URI的数组。 |
+| `description` | 可选描述，它提供策略用例的进一步上下文。 |
+| `deny` | 一个对象，它描述策略的关联营销操作被限制在其上执行的特定数据使用标签。 有关此属性的 [详细信息](#create-policy) ，请参阅创建策略一节。 |
 
-要创建策略，必须包含包含禁止该营销操作的DULE标签表达式的营销操作。 策略定义必须包 `deny` 括属性，该属性是与DULE标签存在相关的布尔表达式。
+## Create a custom policy {#create-policy}
 
-此表达式称为 `PolicyExpression` ，是一个对象， _它包含标_ 签或 _操作符_ 和操作数，但不同时包含这两个。 反过来，每个操作数也是一个 `PolicyExpression` 对象。 例如，如果存在标签，则可能禁止向第三方导出数 `C1 OR (C3 AND C7)` 据的策略。 此表达式将指定为：
+在API [!DNL Policy Service] 中，策略由以下各项定义：
+
+* 对特定营销活动的引用
+* 描述限制市场营销活动的数据使用标签的表达式
+
+要满足后一要求，策略定义必须包含与存在数据使用标签有关的布尔表达式。 此表达式称为策 **略表达式**。
+
+策略表达式以属性的形式在每个 `deny` 策略定义中提供。 仅检查单个标 `deny` 签是否存在的简单对象示例如下所示：
+
+```json
+"deny": {
+    "label": "C1"
+}
+```
+
+但是，许多策略指定了与存在数据使用标签有关的更复杂条件。 要支持这些用例，您还可以包含布尔运算来描述策略表达式。 策略表达式对象必 _须包含_ 标签 _或运_ 算符和操作数，但不能同时包含这两者。 反过来，每个操作数也是策略表达式对象。
+
+例如，为了定义禁止对存在标签的数据执行营销 `C1 OR (C3 AND C7)` 操作的策略，策略的 `deny` 属性将指定为：
 
 ```JSON
 "deny": {
@@ -224,6 +264,14 @@ curl -X GET \
 }
 ```
 
+| 属性 | 描述 |
+| --- | --- |
+| `operator` | 指示在同级数组中提供的标签之间的条件 `operands` 关系。 接受的值为： <ul><li>`OR`:如果数组中存在任何标签，表达式解 `operands` 析为true。</li><li>`AND`:仅当数组中的所有标签都存在时，表达式 `operands` 才解析为true。</li></ul> |
+| `operands` | 对象的数组，每个对象表示单个标签或另一对和属 `operator` 性 `operands` 。 数组中存在的标签和／或操 `operands` 作会根据其同级属性的值解析为true或false `operator` 。 |
+| `label` | 应用于策略的单个数据使用标签的名称。 |
+
+可以通过向端点发出POST请求来创建新的自定义 `/policies/custom` 策略。
+
 **API格式**
 
 ```http
@@ -232,7 +280,9 @@ POST /policies/custom
 
 **请求**
 
-```SHELL
+以下请求会创建新策略，限制对包含标签 `exportToThirdParty` 的数据执行营销操作 `C1 OR (C3 AND C7)`。
+
+```sh
 curl -X POST \
   https://platform.adobe.io/data/foundation/dulepolicy/policies/custom \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -244,7 +294,7 @@ curl -X POST \
         "name": "Export Data to Third Party",
         "status": "DRAFT",
         "marketingActionRefs": [
-          "../marketingActions/custom/exportToThirdParty"
+          "https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/exportToThirdParty"
         ],
         "description": "Conditions under which data cannot be exported to a third party",
         "deny": {
@@ -263,9 +313,17 @@ curl -X POST \
       }'
 ```
 
+| 属性 | 描述 |
+| --- | --- |
+| `name` | 策略的显示名称。 |
+| `status` | 策略的当前状态。 有三种可能的状态： `DRAFT`、 `ENABLED`或 `DISABLED`。 默认情况下，只 `ENABLED` 有策略参与评估。 有关详细信息，请 [参阅](../enforcement/overview.md) “策略评估”概述。 |
+| `marketingActionRefs` | 列表策略所有适用营销操作的URI的数组。 市场营销操作的URI在响应中 `_links.self.href` 提供，用 [于查找营销操作](./marketing-actions.md#look-up)。 |
+| `description` | 可选描述，它提供策略用例的进一步上下文。 |
+| `deny` | 描述策略的关联营销操作的特定数据使用标签的策略表达式被限制为不能执行。 |
+
 **响应**
 
-如果成功创建，您将收到HTTP状态201（已创建），响应主体将包含新创建策略的详细信息，包括其详细信 `id`息。 此值是只读的，在创建策略时自动分配。
+成功的响应会返回新创建策略的详细信息，包括其详细信息 `id`。 此值是只读的，在创建策略时自动分配。
 
 ```JSON
 {
@@ -296,11 +354,11 @@ curl -X POST \
     },
     "imsOrg": "{IMS_ORG}",
     "created": 1550691551888,
-    "createdClient": "string",
-    "createdUser": "string",
+    "createdClient": "{CLIENT_ID}",
+    "createdUser": "{USER_ID}",
     "updated": 1550691551888,
-    "updatedClient": "string",
-    "updatedUser": "string",
+    "updatedClient": "{CLIENT_ID}",
+    "updatedUser": "{USER_ID}",
     "_links": {
         "self": {
             "href": "https://platform.adobe.io/data/foundation/dulepolicy/policies/custom/5c6dacdf685a4913dc48937c"
@@ -310,21 +368,35 @@ curl -X POST \
 }
 ```
 
-## 更新策略
+## 更新自定义策略 {#update}
 
-您可能会发现，您需要在数据使用策略创建后更新它。 这是通过对策略的PUT请求完 `id` 成的，其有效负荷包含策略的更新形式。 换言之，PUT请求实质上是 _重写_ 策略，因此机构必须包括以下示例中所示的所有必需信息。
+>[!IMPORTANT]
+>
+>您只能更新自定义策略。 如果要启用或禁用核心策略，请参阅更新已启 [用核心策略的列表部分](#update-enabled-core)。
+
+您可以通过在PUT请求路径中提供现有自定义策略的ID来更新其现有自定义策略，该ID包含完整策略的更新形式的有效负荷。 换言之，PUT请求实质上 _会重写_ 策略。
+
+>[!NOTE]
+>
+>如果您只想更 [新策略的一个或多个字段](#patch) ，而不是覆盖策略，请参阅更新自定义策略的一部分部分。
 
 **API格式**
 
 ```http
-PUT /policies/custom/{id}
+PUT /policies/custom/{POLICY_ID}
 ```
+
+| 参数 | 描述 |
+| --- | --- |
+| `{POLICY_ID}` | 要 `id` 更新的策略的名称。 |
 
 **请求**
 
-在此示例中，将数据导出到第三方的条件已发生更改，现在您需要创建的策略才能在数据标签存在时拒绝 `C1 AND (C3 OR C7)` 此营销操作。 您可以使用以下调用来更新现有策略。
+在此示例中，将数据导出到第三方的条件已发生更改，现在您需要创建的策略才能在数据标签存在时拒绝 `C1 AND C5` 此营销操作。
 
-```SHELL
+以下请求将更新现有策略以包含新策略表达式。 请注意，由于此请求实质上重写了策略，因此所有字段都必须包含在有效负荷中，即使某些字段的值未更新也是如此。
+
+```sh
 curl -X PUT \
   https://platform.adobe.io/data/foundation/dulepolicy/policies/custom/5c6dacdf685a4913dc48937c \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -343,21 +415,23 @@ curl -X PUT \
           "operator": "AND",
           "operands": [
             {"label": "C1"},
-            {
-              "operator": "OR",
-              "operands": [
-                {"label": "C3"},
-                {"label": "C7"}
-              ]
-            }
+            {"label": "C5"}
           ]
         }
       }'
 ```
 
+| 属性 | 描述 |
+| --- | --- |
+| `name` | 策略的显示名称。 |
+| `status` | 策略的当前状态。 有三种可能的状态： `DRAFT`、 `ENABLED`或 `DISABLED`。 默认情况下，只 `ENABLED` 有策略参与评估。 有关详细信息，请 [参阅](../enforcement/overview.md) “策略评估”概述。 |
+| `marketingActionRefs` | 列表策略所有适用营销操作的URI的数组。 市场营销操作的URI在响应中 `_links.self.href` 提供，用 [于查找营销操作](./marketing-actions.md#look-up)。 |
+| `description` | 可选描述，它提供策略用例的进一步上下文。 |
+| `deny` | 描述策略的关联营销操作的特定数据使用标签的策略表达式被限制为不能执行。 有关此属性的 [详细信息](#create-policy) ，请参阅创建策略一节。 |
+
 **响应**
 
-成功的更新请求返回HTTP状态200（确定），响应主体将显示更新的策略。 应 `id` 与请求 `id` 中发送的匹配。
+成功的响应会返回更新策略的详细信息。
 
 ```JSON
 {
@@ -374,25 +448,17 @@ curl -X PUT \
                 "label": "C1"
             },
             {
-                "operator": "OR",
-                "operands": [
-                    {
-                        "label": "C3"
-                    },
-                    {
-                        "label": "C7"
-                    }
-                ]
+                "label": "C5"
             }
         ]
     },
     "imsOrg": "{IMS_ORG}",
     "created": 1550691551888,
-    "createdClient": "string",
-    "createdUser": "string",
+    "createdClient": "{CLIENT_ID}",
+    "createdUser": "{USER_ID}",
     "updated": 1550701472910,
-    "updatedClient": "string",
-    "updatedUser": "string",
+    "updatedClient": "{CLIENT_ID}",
+    "updatedUser": "{USER_ID}",
     "_links": {
         "self": {
             "href": "https://platform.adobe.io/data/foundation/dulepolicy/policies/custom/5c6dacdf685a4913dc48937c"
@@ -402,37 +468,37 @@ curl -X PUT \
 }
 ```
 
-## 更新策略的一部分
+## 更新自定义策略的一部分 {#patch}
 
-可以使用PATCH请求更新策略的特定部分。 与重写策略的 _PUT请求_ 不同，PATCH请求只更新请求主体中指定的路径。 当您要启用或禁用策略时，这特别有用，因为您只需发送要更新()的特定路径`/status`及其值(`ENABLE` 或 `DISABLE`)。
+>[!IMPORTANT]
+>
+>您只能更新自定义策略。 如果要启用或禁用核心策略，请参阅更新已启 [用核心策略的列表部分](#update-enabled-core)。
 
-该 [!DNL Policy Service] API当前支持“添加”、“替换”和“删除”PATCH操作，并允许您通过将多个更新作为对象添加到阵列中，将它们组合到单个调用中，如以下示例所示。
+可以使用PATCH请求更新策略的特定部分。 与重写策略的PUT请求不同，PATCH请求只更新请求主体中指定的属性。 当您要启用或禁用策略时，这特别有用，因为您只需提供相应属性()及其值(`/status`或)的路`ENABLED` 径 `DISABLED`即可。
+
+>[!NOTE]
+>
+>PATCH请求的有效负载遵循JSON修补程序格式。 有关已接 [受的语法的更多信息](../../landing/api-fundamentals.md) ，请参阅API基础知识指南。
+
+API [!DNL Policy Service] 支持JSON修补 `add`操 `remove`作和， `replace`并允许您将多个更新组合到单个调用中，如以下示例所示。
 
 **API格式**
 
 ```http
-PATCH /policies/custom/{id}
+PATCH /policies/custom/{POLICY_ID}
 ```
+
+| 参数 | 描述 |
+| --- | --- |
+| `{POLICY_ID}` | 要更 `id` 新其属性的策略的名称。 |
 
 **请求**
 
-在此示例中，我们使用“替换”操作将策略状态从“DRAFT”更改为“ENABLED”，并使用新描述更新描述字段。 我们还可以使用“delete”操作删除策略描述，然后使用“add”操作添加新的一次，从而更新描述字段，如：
+以下请求使用两 `replace` 个操作将策略状态 `DRAFT` 从更 `ENABLED`改为，并使用新 `description` 描述更新字段。
 
-```SHELL
-[
-    {
-        "op": "remove",
-        "path": "/description"
-    },
-    {
-        "op": "add",
-        "path": "/description",
-        "value": "New policy description."
-    }
-]
-```
-
-在单个请求中发送多个PATCH操作时，请记住，这些操作将按照它们在阵列中的显示顺序进行处理，以确保在必要时按正确的顺序发送请求。
+>[!IMPORTANT]
+>
+>在单个请求中发送多个PATCH操作时，将按它们在数组中的显示顺序处理它们。 确保在必要时按正确顺序发送请求。
 
 ```SHELL
 curl -X PATCH \
@@ -458,7 +524,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的更新请求将返回HTTP状态200（确定），响应主体将显示更新的策略（“状态”现在为“已启用”，且“描述”已更改）。 策略应 `id` 与请求中 `id` 发送的策略匹配。
+成功的响应会返回更新策略的详细信息。
 
 
 ```JSON
@@ -490,11 +556,11 @@ curl -X PATCH \
     },
     "imsOrg": "{IMS_ORG}",
     "created": 1550703519823,
-    "createdClient": "string",
-    "createdUser": "string",
+    "createdClient": "{CLIENT_ID}",
+    "createdUser": "{USER_ID}",
     "updated": 1550712163182,
-    "updatedClient": "string",
-    "updatedUser": "string",
+    "updatedClient": "{CLIENT_ID}",
+    "updatedUser": "{USER_ID}",
     "_links": {
         "self": {
             "href": "https://platform.adobe.io/data/foundation/dulepolicy/policies/custom/5c6dacdf685a4913dc48937c"
@@ -504,19 +570,27 @@ curl -X PATCH \
 }
 ```
 
-## 删除策略
+## 删除自定义策略 {#delete}
 
-如果需要删除已创建的策略，可以通过向要删除的策略发出DELETE `id` 请求来执行此操作。 最好先执行查找(GET)请求，以视图策略并确认它是您要删除的正确策略。 **删除策略后，无法恢复策略。**
+通过将自定义策略包含在DELETE请 `id` 求的路径中，可以删除该策略。
+
+>[!WARNING]
+>
+>删除策略后，无法恢复策略。 最好先执行查 [找(GET)请求](#lookup) ，以视图策略并确认它是您要删除的正确策略。
 
 **API格式**
 
 ```http
-DELETE /policies/custom/{id}
+DELETE /policies/custom/{POLICY_ID}
 ```
+
+| 参数 | 描述 |
+| --- | --- |
+| `{POLICY_ID}` | 要删除的策略的ID。 |
 
 **请求**
 
-```SHELL
+```sh
 curl -X DELETE \
   https://platform.adobe.io/data/foundation/dulepolicy/policies/custom/5c6ddb56eb60ca13dbf8b9a8 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -527,6 +601,128 @@ curl -X DELETE \
 
 **响应**
 
-如果策略已成功删除，则响应正文将为空，并且HTTP状态为200（确定）。
+成功的响应返回HTTP状态200(OK)，且正文为空。
 
-您可以再次尝试查找(GET)策略以确认删除。 您应收到HTTP状态404（未找到）和“找不到”错误消息，因为该策略已被删除。
+您可以通过再次尝试查找(GET)策略来确认删除。 如果策略已成功删除，您应收到HTTP 404（未找到）错误。
+
+## 检索已启用的核心策略列表 {#list-enabled-core}
+
+默认情况下，只有启用的数据使用策略才会参与评估。 您可以通过向端点发出列表请求来检索当前由您的组织启用的核心策略 `/enabledCorePolicies` GET。
+
+**API格式**
+
+```http
+GET /enabledCorePolicies
+```
+
+**请求**
+
+```sh
+curl -X GET \
+  https://platform.adobe.io/data/foundation/dulepolicy/enabledCorePolicies \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**响应**
+
+成功的响应会返回阵列下启用的核心策略的 `policyIds` 列表。
+
+```json
+{
+  "policyIds": [
+    "corepolicy_0001",
+    "corepolicy_0002",
+    "corepolicy_0003",
+    "corepolicy_0004",
+    "corepolicy_0005",
+    "corepolicy_0006",
+    "corepolicy_0007",
+    "corepolicy_0008"
+  ],
+  "imsOrg": "{IMS_ORG}",
+  "created": 1529696681413,
+  "createdClient": "{CLIENT_ID}",
+  "createdUser": "{USER_ID}",
+  "updated": 1529697651972,
+  "updatedClient": "{CLIENT_ID}",
+  "updatedUser": "{USER_ID}",
+  "_links": {
+    "self": {
+      "href": "https://platform.adobe.io:443/data/foundation/dulepolicy/enabledCorePolicies"
+    }
+  }
+}
+```
+
+## 更新已启用核心策略的列表 {#update-enabled-core}
+
+默认情况下，只有启用的数据使用策略才会参与评估。 通过向端点发出PUT请 `/enabledCorePolicies` 求，您可以使用一次调用来更新组织已启用核心策略的列表。
+
+>[!NOTE]
+>
+>此端点只能启用或禁用核心策略。 要启用或禁用自定义策略，请参阅更新 [策略的一部分部分](#patch)。
+
+**API格式**
+
+```http
+PUT /enabledCorePolicies
+```
+
+**请求**
+
+以下请求根据有效负荷中提供的ID更新已启用核心策略的列表。
+
+```sh
+curl -X GET \
+  https://platform.adobe.io/data/foundation/dulepolicy/enabledCorePolicies \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+        "policyIds": [
+          "corepolicy_0001",
+          "corepolicy_0002",
+          "corepolicy_0007",
+          "corepolicy_0008"
+        ]
+      }'
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `policyIds` | 要启用的核心策略ID的列表。 未包含的任何核心策略均设置为 `DISABLED` 状态，且不会参与评估。 |
+
+**响应**
+
+成功的响应会返回阵列下已启用核心策略的更新 `policyIds` 列表。
+
+```json
+{
+  "policyIds": [
+    "corepolicy_0001",
+    "corepolicy_0002",
+    "corepolicy_0007",
+    "corepolicy_0008"
+  ],
+  "imsOrg": "{IMS_ORG}",
+  "created": 1529696681413,
+  "createdClient": "{CLIENT_ID}",
+  "createdUser": "{USER_ID}",
+  "updated": 1595876052649,
+  "updatedClient": "{CLIENT_ID}",
+  "updatedUser": "{USER_ID}",
+  "_links": {
+    "self": {
+      "href": "https://platform.adobe.io:443/data/foundation/dulepolicy/enabledCorePolicies"
+    }
+  }
+}
+```
+
+## 后续步骤
+
+定义新策略或更新现有策略后，您可以使用 [!DNL Policy Service] API测试针对特定标签或数据集的营销操作，并查看您的策略是否会按预期引发违规。 有关详细信息，请 [参阅策略评估](./evaluation.md) 端点指南。
