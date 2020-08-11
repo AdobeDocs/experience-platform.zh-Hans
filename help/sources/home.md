@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform源连接器概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: 8e39cc206efa3fc314ae689845c88f0923ac1743
 workflow-type: tm+mt
-source-wordcount: '800'
+source-wordcount: '801'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 源连接器概述
 
-Adobe Experience Platform允许从外部源摄取数据，同时使您能够使用服务构建、标记和增强传入数 [!DNL Platform] 据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
+Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 
 [!DNL Experience Platform] 提供REST风格的API和交互式UI，让您可以轻松设置与各种数据提供者的源连接。 这些源连接使您能够验证您的第三方系统，设置摄取运行的时间并管理数据摄取吞吐量。
 
@@ -45,8 +45,9 @@ Adobe Experience Platform允许从外部源摄取数据，同时使您能够使�
 云存储源无需下载、格式化 [!DNL Platform] 或上传即可将您自己的数据导入其中。 摄取的数据可格式化为XDM JSON、XDM镶木地板或分隔。 该过程的每个步骤都使用用户界面集成到源工作流中。 有关更多信息，请参阅以下相关文档:
 
 - [!DNL Azure Data Lake Storage Gen2](connectors/cloud-storage/adls-gen2.md) 连接器
-- [!DNL Azure Blob and Amazon S3](connectors/cloud-storage/blob-s3.md) 连接器
+- [!DNL Azure Blob](connectors/cloud-storage/blob.md) 连接器
 - [!DNL Amazon Kinesis](connectors/cloud-storage/kinesis.md) 连接器
+- [!DNL Amazon S3](connectors/cloud-storage/s3.md) 连接器
 - [!DNL Apache HDFS](connectors/cloud-storage/hdfs.md) 连接器
 - [!DNL Azure Event Hubs](connectors/cloud-storage/eventhub.md) 连接器
 - [!DNL Azure File Storage](connectors/cloud-storage/azure-file-storage.md) 连接器
