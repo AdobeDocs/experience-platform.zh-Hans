@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建Azure文件存储源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: d3c725c4760acb3857a67d0d30b24732c963a030
+source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 1%
@@ -17,16 +17,16 @@ ht-degree: 1%
 >[!NOTE]
 >连接 [!DNL Azure File Storage] 器为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-Adobe Experience Platform中的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用用户界面 [!DNL Azure File Storage] 验证源连接器的 [!DNL Platform] 步骤。
+Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用用户界面 [!DNL Azure File Storage] 验证源连接器的 [!DNL Platform] 步骤。
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-- [体验数据模型(XDM)系统](../../../../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-   - [模式合成基础](../../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
-   - [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md): 了解如何使用模式编辑器UI创建自定义模式。
-- [实时客户用户档案](../../../../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [体验数据模型(XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+   - [模式合成基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
+   - [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
+- [实时客户用户档案](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 如果您已经有文件存储连接，您可以跳过此文档的其余部分，继续学习配置数据 [流的教程](../../dataflow/batch/cloud-storage.md)。
 
@@ -46,11 +46,11 @@ Adobe Experience Platform中的源连接器提供按计划接收外部源数据�
 
 收集所需凭据后，您可以按照以下步骤创建要连 [!DNL Azure File Storage] 接的新帐户 [!DNL Platform]。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选 *[!UICONTROL 择源]* ，以访问源工作区。 “ *[!UICONTROL 目录]* ”屏幕显示可为其创建入站帐户的各种源，每个源显示与它们关联的现有帐户和数据流的数量。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 *[!UICONTROL “源”以访问]* “源”工作区。 “ *[!UICONTROL 目录]* ”屏幕显示可为其创建入站帐户的各种源，每个源显示与它们关联的现有帐户和数据流的数量。
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
-在“数 *[!UICONTROL 据库]* ”类别下，选 **[!UICONTROL 择“Azure文件]** 存储 **”，单** 击“+”图标(+)以创建新的Azure文件存储连接器。
+在“数 *[!UICONTROL 据库]* ”类别下，选 **[!UICONTROL 择“Azure文件存储]** ”，然后 **[!UICONTROL 选择“添加数据]** ”，以创建新的Azure文件存储连接器。
 
 ![目录](../../../../images/tutorials/create/azure-file-storage/catalog.png)
 
