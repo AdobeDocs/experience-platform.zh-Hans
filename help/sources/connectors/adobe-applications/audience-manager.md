@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Audience Manager连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: fb4ffa2c95365905f5417586fa7ecf88523009a0
+source-git-commit: a1b09f3e88e489f1b0ec0c1fcb72a2a5a4356d87
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '643'
 ht-degree: 1%
 
 ---
@@ -14,15 +14,14 @@ ht-degree: 1%
 
 # Audience Manager连接器
 
-Adobe Audience Manager数据连接器将以Adobe Audience Manager收集的第一方数据流化到Adobe Experience Platform。 Audience Manager连接器将三类别数据引入平台：
+Adobe Audience Manager数据连接器将在Adobe Audience Manager收集的第一方数据传送到Adobe Experience Platform。 Audience Manager连接器将三类别数据引入平台：
 
 - **实时数据：** 在Audience Manager的数据收集服务器上实时捕获数据。 此数据用于Audience Manager以填充基于规则的特征，并将在最短的延迟时间内在平台中显示。
-- **已载入（入站）数据：** 这些是用户上传到由Audience Manager托管的AmazonS3位置的文件。 Audience Manager使用此数据使用入站文件方法填充已载入的特征，并会有一些延迟。
 - **用户档案数据：** Audience Manager使用实时和载入的数据来推导客户用户档案。 这些用户档案用于填充区段实现上的身份图和特征。
 
-Audience Manager连接器将这些类别映射到体验数据模型(XDM)模式，并将其发送到平台。 实时数据和载入的用户档案以XDM ExperienceEvent数据的形式发送，而用户档案数据以XDM单个的形式发送。
+Audience Manager连接器将这些类别映射到体验数据模型(XDM)模式，并将其发送到平台。 实时数据以XDM ExperienceEvent数据的形式发送，而用户档案数据以XDM单个用户档案的形式发送。
 
-有关使用平台UI创建Adobe Audience Manager连接的说明，请参阅 [Audience Manager连接器教程](../../tutorials/ui/create/adobe-applications/audience-manager.md)。
+有关使用平台UI创建与Adobe Audience Manager连接的说明，请参阅 [Audience Manager连接器教程](../../tutorials/ui/create/adobe-applications/audience-manager.md)。
 
 ## 什么是体验数据模型(XDM)?
 
@@ -64,12 +63,10 @@ Audience Manager数据集在默认情况下处于禁用状态，并且用户能�
 | Audience Manager设备用户档案数据 | 用于Audience Manager连接器诊断。 |
 | Audience Manager验证用户档案 | 此数据集包含经Audience Manager验证的用户档案。 |
 | Audience Manager认证用户档案元数据 | 用于Audience Manager连接器诊断。 |
-| Audience Manager入站{数据源ID} **（已弃用）** | 此数据集通过入站文件方法表示Audience Manager中已载入的记录。 此数据流已弃用，将在后续版本中删除。 |
-| Audience Manager入站元数 **据（已弃用）** | 用于Audience Manager连接器诊断。 此数据流已弃用，将在后续版本中删除。 |
 
 ### 连接
 
-Adobe Audience Manager在目录中创建一个连接： **Audience Manager连接**。 目录是Adobe Experience Platform内数据位置和谱系的记录系统。 连接是Connectors客户特定实例的Catalog对象。 有关目录、 [连接和连接器](../../../catalog/home.md) ，请参阅目录服务概述。
+Adobe Audience Manager在目录中创建一个连接： **Audience Manager连接**。 目录是Adobe Experience Platform境内数据位置和谱系记录系统。 连接是Connectors客户特定实例的Catalog对象。 有关目录、 [连接和连接器](../../../catalog/home.md) ，请参阅目录服务概述。
 
 ## 平台上Audience Manager数据的预期延迟是什么？
 
