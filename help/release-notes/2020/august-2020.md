@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: f881c1365684b1ca9e6bf9a8ce866d234dc54128
+source-git-commit: 89531ad458bd41720090ef2c429376af4460d7c0
 workflow-type: tm+mt
-source-wordcount: '302'
+source-wordcount: '297'
 ht-degree: 7%
 
 ---
@@ -15,37 +15,38 @@ ht-degree: 7%
 
 # Adobe Experience Platform 发行说明
 
-**发布日期：2020 年 6 月 10 日**
+**发行日期：2020 年 12 月 8 日**
 
-Adobe Experience Platform的新增功能：
+Adobe Experience Platform现有功能更新：
 
-- [!DNL Access control](#access-control)
-- [!DNL Sandboxes](#sandboxes)
+- [[!DNL数据科学工作区]](#dsw)
+- [[!DNL源]](#sources)
 
-## [!DNL Access control] {#access-control}
+## [!DNL Data Science Workspace] {#dsw}
 
-[!DNL Experience Platform] 利用 [Adobe Admin Console](https://adminconsole.adobe.com) ()产品用户档案将用户与权限和沙箱关联起来。 权限控制对各种平台功能的访问，包括数据建模、用户档案管理和沙箱管理。
+[!DNL Data Science Workspace] 使用机器学习和人工智能从数据中释放洞察。 集成到Adobe Experience Platform，帮 [!DNL Data Science Workspace] 助您跨Adobe解决方案使用内容和数据资产进行预测。
 
-**主要功能**
-
-| 功能 | 描述 |
-|--- | ---|
-| 权限 | 在中， [!DNL Admin Console]产品用户档案中的选 [!DNL Platform] 项卡允许您自定义哪些功能 [!DNL Platform] 可供附加到该用户档案的用户使用。 可用权限类别包括： [!UICONTROL 数据建模、]数据管理 [!UICONTROL 、]用户档案管理 [!UICONTROL 、身份、监控]、数据管理、 管理、沙箱管理、沙箱、、源。 |
-| 访问沙箱 | 产品 [!UICONTROL _用户档案&#x200B;_]中的“权限[!DNL Platform]”选项卡可授予用户对特定沙箱的访问权限。 有关更多信息，请[参阅](#sandboxes)下面沙箱的部分。 |
-
-有关详细信息，请参阅 [访问控制概述](../../access-control/home.md)。
-
-## [!DNL Sandboxes] {#sandboxes}
-
-[!DNL Experience Platform] 旨在在全球范围内丰富数字体验应用程序。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署的需要，同时确保操作合规性。 为了满足这一需求，提 [!DNL Experience Platform] 供了沙箱，将单个实例分 [!DNL Platform] 为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
-
-**主要功能**
+**新增功能**
 
 | 功能 | 描述 |
-|--- | ---|
-| 生产沙箱 | [!DNL Experience Platform] 提供一个无法删除或重置的生产沙箱。 |
-| 非生产沙箱 | 可以为单个实例创建多个非生产沙箱， [!DNL Platform] 使您能够测试功能、运行实验并制作自定义配置，而不会影响您的生产沙箱。 |
-| 沙箱切换器 | 在用 [!DNL Experience Platform] 户界面中，屏幕左上角的沙箱切换器允许您通过下拉菜单在可用沙箱之间切换。 |
-| `x-sandbox-name` 标题 | 对API的所 [!DNL Experience Platform] 有调用现在必须包 `x-sandbox-name` 括新标头，其值引 `name` 用将执行操作的沙箱的属性。 |
+| ------- | ----------- |
+| VM改进 [!DNL JupyterLab] | 提高了长运行虚拟机的 [!DNL JupyterLab notebook] 稳定性。 |
 
-有关详细信息，请参阅 [沙箱概述](../../sandboxes/home.md)。
+有关的详细信 [!DNL JupyterLab]息，请参阅 [[!DNL JupyterLab] 用户指南](../../data-science-workspace/jupyterlab/overview.md)。
+
+## 源 {#sources}
+
+Adobe Experience Platform可以从外部来源收集数据，同时允许您使用服务来构建、标记和增强该 [!DNL Platform] 数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)收集数据。
+
+[!DNL Experience Platform] 提供REST风格的API和交互式UI，让您可以轻松为各种数据提供者设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置获取运行的时间，以及管理数据获取吞吐量。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 流运行监控 | 用户可以监视所有流运行并查看每个运行的详细视图，包括完成状态、运行持续时间、已处理文件的列表、错误和度量。 有关详细 [信息，请参见](../../sources/tutorials/ui/monitor.md) “监视数据流”文档。 |
+| 帐户更新 | 用户可以更新任何现有帐户的凭据、名称和说明，以提供更有意义的信息并更正可能已创建的任何错误。 |
+| 流运行通知 | 用户可以订阅事件并注册网络挂接，以接收有关流运行的状态、度量和错误的实时通知。 |
+| UI目录改进 | 对源目录屏幕进行更新，以便更轻松地访问选定对象的主要操作。 |
+
+要进一步了解源，请参阅 [源概述](../../sources/home.md)。
