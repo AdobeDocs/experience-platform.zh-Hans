@@ -4,9 +4,9 @@ seo-title: Google客户匹配目标
 description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 seo-description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 translation-type: tm+mt
-source-git-commit: 31eb03c6625f820c9729caf5181c56e748e853a5
+source-git-commit: 6a57c0da3425b7b83050f1b734d4abe8a290c8bc
 workflow-type: tm+mt
-source-wordcount: '1482'
+source-wordcount: '1517'
 ht-degree: 0%
 
 ---
@@ -118,7 +118,9 @@ Links to be added when activation based on phone number and device IDs becomes a
 
    >[!IMPORTANT]
    >
-   > 针对目 [!DNL Google Customer Match] 的地。 **[!UICONTROL 帐户ID]** 是您在Google上的客户客户ID。 ID的格式为xxx-xxx-xxxx。
+   > * 默认 **[!UICONTROL 情况下]** ,“与PII合并”营销用例会为目标选 [!DNL Google Customer Match] 择，并且无法删除。
+   > * 针对目 [!DNL Google Customer Match] 的地。 **[!UICONTROL 帐户ID]** 是您在Google上的客户客户ID。 ID的格式为xxx-xxx-xxxx。
+
 
    ![连接Google客户匹配——身份验证步骤](/help/rtcdp/destinations/assets/google-customer-match-authentication-step.png)
 
@@ -170,3 +172,7 @@ Insert in Step 6 when mobile device ID activation is available
 ## 验证区段激活成功 {#verify-activation}
 
 完成激活流后，切换到您的 **[!UICONTROL Google Ads帐户]** 。 激活的区段现在将作为客户列表显示在您的Google帐户中。 请注意，根据您的细分大小，除非有100多个活动用户提供服务，否则某些受众将不会填充。
+
+## 其他资源 {#additional-resources}
+
+* [集成Google客户匹配——视频教程](https://docs.adobe.com/content/help/en/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
