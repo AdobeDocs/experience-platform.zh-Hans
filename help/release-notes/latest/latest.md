@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: dba7ae62b51b5cc4556f7f12d43b84e90f6c29dc
+source-git-commit: 1d9c8cbf273e9aef13e34df91a98b6c08180c8ff
 workflow-type: tm+mt
 source-wordcount: '480'
 ht-degree: 5%
@@ -45,7 +45,7 @@ Adobe Experience Platform现有功能更新：
 
 | 目标 | 描述 |
 |--- | ---|
-| [!DNL Google Customer Match] | Google客户匹配允许您使用线上和线下数据在Google自有和运营的资产中触及客户并与其重新互动，例如： [!DNL Search]、 [!DNL Shopping]Gmail和YouTube。 请访 [!DNL Google Customer Match] 问目 [标目录中的页](/help/rtcdp/destinations/google-customer-match-destination.md) ，以了解有关目标以及如何在Adobe实时CDP中设置它的更多信息。 |
+| [!DNL Google Customer Match] | Google客户匹配允许您使用线上和线下数据在Google自有和运营的资产中触及客户并与其重新互动，例如： [!DNL Search]、 [!DNL Shopping]Gmail和YouTube。 <br><br> 请访 [!DNL Google Customer Match] 问目 [标目录中的页](/help/rtcdp/destinations/google-customer-match-destination.md) ，以了解有关目标以及如何在Adobe实时CDP中设置它的更多信息。 |
 
 **新增功能**
 
