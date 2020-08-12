@@ -4,9 +4,9 @@ seo-title: 广告目标
 description: 将您的实时客户数据平台连接到第三方广告平台(如DSP、广告网络、SSP)，并与这些平台共享假名受众。
 seo-description: 将您的实时客户数据平台连接到第三方广告平台(如DSP、广告网络、SSP)，并与这些平台共享假名受众。
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 875430cdbd80025fc3f0de2664f9b55db0debe53
 workflow-type: tm+mt
-source-wordcount: '180'
+source-wordcount: '183'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 目前，实时CDP支持下面列出的广告目标。 有关如何连接到这些目标的信息，请参阅各个链接：
 
-* [Adobe Advertising Cloud分机](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
+* [Adobe Advertising Cloud延伸](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
 * [Awin广告转换标签扩展](/help/rtcdp/destinations/awin-conversiontag-extension.md)
 * [Awin Advertising Mastertag扩展](/help/rtcdp/destinations/awin-mastertag-extension.md)
 * [Beemray扩展](beemray-extension.md)
@@ -33,6 +33,7 @@ ht-degree: 0%
 * [Google广告](/help/rtcdp/destinations/google-ads-destination.md)
 * [Google广告扩展](/help/rtcdp/destinations/google-ads-extension.md)
 * [Google广告经理](/help/rtcdp/destinations/google-ad-manager-destination.md)
+* [Google客户匹配](/help/rtcdp/destinations/google-customer-match-destination.md)
 * [Google Gtag扩展](/help/rtcdp/destinations/gtag-advertising-extension.md)
 * [LinkedIn Insight标记扩展](linkedin-extension.md)
 * [Pinterest转换跟踪扩展](pinterest-extension.md)
