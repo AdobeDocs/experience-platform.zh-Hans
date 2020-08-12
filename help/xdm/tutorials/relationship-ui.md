@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用模式模式编辑器定义两个模式之间的关系
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 6d291ac9a8c194dd63e411e4d064492c38412749
+source-git-commit: d847329f675c7ac34a4feabb9e57a9e97f7e3ed1
 workflow-type: tm+mt
-source-wordcount: '912'
+source-wordcount: '911'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 0%
 
 ### 酒店模式
 
-目标模式[!UICONTROL “]Hotels”基于自定义“[!UICONTROL Hotels]”类，并包含描述酒店的字段。 “电[!UICONTROL 子邮]件”字段在“电子邮件[!UICONTROL ”命名空间下充当模式的主]要标识。 与“[!UICONTROL 忠诚会员]”一样，此模式也已启用 [!DNL Real-time Customer Profile]。
+目标模式[!UICONTROL “]Hotels”基于自定义“[!UICONTROL Hotels]”类，并包含描述酒店的字段。 “[!DNL hotelId]”字段在自定义“”命名空间下充当模式的主要[!DNL hotelId]标识。 与“[!UICONTROL 忠诚会员]”一样，此模式也已启用 [!DNL Real-time Customer Profile]。
 
 ![](../images/tutorials/relationship/hotels.png)
 
