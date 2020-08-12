@@ -5,9 +5,9 @@ title: Attribution AI输入和输出
 topic: Input and Output data for Attribution AI
 description: 以下文档概述了Attribution AI中使用的不同输入和输出。
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 2b51569a4c3dd9863edb6831bd182a7fa9d1d891
 workflow-type: tm+mt
-source-wordcount: '2174'
+source-wordcount: '2075'
 ht-degree: 3%
 
 ---
@@ -58,7 +58,7 @@ ht-degree: 3%
 > - 您至少需要1000个转化率。
 
 
-Attribution AI需要历史数据作为模型培训的输入。 所需的数据持续时间主要由两个关键因素决定： 培训窗口和回顾窗口。 使用较短的培训窗口进行输入会更敏感于近期趋势，而较长的培训窗口有助于生成更稳定、更准确的模型。 用最能代表您业务目标的历史数据来建立目标模型非常重要。
+Attribution AI需要历史数据作为模型培训的输入。 所需的数据持续时间主要由两个关键因素决定：培训窗口和回顾窗口。 使用较短的培训窗口进行输入会更敏感于近期趋势，而较长的培训窗口有助于生成更稳定、更准确的模型。 用最能代表您业务目标的历史数据来建立目标模型非常重要。
 
 根据 [发生时间](./user-guide.md#training-window) ，为模型培训设置的培训窗口配置过滤器转换事件。 目前，最低培训窗口为1个季度（90天）。 回 [顾窗口提](./user-guide.md#lookback-window) 供一个时间框架，指示应包括与此转换事件相关的转换事件接触点之前的天数。 这两个概念一起决定了应用程序所需的输入数据量（以天为单位）。
 
@@ -69,7 +69,7 @@ Attribution AI需要历史数据作为模型培训的输入。 所需的数据�
 所需数据的最小长度=培训窗口+回顾窗口
 
 >[!TIP]
-> 具有默认配置的应用程序所需的最小数据长度是： 2个季度（180天）+ 56天= 236天。
+> 具有默认配置的应用程序所需的最小数据长度是：2个季度（180天）+ 56天= 236天。
 
 示例：
 
@@ -81,18 +81,6 @@ Attribution AI输出以下内容：
 
 - [原始粒度分数](#raw-granular-scores)
 - [汇总得分](#aggregated-attribution-scores)
-
-在以下示例中，示例CSV输出用于说明。 以下是示例文件的一些特性。
-
-- 文件没有任何标记事件。
-- 文件没有任何仅转换事件（它不包含0作为边际得分的得分行）。
-- 数据特征：
-   - 总计368行样本。
-   - 至少8个转化，每个转化有3个不同的渠道。
-   - 151个转换类型 `“Digital_Product_Purchase”`。
-   - 10个不同的接触点， EMAIL、SOCIAL_LINKEDIN、ADS_GOOGLE、SOCIAL_OTHER、ADS_OTHER、SOCIAL_TWITTER、登录页、SOCIAL_FB、ADS_BING、印刷品。
-   - 转化率和接触点分别在8个月和9个月内。
-   - 行按和 `id`排 `conversion_timestamp` 序 `touchpoint_timestamp`。
 
 **输出模式示例：**
 
@@ -134,8 +122,8 @@ Attribution AI以尽可能最精细的级别输出归因得分，以便您可以
 | receivedTimestamp(DateTime) | True | 已收到转换的时间戳。 <br> **示例：** 2020-06-09T00:01:51.000Z |
 | skuId（字符串） | True | 库存单位(SKU)，供应商定义的产品的唯一标识符。 <br> **示例：** MJ-03-XS-Black |
 | timestamp(DateTime) | True | 转换的时间戳。 <br> **示例：** 2020-06-09T00:01:51.000Z |
-| passThrough（对象） | True | 配置模型时由用户指定的其他得分数据集列。 |
-| commerce_order_purchaseCity（字符串） | True | Additional Score数据集列。 <br> **示例：** 城市： 圣何塞 |
+| passThrough（对象） | True | 配置模型时用户指定的其他得分数据集列。 |
+| commerce_order_purchaseCity（字符串） | True | Additional Score数据集列。 <br> **示例：** 城市：圣何塞 |
 | customerProfile（对象） | False | 用于构建模型的用户的身份详细信息。 |
 | identity（对象） | False | 包含用于构建模型的用户的详细信息，如 `id` 和 `namespace`。 |
 | id（字符串） | True | 用户的标识ID，如cookie ID、AAID或MCID等。 <br> **示例：** 1734876272540865634468320891369597404 |
@@ -200,20 +188,20 @@ Attribution AI产生两种不同类型的算法得分，增量和影响。 受�
 
 | 列名称 | 约束 | 可为空 | 描述 |
 | --- | --- | --- | --- |
-| customrevents_date(DateTime) | 用户定义和固定格式 | False | 客户事件日期，YYYY-MM-DD格式。 <br> **示例**: 2016-05-02 |
-| mediatouchpoints_date(DateTime) | 用户定义和固定格式 | True | YYYY-MM-DD格式的媒体触点日期 <br> **示例**: 2017-04-21 |
-| segment（字符串） | 已计算 | False | 转换段，如构建模型时所依据的地理分段。 如果缺少区段，则区段与conversion_scope相同。 <br> **示例**: ORDER_AMER |
-| conversion_scope（字符串） | 用户定义 | False | 由用户配置的转换名称。 <br> **示例**: 订单 |
-| touchpoint_scope（字符串） | 用户定义 | True | 用户配置的触点名称 <br> **示例**: PAID_SEARCH_CLICK |
-| product（字符串） | 用户定义 | True | 产品的XDM标识符。 <br> **示例**: CC |
-| product_type（字符串） | 用户定义 | True | 此产品视图向用户显示的产品显示名称。 <br> **示例**: gpus，笔记本电脑 |
-| geo（字符串） | 用户定义 | True | 转换所在的地理位置(placeContext.geo.countryCode) <br> **示例**: 美国 |
-| 事件类型（字符串） | 用户定义 | True | 此时间序列记录的主事件类型 <br> **示例**: 付费转换 |
-| media_type（字符串） | 枚举 | False | 描述媒体类型是付费、自有还是免费的。 <br> **示例**: 付费、自有 |
-| 渠道（字符串） | 枚举 | False | 用 `channel._type` 于为XDM中具有相似属性的渠道提供粗略分类的属 [!DNL Consumer Experience Event] 性。 <br> **示例**: 搜索 |
-| 操作（字符串） | 枚举 | False | 该 `mediaAction` 属性用于提供体验事件媒体操作类型。 <br> **示例**: 单击 |
-| 活动组（字符串） | 用户定义 | True | 将多个活动分组到一起的活动组的名称，如“50%_DISCOUNT”。 <br> **示例**: 商业类 |
-| 活动名称（字符串） | 用户定义 | True | 用于标识营销活动的活动的名称，如“50%_DISCOUNT_USA”或“50%_DISCOUNT_ASIA”。 <br> **示例**: 感恩节大甩卖 |
+| customrevents_date(DateTime) | 用户定义和固定格式 | False | 客户事件日期，YYYY-MM-DD格式。 <br> **示例**:2016-05-02 |
+| mediatouchpoints_date(DateTime) | 用户定义和固定格式 | True | YYYY-MM-DD格式的媒体触点日期 <br> **示例**:2017-04-21 |
+| segment（字符串） | 已计算 | False | 转换段，如构建模型时所依据的地理分段。 如果缺少区段，则区段与conversion_scope相同。 <br> **示例**:ORDER_AMER |
+| conversion_scope（字符串） | 用户定义 | False | 由用户配置的转换名称。 <br> **示例**:订单 |
+| touchpoint_scope（字符串） | 用户定义 | True | 用户配置的触点名称 <br> **示例**:PAID_SEARCH_CLICK |
+| product（字符串） | 用户定义 | True | 产品的XDM标识符。 <br> **示例**:CC |
+| product_type（字符串） | 用户定义 | True | 此产品视图向用户显示的产品显示名称。 <br> **示例**:gpus，笔记本电脑 |
+| geo（字符串） | 用户定义 | True | 转换所在的地理位置(placeContext.geo.countryCode) <br> **示例**:美国 |
+| 事件类型（字符串） | 用户定义 | True | 此时间序列记录的主事件类型 <br> **示例**:付费转换 |
+| media_type（字符串） | 枚举 | False | 描述媒体类型是付费、自有还是免费的。 <br> **示例**:付费、自有 |
+| 渠道（字符串） | 枚举 | False | 用 `channel._type` 于为XDM中具有相似属性的渠道提供粗略分类的属 [!DNL Consumer Experience Event] 性。 <br> **示例**:搜索 |
+| 操作（字符串） | 枚举 | False | 该 `mediaAction` 属性用于提供体验事件媒体操作类型。 <br> **示例**:单击 |
+| 活动组（字符串） | 用户定义 | True | 将多个活动分组到一起的活动组的名称，如“50%_DISCOUNT”。 <br> **示例**:商业类 |
+| 活动名称（字符串） | 用户定义 | True | 用于标识营销活动的活动的名称，如“50%_DISCOUNT_USA”或“50%_DISCOUNT_ASIA”。 <br> **示例**:感恩节大甩卖 |
 
 **原始得分参考（汇总）**
 
