@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 通过源连接器和API收集营销自动化数据
 topic: overview
 translation-type: tm+mt
-source-git-commit: 84ea3e45a3db749359f3ce4a0ea25429eee8bb66
+source-git-commit: 773823333fe0553515ebf169b4fd956b8737a9c3
 workflow-type: tm+mt
-source-wordcount: '1576'
+source-wordcount: '1658'
 ht-degree: 1%
 
 ---
@@ -24,11 +24,11 @@ ht-degree: 1%
 
 本教程还要求您对Adobe Experience Platform的以下组件有充分的了解：
 
-* [体验数据模型(XDM)系统](../../../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-   * [模式合成基础](../../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
-   * [模式注册开发人员指南](../../../../xdm/api/getting-started.md): 包括成功执行对模式注册表API的调用时需要了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
-* [目录服务](../../../../catalog/home.md): 目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
-* [批量摄取](../../../../ingestion/batch-ingestion/overview.md): 批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
+* [体验数据模型(XDM)系统](../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+   * [模式合成基础](../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
+   * [模式注册开发人员指南](../../../../xdm/api/getting-started.md):包括成功执行对模式注册表API的调用时需要了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
+* [目录服务](../../../../catalog/home.md):目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
+* [批量摄取](../../../../ingestion/batch-ingestion/overview.md):批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
 * [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供您需要了解的其他信息，以便使用API成功连接到营销自动化 [!DNL Flow Service] 系统。
@@ -41,7 +41,7 @@ ht-degree: 1%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -132,7 +132,7 @@ curl -X POST \
 }
 ```
 
-## 创建目标XDM模式 {#target}
+## 创建目标XDM模式 {#target-schema}
 
 在前面的步骤中，创建了一个专门的XDM模式来构造源数据。 为了在中使用源数据，还必 [!DNL Platform]须创建目标模式，以根据您的需要构建源数据。 然后，目标模式用于创建包含 [!DNL Platform] 源数据的数据集。
 
@@ -285,7 +285,7 @@ curl -X POST \
 ]
 ```
 
-## 创建目标连接
+## 创建目标连接 {#target-connection}
 
 目标连接表示到所摄取数据所进入的目的地的连接。 要创建目标连接，必须提供与数据库关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
@@ -620,13 +620,15 @@ curl -X POST \
 ```
 
 | 属性 | 描述 |
-| --- | --- |
-| `flowSpec.id` | 在上一步中检索的流规范ID。 |
-| `sourceConnectionIds` | 在先前步骤中检索的源连接ID。 |
-| `targetConnectionIds` | 在之前的步骤中检索的目标连接ID。 |
-| `transformations.params.mappingId` | 在先前步骤中检索的映射ID。 |
-| `scheduleParams.startTime` | 开始数据流的时间（以秒为单位）。 |
-| `scheduleParams.frequency` | 可选频率值包括： `once`、 `minute`、 `hour`、 `day`或 `week`。 |
+| -------- | ----------- |
+| `flowSpec.id` | 在上 [一步中检索](#specs) 的流程规范ID。 |
+| `sourceConnectionIds` | 在 [先前步骤中检索](#source) 的源连接ID。 |
+| `targetConnectionIds` | 在 [先前步骤中检索](#target-connection) 的目标连接ID。 |
+| `transformations.params.mappingId` | 在 [先前步骤](#mapping) 中检索的映射ID。 |
+| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 增量数据将根据所选列的时间戳被摄取。 |
+| `transformations.params.mappingId` | 与数据库关联的映射ID。 |
+| `scheduleParams.startTime` | 开始时间中数据流的数据时间。 |
+| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`、 `minute`、 `hour`、 `day`或 `week`。 |
 | `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，间隔不 `once` 是必需的，对于其他频率值， `15` 间隔应大于或等于。 |
 
 **响应**
@@ -639,6 +641,10 @@ curl -X POST \
     "etag": "\"04004fe9-0000-0200-0000-5ebc4c8b0000\""
 }
 ```
+
+## 监视数据流
+
+创建数据流后，您可以监视通过它摄取的数据，以查看有关流运行、完成状态和错误的信息。 有关如何监视数据流的详细信息，请参阅API中 [的数据流监视教程 ](../monitor.md)
 
 ## 后续步骤
 
