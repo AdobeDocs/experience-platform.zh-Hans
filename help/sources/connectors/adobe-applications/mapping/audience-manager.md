@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Audience Manager映射字段
 topic: overview
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: a1b09f3e88e489f1b0ec0c1fcb72a2a5a4356d87
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: '127'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ## 实时数据
 
-类型： 实时数据
+类型：实时数据
 
 | 实时数据字段 | XDM字段 |
 | --- | --- |
@@ -36,27 +36,10 @@ ht-degree: 0%
 | `location` | `ExperienceEvent.placeContext.geo` <ul><li>d_country→countryCode</li><li>d_state→stateProvince</li><li>d_city→城市</li><li>d_postal→postalCode</li><li>d_lat→ latitude</li><li>d_longitude→经度</li></ul> |
 | `request_user_agent` | `ExperienceEvent.environment.browserDetails` <ul><li>h_user-agent→ userAgent</li><li>h_accept-language→ acceptLanguage</li></ul> |
 | `client_ip` | `ExperienceEvent.environment` <ul><li>d_os_name→ os名称 </li><li>d_os_version→ os_version</li></ul> |
-| `Signals` | ExperienceEvent.signals |
-
-## 入站数 **据（已弃用）**
-
-类型： ExperienceEvent
-
-| 入站字段 | XDM字段 |
-| --- | --- |
-| `uuid` | `ExperienceEvent.identityMap[<ID Type>]` |
-| `deviceIds` | `ExperienceEvent.identityMap["CORE"] And calculated ECIDs  ExperienceEvent.identityMap["ECID"]` |
-| `signals` | `ExperienceEvent.signals` |
-| `b_time` | `ExperienceEvent.timeStamp` |
-| `overwrite` | `overwriteTraits` |
-
->[!NOTE]
->
->入站字段计划在将来的版本中弃用。
 
 ## 用户档案数据
 
-类型： 用户档案XDM
+类型：用户档案XDM
 
 | 用户档案字段 | XDM字段 |
 | --- | --- |
