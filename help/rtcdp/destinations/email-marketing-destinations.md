@@ -4,9 +4,9 @@ seo-title: 电子邮件营销目标
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 seo-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 translation-type: tm+mt
-source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
+source-git-commit: 6850a1ee5a578a3dccce9f9decd8f6a368705f4a
 workflow-type: tm+mt
-source-wordcount: '731'
+source-wordcount: '800'
 ht-degree: 1%
 
 ---
@@ -47,15 +47,21 @@ ht-degree: 1%
 
 ![选择区段](/help/rtcdp/destinations/assets/email-select-segments.png)
 
-## 第3步——选择要在导出的文件中用作目标属性的模式字段 {#destination-attributes}
+## 第3步——配置文件名
+
+有关文件名编辑选项的信息，请参阅激 [活目标](/help/rtcdp/destinations/activate-destinations.md#configure) 教程中的配置步骤。
+
+## 第4步——选择属性——选择要在导出的文件中用作目标属性的模式字段 {#destination-attributes}
 
 在此步骤中，您将选择要导出到电子邮件营销目标的字段。
 
-![目标属性](/help/rtcdp/destinations/assets/destination-attributes.png)
+![目标属性](/help/rtcdp/destinations/assets/recommended-attributes.png)
+
+有关此步骤的详细信息，请参阅激 [活目标教程](/help/rtcdp/destinations/activate-destinations.md#select-attributes) 中的选择属性步骤。
 
 ### 身份 {#identity}
 
-我们建议您从合并模式中选择唯一标 [识符](../../profile/home.md#profile-fragments-and-union-schemas)。 这是用户身份被锁定的字段。 最常用的字段是电子邮件地址，但也可以是忠诚度项目ID或电话号码。 请参阅下表，了解合并模式中最常见的唯一标识符及其XDM字段。
+我们建议您从合并模式中选择唯一标 [识符](../../profile/home.md#profile-fragments-and-union-schemas)。 这是用户身份被锁定的字段。 最常用的字段是电子邮件地址，但也可以是忠诚度项目ID或电话号码。 请参阅下表，了解该模式中最常见的唯一标识符及其XDM字段。
 
 | 唯一标识符 | 统一模式中的XDM字段 |
 ---------|----------
@@ -76,8 +82,9 @@ ht-degree: 1%
 | 地址状态 | `homeAddress.stateProvince` |
 | 地址邮政编码 | `homeAddress.postalCode` |
 | 生日 | `person.birthDayAndMonth` |
+| 细分会员资格 | `segmentMembership.status` |
 
-## 第3步——将数据从存储位置导入目标
+## 第5步——将数据从存储位置导入目标
 
 请参阅单个电子邮件营销目标文章，了解如何将数据从存储位置导入目标：
 
@@ -89,3 +96,8 @@ ht-degree: 1%
 ## 将区段激活到电子邮件营销目标
 
 有关如何将区段激活到电子邮件营销目标的说明，请参 [阅将数据激活到目标](/help/rtcdp/destinations/activate-destinations.md)。
+
+## Journey Orchestration
+
+* [将数据激活到目标](/help/rtcdp/destinations/activate-destinations.md)
+* [使用流服务API创建电子邮件营销目标并激活数据](https://docs.adobe.com/content/help/en/experience-platform/tutorials/destinations/email-marketing-api.html)
