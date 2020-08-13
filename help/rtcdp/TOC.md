@@ -3,9 +3,9 @@ product: adobe experience platform
 audience: user
 user-guide-title: 实时客户数据平台帮助
 translation-type: tm+mt
-source-git-commit: 759c96d091194d1d7d670d947169eceac7910730
+source-git-commit: 5802c05ce166f0b355b17a28655ff2f18f7cd0c4
 workflow-type: tm+mt
-source-wordcount: '460'
+source-wordcount: '469'
 ht-degree: 10%
 
 ---
@@ -128,13 +128,13 @@ ht-degree: 10%
       * [将用户档案和区段激活到目标](destinations/activate-destinations.md)
    * 目标API教程 {#api-tutorials}
       * [连接到流目标(AWSKinesis和Azure事件中心)并激活数据](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)
-      * [连接到电子邮件营销目标并激活数据](/help/tutorials/destinations/email-marketing-api.md)
+      * [连接到电子邮件营销目标并激活数据](https://docs.adobe.com/content/help/en/experience-platform/tutorials/destinations/email-marketing-api.html)
 * 隐私和数据管理 {#privacy}
    * [隐私概述](privacy/privacy-overview.md)
    * [数据管理概述](privacy/data-governance-overview.md)
    * IAB TCF 2.0支持 {#iab}
-      * [实时CDP中的IAB TCF 2.0支持](./privacy/iab/overview.md)
-      * [创建数据集以捕获IAB TCF 2.0同意数据](./privacy/iab/dataset-preparation.md)
+      * [实时CDP中的IAB TCF 2.0支持](privacy/iab/overview.md)
+      * [创建数据集以捕获IAB TCF 2.0同意数据](privacy/iab/dataset-preparation.md)
 * 配置文件 {#profile}
    * [用户档案概述](profile/profile-overview.md)
    * [身份与身份命名空间](profile/identities-overview.md)
