@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: 实时客户用户档案帮助
 translation-type: tm+mt
-source-git-commit: d80d49df9c5ac197bdc7f851bbfff18d9b3019d4
+source-git-commit: 84789a8e6e8c1f0fc91d0b54ba29d449963c3117
 workflow-type: tm+mt
-source-wordcount: '78'
-ht-degree: 19%
+source-wordcount: '84'
+ht-degree: 17%
 
 ---
 
@@ -22,6 +22,7 @@ ht-degree: 19%
    * [实体([!DNL用户档案]访问)](api/entities.md)
    * [导出作业([!DNL用户档案]导出)](api/export-jobs.md)
    * [合并策略](api/merge-policies.md)
+   * [预览示例状态([!DNL用户档案]预览)](api/preview-sample-status.md)
    * [[!DNL Profile] 系统作业（删除请求）](api/profile-system-jobs.md)
 * UI指南 {#ui}
    * [[!DNL Profile] 用户指南](ui/user-guide.md)
