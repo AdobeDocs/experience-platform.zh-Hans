@@ -4,7 +4,7 @@ seo-title: 配置Adobe Experience PlatformWeb SDK
 description: 了解如何配置Experience PlatformWeb SDK
 seo-description: 了解如何配置Experience PlatformWeb SDK
 translation-type: tm+mt
-source-git-commit: abd72993577f298141ed0d25b6c4abc42050b68e
+source-git-commit: b7b206573a130af70a82c73a3f9b0a0eb28a513a
 workflow-type: tm+mt
 source-wordcount: '749'
 ht-degree: 10%
@@ -78,7 +78,7 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 
 ## 数据收集
 
-### `clickCollectionEnabled`
+### `clickCollectionEnabled` {#clickCollectionEnabled}
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
@@ -160,4 +160,4 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | true |
 
-启用Adobe第三方Cookie的设置。 SDK能够将访客ID保留在第三方上下文中，从而允许在多个站点上使用相同的访客ID。 如果您有多个站点或希望与合作伙伴共享数据，则此功能非常有用； 但是，有时出于隐私原因而不需要这样做。
+启用Adobe第三方Cookie的设置。 SDK能够将访客ID保留在第三方上下文中，从而允许在多个站点上使用相同的访客ID。 如果您有多个站点或希望与合作伙伴共享数据，则此功能非常有用；但是，有时出于隐私原因而不需要这样做。
