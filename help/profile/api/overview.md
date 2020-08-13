@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案API开发人员指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: d80d49df9c5ac197bdc7f851bbfff18d9b3019d4
+source-git-commit: 84789a8e6e8c1f0fc91d0b54ba29d449963c3117
 workflow-type: tm+mt
-source-wordcount: '704'
+source-wordcount: '796'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Real-time Customer Profile] API开发人员指南
 
-[!DNL Real-time Customer Profile] 使您能够在Adobe Experience Platform内全面了解每位客户。 [!DNL Profile] 允许您将来自多个渠道（如在线、离线、CRM和第三方数据）的不同客户数据整合到一个统一的视图中，为每次客户互动提供可操作、有时间戳的帐户。
+[!DNL Real-time Customer Profile] 使您能够全面视图Adobe Experience Platform内每位客户。 [!DNL Profile] 允许您将来自多个渠道（如在线、离线、CRM和第三方数据）的不同客户数据整合到一个统一的视图中，为每次客户互动提供可操作、有时间戳的帐户。
 
 该API [!DNL Real-time Customer Profile] 包括多个端点，如下所述。 请访问各个端点指南获取详细信息，并参 [阅入门指南](getting-started.md) ，获取有关所需标头、读取示例API调用等的重要信息。
 
@@ -32,11 +32,11 @@ ht-degree: 0%
 
 ## 边缘投影 {#edge-projections}
 
-Adobe Experience Platform通过使数据易于在战略性位置称为“边缘”的服务器上访问，实现客户体验的实时个性化。 API [!DNL Real-time Customer Profile] 为通过称为“投影”的组件处理边提供端点。 这包括用于确定应将哪些数据投影到每个边缘的投影配置，以及用于定义将投影路由到何处的投影目标。 有关使用边缘投影的详细信息，请访问投 [影配置和目标端点指南](edge-projections.md)。
+Adobe Experience Platform通过使数据易于在战略性位置的称为“边缘”的服务器上访问，实现客户体验的实时个性化。 API [!DNL Real-time Customer Profile] 为通过称为“投影”的组件处理边提供端点。 这包括用于确定应将哪些数据投影到每个边缘的投影配置，以及用于定义将投影路由到何处的投影目标。 有关使用边缘投影的详细信息，请访问投 [影配置和目标端点指南](edge-projections.md)。
 
 ## 实体([!DNL Profile] 访问) {#entities}
 
-通过Adobe Experience Platform，您可 [!DNL Real-time Customer Profile] 以使用RESTful API或用户界面访问数据。 要了解如何使用API访问实体(更常称为“用户档案”)，请遵循实体端点指南中 [概述的步骤](entities.md)。 要使用UI访问用户档案, [!DNL Platform] 请参阅“用户档案 [用户指南”](../ui/user-guide.md)。
+通过Adobe Experience Platform，您可 [!DNL Real-time Customer Profile] 以使用REST风格的API或用户界面访问数据。 要了解如何使用API访问实体(更常称为“用户档案”)，请遵循实体端点指南中 [概述的步骤](entities.md)。 要使用UI访问用户档案, [!DNL Platform] 请参阅“用户档案 [用户指南”](../ui/user-guide.md)。
 
 ## 导出作业([!DNL Profile] 导出) {#profile-export}
 
@@ -47,6 +47,10 @@ Adobe Experience Platform通过使数据易于在战略性位置称为“边缘�
 当将多个来源的数据整合到 [!DNL Experience Platform]一起时，合并策略是确定 [!DNL Platform] 数据的优先级以及将哪些数据合并以创建单个客户用户档案的规则。 使用 [!DNL Real-time Customer Profile] API，您可以创建新的合并策略、管理现有策略并为组织设置默认的合并策略。 要进一步了解如何使用API使用合并策略，请访问合 [并策略端点指南](merge-policies.md)。
 
 有关使用UI处理合并策略的指 [!DNL Platform] 南，请参阅合 [并策略用户指南](../ui/merge-policies.md)。
+
+## 预览示例状态([!DNL Profile] 预览) {#profile-preview}
+
+当启用用户档案的数据被引入Experience Platform时，它被存储在用户档案数据存储中。 随着用户档案存储中记录数的增加或减少，将运行一个示例作业，该示例作业包括关于用户档案片段和合并用户档案在数据存储中的数量的信息。 使用用户档案API，您可以预览最新成功的示例，以及按数据集和身份命名空间列表用户档案分发。 要开始使用端点， `/profilepreviewstatus` 请参阅预览示 [例状态端点指南](preview-sample-status.md)。
 
 ## 用户档案系统作业 {#profile-system-jobs}
 
