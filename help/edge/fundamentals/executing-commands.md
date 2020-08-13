@@ -4,7 +4,7 @@ seo-title: 执行Adobe Experience PlatformWeb SDK命令
 description: 了解如何执行Experience PlatformWeb SDK命令
 seo-description: 了解如何执行Experience PlatformWeb SDK命令
 translation-type: tm+mt
-source-git-commit: 5f263a2593cdb493b5cd48bc0478379faa3e155d
+source-git-commit: bf4194e1449bddd662f2152f84dbbe90060b5d30
 workflow-type: tm+mt
 source-wordcount: '419'
 ht-degree: 2%
@@ -28,7 +28,7 @@ alloy("commandName", options);
 
 [承诺](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 是SDK如何与您网页上的代码通信的基础。 承诺是一种通用的编程结构，并非特定于此SDK甚至JavaScript。 承诺充当创建承诺时未知的值的代理。 一旦知道该值，承诺即与该值“解析”。 处理函数可以与承诺相关联，以便在承诺已解析或在解决承诺过程中出错时向您发送通知。 要进一步了解承诺，请阅 [读本教程](https://javascript.info/promise-basics) ，或Web上的任何其他资源。
 
-## 处理成功或失败
+## 处理成功或失败 {#handling-success-or-failure}
 
 每次执行命令时，都会返回承诺。 这一承诺代表了指挥最终完成。 在以下示例中，您可以使用 `then` 和方 `catch` 法确定命令何时成功或失败。
 
@@ -76,4 +76,4 @@ alloy("getLibraryInfo").then(function(result) {
 
 ### 同意
 
-如果用户未就特定目的给予同意，承诺仍将解决； 但是，响应对象将仅包含可在用户同意的上下文中提供的信息。
+如果用户未就特定目的给予同意，承诺仍将解决；但是，响应对象将仅包含可在用户同意的上下文中提供的信息。
