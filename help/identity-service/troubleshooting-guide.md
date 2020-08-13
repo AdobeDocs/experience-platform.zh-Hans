@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform身份服务疑难解答指南
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 5d7e6387382e20b3e7f07070006b6d9d59ac47eb
 workflow-type: tm+mt
 source-wordcount: '2225'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Identity Service疑难解答指南
 
-此文档提供有关Adobe Experience Platform的常见问题 [!DNL Identity Service]的解答，以及常见错误的疑难解答指南。 有关API的一般问题 [!DNL Platform] 和疑难解答，请参阅 [Adobe Experience PlatformAPI疑难解答指南](../landing/troubleshooting.md)。
+此文档提供有关Adobe Experience Platform的常见问题的 [!DNL Identity Service]解答，以及常见错误的疑难解答指南。 有关API的一般问题 [!DNL Platform] 和疑难解答，请参阅 [Adobe Experience PlatformAPI疑难解答指南](../landing/troubleshooting.md)。
 
 识别单个客户的数据通常在他们用于与您的品牌互动的各种设备和系统中分散。 [!DNL Identity Service] 将这些分散的身份汇集在一起，以便全面了解客户行为，从而实时提供有影响力的数字体验。 有关详细信息，请参 [阅Identity Service概述](./home.md)。
 
@@ -50,7 +50,7 @@ ht-degree: 1%
 
 ## 某些字段不应标记为身份的上下文是否存在？
 
-标识字段应保留为每个个人唯一的值。 例如，考虑客户忠诚度项目的数据集。 “忠诚度级别”字段（金、银、铜牌）将不是有用的身份域，而忠诚度ID（唯一值）将是。
+标识字段应保留为每个个人唯一的值。 例如，考虑客户忠诚度项目的数据集。 “忠诚度级别”字段（金、银、铜牌）不是有用的身份领域，而忠诚度ID（唯一值）则是。
 
 ZIP代码和IP地址等字段不应标记为个人身份，因为这些值可以应用于多个个人。 这些领域只应被标记为家庭级营销策略的标识。
 
@@ -72,19 +72,19 @@ ZIP代码和IP地址等字段不应标记为个人身份，因为这些值可以
 
 有关在使用API创建标识描述符时定义命名空间的分步说明，请参阅《模式注册表开 [发人员指南](../xdm/tutorials/create-schema-ui.md) 》中有关创建描述符的一节。 要在UI中将模式字段标记为标识，请按照模式编辑器教程中 [的步骤操作](../xdm/tutorials/create-schema-api.md)。
 
-## Experience Platform提供的标准身份命名空间是什么？
+## Experience Platform提供的标准身份命名空间是什么？ {#standard-namespaces}
 
 以下标准命名空间供Experience Platform内的所有组织使用：
 
 | 显示名称 | ID | 代码 | 描述 |
 | ------------ | --- | --- | ----------- |
-| CORE | 0 | CORE | 旧名称： “Adobe AudienceManager” |
-| ECID | 4 | ECID | 别名： &quot;Adobe Marketing CloudID&quot;、&quot;Adobe Experience CloudID&quot;、&quot;Adobe Experience PlatformID&quot; |
+| CORE | 0 | CORE | 旧名称：“Adobe AudienceManager” |
+| ECID | 4 | ECID | 别名：&quot;Adobe Marketing CloudID&quot;、&quot;Adobe Experience CloudID&quot;、&quot;Adobe Experience PlatformID&quot; |
 | 电子邮件 | 6 | 电子邮件 |  |
 | 电子邮件（SHA256，小写） | 11 | 电子邮件 | 预散列电子邮件的标准命名空间。 此命名空间中提供的值在使用SHA-256进行哈希处理前转换为小写。 |
 | Phone | 7 | Phone |  |
 | Windows AID | 8 | WAID |  |
-| AdCloud | 411 | AdCloud | 别名： Ad Cloud |
+| AdCloud | 411 | AdCloud | 别名：Ad Cloud |
 | Adobe Target | 9 | TNTID | 目标ID |
 | Google广告ID | 20914 | GAID | GAID |
 | Apple IDFA | 20915 | IDFA | 广告商的ID |
