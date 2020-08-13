@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 模式合成基础
 topic: overview
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: dae86df3ca4fcc9c5951068e905081df29e3b5f2
 workflow-type: tm+mt
-source-wordcount: '2628'
+source-wordcount: '2782'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 模式合成基础
 
-本文档介绍(XDM) [!DNL Experience Data Model] 模式以及构成要用于Adobe Experience Platform的模式的构件、原则和最佳做法。 有关XDM及其使用方式的一般信息， [!DNL Platform]请参阅XDM [系统概述](../home.md)。
+本文档介绍(XDM) [!DNL Experience Data Model] 模式，以及构成将在Adobe Experience Platform使用的模式的构件、原则和最佳做法。 有关XDM及其使用方式的一般信息， [!DNL Platform]请参阅XDM [系统概述](../home.md)。
 
 ## 了解模式
 
@@ -50,8 +50,8 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 计划用于的数据 [!DNL Experience Platform] 分为两种行为类型：
 
-* **记录数据**: 提供有关主题属性的信息。 主题可以是组织或个人。
-* **时间序列数据**: 提供记录主体直接或间接采取操作时系统的快照。
+* **记录数据**:提供有关主题属性的信息。 主题可以是组织或个人。
+* **时间序列数据**:提供记录主体直接或间接采取操作时系统的快照。
 
 所有XDM模式都描述可以分类为记录或时间序列的数据。 模式的行为由模式的类定 **义**，该类在模式首次创建时分配给。 本文档后面对XDM类进行了更详细的介绍。
 
@@ -59,13 +59,52 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 ### [!UICONTROL 身份]
 
-模式用于将数据引入 [!DNL Experience Platform]。 此视图可跨多个服务使用，以创建单个实体的单一统一数据。 因此，在考虑模式时，必须考虑“[!UICONTROL Identity]”以及无论数据来自何处，都可以使用哪些字段来识别主题。
+模式用于将数据引入 [!DNL Experience Platform]。 此视图可跨多个服务使用，以创建单个实体的单一统一数据。 因此，考虑模式时，必须考虑客户身份以及哪些字段可用于识别主题，无论数据来自何处。
 
-要帮助处理此过程，关键字段可标记为“[!UICONTROL Identity]”。 在数据获取时，这些字段中的数据将插入该个[!UICONTROL 人的]“身份图”中。 然后，图形数据可以被和其 [!DNL Real-time Customer Profile](../../profile/home.md) 他服务访 [!DNL Experience Platform] 问，以提供每个客户的拼接视图。
+为了帮助处理此过程，您的模式中的关键字段可以标记为身份。 在获取数据时，这些字段中的数据将插入该个[!UICONTROL 人的]“身份图”中。 然后，图形数据可以被和其 [!DNL Real-time Customer Profile](../../profile/home.md) 他服务访 [!DNL Experience Platform] 问，以提供每个客户的拼接视图。
 
-通常标为“Identity”的[!UICONTROL 字段]包括： 电子邮件地址、电 [!DNL Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)话号码、CRM ID或其他唯一ID字段。 您还应考虑特定于您组织的所有唯一标识符，因为它们可能也是[!UICONTROL 好的]“身份”字段。
+通常标为“Identity”的[!UICONTROL 字段]包括：电子邮件地址、电 [!DNL Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)话号码、CRM ID或其他唯一ID字段。 您还应考虑特定于您组织的所有唯一标识符，因为它们可能也是[!UICONTROL 好的]“身份”字段。
 
-在模式规划阶段考虑客户身份非常重要，这有助于确保整合数据以构建最可靠的用户档案。 请参阅 [Identity Service概述](../../identity-service/home.md) ，进一步了解身份信息如何帮助您向客户提供数字体验。
+在模式规划阶段考虑客户身份非常重要，这有助于确保整合数据以构建最可靠的用户档案。 请参阅Adobe Experience Platform [身份服务概述](../../identity-service/home.md) ，进一步了解身份信息如何帮助您向客户提供数字体验。
+
+#### xdm:identityMap
+
+`xdm:identityMap` 是一个映射类型字段，它描述个人的各种身份值及其关联命名空间。 此字段可用于为模式提供身份信息，而不是在模式本身的结构中定义身份值。
+
+简单标识映射的示例如下所示：
+
+```json
+"identityMap": {
+  "email": [
+    {
+      "id": "jsmith@example.com",
+      "primary": false
+    }
+  ],
+  "ECID": [
+    {
+      "id": "87098882279810196101440938110216748923",
+      "primary": false
+    },
+    {
+      "id": "55019962992006103186215643814973128178",
+      "primary": false
+    }
+  ],
+  "loyaltyId": [
+    {
+      "id": "2e33192000007456-0365c00000000000",
+      "primary": true
+    }
+  ]
+}
+```
+
+如上例所示，对象中的每个键都 `identityMap` 表示一个身份命名空间。 每个键的值是对象的数组，表示各个命名空间的`id`标识值()。 有关由列表 [!DNL Identity Service] 应用程序 [识别的标准身份命名空间的Adobe](../../identity-service/troubleshooting-guide.md#standard-namespaces) ，请参阅文档。
+
+>[!NOTE]
+>
+>还可以为每个标识值提供一个布尔值，用于`primary`该值是否是主标识()。 只需为要用于的模式设置主标识 [!DNL Real-time Customer Profile]。 有关详细信息，请 [参阅合并](#union) 模式一节。
 
 ### 模式进化原则 {#evolution}
 
@@ -83,7 +122,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 ### 模式和数据获取
 
-为了将数据引入， [!DNL Experience Platform]必须先创建数据集。 数据集是数据转换和跟踪的构 [!DNL Catalog Service](../../catalog/home.md)建块，通常表示包含摄取数据的表或文件。 所有数据集都基于现有的XDM模式，它们为所摄取的数据应包含的内容以及如何构建提供约束。 有关详细信息， [请参阅Adobe Experience Platform](../../ingestion/home.md) 数据获取概述。
+为了将数据引入， [!DNL Experience Platform]必须先创建数据集。 数据集是数据转换和跟踪的构 [!DNL Catalog Service](../../catalog/home.md)建块，通常表示包含摄取数据的表或文件。 所有数据集都基于现有的XDM模式，它们为所摄取的数据应包含的内容以及如何构建提供约束。 有关更多信息， [请参阅Adobe Experience Platform](../../ingestion/home.md) 数据摄取概述。
 
 ## 模式积木
 
@@ -91,7 +130,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 模式使用以下公式组成：
 
-**类+ Mixin&amp;ast; = XDM模式**
+**类+ Mixin&amp;ast;= XDM模式**
 
 &amp;ast;模式由类和零个或多 _个混音组成_ 。 这意味着您可以构建数据集模式，而完全不使用mixin。
 
@@ -115,7 +154,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 混音根据所表示数据（记录或时间序列）的行为定义它们与哪些类兼容。 这意味着并非所有混音都可用于所有类。
 
-混合的范围和定义与类相同： 行业混合、供应商混合和客户混合由使用的单个组织定义 [!DNL Platform]。 [!DNL Experience Platform] 包括许多标准的行业混合，同时允许供应商为其用户定义混合，并允许个别用户为自己的特定概念定义混合。
+混合的范围和定义与类相同：行业混合、供应商混合和客户混合由使用的单个组织定义 [!DNL Platform]。 [!DNL Experience Platform] 包括许多标准的行业混合，同时允许供应商为其用户定义混合，并允许个别用户为自己的特定概念定义混合。
 
 例如，要为“忠诚会员[!UICONTROL ”模式捕获]“名字”和“家庭地址[!UICONTROL ”等详细信息，]您将能够使用定义这些常见概念的标准混音。 但是，特定于不常用用例的概念(如“[!UICONTROL 忠诚度项目级]”)通常没有预定义的混音。 在这种情况下，您必须定义自己的混音来捕获此信息。
 
@@ -200,7 +239,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 现在，您已经了解了模式合成的基础知识，可以开始使用构建模式 [!DNL Schema Registry]。
 
-该 [!DNL Schema Registry] 工具用于访问Adobe Experience Platform [!DNL Schema Library] 中的资源，并提供一个用户界面和RESTful API，可从中访问所有可用的库资源。 它包 [!DNL Schema Library] 含由Adobe定义的行业资源、由合作伙伴定 [!DNL Experience Platform] 义的供应商资源以及由您的组织成员组成的类、混合、数据类型和模式。
+该 [!DNL Schema Registry] 应用程序用于访问Adobe Experience Platform [!DNL Schema Library] 内的库，并提供一个用户界面和RESTful API，可从中访问所有可用的库资源。 它包 [!DNL Schema Library] 含由Adobe定义的行业资源、由合作伙伴定 [!DNL Experience Platform] 义的供应商资源以及由您的组织成员组成的类、混合、数据类型和模式。
 
 要开始使用UI编写模式，请按照模式编 [辑器教程](../tutorials/create-schema-ui.md) ，构建本文档中提到的“忠诚会员”模式。
 
