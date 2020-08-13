@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案API入门
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 6df3e6579139f01d9877c1f033ea7721ca78118c
 workflow-type: tm+mt
-source-wordcount: '364'
+source-wordcount: '359'
 ht-degree: 0%
 
 ---
@@ -16,12 +16,12 @@ ht-degree: 0%
 
 使用 [!DNL Real-time Customer Profile] API，您可以针对用户档案资源执行基本的CRUD操作，如配置计算属性、访问实体、导出用户档案数据以及删除不需要的数据集或批量。
 
-使用开发人员指南需要对处理Adobe Experience Platform时涉及的各种数据服务进行有效 [!DNL Profile] 了解。 在开始使用API之 [!DNL Real-time Customer Profile] 前，请查阅以下服务的文档：
+使用开发人员指南需要对使用数据时涉及的各种Adobe Experience Platform服务进行有效 [!DNL Profile] 了解。 在开始使用API之 [!DNL Real-time Customer Profile] 前，请查阅以下服务的文档：
 
-* [!DNL Real-time Customer Profile](../home.md): 根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
-* [!DNL Adobe Experience Platform Identity Service](../../identity-service/home.md): 通过跨设备和系统桥接身份，更好地视图客户及其行为。
-* [!DNL Adobe Experience Platform Segmentation Service](../../segmentation/home.md): 允许您根据实时受众数据构建用户档案细分。
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md): 平台组织客户体验数据的标准化框架。
+* [!DNL Real-time Customer Profile](../home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+* [!DNL Adobe Experience Platform Identity Service](../../identity-service/home.md):通过跨设备和系统桥接身份，更好地视图客户及其行为。
+* [!DNL Adobe Experience Platform Segmentation Service](../../segmentation/home.md):允许您根据实时受众数据构建用户档案细分。
+* [!DNL Experience Data Model (XDM)](../../xdm/home.md):平台组织客户体验数据的标准化框架。
 * [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了成功调用API端点所需了解的其 [!DNL Profile] 他信息。
@@ -34,13 +34,13 @@ API文 [!DNL Real-time Customer Profile] 档提供示例API调用，以演示如
 
 API文档还要求您完成身份验证教 [程](../../tutorials/authentication.md) ，以便成功调用端点 [!DNL Platform] 。 完成身份验证教程可为API调用中每个所需标头 [!DNL Experience Platform] 提供值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API [!DNL Platform] 的请求需要一个标头，它指定操作将在中进行的沙箱的名称：
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* `x-sandbox-name: {SANDBOX_NAME}`
 
 有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
