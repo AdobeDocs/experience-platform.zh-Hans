@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform产品文档
 topic: getting started
 translation-type: tm+mt
-source-git-commit: b67513a83a46861872e92d9db57232554e7d831b
+source-git-commit: c91bcdff5b57ef69f79e211fbeb912e3d7fcdb39
 workflow-type: tm+mt
-source-wordcount: '7237'
+source-wordcount: '7245'
 ht-degree: 0%
 
 ---
@@ -98,9 +98,9 @@ ht-degree: 0%
 
 ## C
 
-**限制：** 在中， [!DNL Decisioning Service]在决策规则中使用上限设置来定义显示优惠的次数。 有两种类型的上限，即在合并的优惠受众中，可以提出目标的次数（也称为“Global Cap”），以及向同一最终用户建议优惠的次数(也称为“用户档案上限”)。
+**限制：** 在中， [!DNL Decisioning Service]在决策规则中使用上限来定义显示优惠的次数。 有两种类型的上限，即在合并的优惠受众中，可以提出目标的次数（也称为“Global Cap”），以及向同一最终用户建议优惠的次数(也称为“用户档案上限”)。
 
-**目录：** 在 [!DNL Real-time Customer Data Platform]源和目标中，目录是图库，可与Adobe应用程序和第三方技术建立连接。
+**目录：** 在 [!DNL Real-time Customer Data Platform]源和目标中，目录是一个图库，可与Adobe应用程序和第三方技术连接。
 
 **类：** 类定义用于构建模式的最小字段集，它是描述业务对象的基本行为。
 
@@ -210,7 +210,7 @@ ht-degree: 0%
 
 **增量保存策略：**`Delta save strategy` 是通过连接接收第三方数据的选项。 该选项允许用户指定接收源数据的新行或更改的行 [!DNL Experience Platform]。 新行将添加到数据集的末尾，更改的行将在上的数据集中更新 [!DNL Experience Platform]。
 
-**目标：** 在目 [!DNL Real-time Customer Data Platform] 标中是任何系统(如Adobe应用程序、广告服务器或广告网络)的一般术语，其中受众被激活和交付。
+**目标：** 在目 [!DNL Real-time Customer Data Platform] 标中是任何端点(如Adobe应用程序、广告平台、云存储服务或营销服务)的一般术语，受众在此处被激活和交付。
 
 **目标类别:** 目标类别是具有相似特 [!DNL Real-time Customer Data Platform] 征的目标的分组。
 
@@ -254,7 +254,7 @@ ht-degree: 0%
 
 **扩展：** 在 [!DNL Experience Platform Launch]中，扩展是添加到属性的功能 [!DNL Launch] 包。  扩展通常以特定营销或分析解决方案为中心，提供将该技术部署到客户环境所需的工具。
 
-**扩展包：** 在中 [!DNL Experience Platform Launch]，扩展包是由扩展开发人员创建和上传的。zip文件，它提供用户在其属性中安 [!DNL Launch] 装该扩展所需的一切。  扩展包包含一个清单，它指定最终用户配置扩展行为和交付到客户环境的可执行JavaScript（如果需要）所需 [!DNL Launch] 的扩展、HTML和JavaScript的相关信息。
+**扩展包：** 在中 [!DNL Experience Platform Launch]，扩展包是由扩展开发人员创建和上传的。zip文件，它提供用户在其属性 [!DNL Launch] 中安装扩展所需的一切。  扩展包包含一个清单，它指定最终用户配置扩展行为和交付到客户环境的可执行JavaScript（如果需要）所需 [!DNL Launch] 的扩展、HTML和JavaScript的相关信息。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -326,9 +326,9 @@ ht-degree: 0%
 
 ## J
 
-**[!DNL JupyterLab]:**适用于Project的基于Web的开放源[!DNL Jupyter]代码界面，并紧密集成到[!DNL Experience Platform]中。
+**[!DNL JupyterLab]:** 适用于Project的基于Web的开放源 [!DNL Jupyter] 代码界面，并紧密集成到 [!DNL Experience Platform]中。
 
-**[!DNL Jupyter Notebook]:**一个开放源代码Web应用程序，它使用户能够创建和共享包含实时代码、等式、可视化和叙述文本的文档。
+**[!DNL Jupyter Notebook]:** 一个开放源代码Web应用程序，它使用户能够创建和共享包含实时代码、等式、可视化和叙述文本的文档。
 
 ## K
 
@@ -336,7 +336,7 @@ ht-degree: 0%
 
 ## L
 
-**库：** 在 [!DNL Experience Platform Launch]中，库是一组业务逻辑，包含有关库在客户端设备上 [!DNL Launch] 的行为方式的说明。
+**库：** 在 [!DNL Experience Platform Launch]中，库是一组业务逻辑，其中包含有关库在客户端设备 [!DNL Launch] 上的行为方式的说明。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -366,7 +366,7 @@ ht-degree: 0%
 
 **非生产沙箱：** 非生产沙箱是一种数据虚拟化的形式，它允许您将数据与其他沙箱隔离开来，并通常用于开发实验、测试或试用。 可以重置和删除非生产沙箱。
 
-**[!DNL Notebooks]:**[!DNL Notebooks]是使用分析&#x200B;*[!DNL Jupyter Notebook]*描述和包含分析描述和结果创作的，并且可以运行以执行数据。
+**[!DNL Notebooks]:**[!DNL Notebooks] 是使用分析 *[!DNL Jupyter Notebook]* 描述和包含分析描述和结果创作的，并且可以运行以执行数据。
 
 [返回页首](#adobe-experience-platform-glossary)
 
@@ -418,7 +418,7 @@ ht-degree: 0%
 
 **用户档案导出：**[!DNL Profile] 出口是其中的两种目的之一 [!DNL Real-time Customer Data Platform][!DNL Profile] “导出”会生成包含用户档案和属性的文件，并将原始PII数据与电子邮件结合使用，并用于与营销和电子邮件自动化平台集成。
 
-**用户档案FProfile分组：** 用户档案片段是特定用户所存在身份列表中仅一个身份的用户档案信息。
+**用户档案片段：** 用户档案片段是特定用户所存在身份列表中仅一个身份的用户档案信息。
 
 **用户档案ID:** 用户档案ID是与标识类型关联的自动生成的标识符，它表示用户档案。
 
@@ -490,7 +490,7 @@ ht-degree: 0%
 
 **细分评估方法：** 区段计划评估允许循环计划在特定时间运行导出作业，而点播评估涉及创建区段作业以立即构建受众。
 
-**区段导出：** 区段导出是两种目标类型之一，它会发送符合条件并已映射到目标的用户档案。 使用细分和用户ID以及匿名数据，并通常与社交网络和其他数字媒体目标平台集成。
+**区段导出：** 区段导出是中的两种目标类型之一 [!DNL Real-time Customer Data Platform]。 通过区段导出，您可以发送符合条件并已映射到目标的用户档案。 使用细分和用户ID以及匿名数据，并通常与社交网络和其他数字媒体目标平台集成。
 
 **区段ID:** 区段ID是与区段关联的自动生成的标识符。
 
@@ -568,7 +568,7 @@ ht-degree: 0%
 
 ## X
 
-**XDM（体验数据模型）:** XDM(体验模式模型)是使用标准数据统一数据以便与和Adobe Experience Cloud应用程 [!DNL Experience Platform] 序一起使用的概念。 XDM是一种正式的规范，用于以单一语言或标准数据模型表示所有客户体验数据，并实现数据结构的标准化，加快速度并简化从大量数据中获得洞察的过程。
+**XDM（体验数据模型）:** XDM(体验模式模型)是使用标准数据统一数据以便与和Adobe Experience Cloud应用程 [!DNL Experience Platform] 序一起使用的概念。 XDM是一种正式的规范，用于以单一语言或标准数据模型表示所有客户体验数据，并实现数据结构的标准化，加快速度并简化从大量数据中获取洞察的过程。
 
 **XDM决策事件：** 决策事件用于捕获关于决策活动的结果和背景的观察，包括关于决策是如何作出的、何时作出、提出（和选择）哪些选择以及在决策过程中影响决策或可以观察到的情景状态的信息。 决策事件还捕获命题ID，这是一个全局唯一标识符，可用于将决策关联到其他事件。 DecisionEvents不仅与影响决策的体验事件相关，还与直接回应主张的ExperienceEvents相关。 在每个受这些建议影响的ExperienceEvent中，应用程序都会引用建议ID。 使用命题ID维护单个用户档案中的命题——响应历史。
 
