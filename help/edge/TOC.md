@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience PlatformWeb SDK帮助
 translation-type: tm+mt
-source-git-commit: c12d854f272c6775ae940b7a4056d0f527c5dd01
+source-git-commit: 3a0ef81980910cedcec69a2a53bcf270b8d12d00
 workflow-type: tm+mt
-source-wordcount: '96'
-ht-degree: 16%
+source-wordcount: '101'
+ht-degree: 15%
 
 ---
 
@@ -36,6 +36,7 @@ ht-degree: 16%
       * [分析概述](solution-specific/analytics/analytics-overview.md)
       * [在Analytics中手动映射变量](solution-specific/analytics/manually-mapping-variables.md)
       * [自动映射的变量](solution-specific/analytics/automatically-mapped-vars.md)
+      * [将数据发送到Adobe Analytics](solution-specific/analytics/link-tracking.md)
    * Audience Manager {#aam}
       * [Audience Manager 概述](solution-specific/audience-manager/audience-manager-overview.md)
    * Target {#target}
