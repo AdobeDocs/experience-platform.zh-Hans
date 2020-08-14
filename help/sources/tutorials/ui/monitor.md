@@ -5,7 +5,7 @@ solution: Experience Platform
 title: 监视帐户和数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 8bdd0493444c2c3b0f56db1166a6fa5d616e41be
+source-git-commit: dcdb1eb1f89b7393b83941a18abb2be2afa3576f
 workflow-type: tm+mt
 source-wordcount: '893'
 ht-degree: 0%
@@ -50,7 +50,7 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ## 监视数据流
 
-数据流可以直接从“目录”页 *[!UICONTROL 访问]* ，而无需查看 *[!UICONTROL 帐户]*。 从顶 *[!UICONTROL 部标题]* 中选择数据流，以视图现有数据流的列表。
+数据流可以直接从“目录”页 *[!UICONTROL 访问]* ，无需查看 *[!UICONTROL 帐户]*。 从顶 *[!UICONTROL 部标题]* 中选择数据流，以视图现有数据流的列表。
 
 ![catalog-dataflows](../../images/tutorials/monitor/catalog-dataflows.png)
 
@@ -100,7 +100,9 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 此部分还包含包含错误的列的预览符。
 
-> [!IMPORTANT] 要启用 *[!UICONTROL 错误诊断预览]* ，在配置数据流时必 *[!UICONTROL 须激活“部]* 分摄取 *[!UICONTROL ”和“]* 错误诊断”。 这样做将允许系统扫描在流运行期间摄取的所有记录。
+>[!IMPORTANT]
+>
+>要启用 *[!UICONTROL 错误诊断预览]* ，在配置数据流时必 *[!UICONTROL 须激活“部]* 分摄取 *[!UICONTROL ”和“]* 错误诊断”。 这样做将允许系统扫描在流运行期间摄取的所有记录。
 
 ![预览错误诊断](../../images/tutorials/monitor/preview-error-diagnostics.png)
 
