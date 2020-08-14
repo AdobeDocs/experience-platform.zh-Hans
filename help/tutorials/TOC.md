@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 教程
 translation-type: tm+mt
-source-git-commit: ee08f43400fa72abce95ed52aff879f954f4b4d6
+source-git-commit: d833257b4dffbf2a02ab4a3fc7a6a9e7347e7df5
 workflow-type: tm+mt
-source-wordcount: '52'
-ht-degree: 9%
+source-wordcount: '41'
+ht-degree: 12%
 
 ---
 
@@ -19,9 +19,7 @@ ht-degree: 9%
 * [数据管理和隐私](data-governance-privacy.md)
 * [数据科学工作区](data-science-workspace.md)
 * [决策](decisioning.md)
-* 目标 {#destinations}
-   * [创建目标并激活数据(API)](destinations/api-tutorial.md)
-   * [电子邮件营销目标(API)](destinations/email-marketing-api.md)
+* [目标](destinations.md)
 * [将数据引入平台](data-ingestion.md)
 * [用户档案和身份](configure-profile.md)
 * [模式和关系描述符](schemas.md)
