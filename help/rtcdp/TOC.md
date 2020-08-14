@@ -3,9 +3,9 @@ product: adobe experience platform
 audience: user
 user-guide-title: 实时客户数据平台帮助
 translation-type: tm+mt
-source-git-commit: 5802c05ce166f0b355b17a28655ff2f18f7cd0c4
+source-git-commit: d833257b4dffbf2a02ab4a3fc7a6a9e7347e7df5
 workflow-type: tm+mt
-source-wordcount: '469'
+source-wordcount: '460'
 ht-degree: 10%
 
 ---
@@ -128,7 +128,7 @@ ht-degree: 10%
       * [将用户档案和区段激活到目标](destinations/activate-destinations.md)
    * 目标API教程 {#api-tutorials}
       * [连接到流目标(AWSKinesis和Azure事件中心)并激活数据](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)
-      * [连接到电子邮件营销目标并激活数据](https://docs.adobe.com/content/help/en/experience-platform/tutorials/destinations/email-marketing-api.html)
+      * [连接到电子邮件营销目标并激活数据](/help/rtcdp/destinations/email-marketing-api.md)
 * 隐私和数据管理 {#privacy}
    * [隐私概述](privacy/privacy-overview.md)
    * [数据管理概述](privacy/data-governance-overview.md)
