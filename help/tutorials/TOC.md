@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 教程
 translation-type: tm+mt
-source-git-commit: d833257b4dffbf2a02ab4a3fc7a6a9e7347e7df5
+source-git-commit: ac1186e0afc3d135e8d02b1e5ab0cd907c12dcf3
 workflow-type: tm+mt
 source-wordcount: '41'
 ht-degree: 12%
@@ -19,7 +19,7 @@ ht-degree: 12%
 * [数据管理和隐私](data-governance-privacy.md)
 * [数据科学工作区](data-science-workspace.md)
 * [决策](decisioning.md)
-* [目标](destinations.md)
+* [目标](destinations-tutorials.md)
 * [将数据引入平台](data-ingestion.md)
 * [用户档案和身份](configure-profile.md)
 * [模式和关系描述符](schemas.md)
