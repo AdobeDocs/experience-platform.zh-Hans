@@ -5,17 +5,17 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 1d9c8cbf273e9aef13e34df91a98b6c08180c8ff
+source-git-commit: 8b540a108336ae4475f072b71a34e37cac064826
 workflow-type: tm+mt
-source-wordcount: '480'
-ht-degree: 5%
+source-wordcount: '452'
+ht-degree: 6%
 
 ---
 
 
 # Adobe Experience Platform 发行说明
 
-**发行日期：2020 年 12 月 8 日**
+**发行日期：2020 年 8 月 12 日**
 
 Adobe Experience Platform现有功能更新：
 
@@ -65,7 +65,6 @@ Adobe Experience Platform可以从外部来源收集数据，同时允许您使�
 | 功能 | 描述 |
 | ------- | ----------- |
 | 流运行监控 | 用户可以监视所有流运行并查看每个运行的详细视图，包括完成状态、运行持续时间、已处理文件的列表、错误和度量。 有关详细 [信息，请参见](../../sources/tutorials/ui/monitor.md) “监视数据流”文档。 |
-| 帐户更新 | 用户可以更新任何现有帐户的凭据、名称和说明，以提供更有意义的信息并更正可能已创建的任何错误。 |
 | 流运行通知 | 用户可以订阅事件并注册网络挂接，以接收有关流运行的状态、度量和错误的实时通知。 |
 | UI目录改进 | 对源目录屏幕进行更新，以便更轻松地访问选定对象的主要操作。 |
 
