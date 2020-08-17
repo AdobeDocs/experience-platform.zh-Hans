@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience PlatformAPI基础知识
 topic: getting started
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: fa439ebb9d02d4a08c8ed92b18f2db819d089174
 workflow-type: tm+mt
-source-wordcount: '423'
+source-wordcount: '422'
 ht-degree: 2%
 
 ---
@@ -80,8 +80,7 @@ JSON指针是用于标识JSON文档中特[定值的标准字符串语法](https:
 | `"/definitions/loyalty/properties/_{TENANT_ID}/properties/loyaltyLevel/enum"` | `["platinum", "gold", "silver", "bronze"]` |
 | `"/definitions/loyalty/properties/_{TENANT_ID}/properties/loyaltyLevel/enum/0"` | `"platinum"` |
 
->[!Note]
->
+>[!NOTE]
 >
 >处理(XDM)描 `xdm:sourceProperty` 述符 `xdm:destinationProperty` 的和属 [!DNL Experience Data Model] 性时，必须从JSON指 `properties` 针字符串 **中排除任** 何键。 有关详 [!DNL Schema Registry] 细信息，请参阅描述符的API开 [发人](../xdm/api/descriptors.md) 员指南子指南。
 
@@ -98,14 +97,14 @@ API有许多PATCH操作， [!DNL Platform] 它们接受JSON修补程序对象的
 }
 ```
 
-* `op`: 修补操作的类型。 虽然JSON修补程序支持多种不同的操作类型，但API中的所有PATCH操 [!DNL Platform] 作并非与每种操作类型都兼容。 可用的操作类型有：
+* `op`:修补操作的类型。 虽然JSON修补程序支持多种不同的操作类型，但API中的所有PATCH操 [!DNL Platform] 作并非都与每种操作类型兼容。 可用的操作类型有：
    * `add`
    * `remove`
    * `replace`
    * `copy`
    * `move`
    * `test`
-* `path`: 要更新的JSON结构部分，使用JSON指针 [表示法标](#json-pointer) 识。
+* `path`:要更新的JSON结构部分，使用JSON指针 [表示法标](#json-pointer) 识。
 
 JSON Patch对象可能需 `op`要其他属性，具体取决于中所示的操作类型。 有关不同JSON修补程序操作及其所需语法的详细信息，请参阅JSON [修补程序文档](http://jsonpatch.com/)。
 
