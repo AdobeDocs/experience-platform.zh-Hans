@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics
+keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;data science workspace;data science
 solution: Experience Platform
 title: Sensei Machine Learning API开发人员指南
 topic: Developer guide
+description: 此开发人员指南提供帮助您使用Sensei机器学习API进行开始的步骤，并演示了对各种数据科学工作区资源执行CRUD操作的API调用。
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '196'
+source-wordcount: '225'
 ht-degree: 2%
 
 ---
@@ -22,7 +23,7 @@ API为数 [!DNL Sensei Machine Learning] 据科学家提供了组织和管理机
 
 您必须完成身份验证 [教程](../../tutorials/authentication.md) ，才能访问以下请求标头以调用API [!DNL Adobe Experience Platform] :
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -34,7 +35,7 @@ API为数 [!DNL Sensei Machine Learning] 据科学家提供了组织和管理机
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-* 内容类型： application/json
+* 内容类型：application/json
 
 ## 后续步骤
 
