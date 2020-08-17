@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;GDPR;gdpr;ccpa:CCPA
 solution: Experience Platform
 title: Adobe Experience Platform Privacy Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: cc81d590f308c7e2677cec000c27e8aca42437f5
 workflow-type: tm+mt
 source-wordcount: '1498'
 ht-degree: 2%
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 为了提供更好的客户体验，您需要收集和存储客户的个人数据。 使用这些数据时，了解和尊重客户的隐私非常重要。 新的法律和组织法规授予用户根据请求从数据存储中访问或删除其个人数据的权利。
 
-Adobe Experience Platform [!DNL Privacy Service] 是为响应企业管理其客户个人数据的方式的根本性转变而开发的。 其核心目的 [!DNL Privacy Service] 是自动遵守数据隐私法规，一旦违反这些法规，可能会对您的业务造成重大罚款和中断数据操作。
+Adobe Experience Platform [!DNL Privacy Service] 是为应对企业管理客户个人数据的方式发生根本性转变而开发的。 其核心目的 [!DNL Privacy Service] 是自动遵守数据隐私法规，一旦违反这些法规，可能会对您的业务造成重大罚款和中断数据操作。
 
 [!DNL Privacy Service] 提供RESTful API和用户界面，帮助您管理客户数据请求。 您可 [!DNL Privacy Service]以提交从Adobe Experience Cloud应用程序访问和删除个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
 
@@ -61,7 +61,7 @@ Adobe Experience Platform [!DNL Privacy Service] 是为响应企业管理其客�
 
 为了处 [!DNL Privacy Service] 理客户的隐私请求，该客户的至少一个唯一标识值必须在请求本身中提供。 唯一标识值是可用于识别个人及其存储在数据存储中的个人数据的任何 [!DNL Experience Cloud] 信息。 [!DNL Privacy Service] 根据请求的性质（访问、删除或选择退出），使用此身份信息查找和处理客户的个人数据。
 
-根据您的CRM [!DNL Experience Cloud] 系统所使用的应用程序，您必须为每位客户提供的标识值的类型和数量将有所不同。 一些应用程序使用其自己的内部客户ID值(如Adobe TargetID)，而其他解决方案则依赖来自Adobe(ECID)的全局标识符，该标识符跟踪所有应用 [!DNL Experience Cloud Identity Service] 程序中的客户活动 [!DNL Experience Cloud] 情况。 此外，电子邮件地址或电话号码等通用个人信息也可以作为有效身份数据。
+根据您的CRM [!DNL Experience Cloud] 系统所使用的应用程序，您必须为每位客户提供的标识值的类型和数量将有所不同。 一些应用程序使用其自己的内部客户ID值(如Adobe TargetID)，而其他解决方案依赖于来自Adobe(ECID)的全局标识符，该标识符跟踪所有应用 [!DNL Experience Cloud Identity Service] 程序中的客户活动 [!DNL Experience Cloud] 情况。 此外，电子邮件地址或电话号码等通用个人信息也可以作为有效身份数据。
 
 隐私请 [求的身份文档](./identity-data.md) ，提供了有关接受的身份信息类型的更多详细信息 [!DNL Privacy Service]。 该文档还提供有关如何利用Adobe技术在客户与您的网站交互时从他们有效检索适当的身份信息以及在API请求中将这些数据发 [!DNL Privacy Service] 送到的指导。
 
