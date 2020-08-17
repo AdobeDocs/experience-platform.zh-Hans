@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;segmentation;Segmentation;segment service;segment;Segment;Segments;segments
 solution: Experience Platform
 title: Adobe Experience Platform分段服务
 topic: overview
+description: 此文档概述了分段服务及其在Adobe Experience Platform所起的作用。
 translation-type: tm+mt
-source-git-commit: 96b6f820e5d372446c4927e7719aedadb2b11bc9
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '1974'
+source-wordcount: '1991'
 ht-degree: 0%
 
 ---
@@ -16,15 +17,15 @@ ht-degree: 0%
 
 Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTful API，使您能够根据数据构建细分和生成 [!DNL Real-time Customer Profile] 受众。 这些细分集中配置和维护， [!DNL Platform]并且任何Adobe解决方案都可轻松访问。
 
-此文档概述了它 [!DNL Segmentation Service] 在Adobe Experience Platform中的作用。
+本文档概述了它在 [!DNL Segmentation Service] Adobe Experience Platform的作用。
 
 ## Getting started with [!DNL Segmentation Service]
 
 了解本文档中使用的以下主要术语非常重要：
 
-- **细分**: 将大量个人(如客户、潜在客户、用户或组织)划分为具有相似特征并将对营销策略做出类似反应的较小群体。
-- **细分定义**: 用于描述目标受众的关键特性或行为的规则集。 概念化后，使用细分定义中概述的规则确定某个细分的合格受众成员。
-- **受众**: 生成的一组符合区段定义条件的用户档案。
+- **细分**:将大量个人(如客户、潜在客户、用户或组织)划分为具有相似特征并将对营销策略做出类似反应的较小群体。
+- **细分定义**:用于描述目标受众的关键特性或行为的规则集。 概念化后，使用细分定义中概述的规则确定某个细分的合格受众成员。
+- **受众**:生成的一组符合区段定义条件的用户档案。
 
 ## 细分的工作原理
 
@@ -112,7 +113,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTf
 
 与静态分段不同，静态分段要求您显式地重复捕获每个可能的用例，动态分段使用变量来构建规则逻辑并动态地表示关系。
 
-### 用例： 寻找在家以外购买产品的客户
+### 用例：寻找在家以外购买产品的客户
 
 要说明此高级细分功能的价值，请考虑一位与营销人员协作的数据架构师，以确定在家以外购买产品的客户。
 
@@ -136,7 +137,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTf
 
 >[!VIDEO](https://video.tv.adobe.com/v/28947?quality=12&learn=on)
 
-### 用例： 价格驱动型促销
+### 用例：价格驱动型促销
 
 要说明此高级细分功能的价值，请考虑与营销人员协作的数据架构师。
 
