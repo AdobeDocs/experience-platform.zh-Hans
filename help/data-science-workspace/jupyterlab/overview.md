@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;popular topics
+keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;popular topics;jupyterlab
 solution: Experience Platform
 title: JupyterLab用户指南
 topic: Overview
+description: JupyterLab是Project Jupyter的基于Web的用户界面，与Adobe Experience Platform紧密集成。 它为数据科学家提供一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起使用。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '3647'
+source-wordcount: '3684'
 ht-degree: 11%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 11%
 
 # [!DNL JupyterLab] 用户指南
 
-[!DNL JupyterLab] 是Project Jupyter的基于web的用 <a href="https://jupyter.org/" target="_blank">户界面</a> ，并紧密集成在 [!DNL Adobe Experience Platform]中 它为数据科学家提供一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起使用。
+[!DNL JupyterLab] 是Project Jupyter的基于Web的用 [户界面](https://jupyter.org/) ，紧密集成到Adobe Experience Platform。 它为数据科学家提供一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起使用。
 
 本文档概述其 [!DNL JupyterLab] 功能以及执行常见操作的说明。
 
@@ -28,7 +29,7 @@ Experience Platform的JupyterLab集成包含架构更改、设计注意事项、
 | --- | --- |
 | **内核** | 内核提供笔记本和 [!DNL JupyterLab] 其他前端以不同编程语言执行和检查代码的能力。 [!DNL Experience Platform] 提供额外的内核， [!DNL Python]支持在、R、PySpark和中进行开发 [!DNL Spark]。 有关更多 [详细信息](#kernels) ，请参阅内核部分。 |
 | **数据访问** | 完全支持读写功能， [!DNL JupyterLab] 直接从内部访问现有数据集。 |
-| **[!DNL Platform]服务集成&#x200B;** | 内置集成功能允许您直接从内 [!DNL Platform] 部利用其他服务 [!DNL JupyterLab]。 与其他平台服务集成部分提供支持的集 [成的完整列表](#service-integration)。 |
+| **[!DNL Platform]服务集成** | 内置集成功能允许您直接从内 [!DNL Platform] 部利用其他服务 [!DNL JupyterLab]。 与其他平台服务集成部分提供支持的集 [成的完整列表](#service-integration)。 |
 | **身份验证** | 除了JupyterLab <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">的内置安全模型</a>，您的应用程序与Experience Platform之间的每次交互（包括平台服务到服务通信）都经过加密，并通过 <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)进行验证</a>。 |
 | **开发库** | 在 [!DNL Experience Platform]中 [!DNL JupyterLab] ，提供预装的 [!DNL Python]PySpark、R和PySpark库。 有关受 [支持库](#supported-libraries) 的完整列表，请参阅附录。 |
 | **库控制器** | 当您需要预装的库时，可以为Python和R安装额外的库，并临时存储在隔离的容器中，以保持数据的完整性 [!DNL Platform] 和安全性。 有关更多 [详细信息](#kernels) ，请参阅内核部分。 |
@@ -41,10 +42,10 @@ Experience Platform的JupyterLab集成包含架构更改、设计注意事项、
 
 标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 集成到 [!DNL JupyterLab] 作 [!DNL Platform] 为嵌入式IDE，可以与其他服务交互， [!DNL Platform] 使您能够充分利用 [!DNL Platform] 其潜能。 以下服 [!DNL Platform] 务可在以下网站 [!DNL JupyterLab]提供：
 
-* **[!DNL Catalog Service]:**使用读写功能访问和浏览数据集。
-* **[!DNL Query Service]:**使用SQL访问和浏览数据集，在处理大量数据时提供更低的数据访问开销。
-* **[!DNL Sensei ML Framework]:**模型开发，能够对数据进行培训和评分，并且只需单击一下即可创建菜谱。
-* **[!DNL Experience Data Model (XDM)]:**标准化和互操作性是Adobe Experience Platform背后的关键概念。[体验Adobe模型(XDM](https://www.adobe.com/go/xdm-home-en))由驱动，旨在实现客户体验数据标准化并定义客户体验管理模式。
+* **[!DNL Catalog Service]:** 使用读写功能访问和浏览数据集。
+* **[!DNL Query Service]:** 使用SQL访问和浏览数据集，在处理大量数据时提供更低的数据访问开销。
+* **[!DNL Sensei ML Framework]:** 模型开发，能够对数据进行培训和评分，并且只需单击一下即可创建菜谱。
+* **[!DNL Experience Data Model (XDM)]:** 标准化和互操作性是Adobe Experience Platform背后的关键概念。 [体验Adobe模型(XDM](https://www.adobe.com/go/xdm-home-en))由驱动，旨在实现客户体验数据标准化并定义客户体验管理模式。
 
 >[!NOTE]
 >
@@ -64,7 +65,7 @@ Experience Platform的JupyterLab集成包含架构更改、设计注意事项、
 
 ### 访问 [!DNL JupyterLab] {#access-jupyterlab}
 
-在 [Adobe Experience Platform](https://platform.adobe.com)，从左 **侧导** 航列中选择“笔记本”。 允许一些时间 [!DNL JupyterLab] 进行完全初始化。
+在 [Adobe Experience Platform](https://platform.adobe.com)，从左 **侧导航列** 中选择“笔记本”。 允许一些时间 [!DNL JupyterLab] 进行完全初始化。
 
 ![](../images/jupyterlab/user-guide/access_jupyterlab.png)
 
@@ -136,7 +137,7 @@ Experience Platform的JupyterLab集成包含架构更改、设计注意事项、
 
 ### 内核会话 {#kernel-sessions}
 
-每个活动笔记本或活动 [!DNL JupyterLab] 都使用内核会话。 所有活动会话都可以通过从左侧提要栏 **扩展“运行终端和内核** ”选项卡找到。 通过观察笔记本界面的右上角，可以识别笔记本的内核类型和状态。 在下图中，笔记本的关联内核为 **[!DNL Python]3 **，其当前状态由右侧的灰色圆圈表示。 空心圆表示空闲内核，实心圆表示忙碌内核。
+每个活动笔记本或活动 [!DNL JupyterLab] 都使用内核会话。 所有活动会话都可以通过从左侧提要栏 **扩展“运行终端和内核** ”选项卡找到。 通过观察笔记本界面的右上角，可以识别笔记本的内核类型和状态。 在下图中，笔记本的关联内核为 **[!DNL Python]3** ，其当前状态由右侧的灰色圆圈表示。 空心圆表示空闲内核，实心圆表示忙碌内核。
 
 ![](../images/jupyterlab/user-guide/kernel_and_state_1.png)
 
@@ -354,7 +355,7 @@ df <- dataset_reader$read()
 df
 ```
 
-* `{DATASET_ID}`: 要访问的数据集的唯一标识
+* `{DATASET_ID}`:要访问的数据集的唯一标识
 
 #### 在/R中读取 [!DNL Python]带有分页的数据集
 
@@ -384,7 +385,7 @@ dataset_reader <- DatasetReader(client_context, "{DATASET_ID}")
 df <- dataset_reader$limit(100L)$offset(10L)$read() 
 ```
 
-* `{DATASET_ID}`: 要访问的数据集的唯一标识
+* `{DATASET_ID}`:要访问的数据集的唯一标识
 
 ### 从PySpark//Scala中的数据集[!DNL Spark]中读取
 
@@ -438,12 +439,12 @@ dataFrame.show()
 
 用于从 [!DNL Data Science Workspace] 笔记本（3内核）读取或写入数据集 [!DNL Python] 的自定[!DNL Python] 义魔术命令。
 
-* **{action}**: 要对数据集执行的操作类型。 两个操作可用于“读取”或“写入”。
-* **—datasetId {id}**: 用于提供要读或写的数据集的id。 这是必需参数。
-* **—dataFrame {df}**: 熊猫数据框。 这是必需参数。
+* **{action}**:要对数据集执行的操作类型。 两个操作可用于“读取”或“写入”。
+* **—datasetId {id}**:用于提供要读或写的数据集的id。 这是必需参数。
+* **—dataFrame {df}**:熊猫数据框。 这是必需参数。
    * 当操作为“read”时，{df}是数据集读取操作结果可用的变量。
    * 当操作为“write”时，此数据帧{df}将写入数据集。
-* **—mode（可选）**: 允许的参数为“batch”和“interactive”。 默认情况下，该模式设置为“交互”。 在读取大量数据时，建议使用“批处理”模式。
+* **—mode（可选）**:允许的参数为“batch”和“interactive”。 默认情况下，该模式设置为“交互”。 在读取大量数据时，建议使用“批处理”模式。
 
 **示例**
 
@@ -499,8 +500,8 @@ FROM {table_name}
 * `ge()`: 大于或等于
 * `lt()`: 小于
 * `le()`: 小于或等于
-* `And()`: 逻辑AND运算符
-* `Or()`: 逻辑OR运算符
+* `And()`:逻辑AND运算符
+* `Or()`:逻辑OR运算符
 
 以下单元格将ExperienceEvent数据集筛选为2019年1月1日至2019年12月31日之间仅存的数据。
 
