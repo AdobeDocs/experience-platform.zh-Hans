@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;enable dataset;Dataset;dataset
 solution: Experience Platform
 title: 数据集用户指南
 topic: datasets
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
 source-wordcount: '1135'
 ht-degree: 0%
@@ -14,18 +14,18 @@ ht-degree: 0%
 
 # 数据集用户指南
 
-本用户指南提供了有关在Adobe Experience Platform用户界面中处理数据集时执行常见操作的说明。
+本用户指南提供了在Adobe Experience Platform用户界面内处理数据集时执行常见操作的说明。
 
 ## 入门指南
 
-本用户指南要求您对以下Adobe Experience Platform组件有一定的了解：
+本用户指南要求您对Adobe Experience Platform的以下组件有充分的了解：
 
-* [数据集](overview.md): 存储和管理结构，用于数据持久性 [!DNL Experience Platform]。
-* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-   * [模式合成基础](../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
-   * [模式编辑器](../../xdm/tutorials/create-schema-ui.md): 了解如何使用用户界面内的自定义XDM [!DNL Schema Editor] 模式 [!DNL Platform] 构建自己。
-* [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [!DNL Data Governance](../../data-governance/home.md): 确保遵守有关使用客户数据的法规、限制和政策。
+* [数据集](overview.md):存储和管理结构，用于数据持久性 [!DNL Experience Platform]。
+* [!DNL Experience Data Model (XDM) System](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+   * [模式合成基础](../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
+   * [模式编辑器](../../xdm/tutorials/create-schema-ui.md):了解如何使用用户界面内的自定义XDM [!DNL Schema Editor] 模式 [!DNL Platform] 构建自己。
+* [!DNL Real-time Customer Profile](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [!DNL Data Governance](../../data-governance/home.md):确保遵守有关使用客户数据的法规、限制和政策。
 
 ## 视图数据集
 
