@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;PSQL;psql
 solution: Experience Platform
 title: 元数据命令
 topic: metadata
+description: 一列表当前支持查询元数据的PSQL命令。
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
 workflow-type: tm+mt
-source-wordcount: '297'
+source-wordcount: '309'
 ht-degree: 0%
 
 ---
@@ -38,7 +39,7 @@ ht-degree: 0%
 | `\errverbose` | 以最大详细度重复最近的服务器错误消息。 |
 | `\l or \list` | 显示服务器中的列表库。 |
 | `\set` | 显示所有当前psql变量的名称和值。 |
-| `\showtables` | 显示以下信息： <br>名称： 引用表的名称。<br>datasetId: 存储的数据集的ID。<br>数据集： 存储的数据集的名称。<br>说明： 数据集的描述。<br>已解决： 一个布尔值，用于表示当前会话中是否解析数据集。 |
+| `\showtables` | 显示以下信息： <br>名称：引用表的名称。<br>datasetId:存储的数据集的ID。<br>数据集：存储的数据集的名称。<br>说明：数据集的描述。<br>已解决：一个布尔值，用于表示当前会话中是否解析数据集。 |
 | `\timing` | 在打开和关闭之间切换显示。 显示以毫秒为单位。 超过一秒的时间间隔以分钟：秒的格式显示，并根据需要添加小时和天字段。 |
 
 可以组合所有开始 `\d` 的命令。 例如，您可以发出 `\dtsn` 问题，显示所有表、序列和模式的列表。 `\d` 仅显示所有可见表、视图、实体化视图和序列。
