@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 合并策略用户指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: fa439ebb9d02d4a08c8ed92b18f2db819d089174
 workflow-type: tm+mt
-source-wordcount: '1104'
+source-wordcount: '1103'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 合并策略用户指南
 
-Adobe Experience Platform使您能够将来自多个来源的数据整合在一起，并将其合并，以便了解每个客户的完整视图。 将数据整合在一起时，合并策略是确定 [!DNL Platform] 数据的优先级以及合并哪些数据以创建统一视图的规则。
+Adobe Experience Platform使您能够将来自多个来源的数据整合在一起，以便全面视图每位客户。 将数据整合在一起时，合并策略是确定 [!DNL Platform] 数据的优先级以及合并哪些数据以创建统一视图的规则。
 
 使用REST风格的API或用户界面，您可以创建新的合并策略、管理现有策略并为组织设置默认的合并策略。 本指南提供使用Adobe Experience Platform用户界面处理合并策略的分步说明。
 
@@ -24,9 +24,9 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 本指南要求对合并策略涉及的各 [!DNL Experience Platform] 种服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
 
-* [!DNL Real-time Customer Profile](../home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [!DNL Identity Service](../../identity-service/home.md): 通过将 [!DNL Real-time Customer Profile] 来自被引入的不同数据源的身份连接到其中，实现 [!DNL Platform]了。
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [!DNL Real-time Customer Profile](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [!DNL Identity Service](../../identity-service/home.md):通过将 [!DNL Real-time Customer Profile] 来自被引入的不同数据源的身份连接到其中，实现 [!DNL Platform]了。
+* [!DNL Experience Data Model (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 ## 视图合并策略
 
@@ -50,15 +50,15 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ![](../images/merge-policies/create.png)
 
-* **[!UICONTROL 名称]**: 合并策略的名称应具有描述性且简明。
-* **[!UICONTROL 模式]**: 与合并策略关联的模式。 它指定为其创建此合并策略的XDM模式。 组织可以为每个模式创建多个合并策略。
-* **[!UICONTROL ID拼接]**: 此字段定义如何确定客户的相关身份。 可能有两个值：
-   * **[!UICONTROL 无]**: 不进行身份拼接。
-   * **[!UICONTROL 专用图]**: 根据您的个人身份图执行身份拼接。
-* **[!UICONTROL 属性合并]**: 用户档案片段是单个客户存在的身份列表中仅一个身份的用户档案信息。 当使用的标识图类型导致多个标识时，存在冲突用户档案属性值的可能性，必须指定优先级。 使用 *属性合并* ，可以指定在发生合并冲突时要排定优先级的数据集用户档案值。 可能有两个值：
-   * **[!UICONTROL 排序的时间戳]**: 如果发生冲突，请优先考虑最近更新的用户档案。
-   * **[!UICONTROL 数据集优先级]** : 根据用户档案片段的来源数据集优先处理这些片段。 选择此选项时，必须选择相关数据集及其优先级顺序。 有关详细信息，请 [参阅以下](#dataset-precedence) “数据集优先级”的详细信息。
-* **[!UICONTROL 默认合并策略]**: 一个切换按钮，允许您选择此合并策略是否将是组织的默认策略。 如果选择器已切换并且保存了新策略，则之前的默认策略将自动更新为不再是默认策略。
+* **[!UICONTROL 名称]**:合并策略的名称应具有描述性且简明。
+* **[!UICONTROL 模式]**:与合并策略关联的模式。 它指定为其创建此合并策略的XDM模式。 组织可以为每个模式创建多个合并策略。
+* **[!UICONTROL ID拼接]**:此字段定义如何确定客户的相关身份。 可能有两个值：
+   * **[!UICONTROL 无]**:不进行身份拼接。
+   * **[!UICONTROL 专用图]**:根据您的个人身份图执行身份拼接。
+* **[!UICONTROL 属性合并]**:用户档案片段是单个客户存在的身份列表中仅一个身份的用户档案信息。 当使用的标识图类型导致多个标识时，存在冲突用户档案属性值的可能性，必须指定优先级。 使用 *属性合并* ，可以指定在发生合并冲突时要排定优先级的数据集用户档案值。 可能有两个值：
+   * **[!UICONTROL 排序的时间戳]**:如果发生冲突，请优先考虑最近更新的用户档案。
+   * **[!UICONTROL 数据集优先级]** :根据用户档案片段的来源数据集优先处理这些片段。 选择此选项时，必须选择相关数据集及其优先级顺序。 有关详细信息，请 [参阅以下](#dataset-precedence) “数据集优先级”的详细信息。
+* **[!UICONTROL 默认合并策略]**:一个切换按钮，允许您选择此合并策略是否将是组织的默认策略。 如果选择器已切换并且保存了新策略，则之前的默认策略将自动更新为不再是默认策略。
 
 ### 数据集优先级 {#dataset-precedence}
 
@@ -74,13 +74,14 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ## 编辑合并策略
 
-通过单击要编辑的合并策略的 *[!UICONTROL 策略名]* ，可以通过合并 *[!UICONTROL 策略选]* 项卡修改现有合并策略。
+通过单击要编辑的合并策略的 *[!UICONTROL 策略名]* ，可以通过合并 *[!UICONTROL 策略选]* 项卡修改现有的合并策略。
 
 ![合并策略登陆页](../images/merge-policies/select-edit.png)
 
 出现“编 *[!UICONTROL 辑合并策略]* ”屏幕时，您可以对“名称”、“模式”、“ID”类型、 ********** ”和“Prizting Type”属性以及类型、以及选择是否将此策略指定为是否将本策略转换为您组织的Default Merge Merge Policy。
 
->[!Note]
+>[!NOTE]
+>
 >您无法编辑合并策略ID，它显示在编辑屏幕顶部。 这是一个只读的、系统生成的ID，无法更改。
 
 ![](../images/merge-policies/edit-screen.png)
@@ -91,11 +92,11 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ## 违反数据管理策略
 
-创建或更新合并策略时，将执行检查以确定合并策略是否违反了组织定义的任何数据使用策略。 数据使用策略是Adobe Experience Platform的一 [!DNL Data Governance] 部分，是描述您允许或限制对特定数据执行的营销操作种类的 [!DNL Platform] 规则。 例如，如果合并策略用于创建已激活到第三方目标的区段，而您的组织拥有阻止特定数据导出到第三方的数据使用策略，则在尝试保存合并策略时，您将收到“检测到数据管理策略违规”通知。
+创建或更新合并策略时，将执行检查以确定合并策略是否违反了组织定义的任何数据使用策略。 数据使用策略是Adobe Experience Platform的一 [!DNL Data Governance] 部分，是描述您允许或限制对特定数据执行的营销操作类型的 [!DNL Platform] 规则。 例如，如果合并策略用于创建已激活到第三方目标的区段，而您的组织拥有阻止特定数据导出到第三方的数据使用策略，则在尝试保存合并策略时，您将收到“检测到数据管理策略违规”通知。
 
 此通知包括已违反的列表使用策略，并允许您通过从列表中选择策略来视图违规的详细信息。 选择违反的策略后，“数 *据世系* ”选项卡会提 *供违规原因和* 受影响的激活 **，每个都提供有关违反数据使用策略的更多详细信息。
 
-要进一步了解如何在Adobe Experience Platform内执行数据管理，请首先阅读数据管 [理概述](../../data-governance/home.md)。
+要进一步了解如何在Adobe Experience Platform内执行数据治理，请首先阅读数据治 [理概述](../../data-governance/home.md)。
 
 ![](../images/merge-policies/policy-violation.png)
 
