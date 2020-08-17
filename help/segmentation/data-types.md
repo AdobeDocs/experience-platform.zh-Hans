@@ -1,18 +1,19 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data type;data types;Data types;Data type
 solution: Experience Platform
 title: Adobe Experience Platform分段服务数据类型
 topic: overview
+description: 分段服务支持所有XDM数据类型。 构成区段定义的规则根据以下数据类型进行情境化。
 translation-type: tm+mt
-source-git-commit: 96b6f820e5d372446c4927e7719aedadb2b11bc9
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '479'
 ht-degree: 3%
 
 ---
 
 
-# Adobe Experience Platform支 [!DNL Segmentation Service] 持的数据类型
+# Adobe Experience Platform [!DNL Segmentation Service] 支持的数据类型
 
 中支持所有XDM数据类型 [!DNL Segmentation Service]。 构成区段定义的规则根据以下数据类型进行情境化。
 
@@ -39,7 +40,7 @@ ht-degree: 3%
 
 ## 体验事件
 
-作为Adobe Experience Platform模式, [!DNL XDM ExperienceEvents] 记录与集成应用程序的显 [!DNL Platform]式和隐式客户交互，包括交互发生时系统的快照。 [!DNL ExperienceEvents] 是事实记录。 因此，在段定义过程中，它们是可供您使用的数据源。
+作为Adobe Experience Platform的 [!DNL XDM ExperienceEvents] 模式，记录与集成应用程序的显 [!DNL Platform]式和隐式客户交互，包括交互发生时系统的快照。 [!DNL ExperienceEvents] 是事实记录。 因此，在段定义过程中，它们是可供您使用的数据源。
 
 如下表所示，事件数据使用关键字呈现，这些关键字有助于优化事件行为和指定事件属性。
 
@@ -54,7 +55,7 @@ ht-degree: 3%
 
 外部受众还可用作新区段定义的组件，从而将其属性规则添加到新区段。
 
-目前，只支持将Adobe Audience Manager作为外部受众，未来将启用其他源。 有关将Adobe Audience Manager受众与平台结合使用的更多信息，请参 [阅Adobe Audience Manager文档中的受众共享指南](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)。
+目前，只有Adobe Audience Manager作为外部受众受支持，今后还将启用其他来源。 有关将Adobe Audience Manager受众与平台结合使用的更多信息，请参 [阅Adobe Audience Manager文档中的受众共享指南](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)。
 
 ### 区段共享
 
