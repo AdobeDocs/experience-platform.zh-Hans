@@ -1,10 +1,11 @@
 ---
+Keywords: ECID;ecid
 title: Experience Cloud ID 服务扩展
 seo-title: Experience Cloud ID 服务扩展
 description: Experience CloudID服务扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: Experience CloudID服务扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: 4c3a947051c11860ab4f0f53b48d8f4bda8dc195
 workflow-type: tm+mt
 source-wordcount: '557'
 ht-degree: 10%
