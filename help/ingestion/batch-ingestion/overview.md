@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data ingestion;batch;Batch;enable dataset
 solution: Experience Platform
-title: Adobe Experience Platform批摄取概述
+title: Adobe Experience Platform批量摄取概述
 topic: overview
+description: 批处理摄取API允许您将数据作为批处理文件导入到Adobe Experience Platform。 所摄取的用户档案可以是CRM系统中平面文件（如拼花文件）中的模式数据，也可以是与体验数据模型(XDM)注册表中的已知数据相符的数据。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1144'
+source-wordcount: '1196'
 ht-degree: 2%
 
 ---
@@ -53,7 +54,7 @@ API [!DNL Data Ingestion] 允许您通过以下三个基本步骤将数据作为
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -67,7 +68,7 @@ API [!DNL Data Ingestion] 允许您通过以下三个基本步骤将数据作为
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 ### 创建批
 
