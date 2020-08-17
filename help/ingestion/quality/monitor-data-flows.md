@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;monitoring;monitor;data flows
 solution: Experience Platform
 title: 监控数据摄取
 topic: overview
+description: 本用户指南提供如何在Adobe Experience Platform用户界面中监控数据的步骤。 本指南要求您拥有Adobe ID并访问Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '519'
+source-wordcount: '552'
 ht-degree: 0%
 
 ---
@@ -16,7 +17,7 @@ ht-degree: 0%
 
 数据摄取允许您将数据摄取到Adobe Experience Platform。 您可以使用批处理摄取(允许您使用各种文件类型（如CSV）插入数据)或流式摄取(允许您使用流式端点实 [!DNL Platform] 时摄取数据)。
 
-本用户指南提供了如何在Adobe Experience Platform用户界面中监控数据的步骤。 本指南要求您具有Adobe ID和访问Adobe Experience Platform。
+本用户指南提供如何在Adobe Experience Platform用户界面中监控数据的步骤。 本指南要求您拥有Adobe ID并访问Adobe Experience Platform。
 
 ## 监控端到端的流数据摄取
 
