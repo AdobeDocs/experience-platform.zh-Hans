@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;schema;Schema;create schema;enum;XDM individual profile;primary identity;primary idenity;enum datatype;schema design
 solution: Experience Platform
 title: 使用架构编辑器创建架构
 topic: tutorials
+description: 本教程介绍了在模式中使用模式编辑器创建Experience Platform的步骤。
 translation-type: tm+mt
-source-git-commit: 661789fa15ea11b0e42060b1b90d74785c04fa1f
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '3376'
+source-wordcount: '3392'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # 使用 [!DNL Schema Editor]
 
-提供 [!DNL Schema Registry] 了一个用户界面和RESTful API，您可以从中视图和管理Adobe Experience Platform中的所有资源 [!DNL Schema Library]。 它包 [!DNL Schema Library] 含由Adobe、Experience Platform合作伙伴和您使用的应用程序的供应商提供给您的资源，以及您定义并保存到的资源 [!DNL Schema Registry]。
+它提 [!DNL Schema Registry] 供了一个用户界面和RESTful API，您可以从中视图和管理Adobe Experience Platform的所有资源 [!DNL Schema Library]。 它包 [!DNL Schema Library] 含由Adobe、Experience Platform合作伙伴和您使用的应用程序的供应商提供给您的资源，以及您定义并保存到的资源 [!DNL Schema Registry]。
 
 本教程介绍使用模式编辑器创建模式的步骤 [!DNL Experience Platform]。 如果您希望使用模式注册表API编写模式，请先阅读模式注册表开 [发人员指南](../api/getting-started.md) ，然后再 [尝试使用API创建模式](create-schema-api.md)。
 
@@ -22,11 +23,11 @@ ht-degree: 0%
 
 ## 入门指南
 
-本教程需要对使用Adobe Experience Platform编辑器时涉及的模式的各个方面进行有效的了解。 在开始本教程之前，请查阅以下概念的文档：
+本教程需要对Adobe Experience Platform在使用模式编辑器时涉及的各个方面进行有效的了解。 在开始本教程之前，请查阅以下概念的文档：
 
-* [!DNL Experience Data Model (XDM)](../home.md): 平台组织客户体验数据的标准化框架。
-* [模式合成基础](../schema/composition.md): XDM模式及其构建块的概述，包括类、混合、数据类型和字段。
-* [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [!DNL Experience Data Model (XDM)](../home.md):平台组织客户体验数据的标准化框架。
+* [模式合成基础](../schema/composition.md):XDM模式及其构建块的概述，包括类、混合、数据类型和字段。
+* [!DNL Real-time Customer Profile](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 本教程要求您具有访问权限 [!DNL Experience Platform]。 如果您无权访问中的IMS组织，请在继 [!DNL Experience Platform]续操作之前与系统管理员联系。
 
@@ -156,13 +157,13 @@ ht-degree: 0%
 
 单 **[!UICONTROL 击“Loyalty]** Members”旁[!UICONTROL 的“添加字段]”，在结构中创建新节点。 此节点（在本示例中称为“_tenantId”）表示您的IMS组织的租户ID，前面有下划线。 租户ID的存在表示您正在添加的字段包含在您组织的命名空间中。
 
-换言之，您添加的字段对您的组织来说是独一无二的，并将保存在仅可 [!DNL Schema Registry] 供IMS组织访问的特定区域中。 您定义的字段必须始终添加到您的命名空间中，以防止与来自其他标准类、混音、数据类型和字段的名称发生冲突。
+换言之，您添加的字段对您的组织来说是独一无二的，并将保存在仅可 [!DNL Schema Registry] 供IMS组织访问的特定区域中。您定义的字段必须始终添加到您的命名空间中，以防止与来自其他标准类、混音、数据类型和字段的名称发生冲突。
 
 在该命名空间节点中有一个“[!UICONTROL 新字段]”。 这是“忠诚度细[!UICONTROL 节]”混合的开始。
 
 ![](../images/tutorials/create-schema/new_field_loyalty.png)
 
-使 *[!UICONTROL 用编辑器]* 右侧的字段属性，通过创建类型为“Object[!UICONTROL ”的“loyalty]”字段来开始该字段，该字段将用于保存您的忠诚度相关字段。 完成后，单击“ **[!UICONTROL 应用]**”。
+使 *[!UICONTROL 用编辑器]* 右侧的字段属性，通过创建类型为“Object[!UICONTROL ”的“loyalty]”字段来开始该字段，该字段将用于保存您的忠诚度相关字段。 When finished, click **[!UICONTROL Apply]**.
 
 ![](../images/tutorials/create-schema/loyalty_object.png)
 
@@ -172,10 +173,10 @@ ht-degree: 0%
 
 每个字段都需要以下信息：
 
-* **[!UICONTROL 字段名称]:**字段的名称，用驼峰大小写写。 示例： loyaltyLevel
-* **[!UICONTROL 显示名称]:**字段的名称，以标题大小写写写。 示例： 忠诚度级别
-* **[!UICONTROL 类型]:**字段的数据类型。 这包括基本标量类型和在中定义的任何数据类型[!DNL Schema Registry]。 示例： 字符串、整数、布尔值、人员、地址、电话号码等。
-* **[!UICONTROL 描述]:**该字段的可选描述应包含在句子中。 （最多200个字符。）
+* **[!UICONTROL 字段名称]:** 字段的名称，用驼峰大小写写。 示例：loyaltyLevel
+* **[!UICONTROL 显示名称]:** 字段的名称，以标题大小写写写。 示例：忠诚度级别
+* **[!UICONTROL 类型]:** 字段的数据类型。 这包括基本标量类型和在中定义的任何数据类型 [!DNL Schema Registry]。 示例：字符串、整数、布尔值、人员、地址、电话号码等。
+* **[!UICONTROL 描述]:** 该字段的可选描述应包含在句子中。 （最多200个字符。）
 
 Loyalty对象的第一个字段将是一个名为“loyaltyId”[!UICONTROL 的字符串]。 当将新字段的类型设置为“[!UICONTROL String]”时，“字段属性 *[!UICONTROL ”窗口将填充多个用于应用约束的选项，]* 包括默认值 **[!UICONTROL 、]**&#x200B;格式、 ********、最大长度。
 
@@ -194,7 +195,7 @@ Loyalty对象的第一个字段将是一个名为“loyaltyId”[!UICONTROL 的�
 
 通过单击忠诚度对象 **[!UICONTROL 上的“添加字段]** ”并填写所需的信息，可添加每个字段。
 
-完成后，Loyalty对象将包含以下字段： 忠诚度ID、积分和会员。
+完成后，Loyalty对象将包含以下字段：忠诚度ID、积分和会员。
 
 ![](../images/tutorials/create-schema/loyalty_object_fields.png)
 
@@ -214,10 +215,10 @@ Loyalty对象的第一个字段将是一个名为“loyaltyId”[!UICONTROL 的�
 
 有关可用附加约束的更多信息：
 
-* **[!UICONTROL 必需]:**指示数据获取需要此字段。 根据此模式上传到数据集且不包含此字段的任何数据在摄取时都将失败。
-* **[!UICONTROL 阵列]:**指示字段包含一组值，每个值都指定了数据类型。 例如，选择“字符串”的数据类型并选中“数组”复选框表示字段将包含字符串数组。
-* **[!UICONTROL 枚举]:**指示此字段必须包含来自可能值的枚举列表的值之一。
-* **[!UICONTROL 身份]:**指示此字段是标识字段。 有关标识字段的更多信[息将在本教程后面提供](#identity-field)。
+* **[!UICONTROL 必需]:** 指示数据获取需要此字段。 根据此模式上传到数据集且不包含此字段的任何数据在摄取时都将失败。
+* **[!UICONTROL 阵列]:** 指示字段包含一组值，每个值都指定了数据类型。 例如，选择“字符串”的数据类型并选中“数组”复选框表示字段将包含字符串数组。
+* **[!UICONTROL 枚举]:** 指示此字段必须包含来自可能值的枚举列表的值之一。
+* **[!UICONTROL 身份]:** 指示此字段是标识字段。 有关标识字段的更多信 [息将在本教程后面提供](#identity-field)。
 
 ## 将多字段对象转换为数据类型 {#datatype}
 
