@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics; monitor accounts; monitor dataflows
+keywords: Experience Platform;home;popular topics;monitor accounts;monitor dataflows;data flows
 description: Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 本教程提供了从“源”工作区查看现有帐户和数据流的步骤。
 solution: Experience Platform
 title: 监视帐户和数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: dcdb1eb1f89b7393b83941a18abb2be2afa3576f
+source-git-commit: 04efbf63741ef39bbf0b22795be74087f1f7c595
 workflow-type: tm+mt
 source-wordcount: '893'
 ht-degree: 0%
