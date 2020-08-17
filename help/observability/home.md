@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;date range
 solution: Experience Platform
 title: Adobe Experience Platform可观性洞察
 topic: overview
+description: 可观性洞察是一个REST风格的API，它允许您在Adobe Experience Platform公布关键可观性指标。 这些指标提供平台使用情况统计数据、平台服务运行状况检查、历史趋势和各种平台功能的性能指标的洞察。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: cc81d590f308c7e2677cec000c27e8aca42437f5
 workflow-type: tm+mt
-source-wordcount: '396'
+source-wordcount: '435'
 ht-degree: 2%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 2%
 
 # Adobe Experience Platform可观性洞察概述
 
-可观性洞察是一个REST风格的API，它允许您在Adobe Experience Platform中显示关键可观性指标。 这些指标可提供对使 [!DNL Platform] 用统计数据的洞察、服务运行 [!DNL Platform] 状况检查、历史趋势和各种功能的性能 [!DNL Platform] 指标。
+可观性洞察是一个REST风格的API，它允许您在Adobe Experience Platform公布关键可观性指标。 这些指标可提供对使 [!DNL Platform] 用统计数据的洞察、服务运行 [!DNL Platform] 状况检查、历史趋势和各种功能的性能 [!DNL Platform] 指标。
 
 此文档演示了对Oncenbility Insights API的示例调用。 有关可观性端点的完整列表，请参阅可观 [性洞察API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/observability-insights.yaml)。
 
@@ -22,7 +23,7 @@ ht-degree: 2%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
