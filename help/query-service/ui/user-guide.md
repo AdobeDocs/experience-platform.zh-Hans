@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Query editor;query editor
 solution: Experience Platform
-title: Adobe Experience Platform查询服务查询编辑器指南
+title: 查询编辑器用户指南
 topic: query editor
+description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，它允许您在Experience Platform用户界面中为客户体验数据编写、验证和运行查询。 查询编辑器支持开发分析和数据的查询，并允许您运行交互式查询以用于开发目的，以及运行非交互式查询以填充Experience Platform集。
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 3376d6cace9ab196f457e2bf7b84cde06693103c
 workflow-type: tm+mt
-source-wordcount: '1027'
+source-wordcount: '1086'
 ht-degree: 1%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 1%
 
 # [!DNL Query Editor] 用户指南
 
-[!DNL Query Editor] 是由Adobe Experience Platform提供的交互 [!DNL Query Service]式工具，它允许您在用户界面中为客户体验数据编写、验证和运行 [!DNL Experience Platform] 查询。 [!DNL Query Editor] 支持开发查询以进行分析和数据探索，并允许您运行交互式查询以用于开发目的，以及使用非交互式查询来填充数据集 [!DNL Experience Platform]
+[!DNL Query Editor] 是Adobe Experience Platform提供的交互式 [!DNL Query Service]工具，它允许您在用户界面中编写、验证和运行查询以获取客户 [!DNL Experience Platform] 体验数据。 [!DNL Query Editor] 支持开发查询以进行分析和数据探索，并允许您运行交互式查询以用于开发目的，以及使用非交互式查询来填充数据集 [!DNL Experience Platform]
 
 有关的概念和功能的更多信 [!DNL Query Service]息，请参 [阅查询服务概述][query-service-overview]。 要进一步了解如何在上的查询服务用户界面导航， [!DNL Platform]请参阅 [查询服务UI概述][query-service-ui]。
 
@@ -118,7 +119,7 @@ ht-degree: 1%
 
 ## 使用教程视频运 [!DNL Query Service] 行查询
 
-以下视频演示如何在查询接口和PSQL客户端中运行Adobe Experience Platform。 此外，还演示了在XDM对象中使用单个属性、使用Adobe定义函数以及使用CREATE TABLE AS SELECT(CTAS)。
+以下视频演示如何在Adobe Experience Platform接口和PSQL客户端中运行查询。 此外，还演示了在XDM对象中使用单个属性、使用Adobe定义函数以及使用CREATE TABLE AS SELECT(CTAS)。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
