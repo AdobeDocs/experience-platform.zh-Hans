@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;segment evaluation
 solution: Experience Platform
 title: 评估区段
 topic: tutorial
+description: 本文档提供了一个教程，用于使用分段API评估区段和访问区段结果。
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '1519'
+source-wordcount: '1535'
 ht-degree: 0%
 
 ---
@@ -20,16 +21,16 @@ ht-degree: 0%
 
 本教程需要对创建受众段时涉及的 [!DNL Adobe Experience Platform] 各种服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [!DNL Real-time Customer Profile](../../profile/home.md): 根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
-- [!DNL Adobe Experience Platform Segmentation Service](../home.md): 允许您根据数据构建受众 [!DNL Real-time Customer Profile] 细分。
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 平台组织客户体验数据的标准化框架。
+- [!DNL Real-time Customer Profile](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+- [!DNL Adobe Experience Platform Segmentation Service](../home.md):允许您根据数据构建受众 [!DNL Real-time Customer Profile] 细分。
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md):平台组织客户体验数据的标准化框架。
 - [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 ### 所需的标题
 
 本教程还要求您完成身份验证 [教程](../../tutorials/authentication.md) ，以便成功调用 [!DNL Platform] API。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -43,7 +44,7 @@ ht-degree: 0%
 
 所有POST、PUT和PATCH请求都需要额外的标题：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 ## 评估区段
 
@@ -69,7 +70,7 @@ ht-degree: 0%
 
 ### 启用计划
 
-默认情况下，创建计划时，处于非活动状 `state` 态，除非属性在 `active` create(POST)请求主体中设置为。 您可以通过向端点发出计划请求并在路 `state` 径中包含PATCH的ID，来启 `active``/config/schedules` 用计划（将设置为）。
+默认情况下，创建计划时，处于非活动状 `state` 态，除非属性在 `active` create(POST)请求主体中设置为。 您可以通过向端点发出计划请 `state` 求并在路 `active`径中包含PATCH的ID来启用计划( `/config/schedules` 将设置为)。
 
 有关使用此端点的更多详细信息，请参阅 [计划端点指南](../api/schedules.md#update-state)
 
@@ -130,11 +131,11 @@ ht-degree: 0%
 | 属性 | 描述 |
 | -------- | ----------- |
 | `lastQualificationTime` | 断言区段成员身份和用户档案进入或退出区段的时间戳。 |
-| `status` | 作为当前请求一部分的区段参与状态。 必须等于以下已知值之一： <ul><li>`existing`: 实体继续在分部中。</li><li>`realized`: 实体正在输入区段。</li><li>`exited`: 实体正在退出区段。</li></ul> |
+| `status` | 作为当前请求一部分的区段参与状态。 必须等于以下已知值之一： <ul><li>`existing`:实体继续在分部中。</li><li>`realized`:实体正在输入区段。</li><li>`exited`:实体正在退出区段。</li></ul> |
 
 ## 访问区段结果
 
-区段作业的结果可通过以下两种方式之一进行访问： 您可以访问单个用户档案或将整个受众导出到数据集。
+区段作业的结果可通过以下两种方式之一进行访问：您可以访问单个用户档案或将整个受众导出到数据集。
 
 以下各节将更详细地介绍这些选项。
 
