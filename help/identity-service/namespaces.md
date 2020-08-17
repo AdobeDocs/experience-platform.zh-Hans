@@ -1,28 +1,29 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;namespace;Namespace;Namespaces;namespaces;identity namespace;Identity namespace;identity;Identity;Identity service;identity service
 solution: Experience Platform
 title: Adobe Experience Platform Identity Service
 topic: overview
+description: '身份命名空间是 Identity Service 的组件，充当与身份相关的上下文指示器。例如，它们将“name<span>@email.com”的值区分为电子邮件地址或“443522”作为数字CRM ID。 '
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '721'
-ht-degree: 1%
+source-wordcount: '761'
+ht-degree: 4%
 
 ---
 
 
 # 身份命名空间概述
 
-身份命名空间是身份 [!DNL Identity Service](./home.md) 相关上下文的一个组成部分。 例如，它们将“name<span>@email.com”的值区分为电子邮件地址或“443522”作为数字CRM ID。
+Identity namespaces are a component of [!DNL Identity Service](./home.md) that serve as indicators of the context to which an identity relates. 例如，它们将“name<span>@email.com”的值区分为电子邮件地址或“443522”作为数字CRM ID。
 
 ## 入门指南
 
-使用身份命名空间需要了解涉及的各种Adobe Experience Platform服务。 在开始与命名空间合作之前，请查看以下服务的相关文档：
+与身份命名空间合作需要了解所涉的Adobe Experience Platform各项服务。 在开始与命名空间合作之前，请查看以下服务的相关文档：
 
-- [!DNL Real-time Customer Profile](../profile/home.md): 根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
-- [!DNL Identity Service](./home.md): 通过跨设备和系统桥接身份，更好地视图个别客户及其行为。
-- [!DNL Privacy Service](../privacy-service/home.md): 身份命名空间用于遵守一般数据保护规定(GDPR)，在该规定中，GDPR请求可以与命名空间相关。
+- [!DNL Real-time Customer Profile](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+- [!DNL Identity Service](./home.md):通过跨设备和系统桥接身份，更好地视图个别客户及其行为。
+- [!DNL Privacy Service](../privacy-service/home.md):身份命名空间用于遵守一般数据保护规定(GDPR)，在该规定中，GDPR请求可以与命名空间相关。
 
 ## 了解身份命名空间
 
@@ -41,7 +42,7 @@ ht-degree: 1%
 | 身份类型 | 描述 |
 | --- | --- |
 | Cookie | 这些身份对于扩展是至关重要的，并且构成了身份图的大部分。 然而，从本质上讲，它们会迅速衰退，并随着时间的推移而失去价值。 删除Cookie是在身份图中特别处理的。 |
-| 跨设备 | 这表示应 [!DNL Identity Service] 将其视为强身份识别符，因此应永久保留。 例如，登录ID、CRM ID、忠诚度ID等。 |
+| 跨设备 | 这表明应 [!DNL Identity Service] 将此视为强人物标识符，因此应永久保留它。 例如，登录ID、CRM ID、忠诚度ID等。 |
 | 设备 | 包括IDFA、GAID和其他IOT ID。 这些可以由家庭中的人分享。 |
 | 电子邮件 | 此类型的身份包括个人身份信息(PII)。 这是一个灵敏 [!DNL Identity Service] 地处理该值的指示。 |
 | 移动设备 | 此类型的身份包括PII。 这是一个灵敏 [!DNL Identity Service] 地处理该值的指示。 |
@@ -50,7 +51,7 @@ ht-degree: 1%
 
 ### 标准命名空间
 
-Adobe Experience Platform提供了可供所有组织使用的多个身份命名空间。 这些命名空间称为标准，可通过API [!DNL Identity Service] 或通过UI [!DNL Platform] 查看。
+Adobe Experience Platform为所有组织提供多种身份命名空间。 这些命名空间称为标准，可通过API [!DNL Identity Service] 或通过UI [!DNL Platform] 查看。
 
 要在UI中视图标准命名空间 **[!UICONTROL ，请单击左边栏中的“标]** 识 *[!UICONTROL ”，然后单击“浏览”]* 选项卡。 您的组织可访问的所有身份命名空间都将显示，但“标[!UICONTROL 准]”为“所有者”的命名空间是Adobe提供的标准。
 
