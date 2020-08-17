@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
+keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;unified profile;Unified Profile;unified;Profile;rtcp;enable profile;Enable profile
 solution: Adobe Experience Platform
 title: 实时客户用户档案用户指南
 topic: guide
+description: 实时客户用户档案可以为您的每位客户创建整体视图，将来自多个渠道（包括在线、离线、CRM和第三方数据）的数据相结合。 此文档可作为与Adobe Experience Platform用户界面中实时用户档案交互的指南。
 translation-type: tm+mt
-source-git-commit: 5c2429f10dfed8cc927914572c690a0536ddae99
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1147'
+source-wordcount: '1191'
 ht-degree: 0%
 
 ---
@@ -22,9 +23,9 @@ ht-degree: 0%
 
 本用户指南需要了解与管理相关 [!DNL Experience Platform] 的各种服务 [!DNL Real-time Customer Profiles]。 在阅读本用户指南之前，请查阅以下服务的文档：
 
-* [!DNL Real-time Customer Profile](../home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [!DNL Identity Service](../../identity-service/home.md): 当 [!DNL Real-time Customer Profile] 不同数据源被引入时，通过连接它们的身份实现 [!DNL Platform]。
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [!DNL Real-time Customer Profile](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [!DNL Identity Service](../../identity-service/home.md):当 [!DNL Real-time Customer Profile] 不同数据源被引入时，通过连接它们的身份实现 [!DNL Platform]。
+* [!DNL Experience Data Model (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 ## 概述
 
