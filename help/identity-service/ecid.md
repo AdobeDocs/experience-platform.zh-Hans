@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;ECID;ecid
 solution: Experience Platform
 title: Adobe Experience PlatformECID
 topic: overview
+description: Experience Cloud标识符(ECID)是客户端模块，提供对身份管理的访问，提供三个主要功能。
 translation-type: tm+mt
-source-git-commit: 6ffdcc2143914e2ab41843a52dc92344ad51bcfb
+source-git-commit: 4c3a947051c11860ab4f0f53b48d8f4bda8dc195
 workflow-type: tm+mt
-source-wordcount: '162'
-ht-degree: 9%
+source-wordcount: '181'
+ht-degree: 8%
 
 ---
 
@@ -20,7 +21,7 @@ ht-degree: 9%
 - 提供与合作伙伴的同步
 - 以两对方式提供链接以与脱机或其他ID连接到图形
 
-识别在线用户需要使用ECID对您的站点或移动应用程序进行指示，ECID提供通用的永久ID，可以在Adobe Experience Platform中在所有解决方案中识别您的访客。
+识别您的在线用户需要使用ECID对您的网站或移动应用程序进行入门，ECID提供一个通用的永久ID，用于在Adobe Experience Platform的所有解决方案中识别您的访客。
 
 如果您正在处理网站实施，请在此处浏览 [资源](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)。
 
