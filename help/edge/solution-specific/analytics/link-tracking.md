@@ -4,7 +4,7 @@ seo-title: 使用Adobe Experience PlatformWeb SDK跟踪到Adobe Analytics的链�
 description: 了解如何使用Experience PlatformWeb SDK将链接数据发送到Adobe Analytics
 seo-description: 了解如何使用Experience PlatformWeb SDK将链接数据发送到Adobe Analytics
 translation-type: tm+mt
-source-git-commit: ab73e4d793cf39c29ddca385487bf027002db883
+source-git-commit: b50082405cd0392ff827a83ad82091fbcd370b21
 workflow-type: tm+mt
 source-wordcount: '236'
 ht-degree: 0%
@@ -33,7 +33,7 @@ alloy("sendEvent", {
 });
 ```
 
-虽然分析技术上记录了页面视图，即使未设置此变量，但最好在您希望记录要在数据中明确显示的页面视图并防止将来实施时设置此变量。
+尽管分析从技术上记录页面视图，即使未设置此变量，但最好在您希望记录要在数据中明确显示的页面视图并防止将来实施时设置此变量。
 
 ## 跟踪链接
 
