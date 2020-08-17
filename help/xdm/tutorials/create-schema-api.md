@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;schema;Schema;create schema;schema api;enum;primary identity;primary idenity;enum datatype;schema design
 solution: Experience Platform
 title: 使用模式注册表API创建模式
 topic: tutorials
+description: 本教程使用模式注册表API指导您完成使用标准类构建模式的步骤。
 translation-type: tm+mt
-source-git-commit: b021b6813af18e29f544dc55541f23dd7dd57d47
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '2322'
+source-wordcount: '2343'
 ht-degree: 1%
 
 ---
@@ -14,17 +15,17 @@ ht-degree: 1%
 
 # 使用API创建模式 [!DNL Schema Registry]
 
-用 [!DNL Schema Registry] 于访问Adobe Experience Platform [!DNL Schema Library] 中的。 它包 [!DNL Schema Library] 含由Adobe、合作伙伴和您所使用的 [!DNL Experience Platform] 应用程序供应商为您提供的资源。 注册表提供用户界面和RESTful API，可从中访问所有可用的库资源。
+它 [!DNL Schema Registry] 用来进入Adobe Experience Platform [!DNL Schema Library] 的内部。 它包 [!DNL Schema Library] 含由Adobe、合作伙伴和您所使用的 [!DNL Experience Platform] 应用程序供应商为您提供的资源。 注册表提供用户界面和RESTful API，可从中访问所有可用的库资源。
 
 本教程使 [!DNL Schema Registry] 用API指导您逐步使用标准类构建模式。 如果您希望在中使用用户界 [!DNL Experience Platform]面， [](create-schema-ui.md) 模式编辑器教程将提供在模式编辑器中执行类似操作的分步说明。
 
 ## 入门指南
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-* [!DNL Experience Data Model (XDM) System](../home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-   * [模式合成基础](../schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
-* [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [!DNL Experience Data Model (XDM) System](../home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+   * [模式合成基础](../schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
+* [!DNL Real-time Customer Profile](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 * [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 在开始本教程之前，请查 [看开发人员指南](../api/getting-started.md) ，了解成功调用API所需了解的重要 [!DNL Schema Registry] 信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
@@ -292,7 +293,7 @@ curl -X PATCH \
 
 该响应显示数组中新添加的 `meta:extends` 混音，并 `$ref` 在属性中包含混 `allOf` 音。
 
-Loyalty Members模式现在应包含 `$ref` 数组中的三 `allOf` 个值： “用户档案”、“用户档案-个人——详细信息”和“用户档案-个人——详细信息”，如下所示。
+Loyalty Members模式现在应包含 `$ref` 数组中的三 `allOf` 个值：“用户档案”、“用户档案-个人——详细信息”和“用户档案-个人——详细信息”，如下所示。
 
 ```JSON
 {
@@ -356,7 +357,7 @@ POST /tenant/mixins
 
 **请求**
 
-此请求创建一个新的混音，该混音具有一个“loyalty”对象，其中包含四个特定于忠诚度的项目字段： “loyaltyId”、“loyaltyLevel”、“loyaltyPoints”和“memberSince”。
+此请求创建一个新的混音，该混音具有一个“loyalty”对象，其中包含四个特定于忠诚度的项目字段：“loyaltyId”、“loyaltyLevel”、“loyaltyPoints”和“memberSince”。
 
 ```SHELL
 curl -X POST\
@@ -956,7 +957,7 @@ curl -X PATCH \
 
 模式用于将数据引入 [!DNL Experience Platform]。 此视图最终可跨多个服务使用，以创建单一、统一的个人数据。 为帮助完成此过程，关键字段可标记为“身份”，在数据获取时，这些字段中的数据将插入到该个人的“身份图”中。 然后，图形数据可以被和其 [!DNL Real-time Customer Profile](../../profile/home.md) 他服务访 [!DNL Experience Platform] 问，以提供每个个别客户的拼接视图。
 
-通常标为“身份”的字段包括： 电子邮件地址、电 [!DNL Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)话号码、CRM ID或其他唯一ID字段。
+通常标为“身份”的字段包括：电子邮件地址、电 [!DNL Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)话号码、CRM ID或其他唯一ID字段。
 
 考虑您的组织特定的所有唯一标识符，因为它们可能也是良好的标识字段。
 
@@ -1169,7 +1170,7 @@ curl -X GET \
 
 ## 后续步骤
 
-通过遵循本教程，您已成功地使用您定义的标准混音和混音合成模式。 您现在可以使用此模式创建数据集并将记录数据引入Adobe Experience Platform。
+通过遵循本教程，您已成功地使用您定义的标准混音和混音合成模式。 您现在可以使用此模式创建数据集并将记录数据收录到Adobe Experience Platform。
 
 在本教程中创建的完整“忠诚会员”模式，可在以下附录中找到。 当您查看模式时，您可以了解混音对总体结构的贡献以及哪些字段可用于数据获取。
 
@@ -1183,7 +1184,7 @@ curl -X GET \
 
 在本教程中，将编写一个模式来描述零售忠诚度项目的成员。
 
-模式实现类 [!DNL XDM Individual Profile] 并组合多个混合； 使用标准“人员详细信息”和“个人详细信息”混音，以及通过教程中定义的“忠诚度详细信息”混音导入有关忠诚度会员的信息。
+模式实现类 [!DNL XDM Individual Profile] 并组合多个混合；使用标准“人员详细信息”和“个人详细信息”混音，以及通过教程中定义的“忠诚度详细信息”混音导入有关忠诚度会员的信息。
 
 以下显示了JSON格式的完成的“忠诚会员”模式:
 
