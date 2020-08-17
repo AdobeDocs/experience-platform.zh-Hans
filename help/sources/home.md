@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;source connectors;source connector;sources;data sources;data source;data source connection
 solution: Experience Platform
 title: Adobe Experience Platform源连接器概述
 topic: overview
+description: Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 translation-type: tm+mt
-source-git-commit: 8e39cc206efa3fc314ae689845c88f0923ac1743
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '801'
+source-wordcount: '847'
 ht-degree: 0%
 
 ---
