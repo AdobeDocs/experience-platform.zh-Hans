@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;segment;Segment;segment builder;Segment builder
 solution: Experience Platform
 title: 分段服务区段生成器用户指南
 topic: ui guide
+description: '区段生成器提供丰富的工作区，允许您与用户档案数据元素交互。 工作区提供用于构建和编辑规则的直观控件，如用于表示数据属性的拖放拼贴。 '
 translation-type: tm+mt
-source-git-commit: ab43c677ab45c7aa047a50049c0dd8613b003403
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '1689'
+source-wordcount: '1723'
 ht-degree: 0%
 
 ---
@@ -68,7 +69,7 @@ ht-degree: 0%
 
 区段定义是用于描述目标受众的关键特征或行为的规则集合。 这些规则是使用位于中心的规则生成器画布创建的 [!DNL Segment Builder]。
 
-要向区段定义添加新规则，请从“字段”选项卡中拖 **[!UICONTROL 动拼贴]** ，并将其放到规则构建器画布上。 然后，将根据要添加的数据类型向您显示上下文特定选项。 可用数据类型包括： 字符串、日期 [!DNL ExperienceEvents]、 [!UICONTROL 事件类型]和 [!UICONTROL 受众]。
+要向区段定义添加新规则，请从“字段”选项卡中拖 **[!UICONTROL 动拼贴]** ，并将其放到规则构建器画布上。 然后，将根据要添加的数据类型向您显示上下文特定选项。 可用数据类型包括：字符串、日期 [!DNL ExperienceEvents]、 [!UICONTROL 事件类型]和 [!UICONTROL 受众]。
 
 ![](../images/ui/segment-builder/rule-builder-canvas.png)
 
@@ -140,7 +141,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->受众估计是使用当天样本数据的样本大小生成的。 如果您的用户档案存储中少于100万个实体，则使用完整的数据集； 100万至2000万个单位使用100万个单位； 超过2000万个单位，占全部单位的5%。 有关生成区段估计的更多信息，请参 [阅区段创建教程](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 的估计生成部分。
+>受众估计是使用当天样本数据的样本大小生成的。 如果您的用户档案存储中少于100万个实体，则使用完整的数据集；100万至2000万个单位使用100万个单位；超过2000万个单位，占全部单位的5%。 有关生成区段估计的更多信息，请参 [阅区段创建教程](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 的估计生成部分。
 
 ## 后续步骤和其他资源 {#next-steps}
 
