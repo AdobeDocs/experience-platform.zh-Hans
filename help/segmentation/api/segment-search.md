@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;segmentation;segmentation service;troubleshooting;API;seg;
+keywords: Experience Platform;segmentation;segmentation service;troubleshooting;API;seg;segment;Segment
 solution: Adobe Experience Platform
 title: 段搜索端点
 topic: guide
+description: 区段搜索用于搜索包含在各种数据源中的字段，并近乎实时地返回它们。 本指南提供相关信息，帮助您更好地了解细分搜索，并包含使用API执行基本操作的示例API调用。
 translation-type: tm+mt
-source-git-commit: 995fadef9abacf22d0561e0590dfbe172adf0a43
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '1138'
+source-wordcount: '1179'
 ht-degree: 2%
 
 ---
@@ -24,7 +25,7 @@ ht-degree: 2%
 
 除了入门部分中概述的所需标题外，对“段搜索”端点的所有请求都需要以下附加标题：
 
-- x-ups-search-version: “1.0”
+- x-ups-search-version:“1.0”
 
 ### 跨多个命名空间搜索
 
@@ -254,7 +255,7 @@ curl -X GET \
 | FOO和栏 | 布尔搜索。 如果在任何可搜 **索字段** 中都找到“foo”和“bar”两个词，则返回结果。 |
 | FOO或栏 | 布尔搜索。 如果在任何可搜 **索字段** 中都找到单词“foo”或单词“bar”，则返回结果。 |
 | FOO NOT栏 | 布尔搜索。 如果找到单词“foo”，但在任何可搜索字段中都找不到单词“bar”，则返回结果。 |
-| 名称： FOO和栏 | 布尔搜索。 如果在“名 **称** ”字段中同时找到“foo”和“bar”，则返回结果。 |
+| 名称：FOO和栏 | 布尔搜索。 如果在“名 **称** ”字段中同时找到“foo”和“bar”，则返回结果。 |
 | run* | 通配符搜索。 使用星号(*)匹配0个或更多字符，这意味着如果任何可搜索字段的内容包含带有“run”开始的单词，则返回结果。 例如，如果出现“runs”、“running”、“runner”或“runt”等词，则返回结果。 |
 | 小卡？ | 通配符搜索。 使用问号(?) 只匹配一个字符，这意味着如果任何可搜索字段的内容都带有“cam”和附加字母开始，则返回结果。 例如，如果出现“camp”或“cams”字样，则返回结果；如果出现“camera”或“campfire”字样，则不返回结果。 |
 | “蓝伞” | 词组搜索。 如果任何可搜索字段的内容包含完整短语“blue bulle”，则返回结果。 |
