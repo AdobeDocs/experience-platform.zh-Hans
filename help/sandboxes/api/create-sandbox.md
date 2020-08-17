@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Sandbox;sandbox
 solution: Experience Platform
 title: 创建沙箱
 topic: developer guide
+description: 可以通过向“/沙箱”端点发出POST请求来创建新沙箱。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '151'
 ht-degree: 2%
 
 ---
