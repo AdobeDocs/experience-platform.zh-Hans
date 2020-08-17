@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;XDM;XDM system;XDM individual profile;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience event;Mixins;mixins;mixin;Mixin;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM Experienceevenet
 solution: Experience Platform
 title: 体验数据模型(XDM)系统
 topic: overview
+description: '标准化和互操作性是Adobe Experience Platform背后的关键概念。 体验Adobe模型(XDM)由客户驱动，旨在实现客户体验数据标准化并为客户体验管理定义模式。 '
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1606'
-ht-degree: 0%
+source-wordcount: '1638'
+ht-degree: 2%
 
 ---
 
@@ -24,15 +25,15 @@ XDM是一个基本框架，它允许Adobe Experience Cloud在 [!DNL Experience P
 
 ## XDM模式
 
-[!DNL Experience Platform] 使用模式以一致、可重用的方式描述数据结构。 通过跨系统一致地定义数据，更容易保留含义并从数据中获得价值。
+[!DNL Experience Platform] 会使用架构，以便以可重用的一致方式描述数据结构。通过在整个系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。
 
-在将数据引入 [!DNL Platform]之前，必须构建模式以描述数据结构，并对每个字段中可以包含的数据类型提供约束。 模式由基类和零个或多个混音组成。
+在将数据引入 [!DNL Platform]之前，必须构成模式来描述数据的结构，并对每个字段中可以包含的数据类型提供约束。 模式由基类和零个或多个混音组成。
 
 有关模式合成模型的更多信息（包括设计原则和最佳实践），请参 [阅模式合成基础知识](schema/composition.md)。
 
 ### [!DNL Schema Registry] 和 [!DNL Schema Library]
 
-提供 **[!DNL Schema Registry]** 了一个用户界面和RESTful API，您可以从中视图和管理Adobe Experience Platform中所有与模式相关的资源 **[!DNL Schema Library]**。 它包 [!DNL Schema Library] 含由Adobe提供给您的行业标准资源，以及来自您使用应用程序的合 [!DNL Experience Platform] 作伙伴和供应商的资源。 模式注册表UI和API还可用于创建和管理您的组织特有的新模式和资源。
+它提 **[!DNL Schema Registry]** 供了一个用户界面和RESTful API，您可以从中视图和管理Adobe Experience Platform的所有与模式相关的资源 **[!DNL Schema Library]**。 它包 [!DNL Schema Library] 含由Adobe提供给您的行业标准资源，以及来自您使用应用程序的合 [!DNL Experience Platform] 作伙伴和供应商的资源。 模式注册表UI和API还可用于创建和管理您的组织特有的新模式和资源。
 
 有关中提供的主要操作的全面指南， [!DNL Schema Registry]请参阅模式注 [册表开发人员指南](api/getting-started.md)。
 
@@ -40,8 +41,8 @@ XDM是一个基本框架，它允许Adobe Experience Cloud在 [!DNL Experience P
 
 计划用于的数据 [!DNL Experience Platform] 分为两种行为类型：
 
-* **记录数据**: 提供有关主题属性的信息。 主题可以是组织或个人。
-* **时间序列数据**: 提供记录主体直接或间接采取操作时系统的快照。
+* **记录数据**:提供有关主题属性的信息。 主题可以是组织或个人。
+* **时间序列数据**:提供记录主体直接或间接采取操作时系统的快照。
 
 所有XDM模式都描述可以分类为记录或时间序列的数据。 模式的行为由模式的类定 **义**，该类在模式首次创建时分配给。 XDM类描述模式必须包含的最小属性数，以表示特定数据行为。
 
@@ -77,7 +78,7 @@ XDM ExperienceEvent是一个基于时间序列的类，用于在发生事件(或
 
 要开始将数据引入 [!DNL Experience Platform]数据中，将使用创建数据集 [!DNL Catalog Service]。 数据集引用描述要摄取的数据结构的XDM模式。 如果创建的数据集没有模式, [!DNL Experience Platform] 将通过检查所摄取数据字段的类型和内容来导出“观察到的模式”。 然后，在模式和观 [!DNL Catalog] 察模式中跟踪数据集，并 [!DNL Data Lake] 将其存储在数据集所基于的中。
 
-有关的详细信 [!DNL Catalog]息，请参阅 [目录服务概述](../catalog/home.md)。 有关Adobe Experience Platform数据摄取的详细信息，请参阅数 [据摄取概述](../ingestion/home.md)。
+有关的详细信 [!DNL Catalog]息，请参阅 [目录服务概述](../catalog/home.md)。 有关Adobe Experience Platform数据摄取的详细信息，请参 [阅数据摄取概述](../ingestion/home.md)。
 
 ### [!DNL Query Service]
 
@@ -91,7 +92,7 @@ Adobe Experience Platform [!DNL Query Service] 允许您使用标准SQL查询数
 
 实时客户用户档案为有针对性的个性化体验管理提供了集中化的消费者用户档案。 每个用户档案都包含跨所有系统聚集的数据，以及涉及您所使用的任何系统中发生的个人的事件的可操作时间戳帐户 [!DNL Experience Platform]。
 
-[!DNL Real-time Customer Profile] 根据模式或类消耗格 [!DNL XDM Individual Profile] 式的 [!DNL XDM ExperienceEvent] 数据，并基于该数据响应查询。 [!DNL Profile] 不支持使用基于其他类的模式。
+[!DNL Real-time Customer Profile] 根据模式或类消耗格 [!DNL XDM Individual Profile] 式的 [!DNL XDM ExperienceEvent] 数据，并根据该数据响应查询。 [!DNL Profile] 不支持使用基于其他类的模式。
 
 [!DNL Profile] 维护每个客户用户档案的一个实例，将数据合并在一起，为个人形成“单一的真相来源”。 此统一数据使用称为“合并视图”的数据表示。 合并视图将实现同一类的所有模式的字段聚合为单个模式。  使用UI或API编写模式时，您可以启用模式以与其一起使用，并 [!DNL Real-time Customer Profile] 将其标记以包含在合并视图中。 加标签的模式随后将参与要输入的模式定义 [!DNL Profile]。
 
@@ -103,7 +104,7 @@ Adobe Experience Platform [!DNL Query Service] 允许您使用标准SQL查询数
 
 ### [!DNL Data Science Workspace]
 
-Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人工智能从存储在其中的数据获得 [!DNL Experience Platform]洞察。 [!DNL Data Science Workspace] 使数据科学家能够根据XDM个人 [!DNL Profile] 和客 [!DNL XDM ExperienceEvent] 户及其活动的数据来构建食谱，从而促进购买倾向和个人可能喜欢和使用的推荐优惠等预测。
+Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人工智能从存储在其中的数据获得洞 [!DNL Experience Platform]察。 [!DNL Data Science Workspace] 使数据科学家能够根据XDM个人 [!DNL Profile] 和客 [!DNL XDM ExperienceEvent] 户及其活动的数据来构建食谱，从而促进购买倾向和个人可能喜欢和使用的推荐优惠等预测。
 
 借助 [!DNL Data Science Workspace]数据科学家可以轻松创建由机器学习提供支持的智能服务API。 这些服务与包括Adobe Target和Adobe Analytics Cloud在内的其他Adobe解决方案配合使用，帮助您实现个性化、有针对性的数字体验自动化。
 
