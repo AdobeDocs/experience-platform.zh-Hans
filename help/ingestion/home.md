@@ -1,20 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data ingestion;data location;Data Location;Data management;data management;Lineage;lineage;batch;Batch;ingested data
 solution: Experience Platform
 title: Adobe Experience Platform数据摄取概述
 topic: overview
+description: 本文档介绍了将数据引入平台的三种主要方式，其中包含指向各自概述文档的链接，以获得更多详细信息。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '417'
-ht-degree: 10%
+source-wordcount: '442'
+ht-degree: 9%
 
 ---
 
 
 # 数据摄取概述
 
-Adobe Experience Platform将来自多个来源的数据整合在一起，以帮助营销人员更好地了解其客户的行为。 Adobe Experience Platform数据摄取表示从这些源 [!DNL Platform] 中摄取数据的多种方法，以及数据在数据湖中如何被保留以供下游服务 [!DNL Platform] 使用。
+Adobe Experience Platform将来自多个来源的数据整合在一起，以帮助营销人员更好地了解其客户的行为。 Adobe Experience Platform数据摄取表示从这些 [!DNL Platform] 来源收集数据的多种方法，以及数据在数据湖中保留以供下游服务使 [!DNL Platform] 用。
 
 本文档介绍了三种主要的数据摄取方式， [!DNL Platform]其中包含指向各自概述文档的链接，以获取更多详细信息。
 
@@ -42,7 +43,7 @@ Adobe Experience Platform将来自多个来源的数据整合在一起，以帮�
 
 ## 后续步骤和其他资源
 
-本文档简要介绍了中的不同方 [!DNL Data Ingestion] 面 [!DNL Experience Platform]。 请继续阅读每种摄取方法的概述文档，以熟悉其不同功能、使用案例和最佳实践。 您还可以通过观看下面的摄取概述视频来提供学习内容。 有关如何跟踪所 [!DNL Experience Platform] 摄取记录的元数据的信息，请参 [阅目录服务概述](../catalog/home.md)。
+本文档简要介绍了中的不同方 [!DNL Data Ingestion] 面 [!DNL Experience Platform]。 请继续阅读每种摄取方法的概述文档，以熟悉其不同功能、使用案例和最佳实践。 您还可以通过观看下面的摄取概述视频来补充您的学习。 有关如何跟踪所 [!DNL Experience Platform] 摄取记录的元数据的信息，请参 [阅目录服务概述](../catalog/home.md)。
 
 >[!WARNING]
 >
