@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;dule;DULE
 solution: Experience Platform
 title: 数据使用策略概述
 topic: policies
+description: 为了使数据使用标签能够有效支持数据合规性，必须实施数据使用策略。 数据使用策略是描述您允许或限制对Experience Platform内数据执行的营销操作种类的规则。
 translation-type: tm+mt
-source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
+source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
 workflow-type: tm+mt
-source-wordcount: '964'
+source-wordcount: '1007'
 ht-degree: 0%
 
 ---
