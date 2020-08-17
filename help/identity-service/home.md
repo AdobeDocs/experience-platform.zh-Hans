@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;identity;Identity;XDM graphs;identity service;Identity service
 solution: Experience Platform
 title: Adobe Experience Platform Identity Service
 topic: overview
+description: Adobe Experience Platform身份服务通过跨设备和系统连接身份帮助您更好地视图客户及其行为，使您能够实时提供有影响力的个性化数字体验。
 translation-type: tm+mt
-source-git-commit: d02f12202e51b00453f719604052a54f6fcfe4ab
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1672'
+source-wordcount: '1707'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Identity Service]概述
 
-提供相关的数字体验需要全面了解客户。 当客户数据在不同的系统中分散，导致每个客户似乎具有多个“身份”时，这就变得更加困难。 Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统连接身份帮助您更好地视图客户及其行为，使您能够实时提供有影响力的个性化数字体验。
+提供相关的数字体验需要全面了解客户。 当客户数据在不同的系统中分散，导致每个客户似乎具有多个“身份”时，这就变得更加困难。 Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统连接身份，帮助您更好地视图客户及其行为，从而实时提供有影响力的个性化数字体验。
 
 ## 理解 [!DNL Identity Service]
 
@@ -24,7 +25,7 @@ ht-degree: 0%
 
 Mary在您的电子商务网站上有一个帐户，她过去在那里完成了几个订单。 她通常使用个人笔记本电脑购物，每次都登录。 然而，在一次探访中，她用平板电脑购买凉鞋，但没有下订单，也不登录。
 
-此时，玛丽的活动显示为两个单独的用户档案: 她的eCommerce登录名和平板电脑设备（可能由设备ID识别）。
+此时，玛丽的活动显示为两个单独的用户档案:她的eCommerce登录名和平板电脑设备（可能由设备ID标识）。
 
 玛丽稍后会恢复其平板电脑会话，并在订阅您的新闻稿时提供电子邮件地址。 这样做后，流摄取会在她的用户档案中添加新的身份作为记录数据。 因此，现在 [!DNL Identity Service] Mary的平板电脑设备活动与她的电子商务帐户历史相关。
 
@@ -53,7 +54,7 @@ PII（如电子邮件地址和电话号码）用于直接识别客户。 因此�
 
 ### 身份数据
 
-如果你问一个人“你的身份证是什么？” 如果没有更多的背景，他们将很难提供有用的答案。 根据同一逻辑，表示标识值的字符串值（无论是系统生成的ID还是电子邮件地址）只有在与提供字符串值上下文的限定符一起提供时才完成： 身份命名空间。
+如果你问一个人“你的身份证是什么？” 如果没有更多的背景，他们将很难提供有用的答案。 根据同一逻辑，表示标识值的字符串值（无论是系统生成的ID还是电子邮件地址）只有在与提供字符串值上下文的限定符一起提供时才完成：身份命名空间。
 
 ## 身份命名空间和身份图
 
@@ -61,7 +62,7 @@ PII（如电子邮件地址和电话号码）用于直接识别客户。 因此�
 
 [!DNL Experience Platform] 通过两个概念解决此难题： [身份命名空间](#identity-namespaces) 和 [身份图](#identity-graphs)。
 
-以下视频旨在支持您对身份和身份图的理解。 以下视频介绍Identity Collection、Identity Graphs和API的三种功能。 同时介绍了确定性和概率算法在构建私有身份图时的应用，讨论了私有身份图、Adobe Experience Platform身份服务合作图和第三方图的作用。
+以下视频旨在支持您对身份和身份图的理解。 以下视频介绍Identity Collection、Identity Graphs和API的三种功能。 同时介绍了确定性和概率算法如何构造私有身份图，讨论了私有身份图、Adobe Experience Platform身份服务合作图和第三方图的作用。
 
 >[!IMPORTANT]
 >
@@ -88,7 +89,7 @@ PII（如电子邮件地址和电话号码）用于直接识别客户。 因此�
 
 ## 向提供身份数据 [!DNL Identity Service]
 
-本节介绍在为每位客户构建身份图之前，如何 [!DNL Identity Service] 处理提供给Adobe Experience Platform的数据。
+本节介绍在为每位客户建立身份图之前，如 [!DNL Identity Service] 何处理提供给Adobe Experience Platform的数据。
 
 ### 确定身份字段
 
@@ -131,7 +132,7 @@ PII（如电子邮件地址和电话号码）用于直接识别客户。 因此�
 
 [!DNL Identity Service] 通过批量摄取或流摄 [!DNL Experience Platform] 取，消 [耗发送到](../ingestion/batch-ingestion/overview.md) 的符合 [XDM的数据](../ingestion/streaming-ingestion/overview.md)。
 
-以下视频旨在支持您对Identity Service的理解。 此视频向您展示如何将数据字段标记为身份、摄取身份数据，然后验证数据是否已写入Adobe Experience Platform身份服务专用图。
+以下视频旨在支持您对Identity Service的理解。 此视频向您展示如何将数据字段标记为身份，摄取身份数据，然后验证数据是否已写入Adobe Experience Platform身份服务专用图。
 
 >[!WARNING]
 >
@@ -141,7 +142,7 @@ PII（如电子邮件地址和电话号码）用于直接识别客户。 因此�
 
 ## 数据管理
 
-Adobe Experience Platform是以隐私为重而构建的，并包含一个数据治理框架以保护客户PII数据。 “电子邮件”或“电话”命名空间下的身份数据默认是加密的，但为了确保在敏感数据被保留之前对其进行加密，数据使用标签可以在数据被摄取或到达时应用到数据 [!DNL Platform]。 有关详细信息，请阅读“数 [据管理”概述](../data-governance/home.md)。
+Adobe Experience Platform是以隐私为重而构建的，并包含一个数据治理框架以保护您的客户PII数据。 “电子邮件”或“电话”命名空间下的身份数据默认是加密的，但为了确保在敏感数据被保留之前对其进行加密，数据使用标签可以在数据被摄取或到达时应用到数据 [!DNL Platform]。 有关详细信息，请阅读“数 [据管理”概述](../data-governance/home.md)。
 
 ## 后续步骤
 
