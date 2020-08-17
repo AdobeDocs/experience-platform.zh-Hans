@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data location;Data Location;Data management;data management;Lineage;lineage;data type;data types;Data types;Data type
 solution: Experience Platform
 title: 数据集概述
 topic: datasets
+description: 此文档提供了Experience Platform中数据集的高级概述。
 translation-type: tm+mt
-source-git-commit: 1bf6b0948c47c7941fb8f9cf2edfac4d665b8189
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '712'
+source-wordcount: '723'
 ht-degree: 2%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 2%
 
 # 数据集概述
 
-成功引入Adobe Experience Platform的所有数据都会作为数据集中的 [!DNL Data Lake] 数据保留。 数据集是存储和管理构建，用于模式集合，通常是表，其中包含（列）和字段（行）。 数据集还包含描述其存储数据各个方面的元数据。
+成功引入Adobe Experience Platform的所有数据都作为数据集保留 [!DNL Data Lake] 在内。 数据集是存储和管理构建，用于模式集合，通常是表，其中包含（列）和字段（行）。 数据集还包含描述其存储数据各个方面的元数据。
 
 此文档提供了中数据集的高级概述 [!DNL Experience Platform]。
 
@@ -34,13 +35,13 @@ ht-degree: 2%
 
 ## 将数据引入数据集
 
-Adobe Experience Platform数据摄取表示从各种来源 [!DNL Platform] 摄取数据的多种方法。 无论采用何种摄取方法，所有成功摄取的数据都会转换为批处理文件。 批量是由一个或多个要作为单个单位摄取的文件组成的数据单位。然后，这些批处理文件会添加到专用数据集并在中保留 [!DNL Data Lake]。
+Adobe Experience Platform数据摄取表示从各种来源 [!DNL Platform] 收集数据的多种方法。 无论采用何种摄取方法，所有成功摄取的数据都会转换为批处理文件。 批量是由一个或多个要作为单个单位摄取的文件组成的数据单位。然后，这些批处理文件会添加到专用数据集并在中保留 [!DNL Data Lake]。
 
 有关更多 [信息，请参阅](../../ingestion/home.md) “数据摄取概述”。
 
 ## 将使用标签应用于数据集
 
-Adobe Experience Platform [!DNL Data Governance] 允许您管理客户数据，以确保符合适用于数据使用的法规、限制和政策。 使用数据使用标签和强制实施(DULE)作为 [!DNL Data Governance] 其核心框架，您可以应用使用标签来根据应用于该数据的使用策略对数据进行分类。
+Adobe Experience Platform [!DNL Data Governance] 允许您管理客户数据，以确保遵守适用于数据使用的法规、限制和政策。 使用数据使用标签和强制实施(DULE)作为 [!DNL Data Governance] 其核心框架，您可以应用使用标签来根据应用于该数据的使用策略对数据进行分类。
 
 数据使用标签可以应用于整个数据集或单个数据集字段。 在数据集级别添加的标签由该数据集中的所有字段继承。
 
@@ -55,13 +56,13 @@ Adobe Experience Platform [!DNL Data Governance] 允许您管理客户数据，�
 
 以下是使用数据集进行各种操作的下游服务列表。 请查阅每项服务的文档以了解更多信息。
 
-* [!DNL Data Access API](../../data-access/home.md): 允许您访问和下载存储在数据集中的文件的内容。
-* [Adobe Experience Platform身份服务](../../identity-service/home.md): 跨设备和系统建立身份桥梁，根据XDM模式定义的身份字段将数据集链接在一起。
-* [!DNL Real-time Customer Profile](../../profile/home.md): 利 [!DNL Identity Service] 用数据集实时创建详细的客户用户档案。 [!DNL Real-time Customer Profile] 从客户用户档案中 [!DNL Data Lake] 提取数据，并将其保留在自己的单独数据存储中。
-* [Adobe Experience Platform分段服务](../../segmentation/home.md): 允许您根据数据构建细分和生成 [!DNL Real-time Customer Profile] 受众。 然后，这些受众可以导出到其自己的数据集中 [!DNL Data Lake]。
-* [Adobe Experience Platform数据科学工作区](../../data-science-workspace/home.md): 使用机器学习和人工智能在大数据集中发掘洞察。
-* [Adobe Experience Platform查询服务](../../query-service/home.md): 允许您使用标准SQL查询数据，加 [!DNL Experience Platform]入查询中的任何数据集，并将结果捕获为新数据集，以便在报告、 [!DNL Data Lake] 或中使用 [!DNL Data Science Workspace][!DNL Real-time Customer Profile]。
-* [Adobe Experience Platform决策服务](../../decisioning-service/home.md): 利用 [!DNL Real-time Customer Profile] 根据从启用的数据集中提取的行为数据，从一组选项中确定客户最可能 [!DNL Profile] 做出的选择。
+* [!DNL Data Access API](../../data-access/home.md):允许您访问和下载存储在数据集中的文件的内容。
+* [Adobe Experience Platform身份服务](../../identity-service/home.md):跨设备和系统建立身份桥梁，根据XDM模式定义的身份字段将数据集链接在一起。
+* [!DNL Real-time Customer Profile](../../profile/home.md):利 [!DNL Identity Service] 用数据集实时创建详细的客户用户档案。 [!DNL Real-time Customer Profile] 从客户用户档案中 [!DNL Data Lake] 提取数据，并将其保留在自己的单独数据存储中。
+* [Adobe Experience Platform细分服务](../../segmentation/home.md):允许您根据数据构建细分和生成 [!DNL Real-time Customer Profile] 受众。 然后，这些受众可以导出到其自己的数据集中 [!DNL Data Lake]。
+* [Adobe Experience Platform数据科学工作区](../../data-science-workspace/home.md):使用机器学习和人工智能在大数据集中发掘洞察。
+* [Adobe Experience Platform查询服务](../../query-service/home.md):允许您使用标准SQL查询数据，加 [!DNL Experience Platform]入查询中的任何数据集，并将结果捕获为新数据集，以便在报告、 [!DNL Data Lake] 或中使用 [!DNL Data Science Workspace][!DNL Real-time Customer Profile]。
+* [Adobe Experience Platform决策服务](../../decisioning-service/home.md):利用 [!DNL Real-time Customer Profile] 根据从启用的数据集中提取的行为数据，从一组选项中确定客户最可能 [!DNL Profile] 做出的选择。
 
 ## 后续步骤
 
