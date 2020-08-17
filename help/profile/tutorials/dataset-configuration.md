@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
+keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;enable dataset
 solution: Adobe Experience Platform
 title: 使用API为用户档案和身份服务配置数据集
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
 source-wordcount: '1020'
 ht-degree: 1%
@@ -25,12 +25,12 @@ ht-degree: 1%
 
 ## 入门指南
 
-本教程需要对管理启用数据集时涉及的各种Adobe Experience Platform服务 [!DNL Profile]进行有效了解。 在开始本教程之前，请查阅以下相关服务的 [!DNL Platform] 文档：
+本教程需要对管理启用数据集时涉及的各种Adobe Experience Platform服 [!DNL Profile]务进行有效了解。 在开始本教程之前，请查阅以下相关服务的 [!DNL Platform] 文档：
 
-- [!DNL Real-time Customer Profile](../home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-- [!DNL Identity Service](../../identity-service/home.md): 通过将 [!DNL Real-time Customer Profile] 来自被引入的不同数据源的身份连接到其中，实现 [!DNL Platform]了。
-- [!DNL Catalog Service](../../catalog/home.md): 一个REST风格的API，它允许您创建数据集并为和配 [!DNL Real-time Customer Profile] 置它 [!DNL Identity Service]们。
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [!DNL Real-time Customer Profile](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [!DNL Identity Service](../../identity-service/home.md):通过将 [!DNL Real-time Customer Profile] 来自被引入的不同数据源的身份连接到其中，实现 [!DNL Platform]了。
+- [!DNL Catalog Service](../../catalog/home.md):一个REST风格的API，它允许您创建数据集并为和配 [!DNL Real-time Customer Profile] 置它 [!DNL Identity Service]们。
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 以下各节提供了成功调用平台API所需了解的其他信息。
 
@@ -42,13 +42,13 @@ ht-degree: 1%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作所在沙箱的名称。 有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
