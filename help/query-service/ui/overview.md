@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;Query service;query
 solution: Experience Platform
 title: Adobe Experience Platform查询服务UI指南
 topic: guide
+description: Adobe Experience Platform查询服务提供一个用户界面，可用于编写和执行查询、视图先前执行的查询以及访问由IMS组织内的用户保存的查询。
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '584'
+source-wordcount: '617'
 ht-degree: 2%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 2%
 
 # [!DNL Query Service] 指南
 
-Adobe Experience Platform提 [!DNL Query Service] 供一个用户界面，可用于写入和执行查询,视图先前执行的查询，以及访问由IMS组织内的用户保存的查询。 要在Adobe Experience Platform中访 [问UI][platform-ui]，请在 **[!UICONTROL 左侧导]** 航中选择查询。
+Adobe Experience Platform [!DNL Query Service] 提供一个用户界面，可用于编写和执行查询、视图先前执行的查询以及访问由IMS组织内的用户保存的查询。 要在Adobe Experience Platform内访 [问UI][platform-ui]，请在 **[!UICONTROL 左侧导]** 航中选择“查询”。
 
 ## [!DNL Query Editor]
 
