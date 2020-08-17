@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;Intelligent Services;popular topics
+keywords: Experience Platform;home;Intelligent Services;popular topics;intelligent service;Intelligent service
 solution: Experience Platform
 title: 准备要在Intelligent Services中使用的数据
 topic: Intelligent Services
+description: '为了使智能服务能够从您的营销事件数据中发掘洞察，必须以标准结构从语义上丰富和维护数据。 智能服务利用体验数据模型(XDM)模式来实现此目标。 具体而言，在智能服务中使用的所有数据集]必须符合Consumer ExperienceEvent(CEE)XDM模式。 '
 translation-type: tm+mt
-source-git-commit: 88e4a183422dd1bc625fd842e24c2604fb249c91
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '1924'
+source-wordcount: '1980'
 ht-degree: 0%
 
 ---
