@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;Data Science Workspace;popular topics
+keywords: Experience Platform;home;Data Science Workspace;popular topics;data science workspace;data science
 solution: Experience Platform
 title: 数据科学工作区概述
 topic: overview
+description: 本指南概述了与数据科学工作区相关的主要概念。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '2569'
+source-wordcount: '2584'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # 数据科学工作区概述
 
-Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人工智能从数据中释放洞察。 集成到Adobe Experience Platform中 [!DNL Data Science Workspace] ，帮助您跨Adobe解决方案使用内容和数据资产进行预测。
+Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人工智能从数据中释放洞察。 集成到Adobe Experience Platform，帮 [!DNL Data Science Workspace] 助您跨Adobe解决方案使用内容和数据资产进行预测。
 
 所有技能级别的数据科学家都将发现复杂、易用的工具，它们支持机器学习方法的快速开发、培训和调整——人工智能技术的所有优势，而不必复杂。
 
@@ -27,9 +28,9 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 如今的企业将挖掘大数据作为重中之重来进行预测和洞察，帮助他们个性化客户体验，为客户和业务提供更多价值。
 从数据到洞察同样重要，成本也很高。 它通常需要技能娴熟的数据科学家进行密集且耗时的数据研究，以开发支持智能服务的机器学习模型或方法。 过程漫长，技术复杂，而且很难找到熟练的数据科学家。
 
-通过 [!DNL Data Science Workspace]Adobe Experience Platform，您可以在整个企业中引入注重体验的人工智能，通过以下方式简化并加速数据到洞察到代码的实现：
+通过 [!DNL Data Science Workspace]Adobe Experience Platform，您可以在整个企业内引入注重体验的人工智能，通过以下方式简化并加速数据到洞察到代码的实现：
 - 机器学习框架和运行时
-- 集成访问存储在Adobe Experience Platform中的数据
+- 集成访问存储在Adobe Experience Platform的数据
 - 基于(XDM)的统 [!DNL Experience Data Model] 一模式
 - 机器学习／人工智能和管理大数据集所必不可少的计算能力
 - 预建的机器学习方法可加速向人工智能驱动体验的飞跃
@@ -46,7 +47,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [!DNL Data Science Workspace] | [!DNL Data Science Workspace] 使客 [!DNL Experience Platform] 户能够创建机器学习模型，利用跨Adobe和解决 [!DNL Experience Platform] 方案的数据，生成智能洞察和预测，从而打造令人愉悦的最终用户数字体验。 |
 | 人工智能 | 人工智能是计算机系统的理论和发展，能够执行通常需要人类智能的任务，如视觉感知、语音识别、决策和语言之间的翻译。 |
-| 机器学习 | 机器学习是一个研究领域，它使计算机能够学习，而无需明确编程。 |
+| 机器学习 | 机器学习是一个研究领域，它使计算机能够在不明确编程的情况下学习。 |
 | [!DNL Sensei] ML Framework | [!DNL Sensei] ML Framework是跨Adobe的统一机器学习框架，它利用相关数据 [!DNL Experience Platform] ，以更快、可扩展和可重用的方式支持数据科学家开发机器学习驱动的智能服务。 |
 | [!DNL Experience Data Model] | [!DNL Experience Data Model] (XDM)是由Adobe牵头的标准化工作，旨在为客户体验管 [!DNL Profile] 理定 [!DNL ExperienceEvent]义标准模式，如和。 |
 | [!DNL JupyterLab] | [!DNL JupyterLab] 是Project Jupyter的一个基于web的开放源代码界面，并紧密集成到其中 [!DNL Experience Platform]。 |
@@ -69,7 +70,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 数据是人工智能和机器学习的基石。
 
-[!DNL Data Science Workspace] 与Adobe Experience Platform（包括Data Lake、和）完 [!DNL Real-time Customer Profile]全集成 [!DNL Unified Edge]。 同时浏览以Adobe Experience Platform存储的所有组织数据，以及常见的大数据和深入学习库，如 [!DNL Spark] ML和 [!DNL TensorFlow]。 如果您找不到所需内容，请使用XDM标准化模式收集您自己的数据集。
+[!DNL Data Science Workspace] 与Adobe Experience Platform（包括数据湖）、和等完 [!DNL Real-time Customer Profile]全集成 [!DNL Unified Edge]。 同时浏览存储在Adobe Experience Platform的所有组织数据，以及常见大数据和深入学习库，如 [!DNL Spark] ML和 [!DNL TensorFlow]。 如果您找不到所需内容，请使用XDM标准化模式收集您自己的数据集。
 
 ### 预建的机器学习方法
 
@@ -85,9 +86,9 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 ### 数据探索
 
-寻找正确的数据并准备数据是构建有效配方最耗费劳动力的部分。 [!DNL Data Science Workspace] Adobe Experience Platform将帮助您更快地从数据获得洞察。
+寻找正确的数据并准备数据是构建有效配方最耗费劳动力的部分。 [!DNL Data Science Workspace] adobe experience platform将帮助您更快地从数据获得洞察。
 
-在Adobe Experience Platform方面，跨渠道数据集中存储在XDM标准模式中，因此数据更易于查找、理解和清理。 基于普通模式的单一数据存储可以为您节省大量数据探索和准备时间。
+在Adobe Experience Platform，跨渠道数据集中存储在XDM标准模式中，因此数据更易于查找、理解和清理。 基于普通模式的单一数据存储可以为您节省大量数据探索和准备时间。
 
 在您浏览时，将R、 [!DNL Python]或Scala与集成的托管 [!DNL Jupyter Notebook] 一起使用，以浏览上的数据目录 [!DNL Platform]。 使用这些语言之一，您还可以利用 [!DNL Spark] ML和TensorFlow。 从头开始开始，或使用为特定业务问题提供的笔记本模板之一。
 
@@ -99,7 +100,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 - 通过浏览预建的菜谱节省时间，该菜谱可满足您的业务需求，您可以按原样使用或配置以满足您的特定需求。
 - 从头开始创建菜谱，使用Jupyter Notebook中的创作运行时开发和注册菜谱。
-- 使用与之间可用的身份验证 [!DNL Data Science Workspace] 和集成，将外部Adobe Experience Platform创作的菜谱上传 [!DNL Git]到存储库中或从存储库导入菜谱 [!DNL Git] 代码 [!DNL Data Science Workspace]。
+- 使用和之间提供的身份验证 [!DNL Data Science Workspace] 和集成，将Adobe Experience Platform以外创作的菜谱上传 [!DNL Git]到存储库中或从存储库导入菜谱 [!DNL Git] 代码 [!DNL Data Science Workspace]。
 
 ### 实验
 
@@ -172,9 +173,9 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 [//]: # (Your first step is to check the recipe gallery to see if an existing recipe meets your needs, or comes close. An alternative is to import a recipe you created outside of Adobe Experience Platform. Starting with an existing recipe often streamlines the data exploration phase and makes it easier for a data scientist.)
 
 如果您从头开始或配置现有菜谱，您可以在组织的集中标准化数据目录中开始数据搜索，这大大简化了寻找工作。 你甚至可能发现组织中的另一位数据科学家已经识别出了一个类似的数据集，并选择对该数据集进行微调，而不是从头开始开始。
-Adobe Experience Platform中的所有数据都符合标准化的XDM模式，无需创建用于连接数据的复杂模型或从数据工程师那里获得帮助。
+Adobe Experience Platform的所有数据都符合标准化的XDM模式，无需创建复杂的模型来加入数据或从数据工程师那里获得帮助。
 
-如果您没有立即找到所需的数据，但它存在于Adobe Experience Platform之外，那么它是一个相对简单的任务来收集更多的数据集，这也将转变为标准化的XDM模式。\
+如果您不能立即找到所需数据，但它存在于Adobe Experience Platform以外，那么它是一个相对简单的任务，可以收集更多的数据集，这也将转变为标准化的XDM模式。\
 您可以使 [!DNL Jupyter Notebook] 用来简化数据预处理——可能从笔记本模板或您以前习惯购买的笔记本开始。
 
 ![](./images/home/notebook_templates.png)
