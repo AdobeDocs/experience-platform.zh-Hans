@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;decision events;decision event;Decision events
 solution: Experience Platform
 title: 体验决策域模型
 topic: overview
+description: 本节将说明决策服务的组件，并详细说明这些组件交互的方式。 概念及其关系构成决策问题的*域*。 无论您如何使用决策服务]，这些基本组件都会发挥作用。
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1367'
+source-wordcount: '1412'
 ht-degree: 0%
 
 ---
@@ -18,9 +19,9 @@ ht-degree: 0%
 
 ## 决策选项
 
-体验决 *策选项* ，是一种可向特定客户展示的潜在体验。 选项也称为选择或替代选项。 在为客户决定下一个最佳选项时， [!DNL Decisioning Service] 会考 ***虑<sub>有限</sub>***选项集***<sub>中</sub>*** 的选 **`D`**&#x200B;项d1至dN。
+体验决 *策选项* ，是一种可向特定客户展示的潜在体验。 选项也称为选择或替代选项。 在为客户决定下一个最佳选项时， [!DNL Decisioning Service] 会考 ***虑<sub>有限</sub>*** 选项集 ***<sub>中</sub>*** 的选 **`D`**&#x200B;项d1至dN。
 
-通过在一组可用选项中确定最佳选项来作出决策。 一种方法是从集D *中逐****<sub>步消除决策选</sub>***项di******，直到只剩下一个，然后从其余集中随机选择“入选方”。 另一种决策形式是根据剩余（合格）决策选项的预期结果对其进行排名。
+通过在一组可用选项中确定最佳选项来作出决策。 一种方法是从集D *中逐****<sub>步消除决策选</sub>*** 项di ****** ，直到只剩下一个，然后从其余集中随机选择“入选方”。 另一种决策形式是根据剩余（合格）决策选项的预期结果对其进行排名。
 
 ### 有限决策选项集
 
@@ -54,7 +55,7 @@ ht-degree: 0%
 
 决策活动定义要考虑的决策选项的集合。 它过滤器出本活动所关注的所有选项的子集。 这允许管理 [!DNL Decisioning service] 所有选项目录中的主题类别。
 
-决策活动指定当 *组合约束取消* 所有其他选项时的回退选项。 这意味着，这个问题总是有答案： 当前什么是“最佳”选项？
+决策活动指定当 *组合约束取消* 所有其他选项时的回退选项。 这意味着，这个问题总是有答案：当前什么是“最佳”选项？
 
 决策活动可以指定提供体验的位置。 这进一步减少了可考虑的决策选项的数量，是决策活动施加的另一个约束。 这称为放置 *约束*。 将只考虑那些内容满足此放置限制的决策选项。 这是在决策战略的早期阶段进行评估的。 当定义改变每个决策活动的放置限制时，重新评估该决策活动，并且该决策选项可能出现或不考虑于一个或多个决策。
 
