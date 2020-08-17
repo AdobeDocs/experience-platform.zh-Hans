@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 实时客户用户档案概述
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: fa439ebb9d02d4a08c8ed92b18f2db819d089174
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1665'
 ht-degree: 1%
 
 ---
@@ -22,7 +22,7 @@ Adobe Experience Platform使您能够为客户提供协调、一致和相关的�
 
 ### [!DNL Profile] 数据存储
 
-尽管 [!DNL Real-time Customer Profile] 处理摄取的数据并使用Adobe Experience Platform [!DNL Identity Service] 通过身份映射合并相关数据，但它会在存储中保留自己的 [!DNL Profile] 数据。 换句话说，存储 [!DNL Profile] 区与数据( [!DNL Catalog] )和[!DNL Data Lake]数据(标 [!DNL Identity Service] 识图)分开。
+尽管 [!DNL Real-time Customer Profile] 处理摄取的数据并使用Adobe Experience Platform [!DNL Identity Service] 通过身份映射来合并相关数据，但它在存储中保留自己的 [!DNL Profile] 数据。 换句话说，存储 [!DNL Profile] 区与数据( [!DNL Catalog] )和[!DNL Data Lake]数据(标 [!DNL Identity Service] 识图)分开。
 
 ### [!DNL Profile] 和服 [!DNL Platform] 务
 
@@ -44,7 +44,7 @@ Adobe Experience Platform使您能够为客户提供协调、一致和相关的�
 
 ### 区段
 
-Adobe Experience Platform [!DNL Segmentation Service] 可以创造受众，为每位客户提供强大的体验。 创建受众区段后，该区段的ID将添加到所有符合条件的用户档案的区段成员资格列表中。 区段规则是使用RESTful API和 [!DNL Real-time Customer Profile] 区段生成器用户界面构建并应用于数据的。 要了解有关分段的更多信息，请首先阅读分段 [服务概述](../segmentation/home.md)。
+Adobe Experience Platform [!DNL Segmentation Service] 提供为个人客户提供体验所需的受众。 创建受众区段后，该区段的ID将添加到所有符合条件的用户档案的区段成员资格列表中。 区段规则是使用RESTful API和 [!DNL Real-time Customer Profile] 区段生成器用户界面构建并应用于数据的。 要了解有关分段的更多信息，请首先阅读分段 [服务概述](../segmentation/home.md)。
 
 ### 用户档案片段和合并模式 {#profile-fragments-and-union-schemas}
 
@@ -59,7 +59,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 可以创造受众，为�
 >[!IMPORTANT]
 >此文档中概述的计算属性功能在alpha中。 文档和功能可能会发生变化。
 
-通过计算属性，您可以根据其他值、计算和表达式自动计算字段的值。 计算属性在用户档案级别上操作，这意味着您可以跨所有记录和事件聚合值。 每个计算属性都包含一个表达式，即“规则”，用于评估传入的数据，并将结果值存储在用户档案属性或事件中。 这些计算有助于您轻松回答与终身购买价值、购买间隔时间或应用程序打开次数等相关的问题，无需在每次需要信息时手动执行复杂的计算。 有关计算属性以及使用API使用这些属性的分步说明的更多信 [!DNL Real-time Customer Profile] 息，请参阅计 [算属性端点指南](api/computed-attributes.md)。 本指南将帮助您更好地了解计算属性在Adobe Experience Platform中所起的作用，它包含执行基本CRUD操作的示例API调用。
+通过计算属性，您可以根据其他值、计算和表达式自动计算字段的值。 计算属性在用户档案级别上操作，这意味着您可以跨所有记录和事件聚合值。 每个计算属性都包含一个表达式，即“规则”，用于评估传入的数据，并将结果值存储在用户档案属性或事件中。 这些计算有助于您轻松回答与终身购买价值、购买间隔时间或应用程序打开次数等相关的问题，无需在每次需要信息时手动执行复杂的计算。 有关计算属性以及使用API使用这些属性的分步说明的更多信 [!DNL Real-time Customer Profile] 息，请参阅计 [算属性端点指南](api/computed-attributes.md)。 本指南将帮助您更好地了解计算属性在Adobe Experience Platform的作用，它包含执行基本CRUD操作的示例API调用。
 
 ## 实时组件
 
@@ -71,18 +71,19 @@ Adobe Experience Platform [!DNL Segmentation Service] 可以创造受众，为�
 
 ### 边缘投影配置和目标
 
-为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 要了解更多信息并开始使用API处理 [!DNL Real-time Customer Profile] 投影，请参阅 [边缘投影端点指南](api/edge-projections.md)。
+为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘，实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 要了解更多信息并开始使用API处理 [!DNL Real-time Customer Profile] 投影，请参阅 [边缘投影端点指南](api/edge-projections.md)。
 
 ## 将数据添加到 [!DNL Real-time Customer Profile]
 
 [!DNL Platform] 可以配置为将记录和时间序列数据发送到 [!DNL Profile]，支持实时流摄取和批量摄取。 有关详细信息，请参阅概述如何 [向实时客户用户档案添加数据的教程](tutorials/add-profile-data.md)。
 
->[!Note]
+>[!NOTE]
+>
 >通过Adobe解决方案收集的 [!DNL Analytics Cloud]数据 [!DNL Marketing Cloud]，包括 [!DNL Advertising Cloud]、和，流 [!DNL Experience Platform] 入并被引入 [!DNL Profile]。
 
 ### [!DNL Profile] 摄取指标
 
-可观性洞察使您能够揭示Adobe Experience Platform中的关键指标。 除了各种功 [!DNL Platform] 能的使用情况统计和性能 [!DNL Platform] 指标外，还有一些特定的相关指标， [!DNL Profile]允许您深入了解传入请求率、成功摄取率、摄取的记录大小等。 要了解更多信息，请首先阅读可观 [性洞察概述](../observability/home.md)，然后查看完整的指标 [!DNL Profile] 列表，参阅可用指标 [的相关文档](../observability/metrics.md)。
+可观性洞察使您能够揭示Adobe Experience Platform的关键指标。 除了各种功 [!DNL Platform] 能的使用情况统计和性能 [!DNL Platform] 指标外，还有一些特定的相关指标， [!DNL Profile]允许您深入了解传入请求率、成功摄取率、摄取的记录大小等。 要了解更多信息，请首先阅读可观 [性洞察概述](../observability/home.md)，然后查看完整的指标 [!DNL Profile] 列表，参阅可用指标 [的相关文档](../observability/metrics.md)。
 
 ## [!DNL Data governance] 和 [!DNL Privacy]
 
