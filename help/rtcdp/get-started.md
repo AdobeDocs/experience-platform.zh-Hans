@@ -1,10 +1,11 @@
 ---
+keywords: RTCDP;rtcdp
 title: Adobe实时客户数据平台入门
 seo-title: Adobe实时客户数据平台入门
 description: Adobe实时客户数据平台的示例方案
 seo-description: Adobe实时客户数据平台的示例方案
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
 source-wordcount: '2326'
 ht-degree: 0%
@@ -16,7 +17,7 @@ ht-degree: 0%
 
 本快速入门指南将引导您完成Adobe实时客户数据平台（实时CDP）的示例实施。 在设置自己的实现时，可以将它作为一个示例。 虽然本指南显示了特定示例，但它链接到您在创建安装程序时可以使用的其他信息。
 
-此示例展示了Adobe实时客户数据平台(由Adobe Experience Platform提供支持)的强大功能：
+此示例展示了由Adobe Experience Platform提供技术支持的Adobe实时客户数据平台在以下方面的强大功能：
 
 * 从多个源摄取数据
 * 将它们合并为一个 [!DNL real-time customer profile]
@@ -67,7 +68,7 @@ ht-degree: 0%
 
 ![image](assets/luma-site.png)
 
-在导航时，数据会实时捕获，并且不仅会发送到Adobe Analytics的报表包，还会直接发送给Adobe Experience Platform。 在收集数据时，您会开始根据中的行为数据，形成消费者的单一视图 [!DNL Experience Platform's real-time customer profile]。
+在导航时，数据会实时捕获并不仅发送到Adobe Analytics的报表包，还会直接发送到Adobe Experience Platform。 在收集数据时，您会开始根据中的行为数据，形成消费者的单一视图 [!DNL Experience Platform's real-time customer profile]。
 
 网站的许多访客可能重复以前从Luma购买的客户。  对Luma来说，为满足新客户和重复访客以及已知客户的需求而个性化消息和产品非常重要。
 
@@ -81,7 +82,7 @@ ht-degree: 0%
 
 <!--![image](assets/luma-shirt-detail.png)-->
 
-Luma可以将访客的行为映射到Adobe Experience Platform上的用户用户档案，并开始汇集更丰富的视图来描述该消费者的行为。
+Luma可以将访客的行为映射到Adobe Experience Platform的用户用户档案，并开始汇集更丰富的消费者行为视图。
 
 ### 获得更详细的客户视图
 
@@ -108,9 +109,9 @@ Sarah受到欢迎，并感谢她成为铜牌会员，详细了解她的益处以
 
 ![image](assets/luma-personal.png)
 
-Sarah会根据主页情况动态提供个性化的Adobe Experience Platform [!DNL Real-time Customer Profile] 体验。
+Sarah会根据她在Adobe Experience Platform的经历，动态地获得个性化的主页 [!DNL Real-time Customer Profile] 体验。
 
-Adobe Sensei推动的Adobe Target个性化让她看到了相关内容，这要归功于她过去购买服装和服装的关联。 Luma还根据她最近的浏览，为男性定制了男性跑步用品目录。
+在Adobe Target,Adobe Sensei推动的个性化让她看到了相关内容，它考虑了她过去购买服装和服装的情况和关联。 Luma还根据她最近的浏览，为男性定制了男性跑步用品目录。
 
 在下一页，Sarah将看到特色产品，并根据她最近查看过的产品推出新的推荐托盘。
 
@@ -118,9 +119,9 @@ Adobe Sensei推动的Adobe Target个性化让她看到了相关内容，这要�
 
 ### 将客户带回
 
-莎拉分心了，离开了网站，结束了她的研习会。 Luma可以利用她的Adobe Experience Platform数据帮助她返回网站。
+莎拉分心了，离开了网站，结束了她的研习会。 Luma可以利用她在Adobe Experience Platform的数据帮助她回到网站。
 
-Adobe实时客户数据平台由Adobe Experience Platform提供支持，专为客户体验管理而构建。 它使组织能够：
+Adobe实时客户数据平台由Adobe Experience Platform公司提供支持，专为客户体验管理而构建。 它使组织能够：
 
 * 简化数据集成和激活
 * 管理已知和未知的数据使用
@@ -176,7 +177,7 @@ Luma团队将所有的行为和客户数据放在一个位置。
 
 ### 为使用策略标记所摄取的数据
 
-Luma有许多内部策略限制某些类型收集信息的使用，并且还必须遵守与数据使用相关的法律和隐私相关的顾虑。 使用Adobe Experience Platform [!DNL Data Governance]，可以将预定义的数据使用标签应用于数据集（以及这些数据集中的特定字段），从而允许Luma根据特定的使用限制对其数据进行分类。
+Luma有许多内部策略限制某些类型收集信息的使用，并且还必须遵守与数据使用相关的法律和隐私相关的顾虑。 使用Adobe Experience Platform [!DNL Data Governance]，预定义的数据使用标签可以应用于数据集（以及这些数据集中的特定字段），从而允许Luma根据特定的使用限制对其数据进行分类。
 
 ![](assets/governance-labels.png)
 
@@ -192,7 +193,7 @@ Luma有关Sarah的所有用户档案信息。 这包括她的个人信息，如�
 
 | 类别 | 描述 |
 |---|---|
-| 身份 | 显示Sarah与Luma互动中通过渠道 [!DNL Platform] 和设备链接到的身份。 将显示网站中的ECID。 她的身份还包括来自其移动应用程序的ECID、电子邮件ID、来自最近添加的数据集的 [!DNL Microsoft Dynamics] CRM ID，以及从Luma忠诚度系统传入Adobe Experience Platform的忠诚度ID。 |
+| 身份 | 显示Sarah与Luma互动中通过渠道 [!DNL Platform] 和设备链接到的身份。 将显示网站中的ECID。 她的身份还包括来自她移动应用的ECID、她的电子邮件ID、来自最近添加的数据集的CRM [!DNL Microsoft Dynamics] ID以及从Luma忠诚度系统传入Adobe Experience Platform的忠诚度ID。 |
 | 事件 | 显示Sarah与Luma品牌的所有交互数据。 这包括她刚刚查看的物品，她过去查看过的任何东西，她收到的电子邮件，她与呼叫中心的互动，以及每次互动的渠道和设备。 |
 
 实时CDP用户档案将Luma营销团队的工作流程从数周减少到数分钟，并根据这一360度全方位客户视图为个性化解锁了可能。 用户档案将她登录前浏览网站时的行为数据与她现有的客户用户档案相结合，为Sarah创建了全面的视图。
@@ -201,7 +202,7 @@ Luma有关Sarah的所有用户档案信息。 这包括她的个人信息，如�
 
 ## 区段
 
-强大的Adobe Experience Platform细分功能使营销人员能够根据从Adobe Cloud中捕获的数据组合属性、事件和现有细分 [!DNL Real-time Customer Profile]。
+强大的Adobe Experience Platform细分功能使营销人员能够根据中捕获的数据组合属性、事件和现有细分 [!DNL Real-time Customer Profile]。
 
 <!-- ![image](assets/luma-segments.png) -->
 
@@ -285,7 +286,7 @@ Sarah在移动设备上浏览一个社交媒体网站，她看到一则Luma广�
 
 之后，她打开自己的电子邮件，看到重新定位的电子邮件。 她点击了一封电子邮件中指向Luma的链接。
 
-该链接将Sarah带到移动Luma主页，她在该主页上看到以Adobe Target为后盾的高度个性化体验。
+该链接将Sarah带到移动Luma主页，她在那里看到由Adobe Target提供动力的高度个性化体验。
 
 * 她被欢迎为铜牌会员。
 * 她看到“礼物”的讯息。
@@ -298,7 +299,7 @@ Sarah在移动设备上浏览一个社交媒体网站，她看到一则Luma广�
 
 ## 分析用户档案
 
-Luma营销人员使用Adobe Experience Platform来查看实时CDP仪表板上的送礼者细分。 他们视图了这项计划的成果，并看到它正在增长。 客户正在响应优惠，投入更多资金。
+Luma营销人员使用Adobe Experience Platform来查看实时CDP仪表板上的礼品提供者部分。 他们视图了这项计划的成果，并看到它正在增长。 客户正在响应优惠，投入更多资金。
 
 这些洞察使营销人员能够针对这一信号采取行动，而这一信号的推动因素是让CDP中提供此数据，并让像Sarah这样的客户加入该细分。
 
