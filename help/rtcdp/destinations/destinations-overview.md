@@ -1,10 +1,11 @@
 ---
+keywords: RTCDP;rtcdp
 title: 目标概述
 seo-title: 目标概述
 description: 目标是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以在Adobe实时客户数据平台中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 seo-description: 目标是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以在Adobe实时客户数据平台中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 translation-type: tm+mt
-source-git-commit: 7aa15772003cce1dfc7c3636048bce9a35bf8197
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
 source-wordcount: '526'
 ht-degree: 0%
@@ -44,7 +45,7 @@ ht-degree: 0%
 
 ## 目标和访问控制 {#access-controls}
 
-实时CDP中的目标功能可与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以视图、管理和激活目标。 有关各个权限的信息，请参 [阅Adobe Experience Platform中的](../../access-control/home.md) 访问控制，然后向下滚动到页面底部。
+实时CDP中的目标功能与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以视图、管理和激活目标。 有关各个权限的信息，请参 [阅Adobe Experience Platform的访问控制](../../access-control/home.md) ，然后向下滚动到页面底部。
 
 有关访问控制的详细信息，请参阅 [访问控制用户指南](../../access-control/ui/overview.md)。
 
