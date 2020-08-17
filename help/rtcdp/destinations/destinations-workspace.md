@@ -1,10 +1,11 @@
 ---
+keywords: RTCDP;rtcdp
 title: 目标工作区
 seo-title: 目标工作区
 description: 在Adobe实时客户数据平台中，从左侧导航栏中选择目标以访问目标工作区。
 seo-description: 在Adobe实时客户数据平台中，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: f3e489416a9bc80cfb0502d3973a86748123a687
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
 source-wordcount: '807'
 ht-degree: 2%
