@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;Query service;query
 solution: Experience Platform
 title: 查询服务开发人员指南
 topic: query templates
+description: 此开发人员指南提供在Adobe Experience Platform查询服务API中执行各种操作的步骤。
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '352'
+source-wordcount: '369'
 ht-degree: 1%
 
 ---
@@ -14,14 +15,14 @@ ht-degree: 1%
 
 # [!DNL Query Service] 开发人员指南
 
-此开发人员指南提供了在Adobe Experience PlatformAPI中执行各种操作的 [!DNL Query Service] 步骤。
+此开发人员指南提供在Adobe Experience PlatformAPI中执行各种操作的 [!DNL Query Service] 步骤。
 
 ## 入门指南
 
-本指南要求对与使用相关的各种Adobe Experience Platform服务进行有效的了解 [!DNL Query Service]。
+本指南要求对Adobe Experience Platform与使用有关的各项服务有工作的了解 [!DNL Query Service]。
 
-- [!DNL Query Service](../home.md): 提供查询数据集并将生成的查询捕获为中的新数据集的能力 [!DNL Experience Platform]。
-- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [!DNL Query Service](../home.md):提供查询数据集并将生成的查询捕获为中的新数据集的能力 [!DNL Experience Platform]。
+- [!DNL Experience Data Model (XDM) System](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
 - [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了成功使用API所需了解的其 [!DNL Query Service] 他信息。
