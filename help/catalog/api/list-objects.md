@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;filter;Filter;filter data;Filter data
 solution: Experience Platform
 title: 列表对象
 topic: developer guide
+description: 您可以通过单个API调用检索特定类型的所有可用对象的列表，最佳实践是包括限制响应大小的过滤器。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
 workflow-type: tm+mt
-source-wordcount: '197'
-ht-degree: 2%
+source-wordcount: '229'
+ht-degree: 1%
 
 ---
 
