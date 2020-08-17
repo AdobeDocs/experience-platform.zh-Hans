@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;sandbox;Sandbox
 solution: Experience Platform
 title: 沙箱概述
 topic: overview
+description: 沙箱是单个Experience Platform实例中的虚拟分区，它允许与数字体验应用程序的开发过程无缝集成。
 translation-type: tm+mt
-source-git-commit: c52d8cdbc5a4ee6fab8c2b1b284efea5f735d424
+source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
 workflow-type: tm+mt
-source-wordcount: '677'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # 沙箱概述
 
-Adobe Experience Platform旨在在全球范围内丰富数字体验应用程序。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署的需要，同时确保操作合规性。
+Adobe Experience Platform公司旨在在全球范围内丰富数字体验应用。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署的需要，同时确保操作合规性。
 
 In order to address this need, Experience Platform provides **sandboxes** which partition a single Platform instance into separate virtual environments to help develop and evolve digital experience applications.
 
@@ -32,9 +33,9 @@ In order to address this need, Experience Platform provides **sandboxes** which 
 
 总之，沙箱具有以下优点：
 
-* **应用程序生命周期管理**: 创建单独的虚拟环境，开发和改进数字体验应用程序。
-* **项目和品牌管理**: 允许在同一IMS组织内并行运行多个项目，同时提供隔离和访问控制。 未来版本将支持在多个地区进行部署。
-* **灵活的开发生态系统**: 以无缝、可扩展且经济有效的方式提供沙箱，用于探索、支持和演示。
+* **应用程序生命周期管理**:创建单独的虚拟环境，开发和改进数字体验应用程序。
+* **项目和品牌管理**:允许在同一IMS组织内并行运行多个项目，同时提供隔离和访问控制。 未来版本将支持在多个地区进行部署。
+* **灵活的开发生态系统**:以无缝、可扩展且经济有效的方式提供沙箱，用于探索、支持和演示。
 
 ## 沙箱访问控制
 
