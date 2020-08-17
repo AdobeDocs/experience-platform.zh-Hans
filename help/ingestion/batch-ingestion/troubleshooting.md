@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;ingested data
 solution: Experience Platform
 title: Adobe Experience Platform批量摄取疑难解答指南
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
 source-wordcount: '1335'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 批量摄取疑难解答指南
 
-本文档将帮助回答有关Adobe Experience PlatformAPI的常见问题 [!DNL Batch Data Ingestion] 解答。
+本文档将帮助回答有关Adobe Experience PlatformAPI的常见问 [!DNL Batch Data Ingestion] 题。
 
 ## 批处理API调用
 
@@ -259,6 +259,6 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID
 | 106 | 数据集文件为空。 |
 | 118 | CSV文件包含空标题行。 |
 | 200 | 批已接受处理，并将过渡到最终状态，如“活动”或“失败”。 提交后，可以使用端点监视批 `GetBatch` 处理。 |
-| 400 | 错误请求。如果批处理中缺少块或重叠块，则返回。 |
+| 400 | 错误请求. 如果批处理中缺少块或重叠块，则返回。 |
 
 [large-file-upload]: batch_data_ingestion_developer_guide.md#how-to-ingest-large-parquet-files
