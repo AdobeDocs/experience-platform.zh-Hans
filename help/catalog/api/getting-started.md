@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;catalog service;catalog;Catalog service;Catalog
 solution: Experience Platform
 title: 目录服务开发人员指南
 topic: developer guide
+description: 此开发人员指南提供帮助您使用目录API进行开始的步骤。 然后，该指南提供了使用Catalog执行关键操作的示例API调用。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '584'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Catalog Service] 开发人员指南
 
-[!DNL Catalog Service] 是Adobe Experience Platform内数据位置和谱系的记录系统。 [!DNL Catalog] 充当元数据存储或“目录”，您可以在其中找到有关数据的信息， [!DNL Experience Platform]无需访问数据本身。 有关更多 [信息](../home.md) ，请参阅目录概述。
+[!DNL Catalog Service] 是Adobe Experience Platform境内数据定位和谱系记录系统。 [!DNL Catalog] 充当元数据存储或“目录”，您可以在其中找到有关数据的信息， [!DNL Experience Platform]无需访问数据本身。 有关更多 [信息](../home.md) ，请参阅目录概述。
 
 此开发人员指南提供帮助您使用API进行开始 [!DNL Catalog] 的步骤。 然后，该指南提供了使用执行关键操作的示例API调 [!DNL Catalog]用。
 
@@ -22,9 +23,9 @@ ht-degree: 0%
 
 [!DNL Catalog] 跟踪中几种资源和操作的元数据 [!DNL Experience Platform]。 本开发人员指南需要对创建和管理这些 [!DNL Experience Platform] 资源所涉及的各种服务有一个有效的了解：
 
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
-* [批量摄取](../../ingestion/batch-ingestion/overview.md): 如何 [!DNL Experience Platform] 从数据文件（如CSV和Parke）中摄取和存储数据。
-* [流摄取](../../ingestion/streaming-ingestion/overview.md): 如 [!DNL Experience Platform] 何从客户端和服务器端设备实时摄取和存储数据。
+* [!DNL Experience Data Model (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [批量摄取](../../ingestion/batch-ingestion/overview.md):如何 [!DNL Experience Platform] 从数据文件（如CSV和Parke）中摄取和存储数据。
+* [流摄取](../../ingestion/streaming-ingestion/overview.md):如 [!DNL Experience Platform] 何从客户端和服务器端设备实时摄取和存储数据。
 
 以下各节提供了成功调用API所需的或现有的其他信 [!DNL Catalog Service] 息。
 
@@ -36,7 +37,7 @@ ht-degree: 0%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -50,7 +51,7 @@ ht-degree: 0%
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-* 内容类型： application/json
+* 内容类型：application/json
 
 ## API调用的 [!DNL Catalog] 最佳实践
 
