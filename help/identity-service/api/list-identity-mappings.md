@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;identity;Identity
 solution: Experience Platform
 title: 列表身份映射
 topic: API guide
+description: 映射是指定命名空间的群集中所有标识的集合。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
 workflow-type: tm+mt
-source-wordcount: '248'
-ht-degree: 2%
+source-wordcount: '263'
+ht-degree: 1%
 
 ---
 
@@ -28,7 +29,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/mapping
 
 **请求**
 
-选项1: 将标识作为命名空间(`nsId`按ID)和ID值(`id`)提供。
+选项1:将标识作为命名空间(`nsId`按ID)和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -39,7 +40,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2: 将标识作为命名空间(`ns`按名称)和ID值(`id`)提供。
+选项2:将标识作为命名空间(`ns`按名称)和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -50,7 +51,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3: 提供XID()身`xid`份。 有关如何获取身份的XID的详细信息，请参阅此文档中 [有关获取身份的XID的部分](./list-native-id.md)。
+选项3:提供XID()身`xid`份。 有关如何获取身份的XID的详细信息，请参阅此文档中 [有关获取身份的XID的部分](./list-native-id.md)。
 
 ```shell
 curl -X GET \
@@ -77,7 +78,7 @@ POST https://platform.adobe.io/data/core/identity/mappings
 
 **请求主体**
 
-选项1: 提供要检索映射的XID列表。
+选项1:提供要检索映射的XID列表。
 
 ```shell
 {
@@ -86,7 +87,7 @@ POST https://platform.adobe.io/data/core/identity/mappings
 }
 ```
 
-选项2: 提供身份列表作为复合ID，其中每个ID都按命名空间ID命名ID值和命名空间。 此示例演示如何在覆盖默认的“专 `graph-type` 用图”时使用此方法。
+选项2:提供身份列表作为复合ID，其中每个ID都按命名空间ID命名ID值和命名空间。 此示例演示如何在覆盖默认的“专 `graph-type` 用图”时使用此方法。
 
 ```shell
 {
@@ -183,8 +184,8 @@ curl -X POST \
 }
 ```
 
-- `lastAssociationTime`: 输入标识上次与此标识关联的时间戳。
-- `regions`: 提供 `regionId` 身份 `lastAssociationTime` 的显示位置和显示位置。
+- `lastAssociationTime`:输入标识上次与此标识关联的时间戳。
+- `regions`:提供 `regionId` 身份 `lastAssociationTime` 的显示位置和显示位置。
 
 ## 后续步骤
 
