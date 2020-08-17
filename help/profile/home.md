@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
+keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;unified profile;Unified Profile;unified;Profile;rtcp;XDM graphs
 solution: Adobe Experience Platform
 title: 实时客户用户档案概述
 topic: guide
+description: 实时用户档案是一个通用查找实体存储，它合并来自各种企业数据资产的数据，然后以单个客户用户档案和相关时间序列事件的形式提供对该数据的访问。 此功能使营销人员能够跨多个渠道通过受众推动协调一致的相关体验。
 translation-type: tm+mt
-source-git-commit: fa439ebb9d02d4a08c8ed92b18f2db819d089174
+source-git-commit: 05032ba72afd5224e33cb4fdc93c97ba6ec6f8e8
 workflow-type: tm+mt
-source-wordcount: '1665'
+source-wordcount: '1718'
 ht-degree: 1%
 
 ---
@@ -89,7 +90,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供为个人客户提�
 
 [!DNL Data governance] 是用于管理客户数据并确保遵守适用于数据使用的法规、限制和政策的一系列战略和技术。
 
-在数据访问方面，数据管理在不同层次中起 [!DNL Experience Platform] 着关键作用：
+在数据访问方面，数据管理在不同级别中起 [!DNL Experience Platform] 着关键作用：
 * 数据使用标签
 * 数据访问策略
 * 访问控制营销行动的数据
@@ -132,7 +133,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供为个人客户提�
 >[!NOTE]
 >
 >
->非人员实体引用不属于的任何 **XDM** 类 [!DNL Profile]。
+>非人员实体是指不属于的任何 **XDM** 类 [!DNL Profile]。
 
 ## 后续步骤和其他资源
 
