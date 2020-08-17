@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;dataset;Dataset;create a dataset;create dataset
 solution: Experience Platform
 title: 使用API创建数据集
 topic: datasets
+description: 此文档提供了使用Adobe Experience PlatformAPI创建数据集和使用文件填充数据集的一般步骤。
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '1234'
+source-wordcount: '1251'
 ht-degree: 1%
 
 ---
@@ -18,10 +19,10 @@ ht-degree: 1%
 
 ## 入门指南
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
 * [批量摄取](../../ingestion/batch-ingestion/overview.md): [!DNL Experience Platform] 允许您将数据作为批处理文件进行收录。
-* [!DNL Experience Data Model (XDM) System](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [!DNL Experience Data Model (XDM) System](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
 * [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
@@ -34,9 +35,9 @@ ht-degree: 1%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
@@ -48,7 +49,7 @@ ht-degree: 1%
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-* 内容类型： application/json
+* 内容类型：application/json
 
 ## 教程
 
@@ -461,7 +462,7 @@ curl -X GET \
 
 ## 从数据集读取数据
 
-使用批处理ID，您可以使用数据访问API进行回读并验证上传到该批处理的所有文件。 该响应返回一个包含文件ID列表的数组，每个ID引用批处理中的文件。
+使用批处理ID，您可以使用数据访问API进行回读并验证上传到该批处理的所有文件。 该响应返回一个包含文件ID列表的数组，每个ID都引用批处理中的文件。
 
 您还可以使用Data Access API返回名称、大小（以字节为单位）以及下载文件或文件夹的链接。
 
@@ -475,4 +476,4 @@ curl -X GET \
 
 更新模式后，您可以重新执行本教程中的步骤，以获取符合修订模式的新数据。
 
-必须记住，模式进化纯粹是累加的，这意味着一旦模式保存到注册表并用于数据获取，您就不能对其引入突破性的更改。 要进一步了解编写模式以用于Adobe Experience Platform的最佳实践，请参阅关于模式排 [版基础的指南](../../xdm/schema/composition.md)。
+必须记住，模式进化纯粹是累加的，这意味着一旦模式保存到注册表并用于数据获取，您就不能对其引入突破性的更改。 要进一步了解编写模式以用于Adobe Experience Platform的最佳实践，请参阅关于模式构 [成基础的指南](../../xdm/schema/composition.md)。
