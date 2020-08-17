@@ -1,10 +1,11 @@
 ---
+keywords: Catalog;catalog
 title: 目标目录
 seo-title: 目标目录
 description: 目标目录提供已准备好接收数据的可用目标的列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
 seo-description: 目标目录提供已准备好接收数据的可用目标的列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
 source-wordcount: '170'
 ht-degree: 0%
@@ -24,7 +25,7 @@ ht-degree: 0%
 
 * [Adobe解决方案](/help/rtcdp/destinations/adobe-destinations.md)
 * [广告目标](/help/rtcdp/destinations/advertising-destinations.md)
-* [Analytics目标](/help/rtcdp/destinations/analytics-destinations.md)
+* [分析目标](/help/rtcdp/destinations/analytics-destinations.md)
 * [云存储目标](/help/rtcdp/destinations/cloud-storage-destinations.md)
 * [数据管理平台](/help/rtcdp/destinations/dmp-destinations.md)
 * [电子邮件营销](/help/rtcdp/destinations/email-marketing-destinations.md)
