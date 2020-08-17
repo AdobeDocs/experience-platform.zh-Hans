@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform源连接器帮助
 translation-type: tm+mt
-source-git-commit: 2ee74c9ea0e4838eacfaba1b1e6b8aac7012f427
+source-git-commit: 18af4226c07cd7bc8a093aa4b1ce2b5f8f018cb6
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '616'
 ht-degree: 0%
 
 ---
@@ -194,4 +194,5 @@ ht-degree: 0%
    - [激活入站数据以填充客户用户档案](tutorials/ui/profile.md)
    - [监视帐户和数据流](tutorials/ui/monitor.md)
    - [删除数据流](tutorials/ui/delete.md)
+- [流运行通知](notifications.md)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
