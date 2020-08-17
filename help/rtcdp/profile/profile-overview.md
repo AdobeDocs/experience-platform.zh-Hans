@@ -1,10 +1,11 @@
 ---
+keywords: rtcdp profile;real-time customer profile
 title: 实时客户用户档案概述
 seo-title: 实时客户用户档案平台中的实时客户数据
 description: 概述实时客户数据平台如何使您能够使用实时客户用户档案为客户提供协调一致的相关体验。
 seo-description: 实时客户数据平台，用户档案，数据，体验，渠道
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
 source-wordcount: '394'
 ht-degree: 0%
@@ -18,7 +19,7 @@ ht-degree: 0%
 
 ## 用户档案 [!DNL Real-time Customer Data Platform]
 
-[!DNL Real-time Customer Data Platform] 使您能够在客户与您的品牌互动的任何地方或何时，为其提供协调一致的体验。 提供个性化体验，使其感觉相关、及时并非易事，但可以通过使用部分Adobe Experience Platform [!DNL Real-time Customer Profile]来实现。 实时CDP以多种服务和功 [!DNL Experience Platform] 能(包括创 [!DNL Experience Platform] 建用户档案)为基础构建并加以利用。 单个客户的这些汇总视图将您的众多营销渠道和组织当前用于存储客户数据的各种系统中的数据汇总在一起。
+[!DNL Real-time Customer Data Platform] 使您能够在客户与您的品牌互动的任何地方或何时，为其提供协调一致的体验。 提供个性化体验，使其感觉相关、及时并非易事，但可以通过使用Adobe Experience Platform的 [!DNL Real-time Customer Profile]一部分实现。 实时CDP以多种服务和功 [!DNL Experience Platform] 能(包括创 [!DNL Experience Platform] 建用户档案)为基础构建并加以利用。 单个客户的这些汇总视图将您的众多营销渠道和组织当前用于存储客户数据的各种系统中的数据汇总在一起。
 
 ## 身份和身份命名空间
 
@@ -30,7 +31,7 @@ ht-degree: 0%
 
 ## 用户档案查看器
 
-[!DNL Platform] 允许您轻松视图客户用户档案并使用各种属性搜索特定用户档案。 有关如何在中视图用户档案的详细 [!DNL Platform]信息，请参阅 [用户档案查看器概述](/help/rtcdp/profile/profile-viewer.md)。
+[!DNL Platform] 允许您轻松视图客户用户档案，并使用各种属性搜索特定用户档案。 有关如何在中视图用户档案的详细 [!DNL Platform]信息，请参阅 [用户档案查看器概述](/help/rtcdp/profile/profile-viewer.md)。
 
 ## 后续步骤
 
