@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;GDPR;gdpr
 solution: Experience Platform
 title: GDPR 术语
 topic: troubleshooting
+description: 以下是与一般数据保护规定(GDPR)相关的关键术语定义列表。
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
 workflow-type: tm+mt
-source-wordcount: '1066'
-ht-degree: 4%
+source-wordcount: '1084'
+ht-degree: 5%
 
 ---
 
@@ -16,7 +17,7 @@ ht-degree: 4%
 
 以下是与一般数据保护规定(GDPR)相关的关键术语定义列表。
 
-## A
+## 同类群组
 
 ## B
 
@@ -74,7 +75,7 @@ __承诺组：__ 控制性事业及其控制性事业。
 
 ## I
 
-__Identity Management服务(IMS):__ Adobe实现Federated ID和OAuth 2.0，用于Adobe ID用户的身份验证和Adobe资源的授权。 您必须将 IMS 与 Adobe 应用程序或服务相集成，用户才能登录并访问 Adobe 服务。Users can log in directly with Renga (the Adobe identity services provider), or log in through a trusted third party authentication domain (such as [!DNL Google], [!DNL Facebook], or a corporate/organization LDAP).
+__Identity Management服务(IMS):__ Federated ID和OAuth 2.0的Adobe实施，用于Adobe ID用户的身份验证和Adobe资源的授权。 您必须将 IMS 与 Adobe 应用程序或服务相集成，用户才能登录并访问 Adobe 服务。Users can log in directly with Renga (the Adobe identity services provider), or log in through a trusted third party authentication domain (such as [!DNL Google], [!DNL Facebook], or a corporate/organization LDAP).
 
 __IMS组织ID:__ 引用服务到服务身份验证的Adobe授权令牌，它不需要用户登录。 它被发布到IMS客户端，并且没有相关用户。 IMS客户端需要服务令牌来授权服务之间的回渠道请求。 （术语“系统令牌”有时用于表示服务令牌。）
 
@@ -86,7 +87,7 @@ __IMS组织ID:__ 引用服务到服务身份验证的Adobe授权令牌，它不�
 
 ## M
 
-__主要机构：__ 在合并内对数据处理做出主要决策的位置； 处理器。
+__主要机构：__ 在合并内对数据处理做出主要决策的位置；处理器。
 
 ## N
 
@@ -100,7 +101,7 @@ __个人数据泄露：__ 违反安全，导致意外或非法访问、破坏、
 
 __隐私设计：__ 一个原则，它要求在系统设计之初就纳入数据保护，而不是增加。
 
-__隐私影响评估__: 一种工具，用于通过分析处理的个人数据以及保护数据的政策来识别和降低实体的隐私风险。
+__隐私影响评估__:一种工具，用于通过分析处理的个人数据以及保护数据的政策来识别和降低实体的隐私风险。
 
 __处理：__ 对个人数据执行的任何操作，无论是否通过自动方式执行，包括收集、使用、记录等。
 
