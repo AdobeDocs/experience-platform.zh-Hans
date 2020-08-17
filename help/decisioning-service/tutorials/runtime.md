@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;decision events;decision event;Decision events
 solution: Experience Platform
 title: 使用API使用决策服务运行时
 topic: tutorial
+description: '本文档提供了使用Adobe Experience PlatformAPI使用决策服务运行时服务的教程。 '
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1985'
+source-wordcount: '2004'
 ht-degree: 0%
 
 ---
@@ -20,10 +21,10 @@ ht-degree: 0%
 
 本教程需要对决策和确定在客 [!DNL Experience Platform] 户体验过程中要展示的下一个最佳优惠所涉及的服务进行有效的了解。 在开始本教程之前，请查看以下文档：
 
-- [!DNL Decisioning Service](./../home.md): 提供添加和删除优惠的框架，以及创建在客户体验期间选择最适合呈现的算法。
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 平台组织客户体验数据的标准化框架。
-- [!DNL Profile Query Language (PQL)](../../segmentation/pql/overview.md): PQL用于定义规则和过滤器。
-- [使用API管理决策对象和规则](./entities.md): 在使用决策服务运行时之前，您需要设置相关实体。
+- [!DNL Decisioning Service](./../home.md):提供添加和删除优惠的框架，以及创建在客户体验期间选择最适合呈现的算法。
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md):平台组织客户体验数据的标准化框架。
+- [!DNL Profile Query Language (PQL)](../../segmentation/pql/overview.md):PQL用于定义规则和过滤器。
+- [使用API管理决策对象和规则](./entities.md):在使用决策服务运行时之前，您需要设置相关实体。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
@@ -35,7 +36,7 @@ ht-degree: 0%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -49,7 +50,7 @@ ht-degree: 0%
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 运行时请求也需要：
 
