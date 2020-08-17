@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;ECID;ecid
 solution: Experience Platform
 title: 隐私请求的身份数据
 topic: overview
+description: 本文档提供有关如何配置数据操作和利用Adobe技术有效检索客户隐私请求的适当身份信息的一般指导。
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 4c3a947051c11860ab4f0f53b48d8f4bda8dc195
 workflow-type: tm+mt
-source-wordcount: '616'
+source-wordcount: '643'
 ht-degree: 3%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 3%
 
 # 隐私请求的身份数据
 
-为了Adobe Experience Platform处 [!DNL Privacy Service] 理客户对其私有数据（包括访问、删除或选择退出销售请求）的请求，必须向其提供唯一标识符，将特定客户链接到您启用Adobe Experience Cloud的应用程序中存储的私有数据。 [!DNL Privacy Service] 然后使用这些标识符收集存储在客户身份下的所有数据 [!DNL Experience Cloud]，并根据客户的请求进行处理。
+为了Adobe Experience Platform [!DNL Privacy Service] 处理客户对其私有数据（包括访问、删除或选择退出销售请求）的请求，必须向其提供唯一标识符，将特定客户链接到您启用Adobe Experience Cloud的应用程序中存储的私有数据。 [!DNL Privacy Service] 然后使用这些标识符收集存储在客户身份下的所有数据 [!DNL Experience Cloud]，并根据客户的请求进行处理。
 
 本文档提供有关如何配置数据操作和利用Adobe技术有效检索客户隐私请求的适当身份信息的一般指导。
 
@@ -26,7 +27,7 @@ ht-degree: 3%
 
 因此，每个发送的身份都 [!DNL Privacy Service] 应附有一个命名空间 **，通过** 将身份价值与其来源系统相关联来提供上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising CloudID(“AdCloud”)或Adobe TargetID(“TNTID”))关联。
 
-Adobe Experience Platform标识服务维护全局定义和用户定义的标识命名空间的存储。 有关命名空间的更多详细信息，请参 [阅身份命名空间概述](../identity-service/namespaces.md)。 有关常用的标准命名空间和命名空间限定符的列表，请 [!DNL Privacy Service]参阅开发 [人员指南的](api/appendix.md) 附录部分。
+Adobe Experience Platform标识服务维护全球定义和用户定义标识命名空间的存储。 有关命名空间的更多详细信息，请参 [阅身份命名空间概述](../identity-service/namespaces.md)。 有关常用的标准命名空间和命名空间限定符的列表，请 [!DNL Privacy Service]参阅开发 [人员指南的](api/appendix.md) 附录部分。
 
 ## ECID和选择加入服务
 
