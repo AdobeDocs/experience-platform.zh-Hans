@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;PQL;pql;profile query language
 solution: Experience Platform
 title: 用户档案查询语言(PQL)概述
 topic: developer guide
+description: 本指南提供PQL的一般概述，其中包括格式准则和PQL表达式示例。
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 691af873e0753217b9e7566042c508d9d9b8d8d5
 workflow-type: tm+mt
-source-wordcount: '670'
+source-wordcount: '686'
 ht-degree: 2%
 
 ---
