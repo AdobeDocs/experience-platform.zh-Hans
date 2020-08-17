@@ -1,10 +1,11 @@
 ---
+keywords: web sdk;SDK;web SDK;Launch;launch
 title: Adobe Experience PlatformWeb SDK帮助
 seo-title: Adobe Experience PlatformWeb SDK帮助
-description: 了解什么是Adobe Experience PlatformWeb SDK以及如何使用它。
+description: 了解Adobe Experience PlatformWeb SDK是什么以及如何使用它。
 seo-description: 允许Adobe Experience Cloud的客户与该Experience Cloud的各种服务进行交互。
 translation-type: tm+mt
-source-git-commit: fc8b26e237821d5fa2d72fb38189894ed0b05271
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
 source-wordcount: '702'
 ht-degree: 2%
@@ -20,9 +21,9 @@ Adobe Experience PlatformWeb SDK是客户端JavaScript库，它允许Adobe Exper
 
 [!DNL Adobe Experience Platform Web SDK] 是组成Experience Edge的集合的一部分。 Experience Edge包含三种技术：
 
-* **[!DNL Adobe Experience Platform Web SDK]:**可大幅简化部署[!DNL Launch]技术的JavaScript SDK和扩[!DNL Adobe]展
+* **[!DNL Adobe Experience Platform Web SDK]:** 可大幅简化部署 [!DNL Launch] 技术的JavaScript SDK和扩 [!DNL Adobe] 展
 * **Adobe Experience Platform移动SDK:** v5移动SDK的扩展，允许客户使用新的部署方法
-* **[!DNL Adobe Experience Platform Edge Network]:**支持部署产品的新方法的全球分布式服务器网[!DNL Adobe]络
+* **[!DNL Adobe Experience Platform Edge Network]:** 支持部署产品的新方法的全球分布式服务器网 [!DNL Adobe] 络
 
 这是 [!DNL Adobe Experience Edge] 一个新的框架，用于在所有可寻址渠道中进行低延迟数据收集、可插拔计算和快速激活。
 
@@ -47,7 +48,7 @@ Adobe Experience PlatformWeb SDK是客户端JavaScript库，它允许Adobe Exper
 
 ## SDK被Adobe Experience PlatformWeb SDK所取代
 
-Adobe Experience PlatformWeb SDK替换以下SDK:
+Adobe Experience PlatformWeb SDK取代了以下SDK:
 
 * Visitor.js
 * AppMeasurement.js
@@ -56,9 +57,9 @@ Adobe Experience PlatformWeb SDK替换以下SDK:
 
 这不仅仅是现有库的包装。 这完全是重写。 其目的是通过以下方式结束挑战：以正确的顺序触发标记、与库版本控制挑战不一致以及更好地进行依赖管理。 它是一种新的实现方式， [!DNL Experience Cloud] 是开放源 [码的实现](https://github.com/adobe/alloy)。
 
-除了新的库外，还有一个新的端点，可简化对Adobe解决方案的HTTP请求。 之前，访客ID服务会收到阻止调用，然后AT.js向Adobe Target发出调用，DILID向Adobe Audience Manager发出调用，最后，AppMeasurement.js向Adobe Analytics发出调用。 此新库和端点可以检索ID、获取体 [!DNL Target] 验、向Adobe Experience Platform发 [!DNL Audience Manager]送数据，并通过一次调用将数据传递给。
+除了新的库外，还有一个新的端点，可简化对Adobe解决方案的HTTP请求。 以前，访客ID服务会收到阻止呼叫，然后AT.js向Adobe Target发出呼叫，DILID向Adobe Audience Manager发出呼叫，最后，AppMeasurement.js向Adobe Analytics发出呼叫。 此新库和端点可以检索ID、获取体 [!DNL Target] 验、将数据发 [!DNL Audience Manager]送到Adobe Experience Platform，并通过一次调用将数据传递给。
 
-以下视频演示了Adobe Experience Platform [!DNL Web SDK] 和 [!DNL Edge Network] 实际操作情况。 该视频示例使用单个调用Adobe，将数 [!DNL Experience Platform]据发 [!DNL Analytics]送到 [!DNL Audience Manager]、和 [!DNL Target]。
+以下视频演示了Adobe Experience Platform [!DNL Web SDK] 的实 [!DNL Edge Network] 际操作情况。 该视频示例使用单个调用Adobe，将数 [!DNL Experience Platform]据发 [!DNL Analytics]送到 [!DNL Audience Manager]、和 [!DNL Target]。
 
 >[!VIDEO](https://video.tv.adobe.com/v/34148?quality=12&learn=on)
 
