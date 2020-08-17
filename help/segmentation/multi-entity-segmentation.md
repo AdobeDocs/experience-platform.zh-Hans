@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;segmentation;Segmentation;segment service;segments;Segments
 solution: Experience Platform
 title: 多实体分割
 topic: overview
+description: 多实体细分是指能够根据产品、商店或其他非用户档案类扩展用户档案数据和附加数据。 连接后，来自其他类的数据将变得像用户档案模式的本机数据一样可用。
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '372'
+source-wordcount: '409'
 ht-degree: 0%
 
 ---
@@ -22,11 +23,11 @@ ht-degree: 0%
 
 ## 入门指南
 
-本教程需要对使用分段时涉及的各种Adobe Experience Platform服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
+本教程需要对使用分段时涉及的Adobe Experience Platform各项服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [!DNL Real-time Customer Profile](../profile/home.md): 根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
-- [Adobe Experience Platform分段服务](./home.md): 允许您从实时客户用户档案构建细分。
-- [!DNL Experience Data Model (XDM)](../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [!DNL Real-time Customer Profile](../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+- [Adobe Experience Platform细分服务](./home.md):允许您从实时客户用户档案构建细分。
+- [!DNL Experience Data Model (XDM)](../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 ## 如何定义XDM关系
 
