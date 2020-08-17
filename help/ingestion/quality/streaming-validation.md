@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;streaming
 solution: Experience Platform
 title: 流式摄取验证
 topic: overview
+description: 流摄取允许您使用流端点实时将数据上传到Adobe Experience Platform。 流式摄取API支持两种验证模式——同步和异步。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '815'
+source-wordcount: '843'
 ht-degree: 3%
 
 ---
@@ -18,10 +19,10 @@ ht-degree: 3%
 
 ## 入门指南
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [!DNL Streaming Ingestion](../streaming-ingestion/overview.md): 数据发送方法之一 [!DNL Experience Platform]。
+- [!DNL Experience Data Model (XDM) System](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [!DNL Streaming Ingestion](../streaming-ingestion/overview.md):数据发送方法之一 [!DNL Experience Platform]。
 
 ### 读取示例API调用
 
@@ -31,7 +32,7 @@ ht-degree: 3%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
