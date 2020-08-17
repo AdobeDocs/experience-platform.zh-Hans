@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;CJA;journey analytics;customer journey analytics;campaign orchestration;orchestration;customer journey;journey
 solution: Experience Platform
 title: Adobe Experience Platform概述
 topic: getting started
+description: Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理能够提升客户体验的完整解决方案。 Experience Platform使组织能够集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富的个性化体验的设计和投放。
 translation-type: tm+mt
-source-git-commit: 99bee24a8b1a0a212424ca63464f7733adba2ba2
+source-git-commit: 4c3a947051c11860ab4f0f53b48d8f4bda8dc195
 workflow-type: tm+mt
-source-wordcount: '815'
+source-wordcount: '872'
 ht-degree: 3%
 
 ---
@@ -18,9 +19,9 @@ ht-degree: 3%
 >
 >Adobe Experience Platform文档最近已移动。 请花点时间查看新导航并更新任何现有书签。
 
-Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理能够驱动客户体验的完整解决方案。 [!DNL Experience Platform] 使组织能够集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富的个性化体验的设计和投放。
+Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理能够提升客户体验的完整解决方案。 [!DNL Experience Platform] 使组织能够集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富的个性化体验的设计和投放。
 
-构建于开放式API上 [!DNL Experience Platform] ，将系统的全部功能呈现给开发人员，支持使用熟悉的工具轻松集成企业解决方案。 [!DNL Experience Platform] 还支持合作伙伴根据需要构建和集成自己的产品和技术。 这种强大和灵活性使 [!DNL Experience Platform] 其在市场上独一无二。 它为合作伙伴、客户和开发人员社区提供了构建创新推动体验式业务的基础： 通过提供从客户及其个人偏好的360度视图中获得的不断改进的完全个性化体验，超越客户期望。
+构建于开放式API上 [!DNL Experience Platform] ，将系统的全部功能呈现给开发人员，支持使用熟悉的工具轻松集成企业解决方案。 [!DNL Experience Platform] 还支持合作伙伴根据需要构建和集成自己的产品和技术。 这种强大和灵活性使 [!DNL Experience Platform] 其在市场上独一无二。 它为合作伙伴、客户和开发人员社区提供了构建创新推动体验式业务的基础：通过提供从客户及其个人偏好的360度视图中获得的不断改进的完全个性化体验，超越客户期望。
 
 以下视频概述了 [!DNL Experience Platform] 如何创建丰富、相关的实时体验，首先从客户角度，然后从幕后技术角度。
 
@@ -34,7 +35,7 @@ Adobe Experience Platform是市场上功能最强大、最灵活、最开放的�
 
 ## 浏览器支持
 
-该Adobe Experience Platform设计为可在最新版 **Google Chrome** 、Safari、Firefox和Microsoft Edge中发挥最佳作用。 在旧版本的浏览器上使用某些功能时可能遇到问题。
+Adobe Experience Platform在最新版Google Chrome、Safari、 **Firefox** 和Microsoft Edge中可以发挥最佳作用。 在旧版本的浏览器上使用某些功能时可能遇到问题。
 
 | Operating system | 支持的浏览器 |
 |---|---|
@@ -54,7 +55,7 @@ Adobe Experience Platform用户界面和文档提供多种语言版本。
 
 ### 用户界面语言
 
-Adobe Experience Platform用户界面的当前语言版本如下：
+Adobe Experience Platform用户界面目前提供以下语言版本：
 
 * 英语
 * 法语
@@ -73,7 +74,7 @@ Adobe Experience Platform用户界面的当前语言版本如下：
 
 ### 文档语言
 
-Adobe Experience Platform文档提供多种语言版本。 要更改语言，请单击语言下拉框，然后选择所需的语言。
+Adobe Experience Platform文件提供多种语言。 要更改语言，请单击语言下拉框，然后选择所需的语言。
 
 ![image](assets/lang.jpg)
 
@@ -110,15 +111,15 @@ Adobe Experience Platform文档提供多种语言版本。 要更改语言，请
 
 ## 参考文档和资源
 
-* [**发行说明&#x200B;**](../release-notes/latest/latest.md)<br/>查找有关最新版本的信[!DNL Experience Platform]息，并查看以往版本。
+* [**发行说明**](../release-notes/latest/latest.md)<br/>&#x200B;查找有关最新版本的信 [!DNL Experience Platform] 息，并查看以往版本。
 
-* [**术语表&#x200B;**](glossary.md)<br/>查看Adobe Experience Platform术语。
+* [**词汇**](glossary.md)<br/>&#x200B;回顾Adobe Experience Platform术语。
 
-* [**疑难解答指&#x200B;**](troubleshooting.md)<br/>南查找常见错误的解决方法以及常见问题解答。
+* [**疑难解答指**](troubleshooting.md)<br/>&#x200B;南查找常见错误的解决方法以及常见问题解答。
 
-* [**API基础&#x200B;**](api-fundamentals.md)<br/>知识学习使用API的基础[!DNL Platform]知识。
+* [**API基础**](api-fundamentals.md)<br/>&#x200B;知识学习使用API的基础 [!DNL Platform] 知识。
 
-* [**API引用&#x200B;**](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)<br/>发[!DNL Experience Platform]现API，包括标题、参数、示例请求和响应。*这些文档托管在AdobeI/O上。*
+* [**API引用**](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)<br/>发 [!DNL Experience Platform] 现API，包括标题、参数、示例请求和响应。 *这些文档托管在AdobeI/O上。*
 
 ## Adobe Experience Platform集成视频资源
 
@@ -126,7 +127,7 @@ Adobe Experience Platform文档提供多种语言版本。 要更改语言，请
 
 >[!VIDEO](https://video.tv.adobe.com/v/32554?quality=12&learn=on)
 
-Adobe Experience Platform提供的一个主要好处是其与其他现有Adobe服务集成的能力。 以下视频概述了服务如 [!DNL Experience Platform] 何与应用 [!DNL Experience Cloud] 程序和功能(如Adobe Analytics、Adobe Target、Adobe Campaign、Adobe Experience Manager [!DNL Customer Attributes]、 [!DNL Audience Library]和)集成 [!DNL Experience Platform Launch]。
+Adobe Experience Platform提供的一个主要好处是它能够与其他现有Adobe服务相集成。 以下视频概述了服务如 [!DNL Experience Platform] 何与应用 [!DNL Experience Cloud] 程序和功能(如Adobe Analytics、Adobe Target、Adobe Campaign、Adobe Experience Manager [!DNL Customer Attributes]、 [!DNL Audience Library]和)集成 [!DNL Experience Platform Launch]。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32553?quality=12&learn=on)
 
