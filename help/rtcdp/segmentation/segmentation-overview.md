@@ -1,10 +1,11 @@
 ---
+keywords: segmentation; segmentation rtcdp;real time customer data platform segmentation
 title: 分段服务概述
 seo-title: Adobe实时客户数据平台中的细分服务
 description: 描述分段服务的概述。
 seo-description: 概述介绍Adobe实时客户数据平台上的细分服务和细分。
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
 source-wordcount: '254'
 ht-degree: 1%
@@ -14,7 +15,7 @@ ht-degree: 1%
 
 # [!DNL Segmentation Service] in [!DNL Real-time Customer Data Platform]
 
-[!DNL Real-time Customer Data Platform] （实时CDP）允许您从多个来源提供数据，为客户提供协调一致的体验。 提供相关的个性化营销活动可以 [!DNL Segmentation Service]通过Adobe Experience Platform实现。
+[!DNL Real-time Customer Data Platform] （实时CDP）允许您从多个来源提供数据，为客户提供协调一致的体验。 提供相关的个性化营销活动可 [!DNL Segmentation Service]以通过Adobe Experience Platform实现。
 
 实时CDP构建在Adobe Experience Platform之上，并利用许多服务 [!DNL Experience Platform] 和功能。 使用 [!DNL Segmentation Service]，您可以将客户划分为具有相似特征的较小组，从而提供定制营销。
 
