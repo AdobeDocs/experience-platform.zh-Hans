@@ -4,9 +4,9 @@ seo-title: Adobe Experience PlatformWeb SDK渲染个性化内容
 description: 了解如何使用Experience PlatformWeb SDK呈现个性化内容
 seo-description: 了解如何使用Experience PlatformWeb SDK呈现个性化内容
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: c342e8d7698c1d213658f3f1dae751edbde04b83
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '237'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 个性化选项概述
 
-Adobe Experience Platform支 [!DNL Web SDK] 持在Adobe查询个性化解决方案，包括Adobe Target。 有两种个性化模式： 检索可自动渲染的内容和开发人员必须渲染的内容。 SDK还提供管理闪 [烁的工具](../../edge/solution-specific/target/flicker-management.md)。
+Adobe Experience Platform支 [!DNL Web SDK] 持在包括Adobe Target在内的Adobe查询个性化解决方案。 有两种个性化模式：检索可自动渲染的内容和开发人员必须渲染的内容。 SDK还提供管理闪 [烁的工具](../../edge/solution-specific/target/flicker-management.md)。
 
 ## 自动呈现内容
 
@@ -40,15 +40,15 @@ alloy("sendEvent", {
 
 ## 手动呈现内容
 
-您可以使用来请求作为对命令的承诺返回决策 `event` 的列表 `scopes`。 范围是让个性化解决方案知道您需要做出哪些决策的字符串。
+通过指定选项，您可以请求作为对命令的承诺返回 `sendEvent` 的决策列表 `decisionScopes` 。 范围是让个性化解决方案知道您需要做出哪些决策的字符串。
 
 ```javascript
 alloy("sendEvent",{
     xdm:{...},
-    scopes:['demo-1', 'demo-2']
+    decisionScopes:['demo-1', 'demo-2']
   }).then(function(result){
     if (result.decisions){
-      //do something with the decisions
+      // Do something with the decisions.
     }
   })
 ```
@@ -92,8 +92,8 @@ alloy("sendEvent",{
 
 >[!TIP]
 >
-> 如果您使用 [!DNL Target] 作用域在服务器上变为mBox，则只有它们一次是所有请求，而不是单独请求。 全局mbox始终会发送。
+> 如果您使 [!DNL Target]用，范围将变为服务器上的mBoxes，只一次请求它们，而不是单独请求它们。 全局mbox始终会发送。
 
 ### 检索自动内容
 
-如果希望包含 `result.decisions` 自动可渲染决策，可将 `renderDecisions` 其设置为false并包含特殊范围 `__view__`。
+如果您希望包含自 `result.decisions` 动可渲染决策并且“不具有合金”(Not Have Alloy)自动渲染它们，可以将其设 `renderDecisions` 置 `false`为，并包括特殊范围 `__view__`。
