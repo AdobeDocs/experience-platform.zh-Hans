@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;intelligent services;popular topics
+keywords: Experience Platform;home;intelligent services;popular topics;intelligent service;Intelligent service
 solution: Experience Platform
 title: 智能服务概述
 topic: Intelligent Services overview
+description: 智能服务使营销分析师和从业人员能够在客户体验使用案例中利用人工智能和机器学习的强大功能。 这使营销分析师能够使用业务级配置设置特定于公司需求的预测，而无需数据科学专业知识。 此外，营销从业者可以在Adobe Experience Cloud、Adobe Experience Platform和第三方应用程序中激活预测。
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
 workflow-type: tm+mt
-source-wordcount: '428'
+source-wordcount: '491'
 ht-degree: 0%
 
 ---
@@ -30,7 +31,7 @@ Adobe拥有AI/ML专业知识和深厚的CXM体验，而智能服务是专门为�
 
 ### 预测性洞察更准确
 
-通过采用高级算法AI/ML模型，以最高的精度开发； 在具有深度和粒度的普通数据集上运行AI/ML，实现预测的切片和切割； 提供预测性客户洞察的背后原因和原因。
+通过采用高级算法AI/ML模型，以最高的精度开发；在具有深度和粒度的普通数据集上运行AI/ML，实现预测的切片和切割；提供预测性客户洞察的背后原因和原因。
 
 ### 快速获得洞察和ROI
 
