@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;segment;Segment;create segment
 solution: Experience Platform
 title: 创建区段
 topic: tutorial
+description: 本文档提供了一个教程，用于使用Adobe Experience Platform分段服务API开发、测试、预览和保存段定义。
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '901'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # 创建区段
 
-本文档提供了一个教程，用于使用DNLAdobe Experience Platform分段服务API开发、测试、预 [览和保存段定义](../api/getting-started.md)。
+本文档提供了一个教程，用于使用DNLAdobe Experience Platform分段服务API开发、测 [试、预览和保存段定义](../api/getting-started.md)。
 
 有关如何使用用户界面构建区段的信息，请参阅“区段 [构建器指南”](../ui/overview.md)。
 
@@ -22,9 +23,9 @@ ht-degree: 0%
 
 本教程需要对创建受众段时涉及的 [!DNL Adobe Experience Platform] 各种服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-- [!DNL Adobe Experience Platform Segmentation Service](../home.md): 允许您根据实时受众数据构建用户档案细分。
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [!DNL Real-time Customer Profile](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [!DNL Adobe Experience Platform Segmentation Service](../home.md):允许您根据实时受众数据构建用户档案细分。
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
@@ -36,7 +37,7 @@ ht-degree: 0%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -50,7 +51,7 @@ ht-degree: 0%
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 ## 开发细分定义
 
