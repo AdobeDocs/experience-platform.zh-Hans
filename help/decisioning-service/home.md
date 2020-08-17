@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;offer management;Offer Management;Journey;customer journey;journey;decision events;decision event;Decision events
 solution: Experience Platform
 title: 决策服务
 topic: overview
+description: 决策服务提供在Adobe Experience Platform运行的应用程序中创建个性化、优化和精心编排的体验的功能。 使用决策服务，您可以从一组可用选项中确定最佳选项。 这些选项也称为替代选项，可以是优惠、产品推荐、Web体验的内容组件、对话脚本和要执行的操作。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '1592'
+source-wordcount: '1648'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # 决策服务概述
 
-[!DNL Decisioning Service] 提供在Adobe Experience Platform上运行的应用程序中创建个性化、优化和精心编排的体验的功能。 使 [!DNL Decisioning Service]用，您可以从一 *组可用* 选项中确定最佳选项。 这些选项也称为替代选项，可以是优惠、产品推荐、Web体验的内容组件、对话脚本和要执行的操作。 目前支持优惠决策的用 *例和领域* ，其中决策选项被特别建模为优惠，并支持未来更多的用例。
+[!DNL Decisioning Service] 提供在运行于Adobe Experience Platform的应用程序中创建个性化、优化和精心编排的体验的功能。 使 [!DNL Decisioning Service]用，您可以从一 *组可用* 选项中确定最佳选项。 这些选项也称为替代选项，可以是优惠、产品推荐、Web体验的内容组件、对话脚本和要执行的操作。 目前支持优惠决策的用 *例和领域* ，其中决策选项被特别建模为优惠，并支持未来更多的用例。
 
 借 [!DNL Decisioning Service]助，客户可以重复使用业务逻辑，并跨渠道和应用程序共享一系列选项。 现在，无论客户的最终用户与业务或组织进行交互的渠道是何时、如何以及在何种，都可以利用决策选项，而不是在应用程序的深度管理决策选项和选择策略。
 
