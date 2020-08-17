@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;filter;Filter;filter data;Filter data;date range
 solution: Experience Platform
 title: 使用查询参数筛选目录数据
 topic: developer guide
+description: Catalog Service API允许通过使用请求查询参数筛选响应数据。 目录的最佳实践之一是在所有API调用中使用过滤器，因为它们可减少API的负载并帮助提高整体性能。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
 workflow-type: tm+mt
-source-wordcount: '2033'
+source-wordcount: '2078'
 ht-degree: 1%
 
 ---
@@ -150,10 +151,10 @@ curl -X GET \
 
 根据上述响应，可推断出以下内容：
 
-* 如果对象缺少任何请求的属性，则它将仅显示它包含的请求的属性。 (`Dataset1`)
-* 如果某个对象不包含任何请求的属性，则该对象将显示为空对象。 (`Dataset2`)
-* 如果数据集包含属性但没有值，则它可能将请求的属性返回为空对象。 (`Dataset3`)
-* 否则，数据集将显示所有请求属性的完整值。 (`Dataset4`)
+* 如果对象缺少任何请求的属性，则它将仅显示它包含的请求的属性。(`Dataset1`)
+* 如果某个对象不包含任何请求的属性，则该对象将显示为空对象。(`Dataset2`)
+* 如果数据集包含属性但没有值，则它可能将请求的属性返回为空对象。(`Dataset3`)
+* 否则，数据集将显示所有请求属性的完整值。(`Dataset4`)
 
 ## 响应列表的偏移起始索引
 
@@ -206,8 +207,8 @@ curl -X GET \
 * 标记名称对于您的IMS组织是唯一的。
 * Adobe过程可能会利用某些行为的标签。 这些标记的名称前缀有“adobe”作为标准。 因此，在声明标记名称时应避免此约定。
 * 以下标记名称是保留的，可供 [!DNL Experience Platform]在整个组织中使用，因此不能声明为组织的标记名称：
-   * `unifiedProfile`: 此标记名称保留给要摄取的数据集 [!DNL Real-time Customer Profile](../../profile/home.md)。
-   * `unifiedIdentity`: 此标记名称保留给要摄取的数据集 [!DNL Identity Service](../../identity-service/home.md)。
+   * `unifiedProfile`:此标记名称保留给要摄取的数据集 [!DNL Real-time Customer Profile](../../profile/home.md)。
+   * `unifiedIdentity`:此标记名称保留给要摄取的数据集 [!DNL Identity Service](../../identity-service/home.md)。
 
 以下是包含属性的数据集的 `tags` 示例。 该属性中的标记采用键值对的形式，每个标记值都显示为包含单个字符串的数组：
 
@@ -396,7 +397,7 @@ curl -X GET \
 
 可以以逗号分隔的列表提供多个排序属性。 如果第一个排序属性生成的多个对象包含该属性的相同值，则第二个排序属性随后用于进一步对那些匹配的对象进行排序。
 
-例如，请考虑以下查询: `orderBy=name,desc:created`. 根据第一个排序属性，结果按升序排序 `name`。 如果多个记录共享同一属 `name` 性，则这些匹配记录随后按第二个排序属性排序 `created`。 如果没有返回的记录共享 `name`相同， `created` 则属性不会影响排序。
+For example, consider the following query: `orderBy=name,desc:created`. 根据第一个排序属性，结果按升序排序 `name`。 如果多个记录共享同一属 `name` 性，则这些匹配记录随后按第二个排序属性排序 `created`。 如果没有返回的记录共享 `name`相同， `created` 则属性不会影响排序。
 
 
 **API格式**
@@ -474,8 +475,8 @@ curl -X GET \
 
 [!DNL Catalog] 提供了两种按属性筛选的方法，下面各节进一步介绍了这些方法：
 
-* [使用简单过滤器](#using-simple-filters): 按特定属性是否与特定值匹配进行筛选。
-* [使用属性参数](#using-the-property-parameter): 使用条件表达式根据属性是否存在，或者某个属性的值是否与其他指定值或常规表达式匹配、近似或比较，进行筛选。
+* [使用简单过滤器](#using-simple-filters):按特定属性是否与特定值匹配进行筛选。
+* [使用属性参数](#using-the-property-parameter):使用条件表达式根据属性是否存在，或者某个属性的值是否与其他指定值或常规表达式匹配、近似或比较，进行筛选。
 
 ### 使用简单过滤器 {#using-simple-filters}
 
