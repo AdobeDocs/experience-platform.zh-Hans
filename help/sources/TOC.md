@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform源连接器帮助
 translation-type: tm+mt
-source-git-commit: c15f582eeaa895f03441b2f488686a9a48942f3d
+source-git-commit: 88f999691cde2fbebdf23f940f6d48acdfb188e3
 workflow-type: tm+mt
-source-wordcount: '610'
+source-wordcount: '619'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,8 @@ ht-degree: 0%
 - [源连接器概述](home.md)
 - 可用源连接器 {#connectors}
    - Adobe应用程序 {#adobe-applications}
-      - [分析数据连接器](connectors/adobe-applications/analytics.md)
+      - [分析分类数据连接器](connectors/adobe-applications/classifications.md)
+      - [Analytics数据连接器](connectors/adobe-applications/analytics.md)
       - [Audience Manager连接器](connectors/adobe-applications/audience-manager.md)
       - [客户属性连接器](connectors/adobe-applications/customer-attributes.md)
       - 映射Adobe应用程序字段 {#mapping}
@@ -133,6 +134,7 @@ ht-degree: 0%
 - UI教程 {#ui-tutorials}
    - 创建源连接器 {#create}
       - Adobe应用程序 {#adobe-applications}
+         - [Adobe Analytics分类数据连接器](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Analytics连接器](tutorials/ui/create/adobe-applications/analytics.md)
          - [Adobe Audience Manager连接器](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [客户属性连接器](tutorials/ui/create/adobe-applications/customer-attributes.md)
