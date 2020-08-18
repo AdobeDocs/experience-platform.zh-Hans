@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中为广告连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: d80622aaa8408d640a1a80b6a37f4083344e7fa1
+source-git-commit: 6bd5dc5a68fb2814ab99d43b34f90aa7e50aa463
 workflow-type: tm+mt
-source-wordcount: '1274'
+source-wordcount: '1272'
 ht-degree: 0%
 
 ---
@@ -20,10 +20,10 @@ ht-degree: 0%
 
 本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-- [体验数据模型(XDM)系统](../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [[!DNL Experience Data Model] (XDM)系统](../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    - [模式合成基础](../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    - [模式编辑器教程](../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-- [实时客户用户档案](../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [[!DNL实时客户用户档案]](../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 此外，本教程要求您已创建广告帐户。 有关在UI中创建不同付款连接器的列表教程，请参阅源 [连接器概述](../../../home.md)。
 
@@ -106,20 +106,20 @@ ht-degree: 0%
 
 ## 提供数据流详细信息
 
-此时 *[!UICONTROL 会显示]* “数据流详细信息”步骤，允许您命名新数据流并简要描述新数据流。
+此时 **[!UICONTROL 会显示]** “数据流详细信息”步骤，允许您命名新数据流并简要描述新数据流。
 
-在此过程中，您还可以启用“部 *[!UICONTROL 分摄取]* ”和“ *[!UICONTROL 错误诊断”]*。 启用 *[!UICONTROL 部分摄取]* ，可以摄取包含错误且达到特定阈值的数据。 启 *[!UICONTROL 用部分摄取]* ，请拖动错误 *[!UICONTROL 阈值%dial以调整批]* 错误阈值。 或者，也可以通过选择输入框手动调整阈值。 有关详细信息，请参 [阅部分批摄取概述](../../../../ingestion/batch-ingestion/partial.md)。
+在此过程中，您还可以启用“部 **[!UICONTROL 分摄取]** ”和“ **[!UICONTROL 错误诊断”]**。 启用 **[!UICONTROL 部分摄取]** ，可以摄取包含错误且达到特定阈值的数据。 启 **[!UICONTROL 用部分摄取]** ，请拖动错误 **[!UICONTROL 阈值%dial以调整批]** 错误阈值。 或者，也可以通过选择输入框手动调整阈值。 有关详细信息，请参 [阅部分批摄取概述](../../../../ingestion/batch-ingestion/partial.md)。
 为数据流提供值，然后选择 **[!UICONTROL 下一步]**。
 
 ![dataflow-details](../../../images/tutorials/dataflow/all-tabular/dataflow-detail.png)
 
 ## 查看数据流
 
-此时 *[!UICONTROL 会出现]* “审阅”步骤，允许您在创建新数据流之前对其进行查看。 详细信息按以下类别分组：
+此时 **[!UICONTROL 会出现]** “审阅”步骤，允许您在创建新数据流之前对其进行查看。 详细信息按以下类别分组：
 
-- *[!UICONTROL 连接]*:显示源类型、所选源文件的相关路径以及该源文件中的列数。
-- *[!UICONTROL 分配数据集和地图字段]*:显示接收源数据的数据集，包括数据集附带的模式。
-- *[!UICONTROL 计划]*:显示摄取计划的活动周期、频率和间隔。
+- **[!UICONTROL 连接]**:显示源类型、所选源文件的相关路径以及该源文件中的列数。
+- **[!UICONTROL 分配数据集和地图字段]**:显示接收源数据的数据集，包括数据集附带的模式。
+- **[!UICONTROL 计划]**:显示摄取计划的活动周期、频率和间隔。
 
 查看数据流后，单击 **[!UICONTROL 完成]** ，并允许一段时间创建数据流。
 
@@ -131,7 +131,7 @@ ht-degree: 0%
 
 ## 删除数据流
 
-您可以删除不再需要的或使用Dataflows工作区中提供的Delete ** （删除）功能创建的 *[!UICONTROL 数据流]* 。 有关如何删除数据流的详细信息，请参阅有关在UI [中删除数据流的教程](../delete.md)。
+您可以删除不再需要的或使用Dataflows工作区中提供的Delete **** （删除）功能创建的 **[!UICONTROL 数据流]** 。 有关如何删除数据流的详细信息，请参阅有关在UI [中删除数据流的教程](../delete.md)。
 
 ## 后续步骤
 
@@ -148,11 +148,11 @@ ht-degree: 0%
 
 创建数据流时，它会立即变为活动状态，并根据给定的计划接收数据。 您可以按照以下说明随时禁用活动数据流。
 
-在“数 *[!UICONTROL 据流]* ”屏幕中，选择要禁用的数据流的名称。
+在“数 **[!UICONTROL 据流]** ”屏幕中，选择要禁用的数据流的名称。
 
 ![browse-dataset-flow](../../../images/tutorials/dataflow/advertising/view-dataset-flows.png)
 
-“ *[!UICONTROL 属性]* ”列显示在屏幕的右侧。 此面板包含一个“ **[!UICONTROL 已启用]** ”切换按钮。 单击切换以禁用数据流。 在禁用数据流后，可以使用相同的切换重新启用数据流。
+“ **[!UICONTROL 属性]** ”列显示在屏幕的右侧。 此面板包含一个“ **[!UICONTROL 已启用]** ”切换按钮。 单击切换以禁用数据流。 在禁用数据流后，可以使用相同的切换重新启用数据流。
 
 ![disable](../../../images/tutorials/dataflow/advertising/disable.png)
 
