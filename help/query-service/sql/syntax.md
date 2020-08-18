@@ -4,9 +4,9 @@ solution: Experience Platform
 title: SQL语法
 topic: syntax
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: a10508770a862621403bad94c14db4529051020c
 workflow-type: tm+mt
-source-wordcount: '1940'
+source-wordcount: '1973'
 ht-degree: 1%
 
 ---
@@ -165,8 +165,8 @@ DROP [TEMP] TABLE [IF EXISTS] [db_name.]table_name
 
 ### 参数
 
-- `IF EXISTS`: 如果表不存在，则不会发生任何情况
-- `TEMP`: 临时表
+- `IF EXISTS`:如果表不存在，则不会发生任何情况
+- `TEMP`:临时表
 
 ## 创建视图
 
@@ -226,7 +226,7 @@ BEGIN [ TRANSACTION ]
 
 #### 参数
 
-- `TRANSACTION`: 可选关键字。 监听它，不会对此执行任何操作。
+- `TRANSACTION`:可选关键字。 监听它，不会对此执行任何操作。
 
 ### 关闭
 
@@ -238,7 +238,7 @@ CLOSE { name }
 
 #### 参数
 
-- `name`: 要关闭的打开游标的名称。
+- `name`:要关闭的打开游标的名称。
 
 ### 提交
 
@@ -251,7 +251,7 @@ COMMIT [ WORK | TRANSACTION ]
 #### 参数
 
 - `WORK`
-- `TRANSACTION`: 可选关键字。 它们没有作用。
+- `TRANSACTION`:可选关键字。 它们没有作用。
 
 ### 取消分配
 
@@ -263,9 +263,9 @@ DEALLOCATE [ PREPARE ] { name | ALL }
 
 #### 参数
 
-- `Prepare`: 忽略此关键字。
-- `name`: 要取消分配的已准备语句的名称。
-- `ALL`: 取消分配所有准备的语句。
+- `Prepare`:忽略此关键字。
+- `name`:要取消分配的已准备语句的名称。
+- `ALL`:取消分配所有准备的语句。
 
 ### DECLARE
 
@@ -277,9 +277,9 @@ DECLARE name CURSOR [ WITH  HOLD ] FOR query
 
 #### 参数
 
-- `name`: 要创建的光标的名称。
-- `WITH HOLD`: 指定在创建游标的事务成功提交后，游标可以继续使用。
-- `query`: 提 `SELECT` 供游 `VALUES` 标要返回的行的或命令。
+- `name`:要创建的光标的名称。
+- `WITH HOLD`:指定在创建游标的事务成功提交后，游标可以继续使用。
+- `query`:提 `SELECT` 供游 `VALUES` 标要返回的行的或命令。
 
 ### 执行
 
@@ -293,14 +293,14 @@ EXECUTE name [ ( parameter [, ...] ) ]
 
 #### 参数
 
-- `name`: 要执行的准备语句的名称。
-- `parameter`: 准备语句的参数的实际值。 这必须是一个表达式，其生成的值与此参数的数据类型兼容，这取决于创建预准备语句时确定的值。
+- `name`:要执行的准备语句的名称。
+- `parameter`:准备语句的参数的实际值。 这必须是一个表达式，其生成的值与此参数的数据类型兼容，这取决于创建预准备语句时确定的值。
 
 ### 说明
 
 此命令显示PostgreSQL计划程序为提供的语句生成的执行计划。 执行计划显示如何通过简单顺序扫描、索引扫描等扫描语句所引用的表；如果引用了多个表，则使用哪些连接算法将每个输入表中所需的行相结合。
 
-显示的最关键部分是估计的语句执行成本，这是计划员对运行语句需要多长时间的猜测（以任意但通常平均磁盘页读取的成本单位衡量）。 实际上，显示了两个数字： 返回第一行之前的开始成本，以及返回所有行的总成本。 对于大多数查询，总成本是重要的，但在上下文（如EXISTS中的子查询）中，计划员选择最小的开始增加成本而不是最小的总成本（因为执行器在获得一行后停止）。 此外，如果限制返回行数并带有子句，计划 `LIMIT` 员会在端点成本之间进行适当的插值，以估计哪个计划真的最便宜。
+显示的最关键部分是估计的语句执行成本，这是计划员对运行语句需要多长时间的猜测（以任意但通常平均磁盘页读取的成本单位衡量）。 实际上，显示了两个数字：返回第一行之前的开始成本，以及返回所有行的总成本。 对于大多数查询，总成本是重要的，但在上下文（如EXISTS中的子查询）中，计划员选择最小的开始增加成本而不是最小的总成本（因为执行器在获得一行后停止）。 此外，如果限制返回行数并带有子句，计划 `LIMIT` 员会在端点成本之间进行适当的插值，以估计哪个计划真的最便宜。
 
 该选 `ANALYZE` 项会导致执行语句，而不仅是计划语句。 然后，将实际运行时间统计信息添加到显示中，包括每个计划节点内花费的总已用时间（以毫秒为单位）以及它返回的总行数。 这有助于了解规划者的估计是否接近现实。
 
@@ -316,9 +316,9 @@ where option can be one of:
 
 #### 参数
 
-- `ANALYZE`: 执行命令并显示实际运行时间和其他统计信息。 此参数默认为 `FALSE`。
-- `FORMAT`: 指定输出格式，可以是TEXT、XML、JSON或YAML。 非文本输出包含的信息与文本输出格式相同，但对项目来说更容易进行分析。 此参数默认为 `TEXT`。
-- `statement`: 任何 `SELECT`、、 `INSERT`、 `UPDATE`、、 `DELETE`或您想 `VALUES`要查看的 `EXECUTE``DECLARE``CREATE TABLE AS``CREATE MATERIALIZED VIEW AS` 、、、或者说明的执行计划。
+- `ANALYZE`:执行命令并显示实际运行时间和其他统计信息。 此参数默认为 `FALSE`。
+- `FORMAT`:指定输出格式，可以是TEXT、XML、JSON或YAML。 非文本输出包含的信息与文本输出格式相同，但对项目来说更容易进行分析。 此参数默认为 `TEXT`。
+- `statement`:任何 `SELECT`、、 `INSERT`、 `UPDATE`、、 `DELETE`或您想 `VALUES`要查看的 `EXECUTE``DECLARE``CREATE TABLE AS``CREATE MATERIALIZED VIEW AS` 、、、或者说明的执行计划。
 
 >[!IMPORTANT]
 >
@@ -341,7 +341,7 @@ EXPLAIN SELECT * FROM foo;
 
 `FETCH` 使用先前创建的游标检索行。
 
-光标具有关联的位置，该位置由使用 `FETCH`。 光标位置可以位于查询结果的第一行之前、结果的任何特定行上或结果的最后一行之后。 创建时，光标将放在第一行之前。 读取某些行后，光标将位于最近检索到的行上。 如 `FETCH` 果在可用行的末尾之外运行，则光标将保留在最后一行之后。 如果没有这样的行，则返回空结果，并根据需要将光标放在第一行之前或最后一行之后。
+光标具有关联的位置，该位置由使用 `FETCH`。 光标位置可以位于查询结果的第一行之前、结果的任何特定行上或结果的最后一行之后。 创建时，光标将放在第一行之前。 读取某些行后，光标将位于最近检索到的行上。 如 `FETCH` 果在可用行的末尾处运行，则光标将保留在最后一行之后。 如果没有这样的行，则返回空结果，并根据需要将光标放在第一行之前或最后一行之后。
 
 ```
 FETCH num_of_rows [ IN | FROM ] cursor_name
@@ -349,8 +349,8 @@ FETCH num_of_rows [ IN | FROM ] cursor_name
 
 #### 参数
 
-- `num_of_rows`: 可能带符号的整数常数，用于确定要提取的行的位置或数目。
-- `cursor_name`: 打开的光标的名称。
+- `num_of_rows`:可能带符号的整数常数，用于确定要提取的行的位置或数目。
+- `cursor_name`:打开的光标的名称。
 
 ### 准备
 
@@ -368,8 +368,8 @@ PREPARE name [ ( data_type [, ...] ) ] AS SELECT
 
 #### 参数
 
-- `name`: 为此特定准备语句指定的任意名称。 它在单个会话中必须是唯一的，并且随后用于执行或取消分配先前准备的语句。
-- `data-type`: 准备语句的参数的数据类型。 如果特定参数的数据类型未指定或指定为未知，则从首次引用该参数的上下文推断该数据类型。 要引用准备语句本身中的参数，请使用$1、$2等。
+- `name`:为此特定准备语句指定的任意名称。 它在单个会话中必须是唯一的，并且随后用于执行或取消分配先前准备的语句。
+- `data-type`:准备语句的参数的数据类型。 如果特定参数的数据类型未指定或指定为未知，则从首次引用该参数的上下文推断该数据类型。 要引用准备语句本身中的参数，请使用$1、$2等。
 
 
 ### 回滚
@@ -408,7 +408,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 #### 参数
 
-- `TEMPORARAY` 或 `TEMP`: 如果指定，则将表创建为临时表。
+- `TEMPORARAY` 或 `TEMP`:如果指定，则将表创建为临时表。
 - `UNLOGGED:` 如果指定，则表将创建为未记录的表。
 - `new_table` 要创建的表的名称(可选模式限定)。
 
@@ -431,12 +431,12 @@ SHOW name
 #### 参数
 
 - `name`：
-   - `SERVER_VERSION`: 显示服务器的版本号。
-   - `SERVER_ENCODING`: 显示服务器端字符集编码。 目前，可以显示此参数，但不能设置此参数，因为编码是在创建数据库时确定的。
-   - `LC_COLLATE`: 显示数据库的归类区域设置（文本排序）。 目前，可以显示此参数，但不能设置，因为设置是在创建数据库时确定的。
-   - `LC_CTYPE`: 显示数据库的字符分类区域设置。 目前，可以显示此参数，但不能设置，因为设置是在创建数据库时确定的。
-      `IS_SUPERUSER`: 如果当前角色具有超级用户权限，则为true。
-- `ALL`: 通过说明显示所有配置参数的值。
+   - `SERVER_VERSION`:显示服务器的版本号。
+   - `SERVER_ENCODING`:显示服务器端字符集编码。 目前，可以显示此参数，但不能设置此参数，因为编码是在创建数据库时确定的。
+   - `LC_COLLATE`:显示数据库的归类区域设置（文本排序）。 目前，可以显示此参数，但不能设置，因为设置是在创建数据库时确定的。
+   - `LC_CTYPE`:显示数据库的字符分类区域设置。 目前，可以显示此参数，但不能设置，因为设置是在创建数据库时确定的。
+      `IS_SUPERUSER`:如果当前角色具有超级用户权限，则为true。
+- `ALL`:通过说明显示所有配置参数的值。
 
 #### 示例
 
@@ -462,3 +462,22 @@ where transaction_mode is one of:
     ISOLATION LEVEL { SERIALIZABLE | REPEATABLE READ | READ COMMITTED | READ UNCOMMITTED }
     READ WRITE | READ ONLY
 ```
+
+### 复制
+
+此命令将任何SELECT查询的输出转储到指定位置。 用户必须具有访问此位置的权限，此命令才能成功。
+
+```
+COPY  query
+    TO '%scratch_space%/folder_location'
+    [  WITH FORMAT 'format_name']
+
+where 'format_name' is be one of:
+    'parquet', 'csv', 'json'
+
+'parquet' is the default format.
+```
+
+>[!NOTE]
+>
+>完整的输出路径将 `adl://<ADLS_URI>/users/<USER_ID>/acp_foundation_queryService/folder_location/<QUERY_ID>`
