@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 在UI中创建客户属性源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
+source-git-commit: 999ff0e9525d7d9f67298862c68bb59ddc35e558
 workflow-type: tm+mt
-source-wordcount: '364'
-ht-degree: 7%
+source-wordcount: '352'
+ht-degree: 8%
 
 ---
 
@@ -34,7 +34,7 @@ ht-degree: 7%
 
 ![](../../../../images/tutorials/create/customer-attributes/source_activity.png)
 
-从可用客户属性用户档案数据集的列表中，选择要引入平台的，然后单击“下 **一步”**。
+从可用客户属性用户档案数据集的列表中，选择要引入的，然 [!DNL Platform] 后单击下 **一步**。
 
 >[!NOTE]
 >
@@ -51,7 +51,7 @@ ht-degree: 7%
 
 ## 后续步骤
 
-创建连接后，将自动创建目标架构和数据集，以包含传入数据。当初始摄取完成时，下游平台服务(如实时客户用户档案和细分服务)可以使用客户属性用户档案数据。 有关更多详细信息，请参阅以下文档:
+创建连接后，将自动创建目标架构和数据集，以包含传入数据。当初始摄取完成时，下游服务（如和）可以使用客户属 [!DNL Platform] 性用户档案 [!DNL Real-time Customer Profile] 数据 [!DNL Segmentation Service]。 有关更多详细信息，请参阅以下文档:
 
-* [实时客户用户档案概述](../../../../../profile/home.md)
-* [分段服务概述](../../../../../segmentation/home.md)
+* [[!DNL Real-time Customer Profile] 概述](../../../../../profile/home.md)
+* [[!DNL Segmentation Service] 概述](../../../../../segmentation/home.md)
