@@ -4,9 +4,9 @@ seo-title: TMMData扩展
 description: TMMData扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: TMMData扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
 workflow-type: tm+mt
-source-wordcount: '570'
+source-wordcount: '568'
 ht-degree: 4%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-[!DNL TMMData's] Adobe Marketing Cloud基础平台为营销团队提供了各种工具，用于访问和混合其所有关键数据源（包括内部／外部和在线／离线数据），以实现自信、全面的跨渠道分析，并实现自动活动设置，并直接导入Adobe和其他分析和BI工具。
+[!DNL TMMData's] Adobe Marketing Cloud的基础平台为营销团队提供工具，用于访问和混合其所有关键数据源（包括内部／外部和在线／离线数据），以实现自信、全面的跨渠道分析，并实现自动活动设置，并直接导入Adobe和其他分析和BI工具。
 
 [!DNL TMMData] 是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](hhttps://exchange.adobe.com/experiencecloud.details.100148.tmmdata-foundation-platform.html)。
 
@@ -36,7 +36,7 @@ ht-degree: 4%
 
 1. 在Adobe [实时CDP界面中](http://platform.adobe.com/)，转到“目 **[!UICONTROL 标]** ”> **[!UICONTROL “目录]**”。
 2. 从目录中选择扩展或使用搜索栏。
-3. 单击目标以选中它，然后在右边栏 **[!UICONTROL 中选择]** “安装扩展”。 如果“安 **[!UICONTROL 装扩展]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties]** 权限。 请参 [阅先决条件](#prerequisites)。
+3. 单击目标以突出显示它，然后在右 **[!UICONTROL 边栏中]** 选择配置。 如果“ **[!UICONTROL 配置]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties权限]** 。 请参 [阅先决条件](#prerequisites)。
 4. 在“选 **[!UICONTROL 择可用的启动项属性]** ”窗口中，选择要在其中安装扩展的启动项属性。 您还可以在启动项中选择创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解启动文档的“ [属性”页](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) 面部分中的属性。
 5. 该工作流将引导您进入Launch以完成安装。
 
