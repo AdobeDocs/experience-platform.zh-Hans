@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建HubSpot源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 598b29f681ac930a4e1781f7f298608c8344d807
+source-git-commit: dd036cf4df5d772206d2b73292c60f2d866ba0de
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '468'
 ht-degree: 1%
 
 ---
@@ -23,12 +23,12 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-* [体验数据模型(XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL Experience Data Model] (XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    * [模式合成基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [实时客户用户档案](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL实时客户用户档案]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
-如果您已有基本连 [!DNL HubSpot] 接，您可以跳过本文档的其余部分，继续学习有关配置营销 [自动化数据流的教程](../../dataflow/marketing-automation.md)。
+如果已有连接， [!DNL HubSpot] 您可以跳过此文档的其余部分，继续学习有关配置 [数据流的教程](../../dataflow/marketing-automation.md)。
 
 ### 收集所需的凭据
 
@@ -41,23 +41,25 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 | `accessToken` | 最初验证您的OAuth集成时获得的访问令牌。 |
 | `refreshToken` | 最初验证您的OAuth集成时获取的刷新令牌。 |
 
-有关快速入门的详细信息，请参阅此 [HubSpot文档](https://developers.hubspot.com/docs/methods/oauth2/oauth2-overview)。
+有关快速入门的详细信息，请参阅此 [[!DNL HubSpot] 文档](https://developers.hubspot.com/docs/methods/oauth2/oauth2-overview)。
 
 ## 连接帐 [!DNL HubSpot] 户
 
-收集所需凭据后，您可以按照以下步骤创建新的入站基础连接，以将帐户链 [!DNL HubSpot] 接到 [!DNL Platform]。
+收集所需凭据后，您可以按照以下步骤将帐户链 [!DNL HubSpot] 接到 [!DNL Platform]。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 *[!UICONTROL “源”以访问]* “源”工作区。 “目 *[!UICONTROL 录]* ”屏幕显示可为其创建入站基本连接的各种源，每个源显示与它们关联的现有基本连接数。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 **[!UICONTROL “源”以访问]** “源”工作区。 “ **[!UICONTROL 目录]** ”屏幕显示可为其创建帐户的各种源。
 
-在“营 *[!UICONTROL 销自动化]* ”类别下， **[!UICONTROL 选择HubSpot]** ，在屏幕的右侧显示一个信息栏。 信息栏提供所选源的简短描述以及与源或视图其文档的选项。 要创建新的入站基本连接，请选择“添 **[!UICONTROL 加数据”]**。
+您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
+
+在营销自 **[!UICONTROL 动化类别]** 下，选择 **[!UICONTROL HubSpot]**。 如果这是您首次使用此连接器，请选择“ **[!UICONTROL 配置]**”。 否则，选择 **[!UICONTROL 添加数据]** ，以创建新连 [!DNL HubSpot] 接器。
 
 ![目录](../../../../images/tutorials/create/hubspot/catalog.png)
 
-将显 *[!UICONTROL 示“连接到HubSpot]* ”页。 在此页上，您可以使用新凭据或现有凭据。
+将显 **[!UICONTROL 示“连接到HubSpot]** ”页。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
-如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供基本连接，包括名称、可选说明和凭 [!DNL HubSpot] 据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新的基本连接。
+如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供名称、可选说明和凭 [!DNL HubSpot] 据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新连接。
 
 ![connect](../../../../images/tutorials/create/hubspot/connect.png)
 
@@ -69,4 +71,4 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ## 后续步骤
 
-按照本教程，您已建立了与帐户的基本 [!DNL HubSpot] 连接。 您现在可以继续阅读下一个教程并 [配置数据流，将营销自动化系统数据引入平台](../../dataflow/marketing-automation.md)。
+按照本教程，您已建立了与帐户的 [!DNL HubSpot] 连接。 您现在可以继续阅读下一个教程， [并配置数据流，将营销自动化系统数据引入 [!DNL Platform]](../../dataflow/marketing-automation.md)。
