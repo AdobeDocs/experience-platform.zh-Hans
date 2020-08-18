@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Spark SQL函数
 topic: spark sql functions
 translation-type: tm+mt
-source-git-commit: a98e31f57c6ff4fc49d8d8f64441a6e1e18d89da
+source-git-commit: a10508770a862621403bad94c14db4529051020c
 workflow-type: tm+mt
-source-wordcount: '4900'
+source-wordcount: '4996'
 ht-degree: 5%
 
 ---
@@ -24,21 +24,22 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 ## 类别
 
-- [数学和统计运算符及函数](#math-and-statistical-operators-and-functions)
+- [数学和统计运算符及函数](#math)
 - [逻辑运算符](#logical-operators)
-- [日期／时间函数](#date/time-functions)
+- [日期／时间函数](#datetime-functions)
 - [聚合函数](#aggregate-functions)
 - [阵列](#arrays)
-- [数据类型转换函数](#datatype-casting-functions)
-- [转换和格式化功能](#conversion-and-formatting-functions)
+- [数据类型转换函数](#datatype-casting)
+- [转换和格式化功能](#conversion)
 - [数据评估](#data-evaluation)
 - [当前信息](#current-information)
+- [高阶函数](#higher-order)
 
-### 数学和统计运算符及函数
+### 数学和统计运算符及函数 {#math}
 
 #### 取模
 
-`expr1 % expr2`: 在／后返回余 `expr1`数`expr2`。
+`expr1 % expr2`:在／后返回余 `expr1`数`expr2`。
 
 示例：
 
@@ -97,7 +98,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### abs
 
-`abs(expr)`: 返回数值的绝对值。
+`abs(expr)`:返回数值的绝对值。
 
 示例：
 
@@ -108,7 +109,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### acos
 
-`acos(expr)`: 返回的反余弦（也称为反余弦）, `expr`如同由计算 `java.lang.Math.acos`。
+`acos(expr)`:返回的反余弦（也称为反余弦）, `expr`如同由计算 `java.lang.Math.acos`。
 
 示例：
 
@@ -121,7 +122,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### proxpor_percentile
 
-`approx_percentile(col, percentage [, accuracy])`: 返回给定百分比数值列的 `col` 近似百分点值。 百分比值必须介于0.0和1.0之间。参数( `accuracy` 默认值： 10000)是一个正数字文本，它以内存为代价控制近似精度。 数值越大 `accuracy` ，精度越 `1.0/accuracy` 高，是近似的相对误差。 当 `percentage` 是数组时，百分比数组的每个值必须介于0.0和1.0之间。在这种情况下，将返回给定百分比数组中列的 `col` 近似百分点数组。
+`approx_percentile(col, percentage [, accuracy])`:返回给定百分比数值列的 `col` 近似百分点值。 百分比值必须介于0.0和1.0之间。参数( `accuracy` 默认值：10000)是一个正数字文本，它以内存为代价控制近似精度。 数值越大 `accuracy` ，精度越 `1.0/accuracy` 高，是近似的相对误差。 当 `percentage` 是数组时，百分比数组的每个值必须介于0.0和1.0之间。在这种情况下，将返回给定百分比数组中列的 `col` 近似百分点数组。
 
 示例：
 
@@ -134,7 +135,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### asin
 
-`asin(expr)`: 返回反正弦（也称为反正弦），即的反正弦 `expr`，如同由计算 `java.lang.Math.asin`。
+`asin(expr)`:返回反正弦（也称为反正弦），即的反正弦 `expr`，如同由计算 `java.lang.Math.asin`。
 
 示例：
 
@@ -147,7 +148,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 花
 
-`atan(expr)`: 返回的逆切(也称为弧切 `expr`)，如同 `java.lang.Math.atan`
+`atan(expr)`:返回的逆切(也称为弧切 `expr`)，如同 `java.lang.Math.atan`
 
 示例：
 
@@ -158,11 +159,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### atan2
 
-`atan2(exprY, exprX)`: 返回平面的正x轴与坐标(,)给定的点之间以弧度表示的角`exprX`度， `exprY`如同由计算 `java.lang.Math.atan2`。
+`atan2(exprY, exprX)`:返回平面的正x轴与坐标(,)给定的点之间以弧度表示的角`exprX`度， `exprY`如同由计算 `java.lang.Math.atan2`。
 
 参数：
 
-`exprY`: Y轴上的坐标`exprX`: X轴上的坐标
+`exprY`:Y轴上的坐标`exprX`:X轴上的坐标
 
 示例：
 
@@ -173,11 +174,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### avg
 
-`avg(expr)`: 返回根据组值计算的平均值。
+`avg(expr)`:返回根据组值计算的平均值。
 
 #### 基数
 
-`cardinality(expr)`: 返回数组或映射的大小。 如果函数的输入为null且设置为true( `spark.sql.legacy.sizeOfNull` 默认值)，则返回-1。 如 `spark.sql.legacy.sizeOfNull` 果设置为false，则函数对于null输入返回null。
+`cardinality(expr)`:返回数组或映射的大小。 如果函数的输入为null且设置为true( `spark.sql.legacy.sizeOfNull` 默认值)，则返回-1。 如 `spark.sql.legacy.sizeOfNull` 果设置为false，则函数对于null输入返回null。
 
 示例：
 
@@ -192,7 +193,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### cbrt
 
-`cbrt(expr)`: 返回的多维数据集根 `expr`。
+`cbrt(expr)`:返回的多维数据集根 `expr`。
 
 示例：
 
@@ -203,7 +204,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### ceil
 
-`ceil(expr)`: 返回不小于的最小整数 `expr`。
+`ceil(expr)`:返回不小于的最小整数 `expr`。
 
 示例：
 
@@ -216,7 +217,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 天花板
 
-`ceiling(expr)`: 返回不小于的最小整数 `expr`。
+`ceiling(expr)`:返回不小于的最小整数 `expr`。
 
 示例：
 
@@ -229,7 +230,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### conv
 
-`conv(num, from_base, to_base)`: 从 `num` 转换 `from_base` 为 `to_base`
+`conv(num, from_base, to_base)`:从 `num` 转换 `from_base` 为 `to_base`
 
 示例：
 
@@ -242,11 +243,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### cor
 
-`corr(expr1, expr2)`: 返回一组数字对之间的相关的皮尔逊系数。
+`corr(expr1, expr2)`:返回一组数字对之间的相关的皮尔逊系数。
 
 #### cos
 
-`cos(expr)`: 返回的余弦 `expr`，如同由计算 `java.lang.Math.cos`。
+`cos(expr)`:返回的余弦 `expr`，如同由计算 `java.lang.Math.cos`。
 
 示例：
 
@@ -257,10 +258,10 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### cosh
 
-`cosh(expr)`: 返回双曲余弦 `expr`，如同由计算 `java.lang.Math.cosh`。
+`cosh(expr)`:返回双曲余弦 `expr`，如同由计算 `java.lang.Math.cosh`。
 
 参数：
-- `expr`: 双曲角
+- `expr`:双曲角
 
 示例：
 
@@ -271,10 +272,10 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### cot
 
-`cot(expr)`: 返回的余切 `expr`，如同由计算 `1/java.lang.Math.cot`。
+`cot(expr)`:返回的余切 `expr`，如同由计算 `1/java.lang.Math.cot`。
 
 参数：
-- `expr`: 弧度角
+- `expr`:弧度角
 
 示例：
 
@@ -285,11 +286,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### dense_rank
 
-`dense_rank()`: 计算一组值中值的排名。 结果是一个加上先前分配的排名值。 与函数不 `rank`同， `dense_rank` 在排序序列中不产生间隙。
+`dense_rank()`:计算一组值中值的排名。 结果是一个加上先前分配的排名值。 与函数不 `rank`同， `dense_rank` 在排序序列中不产生间隙。
 
 #### e
 
-`e()`: 返回Euler的数，e。
+`e()`:返回Euler的数，e。
 
 示例：
 
@@ -300,7 +301,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### exp
 
-`exp(expr)`: 将e返回至 `expr`。
+`exp(expr)`:将e返回至 `expr`。
 
 示例：
 
@@ -311,7 +312,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### expml
 
-`expm1(expr)`: 返回exp(`expr`)- 1。
+`expm1(expr)`:返回exp(`expr`)- 1。
 
 示例：
 
@@ -322,7 +323,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 因子
 
-`factorial(expr)`: 返回阶乘 `expr`。 `expr` 是 [0.20]。 否则，为null。
+`factorial(expr)`:返回阶乘 `expr`。 `expr` 是 [0.20]。 否则，为null。
 
 示例：
 
@@ -333,7 +334,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 地板
 
-`floor(expr)`: 返回不大于的最大整数 `expr`。
+`floor(expr)`:返回不大于的最大整数 `expr`。
 
 示例：
 
@@ -346,7 +347,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 最伟
 
-`greatest(expr, ...)`: 返回所有参数的最大值，跳过null值。
+`greatest(expr, ...)`:返回所有参数的最大值，跳过null值。
 
 示例：
 
@@ -357,7 +358,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 假体
 
-`hypot(expr1, expr2)`: 返回sqrt(`expr1`<sup>2</sup> + `expr2`<sup>2</sup>)。
+`hypot(expr1, expr2)`:返回sqrt(`expr1`<sup>2</sup> + `expr2`<sup>2</sup>)。
 
 示例：
 
@@ -368,12 +369,12 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 峭度
 
-`kurtosis(expr)`: 返回根据组值计算的峰度值。
+`kurtosis(expr)`:返回根据组值计算的峰度值。
 
 
 #### 至少
 
-`least(expr, ...)`: 返回所有参数的最小值，跳过null值。
+`least(expr, ...)`:返回所有参数的最小值，跳过null值。
 
 示例：
 
@@ -384,7 +385,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 莱文施泰因
 
-`levenshtein(str1, str2)`: 返回两个给定字符串之间的列文施泰因距离。
+`levenshtein(str1, str2)`:返回两个给定字符串之间的列文施泰因距离。
 
 示例：
 
@@ -395,7 +396,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### ln
 
-`ln(expr)`: 返回的自然对数（以e为底） `expr`。
+`ln(expr)`:返回的自然对数（以e为底） `expr`。
 
 示例：
 
@@ -406,7 +407,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 日志
 
-`log(base, expr)`: 返回带的 `expr` 对 `base`数。
+`log(base, expr)`:返回带的 `expr` 对 `base`数。
 
 示例：
 
@@ -417,7 +418,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### log10
 
-`log10(expr)`: 返回以10为 `expr` 底的对数。
+`log10(expr)`:返回以10为 `expr` 底的对数。
 
 示例：
 
@@ -439,7 +440,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### log2
 
-`log2(expr)`: 返回以2为 `expr` 底的对数。
+`log2(expr)`:返回以2为 `expr` 底的对数。
 
 示例：
 
@@ -450,23 +451,23 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### max
 
-`max(expr)`: 返回最大值 `expr`。
+`max(expr)`:返回最大值 `expr`。
 
 #### 平均
 
-`mean(expr)`: 返回根据组值计算的平均值。
+`mean(expr)`:返回根据组值计算的平均值。
 
 #### min
 
-`min(expr)`: 返回的最小值 `expr`。
+`min(expr)`:返回的最小值 `expr`。
 
 #### monotically_increating_id
 
-`monotonically_increasing_id()`: 返回单调递增的64位整数。 所生成的ID被保证单调增加且唯一，但不是连续的。 当前实现将分区ID置于上31位，而下33位表示每个分区内的记录数。 假定数据帧的分区数少于10亿，每个分区的记录数少于80亿。 该函数不是确定性的，因为其结果取决于分区ID。
+`monotonically_increasing_id()`:返回单调递增的64位整数。 所生成的ID被保证单调增加且唯一，但不是连续的。 当前实现将分区ID置于上31位，而下33位表示每个分区内的记录数。 假定数据帧的分区数少于10亿，每个分区的记录数少于80亿。 该函数不是确定性的，因为其结果取决于分区ID。
 
 #### 负
 
-`negative(expr)`: 返回的已否定值 `expr`。
+`negative(expr)`:返回的已否定值 `expr`。
 
 示例：
 
@@ -477,17 +478,17 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### percent_rank
 
-`percent_rank()`: 计算一组值中某个值的百分比排名。
+`percent_rank()`:计算一组值中某个值的百分比排名。
 
 #### 百分点
 
-`percentile(col, percentage [, frequency])`: 返回给定百分比数值列 `col` 的精确百分点值。 值必 `percentage` 须介于0.0和1.0之间。值 `frequency` 应为正积分。
+`percentile(col, percentage [, frequency])`:返回给定百分比数值列 `col` 的精确百分点值。 值必 `percentage` 须介于0.0和1.0之间。值 `frequency` 应为正积分。
 
-`percentile(col, array(percentage1 [, percentage2]...) [, frequency])`: 返回给定百分比的数字列的 `col` 精确百分点值数组。 百分比数组的每个值必须介于0.0和1.0之间。该值应 `frequency` 是正积分。
+`percentile(col, array(percentage1 [, percentage2]...) [, frequency])`:返回给定百分比的数字列的 `col` 精确百分点值数组。 百分比数组的每个值必须介于0.0和1.0之间。该值应 `frequency` 是正积分。
 
 #### percentile_approx
 
-`percentile_approx(col, percentage [, accuracy])`: 返回给定百分比数值列的 `col` 近似百分点值。 值必 `percentage` 须介于0.0和1.0之间。参数 `accuracy` (默认值： 10000)是一个正数字文本，它以内存为代价控制近似精度。 数值越大 `accuracy` ，精度越 `1.0/accuracy` 高，是近似的相对误差。 当 `percentage` 是数组时，百分比数组的每个值必须介于0.0和1.0之间。在这种情况下，返回给定百分比数组下列的 `col` 近似百分点数组。
+`percentile_approx(col, percentage [, accuracy])`:返回给定百分比数值列的 `col` 近似百分点值。 值必 `percentage` 须介于0.0和1.0之间。参数 `accuracy` (默认值：10000)是一个正数字文本，它以内存为代价控制近似精度。 数值越大 `accuracy` ，精度越 `1.0/accuracy` 高，是近似的相对误差。 当 `percentage` 是数组时，百分比数组的每个值必须介于0.0和1.0之间。在这种情况下，返回给定百分比数组下列的 `col` 近似百分点数组。
 
 示例：
 
@@ -500,7 +501,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### pi
 
-`pi()`: 返回pi。
+`pi()`:返回pi。
 
 示例：
 
@@ -511,7 +512,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### pmod
 
-`pmod(expr1, expr2)`: 返回mod的正 `expr1` 值 `expr2`。
+`pmod(expr1, expr2)`:返回mod的正 `expr1` 值 `expr2`。
 
 示例：
 
@@ -524,11 +525,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 正
 
-`positive(expr)`: 返回正值 `expr`
+`positive(expr)`:返回正值 `expr`
 
 #### 战俘
 
-`pow(expr1, expr2)`: 提 `expr1` 升其力量 `expr2`。
+`pow(expr1, expr2)`:提 `expr1` 升其力量 `expr2`。
 
 示例：
 
@@ -539,7 +540,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 电力
 
-`power(expr1, expr2)`: 提 `expr1` 升其力量 `expr2`。
+`power(expr1, expr2)`:提 `expr1` 升其力量 `expr2`。
 
 示例：
 
@@ -550,11 +551,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 弧度
 
-`radians(expr)`: 将度转换为弧度。
+`radians(expr)`:将度转换为弧度。
 
 参数：
 
-- `expr`: 角度（度）
+- `expr`:角度（度）
 
 示例：
 
@@ -565,7 +566,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 兰德
 
-`rand([seed])`: 返回具有独立且均匀分布（即，i.d.）的随机值(在(0, 1)中)。
+`rand([seed])`:返回具有独立且均匀分布（即，i.d.）的随机值(在(0, 1)中)。
 
 示例：
 
@@ -584,7 +585,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 兰登
 
-`randn([seed])`: 返回从标准正态分布抽取的具有独立且相同分布(i.i.d.)值的随机值。
+`randn([seed])`:返回从标准正态分布抽取的具有独立且相同分布(i.i.d.)值的随机值。
 
 示例：
 
@@ -603,7 +604,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### rint
 
-`rint(expr)`: 返回值与参数最接近且等于数学整数的多次值。
+`rint(expr)`:返回值与参数最接近且等于数学整数的多次值。
 
 示例：
 
@@ -614,7 +615,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### round
 
-`round(expr, d)`: 使用 `expr` HALF_UP `d` 舍入模式返回舍入到小数位。
+`round(expr, d)`:使用 `expr` HALF_UP `d` 舍入模式返回舍入到小数位。
 
 示例：
 
@@ -625,7 +626,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 签名
 
-`sign(expr)`: 返回-1.0、0.0或1.0, `expr` 为负、0或正。
+`sign(expr)`:返回-1.0、0.0或1.0, `expr` 为负、0或正。
 
 示例：
 
@@ -636,7 +637,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### signum
 
-`signum(expr)`: 返回-1.0、0.0或1.0, `expr` 为负、0或正。
+`signum(expr)`:返回-1.0、0.0或1.0, `expr` 为负、0或正。
 
 示例：
 
@@ -647,11 +648,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 罪
 
-`sin(expr)`: 返回正弦 `expr`值，如同由计算 `java.lang.Math.sin`。
+`sin(expr)`:返回正弦 `expr`值，如同由计算 `java.lang.Math.sin`。
 
 参数：
 
-- `expr`: 弧度角
+- `expr`:弧度角
 
 示例：
 
@@ -662,11 +663,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 辛
 
-`sinh(expr)`: 返回双曲正弦 `expr`值，如同由计算 `java.lang.Math.sinh`。
+`sinh(expr)`:返回双曲正弦 `expr`值，如同由计算 `java.lang.Math.sinh`。
 
 参数：
 
-- `expr`: 双曲角
+- `expr`:双曲角
 
 示例：
 
@@ -677,7 +678,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### sqrt
 
-`sqrt(expr)`: 返回的平方根 `expr`。
+`sqrt(expr)`:返回的平方根 `expr`。
 
 示例：
 
@@ -688,27 +689,27 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### stddev
 
-`stddev(expr)`: 返回根据组值计算的样本标准偏差。
+`stddev(expr)`:返回根据组值计算的样本标准偏差。
 
 #### stddev_pop
 
-`sttdev_pop(expr)`: 返回根据组值计算的人口标准偏差。
+`sttdev_pop(expr)`:返回根据组值计算的人口标准偏差。
 
 #### stddev_samp
 
-`stddev_samp(expr)`: 返回根据组值计算的样本标准偏差。
+`stddev_samp(expr)`:返回根据组值计算的样本标准偏差。
 
 #### sum
 
-`sum(expr)`: 返回根据组值计算的总和。
+`sum(expr)`:返回根据组值计算的总和。
 
 #### 陈
 
-`tan(expr)`: 返回的正 `expr`切，如同由计算 `java.lang.Math.tan`。
+`tan(expr)`:返回的正 `expr`切，如同由计算 `java.lang.Math.tan`。
 
 参数：
 
-- `expr`: 弧度角
+- `expr`:弧度角
 
 示例：
 
@@ -719,11 +720,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 坦
 
-`tanh(expr)`: 返回的双曲正 `expr`切，如同由计算 `java.lang.Math.tanh`。
+`tanh(expr)`:返回的双曲正 `expr`切，如同由计算 `java.lang.Math.tanh`。
 
 参数：
 
-- `expr`: 双曲角
+- `expr`:双曲角
 
 示例：
 
@@ -734,29 +735,29 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### Var_pop
 
-`var_pop(expr)`: 返回根据组值计算的人口差异。
+`var_pop(expr)`:返回根据组值计算的人口差异。
 
 #### Var_samp
 
-`var_samp(expr)`: 返回根据组值计算的样本差异。
+`var_samp(expr)`:返回根据组值计算的样本差异。
 
 #### 方差
 
-`variance(expr)`: 返回根据组值计算的样本差异。
+`variance(expr)`:返回根据组值计算的样本差异。
 
-### 逻辑运算符
+### 逻辑运算符 {#logical-operators}
 
 #### 逻辑不
 
-`! expr`: 逻辑上不是。
+`! expr`:逻辑上不是。
 
 #### 小于
 
-`expr1 < expr2`: 如果小于， `expr1` 则返回true `expr2`。
+`expr1 < expr2`:如果小于， `expr1` 则返回true `expr2`。
 
 参数：
 
-- `expr1, expr2`: 两个表达式必须是同一类型，或者可以转换为通用类型，并且必须是可以排序的类型。 例如，映射类型不可排序，因此不受支持。 对于数组／结构等复杂类型，字段的数据类型必须可排序。
+- `expr1, expr2`:两个表达式必须是同一类型，或者可以转换为通用类型，并且必须是可以排序的类型。 例如，映射类型不可排序，因此不受支持。 对于数组／结构等复杂类型，字段的数据类型必须可排序。
 
 示例：
 
@@ -775,11 +776,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 小于或等于
 
-`expr1 <= expr2`: 如果小于 `expr1` 或等于，则返回true `expr2`。
+`expr1 <= expr2`:如果小于 `expr1` 或等于，则返回true `expr2`。
 
 参数：
 
-- `expr1, expr2`: 这两个表达式必须是同一类型，或者可以转换为通用类型，并且必须是可以排序的类型。 例如，映射类型不可排序，因此不受支持。 对于复杂类型（如数组／结构），字段的数据类型必须可排序。
+- `expr1, expr2`:这两个表达式必须是同一类型，或者可以转换为通用类型，并且必须是可以排序的类型。 例如，映射类型不可排序，因此不受支持。 对于复杂类型（如数组／结构），字段的数据类型必须可排序。
 
 示例：
 
@@ -798,11 +799,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 等于
 
-`expr1 = expr2`: 如果等于，则 `expr1` 返回 `expr2`true，否则返回false。
+`expr1 = expr2`:如果等于，则 `expr1` 返回 `expr2`true，否则返回false。
 
 参数：
 
-- `expr1, expr2`: 两个表达式必须是同一类型，或者可以转换为通用类型，并且必须是可用于等式比较的类型。 不支持映射类型。 对于数组／结构等复杂类型，字段的数据类型必须可排序。
+- `expr1, expr2`:两个表达式必须是同一类型，或者可以转换为通用类型，并且必须是可用于等式比较的类型。 不支持映射类型。 对于数组／结构等复杂类型，字段的数据类型必须可排序。
 
 示例：
 
@@ -819,11 +820,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 大于
 
-`expr1 > expr2`: 如果大于， `expr1` 则返回true `expr2`。
+`expr1 > expr2`:如果大于， `expr1` 则返回true `expr2`。
 
 参数：
 
-- `expr1, expr2`: 两个表达式必须是同一类型，或者可以转换为通用类型，并且必须是可以排序的类型。 例如，映射类型不可排序，因此不受支持。 对于数组／结构等复杂类型，字段的数据类型必须可排序。
+- `expr1, expr2`:两个表达式必须是同一类型，或者可以转换为通用类型，并且必须是可以排序的类型。 例如，映射类型不可排序，因此不受支持。 对于数组／结构等复杂类型，字段的数据类型必须可排序。
 
 示例：
 
@@ -842,11 +843,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 大于或等于
 
-`expr1 >= expr2`: 如果大 `expr1` 于或等于，则返回 `expr2`true。
+`expr1 >= expr2`:如果大 `expr1` 于或等于，则返回 `expr2`true。
 
 参数：
 
-- `expr1, expr2`: 两个表达式必须是同一类型，或者可以转换为通用类型，并且必须是可以排序的类型。 例如，映射类型不可排序，因此不受支持。 对于数组／结构等复杂类型，字段的数据类型必须可排序。
+- `expr1, expr2`:两个表达式必须是同一类型，或者可以转换为通用类型，并且必须是可以排序的类型。 例如，映射类型不可排序，因此不受支持。 对于数组／结构等复杂类型，字段的数据类型必须可排序。
 
 示例：
 
@@ -865,7 +866,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 按位排它或
 
-`expr1 ^ expr2`: 返回和的按位排它的OR `expr1` 的结 `expr2`果。
+`expr1 ^ expr2`:返回和的按位排它的OR `expr1` 的结 `expr2`果。
 
 示例：
 
@@ -876,11 +877,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 和
 
-`expr1 and expr2`: 逻辑与。
+`expr1 and expr2`:逻辑与。
 
 #### arrays_overlap
 
-`arrays_overlap(a1, a2)`: 如果a1至少包含同样在a2中的非空元素，则返回true。 如果数组没有公共元素，并且它们都不是空的，并且其中任何一个包含空元素，则返回null。 否则，返回false。
+`arrays_overlap(a1, a2)`:如果a1至少包含同样在a2中的非空元素，则返回true。 如果数组没有公共元素，并且它们都不是空的，并且其中任何一个包含空元素，则返回null。 否则，返回false。
 
 示例：
 
@@ -889,11 +890,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  true
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### assert_true
 
-`assert_true(expr)`: 如果不为true, `expr` 则引发异常。
+`assert_true(expr)`:如果不为true, `expr` 则引发异常。
 
 示例：
 
@@ -904,7 +905,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### if
 
-`if(expr1, expr2, expr3)`: 如果 `expr1` 计算结果为true，则返回 `expr2`; 否则返回 `expr3`。
+`if(expr1, expr2, expr3)`:如果 `expr1` 计算结果为true，则返回 `expr2`;否则返回 `expr3`。
 
 示例：
 
@@ -915,7 +916,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### ifnull
 
-`ifnull(expr1, expr2)`: 如果 `expr2` 为 `expr1` null，则返回，否则 `expr1` 返回。
+`ifnull(expr1, expr2)`:如果 `expr2` 为 `expr1` null，则返回，否则 `expr1` 返回。
 
 示例：
 
@@ -926,10 +927,10 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### in
 
-`expr1 in(expr2, expr3, ...)`: 如果等于任何 `expr` valN，则返回true。
+`expr1 in(expr2, expr3, ...)`:如果等于任何 `expr` valN，则返回true。
 
 参数：
-- `expr1, expr2, expr3, ...`: 参数必须是相同类型。
+- `expr1, expr2, expr3, ...`:参数必须是相同类型。
 
 示例：
 
@@ -946,7 +947,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 岛
 
-`isnan(expr)`: 如果为NaN，则 `expr` 返回true，否则返回false。
+`isnan(expr)`:如果为NaN，则 `expr` 返回true，否则返回false。
 
 示例：
 
@@ -957,7 +958,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### isnotnull
 
-`isnotnull(expr)`: 如果不为null, `expr` 则返回true，否则返回false。
+`isnotnull(expr)`:如果不为null, `expr` 则返回true，否则返回false。
 
 示例：
 
@@ -968,7 +969,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### isnull
 
-`isnull(expr)`: 如果为null, `expr` 则返回true，否则返回false。
+`isnull(expr)`:如果为null, `expr` 则返回true，否则返回false。
 
 示例：
 
@@ -979,7 +980,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 纳米
 
-`nanvl(expr1, expr2)`: 如果 `expr1` 它不是NaN，则返回，或以其他 `expr2` 方式。
+`nanvl(expr1, expr2)`:如果 `expr1` 它不是NaN，则返回，或以其他 `expr2` 方式。
 
 示例：
 
@@ -990,15 +991,15 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 不
 
-`not expr`: 逻辑上不是。
+`not expr`:逻辑上不是。
 
 #### 或
 
-`expr1 or expr2`: 逻辑或。
+`expr1 or expr2`:逻辑或。
 
 #### xpath_boolean
 
-`xpath_boolean(xml, xpath)`: 如果XPath表达式的计算结果为true，或者找到匹配的节点，则返回true。
+`xpath_boolean(xml, xpath)`:如果XPath表达式的计算结果为true，或者找到匹配的节点，则返回true。
 
 示例：
 
@@ -1007,11 +1008,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  true
 ```
 
-### 日期／时间函数
+### 日期／时间函数 {#datetime-functions}
 
 #### add_monts
 
-`add_months(start_date, num_months)`: 返回后面的 `num_months` 日 `start_date`期。
+`add_months(start_date, num_months)`:返回后面的 `num_months` 日 `start_date`期。
 
 示例：
 
@@ -1020,11 +1021,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2016-09-30
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### date_add
 
-`date_add(start_date, num_days)`: 返回后面的 `num_days` 日 `start_date`期。
+`date_add(start_date, num_days)`:返回后面的 `num_days` 日 `start_date`期。
 
 示例：
 
@@ -1033,11 +1034,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2016-07-31
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### date_format
 
-`date_format(timestamp, fmt)`: 转换 `timestamp` 为日期格式指定格式的字符串值 `fmt`。
+`date_format(timestamp, fmt)`:转换 `timestamp` 为日期格式指定格式的字符串值 `fmt`。
 
 示例：
 
@@ -1046,11 +1047,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2016
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### date_sub
 
-`date_sub(start_date, num_days)`: 返回之前的 `num_days` 日 `start_date`期。
+`date_sub(start_date, num_days)`:返回之前的 `num_days` 日 `start_date`期。
 
 示例：
 
@@ -1059,11 +1060,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2016-07-29
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### date_trunc
 
-`date_trunc(fmt, ts)`: 返回截断为格式模型指定单位的时间戳 `fmt`。 `fmt` 应为“ [年”、“YYY”、“YY”、“周一”、“月”、“MM”、“日”、“DD”、“小时”、“分钟”、“秒”、“周”、“季度”之一]
+`date_trunc(fmt, ts)`:返回截断为格式模型指定单位的时间戳 `fmt`。 `fmt` 应为“ [年”、“YYY”、“YY”、“周一”、“月”、“MM”、“日”、“DD”、“小时”、“分钟”、“秒”、“周”、“季度”之一]
 
 示例：
 
@@ -1078,11 +1079,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2015-03-05 09:00:00
 ```
 
-自： 2.3.0
+自：2.3.0
 
 #### datediff
 
-`datediff(endDate, startDate)`: 返回从到的天 `startDate` 数 `endDate`。
+`datediff(endDate, startDate)`:返回从到的天 `startDate` 数 `endDate`。
 
 示例：
 
@@ -1094,11 +1095,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  -1
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### 天
 
-`day(date)`: 返回日期／时间戳的月份日。
+`day(date)`:返回日期／时间戳的月份日。
 
 示例：
 
@@ -1107,11 +1108,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  30
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### 日
 
-`dayofmonth(date)`: 返回日期／时间戳的月份日。
+`dayofmonth(date)`:返回日期／时间戳的月份日。
 
 示例：
 
@@ -1120,11 +1121,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  30
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### 第一周
 
-`dayofweek(date)`: 返回日期／时间戳的星期几（1 =星期日，2 =星期一，..., 7 =星期六）。
+`dayofweek(date)`:返回日期／时间戳的星期几（1 =星期日，2 =星期一，..., 7 =星期六）。
 
 示例：
 
@@ -1133,11 +1134,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  5
 ```
 
-自： 2.3.0
+自：2.3.0
 
 #### 年
 
-`dayofyear(date)`: 返回日期／时间戳的年份日。
+`dayofyear(date)`:返回日期／时间戳的年份日。
 
 示例：
 
@@ -1146,11 +1147,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  100
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### from_unixtime
 
-`from_unixtime(unix_time, format)`: 在指 `unix_time` 定值中返回 `format`。
+`from_unixtime(unix_time, format)`:在指 `unix_time` 定值中返回 `format`。
 
 示例：
 
@@ -1159,11 +1160,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  1970-01-01 00:00:00
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### from_utc_timestamp
 
-`from_utc_timestamp(timestamp, timezone)`: 将“2017-07-14 02:40:00.0”等时间戳解释为UTC中的时间，并将该时间渲染为给定时区中的时间戳。 例如，“GMT+1”将产生“2017-07-14 03:40:00.0”。
+`from_utc_timestamp(timestamp, timezone)`:将“2017-07-14 02:40:00.0”等时间戳解释为UTC中的时间，并将该时间渲染为给定时区中的时间戳。 例如，“GMT+1”将产生“2017-07-14 03:40:00.0”。
 
 示例：
 
@@ -1172,11 +1173,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2016-08-31 09:00:00
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### 小时
 
-`hour(timestamp)`: 返回字符串／时间戳的小时组件。
+`hour(timestamp)`:返回字符串／时间戳的小时组件。
 
 示例：
 
@@ -1185,7 +1186,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  12
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### last_day
 
@@ -1198,11 +1199,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2009-01-31
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### 分钟
 
-`minute(timestamp)`: 返回字符串／时间戳的分钟组件。
+`minute(timestamp)`:返回字符串／时间戳的分钟组件。
 
 示例：
 
@@ -1211,7 +1212,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  58
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### 个月
 
@@ -1224,11 +1225,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  7
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### 月数
 
-`months_between(timestamp1, timestamp2[, roundOff])`: 如果 `timestamp1` 晚于， `timestamp2`则结果为正。 如 `timestamp1` 果 `timestamp2` 和在月的同一天，或两者都是月的最后一天，则将忽略某天的时间。 否则，差额将根据每月31天计算，并舍入到8位数，除非如此 `roundOff=false`。
+`months_between(timestamp1, timestamp2[, roundOff])`:如果 `timestamp1` 晚于， `timestamp2`则结果为正。 如 `timestamp1` 果 `timestamp2` 和在月的同一天，或两者都是月的最后一天，则将忽略某天的时间。 否则，差额将根据每月31天计算，并舍入到8位数，除非如此 `roundOff=false`。
 
 示例：
 
@@ -1239,11 +1240,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  3.9495967741935485
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### next_day
 
-`next_day(start_date, day_of_week)`: 返回第一个日期，该日期晚于 `start_date` 并命名为已指明。
+`next_day(start_date, day_of_week)`:返回第一个日期，该日期晚于 `start_date` 并命名为已指明。
 
 示例：
 
@@ -1252,11 +1253,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2015-01-20
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### 季度
 
-`quarter(date)`: 返回日期的年度季度，范围为1到4。
+`quarter(date)`:返回日期的年度季度，范围为1到4。
 
 示例：
 
@@ -1265,11 +1266,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  3
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### 第二
 
-`second(timestamp)`: 返回字符串／时间戳的第二个组件。
+`second(timestamp)`:返回字符串／时间戳的第二个组件。
 
 示例：
 
@@ -1278,11 +1279,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  59
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### to_date
 
-`to_date(date_str[, fmt])`: 将表达式 `date_str` 与表达式解析 `fmt` 到某个日期。 输入无效时返回null。 默认情况下，如果忽略，它将遵循到某个日 `fmt` 期的转换规则。
+`to_date(date_str[, fmt])`:将表达式 `date_str` 与表达式解析 `fmt` 到某个日期。 输入无效时返回null。 默认情况下，如果忽略，它将遵循到某个日 `fmt` 期的转换规则。
 
 示例：
 
@@ -1293,11 +1294,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2016-12-31
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### to_timestamp
 
-`to_timestamp(timestamp[, fmt])`: 使用表达式 `timestamp` 解析表达式 `fmt` 到时间戳。 输入无效时返回null。 默认情况下，如果忽略时间戳，它将遵循转换 `fmt` 规则。
+`to_timestamp(timestamp[, fmt])`:使用表达式 `timestamp` 解析表达式 `fmt` 到时间戳。 输入无效时返回null。 默认情况下，如果忽略时间戳，它将遵循转换 `fmt` 规则。
 
 示例：
 
@@ -1308,11 +1309,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2016-12-31 00:00:00
 ```
 
-自： 2.2.0
+自：2.2.0
 
 #### to_unix_timestamp
 
-`to_unix_timestamp(expr[, pattern])`: 返回给定时间的UNIX时间戳。
+`to_unix_timestamp(expr[, pattern])`:返回给定时间的UNIX时间戳。
 
 示例：
 
@@ -1321,11 +1322,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  1460041200
 ```
 
-自： 1.6.0
+自：1.6.0
 
 #### to_utc_timestamp
 
-`to_utc_timestamp(timestamp, timezone)`: 将“2017-07-14 02:40:00.0”等时间戳解释为给定时区中的时间，并将该时间渲染为UTC的时间戳。 例如，“GMT+1”将产生“2017-07-14 01:40:00.0”。
+`to_utc_timestamp(timestamp, timezone)`:将“2017-07-14 02:40:00.0”等时间戳解释为给定时区中的时间，并将该时间渲染为UTC的时间戳。 例如，“GMT+1”将产生“2017-07-14 01:40:00.0”。
 
 示例：
 
@@ -1334,11 +1335,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2016-08-30 15:00:00
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### trunc
 
-`trunc(date, fmt)`: 返回日期，其时间部分被截断为格式模型指定的单位 `fmt`。 `fmt` 是&quot;year&quot; [、&quot;yy&quot;、&quot;yy&quot;、&quot;mon&quot;、&quot;month&quot;、&quot;mm&quot;之一]
+`trunc(date, fmt)`:返回日期，其时间部分被截断为格式模型指定的单位 `fmt`。 `fmt` 是&quot;year&quot; [、&quot;yy&quot;、&quot;yy&quot;、&quot;mon&quot;、&quot;month&quot;、&quot;mm&quot;之一]
 
 示例：
 
@@ -1349,11 +1350,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2015-01-01
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### unix_timestamp
 
-`unix_timestamp([expr[, pattern]])`: 返回当前或指定时间的UNIX时间戳。
+`unix_timestamp([expr[, pattern]])`:返回当前或指定时间的UNIX时间戳。
 
 示例：
 
@@ -1364,11 +1365,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  1460041200
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### 工作日
 
-`weekday(date)`: 返回日期／时间戳的星期几（0 =星期一，1 =星期二，..., 6 =星期日）。
+`weekday(date)`:返回日期／时间戳的星期几（0 =星期一，1 =星期二，..., 6 =星期日）。
 
 示例：
 
@@ -1377,11 +1378,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  3
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### week_of_year
 
-`weekofyear(date)`: 返回给定日期的一年中的周。 周被视为星期一的开始，周1是第一周，超过3天。
+`weekofyear(date)`:返回给定日期的一年中的周。 周被视为星期一的开始，周1是第一周，超过3天。
 
 示例：
 
@@ -1390,16 +1391,16 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  8
 ```
 
-自： 1.5.0
+自：1.5.0
 
 #### 何时
 
-`CASE WHEN expr1 THEN expr2 [WHEN expr3 THEN expr4]* [ELSE expr5] END`: 当 `expr1` = true时，返回 `expr2`; else when `expr3` = true, returns `expr4`; else returns `expr5`。
+`CASE WHEN expr1 THEN expr2 [WHEN expr3 THEN expr4]* [ELSE expr5] END`:当 `expr1` = true时，返回 `expr2`;else when `expr3` = true, returns `expr4`;else returns `expr5`。
 
 参数：
 
-- `expr1`, `expr3`: 分支条件表达式应全部为布尔类型。
-- `expr2`, `expr4`, `expr5`: 分支值表达式和其他值表达式应全部为相同类型或可强制为通用类型。
+- `expr1`, `expr3`:分支条件表达式应全部为布尔类型。
+- `expr2`, `expr4`, `expr5`:分支值表达式和其他值表达式应全部为相同类型或可强制为通用类型。
 
 示例：
 
@@ -1414,7 +1415,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 年
 
-`year(date)`: 返回日期／时间戳的年度组件。
+`year(date)`:返回日期／时间戳的年度组件。
 
 示例：
 
@@ -1423,19 +1424,19 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  2016
 ```
 
-自： 1.5.0
+自：1.5.0
 
-### 聚合函数
+### 聚合函数 {#aggregate-functions}
 
 #### prox_count_distinct
 
-`approx_count_distinct(expr[, relativeSD])`: 返回HyperLogLog++估计的基数。 `relativeSD` 定义允许的最大估计错误。
+`approx_count_distinct(expr[, relativeSD])`:返回HyperLogLog++估计的基数。 `relativeSD` 定义允许的最大估计错误。
 
-### 阵列
+### 阵列 {#arrays}
 
 #### 阵列
 
-`array(expr, ...)`: 返回具有给定元素的数组。
+`array(expr, ...)`:返回具有给定元素的数组。
 
 示例：
 
@@ -1446,7 +1447,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### array_contains
 
-`array_contains(array, value)`: 如果数组包含值，则返回true。
+`array_contains(array, value)`:如果数组包含值，则返回true。
 
 示例：
 
@@ -1457,7 +1458,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### array_distinct
 
-`array_distinct(array)`: 从数组中删除重复值。
+`array_distinct(array)`:从数组中删除重复值。
 
 示例：
 
@@ -1466,11 +1467,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  [1,2,3,null]
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### array_except
 
-`array_except(array1, array2)`: 返回中但不在中的元 `array1` 素的数组， `array2`没有重复。
+`array_except(array1, array2)`:返回中但不在中的元 `array1` 素的数组， `array2`没有重复。
 
 示例：
 
@@ -1479,11 +1480,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  [2]
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### array_intersect
 
-`array_intersect(array1, array2)`: 返回和(不带重复)交叉处 `array1` 的 `array2`元素数组。
+`array_intersect(array1, array2)`:返回和(不带重复)交叉处 `array1` 的 `array2`元素数组。
 
 示例：
 
@@ -1492,11 +1493,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  [1,3]
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### array_join
 
-`array_join(array, delimiter[, nullReplacement])`: 使用分隔符和可选字符串连接给定数组的元素以替换空值。 如果未设置任何值， `nullReplacement`则过滤任何空值。
+`array_join(array, delimiter[, nullReplacement])`:使用分隔符和可选字符串连接给定数组的元素以替换空值。 如果未设置任何值， `nullReplacement`则过滤任何空值。
 
 示例：
 
@@ -1509,11 +1510,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  hello , world
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### array_max
 
-`array_max(array)`: 返回数组中的最大值。 跳过空元素。
+`array_max(array)`:返回数组中的最大值。 跳过空元素。
 
 示例：
 
@@ -1522,11 +1523,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  20
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### array_min
 
-`array_min(array)`: 返回数组中的最小值。 跳过空元素。
+`array_min(array)`:返回数组中的最小值。 跳过空元素。
 
 示例：
 
@@ -1535,11 +1536,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  1
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### array_position
 
-`array_position(array, element)`: 返回数组第一个元素（基于1）的索引。
+`array_position(array, element)`:返回数组第一个元素（基于1）的索引。
 
 示例：
 
@@ -1548,11 +1549,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  3
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### array_remove
 
-`array_remove(array, element)`: 从数组中删除与元素相等的所有元素。
+`array_remove(array, element)`:从数组中删除与元素相等的所有元素。
 
 示例：
 
@@ -1561,11 +1562,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  [1,2,null]
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### array_repeat
 
-`array_repeat(element, count)`: 返回包含元素计数时间的数组。
+`array_repeat(element, count)`:返回包含元素计数时间的数组。
 
 示例：
 
@@ -1574,11 +1575,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  ["123","123"]
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### array_sort
 
-`array_sort(array)`: 按升序对输入数组排序。 输入数组的元素必须可以排序。 空元素位于返回数组的末尾。
+`array_sort(array)`:按升序对输入数组排序。 输入数组的元素必须可以排序。 空元素位于返回数组的末尾。
 
 示例：
 
@@ -1587,11 +1588,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  ["a","b","c","d",null]
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### array_合并
 
-`array_union(array1, array2)`: 返回和合并中的元素数组， `array1` 不 `array2`带重复。
+`array_union(array1, array2)`:返回和合并中的元素数组， `array1` 不 `array2`带重复。
 
 示例：
 
@@ -1600,11 +1601,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  [1,2,3,5]
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### array_zip
 
-`arrays_zip(a1, a2, ...)`: 返回结构的合并数组，其中第N个结构包含输入数组的所有第N个值。
+`arrays_zip(a1, a2, ...)`:返回结构的合并数组，其中第N个结构包含输入数组的所有第N个值。
 
 示例：
 
@@ -1615,13 +1616,13 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  [{"0":1,"1":2,"2":3},{"0":2,"1":3,"2":4}]
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### element_at
 
-`element_at(array, index)`: 返回给定（基于1）索引处的数组元素。 如 `index < 0`果，则访问从最后一个到第一个的元素。 如果索引超过数组长度，则返回NULL。
+`element_at(array, index)`:返回给定（基于1）索引处的数组元素。 如 `index < 0`果，则访问从最后一个到第一个的元素。 如果索引超过数组长度，则返回NULL。
 
-`element_at(map, key)`: 返回给定键的值；如果该键未包含在映射中，则返回NULL
+`element_at(map, key)`:返回给定键的值；如果该键未包含在映射中，则返回NULL
 
 示例：
 
@@ -1632,11 +1633,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  b
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### 爆炸
 
-`explode(expr)`: 将数组元素分 `expr` 成多行，或将映射元素分 `expr` 成多行和多列。
+`explode(expr)`:将数组元素分 `expr` 成多行，或将映射元素分 `expr` 成多行和多列。
 
 示例：
 
@@ -1648,7 +1649,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### explode_outer
 
-`explode_outer(expr)`: 将数组元素分 `expr` 成多行，或将映射元素分 `expr` 成多行和多列。
+`explode_outer(expr)`:将数组元素分 `expr` 成多行，或将映射元素分 `expr` 成多行和多列。
 
 示例：
 
@@ -1660,7 +1661,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### find_in_set
 
-`find_in_set(str, str_array)`: 以逗号分隔的列表()返回给定字符串(`str`)的索引(基于1`str_array`)。 如果找不到该字符串，或者给定的字符串()包含逗`str`号，则返回0。
+`find_in_set(str, str_array)`:以逗号分隔的列表()返回给定字符串(`str`)的索引(基于1`str_array`)。 如果找不到该字符串，或者给定的字符串()包含逗`str`号，则返回0。
 
 示例：
 
@@ -1671,7 +1672,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 拼合
 
-`flatten(arrayOfArrays)`: 将数组转换为单个数组。
+`flatten(arrayOfArrays)`:将数组转换为单个数组。
 
 示例：
 
@@ -1680,11 +1681,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  [1,2,3,4]
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### 行
 
-`inline(expr)`: 将一组结构爆炸成一个表。
+`inline(expr)`:将一组结构爆炸成一个表。
 
 示例：
 
@@ -1696,7 +1697,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### inilne_outer
 
-`inline_outer(expr)`: 将一组结构爆炸成一个表。
+`inline_outer(expr)`:将一组结构爆炸成一个表。
 
 示例：
 
@@ -1708,7 +1709,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### posexplode
 
-`posexplode(expr)`: 将数组元素分 `expr` 成多行，多行，多行，多 `expr` 列，多行，多列。
+`posexplode(expr)`:将数组元素分 `expr` 成多行，多行，多行，多 `expr` 列，多行，多列。
 
 示例：
 
@@ -1720,7 +1721,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### posexplode_outer
 
-`posexplode_outer(expr)`: 将数组元素分 `expr` 成多行，多行，多行，多 `expr` 列，多行，多列。
+`posexplode_outer(expr)`:将数组元素分 `expr` 成多行，多行，多行，多 `expr` 列，多行，多列。
 
 示例：
 
@@ -1732,7 +1733,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 逆
 
-`reverse(array)`: 返回元素顺序颠倒的字符串或数组。
+`reverse(array)`:返回元素顺序颠倒的字符串或数组。
 
 示例：
 
@@ -1743,14 +1744,14 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  [3,4,1,2]
 ```
 
-自： 1.5.0
+自：1.5.0
 >[!NOTE]
 >
 >阵列的rse逻辑自2.4.0起可用。
 
 #### 洗
 
-`shuffle(array)`: 返回给定数组的随机排列。
+`shuffle(array)`:返回给定数组的随机排列。
 
 示例：
 
@@ -1761,14 +1762,14 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  [20,null,3,1]
 ```
 
-自： 2.4.0
+自：2.4.0
 >[!NOTE]
 >
 >函数是不确定的。
 
 #### 切片
 
-`slice(x, start, length)`: 子集数组x从索引开始开始(如果开始为负数，则从结束开始)，具有指定长度。
+`slice(x, start, length)`:子集数组x从索引开始开始(如果开始为负数，则从结束开始)，具有指定长度。
 
 示例：
 
@@ -1779,11 +1780,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  [3,4]
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### sort_array
 
-`sort_array(array[, ascendingOrder])`: 根据数组元素的自然顺序，按升序或降序对输入数组进行排序。 Null元素以升序顺序放置在返回数组的开头或以降序排列在返回数组的结尾。
+`sort_array(array[, ascendingOrder])`:根据数组元素的自然顺序，按升序或降序对输入数组进行排序。 Null元素以升序顺序放置在返回数组的开头或以降序排列在返回数组的结尾。
 
 示例：
 
@@ -1794,7 +1795,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### zip_with
 
-`zip_with(left, right, func)`: 使用函数将两个给定数组（按元素）合并为单个数组。 如果一个数组较短，则在应用函数之前，在末尾附加空值以匹配较长数组的长度。
+`zip_with(left, right, func)`:使用函数将两个给定数组（按元素）合并为单个数组。 如果一个数组较短，则在应用函数之前，在末尾附加空值以匹配较长数组的长度。
 
 示例：
 
@@ -1807,25 +1808,25 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  ["ad","be","cf"]
 ```
 
-自： 2.4.0
+自：2.4.0
 
-### 数据类型转换函数
+### 数据类型转换函数 {#datatype-casting}
 
 #### bigint
 
-`bigint(expr)`: 将值转 `expr` 换为目标数据类型 `bigint`。
+`bigint(expr)`:将值转 `expr` 换为目标数据类型 `bigint`。
 
 #### 二进制
 
-`binary(expr)`: 将值转 `expr` 换为目标数据类型 `binary`。
+`binary(expr)`:将值转 `expr` 换为目标数据类型 `binary`。
 
 #### 布尔
 
-`boolean(expr)`: 将值转 `expr` 换为目标数据类型 `boolean`。
+`boolean(expr)`:将值转 `expr` 换为目标数据类型 `boolean`。
 
 #### 铸
 
-`cast(expr AS type)`: 将值转 `expr` 换为目标数据类型 `type`。
+`cast(expr AS type)`:将值转 `expr` 换为目标数据类型 `type`。
 
 示例：
 
@@ -1836,27 +1837,27 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 日期
 
-`date(expr)`: 将值转 `expr` 换为目标数据类型 `date`。
+`date(expr)`:将值转 `expr` 换为目标数据类型 `date`。
 
 #### 小数
 
-`decimal(expr)`: 将值转 `expr` 换为目标数据类型 `decimal`。
+`decimal(expr)`:将值转 `expr` 换为目标数据类型 `decimal`。
 
 #### 多次
 
-`double(expr)`: 将值转 `expr` 换为目标数据类型 `double`。
+`double(expr)`:将值转 `expr` 换为目标数据类型 `double`。
 
 #### 浮
 
-`float(expr)`: 将值转 `expr` 换为目标数据类型 `float`。
+`float(expr)`:将值转 `expr` 换为目标数据类型 `float`。
 
 #### int
 
-`int(expr)`: 将值转 `expr` 换为目标数据类型 `int`。
+`int(expr)`:将值转 `expr` 换为目标数据类型 `int`。
 
 #### 地图
 
-`map(key0, value0, key1, value1, ...)`: 创建具有给定键／值对的映射。
+`map(key0, value0, key1, value1, ...)`:创建具有给定键／值对的映射。
 
 示例：
 
@@ -1867,11 +1868,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### smallint
 
-`smallint(expr)`: 将值转 `expr` 换为目标数据类型 `smallint`。
+`smallint(expr)`:将值转 `expr` 换为目标数据类型 `smallint`。
 
 #### str_to_map
 
-`str_to_map(text[, pairDelim[, keyValueDelim]])`: 在使用分隔符将文本拆分为键／值对后创建映射。 默认分隔符为“,”(对于 `pairDelim` )和“:”（对于） `keyValueDelim`。
+`str_to_map(text[, pairDelim[, keyValueDelim]])`:在使用分隔符将文本拆分为键／值对后创建映射。 默认分隔符为“,”(对于 `pairDelim` )和“:”（对于） `keyValueDelim`。
 
 示例：
 
@@ -1884,21 +1885,21 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 字符串
 
-`string(expr)`: 将值转 `expr` 换为目标数据类型 `string`。
+`string(expr)`:将值转 `expr` 换为目标数据类型 `string`。
 
 #### 结构
 
-`struct(col1, col2, col3, ...)`: 创建具有给定字段值的结构。
+`struct(col1, col2, col3, ...)`:创建具有给定字段值的结构。
 
 #### tinyint
 
-`tinyint(expr)`: 将值转 `expr` 换为目标数据类型 `tinyint`。
+`tinyint(expr)`:将值转 `expr` 换为目标数据类型 `tinyint`。
 
-### 转换和格式化功能
+### 转换和格式化功能 {#conversion}
 
 #### ascii
 
-`ascii(str)`: 返回的第一个字符的数值 `str`。
+`ascii(str)`:返回的第一个字符的数值 `str`。
 
 示例：
 
@@ -1911,7 +1912,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### base64
 
-`base64(bin)`: 将参数从二进制转 `bin` 换为基64字符串。
+`base64(bin)`:将参数从二进制转 `bin` 换为基64字符串。
 
 示例：
 
@@ -1922,7 +1923,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 宾
 
-`bin(expr)`: 返回二进制表示的长值 `expr` 的字符串表示。
+`bin(expr)`:返回二进制表示的长值 `expr` 的字符串表示。
 
 示例：
 
@@ -1937,7 +1938,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### bit_length
 
-`bit_length(expr)`: 返回字符串数据的位长度或二进制数据的位数。
+`bit_length(expr)`:返回字符串数据的位长度或二进制数据的位数。
 
 示例：
 
@@ -1948,7 +1949,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### char
 
-`char(expr)`: 返回二进制等效于的ASCII字符 `expr`。 如果n大于256，则结果等效于 `chr(n % 256)`。
+`char(expr)`:返回二进制等效于的ASCII字符 `expr`。 如果n大于256，则结果等效于 `chr(n % 256)`。
 
 示例：
 
@@ -1959,7 +1960,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### char_length
 
-`char_length(expr)`: 返回字符串数据的字符长度或二进制数据的字节数。 字符串数据的长度包括尾随空格。 二进制数据的长度包括二进制零。
+`char_length(expr)`:返回字符串数据的字符长度或二进制数据的字节数。 字符串数据的长度包括尾随空格。 二进制数据的长度包括二进制零。
 
 示例：
 
@@ -1974,7 +1975,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### character_length
 
-`character_length(expr)`: 返回字符串数据的字符长度或二进制数据的字节数。 字符串数据的长度包括尾随空格。 二进制数据的长度包括二进制零。
+`character_length(expr)`:返回字符串数据的字符长度或二进制数据的字节数。 字符串数据的长度包括尾随空格。 二进制数据的长度包括二进制零。
 
 示例：
 
@@ -1989,7 +1990,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### chr
 
-`chr(expr)`: 返回二进制等效于expr的ASCII字符。 如果n大于256，则结果等效于 `chr(n % 256)`
+`chr(expr)`:返回二进制等效于expr的ASCII字符。 如果n大于256，则结果等效于 `chr(n % 256)`
 
 示例：
 
@@ -2000,10 +2001,10 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 度
 
-`degrees(expr)`: 将弧度转换为度。
+`degrees(expr)`:将弧度转换为度。
 
 参数：
-- `expr`: 弧度角
+- `expr`:弧度角
 
 示例：
 
@@ -2014,7 +2015,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### format_number
 
-`format_number(expr1, expr2)`: 设置数字 `expr1` 的格式，如“#、###、###。##&#39;，四舍五入至小 `expr2` 数位。 如果 `expr2` 为0，则结果没有小数点或小数部分。 `expr2` 也接受用户指定的格式。 它的功能与MySQL类似 `FORMAT`。
+`format_number(expr1, expr2)`:设置数字 `expr1` 的格式，如“#、###、###。##&#39;，四舍五入至小 `expr2` 数位。 如果 `expr2` 为0，则结果没有小数点或小数部分。 `expr2` 也接受用户指定的格式。 它的功能与MySQL类似 `FORMAT`。
 
 示例：
 
@@ -2027,7 +2028,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### from_json
 
-`from_json(jsonStr, schema[, options])`: 返回具有给定和的结 `jsonStr` 构值 `schema`。
+`from_json(jsonStr, schema[, options])`:返回具有给定和的结 `jsonStr` 构值 `schema`。
 
 示例：
 
@@ -2038,11 +2039,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  {"time":"2015-08-26 00:00:00.0"}
 ```
 
-自： 2.2.0
+自：2.2.0
 
 #### 哈希
 
-`hash(expr1, expr2, ...)`: 返回参数的哈希值。
+`hash(expr1, expr2, ...)`:返回参数的哈希值。
 
 示例：
 
@@ -2053,7 +2054,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 十六进制
 
-`hex(expr)`: 转换 `expr` 为十六进制。
+`hex(expr)`:转换 `expr` 为十六进制。
 
 示例：
 
@@ -2066,7 +2067,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### initcap
 
-`initcap(str)`: 返 `str` 回每个单词的首字母大写。 所有其他字母均以小写形式。 单词以空格分隔。
+`initcap(str)`:返 `str` 回每个单词的首字母大写。 所有其他字母均以小写形式。 单词以空格分隔。
 
 示例：
 
@@ -2077,7 +2078,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### lcase
 
-`lcase(str)`: 返回 `str` 时，所有字符均更改为小写。
+`lcase(str)`:返回 `str` 时，所有字符均更改为小写。
 
 示例：
 
@@ -2088,7 +2089,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### lower
 
-`lower(str)`: 返回 `str` 时，所有字符均更改为小写。
+`lower(str)`:返回 `str` 时，所有字符均更改为小写。
 
 示例：
 
@@ -2099,7 +2100,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### lpad
 
-`lpad(str, len, pad)`: 退 `str`回，左填 `pad` 充一段 `len`。 如 `str` 果长于 `len`，则返回值将缩短为字 `len` 符。
+`lpad(str, len, pad)`:退 `str`回，左填 `pad` 充一段 `len`。 如 `str` 果长于 `len`，则返回值将缩短为字 `len` 符。
 
 示例：
 
@@ -2112,7 +2113,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 地图
 
-`map(key0, value0, key1, value1, ...)`: 创建具有给定键／值对的映射。
+`map(key0, value0, key1, value1, ...)`:创建具有给定键／值对的映射。
 
 示例：
 
@@ -2123,7 +2124,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### map_from_arrays
 
-`map_from_arrays(keys, values)`: 使用一对给定键／值数组创建映射。 键中的元素不能为null。
+`map_from_arrays(keys, values)`:使用一对给定键／值数组创建映射。 键中的元素不能为null。
 
 示例：
 
@@ -2132,11 +2133,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  {1.0:"2",3.0:"4"}
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### map_from_entries
 
-`map_from_entries(arrayOfEntries)`: 返回从给定条目数组创建的映射。
+`map_from_entries(arrayOfEntries)`:返回从给定条目数组创建的映射。
 
 示例：
 
@@ -2145,11 +2146,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  {1:"a",2:"b"}
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### md5
 
-`md5(expr)`: 以十六进制字符串形式返回MD5 128位校验和 `expr`。
+`md5(expr)`:以十六进制字符串形式返回MD5 128位校验和 `expr`。
 
 示例：
 
@@ -2160,7 +2161,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### rpad
 
-`rpad(str, len, pad)`: 返 `str`回，右边填充 `pad` 一段长度 `len`。 如 `str` 果长于 `len`，则返回值将缩短为字 `len` 符。
+`rpad(str, len, pad)`:返 `str`回，右边填充 `pad` 一段长度 `len`。 如 `str` 果长于 `len`，则返回值将缩短为字 `len` 符。
 
 示例：
 
@@ -2173,13 +2174,13 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 修剪
 
-`rtrim(str)`: 删除尾随空格字符 `str`。
+`rtrim(str)`:删除尾随空格字符 `str`。
 
-`rtrim(trimStr, str)`: 删除尾随字符串，该字符串包含来自修剪字符串的字符 `str`。
+`rtrim(trimStr, str)`:删除尾随字符串，该字符串包含来自修剪字符串的字符 `str`。
 
 参数：
-- `str`: 字符串表达式
-- `trimStr`: 要修剪的修剪字符串字符。 默认值是单个空格
+- `str`:字符串表达式
+- `trimStr`:要修剪的修剪字符串字符。 默认值是单个空格
 
 示例：
 
@@ -2192,7 +2193,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 沙沙
 
-`sha(expr)`: 以十六进制 `sha1` 字符串形式返回哈希值 `expr`。
+`sha(expr)`:以十六进制 `sha1` 字符串形式返回哈希值 `expr`。
 
 示例：
 
@@ -2203,7 +2204,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### sha1
 
-`sha1(expr)`: 以十六进制 `sha1` 字符串形式返回哈希值 `expr`。
+`sha1(expr)`:以十六进制 `sha1` 字符串形式返回哈希值 `expr`。
 
 示例：
 
@@ -2214,7 +2215,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### sha2
 
-`sha2(expr, bitLength)`: 将SHA-2系列的校验和返回为的十六进制字符串 `expr`。 支持SHA-224、SHA-256、SHA-384和SHA-512。 0的位长度等于256。
+`sha2(expr, bitLength)`:将SHA-2系列的校验和返回为的十六进制字符串 `expr`。 支持SHA-224、SHA-256、SHA-384和SHA-512。 0的位长度等于256。
 
 示例：
 
@@ -2225,7 +2226,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### soundex
 
-`soundex(str)`: 返回字符串的Soundex代码。
+`soundex(str)`:返回字符串的Soundex代码。
 
 示例：
 
@@ -2236,7 +2237,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 堆栈
 
-`stack(n, expr1, ..., exprk)`: 分 `expr1`成行，.. `exprk` . `n` ..
+`stack(n, expr1, ..., exprk)`:分 `expr1`成行，.. `exprk` . `n` ..
 
 示例：
 
@@ -2248,7 +2249,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### substr
 
-`substr(str, pos[, len])`: 返回开始 `str` 的 `pos` 的子字符串(以 `len`及长度)，或者是以和长度进行开始的字节 `pos` 数组的片 `len`。
+`substr(str, pos[, len])`:返回开始 `str` 的 `pos` 的子字符串(以 `len`及长度)，或者是以和长度进行开始的字节 `pos` 数组的片 `len`。
 
 示例：
 
@@ -2263,7 +2264,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 子字符串
 
-`substring(str, pos[, len])`: 返回开始 `str` 的 `pos` 的子字符串(以 `len`及长度)，或者是以和长度进行开始的字节 `pos` 数组的片 `len`。
+`substring(str, pos[, len])`:返回开始 `str` 的 `pos` 的子字符串(以 `len`及长度)，或者是以和长度进行开始的字节 `pos` 数组的片 `len`。
 
 示例：
 
@@ -2278,7 +2279,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### to_json
 
-`to_json(expr[, options])`: 返回具有给定结构值的JSON字符串。
+`to_json(expr[, options])`:返回具有给定结构值的JSON字符串。
 
 示例：
 
@@ -2299,11 +2300,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
  [{"a":1}]
 ```
 
-自： 2.2.0
+自：2.2.0
 
 #### 翻译
 
-`translate(input, from, to)`: 通过 `input` 将字符串中的字符替换为字符串 `from` 中的相应字符来转换字符串 `to` 。
+`translate(input, from, to)`:通过 `input` 将字符串中的字符替换为字符串 `from` 中的相应字符来转换字符串 `to` 。
 
 示例：
 
@@ -2314,20 +2315,20 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### trim
 
-`trim(str)`: 从中删除前导和尾随空格字符 `str`。
+`trim(str)`:从中删除前导和尾随空格字符 `str`。
 
-`trim(BOTH trimStr FROM str)`: 从中删除前导和 `trimStr` 尾随字 `str`符。
+`trim(BOTH trimStr FROM str)`:从中删除前导和 `trimStr` 尾随字 `str`符。
 
-`trim(LEADING trimStr FROM str)`: 从中删除前 `trimStr` 导字符 `str`。
+`trim(LEADING trimStr FROM str)`:从中删除前 `trimStr` 导字符 `str`。
 
-`trim(TRAILING trimStr FROM str)`: 从中删除尾 `trimStr` 随字符 `str`。
+`trim(TRAILING trimStr FROM str)`:从中删除尾 `trimStr` 随字符 `str`。
 
 参数：
-- `str`: 字符串表达式
-- `trimStr`: 要修剪的修剪字符串字符，默认值为单个空格
-- `BOTH`, `FROM`: 这些关键字用于指定字符串两端的修剪字符串字符
-- `LEADING`, `FROM`: 这些关键字用于指定从字符串左端的修剪字符串字符
-- `TRAILING`, `FROM`: 这些关键字用于从字符串的右端指定修剪字符串字符
+- `str`:字符串表达式
+- `trimStr`:要修剪的修剪字符串字符，默认值为单个空格
+- `BOTH`, `FROM`:这些关键字用于指定字符串两端的修剪字符串字符
+- `LEADING`, `FROM`:这些关键字用于指定从字符串左端的修剪字符串字符
+- `TRAILING`, `FROM`:这些关键字用于从字符串的右端指定修剪字符串字符
 
 示例：
 
@@ -2346,7 +2347,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 酶
 
-`ucase(str)`: 返回 `str` 时，所有字符都更改为大写。
+`ucase(str)`:返回 `str` 时，所有字符都更改为大写。
 
 示例：
 
@@ -2357,7 +2358,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### unbase64
 
-`unbase64(str)`: 将参数从基64字符串转 `str` 换为二进制。
+`unbase64(str)`:将参数从基64字符串转 `str` 换为二进制。
 
 示例：
 
@@ -2368,7 +2369,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 无十六进制
 
-`unhex(expr)`: 将十六进制 `expr` 转换为二进制。
+`unhex(expr)`:将十六进制 `expr` 转换为二进制。
 
 示例：
 
@@ -2379,7 +2380,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### upper
 
-`upper(str)`: 返回 `str` 时，所有字符都更改为大写。
+`upper(str)`:返回 `str` 时，所有字符都更改为大写。
 
 示例：
 
@@ -2390,7 +2391,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### uuid
 
-`uuid()`: 返回全局唯一标识符(UUID)字符串。 该值将作为规范UUID 36字符串返回。
+`uuid()`:返回全局唯一标识符(UUID)字符串。 该值将作为规范UUID 36字符串返回。
 
 示例：
 
@@ -2403,11 +2404,11 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 >
 >函数是不确定的。
 
-### 数据评估
+### 数据评估 {#data-evaluation}
 
 #### 凝聚
 
-`coalesce(expr1, expr2, ...)`: 返回第一个非空参数（如果存在）。 否则，为null。
+`coalesce(expr1, expr2, ...)`:返回第一个非空参数（如果存在）。 否则，为null。
 
 示例：
 
@@ -2418,15 +2419,15 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### collect_列表
 
-`collect_list(expr)`: 收集并返回一列表非唯一元素。
+`collect_list(expr)`:收集并返回一列表非唯一元素。
 
 #### collect_set
 
-`collect_set(expr)`: 收集并返回一组唯一元素。
+`collect_set(expr)`:收集并返回一组唯一元素。
 
 #### concat
 
-`concat(col1, col2, ..., colN)`: 返回col1、col2、...、colN的连接。
+`concat(col1, col2, ..., colN)`:返回col1、col2、...、colN的连接。
 
 示例：
 
@@ -2443,7 +2444,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### concat_ws
 
-`concat_ws(sep, [str | array(str)]+)`: 返回以分隔的字符串的串串 `sep`。
+`concat_ws(sep, [str | array(str)]+)`:返回以分隔的字符串的串串 `sep`。
 
 示例：
 
@@ -2454,15 +2455,15 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### count
 
-`count(*)`: 返回已检索行的总数，包括包含null的行。
+`count(*)`:返回已检索行的总数，包括包含null的行。
 
-`count(expr[, expr...])`: 返回所提供表达式均为非null的行数。
+`count(expr[, expr...])`:返回所提供表达式均为非null的行数。
 
-`count(DISTINCT expr[, expr...])`: 返回所提供表达式为唯一且非null的行数。
+`count(DISTINCT expr[, expr...])`:返回所提供表达式为唯一且非null的行数。
 
 #### crc32
 
-`crc32(expr)`: 返回作为bigint的循环冗余 `expr` 检查值。
+`crc32(expr)`:返回作为bigint的循环冗余 `expr` 检查值。
 
 示例：
 
@@ -2473,7 +2474,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 解码
 
-`decode(bin, charset)`: 使用第二个参数字符集解码第一个参数。
+`decode(bin, charset)`:使用第二个参数字符集解码第一个参数。
 
 示例：
 
@@ -2484,7 +2485,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 跪
 
-`elt(n, input1, input2, ...)`: 返回 `n`第1个输入，例如，当 `input2` 为 `n` 2时返回。
+`elt(n, input1, input2, ...)`:返回 `n`第1个输入，例如，当 `input2` 为 `n` 2时返回。
 
 示例：
 
@@ -2495,7 +2496,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 编码
 
-`encode(str, charset)`: 使用第二个参数字符集对第一个参数进行编码。
+`encode(str, charset)`:使用第二个参数字符集对第一个参数进行编码。
 
 示例：
 
@@ -2506,15 +2507,15 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 第
 
-`first(expr[, isIgnoreNull])`: 返回一组行 `expr` 的第一个值。 如果 `isIgnoreNull` 为true，则仅返回非null值。
+`first(expr[, isIgnoreNull])`:返回一组行 `expr` 的第一个值。 如果 `isIgnoreNull` 为true，则仅返回非null值。
 
 #### first_value
 
-`first_value(expr[, isIgnoreNull])`: 返回一组行 `expr` 的第一个值。 如果 `isIgnoreNull` 为true，则仅返回非null值。
+`first_value(expr[, isIgnoreNull])`:返回一组行 `expr` 的第一个值。 如果 `isIgnoreNull` 为true，则仅返回非null值。
 
 #### get_json_object
 
-`get_json_object(json_txt, path)`: 从中提取json对象 `path`。
+`get_json_object(json_txt, path)`:从中提取json对象 `path`。
 
 示例：
 
@@ -2533,7 +2534,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### instr
 
-`instr(str, substr)`: 返回第一个出现的（基于1的） `substr` 索引 `str`。
+`instr(str, substr)`:返回第一个出现的（基于1的） `substr` 索引 `str`。
 
 示例：
 
@@ -2544,7 +2545,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### json_tuple
 
-`json_tuple(jsonStr, p1, p2, ..., pn)`: 返回与函数类似的元 `get_json_object`组，但它使用多个名称。 所有输入参数和输出列类型都是字符串。
+`json_tuple(jsonStr, p1, p2, ..., pn)`:返回与函数类似的元 `get_json_object`组，但它使用多个名称。 所有输入参数和输出列类型都是字符串。
 
 示例：
 
@@ -2555,34 +2556,33 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 #### 滞后
 
-`lag(input[, offset[, default]])`: 返回窗口 `input` 中当 `offset`前行之前第一行的值。 默认值为 `offset` 1，默认值为 `default` null。 如果行 `input` 的 `offset`值为null，则返回null。 如果没有此类偏移行（例如，当偏移为1时，窗口的第一行没有任何以前的行），并将返 `default` 回该行。
+`lag(input[, offset[, default]])`:返回窗口 `input` 中当 `offset`前行之前第一行的值。 默认值为 `offset` 1，默认值为 `default` null。 如果行 `input` 的 `offset`值为null，则返回null。 如果没有此类偏移行（例如，当偏移为1时，窗口的第一行没有任何以前的行），并将返 `default` 回该行。
 
 #### 最后
 
-`last(expr[, isIgnoreNull])`: 返回一组行 `expr` 的最后一个值。 如果 `isIgnoreNull` 为true，则仅返回非null值。
+`last(expr[, isIgnoreNull])`:返回一组行 `expr` 的最后一个值。 如果 `isIgnoreNull` 为true，则仅返回非null值。
 
 #### last_value
 
-`last_value(expr[, isIgnoreNull])`: 返回一组行 `expr` 的最后一个值。 如果 `isIgnoreNull` 为true，则仅返回非null值。
+`last_value(expr[, isIgnoreNull])`:返回一组行 `expr` 的最后一个值。 如果 `isIgnoreNull` 为true，则仅返回非null值。
 
 #### 铅
 
-`lead(input[, offset[, default]])`: 返回窗口 `input` 中 `offset`当前行后第一行的值。 默认值为 `offset` 1，默认值为 `default` null。 如果行 `input` 的 `offset`值为null，则返回null。 如果没有这样的偏移行（例如，当偏移为1时，窗口的最后一行没有任何后续行），并将返 `default` 回。
+`lead(input[, offset[, default]])`:返回窗口 `input` 中 `offset`当前行后第一行的值。 默认值为 `offset` 1，默认值为 `default` null。 如果行 `input` 的 `offset`值为null，则返回null。 如果没有这样的偏移行（例如，当偏移为1时，窗口的最后一行没有任何后续行），并将返 `default` 回。
 
 
 #### 左
 
-`left(str, len)`: 返回字符串 `len` 中最`len` 左侧（可以是字符串类型）的字符 `str`。 如 `len` 果小于或等于0，则结果为空字符串。
+`left(str, len)`:返回字符串 `len` 中最`len` 左侧（可以是字符串类型）的字符 `str`。 如 `len` 果小于或等于0，则结果为空字符串。
 
 示例：
 
-> SELECT left(&#39;Spark SQL&#39;, 3);
-Spa
+> SELECT left(&#39;Spark SQL&#39;, 3);Spa
 
 
 #### length
 
-`length(expr)`: 返回字符串数据的字符长度或二进制数据的字节数。 字符串数据的长度包括尾随空格。 二进制数据的长度包括二进制零。
+`length(expr)`:返回字符串数据的字符长度或二进制数据的字节数。 字符串数据的长度包括尾随空格。 二进制数据的长度包括二进制零。
 
 示例：
 
@@ -2597,7 +2597,7 @@ Spa
 
 #### 定位
 
-`locate(substr, str[, pos])`: 返回第一个出现位置在 `substr` 后 `str` 的位置 `pos`。 给定 `pos` 值和返回值基于1。
+`locate(substr, str[, pos])`:返回第一个出现位置在 `substr` 后 `str` 的位置 `pos`。 给定 `pos` 值和返回值基于1。
 
 示例：
 
@@ -2612,7 +2612,7 @@ Spa
 
 #### map_concat
 
-`map_concat(map, ...)`: 返回所有给定映射的合并。
+`map_concat(map, ...)`:返回所有给定映射的合并。
 
 示例：
 
@@ -2621,11 +2621,11 @@ Spa
  {1:"a",2:"c",3:"d"}
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### map_keys
 
-`map_keys(map)`: 返回包含映射键的无序数组。
+`map_keys(map)`:返回包含映射键的无序数组。
 
 示例：
 
@@ -2636,7 +2636,7 @@ Spa
 
 #### map_values
 
-`map_values(map)`: 返回包含映射值的无序数组。
+`map_values(map)`:返回包含映射值的无序数组。
 
 示例：
 
@@ -2647,11 +2647,11 @@ Spa
 
 #### ntile
 
-`ntile(n)`: 将每个窗口分区的行分 `n` 为范围从1到最多的时段 `n`。
+`ntile(n)`:将每个窗口分区的行分 `n` 为范围从1到最多的时段 `n`。
 
 #### 无效
 
-`nullif(expr1, expr2)`: 如果等于， `expr1` 则返回 `expr2`null，否则 `expr1` 返回。
+`nullif(expr1, expr2)`:如果等于， `expr1` 则返回 `expr2`null，否则 `expr1` 返回。
 
 示例：
 
@@ -2662,7 +2662,7 @@ Spa
 
 #### nvl
 
-`nvl(expr1, expr2)`: 如果 `expr2` 为 `expr1` null，则返回，否则 `expr1` 返回。
+`nvl(expr1, expr2)`:如果 `expr2` 为 `expr1` null，则返回，否则 `expr1` 返回。
 
 示例：
 
@@ -2673,7 +2673,7 @@ Spa
 
 #### nvl2
 
-`nvl2(expr1, expr2, expr3)`: 如果 `expr2` 不 `expr1` 为null，则返回，否则 `expr3` 返回。
+`nvl2(expr1, expr2, expr3)`:如果 `expr2` 不 `expr1` 为null，则返回，否则 `expr3` 返回。
 
 示例：
 
@@ -2684,7 +2684,7 @@ Spa
 
 #### parse_url
 
-`parse_url(url, partToExtract[, key])`: 从URL提取部件。
+`parse_url(url, partToExtract[, key])`:从URL提取部件。
 
 示例：
 
@@ -2699,7 +2699,7 @@ Spa
 
 #### position
 
-`position(substr, str[, pos])`: 返回第一个出现位置在 `substr` 后 `str` 的位置 `pos`。 给定 `pos` 值和返回值基于1。
+`position(substr, str[, pos])`:返回第一个出现位置在 `substr` 后 `str` 的位置 `pos`。 给定 `pos` 值和返回值基于1。
 
 示例：
 
@@ -2714,11 +2714,11 @@ Spa
 
 #### 秩
 
-`rank()`: 计算一组值中值的排名。 结果是一个加上分区排序中当前行之前或等于的行数。 这些值在序列中产生间隙。
+`rank()`:计算一组值中值的排名。 结果是一个加上分区排序中当前行之前或等于的行数。 这些值在序列中产生间隙。
 
 #### regexp_extract
 
-`regexp_extract(str, regexp[, idx])`: 提取匹配的组 `regexp`。
+`regexp_extract(str, regexp[, idx])`:提取匹配的组 `regexp`。
 
 示例：
 
@@ -2729,7 +2729,7 @@ Spa
 
 #### regex_replace
 
-`regexp_replace(str, regexp, rep)`: 替换与匹配的 `str` 所有子 `regexp` 字符串 `rep`。
+`regexp_replace(str, regexp, rep)`:替换与匹配的 `str` 所有子 `regexp` 字符串 `rep`。
 
 示例：
 
@@ -2740,7 +2740,7 @@ Spa
 
 #### 重复
 
-`repeat(str, n)`: 返回重复给定字符串值n次的字符串。
+`repeat(str, n)`:返回重复给定字符串值n次的字符串。
 
 示例：
 
@@ -2751,12 +2751,12 @@ Spa
 
 #### replace
 
-`replace(str, search[, replace])`: 用替换所有 `search` 出现的 `replace`。
+`replace(str, search[, replace])`:用替换所有 `search` 出现的 `replace`。
 
 参数：
-- `str`: 字符串表达式
-- `search`: 字符串表达式。 如果 `search` 未在中找到， `str`则 `str` 返回不变。
-- `replace`: 字符串表达式。 如果 `replace` 未指定或为空字符串，则不替换从中删除的字符串 `str`。
+- `str`:字符串表达式
+- `search`:字符串表达式。 如果 `search` 未在中找到， `str`则 `str` 返回不变。
+- `replace`:字符串表达式。 如果 `replace` 未指定或为空字符串，则不替换从中删除的字符串 `str`。
 
 示例：
 
@@ -2771,11 +2771,11 @@ Spa
 
 #### row_number
 
-`row_number()`: 根据窗口分区内行的顺序，为每个行指定唯一的顺序编号，从一行开始。
+`row_number()`:根据窗口分区内行的顺序，为每个行指定唯一的顺序编号，从一行开始。
 
 #### 模式_of_json
 
-`schema_of_json(json[, options])`: 以JSON字符串的DDL格式返回模式。
+`schema_of_json(json[, options])`:以JSON字符串的DDL格式返回模式。
 
 示例：
 
@@ -2784,11 +2784,11 @@ Spa
  array<struct<col:int>>
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### 句子
 
-`sentences(str[, lang, country])`: 拆 `str` 分为一组单词。
+`sentences(str[, lang, country])`:拆 `str` 分为一组单词。
 
 示例：
 
@@ -2799,16 +2799,16 @@ Spa
 
 #### 序列
 
-`sequence(start, stop, step)`: 生成从开始到停止（包括）的元素数组，逐步增加。 返回元素的类型与参数表达式的类型相同。
+`sequence(start, stop, step)`:生成从开始到停止（包括）的元素数组，逐步增加。 返回元素的类型与参数表达式的类型相同。
 
-支持的类型有： 字节、短、整数、长、日期、时间戳。
+支持的类型有：字节、短、整数、长、日期、时间戳。
 
-和 `start` 表达式 `stop` 必须解析为同一类型。 如 `start` 果表达式 `stop` 和解析为“date”或“timestamp”类型，则 `step` 表达式必须解析为“interval”类型； 否则，它解析为与和表达式相同 `start` 的类 `stop` 型。
+和 `start` 表达式 `stop` 必须解析为同一类型。 如 `start` 果表达式 `stop` 和解析为“date”或“timestamp”类型，则 `step` 表达式必须解析为“interval”类型；否则，它解析为与和表达式相同 `start` 的类 `stop` 型。
 
 参数：
-- `start`: 表达式。 范围的开始。
-- `stop`: 表达式。 范围（包括）的结束。
-- `step`: 可选表达式。 范围的步骤。 如果 `step` 小于或等于 `start` ，则默认为1, `stop`否则为-1。 对于时序，分别为1天和-1天。 如 `start` 果大于 `stop`，则 `step` 必须为负，反之亦然。
+- `start`:表达式。 范围的开始。
+- `stop`:表达式。 范围（包括）的结束。
+- `step`:可选表达式。 范围的步骤。 如果 `step` 小于或等于 `start` ，则默认为1, `stop`否则为-1。 对于时序，分别为1天和-1天。 如 `start` 果大于 `stop`，则 `step` 必须为负，反之亦然。
 
 示例：
 
@@ -2821,11 +2821,11 @@ Spa
  [2018-01-01,2018-02-01,2018-03-01]
 ```
 
-自： 2.4.0
+自：2.4.0
 
 #### shiftleft
 
-`shiftleft(base, expr)`: 按位左移。
+`shiftleft(base, expr)`:按位左移。
 
 示例：
 
@@ -2836,7 +2836,7 @@ Spa
 
 #### shiftright
 
-`shiftright(base, expr)`: 按位（已签名）右移。
+`shiftright(base, expr)`:按位（已签名）右移。
 
 示例：
 
@@ -2847,7 +2847,7 @@ Spa
 
 #### 希特里图宁
 
-`shiftrightunsigned(base, expr)`: 按位无符号右移。
+`shiftrightunsigned(base, expr)`:按位无符号右移。
 
 示例：
 
@@ -2858,7 +2858,7 @@ Spa
 
 #### 大小
 
-`size(expr)`: 返回数组或映射的大小。 如果函数的输入为null且设置为true，则 `spark.sql.legacy.sizeOfNull` 该函数返回-1。 如 `spark.sql.legacy.sizeOfNull` 果设置为false，则函数对于null输入返回null。 默认情况下， `spark.sql.legacy.sizeOfNull` 该参数设置为true。
+`size(expr)`:返回数组或映射的大小。 如果函数的输入为null且设置为true，则 `spark.sql.legacy.sizeOfNull` 该函数返回-1。 如 `spark.sql.legacy.sizeOfNull` 果设置为false，则函数对于null输入返回null。 默认情况下， `spark.sql.legacy.sizeOfNull` 该参数设置为true。
 
 示例：
 
@@ -2873,7 +2873,7 @@ Spa
 
 #### 空间
 
-`space(n)`: 返回一个包含空格的 `n` 字符串。
+`space(n)`:返回一个包含空格的 `n` 字符串。
 
 示例：
 
@@ -2884,7 +2884,7 @@ Spa
 
 #### 拆分
 
-`split(str, regex)`: 在匹 `str` 配的匹配项周围拆分 `regex`。
+`split(str, regex)`:在匹 `str` 配的匹配项周围拆分 `regex`。
 
 示例：
 
@@ -2895,7 +2895,7 @@ Spa
 
 #### substring_index
 
-`substring_index(str, delim, count)`: 返回分隔符 `str` 出现 `count` 前的子字符串 `delim`。 如 `count` 果为正，则返回最终分隔符左侧的所有内容（从左侧计数）。 如 `count` 果为负，则返回最终分隔符右侧的所有内容（从右侧计数）。 函数 `substring_index` 在搜索时执行区分大小写的匹配 `delim`。
+`substring_index(str, delim, count)`:返回分隔符 `str` 出现 `count` 前的子字符串 `delim`。 如 `count` 果为正，则返回最终分隔符左侧的所有内容（从左侧计数）。 如 `count` 果为负，则返回最终分隔符右侧的所有内容（从右侧计数）。 函数 `substring_index` 在搜索时执行区分大小写的匹配 `delim`。
 
 示例：
 
@@ -2910,7 +2910,7 @@ Spa
 
 #### xpath
 
-`xpath(xml, xpath)`: 返回xml节点中与XPath表达式匹配的值字符串数组。
+`xpath(xml, xpath)`:返回xml节点中与XPath表达式匹配的值字符串数组。
 
 示例：
 
@@ -2921,7 +2921,7 @@ Spa
 
 #### xpath_多次
 
-`xpath_double(xml, xpath)`: 返回多次值；如果未找到匹配项，则返回值零；如果找到匹配项，但该值为非数字值，则返回NaN。
+`xpath_double(xml, xpath)`:返回多次值；如果未找到匹配项，则返回值零；如果找到匹配项，但该值为非数字值，则返回NaN。
 
 示例：
 
@@ -2932,7 +2932,7 @@ Spa
 
 #### xpath_float
 
-`xpath_float(xml, xpath)`: 返回浮点值，如果未找到匹配项，则返回值零；如果找到匹配项，但该值为非数字值，则返回NaN。
+`xpath_float(xml, xpath)`:返回浮点值，如果未找到匹配项，则返回值零；如果找到匹配项，但该值为非数字值，则返回NaN。
 
 示例：
 
@@ -2943,7 +2943,7 @@ Spa
 
 #### xpath_int
 
-`xpath_int(xml, xpath)`: 返回整数值；如果找不到匹配项，或者找到匹配项，但该值为非数字值，则返回值零。
+`xpath_int(xml, xpath)`:返回整数值；如果找不到匹配项，或者找到匹配项，但该值为非数字值，则返回值零。
 
 示例：
 
@@ -2954,7 +2954,7 @@ Spa
 
 #### xpath_long
 
-`xpath_long(xml, xpath)`: 返回一个长整数值，或者如果找不到匹配项，或者找到匹配项，但该值是非数字值，则返回值零。
+`xpath_long(xml, xpath)`:返回一个长整数值，或者如果找不到匹配项，或者找到匹配项，但该值是非数字值，则返回值零。
 
 示例：
 
@@ -2965,7 +2965,7 @@ Spa
 
 #### xpath_number
 
-`xpath_number(xml, xpath)`: 返回多次值；如果未找到匹配项，则返回值零；如果找到匹配项，但该值为非数字值，则返回NaN。
+`xpath_number(xml, xpath)`:返回多次值；如果未找到匹配项，则返回值零；如果找到匹配项，但该值为非数字值，则返回NaN。
 
 示例：
 
@@ -2976,7 +2976,7 @@ Spa
 
 #### xpath_short
 
-`xpath_short(xml, xpath)`: 返回一个短整数值，或者如果找不到匹配项，或者找到匹配项，但该值是非数字值，则返回值零。
+`xpath_short(xml, xpath)`:返回一个短整数值，或者如果找不到匹配项，或者找到匹配项，但该值是非数字值，则返回值零。
 
 示例：
 
@@ -2987,7 +2987,7 @@ Spa
 
 #### xpath_string
 
-`xpath_string(xml, xpath)`: 返回与XPath表达式匹配的第一个xml节点的文本内容。
+`xpath_string(xml, xpath)`:返回与XPath表达式匹配的第一个xml节点的文本内容。
 
 示例：
 
@@ -2996,11 +2996,11 @@ Spa
  cc
 ```
 
-### 当前信息
+### 当前信息 {#current-information}
 
 #### current_database
 
-`current_database()`: 返回当前数据库。
+`current_database()`:返回当前数据库。
 
 示例：
 
@@ -3011,18 +3011,80 @@ Spa
 
 #### current_date
 
-`current_date()`: 返回查询评估开始的当前日期。
+`current_date()`:返回查询评估开始的当前日期。
 
-自： 1.5.0
+自：1.5.0
 
 #### current_timestamp
 
-`current_timestamp()`: 返回查询评估开始的当前时间戳。
+`current_timestamp()`:返回查询评估开始的当前时间戳。
 
-自： 1.5.0
+自：1.5.0
 
 #### now
 
-`now()`: 返回查询评估开始的当前时间戳。
+`now()`:返回查询评估开始的当前时间戳。
 
-自： 1.5.0
+自：1.5.0
+
+### 高阶函数 {#higher-order}
+
+#### 变换
+
+`transform(array, lambdaExpression): array`
+
+使用该函数变换数组中的元素。
+
+如果λ函数有两个参数，则第二个参数表示元素的索引。
+
+示例：
+
+```
+> SELECT transform(array(1, 2, 3), x -> x + 1);
+  [2,3,4]
+> SELECT transform(array(1, 2, 3), (x, i) -> x + i);
+  [1,3,5]
+```
+
+
+#### 存在
+
+`exists(array, lambdaExpression returning Boolean): Boolean`
+
+测试谓词是否包含数组中的一个或多个元素。
+
+示例：
+
+```
+> SELECT exists(array(1, 2, 3), x -> x % 2 == 0);
+  true
+```
+
+#### 过滤器
+
+`filter(array, lambdaExpression returning Boolean): array`
+
+使用给定谓词筛选输入数组。
+
+示例：
+
+```
+> SELECT filter(array(1, 2, 3), x -> x % 2 == 1);
+ [1,3]
+```
+
+
+#### 聚合
+
+`aggregate(array, <initial accumulator value>, lambdaExpression to accumulate the value): array`
+
+将二进制运算符应用于初始状态和数组中的所有元素，并将其降为单个状态。 通过应用结束函数将最终状态转换为最终结果。
+
+示例：
+
+```
+> SELECT aggregate(array(1, 2, 3), 0, (acc, x) -> acc + x);
+  6
+> SELECT aggregate(array(1, 2, 3), 0, (acc, x) -> acc + x, acc -> acc * 10);
+  60
+```
