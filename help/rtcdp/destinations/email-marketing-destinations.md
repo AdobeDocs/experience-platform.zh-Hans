@@ -4,9 +4,9 @@ seo-title: 电子邮件营销目标
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 seo-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 translation-type: tm+mt
-source-git-commit: 6850a1ee5a578a3dccce9f9decd8f6a368705f4a
+source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
 workflow-type: tm+mt
-source-wordcount: '800'
+source-wordcount: '799'
 ht-degree: 1%
 
 ---
@@ -22,9 +22,9 @@ ht-degree: 1%
 
 在连接目标流中（如下面部分所述），连接到AmazonS3或SFTP。 实时CDP将您的细分作为或文 `.csv` 件导 `.txt` 出，并将它们提供给您的首选位置。 计划您在电子邮件营销平台中从实时CDP中启用的存储位置导入数据。 导入数据的过程因每个合作伙伴而异。 有关详细信息，请参阅各个目标文章。
 
-## 第1步——连接目标 {#connect-destination}
+## 第1步——配置目标 {#connect-destination}
 
-1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标”中]**，选择要连接的电子邮件营销目标，然后选择“ **[!UICONTROL 连接目标”]**。
+1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中，选择要连接的电子邮件营销目标，然后选择“ **[!UICONTROL 配置”]**。
 
    ![连接到目标](/help/rtcdp/destinations/assets/connect-email-marketing.png)
 
