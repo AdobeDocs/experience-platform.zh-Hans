@@ -4,9 +4,9 @@ seo-title: Nielsen VideoJS播放器处理程序扩展
 description: Th Nielsen VideoJS播放器处理程序扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: Nielsen VideoJS播放器处理程序扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
 workflow-type: tm+mt
-source-wordcount: '630'
+source-wordcount: '628'
 ht-degree: 4%
 
 ---
@@ -18,9 +18,9 @@ ht-degree: 4%
 
 [!DNL Nielsen Digital SDK] 通过以下数字测量产品启动扩展优惠受众测量：
 
-DCR: 提供对非线性数字内容（包括带有广告的内容）进行日常测量的测量解决方案可全面视图桌面、移动设备、平板电脑和连接设备上的数字内容受众消费。
+DCR:提供对非线性数字内容（包括带有广告的内容）进行日常测量的测量解决方案可全面视图桌面、移动设备、平板电脑和连接设备上的数字内容受众消费。
 
-DTVR: 这说明参加节目源在桌面和移动设备上进行的线性电视观看。 这是MRC为在计算机和移动设备上观看的节目而对电视受众衡量做出贡献的第一个获得认证的解决方案。
+DTVR:这说明参加节目源在桌面和移动设备上进行的线性电视观看。 这是MRC为在计算机和移动设备上观看的节目而对电视受众衡量做出贡献的第一个获得认证的解决方案。
 
 [!DNL Nielsen VideoJS Player Handler] 是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101361.nielsen-digital-sdk-extension.html)。
 
@@ -40,7 +40,7 @@ DTVR: 这说明参加节目源在桌面和移动设备上进行的线性电视�
 
 1. 在Adobe [实时CDP界面中](http://platform.adobe.com/)，转到“目 **[!UICONTROL 标]** ”> **[!UICONTROL “目录]**”。
 2. 从目录中选择扩展或使用搜索栏。
-3. 单击目标以选中它，然后在右边 **[!UICONTROL 栏中选择]** “安装扩展”。 如果“安 **[!UICONTROL 装扩展]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties]** 权限。 请参 [阅先决条件](#prerequisites)。
+3. 单击目标以突出显示它，然后在右 **[!UICONTROL 边栏中]** 选择配置。 如果“ **[!UICONTROL 配置]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties权限]** 。 请参 [阅先决条件](#prerequisites)。
 4. 在“选 **[!UICONTROL 择可用的启动项属性]** ”窗口中，选择要在其中安装扩展的启动项属性。 您还可以在启动项中选择创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解启动文档的“ [属性”页](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) 面部分中的属性。
 5. 该工作流将引导您进入Launch以完成安装。
 
