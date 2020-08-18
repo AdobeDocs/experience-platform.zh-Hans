@@ -4,9 +4,9 @@ seo-title: Google广告目标
 description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 seo-description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 translation-type: tm+mt
-source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
+source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
 workflow-type: tm+mt
-source-wordcount: '598'
+source-wordcount: '635'
 ht-degree: 0%
 
 ---
@@ -44,24 +44,28 @@ ht-degree: 0%
 
 在Adobe实 [!DNL Google Ads] 时CDP中创建目标之前，您必须联系 [!DNL Google] Adobe，让进入允许的数据提供者列表，并将您的帐户添加到允许列表。 联系 [!DNL Google] 并提供以下信息：
 
-* **帐户ID** : 这是Adobe的帐户ID [!DNL Google]请联系Adobe客户服务或您的Adobe代表以获取此ID。
-* **客户ID** : 这是Adobe的客户帐户ID [!DNL Google]请联系Adobe客户服务或您的Adobe代表以获取此ID。
+* **帐户ID** :这是Adobe的帐户ID [!DNL Google]请联系Adobe客户服务或您的Adobe代表以获取此ID。
+* **客户ID** :这是Adobe的客户帐户ID [!DNL Google]请联系Adobe客户服务或您的Adobe代表以获取此ID。
 * 您的帐户类型： **AdWords**
-* **Google AdWords ID** : 这是你的身份证 [!DNL Google]。 ID格式通常为123-456-7890。
+* **Google AdWords ID** :这是你的身份证 [!DNL Google]。 ID格式通常为123-456-7890。
 
-## 创建目标
+## 配置目标
 
-1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中 [!DNL Google Ads]，选 **[!UICONTROL 择并选择“创]**建目标”。
+1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中 [!DNL Google Ads]，选 **[!UICONTROL 择并选择“]**配置”。
    ![连接Google广告目标](/help/rtcdp/destinations/assets/google-2-destination.png)
+
+   >[!NOTE]
+   >
+   >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信息，请参]**&#x200B;阅目标工 [作区文档的](/help/rtcdp/destinations/destinations-workspace.md#catalog) “目录”部分。
 
 2. 在创建 **目标** 工作流的设置步骤中，填写目 [!UICONTROL 标的基本信] 息。 <br>
 
    ![Google Ads的基本信息](/help/rtcdp/destinations/assets/google-2-destination-setup-step.png)
-* **[!UICONTROL 名称]**: 填写此目标的首选名称。
-* **[!UICONTROL 描述]**: 可选。 例如，您可以提到您使用此目标的活动。
-* **[!UICONTROL 帐户类型]**: AdWords是唯一可用的选项。
-* **[!UICONTROL 帐户ID]**: 用填写您的帐户ID [!DNL Google Ads]。 ID格式通常为123-456-7890。
-* **[!UICONTROL 营销用例]**: 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。
+* **[!UICONTROL 名称]**:填写此目标的首选名称。
+* **[!UICONTROL 描述]**:可选。 例如，您可以提到您使用此目标的活动。
+* **[!UICONTROL 帐户类型]**:AdWords是唯一可用的选项。
+* **[!UICONTROL 帐户ID]**:用填写您的帐户ID [!DNL Google Ads]。 ID格式通常为123-456-7890。
+* **[!UICONTROL 营销用例]**:市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。
 
 ## 将区段激活到 [!DNL Google Ads]
 
