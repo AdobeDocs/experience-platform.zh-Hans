@@ -5,9 +5,9 @@ title: Adobe Experience Platform源连接器概述
 topic: overview
 description: Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 translation-type: tm+mt
-source-git-commit: c15f582eeaa895f03441b2f488686a9a48942f3d
+source-git-commit: 88f999691cde2fbebdf23f940f6d48acdfb188e3
 workflow-type: tm+mt
-source-wordcount: '846'
+source-wordcount: '863'
 ht-degree: 0%
 
 ---
@@ -31,6 +31,8 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 
 - [Adobe Audience Manager连接器概述](connectors/adobe-applications/audience-manager.md)
 - [在UI中创建Adobe Audience Manager源连接器](./tutorials/ui/create/adobe-applications/audience-manager.md)
+- [Adobe Analytics分类数据连接器概述](connectors/adobe-applications/classifications.md)
+- [在UI中创建Adobe Analytics分类数据源连接器](./tutorials/ui/create/adobe-applications/classifications.md)
 - [Adobe Analytics数据连接器概述](connectors/adobe-applications/analytics.md)
 - [在UI中创建Adobe Analytics源连接器](./tutorials/ui/create/adobe-applications/analytics.md)
 - [在UI中创建客户属性源连接器](./tutorials/ui/create/adobe-applications/customer-attributes.md)
