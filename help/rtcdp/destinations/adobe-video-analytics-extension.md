@@ -1,13 +1,13 @@
 ---
 title: Adobe Media Analytics for Audio and Video 扩展
 seo-title: Adobe Media Analytics for Audio and Video 扩展
-description: 音频和视频扩展的Adobe媒体Analytics是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Adobe媒体Analytics视频扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Adobe媒体分析音频和视频扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Adobe媒体分析视频扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: 33eba9e3f2e993c6958480b091ff004dc057f438
 workflow-type: tm+mt
-source-wordcount: '587'
-ht-degree: 11%
+source-wordcount: '585'
+ht-degree: 12%
 
 ---
 
@@ -16,13 +16,13 @@ ht-degree: 11%
 
 ## 概述 {#overview}
 
-Adobe音频和视频媒体Analytics是基础Analytics的附加组件，为客户提供对视频、音频和广告的可靠测量。
+Adobe音频和视频媒体分析是基础Analytics产品的附加功能，可为客户提供对视频、音频和广告的可靠衡量。
 
-Adobe媒体Analytics音频和视频是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100157.html)。
+Adobe媒体分析(Adobe Media Analytics for Audio and Video)是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100157.html)。
 
 此目标是扩 [!DNL Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Launch] 实时CDP中的工作方式的更多信息，请参 [阅Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
-![Adobe Media Analytics for Audio and Video 扩展](/help/rtcdp/destinations/assets/adobe-analytics-extension.png)
+![Adobe Media Analytics for Audio and Video 扩展](/help/rtcdp/destinations/assets/adobe-video-analytics-extension.png)
 
 ## 先决条件 {#prerequisites}
 
@@ -36,11 +36,11 @@ Adobe媒体Analytics音频和视频是Adobe实时客户数据平台中的分析�
 
 1. 在Adobe [实时CDP界面中](http://platform.adobe.com/)，转到“目 **[!UICONTROL 标]** ”> **[!UICONTROL “目录]**”。
 2. 从目录中选择扩展或使用搜索栏。
-3. 单击目标以选中它，然后在右边栏 **[!UICONTROL 中选择]** “安装扩展”。 如果“安 **[!UICONTROL 装扩展]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties]** 权限。 请参 [阅先决条件](#prerequisites)。
+3. 单击目标以突出显示它，然后在右 **[!UICONTROL 边栏中]** 选择配置。 如果“ **[!UICONTROL 配置]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties权限]** 。 请参 [阅先决条件](#prerequisites)。
 4. 在“选 **[!UICONTROL 择可用的启动项]** ”属性窗口中， [!DNL Launch] 选择要安装扩展的属性。 您还可以在中选择创建新属性 [!DNL Launch]。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解文档的“属 [性”页面部分](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) 中的 [!DNL Launch] 属性。
 5. 该工作流将帮 [!DNL Launch] 您完成安装。
 
-有关扩展配置选项的信息，请参阅 [文档中的“音频和视频扩展的Adobe媒体Analytics](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/media-analytics-extension/overview.translate.html) ” [!DNL Experience Launch] 页面。
+有关扩展配置选项的信息，请参阅 [文档中的“Adobe媒体分析音频和视频扩展](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/media-analytics-extension/overview.translate.html) ” [!DNL Experience Launch] 页面。
 
 您还可以直接在Experience Platform Launch界面中安 [装扩展](https://launch.adobe.com/)。 请参 [阅在文档中添加](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension) 新的 [!DNL Launch] 扩展。
 
