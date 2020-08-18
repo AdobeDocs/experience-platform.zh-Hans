@@ -5,9 +5,9 @@ title: Adobe Experience Platform源连接器概述
 topic: overview
 description: Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: c15f582eeaa895f03441b2f488686a9a48942f3d
 workflow-type: tm+mt
-source-wordcount: '847'
+source-wordcount: '846'
 ht-degree: 0%
 
 ---
@@ -84,7 +84,6 @@ CRM系统提供的数据有助于建立客户关系，进而创造忠诚度并�
 - [!DNL GreenPlum](connectors/databases/greenplum.md) 连接器
 - [!DNL HP Vertica](connectors/databases/hp-vertica.md) 连接器
 - [!DNL IBM DB2](connectors/databases/ibm-db2.md) 连接器
-- [!DNL MariaDB](connectors/databases/mariadb.md) 连接器
 - [!DNL Microsoft SQL Server](connectors/databases/sql-server.md) 连接器
 - [!DNL MySQL](connectors/databases/mysql.md) 连接器
 - [!DNL Oracle](connectors/databases/oracle.md) 连接器
