@@ -4,10 +4,10 @@ seo-title: Contentsquare扩展
 description: Contentsquare扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: Contentsquare扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
 workflow-type: tm+mt
-source-wordcount: '569'
-ht-degree: 4%
+source-wordcount: '567'
+ht-degree: 6%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-可视化页面内行为，了解客户放弃的原因以及您可以如何改进。 将收入归因于每个Analytics细分和目标测试的UX和内容元素。 安装标 [!DNL Contentsquare] 签、设置自定义变量和事件。 开始只需单击几下，即可收集UX分析的数据。
+可视化页面内行为，了解客户放弃的原因以及您可以如何改进。 将收入归因于每个Analytics区段和目标测试的UX和内容元素。 安装标 [!DNL Contentsquare] 签、设置自定义变量和事件。 开始只需单击几下，即可收集UX分析的数据。
 
 [!DNL Contentsquare] 是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100364.html)。
 
@@ -37,7 +37,7 @@ ht-degree: 4%
 
 1. 在Adobe [实时CDP界面中](http://platform.adobe.com/)，转到“目 **[!UICONTROL 标]** ”> **[!UICONTROL “目录]**”。
 2. 从目录中选择扩展或使用搜索栏。
-3. 单击目标以选中它，然后在右边 **[!UICONTROL 栏中选择]** “安装扩展”。 如果“安 **[!UICONTROL 装扩展]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties]** 权限。 请参 [阅先决条件](#prerequisites)。
+3. 单击目标以突出显示它，然后在右 **[!UICONTROL 边栏中]** 选择配置。 如果“ **[!UICONTROL 配置]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties权限]** 。 请参 [阅先决条件](#prerequisites)。
 4. 在“选 **[!UICONTROL 择可用的启动项属性]** ”窗口中，选择要在其中安装扩展的启动项属性。 您还可以在启动项中选择创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解启动文档的“ [属性”页](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) 面部分中的属性。
 5. 该工作流将引导您进入Launch以完成安装。
 
