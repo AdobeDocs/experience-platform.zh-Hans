@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Azure Blob或AmazonS3源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3cee9b2515d833a640b091a90cd2152f0c1b1e64
+source-git-commit: 999ff0e9525d7d9f67298862c68bb59ddc35e558
 workflow-type: tm+mt
-source-wordcount: '121'
+source-wordcount: '117'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,6 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 云存储源无需下载、格式化 [!DNL Platform] 或上传即可将您自己的数据导入其中。 摄取的数据可格式化为XDM JSON、XDM镶木地板或分隔。 流程的每个步骤都集成到源工作流中。 [!DNL Platform] 允许您从批中导入 [!DNL Azure Blob] 数 [!DNL Amazon S3] 据和数据。
 
-有关使用Azure Blob源连接器的详细说明，请阅读源连 [[!DNL Azure Blob] 接器指南](./blob.md)。
+有关使用源连接器的 [!DNL Azure Blob] 详细说明，请阅读源 [[!DNL Azure Blob] 连接器指南](./blob.md)。
 
-有关使用AmazonS3源连接器的详细说明，请阅读源 [[!DNL Amazon S3] 连接器指南](./blob.md)。
+有关使用源连接器的 [!DNL Amazon S3] 详细说明，请阅读源 [[!DNL Amazon S3] 连接器指南](./blob.md)。
