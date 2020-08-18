@@ -4,9 +4,9 @@ seo-title: Google客户匹配目标
 description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 seo-description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 translation-type: tm+mt
-source-git-commit: 6a57c0da3425b7b83050f1b734d4abe8a290c8bc
+source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
 workflow-type: tm+mt
-source-wordcount: '1517'
+source-wordcount: '1555'
 ht-degree: 0%
 
 ---
@@ -91,7 +91,7 @@ Links to be added when activation based on phone number and device IDs becomes a
 
 >[!IMPORTANT]
 >
->如果您选择不对电子邮件地址进行哈希处理，Adobe实时CDP将在您将区段激活到时为您执行此操作 [!DNL Google Customer Match]。 在激活工 [作流程](/help/rtcdp/destinations/google-customer-match-destination.md#activate-segments) （请参阅步骤5）中，为纯文本电子邮 `Email` 件地址和散列电子邮件地址选 *择如下所示的选* 项 `Email_LC_SHA256` ，并将其用 *于散列电子邮*&#x200B;件地址。
+>如果您选择不对电子邮件地址进行哈希处理，Adobe实时CDP将在您将区段激活到时为您执行此操作 [!DNL Google Customer Match]。 在激活工 [作流程](/help/rtcdp/destinations/google-customer-match-destination.md#activate-segments) （请参阅步骤5）中，为纯文本电子邮 `Email` 件地址和散列电子邮件地址选 *择如下的选* 项(对于散列电 `Email_LC_SHA256`**&#x200B;子邮件地址)。
 
 
 ![散列激活](/help/rtcdp/destinations/assets/identity-mapping.png)
@@ -101,6 +101,10 @@ Links to be added when activation based on phone number and device IDs becomes a
 1. 在“ **[!UICONTROL 目标]** ”> **[!UICONTROL “目录]**”中，滚动至 **[!UICONTROL 广告]** 类别。 选择 [!DNL Google Customer Match]，然后选择 **[!UICONTROL 配置]**。
 
    ![连接到Google客户匹配目标](/help/rtcdp/destinations/assets/connect-google-customer-match.png)
+
+   >[!NOTE]
+   >
+   >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信息，请参]**&#x200B;阅目标工 [作区文档的](/help/rtcdp/destinations/destinations-workspace.md#catalog) “目录”部分。
 
 2. 在“帐 **户** ”步骤中，如果之前已设置到目标的连接，请选择“现有 [!DNL Google Customer Match] 帐户 **** ”，然后选择现有连接。 或者，您也可以选 **[!UICONTROL 择“新建帐户]** ”来设置新连接 [!DNL Google Customer Match]。 选 **[!UICONTROL 择连接到目]** 标，以登录并将Adobe Experience Cloud连接到您的 [!DNL Google Ad] 帐户。
 
