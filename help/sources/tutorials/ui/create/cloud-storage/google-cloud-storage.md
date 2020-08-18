@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Google Cloud存储源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
+source-git-commit: ec2d0a33e0ae92a3153b7bdcad29734e487a0439
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '537'
 ht-degree: 1%
 
 ---
@@ -20,12 +20,12 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-* [体验数据模型(XDM)系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model] (XDM)系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    * [模式合成基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [实时客户用户档案](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL实时客户用户档案]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
-如果已有GCS基础连接，您可以跳过本文档的其余部分，继续学习有关配置 [数据流的教程](../../dataflow/batch/cloud-storage.md)。
+如果已有有效的GCS连接，您可以跳过本文档的其余部分，继续学习有关配置 [数据流的教程](../../dataflow/batch/cloud-storage.md)。
 
 ### 支持的文件格式
 
@@ -37,25 +37,32 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ### 收集所需的凭据
 
-要访问上的GCS数据， [!DNL Platform]必须提供有效的GCS **访问密钥ID** 和 **机密**。 您可以通过阅读的服务器到服务器身份验证指 <a href="https://cloud.google.com/docs/authentication/production" target="_blank">南进一步了解如何获取这些值</a>[!DNL Google Cloud]。
+要访问上的GCS数 [!DNL Platform]据，必须提供以下值：
 
-## 连接您的GCS帐户
+| 凭据 | 描述 |
+| ---------- | ----------- |
+| 访问密钥ID | 帐户的访问密钥 [!DNL Google Cloud Storage] ID。 |
+| 密钥访问密钥 | 帐户的客户机 [!DNL Google Cloud Storage] 密码。 |
 
-收集所需凭据后，您可以按照以下步骤创建要连接的新GCS帐户 [!DNL Platform]。
+有关快速入门的详细信息，请参 [阅“服务器到服务器”身份验证指南](https://cloud.google.com/docs/authentication/production)[!DNL Google Cloud Storage]。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 *[!UICONTROL “源”以访问]* “源”工作区。 “ *[!UICONTROL 目录]* ”屏幕显示可为其创建入站帐户的各种源，每个源显示与它们关联的现有帐户和数据流的数量。
+## 连接帐 [!DNL Google Cloud Storage] 户
+
+收集所需凭据后，您可以按照以下步骤将GCS帐户链接到 [!DNL Platform]。
+
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 **[!UICONTROL “源”以访问]** “源”工作区。 “ **[!UICONTROL 目录]** ”屏幕显示可为其创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
-在“数 *[!UICONTROL 据库]* ”类别下，选 **[!UICONTROL 择Google Cloud]** 存储 **[!UICONTROL ，然后]** 选择“添加数据”以创建新的GCS连接器。
+在“数 **[!UICONTROL 据库]** ”类别下， **[!UICONTROL 选择Google Cloud存储]**。 如果这是您首次使用此连接器，请选择“ **[!UICONTROL 配置]**”。 否则，选 **[!UICONTROL 择“添加数]** 据”以创建新的GCS连接器。
 
 ![目录](../../../../images/tutorials/create/google-cloud-storage/catalog.png)
 
-此时 *[!UICONTROL 将显示“连接到Google Cloud存储]* ”页面。 在此页上，您可以使用新凭据或现有凭据。
+此时 **[!UICONTROL 将显示“连接到Google Cloud存储]** ”页面。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
-如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供名称、可选说明和GCS凭据的连接。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新帐户。
+如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供名称、可选说明和您的GCS凭据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新连接。
 
 ![connect](../../../../images/tutorials/create/google-cloud-storage/connect.png)
 
@@ -67,4 +74,4 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ## 后续步骤
 
-通过遵循本教程，您已建立了与GCS帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入平台](../../dataflow/batch/cloud-storage.md)。
+通过遵循本教程，您已建立了与GCS帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入 [!DNL Platform]](../../dataflow/batch/cloud-storage.md)。
