@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建AmazonKinesis源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
+source-git-commit: dd036cf4df5d772206d2b73292c60f2d866ba0de
 workflow-type: tm+mt
-source-wordcount: '430'
+source-wordcount: '461'
 ht-degree: 1%
 
 ---
@@ -23,12 +23,12 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-- [体验数据模型(XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [[!DNL Experience Data Model] (XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    - [模式合成基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    - [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-- [实时客户用户档案](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [[!DNL实时客户用户档案]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
-如果您已经有 [!DNL Kinesis] 帐户，您可以跳过此文档的其余部分，继续学习有关配置 [数据流的教程](../../dataflow/streaming/cloud-storage.md)。
+如果已有有效的连 [!DNL Kinesis] 接，您可以跳过此文档的其余部分，继续学习配置 [数据流的教程](../../dataflow/streaming/cloud-storage.md)。
 
 ### 收集所需的凭据
 
@@ -40,19 +40,21 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 | `Secret access key` | 帐户的秘密访问 [!DNL Kinesis] 密钥。 |
 | `region` | 您的AWS服务器所在的区域。 |
 
-有关这些值的详细信息，请参 [阅本Kinesis文档](https://docs.aws.amazon.com/streams/latest/dev/getting-started.html)。
+有关这些值的详细信息，请参 [ [!DNL Kinesis] 阅本文档](https://docs.aws.amazon.com/streams/latest/dev/getting-started.html)。
 
 ## 连接帐 [!DNL Kinesis] 户
 
 收集所需凭据后，您可以按照以下步骤将帐户链 [!DNL Kinesis] 接到 [!DNL Platform]。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 *“源”以访问* “源”工作区。 “目 *录* ”选项卡显示可连接到的各种源 [!DNL Platform]。 每个来源显示与其关联的现有帐户数。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 **[!UICONTROL “源”以访问]** “源”工作区。 “ **[!UICONTROL 目录]** ”屏幕显示可为其创建帐户的各种源。
 
-在“云 *[!UICONTROL 存储]* ”类别下，选 **[!UICONTROL 择“Amazon]** Kinesis **[!UICONTROL ”]** ，然后 [!DNL Kinesis] 选择“添加数据”以创建新连接器。
+您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
+
+在云存储 **[!UICONTROL 类别下]** ，选择 **[!UICONTROL AmazonKinesis]**。 如果这是您首次使用此连接器，请选择“ **[!UICONTROL 配置]**”。 否则，选择 **[!UICONTROL 添加数据]** ，以创建新连 [!DNL Kinesis] 接器。
 
 ![](../../../../images/tutorials/create/kinesis/catalog.png)
 
-出现 *[!UICONTROL “连接到Amazon·Kinesis]* ”对话框。 在此页上，您可以使用新凭据或现有凭据。
+出现 **[!UICONTROL “连接到Amazon·Kinesis]** ”对话框。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
@@ -68,4 +70,4 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ## 后续步骤
 
-按照本教程，您已将帐户 [!DNL Kinesis] 连接到 [!DNL Platform]。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入平台](../../dataflow/streaming/cloud-storage.md)。
+按照本教程，您已将帐户 [!DNL Kinesis] 连接到 [!DNL Platform]。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入 [!DNL Platform]](../../dataflow/streaming/cloud-storage.md)。
