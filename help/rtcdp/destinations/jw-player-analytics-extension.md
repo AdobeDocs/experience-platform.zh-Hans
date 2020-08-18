@@ -1,12 +1,12 @@
 ---
-title: JW PlayerAnalytics（测试版）扩展
-seo-title: JW PlayerAnalytics（测试版）扩展
-description: JW PlayerAnalytics（测试版）扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: JW PlayerAnalytics（测试版）扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+title: JW Player分析（测试版）扩展
+seo-title: JW Player分析（测试版）扩展
+description: JW Player Analytics（测试版）扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: JW Player Analytics（测试版）扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: 33eba9e3f2e993c6958480b091ff004dc057f438
 workflow-type: tm+mt
-source-wordcount: '570'
+source-wordcount: '571'
 ht-degree: 4%
 
 ---
@@ -16,12 +16,13 @@ ht-degree: 4%
 
 ## 概述 {#overview}
 
-此扩展安装适 [!DNL JW Player] 配器以将事件 [!DNL JW Player] 连接到Adobe视频Analytics。 利用Adobe视频Analytics的强大功能，获得详细的洞察，了解客户的视频观看习惯。
+此扩展安装适 [!DNL JW Player] 配器，以将 [!DNL JW Player] 事件连接到Adobe视频分析。 利用Adobe视频分析的强大功能，获得详细的洞察，了解客户的视频观看习惯。
 
 [!DNL JW Player Analytics] （测试版）是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101523.jw-player-analytics-launch-extension.html)。
 
 此目标是Experience Platform Launch扩展。 有关Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
+![JW分析扩展](assets/jw-analytics-extension.png)
 
 ## 先决条件 {#prerequisites}
 
@@ -35,11 +36,11 @@ ht-degree: 4%
 
 1. 在Adobe [实时CDP界面中](http://platform.adobe.com/)，转到“目 **[!UICONTROL 标]** ”> **[!UICONTROL “目录]**”。
 2. 从目录中选择扩展或使用搜索栏。
-3. 单击目标以选中它，然后在右边 **[!UICONTROL 栏中选择]** “安装扩展”。 如果“安 **[!UICONTROL 装扩展]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties]** 权限。 请参 [阅先决条件](#prerequisites)。
+3. 单击目标以突出显示它，然后在右 **[!UICONTROL 边栏中]** 选择配置。 如果“ **[!UICONTROL 配置]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties权限]** 。 请参 [阅先决条件](#prerequisites)。
 4. 在“选 **[!UICONTROL 择可用的启动项属性]** ”窗口中，选择要在其中安装扩展的启动项属性。 您还可以在启动项中选择创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解启动文档的“ [属性”页](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) 面部分中的属性。
 5. 该工作流将引导您进入Launch以完成安装。
 
-有关扩展配置选项的信息，请参 [阅Adobe交换中的JW PlayerAnalytics(测试版](https://exchange.adobe.com/experiencecloud.details.101523.jw-player-analytics-launch-extension.html) )扩展页。
+有关扩展配置选项的信息，请参 [阅Adobe交换中的JW Player Analytics(BETA)扩展页](https://exchange.adobe.com/experiencecloud.details.101523.jw-player-analytics-launch-extension.html) 。
 
 您还可以直接在Experience Platform Launch界面中安 [装扩展](https://launch.adobe.com/)。 请参 [阅启动文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension) 中的添加新扩展。
 
