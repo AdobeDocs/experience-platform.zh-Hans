@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建MariaDB源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 598b29f681ac930a4e1781f7f298608c8344d807
+source-git-commit: ec2d0a33e0ae92a3153b7bdcad29734e487a0439
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '409'
 ht-degree: 1%
 
 ---
@@ -23,47 +23,47 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-* [体验数据模型(XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL Experience Data Model] (XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    * [模式合成基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
 * [实时客户用户档案](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
-如果您已有Maria DB基连接，则可跳过本文档的其余部分，继续学习配置 [数据流的教程](../../dataflow/databases.md)。
+如果已有连接， [!DNL MariaDB] 您可以跳过此文档的其余部分，继续学习有关配置 [数据流的教程](../../dataflow/databases.md)。
 
 ### 收集所需的凭据
 
-要访问您的帐 [!DNL Maria DB] 户， [!DNL Platform]您必须提供以下值：
+要访问您的帐 [!DNL MariaDB] 户， [!DNL Platform]您必须提供以下值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 与您的MariaDB身份验证关联的连接字符串。 MariaDB连接字符串模式为： `Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionString` | 与您的MariaDB身份验证关联的连接字符串。 连接 [!DNL MariaDB] 字符串模式为： `Server={HOST};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
 
-有关MariaDB [入门的更](https://mariadb.com/kb/en/about-mariadb-connector-odbc/) 多信息，请参阅此文档。
+有关快速入门的详细信息，请参阅此 [[!DNL MariaDB] 文档](https://mariadb.com/kb/en/about-mariadb-connector-odbc/)。
 
 ## 连接帐 [!DNL Maria DB] 户
 
-收集所需凭据后，您可以按照以下步骤创建新的入站基础连接，以将帐户链 [!DNL Maria DB] 接到 [!DNL Platform]。
+收集所需凭据后，您可以按照以下步骤将帐户链 [!DNL Maria DB] 接到 [!DNL Platform]。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 *[!UICONTROL “源”以访问]* “源”工作区。 “目 *[!UICONTROL 录]* ”屏幕显示可为其创建入站基本连接的各种源，每个源显示与它们关联的现有基本连接数。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 **[!UICONTROL “源”以访问]** “源”工作区。 “ **[!UICONTROL 目录]** ”屏幕显示可为其创建帐户的各种源。
 
-在“数 *[!UICONTROL 据库]* ”类别 **[!UICONTROL 下]** ，选择Maria DB，在屏幕右侧显示一个信息栏。 信息栏提供所选源的简短描述以及与源或视图其文档的选项。 要创建新的入站基本连接，请选择“添 **[!UICONTROL 加数据”]**。
+在“数 **[!UICONTROL 据库]** ”类别下， **[!UICONTROL 选择Maria DB]**。 如果这是您首次使用此连接器，请选择“ **[!UICONTROL 配置]**”。 否则，选择 **[!UICONTROL 添加数据]** ，以创建新连 [!DNL Maria DB] 接器。
 
 ![](../../../../images/tutorials/create/maria-db/catalog.png)
 
-此时 *[!UICONTROL 将显示“连接到Maria]* DB”页。 在此页上，您可以使用新凭据或现有凭据。
+此时 **[!UICONTROL 将显示“连接到Maria]** DB”页。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
-如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供基本连接，包括名称、可选说明和凭 [!DNL Maria DB] 据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新的基本连接。
+如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供名称、可选说明和凭 [!DNL MariaDB] 据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新连接。
 
 ![](../../../../images/tutorials/create/maria-db/new.png)
 
 ### 现有帐户
 
-要连接现有帐户，请选 [!DNL Maria DB] 择要连接的帐户，然后选择 **[!UICONTROL 下一]** 步以继续。
+要连接现有帐户，请选 [!DNL MariaDB] 择要连接的帐户，然后选择 **[!UICONTROL 下一]** 步以继续。
 
 ![](../../../../images/tutorials/create/maria-db/existing.png)
 
 ## 后续步骤
 
-按照本教程，您已建立了与帐户的基本 [!DNL Maria DB] 连接。 您现在可以继续阅读下一个教程， [并配置数据流以将数据引入平台](../../dataflow/databases.md)。
+按照本教程，您已建立了与帐户的 [!DNL MariaDB] 连接。 您现在可以继续学习下一个教程， [并配置一个数据流以将数据引入 [!DNL Platform]](../../dataflow/databases.md)。
