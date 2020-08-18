@@ -4,9 +4,9 @@ seo-title: 社交网络目标工作流
 description: 连接到社交网络广告帐户的说明
 seo-description: 连接到社交网络广告帐户的说明
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: 9306266edc0a4afdcf378e94b46b239187b18644
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '501'
 ht-degree: 0%
 
 ---
@@ -18,9 +18,13 @@ ht-degree: 0%
 
 本教程以 [!DNL Facebook] 一个示例为例，但Adobe实时客户数据平台中的工作流对于所有社交网络目标将保持不变，然后再添加到产品中。
 
-1. 在“ **[!UICONTROL 目标]** ”>“ **[!UICONTROL 目录]**”中 **[!UICONTROL ，滚动到]** Social类别。 选择首选社交网络目标，然后选择 **[!UICONTROL Connect目标]**。
+1. 在“ **[!UICONTROL 目标]** ”> **[!UICONTROL “目录]**”中，滚 **[!UICONTROL 动到Social]** 类别。 选择首选社交网络目标，然后选择 **[!UICONTROL 配置]**。
 
    ![连接到社交网络目标](/help/rtcdp/destinations/assets/facebook-catalog-view.png)
+
+   >[!NOTE]
+   >
+   >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信息，请参]**&#x200B;阅目标工 [作区文档的](/help/rtcdp/destinations/destinations-workspace.md#catalog) “目录”部分。
 
 2. 在“身 **份验证** ”步骤中，如果您之前已设置到社交网络目标的连接，请选择“现 **[!UICONTROL 有帐户]** ”并选择现有连接。 或者，您也可以选 **[!UICONTROL 择“新建帐户]** ”来设置到社交网络目标的新连接。 选 **[!UICONTROL 择连接到目标]** ，此操作将带您进入选定的社交网络目标，以登录并将Adobe Experience Cloud连接到您的社交网络广告帐户。
 
@@ -30,7 +34,7 @@ ht-degree: 0%
 
    ![连接到社交网络目标——身份验证步骤](/help/rtcdp/destinations/assets/facebook-pre-connect-view.png)
 
-3. 确认您的凭据并将Adobe Experience Cloud连接到您的社交网络后，您可以选 **[!UICONTROL 择]** “下一步”继续 **[!UICONTROL 设置]** 。
+3. 确认您的凭据并将Adobe Experience Cloud连接到您的社交网络后，您可以选 **[!UICONTROL 择]** “下一步”以继续 **[!UICONTROL 设置]** 步骤。
 
    ![已确认凭据](/help/rtcdp/destinations/assets/facebook-post-connection-view.png)
 
