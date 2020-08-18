@@ -4,9 +4,9 @@ seo-title: Adobe Target v2 扩展
 description: Adobe Targetv2扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: null
 translation-type: tm+mt
-source-git-commit: be4cf64c89a189a09a4a7774c8fadc76c6ee8458
+source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '542'
 ht-degree: 16%
 
 ---
@@ -36,11 +36,11 @@ Adobe Targetv2是Adobe实时客户数据平台中的个性化扩展。 有关扩
 
 1. 在Adobe [实时CDP界面中](http://platform.adobe.com/)，转到“目 **[!UICONTROL 标]** ”> **[!UICONTROL “目录]**”。
 2. 从目录中选择扩展或使用搜索栏。
-3. 单击目标以选中它，然后在右边 **[!UICONTROL 栏中选择]** “安装扩展”。 如果“安 **[!UICONTROL 装扩展]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties]** 权限。 请参 [阅先决条件](#prerequisites)。
+3. 单击目标以突出显示它，然后在右 **[!UICONTROL 边栏中]** 选择配置。 如果“ **[!UICONTROL 配置]** ”控件灰显，则您缺少 **[!UICONTROL manage_properties权限]** 。 请参 [阅先决条件](#prerequisites)。
 4. 在“选 **[!UICONTROL 择可用的启动项]** ”属性窗口中， [!DNL Launch] 选择要安装扩展的属性。 您还可以在中选择创建新属性 [!DNL Launch]。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解文档的“属 [性”页面部分](https://docs.adobe.com/content/help/en/launch/using/reference/admin/companies-and-properties.html#properties-page) 中的 [!DNL Launch] 属性。
 5. 该工作流将帮 [!DNL Launch] 您完成安装。
 
-有关扩展配置选项的信息，请参 [阅文档中的Adobe Targetv](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/targetv2-extension/adobe-target-extension-v2.html) 2扩展 [!DNL Experience Launch] 页。
+有关扩展配置选项的信息，请参 [阅文档中的Adobe Targetv2扩展](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/targetv2-extension/adobe-target-extension-v2.html)[!DNL Experience Launch] 页。
 
 您还可以直接在Experience Platform Launch界面中安 [装扩展](https://launch.adobe.com/)。 请参 [阅在文档中添加](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension) 新的 [!DNL Launch] 扩展。
 
