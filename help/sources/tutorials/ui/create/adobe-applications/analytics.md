@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Adobe Analytics源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
+source-git-commit: 0479f5097b530dd97e28474d8e5eb832e5e44e5a
 workflow-type: tm+mt
-source-wordcount: '769'
+source-wordcount: '768'
 ht-degree: 1%
 
 ---
@@ -30,13 +30,13 @@ ht-degree: 1%
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
-在Adobe *应用程序* 类别下，选 **[!UICONTROL 择“]** Adobe Analytics”以在屏幕右侧显示一个信息栏。 信息栏提供所选源的简短描述以及与源或视图其文档的选项。 要视图现有帐户，请选择 **[!UICONTROL 帐户]**。
+在Adobe **[!UICONTROL 应用程序]** 类别下，选 **[!UICONTROL 择“]** Adobe Analytics”以在屏幕右侧显示一个信息栏。 信息栏提供所选源的简短描述以及与源或视图其文档的选项。 要视图现有帐户，请选择 **[!UICONTROL 帐户]**。
 
 ![](../../../../images/tutorials/create/analytics/catalog.png)
 
 ### 选择数据
 
-出现 *了* Adobe Analytics。 此屏幕上列出了以前为Analytics建立的数据集流。 您可以通过单击选择数据来创建新 **[!UICONTROL 数据集流]**。
+出现 **[!UICONTROL 了]** Adobe Analytics。 此屏幕上列出了以前为Analytics建立的数据集流。 您可以通过单击选择数据来创建新 **[!UICONTROL 数据集流]**。
 
 >[!NOTE]
 >
@@ -52,22 +52,22 @@ ht-degree: 1%
 
 ### 命名数据集流
 
-出现 *数据集流详细信* 息步骤，您必须在该步骤中为数据集流提供名称和可选描述。 选择 **[UICONTROL! 完成后]** ，下一步。
+出现 **[!UICONTROL 数据集流详细信]** 息步骤，您必须在该步骤中为数据集流提供名称和可选描述。 完成后 **[!UICONTROL 选择]** “下一步”。
 
 ![](../../../../images/tutorials/create/analytics/dataset-flow-detail.png)
 
 ### 查看数据集流
 
-此时 *会显示* “审阅”步骤，允许您在创建新的Analytics绑定数据集流之前查看该流。 连接的详细信息按类别分组，包括：
+此时 **[!UICONTROL 会显示]** “审阅”步骤，允许您在创建新的Analytics绑定数据集流之前查看该流。 连接的详细信息按类别分组，包括：
 
-* *连接*:显示源连接的类型和所选报表包。
-* *分配数据集和地图字段*:创建其他源连接器时，此容器显示源数据正被引入的数据集，包括数据集所附加的模式。 输出模式和数据集会自动为Analytics数据集流配置。
+* **[!UICONTROL 连接]**:显示源连接的类型和所选报表包。
+* **[!UICONTROL 分配数据集和地图字段]**:创建其他源连接器时，此容器显示源数据正被引入的数据集，包括数据集所附加的模式。 输出模式和数据集会自动为Analytics数据集流配置。
 
 ![](../../../../images/tutorials/create/analytics/review.png)
 
 ### 监控数据集流
 
-创建数据集流后，您可以监视通过它摄取的数据。 从“目 *录* ”屏幕中，选 *择“数据集流* ”以视图与您的Analytics帐户关联的已建立流的列表。
+创建数据集流后，您可以监视通过它摄取的数据。 从“目 **[!UICONTROL 录]** ”屏幕中，选 **[!UICONTROL 择“数据集流]** ”以视图与您的Analytics帐户关联的已建立流的列表。
 
 ![](../../../../images/tutorials/create/analytics/catalog-dataset-flows.png)
 
