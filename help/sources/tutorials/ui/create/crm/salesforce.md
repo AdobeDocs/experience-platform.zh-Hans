@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在UI中创建Salesforce源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
+source-git-commit: ec2d0a33e0ae92a3153b7bdcad29734e487a0439
 workflow-type: tm+mt
-source-wordcount: '450'
+source-wordcount: '437'
 ht-degree: 1%
 
 ---
@@ -20,10 +20,10 @@ Adobe Experience Platform的源连接器提供按计划收集外部源CRM数据�
 
 本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-* [体验数据模型(XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL Experience Data Model] (XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    * [模式合成基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [实时客户用户档案](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL实时客户用户档案]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 如果您已经有有效的 [!DNL Salesforce] 帐户，您可以跳过此文档的其余部分，继续学习有关配置 [数据流的教程](../../dataflow/crm.md)。
 
@@ -36,25 +36,25 @@ Adobe Experience Platform的源连接器提供按计划收集外部源CRM数据�
 | `password` | 用户帐户的 [!DNL Salesforce] 口令。 |
 | `securityToken` | 用户帐户的安 [!DNL Salesforce] 全令牌。 |
 
-有关快速入门的详细信息，请访 [问此Salesforce文档](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm)。
+有关快速入门的详细信息，请参 [阅此Salesforce文档](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm)。
 
 ## 连接帐 [!DNL Salesforce] 户
 
-收集所需凭据后，您可以按照以下步骤创建要连 [!DNL Salesforce] 接的新帐户 [!DNL Platform]。
+收集所需凭据后，您可以按照以下步骤将帐户链 [!DNL Salesforce] 接到 [!DNL Platform]。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 *[!UICONTROL “源”以访问]* “源”工作区。 “目 *[!UICONTROL 录]* ”屏幕显示可为其创建入站帐户的各种源，每个源显示与它们关联的现有帐户和数据集流的数量。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 **[!UICONTROL “源”以访问]** “源”工作区。 “ **[!UICONTROL 目录]** ”屏幕显示可为其创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
-在“数 *[!UICONTROL 据库]* ”类别下，选 **[!UICONTROL 择Salesforce]** ，然 **[!UICONTROL 后选择添]** 加数据，以创建新的Salesforce连接器。
+在“数据 **[!UICONTROL 库]** ”类别下， **[!UICONTROL 选择Salesforce]**。 如果这是您首次使用此连接器，请选择“ **[!UICONTROL 配置]**”。 否则，选 **[!UICONTROL 择添加数]** 据以创建新的Salesforce连接器。
 
 ![目录](../../../../images/tutorials/create/salesforce/catalog.png)
 
-此时 *[!UICONTROL 将显示“连接到]* Salesforce”页。 在此页上，您可以使用新凭据或现有凭据。
+此时 **[!UICONTROL 将显示“连接到]** Salesforce”页。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
-如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供连接的名称、可选说明和凭 [!DNL Salesforce] 据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新帐户。
+如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供名称、可选说明和凭 [!DNL Salesforce] 据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新连接。
 
 ![connect](../../../../images/tutorials/create/salesforce/new.png)
 
@@ -66,4 +66,4 @@ Adobe Experience Platform的源连接器提供按计划收集外部源CRM数据�
 
 ## 后续步骤
 
-按照本教程，您已建立了与帐户的 [!DNL Salesforce] 连接。 您现在可以继续阅读下一个教程， [并配置数据流以将数据引入平台](../../dataflow/crm.md)。
+按照本教程，您已建立了与帐户的 [!DNL Salesforce] 连接。 您现在可以继续学习下一个教程， [并配置一个数据流以将数据引入 [!DNL Platform]](../../dataflow/crm.md)。
