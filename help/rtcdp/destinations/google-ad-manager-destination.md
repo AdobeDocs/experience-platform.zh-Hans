@@ -4,9 +4,9 @@ seo-title: Google Ad Manager目标
 description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的广告服务平台，它使出版商能够通过视频和移动应用程序管理其网站上广告的显示。 '
 seo-description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的广告服务平台，它使出版商能够通过视频和移动应用程序管理其网站上广告的显示。 '
 translation-type: tm+mt
-source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
+source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
 workflow-type: tm+mt
-source-wordcount: '636'
+source-wordcount: '673'
 ht-degree: 0%
 
 ---
@@ -40,27 +40,31 @@ ht-degree: 0%
 
 在Adobe实 [!DNL Google Ad Manager] 时CDP中创建目标之前，您必须联系 [!DNL Google] Adobe，让进入允许的数据提供者列表，并将您的帐户添加到允许列表。 联系 [!DNL Google] 并提供以下信息：
 
-* **帐户ID** : 这是Adobe的帐户ID [!DNL Google]请联系Adobe客户服务或您的Adobe代表以获取此ID。
-* **客户ID** : 这是Adobe的客户帐户ID [!DNL Google]请联系Adobe客户服务或您的Adobe代表以获取此ID。
-* **网络ID** : 这是您的帐户 [!DNL Google Ad Manager]
-* **受众链接ID** : 这是您的帐户 [!DNL Google Ad Manager]
+* **帐户ID** :这是Adobe的帐户ID [!DNL Google]请联系Adobe客户服务或您的Adobe代表以获取此ID。
+* **客户ID** :这是Adobe的客户帐户ID [!DNL Google]请联系Adobe客户服务或您的Adobe代表以获取此ID。
+* **网络ID** :这是您的帐户 [!DNL Google Ad Manager]
+* **受众链接ID** :这是您的帐户 [!DNL Google Ad Manager]
 * 您的帐户类型。 **Google或AdX** 购 **买者的DFP**。
 
-## 创建目标
+## 配置目标
 
-1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中 [!DNL Google Ad Manager]，选 **[!UICONTROL 择并选择“创]**建目标”。
+1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中 [!DNL Google Ad Manager]，选 **[!UICONTROL 择并选择“]**配置”。
    ![连接Google Ad Manager目标](/help/rtcdp/destinations/assets/google-1-destination.png)
+
+   >[!NOTE]
+   >
+   >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信息，请参]**&#x200B;阅目标工 [作区文档的](/help/rtcdp/destinations/destinations-workspace.md#catalog) “目录”部分。
 
 2. 在创建 **目标** 工作流的设置步骤中，填写目 [!UICONTROL 标的基本信] 息。 <br>
 
    ![基本信息Google Ad Manager](/help/rtcdp/destinations/assets/google-1-destination-setup-step.png)
-* **[!UICONTROL 名称]**: 填写此目标的首选名称。
-* **[!UICONTROL 描述]**: 可选。 例如，您可以提到您使用此目标的活动。
-* **[!UICONTROL 帐户类型]**: 根据您在Google上的帐户选择一个选项：
+* **[!UICONTROL 名称]**:填写此目标的首选名称。
+* **[!UICONTROL 描述]**:可选。 例如，您可以提到您使用此目标的活动。
+* **[!UICONTROL 帐户类型]**:根据您在Google上的帐户选择一个选项：
    * 供发 `DFP by Google` 布 [!DNL DoubleClick] 者使用
    * 用 `AdX buyer` 于 [!DNL Google AdX]
-* **[!UICONTROL 帐户ID]**: 用填写您的帐户ID [!DNL Google]。 这可以是您的网络ID或受众链接ID。 通常，这是一个8位数字的ID。
-* **[!UICONTROL 营销用例]**: 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。
+* **[!UICONTROL 帐户ID]**:用填写您的帐户ID [!DNL Google]。 这可以是您的网络ID或受众链接ID。 通常，这是一个8位数字的ID。
+* **[!UICONTROL 营销用例]**:市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。
 
 >[!NOTE]
 >
