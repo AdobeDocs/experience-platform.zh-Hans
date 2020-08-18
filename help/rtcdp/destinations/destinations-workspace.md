@@ -5,7 +5,7 @@ seo-title: 目标工作区
 description: 在Adobe实时客户数据平台中，从左侧导航栏中选择目标以访问目标工作区。
 seo-description: 在Adobe实时客户数据平台中，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: ac9c629e8c83d3e056ba94b30d978edbda274923
 workflow-type: tm+mt
 source-wordcount: '807'
 ht-degree: 2%
@@ -41,7 +41,7 @@ Adobe实时CDP用户界面在目标目录页面上提供了许多搜索和筛选
 | [!UICONTROL 配置] | 允许您创建到目标的连接。 |
 | [!UICONTROL 激活] | 建立到目标的连接后，即可激活区段。 |
 | [!UICONTROL 视图帐户] | 视图您为目标连接的帐户。 |
-| [!UICONTROL 视图数据流] | 视图目标存在的激活流 |
+| [!UICONTROL 视图数据流] | 视图目标的激活流。 |
 | [!UICONTROL 视图文档] | 打开指向该特定目标的文档页面的链接，以了解更多信息并帮助您设置它。 |
 
 ![目标卡上的控件](/help/rtcdp/destinations/assets/destination-card-options.png)
