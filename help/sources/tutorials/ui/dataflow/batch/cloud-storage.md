@@ -5,9 +5,9 @@ title: 在UI中为云存储批处理连接器配置数据流
 topic: overview
 description: 数据流是从源中检索数据并将其引入平台数据集的计划任务。 本教程提供使用云存储帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: c15f582eeaa895f03441b2f488686a9a48942f3d
 workflow-type: tm+mt
-source-wordcount: '1566'
+source-wordcount: '1557'
 ht-degree: 0%
 
 ---
@@ -21,10 +21,10 @@ ht-degree: 0%
 
 本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-* [体验数据模型(XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL Experience Data Model] (XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    * [模式合成基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [实时客户用户档案](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL实时客户用户档案]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 此外，本教程要求您具有已建立的云存储帐户。 有关在UI中创建不同云存储帐户的列表教程，请参阅源连接 [器概述](../../../../home.md)。
 
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 ## 选择数据
 
-创建云存储帐户后，将显 *[!UICONTROL 示选择]* 步骤，为您提供一个交互界面来浏览您的云存储层次结构。
+创建云存储帐户后，将显 **[!UICONTROL 示选择]** 步骤，为您提供一个交互界面来浏览您的云存储层次结构。
 
 * 界面的左半部分是目录浏览器，显示服务器的文件和目录。
 * 界面的右半部分允许您从一个兼容文件预览多达100行数据。
@@ -63,7 +63,7 @@ ht-degree: 0%
 
 ## 将数据字段映射到XDM模式
 
-将显 *[!UICONTROL 示]* “映射”步骤，提供一个交互界面来将源数据映射到数 [!DNL Platform] 据集。 JSON或Parke格式的源文件必须符合XDM规范，并且不需要手动配置映射。 相反，CSV文件要求您显式配置映射，但允许您选择要映射的源数据字段。
+将显 **[!UICONTROL 示]** “映射”步骤，提供一个交互界面来将源数据映射到数 [!DNL Platform] 据集。 JSON或Parke格式的源文件必须符合XDM规范，并且不需要手动配置映射。 相反，CSV文件要求您显式配置映射，但允许您选择要映射的源数据字段。
 
 选择要收录到的入站数据的数据集。 您可以使用现有数据集或创建新数据集。
 
@@ -73,17 +73,17 @@ ht-degree: 0%
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/use-existing-data.png)
 
-此时将 *[!UICONTROL 显示“选择数据集]* ”对话框。 找到您要使用的数据集，选择它，然后单击“继 **[!UICONTROL 续”]**。
+此时将 **[!UICONTROL 显示“选择数据集]** ”对话框。 找到您要使用的数据集，选择它，然后单击“继 **[!UICONTROL 续”]**。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-existing-dataset.png)
 
 **使用新数据集**
 
-要将数据引入新数据集，请选 **[!UICONTROL 择新数据集]** ，并在提供的字段中输入数据集的名称和说明。 要添加模式，您可以在“选择模式”对话框中输 *[!UICONTROL 入现有模式]* 名称。 或者，您也可以选择 **[!UICONTROL 模式高级搜索]** ，以搜索相应的模式。
+要将数据引入新数据集，请选 **[!UICONTROL 择新数据集]** ，并在提供的字段中输入数据集的名称和说明。 要添加模式，您可以在“选择模式”对话框中输 **[!UICONTROL 入现有模式]** 名称。 或者，您也可以选择 **[!UICONTROL 模式高级搜索]** ，以搜索相应的模式。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/use-new-dataset.png)
 
-将出 *[!UICONTROL 现“选择模式]* ”对话框。 选择要应用于新数据集的模式，然后选择 **[!UICONTROL 完成]**。
+将出 **[!UICONTROL 现“选择模式]** ”对话框。 选择要应用于新数据集的模式，然后选择 **[!UICONTROL 完成]**。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-schema.png)
 
@@ -95,14 +95,14 @@ ht-degree: 0%
 
 ## 计划摄取运行
 
-此时 *[!UICONTROL 将显示]* “计划”步骤，允许您配置摄取计划，以使用配置的映射自动摄取所选源数据。 下表概述了用于计划的不同可配置字段：
+此时 **[!UICONTROL 将显示]** “计划”步骤，允许您配置摄取计划，以使用配置的映射自动摄取所选源数据。 下表概述了用于计划的不同可配置字段：
 
 | 字段 | 描述 |
 | --- | --- |
 | 频度 | 可选频率 `Once`包括 `Minute`、 `Hour`、 `Day`和 `Week`。 |
 | 间隔 | 一个整数，它为所选频率设置间隔。 |
 | 开始时间 | UTC时间戳，指示何时设置第一次摄取。 |
-| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *[!UICONTROL 启用]* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *禁用* “回填”，则只会摄取在首次摄取和开始时间之间加 *[!UICONTROL 载的文件]* 。 在开始时间之 *[!UICONTROL 前加载的文]* 件将不会被摄取。 |
+| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 **[!UICONTROL 启用]** “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 **[!UICONTROL 禁用]** “回填”，则只会摄取在首次摄取和开始时间之间加 **[!UICONTROL 载的文件]** 。 在开始时间之 **[!UICONTROL 前加载的文]** 件将不会被摄取。 |
 
 数据流设计为按计划自动摄取数据。 开始。 然后，设置时间间隔以指定两个流运行之间的周期。 间隔的值应为非零整数，并应设置为大于或等于15。
 
@@ -126,9 +126,9 @@ ht-degree: 0%
 
 ## 提供数据流详细信息
 
-此时 *[!UICONTROL 会显示]* “数据流详细信息”步骤，允许您命名新数据流并简要描述新数据流。
+此时 **[!UICONTROL 会显示]** “数据流详细信息”步骤，允许您命名新数据流并简要描述新数据流。
 
-在此过程中，您还可以启用“部 *[!UICONTROL 分摄取]* ”和“ *[!UICONTROL 错误诊断”]*。 启用 *[!UICONTROL 部分摄取]* ，可以摄取包含错误的数据，最高可以设置特定阈值。 启用 *[!UICONTROL 错误诊断]* ，将提供单独分批的任何错误数据的详细信息。 有关详细信息，请参 [阅部分批摄取概述](../../../../../ingestion/batch-ingestion/partial.md)。
+在此过程中，您还可以启用“部 **[!UICONTROL 分摄取]** ”和“ **[!UICONTROL 错误诊断”]**。 启用 **[!UICONTROL 部分摄取]** ，可以摄取包含错误的数据，最高可以设置特定阈值。 启用 **[!UICONTROL 错误诊断]** ，将提供单独分批的任何错误数据的详细信息。 有关详细信息，请参 [阅部分批摄取概述](../../../../../ingestion/batch-ingestion/partial.md)。
 
 为数据流提供值，然后选择 **[!UICONTROL 下一步]**。
 
@@ -136,11 +136,11 @@ ht-degree: 0%
 
 ## 查看数据流
 
-此时 *[!UICONTROL 会出现]* “审阅”步骤，允许您在创建新数据流之前对其进行查看。 详细信息按以下类别分组：
+此时 **[!UICONTROL 会出现]** “审阅”步骤，允许您在创建新数据流之前对其进行查看。 详细信息按以下类别分组：
 
-* *[!UICONTROL 连接]*:显示源类型、所选源文件的相关路径以及该源文件中的列数。
-* *[!UICONTROL 分配数据集和地图字段]*:显示接收源数据的数据集，包括数据集附带的模式。
-* *[!UICONTROL 计划]*:显示摄取计划的活动周期、频率和间隔。
+* **[!UICONTROL 连接]**:显示源类型、所选源文件的相关路径以及该源文件中的列数。
+* **[!UICONTROL 分配数据集和地图字段]**:显示接收源数据的数据集，包括数据集附带的模式。
+* **[!UICONTROL 计划]**:显示摄取计划的活动周期、频率和间隔。
 
 查看数据流后，单击 **[!UICONTROL 完成]** ，并允许一段时间创建数据流。
 
@@ -152,14 +152,14 @@ ht-degree: 0%
 
 ## 删除数据流
 
-您可以删除不再需要的或使用Dataflows工作区中提供的Delete ** （删除）功能创建的 *[!UICONTROL 数据流]* 。 有关如何删除数据流的详细信息，请参阅有关在UI [中删除数据流的教程](../../delete.md)。
+您可以删除不再需要的或使用Dataflows工作区中提供的Delete **** （删除）功能创建的 **[!UICONTROL 数据流]** 。 有关如何删除数据流的详细信息，请参阅有关在UI [中删除数据流的教程](../../delete.md)。
 
 ## 后续步骤
 
 通过遵循本教程，您已成功创建了从外部云存储导入数据的数据流，并获得了有关监视数据集的洞察。 要进一步了解如何创建数据流，您可以通过观看以下视频来补充您的学习。 此外，传入数据现在可供下游服务 [!DNL Platform] （如和） [!DNL Real-time Customer Profile] 使用 [!DNL Data Science Workspace]。 有关更多详细信息，请参阅以下文档:
 
-* [实时客户用户档案概述](../../../../../profile/home.md)
-* [数据科学工作区概述](../../../../../data-science-workspace/home.md)
+* [[!DNL Real-time Customer Profile] 概述](../../../../../profile/home.md)
+* [[!DNL Data Science Workspace] 概述](../../../../../data-science-workspace/home.md)
 
 >[!WARNING]
 >
@@ -175,14 +175,14 @@ ht-degree: 0%
 
 创建数据流时，它会立即变为活动状态，并根据给定的计划接收数据。 您可以按照以下说明随时禁用活动数据流。
 
-在“源 *[!UICONTROL ”工作]* 区中，单击“ **[!UICONTROL 浏览]** ”选项卡。 然后，单击与要禁用的活动数据流关联的帐户的名称。
+在“源 **[!UICONTROL ”工作]** 区中，单击“ **[!UICONTROL 浏览]** ”选项卡。 然后，单击与要禁用的活动数据流关联的帐户的名称。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/browse.png)
 
-将显 *[!UICONTROL 示“源活动]* ”页面。 从列表中选择活动数据流以在屏 *[!UICONTROL 幕]* 右侧打开其“属性”列，该列包含“已启用 **** ”切换按钮。 单击切换以禁用数据流。 在禁用数据流后，可以使用相同的切换重新启用数据流。
+将显 **[!UICONTROL 示“源活动]** ”页面。 从列表中选择活动数据流以在屏 **[!UICONTROL 幕]** 右侧打开其“属性”列，该列包含“已启用 **** ”切换按钮。 单击切换以禁用数据流。 在禁用数据流后，可以使用相同的切换重新启用数据流。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/disable-source.png)
 
 ### 激活入站数据以进行 [!DNL Profile] 填充
 
-来自源连接器的入站数据可用于丰富和填充数 [!DNL Real-time Customer Profile] 据。 有关填充真实客户数据的更多信 [!DNL Profile] 息，请参阅用户档案 [填充教程](../../profile.md)。
+来自源连接器的入站数据可用于丰富和填充数 [!DNL Real-time Customer Profile] 据。 有关填充数据的更 [!DNL Real-time Customer Profile] 多信息，请参阅用户档案填 [充教程](../../profile.md)。
