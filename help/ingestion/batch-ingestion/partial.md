@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform分批摄取概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: df6a6e20733953a0983bbfdf66ca2abc6f03e977
+source-git-commit: ac75b1858b6a731915bbc698107f0be6043267d8
 workflow-type: tm+mt
-source-wordcount: '1420'
+source-wordcount: '1446'
 ht-degree: 1%
 
 ---
@@ -25,8 +25,8 @@ ht-degree: 1%
 
 本教程需要对涉及部分批量摄取的Adobe Experience Platform各项服务有一定的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [批量摄取](./overview.md): 从数据文 [!DNL Platform] 件（如CSV和Parke）中摄取和存储数据的方法。
-- [[!DNL Experience Data Model] (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [批量摄取](./overview.md):从数据文 [!DNL Platform] 件（如CSV和Parke）中摄取和存储数据的方法。
+- [[!DNL Experience Data Model] (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
@@ -38,7 +38,7 @@ ht-degree: 1%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -373,7 +373,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID}
 
 ### 不可分行 {#unparsable}
 
-如果所摄取的批次具有不可分割的行，则该批次的错误将存储在文件中，可使用下面概述的端点进行访问。
+如果所摄取的批次具有不可分割的行，您可以使用以下端点视图包含错误的一列表文件。
 
 **API格式**
 
@@ -397,15 +397,48 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含不可分行的详细信息。
+成功的响应返回HTTP状态200,列表有错误的文件。
 
 ```json
 {
-    "_corrupt_record": "{missingQuotes:"v1"}",
+    "data": [
+        {
+            "name": "conversion_errors_0.json",
+            "length": "1162",
+            "_links": {
+                "self": {
+                    "href": "https://platform.adobe.io:443/data/foundation/export/batches/01EFZ7W203PEKSAMVJC3X99VHQ/meta?path=row_errors%2Fconversion_errors_0.json"
+                }
+            }
+        },
+        {
+            "name": "parsing_errors_0.json",
+            "length": "153",
+            "_links": {
+                "self": {
+                    "href": "https://platform.adobe.io:443/data/foundation/export/batches/01EFZ7W203PEKSAMVJC3X99VHQ/meta?path=row_errors%2Fparsing_errors_0.json"
+                }
+            }
+        }
+    ],
+    "_page": {
+        "limit": 100,
+        "count": 2
+    }
+}
+```
+
+然后，您可以使用元数据检索端点检索有关错误 [的详细信息](#retrieve-metadata)。
+
+检索错误文件的示例响应如下所示：
+
+```json
+{
+    "_corrupt_record": "{missingQuotes: "v1"}",
     "_errors": [{
-         "code": "1401",
-         "message": "Row is corrupted and cannot be read, please fix and resend."
+        "code": "1401",
+        "message": "Row is corrupted and cannot be read, please fix and resend."
     }],
-    "_filename": "a1.json"
+    "_filename": "parsing_errors_0.json"
 }
 ```
