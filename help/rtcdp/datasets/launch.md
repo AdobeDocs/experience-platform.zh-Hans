@@ -1,10 +1,11 @@
 ---
+keywords: website tags;web tags;launch tutorial
 title: 教程使用Adobe启动实施网站标签
 seo-title: 通过Adobe启动实施网站标记
-description: 使用Adobe启动在Adobe Experience Platform中实施网站标记
-seo-description: 使用Adobe启动在Adobe Experience Platform中实施网站标记
+description: 使用Adobe启动在Adobe Experience Platform实施网站标记
+seo-description: 使用Adobe启动在Adobe Experience Platform实施网站标记
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '475'
 ht-degree: 9%
@@ -12,9 +13,9 @@ ht-degree: 9%
 ---
 
 
-# 教程： 通过Adobe启动实施网站标记
+# 教程：通过Adobe启动实施网站标记
 
-本教程介绍如何实施网站标签，以使用Adobe启动将数据发送到Adobe Experience Platform。
+本教程介绍如何使用Adobe启动实施网站标签以向Adobe Experience Platform发送数据。
 
 ## 先决条件
 
@@ -38,7 +39,7 @@ ht-degree: 9%
 
    ![image](assets/launch-overview.png)
 
-1. 从“扩展”中选择Adobe Experience PlatformWeb SDK扩 [!DNL Launch] 展 [!DNL Catalog]打开配置屏幕。
+1. 从“扩展”中选择“Adobe Experience PlatformWeb SDK [!DNL Launch] 扩展 [!DNL Catalog]”。此时将打开配置屏幕。
 
    ![image](assets/launch-extension-install.png)
 
@@ -55,7 +56,7 @@ ht-degree: 9%
 
 ## 创建规则，告诉 [!DNL Launch] 要发送的数据
 
-接下来，创建一条规 [!DNL Launch] 则，告诉您要向Adobe Experience Platform发送哪些数据以及何时发送这些数据。
+接下来，创建一条规 [!DNL Launch] 则，告诉您要发送哪些数据到Adobe Experience Platform以及何时发送。
 
 1. 在“规 **[!UICONTROL 则]** ”选项卡下，配置一个事件，该将在库加载时在网站的每个新页面上触 [!DNL Launch] 发。
 
@@ -79,7 +80,7 @@ ht-degree: 9%
 
 ![image](assets/launch-add-changes-to-library.png)
 
-完成测试后，通过工作流提升库，以便将其部署到生产站点。 现在，数据从每个用户流向Adobe Experience Platform。
+完成测试后，通过工作流提升库，以便将其部署到生产站点。 数据现在从每个用户流向Adobe Experience Platform。
 
 ![image](assets/launch-promote-library.png)
 
