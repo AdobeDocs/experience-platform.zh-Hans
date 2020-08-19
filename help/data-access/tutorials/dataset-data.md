@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据访问概述
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
 workflow-type: tm+mt
 source-wordcount: '1332'
 ht-degree: 3%
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 # 查询数据集数据(使用 [!DNL Data Access] API)
 
-此文档提供了一个分步教程，其中涵盖如何使用Adobe Experience Platform中的API查找、访问和下载数据集中存储 [!DNL Data Access] 的数据。 您还将介绍API的一些独特功能， [!DNL Data Access] 如分页和部分下载。
+此文档提供了一个分步教程，其中涵盖如何使用Adobe Experience Platform的API查找、访问和下载数据集中存储 [!DNL Data Access] 的数据。 您还将介绍API的一些独特功能， [!DNL Data Access] 如分页和部分下载。
 
 ## 入门指南
 
@@ -30,7 +30,7 @@ ht-degree: 3%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -44,7 +44,7 @@ ht-degree: 3%
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 ## 序列图
 
@@ -57,8 +57,8 @@ API [!DNL Catalog] 允许您检索有关批处理和文件的信息。 API [!DNL
 
 在开始使用API之 [!DNL Data Access] 前，您需要先确定要访问的数据的位置。 在API [!DNL Catalog] 中，您可以使用两个端点来浏览组织的元数据并检索要访问的批处理或文件的ID:
 
-- `GET /batches`: 返回组织下的批列表
-- `GET /dataSetFiles`: 返回组织下的列表文件
+- `GET /batches`:返回组织下的批列表
+- `GET /dataSetFiles`:返回组织下的列表文件
 
 有关API中端点的全 [!DNL Catalog] 面列表，请参阅 [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)。
 
@@ -276,7 +276,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 
 根据文件ID是指向单个文件还是目录，返回的数据数组可能包含属于该目录的单个条目或一列表文件。 每个文件元素都将包含详细信息，如文件名、大小（以字节为单位）以及用于下载文件的链接。
 
-**案例1: 文件ID指向单个文件**
+**案例1:文件ID指向单个文件**
 
 **响应**
 
@@ -305,7 +305,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 | `{FILE_NAME}.parquet` | 文件的名称。 |
 | `_links.self.href` | 用于下载文件的URL。 |
 
-**案例2: 文件ID指向目录**
+**案例2:文件ID指向目录**
 
 **响应**
 
@@ -365,7 +365,7 @@ HEAD /files/{FILE_ID}?path={FILE_NAME}
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{FILE_ID}` | 文件的标识符。 |
-| `{FILE_NAME`} | 文件名(例如，用户档案.parke) |
+| `{FILE_NAME}` | 文件名(例如，用户档案.parke) |
 
 **请求**
 
@@ -380,8 +380,8 @@ curl -I 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb2-44
 **响应**
 
 响应标头包含查询的文件的元数据，包括：
-- `Content-Length`: 指示有效负荷的大小（以字节为单位）
-- `Content-Type`: 指示文件类型。
+- `Content-Length`:指示有效负荷的大小（以字节为单位）
+- `Content-Type`:指示文件类型。
 
 ## 访问文件内容
 
@@ -396,7 +396,7 @@ GET /files/{FILE_ID}?path={FILE_NAME}
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{FILE_ID}` | 文件的标识符。 |
-| `{FILE_NAME`} | 文件名(例如，用户档案.parke)。 |
+| `{FILE_NAME}` | 文件名(例如，用户档案.parke)。 |
 
 **请求**
 
@@ -448,17 +448,17 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 
 响应主体包括文件的前100字节（由请求中的“范围”标头指定）和HTTP状态206（部分内容）。 响应还包含以下标题：
 
-- 内容长度： 100（返回的字节数）
-- 内容类型： application/parke（请求的是镶木文件，因此响应内容类型为镶木）
-- 内容范围： 字节0-99/249058(在字节总数中请求的范围(0-99)(249058))
+- 内容长度：100（返回的字节数）
+- 内容类型：application/parke（请求的是镶木文件，因此响应内容类型为镶木）
+- 内容范围：字节0-99/249058(在字节总数中请求的范围(0-99)(249058))
 
 ## 配置API响应分页
 
 API中的响 [!DNL Data Access] 应将分页。 默认情况下，每页最大条目数为100。 分页参数可用于修改默认行为。
 
-- `limit`: 您可以使用“limit”参数根据您的要求指定每页的条目数。
-- `start`: 偏移量可由“开始”查询参数设置。
-- `&`: 您可以使用和号在单个调用中组合多个参数。
+- `limit`:您可以使用“limit”参数根据您的要求指定每页的条目数。
+- `start`:偏移量可由“开始”查询参数设置。
+- `&`:您可以使用和号在单个调用中组合多个参数。
 
 **API格式**
 
