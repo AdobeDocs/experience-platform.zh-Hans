@@ -1,10 +1,11 @@
 ---
+keywords: data governance rtcdp;rtcdp data governance;real time customer data profile data governance
 title: 数据管理概述
 seo-title: 实时客户数据平台中的数据治理
 description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 seo-description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '1022'
 ht-degree: 0%
@@ -18,7 +19,7 @@ ht-degree: 0%
 
 Adobe Experience Platform [!DNL Data Governance] 允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 它在实时CDP中起着关键作用，允许您定义使用策略，根据这些策略对数据进行分类，并在执行某些营销操作时检查是否存在违反策略的情况。
 
-实时CDP构建于Adobe Experience Platform之上，因此文档中 [!DNL Data Governance] 涵盖了大部分 [!DNL Experience Platform] 功能。 本文档旨在补充 [Data Governance概述](../../data-governance/home.md)[!DNL Experience Platform]，并概述实时CDP中提供的Governance功能。 涵盖下列主题：
+实时CDP构建在Adobe Experience Platform之上，因此文档中 [!DNL Data Governance] 涵盖了大部分功 [!DNL Experience Platform] 能。 本文档旨在补充 [Data Governance概述](../../data-governance/home.md)[!DNL Experience Platform]，并概述实时CDP中提供的Governance功能。 涵盖下列主题：
 
 * [将使用标签应用于您的数据](#labels)
 * [管理数据使用策略](#policies)
@@ -28,7 +29,7 @@ Adobe Experience Platform [!DNL Data Governance] 允许您管理客户数据并�
 
 [!DNL Data Governance] 允许您在数据集或数据集字段级别将使用标签应用于数据。 数据使用标签允许您根据适用于该数据的使用策略对数据进行分类。
 
-有关使用数据使用标签的详细信息，请参 [阅Adobe Experience Platform使用标签用户指南](../../data-governance/labels/overview.md) 。
+有关使用数据使用标签的详细信息，请参 [阅Adobe Experience Platform数据使用标签](../../data-governance/labels/overview.md) 用户指南。
 
 ## 为目标配置营销用例 {#destinations}
 
@@ -47,7 +48,7 @@ Adobe Experience Platform [!DNL Data Governance] 允许您管理客户数据并�
 
 为了使数据使用标签能够有效支持数据合规性，必须定义并启用数据使用策略。 数据使用策略是描述您允许在实时CDP内对数据执行的或从中限制的营销操作种类的规则。 有关详细信息，请参阅“数据管理” [!DNL Experience Platform] 概 [述中的](../../data-governance/home.md) “数据使用策略”部分。
 
-Adobe Experience Platform为常见 **客户体验使** 用案例提供了若干核心策略。 通过导航到“策略”工作区并选择“浏览”选 **[!UICONTROL 项卡]** ，可以在UI中 **[!UICONTROL 查看这些]** 策略。 有关在 [UI中使用策略](../../data-governance/policies/user-guide.md) (包括 [!DNL Experience Platform] 如何制定您自己的自定义策略)的更详细步骤，请参阅文档中的策略用户指南。
+Adobe Experience Platform为常见 **客户体验使** 用案例提供了若干核心政策。 通过导航到“策略”工作区并选择“浏览”选 **[!UICONTROL 项卡]** ，可以在UI中 **[!UICONTROL 查看这些]** 策略。 有关在 [UI中使用策略](../../data-governance/policies/user-guide.md) (包括 [!DNL Experience Platform] 如何制定您自己的自定义策略)的更详细步骤，请参阅文档中的策略用户指南。
 
 ## 强制实施数据使用合规性 {#enforce-data-usage-compliance}
 
@@ -96,7 +97,7 @@ Adobe Experience Platform为常见 **客户体验使** 用案例提供了若干�
 
 ## 后续步骤
 
-现在，您已介绍了实时CDP的 [!DNL Data Governance] 主要功能以及如何 [!DNL Experience Platform] 启用这些功能，请继续 [阅读Adobe Experience Platform数据管理文档](../../data-governance/home.md)。 文档概述了基本 [!DNL Data Governance] 概念，以及管理数据使用标签和策略的分步工作流。
+现在，您已经介绍了实时CDP [!DNL Data Governance] 的主要功能以及如何 [!DNL Experience Platform] 启用这些功能，请继续阅读Adobe Experience Platform [数据管理文档](../../data-governance/home.md)。 文档概述了基本 [!DNL Data Governance] 概念，以及管理数据使用标签和策略的分步工作流。
 
 以下视频概述了实时 [!DNL Data Governance] CDP的功能，包括在目标上的营销用例和针对不同情景的示例工作流的使用：
 
