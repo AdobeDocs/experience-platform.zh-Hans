@@ -1,10 +1,11 @@
 ---
+keywords: email;Email;e-mail;email destinations;salesforce;salesforce destination
 title: SalesforceMarketing Cloud
 seo-title: SalesforceMarketing Cloud
 description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 seo-description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 translation-type: tm+mt
-source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%
@@ -34,9 +35,9 @@ ht-degree: 0%
    ![填写Salesforce信息](/help/rtcdp/destinations/assets/salesforce-authenticate.png)
 
 3. 在设 **[!UICONTROL 置步]** 骤中，填写目标的相关信息，如下所示：
-   * **[!UICONTROL 名称]**: 为目标选择相关名称。
-   * **[!UICONTROL 描述]**: 输入目标的说明。
-   * **[!UICONTROL 文件夹路径]**: 在存储位置提供路径，实时CDP会将导出数据存储为CSV或制表符分隔的文件。
+   * **[!UICONTROL 名称]**:为目标选择相关名称。
+   * **[!UICONTROL 描述]**:输入目标的说明。
+   * **[!UICONTROL 文件夹路径]**:在存储位置提供路径，实时CDP会将导出数据存储为CSV或制表符分隔的文件。
    * **[!UICONTROL 文件格式]**: **[!UICONTROL CSV]** 或 **[!UICONTROL TAB_DELIMITED]**。 选择要导出到存储位置的文件格式。
 
    ![Salesforce基本信息](/help/rtcdp/destinations/assets/salesforce-basic-information.png)
