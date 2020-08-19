@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: f881c1365684b1ca9e6bf9a8ce866d234dc54128
+source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
 workflow-type: tm+mt
-source-wordcount: '1884'
+source-wordcount: '1882'
 ht-degree: 2%
 
 ---
@@ -30,7 +30,7 @@ Adobe Experience Platform的新增功能：
 
 ## [!DNL Real-time Customer Data Platform] {#rtcdp}
 
-Adobe实时客户数据平台(Real-time CDP)构建于Adobe Experience Platform之上，可帮助公司将已知和未知的数据整合在一起，在客户旅程中通过智能决策激活客户用户档案。 实时CDP结合了多个企业用户档案源，以实时创建统一的渠道，这些数据可用于在所有和设备上提供一对一的个性化客户体验。
+Adobe实时客户数据平台(Real-time CDP)构建于Adobe Experience Platform之上，可帮助公司将已知和未知数据整合在一起，在客户旅程中通过智能决策激活客户用户档案。 实时CDP结合了多个企业用户档案源，以实时创建统一的渠道，这些数据可用于在所有和设备上提供一对一的个性化客户体验。
 
 [!DNL Real-time Customer Data Platform] 包括用于数据治理、身份管理、高级细分和数据科学的工具，使您能够构建用户档案并定义受众，并在能够实施严格数据治理策略的同时获得丰富的洞察。
 
@@ -53,7 +53,7 @@ Adobe连接到一个大型的合作伙伴生态系统，更不用说与Adobe Exp
 | 主页指标仪表板 | Adobe实时客户数据平台(Real-time CDP)主页包含一个指标仪表板，它显示有关用户档案和细分的信息。 该主页还包含指向学习材料的链接。 请参阅以下 [实时客户数据平台指标部分](#real-time-customer-data-platform-metrics) 。 |
 | 源 | 您可以从各种来源(如Adobe解决方案、基于云的存储、第三方软件和您的CRM)收集数据。 请参阅 [以下](#sources) “源”部分以了解更多。 |
 
-**[!DNL Real-time Customer Data Platform]指标&#x200B;**
+**[!DNL Real-time Customer Data Platform]指标**
 
 Adobe实时客户数据平台(Real-time CDP)主页，在您登录到实时CDP时会显示该，其中包括一个指标仪表板。
 
@@ -72,8 +72,8 @@ Adobe实时客户数据平台(Real-time CDP)主页，在您登录到实时CDP时
 在11月的发布中，Adobe的实时客户数据平台支持以下目标：
 
 * 广告: [!DNL Google]
-* 电子邮件营销： Adobe Campaign [!DNL Salesforce Marketing Cloud], [!DNL Responsys]Oracle [!DNL Evolca
-   ]
+* 电子邮件营销：Adobe Campaign [!DNL Salesforce Marketing Cloud], [!DNL Responsys][!DNL Oracle Eloqua]
+
 有关每 [个目标](../../rtcdp/destinations/destinations-catalog.md) ，请参阅目标目录。
 
 **已知限制**
@@ -85,7 +85,7 @@ Adobe实时客户数据平台(Real-time CDP)主页，在您登录到实时CDP时
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源收集数据，同时允许您使用服务构建、标记和增强该 [!DNL Platform] 数据。 您可以从各种来源(如Adobe解决方案、基于云的存储、第三方软件和您的CRM系统)收集数据。
+Adobe Experience Platform可以从外部来源收集数据，同时允许您使用服务来构建、标记和增强该 [!DNL Platform] 数据。 您可以从各种来源(如Adobe解决方案、基于云的存储、第三方软件和您的CRM系统)收集数据。
 
 [!DNL Experience Platform] 提供REST风格的API和交互式UI，让您可以轻松为各种数据提供者设置源连接。 这些源连接允许您验证存储系统和CRM服务，设置摄取运行的时间，并管理数据摄取吞吐量。
 
@@ -105,7 +105,7 @@ Adobe Experience Platform可以从外部源收集数据，同时允许您使用�
 
 ## [!DNL Data Science Workspace] {#dsw}
 
-Adobe Experience Platform [!DNL Data Science Workspace] 使Adobe科学家能够通过构建和运行机器学习模型，跨应用程序和第三方系统无缝地从数据和内容生成洞察。 [!DNL Data Science Workspace] 与端对端数 [!DNL Platform] 据科学生命周期紧密集成，并为其提供强大动力，包括探索和准备XDM数据，然后开发和运行模型以自动丰富机器学习 [!DNL Real-time Customer Profile] 的洞察。
+Adobe Experience Platform [!DNL Data Science Workspace] 通过构建和运行机器学习模型，使数据科学家能够跨Adobe应用程序和第三方系统无缝地从数据和内容生成洞察。 [!DNL Data Science Workspace] 与端对端数 [!DNL Platform] 据科学生命周期紧密集成，并为其提供强大动力，包括探索和准备XDM数据，然后开发和运行模型以自动丰富机器学习 [!DNL Real-time Customer Profile] 的洞察。
 
 **新增功能**
 
@@ -120,18 +120,18 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使Adobe科学家能够�
 
 标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 [!DNL Experience Data Model] (XDM)由Adobe驱动，旨在实现客户体验数据标准化并定义客户体验管理模式。
 
-XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 它为在Adobe Experience Platform上与服务通信的任何应用程序提供了通用结构和定义。 通过遵守XDM标准，所有客户体验数据都可以整合到一个通用表现形式中，以更快、更集成的方式提供洞察。 您可以从客户行动中获得宝贵的洞察，通过细分定义客户受众，并将客户属性用于个性化目的。
+XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 它为任何与Adobe Experience Platform上的服务通信的应用程序提供了通用结构和定义。 通过遵守XDM标准，所有客户体验数据都可以整合到一个通用表现形式中，以更快、更集成的方式提供洞察。 您可以从客户行动中获得宝贵的洞察，通过细分定义客户受众，并将客户属性用于个性化目的。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ---------- | ------------ |
 | 通知模式 | 表示数据获取过程中发送的通知数据的新模式。 |
-| AdobeAdCloudDSP模式 | 新增了5个模式来代表Adobe Advertising Cloud需求侧平台(DSP)元数据： 位置、活动、包装、广告商、帐户。 |
+| AdobeAdCloudDSP模式 | 新增了5个模式来代表Adobe Advertising Cloud需求侧平台(DSP)元数据：位置、活动、包装、广告商、帐户。 |
 | ExperienceEvent实施详细信息混合 | 新增的ExperienceEvent混音，它添加一个标准字段以存储有关用于收集事件的软件的信息。 |
 | [!DNL Profile Privacy] 混音 | 新的用户档案混音，可添加字段以接受一般退出和销售／共享选择退出信号 [!DNL Real-time Customer Profile]。 |
 | 格式约束 `xdm:alternateDisplayInfo` | “标题”和“说明”字段必 `xdm:alternateDisplayInfo` 须都是字符串才能通过验证。 |
-| 名称更改： XDM [!DNL Individual Profile] | “XDM”类的“ [!DNL Profile]标题”已更新为“XDM [!DNL Individual Profile]”。 班级 `$id` 的正式版本没有更改。 |
+| 名称更改：XDM [!DNL Individual Profile] | “XDM”类的“ [!DNL Profile]标题”已更新为“XDM [!DNL Individual Profile]”。 班级 `$id` 的正式版本没有更改。 |
 
 **已知问题**
 
@@ -169,9 +169,9 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTf
 
 | 功能 | 描述 |
 | -----------| ---------- |
-| 计划分段 | 用户现在可以通过UI和API为所有区段启用计划的区段评估。 启用后，所有区段将每天评估一次。 这不会影响按需细分功能，这些功能仍可以像以前一样继续工作。<br/><br/>注意： 计划分段功能不能用于具有五个以上合并策略的沙箱 [!DNL XDM Individual Profile]。 |
+| 计划分段 | 用户现在可以通过UI和API为所有区段启用计划的区段评估。 启用后，所有区段将每天评估一次。 这不会影响按需细分功能，这些功能仍可以像以前一样继续工作。<br/><br/>注意：计划分段功能不能用于具有五个以上合并策略的沙箱 [!DNL XDM Individual Profile]。 |
 | 流细分 | 支持持续评估区段（流分段），当数据传入时，可以评估大多数区段规则 [!DNL Platform]。 此功能意味着区段成员资格将保持最新，无需运行计划的分段作业。 某些例外适用，如使用多实体关系的细分或具有丰富有效载荷的细分。 |
-| 细分为构件块 | 使用区段生成器UI创建区段时，用户现在可以使用先前定义的区段作为其他区段的构建块。 <ul><li>参考当前受众会员资格： 当人们进出受众时更新。</li><li>复制逻辑： 将选定的区段定义并重复到新区段中。</li></ul> |
+| 细分为构件块 | 使用区段生成器UI创建区段时，用户现在可以使用先前定义的区段作为其他区段的构建块。 <ul><li>参考当前受众会员资格：当人们进出受众时更新。</li><li>复制逻辑：将选定的区段定义并重复到新区段中。</li></ul> |
 | 按ID视图的命名空间段成员资格 | 区段成员资格现在可以通过ID命名空间（电子邮件、ECID和总计数）进行查看。 |
 | RBAC支持 | 区段生成器现在支持基于角色的基本访问控制和权限。 |
 | 增强了对外部受众共享的支持，在解决方 [!DNL Platform] 案和Adobe解决方案之间 | 在受众数量较大或事先不知道的情[!DNL Experience Platform]况下，用户现在可以引入外部（非）受众元数据。 此版本包括对已配置 [!DNL Audience Manager] 解决方案连接器的客户的元数据的访问。 此受众元数据可在区段生成器中用于创建新 [!DNL Experience Platform] 区段。 <br/><br/> 此外，中创建的 [!DNL Experience Platform] 细分现在可用于集成Adobe解决方案， [!DNL Audience Manager]包括 [!DNL Target]、和 [!DNL Ad Cloud]。 |
