@@ -1,10 +1,11 @@
 ---
+keywords: email;Email;e-mail;email destinations;adobe campaign;campaign
 title: Adobe Campaign
 seo-title: Adobe Campaign
 description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 seo-description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 translation-type: tm+mt
-source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '517'
 ht-degree: 1%
@@ -37,10 +38,10 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
    ![填写活动信息](/help/rtcdp/destinations/assets/adobe-campaign-step2.png)
 
 1. 在“ **[!UICONTROL 基本信息]**”中，填写目标的相关信息，如下所示：
-   * **[!UICONTROL 名称]**: 为目标选择相关名称。
-   * **[!UICONTROL 描述]**: 输入目标的说明。
+   * **[!UICONTROL 名称]**:为目标选择相关名称。
+   * **[!UICONTROL 描述]**:输入目标的说明。
    * **[!UICONTROL 存储段名称]**: *对于S3连接*。 输入S3存储段的位置，实时CDP会将导出数据存储为CSV或制表符分隔的文件。
-   * **[!UICONTROL 文件夹路径]**: 在存储位置提供路径，实时CDP会将导出数据存储为CSV或制表符分隔的文件。
+   * **[!UICONTROL 文件夹路径]**:在存储位置提供路径，实时CDP会将导出数据存储为CSV或制表符分隔的文件。
    * **[!UICONTROL 文件格式]**: **CSV** 或 **TAB_DELIMITED**。 选择要导出到存储位置的文件格式。
 
    ![活动基本信息](/help/rtcdp/destinations/assets/adobe-campaign-basic-information.png)
