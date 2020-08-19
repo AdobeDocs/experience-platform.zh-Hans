@@ -2,12 +2,12 @@
 keywords: RTCDP;rtcdp
 title: 目标工作区
 seo-title: 目标工作区
-description: 在Adobe实时客户数据平台中，从左侧导航栏中选择目标以访问目标工作区。
+description: “目标”工作区由四个部分组成，即目录、浏览、帐户和系统视图，这些部分在以下各节中有介绍。
 seo-description: 在Adobe实时客户数据平台中，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: ac9c629e8c83d3e056ba94b30d978edbda274923
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
-source-wordcount: '807'
+source-wordcount: '809'
 ht-degree: 2%
 
 ---
