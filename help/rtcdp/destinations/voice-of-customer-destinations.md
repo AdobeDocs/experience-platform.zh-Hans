@@ -1,10 +1,11 @@
 ---
+keywords: voice destinations;Voice destinations
 title: 客户目标之声
 seo-title: 客户目标之声
 description: 语音平台收集和整理来自各种来源的数据，包括语音消息、通话数据和聊天对话。 可以过滤和分析所整理的信息，使公司能够优化其网站以满足其要求。
 seo-description: 语音平台收集和整理来自各种来源的数据，包括语音消息、通话数据和聊天对话。 可以过滤和分析所整理的信息，使公司能够优化其网站以满足其要求。
 translation-type: tm+mt
-source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
+source-git-commit: cbd748c1881c61f5e636567d94b68f2cf7302fa5
 workflow-type: tm+mt
 source-wordcount: '164'
 ht-degree: 0%
