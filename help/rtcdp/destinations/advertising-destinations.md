@@ -1,10 +1,11 @@
 ---
+keywords: advertising destinations;destinations;rtcdp destinations
 title: 广告目标
 seo-title: 广告目标
 description: 将您的实时客户数据平台连接到第三方广告平台(如DSP、广告网络、SSP)，并与这些平台共享假名受众。
 seo-description: 将您的实时客户数据平台连接到第三方广告平台(如DSP、广告网络、SSP)，并与这些平台共享假名受众。
 translation-type: tm+mt
-source-git-commit: 875430cdbd80025fc3f0de2664f9b55db0debe53
+source-git-commit: 54df4778a025811504801306120bda78e04281c1
 workflow-type: tm+mt
 source-wordcount: '183'
 ht-degree: 0%
