@@ -1,10 +1,11 @@
 ---
+keywords: cloud storage destination;cloud storage
 title: 云存储目标
 seo-title: 云存储目标
 description: Adobe实时CDP可以将您的细分作为数据文件发送到AmazonS3、AWSKinesis、Azure事件中心或SFTP云存储位置。
 seo-description: Adobe实时CDP可以将您的细分作为数据文件发送到AmazonS3、AWSKinesis、Azure事件中心或SFTP云存储位置。
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '178'
 ht-degree: 0%
