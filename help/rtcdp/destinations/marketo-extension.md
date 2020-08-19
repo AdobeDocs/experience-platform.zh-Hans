@@ -1,10 +1,11 @@
 ---
+keywords: Marketo;marketo;Marketo extension;marketo extension
 title: Marketo扩展
 seo-title: Marketo扩展
 description: Marketo扩展是Adobe实时客户数据平台中的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: Marketo扩展是Adobe实时客户数据平台中的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '542'
 ht-degree: 5%
