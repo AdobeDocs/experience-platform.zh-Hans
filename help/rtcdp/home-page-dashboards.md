@@ -1,10 +1,11 @@
 ---
+keywords: metrics overview; rtcdp metrics overview
 title: 实时客户数据平台主页和仪表板
 seo-title: 实时客户数据平台主页和仪表板
-description: 仪表板、主页和首次Adobe Experience Platform用户体验
-seo-description: 仪表板、主页和首次Adobe Experience Platform用户体验
+description: 仪表板、主页和Adobe Experience Platform的首次用户体验
+seo-description: 仪表板、主页和Adobe Experience Platform的首次用户体验
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '634'
 ht-degree: 1%
@@ -107,7 +108,7 @@ The number of failed profile records is updated hourly. -->
 
 “最 **[!UICONTROL 近的数据集]** ”卡显示了组织内创建的五个最近的数据集。 此列表在创建新数据集时更新。
 
-单击数据集以视图该项目的详细信息，或 **[!UICONTROL 全部视图]** 以查看数据集的列表。 从此处，您可以单击特定的源以获取详细信息。
+单击数据集以视图该项目的详细信息，或 **[!UICONTROL 全部视图]** 以查看数据集的列表。 从此处，您可以单击特定源以获取详细信息。
 
 有关数据集的更多信息，请参 [阅数据集概述](../catalog/datasets/overview.md)。
 
