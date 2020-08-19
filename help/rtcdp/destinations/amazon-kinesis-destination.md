@@ -1,10 +1,11 @@
 ---
+keywords: Amazon Kinesis;kinesis destination;kinesis
 title: AmazonKinesis目的地
 seo-title: AmazonKinesis目的地
-description: 创建到您的AmazonKinesis存储的实时出站连接以流式传输来自Adobe Experience Platform的数据。
-seo-description: 创建到您的AmazonKinesis存储的实时出站连接以流式传输来自Adobe Experience Platform的数据。
+description: 创建到您的AmazonKinesis存储的实时出站连接以从Adobe Experience Platform流数据。
+seo-description: 创建到您的AmazonKinesis存储的实时出站连接以从Adobe Experience Platform流数据。
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '442'
 ht-degree: 2%
@@ -23,7 +24,7 @@ ht-degree: 2%
 
 通过 [!DNL Kinesis Data Streams] 该服 [!DNL Amazon Web Services] 务，您可以实时收集和处理大量数据记录流。
 
-您可以创建到存储的实时出站连接，以 [!DNL Amazon Kinesis] 流式传输来自Adobe Experience Platform的数据。
+您可以创建到存储的实时出站连接，以 [!DNL Amazon Kinesis] 便从Adobe Experience Platform流数据。
 
 * 有关详细信息， [!DNL Amazon Kinesis]请参阅 [Amazon文档](https://docs.aws.amazon.com/streams/latest/dev/introduction.html)。
 * 要使用API调 [!DNL Amazon Kinesis] 用连接到，请参阅流 [目标API教程](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)。
@@ -46,16 +47,16 @@ ht-degree: 2%
 
 ### 在身份验证步骤中 {#authentication-step}
 
-* **[!DNL Amazon Web Services]访问密钥和密钥&#x200B;**: 在中[!DNL Amazon Web Services]，生成一个访问密钥——秘密访问密钥对，以授予Adobe对您帐户的实时CDP访[!DNL Amazon Kinesis]问权。 在AmazonWeb服务文[档中了解更多信息](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)。
-* **区域**: 指示要 [!DNL Amazon Web Services] 将数据流化到的区域。
+* **[!DNL Amazon Web Services]访问密钥和密钥**:在中 [!DNL Amazon Web Services]，生成一个访问密钥——秘密访问密钥对，以授予Adobe对您帐户的实时CDP访 [!DNL Amazon Kinesis] 问权。 在AmazonWeb服务文 [档中了解更多信息](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)。
+* **区域**:指示要 [!DNL Amazon Web Services] 将数据流化到的区域。
 
 ![帐户步骤中的输入字段](/help/rtcdp/destinations/assets/aws-kinesis-account-step.png)
 
 ### 在设置步骤中 {#setup-step}
 
-* **名称**: 提供连接的名称 [!DNL Amazon Kinesis]
-* **描述**: 提供与的连接说明 [!DNL Amazon Kinesis]。
-* **stream**: 提供帐户中现有数据流的名 [!DNL Amazon Kinesis] 称。 Adobe实时CDP会将数据导出到此流。
+* **名称**:提供连接的名称 [!DNL Amazon Kinesis]
+* **描述**:提供与的连接说明 [!DNL Amazon Kinesis]。
+* **stream**:提供帐户中现有数据流的名 [!DNL Amazon Kinesis] 称。 Adobe实时CDP会将数据导出到此流。
 
 ![验证步骤中的输入字段](/help/rtcdp/destinations/assets/aws-kinesis-setup-step.png)
 
