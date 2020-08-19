@@ -1,10 +1,11 @@
 ---
+keywords: facebook extensions;facebook extension;facebook destinations;facebook
 title: Facebook目标
 seo-title: Facebook目标
 description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 seo-description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 7f3df12da5e93c3d0cc53eed1aa603ddbafdb0b2
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '722'
 ht-degree: 2%
@@ -64,13 +65,13 @@ ht-degree: 2%
 
 ### 电子邮件散列要求 {#email-hashing-requirements}
 
-[!DNL Facebook] 要求不要发送任何清晰的个人识别信息(PII)。 因此，激活的受众必 [!DNL Facebook] 须锁定散列 *电子邮件* 地址。 您可以选择在将电子邮件地址引入Adobe Experience Platform之前先对它们进行散列处理，也可以选择在Experience Platform中清晰地处理电子邮件地址，并在激活上用算法对它们进行散列处理。
+[!DNL Facebook] 要求不要发送任何清晰的个人识别信息(PII)。 因此，激活的受众必 [!DNL Facebook] 须锁定散列 *电子邮件* 地址。 您可以选择在将电子邮件地址引入Adobe Experience Platform之前先对它们进行哈希处理，也可以选择在Experience Platform中清晰地处理电子邮件地址，并在激活上使用我们的算法对它们进行哈希处理。
 
 要了解在Experience Platform中摄取电子邮件地址，请参 [阅批量摄取概述](/help/ingestion/batch-ingestion/overview.md) 和快速 [摄取概述](/help/ingestion/streaming-ingestion/overview.md)。
 
 如果您选择自行对电子邮件地址进行哈希处理，请确保符合以下要求：
 
-* 修剪电子邮件字符串中的所有前导和尾随空格； 示例： `johndoe@example.com`，不是 `<space>johndoe@example.com<space>`;
+* 修剪电子邮件字符串中的所有前导和尾随空格；示例： `johndoe@example.com`，不是 `<space>johndoe@example.com<space>`;
 * 散列电子邮件字符串时，请确保散列小写字符串；
    * 示例： `example@email.com`，不是 `EXAMPLE@EMAIL.COM`;
 * 确保哈希字符串全为小写
