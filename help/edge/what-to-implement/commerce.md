@@ -4,10 +4,10 @@ seo-title: 使用Adobe Experience PlatformWeb SDK支持产品
 description: 了解如何在您有产品或购物车时添加Experience PlatformWeb SDK
 seo-description: 了解如何在您有产品或购物车时添加Experience PlatformWeb SDK
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
 workflow-type: tm+mt
 source-wordcount: '1314'
-ht-degree: 5%
+ht-degree: 6%
 
 ---
 
@@ -16,19 +16,18 @@ ht-degree: 5%
 
 如果您的网站上有产品，则这是您可能希望发送的默认内容集，以启用Adobe提供的最多功能。 尽管这是一个建议，但它直接从开始提供了一组非常强大的数据。
 
-此文档使用 [ExperienceEvent商务详细信](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) 息混合。 混 `commerce` 合物分为两部分： 对 `commerce` 象和数 `productListItems` 组。 该对 `commerce` 象允许您指示正在对数组执行哪些 `productListItems` 操作。
+此文档使用 [ExperienceEvent商务详细信](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) 息混合。 混 `commerce` 合物分为两部分：对 `commerce` 象和数 `productListItems` 组。 该对 `commerce` 象允许您指示正在对数组执行哪些 `productListItems` 操作。
 
 >[!TIP]
 >
 >
->如果您熟悉Adobe Analytics, `commerce` 则与变量关系最 `events` 密切。 该 `productListItems` 变量与变量更为 `products` 相关。
+>如果您熟悉Adobe Analytics，则 `commerce` 该变量与该变量最为 `events` 相关。 该 `productListItems` 变量与变量更为 `products` 相关。
 
 ## 与产品相关的操作
 
 以下是对象 `measures` 中可用的 `commerce` 列表。
 
 >[!TIP]
->
 >
 >度量包含两个字段： `id` 和 `value`。 大多数情况下，您只 `value` 使用字段(例如 `'value':1`)。 该 `id` 字段允许您设置唯一标识符，以便跟踪度量的发送时间。 请参阅XDM文档以 [进行衡量](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/measure.schema.md)。
 
@@ -61,7 +60,7 @@ alloy("sendEvent", {
 
 商务对象还具有一个特殊字段，用于收集名为的订单详细信息 `order`。
 
-| **订单** | **选项** | **推荐** | **描述** |
+| **订单** | **方案** | **推荐** | **描述** |
 |---|---|---|---|
 | [currencyCode](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmcurrencycode) |  |  | 订 [单合计](https://en.wikipedia.org/wiki/ISO_4217) 的ISO 4217货币。 |
 | [payments[paymentItems]](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/order.schema.md#xdmpayments) |  |  | 订单的付款列表。 paymentItem [包含](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/data/paymentitem.schema.md#payment-item-schema) 以下各项。 |
