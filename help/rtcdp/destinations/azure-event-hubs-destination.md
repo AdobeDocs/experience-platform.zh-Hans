@@ -1,10 +1,11 @@
 ---
+keywords: Azure event hub destination;azure event hub;azure eventhub
 title: （测试版）Azure事件集线器目标
 seo-title: （测试版）Azure事件集线器目标
 description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 seo-description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '467'
 ht-degree: 2%
@@ -22,7 +23,7 @@ ht-degree: 2%
 
 [!DNL Azure Event Hubs] 是大数据流平台和事件摄取服务。 它每秒可以接收和处理数百万个事件。 通过使用任何实时分析提供者或批处理/事件适配器，可以转换和存储发送到存储中心的数据。
 
-您可以创建到存储的实时出站连接，以 [!DNL Azure Event Hubs] 流式传输来自Adobe Experience Platform的数据。
+您可以创建到存储的实时出站连接，以 [!DNL Azure Event Hubs] 便从Adobe Experience Platform流数据。
 
 * 有关详细信息， [!DNL Azure Event Hubs]请参阅Microsoft [文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about)。
 * 要使用API调 [!DNL Azure Event Hubs] 用连接到，请参阅流 [目标API教程](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)。
@@ -44,16 +45,16 @@ ht-degree: 2%
 
 ### 在身份验证步骤中 {#authentication-step}
 
-* **[!UICONTROL SAS密钥名]** 和 **[!UICONTROL SAS密钥]**: 填写您的SAS密钥名称和密钥。 了解Microsoft文档 [!DNL Azure Event Hubs] 中有关使用SAS密钥进 [行身份验证](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
-* **[!UICONTROL 命名空间]**: 填写您的 [!DNL Azure Event Hubs] 命名空间。 了解Microsoft [!DNL Azure Event Hubs] 文档中 [的命名空间](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)。
+* **[!UICONTROL SAS密钥名]** 和 **[!UICONTROL SAS密钥]**:填写您的SAS密钥名称和密钥。 了解Microsoft文档 [!DNL Azure Event Hubs] 中有关使用SAS密钥进 [行身份验证](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
+* **[!UICONTROL 命名空间]**:填写您的 [!DNL Azure Event Hubs] 命名空间。 了解Microsoft [!DNL Azure Event Hubs] 文档中 [的命名空间](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)。
 
 ![身份验证步骤中所需的输入](/help/rtcdp/destinations/assets/event-hubs-authentication.png)
 
 ### 在设置步骤中 {#setup-step}
 
-* **[!UICONTROL 名称]**: 填写连接的名称 [!DNL Azure Event Hubs]。
-* **[!UICONTROL 描述]**: 提供连接描述。  示例： “高级客户”、“男性对风筝冲浪感兴趣”。
-* **[!UICONTROL eventHubName]**: 为流提供到目标的名 [!DNL Azure Event Hubs] 称。
+* **[!UICONTROL 名称]**:填写连接的名称 [!DNL Azure Event Hubs]。
+* **[!UICONTROL 描述]**:提供连接描述。  示例：“高级客户”、“男性对风筝冲浪感兴趣”。
+* **[!UICONTROL eventHubName]**:为流提供到目标的名 [!DNL Azure Event Hubs] 称。
 
 ![设置步骤中需要的数据](/help/rtcdp/destinations/assets/event-hubs-setup-step.png)
 
