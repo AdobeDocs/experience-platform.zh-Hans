@@ -1,10 +1,11 @@
 ---
+keywords: personalization;Personalization
 title: 个性化目标
 seo-title: 个性化目标
 description: 个性化平台从个人行为中收集数据和洞察。 这些平台可帮助营销人员导航匿名优惠，根据先前的活动或作为具有相似习惯的受众细分的一部分向潜在客户投放或广告。
 seo-description: 个性化平台从个人行为中收集数据和洞察。 这些平台可帮助营销人员导航匿名优惠，根据先前的活动或作为具有相似习惯的受众细分的一部分向潜在客户投放或广告。
 translation-type: tm+mt
-source-git-commit: e3b7dd4788042deaeba68bfdbe08e8448b46c270
+source-git-commit: cbd748c1881c61f5e636567d94b68f2cf7302fa5
 workflow-type: tm+mt
 source-wordcount: '170'
 ht-degree: 7%
