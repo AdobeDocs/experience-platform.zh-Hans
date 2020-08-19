@@ -1,10 +1,11 @@
 ---
+keywords: Amazon S3;S3 destination;s3;amazon s3
 title: AmazonS3目的地
 seo-title: AmazonS3目的地
-description: 创建到您的AmazonWeb服务(AWS)S3存储的实时出站连接，定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储段。
-seo-description: 创建到您的AmazonWeb服务(AWS)S3存储的实时出站连接，定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储段。
+description: 创建到您的AmazonWeb服务(AWS)S3存储的实时出站连接，定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
+seo-description: 创建到您的AmazonWeb服务(AWS)S3存储的实时出站连接，定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 translation-type: tm+mt
-source-git-commit: 098dd31be4d6ee6971cd87bcbfe0f686e34918e1
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '202'
 ht-degree: 0%
@@ -24,7 +25,7 @@ ht-degree: 0%
 
 对于 [!DNL Amazon S3] 目标，在创建目标工作流中输入以下信息：
 
-* **[!DNL Amazon S3]访问密钥[!DNL Amazon S3]和密钥&#x200B;**: 在中[!DNL Amazon S3]，生成一个访问密钥——秘密访问密钥对，以授予Adobe对您帐户的实时CDP访[!DNL Amazon S3]问权。
+* **[!DNL Amazon S3]访问密钥[!DNL Amazon S3]和密钥**:在中 [!DNL Amazon S3]，生成一个访问密钥——秘密访问密钥对，以授予Adobe对您帐户的实时CDP访 [!DNL Amazon S3] 问权。
 
 >[!IMPORTANT]
 >
