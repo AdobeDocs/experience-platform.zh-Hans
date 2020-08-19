@@ -1,10 +1,11 @@
 ---
+keywords: email;Email;e-mail;email destinations;oracle responsys destination
 title: Oracle Responsys目标
 seo-title: Oracle Responsys目标
 description: Responsys是面向跨渠道营销活动的企业电子邮件营销工具，由Oracle提供，用于在电子邮件、移动设备、展示广告和社交平台之间实现个性化互动。
 seo-description: Responsys是面向跨渠道营销活动的企业电子邮件营销工具，由Oracle提供，用于在电子邮件、移动设备、展示广告和社交平台之间实现个性化互动。
 translation-type: tm+mt
-source-git-commit: 570c627672439a5ee0f4215b7bf7915ec3dd2bb3
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '487'
 ht-degree: 0%
@@ -34,9 +35,9 @@ ht-degree: 0%
    ![填写Responsys信息](/help/rtcdp/destinations/assets/responsys-authentication.png)
 
 3. 在设 **[!UICONTROL 置步]** 骤中，填写目标的相关信息，如下所示：
-   * **[!UICONTROL 名称]**: 为目标选择相关名称。
-   * **[!UICONTROL 描述]**: 输入目标的说明。
-   * **[!UICONTROL 文件夹路径]**: 在存储位置提供路径，实时CDP会将导出数据存储为CSV或制表符分隔的文件。
+   * **[!UICONTROL 名称]**:为目标选择相关名称。
+   * **[!UICONTROL 描述]**:输入目标的说明。
+   * **[!UICONTROL 文件夹路径]**:在存储位置提供路径，实时CDP会将导出数据存储为CSV或制表符分隔的文件。
    * **[!UICONTROL 文件格式]**: **CSV** 或 **TAB_DELIMITED**。 选择要导出到存储位置的文件格式。
 
    ![Responsys基本信息](/help/rtcdp/destinations/assets/responsys-basic-information.png)
