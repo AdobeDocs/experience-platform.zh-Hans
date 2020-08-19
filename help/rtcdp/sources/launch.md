@@ -1,11 +1,11 @@
 ---
-keywords: Launch;launch
+keywords: launch web tags;web tags launch;website tags;web tags;launch;Launch
 title: 教程使用Adobe启动实施网站标签
 seo-title: 通过Adobe启动实施网站标记
 description: 使用Adobe启动在Adobe Experience Platform实施网站标记
 seo-description: 使用Adobe启动在Adobe Experience Platform实施网站标记
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: 54df4778a025811504801306120bda78e04281c1
 workflow-type: tm+mt
 source-wordcount: '481'
 ht-degree: 9%
@@ -15,7 +15,7 @@ ht-degree: 9%
 
 # 教程：通过Adobe启动实施网站标记
 
-本教程介绍如何使用Adobe启动实施网站标签以将数据发送到Adobe Experience Platform。
+本教程介绍如何使用Adobe启动实施网站标签以向Adobe Experience Platform发送数据。
 
 ## 先决条件
 
