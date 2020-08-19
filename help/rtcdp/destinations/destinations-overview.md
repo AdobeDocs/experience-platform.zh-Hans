@@ -1,11 +1,11 @@
 ---
-keywords: RTCDP;rtcdp
+keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp;destinations;destination;rtcdp
 title: 目标概述
 seo-title: 目标概述
 description: 目标是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以在Adobe实时客户数据平台中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 seo-description: 目标是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以在Adobe实时客户数据平台中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 54df4778a025811504801306120bda78e04281c1
 workflow-type: tm+mt
 source-wordcount: '526'
 ht-degree: 0%
