@@ -1,10 +1,11 @@
 ---
+keywords: destinations;destination;destination types
 title: 目标类型和类别
 seo-title: 目标类型和类别
 description: '在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到几种类型的目标。 '
 seo-description: 在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到几种类型的目标。
 translation-type: tm+mt
-source-git-commit: 6f680a60c88bc5fee6ce9cb5a4f314c4b9d02249
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '580'
 ht-degree: 0%
