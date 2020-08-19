@@ -1,10 +1,11 @@
 ---
+keywords: Google ads;google ads;google ads extension;Google Ads extension
 title: Google广告扩展
 seo-title: Google广告扩展
 description: Google Ads扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: Google Ads扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 33eba9e3f2e993c6958480b091ff004dc057f438
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '560'
 ht-degree: 5%
