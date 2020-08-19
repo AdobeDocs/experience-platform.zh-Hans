@@ -1,12 +1,13 @@
 ---
-title: 区段生成器指南
+keywords: rtcdp segments;segment builder rtcdp;rtcdp segment
+title: 针对实时客户数据平台的细分构建器指南
 seo-title: 分段服务细分构建器在实时客户数据平台中的应用
 description: 介绍如何使用区段生成器的指南。
 seo-description: 用户指南，介绍如何在实时客户数据平台上使用分段服务区段生成器。
 translation-type: tm+mt
-source-git-commit: e351a2d489730c1f1bd5f87be8d85612090bc009
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
-source-wordcount: '100'
+source-wordcount: '105'
 ht-degree: 0%
 
 ---
