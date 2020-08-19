@@ -1,10 +1,11 @@
 ---
+keywords: Talk URL Inbox;talk url inbox;Talk URL inbox;talk URL inbox;talk url;Talk URL;Talk url
 title: 交谈URL收件箱扩展
 seo-title: 交谈URL收件箱
 description: Talk URL收件箱扩展是Adobe实时客户数据平台中客户目标的语音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: Talk URL收件箱扩展是Adobe实时客户数据平台中客户目标的语音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '568'
 ht-degree: 6%
