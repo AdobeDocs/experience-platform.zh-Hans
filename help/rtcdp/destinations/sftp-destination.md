@@ -1,10 +1,11 @@
 ---
+keywords: SFTP;sftp
 title: SFTP目标
 seo-title: SFTP目标
 description: 创建到SFTP服务器的实时出站连接，以定期从Experience Platform导出分隔的数据文件。
 seo-description: 创建到SFTP服务器的实时出站连接，以定期从Experience Platform导出分隔的数据文件。
 translation-type: tm+mt
-source-git-commit: 08b6fd2d43e8ca9d0208ac1bfadc2db15e3f2e90
+source-git-commit: cbd748c1881c61f5e636567d94b68f2cf7302fa5
 workflow-type: tm+mt
 source-wordcount: '171'
 ht-degree: 0%
@@ -26,9 +27,9 @@ ht-degree: 0%
 
 对于SFTP目标，在“身份验证”步骤的“创建目标”工作流中输入以 **下信** 息：
 
-* **主持人**: SFTP存储位置的地址
-* **用户名**: 登录SFTP存储的用户名
-* **密码**: 登录SFTP存储的口令
+* **主持人**:SFTP存储位置的地址
+* **用户名**:登录SFTP存储的用户名
+* **密码**:登录SFTP存储的口令
 
 ## 导出的数据 {#exported-data}
 
