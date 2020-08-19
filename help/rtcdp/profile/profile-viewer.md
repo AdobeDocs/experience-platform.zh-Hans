@@ -1,12 +1,13 @@
 ---
-title: 用户档案查看器
+keywords: view profiles rtcdp;rtcdp profile view;rtcdp profiles
+title: 在实时CDP中查看用户档案
 seo-title: 视图实时客户用户档案数据平台
 description: 视图实时客户用户档案数据平台
 seo-description: 视图实时客户用户档案数据平台
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
-source-wordcount: '168'
+source-wordcount: '171'
 ht-degree: 0%
 
 ---
@@ -18,4 +19,4 @@ ht-degree: 0%
 
 在用户界面中，您可以视图这些只读用户档案并查看有关个人客户的重要信息，如偏好、过去事件和交互以及个人所属的细分。
 
-由 [!DNL Real-time Customer Data Platform] 于实时CDP构建于Adobe Experience Platform之上，因此能够利用属于用户档案查看功能的一部分 [!DNL Experience Platform]。 有关在用户界面中查看客户用户档案的 [!DNL Platform] 详细指南，请参 [阅实时客户用户档案用户指南](../../profile/ui/user-guide.md)。
+由 [!DNL Real-time Customer Data Platform] 于Real-time CDP是在Adobe Experience Platform之上构建的，因此它能够利用属于其中的用户档案查看功能 [!DNL Experience Platform]。 有关在用户界面中查看客户用户档案的 [!DNL Platform] 详细指南，请参 [阅实时客户用户档案用户指南](../../profile/ui/user-guide.md)。
