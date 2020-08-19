@@ -1,10 +1,11 @@
 ---
+keywords: Quantum Metric Extension;Quantum Metric;quantum metric;Quantum metric
 title: 量子度量扩展
 seo-title: 量子度量扩展
 description: 量子度量扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: Quantum Metric扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '559'
 ht-degree: 5%
