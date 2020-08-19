@@ -1,10 +1,11 @@
 ---
+keywords: Yext Conversion Trackin;Yext;yext;yext conversion tracking
 title: Yext转换跟踪扩展
 seo-title: Yext转换跟踪扩展
 description: Adobe实时客户数据平台中的Yext转换跟踪扩展是分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: Yext Conversion Tracking扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '553'
 ht-degree: 5%
