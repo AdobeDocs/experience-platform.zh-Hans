@@ -1,10 +1,11 @@
 ---
+keywords: data quality;rtcdp data quality
 title: 实时客户数据平台的数据质量
 seo-title: Adobe实时客户数据平台的数据质量
 description: 实时客户数据平台数据质量文档
 seo-description: 文档，描述Adobe实时客户数据平台上通过批量和数据获取数据质量如何工作
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '137'
 ht-degree: 0%
