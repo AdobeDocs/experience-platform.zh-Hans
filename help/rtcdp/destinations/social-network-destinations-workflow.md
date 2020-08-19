@@ -1,10 +1,11 @@
 ---
+keywords: Facebook;facebook;Social network;Social Network;social network authentication;Social network authentication
 title: 社交网络目标工作流
 seo-title: 社交网络目标工作流
 description: 连接到社交网络广告帐户的说明
 seo-description: 连接到社交网络广告帐户的说明
 translation-type: tm+mt
-source-git-commit: 9306266edc0a4afdcf378e94b46b239187b18644
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '501'
 ht-degree: 0%
@@ -18,7 +19,7 @@ ht-degree: 0%
 
 本教程以 [!DNL Facebook] 一个示例为例，但Adobe实时客户数据平台中的工作流对于所有社交网络目标将保持不变，然后再添加到产品中。
 
-1. 在“ **[!UICONTROL 目标]** ”> **[!UICONTROL “目录]**”中，滚 **[!UICONTROL 动到Social]** 类别。 选择首选社交网络目标，然后选择 **[!UICONTROL 配置]**。
+1. 在“ **[!UICONTROL 目标]** ”>“ **[!UICONTROL 目录]**”中 **[!UICONTROL ，滚动到]** Social类别。 选择首选社交网络目标，然后选择 **[!UICONTROL 配置]**。
 
    ![连接到社交网络目标](/help/rtcdp/destinations/assets/facebook-catalog-view.png)
 
