@@ -1,12 +1,13 @@
 ---
+keywords: rtcdp administration overview;administration overview
 title: 管理概述
 seo-title: 实时CDP管理概述
-description: 描述
+description: '本文档概述了由Adobe Experience Platform提供支持的实时客户数据平台的管理功能。 '
 seo-description: seo描述
 translation-type: tm+mt
-source-git-commit: b96286f6a06f0583b45343a513ee64f0025d79a7
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
-source-wordcount: '259'
+source-wordcount: '277'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # 实时CDP管理概述
 
-本文档概述了以Adobe Experience Platform为后盾的 [!DNL Real-time Customer Data Platform]Adobe的管理功能。
+本文档概述了由Adobe Experience Platform提供 [!DNL Real-time Customer Data Platform]的管理能力。
 
 [!DNL Experience Platform] 允许管理员为用户管理基于角色的访问控制，并管理用于应用程序开发的虚拟沙箱。
 
@@ -31,8 +32,8 @@ ht-degree: 0%
 
 ## 沙箱
 
-Adobe Experience Platform（以及扩展的实时CDP）旨在在全球范围内丰富数字体验应用程序。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署的需要，同时确保操作合规性。
+Adobe Experience Platform(以及实时CDP（扩展）)旨在在全球范围内丰富数字体验应用程序。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署的需要，同时确保操作合规性。
 
-为了满足这一需求，Adobe Experience Platform提供了“沙箱”，使您能够将单个实例分 [!DNL Platform] 为单独的虚拟环境，这些虚拟可用于开发和改进数字体验应用程序。
+为了满足这一需求，Adobe Experience Platform提供了“沙箱”，使您能够将单个实例分 [!DNL Platform] 为单独的虚拟环境，这些虚拟可用于开发和发展数字体验应用程序。
 
 有关沙箱的详细信息，请参 [阅文档中](../../sandboxes/home.md) 的沙箱 [!DNL Experience Platform] 概述。
