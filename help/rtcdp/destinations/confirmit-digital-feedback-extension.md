@@ -1,10 +1,11 @@
 ---
+keywords: Confirmit Digital Feedback;confirmit extension;confirmit
 title: 确认数字反馈扩展
 seo-title: 确认数字反馈扩展
 description: 确认数字反馈扩展是Adobe实时客户数据平台中客户目标的声音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: null
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '562'
 ht-degree: 4%
