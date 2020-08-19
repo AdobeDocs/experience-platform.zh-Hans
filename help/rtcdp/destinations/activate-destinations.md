@@ -1,10 +1,11 @@
 ---
+keywords: activate destination;activate destinations;activate data
 title: 将用户档案和区段激活到目标
 seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 5387959496da3b1a6323f173154d769090a1fd40
+source-git-commit: 54df4778a025811504801306120bda78e04281c1
 workflow-type: tm+mt
 source-wordcount: '1552'
 ht-degree: 0%
