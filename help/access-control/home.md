@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 访问控制概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: e66fd20eb7a153e556a3716bb255af084e52292e
 workflow-type: tm+mt
-source-wordcount: '1097'
+source-wordcount: '1103'
 ht-degree: 3%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 3%
 
 获取和分配访问权限的高级工作流可概括如下：
 
-- 订阅Adobe Experience Platform后，将向注册表单中指定的管理员发送电子邮件。
+- 授权Adobe Experience Platform或使用Experience Platform的应用程序／应用程序服务后，将向授权过程中指定的管理员发送电子邮件。
 - 管理员登录到 [Adobe Admin Console](#adobe-admin-console) ，并从 **概述页** 面上的产品列表中选择Adobe Experience Platform。
 - 管理员可以视图默 [认产品用户档案](#product-profiles) ，或根据需要创建新的客户产品用户档案。
 - 管理员可以编辑任何现有产品用户档案的权限和用户。
