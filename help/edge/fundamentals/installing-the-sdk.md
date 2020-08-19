@@ -4,7 +4,7 @@ seo-title: Adobe Experience PlatformWeb SDK安装SDK
 description: 了解如何安装Experience PlatformWeb SDK
 seo-description: 了解如何安装Experience PlatformWeb SDK
 translation-type: tm+mt
-source-git-commit: 12cbcc26956cba2e14d64734c9210fa79bcc70b9
+source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
 workflow-type: tm+mt
 source-wordcount: '623'
 ht-degree: 1%
@@ -54,6 +54,7 @@ URL结构：https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.min.js或alloy
 在此示例中，全局函数被重 `mycustomname`命名，而不是 `alloy`重命名。
 
 >[!IMPORTANT]
+>
 >要避免潜在问题，请使用至少包含一个字符的名称，该字符不是数字，并且与上已找到的属性的名称不冲突 `window`。
 
 除了创建全局函数外，此基本代码还加载包含在服务器上托管的外部文件\(`alloy.js`\)中的其他代码。 默认情况下，此代码以异步方式加载，以使您的网页尽可能高效。 这是建议的实施。
