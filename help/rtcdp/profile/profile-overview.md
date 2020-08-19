@@ -1,11 +1,11 @@
 ---
-keywords: rtcdp profile;real-time customer profile
+keywords: rtcdp profile;profiles rtcdp;rtcdp identities;rtcdp merge policies;real-time customer profile
 title: 实时客户用户档案概述
 seo-title: 实时客户用户档案平台中的实时客户数据
 description: 概述实时客户数据平台如何使您能够使用实时客户用户档案为客户提供协调一致的相关体验。
 seo-description: 实时客户数据平台，用户档案，数据，体验，渠道
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: 54df4778a025811504801306120bda78e04281c1
 workflow-type: tm+mt
 source-wordcount: '394'
 ht-degree: 0%
