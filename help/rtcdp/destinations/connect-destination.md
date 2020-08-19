@@ -1,9 +1,10 @@
 ---
+keywords: connect destination;destination connect;how to connect destination
 title: 在Adobe实时客户数据平台中连接到目标
 seo-title: 在Adobe实时客户数据平台中连接到目标
 description: 本教程列表了在Adobe实时客户数据平台中连接目标的步骤
 translation-type: tm+mt
-source-git-commit: b070a8a6eee1c1b95b20468c7067181ec62bdbd0
+source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
 workflow-type: tm+mt
 source-wordcount: '126'
 ht-degree: 0%
