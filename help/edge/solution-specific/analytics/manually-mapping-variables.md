@@ -2,27 +2,27 @@
 title: 在Analytics中手动映射变量
 seo-title: 使用Web SDK在Analytics中手动映射变量
 description: 如何使用处理规则将变量手动映射到Analytics
-seo-description: 使用带有Web SDK的处理规则将变量手动映射到Analytics
+seo-description: 使用带有Web SDK的处理规则将变量手动映射到Analytics中
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
 workflow-type: tm+mt
 source-wordcount: '371'
-ht-degree: 11%
+ht-degree: 47%
 
 ---
 
 
 # 在Analytics中手动映射变量
 
-Adobe Experience Platform(AEP)可以自 [!DNL Web SDK] 动映射某些变量，但必须手动映射自定义变量。
+Adobe Experience Platform(AEP)可 [!DNL Web SDK] 以自动映射某些变量，但必须手动映射自定义变量。
 
-对于未自动映射到的XDM数 [!DNL Analytics]据，可以使 [用上下文](https://docs.adobe.com/content/help/zh-Hans/analytics/implementation/vars/page-vars/contextdata.html) 数据来匹 [配模式](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/schema/composition.html)。 然后，可以使用处理规 [!DNL Analytics] 则将 [其映射到](https://docs.adobe.com/content/help/zh-Hans/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html) ，以填充 [!DNL Analytics] 变量。
+For XDM data that is not automatically mapped to [!DNL Analytics], you can use [context data](https://docs.adobe.com/content/help/zh-Hans/analytics/implementation/vars/page-vars/contextdata.html) to match your [schema](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/schema/composition.html). 然后，可以使用处理规 [!DNL Analytics] 则将 [其映射到](https://docs.adobe.com/content/help/zh-Hans/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html) ，以填充 [!DNL Analytics] 变量。
 
-此外，您还可以使用一组默认的操作和产品列表通过AEP发送或检索数据 [!DNL Web SDK]。 为此，请参阅产 [品](https://docs.adobe.com/content/help/en/experience-platform/edge/implement/commerce.html)。
+Also, you can use a default set of actions and product lists to send or retrieve data with the AEP [!DNL Web SDK]. 为此，请参阅[产品](https://docs.adobe.com/content/help/zh-Hans/experience-platform/edge/implement/commerce.html)。
 
 ## 上下文数据
 
-要使用， [!DNL Analytics]XDM数据使用点记号进行拼合并提供 `contextData`。 以下值对的列表显示了以下示例 `context data`:
+To be used by [!DNL Analytics], XDM data is flattened using dot notation and made available as `contextData`. 以下值对列表显示了 `context data` 示例：
 
 ```javascript
 {
@@ -49,21 +49,21 @@ Adobe Experience Platform(AEP)可以自 [!DNL Web SDK] 动映射某些变量，�
 
 ## 处理规则
 
-边缘网络收集的所有数据都可以通过处理 [规则访问](https://docs.adobe.com/content/help/zh-Hans/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html)。 在中 [!DNL Analytics]，您可以使用处理规则将上下文数据合并到变 [!DNL Analytics] 量中。
+可以通过[处理规则](https://docs.adobe.com/content/help/zh-Hans/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html)访问边缘网络收集的所有数据。In [!DNL Analytics], you can use processing rules to incorporate context data into [!DNL Analytics] variables.
 
-例如，在以下规则中，Analytics设置为用与 **a.x_atag.search.term(Context Data** )关联的数 **据填充内部搜索词(eVar2)**。
+例如，在以下规则中，Analytics 设置为使用与 **a.x_atag.search.term（上下文数据）**&#x200B;相关联的数据来填充&#x200B;**内部搜索词 (eVar2)**。
 
 ![](assets/examplerule.png)
 
 
-## XDM模式
+## XDM 架构
 
-[!DNL Experience Platform] 使用模式以一致、可重用的方式描述数据结构。 通过跨系统一致地定义数据，更容易保留含义，从而从数据中获得价值。 [!DNL Analytics] 上下文数据与模式定义的结构配合使用。
+[!DNL Experience Platform] 会使用架构，以便以可重用的一致方式描述数据结构。通过跨系统一致地定义数据，更容易保留含义，从而从数据中获得价值。 [!DNL Analytics] 上下文数据与模式定义的结构配合使用。
 
-以下示例说明如何 [`event` 与](https://docs.adobe.com/content/help/en/experience-platform/edge/fundamentals/tracking-events.html) AEP中 `xdm` 的选项一起使用命令来发送和检索数据 [!DNL Web SDK]。 在此示例中，该命 `event` 令与ExperienceEvent Commerce [Details模式匹配](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) ，以便跟踪productListItems `name` 和 `SKU` 值：
+The following example shows how the [`event` command](https://docs.adobe.com/content/help/zh-Hans/experience-platform/edge/fundamentals/tracking-events.html) can be used with the `xdm` option to send and retrieve data with the AEP [!DNL Web SDK]. 在此示例中，`event` 命令与 [ExperienceEvent 商务详细信息架构](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md)匹配，因此可以跟踪 productListItems `name` 和 `SKU` 值：
 
 
-```
+```javascript
 alloy("event",{
   "xdm":{
     "commerce":{
@@ -85,4 +85,4 @@ alloy("event",{
 });
 ```
 
-有关使用AEP跟踪事件的更多信 [!DNL Web SDK]息，请参 [阅跟踪事件](https://docs.adobe.com/content/help/en/experience-platform/edge/fundamentals/tracking-events.html)。
+For more information on tracking events with the AEP [!DNL Web SDK], see [Tracking events](https://docs.adobe.com/content/help/zh-Hans/experience-platform/edge/fundamentals/tracking-events.html).
