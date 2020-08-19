@@ -1,10 +1,11 @@
 ---
+keywords: google customer match;Google customer match;Google Customer Match
 title: Google客户匹配目标
 seo-title: Google客户匹配目标
 description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 seo-description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 translation-type: tm+mt
-source-git-commit: a251d843401d2f092e368a4cdac217171fa4687f
+source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
 workflow-type: tm+mt
 source-wordcount: '1555'
 ht-degree: 0%
@@ -91,7 +92,7 @@ Links to be added when activation based on phone number and device IDs becomes a
 
 >[!IMPORTANT]
 >
->如果您选择不对电子邮件地址进行哈希处理，Adobe实时CDP将在您将区段激活到时为您执行此操作 [!DNL Google Customer Match]。 在激活工 [作流程](/help/rtcdp/destinations/google-customer-match-destination.md#activate-segments) （请参阅步骤5）中，为纯文本电子邮 `Email` 件地址和散列电子邮件地址选 *择如下的选* 项(对于散列电 `Email_LC_SHA256`**&#x200B;子邮件地址)。
+>如果您选择不对电子邮件地址进行哈希处理，Adobe实时CDP将在您将区段激活到时为您执行此操作 [!DNL Google Customer Match]。 在激活工 [作流程](/help/rtcdp/destinations/google-customer-match-destination.md#activate-segments) （请参阅步骤5）中，为纯文本电子邮 `Email` 件地址和散列电子邮件地址选 *择如下所示的选* 项 `Email_LC_SHA256` ，并将其用 *于散列电子邮*&#x200B;件地址。
 
 
 ![散列激活](/help/rtcdp/destinations/assets/identity-mapping.png)
