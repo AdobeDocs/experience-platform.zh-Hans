@@ -5,7 +5,7 @@ title: 多实体分割
 topic: overview
 description: 多实体细分是指能够根据产品、商店或其他非用户档案类扩展用户档案数据和附加数据。 连接后，来自其他类的数据将变得像用户档案模式的本机数据一样可用。
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
 workflow-type: tm+mt
 source-wordcount: '409'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 多实体细分是指能够根据产 [!DNL Profile] 品、商店或其他非用户档案类使用额外数据扩展数据。 连接后，来自其他类的数据将变得像模式本身一样可 [!DNL Profile] 用。
 
-要进一步了解多实体细分，请继续阅读文档，并通过观看以下视频或浏览细分概述来补充 [您的学习](./home.md)。]
+要进一步了解多实体细分，请继续阅读文档并通过观看以下视频或浏览细分概述来补充 [您的学习](./home.md)。
 
 >[!VIDEO](https://video.tv.adobe.com/v/28947?quality=12&learn=on)
 
