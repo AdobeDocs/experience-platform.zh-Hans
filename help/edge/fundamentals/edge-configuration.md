@@ -4,7 +4,7 @@ seo-title: Experience PlatformWeb SDK的边缘配置
 description: '了解如何配置Experience Platform边缘网络。 '
 seo-description: '了解如何配置Experience Platform边缘网络。 '
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
 workflow-type: tm+mt
 source-wordcount: '870'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 配置Edge
 
-Adobe Experience Platform的配置 [!DNL Web SDK] 分为两个位置。 SDK [中的](configuring-the-sdk.md) configure命令控制必须在客户端处理的事项，如 `edgeDomain`。 边缘配置处理SDK的所有其他配置。 向Adobe Experience Platform发送请求时， [!DNL Edge Network]将使 `edgeConfigId` 用引用服务器端配置。 这样，您无需在网站上更改代码即可更新配置。
+Adobe Experience Platform的配置 [!DNL Web SDK] 分为两个部分。 SDK [中的](configuring-the-sdk.md) configure命令控制必须在客户端处理的事项，如 `edgeDomain`。 边缘配置处理SDK的所有其他配置。 向Adobe Experience Platform发送请求时， [!DNL Edge Network]将使 `edgeConfigId` 用该请求引用服务器端配置。 这样，您无需在网站上更改代码即可更新配置。
 
 ## 创建边缘配置ID
 
@@ -23,8 +23,6 @@ Adobe Experience Platform的配置 [!DNL Web SDK] 分为两个位置。 SDK [中
 ![边缘配置工具导航](../../assets/edge_configuration_nav.png)
 
 >[!NOTE]
->
->
 >
 >无论客户是否使用标签管理器，允许列表上的客户都可 [!DNL Launch] 以使用边缘配置工具。 此外，用户需要中的“开发”权 [!DNL Launch]限。 有关更多 [详细信息](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/user-permissions.html) ，请参 [!DNL Launch] 阅文档中的“用户权限”文章。
 
@@ -56,17 +54,17 @@ ID同步可以分组为容器，以允许在不同时间运行不同的ID同步�
 
 #### Adobe Experience Platform
 
-此处列出的设置允许您向Adobe Experience Platform发送数据。 您只应在已购买Adobe Experience Platform时启用此部分。
+此处列出的设置允许您向Adobe Experience Platform发送数据。 只有在购买了Adobe Experience Platform时，才应启用此部分。
 
 ![Adobe Experience Platform设置块](../../assets/edge_configuration_aep.png)
 
 ##### [!UICONTROL 沙箱]
 
-沙箱是Adobe Experience Platform中允许客户将其数据和实施彼此隔离的位置。 有关它们如何工作的更多详细信息，请参 [阅沙箱文档](../../sandboxes/home.md)。
+沙箱是Adobe Experience Platform的一个位置，客户可以将其数据和实施相互隔离。 有关它们如何工作的更多详细信息，请参 [阅沙箱文档](../../sandboxes/home.md)。
 
 ##### [!UICONTROL Streaming Inlet]
 
-流入口是Adobe Experience Platform中的HTTP源。 这些API在Adobe Experience Platform [!UICONTROL 的] “源”选项卡下创建为HTTP API。
+流入口是Adobe Experience Platform的HTTP源。 这些API在Adobe Experience Platform [!UICONTROL 的] “源”选项卡下创建为HTTP API。
 
 ##### [!UICONTROL 事件数据集]
 
@@ -80,29 +78,27 @@ ID同步可以分组为容器，以允许在不同时间运行不同的ID同步�
 
 >[!NOTE]
 >
->
->
 >与客户端代码关联的组织必须与创建配置ID的组织匹配。
 
 ##### [!UICONTROL 客户端代码]
 
-目标帐户的唯一ID。 要找到此项，您可以导航到 [!UICONTROL Adobe Target] >设置 [!UICONTROL >安装]> [!UICONTROL 实施] > [!UICONTROL 下一个到的下][!UICONTROL 载按钮的“编辑”按钮，该按钮用于。js或mbox.js]
+目标帐户的唯一ID。 要找到此项，您可以导航到 [!UICONTROL Adobe Target] >设置 [!UICONTROL >实施]>下一步， [!UICONTROL 到下载按] 钮中编辑按钮( [!UICONTROL 用于。js或mbox.js)。]
 
 ##### [!UICONTROL 属性令牌]
 
 [!DNL Target] 允许客户通过使用属性来控制权限。 详细信息可在文档的 [“企业权限](https://docs.adobe.com/content/help/en/target/using/administer/manage-users/enterprise/properties-overview.html) ”部分 [!DNL Target] 找到。
 
-可以在“Adobe Target”>“设置” [!UICONTROL >“属性] ” [!UICONTROL 中找到属] 性令 [!UICONTROL 牌]
+属性令牌可在Adobe Target [!UICONTROL >设置] > [!UICONTROL 属性][!UICONTROL 中]
 
 ##### [!UICONTROL 目标环境ID]
 
-[环境](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) -Adobe Target-帮助您管理整个开发阶段的实施。 此设置指定要与每个环境一起使用的环境。
+[环境](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) (Adobe Target)的可帮助您管理整个开发阶段的实施。 此设置指定要与每个环境一起使用的环境。
 
-Adobe建议对每个配置、 `dev`和边 `stage`缘配置 `prod` 环境进行不同的设置，以简化操作。 但是，如果您已经定 [!UICONTROL 义了Adobe Target] 环境，则可以使用这些。
+Adobe建议对每个配置、 `dev`和边 `stage`缘配置 `prod` 环境进行不同的设置，以简化操作。 但是，如果您已经定义 [!UICONTROL 了Adobe Target环境] ，则可以使用这些数据。
 
 #### Adobe Audience Manager
 
-向Adobe Audience Manager发送数据所需的一切就是启用此部分。 其他设置是可选的，但鼓励使用。
+向Adobe Audience Manager发送数据所需的一切就是启用本节。 其他设置是可选的，但鼓励使用。
 
 ![Adobe受众管理设置块](../../assets/edge_configuration_aam.png)
 
@@ -116,7 +112,7 @@ Adobe建议对每个配置、 `dev`和边 `stage`缘配置 `prod` 环境进行�
 
 #### Adobe Analytics
 
-控制数据是否发送到Adobe Analytics。 其他详细信息请参 [阅Analytics概述](../solution-specific/analytics/analytics-overview.md)。
+控制数据是否发送到Adobe Analytics。 更多详细信息请参 [阅分析概述](../solution-specific/analytics/analytics-overview.md)。
 
 ![Adobe Analytics设置块](../../assets/edge_configuration_aa.png)
 
