@@ -1,10 +1,11 @@
 ---
+keywords: Survey destinations;survey;foresee;inmoment;web intercept surveys;qualtrics
 title: 调查目标
 seo-title: 调查目标
 description: 调查平台可以检测调查事件，通过数据元素实时捕获客户反馈并与Adobe实时CDP共享数据。
 seo-description: 调查平台可以检测调查事件，通过数据元素实时捕获客户反馈并与Adobe实时CDP共享数据。
 translation-type: tm+mt
-source-git-commit: e4da80338dbfbad70dfb3cf7df9fe589e949e788
+source-git-commit: cbd748c1881c61f5e636567d94b68f2cf7302fa5
 workflow-type: tm+mt
 source-wordcount: '104'
 ht-degree: 0%
