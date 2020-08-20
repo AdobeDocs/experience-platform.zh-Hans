@@ -3,8 +3,9 @@ title: 快速开始Launch
 seo-title: Adobe Experience PlatformWeb SDK快速开始Launch
 description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
 seo-description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
+keywords: 1st-party domain;CNAME;schema;create schema;launch;aep web sdk extension;extension;configuration id;configuration tool;data element;create data element;XDM Object;sendEvent;send Event;
 translation-type: tm+mt
-source-git-commit: bc18ca26da37ecfca2ade9403be22d7de222facb
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 5%
@@ -14,9 +15,9 @@ ht-degree: 5%
 
 # 欢迎
 
-本指南将引导您通过不同方式在Launch中设置Adobe Experience PlatformWeb SDK。 要使用此功能，您需要将其列入白名单。 如果您想继续等待列表，请联系您的客户经理。
+本指南引导您了解在Launch中设置Adobe Experience PlatformWeb SDK的不同方法。 要使用此功能，您需要将其列入白名单。 如果您想继续等待列表，请联系您的客户经理。
 
-- 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经有Analytics的CNAME，则应使用该CNAME。 在开发中进行测试没有CNAME，但您在开始生产之前需要一个CNAME。
+- 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经拥有Analytics的CNAME，则应使用该CNAME。 在开发中进行测试没有CNAME，但您在开始生产之前需要一个CNAME。
 - 有权获得Adobe Experience Platform。 如果您尚未购买平台，Adobe将为您提供Experience Platform数据服务基础，以便在SDK中以有限方式使用，并且不收取额外费用。
 - 使用最新版的访客ID服务。
 
