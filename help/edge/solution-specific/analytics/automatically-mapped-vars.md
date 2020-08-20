@@ -1,10 +1,11 @@
 ---
-title: 变量自动映射到Analytics
-seo-title: 用Adobe Experience PlatformWeb SDK在Analytics中自动映射变量
-description: 了解哪些变量通过Experience PlatformWeb SDK在Analytics中自动映射
-seo-description: 了解哪些变量通过Experience PlatformWeb SDK在Analytics中自动映射
+title: 在Analytics中自动映射变量
+seo-title: 使用Adobe Experience PlatformWeb SDK在分析中自动映射变量
+description: 了解在Analytics中使用Experience PlatformWeb SDK自动映射哪些变量
+seo-description: 了解在Analytics中使用Experience PlatformWeb SDK自动映射哪些变量
+keywords: adobe analytics;variables;analytics;automatic map;automatically mapped;
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '543'
 ht-degree: 2%
@@ -14,7 +15,7 @@ ht-degree: 2%
 
 # 自动映射到的变量 [!DNL Analytics]
 
-下面是列表自动映射到的 [!DNL Edge Network] 变量Adobe Experience Platform [!DNL Analytics]。
+以下是Adobe Experience Platform自动映射到 [!DNL Edge Network] 的变量列表 [!DNL Analytics]。
 
 | XDM字段路径 | [!DNL Analytics Query String] / HTTP 标头 | 描述 |
 | ---------- | ------------------------- | -------- |
