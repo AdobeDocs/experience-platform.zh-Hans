@@ -3,8 +3,9 @@ title: 支持同意
 seo-title: 支持Adobe Experience PlatformWeb SDK同意首选项
 description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
 seo-description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
+keywords: consent;defaultConsent;default consent;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;
 translation-type: tm+mt
-source-git-commit: 0869c6c54e8936a1ac1225cf6510f7139dce1936
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '756'
 ht-degree: 0%
@@ -75,7 +76,7 @@ alloy("setConsent", {
 >
 >用户选择退出后，SDK将不允许您设置用户同意 `in`。
 
-由于用户选择选择退出了，从先前排队的命令返回的承诺将被拒绝。 取决于用户选择加入的将来命令将返回同样被拒绝的承诺。 有关处理或隐藏错误的详细信息，请参阅执 [行命令](executing-commands.md)。
+由于用户选择选择退出了，从先前排队的命令返回的承诺将被拒绝。 取决于用户选择加入的将来命令将返回同样被拒绝的承诺。 有关处理或隐藏错误的详细信息，请参阅 [执行命令](executing-commands.md)。
 
 >[!NOTE]
 >
