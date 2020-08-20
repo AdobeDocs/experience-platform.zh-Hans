@@ -3,10 +3,11 @@ title: 产品
 seo-title: 使用Adobe Experience PlatformWeb SDK支持产品
 description: 了解如何在您有产品或购物车时添加Experience PlatformWeb SDK
 seo-description: 了解如何在您有产品或购物车时添加Experience PlatformWeb SDK
+keywords: products;commerce;measures;measure;order;cartAbandons;checkouts;productListAdds;productListOpens;productListRemovals;productListReopens;productListViews;productViews;purchases;saveForLaters;currencyCode;payments;paymentAmount;paymentType;transactionID;priceTotal;purchaseID;purchaseOrderNumber;
 translation-type: tm+mt
-source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
-source-wordcount: '1314'
+source-wordcount: '1312'
 ht-degree: 6%
 
 ---
@@ -19,7 +20,6 @@ ht-degree: 6%
 此文档使用 [ExperienceEvent商务详细信](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) 息混合。 混 `commerce` 合物分为两部分：对 `commerce` 象和数 `productListItems` 组。 该对 `commerce` 象允许您指示正在对数组执行哪些 `productListItems` 操作。
 
 >[!TIP]
->
 >
 >如果您熟悉Adobe Analytics，则 `commerce` 该变量与该变量最为 `events` 相关。 该 `productListItems` 变量与变量更为 `products` 相关。
 
