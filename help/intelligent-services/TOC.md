@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: 智能服务帮助
 translation-type: tm+mt
-source-git-commit: 24449d0138ab449dbc01aecbbe9f70e05c781c89
+source-git-commit: e69f4e8ddc0fe5f7be2b2b2bd89c09efdfca8e75
 workflow-type: tm+mt
-source-wordcount: '67'
-ht-degree: 2%
+source-wordcount: '88'
+ht-degree: 5%
 
 ---
 
@@ -22,6 +22,14 @@ ht-degree: 2%
    * [用户界面指南](attribution-ai/user-guide.md)
    * [发现洞察](attribution-ai/discover-insights.md)
    * [访问得分](attribution-ai/download-scores.md)
+* 内容和商务AI（测试版） {#content-commerce-ai}
+   * [概述](content-commerce-ai/overview.md)
+   * [入门指南](content-commerce-ai/getting-started.md)
+   * 内容和商务AI API{#api}
+      * [颜色提取](content-commerce-ai/api/color-extraction.md)
+      * [关键字提取](content-commerce-ai/api/keyword-extraction.md)
+      * [文本分类](content-commerce-ai/api/text-classification.md)
+      * [视觉相似性](content-commerce-ai/api/visual-similarity.md)
 * 客户人工智能 {#customer-ai}
    * [概述](customer-ai/overview.md)
    * [客户人工智能入门](customer-ai/getting-started.md)
