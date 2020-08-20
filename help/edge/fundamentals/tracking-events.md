@@ -3,8 +3,9 @@ title: 跟踪事件
 seo-title: 跟踪Adobe Experience PlatformWeb SDK事件
 description: 了解如何跟踪Experience PlatformWeb SDK事件
 seo-description: 了解如何跟踪Experience PlatformWeb SDK事件
+keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '688'
 ht-degree: 0%
