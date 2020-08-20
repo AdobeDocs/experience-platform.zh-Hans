@@ -5,7 +5,7 @@ title: Adobe Experience Platform Identity Service
 topic: overview
 description: '身份命名空间是 Identity Service 的组件，充当与身份相关的上下文指示器。例如，它们将“name<span>@email.com”的值区分为电子邮件地址或“443522”作为数字CRM ID。 '
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 235f611115b89a87c924a00409a6acae4f5ac97d
 workflow-type: tm+mt
 source-wordcount: '761'
 ht-degree: 4%
@@ -49,7 +49,7 @@ Identity namespaces are a component of [!DNL Identity Service](./home.md) that s
 | 非人 | 用于存储需要命名空间但未绑定到人群集的标识符。 然后从标识图中过滤这些标识符。 可能的使用案例包括与产品、组织、商店等相关的数据。 （例如，产品SKU。） |
 | Phone | 此类型的身份包括PII。 这说明该 [!DNL Identity Service] 值处理灵敏。 |
 
-### 标准命名空间
+### 标准命名空间 {#standard}
 
 Adobe Experience Platform为所有组织提供多种身份命名空间。 这些命名空间称为标准，可通过API [!DNL Identity Service] 或通过UI [!DNL Platform] 查看。
 
