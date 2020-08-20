@@ -3,8 +3,9 @@ title: 合并事件数据
 seo-title: 合并Adobe Experience PlatformWeb SDK事件数据
 description: 了解如何合并Experience PlatformWeb SDK事件数据
 seo-description: 了解如何合并Experience PlatformWeb SDK事件数据
+keywords: merge;event data;eventMergeId;createEventMergeId;sendEvent;mergeId;merge id;eventMergeIdPromise; Merge Id Promise;
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '408'
 ht-degree: 0%
@@ -60,7 +61,7 @@ alloy("sendEvent", {
 
 通过在本例中 `eventMergeID` 将相同的值传递给两个事件命令，将第二事件命令中的数据增强为先前通过第一事件命令发送的数据。 在中创建每个事件命令的记录， [!DNL Experience Data Platform]但在报告期间，使用将记录连接在一起， `eventMergeID` 并显示为单个事件。
 
-如果您向第三方提供商发送有关特定事件的数据，则也可以在该数 `eventMergeID` 据中包含相同的数据。 稍后，如果您选择将第三方Adobe Experience Platform导入事件，则将用于将因您网页上发生的离散而收集的所有数据合并在一起。 `eventMergeID`
+如果您向第三方提供商发送有关特定事件的数据，则也可以在该数 `eventMergeID` 据中包含相同的数据。 稍后，如果您选择将第三方数据导入Adobe Experience Platform, `eventMergeID` 则将用于合并因您网页上发生的离散事件而收集的所有数据。
 
 ## 生成 `eventMergeID`
 
