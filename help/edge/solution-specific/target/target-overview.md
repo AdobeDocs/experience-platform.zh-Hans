@@ -3,8 +3,9 @@ title: 'Adobe Target和Adobe Experience PlatformWeb SDK。 '
 seo-title: Adobe Experience PlatformWeb SDK和使用Adobe Target
 description: 了解如何使用Experience PlatformWeb SDK使用Adobe Target呈现个性化内容
 seo-description: 了解如何使用Experience PlatformWeb SDK使用Adobe Target呈现个性化内容
+keywords: target;adobe target;activity.id;experience.id;renderDecisions;decisionScopes;prehiding snippet;vec;Form-Based Experience Composer;xdm;audiences;decisions;scope;schema;
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '634'
 ht-degree: 3%
@@ -14,9 +15,9 @@ ht-degree: 3%
 
 # [!DNL Target] 概述
 
-Adobe Experience Platform可 [!DNL Web SDK] 以向Web渠道提供和呈现以Adobe Target方式管理的个性化体验。 您可以使用WYSIWYG编辑器(称为 [Visual Experience Composer](https://docs.adobe.com/content/help/en/target/using/experiences/vec/visual-experience-composer.html) (VEC))或非可视界面(基于表 [单的体验书写器](https://docs.adobe.com/content/help/en/target/using/experiences/form-experience-composer.html))来创建、激活和提供您的活动和个性化体验。
+Adobe Experience Platform可 [!DNL Web SDK] 以向网络渠道提供和呈现在Adobe Target管理的个性化体验。 您可以使用WYSIWYG编辑器(称为 [Visual Experience Composer](https://docs.adobe.com/content/help/en/target/using/experiences/vec/visual-experience-composer.html) (VEC))或非可视界面(基于表 [单的体验书写器](https://docs.adobe.com/content/help/en/target/using/experiences/form-experience-composer.html))来创建、激活和提供您的活动和个性化体验。
 
-## 启用Adobe Target
+## 使Adobe Target
 
 要启 [!DNL Target]用，您需要执行以下操作：
 
@@ -34,11 +35,11 @@ Adobe Experience Platform可 [!DNL Web SDK] 以向Web渠道提供和呈现以Ado
 
 ## 使用Adobe TargetVEC
 
-在SDK中，您可以正常使用VEC，但有一个例外： 您需要安 [装目标VEC帮助程序](https://docs.adobe.com/content/help/en/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html) ，并处于活动状态。
+在SDK中，您可以正常使用VEC，但有一个例外：您需要安 [装目标VEC帮助程序](https://docs.adobe.com/content/help/en/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html) ，并处于活动状态。
 
 ## 自动渲染VEC活动
 
-AEP Web SDK能够在Web上自动呈现通过Adobe Target的VEC为用户定义的体验。 要向AEP Web SDK指示自动渲染VEC活动，请发送事件，其中 `renderDecisions = true`:
+AEP Web SDK能够在Web上自动呈现通过Adobe Target的VEC定义的体验，供您的用户使用。 要向AEP Web SDK指示自动渲染VEC活动，请发送事件，其中 `renderDecisions = true`:
 
 ```javascript
 alloy
