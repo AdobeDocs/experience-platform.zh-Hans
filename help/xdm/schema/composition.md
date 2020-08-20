@@ -5,7 +5,7 @@ title: 模式合成基础
 topic: overview
 description: 本文档介绍了体验数据模型(XDM)模式，以及构成要在Adobe Experience Platform使用的模式的构件、原则和最佳做法。
 translation-type: tm+mt
-source-git-commit: 04efbf63741ef39bbf0b22795be74087f1f7c595
+source-git-commit: 23a69653ee773562cb0261b8e0bb67411eb4856e
 workflow-type: tm+mt
 source-wordcount: '2811'
 ht-degree: 0%
@@ -68,7 +68,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 在模式规划阶段考虑客户身份非常重要，这有助于确保整合数据以构建最可靠的用户档案。 请参阅Adobe Experience Platform [身份服务概述](../../identity-service/home.md) ，进一步了解身份信息如何帮助您向客户提供数字体验。
 
-#### xdm:identityMap
+#### xdm:identityMap {#identityMap}
 
 `xdm:identityMap` 是一个映射类型字段，它描述个人的各种身份值及其关联命名空间。 此字段可用于为模式提供身份信息，而不是在模式本身的结构中定义身份值。
 
