@@ -3,8 +3,9 @@ title: 安装Adobe Experience PlatformWeb SDK
 seo-title: Adobe Experience PlatformWeb SDK安装SDK
 description: 了解如何安装Experience PlatformWeb SDK
 seo-description: 了解如何安装Experience PlatformWeb SDK
+keywords: web sdk installation;installing web sdk;internet explorer;promise;
 translation-type: tm+mt
-source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '623'
 ht-degree: 1%
