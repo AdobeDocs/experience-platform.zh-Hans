@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Adobe Experience Platform批量摄取开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 3eaef72de2999fc088b92562c08a896d1cb08e55
 workflow-type: tm+mt
-source-wordcount: '2552'
-ht-degree: 6%
+source-wordcount: '2670'
+ht-degree: 5%
 
 ---
 
@@ -24,11 +24,11 @@ ht-degree: 6%
 
 以下各节提供您需要了解或掌握的其他信息，以便成功调用Batch Ingestion API。
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-- [批量摄取](./overview.md): 允许您将数据作为批处理文件引入Adobe Experience Platform。
-- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+- [批量摄取](./overview.md):允许您将数据作为批处理文件引入Adobe Experience Platform。
+- [[!DNL Experience Data Model] (XDM)系统](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [[!DNL沙箱]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 ### 读取示例API调用
 
@@ -38,22 +38,19 @@ ht-degree: 6%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{IMS_ORG}`
+- `Authorization: Bearer {ACCESS_TOKEN}`
+- `x-api-key: {API_KEY}`
+- `x-gw-ims-org-id: {IMS_ORG}`
 
 中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
-- x-sandbox-name: `{SANDBOX_NAME}`
+- `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
 >有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
 
-包含有效负荷(POST、PUT、PATCH)的请求可能需要额外的 `Content-Type` 头。 在呼叫参数中提供特定于每个呼叫的已接受值。 本指南中使用以下内容类型：
-
-- 内容类型： application/json
-- 内容类型： application/octet-stream
+包含有效负荷(POST、PUT、PATCH)的请求可能需要额外的 `Content-Type` 头。 在呼叫参数中提供特定于每个呼叫的已接受值。
 
 ## 类型
 
@@ -85,10 +82,10 @@ ht-degree: 6%
 ## 摄取约束
 
 批处理数据获取存在一些限制：
-- 每批文件的最大数量： 1500
-- 最大批大小： 100 GB
-- 每行的属性或字段的最大数量： 10000
-- 每用户每分钟批次的最大数量： 138
+- 每批文件的最大数量：1500
+- 最大批大小：100 GB
+- 每行的属性或字段的最大数量：10000
+- 每用户每分钟批次的最大数量：138
 
 ## 收录JSON文件
 
@@ -176,7 +173,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | 要上传到的批的ID。 |
 | `{DATASET_ID}` | 批的引用数据集的ID。 |
-| `{FILE_NAME}` | 要上传的文件的名称。 |
+| `{FILE_NAME}` | 要上传的文件的名称。 此文件路径是文件在Adobe端保存的位置。 |
 
 **请求**
 
@@ -196,7 +193,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`。 |
 
 **响应**
 
@@ -311,7 +308,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | 要上传到的批的ID。 |
 | `{DATASET_ID}` | 批的引用数据集的ID。 |
-| `{FILE_NAME}` | 要上传的文件的名称。 |
+| `{FILE_NAME}` | 要上传的文件的名称。 此文件路径是文件在Adobe端保存的位置。 |
 
 **请求**
 
@@ -331,7 +328,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`。 |
 
 **响应**
 
@@ -484,7 +481,7 @@ PATCH /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | 要上传到的批的ID。 |
 | `{DATASET_ID}` | 批的引用数据集的ID。 |
-| `{FILE_NAME}` | 要上传的文件的名称。 |
+| `{FILE_NAME}` | 要上传的文件的名称。 此文件路径是文件在Adobe端保存的位置。 |
 
 **请求**
 
@@ -506,7 +503,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{CONTENT_RANGE}` | 在整数中，为请求范围的开始和结束。 |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`。 |
 
 
 **响应**
@@ -734,7 +731,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | 要上传到的批的ID。 |
 | `{DATASET_ID}` | 批的引用数据集的ID。 |
-| `{FILE_NAME}` | 要上传的文件的名称。 |
+| `{FILE_NAME}` | 要上传的文件的名称。 此文件路径是文件在Adobe端保存的位置。 |
 
 **请求**
 
@@ -754,7 +751,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`。 |
 
 
 **响应**
@@ -941,7 +938,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | 要上传到的批的ID。 |
 | `{DATASET_ID}` | 批的引用数据集的ID。 |
-| `{FILE_NAME}` | 要上传的文件的名称。 |
+| `{FILE_NAME}` | 要上传的文件的名称。 此文件路径是文件在Adobe端保存的位置。 |
 
 **请求**
 
@@ -961,7 +958,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`。 |
 
 **响应**
 
