@@ -3,8 +3,9 @@ title: 在Analytics中手动映射变量
 seo-title: 使用Web SDK在Analytics中手动映射变量
 description: 如何使用处理规则将变量手动映射到Analytics
 seo-description: 使用带有Web SDK的处理规则将变量手动映射到Analytics中
+keywords: adobe analytics;analytics;variables;mapping variables;map variables;contextData;context Data;Processing rules;rules;xdm;schema;
 translation-type: tm+mt
-source-git-commit: 075d71353877045e12985b3914aaeeb478ed46d6
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '371'
 ht-degree: 47%
