@@ -5,9 +5,9 @@ solution: Experience Platform
 title: 在UI中创建Adobe Analytics分类数据连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: abb15e3daac4aebd46012822c790b056d0b3d2c1
+source-git-commit: e0d842b3c5d3b628e117c14d47d6c114b36484dd
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '624'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-* [[!DNL体验数据模型(XDM)系统]](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model] (XDM)系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
 * [[!DNL实时客户用户档案]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 * [[!DNL沙箱]](../../../../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
@@ -57,7 +57,7 @@ ht-degree: 2%
 
 ![](../../../../images/tutorials/create/classifications/review.png)
 
-## 监视和删除分类数据流
+## 监视分类数据流
 
 创建数据流后，您可以监视通过它摄取的数据。 从“目 **[!UICONTROL 录]** ”屏幕中，选 **[!UICONTROL 择“数据流]** ”以视图与您的帐户关联的已建立流 [!DNL Classifications] 列表。
 
@@ -69,13 +69,13 @@ ht-degree: 2%
 
 ![](../../../../images/tutorials/create/classifications/list-of-dataflows.png)
 
-“数 **[!UICONTROL 据集活动]** ”页显示有关您选择的目标数据集的信息，包括有关其批处理状态、数据集ID和模式的详细信息。 选择 **[!UICONTROL 删除数据集]** ，以进行删除。
+“数 **[!UICONTROL 据集活动]** ”页显示有关您选择的目标数据集的信息，包括有关其批处理状态、数据集ID和模式的详细信息。
 
-![](../../../../images/tutorials/create/classifications/batch-screen.png)
+>[!IMPORTANT]
+>虽然其他源连接器可以删除数据集，但Analytics Classifications Data Connector当前不支持此功能。 如果您误删除了数据集，请与Adobe客户服务部联系。
 
-出现确认删除的对话框。 选择 **[!UICONTROL 删除]** ，以完成。
+![](../../../../images/tutorials/create/classifications/dataset.png)
 
-![](../../../../images/tutorials/create/classifications/delete-confirm.png)
 
 ## 后续步骤
 
