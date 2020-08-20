@@ -3,18 +3,19 @@ title: 将数据发送到Adobe Analytics
 seo-title: 使用Adobe Experience PlatformWeb SDK向Adobe Analytics发送数据
 description: 了解如何使用Experience PlatformWeb SDK将数据发送到Adobe Analytics
 seo-description: 了解如何使用Experience PlatformWeb SDK将数据发送到Adobe Analytics
+keywords: adobe analytics;analytics;mapped data;mapped vars;
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
 workflow-type: tm+mt
 source-wordcount: '202'
-ht-degree: 0%
+ht-degree: 6%
 
 ---
 
 
 # 将数据发送到Adobe Analytics
 
-Adobe Experience Platform可 [!DNL Web SDK] 以向Adobe Analytics发送数据。 这可以翻译成 `xdm` Adobe Analytics可以使用的格式。
+Adobe Experience Platform [!DNL Web SDK] 可以向Adobe Analytics发送数据。 这可以翻译成 `xdm` Adobe Analytics可以使用的格式。
 
 ## 设置
 
@@ -22,11 +23,11 @@ Adobe Experience Platform可 [!DNL Web SDK] 以向Adobe Analytics发送数据。
 
 ## 自动映射的数据
 
-Adobe Experience Platform会 [!DNL Edge Network] 自动映射许多XDM变量。 此处列出自动映射变量的完整 [列表](../analytics/automatically-mapped-vars.md)。
+Adobe Experience Platform自 [!DNL Edge Network] 动映射许多XDM变量。 此处列出自动映射变量的完整 [列表](../analytics/automatically-mapped-vars.md)。
 
 ## 手动映射的数据
 
-边缘网络收集的所有数据都可以通过处理规则进行访问。 数据使用点记号进行拼合，并可作为contextData使用。
+可以通过处理规则访问边缘网络收集的所有数据。数据使用点记号进行拼合，并可作为contextData使用。
 
 如果你的模式长成这样。
 
