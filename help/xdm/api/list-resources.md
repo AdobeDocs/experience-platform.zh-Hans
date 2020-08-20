@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 列表资源
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
 workflow-type: tm+mt
 source-wordcount: '508'
 ht-degree: 2%
@@ -31,7 +31,7 @@ GET /{CONTAINER_ID}/{RESOURCE_TYPE}?{QUERY_PARAMS}
 | --- | --- |
 | `{CONTAINER_ID}` | 资源所在的容器（“全局”或“租户”）。 |
 | `{RESOURCE_TYPE}` | 要从中检索的资源的类型 [!DNL Schema Library]。 有效类 `classes`型有 `mixins`、 `schemas`、 `datatypes`和 `descriptors`。 |
-| `{QUERY_PARAMS`} | 可选查询参数，用于筛选结果。 有关详细信息，请 [参阅查询](#query) 参数一节。 |
+| `{QUERY_PARAMS}` | 可选查询参数，用于筛选结果。 有关详细信息，请 [参阅查询](#query) 参数一节。 |
 
 **请求**
 
@@ -49,8 +49,8 @@ curl -X GET \
 
 | 接受标题 | 描述 |
 | ------- | ------------ |
-| application/vnd.adobe.xed-id+json | 返回每个资源的简短摘要。 这是列出资源的建议标头。 (限制： 300) |
-| application/vnd.adobe.xed+json | 返回每个资源的完整JSON模式，其中包 `$ref` 含原始 `allOf` 资源。 (限制： 300) |
+| application/vnd.adobe.xed-id+json | 返回每个资源的简短摘要。 这是列出资源的建议标头。 (限制：300) |
+| application/vnd.adobe.xed+json | 返回每个资源的完整JSON模式，其中包 `$ref` 含原始 `allOf` 资源。 (限制：300) |
 | application/vnd.adobe.xdm-v2+json | 使用端点 `/descriptors` 时，必须使用此Accept头才能使用分页功能。 |
 
 **响应**
