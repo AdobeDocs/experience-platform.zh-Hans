@@ -5,7 +5,7 @@ seo-title: Oracle Evolca目标
 description: Oracle Elova是Oracle提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
 seo-description: Oracle Elova是Oracle提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 31b74067903cf7a2ecc4b8f81c11585b672a75ad
 workflow-type: tm+mt
 source-wordcount: '517'
 ht-degree: 0%
