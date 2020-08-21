@@ -3,11 +3,11 @@ keywords: facebook pixel extensions;facebook pixel extension;facebook pixel dest
 title: Facebook像素扩展
 seo-title: Facebook像素扩展
 description: Facebook Pixel扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: null
+seo-description: Facebook Pixel扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
+source-git-commit: 164c51e543d5eba11e4756723f3fecd84ec48f59
 workflow-type: tm+mt
-source-wordcount: '502'
+source-wordcount: '530'
 ht-degree: 5%
 
 ---
