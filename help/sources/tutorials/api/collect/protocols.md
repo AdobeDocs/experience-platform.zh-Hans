@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 通过源连接器和API收集协议数据
 topic: overview
 translation-type: tm+mt
-source-git-commit: 773823333fe0553515ebf169b4fd956b8737a9c3
+source-git-commit: c26b2b4256d8d1d23a285efbacd8b6c9e255cd18
 workflow-type: tm+mt
-source-wordcount: '1660'
+source-wordcount: '1669'
 ht-degree: 1%
 
 ---
@@ -645,7 +645,7 @@ curl -X POST \
 | `sourceConnectionIds` | 在 [先前步骤中检索](#source) 的源连接ID。 |
 | `targetConnectionIds` | 在 [先前步骤中检索](#target-connection) 的目标连接ID。 |
 | `transformations.params.mappingId` | 在 [先前步骤](#mapping) 中检索的映射ID。 |
-| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 增量数据将根据所选列的时间戳被摄取。 |
+| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 增量数据将根据所选列的时间戳被摄取。 使用通用OData时 `deltaColumn` 支持的格式为 `yyyy-MM-ddTHH:mm:ssZ`。 |
 | `transformations.params.mappingId` | 与数据库关联的映射ID。 |
 | `scheduleParams.startTime` | 开始时间中数据流的数据时间。 |
 | `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`、 `minute`、 `hour`、 `day`或 `week`。 |
