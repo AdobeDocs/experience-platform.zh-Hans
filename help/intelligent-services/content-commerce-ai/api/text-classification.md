@@ -5,9 +5,9 @@ title: 文本分类API端点
 topic: Developer guide
 description: 当给定文本片段时，文本分类服务可以将其分类为一个或多个标签。 分类可以是单标签、多标签或分层。
 translation-type: tm+mt
-source-git-commit: e69f4e8ddc0fe5f7be2b2b2bd89c09efdfca8e75
+source-git-commit: 4f7b5ca50171f4948726c44dbf31025011adf35f
 workflow-type: tm+mt
-source-wordcount: '416'
+source-wordcount: '447'
 ht-degree: 4%
 
 ---
@@ -35,7 +35,7 @@ POST /services/v1/predict
 
 >[!CAUTION]
 >
->`analyzer_id` 确定使 [!DNL Sensei Content Framework] 用哪个。 请在提出请求前检查 `analyzer_id` 您是否有适当的。
+>`analyzer_id` 确定使 [!DNL Sensei Content Framework] 用哪个。 请在提出请求前检查 `analyzer_id` 您是否有适当的。 请与内容和商务AI测试版团队联系，以接 `analyzer_id` 收您的此服务。
 
 ```SHELL
 curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
@@ -64,7 +64,7 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
 
 | 属性 | 描述 | 强制 |
 | --- | --- | --- |
-| `analyzer_id` | 您 [!DNL Sensei] 的请求所部署的服务ID。 此ID决定使用哪 [!DNL Sensei Content Frameworks] 个ID。 | 是 |
+| `analyzer_id` | 您 [!DNL Sensei] 的请求所部署的服务ID。 此ID决定使用哪 [!DNL Sensei Content Frameworks] 个ID。 有关自定义服务，请联系内容和商务AI团队以设置自定义ID。 | 是 |
 | `application-id` | 创建的应用程序的ID。 | 是 |
 | `data` | 包含JSON对象的数组，数组中的每个对象都表示文档。 作为此数组的一部分传递的任何参数都将覆盖在数组外部指定的全局 `data` 参数。 此表中概述的其余任何属性都可从中覆盖 `data`。 | 是 |
 | `language` | 输入文本的语言。 默认值为 `en`。 | 否 |
