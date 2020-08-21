@@ -5,9 +5,9 @@ title: 流细分
 topic: ui guide
 description: Adobe Experience Platform的流式细分使您能够近乎实时地进行细分，同时专注于数据的丰富性。 利用流细分，当数据进入平台时，现在会发生细分资格，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传入平台时评估大多数细分规则，这意味着，在不运行计划的细分作业的情况下，细分成员资格将保持最新。
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: d0323fd2e769f97fa738ea55e7aba1d7ae821051
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '767'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,9 @@ ht-degree: 0%
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
 
-具体而言，将显示有关 **[!UICONTROL 合格受众总大小的]** 详细信息。 如果作业在过去24小时内运行，则除 **[!UICONTROL 添加的受众的折线图外]** ，还会显示作业的合格受众总数。 否则，除 **[!UICONTROL 了可视化趋势线]** ，还会显示估计受众总大小。
+具体而言，将显示有关 **[!UICONTROL 合格受众总大小的]** 详细信息。 “ **[!UICONTROL 合格受众总数]** ”显示上次完成的区段作业运行中合格受众的总数。 如果在过去24小时内未完成细分作业，则将从估计中获取受众数。
+
+下面是一个线形图，显示过去24小时内合格和被取消资格的区段数。 可以调整下拉列表以显示最近24小时、上周或最近30天。
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment-graph.png)
 
