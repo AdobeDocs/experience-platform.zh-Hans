@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 通过源连接器和API收集付款数据
 topic: overview
 translation-type: tm+mt
-source-git-commit: 773823333fe0553515ebf169b4fd956b8737a9c3
+source-git-commit: c26b2b4256d8d1d23a285efbacd8b6c9e255cd18
 workflow-type: tm+mt
-source-wordcount: '1696'
-ht-degree: 1%
+source-wordcount: '1702'
+ht-degree: 2%
 
 ---
 
@@ -136,7 +136,7 @@ curl -X POST \
 
 在前面的步骤中，创建了一个专门的XDM模式来构造源数据。 为了在中使用源数据，还必 [!DNL Platform]须创建目标模式，以根据您的需要构建源数据。 然后，目标模式用于创建包含 [!DNL Platform] 源数据的数据集。 此目标XDM模式还扩展了XDM [!DNL Individual Profile] 类。
 
-通过对目标注册表API执行POST请求，可以创 [建模式XDM模式](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。 如果您希望在中使用用户界 [!DNL Experience Platform]面， [模式编辑器教程](https://docs.adobe.com/content/help/en/experience-platform/xdm/tutorials/create-schema-ui.html) 提供了在模式编辑器中执行类似操作的分步说明。
+通过对目标注册表API执行POST请求，可以创 [建模式XDM模式](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。 如果您希望在中使用用户界 [!DNL Experience Platform]面， [模式编辑器教程](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/tutorials/create-schema-ui.html) 提供了在模式编辑器中执行类似操作的分步说明。
 
 **API格式**
 
@@ -647,7 +647,7 @@ curl -X POST \
 | `sourceConnectionIds` | 在 [先前步骤中检索](#source) 的源连接ID。 |
 | `targetConnectionIds` | 在 [先前步骤中检索](#target-connection) 的目标连接ID。 |
 | `transformations.params.mappingId` | 在 [先前步骤](#mapping) 中检索的映射ID。 |
-| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 增量数据将根据所选列的时间戳被摄取。 |
+| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 增量数据将根据所选列的时间戳被摄取。 支持的日期格 `deltaColumn` 式 `yyyy-MM-dd HH:mm:ss`为。 |
 | `transformations.params.mappingId` | 与数据库关联的映射ID。 |
 | `scheduleParams.startTime` | 开始时间中数据流的数据时间。 |
 | `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`、 `minute`、 `hour`、 `day`或 `week`。 |
