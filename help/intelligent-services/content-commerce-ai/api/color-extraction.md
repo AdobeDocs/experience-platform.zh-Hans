@@ -5,9 +5,9 @@ title: 颜色提取
 topic: Developer guide
 description: 当给定图像时，颜色提取服务可以计算像素颜色的直方图，并按主色将其排序为桶。
 translation-type: tm+mt
-source-git-commit: e69f4e8ddc0fe5f7be2b2b2bd89c09efdfca8e75
+source-git-commit: 4f7b5ca50171f4948726c44dbf31025011adf35f
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '689'
 ht-degree: 2%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 2%
 
 本文档中显示的示例使用了以下图像：
 
-![测试图像](../images/test_image.jpeg)
+![测试图像](../images/QQAsset1.jpg)
 
 **API格式**
 
@@ -47,7 +47,7 @@ POST /services/v1/predict
 
 >[!CAUTION]
 >
->`analyzer_id` 确定使 [!DNL Sensei Content Framework] 用哪个。 请在提出请求前检查 `analyzer_id` 您是否有适当的。
+>`analyzer_id` 确定使 [!DNL Sensei Content Framework] 用哪个。 请在提出请求前检查 `analyzer_id` 您是否有适当的。 对于颜色提取服 `analyzer_id` 务，ID为： `Feature:image-color-histogram:Service-6fe52999293e483b8e4ae9a95f1b81a7`
 
 ```SHELL
 curl -i -X POST https://sensei.adobe.io/services/v1/predict \
@@ -86,7 +86,7 @@ curl -i -X POST https://sensei.adobe.io/services/v1/predict \
 
 | 属性 | 描述 | 强制 |
 | --- | --- | --- |
-| `analyzer_id` | 您 [!DNL Sensei] 的请求所部署的服务ID。 此ID决定使用哪 [!DNL Sensei Content Frameworks] 个ID。 | 是 |
+| `analyzer_id` | 您 [!DNL Sensei] 的请求所部署的服务ID。 此ID决定使用哪 [!DNL Sensei Content Frameworks] 个ID。 有关自定义服务，请联系内容和商务AI团队以设置自定义ID。 | 是 |
 | `application-id` | 已创建应用程序的ID。 | 是 |
 | `data` | 包含JSON对象的数组。 数组中的每个对象都表示一个图像。 作为此数组的一部分传递的任何参数都将覆盖在数组外部指定的全局 `data` 参数。 此表中概述的其余任何属性都可从中覆盖 `data`。 | 是 |
 | `content-id` | 响应中返回的数据元素的唯一ID。 如果未传递，则会分配一个自动生成的ID。 | 否 |
@@ -106,7 +106,7 @@ curl -i -X POST https://sensei.adobe.io/services/v1/predict \
 - 此颜色相对于图像的显示百分比
 - 颜色的RGB值
 
-在下面的第一个示例对象 `feature_value` 中， `White,0.82,239,239,239` 表示找到的颜色为白色，在图像的82%中为白色，RGB值为239,239,239。
+在下面的第一个示例对象 `feature_value` 中， `White,0.59,251,251,243` 表示找到的颜色为白色，在图像的59%中为白色，RGB值为251,251,243。
 
 ```json
 {
@@ -124,15 +124,19 @@ curl -i -X POST https://sensei.adobe.io/services/v1/predict \
             "feature_value": [
               {
                 "feature_name": "color_name_and_rgb",
-                "feature_value": "White,0.82,239,239,239"
+                "feature_value": "White,0.59,251,251,243"
               },
               {
-                "feature_value": "Dark_Blue,0.11,41,60,86",
+                "feature_value": "Orange,0.30,248,169,48",
                 "feature_name": "color_name_and_rgb"
               },
               {
                 "feature_name": "color_name_and_rgb",
-                "feature_value": "Royal_Blue,0.08,63,91,123"
+                "feature_value": "Mustard,0.08,251,199,77"
+              },
+              {
+                "feature_name": "color_name_and_rgb",
+                "feature_value": "Gold,0.02,250,191,55"
               }
             ],
             "feature_name": "color"
