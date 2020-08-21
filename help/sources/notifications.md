@@ -5,7 +5,7 @@ solution: Experience Platform
 title: 流运行通知
 topic: overview
 translation-type: tm+mt
-source-git-commit: a014a5efeebfcce5c36a9ea87f690bdcd605ef61
+source-git-commit: b5b785d8415c15e3acb9e1155811a66c51477717
 workflow-type: tm+mt
 source-wordcount: '871'
 ht-degree: 1%
@@ -29,7 +29,7 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 
 * [[!DNL体验数据模型(XDM)系统]](../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
 * [[!DNL实时客户用户档案]](../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [[!DNLAdobe Experience Platform数据摄取]](../ingestion/home.md): [!DNL Data Ingestion] 表示从这些源 [!DNL Platform] 中摄取数据的多种方法，以及数据在下游服务中的 [!DNL Data Lake] 保留方式 [!DNL Platform] 。
+* [[!DNLAdobe Experience Platform数据摄取]](../ingestion/home.md): [!DNL Data Ingestion] 表示从这些源 [!DNL Platform] 中摄取数据的多种方法，以及该数据在下游服务中 [!DNL Data Lake] 的保留方 [!DNL Platform] 式。
 
 此文档还需要了解webhook以及如何将webhook从一个应用程序连接到另一个应用程序。 有关Webhooks的 [详细信息](https://requestbin.com/blog/working-with-webhooks/) ，请参阅以下文档。
 
