@@ -3,12 +3,12 @@ keywords: Invoca;invoca
 title: Invoca标记扩展
 seo-title: Invoca标记扩展
 description: Invoca Tags扩展是Adobe实时客户数据平台中客户目标的语音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: null
+seo-description: Invoca Tags扩展是Adobe实时客户数据平台中客户目标的语音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
+source-git-commit: 164c51e543d5eba11e4756723f3fecd84ec48f59
 workflow-type: tm+mt
-source-wordcount: '538'
-ht-degree: 5%
+source-wordcount: '569'
+ht-degree: 4%
 
 ---
 
