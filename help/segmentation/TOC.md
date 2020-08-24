@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform分段服务帮助
 translation-type: tm+mt
-source-git-commit: e351a2d489730c1f1bd5f87be8d85612090bc009
+source-git-commit: 5a10a31f4be5173af8b459b9ab8a53096348be1d
 workflow-type: tm+mt
-source-wordcount: '116'
+source-wordcount: '118'
 ht-degree: 7%
 
 ---
@@ -38,6 +38,7 @@ ht-degree: 7%
    - [数组、列表和设置函数](pql/array-functions.md)
    - [地图函数](pql/map-functions.md)
    - [字符串函数](pql/string-functions.md)
+   - [对象函数](pql/object-functions.md)
    - [算术函数](pql/arithmetic-functions.md)
    - [聚合函数](pql/aggregation-functions.md)
    - [日期和时间函数](pql/datetime-functions.md)
