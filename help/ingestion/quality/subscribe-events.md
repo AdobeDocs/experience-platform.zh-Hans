@@ -4,17 +4,17 @@ solution: Experience Platform
 title: 订阅数据获取事件
 topic: overview
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 5a10a31f4be5173af8b459b9ab8a53096348be1d
 workflow-type: tm+mt
-source-wordcount: '832'
-ht-degree: 1%
+source-wordcount: '831'
+ht-degree: 2%
 
 ---
 
 
 # 数据获取通知
 
-将数据引入Adobe Experience Platform的过程由多个步骤组成。 确定需要摄取的数据文件后，摄取过 [!DNL Platform]程将开始，每个步骤将连续进行，直到数据被成功摄取或失败。 可以使用Adobe Experience Platform数据摄取API [或使用用户界面](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) ，启动 [!DNL Experience Platform] 摄取过程。
+将数据引入Adobe Experience Platform的过程由多个步骤组成。 确定需要摄取的数据文件后，摄取过 [!DNL Platform]程将开始，每个步骤将连续进行，直到数据被成功摄取或失败。 可以使用Adobe Experience Platform数据摄取 [API或使用用户界面](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) ，启动 [!DNL Experience Platform] 摄取过程。
 
 加载到的 [!DNL Platform] 数据必须经过多个步骤才能到达其目标、 [!DNL Data Lake] 或数据存储 [!DNL Real-time Customer Profile] 区。 每个步骤都包括处理数据、验证数据，然后在将数据传递到下一步之前存储数据。 根据所摄取的数据量，这可能会成为一个耗时的过程，并且始终有由于验证、语义或处理错误而导致该过程失败的可能。 在故障事件，需要修复数据问题，然后必须使用更正的数据文件重新启动整个摄取过程。
 
@@ -39,7 +39,7 @@ ht-degree: 1%
 
 ## 通知有效负荷模式
 
-数据摄取通知事件 [!DNL Experience Data Model] 模式是一个(XDM)模式，包含提供关于所摄取数据状态的详细信息的字段和值。 请访问公共XDM [!DNL GitHub] 回购协议，以视图最新 [的通知有效负荷模式](https://github.com/adobe/xdm/blob/master/schemas/common/notifications/ingestion.schema.json)。
+数据摄取通知事件 [!DNL Experience Data Model] 模式是一个(XDM)模式，包含提供关于所摄取数据状态的详细信息的字段和值。 请访问公共XDM [!DNL GitHub] 回购协议，以视图最新 [的通知有效负荷模式](https://github.com/adobe/xdm/blob/master/schemas/notifications/ingestion.schema.json)。
 
 ## 订阅数据获取状态通知
 
@@ -47,7 +47,7 @@ ht-degree: 1%
 
 ### 在Adobe开发人员控制台中创建新项目
 
-转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台，使用Adobe ID登录。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
+转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台并登录您的Adobe ID。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
 
 ### 向 [!DNL Experience Platform] 项目添加事件
 
@@ -55,7 +55,7 @@ ht-degree: 1%
 
 ![](../images/quality/subscribe-events/add-event-button.png)
 
-将显 _[!UICONTROL 示“添加事件]_”对话框。 单击**[!UICONTROL  Experience Platform ]**，以过滤可用选项的列表，然后单击平台**[!UICONTROL &#x200B;通知&#x200B;]**，然后单击**[!UICONTROL &#x200B;下一步&#x200B;]**。
+将出 _[!UICONTROL 现“添加事件]_ ”对话框。 单击 **[!UICONTROL Experience Platform]** ，以过滤可用选项的列表，然后单击平台 **[!UICONTROL 通知]** ，然后单击 **[!UICONTROL 下一步]**。
 
 ![](../images/quality/subscribe-events/select-platform-events.png)
 
