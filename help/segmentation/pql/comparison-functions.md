@@ -4,17 +4,17 @@ solution: Experience Platform
 title: 比较函数
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 92f92f480f29f7d6440f4e90af3225f9a1fcc3d0
+source-git-commit: 84a5b992639c1cabfdeaec5262964c9873826592
 workflow-type: tm+mt
-source-wordcount: '295'
-ht-degree: 5%
+source-wordcount: '292'
+ht-degree: 10%
 
 ---
 
 
 # 比较函数
 
-比较函数用于比较不同的表达式和值、返回或相 `true` 应的 `false` 值。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
+比较函数用于比较不同的表达式和值、返回或相 `true` 应的 `false` 值。 有关其他PQL功能的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md)。
 
 ## 等于
 
