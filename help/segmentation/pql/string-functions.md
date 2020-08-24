@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 字符串函数
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 84a5b992639c1cabfdeaec5262964c9873826592
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '754'
 ht-degree: 6%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 6%
 
 # 字符串函数
 
-[!DNL Profile Query Language] (PQL)优惠函数可简化与字符串的交互。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
+[!DNL Profile Query Language] (PQL)优惠函数可简化与字符串的交互。 有关其他PQL功能的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md)。
 
 ## 喜欢
 
@@ -89,7 +89,7 @@ person.name.doesNotStartWith("Joe")
 
 ## 结束于
 
-该函 `endsWith` 数用于确定字符串是否以指定的子字符串结尾。
+函数 `endsWith` 用于确定字符串是否以指定的子字符串结尾。
 
 **Format**
 
@@ -129,7 +129,7 @@ person.emailAddress.endsWith(".com")
 
 **示例**
 
-以下PQL查询区域根据大小写确定人员的电子邮件地址是否以“.com”结尾。
+以下PQL查询区域根据大小写确定人员的电子邮件地址以“.com”结尾。
 
 ```sql
 person.emailAddress.doesNotEndWith(".com")
