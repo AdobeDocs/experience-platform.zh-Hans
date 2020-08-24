@@ -5,7 +5,7 @@ title: 支持退出
 topic: overview
 description: 'Experience Platform允许您的客户发送关于在实时客户用户档案内使用和存储其数据的选择退出请求]。 这些选择退出请求是加利福尼亚消费者隐私法(CCPA)的一部分，该法案为加州居民提供访问和删除个人数据以及了解其个人数据是出售还是披露（以及向谁）的权利。 '
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: 0fc356b67af4d34e35cd9329385ec284d9336953
 workflow-type: tm+mt
 source-wordcount: '1006'
 ht-degree: 0%
@@ -45,7 +45,7 @@ ht-degree: 0%
 
 以下各节更详细地介绍了每个混音的结构以及它们对模式所贡献的字段。
 
-### [!DNL Profile Privacy]
+### [!DNL Profile Privacy] {#profile-privacy}
 
 混 [!DNL Profile Privacy] 音功能允许您捕获来自客户的两种CCPA选择退出请求：
 
@@ -69,7 +69,7 @@ ht-degree: 0%
 
 要视图混音的完整结 [!DNL Profile Privacy] 构，请参阅 [XDM公共GitHub存储库](https://github.com/adobe/xdm/blob/master/schemas/context/profile-privacy.schema.json) ，或使用平台UI预览混音。
 
-### [!DNL Profile Preferences Details]
+### [!DNL Profile Preferences Details] {#profile-preferences-details}
 
 混 [!DNL Profile Preferences Details] 音提供了几个表示客户用户档案偏好的字段(如电子邮件格式、首选语言和时区)。 此混音中包含的一个字段`optInOut`OptInOut()允许为单个渠道设置退出值。
 
