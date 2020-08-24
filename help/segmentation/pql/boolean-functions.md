@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 布尔函数
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 84a5b992639c1cabfdeaec5262964c9873826592
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '220'
 ht-degree: 6%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 6%
 
 # 布尔函数
 
-布尔函数用于对(PQL)中的不同元素执行 [!DNL Profile Query Language] 布尔逻辑。  有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
+布尔函数用于对(PQL)中的不同元素执行 [!DNL Profile Query Language] 布尔逻辑。  有关其他PQL功能的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md)。
 
 ## 和
 
