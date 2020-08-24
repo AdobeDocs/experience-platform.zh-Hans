@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 分析数据连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 662ca170b7416dfb55cfb6b8cbaef640c1f83d31
+source-git-commit: a93b3a1980ca0f1d3a32257a923eb7ffc8896fd5
 workflow-type: tm+mt
 source-wordcount: '471'
 ht-degree: 3%
@@ -51,7 +51,9 @@ XDM是一个公开的文档规范，它为用于与上的服务通信的应用�
 | 数据湖的新数据 | &lt; 45 分钟 |
 | 回填数据(13个月的数据或100亿事件，以较低者为准) | &lt; 4 周 |
 
->[!NOTE] 延迟因客户配置、数据量和消费者应用程序而异。 例如，如果Analytics实施配置了管道 `A4T` 的延迟，则延迟将增加到5-10分钟。
+>[!NOTE]
+>
+>延迟因客户配置、数据量和消费者应用程序而异。 例如，如果Analytics实施配置了管道 `A4T` 的延迟，则延迟将增加到5-10分钟。
 
 ## 分析数据中的主标识符
 
