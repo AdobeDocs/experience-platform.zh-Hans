@@ -5,9 +5,9 @@ solution: Experience Platform
 title: 监视帐户和数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: c15f582eeaa895f03441b2f488686a9a48942f3d
+source-git-commit: a93b3a1980ca0f1d3a32257a923eb7ffc8896fd5
 workflow-type: tm+mt
-source-wordcount: '891'
+source-wordcount: '890'
 ht-degree: 0%
 
 ---
@@ -106,7 +106,7 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ![预览错误诊断](../../images/tutorials/monitor/preview-error-diagnostics.png)
 
-预览错误后，可从UICONTROL数据 **[!UICONTROL 流]** “运行概述”面 **[板中选择“下载”]** ，以访问完整错误诊断并下载文件清单。 有关详细信息，请 [参阅错误诊](../../../ingestion/batch-ingestion/partial.md#retrieve-errors) 断 [和下载元数](../../../ingestion/batch-ingestion/partial.md#download-metadata) 据的文档。
+预览错误后，可从数据流 **[!UICONTROL 运行]** 概述面板 **[!UICONTROL 中选择]** “下载”以访问完整错误诊断并下载文件清单。 有关详细信息，请 [参阅错误诊](../../../ingestion/batch-ingestion/partial.md#retrieve-errors) 断 [和下载元数](../../../ingestion/batch-ingestion/partial.md#download-metadata) 据的文档。
 
 ![预览错误诊断](../../images/tutorials/monitor/download.png)
 
