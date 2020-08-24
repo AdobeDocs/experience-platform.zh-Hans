@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 合并策略——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 0309a2d6da888a2a88af161977310f213c36a85d
+source-git-commit: 2c83e282a7674ed6f36c8608035ddf19d88f0433
 workflow-type: tm+mt
-source-wordcount: '2381'
+source-wordcount: '2392'
 ht-degree: 1%
 
 ---
@@ -99,7 +99,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 其 `{IDENTITY_GRAPH_TYPE}` 中是下列项之一：
 
 * **“无”:** 不进行身份拼接。
-* **“pdg”:** 根据您的个人身份图执行身份拼接。
+* **&quot;pdg&quot;:** 根据您的个人身份图执行身份拼接。
 
 **示例`identityGraph`**
 
@@ -730,6 +730,8 @@ curl -X DELETE \
 
 ## 附录
 
+本节提供与使用合并策略相关的补充信息。
+
 ### 使用自定义时间戳 {#custom-timestamps}
 
 当用户档案记录被摄取到Experience Platform中时，在摄取时获得系统时间戳并添加到记录中。 当选 `timestampOrdered` 择合并策 `attributeMerge` 略的类型时，用户档案会基于系统时间戳进行合并。 换言之，合并是根据记录被引入平台的时间戳完成的。
@@ -748,7 +750,7 @@ curl -X DELETE \
 
 #### 外部源系统审计详细信息混合详细信息 {#mixin-details}
 
-以下示例显示了“外部源系统审计详细信息混合”中正确填充的字段。 在GitHub上的公共体验数据模型(XDM) [回购协议中也可以查看完整](https://github.com/adobe/xdm/blob/master/schemas/common/external-source-system-audit-details.schema.json) 的混合JSON。
+以下示例显示了“外部源系统审计详细信息混合”中正确填充的字段。 在GitHub上的公共体验数据模型(XDM) [回购协议中也可以查看完整的混合](https://github.com/adobe/xdm/blob/master/schemas/common/external-source-system-audit-details.schema.json) JSON。
 
 ```json
 {
