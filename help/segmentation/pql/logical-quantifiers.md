@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 逻辑量词
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 84a5b992639c1cabfdeaec5262964c9873826592
 workflow-type: tm+mt
-source-wordcount: '188'
+source-wordcount: '185'
 ht-degree: 5%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 # 逻辑量词函数
 
-逻辑量化器可用于在(PQL)中用数组 [!DNL Profile Query Language] 声明条件。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
+逻辑量化器可用于在(PQL)中用数组 [!DNL Profile Query Language] 声明条件。 有关其他PQL功能的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md)。
 
 ## 存在
 
