@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 算术函数
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 84a5b992639c1cabfdeaec5262964c9873826592
 workflow-type: tm+mt
-source-wordcount: '230'
+source-wordcount: '227'
 ht-degree: 5%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 # 算术函数
 
-算术函数用于对(PQL)中的值执 [!DNL Profile Query Language] 行基本计算。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
+算术函数用于对(PQL)中的值执 [!DNL Profile Query Language] 行基本计算。 有关其他PQL功能的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md)。
 
 ## Add
 
@@ -46,7 +46,7 @@ product1.price + product2.price
 
 **示例**
 
-以下PQL查询会查找库存产品和产品价格，以查找产品的总价值。
+以下PQL查询会查找库存的产品和产品的价格，以查找产品的总价值。
 
 ```sql
 product.inventory * product.price
