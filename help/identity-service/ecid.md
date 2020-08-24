@@ -5,7 +5,7 @@ title: Adobe Experience PlatformECID
 topic: overview
 description: Experience Cloud标识符(ECID)是客户端模块，提供对身份管理的访问，提供三个主要功能。
 translation-type: tm+mt
-source-git-commit: 4c3a947051c11860ab4f0f53b48d8f4bda8dc195
+source-git-commit: 45f2423741ad993765408a9f60e2df6238671b9f
 workflow-type: tm+mt
 source-wordcount: '181'
 ht-degree: 8%
@@ -15,7 +15,7 @@ ht-degree: 8%
 
 # ECID概述
 
-( [!DNL Experience Cloud Identifier] ECID)是客户端模块，提供对身份管理的访问，提供三个主要功能：
+( [!DNL Experience Cloud Identity Service] ECID)是客户端模块，提供对身份管理的访问，提供三个主要功能：
 
 - 识别每个访客
 - 提供与合作伙伴的同步
