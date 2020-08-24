@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数组、列表和设置函数
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 0fc356b67af4d34e35cd9329385ec284d9336953
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '734'
 ht-degree: 5%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 # 数组、列表和设置函数
 
-[!DNL Profile Query Language] (PQL)优惠函数可简化与数组、列表和字符串的交互。 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
+[!DNL Profile Query Language] (PQL)优惠函数可简化与数组、列表和字符串的交互。 有关其他PQL功能的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md)。
 
 ## 输入
 
@@ -74,7 +74,7 @@ person.birthMonth notIn [3, 6, 9]
 person.favoriteColors.intersects(["red", "blue", "green"])
 ```
 
-## 交叉
+## 交集
 
 该函 `intersection` 数用于确定两个阵列或列表的公共成员。
 
@@ -228,7 +228,7 @@ array.map(expression)
 numbers.map(square)
 ```
 
-## 阵列 `n` 中的第一个
+## 阵列 `n` 中的第一个 {#first-n}
 
 该函 `topN` 数用于返回数组中 `N` 的第一个项，当它基于给定的数字表达式按升序排序时。
 
@@ -288,7 +288,7 @@ orders.bottomN(price, 5)
 
 **示例**
 
-以下PQL查询返回价格最高的前五大订单中的第一个。 有关该函数的 `topN` 更多信息，请参 [阅 `n` 数组中的第一节](#first-n-in-array) 。
+以下PQL查询返回价格最高的前五大订单中的第一个。 有关该函数的 `topN` 更多信息，请参 [阅 `n` 数组中的第一节](#first-n) 。
 
 ```sql
 orders.topN(price, 5).head()
