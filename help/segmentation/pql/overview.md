@@ -5,9 +5,9 @@ title: 用户档案查询语言(PQL)概述
 topic: developer guide
 description: 本指南提供PQL的一般概述，其中包括格式准则和PQL表达式示例。
 translation-type: tm+mt
-source-git-commit: 691af873e0753217b9e7566042c508d9d9b8d8d5
+source-git-commit: 5a10a31f4be5173af8b459b9ab8a53096348be1d
 workflow-type: tm+mt
-source-wordcount: '686'
+source-wordcount: '705'
 ht-degree: 2%
 
 ---
@@ -81,6 +81,7 @@ PQL支持以下文字类型：
 | 阵列、列表和设置 | 用于与阵列、列表和集进行交互。 有关这些函数的更多信息，请参 [阅数组、列表和设置函数文档](./array-functions.md)。 |
 | 地图 | 用于与地图交互。 有关这些函数的更多信息，请参 [阅地图函数文档](./map-functions.md)。 |
 | 字符串 | 用于与字符串交互。 有关这些函数的更多信息，请参 [阅字符串函数文档](./string-functions.md)。 |
+| 对象 | 用于与对象交互。 有关这些函数的更多信息可在对象函 [数文档中找到](./object-functions.md)。 |
 | 算术 | 用于对PQL元素执行基本算术。 有关这些函数的更多信息可在算术函数 [文档中找到](./arithmetic-functions.md) |
 | 聚合 | 用于将数组结果合并为单个结果。 有关聚合函数的更多信息，请参阅聚 [合函数文档](./aggregation-functions.md)。 |
 | 日期和时间 | 与date、time和datetime对象结合使用。 有关这些函数的详细信息，请参 [阅日期／时间函数文档](./datetime-functions.md)。 |
