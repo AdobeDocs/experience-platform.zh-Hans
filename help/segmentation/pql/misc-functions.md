@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 杂项函数
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 6a0a9b020b0dc89a829c557bdf29b66508a10333
+source-git-commit: 84a5b992639c1cabfdeaec5262964c9873826592
 workflow-type: tm+mt
-source-wordcount: '105'
+source-wordcount: '102'
 ht-degree: 3%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 3%
 
 # 杂项函数
 
-The following function is a miscellaneous function for [!DNL Profile Query Language] (PQL). 有关其他PQL函数的更多信息，请参阅 [用户档案查询语概述](./overview.md)。
+以下函数是(PQL)的一 [!DNL Profile Query Language] 个杂项函数。 有关其他PQL功能的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md)。
 
-## Let
+## 让
 
 该 `let` 函数允许将表达式存储为变量，以便以后在查询中使用。
 
@@ -28,7 +28,7 @@ let {VARIABLE} = {EXPRESSION}
 
 **示例**
 
-The following PQL query gets all sums of product totals with the transaction in USD where the sum is greater than $100 and less than $1000.
+以下PQL查询以美元表示，以下PQL客户获取交易的所有产品总额，其中总额大于100美元，小于1000美元。
 
 ```sql
 let S = (sum X.commerce.order.priceTotal over X from xEvent where X.commerce.order.currencyCode = "USD") in (S > 100 and S < 1000)
