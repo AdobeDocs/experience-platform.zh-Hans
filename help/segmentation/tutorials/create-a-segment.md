@@ -5,9 +5,9 @@ title: 创建区段
 topic: tutorial
 description: 本文档提供了一个教程，用于使用Adobe Experience Platform分段服务API开发、测试、预览和保存段定义。
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: a93b3a1980ca0f1d3a32257a923eb7ffc8896fd5
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '894'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # 创建区段
 
-本文档提供了一个教程，用于使用DNLAdobe Experience Platform分段服务API开发、测 [试、预览和保存段定义](../api/getting-started.md)。
+本文档提供了使用开发、测试、预览和保存区段定义的教程 [!DNL Adobe Experience Platform Segmentation Service API](../api/getting-started.md)。
 
 有关如何使用用户界面构建区段的信息，请参阅“区段 [构建器指南”](../ui/overview.md)。
 
