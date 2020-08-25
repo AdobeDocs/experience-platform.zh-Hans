@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: 边缘预测——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '1900'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 边缘投影配置和目标端点
 
-为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 本指南提供有关使用API处理 [!DNL Real-time Customer Profile] 边缘投影的详细说明，包括目标和配置。
+为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘，实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 本指南提供有关使用API处理 [!DNL Real-time Customer Profile] 边缘投影的详细说明，包括目标和配置。
 
 ## 入门指南
 
@@ -145,9 +145,9 @@ curl -X POST \
 | 属性 | 描述 |
 |---|---|
 | `type` **（必需）** | 要创建的目标类型。 唯一接受的值“EDGE”会创建边缘目标。 |
-| `dataCenters` **（必需）** | 一个字符串数组，它列表要布线投影的边缘。 可能包含以下一个或多个值： “OR1”-美国西部，“VA5”-美国东部，“NLD1”- EMEA。 |
-| `ttl` **（必需）** | 指定投影到期。 接受的值范围： 600至604800。 默认值： 3600。 |
-| `replicationPolicy` **（必需）** | 定义从集线器到边缘的数据复制行为。  支持的值： 主动、被动。 默认值： 反应。 |
+| `dataCenters` **（必需）** | 一个字符串数组，它列表要布线投影的边缘。 可能包含以下一个或多个值：“OR1”-美国西部，“VA5”-美国东部，“NLD1”- EMEA。 |
+| `ttl` **（必需）** | 指定投影到期。 接受的值范围：600至604800。 默认值：3600。 |
+| `replicationPolicy` **（必需）** | 定义从集线器到边缘的数据复制行为。  支持的值：主动、被动。 默认值：反应。 |
 
 **响应**
 
@@ -231,7 +231,7 @@ curl -X GET \
 
 **API格式**
 
-```
+```http
 PUT /config/destinations/{DESTINATION_ID}
 ```
 
@@ -299,7 +299,7 @@ curl -X PUT \
 
 **API格式**
 
-```
+```http
 DELETE /config/destinations/{DESTINATION_ID}
 ```
 
