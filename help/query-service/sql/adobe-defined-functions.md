@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe定义函数
 topic: functions
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '2156'
 ht-degree: 3%
@@ -74,7 +74,7 @@ LIMIT 10
 
 #### 结果
 
-```
+```console
                 id                |       timestamp       |      session       
 ----------------------------------+-----------------------+--------------------
  100080F22A45CB40-3A2B7A8E11096B6 | 2018-01-18 06:55:53.0 | (0,1,true,1)
@@ -136,7 +136,7 @@ LIMIT 10
 
 #### 结果
 
-```
+```console
                 id                 |       timestamp       | trackingCode |                   first_touch                    
 -----------------------------------+-----------------------+--------------+--------------------------------------------------
  5D9D1DFBCEEBADF6-4097750903CE64DB | 2018-12-18 07:06:12.0 | em:946426    | (Paid First,em:946426,2018-12-18 07:06:12.0,1.0)
@@ -156,7 +156,7 @@ LIMIT 10
 
 返回目标数据集中单个渠道的上次触摸归因值和详细 [!DNL ExperienceEvent] 信息。 查询返回一个 `struct` 对象，该对象具有为所选渠道返回的每行的上次触摸值、时间戳和属性。
 
-如果您希望在一系列客户操作中看到最终交互，则此查询很有用。 在以下示例中，返回对象中的跟踪代码是每个记录中的最后一次 [!DNL ExperienceEvent] 交互。 每个代码都由客户行`1.0`动的100%()责任来承担，因为它是上次交互。
+如果您希望在一系列客户操作中看到最终交互，此查询非常有用。 在以下示例中，返回对象中的跟踪代码是每个记录中的最后一次 [!DNL ExperienceEvent] 交互。 每个代码都由客户行`1.0`动的100%()责任来承担，因为它是上次交互。
 
 ### 规范
 
@@ -191,7 +191,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 #### 结果
 
-```
+```console
                 id                 |       timestamp       | trackingcode |                   last_touch                   
 -----------------------------------+-----------------------+--------------+-------------------------------------------------
  5D9D1DFBCEEBADF6-4097750903CE64DB | 2017-12-18 07:06:12.0 | em:946426    | (Paid Last,em:946426,2017-12-18 07:06:12.0,1.0)
@@ -247,7 +247,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 #### 结果
 
-```
+```console
                 id                 |       timestamp       | trackingCode |                   first_touch                    
 -----------------------------------+-----------------------+--------------+--------------------------------------------------
  7J82HGSSBNELKLD4-4107750913DE65DA | 2019-07-15 06:04:10.0 | em:1024841   | (Paid First,em:1024841,2019-07-15 06:04:10.0,1.0)
@@ -300,7 +300,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 #### 结果
 
-```
+```console
                 id                 |       timestamp       | trackingCode |                   first_touch                    
 -----------------------------------+-----------------------+--------------+--------------------------------------------------
  7J82HGSSBNELKLD4-4107750913DE65DA | 2019-07-15 06:04:10.0 | em:1024841   | (Paid First,em:1024841,2019-07-15 06:04:10.0,1.0)
@@ -354,7 +354,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 #### 结果
 
-```
+```console
                 id                 |       timestamp       | trackingcode |                   last_touch                   
 -----------------------------------+-----------------------+--------------+-------------------------------------------------
  7J82HGSSBNELKLD4-4107750913DE65DA | 2019-07-15 06:04:10.0 | em:1024841   | (Paid Last,em:550984,2019-07-15 06:08:30.0,1.0)
@@ -407,7 +407,7 @@ ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 
 #### 结果
 
-```
+```console
                 id                 |       timestamp       | trackingcode |                   last_touch                   
 -----------------------------------+-----------------------+--------------+-------------------------------------------------
  7J82HGSSBNELKLD4-4107750913DE65DA | 2019-07-15 06:04:10.0 | em:1024841   | (Paid Last,em:483339,2019-07-21 18:56:56.0,1.0)
@@ -461,7 +461,7 @@ ORDER BY endUserIds._experience.mcid.id, _experience.analytics.session.num, time
 
 #### 结果
 
-```
+```console
                 id                 |       timestamp       |                 name                |                    previous_page                    
 -----------------------------------+-----------------------+-------------------------------------+-----------------------------------------------------
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:15:28.0 |                                     | 
@@ -512,7 +512,7 @@ LIMIT 10
 
 #### 结果
 
-```
+```console
                 id                 |       timestamp       |                name                 |             previous_page             
 -----------------------------------+-----------------------+-------------------------------------+---------------------------------------
  457C3510571E5930-69AA721C4CBF9339 | 2017-11-08 17:15:28.0 |                                     | (Home)
@@ -544,9 +544,9 @@ LIMIT 10
 | --- | --- |
 | `timestamp` | 在所有事件上填充的数据集中找到时间戳字段。 |
 | `eventDefintion` | 表达式，以限定前一个事件。 |
-| `timeUnit` | 输出单位： 天、小时、分钟和秒。 默认为秒。 |
+| `timeUnit` | 输出单位：天、小时、分钟和秒。 默认为秒。 |
 
-输出： 返回一个数字，表示自查看上一个匹配事件以来的时间单位；如果未找到匹配事件，则返回为null。
+输出：返回一个数字，表示自查看上一个匹配事件以来的时间单位；如果未找到匹配事件，则返回为null。
 
 #### 示例查询
 
@@ -574,7 +574,7 @@ LIMIT 10
 
 #### 结果
 
-```
+```console
              page_name             | average_minutes_since_registration 
 -----------------------------------+------------------------------------
                                    |                                   
@@ -602,13 +602,13 @@ LIMIT 10
 | --- | --- |
 | `timestamp` | 在所有事件上填充的数据集中找到时间戳字段。 |
 | `eventDefintion` | 表达式以确定下一个事件。 |
-| `timeUnit` | 输出单位： 天、小时、分钟和秒。 默认为秒。 |
+| `timeUnit` | 输出单位：天、小时、分钟和秒。 默认为秒。 |
 
-输出： 返回一个负数，表示下一个匹配事件后的时间单位；如果找不到匹配事件，则返回null。
+输出：返回一个负数，表示下一个匹配事件后的时间单位；如果找不到匹配事件，则返回null。
 
 #### 示例查询
 
-```
+```sql
 SELECT 
   page_name,
   SUM (time_between_next_match) / COUNT(page_name) as average_minutes_until_order_confirmation
@@ -632,7 +632,7 @@ LIMIT 10
 
 #### 结果
 
-```
+```console
              page_name             | average_minutes_until_order_confirmation 
 -----------------------------------+------------------------------------------
  Shopping Cart|Order Confirmation  |                                      0.0
