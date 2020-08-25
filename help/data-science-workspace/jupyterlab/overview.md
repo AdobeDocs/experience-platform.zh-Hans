@@ -5,7 +5,7 @@ title: JupyterLab用户指南
 topic: Overview
 description: JupyterLab是Project Jupyter的基于Web的用户界面，与Adobe Experience Platform紧密集成。 它为数据科学家提供一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起使用。
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '3684'
 ht-degree: 11%
@@ -40,12 +40,12 @@ Experience Platform的JupyterLab集成包含架构更改、设计注意事项、
 
 ## 与其他服务集 [!DNL Platform] 成 {#service-integration}
 
-标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 集成到 [!DNL JupyterLab] 作 [!DNL Platform] 为嵌入式IDE，可以与其他服务交互， [!DNL Platform] 使您能够充分利用 [!DNL Platform] 其潜能。 以下服 [!DNL Platform] 务可在以下网站 [!DNL JupyterLab]提供：
+标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 集成到 [!DNL JupyterLab] 作为 [!DNL Platform] 嵌入式IDE，可以与其他服务交互， [!DNL Platform] 使您能够充分利用 [!DNL Platform] 其潜能。 以下服 [!DNL Platform] 务可在以下网站 [!DNL JupyterLab]提供：
 
 * **[!DNL Catalog Service]:** 使用读写功能访问和浏览数据集。
 * **[!DNL Query Service]:** 使用SQL访问和浏览数据集，在处理大量数据时提供更低的数据访问开销。
 * **[!DNL Sensei ML Framework]:** 模型开发，能够对数据进行培训和评分，并且只需单击一下即可创建菜谱。
-* **[!DNL Experience Data Model (XDM)]:** 标准化和互操作性是Adobe Experience Platform背后的关键概念。 [体验Adobe模型(XDM](https://www.adobe.com/go/xdm-home-en))由驱动，旨在实现客户体验数据标准化并定义客户体验管理模式。
+* **[!DNL Experience Data Model (XDM)]:** 标准化和互操作性是Adobe Experience Platform背后的关键概念。 [Adobe驱动的体验数据模型](https://www.adobe.com/go/xdm-home-en)(XDM)旨在实现客户体验数据标准化并定义客户体验管理模式。
 
 >[!NOTE]
 >
@@ -121,7 +121,7 @@ Experience Platform的JupyterLab集成包含架构更改、设计注意事项、
 
 * **执行单元格：** 单击要执行的单元格的正文，然后单击 **笔记本菜** 单中&#x200B;****&#x200B;的播放图标()。 当内核处&#x200B;**理执行时**，单元格的执行计数器中会显示星号(\*)，并在完成时替换为整数。
 
-* **删除单元格：** 单击要删除的单元格的正文，然后单击剪 **刀图** 标。
+* **删除单元格：** 单击要删除的单元格的正文，然后单击剪 **刀** 图标。
 
 ### 内核 {#kernels}
 
@@ -137,7 +137,7 @@ Experience Platform的JupyterLab集成包含架构更改、设计注意事项、
 
 ### 内核会话 {#kernel-sessions}
 
-每个活动笔记本或活动 [!DNL JupyterLab] 都使用内核会话。 所有活动会话都可以通过从左侧提要栏 **扩展“运行终端和内核** ”选项卡找到。 通过观察笔记本界面的右上角，可以识别笔记本的内核类型和状态。 在下图中，笔记本的关联内核为 **[!DNL Python]3** ，其当前状态由右侧的灰色圆圈表示。 空心圆表示空闲内核，实心圆表示忙碌内核。
+每个活动笔记本或活动 [!DNL JupyterLab] 都使用内核会话。 通过从左侧提要栏扩展“运行终 **端和内核”选项卡** ，可以找到所有活动会话。 通过观察笔记本界面的右上角，可以识别笔记本的内核类型和状态。 在下图中，笔记本的关联内核为 **[!DNL Python]3** ，其当前状态由右侧的灰色圆圈表示。 空心圆表示空闲内核，实心圆表示忙碌内核。
 
 ![](../images/jupyterlab/user-guide/kernel_and_state_1.png)
 
@@ -606,6 +606,7 @@ timedf.show()
 >
 >
 >在Scala中，您可 `sys.env()` 以使用从中声明和返回值 `option`。 这样，如果您知道变量将仅用于一次，就无需定义变量。 以下示例从上 `val userToken` 述示例中开始，并将其在行中声明 `option` 为替代内容：
+>
 > 
 ```scala
 > .option("user-token", sys.env("PYDASDK_IMS_USER_TOKEN"))
@@ -680,7 +681,7 @@ timedf.show()
 | r-fnn | 1.1.3 |
 | r-lubridate | 1.7.4 |
 | r-randomforest | 4.6_14 |
-| 反诗 | 1.2.1 |
+| 逆反 | 1.2.1 |
 | r树 | 1.0_39 |
 | 皮蒙戈 | 3.8.0 |
 | 派箭 | 0.14.1 |
