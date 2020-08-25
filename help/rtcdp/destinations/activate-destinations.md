@@ -5,7 +5,7 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 54df4778a025811504801306120bda78e04281c1
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '1552'
 ht-degree: 0%
@@ -55,7 +55,7 @@ ht-degree: 0%
 
 适用于：社交目的地和Google客户匹配广告目的地
 
-对于 *社交目标*，在标识 **[!UICONTROL 映射步骤中]** ，您可以选择要映射为目标中的目标标识的源属性。 此步骤为可选或必选，具体取决于您在模式中使用的主要标识。 <br> 
+对于 *社交目标*，在“标识 **[!UICONTROL 映射”步骤中]** ，您可以选择要映射为目标中的目标标识的源属性。 此步骤为可选或必选，具体取决于您在模式中使用的主要标识。 <br> 
 
 *电子邮件地址作为主要标识*:如果您在模式中使用电子邮件地址作为主要标识，则可以跳过标识映射步骤，如下所示：
 
@@ -158,7 +158,7 @@ ht-degree: 0%
 
 >
 > 
-请考虑以下屏幕截图。 例如，如果字段具有与目 `person.name.firstName` 标的营销用例冲突的特定数据使用标签，则您将在审核步骤（步骤9）中显示数据使用策略违规。 有关详细信息，请 [参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations)。
+请考虑以下屏幕截图。 例如，如果字段具有与目 `person.name.firstName` 标的营销用例冲突的特定数据使用标签，则在审核步骤（第9步）中将显示数据使用策略违规。 有关详细信息，请 [参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations)。
 
 ![目标属性](assets/select-attributes-step.png)
 
@@ -201,7 +201,7 @@ ht-degree: 0%
 
 使用默认文件格式，您在连续三天接收的文件可能如下所示：
 
-```
+```console
 Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv
 Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200409052200.csv
 Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200410061130.csv
