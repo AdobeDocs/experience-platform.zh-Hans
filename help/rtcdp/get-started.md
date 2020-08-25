@@ -5,7 +5,7 @@ seo-title: Adobe实时客户数据平台入门
 description: Adobe实时客户数据平台的示例方案
 seo-description: Adobe实时客户数据平台的示例方案
 translation-type: tm+mt
-source-git-commit: 54df4778a025811504801306120bda78e04281c1
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '2326'
 ht-degree: 0%
@@ -216,7 +216,7 @@ Luma数据科学团队围绕购买倾向创建了模型。 一个模型标识了
 
 修改或创建表示购物车放弃者的区段，这些放弃者似乎正在购买礼品：
 
-```
+```sql
 Profile: Category != Preferred Category 
 AND 
 Product Size != Preferred Size 
