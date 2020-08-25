@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform分批摄取概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: ac75b1858b6a731915bbc698107f0be6043267d8
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '1446'
 ht-degree: 1%
@@ -77,7 +77,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->本节介绍如何使用UI启用批以进行部分批摄取。 如果已使用API启用批处理以进行部分批处理获取，则可跳到下一节。
+>本节介绍如何使用UI启用批以进行部分批摄取。 如果已使用API启用批处理以进行部分批摄取，则可跳到下一节。
 
 要通过UI启用批处理以进行部分 [!DNL Platform] 摄取，您可以通过源连接创建新批处理，在现有数据集中创建新批处理，或通过“将CSV映射到XDM流[!UICONTROL ”创建新批]。
 
@@ -341,6 +341,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID}
 >[!NOTE]
 >
 >如果错误诊断不可用，将显示以下错误消息：
+>
 > 
 ```json
 > {
