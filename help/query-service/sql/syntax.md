@@ -4,7 +4,7 @@ solution: Experience Platform
 title: SQL语法
 topic: syntax
 translation-type: tm+mt
-source-git-commit: a10508770a862621403bad94c14db4529051020c
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '1973'
 ht-degree: 1%
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 以下语法定义 `SELECT` 支持的查询 [!DNL Query Service]:
 
-```
+```sql
 [ WITH with_query [, ...] ]
 SELECT [ ALL | DISTINCT [( expression [, ...] ) ] ]
     [ * | expression [ [ AS ] output_name ] [, ...] ]
@@ -37,7 +37,7 @@ SELECT [ ALL | DISTINCT [( expression [, ...] ) ] ]
 
 其中 `from_item` 可以是：
 
-```
+```sql
 table_name [ * ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
     [ LATERAL ] ( select ) [ AS ] alias [ ( column_alias [, ...] ) ]
     with_query_name [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
@@ -46,7 +46,7 @@ table_name [ * ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
 
 并 `grouping_element` 且可以是：
 
-```
+```sql
 ( )
     expression
     ( expression [, ...] )
@@ -57,7 +57,7 @@ table_name [ * ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
 
 是 `with_query` :
 
-```
+```sql
  with_query_name [ ( column_name [, ...] ) ] AS ( select | values )
  
 TABLE [ ONLY ] table_name [ * ]
@@ -67,7 +67,7 @@ TABLE [ ONLY ] table_name [ * ]
 
 可以使用关键字ILIKE代替LIKE对SELECT查询不区分大小写的WHERE子句进行匹配。
 
-```
+```sql
     [ WHERE condition { LIKE | ILIKE | NOT LIKE | NOT ILIKE } pattern ]
 ```
 
@@ -80,7 +80,7 @@ LIKE和ILIKE子句的逻辑如下：
 
 #### 示例
 
-```
+```sql
 SELECT * FROM Customers
 WHERE CustomerName ILIKE 'a%';
 ```
@@ -91,7 +91,7 @@ WHERE CustomerName ILIKE 'a%';
 
 使用 `SELECT` 联接的查询具有以下语法：
 
-```
+```sql
 SELECT statement
 FROM statement
 [JOIN | INNER JOIN | LEFT JOIN | LEFT OUTER JOIN | RIGHT JOIN | RIGHT OUTER JOIN | FULL JOIN | FULL OUTER JOIN]
@@ -103,7 +103,7 @@ ON join condition
 
 支持 `UNION`以下 `INTERSECT`、和子 `EXCEPT` 句来组合或排除两个或多个表中类似的行：
 
-```
+```sql
 SELECT statement 1
 [UNION | UNION ALL | UNION DISTINCT | INTERSECT | EXCEPT | MINUS]
 SELECT statement 2
@@ -113,7 +113,7 @@ SELECT statement 2
 
 以下语法定义 `CREATE TABLE AS SELECT` 支持的(CTAS)查询 [!DNL Query Service]:
 
-```
+```sql
 CREATE TABLE table_name [ WITH (schema='target_schema_title') ] AS (select_query)
 ```
 
@@ -124,7 +124,7 @@ CREATE TABLE table_name [ WITH (schema='target_schema_title') ] AS (select_query
 
 ### 示例
 
-```
+```sql
 CREATE TABLE Chairs AS (SELECT color, count(*) AS no_of_chairs FROM Inventory i WHERE i.type=="chair" GROUP BY i.color)
 CREATE TABLE Chairs WITH (schema='target schema title') AS (SELECT color, count(*) AS no_of_chairs FROM Inventory i WHERE i.type=="chair" GROUP BY i.color)
 ```
@@ -138,7 +138,7 @@ CREATE TABLE Chairs WITH (schema='target schema title') AS (SELECT color, count(
 
 以下语法定义 `INSERT INTO` 支持的查询 [!DNL Query Service]:
 
-```
+```sql
 INSERT INTO table_name select_query
 ```
 
@@ -146,7 +146,7 @@ INSERT INTO table_name select_query
 
 ### 示例
 
-```
+```sql
 INSERT INTO Customers SELECT SupplierName, City, Country FROM OnlineCustomers;
 ```
 
@@ -159,7 +159,7 @@ INSERT INTO Customers SELECT SupplierName, City, Country FROM OnlineCustomers;
 
 如果表不是EXTERNAL表，则从文件系统中删除与表关联的目录。 如果要删除的表不存在，则会发生异常。
 
-```
+```sql
 DROP [TEMP] TABLE [IF EXISTS] [db_name.]table_name
 ```
 
@@ -172,7 +172,7 @@ DROP [TEMP] TABLE [IF EXISTS] [db_name.]table_name
 
 以下语法定义 `CREATE VIEW` 支持的查询 [!DNL Query Service]:
 
-```
+```sql
 CREATE [ OR REPLACE ] VIEW view_name AS select_query
 ```
 
@@ -180,7 +180,7 @@ CREATE [ OR REPLACE ] VIEW view_name AS select_query
 
 示例：
 
-```
+```sql
 CREATE VIEW V1 AS SELECT color, type FROM Inventory
 CREATE OR REPLACE VIEW V1 AS SELECT model, version FROM Inventory
 ```
@@ -189,7 +189,7 @@ CREATE OR REPLACE VIEW V1 AS SELECT model, version FROM Inventory
 
 以下语法定义 `DROP VIEW` 支持的查询 [!DNL Query Service]:
 
-```
+```sql
 DROP VIEW [IF EXISTS] view_name
 ```
 
@@ -197,7 +197,7 @@ DROP VIEW [IF EXISTS] view_name
 
 示例：
 
-```
+```sql
 DROP VIEW v1
 DROP VIEW IF EXISTS v1
 ```
@@ -208,7 +208,7 @@ DROP VIEW IF EXISTS v1
 
 设置属性、返回现有属性的值或列表所有现有属性。 如果为现有属性键提供了值，则旧值将被覆盖。
 
-```
+```sql
 SET property_key [ To | =] property_value
 ```
 
@@ -220,7 +220,7 @@ SET property_key [ To | =] property_value
 
 将解析此命令并将完成的命令发送回客户端。 这与命令相 `START TRANSACTION` 同。
 
-```
+```sql
 BEGIN [ TRANSACTION ]
 ```
 
@@ -232,7 +232,7 @@ BEGIN [ TRANSACTION ]
 
 `CLOSE` 释放与打开的游标关联的资源。 关闭光标后，不允许对其执行后续操作。 当不再需要光标时，应关闭它。
 
-```
+```sql
 CLOSE { name }
 ```
 
@@ -244,7 +244,7 @@ CLOSE { name }
 
 不执行任何操 [!DNL Query Service] 作作为对commit事务语句的响应。
 
-```
+```sql
 COMMIT [ WORK | TRANSACTION ]
 ```
 
@@ -257,7 +257,7 @@ COMMIT [ WORK | TRANSACTION ]
 
 使用 `DEALLOCATE` 取消分配以前准备的SQL语句。 如果不显式取消分配准备语句，则会在会话结束时取消分配该语句。
 
-```
+```sql
 DEALLOCATE [ PREPARE ] { name | ALL }
 ```
 
@@ -271,7 +271,7 @@ DEALLOCATE [ PREPARE ] { name | ALL }
 
 `DECLARE` 允许用户创建游标，该游标可用于在较大查询中一次检索少量行。 创建游标后，使用从它获取行 `FETCH`。
 
-```
+```sql
 DECLARE name CURSOR [ WITH  HOLD ] FOR query
 ```
 
@@ -287,7 +287,7 @@ DECLARE name CURSOR [ WITH  HOLD ] FOR query
 
 如果创 `PREPARE` 建语句的语句指定了一些参数，则必须向该语句传递一组兼容的 `EXECUTE` 参数，否则会引发错误。 请注意，预准备语句（与函数不同）不会根据其参数的类型或数量而过载。 准备语句的名称在数据库会话中必须是唯一的。
 
-```
+```sql
 EXECUTE name [ ( parameter [, ...] ) ]
 ```
 
@@ -304,7 +304,7 @@ EXECUTE name [ ( parameter [, ...] ) ]
 
 该选 `ANALYZE` 项会导致执行语句，而不仅是计划语句。 然后，将实际运行时间统计信息添加到显示中，包括每个计划节点内花费的总已用时间（以毫秒为单位）以及它返回的总行数。 这有助于了解规划者的估计是否接近现实。
 
-```
+```sql
 EXPLAIN [ ( option [, ...] ) ] statement
 EXPLAIN [ ANALYZE ] statement
 
@@ -328,7 +328,7 @@ where option can be one of:
 
 要在表上显示简单查询的计划(单列 `integer` 和10000行):
 
-```
+```sql
 EXPLAIN SELECT * FROM foo;
 
                        QUERY PLAN
@@ -343,7 +343,7 @@ EXPLAIN SELECT * FROM foo;
 
 光标具有关联的位置，该位置由使用 `FETCH`。 光标位置可以位于查询结果的第一行之前、结果的任何特定行上或结果的最后一行之后。 创建时，光标将放在第一行之前。 读取某些行后，光标将位于最近检索到的行上。 如 `FETCH` 果在可用行的末尾处运行，则光标将保留在最后一行之后。 如果没有这样的行，则返回空结果，并根据需要将光标放在第一行之前或最后一行之后。
 
-```
+```sql
 FETCH num_of_rows [ IN | FROM ] cursor_name
 ```
 
@@ -362,7 +362,7 @@ FETCH num_of_rows [ IN | FROM ] cursor_name
 
 当使用单个会话执行大量类似语句时，准备语句可能具有最大的性能优势。 如果语句在规划或重写方面很复杂，例如，查询涉及多个表的连接或需要应用多个规则，则性能差异尤其显着。 如果语句的规划和重写相对简单，但执行起来相对昂贵，则预准备语句的性能优势就不那么明显。
 
-```
+```sql
 PREPARE name [ ( data_type [, ...] ) ] AS SELECT
 ```
 
@@ -376,7 +376,7 @@ PREPARE name [ ( data_type [, ...] ) ] AS SELECT
 
 `ROLLBACK` 回退当前事务，并导致丢弃该事务所做的所有更新。
 
-```
+```sql
 ROLLBACK [ WORK ]
 ```
 
@@ -388,7 +388,7 @@ ROLLBACK [ WORK ]
 
 `SELECT INTO` 创建新表，并用查询计算的数据填充它。 数据不会像正常情况一样返回到客户端 `SELECT`。 新表的列具有与输出列关联的名称和数据类型 `SELECT`。
 
-```
+```sql
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     * | expression [ [ AS ] output_name ] [, ...]
@@ -416,7 +416,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 
 新建一个仅 `films_recent` 包含表中最近条目的表 `films`:
 
-```
+```sql
 SELECT * INTO films_recent FROM films WHERE date_prod >= '2002-01-01';
 ```
 
@@ -424,7 +424,7 @@ SELECT * INTO films_recent FROM films WHERE date_prod >= '2002-01-01';
 
 `SHOW` 显示运行时参数的当前设置。 这些变量可以使用语 `SET` 句进行设置，方法是编辑postgresql.conf配置文件，通过环境变量 `PGOPTIONS` （使用libpq或基于libpq的应用程序时），或者通过命令行标记启动postgres服务器。
 
-```
+```sql
 SHOW name
 ```
 
@@ -442,7 +442,7 @@ SHOW name
 
 显示参数的当前设置 `DateStyle`
 
-```
+```sql
 SHOW DateStyle;
  DateStyle
 -----------
@@ -454,7 +454,7 @@ SHOW DateStyle;
 
 将解析此命令并将完成的命令发送回客户端。 这与命令相 `BEGIN` 同。
 
-```
+```sql
 START TRANSACTION [ transaction_mode [, ...] ]
 
 where transaction_mode is one of:
@@ -467,7 +467,7 @@ where transaction_mode is one of:
 
 此命令将任何SELECT查询的输出转储到指定位置。 用户必须具有访问此位置的权限，此命令才能成功。
 
-```
+```sql
 COPY  query
     TO '%scratch_space%/folder_location'
     [  WITH FORMAT 'format_name']
