@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据访问开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 4%
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 # 数据访问开发人员指南
 
-Data Access API为用户提供一个RESTful界面，侧重于Adobe Experience Platform中所摄取数据集的可发现性和可访问性，从而支持 [!DNL Experience Platform]。
+Data Access API为用户提供RESTful界面，侧重于Adobe Experience Platform内所摄取数据集的可发现性和可访问性，从而支持该 [!DNL Experience Platform]系统。
 
 ![Experience Platform时的数据访问](images/Data_Access_Experience_Platform.png)
 
@@ -232,9 +232,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 **响应**
 
-```
-Contents of the file
-```
+`Contents of the file`
 
 ## 其他代码范例
 
