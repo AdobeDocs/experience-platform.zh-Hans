@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 优化模型
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '1219'
 ht-degree: 0%
@@ -83,7 +83,7 @@ evaluation.metrics=com.adobe.platform.ml.impl.Constants.FSCORE
 
 #### Scala的自定义评估指标
 
-可通过扩展文件中的接口来提供自 `MLEvaluator.scala` 定义计 `Evaluator.scala` 算器。 在示例Evaluator [.scala文件中](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/Evaluator.scala) ，我们定义自 `split()` 定义和 `evaluate()` 函数。 我们 `split()` 的函数以8:2的比率随机拆分我们的数据，我们的函数 `evaluate()` 定义并返回3个度量： MAPE、MAE和RMSE。
+可通过扩展文件中的接口来提供自 `MLEvaluator.scala` 定义计 `Evaluator.scala` 算器。 在示例Evaluator [.scala文件中](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/Evaluator.scala) ，我们定义自 `split()` 定义和 `evaluate()` 函数。 我们 `split()` 的函数以8:2的比率随机拆分我们的数据，我们的函数 `evaluate()` 定义并返回3个度量：MAPE、MAE和RMSE。
 
 >[!IMPORTANT]
 >
@@ -95,7 +95,7 @@ evaluation.metrics=com.adobe.platform.ml.impl.Constants.FSCORE
 
 在菜谱中定义后，下一步是在菜谱中启用它。 这是在项目文 [件夹中](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/resources/application.properties) application.properties文件中完 `resources` 成的。 此处 `evaluation.class` 设置为中定 `Evaluator` 义的类 `Evaluator.scala`
 
-```properties
+```scala
 evaluation.class=com.adobe.platform.ml.Evaluator
 ```
 
