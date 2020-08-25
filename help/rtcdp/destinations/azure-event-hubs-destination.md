@@ -5,7 +5,7 @@ seo-title: （测试版）Azure事件集线器目标
 description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 seo-description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '467'
 ht-degree: 2%
@@ -67,7 +67,7 @@ ht-degree: 2%
 
 导出的 [!DNL Experience Platform] 数据以JSON [!DNL Azure Event Hubs] 格式登录。 例如，以下事件包含符合特定区段资格并退出另一区段的受众的电子邮件地址用户档案属性。 此潜在客户的标识为ECID和电子邮件。
 
-```
+```json
 {
   "person": {
     "email": "yourstruly@adobe.con"
