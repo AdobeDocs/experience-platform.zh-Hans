@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 策略
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: cb3a17aa08c67c66101cbf3842bf306ebcca0305
+source-git-commit: 12c53122d84e145a699a2a86631dc37ee0073578
 workflow-type: tm+mt
 source-wordcount: '1472'
 ht-degree: 1%
@@ -52,7 +52,7 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints?duleLabels={LAB
 >
 >注意策略表达式 `AND` 中 `OR` 的操作符和操作符。 在以下示例中，如果请求中只`C1` 显示 `C3`了标签（或），则营销操作不会违反本政策。 同时需要标签(`C1` 和 `C3`)才能返回违反的策略。 确保仔细评估政策，并平等地定义政策表达式。
 
-```sh
+```shell
 curl -X GET \
   'https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/sampleMarketingAction/constraints?duleLabels=C1,C3' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -140,7 +140,7 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 以下请求对一组三 `crossSiteTargeting` 个数据集执行营销操作，以评估是否存在任何违反策略的情况。
 
-```sh
+```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/crossSiteTargeting/constraints \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -371,7 +371,7 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 以下请求将测试属于三个 `crossSiteTargeting` 数据集的特定字段集上的营销操作。 负载类似于仅涉及数 [据集的评估请求](#datasets)，为每个数据集添加特定字段以从中收集标签。
 
-```sh
+```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/crossSiteTargeting/constraints \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -540,7 +540,7 @@ POST /bulk-eval
 >
 >如果列出的任何评估作业都 `entityList` 包含数 `labels` 组和数组，则将导致错误。 如果要根据数据集和标签评估同一营销操作，则必须为该营销操作包含单独的评估作业。
 
-```sh
+```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/dulepolicy/bulk-eval \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -580,8 +580,8 @@ curl -X POST \
 | --- | --- |
 | `evalRef` | 针对标签或数据集测试策略违规的营销操作的URI。 |
 | `includeDraft` | 默认情况下，只有启用的策略才会参与评估。 如果 `includeDraft` 设置为 `true`，则处于状态的 `DRAFT` 策略也将参与。 |
-| `labels` | 用于测试营销操作的一组数据使用标签。<br><br>**重要说明&#x200B;**:使用此属性时，`entityList`不能将属性包含在同一对象中。 要使用数据集和／或字段评估相同的营销操作，必须在包含数组的请求有效负荷中包含一个单独的`entityList`对象。 |
-| `entityList` | 数据集中的一组数据集和（可选）特定字段，用于测试针对的营销操作。<br><br>**重要说明&#x200B;**:使用此属性时，`labels`不能将属性包含在同一对象中。 要使用特定数据使用标签评估同一营销操作，您必须在包含数组的请求有效负荷中包含一个单独的`labels`对象。 |
+| `labels` | 用于测试营销操作的一组数据使用标签。<br><br>**重要说明**:使用此属性时， `entityList` 不能将属性包含在同一对象中。 要使用数据集和／或字段评估相同的营销操作，必须在包含数组的请求有效负荷中包含一个单独的 `entityList` 对象。 |
+| `entityList` | 数据集中的一组数据集和（可选）特定字段，用于测试针对的营销操作。<br><br>**重要说明**:使用此属性时， `labels` 不能将属性包含在同一对象中。 要使用特定数据使用标签评估同一营销操作，您必须在包含数组的请求有效负荷中包含一个单独的 `labels` 对象。 |
 | `entityType` | 要测试其营销操作的实体类型。 目前，仅 `dataSet` 受支持。 |
 | `entityId` | 测试其营销操作的数据集的ID。 |
 | `entityMeta.fields` | （可选）数据集中特定字段的列表，以测试针对的营销操作。 |
