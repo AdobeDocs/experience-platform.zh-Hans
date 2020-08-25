@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 创建电子邮件营销目标
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: fa439ebb9d02d4a08c8ed92b18f2db819d089174
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '1610'
 ht-degree: 1%
@@ -112,7 +112,7 @@ curl -X GET \
 
 -->
 
-```
+```shell
 curl --location --request GET 'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs' \
 --header 'accept: application/json' \
 --header 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -141,7 +141,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 接下来，您必须连接到您 [!DNL Experience Platform] 的用户档案，以便导出数据并在首选目标中激活它。 这包括两个子步骤，如下所述。
 
-1. 首先，必须通过设置基本连接，执行 [!DNL Experience Platform]授权访问数据的调用。
+1. 首先，必须通过设置基本连接，执行对 [!DNL Experience Platform]数据的授权访问调用。
 2. 然后，使用基本连接ID，您将再次进行调用，在其中创建源连接，从而建立与数据的 [!DNL Experience Platform] 连接。
 
 
@@ -179,7 +179,7 @@ curl -X POST \
 
 -->
 
-```
+```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --header 'x-api-key: {API_KEY}' \
@@ -247,7 +247,7 @@ curl -X POST \
 
 -->
 
-```
+```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --header 'x-api-key: {API_KEY}' \
@@ -334,7 +334,7 @@ curl -X POST \
 
 -->
 
-```
+```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --header 'x-api-key: {API_KEY}' \
@@ -417,7 +417,7 @@ curl -X POST \
 
 -->
 
-```
+```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --header 'x-api-key: {API_KEY}' \
@@ -540,7 +540,7 @@ curl -X POST \
 
 创建了所有连接和数据流后，您现在可以将用户档案数据激活到电子邮件营销平台。 在此步骤中，您可以选择要发送到目标的区段和用户档案属性，还可以计划数据并将数据发送到目标。
 
-要将区段激活到新目标，您必须执行JSONPATCH操作，如下例所示。 您可以在一次调用中激活多个段和用户档案属性。 要进一步了解JSONPATCH，请参阅 [RFC规范](https://tools.ietf.org/html/rfc6902)。
+要将区段激活到新目标，您必须执行JSONPATCH操作，如下例所示。 您可以在一次调用中激活多个段和用户档案属性。 要进一步了解JSONPATCH，请参 [阅RFC规范](https://tools.ietf.org/html/rfc6902)。
 
 **API格式**
 
@@ -550,7 +550,7 @@ PATCH /flows
 
 **请求**
 
-```
+```shell
 curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/flows/{DATAFLOW_ID}' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --header 'x-api-key: {API_KEY}' \
@@ -599,7 +599,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 * `{DATAFLOW_ID}`:使用您在上一步中获得的数据流。
 * `{ETAG}`:使用您在上一步中获得的标签。
-* `{SEGMENT_ID}`:提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请转到https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/并查找操 `GET /segment/jobs` 作。
+* `{SEGMENT_ID}`:提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请转到https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/并查找该操 `GET /segment/jobs` 作。
 * `{PROFILE_ATTRIBUTE}`:例如， `"person.lastName"`
 
 **响应**
@@ -622,7 +622,7 @@ GET /flows
 
 **请求**
 
-```
+```shell
 curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flowservice/flows/{DATAFLOW_ID}' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
 --header 'x-api-key: {API_KEY}' \
@@ -639,7 +639,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 返回的响应应包含在参 `transformations` 数中您在上一步中提交的区段和用户档案属性。 响应中 `transformations` 的示例参数如下所示：
 
-```
+```json
 "transformations": [
     {
         "name": "GeneralTransform",
