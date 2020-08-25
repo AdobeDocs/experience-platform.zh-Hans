@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 营销操作
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: cb3a17aa08c67c66101cbf3842bf306ebcca0305
+source-git-commit: 12c53122d84e145a699a2a86631dc37ee0073578
 workflow-type: tm+mt
 source-wordcount: '681'
 ht-degree: 2%
@@ -37,7 +37,7 @@ GET /marketingActions/custom
 
 以下请求检索由您的组织维护的列表自定义营销活动。
 
-```sh
+```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -124,7 +124,7 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 以下请求检索名为的自定义营销活动 `combineData`。
 
-```sh
+```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/combineData \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -174,7 +174,7 @@ PUT /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 以下请求将创建一个名为的 `crossSiteTargeting`新营销活动，前提是系统中尚不存在同名的营销活动。 如果某 `crossSiteTargeting` 个营销活动确实存在，此调用会根据有效负荷中提供的属性更新该营销活动。
 
-```sh
+```shell
 curl -X PUT \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/crossSiteTargeting \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -190,7 +190,7 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 要创建或更新的营销操作的名称。 <br><br>**重要说明&#x200B;**:此属性必须与路`{MARKETING_ACTION_NAME}`径中的匹配，否则将发生HTTP 400（错误请求）错误。 换言之，一旦创建了营销操作，其属`name`性便无法更改。 |
+| `name` | 要创建或更新的营销操作的名称。 <br><br>**重要说明**:此属性必须与路 `{MARKETING_ACTION_NAME}` 径中的匹配，否则将发生HTTP 400（错误请求）错误。 换言之，一旦创建了营销操作，其属 `name` 性便无法更改。 |
 | `description` | 可选描述，用于为营销操作提供更多上下文。 |
 
 **响应**
@@ -236,7 +236,7 @@ DELETE /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 **请求**
 
-```sh
+```shell
 curl -X DELETE \
   https://platform.adobe.io/data/foundation/dulepolicy/marketingActions/custom/crossSiteTargeting \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
