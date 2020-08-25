@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用API管理决策服务实体
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '7207'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 使用API管理决策对象和规则
 
-本文档提供了使用Adobe Experience PlatformAPI的业务实 [!DNL Decisioning Service] 体的教程。
+本文档提供了使用Adobe Experience PlatformAPI的业 [!DNL Decisioning Service] 务实体的教程。
 
 本教程分为两部分：
 
@@ -26,9 +26,9 @@ ht-degree: 0%
 
 本教程需要对服务和API [!DNL Experience Platform] 惯例进行有效的了解。 存储 [!DNL Platform] 库是其他几种服务用来存储业 [!DNL Platform] 务对象和各种类型的元数据的服务。 它提供了一种安全、灵活的方式来管理和查询这些对象，供多个运行时服务使用。 就 [!DNL Decisioning Service] 是其中之一。 在开始本教程之前，请查看以下文档：
 
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 平台组织客户体验数据的标准化框架。
-- [!DNL Decisioning Service](./../home.md): 介绍用于体验决策的概念和组件（一般），特别是优惠决策。 说明了在客户体验期间选择最佳演示选项时使用的策略。
-- [!DNL Profile Query Language (PQL)](../../segmentation/pql/overview.md): PQL是一种功能强大的语言，用于在XDM实例上编写表达式。 PQL用于定义决策规则。
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md):平台组织客户体验数据的标准化框架。
+- [!DNL Decisioning Service](./../home.md):介绍用于体验决策的概念和组件（一般），特别是优惠决策。 说明了在客户体验期间选择最佳演示选项时使用的策略。
+- [!DNL Profile Query Language (PQL)](../../segmentation/pql/overview.md):PQL是一种功能强大的语言，用于编写XDM实例上的表达式。 PQL用于定义决策规则。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
@@ -40,7 +40,7 @@ ht-degree: 0%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -54,7 +54,7 @@ ht-degree: 0%
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 ## 存储库API惯例
 
@@ -83,7 +83,7 @@ API有效负荷格式与或标 `Accept` 头协 `Content-Type` 商。 {FORMAT}取
 | 删除实<br/>例删除容器 | 不适用 | `xdm.receipt` |
 | 读取实<br/>例读取容器 | 不适用 | `hal` 带参 `schema` 数 |
 | 列表<br/>实例列表容器 | 不适用 | `hal` 具有特殊参 `schema` 数 `https://ns.adobe.com/experience/xcore/hal/results` |
-| 搜索实例 | 不适用 | 带有特殊参数的 `schema` hal `https://ns.adobe.com/experience/xcore/hal/results` |
+| 搜索实例 | 不适用 | 具有特殊参数的 `schema` hal `https://ns.adobe.com/experience/xcore/hal/results` |
 | 读取回购根 | 不适用 | `home.hal` |
 
 对于容器创建、更新和读取API，格式参数模式具有值 `https://ns.adobe.com/experience/xcore/container`。
@@ -94,7 +94,7 @@ API有效负荷格式与或标 `Accept` 头协 `Content-Type` 商。 {FORMAT}取
 
 ## 管理对容器的访问
 
-管理员可以将类似的承担者、资源和访问权限分组到用户档案中。 这减轻了管理负担，并受 [Adobe的Admin ConsoleUI支持](https://adminconsole.adobe.com)。 您必须是组织中的Adobe Experience Platform的产品管理员，才能创建用户档案并为其分配用户。
+管理员可以将类似的承担者、资源和访问权限分组到用户档案中。 这减轻了管理负担，并受 [Adobe的Admin ConsoleUI支持](https://adminconsole.adobe.com)。 您必须是贵组织中的Adobe Experience Platform的产品管理员才能创建用户档案并为其分配用户。
 
 只需一次性创建与某些权限匹配的产品用户档案，然后将用户添加到这些用户档案即可。 用户档案充当已被授予权限的组，该组中的每个真正用户或技术用户都继承这些权限。
 
@@ -336,7 +336,7 @@ curl -X GET {ENDPOINT_PATH}/{CONTAINER_ID}/instances?schema="{SCHEMA_ID}" \
 >
 >结果包含给定模式或此列表的第一页的实例。 请注意，实例可以符合多个模式，因此可以以多个列表显示。
 
-页面资源为临时资源，为只读； 无法更新或删除它们。 寻呼模型在延长的时间段内提供对大列表子集的随机访问，而不保持任何每个客户端状态。
+页面资源为临时资源，为只读；无法更新或删除它们。 寻呼模型在延长的时间段内提供对大列表子集的随机访问，而不保持任何每个客户端状态。
 
 要以这种方式按页访问实例列表，必须能够对该实例列表枚举的条目定义稳定排序。 请注意，“stable”并不表示实例将显示在预定页面中。 事实上，当通过根据属性P对实例排序而形成页面顺序并且客户端更新此属性P时，在列表中分页时，另一个客户端可能在不同的页面上再次到达此实例。 换言之，模型倾向于返回更多当前结果。
 
@@ -346,19 +346,19 @@ curl -X GET {ENDPOINT_PATH}/{CONTAINER_ID}/instances?schema="{SCHEMA_ID}" \
 
 分页由以下参数控制：
 
-- **`orderBy`**: 包含属性的逗号分隔的有序列表，实例列表按此排序。 第一个属性用于主排序，第二个属性用于解析主排序中的关联，依此类推。 如果指定的属性每个实例具有唯一值，则不可能绑定，并且每个项目之后都可能发生分页。 属性的名称可以前缀为指示升序 `+` 顺序或指 `-` 示该属性的降序排序。 如果属性名称未前缀，则结果将按升序排序。 如 `orderBy` 果请求中未指定，则存储库将改用物理instanceId属性。
-- **`start`**: 客户端使用开始参数定义要检索的页面。 开始参数确定所需页面的开始。 响应将包含以属性值严格大于( `orderBy` 对于升序)或严格小于（对于降序）指定值的实例开头的实例。 未指定查询参数时，它默认为在第一个可能的实例标识符之前排序的instanceId值，因此从第一页中忽略此值。
-- **`limit`**: 指定一个正整数作为对给定请求应返回的最大项数的提示。 由于需要提供可靠的开始参数操作，实际响应大小可以更小或更大
+- **`orderBy`**:包含属性的逗号分隔的有序列表，实例列表按此排序。 第一个属性用于主排序，第二个属性用于解析主排序中的关联，依此类推。 如果指定的属性每个实例具有唯一值，则不可能绑定，并且每个项目之后都可能发生分页。 属性的名称可以前缀为指示升序 `+` 顺序或指 `-` 示该属性的降序排序。 如果属性名称未前缀，则结果将按升序排序。 如 `orderBy` 果请求中未指定，则存储库将改用物理instanceId属性。
+- **`start`**:客户端使用开始参数定义要检索的页面。 开始参数确定所需页面的开始。 响应将包含以属性值严格大于( `orderBy` 对于升序)或严格小于（对于降序）指定值的实例开头的实例。 未指定查询参数时，它默认为在第一个可能的实例标识符之前排序的instanceId值，因此从第一页中忽略此值。
+- **`limit`**:指定一个正整数作为对给定请求应返回的最大项数的提示。 由于需要提供可靠的开始参数操作，实际响应大小可以更小或更大
 
 ### 筛选列表
 
 过滤列表结果是可能的，并且独立于分页机制进行。 过滤器只需按照列表的顺序跳过实例，或明确要求仅包括满足给定条件的实例。 客户端可以请求要用作过滤器的属性表达式，也可以指定要用作实例主键值的URI列表。
 
-- **`property`**: 包含一个属性名称路径，后跟一个比较运算符，后跟一个值。 <br/>
+- **`property`**:包含一个属性名称路径，后跟一个比较运算符，后跟一个值。 <br/>
 返回的实例列表包含表达式计算结果为true的实例。 例如，假定实例具有有效负荷属性 
 `status` 可能的值是， `draft`然后 `approved`查询 `archived` 参 `deleted` 数将仅返回 `property=_instance.status==approved` 已批准状态的实例。 <br/>
 <br/>
-要与给定值进行比较的属性被标识为路径。 单个路径组件由“.”分隔，如： “_instance.xdm:prop1.xdm:prop1_1.xdm:prop1_1`<br/>
+要与给定值进行比较的属性被标识为路径。 单个路径组件由“.”分隔，如：“_instance.xdm:prop1.xdm:prop1_1.xdm:prop1_1`<br/>
 
 对于具有字符串、数字或日期／时间值的属性，允许的运算符有： `==`、 `!=`、 `<``<=`和 `>``>=`。 此外，对于具有字符串值的属性，可以使 `~` 用运算符。 运 `~` 算符根据常规表达式匹配给定属性。 属性的字符串值必须与要包含在 **筛选结果** 中的实体的整个表达式相匹配。 例如，在属性值中 `cars` 的任意位置查找字符串需要常规表达式 `.*cars.*`。 如果没有前导或 `.*`尾部，则只有属性值分别以开头或结尾的实体 `cars`才匹配。 对于运 `~` 算符，字母字符的比较不区分大小写。 对于所有其他运算符，比较区分大小写。<br/><br/>
 不仅实例有效负荷属性可用于筛选表达式。 以相同的方式比较包络属性，例如， `property=repo:lastModifiedDate>=2019-02-23T16:30:00.000Z`. <br/>
@@ -366,7 +366,7 @@ curl -X GET {ENDPOINT_PATH}/{CONTAINER_ID}/instances?schema="{SCHEMA_ID}" \
 可以 `property` 重复查询参数，以应用多个过滤条件，例如返回在某个日期之后和某个日期之前最后修改的所有实例。 这些表达式中的值必须进行URL编码。 如果没有表达式，并且只列出了属性的名称，则符合条件的项目是具有给定名称的属性的项目。<br/>
 <br/>
 
-- **`id`**: 有时，列表需要按实例的URI进行筛选。 该 `property` 查询参数可用于过滤出一个实例，但要获得多个实例，可为请求提供URI列表。 重复 `id` 该参数，且每个出现项都指定一个URI值， `id={URI_1}&id={URI_2},…` URI值必须经过URL编码。
+- **`id`**:有时，列表需要按实例的URI进行筛选。 该 `property` 查询参数可用于过滤出一个实例，但要获得多个实例，可为请求提供URI列表。 重复 `id` 该参数，且每个出现项都指定一个URI值， `id={URI_1}&id={URI_2},…` URI值必须经过URL编码。
 
 分页结果将作为特殊MIME类型返回 `application/vnd.adobe.platform.xcore.hal+json; schema="https://ns.adobe.com/experience/xcore/hal/results"`。
 
@@ -466,15 +466,15 @@ curl -X GET {ENDPOINT_PATH}/{CONTAINER_ID}/queries/core/search?schema="{SCHEMA_I
 
 全文搜索由以下参数控制：
 
-- **`q`**: 包含一个以空格分隔的无序列表，这些术语在与实例的任何字符串属性进行匹配之前进行标准化。 对字符串属性进行术语分析，并将这些术语进行规范化。 搜索查询会尝试匹配参数中指定的一个或多个术 `q` 语。 字符+、-、=和&amp;、 ||, >, &lt;,!,(,), {, }, [,],^, &quot;, ~, *, ?, :, /对于确定查询字符串中的单词边界具有特殊含义，在与字符匹配的标记中出现时，应使用反斜杠进行转义。 查询字符串可以用多次引号括起来，以精确匹配字符串并转义特殊字符。
-- **`field`**: 如果搜索词只应与属性的子集匹配，则字段参数可以指示该属性的路径。 可以重复该参数以指示应匹配的多个属性。
-- **`qop`**: 包含用于修改搜索的匹配行为的控制参数。 当参数设置为且所有搜索词必须匹配且参数不存在或其值设置为时，或者任何词都可以计为匹配项。
+- **`q`**:包含一个以空格分隔的无序列表，这些术语在与实例的任何字符串属性进行匹配之前进行标准化。 对字符串属性进行术语分析，并将这些术语进行规范化。 搜索查询会尝试匹配参数中指定的一个或多个术 `q` 语。 字符+、-、=和&amp;、 ||, >, &lt;,!,(,), {, }, [,],^, &quot;, ~, *, ?, :, /对于确定查询字符串中的单词边界具有特殊含义，在与字符匹配的标记中出现时，应使用反斜杠进行转义。 查询字符串可以用多次引号括起来，以精确匹配字符串并转义特殊字符。
+- **`field`**:如果搜索词只应与属性的子集匹配，则字段参数可以指示该属性的路径。 可以重复该参数以指示应匹配的多个属性。
+- **`qop`**:包含用于修改搜索的匹配行为的控制参数。 当参数设置为且所有搜索词必须匹配且参数不存在或其值设置为时，或者任何词都可以计为匹配项。
 
 ### 更新和修补实例
 
 要更新实例，客户端可以一次覆盖属性的完整列表，或使用JSONPATCH请求处理包括列表在内的各个属性值。
 
-在这两种情况下，请求的URL都指定物理实例的路径，在这两种情况下，响应都将是JSON接收负载，就像创建操作返回的 [负载一样](#create-instances)。 客户端最好将其 `Location` 从此对象的先前API调用中收到的头或HAL链接用作此API的完整URL路径。 如果这不可能，则客户端可以从和构 `containerId` 建URL `instanceId`。
+在两种情况下，请求的URL都指定物理实例的路径，在这两种情况下，响应都将是JSON接收负载，就像创建操作返回的 [负载一样](#create-instances)。 客户端最好将其 `Location` 从此对象的先前API调用中收到的头或HAL链接用作此API的完整URL路径。 如果这不可能，则客户端可以从和构 `containerId` 建URL `instanceId`。
 
 **请求** (PUT)
 
@@ -519,8 +519,8 @@ PATCH请求应用指令，然后根据模式和与PUT请求相同的实体和引
 
 您可以使用以下注释防止在创建和／或更新时设置属性：
 
-- **`"meta:usereditable"`**: 布尔值——当请求来自用户代理，该代理用用户或技术帐户访问令牌标识调用者时，带有注释的属性 `"meta:usereditable": false` 不应出现在有效负荷中。 如果是，则它们的值不得与当前设置的值不同。 如果值不同，则更新或修补程序请求将被拒绝，状态为422“不可处理实体”。
-- **`"meta:immutable"`**: Boolean —— 设置后不能更 `"meta:immutable": true` 改带有注释的属性。 这适用于来自最终用户、技术帐户集成或特殊服务的请求。
+- **`"meta:usereditable"`**:布尔值——当请求来自用户代理，该代理用用户或技术帐户访问令牌标识调用者时，带有注释的属性 `"meta:usereditable": false` 不应出现在有效负荷中。 如果是，则它们的值不得与当前设置的值不同。 如果值不同，则更新或修补程序请求将被拒绝，状态为422“不可处理实体”。
+- **`"meta:immutable"`**:Boolean —— 设置后不能更 `"meta:immutable": true` 改带有注释的属性。 这适用于来自最终用户、技术帐户集成或特殊服务的请求。
 
 **并发更新测试**
 
@@ -653,7 +653,7 @@ Placement **实例** 可具有以下属性：
 - **`xdm:name`** -包含指定的位置名称，以在人机交互和用户界面中引用它。
 - **`xdm:description`** -用于传达如何在整个消息投放中使用此位置中的内容的可读意图。 当投放渠道定义新位置时，他们可以在此属性中添加更多信息，以便内容创建者能够相应地创建或选择内容。 这些指令不会被正式解释或执行。 这个财产只是用来交流意图的地方。
 - **`xdm:channel`** -渠道的URI。 该渠道指示要将动态内容交付到的位置。 渠道约束不仅用于传达优惠的使用位置，还用于确定用于体验的内容编辑器或验证程序。
-- **`xdm:componentType`** -可在此位置描述的位置中显示的内容的模型标识符，即URI。 组件类型有： 图像链接、html或纯文本。 每个组件类型可能暗示内容项可能具有的一组特定属性（模型）。 可以扩展组件类型的列表。 有三个预定义的组件类型值：
+- **`xdm:componentType`** -可在此位置描述的位置中显示的内容的模型标识符，即URI。 组件类型有：图像链接、html或纯文本。 每个组件类型可能暗示内容项可能具有的一组特定属性（模型）。 可以扩展组件类型的列表。 有三个预定义的组件类型值：
    - `https://ns.adobe.com/experience/offer-management/content-component-imagelink`
    - `https://ns.adobe.com/experience/offer-management/content-component-text`
    - `https://ns.adobe.com/experience/offer-management/content-component-html`
@@ -718,9 +718,9 @@ PATCH操作可能在尚无属性时失 `xdm:representations` 败。 在这种情
 
 通常，决策选项可以给出作为日历约束的开始和结束日期和时间。 属性嵌入在属性中 `xdm:selectionConstraint`:
 
-- **`xdm:startDate`** -此属性指示开始日期和时间。 该值是根据RFC 3339规则格式化的字符串，如此时间戳： “2019-06-13T11:21:23.356Z”。
+- **`xdm:startDate`** -此属性指示开始日期和时间。 该值是根据RFC 3339规则格式化的字符串，如此时间戳：“2019-06-13T11:21:23.356Z”。
 尚未达到其开始日期和时间的决策选项在决策中尚未被视为合格。
-- **`xdm:endDate`** -此属性指示结束日期和时间。 该值是根据RFC 3339规则格式化的字符串，如此时间戳： “2019-07-13T11:00:00.000Z”已通过其结束日期和时间的决策选项在决策过程中不再被视为符合资格。
+- **`xdm:endDate`** -此属性指示结束日期和时间。 该值是根据RFC 3339规则格式化的字符串，如此时间戳：“2019-07-13T11:00:00.000Z”已通过其结束日期和时间的决策选项在决策过程中不再被视为符合资格。
 
 更改日历约束可以通过以下PATCH调用完成：
 
@@ -775,7 +775,7 @@ PATCH操作可能在尚无属性时失 `xdm:representations` 败。 在这种情
 
 添加和删除规则也可以通过PATCH操作完成：
 
-```
+```json
 [
   {
     "op":   "replace",
@@ -856,8 +856,8 @@ curl -X PATCH {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
 
 1. 优惠 `@id` 的参数必须与要在集合中的优惠的标识符列表中的一个匹配。 此过滤器只是集合中优惠的URI的明细列表。
 2. 优惠可以具有标记引用的列表，集合的过滤器由一列表标记组成。 优惠位于集合中，当：\
-   a. 任何筛选器标记均与优惠的标记之一匹配\
-   b. 过滤器的所有标记都与优惠的一个标记匹配
+   a.任何筛选器标记均与优惠的标记之一匹配\
+   b.过滤器的所有标记都与优惠的一个标记匹配
 
 标记是可以链接优惠实例的简单实例。 它们是独立的实例，并带有一个名称来显示它们。 该名称在不同实例中必须是唯一的，以便在用户界面中更轻松地显示它们。
 
@@ -898,7 +898,7 @@ curl -X PATCH {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
 ]' 
 ```
 
-对于这两种情况，请 [参阅更新实例和为实例打](#updating-and-patching-instances) 补丁，以了解完整的cURL语法。 参 `schemaId` 数必须为 `https://ns.adobe.com/experience/offer-management/personalized-offer`。
+对于这两种情况，请 [参阅更新实例和修补实](#updating-and-patching-instances) 例以了解完整的cURL语法。 参 `schemaId` 数必须为 `https://ns.adobe.com/experience/offer-management/personalized-offer`。
 
 请注意， `xdm:tags` 要成功添加操作，该属性必须已存在。 PATCH操作可以先添加数组属性，然后添加对该数组的标记引用，实例中不存在标记。
 
@@ -923,7 +923,7 @@ curl -X PATCH {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
    - `offers`
    - `anyTags`
    - `allTags`
-- **`ids`** -属性包含URI数组，这些URI是对优惠实例或标记实例的引用，具体取决于的值 `xdm:filterType`。 .
+- **`ids`** -属性包含URI数组，这些URI是对优惠实例或标记实例的引用，具体取决于的值 `xdm:filterType`。.
 
 以下调用说明在直 `_instance` 接引用优惠时，创建或更新调用的属性的外观：
 
@@ -973,7 +973,7 @@ curl -X PATCH {ENDPOINT_PATH}/{CONTAINER_ID}/instances/{INSTANCE_ID} \
 
 ### 管理回退优惠
 
-在创建活动实例之前，必须存在符合活动放置条件的回退优惠。 将使用优惠标识符创建回退模式实例`https://ns.adobe.com/experience/offer-management/fallback-offer`。 创 `_instance` 建或更新调用的属性包含个性化优惠具有的相同常规属性，但不能具有任何其他约束。
+在创建活动实例之前，必须存在符合放置活动资格的回退优惠。 将使用优惠标识符创建回退模式实例`https://ns.adobe.com/experience/offer-management/fallback-offer`。 创 `_instance` 建或更新调用的属性包含个性化优惠具有的相同常规属性，但不能具有任何其他约束。
 
 ```json
 {
