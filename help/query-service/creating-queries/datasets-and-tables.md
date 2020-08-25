@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据集与表和模式
 topic: queries
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '181'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 数据集与表和模式
 
-检查列表UI中可用的 [数据集Adobe Experience Platform](https://platform.adobe.com/datasets)，确保观察数据集名称。
+检查Adobe Experience PlatformUI中可用数据集 [的列表](https://platform.adobe.com/datasets)，确保观察数据集名称。
 >[!NOTE]
 >
 >某些数据集名称有空格，否则可能不是SQL安全。
@@ -35,7 +35,7 @@ ht-degree: 1%
 
 `\d` 显示标准PostgreSQL视图
 
-```
+```sql
              List of relations
  Schema |       Name      | Type  |  Owner   
 --------+-----------------+-------+----------
@@ -46,7 +46,7 @@ ht-degree: 1%
 
 `SHOW TABLES;` 是一个自定义命令，它提供更详细的视图并显示表以及UI中的数据集名 [!DNL Platform] 称。
 
-```
+```sql
        name      |        dataSetId         |     dataSet    | description | resolved 
 -----------------+--------------------------+----------------+-------------+----------
  luma_midvalues  | 5bac030c29bb8d12fa992e58 | Luma midValues |             | false
@@ -62,7 +62,7 @@ ht-degree: 1%
 
 `\d luma_midvalues`
 
-```
+```sql
                          Table "public.luma_midvalues"
       Column       |             Type            | Collation | Nullable | Default 
 -------------------+-----------------------------+-----------+----------+---------
@@ -87,7 +87,7 @@ ht-degree: 1%
 
 `\d luma_midvalues_web`
 
-```
+```sql
                  Composite type "public.luma_midvalues_web"
      Column     |               Type                | Collation | Nullable | Default 
 ----------------+-----------------------------------+-----------+----------+---------
