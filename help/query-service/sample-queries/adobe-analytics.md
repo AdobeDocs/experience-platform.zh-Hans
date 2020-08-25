@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 示例查询
 topic: queries
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
 workflow-type: tm+mt
 source-wordcount: '862'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # Adobe Analytics数据查询示例
 
-来自选定Adobe Analytics报告套组的数据将转换为XDM [!DNL ExperienceEvents] 并作为数据集引入Adobe Experience Platform。 此文档概括了Adobe Experience Platform利用此数据的许 [!DNL Query Service] 多用例，其中包含的示例查询应与您的Adobe Analytics数据集配合使用。 有关映射 [到XDM的更多信息](../../sources/connectors/adobe-applications/mapping/analytics.md) ，请参阅Analytics字段映射文档 [!DNL ExperienceEvents]。
+来自选定Adobe Analytics报告套件的数据将转换为XDM [!DNL ExperienceEvents] 并作为数据集引入Adobe Experience Platform。 此文档概括了Adobe Experience Platform利用此数据的 [!DNL Query Service] 许多用例，其中包含的示例查询应与您的Adobe Analytics数据集配合使用。 有关映射 [到XDM的更多信息](../../sources/connectors/adobe-applications/mapping/analytics.md) ，请参阅Analytics字段映射文档 [!DNL ExperienceEvents]。
 
 ## 入门指南
 
@@ -135,7 +135,7 @@ ORDER BY Hour;
 
 ### eVar
 
-```
+```console
 productListItems[#]._experience.analytics.customDimensions.evars.evar#
 ```
 
@@ -143,7 +143,7 @@ productListItems[#]._experience.analytics.customDimensions.evars.evar#
 
 ### 自定义事件
 
-```
+```console
 productListItems[#]._experience.analytics.event1to100.event#.value
 ```
 
@@ -189,7 +189,7 @@ LIMIT 20
 
 当您尝试检索当前数据集中不存在的字段时，会遇到“无此类结构字段”错误。 评估错误消息中返回的原因以标识可用字段，然后更新查询并重新运行。
 
-```
+```console
 ERROR: ErrorCode: 08P01 sessionId: XXXX queryId: XXXX Unknown error encountered. Reason: [No such struct field evar1 in eVar10, eVar13, eVar62, eVar88, eVar2;]
 ```
 
@@ -199,13 +199,13 @@ ERROR: ErrorCode: 08P01 sessionId: XXXX queryId: XXXX Unknown error encountered.
 
 1. 用户执行“winter hat”的内部搜索，将启用“转换语法”的“推销eVar6”设置为“内部搜索：winter hat”
 2. 用户单击“华夫饼”并登录产品详细信息页面。\
-   a. 在这里登陆， `Product View` 以12.99美元的价格事件“华夫饼豆”。\
-   b. 由于 `Product View` 已配置为绑定事件，因此产品“华夫饼”现在绑定到“内部搜索：冬季帽”的eVar6值。 收集“华夫饼”产品后，它将与“内部搜索：冬季帽子”关联，直到(1)达到到期设置或(2)设置新eVar6值，并再次对该产品发生绑定事件。
+   a.在这里登陆， `Product View` 以12.99美元的价格事件“华夫饼豆”。\
+   b.由于 `Product View` 已配置为绑定事件，因此产品“华夫饼”现在绑定到“内部搜索：冬季帽”的eVar6值。 收集“华夫饼”产品后，它将与“内部搜索：冬季帽子”关联，直到(1)达到到期设置或(2)设置新eVar6值，并再次对该产品发生绑定事件。
 3. 用户将产品添加到购物车，并触发 `Cart Add` 事件。
 4. 用户对“夏季衬衫”执行另一个内部搜索，该搜索将启用“转换语法”的“推销eVar6”设置为“内部搜索：夏季衬衫”
 5. 用户单击“sporty t-shirt”并登录产品详细信息页面。\
-   a. 登陆这里， `Product View` 事件上的T恤售价19.99美元。\
-   b. 事件 `Product View` 仍是我们的有约束力的事件，因此现在，产品“sporty T-shirt”与“内部搜索：夏季衬衫”的eVar6价值相绑定，而前一产品“华夫燕”仍与“内部搜索：华夫燕”的eVar6价值相绑定。
+   a.登陆这里， `Product View` 事件上的T恤售价19.99美元。\
+   b.事件 `Product View` 仍是我们的有约束力的事件，因此现在，产品“sporty T-shirt”与“内部搜索：夏季衬衫”的eVar6价值相绑定，而前一产品“华夫燕”仍与“内部搜索：华夫燕”的eVar6价值相绑定。
 6. 用户将产品添加到购物车，并触发 `Cart Add` 事件。
 7. 用户签出这两种产品。
 
@@ -220,7 +220,7 @@ ERROR: ErrorCode: 08P01 sessionId: XXXX queryId: XXXX Unknown error encountered.
 
 ### eVar
 
-```
+```console
 _experience.analytics.customDimensions.evars.evar#
 ```
 
@@ -228,7 +228,7 @@ _experience.analytics.customDimensions.evars.evar#
 
 ### 产品
 
-```
+```console
 productListItems[#].sku
 ```
 
