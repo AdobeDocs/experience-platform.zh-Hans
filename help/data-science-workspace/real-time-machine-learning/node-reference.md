@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时机器学习节点参考指南
 topic: Nodes reference
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '594'
 ht-degree: 0%
@@ -15,6 +15,7 @@ ht-degree: 0%
 # 实时机器学习节点参考指南(Alpha)
 
 >[!IMPORTANT]
+>
 >尚未向所有用户提供实时机器学习。 此功能在alpha中，仍在测试中。 此文档可能会更改。
 
 节点是图形形成的基本单位。 每个节点都执行特定任务，可以使用链接将它们链在一起，以形成表示ML管道的图。 由节点执行的任务表示对输入数据的操作，如数据的转换或模式，或机器学习推理。 节点将转换或推断的值输出到下一个节点。
@@ -72,6 +73,7 @@ model_id = msg_model.model['model_id']
 ONNXode是一个内部Adobe节点，它使用模型ID拉取预先训练的ONNX模型，并使用它对传入数据进行评分。
 
 >[!TIP]
+>
 >按您希望将数据发送到ONNX模型以得分的相同顺序指定列。
 
 ```python
