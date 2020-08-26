@@ -4,7 +4,7 @@ solution: Experience Platform
 title: HDFS连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 340f5d0611e9e9eb4676018ee10c8a8aa08dbb2d
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '186'
 ht-degree: 0%
@@ -15,6 +15,7 @@ ht-degree: 0%
 # （测试版） [!DNL Apache] HDFS连接器
 
 >[!NOTE]
+>
 >Apache HDFS连接器处于测试状态。 有关使用 [测试版标记](../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
 Adobe Experience Platform为AWS等云提供商提 [!DNL Google Cloud Platform]供本 [!DNL Azure]机连接，允许您从这些系统获取数据。 收录的数据可以格式化为JSON、镶木地板或分隔。 云存储提供商支持包 [!DNL Apache] 括HDFS。
