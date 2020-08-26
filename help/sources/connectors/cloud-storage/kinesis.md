@@ -4,7 +4,7 @@ solution: Experience Platform
 title: AmazonKinesis连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 340f5d0611e9e9eb4676018ee10c8a8aa08dbb2d
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '214'
 ht-degree: 0%
@@ -15,9 +15,10 @@ ht-degree: 0%
 # （测试版）连 [!DNL Amazon Kinesis] 接器
 
 >[!NOTE]
+>
 >连接 [!DNL Amazon Kinesis] 器为测试版。 有关使用 [测试版标记](../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-Adobe Experience Platform为AWS、和等云提供商提供 [!DNL Google Cloud Platform]本机连 [!DNL Azure]接。 您可以将数据从这些系统导入 [!DNL Platform]。
+Adobe Experience Platform为AWS、和等云提供商提供本 [!DNL Google Cloud Platform]机连接 [!DNL Azure]。 您可以将数据从这些系统导入 [!DNL Platform]。
 
 云存储源无需下载、格式化 [!DNL Platform] 或上传即可将您自己的数据导入其中。 摄取的数据可格式化为XDM JSON、XDM镶木地板或分隔。 流程的每个步骤都集成到源工作流中。 [!DNL Platform] 允许您实时 [!DNL Amazon Kinesis] 导入数据。
 
