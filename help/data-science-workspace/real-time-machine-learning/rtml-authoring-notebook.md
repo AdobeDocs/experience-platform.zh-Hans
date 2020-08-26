@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时机器学习笔记本用户指南
 topic: Training and scoring a ML model
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1637'
 ht-degree: 0%
@@ -15,13 +15,14 @@ ht-degree: 0%
 # 实时机器学习笔记本用户指南(Alpha)
 
 >[!IMPORTANT]
+>
 >尚未向所有用户提供实时机器学习。 此功能在alpha中，仍在测试中。 此文档可能会更改。
 
 以下指南概述了构建实时机器学习应用程序所需的步骤。 本指南使用提 **[!UICONTROL 供的AdobeReal-time ML]** Python笔记本模板，涵盖培训模型、创建DSL、将DSL发布到Edge以及评分请求。 随着您在实现实时机器学习模型的过程中不断改进，您需要修改模板以满足数据集的需求。
 
 ## 创建实时机器学习笔记本
 
-在Adobe Experience PlatformUI中，从数 **[!UICONTROL 据]** Data Science中 *选择Notebooks*。 接下来， **[!UICONTROL 选择Jupyter]** Lab，并允许一段时间加载环境。
+在Adobe Experience PlatformUI中，从 **[!UICONTROL 数据]** 科学中 *选择笔记本*。 接下来， **[!UICONTROL 选择Jupyter]** Lab，并允许一段时间加载环境。
 
 ![打开JupyterLab](../images/rtml/open-jupyterlab.png)
 
@@ -34,7 +35,8 @@ ht-degree: 0%
 开始，方法是为模型导入所有必需的包。 确保您计划用于节点创作的任何包都已导入。
 
 >[!NOTE]
->您的导入列表可能因您希望创建的模型而有所不同。 随着时间的推移，新节点的添加，此列表将发生变化。 有关可用节 [点的完整列表](./node-reference.md) ，请参阅节点参考指南。
+>
+>您的导入列表可能因您希望创建的模型而有所不同。 随着时间的推移，添加新节点时，此列表将发生变化。 有关可用节 [点的完整列表](./node-reference.md) ，请参阅节点参考指南。
 
 ```python
 from pprint import pprint
@@ -80,11 +82,12 @@ pprint(nf.discover_nodes())
 开始。
 
 >[!NOTE]
+>
 >在实时 **ML模板中** ，从 [车险CSV数据集中](https://github.com/adobe/experience-platform-dsw-reference/tree/master/datasets/insurance) 获取 [!DNL Github]。
 
 ![加载培训数据](../images/rtml/load_training.png)
 
-如果您希望从Adobe Experience Platform中使用数据集，请取消以下单元格的注释。 接下来，您需要用相 `DATASET_ID` 应的值替换。
+如果您希望使用来自Adobe Experience Platform的数据集，请取消以下单元格的注释。 接下来，您需要用相 `DATASET_ID` 应的值替换。
 
 ![rtml数据集](../images/rtml/rtml-dataset.png)
 
@@ -116,6 +119,7 @@ config_properties = {
 需 *[!UICONTROL 要修改实时]* ML *模板Data Transformations* 单元格，才能处理您自己的数据集。 通常，这涉及重命名列、数据汇总以及数据准备／功能工程。
 
 >[!NOTE]
+>
 >以下示例已经过压缩，以便使用 `[ ... ]`。 请视图并展开 *完整代码单元格的* “实时ML模板数据转换”部分。
 
 ```python
@@ -240,6 +244,7 @@ model.generate_onnx_resources()
 ```
 
 >[!NOTE]
+>
 >更改 `model_path` 字符串值(`model.onnx`)以更改模型的名称。
 
 ```python
@@ -247,6 +252,7 @@ model_path = "model.onnx"
 ```
 
 >[!NOTE]
+>
 >以下单元格不可编辑或删除，并且需要它才能使实时机器学习应用程序正常工作。
 
 ```python
@@ -275,12 +281,12 @@ print("Model ID : ", model_id)
 
 >[!IMPORTANT]
 >
->
 >必须使用ONNX节点。 如果没有ONNX节点，应用程序将失败。
 
 ### 节点创作
 
 >[!NOTE]
+>
 > 您可能会根据所使用的数据类型有多个节点。 以下示例仅概述实时ML模 *板中的单个节点* 。 请视图 *完整代码单元* 格的 *实时ML模板节* 点创作部分。
 
 下面的Apnotics节点 `"import": "map"` 将方法名称作为字符串导入参数中，然后输入参数作为映射函数。 以下示例通过使用实现 `{'arg': {'dataLayerNull': 'notgiven', 'no': 'no', 'yes': 'yes', 'notgiven': 'notgiven'}}`。 在将地图置于适当位置后，您可以选择将其 `inplace` 设置为 `True` 或 `False`。 设 `inplace` 置 `True` 为 `False` 还是基于是否要就地应用转换。 默认情 `"inplace": False` 况下，创建新列。 支持提供新列名称设置为在后续版本中添加。 最后一行 `cols` 可以是单列名称或列列表。 指定要应用转换的列。 在此示例中 `leasing` 指定。 有关可用节点以及如何使用这些节点的详细信息，请访问节 [点参考指南](./node-reference.md)。
@@ -326,6 +332,7 @@ nodes = [json_df_node,
 然后，将节点与边连接。 每个元组都是 [!DNL Edge] 连接。
 
 >[!TIP]
+>
 > 由于节点之间是线性依赖的（每个节点都取决于前一个节点的输出），您可以使用简单的Python列表理解创建链接。 如果节点依赖多个输入，请添加您自己的连接。
 
 ```python
@@ -346,11 +353,13 @@ pprint(json.loads(dsl))
 ## 发布到Edge（中心）
 
 >[!NOTE]
+>
 >实时机器学习临时部署到Adobe体验平台中心并由其管理。 有关更多详细信息，请访问“实时机 [学习体系结构”的概述部分](./home.md#architecture)。
 
 现在您已创建了DSL图形，可将图形部署到 [!DNL Edge]。
 
 >[!IMPORTANT]
+>
 >不要经常发 [!DNL Edge] 布，这会使节点过载 [!DNL Edge] 。 建议不要多次发布同一模型。
 
 ```python
@@ -365,6 +374,7 @@ print(f'Service ID: {service_id}')
 如果不需要更新DSL，可跳到评 [分](#scoring)。
 
 >[!NOTE]
+>
 >仅当您希望更新已发布到Edge的现有DSL时，才需要以下单元格。
 
 您的模型可能会继续发展。 与其创建全新服务，不如使用新模型更新现有服务。 您可以定义要更新的节点，为其分配新ID，然后将新DSL重新上传到 [!DNL Edge]。
@@ -402,6 +412,7 @@ print(f'Updated dsl: {updated_dsl}')
 发布到后， [!DNL Edge]评分由客户端的POST请求完成。 通常，这可以从需要ML分数的客户端应用程序中完成。 您也可以从邮递员处进行。 实 *[!UICONTROL 时ML模板使用]* EdgeUtils演示此过程。
 
 >[!NOTE]
+>
 >在对开始评分之前，需要一小段处理时间。
 
 ```python
@@ -448,6 +459,7 @@ print(services)
 ## 从中删除已部署的应用程序或服 [!DNL Edge] 务ID（可选）
 
 >[!CAUTION]
+>
 >此单元格用于删除已部署的Edge应用程序。 除非需要删除已部署的应用程序，否则不要使用以下 [!DNL Edge] 单元格。
 
 ```python
