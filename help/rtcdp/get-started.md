@@ -5,7 +5,7 @@ seo-title: Adobe实时客户数据平台入门
 description: Adobe实时客户数据平台的示例方案
 seo-description: Adobe实时客户数据平台的示例方案
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '2326'
 ht-degree: 0%
@@ -258,6 +258,7 @@ Loyalty member
 您还可以将区段计划为开始或在特定时间结束。 区段将在计划日期的已配置平台上发布并自动更新。
 
 >[!NOTE]
+>
 >（可选）如果单击日期字段，它将自动计划90天。
 
 单 **[!UICONTROL 击]** “保存”转到下一页。
