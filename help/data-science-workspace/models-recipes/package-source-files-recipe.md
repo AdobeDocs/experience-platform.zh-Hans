@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 将源文件打包到菜谱中
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1097'
 ht-degree: 0%
@@ -49,9 +49,11 @@ Docker图像允许开发人员将应用程序与其所需的所有部件（如�
 选择适当的 *运行时*，然后选择类 **[!UICONTROL 型的]** “分 *类”*。 完成后，将生成您的Azure容器注册表凭据。
 
 >[!NOTE]
->*类型&#x200B;*，是机器学习问题的类，它是为菜谱设计的，经过培训后，用来帮助定制对培训运行的评估。
+>
+>*类型* ，是机器学习问题的类，它是为菜谱设计的，经过培训后，用来帮助定制对培训运行的评估。
 
 >[!TIP]
+>
 >- 对于 [!DNL Python] 菜谱，请选 **[!UICONTROL 择Python]** runtime。
 >- 对于R菜谱，请选 **[!UICONTROL 择]** R运行时。
 >- 对于PySpark菜谱，请选 **[!UICONTROL 择PySpark]** 运行时。 自动填充对象类型。
@@ -63,6 +65,7 @@ Docker图像允许开发人员将应用程序与其所需的所有部件（如�
 请注意Docker主 *机、**用户名*&#x200B;和密 *码值*。 它们用于在下面概述的工作流 [!DNL Docker] 中构建和推送您的图像。
 
 >[!NOTE]
+>
 >完成以下步骤后，将提供源URL。 配置文件将在后续步骤中的后续教程中 [进行说明](#next-steps)。
 
 ### 打包源文件
@@ -180,6 +183,7 @@ git clone https://github.com/adobe/experience-platform-dsw-reference.git
 ```
 
 >[!TIP]
+>
 >如果您在尝试使用脚本登录Docker时收到权限错 `login.sh` 误，请尝试使用命令 `bash login.sh`。
 
 执行登录脚本时，您需要提供Docker主机、用户名和密码。 在构建时，您需要提供Docker主机和版本标记。
@@ -195,7 +199,7 @@ git clone https://github.com/adobe/experience-platform-dsw-reference.git
 
 ## 后续步骤 {#next-steps}
 
-本教程重点介绍将源文件打包到菜谱中，这是将菜谱导入的先决条件步骤 [!DNL Data Science Workspace]。 您现在应在Azure容器注册表中拥有Docker图像以及相应的图像URL。 您现在可以开始将打包的菜谱导入的教程了 [!DNL Data Science Workspace]。 选择以下教程链接之一以开始：
+本教程重点介绍将源文件打包到菜谱中，这是将菜谱导入的先决条件步骤 [!DNL Data Science Workspace]。 您现在应在Azure容器注册表中拥有Docker图像以及相应的图像URL。 现在，您可以开始将打包的菜谱导入的教程了 [!DNL Data Science Workspace]。 选择以下教程链接之一以开始：
 
 - [在UI中导入打包的菜谱](./import-packaged-recipe-ui.md)
 - [使用API导入打包的菜谱](./import-packaged-recipe-api.md)
