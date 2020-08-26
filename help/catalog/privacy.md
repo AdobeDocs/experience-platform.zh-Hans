@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据湖中的隐私请求处理
 topic: overview
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
-source-wordcount: '1187'
+source-wordcount: '1189'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 在 [!DNL Data Lake]
 
-Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、销选择退出售或删除法律和组织隐私法规规定的个人数据的请求。
+Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退出出售或删除其法律和组织隐私法规规定的个人数据的请求。
 
 此文档涵盖与处理存储在中的客户数据的隐私请求相关的基本概念 [!DNL Data Lake]。
 
@@ -22,14 +22,14 @@ Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、销选择�
 
 在阅读本指南之前，建议您对以下服 [!DNL Experience Platform] 务有一定的了解：
 
-* [!DNL Privacy Service](../privacy-service/home.md): 管理跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的客户请求。
-* [!DNL Catalog Service](home.md): 数据位置和谱系的记录系统 [!DNL Experience Platform]。 提供可用于更新数据集元数据的API。
-* [!DNL Experience Data Model (XDM) System](../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-* [!DNL Identity Service](../identity-service/home.md): 通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
+* [!DNL Privacy Service](../privacy-service/home.md):管理跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的客户请求。
+* [!DNL Catalog Service](home.md):数据位置和谱系的记录系统 [!DNL Experience Platform]。 提供可用于更新数据集元数据的API。
+* [!DNL Experience Data Model (XDM) System](../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [!DNL Identity Service](../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
 
 ## 了解身份命名空间 {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service] 跨系统和设备连接客户身份数据。 [!DNL Identity Service] 使用 **[!UICONTROL 身份命名空间]** ，通过将身份值与其来源系统相关联来提供与身份值相关的上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising CloudID(“AdCloud”)或Adobe TargetID(“TNTID”))关联。
+Adobe Experience Platform [!DNL Identity Service] 将跨系统和设备的客户身份数据建立桥梁。 [!DNL Identity Service] 使用 **[!UICONTROL 身份命名空间]** ，通过将身份值与其来源系统相关联来提供与身份值相关的上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising CloudID(“AdCloud”)或Adobe TargetID(“TNTID”))关联。
 
 [!DNL Identity Service] 维护全局定义（标准）和用户定义（自定义）标识命名空间的存储。 标准命名空间适用于所有组织（例如，“电子邮件”和“ECID”），而您的组织也可以创建自定义命名空间以满足其特定需求。
 
@@ -56,7 +56,7 @@ Adobe Experience Platform [!DNL Identity Service] 跨系统和设备连接客户
 
 ### 使用UI {#identity-ui}
 
-在用 [!DNL Experience Platform ]户界面中， _[!UICONTROL 模式工]_作区允许您编辑现有XDM模式。 要向模式添加标识描述符，请从列表中选择模式，然后按照教程中[将模式字段设置为标识字段](../xdm/tutorials/create-schema-ui.md#identity-field)的步[!DNL Schema Editor]骤操作。
+在用 [!DNL Experience Platform ]户界面中， _[!UICONTROL 模式工]_ 作区允许您编辑现有XDM模式。 要向模式添加标识描述符，请从列表中选择模式，然后按照教程中 [将模式字段设置为标识字段](../xdm/tutorials/create-schema-ui.md#identity-field) 的步 [!DNL Schema Editor] 骤操作。
 
 在将模式中的相应字段设置为标识字段后，您可以继续执行下一节提交隐 [私请求](#submit)。
 
@@ -132,13 +132,13 @@ curl -X POST \
 
 >[!NOTE]
 >
->本节介绍如何设置隐私请求的格式 [!DNL Data Lake]。 强烈建议您查看或文档， [!DNL Privacy Service UI](../privacy-service/ui/overview.md) 了解 [!DNL Privacy Service API](../privacy-service/api/getting-started.md) 如何提交隐私作业的完整步骤，包括如何在请求负载中正确设置已提交用户身份数据的格式。
+>本节介绍如何设置隐私请求的格式 [!DNL Data Lake]。 强烈建议您查看UI [[!DNL Privacy Service] 或API](../privacy-service/ui/overview.md) 文 [[!DNL Privacy Service] ](../privacy-service/api/getting-started.md) 档，了解如何提交隐私作业的完整步骤，包括如何在请求负载中正确设置提交的用户身份数据的格式。
 
 以下部分概述了如何使用UI或API [!DNL Data Lake] 提 [!DNL Privacy Service] 出隐私请求。
 
 ### 使用UI
 
-在UI中创建作业请求时，请务必在“产 **[!UICONTROL 品”下选]** 择AEP **[!UICONTROL Data Lake和／或]** 用户档案 _[!UICONTROL ，以便分别]_处理存储在或中的[!DNL Data Lake][!DNL Real-time Customer Profile]数据的作业。
+在UI中创建作业请求时，请务必在“产 **[!UICONTROL 品”下选]** 择AEP **[!UICONTROL Data Lake和／或]** 用户档案 _[!UICONTROL ，以便分别]_ 处理存储在或中的 [!DNL Data Lake][!DNL Real-time Customer Profile]数据的作业。
 
 <img src="images/privacy/product-value.png" width="450"><br>
 
