@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在JupyterLab中使用Git进行协作
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '248'
 ht-degree: 1%
@@ -19,6 +19,7 @@ ht-degree: 1%
 ## 先决条件
 
 >[!NOTE]
+>
 > 您要使用的Git服务器需要通过Internet访问。
 
 该环境 [!DNL Data Science Workspace JupyterLab] 是托管环境，未在您的企业防火墙中部署，因此您连接到的Git服务器必须可从公共Internet访问。 这可以是GitHub上的公共或 [专用存储库](https://github.com/) ，也可以是您决定 [!DNL Git] 自己托管的服务器的另一个实例。
@@ -36,6 +37,7 @@ ht-degree: 1%
 ![cd工作区](../images/jupyterlab/tutorials/find-workspace.png)
 
 >[!TIP]
+>
 > 要查看一列表可用的git命令，请发出以下命令： `git -help` 在终端中。
 
 然后，使用命令克隆要使用的存储 `git clone` 库。 使用URL而不是 `https://` URL克隆您的项 `ssh://`目。
@@ -47,6 +49,7 @@ ht-degree: 1%
 ![克隆](../images/jupyterlab/tutorials/git-collaboration.png)
 
 >[!NOTE]
+>
 > 要执行任何写操作(例`git push` 如)，需要对每个新会话运行以下配置命令。 另请注意，任何推送命令都会提示输入用户名和密码。
 >
 >`git config --global user.email "you@example.com"`
