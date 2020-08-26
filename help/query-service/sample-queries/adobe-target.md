@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 示例查询
 topic: queries
 translation-type: tm+mt
-source-git-commit: 7b07a974e29334cde2dee7027b9780a296db7b20
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '227'
 ht-degree: 2%
@@ -12,16 +12,17 @@ ht-degree: 2%
 ---
 
 
-# Adobe Target查询示例
+# Adobe Target数据查询示例
 
-来自Adobe Target的数据将转换为体验事件XDM模式，并作为数 [!DNL Experience Platform] 据集引入您。 此查询有许多用 [!DNL Query Service] 例，以下示例应使用Adobe Target数据集。
+来自Adobe Target的数据将转换为体验事件XDM模式并作为数据集 [!DNL Experience Platform] 被引入您的数据中。 此数据有许多用 [!DNL Query Service] 例，以下示例查询应使用您的Adobe Target数据集。
 
 >[!NOTE]
+>
 >在以下示例中，您将需要编辑SQL，以根据您感兴趣的数据集、变量或评估时间范围来填写查询的预期参数。 在SQL中可以看到的 `{ }` 任何位置提供参数。
 
 ## 目标数据源的标准数据集名称 [!DNL Platform]:
 
-Adobe Target体验事件(友好名 <br>称`adobe_target_experience_events` )(用于查询的名称)
+Adobe Target体验事件(友好 <br>名`adobe_target_experience_events` 称)(用于查询的名称)
 
 ## 高级部分XDM场映射
 
