@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: 用户档案系统作业——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 73f2c05a0e63f376f7a2f5644133e773980d0b26
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1420'
 ht-degree: 2%
@@ -17,6 +17,7 @@ ht-degree: 2%
 Adobe Experience Platform使您能够从多个来源收集数据，并为各个客户构建强大的用户档案。 所摄取的 [!DNL Platform] 数据被存储 [!DNL Data Lake] 在数据存储 [!DNL Real-time Customer Profile] 器中。 有时可能需要从用户档案库中删除数据集或批处理，以删除不再需要或错误添加的数据。 这需要使用 [!DNL Real-time Customer Profile] API创建 [!DNL Profile] 系统作业(也称为“[!DNL delete request]”)，如果需要，也可以修改、监视或删除。
 
 >[!NOTE]
+>
 >如果您尝试从中删除数据集或批次，请 [!DNL Data Lake]访问目录服 [务概述](../../catalog/home.md) ，以获取说明。
 
 ## 入门指南
@@ -106,6 +107,7 @@ curl -X GET \
 要删除数据集，数据集ID必须包含在POST请求主体中。 此操作将删除给定数据集的ALL数据。 [!DNL Experience Platform] 允许您根据记录和时间序列模式删除数据集。
 
 >[!CAUTION]
+>
 > 尝试使用UI删 [!DNL Profile]除启用的数据集时，将禁 [!DNL Experience Platform] 用数据集以进行摄取，但直到使用API创建删除请求后，才会删除该数据集。 有关详细信息，请参 [阅本文档](#appendix) 的附录。
 
 **API格式**
@@ -159,6 +161,7 @@ curl -X POST \
 要删除批，批ID必须包含在POST请求主体中。 请注意，不能根据记录模式删除数据集的批。 只能删除基于时间序列模式的数据集的批次。
 
 >[!NOTE]
+>
 > 无法根据记录模式删除数据集批的原因是记录类型数据集批覆盖以前的记录，因此无法“撤消”或删除。 要消除基于记录模式的数据集中错误批次的影响，唯一的方法是使用正确的数据重新收录批次，以覆盖错误的记录。
 
 有关记录和时间序列行为的详细信息，请查看概 [述中有关XDM数据行为](../../xdm/home.md#data-behaviors) 的一 [!DNL XDM System] 节。
