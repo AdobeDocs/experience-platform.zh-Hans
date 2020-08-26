@@ -5,9 +5,9 @@ seo-title: Adobe Campaign
 description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 seo-description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: e5a3539c8be8b7424f4965c7ab43d4260e39b380
 workflow-type: tm+mt
-source-wordcount: '517'
+source-wordcount: '580'
 ht-degree: 1%
 
 ---
@@ -78,4 +78,11 @@ The presence of these files in your storage location is confirmation of successf
 
 ## 将数据导入设置为Adobe Campaign {#import-data-into-campaign}
 
-在将实时CDP连接到您的 [!DNL Amazon S3] 存储或SFTP后，您必须设置从存储位置导入到Adobe Campaign的数据。 要了解如何完成此操作，请参阅 [Adobe Campaign帮助](https://docs.adobe.com/content/help/en/campaign-classic/using/automating-with-workflows/general-operation/importing-data.html) 文档中的导入数据。
+>[!IMPORTANT]
+>
+>* 执行此集成时，请记住SFTP存储限制、存储限制和有效用户档案限制，这些限制均符合您的Adobe Campaign合同。
+>* 您需要使用计划工作流、导入和映射Adobe Campaign中导出的区 [!DNL Campaign] 段。 请参阅 [Adobe Campaign文档中的设置](https://docs.adobe.com/content/help/en/campaign-classic/using/automating-with-workflows/general-operation/importing-data.html#setting-up-a-recurring-import) 经常性导入。
+
+
+
+在将实时CDP连接到您的 [!DNL Amazon S3] 存储或SFTP后，您必须设置从存储位置导入到Adobe Campaign的数据。 要了解如何完成此操作，请参阅 [Adobe Campaign文档](https://docs.adobe.com/content/help/en/campaign-classic/using/automating-with-workflows/general-operation/importing-data.html) 中的导入数据。
