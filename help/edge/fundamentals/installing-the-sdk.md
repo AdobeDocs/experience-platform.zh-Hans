@@ -5,7 +5,7 @@ description: 了解如何安装Experience PlatformWeb SDK
 seo-description: 了解如何安装Experience PlatformWeb SDK
 keywords: web sdk installation;installing web sdk;internet explorer;promise;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 7aa0e654300f10db774794d66ece9d0d040cb2ba
 workflow-type: tm+mt
 source-wordcount: '623'
 ht-degree: 1%
@@ -23,8 +23,8 @@ URL结构：https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.min.js或alloy
 
 例如：
 
-* 缩小： [https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js)
-* 未精简： [https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js](https://cdn1.adoberesources.net/alloy/1.0.0/alloy.js)
+* 缩小： [https://cdn1.adoberesources.net/alloy/2.1.0/alloy.min.js](https://cdn1.adoberesources.net/alloy/2.1.0/alloy.min.js)
+* 未精简： [https://cdn1.adoberesources.net/alloy/2.1.0/alloy.js](https://cdn1.adoberesources.net/alloy/2.1.0/alloy.js)
 
 ## 添加代码 {#adding-the-code}
 
@@ -37,7 +37,7 @@ URL结构：https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.min.js或alloy
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["alloy"]);
 </script>
-<script src="https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js" async></script>
+<script src="https://cdn1.adoberesources.net/alloy/2.1.0/alloy.min.js" async></script>
 ```
 
 基本代码创建一个名为的全局函数 `alloy`。 使用此函数与SDK进行交互。 如果要将全局函数命名为其他名称，可以按如下方 `alloy` 式更改该名称：
@@ -49,7 +49,7 @@ URL结构：https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.min.js或alloy
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["mycustomname"]);
 </script>
-<script src="https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js" async></script>
+<script src="https://cdn1.adoberesources.net/alloy/2.1.0/alloy.min.js" async></script>
 ```
 
 在此示例中，全局函数被重 `mycustomname`命名，而不是 `alloy`重命名。
@@ -99,5 +99,5 @@ URL结构：https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.min.js或alloy
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["alloy"]);
 </script>
-<script src="https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js"></script>
+<script src="https://cdn1.adoberesources.net/alloy/2.1.0/alloy.min.js"></script>
 ```
