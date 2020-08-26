@@ -5,7 +5,7 @@ solution: Experience Platform
 title: 流运行通知
 topic: overview
 translation-type: tm+mt
-source-git-commit: b5b785d8415c15e3acb9e1155811a66c51477717
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '871'
 ht-degree: 1%
@@ -29,7 +29,7 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 
 * [[!DNL体验数据模型(XDM)系统]](../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
 * [[!DNL实时客户用户档案]](../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [[!DNLAdobe Experience Platform数据摄取]](../ingestion/home.md): [!DNL Data Ingestion] 表示从这些源 [!DNL Platform] 中摄取数据的多种方法，以及该数据在下游服务中 [!DNL Data Lake] 的保留方 [!DNL Platform] 式。
+* [[!DNLAdobe Experience Platform数据摄取]](../ingestion/home.md): [!DNL Data Ingestion] 表示从这些源 [!DNL Platform] 中摄取数据的多种方法，以及数据在下游服务中的 [!DNL Data Lake] 保留方式 [!DNL Platform] 。
 
 此文档还需要了解webhook以及如何将webhook从一个应用程序连接到另一个应用程序。 有关Webhooks的 [详细信息](https://requestbin.com/blog/working-with-webhooks/) ，请参阅以下文档。
 
@@ -44,6 +44,7 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 获得唯一的Webhook URL后，转到 [AdobeI/O事件](https://www.adobe.io/apis/experienceplatform/events.html) ，按照数据获取通知 [文档中概述的步](../ingestion/quality/subscribe-events.md) 骤，使用开始订阅事件。
 
 >[!IMPORTANT]
+>
 >在订阅过程中，请确保选择通 [!DNL Platform] 知作为事件提供者，然后选择以下事件订阅:
 >
 >* **[!UICONTROL Experience Platform源的流运行成功]**
@@ -60,11 +61,12 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 通知会返回信息，如运行的摄取作业数、文件大小和错误。 通知还返回与JSON格式的流运行关联的有效负荷。 响应有效负荷可以分类 `sources_flow_run_success` 为或 `sources_flow_run_failure`。
 
 >[!IMPORTANT]
+>
 >如果在流创建过程中启用了部分摄取，则仅当错误数低于在流创建过程中设置的错误阈值百分比时， `sources_flow_run_success` 包含成功摄取和失败摄取的流才会标记为。 如果成功的流运行包含错误，则这些错误仍将作为返回有效负荷的一部分包含在内。
 
 ### 成功
 
-成功的响应返回一组定义 `metrics` 特定流运行的特性，以及描 `activities` 述数据如何转换的集合。
+成功的响应会返回一组定义 `metrics` 特定流运行的特性，以及描 `activities` 述数据如何转换的集合。
 
 ```json
 {
@@ -322,6 +324,7 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 | `fileInfo` | 一个URL，用于导致对成功和未成功摄取的文件进行概述。 |
 
 >[!NOTE]
+>
 >有关错误 [消息](#errors) ，请参阅附录。
 
 ## 后续步骤
