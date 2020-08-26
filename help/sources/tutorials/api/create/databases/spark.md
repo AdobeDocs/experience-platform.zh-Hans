@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在Azure HDInsights连接器上使用Flow Service API创建Apache Spark
 topic: overview
 translation-type: tm+mt
-source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '562'
 ht-degree: 2%
@@ -15,6 +15,7 @@ ht-degree: 2%
 # 使用API [!DNL Apache Spark] 创建 [!DNL Azure] HDInsights连接 [!DNL Flow Service] 器
 
 >[!NOTE]
+>
 >开 [!DNL Apache Spark] 关接 [!DNL Azure HDInsights] 头为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
 [!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
@@ -23,7 +24,7 @@ ht-degree: 2%
 
 ## 入门指南
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
 * [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
 * [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
@@ -51,7 +52,7 @@ ht-degree: 2%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -105,7 +106,7 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `auth.params.host` | 服务器的主 [!DNL Spark] 机。 |
+| `auth.params.host` | The host of the [!DNL Spark] server. |
 | `auth.params.username` | 与您的连接关联的用 [!DNL Spark] 户名。 |
 | `auth.params.password` | 与您的连接关联的 [!DNL Spark] 密码。 |
 | `connectionSpec.id` | 连接 [!DNL Spark] 规范ID: `6a8d82bc-1caf-45d1-908d-cadabc9d63a6`. |
