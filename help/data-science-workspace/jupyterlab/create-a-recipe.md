@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用Jupyter笔记本创建菜谱
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '2292'
 ht-degree: 0%
@@ -25,12 +25,11 @@ ht-degree: 0%
 
 ## 开始使用笔记本 [!DNL JupyterLab] 环境
 
-您可以在中从头开始创建菜谱 [!DNL Data Science Workspace]。 要进行开始，请导 [航到](https://platform.adobe.com) “Adobe Experience Platform”，然 **[!UICONTROL 后单击左]** 侧的“笔记本”选项卡。 从中选择Recipe Builder模板，创建新笔记本 [!DNL JupyterLab Launcher]。
+您可以在中从头开始创建菜谱 [!DNL Data Science Workspace]。 要进行开始，请导 [航到](https://platform.adobe.com) “Adobe Experience Platform”，然 **[!UICONTROL 后单]** 击左侧的“笔记本”选项卡。 从中选择Recipe Builder模板，创建新笔记本 [!DNL JupyterLab Launcher]。
 
 Recipe Builder [!UICONTROL 笔记本] ，可在笔记本内运行培训和评分运行。 这使您能够灵活地在对培训和评分 `train()` 数据 `score()` 运行实验之间更改其和方法。 一旦您对培训和评分的输出感到满意，您就可以创建一个菜谱，用于使用笔记本 [!DNL Data Science Workspace] 将内置到Recipe Builder笔记本的菜谱功能。
 
 >[!NOTE]
->
 >
 >Recipe Builder笔记本支持处理所有文件格式，但当前“创建菜谱”功能仅支持 [!DNL Python]。
 
@@ -78,7 +77,6 @@ data_access_sdk_python
 
 >[!NOTE]
 >
->
 >您添加的库或特定版本可能与上述库不兼容。
 
 ### 配置文件 {#configuration-files}
@@ -96,7 +94,7 @@ data_access_sdk_python
 
 ![](../images/jupyterlab/create-recipe/datasets.png)
 
-在Adobe Experience Platform和模式集选项卡 [下](https://platform.adobe.com/) ，可 **[以找](https://platform.adobe.com/schema)**到相**[同](https://platform.adobe.com/dataset/overview)** 的信息。
+在Adobe Experience Platform的“”和“ [模式集](https://platform.adobe.com/) ”选项 **[卡下](https://platform.adobe.com/schema)** ，可 **[以找到相同信息](https://platform.adobe.com/dataset/overview)** 。
 
 默认情况下，在访问数据时会为您设置以下配置参数：
 
@@ -121,7 +119,6 @@ data_access_sdk_python
 - [外部源](#external-sources)
 
 >[!NOTE]
->
 >
 >在Recipe Builder笔记本中，数据通过数据加载 `platform_sdk` 器加载。
 
@@ -153,7 +150,6 @@ df = pd.read_json(data)
 
 >[!CAUTION]
 >
->
 > `data_access_sdk_python` 不再推荐，请参阅将 [数据访问代码转换为平台SDK](../authoring/platform-sdk.md) ，以获取有关使用数据加载器 `platform_sdk` 的指南。
 
 用户可以使用数据访问SDK加载数据。 通过包含以下行，可以在页面顶部导入库：
@@ -172,7 +168,6 @@ df = prodreader.load(data_set_id=configProperties['trainingDataSetId'],
 ```
 
 >[!NOTE]
->
 >
 >如配置文 [件部分所述](#configuration-files)，当您从中访问数据时，将为您设置以下配置参数 [!DNL Experience Platform]:
 > - `ML_FRAMEWORK_IMS_USER_CLIENT_ID`
@@ -304,7 +299,6 @@ df.dropna(0, inplace=True)
 培训的目的是使用培训数据集中的功能和标签创建模型。
 
 >[!NOTE]
->
 > 
 >_特征_ ，是指机器学习模型用来预测标签的输入变 _量_。
 
@@ -471,7 +465,7 @@ def save(configProperties, prediction):
 
 ![](../images/jupyterlab/create-recipe/enter_recipe_name.png)
 
-按“确 **[!UICONTROL 定]** ”后 [，您将能够导航到Adobe Experience Platform上的新菜](https://platform.adobe.com/)谱。 单击“视图菜 **[!UICONTROL 谱]** ”按钮可转到“ML模型 **[!UICONTROL ”下]** 的“菜 **[!UICONTROL 谱”选项卡]**
+按下“ **[!UICONTROL 确定]** ”后，您将能够浏览到Adobe Experience Platform的新菜 [谱](https://platform.adobe.com/)。 单击“视图菜 **[!UICONTROL 谱]** ”按钮可转到“ML模型 **[!UICONTROL ”下]** 的“菜 **[!UICONTROL 谱”选项卡]**
 
 ![](../images/jupyterlab/create-recipe/recipe_creation_started.png)
 
@@ -487,9 +481,9 @@ def save(configProperties, prediction):
 
 ## 后续步骤 {#next-steps}
 
-完成本教程后，您学会了如何在Recipe Builder笔记本中创建机器学习模型。 您还学习了如何在笔记本中练习笔记本到菜谱工作流，以便在中创建菜谱 [!DNL Data Science Workspace]。
+完成本教程后，您学习了如何在Recipe Builder笔记本中创建机器学习模型。 您还学习了如何在笔记本中练习笔记本到菜谱工作流，以便在中创建菜谱 [!DNL Data Science Workspace]。
 
-要继续了解如何在中使用资源， [!DNL Data Science Workspace]请访问菜谱 [!DNL Data Science Workspace] 和模型下拉列表。
+要继续了解如何在中使用资 [!DNL Data Science Workspace]源，请访问菜 [!DNL Data Science Workspace] 谱和模型下拉列表。
 
 ## 其他资源 {#additional-resources}
 
