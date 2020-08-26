@@ -4,7 +4,7 @@ solution: Experience Platform
 title: ServiceNow连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 25f4589ff1f4fa11f3cd5b96c11731577949b5b0
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '205'
 ht-degree: 0%
@@ -15,9 +15,10 @@ ht-degree: 0%
 # （测试版）连 [!DNL ServiceNow] 接器
 
 >[!NOTE]
+>
 >连接 [!DNL ServiceNow] 器为测试版。 有关使用 [测试版标记](../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-Adobe Experience Platform允许从外部源摄取数据，同时使您能够使用服务构建、标记和增强传入数 [!DNL Platform] 据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
+Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 
 [!DNL Experience Platform] 支持从第三方客户成功系统中获取数据。 对客户成功提供商的支持包括 [!DNL ServiceNow]:
 
