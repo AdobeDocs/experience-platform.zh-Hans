@@ -4,7 +4,7 @@ solution: Experience Platform
 title: HP Vertica连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3b5e76afea5689dbd59f64f6192e6ef2a6acb7d3
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '182'
 ht-degree: 0%
@@ -15,6 +15,7 @@ ht-degree: 0%
 # （测试版）连 [!DNL HP Vertica] 接器
 
 >[!NOTE]
+>
 >连接 [!DNL HP Vertica] 器为测试版。 有关使用 [测试版标记](../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
 Adobe Experience Platform为数据库提供者(如 [!DNL Microsoft]MySQL和)提供本机连接 [!DNL Azure]。 您可以将数据从这些系统导入 [!DNL Platform]。
