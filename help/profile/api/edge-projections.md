@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: 边缘预测——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1900'
 ht-degree: 2%
@@ -21,6 +21,7 @@ ht-degree: 2%
 本指南中使用的API端点是的一部分 [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
 
 >[!NOTE]
+>
 >包含有效负荷(POST、PUT、PATCH)的请求需要 `Content-Type` 标头。 此文档 `Content-Type` 中使用了多个。 请特别注意示例调用中的标头，以确保您对每个请求使用 `Content-Type` 正确的标头。
 
 ## 投影目标
@@ -53,6 +54,7 @@ curl -X GET \
 响应包括一个数 `projectionDestinations` 组，其中每个目标的详细信息显示为该数组中的单个对象。 如果尚未配置投影，则数 `projectionDestinations` 组返回空。
 
 >[!NOTE]
+>
 >此响应已缩短，只显示两个目标。
 
 ```json
@@ -122,6 +124,7 @@ POST /config/destinations
 以下请求将创建新边缘目标。
 
 >[!NOTE]
+>
 >创建目标的POST请求需要特 `Content-Type` 定标题，如下所示。 使用不正确 `Content-Type` 的头会导致HTTP状态415（不支持的媒体类型）错误。
 
 ```shell
@@ -227,6 +230,7 @@ curl -X GET \
 通过向端点发出PUT请求并在请求路径中 `/config/destinations` 包括要更新的目标的ID，可以更新现有目标。 此操作本质上是 _重写目_ 标的，因此在请求主体中必须提供与创建新目标时相同的属性。
 
 >[!CAUTION]
+>
 >对更新请求的API响应是即时的，但是对预测所做的更改是异步应用的。 换句话说，在对目标的定义进行更新和应用该定义之间存在时间差。
 
 **API格式**
@@ -244,6 +248,7 @@ PUT /config/destinations/{DESTINATION_ID}
 以下请求更新现有目标以包含第二位置(`dataCenters`)。
 
 >[!IMPORTANT]
+>
 >PUT请求需要特 `Content-Type` 定标头，如下所示。 使用不正确 `Content-Type` 的头会导致HTTP状态415（不支持的媒体类型）错误。
 
 ```shell
@@ -295,6 +300,7 @@ curl -X PUT \
 如果您的组织不再需要投影目标，可以通过向终结点发出DELETE请求并在请求路径中 `/config/destinations` 包含要删除的目标ID来删除该目标。
 
 >[!CAUTION]
+>
 >对删除请求的API响应是即时的，但边缘上数据的实际更改是异步进行的。 换言之，用户档案数据将从所有边缘(在投影目标中 `dataCenters` 指定)中删除，但该过程需要时间来完成。
 
 **API格式**
@@ -345,6 +351,7 @@ GET /config/projections?schemaName={SCHEMA_NAME}&name={PROJECTION_NAME}
 | `{PROJECTION_NAME}` | 要访问的投影配置的名称。 |
 
 >[!NOTE]
+>
 >`schemaName` 当使用参数时 `name` 是必需的，因为投影配置名称仅在模式类的上下文中是唯一的。
 
 **请求**
@@ -429,6 +436,7 @@ POST /config/projections?schemaName={SCHEMA_NAME}
 **请求**
 
 >[!NOTE]
+>
 >创建配置的POST请求需要特 `Content-Type` 定标头，如下所示。 使用不正确 `Content-Type` 的头会导致HTTP状态415（不支持的媒体类型）错误。
 
 ```shell
@@ -506,6 +514,7 @@ curl -X POST \
    * 上例等效于 `addresses.type,addresses.city.country`。
 
 >[!NOTE]
+>
 >引用子字段时支持点记号和圆括号记号。 但是，最好使用点记号，因为它更简洁，并更好地说明字段层次结构。
 
 * 选择器中的每个字段都指定为相对于响应的根。
@@ -610,6 +619,7 @@ curl -X POST \
 ```
 
 >[!NOTE]
+>
 >每当返回嵌套字段时，投影都包括封闭的父对象。 除非也明确选择父字段，否则父字段不包括任何其他子字段。
 
 **地址（类型，城市）**
