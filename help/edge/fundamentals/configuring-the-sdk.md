@@ -5,7 +5,7 @@ description: 了解如何配置Experience PlatformWeb SDK
 seo-description: 了解如何配置Experience PlatformWeb SDK
 keywords: configuring;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehidingStyle;opacity;cookieDestinationsEnabled;urlDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: fe53ecbf6adff4f1e09979cd170a88ac0bd3cb75
 workflow-type: tm+mt
 source-wordcount: '749'
 ht-degree: 10%
@@ -107,9 +107,9 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
-| 对象 | 否 | `{"general": "in"}` |
+| 对象 | 否 | `"in"` |
 
-设置用户的默认同意。 当尚未为用户保存同意首选项时，将使用此选项。 另一个有效值是 `{"general": "pending"}`。 设置此项后，工作将排队，直到用户提供同意首选项。 提供用户首选项后，工作将根据用户的首选项继续或中止。 有关详 [细信息](supporting-consent.md) ，请参阅支持同意。
+设置用户的默认同意。 当尚未为用户保存同意首选项时，将使用此选项。 另一个有效值是 `"pending"`。 设置此项后，工作将排队，直到用户提供同意首选项。 提供用户首选项后，工作将根据用户的首选项继续或中止。 有关详 [细信息](supporting-consent.md) ，请参阅支持同意。
 
 ## 个性化选项
 
