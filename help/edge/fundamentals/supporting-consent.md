@@ -5,7 +5,7 @@ description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
 seo-description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
 keywords: consent;defaultConsent;default consent;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: fe53ecbf6adff4f1e09979cd170a88ac0bd3cb75
 workflow-type: tm+mt
 source-wordcount: '756'
 ht-degree: 0%
@@ -26,13 +26,13 @@ ht-degree: 0%
 
 ## 配置同意
 
-默认情况下，用户选择用于所有目的。 要阻止SDK在用户进入之前执行上述任务，请在SDK配置 `"defaultConsent": { "general": "pending" }` 过程中进行传递，如下所示：
+默认情况下，用户选择用于所有目的。 要阻止SDK在用户进入之前执行上述任务，请在SDK配置 `"defaultConsent": "pending"` 过程中进行传递，如下所示：
 
 ```javascript
 alloy("configure", {
   "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
   "imsOrgId": "ADB3LETTERSANDNUMBERS@AdobeOrg",
-  "defaultConsent": { "general": "pending" }
+  "defaultConsent": "pending"
 });
 ```
 
@@ -76,7 +76,7 @@ alloy("setConsent", {
 >
 >用户选择退出后，SDK将不允许您设置用户同意 `in`。
 
-由于用户选择选择退出了，从先前排队的命令返回的承诺将被拒绝。 取决于用户选择加入的将来命令将返回同样被拒绝的承诺。 有关处理或隐藏错误的详细信息，请参阅 [执行命令](executing-commands.md)。
+由于用户选择选择退出了，从先前排队的命令返回的承诺将被拒绝。 取决于用户选择加入的将来命令将返回同样被拒绝的承诺。 有关处理或隐藏错误的详细信息，请参阅执 [行命令](executing-commands.md)。
 
 >[!NOTE]
 >
