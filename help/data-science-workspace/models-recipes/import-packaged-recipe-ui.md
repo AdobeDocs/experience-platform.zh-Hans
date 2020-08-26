@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 导入打包的菜谱(UI)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1760'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 导入打包的菜谱(UI)
 
-本教程通过提供的零售销售示例提供有关如何配置和导入打包菜谱的分析。 在本教程结束时，您将准备好以Adobe Experience Platform创建、培训和评估模型 [!DNL Data Science Workspace]。
+本教程通过提供的零售销售示例提供有关如何配置和导入打包菜谱的分析。 在本教程的结尾，您将准备好在Adobe Experience Platform创建、培训和评估模型 [!DNL Data Science Workspace]。
 
 ## 先决条件
 
@@ -131,12 +131,14 @@ ht-degree: 0%
 ![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
+>
 > 在将源 [文件打包到菜谱教程中](./package-source-files-recipe.md) ，在使用Python源文件构建零售销售菜谱结束时提供了一个Docker URL。
 
 在“选择源”页 *面上* ，将与使用源URL字段中的源文件生成的打包菜谱 [!DNL Python] 对应的Docker **[!UICONTROL URL粘贴]** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/python/retail/retail.config.json`。 在“ **[!UICONTROL 运行时]** ”下拉 *框中选* 择Python **[!UICONTROL ，在“类]** 型 *”下拉框中选* 择“分类”。 填写完所有内容后，单 **[!UICONTROL 击]** 右上角的“下一步”，继续 *管理模式*。
 
 >[!NOTE]
-> *类型&#x200B;*支持&#x200B;**[!UICONTROL 分类]**和&#x200B;**[!UICONTROL 回归]**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**[!UICONTROL 义”]**。
+>
+> *类型* 支持 **[!UICONTROL 分类]** 和 **[!UICONTROL 回归]**。 如果模型不属于这些类型之一，请选择“自定 **[!UICONTROL 义”]**。
 
 ![](../images/models-recipes/import-package-ui/recipe_source_python.png)
 
@@ -144,7 +146,7 @@ ht-degree: 0%
 
 ![](../images/models-recipes/import-package-ui/recipe_schema.png)
 
-在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选 **[!UICONTROL 择“输入功]****[!UICONTROL 能”或“]** 目标功能 **[!UICONTROL ”，选]** 择输入和输出功能。 在本教程中，将weeklySales **[!UICONTROL 设置]** “目标 **[!UICONTROL 功能”，将其他]** 设置为“输 **[!UICONTROL 入功能”]**。 单击 **[!UICONTROL 下一]** 步以查看您新配置的菜谱。
+在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选 **[!UICONTROL 择“输入功]****[!UICONTROL 能”或“]** 目标功能 **[!UICONTROL ”，选]** 择输入和输出功能。 在本教程中，请将 **[!UICONTROL weekly]** Sales设置为 **[!UICONTROL 目标功能]** ，将其他 **[!UICONTROL 设置为输]**&#x200B;入功能。 单击 **[!UICONTROL 下一]** 步以查看您新配置的菜谱。
 
 根据需要审核菜谱、添加、修改或删除配置。 单击 **[!UICONTROL 完成]** ，以创建菜谱。
 
@@ -163,12 +165,14 @@ ht-degree: 0%
 ![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
+>
 > 在将源 [文件打包到菜谱教程中](./package-source-files-recipe.md) ，在构建使用R源文件的零售销售菜谱结束时提供了Docker URL。
 
 在“选择源”页 *面上* ，请在“源URL”字段中粘贴与使用R源文件构建的打包菜谱对应的 **[!UICONTROL Docker URL]** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/R/Retail\ -\ GradientBoosting/retail.config.json`。 在“ **[!UICONTROL 运行时]** ”下拉 *框中选* 择R，在“类 **[!UICONTROL 型”下]** 拉框中选 ** 择“分类”。 填写完所有内容后，单 **[!UICONTROL 击]** 右上角的“下一步”，继续 *管理模式*。
 
 >[!NOTE]
-> *类型&#x200B;*支持&#x200B;**[!UICONTROL 分类]**和&#x200B;**[!UICONTROL 回归]**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**[!UICONTROL 义”]**。
+>
+> *类型* 支持 **[!UICONTROL 分类]** 和 **[!UICONTROL 回归]**。 如果模型不属于这些类型之一，请选择“自定 **[!UICONTROL 义”]**。
 
 ![](../images/models-recipes/import-package-ui/recipe_source_R.png)
 
@@ -176,7 +180,7 @@ ht-degree: 0%
 
 ![](../images/models-recipes/import-package-ui/recipe_schema.png)
 
-在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选 **[!UICONTROL 择“输入功]****[!UICONTROL 能”或“]** 目标功能 **[!UICONTROL ”，选]** 择输入和输出功能。 在本教程中，将weeklySales **[!UICONTROL 设置]** “目标 **[!UICONTROL 功能”，将其他]** 设置为“输 **[!UICONTROL 入功能”]**。 单击 **[!UICONTROL 下一]** 步以查看您的新配置菜谱。
+在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选 **[!UICONTROL 择“输入功]****[!UICONTROL 能”或“]** 目标功能 **[!UICONTROL ”，选]** 择输入和输出功能。 在本教程中，请将 **[!UICONTROL weekly]** Sales设置为 **[!UICONTROL 目标功能]** ，将其他 **[!UICONTROL 设置为输]**&#x200B;入功能。 单击 **[!UICONTROL 下一]** 步以查看您的新配置菜谱。
 
 根据需要审核菜谱、添加、修改或删除配置。 单击 **完成** ，以创建菜谱。
 
@@ -195,12 +199,14 @@ ht-degree: 0%
 ![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
-> 在将源 [文件打包到菜谱教程中](./package-source-files-recipe.md) ，使用PySpark源文件在构建零售销售菜谱时提供了一个Docker URL。
+>
+> 在将源 [文件打包到菜谱教程中](./package-source-files-recipe.md) ，在使用PySpark源文件构建零售销售菜谱结束时提供了一个Docker URL。
 
 在“选择源”页 *面上* ，请在“源URL”字段中粘贴与使用PySpark源文件构建的打包菜谱对应的 **[!UICONTROL Docker URL]** 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/pyspark/retail/pipeline.json`。 在“ **[!UICONTROL 运行时]** ”下拉 *框中选* 择PySpark。 选择PySpark运行时后，默认工件会自动填充 **[!UICONTROL 到Docker]**。 接下来，在 **[!UICONTROL 类型]** 下拉 *框中选* 择分类。 填写完所有内容后，单 **[!UICONTROL 击]** 右上角的“下一步”，继续 *管理模式*。
 
 >[!NOTE]
-> *类型&#x200B;*支持&#x200B;**[!UICONTROL 分类]**和&#x200B;**[!UICONTROL 回归]**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**[!UICONTROL 义”]**。
+>
+> *类型* 支持 **[!UICONTROL 分类]** 和 **[!UICONTROL 回归]**。 如果模型不属于这些类型之一，请选择“自定 **[!UICONTROL 义”]**。
 
 ![](../images/models-recipes/import-package-ui/pyspark-databricks.png)
 
@@ -208,7 +214,7 @@ ht-degree: 0%
 
 ![](../images/models-recipes/import-package-ui/recipe_schema.png)
 
-在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选 **[!UICONTROL 择“输入功]****[!UICONTROL 能”或“]** 目标功能 **[!UICONTROL ”，选]** 择输入和输出功能。 在本教程中，将weeklySales **[!UICONTROL 设置]** “目标 **[!UICONTROL 功能”，将其他]** 设置为“输 **[!UICONTROL 入功能”]**。 单击 **[!UICONTROL 下一]** 步以查看您新配置的菜谱。
+在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选 **[!UICONTROL 择“输入功]****[!UICONTROL 能”或“]** 目标功能 **[!UICONTROL ”，选]** 择输入和输出功能。 在本教程中，请将 **[!UICONTROL weekly]** Sales设置为 **[!UICONTROL 目标功能]** ，将其他 **[!UICONTROL 设置为输]**&#x200B;入功能。 单击 **[!UICONTROL 下一]** 步以查看您新配置的菜谱。
 
 根据需要审核菜谱、添加、修改或删除配置。 单击 **[!UICONTROL 完成]** ，以创建菜谱。
 
@@ -227,12 +233,14 @@ ht-degree: 0%
 ![配置工作流](../images/models-recipes/import-package-ui/configure-workflow.png)
 
 >[!NOTE]
+>
 > 在将源 [文件打包到菜谱教程中](./package-source-files-recipe.md) ，在使用Scala()源文件构建零售销售菜谱结束时提供了一个Docker[!DNL Spark]URL。
 
 在“选择源”页 *面上* ，粘贴与使用“源URL”字段中的“缩放源文件”生成的打包菜谱对应的 *Docker URL* 。 然后，通过拖放导入提供的配置文件，或使用文件系统浏 **览器**。 可在上找到提供的配置文件 `experience-platform-dsw-reference/recipes/scala/retail/pipelineservice.json`。 在“ **[!UICONTROL 运行时]** ”下拉 *框中选* 择“Spark”。 选择运 [!DNL Spark] 行时后，默认对象会自动填充到 **[!UICONTROL Docker]**。 然后，从“ **[!UICONTROL 类型]** ”下 *拉框中* 选择“回归”。 填写完所有内容后，单 **[!UICONTROL 击]** 右上角的“下一步”，继续 *管理模式*。
 
 >[!NOTE]
-> *类型&#x200B;*支持&#x200B;**[!UICONTROL 分类]**和&#x200B;**[!UICONTROL 回归]**。 如果模型不属于这些类型之一，请选择“自定&#x200B;**[!UICONTROL 义”]**。
+>
+> *类型* 支持 **[!UICONTROL 分类]** 和 **[!UICONTROL 回归]**。 如果模型不属于这些类型之一，请选择“自定 **[!UICONTROL 义”]**。
 
 ![](../images/models-recipes/import-package-ui/scala-databricks.png)
 
@@ -240,7 +248,7 @@ ht-degree: 0%
 
 ![](../images/models-recipes/import-package-ui/recipe_schema.png)
 
-在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选 **[!UICONTROL 择“输入功]****[!UICONTROL 能”或“]** 目标功能 **[!UICONTROL ”，选]** 择输入和输出功能。 在本教程中，将weeklySales **[!UICONTROL 设置]** “目标 **[!UICONTROL 功能”，将其他]** 设置为“输 **[!UICONTROL 入功能”]**。 单击 **[!UICONTROL 下一]** 步以查看您新配置的菜谱。
+在“功 *能管理* ”部分下，在模式查看器中单击租户标识以展开“零售销售”输入模式。 通过突出显示所需的功能并在右侧的“字段属性”窗口中选 **[!UICONTROL 择“输入功]****[!UICONTROL 能”或“]** 目标功能 **[!UICONTROL ”，选]** 择输入和输出功能。 在本教程中，请将 **[!UICONTROL weekly]** Sales设置为 **[!UICONTROL 目标功能]** ，将其他 **[!UICONTROL 设置为输]**&#x200B;入功能。 单击 **[!UICONTROL 下一]** 步以查看您新配置的菜谱。
 
 根据需要审核菜谱、添加、修改或删除配置。 单击 **[!UICONTROL 完成]** ，以创建菜谱。
 
