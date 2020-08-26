@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用流服务API创建AzureData Explorer连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '605'
 ht-degree: 1%
@@ -15,6 +15,7 @@ ht-degree: 1%
 # 使用API [!DNL Azure Data Explorer] 创建连接 [!DNL Flow Service] 器
 
 >[!NOTE]
+>
 >连接 [!DNL Azure Data Explorer] 器为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
 [!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
@@ -23,7 +24,7 @@ ht-degree: 1%
 
 ## 入门指南
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
 * [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
 * [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
@@ -36,8 +37,8 @@ ht-degree: 1%
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `endpoint` | 服务器的端 [!DNL Data Explorer] 点。 |
-| `database` | 数据库的 [!DNL Data Explorer] 名称。 |
+| `endpoint` | The endpoint of the [!DNL Data Explorer] server. |
+| `database` | The name of the [!DNL Data Explorer] database. |
 | `tenant` | 用于连接数据库的唯一租户 [!DNL Data Explorer] ID。 |
 | `servicePrincipalId` | 用于连接到数据库的唯一服务主体 [!DNL Data Explorer] ID。 |
 | `servicePrincipalKey` | 用于连接到数据库的唯一服务主体 [!DNL Data Explorer] 键。 |
@@ -53,7 +54,7 @@ ht-degree: 1%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../../tutorials/authentication.md)。 完成身份验证教程可为所有E API调用中的每个所需标头提供值[!DNL xperience Platform] ，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -109,8 +110,8 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `auth.params.endpoint` | 服务器的端 [!DNL Data Explorer] 点。 |
-| `auth.params.database` | 数据库的 [!DNL Data Explorer] 名称。 |
+| `auth.params.endpoint` | The endpoint of the [!DNL Data Explorer] server. |
+| `auth.params.database` | The name of the [!DNL Data Explorer] database. |
 | `auth.params.tenant` | 用于连接数据库的唯一租户 [!DNL Data Explorer] ID。 |
 | `auth.params.servicePrincipalId` | 用于连接到数据库的唯一服务主体 [!DNL Data Explorer] ID。 |
 | `auth.params.servicePrincipalKey` | 用于连接到数据库的唯一服务主体 [!DNL Data Explorer] 键。 |
