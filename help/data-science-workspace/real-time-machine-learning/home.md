@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时机器学习概述
 topic: Overview
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '504'
 ht-degree: 1%
@@ -15,6 +15,7 @@ ht-degree: 1%
 # 实时机器学习概述(Alpha)
 
 >[!IMPORTANT]
+>
 >尚未向所有用户提供实时机器学习。 此功能在alpha中，仍在测试中。 此文档可能会更改。
 
 实时机器学习可以显着增强您的数字体验内容对最终用户的相关性。 通过利用实时参考和对Adobe的持续学习，可以实现这一点 [!DNL Experience Edge]。
@@ -35,11 +36,11 @@ ht-degree: 1%
 
 ### 数据获取和准备
 
-在Adobe Experience Platform上用(XDM) [!DNL Experience Data Model] 摄取和转换数据。 此数据用于模型培训。 要进一步了解XDM，请访 [问XDM概述](../../xdm/home.md)。
+在Adobe Experience Platform，数据被摄取并 [!DNL Experience Data Model] 与(XDM)一起转换。 此数据用于模型培训。 要进一步了解XDM，请访 [问XDM概述](../../xdm/home.md)。
 
 ### 创作
 
-通过从头开始创作实时机器学习模型，或将其作为Adobe Experience PlatformJupyter笔记本中经过预先培训的序列化ONNX模型引入其中。
+通过从头开始创作或作为Adobe Experience PlatformJupyter笔记本中经过预先培训的序列化ONNX模型引入，创建实时机器学习模型。
 
 ### 部署
 
@@ -58,6 +59,7 @@ ht-degree: 1%
 实时机器学习目前采用alpha。 随着更多功能和节点的可用，以下概述的功能可能会发生更改。
 
 >[!NOTE]
+>
 > Alpha限制：
 > - 目前，仅支持基于ONNX的模型。
 > - 节点中使用的函数无法序列化。 例如，在Pacnots节点中使用的lambda函数。
@@ -70,7 +72,7 @@ ht-degree: 1%
 
 |  | Alpha（5月） |
 | --- | --- |
-| **功能** | -使用RTML笔记本模板，创作、测试和部署自定义机器学习模型。 <br> -支持导入预先培训的机器学习模型。 <br> -实时机器学习SDK。 <br> -创作节点的起始集。 <br> -已部署到Adobe Experience Platform中心。 |
+| **功能** | -使用RTML笔记本模板，创作、测试和部署自定义机器学习模型。 <br> -支持导入预先培训的机器学习模型。 <br> -实时机器学习SDK。 <br> -创作节点的起始集。 <br> -部署到Adobe Experience Platform枢纽。 |
 | **可用性** | 北美洲 |
 | **创作节点** | - Apnotics <br> - ScikitLearn <br> - ONNXode <br> - Split <br> - ModelUpload <br> - OneHotEncoder |
 | **评分运行时间** | ONNX |
