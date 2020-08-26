@@ -5,7 +5,7 @@ description: 使用开始Web SDK收集数据的快速Experience Platform指南
 seo-description: 使用开始Web SDK收集数据的快速Experience Platform指南
 keywords: 1st-party domain;CNAME;schema;create schema;configuration id;configuration tool;data element;create data element;XDM Object;sendEvent;send Event;install sdk;install web sdk;configure;configure web sdk;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 7aa0e654300f10db774794d66ece9d0d040cb2ba
 workflow-type: tm+mt
 source-wordcount: '517'
 ht-degree: 5%
@@ -23,7 +23,7 @@ ht-degree: 5%
 
 ## 准备模式
 
-将 [!DNL Experience Platform Edge Network] 数据视为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义预 [!DNL Edge Network] 期数据的格式。 要发送数据，您需要定义模式。
+将 [!DNL Experience Platform Edge Network] 数据视为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义 [!DNL Edge Network] 数据的格式。 要发送数据，您需要定义模式。
 
 - [创建模式](../../xdm/tutorials/create-schema-ui.md)
 - 将Adobe Experience Platform混 [!DNL Web SDK] 音添加到您创建的模式
@@ -51,7 +51,7 @@ ht-degree: 5%
   function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}
   (window,["alloy"]);
 </script>
-<script src="https://cdn1.adoberesources.net/alloy/1.0.0/alloy.min.js" async></script>
+<script src="https://cdn1.adoberesources.net/alloy/2.1.0/alloy.min.js" async></script>
 ```
 
 有关执行此操作的不同选项的更多详细信息，请 [参阅安装SDK](../fundamentals/installing-the-sdk.md)。
