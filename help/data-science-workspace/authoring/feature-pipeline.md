@@ -4,7 +4,7 @@ solution: Adobe Experience Platform Data Science Workspace
 title: 创建特征管线
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: c48079ba997a7b4c082253a0b2867df76927aa6d
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1367'
 ht-degree: 0%
@@ -15,11 +15,12 @@ ht-degree: 0%
 # 创建特征管线
 
 >[!IMPORTANT]
+>
 > 功能管道当前仅通过API可用。
 
-Adobe Experience Platform允许您通过Sensei机器学习框架运行时（以下简称“运行时”）构建和创建自定义功能管道，以大规模执行功能工程。
+Adobe Experience Platform允许您通过Sensei机器学习框架运行时（以下简称“运行时”）构建和创建定制功能管道，以大规模执行功能工程。
 
-本文档描述了在功能管道中找到的各种类，并提供了一个分步教程，用于在PySpark中使用“模型创作SDK”创 [建自定义功能](./sdk.md) 管道。
+本文档描述了在功能管道中找到的各种类，并提供了使用PySpark中的模型创作SDK创建自定义功能 [管道的分](./sdk.md) 步教程。
 
 在运行特征管线时，将发生以下工作流：
 
@@ -52,7 +53,7 @@ Adobe Experience Platform允许您通过Sensei机器学习框架运行时（以�
 | 功能管道工厂 | FeaturePipelineFactory类构建一个Spark Pipeline，它包含一系列Spark Transporters，用于执行特征工程。 您可以选择不提供FeaturePipelineFactory类，而是在DatasetTransformer类中实施您的功能工程逻辑。 |
 | 数据保护程序 | DataSaver类提供功能数据集存储的逻辑。 |
 
-启动功能管线作业时，运行时首先执行DataLoader以将输入数据加载为DataFrame，然后通过执行DatasetTransformer、FeaturePipelineFactory或两者来修改DataFrame。 最后，生成的特征数据集通过DataSaver进行存储。
+启动功能管线作业时，运行时首先执行DataLoader以将输入数据加载为DataFrame，然后通过执行DatasetTransformer、FeaturePipelineFactory或两者来修改DataFrame。 最后，通过DataSaver存储生成的特征数据集。
 
 以下流程图显示了运行时的执行顺序：
 
@@ -390,6 +391,7 @@ scoring.dataSaver: MyDatasetSaver
 既然您已经创作了功能管道，您需要创建Docker图像以调用API中的功能管道端点 [!DNL Sensei Machine Learning] 。 需要Docker图像URL才能调用功能管线端点。
 
 >[!TIP]
+>
 >如果您没有Docker URL，请访 [问将源文件打包到菜谱教程](../models-recipes/package-source-files-recipe.md) ，以逐步演练创建Docker主机URL。
 
 或者，您也可以使用以下Postman集合来帮助完成功能管道API工作流：
@@ -423,9 +425,10 @@ https://www.getpostman.com/collections/c5fc0d1d5805a5ddd41a
 ### 指定“实验”运行评分任务 {#scoring}
 
 >[!NOTE]
+>
 > 要完成此步骤，您至少需要有一个成功的培训运行与您的实验相关联。
 
-成功运行培训后，您需要指 [定得分运行任务](../api/experiments.md#experiment-training-scoring)。 将POST设 `experiments/{EXPERIMENT_ID}/runs` 置为，在正文中将 `mode` 属性设置为“score”。 这将开始您的评分实验运行。
+成功运行培训后，您需要指 [定评分运行任务](../api/experiments.md#experiment-training-scoring)。 将POST设 `experiments/{EXPERIMENT_ID}/runs` 置为，在正文中将 `mode` 属性设置为“score”。 这将开始您的评分实验运行。
 
 完成后，发出GET请 `/experiments/{EXPERIMENT_ID}` 求 [以检索实验状态](../api/experiments.md#retrieve-specific) ，并等待实验状态更新完成。
 
