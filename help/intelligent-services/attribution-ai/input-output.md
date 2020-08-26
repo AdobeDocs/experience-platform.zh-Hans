@@ -5,7 +5,7 @@ title: Attribution AI输入和输出
 topic: Input and Output data for Attribution AI
 description: 以下文档概述了Attribution AI中使用的不同输入和输出。
 translation-type: tm+mt
-source-git-commit: 2b51569a4c3dd9863edb6831bd182a7fa9d1d891
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '2075'
 ht-degree: 3%
@@ -69,6 +69,7 @@ Attribution AI需要历史数据作为模型培训的输入。 所需的数据�
 所需数据的最小长度=培训窗口+回顾窗口
 
 >[!TIP]
+>
 > 具有默认配置的应用程序所需的最小数据长度是：2个季度（180天）+ 56天= 236天。
 
 示例：
@@ -107,7 +108,7 @@ Attribution AI以尽可能最精细的级别输出归因得分，以便您可以
 | eventMergeId（字符串） | True | 一个ID，用于关联或合并 [!DNL Experience Events] 本质上相同的事件或应合并的多个。 这是在摄取之前由数据生成器填充的。 <br> **示例：** 575525617716-0-edc2ed37-1ab-4750-a820-1c2b3844b8c4 |
 | _id（字符串） | False | 时间序列事件的唯一标识符。 <br> **示例：** 4461-edc2ed37-1aab-4750-a820-1c2b3844b8c4 |
 | _tenantId（对象） | False | 与您的坚定ID对应的顶级对象容器。 <br> **示例：** _atsdsnrmmsv2 |
-| your_模式_name（对象） | False | 使用转换事件对与其关联的所有触点事件及其元数据进行分数。 <br> **示例：** Attribution AI分数——型号名称__2020 |
+| your_模式_name（对象） | False | 对与转换事件关联的所有触点事件及其元数据进行分数行。 <br> **示例：** Attribution AI分数——型号名称__2020 |
 | 分段（字符串） | True | 转换段，如构建模型时所依据的地理分段。 如果缺少区段，则区段与conversionName相同。 <br> **示例：** ORDER_US |
 | conversionName（字符串） | True | 在设置过程中配置的转换的名称。 <br> **示例：** 订单、潜在客户、访问 |
 | 转换（对象） | False | 转换元数据列。 |
