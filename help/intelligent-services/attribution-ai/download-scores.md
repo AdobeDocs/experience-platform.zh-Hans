@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 访问Attribution AI中的得分
 topic: Accessing scores
 translation-type: tm+mt
-source-git-commit: 24449d0138ab449dbc01aecbbe9f70e05c781c89
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1028'
 ht-degree: 2%
@@ -61,6 +61,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?&dataSet=
 成功的响应会返回包含批ID对象的有效负荷。 在此示例中，返回对象的键值是批处理ID `01E5QSWCAASFQ054FNBKYV6TIQ`。 复制批ID以用于下一个API调用。
 
 >[!NOTE]
+>
 > 以下响应已对对象进行 `tags` 了重新格式化，以便可读。
 
 ```json
