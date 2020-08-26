@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时机器学习入门
 topic: Getting started
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '405'
 ht-degree: 0%
@@ -15,9 +15,10 @@ ht-degree: 0%
 # 实时机器学习(Alpha)入门
 
 >[!IMPORTANT]
+>
 >尚未向所有用户提供实时机器学习。 此功能在alpha中，仍在测试中。 此文档可能会更改。
 
-为了利用实时机器学习，您需要能够访问提供Adobe Experience Platform和内容的组织 [!DNL Data Science Workspace]。 此外，您还需要拥有完整的数据集才能用于培训和评分。
+为了利用实时机器学习，您需要能够访问由Adobe Experience Platform和 [!DNL Data Science Workspace]此外，您还需要拥有完整的数据集才能用于培训和评分。
 
 实时机器学习指南需要对Python 3、Jupyter笔记本、数 [据科学](../jupyterlab/overview.md)和机器学习进行有效的理解。
 
@@ -25,14 +26,15 @@ ht-degree: 0%
 
 - **DSL:** 域特定语言。
 - **边缘：** 实时机器学习评分服务可以在离您的激活和应用程序更近的Edge群集上运行。
-- **中心：** 当前的alpha正在Adobe Experience Platform中心上运行实时机器学习评分服务，而Experience Edge Network正在开发中。
+- **中心：** 当前的alpha正在Adobe Experience Platform中心运行实时机器学习评分服务，而Experience Edge Network正在开发中。
 - **节点：** 节点是形成图形的基本单位。 每个节点都执行特定任务，可以使用链接将它们链在一起，以形成表示ML管道的图。 由节点执行的任务表示对输入数据的操作，如数据的转换或模式，或机器学习推理。 节点将转换或推断的值输出到下一个节点。
 
-## Adobe Experience Platform
+## Adobe Experience Platform数据集
 
 要使用实时机器学习进行开始，您必须有权访问数据集。 您可以选择使用外部数据集并将其上传到 [!DNL JupyterLab] 环境，或者在Platform中创建新数据集（如果尚未这样做）。
 
 >[!NOTE]
+>
 >如果您已经有要使用的数据集，可以跳到“下 [一步”](#next-steps)。
 
 ### 使用外部数据集
