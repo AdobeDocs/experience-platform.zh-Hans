@@ -2,11 +2,12 @@
 product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform帮助
+user-guide-description: Adobe Experience Platform is the most powerful, flexible, and open system on the market for building and managing complete solutions that drive customer experience. Experience Platform enables organizations to centralize and standardize customer data and content from any system and apply data science and machine learning to dramatically improve the design and delivery of rich, personalized experiences.
 translation-type: tm+mt
-source-git-commit: a2726bfc5ef7feac374e57af9c986a9c521efa48
+source-git-commit: bd3c31e7d39f7f66d755356a3dbb754e97c196fb
 workflow-type: tm+mt
 source-wordcount: '306'
-ht-degree: 39%
+ht-degree: 45%
 
 ---
 
@@ -17,12 +18,12 @@ ht-degree: 39%
 * [入门指南](get-started.md)
 * Experience Platform 文档 {#documentation}
    * [文档概述](documentation/overview.md)
-   * [访问控制](https://docs.adobe.com/content/help/en/experience-platform/access-control/home.html)
-   * [Auditor](https://docs.adobe.com/content/help/en/auditor/using/overview.html)
+   * [访问控制](https://docs.adobe.com/content/help/zh-Hans/experience-platform/access-control/home.html)
+   * [Auditor](https://docs.adobe.com/content/help/zh-Hans/auditor/using/overview.html)
    * [目录和数据集](https://docs.adobe.com/content/help/en/experience-platform/catalog/home.html)
    * [数据访问](https://docs.adobe.com/content/help/en/experience-platform/data-access/home.html)
    * [数据管理](https://docs.adobe.com/content/help/en/experience-platform/data-governance/home.html)
-   * [数据获取](https://docs.adobe.com/content/help/en/experience-platform/ingestion/home.html)
+   * [数据获取](https://docs.adobe.com/content/help/zh-Hans/experience-platform/ingestion/home.html)
    * [数据科学工作区](https://docs.adobe.com/content/help/en/experience-platform/data-science-workspace/home.html)
    * [Debugger](https://docs.adobe.com/content/help/zh-Hans/debugger/using/experience-cloud-debugger.html)
    * [调试器2.0（测试版）](https://docs.adobe.com/content/help/zh-Hans/debugger/using-v2/experience-cloud-debugger.html)
