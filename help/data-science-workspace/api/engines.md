@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 引擎
 topic: Developer guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1118'
 ht-degree: 3%
@@ -44,7 +44,6 @@ curl -X GET https://platform.adobe.io/data/sensei/engines/dockerRegistry \
 成功的响应会返回一个有效负荷，其中包含Docker注册表的详细信息，`host`包括Docker URL()、用`username`户名()和密码(`password`)。
 
 >[!NOTE]
->
 >
 >每次更新Docker密码时， `{ACCESS_TOKEN}` 密码都会更改。
 
