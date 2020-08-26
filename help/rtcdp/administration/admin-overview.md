@@ -5,7 +5,7 @@ seo-title: 实时CDP管理概述
 description: '本文档概述了由Adobe Experience Platform提供支持的实时客户数据平台的管理功能。 '
 seo-description: seo描述
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '277'
 ht-degree: 0%
@@ -28,6 +28,7 @@ ht-degree: 0%
 要进一步了解访问控制，请参阅 [文档中](../../access-control/home.md) 的访问控制 [!DNL Experience Platform] 概述。
 
 >[!IMPORTANT]
+>
 >有关授予对实时CDP功能的访问权限（包括启用UI中的可见性）的详细指南，请遵循 [访问控制用户指南中提供的步骤](../../access-control/ui/overview.md)，特别是用于管理产品用户档案的详细信息和其他服务的步骤。
 
 ## 沙箱
