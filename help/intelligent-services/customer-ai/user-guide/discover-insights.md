@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 利用客户人工智能发掘洞察
 topic: Discovering insights
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1059'
 ht-degree: 0%
@@ -79,9 +79,9 @@ ht-degree: 0%
 
 “ **[!UICONTROL 更多]** ”操作按钮位于“编辑”旁的右上导 **[!UICONTROL 航中]**。 单击 **[!UICONTROL 更多操作]** ，将打开一个下拉列表，通过该下拉列表可以选择下列操作之一：
 
-- **[!UICONTROL 删除]**: 删除实例。
-- **[!UICONTROL 访问分数]**: 单击 *访问得分* ，将打开一个对话框，其中提供指向客户AI教 [程下载得分的链接](./download-scores.md) ，该对话框还提供进行API调用所需的数据集ID。
-- **[!UICONTROL 视图运行历史]**: 将显示一个对话框，其中包含与服务实例关联的所有评分运行的列表。
+- **[!UICONTROL 删除]**:删除实例。
+- **[!UICONTROL 访问分数]**:单击 *访问得分* ，将打开一个对话框，其中提供指向客户AI教 [程下载得分的链接](./download-scores.md) ，该对话框还提供进行API调用所需的数据集ID。
+- **[!UICONTROL 视图运行历史]**:将显示一个对话框，其中包含与服务实例关联的所有评分运行的列表。
 
 ![更多操作](../images/insights/more-actions.png)
 
@@ -112,13 +112,14 @@ ht-degree: 0%
 单击“ **[!UICONTROL 低]** ”、“中”和“高倾向”任意桶中的“创建区段”按钮会将您重定向到区段生成器。
 
 >[!NOTE]
+>
 >只 **[!UICONTROL 有在为数据集]** 启用实时客户用户档案时，“创建区段”按钮才可用。 有关如何启用实时客户用户档案的更多信息，请 [访问实时客户用户档案概述](../../../rtcdp/overview.md)。
 
 ![单击创建区段](../images/insights/influential-factors-create-segment.png)
 
 ![创建区段](../images/insights/create-segment.png)
 
-区段生成器用于定义区段。 在从“ **[!UICONTROL 洞察]** ”页面选择创建区段时，客户AI会自动将选定的时段信息添加到区段。 要完成区段的创建，只需填 *写位于**区段构建器用户界面右边* 栏中的“名称”和“说明”容器。 为区段指定名称和说明后，单 **[!UICONTROL 击]** 右上角的保存。
+区段生成器用于定义区段。 在从“ **[!UICONTROL 洞察]** ”页面选择创建区段时，客户AI会自动将选定的时段信息添加到区段。 要完成区段的创建，只需填 *写位于**区段构建器用户界面右边栏* 的“名称”和“说明”容器。 为区段指定名称和说明后，单 **[!UICONTROL 击]** 右上角的保存。
 
 >!![NOTE] 由于倾向得分会写入单个用户档案，因此在“区段生成器”中可以像任何其他用户档案属性一样使用这些分数。 当您导航到区段生成器以创建新区段时，您可以在命名空间客户AI下查看所有不同的倾向得分。
 
