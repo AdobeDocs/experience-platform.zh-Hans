@@ -5,7 +5,7 @@ solution: Experience Platform
 title: 在UI中创建Adobe Analytics分类数据连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: e0d842b3c5d3b628e117c14d47d6c114b36484dd
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 2%
@@ -72,6 +72,7 @@ ht-degree: 2%
 “数 **[!UICONTROL 据集活动]** ”页显示有关您选择的目标数据集的信息，包括有关其批处理状态、数据集ID和模式的详细信息。
 
 >[!IMPORTANT]
+>
 >虽然其他源连接器可以删除数据集，但Analytics Classifications Data Connector当前不支持此功能。 如果您误删除了数据集，请与Adobe客户服务部联系。
 
 ![](../../../../images/tutorials/create/classifications/dataset.png)
