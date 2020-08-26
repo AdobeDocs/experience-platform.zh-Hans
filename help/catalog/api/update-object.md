@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 更新对象
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '313'
 ht-degree: 3%
@@ -21,7 +21,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->对象上的PATCH操作无法修改其可扩展字段，这些字段表示相互关联的对象。  必须直接修改相关对象。
+>对象上的PATCH操作无法修改其可扩展字段，这些字段表示相互关联的对象。 必须直接修改相关对象。
 
 ## 使用字段更新
 
