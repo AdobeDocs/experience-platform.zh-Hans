@@ -4,7 +4,7 @@ solution: Adobe Experience Platform
 title: 实体——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1671'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 实体端点(用户档案访问)
 
-Adobe Experience Platform使您能 [!DNL Real-time Customer Profile] 够使用RESTful API或用户界面访问数据。 本指南概述了如何使用API访问实体(通常称为“用户档案”)。 有关使用UI访问用户档案的详 [!DNL Platform] 细信息，请参阅 [用户档案用户指南](../ui/user-guide.md)。
+Adobe Experience Platform允许您 [!DNL Real-time Customer Profile] 使用RESTful API或用户界面访问数据。 本指南概述了如何使用API访问实体(通常称为“用户档案”)。 有关使用UI访问用户档案的详 [!DNL Platform] 细信息，请参阅 [用户档案用户指南](../ui/user-guide.md)。
 
 ## 入门指南
 
@@ -115,6 +115,7 @@ curl -X GET \
 ```
 
 >[!NOTE]
+>
 >如果相关图链接超过50个身份，则此服务将返回HTTP状态422并返回消息“太多相关身份”。 如果收到此错误，请考虑添加更多查询参数以缩小搜索范围。
 
 ## 通过身份列表访问用户档案数据
@@ -187,9 +188,9 @@ curl -X POST \
 | `identities.entityIdNS.code` | 要访问的实体ID的命名空间。 |
 | `timeFilter.startTime` | 开始时间范围过滤器的时间，包括。 应采用毫秒粒度。 如果未指定，则默认值是可用时间的开始。 |
 | `timeFilter.endTime` | 排除的时间范围过滤器的结束时间。 应采用毫秒粒度。 如果未指定，则默认值为可用时间的结束。 |
-| `limit` | 要返回的记录数。 仅适用于返回的体验事件数。 默认： 1000。 |
+| `limit` | 要返回的记录数。 仅适用于返回的体验事件数。 默认：1000。 |
 | `orderby` | 按时间戳(与默认事件一起写入)的检索体验 `(+/-)timestamp` 的排序顺序 `+timestamp`。 |
-| `withCA` | 用于启用计算属性进行查找的功能标志。 默认： 错误。 |
+| `withCA` | 用于启用计算属性进行查找的功能标志。 默认：错误。 |
 
 **响应**&#x200B;成功的响应返回请求主体中指定的实体的请求字段。
 
@@ -360,6 +361,7 @@ curl -X GET \
 成功的响应返回在请求列表参数中指定的分页事件和关联字段。
 
 >[!NOTE]
+>
 >请求指定了一(`limit=1`)个限制，因 `count` 此以下响应中的值为1并且只返回一个实体。
 
 ```json
@@ -414,6 +416,7 @@ curl -X GET \
 检索时间序列事件时，结果将分页。 如果有后续的结果页，则 `_page.next` 属性将包含ID。 此外，该属 `_links.next.href` 性还提供用于检索下一页的请求URI。 要检索结果，请向端点发 `/access/entities` 出另一个GET请求，但必 `/entities` 须确保替换为提供的URI的值。
 
 >[!NOTE]
+>
 >请确保不要意外在请求 `/entities/` 路径中重复。 它应该只出现一次， `/access/entities?start=...`
 
 **API格式**
@@ -545,14 +548,14 @@ curl -X POST \
 |---|---|
 | `schema.name` | **(必需** )要检索的实体的XDM模式 |
 | `relatedSchema.name` | 如果 `schema.name` 为 `_xdm.context.experienceevent` 此值，则必须指定与时间序列事件相关的用户档案实体的模式。 |
-| `identities` | **(必需** )用于从中检索关联时间序列事件的用户档案数组列表。 数组中的每个条目通过以下两种方式之一进行设置： 1)使用由ID值和命名空间组成的完全限定身份；或2)提供XID。 |
-| `fields` | 将返回的数据隔离到指定的字段集。 使用它过滤检索到的模式中包含哪些数据字段。 示例： personalEmail,person.name,person.gender |
+| `identities` | **(必需** )用于从中检索关联时间序列事件的用户档案数组列表。 数组中的每个条目通过以下两种方式之一进行设置：1)使用由ID值和命名空间组成的完全限定身份；或2)提供XID。 |
+| `fields` | 将返回的数据隔离到指定的字段集。 使用它过滤检索到的模式中包含哪些数据字段。 示例：personalEmail,person.name,person.gender |
 | `mergePolicyId` | 标识用于管理返回数据的合并策略。 如果未在服务调用中指定，则将使用组织的默认模式。 如果未配置默认的合并策略，则默认为无用户档案合并和无身份拼接。 |
 | `orderby` | 按时间戳(与默认事件一起写入)的检索体验 `(+/-)timestamp` 的排序顺序 `+timestamp`。 |
 | `timeFilter.startTime` | 指定筛选时间序列对象的开始时间（以毫秒为单位）。 |
 | `timeFilter.endTime` | 指定过滤时间序列对象的结束时间（以毫秒为单位）。 |
-| `limit` | 指定要返回的最大对象数的数值。 默认： 1000 |
-| `withCA` | 用于启用计算属性进行查找的功能标志。 默认： 假 |
+| `limit` | 指定要返回的最大对象数的数值。 默认：1000 |
+| `withCA` | 用于启用计算属性进行查找的功能标志。 默认：假 |
 
 **响应**
 
@@ -907,5 +910,5 @@ curl -X GET \
 | `orderBy` | 按时间戳(与默认事件一起写入)的检索体验 `(+/-)timestamp` 的排序顺序 `+timestamp`。 | `orderby=-timestamp` |
 | `startTime` | 指定筛选时间序列对象的开始时间（以毫秒为单位）。 | `startTime=1539838505` |
 | `endTime` | 指定过滤时间序列对象的结束时间（以毫秒为单位）。 | `endTime=1539838510` |
-| `limit` | 指定要返回的最大对象数的数值。 默认： 1000 | `limit=100` |
-| `withCA` | 用于启用计算属性进行查找的功能标志。 默认： 假 | `withCA=true` |
+| `limit` | 指定要返回的最大对象数的数值。 默认：1000 | `limit=100` |
+| `withCA` | 用于启用计算属性进行查找的功能标志。 默认：假 | `withCA=true` |
