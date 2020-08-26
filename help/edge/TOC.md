@@ -3,10 +3,10 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience PlatformWeb SDK帮助
 translation-type: tm+mt
-source-git-commit: 1fc0fbd2c278c5bec4bce6186ea870c9c1203c79
+source-git-commit: f51513e66945c41d06f12f4ac8f05ddad0d32898
 workflow-type: tm+mt
 source-wordcount: '104'
-ht-degree: 15%
+ht-degree: 18%
 
 ---
 
@@ -47,4 +47,4 @@ ht-degree: 15%
    * [检索库信息](reference/retrieving-library-information.md)
 * [发行说明](release-notes.md)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
-* [Web SDK常见问题解答](getting-started/web-sdk-faq.md)
+* [常见问题解答](getting-started/web-sdk-faq.md)
