@@ -5,9 +5,9 @@ seo-title: Adobe Campaign
 description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 seo-description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 translation-type: tm+mt
-source-git-commit: e5a3539c8be8b7424f4965c7ab43d4260e39b380
+source-git-commit: 4c45da353b1deeb66b0dedb37450158f4bdc2a7c
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '581'
 ht-degree: 1%
 
 ---
@@ -54,7 +54,7 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 
 ## 目标属性 {#destination-attributes}
 
-在将 [区段激](/help/rtcdp/destinations/activate-destinations.md) 活到Adobe Campaign目标时 [，建议您从合并模式中选择唯一](../../profile/home.md#profile-fragments-and-union-schemas)标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参 [阅选择在电子邮件营销目标中的导出文件中用作目标属性](/help/rtcdp/destinations/email-marketing-destinations.md#destination-attributes) 的模式字段。
+在将 [区段激](/help/rtcdp/destinations/activate-destinations.md) 活到Adobe Campaign目标时 [，建议您从合并模式中选择唯一](../../profile/home.md#profile-fragments-and-union-schemas)标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参 [阅在电子邮件营销目标文档中选择要用作导出文件中目标属性](/help/rtcdp/destinations/email-marketing-destinations.md#destination-attributes) 的模式字段。
 
 ## 导出的数据 {#exported-data}
 
