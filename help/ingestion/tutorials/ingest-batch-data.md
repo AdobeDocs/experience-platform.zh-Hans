@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 将数据引入Adobe Experience Platform
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
-source-wordcount: '1277'
+source-wordcount: '1278'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # 将数据引入Adobe Experience Platform
 
-Adobe Experience Platform允许您轻松将数据导入 [!DNL Platform] 为批处理文件。 要摄取的用户档案的示例可包括来自CRM系统中的平面文件（例如镶木文件）的数据或符合模式注册中的已知( [!DNL Experience Data Model] XDM)模式的数据。
+Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批处理文件。 要摄取的用户档案的示例可包括来自CRM系统中的平面文件（例如镶木文件）的数据或符合模式注册中的已知( [!DNL Experience Data Model] XDM)模式的数据。
 
 ## 入门指南
 
@@ -26,7 +26,7 @@ Adobe Experience Platform允许您轻松将数据导入 [!DNL Platform] 为批�
 
 其中的数据集 [!DNL Experience Platform] 工作区允许您视图和管理IMS组织创建的所有数据集，并创建新数据集。
 
-视图数据集工作区 **[!UICONTROL ，方法]** 是单击左侧导航中的数据集。 数据集工作区包含列表集，包 _[!UICONTROL 括显示]_Name_[!UICONTROL 、Created]_ （日期和时间）、Source _[!UICONTROL 、SourceProide、]_______模式Last状态、以及数据集的日期和更新时间的列。
+视图数据集工作区 **[!UICONTROL ，方法]** 是单击左侧导航中的数据集。 数据集工作区包含列表集，包 _[!UICONTROL 括显示]_ Name _[!UICONTROL 、Created]_ （日期和时间）、Source _[!UICONTROL 、SourceProide、]_______&#x200B;模式Last状态、以及数据集的日期和更新时间的列。
 
 >[!NOTE]
 >
@@ -70,9 +70,9 @@ Adobe Experience Platform允许您轻松将数据导入 [!DNL Platform] 为批�
 
 现在已创建空数据集，您已返回到“数据集”工 **[!UICONTROL 作区中的]** “数据集活动”选项卡。 您应当在工作区的左上角看到数据集的名称，并显示通知“尚未添加批次”。 由于尚未向此数据集添加任何批，因此应该设置此值。
 
-在数据集的右侧，您将看到与新数据集 **[!UICONTROL 相关的]** Info标签信息，如 _[!UICONTROL Info]_标签、Info Tab和新数据集，如____________ID、AD、TableId名称、模式名、、和源。 “信息”选项卡还包含有关数据集创建时间及其_[!UICONTROL &#x200B;上次]_ 修改 _[!UICONTROL 日期的信息]_。
+在数据集的右侧，您将看到与新数据集 **[!UICONTROL 相关的]** Info标签信息，如 _[!UICONTROL Info]_&#x200B;标签、Info Tab和新数据集，如 ____________ ID、AD、TableId名称、模式名、、和源。 “信息”选项卡还包含有关数据集创建时间及其 _[!UICONTROL 上次]_ 修改 _[!UICONTROL 日期的信息]_ 。
 
-“信息”选项卡中还有 _[!UICONTROL 用户档案]_切换选项，用于启用数据集以与一起使用[!DNL Real-time Customer Profile]。 此切换的使用[!DNL Real-time Customer Profile]将在后面的部分中进行更详细的说明。
+“信息”选项卡中还有 _[!UICONTROL 用户档案]_ 切换选项，用于启用数据集以与一起使用 [!DNL Real-time Customer Profile]。 此切换的使用 [!DNL Real-time Customer Profile]将在后面的部分中进行更详细的说明。
 
 ![数据集活动](../images/tutorials/ingest-batch-data/dataset_activity.png)
 
@@ -104,7 +104,7 @@ Adobe Experience Platform允许您轻松将数据导入 [!DNL Platform] 为批�
 
 >[!NOTE]
 >
->[!DNL Platform] 支持两种文件类型进行数据获取，分别采用镶木地板或JSON。 一次最多可以添加五个文件，每个文件的最大文件大小为10 GB。
+>平台支持两种文件类型进行数据获取，分别采用镶木地板或JSON。 一次最多可以添加五个文件，每个文件的最大文件大小为10 GB。
 
 ![“添加数据”选项卡](../images/tutorials/ingest-batch-data/add_data.png)
 
@@ -118,17 +118,17 @@ Adobe Experience Platform允许您轻松将数据导入 [!DNL Platform] 为批�
 
 文件上传完毕后，“数 **[!UICONTROL 据集活动]** ”选项卡不再显示“尚未添加批”。 现在，“数据集 *[!UICONTROL 活动]* ”选项卡显示数据集指标。 由于尚未加载批，因此所有指标在此阶段都将显示“0”。
 
-该选项卡的底部有一个列表，显示 _[!UICONTROL 刚通过]_“将数据添加到数据集”[过程摄取的数据的批ID](#add-data-to-dataset)。 还包括与批相关的信息，包括_[!UICONTROL &#x200B;摄取日]_ 期、摄取的 _[!UICONTROL 记录数]_和当前批状_[!UICONTROL &#x200B;态]_。
+该选项卡的底部有一个列表，显示 _[!UICONTROL 刚通过]_ “将数据添加到数据集” [过程摄取的数据的批ID](#add-data-to-dataset) 。 还包括与批相关的信息，包括 _[!UICONTROL 摄取日]_ 期、摄取的 _[!UICONTROL 记录数]_&#x200B;和当前批状 _[!UICONTROL 态]_。
 
 ![数据集指标](../images/tutorials/ingest-batch-data/batch_loading.png)
 
 ## 批详细信息
 
-单击批 _[!UICONTROL ID以视图]_“批**[!UICONTROL &#x200B;概述”，显&#x200B;]**示有关该批的其他详细信息。 批完成加载后，有关该批的信息将更新以显示“已摄取的记录_[!UICONTROL &#x200B;数”和]_ “文件 _[!UICONTROL 大小”]_。 状态_[!UICONTROL &#x200B;也将]_ 更改为“成功”或“失败”。 如果批处理失败，“ _[!UICONTROL 错误代码]_”部分将包含有关获取过程中任何错误的详细信息。
+单击批 _[!UICONTROL ID以视图]_ “批 **[!UICONTROL 概述”，显]**&#x200B;示有关该批的其他详细信息。 批完成加载后，有关该批的信息将更新以显示“已摄取的记录 _[!UICONTROL 数”和]_ “文件 _[!UICONTROL 大小”]_。 状态 _[!UICONTROL 也将]_ 更改为“成功”或“失败”。 如果批处理失败，“ _[!UICONTROL 错误代码]_ ”部分将包含有关获取过程中任何错误的详细信息。
 
 有关批量摄取的更多信息和常见问题，请参阅批 [量摄取疑难解答指南](../batch-ingestion/troubleshooting.md)。
 
-要返回到“数 **[!UICONTROL 据集活动]** ”屏幕，请单击痕迹导航中的数&#x200B;_[!UICONTROL 据集名称(]_Loyalty Details)。
+要返回到“数 **[!UICONTROL 据集活动]** ”屏幕，请单击痕迹导航中的数&#x200B;_[!UICONTROL 据集名称(]_ Loyalty Details)。
 
 ![批处理概述](../images/tutorials/ingest-batch-data/batch_overview.png)
 
