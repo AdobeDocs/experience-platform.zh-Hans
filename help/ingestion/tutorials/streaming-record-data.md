@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 流记录数据
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 80392190c7fcae9b6e73cc1e507559f834853390
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
-source-wordcount: '1059'
+source-wordcount: '1055'
 ht-degree: 2%
 
 ---
@@ -18,11 +18,11 @@ ht-degree: 2%
 
 ## 入门指南
 
-本教程需要掌握各种Adobe Experience Platform服务的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
+本教程需要对Adobe Experience Platform各项服务有一定的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织体验数据 [!DNL Platform] 的标准化框架。
-- [!DNL Real-time Customer Profile](../../profile/home.md): 根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
-- [模式注册开发人员指南](../../xdm/api/getting-started.md): 全面的指南，涵盖API的每个可用端点 [!DNL Schema Registry] 以及如何向它们发出调用。 这包括了解您 `{TENANT_ID}`在本教程中的调用，以及了解如何创建模式，该数据用于创建用于摄取的数据集。
+- [!DNL Experience Data Model (XDM)](../../xdm/home.md):组织体验数据 [!DNL Platform] 的标准化框架。
+- [!DNL Real-time Customer Profile](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+- [模式注册开发人员指南](../../xdm/api/getting-started.md):全面的指南，涵盖API的每个可用端点 [!DNL Schema Registry] 以及如何向它们发出调用。 这包括了解您 `{TENANT_ID}`在本教程中的调用，以及了解如何创建模式，该数据用于创建用于摄取的数据集。
 
 此外，本教程要求您已创建流连接。 有关创建流连接的详细信息，请阅读创 [建流连接教程](./create-streaming-connection.md)。
 
@@ -36,7 +36,7 @@ ht-degree: 2%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -50,7 +50,7 @@ ht-degree: 2%
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 ## 根据类编写模式 [!DNL XDM Individual Profile]
 
@@ -352,7 +352,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
 
 >[!NOTE]
 >
->如果未定义合并策略ID和模式。</span>name或relatedSchema</span>.name是 `_xdm.context.profile`，将 [!DNL Profile Access] 获取所 **有相关** 的身份。
+>如果未定义合并策略ID，且 `schema.name` 或 `relatedSchema.name` 为 `_xdm.context.profile`，将 [!DNL Profile Access] 获取所 **有相关** 标识。
 
 **API格式**
 
