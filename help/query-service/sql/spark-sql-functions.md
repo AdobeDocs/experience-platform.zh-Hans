@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Spark SQL函数
 topic: spark sql functions
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '4991'
 ht-degree: 5%
@@ -1745,6 +1745,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 ```
 
 自：1.5.0
+
 >[!NOTE]
 >
 >阵列的rse逻辑自2.4.0起可用。
@@ -1763,6 +1764,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 ```
 
 自：2.4.0
+
 >[!NOTE]
 >
 >函数是不确定的。
@@ -1824,7 +1826,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 `boolean(expr)`:将值转 `expr` 换为目标数据类型 `boolean`。
 
-#### 浮铸
+#### 铸
 
 `cast(expr AS type)`:将值转 `expr` 换为目标数据类型 `type`。
 
@@ -1847,7 +1849,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 `double(expr)`:将值转 `expr` 换为目标数据类型 `double`。
 
-#### 铸
+#### 浮
 
 `float(expr)`:将值转 `expr` 换为目标数据类型 `float`。
 
