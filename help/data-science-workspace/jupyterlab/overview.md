@@ -5,7 +5,7 @@ title: JupyterLab用户指南
 topic: Overview
 description: JupyterLab是Project Jupyter的基于Web的用户界面，与Adobe Experience Platform紧密集成。 它为数据科学家提供一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起使用。
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '3684'
 ht-degree: 11%
@@ -237,6 +237,7 @@ Experience Platform的JupyterLab集成包含架构更改、设计注意事项、
 在 [!DNL JupyterLab] 中，选择右上角的齿轮图标以打开笔记本 *服务器配置*。 您可以打开GPU并使用滑块分配所需的内存量。 您可以分配的内存量取决于您的组织已配置的内存量。 选择 **[!UICONTROL 要保存]** 的更新配置。
 
 >[!NOTE]
+>
 >每个组织只为笔记本提供一个GPU。 如果GPU正在使用，您需要等待当前已保留GPU的用户释放它。 这可以通过注销或将GPU置于空闲状态四小时或更长时间来完成。
 
 ![](../images/jupyterlab/user-guide/notebook-gpu-config.png)
@@ -425,6 +426,7 @@ dataFrame.show()
 ```
 
 >[!TIP]
+>
 >在Scala中，您可 `sys.env()` 以使用从中声明和返回值 `option`。
 
 ### 在PySpark 3(2.4)笔记本中使[!DNL Spark] 用%dataset magic {#magic}
@@ -604,9 +606,7 @@ timedf.show()
 
 >[!TIP]
 >
->
 >在Scala中，您可 `sys.env()` 以使用从中声明和返回值 `option`。 这样，如果您知道变量将仅用于一次，就无需定义变量。 以下示例从上 `val userToken` 述示例中开始，并将其在行中声明 `option` 为替代内容：
->
 > 
 ```scala
 > .option("user-token", sys.env("PYDASDK_IMS_USER_TOKEN"))
@@ -627,18 +627,18 @@ timedf.show()
 | 亨西姆 | 3.7.3 |
 | 平行 | 0.5.2 |
 | jq | 1.6 |
-| keras | 2.2.4 |
+| feras | 2.2.4 |
 | nltk | 3.2.5 |
-| 熊猫 | 0.22.0 |
+| 博 | 0.22.0 |
 | 潘达斯 | 0.7.3 |
 | 枕 | 6.0.0 |
 | Scikit图像 | 0.15.0 |
 | scikit-learn | 0.21.3 |
 | 熏 | 1.3.0 |
 | 杂乱 | 1.3.0 |
-| 西伯恩 | 0.9.0 |
+| 弹性 | 0.9.0 |
 | statmodels | 0.10.1 |
-| 弹性 | 5.1.0.17 |
+| -弹性 | 5.1.0.17 |
 | gplot | 0.11.5 |
 | py-xgboost | 0.90 |
 | opencv | 3.4.1 |
