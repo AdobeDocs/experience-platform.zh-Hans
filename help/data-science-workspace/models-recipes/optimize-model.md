@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 优化模型
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
-source-wordcount: '1219'
+source-wordcount: '1221'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 目前，Model Insights Framework支持以下运行时：
 - [斯卡拉](#scala)
-- [!DNL Python/Tensorflow](#pythontensorflow)
+- [Python/Tensorflow](#pythontensorflow)
 - [R](#r)
 
 菜谱的示例代码位于 [experience-platform-dsw-reference存储库](https://github.com/adobe/experience-platform-dsw-reference) 的 `recipes`。 本教程将引用此存储库中的特定文件。
