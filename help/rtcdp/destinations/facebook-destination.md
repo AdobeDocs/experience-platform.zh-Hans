@@ -5,7 +5,7 @@ seo-title: Facebook目标
 description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 seo-description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '722'
 ht-degree: 2%
@@ -60,6 +60,7 @@ ht-degree: 2%
 1. 您 [!DNL Facebook] 的用户帐户必须为 **[!DNL Manage campaigns]** 您计划使用的广告帐户启用权限。
 2. Add the **Adobe Experience Cloud** business account as an advertising partner in your [!DNL Facebook Ad Account]. 使用 `business ID=206617933627973`. 有关详 [细信息，请参阅Facebook文档](https://www.facebook.com/business/help/1717412048538897) 中的将合作伙伴添加到您的业务经理。
    >[!IMPORTANT]
+   >
    > When configuring the permissions for Adobe Experience Cloud, you must enable the **Manage campaigns** permission. [!DNL Adobe Real-time CDP] 集成要求具备此权限。
 3. 阅读并签署 [!DNL Facebook Custom Audiences] 服务条款。 为此，请转到 `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`，其中 `accountID` 是您的 [!DNL Facebook Ad Account ID]。
 
