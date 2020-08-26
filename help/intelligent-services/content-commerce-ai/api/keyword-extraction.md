@@ -5,7 +5,7 @@ title: 颜色提取
 topic: Developer guide
 description: 给定文本提取时，关键字文档服务会自动提取最能描述文档主题的关键字或关键字短语。 为了提取关键字，使用命名实体识别(NER)和无监督关键字提取算法的组合。
 translation-type: tm+mt
-source-git-commit: 4f7b5ca50171f4948726c44dbf31025011adf35f
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '742'
 ht-degree: 3%
@@ -27,7 +27,7 @@ ht-degree: 3%
 
 **命名实体识别**
 
-对于命名实体识 [别，使用[!DNL spaCy](https://spacy.io/)]的OntoNotes模型。 该模型指定上下文特定的令牌矢量、语音部分(POS)标签、依赖性分析和命名实体。 OntoNotes模型是核心模型之 [!DNL spaCy] 一。 有关OntoNotes模型的更多信息，请参 [阅](https://spacy.io/models/en)。
+对于命名实体 [识别，使用[!DNL spaCy](https://spacy.io/)]的OntoNotes模型。 该模型指定上下文特定的令牌矢量、语音部分(POS)标签、依赖性分析和命名实体。 OntoNotes模型是核心模型之 [!DNL spaCy] 一。 有关OntoNotes模型的更多信息，请参 [阅](https://spacy.io/models/en)。
 
 下表列出了被识 [!DNL Content and Commerce AI] 别的命名实体：
 
@@ -84,7 +84,8 @@ POST /services/v1/predict
 
 >[!CAUTION]
 >
->`analyzer_id` 确定使 [!DNL Sensei Content Framework] 用哪个。 请在提出请求前检查 `analyzer_id` 您是否有适当的。 对于关键字提取服 `analyzer_id` 务，ID为： `Feature:cintel-ner:Service-1a35aefb0f0f4dc0a3b5262370ebc709`
+>`analyzer_id` 确定使 [!DNL Sensei Content Framework] 用哪个。 请在提出请求前检查 `analyzer_id` 您是否有适当的。 对于关键字提取服 `analyzer_id` 务，ID为：
+>`Feature:cintel-ner:Service-1a35aefb0f0f4dc0a3b5262370ebc709`
 
 ```SHELL
 curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
@@ -121,7 +122,7 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
 | --- | --- | --- |
 | `analyzer_id` | 您 [!DNL Sensei] 的请求所部署的服务ID。 此ID决定使用哪 [!DNL Sensei Content Frameworks] 个ID。 有关自定义服务，请联系内容和商务AI团队以设置自定义ID。 | 是 |
 | `application-id` | 创建的应用程序的ID。 | 是 |
-| `data` | 包含JSON对象的数组，数组中的每个对象都表示文档。 作为此数组的一部分传递的任何参数都将覆盖在数组外部指定的全局 `data` 参数。 此表中概述的其余任何属性都可从中覆盖 `data`。 | 是 |
+| `data` | 包含JSON对象的数组，数组中的每个对象都表示文档。 作为此数组的一部分传递的任何参数都将覆盖在数组外部指定的全局 `data` 参数。 此表中概述的任何其余属性都可以从中覆盖 `data`。 | 是 |
 | `language` | 输入文本的语言。 默认值为 `en`。 | 否 |
 | `content-type` | 用于指示输入是请求主体的一部分还是S3存储段的已签名URL。 此属性的默认值为 `inline`。 | 是 |
 | `encoding` | 输入文本的编码格式。 这可以是 `utf-8` 或 `utf-16`。 此属性的默认值为 `utf-8`。 | 否 |
