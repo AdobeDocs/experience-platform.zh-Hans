@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 导入打包的菜谱(API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '955'
 ht-degree: 2%
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 本教程使 [!DNL Sensei Machine Learning API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) 用创建 [引擎](../api/engines.md)，在用户界面中也称为菜谱。
 
-在入门之前，请务必注意，Adobe Experience Platform [!DNL Data Science Workspace] 使用不同的术语来引用API和UI中的类似元素。 本教程中使用API术语，下表概述了相关术语：
+在入门之前，请务必注意，Adobe Experience Platform [!DNL Data Science Workspace] 使用不同的术语来指代API和UI中的类似元素。 本教程中使用API术语，下表概述了相关术语：
 
 | UI术语 | API术语 |
 | ---- | ---- |
@@ -33,23 +33,24 @@ ht-degree: 2%
 
 本教程需要以Docker URL形式打包的Recipe文件。 按照“ [将源文件打包到菜谱”教程](./package-source-files-recipe.md) ，创建打包的菜谱文件或提供您自己的菜谱文件。
 
-- `{DOCKER_URL}`: 智能服务的Docker映像的URL地址。
+- `{DOCKER_URL}`:智能服务的Docker映像的URL地址。
 
-本教程要求您完成“ [Adobe Experience Platform身份验证](../../tutorials/authentication.md) ”教程，以成功调用 [!DNL Platform] API。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
+本教程要求您完成对Adobe Experience Platform [的身份验证教程](../../tutorials/authentication.md) ，以便成功调用 [!DNL Platform] API。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- `{ACCESS_TOKEN}`: 身份验证后提供的特定载体令牌值。
-- `{IMS_ORG}`: 您的IMS组织凭据可在您独特的Adobe Experience Platform集成中找到。
-- `{API_KEY}`: 在您独特的Adobe Experience Platform集成中找到您的特定API密钥值。
+- `{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。
+- `{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。
+- `{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。
 
 ## 创建引擎
 
-可以通过向/engines端点发出POST请求来创建引擎。 创建的引擎基于打包的处方文件的形式进行配置，该文件必须作为API请求的一部分提供。
+可以通过向/engine端点发出POST请求来创建引擎。 创建的引擎基于打包的处方文件的形式进行配置，该文件必须作为API请求的一部分提供。
 
 ### 使用Docker URL创建引擎 {#create-an-engine-with-a-docker-url}
 
 要创建包含存储在Docker容器中的打包Recipe文件的引擎，您必须为打包Recipe文件提供Docker URL。
 
 >[!CAUTION]
+>
 > 如果您使用或 [!DNL Python] 者R使用以下请求。 如果您使用PySpark或Scala，请使用位于Python/R示例下的PySpark/Scala请求示例。
 
 **API格式**
