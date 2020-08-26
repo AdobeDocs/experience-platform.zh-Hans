@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建通用OData源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: dd036cf4df5d772206d2b73292c60f2d866ba0de
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '445'
 ht-degree: 1%
@@ -15,6 +15,7 @@ ht-degree: 1%
 # 在UI [!DNL Generic OData] 中创建源连接器
 
 >[!NOTE]
+>
 > 连接 [!DNL Generic OData] 器为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
 Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用用 [!DNL Generic Open Data Protocol] 户界面创建(下[!DNL OData]称“”)源连接器 [!DNL Platform] 的步骤。
