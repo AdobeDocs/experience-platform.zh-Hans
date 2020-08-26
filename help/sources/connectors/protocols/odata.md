@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 通用OData连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 52a01c5f90a9643691a25e2d0a5f03a7f0334a7d
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '204'
 ht-degree: 0%
@@ -15,9 +15,10 @@ ht-degree: 0%
 # （测试版）连 [!DNL Generic OData] 接器
 
 >[!NOTE]
+>
 >连接 [!DNL Generic OData] 器为测试版。 有关使用 [测试版标记](../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-Adobe Experience Platform允许从外部源摄取数据，同时使您能够使用服务构建、标记和增强传入数 [!DNL Platform] 据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
+Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 
 [!DNL Experience Platform] 支持从第三方协议应用程序接收数据。 协议提供者支持包括 [!DNL Generic OData]。
 
