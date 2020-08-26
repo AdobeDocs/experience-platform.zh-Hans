@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 数据科学工作区教程
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '1171'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Data Science Workspace] 教程
 
-Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人工智能从数据中创建洞察。 集成到Adobe Experience Platform中 [!DNL Data Science Workspace] ，帮助您跨Adobe解决方案使用内容和数据资产进行预测。 所有技能级别的数据科学家都拥有复杂且易于使用的工具，这些工具支持机器学习方法的快速开发、培训和调整——人工智能技术的所有优势都没有复杂性。
+Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人工智能从数据中获得洞察。 集成到Adobe Experience Platform，帮 [!DNL Data Science Workspace] 助您跨Adobe解决方案使用内容和数据资产进行预测。 所有技能级别的数据科学家都拥有复杂且易于使用的工具，这些工具支持机器学习方法的快速开发、培训和调整——人工智能技术的所有优势都没有复杂性。
 
 要了解更多信息，请首先阅读数 [据科学工作区概述](../data-science-workspace/home.md)。
 
@@ -34,7 +34,7 @@ API为数 [!DNL Sensei Machine Learning] 据科学家提供了组织和管理机
 
 ## How to use [!DNL JupyterLab] Notebooks
 
-[!DNL JupyterLab] 是基于Web的用户界面， [!DNL Project Jupyter] 并且紧密集成到Adobe Experience Platform中。 它为数据科学家提供了交互式开发环境，使他们能 [!DNL Jupyter notebooks]够处理、编码和数据。 本文档概述其 [!DNL JupyterLab] 功能以及执行常见操作的说明。
+[!DNL JupyterLab] 是一个基于Web的用户界面，它 [!DNL Project Jupyter] 与Adobe Experience Platform紧密集成。 它为数据科学家提供了交互式开发环境，使他们能 [!DNL Jupyter notebooks]够处理、编码和数据。 本文档概述其 [!DNL JupyterLab] 功能以及执行常见操作的说明。
 
 **本指南将帮助您：**
 - 访问并了解该 [!DNL JupyterLab] 界面。
@@ -61,20 +61,19 @@ API为数 [!DNL Sensei Machine Learning] 据科学家提供了组织和管理机
 
 >[!NOTE]
 >
->
 >本教程要求您具有 [!DNL Docker] 源文件URL。 如果您 [没有源文件URL](../data-science-workspace/models-recipes/package-source-files-recipe.md) ，请访问将源文件包 [!DNL Docker] 导入菜谱教程。
 
-导入菜谱教程提供有关如何配置和导入打包菜谱的洞察。 在本教程结束时，您可以创建、培训和评估Adobe Experience Platform模型 [!DNL Data Science Workspace]。
+导入菜谱教程提供有关如何配置和导入打包菜谱的洞察。 在本教程的结尾，您可以在Adobe Experience Platform创建、培训和评估模型 [!DNL Data Science Workspace]。
 
 **本教程将帮助您：**
 - 为菜谱创建一组配置。
-- 导入 [!DNL Docker] 、R、PySpark [!DNL Python]或Scala()的基于菜谱[!DNL Spark]的菜谱。
+- 导入 [!DNL Docker] 、R、 [!DNL Python]PySpark或Scala的基于菜谱([!DNL Spark])。
 
 要了解更多信息，请按照导入打包的菜 [谱UI教程](../data-science-workspace/models-recipes/import-packaged-recipe-ui.md) 或API [教程操作](../data-science-workspace/models-recipes/import-packaged-recipe-api.md)。
 
 ## 训练和评估模型
 
-在Adobe Experience Platform [!DNL Data Science Workspace]中，机器学习模型是通过合并与模型意图相适合的现有Recipe来创建的。 然后，对模型进行训练和评估，通过微调其相关的超参数来优化其运行效率和功效。 菜谱是可重用的，这意味着可以使用单个菜谱创建多个模型并针对特定用途进行定制。
+在Adobe Experience Platform [!DNL Data Science Workspace]，机器学习模型是通过整合与模型意图相适合的现有Recipe来创建的。 然后，对模型进行训练和评估，通过微调其相关的超参数来优化其运行效率和功效。 菜谱是可重用的，这意味着可以使用单个菜谱创建多个模型并针对特定用途进行定制。
 
 **本教程将帮助您：**
 - 创建新模型。
@@ -85,7 +84,7 @@ API为数 [!DNL Sensei Machine Learning] 据科学家提供了组织和管理机
 
 ## 使用模型洞察框架优化模型
 
-模型洞察框架为数据科学家提供了Adobe Experience Platform工具， [!DNL Data Science Workspace] 让他们快速、明智地选择基于实验的最优机器学习模型。 该框架将提高机器学习工作流程的速度和效率，并提高数据科学家的易用性。 这是通过为每个机器学习算法类型提供一个默认模板来辅助模型调整来完成的。 最终结果使数据科学家和公民数据科学家能够为最终客户做出更好的模型优化决策。
+模型洞察框架为数据科学家提供Adobe Experience Platform的工具， [!DNL Data Science Workspace] 为基于实验的最优机器学习模型快速、明智地做出选择。 该框架将提高机器学习工作流程的速度和效率，并提高数据科学家的易用性。 这是通过为每个机器学习算法类型提供一个默认模板来辅助模型调整来完成的。 最终结果使数据科学家和公民数据科学家能够为最终客户做出更好的模型优化决策。
 
 **本教程将帮助您：**
 - 配置菜谱代码。
@@ -96,7 +95,7 @@ API为数 [!DNL Sensei Machine Learning] 据科学家提供了组织和管理机
 
 ## 为模型评分
 
-通过将输入数 [!DNL Data Science Workspace] 据输入到现有训练模型中，可以实现Adobe Experience Platform评分。 然后，将评分结果作为新批存储在指定的输出数据集中并可查看。
+在Adobe Experience Platform, [!DNL Data Science Workspace] 可以通过将输入数据输入到现有的训练模型中来实现评分。 然后，将评分结果作为新批存储在指定的输出数据集中并可查看。
 
 **本教程将帮助您：**
 - 创建新的评分运行。
@@ -116,7 +115,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 允许您将模型作为
 
 ## 模型的计划培训和评分
 
-Adobe Experience Platform [!DNL Data Science Workspace] 允许您在机器学习服务上设置计划评分和培训运行。 自动化培训和评分流程可以跟上数据中的模式，从而帮助保持和提高服务在一段时间内的效率。
+Adobe Experience Platform [!DNL Data Science Workspace] 允许您在机器学习服务上设置定时评分和培训运行。 自动化培训和评分流程可以跟上数据中的模式，从而帮助保持和提高服务在一段时间内的效率。
 
 **本教程将帮助您：**
 - 配置计划评分
@@ -127,9 +126,10 @@ Adobe Experience Platform [!DNL Data Science Workspace] 允许您在机器学习
 ## 创建特征管线
 
 >[!NOTE]
+>
 >目前，功能管道仅通过API可用。
 
-Adobe Experience Platform允许您构建和创建自定义特征管线，以大规模地执行特征工程 [!DNL Sensei Machine Learning Framework Runtime]。
+Adobe Experience Platform允许您构建和创建自定义特征管道，以在整个过程中大规模地执行特征工程 [!DNL Sensei Machine Learning Framework Runtime]。
 
 **本指南将帮助您：**
 - 实现功能管线类。
