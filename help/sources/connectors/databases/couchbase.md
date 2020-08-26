@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Couchbase连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 3b5e76afea5689dbd59f64f6192e6ef2a6acb7d3
+source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '179'
 ht-degree: 0%
@@ -15,9 +15,10 @@ ht-degree: 0%
 # （测试版）连 [!DNL Couchbase] 接器
 
 >[!NOTE]
+>
 >连接 [!DNL Couchbase] 器为测试版。 有关使用 [测试版标记](../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-Adobe Experience Platform为库提供者(如 [!DNL Microsoft]MySQL和 [!DNL Azure])提供本机连接，允许您从这些系统中获取数据。 支持不同类型的第三方数据库，包括关系型、NoSQL或data warehouse。 对数据库提供者的支持包 [!DNL Couchbase]括。
+Adobe Experience Platform为数据库提供 [!DNL Microsoft]商(如MySQL和 [!DNL Azure])提供本机连接，使您能够从这些系统中获取数据。 支持不同类型的第三方数据库，包括关系型、NoSQL或data warehouse。 对数据库提供者的支持包 [!DNL Couchbase]括。
 
 ## IP地址允许列表
 
