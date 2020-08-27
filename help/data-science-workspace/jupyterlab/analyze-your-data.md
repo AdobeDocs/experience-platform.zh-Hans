@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用笔记本分析数据
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1702'
+source-wordcount: '1710'
 ht-degree: 0%
 
 ---
@@ -18,9 +18,9 @@ ht-degree: 0%
 
 介绍了以下概念：
 
-- **[!DNL JupyterLab]:**[!DNL JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906)是Project Jupyter的下一代基于web的界面，并紧密集成到其中[!DNL Adobe Experience Platform]。
+- **[!DNL JupyterLab]:**[[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) 是Project Jupyter的下一代基于Web的界面，并紧密集成到其中 [!DNL Adobe Experience Platform]。
 - **批：** 数据集由批量组成。 批是在一段时间内收集的一组数据，并作为单个单元一起处理。 将数据添加到数据集时会创建新批。
-- **数据访问SDK（已弃用）:** 数据访问SDK现已弃用。 请使用指 [!DNL Platform SDK](../authoring/platform-sdk.md) 南。
+- **数据访问SDK（已弃用）:** 数据访问SDK现已弃用。 请使用 [[!DNL平台SDK]指南](../authoring/platform-sdk.md) 。
 
 ## 在数据科学工作区中探索笔记本
 
@@ -90,7 +90,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->请参阅指 [!DNL Platform SDK](../authoring/platform-sdk.md) 南以转换代码。
+>请参阅 [[!DNL平台SDK]](../authoring/platform-sdk.md) 指南来转换代码。
 
 ```PYTHON
 from data_access_sdk_python.reader import DataSetReader
@@ -102,7 +102,7 @@ df.head()
 
 如果您正在使用除外的其 [!DNL Python]他内核，请 [参阅本页](https://github.com/adobe/acp-data-services-dsw-reference/wiki/Accessing-Data-on-the-Platform) ，访问上的数据 [!DNL Adobe Experience Platform]。
 
-选择可执行单元格，然后在工具栏中按播放按钮将运行可执行代码。 输出将 `head()` 是一个表，其中数据集的键为列，数据集中的前n行为。 `head()` 接受整数参数以指定要输出的行数。 默认情况下，此值为5。
+选择可执行单元格，然后在工具栏中按播放按钮将运行可执行代码。 其输出 `head()` 将是一个表，其中数据集的键为列，数据集中的前n行为。 `head()` 接受整数参数以指定要输出的行数。 默认情况下，此值为5。
 
 ![](../images/jupyterlab/analyze-data/datasetreader_head.png)
 
@@ -144,7 +144,7 @@ df.describe()
 
 ![](../images/jupyterlab/analyze-data/df_describe.png)
 
-通过这个，我们可以看到每个特征有6435个实例。 给出了平均、标准偏差(std)、最小、最大和间隔等统计信息。 这给出了有关数据偏差的信息。 在下一节中，我们将重点介绍可视化功能，这些功能与这些信息一起使用，以便我们更好地了解我们的数据。
+通过这个，我们可以看到每个特征有6435个实例。 给出了平均、标准差(std)、最小、最大和间隔等统计信息。 这给出了有关数据偏差的信息。 在下一节中，我们将重点介绍可视化功能，这些功能与这些信息一起使用，以便我们更好地了解我们的数据。
 
 从最小值和最大值看 `store`，我们可以看到有45个数据表示的唯一存储。 店也 `storeTypes` 有差别。 通过执行以下操作， `storeTypes` 可以查看分发内容：
 
@@ -156,8 +156,8 @@ df.describe()
 
 既然我们了解了数据帧值，我们想用可视化来补充这一点，使事情更清晰、更容易地识别模式。 在将结果传送到受众时，图形也很有用。 对可 [!DNL Python] 视化有用的库包括：
 - [马特普洛特利卜](https://matplotlib.org/)
-- [熊猫](https://pandas.pydata.org/)
-- [西伯恩](https://seaborn.pydata.org/)
+- [博](https://pandas.pydata.org/)
+- [kern](https://seaborn.pydata.org/)
 - [gplot](https://ggplot2.tidyverse.org/)
 
 在本节中，我们将快速介绍使用每个库的一些优势。
