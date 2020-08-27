@@ -5,9 +5,9 @@ title: Adobe Experience Platform Identity Service
 topic: overview
 description: Adobe Experience Platform身份服务通过跨设备和系统连接身份帮助您更好地视图客户及其行为，使您能够实时提供有影响力的个性化数字体验。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1707'
+source-wordcount: '1711'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 提供相关的数字体验需要全面了解客户。 当客户数据在不同的系统中分散，导致每个客户似乎具有多个“身份”时，这就变得更加困难。 Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统连接身份，帮助您更好地视图客户及其行为，从而实时提供有影响力的个性化数字体验。
 
-## 理解 [!DNL Identity Service]
+## 了解 [!DNL Identity Service]
 
 客户每天都与您的业务互动，与您的品牌建立不断增长的关系。 典型客户可能活跃在组织数据基础架构中任意数量的系统中，如电子商务、忠诚度和服务台系统。 同一客户也可能在任意数量的设备上匿名进行互动。 [!DNL Identity Service] 允许您将客户的完整图片拼凑在一起，从而聚合相关数据，否则这些数据可能会分散在不同的系统中。
 
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 Mary在您的电子商务网站上有一个帐户，她过去在那里完成了几个订单。 她通常使用个人笔记本电脑购物，每次都登录。 然而，在一次探访中，她用平板电脑购买凉鞋，但没有下订单，也不登录。
 
-此时，玛丽的活动显示为两个单独的用户档案:她的eCommerce登录名和平板电脑设备（可能由设备ID标识）。
+此时，玛丽的活动显示为两个单独的用户档案:她的eCommerce登录名和平板电脑设备（可能由设备ID识别）。
 
 玛丽稍后会恢复其平板电脑会话，并在订阅您的新闻稿时提供电子邮件地址。 这样做后，流摄取会在她的用户档案中添加新的身份作为记录数据。 因此，现在 [!DNL Identity Service] Mary的平板电脑设备活动与她的电子商务帐户历史相关。
 
@@ -41,7 +41,7 @@ PII（如电子邮件地址和电话号码）用于直接识别客户。 因此�
 
 **未知或匿名身份** ，在不识别使用设备的实际人员的情况下，将设备单独列出。 此类别包括访客的IP地址和cookie ID等信息。 虽然可以使用未知身份从设备收集行为数据，但在客户在旅程中提供PII之前，跨设备或介质关联这些身份是有限的。
 
-如下图所示，已知和匿名身份都是标识图的重要组 [成部分](#identity-graphs)，后面将在本文档讨论。
+如下图所示，已知和匿名身份都是身份图的重要组 [成部分](#identity-graphs)，这些组成部分将在本文档稍后讨论。
 
 ![平台上的身份拼接](./images/identity-service-stitching.png)
 
@@ -146,4 +146,4 @@ Adobe Experience Platform是以隐私为重而构建的，并包含一个数据�
 
 ## 后续步骤
 
-现在，您已经了解了其中的 [!DNL Identity Service] 主要概念及 [!DNL Experience Platform]其作用，您可以开始学习如何使用标识图 [!DNL Identity Service API](./api/getting-started.md)。
+现在，您已经了解了其中 [!DNL Identity Service] 的主要概念及 [!DNL Experience Platform]其角色，可以开始学习如何使用[!DNL Identity Service API] [使用您的身份图](./api/getting-started.md)。
