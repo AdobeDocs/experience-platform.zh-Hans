@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建ETL集成
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 8b1b61b6446b28f92d6cf221003674fa09716c53
 workflow-type: tm+mt
-source-wordcount: '4158'
+source-wordcount: '4153'
 ht-degree: 0%
 
 ---
@@ -522,7 +522,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches?dataSet=D
 
 ### 从批处理中获取文件
 
-在您获得要查找的批的ID(`{BATCH_ID}`)后，可以通过[!DNL数据访问API]检索属于特定批的一列表 [文件](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。  有关执行此操作的详细信息，请参阅数 [据访问教程](../data-access/tutorials/dataset-data.md)。
+在您获得要查找的批的ID(`{BATCH_ID}`)后，可以通过[!DNL数据访问API]检索属于特定批的一列表 [文件](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。  教程中提供了相关详细 [[!DNL Data Access] 信息](../data-access/tutorials/dataset-data.md)。
 
 **请求**
 
@@ -548,7 +548,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{FILE_ID}" \
   -H "x-api-key : {API_KEY}"
 ```
 
-响应可以指向单个文件或目录。 有关每个教程的详细信息，请参 [阅数据访问教程](../data-access/tutorials/dataset-data.md)。
+响应可以指向单个文件或目录。 有关每个教程的详细信 [[!DNL Data Access] 息](../data-access/tutorials/dataset-data.md)。
 
 ### 访问文件内容
 
@@ -568,7 +568,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{DATASET_FIL
 
 ### 验证记录以符合模式
 
-写入数据时，用户可以根据XDM模式中定义的验证规则选择验证数据。 有关模式验证的更多信息，请参 [阅GitHub上的ETL Eystem Integration Reference Code](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md#validation)。
+写入数据时，用户可以根据XDM模式中定义的验证规则选择验证数据。 有关模式验证的更多信息，请参 [阅上的ETL生态系统集成参考代码 [!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md#validation)。
 
 如果您使用[!DNL GitHub]上 [的引用实现](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md)，则可以使用系统属性在此实现中打开模式验证 `-DenableSchemaValidation=true`。
 
