@@ -3,11 +3,12 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: 浏览访问控制工作区
 topic: user guide
+description: 此文档涵盖浏览访问控制工作区所需的必要步骤。 要配置访问控制以通过Adobe Admin Console进行Experience Platform，您必须是具有Experience Platform订阅的IMS组织的管理员。
 translation-type: tm+mt
-source-git-commit: 6f599c0c6d8b349ebfb8cc0523543904fd628f8d
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '258'
-ht-degree: 3%
+source-wordcount: '301'
+ht-degree: 2%
 
 ---
 
@@ -22,7 +23,7 @@ ht-degree: 3%
 
 ![overview-page](../images/overview-page.png)
 
-将显示访问控制工作区以进行Adobe Experience Platform，在“产品用户档案” *[!UICONTROL 选项卡上打开]* 。 此选项卡允许您视图所有产品用户档案并管理本文档中概述的各种设置。
+将显示Adobe Experience Platform的访问控制工作区，在“产品用户档案” *[!UICONTROL 选项卡上打]* 开。 此选项卡允许您视图所有产品用户档案并管理本文档中概述的各种设置。
 
 ![平台访问控制](../images/platform-access-control.png)
 
