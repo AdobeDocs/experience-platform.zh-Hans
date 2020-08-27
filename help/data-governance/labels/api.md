@@ -5,9 +5,9 @@ title: '使用API管理数据使用标签 '
 topic: developer guide
 description: 数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的Catalog Service API分开。
 translation-type: tm+mt
-source-git-commit: 2fdab7d984a7368df77110f8ba0e0ba687e96d7e
+source-git-commit: 4096a7c1ec2b3640886d3a8c69b578987fe96dd4
 workflow-type: tm+mt
-source-wordcount: '1003'
+source-wordcount: '1007'
 ht-degree: 3%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 此文档提供了如何使用API和API管理数据使用 [!DNL Policy Service] 标签的 [!DNL Dataset Service] 步骤。
 
-提供 [!DNL Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) 了多个端点，允许您创建和管理组织的数据使用标签。
+[! [DNL策略服务API]提供了多个端点](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) ，允许您创建和管理组织的数据使用标签。
 
 API [!DNL Dataset Service] 允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元 [!DNL Catalog Service] 数据的API相分离。
 
