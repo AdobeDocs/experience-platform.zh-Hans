@@ -5,9 +5,9 @@ title: 流式摄取验证
 topic: overview
 description: 流摄取允许您使用流端点实时将数据上传到Adobe Experience Platform。 流式摄取API支持两种验证模式——同步和异步。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '852'
 ht-degree: 3%
 
 ---
@@ -21,8 +21,8 @@ ht-degree: 3%
 
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-- [!DNL Experience Data Model (XDM) System](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [!DNL Streaming Ingestion](../streaming-ingestion/overview.md):数据发送方法之一 [!DNL Experience Platform]。
+- [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [[!DNL流摄取]](../streaming-ingestion/overview.md):数据发送方法之一 [!DNL Experience Platform]。
 
 ### 读取示例API调用
 
