@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;troubleshooting;access control
 solution: Experience Platform
 title: 访问控制疑难解答指南
 topic: troubleshooting guide
+description: 本文档提供有关Adobe Experience Platform访问控制的常见问题解答。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '298'
+source-wordcount: '313'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # 访问控制疑难解答指南
 
-此文档提供有关Adobe Experience Platform中访问控制的常见问题解答。 有关其他服务的问题和疑 [!DNL Platform] 难解答，请参阅Experience Platform [疑难解答指南](../landing/troubleshooting.md)。
+本文档提供有关Adobe Experience Platform访问控制的常见问题解答。 有关其他服务的问题和疑 [!DNL Platform] 难解答，请参阅Experience Platform [疑难解答指南](../landing/troubleshooting.md)。
 
 [!DNL Experience Platform] 利用Adobe Admin Console的产品 [用户档案](http://adminconsole.adobe.com) ，提供基于角色 **的访问控制**，将用户与权限和沙箱关联起来。  有关更多 [信息](home.md) ，请参阅访问控制概述。
 
@@ -24,7 +25,7 @@ ht-degree: 0%
 
 如果您不是管理员，您仍可以通过向视图API中的端点发送请求来访问控制您 `/acl/effective-policies` 当前的访问权限。 有关详细信息，请参阅视图开发人 [员指南中的](./api/effective-policies.md) “访问控制有效策略”部分。
 
-## UI中的某些功 [!DNL Platform] 能不可用。 权限如何控制对这些功能的访问？
+## UI中的某些 [!DNL Platform] 功能不可用。 权限如何控制对这些功能的访问？
 
 如果您对特定功能没有访问权限， [!DNL Platform] 则该功能将在UI中被隐藏或灰显 [!DNL Experience Platform] 。 例如，要视图“[!UICONTROL 用户档案]”选项卡，您必须具有“[!UICONTROL 视图用户档案]”或“管[!UICONTROL 理用户档案]”权限。 如果您需要其他权限才能使用功能，请与您的管 [!DNL Experience Platform] 理员联系。
 
