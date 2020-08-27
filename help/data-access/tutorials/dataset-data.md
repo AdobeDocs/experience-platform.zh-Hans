@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data access;data access api;query data access
 solution: Experience Platform
 title: 数据访问概述
 topic: tutorial
+description: 此文档提供了一个分步教程，其中涵盖如何使用Adobe Experience Platform的Data Access API查找、访问和下载数据集中存储的数据。 您还将介绍Data Access API的一些独特功能，如分页和部分下载。
 translation-type: tm+mt
-source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
+source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
 workflow-type: tm+mt
-source-wordcount: '1332'
-ht-degree: 3%
+source-wordcount: '1384'
+ht-degree: 2%
 
 ---
 
@@ -18,7 +19,7 @@ ht-degree: 3%
 
 ## 入门指南
 
-本教程旨在了解如何创建和填充数据集。 有关详细 [信息，请参阅数据集](../../catalog/datasets/create.md) 创建教程。
+本教程需要学习如何创建和填充数据集。 有关详细 [信息，请参阅数据集](../../catalog/datasets/create.md) 创建教程。
 
 以下各节提供了成功调用平台API所需了解的其他信息。
 
