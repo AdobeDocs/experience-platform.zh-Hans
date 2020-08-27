@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics
+keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;experiments;sensei machine learning api
 solution: Experience Platform
 title: 实验
 topic: Developer guide
+description: 模型开发和培训在实验级别进行，其中实验由MLI实例、培训运行和评分运行组成。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 194a29124949571638315efe00ff0b04bff19303
 workflow-type: tm+mt
-source-wordcount: '744'
+source-wordcount: '765'
 ht-degree: 4%
 
 ---
@@ -71,7 +72,7 @@ curl -X POST \
 
 ## 创建并执行培训或评分运行 {#experiment-training-scoring}
 
-您可以通过执行POST请求并提供有效的实验ID并指定运行任务来创建培训或评分运行。 仅当实验具有现有且成功的培训运行时，才可创建评分运行。 成功创建培训运行将初始化模型培训过程，成功完成该过程将生成经过培训的模型。 生成经过培训的模型将取代任何先前已有的模型，这样实验在任何给定时间只能使用单个经过培训的模型。
+您可以通过执行POST请求并提供有效的实验ID并指定运行任务来创建培训或评分运行。 仅当实验具有现有且成功的培训运行时，才可创建评分运行。 成功创建培训运行将初始化模型培训过程，成功完成该过程将生成一个经过培训的模型。 生成经过培训的模型将取代任何先前已有的模型，这样实验在任何给定时间只能使用单个经过培训的模型。
 
 **API格式**
 
@@ -277,7 +278,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回一个有效负荷，它包含运行列表及其每个详细信息(包括其实验运行ID(`{RUN_ID}`))。
+成功的响应返回一个有效负荷，它包含运行的列表及其每个详细信息(包括其实验运行ID(`{RUN_ID}`))。
 
 ```json
 {
