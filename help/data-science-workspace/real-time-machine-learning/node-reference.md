@@ -3,10 +3,11 @@ keywords: Experience Platform;developer guide;Data Science Workspace;popular top
 solution: Experience Platform
 title: 实时机器学习节点参考指南
 topic: Nodes reference
+description: 节点是图形形成的基本单位。 每个节点都执行特定任务，可以使用链接将它们链在一起，以形成表示ML管道的图。 由节点执行的任务表示对输入数据的操作，如数据的转换或模式，或机器学习推理。 节点将转换或推断的值输出到下一个节点。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '666'
 ht-degree: 0%
 
 ---
