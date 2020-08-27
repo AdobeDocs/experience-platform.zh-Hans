@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 描述符
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b021b6813af18e29f544dc55541f23dd7dd57d47
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1477'
+source-wordcount: '1481'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->描述符需要用替换的唯一“接 `xed` 受” `xdm`标头，但在其它方面与“接受”标头非常相似 [!DNL Schema Registry]。 以下示例调用中包含了正确的接受标头，但要确保使用正确的标头，请格外小心。
+>描述符需要用唯一的“接受”标 `xed` 头替换， `xdm`但在其它情况下，它与“接受”标题在中其他位置使用非常相似 [!DNL Schema Registry]。 以下示例调用中包含了正确的接受标头，但要确保使用正确的标头，请格外小心。
 
 ## 列表描述符
 
@@ -267,7 +267,7 @@ curl -X DELETE \
 
 成功的响应返回HTTP状态204（无内容）和空白正文。
 
-要确认描述符已被删除，您可以对描述符执行查找请求 `@id`。 该响应返回HTTP状态404（未找到），因为描述符已从中删除 [!DNL Schema Registry]。
+要确认描述符已被删除，可以对描述符执行查找请求 `@id`。 该响应返回HTTP状态404（未找到），因为描述符已从中删除 [!DNL Schema Registry]。
 
 ## 附录
 
@@ -279,7 +279,7 @@ curl -X DELETE \
 
 #### 标识描述符
 
-标识描述符表示“sourceSchema[!UICONTROL ”的]“sourceProperty[!UICONTROL ”是]由Adobe Experience Platform标识服务描 [!DNL Identity] 述的字段 [](../../identity-service/home.md)。
+标识描述符表示“[!UICONTROL sourceSchema]”的“sourceProperty[!UICONTROL ”是]由Adobe Experience Platform标识服务描 [!DNL Identity] 述的字段 [](../../identity-service/home.md)。
 
 ```json
 {
@@ -300,7 +300,7 @@ curl -X DELETE \
 | `xdm:sourceSchema` | 定 `$id` 义描述符的模式的URI。 |
 | `xdm:sourceVersion` | 源模式的主版本。 |
 | `xdm:sourceProperty` | 将作为标识的特定属性的路径。 路径应以“/”开头，而不以“/”结尾。 不要在路径中包含“属性”（例如，使用“/personalEmail/address”而不是“/properties/personalEmail/properties/address”） |
-| `xdm:namespace` | 标 `id` 识命名空间 `code` 的或值。 列表的命名空间可使用找到。 [!DNL Identity Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml) |
+| `xdm:namespace` | 标 `id` 识命名空间 `code` 的或值。 使用[!DNL Identity Service API] [可以找到列表命名空间](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)。 |
 | `xdm:property` | 或 `xdm:id` , `xdm:code`具体取决于使 `xdm:namespace` 用。 |
 | `xdm:isPrimary` | 可选布尔值。 如果为true，则将字段指示为主标识。 模式只能包含一个主标识。 |
 
