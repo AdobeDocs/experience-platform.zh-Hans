@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 连接到流目标并激活数据
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1809'
+source-wordcount: '1818'
 ht-degree: 2%
 
 ---
@@ -30,8 +30,8 @@ ht-degree: 2%
 
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-* [!DNL Experience Data Model (XDM) System](../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-* [!DNL Catalog Service](../../catalog/home.md): [!DNL Catalog] 是Experience Platform内数据位置和谱系的记录系统。
+* [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
+* [[!DNL目录服务]](../../catalog/home.md): [!DNL Catalog] 是Experience Platform内数据位置和谱系的记录系统。
 * [沙箱](../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了在Adobe实时CDP中将数据激活到流目标时需要了解的其他信息。
