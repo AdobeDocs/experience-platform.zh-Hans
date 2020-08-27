@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: October, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: e9d7a045a88e0126549adcfa6136684e7b933b71
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '302'
+source-wordcount: '307'
 ht-degree: 6%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 6%
 
 Adobe Experience Platform的新增功能：
 
-- [!DNL Access control](#access-control)
-- [!DNL Sandboxes](#sandboxes)
+- [[!DNL访问控制]](#access-control)
+- [[!DNL沙箱]](#sandboxes)
 
 ## [!DNL Access control] {#access-control}
 
@@ -31,7 +31,7 @@ Adobe Experience Platform的新增功能：
 | 功能 | 描述 |
 |--- | ---|
 | 权限 | 在中， [!DNL Admin Console]产品用户档案中的选 [!DNL Platform] 项卡允许您自定义哪些功能 [!DNL Platform] 可供附加到该用户档案的用户使用。 可用权限类别包括： [!UICONTROL 数据建模、]数据管理 [!UICONTROL 、]用户档案管理 [!UICONTROL 、身份、监控]、数据管理、 管理、沙箱管理、沙箱、、源。 |
-| 访问沙箱 | 产品 [!UICONTROL _用户档案&#x200B;_]中的“权限[!DNL Platform]”选项卡可授予用户对特定沙箱的访问权限。 有关更多信息，请[参阅](#sandboxes)下面沙箱的部分。 |
+| 访问沙箱 | 产品 [!UICONTROL _用户档案_] 中的“权限 [!DNL Platform] ”选项卡可授予用户对特定沙箱的访问权限。 有关更多信息，请 [参阅](#sandboxes) 以下沙箱部分。 |
 
 有关详细信息，请参阅 [访问控制概述](../../access-control/home.md)。
 
