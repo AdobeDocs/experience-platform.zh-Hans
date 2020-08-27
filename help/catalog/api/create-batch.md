@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;create batch;catalog service;api
 solution: Experience Platform
 title: 创建数据集
 topic: developer guide
+description: 为了使数据集能够摄取数据，它必须具有与其关联的批。 使用现有数据集的id值，可以通过向目录API中的/batches端点发出POST请求来创建批。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '86'
-ht-degree: 4%
+source-wordcount: '128'
+ht-degree: 3%
 
 ---
 
