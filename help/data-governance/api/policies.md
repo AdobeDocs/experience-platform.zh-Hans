@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Policy enforcement;API-based enforcement;data governance
 solution: Experience Platform
 title: 策略
 topic: developer guide
+description: 数据使用策略是贵组织采用的规则，用于描述您允许或限制您对Experience Platform内数据执行的营销操作类型。 /policies端点用于与查看、创建、更新或删除数据使用策略相关的所有API调用。
 translation-type: tm+mt
-source-git-commit: 12c53122d84e145a699a2a86631dc37ee0073578
+source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
 workflow-type: tm+mt
-source-wordcount: '1756'
+source-wordcount: '1804'
 ht-degree: 2%
 
 ---
