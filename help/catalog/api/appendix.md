@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Catalog service;catalog api;appendix
 solution: Experience Platform
 title: 目录服务开发人员指南附录
 topic: developer guide
+description: 此文档包含帮助您使用Adobe Experience Platform的Catalog API的其他信息。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '893'
+source-wordcount: '910'
 ht-degree: 0%
 
 ---
@@ -151,7 +152,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回一组对象，其中 `id` 包含您分配给每个请求的对象、单个请求的HTTP状态代码以及响应 `body`。 由于三个示例请求都是为了创建新对象，因此每个对象的 `body` 数组只包含新创建对象的ID，而中POST响应最成功的标准也是 [!DNL Catalog]。
+成功的响应会返回一组对象，其中 `id` 包含您分配给每个请求的对象、单个请求的HTTP状态代码以及响应 `body`。 由于三个示例请求都是为了创建新对象，因此每个对象的 `body` 数组只包含新创建对象的ID，而标准POST响应中的ID最成功 [!DNL Catalog]。
 
 ```json
 [
