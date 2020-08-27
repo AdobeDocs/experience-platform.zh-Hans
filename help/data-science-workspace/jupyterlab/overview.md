@@ -5,7 +5,7 @@ title: JupyterLab用户指南
 topic: Overview
 description: JupyterLab是Project Jupyter的基于Web的用户界面，与Adobe Experience Platform紧密集成。 它为数据科学家提供一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起使用。 本文档概述了JupyterLab及其功能以及执行常见操作的说明。
 translation-type: tm+mt
-source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
+source-git-commit: 78f080fd7598799825c59a4fdfdcaf7d294560a3
 workflow-type: tm+mt
 source-wordcount: '3702'
 ht-degree: 11%
@@ -155,8 +155,8 @@ Experience Platform的JupyterLab集成包含架构更改、设计注意事项、
 | --- | --- |
 | 空白 | 一个空的笔记本文件。 |
 | 入门 | 一种预填的笔记本，用样本数据演示数据探索。 |
-| 零售销售 | 预填的笔记本，其中包含使 <a href="https://adobe.ly/2wOgO3L" target="_blank">用示例数据的“零售</a> 销售菜谱”。 |
-| Recipe Builder | 用于在中创建菜谱的笔记本模 [!DNL JupyterLab]板。 它预填了演示和描述菜谱创建过程的代码和评注。 有关详细的 <a href="https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en" target="_blank">演练，请参阅笔记本</a> ，参阅菜谱教程。 |
+| 零售销售 | 预填的笔记本，使用样 [本数据显示零售](https://adobe.ly/2wOgO3L) 销售菜谱。 |
+| Recipe Builder | 用于在中创建菜谱的笔记本模 [!DNL JupyterLab]板。 它预填了演示和描述菜谱创建过程的代码和评注。 有关详细的 [演练，请参阅笔记本](https://www.adobe.com/go/data-science-create-recipe-notebook-tutorial-en) ，参阅菜谱教程。 |
 | [!DNL Query Service] | 一种预填充的笔记本，其演示直接在 [!DNL Query Service] 提供的 [!DNL JupyterLab] 样本工作流中使用，该样本可大规模分析数据。 |
 | XDM事件 | 预填的笔记本，展示对后值体验事件数据的数据探索，侧重于数据结构中的常见功能。 |
 | XDM查询 | 预填的笔记本，展示关于体验查询数据的示例业务事件。 |
@@ -455,9 +455,9 @@ dataFrame.show()
 
 ### 查询数据使 [!DNL Query Service] 用 [!DNL Python]
 
-[!DNL JupyterLab] on允 [!DNL Platform] 许您在笔记本中使 [!DNL Python] 用SQL通过Adobe Experience Platform <a href="https://www.adobe.com/go/query-service-home-en" target="_blank">查询服务访问数据</a>。 通过访问数 [!DNL Query Service] 据对于处理大型数据集很有用，因为它具有出色的运行时间。 请注意，使用查询 [!DNL Query Service] 数据的处理时间限制为十分钟。
+[!DNL JupyterLab] on允 [!DNL Platform] 许您在笔记本中使 [!DNL Python] 用SQL通过Adobe Experience Platform [查询服务访问数据](https://www.adobe.com/go/query-service-home-en)。 通过访问数 [!DNL Query Service] 据对于处理大型数据集很有用，因为它具有出色的运行时间。 请注意，使用查询 [!DNL Query Service] 数据的处理时间限制为十分钟。
 
-在中使 [!DNL Query Service] 用 [!DNL JupyterLab]之前，请确保您对SQL语法有 <a href="https://www.adobe.com/go/query-service-sql-syntax-en" target="_blank">[!DNL Query Service] 正确的了解</a>。
+在中使 [!DNL Query Service] 用 [!DNL JupyterLab]之前，请确保您对SQL语法有 [[!DNL Query Service] 正常了解](https://www.adobe.com/go/query-service-sql-syntax-en)。
 
 使用查询 [!DNL Query Service] 数据需要您提供目标数据集的名称。 您可以使用数据资源管理器查找所需的数据集，从而生成必 **要的代码单元**。 右键单击数据集列表，然后单 **击笔记本中的查询** ，以在笔记本中生成以下两个代码单元格：
 
@@ -626,10 +626,10 @@ timedf.show()
 | 博凯 | 1.3.1 |
 | 亨西姆 | 3.7.3 |
 | 平行 | 0.5.2 |
-| 熊猫 | 1.6 |
+| jq | 1.6 |
 | keras | 2.2.4 |
 | nltk | 3.2.5 |
-| 博 | 0.22.0 |
+| 熊猫 | 0.22.0 |
 | 潘达斯 | 0.7.3 |
 | 枕 | 6.0.0 |
 | Scikit图像 | 0.15.0 |
@@ -718,9 +718,9 @@ timedf.show()
 | :------ | :------ |
 | 请求 | 2.18.4 |
 | 亨西姆 | 2.3.0 |
-| feras | 2.0.6 |
+| keras | 2.0.6 |
 | nltk | 3.2.4 |
-| 博 | 0.20.1 |
+| 熊猫 | 0.20.1 |
 | 潘达斯 | 0.7.3 |
 | 枕 | 5.3.0 |
 | Scikit图像 | 0.13.0 |
