@@ -1,20 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data access;python sdk;spark sdk;data access api
 solution: Experience Platform
 title: 数据访问概述
 topic: overview
+description: Data Access通过为用户提供侧重于在Experience Platform内摄取的数据集的可发现性和可访问性的工具来支持Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 75e1d3c9912e54e925032bbc2ae4e984948a30eb
 workflow-type: tm+mt
-source-wordcount: '188'
-ht-degree: 2%
+source-wordcount: '210'
+ht-degree: 1%
 
 ---
 
 
 # [!DNL Data Access]概述
 
-[!DNL Data Access] 通过为用户提供专注于所收录数据集的可发现性和可访问性的工具来支持Adobe Experience Platform [!DNL Experience Platform]。
+[!DNL Data Access] 为Adobe Experience Platform提供专注于所收录数据集的可发现性和可访问性的用户工具 [!DNL Experience Platform]。
 
 ![Experience Platform时的数据访问](images/Data_Access_Experience_Platform.png)
 
