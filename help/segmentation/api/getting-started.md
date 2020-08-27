@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 分段服务开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '288'
+source-wordcount: '300'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 # Getting started with [!DNL Segmentation Service] {#getting-started}
 
-Adobe Experience Platform [!DNL Segmentation Service] 允许您根据Adobe Experience Platform构建细分并生成 [!DNL Real-time Customer Profile] 受众。
+Adobe Experience Platform [!DNL Segmentation Service] 允许您在Adobe Experience Platform建立细分，并根据数据生成 [!DNL Real-time Customer Profile] 受众。
 
 开发人员指南要求对与使用相关的各 [!DNL Experience Platform] 种服务进行有效理 [!DNL Segmentation Service]解。
 
-- [!DNL Segmentation](../home.md): 允许您根据数据构建受众 [!DNL Real-time Customer Profile] 细分。
-- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [[!DNL分段]](../home.md):允许您根据数据构建受众 [!DNL Real-time Customer Profile] 细分。
+- [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 - [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了成功使用API所需了解的其他信 [!DNL Segmentation] 息。
