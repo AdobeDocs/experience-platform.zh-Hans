@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 将客户端连接到查询服务
 topic: connect
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '56'
+source-wordcount: '75'
 ht-degree: 0%
 
 ---
@@ -18,10 +18,10 @@ ht-degree: 0%
 
 为以下客户端提供了说明：
 
-- [!DNL Aqua Data Studio](./aqua-data-studio.md)
-- [!DNL Looker](./looker.md)
-- [!DNL Postico (Mac)](./postico.md)
-- [!DNL Power BI (PC)](./power-bi.md)
-- [!DNL PSQL](./psql.md)
-- [!DNL RStudio](./rstudio.md)
-- [!DNL Tableau](./tableau.md)
+- [[!DNL Aqua Data Studio]](./aqua-data-studio.md)
+- [[!DNL Looker]](./looker.md)
+- [[!DNL Postico(Mac)]](./postico.md)
+- [[!DNLPower BI(PC)]](./power-bi.md)
+- [[!DNL PSQL]](./psql.md)
+- [[!DNL RStudio]](./rstudio.md)
+- [[!DNL表]](./tableau.md)
