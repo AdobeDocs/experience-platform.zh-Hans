@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 合并
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '788'
+source-wordcount: '792'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 合并
 
-合并(或合并视图)是系统生成的只读模式，它聚合共享同一类（或）并启用的所[!DNL XDM ExperienceEvent] 有模式 [!DNL XDM Individual Profile]的字段 [!DNL Real-time Customer Profile](../../profile/home.md)。
+合并(或合并视图)是系统生成的只读模式，它聚合共享同一类(或[!DNL XDM ExperienceEvent][!DNL XDM Individual Profile])并启用[!DNL实 [时客户用户档案]的所有模式的字段](../../profile/home.md)。
 
 此文档涵盖在模式注册表API中与合并协作的基本概念，包括各种操作的示例调用。 有关XDM中合并的更多一般信息，请参阅模式合成基 [础知识中的合并部分](../schema/composition.md#union)。
 
@@ -199,8 +199,8 @@ curl -X GET \
 
 | 接受 | 描述 |
 | -------|------------ |
-| application/vnd.adobe.xed+json; version={MAJOR_VERSION} | 原始 `$ref` 和 `allOf`。 包括标题和说明。 |
-| application/vnd.adobe.xed-full+json; version={MAJOR_VERSION} | `$ref` 属性和已 `allOf` 解析。 包括标题和说明。 |
+| application/vnd.adobe.xed+json;version={MAJOR_VERSION} | 原始 `$ref` 和 `allOf`。 包括标题和说明。 |
+| application/vnd.adobe.xed-full+json;version={MAJOR_VERSION} | `$ref` 属性和已 `allOf` 解析。 包括标题和说明。 |
 
 **响应**
 
