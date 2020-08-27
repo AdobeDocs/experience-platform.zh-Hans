@@ -4,24 +4,24 @@ solution: Experience Platform
 title: 创建ETL集成
 topic: overview
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '4102'
+source-wordcount: '4158'
 ht-degree: 0%
 
 ---
 
 
-# 开发ETL集成以实现Adobe Experience Platform
+# 为Adobe Experience Platform开发ETL集成
 
 ETL集成指南概述了创建高性能、安全连接器并将数据引入 [!DNL Experience Platform] 其中的一般步骤 [!DNL Platform]。
 
 
-- [!DNL Catalog](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)
-- [!DNL Data Access](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)
-- [!DNL Data Ingestion](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)
+- [[!DNL目录]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)
+- [[!DNL数据访问]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)
+- [[!DNL数据摄取]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)
 - [身份验证和授权API](../tutorials/authentication.md)
-- [!DNL Schema Registry](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)
+- [[!DNL模式注册]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)
 
 本指南还包括设计ETL连接器时要使用的示例API调用，其中包含描述每项服务的文 [!DNL Experience Platform] 档的链接，以及其API的使用。
 
@@ -29,7 +29,7 @@ ETL集成指南概述了创建高性能、安全连接器并将数据引入 [!DN
 
 ## 工作流
 
-以下工作流图提供了将Adobe Experience Platform组件与ETL应用程序和连接器集成的高级概述。
+以下工作流程图提供了将Adobe Experience Platform组件与ETL应用程序和连接器集成的高级概述。
 
 ![](images/etl.png)
 
@@ -37,7 +37,7 @@ ETL集成指南概述了创建高性能、安全连接器并将数据引入 [!DN
 
 ETL连接器集成涉及多个Experience Platform组件。 以下列表概述了几个关键组件和功能：
 
-- **AdobeIdentity Management系统(IMS)** -为Adobe服务提供身份验证框架。
+- **AdobeIdentity Management系统(IMS** )-为Adobe服务提供身份验证框架。
 - **IMS组织** -拥有或许可产品和服务并允许访问其成员的公司实体。
 - **IMS用户** - IMS组织的成员。 “组织与用户”关系是多对多的。
 - **[!DNL Sandbox]** -一个虚拟分区，用于 [!DNL Platform] 开发和发展数字体验应用程序。
@@ -58,7 +58,7 @@ ETL连接器集成涉及多个Experience Platform组件。 以下列表概述了
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -72,7 +72,7 @@ ETL连接器集成涉及多个Experience Platform组件。 以下列表概述了
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 ## 一般用户流
 
@@ -86,11 +86,11 @@ ETL工作流中已提供示例ETL工具和工作流的 [模型](./workflow.md)�
 
 >[!NOTE]
 >
->ETL连接器必须指定一个时间戳过滤器，用于标记要摄取数据和偏移的日期（即要读取数据的窗口）。 ETL工具应支持在此或其他相关UI中采用这两个参数。 在Adobe Experience Platform中，这些参数将映射到数据集的批处理对象中存在的可用日期（如果存在）或捕获日期。
+>ETL连接器必须指定一个时间戳过滤器，用于标记要摄取数据和偏移的日期（即要读取数据的窗口）。 ETL工具应支持在此或其他相关UI中采用这两个参数。 在Adobe Experience Platform，这些参数将映射到数据集的批处理对象中的可用日期（如果存在）或捕获日期。
 
 ### 视图列表数据集
 
-使用数据源进行映射，可以使用获取所有可用数据集的列表 [!DNL Catalog API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)。
+使用数据源进行映射，可以使用[!DNL Catalog API]获取所 [有可用数据集的列表](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)。
 
 您可以发出单个API请求以视图所有可用数据集(例如， `GET /dataSets`)，最佳实践是包含限制响应大小的查询参数。
 
@@ -127,7 +127,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets?limit=3&
   -H "x-sandbox-name: {SANDBOX_NAME}"
 ```
 
-有关如何拨 [叫的详细示例](../catalog/home.md) ，请参阅目录服务概述 [!DNL Catalog API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)。
+有关如何调 [用[!DNL Catalog](../catalog/home.md) API]的详细示 [例，请参阅目录服务概述](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)。
 
 **响应**
 
@@ -229,7 +229,7 @@ curl -X GET \
 }
 ```
 
-如果填充了数据集的“模式”属性，则表明该模式是已弃用的 `/xdms` 模式，并且在支持的情况下，ETL连接器应将“模式”属性中的值与端点（中已弃用的端点）一起使用 `/xdms`[!DNL Catalog API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，以检索旧模式。
+如果填充了数据集的“模式”属性，则表明该模式是已弃用的 `/xdms` 模式，并且ETL连接器应使用“模式”属性中的值与端点（[!DNL目录API中已弃用的端点）一起 `/xdms`[](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，以检索旧版模式。
 
 **API格式**
 
@@ -430,7 +430,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/ea40946ac031
 
 ### 预览文件数据
 
-“href”属性可用于通过获取预览数据 [!DNL Data Access API](../data-access/home.md)。
+“href”属性可用于通过[!DNL数据访 [问API]获取预览数据](../data-access/home.md)。
 
 **API格式**
 
@@ -491,13 +491,13 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/59c93f3d
 }
 ```
 
-数据将使用数 [!DNL Experience Platform] 据 [摄取API写入](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)。  数据写入是一个异步过程。 将数据写入Adobe Experience Platform时，仅在完全写入数据后，才会创建批处理并将其标记为成功。
+数据将使用数 [!DNL Experience Platform] 据 [摄取API写入](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)。  数据写入是一个异步过程。 将数据写入Adobe Experience Platform时，只有在完全写入数据后，才会创建批处理并将其标记为成功。
 
 中的数 [!DNL Experience Platform] 据应以镶木地板文件的形式写入。
 
 ## 执行阶段
 
-作为执行开始，连接器（如源组件中定义）将使用从读取 [!DNL Experience Platform] 数据 [!DNL Data Access API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。 转换过程将读取特定时间范围内的数据。 在内部，它将查询成批的源数据集。 在查询时，它将使用参数化（滚动时间序列数据或增量数据）开始日期和列表数据集文件来查询这些批，并开始请求这些数据集文件的数据。
+作为执行开始，连接器（如源组件中定义）将使用[! [!DNL Experience Platform] DNL [数据访问API]从中读取数据](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。 转换过程将读取特定时间范围内的数据。 在内部，它将查询成批的源数据集。 在查询时，它将使用参数化（滚动时间序列数据或增量数据）开始日期和列表数据集文件来查询这些批，并开始请求这些数据集文件的数据。
 
 ### 示例转换
 
@@ -505,7 +505,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/59c93f3d
 
 ### 从读取数据 [!DNL Experience Platform]
 
-使用 [!DNL Catalog API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，您可以提取指定开始时间和结束时间之间的所有批，并按创建顺序对它们进行排序。
+使用 [[!DNL Catalog API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，您可以提取指定开始时间和结束时间之间的所有批，并按它们的创建顺序对它们进行排序。
 
 **请求**
 
@@ -522,7 +522,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches?dataSet=D
 
 ### 从批处理中获取文件
 
-在您获得要查找的批的ID(`{BATCH_ID}`)后，可以通过检索属于特定批的一列表文件 [!DNL Data Access API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。  有关执行此操作的详细信息，请参阅数 [据访问教程](../data-access/tutorials/dataset-data.md)。
+在您获得要查找的批的ID(`{BATCH_ID}`)后，可以通过[!DNL数据访问API]检索属于特定批的一列表 [文件](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。  有关执行此操作的详细信息，请参阅数 [据访问教程](../data-access/tutorials/dataset-data.md)。
 
 **请求**
 
@@ -536,7 +536,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 
 ### 使用文件ID访问文件
 
-使用文件()的唯`{FILE_ID`一ID, [!DNL Data Access API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) 可以使用该文件访问特定详细信息，包括其名称、大小（以字节为单位）以及用于下载该文件的链接。
+使用文件(`{FILE_ID`)的唯一ID, [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) 可用于访问文件的特定详细信息，包括其名称、字节大小和用于下载文件的链接。
 
 **请求**
 
@@ -552,7 +552,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{FILE_ID}" \
 
 ### 访问文件内容
 
-可 [!DNL Data Access API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) 用于访问特定文件的内容。 要获取内容，使用使用文件ID访问文件时返 `_links.self.href` 回的值进行GET请求。
+[ [!DNL数据访问API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) 可用于访问特定文件的内容。 要获取内容，使用使用文件ID访问文件时返 `_links.self.href` 回的值进行GET请求。
 
 **请求**
 
@@ -570,7 +570,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{DATASET_FIL
 
 写入数据时，用户可以根据XDM模式中定义的验证规则选择验证数据。 有关模式验证的更多信息，请参 [阅GitHub上的ETL Eystem Integration Reference Code](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md#validation)。
 
-如果您使用上的引用实现，则 [!DNL GitHub](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md)可以使用系统属性在此实现中打开模式验证 `-DenableSchemaValidation=true`。
+如果您使用[!DNL GitHub]上 [的引用实现](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md)，则可以使用系统属性在此实现中打开模式验证 `-DenableSchemaValidation=true`。
 
 可以使用属性（如字符串、字符串、整数等）对逻 `minLength` 辑XDM `maxlength` 类型 `minimum` 执行验 `maximum` 证，还可以对整数等进行验证。 模式 [注册表API开发人员指南](../xdm/api/getting-started.md) （包含一个表），其中概述了XDM类型和可用于验证的属性。
 
@@ -580,7 +580,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{DATASET_FIL
 
 ### 创建批
 
-处理数据后，ETL工具将使用Batch Ingestion API将数据写 [!DNL Experience Platform] 回 [到中](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)。 在将数据添加到数据集之前，必须将其链接到一个批次，该批次稍后将上传到特定数据集。
+处理数据后，ETL工具将使用Batch Ingestion API将数据写 [!DNL Experience Platform] 回 [到中](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)。 在将数据添加到数据集之前，必须将其链接到一个批，稍后该批将上传到特定数据集。
 
 **请求**
 
@@ -600,7 +600,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 ### 写入数据集
 
-成功创建新批后，文件可上传到特定数据集。 在提升多个文件之前，可以在一个批中发布它。 文件可以使用“小文 _件上传API”上传_; 但是，如果文件太大并且超出了网关限制，则可以使用“大 _文件上传API”_。 有关同时使用“大文件上传”和“小文件上传”的详细信息，请参 [阅批处理概述](../ingestion/batch-ingestion/overview.md)。
+成功创建新批后，文件可上传到特定数据集。 在提升多个文件之前，可以在一个批中发布它。 文件可以使用“小文 _件上传API”上传_;但是，如果文件太大并且超出了网关限制，则可以使用“大 _文件上传API”_。 有关同时使用“大文件上传”和“小文件上传”的详细信息，请参 [阅批处理概述](../ingestion/batch-ingestion/overview.md)。
 
 **请求**
 
@@ -620,7 +620,7 @@ curl -X PUT "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 在所有文件都上传到该批后，可以指示该批完成。 通过执行此操作 [!DNL Catalog] ，将为已完成的文件创建“DataSetFile”条目，并与生成批处理关联。 然 [!DNL Catalog] 后将批标记为成功，这会触发下游流以获取可用数据。
 
-数据将首先降落在Adobe Experience Platform的分阶段位置，然后在编目和验证后移至最终位置。 将所有数据移动到永久位置后，批次将标记为成功。
+数据将首先降落在Adobe Experience Platform的分阶段地点，然后在编目和验证后移至最后地点。 将所有数据移动到永久位置后，批次将标记为成功。
 
 **请求**
 
@@ -640,7 +640,7 @@ ETL工具将确保在读取数据时记录源数据集的时间戳。
 
 ### 获取上一批状态
 
-在ETL工具中运行新任务之前，必须确保成功完成上一批。 提供 [!DNL Catalog Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) 了特定于批的选项，其中提供了相关批的详细信息。
+在ETL工具中运行新任务之前，必须确保成功完成上一批。 [! [DNL目录服务API]提供了特定于批的选项](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) ，该选项提供了相关批的详细信息。
 
 **请求**
 
@@ -674,7 +674,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches?limit=1&s
 
 ### 按ID获取上一批状态
 
-通过使用该GET请求，可以 [!DNL Catalog Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) 通过该检索单个批处理状态 `{BATCH_ID}`。 使 `{BATCH_ID}` 用的ID与创建批时返回的ID相同。
+通过使用发出GET请 [求，可以通过[!DNL Catalog Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) 检索单个批处理状态 `{BATCH_ID}`。 使 `{BATCH_ID}` 用的ID与创建批时返回的ID相同。
 
 **请求**
 
@@ -757,7 +757,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID
 
 ## 批处理重放和数据重新处理
 
-如果客户发现过去“n”天中，ETL处理的数据未按预期发生，或源数据本身可能不正确，则可能需要进行批量重放和数据重新处理。
+如果客户发现过去“n”天中，正在处理的数据未按预期发生或源数据本身可能不正确，则可能需要进行批量重放和数据重新处理。
 
 为此，客户端的数据管理员将使用UI删 [!DNL Platform] 除包含损坏数据的批。 然后，ETL可能需要重新运行，从而使用正确的数据重新填充。 如果源本身有损坏的数据，数据工程师／管理员需要更正源批次并重新摄取数据(输入Adobe Experience Platform或通过ETL连接器)。
 
@@ -765,7 +765,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID
 
 很可能，清除数据的ETL功能将非常重要。
 
-清除完成后，客户端管理员将必须重新配置Adobe Experience Platform，以从删除批时起重新开始核心服务的处理。
+清除完成后，客户端管理员将必须重新配置Adobe Experience Platform，以从删除批时开始重新开始核心服务的处理。
 
 ## 并发批处理
 
@@ -781,7 +781,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID
 
 延迟是一种过程，在该过程中，输入数据尚未足够完整，无法发送到下游进程，但将来可能可用。 客户将确定他们对数据窗口的容忍度，以便将来进行匹配，而不是处理成本，以告知他们决定在下一次转换执行中搁置数据并重新处理它，希望在保留窗口内的将来某个时间对其进行丰富和协调／拼接。 这一周期一直持续，直到该行被充分处理，或者它被认为过于陈旧，无法继续投资。 每个迭代都将生成延迟数据，该数据是先前迭代中所有延迟数据的超集。
 
-Adobe Experience Platform当前不识别延迟数据，因此客户端实施必须依赖ETL和数据集手动配置来在镜像源数据集时创建另一个数据集 [!DNL Platform] ，该数据集可用于保留延迟数据。 在这种情况下，延迟数据将类似于快照数据。 每次执行ETL转换时，源数据都会与延迟数据相统一，并发送给处理。
+Adobe Experience Platform当前不识别延迟数据，因此客户端实施必须依赖ETL和数据集手动配置，以在镜像源数据集时创建另一个数据集 [!DNL Platform] ，该数据集可用于保留延迟数据。 在这种情况下，延迟数据将类似于快照数据。 每次执行ETL转换时，源数据都会与延迟数据相统一，并发送给处理。
 
 ## Changelog
 
@@ -789,5 +789,5 @@ Adobe Experience Platform当前不识别延迟数据，因此客户端实施必�
 | ---- | ------ | ----------- |
 | 2019-01-19 | 从数据集中删除了“字段”属性 | 数据集之前包含“字段”属性，该属性包含模式的副本。 不应再使用此功能。 如果找到“fields”属性，则应忽略它，改用“opectedSchema”或“schemaRef”。 |
 | 2019-03-15 | 已向数据集添加“schemaRef”属性 | 数据集的“schemaRef”属性包含引用数据集所基于的XDM模式的URI，并表示数据集可以使用的所有潜在字段。 |
-| 2019-03-15 | 所有最终用户标识符都映射到“identityMap”属性 | “identityMap”是对主题的所有唯一标识符(如CRM ID、ECID或忠诚度项目ID)的封装。 此地图用于解 [!DNL Identity Service](../identity-service/home.md) 析主题的所有已知和匿名身份，为每个最终用户形成单一的身份图。 |
+| 2019-03-15 | 所有最终用户标识符都映射到“identityMap”属性 | “identityMap”是对主题的所有唯一标识符(如CRM ID、ECID或忠诚度项目ID)的封装。 [!DNL Identity Service] [使用此地图解析主题的所有已知和匿名身份](../identity-service/home.md) ，为每个最终用户形成一个单一的身份图。 |
 | 2019-05-30 | EOL和从数据集中删除“模式”属性 | 数据集“模式”属性使用API中已弃用的端点提供指向模式 `/xdms` 的引用 [!DNL Catalog] 链接。 它已被“schemaRef”替换，该“schemaRef”提供新API中引用的模式的“id”、“version”和“contentType” [!DNL Schema Registry] 。 |
