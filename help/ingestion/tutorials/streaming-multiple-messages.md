@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 在单个HTTP请求中流化多个消息
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 80392190c7fcae9b6e73cc1e507559f834853390
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1459'
+source-wordcount: '1466'
 ht-degree: 1%
 
 ---
@@ -14,24 +14,24 @@ ht-degree: 1%
 
 # 在单个HTTP请求中发送多条消息
 
-将数据流化到Adobe Experience Platform时，进行大量HTTP调用可能会非常昂贵。 例如，创建1KB有效负荷的1个HTTP请求（每个消息200条，每个消息1KB）比创建200个HTTP请求（单个有效负荷200KB）效率更高。 正确使用时，在单个请求中对多个消息进行分组是优化发送数据的最佳方式 [!DNL Experience Platform]。
+将数据流化到Adobe Experience Platform时，进行大量HTTP调用可能会非常昂贵。 例如，创建1KB有效负荷的1个HTTP请求（每个消息200条，每个消息1KB）比创建200个HTTP请求（单个有效负荷200KB）效率更高。 正确使用时，在单个请求中对多个消息进行分组是优化发送数据的最佳方 [!DNL Experience Platform]法。
 
 此文档提供了一个教程，用于使用流 [!DNL Experience Platform] 摄取将多条消息发送到单个HTTP请求中。
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform进行有效的理 [!DNL Data Ingestion]解。 在开始本教程之前，请查阅以下文档：
+本教程需要对Adobe Experience Platform有充分的了解 [!DNL Data Ingestion]。 在开始本教程之前，请查阅以下文档：
 
-- [数据摄取概述](../home.md): 涵盖的核心概念， [!DNL Experience Platform Data Ingestion]包括摄取方法和数据连接器。
-- [流摄取概述](../streaming-ingestion/overview.md): 流摄取的工作流和构件，如流连接、数据集 [!DNL XDM Individual Profile]和 [!DNL XDM ExperienceEvent]。
+- [数据摄取概述](../home.md):涵盖的核心概念， [!DNL Experience Platform Data Ingestion]包括摄取方法和数据连接器。
+- [流摄取概述](../streaming-ingestion/overview.md):流摄取的工作流和构件，如流连接、数据集 [!DNL XDM Individual Profile]和 [!DNL XDM ExperienceEvent]。
 
-本教程还要求您完成“验证 [到Adobe Experience Platform](../../tutorials/authentication.md) ”教程，以成功调用 [!DNL Platform] API。 完成身份验证教程将提供本教程中所有API调用所需的授权头值。 示例调用中显示标题，如下所示：
+本教程还要求您完成对Adobe Experience Platform [的身份验证](../../tutorials/authentication.md) ，以成功调用 [!DNL Platform] API。 完成身份验证教程将提供本教程中所有API调用所需的授权头值。 示例调用中显示标题，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 
 所有POST请求都需要附加标题：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 ## 创建流连接
 
@@ -210,7 +210,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 
 ## 识别失败消息
 
-与使用单个消息发送请求相比，当发送包含多个消息的HTTP请求时，需要考虑其他因素，例如： 如何识别数据何时无法发送、哪些特定消息无法发送以及如何检索它们，以及当同一请求中的其他消息失败时成功的数据会发生什么情况。
+与使用单个消息发送请求相比，当发送包含多个消息的HTTP请求时，需要考虑其他因素，例如：如何识别数据何时无法发送、哪些特定消息无法发送以及如何检索它们，以及当同一请求中的其他消息失败时成功的数据会发生什么情况。
 
 在继续本教程之前，建议首先查看检索失败 [的批次指南](../quality/retrieve-failed-batches.md) 。
 
@@ -508,7 +508,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
     },
 ```
 
-第三条消息失败，因为标头中使用的IMS组织ID无效。 IMS组织必须与您尝试发布到的{CONNECTION_ID}匹配。 要确定哪个IMS组织ID与您使用的流连接匹配，您可以使用 `GET inlet` 执行请求 [!DNL Data Ingestion API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)。 有关 [如何检索先前创建](./create-streaming-connection.md#get-data-collection-url) 的流连接的示例，请参阅检索流连接。
+第三条消息失败，因为标头中使用的IMS组织ID无效。 IMS组织必须与您尝试发布到的{CONNECTION_ID}匹配。 要确定哪个IMS组织ID与您所使用的流连接相匹配，您可 `GET inlet` 以使用[! [DNL数据摄取API]执行请求](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)。 有关 [如何检索先前创建](./create-streaming-connection.md#get-data-collection-url) 的流连接的示例，请参阅检索流连接。
 
 第四条消息失败，因为它未遵循预期的XDM模式。 请 `xdmSchema` 求的标头和正文中包含的内容与XDM模式不匹配 `{DATASET_ID}`。 更正消息标头和正文中的模式允许其通过DCCS验证并成功发送到 [!DNL Platform]。 还必须更新消息正文以匹配消息的XDM模式, `{DATASET_ID}` 以便其通过流验证 [!DNL Platform]。 有关成功流入平台的消息会发生什么情况的详细信息，请参 [阅本教程的](#confirm-messages-ingested) “确认消息”一节。
 
@@ -529,7 +529,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 
 ## 后续步骤
 
-现在，您了解如何在单个请求中发送多个消息并验证消息何时成功引入目标数据集，因此可以开始将您自己的数据流化 [!DNL Platform]。 有关如何从中查询和检索所摄取数据的概 [!DNL Platform]述，请参阅 [!DNL Data Access](../../data-access/tutorials/dataset-data.md) 指南。
+现在，您了解如何在单个请求中发送多个消息并验证消息何时成功引入目标数据集，因此可以开始将您自己的数据流化 [!DNL Platform]。 有关如何从中查询和检索所摄取数据的概 [!DNL Platform]述，请参 [阅[!DNL数据访问]](../../data-access/tutorials/dataset-data.md) 指南。
 
 ## 附录
 
@@ -541,10 +541,10 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 
 | 状态代码 | 描述 |
 | :---: | --- |
-| 207 | 尽管使用“207”作为整体响应状态代码，但收件人需要查阅多状态响应机构的内容，以进一步了解方法执行的成功或失败。 响应代码用于成功、部分成功以及失败情况。 |
+| 207 | 尽管使用“207”作为整体响应状态代码，但收件人需要查阅多状态响应机构的内容，以进一步了解有关方法执行的成功或失败的信息。 响应代码用于成功、部分成功以及失败情况。 |
 | 400 | 请求有问题。 有关更具体的错误消息，请参阅响应正文（例如，消息有效负荷缺少必填字段，或消息为未知xdm格式）。 |
-| 401 | 未经授权： 请求缺少有效的授权头。 仅对启用身份验证的入口返回此值。 |
-| 403 | 未经授权：  提供的授权令牌无效或已过期。 仅对启用身份验证的入口返回此值。 |
+| 401 | 未经授权：请求缺少有效的授权头。 仅对启用身份验证的入口返回此值。 |
+| 403 | 未经授权： 提供的授权令牌无效或已过期。 仅对启用身份验证的入口返回此值。 |
 | 413 | 负载过大——当总负载请求大于1MB时引发。 |
 | 429 | 在指定的时长内请求过多。 |
 | 500 | 处理负载时出错。 有关更具体的错误消息，请参阅响应正文(例如，未指定消息有效负荷模式，或与中的XDM定义不匹配 [!DNL Platform])。 |
