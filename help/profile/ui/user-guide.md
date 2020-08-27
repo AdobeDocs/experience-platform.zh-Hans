@@ -5,9 +5,9 @@ title: 实时客户用户档案用户指南
 topic: guide
 description: 实时客户用户档案可以为您的每位客户创建整体视图，将来自多个渠道（包括在线、离线、CRM和第三方数据）的数据相结合。 此文档可作为与Adobe Experience Platform用户界面中实时用户档案交互的指南。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1191'
+source-wordcount: '1207'
 ht-degree: 0%
 
 ---
@@ -23,13 +23,13 @@ ht-degree: 0%
 
 本用户指南需要了解与管理相关 [!DNL Experience Platform] 的各种服务 [!DNL Real-time Customer Profiles]。 在阅读本用户指南之前，请查阅以下服务的文档：
 
-* [!DNL Real-time Customer Profile](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [!DNL Identity Service](../../identity-service/home.md):当 [!DNL Real-time Customer Profile] 不同数据源被引入时，通过连接它们的身份实现 [!DNL Platform]。
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [[!DNL实时客户用户档案]](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL标识服务]](../../identity-service/home.md):当 [!DNL Real-time Customer Profile] 不同数据源被引入时，通过连接它们的身份实现 [!DNL Platform]。
+* [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 ## 概述
 
-在中， [!DNL Experience Platform UI](http://platform.adobe.com)单击左 **[!UICONTROL 侧导]** 航中的用户档案 _[!UICONTROL ，打开“概述]_”选项卡。 此选项卡提供文档和视频链接，帮助您理解并开始使用用户档案。
+在[! [DNLExperience PlatformUI]中](http://platform.adobe.com)，单击左 **[!UICONTROL 侧导航]** 中的 _[!UICONTROL 用户档案以打开“]_ 概述”选项卡。 此选项卡提供文档和视频链接，帮助您理解并开始使用用户档案。
 
 ![](../images/user-guide/profiles-overview.png)
 
@@ -91,7 +91,7 @@ ht-degree: 0%
 
 ### 用户档案详细信息 {#profile-detail}
 
-选择用户档案 **[!UICONTROL ID后]**，将打 _[!UICONTROL 开“详细信]_息”选项卡。 此页显示有关所选用户档案的信息，包括基本属性、链接身份和可用的联系渠道。 显示的用户档案信息已从多个用户档案片段合并到一起，以形成单个客户的单个视图。
+选择用户档案 **[!UICONTROL ID后]**，将打 _[!UICONTROL 开“详细信]_ 息”选项卡。 此页显示有关所选用户档案的信息，包括基本属性、链接身份和可用的联系渠道。 显示的用户档案信息已从多个用户档案片段合并到一起，以形成单个客户的单个视图。
 
 ![](../images/user-guide/profiles-profile-detail.png)
 
