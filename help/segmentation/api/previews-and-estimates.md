@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 预览和估计端点
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '746'
 ht-degree: 2%
 
 ---
@@ -171,11 +171,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `results` | 实体ID的列表及其相关身份。 提供的链接可用于使用查找指定的实体 [!DNL Profile Access API](../../profile/api/entities.md)。 |
+| `results` | 实体ID的列表及其相关身份。 提供的链接可用于使用[!DNL用户档案访 [问API]查找指定的实体](../../profile/api/entities.md)。 |
 
 ## 检索特定评估作业的结果 {#get-estimate}
 
-创建预览作业后，您可以在GET请求路径中 `previewId``/estimate` 使用其到端点的视图，以有关段定义的统计信息，包括预计受众大小、置信间隔和错误标准偏差。
+创建预览作业后，您可以在GET请求路径中 `previewId` 使用其到终结点的 `/estimate` 信息来视图有关区段定义的统计信息，包括预计受众大小、置信区间和错误标准偏差。
 
 **API格式**
 
