@@ -5,9 +5,9 @@ title: Adobe Experience Platform批量摄取概述
 topic: overview
 description: 批处理摄取API允许您将数据作为批处理文件导入到Adobe Experience Platform。 所摄取的用户档案可以是CRM系统中平面文件（如拼花文件）中的模式数据，也可以是与体验数据模型(XDM)注册表中的已知数据相符的数据。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1196'
+source-wordcount: '1199'
 ht-degree: 2%
 
 ---
@@ -35,7 +35,7 @@ API [!DNL Data Ingestion] 允许您通过以下三个基本步骤将数据作为
 ### [!DNL Data Ingestion] 先决条件
 
 - 要上传的数据必须采用Parke或JSON格式。
-- 在中创建的数据集 [!DNL Catalog services](../../catalog/home.md)。
+- 在[!DNL Catalog [services]中创建的数据集](../../catalog/home.md)。
 - 拼花文件的内容必须与要上传到的数据集的模式的子集匹配。
 - 在验证后拥有您的独特访问令牌。
 
@@ -238,7 +238,7 @@ curl -X PATCH "https://platform.adobe.io/data/foundation/import/batches/{BATCH_I
 
 ## 信号批处理完成
 
-在所有文件都上传到该批后，可以指示该批完成。 通过执行此操作 [!DNL Catalog] ，将为已完 **** 成的文件创建DataSetFile条目，并与上面生成的批相关联。 然 [!DNL Catalog] 后将批标记为成功，这会触发下游流以获取可用数据。
+在所有文件都上传到该批后，可以指示该批完成。 通过执行此操作 [!DNL Catalog] ，将为已完 **** 成的文件创建DataSetFile条目，并与上面生成的批关联。 然 [!DNL Catalog] 后将批标记为成功，这会触发下游流以获取可用数据。
 
 **请求**
 
