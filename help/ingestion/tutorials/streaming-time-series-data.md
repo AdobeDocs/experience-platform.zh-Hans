@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 流式时间序列数据
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1126'
+source-wordcount: '1143'
 ht-degree: 2%
 
 ---
@@ -20,8 +20,8 @@ ht-degree: 2%
 
 本教程需要对Adobe Experience Platform各项服务有一定的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md):组织体验数据 [!DNL Platform] 的标准化框架。
-- [!DNL Real-time Customer Profile](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织体验数据 [!DNL Platform] 的标准化框架。
+- [[!DNL实时客户用户档案]](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
 - [模式注册开发人员指南](../../xdm/api/getting-started.md):全面的指南，涵盖API的每个可用端点 [!DNL Schema Registry] 以及如何向它们发出调用。 这包括了解您 `{TENANT_ID}`在本教程中的调用，以及了解如何创建模式，该数据用于创建用于摄取的数据集。
 
 此外，本教程要求您已创建流连接。 有关创建流连接的详细信息，请阅读创 [建流连接教程](./create-streaming-connection.md)。
@@ -99,7 +99,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 | -------- | ----------- |
 | `title` | 要用于模式的名称。 此名称必须唯一。 |
 | `description` | 您正在创建的模式的有意义描述。 |
-| `meta:immutableTags` | 在本例中，标 `union` 签用于将数据保留到 [!DNL Real-time Customer Profile](../../profile/home.md)。 |
+| `meta:immutableTags` | 在本例中，标 `union` 签用于将您的数据 [保留到[!DNL实时客户用户档案]](../../profile/home.md)。 |
 
 **响应**
 
@@ -401,7 +401,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
 
 ## 检索新摄取的时间序列数据
 
-要验证以前摄取的记录，您可以使用 [!DNL Profile Access API](../../profile/api/entities.md) 检索时间序列数据。 这可以使用对端点的GET请求和 `/access/entities` 可选的查询参数来完成。 可以使用多个参数，用和号(&amp;)分隔。”
+要验证之前摄取的记录，可 [以使用[!DNL用户档案访问API]](../../profile/api/entities.md) 检索时间序列数据。 这可以使用对端点的GET请求和 `/access/entities` 可选的查询参数来完成。 可以使用多个参数，用和号(&amp;)分隔。”
 
 >[!NOTE]
 >
