@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics
+keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;mlinstances;sensei machine learning api
 solution: Experience Platform
 title: MLInstances
 topic: Developer guide
+description: MLI实例是现有引擎与一组适当配置的配对，这些配置定义任何培训参数、评分参数或硬件资源配置。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 194a29124949571638315efe00ff0b04bff19303
 workflow-type: tm+mt
-source-wordcount: '575'
+source-wordcount: '601'
 ht-degree: 4%
 
 ---
