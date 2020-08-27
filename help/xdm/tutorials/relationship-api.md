@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用模式注册表API定义两个模式之间的关系
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1274'
+source-wordcount: '1282'
 ht-degree: 1%
 
 ---
@@ -19,15 +19,15 @@ ht-degree: 1%
 
 虽然模式关系可以通过使用合并模式来推断， [!DNL Real-time Customer Profile]但这仅适用于共享同一类的模式。 要在属于不同类的两个模式之间建立关系，必 **须向源模式** (引用目标模式的标识)中添加一个专用的关系字段。
 
-本文档提供了一个教程，用于定义组织使用定义的两个模式之间的一对一关系 [!DNL Schema Registry API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
+本文档提供了一个教程，用于定义组织使用[!DNL模式注册表API定义的两个模式之 [间的一对一关系](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
 
 ## 入门指南
 
 本教程需要对(XDM) [!DNL Experience Data Model] 和进行有效的了解 [!DNL XDM System]。 在开始本教程之前，请查阅以下文档：
 
-* [Experience Platform中的XDM系统](../home.md): XDM及其实施概述 [!DNL Experience Platform]。
-   * [模式合成基础](../schema/composition.md): 介绍XDM模式的构件。
-* [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [Experience Platform中的XDM系统](../home.md):XDM及其实施概述 [!DNL Experience Platform]。
+   * [模式合成基础](../schema/composition.md):介绍XDM模式的构件。
+* [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 * [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 在开始本教程之前，请查 [看开发人员指南](../api/getting-started.md) ，了解成功调用API所需了解的重要 [!DNL Schema Registry] 信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题(尤其要注意标题及 [!DNL Accept] 其可能的值)。
@@ -36,7 +36,7 @@ ht-degree: 1%
 
 您应已创建将在关系中定义的两个模式。 本教程在组织的当前忠诚度项目(在“”模式中定义)的成员与其喜爱的酒店(在“”模式中定义)之[!DNL Loyalty Members]间创建了[!DNL Hotels]一种关系。
 
-模式关系由源 **模式表示** ，该源具有引用目标模式中的另 **一个字段**。 在接下来的步骤中，[!DNL Loyalty Members]“”将是源模式，而“[!DNL Hotels]”将充当目标模式。
+模式关系由源 **模式表示** ，该源具有引用目标模式内的另 **一个字段**。 在接下来的步骤中，[!DNL Loyalty Members]“”将作为源模式，而“[!DNL Hotels]”将作为目标模式。
 
 >[!IMPORTANT]
 >
@@ -110,7 +110,7 @@ curl -X GET \
 
 ## 为源模式定义引用字段
 
-在关系数 [!DNL Schema Registry]据库表中，关系描述符的工作方式与外键相似： 源模式中的字段用作对目标模式 **的主标识** 字段的引用。 如果您的源模式没有用于此目的的字段，您可能需要使用新字段创建混音并将其添加到模式。 此新字段的 `type` 值必须为“[!DNL string]”。
+在关系数 [!DNL Schema Registry]据库表中，关系描述符的工作方式与外键相似：源模式中的字段用作对目标模式 **的主标识** 字段的引用。 如果您的源模式没有用于此目的的字段，您可能需要使用新字段创建混音并将其添加到模式。 此新字段的 `type` 值必须为“[!DNL string]”。
 
 >[!IMPORTANT]
 >
