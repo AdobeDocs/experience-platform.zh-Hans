@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;overview;customer ai;popular topics
+keywords: Experience Platform;overview;customer ai;popular topics;customer ai overview
 solution: Experience Platform
 title: 客户人工智能概述
 topic: Customer AI overview
+description: 客户AI用于生成定制倾向得分，如大规模客户流失和转化个别用户档案。 这无需将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 translation-type: tm+mt
-source-git-commit: 83e74ad93bdef056c8aef07c9d56313af6f4ddfd
+source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
-source-wordcount: '487'
+source-wordcount: '526'
 ht-degree: 0%
 
 ---
