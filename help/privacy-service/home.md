@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform Privacy Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: cc81d590f308c7e2677cec000c27e8aca42437f5
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1502'
 ht-degree: 2%
 
 ---
@@ -77,7 +77,7 @@ Adobe Experience Platform [!DNL Privacy Service] 是为应对企业管理客户�
 
 #### 使用API
 
-它提 [!DNL Privacy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml) 供了多个端点，用于使用RESTful API调用创建和管理隐私作业，允许您以编程方式处理应用程序的隐私法规遵 [!DNL Experience Cloud] 从性。 有关如何使用API的详细步骤，请参阅 [Privacy ServiceAPI开发人员指南](api/getting-started.md)。
+[! [DNLPrivacy ServiceAPI]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml) 为使用RESTful API调用创建和管理隐私作业提供了多个端点，允许您以编程方式处理应用程序的隐私法规合规性 [!DNL Experience Cloud] 问题。 有关如何使用API的详细步骤，请参阅 [Privacy ServiceAPI开发人员指南](api/getting-started.md)。
 
 #### 使用UI
 
