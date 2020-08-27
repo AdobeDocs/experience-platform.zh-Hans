@@ -5,9 +5,9 @@ seo-title: 目标类型和类别
 description: '在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到几种类型的目标。 '
 seo-description: 在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到几种类型的目标。
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 #### 区段导出目标
 
-区段导出目标会将用户档案及其符合条件的区段发送到目标平台。 这些目标使用区段ID或用户ID。 广告目标， [!DNL Google Display & Video 360](/help/rtcdp/destinations/google-dv360-destination.md) 如 [!DNL Google Ads](/help/rtcdp/destinations/google-ads-destination.md) 或是这些类型的目标。
+区段导出目标会将用户档案及其符合条件的区段发送到目标平台。 这些目标使用区段ID或用户ID。 [!DNL Google Display [&amp; Video 360]或[!DNL Google Ads](/help/rtcdp/destinations/google-dv360-destination.md) ]等 [广告目标是这些类型目标的示例](/help/rtcdp/destinations/google-ads-destination.md) 。
 
 #### 用户档案导出和细分导出目标——视频概述
 
