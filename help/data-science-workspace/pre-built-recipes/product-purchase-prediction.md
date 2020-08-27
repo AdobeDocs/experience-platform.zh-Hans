@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;product purchase recipe;Data Science Workspace;popular topics
+keywords: Experience Platform;product purchase recipe;Data Science Workspace;popular topics;recipes;pre build recipe
 solution: Experience Platform
 title: 产品购买处方
 topic: overview
+description: “产品购买预测”菜谱使您能够预测特定类型的客户购买事件的可能性，例如产品购买。
 translation-type: tm+mt
-source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '358'
+source-wordcount: '382'
 ht-degree: 6%
 
 ---
