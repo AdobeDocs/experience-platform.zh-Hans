@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据集用户指南
 topic: datasets
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1135'
+source-wordcount: '1148'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 0%
 本用户指南要求您对Adobe Experience Platform的以下组件有充分的了解：
 
 * [数据集](overview.md):存储和管理结构，用于数据持久性 [!DNL Experience Platform]。
-* [!DNL Experience Data Model (XDM) System](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    * [模式合成基础](../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式编辑器](../../xdm/tutorials/create-schema-ui.md):了解如何使用用户界面内的自定义XDM [!DNL Schema Editor] 模式 [!DNL Platform] 构建自己。
-* [!DNL Real-time Customer Profile](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [!DNL Data Governance](../../data-governance/home.md):确保遵守有关使用客户数据的法规、限制和政策。
+* [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL数据管理]](../../data-governance/home.md):确保遵守有关使用客户数据的法规、限制和政策。
 
 ## 视图数据集
 
@@ -98,7 +98,7 @@ ht-degree: 0%
 
 ## 为实时客户用户档案启用数据集
 
-每个数据集都能用其摄取的数据丰富客户用户档案。 为此，数据集附带的模式必须兼容才能在中使用 [!DNL Real-time Customer Profile]。 兼容模式满足以下要求：
+每个数据集都能用摄取的数据丰富客户用户档案。 为此，数据集附带的模式必须兼容才能在中使用 [!DNL Real-time Customer Profile]。 兼容模式满足以下要求：
 
 * 该模式至少具有一个指定为标识属性的属性。
 * 模式具有定义为主标识的标识属性。
@@ -113,7 +113,7 @@ ht-degree: 0%
 
 ## 管理并强制对数据集进行数据管理
 
-数据使用标签和执行(DULE)是核心的数据治理机制 [!DNL Experience Platform]。 DULE标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅数 [据管理概述](../../data-governance/home.md) ，进一步了解标签 [，或参阅数据使用标签用户指南，以](../../data-governance/labels/overview.md) 获得有关如何将标签应用到数据集的说明。
+数据使用标签和执行(DULE)是核心的数据治理机制 [!DNL Experience Platform]。 DULE标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅数 [据管理概述](../../data-governance/home.md) ，进一步了解标签 [，或参阅数据使用标签用户指南](../../data-governance/labels/overview.md) ，了解如何将标签应用到数据集。
 
 ## 删除数据集
 
@@ -131,11 +131,11 @@ ht-degree: 0%
 
 ## 删除启用用户档案的数据集
 
-如果启用了数据集， [!DNL Profile]则通过UI删除该数据集将禁用数据集以进行摄取，但不会自动删除后端的数据集。 为了完全删除数据集，包括它提供的用户档案和身份数据，必须另外发出删除请求。 有关如何从存储中正确删除数 [!DNL Profile] 据的步骤，请参 [!DNL Real-time Customer Profile] 阅 [用户档案系统作业的API子指南，也称为“删除请求”](../../profile/api/profile-system-jobs.md)。
+如果启用了数据集， [!DNL Profile]则通过UI删除该数据集将禁用数据集以进行摄取，但不会自动在后端删除数据集。 为了完全删除数据集，包括它提供的用户档案和身份数据，必须另外发出删除请求。 有关如何从存储中正确删除数 [!DNL Profile] 据的步骤，请参 [!DNL Real-time Customer Profile] 阅 [用户档案系统作业的API子指南，也称为“删除请求”](../../profile/api/profile-system-jobs.md)。
 
 ## 监控数据获取
 
-在UI [!DNL Experience Platform] 中，单击左 **[!UICONTROL 侧导]** 航中的“监视”。 通过 *[!UICONTROL 监视仪表板]* ，您可以视图来自批处理或流式摄取的入站数据的状态。 要视图各个批的状态，请 *[!UICONTROL 单击“批端到端]* ” *[!UICONTROL 或“流端到端”]*。 仪表板列表所有批处理或流式摄取运行，包括成功、失败或仍在进行的运行。 每个列表都提供批的详细信息，包括批ID、目标数据集的名称和摄取的记录数。 如果为目标数据集启 [!DNL Profile]用，则还会显示所摄取的身份和用户档案记录数。
+在UI [!DNL Experience Platform] 中，单击左 **[!UICONTROL 侧导]** 航中的“监视”。 通过 *[!UICONTROL 监视仪表板]* ，您可以视图来自批处理或流式摄取的入站数据的状态。 要视图单个批的状态，请 *[!UICONTROL 单击“批端到端]* ” *[!UICONTROL 或“流端到端”]*。 仪表板列表所有批处理或流式摄取运行，包括成功、失败或仍在进行的运行。 每个列表都提供批的详细信息，包括批ID、目标数据集的名称和摄取的记录数。 如果为目标数据集启 [!DNL Profile]用，则还会显示所摄取的身份和用户档案记录数。
 
 ![](../images/datasets/user-guide/batch_listing.png)
 
