@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;train and evaluate;Data Science Workspace;popular topics
+keywords: Experience Platform;train and evaluate;Data Science Workspace;popular topics;create a model;create a training run
 solution: Experience Platform
 title: 培训和评估模型(UI)
 topic: Tutorial
+description: 在Adobe Experience Platform数据科学工作区中，机器学习模型是通过整合符合模型意图的现有Recipe来创建的。 然后，对模型进行训练和评估，通过微调其相关的超参数来优化其运行效率和功效。 菜谱是可重用的，这意味着可以使用单个菜谱创建多个模型并针对特定用途进行定制。
 translation-type: tm+mt
-source-git-commit: 1214728063c5835510fda1a16bf1fdcca4abee48
+source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
 workflow-type: tm+mt
-source-wordcount: '975'
-ht-degree: 2%
+source-wordcount: '1038'
+ht-degree: 1%
 
 ---
 
@@ -35,7 +36,7 @@ ht-degree: 2%
 3. 选择适当的输入数据集，然后单击“ **[!UICONTROL 下一步]**”。 这将设置“模型”的默认输入培训数据集。
    ![](../images/models-recipes/train-evaluate-ui/select_dataset.png)
 
-4. 为“模型”提供名称并查看默认的“模型”配置。 在创建处方时应用了默认配置，通过多次单击这些值来检查和修改配置值。 要提供新的配置集，请单击“ **[!UICONTROL 上传新配置]** ”，并将包含“模型”配置的JSON文件拖至浏览器窗口中。 单击 **[!UICONTROL “完]** 成”(Finish)以创建“模型”(Model)。
+4. 为“模型”提供名称并查看默认的“模型”配置。 在“处方”创建过程中应用了默认配置，通过多次单击这些值来检查和修改配置值。 要提供新的配置集，请单击“ **[!UICONTROL 上传新配置]** ”，并将包含“模型”配置的JSON文件拖至浏览器窗口中。 单击 **[!UICONTROL “完]** 成”(Finish)以创建“模型”(Model)。
 
    >[!NOTE]
    >
@@ -97,8 +98,8 @@ ht-degree: 2%
 | 超参数 | 描述 | 推荐范围 |
 --- | --- | ---
 | learning_rate | 学习率通过learning_rate缩减了每棵树的贡献。 学习率和n估计量之间存在权衡。 | 0.1 | [2 - 10] /估计器数 |
-| n_mediators | 要执行的提升阶段数。 渐变提升对过拟合相当稳健，因此大数量通常会带来更好的性能。 | 100 | 100 - 1000 |
-| max_depth | 单个回归估计器的最大深度。 最大深度限制树中的节点数。 调整此参数以获得最佳性能； 最佳值取决于输入变量的交互。 | 3 | 4 - 10 |
+| n_mediators | 要执行的提升阶段数。 渐变提升对过拟合相当稳健，因此，大数量通常会产生更好的性能。 | 100 | 100 - 1000 |
+| max_depth | 单个回归估计器的最大深度。 最大深度限制树中的节点数。 调整此参数以获得最佳性能；最佳值取决于输入变量的交互。 | 3 | 4 - 10 |
 
 其他参数确定模型的技术属性：
 
