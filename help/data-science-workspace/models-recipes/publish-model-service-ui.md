@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;publish a model;Data Science Workspace;popular topics
+keywords: Experience Platform;publish a model;Data Science Workspace;popular topics;score a service
 solution: Experience Platform
 title: 将模型发布为服务(UI)
 topic: Tutorial
+description: Adobe Experience Platform数据科学工作区允许您将经过培训和评估的模型作为服务发布，使您的IMS组织内的用户无需创建自己的模型即可对数据进行评分。
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '418'
+source-wordcount: '453'
 ht-degree: 0%
 
 ---
@@ -14,19 +15,19 @@ ht-degree: 0%
 
 # 将模型发布为服务(UI)
 
-Adobe Experience Platform数据科学工作区允许您将经过培训和评估的模型作为服务发布，使IMS组织内的用户无需创建自己的模型即可对数据进行评分。
+Adobe Experience Platform数据科学工作区允许您将经过培训和评估的模型作为服务发布，使您的IMS组织内的用户无需创建自己的模型即可对数据进行评分。
 
 ## 入门指南
 
 要完成本教程，您必须具有访问权限 [!DNL Experience Platform]。 如果您无权访问中的IMS组织，请在继 [!DNL Experience Platform]续操作之前与系统管理员联系。
 
-This tutorial requires an existing Model with a successful training run. 如果您没有可发布的模型，请按照 [培训并在UI教程中评估模型](./train-evaluate-model-ui.md) ，然后继续。
+本教程要求现有模型能够成功运行培训。 如果您没有可发布的模型，请按照 [培训并在UI教程中评估模型](./train-evaluate-model-ui.md) ，然后继续。
 
 如果您希望使用Sensei机器学习API发布模型，请参阅 [API教程](./publish-model-service-api.md)。
 
 ## 发布模型 {#publish-a-model}
 
-1. 在Adobe Experience Platform中，单击左 **[!UICONTROL 侧导航]** 列中的“模型”链接，以列表所有现有的“模型”。 Find and click the name of the Model to be published as a Service.
+1. 在Adobe Experience Platform，单击左 **[!UICONTROL 侧导航]** 列中的“模型”链接以列表所有现有的“模型”。 查找并单击要作为服务发布的模型的名称。
    ![](../images/models-recipes/publish-model/1_browse_model.png)
 2. 单击 **[!UICONTROL “模型]** ”概述页面右上角附近的“发布”，以开始服务创建过程。
    ![](../images/models-recipes/publish-model/2_view_training_runs.png)
@@ -34,12 +35,12 @@ This tutorial requires an existing Model with a successful training run. 如果�
    ![](../images/models-recipes/publish-model/3_configure_service.png)
 4. 列出了“模型”的所有成功培训运行。 新服务将从所选培训运行继承培训和评分配置。
    ![](../images/models-recipes/publish-model/4_select_training_run.png)
-5. Click **[!UICONTROL Finish]** to create the Service and redirect to the **[!UICONTROL Service Gallery]** to show all available Services, including the newly created Service.
+5. 单击 **[!UICONTROL “完成]** ”以创建服务并重定向到服务 **[!UICONTROL 库]** ，以显示所有可用的服务，包括新创建的服务。
    ![](../images/models-recipes/publish-model/service_gallery.png)
 
 ## 使用服务得分 {#access-a-service}
 
-1. 在Adobe Experience Platform中，单 **[!UICONTROL 击左]** 侧导航列中的“服务”选项卡以访 *[!UICONTROL 问服务库]*。 查找您希望使用的服务，然后单击“ **[!UICONTROL 得分]**”。
+1. 在Adobe Experience Platform，单击 **[!UICONTROL 左侧]** 导航列中的“服务”选项卡以访 *[!UICONTROL 问服务库]*。 查找您希望使用的服务，然后单击“ **[!UICONTROL 得分]**”。
    ![](../images/models-recipes/publish-model/click_to_score.png)
 2. 为评分运行选择适当的输入数据集，然后单击“下 **[!UICONTROL 一步]**”。
    ![](../images/models-recipes/publish-model/6_scoring_input.png)
