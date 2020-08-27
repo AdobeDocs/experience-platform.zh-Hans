@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 通过源连接器和API从第三方数据库收集数据
 topic: overview
 translation-type: tm+mt
-source-git-commit: 744f7f1c5203f3537e979c50d7f8e20c1e8c50a5
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1733'
+source-wordcount: '1745'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 通过源连接器和API从第三方数据库收集数据
 
-[!DNL Flow Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+[[!DNL流服务](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) ]用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
 本教程介绍从第三方数据库检索数据并通过源连接器和API [!DNL Platform] 将其引入的步骤。
 
@@ -31,7 +31,7 @@ ht-degree: 1%
 * [批量摄取](../../../../ingestion/batch-ingestion/overview.md):批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
 * [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供您需要了解的其他信息，以便使用API成功连接到第三方数据 [!DNL Flow Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 库。
+以下各节提供了使用[!DNL流服务] API成功连接到第三方数据库 [时需要了解的其他信息](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 。
 
 ### 读取示例API调用
 
@@ -285,7 +285,7 @@ curl -X POST \
 
 ## 创建目标连接 {#target-connection}
 
-您现在具有数据集基础连接、目标模式和目标数据集的唯一标识符。 使用这些标识符，您可以使用API创建目标 [!DNL Flow Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 连接，以指定将包含入站源数据的数据集。
+您现在具有数据集基础连接、目标模式和目标数据集的唯一标识符。 使用这些标识符，您可以使用[! [DNL流服务] API创建目标连接](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) ，以指定将包含入站源数据的数据集。
 
 **API格式**
 
@@ -414,7 +414,7 @@ curl -X POST \
 
 ## 检索数据流规范 {#specs}
 
-数据流负责从源收集数据并将其引入 [!DNL Platform]。 要创建数据流，必须首先通过对API执行GET请求来获取数据流规 [!DNL Flow Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 范。 数据流规范负责从外部数据库或NoSQL系统收集数据。
+数据流负责从源收集数据并将其引入 [!DNL Platform]。 要创建数据流，必须首先对[!DNL流服务] API执行GET请 [求，以获得数据流规范](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 。 数据流规范负责从外部数据库或NoSQL系统收集数据。
 
 **API格式**
 
@@ -635,7 +635,7 @@ curl -X POST \
 | `transformations.params.mappingId` | 与数据库关联的映射ID。 |
 | `scheduleParams.startTime` | 开始时间中数据流的数据时间。 |
 | `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`、 `minute`、 `hour`、 `day`或 `week`。 |
-| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，间隔不 `once` 是必需的，对于其他频率值， `15` 间隔应大于或等于。 |
+| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，间隔不 `once` 是必需的，对于其他频率值， `15` 应大于或等于。 |
 
 **响应**
 
