@@ -3,10 +3,11 @@ keywords: Experience Platform;getting started;attribution ai;popular topics
 solution: Experience Platform
 title: Attribution AI入门
 topic: Getting started
+description: 以下指南需要了解与使用Attribution AI有关的Adobe Experience Platform各项服务。 开始教程之前，请查看以下文档。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '526'
 ht-degree: 0%
 
 ---
@@ -16,9 +17,9 @@ ht-degree: 0%
 
 以下指南需要了解与使用Attribution AI [!DNL Adobe Experience Platform] 相关的各种服务。 在开始教程之前，请查看以下文档:
 
-- [体验数据模型(XDM)系统概述](../../xdm/home.md): XDM是一个基本框架，它 [!DNL Adobe Experience Cloud]允许在Experience Platform的支持下，在正确的渠道，在恰当的时刻，向正确的人提供正确的信息。 构建Experience Platform的方法体系XDM系统可操作由平台服务使用的体验数据模型模式。
-- [模式合成基础](../../xdm/schema/composition.md): 本文档介绍了体验数据模型(XDM)模式，以及构成要用于的模式的构件、原则和最佳做法 [!DNL Adobe Experience Platform]。
-- [构建模式](../../xdm/tutorials/create-schema-ui.md): 本教程介绍了在模式中使用模式编辑器创建Experience Platform的步骤。
+- [体验数据模型(XDM)系统概述](../../xdm/home.md):XDM是一个基本框架，它 [!DNL Adobe Experience Cloud]允许在Experience Platform的支持下，在正确的渠道，在正确的时刻，向正确的人提供正确的信息。 构建Experience Platform的方法体系XDM系统可操作由平台服务使用的体验数据模型模式。
+- [模式合成基础](../../xdm/schema/composition.md):本文档介绍了体验数据模型(XDM)模式，以及构成要用于的模式的构件、原则和最佳做法 [!DNL Adobe Experience Platform]。
+- [构建模式](../../xdm/tutorials/create-schema-ui.md):本教程介绍了在模式中使用模式编辑器创建Experience Platform的步骤。
 
 Attribution AI需要数据集才能符合消费者体验事件(CEE)模式，该是体验数据模型( [XDM)中的](../../xdm/home.md) 一个混合项。 请通过attributionai-support@adobe.com与Adobe支持联系，以实施或更改此数据。 如果存在媒体支出数据，您可以进行进一步的分析，如增加收入和ROI。 如果客户用户档案数据可用，您可以进一步将积分归因到客户用户档案级别。
 
@@ -36,7 +37,7 @@ Attribution AI需要数据集才能符合消费者体验事件(CEE)模式，该�
 
 下载Attribution AI分数可通过API调用的组合完成。 要调用平台API，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -54,4 +55,4 @@ Experience Platform中的所有资源都隔离到特定虚拟沙箱。 对平台
 
 ## 后续步骤 {#next-steps}
 
-准备就绪并准备好所有凭据和模式后，请按照Attribution AI用户界面指 [南进行开始](./user-guide.md)。 本指南将指导您创建实例并提交它进行培训和评分。
+准备就绪并准备好所有凭据和模式后，请按照Attribution AI用户界面指 [南进行开始](./user-guide.md)。 本指南将指导您创建实例并提交它以进行培训和评分。
