@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 导入打包的菜谱(API)
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '955'
+source-wordcount: '960'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 导入打包的菜谱(API)
 
-本教程使 [!DNL Sensei Machine Learning API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) 用创建 [引擎](../api/engines.md)，在用户界面中也称为菜谱。
+本教程使 [用[!DNL Sensei机器学](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) 习API] [创建引](../api/engines.md)擎，在用户界面中也称为菜谱。
 
 在入门之前，请务必注意，Adobe Experience Platform [!DNL Data Science Workspace] 使用不同的术语来指代API和UI中的类似元素。 本教程中使用API术语，下表概述了相关术语：
 
