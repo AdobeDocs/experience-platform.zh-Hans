@@ -6,9 +6,9 @@ last-update: April 13, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: f881c1365684b1ca9e6bf9a8ce866d234dc54128
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '975'
+source-wordcount: '993'
 ht-degree: 5%
 
 ---
@@ -19,14 +19,14 @@ ht-degree: 5%
 **发行日期：2020 年 4 月 8 日**
 
 Adobe Experience Platform的新增功能：
-* [!DNL Intelligent Services](#intelligent)
+* [[!DNL智能服务]](#intelligent)
 
 对现有功能的更新：
-* [!DNL Experience Data Model (XDM)](#xdm)
-* [!DNL Data Governance](#governance)
-* [!DNL Destinations](#destinations)
-* [!DNL Privacy Service](#privacy)
-* [!DNL Sources](#sources)
+* [[!DNL体验数据模型(XDM)]](#xdm)
+* [[!DNL数据管理]](#governance)
+* [[!DNL目标]](#destinations)
+* [[!DNLPrivacy Service]](#privacy)
+* [[!DNL源]](#sources)
 
 ## [!DNL Intelligent Services] {#intelligent}
 
@@ -49,7 +49,7 @@ Adobe Experience Platform的新增功能：
 
 标准化和互操作性是背后的关键概念 [!DNL Experience Platform]。 [!DNL Experience Data Model] (XDM)由Adobe驱动，旨在实现客户体验数据标准化并定义客户体验管理模式。
 
-XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 它为在Adobe Experience Platform上与服务通信的任何应用程序提供了通用结构和定义。 通过遵守XDM标准，所有客户体验数据都可以整合到一个通用表现形式中，以更快、更集成的方式提供洞察。 您可以从客户行动中获得宝贵的洞察，通过细分定义客户受众，并将客户属性用于个性化目的。
+XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 它为任何与Adobe Experience Platform上的服务通信的应用程序提供了通用结构和定义。 通过遵守XDM标准，所有客户体验数据都可以整合到一个通用表现形式中，以更快、更集成的方式提供洞察。 您可以从客户行动中获得宝贵的洞察，通过细分定义客户受众，并将客户属性用于个性化目的。
 
 **新增功能**
 
@@ -105,7 +105,7 @@ Adobe实时CDP现在支持向50多个扩展进行数据激活 [!DNL Experience C
 
 ## [!DNL Privacy Service] {#privacy}
 
-新的法律和组织法规授予用户根据请求从数据存储中访问或删除其个人数据的权利。 Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 您可 [!DNL Privacy Service]以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
+新的法律和组织法规授予用户根据请求从数据存储中访问或删除其个人数据的权利。 Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 您可 [!DNL Privacy Service]以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
 
 **新增功能**
 
@@ -123,7 +123,7 @@ Adobe实时CDP现在支持向50多个扩展进行数据激活 [!DNL Experience C
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源收集数据，同时允许您使用服务构建、标记和增强该 [!DNL Platform] 数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)收集数据。
+Adobe Experience Platform可以从外部来源收集数据，同时允许您使用服务来构建、标记和增强该 [!DNL Platform] 数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)收集数据。
 
 [!DNL Experience Platform] 提供REST风格的API和交互式UI，让您可以轻松为各种数据提供者设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置获取运行的时间，以及管理数据获取吞吐量。
 
