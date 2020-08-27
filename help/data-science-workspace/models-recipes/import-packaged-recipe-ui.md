@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;import packaged recipe;Data Science Workspace;popular topics
+keywords: Experience Platform;import packaged recipe;Data Science Workspace;popular topics;recipes;ui;create engine
 solution: Experience Platform
 title: 导入打包的菜谱(UI)
 topic: Tutorial
+description: 本教程通过提供的零售销售示例提供有关如何配置和导入打包菜谱的分析。 在本教程结束时，您将准备好在Adobe Experience Platform数据科学工作区中创建、培训和评估模型。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
 workflow-type: tm+mt
-source-wordcount: '1760'
+source-wordcount: '1803'
 ht-degree: 0%
 
 ---
