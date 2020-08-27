@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics
+keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;mlservices;sensei machine learning api
 solution: Experience Platform
 title: 服务
 topic: Developer guide
+description: MLService是已发布的经过培训的模型，它使您的组织能够访问和重用以前开发的模型。 MLServices的一个主要功能是能够按计划自动进行培训和评分。 计划的培训运行有助于保持模型的效率和准确性，而计划的评分运行可以确保一致地生成新的洞察。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 194a29124949571638315efe00ff0b04bff19303
 workflow-type: tm+mt
-source-wordcount: '811'
+source-wordcount: '872'
 ht-degree: 2%
 
 ---
@@ -175,7 +176,7 @@ curl -X GET \
 GET /mlServices/{MLSERVICE_ID}
 ```
 
-* `{MLSERVICE_ID}`: 有效的MLService ID。
+* `{MLSERVICE_ID}`:有效的MLService ID。
 
 **请求**
 
@@ -223,7 +224,7 @@ curl -X GET \
 PUT /mlServices/{MLSERVICE_ID}
 ```
 
-* `{MLSERVICE_ID}`: 有效的MLService ID。
+* `{MLSERVICE_ID}`:有效的MLService ID。
 
 **请求**
 
