@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data governance;data usage label api;policy service api;data usage labels overview
 solution: Experience Platform
 title: 数据使用标签概述
 topic: labels
+description: 数据使用标签和执行(DULE)是Adobe Experience Platform数据治理的核心机制。 DULE功能允许您将数据使用标签应用到数据集和字段，并根据相关的数据使用策略对每个标签进行分类。 此文档概述Experience Platform中的数据使用标签（也称为DULE标签）。
 translation-type: tm+mt
-source-git-commit: 5e65c843c3c612b657ebe915c53f14f0b8d7f541
+source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '632'
 ht-degree: 0%
 
 ---
@@ -14,13 +15,13 @@ ht-degree: 0%
 
 # 数据使用标签概述
 
-Adobe Experience Platform [!DNL Data Governance] 允许您将数据使用标签应用到数据集和字段，并根据相关的数据使用策略对每个标签进行分类。
+Adobe Experience Platform [!DNL Data Governance] 允许您将数据使用标签应用于数据集和字段，并根据相关的数据使用策略对每个标签进行分类。
 
 此文档概述中的数据使用标签 [!DNL Experience Platform]。 在阅读本指南之前，请参 [阅数据治理概述](../home.md) ，以获得有关数据治理框架的更可靠介绍。
 
 ## 了解数据使用标签
 
-数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 可随时应用标签，在数据管理方式上提供灵活性。 最佳实践是，在数据被引入或 [!DNL Experience Platform]数据可用时，立即添加标签 [!DNL Platform]。
+数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 可随时应用标签，在数据管理方式上提供灵活性。 最佳实践是，在数据被引入或 [!DNL Experience Platform]数据可供使用时，立即添加标签 [!DNL Platform]。
 
 在数据集级别应用的数据使用标签将传播到数据集中的所有字段。 标签还可以直接应用于数据集中的各个字段（列标题），而不会传播。
 
@@ -30,15 +31,15 @@ Adobe Experience Platform [!DNL Data Governance] 允许您将数据使用标签�
 
 ## 受众段的标签继承
 
-由受众分段服务创 [建的所有Adobe Experience Platform段](../../segmentation/home.md) ，都会继承其相应数据集的使用标签。 这样，在将区段激活到目标 [!DNL Experience Platform] 时，构建在( [!DNL Real-time Customer Data Platform]如)之上的应用程序可以自动执行数据使用策略。
+由Adobe Experience Platform分段服务创 [建的所有受众段](../../segmentation/home.md) ，都会继承其相应数据集的使用标签。 这样，在将区段激活到目标 [!DNL Experience Platform] 时，构建在( [!DNL Real-time Customer Data Platform]如)之上的应用程序可以自动执行数据使用策略。
 
 除了继承数据集级别标签外，默认情况下，区段还会继承其关联数据集中的所有字段级别标签。 根据您的基于应 [!DNL Platform]用程序对段的使用情况，您可以潜在地指定使用哪些字段，从而阻止该段从被排除的字段继承标签。
 
 有关自动执行如何在实时CDP中工作的更多信息，请参 [阅有关实时CDP中数据管理的概述](../../rtcdp/privacy/data-governance-overview.md#enforce-data-usage-compliance)。
 
-### 从Adobe Audience Manager数据导出控件继承
+### Adobe Audience Manager数据导出控制的继承
 
-[!DNL Experience Platform] 能够与Adobe Audience Manager共享细分。 已应用于Audience Manager段的任何数据导出控制均转换为公认的等效标签和营销操 [!DNL Experience Platform][!DNL Data Governance]作。
+[!DNL Experience Platform] 能够与Adobe Audience Manager分享细分。 已应用于Audience Manager段的任何数据导出控制均转换为公认的等效标签和营销操 [!DNL Experience Platform][!DNL Data Governance]作。
 
 有关特定数据导出控件如何映射到中的数据使用标签的 [!DNL Platform]参考，请参阅 [Audience Manager文档](https://docs.adobe.com/content/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html#aam-data-export-control-in-aep)。
 
