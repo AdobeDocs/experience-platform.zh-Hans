@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1882'
+source-wordcount: '1908'
 ht-degree: 2%
 
 ---
@@ -18,15 +18,15 @@ ht-degree: 2%
 **发行日期：2019 年 11 月 18 日**
 
 Adobe Experience Platform的新增功能：
-* [!DNL Real-time Customer Data Platform](#rtcdp)
-* [!DNL Destinations](#destinations)
-* [!DNL Sources](#sources)
+* [[!DNL实时客户数据平台]](#rtcdp)
+* [[!DNL目标]](#destinations)
+* [[!DNL源]](#sources)
 
 对现有功能的更新：
-* [!DNL Data Science Workspace](#dsw)
-* [!DNL Experience Data Model (XDM) System](#xdm)
-* [!DNL Real-time Customer Profile](#profile)
-* [!DNL Segmentation Service](#segmentation)
+* [[!DNL数据科学工作区]](#dsw)
+* [[!DNL体验数据模型(XDM)系统]](#xdm)
+* [[!DNL实时客户用户档案]](#profile)
+* [[!DNL分段服务]](#segmentation)
 
 ## [!DNL Real-time Customer Data Platform] {#rtcdp}
 
@@ -141,7 +141,7 @@ XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 �
 
 ## [!DNL Real-time Customer Profile] {#profile}
 
-Adobe Experience Platform使您能够为客户提供协调、一致和相关的体验，无论客户在何处或何时与您的品牌互动。 您 [!DNL Real-time Customer Profile]可以看到每个客户的整体视图，该渠道组合了多个的数据，包括在线、离线、CRM和第三方数据。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供一个具有可操作性、时间戳记的帐户。
+Adobe Experience Platform使您能够为客户提供协调、一致和相关的体验，无论客户在何处或何时与您的品牌互动。 您 [!DNL Real-time Customer Profile]可以看到每个客户的整体视图，该渠道组合了多个的数据，包括在线、离线、CRM和第三方数据。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供可操作、有时间戳的帐户。
 
 | 功能 | 描述 |
 | -----------| ---------- |
