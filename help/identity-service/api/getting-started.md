@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 入门指南
 topic: API guide
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '714'
+source-wordcount: '726'
 ht-degree: 1%
 
 ---
@@ -14,17 +14,17 @@ ht-degree: 1%
 
 # [!DNL Identity Service] API开发人员指南
 
-Adobe Experience Platform [!DNL Identity Service] 通过Adobe Experience Platform内的“身份图”管理跨设备、跨渠道和近乎实时的客户身份识别。
+Adobe Experience Platform [!DNL Identity Service] 通过Adobe Experience Platform的“身份图”管理跨设备、跨渠道和近乎实时的客户身份识别。
 
 ## 入门指南
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-- [!DNL Identity Service](../home.md): 解决客户用户档案数据碎片化带来的根本挑战。 它通过跨设备和系统连接身份来实现这一点，客户可以与您的品牌互动。
-- [!DNL Real-time Customer Profile](../../profile/home.md): 根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [[!DNL标识服务]](../home.md):解决客户用户档案数据碎片化带来的根本挑战。 它通过跨设备和系统连接身份来实现这一点，客户可以与您的品牌互动。
+- [[!DNL实时客户用户档案]](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
-以下各节提供了成功调用API所需的或现有的其他信 [!DNL Identity Service] 息。
+以下各节提供了成功调用API所需或现有的其他信 [!DNL Identity Service] 息。
 
 ### 读取示例API调用
 
@@ -34,7 +34,7 @@ Adobe Experience Platform [!DNL Identity Service] 通过Adobe Experience Platfor
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -48,17 +48,17 @@ Adobe Experience Platform [!DNL Identity Service] 通过Adobe Experience Platfor
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 ### 基于区域的路由
 
 该 [!DNL Identity Service] API采用区域特定端点，这些端点要求将 `{REGION}` 一个包含在请求路径中。 在设置IMS组织期间，将确定一个区域并存储在IMS组织用户档案中。 将正确的区域与每个端点一起使用，可确保使用API发出的所 [!DNL Identity Service] 有请求都路由到相应的区域。
 
-API当前支持两个 [!DNL Identity Service] 区域： VA7和NLD2。
+API当前支持两个 [!DNL Identity Service] 区域：VA7和NLD2。
 
 下表显示了使用区域的示例路径：
 
-| 服务 | 地区： VA7 | 地区： NLD2 |
+| 服务 | 地区：VA7 | 地区：NLD2 |
 | ------ | -------- |--------- |
 | [!DNL Identity Service] API | https://</span>platform-va7.adobe。</span>io/data/core/identity/{ENDPOINT} | https://</span>platform-nld2.adobe。</span>io/data/core/identity/{ENDPOINT} |
 | [!DNL Identity Namespace] API | https://</span>platform-va7.adobe。</span>io/data/core/idnamespace/{ENDPOINT} | https://</span>platform-nld2.adobe。</span>io/data/core/idnamespace{ENDPOINT} |
@@ -71,7 +71,7 @@ API当前支持两个 [!DNL Identity Service] 区域： VA7和NLD2。
 
 ## 使用 [!DNL Identity Service] API
 
-这些服务中使用的身份参数可以通过两种方式之一来表示； 复合或XID。
+这些服务中使用的身份参数可以通过两种方式之一来表示；复合或XID。
 
 组合标识是包括ID值和命名空间的构造。 使用复合标识时，命名空间可以由名称()`namespace.code`或ID()提`namespace.id`供。
 
