@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建零售销售模式和数据集
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '502'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 0%
    - [字典](https://pypi.org/project/dictor/)
    - [JWT](https://pypi.org/project/jwt/)
 - 对本教程中使用的以下概念的有效理解：
-   - [!DNL Experience Data Model (XDM)](../../xdm/home.md)
+   - [[!DNL体验数据模型(XDM)]](../../xdm/home.md)
    - [模式合成基础](../../xdm/schema/field-dictionary.md)
 
 ## 创建零售销售模式和数据集
@@ -65,11 +65,11 @@ ht-degree: 0%
        kernel_type: Python
    ```
 
-   - `platform_gateway` : API调用的基本路径。 请勿修改此值。
-   - `ims_token` : 你 `{ACCESS_TOKEN}` 来这。
-   - `ingest_data` : 在本教程中，请将此值设 `"True"` 置为创建零售销售模式和数据集。 值将仅 `"False"` 创建模式。
-   - `build_recipe_artifacts` : 为在本教程中起作用，请将此值设 `"False"` 置为阻止脚本生成Recipe项目。
-   - `kernel_type` : Recipe对象的执行类型。 将此值保留 `Python` 为 `build_recipe_artifacts` ，否则 `"False"`请指定正确的执行类型。
+   - `platform_gateway` :API调用的基本路径。 请勿修改此值。
+   - `ims_token` :你 `{ACCESS_TOKEN}` 来这。
+   - `ingest_data` :在本教程中，请将此值设 `"True"` 置为创建零售销售模式和数据集。 值将仅 `"False"` 创建模式。
+   - `build_recipe_artifacts` :为在本教程中起作用，请将此值设 `"False"` 置为阻止脚本生成Recipe项目。
+   - `kernel_type` :Recipe对象的执行类型。 将此值保留 `Python` 为 `build_recipe_artifacts` ，否则 `"False"`请指定正确的执行类型。
 
 4. 在部分 `Titles` 下，为零售销售示例数据提供相应的以下信息，在编辑到位后保存并关闭文件。 示例如下：
 
