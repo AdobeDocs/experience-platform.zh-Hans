@@ -5,7 +5,7 @@ title: 创建并发布机器学习模型演练
 topic: Tutorial
 description: Adobe Experience Platform数据科学工作区提供了使用预建的产品Recommendations秘方实现目标的方法。 按照本教程，了解如何访问和了解您的零售数据、创建和优化机器学习模型以及在数据科学工作区中生成洞察。
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 78f080fd7598799825c59a4fdfdcaf7d294560a3
 workflow-type: tm+mt
 source-wordcount: '1595'
 ht-degree: 0%
@@ -43,7 +43,7 @@ ht-degree: 0%
    * 黄金数据集postValues
    * 黄金数据集模式
 
-* 从Adobe公 [!DNL Jupyter Notebook] 共存储 <a href="https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs" target="_blank">库下载三个必 [!DNL Git] 需文件</a>，这些文件将用于演示 [!DNL JupyterLab] 中的工作流 [!DNL Data Science Workspace]。
+* 从Adobe公 [!DNL Jupyter Notebook] 共资料 [库下 [!DNL Git] 载三个必需](https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs)的 [!DNL JupyterLab] 文件 [!DNL Data Science Workspace]，这些文件将用于演示中的工作流程。
 
 * 对本教程中使用的下列主要概念的有效理解：
    * [[!DNL体验数据模型]](../../xdm/home.md):由Adobe领导的标准化工作，为客户体验管理定 [!DNL Profile] 义标准模式，如ExperienceEvent。
