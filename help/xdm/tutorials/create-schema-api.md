@@ -5,9 +5,9 @@ title: 使用模式注册表API创建模式
 topic: tutorials
 description: 本教程使用模式注册表API指导您完成使用标准类构建模式的步骤。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '2343'
+source-wordcount: '2368'
 ht-degree: 1%
 
 ---
@@ -23,10 +23,10 @@ ht-degree: 1%
 
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-* [!DNL Experience Data Model (XDM) System](../home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL体验数据模型(XDM)系统]](../home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    * [模式合成基础](../schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
-* [!DNL Real-time Customer Profile](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL沙箱]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 在开始本教程之前，请查 [看开发人员指南](../api/getting-started.md) ，了解成功调用API所需了解的重要 [!DNL Schema Registry] 信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
 
@@ -955,9 +955,9 @@ curl -X PATCH \
 
 ### 定义标识描述符
 
-模式用于将数据引入 [!DNL Experience Platform]。 此视图最终可跨多个服务使用，以创建单一、统一的个人数据。 为帮助完成此过程，关键字段可标记为“身份”，在数据获取时，这些字段中的数据将插入到该个人的“身份图”中。 然后，图形数据可以被和其 [!DNL Real-time Customer Profile](../../profile/home.md) 他服务访 [!DNL Experience Platform] 问，以提供每个个别客户的拼接视图。
+模式用于将数据引入 [!DNL Experience Platform]。 此视图最终可跨多个服务使用，以创建单一、统一的个人数据。 为帮助完成此过程，关键字段可标记为“身份”，在数据获取时，这些字段中的数据将插入到该个人的“身份图”中。 然后，[!DNL实时客户用户档案] [和其他服务可以访问图表](../../profile/home.md) , [!DNL Experience Platform] 以提供每个单独客户的拼接视图。
 
-通常标为“身份”的字段包括：电子邮件地址、电 [!DNL Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)话号码、CRM ID或其他唯一ID字段。
+通常标为“身份”的字段包括：电子邮件地址、电 [话号码、[!DNLExperience CloudID(ECID)]](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)、CRM ID或其他唯一ID字段。
 
 考虑您的组织特定的所有唯一标识符，因为它们可能也是良好的标识字段。
 
@@ -996,7 +996,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->您可以列表可用的“xdm:命名空间”值，或使用创建新值 [!DNL Identity Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)。 “xdm:property”的值可以是“xdm:code”或“xdm:id”，具体取决于使用的“xdm:命名空间”。
+>您可以列表可用的“xdm:命名空间”值，或使用[!DNL [Identity Service API]创建新值](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)。 “xdm:property”的值可以是“xdm:code”或“xdm:id”，具体取决于使用的“xdm:命名空间”。
 
 **响应**
 
@@ -1184,7 +1184,7 @@ curl -X GET \
 
 在本教程中，将编写一个模式来描述零售忠诚度项目的成员。
 
-模式实现类 [!DNL XDM Individual Profile] 并组合多个混合；使用标准“人员详细信息”和“个人详细信息”混音，以及通过教程中定义的“忠诚度详细信息”混音导入有关忠诚度会员的信息。
+模式实现类 [!DNL XDM Individual Profile] 并组合多个混合；使用标准“人员详细信息”和“个人详细信息”混音以及通过教程中定义的“忠诚度详细信息”混音导入有关忠诚度会员的信息。
 
 以下显示了JSON格式的完成的“忠诚会员”模式:
 
