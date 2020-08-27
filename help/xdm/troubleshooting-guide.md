@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 体验数据模型(XDM)系统疑难解答指南
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1826'
+source-wordcount: '1839'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 # [!DNL Experience Data Model] (XDM)系统故障排除指南
 
-此文档提供有关(XDM)系统的常 [!DNL Experience Data Model] 见问题的解答，以及常见错误的疑难解答指南。 有关Adobe Experience Platform中其他服务的相关问题和疑难解答，请参阅Experience Platform疑 [难解答指南](../landing/troubleshooting.md)。
+此文档提供有关(XDM)系统的常 [!DNL Experience Data Model] 见问题的解答，以及常见错误的疑难解答指南。 有关与Adobe Experience Platform其他服务相关的问题和疑难解答，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
-**[!DNL Experience Data Model](XDM)是一种开放源&#x200B;**，它为客户体验管理定义了标准化模式。 构建XDM系统[!DNL Experience Platform]的方法**将模式运&#x200B;**行，供服务[!DNL Experience Data Model][!DNL Platform]使用。 提供&#x200B;**[!DNL Schema Registry]**一个用户界面和一个REST风格的API，用于访问&#x200B;**[!DNL Schema Library]**内部[!DNL Experience Platform]。 See the[XDM documentation](home.md)for more information.
+**[!DNL Experience Data Model](XDM)是一种开放源** ，它为客户体验管理定义了标准化模式。 构建XDM系统 [!DNL Experience Platform] 的方法 **将模式运**&#x200B;行，供服务 [!DNL Experience Data Model][!DNL Platform] 使用。 提供 **[!DNL Schema Registry]** 一个用户界面和一个REST风格的API，用于访问 **[!DNL Schema Library]** 内部 [!DNL Experience Platform]。 See the [XDM documentation](home.md) for more information.
 
 ## 常见问题解答
 
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 ### 如何向模式添加字段？
 
-您可以使用混音将字段添加到模式。 每个混音符与一个或多个类兼容，允许混音符用于实现这些兼容类之一的任何模式。 Adobe Experience Platform为多个行业混音提供其自己的预定义字段，您可以通过使用API或用户界面创建新混音，将您自己的字段添加到模式。
+您可以使用混音将字段添加到模式。 每个混音符与一个或多个类兼容，允许混音符用于实现这些兼容类之一的任何模式。 Adobe Experience Platform提供多个行业混音及其自己的预定义字段，您可以通过使用API或用户界面创建新混音，将您自己的字段添加到模式。
 
 有关在API中创建新混音的详细信息，请参 [阅API开发人员指南](api/create-mixin.md) 中的“创 [!DNL Schema Registry] 建混音”文档。 如果您使用的是UI，请参阅 [模式编辑器教程](./tutorials/create-schema-ui.md)。
 
@@ -42,7 +42,7 @@ ht-degree: 0%
 
 ### 模式开始何时阻止中断更改？
 
-只要模式从未在创建数据集时使用过或启用在中使用过，就可以对其进行中断更改 [!DNL Real-time Customer Profile](../profile/home.md)。 一旦模式被用于数据集创建或启用与一起使 [!DNL Real-time Customer Profile]用，模式进化规 [则就会被系](schema/composition.md#evolution) 统严格执行。
+只要模式从未在创建数据集时使用过或在[!DNL实时用户档案中启用过，就可以对其进行 [中断更改]](../profile/home.md)。 一旦模式被用于数据集创建或启用与一起使 [!DNL Real-time Customer Profile]用，模式进化规 [则就会被系](schema/composition.md#evolution) 统严格执行。
 
 ### 长字段类型的最大大小是多少？
 
@@ -52,7 +52,7 @@ ht-degree: 0%
 
 ### 如何定义模式的身份？
 
-在 [!DNL Experience Platform]中，无论被解释的数据来源如何，都使用身份来标识主体（通常是个人）。 通过将键字段标记为“Identity”，在模式中定义这些字段。 常用的标识字段包括电子邮件地址、电 [!DNL Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)话号码、CRM ID和其他唯一ID字段。
+在 [!DNL Experience Platform]中，无论被解释的数据来源如何，都使用身份来标识主体（通常是个人）。 通过将键字段标记为“Identity”，在模式中定义这些字段。 常用标识字段包括电子邮件地址、电 [话号码、[!DNLExperience CloudID(ECID)]](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)、CRM ID和其他唯一ID字段。
 
 字段可以使用API或用户界面标记为标识。
 
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 标识描述符由POST请求创建到/descriptors端点。 如果成功，您将收到一个HTTP状态201（已创建）和一个包含新描述符详细信息的响应对象。
 
-有关在API中创建标识描述符的更多详细信息，请参阅开发人 [员指南](api/descriptors.md) “描述符 [!DNL Schema Registry] 文档”一节。
+有关在API中创建标识描述符的更多详细信息，请参阅开发人 [员指南](api/descriptors.md) “描述符 [!DNL Schema Registry] 文档”部分。
 
 #### 在UI中定义标识
 
@@ -76,7 +76,7 @@ ht-degree: 0%
 
 ### 如何启用模式以在中使用 [!DNL Real-time Customer Profile]?
 
-模式可通过添 [!DNL Real-time Customer Profile](../profile/home.md) 加“合并”标签(位于模式的属性中) `meta:immutableTags` 在中使用。 可以使用API或 [!DNL Profile] 用户界面启用模式以与一起使用。
+通过添加“模式”标 [签(位于合并的属性中)](../profile/home.md) ,模式可以在[!DNL实时客户 `meta:immutableTags` 用户档案中使用。 可以使用API或 [!DNL Profile] 用户界面启用模式以与一起使用。
 
 #### 启用现有模式 [!DNL Profile] 以使用API
 
@@ -231,7 +231,7 @@ API中的大多数GET [!DNL Schema Registry] 请求都需要一个“接受”�
 }
 ```
 
-当Accept头无效时，将显示此错误消息。 在再次尝试之前，请确保已正确输入与您尝试发出的API请求兼容的“接受”标头。
+当接受标头无效时，将显示此错误消息。 在再次尝试之前，请确保已正确输入与您尝试发出的API请求兼容的“接受”标头。
 
 #### 可用的未知接受格式
 
