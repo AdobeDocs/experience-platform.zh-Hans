@@ -5,9 +5,9 @@ title: 目录服务开发人员指南
 topic: developer guide
 description: 此开发人员指南提供帮助您使用目录API进行开始的步骤。 然后，该指南提供了使用Catalog执行关键操作的示例API调用。
 translation-type: tm+mt
-source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '584'
+source-wordcount: '589'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,11 @@ ht-degree: 0%
 
 [!DNL Catalog] 跟踪中几种资源和操作的元数据 [!DNL Experience Platform]。 本开发人员指南需要对创建和管理这些 [!DNL Experience Platform] 资源所涉及的各种服务有一个有效的了解：
 
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 * [批量摄取](../../ingestion/batch-ingestion/overview.md):如何 [!DNL Experience Platform] 从数据文件（如CSV和Parke）中摄取和存储数据。
 * [流摄取](../../ingestion/streaming-ingestion/overview.md):如 [!DNL Experience Platform] 何从客户端和服务器端设备实时摄取和存储数据。
 
-以下各节提供了成功调用API所需的或现有的其他信 [!DNL Catalog Service] 息。
+以下各节提供了成功调用API所需或现有的其他信 [!DNL Catalog Service] 息。
 
 ## 读取示例API调用
 
