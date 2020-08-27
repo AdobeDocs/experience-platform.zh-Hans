@@ -5,9 +5,9 @@ title: Adobe Experience Platform Identity Service
 topic: overview
 description: '身份命名空间是 Identity Service 的组件，充当与身份相关的上下文指示器。例如，它们将“name<span>@email.com”的值区分为电子邮件地址或“443522”作为数字CRM ID。 '
 translation-type: tm+mt
-source-git-commit: 235f611115b89a87c924a00409a6acae4f5ac97d
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '761'
+source-wordcount: '774'
 ht-degree: 4%
 
 ---
@@ -15,15 +15,15 @@ ht-degree: 4%
 
 # 身份命名空间概述
 
-Identity namespaces are a component of [!DNL Identity Service](./home.md) that serve as indicators of the context to which an identity relates. 例如，它们将“name<span>@email.com”的值区分为电子邮件地址或“443522”作为数字CRM ID。
+Identity namespaces are a component of [[!DNL Identity Service]](./home.md) that serve as indicators of the context to which an identity relates. 例如，它们将“name<span>@email.com”的值区分为电子邮件地址或“443522”作为数字CRM ID。
 
 ## 入门指南
 
 与身份命名空间合作需要了解所涉的Adobe Experience Platform各项服务。 在开始与命名空间合作之前，请查看以下服务的相关文档：
 
-- [!DNL Real-time Customer Profile](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
-- [!DNL Identity Service](./home.md):通过跨设备和系统桥接身份，更好地视图个别客户及其行为。
-- [!DNL Privacy Service](../privacy-service/home.md):身份命名空间用于遵守一般数据保护规定(GDPR)，在该规定中，GDPR请求可以与命名空间相关。
+- [[!DNL实时客户用户档案]](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+- [[!DNL标识服务]](./home.md):通过跨设备和系统桥接身份，更好地视图个别客户及其行为。
+- [[!DNLPrivacy Service]](../privacy-service/home.md):身份命名空间用于遵守一般数据保护规定(GDPR)，在该规定中，GDPR请求可以与命名空间相关。
 
 ## 了解身份命名空间
 
