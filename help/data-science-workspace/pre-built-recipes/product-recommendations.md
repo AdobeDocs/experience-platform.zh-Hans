@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;product recommendation recipe;Data Science Workspace;popular topics
+keywords: Experience Platform;product recommendation recipe;Data Science Workspace;popular topics;recipes;pre build recipe
 solution: Experience Platform
 title: 产品推荐处方
 topic: overview
+description: 产品Recommendations菜谱使您能够根据客户的需求和兴趣提供个性化的产品推荐。 借助准确的预测模型，客户的购买历史记录可以为您提供关于他们可能感兴趣的产品的洞察。
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '421'
-ht-degree: 3%
+source-wordcount: '463'
+ht-degree: 2%
 
 ---
 
@@ -26,9 +27,9 @@ ht-degree: 3%
 
 ## 如何开始？
 
-您可以按照Adobe Experience Platform实验室教程入门（请参阅下面的实验室链接）。 本教程将向您展示如何在Jupyter Notebook中创建产品Recommendations菜谱，方法是 [按照笔记本到菜谱工作流](../jupyterlab/create-a-recipe.md) ，并在中实施菜谱 [!DNL Experience Platform][!DNL Data Science Workspace]。
+您可以通过学习Adobe Experience Platform实验室教程（请参阅下面的实验室链接）开始。 本教程将向您展示如何在Jupyter Notebook中创建产品Recommendations菜谱，方法是 [按照笔记本到菜谱工作流](../jupyterlab/create-a-recipe.md) ，并在中实施菜谱 [!DNL Experience Platform][!DNL Data Science Workspace]。
 
-* [实验： 利用数据科学工作区预测未来](https://expleague.azureedge.net/labs/L777/index.html)
+* [实验：利用数据科学工作区预测未来](https://expleague.azureedge.net/labs/L777/index.html)
 * [实验室资源](https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources)
 
 ## 数据模式
