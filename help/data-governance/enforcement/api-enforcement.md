@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用策略服务API实施数据使用策略
 topic: enforcement
 translation-type: tm+mt
-source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '869'
+source-wordcount: '874'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 使用API实施数据使用策 [!DNL Policy Service] 略
 
-为数据创建数据使用标签并针对这些标签创建市场营销操作的使用策略后，您便可以使用 [!DNL DULE Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) 评估对数据集或任意标签组执行的市场营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。
+为数据创建数据使用标签并针对这些标签创建市场营销操作的使用策略后，您可以使用 [[!DNL DULE Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) ，评估对数据集或任意标签组执行的营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。
 
 >[!NOTE]
 >
@@ -26,9 +26,9 @@ ht-degree: 2%
 
 本教程需要对实施DULE策略时涉及的下列主要概念有充分的了解：
 
-* [数据治理](../home.md): 强制执行数据使 [!DNL Platform] 用合规性的框架。
-   * [数据使用标签](../labels/overview.md): 数据使用标签被应用到数据集（和／或这些数据集中的单个字段），从而指定如何使用该数据的限制。
-   * [数据使用策略](../policies/overview.md): 数据使用策略是描述某些DULE标签集允许或限制的营销操作类型的规则。
+* [数据治理](../home.md):强制执行数据使 [!DNL Platform] 用合规性的框架。
+   * [数据使用标签](../labels/overview.md):数据使用标签被应用到数据集（和／或这些数据集中的单个字段），从而指定如何使用该数据的限制。
+   * [数据使用策略](../policies/overview.md):数据使用策略是描述某些DULE标签集允许或限制的营销操作类型的规则。
 * [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 在开始本教程之前，请查阅开发 [人员指南](../api/getting-started.md) ，了解成功调用DULE API所需了解的重要信息，包括必需的头 [!DNL Policy Service] 以及如何读取示例API调用。
