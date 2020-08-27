@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;schedule a model;Data Science Workspace;popular topics
+keywords: Experience Platform;schedule a model;Data Science Workspace;popular topics;schedule scoring;schedule training
 solution: Experience Platform
 title: 计划模型(UI)
 topic: Tutorial
+description: Adobe Experience Platform数据科学工作区允许您在机器学习服务上设置定期评分和培训运行。 自动化培训和评分流程可与数据中的模式保持同步，从而帮助保持和提高服务的长期效率。
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '533'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # 计划模型(UI)
 
-Adobe Experience Platform [!DNL Data Science Workspace] 允许您在机器学习服务上设置计划评分和培训运行。 自动化培训和评分流程可与数据中的模式保持同步，从而帮助保持和提高服务的长期效率。
+Adobe Experience Platform [!DNL Data Science Workspace] 允许您在机器学习服务上设置定时评分和培训运行。 自动化培训和评分流程可与数据中的模式保持同步，从而帮助保持和提高服务的长期效率。
 
 本教程逐步介绍如何通过服务库在现有服务上配置培训和评 *[!UICONTROL 分计划]*。 它分为以下几个主要部分：
 
@@ -31,7 +32,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 允许您在机器学习
 
 模型评分可以配置为按计划自动进行。 创建服务后，您可以按照以下步骤配置和应用评分计划:
 
-1. 在Adobe Experience Platform中，单 **[!UICONTROL 击左]** 侧导航列中的“服务”选项卡以访问 *[!DNL Service Gallery]*。 查找要计划评分运行的服务，并单击“打 **[!UICONTROL 开]** ”以视图 *其概* 述页。
+1. 在Adobe Experience Platform，单击 **[!UICONTROL 左侧]** 导航列中的“服务”选项卡以访问 *[!DNL Service Gallery]*。 查找要计划评分运行的服务，并单击“打 **[!UICONTROL 开]** ”以视图 *其概* 述页。
    ![](../images/models-recipes/schedule/click_to_open.png)
 
 2. “概述”页显示服务的评分信息。 单击“更 **[!UICONTROL 新计划]** ”链接以配置评分计划。
@@ -50,7 +51,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 允许您在机器学习
 
 创建服务后，您可以按照以下步骤配置和应用培训计划:
 
-1. 在Adobe Experience Platform中，单 **[!UICONTROL 击左]** 侧导航列中的“服务”选项卡以访 *[!UICONTROL 问服务库]*。 查找要计划培训运行的服务，并单击“打 **[!UICONTROL 开]** ”以视图 *其概* 述页。
+1. 在Adobe Experience Platform，单击 **[!UICONTROL 左侧]** 导航列中的“服务”选项卡以访 *[!UICONTROL 问服务库]*。 查找要计划培训运行的服务，并单击“打 **[!UICONTROL 开]** ”以视图 *其概* 述页。
    ![](../images/models-recipes/schedule/click_to_open.png)
 
 2. “概述”页显示服务的培训信息。 单击“ **[!UICONTROL 更新计划]** ”链接以配置培训计划。
