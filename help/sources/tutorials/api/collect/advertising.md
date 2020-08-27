@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 通过源连接器和API收集广告数据
 topic: overview
 translation-type: tm+mt
-source-git-commit: 744f7f1c5203f3537e979c50d7f8e20c1e8c50a5
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1632'
+source-wordcount: '1644'
 ht-degree: 1%
 
 ---
@@ -24,11 +24,11 @@ ht-degree: 1%
 
 本教程还要求您对Adobe Experience Platform的以下组件有充分的了解：
 
-* [!DNL Experience Data Model (XDM) System](../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
+* [[!DNL体验数据模型(XDM)系统]](../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    * [模式合成基础](../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式注册开发人员指南](../../../../xdm/api/getting-started.md):包括成功执行对模式注册表API的调用时需要了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
-* [!DNL Catalog Service](../../../../catalog/home.md):目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
-* [!DNL Batch ingestion](../../../../ingestion/batch-ingestion/overview.md):批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
+* [[!DNL目录服务]](../../../../catalog/home.md):目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
+* [[!DNL批量摄取]](../../../../ingestion/batch-ingestion/overview.md):批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
 * [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供您需要了解的其他信息，以便成功连接到使用API的广告系 [!DNL Flow Service] 统。
@@ -639,7 +639,7 @@ curl -X POST \
 | `transformations.params.mappingId` | 与数据库关联的映射ID。 |
 | `scheduleParams.startTime` | 开始时间中数据流的数据时间。 |
 | `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`、 `minute`、 `hour`、 `day`或 `week`。 |
-| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，间隔不 `once` 是必需的，对于其他频率值， `15` 间隔应大于或等于。 |
+| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，间隔不 `once` 是必需的，对于其他频率值， `15` 应大于或等于。 |
 
 **响应**
 
