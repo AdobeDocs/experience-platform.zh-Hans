@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 模式注册表API开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: f7fe8f9ac8d6f0e2eaec53d96f2ced0904061c89
 workflow-type: tm+mt
-source-wordcount: '1207'
+source-wordcount: '1237'
 ht-degree: 0%
 
 ---
@@ -167,9 +167,21 @@ curl -X GET \
 
 全球容器包含所有标准Adobe [!DNL Experience Platform] 和合作伙伴提供的类、混合、数据类型和模式。 您只能对全局列表执行GET和查找(容器)请求。
 
+使用全局容器的调用示例如下所示：
+
+```http
+GET /global/classes
+```
+
 ### 租户容器
 
 不要与您的独特性混淆，租 `TENANT_ID`户容器包含由IMS组织定义的所有类、混合、数据类型、模式和描述符。 这是每个组织特有的，这意味着它们不会被其他IMS组织看到或管理。 您可以对您在租户容器中创建的资源执行所有CRUD操作(GET、POST、PUT、PATCH、DELETE)。
+
+使用租户容器的调用示例如下所示：
+
+```http
+POST /tenant/mixins
+```
 
 在租户容器中创建类、混音、模式或数据类型时，该类会保存到中，并 [!DNL Schema Registry] 为其分配 `$id` 一个包含您的URI `TENANT_ID`。 它 `$id` 在整个API中用于引用特定资源。 值的示 `$id` 例在下一节中提供。
 
