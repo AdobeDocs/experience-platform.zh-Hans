@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;product profile
 solution: Experience Platform
 title: 管理产品用户档案的详细信息和其他服务
 topic: user guide
+description: 本文档涵盖为Adobe Admin Console的产品用户档案管理详细信息和其他服务所需的必要步骤。 您可以在用户档案设置菜单中配置用户档案的详细信息并访问其他服务。
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '167'
-ht-degree: 2%
+source-wordcount: '206'
+ht-degree: 1%
 
 ---
 
