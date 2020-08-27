@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;machine learning model;Data Science Workspace;Real-time Customer Profile;popular topics
+keywords: Experience Platform;machine learning model;Data Science Workspace;Real-time Customer Profile;popular topics;machine learning insights
 solution: Experience Platform
 title: 利用机器学习洞察丰富实时客户用户档案
 topic: Tutorial
+description: 此文档提供分步教程，用于通过机器学习洞察丰富实时客户用户档案，将步骤分为以下几节，创建输出模式/数据集，配置输出模式/数据集，以及使用区段生成器创建区段。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
 workflow-type: tm+mt
-source-wordcount: '1191'
+source-wordcount: '1230'
 ht-degree: 0%
 
 ---
