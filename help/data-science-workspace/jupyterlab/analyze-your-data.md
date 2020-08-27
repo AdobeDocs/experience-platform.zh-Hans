@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;popular topics
+keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;popular topics;analyze data notebooks
 solution: Experience Platform
 title: 使用笔记本分析数据
 topic: Tutorial
+description: 本教程重点介绍如何使用在数据科学工作区中构建的Jupyter笔记本访问、探索和可视化数据。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
 workflow-type: tm+mt
-source-wordcount: '1710'
+source-wordcount: '1731'
 ht-degree: 0%
 
 ---
@@ -146,7 +147,7 @@ df.describe()
 
 通过这个，我们可以看到每个特征有6435个实例。 给出了平均、标准差(std)、最小、最大和间隔等统计信息。 这给出了有关数据偏差的信息。 在下一节中，我们将重点介绍可视化功能，这些功能与这些信息一起使用，以便我们更好地了解我们的数据。
 
-从最小值和最大值看 `store`，我们可以看到有45个数据表示的唯一存储。 店也 `storeTypes` 有差别。 通过执行以下操作， `storeTypes` 可以查看分发内容：
+从最小值和最大值看 `store`，我们可以看到有45个数据表示的唯一存储。 店也 `storeTypes` 有差别。 通过执行以下操作， `storeTypes` 我们可以查看分发内容：
 
 ![](../images/jupyterlab/analyze-data/df_groupby.png)
 
@@ -156,8 +157,8 @@ df.describe()
 
 既然我们了解了数据帧值，我们想用可视化来补充这一点，使事情更清晰、更容易地识别模式。 在将结果传送到受众时，图形也很有用。 对可 [!DNL Python] 视化有用的库包括：
 - [马特普洛特利卜](https://matplotlib.org/)
-- [博](https://pandas.pydata.org/)
-- [kern](https://seaborn.pydata.org/)
+- [熊猫](https://pandas.pydata.org/)
+- [西伯恩](https://seaborn.pydata.org/)
 - [gplot](https://ggplot2.tidyverse.org/)
 
 在本节中，我们将快速介绍使用每个库的一些优势。
