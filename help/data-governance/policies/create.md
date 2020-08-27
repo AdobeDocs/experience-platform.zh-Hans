@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建数据使用策略
 topic: policies
 translation-type: tm+mt
-source-git-commit: 0534fe8dcc11741ddc74749d231e732163adf5b0
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1186'
+source-wordcount: '1194'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 在API中创建数据使用策略
 
-数据使用标签与强制(DULE)是Adobe Experience Platform的核心机制 [!DNL Data Governance]。 DULE [策略服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) 允许您创建和管理DULE策略，以确定可以对包含某些DULE标签的数据执行哪些营销操作。
+数据使用标签与执行(DULE)是Adobe Experience Platform的核心机制 [!DNL Data Governance]。 DULE [策略服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) 允许您创建和管理DULE策略，以确定可以对包含某些DULE标签的数据执行哪些营销操作。
 
 此文档提供了使用API创建DULE策略的分步教 [!DNL Policy Service] 程。 有关API中提供的不同操作的更全面的指南，请参 [阅策略服务开发人员指南](../api/getting-started.md)。
 
@@ -22,9 +22,9 @@ ht-degree: 2%
 
 本教程需要对创建和评估DULE策略时涉及的下列主要概念有一个有效的了解：
 
-* [!DNL Data Governance](../home.md): 强制执行数据使 [!DNL Platform] 用合规性的框架。
-* [数据使用标签](../labels/overview.md): 数据使用标签应用于XDM数据字段，指定如何访问该数据的限制。
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [[!DNL数据管理]](../home.md):强制执行数据使 [!DNL Platform] 用合规性的框架。
+* [数据使用标签](../labels/overview.md):数据使用标签应用于XDM数据字段，指定如何访问该数据的限制。
+* [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 * [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 在开始本教程之前，请查阅开发 [人员指南](../api/getting-started.md) ，了解成功调用DULE API所需了解的重要信息，包括必需的头 [!DNL Policy Service] 以及如何读取示例API调用。
@@ -123,7 +123,7 @@ curl -X GET \
 
 当您找到要使用的营销活动时，请记录其属性的 `href` 值。 此值将在创建DULE策略的下 [一步中使用](#create-policy)。
 
-### 创建新的营销操作 {#create-new}
+### Create a new marketing action {#create-new}
 
 您可以通过向端点发出PUT请求并在请求路径 `/marketingActions/custom/` 的末尾提供营销操作的名称来创建新的营销操作。
 
