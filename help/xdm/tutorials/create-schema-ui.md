@@ -5,9 +5,9 @@ title: 使用架构编辑器创建架构
 topic: tutorials
 description: 本教程介绍了在模式中使用模式编辑器创建Experience Platform的步骤。
 translation-type: tm+mt
-source-git-commit: ed100e2acfcfc3dfabef6ccfbe88e98489193567
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '3512'
+source-wordcount: '3528'
 ht-degree: 0%
 
 ---
@@ -27,9 +27,9 @@ Adobe Experience Platform用户界面允许您在称为“”的 [!DNL Experienc
 
 本教程需要对Adobe Experience Platform在模式创建中涉及的各个方面进行有效的理解。 在开始本教程之前，请查阅以下概念的文档：
 
-* [!DNL Experience Data Model (XDM)](../home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [[!DNL体验数据模型(XDM)]](../home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
    * [模式合成基础](../schema/composition.md):XDM模式及其构建块的概述，包括类、混合、数据类型和字段。
-* [!DNL Real-time Customer Profile](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 ## 浏览模式工作区中的现 [!UICONTROL 有模式] {#browse}
 
@@ -201,7 +201,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 
 ## 将多字段对象转换为数据类型 {#datatype}
 
-“”对[!DNL loyalty]象现在包含几个特定于忠诚度的字段，并表示一个可在其他模式中有用的通用数据结构。 通过 [!DNL Schema Editor] 将这些对象的结构转换为数据类型，您可以轻松应用可重用的多字段对象。
+“”对[!DNL loyalty]象现在包含几个特定于忠诚度的字段，并表示一个可能在其他模式中有用的通用数据结构。 通过 [!DNL Schema Editor] 将这些对象的结构转换为数据类型，您可以轻松应用可重用的多字段对象。
 
 数据类型允许多字段结构的一致使用，并提供比混音更灵活的性能，因为它们可以在模式的任何位置使用。 这是通过将字段的Type值设 **[!UICONTROL 置为]** 在中定义的任何数据类型来完成的 [!DNL Schema Registry]。
 
@@ -231,7 +231,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 
 在编辑器 **[!UICONTROL 的]** “结构”部分，选择“”字段，并在“字段属[!DNL loyaltyId]性”下显 **[!UICONTROL 示“标]** 识 **[!UICONTROL ”复选]**&#x200B;框。 选中该框和选项，将其设置为主 **[!UICONTROL 标识]** 。 也选中此框。
 
-接下来，您必须从下 **[!UICONTROL 拉菜单]** 中预定义命名空间的列表中提供标识命名空间。 由于“[!DNL loyaltyId]”是客户的电子邮件地址，因此请从下拉[!UICONTROL 菜单中选择]“电子邮件”。 选择 **[!UICONTROL 应用]** ，以确认对“”字段的[!DNL loyaltyId]更新。
+接下来，您必须从下 **[!UICONTROL 拉菜单中]** 预定义命名空间的列表中提供标识命名空间。 由于“[!DNL loyaltyId]”是客户的电子邮件地址，因此请从下拉[!UICONTROL 菜单中选择]“电子邮件”。 选择 **[!UICONTROL 应用]** ，以确认对“”字段的[!DNL loyaltyId]更新。
 
 ![](../images/tutorials/create-schema/loyaltyId_primary_identity.png)
 
@@ -245,11 +245,11 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 >
 >将模式字段设置为主标识后，如果稍后尝试将模式中的其他字段设置为主标识，您将收到错误消息。 每个模式只能包含一个主标识字段。
 
-要进一步了解如何在中使 [!DNL Experience Platform]用身份，请查阅 [!DNL Identity Service](../../identity-service/home.md) 文档。
+要了解有关在中使用身份的更 [!DNL Experience Platform]多信息，请查 [看[!DNL Identity Service]文档](../../identity-service/home.md) 。
 
 ## 启用模式以在 [!DNL Real-time Customer Profile] {#profile}
 
-[!DNL Real-time Customer Profile](../../profile/home.md) 利用身份数 [!DNL Experience Platform] 据，为每位客户提供整体视图。 该服务为客户在与集成的任何系统上的每次交互建立了可靠、360°用户档案的客户属性以及加盖时间戳的帐户 [!DNL Experience Platform]。
+[[!DNL实时客户用户档案]](../../profile/home.md) 利用身份 [!DNL Experience Platform] ，为每位客户提供整体视图。 该服务为客户在与集成的任何系统上的每次交互建立了可靠、360°用户档案的客户属性以及加盖时间戳的帐户 [!DNL Experience Platform]。
 
 要使模式能够与之一起使用， [!DNL Real-time Customer Profile]必须定义主标识。 如果您尝试启用模式而未先定义主标识，则会收到错误消息。
 
@@ -327,7 +327,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 
 ![](../images/tutorials/create-schema/assign_class_button.png)
 
-将显示一个对话框，其中显示所有可用类的列表，包括由您的组织定义的任何类(所有者[!UICONTROL 是]“客户”)以及由Adobe定义的标准类。
+将显示一个对话框，其中显示所有可用类的列表，包括您的组织定义的任何类([!UICONTROL 所有者]为“客户”)以及Adobe定义的标准类。
 
 从列表中选择一个类，在对话框的右侧显示其说明。 您还可以选择 **[!UICONTROL 预览类结构]** ，以查看与类关联的字段和元数据。 选择 **[!UICONTROL 分配类]** ，继续。
 
