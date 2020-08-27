@@ -5,9 +5,9 @@ title: 使用API使用决策服务运行时
 topic: tutorial
 description: '本文档提供了使用Adobe Experience PlatformAPI使用决策服务运行时服务的教程。 '
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '2004'
+source-wordcount: '2017'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,9 @@ ht-degree: 0%
 
 本教程需要对决策和确定在客 [!DNL Experience Platform] 户体验过程中要展示的下一个最佳优惠所涉及的服务进行有效的了解。 在开始本教程之前，请查看以下文档：
 
-- [!DNL Decisioning Service](./../home.md):提供添加和删除优惠的框架，以及创建在客户体验期间选择最适合呈现的算法。
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md):平台组织客户体验数据的标准化框架。
-- [!DNL Profile Query Language (PQL)](../../segmentation/pql/overview.md):PQL用于定义规则和过滤器。
+- [[!DNL决策服务]](./../home.md):提供添加和删除优惠的框架，以及创建在客户体验期间选择最适合呈现的算法。
+- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):平台组织客户体验数据的标准化框架。
+- [[!DNL用户档案查询语言(PQL)]](../../segmentation/pql/overview.md):PQL用于定义规则和过滤器。
 - [使用API管理决策对象和规则](./entities.md):在使用决策服务运行时之前，您需要设置相关实体。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
