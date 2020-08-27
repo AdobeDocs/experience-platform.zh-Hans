@@ -5,9 +5,9 @@ title: 使用API创建数据集
 topic: datasets
 description: 此文档提供了使用Adobe Experience PlatformAPI创建数据集和使用文件填充数据集的一般步骤。
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1251'
+source-wordcount: '1259'
 ht-degree: 1%
 
 ---
@@ -22,8 +22,8 @@ ht-degree: 1%
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
 * [批量摄取](../../ingestion/batch-ingestion/overview.md): [!DNL Experience Platform] 允许您将数据作为批处理文件进行收录。
-* [!DNL Experience Data Model (XDM) System](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL沙箱]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
@@ -462,7 +462,7 @@ curl -X GET \
 
 ## 从数据集读取数据
 
-使用批处理ID，您可以使用数据访问API进行回读并验证上传到该批处理的所有文件。 该响应返回一个包含文件ID列表的数组，每个ID都引用批处理中的文件。
+使用批处理ID，您可以使用数据访问API进行回读并验证上传到该批处理的所有文件。 该响应返回一个包含文件ID列表的数组，每个ID引用批处理中的文件。
 
 您还可以使用Data Access API返回名称、大小（以字节为单位）以及下载文件或文件夹的链接。
 
