@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data access;spark sdk;data access api
 solution: Experience Platform
 title: 安全Spark数据访问SDK
 topic: tutorial
+description: Secure Spark Data Access SDK是一个软件开发工具包，可以读取和写入来自Adobe Experience Platform的数据集。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 2fdab7d984a7368df77110f8ba0e0ba687e96d7e
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '538'
 ht-degree: 1%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 1%
 
 # 安全 [!DNL Spark Data Access] SDK
 
-Secure SDK [!DNL Spark] 是一 [!DNL Data Access] 个软件开发工具包，它支持读取和写入Adobe Experience Platform数据集。
+Secure SDK [!DNL Spark] 是一 [!DNL Data Access] 个软件开发工具包，它支持读取和写入来自Adobe Experience Platform的数据集。
 
 ## 入门指南
 
@@ -81,7 +82,7 @@ spark.sql.extensions = com.adobe.platform.query.QSSparkSessionExtensions
 
 ## 读取数据集
 
-SDK [!DNL Spark] 支持两种阅读模式： 交互式和批处理。
+SDK [!DNL Spark] 支持两种阅读模式：交互式和批处理。
 
 交互模式创建与的Java数据库连接(JDBC) [!DNL Query Service] 连接，并通过自动转换为的常规 `ResultSet` JDBC获取结果 `DataFrame`。 此模式的工作方式与内置方 [!DNL Spark] 法类似 `spark.read.jdbc()`。 此模式仅适用于小数据集，并且仅需要用户令牌进行身份验证。
 
@@ -136,7 +137,7 @@ df = df.select("column-a", "column-b").distinct().show()
 
 ### WHERE子句
 
-SDK [!DNL Spark] 允许两种筛选方法： 使用SQL表达式或通过筛选条件。
+SDK [!DNL Spark] 允许两种筛选方法：使用SQL表达式或通过筛选条件。
 
 使用这些过滤函数的示例如下所示：
 
