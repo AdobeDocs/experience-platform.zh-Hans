@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics
+keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;models;sensei machine learning api
 solution: Experience Platform
 title: 模型
 topic: Developer guide
+description: 模型是机器学习配方的实例，该配方使用历史数据和配置进行培训，以便为业务用例进行解决。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 194a29124949571638315efe00ff0b04bff19303
 workflow-type: tm+mt
-source-wordcount: '821'
+source-wordcount: '846'
 ht-degree: 4%
 
 ---
@@ -398,7 +399,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回一个包含json对象的有效负荷，其列表为在模型上执行的每个转码。 每个转码模型接收一个唯一标识符(`id`)。
+成功的响应返回一个包含json对象的有效负荷，其列表为在模型上执行的每个转码。 每个转码模型接收唯一标识符(`id`)。
 
 ```json
 {
