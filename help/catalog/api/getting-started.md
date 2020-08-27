@@ -5,9 +5,9 @@ title: 目录服务开发人员指南
 topic: developer guide
 description: 此开发人员指南提供帮助您使用目录API进行开始的步骤。 然后，该指南提供了使用Catalog执行关键操作的示例API调用。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: c8e53a25c5b22e8d840658fe26ff47875947a6d0
 workflow-type: tm+mt
-source-wordcount: '589'
+source-wordcount: '588'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Catalog Service] 开发人员指南
 
-[!DNL Catalog Service] 是Adobe Experience Platform境内数据定位和谱系记录系统。 [!DNL Catalog] 充当元数据存储或“目录”，您可以在其中找到有关数据的信息， [!DNL Experience Platform]无需访问数据本身。 有关更多 [信息](../home.md) ，请参阅目录概述。
+[!DNL Catalog Service] 是Adobe Experience Platform境内数据定位和谱系记录系统。 [!DNL Catalog] 充当元数据存储或“目录”，您可以在其中找到有关数据的信息， [!DNL Experience Platform]无需访问数据本身。 有关更多 [[!DNL Catalog] 信息](../home.md) ，请参阅概述。
 
 此开发人员指南提供帮助您使用API进行开始 [!DNL Catalog] 的步骤。 然后，该指南提供了使用执行关键操作的示例API调 [!DNL Catalog]用。
 
