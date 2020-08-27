@@ -3,11 +3,11 @@ keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;popula
 solution: Experience Platform
 title: JupyterLab用户指南
 topic: Overview
-description: JupyterLab是Project Jupyter的基于Web的用户界面，与Adobe Experience Platform紧密集成。 它为数据科学家提供一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起使用。
+description: JupyterLab是Project Jupyter的基于Web的用户界面，与Adobe Experience Platform紧密集成。 它为数据科学家提供一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起使用。 本文档概述了JupyterLab及其功能以及执行常见操作的说明。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
 workflow-type: tm+mt
-source-wordcount: '3684'
+source-wordcount: '3702'
 ht-degree: 11%
 
 ---
@@ -626,8 +626,8 @@ timedf.show()
 | 博凯 | 1.3.1 |
 | 亨西姆 | 3.7.3 |
 | 平行 | 0.5.2 |
-| jq | 1.6 |
-| feras | 2.2.4 |
+| 熊猫 | 1.6 |
+| keras | 2.2.4 |
 | nltk | 3.2.5 |
 | 博 | 0.22.0 |
 | 潘达斯 | 0.7.3 |
@@ -636,9 +636,9 @@ timedf.show()
 | scikit-learn | 0.21.3 |
 | 熏 | 1.3.0 |
 | 杂乱 | 1.3.0 |
-| 弹性 | 0.9.0 |
+| kern | 0.9.0 |
 | statmodels | 0.10.1 |
-| -弹性 | 5.1.0.17 |
+| 弹性 | 5.1.0.17 |
 | gplot | 0.11.5 |
 | py-xgboost | 0.90 |
 | opencv | 3.4.1 |
@@ -718,9 +718,9 @@ timedf.show()
 | :------ | :------ |
 | 请求 | 2.18.4 |
 | 亨西姆 | 2.3.0 |
-| keras | 2.0.6 |
+| feras | 2.0.6 |
 | nltk | 3.2.4 |
-| 熊猫 | 0.20.1 |
+| 博 | 0.20.1 |
 | 潘达斯 | 0.7.3 |
 | 枕 | 5.3.0 |
 | Scikit图像 | 0.13.0 |
