@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;attribution ai;overview;popular topics
+keywords: Experience Platform;attribution ai overview;popular topics;attribution ai;Attribution ai
 solution: Experience Platform
 title: Attribution AI概述
 topic: Attribution AI
+description: Attribution AI用于将积分归因到触点，从而导致转化事件。 营销人员可以使用此功能，帮助量化客户旅程中每个营销接触点的营销影响。 接触点包括展示广告印象、电子邮件发送、电子邮件打开和付费搜索点击。
 translation-type: tm+mt
-source-git-commit: 7fc121d310509739c7ee81f7d6657ea8f3963b69
+source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '455'
 ht-degree: 0%
 
 ---
@@ -20,7 +21,7 @@ Attribution AI作为智能服务的一部分，是一种多渠道算法归因服
 
 Attribution AI用于将积分归因到触点，从而导致转化事件。 营销人员可以使用此功能，帮助量化客户旅程中每个营销接触点的营销影响。 接触点包括展示广告印象、电子邮件发送、电子邮件打开和付费搜索点击。
 
-Attribution AI输出可以跨不同维度进行分离，并且可以跨客户旅程的不同阶段使用。 这无需将业务需求转化为机器学习问题、选择算法、培训或部署模型即可完成。
+Attribution AI输出可以跨不同维度进行分离，并且可以跨客户旅程的不同阶段使用。 无需将业务需求转化为机器学习问题、选择算法、培训或部署模型即可完成此操作。
 
 Attribution AI数据可以来自Adobe(例如， [!DNL Analytics])或非Adobe数据源。
 
@@ -34,11 +35,11 @@ Attribution AI支持两类别分，算法和基于规则。 算法得分包括�
 
 Attribution AI可用于帮助处理以下示例用例：
 
-- **执行报告**: 使管理层能够了解营销的真正增量影响，无论是整体还是渠道、地区、SKU等。
-- **预算分配**: 在营销渠道制定预算分配决策。
-- **活动优化**: 在每个渠道中，了解哪些活动、创意和关键字对哪些SKU或Geos的效果更好。 这样，您便可以查看每个渠道，以便营销团队能够优化其策略。
-- **全漏斗归因**: 了解营销在整个客户旅程中的影响。 例如，免费帐户注册到付费转换等。
-- **合作伙伴评估**: 根据归因结果评估机构和合作伙伴的有效性。
+- **执行报告**:使管理层能够了解营销的真正增量影响，无论是整体还是渠道、地区、SKU等。
+- **预算分配**:在营销渠道制定预算分配决策。
+- **活动优化**:在每个渠道中，了解哪些活动、创意和关键字对哪些SKU或Geos的效果更好。 这样，您便可以查看每个渠道，以便营销团队能够优化其策略。
+- **全漏斗归因**:了解营销在整个客户旅程中的影响。 例如，免费帐户注册到付费转换等。
+- **合作伙伴评估**:根据归因结果评估机构和合作伙伴的有效性。
 
 ### 其他功能
 
