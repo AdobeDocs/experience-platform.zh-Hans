@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data access;python sdk;data access api
 solution: Experience Platform
 title: 安全Python数据访问SDK
 topic: tutorial
+description: Secure Python Data Access SDK是一个软件开发工具包，它支持读取和写入来自Adobe Experience Platform的数据集。
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '500'
 ht-degree: 1%
 
 ---
@@ -55,7 +56,7 @@ Secure SDK [!DNL Python] 是一 [!DNL Data Access] 个软件开发工具包，�
 
 ## 安装
 
-所有包装在建筑后输 `./dist` 出到。
+所有包装在建筑后 `./dist` 输出。
 
 ### 车轮
 
