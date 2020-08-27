@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;delete an object;catalog service;api
 solution: Experience Platform
 title: 删除对象
 topic: developer guide
+description: 您可以通过在DELETE请求的路径中提供目录对象的ID来删除该对象。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '173'
+source-wordcount: '190'
 ht-degree: 2%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 2%
 
 # 删除对象
 
-您可以通过 [!DNL Catalog] 在DELETE请求路径中提供对象ID来删除对象。
+您可以通过 [!DNL Catalog] 在DELETE请求的路径中提供对象ID来删除对象。
 
 >[!WARNING]
 >
