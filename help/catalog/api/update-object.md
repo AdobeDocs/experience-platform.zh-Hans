@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;catalog;api;update an object
 solution: Experience Platform
 title: 更新对象
 topic: developer guide
+description: '您可以通过在PATCH请求的路径中包含Catalog对象的ID来更新其部分。 此文档包括使用字段和使用JSON修补符号对目录对象执行PATCH操作。 '
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
 workflow-type: tm+mt
-source-wordcount: '313'
+source-wordcount: '349'
 ht-degree: 3%
 
 ---
