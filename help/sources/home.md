@@ -3,11 +3,11 @@ keywords: Experience Platform;home;popular topics;source connectors;source conne
 solution: Experience Platform
 title: Adobe Experience Platform源连接器概述
 topic: overview
-description: Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
+description: Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用平台服务构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 translation-type: tm+mt
-source-git-commit: 88f999691cde2fbebdf23f940f6d48acdfb188e3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '863'
+source-wordcount: '970'
 ht-degree: 0%
 
 ---
@@ -41,80 +41,80 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 
 [!DNL Experience Platform] 支持从第三方广告系统中摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
 
-- [!DNL Google AdWords](connectors/advertising/ads.md) 连接器
+- [[!DNL Google AdWords]连接器](connectors/advertising/ads.md)
 
 ### 云存储
 
 云存储源无需下载、格式化 [!DNL Platform] 或上传即可将您自己的数据导入其中。 摄取的数据可格式化为XDM JSON、XDM镶木地板或分隔。 该过程的每个步骤都使用用户界面集成到源工作流中。 有关更多信息，请参阅以下相关文档:
 
-- [!DNL Azure Data Lake Storage Gen2](connectors/cloud-storage/adls-gen2.md) 连接器
-- [!DNL Azure Blob](connectors/cloud-storage/blob.md) 连接器
-- [!DNL Amazon Kinesis](connectors/cloud-storage/kinesis.md) 连接器
-- [!DNL Amazon S3](connectors/cloud-storage/s3.md) 连接器
-- [!DNL Apache HDFS](connectors/cloud-storage/hdfs.md) 连接器
-- [!DNL Azure Event Hubs](connectors/cloud-storage/eventhub.md) 连接器
-- [!DNL Azure File Storage](connectors/cloud-storage/azure-file-storage.md) 连接器
-- [!DNL FTP and SFTP](connectors/cloud-storage/ftp-sftp.md) 连接器
-- [!DNL Google Cloud Storage](connectors/cloud-storage/google-cloud-storage.md) 连接器
+- [[!DNL Azure Data Lake存储Gen2]连接器](connectors/cloud-storage/adls-gen2.md)
+- [[!DNL Azure Blob]连接器](connectors/cloud-storage/blob.md)
+- [[!DNLAmazonKinesis](connectors/cloud-storage/kinesis.md) ]连接器
+- [[!DNLAmazonS3]连接器](connectors/cloud-storage/s3.md)
+- [[!DNL Apache HDFS]连接器](connectors/cloud-storage/hdfs.md)
+- [[!DNL Azure事件集线器]连接器](connectors/cloud-storage/eventhub.md)
+- [[!DNL Azure文件存储]连接器](connectors/cloud-storage/azure-file-storage.md)
+- [[!DNL FTP和SFTP]连接器](connectors/cloud-storage/ftp-sftp.md)
+- [[!DNL Google Cloud存储]连接器](connectors/cloud-storage/google-cloud-storage.md)
 
 ### 客户关系管理(CRM)
 
 CRM系统提供的数据有助于建立客户关系，进而创造忠诚度并推动客户保留。 [!DNL Experience Platform] 支持从和中获取 [!DNL Microsoft Dynamics 365] CRM数 [!DNL Salesforce]据 有关更多信息，请参阅以下相关文档:
 
-- [!DNL Microsoft Dynamics](connectors/crm/ms-dynamics.md) 连接器
-- [!DNL Salesforce](connectors/crm/salesforce.md) 连接器
+- [[!DNL Microsoft Dynamics]连接器](connectors/crm/ms-dynamics.md)
+- [[!DNL Salesforce]连接器](connectors/crm/salesforce.md)
 
 ### 客户成功
 
 [!DNL Experience Platform] 支持从第三方客户成功应用程序中获取数据。 有关更多信息，请参阅以下相关文档:
 
-- [!DNL Salesforce Service Cloud](connectors/customer-success/salesforce-service-cloud.md) 连接器
-- [!DNL ServiceNow](connectors/customer-success/servicenow.md) 连接器
+- [[!DNL Salesforce Service Cloud]连接器](connectors/customer-success/salesforce-service-cloud.md)
+- [[!DNL ServiceNow]连接器](connectors/customer-success/servicenow.md)
 
 ### 数据库
 
 [!DNL Experience Platform] 支持从第三方数据库中摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
 
-- [!DNL Amazon Redshift](connectors/databases/redshift.md) 连接器
-- [!DNL Apache Hive on Azure HDInsights](connectors/databases/hive.md) 连接器
-- [!DNL Apache Spark on Azure HDInsights](connectors/databases/spark.md) 连接器
-- [!DNL Azure Data Explorer](connectors/databases/data-explorer.md) 连接器
-- [!DNL Azure Synapse Analytics](connectors/databases/synapse-analytics.md) 连接器
-- [!DNL Azure Table Storage](connectors/databases/ats.md) 连接器
-- [!DNL Couchbase](connectors/databases/couchbase.md) 连接器
-- [!DNL Google BigQuery](connectors/databases/bigquery.md) 连接器
-- [!DNL GreenPlum](connectors/databases/greenplum.md) 连接器
-- [!DNL HP Vertica](connectors/databases/hp-vertica.md) 连接器
-- [!DNL IBM DB2](connectors/databases/ibm-db2.md) 连接器
-- [!DNL Microsoft SQL Server](connectors/databases/sql-server.md) 连接器
-- [!DNL MySQL](connectors/databases/mysql.md) 连接器
-- [!DNL Oracle](connectors/databases/oracle.md) 连接器
-- [!DNL Phoenix](connectors/databases/phoenix.md) 连接器
-- [!DNL PostgreSQL](connectors/databases/postgres.md) 连接器
+- [[!DNLAmazon红移]连接器](connectors/databases/redshift.md)
+- [[!Azure HDInsights上的DNL Apache Hive]连接器](connectors/databases/hive.md)
+- [[!Azure HDInsights上的DNL Apache Spark]连接器](connectors/databases/spark.md)
+- [[!DNL AzureData Explorer]连接器](connectors/databases/data-explorer.md)
+- [[!DNL Azure突触分析]连接器](connectors/databases/synapse-analytics.md)
+- [[!DNL Azure表存储]连接器](connectors/databases/ats.md)
+- [[!DNL Couchbase]连接器](connectors/databases/couchbase.md)
+- [[!DNL Google BigQuery]连接器](connectors/databases/bigquery.md)
+- [[!DNL GreenPlum]连接器](connectors/databases/greenplum.md)
+- [[!DNL HP Vertica]连接器](connectors/databases/hp-vertica.md)
+- [[!DNL IBM DB2]连接器](connectors/databases/ibm-db2.md)
+- [[!DNL Microsoft SQL Server]连接器](connectors/databases/sql-server.md)
+- [[!DNL MySQL]连接器](connectors/databases/mysql.md)
+- [[!DNL Oracle]连接器](connectors/databases/oracle.md)
+- [[!DNL Phoenix]连接器](connectors/databases/phoenix.md)
+- [[!DNL PostgreSQL]连接器](connectors/databases/postgres.md)
 
 ### 营销自动化
 
 [!DNL Experience Platform] 支持从第三方营销自动化系统中获取数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
 
-- [!DNL HubSpot](connectors/marketing-automation/hubspot.md) 连接器
+- [[!DNL HubSpot]连接器](connectors/marketing-automation/hubspot.md)
 
 ### 付款
 
 [!DNL Experience Platform] 支持从第三方支付系统中摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
 
-- [!DNL PayPal](connectors/payments/paypal.md) 连接器
+- [[!DNL PayPal]连接器](connectors/payments/paypal.md)
 
 ### 协议
 
 [!DNL Experience Platform] 支持从第三方协议系统接收数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
 
-- [!DNL Generic OData](connectors/protocols/odata.md) 连接器
+- [[!DNL通用OData]连接器](connectors/protocols/odata.md)
 
 ## 访问控制数据获取中的源
 
 可在Adobe Admin Console内管理数据获取来源的权限。 您可以通过特定产品用户档案 *[!UICONTROL 中的]* “权限”选项卡访问权限。 从“编 **[!UICONTROL 辑权限]** ”面板中，可以通过数据获取菜单条目访问与 *[!UICONTROL 源相关的]* 权限。 “ **[!UICONTROL 视图源]** ”权限授予对“目录”选项卡中可用源的只读访问权，并在“浏览”选项卡中通过身份验证的源 *[!UICONTROL ，而“管理源]******* ”权限则授予对读取、创建、编辑和禁用源的完全访问权限。
 
-下表概述了UI根据这些权限的不同组合而表现的方式：
+下表概述了UI根据这些权限的不同组合表现的方式：
 
 | 权限级别 | 描述 |
 | ---- | ----|
@@ -126,7 +126,7 @@ CRM系统提供的数据有助于建立客户关系，进而创造忠诚度并�
 
 ## 条款和条件 {#terms-and-conditions}
 
-通过使用任何标为测试版（“测试版”）的来源，您特此确认测试版按“原样”提 ***供，并且不作任何形式的担保***。
+通过使用任何标为测试版（“测试版”）的来源，您特此确认测试版按“原样”提 ***供，不作任何形式的担保***。
 
 Adobe没有义务维护、更正、更新、更改、修改或以其他方式支持测试版。 建议您务必小心，不要以任何方式依赖此类测试版和／或随附材料的正确功能或性能。 测试版被视为Adobe的机密信息。
 
