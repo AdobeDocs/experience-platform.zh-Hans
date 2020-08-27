@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 利用机器学习洞察丰富实时客户用户档案
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 4b0f0dda97f044590f55eaf75a220f631f3313ee
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1179'
+source-wordcount: '1191'
 ht-degree: 0%
 
 ---
@@ -26,14 +26,14 @@ ht-degree: 0%
 
 本教程需要对数据获取和区段创 [!DNL Adobe Experience Platform] 建涉及的各 [!DNL Profile] 个方面进行有效理解。 在开始本教程之前，请查看以下服务的相关文档：
 
-* [!DNL Real-time Customer Profile](../../rtcdp/overview.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [!DNL Identity Service](../../identity-service/home.md): 通过将 [!DNL Real-time Customer Profile] 来自被引入平台的不同数据源的身份连接到平台，可实现此目的。
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md): 平台组织客户体验数据的标准化框架。
+* [[!DNL实时客户用户档案]](../../rtcdp/overview.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL标识服务]](../../identity-service/home.md):通过将 [!DNL Real-time Customer Profile] 来自被引入平台的不同数据源的身份连接到平台，可实现此目的。
+* [[!DNL体验数据模型(XDM)]](../../xdm/home.md):平台组织客户体验数据的标准化框架。
 
 除了上述文档之外，还强烈建议您查看以下模式和模式编辑指南：
 
-* [模式合成基础](../../xdm/schema/composition.md): 介绍XDM模式、构件、原则以及编写要在中使用的模式的最佳实践 [!DNL Experience Platform]。
-* [模式编辑器教程](../../xdm/tutorials/create-schema-ui.md): 提供有关使用中的模式编辑器创建模式的详细说明 [!DNL Experience Platform]。
+* [模式合成基础](../../xdm/schema/composition.md):介绍XDM模式、构件、原则以及编写要在中使用的模式的最佳实践 [!DNL Experience Platform]。
+* [模式编辑器教程](../../xdm/tutorials/create-schema-ui.md):提供有关使用中的模式编辑器创建模式的详细说明 [!DNL Experience Platform]。
 
 ## 创建输出模式和数据集 {#create-an-output-schema-and-dataset}
 
@@ -41,7 +41,7 @@ ht-degree: 0%
 
 编写模式从指定类开始。 类定义模式将包含的数据的行为方面（记录或时间序列）。 本节提供使用模式生成器创建模式的基本说明。 有关更详细的教程，请参阅有关使用 [模式编辑器创建模式的教程](../../xdm/tutorials/create-schema-ui.md)。
 
-1. Adobe Experience Platform时，单击 **[!UICONTROL 模式]** 选项卡以访问模式浏览器。 单击 **[!UICONTROL 创建模式]** ，访问 *模式编辑器*，您可以在此交互构建和创建模式。
+1. 在Adobe Experience Platform，单击 **[!UICONTROL 模式]** 选项卡以访问模式浏览器。 单击 **[!UICONTROL 创建模式]** ，访问 *模式编辑器*，您可以在此交互构建和创建模式。
    ![](../images/models-recipes/enrich-rtcdp/schema_browser.png)
 
 2. 在“合 *成* ”窗口中， **[!UICONTROL 单击“]** 分配”以浏览可用的类。
@@ -81,7 +81,7 @@ ht-degree: 0%
 
 在为启用数据集之 [!DNL Profile]前，您需要先配置数据集的模式，使其具有主标识字段，然后为启用模式 [!DNL Profile]。 如果要创建并启用新模式，可参阅有关使用模式编 [辑器创建模式的教程](../../xdm/tutorials/create-schema-ui.md)。 否则，请按照以下说明启用现有模式和数据集。
 
-1. 在Adobe Experience Platform时，使用模式浏览器找到要启用的输出模式, [!DNL Profile] 然后单击其名称以视图其合成。
+1. 在Adobe Experience Platform，使用模式浏览器找到要启用的输出模式, [!DNL Profile] 然后单击其名称以视图其合成。
    ![](../images/models-recipes/enrich-rtcdp/schemas.png)
 
 2. 展开模式结构并查找要设置为主标识符的相应字段。 单击所需字段以显示其属性。
@@ -105,10 +105,10 @@ ht-degree: 0%
 
 现在，您已经生成并引入了对启用 [!DNL Profile]数据集的洞察，您可以通过使用区段生成器识别相关元素的子集来管理这些数据。 按照以下步骤构建您自己的细分。
 
-1. 在Adobe Experience Platform中，单击“ **[!UICONTROL 区段]** ”选项 **[!UICONTROL 卡，然后单]** 击“创建区段”以访问区段生成器。
+1. 在Adobe Experience Platform，单击“区 **[!UICONTROL 段]** ”选项卡， **[!UICONTROL 然后单击“]** 创建区段”以访问区段生成器。
    ![](../images/models-recipes/enrich-rtcdp/segments_overview.png)
 
-2. 在区段生成器中，左边栏提供对核心区段构建块的访问： 属性、事件和现有细分。 每个构件块都显示在各自的选项卡中。 选择您启用的模式扩 [!DNL Profile]展到的类，然后浏览并查找您的区段的构建块。
+2. 在区段生成器中，左边栏提供对核心区段构建块的访问：属性、事件和现有细分。 每个构件块都显示在各自的选项卡中。 选择您启用的模式扩 [!DNL Profile]展到的类，然后浏览并查找您的区段的构建块。
    ![](../images/models-recipes/enrich-rtcdp/segment_builder.png)
 
 3. 将构建块拖放到规则构建器画布上，通过提供比较语句完成它们。
