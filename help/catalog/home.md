@@ -5,9 +5,9 @@ title: 目录服务概述
 topic: overview
 description: 目录服务是Adobe Experience Platform内数据位置和谱系的记录系统。 当所有被引入Experience Platform的数据作为文件和目录存储在数据湖中时，目录会保存这些文件和目录的元数据和描述，以便进行查找和监视。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 71678b10c9e137016ea404305b272508b9c8cabe
 workflow-type: tm+mt
-source-wordcount: '783'
+source-wordcount: '782'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 [!DNL Catalog Service] 是Adobe Experience Platform境内数据定位和谱系记录系统。 当所有被引入的数据 [!DNL Experience Platform] 作为文件和目 [!DNL Data Lake] 录存储在中时， [!DNL Catalog] 保留这些文件和目录的元数据和说明以供查找和监视。
 
-只需简单地 [!DNL Catalog] 放入，即可充当元数据存储[!UICONTROL 或“目录]”，您可在其中找到有关数据的信息 [!DNL Experience Platform]。 您可以使 [!DNL Catalog] 用来回答以下问题：
+只需简单地 [!DNL Catalog] 放入，即可充当元数据存储[!UICONTROL 或“目录]”，您可在中找到有关数据的信息 [!DNL Experience Platform]。 您可以使 [!DNL Catalog] 用来回答以下问题：
 
 * 我的数据位于何处？
 * 这些数据处于哪个处理阶段？
@@ -64,4 +64,4 @@ ht-degree: 5%
 
 ## 后续步骤
 
-本文档介绍了它 [!DNL Catalog Service] 在更大范围内的功能及其运行方式 [!DNL Experience Platform]。 有关与 [该API的不同端点](api/getting-started.md) 进行交互的步骤，请参阅目录开发 [!DNL Catalog] 人员指南。 建议您还参考有关过滤目录数 [据的指南](api/filter-data.md) ，以遵循限制API响应中返回数据的最佳实践。
+本文档介绍了它 [!DNL Catalog Service] 在更大范围内的功能及其运行方式 [!DNL Experience Platform]。 有关与 [[!DNL Catalog] 该API的](api/getting-started.md) 不同端点进行交互的步骤，请参阅开发 [!DNL Catalog] 人员指南。 建议您还参考有关过滤目录数 [据的指南](api/filter-data.md) ，以遵循限制API响应中返回数据的最佳实践。
