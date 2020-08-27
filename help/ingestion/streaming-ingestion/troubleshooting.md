@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 流摄取疑难解答
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '997'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ Adobe Experience Platform [!DNL Data Ingestion] 提供REST风格的API，您可�
 
 请求有效负荷只有在发送到之后才能进行评估 [!DNL Platform]。 执行同步验证时，有效负载返回已填充的JSON对象，而无效负载返回错误消息。 在异步验证期间，服务会检测任何格式错误的数据，并将其发 [!DNL Data Lake] 送到以后可以检索到的分析。 有关更多 [信息，请参见](../quality/streaming-validation.md) “流验证”概述。
 
-### 当在不支持同步验证的边缘上请求同步验证时，会出现什么情况？
+### 在不支持同步验证的边缘上请求同步验证时，会出现什么情况？
 
 当请求的位置不支持同步验证时，将返回501错误响应。 有关同步验证 [的更多信息](../quality/streaming-validation.md) ，请参阅流验证概述。
 
@@ -100,4 +100,4 @@ Adobe Experience Platform [!DNL Data Ingestion] 提供REST风格的API，您可�
 
 有两种身份命名空间:默认和自定义。 使用自定义命名空间时，请确保命名空间已在中注册 [!DNL Identity Service]。 有关使用 [默认命名空间和自定义](../../identity-service/namespaces.md) ，请参阅标识命名空间概述。
 
-您可以使用 [!DNL Experience Platform UI](https://platform.adobe.com) 查看邮件摄取失败原因的更多信息。 单击 **[!UICONTROL 左侧导航]** 中的“监视”，然后视图“ _[!UICONTROL 流式端到端”选项卡]_，以查看在选定时间段内流化的消息批。
+您可以使用 [[!DNLExperience PlatformUI]](https://platform.adobe.com) ，查看有关消息失败接收原因的更多信息。 单击 **[!UICONTROL 左侧导航]** 中的“监视”，然后视图“ _[!UICONTROL 流式端到端”选项卡]_ ，以查看在选定时间段内流化的消息批。
