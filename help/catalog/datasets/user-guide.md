@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;enable dataset;Dataset;dataset
 solution: Experience Platform
 title: 数据集用户指南
 topic: datasets
+description: 本数据集用户指南提供了有关在Adobe Experience Platform用户界面内处理数据集时执行常见操作的说明。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
 workflow-type: tm+mt
-source-wordcount: '1148'
+source-wordcount: '1168'
 ht-degree: 0%
 
 ---
