@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建并发布机器学习模型演练
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1542'
+source-wordcount: '1548'
 ht-degree: 0%
 
 ---
@@ -45,10 +45,10 @@ ht-degree: 0%
 * 从Adobe公 [!DNL Jupyter Notebook] 共存储 <a href="https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs" target="_blank">库下载三个必 [!DNL Git] 需文件</a>，这些文件将用于演示 [!DNL JupyterLab] 中的工作流 [!DNL Data Science Workspace]。
 
 * 对本教程中使用的下列主要概念的有效理解：
-   * [!DNL Experience Data Model](../../xdm/home.md): 由Adobe领导的标准化工作，为客户体验管理定 [!DNL Profile] 义标准模式，如ExperienceEvent。
-   * 数据集： 实际数据的存储和管理结构。 XDM模式的物理实例 [化实例](../../xdm/schema/field-dictionary.md)。
-   * 批： 数据集由批量组成。 批是在一段时间内收集的一组数据，并作为单个单元一起处理。
-   * [!DNL JupyterLab]: [!DNL JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) 是一个面向Project的开放源码、基于web的界 [!DNL Jupyter] 面，并紧密集成到 [!DNL Experience Platform]中
+   * [[!DNL体验数据模型]](../../xdm/home.md):由Adobe领导的标准化工作，为客户体验管理定 [!DNL Profile] 义标准模式，如ExperienceEvent。
+   * 数据集：实际数据的存储和管理结构。 XDM模式的物理实例 [化实例](../../xdm/schema/field-dictionary.md)。
+   * 批：数据集由批量组成。 批是在一段时间内收集的一组数据，并作为单个单元一起处理。
+   * [!DNL JupyterLab]: [[!DNL JupyterLab]是](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) 一个基于Web的开放源代码界面， [!DNL Jupyter] 它紧密集成在Project中 [!DNL Experience Platform]。
 
 ## 准备数据 {#prepare-your-data}
 
@@ -142,7 +142,7 @@ ht-degree: 0%
 ### 评分和生成洞察
 
 1. 在产品推荐模型 *概述* 页面上，单击性能最佳的培训运行的名称，其中具有最高的召回率和精确度值。
-2. 在培训运行详细信息页面的右上方，单击“得分 **[!UICONTROL ”]**。
+2. 在培训运行详细信息页面的右上角，单击“得分 **[!UICONTROL ”]**。
 3. 选择 **[!UICONTROL Recommendations输入数据集]** ，作为评分输入数据集，该数据集与您创建模型并执行其培训运行时使用的数据集相同。 然后，单击“下 **[!UICONTROL 一步]**”。
    ![](../images/models-recipes/model-walkthrough/scoring_input.png)
 4. 选择 **[!UICONTROL Recommendations输出数据集]** ，作为评分输出数据集。 评分结果将作为批处理存储在此数据集中。
