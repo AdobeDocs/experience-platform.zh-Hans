@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;etl;ETL;etl transformations;ETL transformations
 solution: Experience Platform
 title: 示例ETL转换
 topic: overview
+description: 本文演示了以下示例转换，这些转换是提取、转换、加载(ETL)开发人员可能遇到的。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: f4a4e65a087313dc4e2414f999e021e3f6e17137
 workflow-type: tm+mt
-source-wordcount: '466'
+source-wordcount: '482'
 ht-degree: 1%
 
 ---
@@ -53,10 +54,10 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 | F_NAME | person.name.firstName | 复制为字符串 |
 | L_NAME | person.name.lastName | 复制为字符串 |
 | 性别 | person.gender | 将性别转换为相应的人。性别枚举值 |
-| DOB | person.byrthDayAndMonth: “MM-DD”<br/>person.birthDate: &quot;YYYY-MM-DD&quot;<br/>person.birthYear: YYYY | 将birthDayAndMonth转换为<br/>string将birthDate转换<br/>为string将birthYear转换为short int |
+| DOB | person.byrthDayAndMonth:“MM-DD”<br/>person.birthDate:&quot;YYYY-MM-DD&quot;<br/>person.birthYear:YYYY | 将birthDayAndMonth转换为<br/>string将birthDate转换<br/>为string将birthYear转换为short int |
 | 电子邮件 | personalEmail.address | 复制为字符串 |
 | CRMID | identityMap.CRMID[{&quot;id&quot;:x, primary:false}] | 复制为字符串并将Primary设置为false（在identityMap中复制为字符串）到CRMID数组 |
-| ECID | identityMap.ECID[{&quot;id&quot;:x，主： false}] | 复制为字符串并将Primary设置为false（在identityMap中复制为ECID数组中的第一个条目） |
+| ECID | identityMap.ECID[{&quot;id&quot;:x，主：false] | 复制为字符串并将Primary设置为false（在identityMap中复制为ECID数组中的第一个条目） |
 | 洛亚尔蒂 | identityMap.LOYALTYID[{&quot;id&quot;:x, primary:true}] | 复制为字符串并将“主”设置为true（在identityMap中复制为字符串）到LOYALTYID数组 |
 | ECID2 | identityMap.ECID[{&quot;id&quot;:x, primary:false}] | 将“作为字符串”复制到identityMap中ECID数组中的第二个条目，并将“主”设置为false |
 | 电话 | homePhone.number | 复制为字符串 |
@@ -250,7 +251,7 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 ]
 ```
 
-在构建用于Adobe Experience Platform的数据帧时，务必确保其分层结构与现有XDM模式的分层结构精确匹配，以便字段能够正确映射。
+在Adobe Experience Platform建立数据帧以供使用时，务必确保其分层结构与现有XDM模式的层次结构精确匹配，以便字段能够正确映射。
 
 ## 标识到标识映射
 
