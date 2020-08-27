@@ -5,9 +5,9 @@ title: Privacy Service开发人员指南
 description: 使用RESTful API跨Adobe Experience Cloud应用程序管理数据主体的个人数据
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '759'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Privacy Service] 开发人员指南
 
-Adobe Experience Platform [!DNL Privacy Service] 提供了一个RESTful API和用户界面，允许您跨Adobe Experience Cloud应用程序管理（访问和删除）数据主体（客户）的个人数据。 [!DNL Privacy Service] 还提供了一个中央审计和日志记录机制，允许您访问涉及应用程序的作业的状态和 [!DNL Experience Cloud] 结果。
+Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户界面，允许您跨Adobe Experience Cloud应用程序管理（访问和删除）数据主体（客户）的个人数据。 [!DNL Privacy Service] 还提供了一个中央审计和日志记录机制，允许您访问涉及应用程序的作业的状态和 [!DNL Experience Cloud] 结果。
 
 本指南介绍如何使用 [!DNL Privacy Service] API。 有关如何使用UI的详细信息，请参阅 [Privacy ServiceUI概述](../ui/overview.md)。 有关API中所有可用端点的全面 [!DNL Privacy Service] 列表，请参阅 [API参考](https://www.adobe.io/apis/experiencecloud/gdpr/api-reference.html)。
 
@@ -23,7 +23,7 @@ Adobe Experience Platform [!DNL Privacy Service] 提供了一个RESTful API和�
 
 本指南需要了解以下功 [!DNL Experience Platform] 能：
 
-* [!DNL Privacy Service](../home.md): 提供REST风格的API和用户界面，允许您跨Adobe Experience Cloud应用程序管理来自数据主体（客户）的访问和删除请求。
+* [[!DNLPrivacy Service]](../home.md):提供REST风格的API和用户界面，允许您跨Adobe Experience Cloud应用程序管理来自数据主体（客户）的访问和删除请求。
 
 以下各节提供了成功调用Privacy ServiceAPI所需了解的其他信息。
 
@@ -35,7 +35,7 @@ Adobe Experience Platform [!DNL Privacy Service] 提供了一个RESTful API和�
 
 要调用API，您必 [!DNL Privacy Service] 须首先收集要在所需标头中使用的访问凭据：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -59,17 +59,17 @@ Adobe Experience Platform [!DNL Privacy Service] 提供了一个RESTful API和�
 
 #### 一次性设置
 
-转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台，使用Adobe ID登录。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
+转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台并登录您的Adobe ID。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
 
-创建新项目后，单击“项 **[!UICONTROL 目概述]** ”屏 _[!UICONTROL 幕上的“添加API]_”。
+创建新项目后，单击“项 **[!UICONTROL 目概述]** ”屏 _[!UICONTROL 幕上的“添加API]_ ”。
 
 ![](../images/api/getting-started/add-api-button.png)
 
-出 _[!UICONTROL 现添加API]_屏幕。 在单**[!UICONTROL &#x200B;击&#x200B;]**“下一步”之前，从可用API的列表中选择**[!UICONTROL  Privacy ServiceAPI ]**。
+出 _[!UICONTROL 现添加API]_ 屏幕。 在单 **[!UICONTROL 击]** “下一步”之前，从可用API的列表中选择 **[!UICONTROL Privacy ServiceAPI]**。
 
 ![](../images/api/getting-started/add-privacy-service-api.png)
 
-将出 _[!UICONTROL 现配置]_API屏幕。 选择“Generate a**[!UICONTROL  key pair ]**（生成键对）”选**[!UICONTROL &#x200B;项，然后单击右&#x200B;]**下角的“Generate keypair（生成键对）”。
+将出 _[!UICONTROL 现配置]_ API屏幕。 选择“Generate a **[!UICONTROL key pair]**（生成键对）”选 **[!UICONTROL 项，然后单击右]** 下角的“Generate keypair（生成键对）”。
 
 ![](../images/api/getting-started/generate-key-pair.png)
 
@@ -77,10 +77,10 @@ Adobe Experience Platform [!DNL Privacy Service] 提供了一个RESTful API和�
 
 ![](../images/api/getting-started/key-pair-generated.png)
 
-将API添加到项目后，项目页面将重新显示在 _Privacy ServiceAPI概述_ 页面。 从此处向下滚动到服 _[!UICONTROL 务帐户(JWT)]_，该部分提供对API的所有调用所需的以下访问凭[!DNL Privacy Service]据：
+将API添加到项目后，项目页面将重新显示在 _Privacy ServiceAPI概述_ 页面。 从此处向下滚动到服 _[!UICONTROL 务帐户(JWT)]_ ，该部分提供对API的所有调用所需的以下访问凭 [!DNL Privacy Service] 据：
 
-* **[!UICONTROL 客户端ID]**: 客户端ID是必须 `{API_KEY}` 在x-api-key头中提供的客户端ID。
-* **[!UICONTROL 组织ID]**: 组织ID是 `{IMS_ORG}` 必须在x-gw-ims-org-id标题中使用的值。
+* **[!UICONTROL 客户端ID]**:客户端ID是必须 `{API_KEY}` 在x-api-key头中提供的客户端ID。
+* **[!UICONTROL 组织ID]**:组织ID是 `{IMS_ORG}` 必须在x-gw-ims-org-id标题中使用的值。
 
 ![](../images/api/getting-started/jwt-credentials.png)
 
@@ -88,7 +88,7 @@ Adobe Experience Platform [!DNL Privacy Service] 提供了一个RESTful API和�
 
 您必须收集的最终必需凭 `{ACCESS_TOKEN}`据是您的，在授权头中使用。 与和的值 `{API_KEY}` 不 `{IMS_ORG}`同，必须每24小时生成一个新令牌才能继续使用 [!DNL Platform] API。
 
-要生成新密 `{ACCESS_TOKEN}`钥，请打开之前下载的私钥，并将其内容粘贴到“生成访问令牌”旁的 _[!UICONTROL 文本框中]_，然后单**[!UICONTROL &#x200B;击“生成令牌”]**。
+要生成新密 `{ACCESS_TOKEN}`钥，请打开之前下载的私钥，并将其内容粘贴到“生成访问令牌”旁的 _[!UICONTROL 文本框中]_ ，然后单 **[!UICONTROL 击“生成令牌”]**。
 
 ![](../images/api/getting-started/paste-private-key.png)
 
