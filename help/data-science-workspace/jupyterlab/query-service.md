@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Jupyter笔记本中的查询服务
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '764'
+source-wordcount: '783'
 ht-degree: 1%
 
 ---
@@ -27,14 +27,14 @@ ht-degree: 1%
 - 数据 [!DNL Adobe Analytics] 集
 
 - 对本教程中使用的下列主要概念的有效理解：
-   - [!DNL Experience Data Model (XDM) and XDM System](../../xdm/home.md)
-   - [!DNL Query Service](../../query-service/home.md)
-   - [!DNL Query Service SQL Syntax](../../query-service/sql/overview.md)
+   - [[!DNL体验数据模型(XDM)和XDM系统]](../../xdm/home.md)
+   - [[!DNL查询服务]](../../query-service/home.md)
+   - [[!DNL查询服务SQL语法]](../../query-service/sql/overview.md)
    - [Adobe Analytics]
 
 ## 访问 [!DNL JupyterLab] 和 [!DNL Query Service] {#access-jupyterlab-and-query-service}
 
-1. 在 [!DNL Experience Platform](https://platform.adobe.com)中，从左 **[!UICONTROL 侧导航]** 列导航到笔记本。 请稍等片刻，JupyterLab将加载。
+1. 在[ [!DNLExperience Platform]](https://platform.adobe.com)中，从左 **[!UICONTROL 侧导航]** 列导航到“笔记本”。 请稍等片刻，JupyterLab将加载。
 
    ![](../images/jupyterlab/query/jupyterlab_launcher.png)
 
@@ -85,10 +85,10 @@ ht-degree: 1%
    target_day = "01"
    ```
 
-   - `target_table` : 数据集的 [!DNL Adobe Analytics] 名称。
-   - `target_year` : 目标数据的特定年份。
-   - `target_month` : 目标的特定月份。
-   - `target_day` : 目标数据的特定日期。
+   - `target_table` :数据集的 [!DNL Adobe Analytics] 名称。
+   - `target_year` :目标数据的特定年份。
+   - `target_month` :目标的特定月份。
+   - `target_day` :目标数据的特定日期。
 
    >[!NOTE]
    >
@@ -290,4 +290,4 @@ LIMIT  10;
 
 ## 后续步骤 <!-- omit in toc -->
 
-本教程演示了在笔记本中使用的一些示 [!DNL Query Service] 例用 [!DNL Jupyter] 例。 请按照 [使用Jupyter Notebooks教程分析数据](./analyze-your-data.md) ，了解如何使用Data Access SDK执行类似操作。
+本教程演示了在笔记本中使用的一些 [!DNL Query Service] 示例 [!DNL Jupyter] 用例。 请按照 [使用Jupyter Notebooks教程分析数据](./analyze-your-data.md) ，了解如何使用Data Access SDK执行类似操作。
