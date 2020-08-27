@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;access control;adobe admin console
 solution: Experience Platform
-title: 访问控制概述
 topic: overview
+title: 访问控制概述
+description: Adobe Experience Platform的访问控制通过Adobe Admin Console提供。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。
 translation-type: tm+mt
-source-git-commit: e66fd20eb7a153e556a3716bb255af084e52292e
+source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
 workflow-type: tm+mt
-source-wordcount: '1103'
+source-wordcount: '1131'
 ht-degree: 3%
 
 ---
