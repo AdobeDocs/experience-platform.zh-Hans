@@ -3,10 +3,11 @@ keywords: Experience Platform;walkthrough;Data Science Workspace;popular topics
 solution: Experience Platform
 title: 数据科学工作区演练
 topic: Walkthrough
+description: 此文档为Adobe Experience Platform数据科学工作区提供了演练。 具体来说，数据科学家将通过的一般工作流程来解决使用机器学习的问题。
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: 194a29124949571638315efe00ff0b04bff19303
 workflow-type: tm+mt
-source-wordcount: '1638'
+source-wordcount: '1667'
 ht-degree: 0%
 
 ---
@@ -14,12 +15,12 @@ ht-degree: 0%
 
 # [!DNL Data Science Workspace] 漫游
 
-此文档提供Adobe Experience Platform演练 [!DNL Data Science Workspace]。 具体来说，我们将讲述一个数据科学家将经历的一般工作流程，用机器学习来解决一个问题。
+本文档为Adobe Experience Platform提供了一个演练 [!DNL Data Science Workspace]。 具体来说，我们将讲述一个数据科学家将经历的一般工作流程，用机器学习来解决一个问题。
 
 ## 先决条件
 
 - 注册的Adobe ID帐户
-   - Adobe ID帐户必须已添加到具有Adobe Experience Platform访问权限的组织，并且 [!DNL Data Science Workspace]
+   - Adobe ID帐户必须已添加到一个可访问Adobe Experience Platform和 [!DNL Data Science Workspace]
 
 ## 数据科学家的动机
 
@@ -29,7 +30,7 @@ ht-degree: 0%
 
 数据科学家的解决方案是利用零售商可以访问的丰富历史数据，预测未来趋势并优化定价决策。 我们将利用过去的销售数据来培训我们的机器学习模型，并使用该模型来预测未来的销售趋势。 通过这种方式，零售商将能够获得洞察，在更改定价时帮助他们。
 
-在此概述中，我们将介绍数据科学家通过的步骤来获取数据集并创建一个模型来预测每周的销售。 我们将浏览Adobe Experience Platform上“Sample Retail Sales Notebook”（零售销售笔记本示例）的以下部分 [!DNL Data Science Workspace]:
+在此概述中，我们将介绍数据科学家通过的步骤来获取数据集并创建一个模型来预测每周的销售。 我们将浏览Adobe Experience Platform零售销售示例笔记本的以下部分 [!DNL Data Science Workspace]:
 
 - [设置](#setup)
 - [浏览数据](#exploring-data)
@@ -44,7 +45,7 @@ ht-degree: 0%
 
 ![](./images/walkthrough/jupyterlab_launcher.png)
 
-在我们的教程中，我们将 [!DNL Python] 使用中的 [!DNL Jupyter Notebook] 3来展示如何访问和浏览数据。 在“启动器”页面中提供了示例笔记本。 我们将使用“零售销售”范例( [!DNL Python] 3)。
+在我们的教程中，我们将 [!DNL Python] 使用中的 [!DNL Jupyter Notebook] 3来展示如何访问和浏览数据。 在“启动器”页面中提供了示例笔记本。 我们将使用“零售销售”范例(3 [!DNL Python] )。
 
 ![](./images/walkthrough/retail_sales.png)
 
@@ -96,7 +97,7 @@ df.describe()
 
 通过这个，我们可以看到每个特征有6435个实例。 此外，还给出了平均、标准偏差(std)、最小、最大和间隔等统计信息。 这给出了有关数据偏差的信息。 在下一节中，我们将重点介绍可视化功能，这些功能与这些信息一起使用，以便我们能够完全了解我们的数据。
 
-从最小值和最大值看 `store`，我们可以看到有45个数据表示的唯一存储。 店也 `storeTypes` 有差别。 通过执行以下操作， `storeTypes` 可以查看分发内容：
+从最小值和最大值看 `store`，我们可以看到有45个数据表示的唯一存储。 店也 `storeTypes` 有差别。 通过执行以下操作， `storeTypes` 我们可以查看分发内容：
 
 ![](./images/walkthrough/df_groupby.png)
 
@@ -114,7 +115,7 @@ df.describe()
 
 ![](./images/walkthrough/box_whisker.png)
 
-用方框和晶须图显示数据的分布。 当框跨越四分之一的范围时，图的外线显示上四分一和下四分一。 框中的线标记中间值。 高于上四分之一或下四分之一的任何数据点都标记为圆。 这些点被视为异常值。
+用方框和晶须图显示数据的分布。 出图的外线显示上和下四分位图，而框跨越四分位图范围。 框中的线标记中间值。 高于上四分之一或下四分之一的任何数据点都标记为圆。 这些点被视为异常值。
 
 接下来，我们可以按时计算每周的销售情况。 我们只显示第一家商店的输出。 笔记本中的代码生成6个图，对应于我们数据集中45个商店中的6个。
 
