@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;data lake privacy;identity namespaces;privacy;data lake
 solution: Experience Platform
 title: 数据湖中的隐私请求处理
 topic: overview
+description: Adobe Experience Platform Privacy Service处理客户访问、选择退出出售或删除其法律和组织隐私法规规定的个人数据的请求。 此文档涵盖与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
 workflow-type: tm+mt
-source-wordcount: '1204'
+source-wordcount: '1249'
 ht-degree: 0%
 
 ---
