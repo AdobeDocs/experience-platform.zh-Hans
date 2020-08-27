@@ -3,11 +3,12 @@ keywords: Experience Platform;developer guide;SDK;Data Access SDK;Data Science W
 solution: Experience Platform
 title: 平台SDK指南
 topic: SDK authoring
+description: 本教程提供有关在Python和R中将data_access_sdk_python转换为新的Python平台_sdk的信息。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '447'
-ht-degree: 1%
+source-wordcount: '470'
+ht-degree: 5%
 
 ---
 
@@ -151,10 +152,10 @@ df2
 | 操作 | 函数 |
 | --------- | -------- |
 | 等于 (`=`) | `eq()` |
-| Greater than (`>`) | `gt()` |
-| Greater than or equal to (`>=`) | `ge()` |
-| Less than (`<`) | `lt()` |
-| Less than or equal to (`<=`) | `le()` |
+| 大于 (`>`) | `gt()` |
+| 大于或等于 (`>=`) | `ge()` |
+| 小于 (`<`) | `lt()` |
+| 小于或等于 (`<=`) | `le()` |
 | And (`&`) | `And()` |
 | 或 (`|`) | `Or()` |
 
