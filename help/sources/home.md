@@ -5,9 +5,9 @@ title: Adobe Experience Platform源连接器概述
 topic: overview
 description: Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用平台服务构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: c8e53a25c5b22e8d840658fe26ff47875947a6d0
 workflow-type: tm+mt
-source-wordcount: '970'
+source-wordcount: '866'
 ht-degree: 0%
 
 ---
@@ -47,68 +47,68 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 
 云存储源无需下载、格式化 [!DNL Platform] 或上传即可将您自己的数据导入其中。 摄取的数据可格式化为XDM JSON、XDM镶木地板或分隔。 该过程的每个步骤都使用用户界面集成到源工作流中。 有关更多信息，请参阅以下相关文档:
 
-- [[!DNL Azure Data Lake存储Gen2]连接器](connectors/cloud-storage/adls-gen2.md)
-- [[!DNL Azure Blob]连接器](connectors/cloud-storage/blob.md)
-- [[!DNLAmazonKinesis](connectors/cloud-storage/kinesis.md) ]连接器
-- [[!DNLAmazonS3]连接器](connectors/cloud-storage/s3.md)
-- [[!DNL Apache HDFS]连接器](connectors/cloud-storage/hdfs.md)
-- [[!DNL Azure事件集线器]连接器](connectors/cloud-storage/eventhub.md)
-- [[!DNL Azure文件存储]连接器](connectors/cloud-storage/azure-file-storage.md)
-- [[!DNL FTP和SFTP]连接器](connectors/cloud-storage/ftp-sftp.md)
-- [[!DNL Google Cloud存储]连接器](connectors/cloud-storage/google-cloud-storage.md)
+- [[!DNL Azure Data Lake Storage Gen2] 连接器](connectors/cloud-storage/adls-gen2.md)
+- [[!DNL Azure Blob] 连接器](connectors/cloud-storage/blob.md)
+- [[!DNL Amazon Kinesis] 连接器](connectors/cloud-storage/kinesis.md)
+- [[!DNL Amazon S3] 连接器](connectors/cloud-storage/s3.md)
+- [[!DNL Apache HDFS] 连接器](connectors/cloud-storage/hdfs.md)
+- [[!DNL Azure Event Hubs] 连接器](connectors/cloud-storage/eventhub.md)
+- [[!DNL Azure File Storage] 连接器](connectors/cloud-storage/azure-file-storage.md)
+- [[!DNL FTP and SFTP] 连接器](connectors/cloud-storage/ftp-sftp.md)
+- [[!DNL Google Cloud Storage] 连接器](connectors/cloud-storage/google-cloud-storage.md)
 
 ### 客户关系管理(CRM)
 
 CRM系统提供的数据有助于建立客户关系，进而创造忠诚度并推动客户保留。 [!DNL Experience Platform] 支持从和中获取 [!DNL Microsoft Dynamics 365] CRM数 [!DNL Salesforce]据 有关更多信息，请参阅以下相关文档:
 
-- [[!DNL Microsoft Dynamics]连接器](connectors/crm/ms-dynamics.md)
-- [[!DNL Salesforce]连接器](connectors/crm/salesforce.md)
+- [[!DNL Microsoft Dynamics] 连接器](connectors/crm/ms-dynamics.md)
+- [[!DNL Salesforce] 连接器](connectors/crm/salesforce.md)
 
 ### 客户成功
 
 [!DNL Experience Platform] 支持从第三方客户成功应用程序中获取数据。 有关更多信息，请参阅以下相关文档:
 
-- [[!DNL Salesforce Service Cloud]连接器](connectors/customer-success/salesforce-service-cloud.md)
-- [[!DNL ServiceNow]连接器](connectors/customer-success/servicenow.md)
+- [[!DNL Salesforce Service Cloud] 连接器](connectors/customer-success/salesforce-service-cloud.md)
+- [[!DNL ServiceNow] 连接器](connectors/customer-success/servicenow.md)
 
 ### 数据库
 
 [!DNL Experience Platform] 支持从第三方数据库中摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
 
-- [[!DNLAmazon红移]连接器](connectors/databases/redshift.md)
-- [[!Azure HDInsights上的DNL Apache Hive]连接器](connectors/databases/hive.md)
-- [[!Azure HDInsights上的DNL Apache Spark]连接器](connectors/databases/spark.md)
-- [[!DNL AzureData Explorer]连接器](connectors/databases/data-explorer.md)
-- [[!DNL Azure突触分析]连接器](connectors/databases/synapse-analytics.md)
-- [[!DNL Azure表存储]连接器](connectors/databases/ats.md)
-- [[!DNL Couchbase]连接器](connectors/databases/couchbase.md)
-- [[!DNL Google BigQuery]连接器](connectors/databases/bigquery.md)
-- [[!DNL GreenPlum]连接器](connectors/databases/greenplum.md)
-- [[!DNL HP Vertica]连接器](connectors/databases/hp-vertica.md)
-- [[!DNL IBM DB2]连接器](connectors/databases/ibm-db2.md)
-- [[!DNL Microsoft SQL Server]连接器](connectors/databases/sql-server.md)
-- [[!DNL MySQL]连接器](connectors/databases/mysql.md)
-- [[!DNL Oracle]连接器](connectors/databases/oracle.md)
-- [[!DNL Phoenix]连接器](connectors/databases/phoenix.md)
-- [[!DNL PostgreSQL]连接器](connectors/databases/postgres.md)
+- [[!DNL Amazon Redshift] 连接器](connectors/databases/redshift.md)
+- [[!DNL Apache Hive on Azure HDInsights] 连接器](connectors/databases/hive.md)
+- [[!DNL Apache Spark on Azure HDInsights] 连接器](connectors/databases/spark.md)
+- [[!DNL Azure Data Explorer] 连接器](connectors/databases/data-explorer.md)
+- [[!DNL Azure Synapse Analytics] 连接器](connectors/databases/synapse-analytics.md)
+- [[!DNL Azure Table Storage] 连接器](connectors/databases/ats.md)
+- [[!DNL Couchbase] 连接器](connectors/databases/couchbase.md)
+- [[!DNL Google BigQuery] 连接器](connectors/databases/bigquery.md)
+- [[!DNL GreenPlum] 连接器](connectors/databases/greenplum.md)
+- [[!DNL HP Vertica] 连接器](connectors/databases/hp-vertica.md)
+- [[!DNL IBM DB2] 连接器](connectors/databases/ibm-db2.md)
+- [[!DNL Microsoft SQL Server] 连接器](connectors/databases/sql-server.md)
+- [[!DNL MySQL] 连接器](connectors/databases/mysql.md)
+- [[!DNL Oracle] 连接器](connectors/databases/oracle.md)
+- [[!DNL Phoenix] 连接器](connectors/databases/phoenix.md)
+- [[!DNL PostgreSQL] 连接器](connectors/databases/postgres.md)
 
 ### 营销自动化
 
 [!DNL Experience Platform] 支持从第三方营销自动化系统中获取数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
 
-- [[!DNL HubSpot]连接器](connectors/marketing-automation/hubspot.md)
+- [[!DNL HubSpot] 连接器](connectors/marketing-automation/hubspot.md)
 
 ### 付款
 
 [!DNL Experience Platform] 支持从第三方支付系统中摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
 
-- [[!DNL PayPal]连接器](connectors/payments/paypal.md)
+- [[!DNL PayPal] 连接器](connectors/payments/paypal.md)
 
 ### 协议
 
 [!DNL Experience Platform] 支持从第三方协议系统接收数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
 
-- [[!DNL通用OData]连接器](connectors/protocols/odata.md)
+- [[!DNL Generic OData] 连接器](connectors/protocols/odata.md)
 
 ## 访问控制数据获取中的源
 
