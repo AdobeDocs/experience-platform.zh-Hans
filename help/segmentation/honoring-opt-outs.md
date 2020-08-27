@@ -5,9 +5,9 @@ title: 支持退出
 topic: overview
 description: 'Experience Platform允许您的客户发送关于在实时客户用户档案内使用和存储其数据的选择退出请求]。 这些选择退出请求是加利福尼亚消费者隐私法(CCPA)的一部分，该法案为加州居民提供访问和删除个人数据以及了解其个人数据是出售还是披露（以及向谁）的权利。 '
 translation-type: tm+mt
-source-git-commit: 0fc356b67af4d34e35cd9329385ec284d9336953
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1030'
 ht-degree: 0%
 
 ---
@@ -23,10 +23,10 @@ ht-degree: 0%
 
 遵守退出请求需要了解所涉及的各 [!DNL Adobe Experience Platform] 种服务。 在处理退出请求之前，请查看以下服务的文档：
 
-- [!DNL Real-time Customer Profile](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
-- [!DNL Adobe Experience Platform Segmentation Service](./home.md):允许您根据数据构建受众 [!DNL Real-time Customer Profile] 细分。
-- [!DNL Experience Data Model (XDM)](../xdm/home.md):平台组织客户体验数据的标准化框架。
-- [!DNL Adobe Experience Platform Privacy Service](../privacy-service/home.md):帮助组织自动遵守涉及内部客户数据的数据隐私法规 [!DNL Platform]。
+- [[!DNL实时客户用户档案]](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+- [[!DNLAdobe Experience Platform分段服务]](./home.md):允许您根据数据构建受众 [!DNL Real-time Customer Profile] 细分。
+- [[!DNL体验数据模型(XDM)]](../xdm/home.md):平台组织客户体验数据的标准化框架。
+- [[!DNLAdobe Experience Platform Privacy Service]](../privacy-service/home.md):帮助组织自动遵守涉及内部客户数据的数据隐私法规 [!DNL Platform]。
 
 ## 选择退出混音
 
@@ -132,4 +132,4 @@ In some instances, such as building a segment of people who have opted out, it m
 
 有关细分的更多信息(包括通过API和用户界面使用细分定义和受众)，请首先阅读细分 [概述](./home.md)。
 
-要进一步了解中的数据隐 [!DNL Platform]私，包括 [!DNL Privacy Service] 如何帮助促进自动遵守法律和组织隐私法规，请参阅上的文档 [!DNL Privacy Service](../privacy-service/home.md)。
+要进一步了解中的数据隐 [!DNL Platform]私，包括如 [!DNL Privacy Service] 何帮助促进自动遵守法律和组织隐私法规，请参阅有关[!DNL [Privacy Service]的文档](../privacy-service/home.md)。
