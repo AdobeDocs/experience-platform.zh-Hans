@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;train and evaluate;Data Science Workspace;popular topics
+keywords: Experience Platform;train and evaluate;Data Science Workspace;popular topics;Sensei Machine Learning API
 solution: Experience Platform
 title: 培训和评估模型(API)
 topic: Tutorial
+description: 本教程将向您展示如何使用Sensei机器学习API调用创建、培训和评估模型。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '1191'
+source-wordcount: '1210'
 ht-degree: 1%
 
 ---
@@ -25,9 +26,9 @@ ht-degree: 1%
 
 在教程中，您现在应当具有以下值：
 
-- `{ACCESS_TOKEN}`: 身份验证后提供的特定载体令牌值。
-- `{IMS_ORG}`: 您的IMS组织凭据可在您独特的Adobe Experience Platform集成中找到。
-- `{API_KEY}`: 在您独特的Adobe Experience Platform集成中找到您的特定API密钥值。
+- `{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。
+- `{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。
+- `{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。
 
 - 链接到智能服务的Docker图像
 
@@ -66,10 +67,10 @@ curl -X POST \
   -d `{JSON_PAYLOAD}`
 ```
 
-`{ACCESS_TOKEN}`: 身份验证后提供的特定载体令牌值。\
-`{IMS_ORG}`: 您的IMS组织凭据可在您独特的Adobe Experience Platform集成中找到。\
-`{API_KEY}`: 在您独特的Adobe Experience Platform集成中找到您的特定API密钥值。\
-`{JSON_PAYLOAD}`: MLInstance的配置。 我们在教程中使用的示例如下：
+`{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
+`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。\
+`{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。\
+`{JSON_PAYLOAD}`:MLInstance的配置。 我们在教程中使用的示例如下：
 
 ```JSON
 {
@@ -159,8 +160,8 @@ curl -X POST \
 }
 ```
 
-`{ENGINE_ID}`: 此ID表示在下创建MLInstance的引擎。\
-`{INSTANCE_ID}`: 表示MLInstance的ID。
+`{ENGINE_ID}`:此ID表示在下创建MLInstance的引擎。\
+`{INSTANCE_ID}`:表示MLInstance的ID。
 
 ### 创建实验
 
@@ -178,10 +179,10 @@ curl -X POST \
   -d `{JSON PAYLOAD}`
 ```
 
-`{IMS_ORG}`: 您的IMS组织凭据可在您独特的Adobe Experience Platform集成中找到。\
-`{ACCESS_TOKEN}`: 身份验证后提供的特定载体令牌值。\
-`{API_KEY}`: 在您独特的Adobe Experience Platform集成中找到您的特定API密钥值。\
-`{JSON_PAYLOAD}`: 尝试创建的对象。 我们在教程中使用的示例如下：
+`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。\
+`{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
+`{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。\
+`{JSON_PAYLOAD}`:尝试创建的对象。 我们在教程中使用的示例如下：
 
 ```JSON
 {
@@ -193,7 +194,7 @@ curl -X POST \
 }
 ```
 
-`{INSTANCE_ID}`: 表示MLInstance的ID。
+`{INSTANCE_ID}`:表示MLInstance的ID。
 
 “实验”创建的响应如下所示。
 
@@ -213,8 +214,8 @@ curl -X POST \
 }
 ```
 
-`{EXPERIMENT_ID}`: 表示您刚刚创建的实验的ID。
-`{INSTANCE_ID}`: 表示MLInstance的ID。
+`{EXPERIMENT_ID}`:表示您刚刚创建的实验的ID。
+`{INSTANCE_ID}`:表示MLInstance的ID。
 
 ### 为培训创建计划实验
 
@@ -234,10 +235,10 @@ curl -X POST \
   -d '{JSON_PAYLOAD}`
 ```
 
-`{IMS_ORG}`: 您的IMS组织凭据可在您独特的Adobe Experience Platform集成中找到。\
-`{ACCESS_TOKEN}`: 身份验证后提供的特定载体令牌值。\
-`{API_KEY}`: 在您独特的Adobe Experience Platform集成中找到您的特定API密钥值。\
-`{JSON_PAYLOAD}`: 要发布的数据集。 我们在教程中使用的示例如下：
+`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。\
+`{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
+`{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。\
+`{JSON_PAYLOAD}`:要发布的数据集。 我们在教程中使用的示例如下：
 
 ```JSON
 {
@@ -301,8 +302,8 @@ curl -X POST \
 }
 ```
 
-`{EXPERIMENT_ID}`: 表示实验的ID。\
-`{INSTANCE_ID}`: 表示MLInstance的ID。
+`{EXPERIMENT_ID}`:表示实验的ID。\
+`{INSTANCE_ID}`:表示MLInstance的ID。
 
 
 ### 创建培训的实验运行
@@ -321,11 +322,11 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{EXPERIMENT_ID}`: 与要目标的实验对应的ID。 这可以在创建实验时的响应中找到。\
-`{IMS_ORG}`: 您的IMS组织凭据可在您独特的Adobe Experience Platform集成中找到。\
-`{ACCESS_TOKEN}`: 身份验证后提供的特定载体令牌值。\
-`{API_KEY}`: 在您独特的Adobe Experience Platform集成中找到您的特定API密钥值。\
-`{JSON_PAYLOAD}`: 要创建培训运行，您必须在正文中包含以下内容：
+`{EXPERIMENT_ID}`:与要目标的实验对应的ID。 这可以在创建实验时的响应中找到。\
+`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。\
+`{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
+`{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。\
+`{JSON_PAYLOAD}`:要创建培训运行，您必须在正文中包含以下内容：
 
 ```JSON
 {
@@ -373,8 +374,8 @@ curl -X POST \
 }
 ```
 
-`{EXPERIMENT_RUN_ID}`:  表示“实验运行”的ID。\
-`{EXPERIMENT_ID}`: 表示“实验运行”所处实验的ID。
+`{EXPERIMENT_RUN_ID}`: 表示“实验运行”的ID。\
+`{EXPERIMENT_ID}`:表示“实验运行”所处实验的ID。
 
 ### 检索实验运行状态
 
@@ -390,11 +391,11 @@ curl -X GET \
   -H 'x-api-key: {API_KEY}'
 ```
 
-`{EXPERIMENT_ID}`: 表示实验的ID。\
-`{EXPERIMENT_RUN_ID}`: 表示“实验运行”的ID。\
-`{ACCESS_TOKEN}`: 身份验证后提供的特定载体令牌值。\
-`{IMS_ORG}`: 您的IMS组织凭据可在您独特的Adobe Experience Platform集成中找到。\
-`{API_KEY}`: 在您独特的Adobe Experience Platform集成中找到您的特定API密钥值。
+`{EXPERIMENT_ID}`:表示实验的ID。\
+`{EXPERIMENT_RUN_ID}`:表示“实验运行”的ID。\
+`{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
+`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。\
+`{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。
 
 **响应**
 
@@ -431,8 +432,8 @@ GET调用将提供参数中的状 `state` 态，如下所示：
 }
 ```
 
-`{EXPERIMENT_RUN_ID}`:  表示“实验运行”的ID。\
-`{EXPERIMENT_ID}`: 表示“实验运行”所处实验的ID。
+`{EXPERIMENT_RUN_ID}`: 表示“实验运行”的ID。\
+`{EXPERIMENT_ID}`:表示“实验运行”所处实验的ID。
 
 除州外， `DONE` 其他州还包括：
 - `PENDING`
@@ -454,9 +455,9 @@ curl -X GET \
   -H 'x-gw-ims-org-id: {IMS_ORG}'
 ```
 
-`{EXPERIMENT_RUN_ID}`: 与要目标的“实验运行”对应的ID。 这可以在创建实验运行时的响应中找到。\
-`{ACCESS_TOKEN}`: 身份验证后提供的特定载体令牌值。\
-`{IMS_ORG}`: 您的IMS组织凭据可在您独特的Adobe Experience Platform集成中找到。
+`{EXPERIMENT_RUN_ID}`:与要目标的“实验运行”对应的ID。 这可以在创建实验运行时的响应中找到。\
+`{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
+`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。
 
 响应表示已创建的经过培训的模型。
 
@@ -484,9 +485,9 @@ curl -X GET \
 }
 ```
 
-`{MODEL_ID}`: 与“模型”(Model)对应的ID。\
-`{EXPERIMENT_ID}`:  与实验运行对应的ID在下。\
-`{EXPERIMENT_RUN_ID}`: 与实验运行对应的ID。
+`{MODEL_ID}`:与“模型”(Model)对应的ID。\
+`{EXPERIMENT_ID}`: 与实验运行对应的ID在下。\
+`{EXPERIMENT_RUN_ID}`:与实验运行对应的ID。
 
 ### 停止和删除计划实验
 
@@ -501,9 +502,9 @@ curl -X DELETE \
   -H 'x-gw-ims-org-id: {IMS_ORG}'
 ```
 
-`{EXPERIMENT_ID}`:  与实验对应的ID。\
-`{ACCESS_TOKEN}`: 身份验证后提供的特定载体令牌值。\
-`{IMS_ORG}`: 您的IMS组织凭据可在您独特的Adobe Experience Platform集成中找到。
+`{EXPERIMENT_ID}`: 与实验对应的ID。\
+`{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
+`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。
 
 >[!NOTE]
 >
