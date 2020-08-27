@@ -5,9 +5,9 @@ title: 模式合成基础
 topic: overview
 description: 本文档介绍了体验数据模型(XDM)模式，以及构成要在Adobe Experience Platform使用的模式的构件、原则和最佳做法。
 translation-type: tm+mt
-source-git-commit: 23a69653ee773562cb0261b8e0bb67411eb4856e
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '2811'
+source-wordcount: '2839'
 ht-degree: 0%
 
 ---
@@ -62,11 +62,11 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 模式用于将数据引入 [!DNL Experience Platform]。 此视图可跨多个服务使用，以创建单个实体的单一统一数据。 因此，考虑模式时，必须考虑客户身份以及哪些字段可用于识别主题，无论数据来自何处。
 
-为了帮助处理此过程，您的模式中的关键字段可以标记为身份。 在获取数据时，这些字段中的数据将插入该个[!UICONTROL 人的]“身份图”中。 然后，图形数据可以被和其 [!DNL Real-time Customer Profile](../../profile/home.md) 他服务访 [!DNL Experience Platform] 问，以提供每个客户的拼接视图。
+为了帮助处理此过程，您的模式中的关键字段可以标记为身份。 在获取数据时，这些字段中的数据将插入该个[!UICONTROL 人的]“身份图”中。 然后，[!DNL实时客户用户档案] [和其他服务可以访问图表](../../profile/home.md) , [!DNL Experience Platform] 以为每个单独的客户提供拼接视图。
 
-通常标为“Identity”的[!UICONTROL 字段]包括：电子邮件地址、电 [!DNL Experience Cloud ID (ECID)](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)话号码、CRM ID或其他唯一ID字段。 您还应考虑特定于您组织的所有唯一标识符，因为它们可能也是[!UICONTROL 好的]“身份”字段。
+通常标为“Identity”的[!UICONTROL 字段]包括：电子邮件地址、电 [话号码、[!DNLExperience CloudID(ECID)]](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)、CRM ID或其他唯一ID字段。 您还应考虑特定于您组织的所有唯一标识符，因为它们可能也是[!UICONTROL 好的]“身份”字段。
 
-在模式规划阶段考虑客户身份非常重要，这有助于确保整合数据以构建最可靠的用户档案。 请参阅Adobe Experience Platform [身份服务概述](../../identity-service/home.md) ，进一步了解身份信息如何帮助您向客户提供数字体验。
+在模式规划阶段考虑客户身份非常重要，这有助于确保整合数据以构建尽可能最可靠的用户档案。 请参阅Adobe Experience Platform [身份服务概述](../../identity-service/home.md) ，进一步了解身份信息如何帮助您向客户提供数字体验。
 
 #### xdm:identityMap {#identityMap}
 
@@ -101,7 +101,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 }
 ```
 
-如上例所示，对象中的每个键都 `identityMap` 表示一个身份命名空间。 每个键的值是对象的数组，表示各个命名空间的`id`标识值()。 有关由列表 [!DNL Identity Service] 应用程序 [识别的标准身份命名空间的Adobe](../../identity-service/troubleshooting-guide.md#standard-namespaces) ，请参阅文档。
+如上例所示，对象中的每个键都 `identityMap` 表示一个身份命名空间。 每个键的值是对象的数组，表示各个命名空间的`id`标识值()。 有关列表标 [!DNL Identity Service] 识命名空间的 [，请参阅文档](../../identity-service/troubleshooting-guide.md#standard-namespaces) ，该标识由Adobe应用程序识别。
 
 >[!NOTE]
 >
@@ -123,7 +123,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 ### 模式和数据获取
 
-为了将数据引入， [!DNL Experience Platform]必须先创建数据集。 数据集是数据转换和跟踪的构 [!DNL Catalog Service](../../catalog/home.md)建块，通常表示包含摄取数据的表或文件。 所有数据集都基于现有的XDM模式，它们为所摄取的数据应包含的内容以及如何构建提供约束。 有关更多信息， [请参阅Adobe Experience Platform](../../ingestion/home.md) 数据摄取概述。
+为了将数据引入， [!DNL Experience Platform]必须先创建数据集。 数据集是[!DNL Catalog Service]的数据转 [换和跟踪的构建块](../../catalog/home.md)，通常表示包含所摄取数据的表或文件。 所有数据集都基于现有的XDM模式，它们为所摄取的数据应包含的内容以及如何构建提供约束。 有关更多信息， [请参阅Adobe Experience Platform](../../ingestion/home.md) 数据摄取概述。
 
 ## 模式积木
 
@@ -194,11 +194,11 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 下游服务和应用程序使用的某些数据操作对特定字段类型强制实施限制。 受影响的服务包括但不限于：
 
-* [!DNL Real-time Customer Profile](../../profile/home.md)
-* [!DNL Identity Service](../../identity-service/home.md)
-* [!DNL Segmentation](../../segmentation/home.md)
-* [!DNL Query Service](../../query-service/home.md)
-* [!DNL Data Science Workspace](../../data-science-workspace/home.md)
+* [[!DNL实时客户用户档案]](../../profile/home.md)
+* [[!DNL标识服务]](../../identity-service/home.md)
+* [[!DNL分段]](../../segmentation/home.md)
+* [[!DNL查询服务]](../../query-service/home.md)
+* [[!DNL数据科学工作区]](../../data-science-workspace/home.md)
 
 在创建用于下游服务的模式之前，请查看这些服务的相应文档，以便更好地了解该模式所针对的数据操作的现场要求和限制。
 
