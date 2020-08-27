@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 验证和访问Experience PlatformAPI
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '850'
+source-wordcount: '853'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 验证和访问 [!DNL Experience Platform] API
 
-此文档提供了一个分步教程，用于获取对Adobe Experience Platform开发者帐户的访问权，以便对API进行 [!DNL Experience Platform] 调用。
+此文档提供了一个分步教程，用于获取对Adobe Experience Platform开发人员帐户的访问权，以便调用 [!DNL Experience Platform] API。
 
 ## 进行身份验证以进行API调用
 
@@ -27,11 +27,11 @@ ht-degree: 1%
 
 为了成功调用API, [!DNL Experience Platform] 您需要：
 
-* 可访问Adobe Experience Platform的IMS组织
+* 一个可进入Adobe Experience Platform的国际管理系统组织
 * 注册的Adobe ID帐户
 * Admin Console管理员将您添加为 **开发** 人 **员** 和产品用户。
 
-以下部分将逐步介绍创建Adobe ID以及成为组织的开发人员和用户的步骤。
+以下部分介绍创建Adobe ID并成为组织的开发人员和用户的步骤。
 
 ### 创建Adobe ID
 
@@ -47,7 +47,7 @@ ht-degree: 1%
 
 **获得开发人员访问权限**
 
-请与您 [!DNL Admin Console] 组织中的管理员联系，以使用将您添加为您组织的某个产品的开发人员 [!DNL Admin Console](https://adminconsole.adobe.com/)。
+请与您 [!DNL Admin Console] 组织中的管理员联系，以使用[!DNLAdmin Console]将您添加为您组织的某个产品 [的开发人员](https://adminconsole.adobe.com/)。
 
 ![](images/authentication/assign-developer.png)
 
@@ -85,13 +85,13 @@ ht-degree: 1%
 
 ### 一次性设置
 
-转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台，使用Adobe ID登录。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
+转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台并登录您的Adobe ID。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
 
 创建新项目后，单击“项 **[!UICONTROL 目概述]** ”屏 _幕上的“添加API_ ”。
 
 ![](images/authentication/add-api-button.png)
 
-出 _现添加API_ 屏幕。 单击Adobe Experience Platform的产品图标，然后选择 **[!UICONTROL Experience PlatformAPI]** ，然后单 **[!UICONTROL 击下一]**&#x200B;步。
+出 _现添加API_ 屏幕。 单击Adobe Experience Platform的产品图标，然后选择 **[!UICONTROL Experience PlatformAPI]** ，然后单 **[!UICONTROL 击Next]**。
 
 ![](images/authentication/add-platform-api.png)
 
@@ -132,7 +132,7 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 
 **响应**
 
-如果您的响应与下面显示的响应类似，则您的凭据有效且有效。 （此响应已被截断为空间。）
+如果您的响应与下面显示的响应类似，则您的凭据有效且有效。 （此响应已被截断，用于空间。）
 
 ```JSON
 {
