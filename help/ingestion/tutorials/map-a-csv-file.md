@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 将CSV文件映射到XDM模式
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 7876e6d52815968802bd73bb5e340c99ea3387a8
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1354'
+source-wordcount: '1371'
 ht-degree: 2%
 
 ---
@@ -22,14 +22,14 @@ ht-degree: 2%
 
 本教程需要对以下组件有一个有效的了解 [!DNL Platform]:
 
-- [!DNL Experience Data Model (XDM System)](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
-- [!DNL Batch ingestion](../batch-ingestion/overview.md): 从用户提供的 [!DNL Platform] 数据文件中摄取数据的方法。
+- [[!DNL体验数据模型（XDM系统）]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [[!DNL批量摄取]](../batch-ingestion/overview.md):从用户提供的 [!DNL Platform] 数据文件中摄取数据的方法。
 
 本教程还要求您已创建数据集以将CSV数据引入。 有关在UI中创建数据集的步骤，请参阅数 [据摄取教程](./ingest-batch-data.md)。
 
 ## 选择目标
 
-登录，然 [!DNL Adobe Experience Platform](https://platform.adobe.com) 后从左侧导 **[!UICONTROL 航栏]** 中选择工作流 *[!UICONTROL ，以访问工作流]* 工作区。
+登录到 [[!DNLAdobe Experience Platform]](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏中选]** 择工作流 *[!UICONTROL ，以访问工作流工]* 作区。
 
 从工作流 **[!UICONTROL 屏幕]** ，选择数 **[!UICONTROL 据摄取部分下的]** “将CSV映射 **[!UICONTROL 到XDM模式]** ”，然后选 ****&#x200B;择启动。
 
@@ -117,7 +117,7 @@ ht-degree: 2%
 
 ## 后续步骤
 
-通过遵循本教程，您已成功将平面CSV文件映射到XDM模式并将其引入 [!DNL Platform]。 此数据现在可供下游服务 [!DNL Platform] 使用，如 [!DNL Real-time Customer Profile]。 有关详细信息， [!DNL Real-time Customer Profile](../../profile/home.md) 请参阅概述。
+通过遵循本教程，您已成功将平面CSV文件映射到XDM模式并将其引入 [!DNL Platform]。 此数据现在可供下游服务 [!DNL Platform] 使用，如 [!DNL Real-time Customer Profile]。 有关详细信息， [请参阅[!DNL实时客户用户档案]](../../profile/home.md) 的概述。
 
 ## 附录
 
@@ -141,7 +141,7 @@ ht-degree: 2%
 | replacestr | 替换搜索字符串（如果存在于原始字符串中）。 | replaceestr(&quot;This is a string re test&quot;, &quot;re&quot;, &quot;replace&quot;) | &quot;这是字符串替换测试&quot; |
 | substr | 返回给定长度的子字符串。 | substr（&quot;这是子字符串测试&quot;, 7, 8） | &quot; a subst&quot; |
 | lower /<br>lcase | 将字符串转换为小写。 | lower(&quot;HeLLo&quot;)<br>lcase(&quot;HeLLo&quot;) | “hello” |
-| 上/<br>ucase | 将字符串转换为大写。 | upper(&quot;HeLLo&quot;)<br>ucase(&quot;HeLLo&quot;) | “您好” |
+| 上/<br>下 | 将字符串转换为大写。 | upper(&quot;HeLLo&quot;)<br>ucase(&quot;HeLLo&quot;) | “您好” |
 | 拆分 | 在分隔符上拆分输入字符串。 | split(&quot;Hello world&quot;, &quot; &quot;) | `["Hello", "world"]` |
 | 加入 | 使用分隔符连接对象列表。 | `join(" ", ["Hello", "world"]`) | “你好世界” |
 | 凝聚 | 返回给定列表中的第一个非空对象。 | coalesce(null、null、null、“first”、null、“second”) | “first” |
