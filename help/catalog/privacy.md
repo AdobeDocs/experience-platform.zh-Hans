@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据湖中的隐私请求处理
 topic: overview
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1189'
+source-wordcount: '1204'
 ht-degree: 0%
 
 ---
@@ -22,10 +22,10 @@ Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退�
 
 在阅读本指南之前，建议您对以下服 [!DNL Experience Platform] 务有一定的了解：
 
-* [!DNL Privacy Service](../privacy-service/home.md):管理跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的客户请求。
-* [!DNL Catalog Service](home.md):数据位置和谱系的记录系统 [!DNL Experience Platform]。 提供可用于更新数据集元数据的API。
-* [!DNL Experience Data Model (XDM) System](../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-* [!DNL Identity Service](../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
+* [[!DNLPrivacy Service]](../privacy-service/home.md):管理跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的客户请求。
+* [[!DNL目录服务]](home.md):数据位置和谱系的记录系统 [!DNL Experience Platform]。 提供可用于更新数据集元数据的API。
+* [[!DNL体验数据模型(XDM)系统]](../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL标识服务]](../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
 
 ## 了解身份命名空间 {#namespaces}
 
