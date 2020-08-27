@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;optimize;model;Data Science Workspace;popular topics
+keywords: Experience Platform;optimize;model;Data Science Workspace;popular topics;model insights
 solution: Experience Platform
 title: 优化模型
 topic: Tutorial
+description: 模型洞察框架为数据科学家提供数据科学工作区中的工具，以便快速、明智地选择基于实验的最优机器学习模型。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
 workflow-type: tm+mt
-source-wordcount: '1221'
+source-wordcount: '1249'
 ht-degree: 0%
 
 ---
