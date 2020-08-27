@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建经过身份验证的流连接
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '633'
 ht-degree: 2%
 
 ---
@@ -14,18 +14,18 @@ ht-degree: 2%
 
 # 创建经过身份验证的流连接
 
-经过身份验证的Adobe Experience Platform收集允许服 [!DNL Real-time Customer Profile] 务( [!DNL Identity]如和)区分来自可信源和不可信源的记录。 要发送个人身份信息(PII)的客户可以通过作为访问令牌请求的一部分发送POST来发送个人身份信息。
+通过实名数据收集，Adobe Experience Platform服 [!DNL Real-time Customer Profile] 务( [!DNL Identity]如和)可以区分来自可信来源和不可信来源的记录。 要发送个人身份信息(PII)的客户可以通过作为访问令牌请求的一部分发送POST来发送个人身份信息。
 
 ## 入门指南
 
-要将流数据开始到Adobe Experience Platform，需要流连接注册。 注册流连接时，您需要提供一些关键详细信息，如流数据源。
+要向Adobe Experience Platform开始流数据，需要流连接注册。 注册流连接时，您需要提供一些关键详细信息，如流数据源。
 
 注册流连接后，作为数据生成者，您将拥有一个可用于将数据流化到的唯一URL [!DNL Platform]。
 
-本教程还需要对各种Adobe Experience Platform服务具有相关的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
+本教程还需要掌握Adobe Experience Platform各项服务的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md): 组织体验数据 [!DNL Platform] 的标准化框架。
-- [!DNL Real-time Customer Profile](../../profile/home.md): 根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织体验数据 [!DNL Platform] 的标准化框架。
+- [[!DNL实时客户用户档案]](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
 
 以下各节提供了成功调用流式摄取API所需了解的其他信息。
 
@@ -37,7 +37,7 @@ ht-degree: 2%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -51,7 +51,7 @@ ht-degree: 2%
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-- 内容类型： application/json
+- 内容类型：application/json
 
 ## 创建连接
 
