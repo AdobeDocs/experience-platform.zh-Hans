@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 模式注册表API开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1195'
+source-wordcount: '1207'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Schema Registry] API开发人员指南
 
-该 [!DNL Schema Registry] 应用程序用于访问Adobe Experience Platform中的模式库，提供用户界面和RESTful API，可从中访问所有可用的库资源。
+该 [!DNL Schema Registry] 库用于访问Adobe Experience Platform的模式库，提供可访问所有可用库资源的用户界面和RESTful API。
 
 使用模式注册表API，您可以执行基本的CRUD操作，以视图和管理Adobe Experience Platform内所有可用的模式和相关资源。 这包括由Adobe、合作伙伴和您使 [!DNL Experience Platform] 用其应用程序的供应商定义的应用程序。 您还可以使用API调用为您的组织创建新模式和资源，以及视图和编辑您已定义的资源。
 
@@ -22,12 +22,12 @@ ht-degree: 0%
 
 ## 先决条件
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-* [!DNL Experience Data Model (XDM) System](../home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-   * [模式合成基础](../schema/composition.md): 了解XDM模式的基本构件。
-* [!DNL Real-time Customer Profile](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [!DNL Sandboxes](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [[!DNL体验数据模型(XDM)系统]](../home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+   * [模式合成基础](../schema/composition.md):了解XDM模式的基本构件。
+* [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL沙箱]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Schema Registry] 息。
 
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -55,7 +55,7 @@ ht-degree: 0%
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
-* 内容类型： application/json
+* 内容类型：application/json
 
 ## 了解您的TENANT_ID {#know-your-tenant_id}
 
@@ -157,11 +157,11 @@ curl -X GET \
  }
 ```
 
-* `tenantId`: IMS `TENANT_ID` 组织的价值。
+* `tenantId`:IMS `TENANT_ID` 组织的价值。
 
 ## 了解 `CONTAINER_ID` {#container}
 
-调用 [!DNL Schema Registry] API需要使用 `CONTAINER_ID`。 有两种容器可以对其进行API调用： 全 **局容器** 和租 **户容器**。
+调用 [!DNL Schema Registry] API需要使用 `CONTAINER_ID`。 有两种容器可以对其进行API调用：全 **局容器** 和租 **户容器**。
 
 ### 全球容器
 
@@ -205,7 +205,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->如果仅 `major` 提供版本（例如1、2、3），注册表将返回最 `minor` 新版本(例如， .1、.2、.3)。
+>如果仅 `major` 提供版本（例如1、2、3），注册表将返回最 `minor` 新版本(例如，.1、.2、.3)。
 
 ## XDM现场限制和最佳实践
 
@@ -227,8 +227,8 @@ curl -X GET \
 }
 ```
 
-* 字段对象的名称可能包含字母数字、短划线或下划线字符，但 **不能** 以下划线开始。
-   * **正确：** `fieldName`, `field_name2`, `Field-Name``field-name_3`
+* 字段对象的名称可能包含字母数字、短划线或下划线字符，但 **不能以下划线** 开始。
+   * **正确：**`fieldName`, `field_name2`, `Field-Name``field-name_3`
    * **不正确：** `_fieldName`
 * 字段对象的名称首选使用camelCase。 示例: `fieldName`
 * 该字段应包含一个 `title`以标题大小写写写的字段。 示例: `Field Name`
