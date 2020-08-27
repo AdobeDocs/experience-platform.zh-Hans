@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;product profile
 solution: Experience Platform
 title: 管理产品用户档案的用户
 topic: user guide
+description: 此文档显示如何在Adobe Experience Platform的UI中管理产品用户档案的用户。
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '180'
+source-wordcount: '199'
 ht-degree: 1%
 
 ---
@@ -24,7 +25,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->如果用户未出现在自动完成窗口中，请在搜索栏中输入其完整的电子邮件地址。 将向电子邮件发送邀请，其中包含有关设置Adobe ID帐户的说明。
+>如果用户未出现在自动完成窗口中，请在搜索栏中输入其完整的电子邮件地址。 将向电子邮件发送邀请函，其中附有设置Adobe ID帐户的说明。
 
 选择用户后，单击“保 **[!UICONTROL 存]** ”，将其添加到产品用户档案。
 
