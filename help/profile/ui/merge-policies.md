@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 合并策略用户指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: 98be95e0a6e0661dcddf2db1cf6993b643d4df2b
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1421'
+source-wordcount: '1433'
 ht-degree: 0%
 
 ---
@@ -24,9 +24,9 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 本指南要求对合并策略涉及的各 [!DNL Experience Platform] 种服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
 
-* [!DNL Real-time Customer Profile](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [!DNL Identity Service](../../identity-service/home.md):通过将 [!DNL Real-time Customer Profile] 来自被引入的不同数据源的身份连接到其中，实现 [!DNL Platform]了。
-* [!DNL Experience Data Model (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [[!DNL实时客户用户档案]](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL标识服务]](../../identity-service/home.md):通过将 [!DNL Real-time Customer Profile] 来自被引入的不同数据源的身份连接到其中，实现 [!DNL Platform]了。
+* [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 ## 视图合并策略
 
@@ -104,7 +104,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ![合并策略登陆页](../images/merge-policies/select-edit.png)
 
-出现“编 [!UICONTROL 辑合并策略] ”屏幕时，您可以对“名称”、“模式”、“ID”类型、  ”和“Prizting Type”属性以及类型、以及选择是否将此策略指定为是否将本策略转换为您组织的Default Merge Merge Policy。
+出现“编 [!UICONTROL 辑合并策略] ”屏幕时，您可以对“名称”、“模式”、“ID [!UICONTROL ”、“ID”类型和] Rege类型”属性、以及选择是否将此策略指定为，或者是否将此策略选为您组织的默认合并策略。
 
 >[!NOTE]
 >
@@ -128,4 +128,4 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ## 后续步骤
 
-现在，您已经为IMS组织创建和配置了合并策略，您可以使用这些策略根据受众数据创建用户档案段。 有关如何 [使用](../../segmentation/home.md) 创建和使用区段的更多信息，请参阅分段概述 [!DNL Experience Platform]。
+现在，您已经为IMS组织创建和配置了合并策略，您可以使用这些策略根据受众数据创建用户档案段。 有关如何 [使用](../../segmentation/home.md) 、创建和处理区段的更多信息，请参阅分段概述 [!DNL Experience Platform]。
