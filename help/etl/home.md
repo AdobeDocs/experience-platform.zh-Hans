@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;ETL;etl;etl integrations;ETL integrations
 solution: Experience Platform
 title: 创建ETL集成
 topic: overview
+description: ETL集成指南概述了创建高性能、安全连接器以进行Experience Platform并将数据引入平台的一般步骤。
 translation-type: tm+mt
-source-git-commit: 8b1b61b6446b28f92d6cf221003674fa09716c53
+source-git-commit: f4a4e65a087313dc4e2414f999e021e3f6e17137
 workflow-type: tm+mt
-source-wordcount: '4153'
+source-wordcount: '4173'
 ht-degree: 0%
 
 ---
