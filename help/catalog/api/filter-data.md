@@ -5,9 +5,9 @@ title: 使用查询参数筛选目录数据
 topic: developer guide
 description: Catalog Service API允许通过使用请求查询参数筛选响应数据。 目录的最佳实践之一是在所有API调用中使用过滤器，因为它们可减少API的负载并帮助提高整体性能。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 71678b10c9e137016ea404305b272508b9c8cabe
 workflow-type: tm+mt
-source-wordcount: '2085'
+source-wordcount: '2084'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 API [!DNL Catalog Service] 允许通过使用请求查询参数过滤响应数据。 最佳实践的一 [!DNL Catalog] 部分是在所有API调用中使用过滤器，因为它们可减少API的负载并帮助提高整体性能。
 
-此文档概述了筛选API中对象 [!DNL Catalog] 的最常用方法。 建议您在阅读目录开发人员指南时参 [考此文档](getting-started.md) ，进一步了解如何与API [!DNL Catalog] 交互。 有关的更多一般信 [!DNL Catalog Service]息，请参阅 [目录概述](../home.md)。
+此文档概述了筛选API中对象 [!DNL Catalog] 的最常用方法。 建议您在阅读目录开发人员指南时参 [考此文档](getting-started.md) ，进一步了解如何与API [!DNL Catalog] 交互。 有关的更多一般 [!DNL Catalog Service]信息，请参 [[!DNL Catalog] 阅概述](../home.md)。
 
 ## 限制返回的对象
 
