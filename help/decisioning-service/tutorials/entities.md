@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用API管理决策服务实体
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '7207'
+source-wordcount: '7220'
 ht-degree: 0%
 
 ---
@@ -26,9 +26,9 @@ ht-degree: 0%
 
 本教程需要对服务和API [!DNL Experience Platform] 惯例进行有效的了解。 存储 [!DNL Platform] 库是其他几种服务用来存储业 [!DNL Platform] 务对象和各种类型的元数据的服务。 它提供了一种安全、灵活的方式来管理和查询这些对象，供多个运行时服务使用。 就 [!DNL Decisioning Service] 是其中之一。 在开始本教程之前，请查看以下文档：
 
-- [!DNL Experience Data Model (XDM)](../../xdm/home.md):平台组织客户体验数据的标准化框架。
-- [!DNL Decisioning Service](./../home.md):介绍用于体验决策的概念和组件（一般），特别是优惠决策。 说明了在客户体验期间选择最佳演示选项时使用的策略。
-- [!DNL Profile Query Language (PQL)](../../segmentation/pql/overview.md):PQL是一种功能强大的语言，用于编写XDM实例上的表达式。 PQL用于定义决策规则。
+- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):平台组织客户体验数据的标准化框架。
+- [[!DNL决策服务]](./../home.md):介绍用于体验决策的概念和组件（一般），特别是优惠决策。 说明了在客户体验期间选择最佳演示选项时使用的策略。
+- [[!DNL用户档案查询语言(PQL)]](../../segmentation/pql/overview.md):PQL是一种功能强大的语言，用于编写XDM实例上的表达式。 PQL用于定义决策规则。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
