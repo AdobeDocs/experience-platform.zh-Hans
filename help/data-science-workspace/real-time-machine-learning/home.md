@@ -3,10 +3,11 @@ keywords: Experience Platform;developer guide;Data Science Workspace;popular top
 solution: Experience Platform
 title: 实时机器学习概述
 topic: Overview
+description: 实时机器学习可以显着增强您的数字体验内容对最终用户的相关性。 通过在Experience Edge上利用实时参考和持续学习，可以实现这一点。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '535'
 ht-degree: 1%
 
 ---
