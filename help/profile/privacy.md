@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 实时客户用户档案中的隐私请求处理
 topic: overview
 translation-type: tm+mt
-source-git-commit: f910351d49de9c4a18a444b99b7f102f4ce3ed5b
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '593'
+source-wordcount: '603'
 ht-degree: 0%
 
 ---
@@ -22,13 +22,13 @@ Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退�
 
 在阅读本指南之前，建议您对以下服 [!DNL Experience Platform] 务有一定的了解：
 
-* [!DNL Privacy Service](home.md): 管理跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的客户请求。
-* [!DNL Identity Service](../identity-service/home.md): 通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
-* [!DNL Real-time Customer Profile](../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNLPrivacy Service]](home.md):管理跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的客户请求。
+* [[!DNL标识服务]](../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
+* [[!DNL实时客户用户档案]](../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 ## 了解身份命名空间 {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service] 跨系统和设备连接客户身份数据。 [!DNL Identity Service] 使用 **身份命名空间** ，通过将身份值与其来源系统相关联来提供与身份值相关的上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising CloudID(“AdCloud”)或Adobe TargetID(“TNTID”))关联。
+Adobe Experience Platform [!DNL Identity Service] 将跨系统和设备的客户身份数据建立桥梁。 [!DNL Identity Service] 使用 **身份命名空间** ，通过将身份值与其来源系统相关联来提供与身份值相关的上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising CloudID(“AdCloud”)或Adobe TargetID(“TNTID”))关联。
 
 Identity Service维护全局定义（标准）和用户定义（自定义）标识命名空间的存储。 标准命名空间适用于所有组织（例如，“电子邮件”和“ECID”），而您的组织也可以创建自定义命名空间以满足其特定需求。
 
@@ -93,7 +93,7 @@ curl -X POST \
 
 ### 使用UI
 
-在UI中创建作业请求时，请务必在“产 **[!UICONTROL 品”下选]** 择AEP **[!UICONTROL Data Lake和／或]** 用户档案 _[!UICONTROL ，以便分别]_处理存储在或中的[!DNL Data Lake][!DNL Real-time Customer Profile]数据的作业。
+在UI中创建作业请求时，请务必在“产 **[!UICONTROL 品”下选]** 择AEP **[!UICONTROL Data Lake和／或]** 用户档案 _[!UICONTROL ，以便分别]_ 处理存储在或中的 [!DNL Data Lake][!DNL Real-time Customer Profile]数据的作业。
 
 <img src="images/privacy/product-value.png" width="450"><br>
 
