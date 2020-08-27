@@ -5,7 +5,7 @@ title: 创建特征管线
 topic: Tutorial
 description: Adobe Experience Platform允许您通过Sensei机器学习框架运行时构建和创建自定义功能管道，以大规模执行功能工程。 本文档描述了在功能管道中找到的各种类，并提供了使用PySpark中的“模型创作SDK”创建自定义功能管道的分步教程。
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 78f080fd7598799825c59a4fdfdcaf7d294560a3
 workflow-type: tm+mt
 source-wordcount: '1426'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Adobe Experience Platform允许您通过Sensei机器学习框架运行时（以下简称“运行时”）构建和创建定制功能管道，以大规模执行功能工程。
 
-本文档描述了在功能管道中找到的各种类，并提供了使用PySpark中的模型创作SDK创建自定义功能 [管道的分](./sdk.md) 步教程。
+本文档描述了在功能管道中找到的各种类，并提供了一个分步教程，用于在PySpark中使用“模型创作SDK”创 [建自定义功能](./sdk.md) 管道。
 
 在运行特征管线时，将发生以下工作流：
 
