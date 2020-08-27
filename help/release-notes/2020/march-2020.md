@@ -6,9 +6,9 @@ last-update: March 10, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: f881c1365684b1ca9e6bf9a8ce866d234dc54128
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '848'
+source-wordcount: '861'
 ht-degree: 5%
 
 ---
@@ -18,13 +18,13 @@ ht-degree: 5%
 
 **发行日期：2020 年 3 月 11 日**
 
-对Adobe Experience Platform中现有功能的更新：
+Adobe Experience Platform现有功能更新：
 
-* [!DNL Data Governance](#governance)
-* [!DNL Data Ingestion](#ingestion)
-* [!DNL Destinations](#destinations)
-* [!DNL Identity Service](#identity)
-* [!DNL Sources](#sources)
+* [[!DNL数据管理]](#governance)
+* [[!DNL数据摄取]](#ingestion)
+* [[!DNL目标]](#destinations)
+* [[!DNL标识服务]](#identity)
+* [[!DNL源]](#sources)
 
 ## [!DNL Data Governance] {#governance}
 
@@ -52,13 +52,13 @@ Adobe Experience Platform [!DNL Data Governance] 是用于管理客户数据并�
 
 ## 数据获取 {#ingestion}
 
-Adobe Experience Platform提供了丰富的功能集，用于采集任何类型的数据和延迟。 Adobe Experience Platform [!DNL Data Ingestion] 提供了多种数据替代方法，包括批处理API、流API、本机Adobe连接器、数据集成合作伙伴或Adobe Experience PlatformUI。
+Adobe Experience Platform提供丰富的功能集，可采集任何类型和延迟的数据。 Adobe Experience Platform [!DNL Data Ingestion] 提供了多种数据替代方法，包括批处理API、流API、本机Adobe连接器、数据集成合作伙伴或Adobe Experience PlatformUI。
 
 **新增功能**
 
 | 功能 | 描述 |
 |------- | -----------|
-| 部分批摄取 | 部分批量摄取是指能够摄取包含错误的数据，最高可达到某个阈值。 借助此功能，用户可以成功将其所有正确数据引入Adobe Experience Platform，同时单独对其所有错误数据进行批处理。 详细信息会添加到不成功的批中，以解释它们为何未通过验证。 有关部分批摄取的详细信息，请参阅部分 [批摄取文档](../../ingestion/batch-ingestion/partial.md)。 |
+| 部分批摄取 | 部分批量摄取是指能够摄取包含错误的数据，最高可达到某个阈值。 借助此功能，用户可以成功将其所有正确数据引入Adobe Experience Platform，同时单独分批其所有错误数据。 详细信息会添加到不成功的批中，以解释它们为何未通过验证。 有关部分批摄取的详细信息，请参阅部分 [批摄取文档](../../ingestion/batch-ingestion/partial.md)。 |
 
 **已知问题**
 
@@ -73,7 +73,7 @@ Adobe Experience Platform提供了丰富的功能集，用于采集任何类型�
 
 **新目标**
 
-您可以在新目标中激活Adobe Experience Platform数据。 有关详细信息，请参阅以下内容：
+您可以在新的目的地激活Adobe Experience Platform数据。 有关详细信息，请参阅以下内容：
 
 | 目标 | 描述 |
 |--- | ---|
@@ -86,7 +86,7 @@ Adobe Experience Platform提供了丰富的功能集，用于采集任何类型�
 
 提供相关的数字体验需要全面了解客户。 当客户数据在不同的系统中分散，导致每个客户似乎具有多个“身份”时，这就变得更加困难。
 
-Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统连接身份帮助您更好地视图客户及其行为，使您能够实时提供有影响力的个性化数字体验。
+Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统连接身份，帮助您更好地视图客户及其行为，从而实时提供有影响力的个性化数字体验。
 
 **新增功能**
 
@@ -102,7 +102,7 @@ Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统连接
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源收集数据，同时允许您使用服务构建、标记和增强该 [!DNL Platform] 数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)收集数据。
+Adobe Experience Platform可以从外部来源收集数据，同时允许您使用服务来构建、标记和增强该 [!DNL Platform] 数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)收集数据。
 
 [!DNL Experience Platform] 提供REST风格的API和交互式UI，让您可以轻松为各种数据提供者设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置获取运行的时间，以及管理数据获取吞吐量。
 
