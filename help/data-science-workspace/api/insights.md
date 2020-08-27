@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics
+keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;insights;sensei machine learning api
 solution: Experience Platform
 title: 洞察
 topic: Developer guide
+description: 洞察包含一些指标，这些指标可帮助数据科学家通过显示相关的评估指标来评估和选择最佳ML模型。
 translation-type: tm+mt
-source-git-commit: 7bd6807e620febe134f8c75e67c0f723850e49c1
+source-git-commit: 194a29124949571638315efe00ff0b04bff19303
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '497'
 ht-degree: 3%
 
 ---
@@ -39,7 +40,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回包含洞察列表的有效负荷，并且每个分析都具有唯一标识符( `id` )。 此外，您还将收 `context` 到包含与该特定分析关联的唯一标识符(这些标识符与“洞察”事件和指标数据关联)。
+成功的响应会返回一个有效负荷，该负荷包含列表的洞察，并且每个分析都具有唯一标识符( `id` )。 此外，您还将收 `context` 到包含与该特定分析关联的唯一标识符(这些标识符与“洞察”事件和量度数据关联)。
 
 ```json
 {
