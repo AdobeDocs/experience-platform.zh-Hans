@@ -1,20 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;catalog;data protection;encryption data lake
 solution: Experience Platform
-title: Adobe Experience Platform中的数据保护
+title: Adobe Experience Platform的数据保护
 topic: data protection
+description: 在数据湖中保留的所有数据都经过加密、存储和管理，并且使用一个独立的Microsoft Azure Data Lake存储帐户，该帐户对您的组织是独一无二的。 以下流程图说明了Experience Platform如何摄取、处理、加密和保留数据。
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '132'
+source-wordcount: '176'
 ht-degree: 0%
 
 ---
 
 
-# Adobe Experience Platform中的数据保护
+# Adobe Experience Platform的数据保护
 
-Adobe Experience Platform摄取和使用的所有数据都存储在一个高度粒度的数据存储 [!DNL Data Lake]中，它包含由所有管理的所有数据， [!DNL Platform]而不管来源或文件格式。 在单位独有的 [!DNL Data Lake] 隔离存储帐户中，对保留在该帐户中的所 [!DNL Microsoft Azure Data Lake] 有数据进行加密、存储和管理。
+Adobe Experience Platform摄取和使用的所有数据都存储在一个高度细 [!DNL Data Lake]粒度的数据存储中，它包含所有由管理的数据， [!DNL Platform]而不管来源或文件格式。 在单位独有的 [!DNL Data Lake] 隔离存储帐户中，对保留在该帐户中的所 [!DNL Microsoft Azure Data Lake] 有数据进行加密、存储和管理。
 
 以下流程图说明了数据的摄取、处理、加密和保留方式 [!DNL Experience Platform]:
 
