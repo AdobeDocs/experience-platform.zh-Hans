@@ -5,9 +5,9 @@ seo-title: SalesforceMarketing Cloud
 description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 seo-description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '503'
+source-wordcount: '507'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 概述
 
-[!DNL Salesforce Marketing Cloud](https://www.salesforce.com/products/marketing-cloud/email-marketing/) 是一款以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
+[[!DNL SalesforceMarketing Cloud]是以前称为ExactTarget的数字营销套件](https://www.salesforce.com/products/marketing-cloud/email-marketing/) ，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 
 要向其发送细 [!DNL Salesforce Marketing Cloud]分数据，您必 [须先在Adobe实时CDP中连接](#connect-destination) 目标 [，然后将存储位置中的](#import-data-into-salesforce) 导入设置为 [!DNL Salesforce Marketing Cloud]。
 
