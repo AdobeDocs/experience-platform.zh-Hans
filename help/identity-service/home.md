@@ -5,7 +5,7 @@ title: Adobe Experience Platform Identity Service
 topic: overview
 description: Adobe Experience Platform身份服务通过跨设备和系统连接身份帮助您更好地视图客户及其行为，使您能够实时提供有影响力的个性化数字体验。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 8b1b61b6446b28f92d6cf221003674fa09716c53
 workflow-type: tm+mt
 source-wordcount: '1711'
 ht-degree: 0%
