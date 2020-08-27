@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Policy enforcement;marketing actions api;API-based enforcement;data governance
 solution: Experience Platform
 title: 营销操作
 topic: developer guide
+description: 在《Adobe Experience Platform数据治理》的背景下，营销行动是Experience Platform数据消费者采取的行动，需要检查是否存在违反数据使用策略的情况。
 translation-type: tm+mt
-source-git-commit: 12c53122d84e145a699a2a86631dc37ee0073578
+source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
 workflow-type: tm+mt
-source-wordcount: '681'
+source-wordcount: '718'
 ht-degree: 2%
 
 ---
