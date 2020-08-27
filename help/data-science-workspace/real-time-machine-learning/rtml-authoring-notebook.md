@@ -3,10 +3,11 @@ keywords: Experience Platform;developer guide;Data Science Workspace;popular top
 solution: Experience Platform
 title: 实时机器学习笔记本用户指南
 topic: Training and scoring a ML model
+description: 以下指南概述了在Adobe Experience PlatformJupyterLab中构建实时机器学习应用程序所需的步骤。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
 workflow-type: tm+mt
-source-wordcount: '1637'
+source-wordcount: '1656'
 ht-degree: 0%
 
 ---
