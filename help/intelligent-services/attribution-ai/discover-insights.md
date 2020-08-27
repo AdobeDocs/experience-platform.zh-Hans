@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;insights;attribution ai;popular topics
+keywords: Experience Platform;insights;attribution ai;popular topics;attribution ai insights
 solution: Experience Platform
 title: 在Attribution AI中发掘洞察
 topic: Attribution AI insights
+description: 此文档可作为与Adobe智能服务用户界面中的服务实例洞察交互的指南。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1183'
 ht-degree: 1%
 
 ---
@@ -63,10 +64,10 @@ Attribution AI服务实例提供的洞察有助于制定和衡量与营销绩效
 
 “ *更多* ”操作按钮位于“编辑”旁的右上导 *航中*。 单击 **更多操作** ，将打开一个下拉列表，通过该下拉列表可以选择下列操作之一：
 
-- **删除**: 删除实例。
-- **下载摘要数据**: 下载包含摘要数据的CSV文件。
-- **访问分数**: 单击“ *访问得分* ”将您重定向到 [Attribution AI教程的访问得分](./download-scores.md)。
-- **视图运行历史**: 此时会显示一个列表，其中包含与服务实例关联的所有评分运行。
+- **删除**:删除实例。
+- **下载摘要数据**:下载包含摘要数据的CSV文件。
+- **访问分数**:单击“ *访问得分* ”将您重定向到 [Attribution AI教程的访问得分](./download-scores.md)。
+- **视图运行历史**:此时会显示一个列表，其中包含与服务实例关联的所有评分运行。
 
 ![更多操作](./images/insights/more-actions.png)
 
