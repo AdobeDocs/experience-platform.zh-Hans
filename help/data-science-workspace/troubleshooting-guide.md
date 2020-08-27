@@ -3,10 +3,11 @@ keywords: Experience Platform;troubleshooting;Data Science Workspace;popular top
 solution: Experience Platform
 title: 数据科学工作区疑难解答指南
 topic: Troubleshooting
+description: 本文档提供有关Adobe Experience Platform数据科学工作区的常见问题解答。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 194a29124949571638315efe00ff0b04bff19303
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '680'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Data Science Workspace] 疑难解答指南
 
-此文档提供有关Adobe Experience Platform的常见问题解答 [!DNL Data Science Workspace]。 有关API的一般问题 [!DNL Platform] 和疑难解答，请参阅 [Adobe Experience PlatformAPI疑难解答指南](../landing/troubleshooting.md)。
+此文档提供有关Adobe Experience Platform的常见问题的解答 [!DNL Data Science Workspace]。 有关API的一般问题 [!DNL Platform] 和疑难解答，请参阅 [Adobe Experience PlatformAPI疑难解答指南](../landing/troubleshooting.md)。
 
 ## [!DNL JupyterLab] 环境未加载 [!DNL Google Chrome]
 
@@ -22,7 +23,7 @@ ht-degree: 0%
 >
 >此问题已解决，但仍可能存在于Google Chrome 80.x浏览器中。 请确保您的Chrome浏览器是最新的。
 
-浏览 [!DNL Google Chrome] 器版本80.x默认情况下会阻止所有第三方Cookie。 此策略可以阻止 [!DNL JupyterLab] 在Adobe Experience Platform中加载。
+浏览 [!DNL Google Chrome] 器版本80.x默认情况下会阻止所有第三方Cookie。 本政策可防止 [!DNL JupyterLab] 在Adobe Experience Platform内装载。
 
 要解决此问题，请执行以下步骤：
 
@@ -52,7 +53,7 @@ ht-degree: 0%
 
 ## 为什么我无法在Safari [!DNL JupyterLab] 中访问？
 
-默认情况下，在Safari&lt; 12中，Safari禁用第三方Cookie。 由于您 [!DNL Jupyter] 的虚拟机实例位于与其父帧不同的域中，因此Adobe Experience Platform当前要求启用第三方cookie。 请启用第三方Cookie或切换到其他浏览器，如 [!DNL Google Chrome]。
+默认情况下，在Safari&lt; 12中，Safari禁用第三方Cookie。 由于您 [!DNL Jupyter] 的虚拟机实例位于与其父帧不同的域上，因此Adobe Experience Platform当前要求启用第三方cookie。 请启用第三方Cookie或切换到其他浏览器，如 [!DNL Google Chrome]。
 
 对于Safari 12，您需要将用户代理切换[!DNL Chrome]为“”或[!DNL Firefox]“”。 要切换用户代理，请打开Safari菜单 *开始* ，然后选择 **首选项**。 出现首选项窗口。
 
@@ -78,7 +79,7 @@ ht-degree: 0%
 
 ## 如何安装自定义 [!DNL Python] 库？
 
-该 [!DNL Python] 内核预装了许多流行的机器学习库。 但是，可以通过在代码单元格中执行以下命令来安装其他自定义库：
+该内 [!DNL Python] 核随许多流行的机器学习库预装。 但是，可以通过在代码单元格中执行以下命令来安装其他自定义库：
 
 ```shell
 !pip install {LIBRARY_NAME}
