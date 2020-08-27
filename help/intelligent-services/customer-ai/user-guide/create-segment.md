@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;insights; customer ai;popular topics
+keywords: Experience Platform;insights;customer ai;popular topics
 solution: Experience Platform
 title: 根据预测得分创建客户细分
 topic: Create a segment
+description: 当预测运行完成时，用户档案会自动消耗预测倾向得分。 利用客户AI得分丰富用户档案，可以创建客户细分，根据受众的倾向得分查找客户。 本节提供使用区段生成器创建区段的步骤。
 translation-type: tm+mt
-source-git-commit: e351a2d489730c1f1bd5f87be8d85612090bc009
+source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
-source-wordcount: '272'
+source-wordcount: '317'
 ht-degree: 0%
 
 ---
