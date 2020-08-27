@@ -4,9 +4,9 @@ solution: Adobe Experience Platform Data Science Workspace
 title: 创建特征管线
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1367'
+source-wordcount: '1372'
 ht-degree: 0%
 
 ---
@@ -438,4 +438,4 @@ https://www.getpostman.com/collections/c5fc0d1d5805a5ddd41a
 
 [//]: # (Next steps section should refer to tutorials on how to score data using the feature pipeline Engine. Update this document once those tutorials are available)
 
-通过阅读此文档，您使用“模型创作SDK”创作了一个功能管道，创建了Docker图像，并使用Docker图像URL通过API创建了一个功能管道 [!DNL Sensei Machine Learning] 模型。 现在，您可以继续使用进行数据集转换和大规模提取数据功能 [!DNL Sensei Machine Learning API](../api/getting-started.md)。
+通过阅读此文档，您使用“模型创作SDK”创作了一个功能管道，创建了Docker图像，并使用Docker图像URL通过API创建了一个功能管道 [!DNL Sensei Machine Learning] 模型。 您现在可以继续使用[!DNL Sensei机器学习API]大规模转 [换数据集和提取数据功能](../api/getting-started.md)。
