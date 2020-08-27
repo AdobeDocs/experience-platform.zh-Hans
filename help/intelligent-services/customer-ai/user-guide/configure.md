@@ -3,10 +3,11 @@ keywords: Experience Platform;user guide;customer ai;popular topics;configure in
 solution: Experience Platform
 title: 配置客户AI实例
 topic: Instance creation
+description: 智能服务将客户人工智能作为简单易用的Adobe Sensei服务提供，该服务可针对不同的用例进行配置。 以下各节提供了配置客户人工智能实例的步骤。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
-source-wordcount: '715'
+source-wordcount: '746'
 ht-degree: 0%
 
 ---
@@ -16,7 +17,7 @@ ht-degree: 0%
 
 作为智能服务的一部分，客户人工智能使您能够生成自定义倾向得分，而不必担心机器学习。
 
-智能服务将客户人工智能作为简单易用的Adobe Sensei服务提供，该服务可针对不同的用例进行配置。 以下各节提供配置客户人工智能实例的步骤。
+智能服务将客户人工智能作为简单易用的Adobe Sensei服务提供，该服务可针对不同的用例进行配置。 以下各节提供了配置客户人工智能实例的步骤。
 
 ## 设置实例 {#set-up-your-instance}
 
@@ -48,13 +49,13 @@ ht-degree: 0%
 
 此时 *会显示* “定义目标”步骤，它提供一个交互式环境，供您以可视方式定义目标。 目标由一个或多个事件组成，其中每个事件的发生基于其所持条件。 客户人工智能实例的目标是确定在给定时间范围内实现其目标的可能性。
 
-单击 **[!UICONTROL 输入字段名称]** ，然后从下拉菜单中选择一个字段。 单击第二个输入，为事件的条件选择一个子句，然后提供目标值以完成事件。 可通过单击添加事件来配 **[!UICONTROL 置其他事件]**。 最后，通过应用天数的预测时间帧来完成目标，然后单击“下 **[!UICONTROL 一步”]**。
+单击 **[!UICONTROL 输入字段名]** ，然后从下拉菜单中选择一个字段。 单击第二个输入，为事件的条件选择一个子句，然后提供目标值以完成事件。 可通过单击添加事件来配 **[!UICONTROL 置其他事件]**。 最后，通过应用天数的预测时间帧来完成目标，然后单击“下 **[!UICONTROL 一步”]**。
 
 ![](../images/user-guide/goal.png)
 
 ### 配置计划 *（可选）* {#configure-a-schedule}
 
-将显 *示高* 级步骤。 此可选步骤允许您配置计划以自动执行预测运行，定义预测排除以过滤某些事件，或者 **[!UICONTROL 单击]** “完成”（如果不需要）。
+将显 *示高级* 步骤。 此可选步骤允许您配置计划以自动执行预测运行，定义预测排除以过滤某些事件，或者 **[!UICONTROL 单击]** “完成”（如果不需要）。
 
 通过配置评分频率设置 *评分计划*。 可以计划每周或每月运行自动预测运行。
 
