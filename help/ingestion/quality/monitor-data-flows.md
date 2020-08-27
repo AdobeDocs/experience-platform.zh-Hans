@@ -5,9 +5,9 @@ title: 监控数据摄取
 topic: overview
 description: 本用户指南提供如何在Adobe Experience Platform用户界面中监控数据的步骤。 本指南要求您拥有Adobe ID并访问Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # 监控数据摄取
 
-数据摄取允许您将数据摄取到Adobe Experience Platform。 您可以使用批处理摄取(允许您使用各种文件类型（如CSV）插入数据)或流式摄取(允许您使用流式端点实 [!DNL Platform] 时摄取数据)。
+数据摄取允许您将数据摄取到Adobe Experience Platform。 您可以使用批处理摄取(允许您使用各种文件类型（如CSV）插入数据)，也可以使用流式摄取(允许您使用流式端点 [!DNL Platform] 实时摄取数据)。
 
 本用户指南提供如何在Adobe Experience Platform用户界面中监控数据的步骤。 本指南要求您拥有Adobe ID并访问Adobe Experience Platform。
 
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 ![](../images/quality/monitor-data-flows/click-streaming-end-to-end.png)
 
-将 *[!UICONTROL 显示“流式端到端]* ”监视页。 此工作区提供一个图表，用于显示接收流事件的速率 [!DNL Platform]，一个图表，用于显示成功处理的流事件的速率，以 [!DNL Real-time Customer Profile](../../profile/home.md)及传入数据的详细列表。
+将 *[!UICONTROL 显示“流式端到端]* ”监视页。 此工作区提供一个图表，显示流事件接收率 [!DNL Platform]，一个图表，显示流事件接收率，流用户档案被[!DNL实时] [成功处理](../../profile/home.md)，以及传入数据的详细列表。
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 
@@ -61,7 +61,7 @@ ht-degree: 0%
 
 ## 监控批量端对端数据获取
 
-在中， [!DNL Experience Platform UI](https://platform.adobe.com)单击左 **[!UICONTROL 侧导航]** 菜单上的“监视”。
+在[! [DNLExperience PlatformUI]中](https://platform.adobe.com)，单 **[!UICONTROL 击左侧导]** 航菜单上的“监视”。
 
 ![](../images/quality/monitor-data-flows/click-monitoring.png)
 
