@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用Jupyter笔记本创建菜谱
 topic: Tutorial
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '2292'
+source-wordcount: '2295'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ data_access_sdk_python
 
 这一步使用了 [熊猫数据框](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)。 数据可以使用SDK() [!DNL Adobe Experience Platform] 从文件中加 [!DNL Platform] 载，也可`platform_sdk`以使用熊猫的功能从外部 `read_csv()` 源加载 `read_json()` 数据。
 
-- [!DNL Platform SDK](#platform-sdk)
+- [[!DNL平台SDK]](#platform-sdk)
 - [外部源](#external-sources)
 
 >[!NOTE]
