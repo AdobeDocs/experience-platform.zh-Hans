@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;access control permissions;access control resource types;access control api
 solution: Experience Platform
 title: 列表权限和资源类型的名称
 topic: developer guide
+description: Adobe Experience Platform的访问控制允许您通过使用Adobe Admin Console管理各种平台功能的角色和权限。 您可以通过向/acl/reference端点发出列表请求来GET所有权限和资源类型的名称。 然后，这些名称可用于API调用，以视图当前用户的有效策略。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
 workflow-type: tm+mt
-source-wordcount: '123'
+source-wordcount: '184'
 ht-degree: 1%
 
 ---
