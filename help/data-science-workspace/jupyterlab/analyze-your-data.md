@@ -5,7 +5,7 @@ title: 使用笔记本分析数据
 topic: Tutorial
 description: 本教程重点介绍如何使用在数据科学工作区中构建的Jupyter笔记本访问、探索和可视化数据。
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 33b14fed0d52792de0486897c11dd86c1ea2dd45
 workflow-type: tm+mt
 source-wordcount: '1731'
 ht-degree: 0%
@@ -91,7 +91,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->请参阅 [[!DNL平台SDK]](../authoring/platform-sdk.md) 指南来转换代码。
+>要转换代 [码，请参阅[!DNL](../authoring/platform-sdk.md) Platform SDK]指南。
 
 ```PYTHON
 from data_access_sdk_python.reader import DataSetReader
