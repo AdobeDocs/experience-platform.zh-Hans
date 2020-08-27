@@ -3,10 +3,11 @@ keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;popula
 solution: Experience Platform
 title: 在JupyterLab中使用Git进行协作
 topic: Tutorial
+description: Git是一种分布式版本控制系统，用于跟踪软件开发过程中源代码的更改。 Git预安装在Data Science Workspace JupyterLab环境中。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '280'
 ht-degree: 1%
 
 ---
