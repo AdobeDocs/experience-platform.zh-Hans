@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;catalog;multiple object lookup;api
 solution: Experience Platform
 title: 查找多个对象
 topic: developer guide
+description: 如果您希望视图多个特定对象，而不是对每个对象发出一个请求，目录为请求同一类型的多个对象提供了一个简单的快捷方式。 您可以通过包含以逗号分隔的IDGET，使用单个列表请求返回多个特定对象。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: dd1f508b93e8eac14e3c41fac9d8f49769d08f46
 workflow-type: tm+mt
-source-wordcount: '176'
-ht-degree: 1%
+source-wordcount: '223'
+ht-degree: 0%
 
 ---
 
