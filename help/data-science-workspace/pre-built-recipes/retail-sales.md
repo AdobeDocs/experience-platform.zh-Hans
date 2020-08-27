@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;retail sales recipe;Data Science Workspace;popular topics
+keywords: Experience Platform;retail sales recipe;Data Science Workspace;popular topics;recipes;pre build recipe
 solution: Experience Platform
 title: 零售销售处方
 topic: overview
+description: “零售销售”菜谱允许您预测特定时间段内系统初始的所有商店的销售预测。 通过准确的预测模型，零售商将能够找到需求与定价策略之间的关系并做出优化的定价决策，以最大化销售和收入。
 translation-type: tm+mt
-source-git-commit: e08460bc76d79920bbc12c7665a1416d69993f34
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '571'
 ht-degree: 2%
 
 ---
@@ -33,7 +34,7 @@ ht-degree: 2%
 
 您可以按照本教程进 [行](../jupyterlab/create-a-recipe.md)。
 
-本教程将在Jupyter笔记本中创建零售销售菜谱，并使用笔记本创建菜谱工作流程在Adobe Experience Platform中创建菜谱。
+本教程将在Jupyter笔记本中创建零售销售菜谱，并使用笔记本制作菜谱工作流程在Adobe Experience Platform创建菜谱。
 
 ## 数据模式
 
@@ -58,7 +59,7 @@ ht-degree: 2%
 
 首先，加载DSWRetailSales模式 *中的培训* 数据集。 在此基础上，采用梯度推进回归 [算法对模型进行训练](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)。 渐变提升使用的思想是弱学习者（至少比随机机会略好）可以形成一系列侧重于改善前一个学习者弱点的学习者。 总之，它们可用于创建强大的预测模型。
 
-该过程涉及三个元素： 损失函数、弱学习者和加性模型。
+该过程涉及三个元素：损失函数、弱学习者和加性模型。
 
 损失函数是指预测模型在能够预测预期结果方面的良好程度的度量——最小二乘回归在此配方中被使用。
 
