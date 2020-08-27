@@ -4,26 +4,26 @@ solution: Experience Platform
 title: 检索失败的批
 topic: overview
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '598'
-ht-degree: 2%
+source-wordcount: '607'
+ht-degree: 1%
 
 ---
 
 
 # 使用API检索失败的批
 
-Adobe Experience Platform提供了两种上传和摄取数据的方法。 您可以使用批处理摄取，它允许您使用各种文件类型（如CSV）插入其数据；或者使用流式摄取，它允许您使用流式端点将 [!DNL Platform] 其数据实时插入。
+Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以使用批处理摄取，它允许您使用各种文件类型（如CSV）插入其数据；或者使用流式摄取，它允许您使用流式端点将 [!DNL Platform] 其数据实时插入。
 
 本教程介绍了使用API检索有关失败批次的信息的 [!DNL Data Ingestion] 步骤。
 
 ## 入门指南
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-- [!DNL Experience Data Model (XDM) System](../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [!DNL Data Ingestion](../home.md): 发送数据的方 [!DNL Experience Platform]法
+- [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [[!DNL数据摄取]](../home.md):发送数据的方 [!DNL Experience Platform]法
 
 ### 读取示例API调用
 
@@ -33,7 +33,7 @@ Adobe Experience Platform提供了两种上传和摄取数据的方法。 您可
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-- 授权： 承载者 `{ACCESS_TOKEN}`
+- 授权：承载者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
