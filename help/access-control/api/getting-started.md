@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;access control;api;getting started
 solution: Experience Platform
 title: 访问控制开发人员指南
 topic: developer guide
+description: Adobe Experience Platform的访问控制允许您通过使用Adobe Admin Console管理各种平台功能的角色和权限。 以下各节提供了成功调用模式注册表API所需了解的其他信息。
 translation-type: tm+mt
-source-git-commit: d059f48a2a3ba6398418fd3d5b0b3fd837ff69a2
+source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
 workflow-type: tm+mt
-source-wordcount: '333'
+source-wordcount: '379'
 ht-degree: 1%
 
 ---
