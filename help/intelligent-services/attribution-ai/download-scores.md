@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;attribution ai;access scores;popular topics
+keywords: Experience Platform;attribution ai;access scores;popular topics;download scores;attribution ai scores
 solution: Experience Platform
 title: 访问Attribution AI中的得分
 topic: Accessing scores
+description: 此文档可作为下载Attribution AI分数的指南。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
-source-wordcount: '1028'
+source-wordcount: '1040'
 ht-degree: 2%
 
 ---
@@ -20,7 +21,7 @@ ht-degree: 2%
 
 Attribution AI允许您以镶木地板文件格式下载分数。 本教程要求您已阅读并完成入门指南中的下载Attribution AI [得分](./getting-started.md) 。
 
-此外，要访问Attribution AI的分数，您需要有一个运行状态成功的服务实例可用。 要创建新服务实例，请访问 [Attribution AI用户指南](./user-guide.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分中，请允许24小时，它才能完成运行。
+此外，要访问Attribution AI的分数，您需要有一个运行状态成功的服务实例可用。 要创建新服务实例，请访问 [Attribution AI用户指南](./user-guide.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分，请允许24小时，它才能完成运行。
 
 ## Find your dataset ID {#dataset-id}
 
