@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 策略服务API开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: cb3a17aa08c67c66101cbf3842bf306ebcca0305
+source-git-commit: 71678b10c9e137016ea404305b272508b9c8cabe
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '472'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ Adobe Experience Platform [!DNL Data Governance] 允许您管理客户数据并�
 
 API提 [!DNL Policy Service] 供了多个端点，允许您以编程方式管理数据使用标签和策略，以及评估违反策略的营销操作。 这些端点概述如下。 请访问各个端点指南获取详细信息，并参 [阅入门指南](./getting-started.md) ，获取有关所需标头、读取示例API调用等的重要信息。
 
-要视图所有可用端点和CRUD操作，请访 [问Policy Service API Swagger](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)。
+要视图所有可用端点和CRUD操作，请访 [[!DNL Policy Service] 问API swagger](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)。
 
 ## 标签
 
