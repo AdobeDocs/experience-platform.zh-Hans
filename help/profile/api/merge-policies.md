@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: 合并策略——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 2c83e282a7674ed6f36c8608035ddf19d88f0433
+source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '2392'
+source-wordcount: '2397'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ## 入门指南
 
-本指南中使用的API端点是的一部分 [!DNL Real-time Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
+本指南中使用的API端点是[ [!DNL实时客户用户档案API]的一部分](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
 
 ## 合并策略的组件 {#components-of-merge-policies}
 
