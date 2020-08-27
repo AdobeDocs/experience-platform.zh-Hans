@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;catalog;object lookup;api
 solution: Experience Platform
 title: 查找对象
 topic: developer guide
+description: '如果您知道特定Catalog对象的唯一标识符，则可以执行GET请求以视图该对象的详细信息。 '
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: dd1f508b93e8eac14e3c41fac9d8f49769d08f46
 workflow-type: tm+mt
-source-wordcount: '132'
-ht-degree: 3%
+source-wordcount: '154'
+ht-degree: 2%
 
 ---
 
