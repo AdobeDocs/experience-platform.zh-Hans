@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;score a model;Data Science Workspace;popular topics
+keywords: Experience Platform;score a model;Data Science Workspace;popular topics;ui;scoring run;scoring results
 solution: Experience Platform
 title: 对模型(UI)进行评分
 topic: Tutorial
+description: '在Adobe Experience Platform数据科学工作区中评分可以通过将输入数据输入到现有训练好的模型中来实现。 然后，将评分结果作为新批存储在指定的输出数据集中并可查看。 '
 translation-type: tm+mt
-source-git-commit: 1e5526b54f3c52b669f9f6a792eda0abfc711fdd
+source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
 workflow-type: tm+mt
-source-wordcount: '573'
+source-wordcount: '609'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # 对模型(UI)进行评分
 
-通过将输入数 [!DNL Data Science Workspace] 据输入到现有训练模型中，可以实现Adobe Experience Platform评分。 然后，将评分结果作为新批存储在指定的输出数据集中并可查看。
+在Adobe Experience Platform, [!DNL Data Science Workspace] 可以通过将输入数据输入到现有的训练模型中来实现评分。 然后，将评分结果作为新批存储在指定的输出数据集中并可查看。
 
 本教程演示了在用户界面中为模型评分所 [!DNL Data Science Workspace] 需的步骤。
 
@@ -44,7 +45,7 @@ ht-degree: 0%
    ![](../images/models-recipes/score/configuration.png)
 检查并确认评分配置，并单 **[!UICONTROL 击]** “完成”以创建和执行评分运行。 您将进入“评 *分运行* ”选项卡，新的评分运行将显示状态。
    ![](../images/models-recipes/score/scoring_runs_tab.png)
-评分运行将显示以下四种状态之一： 挂起、完成、失败或正在运行，并会自动更新。 如果状态为“Completed”或“Failed”，请继续执行下一步。
+评分运行将显示以下四种状态之一：挂起、完成、失败或正在运行，并会自动更新。 如果状态为“Completed”或“Failed”，请继续执行下一步。
 
 ## 视图评分结果
 
