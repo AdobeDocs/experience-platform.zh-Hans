@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;ETL;etl;etl workflow;ETL workflow
 solution: Experience Platform
 title: ETL工作流程
 topic: overview
+description: 各种提取、转换和加载(ETL)工具的格式可能不同，但大多数工具都提供类似的功能，以协助组合多个数据源。
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: f4a4e65a087313dc4e2414f999e021e3f6e17137
 workflow-type: tm+mt
-source-wordcount: '177'
+source-wordcount: '202'
 ht-degree: 0%
 
 ---
@@ -22,7 +23,7 @@ ht-degree: 0%
 
 下面说明的操作在ETL集成指南中概述 [的步骤中介绍](home.md)。 某些步骤引用特定的“图”，其他步骤则描述与此处显示的工作流相似的操作。
 
-### 图1 —— 配置新Adobe Experience Platform连接器：
+### 图1 —— 配置新的Adobe Experience Platform连接器：
 
 ![](images/image2.png)
 
