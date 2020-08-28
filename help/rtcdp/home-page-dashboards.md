@@ -5,7 +5,7 @@ seo-title: 实时客户数据平台主页和仪表板
 description: 仪表板、主页和Adobe Experience Platform的首次用户体验
 seo-description: 仪表板、主页和Adobe Experience Platform的首次用户体验
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 98d3792f50f2ab95b86d162c51af9445f06343b5
 workflow-type: tm+mt
 source-wordcount: '634'
 ht-degree: 1%
@@ -19,7 +19,7 @@ Adobe实时客户数据平台(Real-time CDP)主页，在您登录到实时CDP时
 
 主页只是显示度量卡的位置之一。 实时CDP在您的整个体验中提供度量卡。 这些指标会通知您系统中的数据、用户档案和细分受众。
 
-![image](assets/home2.jpg)
+![image](assets/home.png)
 
 如果登录到实时CDP时系统中没有仪表板，则不会显示主页上的数据。 在这种情况下，主页首次为用户提供学习材料。 在收集数据时——换言之，在创 <!--sources-->建数据集、用户档案、细分和目标以及将数据流入系统时—仪表板会自动更新以显示有关该数据的信息<!-- in metric cards-->。
 
@@ -31,14 +31,14 @@ Adobe实时客户数据平台(Real-time CDP)主页，在您登录到实时CDP时
 
 * **排行榜** 在仪表板的顶端。 排行榜显示系统中的数据集、用户档案、细分和目标数。
 
-   ![image](assets/home-leaderboard2.jpg)
+   ![image](assets/leaderboard.png)
 
 <!-- * **Metric cards** display beneath the leaderboard. Metric cards show additional information, such as percentages or trends. Metric cards appear as data is collected.
     ![image](assets/home-metrics.jpg)
 Some information is shown in different ways on both the leaderboard and metric cards. -->
 * **最近的项目** 列表了添加到系统的五个最近的数据集、源、区段和目标。
 
-   ![image](assets/home-recent.jpg)
+   ![image](assets/recent.png)
 
 其他指标(例如用户档案和细分)在实时客户数据平台的其他部分提供。
 
@@ -116,7 +116,7 @@ The number of failed profile records is updated hourly. -->
 
 “最 **[!UICONTROL 近源]** ”量度卡显示组织内创建的五个最近源。 此列表在创建新源时更新。
 
-单击源以视图该项的详细信息，或 **[!UICONTROL 全部视图]** 以查看源的列表。 从此处，您可以单击特定的源以获取详细信息。
+单击源以视图该项的详细信息，或 **[!UICONTROL 全部视图]** 以查看源的列表。 从此处，您可以单击特定源以获取详细信息。
 
 有关源的详细信息，请参阅 [源概述](sources/sources-overview.md)。
 
