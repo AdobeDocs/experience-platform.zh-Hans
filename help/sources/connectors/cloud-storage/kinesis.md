@@ -4,7 +4,7 @@ solution: Experience Platform
 title: AmazonKinesis连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: e628621903dbc0ec7381dfeae99902f503b34869
 workflow-type: tm+mt
 source-wordcount: '214'
 ht-degree: 0%
@@ -65,4 +65,4 @@ Adobe Experience Platform为AWS、和等云提供商提供本 [!DNL Google Cloud
 ## 连接 [!DNL Amazon Kinesis] 到 [!DNL Platform] 使用UI
 
 - [在UI中创建AmazonKinesis源连接器](../../tutorials/ui/create/cloud-storage/kinesis.md)
-- [在UI中为云存储连接器配置数据流](../../tutorials/ui/dataflow/streaming/cloud-storage.md)
+- [在UI中为云存储连接器配置数据流](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
