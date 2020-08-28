@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建Azure事件集线器源连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: a664a0420189d6a2dda9f33b3aa58cb4883e252f
 workflow-type: tm+mt
 source-wordcount: '472'
 ht-degree: 1%
@@ -29,7 +29,7 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
    - [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
 - [[!DNL实时客户用户档案]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
-如果已有有效的连 [!DNL Event Hubs] 接，您可以跳过此文档的其余部分，继续学习配置 [数据流的教程](../../dataflow/streaming/cloud-storage.md)。
+如果已有有效的连 [!DNL Event Hubs] 接，您可以跳过此文档的其余部分，继续学习配置 [数据流的教程](../../dataflow/streaming/cloud-storage-streaming.md)。
 
 ### 收集所需的凭据
 
@@ -71,4 +71,4 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ## 后续步骤
 
-按照本教程，您已将帐户 [!DNL Event Hubs] 连接到 [!DNL Platform]。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入 [!DNL Platform]](../../dataflow/streaming/cloud-storage.md)。
+按照本教程，您已将帐户 [!DNL Event Hubs] 连接到 [!DNL Platform]。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入 [!DNL Platform]](../../dataflow/streaming/cloud-storage-streaming.md)。
