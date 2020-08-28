@@ -5,9 +5,9 @@ seo-title: 目标概述
 description: 目标是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以在Adobe实时客户数据平台中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 seo-description: 目标是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以在Adobe实时客户数据平台中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 translation-type: tm+mt
-source-git-commit: 54df4778a025811504801306120bda78e04281c1
+source-git-commit: 22bca041673cec5eee54ed4234aba19eca470441
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '528'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ ht-degree: 0%
 通过以下方式为实时CDP目标实施数据管理：
 
 * *您可以在创建* 、目标工作流中选择的营销用例；
-* *数据使用策略* ，可限制包含某些使用标签的数据被激活到具有某些市场营销用例的目标。
+* *数据使用策略* ，该策略限制包含某些使用标签的数据被激活到具有某些市场营销用例的目标。
 
 有关营销 [!DNL Data Governance] 用例和解决违反数据策略的情况的更 [多信息](/help/rtcdp/privacy/data-governance-overview.md#destinations) ，请 [参见实时CDP文档](/help/rtcdp/privacy/data-governance-overview.md#enforcement)。
 
@@ -67,4 +67,4 @@ ht-degree: 0%
 * [电子邮件营销目标](/help/rtcdp/destinations/email-marketing-destinations.md)
 * [社交网络目标](/help/rtcdp/destinations/social-network-destinations-workflow.md)
 
-有关区段激活工作流中违反数据策略的详细信息，请参阅将和区段 [激活到目标用户档案中的步骤7](/help/rtcdp/destinations/activate-destinations.md)。
+有关区段激活工作流中违反数据策略的详细信息，请参阅将和区段 [激活到目标用户档案中的审核步骤](/help/rtcdp/destinations/activate-destinations.md#review)。
