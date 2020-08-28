@@ -5,7 +5,7 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在Adobe实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: 22bca041673cec5eee54ed4234aba19eca470441
 workflow-type: tm+mt
 source-wordcount: '1552'
 ht-degree: 0%
@@ -51,9 +51,9 @@ ht-degree: 0%
 
 ### **[!UICONTROL 标识映射]** 步骤 {#identity-mapping}
 
-![标识映射步骤](/help/rtcdp/destinations/assets/identity-mapping-icon.png)
-
 适用于：社交目的地和Google客户匹配广告目的地
+
+![标识映射步骤](/help/rtcdp/destinations/assets/identity-mapping-icon.png)
 
 对于 *社交目标*，在“标识 **[!UICONTROL 映射”步骤中]** ，您可以选择要映射为目标中的目标标识的源属性。 此步骤为可选或必选，具体取决于您在模式中使用的主要标识。 <br> 
 
