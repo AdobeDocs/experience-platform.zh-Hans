@@ -5,7 +5,7 @@ title: Adobe Experience Platform数据摄取概述
 topic: overview
 description: 本文档介绍了将数据引入平台的三种主要方式，其中包含指向各自概述文档的链接，以获得更多详细信息。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
 workflow-type: tm+mt
 source-wordcount: '442'
 ht-degree: 9%
@@ -47,6 +47,6 @@ Adobe Experience Platform将来自多个来源的数据整合在一起，以帮�
 
 >[!WARNING]
 >
-> 以下视频中使用的术语“统一用户档案”已过期。 术语或 [!DNL "Profile"] 是文 [!DNL "Real-time Customer Profile"] 档中使用的正确术语 [!DNL Experience Platform] 。 有关最新功能，请参阅文档。
+>以下视频中使用的术语“统一用户档案”已过期。 术语或 [!DNL "Profile"] 是文 [!DNL "Real-time Customer Profile"] 档中使用的正确术语 [!DNL Experience Platform] 。 有关最新功能，请参阅文档。
 
 >[!VIDEO](https://video.tv.adobe.com/v/27106?quality=12&learn=on)
