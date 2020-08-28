@@ -5,7 +5,7 @@ title: 引擎
 topic: Developer guide
 description: 引擎是数据科学工作区中机器学习模型的基础。 它们包含机器学习算法，这些算法可解决特定问题、用于执行特征工程的特征管道，或同时解决这两个问题。
 translation-type: tm+mt
-source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
+source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
 workflow-type: tm+mt
 source-wordcount: '1147'
 ht-degree: 3%
@@ -20,6 +20,7 @@ ht-degree: 3%
 ## 查找Docker注册表
 
 >[!TIP]
+>
 >如果您没有Docker URL，请访 [问将源文件打包到菜谱教程](../models-recipes/package-source-files-recipe.md) ，以逐步演练创建Docker主机URL。
 
 要上传打包的Recipe文件（包括您的Docker主机URL、用户名和密码），需要您的Docker注册表凭据。 您可以通过执行以下GET请求来查找此信息：
