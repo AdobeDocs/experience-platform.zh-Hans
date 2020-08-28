@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 将数据引入Adobe Experience Platform
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
 workflow-type: tm+mt
 source-wordcount: '1278'
 ht-degree: 0%
@@ -148,6 +148,6 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 
 >[!WARNING]
 >
-> 以 [!DNL Platform] 下视频中显示的UI已过期。 有关最新的UI屏幕截图和功能，请参阅上面的文档。
+>以 [!DNL Platform] 下视频中显示的UI已过期。 有关最新的UI屏幕截图和功能，请参阅上面的文档。
 
 >[!VIDEO](https://video.tv.adobe.com/v/27269?quality=12&learn=on)
