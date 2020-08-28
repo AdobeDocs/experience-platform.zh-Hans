@@ -5,10 +5,10 @@ title: 查找多个对象
 topic: developer guide
 description: 如果您希望视图多个特定对象，而不是对每个对象发出一个请求，目录为请求同一类型的多个对象提供了一个简单的快捷方式。 您可以通过包含以逗号分隔的IDGET，使用单个列表请求返回多个特定对象。
 translation-type: tm+mt
-source-git-commit: dd1f508b93e8eac14e3c41fac9d8f49769d08f46
+source-git-commit: b791e9e060d7686e8fc264c445bbfd1e01ff5987
 workflow-type: tm+mt
-source-wordcount: '223'
-ht-degree: 0%
+source-wordcount: '225'
+ht-degree: 1%
 
 ---
 
@@ -28,8 +28,10 @@ GET /{OBJECT_TYPE}/{ID_1},{ID_2},{ID_3},{ID_4}
 GET /{OBJECT_TYPE}/{ID_1},{ID_2},{ID_3},{ID_4}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 ```
 
-| `{OBJECT_TYPE}` |要检索的 [!DNL Catalog] 对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
-| `{ID}` |要检索的特定对象的标识符。 |
+| 参数 | 描述 |
+| -------- | ----------- |
+| `{OBJECT_TYPE}` | 要检索 [!DNL Catalog] 的对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{ID}` | 要检索的特定对象之一的标识符。 |
 
 **请求**
 
