@@ -5,7 +5,7 @@ title: 菜谱和笔记本迁移指南
 topic: Tutorial
 description: 以下指南概述了迁移数据科学工作区中现有方法和笔记本电脑所需的步骤和信息。
 translation-type: tm+mt
-source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
+source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
 workflow-type: tm+mt
 source-wordcount: '3330'
 ht-degree: 0%
@@ -16,6 +16,7 @@ ht-degree: 0%
 # 菜谱和笔记本迁移指南
 
 >[!NOTE]
+>
 >使用/R的笔记本 [!DNL Python]和菜谱不受影响。 迁移仅适用于PySpark/[!DNL Spark] (2.3)菜谱和笔记本电脑。
 
 以下指南概述了迁移现有菜谱和笔记本所需的步骤和信息。
@@ -85,6 +86,7 @@ var df = sparkSession.read.format("com.adobe.platform.query")
 ```
 
 >[!TIP]
+>
 > 如果查询运行时间超过10分钟，则交互模式超时。 如果要摄取超过几GB的数据，建议切换到“批处理”模式。 批处理模式需要较长的开始时间，但可以处理较大的数据集。
 
 #### 写入数据集
@@ -138,6 +140,7 @@ Scala菜谱位于以下目录中 `experience-platform-dsw-reference/recipes/scal
 您的菜谱文件夹中需要一个新文件，才能使用基于文档的工作流。 从位于的菜谱文件夹复制并粘贴Docker文件 `experience-platform-dsw-reference/recipes/scala/Dockerfile`。 或者，您也可以将下面的代码复制并粘贴到名为的新文件中 `Dockerfile`。
 
 >[!IMPORTANT]
+>
 > 下面显示的示例 `ml-retail-sample-spark-*-jar-with-dependencies.jar` jar文件应替换为菜谱的jar文件的名称。
 
 ```scala
@@ -222,6 +225,7 @@ pd = sparkSession.read.format("com.adobe.platform.query")
 ```
 
 >[!TIP]
+>
 > 如果查询运行时间超过10分钟，则交互模式超时。 如果要摄取超过几GB的数据，建议切换到“批处理”模式。 批处理模式需要较长的开始时间，但可以处理较大的数据集。
 
 #### 写入数据集
@@ -275,6 +279,7 @@ PySpark菜谱位于以下目录中 `experience-platform-dsw-reference/recipes/py
 您的菜谱文件夹中需要一个新文件，才能使用基于文档的工作流。 从位于的菜谱文件夹复制并粘贴Docker文件 `experience-platform-dsw-reference/recipes/pyspark/Dockerfile`。 或者，您也可以复制并粘贴下面的代码，并创建一个名为的新文件 `Dockerfile`。
 
 >[!IMPORTANT]
+>
 > 下面显示的示例 `pysparkretailapp-*.egg` egg文件应替换为菜谱的egg文件名称。
 
 ```scala
