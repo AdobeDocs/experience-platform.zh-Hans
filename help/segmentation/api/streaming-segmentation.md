@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 流细分
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: d35d598b2ae8b46f53a20d41770b21ceeeafcce8
 workflow-type: tm+mt
-source-wordcount: '1388'
+source-wordcount: '1426'
 ht-degree: 1%
 
 ---
@@ -18,9 +18,13 @@ ht-degree: 1%
 >
 >以下文档说明了如何使用API使用流分段。 有关使用UI使用流式分段的信息，请阅读流式 [分段UI指南](../ui/streaming-segmentation.md)。
 
-基于的流 [!DNL Adobe Experience Platform] 式细分允许客户在关注数据丰富性的同时近乎实时地进行细分。 利用流细分，当数据进入时，细分资格现在会 [!DNL Platform]发生，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传入时评估大多数细分规则， [!DNL Platform]这意味着，在不运行计划的细分作业的情况下，区段成员关系将保持最新状态。
+基于的流 [!DNL Adobe Experience Platform] 式细分允许客户在关注数据丰富性的同时近乎实时地进行细分。 利用流细分，流数据进入时即会发生细分资格 [!DNL Platform]，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传入时评估大多数细分规则， [!DNL Platform]这意味着，在不运行计划的细分作业的情况下，区段成员关系将保持最新状态。
 
 ![](../images/api/streaming-segment-evaluation.png)
+
+>[!NOTE]
+>
+>流分段只能用于评估流入平台的数据。 换言之，通过批量摄取摄取的数据不会通过流分段进行评估，而需要触发批量评估。
 
 ## 入门指南
 
