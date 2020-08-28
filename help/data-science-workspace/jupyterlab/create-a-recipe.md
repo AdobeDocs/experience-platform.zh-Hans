@@ -5,7 +5,7 @@ title: 使用Jupyter笔记本创建菜谱
 topic: Tutorial
 description: 本教程将分两个主要部分。 首先，您将使用JupyterLab Notebook中的模板创建机器学习模型。 接下来，您将在JupyterLab中练习笔记本到菜谱工作流程，以便在数据科学工作区中创建菜谱。
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
 workflow-type: tm+mt
 source-wordcount: '2336'
 ht-degree: 0%
@@ -475,6 +475,7 @@ def save(configProperties, prediction):
 ![](../images/jupyterlab/create-recipe/recipe_details.png)
 
 >[!CAUTION]
+>
 > - 请勿删除任何文件单元格
 > - 不要编辑文 `%%writefile` 件单元格顶部的行
 > - 不要同时在不同的笔记本中创建菜谱
