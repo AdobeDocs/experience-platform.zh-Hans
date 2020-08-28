@@ -5,7 +5,7 @@ title: 安全Python数据访问SDK
 topic: tutorial
 description: Secure Python Data Access SDK是一个软件开发工具包，它支持读取和写入来自Adobe Experience Platform的数据集。
 translation-type: tm+mt
-source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
+source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
 workflow-type: tm+mt
 source-wordcount: '500'
 ht-degree: 1%
@@ -205,7 +205,9 @@ write_tracker = dataset_writer.write(<dataFrame>, file_format='json')
 
 对于运行时间较长的作业，用户可能需要存储中间步骤。 在这种情况下， [!DNL Python] SDK为用户提供了读写用户空间的能力。
 
->!![NOTE] 数据路径不 **由** SDK存储。 用户需要存储到其相应数据的相应路径。
+>[!NOTE]
+>
+>数据路径不 **由** SDK存储。 用户需要存储到其相应数据的相应路径。
 
 ### 写入用户空间
 
