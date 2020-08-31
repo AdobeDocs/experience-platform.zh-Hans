@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics; flow service; advertising; google adwords
 solution: Experience Platform
 title: 通过源连接器和API收集广告数据
 topic: overview
+description: 本教程介绍从第三方广告应用程序检索数据并通过源连接器和Flow Service API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 6578fd607d6f897a403d0af65c81dafe3dc12578
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1561'
 ht-degree: 1%
 
 ---
@@ -16,7 +17,7 @@ ht-degree: 1%
 
 [!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程介绍了从第三方广告应用程序检索数据并通过源连接器和API [!DNL Platform] 导入数据的步骤。
+本教程介绍从第三方广告应用程序检索数据并通过源连接 [!DNL Platform] 器和[!DNL流服 [务] API将其引入](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 的步骤。
 
 ## 入门指南
 
@@ -41,29 +42,21 @@ ht-degree: 1%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权：承载者 `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 中的所有资 [!DNL Experience Platform]源(包括属于这些资 [!DNL Flow Service]源)都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* `x-sandbox-name: {SANDBOX_NAME}`
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
-* 内容类型： `application/json`
-
-## 创建点对点XDM类和模式
-
-要通过源连接器将外 [!DNL Platform] 部数据引入，必须为原始源数据创建专门的XDM类和模式。
-
-要创建点对点类和模式，请按照点对点模式教 [程中概述的步骤操作](../../../../xdm/tutorials/ad-hoc.md)。 创建点对点类时，必须在请求主体中描述源数据中找到的所有字段。
-
-继续按照开发人员指南中概述的步骤操作，直到您创建临时模式。 需要ad-`$id`hoc模式的唯一标识符()才能继续本教程的下一步。
+* `Content-Type: application/json`
 
 ## 创建源连接 {#source}
 
-创建点对点XDM模式后，现在可以使用对API的POST请求创建源连 [!DNL Flow Service] 接。 源连接由基本连接、源数据文件和对描述源模式的引用组成。
+您可以通过向API发出POST请求来创建源 [!DNL Flow Service] 连接。 源连接由连接ID、源数据文件的路径和连接规范ID组成。
 
 要创建源连接，还必须为数据格式属性定义枚举值。
 
@@ -99,10 +92,6 @@ curl -X POST \
         "description": "Advertising source connection",
         "data": {
             "format": "tabular",
-            "schema": {
-                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/9056f97e74edfa68ccd811380ed6c108028dcb344168746d",
-                "version": "application/vnd.adobe.xed-full-notext+json; version=1"
-            }
         },
         "params": {
             "path": "v201809.AD_PERFORMANCE_REPORT"
@@ -117,7 +106,6 @@ curl -X POST \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `baseConnectionId` | 您正在访问的第三方广告应用程序的唯一连接ID。 |
-| `data.schema.id` | 临 `$id` 时XDM模式。 |
 | `params.path` | 源文件的路径。 |
 | `connectionSpec.id` | 与您的特定第三方广告应用程序关联的连接规范ID。 |
 
