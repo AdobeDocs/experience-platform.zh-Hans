@@ -5,10 +5,10 @@ topic: overview
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制通过Adobe Admin Console提供。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。
 translation-type: tm+mt
-source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
+source-git-commit: e22b0f64fd6153f76cff862a6e973a235257430e
 workflow-type: tm+mt
-source-wordcount: '1131'
-ht-degree: 3%
+source-wordcount: '1162'
+ht-degree: 2%
 
 ---
 
@@ -57,7 +57,7 @@ Adobe Admin Console为管理Adobe产品授权和访问您的组织提供了一�
 
 ## 沙箱和权限
 
-[!DNL Experience Platform] 提供对一个生产沙箱的访问，并允许您创建非生产沙 **箱**。 非生产沙箱是数据虚拟化的一种形式，它允许您将数据与其他沙箱隔离，并通常用于开发实验、测试或试用。 产品用户档案 **[!UICONTROL 的权限]** ，使用户档案的用户能够访 [!DNL Platform] 问沙箱环境中授予他们访问权限的功能。
+非生产沙箱是数据虚拟化的一种形式，它允许您将数据与其他沙箱隔离，并通常用于开发实验、测试或试用。 产品用户档案 **[!UICONTROL 的权限]** ，使用户档案的用户能够访 [!DNL Platform] 问沙箱环境中授予他们访问权限的功能。 默认Experience Platform许可证会授予您五个沙箱（一个生产箱和四个非生产箱）。 您最多可以添加十个非生产沙箱，最多共添加75个沙箱。 有关详细信息，请与IMS组织管理员或Adobe销售代表联系。
 
 有关中沙箱的详 [!DNL Experience Platform]细信息，请参阅沙 [箱概述](../sandboxes/home.md)。
 
