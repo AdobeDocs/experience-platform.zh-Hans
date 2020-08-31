@@ -4,15 +4,15 @@ solution: Experience Platform
 title: 创建电子邮件营销目标
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 3cfbee08c1948b2e073547f9bbf0c8526cbfd4bc
 workflow-type: tm+mt
-source-wordcount: '1621'
+source-wordcount: '1624'
 ht-degree: 1%
 
 ---
 
 
-# 创建电子邮件营销目标并激活Adobe中的数据 [!DNL Real-time Customer Data Platform]
+# 创建电子邮件营销目标，并使用Adobe [!DNL Real-time Customer Data Platform]
 
 本教程演示如何使用API调用连接到您的Adobe Experience Platform数据、创建电子邮件 [营销目标](../../rtcdp/destinations/email-marketing-destinations.md)、创建到新创建目标的数据流以及将数据激活到新创建的目标。
 
