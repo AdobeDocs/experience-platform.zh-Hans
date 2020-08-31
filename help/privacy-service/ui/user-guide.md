@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Privacy Service用户指南
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: c8446f6040ac9ef1f4196d9057b531011e243258
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 0%
@@ -121,7 +121,7 @@ UI [!DNL Privacy Service] 提供了两种创建新作业请求的方法：
 
 <img src="../images/user-guide/custom-namespace.png" width="500" /><br/>
 
-完成后，单击“ **[!UICONTROL 创建]**”。
+When finished, click **[!UICONTROL Create]**.
 
 <img src="../images/user-guide/request-builder-create.png" width="500" /><br/>
 
@@ -145,9 +145,9 @@ UI [!DNL Privacy Service] 提供了两种创建新作业请求的方法：
 <img src="../images/user-guide/privacy-template.png" width="500" /><br/>
 
 
-在您的计算机上找到JSON文件，并将其拖入对话框窗口。 如果上载成功，则文件名将显示在对话框中。 您可以根据需要将更多JSON文件拖放到对话框中，以继续添加这些文件。
+在您的计算机上找到JSON文件，并将其拖入对话框窗口。 如果上载成功，则对话框中将显示文件名。 您可以根据需要将JSON文件拖放到对话框中，以继续添加更多文件。
 
-完成后，单击“ **[!UICONTROL 创建]**”。 该对话框将消失，新作业（或作业）将列在作业请 _求构件中_ ，并列出其当前处理状态。
+When finished, click **[!UICONTROL Create]**. 该对话框将消失，新作业（或作业）将列在作业请 _求构件中_ ，并列出其当前处理状态。
 
 ### 后续步骤
 
