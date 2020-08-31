@@ -5,9 +5,9 @@ title: 沙箱概述
 topic: overview
 description: 沙箱是单个Experience Platform实例中的虚拟分区，它允许与数字体验应用程序的开发过程无缝集成。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: e22b0f64fd6153f76cff862a6e973a235257430e
 workflow-type: tm+mt
-source-wordcount: '706'
+source-wordcount: '750'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ In order to address this need, Experience Platform provides **sandboxes** which 
 
 沙箱是单个Experience Platform实例中的虚拟分区，它允许与数字体验应用程序的开发过程无缝集成。 一个Experience Platform实例支持一个生产沙箱和多个非生产沙箱，每个沙箱都维护自己独立的平台资源库(包括模式、数据集、用户档案等)。  在沙箱内执行的所有内容和操作仅限于该沙箱，不会影响任何其他沙箱。
 
-非生产沙箱允许您测试功能、运行实验并制作自定义配置，而不会影响您的生产沙箱。 此外，非生产沙箱还具有重置功能，可从沙箱中删除所有客户创建的资源。 非生产沙箱无法转换为生产沙箱。
+非生产沙箱允许您测试功能、运行实验并制作自定义配置，而不会影响您的生产沙箱。 此外，非生产沙箱还具有重置功能，可从沙箱中删除所有客户创建的资源。 非生产沙箱无法转换为生产沙箱。 默认Experience Platform许可证会授予您五个沙箱（一个生产箱和四个非生产箱）。 您最多可以添加十个非生产沙箱，最多共添加75个沙箱。 有关详细信息，请与IMS组织管理员或Adobe销售代表联系。
 
 >[!NOTE]
 >
