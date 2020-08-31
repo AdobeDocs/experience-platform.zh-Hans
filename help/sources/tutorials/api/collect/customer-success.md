@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics; flow service; customer success; service now; salesforce service cloud
 solution: Experience Platform
 title: 通过源连接器和API从客户成功系统收集数据
 topic: overview
+description: 本教程介绍从第三方客户成功系统检索数据并通过源连接器和流服务API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 744f7f1c5203f3537e979c50d7f8e20c1e8c50a5
+source-git-commit: 6578fd607d6f897a403d0af65c81dafe3dc12578
 workflow-type: tm+mt
-source-wordcount: '1703'
+source-wordcount: '1628'
 ht-degree: 1%
 
 ---
@@ -16,7 +17,7 @@ ht-degree: 1%
 
 [!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程介绍从客户成功系统检索数据并通过源连接器和API [!DNL Platform] 将其引入的步骤。
+本教程介绍从第三方客户成功系统检索数据并通过源连接 [!DNL Platform] 器和[!DNL流服 [务] API将其引入](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 的步骤。
 
 ## 入门指南
 
@@ -24,11 +25,11 @@ ht-degree: 1%
 
 本教程还要求您对Adobe Experience Platform的以下组件有充分的了解：
 
-* [体验数据模型(XDM)系统](../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL体验数据模型(XDM)系统]](../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    * [模式合成基础](../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式注册开发人员指南](../../../../xdm/api/getting-started.md):包括成功执行对模式注册表API的调用时需要了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
-* [目录服务](../../../../catalog/home.md):目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
-* [批量摄取](../../../../ingestion/batch-ingestion/overview.md):批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
+* [[!DNL目录服务]](../../../../catalog/home.md):目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
+* [[!DNL批量摄取]](../../../../ingestion/batch-ingestion/overview.md):批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
 * [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供您需要了解的其他信息，以便使用API成功连接到客户成功 [!DNL Flow Service] 系统。
@@ -41,29 +42,21 @@ ht-degree: 1%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权：承载者 `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 中的所有资 [!DNL Experience Platform]源(包括属于这些资 [!DNL Flow Service]源)都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* `x-sandbox-name: {SANDBOX_NAME}`
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
-* 内容类型： `application/json`
-
-## 创建点对点XDM类和模式
-
-要通过源连接器将外 [!DNL Platform] 部数据引入，必须为原始源数据创建专门的XDM类和模式。
-
-要创建点对点类和模式，请按照点对点模式教 [程中概述的步骤操作](../../../../xdm/tutorials/ad-hoc.md)。 创建点对点类时，必须在请求主体中描述源数据中找到的所有字段。
-
-继续按照开发人员指南中概述的步骤操作，直到您创建临时模式。 需要ad-`$id`hoc模式的唯一标识符()才能继续本教程的下一步。
+* `Content-Type: application/json`
 
 ## 创建源连接 {#source}
 
-创建点对点XDM模式后，现在可以使用对API的POST请求创建源连 [!DNL Flow Service] 接。 源连接由连接ID、源数据文件和对描述源模式的引用组成。
+您可以通过向API发出POST请求来创建源 [!DNL Flow Service] 连接。 源连接由连接ID、源数据文件的路径和连接规范ID组成。
 
 要创建源连接，还必须为数据格式属性定义枚举值。
 
@@ -99,10 +92,6 @@ curl -X POST \
         "description": "Source connection for a Customer Success connector",
         "data": {
             "format": "tabular",
-            "schema": {
-                "id": "https://ns.adobe.com/adobe_mcdp_connectors_stg/classes/5d032b2230d5495aef49437d04d1c5fac4788b17ae85bf93",
-                "version": "application/vnd.adobe.xed-full-notext+json; version=1"
-            }
         },
         "params": {
             "path": "Account"
@@ -117,7 +106,6 @@ curl -X POST \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `baseConnectionId` | 您正在访问的第三方客户成功系统的唯一连接ID。 |
-| `data.schema.id` | 临 `$id` 时XDM模式。 |
 | `params.path` | 源文件的路径。 |
 | `connectionSpec.id` | 与特定第三方客户成功系统关联的连接规范ID。 有关连接 [规范](#appendix) ID的列表，请参阅附录。 |
 
@@ -637,7 +625,7 @@ curl -X POST \
 | `transformations.params.mappingId` | 与数据库关联的映射ID。 |
 | `scheduleParams.startTime` | 开始时间中数据流的数据时间。 |
 | `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`、 `minute`、 `hour`、 `day`或 `week`。 |
-| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，间隔不 `once` 是必需的，对于其他频率值， `15` 间隔应大于或等于。 |
+| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为时，间隔不 `once` 是必需的，对于其他频率值， `15` 应大于或等于。 |
 
 **响应**
 
