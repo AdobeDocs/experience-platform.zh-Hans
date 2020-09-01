@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 为受众区段强制实施数据使用合规性
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1335'
+source-wordcount: '1333'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 - [[!DNL实时客户用户档案]](../../profile/home.md): [!DNL Real-time Customer Profile] 是通用查找实体存储，用于管理 [!DNL Experience Data Model] (XDM)中的数 [!DNL Platform]据 用户档案可以跨各种企业数据资产合并数据，并以统一的表示形式提供对该数据的访问。
    - [合并策略](../../profile/api/merge-policies.md):用于确定 [!DNL Real-time Customer Profile] 哪些数据可在特定条件下合并为统一视图的规则。 可以配置合并策略以 [!DNL Data Governance] 用于目的。
 - [[!DNL分段]](../home.md):如何 [!DNL Real-time Customer Profile] 将用户档案商店中包含的大量个人划分为拥有相似特征并将对营销策略做出类似反应的较小群体。
-- [[!DNL数据管理]](../../data-governance/home.md): [!DNL Data Governance] 使用以下组件为数据使用标签和强制实施(DULE)提供基础架构：
+- [[!DNL数据管理]](../../data-governance/home.md): [!DNL Data Governance] 使用以下组件为数据使用标签和执行提供基础架构：
    - [数据使用标签](../../data-governance/labels/user-guide.md):标签用于根据处理数据集和字段各自数据的敏感程度描述数据集和字段。
    - [数据使用策略](../../data-governance/policies/overview.md):配置，指示允许对按特定数据使用标签分类的数据执行哪些营销操作。
    - [策略实施](../../data-governance/enforcement/overview.md):允许您实施数据使用策略并防止构成违反策略的数据操作。
@@ -126,7 +126,7 @@ curl -X GET \
 
 ## 从合并策略中查找源数据集 {#datasets}
 
-合并策略包含有关其源数据集的信息，而源数据集又包含数据使用标签。 通过在向API提供GET请求中提供合并策略ID，可以查找合并策略的详细 [!DNL Profile] 信息。 有关合并策略的详细信息，请参阅合 [并策略端点指南](../../profile/api/merge-policies.md)。
+合并策略包含有关其源数据集的信息，而源数据集又包含数据使用标签。 通过在向API提供GET请求中的合并策略ID，可以查找合并策略的详细 [!DNL Profile] 信息。 有关合并策略的详细信息，请参阅合 [并策略端点指南](../../profile/api/merge-policies.md)。
 
 **API格式**
 
@@ -187,7 +187,7 @@ curl -X GET \
 >
 > 此步骤假定您至少有一个活动数据使用策略，该策略可阻止对包含特定标签的数据执行特定营销操作。 如果您对要评估的数据集没有任何适用的使用策略，请按照策略 [创建教程](../../data-governance/policies/create.md) ，先创建一个策略，然后继续此步骤。
 
-获得合并策略的源数据集的ID后，您可以使用 [DULE Policy Service](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) API根据特定营销操作评估这些数据集，以检查数据使用策略违规。
+获得合并策略的源数据集的ID后，您可以使用 [Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) （策略服务API）根据特定营销操作评估这些数据集，以检查数据使用策略违规。
 
 要评估POST集，您必须在请求主体中提供数据集ID时，在请求请求路径中提供营销操作的名称，如下例所示。
 
