@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Apache Spark;apache spark;Azure HDInsights
 solution: Experience Platform
 title: 在Azure HDInsights连接器上使用Flow Service API创建Apache Spark
 topic: overview
+description: 本教程使用Flow Service API指导您完成将Azure HDInsights上的Apache Spark（以下简称“Spark”）连接到Experience Platform的步骤。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 5959d4344ec1c16542de045899ce74beb39a7bc4
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '590'
 ht-degree: 2%
 
 ---
