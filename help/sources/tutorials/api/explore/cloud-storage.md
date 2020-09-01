@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;cloud storage;Cloud storage
 solution: Experience Platform
 title: 使用Flow Service API浏览云存储系统
 topic: overview
+description: 本教程使用Flow Service API探索第三方云存储系统。
 translation-type: tm+mt
-source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
 workflow-type: tm+mt
-source-wordcount: '682'
+source-wordcount: '697'
 ht-degree: 2%
 
 ---
@@ -20,7 +21,7 @@ ht-degree: 2%
 
 ## 入门指南
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
 * [来源](../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
 * [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
@@ -31,7 +32,7 @@ ht-degree: 2%
 
 要使用API探索第三方云存储, [!DNL Platform] 您必须拥有有效的基本连接ID。 如果尚未为要使用的存储建立基本连接，则可通过以下教程创建一个：
 
-* [AmazonS3](../create/cloud-storage/s3.md)
+* [Amazon S3](../create/cloud-storage/s3.md)
 * [Azure Blob](../create/cloud-storage/blob.md)
 * [Azure数据湖存储Gen2](../create/cloud-storage/adls-gen2.md)
 * [Google Cloud商店](../create/cloud-storage/google.md)
@@ -45,7 +46,7 @@ ht-degree: 2%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -63,7 +64,7 @@ ht-degree: 2%
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `objectType` | 要浏览的对象类型。 将此值设置为： <ul><li>`folder`: 浏览特定目录</li><li>`root`: 浏览根目录。</li></ul> |
+| `objectType` | 要浏览的对象类型。 将此值设置为： <ul><li>`folder`:浏览特定目录</li><li>`root`:浏览根目录。</li></ul> |
 | `object` | 仅当查看特定目录时，才需要此参数。 它的值表示要浏览的目录的路径。 |
 
 使用以下调用查找要引入的文件的路径 [!DNL Platform]:
@@ -124,7 +125,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}
 | --- | --- |
 | `{BASE_CONNECTION_ID}` | 云存储库连接的ID。 |
 | `{FILE_PATH}` | 文件的路径。 |
-| `{FILE_TYPE}` | 文件的类型。 支持的文件类型包括：<ul><li>分隔</code>: 分隔符分隔的值。 DSV文件必须以逗号分隔。</li><li>JSON</code>: JavaScript对象表示法。 JSON文件必须符合XDM</li><li>镶木</code>: 阿帕奇镶木地板。 拼花文件必须符合XDM标准。</li></ul> |
+| `{FILE_TYPE}` | 文件的类型。 支持的文件类型包括：<ul><li>分隔</code>:分隔符分隔的值。 DSV文件必须以逗号分隔。</li><li>JSON</code>:JavaScript对象表示法。 JSON文件必须符合XDM</li><li>镶木</code>:阿帕奇镶木地板。 拼花文件必须符合XDM标准。</li></ul> |
 
 **请求**
 
