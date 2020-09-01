@@ -5,7 +5,7 @@ title: 数据使用策略用户指南
 topic: policies
 description: Adobe Experience Platform数据管理提供了一个用户界面，允许您创建和管理数据使用策略。 此文档概述了在Experience Platform用户界面的“策略”工作区中可以执行的操作。
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '768'
 ht-degree: 0%
@@ -30,7 +30,7 @@ Adobe Experience Platform [!DNL Data Governance] 提供一个用户界面，允�
 
 ## 视图数据使用策略 {#view-policies}
 
-在UI中 [!DNL Experience Platform] ，单击“策 **[!UICONTROL 略]** ”以打开“策 *[!UICONTROL 略]* ”工作区。 在“浏 **[!UICONTROL 览]** ”选项卡中，您可以看到可用策略的列表，包括其关联的标签、营销操作和状态。
+在UI中 [!DNL Experience Platform] ，单击“策 **[!UICONTROL 略]** ”以打开“策 **[!UICONTROL 略]** ”工作区。 在“浏 **[!UICONTROL 览]** ”选项卡中，您可以看到可用策略的列表，包括其关联的标签、营销操作和状态。
 
 ![](../images/policies/browse-policies.png)
 
@@ -40,11 +40,11 @@ Adobe Experience Platform [!DNL Data Governance] 提供一个用户界面，允�
 
 ## 创建自定义数据使用策略 {#create-policy}
 
-要创建新的自定义数据使用策略，请 **[!UICONTROL 单击]** “策略”工作区中“浏览”选 **[!UICONTROL 项卡右]** 上角的 *[!UICONTROL “创建]* 策略”。
+要创建新的自定义数据使用策略，请 **[!UICONTROL 单击]** “策略”工作区中“浏览”选 **[!UICONTROL 项卡右]** 上角的 **[!UICONTROL “创建]** 策略”。
 
 ![](../images/policies/create-policy-button.png)
 
-将显 *[!UICONTROL 示创建策略]* 工作流。 开始，为新策略提供名称和说明。
+将显 **[!UICONTROL 示创建策略]** 工作流。 开始，为新策略提供名称和说明。
 
 ![](../images/policies/create-policy-description.png)
 
@@ -52,7 +52,7 @@ Adobe Experience Platform [!DNL Data Governance] 提供一个用户界面，允�
 
 ![](../images/policies/add-labels.png)
 
-此时将 *[!UICONTROL 显示选择营销]* 操作步骤。 从提供的列表中选择适当的营销操作，然后单 **[!UICONTROL 击下]** 一步继续。
+此时将 **[!UICONTROL 显示选择营销]** 操作步骤。 从提供的列表中选择适当的营销操作，然后单 **[!UICONTROL 击下]** 一步继续。
 
 >[!NOTE]
 >
@@ -60,11 +60,11 @@ Adobe Experience Platform [!DNL Data Governance] 提供一个用户界面，允�
 
 ![](../images/policies/add-marketing-actions.png)
 
-此时 *[!UICONTROL 会显示]* “审阅”(Review)步骤，允许您在创建新策略之前查看其详细信息。 满意后，单击 **[!UICONTROL 完成]** 以创建策略。
+此时 **[!UICONTROL 会显示]** “审阅”(Review)步骤，允许您在创建新策略之前查看其详细信息。 满意后，单击 **[!UICONTROL 完成]** 以创建策略。
 
 ![](../images/policies/policy-review.png)
 
-“浏 *[!UICONTROL 览]* ”选项卡将重新显示，该选项卡现在将新创建的策略列表为“草稿”状态。 要启用策略，请参阅下一节。
+“浏 **[!UICONTROL 览]** ”选项卡将重新显示，该选项卡现在将新创建的策略列表为“草稿”状态。 要启用策略，请参阅下一节。
 
 ![](../images/policies/created-policy.png)
 
@@ -72,7 +72,7 @@ Adobe Experience Platform [!DNL Data Governance] 提供一个用户界面，允�
 
 默认情况下，所有数据使用策略(包括Adobe提供的核心策略)都处于禁用状态。 要考虑实施单个策略，必须通过API或UI手动启用该策略。
 
-您可以从“策略”工作区的“浏 *[!UICONTROL 览]* ”选项卡中启用或禁用 *[!UICONTROL 策略]* 。 从列表中选择自定义策略，在右侧显示其详细信息。 在“ *[!UICONTROL 状态]*”下，选择切换按钮以启用或禁用策略。
+您可以从“策略”工作区的“浏 **[!UICONTROL 览]** ”选项卡中启用或禁用 **[!UICONTROL 策略]** 。 从列表中选择自定义策略，在右侧显示其详细信息。 在“ **[!UICONTROL 状态]**”下，选择切换按钮以启用或禁用策略。
 
 ![](../images/policies/enable-policy.png)
 
@@ -84,15 +84,15 @@ Adobe Experience Platform [!DNL Data Governance] 提供一个用户界面，允�
 
 ## 创建营销操作 {#create-marketing-action}
 
-要创建新的自定义营销操作，请单 **[!UICONTROL 击“策略]** ”工作区中“营销操作”选 **[!UICONTROL 项卡右上角的]** “创建营 *[!UICONTROL 销操作]* ”。
+要创建新的自定义营销操作，请单 **[!UICONTROL 击“策略]** ”工作区中“营销操作”选 **[!UICONTROL 项卡右上角的]** “创建营 **[!UICONTROL 销操作]** ”。
 
 ![](../images/policies/create-marketing-action.png)
 
-此时将 *[!UICONTROL 显示创建营销]* 操作对话框。 输入营销活动的名称和说明，然后单击 **[!UICONTROL 创建]**。
+此时将 **[!UICONTROL 显示创建营销]** 操作对话框。 输入营销活动的名称和说明，然后单击 **[!UICONTROL 创建]**。
 
 ![](../images/policies/create-marketing-action-details.png)
 
-新创建的操作会显示在“营销 *[!UICONTROL 操作”选]* 项卡中。 您现在可以在创建新数据使用策 [略时使用营销操作](#create-policy)。
+新创建的操作会显示在“营销 **[!UICONTROL 操作”选]** 项卡中。 您现在可以在创建新数据使用策 [略时使用营销操作](#create-policy)。
 
 ![](../images/policies/created-marketing-action.png)
 
