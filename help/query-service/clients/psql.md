@@ -5,7 +5,7 @@ title: 与PSQL连接
 topic: connect
 description: 'PSQL是在计算机上安装Postgres时附带的命令行界面。 您可以按照以下说明安装它。 '
 translation-type: tm+mt
-source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '192'
 ht-degree: 1%
@@ -63,9 +63,9 @@ psql (PostgreSQL) 9.5.14
 
 ## Connect PSQL和 [!DNL Query Service]
 
-返回Connect [!DNL Platform] BI“工 *[!UICONTROL 具”页面上的]* UI。
+返回Connect [!DNL Platform] BI“工 **[!UICONTROL 具”页面上的]** UI。
 
-单击 **[!UICONTROL “复制]***[!UICONTROL PSQL命令”]*。
+单击 **[!UICONTROL “复制]****[!UICONTROL PSQL命令”]**。
 
 ![图像](../images/clients/psql/connect-bi.png)
 
