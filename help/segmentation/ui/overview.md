@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Segmentation Service;segmentation;segmentation service;user guide;ui guide;segmentation ui guide;segment builder;Segment builder;
 solution: Experience Platform
 title: 分段服务用户指南
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: e7266fba14b2dffe46ce77428ad6fe0dd92abdf5
+source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
 workflow-type: tm+mt
 source-wordcount: '1365'
 ht-degree: 0%
@@ -21,13 +21,13 @@ ht-degree: 0%
 使用细分定义需要了解与细分相关 [!DNL Experience Platform] 的各种服务。 在阅读本用户指南之前，请查阅以下服务的文档：
 
 - [[!DNL分段服务]](../home.md): [!DNL Segmentation Service] 允许您将与个人(如 [!DNL Experience Platform] 客户、潜在客户、用户或组织)相关的数据分为较小的组。
-- [[!DNL实时客户用户档案]](../../profile/home.md): 基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-- [[!DNLAdobe Experience Platform身份服务]](../../identity-service/home.md): 通过将来自不同数据源的身份融入其中，实现客户用户档案的创建 [!DNL Platform]。
-- [[!DNL体验数据模型(XDM)]](../../xdm/home.md): 组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [[!DNLAdobe Experience Platform身份服务]](../../identity-service/home.md):通过将来自不同数据源的身份融入其中，实现客户用户档案的创建 [!DNL Platform]。
+- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 了解本文档使用的两个关键术语并了解它们之间的区别也很重要：
-- **细分定义**: 用于描述目标受众的关键特性或行为的规则集。
-- **受众**: 生成的一组符合区段定义条件的用户档案。
+- **细分定义**:用于描述目标受众的关键特性或行为的规则集。
+- **受众**:生成的一组符合区段定义条件的用户档案。
 
 ## 概述
 
@@ -75,13 +75,13 @@ ht-degree: 0%
 
 区段 **[!UICONTROL 摘要]** 部分提供诸如ID、名称、说明和属性详细信息等信息。
 
-此外，您还可以选择编辑区段。 选择 **[!UICONTROL 编辑区段]** ，将转到 [!DNL Segment Builder]。 有关使用工作区的更多详 [!DNL Segment Builder] 细信息，请阅读 [[!DNL Segment Builder] 用户指南](./segment-builder.md)。
+此外，您还可以选择编辑区段。 选择 **[!UICONTROL 编辑区段]** ，将转到 [!DNL Segment Builder]。 有关使用工作区的更 [!DNL Segment Builder] 多详细信息，请阅 [[!DNL Segment Builder] 读用户指南](./segment-builder.md)。
 
 ### 细分受众总数
 
 区段 **[!UICONTROL 中的受众总数]** ，显示符合区段条件的用户档案总数。
 
-估计是使用当天样本数据的样本大小生成的。 如果您的用户档案存储中少于100万个实体，则使用完整的数据集； 100万至2000万个单位使用100万个单位； 超过2000万个单位，占全部单位的5%。 有关生成区段估计的更多信息，请参 [阅区段创建教程](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 的估计生成部分。
+估计是使用当天样本数据的样本大小生成的。 如果您的用户档案存储中少于100万个实体，则使用完整的数据集；100万至2000万个单位使用100万个单位；超过2000万个单位，占全部单位的5%。 有关生成区段估计的更多信息，请参 [阅区段创建教程](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 的估计生成部分。
 
 ### 已激活的目标
 
@@ -123,7 +123,7 @@ ht-degree: 0%
 
 [!DNL Segment Builder] 提供丰富的工作区，允许您与数据元素 [!DNL Profile] 交互。 工作区提供用于构建和编辑规则的直观控件，如用于表示数据属性的拖放拼贴。
 
-有关使用工作区的更多详 [!DNL Segment Builder] 细信息，请阅读 [[!DNL Segment Builder] 用户指南](./segment-builder.md)。
+有关使用工作区的更 [!DNL Segment Builder] 多详细信息，请阅 [[!DNL Segment Builder] 读用户指南](./segment-builder.md)。
 
 ![](../images/ui/overview/segment-builder.png)
 
