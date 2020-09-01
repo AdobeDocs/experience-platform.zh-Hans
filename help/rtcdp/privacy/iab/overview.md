@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时客户数据平台中的IAB TCF 2.0支持
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: 06eda1502d34da1caeebbe9b753dd437bbd9d6ab
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '2388'
 ht-degree: 1%
@@ -36,7 +36,7 @@ ht-degree: 1%
 >
 >如果CMP的ID无效， [!DNL Real-time CDP] 将按原样处理数据。 为了强制实施TCF 2.0，您必须先确认您的CMP具有已向IAB TCF 2.0注册的有效ID，然后再将数据发送到 [!DNL Experience Platform]。
 
-本指南还要求对以下Adobe Experience Platform服务有工作上的理解：
+本指南还要求对下列Adobe Experience Platform服务有工作上的理解：
 
 * [体验数据模型(XDM)](../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
 * [Adobe Experience Platform身份服务](../../../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
@@ -113,7 +113,7 @@ Adobe Audience Manager(通过源连 [!DNL Platform] 接器或其他方式)共享
 >
 >[!DNL Experience Cloud Identity Service] 但是，在Adobe Audience Manager仍支持同意处理，而且遵守TCF 2.0仅要求将库更新 [为5.0版](https://github.com/Adobe-Marketing-Cloud/id-service/releases)。
 
-将CMP配置为生成同意字符串后，必须集成Web [!DNL Experience Platform] SDK来收集这些字符串并将其发送 [!DNL Platform]到。 SDK提 [!DNL Platform] 供两个命令，可用于将IAB同意数据发送到平台（如下各小节所述），当客户首次提供同意信息时，以及此后任何同意更改时，应使用这些命令。
+将CMP配置为生成同意字符串后，必须集成Web [!DNL Experience Platform] SDK来收集这些字符串并将其发送 [!DNL Platform]到。 SDK提 [!DNL Platform] 供两个命令，可用于向平台发送IAB同意数据（如下各小节所述），当客户首次提供同意信息时，以及此后任何同意更改时，应使用这些命令。
 
 **SDK不与任何现成的CMP建立接口**。 由您决定如何将SDK集成到您的网站中，倾听CMP中的同意更改并调用相应的命令。
 
@@ -121,7 +121,7 @@ Adobe Audience Manager(通过源连 [!DNL Platform] 接器或其他方式)共享
 
 要使SDK向其发送数据，您 [!DNL Experience Platform]必须首先为中创建新的边缘 [!DNL Platform] 配置 [!DNL Adobe Experience Platform Launch]。 SDK文档中提供了如何创建新配置的特 [定步骤](../../../edge/fundamentals/edge-configuration.md)。
 
-为配置提供唯一名称后，选择Adobe Experience Platform旁的切换按 *[!UICONTROL 钮]*。 接下来，使用以下值完成表单的其余部分：
+为配置提供唯一名称后，选择Adobe Experience Platform旁的切换按 **[!UICONTROL 钮]**。 接下来，使用以下值完成表单的其余部分：
 
 | 边缘配置字段 | 值 |
 | --- | --- |
