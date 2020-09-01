@@ -5,7 +5,7 @@ title: 分段服务区段生成器用户指南
 topic: ui guide
 description: '区段生成器提供丰富的工作区，允许您与用户档案数据元素交互。 工作区提供用于构建和编辑规则的直观控件，如用于表示数据属性的拖放拼贴。 '
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '1723'
 ht-degree: 0%
@@ -49,7 +49,7 @@ ht-degree: 0%
 
 ![](../images/ui/segment-builder/events-eventTypes.png)
 
-默认情况下，只显示模式存储中已填充的数据字段。 这包括 [!UICONTROL 事件类型]。 如果事件类型 [!UICONTROL 列表不可见] ，或者您只能选择“任何”作为[!UICONTROL 事件类型，请选]择Fields旁边的“Any ************”，然后选择Oracle Caliable Digrast可用的字段下的Rodign下的完全显示XDM模式。 再次选择齿轮图标以返回到“ **[!UICONTROL 字段]** ”选项卡，您现在应能视图多个 [!UICONTROL 事件类型和] 模式字段，无论它们是否包含数据。
+默认情况下，只显示模式存储中已填充的数据字段。 这包括 [!UICONTROL 事件类型]。 如果事件类型 [!UICONTROL 列表不可见] ，或者您只能选择“任何”作为[!UICONTROL 事件类型，请选]择Fields旁边的“Any ************”，然后选择Oracle Caliable Digrast可用的字段下的完全XDM模式。 再次选择齿轮图标以返回到“ **[!UICONTROL 字段]** ”选项卡，您现在应能视图多个 [!UICONTROL 事件类型和] 模式字段，无论它们是否包含数据。
 
 ![](../images/ui/segment-builder/show-populated.png)
 
@@ -131,7 +131,7 @@ ht-degree: 0%
 
 ## 区段属性
 
-构建区段定义时，工 *[!UICONTROL 作区右侧的]* “区段属性”部分会显示所生成区段的估计大小，允许您在构建受众本身之前根据需要调整区段定义。
+构建区段定义时，工 **[!UICONTROL 作区右侧的]** “区段属性”部分会显示所生成区段的估计大小，允许您在构建受众本身之前根据需要调整区段定义。
 
 在“ **[!UICONTROL 区段属性]** ”部分，您还可以指定有关区段定义的重要信息，包括 **[!UICONTROL 名称]****[!UICONTROL 和说明]**。 区段定义名称用于在组织定义的区段中识别您的区段，因此应具有描述性、简明性和唯一性。
 
