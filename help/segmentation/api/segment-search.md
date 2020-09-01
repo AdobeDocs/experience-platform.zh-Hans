@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;segmentation;segmentation service;troubleshooting;API;seg;segment;Segment
+keywords: Experience Platform;segmentation;segmentation service;troubleshooting;API;seg;segment;Segment;search;segment search;
 solution: Adobe Experience Platform
 title: 段搜索端点
 topic: guide
 description: 区段搜索用于搜索包含在各种数据源中的字段，并近乎实时地返回它们。 本指南提供相关信息，帮助您更好地了解细分搜索，并包含使用API执行基本操作的示例API调用。
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
 workflow-type: tm+mt
 source-wordcount: '1179'
 ht-degree: 2%
@@ -23,7 +23,7 @@ ht-degree: 2%
 
 本指南中使用的端点是API的一 [!DNL Adobe Experience Platform Segmentation Service] 部分。 在继续之前，请查 [看入门指南](./getting-started.md) ，了解成功调用API需要了解的重要信息，包括必需的头以及如何读取示例API调用。
 
-除了入门部分中概述的所需标题外，对“段搜索”端点的所有请求都需要以下附加标题：
+除了入门部分中概述的所需标题外，所有对“段搜索”端点的请求都需要以下附加标题：
 
 - x-ups-search-version:“1.0”
 
