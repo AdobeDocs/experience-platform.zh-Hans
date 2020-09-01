@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 激活入站源数据以填充客户用户档案
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6bd5dc5a68fb2814ab99d43b34f90aa7e50aa463
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '476'
 ht-degree: 0%
@@ -47,7 +47,7 @@ ht-degree: 0%
 
 ![](../../images/tutorials/dataflow/cloud-storage/batch/select-dataset-schema.png)
 
-出 **[!UICONTROL 现模式编辑]** 器，在中心画布中显示模式的结构。 在画布中，选择要设置为主标识的字段。 在显示的 *[!UICONTROL 字段属性]* 选项卡下，选择“标 **[!UICONTROL 识”复选]** 框 **[!UICONTROL ，然后选]**&#x200B;择主标识。 最后，选择适当的 **[!UICONTROL 身份命名空间]**，然后单击 **[!UICONTROL 应用]**。
+出 **[!UICONTROL 现模式编辑]** 器，在中心画布中显示模式的结构。 在画布中，选择要设置为主标识的字段。 在显示的 **[!UICONTROL 字段属性]** 选项卡下，选择“标 **[!UICONTROL 识”复选]** 框 **[!UICONTROL ，然后选]**&#x200B;择主标识。 最后，选择适当的 **[!UICONTROL 身份命名空间]**，然后单击 **[!UICONTROL 应用]**。
 
 ![](../../images/tutorials/dataflow/cloud-storage/batch/set-schema-identity.png)
 
