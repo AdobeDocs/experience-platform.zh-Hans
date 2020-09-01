@@ -5,7 +5,7 @@ title: 准备要在Intelligent Services中使用的数据
 topic: Intelligent Services
 description: '为了使智能服务能够从您的营销事件数据中发掘洞察，必须以标准结构从语义上丰富和维护数据。 智能服务利用体验数据模型(XDM)模式来实现此目标。 具体而言，在智能服务中使用的所有数据集]必须符合Consumer ExperienceEvent(CEE)XDM模式。 '
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '1980'
 ht-degree: 0%
@@ -272,7 +272,7 @@ CEE混音中有几个关键字段应用于生成有用 [!DNL Intelligent Service
 * [在UI中创建数据集](../catalog/datasets/user-guide.md#create) (按照工作流使用现有模式)
 * [在API中创建数据集](../catalog/datasets/create.md)
 
-创建数据集后，您可以在数据集工作区的平台UI中找 *[!UICONTROL 到它]* 。
+创建数据集后，您可以在数据集工作区的平台UI中找 **[!UICONTROL 到它]** 。
 
 ![](images/data-preparation/dataset-location.png)
 
