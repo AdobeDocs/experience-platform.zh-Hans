@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Phoenix;phoenix
 solution: Experience Platform
 title: 菲尼克斯连接器
 topic: overview
+description: 以下文档提供了如何使用API或用户界面将Phoenix连接到平台的信息。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '214'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
