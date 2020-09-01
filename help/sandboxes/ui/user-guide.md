@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 沙箱用户指南
 topic: user guide
 translation-type: tm+mt
-source-git-commit: c8446f6040ac9ef1f4196d9057b531011e243258
+source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
 workflow-type: tm+mt
 source-wordcount: '530'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 视图沙箱
 
-在Experience PlatformUI中，单 **[!UICONTROL 击左]** 侧导航中的“沙箱 _[!UICONTROL ”以打开“沙]_ 箱”仪表板。 仪表板会列表组织的所有可用沙箱，包括沙箱类型（生产或开发）和状态（活动、创建、删除或失败）。
+在Experience PlatformUI中，单 **[!UICONTROL 击左]** 侧导航中的“沙箱 **[!UICONTROL ”以打开“沙]** 箱”仪表板。 仪表板会列表组织的所有可用沙箱，包括沙箱类型（生产或开发）和状态（活动、创建、删除或失败）。
 
 ![](../images/ui/sandboxes-tab.png)
 
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 ![](../images/ui/create-sandbox-button.png)
 
-将显 _[!UICONTROL 示“创建沙箱]_ ”对话框，提示您提供沙箱的显示标题和名称。 显 **示标题** （显示标题）的用户可读性高，描述性应足以易于识别。 沙箱名 **[!UICONTROL 称]** 是用于API调用的全小写标识符，因此应该是唯一和简洁的。
+将显 **[!UICONTROL 示“创建沙箱]** ”对话框，提示您提供沙箱的显示标题和名称。 显 **示标题** （显示标题）的用户可读性高，描述性应足以易于识别。 沙箱名 **[!UICONTROL 称]** 是用于API调用的全小写标识符，因此应该是唯一和简洁的。
 
 When finished, click **[!UICONTROL Create]**.
 
@@ -56,7 +56,7 @@ When finished, click **[!UICONTROL Create]**.
 >
 >由于您仅限于创建非生产沙箱类型，因 **[!UICONTROL 此类型]** 选项在“非生产”处被锁定，无法进行操作。
 
-创建完沙箱后，刷新页面，新沙箱将显示在“沙 _[!UICONTROL 箱]_ ”仪表板中，状态为“[!UICONTROL 创建]”。 新沙箱需要大约15分钟时间才能由系统设置，之后其状态将变为“[!UICONTROL 活动]”。
+创建完沙箱后，刷新页面，新沙箱将显示在“沙 **[!UICONTROL 箱]** ”仪表板中，状态为“[!UICONTROL 创建]”。 新沙箱需要大约15分钟时间才能由系统设置，之后其状态将变为“[!UICONTROL 活动]”。
 
 ![](../images/ui/sandbox-created.png)
 
@@ -96,7 +96,7 @@ When finished, click **[!UICONTROL Create]**.
 
 <img src="../images/ui/delete-are-you-sure.png" width="350"><br>
 
-此时会显示一条确认消息，沙箱会从“沙箱”工 _[!UICONTROL 作区中]_ 删除。
+此时会显示一条确认消息，沙箱会从“沙箱”工 **[!UICONTROL 作区中]** 删除。
 
 ## 后续步骤
 
