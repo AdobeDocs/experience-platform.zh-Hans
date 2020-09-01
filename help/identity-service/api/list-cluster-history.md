@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;identities;cluster history
 solution: Experience Platform
 title: 获取身份的群集历史记录
 topic: API guide
+description: 身份可以在各种设备图形运行过程中移动群集。 Identity Service提供特定身份的群集关联随时间变化的可见性。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
 workflow-type: tm+mt
-source-wordcount: '303'
+source-wordcount: '329'
 ht-degree: 1%
 
 ---
@@ -31,7 +32,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/cluster/history
 
 **请求**
 
-选项1: 将标识作为命名空间(`nsId`按ID)和ID值(`id`)提供。
+选项1:将标识作为命名空间(`nsId`按ID)和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -42,7 +43,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2: 将标识作为命名空间(`ns`按名称)和ID值(`id`)提供。
+选项2:将标识作为命名空间(`ns`按名称)和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -53,7 +54,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3: 提供XID()身`xid`份。 有关如何获取身份的XID的详细信息，请参阅此文档中 [有关获取身份的XID的部分](./list-native-id.md)。
+选项3:提供XID()身`xid`份。 有关如何获取身份的XID的详细信息，请参阅此文档中 [有关获取身份的XID的部分](./list-native-id.md)。
 
 ```shell
 curl -X GET \
@@ -80,7 +81,7 @@ POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 
 **请求主体**
 
-选项1: 提供要检索群集成员的XID列表。
+选项1:提供要检索群集成员的XID列表。
 
 ```shell
 {
@@ -89,7 +90,7 @@ POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 }
 ```
 
-选项2: 提供身份列表作为复合ID，其中每个ID值都由命名空间代码命名，命名空间。
+选项2:提供身份列表作为复合ID，其中每个ID值都由命名空间代码命名，命名空间。
 
 ```shell
 {
