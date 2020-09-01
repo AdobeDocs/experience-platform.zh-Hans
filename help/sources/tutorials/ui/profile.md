@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;activate inbound data;populate profile;populate rtcp;populated unified profile
 solution: Experience Platform
 title: 激活入站源数据以填充客户用户档案
 topic: overview
+description: 来自源连接器的入站数据可用于丰富和填充实时客户用户档案数据。
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: fb60e11b9502c31e654d3fbe5dc240ace9429332
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '494'
 ht-degree: 0%
 
 ---
