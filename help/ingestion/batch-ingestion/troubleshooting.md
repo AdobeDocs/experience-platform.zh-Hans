@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics;ingested data
+keywords: Experience Platform;home;popular topics;ingested data;troubleshooting;faq;Ingestion;Batch ingestion;batch ingestion;
 solution: Experience Platform
 title: Adobe Experience Platform批量摄取疑难解答指南
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 9766cadee83e81bacc2abe6b13342ac95aae19a9
+source-git-commit: c04fb056d4564e53f192e0734a700a13820f5ba7
 workflow-type: tm+mt
 source-wordcount: '1389'
 ht-degree: 1%
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 ### 从CompleteBatch API接收HTTP 200 OK后，批是否立即处于活动状态？
 
-来 `200 OK` 自API的响应意味着批处理已被接受——直到它过渡到其最终状态（如“活动”或“失败”）后，它才处于活动状态。
+来自 `200 OK` API的响应意味着批处理已被接受——直到它过渡到其最终状态（如“活动”或“失败”）后，它才处于活动状态。
 
 ### CompleteBatch API调用失败后，是否可以重试该调用？
 
