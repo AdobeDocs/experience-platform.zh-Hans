@@ -5,9 +5,9 @@ title: 数据集用户指南
 topic: datasets
 description: 本数据集用户指南提供了有关在Adobe Experience Platform用户界面内处理数据集时执行常见操作的说明。
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1159'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
    * [模式合成基础](../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式编辑器](../../xdm/tutorials/create-schema-ui.md):了解如何使用用户界面内的自定义XDM [!DNL Schema Editor] 模式 [!DNL Platform] 构建自己。
 * [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [[!DNL数据管理]](../../data-governance/home.md):确保遵守有关使用客户数据的法规、限制和政策。
+* [[!DNLAdobe Experience Platform数据治理]](../../data-governance/home.md):确保遵守有关使用客户数据的法规、限制和政策。
 
 ## 视图数据集
 
@@ -114,7 +114,7 @@ ht-degree: 0%
 
 ## 管理并强制对数据集进行数据管理
 
-数据使用标签和执行(DULE)是核心的数据治理机制 [!DNL Experience Platform]。 DULE标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅数 [据管理概述](../../data-governance/home.md) ，进一步了解标签 [，或参阅数据使用标签用户指南](../../data-governance/labels/overview.md) ，了解如何将标签应用到数据集。
+数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅数 [据管理概述](../../data-governance/home.md) ，进一步了解标签 [，或参阅数据使用标签用户指南](../../data-governance/labels/overview.md) ，了解如何将标签应用到数据集。
 
 ## 删除数据集
 
