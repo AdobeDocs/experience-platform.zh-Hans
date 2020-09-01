@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中为营销自动化连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6bd5dc5a68fb2814ab99d43b34f90aa7e50aa463
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '1284'
 ht-degree: 0%
@@ -98,7 +98,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->**[!UICONTROL 在一]** 次性摄取 **** 期间，间隔和回填不可见。
+>**[!UICONTROL 在一]** 次 **[!UICONTROL 性摄取期]** 间，间隔和回填不可见。
 
 向计划提供适当的值后，选择“下 **[!UICONTROL 一步]**”。
 
@@ -108,7 +108,7 @@ ht-degree: 0%
 
 此时 **[!UICONTROL 会显示]** “数据流详细信息”步骤，允许您命名新数据流并简要描述新数据流。
 
-在此过程中，您还可以启用“部 **[!UICONTROL 分摄取]** ”和“ **[!UICONTROL 错误诊断”]**。 启用 **[!UICONTROL 部分摄取]** ，可以摄取包含错误且达到特定阈值的数据。 启 **[!UICONTROL 用部分摄取]** ，请拖动错误 *[!UICONTROL 阈值%dial以调整批]* 错误阈值。 或者，也可以通过选择输入框手动调整阈值。 有关详细信息，请参 [阅部分批摄取概述](../../../../ingestion/batch-ingestion/partial.md)。
+在此过程中，您还可以启用“部 **[!UICONTROL 分摄取]** ”和“ **[!UICONTROL 错误诊断”]**。 启用 **[!UICONTROL 部分摄取]** ，可以摄取包含错误且达到特定阈值的数据。 启 **[!UICONTROL 用部分摄取]** ，请拖动错误 **[!UICONTROL 阈值%dial以调整批]** 错误阈值。 或者，也可以通过选择输入框手动调整阈值。 有关详细信息，请参 [阅部分批摄取概述](../../../../ingestion/batch-ingestion/partial.md)。
 
 为数据流提供值，然后选择 **[!UICONTROL 下一步]**。
 
