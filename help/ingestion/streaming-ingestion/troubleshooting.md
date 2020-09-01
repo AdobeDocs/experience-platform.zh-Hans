@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 流摄取疑难解答
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: c8e53a25c5b22e8d840658fe26ff47875947a6d0
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '997'
 ht-degree: 0%
@@ -58,7 +58,7 @@ Adobe Experience Platform [!DNL Data Ingestion] 提供REST风格的API，您可�
 
 发送到的所有数据( [!DNL Platform] 成功或以其他方式)在保留到数据集中之前都会作为批处理文件存储。 批处理状态显示在发送到的数据集中。
 
-您可以使用活动用户界面检查数据集Experience Platform，以验证数据是否 [已成功摄取](https://platform.adobe.com)。 单击 **[!UICONTROL 左侧导航]** 中的“数据集”以显示数据集列表。 从显示的列表中选择要流式传送到的数据集以打开其“ *[!UICONTROL 数据集活动]* ”页，显示选定时间段内发送的所有批。 有关使用监视数 [!DNL Experience Platform] 据流的详细信息，请参阅监视流 [数据流的指南](../quality/monitor-data-flows.md)。
+您可以使用活动用户界面检查数据集Experience Platform，以验证数据是否 [已成功摄取](https://platform.adobe.com)。 单击 **[!UICONTROL 左侧导航]** 中的“数据集”以显示数据集列表。 从显示的列表中选择要流式传送到的数据集以打开其“ **[!UICONTROL 数据集活动]** ”页，显示选定时间段内发送的所有批。 有关使用监视数 [!DNL Experience Platform] 据流的详细信息，请参阅监视流 [数据流的指南](../quality/monitor-data-flows.md)。
 
 如果您的数据未能摄取，并且您希望从中恢复 [!DNL Platform]该数据，则可以通过将失败的批次的ID发送到 [!DNL Data Access API]。 有关详细信息，请 [参阅检索失败批](../quality/retrieve-failed-batches.md) “指南”。
 
@@ -100,4 +100,4 @@ Adobe Experience Platform [!DNL Data Ingestion] 提供REST风格的API，您可�
 
 有两种身份命名空间:默认和自定义。 使用自定义命名空间时，请确保命名空间已在中注册 [!DNL Identity Service]。 有关使用 [默认命名空间和自定义](../../identity-service/namespaces.md) ，请参阅标识命名空间概述。
 
-您可以使用 [[!DNLExperience PlatformUI]](https://platform.adobe.com) ，查看有关消息失败接收原因的更多信息。 单击 **[!UICONTROL 左侧导航]** 中的“监视”，然后视图“ _[!UICONTROL 流式端到端”选项卡]_ ，以查看在选定时间段内流化的消息批。
+您可以使用 [[!DNLExperience PlatformUI]](https://platform.adobe.com) ，查看有关消息失败接收原因的更多信息。 单击 **[!UICONTROL 左侧导航]** 中的“监视”，然后视图“ **[!UICONTROL 流式端到端”选项卡]** ，以查看在选定时间段内流化的消息批。
