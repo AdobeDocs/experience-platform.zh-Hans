@@ -6,9 +6,9 @@ last-update: April 13, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '991'
 ht-degree: 5%
 
 ---
@@ -73,7 +73,7 @@ Adobe Experience Platform [!DNL Data Governance] 是用于管理客户数据并�
 
 要开始进行数据治理，必须全面了解适用于客户数据的法规、合同义务和公司政策。 从那里，可以通过应用适当的数据使用标签来对数据进行分类，并且可以通过定义数据使用策略来控制其使用。
 
-DULE框架通过用户界面和DULE API简化了对数据进行分类和创建数据使用策 [!DNL Experience Platform] 略的过程并简 [!DNL Policy Service] 化了。
+该框 [!DNL Data Governance] 架通过用户界面和API简化数据分类和创建数据使用策略 [!DNL Experience Platform] 的过程并简 [!DNL Policy Service] 化。
 
 **新增功能**
 
