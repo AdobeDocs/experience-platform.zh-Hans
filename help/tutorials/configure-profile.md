@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Real-time Customer Profile;Identity Service;
 solution: Experience Platform
 title: 实时客户用户档案教程
 topic: tutorial
+description: 本文档概述了涉及的步骤，并提供了用于完成每个工作流程的教程的链接。
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '450'
+source-wordcount: '466'
 ht-degree: 0%
 
 ---
@@ -18,7 +19,7 @@ ht-degree: 0%
 
 ## 为和启用模式 [!DNL Profile] 功能 [!DNL Identity]
 
-在将数据引入Adobe Experience Platform并用于创建之前，必 [!DNL Real-time Customer Profiles]须创建模式以提供要摄取的数据的结构，并且必须启用该模式以用于 [!DNL Profile] 和Adobe Experience Platform [!DNL Identity Service]。 有关创建同时启用模式和的分步说 [!DNL Profile] 明 [!DNL Identity Service]，请参阅使用模式注册 [表API创建模式或使用](../xdm/tutorials/create-schema-api.md) 模式生成器UI创建模式的教程 [](../xdm/tutorials/create-schema-ui.md)。
+在将数据引入Adobe Experience Platform并用于创建之前，必 [!DNL Real-time Customer Profiles]须创建模式，以提供将要摄取的数据的结构，并且必须启用该模式以在 [!DNL Profile] 和Adobe Experience Platform使 [!DNL Identity Service]用。 有关创建同时启用模式和的分步说 [!DNL Profile] 明 [!DNL Identity Service]，请参阅使用模式注册 [表API创建模式或使用](../xdm/tutorials/create-schema-api.md) 模式生成器UI创建模式的教程 [](../xdm/tutorials/create-schema-ui.md)。
 
 ## 为和配置数 [!DNL Profile] 据集 [!DNL Identity]
 
@@ -26,7 +27,7 @@ ht-degree: 0%
 
 ## 配置合并策略
 
-Adobe Experience Platform使您能够将来自多个来源的数据整合在一起，并将其合并，以便了解每个客户的完整视图。 将数据整合在一起时，合并策略是确定 [!DNL Platform] 数据的优先级以及合并哪些数据以创建统一视图的规则。 使用REST风格的API或用户界面，您可以创建新的合并策略、管理现有策略并为组织设置默认的合并策略。 要在UI中使用合并策 [!DNL Platform] 略，请访问合 [并策略用户指南](../profile/ui/merge-policies.md)。 要使用实时客户用户档案API处理合并策略，请参阅合并策 [略开发人员指南](../profile/api/merge-policies.md)。
+Adobe Experience Platform使您能够将来自多个来源的数据整合在一起，以便全面视图每位客户。 将数据整合在一起时，合并策略是确定 [!DNL Platform] 数据的优先级以及合并哪些数据以创建统一视图的规则。 使用REST风格的API或用户界面，您可以创建新的合并策略、管理现有策略并为组织设置默认的合并策略。 要在UI中使用合并策 [!DNL Platform] 略，请访问合 [并策略用户指南](../profile/ui/merge-policies.md)。 要使用实时客户用户档案API处理合并策略，请参阅合并策 [略开发人员指南](../profile/api/merge-policies.md)。
 
 ## 配置边缘投影
 
