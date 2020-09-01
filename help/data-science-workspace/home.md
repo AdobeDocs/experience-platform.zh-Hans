@@ -5,7 +5,7 @@ title: 数据科学工作区概述
 topic: overview
 description: 本指南概述了与数据科学工作区相关的主要概念。
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
 workflow-type: tm+mt
 source-wordcount: '2584'
 ht-degree: 0%
@@ -47,7 +47,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [!DNL Data Science Workspace] | [!DNL Data Science Workspace] 使客 [!DNL Experience Platform] 户能够创建机器学习模型，利用跨Adobe和解决 [!DNL Experience Platform] 方案的数据，生成智能洞察和预测，从而打造令人愉悦的最终用户数字体验。 |
 | 人工智能 | 人工智能是计算机系统的理论和发展，能够执行通常需要人类智能的任务，如视觉感知、语音识别、决策和语言之间的翻译。 |
-| 机器学习 | 机器学习是一个研究领域，它使计算机能够在不明确编程的情况下学习。 |
+| 机器学习 | 机器学习是一个研究领域，它使计算机能够学习，而无需明确编程。 |
 | [!DNL Sensei] ML Framework | [!DNL Sensei] ML Framework是跨Adobe的统一机器学习框架，它利用相关数据 [!DNL Experience Platform] ，以更快、可扩展和可重用的方式支持数据科学家开发机器学习驱动的智能服务。 |
 | [!DNL Experience Data Model] | [!DNL Experience Data Model] (XDM)是由Adobe牵头的标准化工作，旨在为客户体验管 [!DNL Profile] 理定 [!DNL ExperienceEvent]义标准模式，如和。 |
 | [!DNL JupyterLab] | [!DNL JupyterLab] 是Project Jupyter的一个基于web的开放源代码界面，并紧密集成到其中 [!DNL Experience Platform]。 |
@@ -62,7 +62,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 ![](./images/home/recipe_hiearchy_ui.png)
 
-## 理解 [!DNL Data Science Workspace]
+## 了解 [!DNL Data Science Workspace]
 
 通过 [!DNL Data Science Workspace]数据科学家可以简化在大数据集中发掘洞察的繁琐过程。 构建在通用的机器学习框架和运行时之上， [!DNL Data Science Workspace] 可提供高级工作流管理、模型管理和可伸缩性。 智能服务支持重新使用机器学习方法，为使用Adobe产品和解决方案创建的各种应用程序提供动力。
 
@@ -108,7 +108,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 ### 操作化
 
-当您对菜谱感到满意时，只需点击几下即可创建智能服务。 无需编码——您无需注册开发人员或工程师即可自行完成。 最后，将智能服务发布到AdobeIO，您的数字体验团队就可以使用它。
+当您对菜谱感到满意时，只需点击几下即可创建智能服务。 无需编码——您无需注册开发人员或工程师即可自行完成。 最后，将智能服务发布到AdobeIO，让您的数字体验团队可以享用。
 
 <!--You can also publish your intelligent service to the Service Gallery, where it's available to specific people, specific organizations, or everyone who develops data solutions on Adobe Experience Platform. You can even share it with your external partners, and they can share their intelligent service with you. And the next time you're starting a new recipe, you can check the Service Gallery to see if there's a similar intelligent service you can use to get started. -->
 
@@ -132,9 +132,9 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 | 权限 | 已启用 | 已禁用 |
 |---|---|---|
-| [!DNL Manage Data Science Workspace] | 提供对中所有服务的访问 [!DNL Data Science Workspace]。 | 禁用对中所有服务的API和 [!DNL Data Science Workspace] UI访问。 禁用后，将阻止路由 [!DNL Data Science Workspace] 到 *[!UICONTROL “模型]* ”和“ *[!UICONTROL 服务]* ”页面。 |
+| [!DNL Manage Data Science Workspace] | 提供对中所有服务的访问 [!DNL Data Science Workspace]。 | 禁用对中所有服务的API和 [!DNL Data Science Workspace] UI访问。 禁用后，将阻止路由 [!DNL Data Science Workspace] 到 **[!UICONTROL “模型]** ”和“ **[!UICONTROL 服务]** ”页面。 |
 
-### 安全与心安
+### 安全与心安理得
 
 保护Adobe是重中之重。 Adobe通过为帮助遵守行业公认的标准、法规和认证而开发的安全流程和控制来保护您的数据。
 
