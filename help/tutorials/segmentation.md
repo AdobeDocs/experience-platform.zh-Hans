@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: 分段教程
 topic: tutorial
+description: Adobe Experience Platform分段服务提供用户界面和RESTful API，使您能够根据实时客户用户档案数据构建细分和生成受众。 这些细分在平台上集中配置和维护，任何Adobe解决方案均可轻松访问。
 translation-type: tm+mt
-source-git-commit: ae244711ed89f4c7d6f87fd38bf7f8324e9b64be
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '584'
 ht-degree: 0%
 
 ---
@@ -18,7 +19,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTf
 
 ## 创建区段定义
 
-段定义是用于描述目标受众的关键特性或行为的规则集。 概念化后，使用细分定义中概述的规则确定某个细分的合格受众成员。 可以使用用户界面或API完成区段定义的开发、测 [!DNL Platform] 试、预览和保存。 要创建区段定义，请按照创 [建区段API教程](../segmentation/tutorials/create-a-segment.md) 或区 [段生成器UI用户指南进行操作](../segmentation/ui/overview.md)。
+段定义是用于描述目标受众的关键特性或行为的规则集。 概念化后，使用细分定义中概述的规则确定某个细分的合格受众成员。 可使用用户界面或API完成区段定义的开发、测 [!DNL Platform] 试、预览和保存。 要创建区段定义，请按照创 [建区段API教程](../segmentation/tutorials/create-a-segment.md) 或区 [段生成器UI用户指南进行操作](../segmentation/ui/overview.md)。
 
 ## 评估区段和访问结果
 
@@ -30,7 +31,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTf
 
 ## 配置合并策略
 
-Adobe Experience Platform使您能够将来自多个来源的数据整合在一起，并将其合并，以便了解每个客户的完整视图。 将数据整合在一起时，合并策略是确定 [!DNL Platform] 数据的优先级以及合并哪些数据以创建统一视图的规则。 使用REST风格的API或用户界面，您可以创建新的合并策略、管理现有策略并为组织设置默认的合并策略。 要在UI中使用合并策 [!DNL Platform] 略，请访问合 [并策略用户指南](../profile/ui/merge-policies.md)。 要使用API处理合并策略，请 [!DNL Real-time Customer Profile] 参阅合并策 [略开发人员指南](../profile/api/merge-policies.md)。
+Adobe Experience Platform使您能够将来自多个来源的数据整合在一起，以便全面视图每位客户。 将数据整合在一起时，合并策略是确定 [!DNL Platform] 数据的优先级以及合并哪些数据以创建统一视图的规则。 使用REST风格的API或用户界面，您可以创建新的合并策略、管理现有策略并为组织设置默认的合并策略。 要在UI中使用合并策 [!DNL Platform] 略，请访问合 [并策略用户指南](../profile/ui/merge-policies.md)。 要使用API处理合并策略，请 [!DNL Real-time Customer Profile] 参阅合并策 [略开发人员指南](../profile/api/merge-policies.md)。
 
 ## 为细分强制实施数据使用合规性
 
@@ -38,7 +39,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ## 流细分
 
-流细分是一种在事件进入特定细分组后立即对客户进行评估的能力。 借助此功能，现在可以在数据传入Adobe Experience Platform时评估大多数细分规则，这意味着，在不运行计划的细分作业的情况下，区段成员关系将保持最新。 要了解更多信息，请访 [问流细分概述](../segmentation/api/streaming-segmentation.md)。
+流细分是一种在事件进入特定细分组后立即对客户进行评估的能力。 借助此功能，现在可以在数据传入Adobe Experience Platform时评估大多数细分规则，这意味着，在不运行计划的细分作业的情况下，细分成员资格将保持最新。 要了解更多信息，请访 [问流细分概述](../segmentation/api/streaming-segmentation.md)。
 
 ## 多实体分割
 
