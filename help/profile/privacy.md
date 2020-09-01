@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时客户用户档案中的隐私请求处理
 topic: overview
 translation-type: tm+mt
-source-git-commit: c8446f6040ac9ef1f4196d9057b531011e243258
+source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
@@ -93,7 +93,7 @@ curl -X POST \
 
 ### 使用UI
 
-在UI中创建作业请求时，请务必在“产 **[!UICONTROL 品”下选]** 择AEP **[!UICONTROL Data Lake和／或]** 用户档案 _[!UICONTROL ，以便分别]_ 处理存储在或中的 [!DNL Data Lake][!DNL Real-time Customer Profile]数据的作业。
+在UI中创建作业请求时，请务必在“产 **[!UICONTROL 品”下选]** 择AEP **[!UICONTROL Data Lake和／或]** 用户档案 **[!UICONTROL ，以便分别]** 处理存储在或中的 [!DNL Data Lake][!DNL Real-time Customer Profile]数据的作业。
 
 <img src="images/privacy/product-value.png" width="450"><br>
 
