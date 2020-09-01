@@ -3,11 +3,11 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: 数据治理和隐私教程
 topic: tutorial
-description: 数据使用标签和执行(DULE)是Adobe Experience Platform数据治理的核心机制。 DULE功能允许您将数据使用标签应用到数据集和字段，并根据相关的数据使用策略对每个标签进行分类。
+description: 本文档概述了与Adobe Experience Platform数据治理和Adobe Experience Platform Privacy Service相关的各种可用教程。
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '496'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Data Governance] 和 [!DNL Privacy] Tutorials
 
-[!DNL Data Usage Labeling and Enforcement] (DULE)是Adobe Experience Platform的核心机制 [!DNL Data Governance]。 DULE功能允许您将数据使用标签应用到数据集和字段，并根据相关的数据使用策略对每个标签进行分类。 在开始使用标签之前，请参 [阅数据管理概述](../data-governance/home.md) ，以更加可靠地介绍中的DULE框架 [!DNL Platform]。
+Adobe Experience Platform数据管理使您能够将数据使用标签应用于数据集和字段，根据相关数据使用策略对每个数据进行分类，并在对这些数据集和／或字段执行某些操作时评估策略违规情况。 在开始使用本文档中列出的教程之前，请参 [[!DNL Data Governance] 阅概述](../data-governance/home.md) ，以获得框架的更强大的介绍。
 
 Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户界面，使您能跨各种解决方案协调隐私和合规要求。 要了解更多信息，请首先阅读 [Privacy Service概述](../privacy-service/home.md)。
 
@@ -25,11 +25,11 @@ Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户�
 
 ## 创建数据使用策略
 
-DULE API允 [!DNL Policy Service] 许您创建和管理DULE策略，以确定可以对包含某些DULE标签的数据执行哪些营销操作。 要开始，请阅读数据使 [用策略概述](../data-governance/policies/overview.md)。
+API [!DNL Policy Service] 允许您创建和管理数据使用策略，以确定可以对包含某些使用标签的数据采取哪些营销操作。 要开始，请阅读数据使 [用策略概述](../data-governance/policies/overview.md)。
 
 ## 实施数据使用策略
 
-为数据创建数据使用标签和强制实施(DULE)标签并针对这些标签创建营销操作的DULE策略后，您可以使用DULE [!DNL Policy Service] API评估对数据集或任意DULE标签组执行的营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。 要开始，请访问策 [略实施概述](../data-governance/enforcement/overview.md)。
+为数据添加了使用标签，并针对这些标签创建了营销操作策略后，您便可以使用评估在对数据集或任意使用标签组执行营销 [!DNL Policy Service API] 操作时，是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。 要开始，请访问策 [略实施概述](../data-governance/enforcement/overview.md)。
 
 ## 为受众区段强制实施数据使用合规性
 
