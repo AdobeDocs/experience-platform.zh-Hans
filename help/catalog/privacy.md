@@ -5,7 +5,7 @@ title: 数据湖中的隐私请求处理
 topic: overview
 description: Adobe Experience Platform Privacy Service处理客户访问、选择退出出售或删除其法律和组织隐私法规规定的个人数据的请求。 此文档涵盖与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
 translation-type: tm+mt
-source-git-commit: c8446f6040ac9ef1f4196d9057b531011e243258
+source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
 workflow-type: tm+mt
 source-wordcount: '1249'
 ht-degree: 0%
@@ -57,7 +57,7 @@ Adobe Experience Platform [!DNL Identity Service] 将跨系统和设备的客户
 
 ### 使用UI {#identity-ui}
 
-在用 [!DNL Experience Platform ]户界面中， _[!UICONTROL 模式工]_ 作区允许您编辑现有XDM模式。 要向模式添加标识描述符，请从列表中选择模式，然后按照教程中 [将模式字段设置为标识字段](../xdm/tutorials/create-schema-ui.md#identity-field) 的步 [!DNL Schema Editor] 骤操作。
+在用 [!DNL Experience Platform ]户界面中， **[!UICONTROL 模式工]** 作区允许您编辑现有XDM模式。 要向模式添加标识描述符，请从列表中选择模式，然后按照教程中 [将模式字段设置为标识字段](../xdm/tutorials/create-schema-ui.md#identity-field) 的步 [!DNL Schema Editor] 骤操作。
 
 在将模式中的相应字段设置为标识字段后，您可以继续执行下一节提交隐 [私请求](#submit)。
 
@@ -139,7 +139,7 @@ curl -X POST \
 
 ### 使用UI
 
-在UI中创建作业请求时，请务必在“产 **[!UICONTROL 品”下选]** 择AEP **[!UICONTROL Data Lake和／或]** 用户档案 _[!UICONTROL ，以便分别]_ 处理存储在或中的 [!DNL Data Lake][!DNL Real-time Customer Profile]数据的作业。
+在UI中创建作业请求时，请务必在“产 **[!UICONTROL 品”下选]** 择AEP **[!UICONTROL Data Lake和／或]** 用户档案 **[!UICONTROL ，以便分别]** 处理存储在或中的 [!DNL Data Lake][!DNL Real-time Customer Profile]数据的作业。
 
 <img src="images/privacy/product-value.png" width="450"><br>
 
