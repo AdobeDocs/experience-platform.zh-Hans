@@ -5,7 +5,7 @@ topic: overview
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制通过Adobe Admin Console提供。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。
 translation-type: tm+mt
-source-git-commit: e22b0f64fd6153f76cff862a6e973a235257430e
+source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
 workflow-type: tm+mt
 source-wordcount: '1162'
 ht-degree: 2%
@@ -32,7 +32,7 @@ ht-degree: 2%
 - 管理员可以视图默 [认产品用户档案](#product-profiles) ，或根据需要创建新的客户产品用户档案。
 - 管理员可以编辑任何现有产品用户档案的权限和用户。
 - 在创建或编辑产品用户档案时，管理员使用“用户”选项卡将用户添加到用户档案 **[!UICONTROL 中]** ，并通过访问“permissions[!UICONTROL adets]”选项卡，向这些用户(如“Read Datasets[!UICONTROL ”或“]Manage模式 **[!UICONTROL ”)授予]** 权限。 同样，管理员也可以使用相同的权限选项卡将访问权限分配给沙箱。
-- 当用户登录到用 [!DNL Experience Platform] 户界面时，其 [!DNL Platform] 权能的访问权限由步骤2授予的权限驱动。 例如，如果用户没有“[!UICONTROL 视图集]”权限，则侧面菜单中的 *[!UICONTROL Datasets]* 选项卡对该用户将不可见。
+- 当用户登录到用 [!DNL Experience Platform] 户界面时，其 [!DNL Platform] 权能的访问权限由步骤2授予的权限驱动。 例如，如果用户没有“[!UICONTROL 视图集]”权限，则侧面菜单中的 **[!UICONTROL Datasets]** 选项卡对该用户将不可见。
 
 有关如何在中管理访问控制的更详细步 [!DNL Experience Platform]骤，请参阅 [访问控制用户指南](./ui/overview.md)。
 
@@ -95,10 +95,10 @@ Adobe Admin Console为管理Adobe产品授权和访问您的组织提供了一�
 | [!DNL Sandbox Administration] | [!UICONTROL 查看沙盒] | 对属于您组织的沙箱的只读访问权限。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 重置沙箱] | 能够重置沙箱。 |
 | [!DNL Destinations] | [!UICONTROL 管理目标] | 访问读取、创建、编辑和禁用目标。* |
-| [!DNL Destinations] | [!UICONTROL 视图目标] | 对“目录”选项卡中可用目标和“浏 *[!UICONTROL 览]* ”选项卡中已验证目标的只 *[!UICONTROL 读访问]* 。* |
+| [!DNL Destinations] | [!UICONTROL 视图目标] | 对“目录”选项卡中可用目标和“浏 **[!UICONTROL 览]** ”选项卡中已验证目标的只 **[!UICONTROL 读访问]** 。* |
 | [!DNL Destinations] | [!UICONTROL 激活目标] | 能够将数据激活到已创建的活动目标。 此权限要求向将激活目标 [!UICONTROL 的用户] 授予“视图目标”或“管理目标”。* |
 | [!DNL Data Ingestion] | [!UICONTROL 管理源] | 访问读取、创建、编辑和禁用源。 |
-| [!DNL Data Ingestion] | [!UICONTROL 视图源] | 对“目录”选项卡中的可用源和“浏览” *[!UICONTROL 选项卡中]* 经过身份验证的源进行只 *[!UICONTROL 读访问]* 。 |
+| [!DNL Data Ingestion] | [!UICONTROL 视图源] | 对“目录”选项卡中的可用源和“浏览” **[!UICONTROL 选项卡中]** 经过身份验证的源进行只 **[!UICONTROL 读访问]** 。 |
 | [!DNL Data Science Workspace] | [!UICONTROL 管理数据科学工作区] | 在中访问读取、创建、编辑和删除 [!DNL Data Science Workspace]。 |
 
 _(*)本许可要求对此作出规定[!DNL Real-time Customer Data Platform]。 有关实时CDP的详细信息，请首先阅读实[时CDP概述](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)。_
