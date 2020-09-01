@@ -5,7 +5,7 @@ title: Adobe Experience Platform Identity Service
 topic: overview
 description: '身份命名空间是 Identity Service 的组件，充当与身份相关的上下文指示器。例如，它们将“name<span>@email.com”的值区分为电子邮件地址或“443522”作为数字CRM ID。 '
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '774'
 ht-degree: 4%
@@ -53,7 +53,7 @@ Identity namespaces are a component of [[!DNL Identity Service]](./home.md) that
 
 Adobe Experience Platform为所有组织提供多种身份命名空间。 这些命名空间称为标准，可通过API [!DNL Identity Service] 或通过UI [!DNL Platform] 查看。
 
-要在UI中视图标准命名空间 **[!UICONTROL ，请单击左边栏中的“标]** 识 *[!UICONTROL ”，然后单击“浏览”]* 选项卡。 您的组织可访问的所有身份命名空间都将显示，但“标[!UICONTROL 准]”为“所有者”的命名空间是Adobe提供的标准。
+要在UI中视图标准命名空间 **[!UICONTROL ，请单击左边栏中的“标]** 识 **[!UICONTROL ”，然后单击“浏览”]** 选项卡。 您的组织可访问的所有身份命名空间都将显示，但“标[!UICONTROL 准]”为“所有者”的命名空间是Adobe提供的标准。
 
 然后，您可以单击列出的命名空间之一以了解视图详细信息。
 
@@ -71,7 +71,7 @@ Adobe Experience Platform为所有组织提供多种身份命名空间。 这些
 
 ![](./images/create-identity-namespace.png)
 
-与标准命名空间类似，您可以单击“浏览”选项卡中的“自定义命名空间 ** ”来视图其详细信息，但使用“自定义命名空间”，您也可以从详细信息区域编辑其“显示名称”和“说明”。
+与标准命名空间类似，您可以单击“浏览”选项卡中的“自定义命名空间 **** ”来视图其详细信息，但使用“自定义命名空间”，您也可以从详细信息区域编辑其“显示名称”和“说明”。
 
 >[!NOTE]
 >
