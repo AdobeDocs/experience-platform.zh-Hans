@@ -5,7 +5,7 @@ title: Adobe Experience Platform查询服务UI指南
 topic: guide
 description: Adobe Experience Platform查询服务提供一个用户界面，可用于编写和执行查询、视图先前执行的查询以及访问由IMS组织内的用户保存的查询。
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '617'
 ht-degree: 2%
@@ -19,17 +19,17 @@ Adobe Experience Platform [!DNL Query Service] 提供一个用户界面，可用
 
 ## [!DNL Query Editor]
 
-使 [!DNL Query Editor] 您无需使用外部客户端即可编写和执行查询。 单 **[!UICONTROL 击创建查询]** ，以打开 [!DNL Query Editor] 并创建新查询。 您还可以通过从“ [!DNL Query Editor] 日志”或“浏览”选 *[!UICONTROL 项卡中]* 选 *[!UICONTROL 择查询来访]* 问。 选择之前执行或保存的查询将打 [!DNL Query Editor] 开并显示所选查询的SQL。
+使 [!DNL Query Editor] 您无需使用外部客户端即可编写和执行查询。 单 **[!UICONTROL 击创建查询]** ，以打开 [!DNL Query Editor] 并创建新查询。 您还可以通过从“ [!DNL Query Editor] 日志”或“浏览”选 **[!UICONTROL 项卡中]** 选 **[!UICONTROL 择查询来访]** 问。 选择之前执行或保存的查询将打 [!DNL Query Editor] 开并显示所选查询的SQL。
 
 ![图像](../images/queries/ui-overview/overview.png)
 
-[!DNL Query Editor] 提供编辑空间，您可以在此开始键入查询。 在键入时，编辑器会自动完成表中的SQL保留字、表和字段名称。 编写完查询后，单击“ **播放** ”按钮以运行查询。 编 *[!UICONTROL 辑器下]* 的“控制台”选项卡显示 [!DNL Query Service] 当前正在执行的操作，指示何时返回查询。 “结 *[!UICONTROL 果]* ”选项卡在控制台旁显示查询结果。 有关使用 [查询的详细信][query-editor] 息，请参阅编辑器指南 [!DNL Query Editor]。
+[!DNL Query Editor] 提供编辑空间，您可以在此开始键入查询。 在键入时，编辑器会自动完成表中的SQL保留字、表和字段名称。 编写完查询后，单击“ **播放** ”按钮以运行查询。 编 **[!UICONTROL 辑器下]** 的“控制台”选项卡显示 [!DNL Query Service] 当前正在执行的操作，指示何时返回查询。 “结 **[!UICONTROL 果]** ”选项卡在控制台旁显示查询结果。 有关使用 [查询的详细信][query-editor] 息，请参阅编辑器指南 [!DNL Query Editor]。
 
 ![图像](../images/queries/ui-overview/query-editor.png)
 
 ## 浏览
 
-“浏 *[!UICONTROL 览]* ”选项卡显示由单位中的用户保存的查询。 将这些视为查询项目是有用的，因为保存在这里的查询可能仍在建设中。 查询在“浏 *[!UICONTROL 览]* ”选项卡上显示，如果之前由执行，则在“ *[!UICONTROL 日志]* ”选项卡中也显示为运行查询 [!DNL Query Service]。
+“浏 **[!UICONTROL 览]** ”选项卡显示由单位中的用户保存的查询。 将这些视为查询项目是有用的，因为保存在这里的查询可能仍在建设中。 查询在“浏 **[!UICONTROL 览]** ”选项卡上显示，如果以前由执行，则在“ **[!UICONTROL 日志]** ”选项卡中也显示为运行查询 [!DNL Query Service]。
 
 ![图像](../images/queries/ui-overview/browse.png)
 
@@ -42,7 +42,7 @@ Adobe Experience Platform [!DNL Query Service] 提供一个用户界面，可用
 
 ## 日志
 
-“日 *[!UICONTROL 志]* ”选项卡提供以前已执行的列表。 默认情况下，日志以逆序顺序列表查询。
+“日 **[!UICONTROL 志]** ”选项卡提供以前已执行的列表。 默认情况下，日志以逆序顺序列表查询。
 
 ![图像](../images/queries/ui-overview/log.png)
 
@@ -53,12 +53,12 @@ Adobe Experience Platform [!DNL Query Service] 提供一个用户界面，可用
 | **[!UICONTROL 客户]** | 用于查询的客户端。 |
 | **[!UICONTROL 数据集]** | 查询使用的输入数据集。 单击数据集可转到输入数据集详细信息屏幕。 |
 | **[!UICONTROL 状态]** | 查询的当前状态。 |
-| **[!UICONTROL 上次运行]** | 查询最后运行时。 单击此列上的箭头，可以按升序或降序对列表进行排序。 |
+| **[!UICONTROL 上次运行]** | 上次运行查询时。 单击此列上的箭头，可以按升序或降序对列表进行排序。 |
 | **[!UICONTROL 运行时]** | 运行查询所花的时间。 |
 
 ## 凭据
 
-“凭 *[!UICONTROL 据]* ”选项卡显示 [!DNL Postgres] 您的凭据。 单击任 **[!UICONTROL 意字段旁]** 的“复制”图标，将其内容存储在键盘缓冲区中。 有关如何使用这些凭据与外部客户端连接的更多信息，请阅读“与客 [户端连接”指南][connect-clients]。
+“凭 **[!UICONTROL 据]** ”选项卡显示 [!DNL Postgres] 您的凭据。 单击任 **[!UICONTROL 意字段旁]** 的“复制”图标，将其内容存储在键盘缓冲区中。 有关如何使用这些凭据与外部客户端连接的更多信息，请阅读“与客 [户端连接”指南][connect-clients]。
 
 ![图像](../images/queries/ui-overview/credentials.png)
 
