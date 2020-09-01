@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;Query service;prepared statements;prepared;sql;
 solution: Experience Platform
 title: 准备的声明
 topic: prepared statements
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
 workflow-type: tm+mt
 source-wordcount: '340'
 ht-degree: 8%
@@ -14,7 +14,7 @@ ht-degree: 8%
 
 # 准备的声明
 
-在SQL中，预准备语句用于模拟类似的查询或更新。 Adobe Experience Platform [!DNL Query Service] 通过使用参数化查询支持已准备的语句。 这可用于优化性能，因为您不再需要反复重新分析查询。
+在SQL中，预准备语句用于模拟类似的查询或更新。 Adobe Experience Platform [!DNL Query Service] 通过使用参数化查询支持准备的语句。 这可用于优化性能，因为您不再需要反复重新分析查询。
 
 ## 使用准备的语句
 
