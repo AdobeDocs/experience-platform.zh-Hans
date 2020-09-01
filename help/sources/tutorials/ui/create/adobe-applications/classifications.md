@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics; analytics; classifications
+keywords: Experience Platform;home;popular topics; analytics;classifications
 description: 本教程提供了在UI中创建Adobe Analytics分类数据连接器以将分类数据引入Adobe Experience Platform的步骤。
 solution: Experience Platform
 title: 在UI中创建Adobe Analytics分类数据连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 0da686743e8bc57d310f7eff6f1bf812a8f31238
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 2%
