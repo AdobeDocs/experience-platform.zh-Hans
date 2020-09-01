@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Query service;query service;RStudio;rstudio;connect to query service;
 solution: Experience Platform
 title: 与RStudio连接
 topic: connect
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
 workflow-type: tm+mt
 source-wordcount: '209'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 连接 [!DNL RStudio]
 
-此文档逐步介绍将R Studio与Adobe Experience Platform连接的步骤 [!DNL Query Service]。
+此文档通过步骤将R Studio与Adobe Experience Platform连接 [!DNL Query Service]。
 
 安装 [!DNL RStudio]后，在显 *示的* “控制台”屏幕上，您首先需要准备要使用的R脚本 [!DNL PostgreSQL]。
 
