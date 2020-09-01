@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 与Aqua Data Studio连接
 topic: connect
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '238'
 ht-degree: 0%
@@ -14,18 +14,18 @@ ht-degree: 0%
 
 # 连接 [!DNL Aqua Data Studio]
 
-此文档逐步介绍与Adobe Experience Platform [!DNL Aqua Data Studio] 连接的步 [!DNL Query Service]骤。
+这家文档步行前往与Adobe Experience Platform [!DNL Aqua Data Studio] 连接 [!DNL Query Service]。
 
 安装完 [!DNL Aqua Data Studio]成后，必须先注册服务器。 在主菜单中，单击“服 **[!UICONTROL 务器]**”，然后单击“ **[!UICONTROL 注册服务器”]**。
 
 ![](../images/clients/aqua-data-studio/register-server.png)
 
-出现“ *[!UICONTROL 注册服务器]* ”对话框。 在“ *[!UICONTROL 常规]* ”选项卡 **[!UICONTROL 下]** ，从左侧的列表中选择PostgreSQL。 在显示的对话框中，提供以下服务器设置的详细信息。
+出现“ **[!UICONTROL 注册服务器]** ”对话框。 在“ **[!UICONTROL 常规]** ”选项卡 **[!UICONTROL 下]** ，从左侧的列表中选择PostgreSQL。 在显示的对话框中，提供以下服务器设置的详细信息。
 
-- **[!UICONTROL 名称]**: 连接的名称。
-- **[!UICONTROL 登录名和口令]**: 将使用的登录凭据。 用户名采用的形式 `ORG_ID@AdobeOrg`。
-- **[!UICONTROL 主机和端口]**: 主机端点及其端口 [!DNL Query Service]。
-- **[!UICONTROL 数据库]:**将使用的数据库。
+- **[!UICONTROL 名称]**:连接的名称。
+- **[!UICONTROL 登录名和口令]**:将使用的登录凭据。 用户名采用的形式 `ORG_ID@AdobeOrg`。
+- **[!UICONTROL 主机和端口]**:主机端点及其端口 [!DNL Query Service]。
+- **[!UICONTROL 数据库]:** 将使用的数据库。
 
 >[!NOTE]
 >
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 ![](../images/clients/aqua-data-studio/register-server-general-tab.png)
 
-选择“驱动 **[!UICONTROL 程序]** ”选项卡。 在“ *[!UICONTROL 参数]*”下，将值设置为 `?sslmode=require`
+Select the **[!UICONTROL Driver]** tab. 在“ **[!UICONTROL 参数]**”下，将值设置为 `?sslmode=require`
 
 ![](../images/clients/aqua-data-studio/register-server-driver-tab.png)
 
@@ -41,4 +41,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-现在，您已连接到 [!DNL Query Service]，可以使用中 *[!UICONTROL 的查询分]*[!DNL Aqua Data Studio] 析器执行和编辑SQL语句。 有关如何编写和运行查询的更多信息，请阅读运 [行查询指南](../creating-queries/creating-queries.md)。
+现在，您已连接 [!DNL Query Service]到，可以使用 **[!UICONTROL 中的查询分]**[!DNL Aqua Data Studio] 析器执行和编辑SQL语句。 有关如何编写和运行查询的更多信息，请阅读运 [行查询指南](../creating-queries/creating-queries.md)。
