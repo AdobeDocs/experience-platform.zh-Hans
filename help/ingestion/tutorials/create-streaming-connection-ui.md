@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 使用UI创建流连接
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
 workflow-type: tm+mt
 source-wordcount: '498'
 ht-degree: 0%
@@ -26,30 +26,30 @@ ht-degree: 0%
 
 ## 创建流连接
 
-登录UI后，单 [!DNL Experience Platform] 击“ **[!UICONTROL 源]** ”以打 *[!UICONTROL 开“目录]* ”选项卡。 此页将可用的源类型显示为单个卡，每个卡都包含一个气泡，该气泡显示从与数据集的流连接创建的数据流数。
+登录UI后，单 [!DNL Experience Platform] 击“ **[!UICONTROL 源]** ”以打 **[!UICONTROL 开“目录]** ”选项卡。 此页将可用的源类型显示为单个卡，每个卡都包含一个气泡，该气泡显示从与数据集的流连接创建的数据流数。
 
 ![](../images/streaming-ingestion/ui/click-sources.png)
 
-在“源 *[!UICONTROL ”页]* ，单击 **[!UICONTROL HTTP API]**，然 **[!UICONTROL 后单击Connect源]**。
+在“源 **[!UICONTROL ”页]** ，单击 **[!UICONTROL HTTP API]**，然 **[!UICONTROL 后单击Connect源]**。
 
 ![](../images/streaming-ingestion/ui/click-connect-source.png)
 
-出 *[!UICONTROL 现“Connect to HTTP]* ”屏幕。 在“ *[!UICONTROL 服务详细信息]*”下，为新 **[!UICONTROL 流连接]** 提供名称 **[!UICONTROL 和说明]** 。
+出 **[!UICONTROL 现“Connect to HTTP]** ”屏幕。 在“ **[!UICONTROL 服务详细信息]**”下，为新 **[!UICONTROL 流连接]** 提供名称 **[!UICONTROL 和说明]** 。
 
-在“ *[!UICONTROL 帐户身份验证]*”下，为流连接选择以下配置属性：
+在“ **[!UICONTROL 帐户身份验证]**”下，为流连接选择以下配置属性：
 
-- **[!UICONTROL 身份验证]:**流连接是否需要身份验证。 身份验证确保从可信源收集数据。 建议在处理个人身份信息(PII)时启用此选项。
-- **[!UICONTROL XDM模式兼容性]:**此流连接是否将发送与XDM事件兼容的模式。 默认情况下，此属性处于打**开状态&#x200B;**。
+- **[!UICONTROL 身份验证]:** 流连接是否需要身份验证。 身份验证确保从可信源收集数据。 建议在处理个人身份信息(PII)时启用此选项。
+- **[!UICONTROL XDM模式兼容性]:** 此流连接是否将发送与XDM事件兼容的模式。 默认情况下，此属性处于打 **开状态**。
 
-选择完配置属性后，单击“ **[!UICONTROL Connect]**”。 您的流式HTTP连接现已创建，现在可在“源”工作区的“浏 *[!UICONTROL 览]* ”选项卡下 *[!UICONTROL 查看]* 。
+选择完配置属性后，单击“ **[!UICONTROL Connect]**”。 您的流式HTTP连接现已创建，现在可在“源”工作区的“浏 **[!UICONTROL 览]** ”选项卡下 **[!UICONTROL 查看]** 。
 
 ![](../images/streaming-ingestion/ui/http-sources-details.png)
 
-在“浏 *[!UICONTROL 览]* ”选项卡中，您可以单击新创建的流式HTTP连接并视图该连接的详细信息。
+在“浏 **[!UICONTROL 览]** ”选项卡中，您可以单击新创建的流式HTTP连接并视图该连接的详细信息。
 
 ![](../images/streaming-ingestion/ui/browse-sources.png)
 
-通过单击连接名称的超链接，您可以通过单击选择数据来配置要连接的数据集，从而选择要显 *[!UICONTROL 示的数据]*。
+通过单击连接名称的超链接，您可以通过单击选择数据来配置要连接的数据集，从而选择要显 **[!UICONTROL 示的数据]**。
 
 ![](../images/streaming-ingestion/ui/select-data.png)
 
@@ -77,4 +77,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过本教程，您已创建了流式HTTP连接，使您能够使用流式端点访问各种 [!DNL Data Ingestion] API。 有关在API中创建流连接的说明，请阅读创建 [流连接教程](../tutorials/create-streaming-connection.md)。
+通过本教程，您已创建了流式HTTP连接，使您可以使用流式端点访问各种 [!DNL Data Ingestion] API。 有关在API中创建流连接的说明，请阅读创建 [流连接教程](../tutorials/create-streaming-connection.md)。
