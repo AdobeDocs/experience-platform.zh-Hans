@@ -5,7 +5,7 @@ seo-title: 实时客户数据平台中的数据治理
 description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 seo-description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '1022'
 ht-degree: 0%
@@ -76,7 +76,7 @@ Adobe Experience Platform为常见 **客户体验使** 用案例提供了若干�
 
 ![](assets/violation-popover.png)
 
-弹出窗口的“详 *[!UICONTROL 细信息]* ”选项卡指示触发违规的操作以及发生违规的原因，并提供有关如何潜在解决该问题的建议。
+弹出窗口的“详 **[!UICONTROL 细信息]** ”选项卡指示触发违规的操作以及发生违规的原因，并提供有关如何潜在解决该问题的建议。
 
 单 **[!UICONTROL 击“数据谱系]** ”以跟踪其数据标签触发违规的目标、区段、合并策略或数据集。
 
