@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform分批摄取概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '1446'
 ht-degree: 1%
@@ -89,7 +89,7 @@ ht-degree: 1%
 
 “部 **[!UICONTROL 分摄取]** ”切换允许您启用或禁用部分批摄取。
 
-仅当 **[!UICONTROL “部分摄取]** ”切换关闭时，才 **[!UICONTROL 会显示]** “错误诊断”切换。 此功能允许 [!DNL Platform] 生成有关所摄取批的详细错误消息。 如果打 *[!UICONTROL 开“部分摄取]* ”切换，将自动实施增强的错误诊断。
+仅当 **[!UICONTROL “部分摄取]** ”切换关闭时，才 **[!UICONTROL 会显示]** “错误诊断”切换。 此功能允许 [!DNL Platform] 生成有关所摄取批的详细错误消息。 如果打 **[!UICONTROL 开“部分摄取]** ”切换，将自动实施增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch-partial-ingestion-focus.png)
 
