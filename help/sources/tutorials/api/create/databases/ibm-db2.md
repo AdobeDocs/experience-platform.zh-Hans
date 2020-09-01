@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;IBM DB2;IBM;ibm db2;db2;DB2
 solution: Experience Platform
 title: 使用Flow Service API创建IBM DB2连接器
 topic: overview
+description: 本教程使用Flow Service API指导您完成将IBM DB2（以下简称“DB2”）连接到Experience Platform的步骤。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
 workflow-type: tm+mt
-source-wordcount: '571'
+source-wordcount: '596'
 ht-degree: 2%
 
 ---
