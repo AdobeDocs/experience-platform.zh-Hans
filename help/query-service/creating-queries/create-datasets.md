@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;Query service;generate datasets;generate dataset;create dataset;
 solution: Experience Platform
 title: 根据查询结果生成数据集
 topic: queries
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
 workflow-type: tm+mt
 source-wordcount: '270'
 ht-degree: 0%
@@ -21,8 +21,8 @@ ht-degree: 0%
 1. 使用连接的客户端编写查询并验证输出。
 2. 登录UI [!DNL Platform] 并转到查询。
 3. 在列表中查找查询并将鼠标悬停在行上。
-4. 单击 **[!UICONTROL 创建数据集]**。 ![图像](../images/queries/create-datasets/click-create-dataset.png)
-5. 输入以您的LDAP ID为前缀的数据集名称(不必是唯一的，也不必是SQL安全的； 系统根据此处给出的名称生成“表名”)。
+4. Click **[!UICONTROL Create Dataset]**. ![图像](../images/queries/create-datasets/click-create-dataset.png)
+5. 输入以您的LDAP ID为前缀的数据集名称(不必是唯一的，也不必是SQL安全的；系统根据此处给出的名称生成“表名”)。
 6. 输入数据集描述，然后单击“ **[!UICONTROL 运行查询]**”。![图像](../images/queries/create-datasets/run-query.png)
 7. 观看查询完成，然后转到数据集列表页以查看您刚刚创建的数据集。
 
