@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: XDM模式和描述符
 topic: tutorial
+description: 标准化和互操作性是Adobe Experience Platform背后的关键概念。 体验Adobe模型(XDM)由客户驱动，旨在实现客户体验数据标准化并为客户体验管理定义模式。 模式是描述Experience Platform中数据的标准方法，它允许符合模式的所有数据在整个组织内重复使用，而不会发生冲突，甚至可以在多个组织之间共享。
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '473'
 ht-degree: 0%
 
 ---
@@ -22,7 +23,7 @@ ht-degree: 0%
 
 ## 定义两个模式之间的关系
 
-了解不同渠道客户之间的关系及其与您品牌的互动是Adobe Experience Platform的重要组成部分。 在(XDM)模式结构中定 [!DNL Experience Data Model] 义这些关系，使您能够对客户数据获得复杂的洞察。 这些关系描述符可以使用模式注册表API和模式编辑器UI进行定义。 有关详细信息，请参阅使用API或UI定义两 [个模式之](../xdm/tutorials/relationship-api.md) 间 [关系的教程](../xdm/tutorials/relationship-ui.md)。
+了解不同渠道客户之间的关系及其与您品牌的互动是Adobe Experience Platform的重要部分。 在(XDM)模式结构中定 [!DNL Experience Data Model] 义这些关系，使您能够对客户数据获得复杂的洞察。 这些关系描述符可以使用模式注册表API和模式编辑器UI进行定义。 有关详细信息，请参阅使用API或UI定义两 [个模式之](../xdm/tutorials/relationship-api.md) 间 [关系的教程](../xdm/tutorials/relationship-ui.md)。
 
 ## 创建点对点模式
 
