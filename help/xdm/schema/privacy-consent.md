@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
+keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;consent;Consent;preferences;Preferences;privacyOptOuts;marketingPreferences;optOutType;basisOfProcessing;
 solution: Adobe Experience Platform
 title: 隐私混合概述
+description: 隐私／营销偏好（同意）混合是一种体验数据模型(XDM)混合，旨在支持CMP和客户其他来源生成的用户权限和偏好的收集。 此文档涵盖混合物提供的各种字段的结构和预期用途。
 topic: guide
 translation-type: tm+mt
-source-git-commit: 02014c503dc9d4597e1129cafe3ba86f4abe37e9
+source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
 workflow-type: tm+mt
-source-wordcount: '1778'
+source-wordcount: '1827'
 ht-degree: 1%
 
 ---
@@ -254,11 +255,11 @@ ht-degree: 1%
 
 | 值 | 描述 |
 | --- | --- |
-| `general_opt_out` | 数据不能用于任何目的。 这通常会阻止数据收集，除非处理基础不是“同意”。<br><br>使用此选择退出类型时，接受的值 `in` 并获 `out` 得以下上下文含义：<ul><li>`in`: 用户 **已经同意** ，其数据将用于一般处理。</li><li>`out`: 用户不 **同意他们** 用于一般处理的数据。</li></ul>有关详细信息，请 [参阅xdm:optOutValue的已接受值](#choice-optOutValue-values) ，下表。 |
+| `general_opt_out` | 数据不能用于任何目的。 这通常会阻止数据收集，除非处理基础不是“同意”。<br><br>使用此选择退出类型时，接受的值 `in` 并获 `out` 得以下上下文含义：<ul><li>`in`:用户 **已经同意** ，其数据将用于一般处理。</li><li>`out`:用户不 **同意他们** 用于一般处理的数据。</li></ul>有关详细信息，请 [参阅xdm:optOutValue的已接受值](#choice-optOutValue-values) ，下表。 |
 | `anonymous_analysis` | 该数据不能用于不需要任何类型的用户ID的通用Web度量，如查看特定页面的次数。 |
 | `device_linking` | 访客使用的来自一个设备的数据不能与来自同一访客使用的另一个设备的数据组合。 设备使用通用用户名或电子邮件地址等技术进行链接，通常通过Adobe设备合作社或专用设备图表。 |
 | `pseudonymous_analysis` | 这些数据不能用于Adobe Analytics提供的网络指标，该指标要求使用假名ID来识别用户通过网站（如流失报告）的路径、建立会话以及用于归因。 |
-| `sales_sharing_opt_out` | 数据不能用于销售目的或与第三方共享。<br><br>使用此选择退出类型时，接受的值 `in` 并获 `out` 得以下上下文含义：<ul><li>`in`: 用户 **已同意** ，其数据将用于销售和共享目的。</li><li>`out`: 用户不 **同意他们** 的数据用于销售和共享目的。</li></ul>有关详细信息，请 [参阅xdm:optOutValue的已接受值](#choice-optOutValue-values) ，下表。 |
+| `sales_sharing_opt_out` | 数据不能用于销售目的或与第三方共享。<br><br>使用此选择退出类型时，接受的值 `in` 并获 `out` 得以下上下文含义：<ul><li>`in`:用户 **已同意** ，其数据将用于销售和共享目的。</li><li>`out`:用户不 **同意他们** 的数据用于销售和共享目的。</li></ul>有关详细信息，请 [参阅xdm:optOutValue的已接受值](#choice-optOutValue-values) ，下表。 |
 
 ### xdm:basisOfProcessing的已接受值 {#basisOfProcessing-values}
 
@@ -266,7 +267,7 @@ ht-degree: 1%
 
 | 值 | 描述 |
 | --- | --- |
-| `consent` **（默认）** | 允许为指定目的收集数据，因为个人已经提供明确权限。 如果没有提供其 `xdm:basisOfProcessing` 他值，则此为默认值。 <br><br>**重要说明&#x200B;**: 只有将`xdm:choice`和`xdm:optOutValue`的值设置为`xdm:basisOfProcessing`时，才接受`consent`。 如果将此表中概述的任何其他值用`xdm:basisOfProcessing`于替代，则忽略个人的同意选择。 |
+| `consent` **（默认）** | 允许为指定目的收集数据，因为个人已经提供明确权限。 如果没有提供其 `xdm:basisOfProcessing` 他值，则此为默认值。 <br><br>**重要说明**:只有将 `xdm:choice` 和 `xdm:optOutValue` 的值设置为 `xdm:basisOfProcessing` 时，才接受 `consent`。 如果将此表中概述的任何其他值用 `xdm:basisOfProcessing` 于替代，则忽略个人的同意选择。 |
 | `compliance` | 为达到特定目的而收集数据，是为了履行企业的法律义务。 |
 | `contract` | 为达到指定目的而收集数据是为了履行与个人的合同义务。 |
 | `legitimate_interest` | 出于特定目的收集和处理这些数据的正当商业利益，超过了数据对个人的潜在损害。 |
