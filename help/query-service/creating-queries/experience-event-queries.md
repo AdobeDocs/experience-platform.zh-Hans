@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;Query service;experienceevent queries;experienceevent query;ExperienceEvent query;
 solution: Experience Platform
 title: ExperienceEvent查询
 topic: queries
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
 workflow-type: tm+mt
 source-wordcount: '275'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL ExperienceEvent] 查询
 
-除了标准SQL查询,Adobe Experience Platform还支 [!DNL Query Service] 持使用编写查询 [!DNL ExperienceEvents]。 是 [!DNL ExperienceEvent] 一个 [!DNL Experience Data Model] (XDM)类，它表示当用户与网站或服务交互时系统的不可改变的非聚集快照，因此可用于时域分析。 有关XDM的更多信 [!DNL Experience Events] 息，请参阅概 [!DNL XDM System] 述。 通过结 [!DNL Query Service] 合， [!DNL ExperienceEvents]您可以有效跟踪用户的行为趋势。 以下文档提供了涉及的查询的示例 [!DNL ExperienceEvents]。
+除了标准SQL查询,Adobe Experience Platform还 [!DNL Query Service] 支持使用编写查询 [!DNL ExperienceEvents]。 是 [!DNL ExperienceEvent] 一个 [!DNL Experience Data Model] (XDM)类，它表示当用户与网站或服务交互时系统的不可改变的非聚集快照，因此可用于时域分析。 有关XDM的更多信 [!DNL Experience Events] 息，请参阅概 [!DNL XDM System] 述。 通过结 [!DNL Query Service] 合， [!DNL ExperienceEvents]您可以有效跟踪用户的行为趋势。 以下文档提供了涉及的查询的示例 [!DNL ExperienceEvents]。
 
 ## 按天创建特定日期范围内的事件趋势报表
 
