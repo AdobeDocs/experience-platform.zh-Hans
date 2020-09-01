@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;target mapping;Target mapping
 solution: Experience Platform
 title: 目标映射字段
 topic: overview
+description: 下表概述了体验事件模式的字段（*XDM ExperienceEvent字段*），以及应将其映射到的相应目标字段(目标请求字段)。 还提供了一些映射的附加说明。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
 workflow-type: tm+mt
-source-wordcount: '427'
+source-wordcount: '462'
 ht-degree: 0%
 
 ---
@@ -28,7 +29,7 @@ Adobe Experience Platform允许您通过目标源连接器获取Adobe Target数�
 | **`dataSource`** |  | 已配置为“1”，适用于所有客户端。 |
 | `dataSource._id` | 无法随请求一起传入的系统生成的值。 | 此数据源的唯一ID。 这将由创建数据源的个人或系统提供。 |
 | `dataSource.code` | 无法随请求一起传入的系统生成的值。 | 完整@id的快捷方式。 可以使用代码或@id中的至少一个。 有时，此代码称为数据源集成代码。 |
-| `dataSource.tags` | 无法随请求一起传入的系统生成的值。 | 标记用于指示由给定数据源表示的别名如何由使用这些别名的应用程序进行解释。<br><br>示例：<br><ul><li>`isAVID`: 表示Analytics访客ID的数据源。</li><li>`isCRSKey`: 表示应用作CRS中键的别名的数据源。</li></ul>创建数据源时设置标记，但引用给定数据源时，这些标记也包含在管道消息中。 |
+| `dataSource.tags` | 无法随请求一起传入的系统生成的值。 | 标记用于指示由给定数据源表示的别名如何由使用这些别名的应用程序进行解释。<br><br>示例：<br><ul><li>`isAVID`:表示分析访客ID的数据源。</li><li>`isCRSKey`:表示应用作CRS中键的别名的数据源。</li></ul>创建数据源时设置标记，但引用给定数据源时，这些标记也包含在管道消息中。 |
 | **`timestamp`** | 事件时间戳 |
 | **`channel`** | `context.channel` | 只适用于视图投放。 选项为“web”和“mobile”，默认为“web”。 |
 | **`endUserIds`** |
@@ -52,7 +53,7 @@ Adobe Experience Platform允许您通过目标源连接器获取Adobe Target数�
 | `experience.target.mboxVersion` | `mboxRequest.mboxVersion` |
 | `experience.target.sessionId` | `mboxRequest.sessionId` |
 | `experience.target.environmentID` | 目标为客户定义的环境（如dev、qa或prod）进行的内部映射。 |
-| `experience.target.supplementalDataID` | 用于将目标事件与Analytics事件串接的标识符 |
+| `experience.target.supplementalDataID` | 用于将目标事件与Analytics事件拼接的标识符 |
 | `experience.target.pageDetails.pageId` | `mboxRequest.pageId` |
 | `experience.target.pageDetails.pageScore` | `mboxRequest.mboxPageValue` |
 | `experience.target.activities` | 列表符合访客资格的活动（阵列） |
