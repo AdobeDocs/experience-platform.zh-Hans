@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;data type;data types;Data types;Data type;datatype;Datatype
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;datatype;Datatype;data type;Data type;create
 solution: Experience Platform
 title: 创建数据类型
 topic: developer guide
 description: '如果您的组织希望以多种方式使用常见的数据结构，您可能希望定义一种数据类型。 数据类型允许多字段结构的一致使用，比混音更灵活，因为通过将它们添加为字段的“类型”，可以将它们包含在模式的任意位置。 '
 translation-type: tm+mt
-source-git-commit: cc81d590f308c7e2677cec000c27e8aca42437f5
+source-git-commit: ed1f2fdac0f9c977d11c867327c084353c1bcd0f
 workflow-type: tm+mt
 source-wordcount: '256'
 ht-degree: 0%
