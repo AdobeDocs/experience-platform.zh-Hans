@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Audience Manager connector;Audience manager;audience manager
 solution: Experience Platform
 title: Audience Manager连接器
 topic: overview
+description: Adobe Audience Manager数据连接器将在Adobe Audience Manager收集的第一方数据传送到Adobe Experience Platform。 Audience Manager连接器将三类别数据引入平台。
 translation-type: tm+mt
-source-git-commit: a1b09f3e88e489f1b0ec0c1fcb72a2a5a4356d87
+source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '673'
 ht-degree: 1%
 
 ---
@@ -21,7 +22,7 @@ Adobe Audience Manager数据连接器将在Adobe Audience Manager收集的第一
 
 Audience Manager连接器将这些类别映射到体验数据模型(XDM)模式，并将其发送到平台。 实时数据以XDM ExperienceEvent数据的形式发送，而用户档案数据以XDM单个用户档案的形式发送。
 
-有关使用平台UI创建与Adobe Audience Manager连接的说明，请参阅 [Audience Manager连接器教程](../../tutorials/ui/create/adobe-applications/audience-manager.md)。
+有关使用平台UI创建与Adobe Audience Manager的连接的说明，请参阅 [Audience Manager连接器教程](../../tutorials/ui/create/adobe-applications/audience-manager.md)。
 
 ## 什么是体验数据模型(XDM)?
 
