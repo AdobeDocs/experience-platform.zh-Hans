@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;sandbox user guide;sandbox guide
 solution: Experience Platform
 title: 沙箱用户指南
 topic: user guide
+description: 此文档提供了如何在Adobe Experience Platform用户界面中执行与沙箱相关的各种操作的步骤。
 translation-type: tm+mt
-source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
+source-git-commit: fb60e11b9502c31e654d3fbe5dc240ace9429332
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: '550'
 ht-degree: 0%
 
 ---
