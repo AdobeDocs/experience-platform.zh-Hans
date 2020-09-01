@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;segment definition;segment definitions;api;API;
 solution: Experience Platform
 title: 细分定义
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b3e6a6f1671a456b2ffa61139247c5799c495d92
+source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
 workflow-type: tm+mt
 source-wordcount: '1041'
 ht-degree: 4%
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 # 段定义端点
 
-Adobe Experience Platform允许您创建区段，这些区段从一组用户档案定义一组特定属性或行为。 段定义是封装写入(PQL)的查询 [!DNL Profile Query Language] 的对象。 此对象也称为PQL谓词。 PQL谓词根据与您提供给的任何记录或时间序列数据相关的条件定义段规则 [!DNL Real-time Customer Profile]。 有关编写 [PQL查询](../pql/overview.md) ，请参阅PQL指南。
+Adobe Experience Platform允许您创建区段，从一组用户档案中定义一组特定属性或行为。 段定义是封装写入(PQL)的查询 [!DNL Profile Query Language] 的对象。 此对象也称为PQL谓词。 PQL谓词根据与您提供给的任何记录或时间序列数据相关的条件定义段规则 [!DNL Real-time Customer Profile]。 有关编写 [PQL查询](../pql/overview.md) ，请参阅PQL指南。
 
 本指南提供相关信息，帮助您更好地了解细分定义，并包含使用API执行基本操作的示例API调用。
 
@@ -193,7 +193,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | `schema` | **必需。** 与区段中的实体关联的模式。 由或字 `id` 段 `name` 组成。 |
 | `expression` | **必需。** 包含有关区段定义的字段信息的实体。 |
 | `expression.type` | 指定表达式类型。 目前，仅支持“PQL”。 |
-| `expression.format` | 以值表示表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`: 根据已发布的PQL语法的段定义的文本表示。  例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
+| `expression.format` | 以值表示表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`:根据已发布的PQL语法的段定义的文本表示。  例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
 | `expression.value` | 符合中所示类型的表达式 `expression.format`。 |
 | `description` | 定义的用户可读描述。 |
 
@@ -325,7 +325,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae
 | `schema` | 与区段中的实体关联的模式。 由或字 `id` 段 `name` 组成。 |
 | `expression` | 包含有关区段定义的字段信息的实体。 |
 | `expression.type` | 指定表达式类型。 目前，仅支持“PQL”。 |
-| `expression.format` | 以值表示表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`: 根据已发布的PQL语法的段定义的文本表示。  例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
+| `expression.format` | 以值表示表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`:根据已发布的PQL语法的段定义的文本表示。  例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
 | `expression.value` | 符合中所示类型的表达式 `expression.format`。 |
 | `description` | 定义的可读描述。 |
 | `evaluationInfo` | 系统生成的对象，告诉将进行何种类型的评估、批处理、连续（也称为流）或同步的段定义。 |
@@ -458,7 +458,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions/bulk-ge
 | `schema` | 与区段中的实体关联的模式。 由或字 `id` 段 `name` 组成。 |
 | `expression` | 包含有关区段定义的字段信息的实体。 |
 | `expression.type` | 指定表达式类型。 目前，仅支持“PQL”。 |
-| `expression.format` | 以值表示表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`: 根据已发布的PQL语法的段定义的文本表示。  例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
+| `expression.format` | 以值表示表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`:根据已发布的PQL语法的段定义的文本表示。  例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
 | `expression.value` | 符合中所示类型的表达式 `expression.format`。 |
 | `description` | 定义的可读描述。 |
 | `evaluationInfo` | 系统生成的对象，告诉将进行何种类型的评估、批处理、连续（也称为流）或同步的段定义。 |
