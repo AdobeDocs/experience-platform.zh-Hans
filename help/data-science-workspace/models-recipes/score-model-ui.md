@@ -5,7 +5,7 @@ title: 对模型(UI)进行评分
 topic: Tutorial
 description: '在Adobe Experience Platform数据科学工作区中评分可以通过将输入数据输入到现有训练好的模型中来实现。 然后，将评分结果作为新批存储在指定的输出数据集中并可查看。 '
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
@@ -43,7 +43,7 @@ ht-degree: 0%
 5. 工作流中的最后一步会提示您配置评分运行。 这些配置由模型用于评分运行。
 请注意，您将无法删除在“模型”创建过程中设置的继承参数。 您可以编辑或还原未继承的参数，方法是多次单击值，或者在将鼠标悬停在条目上方时单击还原图标。
    ![](../images/models-recipes/score/configuration.png)
-检查并确认评分配置，并单 **[!UICONTROL 击]** “完成”以创建和执行评分运行。 您将进入“评 *分运行* ”选项卡，新的评分运行将显示状态。
+检查并确认评分配置，并单 **[!UICONTROL 击]** “完成”以创建和执行评分运行。 您将进入“评 **[!UICONTROL 分运行]** ”选项卡，新的评分运行将显示状态。
    ![](../images/models-recipes/score/scoring_runs_tab.png)
 评分运行将显示以下四种状态之一：挂起、完成、失败或正在运行，并会自动更新。 如果状态为“Completed”或“Failed”，请继续执行下一步。
 
