@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics; flow service; marketing automation; hubspot
+keywords: Experience Platform;home;popular topics;marketing automation system;Collect marketing automation data
 solution: Experience Platform
 title: 通过源连接器和API收集营销自动化数据
 topic: overview
-description: 本教程介绍从第三方营销自动化系统检索数据并通过源连接器和Flow Service API将其引入平台的步骤。
+description: 本教程介绍从营销自动化系统检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 6578fd607d6f897a403d0af65c81dafe3dc12578
+source-git-commit: 6f4714561c2946a084eed4e89d3148df5b8044f5
 workflow-type: tm+mt
-source-wordcount: '1587'
+source-wordcount: '1584'
 ht-degree: 1%
 
 ---
