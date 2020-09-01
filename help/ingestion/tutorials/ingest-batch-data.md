@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;ingestion;ingest batch data;tutorial;batch ingestion;tutorial;ui guide;
 solution: Experience Platform
 title: 将数据引入Adobe Experience Platform
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
+source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
 workflow-type: tm+mt
 source-wordcount: '1278'
 ht-degree: 0%
