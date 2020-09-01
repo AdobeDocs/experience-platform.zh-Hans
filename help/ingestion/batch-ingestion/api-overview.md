@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;batch ingestion;Batch ingestion;ingestion;developer guide;api guide;upload;ingest parquet;ingest json;
 solution: Experience Platform
 title: Adobe Experience Platform批量摄取开发人员指南
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 3eaef72de2999fc088b92562c08a896d1cb08e55
+source-git-commit: c04fb056d4564e53f192e0734a700a13820f5ba7
 workflow-type: tm+mt
 source-wordcount: '2670'
 ht-degree: 5%
