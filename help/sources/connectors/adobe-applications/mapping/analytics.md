@@ -1,20 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Analytics mapping fields;analytics mapping
 solution: Experience Platform
-title: Analytics映射字段
+title: 分析映射字段
 topic: overview
+description: Adobe Experience Platform允许您通过Analytics Data Connector(ADC)获取Adobe Analytics数据。 通过ADC摄取的某些数据可以直接从Analytics字段映射到体验数据模型(XDM)字段，而其他数据需要转换和特定函数才能成功映射。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
 workflow-type: tm+mt
-source-wordcount: '3328'
+source-wordcount: '3378'
 ht-degree: 12%
 
 ---
 
 
-# Analytics映射字段
+# 分析映射字段
 
-Adobe Experience Platform允许您通过Analytics数据连接器(ADC)获取Adobe Analytics数据。 通过ADC摄取的一些数据可以直接从Analytics字段映射到体验数据模型(XDM)字段，而其他数据需要转换和特定函数才能成功映射。
+Adobe Experience Platform允许您通过Analytics Data Connector(ADC)获取Adobe Analytics数据。 通过ADC摄取的某些数据可以直接从Analytics字段映射到体验数据模型(XDM)字段，而其他数据需要转换和特定函数才能成功映射。
 
 ![](../images/analytics-data-experience-platform.png)
 
@@ -22,13 +23,13 @@ Adobe Experience Platform允许您通过Analytics数据连接器(ADC)获取Adobe
 
 选择字段会直接从Adobe Analytics映射到体验数据模型(XDM)。
 
-下表包含显示Analytics字段(Analytics字段)的名称、相应的XDM字段(*字段*)及其类型(XDM类型&#x200B;*)的列，以及该字段的说明(说*****&#x200B;明CompricationSyde)。
+下表包括显示“分析”字段（Analytics字段）的名称、相应的XDM字段(XDM字段&#x200B;*)及其类型(* XDM类型&#x200B;*)的列，以及对该字段的说明(Description***** Comprication )。
 
 >[!NOTE]
 >
 >请向左／向右滚动以视图表的完整内容。
 
-| Analytics字段 | XDM字段 | XDM类型 | 描述 |
+| 分析字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ---------- |
 | m_evar1 - m_evar250 | _experience.analytics.customDimensions.eVars.eVar1 - _experience.analytics.customDimensions.eVars.eVar250 | 字符串 | 自定义变量，范围为1-250。 每个组织都将以不同方式使用这些自定义eVar。 |
 | m_prop1 - m_prop75 | _experience.analytics.customDimensions.prop1 - _experience.analytics.customDimensions.prop75 | 字符串 | 自定义流量变量，范围从1到75。 |
@@ -127,7 +128,7 @@ Adobe Experience Platform允许您通过Analytics数据连接器(ADC)获取Adobe
 
 这些字段有单个源，但映射到 **多个** XDM位置。
 
-| Analytics字段 | XDM字段 | XDM类型 | 描述 |
+| 分析字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ---------- |
 | s_resolution | device.screenWidth、device.screenHeight | 整数 | 表示显示器分辨率的数字ID。 |
 | mobileosversion | 环境.operatingSystem、环境.operatingSystemVersion | 字符串 | 移动操作系统版本。 |
@@ -137,13 +138,13 @@ Adobe Experience Platform允许您通过Analytics数据连接器(ADC)获取Adobe
 
 需要转换来自ADC的选择字段，需要逻辑超越来自Adobe Analytics的直接拷贝才能在XDM中生成。
 
-下表包含显示Analytics字段(Analytics字段)的名称、相应的XDM字段(*字段*)及其类型(XDM类型&#x200B;*)的列，以及该字段的说明(说*****&#x200B;明CompricationSyde)。
+下表包括显示“分析”字段（Analytics字段）的名称、相应的XDM字段(XDM字段&#x200B;*)及其类型(* XDM类型&#x200B;*)的列，以及对该字段的说明(Description***** Comprication )。
 
 >[!NOTE]
 >
 >请向左／向右滚动以视图表的完整内容。
 
-| Analytics字段 | XDM字段 | XDM类型 | 描述 |
+| 分析字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ----------- |
 | m_prop1 - m_prop75 | _experience.analytics.customDimensions.listprops.prop1 - _experience.analytics.customDimensions.listprops.prop75 | 对象 | 自定义流量变量，范围从1到75 | {} |
 | m_hier1 - m_hier5 | _experience.analytics.customDimensions.hierarchies.hier1 - _experience.analytics.customDimensions.hier5 | 对象 | 由层次结构变量使用。 它包含 | 分隔值列表。 | {values(array), delimiter(string)} |
@@ -197,13 +198,13 @@ Adobe Experience Platform允许您通过Analytics数据连接器(ADC)获取Adobe
 
 要了解有关使用查询服务执行此转换的更多信息，请访 [问Adobe定义的函数](../../../../query-service/sql/adobe-defined-functions.md) 文档。
 
-下表包含显示Analytics字段(Analytics字段)的名称、相应的XDM字段(*字段*)及其类型(XDM类型&#x200B;*)的列，以及该字段的说明(说*****&#x200B;明CompricationSyde)。
+下表包括显示“分析”字段（Analytics字段）的名称、相应的XDM字段(XDM字段&#x200B;*)及其类型(* XDM类型&#x200B;*)的列，以及对该字段的说明(Description***** Comprication )。
 
 >[!NOTE]
 >
 >请向左／向右滚动以视图表的完整内容。
 
-| Analytics字段 | XDM字段 | XDM类型 | 描述 |
+| 分析字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ---------- |
 | post_evar1 - post_evar250 | _experience.analytics.customDimensions.eVars.eVar1 - _experience.analytics.customDimensions.eVars.eVar250 | 字符串 | 自定义变量，范围为1-250。 每个组织都将以不同方式使用这些自定义eVar。 |
 | post_prop1 - post_prop75 | _experience.analytics.customDimensions.prop1 - _experience.analytics.customDimensions.prop75 | 字符串 | 自定义流量变量，范围从1到75。 |
