@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;schema;Schema;schemas;Schemas;create
 solution: Experience Platform
 title: 创建模式
+description: '可以将模式视为要收录到Experience Platform中的数据的蓝图。 每个模式由一个类和零个或多个混音组成。 换句话说，您不必添加混音来定义模式，但在大多数情况下，至少会使用一个混音。 '
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '294'
 ht-degree: 1%
 
 ---
@@ -89,4 +90,4 @@ curl -X POST \
 }
 ```
 
-执行GET请求以列表租户容器中的所有模式现在都将包括属性信息模式，或者您可以使用URL编码的URI执行查找(GET)请求以 `$id` 直接视图新模式。 请记住，在“接 `version` 受”标题中包含所有查找请求。
+执行GET请求以列表租户容器中的所有模式现在将包括属性信息模式，或者您可以使用URL编码的URI执行查找(GET)请 `$id` 求以直接视图新模式。 请记住，在“接 `version` 受”标题中包含所有查找请求。
