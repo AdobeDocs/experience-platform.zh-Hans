@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;tableau;Tableau;query service;Query service;connect to query service;
 solution: Experience Platform
 title: 与Tableau连接
 topic: connect
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
 workflow-type: tm+mt
 source-wordcount: '74'
 ht-degree: 2%
@@ -26,7 +26,7 @@ ht-degree: 2%
 
 ![图像](../images/clients/tableau/open-connection.png)
 
-单独 `Host, Port, Database, Username, Password` 从UI的 [!DNL Platform] “Connect BI工 **[!UICONTROL 具”页面复]** 制到相应的Tableau字段中。
+单独 `Host, Port, Database, Username, Password` 从UI的 [!DNL Platform] “Connect BI工 **[!UICONTROL 具”页面复制]** 到相应的Tableau字段中。
 
 尝试连接之前，请确 **[!UICONTROL 认已选中]** “需要SSL”框。
 
