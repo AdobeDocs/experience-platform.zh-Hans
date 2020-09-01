@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Data quality;quality;Quality;Supported validation;Validation;supported validation;
 solution: Experience Platform
 title: 数据获取质量
 topic: overview
 translation-type: tm+mt
-source-git-commit: 73a492ba887ddfe651e0a29aac376d82a7a1dcc4
+source-git-commit: c04fb056d4564e53f192e0734a700a13820f5ba7
 workflow-type: tm+mt
 source-wordcount: '282'
 ht-degree: 6%
@@ -12,9 +12,9 @@ ht-degree: 6%
 ---
 
 
-# Adobe Experience Platform中的数据质量
+# Adobe Experience Platform的数据质量
 
-Adobe Experience Platform为通过批处理或流式接收上传的任何数据提供明确定义的完整性、准确性和一致性保证。 以下文档概述了中支持的批处理和流接收检查和验证行为 [!DNL Experience Platform]。
+Adobe Experience Platform为通过批处理或流式接收上传的任何数据提供明确的完整性、准确性和一致性保证。 以下文档概述了中支持的批处理和流接收检查和验证行为 [!DNL Experience Platform]。
 
 ## 支持的检查
 
@@ -50,7 +50,7 @@ Adobe Experience Platform为通过批处理或流式接收上传的任何数据�
 | 架构 | 确保模式不 **为空** ，并包含对合并模式的引用，如下所示： `"meta:immutableTags": ["union"]` |
 | `identityField` | 确保定义了所有有效的标识描述符。 |
 | JSON | 确保JSON有效。 |
-| IMS组织 | 确保列出的IMS组织是有效组织。 |
+| IMS组织 | 确保列出的IMS组织是有效的组织。 |
 | 源名称 | 确保指定数据源的名称。 |
 | 数据集 | 确保指定、启用和未删除数据集。 |
 | Header | 确保已指定标头且其有效。 |
