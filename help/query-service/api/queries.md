@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;api guide;queries;query;Query service;
 solution: Experience Platform
 title: 查询服务开发人员指南
 topic: queries
 translation-type: tm+mt
-source-git-commit: a98e31f57c6ff4fc49d8d8f64441a6e1e18d89da
+source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
 workflow-type: tm+mt
 source-wordcount: '645'
 ht-degree: 2%
@@ -29,7 +29,7 @@ GET /queries
 GET /queries?{QUERY_PARAMETERS}
 ```
 
-- `{QUERY_PARAMETERS}`: (可&#x200B;*选*)添加到请求路径的参数，这些参数配置在响应中返回的结果。 可以包括多个参数，用和号(`&`)分隔。 以下列出了可用参数。
+- `{QUERY_PARAMETERS}`:(可&#x200B;*选*)添加到请求路径的参数，这些参数配置在响应中返回的结果。 可以包括多个参数，用和号(`&`)分隔。 以下列出了可用参数。
 
 **查询参数**
 
@@ -41,8 +41,8 @@ GET /queries?{QUERY_PARAMETERS}
 | `limit` | 指定页面大小限制以控制页面中包含的结果数。 (*Default value: 20*) |
 | `start` | 使用从零开始的编号，偏移响应列表。 例如，将 `start=2` 返回从第三个列出的列表开始的查询。 (*Default value: 0*) |
 | `property` | 根据字段筛选结果。 过滤器 **必须** 为HTML转义。 逗号用于组合多组过滤器。 支持的字段 `created`有 `updated`、 `state`、和 `id`。 支持的运算符 `>` 的列表是 `<` （大于）、 `>=` （小于）、（大于或等于）、 `<=` （小于或等于）、 `==` （等于）、 `!=` （不等于）和 `~` （包含）。 例如，将 `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 返回具有指定ID的所有查询。 |
-| `excludeSoftDeleted` | 指示是否应包括已软删除的查询。 例如，将包 `excludeSoftDeleted=false` 括 **软删除** 的查询。 (*布尔值，默认值： true*) |
-| `excludeHidden` | 指示是否应显示非用户驱动查询。 将此值设置为false将包 **括非用** 户驱动的查询，如CURSOR定义、FETCH或元数据查询。 (*布尔值，默认值： true*) |
+| `excludeSoftDeleted` | 指示是否应包括已软删除的查询。 例如，将包 `excludeSoftDeleted=false` 括 **软删除** 的查询。 (*布尔值，默认值：true*) |
+| `excludeHidden` | 指示是否应显示非用户驱动查询。 将此值设置为false将包 **括非用** 户驱动的查询，如CURSOR定义、FETCH或元数据查询。 (*布尔值，默认值：true*) |
 
 **请求**
 
