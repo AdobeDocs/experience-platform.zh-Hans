@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Audience manager source connector;Audience Manager;audience manager connector
 solution: Experience Platform
 title: 在UI中创建Adobe Audience Manager源连接器
 topic: overview
+description: 本教程将指导您逐步为Adobe Audience Manager创建源连接器，以便使用用户界面将消费者体验事件数据导入平台。
 translation-type: tm+mt
-source-git-commit: 41fe3e5b2a830c3182b46b3e0873b1672a1f1b03
+source-git-commit: 0da686743e8bc57d310f7eff6f1bf812a8f31238
 workflow-type: tm+mt
-source-wordcount: '269'
+source-wordcount: '298'
 ht-degree: 2%
 
 ---
