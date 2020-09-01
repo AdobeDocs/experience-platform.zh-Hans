@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;dataset connection flow service;flow service;Flow service connection
 solution: Experience Platform
 title: 使用Flow Service API创建Experience Platform数据集基础连接
 topic: overview
+description: Flow Service用于收集和集中来自Adobe Experience Platform不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 translation-type: tm+mt
-source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
 workflow-type: tm+mt
-source-wordcount: '690'
+source-wordcount: '724'
 ht-degree: 1%
 
 ---
@@ -22,13 +23,13 @@ ht-degree: 1%
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-* [体验数据模型(XDM)系统](../../../xdm/home.md): 组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-   * [模式合成基础](../../../xdm/schema/composition.md): 了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
-   * [模式注册开发人员指南](../../../xdm/api/getting-started.md): 包括成功执行对模式注册表API的调用时需要了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
-* [目录服务](../../../catalog/home.md): 目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
-* [批量摄取](../../../ingestion/batch-ingestion/overview.md): 批处理摄取API允许您将数据作为批处理文件引入Experience Platform。
+* [体验数据模型(XDM)系统](../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+   * [模式合成基础](../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
+   * [模式注册开发人员指南](../../../xdm/api/getting-started.md):包括成功执行对模式注册表API的调用时需要了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
+* [目录服务](../../../catalog/home.md):目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
+* [批量摄取](../../../ingestion/batch-ingestion/overview.md):批处理摄取API允许您将数据作为批处理文件引入Experience Platform。
 * [沙箱](../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供您需要了解的其他信息，以便使用API成功连接到数据 [!DNL Flow Service] 湖。
@@ -41,7 +42,7 @@ ht-degree: 1%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
