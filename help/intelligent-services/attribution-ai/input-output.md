@@ -5,7 +5,7 @@ title: Attribution AI输入和输出
 topic: Input and Output data for Attribution AI
 description: 以下文档概述了Attribution AI中使用的不同输入和输出。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '2075'
 ht-degree: 3%
@@ -136,11 +136,11 @@ Attribution AI以尽可能最精细的级别输出归因得分，以便您可以
 
 ### 查看原始得分路径(UI) {#raw-score-path}
 
-您可以在UI中视图原始分数的路径。 开始, **[!UICONTROL 在平台]** UI中选择模式 *[!UICONTROL ，然后在“浏览”选项卡中搜索并选择归因AI得分]* 模式。
+您可以在UI中视图原始分数的路径。 开始, **[!UICONTROL 在平台]** UI中选择模式 **[!UICONTROL ，然后在“浏览”选项卡中搜索并选择归因AI得分]** 模式。
 
 ![选择模式](./images/input-output/schemas_browse.png)
 
-接下来，在UI的“结构 *[!UICONTROL ”窗口]* 中选择一个字段，“字 *[!UICONTROL 段属性]* ”选项卡打开。 在字 *[!UICONTROL 段属]* 性中是 *[!UICONTROL 映射到原始]* 得分的路径字段。
+接下来，在UI的“结构 **[!UICONTROL ”窗口]** 中选择一个字段，“字 **[!UICONTROL 段属性]** ”选项卡打开。 在字 **[!UICONTROL 段属]** 性中是 **[!UICONTROL 映射到原始]** 得分的路径字段。
 
 ![选择模式](./images/input-output/field_properties.png)
 
