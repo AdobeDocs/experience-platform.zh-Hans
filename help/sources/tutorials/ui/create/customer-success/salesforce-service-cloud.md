@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Salesforce Service Cloud;salesforce service cloud
 solution: Experience Platform
 title: 在UI中创建Salesforce Service Cloud源连接器
 topic: overview
+description: 本教程提供了使用平台用户界面创建Salesforce Service Cloud（以下称“SSC”）源连接器的步骤。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: f82dfee2c75a0b8b2ec1615266780b309152ead4
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '498'
 ht-degree: 1%
 
 ---
