@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Google Cloud Storage;google cloud storage;GCS;gcs
 solution: Experience Platform
-title: 在UI中创建Google Cloud存储源连接器
+title: Google Cloud存储源连接器(UI)
 topic: overview
+description: 本教程提供了使用平台用户界面创建Google Cloud存储（以下称“GCS”）源连接器的步骤。
 translation-type: tm+mt
-source-git-commit: ec2d0a33e0ae92a3153b7bdcad29734e487a0439
+source-git-commit: 0da686743e8bc57d310f7eff6f1bf812a8f31238
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '555'
 ht-degree: 1%
 
 ---
@@ -74,4 +75,4 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ## 后续步骤
 
-通过遵循本教程，您已建立了与GCS帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入 [!DNL Platform]](../../dataflow/batch/cloud-storage.md)。
+按照本教程，您已建立了与GCS帐户的连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入 [!DNL Platform]](../../dataflow/batch/cloud-storage.md)。
