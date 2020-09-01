@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;list;List;get;GET
 solution: Experience Platform
 title: 列表资源
+description: 您可以通过执行单个视图请求，列表某个容器中特定类型(类、混合、模式、数据类型或描述符)的所有模式注册表资源。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
+source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
 workflow-type: tm+mt
-source-wordcount: '508'
+source-wordcount: '538'
 ht-degree: 2%
 
 ---
