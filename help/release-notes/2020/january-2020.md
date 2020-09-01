@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 5%
@@ -82,7 +82,7 @@ Adobe Experience Platform可以从外部来源收集数据，同时允许您使�
 | 类别 | 权限 | 描述 |
 |--- | --- | ---|
 | 数据获取 | 管理源 | 访问读取、创建、编辑和禁用源。 |
-| 数据获取 | 视图源 | 对“目录”选项卡中的可用源和“浏览” *[!UICONTROL 选项卡中]* 经过身份验证的源进行只 *[!UICONTROL 读访问]* 。 |
+| 数据获取 | 视图源 | 对“目录”选项卡中的可用源和“浏览” **[!UICONTROL 选项卡中]** 经过身份验证的源进行只 **[!UICONTROL 读访问]** 。 |
 
 **已知问题**
 
