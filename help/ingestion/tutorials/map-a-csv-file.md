@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 将CSV文件映射到XDM模式
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '1371'
 ht-degree: 2%
@@ -29,13 +29,13 @@ ht-degree: 2%
 
 ## 选择目标
 
-登录到 [[!DNLAdobe Experience Platform]](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏中选]** 择工作流 *[!UICONTROL ，以访问工作流工]* 作区。
+登录到 [[!DNLAdobe Experience Platform]](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏中选]** 择工作流 **[!UICONTROL ，以访问工作流工]** 作区。
 
 从工作流 **[!UICONTROL 屏幕]** ，选择数 **[!UICONTROL 据摄取部分下的]** “将CSV映射 **[!UICONTROL 到XDM模式]** ”，然后选 ****&#x200B;择启动。
 
 ![](../images/tutorials/map-a-csv-file/workflows.png)
 
-将显 *[!UICONTROL 示将CSV映射到XDM模式]* ，从目标步骤 *[!UICONTROL 开始]* 。 选择要收录到的入站数据的数据集。 您可以使用现有数据集或创建新数据集。
+将显 **[!UICONTROL 示将CSV映射到XDM模式]** ，从目标步骤 **[!UICONTROL 开始]** 。 选择要收录到的入站数据的数据集。 您可以使用现有数据集或创建新数据集。
 
 **使用现有数据集**
 
@@ -49,27 +49,27 @@ ht-degree: 2%
 
 ## 添加数据
 
-将出 *[!UICONTROL 现添加数]* 据步骤。 将CSV文件拖放到提供的空间中，或选择“选 **[!UICONTROL 择文件]** ”以手动输入CSV文件。
+将出 **[!UICONTROL 现添加数]** 据步骤。 将CSV文件拖放到提供的空间中，或选择“选 **[!UICONTROL 择文件]** ”以手动输入CSV文件。
 
 ![](../images/tutorials/map-a-csv-file/add-data.png)
 
-上载 *[!UICONTROL 文件后]* ，将显示“示例数据”部分，其中显示前十行数据。 确认数据已按预期上传后，选择“下 **[!UICONTROL 一步]**”。
+上载 **[!UICONTROL 文件后]** ，将显示“示例数据”部分，其中显示前十行数据。 确认数据已按预期上传后，选择“下 **[!UICONTROL 一步]**”。
 
 ![](../images/tutorials/map-a-csv-file/sample-data.png)
 
 ## 将CSV字段映射到XDM模式字段
 
-将出 *[!UICONTROL 现]* “映射”步骤。 CSV文件的列列列在源字段 *[!UICONTROL 下]*，其对应的XDM模式字段列在 *[!UICONTROL 目标字段下]*。 未选择的目标字段以红色列出。 您可以使用筛选器字段选项缩小可用源字段的列表。
+将出 **[!UICONTROL 现]** “映射”步骤。 CSV文件的列列列在源字段 **[!UICONTROL 下]**，其对应的XDM模式字段列在 **[!UICONTROL 目标字段下]**。 未选择的目标字段以红色列出。 您可以使用筛选器字段选项缩小可用源字段的列表。
 
 要将CSV列映射到XDM字段，请选择该列的相应模式字段旁的目标图标。
 
 ![](../images/tutorials/map-a-csv-file/mapping.png)
 
-将出 *[!UICONTROL 现“选择模式]* ”字段窗口。 在此，您可以导航XDM模式的结构，并找到要将CSV列映射到的字段。 单击XDM字段以将其选中，然后单击“ **[!UICONTROL 选择]**”。
+将出 **[!UICONTROL 现“选择模式]** ”字段窗口。 在此，您可以导航XDM模式的结构，并找到要将CSV列映射到的字段。 单击XDM字段以将其选中，然后单击“ **[!UICONTROL 选择]**”。
 
 ![](../images/tutorials/map-a-csv-file/select-schema-field.png)
 
-“映 *[!UICONTROL 射]* ”屏幕将重新出现，选定的XDM字段现在显示在“ *[!UICONTROL 目标”字段下]*。
+“映 **[!UICONTROL 射]** ”屏幕将重新出现，选定的XDM字段现在显示在“ **[!UICONTROL 目标”字段下]**。
 
 ![](../images/tutorials/map-a-csv-file/field-mapped.png)
 
@@ -77,7 +77,7 @@ ht-degree: 2%
 
 ![](../images/tutorials/map-a-csv-file/remove-mapping.png)
 
-如果要添加新映射，请选择 **[!UICONTROL 源字段列表顶]** 部的添加 *[!UICONTROL 新映射]* 。
+如果要添加新映射，请选择 **[!UICONTROL 源字段列表顶]** 部的添加 **[!UICONTROL 新映射]** 。
 
 ![](../images/tutorials/map-a-csv-file/add-mapping.png)
 
@@ -95,7 +95,7 @@ ht-degree: 2%
 
 ![](../images/tutorials/map-a-csv-file/create-calculated-fields.png)
 
-| 制表符 | 描述 |
+| 选项卡 | 描述 |
 | --------- | ----------- |
 | 字段 | “字段”选项卡列表源模式中可用的字段和属性。 |
 | 函数 | 函数选项卡列表可用于转换数据的函数。 |
@@ -125,7 +125,7 @@ ht-degree: 2%
 
 ### 映射函数
 
-某些映射函数可用于根据在源字段中输入的内容计算和计算值。 要使用函数，请在“源字段”下 *[!UICONTROL 键入该函数]* ，并输入相应的语法和输入。
+某些映射函数可用于根据在源字段中输入的内容计算和计算值。 要使用函数，请在“源字段”下 **[!UICONTROL 键入该函数]** ，并输入相应的语法和输入。
 
 例如，要连接 **城市****和国家／地区** CSV字段并将其分配 **到城市** XDM字段，请将源字段设置为 `concat(city, ", ", county)`。
 
