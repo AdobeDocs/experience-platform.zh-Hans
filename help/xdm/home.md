@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;XDM;XDM system;XDM individual profile;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience event;Mixins;mixins;mixin;Mixin;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM Experienceevenet
+keywords: Experience Platform;home;popular topics;XDM;XDM system;XDM individual profile;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience event;Mixins;mixins;mixin;Mixin;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM Experienceevenet;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;schema library;Schema Library;schema;record data;time series;time-series
 solution: Experience Platform
 title: 体验数据模型(XDM)系统
 topic: overview
 description: '标准化和互操作性是Adobe Experience Platform背后的关键概念。 体验Adobe模型(XDM)由客户驱动，旨在实现客户体验数据标准化并为客户体验管理定义模式。 '
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: ed1f2fdac0f9c977d11c867327c084353c1bcd0f
 workflow-type: tm+mt
 source-wordcount: '1638'
 ht-degree: 2%
@@ -27,7 +27,7 @@ XDM是一个基本框架，它允许Adobe Experience Cloud在 [!DNL Experience P
 
 [!DNL Experience Platform] 会使用架构，以便以可重用的一致方式描述数据结构。通过在整个系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。
 
-在将数据引入 [!DNL Platform]之前，必须构成模式来描述数据的结构，并对每个字段中可以包含的数据类型提供约束。 模式由基类和零个或多个混音组成。
+在将数据引入 [!DNL Platform]之前，必须构建模式以描述数据结构，并对每个字段中可以包含的数据类型提供约束。 模式由基类和零个或多个混音组成。
 
 有关模式合成模型的更多信息（包括设计原则和最佳实践），请参 [阅模式合成基础知识](schema/composition.md)。
 
@@ -84,7 +84,7 @@ XDM ExperienceEvent是一个基于时间序列的类，用于在发生事件(或
 
 Adobe Experience Platform [!DNL Query Service] 允许您使用标准SQL查询数据以支持 [!DNL Experience Platform] 许多不同的用例。
 
-在构建模式并创建引用该模式的数据集后，数据被摄取并存储在中 [!DNL Data Lake]。 使用 [!DNL Query Service]，您可以加入查询中的任何数据集 [!DNL Data Lake] 并将报告结果捕获为新数据集，以用于、机器学习或引入 [!DNL Real-time Customer Profile]。
+在构建模式并创建引用该模式的数据集后，数据被摄取并存储在中 [!DNL Data Lake]。 使 [!DNL Query Service]用，您可以加入查询中的任何数据集 [!DNL Data Lake] 并将报告结果捕获为新数据集，以用于、机器学习或引入 [!DNL Real-time Customer Profile]。
 
 要了解有关的更 [!DNL Query Service]多信息，请参阅 [查询服务简介](../query-service/home.md)。
 
@@ -120,7 +120,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 ## 后续步骤和其他资源
 
-现在，您更好地了解模式在整个过程中的 [!DNL Experience Platform]角色，因此，您已准备好开始自己的作品。 要继续补充您的学习，请阅读建议的文档并观看以下视频，以开始。
+现在，您更好地了解模式在整个过程中的 [!DNL Experience Platform]角色，因此，您已准备好编写自己的开始。 要继续补充您的学习，请阅读建议的文档并观看以下视频，以开始。
 
 要了解用于编写模式的设计原则和最佳实践， [!DNL Experience Platform]请首先阅读模式排 [版的基础知识](schema/composition.md)。 有关如何创建模式的分步说明，请参阅有关使用API或使用用 [户界面创](tutorials/create-schema-api.md)[建模式的教程](tutorials/create-schema-ui.md)。
 
