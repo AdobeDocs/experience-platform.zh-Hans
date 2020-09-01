@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;protocol connector
 solution: Experience Platform
 title: 在UI中为协议连接器配置数据流
 topic: overview
+description: 数据流是从源中检索数据并将其引入Adobe Experience Platform数据集的计划任务。 本教程提供使用协议帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: 6bd5dc5a68fb2814ab99d43b34f90aa7e50aa463
+source-git-commit: 14044f9af50cd4c922294cd60f7b6549828e8aca
 workflow-type: tm+mt
-source-wordcount: '1265'
+source-wordcount: '1298'
 ht-degree: 0%
 
 ---
@@ -98,7 +99,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->**[!UICONTROL 在一]** 次性摄取 **** 期间，间隔和回填不可见。
+>**[!UICONTROL 在一]** 次 **[!UICONTROL 性摄取期]** 间，间隔和回填不可见。
 
 向计划提供适当的值后，选择“下 **[!UICONTROL 一步]**”。
 
