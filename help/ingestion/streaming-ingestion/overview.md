@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;data ingestion;ingested data;streaming
+keywords: Experience Platform;home;popular topics;data ingestion;ingested data;streaming;overview;streaming ingestion;latency;streaming latency;
 solution: Experience Platform
 title: Adobe Experience Platform流摄取概述
 topic: overview
 description: Adobe Experience Platform的流式摄取为用户提供了一种将数据从客户端和服务器端设备实时发送到Experience Platform的方法。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: c04fb056d4564e53f192e0734a700a13820f5ba7
 workflow-type: tm+mt
 source-wordcount: '272'
 ht-degree: 3%
@@ -29,7 +29,7 @@ Adobe Experience Platform通过为每个客户生成一个，使您能够推动�
 
 借助流式摄取，用户可以流式传输用户档案 [!DNL ExperienceEvents] 记录 [!DNL Platform] 并在数秒内完成，从而帮助推动实时个性化。 发送到流式摄取API的所有数据将自动保留在 [!DNL Data Lake]中。
 
-请阅读创建 [流连接指南](../tutorials/create-streaming-connection.md) ，了解详细信息。
+请阅读创建 [流连接指南](../tutorials/create-streaming-connection.md) ，了解更多信息。
 
 ### 流到数据集
 
