@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中为广告连接器配置数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 6bd5dc5a68fb2814ab99d43b34f90aa7e50aa463
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '1272'
 ht-degree: 0%
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 ## 选择数据
 
-创建广告帐户后，将显 *[!UICONTROL 示选择数据]* 步骤，为您提供一个交互界面来探索文件层次结构。
+创建广告帐户后，将显 **[!UICONTROL 示选择数据]** 步骤，为您提供一个交互界面来探索文件层次结构。
 
 - 界面的左半部分是目录浏览器，显示服务器的文件和目录。
 - 界面的右半部分允许您从一个兼容文件预览多达100行数据。
@@ -40,7 +40,7 @@ ht-degree: 0%
 
 ## 将数据字段映射到XDM模式
 
-将显 *[!UICONTROL 示]* “映射”步骤，提供一个交互界面来将源数据映射到数 [!DNL Platform] 据集。
+将显 **[!UICONTROL 示]** “映射”步骤，提供一个交互界面来将源数据映射到数 [!DNL Platform] 据集。
 
 选择要收录到的入站数据的数据集。 您可以使用现有数据集或创建新数据集。
 
@@ -50,7 +50,7 @@ ht-degree: 0%
 
 ![use-existing-dataset](../../../images/tutorials/dataflow/advertising/use-existing-target-dataset.png)
 
-此时将 *[!UICONTROL 显示“选择数据集]* ”对话框。 找到您要使用的数据集，选择它，然后单击“继 **[!UICONTROL 续”]**。
+此时将 **[!UICONTROL 显示“选择数据集]** ”对话框。 找到您要使用的数据集，选择它，然后单击“继 **[!UICONTROL 续”]**。
 
 ![select-existing-dataset](../../../images/tutorials/dataflow/advertising/select-existing-dataset.png)
 
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 ![create-new-dataset](../../../images/tutorials/dataflow/all-tabular/new-target-dataset.png)
 
-将出 *[!UICONTROL 现“选择模式]* ”对话框。 选择要应用于新数据集的模式，然后单击 **[!DNL Done]**。
+将出 **[!UICONTROL 现“选择模式]** ”对话框。 选择要应用于新数据集的模式，然后单击 **[!DNL Done]**。
 
 ![select-模式](../../../images/tutorials/dataflow/advertising/select-existing-schema.png)
 
@@ -74,14 +74,14 @@ ht-degree: 0%
 
 ## 计划摄取运行
 
-此时 *[!UICONTROL 将显示]* “计划”步骤，允许您配置摄取计划，以使用配置的映射自动摄取所选源数据。 下表概述了用于计划的不同可配置字段：
+此时 **[!UICONTROL 将显示]** “计划”步骤，允许您配置摄取计划，以使用配置的映射自动摄取所选源数据。 下表概述了用于计划的不同可配置字段：
 
 | 字段 | 描述 |
 | --- | --- |
 | 频度 | 可选频率 `Once`包括 `Minute`、 `Hour`、 `Day`和 `Week`。 |
 | 间隔 | 一个整数，它为所选频率设置间隔。 |
 | 开始时间 | UTC时间戳，指示何时设置第一次摄取。 |
-| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 *[!UICONTROL 启用]* “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 *禁用* “回填”，则只会摄取在首次摄取和开始时间之间加 *[!UICONTROL 载的文件]* 。 在开始时间之 *[!UICONTROL 前加载的文]* 件将不会被摄取。 |
+| 回填 | 一个布尔值，它确定最初摄取的数据。 如果 **[!UICONTROL 启用]** “回填”，则指定路径中的所有当前文件将在第一次预定接收期间被摄取。 如果 **[!UICONTROL 禁用]** “回填”，则只会摄取在首次摄取和开始时间之间加 **[!UICONTROL 载的文件]** 。 在开始时间之 **[!UICONTROL 前加载的文]** 件将不会被摄取。 |
 | 增量列 | 具有筛选的源模式字段集类型、日期或时间的选项。 此字段用于区分新数据和现有数据。 增量数据将根据所选列的时间戳被摄取。 |
 
 数据流设计为按计划自动摄取数据。 开始。 然后，设置时间间隔以指定两个流运行之间的周期。 间隔的值应为非零整数，并应设置为大于或等于15。
@@ -98,7 +98,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->**[!UICONTROL 在一]** 次性摄取 **** 期间，间隔和回填不可见。
+>**[!UICONTROL 在一]** 次 **[!UICONTROL 性摄取期]** 间，间隔和回填不可见。
 
 向计划提供适当的值后，选择“下 **[!UICONTROL 一步]**”。
 
