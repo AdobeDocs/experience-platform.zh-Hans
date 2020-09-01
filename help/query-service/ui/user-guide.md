@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;Query editor;query editor
+keywords: Experience Platform;home;popular topics;Query editor;query editor;Query service;query service;
 solution: Experience Platform
 title: 查询编辑器用户指南
 topic: query editor
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，它允许您在Experience Platform用户界面中为客户体验数据编写、验证和运行查询。 查询编辑器支持开发分析和数据的查询，并允许您运行交互式查询以用于开发目的，以及运行非交互式查询以填充Experience Platform集。
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
 workflow-type: tm+mt
 source-wordcount: '1086'
 ht-degree: 1%
