@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;sandbox overview
 solution: Experience Platform
 title: 沙箱UI概述
 topic: user guide
+description: Adobe Experience Platform提供将单个平台实例分为单独的隔离虚拟环境的虚拟沙箱。 沙箱用户界面可以在Experience PlatformUI中找到。
 translation-type: tm+mt
-source-git-commit: 6438c1841889ff345e1ebaedabfed0531c1f97f9
+source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
 workflow-type: tm+mt
-source-wordcount: '96'
+source-wordcount: '125'
 ht-degree: 0%
 
 ---
@@ -15,7 +16,7 @@ ht-degree: 0%
 # 沙箱UI概述
 
 
-Adobe Experience Platform提供将单个平台实例分区为单独的隔离虚拟环境的虚拟沙箱。 沙箱用户界面可以在Experience PlatformUI [中找到](https://platform.adobe.com)。
+Adobe Experience Platform提供将单个平台实例分为单独的隔离虚拟环境的虚拟沙箱。 沙箱用户界面可以在Experience PlatformUI [中找到](https://platform.adobe.com)。
 
 登录Experience PlatformUI后，请继续阅读沙箱用 [户指南](user-guide.md) ，了解如何在沙箱工作区中执行各种任务的步骤。
 
