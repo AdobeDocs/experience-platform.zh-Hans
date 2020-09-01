@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;list identities;list cluster
 solution: Experience Platform
 title: 列表群集标识
 topic: API guide
+description: 在标识图中相关的标识，无论命名空间如何，都被视为该标识图中同一“群集”的一部分。 以下选项提供访问所有群集成员的方法。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
 workflow-type: tm+mt
-source-wordcount: '312'
+source-wordcount: '347'
 ht-degree: 1%
 
 ---
@@ -33,7 +34,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/cluster/members?{PARAM
 
 **请求**
 
-选项1: 将标识作为命名空间(`nsId`按ID)和ID值(`id`)提供。
+选项1:将标识作为命名空间(`nsId`按ID)和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -44,7 +45,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2: 将标识作为命名空间(`ns`按名称)和ID值(`id`)提供。
+选项2:将标识作为命名空间(`ns`按名称)和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -55,7 +56,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3: 提供XID()身`xid`份。 有关如何获取身份的XID的详细信息，请参阅此文档中 [有关获取身份的XID的部分](./list-native-id.md)。
+选项3:提供XID()身`xid`份。 有关如何获取身份的XID的详细信息，请参阅此文档中 [有关获取身份的XID的部分](./list-native-id.md)。
 
 ```shell
 curl -X GET \
