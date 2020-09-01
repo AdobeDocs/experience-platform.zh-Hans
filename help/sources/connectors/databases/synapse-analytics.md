@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Azure Synapse Analytics;azure synapse analytics;Synapse;synapse
 solution: Experience Platform
-title: Azure突触Analytics连接器
+title: Azure Synapse Analytics连接器
 topic: overview
+description: 以下文档提供了如何使用API或用户界面将Azure突触分析连接到平台的信息。
 translation-type: tm+mt
-source-git-commit: 3b5e76afea5689dbd59f64f6192e6ef2a6acb7d3
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '203'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # （测试版）连 [!DNL Azure Synapse Analytics] 接器
 
-Adobe Experience Platform允许从外部源摄取数据，同时使您能够使用服务构建、标记和增强传入数 [!DNL Platform] 据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
+Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 
 [!DNL Experience Platform] 支持从第三方数据库中摄取数据。 [!DNL Platform] 可以连接到不同类型的数据库，如关系型、NoSQL或data warehouse。 对数据库提供者的支持包 [!DNL Azure Synapse Analytics]括。
 
@@ -54,11 +55,11 @@ Adobe Experience Platform允许从外部源摄取数据，同时使您能够使�
 
 ## 连接 [!DNL Azure Synapse Analytics] 到 [!DNL Platform] 使用API
 
-- [使用Flow Service API创建Azure突触Analytics连接器](../../tutorials/api/create/databases/synapse-analytics.md)
+- [使用Flow Service API创建Azure突触分析连接器](../../tutorials/api/create/databases/synapse-analytics.md)
 - [使用Flow Service API浏览数据库系统](../../tutorials/api/explore/database-nosql.md)
 - [使用Flow Service API从数据库收集数据](../../tutorials/api/collect/database-nosql.md)
 
 ## 连接 [!DNL Azure Synapse Analytics] 到 [!DNL Platform] 使用UI
 
-- [在UI中创建Azure突触Analytics源连接器](../../tutorials/ui/create/databases/synapse-analytics.md)
+- [在UI中创建Azure突触分析源连接器](../../tutorials/ui/create/databases/synapse-analytics.md)
 - [在UI中为数据库连接器配置数据流](../../tutorials/ui/dataflow/databases.md)
