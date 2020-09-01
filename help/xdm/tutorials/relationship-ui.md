@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;ui;UI;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema editor;Schema Editor;schema;Schema;schemas;Schemas;create;relationship;Relationship;reference;Reference;
 solution: Experience Platform
 title: 使用模式模式编辑器定义两个模式之间的关系
+description: 此文档提供了一个教程，用于使用Experience Platform用户界面中的模式编辑器定义两个模式之间的关系。
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: d847329f675c7ac34a4feabb9e57a9e97f7e3ed1
+source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
 workflow-type: tm+mt
-source-wordcount: '911'
+source-wordcount: '933'
 ht-degree: 0%
 
 ---
@@ -42,7 +43,7 @@ ht-degree: 0%
 
 ### [!UICONTROL 忠诚会员] 模式
 
-源模式“[!UICONTROL Loyalty]Members”基于XDM [!DNL Individual Profile] 类，是在教程中构建的用于在UI [中创建模式的模式](create-schema-ui.md)。 它在其“[!UICONTROL \_tenantId]”命名空间下包含一个“loyalty”对象，该对象包括若干特定于忠诚度的字段。 其中一个字段“loyaltyId”在“电子邮件”模式下充当命名空间的主[!UICONTROL 要标]识。 如“模式 _[!UICONTROL 属性]_”下所示，此模式已在中启用[!DNL Real-time Customer Profile]。
+源模式“[!UICONTROL Loyalty]Members”基于XDM [!DNL Individual Profile] 类，是在教程中构建的用于在UI [中创建模式的模式](create-schema-ui.md)。 它在其“[!UICONTROL \_tenantId]”命名空间下包含一个“loyalty”对象，该对象包括若干特定于忠诚度的字段。 其中一个字段“loyaltyId”在“电子邮件”模式下充当命名空间的主[!UICONTROL 要标]识。 如“模式 _[!UICONTROL 属性]_”下所示，此模式已在中启用 [!DNL Real-time Customer Profile]。
 
 ![](../images/tutorials/relationship/loyalty-members.png)
 
@@ -60,15 +61,15 @@ ht-degree: 0%
 
 要定义两个模式之间的关系，源模式必须有一个专用字段，用作对目标模式的引用。 您可以通过创建新混音将此字段添加到源模式。
 
-开始, **[!UICONTROL 方法是]** 在Mixins _[!UICONTROL 部分中]_单击Add。
+开始, **[!UICONTROL 方法是]** 在Mixins _[!UICONTROL 部分中]_ 单击Add。
 
 ![](../images/tutorials/relationship/loyalty-add-mixin.png)
 
-将出 _[!UICONTROL 现“添加混合]_”对话框。 在此处，单击“**[!UICONTROL &#x200B;新建混音”]**。 在显示的文本字段中，输入新混音的显示名称和说明。 完成**[!UICONTROL &#x200B;后，单击&#x200B;]**“添加混音”。
+将出 _[!UICONTROL 现“添加混合]_ ”对话框。 在此处，单击“ **[!UICONTROL 新建混音”]**。 在显示的文本字段中，输入新混音的显示名称和说明。 完成 **[!UICONTROL 后，单击]** “添加混音”。
 
 <img src="../images/tutorials/relationship/loyalty-create-new-mixin.png" width="750"><br>
 
-画布将重新显示，“[!UICONTROL 忠诚度]”将显示在 _[!UICONTROL Mixins部分]_。 单击混音名称，然后单**[!UICONTROL &#x200B;击根级&#x200B;]**“Loyalty Members”字段旁[!UICONTROL 的“添加]字段”。
+画布将重新显示，“[!UICONTROL 忠诚度]”将显示在 _[!UICONTROL Mixins部分]_ 。 单击混音名称，然后单 **[!UICONTROL 击根级]** “Loyalty Members”字段旁[!UICONTROL 的“添加]字段”。
 
 ![](../images/tutorials/relationship/loyalty-add-field.png)
 
@@ -88,7 +89,7 @@ When finished, click **[!UICONTROL Apply]**.
 
 在源模式定义了专用的引用字段后，您可以将其指定为关系字段。
 
-在画布中选择引用字段，然后在字段属性下 _[!UICONTROL 向下滚动]_，直到显**[!UICONTROL &#x200B;示关系&#x200B;]**复选框。 选中此复选框可显示配置关系字段所需的参数。
+在画布中选择引用字段，然后在字段属性下 _[!UICONTROL 向下滚动]_ ，直到显 **[!UICONTROL 示关系]** 复选框。 选中此复选框可显示配置关系字段所需的参数。
 
 ![](../images/tutorials/relationship/relationship-checkbox.png)
 
