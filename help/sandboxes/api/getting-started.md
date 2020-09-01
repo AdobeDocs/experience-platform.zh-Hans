@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;sandbox developer guide
 solution: Experience Platform
 title: 沙箱API开发人员指南
 topic: developer guide
+description: 此开发人员指南提供帮助您使用沙箱API管理Experience Platform中沙箱的步骤，并包含用于执行各种操作的示例API调用。
 translation-type: tm+mt
-source-git-commit: b4741cdfd065bbaed7f2feeafe8619191e4b8f6c
+source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '364'
 ht-degree: 0%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 0%
 
 # 沙箱API开发人员指南
 
-Adobe Experience Platform中的沙箱提供独立的开发环境，使您能够测试功能、运行实验和制作自定义配置，而不会影响您的生产环境。
+Adobe Experience Platform的沙箱提供独立的开发环境，使您能够测试功能、运行实验和制作自定义配置，而不会影响您的生产环境。
 
 此开发人员指南提供帮助您使用沙箱API管理Experience Platform中沙箱的步骤，并包含用于执行各种操作的示例API调用。
 
@@ -30,7 +31,7 @@ Adobe Experience Platform中的沙箱提供独立的开发环境，使您能够�
 
 本指南要求您完成身 [份验证教程](../../tutorials/authentication.md) ，以便成功调用平台API。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
@@ -40,7 +41,7 @@ Adobe Experience Platform中的沙箱提供独立的开发环境，使您能够�
 
 所有包含有效负荷(POST、PUT和PATCH)的请求都需要附加标头：
 
-* 内容类型： application/json
+* 内容类型：application/json
 
 ## 后续步骤
 
