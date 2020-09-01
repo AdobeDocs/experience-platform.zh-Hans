@@ -3,11 +3,11 @@ keywords: Experience Platform;home;popular topics;data governance;data usage lab
 solution: Experience Platform
 title: 数据使用标签用户指南
 topic: labels
-description: 本用户指南涵盖在Adobe Experience Platform用户界面中使用数据使用标签（也称为DULE标签）的步骤。
+description: 本用户指南介绍在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1132'
+source-wordcount: '1119'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # 数据使用标签用户指南
 
-本用户指南涵盖在用户界面中使用数据使用标签（也称为DULE标签） [!DNL Experience Platform] 的步骤。 在使用指南之前，请参 [阅数据管理概述](../home.md) ，以获得DULE框架的更强健的介绍。
+本用户指南涵盖在用户界面中使用数据使用标签 [!DNL Experience Platform] 的步骤。 在使用指南之前，请参 [[!DNL Data Governance] 阅概述](../home.md) ，以获得框架的更强健的 [!DNL Data Governance] 介绍。
 
 ## 在数据集级别管理数据使用标签
 
