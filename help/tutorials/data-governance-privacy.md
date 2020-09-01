@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: 数据治理和隐私教程
 topic: tutorial
+description: 数据使用标签和执行(DULE)是Adobe Experience Platform数据治理的核心机制。 DULE功能允许您将数据使用标签应用到数据集和字段，并根据相关的数据使用策略对每个标签进行分类。
 translation-type: tm+mt
-source-git-commit: 5c5f6c4868e195aef76bacc0a1e5df3857647bde
+source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '506'
 ht-degree: 0%
 
 ---
@@ -14,13 +15,13 @@ ht-degree: 0%
 
 # [!DNL Data Governance] 和 [!DNL Privacy] Tutorials
 
-[!DNL Data Usage Labeling and Enforcement] (DULE)是Adobe Experience Platform的核心机 [!DNL Data Governanc]制。 DULE功能允许您将数据使用标签应用到数据集和字段，并根据相关的数据使用策略对每个标签进行分类。 在开始使用标签之前，请参 [阅数据管理概述](../data-governance/home.md) ，以更加可靠地介绍中的DULE框架 [!DNL Platform]。
+[!DNL Data Usage Labeling and Enforcement] (DULE)是Adobe Experience Platform的核心机制 [!DNL Data Governance]。 DULE功能允许您将数据使用标签应用到数据集和字段，并根据相关的数据使用策略对每个标签进行分类。 在开始使用标签之前，请参 [阅数据管理概述](../data-governance/home.md) ，以更加可靠地介绍中的DULE框架 [!DNL Platform]。
 
-Adobe Experience Platform [!DNL Privacy Service] 提供RESTful API和用户界面，使您能跨各种解决方案协调隐私和合规性请求。 要了解更多信息，请首先阅读 [Privacy Service概述](../privacy-service/home.md)。
+Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户界面，使您能跨各种解决方案协调隐私和合规要求。 要了解更多信息，请首先阅读 [Privacy Service概述](../privacy-service/home.md)。
 
 ## 添加数据使用标签
 
-数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 可随时应用标签，在数据管理方式上提供灵活性。 最佳实践是，在数据被引入或 [!DNL Experience Platform]数据可用时，立即添加标签 [!DNL Platform]。 在数据集级别应用的数据使用标签将传播到数据集中的所有字段。 标签还可以直接应用于数据集中的各个字段（列标题），而不会传播。 要了解如何将数据使用标签应用于您的数据，请访 [问数据使用标签概述](../data-governance/labels/overview.md)。
+数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 可随时应用标签，在数据管理方式上提供灵活性。 最佳实践是，在数据被引入或 [!DNL Experience Platform]数据可供使用时，立即添加标签 [!DNL Platform]。 在数据集级别应用的数据使用标签将传播到数据集中的所有字段。 标签还可以直接应用于数据集中的各个字段（列标题），而不会传播。 要了解如何将数据使用标签应用于您的数据，请访 [问数据使用标签概述](../data-governance/labels/overview.md)。
 
 ## 创建数据使用策略
 
