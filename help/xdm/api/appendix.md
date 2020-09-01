@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;compatibility;Compatibility;compatibility mode;Compatibility mode;field type;field types;
 solution: Experience Platform
 title: 模式注册开发人员附录
+description: 本文档提供与使用模式注册表API相关的补充信息。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: cb5df9b44486bda84f08805f1077d6097e3666e2
+source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
 workflow-type: tm+mt
-source-wordcount: '1265'
+source-wordcount: '1278'
 ht-degree: 4%
 
 ---
@@ -92,7 +93,7 @@ XDM模式是使用JSON模式标准和基本字段类型定义的，并且对字�
   </tr>
   <tr>
     <td>uri<br/>(xdmType:string)</td>
-    <td>类型：<br/>stringformat:uri</td>
+    <td>类型：<br/>字符串格式：uri</td>
     <td>
       <pre class="JSON language-JSON hljs">
         "sampleField":{ "type":"string", "format":"uri" }
@@ -101,7 +102,7 @@ XDM模式是使用JSON模式标准和基本字段类型定义的，并且对字�
   </tr>
   <tr>
     <td>枚举<br/>(xdmType:字符串)</td>
-    <td>类型：<br/><br/><strong>stringOptional属性：</strong><br/>
+    <td>类型：<br/><br/><strong>string可选属性：</strong><br/>
       <ul>
         <li>默认</li>
       </ul>
@@ -172,7 +173,7 @@ XDM模式是使用JSON模式标准和基本字段类型定义的，并且对字�
   </tr>
   <tr>
     <td>日期</td>
-    <td>类型：<br/>stringformat:日期</td>
+    <td>类型：<br/>字符串格式：日期</td>
     <td>
       <pre class="JSON language-JSON hljs">
         "sampleField":{ "type":"string", "format":“date”、“examples”:["2004-10-23"] }
@@ -182,7 +183,7 @@ XDM模式是使用JSON模式标准和基本字段类型定义的，并且对字�
   </tr>
   <tr>
     <td>date-time</td>
-    <td>类型：<br/>stringformat:date-time</td>
+    <td>类型：<br/>字符串格式：date-time</td>
     <td>
       <pre class="JSON language-JSON hljs">
         "sampleField":{ "type":"string", "format":“date-time”、“examples”:["2004-10-23T12:00:00-06:00"] }
@@ -209,7 +210,7 @@ XDM模式是使用JSON模式标准和基本字段类型定义的，并且对字�
     <td>类型：对象</td>
     <td>属性。{field}.type可以使用任何标量类型定义：
       <pre class="JSON language-JSON hljs">
-        "sampleField":{ "type":“object”、“properties”:{ "field1":{ "type":"string" }, "field2":{ "type":"number" } } } }
+        "sampleField":{ "type":"object", "properties":{ "field1":{ "type":"string" }, "field2":{ "type":"number" } } } }
       </pre>
       引用模式定义的“object”类型字段：
       <pre class="JSON language-JSON hljs">
