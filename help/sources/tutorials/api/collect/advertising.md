@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics; flow service; advertising; google adwords
+keywords: Experience Platform;home;popular topics;flow service;advertising;google adwords;advertising
 solution: Experience Platform
 title: 通过源连接器和API收集广告数据
 topic: overview
 description: 本教程介绍从第三方广告应用程序检索数据并通过源连接器和Flow Service API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 6578fd607d6f897a403d0af65c81dafe3dc12578
+source-git-commit: 6f4714561c2946a084eed4e89d3148df5b8044f5
 workflow-type: tm+mt
 source-wordcount: '1561'
 ht-degree: 1%
