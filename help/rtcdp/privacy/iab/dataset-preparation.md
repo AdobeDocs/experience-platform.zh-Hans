@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时客户数据平台中的IAB TCF 2.0支持
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: e7cbbd2e376ab109367d1d16cb9e033202866a6f
+source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
 workflow-type: tm+mt
 source-wordcount: '1352'
 ht-degree: 0%
@@ -71,7 +71,7 @@ ht-degree: 0%
 
 ## 创建客户同意模式 {#create-schemas}
 
-在平台UI中，单击左 **[!UICONTROL 侧导]** 航中的模式以打开 *[!UICONTROL 模式工]作区&#x200B;*。 从此处，请按照以下各节中的步骤创建每个必需的模式。
+在平台UI中，单击左 **[!UICONTROL 侧导]** 航中的模式以打开 *[!UICONTROL 模式工]作区*。 从此处，请按照以下各节中的步骤创建每个必需的模式。
 
 >[!NOTE]
 >
@@ -79,11 +79,11 @@ ht-degree: 0%
 
 ### 创建基于记录的同意模式 {#profile-schema}
 
-从模式 **[!UICONTROL 工作]** 区的“浏 *[!UICONTROL 览]”选项卡中&#x200B;***[!DNL XDM Individual Profile]，基于类创建新的&#x200B;**模式。 在模式编辑器中打开模式后，**[!UICONTROL 单击]**画布左&#x200B;*[!UICONTROL 侧]*“Mixins”部分下的“添加”。
+从模式 **[!UICONTROL 工作]** 区的“浏 **[!UICONTROL 览]”选项卡中****[!DNL XDM Individual Profile]，基于类创建新的**&#x200B;模式。 在模式编辑器中打开模式后， **[!UICONTROL 单击]** 画布左 **[!UICONTROL 侧]** “Mixins”部分下的“添加”。
 
 ![](../assets/iab/add-mixin-profile.png)
 
-将出 *[!UICONTROL 现“添加混音]* ”对话框。 从此处，从 **[!UICONTROL 用户档案]** 中选择列表隐私。 您可以选择使用搜索栏缩小结果范围，以便更轻松地定位混音。 选择混音后，单击“添 **[!UICONTROL 加混音]**”。
+将出 **[!UICONTROL 现“添加混音]** ”对话框。 从此处，从 **[!UICONTROL 用户档案]** 中选择列表隐私。 您可以选择使用搜索栏缩小结果范围，以便更轻松地定位混音。 选择混音后，单击“添 **[!UICONTROL 加混音]**”。
 
 ![](../assets/iab/add-profile-privacy.png)
 
@@ -112,7 +112,7 @@ ht-degree: 0%
 >
 >有关如何为模式设置主标识字段的步骤，请参阅模式创 [建教程](../../../xdm/tutorials/create-schema-ui.md#identity-field)。
 
-要为模式启 [!DNL Profile]用模式，请单击左边栏中模式的名称，以打开右边栏 *[!UICONTROL 中的]* “属性”对话框。 从此处，单击 **[!UICONTROL 用户档案]** 切换按钮。
+要为模式启 [!DNL Profile]用模式，请单击左边栏中模式的名称，以打开右边栏 **[!UICONTROL 中的]** “属性”对话框。 从此处，单击 **[!UICONTROL 用户档案]** 切换按钮。
 
 ![](../assets/iab/profile-enable-profile.png)
 
@@ -126,11 +126,11 @@ ht-degree: 0%
 
 ### 创建基于时间序列的同意模式 {#event-schema}
 
-从模式 **[!UICONTROL 工作]** 区的“浏 *[!UICONTROL 览]”选项卡中&#x200B;***[!DNL XDM ExperienceEvent]，基于类创建新的&#x200B;**模式。 在模式编辑器中打开模式后，**[!UICONTROL 单击]**画布左&#x200B;*[!UICONTROL 侧]*“Mixins”部分下的“添加”。
+从模式 **[!UICONTROL 工作]** 区的“浏 **[!UICONTROL 览]”选项卡中****[!DNL XDM ExperienceEvent]，基于类创建新的**&#x200B;模式。 在模式编辑器中打开模式后， **[!UICONTROL 单击]** 画布左 **[!UICONTROL 侧]** “Mixins”部分下的“添加”。
 
 ![](../assets/iab/add-mixin-event.png)
 
-将出 *[!UICONTROL 现“添加混音]* ”对话框。 从此处，从 **[!UICONTROL 列表中选择体验事件]** 隐私混合。 您可以选择使用搜索栏缩小结果范围，以便更轻松地定位混音。 选择混音后，单击“添 **[!UICONTROL 加混音]**”。
+将出 **[!UICONTROL 现“添加混音]** ”对话框。 从此处，从 **[!UICONTROL 列表中选择体验事件]** 隐私混合。 您可以选择使用搜索栏缩小结果范围，以便更轻松地定位混音。 选择混音后，单击“添 **[!UICONTROL 加混音]**”。
 
 ![](../assets/iab/add-event-privacy.png)
 
@@ -145,7 +145,7 @@ ht-degree: 0%
 * [!UICONTROL 体验活动Web详细信息]
 * [!UICONTROL ExperienceEvent实施详细信息]
 
-添加混音后，单击“保存”即可 **[!UICONTROL 完成]**。
+添加混音后，单击“保存”即 **[!UICONTROL 可完成]**。
 
 ![](../assets/iab/event-all-mixins.png)
 
@@ -161,11 +161,11 @@ ht-degree: 0%
 
 ![](../assets/iab/dataset-create-from-schema.png)
 
-将显 _[!UICONTROL 示“从模式创建集]_”工作流，从“选择_[!UICONTROL &#x200B;模式”步骤开始]_ 。 在提供的列表中，找到您之前创建的同意模式之一。 您可以选择使用搜索缩小结果并更轻松地定位模式。 单击模式旁的单选按钮以选择它，然后单击“下 **[!UICONTROL 一步]** ”继续。
+将显 **[!UICONTROL 示“从模式创建集]** ”工作流，从“选择 **[!UICONTROL 模式”步骤开始]** 。 在提供的列表中，找到您之前创建的同意模式之一。 您可以选择使用搜索缩小结果并更轻松地定位模式。 单击模式旁的单选按钮以选择它，然后单击“下 **[!UICONTROL 一步]** ”继续。
 
 ![](../assets/iab/dataset-select-schema.png)
 
-将显 _[!UICONTROL 示配置数据集]_步骤。 在单击“完成”之前，为数据集提供唯一、易于识别的名称和**[!UICONTROL &#x200B;描述&#x200B;]**。
+将显 **[!UICONTROL 示配置数据集]** 步骤。 在单击“完成”之前，为数据集提供唯一、易于识别的名称和 **[!UICONTROL 描述]**。
 
 ![](../assets/iab/dataset-configure.png)
 
