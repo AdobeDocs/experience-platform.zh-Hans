@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;union;Union;unions;Unions;segmentMembership;timeSeriesEvents;
 solution: Experience Platform
 title: 合并
+description: 合并(或合并视图)是系统生成的只读模式,聚合共享相同类(XDM ExperienceEvent或XDM单个用户档案)且启用实时客户用户档案的所有模式的字段。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '825'
 ht-degree: 1%
 
 ---
