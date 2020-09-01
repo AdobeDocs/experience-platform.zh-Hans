@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;ad-hoc;ad hoc;adhoc;Ad-hoc;Ad hoc;Adhoc;tutorial;Tutorial;create;Create;schema;Schema
 solution: Experience Platform
 title: 创建点对点模式
+description: 在特定情况下，可能需要创建一个体验数据模型(XDM)模式，其中的字段以仅由单个数据集使用的名称命名。 这称为“临时”模式。 临时模式用于各种Experience Platform数据获取工作流，包括获取CSV文件和创建某些类型的源连接。
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: d04bf35e49488ab7d5e07de91eb77d0d9921b6fa
+source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '782'
 ht-degree: 2%
 
 ---
@@ -22,8 +23,8 @@ ht-degree: 2%
 
 本教程需要对(XDM)系 [!DNL Experience Data Model] 统有良好的了解。 在开始本教程之前，请查看以下XDM文档：
 
-- [XDM系统概述](../home.md): XDM及其实施的高级概述 [!DNL Experience Platform]。
-- [模式合成基础](../schema/composition.md): XDM模式的基本组件概述。
+- [XDM系统概述](../home.md):XDM及其实施的高级概述 [!DNL Experience Platform]。
+- [模式合成基础](../schema/composition.md):XDM模式的基本组件概述。
 
 在开始本教程之前，请查 [看开发人员指南](../api/getting-started.md) ，了解成功调用API所需了解的重要 [!DNL Schema Registry] 信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
 
