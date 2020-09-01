@@ -5,7 +5,7 @@ title: 数据集用户指南
 topic: datasets
 description: 本数据集用户指南提供了有关在Adobe Experience Platform用户界面内处理数据集时执行常见操作的说明。
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '1168'
 ht-degree: 0%
@@ -30,18 +30,18 @@ ht-degree: 0%
 
 ## 视图数据集
 
-在UI [!DNL Experience Platform] 中，单击左 **[!UICONTROL 侧导航]** 中的数据集以打开 *[!UICONTROL 数据集]* 仪表板。 仪表板列表组织的所有可用数据集。 将显示每个列出的数据集的详细信息，包括其名称、数据集所附的模式以及最新摄取运行的状态。
+在UI [!DNL Experience Platform] 中，单击左 **[!UICONTROL 侧导航]** 中的数据集以打开 **[!UICONTROL 数据集]** 仪表板。 仪表板列表组织的所有可用数据集。 将显示每个列出的数据集的详细信息，包括其名称、数据集所附的模式以及最新摄取运行的状态。
 
 ![](../images/datasets/user-guide/browse_datasets.png)
 
-单击数据集的名称以访问其“数 *[!UICONTROL 据集活动]* ”屏幕，并查看所选数据集的详细信息。 “活动”选项卡包括一个图，该图可视化消息消耗率，以及成功和失败批的列表。
+单击数据集的名称以访问其“数 **[!UICONTROL 据集活动]** ”屏幕，并查看所选数据集的详细信息。 “活动”选项卡包括一个图，该图可视化消息消耗率，以及成功和失败批的列表。
 
 ![](../images/datasets/user-guide/dataset_activity_1.png)
 ![](../images/datasets/user-guide/dataset_activity_2.png)
 
 ## 预览数据集
 
-在“ *[!UICONTROL 活动]* ”屏幕中，单 **[!UICONTROL 击屏幕右上角附近的]** “预览数据集”以预览最多100行数据。 如果预览集为空，则预览链接将被取消激活，而是表示 **[!UICONTROL 不可用]**。
+在“ **[!UICONTROL 活动]** ”屏幕中，单 **[!UICONTROL 击屏幕右上角附近的]** “预览数据集”以预览最多100行数据。 如果预览集为空，则预览链接将被取消激活，而是表示 **[!UICONTROL 不可用]**。
 
 ![](../images/datasets/user-guide/click_to_preview.png)
 
@@ -56,7 +56,7 @@ ht-degree: 0%
 
 ## 创建数据集 {#create}
 
-要创建新数据集，请单击“数据集” **[!UICONTROL 开始中的]** “创建 *[!UICONTROL 数据集]* ”。
+要创建新数据集，请单击“数据集” **[!UICONTROL 开始中的]** “创建 **[!UICONTROL 数据集]** ”。
 
 ![](../images/datasets/user-guide/click_to_create.png)
 
@@ -67,29 +67,29 @@ ht-degree: 0%
 
 ### 使用现有模式创建数据集
 
-在“创 *[!UICONTROL 建数据集]* ”屏幕中，单 **[!UICONTROL 击“从模式创建数据集]** ”以创建新的空数据集。
+在“创 **[!UICONTROL 建数据集]** ”屏幕中，单 **[!UICONTROL 击“从模式创建数据集]** ”以创建新的空数据集。
 
 ![](../images/datasets/user-guide/create_dataset_schema.png)
 
-将出 *[!UICONTROL 现“选择模式]* ”(Select Sect)步骤。 浏览模式列表，选择数据集将遵循的模式，然后单击“下 **[!UICONTROL 一步”]**。
+将出 **[!UICONTROL 现“选择模式]** ”(Select Sect)步骤。 浏览模式列表，选择数据集将遵循的模式，然后单击“下 **[!UICONTROL 一步”]**。
 
 ![](../images/datasets/user-guide/select_schema.png)
 
-将显 *[!UICONTROL 示配置数据集]* 步骤。 为数据集提供名称和可选描述，然后单 **[!UICONTROL 击]** “完成”创建数据集。
+将显 **[!UICONTROL 示配置数据集]** 步骤。 为数据集提供名称和可选描述，然后单 **[!UICONTROL 击]** “完成”创建数据集。
 
 ![](../images/datasets/user-guide/configure_dataset_schema.png)
 
 ### 使用CSV文件创建数据集
 
-使用CSV文件创建数据集时，会创建一个专门模式，以为数据集提供与提供的CSV文件匹配的结构。 在“创 *[!UICONTROL 建数据集]* ”屏幕中，单击“从CSV文 **[!UICONTROL 件创建数据集”框]**。
+使用CSV文件创建数据集时，会创建一个专门模式，以为数据集提供与提供的CSV文件匹配的结构。 在“创 **[!UICONTROL 建数据集]** ”屏幕中，单击“从CSV文 **[!UICONTROL 件创建数据集”框]**。
 
 ![](../images/datasets/user-guide/create_dataset_csv.png)
 
-将显 *[!UICONTROL 示]* “配置”步骤。 为数据集提供名称和可选说明，然后单击“下 **[!UICONTROL 一步]**”。
+将显 **[!UICONTROL 示]** “配置”步骤。 为数据集提供名称和可选说明，然后单击“下 **[!UICONTROL 一步]**”。
 
 ![](../images/datasets/user-guide/configure_dataset_csv.png)
 
-将出 *[!UICONTROL 现添加数]* 据步骤。 通过将CSV文件拖放到屏幕的中心，或单击“浏览 **[!UICONTROL ”]** ，浏览文件目录。 文件最大可为10GB。 上传CSV文件后，单击“ **[!UICONTROL 保存]** ”以创建数据集。
+将出 **[!UICONTROL 现添加数]** 据步骤。 通过将CSV文件拖放到屏幕的中心，或单击“浏览 **[!UICONTROL ”]** ，浏览文件目录。 文件最大可为10GB。 上传CSV文件后，单击“ **[!UICONTROL 保存]** ”以创建数据集。
 
 >[!NOTE]
 >
@@ -106,7 +106,7 @@ ht-degree: 0%
 
 有关为模式启用的详细 [!DNL Profile]信息，请参 [阅模式编辑器用户指南](../../xdm/tutorials/create-schema-ui.md)。
 
-要启用用户档案集，请访问其“数 *[!UICONTROL 据集活动]* ”屏幕，然后单 **[!UICONTROL 击“属性]** ”列中的 *[!UICONTROL “用户档案”切]* 换。 启用后，引入数据集中的数据也将用于填充客户用户档案。
+要启用用户档案集，请访问其“数 **[!UICONTROL 据集活动]** ”屏幕，然后单 **[!UICONTROL 击“属性]** ”列中的 **[!UICONTROL “用户档案”切]** 换。 启用后，引入数据集中的数据也将用于填充客户用户档案。
 
 ![](../images/datasets/user-guide/enable_dataset_profiles.png)
 
@@ -118,7 +118,7 @@ ht-degree: 0%
 
 ## 删除数据集
 
-您可以先访问数据集活动屏幕， *[!UICONTROL 删除数据集]* 。 然后，单击 **[!UICONTROL 删除数据集]** ，以将其删除。
+您可以先访问数据集活动屏幕， **[!UICONTROL 删除数据集]** 。 然后，单击 **[!UICONTROL 删除数据集]** ，以将其删除。
 
 >[!NOTE]
 >
@@ -136,11 +136,11 @@ ht-degree: 0%
 
 ## 监控数据获取
 
-在UI [!DNL Experience Platform] 中，单击左 **[!UICONTROL 侧导]** 航中的“监视”。 通过 *[!UICONTROL 监视仪表板]* ，您可以视图来自批处理或流式摄取的入站数据的状态。 要视图单个批的状态，请 *[!UICONTROL 单击“批端到端]* ” *[!UICONTROL 或“流端到端”]*。 仪表板列表所有批处理或流式摄取运行，包括成功、失败或仍在进行的运行。 每个列表都提供批的详细信息，包括批ID、目标数据集的名称和摄取的记录数。 如果为目标数据集启 [!DNL Profile]用，则还会显示所摄取的身份和用户档案记录数。
+在UI [!DNL Experience Platform] 中，单击左 **[!UICONTROL 侧导]** 航中的“监视”。 通过 **[!UICONTROL 监视仪表板]** ，您可以视图来自批处理或流式摄取的入站数据的状态。 要视图单个批的状态，请 **[!UICONTROL 单击“批端到端]** ” **[!UICONTROL 或“流端到端”]**。 仪表板列表所有批处理或流式摄取运行，包括成功、失败或仍在进行的运行。 每个列表都提供批的详细信息，包括批ID、目标数据集的名称和摄取的记录数。 如果为目标数据集启 [!DNL Profile]用，则还会显示所摄取的身份和用户档案记录数。
 
 ![](../images/datasets/user-guide/batch_listing.png)
 
-您可以单击单个批 **[!UICONTROL ID]** ，访问批 *[!UICONTROL 概述仪表板并查看该批的详细信息]* ，包括当该批未能收录时的错误日志。
+您可以单击单个批 **[!UICONTROL ID]** ，访问批 **[!UICONTROL 概述仪表板并查看该批的详细信息]** ，包括当该批未能收录时的错误日志。
 
 ![](../images/datasets/user-guide/batch_overview.png)
 
