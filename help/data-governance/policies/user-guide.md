@@ -5,9 +5,9 @@ title: 数据使用策略用户指南
 topic: policies
 description: Adobe Experience Platform数据管理提供了一个用户界面，允许您创建和管理数据使用策略。 此文档概述了在Experience Platform用户界面的“策略”工作区中可以执行的操作。
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '768'
+source-wordcount: '765'
 ht-degree: 0%
 
 ---
@@ -116,7 +116,7 @@ Adobe Experience Platform [!DNL Data Governance] 提供一个用户界面，允�
 
 ## 后续步骤
 
-此文档概述了如何在UI中管理数据使用策 [!DNL Experience Platform] 略。 有关如何使用DULE Policy API管理策略的步骤，请参阅开发 [人员指南](../api/getting-started.md)。 有关如何实施数据使用策略的信息，请参阅策 [略实施概述](../enforcement/overview.md)。
+此文档概述了如何在UI中管理数据使用策 [!DNL Experience Platform] 略。 有关如何使用管理策略的步骤， [!DNL Policy Service API]请参阅开发 [人员指南](../api/getting-started.md)。 有关如何实施数据使用策略的信息，请参阅策 [略实施概述](../enforcement/overview.md)。
 
 以下视频演示了如何在UI中使用使用策 [!DNL Experience Platform] 略：
 
