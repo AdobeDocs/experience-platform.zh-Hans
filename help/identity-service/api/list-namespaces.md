@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;namespace list;list namespace
 solution: Experience Platform
 title: 列表可用命名空间
 topic: API guide
+description: 列表所有可用命名空间。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
 workflow-type: tm+mt
-source-wordcount: '68'
+source-wordcount: '72'
 ht-degree: 5%
 
 ---
@@ -79,4 +80,4 @@ curl -X GET \
 
 ## 后续步骤
 
-继续到下一个教程， [创建自定义命名空间](./create-custom-namespace.md)
+继续到下一个教程以 [创建自定义命名空间](./create-custom-namespace.md)
