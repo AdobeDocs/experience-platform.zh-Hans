@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Adobe Analytics Classifications Data Connector
 solution: Experience Platform
 title: Adobe Analytics分类数据连接器
 topic: overview
+description: 以下文档提供了如何使用用户界面将Analytics分类连接到平台的信息
 translation-type: tm+mt
-source-git-commit: b6e3024ab42f3fe0e0d0fd39247742e257fe45b3
+source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
 workflow-type: tm+mt
-source-wordcount: '118'
+source-wordcount: '135'
 ht-degree: 0%
 
 ---
