@@ -5,9 +5,9 @@ title: 数据使用策略概述
 topic: policies
 description: 为了使数据使用标签能够有效支持数据合规性，必须实施数据使用策略。 数据使用策略是描述您允许或限制对Experience Platform内数据执行的营销操作种类的规则。
 translation-type: tm+mt
-source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1003'
 ht-degree: 0%
 
 ---
@@ -32,13 +32,13 @@ ht-degree: 0%
 >
 >营销活动本身并不限制数据使用。 必须将它们包含在启用的数据使用策略中，才能评估这些操作是否违反了策略。
 
-当组织的服务中发生数据使用情况时，应指示相关的营销操作，以便识别任何违反策略的行为。 然后，您可以使用 [DULE Policy Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) ，检查集成中是否存在策略违规。
+当组织的服务中发生数据使用情况时，应指示相关的营销操作，以便识别任何违反策略的行为。 然后，您可以使用 [策略服务](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) API检查集成中是否存在策略违规。
 
 >[!NOTE]
 >
 >如果您使用的 [!DNL Real-time Customer Data Platform]是，您可以在目标上设置营销使用案例，以自动执行策略。 有关详细信 [息，请参见实时CDP中的文档](../../rtcdp/privacy/data-governance-overview.md) “数据治理”。
 
-请参阅本文档的附录，了解一列表可 [用的Adobe定义营销操作](#core-actions)。 您还可以使用DULE API或用户界面定义自 [!DNL Policy Service] 定义营销 [!DNL Experience Platform ]操作。 下一节提供了有关使用营销操作和策略的更多信息。
+请参阅本文档的附录，了解一列表可 [用的Adobe定义营销操作](#core-actions)。 您还可以使用API或用户界面定义您自己 [!DNL Policy Service] 的自定义营 [!DNL Experience Platform ]销操作。 下一节提供了有关使用营销操作和策略的更多信息。
 
 <!-- (Add after AAM DEC mapping doc is published)
 ### Inheritance from Adobe Audience Manager Data Export Controls
@@ -50,7 +50,7 @@ For a reference on how specific Data Export Controls map to marketing actions in
 
 ## 管理数据使用策略 {#manage}
 
-应用数据使用标签后，数据管理人员可以使用DULE [!DNL Policy Service] API或 [!DNL Experience Platform] UI来管理和评估与对包含数据使用标签的数据进行营销操作相关的策略。 您可以创建和更新策略、确定策略状态以及使用营销操作来评估特定操作是否违反了数据使用策略。
+应用数据使用标签后，数据管理人员可以使 [!DNL Policy Service] 用API或 [!DNL Experience Platform] UI来管理和评估与对包含数据使用标签的数据执行营销操作相关的策略。 您可以创建和更新策略、确定策略状态以及使用营销操作来评估特定操作是否违反了数据使用策略。
 
 >[!IMPORTANT]
 >
@@ -62,7 +62,7 @@ For a reference on how specific Data Export Controls map to marketing actions in
 
 ## 后续步骤
 
-此文档介绍了DULE框架中的数据使用策略。 您现在可以继续阅读本指南中链接的流程文档，进一步了解如何在API和UI中使用策略。
+本文档介绍了框架中的数据使用策 [!DNL Data Governance] 略。 您现在可以继续阅读本指南中链接的流程文档，进一步了解如何在API和UI中使用策略。
 
 ## 附录
 
