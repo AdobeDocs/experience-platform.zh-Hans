@@ -5,7 +5,7 @@ title: 管理产品用户档案的用户
 topic: user guide
 description: 此文档显示如何在Adobe Experience Platform的UI中管理产品用户档案的用户。
 translation-type: tm+mt
-source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
+source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
 workflow-type: tm+mt
 source-wordcount: '199'
 ht-degree: 1%
@@ -15,11 +15,11 @@ ht-degree: 1%
 
 # 管理产品用户档案的用户
 
-要从产品用户档案中分配或删除用户，请打开用户档案的详细信息页面，然后导航到“用 *[!UICONTROL 户]* ”选项卡。 在此处，单击“ **[!UICONTROL 添加用户]**”。
+要从产品用户档案中分配或删除用户，请打开用户档案的详细信息页面，然后导航到“用 **[!UICONTROL 户]** ”选项卡。 在此处，单击“ **[!UICONTROL 添加用户]**”。
 
 ![add-users-button](../images/add-users-button.png)
 
-将显 *[!UICONTROL 示“添加用户]* ”对话框。 使用搜索字段，您可以查找要添加的用户（按姓名或通过电子邮件）。 键入时，匹配的用户将显示在文本框下方的自动完成窗口中。
+将显 **[!UICONTROL 示“添加用户]** ”对话框。 使用搜索字段，您可以查找要添加的用户（按姓名或通过电子邮件）。 键入时，匹配的用户将显示在文本框下方的自动完成窗口中。
 
 ![添加用户自动完成](../images/add-user-autocomplete.png)
 
@@ -31,7 +31,7 @@ ht-degree: 1%
 
 ![添加用户保存](../images/add-user-save.png)
 
-将重 *[!UICONTROL 新显示]* 产品用户档案的“用户”选项卡，此时将列出添加的用户。
+将重 **[!UICONTROL 新显示]** 产品用户档案的“用户”选项卡，此时将列出添加的用户。
 
 ![用户添加](../images/user-added.png)
 
