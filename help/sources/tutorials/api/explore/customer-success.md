@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;cs;CS;customer success system
 solution: Experience Platform
 title: 使用Flow Service API探索客户成功系统
 topic: overview
+description: 本教程使用Flow Service API探索客户成功(CS)系统。
 translation-type: tm+mt
-source-git-commit: fc5cdaa661c47e14ed5412868f3a54fd7bd2b451
+source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
 workflow-type: tm+mt
-source-wordcount: '569'
+source-wordcount: '582'
 ht-degree: 1%
 
 ---
@@ -20,7 +21,7 @@ ht-degree: 1%
 
 ## 入门指南
 
-本指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
 * [来源](../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
 * [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
@@ -29,7 +30,7 @@ ht-degree: 1%
 
 ### 获取基本连接
 
-要使用API探索CS系 [!DNL Platform] 统，您必须拥有有效的基本连接ID。 如果尚没有要使用的CS系统的基本连接，可通过以下教程创建一个：
+要使用API探索CS系 [!DNL Platform] 统，您必须拥有有效的基本连接ID。 如果尚未建立要使用的CS系统的基本连接，可通过以下教程创建一个：
 
 * [Salesforce服务云](../create/customer-success/salesforce-service-cloud.md)
 * [ServiceNow](../create/customer-success/servicenow.md)
@@ -42,7 +43,7 @@ ht-degree: 1%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权： 承载者 `{ACCESS_TOKEN}`
+* 授权：承载者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
 * x-gw-ims-org-id: `{IMS_ORG}`
 
