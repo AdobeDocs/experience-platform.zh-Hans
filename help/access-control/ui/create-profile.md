@@ -5,7 +5,7 @@ title: 创建新产品用户档案
 topic: user guide
 description: 此文档涵盖在Adobe Admin Console创建新产品用户档案所需的必要步骤。 要开始创建新用户档案，请导航到“产品用户档案”选项卡，然后单击“新建用户档案”。
 translation-type: tm+mt
-source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '246'
 ht-degree: 0%
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 # 创建新产品用户档案
 
-要开始创建新用户档案，请导航到“产 *[!UICONTROL 品用户档案]* ”选项卡，然 **[!UICONTROL 后单击“新用户档案]**”。
+要开始创建新用户档案，请导航到“产 **[!UICONTROL 品用户档案]** ”选项卡，然 **[!UICONTROL 后单击“新用户档案]**”。
 
 ![新用户档案按钮](../images/new-profile-button.png)
 
-将显 _[!UICONTROL 示“新建用户档案]_ ”对话框，提示您输入新 **[!UICONTROL 用户档案的“用户档案]** 名称 **[!UICONTROL ”和“]** 描述”。 如果希望用户档案的显示名称不同，请取消选 **[!UICONTROL 中“与用户档案名称相同]** ”，并在显示的文本框中输入显示名称。 在“ *[!UICONTROL 用户通知]*”下，您可以切换在用户从用户档案添加或删除时是否会通过电子邮件通知用户。
+将显 **[!UICONTROL 示“新建用户档案]** ”对话框，提示您输入新 **[!UICONTROL 用户档案的“用户档案]** 名称 **[!UICONTROL ”和“]** 描述”。 如果希望用户档案的显示名称不同，请取消选 **[!UICONTROL 中“与用户档案名称相同]** ”，并在显示的文本框中输入显示名称。 在“ **[!UICONTROL 用户通知]**”下，您可以切换在用户从用户档案添加或删除时是否会通过电子邮件通知用户。
 
 When finished, click **[!UICONTROL Next]**.
 
