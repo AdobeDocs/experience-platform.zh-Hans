@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;segment evaluation
+keywords: Experience Platform;home;popular topics;streaming segmentation;Segmentation;Segmentation Service;segmentation service;ui guide;
 solution: Experience Platform
 title: 流细分
 topic: ui guide
 description: Adobe Experience Platform的流式细分使您能够近乎实时地进行细分，同时专注于数据的丰富性。 利用流细分，当数据进入平台时，现在会发生细分资格，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传入平台时评估大多数细分规则，这意味着，在不运行计划的细分作业的情况下，细分成员资格将保持最新。
 translation-type: tm+mt
-source-git-commit: d35d598b2ae8b46f53a20d41770b21ceeeafcce8
+source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
 workflow-type: tm+mt
 source-wordcount: '805'
 ht-degree: 0%
