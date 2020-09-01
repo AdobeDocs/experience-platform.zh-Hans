@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;Azure Event Hubs;azure event hubs;Event Hubs;event hubs
 solution: Experience Platform
 title: Azure事件集线器连接器
 topic: overview
+description: 以下文档提供了如何使用API或用户界面将Azure事件集线器连接到平台的信息。
 translation-type: tm+mt
-source-git-commit: e628621903dbc0ec7381dfeae99902f503b34869
+source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '243'
 ht-degree: 0%
 
 ---
