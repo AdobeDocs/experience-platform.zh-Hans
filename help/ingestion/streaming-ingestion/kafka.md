@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;kafka;kafka connector;Kafka;
 solution: Experience Platform
 title: 卡夫卡连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+source-git-commit: c04fb056d4564e53f192e0734a700a13820f5ba7
 workflow-type: tm+mt
 source-wordcount: '146'
 ht-degree: 0%
@@ -12,9 +12,9 @@ ht-degree: 0%
 ---
 
 
-# [!DNL Kafka] Adobe Experience Platform连接器
+# [!DNL Kafka] adobe experience platform连接器
 
-Adobe Experience Platform流连接器基于 [!DNL Apache Kafka Connect]。 此库可用于将JSON事件从数 [!DNL Kafka] 据中心主题直接流 [!DNL Experience Platform] 到实时流。
+Adobe Experience Platform的流连接器基于 [!DNL Apache Kafka Connect]。 此库可用于将JSON事件从数 [!DNL Kafka] 据中心主题直接流 [!DNL Experience Platform] 到实时流。
 
 流连接器是接收器（单向）连接器，将数据从主题传 [!DNL Kafka] 送到上的注册端点 [!DNL Experience Platform]。 要使用此连接器，您必须下载库，将其添 [!DNL Kafka] 加到现有部署，并 [!DNL Kafka] 将主题配置到Adobe流HTTP URL。 不需要其 **他代** 码。 连接器支持以下功能：
 
