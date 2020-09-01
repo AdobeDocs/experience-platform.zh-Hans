@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics; flow service; customer success; service now; salesforce service cloud
+keywords: Experience Platform;home;popular topics;collect customer success;customer success
 solution: Experience Platform
 title: 通过源连接器和API从客户成功系统收集数据
 topic: overview
-description: 本教程介绍从第三方客户成功系统检索数据并通过源连接器和流服务API将其引入平台的步骤。
+description: 本教程介绍从客户成功系统检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 6578fd607d6f897a403d0af65c81dafe3dc12578
+source-git-commit: 6f4714561c2946a084eed4e89d3148df5b8044f5
 workflow-type: tm+mt
-source-wordcount: '1628'
+source-wordcount: '1624'
 ht-degree: 1%
 
 ---
