@@ -5,7 +5,7 @@ title: 浏览访问控制工作区
 topic: user guide
 description: 此文档涵盖浏览访问控制工作区所需的必要步骤。 要配置访问控制以通过Adobe Admin Console进行Experience Platform，您必须是具有Experience Platform订阅的IMS组织的管理员。
 translation-type: tm+mt
-source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '301'
 ht-degree: 2%
@@ -19,11 +19,11 @@ ht-degree: 2%
 
 如果您没有管理员权限，请与系统管理员联系以获取访问权限。
 
-拥有管理员权限后，请转到 [Adobe Admin Console](https://adminconsole.adobe.com) ，然后使用您的Adobe凭据登录。 登录后，您具 *[!UICONTROL 有]* 管理员权限的IMS组织会显示“概述”页。 本页显示您的IMS组织所订阅的产品，以及将用户和管理员添加到整个IMS组织的其他控件。 单击 **[!UICONTROL Adobe Experience Platform]** ，打开访问控制工作区以进行 [!DNL Platform] 集成。
+拥有管理员权限后，请转到 [Adobe Admin Console](https://adminconsole.adobe.com) ，然后使用您的Adobe凭据登录。 登录后，您具 **[!UICONTROL 有]** 管理员权限的IMS组织会显示“概述”页。 本页显示您的IMS组织所订阅的产品，以及将用户和管理员添加到整个IMS组织的其他控件。 单击 **[!UICONTROL Adobe Experience Platform]** ，打开访问控制工作区以进行 [!DNL Platform] 集成。
 
 ![overview-page](../images/overview-page.png)
 
-将显示Adobe Experience Platform的访问控制工作区，在“产品用户档案” *[!UICONTROL 选项卡上打]* 开。 此选项卡允许您视图所有产品用户档案并管理本文档中概述的各种设置。
+将显示Adobe Experience Platform的访问控制工作区，在“产品用户档案” **[!UICONTROL 选项卡上打]** 开。 此选项卡允许您视图所有产品用户档案并管理本文档中概述的各种设置。
 
 ![平台访问控制](../images/platform-access-control.png)
 
