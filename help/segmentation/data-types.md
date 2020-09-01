@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;data type;data types;Data types;Data type
+keywords: Experience Platform;home;popular topics;data type;data types;Data types;Data type;Segmentation data types;Segmentation;segmentation;Segmentation Service;Segmentation service data types;
 solution: Experience Platform
 title: Adobe Experience Platform分段服务数据类型
 topic: overview
 description: 分段服务支持所有XDM数据类型。 构成区段定义的规则根据以下数据类型进行情境化。
 translation-type: tm+mt
-source-git-commit: 23516c66a67ae5663dcf90a40ccba98bfd266ab0
+source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
 workflow-type: tm+mt
 source-wordcount: '479'
 ht-degree: 3%
