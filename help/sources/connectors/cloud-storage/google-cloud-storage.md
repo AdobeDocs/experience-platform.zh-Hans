@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Google Cloud存储连接器
 topic: overview
 translation-type: tm+mt
-source-git-commit: 340f5d0611e9e9eb4676018ee10c8a8aa08dbb2d
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '370'
 ht-degree: 0%
@@ -56,11 +56,11 @@ Adobe Experience Platform为AWS等云提供商提 [!DNL Google Cloud Platform]�
 
 ![](../../images/tutorials/create/google-cloud-storage/nav.png)
 
-将显 **[!UICONTROL 示]** “设置”页。 从此处，您可以看到有关项目ID的 [!DNL Google] 信息以及有关帐户的详细 [!DNL Google Cloud Storage] 信息。 要访问互操作性设置，请 **[!UICONTROL 从顶部]** 标题中选择互操作性。
+将显 **[!UICONTROL 示]** “设置”页。 从此处，您可以看到有关您的项目ID [!DNL Google] 的信息以及有关您帐户的详 [!DNL Google Cloud Storage] 细信息。 要访问互操作性设置，请 **[!UICONTROL 从顶部]** 标题中选择互操作性。
 
 ![](../../images/tutorials/create/google-cloud-storage/project-access.png)
 
-“互 **[!UICONTROL 操作性]** ”页包含有关身份验证、访问密钥以及与用户帐户关联的默认项目的信息。 如果尚未建立可互操作访问的默认项目，则可以从“可互操作访问的默认项目”部 *[!UICONTROL 分设置一个项目]* 。 如果已建立默认项目，则此部分将显示一条确认消息，指明项目已设置为默认项目。
+“互 **[!UICONTROL 操作性]** ”页包含有关身份验证、访问密钥以及与用户帐户关联的默认项目的信息。 如果尚未建立可互操作访问的默认项目，则可以从“可互操作访问的默认项目”部 **[!UICONTROL 分设置一个项目]** 。 如果已建立默认项目，则此部分将显示一条确认消息，指明项目已设置为默认项目。
 
 要为用户帐户生成新的访问密钥ID和密钥访问密钥，请选 **[!UICONTROL 择创建密钥]**。
 
