@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;Query service;data deduplication;deduplication;
 solution: Experience Platform
 title: 数据外部重复数据删除
 topic: queries
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
 workflow-type: tm+mt
 source-wordcount: '405'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 外部重复数据删除 [!DNL Query Service]
 
-Adobe Experience Platform [!DNL Query Service] 支持外部重复数据删除，因为可能需要从计算中删除整个行或忽略特定的字段集，因为行中的数据只有一部分是重复。 外部重复数据删除的常见模式包括在按 `ROW_NUMBER()` 序时间(使用(XDM)字段)跨窗口使用ID或ID对的函数 [!DNL Experience Data Model]`timestamp` ，以返回表示检测到重复的次数的新字段。 当此值为 `1`时，即指原始实例，在大多数情况下，即您希望使用的实例，忽略其他所有实例。 这通常在子选择中完成，外部重复数据删除在更高级别完成，如执 `SELECT` 行聚合计数。
+Adobe Experience Platform [!DNL Query Service] 支持外部重复数据删除，因为可能需要从计算中删除整个行或忽略特定的字段集，因为行中只有一部分数据是重复。 外部重复数据删除的常见模式包括在按 `ROW_NUMBER()` 序时间(使用(XDM)字段)跨窗口使用ID或ID对的函数 [!DNL Experience Data Model]`timestamp` ，以返回表示检测到重复的次数的新字段。 当此值为 `1`时，即指原始实例，在大多数情况下，即您希望使用的实例，忽略其他所有实例。 这通常在子选择中完成，外部重复数据删除在更高级别完成，如执 `SELECT` 行聚合计数。
 
 ## 用例
 
@@ -103,7 +103,7 @@ SELECT SUM(commerce.purchases.value) AS num_purchases FROM (
 
 ### 量度 {#metrics}
 
-如果您有使用可选唯一ID的度量，并且显示该ID的重复，您可能希望忽略该度量值并保留ExperienceEvent的其余部分。 在XDM中，几乎所有度量都使用 `Measure` 包含可选字段的 `id` 数据类型，您可以使用该字段进行外部重复数据删除。
+如果您有使用可选唯一ID的度量，并且显示该ID的重复，您可能希望忽略该度量值并保留ExperienceEvent的其余部分。 在XDM中，几乎所有度量都使 `Measure` 用包括可选字段的 `id` 数据类型，您可以使用该字段进行外部重复数据删除。
 
 **范围：** 访客
 
