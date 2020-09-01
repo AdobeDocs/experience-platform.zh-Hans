@@ -5,7 +5,7 @@ title: 使用架构编辑器创建架构
 topic: tutorials
 description: 本教程介绍了在模式中使用模式编辑器创建Experience Platform的步骤。
 translation-type: tm+mt
-source-git-commit: ed1f2fdac0f9c977d11c867327c084353c1bcd0f
+source-git-commit: d946f5014707bf73f373d712b287de259c3df5cd
 workflow-type: tm+mt
 source-wordcount: '3528'
 ht-degree: 0%
@@ -113,7 +113,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 
 “忠诚[!UICONTROL 会员]”模式用于捕获与忠诚项目成员相关的数据，因此它需要一些特定的忠诚度相关字段。 没有包含必要字段的标准混音，因此您需要定义新混音。
 
-此时，打开“添加混 *[!UICONTROL 合”对话框]* ，选择 **[!UICONTROL “创建新混合”]**。 随后将要求您为混音提 **[!UICONTROL 供显示]****[!UICONTROL 名称和说]** 明。
+此时，打开“添加混 **[!UICONTROL 合”对话框]** ，选择 **[!UICONTROL “创建新混合”]**。 随后将要求您为混音提 **[!UICONTROL 供显示]****[!UICONTROL 名称和说]** 明。
 
 ![](../images/tutorials/create-schema/mixin_create_new.png)
 
