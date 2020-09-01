@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 订阅数据获取事件
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5a10a31f4be5173af8b459b9ab8a53096348be1d
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '831'
 ht-degree: 2%
@@ -55,7 +55,7 @@ ht-degree: 2%
 
 ![](../images/quality/subscribe-events/add-event-button.png)
 
-将出 _[!UICONTROL 现“添加事件]_ ”对话框。 单击 **[!UICONTROL Experience Platform]** ，以过滤可用选项的列表，然后单击平台 **[!UICONTROL 通知]** ，然后单击 **[!UICONTROL 下一步]**。
+将出 **[!UICONTROL 现“添加事件]** ”对话框。 单击 **[!UICONTROL Experience Platform]** ，以过滤可用选项的列表，然后单击平台 **[!UICONTROL 通知]** ，然后单击 **[!UICONTROL 下一步]**。
 
 ![](../images/quality/subscribe-events/select-platform-events.png)
 
