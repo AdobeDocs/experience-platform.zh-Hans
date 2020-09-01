@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;delete sandbox
 solution: Experience Platform
 title: 删除沙箱
 topic: developer guide
+description: 可以通过发出DELETE请求来删除沙箱，该请求在请求路径中包含沙箱的名称。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
 workflow-type: tm+mt
-source-wordcount: '84'
-ht-degree: 4%
+source-wordcount: '103'
+ht-degree: 3%
 
 ---
 
