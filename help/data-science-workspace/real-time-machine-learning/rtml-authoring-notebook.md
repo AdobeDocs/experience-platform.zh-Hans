@@ -5,7 +5,7 @@ title: 实时机器学习笔记本用户指南
 topic: Training and scoring a ML model
 description: 以下指南概述了在Adobe Experience PlatformJupyterLab中构建实时机器学习应用程序所需的步骤。
 translation-type: tm+mt
-source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '1656'
 ht-degree: 0%
@@ -92,7 +92,7 @@ pprint(nf.discover_nodes())
 
 ![rtml数据集](../images/rtml/rtml-dataset.png)
 
-要访问笔记本中的数 [!DNL JupyterLab] 据集，请选 **择** “数据”选项卡（位于的左侧导航中） [!DNL JupyterLab]。 出 *[!UICONTROL 现Dataset]**[!UICONTROL 和]* 模式目录。 选 **[!UICONTROL 择数据集]** ，右键单击，然后从要使用的数据集 **[!UICONTROL 的下拉菜单中选择浏览笔记本中的数据]** 。 可执行代码条目显示在笔记本的底部。 这个手机里有你的 `dataset_id`。
+要访问笔记本中的数 [!DNL JupyterLab] 据集，请选 **择** “数据”选项卡（位于的左侧导航中） [!DNL JupyterLab]。 出 **[!UICONTROL 现Dataset]****[!UICONTROL 和]** 模式目录。 选 **[!UICONTROL 择数据集]** ，右键单击，然后从要使用的数据集 **[!UICONTROL 的下拉菜单中选择浏览笔记本中的数据]** 。 可执行代码条目显示在笔记本的底部。 这个手机里有你的 `dataset_id`。
 
 ![数据集访问](../images/rtml/access-dataset.png)
 
@@ -113,11 +113,11 @@ config_properties = {
 
 ### 准备模型
 
-使用 *[!UICONTROL 实时ML模板]* ，您需要分析、预处理、培训和评估ML模型。 这是通过应用数据转换和构建培训管道来完成的。
+使用 **[!UICONTROL 实时ML模板]** ，您需要分析、预处理、培训和评估ML模型。 这是通过应用数据转换和构建培训管道来完成的。
 
 **数据转换**
 
-需 *[!UICONTROL 要修改实时]* ML *模板Data Transformations* 单元格，才能处理您自己的数据集。 通常，这涉及重命名列、数据汇总以及数据准备／功能工程。
+需 **[!UICONTROL 要修改实时]** ML *模板Data Transformations* 单元格，才能处理您自己的数据集。 通常，这涉及重命名列、数据汇总以及数据准备／功能工程。
 
 >[!NOTE]
 >
@@ -410,7 +410,7 @@ print(f'Updated dsl: {updated_dsl}')
 
 ## 评分 {#scoring}
 
-发布到后， [!DNL Edge]评分由客户端的POST请求完成。 通常，这可以从需要ML分数的客户端应用程序中完成。 您也可以从邮递员处进行。 实 *[!UICONTROL 时ML模板使用]* EdgeUtils演示此过程。
+发布到后， [!DNL Edge]评分由客户端的POST请求完成。 通常，这可以从需要ML分数的客户端应用程序中完成。 您也可以从邮递员处进行。 实 **[!UICONTROL 时ML模板使用]** EdgeUtils演示此过程。
 
 >[!NOTE]
 >
