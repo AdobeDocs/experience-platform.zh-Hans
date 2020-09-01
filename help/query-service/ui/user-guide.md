@@ -5,7 +5,7 @@ title: 查询编辑器用户指南
 topic: query editor
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，它允许您在Experience Platform用户界面中为客户体验数据编写、验证和运行查询。 查询编辑器支持开发分析和数据的查询，并允许您运行交互式查询以用于开发目的，以及运行非交互式查询以填充Experience Platform集。
 translation-type: tm+mt
-source-git-commit: 3376d6cace9ab196f457e2bf7b84cde06693103c
+source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
 workflow-type: tm+mt
 source-wordcount: '1086'
 ht-degree: 1%
@@ -45,7 +45,7 @@ ht-degree: 1%
 
 ### 编写查询
 
-[!UICONTROL 查询编辑器] ，可让编写查询尽可能简单。 下面的屏幕截图显示了编辑器在UI中的显示方式，并突 **出显示** “播放”按钮和SQL条目字段。
+[!UICONTROL 查询编辑器] ，可以尽可能轻松地编写查询。 下面的屏幕截图显示了编辑器在UI中的显示方式，并突 **出显示** “播放”按钮和SQL条目字段。
 
 ![图像](../images/queries/query-editor-overview/editor.png)
 
@@ -77,19 +77,19 @@ ht-degree: 1%
 
 ### 查询详细信息
 
-当您在中查看查询时， [!DNL Query Editor]“查询 *[!UICONTROL 详细信息]* ”面板提供用于管理选定查询的工具。
+当您在中查看查询时， [!DNL Query Editor]“查询 **[!UICONTROL 详细信息]** ”面板提供用于管理选定查询的工具。
 
 ![图像](../images/queries/query-editor-overview/query-details.png)
 
-此面板允许您直接从UI中生成输出数据集，删除或命名显示的查询，并在SQL查询选项卡上以易于复制的格式视图 *[!UICONTROL SQL代码]* 。 此面板还显示有用的元数据，如上次修改查询的时间以及修改者（如果适用）。 要生成数据集，请单击“ **[!UICONTROL 输出数据集”]**。 将显 *[!UICONTROL 示“输出数据集]* ”对话框。 输入名称和说明，然后单击“ **[!UICONTROL 运行查询]**”。 新数据集显示在用户界 *[!UICONTROL 面的]* “数据集 [!DNL Query Service] ”选项卡中 [!DNL Platform]。
+此面板允许您直接从UI中生成输出数据集，删除或命名显示的查询，并在SQL查询选项卡上以易于复制的格式视图 **[!UICONTROL SQL代码]** 。 此面板还显示有用的元数据，如上次修改查询的时间以及修改者（如果适用）。 要生成数据集，请单击“ **[!UICONTROL 输出数据集”]**。 将显 **[!UICONTROL 示“输出数据集]** ”对话框。 输入名称和说明，然后单击“ **[!UICONTROL 运行查询]**”。 新数据集显示在用户界 **[!UICONTROL 面的]** “数据集 [!DNL Query Service] ”选项卡中 [!DNL Platform]。
 
 ### 保存查询
 
-[!DNL Query Editor] 提供保存功能，允许您保存查询并稍后处理。 要保存查询，请 **[!UICONTROL 单击]** 右上角的“保存” [!DNL Query Editor]。 在保存查询之前，必须使用“查询详细信息”面板为查询提 *[!UICONTROL 供名称]* 。
+[!DNL Query Editor] 提供保存功能，允许您保存查询并稍后处理。 要保存查询，请 **[!UICONTROL 单击]** 右上角的“保存” [!DNL Query Editor]。 在保存查询之前，必须使用“查询详细信息”面板为查询提 **[!UICONTROL 供名称]** 。
 
 ### 如何查找以前的查询
 
-从中执行的所 [!DNL Query Editor] 有查询都捕获在日志表中。 您可以使用“日志”选项卡中的 *[!UICONTROL 搜索功]* 能来查找查询执行。 保存的查询列在“浏 *[!UICONTROL 览]* ”选项卡中。
+从中执行的所 [!DNL Query Editor] 有查询都捕获在日志表中。 您可以使用“日志”选项卡中的 **[!UICONTROL 搜索功]** 能来查找查询执行。 保存的查询列在“浏 **[!UICONTROL 览]** ”选项卡中。
 
 有关更 [多信息，请参阅查询][query-service-ui] 服务UI概述。
 
@@ -99,7 +99,7 @@ ht-degree: 1%
 
 ## 使用查询编辑器执行查询
 
-要在中运行查询 [!DNL Query Editor]，您可以在编辑器中输入SQL，或从“日志”或“浏览”选 *项卡加载* 以前的 *[!UICONTROL 查询，然后单]* 击“播放 **”**。 查询执行状态显示在下面的 *[!UICONTROL 控制台]* 选项卡中，输出数据显示在结果 *[!UICONTROL 选项卡中]* 。
+要在中运行查询 [!DNL Query Editor]，您可以在编辑器中输入SQL，或从“日志”或“浏览”选 *项卡加载* 以前的 **[!UICONTROL 查询，然后单]** 击“播放 **”**。 查询执行状态显示在下面的 **[!UICONTROL 控制台]** 选项卡中，输出数据显示在结果 **[!UICONTROL 选项卡中]** 。
 
 ### 控制台
 
@@ -113,7 +113,7 @@ ht-degree: 1%
 
 ### 查询结果
 
-查询完成后，结果将显示在“结果”选 *[!UICONTROL 项卡]* (“控制台”选 *[!UICONTROL 项卡旁]* )。 此视图显示查询的表格输出，最多显示100行。 此视图允许您验证查询是否生成预期输出。 要使用查询生成数据集，请删除对返回行的限制，然后使用运行查询 `CREATE TABLE tablename AS SELECT` 生成带有输出的数据集。 有关如何 [根据查询结果][query-service-create-datasets] （在中）生成数据集的说明，请参阅生成数据集教程 [!DNL Query Editor]。
+查询完成后，结果将显示在“结果”选 **[!UICONTROL 项卡]** (“控制台”选 **[!UICONTROL 项卡旁]** )。 此视图显示查询的表格输出，最多显示100行。 此视图允许您验证查询是否生成预期输出。 要使用查询生成数据集，请删除对返回行的限制，然后使用运行查询 `CREATE TABLE tablename AS SELECT` 生成带有输出的数据集。 有关如何 [根据查询结果][query-service-create-datasets] （在中）生成数据集的说明，请参阅生成数据集教程 [!DNL Query Editor]。
 
 ![图像](../images/queries/query-editor-overview/query-results.png)
 
