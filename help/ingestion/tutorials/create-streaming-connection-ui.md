@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;streaming connection;create streaming connection;ui guide;tutorial;create a streaming connection;streaming ingestion;ingestion;
 solution: Experience Platform
 title: 使用UI创建流连接
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
+source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
 workflow-type: tm+mt
 source-wordcount: '498'
 ht-degree: 0%
@@ -77,4 +77,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过本教程，您已创建了流式HTTP连接，使您可以使用流式端点访问各种 [!DNL Data Ingestion] API。 有关在API中创建流连接的说明，请阅读创建 [流连接教程](../tutorials/create-streaming-connection.md)。
+通过本教程，您已创建了流式HTTP连接，使您能够使用流式端点访问各种 [!DNL Data Ingestion] API。 有关在API中创建流连接的说明，请阅读创建 [流连接教程](../tutorials/create-streaming-connection.md)。
