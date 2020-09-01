@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 分段服务用户指南
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1365'
+source-wordcount: '1359'
 ht-degree: 0%
 
 ---
@@ -155,13 +155,13 @@ ht-degree: 0%
 >
 >为了使流分段正常工作，您需要为组织启用计划分段。 有关启用计划分段的详细信息，请参 [阅本用户指南中的流分段部分](#scheduled-segmentation)。
 
-## 违反DULE策略
+## 违反策略
 
 >[!NOTE]
 >
->仅当创建已分配到目标的区段时，DULE策略违规才适用。
+>策略违规仅在创建已分配到目标的区段时适用。
 
-创建完区段后，将对区段进行分析，以 [!DNL Data Governance] 确保区段内没有违反策略的情况。 有关DULE和策略违规的详细信息，请参阅数 [据使用标签概述](../../data-governance/labels/overview.md)。
+创建完细分后，Adobe Experience Platform数据管理将对细分进行分析，以确保细分不违反政策。 有关更多 [[!DNL Data Governance] 信息](../../data-governance/home.md) ，请参阅概述。
 
 ![](../images/ui/overview/segment-dule-policy-violations.png)
 
