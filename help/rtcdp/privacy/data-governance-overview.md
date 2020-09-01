@@ -5,9 +5,9 @@ seo-title: 实时客户数据平台中的数据治理
 description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 seo-description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 translation-type: tm+mt
-source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '1022'
+source-wordcount: '1021'
 ht-degree: 0%
 
 ---
@@ -58,7 +58,7 @@ Adobe Experience Platform为常见 **客户体验使** 用案例提供了若干�
 
 ![](assets/enforcement-flow.png)
 
-在首次激活区段时，DULE [!DNL Policy Service] 会根据以下因素检查策略违规：
+首次激活区段时，会 [!DNL Policy Service] 根据以下因素检查是否存在违反策略的情况：
 
 * 应用于要激活的区段中的字段和数据集的数据使用标签。
 * 目标的营销目的。
