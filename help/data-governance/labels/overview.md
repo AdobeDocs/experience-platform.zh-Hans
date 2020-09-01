@@ -3,11 +3,11 @@ keywords: Experience Platform;home;popular topics;data governance;data usage lab
 solution: Experience Platform
 title: 数据使用标签概述
 topic: labels
-description: 数据使用标签和执行(DULE)是Adobe Experience Platform数据治理的核心机制。 DULE功能允许您将数据使用标签应用到数据集和字段，并根据相关的数据使用策略对每个标签进行分类。 此文档概述Experience Platform中的数据使用标签（也称为DULE标签）。
+description: Adobe Experience Platform数据管理使您能够将数据使用标签应用于数据集和字段，并根据相关的数据使用策略对每个标签进行分类。 此文档概述了Experience Platform中的数据使用标签。
 translation-type: tm+mt
-source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
+source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '614'
 ht-degree: 0%
 
 ---
