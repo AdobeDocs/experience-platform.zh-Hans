@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Privacy Service用户指南
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: c8446f6040ac9ef1f4196d9057b531011e243258
+source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 0%
@@ -70,7 +70,7 @@ UI仪表板提 [!DNL Privacy Service] 供了两个构件，允许您视图隐私
 
 ![作业请求搜索选项](../images/user-guide/job-search.png)
 
-要视图特定作业请求的详细信息，请从列表中单击该请求的作业ID以打开“作业详 *[!UICONTROL 细信息]* ”页。
+要视图特定作业请求的详细信息，请从列表中单击该请求的作业ID以打开“作业详 **[!UICONTROL 细信息]** ”页。
 
 ![GDPR UI作业详细信息](../images/user-guide/job-details.png)
 
@@ -101,7 +101,7 @@ UI [!DNL Privacy Service] 提供了两种创建新作业请求的方法：
 
 ![单击“创建请求”](../images/user-guide/create-request.png)
 
-此时 *[!UICONTROL 会打开]* “创建请求”对话框，显示提交当前选定法规类型的隐私作业请求的可用选项。
+此时 **[!UICONTROL 会打开]** “创建请求”对话框，显示提交当前选定法规类型的隐私作业请求的可用选项。
 
 <img src="../images/user-guide/request-builder.png" width="500" /><br/>
 
@@ -109,7 +109,7 @@ UI [!DNL Privacy Service] 提供了两种创建新作业请求的方法：
 
 <img src="../images/user-guide/type-and-products.png" width="500" /><br/>
 
-在 *[!UICONTROL 命名空间类]*&#x200B;型下，为要发送到的客户ID选择适当的命名空间类型 [!DNL Privacy Service]。
+在 **[!UICONTROL 命名空间类]**&#x200B;型下，为要发送到的客户ID选择适当的命名空间类型 [!DNL Privacy Service]。
 
 <img src="../images/user-guide/namespace-type.png" width="500" /><br/>
 
@@ -135,7 +135,7 @@ When finished, click **[!UICONTROL Create]**.
 
 ![请求创建选项](../images/user-guide/create-options.png)
 
-此 *[!UICONTROL 时将显示]* “上传JSON”对话框，其中提供了一个窗口，供您将JSON文件拖放到其中。
+此 **[!UICONTROL 时将显示]** “上传JSON”对话框，其中提供了一个窗口，供您将JSON文件拖放到其中。
 
 <img src="../images/user-guide/upload-json.png" width="500" /><br/>
 
