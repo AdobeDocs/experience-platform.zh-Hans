@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics; flow service; protocol; generic odata
+keywords: Experience Platform;home;popular topics;Collect protocol data;protocol data
 solution: Experience Platform
 title: 通过源连接器和API收集协议数据
 topic: overview
-description: 本教程介绍从第三方协议提供商检索数据并通过源连接器和流服务API将其引入平台的步骤。
+description: 本教程介绍从协议应用程序检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 6578fd607d6f897a403d0af65c81dafe3dc12578
+source-git-commit: 6f4714561c2946a084eed4e89d3148df5b8044f5
 workflow-type: tm+mt
-source-wordcount: '1591'
+source-wordcount: '1587'
 ht-degree: 1%
 
 ---
