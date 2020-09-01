@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;query service;Query service;writing queries;writing query;
 solution: Experience Platform
 title: 编写查询
 topic: queries
 translation-type: tm+mt
-source-git-commit: 3b710e7a20975880376f7e434ea4d79c01fa0ce5
+source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
 workflow-type: tm+mt
 source-wordcount: '643'
 ht-degree: 1%
@@ -14,13 +14,13 @@ ht-degree: 1%
 
 # 查询执行的一般指南 [!DNL Query Service]
 
-此文档详细介绍了在以Adobe Experience Platform编写查询时应了解的重要细节 [!DNL Query Service]。
+本文档详细介绍了在Adobe Experience Platform撰写查询时需要了解的重要细 [!DNL Query Service]节。
 
 有关中使用的SQL语法的详细 [!DNL Query Service]信息，请阅 [读SQL语法文档](../sql/syntax.md)。
 
 ## 查询执行模型
 
-Adobe Experience Platform [!DNL Query Service] 有两种查询执行模式： 交互和非交互。 交互式执行用于商业智能工具中的查询开发和报告生成，而非交互式用于作为数据处理工作流的一部分的较大作业和操作查询。
+Adobe Experience Platform [!DNL Query Service] 有两种查询处决模式：交互和非交互。 交互式执行用于商业智能工具中的查询开发和报告生成，而非交互式用于作为数据处理工作流的一部分的较大作业和操作查询。
 
 ### 交互式查询执行
 
