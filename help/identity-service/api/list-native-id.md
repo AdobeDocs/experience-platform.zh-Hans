@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;identity xid;XID
 solution: Experience Platform
 title: 获取标识的本机ID
 topic: API guide
+description: 标识命名空间通常作为ID字符串值和在所摄取的XDM数据中的标识提供，并且当提供用于API调用的标识时。 当身份在Identity Service中保留时，将生成一个ID并将其分配给该身份，称为本机XID。 需要身份数据支持的平台API使用这个更紧凑的表单来表示聚合的ID和命名空间。 XID是一个base64编码的字符串。
 translation-type: tm+mt
-source-git-commit: bd9884a24c5301121f30090946ab24d9c394db1b
+source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
 workflow-type: tm+mt
-source-wordcount: '151'
-ht-degree: 1%
+source-wordcount: '222'
+ht-degree: 0%
 
 ---
 
