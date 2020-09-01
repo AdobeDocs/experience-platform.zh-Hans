@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;MariaDB;mariadb
 solution: Experience Platform
 title: 使用Flow Service API创建MariaDB连接器
 topic: overview
+description: 本教程使用Flow Service API指导您完成将Experience Platform连接到MariaDB的步骤。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 5959d4344ec1c16542de045899ce74beb39a7bc4
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '556'
 ht-degree: 2%
 
 ---
