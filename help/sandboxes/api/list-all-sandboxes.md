@@ -1,13 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;list sandboxes
 solution: Experience Platform
 title: 列表所有沙箱
 topic: developer guide
+description: 要列表属于您的IMS组织（活动或其他）的所有沙箱，请向/sandboxes端点发出GET请求。
 translation-type: tm+mt
-source-git-commit: b4741cdfd065bbaed7f2feeafe8619191e4b8f6c
+source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
 workflow-type: tm+mt
-source-wordcount: '185'
-ht-degree: 2%
+source-wordcount: '205'
+ht-degree: 1%
 
 ---
 
@@ -100,7 +101,7 @@ curl -X GET \
 | --- | --- |
 | `name` | 沙箱的名称。 用于API调用中的查找目的。 |
 | `title` | 沙箱的显示名称。 |
-| `state` | 沙箱的当前处理状态。 沙箱的状态可以是以下任一状态： <br/><ul><li>**创建**: 沙箱已创建，但系统仍在提供。</li><li>**活动**: 沙箱已创建并处于活动状态。</li><li>**失败**: 由于出错，沙箱无法由系统提供并被禁用。</li><li>**已删除**: 已手动禁用沙箱。</li></ul> |
+| `state` | 沙箱的当前处理状态。 沙箱的状态可以是以下任一状态： <br/><ul><li>**创建**:沙箱已创建，但系统仍在提供。</li><li>**活动**:沙箱已创建并处于活动状态。</li><li>**失败**:由于出错，沙箱无法由系统提供并被禁用。</li><li>**已删除**:已手动禁用沙箱。</li></ul> |
 | `type` | 沙箱类型，“开发”或“生产”。 |
-| `isDefault` | 一个布尔属性，用于指示此沙箱是否是组织的默认沙箱。 通常这是生产沙箱。 |
+| `isDefault` | 一个布尔属性，用于指示此沙箱是否是组织的默认沙箱。 通常，这是生产沙箱。 |
 | `eTag` | 沙箱的特定版本的标识符。 用于版本控制和缓存效率，每次对沙箱进行更改时都会更新此值。 |
