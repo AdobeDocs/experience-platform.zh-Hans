@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 订阅隐私事件
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
 workflow-type: tm+mt
 source-wordcount: '843'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 订阅 [!DNL Privacy Events]
 
-[!DNL Privacy Events] 是由Adobe Experience Platform提供的消 [!DNL Privacy Service]息，该消息利用发送到已配置webhook的AdobeI/O事件，以便于高效的作业请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。
+[!DNL Privacy Events] 是Adobe Experience Platform提供的消 [!DNL Privacy Service]息，它利用发送到配置的webhook的AdobeI/O事件，以促进高效的作业请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。
 
 当前有四种类型的通知与隐私作业请求生命周期相关：
 
@@ -25,11 +25,11 @@ ht-degree: 1%
 | 产品完成 | 与此作业相关的解决方案之一已完成其工作。 |
 | 产品错误 | 其中一个解决方案在处理请求时报告了错误。 |
 
-此文档提供在AdobeI/O中设置通 [!DNL Privacy Service] 知集成的步骤。 有关其功能的高 [!DNL Privacy Service] 级概述，请参阅 [Privacy Service概述](home.md)。
+此文档提供在AdobeI/O中设置通 [!DNL Privacy Service] 知集成的步骤。有关其功能的高 [!DNL Privacy Service] 级概述，请参阅 [Privacy Service概述](home.md)。
 
 ## 入门指南
 
-本教程使 **用** ngrok，它是一种软件产品，通过安全隧道向公共Internet公开本地服务器。 请 [在开始](https://ngrok.com/download) 本教程之前安装网络，以便继续学习并创建到本地计算机的网络挂钩。 本指南还要求您下载包含简单Node.js服务 [器的GIT存储库](https://nodejs.org/) 。
+本教程使 **用** ngrok，它是一种通过安全隧道向公共Internet公开本地服务器的软件产品。 请 [在开始](https://ngrok.com/download) 本教程之前安装网络，以便继续学习并创建到本地计算机的网络挂钩。 本指南还要求您下载包含简单Node.js服务 [器的GIT存储库](https://nodejs.org/) 。
 
 ## 创建本地服务器
 
@@ -70,11 +70,11 @@ app.listen(app.get('port'), function() {
 
 ![ngrok输出](images/privacy-events/ngrok-output.png)
 
-请记住URL `Forwarding` ()`https://212d6cd2.ngrok.io`，因为这将用于识别您的网络挂钩的下一步。
+请注意URL( `Forwarding` ),`https://212d6cd2.ngrok.io`因为这将用于识别您的网络挂钩，进而执行下一步。
 
 ## 在Adobe开发人员控制台中创建新项目
 
-转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台，使用Adobe ID登录。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
+转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台并登录您的Adobe ID。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
 
 ## 将隐私事件添加到项目
 
@@ -86,7 +86,7 @@ app.listen(app.get('port'), function() {
 
 ![](./images/privacy-events/add-privacy-events.png)
 
-将显 _示配置事件_ 注册对话框。 通过选择相应的复选框，选择您要接收的事件。 您选择的事件显示在 _[!UICONTROL 左列的]_“订阅事件”下。 完成后，单击“下**[!UICONTROL &#x200B;一步&#x200B;]**”。
+将显 _示配置事件_ 注册对话框。 通过选择相应的复选框，选择您要接收的事件。 您选择的事件显示在 **[!UICONTROL 左列的]** “订阅事件”下。 When finished, click **[!UICONTROL Next]**.
 
 ![](./images/privacy-events/choose-subscriptions.png)
 
@@ -106,11 +106,11 @@ app.listen(app.get('port'), function() {
 
 ![](./images/privacy-events/event-details.png)
 
-在同一屏幕的更下方，您将获得两个用于配置如何接收事件的选项。 选 **[!UICONTROL 择]** Webhook `Forwarding` ，并提供您之前在 _[!UICONTROL Webhook URL下创建的新Webhook]_的URL。 接下来，在单击“保存配置的投放”以完成事件注册之**[!UICONTROL &#x200B;前，选择您首选的事件&#x200B;]**（单个或批处理）样式。
+在同一屏幕的更下方，您将获得两个用于配置如何接收事件的选项。 选 **[!UICONTROL 择]** Webhook `Forwarding` ，并提供您之前在 **[!UICONTROL Webhook URL下创建的新Webhook]**&#x200B;的URL。 接下来，在单击“保存配置的投放”以完成事件注册之 **[!UICONTROL 前，选择您首选的事件]** （单个或批处理）样式。
 
 ![](./images/privacy-events/webhook-details.png)
 
-项目的详细信息页面将重新显示， [!DNL Privacy Events] 在左 _[!UICONTROL 侧导航]_的事件下显示。
+项目的详细信息页面将重新显示， [!DNL Privacy Events] 在左 **[!UICONTROL 侧导航]** 的事件下显示。
 
 ## 视图事件数据
 
@@ -126,7 +126,7 @@ app.listen(app.get('port'), function() {
 
 ![](images/privacy-events/debug-tracing.png)
 
-“有 _[!UICONTROL 效负荷]_”部分提供有关选定事件的详细信息，包括其事件类型(`com.adobe.platform.gdpr.productcomplete`)，如上例中所强调。
+“有 **[!UICONTROL 效负荷]** ”部分提供有关选定事件的详细信息，包括其事件类型(`com.adobe.platform.gdpr.productcomplete`)，如上例中所强调。
 
 ## 后续步骤
 
