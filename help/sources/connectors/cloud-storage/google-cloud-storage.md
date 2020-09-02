@@ -5,9 +5,9 @@ title: Google Cloud存储连接器
 topic: overview
 description: 以下文档提供了如何使用API或用户界面将Google Cloud存储连接到平台的信息。
 translation-type: tm+mt
-source-git-commit: fb60e11b9502c31e654d3fbe5dc240ace9429332
+source-git-commit: d42351c194bb5a11f3175535de83fbd3b6ac58d2
 workflow-type: tm+mt
-source-wordcount: '390'
+source-wordcount: '554'
 ht-degree: 0%
 
 ---
@@ -68,6 +68,17 @@ Adobe Experience Platform为AWS等云提供商提 [!DNL Google Cloud Platform]�
 ![](../../images/tutorials/create/google-cloud-storage/interoperability.png)
 
 您可以使用新生成的访问密钥ID和秘密访问密钥将您的帐户 [!DNL Google Cloud Storage] 连接到 [!DNL Platform]。
+
+## 文件和目录的命名限制
+
+以下是命名云存储文件或目录时必须考虑的约束列表。
+
+- 目录和文件组件名称不能超过255个字符。
+- 目录和文件名不能以正斜杠(`/`)结尾。 如果提供，则会自动删除它。
+- 以下保留的URL字符必须正确转义： `! * ' ( ) ; : @ & = + $ , / ? % # [ ]`
+- 不允许使用以下字符： `" \ / : | < > * ?`.
+- 不允许使用非法的URL路径字符。 像这样的代 `\uE000`码点在NTFS文件名中有效，但不是有效的Unicode字符。 此外，某些ASCII或Unicode字符，如控制字符（0x00到0x1F、\u0081等）也不允许使用。 有关HTTP/1.1中管理Unicode字符串的规则，请 [参阅RFC 2616，第2.2节：基本规则](https://www.ietf.org/rfc/rfc2616.txt) 和 [RFC 3987](https://www.ietf.org/rfc/rfc3987.txt)。
+- 不允许使用以下文件名：LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8、LPT9、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM8、COM9prn, AUX, NUL, CON, CLOCK$，点字符(.)和两个点字符(..)。
 
 ## 连接 [!DNL Google Cloud Storage] 到 [!DNL Platform]
 
