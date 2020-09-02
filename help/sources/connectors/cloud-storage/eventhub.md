@@ -5,9 +5,9 @@ title: Azure事件集线器连接器
 topic: overview
 description: 以下文档提供了如何使用API或用户界面将Azure事件集线器连接到平台的信息。
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: 7b92327cfeb2410baf313dd650f68cfeb6db36e6
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
@@ -55,15 +55,17 @@ Adobe Experience Platform为AWS、和等云提供商提供本 [!DNL Google Cloud
 - `40.79.163.80/28`
 - `40.79.171.160/28`
 
+## 连接 [!DNL Azure Event Hubs] 到 [!DNL Platform]
+
 以下文档提供了如何使用API [!DNL Azure Event Hubs] 或 [!DNL Platform] 用户界面连接的信息：
 
-## 连接 [!DNL Azure Event Hubs] 到 [!DNL Platform] 使用API
+### 使用API
 
 - [使用流服务API创建Azure事件集线器连接器](../../tutorials/api/create/cloud-storage/eventhub.md)
 - [使用Flow Service API浏览云存储系统](../../tutorials/api/explore/cloud-storage.md)
 - [使用流服务API收集云存储数据](../../tutorials/api/collect/cloud-storage.md)
 
-## 连接 [!DNL Azure Event Hubs] 到 [!DNL Platform] 使用UI
+### 使用UI
 
 - [在UI中创建Azure事件集线器源连接器](../../tutorials/ui/create/cloud-storage/eventhub.md)
 - [在UI中为云存储连接器配置数据流](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
