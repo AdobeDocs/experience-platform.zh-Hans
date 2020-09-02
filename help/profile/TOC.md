@@ -4,9 +4,9 @@ audience: user
 user-guide-title: 实时客户用户档案帮助
 user-guide-description: Real-time Customer Profile provides a holistic view of each individual customer by combining data from multiple channels, including online, offline, CRM, and third-party data. Profile allows you to consolidate your disparate customer data into a unified view offering an actionable, timestamped account of every customer interaction.
 translation-type: tm+mt
-source-git-commit: bd3c31e7d39f7f66d755356a3dbb754e97c196fb
+source-git-commit: 31166ddf8afbe13874be66b29c89501bd6ce1e51
 workflow-type: tm+mt
-source-wordcount: '84'
+source-wordcount: '86'
 ht-degree: 17%
 
 ---
@@ -27,6 +27,7 @@ ht-degree: 17%
    * [[!DNL Profile] 系统作业（删除请求）](api/profile-system-jobs.md)
 * UI指南 {#ui}
    * [[!DNL Profile] 用户指南](ui/user-guide.md)
+   * [[!DNL Profile] 详细自定义](ui/profile-customization.md)
    * [合并策略用户指南](ui/merge-policies.md)
 * 教程 {#tutorials}
    * [将数据添加到 [!DNL Profile]](tutorials/add-profile-data.md)
