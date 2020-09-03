@@ -498,7 +498,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/59c93f3d
 
 ## 执行阶段
 
-作为执行开始，连接器（如源组件中定义）将使用[! [!DNL Experience Platform] DNL [数据访问API]从中读取数据](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。 转换过程将读取特定时间范围内的数据。 在内部，它将查询成批的源数据集。 在查询时，它将使用参数化（滚动时间序列数据或增量数据）开始日期和列表数据集文件来查询这些批，并开始请求这些数据集文件的数据。
+作为执行开始，连接器（如源组件中定义）将使用[!DNL Experience Platform] [!DNL 数据访问API]从中读取数据](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。 转换过程将读取特定时间范围内的数据。 在内部，它将查询成批的源数据集。 在查询时，它将使用参数化（滚动时间序列数据或增量数据）开始日期和列表数据集文件来查询这些批，并开始请求这些数据集文件的数据。
 
 ### 示例转换
 
@@ -641,7 +641,7 @@ ETL工具将确保在读取数据时记录源数据集的时间戳。
 
 ### 获取上一批状态
 
-在ETL工具中运行新任务之前，必须确保成功完成上一批。 [! [DNL目录服务API]提供了特定于批的选项](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) ，该选项提供了相关批的详细信息。
+在ETL工具中运行新任务之前，必须确保成功完成上一批。 [[!DNL 目录服务API]提供了特定于批的选项](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) ，该选项提供了相关批的详细信息。
 
 **请求**
 
