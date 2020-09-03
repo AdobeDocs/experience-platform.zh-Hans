@@ -273,7 +273,7 @@ curl -X POST \
 
 ## 创建目标连接 {#target-connection}
 
-您现在具有数据集基础连接、目标模式和目标数据集的唯一标识符。 使用这些标识符，您可以使用[! [DNL流服务] API创建目标连接](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) ，以指定将包含入站源数据的数据集。
+您现在具有数据集基础连接、目标模式和目标数据集的唯一标识符。 使用这些标识符，您可以使用[[!DNL 流服务] API创建目标连接](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) ，以指定将包含入站源数据的数据集。
 
 **API格式**
 
