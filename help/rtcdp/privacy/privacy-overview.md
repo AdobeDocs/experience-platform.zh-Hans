@@ -5,10 +5,10 @@ seo-title: 实时客户数据用户档案中的隐私
 description: 实时客户用户档案使您能够简化数据操作遵守隐私法规的流程。
 seo-description: 实时客户用户档案使您能够简化数据操作遵守隐私法规的流程。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: f9b21ee51d6246dbdae4500aad050b200539ff88
 workflow-type: tm+mt
 source-wordcount: '312'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -25,7 +25,7 @@ Adobe Experience Platform [!DNL Privacy Service] 允许您简化数据操作流�
 
 提交个人GDPR和CCPA数据主体请求以访问和删除客户数据有两种方法：
 
-* 使用[ [!DNLPrivacy ServiceUI]](https://gdprui.cloud.adobe.io/) ，在可视工作区中创建和监视访问和删除请求。 有关 [分步说明](../../privacy-service/ui/overview.md) ，请参阅Privacy ServiceUI教程。
+* 使用[ [!DNLPrivacy ServiceUI]](https://privacyui.cloud.adobe.io/) ，在可视工作区中创建和监视访问和删除请求。 有关分 [步说明](../../privacy-service/ui/overview.md) ，请参阅Privacy Service用户指南。
 * 使用 [[!DNLPrivacy ServiceAPI]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml) ，通过RESTful API调用管理访问和删除请求。 有关分 [步说明](../../privacy-service/api/getting-started.md) ，请参阅Privacy ServiceAPI教程。
 
 <!-- (Capability will not be available for November GA) 
