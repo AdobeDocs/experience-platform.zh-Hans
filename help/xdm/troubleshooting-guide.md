@@ -77,7 +77,7 @@ ht-degree: 0%
 
 ### 如何启用模式以在中使用 [!DNL Real-time Customer Profile]?
 
-通过添加“模式”标 [签(位于合并的属性中)](../profile/home.md) ,模式可以在[!DNL实时客户 `meta:immutableTags` 用户档案中使用。 可以使用API或 [!DNL Profile] 用户界面启用模式以与一起使用。
+通过添加“模式”标 [签(位于合并的属性中)](../profile/home.md) ,模式可以在实时客户 `meta:immutableTags` 用户档案中使用。 可以使用API或 [!DNL Profile] 用户界面启用模式以与一起使用。
 
 #### 启用现有模式 [!DNL Profile] 以使用API
 
