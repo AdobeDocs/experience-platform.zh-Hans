@@ -17,7 +17,7 @@ ht-degree: 1%
 
 [!DNL Access control] 通 [!DNL Experience Platform] 过Adobe Admin Console [管](https://adminconsole.adobe.com)。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。 有关更多 [信息](../home.md) ，请参阅访问控制概述。
 
-此开发人员指南提供如何格式化您对[[!DNL Access Control API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)，并涵盖以下操作：
+此开发人员指南提供如何格式化您对[[!DNL 访问控制API]的请求](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)，并涵盖以下操作：
 
 - [列表权限和资源类型的名称](./permissions-and-resource-types.md)
 - [视图当前用户的有效策略](./effective-policies.md)
