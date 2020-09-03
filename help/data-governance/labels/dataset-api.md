@@ -15,7 +15,7 @@ ht-degree: 2%
 
 # 使用API管理数据集的数据使用标签
 
-[! [DNL数据集服务API]允许您](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dataset-service.yaml) ，应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元 [!DNL Catalog Service] 数据的API相分离。
+[[!DNL 数据集服务API]允许您](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dataset-service.yaml) ，应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元 [!DNL Catalog Service] 数据的API相分离。
 
 本文档介绍如何使用管理数据集和字段的标签 [!DNL Dataset Service API]。 有关如何使用API调用管理数据使用标签本身的步骤，请参 [阅的标签端点指南](../api/labels.md) ( [!DNL Policy Service API])。
 
