@@ -37,7 +37,7 @@ ht-degree: 0%
 
 #### 区段导出目标
 
-区段导出目标会将用户档案及其符合条件的区段发送到目标平台。 这些目标使用区段ID或用户ID。 [!DNL Google Display [&amp; Video 360]或[!DNL Google Ads](/help/rtcdp/destinations/google-dv360-destination.md) ]等 [广告目标是这些类型目标的示例](/help/rtcdp/destinations/google-ads-destination.md) 。
+区段导出目标会将用户档案及其符合条件的区段发送到目标平台。 这些目标使用区段ID或用户ID。[[!DNL Google Display & Video 360]](/help/rtcdp/destinations/google-dv360-destination.md) 或 [[!DNL Google Ads]](/help/rtcdp/destinations/google-ads-destination.md) 广告目标是这些类型目标的示例。
 
 #### 用户档案导出和细分导出目标——视频概述
 
