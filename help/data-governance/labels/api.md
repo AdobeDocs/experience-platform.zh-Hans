@@ -17,7 +17,7 @@ ht-degree: 3%
 
 此文档提供了如何使用API和API管理数据使用 [!DNL Policy Service] 标签的 [!DNL Dataset Service] 步骤。
 
-[! [DNL策略服务API]提供了多个端点](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) ，允许您创建和管理组织的数据使用标签。
+[[!DNL策略服务API]提供了多个端点](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) ，允许您创建和管理组织的数据使用标签。
 
 API [!DNL Dataset Service] 允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元 [!DNL Catalog Service] 数据的API相分离。
 
