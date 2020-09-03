@@ -61,7 +61,7 @@ ht-degree: 0%
 
 ## 监控批量端对端数据获取
 
-在[! [DNLExperience PlatformUI]中](https://platform.adobe.com)，单 **[!UICONTROL 击左侧导]** 航菜单上的“监视”。
+在[[!DNL Experience Platform UI]中](https://platform.adobe.com)，单 **[!UICONTROL 击左侧导]** 航菜单上的“监视”。
 
 ![](../images/quality/monitor-data-flows/click-monitoring.png)
 
