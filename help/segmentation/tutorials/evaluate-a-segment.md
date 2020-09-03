@@ -235,4 +235,4 @@ curl -X POST \
 
 您还可以使用访问成功导出的区段数 [!DNL Adobe Experience Platform Query Service]据。 使用UI或RESTful API, [!DNL Query Service] 可以对中的数据编写、验证和运行查询 [!DNL Data Lake]。
 
-有关如何查询受众数据的更多信息，请查阅有关[! [DNL查询服务]的文档](../../query-service/home.md)。
+有关如何查询受众数据的更多信息，请查阅有关[[!DNL 查询服务]的文档](../../query-service/home.md)。
