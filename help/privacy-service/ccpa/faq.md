@@ -1,12 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics
+keywords: Experience Platform;home;popular topics;consent;Consent
 solution: Experience Platform
 title: CCPA常见问题解答
 topic: troubleshooting
+description: 本文档回答了有关加利福尼亚州消费者保护法(CCPA)及其在Adobe Experience Cloud实施的常见问题。
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
 workflow-type: tm+mt
-source-wordcount: '787'
+source-wordcount: '809'
 ht-degree: 0%
 
 ---
@@ -75,7 +76,7 @@ Adobe服务可用于支持特定数据共享和传输至第三方。 这些第�
 
 ## 如果我维护的是某些类型的数据符合要求，如何支持CCPA下的消费者隐私要求？
 
-在您采取必要步骤验证CA用户身份后，Adobe Experience Platform允 [!DNL Privacy Service] 许您向兼容应用程序提交消费者隐私 [!DNL Experience Cloud] 请求。 有关更多 [信息](../home.md) ，请参阅Privacy Service概述。 有关您的特定应用程序如 [!DNL Experience Cloud] 何满足隐私请求的信息，请参阅有关Privacy Service和Experience Cloud应 [用程序的指南](../experience-cloud-apps.md)。
+在您采取必要步骤验证CA用户身份后，Adobe Experience Platform [!DNL Privacy Service] 允许您向兼容应用程序提交消费者隐私 [!DNL Experience Cloud] 请求。 有关更多 [信息](../home.md) ，请参阅Privacy Service概述。 有关您的特定应用程序如 [!DNL Experience Cloud] 何满足隐私请求的信息，请参阅有关Privacy Service和Experience Cloud应 [用程序的指南](../experience-cloud-apps.md)。
 
 >[!NOTE]
 >
