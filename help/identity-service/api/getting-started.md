@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;identity service api;identity service developer guide
+keywords: Experience Platform;home;popular topics;identity service api;identity service developer guide;region
 solution: Experience Platform
 title: 入门指南
 topic: API guide
-description: null
+description: 'Adobe Experience Platform身份服务通过Adobe Experience Platform境内的“身份图”管理跨设备、跨渠道和近乎实时的客户身份识别。 '
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 2a528c705a7aa610f57047be39be1ce9886ce44c
 workflow-type: tm+mt
-source-wordcount: '726'
+source-wordcount: '754'
 ht-degree: 1%
 
 ---
