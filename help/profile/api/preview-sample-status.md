@@ -5,9 +5,9 @@ title: 用户档案预览-实时客户用户档案API
 description: Adobe Experience Platform使您能够从多个来源收集客户数据，从而为各个客户构建强大的统一用户档案。 由于实时客户用户档案启用的数据被引入平台，因此它存储在用户档案数据存储中。 随着用户档案存储中记录数的增加或减少，将运行一个示例作业，该示例作业包括关于用户档案片段和合并用户档案在数据存储中的数量的信息。 使用用户档案API，您可以预览最新成功的示例，以及按数据集和身份命名空间列表用户档案分发。
 topic: guide
 translation-type: tm+mt
-source-git-commit: 75a07abd27f74bcaa2c7348fcf43820245b02334
+source-git-commit: 2edba7cba4892f5c8dd41b15219bf45597bd5219
 workflow-type: tm+mt
-source-wordcount: '1442'
+source-wordcount: '1478'
 ht-degree: 1%
 
 ---
@@ -59,6 +59,10 @@ curl -X GET \
 ```json
 {
   "numRowsToRead": "41003",
+  "sampleJobRunning": {
+    "status": true,
+    "submissionTimestamp": "2020-08-01 17:57:57.0"
+  },
   "cosmosDocCount": "\"300803\"",
   "totalFragmentCount": 47429,
   "lastSuccessfulBatchTimestamp": "\"null\"",
@@ -75,6 +79,7 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `numRowsToRead` | 示例中合并用户档案的总数。 |
+| `sampleJobRunning` | 一个布尔值，当 `true` 示例作业正在进行时返回。 为从上传批处理文件到将其实际添加到用户档案存储时发生的延迟提供透明度。 |
 | `cosmosDocCount` | Cosmos中的文档总数。 |
 | `totalFragmentCount` | 用户档案存储中的用户档案片段总数。 |
 | `lastSuccessfulBatchTimestamp` | 上次成功的批量摄取时间戳。 |
@@ -169,7 +174,7 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `sampleCount` | 使用此数据集ID的采样合并用户档案的总数。 |
-| `samplePercentage` | 以 `sampleCount` 十进制格式表示的采样合并用户档案总数( `numRowsToRead` 上一个采样状态 [中返回的值](#view-last-sample-status))的百分比表示。 |
+| `samplePercentage` | 以 `sampleCount` 十进制格式表示的采样合并用户档案总数( `numRowsToRead` 上一采样状态 [中返回的值](#view-last-sample-status))的百分比表示。 |
 | `fullIDsCount` | 此数据集ID的合并用户档案总数。 |
 | `fullIDsPercentage` | 合 `fullIDsCount` 并用户档案总数(在上一个示例状态中返回 `totalRows` 的值)的百 [分比，以十进制格式表示](#view-last-sample-status)。 |
 | `name` | 数据集的名称，在数据集创建过程中提供。 |
@@ -183,7 +188,7 @@ curl -X GET \
 
 ## 列表用户档案按命名空间分布
 
-您可以对终结点执行GET请 `/previewsamplestatus/report/namespace` 求，以在用户档案商店中的所有合并用户档案中按标识命名空间视图细分。 身份命名空间是Adobe Experience Platform身份服务的重要组成部分，用作客户数据相关背景的指标。 要了解更多信息，请访 [问身份命名空间概述](../../identity-service/namespaces.md)。
+您可以对终结点执行GET请 `/previewsamplestatus/report/namespace` 求，以在用户档案商店中的所有合并用户档案中按标识命名空间视图细分。 身份命名空间是Adobe Experience Platform身份服务的重要组成部分，可作为与客户数据相关的上下文的指标。 要了解更多信息，请访 [问身份命名空间概述](../../identity-service/namespaces.md)。
 
 >[!NOTE]
 >
@@ -206,7 +211,7 @@ GET /previewsamplestatus/report/namespace?{QUERY_PARAMETERS}
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/dataset \
+  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/namespace \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
