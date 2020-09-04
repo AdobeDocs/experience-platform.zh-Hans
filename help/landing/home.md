@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;CJA;journey analytics;customer journey analytics;campaign orchestration;orchestration;customer journey;journey
+keywords: Experience Platform;home;popular topics;CJA;journey analytics;customer journey analytics;campaign orchestration;orchestration;customer journey;journey;journey orchestration
 solution: Experience Platform
 title: Adobe Experience Platform概述
 topic: getting started
 description: Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理能够提升客户体验的完整解决方案。 Experience Platform使组织能够集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富的个性化体验的设计和投放。
 translation-type: tm+mt
-source-git-commit: 4c3a947051c11860ab4f0f53b48d8f4bda8dc195
+source-git-commit: 96be9401b3d3bf28176cbce5d139c42f63707c81
 workflow-type: tm+mt
-source-wordcount: '872'
-ht-degree: 3%
+source-wordcount: '936'
+ht-degree: 4%
 
 ---
 
@@ -35,7 +35,7 @@ Adobe Experience Platform是市场上功能最强大、最灵活、最开放的�
 
 ## 浏览器支持
 
-Adobe Experience Platform在最新版Google Chrome、Safari、 **Firefox** 和Microsoft Edge中可以发挥最佳作用。 在旧版本的浏览器上使用某些功能时可能遇到问题。
+Adobe Experience Platform在最新版Google Chrome、 **Safari** 、Firefox和Microsoft Edge中可以发挥最佳作用。 在旧版本的浏览器上使用某些功能时可能遇到问题。
 
 | Operating system | 支持的浏览器 |
 |---|---|
@@ -82,6 +82,13 @@ Adobe Experience Platform文件提供多种语言。 要更改语言，请单击
 
 [!DNL Experience Platform] 文档以多种格式提供，以支持各种功能和服务。 要进一步了解可用的文档类型，以及阅读各项服务的简要说明，请 [!DNL Platform] 访问Experience Platform文 [档概述](documentation/overview.md)。 或者，要立即开始进一步了解特 [!DNL Platform] 定服务，请从左侧导航的字母列表中选择指南。
 
+### 基于 [!DNL Experience Platform]
+
+除了左侧导航中的服务之外，Adobe还在Experience Platform之上构建了其他应用程序服务。 您可以在其自己的文档存储库中找到这些服务的文档，链接如下：
+
+* [[!DNLCustomer Journey Analytics]](https://docs.adobe.com/content/help/en/analytics-platform/using/cja-landing.html)
+* [[!DNLJourney Orchestration]](https://docs.adobe.com/content/help/zh-Hans/journeys/using/journey-orchestration-home.html)
+
 >[!NOTE]
 >
 >从2020年5月开始，Adobe将推出对域和标题栏的更新，以统一和改进您在所有Experience Cloud应用程序中的体验。 这包括一个新的“帮助”菜单。 新的“帮助”菜单包含以下内容：
@@ -99,7 +106,7 @@ Adobe Experience Platform文件提供多种语言。 要更改语言，请单击
 
 ## [!DNL Experience Platform] 教程
 
-快速轻松地 [!DNL Platform] 开始使用，方法是遵循从准备数据以获取到高级机器学习算法的所有内容的分步教程。 这些教程旨在补充文档中的信 [!DNL Experience Platform] 息，以便在完成教程时保持文档在手。 请访问 [Experience Platform教程](../tutorials/home.md) ，开始使用。
+快速轻松地 [!DNL Platform] 开始使用，方法是遵循从准备数据以获取到高级机器学习算法等所有内容的分步教程。 这些教程旨在补充文档中的信 [!DNL Experience Platform] 息，以便在完成教程时保持文档在手。 请访问 [Experience Platform教程](../tutorials/home.md) ，开始使用。
 
 ## 视频教程
 
@@ -131,7 +138,7 @@ Adobe Experience Platform提供的一个主要好处是它能够与其他现有A
 
 >[!VIDEO](https://video.tv.adobe.com/v/32553?quality=12&learn=on)
 
-有关Adobe Experience Platform的强大架构的更多信息，请观看以下视频：
+有关支持Adobe Experience Platform的架构的更多信息，请观看以下视频：
 
 >[!VIDEO](https://video.tv.adobe.com/v/32456?quality=12&learn=on)
 
@@ -146,11 +153,6 @@ Adobe Experience Platform提供的一个主要好处是它能够与其他现有A
 **用例:**
 
 >[!VIDEO](https://video.tv.adobe.com/v/32806?quality=12&learn=on)
-
-
-
-
-
 
 
 
