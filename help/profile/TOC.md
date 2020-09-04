@@ -4,10 +4,10 @@ audience: user
 user-guide-title: 实时客户用户档案帮助
 user-guide-description: Real-time Customer Profile provides a holistic view of each individual customer by combining data from multiple channels, including online, offline, CRM, and third-party data. Profile allows you to consolidate your disparate customer data into a unified view offering an actionable, timestamped account of every customer interaction.
 translation-type: tm+mt
-source-git-commit: 31166ddf8afbe13874be66b29c89501bd6ce1e51
+source-git-commit: 16f2bd7c650c5fbb09066940a730fa9dc768b261
 workflow-type: tm+mt
-source-wordcount: '86'
-ht-degree: 17%
+source-wordcount: '89'
+ht-degree: 16%
 
 ---
 
@@ -15,6 +15,7 @@ ht-degree: 17%
 # [!DNL Real-time Customer Profile] {#profile}
 
 * [[!DNL Profile] 概述](home.md)
+* [[!DNL Profile] 护栏](guardrails.md)
 * [!DNL Profile] API开发人员指南 {#api}
    * [概述](api/overview.md)
    * [入门指南](api/getting-started.md)
@@ -31,7 +32,7 @@ ht-degree: 17%
    * [合并策略用户指南](ui/merge-policies.md)
 * 教程 {#tutorials}
    * [将数据添加到 [!DNL Profile]](tutorials/add-profile-data.md)
-   * [为配置数据集 [!DNL Profile] &amp; [!DNL Identity]](tutorials/dataset-configuration.md)
+   * [为服务配置数 [!DNL Profile] & [!DNL Identity] 据集](tutorials/dataset-configuration.md)
    * [更多教程](https://docs.adobe.com/content/help/zh-Hans/experience-platform/tutorials/home.html)
 * [隐私请求处理](privacy.md)
 * [[!DNL Profile] 疑难解答指南](troubleshooting.md)
