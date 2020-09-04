@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;fields;Fields;standard fields;Standard fields;dictionary;Dictionary
+keywords: Experience Platform;home;popular topics;schema;Schema;fields;Fields;standard fields;Standard fields;dictionary;Dictionary;map;Map
 solution: Experience Platform
 title: 体验数据模型(XDM)字段字典
 topic: overviews
 description: 体验数据模型(XDM)定义一组标准字段，在组成Adobe Experience Platform模式时可使用这些字段。 使用这些字段可使平台服务之间的行为保持一致，因为使用XDM的所有服务都将明确了解这些字段提供的特定定义。
 translation-type: tm+mt
-source-git-commit: ed1f2fdac0f9c977d11c867327c084353c1bcd0f
+source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
 workflow-type: tm+mt
 source-wordcount: '25210'
 ht-degree: 3%
