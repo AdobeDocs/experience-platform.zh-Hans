@@ -5,9 +5,9 @@ title: 实时客户用户档案概述
 topic: guide
 description: 实时用户档案是一个通用查找实体存储，它合并来自各种企业数据资产的数据，然后以单个客户用户档案和相关时间序列事件的形式提供对该数据的访问。 此功能使营销人员能够跨多个渠道通过受众推动协调一致的相关体验。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 5dd07bf9afe96be3a4c3f4a4d4e3b23aef4fde70
 workflow-type: tm+mt
-source-wordcount: '1718'
+source-wordcount: '1649'
 ht-degree: 1%
 
 ---
@@ -17,21 +17,26 @@ ht-degree: 1%
 
 Adobe Experience Platform使您能够为客户提供协调、一致和相关的体验，无论客户在何处或何时与您的品牌互动。 您 [!DNL Real-time Customer Profile]可以看到每个客户的整体视图，该渠道组合了多个的数据，包括在线、离线、CRM和第三方数据。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供可操作、有时间戳的帐户。 此概述将帮助您了解中的角色和 [!DNL Real-time Customer Profile] 使用 [!DNL Experience Platform]。
 
-## 了解 [!DNL Real-time Customer Profile]
+
+## [!DNL Profile] experience platform
+
+实时客户用户档案与Experience Platform内其他服务之间的关系在下图中突出显示：
+
+![Adobe Experience Platform服务。](images/profile-overview/profile-in-platform.png)
+
+## 用户档案数据
 
 [!DNL Real-time Customer Profile] 是一个通用查找实体存储，它合并来自各种企业数据资产的数据，然后以单个客户用户档案和相关时间序列事件的形式提供对该数据的访问。 此功能使营销人员能够跨多个渠道通过受众推动协调一致的相关体验。
 
-### [!DNL Profile] 数据存储
+### 用户档案护栏
+
+Experience Platform提供了一系列护栏，帮助您避 [免创建实时客户用户档案无法支](../xdm/home.md) 持的体验模式模型(XDM)。 这包括会导致性能降低的软限制，以及会导致错误和系统故障的硬限制。 有关详细信息(包括一列表准则和示例用例)，请阅读 [用户档案护栏](guardrails.md) 文档。
+
+### 用户档案商店
 
 尽管 [!DNL Real-time Customer Profile] 处理摄取的数据并使用Adobe Experience Platform [!DNL Identity Service] 通过身份映射来合并相关数据，但它在存储中保留自己的 [!DNL Profile] 数据。 换句话说，存储 [!DNL Profile] 区与数据( [!DNL Catalog] )和[!DNL Data Lake]数据(标 [!DNL Identity Service] 识图)分开。
 
-### [!DNL Profile] 和服 [!DNL Platform] 务
-
-下图突出 [!DNL Real-time Customer Profile] 显示了中的 [!DNL Experience Platform] 与其他服务之间的关系：
-
-![用户档案与其他Experience Platform服务之间的关系。](images/profile-overview/profile-in-platform.png)
-
-### 用户档案和记录数据
+### 记录数据
 
 用户档案是主体、组织或个人的代表，也称为记录数据。 例如，产品的用户档案可能包括SKU和说明，而人员的用户档案则包含诸如名字、姓和电子邮件地址等信息。 使 [!DNL Experience Platform]用，您可以自定义用户档案以使用与业务相关的数据类型。 标准( [!DNL Experience Data Model] XDM) [!DNL Individual Profile] 类是在描述客户记录数据时构建模式的首选类，并提供平台服务之间许多交互的数据集成。 有关在中使用模式的更 [!DNL Experience Platform]多信息，请首先阅读XDM [系统概述](../xdm/home.md)。
 
@@ -59,7 +64,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供为个人客户提�
 
 >[!IMPORTANT]
 >
->此文档中概述的计算属性功能在alpha中。 文档和功能可能会发生变化。
+>计算的属性功能在alpha中。 文档和功能可能会发生变化。
 
 通过计算属性，您可以根据其他值、计算和表达式自动计算字段的值。 计算属性在用户档案级别上操作，这意味着您可以跨所有记录和事件聚合值。 每个计算属性都包含一个表达式，即“规则”，用于评估传入的数据并将所得值存储在用户档案属性或事件中。 这些计算有助于您轻松回答与终身购买价值、购买间隔时间或应用程序打开次数等相关的问题，无需在每次需要信息时手动执行复杂的计算。 有关计算属性以及使用API使用这些属性的分步说明的更多信 [!DNL Real-time Customer Profile] 息，请参阅计 [算属性端点指南](api/computed-attributes.md)。 本指南将帮助您更好地了解计算属性在Adobe Experience Platform的作用，它包含执行基本CRUD操作的示例API调用。
 
@@ -75,7 +80,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供为个人客户提�
 
 为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘，实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 要了解更多信息并开始使用API处理 [!DNL Real-time Customer Profile] 投影，请参阅 [边缘投影端点指南](api/edge-projections.md)。
 
-## 将数据添加到 [!DNL Real-time Customer Profile]
+## Ingest data into [!DNL Profile]
 
 [!DNL Platform] 可以配置为将记录和时间序列数据发送到 [!DNL Profile]，支持实时流摄取和批量摄取。 有关详细信息，请参阅概述如何 [向实时客户用户档案添加数据的教程](tutorials/add-profile-data.md)。
 
@@ -101,39 +106,6 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供为个人客户提�
 ### 处理退出和数据隐私请求
 
 [!DNL Experience Platform] 使客户能够发送与其数据在中的使用和存储相关的退出请求 [!DNL Real-time Customer Profile]。 有关如何处理退出请求的更多信息，请参阅支持退 [出请求的相关文档](../segmentation/honoring-opt-outs.md)。
-
-## [!DNL Profile] 准则
-
-[!DNL Experience Platform] 有一系列的指导方针，以便有效地使用 [!DNL Profile]。
-
-| 区域 | 边界 |
-| ------- | -------- |
-| [!DNL Profile] 合并模式 | 最多20个 **数据集** 可以贡献于 [!DNL Profile] 合并模式。 |
-| 多实体关系 | 最多可 **创建** 5个多实体关系。 |
-| 多实体关联的JSON深度 | JSON的最大深度为 **4**。 |
-| 时间序列数据 | 非人员实体 **不** 允 [!DNL Profile] 许使用时间序列数据。 |
-| 非人模式关系 | 不允许非人模式 **关系** 。 |
-| 用户档案片段 | 建议的用户档案片段最大大小 **为10kB**。<br><br> 用户档案片段的绝对最大大 **小为1MB**。 |
-| 非人员实体 | 单个非人员实体的最大总大小 **为200MB**。 |
-| 每个非人实体的数据集 | 最多可以 **将** 1个数据集关联到非人员实体。 |
-
-<!--
-| Section | Boundary | Enforcement |
-| ------- | -------- | ----------- |
-| Profile union schema | A maximum of **20** datasets can contribute to the Profile union schema. | A message stating you've reached the maximum number of datasets appears. You must either disable or clean up other obsolete datasets in order to create a new dataset. |
-| Multi-entity relationships | A maximum of **5** multi-entity relationship can be created. | A message stating all available mappings have been used appears when the fifth relationship is mapped. An error message letting you know you have exceeded the number of available mappings appears when attempting to map a sixth relationship. | 
-| JSON depth for multi-entity association | The maximum JSON depth is **4**. | When trying to use the relationship selector with a field that is more than four levels deep, an error message appears, stating it is ineligible for multi-entity association. |
-| Time series data | Time-series data is **not** permitted in Profile for non-people entities. | A message stating that this data cannot be enabled for Profile because it is of an unsupported type appears. |
-| Non-people schema relationships | Non-people schema relationships are **not** permitted. | Relationships between two non-people schemas cannot be created. The relationships checkbox will be disabled. |
-| Profile fragment | The recommended maximum size of a profile fragment is **10kB**.<br><br> The absolute maximum size of a profile fragment is **1MB**. | If you upload a fragment that is larger than 10kB, a warning appears, stating that performance may be degraded since the fragment exceeds the recommended maximum working size.<br><br> If you upload a fragment that is larger than 1MB, ingestion will fail, and an alert letting you know that records have failed will be sent. |
-| Non-person entity | The maximum total size for a single non-person entity is **200MB**. | If you load an object as a non-person entity that is larger than 200MB, an alert will appear, stating that the entity has exceeded the maximum allowable size and will not be useable for segmentation. |
-| Datasets per non-person entity | A maximum of **1** dataset can be associated to a non-person entity. | If you try to create a second dataset that is associated to the same non-person entity, an error appears, stating that only one dataset can be active per non-person entity. |
-
---->
-
->[!NOTE]
->
->非人员实体引用不属于的任何 **XDM** 类 [!DNL Profile]。
 
 ## 后续步骤和其他资源
 
