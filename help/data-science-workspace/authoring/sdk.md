@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;developer guide;SDK;Model authoring;Data Science Workspace;popular topics
+keywords: Experience Platform;developer guide;SDK;Model authoring;Data Science Workspace;popular topics;testing
 solution: Experience Platform
 title: SDK开发人员指南
 topic: Overview
 description: 模型创作SDK使您能够开发可在Adobe Experience Platform数据科学工作区中使用的自定义机器学习方法和功能管道，在PySpark和Spark(Scala)中提供可实施的模板。
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: 2a528c705a7aa610f57047be39be1ce9886ce44c
 workflow-type: tm+mt
 source-wordcount: '964'
 ht-degree: 1%
