@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;;XDM;XDM system;XDM individual profile;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience eventExperience event;XDM Experience Event;XDM ExperienceEvent;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema;troubleshooting;FAQ;faq;
+keywords: Experience Platform;home;popular topics;;XDM;XDM system;XDM individual profile;XDM ExperienceEvent;XDM Experience Event;experienceEvent;experience eventExperience event;XDM Experience Event;XDM ExperienceEvent;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema;troubleshooting;FAQ;faq;Union schema;UNION PROFILE;union profile
 solution: Experience Platform
 title: 体验数据模型(XDM)系统疑难解答指南
 description: 本文档提供有关体验数据模型(XDM)系统的常见问题解答，以及常见错误的疑难解答指南。
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
+source-git-commit: 2a528c705a7aa610f57047be39be1ce9886ce44c
 workflow-type: tm+mt
 source-wordcount: '1862'
 ht-degree: 0%
@@ -77,7 +77,7 @@ ht-degree: 0%
 
 ### 如何启用模式以在中使用 [!DNL Real-time Customer Profile]?
 
-通过添加“模式”标 [签(位于合并的属性中)](../profile/home.md) ,模式可以在实时客户 `meta:immutableTags` 用户档案中使用。 可以使用API或 [!DNL Profile] 用户界面启用模式以与一起使用。
+通过添加“模式”标 [签(位于合并的属性中)](../profile/home.md) ,模式可以在[!DNL实时客户 `meta:immutableTags` 用户档案中使用。 可以使用API或 [!DNL Profile] 用户界面启用模式以与一起使用。
 
 #### 启用现有模式 [!DNL Profile] 以使用API
 
