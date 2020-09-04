@@ -5,9 +5,9 @@ title: Adobe Experience Platform分段服务
 topic: overview
 description: 此文档概述了分段服务及其在Adobe Experience Platform所起的作用。
 translation-type: tm+mt
-source-git-commit: 8f7ce97cdefd4fe79cb806e71e12e936caca3774
+source-git-commit: 5dd07bf9afe96be3a4c3f4a4d4e3b23aef4fde70
 workflow-type: tm+mt
-source-wordcount: '1991'
+source-wordcount: '1387'
 ht-degree: 0%
 
 ---
@@ -90,7 +90,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTf
 
 ### 其他细分元数据
 
-除了区段名称和合并策略之外， [!DNL Segment Builder] 还为您优惠了一个额外的“区段描述”元数据字段，您可以在该字段中总结区段定义的用途。
+除了区段名称和合并策略之外，您 [!DNL Segment Builder] 还可以优惠一个额外的“区段描述”元数据字段，在该字段中您可以总结区段定义的用途。
 
 ## 高级细分功能
 
@@ -129,97 +129,11 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供用户界面和RESTf
 
 ## 多实体分割 {#multi-entity}
 
-借助高级的多实体细分功能，您可以使用多个XDM类创建细分，从而为人员模式添加扩展。 因此，在区段定 [!DNL Segmentation Service] 义期间，可以像用户档案数据存储本身一样访问其他字段。
-
-多实体细分提供了根据与业务需求相关的数据识别受众所需的灵活性。 无需查询数据库方面的专业知识，即可快速轻松地完成此过程。 这样，您无需对数据流进行代价高昂的更改或等待后端数据合并，即可将关键数据添加到细分中。
-
-以下视频旨在支持您对多实体细分的理解，并概述多实体细分和细分上下文（细分有效负荷）。
-
->[!VIDEO](https://video.tv.adobe.com/v/28947?quality=12&learn=on)
-
-### 用例：价格驱动型促销
-
-要说明此高级细分功能的价值，请考虑与营销人员协作的数据架构师。
-
-在此示例中，数据架构师使用键将个人(由具有和作为基类的模式 [!DNL XDM Individual Profile] 组 [!DNL XDM ExperienceEvent] 成)的数据连接到另一个类。 加入后，数据架构师或营销人员可以在区段定义期间使用这些新字段，就像它们是基类模式的本机字段一样。
-
-**问题**
-
-数据架构师和营销人员都为同一家服装零售商工作。 这家零售商在北美拥有1,000多家商店，并在整个生命周期内定期降低产品价格。 因此，营销人员希望运行一种特殊活动，让已购买这些商品的顾客有机会以折扣价购买这些商品。
-
-数据架构师的资源包括访问客户浏览的Web数据以及包含产品SKU标识符的购物车加货数据。 他们还有权访问单独的“产品”类别，其中存储附加产品信息（包括产品价格）。 他们的指导是关注在过去14天内将产品添加到购物车但没有购买该产品的客户，该产品的价格已经下降。
-
-**解决方案**
-
->[!NOTE]
->
->在此示例中，我们假定数据架构师已经建立了ID命名空间。
-
-使用API，数据架构师将模式的 [!DNL ExperienceEvent] 密钥与“产品”类关联。 这样，数据架构师就可以像模式本身一样使用“产品”类中的其他字段。 [!DNL ExperienceEvent] 作为配置工作的最后一步，数据架构师需要将适当的数据引入其中 [!DNL Real-time Customer Profile]。 这是通过启用“产品”数据集以与一起使用来实现的 [!DNL Profile]。 配置工作完成后，数据架构师或营销人员均可在中构建目标细分 [!DNL Segment Builder]。
-
-请参阅 [模式合成概述](../xdm/schema/composition.md#union) ，了解如何定义跨XDM类的关系。
-
-<!-- ## Personalization payload
-
-Segments can now carry a payload of contextual details to enable deep personalization of Adobe Solutions as well as external non-Adobe applications. These payloads can be added while defining your target segment.
-
-With contextual data built into the segment itself, this advanced Segmentation Service feature allows you to better connect with your customer.
-
-Segment Payload helps you answer questions surrounding your customer’s frame of reference such as:
-- What: What product was purchased? What product should be recommended next?
-- When: At what time and date did the purchase occur?
-- Where: In which store or city did the customer make their purchase?
-
-While this solution does not change the binary nature of segment membership, it does add additional context to each profile through an associated segment membership object. Each segment membership object has the capacity to include three kinds of contextual data:
-
-- **Identifier**: this is the ID for the segment 
-- **Attributes**: this would include information about the segment ID such as last qualification time, XDM version, status and so on.
-- **Event data**: Specific aspects of experience events which resulted in the profile qualifying for the segment
-
-Adding this specific data to the segment itself allows execution engines to personalize the experience for the customers in their target audience. -->
-
-### 用例
-
-为了说明此高级细分功能的价值，请考虑三个标准用例，它们说明了在细分负载增强之前在营销应用程序中存在的挑战：
-- 电子邮件个性化
-- 电子邮件重定位
-- 广告重定位
-
-**电子邮件个性化**
-
-构建电子邮件活动的营销人员可能已尝试在过去三个月内使用最近的目标商店购买来构建受众的细分。 理想情况下，此区段需要物品名称和进行购买的商店的名称。 在增强之前，难题在于从购买事件中捕获商店标识符并将其分配给该客户的用户档案。
-
-**电子邮件重定位**
-
-创建和确定针对“购物车废弃”的电子邮件活动的细分通常非常复杂。 在增强之前，由于可获得所需的数据，很难了解要包含在个性化信息中的产品。 放弃产品的数据与体验事件相关，而体验过去难以监控和提取数据。
-
-**广告重定位**
-
-营销人员面临的另一个传统挑战是制作广告，以重新定位已放弃购物车项目的客户。 虽然分部定义解决了这一难题，但在加强之前，没有正式方法区分所购买的产品和已放弃的产品。 现在，您可以在区段定义过程中目标特定数据集。
+借助高级的多实体细分功能，您能够根 [!DNL Real-time Customer Profile] 据产品、商店或其他非人（也称为“维”实体）使用额外数据扩展数据。 因此，在区段定 [!DNL Segmentation Service] 义过程中，可以像数据存储本身一样访问其 [!DNL Profile] 他字段。 多实体细分在根据与您独特的业务需求相关的数据识别受众时提供了灵活性。 有关更多信息(包括用例和工作流)，请参 [阅多实体细分指南](multi-entity-segmentation.md)。
 
 ## [!DNL Segmentation Service] 数据类型
 
-[!DNL Segmentation Service] 支持各种数据类型，包括：
-
-- 字符串
-- 统一资源标识符
-- 枚举
-- 数值
-- 长
-- 整数
-- 短
-- 字节
-- 布尔值
-- 日期
-- 日期时间
-- 阵列
-- 对象
-- 地图
-- 事件
-- 外部受众
-- 区段
-
-有关这些受支持数据类型的更多详细信息，请参 [阅支持的数据类型文档](./data-types.md)。
+[!DNL Segmentation Service] 支持各种简单和复杂的数据类型。 详细信息(包括受支持数据类型的列表)可在受支 [持数据类型指南中找到](./data-types.md)。
 
 ## 后续步骤
 
