@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;data access;python sdk;spark sdk;data access api
+keywords: Experience Platform;home;popular topics;data access;python sdk;spark sdk;data access api;export;Export
 solution: Experience Platform
 title: 数据访问开发人员指南
 topic: developer guide
 description: Data Access API为用户提供RESTful界面，侧重于在Experience Platform内摄取的数据集的可发现性和可访问性，从而支持Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
+source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
 workflow-type: tm+mt
 source-wordcount: '512'
 ht-degree: 4%
