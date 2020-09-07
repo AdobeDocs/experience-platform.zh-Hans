@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;consent;Consent;preferences;Preferences;privacyOptOuts;marketingPreferences;optOutType;basisOfProcessing;
+keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;consent;Consent;preferences;Preferences;privacyOptOuts;marketingPreferences;optOutType;basisOfProcessing;consent;Consent
 solution: Adobe Experience Platform
 title: 隐私混合概述
 description: 隐私／营销偏好（同意）混合是一种体验数据模型(XDM)混合，旨在支持CMP和客户其他来源生成的用户权限和偏好的收集。 此文档涵盖混合物提供的各种字段的结构和预期用途。
 topic: guide
 translation-type: tm+mt
-source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
+source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
 workflow-type: tm+mt
 source-wordcount: '1827'
 ht-degree: 1%
