@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Privacy Service用户指南
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
+source-git-commit: a09d80f4bacd5d4be77443d75aad278ad89259ef
 workflow-type: tm+mt
-source-wordcount: '1056'
+source-wordcount: '1059'
 ht-degree: 0%
 
 ---
@@ -24,11 +24,12 @@ UI仪表板提 [!DNL Privacy Service] 供了两个构件，允许您视图隐私
 
 ### 调整类型
 
-[!DNL Privacy Service] 支持三种法规类型的工作请求：
+[!DNL Privacy Service] 支持四种法规类型的工作请求：
 
-* 欧洲合并 [!DNL General Data Protection Regulation] (GDPR)
+* 欧洲合并 [!DNL General Data Protection Regulation] ([!UICONTROL GDPR])
 * ( [!DNL California Consumer Privacy Act] CCPA)
-* 泰国( [!DNL Personal Data Protection Act] PDPA_THA)
+* 巴西 [!DNL Lei Geral de Proteção de Dados] ([!UICONTROL LGPD_BRA])
+* 泰国( [!DNL Personal Data Protection Act] PDPA[!UICONTROL _THA])
 
 将单独跟踪每种法规类型的任务。 要在调整类型之间切换，请单 **[!UICONTROL 击“调整类型]** ”下拉菜单，并从列表中选择所需的调整。
 
@@ -56,7 +57,7 @@ UI仪表板提 [!DNL Privacy Service] 供了两个构件，允许您视图隐私
 
 >[!NOTE]
 >
->将过滤器应用到“作业请求”构件后，可以通过单击筛选药片上的 **[!UICONTROL X]** 来删除过滤器。 然后，作业请求返回默认跟踪列表。
+>将过滤器应用到“作业请求”构件后，可以通过单击筛选药片上的 **X** 来删除过滤器。 然后，作业请求返回默认跟踪列表。
 
 ### 作业请求
 
