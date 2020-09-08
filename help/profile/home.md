@@ -5,9 +5,9 @@ title: 实时客户用户档案概述
 topic: guide
 description: 实时用户档案是一个通用查找实体存储，它合并来自各种企业数据资产的数据，然后以单个客户用户档案和相关时间序列事件的形式提供对该数据的访问。 此功能使营销人员能够跨多个渠道通过受众推动协调一致的相关体验。
 translation-type: tm+mt
-source-git-commit: 5dd07bf9afe96be3a4c3f4a4d4e3b23aef4fde70
+source-git-commit: cef27082fec97530031061476b46f60859717825
 workflow-type: tm+mt
-source-wordcount: '1649'
+source-wordcount: '1650'
 ht-degree: 1%
 
 ---
@@ -90,7 +90,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供为个人客户提�
 
 ### [!DNL Profile] 摄取指标
 
-可观性洞察使您能够揭示Adobe Experience Platform的关键指标。 除了各种功 [!DNL Platform] 能的使用情况统计和性能 [!DNL Platform] 指标外，还有一些特定的相关指标， [!DNL Profile]允许您深入了解传入请求率、成功摄取率、摄取的记录大小等。 要了解更多信息，请首先阅读可观 [性洞察概述](../observability/home.md)，然后查看完整的指标 [!DNL Profile] 列表，参阅可用指标 [的相关文档](../observability/metrics.md)。
+可观性洞察使您能够揭示Adobe Experience Platform的关键指标。 除了各种功 [!DNL Platform] 能的使用情况统计和性能 [!DNL Platform] 指标外，还有一些特定的相关指标， [!DNL Profile]允许您深入了解传入请求率、成功摄取率、摄取的记录大小等。 要了解更多信息，请首先阅读 [Oncebility Insights API概述](../observability/api/overview.md)，然后查看完整的 [!DNL Profile] 指标列表，参阅可用 [指标文档](../observability/api/metrics.md#available-metrics)。
 
 ## [!DNL Data governance] 和 [!DNL Privacy]
 
