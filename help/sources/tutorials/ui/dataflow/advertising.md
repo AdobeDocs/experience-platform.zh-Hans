@@ -5,9 +5,9 @@ title: 在UI中为广告连接器配置数据流
 topic: overview
 description: 数据流是从源中检索数据并将其引入Adobe Experience Platform数据集的计划任务。 本教程提供使用广告帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: fb60e11b9502c31e654d3fbe5dc240ace9429332
+source-git-commit: 5d4aa8eebc1837a5d8b275fa631f4af73c38158e
 workflow-type: tm+mt
-source-wordcount: '1305'
+source-wordcount: '1350'
 ht-degree: 0%
 
 ---
@@ -35,9 +35,16 @@ ht-degree: 0%
 - 界面的左半部分是目录浏览器，显示服务器的文件和目录。
 - 界面的右半部分允许您从一个兼容文件预览多达100行数据。
 
-选择要使用的目录，然后选择“下 **[!UICONTROL 一步]**”。
+您可以使用页 **[!UICONTROL 面顶部]** 的“搜索”选项快速识别您要使用的源数据。
 
-![添加数据](../../../images/tutorials/dataflow/advertising/add-data.png)
+>[!NOTE]
+>
+>搜索源数据选项适用于所有基于表格的源连接器，不包括分析、分类、事件中心和Kinesis连接器。
+
+找到源数据后，选择目录，然后单击“下 **[!UICONTROL 一步]**”。
+
+![select-data](../../../images/tutorials/dataflow/all-tabular/select-data.png)
+
 
 ## 将数据字段映射到XDM模式
 
