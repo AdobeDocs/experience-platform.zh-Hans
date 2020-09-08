@@ -1,133 +1,78 @@
 ---
 keywords: Experience Platform;home;popular topics
 solution: Experience Platform
-title: 订阅隐私事件
+title: 订阅Privacy Service事件
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
+source-git-commit: c5455dc0812b251483170ac19506d7c60ad4ecaa
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '420'
 ht-degree: 1%
 
 ---
 
 
-# 订阅 [!DNL Privacy Events]
+# 订阅 [!DNL Privacy Service Events]
 
-[!DNL Privacy Events] 是Adobe Experience Platform提供的消 [!DNL Privacy Service]息，它利用发送到配置的webhook的AdobeI/O事件，以促进高效的作业请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。
+[!DNL Privacy Service Events] 是Adobe Experience Platform提供的消 [!DNL Privacy Service]息，它利用发送到配置的webhook的AdobeI/O事件，以促进高效的作业请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。
 
 当前有四种类型的通知与隐私作业请求生命周期相关：
 
 | 类型 | 描述 |
---- | ---
-| 作业完成 | 所有 [!DNL Experience Cloud] 解决方案都已报告，作业的整体或全局状态已标记为完成。 |
-| 作业错误 | 处理请求时，一个或多个解决方案报告了错误。 |
-| 产品完成 | 与此作业相关的解决方案之一已完成其工作。 |
-| 产品错误 | 其中一个解决方案在处理请求时报告了错误。 |
+| --- | --- |
+| 作业完成 | 所有 [!DNL Experience Cloud] 应用程序都已报告，作业的整体或全局状态已标记为完成。 |
+| 作业错误 | 处理请求时，一个或多个应用程序报告了错误。 |
+| 产品完成 | 与此作业关联的其中一个应用程序已完成其工作。 |
+| 产品错误 | 其中一个应用程序在处理请求时报告了错误。 |
 
-此文档提供在AdobeI/O中设置通 [!DNL Privacy Service] 知集成的步骤。有关其功能的高 [!DNL Privacy Service] 级概述，请参阅 [Privacy Service概述](home.md)。
+此文档提供设置通知事件注册的步 [!DNL Privacy Service] 骤，以及如何解释通知有效负荷。
 
 ## 入门指南
 
-本教程使 **用** ngrok，它是一种通过安全隧道向公共Internet公开本地服务器的软件产品。 请 [在开始](https://ngrok.com/download) 本教程之前安装网络，以便继续学习并创建到本地计算机的网络挂钩。 本指南还要求您下载包含简单Node.js服务 [器的GIT存储库](https://nodejs.org/) 。
+在开始本教程之前，请查阅以下Privacy Service文档：
 
-## 创建本地服务器
+* [Privacy Service概述](./home.md)
+* [Privacy ServiceAPI开发人员指南](./api/getting-started.md)
 
-您的Node.js服务器必须返回 `challenge` 由请求发送到根()端点的`/`参数。 使用以下 `index.js` JavaScript设置文件以完成此操作：
+## 将网页挂接注册到 [!DNL Privacy Service Events]
 
-```js
-var express = require('express')
-var app = express()
+要接收，您必 [!DNL Privacy Service Events]须使用Adobe开发者控制台来注册您的集成的网 [!DNL Privacy Service] 络挂接。
 
-app.set('port', (process.env.PORT || 3000))
-app.use(express.static(__dirname + '/public'))
+有关如何完成此 [操 [!DNL I/O Event] 作的详细步](../observability/notifications/subscribe.md) 骤，请按照教程订阅通知。 确保您选择 **[!UICONTROL Privacy Service事件]** ，作为事件提供者，以访问上面列出的事件。
 
-app.get('/', function(request, response) {
-  response.send(request.originalUrl.split('?challenge=')[1]);
-})
+## 接收通 [!DNL Privacy Service Event] 知
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})
-```
-
-使用命令行，导航到Node.js服务器的根目录。 然后，键入以下命令：
-
-1. `npm install`
-1. `npm start`
-
-这些命令安装所有依赖项并初始化服务器。 如果成功，您可以在http://localhost:3000/上找到正在运行的服务器。
-
-## 使用ngrok创建网页挂接
-
-打开新的命令行窗口，然后导航到之前安装代码的目录。 在此处，键入以下命令：
-
-```shell
-./ngrok http -bind-tls=true 3000
-```
-
-成功的输出如下所示：
-
-![ngrok输出](images/privacy-events/ngrok-output.png)
-
-请注意URL( `Forwarding` ),`https://212d6cd2.ngrok.io`因为这将用于识别您的网络挂钩，进而执行下一步。
-
-## 在Adobe开发人员控制台中创建新项目
-
-转到 [Adobe开发人](https://www.adobe.com/go/devs_console_ui) 员控制台并登录您的Adobe ID。 接下来，按照Adobe开发人员控制台文档中 [有关创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 的教程中概述的步骤操作。
-
-## 将隐私事件添加到项目
-
-在控制台中创建完新项目后，单击“项 **[!UICONTROL 目概述]** ”屏 _幕上的“添_ 加事件”。
-
-![](./images/privacy-events/add-event-button.png)
-
-将出 _现“添加事件_ ”对话框。 选择 **[!UICONTROL Experience Cloud]** ，以筛选可用事件类型的列表，然后选择 **[!UICONTROL Privacy Service事件]** ，然后单 **[!UICONTROL 击下一]**&#x200B;步。
-
-![](./images/privacy-events/add-privacy-events.png)
-
-将显 _示配置事件_ 注册对话框。 通过选择相应的复选框，选择您要接收的事件。 您选择的事件显示在 **[!UICONTROL 左列的]** “订阅事件”下。 When finished, click **[!UICONTROL Next]**.
-
-![](./images/privacy-events/choose-subscriptions.png)
-
-下一个屏幕会提示您提供公钥进行事件注册。 您可以选择自动生成密钥对，或上传您自己在终端中生成的公钥。
-
-就本教程而言，将遵循第一个选项。 单击“Generate a key pair(生 **[!UICONTROL 成键对)”选]**&#x200B;项框，然后单击 **[!UICONTROL 右下角的“Generate keypair]** （生成键对）”按钮。
-
-![](./images/privacy-events/generate-key-value.png)
-
-当密钥对生成时，浏览器会自动下载该密钥对。 您必须自己存储此文件，因为它不会保留在开发人员控制台中。
-
-下一个屏幕允许您查看新生成的密钥对的详细信息。 单击&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
-
-![](./images/privacy-events/keypair-generated.png)
-
-在下一个屏幕中，提供事件注册的名称和说明。 最佳实践是创建一个唯一、易于识别的名称，以帮助区分此事件注册与同一项目中的其他客户。
-
-![](./images/privacy-events/event-details.png)
-
-在同一屏幕的更下方，您将获得两个用于配置如何接收事件的选项。 选 **[!UICONTROL 择]** Webhook `Forwarding` ，并提供您之前在 **[!UICONTROL Webhook URL下创建的新Webhook]**&#x200B;的URL。 接下来，在单击“保存配置的投放”以完成事件注册之 **[!UICONTROL 前，选择您首选的事件]** （单个或批处理）样式。
-
-![](./images/privacy-events/webhook-details.png)
-
-项目的详细信息页面将重新显示， [!DNL Privacy Events] 在左 **[!UICONTROL 侧导航]** 的事件下显示。
-
-## 视图事件数据
-
-在您注册了项 [!DNL Privacy Events] 目并处理了隐私工作后，您可以视图收到的任何有关该注册的通知。 从开发人 **[!UICONTROL 员控制]** 台的“项目”选项卡中，从列表中选择您的项目以打开“ _产品概述_ ”页。 从此处，从左 **[!UICONTROL 侧导航]** 中选择隐私事件。
-
-![](./images/privacy-events/events-left-nav.png)
-
-此时 _会显示_ “注册详细信息”选项卡，您可以通过它视图有关注册的更多信息、编辑其配置或视图自激活Webhook后收到的实际事件。
-
-![](./images/privacy-events/registration-details.png)
-
-单击“调 **[!UICONTROL 试跟踪]** ”选项卡以视图接收的列表。 单击列出的事件以视图其详细信息。
+成功注册Webhook和隐私作业后，您可以开始接收事件通知。 这些事件可以使用Webhook本身进行查看，也可以通过在Adobe开 **[!UICONTROL 发人员控制台中]** ，选择项目事件注册概述中的“调试跟踪”选项卡进行查看。
 
 ![](images/privacy-events/debug-tracing.png)
 
-“有 **[!UICONTROL 效负荷]** ”部分提供有关选定事件的详细信息，包括其事件类型(`com.adobe.platform.gdpr.productcomplete`)，如上例中所强调。
+以下JSON是通知有效负荷的 [!DNL Privacy Service Event] 示例，当与隐私作业关联的某个应用程序完成其工作时，通知有效负荷将发送至您的Webhook:
+
+```json
+{
+  "id":"b472e249-368b-4706-90f3-1d774713f827",
+  "event_id":"b116f797-e50b-432e-9c65-189106a34820",
+  "specversion":"0.2",
+  "type":"com.adobe.platform.gdpr.productcomplete",
+  "source":"https://ns.adobe.com/platform/gdpr",
+  "time":"Wed Oct 23 18:52:32 GMT 2019",
+  "data":{
+    "imsOrg":"{IMS_ORG}",
+    "value":{
+      "jobId":"6f0f2b62-88a7-4515-ba05-432d9a7021c5",
+      "message":"analytics.access.complete"
+    }
+  }
+}
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `id` | 通知的唯一、由系统生成的ID。 |
+| `type` | 所发送通知的类型，提供下文信息 `data`。 潜在值包括： <ul><li>`com.adobe.platform.gdpr.jobcomplete`</li><li>`com.adobe.platform.gdpr.joberror`</li><li>`com.adobe.platform.gdpr.productcomplete`</li><li>`com.adobe.platform.gdpr.producterror`</li></ul> |
+| `time` | 发生事件的时间戳。 |
+| `data.value` | 包含有关触发通知的其他信息： <ul><li>`jobId`:触发通知的隐私作业的ID。</li><li>`message`:有关作业特定状态的消息。 对于 `productcomplete` 或通 `producterror` 知，此字段指示相关的Experience Cloud应用程序。</li></ul> |
 
 ## 后续步骤
 
-您可以重复上述步骤，根据需要为不同的Webhook地址添加新集成。
+此文档介绍如何将Privacy Service事件注册到已配置的Webhook，以及如何解释通知有效负载。 要了解如何使用用户界面跟踪隐私作业，请参阅 [Privacy Service用户指南](./ui/user-guide.md)。
