@@ -5,9 +5,9 @@ solution: Experience Platform
 title: 监视帐户和数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: a93b3a1980ca0f1d3a32257a923eb7ffc8896fd5
+source-git-commit: b900ea05cc046cf19d415543c581d0bcdc4296ba
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '971'
 ht-degree: 0%
 
 ---
@@ -42,15 +42,25 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 排序面板允许您从特定源访问帐户。 选择要处理的源，并从右侧的列表中选择帐户。
 
+>[!TIP]
+>
+> 使用 ![“名称](../../images/tutorials/monitor/spectrum-control.png) ”列中的 **[!UICONTROL spectrum-control]** 按钮为所选帐户创建新源数据流。
+
 ![accounts-select](../../images/tutorials/monitor/accounts-sort.png)
 
-在“帐 **[!UICONTROL 户]** ”页中，您可以视图与您访问的帐户关联的现有数据流或目标数据集的列表。
+在“帐 **[!UICONTROL 户]** ”页中，您可以视图与您访问的帐户关联的现有数据流或目标数据集的列表。选择辅助控件以显示更多可用于所选数据流的选项。 这些选项的进一步说明如下：
+
+| 控制 | 描述 |
+| ------- | ----------- |
+| [!UICONTROL 编辑计划] | 允许您编辑数据流的摄取计划。 |
+| [!UICONTROL 禁用数据流] | 允许您禁用所选数据流的数据摄取。 |
+| [!UICONTROL 删除] | 允许您删除所选数据流。 |
 
 ![数据流](../../images/tutorials/monitor/dataflows.png)
 
 ## 监视数据流
 
-数据流可以直接从“目录”页 **[!UICONTROL 访问]** ，无需查看 **[!UICONTROL 帐户]**。 从顶 **[!UICONTROL 部标题]** 中选择数据流，以视图现有数据流的列表。
+数据流可以直接从“目录”页 **[!UICONTROL 访问]** ，无需查看 **[!UICONTROL 帐户]**。 从 **[!UICONTROL 顶部标]** 题中选择数据流以视图列表数据流。
 
 ![catalog-dataflows](../../images/tutorials/monitor/catalog-dataflows.png)
 
@@ -58,7 +68,7 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ![dataflows-列表](../../images/tutorials/monitor/dataflows-list.png)
 
-将出现排序面板。 从滚动菜单中选择要访问的源，并从右侧的列表中选择数据流。
+将出现排序面板。 从滚动菜单中选择要访问的源，并从右侧的列表中选择数据流。 您还可以选择辅助控件，为所选数据流显示更多可用选项。
 
 ![排序数据流](../../images/tutorials/monitor/dataflows-sort.png)
 
@@ -82,11 +92,10 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 请参阅下表，获取可在“错误”摘要中看到的错 **[!UICONTROL 误代码]**。
 
-| 错误代码 | 错误消息 |
+| 错误 | 描述 |
 | ---------- | ----------- |
-| `CONNECTOR-1001-500` | &quot;复制活动出现问题。&quot; |
-| `CONNECTOR-2001-500` | “从Experience Platform源复制到数据集时出现问题。” |
-| `CONNECTOR-3001-500` | &quot;使用批量摄取API创建批处理时，流提供程序出现问题。&quot; |
+| `CONNECTOR-1001-500` | 从源复制数据时出错。 |
+| `CONNECTOR-2001-500` | 将复制的数据处理到时出错 [!DNL Platform]。 此错误可能与分析、验证或转换相关。 |
 
 屏幕的下半部分包含有关Dataflow运 **[!UICONTROL 行错误的信息]**。 从此处，您还可以视图所摄取的文件、预览和下载错误诊断，或下载文件清单。
 
