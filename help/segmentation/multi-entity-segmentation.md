@@ -5,9 +5,9 @@ title: 多实体分割
 topic: overview
 description: 多实体细分是指能够根据产品、商店或其他非用户档案类扩展用户档案数据和附加数据。 连接后，来自其他类的数据将变得像用户档案模式的本机数据一样可用。
 translation-type: tm+mt
-source-git-commit: 5dd07bf9afe96be3a4c3f4a4d4e3b23aef4fde70
+source-git-commit: 8568c55003127a295acff9cfbbc3bbf6005e7a51
 workflow-type: tm+mt
-source-wordcount: '605'
+source-wordcount: '620'
 ht-degree: 0%
 
 ---
@@ -21,10 +21,10 @@ ht-degree: 0%
 
 多实体细分需要对细分中涉及的Adobe Experience Platform各种服务进行有效的了解。 在继续使用本指南之前，请查阅以下文档：
 
-* [!DNL Real-time Customer Profile](../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+* [[!DNL实时客户用户档案]](../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
    * [用户档案护栏](../profile/guardrails.md):创建受支持的数据模型的最佳实 [!DNL Profile]践。
-* [!DNL Adobe Experience Platform Segmentation Service](./home.md):允许您根据数据构建 [!DNL Real-time Customer Profile] 细分。
-* [!DNL Experience Data Model (XDM)](../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
+* [[!DNLAdobe Experience Platform分段服务]](./home.md):允许您根据数据构建 [!DNL Real-time Customer Profile] 细分。
+* [[!DNL体验数据模型(XDM)]](../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    * [模式合成基础](../xdm/schema/composition.md#union):了解编写模式以用于Experience Platform的最佳实践。
 
 ## 用例
