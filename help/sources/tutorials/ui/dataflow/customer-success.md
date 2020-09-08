@@ -5,9 +5,9 @@ title: 在UI中为客户成功连接器配置数据流
 topic: overview
 description: 数据流是从源中检索数据并将其捕获到数据的计划 [!DNL Platform] 任务。 本教程提供使用客户成功帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: 14044f9af50cd4c922294cd60f7b6549828e8aca
+source-git-commit: 5d4aa8eebc1837a5d8b275fa631f4af73c38158e
 workflow-type: tm+mt
-source-wordcount: '1321'
+source-wordcount: '1366'
 ht-degree: 0%
 
 ---
@@ -35,9 +35,15 @@ ht-degree: 0%
 - 界面的左半部分是目录浏览器，显示服务器的文件和目录。
 - 界面的右半部分允许您从一个兼容文件预览多达100行数据。
 
-选择要使用的目录，然后单击“下 **[!UICONTROL 一步]**”。
+您可以使用页 **[!UICONTROL 面顶部]** 的“搜索”选项快速识别您要使用的源数据。
 
-![select-data](../../../images/tutorials/dataflow/customer-success/select-data.png)
+>[!NOTE]
+>
+>搜索源数据选项适用于所有基于表格的源连接器，不包括分析、分类、事件中心和Kinesis连接器。
+
+找到源数据后，选择目录，然后单击“下 **[!UICONTROL 一步]**”。
+
+![select-data](../../../images/tutorials/dataflow/all-tabular/select-data.png)
 
 ## 将数据字段映射到XDM模式
 
