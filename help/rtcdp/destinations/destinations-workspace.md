@@ -5,9 +5,9 @@ seo-title: 目标工作区
 description: “目标”工作区由四个部分组成，即目录、浏览、帐户和系统视图，这些部分在以下各节中有介绍。
 seo-description: 在Adobe实时客户数据平台中，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
+source-git-commit: 59ac673c35954696fbb37417510035bdebff6f62
 workflow-type: tm+mt
-source-wordcount: '809'
+source-wordcount: '825'
 ht-degree: 2%
 
 ---
@@ -52,9 +52,31 @@ Adobe实时CDP用户界面在目标目录页面上提供了许多搜索和筛选
 
 有关目标类别和每个目标的信息，请参阅目 [标目录](/help/rtcdp/destinations/destinations-catalog.md) 、 [目标类型和类别](/help/rtcdp/destinations/destination-types.md)。
 
+## [!UICONTROL 帐户] {#accounts}
+
+在“帐 **[!UICONTROL 户]** ”选项卡中，您可以进一步了解您与各种目标建立的连接。 请参阅下表，了解您可以在每个目标上获取的所有信息：
+
+>[!TIP]
+>
+>使用“ ![平台](/help/rtcdp/destinations/assets/add-data-symbol.png) ”列中的“添 **[!UICONTROL 加数据]** ”按钮为该帐户创建新的目标连接。
+
+![“帐户”选项卡](/help/rtcdp/destinations/assets/accounts-tab.png)
+
+| 元素 | 描述 |
+---------|----------
+| [!UICONTROL 平台] | 您为其设置连接的目标。 |
+| [!UICONTROL 连接类型] | 表示到存储存储段或目标的连接类型。 <ul><li>对于电子邮件营销目标：可以是S3或FTP。</li><li>对于实时广告目标：服务器到服务器</li><li>对于AmazonS3云存储目标：访问密钥 </li><li>对于SFTP云存储目标：SFTP的基本身份验证</li></ul> |
+| [!UICONTROL 用户名] | 在连接目标向导中选 [择的用户名](/help/rtcdp/destinations/email-marketing-destinations.md#connect-destination)。 |
+| [!UICONTROL 目标] | 表示通过为目标创建的基本信息连接的唯一成功目标流的数量。 |
+| [!UICONTROL 已授权] | 到此目标的连接被授权的日期。 |
+
 ## [!UICONTROL 浏览] {#browse}
 
-“浏 **[!UICONTROL 览]** ”选项卡显示您已建立连接的目标。 启用切换 **[!UICONTROL 的目]** 标将目标设置为活动，反之亦然。 您还可以通过选择“区段”>“浏览”并选择要检 **[!UICONTROL 查的区段]** ，来 **[!UICONTROL 视图您拥]** 有数据流动的目标。 有关在“浏览”选项卡中为每个目标提供的所有信息，请参阅下表：
+“浏 **[!UICONTROL 览]** ”选项卡显示您已建立连接的目标。 启用“启 **[!UICONTROL 用]** ”切换的目标将目标设置为活动，反之亦然。 您还可以通过选择“区段”>“浏览”并选择要检 **[!UICONTROL 查的区段]** ，来 **[!UICONTROL 视图您拥]** 有数据流动的目标。 有关在“浏览”选项卡中为每个目标提供的所有信息，请参阅下表：
+
+>[!TIP]
+>
+>使用“ ![名称](/help/rtcdp/destinations/assets/add-data-symbol.png) ”列中的“添 **[!UICONTROL 加数据”按]** 钮，可将其他区段激活到该目标。
 
 ![浏览选项卡](/help/rtcdp/destinations/assets/browse-tab.png)
 
@@ -73,21 +95,6 @@ Adobe实时CDP用户界面在目标目录页面上提供了许多搜索和筛选
 ![单击目标行](/help/rtcdp/destinations/assets/click-destination-row.png)
 
 选择目标名称可查看有关激活到此目标的区段的信息。 单 **[!UICONTROL 击编辑激活]** ，以修改或添加要发送到此目标的区段。
-
-## [!UICONTROL 帐户] {#accounts}
-
-在“帐 **[!UICONTROL 户]** ”选项卡中，您可以进一步了解您与各种目标建立的连接。 请参阅下表，了解您可以在每个目标上获取的所有信息：
-
-![“帐户”选项卡](/help/rtcdp/destinations/assets/accounts-tab.png)
-
-| 元素 | 描述 |
----------|----------
-| [!UICONTROL 平台] | 您为其设置连接的目标。 |
-| [!UICONTROL 连接类型] | 表示到存储存储段或目标的连接类型。 <ul><li>对于电子邮件营销目标：可以是S3或FTP。</li><li>对于实时广告目标：服务器到服务器</li><li>对于AmazonS3云存储目标：访问密钥 </li><li>对于SFTP云存储目标：SFTP的基本身份验证</li></ul> |
-| [!UICONTROL 用户名] | 在连接目标向导中选 [择的用户名](/help/rtcdp/destinations/email-marketing-destinations.md#connect-destination)。 |
-| [!UICONTROL 数据流] | 表示通过为目标创建的基本信息连接的唯一成功目标流的数量。 |
-| [!UICONTROL 已授权] | 到此目标的连接被授权的日期。 |
-| [!UICONTROL 状态] | `Active` 或 `Inactive`. 指示数据当前是否正在激活到此目标。 要编辑状态，请参阅禁 [用激活](/help/rtcdp/destinations/activate-destinations.md#disable-activation)。 |
 
 ## [!UICONTROL 系统视图] {#system-view}
 
