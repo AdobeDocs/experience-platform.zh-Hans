@@ -5,9 +5,9 @@ title: 颜色提取
 topic: Developer guide
 description: 给定文本提取时，关键字文档服务会自动提取最能描述文档主题的关键字或关键字短语。 为了提取关键字，使用命名实体识别(NER)和无监督关键字提取算法的组合。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 31e4f1441676daa79f064c567ddc47e9198d0a0b
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '625'
 ht-degree: 3%
 
 ---
@@ -20,14 +20,6 @@ ht-degree: 3%
 >[!DNL Content and Commerce AI] 是测试版。 文档可能会更改。
 
 给定文本提取时，关键字文档服务会自动提取最能描述文档主题的关键字或关键字短语。 为了提取关键字，使用命名实体识别(NER)和无监督关键字提取算法的组合。
-
-**无监督关键字提取**
-
-对于非监督关键字提取 [，使用[!DNL](http://yake.inesctec.pt/) YAKE]。 [!DNL YAKE] 是一种快速、准确的无监督自动关键字提取方法，用于从文档中选择最重要的关键字。 然后，对关 [!DNL YAKE] 键字提取进行过滤，以仅选择名词短语。
-
-**命名实体识别**
-
-对于命名实体 [识别，使用[!DNL spaCy](https://spacy.io/)]的OntoNotes模型。 该模型指定上下文特定的令牌矢量、语音部分(POS)标签、依赖性分析和命名实体。 OntoNotes模型是核心模型之 [!DNL spaCy] 一。 有关OntoNotes模型的更多信息，请参 [阅](https://spacy.io/models/en)。
 
 下表列出了被识 [!DNL Content and Commerce AI] 别的命名实体：
 
@@ -44,8 +36,6 @@ ht-degree: 3%
 | WORK_OF_ART | 书名、歌曲等 |
 | 法律 | 被命名的文档成为法律。 |
 | 语言 | 任何已命名语言。 |
-
-结果与 [!DNL OntoNotes] 关键字结合， [!DNL YAKE]然后根据其重要性按排序返回。
 
 **API格式**
 
