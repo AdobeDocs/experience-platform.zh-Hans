@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: b4ce4c2e5ff5083f663c2daf23c32a1cec32124c
 workflow-type: tm+mt
-source-wordcount: '454'
-ht-degree: 6%
+source-wordcount: '597'
+ht-degree: 5%
 
 ---
 
@@ -21,6 +21,7 @@ Adobe Experience Platform现有功能更新：
 
 - [[!DNL数据科学工作区]](#dsw)
 - [[!DNL目标]](#destinations)
+- [[!DNL实时客户数据平台]](#rtcdp)
 - [[!DNL源]](#sources)
 
 ## [!DNL Data Science Workspace] {#dsw}
@@ -53,6 +54,18 @@ Adobe Experience Platform现有功能更新：
 |------- | -----------|
 | 自定义文件名编辑器 | 更新至电子邮件营销目标和云激活目标的存储工作流，以便编辑导出文件的名称。 有关详细信息，请参阅激活 [ 工作流中](/help/rtcdp/destinations/activate-destinations.md#configure) 的配置步骤。 |
 | 推荐属性 | 更新至电子邮件营销目标和云激活目标的存储工作流，以显示您要添加到导出文件的推荐属性。 有关详细信息，请参阅激活 [工作流中的](/help/rtcdp/destinations/activate-destinations.md#select-attributes) “选择属性”步骤。 |
+
+## [!DNL Real-time Customer Data Platform] {#rtcdp}
+
+Experience Platform实时客户数据平台([!DNL Real-time CDP]Real-time Customer Data Platform)以Adobe为构建基础，可帮助公司将已知和未知的数据整合在一起，在客户旅程中通过智能决策激活客户用户档案。 [!DNL Real-time CDP] 结合多个企业数据源，实时创建客户用户档案。 然后，根据这些用户档案构建的细分可以发送到下游目标，以便在所有渠道和设备上提供一对一的个性化客户体验。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| IAB TCF 2.0支持 | [!DNL Real-time CDP] 现在是2.0版(TCF)的注 [!DNL Transparency & Consent Framework] 册供应商，如(IAB) [!DNL Interactive Advertising Bureau] 所述。 您可以配置数据操作和用户档案模式，以接受由CMP生成的客户同意数据，并在将区段激活到下游目标时强制执行客户同意偏好。 有关详细信 [息，请参见实时CDP中的IAB TCF 2](../../rtcdp/privacy/iab/overview.md) .0支持概述。 |
+
+有关的详细信 [!DNL Real-time CDP]息，请参阅 [[!DNL Real-time CDP] 概述](../../rtcdp/overview.md)。
 
 ## 源 {#sources}
 
