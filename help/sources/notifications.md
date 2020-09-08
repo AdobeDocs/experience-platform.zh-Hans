@@ -5,9 +5,9 @@ solution: Experience Platform
 title: 流运行通知
 topic: overview
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: c5455dc0812b251483170ac19506d7c60ad4ecaa
 workflow-type: tm+mt
-source-wordcount: '871'
+source-wordcount: '787'
 ht-degree: 1%
 
 ---
@@ -25,34 +25,23 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 
 ## 入门指南
 
-本文档要求对Adobe Experience Platform的以下组成部分有工作的理解：
+本教程假定您已创建至少一个源连接，其流运行要监视。 如果尚未配置源连接，请开始，在返回本指 [南之前](./home.md) ，访问源概述以配置您选择的源。
 
-* [[!DNL体验数据模型(XDM)系统]](../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-* [[!DNL实时客户用户档案]](../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [[!DNLAdobe Experience Platform数据摄取]](../ingestion/home.md): [!DNL Data Ingestion] 表示从这些源 [!DNL Platform] 中摄取数据的多种方法，以及数据在下游服务中的 [!DNL Data Lake] 保留方式 [!DNL Platform] 。
+此文档还需要了解webhook以及如何将webhook从一个应用程序连接到另一个应用程序。 有关Webhooks的 [[!DNL I/O Events] 介绍](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md) ，请参阅文档。
 
-此文档还需要了解webhook以及如何将webhook从一个应用程序连接到另一个应用程序。 有关Webhooks的 [详细信息](https://requestbin.com/blog/working-with-webhooks/) ，请参阅以下文档。
+## 为流运行通知注册Webhook
 
-## 注册您的Webhook
+要接收流运行通知，您必须使用Adobe开发人员控制台来注册集成的网络 [!DNL Experience Platform] 挂接。
 
-要接收有关流运行状态的通知，您必须通过指定唯一的webhook URL作为事件注册详细信息的一部分来注册webhook。 要将Webhook连接到您的 [!DNL I/O Events] 订阅，请访 [问Webhook服务](https://webhook.site/) ，并复制提供的唯一URL。
-
-![webhook](./images/notifications/webhook-url.png)
-
-## 订阅事件
-
-获得唯一的Webhook URL后，转到 [AdobeI/O事件](https://www.adobe.io/apis/experienceplatform/events.html) ，按照数据获取通知 [文档中概述的步](../ingestion/quality/subscribe-events.md) 骤，使用开始订阅事件。
+有关如何完成此 [操 [!DNL I/O Event] 作的详细步](../observability/notifications/subscribe.md) 骤，请按照教程订阅通知。
 
 >[!IMPORTANT]
 >
->在订阅过程中，请确保选择通 [!DNL Platform] 知作为事件提供者，然后选择以下事件订阅:
+>在订阅过程中，请确保选择 **[!UICONTROL 平台通知]** 作为事件提供者，然后选择以下事件订阅:
 >
 >* **[!UICONTROL Experience Platform源的流运行成功]**
 >* **[!UICONTROL Experience Platform源的流运行失败]**
 
->
->
-当提示提供Webhook地址时，请使用您之前获得的Webhook URL。
 
 ## 接收流运行通知
 
