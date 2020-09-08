@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;home;popular topics;GDPR;gdpr;ccpa:CCPA
+keywords: Experience Platform;home;popular topics;GDPR;gdpr;ccpa:CCPA;pdpa;PDPA;pdpa_that;PDPA_THA;lgpd;LGPD;lgpd_bra;LGPD_BRA;
 solution: Experience Platform
 title: Adobe Experience Platform Privacy Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 5d88aca08b7cf1d55e1eed989de6aa514f82e113
 workflow-type: tm+mt
-source-wordcount: '1502'
+source-wordcount: '1565'
 ht-degree: 2%
 
 ---
@@ -47,7 +47,8 @@ Adobe Experience Platform [!DNL Privacy Service] 是为应对企业管理客户�
 | --- | --- |
 | CCPA（加利福利亚） | The [!DNL California Consumer Privacy Act] (CCPA) enhances privacy rights and consumer protection for residents of California, United States. CCPA为加州居民提供了新的数据隐私权，包括访问和删除其个人数据、了解其个人数据是否被出售或披露（以及向谁）的权利，以及将其数选择退出据出售给第三方的权利。<br/><br/>更多文档的链接： <ul><li>[法律概述](https://oag.ca.gov/privacy/ccpa)</li><li>[CCPA常见问题解答](ccpa/faq.md)</li></ul> |
 | GDPR(欧洲合并) | The [!DNL General Data Protection Regulation] (GDPR) introduced several new data privacy rights for members of the European Union, including the **Right to Access** and the **Right to be Forgotten**. 这意味着被企业收集了个人数据的任何欧盟公民都可以随时请求访问或删除其数据。<br/><br/>更多文档的链接： <ul><li>[法律概述](https://gdpr-info.eu/)</li><li>[GDPR 常见问题解答](gdpr/faq.md)</li><li>[GDPR 术语](gdpr/terminology.md)</li></ul> |
-| PDPA_THA（泰国） | 泰国《个人数据保护法》(PDPA)的出台旨在保护泰国数据所有者免遭非法收集、使用或披露其个人数据。 受欧洲合并GDPR的启发，该规定授予泰国公民访问或删除其存储的个人数据的权利。<br/><br/>更多文档的链接： <ul><li>[法律概述](https://www.dataprotectionreport.com/2020/02/thailand-personal-data-protection-law/)</li><li>[PDPA_THA常见问题解答](pdpa-tha/faq.md)</li><li>[PDPA_THA术语](pdpa-tha/terminology.md)</li></ul> |
+| LGPD（巴西） | ( [!DNL Lei Geral de Proteção de Dados] LGPD)旨在规范巴西所有个人或自然人个人数据的处理。 LGPD赋予巴西公民访问和删除其个人数据的权利、了解其个人数据是被出售还是被披露（以及被披露者）的权利，以及将其选择退出数据出售给第三方的权利。<br/><br/>更多文档的链接： <ul><li>[法律概述](https://gdpr.eu/gdpr-vs-lgpd/)</li></ul> |
+| PDPA（泰国） | 泰 [!DNL Personal Data Protection Act] 国(PDPA)的引入旨在保护泰国数据所有者免遭非法收集、使用或披露其个人数据。 受欧洲合并GDPR的启发，该规定授予泰国公民访问或删除其存储的个人数据的权利。<br/><br/>更多文档的链接： <ul><li>[法律概述](https://www.dataprotectionreport.com/2020/02/thailand-personal-data-protection-law/)</li><li>[PDPA常见问题解答](pdpa-tha/faq.md)</li><li>[PDPA术语](pdpa-tha/terminology.md)</li></ul> |
 
 如果您的数据操作属于上述任何法规的权限，请查看其文档以了解重要信息，如客户承担的特定隐私权以及遵守隐私要求的合规窗口。 在确定如何集成到CRM系统中以及客 [!DNL Privacy Service] 户如何与您的网站交互以发出隐私请求时，应考虑此信息。
 
@@ -77,7 +78,7 @@ Adobe Experience Platform [!DNL Privacy Service] 是为应对企业管理客户�
 
 #### 使用API
 
-[[!DNL Privacy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml) 为使用RESTful API调用创建和管理隐私作业提供了多个端点，允许您以编程方式处理应用程序的隐私法规合规性 [!DNL Experience Cloud] 问题。 有关如何使用API的详细步骤，请参阅 [Privacy ServiceAPI开发人员指南](api/getting-started.md)。
+[! [DNLPrivacy ServiceAPI]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml) 为使用RESTful API调用创建和管理隐私作业提供了多个端点，允许您以编程方式处理应用程序的隐私法规合规性 [!DNL Experience Cloud] 问题。 有关如何使用API的详细步骤，请参阅 [Privacy ServiceAPI开发人员指南](api/getting-started.md)。
 
 #### 使用UI
 
