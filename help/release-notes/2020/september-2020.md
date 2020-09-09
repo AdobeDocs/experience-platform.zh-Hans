@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: September 8, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 64b6b59923d549cdcbf35d2e375529aec8cf81b8
+source-git-commit: 23c7a0d82cb849568d6411c1a09c7a16b86d4954
 workflow-type: tm+mt
-source-wordcount: '397'
-ht-degree: 6%
+source-wordcount: '507'
+ht-degree: 5%
 
 ---
 
@@ -21,6 +21,7 @@ Adobe Experience Platform现有功能更新：
 
 * [[!DNL数据管理]](#governance)
 * [[!DNL目标]](#destinations)
+* [[!DNLPrivacy Service]](#privacy)
 * [[!DNL源]](#sources)
 
 ## [!DNL Data Governance] {#governance}
@@ -46,6 +47,18 @@ Adobe Experience Platform数据治理是用于管理客户数据并确保遵守�
 | UX改进 | 用户可以访问内联表操作，以更轻松地访问主操作，如添加数据、编辑计划和添加区段。 有关详细 [信息，请参](../../rtcdp/destinations/destinations-workspace.md) 阅目标工作区文档。 |
 
 要了解更多信息，请访问目 [标概述](../../rtcdp/destinations/destinations-overview.md)
+
+## [!DNL Privacy Service] {#privacy}
+
+一些法律和组织法规允许用户根据请求从数据存储中访问或删除其个人数据。 Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 您可 [!DNL Privacy Service]以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 支持LGPD（巴西） | 如今，隐私工作可以根据巴西的(LGPD) [!DNL Lei Geral de Proteção de Dados] 法规创造。 这些工作是根据监管法规进行跟踪的 `lgpd_bra`。 |
+
+有关该 [服务的更](../../privacy-service/home.md) 多信息，请参阅Privacy Service概述。
 
 ## 源 {#sources}
 
