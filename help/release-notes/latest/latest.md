@@ -1,71 +1,104 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: Experience Platform发行说明2020年8月10日
+description: Experience Platform发行说明2020年9月9日
 doc-type: release notes
-last-update: August 10, 2020
-author: crhoades, ens28527
+last-update: September 8, 2020
+author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: b4ce4c2e5ff5083f663c2daf23c32a1cec32124c
+source-git-commit: 312794af2cdb111fb81c0aa226dec68db2cbc374
 workflow-type: tm+mt
-source-wordcount: '597'
-ht-degree: 5%
+source-wordcount: '883'
+ht-degree: 4%
 
 ---
 
 
 # Adobe Experience Platform 发行说明
 
-**发行日期：2020 年 8 月 12 日**
+**发行日期：2020 年 9 月 9 日**
 
 Adobe Experience Platform现有功能更新：
 
-- [[!DNL数据科学工作区]](#dsw)
+- [[!DNL数据管理]](#governance)
 - [[!DNL目标]](#destinations)
-- [[!DNL实时客户数据平台]](#rtcdp)
+- [[!DNL可观性洞察]](#observability)
+- [[!DNLPrivacy Service]](#privacy)
+- [[!DNL实时客户用户档案]](#profile)
+- [[!DNL分段服务]](#segmentation)
 - [[!DNL源]](#sources)
 
-## [!DNL Data Science Workspace] {#dsw}
+## [!DNL Data Governance] {#governance}
 
-[!DNL Data Science Workspace] 使用机器学习和人工智能从数据中释放洞察。 集成到Adobe Experience Platform，帮 [!DNL Data Science Workspace] 助您跨Adobe解决方案使用内容和数据资产进行预测。
+Adobe Experience Platform数据治理是用于管理客户数据并确保遵守适用于数据使用的法规、限制和政策的一系列战略和技术。 它在各个层次中都起 [!DNL Experience Platform] 着关键作用，包括编目、数据谱系、数据使用标签、数据访问策略和访问控制营销行动的数据。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| VM改进 [!DNL JupyterLab] | 提高了长运行虚拟机的 [!DNL JupyterLab notebook] 稳定性。 |
+| 数据集标记UI增强功能 | 为了更轻松地处理大型模式，已在数据集标签UI中添加了多个新的排序和过滤控件： <ul><li>根据完整的模式路径按字母顺序对字段排序。</li><li>对字段路径名执行部分搜索。</li><li>筛选没有标签、选定标签或标签类别的字段。</li></ul> |
 
-有关的详细信 [!DNL JupyterLab]息，请参阅 [[!DNL JupyterLab] 用户指南](../../data-science-workspace/jupyterlab/overview.md)。
+有关该 [服务的更多信息](../../data-governance/home.md) ，请参阅数据管理概述。
 
 ## 目标 {#destinations}
 
 在 [Adobe实时数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
 
-**新目标**
+**新增功能**
 
-您可以在新的目的地激活Adobe Experience Platform数据。 有关详细信息，请参阅以下内容：
+| 功能 | 描述 |
+| ------- | ----------- |
+| UX改进 | 用户可以访问内联表操作，以更轻松地访问主操作，如添加数据、编辑计划和添加区段。 有关详细 [信息，请参](../../rtcdp/destinations/destinations-workspace.md) 阅目标工作区文档。 |
 
-| 目标 | 描述 |
-|--- | ---|
-| [!DNL Google Customer Match] | Google客户匹配允许您使用线上和线下数据在Google自有和运营的资产中触及客户并与其重新互动，例如： [!DNL Search]、 [!DNL Shopping]Gmail和YouTube。 <br><br> 请访 [!DNL Google Customer Match] 问目 [标目录中的页](/help/rtcdp/destinations/google-customer-match-destination.md) ，以了解有关目标以及如何在Adobe实时CDP中设置它的更多信息。 |
+要了解更多信息，请访问目 [标概述](../../rtcdp/destinations/destinations-overview.md)
+
+## [!DNL Observability Insights] {#observability}
+
+[!DNL Observability Insights] 允许您通过使用统计指标和活动通知来监视Adobe Experience Platform的事件。
 
 **新增功能**
 
 | 功能 | 描述 |
-|------- | -----------|
-| 自定义文件名编辑器 | 更新至电子邮件营销目标和云激活目标的存储工作流，以便编辑导出文件的名称。 有关详细信息，请参阅激活 [ 工作流中](/help/rtcdp/destinations/activate-destinations.md#configure) 的配置步骤。 |
-| 推荐属性 | 更新至电子邮件营销目标和云激活目标的存储工作流，以显示您要添加到导出文件的推荐属性。 有关详细信息，请参阅激活 [工作流中的](/help/rtcdp/destinations/activate-destinations.md#select-attributes) “选择属性”步骤。 |
+| --- | --- |
+| AdobeI/O事件通知 | [!DNL Observability Insights] 利用AdobeI/O事件为多个Experience Platform服务创建事件通知。 通知负载将发送到已配置的网络挂接，然后您可以使用它来自动执行进一步的下游流程。 有关更多 [信息，请参](../../observability/notifications/overview.md) 阅通知概述。 |
 
-## [!DNL Real-time Customer Data Platform] {#rtcdp}
+有关该 [[!DNL Observability Insights] 服务的](../../observability/home.md) 更多信息，请参阅概述。
 
-Experience Platform实时客户数据平台([!DNL Real-time CDP]Real-time Customer Data Platform)以Adobe为构建基础，可帮助公司将已知和未知的数据整合在一起，在客户旅程中通过智能决策激活客户用户档案。 [!DNL Real-time CDP] 结合多个企业数据源，实时创建客户用户档案。 然后，根据这些用户档案构建的细分可以发送到下游目标，以便在所有渠道和设备上提供一对一的个性化客户体验。
+## [!DNL Privacy Service] {#privacy}
+
+一些法律和组织法规允许用户根据请求从数据存储中访问或删除其个人数据。 Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 您可 [!DNL Privacy Service]以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| IAB TCF 2.0支持 | [!DNL Real-time CDP] 现在是2.0版(TCF)的注 [!DNL Transparency & Consent Framework] 册供应商，如(IAB) [!DNL Interactive Advertising Bureau] 所述。 您可以配置数据操作和用户档案模式，以接受由CMP生成的客户同意数据，并在将区段激活到下游目标时强制执行客户同意偏好。 有关详细信 [息，请参见实时CDP中的IAB TCF 2](../../rtcdp/privacy/iab/overview.md) .0支持概述。 |
+| 支持LGPD（巴西） | 如今，隐私工作可以根据巴西的(LGPD) [!DNL Lei Geral de Proteção de Dados] 法规创造。 这些工作是根据监管法规进行跟踪的 `lgpd_bra`。 |
 
-有关的详细信 [!DNL Real-time CDP]息，请参阅 [[!DNL Real-time CDP] 概述](../../rtcdp/overview.md)。
+有关该 [服务的更](../../privacy-service/home.md) 多信息，请参阅Privacy Service概述。
+
+## 实时客户资料 {#profile}
+
+Adobe Experience Platform使您能够为客户提供协调、一致和相关的体验，无论客户在何处或何时与您的品牌互动。 您 [!DNL Real-time Customer Profile]可以看到每个客户的整体视图，该渠道组合了多个的数据，包括在线、离线、CRM和第三方数据。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供可操作、有时间戳的帐户。
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 用户档案查看器 | 用户档案查看器在平台UI中已更新为完全自定义的仪表板。 用户现在可以选择执行以下任务: <ul><li>更新基本信息构件中选定的标准属性和自定义属性。</li><li>创建、编辑和删除自定义构件</li><li>调整构件大小并重新排列构件</li></ul> |
+
+有关更多信息( [!DNL Real-time Customer Profile]包括有关使用数据的教程和最 [!DNL Profile] 佳实践)，请阅 [读实时客户用户档案概述](../../profile/home.md)。
+
+## 分段服务 {#segmentation}
+
+Adobe Experience Platform分段服务提供用户界面和RESTful API，使您能够构建细分并根据数据生成 [!DNL Real-time Customer Profile] 受众。 这些细分集中配置并维护， [!DNL Platform]使任何Adobe应用程序都能轻松访问它们。
+
+[!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准，定义特定的用户档案子集。 细分可以基于记录数据（如人口统计信息）或表示客户与您品牌互动的时间序列事件。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 导出作业 | 添加了标记，以允许将区段评估为导出作业的一部分。 因此，用户可以在单个作业中运行分段和导出。 |
+| 合并策略 | 可以在单个批处理分段作业中包含多个合并策略。 |
+
+有关的详细信 [!DNL Segmentation Service]息，请参阅分 [段概述](../../segmentation/home.md)
 
 ## 源 {#sources}
 
@@ -77,8 +110,7 @@ Adobe Experience Platform可以从外部来源收集数据，同时允许您使�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 流运行监控 | 用户可以监视所有流运行并查看每个运行的详细视图，包括完成状态、运行持续时间、已处理文件的列表、错误和度量。 有关详细 [信息，请参见](../../sources/tutorials/ui/monitor.md) “监视数据流”文档。 |
-| 流运行通知 | 用户可以订阅事件并注册网络挂接，以接收有关流运行的状态、度量和错误的实时通知。 |
-| UI目录改进 | 对源目录屏幕进行更新，以便更轻松地访问选定对象的主要操作。 |
+| 自动映射 | [!DNL Platform] 根据用户选择的目标模式或数据集，为数据获取工作流期间的自动映射提供智能建议。 您可以手动调整灵活的自动映射规则以适合您的使用情况。 |
+| UX改进 | 用户可以访问内联表操作，以更轻松地访问主操作，如添加数据、编辑计划和添加区段。 有关详细 [信息，请参见](../../sources/tutorials/ui/monitor.md) “监视数据流”文档。 |
 
 要进一步了解源，请参阅 [源概述](../../sources/home.md)。
