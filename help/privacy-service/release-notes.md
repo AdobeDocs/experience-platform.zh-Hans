@@ -4,21 +4,29 @@ solution: Experience Platform
 title: Privacy Service发行说明
 topic: release notes
 translation-type: tm+mt
-source-git-commit: 4cfa64e3371496e2408fe8fee64d49883334917c
+source-git-commit: 6eee7e903d36ed641c9f8e6120f549c02cb4bce4
 workflow-type: tm+mt
-source-wordcount: '511'
-ht-degree: 5%
+source-wordcount: '538'
+ht-degree: 6%
 
 ---
 
 
 # [!DNL Privacy Service] 发行说明
 
-此文档包含有关Adobe Experience Platform新增功能 [!DNL Privacy Service]的信息，以及增强和重要错误修复。
+本文档包含有关Adobe Experience Platform的新增功 [!DNL Privacy Service]能、增强和重要错误修复的信息。
 
 >[!NOTE]
 >
 >其他服务的最新 [!DNL Experience Platform] 发行说明可在此 [找到](../release-notes/latest/latest.md)。
+
+## 2020年9月9日
+
+### 新增功能
+
+| 功能 | 描述 |
+| --- | --- |
+| 支持LGPD（巴西） | 如今，隐私工作可以根据巴西的(LGPD) [!DNL Lei Geral de Proteção de Dados] 法规创造。 这些工作是根据监管法规进行跟踪的 `lgpd_bra`。 |
 
 ## 2020 年 4 月 8 日
 
