@@ -51,7 +51,7 @@ In order to address this need, Experience Platform provides **sandboxes** which 
 
 ## Experience PlatformAPI中的沙箱
 
-在调用Experience PlatformAPI时，必须在头下提供沙箱名称 `x-sandbox-name`。 例如，当调用[! [DNL Catalog Service API]视图“生产”沙箱内的所有数据集时](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) ，沙箱的名称(“prod”)将作为API请求中的头提供：
+在调用Experience PlatformAPI时，必须在头下提供沙箱名称 `x-sandbox-name`。 例如，当调用[[!DNL Catalog Service API]]视图“生产”沙箱内的所有数据集时](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) ，沙箱的名称(“prod”)将作为API请求中的头提供：
 
 ```shell
 curl -X GET \
