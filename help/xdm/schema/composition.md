@@ -5,7 +5,7 @@ title: 模式合成基础
 topic: overview
 description: 本文档介绍了体验数据模型(XDM)模式，以及构成要在Adobe Experience Platform使用的模式的构件、原则和最佳做法。
 translation-type: tm+mt
-source-git-commit: 4251dc292ead3ce4dc8aef68ff04bb774047160d
+source-git-commit: 4a76101cb8a7afb947bdce263a73f79d931db154
 workflow-type: tm+mt
 source-wordcount: '2839'
 ht-degree: 0%
@@ -173,7 +173,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 * 字符串
 * 整数
-* 数值
+* 双精度
 * 布尔值
 * 阵列
 * 对象
