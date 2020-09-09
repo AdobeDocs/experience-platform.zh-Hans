@@ -3,12 +3,12 @@ title: Adobe Experience Platform 发行说明
 description: Experience Platform发行说明2020年9月9日
 doc-type: release notes
 last-update: September 8, 2020
-author: crhoades, ens28527
+author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 23c7a0d82cb849568d6411c1a09c7a16b86d4954
+source-git-commit: 9a9b1294507986723c1e4d1230a854630131be3a
 workflow-type: tm+mt
-source-wordcount: '507'
-ht-degree: 5%
+source-wordcount: '805'
+ht-degree: 4%
 
 ---
 
@@ -19,10 +19,12 @@ ht-degree: 5%
 
 Adobe Experience Platform现有功能更新：
 
-* [[!DNL数据管理]](#governance)
-* [[!DNL目标]](#destinations)
-* [[!DNLPrivacy Service]](#privacy)
-* [[!DNL源]](#sources)
+- [[!DNL数据管理]](#governance)
+- [[!DNL目标]](#destinations)
+- [[!DNLPrivacy Service]](#privacy)
+- [[!DNL实时客户用户档案]](#profile)
+- [[!DNL分段服务]](#segmentation)
+- [[!DNL源]](#sources)
 
 ## [!DNL Data Governance] {#governance}
 
@@ -31,7 +33,7 @@ Adobe Experience Platform数据治理是用于管理客户数据并确保遵守�
 **新增功能**
 
 | 功能 | 描述 |
-| --- | --- |
+| ------- | ----------- |
 | 数据集标记UI增强功能 | 为了更轻松地处理大型模式，已在数据集标签UI中添加了多个新的排序和过滤控件： <ul><li>根据完整的模式路径按字母顺序对字段排序。</li><li>对字段路径名执行部分搜索。</li><li>筛选没有标签、选定标签或标签类别的字段。</li></ul> |
 
 有关该 [服务的更多信息](../../data-governance/home.md) ，请参阅数据管理概述。
@@ -48,6 +50,31 @@ Adobe Experience Platform数据治理是用于管理客户数据并确保遵守�
 
 要了解更多信息，请访问目 [标概述](../../rtcdp/destinations/destinations-overview.md)
 
+## 实时客户资料 {#profile}
+
+Adobe Experience Platform使您能够为客户提供协调、一致和相关的体验，无论客户在何处或何时与您的品牌互动。 您 [!DNL Real-time Customer Profile]可以看到每个客户的整体视图，该渠道组合了多个的数据，包括在线、离线、CRM和第三方数据。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供可操作、有时间戳的帐户。
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 用户档案查看器 | 用户档案查看器在平台UI中已更新为完全自定义的仪表板。 用户现在可以选择执行以下任务: <ul><li>更新基本信息构件中选定的标准属性和自定义属性。</li><li>创建、编辑和删除自定义构件</li><li>调整构件大小并重新排列构件</li></ul> |
+
+有关更多信息( [!DNL Real-time Customer Profile]包括有关使用数据的教程和最 [!DNL Profile] 佳实践)，请阅 [读实时客户用户档案概述](../../profile/home.md)。
+
+## 分段服务 {#segmentation}
+
+Adobe Experience Platform分段服务提供用户界面和RESTful API，使您能够构建细分并根据数据生成 [!DNL Real-time Customer Profile] 受众。 这些细分集中配置并维护， [!DNL Platform]使任何Adobe应用程序都能轻松访问它们。
+
+[!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准，定义特定的用户档案子集。 细分可以基于记录数据（如人口统计信息）或表示客户与您品牌互动的时间序列事件。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 导出作业 | 添加了标记，以允许将区段评估为导出作业的一部分。 因此，用户可以在单个作业中运行分段和导出。 |
+| 合并策略 | 可以在单个批处理分段作业中包含多个合并策略。 |
+
+有关的详细信 [!DNL Segmentation Service]息，请参阅分 [段概述](../../segmentation/home.md)
+
 ## [!DNL Privacy Service] {#privacy}
 
 一些法律和组织法规允许用户根据请求从数据存储中访问或删除其个人数据。 Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 您可 [!DNL Privacy Service]以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
@@ -55,7 +82,7 @@ Adobe Experience Platform数据治理是用于管理客户数据并确保遵守�
 **新增功能**
 
 | 功能 | 描述 |
-| --- | --- |
+| ------- | ----------- |
 | 支持LGPD（巴西） | 如今，隐私工作可以根据巴西的(LGPD) [!DNL Lei Geral de Proteção de Dados] 法规创造。 这些工作是根据监管法规进行跟踪的 `lgpd_bra`。 |
 
 有关该 [服务的更](../../privacy-service/home.md) 多信息，请参阅Privacy Service概述。
