@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: September 8, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 9a9b1294507986723c1e4d1230a854630131be3a
+source-git-commit: 9436779e91bf82382056acd526671b30b55e11d4
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '883'
 ht-degree: 4%
 
 ---
@@ -21,6 +21,7 @@ Adobe Experience Platform现有功能更新：
 
 - [[!DNL数据管理]](#governance)
 - [[!DNL目标]](#destinations)
+- [[!DNL可观性洞察]](#observability)
 - [[!DNLPrivacy Service]](#privacy)
 - [[!DNL实时客户用户档案]](#profile)
 - [[!DNL分段服务]](#segmentation)
@@ -50,6 +51,30 @@ Adobe Experience Platform数据治理是用于管理客户数据并确保遵守�
 
 要了解更多信息，请访问目 [标概述](../../rtcdp/destinations/destinations-overview.md)
 
+## [!DNL Observability Insights] {#observability}
+
+[!DNL Observability Insights] 允许您通过使用统计指标和活动通知来监视Adobe Experience Platform的事件。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| AdobeI/O事件通知 | [!DNL Observability Insights] 利用AdobeI/O事件为多个Experience Platform服务创建事件通知。 通知负载将发送到已配置的网络挂接，然后您可以使用它来自动执行进一步的下游流程。 有关更多 [信息，请参](../../observability/notifications/overview.md) 阅通知概述。 |
+
+有关该 [[!DNL Observability Insights] 服务的](../../observability/home.md) 更多信息，请参阅概述。
+
+## [!DNL Privacy Service] {#privacy}
+
+一些法律和组织法规允许用户根据请求从数据存储中访问或删除其个人数据。 Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 您可 [!DNL Privacy Service]以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 支持LGPD（巴西） | 如今，隐私工作可以根据巴西的(LGPD) [!DNL Lei Geral de Proteção de Dados] 法规创造。 这些工作是根据监管法规进行跟踪的 `lgpd_bra`。 |
+
+有关该 [服务的更](../../privacy-service/home.md) 多信息，请参阅Privacy Service概述。
+
 ## 实时客户资料 {#profile}
 
 Adobe Experience Platform使您能够为客户提供协调、一致和相关的体验，无论客户在何处或何时与您的品牌互动。 您 [!DNL Real-time Customer Profile]可以看到每个客户的整体视图，该渠道组合了多个的数据，包括在线、离线、CRM和第三方数据。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供可操作、有时间戳的帐户。
@@ -74,18 +99,6 @@ Adobe Experience Platform分段服务提供用户界面和RESTful API，使您�
 | 合并策略 | 可以在单个批处理分段作业中包含多个合并策略。 |
 
 有关的详细信 [!DNL Segmentation Service]息，请参阅分 [段概述](../../segmentation/home.md)
-
-## [!DNL Privacy Service] {#privacy}
-
-一些法律和组织法规允许用户根据请求从数据存储中访问或删除其个人数据。 Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户界面，帮助您管理来自客户的这些数据请求。 您可 [!DNL Privacy Service]以提交从Adobe Experience Cloud应用程序访问和删除私人或个人客户数据的请求，从而促进自动遵守法律和组织隐私法规。
-
-**新增功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 支持LGPD（巴西） | 如今，隐私工作可以根据巴西的(LGPD) [!DNL Lei Geral de Proteção de Dados] 法规创造。 这些工作是根据监管法规进行跟踪的 `lgpd_bra`。 |
-
-有关该 [服务的更](../../privacy-service/home.md) 多信息，请参阅Privacy Service概述。
 
 ## 源 {#sources}
 
