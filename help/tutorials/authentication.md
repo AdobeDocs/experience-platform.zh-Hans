@@ -5,7 +5,7 @@ title: 验证和访问Experience PlatformAPI
 topic: tutorial
 description: '此文档提供了一个分步教程，用于获取对Adobe Experience Platform开发人员帐户的访问权，以便调用Experience PlatformAPI。 '
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 76e6e1a5484dce0a4640c2ce1f43cf7d84e049bf
 workflow-type: tm+mt
 source-wordcount: '878'
 ht-degree: 1%
@@ -156,7 +156,7 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 
 ## 使用Postman进行JWT身份验证和API调用
 
-[Postman](https://www.getpostman.com/) 是使用REST风格的API的常用工具。 此 [中篇文章](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) 介绍如何设置邮递员以自动执行JWT身份验证，并使用它使用Adobe Experience PlatformAPI。
+[Postman](https://www.postman.com/) 是使用REST风格的API的常用工具。 此 [中篇文章](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f) 介绍如何设置邮递员以自动执行JWT身份验证，并使用它使用Adobe Experience PlatformAPI。
 
 ## 后续步骤
 
