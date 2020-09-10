@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 细分作业
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 3926c989a05ee97f2a09c0ab38d6a444674563cb
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '1002'
 ht-degree: 3%
 
 ---
@@ -191,7 +191,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `segmentId` | 要为其创建区段作业的区段定义的ID。 有关段定义的更多信息，请参阅 [段定义端点指南](./segment-definitions.md)。 |
+| `segmentId` | 要为其创建区段作业的区段定义的ID。 这些段定义可以属于不同的合并策略。 有关段定义的更多信息，请参阅 [段定义端点指南](./segment-definitions.md)。 |
 
 **响应**
 
