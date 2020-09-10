@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 将数据引入Adobe Experience Platform
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 0816781620ca73a0511290d8d04b8f1a96db8a11
 workflow-type: tm+mt
-source-wordcount: '1278'
+source-wordcount: '1279'
 ht-degree: 0%
 
 ---
@@ -32,17 +32,19 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 >
 >单击搜索栏旁边的筛选器图标，以使用筛选功能仅视图那些启用的数据集 [!DNL Profile]。
 
-![视图所有数据集](../images/tutorials/ingest-batch-data/datasets_workspace.png)
+![视图所有数据集](../images/tutorials/ingest-batch-data/datasets-overview.png)
 
 ## 创建数据集
 
 要创建数据集，请单 **[!UICONTROL 击“数据集]** ”工作区右上角的“创建数据集”。
 
+![](../images/tutorials/ingest-batch-data/click-create-datasets.png)
+
 在“创 **[!UICONTROL 建数据集]** ”屏幕上，选择“从模式创[!UICONTROL 建数据集]”还是“从CSV[!UICONTROL 文件创建数据集]”。
 
 在本教程中，将使用模式创建数据集。 单击 **[!UICONTROL 从模式创建数据集]** ，继续。
 
-![选择数据源](../images/tutorials/ingest-batch-data/create_dataset.png)
+![选择数据源](../images/tutorials/ingest-batch-data/create-dataset.png)
 
 ## 选择数据集模式
 
@@ -50,7 +52,7 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 
 选择要使用的模式旁的单选按钮后，单击“下一 **[!UICONTROL 步”]**。
 
-![选择模式](../images/tutorials/ingest-batch-data/select_schema.png)
+![选择模式](../images/tutorials/ingest-batch-data/select-schema.png)
 
 ## 配置数据集
 
@@ -64,7 +66,7 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 
 数据集有名称和说明后，单击“完 **[!UICONTROL 成”]**。
 
-![配置数据集](../images/tutorials/ingest-batch-data/configure_dataset.png)
+![配置数据集](../images/tutorials/ingest-batch-data/configure-dataset.png)
 
 ## 数据集活动
 
@@ -74,7 +76,7 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 
 “信息”选项卡中还有 **[!UICONTROL 用户档案]** 切换选项，用于启用数据集以与一起使用 [!DNL Real-time Customer Profile]。 此切换的使用 [!DNL Real-time Customer Profile]将在后面的部分中进行更详细的说明。
 
-![数据集活动](../images/tutorials/ingest-batch-data/dataset_activity.png)
+![数据集活动](../images/tutorials/ingest-batch-data/sample-dataset.png)
 
 ## 为 [!DNL Real-time Customer Profile]
 
@@ -86,15 +88,15 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 
 要启用数据集 [!DNL Real-time Customer Profile]，请单击“ **[!UICONTROL 信息]** ”选项卡中 **[!UICONTROL 的用户档案]** 切换。
 
-![用户档案切换](../images/tutorials/ingest-batch-data/enable_dataset_unified_profile.png)
+![用户档案切换](../images/tutorials/ingest-batch-data/dataset-profile-toggle.png)
 
 将显示一个对话框，要求您确认要为启用数据集 [!DNL Real-time Customer Profile]。
 
-![启用用户档案对话框](../images/tutorials/ingest-batch-data/confirm_dataset_enable.png)
+![启用用户档案对话框](../images/tutorials/ingest-batch-data/enable-dataset-for-profile.png)
 
 单击 **[!UICONTROL “启]** 用”，切换将变为蓝色，表示它已打开。
 
-![已启用用户档案](../images/tutorials/ingest-batch-data/dataset_enabled.png)
+![已启用用户档案](../images/tutorials/ingest-batch-data/profile-enabled-dataset.png)
 
 ## 将数据添加到数据集
 
@@ -106,13 +108,13 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 >
 >平台支持两种文件类型进行数据获取，分别采用镶木地板或JSON。 一次最多可以添加五个文件，每个文件的最大文件大小为10 GB。
 
-![“添加数据”选项卡](../images/tutorials/ingest-batch-data/add_data.png)
+![“添加数据”选项卡](../images/tutorials/ingest-batch-data/drag-and-drop.png)
 
 ## 上传文件
 
 拖放（或浏览并选择）要上传的镶木或JSON文件后，将立 [!DNL Platform] 即开始处理该文件，并且“ **[!UICONTROL 上传]** ”对话框将显示在“添加数 **[!UICONTROL 据]** ”选项卡上，其中显示文件上传的进度。
 
-![上传对话框](../images/tutorials/ingest-batch-data/uploading.png)
+![上传对话框](../images/tutorials/ingest-batch-data/uploading-file.png)
 
 ## 数据集指标
 
@@ -120,7 +122,7 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 
 该选项卡的底部有一个列表，显示 **[!UICONTROL 刚通过]** “将数据添加到数据集” [过程摄取的数据的批ID](#add-data-to-dataset) 。 还包括与批相关的信息，包括 **[!UICONTROL 摄取日]** 期、摄取的 **[!UICONTROL 记录数]**&#x200B;和当前批状 **[!UICONTROL 态]**。
 
-![数据集指标](../images/tutorials/ingest-batch-data/batch_loading.png)
+![数据集指标](../images/tutorials/ingest-batch-data/batch-id.png)
 
 ## 批详细信息
 
@@ -130,7 +132,7 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 
 要返回到“数 **[!UICONTROL 据集活动]** ”屏幕，请单击痕迹导航中的数&#x200B;**[!UICONTROL 据集名称(]** Loyalty Details)。
 
-![批处理概述](../images/tutorials/ingest-batch-data/batch_overview.png)
+![批处理概述](../images/tutorials/ingest-batch-data/batch-details.png)
 
 ## 预览数据集
 
@@ -138,7 +140,7 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 
 单击 **[!UICONTROL 预览数据集]** ，打开一个对话框，其中显示数据集中的样本数据。 如果数据集是使用模式创建的，则数据集模式的详细信息将显示在预览的左侧。 您可以使用箭头展开模式以查看模式结构。 预览数据中的每个列标题都表示数据集中的一个字段。
 
-![数据集详细信息](../images/tutorials/ingest-batch-data/dataset_details.png)
+![数据集详细信息](../images/tutorials/ingest-batch-data/dataset-preview.png)
 
 ## 后续步骤和其他资源
 
@@ -151,3 +153,4 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 >以 [!DNL Platform] 下视频中显示的UI已过期。 有关最新的UI屏幕截图和功能，请参阅上面的文档。
 
 >[!VIDEO](https://video.tv.adobe.com/v/27269?quality=12&learn=on)
+拖动
