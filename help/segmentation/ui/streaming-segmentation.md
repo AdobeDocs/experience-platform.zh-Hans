@@ -5,9 +5,9 @@ title: 流细分
 topic: ui guide
 description: Adobe Experience Platform的流式细分使您能够近乎实时地进行细分，同时专注于数据的丰富性。 利用流细分，当数据进入平台时，现在会发生细分资格，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传入平台时评估大多数细分规则，这意味着，在不运行计划的细分作业的情况下，细分成员资格将保持最新。
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: c7e8cf31f4c03eec9b24064c6888e09a7070aaa5
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '831'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,8 @@ ht-degree: 0%
 | ---------- | -------- |
 | 单事件查询 | 回顾窗限于 **七天**。 |
 | 查询事件历史 | <ul><li>回顾窗限于一 **天**。</li><li>事件之间必 **须存** 在严格的时间排序条件。</li><li>只允许在事件之间进行简单的时间排序（前后）。</li><li>不能否定 **个别事件** 。 但是，整个查询 **可以** 被否定。</li></ul> |
+
+如果修改了区段定义，使其不再符合流式分段的条件，则区段定义将自动从“流式”切换为“批处理”。
 
 ## 流细分细分细分
 
