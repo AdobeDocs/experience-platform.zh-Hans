@@ -5,9 +5,9 @@ title: 使用模式模式编辑器定义两个模式之间的关系
 description: 此文档提供了一个教程，用于使用Experience Platform用户界面中的模式编辑器定义两个模式之间的关系。
 topic: tutorials
 translation-type: tm+mt
-source-git-commit: d946f5014707bf73f373d712b287de259c3df5cd
+source-git-commit: 348ac63c0b13ddf87bf786a42688962b0b220ded
 workflow-type: tm+mt
-source-wordcount: '933'
+source-wordcount: '910'
 ht-degree: 0%
 
 ---
@@ -27,29 +27,29 @@ ht-degree: 0%
 
 * [Experience Platform中的XDM系统](../home.md):XDM及其实施概述 [!DNL Experience Platform]。
 * [模式合成基础](../schema/composition.md):介绍XDM模式的构件。
-* [使用模式编辑器创建模式](create-schema-ui.md):一个教程，其中介绍使用的基础知 [!DNL Schema Editor]识。
+* [使用以下图标创建模式 [!DNL Schema Editor]](create-schema-ui.md):一个教程，其中介绍使用的基础知 [!DNL Schema Editor]识。
 
 ## 定义源和目标模式
 
-您应已创建将在关系中定义的两个模式。 为便于演示，本教程在组织的忠诚项目(在“忠诚会员”模式中定义)成员与其喜爱的酒店(在“[!UICONTROL 忠诚会员]”模式中定义)之间创建[!DNL Hotels]一种关系。
+您应已创建将在关系中定义的两个模式。 为便于演示，本教程在组织的忠诚度项目(在“”模式中定义)的成员与其最喜爱的酒店(在“”模式中定义)之间[!DNL Loyalty Members][!DNL Hotels]创建关系。
 
 >[!IMPORTANT]
 >
 >要建立关系，两个模式必须定义主身份并启用 [!DNL Real-time Customer Profile]。 如果您需要有关如何 [相应配置模式的指导](./create-schema-ui.md#profile) ，请参阅模式创建教程中有关启用模式以在用户档案中使用的部分。
 
-模式关系由源模式内的专用字 **段表示** ，该专用字段引用目标模式 **内的其他字段**。 在接下来的步骤中，“[!UICONTROL 忠诚会员]”将是源模式，而“[!DNL Hotels]”将充当目标模式。
+模式关系由源模式内的专用字 **段表示** ，该专用字段引用目标模式 **内的其他字段**。 在接下来的步骤中，[!DNL Loyalty Members]“”将是源模式，而“[!DNL Hotels]”将充当目标模式。
 
 为便于参考，以下各节将介绍本教程中在定义关系之前使用的每个模式的结构。
 
-### [!UICONTROL 忠诚会员] 模式
+### [!DNL Loyalty Members] 模式
 
-源模式“[!UICONTROL Loyalty]Members”基于XDM [!DNL Individual Profile] 类，是在教程中构建的用于在UI [中创建模式的模式](create-schema-ui.md)。 它在其“[!UICONTROL \_tenantId]”命名空间下包含一个“loyalty”对象，该对象包括若干特定于忠诚度的字段。 其中一个字段“loyaltyId”在“电子邮件”模式下充当命名空间的主[!UICONTROL 要标]识。 如“模式 **[!UICONTROL 属性]**”下所示，此模式已在中启用 [!DNL Real-time Customer Profile]。
+源模式“[!DNL Loyalty Members]”基于类 [!DNL XDM Individual Profile] ，是在教程中构建的用于在UI [中创建模式的模式](create-schema-ui.md)。 它在其命名空间 `loyalty` 下包含一个 `_tenantId` 对象，该对象包括若干特定于忠诚度的字段。 其中一个字段 `loyaltyId`在“电子邮件”模式下充当命名空间的主 [!UICONTROL 要标识] 。 如“模式 **[!UICONTROL 属性]**”下所示，此模式已在中启用 [!DNL Real-time Customer Profile]。
 
 ![](../images/tutorials/relationship/loyalty-members.png)
 
-### 酒店模式
+### [!DNL Hotels] 模式
 
-目标模式[!UICONTROL “]Hotels”基于自定义“[!UICONTROL Hotels]”类，并包含描述酒店的字段。 “[!DNL hotelId]”字段在自定义“”命名空间下充当模式的主要[!DNL hotelId]标识。 与“[!UICONTROL 忠诚会员]”一样，此模式也已启用 [!DNL Real-time Customer Profile]。
+目标模式[!DNL Hotels]“”基于自定义“[!DNL Hotels]”类，并包含描述酒店的字段。 在自 `hotelId` 定义模式下，该字段用作该命名空间的主标 `hotelId` 识。 与模式 [!DNL Loyalty Members] 一样，此模式也已启用 [!DNL Real-time Customer Profile]。
 
 ![](../images/tutorials/relationship/hotels.png)
 
@@ -57,31 +57,31 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->仅当源模式没有专用的字符串类型字段用作对其他模式的引用时，才需要执行此步骤。 如果此字段已在源模式中定义，请跳到定义关系字 [段的下一步](#relationship-field)。
+>仅当源模式没有专用的字符串类型字段用作目标模式的引用时，才需要执行此步骤。 如果此字段已在源模式中定义，请跳到定义关系字 [段的下一步](#relationship-field)。
 
 要定义两个模式之间的关系，源模式必须有一个专用字段，用作对目标模式的引用。 您可以通过创建新混音将此字段添加到源模式。
 
-开始, **[!UICONTROL 方法是]** 在Mixins **[!UICONTROL 部分中]** 单击Add。
+开始，方 **[!UICONTROL 法是]** 在Mixins **[!UICONTROL 部分选择]** Add。
 
 ![](../images/tutorials/relationship/loyalty-add-mixin.png)
 
-将出 **[!UICONTROL 现“添加混合]** ”对话框。 在此处，单击“ **[!UICONTROL 新建混音”]**。 在显示的文本字段中，输入新混音的显示名称和说明。 完成 **[!UICONTROL 后，单击]** “添加混音”。
+将出 [!UICONTROL 现“添加混合] ”对话框。 在此处，选择“ **[!UICONTROL 创建新混音”]**。 在显示的文本字段中，输入新混音的显示名称和说明。 完成 **[!UICONTROL 后选择]** “添加混音”。
 
 <img src="../images/tutorials/relationship/loyalty-create-new-mixin.png" width="750"><br>
 
-画布将重新显示，“[!UICONTROL 忠诚度]”将显示在 **[!UICONTROL Mixins部分]** 。 单击混音名称，然后单 **[!UICONTROL 击根级]** “Loyalty Members”字段旁[!UICONTROL 的“添加]字段”。
+画布将重新显示，“[!DNL Favorite Hotel]”显示在“ **[!UICONTROL Mixins]** ”部分。 选择混音名称，然后选 **[!UICONTROL 择根级]** 字段旁的“添加 `Loyalty Members` 字段”。
 
 ![](../images/tutorials/relationship/loyalty-add-field.png)
 
-画布中的“\_tenantId”命名空间下将显示一个新字段。 在“ **[!UICONTROL 字段属性]**”下，提供字段的字段名称和显示名称，并将其类型设置为“[!UICONTROL 字符串]”。
+画布中的命名空间下将显示一个新字 `_tenantId` 段。 在“ **[!UICONTROL 字段属性]**”下，提供字段的字段名称和显示名称，并将其类型设置为“[!UICONTROL 字符串]”。
 
 ![](../images/tutorials/relationship/relationship-field-details.png)
 
-When finished, click **[!UICONTROL Apply]**.
+完成后，选择“ **[!UICONTROL 应用]**”。
 
 ![](../images/tutorials/relationship/relationship-field-apply.png)
 
-更新的“[!UICONTROL favoriteHotel]”字段显示在画布中。 单击 **[!UICONTROL 保存]** ，以完成对模式所做的更改。
+更新后 `favoriteHotel` 的字段将显示在画布中。 选择 **[!UICONTROL 保存]** ，以完成对模式所做的更改。
 
 ![](../images/tutorials/relationship/relationship-field-save.png)
 
@@ -89,15 +89,15 @@ When finished, click **[!UICONTROL Apply]**.
 
 在源模式定义了专用的引用字段后，您可以将其指定为关系字段。
 
-在画布中选择引用字段，然后在字段属性下 **[!UICONTROL 向下滚动]** ，直到显 **[!UICONTROL 示关系]** 复选框。 选中此复选框可显示配置关系字段所需的参数。
+在画布 `favoriteHotel` 中选择字段，然后在字段属性下 **[!UICONTROL 向下滚动]** ，直到 **[!UICONTROL 出现“关系]** ”复选框。 选中此复选框可显示配置关系字段所需的参数。
 
 ![](../images/tutorials/relationship/relationship-checkbox.png)
 
-选择引用 **[!UICONTROL 模式的下拉]** 框，然后选择关系的目标模式([!UICONTROL 本例中]为“Hotels”)。 如果目标模式已启用用户档案 **** ，则“引用标识命名空间”字段将自动设置为目标模式主标识的命名空间。 如果模式未定义主标识，则必须从下拉菜单中手动选择您计划使用的命名空间。 Click **[!UICONTROL Apply]** when finished.
+选择引用 **[!UICONTROL 模式的下拉]** 框，然后选择关系的目标模式([!DNL Hotels]本例中为“”)。 如果为启用目标模式 [!DNL Profile]，则引 **[!UICONTROL 用标识]** 命名空间字段将自动设置为目标模式的主标识命名空间。 如果模式未定义主标识，则必须从下拉菜单中手动选择您计划使用的命名空间。 完成后 **[!UICONTROL 选择]** “应用”。
 
 ![](../images/tutorials/relationship/reference-schema-id-namespace.png)
 
-该字段在画布中显示为关系，显示目标模式的名称和引用标识命名空间。 单击 **[!UICONTROL 保存]** ，以保存更改并完成工作流。
+现 `favoriteHotel` 在，该字段在画布中高亮显示为关系，显示目标模式的名称和引用标识命名空间。 选择 **[!UICONTROL 保存]** ，以保存更改并完成工作流。
 
 ![](../images/tutorials/relationship/relationship-save.png)
 
