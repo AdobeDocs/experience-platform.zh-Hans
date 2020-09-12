@@ -2,12 +2,13 @@
 product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 发行说明
+breadcrumb-title: Platform Release Notes
 user-guide-description: Monthly release notes for Adobe Experience Platform.
 translation-type: tm+mt
-source-git-commit: 312794af2cdb111fb81c0aa226dec68db2cbc374
+source-git-commit: 1565c19fdd07935e503e9faa2d9f748331d7f933
 workflow-type: tm+mt
 source-wordcount: '26'
-ht-degree: 96%
+ht-degree: 100%
 
 ---
 
@@ -15,7 +16,7 @@ ht-degree: 96%
 # Adobe Experience Platform 发行说明 {#release-notes}
 
 * [2020 年 9 月](latest/latest.md)
-* [2020年8月](2020/august-2020.md)
+* [2020 年 8 月](2020/august-2020.md)
 * [2020 年 7 月](2020/july-2020.md)
 * [2020 年 6 月](2020/june-2020.md)
 * [2020 年 5 月](2020/may-2020.md)
