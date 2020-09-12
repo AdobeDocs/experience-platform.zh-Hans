@@ -2,12 +2,13 @@
 product: experience-platform
 audience: user
 user-guide-title: 访问控制在Adobe Experience Platform帮助中
+breadcrumb-title: Access Control Guide
 user-guide-description: Access control for Adobe Experience Platform is provided through the Adobe Admin Console. This functionality leverages product profiles in Admin Console, which link users with permissions and sandboxes.
 translation-type: tm+mt
-source-git-commit: bd3c31e7d39f7f66d755356a3dbb754e97c196fb
+source-git-commit: 1565c19fdd07935e503e9faa2d9f748331d7f933
 workflow-type: tm+mt
 source-wordcount: '82'
-ht-degree: 3%
+ht-degree: 14%
 
 ---
 
