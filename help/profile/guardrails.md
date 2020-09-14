@@ -4,9 +4,9 @@ solution: Adobe Experience Platform
 title: Experience Platform准则
 topic: guide
 translation-type: tm+mt
-source-git-commit: d9e4812e3506de3082670a8afde5480cd8f865d6
+source-git-commit: 51111b2e831a37949150b107eb76711e2470523c
 workflow-type: tm+mt
-source-wordcount: '1200'
+source-wordcount: '1201'
 ht-degree: 1%
 
 ---
@@ -96,5 +96,5 @@ Adobe Experience Platform提供了一系列护栏，帮助您避免创建无法�
 
 | 瓜德赖尔 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 每维实体的最大总大小 | 1GB | 柔和 | **维度实体的建议最大总大小为1GB。** 引入大维度实体将导致系统性能降低。 例如，不建议将10GB产品目录作为维实体加载。 |
+| 所有维图元的最大总大小 | 5GB | 柔和 | **建议所有维实体的最大总大小为5GB。** 引入大维度实体将导致系统性能降低。 例如，不建议将10GB产品目录作为维实体加载。 |
 | 每维实体模式 | 5 | 柔和 | **建议与每个维实体模式关联的数据集最多为5个。** 例如，如果您为“产品”创建模式并添加五个贡献数据集，则不应创建与产品模式关联的第六个数据集。 |
