@@ -5,9 +5,9 @@ title: 用户档案详细信息自定义
 description: '本指南提供分步说明，用于自定义在Adobe Experience PlatformUI中显示实时客户用户档案数据的方式。 '
 topic: guide
 translation-type: tm+mt
-source-git-commit: b08644102e6455d4c4c8b03e747411d3c05c7deb
+source-git-commit: 52cccd7436e203725a9fb4be8406332d8f23a71d
 workflow-type: tm+mt
-source-wordcount: '1224'
+source-wordcount: '1167'
 ht-degree: 0%
 
 ---
@@ -103,11 +103,7 @@ ht-degree: 0%
 
 ## 恢复默认卡
 
-如果您随时决定要删除编辑并返回默认视图，您可以快速轻松地恢复所有默认卡和属性。 要这样做，请选择 **[!UICONTROL 修改仪表板]**，然后选择 **[!UICONTROL 恢复默认卡]**。 这将删除您所做的所有自定义（包括调整大小）。 然后，您可以选择 **[!UICONTROL 保存]** 以保存更改，或者，如果不希望恢复默认值，请选择 **[!UICONTROL 取消]** 以保留您所做的编辑。
-
->[!NOTE]
->
->恢复默认卡和属性时，请务必小心。 恢复和保存默认设置后，返回视图自定义的唯一方法就是使用此文档中概述的步骤重新创建这些自定义。
+如果您随时决定要恢复删除后的默认卡，您可以快速轻松地恢复。 首先，选择 **[!UICONTROL 修改仪表板]**，然后选择 **[!UICONTROL 恢复默认卡]**。 显示默认卡后，您可以选择保 **[!UICONTROL 存]** 以保存更改，如果不希望恢复 **[!UICONTROL 默认卡]** ，也可以选择取消。
 
 ![](../images/profile-customization/profiles-restore-default.png)
 
