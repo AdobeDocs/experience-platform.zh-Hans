@@ -5,9 +5,9 @@ solution: Experience Platform
 title: 监视帐户和数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 737ee0bd55dbf178505c9be0875b2a0b75d3217a
+source-git-commit: 20c3037295b49cba45fcc5901803107dea26b3b2
 workflow-type: tm+mt
-source-wordcount: '971'
+source-wordcount: '1014'
 ht-degree: 0%
 
 ---
@@ -47,6 +47,14 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 > 使用 ![“名称](../../images/tutorials/monitor/spectrum-control.png) ”列中的 **[!UICONTROL spectrum-control]** 按钮为所选帐户创建新源数据流。
 
 ![accounts-select](../../images/tutorials/monitor/accounts-sort.png)
+
+此外，您还可以编辑现有帐户信息并更新帐户凭据。 选择要编辑的帐户信息的铅笔图标。
+
+![](../../images/tutorials/monitor/click-edit.png)
+
+此时将 **[!UICONTROL 显示“编辑帐户]** ”详细信息模式。 在此页中，您可以更新现有帐户详细信息和身份验证凭据。
+
+![](../../images/tutorials/monitor/edit-account.png)
 
 在“帐 **[!UICONTROL 户]** ”页中，您可以视图与您访问的帐户关联的现有数据流或目标数据集的列表。 选择省略号(`...`)按钮，为所选数据流显示更多可用选项。 这些选项的进一步说明如下：
 
