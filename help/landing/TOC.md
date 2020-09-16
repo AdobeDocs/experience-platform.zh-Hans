@@ -3,9 +3,9 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform帮助
 breadcrumb-title: Experience Platform Guide
-user-guide-description: Adobe Experience Platform is the most powerful, flexible, and open system on the market for building and managing complete solutions that drive customer experience. Experience Platform enables organizations to centralize and standardize customer data and content from any system and apply data science and machine learning to dramatically improve the design and delivery of rich, personalized experiences.
+user-guide-description: Centralize and standardize customer data and content and apply data science and machine learning to improve the design and delivery of rich, personalized experiences.
 translation-type: tm+mt
-source-git-commit: 1565c19fdd07935e503e9faa2d9f748331d7f933
+source-git-commit: 857ad65335db338c8d0e5d2ea1f92f00d6a1da1e
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 51%
@@ -32,13 +32,13 @@ ht-degree: 51%
    * [目标](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html)
    * [ETL（提取、转换、加载）](https://docs.adobe.com/content/help/en/experience-platform/etl/home.html)
    * [标识服务](https://docs.adobe.com/content/help/zh-Hans/experience-platform/identity/home.html)
-   * [智能服务](https://docs.adobe.com/content/help/en/experience-platform/intelligent-services/home.html)
+   * [Intelligent Services](https://docs.adobe.com/content/help/en/experience-platform/intelligent-services/home.html)
    * [Launch](https://docs.adobe.com/content/help/zh-Hans/launch/using/overview.translate.html)
    * [可观性洞察](https://docs.adobe.com/content/help/en/experience-platform/observability/home.html)
    * [隐私服务](https://docs.adobe.com/content/help/en/experience-platform/privacy/home.html)
    * [用户档案(实时客户用户档案)](https://docs.adobe.com/content/help/zh-Hans/experience-platform/profile/home.html)
    * [查询服务](https://docs.adobe.com/content/help/en/experience-platform/query/home.html)
-   * [实时客户数据平台](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)
+   * [Real-time Customer Data Platform](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)
    * [沙盒](https://docs.adobe.com/content/help/zh-Hans/experience-platform/sandbox/home.html)
    * [区段](https://docs.adobe.com/content/help/en/experience-platform/segmentation/home.html)
    * [源（连接器）](https://docs.adobe.com/content/help/en/experience-platform/sources/home.html)
