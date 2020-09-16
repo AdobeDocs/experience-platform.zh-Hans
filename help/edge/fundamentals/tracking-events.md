@@ -5,9 +5,9 @@ description: 了解如何跟踪Experience PlatformWeb SDK事件
 seo-description: 了解如何跟踪Experience PlatformWeb SDK事件
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 69ddfca041624123b03eb01d0f10a5bdb36cd119
 workflow-type: tm+mt
-source-wordcount: '688'
+source-wordcount: '1116'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,7 @@ ht-degree: 0%
 XDM数据是一个对象，其内容和结构与您在Adobe Experience Platform内创建的模式相匹配。 [进一步了解如何创建模式。](../../xdm/tutorials/create-schema-ui.md)
 
 您希望成为分析、个性化、受众或目标的一部分的任何XDM数据都应使用此选项进 `xdm` 行发送。
+
 
 ```javascript
 alloy("sendEvent", {
@@ -53,7 +54,37 @@ alloy("sendEvent", {
 
 ### 设置 `eventType`
 
-在XDM体验事件中，有一个 `eventType` 字段。 它保存记录的主事件类型。 这可以作为选项的一部分传 `xdm` 入。
+在XDM体验事件中，有一个可选 `eventType` 字段。 它保存记录的主事件类型。 设置事件类型可以帮助您区分要发送的不同事件。 XDM提供了多种可供您使用的预定义事件类型，或者您始终可以为您的使用案例创建自己的自定义事件类型。 以下是XDM提供的所有预定义事件类型的列表。
+
+
+| **事件类型:** | **定义:** |
+| ---------------------------------- | ------------ |
+| advertising.completes | 指示是否已观看完某个定时媒体资产——这并不一定表示查看器已观看整个视频；查看器可能已跳过 |
+| advertising.timePlayed | 描述用户在特定定时媒体资产上所花费的时间 |
+| advertising.federated | 指示是否通过数据联盟创建体验事件（客户之间的数据共享） |
+| advertising.clicks | 广告上的单击操作 |
+| advertising.conversions | 客户预定义的操作，其触发事件进行绩效评估 |
+| advertising.firstQuartiles | 数字视频广告以正常速度播放了25%的持续时间 |
+| advertising.impressions | 广告对有可能被观看的最终用户的印象 |
+| advertising.midpoints | 数字视频广告以正常速度播放了50%的持续时间 |
+| advertising.starts | 数字视频广告已开始播放 |
+| advertising.thirdQuartiles | 数字视频广告以正常速度播放了75%的持续时间 |
+| web.webpagedetails.pageViews | 网页视图已发生 |
+| web.webinteraction.linkClicks | 已单击Web链接 |
+| commerce.checkouts | 在产品列表的结帐过程中执行的操作，如果结帐过程中有多个步骤，则可能有多个结帐事件。 如果有多个步骤，则事件时间信息和引用的页面或体验将用于标识按顺序表示的各个事件的步骤 |
+| commerce.productListAdds | 将产品添加到产品列表。 示例将产品添加到购物车 |
+| commerce.productListOpens | 新产品列表的初始化。 Example a shopping cart is created |
+| commerce.productListRemovals | 从产品列表删除产品条目。 Example a product is removed from a shopping cart |
+| commerce.productListReopens | 用户已重新激活不再可访问（已放弃）的产品列表。 通过再营销活动实例 |
+| commerce.productListViews | 产品视图已发生 |
+| commerce.productViews | 视图已发生 |
+| commerce.purchases | 已接受命令。 购买是商务转换中唯一的必需操作。 购买必须引用产品列表 |
+| commerce.saveForLaters | 保存产品列表供将来使用。 示例产品需求列表 |
+| delivery.feedback | 投放的反馈事件。 电子邮件事件的反馈投放示例 |
+
+
+如果使用启动扩展，这些事件类型将显示在下拉菜单中，或者您始终可以在不使用启动的情况下传递它们。 它们可以作为选项的一部分传 `xdm` 入。
+
 
 ```javascript
 alloy("sendEvent", {
@@ -73,6 +104,7 @@ alloy("sendEvent", {
 
 或者，也 `eventType` 可以使用选项将事件命令传 `type` 入。 在后台，这会添加到XDM数据中。 使用 `type` 作为选项，您无需修改XDM负 `eventType` 载即可更轻松地设置。
 
+
 ```javascript
 var myXDMData = { ... };
 
@@ -85,6 +117,7 @@ alloy("sendEvent", {
 ### 覆盖数据集ID
 
 在某些用例中，您可能希望将事件发送到配置UI中配置的数据集以外的数据集。 为此，您需要设置命 `datasetId` 令上的选 `sendEvent` 项：
+
 
 ```javascript
 var myXDMData = { ... };
@@ -103,6 +136,7 @@ alloy("sendEvent", {
 ## 使用sendBeacon API
 
 在网页用户导航离开之前发送事件数据可能很棘手。 如果请求过长，浏览器可能会取消请求。 某些浏览器已实现一个调用的Web标 `sendBeacon` 准API，以便在此期间更轻松地收集数据。 使用时， `sendBeacon`浏览器在全局浏览上下文中发出Web请求。 这意味着浏览器在后台发出信标请求，并且不保留页面导航。 要告诉Adobe Experience Platform [!DNL Web SDK] 使用 `sendBeacon`，请将选项添加 `"documentUnloading": true` 到事件命令。  示例如下：
+
 
 ```javascript
 alloy("sendEvent", {
@@ -125,6 +159,7 @@ alloy("sendEvent", {
 ## 处理来自事件的响应
 
 如果要处理事件的响应，可以通知您成功或失败，如下所示：
+
 
 ```javascript
 alloy("sendEvent", {
@@ -150,6 +185,7 @@ alloy("sendEvent", {
 ## 全局修改事件 {#modifying-events-globally}
 
 如果要从事件全局添加、删除或修改字段，可以配置回 `onBeforeEventSend` 调。  每次发送事件时都会调用此回调。  此回调在带字段的事件对象中 `xdm` 传递。  修 `event.xdm` 改以更改在事件中发送的数据。
+
 
 ```javascript
 alloy("configure", {
