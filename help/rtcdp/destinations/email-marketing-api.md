@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 创建电子邮件营销目标
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: 3cfbee08c1948b2e073547f9bbf0c8526cbfd4bc
+source-git-commit: f31b03f027d8b44f761917f4edf19a0b5eedd76c
 workflow-type: tm+mt
-source-wordcount: '1624'
+source-wordcount: '1636'
 ht-degree: 1%
 
 ---
@@ -599,7 +599,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 * `{DATAFLOW_ID}`:使用您在上一步中获得的数据流。
 * `{ETAG}`:使用您在上一步中获得的标签。
-* `{SEGMENT_ID}`:提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请转到https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/并查找该操 `GET /segment/jobs` 作。
+* `{SEGMENT_ID}`:提供要导出到此目标的区段ID。 要检索要激活的区段的区段ID，请转 **到https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/**，在左侧 **[!UICONTROL 导航菜单中选择Segmentation Service]** API，然后在“区段定义” `GET /segment/definitions` 中查找 **[!UICONTROL 操作]**。
 * `{PROFILE_ATTRIBUTE}`:例如， `"person.lastName"`
 
 **响应**
