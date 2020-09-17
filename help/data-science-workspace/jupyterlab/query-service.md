@@ -5,7 +5,7 @@ title: Jupyter笔记本中的查询服务
 topic: Tutorial
 description: Adobe Experience Platform将查询服务作为标准功能集成到JupyterLab中，使您能够在数据科学工作区中使用结构化查询语言(SQL)。 本教程演示了用于浏览、转换和分析Adobe Analytics数据的常见用例的SQL查询示例。
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 3876c33a2d20481f45bd12eda3921898e9e65654
 workflow-type: tm+mt
 source-wordcount: '826'
 ht-degree: 1%
@@ -37,7 +37,7 @@ ht-degree: 1%
 
 1. 在[ [!DNLExperience Platform]](https://platform.adobe.com)中，从左 **[!UICONTROL 侧导航]** 列导航到“笔记本”。 请稍等片刻，JupyterLab将加载。
 
-   ![](../images/jupyterlab/query/jupyterlab_launcher.png)
+   ![](../images/jupyterlab/query/jupyterlab-launcher.png)
 
    >[!NOTE]
    >
@@ -289,6 +289,6 @@ ORDER  BY Count DESC
 LIMIT  10;
 ```
 
-## 后续步骤 <!-- omit in toc -->
+## 后续步骤
 
 本教程演示了在笔记本中使用的一些 [!DNL Query Service] 示例 [!DNL Jupyter] 用例。 请按照 [使用Jupyter Notebooks教程分析数据](./analyze-your-data.md) ，了解如何使用Data Access SDK执行类似操作。
