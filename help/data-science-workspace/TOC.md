@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform数据科学工作区帮助
 breadcrumb-title: Data Science Workspace Guide
 user-guide-description: Adobe Experience Platform Data Science Workspace uses machine learning and artificial intelligence to unleash insights from your data. Integrated into Adobe Experience Platform, Data Science Workspace helps you make predictions using your content and data assets across Adobe applications.
 translation-type: tm+mt
-source-git-commit: 1565c19fdd07935e503e9faa2d9f748331d7f933
+source-git-commit: 638a7ea607ffe269b2c6788324860f3a25f43727
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '204'
 ht-degree: 4%
 
 ---
@@ -19,9 +19,10 @@ ht-degree: 4%
 * [数据科学工作区演练](walkthrough.md)
 * JupyterLab笔记本 {#jupyterlab}
    * [JupyterLab用户指南](jupyterlab/overview.md)
-   * [使用笔记本分析数据](jupyterlab/analyze-your-data.md)
-   * [Jupyter笔记本中的查询服务](jupyterlab/query-service.md)
-   * [使用Jupyter笔记本创建菜谱](jupyterlab/create-a-recipe.md)
+   * [数据访问](jupyterlab/access-notebook-data.md)
+   * [分析数据](jupyterlab/analyze-your-data.md)
+   * [查询服务](jupyterlab/query-service.md)
+   * [创建菜谱](jupyterlab/create-a-recipe.md)
    * [在JupyterLab中使用Git进行协作](jupyterlab/using-git-for-collaboration.md)
 * Sensei Machine Learning API {#api}
    * [入门指南](api/getting-started.md)
@@ -61,7 +62,6 @@ ht-degree: 4%
    * [将模型发布为服务(UI)](models-recipes/publish-model-service-ui.md)
    * [将模型发布为服务(API)](models-recipes/publish-model-service-api.md)
    * [计划服务(UI)上的自动化培训和评分](models-recipes/schedule-models-ui.md)
-* [菜谱和笔记本迁移指南](recipe-notebook-migration.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
