@@ -5,9 +5,9 @@ title: 在UI中为客户成功连接器配置数据流
 topic: overview
 description: 数据流是从源中检索数据并将其捕获到数据的计划 [!DNL Platform] 任务。 本教程提供使用客户成功帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: 5d4aa8eebc1837a5d8b275fa631f4af73c38158e
+source-git-commit: 785bc95ff3460ebbb1a126ac5fec85ad165ca973
 workflow-type: tm+mt
-source-wordcount: '1366'
+source-wordcount: '1393'
 ht-degree: 0%
 
 ---
@@ -75,9 +75,13 @@ ht-degree: 0%
 
 根据您的需要，您可以选择直接映射字段，或使用映射器函数转换源数据以导出计算值或计算值。 有关数据映射和映射器功能的详细信息，请参阅将CSV数据 [映射到XDM模式字段的教程](../../../../ingestion/tutorials/map-a-csv-file.md)。
 
-映射源数据后，单击“下 **[!UICONTROL 一步]**”。
+>[!TIP]
+>
+>[!DNL Platform] 根据您选择的目标模式或数据集，为自动映射字段提供智能建议。 您可以手动调整映射规则以适合您的用例。
 
-![](../../../images/tutorials/dataflow/all-tabular/mapping-updated.png)
+映射源数据后，选择“下 **[!UICONTROL 一步]**”。
+
+![](../../../images/tutorials/dataflow/all-tabular/mapping.png)
 
 ## 计划摄取运行
 
