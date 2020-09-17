@@ -5,7 +5,7 @@ title: 使用笔记本分析数据
 topic: Tutorial
 description: 本教程重点介绍如何使用在数据科学工作区中构建的Jupyter笔记本访问、探索和可视化数据。
 translation-type: tm+mt
-source-git-commit: 33b14fed0d52792de0486897c11dd86c1ea2dd45
+source-git-commit: 3876c33a2d20481f45bd12eda3921898e9e65654
 workflow-type: tm+mt
 source-wordcount: '1731'
 ht-degree: 0%
@@ -41,7 +41,7 @@ ht-degree: 0%
 
 在UI [!DNL Adobe Experience Platform] 中，单击顶部菜单中的“数据科学”选项卡，转到“数据科学工作区”。 在此页中，单击将打 [!DNL JupyterLab] 开启动器的选 [!DNL JupyterLab] 项卡。 您应当看到一个类似于此的页面。
 
-![](../images/jupyterlab/analyze-data/jupyterlab_launcher.png)
+![](../images/jupyterlab/analyze-data/jupyterlab-launcher.png)
 
 在我们的教程中，我们将 [!DNL Python] 使用Jupyter笔记本中的3来显示如何访问和浏览数据。 在“启动器”页面中，提供了示例笔记本。 我们将使用零售销售菜谱3 [!DNL Python] 。
 
@@ -158,7 +158,7 @@ df.describe()
 既然我们了解了数据帧值，我们想用可视化来补充这一点，使事情更清晰、更容易地识别模式。 在将结果传送到受众时，图形也很有用。 对可 [!DNL Python] 视化有用的库包括：
 - [马特普洛特利卜](https://matplotlib.org/)
 - [熊猫](https://pandas.pydata.org/)
-- [西伯恩](https://seaborn.pydata.org/)
+- [弹性](https://seaborn.pydata.org/)
 - [gplot](https://ggplot2.tidyverse.org/)
 
 在本节中，我们将快速介绍使用每个库的一些优势。
