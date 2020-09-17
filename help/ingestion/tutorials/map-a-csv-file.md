@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 将CSV文件映射到XDM模式
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 785bc95ff3460ebbb1a126ac5fec85ad165ca973
 workflow-type: tm+mt
-source-wordcount: '1371'
+source-wordcount: '1350'
 ht-degree: 2%
 
 ---
@@ -61,6 +61,10 @@ ht-degree: 2%
 
 将出 **[!UICONTROL 现]** “映射”步骤。 CSV文件的列列列在源字段 **[!UICONTROL 下]**，其对应的XDM模式字段列在 **[!UICONTROL 目标字段下]**。 未选择的目标字段以红色列出。 您可以使用筛选器字段选项缩小可用源字段的列表。
 
+>[!TIP]
+>
+>[!DNL Platform] 根据您选择的目标模式或数据集，为自动映射字段提供智能建议。 您可以手动调整映射规则以适合您的用例。
+
 要将CSV列映射到XDM字段，请选择该列的相应模式字段旁的目标图标。
 
 ![](../images/tutorials/map-a-csv-file/mapping.png)
@@ -69,17 +73,9 @@ ht-degree: 2%
 
 ![](../images/tutorials/map-a-csv-file/select-schema-field.png)
 
-“映 **[!UICONTROL 射]** ”屏幕将重新出现，选定的XDM字段现在显示在“ **[!UICONTROL 目标”字段下]**。
+完成其余未映射源字段的步骤后，“映射”屏 **[!UICONTROL 幕将重新显示]** ，选定的XDM字段现在显示在“ **[!UICONTROL 目标”字段下]**。
 
 ![](../images/tutorials/map-a-csv-file/field-mapped.png)
-
-如果不希望映射特定的CSV列，可以通过单击目标字段旁边的 **删除图** 标来删除映射。 还可以通过选择清除所有映射按钮 **[!UICONTROL 来删除所有映射]**。
-
-![](../images/tutorials/map-a-csv-file/remove-mapping.png)
-
-如果要添加新映射，请选择 **[!UICONTROL 源字段列表顶]** 部的添加 **[!UICONTROL 新映射]** 。
-
-![](../images/tutorials/map-a-csv-file/add-mapping.png)
 
 在映射字段时，您还可以包含根据输入源字段计算值的函数。 有关详细 [信息](#mapping-functions) ，请参阅附录中的映射函数部分。
 
@@ -89,7 +85,7 @@ ht-degree: 2%
 
 选择“添 **[!UICONTROL 加计算字段]** ”按钮以继续。
 
-![](../images/tutorials/map-a-csv-file/add-calculated-field.png)
+![](../images/tutorials/map-a-csv-file/add-calculate-field.png)
 
 将出 **[!UICONTROL 现“创建计算字段]** ”面板。 左对话框包含计算字段中支持的字段、函数和运算符。 选择一个选项卡以开始向表达式编辑器添加函数、字段或运算符。
 
