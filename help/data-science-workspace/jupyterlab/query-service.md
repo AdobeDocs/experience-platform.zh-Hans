@@ -5,7 +5,7 @@ title: Jupyter笔记本中的查询服务
 topic: Tutorial
 description: Adobe Experience Platform将查询服务作为标准功能集成到JupyterLab中，使您能够在数据科学工作区中使用结构化查询语言(SQL)。 本教程演示了用于浏览、转换和分析Adobe Analytics数据的常见用例的SQL查询示例。
 translation-type: tm+mt
-source-git-commit: 3876c33a2d20481f45bd12eda3921898e9e65654
+source-git-commit: 69c466658e1cb41f4da957148e63b962ad975a21
 workflow-type: tm+mt
 source-wordcount: '826'
 ht-degree: 1%
@@ -118,14 +118,12 @@ SELECT Substring(timestamp, 1, 10)                               AS Day,
        Count(DISTINCT concat(enduserids._experience.aaid.id, 
                              _experience.analytics.session.num)) AS Visit_Count 
 FROM   {target_table}
-WHERE _acp_year = {target_year} 
-      AND _acp_month = {target_month}  
-      AND _acp_day = {target_day}
+WHERE TIMESTAMP = to_timestamp('{target_year}-{target_month}-{target_day}')
 GROUP  BY Day, Hour
 ORDER  BY Hour;
 ```
 
-在上述查询中，子 `_acp_year` 句中 `WHERE` 的目标设置为值 `target_year`。 通过将变量包含在大括号()中，在SQL查询中`{}`包括变量。
+在上述查询中，子句中 `WHERE` 的时间戳设置为的值 `target_year`。 通过将变量包含在大括号()中，在SQL查询中`{}`包括变量。
 
 查询的第一行包含可选变量 `hourly_visitor`。 查询结果将作为Pactys数据帧存储在此变量中。 将结果存储在查询帧中允许您稍后使用所需的包可视化结 [!DNL Python] 果。 在新单元格 [!DNL Python] 中执行以下代码以生成条形图：
 
@@ -160,9 +158,7 @@ SELECT Substring(timestamp, 1, 10)                        AS Day,
                     _experience.analytics.session.num,
                     _experience.analytics.session.depth)) AS Count 
 FROM   {target_table}
-WHERE  _acp_year = {target_year} 
-       AND _acp_month = {target_month}  
-       AND _acp_day = {target_day}
+WHERE TIMESTAMP = to_timestamp('{target_year}-{target_month}-{target_day}')
 GROUP  BY Day, Hour
 ORDER  BY Hour;
 ```
@@ -210,9 +206,7 @@ SELECT concat(enduserids._experience.aaid.id,
               _experience.analytics.session.num) AS aaid_sess_key, 
        Count(timestamp)                          AS Count 
 FROM   {target_table}
-WHERE  _acp_year = {target_year} 
-       AND _acp_month = {target_month}  
-       AND _acp_day = {target_day}
+WHERE TIMESTAMP = to_timestamp('{target_year}-{target_month}-{target_day}')
 GROUP BY aaid_sess_key
 ORDER BY Count DESC;
 ```
@@ -243,9 +237,7 @@ iplot(fig)
 SELECT web.webpagedetails.name                 AS Page_Name, 
        Sum(web.webpagedetails.pageviews.value) AS Page_Views 
 FROM   {target_table}
-WHERE  _acp_year = {target_year}
-       AND _acp_month = {target_month}
-       AND _acp_day = {target_day}
+WHERE TIMESTAMP = to_timestamp('{target_year}-{target_month}-{target_day}')
 GROUP  BY web.webpagedetails.name 
 ORDER  BY page_views DESC 
 LIMIT  10;
@@ -262,9 +254,7 @@ LIMIT  10;
 SELECT enduserids._experience.aaid.id AS aaid, 
        Count(timestamp)               AS Count
 FROM   {target_table}
-WHERE  _acp_year = {target_year}
-       AND _acp_month = {target_month}
-       AND _acp_day = {target_day}
+WHERE TIMESTAMP = to_timestamp('{target_year}-{target_month}-{target_day}')
 GROUP  BY aaid
 ORDER  BY Count DESC
 LIMIT  10;
@@ -281,9 +271,7 @@ LIMIT  10;
 SELECT concat(placeContext.geo.stateProvince, ' - ', placeContext.geo.city) AS state_city, 
        Count(timestamp)                                                     AS Count
 FROM   {target_table}
-WHERE  _acp_year = {target_year}
-       AND _acp_month = {target_month}
-       AND _acp_day = {target_day}
+WHERE TIMESTAMP = to_timestamp('{target_year}-{target_month}-{target_day}')
 GROUP  BY state_city
 ORDER  BY Count DESC
 LIMIT  10;
