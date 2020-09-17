@@ -5,9 +5,9 @@ title: 在UI中为云存储批处理连接器配置数据流
 topic: overview
 description: 数据流是从源中检索数据并将其引入平台数据集的计划任务。 本教程提供使用云存储帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: 785bc95ff3460ebbb1a126ac5fec85ad165ca973
+source-git-commit: a4fd95904159a7b3e9c420f720a315641fd6706f
 workflow-type: tm+mt
-source-wordcount: '1584'
+source-wordcount: '1625'
 ht-degree: 0%
 
 ---
@@ -93,9 +93,15 @@ ht-degree: 0%
 >
 >[!DNL Platform] 根据您选择的目标模式或数据集，为自动映射字段提供智能建议。 您可以手动调整映射规则以适合您的用例。
 
-映射源数据后，选择“下 **[!UICONTROL 一步]**”。
-
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping.png)
+
+选 **[!UICONTROL 择预览]** ，以查看所选数据集中最多100行样本数据的映射结果。
+
+在该预览中，标识列作为第一字段进行优先级排序，因为它是验证映射结果时必需的关键信息。
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping-preview.png)
+
+映射源数据后，选择“关 **[!UICONTROL 闭]**”。
 
 ## 计划摄取运行
 
