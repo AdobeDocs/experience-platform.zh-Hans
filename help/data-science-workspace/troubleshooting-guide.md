@@ -5,9 +5,9 @@ title: 数据科学工作区疑难解答指南
 topic: Troubleshooting
 description: 本文档提供有关Adobe Experience Platform数据科学工作区的常见问题解答。
 translation-type: tm+mt
-source-git-commit: 194a29124949571638315efe00ff0b04bff19303
+source-git-commit: 76e598c743df320e4b3cb821e118749fe7304d9c
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '750'
 ht-degree: 0%
 
 ---
@@ -112,3 +112,7 @@ ht-degree: 0%
 ```
 
 有关群集资源配 [!DNL Spark] 置(包括可配置属性的完整列表)的详细信息，请参 [阅JupyterLab用户指南](./jupyterlab/overview.md#kernels)。
+
+## 为什么在尝试为较大的数据集执行某些任务时会收到错误？
+
+如果您收到错误，原因如“This `Reason: Remote RPC client disassociated. Likely due to containers exceeding thresholds, or network issues.` tyames are executors is rund of memory（这通常意味着驱动程序或执行器内存不足）”。 有关数据限制以及如 [何在大数](./jupyterlab/access-notebook-data.md) 据集上执行任务的更多信息，请参阅JupyterLab笔记本数据访问文档。 通常，可通过将“从”更改为“”来 `mode` 解决此 `interactive` 错误 `batch`。
