@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 分段服务用户指南
 topic: ui guide
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: c9ff4d26accd880d5169526f84be607fc722883b
 workflow-type: tm+mt
-source-wordcount: '1359'
+source-wordcount: '1452'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,19 @@ ht-degree: 0%
 
 ![](../images/ui/overview/segment-browse-all.png)
 
-此视图列表有关区段定义的信息，包括评估方法、创建日期和上次修改日期。
+此视图列表有关细分、客户流失、用户档案计数、评估方法、创建日期和上次修改日期的细分信息。
+
+细分显示一个条形图，概述了属于以下各种状态的用户档案百分比： [!UICONTROL 已输入]、 [!UICONTROL 已实现]和已 [!UICONTROL 退出]。
+
+![](../images/ui/overview/segment-browse-breakdown.png)
+
+| 状态 | 描述 |
+| ------ | ----------- |
+| 已输入 | 区段内的新用户档案。 |
+| 已实现 | 现有用户档案，其仍属于分部。 |
+| 正在退出 | 离开区段的现有用户档案。 |
+
+客户流失是指在区段定义中发生更改的用户档案与上次运行区段作业时的用户档案百分比，而计数则指符合区段条件的用户档案总数。
 
 评估方法可以是流式的，也可以是批量的。 当数据进入系统时，会持续评估流段。 批区段根据一组计划进行评估。
 
