@@ -5,9 +5,9 @@ title: 在UI中为付款连接器配置数据流
 topic: overview
 description: 数据流是从源中检索数据并将其引入Adobe Experience Platform数据集的计划任务。 本教程提供使用付款帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: 785bc95ff3460ebbb1a126ac5fec85ad165ca973
+source-git-commit: ad9b52e46d3eb4f6ed7774e4cbcb031a52801b49
 workflow-type: tm+mt
-source-wordcount: '1370'
+source-wordcount: '1411'
 ht-degree: 0%
 
 ---
@@ -79,9 +79,15 @@ ht-degree: 0%
 >
 >[!DNL Platform] 根据您选择的目标模式或数据集，为自动映射字段提供智能建议。 您可以手动调整映射规则以适合您的用例。
 
-映射源数据后，选择“下 **[!UICONTROL 一步]**”。
-
 ![](../../../images/tutorials/dataflow/all-tabular/mapping.png)
+
+选 **[!UICONTROL 择预览]** ，以查看所选数据集中最多100行样本数据的映射结果。
+
+在该预览中，标识列作为第一字段进行优先级排序，因为它是验证映射结果时必需的关键信息。
+
+![](../../../images/tutorials/dataflow/all-tabular/mapping-preview.png)
+
+映射源数据后，选择“关 **[!UICONTROL 闭]**”。
 
 ## 计划摄取运行
 
