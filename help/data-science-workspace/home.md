@@ -5,9 +5,9 @@ title: 数据科学工作区概述
 topic: overview
 description: 本指南概述了与数据科学工作区相关的主要概念。
 translation-type: tm+mt
-source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
+source-git-commit: 581d11bdb934f46c53a6703829b4dc470076e195
 workflow-type: tm+mt
-source-wordcount: '2584'
+source-wordcount: '2578'
 ht-degree: 0%
 
 ---
@@ -196,7 +196,7 @@ Adobe Experience Platform的所有数据都符合标准化的XDM模式，无需�
 
 ![](./images/home/evaluation_metrics.png)
 
-请访 [问本部分](https://www.adobe.io/apis/experienceplatform/home/tutorials/data-science-workspace/dsw-tutorials/trainmodel.html) ，获取有关如何在中培训和评估模型的教程 [!DNL Data Science Workspace]。
+请访问API [或UI](./models-recipes/train-evaluate-model-api.md) 教 [程，了](./models-recipes/train-evaluate-model-ui.md) 解如何在中培训和评估模型 [!DNL Data Science Workspace]。
 
 ### 操作模型
 
@@ -206,7 +206,7 @@ Adobe Experience Platform的所有数据都符合标准化的XDM模式，无需�
 
 ## 后续步骤
 
-[!DNL Data Science Workspace] 帮助所有技能水平的数据科学家简化数据科学工作流程，从数据收集到算法再到智能服务。 借助精良的工 [!DNL Data Science Workspace] 具，您可以大幅缩短从数据到洞察的时间。
+[!DNL Data Science Workspace] 帮助简化数据科学工作流程，从数据收集到算法，再到面向各个技能水平的数据科学家的智能服务。 借助精良的工 [!DNL Data Science Workspace] 具，您可以大幅缩短从数据到洞察的时间。
 
 更重要的是 [!DNL Data Science Workspace] ，将Adobe领先营销平台的数据科学和算法优化能力交给企业数据科学家。 企业首次可以将专有算法引入该平台，利用Adobe强大的机器学习和AI功能大规模提供高度个性化的客户体验。
 
