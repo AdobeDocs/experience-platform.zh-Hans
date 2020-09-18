@@ -5,7 +5,7 @@ title: 使用Jupyter笔记本创建菜谱
 topic: Tutorial
 description: 本教程将分两个主要部分。 首先，您将使用JupyterLab Notebook中的模板创建机器学习模型。 接下来，您将在JupyterLab中练习笔记本到菜谱工作流程，以便在数据科学工作区中创建菜谱。
 translation-type: tm+mt
-source-git-commit: 3876c33a2d20481f45bd12eda3921898e9e65654
+source-git-commit: d9bf87e41fe002ac1d70a241b48c7b9fd1139d6c
 workflow-type: tm+mt
 source-wordcount: '2335'
 ht-degree: 0%
@@ -38,7 +38,7 @@ Recipe Builder [!UICONTROL 笔记本] ，可在笔记本内运行培训和评分
 
 从启动器单击Recipe Builder笔记本时，将在选项卡中打开该笔记本。 笔记本中使用的模板是Python Retail Sales Forecasting Recipe，您也可以在此公共存储库 [中找到它](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)
 
-您会注意到，在工具栏中有三个附加操作，即 **[!UICONTROL 培训]**、 **[!UICONTROL 得分]** 和 **[!UICONTROL 创建菜谱]**。 这些图标仅显示在 [!UICONTROL Recipe Builder笔记本] 中。 在笔记本中构建“菜谱”后，将在 [培训和评分部分讨论](#training-and-scoring) 有关这些操作的更多信息。
+您会注意到，在工具栏中有三个附加操作，即 **[!UICONTROL 培训]**、 **[!UICONTROL 得分]**&#x200B;和 **[!UICONTROL 创建菜谱]**。 这些图标仅显示在 [!UICONTROL Recipe Builder笔记本] 中。 在笔记本中构建“菜谱”后，将在 [培训和评分部分讨论](#training-and-scoring) 有关这些操作的更多信息。
 
 ![](../images/jupyterlab/create-recipe/toolbar_actions.png)
 
