@@ -5,9 +5,9 @@ title: 数据科学工作区教程
 topic: tutorial
 description: Adobe Experience Platform数据科学工作区使用机器学习和人工智能从数据中获得洞察。 数据科学工作区集成到Adobe Experience Platform，可帮助您跨Adobe解决方案使用内容和数据资产进行预测。
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 10c9ce66b0fb3b5d1be931f37d95d283673bef15
 workflow-type: tm+mt
-source-wordcount: '1210'
+source-wordcount: '1297'
 ht-degree: 0%
 
 ---
@@ -41,10 +41,18 @@ API为数 [!DNL Sensei Machine Learning] 据科学家提供了组织和管理机
 - 访问并了解该 [!DNL JupyterLab] 界面。
 - 了解代码单元格和内的可用内核 [!DNL JupyterLab]。
 - 了解/R中的GPU和内存服 [!DNL Python]务器配置。
-- 使用笔记本 [!DNL Platform] 阅读和查询数据。
-- 了解笔记本数据限制。
 
 要了解更多信息，请访 [问JupyterLab用户指南](../data-science-workspace/jupyterlab/overview.md)。
+
+## JupyterLab笔记本中的数据访问
+
+目前，Data Science Workspace中的JupyterLab支持适 [!DNL Python]用于R、PySpark和Scala的笔记本电脑。 每个支持的内核都提供内置功能，允许您从笔记本内的数据集中读取平台数据。 但是，对分页数据的支持仅限于 [!DNL Python] 和R笔记本。 本指南重点介绍如何使用JupyterLab笔记本访问数据。
+
+**本指南将帮助您：**
+- 使用Python、R、PySpark或Scala笔记本读取、写入和查询平台数据。
+- 了解每种笔记本类型的读取限制。
+
+要了解更多信息，请访问JupyterLab笔 [记本数据访问开发人员指南](../data-science-workspace/jupyterlab/access-notebook-data.md)
 
 ## 将源文件打包以进行 [!DNL Docker] 菜谱创作
 
