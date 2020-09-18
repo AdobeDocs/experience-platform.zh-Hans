@@ -5,9 +5,9 @@ title: 准备要在Intelligent Services中使用的数据
 topic: Intelligent Services
 description: '为了使智能服务能够从您的营销事件数据中发掘洞察，必须以标准结构从语义上丰富和维护数据。 智能服务利用体验数据模型(XDM)模式来实现此目标。 具体而言，在智能服务中使用的所有数据集]必须符合Consumer ExperienceEvent(CEE)XDM模式。 '
 translation-type: tm+mt
-source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
+source-git-commit: d9bf87e41fe002ac1d70a241b48c7b9fd1139d6c
 workflow-type: tm+mt
-source-wordcount: '1980'
+source-wordcount: '1979'
 ht-degree: 0%
 
 ---
@@ -238,7 +238,7 @@ CEE混音中有几个关键字段应用于生成有用 [!DNL Intelligent Service
 
 有关每个必需子字段的完整信息，请 `xdm:productListItems`参阅市场营销 [规范](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/marketing.schema.md) 。
 
-## 映射和摄取数据(#mapping)
+## 映射和摄取数据 {#mapping}
 
 确定营销事件数据是否可映射到CEE模式后，下一步是确定要引入哪些数据 [!DNL Intelligent Services]。 使用的所有历史数 [!DNL Intelligent Services] 据都必须在4个月数据的最短时间窗口内，加上计划作为回顾期的天数。
 
