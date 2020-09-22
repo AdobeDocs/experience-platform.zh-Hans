@@ -5,10 +5,10 @@ solution: Experience Platform
 title: 监视帐户和数据流
 topic: overview
 translation-type: tm+mt
-source-git-commit: 20c3037295b49cba45fcc5901803107dea26b3b2
+source-git-commit: 8f752d6a08496f9583627781d9143ee7f9159bf0
 workflow-type: tm+mt
-source-wordcount: '1014'
-ht-degree: 0%
+source-wordcount: '1097'
+ht-degree: 1%
 
 ---
 
@@ -72,7 +72,18 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ![catalog-dataflows](../../images/tutorials/monitor/catalog-dataflows.png)
 
-出现一列表现有数据流。 本页是可查看数据流的列表，包括有关其源、用户名、数据流数和状态的信息。 选择左上角的漏斗图标进行排序。
+出现一列表现有数据流。 本页是可查看数据流的列表，包括有关其源、用户名、数据流数和状态的信息。
+
+有关状态的详细信息，请参阅下表：
+
+| 状态 | 描述 |
+| ------ | ----------- |
+| 已启用 | 状 `Enabled` 态表示数据流处于活动状态，并且正在根据它提供的计划接收数据。 |
+| 已禁用 | 状 `Disabled` 态表示数据流处于非活动状态，不接收任何数据。 |
+| 处理时间 | 状 `Processing` 态表示数据流尚未激活。 创建新数据流后，通常会立即遇到此状态。 |
+| 错误 | 状 `Error` 态表示数据流的激活进程已中断。 |
+
+选择左上角的漏斗图标进行排序。
 
 ![dataflows-列表](../../images/tutorials/monitor/dataflows-list.png)
 
