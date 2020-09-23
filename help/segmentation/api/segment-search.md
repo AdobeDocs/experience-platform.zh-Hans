@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform;segmentation;segmentation service;troubleshooting;API;seg;segment;Segment;search;segment search;
-solution: Adobe Experience Platform
 title: 段搜索端点
 topic: guide
 description: 区段搜索用于搜索包含在各种数据源中的字段，并近乎实时地返回它们。 本指南提供相关信息，帮助您更好地了解细分搜索，并包含使用API执行基本操作的示例API调用。
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '1179'
 ht-degree: 2%
