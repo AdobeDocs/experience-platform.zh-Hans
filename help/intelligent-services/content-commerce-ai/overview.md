@@ -1,17 +1,23 @@
 ---
 keywords: Experience Cloud;getting started;content and commerce ai;popular topics;Intelligent Services;ccai
-solution: Experience Cloud; Intelligent Services
+solution: Experience Cloud
 title: 内容和商务AI概述
 topic: Content and Commerce AI
 description: 内容和商务AI是一套人工智能服务，它允许您从内容中提取智能功能，组织、简化内容流程，并为客户提供更具影响力的个性化体验。
 translation-type: tm+mt
-source-git-commit: fe887d19f936bcf38e5e639a23693f616af5204d
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '406'
 ht-degree: 1%
 
 ---
 
+
+<!--
+
+NOTE to writer: "Intelligent Services" is not a valid solution value. Log a UGP bug if you think it should be added.
+
+-->
 
 # 内容和商务AI概述
 
@@ -23,7 +29,7 @@ ht-degree: 1%
 
 所有品牌都努力提供完美的客户体验。 您不断尝试在客户接触点的所有方面寻找更好的答案。
 
-内容是这些体验的基本组成部分。 要更好地回答营销问题，您必须了解内容以及客户与其的互动。 通过内容和商务人工智能，您可以了解您提供的内容的哪些功能能引起客户的共鸣。 利用这些洞察，您可以个性化体验并提升KPI。
+内容是这些体验的基本组成部分。 要更好地回答营销问题，您必须了解内容以及客户与其的互动。 通过内容和商务AI，您可以了解您提供的内容的哪些功能能引起客户的共鸣。 利用这些洞察，您可以个性化体验并提升KPI。
 
 ## 内容和商务人工智能服务功能
 
