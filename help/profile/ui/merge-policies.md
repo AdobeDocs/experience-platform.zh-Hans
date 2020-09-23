@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
-solution: Adobe Experience Platform
 title: 合并策略用户指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: 95b4964f4d506a7f5618590fe43116e2297be22e
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '1440'
 ht-degree: 0%
