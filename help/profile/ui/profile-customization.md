@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
-solution: Adobe Experience Platform
 title: 用户档案详细信息自定义
 description: '本指南提供分步说明，用于自定义在Adobe Experience PlatformUI中显示实时客户用户档案数据的方式。 '
 topic: guide
 translation-type: tm+mt
-source-git-commit: 52cccd7436e203725a9fb4be8406332d8f23a71d
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '1167'
 ht-degree: 0%
