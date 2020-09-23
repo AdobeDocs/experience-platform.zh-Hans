@@ -5,9 +5,9 @@ title: 多实体分割
 topic: overview
 description: 多实体细分是指能够根据产品、商店或其他非用户档案类扩展用户档案数据和附加数据。 连接后，来自其他类的数据将变得像用户档案模式的本机数据一样可用。
 translation-type: tm+mt
-source-git-commit: 8568c55003127a295acff9cfbbc3bbf6005e7a51
+source-git-commit: 4dd5a91146b116953ba180e3f39d24b4e1ec289e
 workflow-type: tm+mt
-source-wordcount: '620'
+source-wordcount: '671'
 ht-degree: 0%
 
 ---
@@ -45,14 +45,16 @@ ht-degree: 0%
 
 ### 定义关系
 
-在体验数据模型(XDM)模式的结构中定义关系是创建多实体细分的一个组成部分。 此过程可以使用模式注册表API或模式编辑器完成。 有关说明如何定义两个模式之间关系的详细步骤，请从以下教程中进行选择：
+在体验数据模型(XDM)模式的结构中定义关系是创建多实体细分的一个组成部分。 对于关系，目标中的字段需要标记为该模式的主标识。 标识只能标记在字符串上，不能标记在数组上。 此外，关系不一定需要一对一，因为您可以将用户档案和体验事件连接到多个目标。
+
+可以使用模式注册表API或模式编辑器来定义关系。 有关说明如何定义两个模式之间关系的详细步骤，请从以下教程中进行选择：
 
 * [使用API定义两个模式之间的关系](../xdm/tutorials/relationship-api.md)
 * [使用模式编辑器UI定义两个模式之间的关系](../xdm/tutorials/relationship-ui.md)
 
 ### 构建多实体细分
 
-定义必要的XDM关系后，您可以开始构建多实体细分。 此过程可使用分段API或段生成器UI完成。 有关详细信息，请从以下指南中进行选择：
+定义必要的XDM关系后，您可以开始构建多实体细分。 这可以使用分段API或段生成器UI来完成。 有关详细信息，请从以下指南中进行选择：
 
 * [使用分段API创建段](./tutorials/create-a-segment.md)
 * [使用区段生成器UI创建区段](./ui/overview.md)
