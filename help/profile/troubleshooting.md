@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
-solution: Adobe Experience Platform
 title: 实时客户用户档案疑难解答指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: 94fd6ee324b35acb7ef1185f7851d76d76f3e91c
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '983'
 ht-degree: 0%
@@ -14,7 +13,7 @@ ht-degree: 0%
 
 # 实时客户用户档案疑难解答指南
 
-此文档提供有关实时客户用户档案的常见问题解答以及常见错误的疑难解答指南。 有关Adobe Experience Platform中其他服务的相关问题和疑难解答，请参阅Experience Platform疑 [难解答指南](../landing/troubleshooting.md)。
+此文档提供有关实时客户用户档案的常见问题解答以及常见错误的疑难解答指南。 有关与Adobe Experience Platform其他服务相关的问题和疑难解答，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
 实时用户档案是一个通用查找实体存储，它合并来自各种企业数据资产的数据，然后以单个客户用户档案和相关时间序列事件的形式提供对该数据的访问。 此功能使营销人员能够跨多个渠道通过受众推动协调一致的相关体验。
 
@@ -152,5 +151,5 @@ ht-degree: 0%
 
 | 端点 | 内容类型 |
 | --- | --- |
-| `/config/projections` | application/vnd.adobe.platform.projectionConfig+json; version=1 |
-| `/config/destinations` | application/vnd.adobe.platform.projectionDestination+json; version=1 |
+| `/config/projections` | application/vnd.adobe.platform.projectionConfig+json;version=1 |
+| `/config/destinations` | application/vnd.adobe.platform.projectionDestination+json;version=1 |
