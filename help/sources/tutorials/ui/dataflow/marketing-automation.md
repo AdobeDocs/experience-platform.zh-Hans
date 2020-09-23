@@ -5,9 +5,9 @@ title: 在UI中为营销自动化连接器配置数据流
 topic: overview
 description: 数据流是从源中检索数据并将其捕获到数据的计划 [!DNL Platform] 任务。 本教程提供使用营销自动化帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: ad9b52e46d3eb4f6ed7774e4cbcb031a52801b49
+source-git-commit: 63eb8407617cda64f3f3b0cefd6bf427314e0216
 workflow-type: tm+mt
-source-wordcount: '1428'
+source-wordcount: '1477'
 ht-degree: 0%
 
 ---
@@ -67,7 +67,11 @@ ht-degree: 0%
 
 您可以在“选择模式”搜索栏中输入模式名 **[!UICONTROL 称来附加模式]** 字段。 您还可以选择下拉图标以查看现有列表的模式。 或者，您也可以选择“ **[!UICONTROL 高级搜索]** ”来访问现有模式的屏幕，包括其各自的详细信息。
 
-![create-new-dataset](../../../images/tutorials/dataflow/all-tabular/new-target-dataset.png)
+在此步骤中，您可以为实体的属 [!DNL Real-time Customer Profile] 性和行为启用数据集并创建整体视图。 所有启用的数据集中的数据都将包含在 [!DNL Profile] 中，并在保存数据流时应用更改。
+
+切换 **[!UICONTROL 用户档案集]** 按钮以启用目标数据集 [!DNL Profile]。
+
+![create-new-dataset](../../../images/tutorials/dataflow/marketing-automation/new-dataset.png)
 
 将出 **[!UICONTROL 现“选择模式]** ”对话框。 选择要应用于新数据集的模式，然后单击 **[!UICONTROL 完成]**。
 
