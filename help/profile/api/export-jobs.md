@@ -1,10 +1,9 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
-solution: Adobe Experience Platform
 title: 导出作业——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 86ded28b1830d3607c8b5214c8d31dfcbf446252
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '1494'
 ht-degree: 2%
@@ -142,7 +141,7 @@ curl -X POST \
 | `mergePolicy` | *（可选）* 指定用于管理导出数据的合并策略。 当导出多个段时，请包含此参数。 |
 | `mergePolicy.id` | 合并策略的ID。 |
 | `mergePolicy.version` | 要使用的合并策略的特定版本。 忽略此值将默认为最新版本。 |
-| `additionalFields.eventList` | *（可选）通过* 提供以下一个或多个设置，控制为子对象或关联对象导出的时间序列事件字段：<ul><li>`eventList.fields`: 控制要导出的字段。</li><li>`eventList.filter`: 指定限制关联对象中包含的结果的条件。 需要导出所需的最小值，通常为日期。</li><li>`eventList.filter.fromIngestTimestamp`: 过滤器时间序列事件到在提供的时间戳后摄取的时间序列。 这不是事件本身，而是事件的摄取时间。</li></ul> |
+| `additionalFields.eventList` | *（可选）通过* 提供以下一个或多个设置，控制为子对象或关联对象导出的时间序列事件字段：<ul><li>`eventList.fields`:控制要导出的字段。</li><li>`eventList.filter`:指定限制关联对象中包含的结果的条件。 需要导出所需的最小值，通常为日期。</li><li>`eventList.filter.fromIngestTimestamp`:过滤器时间序列事件到在提供的时间戳后摄取的时间序列。 这不是事件本身，而是事件的摄取时间。</li></ul> |
 | `destination` | **（必需）导出** 数据的目标信息：<ul><li>`destination.datasetId`: **(必需** )要导出数据的数据集的ID。</li><li>`destination.segmentPerBatch`: *(可选* )布尔值，如果未提供，则默认为 `false`。 值将所 `false` 有段ID导出为单个批ID。 值将一个 `true` 段ID导出为一个批ID。 请注意，将值设置为可能 `true` 会影响批量导出性能。</li></ul> |
 | `schema.name` | **(必需** )与要导出数据的数据集关联的模式的名称。 |
 
