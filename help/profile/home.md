@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;unified profile;Unified Profile;unified;Profile;rtcp;XDM graphs
-solution: Adobe Experience Platform
 title: 实时客户用户档案概述
 topic: guide
 description: 实时用户档案是一个通用查找实体存储，它合并来自各种企业数据资产的数据，然后以单个客户用户档案和相关时间序列事件的形式提供对该数据的访问。 此功能使营销人员能够跨多个渠道通过受众推动协调一致的相关体验。
 translation-type: tm+mt
-source-git-commit: cef27082fec97530031061476b46f60859717825
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '1650'
 ht-degree: 1%
