@@ -2,16 +2,20 @@
 cloud: experience-cloud
 product: adobe experience platform
 solution-title: 平台概述
-solution-hub-url: https://docs.adobe.com/content/help/en/experience-platform/landing/home.html
+solution-hub-url: https://docs.adobe.com/content/help/zh-Hans/experience-platform/landing/home.html
 solution-image: assets/experience_cloud_appicon_32.png
 getting-started-title: 文档
 getting-started-url: https://docs.adobe.com/content/help/en/experience-platform/landing/documentation/overview.html
 tutorials-title: 教程
-tutorials-url: https://docs.adobe.com/content/help/en/experience-platform/tutorials/home.html
-git-repo: https://github.com/AdobeDocs/experience-platform.en
+tutorials-url: https://docs.adobe.com/content/help/zh-Hans/experience-platform/tutorials/home.html
+git-repo: https://git.corp.adobe.com/AdobeDocs/experience-platform.zh-Hans
+solution: Experience Platform
 index: true
 translation-type: tm+mt
-source-git-commit: d16d13fdec107d3654ff2ef5c8e18661763470f0
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
+workflow-type: tm+mt
+source-wordcount: '145'
+ht-degree: 86%
 
 ---
 
