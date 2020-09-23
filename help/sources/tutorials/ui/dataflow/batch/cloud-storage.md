@@ -5,9 +5,9 @@ title: 在UI中为云存储批处理连接器配置数据流
 topic: overview
 description: 数据流是从源中检索数据并将其引入平台数据集的计划任务。 本教程提供使用云存储帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: a4fd95904159a7b3e9c420f720a315641fd6706f
+source-git-commit: 63eb8407617cda64f3f3b0cefd6bf427314e0216
 workflow-type: tm+mt
-source-wordcount: '1625'
+source-wordcount: '1674'
 ht-degree: 0%
 
 ---
@@ -81,7 +81,11 @@ ht-degree: 0%
 
 要将数据引入新数据集，请选 **[!UICONTROL 择新数据集]** ，并在提供的字段中输入数据集的名称和说明。 要添加模式，您可以在“选择模式”对话框中输 **[!UICONTROL 入现有模式]** 名称。 或者，您也可以选择 **[!UICONTROL 模式高级搜索]** ，以搜索相应的模式。
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/use-new-dataset.png)
+在此步骤中，您可以为实体的属 [!DNL Real-time Customer Profile] 性和行为启用数据集并创建整体视图。 所有启用的数据集中的数据都将包含在 [!DNL Profile] 中，并在保存数据流时应用更改。
+
+切换 **[!UICONTROL 用户档案集]** 按钮以启用目标数据集 [!DNL Profile]。
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/new-dataset.png)
 
 将出 **[!UICONTROL 现“选择模式]** ”对话框。 选择要应用于新数据集的模式，然后选择 **[!UICONTROL 完成]**。
 
