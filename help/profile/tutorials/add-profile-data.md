@@ -1,11 +1,10 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;enable profile;Enable profile
-solution: Adobe Experience Platform
 title: 将数据添加到实时客户用户档案
 topic: tutorial
 description: 本教程概述了向实时客户用户档案添加数据所需的步骤。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
 source-wordcount: '368'
 ht-degree: 0%
@@ -27,7 +26,7 @@ ht-degree: 0%
 
 使用批量摄取上传 [!DNL Platform] 到的所有数据都上传到单个数据集。 在此数据可供使用之 [!DNL Real-time Customer Profile]前，必须明确配置相关数据集。 有关完整说明，请参阅有关为 [用户档案和标识服务配置数据集的教程](dataset-configuration.md)。
 
-配置数据集后，您可以将开始引入数据。 有关如何上 [传不同格式文件的详细步骤](../../ingestion/batch-ingestion/api-overview.md) ，请参阅批量摄取开发人员指南。
+配置数据集后，您可以将开始引入数据。 有关如何上 [传不同格式文件的详细步骤](../../ingestion/batch-ingestion/api-overview.md) ，请参阅批处理摄取开发人员指南。
 
 ## 使用流摄取添加数据
 
