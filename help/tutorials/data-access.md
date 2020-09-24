@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;access data sources
 solution: Experience Platform
 title: 数据访问教程
 topic: tutorial
+type: Tutorial
 description: Adobe Experience Platform使用户能够使用数据访问API发现和访问Experience Platform内摄取的数据集。
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '121'
 ht-degree: 0%
