@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;data access;spark sdk;data acc
 solution: Experience Platform
 title: 安全Spark数据访问SDK
 topic: tutorial
+type: Tutorial
 description: Secure Spark Data Access SDK是一个软件开发工具包，可以读取和写入来自Adobe Experience Platform的数据集。
 translation-type: tm+mt
-source-git-commit: 2fdab7d984a7368df77110f8ba0e0ba687e96d7e
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 1%
