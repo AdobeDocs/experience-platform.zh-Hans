@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;Azure Data Lake Storage Gen2;a
 solution: Experience Platform
 title: 使用Flow Service API创建Azure Data Lake存储Gen2连接器
 topic: overview
+type: Tutorial
 description: 本教程使用Flow Service API指导您完成将Experience Platform连接到Azure Data Lake存储Gen2（以下简称“ADLS Gen2”）的步骤。
 translation-type: tm+mt
-source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '570'
 ht-degree: 2%
