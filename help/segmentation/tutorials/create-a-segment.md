@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;segment;Segment;create segment
 solution: Experience Platform
 title: 创建区段
 topic: tutorial
+type: Tutorial
 description: 本文档提供了一个教程，用于使用Adobe Experience Platform分段服务API开发、测试、预览和保存段定义。
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '916'
 ht-degree: 0%
