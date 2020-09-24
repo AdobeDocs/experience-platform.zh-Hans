@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;ui;UI;XDM;XDM system;;experien
 solution: Experience Platform
 title: 使用模式模式编辑器定义两个模式之间的关系
 description: 此文档提供了一个教程，用于使用Experience Platform用户界面中的模式编辑器定义两个模式之间的关系。
-topic: tutorials
+topic: tutorial
+type: Tutorials
 translation-type: tm+mt
-source-git-commit: 348ac63c0b13ddf87bf786a42688962b0b220ded
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '910'
 ht-degree: 0%
@@ -37,7 +38,7 @@ ht-degree: 0%
 >
 >要建立关系，两个模式必须定义主身份并启用 [!DNL Real-time Customer Profile]。 如果您需要有关如何 [相应配置模式的指导](./create-schema-ui.md#profile) ，请参阅模式创建教程中有关启用模式以在用户档案中使用的部分。
 
-模式关系由源模式内的专用字 **段表示** ，该专用字段引用目标模式 **内的其他字段**。 在接下来的步骤中，[!DNL Loyalty Members]“”将是源模式，而“[!DNL Hotels]”将充当目标模式。
+模式关系由源模式内的专用字 **段表示** ，该专用字段引用目标模式 **内的其他字段**。 在接下来的步骤中，[!DNL Loyalty Members]“”将作为源模式，而“[!DNL Hotels]”将作为目标模式。
 
 为便于参考，以下各节将介绍本教程中在定义关系之前使用的每个模式的结构。
 
