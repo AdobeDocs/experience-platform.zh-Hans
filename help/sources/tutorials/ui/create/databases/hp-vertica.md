@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;HP Vertica
 solution: Experience Platform
 title: 在UI中创建HP Vertica源连接器
 topic: overview
+type: Tutorial
 description: 本教程提供了使用平台用户界面创建HP Vertica源连接器的步骤。
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '494'
 ht-degree: 1%
