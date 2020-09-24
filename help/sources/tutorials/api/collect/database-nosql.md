@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;third-party database;third par
 solution: Experience Platform
 title: 通过源连接器和API从第三方数据库收集数据
 topic: overview
+type: Tutorial
 description: 本教程介绍从第三方数据库检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 6f4714561c2946a084eed4e89d3148df5b8044f5
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1650'
 ht-degree: 1%
@@ -273,7 +274,7 @@ curl -X POST \
 
 ## 创建目标连接 {#target-connection}
 
-您现在具有数据集基础连接、目标模式和目标数据集的唯一标识符。 使用这些标识符，您可以使用[[!DNL 流服务] API创建目标连接](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) ，以指定将包含入站源数据的数据集。
+您现在具有数据集基础连接、目标模式和目标数据集的唯一标识符。 使用这些标识符，您可以使用[! [DNL流服务] API创建目标连接](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) ，以指定将包含入站源数据的数据集。
 
 **API格式**
 
