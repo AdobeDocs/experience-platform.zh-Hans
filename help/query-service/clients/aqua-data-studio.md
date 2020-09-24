@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 与Aqua Data Studio连接
 topic: connect
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 106d5150371a890e2d4c295bf5d12c110c593568
 workflow-type: tm+mt
-source-wordcount: '238'
+source-wordcount: '245'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 - **[!UICONTROL 名称]**:连接的名称。
 - **[!UICONTROL 登录名和口令]**:将使用的登录凭据。 用户名采用的形式 `ORG_ID@AdobeOrg`。
-- **[!UICONTROL 主机和端口]**:主机端点及其端口 [!DNL Query Service]。
+- **[!UICONTROL 主机和端口]**:主机端点及其端口 [!DNL Query Service]。 必须使用端口80连接 [!DNL Query Service]。
 - **[!UICONTROL 数据库]:** 将使用的数据库。
 
 >[!NOTE]
