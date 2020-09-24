@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;Synapse;synapse;Azure Synapse 
 solution: Experience Platform
 title: 使用Flow Service API创建Azure突触分析连接器
 topic: overview
+type: Tutorial
 description: 本教程使用Flow Service API指导您完成将Azure突触分析（以下简称“突触”）连接到Experience Platform的步骤。
 translation-type: tm+mt
-source-git-commit: 5959d4344ec1c16542de045899ce74beb39a7bc4
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '585'
 ht-degree: 2%
