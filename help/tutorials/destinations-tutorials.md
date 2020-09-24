@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;destinations tutorial
 solution: Experience Platform
 title: 创建目标并使用API激活数据
 topic: tutorial
+type: Tutorial
 description: 了解如何创建不同类型的目标并激活数据。
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '78'
 ht-degree: 10%
