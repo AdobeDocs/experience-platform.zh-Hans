@@ -2,10 +2,11 @@
 keywords: Experience Platform;score a model;Data Science Workspace;popular topics;ui;scoring run;scoring results
 solution: Experience Platform
 title: 对模型(UI)进行评分
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: '在Adobe Experience Platform数据科学工作区中评分可以通过将输入数据输入到现有训练好的模型中来实现。 然后，将评分结果作为新批存储在指定的输出数据集中并可查看。 '
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
