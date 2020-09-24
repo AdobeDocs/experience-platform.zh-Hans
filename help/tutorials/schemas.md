@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: XDM模式和描述符
 topic: tutorial
+type: Tutorial
 description: 标准化和互操作性是Adobe Experience Platform背后的关键概念。 体验Adobe模型(XDM)由客户驱动，旨在实现客户体验数据标准化并为客户体验管理定义模式。 模式是描述Experience Platform中数据的标准方法，它允许符合模式的所有数据在整个组织内重复使用，而不会发生冲突，甚至可以在多个组织之间共享。
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '473'
 ht-degree: 0%
