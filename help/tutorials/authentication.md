@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;Authenticate;access
 solution: Experience Platform
 title: 验证和访问Experience PlatformAPI
 topic: tutorial
+type: Tutorial
 description: '此文档提供了一个分步教程，用于获取对Adobe Experience Platform开发人员帐户的访问权，以便调用Experience PlatformAPI。 '
 translation-type: tm+mt
-source-git-commit: 76e6e1a5484dce0a4640c2ce1f43cf7d84e049bf
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '878'
 ht-degree: 1%
