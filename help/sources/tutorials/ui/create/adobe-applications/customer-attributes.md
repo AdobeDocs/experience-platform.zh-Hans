@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;customer attributes
 solution: Experience Platform
 title: 在UI中创建客户属性源连接器
 topic: overview
+type: Tutorial
 description: 本教程提供了在UI中创建源连接器的步骤，用于收集用户档案到Adobe Experience Platform的客户属性数据。
 translation-type: tm+mt
-source-git-commit: 0da686743e8bc57d310f7eff6f1bf812a8f31238
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '374'
 ht-degree: 8%
