@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;manage decisioning;decisioning
 solution: Experience Platform
 title: 使用API管理决策服务实体
 topic: tutorial
+type: Tutorial
 description: '本文档提供了使用Adobe Experience PlatformAPI与决策服务的业务实体协作的教程。 '
 translation-type: tm+mt
-source-git-commit: f4a4e65a087313dc4e2414f999e021e3f6e17137
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '7239'
 ht-degree: 0%
