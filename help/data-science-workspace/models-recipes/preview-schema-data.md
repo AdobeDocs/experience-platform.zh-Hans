@@ -2,10 +2,11 @@
 keywords: Experience Platform;preview schema data;Data Science Workspace;popular topics
 solution: Experience Platform
 title: 预览模式和数据集
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: 以下文档概述了预览Adobe Experience Platform上的模式和数据集。
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '227'
 ht-degree: 0%
