@@ -4,8 +4,9 @@ description: Adobe Experience Platform的源连接器提供按计划接收外部
 solution: Experience Platform
 title: 监视帐户和数据流
 topic: overview
+type: Tutorial
 translation-type: tm+mt
-source-git-commit: 8f752d6a08496f9583627781d9143ee7f9159bf0
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1097'
 ht-degree: 1%
