@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;data access;data access api;qu
 solution: Experience Platform
 title: 数据访问概述
 topic: tutorial
+type: Tutorial
 description: 此文档提供了一个分步教程，其中涵盖如何使用Adobe Experience Platform的Data Access API查找、访问和下载数据集中存储的数据。 您还将介绍Data Access API的一些独特功能，如分页和部分下载。
 translation-type: tm+mt
-source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1384'
 ht-degree: 2%
