@@ -2,10 +2,11 @@
 keywords: Experience Platform;optimize;model;Data Science Workspace;popular topics;model insights
 solution: Experience Platform
 title: 优化模型
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: 模型洞察框架为数据科学家提供数据科学工作区中的工具，以便快速、明智地选择基于实验的最优机器学习模型。
 translation-type: tm+mt
-source-git-commit: 9ba229195892245d29fb4f17b9f2e5cd6c6ea567
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1249'
 ht-degree: 0%
@@ -166,6 +167,6 @@ class Evaluator(AbstractEvaluator):
 | 多类分类 | -混淆矩 <br>阵——对于每个类： <br>-精确调查准 <br>确性- F得分（特别是F1、F2） | ROC曲线与混淆矩阵 |
 | 聚类（含地面真度） | - NMI（标准化互信息得分）、AMI（调整互信息得分）<br>- RI（Rand指数）、ARI（调整后兰德指数）<br>-同质性得分、完整性得分和V-measure<br>- FMI（Fowlkes-Mallows指数）<br>- Preciety<br>- Jacard指数 | 具有相对簇大小的簇和中心线的簇图反映位于簇内的数据点 |
 | 聚类（无地面真度） | -惯性<br>-侧面影像系数<br>- CHI（Calinski-Harabaz指数）<br>- DBI（Davies-Bouldin指数）<br>- Dunnindex | 具有相对簇大小的簇和中心线的簇图反映位于簇内的数据点 |
-| 推荐 | -平均精度(MAP)- <br>归一化积分——平均 <br>倒数秩- <br>度量K | TBD |
+| 推荐 | -平均精度(MAP)- <br>归一化积分——平均 <br>倒数秩- <br>度量K | 待定 |
 | TensorFlow用例 | 张量流模型分析(TFMA) | 深度比较神经网络模型比较／可视化 |
 | 其他／错误捕获机制 | 由模型作者定义的自定义度量逻辑（和相应的评估图表）。 模板不匹配时的适当错误处理 | 具有评估指标的键值对的表 |
