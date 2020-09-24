@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: 决策教程
 topic: tutorial
+type: Tutorial
 description: 决策服务提供在Adobe Experience Platform运行的应用程序中创建个性化、优化和精心编排的体验的功能。 使用决策服务，您可以从一组可用选项中确定最佳选项。
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '152'
 ht-degree: 0%
