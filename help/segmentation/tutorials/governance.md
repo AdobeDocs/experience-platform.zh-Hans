@@ -3,8 +3,9 @@ keywords: Experience Platform;home;popular topics;data usage compliance;enforce;
 solution: Experience Platform
 title: 为受众区段强制实施数据使用合规性
 topic: tutorial
+type: Tutorial
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1333'
 ht-degree: 1%
@@ -126,7 +127,7 @@ curl -X GET \
 
 ## 从合并策略中查找源数据集 {#datasets}
 
-合并策略包含有关其源数据集的信息，而源数据集又包含数据使用标签。 通过在向API提供GET请求中的合并策略ID，可以查找合并策略的详细 [!DNL Profile] 信息。 有关合并策略的详细信息，请参阅合 [并策略端点指南](../../profile/api/merge-policies.md)。
+合并策略包含有关其源数据集的信息，而源数据集又包含数据使用标签。 通过在向API提供GET请求中提供合并策略ID，可以查找合并策略的详细 [!DNL Profile] 信息。 有关合并策略的详细信息，请参阅合 [并策略端点指南](../../profile/api/merge-policies.md)。
 
 **API格式**
 
