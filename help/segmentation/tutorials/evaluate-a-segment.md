@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;segment evaluation;Segmentatio
 solution: Experience Platform
 title: 评估区段
 topic: tutorial
+type: Tutorial
 description: 本文档提供了一个教程，用于使用分段API评估区段和访问区段结果。
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 0%
@@ -235,4 +236,4 @@ curl -X POST \
 
 您还可以使用访问成功导出的区段数 [!DNL Adobe Experience Platform Query Service]据。 使用UI或RESTful API, [!DNL Query Service] 可以对中的数据编写、验证和运行查询 [!DNL Data Lake]。
 
-有关如何查询受众数据的更多信息，请查阅有关[[!DNL 查询服务]的文档](../../query-service/home.md)。
+有关如何查询受众数据的更多信息，请查阅有关[! [DNL查询服务]的文档](../../query-service/home.md)。
