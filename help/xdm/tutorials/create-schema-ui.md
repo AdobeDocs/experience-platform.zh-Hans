@@ -5,9 +5,9 @@ title: 使用架构编辑器创建架构
 topic: tutorials
 description: 本教程介绍了在模式中使用模式编辑器创建Experience Platform的步骤。
 translation-type: tm+mt
-source-git-commit: 58e0ee234492731d5f875ab845fca11fcda3539b
+source-git-commit: f0d3aad649fa550443db0fc5168c848ae85fb459
 workflow-type: tm+mt
-source-wordcount: '3797'
+source-wordcount: '3835'
 ht-degree: 0%
 
 ---
@@ -143,7 +143,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 
 ![](../images/tutorials/create-schema/loyalty_details_structure.png)
 
-选 **[!UICONTROL 择“]** ”旁的“[!DNL Loyalty Members]添加”字段，在结构中创建新节点。 此节点（在本示例中称为“_tenantId”）表示您的IMS组织的租户ID，前面有下划线。 租户ID的存在表示您正在添加的字段包含在您组织的命名空间中。
+选 **[!UICONTROL 择“]** ”旁的“[!DNL Loyalty Members]添加”字段，在结构中创建新节点。 此节点(在 `_tenantId` 本示例中调用)表示您的IMS组织的租户ID，前面有下划线。 租户ID的存在表示您正在添加的字段包含在您组织的命名空间中。
 
 换言之，您添加的字段对您的组织而言是唯一的，并将保存在仅对您的组 [!DNL Schema Registry] 织可访问的特定区域中。 您定义的字段必须始终添加到租户命名空间，以防止与来自其他标准类、混音、数据类型和字段的名称发生冲突。
 
@@ -236,6 +236,10 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 如果您在模式中查找特定字段，则还可以使用搜索栏按名称筛选显示的字段，而不管它们在哪个混音中提供。
 
 ![](../images/tutorials/create-schema/search.png)
+
+>[!IMPORTANT]
+>
+>在显示匹配字段时，搜索功能会考虑任何选定的混音过滤器。 如果搜索查询未显示您期望的结果，您可能需要多次检查您是否未过滤掉任何相关混音。
 
 ## 将模式字段设置为标识字段 {#identity-field}
 
