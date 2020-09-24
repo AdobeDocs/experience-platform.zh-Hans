@@ -2,10 +2,11 @@
 keywords: Experience Platform;retail sales recipe;Data Science Workspace;popular topics;recipes
 solution: Experience Platform
 title: 创建零售销售模式和数据集
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: 本教程为您提供了所有其他Adobe Experience Platform数据科学工作区教程所需的先决条件和资源。 完成后，您和您的IMS组织成员将可以在Experience Platform上获得零售模式和数据集。
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '544'
 ht-degree: 0%
