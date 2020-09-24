@@ -1,10 +1,11 @@
 ---
 keywords: Experience Platform;Tutorial;feature pipeline;Data Science Workspace;popular topics
 title: 创建特征管线
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: Adobe Experience Platform允许您通过Sensei机器学习框架运行时构建和创建自定义功能管道，以大规模执行功能工程。 本文档描述了在功能管道中找到的各种类，并提供了使用PySpark中的“模型创作SDK”创建自定义功能管道的分步教程。
 translation-type: tm+mt
-source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1426'
 ht-degree: 0%
