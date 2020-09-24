@@ -2,10 +2,11 @@
 keywords: Experience Platform;schedule a model;Data Science Workspace;popular topics;schedule scoring;schedule training
 solution: Experience Platform
 title: 计划模型(UI)
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: Adobe Experience Platform数据科学工作区允许您在机器学习服务上设置定期评分和培训运行。 自动化培训和评分流程可与数据中的模式保持同步，从而帮助保持和提高服务的长期效率。
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '533'
 ht-degree: 0%
