@@ -2,10 +2,11 @@
 keywords: Experience Platform;train and evaluate;Data Science Workspace;popular topics;create a model;create a training run
 solution: Experience Platform
 title: 培训和评估模型(UI)
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: 在Adobe Experience Platform数据科学工作区中，机器学习模型是通过整合符合模型意图的现有Recipe来创建的。 然后，对模型进行训练和评估，通过微调其相关的超参数来优化其运行效率和功效。 菜谱是可重用的，这意味着可以使用单个菜谱创建多个模型并针对特定用途进行定制。
 translation-type: tm+mt
-source-git-commit: cddc559dfb65ada888bb367d6265863091a9b2a1
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1038'
 ht-degree: 1%
