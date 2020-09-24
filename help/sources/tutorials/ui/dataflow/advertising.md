@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;configure dataflow;advertising
 solution: Experience Platform
 title: 在UI中为广告连接器配置数据流
 topic: overview
+type: Tutorial
 description: 数据流是从源中检索数据并将其引入Adobe Experience Platform数据集的计划任务。 本教程提供使用广告帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: e504e0be465c755a77aa30589731941ca50426d2
+source-git-commit: eb6505bdcad9eee6d7e9674504223ca919f19c34
 workflow-type: tm+mt
 source-wordcount: '1467'
 ht-degree: 0%
