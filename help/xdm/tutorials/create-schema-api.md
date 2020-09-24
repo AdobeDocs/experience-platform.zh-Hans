@@ -2,10 +2,11 @@
 keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;schema;Schema;schemas;Schemas;create
 solution: Experience Platform
 title: 使用模式注册表API创建模式
-topic: tutorials
+topic: tutorial
+type: Tutorials
 description: 本教程使用模式注册表API指导您完成使用标准类构建模式的步骤。
 translation-type: tm+mt
-source-git-commit: ed1f2fdac0f9c977d11c867327c084353c1bcd0f
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '2368'
 ht-degree: 1%
