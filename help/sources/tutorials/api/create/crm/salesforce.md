@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;Salesforce;salesforce
 solution: Experience Platform
 title: 使用流服务API创建Salesforce连接器
 topic: overview
+type: Tutorial
 description: 本教程使用Flow Service API指导您完成将平台连接到Salesforce帐户以收集CRM数据的步骤。
 translation-type: tm+mt
-source-git-commit: 25f1dfab07d0b9b6c2ce5227b507fc8c8ecf9873
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '707'
 ht-degree: 1%
