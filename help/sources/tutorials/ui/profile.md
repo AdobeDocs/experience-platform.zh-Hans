@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;activate inbound data;populate
 solution: Experience Platform
 title: 激活入站源数据以填充客户用户档案
 topic: overview
+type: Tutorial
 description: 来自源连接器的入站数据可用于丰富和填充实时客户用户档案数据。
 translation-type: tm+mt
-source-git-commit: fb60e11b9502c31e654d3fbe5dc240ace9429332
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '494'
 ht-degree: 0%
