@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;marketing automation connector
 solution: Experience Platform
 title: 在UI中为营销自动化连接器配置数据流
 topic: overview
+type: Tutorial
 description: 数据流是从源中检索数据并将其捕获到数据的计划 [!DNL Platform] 任务。 本教程提供使用营销自动化帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: 63eb8407617cda64f3f3b0cefd6bf427314e0216
+source-git-commit: eb6505bdcad9eee6d7e9674504223ca919f19c34
 workflow-type: tm+mt
 source-wordcount: '1477'
 ht-degree: 0%
