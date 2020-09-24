@@ -2,10 +2,11 @@
 keywords: Experience Platform;Score a model;Data Science Workspace;popular topics;sensei machine learning api
 solution: Experience Platform
 title: 对模型(API)进行评分
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: 本教程将向您展示如何利用Sensei机器学习API创建实验和实验运行。
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '529'
 ht-degree: 1%
