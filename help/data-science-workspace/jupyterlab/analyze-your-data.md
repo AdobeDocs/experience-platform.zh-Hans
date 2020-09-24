@@ -2,10 +2,11 @@
 keywords: Experience Platform;JupyterLab;notebooks;Data Science Workspace;popular topics;analyze data notebooks
 solution: Experience Platform
 title: 使用笔记本分析数据
-topic: Tutorial
+topic: tutorial
+type: Tutorial
 description: 本教程重点介绍如何使用在数据科学工作区中构建的Jupyter笔记本访问、探索和可视化数据。
 translation-type: tm+mt
-source-git-commit: 3876c33a2d20481f45bd12eda3921898e9e65654
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1731'
 ht-degree: 0%
@@ -158,7 +159,7 @@ df.describe()
 既然我们了解了数据帧值，我们想用可视化来补充这一点，使事情更清晰、更容易地识别模式。 在将结果传送到受众时，图形也很有用。 对可 [!DNL Python] 视化有用的库包括：
 - [马特普洛特利卜](https://matplotlib.org/)
 - [熊猫](https://pandas.pydata.org/)
-- [弹性](https://seaborn.pydata.org/)
+- [西伯恩](https://seaborn.pydata.org/)
 - [gplot](https://ggplot2.tidyverse.org/)
 
 在本节中，我们将快速介绍使用每个库的一些优势。
