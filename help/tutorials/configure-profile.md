@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;Real-time Customer Profile;Ide
 solution: Experience Platform
 title: 实时客户用户档案教程
 topic: tutorial
+type: Tutorial
 description: 本文档概述了涉及的步骤，并提供了用于完成每个工作流程的教程的链接。
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '466'
 ht-degree: 0%
