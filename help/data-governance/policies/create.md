@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;data governance;data usage pol
 solution: Experience Platform
 title: 创建数据使用策略
 topic: policies
+type: Tutorial
 description: 策略服务API允许您创建和管理数据使用策略，以确定可以对包含某些数据使用标签的数据采取哪些营销操作。 此文档提供了使用策略服务API创建策略的分步教程。
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '1209'
 ht-degree: 2%
