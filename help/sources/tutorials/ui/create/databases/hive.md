@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics;Apache Hive;Azure HDInsights;a
 solution: Experience Platform
 title: 在UI中的Azure HDInsights源连接器上创建Apache Hive
 topic: overview
+type: Tutorial
 description: 本教程提供了在Azure HDInsights源连接器上使用平台用户界面创建Apache Hive的步骤。
 translation-type: tm+mt
-source-git-commit: f82dfee2c75a0b8b2ec1615266780b309152ead4
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '481'
 ht-degree: 1%
