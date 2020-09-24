@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 连接到流目标并激活数据
 topic: tutorial
 translation-type: tm+mt
-source-git-commit: f31b03f027d8b44f761917f4edf19a0b5eedd76c
+source-git-commit: bde86cc835c2bd579404480ece8e850fbef8a9b2
 workflow-type: tm+mt
 source-wordcount: '1822'
 ht-degree: 2%
@@ -26,7 +26,7 @@ ht-degree: 2%
 
 如果您希望使用Adobe实时CDP中的用户界面连接到目标并激活数据，请参 [阅连接目标](../../rtcdp/destinations/connect-destination.md)[并将用户档案和区段激活到目标教程](../../rtcdp/destinations/activate-destinations.md) 。
 
-## 快速入门
+## 入门指南
 
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
@@ -298,7 +298,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --data-raw '{
     "name": "Amazon Kinesis/ Azure Event Hubs target connection",
     "description": "Connection to Amazon Kinesis/ Azure Event Hubs",
-    "baseConnection": "{BASE_CONNECTION_ID}",
+    "baseConnectionId": "{BASE_CONNECTION_ID}",
     "connectionSpec": {
         "id": "{CONNECTION_SPEC_ID}",
         "version": "1.0"
