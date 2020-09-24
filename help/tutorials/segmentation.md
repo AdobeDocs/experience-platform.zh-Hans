@@ -3,9 +3,10 @@ keywords: Experience Platform;home;popular topics
 solution: Experience Platform
 title: 分段教程
 topic: tutorial
+type: Tutorial
 description: Adobe Experience Platform分段服务提供用户界面和RESTful API，使您能够根据实时客户用户档案数据构建细分和生成受众。 这些细分在平台上集中配置和维护，任何Adobe解决方案均可轻松访问。
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '584'
 ht-degree: 0%
