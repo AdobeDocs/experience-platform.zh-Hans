@@ -2,10 +2,11 @@
 keywords: cloud storage destination;cloud storage
 title: 云存储目标工作流
 seo-title: 云存储目标工作流
+type: Tutorial
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
 source-wordcount: '537'
 ht-degree: 0%
