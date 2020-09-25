@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform帮助
 breadcrumb-title: Experience Platform Guide
 user-guide-description: Centralize and standardize customer data and content and apply data science and machine learning to improve the design and delivery of rich, personalized experiences.
 translation-type: tm+mt
-source-git-commit: 857ad65335db338c8d0e5d2ea1f92f00d6a1da1e
+source-git-commit: df881ceaeab7b5e51e1574b6487c3a8368c5c596
 workflow-type: tm+mt
-source-wordcount: '306'
-ht-degree: 51%
+source-wordcount: '309'
+ht-degree: 52%
 
 ---
 
@@ -38,15 +38,16 @@ ht-degree: 51%
    * [隐私服务](https://docs.adobe.com/content/help/en/experience-platform/privacy/home.html)
    * [用户档案(实时客户用户档案)](https://docs.adobe.com/content/help/zh-Hans/experience-platform/profile/home.html)
    * [查询服务](https://docs.adobe.com/content/help/en/experience-platform/query/home.html)
-   * [Real-time Customer Data Platform](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)
+   * [实时客户数据平台](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)
    * [沙盒](https://docs.adobe.com/content/help/zh-Hans/experience-platform/sandbox/home.html)
    * [区段](https://docs.adobe.com/content/help/en/experience-platform/segmentation/home.html)
    * [源（连接器）](https://docs.adobe.com/content/help/en/experience-platform/sources/home.html)
    * [Web SDK](https://docs.adobe.com/content/help/zh-Hans/experience-platform/edge/home.html)
    * [XDM（体验数据模型）](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/home.html)
-* [Experience Platform教程](https://docs.adobe.com/content/help/zh-Hans/experience-platform/tutorials/home.html)
+* [Experience Platform 教程](https://docs.adobe.com/content/help/zh-Hans/experience-platform/tutorials/home.html)
 * [发行说明](https://docs.adobe.com/content/help/zh-Hans/experience-platform/release-notes/latest.html)
 * [术语表](glossary.md)
 * [疑难解答指南](troubleshooting.md)
+* [ADLS第2代迁移](adls2-gen2-migration.md)
 * [API基础知识](api-fundamentals.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)
