@@ -5,9 +5,9 @@ title: Adobe Analytics分类数据连接器
 topic: overview
 description: 以下文档提供了如何使用用户界面将Analytics分类连接到平台的信息
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: 1a49cccfbf8d565c8154329cf1f94382911b2f85
 workflow-type: tm+mt
-source-wordcount: '135'
+source-wordcount: '172'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 
 [!DNL Experience Platform] 支持将分析分类数据引入Adobe Experience Platform。
 
-分类允许在生成报告时以不同方式对Analytics变量数据进行分类和显示。
+分类允许在生成报告时以不同方式对Analytics变量数据进行分类和显示。 Analytics Classifications Data Connector要求您的数据在使用前已迁移 [!DNL Classifications] 到Adobe Analytics的新基础架构。 要确认Adobe的迁移状态，请联系您的客户成功经理。
 
 以下文档提供了如何使用用户界面将Analytics分类连接到平台的信息：
 
