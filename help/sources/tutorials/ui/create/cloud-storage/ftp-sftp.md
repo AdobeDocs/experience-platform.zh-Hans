@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: 本教程提供了使用平台用户界面创建FTP或SFTP源连接器的步骤。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: c3352c090ce9e5a89d9285aabdc4851632d4d437
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '702'
 ht-degree: 1%
 
 ---
@@ -61,9 +61,24 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ### 新帐户
 
-如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供名称、可选说明以及FTP或SFTP凭据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新连接。
+如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供名称、可选说明和凭据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新连接。
 
-![connect](../../../../images/tutorials/create/sftp/new.png)
+SFTP连接器为您提供不同的身份验证类型以供访问。 在“ **[!UICONTROL 帐户身份]** ” **[!UICONTROL 下]** ，选择“口令”以使用基于口令的凭据。
+
+![connect-password](../../../../images/tutorials/create/sftp/password.png)
+
+或者，您也可以选 **[择SSH公钥]** ，并使用私钥内容和密码短语 **[!UICONTROL 组合连接您的SFTP]** 帐户 ****。
+
+>[!IMPORTANT]
+>
+>SFTP连接器支持RSA/DSA OpenSSH密钥。 确保关键文件内容与开始 `"-----BEGIN [RSA/DSA] PRIVATE KEY-----"`。 如果私钥文件是PPK格式文件，请使用PuTTY工具从PPK格式转换为OpenSSH格式。
+
+![connect-ssh](../../../../images/tutorials/create/sftp/ssh.png)
+
+| 凭据 | 描述 |
+| ---------- | ----------- |
+| 私钥内容 | Base64编码的SSH私钥内容。 SSH私钥应为OpenSSH格式。 |
+| 密码短语 | 指定密码短语或密码，以便在密钥文件或密钥内容受密码短语保护时解密私钥。 如果PrivateKeyContent是密码保护的，则此参数需要与PrivateKeyContent的密码短语一起使用作值。 |
 
 ### 现有帐户
 
