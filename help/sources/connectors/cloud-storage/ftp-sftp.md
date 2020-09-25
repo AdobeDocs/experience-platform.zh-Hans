@@ -5,7 +5,7 @@ title: FTP和SFTP连接器
 topic: overview
 description: 以下文档提供了如何使用API或用户界面将FTP或STFP服务器连接到平台的信息。
 translation-type: tm+mt
-source-git-commit: 2aa6ef66444dbcd397e91e6f3075e020ba963579
+source-git-commit: 93584ecbbe3be40c6ebee09cac85d497e4a99317
 workflow-type: tm+mt
 source-wordcount: '476'
 ht-degree: 0%
@@ -68,7 +68,9 @@ Adobe Experience Platform为AWS等云提供商提 [!DNL Google Cloud Platform]�
 
 ## 将FTP和SFTP连接到 [!DNL Platform]
 
-> [!IMPORTANT]:在连接之前，用户必须在SFTP服务器配置中禁用键盘交互身份验证。 禁用此设置将允许手动输入密码，而不是通过服务或项目输入。 有关键盘 [交互式身份验证](https://doc.componentpro.com/ComponentPro-Sftp/authenticating-with-a-keyboard-interactive-authentication) ，请参阅Component Pro文档。
+>[!IMPORTANT]
+>
+>在连接之前，用户必须在SFTP服务器配置中禁用键盘交互身份验证。 禁用此设置将允许手动输入密码，而不是通过服务或项目输入。 有关键盘 [交互式身份验证](https://doc.componentpro.com/ComponentPro-Sftp/authenticating-with-a-keyboard-interactive-authentication) ，请参阅Component Pro文档。
 
 以下文档提供了如何将FTP或SFTP服务器连接到使用API或 [!DNL Platform] 用户界面的信息：
 
