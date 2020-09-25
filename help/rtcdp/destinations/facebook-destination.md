@@ -1,14 +1,14 @@
 ---
-keywords: facebook extensions;facebook extension;facebook destinations;facebook
+keywords: facebook extensions;facebook extension;facebook destinations;facebook;instagram;messenger;facebook messenger
 title: Facebook目标
 seo-title: Facebook目标
 description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 seo-description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 72ceb747bd4b278afc51dfb5ab6d6386d7b05c82
 workflow-type: tm+mt
-source-wordcount: '722'
-ht-degree: 2%
+source-wordcount: '758'
+ht-degree: 4%
 
 ---
 
@@ -19,7 +19,10 @@ ht-degree: 2%
 
 根据散列的电子邮 [!DNL Facebook] 件为活动激活用户档案，以进行受众定位、个性化和抑制。
 
+您可以使用此目标在受支持的 [!DNL Facebook’s] 应用程序系列中实现受众 [!DNL Custom Audiences]定位， [!DNL Facebook]包括、 [!DNL Instagram]和 [!DNL Audience Network] 定 [!DNL Messenger]位。 [!DNL Facebook Ads Manager] 中的版面级别会显示您要针对其运行营销活动的所选应用程序。
+
 ![实时CDP UI中的Facebook目标](/help/rtcdp/destinations/assets/facebook-destination.png)
+
 
 ## 用例
 
