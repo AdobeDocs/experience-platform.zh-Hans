@@ -6,9 +6,9 @@ title: 在UI中创建Adobe Analytics分类数据连接器
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 1a49cccfbf8d565c8154329cf1f94382911b2f85
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '661'
 ht-degree: 2%
 
 ---
@@ -25,6 +25,8 @@ ht-degree: 2%
 * [[!DNL Experience Data Model] (XDM)系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
 * [[!DNL实时客户用户档案]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 * [[!DNL沙箱]](../../../../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+
+Analytics Classifications Data Connector要求您的数据在使用前已迁移 [!DNL Classifications] 到Adobe Analytics的新基础架构。 要确认Adobe的迁移状态，请联系您的客户成功经理。
 
 ## 选择您的分类
 
