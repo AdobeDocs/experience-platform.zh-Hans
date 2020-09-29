@@ -4,10 +4,10 @@ audience: user
 user-guide-title: 实时客户数据平台指南
 user-guide-description: Bring together known and anonymous data from multiple enterprise sources to create customer profiles, create audience segments from those profiles, and activate those segments to third-party destinations.
 translation-type: tm+mt
-source-git-commit: 1bfb876dc1665ebef4450a6f5363fba1ea1b7c61
+source-git-commit: e3017744bfe35c6a60cf921121135352a1119bdd
 workflow-type: tm+mt
 source-wordcount: '460'
-ht-degree: 11%
+ht-degree: 12%
 
 ---
 
