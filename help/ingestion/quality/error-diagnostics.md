@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform分批摄取概述
 topic: overview
 translation-type: tm+mt
-source-git-commit: 01b1d9a0d0af82f5380bbc204e65b682d4a50ac1
+source-git-commit: 4652722b17a290c9ef53244498257eb4cb97ac6d
 workflow-type: tm+mt
-source-wordcount: '871'
+source-wordcount: '881'
 ht-degree: 2%
 
 ---
@@ -292,7 +292,15 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 >}
 >```
 
-## 部分批摄取错误类型 {#appendix}
+## 后续步骤 {#next-steps}
+
+本教程介绍了如何监视部分批摄取错误。 有关批量摄取的详细信息，请阅读批 [量摄取开发人员指南](../batch-ingestion/api-overview.md)。
+
+## 附录 {#appendix}
+
+本节提供有关摄取错误类型的补充信息。
+
+### 部分批摄取错误类型 {#partial-ingestion-types}
 
 部分批处理摄取在摄取数据时有三种不同的错误类型：
 
@@ -379,7 +387,3 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/01EFZ7W203P
     "_filename": "parsing_errors_0.json"
 }
 ```
-
-## 后续步骤 {#next-steps}
-
-本教程介绍了如何监视部分批摄取错误。 有关批量摄取的详细信息，请阅读批 [量摄取开发人员指南](../batch-ingestion/api-overview.md)。
