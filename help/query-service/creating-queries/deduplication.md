@@ -4,10 +4,11 @@ solution: Experience Platform
 title: 数据外部重复数据删除
 topic: queries
 type: Tutorial
+description: 此文档概述了用于消除重复的三个常见用例ExperienceEvents、购买和指标的子选择和完整查询示例。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '405'
+source-wordcount: '424'
 ht-degree: 1%
 
 ---
