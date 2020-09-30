@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;query service;Query service;sa
 solution: Experience Platform
 title: 示例查询
 topic: queries
+description: 来自选定Adobe Analytics报告套件的数据将转换为XDM ExperienceEvents并作为数据集引入Adobe Experience Platform。 此文档概括了Adobe Experience Platform查询服务利用此数据的许多用例，其中包含的示例查询应与您的Adobe Analytics数据集配合使用。
 translation-type: tm+mt
-source-git-commit: f9749dbc5f2e3ac15be50cc5317ad60586b2c07e
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '862'
+source-wordcount: '915'
 ht-degree: 1%
 
 ---
