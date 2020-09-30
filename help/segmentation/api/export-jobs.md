@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segm
 solution: Experience Platform
 title: 导出作业端点
 topic: developer guide
+description: 导出作业是异步进程，用于将受众段成员保留到数据集。 您可以在Adobe Experience Platform分段API中使用/export/jobs端点，它允许您以编程方式检索、创建和取消导出作业。
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '1521'
+source-wordcount: '1561'
 ht-degree: 2%
 
 ---
