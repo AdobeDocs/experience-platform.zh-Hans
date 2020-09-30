@@ -4,10 +4,11 @@ solution: Experience Platform
 title: 创建用于导出受众段的数据集
 topic: tutorial
 type: Tutorial
+description: 本教程将逐步介绍创建可用于使用受众UI导出Experience Platform段的数据集所需的步骤。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '733'
+source-wordcount: '758'
 ht-degree: 1%
 
 ---
