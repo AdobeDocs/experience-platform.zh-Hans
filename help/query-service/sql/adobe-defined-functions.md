@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;query service;Query service;ad
 solution: Experience Platform
 title: Adobe定义函数
 topic: functions
+description: 此文档提供Adobe定义的功能在查询服务中可用的信息。
 translation-type: tm+mt
-source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '2156'
+source-wordcount: '2167'
 ht-degree: 3%
 
 ---
