@@ -4,10 +4,11 @@ solution: Experience Platform
 title: 在单个HTTP请求中流化多个消息
 topic: tutorial
 type: Tutorial
+description: 此文档提供了一个教程，用于使用流摄取在单个HTTP请求中向Adobe Experience Platform发送多条消息。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '1466'
+source-wordcount: '1487'
 ht-degree: 1%
 
 ---
