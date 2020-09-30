@@ -3,11 +3,12 @@ keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segm
 solution: Experience Platform
 title: 细分定义
 topic: developer guide
+description: 本指南提供相关信息，帮助您更好地了解细分定义，并包含使用API执行基本操作的示例API调用。
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '1041'
-ht-degree: 4%
+source-wordcount: '1064'
+ht-degree: 3%
 
 ---
 
