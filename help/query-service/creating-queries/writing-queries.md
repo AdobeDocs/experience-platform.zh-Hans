@@ -4,10 +4,11 @@ solution: Experience Platform
 title: 编写查询
 topic: queries
 type: Tutorial
+description: 本文档详细介绍了在Adobe Experience Platform查询服务中编写查询时应了解的重要细节。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '659'
 ht-degree: 1%
 
 ---
