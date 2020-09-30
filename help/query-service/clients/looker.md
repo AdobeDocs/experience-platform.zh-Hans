@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;Query service;query service;Lo
 solution: Experience Platform
 title: 与Looker连接
 topic: connect
+description: 此文档将步骤连接到Looker和Adobe Experience Platform查询服务。
 translation-type: tm+mt
-source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '202'
+source-wordcount: '217'
 ht-degree: 0%
 
 ---
