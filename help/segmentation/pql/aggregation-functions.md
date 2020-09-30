@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segm
 solution: Experience Platform
 title: 聚合函数
 topic: developer guide
+description: '聚合函数用于将用户档案查询语言(PQL)阵列中的多个值组合在一起，以形成单个摘要值。 '
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '205'
+source-wordcount: '226'
 ht-degree: 5%
 
 ---
