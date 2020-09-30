@@ -3,11 +3,12 @@ keywords: Experience Platform;home;popular topics;query service;Query service;tr
 solution: Experience Platform
 title: Adobe Experience Platform查询服务疑难解答指南
 topic: troubleshooting
+description: 此文档包含有关您遇到的常见错误代码以及可能原因的信息。
 translation-type: tm+mt
-source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '154'
-ht-degree: 3%
+source-wordcount: '168'
+ht-degree: 2%
 
 ---
 
