@@ -4,10 +4,11 @@ solution: Experience Platform
 title: 根据查询结果生成数据集
 topic: queries
 type: Tutorial
+description: '查询服务允许从UI创建数据集。 创建数据集后，可以像在数据湖中访问任何其他数据集一样访问该数据集，并用于各种用例。 '
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '270'
+source-wordcount: '305'
 ht-degree: 0%
 
 ---
