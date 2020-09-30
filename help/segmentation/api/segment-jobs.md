@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segm
 solution: Experience Platform
 title: 细分作业
 topic: developer guide
+description: 本指南提供相关信息，帮助您更好地了解细分作业，并包含使用API执行基本操作的示例API调用。
 translation-type: tm+mt
-source-git-commit: 3926c989a05ee97f2a09c0ab38d6a444674563cb
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '1002'
+source-wordcount: '1025'
 ht-degree: 3%
 
 ---
