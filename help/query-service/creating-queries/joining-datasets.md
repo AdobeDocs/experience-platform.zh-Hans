@@ -4,11 +4,12 @@ solution: Experience Platform
 title: 加入数据集
 topic: queries
 type: Tutorial
+description: 加入数据集后，您可以将来自查询中其他数据集的数据包含进来。 此示例使用自定义操作系统数据集将操作系统ID映射到操作系统值。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 37356db1666b0c800119b1e254940ad72550848a
 workflow-type: tm+mt
-source-wordcount: '53'
-ht-degree: 3%
+source-wordcount: '82'
+ht-degree: 2%
 
 ---
 
