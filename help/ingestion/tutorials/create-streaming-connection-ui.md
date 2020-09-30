@@ -4,10 +4,11 @@ solution: Experience Platform
 title: 使用UI创建流连接
 topic: tutorial
 type: Tutorial
+description: 此UI指南将帮助您使用Adobe Experience Platform创建流连接。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '512'
 ht-degree: 0%
 
 ---
@@ -78,4 +79,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过本教程，您已创建了流式HTTP连接，使您能够使用流式端点访问各种 [!DNL Data Ingestion] API。 有关在API中创建流连接的说明，请阅读创建 [流连接教程](../tutorials/create-streaming-connection.md)。
+通过本教程，您已创建了流式HTTP连接，使您可以使用流式端点访问各种 [!DNL Data Ingestion] API。 有关在API中创建流连接的说明，请阅读创建 [流连接教程](../tutorials/create-streaming-connection.md)。
