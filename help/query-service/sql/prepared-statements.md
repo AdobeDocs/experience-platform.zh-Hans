@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;query service;Query service;pr
 solution: Experience Platform
 title: 准备的声明
 topic: prepared statements
+description: 在SQL中，预准备语句用于模板类似的查询或更新。 Adobe Experience Platform查询服务通过使用参数化查询支持准备的语句。
 translation-type: tm+mt
-source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '340'
+source-wordcount: '365'
 ht-degree: 8%
 
 ---
