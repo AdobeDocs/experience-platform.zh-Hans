@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;query service;Query service;sp
 solution: Experience Platform
 title: Spark SQL函数
 topic: spark sql functions
+description: 本文档包含有关Spark SQL帮助程序的信息，这些帮助程序提供内置的Spark SQL函数以扩展SQL功能。
 translation-type: tm+mt
-source-git-commit: c5d3be4706ca6d6a30e203067db6ddc894b9bfb4
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '4991'
+source-wordcount: '5009'
 ht-degree: 5%
 
 ---
@@ -1849,7 +1850,7 @@ SQL [!DNL Spark] 帮助程序提供内置的SQL [!DNL Spark] 函数来扩展SQL�
 
 `double(expr)`:将值转 `expr` 换为目标数据类型 `double`。
 
-#### 浮
+#### 铸
 
 `float(expr)`:将值转 `expr` 换为目标数据类型 `float`。
 
