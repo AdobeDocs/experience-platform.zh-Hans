@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;Segmentation Service;segmentat
 solution: Experience Platform
 title: 分段服务用户指南
 topic: ui guide
+description: Adobe Experience Platform分段服务为创建和管理段定义提供了用户界面。
 translation-type: tm+mt
-source-git-commit: c9ff4d26accd880d5169526f84be607fc722883b
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '1452'
+source-wordcount: '1467'
 ht-degree: 0%
 
 ---
