@@ -4,11 +4,12 @@ solution: Experience Platform
 title: Adobe定义函数
 topic: queries
 type: Tutorial
+description: 此文档涵盖Adobe定义的功能(ADF)，可支持三个关键的Analytics活动会话化、归因和路径。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '287'
-ht-degree: 6%
+source-wordcount: '303'
+ht-degree: 5%
 
 ---
 
