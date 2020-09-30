@@ -2,11 +2,13 @@
 keywords: Experience Platform;home;popular topics;retrieve failed batches;failed batches;batch ingestion;Batch ingestion;Failed batches;Get failed batches;get failed batches;Download failed batches;download failed batches;
 solution: Experience Platform
 title: 检索失败的批
-topic: overview
+topic: tutorial
+type: Tutorial
+description: 本教程介绍了使用数据摄取API检索有关失败批次的信息的步骤。
 translation-type: tm+mt
-source-git-commit: c04fb056d4564e53f192e0734a700a13820f5ba7
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '607'
+source-wordcount: '622'
 ht-degree: 1%
 
 ---
