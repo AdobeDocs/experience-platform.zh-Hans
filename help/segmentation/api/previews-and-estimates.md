@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segm
 solution: Experience Platform
 title: 预览和估计端点
 topic: developer guide
+description: 在开发细分定义时，您可以使用Adobe Experience Platform内的估计和预览工具来视图摘要级信息，以帮助确保隔离预期受众。
 translation-type: tm+mt
-source-git-commit: 69d173e163720c962d910fa4c1e2491fb1262251
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '746'
+source-wordcount: '777'
 ht-degree: 2%
 
 ---
