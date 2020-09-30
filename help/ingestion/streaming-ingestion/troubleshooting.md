@@ -3,10 +3,11 @@ keywords: Experience Platform;home;popular topics;streaming;streaming ingestion;
 solution: Experience Platform
 title: 流摄取疑难解答
 topic: troubleshooting
+description: 此文档提供有关在Adobe Experience Platform流式摄取的常见问题的解答。
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '997'
+source-wordcount: '1012'
 ht-degree: 0%
 
 ---
