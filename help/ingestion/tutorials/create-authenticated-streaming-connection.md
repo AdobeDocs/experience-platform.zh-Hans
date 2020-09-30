@@ -4,10 +4,11 @@ solution: Experience Platform
 title: 创建经过身份验证的流连接
 topic: tutorial
 type: Tutorial
+description: 通过实名数据收集，Adobe Experience Platform服务(如实时客户用户档案和身份)可以区分来自可信来源和不可信来源的记录。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 37356db1666b0c800119b1e254940ad72550848a
 workflow-type: tm+mt
-source-wordcount: '633'
+source-wordcount: '659'
 ht-degree: 2%
 
 ---
@@ -15,7 +16,7 @@ ht-degree: 2%
 
 # 创建经过身份验证的流连接
 
-通过实名数据收集，Adobe Experience Platform服 [!DNL Real-time Customer Profile] 务( [!DNL Identity]如和)可以区分来自可信来源和不可信来源的记录。 要发送个人身份信息(PII)的客户可以通过作为访问令牌请求的一部分发送POST来发送个人身份信息。
+经身份验证的数据收集使Adobe Experience Platform服务(如 [!DNL Real-time Customer Profile] 和) [!DNL Identity]能够区分来自可信来源和不可信来源的记录。 要发送个人身份信息(PII)的客户可以通过作为访问令牌请求的一部分发送POST来发送个人身份信息。
 
 ## 入门指南
 
