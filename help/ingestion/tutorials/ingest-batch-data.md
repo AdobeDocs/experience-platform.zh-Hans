@@ -4,10 +4,11 @@ solution: Experience Platform
 title: 将数据引入Adobe Experience Platform
 topic: tutorial
 type: Tutorial
+description: Adobe Experience Platform允许您将符合已知体验数据模型(XDM)模式的数据以镶木地板文件或数据形式轻松导入为批处理文件。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '1278'
+source-wordcount: '1308'
 ht-degree: 0%
 
 ---
