@@ -6,10 +6,10 @@ topic: tutorial
 type: Tutorial
 description: 本教程介绍如何使用Adobe Experience Platform用户界面将CSV文件映射到XDM模式。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 7adf18e4251f377fee586c8a0f23b89acd75afca
 workflow-type: tm+mt
-source-wordcount: '1370'
-ht-degree: 2%
+source-wordcount: '886'
+ht-degree: 1%
 
 ---
 
@@ -113,50 +113,16 @@ ht-degree: 2%
 
 映射和创建CSV文件后，您可以监视通过它摄取的数据。 有关监视数据流的详细信息，请参阅有关监视流数据 [流的教程](../../ingestion/quality/monitor-data-flows.md)。
 
-## 后续步骤
+## 使用映射函数
 
-通过遵循本教程，您已成功将平面CSV文件映射到XDM模式并将其引入 [!DNL Platform]。 此数据现在可供下游服务 [!DNL Platform] 使用，如 [!DNL Real-time Customer Profile]。 有关详细信息， [请参阅[!DNL实时客户用户档案]](../../profile/home.md) 的概述。
-
-## 附录
-
-以下部分提供了有关将CSV列映射到XDM字段的其他信息。
-
-### 映射函数
-
-某些映射函数可用于根据在源字段中输入的内容计算和计算值。 要使用函数，请在“源字段”下 **[!UICONTROL 键入该函数]** ，并输入相应的语法和输入。
+要使用函数，请在“源字段”下 **[!UICONTROL 键入该函数]** ，并输入相应的语法和输入。
 
 例如，要连接 **城市****和国家／地区** CSV字段并将其分配 **到城市** XDM字段，请将源字段设置为 `concat(city, ", ", county)`。
 
 ![](../images/tutorials/map-a-csv-file/mapping-function.png)
 
-下表列表了所有支持的映射函数，包括示例表达式及其结果输出。
+要了解有关将列映射到XDM字段的更多信息，请阅读有关使 [用数据准备（映射器）功能的指南](../../data-prep/functions.md)。
 
-| 函数 | 描述 | 示例表达式 | 示例输出 |
-| -------- | ----------- | ----------------- | ------------- |
-| concat | 连接给定字符串。 | concat（&quot;嗨， &quot;, &quot;there&quot;, &quot;!&quot;） | `"Hi, there!"` |
-| 爆炸 | 根据正则表达式拆分字符串并返回一组部分。 | explode（&quot;嗨，那儿！&quot;, &quot; &quot;） | `["Hi,", "there"]` |
-| instr | 返回子字符串的位置／索引。 | instr(&quot;adobe<span>.com&quot;, &quot;com&quot;) | 6 |
-| replacestr | 替换搜索字符串（如果存在于原始字符串中）。 | replaceestr(&quot;This is a string re test&quot;, &quot;re&quot;, &quot;replace&quot;) | &quot;这是字符串替换测试&quot; |
-| substr | 返回给定长度的子字符串。 | substr（&quot;这是子字符串测试&quot;, 7, 8） | &quot; a subst&quot; |
-| lower /<br>lcase | 将字符串转换为小写。 | lower(&quot;HeLLo&quot;)<br>lcase(&quot;HeLLo&quot;) | “hello” |
-| 上/<br>下 | 将字符串转换为大写。 | upper(&quot;HeLLo&quot;)<br>ucase(&quot;HeLLo&quot;) | “您好” |
-| 拆分 | 在分隔符上拆分输入字符串。 | split(&quot;Hello world&quot;, &quot; &quot;) | `["Hello", "world"]` |
-| 加入 | 使用分隔符连接对象列表。 | `join(" ", ["Hello", "world"]`) | “你好世界” |
-| 凝聚 | 返回给定列表中的第一个非空对象。 | coalesce(null、null、null、“first”、null、“second”) | “first” |
-| 解码 | 如果将键和键值对列表拼合为数组，则函数返回值（如果找到键），或返回默认值（如果数组中存在）。 | decode(&quot;k2&quot;, &quot;k1&quot;, &quot;v1&quot;, &quot;k2&quot;, &quot;v2&quot;, &quot;default&quot;) | &quot;v2&quot; |
-| ii | 计算给定的布尔表达式，并根据结果返回指定值。 | iif(&quot;s&quot;。equalsIgnoreCase(&quot;S&quot;), &quot;True&quot;, &quot;False&quot;) | &quot;True&quot; |
-| min | 返回给定参数的最小值。 使用自然订购。 | min(3, 1, 4) | 1 |
-| max | 返回给定参数的最大值。 使用自然订购。 | max(3, 1, 4) | 4 |
-| 第 | 检索第一个给定参数。 | first(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;1&quot; |
-| 最后 | 检索最后一个给定参数。 | last(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;3&quot; |
-| uuid /<br>guid | 生成伪随机ID。 | uuid()<br>guid() | {UNIQUE_ID} |
-| now | 检索当前时间。 | now() | `2019-10-23T10:10:24.556-07:00[America/Los_Angeles]` |
-| timestamp | 检索当前Unix时间。 | timestamp() | 1571850624571 |
-| 格式 | 根据指定的格式设置输入日期的格式。 | format({DATE}, &quot;yyyy-MM-dd HH:mm:ss&quot;) | &quot;2019-10-23 11:24:35&quot; |
-| dformat | 根据指定的格式将时间戳转换为日期字符串。 | dformat(1571829875, &quot;dd-MMM-yyyy hh:mm&quot;) | “2019年10月23日11:24” |
-| 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | date（&quot;2019年10月23日11:24&quot;） | &quot;2019-10-23T11:24:00+00:00&quot; |
-| date_part | 检索日期的部分。 支持以下组件值： <br><br><br>“年<br>”<br><br>“yy<br>”第4季度<br>“<br><br><br><br>”<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>“q”、“q”、“”、“ead”。“ 12”“mi”“n”“第二”“毫秒””。 | date_part(date(&quot;2019-10-17 11:55:12&quot;), &quot;MM&quot;) | 10 |
-| set_date_part | 在给定日期替换组件。 接受以下组件： <br><br>&quot;年&quot;<br>&quot;<br>yy&quot;月<br><br>&quot;<br>&quot;<br>mm&quot;<br><br>&quot;<br>m&quot; dd&quot;日<br>&quot;<br><br>&quot;<br>&quot;小时&quot;<br><br><br><br><br><br><br><br>&quot;分钟&quot;&quot;mi&quot;mi&quot;n&quot;&quot;第二&quot;&quot; | set_date_part(&quot;m&quot;, 4, date(&quot;2016-11-09T11:44:44.797&quot;) | &quot;2016-04-09T11:44:44.797&quot; |
-| make_date_time /<br>make_timestamp | 从部分创建日期。 | make_date_time(2019, 10, 17, 11, 55, 12, 999, &quot;America/Los_Angeles&quot;) | `2019-10-17T11:55:12.0&#x200B;00000999-07:00[America/Los_Angeles]` |
-| current_timestamp | 返回当前时间戳。 | current_timestamp() | 1571850624571 |
-| current_date | 返回不带时间组件的当前日期。 | current_date() | 《2019年11月18日》 |
+## 后续步骤
+
+通过遵循本教程，您已成功将平面CSV文件映射到XDM模式并将其引入 [!DNL Platform]。 此数据现在可供下游服务 [!DNL Platform] 使用，如 [!DNL Real-time Customer Profile]。 有关详细信息， [请参阅[!DNL实时客户用户档案]](../../profile/home.md) 的概述。
