@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform;home;popular topics;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mapping;mapping fields;mapping functions;
 solution: Experience Platform
-title: 映射函数
+title: 数据准备功能
 topic: overview
 description: 本文档介绍了与数据准备一起使用的映射功能。
 translation-type: tm+mt
-source-git-commit: db38f0666f5c945461043ad08939ebda52c21855
+source-git-commit: d47410106a6d3955cc9af78e605c893f08185ffa
 workflow-type: tm+mt
-source-wordcount: '3288'
-ht-degree: 5%
+source-wordcount: '3432'
+ht-degree: 3%
 
 ---
 
 
-# 映射函数
+# 数据准备功能
 
-映射函数可用于根据在源字段中输入的内容计算和计算值。
+数据准备函数可用于根据在源字段中输入的内容计算和计算值。
 
 ## 字段
 
@@ -37,6 +37,10 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 ### 字符串函数
 
+>[!NOTE]
+>
+>请向左／向右滚动以视图表的完整内容。
+
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | concat | 连接给定字符串。 | <ul><li>字符串：将连接的字符串。</li></ul> | concat(STRING_1, STRING_2) | concat（&quot;嗨， &quot;, &quot;there&quot;, &quot;!&quot;） | `"Hi, there!"` |
@@ -47,7 +51,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | lower /<br>lcase | 将字符串转换为小写。 | <ul><li>输入： **必需** 。将转换为小写的字符串。</li></ul> | lower(INPUT) | lower(&quot;HeLLo&quot;)<br>lcase(&quot;HeLLo&quot;) | “hello” |
 | 上/<br>下 | 将字符串转换为大写。 | <ul><li>输入： **必需** 。将转换为大写的字符串。</li></ul> | upper(INPUT) | upper(&quot;HeLLo&quot;)<br>ucase(&quot;HeLLo&quot;) | “您好” |
 | 拆分 | 在分隔符上拆分输入字符串。 | <ul><li>输入： **必需** 。将要拆分的输入字符串。</li><li>分隔符： **必需** 。用于拆分输入的字符串。</li></ul> | split(INPUT, SEPARATOR) | split(&quot;Hello world&quot;, &quot; &quot;) | `["Hello", "world"]` |
-| 加入 | 使用分隔符连接对象列表。 | <ul><li>分隔符： **必需** 。将用于连接对象的字符串。</li><li>对象： **必需** 。将加入的字符串数组。</li></ul> | join(SEPARATOR, [OBJECTS]) | `join(" ", ["Hello", "world"])` | “你好世界” |
+| 加入 | 使用分隔符连接对象列表。 | <ul><li>分隔符： **必需** 。将用于连接对象的字符串。</li><li>对象： **必需** 。将加入的字符串数组。</li></ul> | `join(SEPARATOR, [OBJECTS])` | `join(" ", ["Hello", "world"])` | “你好世界” |
 | lpad | 将字符串的左侧与另一个给定字符串进行填充。 | <ul><li>输入： **必需** 。要填充的字符串。 此字符串可以为null。</li><li>计数： **必需** 。要填充的字符串大小。</li><li>填充： **必需** 。用于输入的字符串。 如果为null或为空，则它将被视为单个空格。</li></ul> | lpad(INPUT, COUNT, PADDING) | lpad(&quot;bat&quot;, 8, &quot;yz&quot;) | “yzyzybat” |
 | rpad | 将字符串的右侧与另一个给定的字符串相连。 | <ul><li>输入： **必需** 。要填充的字符串。 此字符串可以为null。</li><li>计数： **必需** 。要填充的字符串大小。</li><li>填充： **必需** 。用于输入的字符串。 如果为null或为空，则它将被视为单个空格。</li></ul> | rpad(INPUT, COUNT, PADDING) | rpad(&quot;bat&quot;, 8, &quot;yz&quot;) | “batyzyzy” |
 | 左 | 获取给定字符串的第一个“n”字符。 | <ul><li>字符串： **必需** 。您要获得的第一个“n”字符的字符串。</li><li>计数： **必**&#x200B;需要从字符串获取的“n”字符。</li></ul> | left（字符串，计数） | left(&quot;abcde&quot;, 2) | &quot;ab&quot; |
@@ -60,15 +64,23 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 ### 散列函数
 
+>[!NOTE]
+>
+>请向左／向右滚动以视图表的完整内容。
+
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| sha1 | 使用安全哈希算法1(SHA-1)输入并生成哈希值。 | <ul><li>输入： **必需** 。要散列的纯文本。</li><li>字符集： *可选* 。字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha1(INPUT, CHARSET) | sha1（&quot;我的文本&quot;, &quot;UTF-8&quot;） | c3599c11e47719df18a2448690840c5dfcce3c80 |
-| sha256 | 使用安全哈希算法256(SHA-256)输入并生成哈希值。 | <ul><li>输入： **必需** 。要散列的纯文本。</li><li>字符集： *可选* 。字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha256(INPUT, CHARSET) | sha256（&quot;我的文本&quot;, &quot;UTF-8&quot;） | 7330d2b39ca35eaf4cb95fc846c21ee6a39af698154a83a586ee270a0d372104 |
-| sha512 | 使用安全哈希算法512(SHA-512)输入并生成哈希值。 | <ul><li>输入： **必需** 。要散列的纯文本。</li><li>字符集： *可选* 。字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha512(INPUT, CHARSET) | sha512（&quot;我的文本&quot;, &quot;UTF-8&quot;） | a3d7e45a0d9be5fd4e4b9a3b8c9c2163c21ef708bf11b4232bb21d2a8704ada2cdcd7b367dd0788a89a5c908cfe377aceb1072a7b386b7d4fd2ff68a8fd24d16 |
-| md5 | 使用MD5输入并生成哈希值。 | <ul><li>输入： **必需** 。要散列的纯文本。</li><li>字符集： *可选* 。字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。 </li></ul> | md5(INPUT, CHARSET) | md5(&quot;my text&quot;, &quot;UTF-8&quot;) | d3b96ce8c9fb4e9bd0198d03ba6852c7 |
+| sha1 | 使用安全哈希算法1(SHA-1)输入并生成哈希值。 | <ul><li>输入： **必需** 。要散列的纯文本。</li><li>字符集： *可选* 。字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha1(INPUT, CHARSET) | sha1（&quot;我的文本&quot;, &quot;UTF-8&quot;） | c3599c11e47719df18a24 &#x200B; 48690840c5dfcce3c80 |
+| sha256 | 使用安全哈希算法256(SHA-256)输入并生成哈希值。 | <ul><li>输入： **必需** 。要散列的纯文本。</li><li>字符集： *可选* 。字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha256(INPUT, CHARSET) | sha256（&quot;我的文本&quot;, &quot;UTF-8&quot;） | 7330d2b39ca35eaf4cb95fc846c21 &#x200B;ee6a39af698154a83a586ee270a0d372104 |
+| sha512 | 使用安全哈希算法512(SHA-512)输入并生成哈希值。 | <ul><li>输入： **必需** 。要散列的纯文本。</li><li>字符集： *可选* 。字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha512(INPUT, CHARSET) | sha512（&quot;我的文本&quot;, &quot;UTF-8&quot;） | a3d7e45a0d9be5fd4e4b9a3b8c9c2163c21ef &#x200B;708bf11b4232b21d2a8704ada2cd7b367dd0788a89 &#x200B; a5c908cfe377aceb1072a7b386b7d4fd2ff68a8fd24d16 |
+| md5 | 使用MD5输入并生成哈希值。 | <ul><li>输入： **必需** 。要散列的纯文本。</li><li>字符集： *可选* 。字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。 </li></ul> | md5(INPUT, CHARSET) | md5(&quot;my text&quot;, &quot;UTF-8&quot;) | d3b96ce8c9fb4 &#x200B;e9bd0198d03ba6852c7 |
 | crc32 | 输入使用循环冗余校验(CRC)算法来生成32位循环码。 | <ul><li>输入： **必需** 。要散列的纯文本。</li><li>字符集： *可选* 。字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | crc32(INPUT, CHARSET) | crc32(&quot;my text&quot;, &quot;UTF-8&quot;) | 8df92e80 |
 
 ### URL函数
+
+>[!NOTE]
+>
+>请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
@@ -79,6 +91,10 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | get_url_查询_str | 返回给定URL的查询字符串。 | <ul><li>URL: **必需** 。您尝试从中获取查询字符串的URL。</li><li>锚点： **必需** ：确定将对查询字符串中的锚点执行什么操作。 可以是以下三个值之一：“retain”、“remove”或“append”。<br><br>如果值为“retain”，则锚点将附加到返回的值。<br>如果值为“remove”，则锚点将从返回的值中删除。<br>如果值为“append”，则锚点将作为单独的值返回。</li></ul> | get_url_查询_str(URL, ANCHOR) | get_url_查询_str(&quot;foo://example.com:8042/over/there?name=ferret#nose&quot;, &quot;retain&quot;)<br>get_url_查询_str(&quot;foo://example.com:8042/over/there?name=ferret#nose&quot;, &quot;remove&quot;)<br>get_url_查询_str(&quot;foo://example.com:8042/over/there?name=ferret#nose&quot;, &quot;append&quot;) | `{"name": "ferret#nose"}`<br>`{"name": "ferret"}`<br>`{"name": "ferret", "_anchor_": "nose"}` |
 
 ### 日期和时间函数
+
+>[!NOTE]
+>
+>请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
@@ -97,6 +113,10 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 ### 层次——对象
 
+>[!NOTE]
+>
+>请向左／向右滚动以视图表的完整内容。
+
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | size_of | 返回输入的大小。 | <ul><li>输入： **必需** 。您尝试查找的对象大小。</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
@@ -108,6 +128,10 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 ### 层次结构——数组
 
+>[!NOTE]
+>
+>请向左／向右滚动以视图表的完整内容。
+
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | 凝聚 | 返回给定数组中的第一个非空对象。 | <ul><li>输入： **必需** 。要查找的第一个非空对象的数组。</li></ul> | coalesce(INPUT) | coalesce(null、null、null、“first”、null、“second”) | “first” |
@@ -117,6 +141,10 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 ### 逻辑运算符
 
+>[!NOTE]
+>
+>请向左／向右滚动以视图表的完整内容。
+
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | 解码 | 如果将键和键值对列表拼合为数组，则函数返回值（如果找到键），或返回默认值（如果数组中存在）。 | <ul><li>密钥： **必需** 。要匹配的密钥。</li><li>OPTIONS: **必需** ：键／值对的拼合数组。 （可选）可以将默认值放在结尾。</li></ul> | decode(KEY,OPTIONS) | decode(stateCode, &quot;ca&quot;, &quot;California&quot;, &quot;pa&quot;, &quot;Pennysplania&quot;, &quot;N/A&quot;) | 如果给定的stateCode是“ca”、“California”。<br>如果给定的stateCode是“pa”、“Pennysvania”。<br>如果stateCode与以下内容不匹配，则为“N/A”。 |
@@ -124,12 +152,20 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 ### 聚合
 
+>[!NOTE]
+>
+>请向左／向右滚动以视图表的完整内容。
+
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | min | 返回给定参数的最小值。 使用自然订购。 | <ul><li>OPTIONS: **必需** ：可相互比较的一个或多个对象。</li></ul> | min(OPTIONS) | min(3, 1, 4) | 1 |
 | max | 返回给定参数的最大值。 使用自然订购。 | <ul><li>OPTIONS: **必需** ：可相互比较的一个或多个对象。</li></ul> | max(OPTIONS) | max(3, 1, 4) | 4 |
 
 ### 类型转换
+
+>[!NOTE]
+>
+>请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
@@ -140,17 +176,29 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 ### JSON函数
 
+>[!NOTE]
+>
+>请向左／向右滚动以视图表的完整内容。
+
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | json_to_object | 反序列化给定字符串中的JSON内容。 | <ul><li>字符串： **需要** ,JSON字符串需要反序列化。</li></ul> | json_to_object(STRING) | json_to_object({&quot;info&quot;:{&quot;firstName&quot;:&quot;John&quot;,&quot;lastName&quot;:&quot;Doe&quot;}) | 表示JSON的对象。 |
 
 ### 特别行动
 
+>[!NOTE]
+>
+>请向左／向右滚动以视图表的完整内容。
+
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | uuid /<br>guid | 生成伪随机ID。 |  | uuid()<br>guid() | uuid()<br>guid() | 7c0267d2-bb74-4e1a-9275-3bf4fccda5f4<br>c7016dc7-3163-43f7-afc7-2e1c9c206333 |
 
 ### 用户代理功能
+
+>[!NOTE]
+>
+>请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
