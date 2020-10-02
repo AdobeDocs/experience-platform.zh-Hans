@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform帮助
 breadcrumb-title: Experience Platform Guide
 user-guide-description: Learn how Experience Platform makes it possible to deliver personalized experiences to your customers in real-time.
 translation-type: tm+mt
-source-git-commit: bafc3265a808871912949409228625fc828cbbb1
+source-git-commit: c9daf77f4b7db113b972ee268681999bc7f7fa8d
 workflow-type: tm+mt
-source-wordcount: '309'
-ht-degree: 52%
+source-wordcount: '319'
+ht-degree: 50%
 
 ---
 
@@ -24,6 +24,7 @@ ht-degree: 52%
    * [目录和数据集](https://docs.adobe.com/content/help/en/experience-platform/catalog/home.html)
    * [数据访问](https://docs.adobe.com/content/help/en/experience-platform/data-access/home.html)
    * [数据管理](https://docs.adobe.com/content/help/en/experience-platform/data-governance/home.html)
+   * [数据准备](https://docs.adobe.com/content/help/en/experience-platform/data-prep/home.html)
    * [数据获取](https://docs.adobe.com/content/help/zh-Hans/experience-platform/ingestion/home.html)
    * [数据科学工作区](https://docs.adobe.com/content/help/en/experience-platform/data-science-workspace/home.html)
    * [Debugger](https://docs.adobe.com/content/help/zh-Hans/debugger/using/experience-cloud-debugger.html)
