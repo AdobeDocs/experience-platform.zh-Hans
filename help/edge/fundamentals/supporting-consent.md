@@ -5,7 +5,7 @@ description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
 seo-description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
 keywords: consent;defaultConsent;default consent;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;
 translation-type: tm+mt
-source-git-commit: fe53ecbf6adff4f1e09979cd170a88ac0bd3cb75
+source-git-commit: f178da80d0902f76868986426600f3da426cf24d
 workflow-type: tm+mt
 source-wordcount: '756'
 ht-degree: 0%
@@ -97,7 +97,7 @@ alloy("setConsent", {
 });
 ```
 
-以这种方式设置同意后，将使用同意信息更新统一用户档案。 要使此用户档案正常工作，XDM模式需要包含 [用户档案隐私混合](https://github.com/adobe/xdm/blob/master/docs/reference/context/profile-privacy.schema.md)。 发送事件时，需要将IAB同意信息手动添加到事件xdm对象。 SDK不会自动在事件中包含同意信息。 要在事件中发送同意信息， [需要将“体验事件隐](https://github.com/adobe/xdm/blob/master/docs/reference/context/experienceevent-privacy.schema.md) 私混合”添加到体验事件模式。
+以这种方式设置同意后，实时客户用户档案会使用同意信息进行更新。 要使此用户档案正常工作，XDM模式需要包含 [用户档案隐私混合](https://github.com/adobe/xdm/blob/master/docs/reference/context/profile-privacy.schema.md)。 发送事件时，需要将IAB同意信息手动添加到事件XDM对象。 SDK不会自动在事件中包含同意信息。 要在事件中发送同意信息， [需要将“体验事件隐](https://github.com/adobe/xdm/blob/master/docs/reference/context/experienceevent-privacy.schema.md) 私混合”添加到“体验事件”模式。
 
 ## 在一个请求中发送两个标准
 
