@@ -5,9 +5,9 @@ seo-title: Google广告目标
 description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 seo-description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 translation-type: tm+mt
-source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
+source-git-commit: c66fb4cf0a414e02ceb58becc9d9b59db3fe987b
 workflow-type: tm+mt
-source-wordcount: '635'
+source-wordcount: '652'
 ht-degree: 0%
 
 ---
@@ -30,6 +30,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >如果您希望创建您的第一个目标， [!DNL Google Ads] 并且过去(使用Experience Cloud [ID或其他应用程序)未启用Audience ManagerID服务中的](https://docs.adobe.com/content/help/en/id-service/using/id-service-api/methods/idsync.html) ID同步功能，请联系Adobe咨询或客户服务部以启用ID同步。 如果您以前在Audience Manager中设置Google集成，则您设置的ID同步将转入Adobe实时CDP。
+
+### 导出类型 {#export-type}
+
+**区段导出** -您正在将区段(受众)的所有成员导出到Google目标。
 
 ## 先决条件
 
@@ -57,7 +61,7 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信息，请参]**&#x200B;阅目标工 [作区文档的](/help/rtcdp/destinations/destinations-workspace.md#catalog) “目录”部分。
+   >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信]**&#x200B;息，请参 [阅目标工](/help/rtcdp/destinations/destinations-workspace.md#catalog) 作区文档的“目录”部分。
 
 2. 在创建 **目标** 工作流的设置步骤中，填写目 [!UICONTROL 标的基本信] 息。 <br>
 
