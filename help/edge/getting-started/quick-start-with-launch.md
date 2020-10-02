@@ -5,17 +5,17 @@ description: 使用开始Web SDK扩展收集数据的快速Experience Platform�
 seo-description: 使用开始Web SDK扩展收集数据的快速Experience Platform指南
 keywords: 1st-party domain;CNAME;schema;create schema;launch;aep web sdk extension;extension;configuration id;configuration tool;data element;create data element;XDM Object;sendEvent;send Event;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: a9c45aed92dc7c7148db7c9383060bbeab763447
 workflow-type: tm+mt
-source-wordcount: '538'
-ht-degree: 5%
+source-wordcount: '566'
+ht-degree: 4%
 
 ---
 
 
-# 欢迎
+# Adobe Experience PlatformWeb SDK发布快速开始指南
 
-本指南引导您了解在Launch中设置Adobe Experience PlatformWeb SDK的不同方法。 要使用此功能，您需要将其列入白名单。 如果您想继续等待列表，请联系您的客户经理。
+本指南引导您了解在Launch中设置Adobe Experience PlatformWeb SDK的不同方法。 要使用此功能，您需要处于允许列表状态。 如果您希望进入等待列表，请联系您的认证软件经理(CSM)。
 
 - 启用 [第一方域(CNAME)](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/ec-cookies/cookies-first-party.html) 。 如果您已经拥有Analytics的CNAME，则应使用该CNAME。 在开发中进行测试没有CNAME，但您在开始生产之前需要一个CNAME。
 - 有权获得Adobe Experience Platform。 如果您尚未购买平台，Adobe将为您提供Experience Platform数据服务基础，以便在SDK中以有限方式使用，并且不收取额外费用。
@@ -23,7 +23,7 @@ ht-degree: 5%
 
 ## 准备模式
 
-Experience Platform边缘网络将数据作为XDM。 XDM是一种数据格式，允许您定义模式。 模式定义边缘网络希望数据的格式。 要发送数据，您必须定义模式。
+Experience Platform边缘网络使用体验数据模型(XDM)。 XDM是一种数据格式，允许您定义模式。 模式定义边缘网络希望数据的格式。 要发送数据，您必须定义模式。
 
 1. [创建模式](../../xdm/tutorials/create-schema-ui.md)
 2. 将AEP Mixin [!DNL Web SDK ExperienceEvent] 添加到您创建的模式。
@@ -45,7 +45,7 @@ Experience Platform边缘网络将数据作为XDM。 XDM是一种数据格式，
 
 >[!NOTE]
 >
->您的组织必须列入此功能的白名单。 请联系您的CSM，让列表参与最终的白名单。
+>您的组织必须允许列表此功能。 请联系您的认证软件经理(CSM)，开始允许列表。
 
 ## 根据您的模式创建数据元素
 
@@ -66,6 +66,7 @@ Experience Platform边缘网络将数据作为XDM。 XDM是一种数据格式，
 - [构建模式](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/schema/composition.html)
 - [了解调试](../fundamentals/debugging.md)
 - 了解如何 [个性化体验](../fundamentals/rendering-personalization-content.md)
+- 将IAB透明 [度和同意框架2.0纳入Adobe Experience Platform Launch](../solution-specific/iab-tcf/with-launch.md) 。
 - 了解如何将数据发送到多个解决方案
    - [Adobe Analytics](../solution-specific/analytics/analytics-overview.md)
    - [Adobe Audience Manager](../solution-specific/audience-manager/audience-manager-overview.md)
