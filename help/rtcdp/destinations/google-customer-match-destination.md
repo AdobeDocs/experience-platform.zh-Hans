@@ -5,7 +5,7 @@ seo-title: Google客户匹配目标
 description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 seo-description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 translation-type: tm+mt
-source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
+source-git-commit: c66fb4cf0a414e02ceb58becc9d9b59db3fe987b
 workflow-type: tm+mt
 source-wordcount: '1555'
 ht-degree: 0%
@@ -40,7 +40,7 @@ ht-degree: 0%
 
 Adobe实时CDP中的目标可能具有发送到目标平台或从目标平台接收数据的特定规则和义务。 您有责任了解数据的限制和义务，以及您如何在Adobe Experience Platform和目标平台使用这些数据。 Adobe Experience Platform提供数据管理工具，帮助您管理其中一些数据使用义务。 [进一步了解](/help/data-governance/labels/overview.md) “数据治理工具和策略”。
 
-## 激活类型和身份 {#activation-type}
+## 导出类型和标识 {#export-type}
 
 **区段导出** -您正在导出包含标识符（名称、电话号码等）的区段(受众)的所有成员。 用于目 [!DNL Google Customer Match] 标。
 
@@ -105,7 +105,7 @@ Links to be added when activation based on phone number and device IDs becomes a
 
    >[!NOTE]
    >
-   >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信息，请参]**&#x200B;阅目标工 [作区文档的](/help/rtcdp/destinations/destinations-workspace.md#catalog) “目录”部分。
+   >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信]**&#x200B;息，请参 [阅目标工](/help/rtcdp/destinations/destinations-workspace.md#catalog) 作区文档的“目录”部分。
 
 2. 在“帐 **户** ”步骤中，如果之前已设置到目标的连接，请选择“现有 [!DNL Google Customer Match] 帐户 **** ”，然后选择现有连接。 或者，您也可以选 **[!UICONTROL 择“新建帐户]** ”来设置新连接 [!DNL Google Customer Match]。 选 **[!UICONTROL 择连接到目]** 标，以登录并将Adobe Experience Cloud连接到您的 [!DNL Google Ad] 帐户。
 
@@ -129,7 +129,7 @@ Links to be added when activation based on phone number and device IDs becomes a
 
    ![连接Google客户匹配——身份验证步骤](/help/rtcdp/destinations/assets/google-customer-match-authentication-step.png)
 
-5. 您的目标现在已创建。 如果要稍后 **[!UICONTROL 激活区段]** ，则可以选择保存并退出 **[!UICONTROL ，也可以选择下一步以继]** 续工作流，然后选择要激活的区段。 在任一情况下，请参阅工作 [流的其余部分 [!DNL Google Customer Match]](#activate-segments)，将区段激活到的下一节。
+5. 您的目标现在已创建。 如果要稍后 **[!UICONTROL 激活区段]** ，则可以选择保存并退出 **[!UICONTROL ，也可以选择下一步继续工作]** 流，然后选择要激活的区段。 在任一情况下，请参阅工作 [流的其余部分 [!DNL Google Customer Match]](#activate-segments)，将区段激活到的下一节。
 
 
 ## 将区段激活到 [!DNL Google Customer Match] {#activate-segments}
@@ -176,7 +176,7 @@ Insert in Step 6 when mobile device ID activation is available
 
 ## 验证区段激活成功 {#verify-activation}
 
-完成激活流后，切换到您的 **[!UICONTROL Google Ads帐户]** 。 激活的区段现在将作为客户列表显示在您的Google帐户中。 请注意，根据您的细分大小，除非有100多个活动用户提供服务，否则某些受众将不会填充。
+完成激活流后，切换到您的 **[!UICONTROL Google Ads帐户]** 。 激活的区段现在将作为客户列表显示在您的Google帐户中。 请注意，根据您的区段大小，除非有100多个活动用户提供服务，否则某些受众将不会填充。
 
 ## 其他资源 {#additional-resources}
 
