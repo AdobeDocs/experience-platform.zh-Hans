@@ -5,7 +5,7 @@ seo-title: Facebook目标
 description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 seo-description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 72ceb747bd4b278afc51dfb5ab6d6386d7b05c82
+source-git-commit: c66fb4cf0a414e02ceb58becc9d9b59db3fe987b
 workflow-type: tm+mt
 source-wordcount: '758'
 ht-degree: 4%
@@ -52,7 +52,7 @@ ht-degree: 4%
 >
 >发送到的数 [!DNL Facebook] 据不应包括拼合身份。 您有责任履行此义务，并可确保为激活选择的区段在其合并策略中不使用拼接选项来执行此操作。 进一步了 [解合并策略](/help/profile/ui/merge-policies.md)。
 
-### 激活类型 {#activation-type}
+### 导出类型 {#export-type}
 
 **区段导出** -您正在导出包含标识符（名称、电话号码等）的区段(受众)的所有成员。 在Facebook目标中使用。
 
