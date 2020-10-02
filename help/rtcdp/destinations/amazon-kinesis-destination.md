@@ -5,9 +5,9 @@ seo-title: AmazonKinesis目的地
 description: 创建到您的AmazonKinesis存储的实时出站连接以从Adobe Experience Platform流数据。
 seo-description: 创建到您的AmazonKinesis存储的实时出站连接以从Adobe Experience Platform流数据。
 translation-type: tm+mt
-source-git-commit: 4c45da353b1deeb66b0dedb37450158f4bdc2a7c
+source-git-commit: d0a04c61bfe4024a2bb45ea7babab9073fcd6c22
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '475'
 ht-degree: 2%
 
 ---
@@ -38,6 +38,10 @@ ht-degree: 2%
 通过使用流目标， [!DNL Amazon Kinesis]您可以轻松地将高价值细分事件和相关用户档案属性馈送到您选择的系统中。
 
 例如，潜在客户下载了一份白皮书，使其符合“高倾向转换”区段的条件。 通过映射潜在客户所属的区段到目 [!DNL Amazon Kinesis] 标，您将在收到此事件 [!DNL Amazon Kinesis]。 在这里，您可以采用自行操作的方法，在事件上描述业务逻辑，就像您认为最适合企业IT系统一样。
+
+## 导出类型 {#export-type}
+
+**用户档案导出** -您正在导出区段的所有成员以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性”屏幕 [中进行选择](/help/rtcdp/destinations/activate-destinations.md#select-attributes)。
 
 ## 连接目标 {#connect-destination}
 
