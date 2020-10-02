@@ -4,9 +4,9 @@ seo-title: Adobe Experience PlatformWeb SDK常见问题解答
 description: 关于Adobe Experience PlatformWeb SDK的常见问题
 seo-description: 关于Adobe Experience PlatformWeb SDK的常见问题
 translation-type: tm+mt
-source-git-commit: f51513e66945c41d06f12f4ac8f05ddad0d32898
+source-git-commit: f178da80d0902f76868986426600f3da426cf24d
 workflow-type: tm+mt
-source-wordcount: '1679'
+source-wordcount: '1683'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 关于 Experience Cloud 核心服务
 
-本常见问题包括常被问到的关于AdobeWeb SDK/
+本常见问题解答包括经常被询问的有关AdobeWeb SDK的问题。
 
 ## 什么是Adobe Experience PlatformWeb SDK?
 
@@ -105,7 +105,7 @@ Adobe Experience PlatformWeb SDK是为以下人员开发的：
 
 ## 如何使用Adobe Experience PlatformWeb SDK访问开始?
 
-Web SDK目前对公众可用，可用于向Adobe Experience Cloud产品发送数据。 不久的将来，将数据发送到第三方解决方案的能力将会到来。 如果您想要访问Web SDK，请与您的CSM联系以开始请求过程。
+Web SDK目前对公众可用，可用于向Adobe Experience Cloud产品发送数据。 不久的将来，将数据发送到第三方解决方案的能力将会到来。 如果您想要访问Web SDK，请与您的认证软件经理(CSM)联系以开始请求过程。
 
 ## Web SDK当前支持哪些用例？
 
