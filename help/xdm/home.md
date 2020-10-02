@@ -5,7 +5,7 @@ title: 体验数据模型(XDM)系统
 topic: overview
 description: '标准化和互操作性是Adobe Experience Platform背后的关键概念。 体验Adobe模型(XDM)由客户驱动，旨在实现客户体验数据标准化并为客户体验管理定义模式。 '
 translation-type: tm+mt
-source-git-commit: ed1f2fdac0f9c977d11c867327c084353c1bcd0f
+source-git-commit: d49bbc91b67dec0468b46d165521c7d097a801ee
 workflow-type: tm+mt
 source-wordcount: '1638'
 ht-degree: 2%
@@ -56,7 +56,7 @@ XDM是一个基本框架，它允许Adobe Experience Cloud在 [!DNL Experience P
 
 随着消费者用户档案的不断增长，它将成为一个可靠的个人信息、身份信息、联系信息和通信首选项存储库。
 
-### [!DNL XDM ExperienceEvent]
+### [!DNL XDM ExperienceEvent] {#xdm-experience-event}
 
 XDM ExperienceEvent是一个基于时间序列的类，用于在发生事件(或事件集)时捕获系统状态，包括时间点和所涉及主题的身份。 体验事件是事实记录，因此它们是不可改变的，代表所发生的事情，而不经过聚合或解释。 它们对于时域分析至关重要，因为它们可用于分析给定时间窗口中发生的更改，以及在多个时间窗口之间进行比较以跟踪趋势。
 
