@@ -5,9 +5,9 @@ seo-title: SalesforceMarketing Cloud
 description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 seo-description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: d0a04c61bfe4024a2bb45ea7babab9073fcd6c22
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '545'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,10 @@ ht-degree: 0%
 [[!DNL SalesforceMarketing Cloud]是以前称为ExactTarget的数字营销套件](https://www.salesforce.com/products/marketing-cloud/email-marketing/) ，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 
 要向其发送细 [!DNL Salesforce Marketing Cloud]分数据，您必 [须先在Adobe实时CDP中连接](#connect-destination) 目标 [，然后将存储位置中的](#import-data-into-salesforce) 导入设置为 [!DNL Salesforce Marketing Cloud]。
+
+## 导出类型 {#export-type}
+
+**用户档案导出** -您正在导出区段的所有成员以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性”屏幕 [中进行选择](/help/rtcdp/destinations/activate-destinations.md#select-attributes)。
 
 ## 连接目标 {#connect-destination}
 
