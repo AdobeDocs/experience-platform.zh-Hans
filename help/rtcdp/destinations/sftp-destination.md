@@ -5,9 +5,9 @@ seo-title: SFTP目标
 description: 创建到SFTP服务器的实时出站连接，以定期从Experience Platform导出分隔的数据文件。
 seo-description: 创建到SFTP服务器的实时出站连接，以定期从Experience Platform导出分隔的数据文件。
 translation-type: tm+mt
-source-git-commit: cbd748c1881c61f5e636567d94b68f2cf7302fa5
+source-git-commit: d0a04c61bfe4024a2bb45ea7babab9073fcd6c22
 workflow-type: tm+mt
-source-wordcount: '171'
+source-wordcount: '206'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,11 @@ ht-degree: 0%
 
 创建到SFTP服务器的实时出站连接，以定期从Experience Platform导出分隔的数据文件。
 
-要导出数据，请完成以下步骤：
+## 导出类型 {#export-type}
+
+**用户档案导出** -您正在导出区段的所有成员以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性”屏幕 [中进行选择](/help/rtcdp/destinations/activate-destinations.md#select-attributes)。
+
+![基于SFTP用户档案的导出类型](/help/rtcdp/destinations/assets/sftp-export-type.png)
 
 ## 连接目标 {#connect-destination}
 
