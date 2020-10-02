@@ -5,9 +5,9 @@ seo-title: （测试版）Azure事件集线器目标
 description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 seo-description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 translation-type: tm+mt
-source-git-commit: 38cb8eeae3ac0a1852c59e433d1cacae82b1c6c0
+source-git-commit: d0a04c61bfe4024a2bb45ea7babab9073fcd6c22
 workflow-type: tm+mt
-source-wordcount: '467'
+source-wordcount: '505'
 ht-degree: 2%
 
 ---
@@ -36,6 +36,10 @@ ht-degree: 2%
 通过使用流目标， [!DNL Azure Event Hubs]您可以轻松地将高价值细分事件和相关用户档案属性馈送到您选择的系统中。
 
 例如，潜在客户下载了一份白皮书，使其符合“高倾向转换”区段的条件。 通过映射潜在客户所属的区段到目 [!DNL Azure Event Hubs] 标，您将在收到此事件 [!DNL Azure Event Hubs]。 在这里，您可以采用自行操作的方法，在事件上描述业务逻辑，就像您认为最适合企业IT系统一样。
+
+## 导出类型 {#export-type}
+
+**用户档案导出** -您正在导出区段的所有成员以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性” [屏幕中进行选择](/help/rtcdp/destinations/activate-destinations.md#select-attributes)。\
 
 ## 连接目标 {#connect-destination}
 
