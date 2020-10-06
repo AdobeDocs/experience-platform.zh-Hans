@@ -5,9 +5,9 @@ seo-title: （测试版）Azure事件集线器目标
 description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 seo-description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 translation-type: tm+mt
-source-git-commit: d0a04c61bfe4024a2bb45ea7babab9073fcd6c22
+source-git-commit: 67a353c950bef11ccbaa52c49d213f08449baa96
 workflow-type: tm+mt
-source-wordcount: '505'
+source-wordcount: '504'
 ht-degree: 2%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 2%
 
 ## 导出类型 {#export-type}
 
-**用户档案导出** -您正在导出区段的所有成员以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性” [屏幕中进行选择](/help/rtcdp/destinations/activate-destinations.md#select-attributes)。\
+**基于用户档案** -您正在导出区段的所有成员，以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性” [屏幕中进行选择](/help/rtcdp/destinations/activate-destinations.md#select-attributes)。\
 
 ## 连接目标 {#connect-destination}
 
