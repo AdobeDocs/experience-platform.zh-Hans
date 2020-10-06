@@ -2,13 +2,14 @@
 keywords: Experience Platform;home;popular topics;API error codes;API error code;error code API;error codes API;API request error;API troubleshooting;API error
 solution: Experience Platform
 title: Adobe Experience Platform常见问题解答和疑难解答指南
-description: 此文档提供有关Adobe Experience Platform的常见问题解答，以及针对任何Experience PlatformAPI中可能遇到的常见错误的高级故障排除指南。
+description: 查找常见问题的解答以及Experience Platform中常见错误的疑难解答指南。
 topic: getting started
+type: Documentation
 user-guide-description: Find answers to frequently asked questions and a guide for troubleshooting common errors in Experience Platform.
 translation-type: tm+mt
-source-git-commit: 9981c5e34d675f7fcb767a097af3b2d3c56ec091
+source-git-commit: bc7c0a5d59c666ba80fac81a859b5ecf4dd37412
 workflow-type: tm+mt
-source-wordcount: '1996'
+source-wordcount: '1981'
 ht-degree: 3%
 
 ---
