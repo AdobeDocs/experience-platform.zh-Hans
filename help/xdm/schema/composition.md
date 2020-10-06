@@ -5,7 +5,7 @@ title: 模式合成基础
 topic: overview
 description: 本文档介绍了体验数据模型(XDM)模式，以及构成要在Adobe Experience Platform使用的模式的构件、原则和最佳做法。
 translation-type: tm+mt
-source-git-commit: 4a76101cb8a7afb947bdce263a73f79d931db154
+source-git-commit: f7abccb677294e1595fb35c27e03c30eb968082a
 workflow-type: tm+mt
 source-wordcount: '2839'
 ht-degree: 0%
@@ -58,7 +58,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 
 记录和时间序列模式都包含身份映射(`xdm:identityMap`)。 此字段包含主题的标识表示形式，该表示形式取自标为“标识”的字段，如下一节所述。
 
-### [!UICONTROL 身份]
+### [!UICONTROL 身份] {#identity}
 
 模式用于将数据引入 [!DNL Experience Platform]。 此视图可跨多个服务使用，以创建单个实体的单一统一数据。 因此，考虑模式时，必须考虑客户身份以及哪些字段可用于识别主题，无论数据来自何处。
 
@@ -195,7 +195,7 @@ XDM模式通过嵌入式对象的使用，可以直接表示复杂的数据并�
 下游服务和应用程序使用的某些数据操作对特定字段类型强制实施限制。 受影响的服务包括但不限于：
 
 * [[!DNL实时客户用户档案]](../../profile/home.md)
-* [[!DNL标识服务]](../../identity-service/home.md)
+* [[!DNL Identity Service]](../../identity-service/home.md)
 * [[!DNL分段]](../../segmentation/home.md)
 * [[!DNL查询服务]](../../query-service/home.md)
 * [[!DNL数据科学工作区]](../../data-science-workspace/home.md)
