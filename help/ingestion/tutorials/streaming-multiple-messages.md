@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 此文档提供了一个教程，用于使用流摄取在单个HTTP请求中向Adobe Experience Platform发送多条消息。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1487'
 ht-degree: 1%
@@ -45,7 +45,7 @@ ht-degree: 1%
 
 以下示例演示如何在单个HTTP请求中向特定数据集发送多条消息。 将数据集ID插入消息标题中，直接将该消息引入该消息中。
 
-您可以使用UI或在API中使用列表 [!DNL Platform] 操作获取现有数据集的ID。 在Experience Platform上可以找到 [数据集](https://platform.adobe.com) ID，方法是转到Datasets选项卡，单击您想要该ID的数据集，然后从 **[!UICONTROL Dataset ID]** （数据集ID）字段复制 **[!UICONTROL Info(信]****** 息)选项卡。 有关如何 [使用API检索数据集](../../catalog/home.md) ，请参阅目录服务概述。
+您可以使用UI或在API中使用列表 [!DNL Platform] 操作获取现有数据集的ID。 在Experience Platform下可以找到 [数据集](https://platform.adobe.com) ID，方法是转 **[!UICONTROL 到Datasets选项卡，单击您想要ID的数据集，然后从Info选项卡的数据集ID字段中复制]** 字符串 **** 。 有关如何 [使用API检索数据集](../../catalog/home.md) ，请参阅目录服务概述。
 
 您可以创建新数据集，而不是使用现有数据集。 有关使用 [API创建数据集的更多信息](../../catalog/api/create-dataset.md) ，请阅读使用API创建数据集教程。
 
@@ -543,7 +543,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 
 | 状态代码 | 描述 |
 | :---: | --- |
-| 207 | 尽管使用“207”作为整体响应状态代码，但收件人需要查阅多状态响应机构的内容，以进一步了解有关方法执行的成功或失败的信息。 响应代码用于成功、部分成功以及失败情况。 |
+| 207 | 尽管使用“207”作为整体响应状态代码，但收件人需要查阅多状态响应机构的内容，以进一步了解方法执行的成功或失败。 响应代码用于成功、部分成功以及失败情况。 |
 | 400 | 请求有问题。 有关更具体的错误消息，请参阅响应正文（例如，消息有效负荷缺少必填字段，或消息为未知xdm格式）。 |
 | 401 | 未经授权：请求缺少有效的授权头。 仅对启用身份验证的入口返回此值。 |
 | 403 | 未经授权： 提供的授权令牌无效或已过期。 仅对启用身份验证的入口返回此值。 |
