@@ -5,7 +5,7 @@ description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
 seo-description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
 keywords: consent;defaultConsent;default consent;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;
 translation-type: tm+mt
-source-git-commit: f178da80d0902f76868986426600f3da426cf24d
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '756'
 ht-degree: 0%
@@ -56,7 +56,7 @@ alloy("setConsent", {
 });
 ```
 
-由于用户现在已选择加入，SDK将执行所有以前排队的命令。 将来根据用户选择加入的命令 _不会_ 排队，而是立即执行。
+由于用户现在已选择加入，SDK将执行所有以前排队的命令。 将来根据用户选择的命令不会排队，而是立即执行。
 
 如果用户选择选择退出执行该命令， `setConsent` 并将选 `general` 项设置为 `out` 如下：
 
