@@ -5,7 +5,7 @@ title: 目录服务概述
 topic: overview
 description: 目录服务是Adobe Experience Platform内数据位置和谱系的记录系统。 当所有被引入Experience Platform的数据作为文件和目录存储在数据湖中时，目录会保存这些文件和目录的元数据和描述，以便进行查找和监视。
 translation-type: tm+mt
-source-git-commit: 71678b10c9e137016ea404305b272508b9c8cabe
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
 source-wordcount: '782'
 ht-degree: 5%
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 [!DNL Catalog Service] 是Adobe Experience Platform境内数据定位和谱系记录系统。 当所有被引入的数据 [!DNL Experience Platform] 作为文件和目 [!DNL Data Lake] 录存储在中时， [!DNL Catalog] 保留这些文件和目录的元数据和说明以供查找和监视。
 
-只需简单地 [!DNL Catalog] 放入，即可充当元数据存储[!UICONTROL 或“目录]”，您可在中找到有关数据的信息 [!DNL Experience Platform]。 您可以使 [!DNL Catalog] 用来回答以下问题：
+只需简单 [!DNL Catalog] 地放入，即可充当元数据存储或“目录”，在此可以在中查找有关数据的信息 [!DNL Experience Platform]。 您可以使 [!DNL Catalog] 用来回答以下问题：
 
 * 我的数据位于何处？
 * 这些数据处于哪个处理阶段？
@@ -35,7 +35,7 @@ ht-degree: 5%
 
 [!DNL Experience Data Model] (XDM)系统是组织客户体验数据的 [!DNL Platform] 标准化框架。 [!DNL Experience Platform] 利用XDM模式以一致、可重用的方式描述数据结构。
 
-当数据被摄取 [!DNL Platform]到其中时，该模式的结构被映射到XDM并作为数据集的一 [!DNL Data Lake] 部分存储在该 **数据中**。 每个数据集的元数据 [!DNL Catalog Service]都由跟踪，包括对数据集所符合的XDM模式的引用。
+当数据被摄取 [!DNL Platform]到其中时，该模式的结构将映射到XDM并作为数据集的一 [!DNL Data Lake] 部分存储在该数据中。 每个数据集的元数据 [!DNL Catalog Service]都由跟踪，包括对数据集所符合的XDM模式的引用。
 
 有关XDM系统的更多一般信息，请参阅 [XDM系统概述](../xdm/home.md)。
 
@@ -43,7 +43,7 @@ ht-degree: 5%
 
 [!DNL Experience Platform] 从多个源中摄取数据，并将记录作为数据集保留在 [!DNL Data Lake]中。 [!DNL Catalog] 跟踪这些数据集的元数据，无论其来源或摄取方法如何。
 
-使用批处理摄取方法时，还 [!DNL Catalog] 会跟踪批处理文件的其 **他元数据** 。 批量是由一个或多个要作为单个单位摄取的文件组成的数据单位。[!DNL Catalog] 跟踪这些批处理文件的元数据，以及它们在摄取后保留的数据集。 批处理元数据包括有关成功摄取的记录数的信息，以及任何失败记录和关联的错误消息。
+使用批处理摄取方法时，还 [!DNL Catalog] 会跟踪批处理文件的其他元数据。 批量是由一个或多个要作为单个单位摄取的文件组成的数据单位。[!DNL Catalog] 跟踪这些批处理文件的元数据，以及它们在摄取后保留的数据集。 批处理元数据包括有关成功摄取的记录数的信息，以及任何失败记录和关联的错误消息。
 
 有关更多 [信息，请参见](../ingestion/home.md) “数据获取概述”。
 
