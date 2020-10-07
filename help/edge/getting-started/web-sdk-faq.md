@@ -4,7 +4,7 @@ seo-title: Adobe Experience PlatformWeb SDK常见问题解答
 description: 关于Adobe Experience PlatformWeb SDK的常见问题
 seo-description: 关于Adobe Experience PlatformWeb SDK的常见问题
 translation-type: tm+mt
-source-git-commit: f178da80d0902f76868986426600f3da426cf24d
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1683'
 ht-degree: 2%
@@ -117,7 +117,7 @@ Web SDK正在快速发展。 正在开发更多使用案例。 您可以在此�
 
 * **只是另一个标签：** 如果站点已经标记了解决方案并且您无法重新标记，但您希望将数据发送到Adobe Experience Platform边缘网络以供Experience Platform使用案例或即将推出的Launch服务器端功能（见下文），则可以将标记添加到站点，在站点中，它将作为“其他标记”工作。 `alloy.js`
 
-* **唯一的标签：** 如果要将Web SDK用于Experience Cloud解决方案，则必须将它用 _于该页_ 上的所有解决方案。 例如，如果您的站点已标记为Analytics，并且您希望将其用于目标，则您需要将其用于这两个站点，以及将来的任何其他站点。
+* **唯一的标签：** 如果要将Web SDK用于Experience Cloud解决方案，则必须将其用于该页面上的所有解决方案。 例如，如果您的站点已标记为Analytics，并且您希望将其用于目标，则您需要将其用于这两个站点，以及将来的任何其他站点。
 
 换言之，如果您决定将Adobe Experience PlatformWeb SDK用于非解决方案用例，则可以用标记站点 `alloy.js` ，并像使用新解决方案一样继续工作。 如果要将其用于Adobe Analytics、目标或Audience Manager，或用于应用程序用例，您可能必须删除页面上的任何旧代码。
 
@@ -141,7 +141,7 @@ Web SDK正在快速发展。 正在开发更多使用案例。 您可以在此�
 
 * Adobe Experience PlatformWeb SDK需要一种称为Experience Edge配置ID的工具，这样边缘网络就可以识别流并确定如何处理数据。 此ID是在启动项中创建的。 这并不意味着您必须使用Launch来创建属性或部署JavaScript代码，但您确实需要使用Launch来创建配置ID。
 
-* Adobe Experience Platform Launch不仅是最佳的可用标签和SDK管理器，它还使得部署数据并将数据映射 `alloy.js` 到XDM模式变得非常容易。 如果您决定不使用Launch，则在发送数据之 `alloy.js`前，必须管理数据的部署、事件处理以及将其映射到XDM。 这比使 _用Launch_ 困难得多。
+* Adobe Experience Platform Launch不仅是最佳的可用标签和SDK管理器，它还使得部署数据并将数据映射 `alloy.js` 到XDM模式变得非常容易。 如果您决定不使用Launch，则在发送数据之 `alloy.js`前，必须管理数据的部署、事件处理以及将其映射到XDM。 这比使用Launch困难得多。
 
 * 建议您使用Launch进行部 `alloy.js`署，即使它是您唯一使用它的标记。
 
