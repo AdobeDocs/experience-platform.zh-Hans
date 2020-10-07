@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Adobe Experience Platform将查询服务作为标准功能集成到JupyterLab中，使您能够在数据科学工作区中使用结构化查询语言(SQL)。 本教程演示了用于浏览、转换和分析Adobe Analytics数据的常见用例的SQL查询示例。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '826'
 ht-degree: 1%
@@ -104,7 +104,7 @@ ht-degree: 1%
 
 ![](../images/jupyterlab/query/restart_button.png)
 
-笔记本内核将重置，但单元格将保留，重 **[!UICONTROL 新运行]** 所有单元格以继续您离开的位置。
+笔记本内核将重置，但单元格将保留，重 **新运行** 所有单元格以继续您离开的位置。
 
 ### 每小时访客计数 {#hourly-visitor-count}
 
