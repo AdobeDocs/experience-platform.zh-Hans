@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Privacy Service用户指南
 topic: UI guide
 translation-type: tm+mt
-source-git-commit: a09d80f4bacd5d4be77443d75aad278ad89259ef
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1059'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 浏览UI [!DNL Privacy Service] 仪表板
 
-UI仪表板提 [!DNL Privacy Service] 供了两个构件，允许您视图隐私作业的状态： **[!UICONTROL 状态报告]** 和 **[!UICONTROL 作业请求]**。 仪表板还显示所显示作业的当前选定规则。
+UI仪表板提 [!DNL Privacy Service] 供了两个构件，允许您视图隐私作业的状态：“状[!UICONTROL 态报告]”和“作[!UICONTROL 业请求]”。 仪表板还显示所显示作业的当前选定规则。
 
 ![UI仪表板](../images/user-guide/dashboard.png)
 
@@ -106,7 +106,7 @@ UI [!DNL Privacy Service] 提供了两种创建新作业请求的方法：
 
 <img src="../images/user-guide/request-builder.png" width="500" /><br/>
 
-选择 **[!UICONTROL 请求的]** “作业类型”（“删除”或“访问”），并从列表中选择一个或多个可 **[!UICONTROL 用产]** 品。
+选择 **[!UICONTROL 请求的]** “作业类型”（“删除”或“访问”），并从列表中选择一个或多个可用产品。
 
 <img src="../images/user-guide/type-and-products.png" width="500" /><br/>
 
@@ -114,11 +114,11 @@ UI [!DNL Privacy Service] 提供了两种创建新作业请求的方法：
 
 <img src="../images/user-guide/namespace-type.png" width="500" /><br/>
 
-使用标 _准命名空间_ 类型时，从下拉菜单（电子邮件、ECID或AAID）中选择命名空间，然后在右侧的文本框中键入ID值，为每个ID按 **\&lt;enter>** ，将其添加到列表。
+使用标准命名空间类型时，从下拉菜单（电子邮件、ECID或AAID）中选择一个命名空间，然后在右边的文本框中键入ID值，为每个ID **按\** &lt;enter>将其添加到列表。
 
 <img src="../images/user-guide/standard-namespace.png" width="500" /><br/>
 
-使用自定 _义命名空间_ 类型时，您必须在提供以下ID值之前手动键入命名空间。
+使用自定义命名空间类型时，必须在提供以下ID值之前手动键入命名空间。
 
 <img src="../images/user-guide/custom-namespace.png" width="500" /><br/>
 
@@ -148,7 +148,7 @@ When finished, click **[!UICONTROL Create]**.
 
 在您的计算机上找到JSON文件，并将其拖入对话框窗口。 如果上载成功，则对话框中将显示文件名。 您可以根据需要将JSON文件拖放到对话框中，以继续添加更多文件。
 
-When finished, click **[!UICONTROL Create]**. 该对话框将消失，新作业（或作业）将列在作业请 _求构件中_ ，并列出其当前处理状态。
+When finished, click **[!UICONTROL Create]**. 该对话框将消失，新作业（或作业）将列在作业请求构件中及其当前处理状态。
 
 ### 后续步骤
 
