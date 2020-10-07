@@ -5,7 +5,7 @@ title: 与Aqua Data Studio连接
 topic: connect
 description: 此文档通过步骤将Aqua Data Studio与Adobe Experience Platform查询服务连接。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '262'
 ht-degree: 0%
@@ -38,7 +38,7 @@ Select the **[!UICONTROL Driver]** tab. 在“ **[!UICONTROL 参数]**”下，�
 
 ![](../images/clients/aqua-data-studio/register-server-driver-tab.png)
 
-输入连接详细信息后，单击“ **[!UICONTROL 测试连接]** ”以确保凭据正常工作。 如果连接成功，请单击“保 **[!UICONTROL 存]** ”以注册服务器。 成功注册后， *仪表板* 上会显示连接，确认您现在可以连接到服务器并视图其模式对象。
+输入连接详细信息后，单击“ **[!UICONTROL 测试连接]** ”以确保凭据正常工作。 如果连接成功，请单击“保 **[!UICONTROL 存]** ”以注册服务器。 成功注册后， **仪表板** 上会显示连接，确认您现在可以连接到服务器并视图其模式对象。
 
 ## 后续步骤
 
