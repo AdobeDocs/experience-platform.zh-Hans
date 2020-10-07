@@ -5,9 +5,9 @@ seo-title: Google Display & Video 360 Destination
 description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。
 seo-description: 'Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。 '
 translation-type: tm+mt
-source-git-commit: c66fb4cf0a414e02ceb58becc9d9b59db3fe987b
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '713'
+source-wordcount: '714'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 请注意特定于目标的以下详细 [!DNL Google Display & Video 360] 信息：
 
-* 您可以将以下身份 [发送](../../identity-service/namespaces.md) 到目 [!DNL Google Display & Video 360] 标： **Google Cookie ID、IDFA、GAID、Roku ID、Microsoft ID、Amazon火电电视ID**。
+* 您可以将以下身份 [发送](../../identity-service/namespaces.md) 到目 [!DNL Google Display & Video 360] 标：Google Cookie ID、IDFA、GAID、Roku ID、Microsoft ID和AmazonFire TV ID。
 * 激活的受众是在Google平台中以编程方式创建的。
 * Adobe实时CDP当前不包含用于验证成功激活的度量。 请参阅Google中的受众计数，验证集成并了解受众定位大小。
 
@@ -56,7 +56,7 @@ ht-degree: 0%
 
    >[!NOTE]
    >
-   >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信]**&#x200B;息，请参 [阅目标工](/help/rtcdp/destinations/destinations-workspace.md#catalog) 作区文档的“目录”部分。
+   >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 [!UICONTROL 间差异] 的详 [!UICONTROL 细信]息，请参 [阅目标工](/help/rtcdp/destinations/destinations-workspace.md#catalog) 作区文档的“目录”部分。
 
 2. 在创 **建目标** 工作流的设置步骤中，填写目标的 [!UICONTROL 基本信息] ，以及应应用于此目标的市场营销用例。 <br>
 
