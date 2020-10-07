@@ -5,7 +5,7 @@ seo-title: Google客户匹配目标
 description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 seo-description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 translation-type: tm+mt
-source-git-commit: c66fb4cf0a414e02ceb58becc9d9b59db3fe987b
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1555'
 ht-degree: 0%
@@ -119,7 +119,7 @@ Links to be added when activation based on phone number and device IDs becomes a
 
    ![已确认凭据](/help/rtcdp/destinations/assets/google-customer-match-connection-success.png)
 
-4. 在验 **[!UICONTROL 证步]** 骤中，为激活流 **[!UICONTROL 输入名]** 称和说 **[!UICONTROL 明]** ，然后向Google填写帐 **[!UICONTROL 户ID]** ID。 <br> 此外，在此步骤中，您还可以选 **[!UICONTROL 择应用于此目标]** 的任何Marketing用例。 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。 <br> 在 **[!UICONTROL 填写上述字]** 段后，选择创建目标。
+4. 在验 **[!UICONTROL 证步]** 骤中，为激活流 [!UICONTROL 输入名] 称和说 [!UICONTROL 明] ，然后向Google填写帐 [!UICONTROL 户ID]ID。 <br> 此外，在此步骤中，您还可以选 **[!UICONTROL 择应用于此目标]** 的任何Marketing用例。 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。 <br> 在 **[!UICONTROL 填写上述字]** 段后，选择创建目标。
 
    >[!IMPORTANT]
    >
