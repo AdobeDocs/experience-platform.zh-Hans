@@ -5,9 +5,9 @@ title: 部分批摄取概述
 topic: overview
 description: 此文档提供了管理部分批摄取的教程。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '917'
+source-wordcount: '916'
 ht-degree: 0%
 
 ---
@@ -121,7 +121,7 @@ ht-degree: 0%
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow-partial-ingestion-focus.png)
 
-“错 **[!UICONTROL 误阈值]** ”允许您在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+**[!UICONTROL 错误阈值]** ，允许您在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
 
 ## 后续步骤 {#next-steps}
 
