@@ -6,7 +6,7 @@ description: 此文档提供了一个教程，用于使用Experience Platform用
 topic: tutorial
 type: Tutorials
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '910'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 了解不同渠道客户之间的关系及其与您品牌的互动是Adobe Experience Platform的重要部分。 在(XDM)模式结构中定 [!DNL Experience Data Model] 义这些关系，使您能够对客户数据获得复杂的洞察。
 
-虽然模式关系可以通过使用合并模式来推断， [!DNL Real-time Customer Profile]但这仅适用于共享同一类的模式。 要在属于不同类的两个模式之间建立关系，必 **须向源模式** (引用目标模式的标识)中添加一个专用的关系字段。
+虽然模式关系可以通过使用合并模式来推断， [!DNL Real-time Customer Profile]但这仅适用于共享同一类的模式。 要在属于不同类的两个模式之间建立关系，必须向源模式添加专用关系字段，该字段引用目标模式的标识。
 
 此文档提供了一个教程，用于使用用户界面中的模式编辑器定义两个模式之 [!DNL Experience Platform] 间的关系。 有关使用API定义模式关系的步骤，请参阅使用 [模式注册表API定义关系的教程](relationship-api.md)。
 
@@ -38,7 +38,7 @@ ht-degree: 0%
 >
 >要建立关系，两个模式必须定义主身份并启用 [!DNL Real-time Customer Profile]。 如果您需要有关如何 [相应配置模式的指导](./create-schema-ui.md#profile) ，请参阅模式创建教程中有关启用模式以在用户档案中使用的部分。
 
-模式关系由源模式内的专用字 **段表示** ，该专用字段引用目标模式 **内的其他字段**。 在接下来的步骤中，[!DNL Loyalty Members]“”将作为源模式，而“[!DNL Hotels]”将作为目标模式。
+模式关系由源模式内的专用字 **段表示** ，该专用字段引用目标模式 **内的其他字段**。 在接下来的步骤中，[!DNL Loyalty Members]“”将是源模式，而“[!DNL Hotels]”将充当目标模式。
 
 为便于参考，以下各节将介绍本教程中在定义关系之前使用的每个模式的结构。
 
