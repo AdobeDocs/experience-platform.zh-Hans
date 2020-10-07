@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 本教程提供了在UI中创建源连接器的步骤，用于收集用户档案到Adobe Experience Platform的客户属性数据。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '374'
 ht-degree: 8%
@@ -28,7 +28,7 @@ ht-degree: 8%
 
 ![](../../../../images/tutorials/create/customer-attributes/catalog.png)
 
-“源 *活动* ”屏幕列表客户属性用户档案数据的所有以前建立的连接，您可以通过单击“选择数据”来创建 **新连接**。
+“源 **活动** ”屏幕列表客户属性用户档案数据的所有以前建立的连接，您可以通过单击“选择数据”来创建 **新连接**。
 
 >[!NOTE]
 >
@@ -44,10 +44,10 @@ ht-degree: 8%
 
 ![](../../../../images/tutorials/create/customer-attributes/select_data.png)
 
-此时 *会显示* “审阅”步骤，允许您在创建新入站连接之前查看该连接。 连接的详细信息按类别分组，包括：
+此时 **会显示** “审阅”步骤，允许您在创建新入站连接之前查看该连接。 连接的详细信息按类别分组，包括：
 
-* *源详细信息*:显示源连接的类型和所选源数据。
-* *目标详细信息*:创建其他源连接器时，此容器显示源数据正被引入的数据集，包括数据集所附加的模式。 客户属性用户档案数据会自动映射并引入实时客户用户档案。
+* **源详细信息**:显示源连接的类型和所选源数据。
+* **目标详细信息**:创建其他源连接器时，此容器显示源数据正被引入的数据集，包括数据集所附加的模式。 客户属性用户档案数据会自动映射并引入实时客户用户档案。
 
 ![](../../../../images/tutorials/create/customer-attributes/review.png)
 
