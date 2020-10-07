@@ -5,7 +5,7 @@ title: 描述符
 description: '模式定义数据实体的静态视图，但不提供关于基于这些模式（例如数据集）的数据如何彼此关联的特定详细信息。 Adobe Experience Platform允许您使用描述符描述模式的这些关系和其他解释性元数据。 '
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
 source-wordcount: '1528'
 ht-degree: 1%
@@ -200,7 +200,7 @@ PUT /tenant/descriptors/{DESCRIPTOR_ID}
 
 **请求**
 
-此请求基 _本上重写描述符_ ，因此请求主体必须包括定义该类型的描述符所需的所有字段。 换言之，要更新(PUT)描述符的请求有效负荷与要创建(POST)相同类型描述符的有效负荷相同。
+此请求实质上重写描述符，因此请求主体必须包括定义该类型的描述符所需的所有字段。 换言之，要更新(PUT)描述符的请求有效负荷与要创建(POST)相同类型描述符的有效负荷相同。
 
 在此示例中，标识描述符正被更新为引 `xdm:sourceProperty` 用其他（“手机”）并将 `xdm:namespace` 其更改为“Phone”。
 
