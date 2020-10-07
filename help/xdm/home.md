@@ -5,7 +5,7 @@ title: 体验数据模型(XDM)系统
 topic: overview
 description: '标准化和互操作性是Adobe Experience Platform背后的关键概念。 体验Adobe模型(XDM)由客户驱动，旨在实现客户体验数据标准化并为客户体验管理定义模式。 '
 translation-type: tm+mt
-source-git-commit: d49bbc91b67dec0468b46d165521c7d097a801ee
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1638'
 ht-degree: 2%
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 它为用于与服务通信的任何应用程序提供了通用结构和 [!DNL Platform] 定义。 通过遵守XDM标准，所有客户体验数据都可以整合到一种通用的表现形式中，以更快、更集成的方式提供洞察。 您可以从客户行动中获得宝贵的洞察，通过细分定义客户受众，并表达客户属性以实现个性化。
 
-XDM是一个基本框架，它允许Adobe Experience Cloud在 [!DNL Experience Platform]其支持下，在正确的渠道、恰当的时机、向正确的人提供正确的信息。 构建XDM系统 [!DNL Experience Platform] 的方法 **将模式运**&#x200B;行，供服务 [!DNL Experience Data Model][!DNL Platform] 使用。
+XDM是一个基本框架，它允许Adobe Experience Cloud在 [!DNL Experience Platform]其支持下，在正确的渠道、恰当的时机、向正确的人提供正确的信息。 构建XDM系 [!DNL Experience Platform] 统的方法可操作模式, [!DNL Experience Data Model] 供服务使 [!DNL Platform] 用。
 
 本文档概述了XDM系统在中的作用 [!DNL Experience Platform]。
 
@@ -44,7 +44,7 @@ XDM是一个基本框架，它允许Adobe Experience Cloud在 [!DNL Experience P
 * **记录数据**:提供有关主题属性的信息。 主题可以是组织或个人。
 * **时间序列数据**:提供记录主体直接或间接采取操作时系统的快照。
 
-所有XDM模式都描述可以分类为记录或时间序列的数据。 模式的行为由模式的类定 **义**，该类在模式首次创建时分配给。 XDM类描述模式必须包含的最小属性数，以表示特定数据行为。
+所有XDM模式都描述可以分类为记录或时间序列的数据。 模式的数据行为由模式的类定义，该类在模式首次创建时被分配给。 XDM类描述模式必须包含的最小属性数，以表示特定数据行为。
 
 尽管您可以在中定义自己的类， [!DNL Schema Registry]但建议您分别使用首选类 **[!DNL XDM Individual Profile]****[!DNL XDM ExperienceEvent]** 和记录和时间序列数据。 下文将详细介绍这些类。
 
