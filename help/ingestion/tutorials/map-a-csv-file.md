@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 本教程介绍如何使用Adobe Experience Platform用户界面将CSV文件映射到XDM模式。
 translation-type: tm+mt
-source-git-commit: 7adf18e4251f377fee586c8a0f23b89acd75afca
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 1%
@@ -117,7 +117,7 @@ ht-degree: 1%
 
 要使用函数，请在“源字段”下 **[!UICONTROL 键入该函数]** ，并输入相应的语法和输入。
 
-例如，要连接 **城市****和国家／地区** CSV字段并将其分配 **到城市** XDM字段，请将源字段设置为 `concat(city, ", ", county)`。
+例如，要连接城市和国家／地区CSV字段并将它们分配到城市XDM字段，请将源字段设置为 `concat(city, ", ", county)`。
 
 ![](../images/tutorials/map-a-csv-file/mapping-function.png)
 
