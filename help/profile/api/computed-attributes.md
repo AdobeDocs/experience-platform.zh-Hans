@@ -3,7 +3,7 @@ keywords: Experience Platform;profile;real-time customer profile;troubleshooting
 title: 计算属性——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '2403'
 ht-degree: 1%
@@ -31,7 +31,7 @@ ht-degree: 1%
 
 Adobe Experience Platform使您能够轻松导入和合并来自多个来源的数据以生成 [!DNL Real-time Customer Profiles]。 每个用户档案都包含与个人相关的重要信息，如其联系信息、偏好和购买历史记录，为客户提供360度全方位视图。
 
-直接读取用户档案中收集的某些信息（例如，“名字”）很容易理解，而其他数据需要执行多次计算或依赖其他字段和值来生成信息（例如，“生命周期购买总计”）。 为了使这些数据更易于一目了然地理解， [!DNL Platform] 您可以创建 **[!UICONTROL 可自动执行这些引用]** 和计算的计算属性，并在相应的字段中返回值。
+直接读取用户档案中收集的某些信息（例如，“名字”）很容易理解，而其他数据需要执行多次计算或依赖其他字段和值来生成信息（例如，“生命周期购买总计”）。 为了使这些数据更易于一目了然地理解，您 [!DNL Platform] 可以创建计算属性，这些属性可以自动执行这些引用和计算，并在相应的字段中返回值。
 
 计算属性包括创建表达式（或“规则”），该规则对传入数据操作并将结果值存储在用户档案属性或事件中。 表达式可以通过多种不同的方式进行定义，从而允许您指定规则仅评估传入事件、传入事件和用户档案数据，或传入事件、用户档案数据和历史事件。
 
@@ -69,7 +69,7 @@ Adobe Experience Platform使您能够轻松导入和合并来自多个来源的�
 
 ### 创建混音
 
-要创建新混音，请单 **[!UICONTROL 击编辑]** 器左侧 *“合成* ”部分中 **[!UICONTROL “混音”旁边的]** “添加”。 这将打开“添 **[!UICONTROL 加混音]** ”对话框，您可以在其中看到现有混音。 单击“创建新混 **[!UICONTROL 音”单选按钮]** ，以定义新混音。
+要创建新混音，请单 **[!UICONTROL 击编辑]** 器左侧 **[!UICONTROL “合成]** ”部分中 **[!UICONTROL “混音”旁边的]** “添加”。 这将打开“添 **[!UICONTROL 加混音]** ”对话框，您可以在其中看到现有混音。 单击“创建新混 **[!UICONTROL 音”单选按钮]** ，以定义新混音。
 
 为混音指定名称和说明，完成后单 **[!UICONTROL 击“添加]** 混音”。
 
@@ -77,7 +77,7 @@ Adobe Experience Platform使您能够轻松导入和合并来自多个来源的�
 
 ### 向模式添加计算属性字段
 
-您的新混音现在应显示在“合成 **[!UICONTROL ”下]** 的“混 **[!UICONTROL 音”部分]**。 单击混音的名称，编辑器的“结 **[!UICONTROL 构]** ”*部分将显 *[!UICONTROL 示多个]*“添加”字段按钮。
+您的新混音现在应显示在“合[!UICONTROL 成]”下的“Mixins[!UICONTROL ”部分]。 单击混音的名称，编辑器的“结 **[!UICONTROL 构”部分]** 将显示多个 **[!UICONTROL “添加]** ”字段按钮。
 
 选 **[!UICONTROL 择模式]** 名称旁边的“添加字段”以添加顶级字段，也可以选择在您喜欢的模式内的任意位置添加字段。
 
