@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 本教程介绍从第三方CRM系统检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1595'
 ht-degree: 1%
@@ -61,7 +61,7 @@ ht-degree: 1%
 
 要创建源连接，还必须为数据格式属性定义枚举值。
 
-对基于文件的连接器使 **用以下枚举值**:
+为基于文件的连接器使用以下枚举值：
 
 | Data.format | 枚举值 |
 | ----------- | ---------- |
@@ -69,7 +69,7 @@ ht-degree: 1%
 | JSON文件 | `json` |
 | 镶木文件 | `parquet` |
 
-对于所 **有基于表的连接器** ，请使用枚举值： `tabular`.
+对于所有基于表的连接器，请使用枚举值： `tabular`.
 
 **API格式**
 
