@@ -5,7 +5,7 @@ title: Privacy Service开发人员指南
 description: 使用RESTful API跨Adobe Experience Cloud应用程序管理数据主体的个人数据
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1bb896f7629d7b71b94dd107eeda87701df99208
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 0%
@@ -77,7 +77,7 @@ Adobe Experience Platform [!DNL Privacy Service] 提供了RESTful API和用户�
 
 ![](../images/api/getting-started/key-pair-generated.png)
 
-将API添加到项目后，项目页面将重新显示在 _Privacy ServiceAPI概述_ 页面。 从此处向下滚动到服 **[!UICONTROL 务帐户(JWT)]** ，该部分提供对API的所有调用所需的以下访问凭 [!DNL Privacy Service] 据：
+将API添加到项目后，项目页面将重新显示在 **Privacy ServiceAPI概述** 页面。 从此处向下滚动到服 **[!UICONTROL 务帐户(JWT)]** ，该部分提供对API的所有调用所需的以下访问凭 [!DNL Privacy Service] 据：
 
 * **[!UICONTROL 客户端ID]**:客户端ID是必须 `{API_KEY}` 在x-api-key头中提供的客户端ID。
 * **[!UICONTROL 组织ID]**:组织ID是 `{IMS_ORG}` 必须在x-gw-ims-org-id标题中使用的值。
