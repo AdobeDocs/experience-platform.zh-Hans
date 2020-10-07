@@ -5,7 +5,7 @@ description: '了解如何配置Experience Platform边缘网络。 '
 seo-description: '了解如何配置Experience Platform边缘网络。 '
 keywords: configuration;edge;edge configuration id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite id;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
 source-wordcount: '870'
 ht-degree: 2%
@@ -41,7 +41,7 @@ SDK中使用的ID，作为 `edgeConfigId` 一个指定配置和环境的复合ID
 
 #### [!UICONTROL 身份]
 
-标识部分是始终打开的唯一部分。 它有两个可用设置： [!UICONTROL ID同步已启用][!UICONTROL ,]ID同步容器ID。
+标识部分是始终打开的唯一部分。 它有两个可用设置：“[!UICONTROL ID Sync Enabled]”和“[!UICONTROL ID Sync容器ID]”。
 
 ![配置UI的标识部分](../../assets/edge_configuration_identity.png)
 
@@ -65,7 +65,7 @@ ID同步可以分组为容器，以允许在不同时间运行不同的ID同步�
 
 ##### [!UICONTROL Streaming Inlet]
 
-流入口是Adobe Experience Platform的HTTP源。 这些API在Adobe Experience Platform [!UICONTROL 的] “源”选项卡下创建为HTTP API。
+流入口是Adobe Experience Platform的HTTP源。 这些API在Adobe Experience Platform[!UICONTROL 的]“源”选项卡下创建为HTTP API。
 
 ##### [!UICONTROL 事件数据集]
 
@@ -95,7 +95,7 @@ ID同步可以分组为容器，以允许在不同时间运行不同的ID同步�
 
 [环境](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) (Adobe Target)的可帮助您管理整个开发阶段的实施。 此设置指定要与每个环境一起使用的环境。
 
-Adobe建议对每个配置、 `dev`和边 `stage`缘配置 `prod` 环境进行不同的设置，以简化操作。 但是，如果您已经定义 [!UICONTROL 了Adobe Target环境] ，则可以使用这些数据。
+Adobe建议对每个配置、 `dev`和边 `stage`缘配置 `prod` 环境进行不同的设置，以简化操作。 但是，如果您已定义了Adobe Target环境，则可以使用这些。
 
 #### Adobe Audience Manager
 
