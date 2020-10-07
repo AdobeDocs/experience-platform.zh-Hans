@@ -5,7 +5,7 @@ title: 在客户AI中下载分数
 topic: Downloading scores
 description: 客户AI允许您以镶木地板文件格式下载分数。
 translation-type: tm+mt
-source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
+source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
 workflow-type: tm+mt
 source-wordcount: '945'
 ht-degree: 2%
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 客户AI允许您以镶木地板文件格式下载分数。 本教程要求您已阅读并完成入门指南中的下载客户AI [得分](../getting-started.md) 。
 
-此外，要访问客户AI的得分，您需要有一个运行状态成功的服务实例可用。 要创建新服务实例，请访 [问配置客户AI实例](./configure.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分中，请允许24小时，它才能完成运行。
+此外，要访问客户AI的得分，您需要有一个运行状态成功的服务实例可用。 要创建新服务实例，请访 [问配置客户AI实例](./configure.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分，请允许24小时，它才能完成运行。
 
 目前，有两种方法可下载客户AI得分：
 
