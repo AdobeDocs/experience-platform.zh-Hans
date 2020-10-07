@@ -5,7 +5,7 @@ title: 访问控制疑难解答指南
 topic: troubleshooting guide
 description: 本文档提供有关Adobe Experience Platform访问控制的常见问题解答。
 translation-type: tm+mt
-source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '313'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 本文档提供有关Adobe Experience Platform访问控制的常见问题解答。 有关其他服务的问题和疑 [!DNL Platform] 难解答，请参阅Experience Platform [疑难解答指南](../landing/troubleshooting.md)。
 
-[!DNL Experience Platform] 利用Adobe Admin Console的产品 [用户档案](http://adminconsole.adobe.com) ，提供基于角色 **的访问控制**，将用户与权限和沙箱关联起来。  有关更多 [信息](home.md) ，请参阅访问控制概述。
+[!DNL Experience Platform] 利用Adobe Admin Console的产品用户档案 [提供](http://adminconsole.adobe.com) 基于角色的访问控制，将用户与权限和沙箱关联起来。  有关更多 [信息](home.md) ，请参阅访问控制概述。
 
 ## 在哪里可以找到我当前的访问权限？
 
