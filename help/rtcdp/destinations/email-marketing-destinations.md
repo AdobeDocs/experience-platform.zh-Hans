@@ -6,9 +6,9 @@ type: Tutorial
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 seo-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '799'
+source-wordcount: '800'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 1%
 
    ![连接到目标](/help/rtcdp/destinations/assets/connect-email-marketing.png)
 
-2. 在“身 **[!UICONTROL 份验证]** ”步骤中，如果您之前已设置到电子邮件营销目标的连接，请选择“现 **[!UICONTROL 有帐户]** ”，然后选择您的现有连接。 或者，您也可以选 **[!UICONTROL 择“新帐户]** ”来设置到电子邮件营销目标的新连接。 在连接 **[!UICONTROL 类型选择]** 器中，您可以在 **AmazonS3**、带口 **令的SFTP**、带 **** SSH密钥的SFTP之间进行选择。 根据连接类型，填写以下信息，然后选择“ **[!UICONTROL Connect]**”。
+2. 在“身 **[!UICONTROL 份验证]** ”步骤中，如果您之前已设置到电子邮件营销目标的连接，请选择“现 **[!UICONTROL 有帐户]** ”，然后选择您的现有连接。 或者，您也可以选 **[!UICONTROL 择“新帐户]** ”来设置到电子邮件营销目标的新连接。 在连接 **[!UICONTROL 类型选择]** 器中，您可以在AmazonS3、SFTP（带口令）或SFTP（带SSH密钥）之间进行选择。 根据连接类型，填写以下信息，然后选择“ **[!UICONTROL Connect]**”。
 
    对 **于S3连接**，您必须提供您的Amazon访问密钥ID和秘密访问密钥。
 
@@ -38,9 +38,9 @@ ht-degree: 1%
 
    对于 **具有SSH密钥连接** 的SFTP，您必须为SFTP服务器提供域、端口、用户名和密码。
 
-3. 在设 **[!UICONTROL 置步]** 骤中，输入新目 **[!UICONTROL 标的名称]** 、说 **[!UICONTROL 明，以及导出]****** 文件的文件格式说明。 <br>
-如果您在上一步中选择了AmazonS3作为存储选项，请在云 **[!UICONTROL 存储目标中插入存储段]****[!UICONTROL 名称和文件]** 夹路径，文件将从中传送。 对于SFTP存储选项，插入 **[!UICONTROL 文件传送]** “文件夹”路径。 <br>
-此外，在此步骤中，您还可以选 **[!UICONTROL 择应用于此目标]** 的任何Marketing用例。 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。 <br>
+3. 在设 **[!UICONTROL 置步]** 骤中，输入新目 [!UICONTROL 标的名称] 、说 [!UICONTROL 明，以及导出] 文件的文件格式说明。 <br>
+如果您在上一步中选择了AmazonS3作为存储选项，请在云 [!UICONTROL 存储目标中插入存储段][!UICONTROL 名称和文件] 夹路径，文件将从中传送。 对于SFTP存储选项，插入 [!UICONTROL 文件传送] “文件夹”路径。 <br>
+此外，在此步骤中，您还可以选 [!UICONTROL 择应用于此目标] 的任何Marketing用例。 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。 <br>
    ![电子邮件设置步骤](/help/rtcdp/destinations/assets/email-setup-step.png)
 
 ## 第2步——选择要包括在目标导出中的区段成员 {#select-segments}
