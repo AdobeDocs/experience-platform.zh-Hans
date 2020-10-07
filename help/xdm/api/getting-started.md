@@ -5,7 +5,7 @@ title: 模式注册表API开发人员指南
 description: 模式注册表用于访问Adobe Experience Platform的模式库，提供可访问所有可用库资源的用户界面和RESTful API。 使用模式注册表API，您可以执行基本的CRUD操作，以视图和管理Adobe Experience Platform内所有可用的模式和相关资源。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '1295'
 ht-degree: 0%
@@ -162,7 +162,7 @@ curl -X GET \
 
 ## 了解 `CONTAINER_ID` {#container}
 
-调用 [!DNL Schema Registry] API需要使用 `CONTAINER_ID`。 有两种容器可以对其进行API调用：全 **局容器** 和租 **户容器**。
+调用 [!DNL Schema Registry] API需要使用 `CONTAINER_ID`。 有两种容器可以对其进行API调用：全局容器和租户容器。
 
 ### 全球容器
 
