@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: 本教程将逐步介绍创建可用于使用受众UI导出Experience Platform段的数据集所需的步骤。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '756'
 ht-degree: 1%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 1%
 
 UI中的数据集工 [!DNL Experience Platform] 作区允许您视图和管理IMS组织创建的所有数据集，并创建新数据集。
 
-要视图数据集工作区，请单 **[!UICONTROL 击左侧导]** 航中的“数据集 **[!UICONTROL ”，然后单击“浏览”]** 选项卡。 数据集工作区包含数据集列表，包 **[!UICONTROL 括显示]** Name、Source **[!UICONTROL (date and time)、Source]** 、SourceBatch和 **************** Last Batch Status的列，如数据集的日期和上次创建模式更新的时间。 根据每列的宽度，可能需要向左或向右滚动才能看到所有列。
+要视图数据集工作区，请单 **[!UICONTROL 击左侧导]** 航中的“数据集 **[!UICONTROL ”，然后单击“浏览”]** 选项卡。 数据集工作区包含数据集列表，包括显示名称、创建（日期和时间）、源、模式和上次批处理状态的列，以及上次更新数据集的日期和时间。 根据每列的宽度，可能需要向左或向右滚动才能看到所有列。
 
 >[!NOTE]
 >
@@ -45,7 +45,7 @@ UI中的数据集工 [!DNL Experience Platform] 作区允许您视图和管理IM
 
 ## 创建数据集
 
-要创建数据集，请单 **[!UICONTROL 击“数据集]** ”工作区右上角的“创 [!UICONTROL 建数据集] ”。
+要创建数据集，请单 **[!UICONTROL 击“数据集]** ”工作区右上角的“创 **[!UICONTROL 建数据集]** ”。
 
 ![单击创建数据集](../images/tutorials/segment-export-dataset/dataset-click-create.png)
 
@@ -63,7 +63,7 @@ UI中的数据集工 [!DNL Experience Platform] 作区允许您视图和管理IM
 
 ## 配置数据集
 
-在“配 **[!UICONTROL 置数据集]** ”屏幕上，您将需要为数据集 **[!UICONTROL 指定名称]** ，并且还可 **[!UICONTROL 能提供]** 数据集的“描述”。
+在“配 **[!UICONTROL 置数据集]** ”屏幕上，您将需要为数据集指定名称，并可能还提供数据集的描述。
 
 **数据集名称的注释：**
 - 数据集名称应简短且具有描述性，以便以后可以在库中轻松找到该数据集。
@@ -76,9 +76,9 @@ UI中的数据集工 [!DNL Experience Platform] 作区允许您视图和管理IM
 
 ## 数据集活动
 
-现在已创建空数据集，您已返回到“数据集 **[!UICONTROL ”工作区]** 的“数据集 [!UICONTROL 活动] ”选项卡。 您应当在工作区的左上角看到数据集的名称，并显示通知“尚未添加批次”。 由于尚未向此数据集添加任何批，因此应该设置此值。
+现在已创建空数据集，您已返回到“数据集 **[!UICONTROL ”工作区]** 的“数据集 **[!UICONTROL 活动]** ”选项卡。 您应当在工作区的左上角看到数据集的名称，并显示通知“尚未添加批次”。 由于尚未向此数据集添加任何批，因此应该设置此值。
 
-在数据集的右侧，您将看到与新数据集 **[!UICONTROL 相关的]** Info标签信息，如 **[!UICONTROL Info]**&#x200B;标签、Info Tab和新数据集，如 ************************ ID、AD、TableId名称、模式名、、和源。 “信 [!UICONTROL 息] ”选项卡还包含有关数据集创建时间及其上次修 **[!UICONTROL 改]** 日期 **[!UICONTROL 的信息]** 。
+在“数据集”工作区的右侧，您将看到“信 **[!UICONTROL 息]** ”选项卡，其中包含与新数据集相关的信息，如数据集ID、名称、描述、表名、模式]、流和源。 “信 **[!UICONTROL 息]** ”选项卡还包括有关数据集创建时间及其上次修改日期的信息。
 
 请记下数据集 **[!UICONTROL ID]**，因为完成受众段导出工作流时需要此值。
 
@@ -86,6 +86,6 @@ UI中的数据集工 [!DNL Experience Platform] 作区允许您视图和管理IM
 
 ## 后续步骤
 
-现在，您已基于创建了数据集 [!DNL XDM Individual Profile Union Schema]，可以使用 **[!UICONTROL 数据集ID]** 继续 [评估和访问区段结果教程](./evaluate-a-segment.md) 。
+现在，您已基于创建了一个数据集 [!DNL XDM Individual Profile Union Schema]，可以使用数据集ID继续评估 [和访问区段结果教程](./evaluate-a-segment.md) 。
 
 此时，请返回评估区段结果教程，并从导出区段工作流 [的用户档案成员生成受众](./evaluate-a-segment.md#generate-profiles) ，步骤中进行选择。
