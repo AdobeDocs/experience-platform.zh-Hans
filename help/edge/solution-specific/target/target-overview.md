@@ -5,7 +5,7 @@ description: 了解如何使用Experience PlatformWeb SDK使用Adobe Target呈�
 seo-description: 了解如何使用Experience PlatformWeb SDK使用Adobe Target呈现个性化内容
 keywords: target;adobe target;activity.id;experience.id;renderDecisions;decisionScopes;prehiding snippet;vec;Form-Based Experience Composer;xdm;audiences;decisions;scope;schema;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 43a2074d4d1b9f642c3cbfb0c29217eb2fb112c3
 workflow-type: tm+mt
 source-wordcount: '634'
 ht-degree: 3%
@@ -87,7 +87,7 @@ alloy
 
 `decisionScopes` 定义要呈现个性化体验的页面部分、位置或部分。 这些 `decisionScopes` 功能可自定义且由用户定义。 对于当 [!DNL Target] 前客 `decisionScopes` 户，也称为“mboxes”。 在UI [!DNL Target] 中， `decisionScopes` 显示为“位置”。
 
-## __视图__ 范围
+## 范 `__view__` 围
 
 AEP [!DNL Web SDK] 提供了一项功能，您可以在该功能中检索VEC操作，而不依 [!DNL Web SDK] 赖AEP为您渲染VEC操作。 发送定义 `__view__` 为的事件 `decisionScopes`。
 
@@ -127,10 +127,10 @@ alloy("sendEvent", {
 
 ## 术语
 
-__决策__ -在 [!DNL Target]中，这些决策与从活动中选择的体验相关。
+**决策** -在 [!DNL Target]中，这些决策与从活动中选择的体验相关。
 
-__范围__ -决定的范围。 这 [!DNL Target]是mBox。 全局mBox是范 `__view__` 围。
+**范围** -决定的范围。 这 [!DNL Target]是mBox。 全局mBox是范 `__view__` 围。
 
-__模式__ -决定的模式是中的优惠类型 [!DNL Target]。
+**模式** -决定的模式是中的优惠类型 [!DNL Target]。
 
-__XDM__ - XDM被串行化为点符号，然后作为mBox参 [!DNL Target] 数输入。
+**XDM** - XDM被串行化为点符号，然后作为mBox参 [!DNL Target] 数输入。
