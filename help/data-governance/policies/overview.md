@@ -5,7 +5,7 @@ title: 数据使用策略概述
 topic: policies
 description: 为了使数据使用标签能够有效支持数据合规性，必须实施数据使用策略。 数据使用策略是描述您允许或限制对Experience Platform内数据执行的营销操作种类的规则。
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: 259c26a9d3b6ef397acd552e255f68ecb25b2dd1
 workflow-type: tm+mt
 source-wordcount: '1003'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 营销操作 {#marketing-actions}
 
-**数据治理**&#x200B;框架中的营销 **操作(也称为营销使用案例**)是数据消费者可以采取的操作，您的组织 [!DNL Experience Platform] 希望为此限制数据使用。 因此，数据使用策略由以下各项定义：
+数据治理框架中的营销操作（也称为营销使用案例）是数据消费者可以采取的 [!DNL Experience Platform] 操作，您的组织希望对其限制数据使用。 因此，数据使用策略由以下各项定义：
 
 1. 特定营销活动
 2. 限制不执行操作的数据使用标签
