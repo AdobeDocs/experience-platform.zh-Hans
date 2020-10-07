@@ -5,7 +5,7 @@ seo-title: “目标：详细信息”页
 description: '单个目标的详细信息页面提供了目标详细信息的概述，如目标名称、ID、映射到目标的区段，以及用于编辑激活和启用和禁用数据流的控件。 '
 seo-description: '单个目标的详细信息页面提供了目标详细信息的概述，如目标名称、ID、映射到目标的区段，以及用于编辑激活和启用和禁用数据流的控件。 '
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '505'
 ht-degree: 1%
@@ -53,8 +53,8 @@ ht-degree: 1%
 | 平台 | 表示受众被发送到的目标平台。 请参 [阅目标目录](/help/rtcdp/destinations/destinations-catalog.md) ，了解更多信息。 |
 | 描述 | 您可以编辑目标流的描述。 |
 | 类别 | 指示目标的类型。 请参 [阅目标目录](/help/rtcdp/destinations/destinations-catalog.md) ，了解更多信息。 |
-| 连接类型 | 指示将受众发送到目标的表单。 可以是 **[!UICONTROL Cookie]** 或 **[!UICONTROL 基于用户档案]**。 |
-| 频度 | 指示受众发送到目标的频率。 可以是 **[!UICONTROL 流]** 或 **[!UICONTROL 批处理]**。 |
+| 连接类型 | 指示将受众发送到目标的表单。 可以是 [!UICONTROL Cookie] 或 [!UICONTROL 基于用户档案]。 |
+| 频度 | 指示受众发送到目标的频率。 可以是 [!UICONTROL 流] 或 [!UICONTROL 批处理]。 |
 | 身份 | 表示目标接受的标识命名空间。 例如，“身份”字段可以是GAID、IDFA、电子邮件。 有关所有已接受的身份命名空间，请参阅“身份命名空间”概 [述中的标准命名空间](../../identity-service/namespaces.md)。 |
 | 创建者 | 指示创建此目标流的用户。 |
 | 已创建 | 指示创建此目标流的UTC日期和时间。 |
