@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 本教程将分两个主要部分。 首先，您将使用JupyterLab Notebook中的模板创建机器学习模型。 接下来，您将在JupyterLab中练习笔记本到菜谱工作流程，以便在数据科学工作区中创建菜谱。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '2335'
 ht-degree: 0%
@@ -302,7 +302,7 @@ df.dropna(0, inplace=True)
 
 >[!NOTE]
 > 
->_特征_ ，是指机器学习模型用来预测标签的输入变 _量_。
+>特征是指机器学习模型用来预测标签的输入变量。
 
 该 `train()` 功能应包括训练模型和返回训练模型。 不同型号的一些示例可在scikit-learn [用户指南文档中找到](https://scikit-learn.org/stable/user_guide.html)。
 
