@@ -5,7 +5,7 @@ title: 数据科学工作区疑难解答指南
 topic: Troubleshooting
 description: 本文档提供有关Adobe Experience Platform数据科学工作区的常见问题解答。
 translation-type: tm+mt
-source-git-commit: 76e598c743df320e4b3cb821e118749fe7304d9c
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '750'
 ht-degree: 0%
@@ -31,7 +31,7 @@ ht-degree: 0%
 
 ![chrome advanced](./images/faq/chrome-advanced.png)
 
-将出 *现“隐私和安全* ”部分。 接下来，单击“ **站点设置** ”，后 **跟Cookie和站点数据**。
+将出 **现“隐私和安全** ”部分。 接下来，单击“ **站点设置** ”，后 **跟Cookie和站点数据**。
 
 ![chrome advanced](./images/faq/privacy-security.png)
 
@@ -63,7 +63,7 @@ ht-degree: 0%
 
 ![Safari高级](./images/faq/advanced.png)
 
-然后，从顶部导航栏中选择“开 **发** ”菜单。 从“开发” *下拉* ，将鼠标悬停在“用 *户代理”上*。 您可以选择 **[!DNL Chrome]** 要使用的 **[!DNL Firefox]** 或用户代理字符串。
+然后，从顶部导航栏中选择“开 **发** ”菜单。 从“开发” **下拉** ，将鼠标悬停在“用 **户代理”上**。 您可以选择 **[!DNL Chrome]** 要使用的 **[!DNL Firefox]** 或用户代理字符串。
 
 ![“开发”菜单](./images/faq/user-agent.png)
 
