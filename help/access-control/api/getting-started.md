@@ -5,10 +5,10 @@ title: 访问控制开发人员指南
 topic: developer guide
 description: Adobe Experience Platform的访问控制允许您通过使用Adobe Admin Console管理各种平台功能的角色和权限。 以下各节提供了成功调用模式注册表API所需了解的其他信息。
 translation-type: tm+mt
-source-git-commit: 43d568a401732a753553847dee1b4a924fcc24fd
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '379'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 [!DNL Access control] 通 [!DNL Experience Platform] 过Adobe Admin Console [管](https://adminconsole.adobe.com)。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。 有关更多 [信息](../home.md) ，请参阅访问控制概述。
 
-此开发人员指南提供如何格式化您对[[!DNL 访问控制API]的请求](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)，并涵盖以下操作：
+此开发人员指南提供如何格式化您对[! [DNL访问控制API]的请求](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)，并涵盖以下操作：
 
 - [列表权限和资源类型的名称](./permissions-and-resource-types.md)
 - [视图当前用户的有效策略](./effective-policies.md)
@@ -52,4 +52,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-现在您已收集了所需的凭据，现在可以继续阅读开发人员指南的其余部分。 每个部分提供有关其端点的重要信息，并演示用于执行CRUD操作的示例API调用。 每个调用都包 **括常规API格式**、显示所需标头 **和格式正确** 的有效负载的示例请求以及成 **功调用的** 示例响应。
+现在您已收集了所需的凭据，现在可以继续阅读开发人员指南的其余部分。 每个部分提供有关其端点的重要信息，并演示用于执行CRUD操作的示例API调用。 每个调用都包括常规API格式、显示所需标头和格式正确的有效负载的示例请求以及成功调用的示例响应。
