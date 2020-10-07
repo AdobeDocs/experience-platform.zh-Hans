@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 此UI指南将帮助您使用Adobe Experience Platform创建流连接。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '512'
 ht-degree: 0%
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 ![](../images/streaming-ingestion/ui/click-connect-source.png)
 
-出 **[!UICONTROL 现“Connect to HTTP]** ”屏幕。 在“ **[!UICONTROL 服务详细信息]**”下，为新 **[!UICONTROL 流连接]** 提供名称 **[!UICONTROL 和说明]** 。
+出 **[!UICONTROL 现“Connect to HTTP]** ”屏幕。 在“ **[!UICONTROL 服务详细信息]**”下，为新流连接提供名称和说明。
 
 在“ **[!UICONTROL 帐户身份验证]**”下，为流连接选择以下配置属性：
 
@@ -59,7 +59,7 @@ ht-degree: 0%
 
 ### 创建新数据集
 
-要创建新数据集，请提 **[!UICONTROL 供]** Name ****、 **[!UICONTROL Description]** ，以及数据集的目标模式。
+要创建新数据集，请提供数据集的名称、描述以及目标模式。
 
 ![](../images/streaming-ingestion/ui/create-new-dataset.png)
 
