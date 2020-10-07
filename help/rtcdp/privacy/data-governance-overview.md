@@ -5,7 +5,7 @@ seo-title: 实时客户数据平台中的数据治理
 description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 seo-description: '数据管理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 '
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: 259c26a9d3b6ef397acd552e255f68ecb25b2dd1
 workflow-type: tm+mt
 source-wordcount: '1021'
 ht-degree: 0%
@@ -48,7 +48,7 @@ Adobe Experience Platform [!DNL Data Governance] 允许您管理客户数据并�
 
 为了使数据使用标签能够有效支持数据合规性，必须定义并启用数据使用策略。 数据使用策略是描述您允许在实时CDP内对数据执行的或从中限制的营销操作种类的规则。 有关详细信息，请参阅“数据管理” [!DNL Experience Platform] 概 [述中的](../../data-governance/home.md) “数据使用策略”部分。
 
-Adobe Experience Platform为常见 **客户体验使** 用案例提供了若干核心政策。 通过导航到“策略”工作区并选择“浏览”选 **[!UICONTROL 项卡]** ，可以在UI中 **[!UICONTROL 查看这些]** 策略。 有关在 [UI中使用策略](../../data-governance/policies/user-guide.md) (包括 [!DNL Experience Platform] 如何制定您自己的自定义策略)的更详细步骤，请参阅文档中的策略用户指南。
+Adobe Experience Platform为常见客户体验使用案例提供了若干核心策略。 通过导航到“策略”工作区并选择“浏览”选 **[!UICONTROL 项卡]** ，可以在UI中 **[!UICONTROL 查看这些]** 策略。 有关在 [UI中使用策略](../../data-governance/policies/user-guide.md) (包括 [!DNL Experience Platform] 如何制定您自己的自定义策略)的更详细步骤，请参阅文档中的策略用户指南。
 
 ## 强制实施数据使用合规性 {#enforce-data-usage-compliance}
 
