@@ -5,7 +5,7 @@ title: 分段服务区段生成器用户指南
 topic: ui guide
 description: '区段生成器提供丰富的工作区，允许您与用户档案数据元素交互。 工作区提供用于构建和编辑规则的直观控件，如用于表示数据属性的拖放拼贴。 '
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
 source-wordcount: '1723'
 ht-degree: 0%
@@ -21,9 +21,9 @@ ht-degree: 0%
 
 ## 段定义构建块
 
-段定义的基本构件是属性 **[!UICONTROL 和]****[!UICONTROL 事件]**。 此外，现有事件中包含的属性 **[!UICONTROL 和受众]** ，也可用作新定义的组件。
+段定义的基本构件是属性和事件。 此外，现有受众中包含的属性和事件也可用作新定义的组件。
 
-您可以在工作区左侧的 **[!UICONTROL “字段]** ”(Fields)部分查看这些构 [!DNL Segment Builder] 件。 **[!UICONTROL 字段]** 包含每个主要构造块的选项卡： **[!UICONTROL 属性]**、 **[!UICONTROL 事件]**&#x200B;和 **[!UICONTROL 受众]**。
+您可以在工作区左侧的 **[!UICONTROL “字段]** ”(Fields)部分查看这些构 [!DNL Segment Builder] 件。 **[!UICONTROL 字段]** 包含每个主要构造块的选项卡：“[!UICONTROL 属性]”、“[!UICONTROL 事件]”和“[!UICONTROL 受众]”。
 
 ![](../images/ui/segment-builder/segment-fields.png)
 
@@ -45,11 +45,11 @@ ht-degree: 0%
 >
 >您的组织定义的自定义模式字段可能需要24小时才能显示，并可用于构建规则。
 
-然后，您可以轻松地将 [!DNL ExperienceEvents] 事件类型 [!UICONTROL 拖放] 到区段定义中。
+然后，您可以轻松地将 [!DNL ExperienceEvents] 和“[!UICONTROL 事件类型]”拖放到区段定义中。
 
 ![](../images/ui/segment-builder/events-eventTypes.png)
 
-默认情况下，只显示模式存储中已填充的数据字段。 这包括 [!UICONTROL 事件类型]。 如果事件类型 [!UICONTROL 列表不可见] ，或者您只能选择“任何”作为[!UICONTROL 事件类型，请选]择Fields旁边的“Any ************”，然后选择Oracle Caliable Digrast可用的字段下的完全XDM模式。 再次选择齿轮图标以返回到“ **[!UICONTROL 字段]** ”选项卡，您现在应能视图多个 [!UICONTROL 事件类型和] 模式字段，无论它们是否包含数据。
+默认情况下，只显示模式存储中已填充的数据字段。 这包括“[!UICONTROL 事件类型]”。 如果“事件类型”列表不可见，或者您只能“任何[!UICONTROL ”作为“事件类型]****************”显示，则选择模式Fields下一个，然后选择Drom可用的，选择可用。 再次选 **择齿轮** 图标以返回到“字段 **[!UICONTROL ”选项卡，您现在应能视图多个“]** 事件类型”和模式字段，无论它们是否包含数据。
 
 ![](../images/ui/segment-builder/show-populated.png)
 
@@ -63,13 +63,13 @@ ht-degree: 0%
 
 ![](../images/ui/segment-builder/audience-folder-structure.png)
 
-您还可以使用搜 [!UICONTROL 索栏] (利用Lucene的搜 [索语法)搜索受众](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)。 在“ **[!UICONTROL 受众]** ”选项卡上，选择顶级文件夹会显示搜索栏，允许您在该文件夹中进行搜索。 只有输入完整单词后，搜索结果才会开始填充。 例如，要查找名为 [!UICONTROL 的受众] , `Online Shoppers`请在搜索栏中开始键入“在线”。 在完整键入“在线”一词后，将显示包含“在线”一词的搜索结果。
+您还可以使用搜索栏搜索受众，该搜索栏利 [用Lucene的搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)。 在“ **[!UICONTROL 受众]** ”选项卡上，选择顶级文件夹会显示搜索栏，允许您在该文件夹中进行搜索。 只有输入完整单词后，搜索结果才会开始填充。 例如，要查找名为的受众, `Online Shoppers`请在搜索栏中开始键入“在线”。 在完整键入“在线”一词后，将显示包含“在线”一词的搜索结果。
 
 ## 规则构建器画布 {#rule-builder-canvas}
 
 区段定义是用于描述目标受众的关键特征或行为的规则集合。 这些规则是使用位于中心的规则生成器画布创建的 [!DNL Segment Builder]。
 
-要向区段定义添加新规则，请从“字段”选项卡中拖 **[!UICONTROL 动拼贴]** ，并将其放到规则构建器画布上。 然后，将根据要添加的数据类型向您显示上下文特定选项。 可用数据类型包括：字符串、日期 [!DNL ExperienceEvents]、 [!UICONTROL 事件类型]和 [!UICONTROL 受众]。
+要向区段定义添加新规则，请从“字段”选项卡中拖 **[!UICONTROL 动拼贴]** ，并将其放到规则构建器画布上。 然后，将根据要添加的数据类型向您显示上下文特定选项。 可用数据类型包括：字符串、日 [!DNL ExperienceEvents]期、“[!UICONTROL 事件类型]”和受众。
 
 ![](../images/ui/segment-builder/rule-builder-canvas.png)
 
@@ -133,7 +133,7 @@ ht-degree: 0%
 
 构建区段定义时，工 **[!UICONTROL 作区右侧的]** “区段属性”部分会显示所生成区段的估计大小，允许您在构建受众本身之前根据需要调整区段定义。
 
-在“ **[!UICONTROL 区段属性]** ”部分，您还可以指定有关区段定义的重要信息，包括 **[!UICONTROL 名称]****[!UICONTROL 和说明]**。 区段定义名称用于在组织定义的区段中识别您的区段，因此应具有描述性、简明性和唯一性。
+在“ **[!UICONTROL 区段属性]** ”部分，您还可以指定有关区段定义的重要信息，包括其名称和说明。 区段定义名称用于在组织定义的区段中识别您的区段，因此应具有描述性、简明性和唯一性。
 
 在继续构建区段定义时，您可以通过选择视图预览来视图受众的分 **[!UICONTROL 页用户档案]**。
 
