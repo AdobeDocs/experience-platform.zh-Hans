@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: December 12, 2019
 author: ens71067
 translation-type: tm+mt
-source-git-commit: f8d13b305a61f8606c4fa1ceee6d4518b5d83fda
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '682'
-ht-degree: 5%
+ht-degree: 7%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 **发布日期：2019年12月11日**
 
-Adobe Experience Platform现有功能更新：
+Adobe Experience Platform 现有功能的更新包括：
 
 * [[!DNL分段服务]](#segmentation)
 * [[!DNL决策服务]](#decisioning)
@@ -34,7 +34,7 @@ Adobe Experience Platform分段服务提供用户界面和RESTful API，使您�
 
 | 功能 | 描述 |
 |--- | ---|
-| “合并受众”选项卡 [!DNL Segment Builder] | Segments [!UICONTROL _和_][!UICONTROL _受众_] （区段） [!DNL Segment Builder] 选项卡已合并为单 [!UICONTROL _个受众_] 选项卡。 此选项卡允许您浏览和搜索现有受众，然后将其拖放到规则构建器画布中以创建新的区段定义。 引用受众可以向新区段定义添加以下规则集之一：受众成员资格作为规则，定义引用受众的完整规则逻辑集。 |
+| “合并受众”选项卡 [!DNL Segment Builder] | Segments [!UICONTROL 和][!UICONTROL 受众] （区段） [!DNL Segment Builder] 选项卡已合并为单 [!UICONTROL 个受众] 选项卡。 此选项卡允许您浏览和搜索现有受众，然后将其拖放到规则构建器画布中以创建新的区段定义。 引用受众可以向新区段定义添加以下规则集之一：受众成员资格作为规则，定义引用受众的完整规则逻辑集。 |
 | 合并策略选择器的新位置 | 合并策略选择器在中的位 [!DNL Segment Builder] 置已更改。 要为段定义选择合并策略，请单击“字段”选项卡上的齿轮 **[!UICONTROL 图标]** ，然后使用“合并策略 **** ”下拉菜单选择要使用的合并策略。 |
 
 **已知问题**
