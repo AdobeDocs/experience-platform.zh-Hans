@@ -5,7 +5,7 @@ description: 了解如何配置Experience PlatformWeb SDK
 seo-description: 了解如何配置Experience PlatformWeb SDK
 keywords: configuring;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehidingStyle;opacity;cookieDestinationsEnabled;urlDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: d036595dc96af98fd53c7eb40162585bac48f05c
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '749'
 ht-degree: 11%
@@ -135,7 +135,7 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-启 [!DNL Audience Manager] 用 [!UICONTROL Cookie目标]，允许根据细分资格设置Cookie。
+启 [!DNL Audience Manager] 用Cookie目标，允许根据区段资格设置Cookie。
 
 ### `urlDestinationsEnabled`
 
@@ -143,7 +143,7 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-启 [!DNL Audience Manager] 用 [!UICONTROL URL目标]，它允许基于段资格触发URL。
+启 [!DNL Audience Manager] 用URL目标，它允许基于段资格触发URL。
 
 ## 标识选项
 
