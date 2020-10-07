@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform数据摄取服务API的一部分。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: fce215edb99cccc8be0109f8743c9e56cace2be0
 workflow-type: tm+mt
 source-wordcount: '1163'
 ht-degree: 2%
@@ -217,11 +217,12 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/des
 
 >[!NOTE]
 >
->&#x200B; &#x200B; Identity命名空间代码&#x200B;****
+>身&#x200B;份命名空间代码&#x200B;****
 >
 > 请确保代码有效——上例使用“email”，它是标准身份命名空间。 其他常用的标准身份命名空间可在Identity Service常见问 [题解答中找到](../../identity-service/troubleshooting-guide.md#what-are-the-standard-identity-namespaces-provided-by-experience-platform)。
 >
 > 如果要创建自定义命名空间，请按照标识命名空间概述中概 [述的步骤操作](../../identity-service/home.md)。
+
 **响应**
 
 成功的响应返回HTTP状态201，其中包含有关该模式新创建的主标识命名空间的信息。
