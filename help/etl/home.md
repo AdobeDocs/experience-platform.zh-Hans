@@ -5,7 +5,7 @@ title: 创建ETL集成
 topic: overview
 description: ETL集成指南概述了创建高性能、安全连接器以进行Experience Platform并将数据引入平台的一般步骤。
 translation-type: tm+mt
-source-git-commit: f4a4e65a087313dc4e2414f999e021e3f6e17137
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
 source-wordcount: '4173'
 ht-degree: 0%
@@ -95,7 +95,7 @@ ETL工作流中已提供示例ETL工具和工作流的 [模型](./workflow.md)�
 
 您可以发出单个API请求以视图所有可用数据集(例如， `GET /dataSets`)，最佳实践是包含限制响应大小的查询参数。
 
-在请求完 _整数据集_ 信息时，响应有效负荷可能超过3GB大小，这会降低整体性能。 因此，只使用查询参数来过滤所需信息将使查询 [!DNL Catalog] 更高效。
+在请求完整数据集信息时，响应有效负荷可能超过3GB，这会降低整体性能。 因此，只使用查询参数来过滤所需信息将使查询 [!DNL Catalog] 更高效。
 
 #### 列表过滤
 
@@ -165,7 +165,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets?limit=3&
 
 ### 视图数据集模式
 
-数据集的“schemaRef”属性包含引用数据集所基于的XDM模式的URI。 XDM模式(“schemaRef”)表示 _集_ 可使用的所有潜在字段 _，而不一定是正在使用_ 的字段（请参阅下面的“可观察模式”）。
+数据集的“schemaRef”属性包含引用数据集所基于的XDM模式的URI。 XDM模式(“schemaRef”)表示数据集可以使用的所有潜在字段，而不一定是正在使用的字段（请参阅下面的“可观察架构”）。
 
 XDM模式是您在需要向用户显示可写入的所有可用字段的列表时使用的模式。
 
@@ -498,7 +498,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/59c93f3d
 
 ## 执行阶段
 
-作为执行开始，连接器（如源组件中定义）将使用[!DNL Experience Platform] [!DNL 数据访问API]从中读取数据](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。 转换过程将读取特定时间范围内的数据。 在内部，它将查询成批的源数据集。 在查询时，它将使用参数化（滚动时间序列数据或增量数据）开始日期和列表数据集文件来查询这些批，并开始请求这些数据集文件的数据。
+作为执行开始，连接器（如源组件中定义）将使用[! [!DNL Experience Platform] DNL [数据访问API]从中读取数据](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。 转换过程将读取特定时间范围内的数据。 在内部，它将查询成批的源数据集。 在查询时，它将使用参数化（滚动时间序列数据或增量数据）开始日期和列表数据集文件来查询这些批，并开始请求这些数据集文件的数据。
 
 ### 示例转换
 
@@ -601,7 +601,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 ### 写入数据集
 
-成功创建新批后，文件可上传到特定数据集。 在提升多个文件之前，可以在一个批中发布它。 文件可以使用“小文 _件上传API”上传_;但是，如果文件太大并且超出了网关限制，则可以使用“大 _文件上传API”_。 有关同时使用“大文件上传”和“小文件上传”的详细信息，请参 [阅批处理概述](../ingestion/batch-ingestion/overview.md)。
+成功创建新批后，文件可上传到特定数据集。 在提升多个文件之前，可以在一个批中发布它。 文件可以使用Small File Upload API上传；但是，如果文件太大并且超出了网关限制，则可以使用大文件上传API。 有关同时使用“大文件上传”和“小文件上传”的详细信息，请参 [阅批处理概述](../ingestion/batch-ingestion/overview.md)。
 
 **请求**
 
@@ -641,7 +641,7 @@ ETL工具将确保在读取数据时记录源数据集的时间戳。
 
 ### 获取上一批状态
 
-在ETL工具中运行新任务之前，必须确保成功完成上一批。 [[!DNL 目录服务API]提供了特定于批的选项](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) ，该选项提供了相关批的详细信息。
+在ETL工具中运行新任务之前，必须确保成功完成上一批。 [! [DNL目录服务API]提供了特定于批的选项](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) ，该选项提供了相关批的详细信息。
 
 **请求**
 
