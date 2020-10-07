@@ -6,7 +6,7 @@ last-update: April 13, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
 source-wordcount: '991'
 ht-degree: 5%
@@ -79,7 +79,7 @@ Adobe Experience Platform [!DNL Data Governance] 是用于管理客户数据并�
 
 | 功能 | 描述 |
 | -----------| ---------- |
-| 在UI中管理数据使用策略 | 数据使用策略现在可以在UI的“策 _略_ ”工作区中 [!DNL Experience Platform] 管理。 有关详细 [信息，请参阅](../../data-governance/policies/user-guide.md) “策略用户指南”。 |
+| 在UI中管理数据使用策略 | 数据使用策略现在可以在UI的“策 **略** ”工作区中 [!DNL Experience Platform] 管理。 有关详细 [信息，请参阅](../../data-governance/policies/user-guide.md) “策略用户指南”。 |
 
 **已知问题**
 
