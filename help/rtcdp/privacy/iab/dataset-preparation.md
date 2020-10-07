@@ -5,7 +5,7 @@ title: 实时客户数据平台中的IAB TCF 2.0支持
 topic: privacy events
 description: 此文档提供了设置两个必需数据集以收集IAB TCF 2.0同意数据的步骤。
 translation-type: tm+mt
-source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
+source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
 workflow-type: tm+mt
 source-wordcount: '1369'
 ht-degree: 0%
@@ -72,7 +72,7 @@ ht-degree: 0%
 
 ## 创建客户同意模式 {#create-schemas}
 
-在平台UI中，单击左 **[!UICONTROL 侧导]** 航中的模式以打开 *[!UICONTROL 模式工]作区*。 从此处，请按照以下各节中的步骤创建每个必需的模式。
+在平台UI中，单击左 **[!UICONTROL 侧导]** 航中的模式以打开 **[!UICONTROL 模式工]** 作区。 从此处，请按照以下各节中的步骤创建每个必需的模式。
 
 >[!NOTE]
 >
@@ -80,7 +80,7 @@ ht-degree: 0%
 
 ### 创建基于记录的同意模式 {#profile-schema}
 
-从模式 **[!UICONTROL 工作]** 区的“浏 **[!UICONTROL 览]”选项卡中****[!DNL XDM Individual Profile]，基于类创建新的**&#x200B;模式。 在模式编辑器中打开模式后， **[!UICONTROL 单击]** 画布左 **[!UICONTROL 侧]** “Mixins”部分下的“添加”。
+从模式 **[!UICONTROL 工作]** 区的“浏 **[!UICONTROL 览]”选项卡中**[!DNL XDM Individual Profile] ，基于类创建新的模式。 在模式编辑器中打开模式后， **[!UICONTROL 单击]** 画布左 **[!UICONTROL 侧]** “Mixins”部分下的“添加”。
 
 ![](../assets/iab/add-mixin-profile.png)
 
@@ -127,7 +127,7 @@ ht-degree: 0%
 
 ### 创建基于时间序列的同意模式 {#event-schema}
 
-从模式 **[!UICONTROL 工作]** 区的“浏 **[!UICONTROL 览]”选项卡中****[!DNL XDM ExperienceEvent]，基于类创建新的**&#x200B;模式。 在模式编辑器中打开模式后， **[!UICONTROL 单击]** 画布左 **[!UICONTROL 侧]** “Mixins”部分下的“添加”。
+从模式 **[!UICONTROL 工作]** 区的“浏 **[!UICONTROL 览]** ”选项卡中 [!DNL XDM ExperienceEvent] ，根据类创建新模式。 在模式编辑器中打开模式后， **[!UICONTROL 单击]** 画布左 **[!UICONTROL 侧]** “Mixins”部分下的“添加”。
 
 ![](../assets/iab/add-mixin-event.png)
 
