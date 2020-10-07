@@ -6,7 +6,7 @@ topic: policies
 type: Tutorial
 description: 策略服务API允许您创建和管理数据使用策略，以确定可以对包含某些数据使用标签的数据采取哪些营销操作。 此文档提供了使用策略服务API创建策略的分步教程。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1209'
 ht-degree: 2%
@@ -195,7 +195,7 @@ curl -X PUT \
 
 创建新策略需要您提供营销操作的URI ID，并且表达式禁止该营销操作的使用标签。
 
-此表达式称为策 **略表达式** ，是包含(A)标签或(B)操作符和操作数（但不同时包含两者）的对象。 反过来，每个操作数也是策略表达式对象。 例如，如果存在标签，则可能禁止向第三方导出数 `C1 OR (C3 AND C7)` 据的策略。 此表达式将指定为：
+此表达式称为策略表达式，是包含(A)标签或(B)操作符和操作数（但不同时包含两者）的对象。 反过来，每个操作数也是策略表达式对象。 例如，如果存在标签，则可能禁止向第三方导出数 `C1 OR (C3 AND C7)` 据的策略。 此表达式将指定为：
 
 ```json
 "deny": {
