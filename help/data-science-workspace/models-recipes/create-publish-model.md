@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Adobe Experience Platform数据科学工作区提供了使用预建的产品Recommendations秘方实现目标的方法。 按照本教程，了解如何访问和了解您的零售数据、创建和优化机器学习模型以及在数据科学工作区中生成洞察。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1595'
 ht-degree: 0%
@@ -50,7 +50,7 @@ ht-degree: 0%
    * [[!DNL体验数据模型]](../../xdm/home.md):由Adobe领导的标准化工作，为客户体验管理定 [!DNL Profile] 义标准模式，如ExperienceEvent。
    * 数据集：实际数据的存储和管理结构。 XDM模式的物理实例 [化实例](../../xdm/schema/field-dictionary.md)。
    * 批：数据集由批量组成。 批是在一段时间内收集的一组数据，并作为单个单元一起处理。
-   * [!DNL JupyterLab]: [[!DNL JupyterLab]是](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) 一个基于Web的开放源代码界面， [!DNL Jupyter] 它紧密集成在Project中 [!DNL Experience Platform]。
+   * [!DNL JupyterLab]: [[!DNL JupyterLab]是](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) 一个基于Web的开放源代码界面， [!DNL Jupyter] 它紧密集成到Project中 [!DNL Experience Platform]。
 
 ## 准备数据 {#prepare-your-data}
 
@@ -85,7 +85,7 @@ ht-degree: 0%
    ![](../images/models-recipes/model-walkthrough/browse_recipes.png)
 2. 通过单击提供的 **[!UICONTROL Recommendations菜谱]** ，找到并打开它。
    ![](../images/models-recipes/model-walkthrough/recommendations_recipe_110.png)
-3. 在右侧边栏中，单击“ **[!UICONTROL Recommendations输入模式]** ”以视图为菜谱加电的模式。 模式字 **[!UICONTROL 段itemId]****[!UICONTROL 和userId与客户在特定时间(timestamp]** ID)购买的产品(**[!UICONTROL interactionType]******)相对应。 按照相同的步骤查看“Recommendations输出” **[!UICONTROL 模式的字段]**。
+3. 在右侧边栏中，单击“ **[!UICONTROL Recommendations输入模式]** ”以视图为菜谱加电的模式。 模式字段“[!UICONTROL itemId]”和“userId[!UICONTROL ”对应于客户在特定时间(时间戳])购买的产品([!UICONTROL Type])。 按照相同的步骤查看“Recommendations输出” **[!UICONTROL 模式的字段]**。
    ![](../images/models-recipes/model-walkthrough/preview_schemas.png)
 
 您现在已查看了“产品Recommendations处方”要求的输入和输出模式。 您现在可以继续阅读下一节，了解如何创建、培训和评估产品Recommendations模型。
@@ -113,9 +113,9 @@ ht-degree: 0%
 
 ### 使用自定义超参数训练模型
 
-1. 在“模 *型概述* ”页上， **[!UICONTROL 单击右]** 上方附近的“培训”以创建新的培训运行。 选择创建模型时使用的同一输入数据集，然后单击“下 **[!UICONTROL 一步”]**。
+1. 在“模 **型概述** ”页上， **[!UICONTROL 单击右]** 上方附近的“培训”以创建新的培训运行。 选择创建模型时使用的同一输入数据集，然后单击“下 **[!UICONTROL 一步”]**。
    ![](../images/models-recipes/model-walkthrough/training_select_dataset.png)
-2. 此时将 *显示* “配置”页。 您可以在此配置培训运行的 **[!UICONTROL num_recommendations]** 值，也称为超级参数。 经过训练和优化的模型将根据训练结果使用性能最佳的超参数。
+2. 此时将 **显示** “配置”页。 您可以在此配置培训运行的“[!UICONTROL num_recommendations]”值，也称为超级参数。 经过训练和优化的模型将根据训练结果使用性能最佳的超参数。
 
    无法学习超参数，因此必须在进行培训之前分配超参数。 调整超参数可能会改变训练模型的精度。 由于优化模型是一个迭代过程，因此在获得满意的评估之前可能需要多次培训运行。
 
@@ -159,7 +159,7 @@ ht-degree: 0%
 
 1. 在评分运行页面上，单击已完成的评分运行，然后单击右边 **[!UICONTROL 栏上的预览评分结果]** 数据集。
    ![](../images/models-recipes/model-walkthrough/score_complete.png)
-2. 在预览表中，每行都包含特定客户的产品推荐，分别标记为 **[!UICONTROL 推荐]****[!UICONTROL 和userId]** 。 由于 **[!UICONTROL 在示例屏幕截图中]** ,num_recommendations Hyperparameter设置为10，因此每行推荐最多可包含10个产品标识，用数字符号(#)分隔。
+2. 在预览表中，每行都包含特定客户的产品推荐，分别标记为 [!UICONTROL 推荐][!UICONTROL 和userId] 。 由于 [!UICONTROL 在示例屏幕截图中] ,num_recommendations Hyperparameter设置为10，因此每行推荐最多可包含10个产品标识，用数字符号(#)分隔。
    ![](../images/models-recipes/model-walkthrough/preview_score_results.png)
 
 ## 后续步骤 {#next-steps}
