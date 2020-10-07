@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 可用指标
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: c5455dc0812b251483170ac19506d7c60ad4ecaa
+source-git-commit: ae6f220cdec54851fb78b7ba8a8eb19f2d06b684
 workflow-type: tm+mt
-source-wordcount: '1174'
+source-wordcount: '2007'
 ht-degree: 2%
 
 ---
@@ -22,11 +22,18 @@ ht-degree: 2%
 
 ## 检索可观性指标
 
-您可以通过向API中的端点发出GET请求来检 `/metrics` 索可观测性 [!DNL Observability Insights] 指标。
+有两种支持的方法可使用API检索度量数据：
+
+* [版本1](#v1):使用查询参数指定度量。
+* [版本2](#v2):使用JSON有效负荷指定过滤器并将其应用于指标。
+
+### Version 1 {#v1}
+
+您可以通过向端点发出GET请求来检索度量数 `/metrics` 据，并通过使用查询参数来指定度量。
 
 **API格式**
 
-使用端点 `/metrics` 时，必须至少提供一个度量请求参数。 其他查询参数是筛选结果的可选参数。
+参数中必须至少提供一个度 `metric` 量。 其他查询参数是筛选结果的可选参数。
 
 ```http
 GET /metrics?metric={METRIC}
@@ -39,7 +46,7 @@ GET /metrics?metric={METRIC}&metric={METRIC_2}&id={ID}&dateRange={DATE_RANGE}
 | 参数 | 描述 |
 | --- | --- |
 | `{METRIC}` | 要公开的度量。 在一次调用中合并多个指标时，必须使用和号(`&`)来分隔单个指标。 例如：`metric={METRIC_1}&metric={METRIC_2}`。 |
-| `{ID}` | 要公开其度 [!DNL Platform] 量的特定资源的标识符。 此ID可能是可选的、必需的或不适用的，具体取决于所使用的度量。 请参 [阅附录](#available-metrics) ，了解可用指标的列表以及每个指标支持的ID（必需和可选）。 |
+| `{ID}` | 要公开其度 [!DNL Platform] 量的特定资源的标识符。 此ID可能是可选的、必需的或不适用的，具体取决于所使用的度量。 请参 [阅附录](#available-metrics) ，了解可用指标的列表，包括每个指标支持的ID（必需和可选）。 |
 | `{DATE_RANGE}` | 要公开的指标的日期范围，ISO 8601格式(例如 `2018-10-01T07:00:00.000Z/2018-10-09T07:00:00.000Z`)。 |
 
 **请求**
@@ -59,53 +66,208 @@ curl -X GET \
 
 ```json
 {
-    "id": "5cf8ab4ec48aba145214abeb",
-    "imsOrgId": "{IMS_ORG}",
-    "timeseries": {
-        "granularity": "MONTH",
-        "items": [
-            {
-                "timestamp": "2019-06-01T00:00:00Z",
-                "metrics": {
-                    "timeseries.ingestion.dataset.recordsuccess.count": 1125,
-                    "timeseries.ingestion.dataset.size": 32320
-                }
-            },
-            {
-                "timestamp": "2019-05-01T00:00:00Z",
-                "metrics": {
-                    "timeseries.ingestion.dataset.recordsuccess.count": 1003,
-                    "timeseries.ingestion.dataset.size": 31409
-                }
-            },
-            {
-                "timestamp": "2019-04-01T00:00:00Z",
-                "metrics": {
-                    "timeseries.ingestion.dataset.recordsuccess.count": 740,
-                    "timeseries.ingestion.dataset.size": 25809
-                }
-            },
-            {
-                "timestamp": "2019-03-01T00:00:00Z",
-                "metrics": {
-                    "timeseries.ingestion.dataset.recordsuccess.count": 740,
-                    "timeseries.ingestion.dataset.size": 25809
-                }
-            },
-            {
-                "timestamp": "2019-02-01T00:00:00Z",
-                "metrics": {
-                    "timeseries.ingestion.dataset.recordsuccess.count": 390,
-                    "timeseries.ingestion.dataset.size": 16801
-                }
-            }
-        ],
-        "_page": null,
-        "_links": null
-    },
-    "stats": {}
+  "id": "5cf8ab4ec48aba145214abeb",
+  "imsOrgId": "{IMS_ORG}",
+  "timeseries": {
+    "granularity": "MONTH",
+    "items": [
+      {
+        "timestamp": "2019-06-01T00:00:00Z",
+        "metrics": {
+          "timeseries.ingestion.dataset.recordsuccess.count": 1125,
+          "timeseries.ingestion.dataset.size": 32320
+        }
+      },
+      {
+        "timestamp": "2019-05-01T00:00:00Z",
+        "metrics": {
+          "timeseries.ingestion.dataset.recordsuccess.count": 1003,
+          "timeseries.ingestion.dataset.size": 31409
+        }
+      },
+      {
+        "timestamp": "2019-04-01T00:00:00Z",
+        "metrics": {
+          "timeseries.ingestion.dataset.recordsuccess.count": 740,
+          "timeseries.ingestion.dataset.size": 25809
+        }
+      },
+      {
+        "timestamp": "2019-03-01T00:00:00Z",
+        "metrics": {
+          "timeseries.ingestion.dataset.recordsuccess.count": 740,
+          "timeseries.ingestion.dataset.size": 25809
+        }
+      },
+      {
+        "timestamp": "2019-02-01T00:00:00Z",
+        "metrics": {
+          "timeseries.ingestion.dataset.recordsuccess.count": 390,
+          "timeseries.ingestion.dataset.size": 16801
+        }
+      }
+    ],
+    "_page": null,
+    "_links": null
+  },
+  "stats": {}
 }
 ```
+
+### Version 2 {#v2}
+
+您可以通过向端点发出POST请求来检 `/metrics` 索度量数据，并指定要在有效负荷中检索的度量。
+
+**API格式**
+
+```http
+POST /metrics
+```
+
+**请求**
+
+```sh
+curl -X POST \
+  https://platform.adobe.io/data/infrastructure/observability/insights/metrics \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+        "start": "2020-07-14T00:00:00.000Z",
+        "end": "2020-07-22T00:00:00.000Z",
+        "granularity": "day",
+        "metrics": [
+          {
+            "name": "timeseries.ingestion.dataset.recordsuccess.count",
+            "filters": [
+              {
+                "name": "dataSetId",
+                "value": "5edcfb2fbb642119194c7d94|5eddb21420f516191b7a8dad",
+                "groupBy": true
+              }
+            ],
+            "aggregator": "sum",
+            "downsample": "sum"
+          },
+          {
+            "name": "timeseries.ingestion.dataset.dailysize",
+            "filters": [
+              {
+                "name": "dataSetId",
+                "value": "5eddb21420f516191b7a8dad",
+                "groupBy": false
+              }
+            ],
+            "aggregator": "sum",
+            "downsample": "sum"
+          }
+        ]
+      }'
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `start` | 检索度量数据的最早日期／时间。 |
+| `end` | 检索度量数据的最新日期／时间。 |
+| `granularity` | 一个可选字段，它指示要除以度量数据的时间间隔。 例如，返回日期和 `DAY` 日期之间每天的度 `start` 量 `end` 值，而值将按月 `MONTH` 对度量结果分组。 使用此字段时，还必 `downsample` 须提供相应的属性以指示将数据分组时使用的聚合函数。 |
+| `metrics` | 一组对象，每个对象对应一个要检索的度量。 |
+| `name` | 可观察性洞察所识别的指标名称。 有关已接 [受的度量](#available-metrics) 名称的完整列表，请参阅附录。 |
+| `filters` | 可选字段，允许您按特定数据集筛选指标。 该字段是对象的数组（每个过滤器一个），每个对象包含以下属性： <ul><li>`name`:要筛选指标的实体类型。 目前，仅 `dataSets` 受支持。</li><li>`value`:一个或多个数据集的ID。 可以将多个数据集ID作为单个字符串提供，每个ID由垂直条字符(`|`)分隔。</li><li>`groupBy`:如果设置为true，则表示相应的表示 `value` 应单独返回其度量结果的多个数据集。 如果设置为false，则这些数据集的度量结果将分组在一起。</li></ul> |
+| `aggregator` | 指定应用于将多次序列记录分组为单个结果的聚合函数。 有关可用聚合器的详细信息，请参 [阅OpenTSDB文档](http://opentsdb.net/docs/build/html/user_guide/query/aggregators.html)。 |
+| `downsample` | 一个可选字段，它允许您指定聚合函数，通过将字段分类到时间间隔（或“时段”）来降低度量数据的采样率。 缩减采样的间隔由属性确 `granularity` 定。 有关缩减采样的详细信息，请参阅 [OpenTSDB文档](http://opentsdb.net/docs/build/html/user_guide/query/downsampling.html)。 |
+
+**响应**
+
+成功的响应会返回请求中指定的度量和过滤器的结果数据点。
+
+```json
+{
+  "metricResponses": [
+    {
+      "metric": "timeseries.ingestion.dataset.recordsuccess.count",
+      "filters": [
+        {
+          "name": "dataSetId",
+          "value": "5edcfb2fbb642119194c7d94|5eddb21420f516191b7a8dad",
+          "groupBy": true
+        }
+      ],
+      "datapoints": [
+        {
+          "groupBy": {
+            "dataSetId": "5edcfb2fbb642119194c7d94"
+          },
+          "dps": {
+            "2020-07-14T00:00:00Z": 44.0,
+            "2020-07-15T00:00:00Z": 46.0,
+            "2020-07-16T00:00:00Z": 36.0,
+            "2020-07-17T00:00:00Z": 50.0,
+            "2020-07-18T00:00:00Z": 38.0,
+            "2020-07-19T00:00:00Z": 40.0,
+            "2020-07-20T00:00:00Z": 42.0,
+            "2020-07-21T00:00:00Z": 42.0,
+            "2020-07-22T00:00:00Z": 50.0
+          }
+        },
+        {
+          "groupBy": {
+            "dataSetId": "5eddb21420f516191b7a8dad"
+          },
+          "dps": {
+            "2020-07-14T00:00:00Z": 44.0,
+            "2020-07-15T00:00:00Z": 46.0,
+            "2020-07-16T00:00:00Z": 36.0,
+            "2020-07-17T00:00:00Z": 50.0,
+            "2020-07-18T00:00:00Z": 38.0,
+            "2020-07-19T00:00:00Z": 40.0,
+            "2020-07-20T00:00:00Z": 42.0,
+            "2020-07-21T00:00:00Z": 42.0,
+            "2020-07-22T00:00:00Z": 50.0
+          }
+        }
+      ],
+      "granularity": "DAY"
+    },
+    {
+      "metric": "timeseries.ingestion.dataset.dailysize",
+      "filters": [
+        {
+          "name": "dataSetId",
+          "value": "5eddb21420f516191b7a8dad",
+          "groupBy": false
+        }
+      ],
+      "datapoints": [
+        {
+          "groupBy": {},
+          "dps": {
+            "2020-07-14T00:00:00Z": 38455.0,
+            "2020-07-15T00:00:00Z": 40213.0,
+            "2020-07-16T00:00:00Z": 31476.0,
+            "2020-07-17T00:00:00Z": 43705.0,
+            "2020-07-18T00:00:00Z": 33227.0,
+            "2020-07-19T00:00:00Z": 34977.0,
+            "2020-07-20T00:00:00Z": 36735.0,
+            "2020-07-21T00:00:00Z": 36737.0,
+            "2020-07-22T00:00:00Z": 43715.0
+          }
+        }
+      ],
+      "granularity": "DAY"
+    }
+  ]
+}
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `metricResponses` | 一个数组，其对象表示请求中指定的每个度量。 每个对象都包含有关筛选器配置和返回的度量数据的信息。 |
+| `metric` | 请求中提供的度量之一的名称。 |
+| `filters` | 指定度量的筛选器配置。 |
+| `datapoints` | 其对象表示指定度量和过滤器结果的数组。 数组中的对象数取决于请求中提供的筛选器选项。 如果未提供过滤器，则数组将仅包含一个表示所有数据集的对象。 |
+| `groupBy` | 如果在某个度量的属性中 `filter` 指定了多个数据集，并且该 `groupBy` 选项在请求中设置为true，则此对象将包含相应属性所应用的数据集 `dps` 的ID。<br><br>如果此对象在响应中显示为空，则相应的属 `dps` 性将应用于数组中提供的所有数据集( `filters` 如果未提供任何过滤器，则 [!DNL Platform] 应用于数组中的所有数据集)。 |
+| `dps` | 给定度量、过滤器和时间范围的返回数据。 此对象中的每个键都表示具有指定度量的相应值的时间戳。 每个数据点之间的时间段取决于 `granularity` 请求中指定的值。 |
 
 ## 附录
 
@@ -206,3 +368,46 @@ curl -X GET \
 | platform.ups.profile-commons.ingest.streaming.dataSet.record.updated.timestamp | 数据集的上次更新记录请求的时间戳。 | 数据集ID(**必需**) |
 | platform.ups.ingest.streaming.record.size.m1_rate | 平均记录大小。 | IMS组织(必&#x200B;**需**) |
 | platform.ups.ingest.streaming.records.updated.m15_rate | 为数据集摄取的记录请求更新的速率。 | 数据集ID(**必需**) |
+
+### 错误消息
+
+在某些条件下， `/metrics` 端点的响应可能会返回错误消息。 这些错误消息以以下格式返回：
+
+```json
+{
+    "type": "http://ns.adobe.com/aep/errors/INSGHT-1000-400",
+    "title": "Bad Request - Start date cannot be after end date.",
+    "status": 400,
+    "report": {
+        "tenantInfo": {
+            "sandboxName": "prod",
+            "sandboxId": "49f58060-5d47-34rd-aawf-a5384333ff12",
+            "imsOrgId": "{IMS_ORG}"
+        },
+        "additionalContext": null
+    },
+    "error-chain": [
+        {
+            "serviceId": "INSGHT",
+            "errorCode": "INSGHT-1000-400",
+            "invokingServiceId": "INSGHT",
+            "unixTimeStampMs": 1602095177129
+        }
+    ]
+}
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `title` | 包含错误消息的字符串以及可能发生错误消息的原因。 |
+| `report` | 包含有关错误的上下文信息，包括触发该错误的操作中使用的沙箱和IMS组织。 |
+
+下表列表了API可返回的不同错误代码：
+
+| 错误代码 | 标题 | 描述 |
+| --- | --- | --- |
+| `INSGHT-1000-400` | 请求有效负荷错误 | 请求有效负荷有问题。 确保与上面所示的有效负荷格式完全 [匹配](#v2)。 任何可能的原因都可能触发此错误：<ul><li>缺少必填字段，如 `aggregator`</li><li>无效度量</li><li>请求包含无效的聚合器</li><li>开始日期在结束日期之后发生</li></ul> |
+| `INSGHT-1001-400` | 度量查询失败 | 尝试查询度量数据库时出错，原因是请求错误或查询本身不可参与。 在再次尝试之前，请确保请求的格式正确。 |
+| `INSGHT-1001-500` | 度量查询失败 | 由于服务器错误，尝试查询度量数据库时出错。 请重试请求，如果问题仍然存在，请与Adobe支持联系。 |
+| `INSGHT-1002-500` | 服务错误 | 由于内部错误，无法处理该请求。 请重试请求，如果问题仍然存在，请与Adobe支持联系。 |
+| `INSGHT-1003-401` | 沙箱验证错误 | 由于沙箱验证错误，无法处理该请求。 在再次尝试请求之前，请确 `x-sandbox-name` 保在标头中提供的沙箱名称代表IMS组织的一个有效、已启用的沙箱。 |
