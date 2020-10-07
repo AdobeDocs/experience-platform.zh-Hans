@@ -5,7 +5,7 @@ title: 查询编辑器用户指南
 topic: query editor
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，它允许您在Experience Platform用户界面中为客户体验数据编写、验证和运行查询。 查询编辑器支持开发分析和数据的查询，并允许您运行交互式查询以用于开发目的，以及运行非交互式查询以填充Experience Platform集。
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '1086'
 ht-degree: 1%
@@ -99,7 +99,7 @@ ht-degree: 1%
 
 ## 使用查询编辑器执行查询
 
-要在中运行查询 [!DNL Query Editor]，您可以在编辑器中输入SQL，或从“日志”或“浏览”选 *项卡加载* 以前的 **[!UICONTROL 查询，然后单]** 击“播放 **”**。 查询执行状态显示在下面的 **[!UICONTROL 控制台]** 选项卡中，输出数据显示在结果 **[!UICONTROL 选项卡中]** 。
+要在中运行查询 [!DNL Query Editor]，您可以在编辑器中输入SQL，或从“日志”或“浏览”选 **[!UICONTROL 项卡加载]** 以前的 **[!UICONTROL 查询，然后单]** 击“播放 **”**。 查询执行状态显示在下面的 **[!UICONTROL 控制台]** 选项卡中，输出数据显示在结果 **[!UICONTROL 选项卡中]** 。
 
 ### 控制台
 
