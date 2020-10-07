@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 此文档提供分步教程，用于通过机器学习洞察丰富实时客户用户档案，将步骤分为以下几节，创建输出模式/数据集，配置输出模式/数据集，以及使用区段生成器创建区段。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1230'
 ht-degree: 0%
@@ -43,10 +43,10 @@ ht-degree: 0%
 
 编写模式从指定类开始。 类定义模式将包含的数据的行为方面（记录或时间序列）。 本节提供使用模式生成器创建模式的基本说明。 有关更详细的教程，请参阅有关使用 [模式编辑器创建模式的教程](../../xdm/tutorials/create-schema-ui.md)。
 
-1. 在Adobe Experience Platform，单击 **[!UICONTROL 模式]** 选项卡以访问模式浏览器。 单击 **[!UICONTROL 创建模式]** ，访问 *模式编辑器*，您可以在此交互构建和创建模式。
+1. 在Adobe Experience Platform，单击 **[!UICONTROL 模式]** 选项卡以访问模式浏览器。 单击 **[!UICONTROL 创建模式]** ，访问 **模式编辑器**，您可以在此交互构建和创建模式。
    ![](../images/models-recipes/enrich-rtcdp/schema_browser.png)
 
-2. 在“合 *成* ”窗口中， **[!UICONTROL 单击“]** 分配”以浏览可用的类。
+2. 在“合 **成** ”窗口中， **[!UICONTROL 单击“]** 分配”以浏览可用的类。
    * 要分配现有类，请单击并高亮显示所需的类，然后单击“ **[!UICONTROL 分配类”]**。
       ![](../images/models-recipes/enrich-rtcdp/existing_class.png)
 
@@ -55,7 +55,7 @@ ht-degree: 0%
 
    此时，模式的结构应包含一些类字段，您可以指定混音。 混音是由一个或多个字段组成的组，用于描述特定概念。
 
-3. 在“合 *成* ”窗口 **[!UICONTROL 中]** ，单击 *“Mixins* ”子部分中的“添加”。
+3. 在“合 **成** ”窗口 **[!UICONTROL 中]** ，单击 **“Mixins** ”子部分中的“添加”。
    * 要分配现有混音，请单击并高亮显示所需的混音，然后单击“添 **[!UICONTROL 加混音”]**。 与类不同，只要适合，多个混音就可以分配给单个模式。
       ![](../images/models-recipes/enrich-rtcdp/existing_mixin.png)
 
