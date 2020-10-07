@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 本文档提供了一个教程，用于使用Adobe Experience Platform分段服务API开发、测试、预览和保存段定义。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '916'
 ht-degree: 0%
@@ -56,7 +56,7 @@ ht-degree: 0%
 
 ## 开发细分定义
 
-分段的第一步是定义分段，在称为段定义的构造中 **表示**。 段定义是封装写入(PQL)的查询 [!DNL Profile Query Language] 的对象。 此对象也称为 **PQL谓词**。 PQL谓词根据与您提供给的任何记录或时间序列数据相关的条件定义段规则 [!DNL Real-time Customer Profile]。 有关编写 [PQL查询](../pql/overview.md) ，请参阅PQL指南。
+分段的第一步是定义分段，在称为段定义的构造中表示。 段定义是封装写入(PQL)的查询 [!DNL Profile Query Language] 的对象。 此对象也称为PQL谓词。 PQL谓词根据与您提供给的任何记录或时间序列数据相关的条件定义段规则 [!DNL Real-time Customer Profile]。 有关编写 [PQL查询](../pql/overview.md) ，请参阅PQL指南。
 
 您可以通过向API中的端点发出POST请求来 `/segment/definitions` 创建新的段 [!DNL Segmentation] 定义。 以下示例概述了如何设置定义请求的格式，包括成功定义区段所需的信息。
 
