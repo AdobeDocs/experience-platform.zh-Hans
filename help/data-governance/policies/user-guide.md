@@ -5,7 +5,7 @@ title: 数据使用策略用户指南
 topic: policies
 description: Adobe Experience Platform数据管理提供了一个用户界面，允许您创建和管理数据使用策略。 此文档概述了在Experience Platform用户界面的“策略”工作区中可以执行的操作。
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
 source-wordcount: '765'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # 数据使用策略用户指南
 
-Adobe Experience Platform [!DNL Data Governance] 提供一个用户界面，允许您创建和管理数据使用策略。 此文档概述了在用户界面的“策略”工 _作区_ 中可执行 [!DNL Experience Platform] 的操作。
+Adobe Experience Platform [!DNL Data Governance] 提供一个用户界面，允许您创建和管理数据使用策略。 此文档概述了在用户界面的“策略”工 **作区** 中可执行 [!DNL Experience Platform] 的操作。
 
 >[!IMPORTANT]
 >
@@ -56,7 +56,7 @@ Adobe Experience Platform [!DNL Data Governance] 提供一个用户界面，允�
 
 >[!NOTE]
 >
->选择多个营销活动时，策略会将其解释为“OR”规则。 换言之，如果执行了任 _何选定_ 的营销操作，则此策略适用。
+>选择多个营销活动时，策略会将其解释为“OR”规则。 换言之，如果执行了任 **何选定** 的营销操作，则此策略适用。
 
 ![](../images/policies/add-marketing-actions.png)
 
