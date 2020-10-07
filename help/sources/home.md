@@ -5,7 +5,7 @@ title: Adobe Experience Platform源连接器概述
 topic: overview
 description: Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用平台服务构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '866'
 ht-degree: 0%
@@ -118,7 +118,7 @@ CRM系统提供的数据有助于建立客户关系，进而创造忠诚度并�
 
 | 权限级别 | 描述 |
 | ---- | ----|
-| **[!UICONTROL 视图源]** On | 授予对“目录”选项卡中每个源类型以及“浏览”、“帐户”和“ *DataFlow******* ”选项卡中的源的只读访问权限。 |
+| **[!UICONTROL 视图源]** On | 授予对“目录”选项卡中每个源类型以及“浏览”、“帐户”和“数据流”选项卡中的源的只读访问权限。 |
 | **[!UICONTROL 管理源]** On | 除了视图源中包含的功 **[!UICONTROL 能]**，还授予对目录中 **[!UICONTROL 的Connect Source]** (连接源 **[!UICONTROL )选项和]** Select DataOption( ********&#x200B;在浏览中)的访问权限。 **[!UICONTROL “管理源]** ”还允许您启用或禁用 **[!UICONTROL 数据流]** ，并编辑其计划。 |
 | **[!UICONTROL 视图源]** Off和 **[!UICONTROL 管理源]** Off | 撤销对源的所有访问权限。 |
 
