@@ -6,7 +6,7 @@ title: 在UI中创建Adobe Analytics分类数据连接器
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 1a49cccfbf8d565c8154329cf1f94382911b2f85
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '661'
 ht-degree: 2%
@@ -38,7 +38,7 @@ Analytics Classifications Data Connector要求您的数据在使用前已迁移 
 
 ![](../../../../images/tutorials/create/classifications/catalog.png)
 
-将显 **[!UICONTROL 示分析源添加数据]** 步骤。 从顶 **[!UICONTROL 部标题]** 中选择“分类”以查看数据集的 [!DNL Classifications] 列表，包括有关其DimensionID、 **[!UICONTROL 报表包名称]**、报表包 ******** ID和的信息。
+将显 **[!UICONTROL 示分析源添加数据]** 步骤。 从顶 **[!UICONTROL 部标题]** 中选择“分类” [!DNL Classifications] ，以查看数据集的列表，包括有关其维度ID、报表包名称和报表包ID的信息。
 
 每页最多显示十个可 [!DNL Classifications] 供选择的不同数据集。 选 **[!UICONTROL 择页]** 面底部的“下一步”以浏览更多选项。 右侧的面板显示您选择的 [!DNL Classifications] 数据集总数及其名称。 此面板还允许您删除可能因错 [!DNL Classifications] 误而选择的任何数据集，或通过一个操作清除所有选择。
 
