@@ -5,7 +5,7 @@ title: 隐私请求的身份数据
 topic: overview
 description: 本文档提供有关如何配置数据操作和利用Adobe技术有效检索客户隐私请求的适当身份信息的一般指导。
 translation-type: tm+mt
-source-git-commit: 4c3a947051c11860ab4f0f53b48d8f4bda8dc195
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '643'
 ht-degree: 3%
@@ -25,7 +25,7 @@ ht-degree: 3%
 
 例如，在中处理Adobe请求时，标 [!DNL Privacy Service]识可以表示在控制域下设置的Cookie值、在第三方域下并与Adobe共享的Cookie值，或您在IMS组织内显式定义的自定义标识符。
 
-因此，每个发送的身份都 [!DNL Privacy Service] 应附有一个命名空间 **，通过** 将身份价值与其来源系统相关联来提供上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising CloudID(“AdCloud”)或Adobe TargetID(“TNTID”))关联。
+因此，每个发送身份的命名空间 [!DNL Privacy Service] 都必须附上一个提供上下文的来源，将身份价值与其系统相关联。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising CloudID(“AdCloud”)或Adobe TargetID(“TNTID”))关联。
 
 Adobe Experience Platform标识服务维护全球定义和用户定义标识命名空间的存储。 有关命名空间的更多详细信息，请参 [阅身份命名空间概述](../identity-service/namespaces.md)。 有关常用的标准命名空间和命名空间限定符的列表，请 [!DNL Privacy Service]参阅开发 [人员指南的](api/appendix.md) 附录部分。
 
