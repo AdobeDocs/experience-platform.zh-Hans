@@ -5,7 +5,7 @@ title: Audience Manager连接器
 topic: overview
 description: Adobe Audience Manager数据连接器将在Adobe Audience Manager收集的第一方数据传送到Adobe Experience Platform。 Audience Manager连接器将三类别数据引入平台。
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '673'
 ht-degree: 1%
@@ -67,7 +67,7 @@ Audience Manager数据集在默认情况下处于禁用状态，并且用户能�
 
 ### 连接
 
-Adobe Audience Manager在目录中创建一个连接： **Audience Manager连接**。 目录是Adobe Experience Platform境内数据位置和谱系记录系统。 连接是Connectors客户特定实例的Catalog对象。 有关目录、 [连接和连接器](../../../catalog/home.md) ，请参阅目录服务概述。
+Adobe Audience Manager在目录中创建一个连接：Audience Manager连接。 目录是Adobe Experience Platform境内数据位置和谱系记录系统。 连接是Connectors客户特定实例的Catalog对象。 有关目录、 [连接和连接器](../../../catalog/home.md) ，请参阅目录服务概述。
 
 ## 平台上Audience Manager数据的预期延迟是什么？
 
