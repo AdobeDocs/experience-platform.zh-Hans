@@ -5,7 +5,7 @@ description: 了解如何合并Experience PlatformWeb SDK事件数据
 seo-description: 了解如何合并Experience PlatformWeb SDK事件数据
 keywords: merge;event data;eventMergeId;createEventMergeId;sendEvent;mergeId;merge id;eventMergeIdPromise; Merge Id Promise;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
 workflow-type: tm+mt
 source-wordcount: '408'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 >此功能仍在开发中。 并非所有解决方案都能够按本页所述合并事件数据。
 
-有时，并非所有数据在发生事件时都可用。 您可能希望捕获您拥 _有的_ 数据，以便在用户关闭浏览器时不会丢失数据。 另一方面，您可能还会包含以后将可用的任何数据。
+有时，并非所有数据在发生事件时都可用。 您可能希望捕获您拥有的数据，以便在用户关闭浏览器时不会丢失数据。 另一方面，您可能还会包含以后将可用的任何数据。
 
 在这种情况下，您可以将事件作为选项传递给 `eventMergeId` 以下命令，从而 `event` 将数据与先前的合并：
 
