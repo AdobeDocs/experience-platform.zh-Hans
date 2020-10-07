@@ -5,7 +5,7 @@ title: 菲尼克斯连接器
 topic: overview
 description: 以下文档提供了如何使用API或用户界面将Phoenix连接到平台的信息。
 translation-type: tm+mt
-source-git-commit: d3ece56d10b1940a5992906a65a50ffe2f7e4346
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
 source-wordcount: '232'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 >连接 [!DNL Phoenix] 器为测试版。 有关使用 [测试版标记](../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
-Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用平台服务构建、标记和增强传入 [!UICONTROL 数据] 。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
+Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用平台服务构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 
 [!DNL Experience Platform] 支持从第三方数据库中摄取数据。 [!DNL Platform] 可以连接到不同类型的数据库，如关系型、NoSQL或data warehouse。 对数据库提供者的支持包 [!DNL Phoenix]括。
 
