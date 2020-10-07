@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: Adobe Experience Platform数据科学工作区允许您将经过培训和评估的模型作为服务发布，使您的IMS组织内的用户无需创建自己的模型即可对数据进行评分。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '453'
+source-wordcount: '456'
 ht-degree: 0%
 
 ---
@@ -49,9 +49,9 @@ Adobe Experience Platform数据科学工作区允许您将经过培训和评估�
    ![](../images/models-recipes/publish-model/7_scoring_output.png)
 4. 创建服务后，它会继承默认的评分配置。 您可以查看这些配置，并根据需要通过多次单击这些值来调整它们。 对配置感到满意后，单击“ **[!UICONTROL 完成]** ”开始评分运行。
    ![](../images/models-recipes/publish-model/8_scoring_configure.png)
-5. 在服务的概 *述页* ，将显示新评分作业及其进度的详细信息。 作业完成后，将更 **[!UICONTROL 新“最近]** ”评分作业。
+5. 在服务的概 **述页** ，将显示新评分作业及其进度的详细信息。 作业完成后，将更 **[!UICONTROL 新“评分]** ”容器 **[!UICONTROL 中的]** “最近”标题。
    ![](../images/models-recipes/publish-model/score_pending.png)
 
 ## 后续步骤 {#next-steps}
 
-通过本教程，您成功地将模型发布为可访问的服务，并使用新服务通过服务库对数据 **[!UICONTROL 进行计分]**。 继续下一个教程，了解如何 [计划服务上的自动培训和评分](./schedule-models-ui.md)。
+通过本教程，您成功地将模型发布为可访问的服务，并使用新服务通过服务库对数据 [!UICONTROL 进行计分]。 继续下一个教程，了解如何 [计划服务上的自动培训和评分](./schedule-models-ui.md)。
