@@ -5,7 +5,7 @@ title: 准备要在Intelligent Services中使用的数据
 topic: Intelligent Services
 description: '为了使智能服务能够从您的营销事件数据中发掘洞察，必须以标准结构从语义上丰富和维护数据。 智能服务利用体验数据模型(XDM)模式来实现此目标。 具体而言，在智能服务中使用的所有数据集]必须符合Consumer ExperienceEvent(CEE)XDM模式。 '
 translation-type: tm+mt
-source-git-commit: d9bf87e41fe002ac1d70a241b48c7b9fd1139d6c
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1979'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # 准备要在 [!DNL Intelligent Services]
 
-要从营销 [!DNL Intelligent Services] 事件数据中发掘洞察，必须以标准结构从语义上丰富和维护数据。 [!DNL Intelligent Services] 利 [!DNL Experience Data Model] 用(XDM)模式实现这一目标。 具体而言，中使用的所有数 [!DNL Intelligent Services] 据集必须符 **合Consumer ExperienceEvent(CEE)** XDM模式。
+要从营销 [!DNL Intelligent Services] 事件数据中发掘洞察，必须以标准结构从语义上丰富和维护数据。 [!DNL Intelligent Services] 利 [!DNL Experience Data Model] 用(XDM)模式实现这一目标。 具体而言，中使用的所 [!DNL Intelligent Services] 有数据集都必须符合Consumer ExperienceEvent(CEE)XDM模式。
 
 此文档提供有关将营销事件数据从多个渠道映射到此模式的一般指南，概述模式中重要字段的信息，以帮助您确定如何有效地将数据映射到其结构。
 
