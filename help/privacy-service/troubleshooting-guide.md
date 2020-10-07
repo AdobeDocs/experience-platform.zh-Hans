@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Privacy Service常见问题解答
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '856'
 ht-degree: 0%
@@ -94,7 +94,7 @@ API [!DNL Privacy Service] 和用户界面都提供了以ZIP格式下载完成�
 
 ### 使用UI
 
-在UI [!DNL Privacy Service] 仪表板中，从作业请求构件中找到要下载 **的作业** 。 单击作业的ID以打开“作业详 _细信息_ ”页。 从此处， **单击** 右上角的“下载”以下载ZIP文件。 有关更详 [细的步骤](ui/user-guide.md) ，请参阅Privacy Service用户指南。
+在UI [!DNL Privacy Service] 仪表板中，从作业请求构件中找到要下载 **的作业** 。 单击作业的ID以打开“作业详细信息”页。 从此处， **单击** 右上角的“下载”以下载ZIP文件。 有关更详 [细的步骤](ui/user-guide.md) ，请参阅Privacy Service用户指南。
 
 ## 常见错误消息
 
