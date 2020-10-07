@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Adobe Experience Platform允许您将符合已知体验数据模型(XDM)模式的数据以镶木地板文件或数据形式轻松导入为批处理文件。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1308'
 ht-degree: 0%
@@ -28,7 +28,7 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 
 其中的数据集 [!DNL Experience Platform] 工作区允许您视图和管理IMS组织创建的所有数据集，并创建新数据集。
 
-视图数据集工作区 **[!UICONTROL ，方法]** 是单击左侧导航中的数据集。 数据集工作区包含列表集，包 **[!UICONTROL 括显示]** Name **[!UICONTROL 、Created]** （日期和时间）、Source **[!UICONTROL 、SourceProide、]**************&#x200B;模式Last状态、以及数据集的日期和更新时间的列。
+视图数据集工作区 **[!UICONTROL ，方法]** 是单击左侧导航中的数据集。 数据集工作区包含一列表数据集，包括显示名称、创建（日期和时间）、源、模式和上次批处理状态的列，以及上次更新数据集的日期和时间。
 
 >[!NOTE]
 >
@@ -58,7 +58,7 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 
 ## 配置数据集
 
-在“配 **[!UICONTROL 置数据集]** ”屏幕上，您将需要为数据集 **[!UICONTROL 指定名称]** ，并且还可 **[!UICONTROL 能提供]** 数据集的“描述”。
+在“配 **[!UICONTROL 置数据集]** ”屏幕上，您将需要为数据集指定名称，并可能还提供数据集的描述。
 
 **数据集名称的注释：**
 
@@ -74,7 +74,7 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 
 现在已创建空数据集，您已返回到“数据集”工 **[!UICONTROL 作区中的]** “数据集活动”选项卡。 您应当在工作区的左上角看到数据集的名称，并显示通知“尚未添加批次”。 由于尚未向此数据集添加任何批，因此应该设置此值。
 
-在数据集的右侧，您将看到与新数据集 **[!UICONTROL 相关的]** Info标签信息，如 **[!UICONTROL Info]**&#x200B;标签、Info Tab和新数据集，如 ************************ ID、AD、TableId名称、模式名、、和源。 “信息”选项卡还包含有关数据集创建时间及其 **[!UICONTROL 上次]** 修改 **[!UICONTROL 日期的信息]** 。
+在“数据集”工作区的右侧，您将看到“信 **[!UICONTROL 息]** ”选项卡，其中包含与新数据集相关的信息，如数据集ID、名称、描述、表名、模式、流和源。 “信息”选项卡还包括有关数据集创建时间及其上次修改日期的信息。
 
 “信息”选项卡中还有 **[!UICONTROL 用户档案]** 切换选项，用于启用数据集以与一起使用 [!DNL Real-time Customer Profile]。 此切换的使用 [!DNL Real-time Customer Profile]将在后面的部分中进行更详细的说明。
 
@@ -122,13 +122,13 @@ Adobe Experience Platform允许您将数据轻松导入 [!DNL Platform] 为批�
 
 文件上传完毕后，“数 **[!UICONTROL 据集活动]** ”选项卡不再显示“尚未添加批”。 现在，“数据集 **[!UICONTROL 活动]** ”选项卡显示数据集指标。 由于尚未加载批，因此所有指标在此阶段都将显示“0”。
 
-该选项卡的底部有一个列表，显示 **[!UICONTROL 刚通过]** “将数据添加到数据集” [过程摄取的数据的批ID](#add-data-to-dataset) 。 还包括与批相关的信息，包括 **[!UICONTROL 摄取日]** 期、摄取的 **[!UICONTROL 记录数]**&#x200B;和当前批状 **[!UICONTROL 态]**。
+该选项卡的底部有一个列表，显示 **[!UICONTROL 刚通过]** “将数据添加到数据集” [过程摄取的数据的批ID](#add-data-to-dataset) 。 还包括与批相关的信息，包括摄取日期、摄取的记录数和当前批状态。
 
 ![数据集指标](../images/tutorials/ingest-batch-data/batch-id.png)
 
 ## 批详细信息
 
-单击批 **[!UICONTROL ID以视图]** “批 **[!UICONTROL 概述”，显]**&#x200B;示有关该批的其他详细信息。 批完成加载后，有关该批的信息将更新以显示“已摄取的记录 **[!UICONTROL 数”和]** “文件 **[!UICONTROL 大小”]**。 状态 **[!UICONTROL 也将]** 更改为“成功”或“失败”。 如果批处理失败，“ **[!UICONTROL 错误代码]** ”部分将包含有关获取过程中任何错误的详细信息。
+单击批 **[!UICONTROL ID以视图]** “批 **[!UICONTROL 概述”，显]**&#x200B;示有关该批的其他详细信息。 完成批处理加载后，有关该批处理的信息将更新，以显示所摄取的记录数和文件大小。 状态还将更改为“成功”或“失败”。 如果批处理失败，“ **[!UICONTROL 错误代码]** ”部分将包含有关获取过程中任何错误的详细信息。
 
 有关批量摄取的更多信息和常见问题，请参阅批 [量摄取疑难解答指南](../batch-ingestion/troubleshooting.md)。
 
