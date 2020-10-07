@@ -1,13 +1,13 @@
 ---
-keywords: text classification;Text classification
+keywords: OCR;text presence;optical character recognition
 solution: Experience Platform
-title: 文本分类API端点
+title: 光学字符识别
 topic: Developer guide
-description: 当给定文本片段时，文本分类服务可以将其分类为一个或多个标签。 分类可以是单标签、多标签或分层。
+description: 给定图像时，文本存在／光学字符识别(OCR)服务可指示图像中是否存在文本。 如果存在文本，OCR可以返回文本
 translation-type: tm+mt
-source-git-commit: d57d4412ffd8beccc529681db559007a14ff8120
+source-git-commit: 4d12caf949aeb6619cd27b55855014a61d4e54bb
 workflow-type: tm+mt
-source-wordcount: '508'
+source-wordcount: '512'
 ht-degree: 3%
 
 ---
