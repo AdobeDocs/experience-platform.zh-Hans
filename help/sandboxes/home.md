@@ -5,7 +5,7 @@ title: 沙箱概述
 topic: overview
 description: 沙箱是单个Experience Platform实例中的虚拟分区，它允许与数字体验应用程序的开发过程无缝集成。
 translation-type: tm+mt
-source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
+source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
 workflow-type: tm+mt
 source-wordcount: '750'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Adobe Experience Platform公司旨在在全球范围内丰富数字体验应用。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署的需要，同时确保操作合规性。
 
-In order to address this need, Experience Platform provides **sandboxes** which partition a single Platform instance into separate virtual environments to help develop and evolve digital experience applications.
+为了满足这一需求，Experience Platform提供沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
 此文档提供Experience Platform中沙箱的高级概述。
 
@@ -51,7 +51,7 @@ In order to address this need, Experience Platform provides **sandboxes** which 
 
 ## Experience PlatformAPI中的沙箱
 
-在调用Experience PlatformAPI时，必须在头下提供沙箱名称 `x-sandbox-name`。 例如，当调用[[!DNL Catalog Service API]]视图“生产”沙箱内的所有数据集时](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) ，沙箱的名称(“prod”)将作为API请求中的头提供：
+在调用Experience PlatformAPI时，必须在头下提供沙箱名称 `x-sandbox-name`。 例如，当调用[! [DNL Catalog Service API]视图“生产”沙箱内的所有数据集时](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml) ，沙箱的名称(“prod”)将作为API请求中的头提供：
 
 ```shell
 curl -X GET \
