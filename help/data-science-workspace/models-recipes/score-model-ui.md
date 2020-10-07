@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: '在Adobe Experience Platform数据科学工作区中评分可以通过将输入数据输入到现有训练好的模型中来实现。 然后，将评分结果作为新批存储在指定的输出数据集中并可查看。 '
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
@@ -32,7 +32,7 @@ ht-degree: 0%
 
 1. 找到最佳培训运行，以使用其配置进行评分。 通过单击所需的培训运行的名称来打开该培训运行。
 
-2. 在“培训运行 **[!UICONTROL 评估]** ”选项卡中，单 **[!UICONTROL 击屏]** 幕右上方的“得分”按钮。 这将启动新的“运行 *评分”工作* 流。
+2. 在“培训运行 **[!UICONTROL 评估]** ”选项卡中，单 **[!UICONTROL 击屏]** 幕右上方的“得分”按钮。 这将启动新的“运行 **评分”工作** 流。
    ![](../images/models-recipes/score/training_run_overview.png)
 
 3. 选择输入评分数据集，然后单击“ **[!UICONTROL 下一步]**”。
