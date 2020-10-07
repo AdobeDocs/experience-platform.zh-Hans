@@ -5,7 +5,7 @@ title: 策略实施概述
 topic: enforcement
 description: 在将数据使用标签应用于Adobe Experience Platform数据集并为针对这些标签的营销操作定义数据使用策略后，数据管理功能允许您实施这些策略并防止构成违反策略的数据操作。 平台上的数据管理功能提供了两种策略实施方法，即基于API的实施和自动实施。
 translation-type: tm+mt
-source-git-commit: 2fdab7d984a7368df77110f8ba0e0ba687e96d7e
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '262'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 一旦数据使用标签已应用到数 [!DNL Platform] 据集，并且为针对这些标签的营销操作定义了数据使用策略， [!DNL Data Governance] 这些功能就允许您执行这些策略并防止构成策略违规的数据操作。
 
-功能提供了两种策略执行方 [!DNL Data Governance] 法， [!DNL Platform]分别为 **基于API的强制** 和 **自动强制**。
+功能提供了两种策略执行方 [!DNL Data Governance] 法， [!DNL Platform]分别为基于API的强制和自动强制。
 
 ## 基于API的强制
 
