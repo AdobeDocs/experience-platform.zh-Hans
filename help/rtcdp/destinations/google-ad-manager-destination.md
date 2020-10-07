@@ -5,7 +5,7 @@ seo-title: Google Ad Manager目标
 description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的广告服务平台，它使出版商能够通过视频和移动应用程序管理其网站上广告的显示。 '
 seo-description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的广告服务平台，它使出版商能够通过视频和移动应用程序管理其网站上广告的显示。 '
 translation-type: tm+mt
-source-git-commit: c66fb4cf0a414e02ceb58becc9d9b59db3fe987b
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '690'
 ht-degree: 0%
@@ -49,11 +49,11 @@ ht-degree: 0%
 * **客户ID** :这是Adobe的客户帐户ID [!DNL Google]请联系Adobe客户服务或您的Adobe代表以获取此ID。
 * **网络ID** :这是您的帐户 [!DNL Google Ad Manager]
 * **受众链接ID** :这是您的帐户 [!DNL Google Ad Manager]
-* 您的帐户类型。 **Google或AdX** 购 **买者的DFP**。
+* 您的帐户类型。 Google或AdX买家提供的DFP。
 
 ## 配置目标
 
-1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中 [!DNL Google Ad Manager]，选 **[!UICONTROL 择并选择“]**配置”。
+1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中 **[!DNL Google Ad Manager]**，选 **[!UICONTROL 择并选择“]**配置”。
    ![连接Google Ad Manager目标](/help/rtcdp/destinations/assets/google-1-destination.png)
 
    >[!NOTE]
