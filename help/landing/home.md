@@ -3,12 +3,12 @@ keywords: Experience Platform;home;popular topics;CJA;journey analytics;customer
 solution: Experience Platform
 title: Adobe Experience Platform概述
 topic: getting started
-description: Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理能够提升客户体验的完整解决方案。 Experience Platform使组织能够集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富的个性化体验的设计和投放。
+description: Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理能够提升客户体验的完整解决方案。  Experience Platform 让组织可以实现源自任何系统的客户数据和内容的集中化和标准化，并应用数据科学和机器学习来显著改进丰富的个性化体验的设计和交付。
 translation-type: tm+mt
-source-git-commit: e94278c1b64e1d940f55861518c78cca24822c1b
+source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
 workflow-type: tm+mt
 source-wordcount: '936'
-ht-degree: 4%
+ht-degree: 11%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 4%
 >
 >Adobe Experience Platform文档最近已移动。 请花点时间查看新导航并更新任何现有书签。
 
-Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理能够提升客户体验的完整解决方案。 [!DNL Experience Platform] 使组织能够集中和标准化来自任何系统的客户数据和内容，并应用数据科学和机器学习来显着改进丰富的个性化体验的设计和投放。
+Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理能够提升客户体验的完整解决方案。 [!DNL Experience Platform] 让组织可以实现源自任何系统的客户数据和内容的集中化和标准化，并应用数据科学和机器学习来显著改进丰富的个性化体验的设计和交付。
 
 构建于开放式API上 [!DNL Experience Platform] ，将系统的全部功能呈现给开发人员，支持使用熟悉的工具轻松集成企业解决方案。 [!DNL Experience Platform] 还支持合作伙伴根据需要构建和集成自己的产品和技术。 这种强大和灵活性使 [!DNL Experience Platform] 其在市场上独一无二。 它为合作伙伴、客户和开发人员社区提供了构建创新推动体验式业务的基础：通过提供从客户及其个人偏好的360度视图中获得的不断改进的完全个性化体验，超越客户期望。
 
@@ -153,9 +153,6 @@ Adobe Experience Platform提供的一个主要好处是它能够与其他现有A
 **用例:**
 
 >[!VIDEO](https://video.tv.adobe.com/v/32806?quality=12&learn=on)
-
-
-
 
 <!-- 
 ## What's New
