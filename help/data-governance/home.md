@@ -5,7 +5,7 @@ title: Adobe Experience Platform数据管理
 topic: overview
 description: Adobe Experience Platform数据治理允许您管理客户数据并确保遵守适用于数据使用的法规、限制和政策。 它在Experience Platform的各个层次（包括编目、数据谱系、数据使用标签、数据使用策略）中起关键作用，并控制数据在营销活动中的使用
 translation-type: tm+mt
-source-git-commit: fb21acc63448ec837b2f3bcbf6eb4da83fcddc63
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1338'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Adobe Experience Platform [!DNL Data Governance] 允许您管理客户数据并�
 
 ## 数据管理角色
 
-数据管理作为一种概念既不是自动的，也不是在真空中实现的。 一开始是个人的角色，通常被公认为数据管 **理者**，随着数据治理生态系统的扩张，这种角色已显着增长。 如今，数据治理需要持续的管理和监控才能取得成功，并依赖于数据管理人员拥有工具，能够正确标记数据、创建使用策略并强制执行对这些策略的合规性。
+数据管理作为一种概念既不是自动的，也不是在真空中实现的。 最初，作为个人角色的角色——通常被公认为数据管理者——随着数据治理生态系统的扩大，角色已大大增加。 如今，数据治理需要持续的管理和监控才能取得成功，并依赖于数据管理人员拥有工具，能够正确标记数据、创建使用策略并强制执行对这些策略的合规性。
 
 虽然数据治理应该是组织中每个人的责任，但以下是数据管理周期中的一些基本角色：
 
