@@ -5,7 +5,7 @@ title: 沙箱API开发人员指南
 topic: developer guide
 description: 此开发人员指南提供帮助您使用沙箱API管理Experience Platform中沙箱的步骤，并包含用于执行各种操作的示例API调用。
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '364'
 ht-degree: 0%
@@ -45,4 +45,4 @@ Adobe Experience Platform的沙箱提供独立的开发环境，使您能够测�
 
 ## 后续步骤
 
-现在您已收集了所需的凭据，现在可以继续阅读开发人员指南的其余部分。 每个部分提供有关其端点的重要信息，并演示用于执行CRUD操作的示例API调用。 每个调用都包 **括常规API格式**、显示所需标头 **和格式正确** 的有效负载的示例请求以及成 **功调用的** 示例响应。
+现在您已收集了所需的凭据，现在可以继续阅读开发人员指南的其余部分。 每个部分提供有关其端点的重要信息，并演示用于执行CRUD操作的示例API调用。 每个调用都包括常规API格式、显示所需标头和格式正确的有效负载的示例请求以及成功调用的示例响应。
