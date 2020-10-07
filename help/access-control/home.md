@@ -5,10 +5,10 @@ topic: overview
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制通过Adobe Admin Console提供。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。
 translation-type: tm+mt
-source-git-commit: 397f08efa276f7885e099a0a8d9dc6d23fe0e8cc
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
 source-wordcount: '1162'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 ## 访问控制层次结构和工作流
 
-要配置访问控制, [!DNL Experience Platform]您必须对具有产品集成的组织具有管 [!DNL Experience Platform] 理员权限。 授予或撤销权限的最低角色是产品 **[!UICONTROL 用户档案管理员]**。 其他可以管理权限的管理员角色 **[!UICONTROL 包括产品管理员]** (可以管理产品中的所有用户档案 **[!UICONTROL )和系统管]** 理员（无限制）。 有关更多信息，请参 [阅Adobe Help Center](https://helpx.adobe.com/enterprise/using/admin-roles.html) 《行政角色》一文。
+要配置访问控制, [!DNL Experience Platform]您必须对具有产品集成的组织具有管 [!DNL Experience Platform] 理员权限。 授予或撤销权限的最低角色是产品用户档案管理员。 其他可以管理权限的管理员角色包括产品管理员(可以管理产品中的所有用户档案)和系统管理员（无限制）。 有关更多信息，请参 [阅Adobe Help Center](https://helpx.adobe.com/enterprise/using/admin-roles.html) 《行政角色》一文。
 
 >[!NOTE]
 >
@@ -44,7 +44,7 @@ Adobe Admin Console为管理Adobe产品授权和访问您的组织提供了一�
 
 ### 产品用户档案
 
-在中， [!DNL Admin Console]通过使用产品用户档案将权限分配给 **[!UICONTROL 用户]**。 产品用户档案允许您向一个或多个用户授予权限，还可以包含他们对通过产品用户档案分配给他们的沙箱范围的访问权限。 可以将用户分配给属于您组织的一个或多个产品用户档案。
+在中， [!DNL Admin Console]权限通过产品用户档案的使用分配给用户。 产品用户档案允许您向一个或多个用户授予权限，还可以包含他们对通过产品用户档案分配给他们的沙箱范围的访问权限。 可以将用户分配给属于您组织的一个或多个产品用户档案。
 
 ### 默认产品用户档案
 
@@ -57,7 +57,7 @@ Adobe Admin Console为管理Adobe产品授权和访问您的组织提供了一�
 
 ## 沙箱和权限
 
-非生产沙箱是数据虚拟化的一种形式，它允许您将数据与其他沙箱隔离，并通常用于开发实验、测试或试用。 产品用户档案 **[!UICONTROL 的权限]** ，使用户档案的用户能够访 [!DNL Platform] 问沙箱环境中授予他们访问权限的功能。 默认Experience Platform许可证会授予您五个沙箱（一个生产箱和四个非生产箱）。 您最多可以添加十个非生产沙箱，最多共添加75个沙箱。 有关详细信息，请与IMS组织管理员或Adobe销售代表联系。
+非生产沙箱是数据虚拟化的一种形式，它允许您将数据与其他沙箱隔离，并通常用于开发实验、测试或试用。 产品用户档案的权限使用户档案的用户能够 [!DNL Platform] 访问其已获得访问权限的沙箱环境中的功能。 默认Experience Platform许可证会授予您五个沙箱（一个生产箱和四个非生产箱）。 您最多可以添加十个非生产沙箱，最多共添加75个沙箱。 有关详细信息，请与IMS组织管理员或Adobe销售代表联系。
 
 有关中沙箱的详 [!DNL Experience Platform]细信息，请参阅沙 [箱概述](../sandboxes/home.md)。
 
@@ -71,7 +71,7 @@ Adobe Admin Console为管理Adobe产品授权和访问您的组织提供了一�
 
 ### 权限
 
-产 **品用户档案** 中的“权限”选项卡显示该用户档案处于活动状态的沙箱和权限：
+产品用户档案中的权限选项卡显示该用户档案处于活动状态的沙箱和权限：
 
 ![](./images/permissions-overview.png)
 
@@ -81,7 +81,7 @@ Adobe Admin Console为管理Adobe产品授权和访问您的组织提供了一�
 
 | 类别 | 权限 | 描述 |
 | --- | --- | --- |
-| [!DNL Data Modeling] | [!UICONTROL 管理模式] | 访问读取、创建、编辑和删除模式及相关资源。 |
+| [!DNL Data Modeling] | [!UICONTROL 管理架构] | 访问读取、创建、编辑和删除模式及相关资源。 |
 | [!DNL Data Modeling] | [!UICONTROL 查看架构] | 对模式和相关资源的只读访问。 |
 | [!DNL Data Management] | [!UICONTROL 管理数据集] | 访问读取、创建、编辑和删除数据集。 模式的只读访问。 |
 | [!DNL Data Management] | [!UICONTROL 查看数据集] | 数据集和模式的只读访问。 |
@@ -90,7 +90,7 @@ Adobe Admin Console为管理Adobe产品授权和访问您的组织提供了一�
 | [!DNL Profile Management] | [!UICONTROL 视图用户档案] | 对可用用户档案的只读访问。 |
 | [!DNL Profile Management] | [!UICONTROL 导出区段受众] | 能够将评估的受众段导出到数据集。 |
 | [!DNL Identities] | [!UICONTROL 管理身份命名空间] | 访问读取、创建、编辑和删除身份命名空间。 |
-| [!DNL Identities] | [!UICONTROL 视图身份命名空间] | 身份命名空间的只读访问。 |
+| [!DNL Identities] | [!UICONTROL 查看身份命名空间] | 身份命名空间的只读访问。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 管理沙箱] | 访问读取、创建、编辑和删除沙箱。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 查看沙盒] | 对属于您组织的沙箱的只读访问权限。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 重置沙箱] | 能够重置沙箱。 |
