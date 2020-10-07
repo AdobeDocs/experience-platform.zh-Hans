@@ -5,7 +5,7 @@ title: 实时机器学习笔记本用户指南
 topic: Training and scoring a ML model
 description: 以下指南概述了在Adobe Experience PlatformJupyterLab中构建实时机器学习应用程序所需的步骤。
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '1656'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 创建实时机器学习笔记本
 
-在Adobe Experience PlatformUI中，从 **[!UICONTROL 数据]** 科学中 *选择笔记本*。 接下来， **[!UICONTROL 选择Jupyter]** Lab，并允许一段时间加载环境。
+在Adobe Experience PlatformUI中，从 **[!UICONTROL 数据]** 科学中 **选择笔记本**。 接下来， **[!UICONTROL 选择Jupyter]** Lab，并允许一段时间加载环境。
 
 ![打开JupyterLab](../images/rtml/open-jupyterlab.png)
 
@@ -117,7 +117,7 @@ config_properties = {
 
 **数据转换**
 
-需 **[!UICONTROL 要修改实时]** ML *模板Data Transformations* 单元格，才能处理您自己的数据集。 通常，这涉及重命名列、数据汇总以及数据准备／功能工程。
+需 **[!UICONTROL 要修改实时]** ML **模板Data Transformations** 单元格，才能处理您自己的数据集。 通常，这涉及重命名列、数据汇总以及数据准备／功能工程。
 
 >[!NOTE]
 >
@@ -355,7 +355,7 @@ pprint(json.loads(dsl))
 
 >[!NOTE]
 >
->实时机器学习临时部署到Adobe体验平台中心并由其管理。 有关更多详细信息，请访问“实时机 [学习体系结构”的概述部分](./home.md#architecture)。
+>实时机器学习临时部署到Adobe Experience Platform中心并由其管理。 有关更多详细信息，请访问“实时机 [学习体系结构”的概述部分](./home.md#architecture)。
 
 现在您已创建了DSL图形，可将图形部署到 [!DNL Edge]。
 
