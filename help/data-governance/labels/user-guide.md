@@ -5,7 +5,7 @@ title: 数据使用标签用户指南
 topic: labels
 description: 本用户指南介绍在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: 259c26a9d3b6ef397acd552e255f68ecb25b2dd1
 workflow-type: tm+mt
 source-wordcount: '1119'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## 在数据集级别管理数据使用标签
 
-要在数据集级别管理数据使用标签，必须选择现有数据集或创建新数据集。 登录Adobe Experience Platform后，在左 **[!UICONTROL 侧导航]** 上选择数据集以打 _开Datasets_ 工作区。 此页列表属于您组织的所有已创建数据集以及与每个数据集相关的有用详细信息。
+要在数据集级别管理数据使用标签，必须选择现有数据集或创建新数据集。 登录Adobe Experience Platform后，在左 **[!UICONTROL 侧导航]** 上选择数据集以打 **[!UICONTROL 开Datasets]** 工作区。 此页列表属于您组织的所有已创建数据集以及与每个数据集相关的有用详细信息。
 
 ![数据工作区中的“数据集”选项卡](../images/labels/datasets.png)
 
@@ -43,7 +43,7 @@ ht-degree: 0%
 
 ![选择数据集模式](../images/labels/dataset_schema.png)
 
-将出 **[!UICONTROL 现“Configure Dataset]** （配置数据集）”屏幕。 为新数 **据集** （必需） **提供名称** (可选 **[!UICONTROL ，但建议)，然后单击“完]**&#x200B;成”。
+将出 **[!UICONTROL 现“Configure Dataset]** （配置数据集）”屏幕。 为新数据集提供名称（必需）和说明（可选，但建议），然后单击“完 **[!UICONTROL 成”]**。
 
 ![使用名称和说明配置数据集](../images/labels/dataset_configure.png)
 
