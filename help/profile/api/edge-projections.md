@@ -3,7 +3,7 @@ keywords: Experience Platform;profile;real-time customer profile;troubleshooting
 title: 边缘预测——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1905'
 ht-degree: 2%
@@ -226,7 +226,7 @@ curl -X GET \
 
 ### 更新目标
 
-通过向端点发出PUT请求并在请求路径中 `/config/destinations` 包括要更新的目标的ID，可以更新现有目标。 此操作本质上是 _重写目_ 标的，因此在请求主体中必须提供与创建新目标时相同的属性。
+通过向端点发出PUT请求并在请求路径中 `/config/destinations` 包括要更新的目标的ID，可以更新现有目标。 此操作实质上是重写目标，因此在请求主体中必须提供与创建新目标时提供的相同属性。
 
 >[!CAUTION]
 >
