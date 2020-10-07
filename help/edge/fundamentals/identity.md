@@ -5,7 +5,7 @@ description: 了解如何获得Adobe Experience CloudID。
 seo-description: 了解如何获得Adobe Experience CloudID。
 keywords: Identity;First Party Identity;Identity Service;3rd Party Identity;ID Migration;Visitor ID;third party identity;thirdPartyCookiesEnabled;idMigrationEnabled;getIdentity;Syncing Identities;syncIdentity;sendEvent;identityMap;primary;ecid;Identity Namespace;namespace id;authenticationState;hashEnabled;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
 source-wordcount: '730'
 ht-degree: 5%
@@ -64,7 +64,7 @@ alloy("getIdentity")
 >
 >强烈建议在每个命令上传递所有可用 `sendEvent` 身份。 这将解锁包括个性化在内的一系列使用案例。 现在，您可以在命令中传递 `sendEvent` 这些标识，它们可以直接放置在DataLayer中。
 
-同步标识允许您使用多个标识来标识设备／用户，设置其身份验证状态，并决定将哪个标识符视为主标识符。 如果未将标识符设置 `primary`为，则主标识符默认为 `ECID`。
+同步标识允许您使用多个标识来标识设备／用户，设置其身份验证状态，并确定哪个标识符被视为主标识符。 如果未将标识符设置 `primary`为，则主标识符默认为 `ECID`。
 
 ```javascript
 alloy("sendEvent", {
@@ -91,7 +91,7 @@ alloy("sendEvent", {
 | -------- | ------------ | ----------------- |
 | 字符串 | 是 | 无 |
 
-对象的键是标识 [命名空间符](../../identity-service/namespaces.md) 。 您可以在“身份”下的Adobe Experience Platform用户界面中找 [!UICONTROL 到此列表]。
+对象的键是标识 [命名空间符](../../identity-service/namespaces.md) 。 您可以在Adobe Experience Platform用户界面的“身份”下找到[!UICONTROL 此列]表。
 
 #### `id`
 
