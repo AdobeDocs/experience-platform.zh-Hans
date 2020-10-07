@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience Platform产品文档
 topic: getting started
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
 source-wordcount: '7145'
 ht-degree: 0%
@@ -214,7 +214,7 @@ ht-degree: 0%
 
 **目标目录：** 目标目录是中可用目标的列表 [!DNL Real-time Customer Data Platform]。
 
-**直接呼叫规则：** 在中 [!DNL Experience Platform Launch]，您可以设置一 [!UICONTROL 个直接调用规] 则，该规则在从页面直接  调用时执行。 如果页面加载或网站操作非常简单，或者它是唯一的，并且每次都可以执行一组特定指令(设置 [!DNL eVar4] 为X并 [!DNL event2] 每次触发)，则可以使用直 [!UICONTROL 接呼] 叫规则 。 请参 [!DNL Launch] 阅有关创建直接 [!UICONTROL 呼叫规] 则 [!UICONTROL 的文档]。
+**直接呼叫规则：** 在中 [!DNL Experience Platform Launch]，您可以设置直接从页面调用时执行的直接调用规则。 如果页面加载或网站操作非常简单，或者它是唯一的，并且可以每次执行一组特定的指令(设置为 [!DNL eVar4] X并每次触发 [!DNL event2] )，则可使用直接调用规则。 请参 [!DNL Launch] 阅有关创建直接呼叫规则的文档。
 
 **显示名称：** 显示名称是UI中显示的字段的用户友好名称。
 
@@ -370,7 +370,7 @@ ht-degree: 0%
 
 **优惠:** 优惠是一条营销消息，可能具有与其关联的规则，指定谁有资格查看优惠。
 
-**优惠决策：** 优惠决策使营销人员能够根据跨渠道和应用程序收集的数据与最终用户互动时，管理优惠建议的规则和经过培训的模型。
+**Offer Decisioning:** 优惠决策使营销人员能够根据跨渠道和应用程序收集的数据与最终用户互动时，管理优惠建议的规则和经过培训的模型。
 
 **优惠库：** 优惠库是用于管理个性化和备用优惠、决策规则和活动的中央库。
 
