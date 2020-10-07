@@ -5,7 +5,7 @@ title: Adobe Experience Platform身份服务疑难解答指南
 topic: troubleshooting
 description: 本文档提供有关Adobe Experience Platform身份服务的常见问题解答，以及常见错误的疑难解答指南。
 translation-type: tm+mt
-source-git-commit: 04efbf63741ef39bbf0b22795be74087f1f7c595
+source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
 source-wordcount: '2248'
 ht-degree: 1%
@@ -96,11 +96,11 @@ ZIP代码和IP地址等字段不应标记为个人身份，因为这些值可以
 
 ## 如何为我的组织创建自定义命名空间?
 
-使用 [Identity Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)，您可以通过向端点发出POST请求为组织创建自定义标识 `/idnamespace/identities` 命名空间。 有关详细信息， [请参阅Identity Service](./api/create-custom-namespace.md) API概述中有关创建自定义命名空间的部分。
+使用 [Identity Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)，您可以通过向端点发出POST请求为组织创建自定义标识 `/idnamespace/identities` 命名空间。 有关详细信息， [请参阅Identity](./api/create-custom-namespace.md) Service API概述中有关创建自定义命名空间的部分。
 
 ## 什么是组合身份和XID?
 
-标识在API调用中由其组合标识或XID引用。 组 **合身份** 是包含ID值和命名空间的身份的表示。 XID **是** 单值标识符，它表示与复合标识(ID和命名空间)相同的构造，并在由标识服务保留时自动分配给新标识。 有关更 [多信息，请参阅](./home.md) Identity Service API概述。
+标识在API调用中由其组合标识或XID引用。 组合标识是包含ID值和命名空间的标识的表示。 XID是表示与组合标识(ID和命名空间)相同的构造的单值标识符，当由标识服务保留时，会自动将其分配给新标识。 有关更 [多信息，请参阅](./home.md) Identity Service API概述。
 
 ## Identity Service如何处理个人身份信息(PII)?
 
@@ -269,7 +269,7 @@ Internal solutions|Preferred|Common
 }
 ```
 
-当 [!DNL Identity Service] 持续存在标识时，将为标识的ID和关联的命名空间ID分配一个称为XID的唯一标识符。 当在查找给定ID值和命名空间的XID过程中发生错误时，将显示此消息。
+当 [!DNL Identity Service] 持续存在身份时，将为该身份的ID和关联的命名空间ID分配一个称为XID的唯一标识符。 当在查找给定ID值和命名空间的XID过程中发生错误时，将显示此消息。
 
 ### IMS组织未设置用 [!DNL Identity Service] 途
 
