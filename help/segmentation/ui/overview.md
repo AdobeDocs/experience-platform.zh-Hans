@@ -5,7 +5,7 @@ title: 分段服务用户指南
 topic: ui guide
 description: Adobe Experience Platform分段服务为创建和管理段定义提供了用户界面。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1467'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 ---
 
 
-# [!UICONTROL 分段服务] 用户指南
+# 分段服务用户指南
 
 [!DNL Adobe Experience Platform Segmentation Service] 提供了用于创建和管理区段定义的用户界面。
 
