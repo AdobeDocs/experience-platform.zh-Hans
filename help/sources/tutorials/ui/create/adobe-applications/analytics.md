@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 本教程提供在UI中创建Adobe Analytics源连接器以将消费者数据引入Adobe Experience Platform的步骤。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '790'
 ht-degree: 1%
@@ -28,7 +28,7 @@ ht-degree: 1%
 
 ## 创建与Adobe Analytics的源连接
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择“源”以访问源工作区。 “目 *录* ”屏幕显示用于创建入站连接的可用源，每个源显示与它们关联的现有帐户和数据集流的数量。
+登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择“源”以访问源工作区。 “目 **录** ”屏幕显示用于创建入站连接的可用源，每个源显示与它们关联的现有帐户和数据集流的数量。
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
@@ -73,7 +73,7 @@ ht-degree: 1%
 
 ![](../../../../images/tutorials/create/analytics/catalog-dataset-flows.png)
 
-出现 *“Dataset flows* （数据集流）”屏幕。 此页上是一对数据集流，包括有关其名称、源数据、创建时间和状态的信息。
+出现 **“Dataset flows** （数据集流）”屏幕。 此页上是一对数据集流，包括有关其名称、源数据、创建时间和状态的信息。
 
 连接器将实例化两个数据集流。 一个流代表回填数据，另一个流代表实时数据。 回填数据未配置为用户档案，而是发送到数据湖以用于分析和数据科学用例。
 
@@ -83,7 +83,7 @@ ht-degree: 1%
 
 ![](../../../../images/tutorials/create/analytics/backfill.png)
 
-此时将 *显示“数据集活动* ”页。 此页以图表形式显示消息的消费率。 从顶 *部标题* 中选择数据管理以访问标记字段。
+此时将 **显示“数据集活动** ”页。 此页以图表形式显示消息的消费率。 从顶 *部标题* 中选择数据管理以访问标记字段。
 
 ![](../../../../images/tutorials/create/analytics/batches.png)
 
@@ -91,7 +91,7 @@ ht-degree: 1%
 
 ![](../../../../images/tutorials/create/analytics/data-gov.png)
 
-将出 *现“编辑管理标签* ”面板。 此屏幕允许您访问和编辑数据集流的合同、身份和敏感标签。
+将出 **现“编辑管理标签** ”面板。 此屏幕允许您访问和编辑数据集流的合同、身份和敏感标签。
 
 有关如何标记来自Analytics的数据的更多信息，请访问数 [据使用标签指南](../../../../../data-governance/labels/user-guide.md)。
 
