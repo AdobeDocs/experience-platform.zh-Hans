@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时客户数据平台中的IAB TCF 2.0支持
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
+source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
 workflow-type: tm+mt
 source-wordcount: '2388'
 ht-degree: 1%
@@ -89,7 +89,7 @@ Adobe Audience Manager(通过源连 [!DNL Platform] 接器或其他方式)共享
 
 ### 同意字符串 {#consent-strings}
 
-无论您使用何种方法收集数据，目标都是根据客户选择的同意选项（称为同意字符串）生成一个字 **符串值**。
+无论您使用何种方法收集数据，目标都是根据客户选择的同意选项（称为同意字符串）生成字符串值。
 
 在TCF规范中，同意字符串用于根据策略和供应商定义的特定营销目的对有关客户同意设置的相关详细信息进行编码。 [!DNL Real-time CDP] 利用这些字符串存储每个客户的同意设置，因此每次这些设置发生更改时必须生成新的同意字符串。
 
