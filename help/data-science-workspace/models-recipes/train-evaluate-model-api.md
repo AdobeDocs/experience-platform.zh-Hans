@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 本教程将向您展示如何使用Sensei机器学习API调用创建、培训和评估模型。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1210'
 ht-degree: 1%
@@ -35,7 +35,7 @@ ht-degree: 1%
 
 ## API工作流
 
-我们将使用API创建培训的实验运行。 在本教程中，我们将重点介绍引 **擎**、 **MLI实例**&#x200B;和实 **验端点** 。 下图概述了这三者之间的关系，并介绍了“运行”(Run)和“模型”(Model)的概念。
+我们将使用API创建培训的实验运行。 在本教程中，我们将重点介绍引擎、MLI实例和实验端点。 下图概述了这三者之间的关系，并介绍了“运行”(Run)和“模型”(Model)的概念。
 
 ![](../images/models-recipes/train-evaluate-api/engine_hierarchy_api.png)
 
