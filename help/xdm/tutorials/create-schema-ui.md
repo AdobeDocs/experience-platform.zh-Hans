@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorials
 description: 本教程介绍了在模式中使用模式编辑器创建Experience Platform的步骤。
 translation-type: tm+mt
-source-git-commit: eb6505bdcad9eee6d7e9674504223ca919f19c34
+source-git-commit: 9c7119ad836007af3437dc2e938b68aff3ca0f56
 workflow-type: tm+mt
 source-wordcount: '3835'
 ht-degree: 0%
@@ -126,7 +126,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 
 “忠诚[!UICONTROL 会员]”模式用于捕获与忠诚项目成员相关的数据，因此它需要一些特定的忠诚度相关字段。 没有包含必要字段的标准混音，因此您需要定义新混音。
 
-此时，打开“添加混 **[!UICONTROL 合”对话框]** ，选择 **[!UICONTROL “创建新混合”]**。 随后将要求您为混音提 **[!UICONTROL 供显示]****[!UICONTROL 名称和说]** 明。
+此时，打开“添加混 **[!UICONTROL 合”对话框]** ，选择 **[!UICONTROL “创建新混合”]**。 随后将要求您提供混音的显示名称和说明。
 
 ![](../images/tutorials/create-schema/mixin_create_new.png)
 
@@ -167,7 +167,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 * **[!UICONTROL 类型]:** 字段的数据类型。 这包括基本标量类型和在中定义的任何数据类型 [!DNL Schema Registry]。 示例： [!UICONTROL 字符串]、整数 [!UICONTROL 、布尔]值 [!UICONTROL 、人员地]址 [!UICONTROL 、地址]、电话号、号等。
 * **[!UICONTROL 描述]:** 该字段的可选描述应包含在句子中，最多200个字符。
 
-对象的第一个字 `Loyalty` 段将是一个名为的字符串 `loyaltyId`。 当将新字段的类型设置为“[!UICONTROL String]”时，Field **[!UICONTROL 部分将填充几个用于应用约束的选项，包括]** 默认值 **[!UICONTROL 、]** Format、 ******** Jaximum长度和。
+对象的第一个字 `Loyalty` 段将是一个名为的字符串 `loyaltyId`。 当将新字段的类型设置为“[!UICONTROL String]”时，Field属 **[!UICONTROL 性部分会填充多个用于应用约束的选项]** ，包括默认值、格式和最大长度。
 
 ![](../images/tutorials/create-schema/string_constraints.png)
 
@@ -226,7 +226,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 
 ![](../images/tutorials/create-schema/loyalty_data_type.png)
 
-在将来的模式中，您现在可以将一个 **[!UICONTROL 字段指定为]** “”的类型，并[!DNL Loyalty]且它将自动包括ID、忠诚度级别、成员自身和积分的字段。
+在将来的模式中，您现在可以将字段指定为“[!DNL Loyalty]”类型，并自动包含ID、忠诚度级别、成员自身和积分的字段。
 
 ## 搜索和筛选模式字段
 
@@ -336,7 +336,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 
 ![](../images/tutorials/create-schema/browse-classes.png)
 
-将显示一个对话框，允许您从可用类的列表中进行选择。 在对话框顶部，选择“ **[!UICONTROL 创建新类”]**。 然后，您可以为新类提供 **[!UICONTROL 显示名称]** （类的简短、描述性、唯一且用户友好的名称）、 **[!UICONTROL Description]**&#x200B;和Behavior **[!UICONTROL (“]**RecordSeris”或“RecordSeries”)，以获取模式将定义的数据。
+将显示一个对话框，允许您从可用类的列表中进行选择。 在对话框顶部，选择“ **[!UICONTROL 创建新类”]**。 然后，您可以为新类为模式将定义的数据提供一个显示名称（类的简短、描述性、唯一且用户友好的名称）、描述和行[!UICONTROL 为](“[!UICONTROL 记录]”或“时间序列”)。
 
 ![](../images/tutorials/create-schema/create_new_class.png)
 
