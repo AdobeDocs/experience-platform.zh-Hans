@@ -5,7 +5,7 @@ title: 利用客户人工智能发掘洞察
 topic: Discovering insights
 description: 作为智能服务的一部分，客户人工智能为营销人员提供了利用Adobe Sensei预测客户下一步行动的能力。 客户AI用于生成定制倾向得分，如大规模客户流失和转化个别用户档案。 这无需将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 translation-type: tm+mt
-source-git-commit: 6e4a3ebe84c82790f58f8ec54e6f72c2aca0b7da
+source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
 workflow-type: tm+mt
 source-wordcount: '1125'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 入门指南
 
-为了利用客户人工智能的洞察，您需要有一个运行状态成功的服务实例。 要创建新服务实例，请 [访问配置客户AI实例](./configure.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分中，请允许24小时，它才能完成运行。
+为了利用客户人工智能的洞察，您需要有一个运行状态成功的服务实例。 要创建新服务实例，请 [访问配置客户AI实例](./configure.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分，请允许24小时，它才能完成运行。
 
 ## 服务实例概述
 
@@ -98,7 +98,7 @@ ht-degree: 0%
 
 ## 分数分布
 
-“ *分配得分* ”卡可根据得分直观地汇总人口。 您在“分数分配”卡中 *看到的颜色* ，表示生成的倾向得分类型。
+“ **[!UICONTROL 分配得分]** ”卡可根据得分直观地汇总人口。 您在“分数分配”卡中 *看到的颜色* ，表示生成的倾向得分类型。
 
 ![分数分布](../images/insights/distribution-of-scores.png)
 
@@ -128,7 +128,7 @@ ht-degree: 0%
 
 ![细分填充](../images/insights/segment-saving.png)
 
-要在平台UI中视图新区段，请单击左 **[!UICONTROL 侧导]** 航中的区段。 此时将 *显示* “浏览”页面，并显示所有可用的区段。
+要在平台UI中视图新区段，请单击左 **[!UICONTROL 侧导]** 航中的区段。 此时将 **[!UICONTROL 显示]** “浏览”页面，并显示所有可用的区段。
 
 ![所有细分](../images/insights/Segments-dashboard.png)
 
