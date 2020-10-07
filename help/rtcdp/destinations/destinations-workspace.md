@@ -5,7 +5,7 @@ seo-title: 目标工作区
 description: “目标”工作区由四个部分组成，即目录、浏览、帐户和系统视图，这些部分在以下各节中有介绍。
 seo-description: 在Adobe实时客户数据平台中，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: 59ac673c35954696fbb37417510035bdebff6f62
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '825'
 ht-degree: 2%
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 在Adobe实时数据平台中，从左侧 **[!UICONTROL 导航栏]** 中选择目标以访问 [!UICONTROL 目标] 工作区。
 
-工 [!UICONTROL 作区] 由四个部分组成： **[!UICONTROL Catalog]**、 Browse **** Accounts **[!UICONTROL 、 Accounts]** Destinations System视图, ****&#x200B;下面几节介绍了这些部分。
+工 [!UICONTROL 作区] 由四个部分组成： [!UICONTROL Catalog]、 Browse Accounts [!UICONTROL 、 Accounts]Destinations System视图, 下面几节介绍了这些部分。
 
 ![目标——概述](/help/rtcdp/destinations/assets/destinations-overview.png)
 
@@ -28,8 +28,8 @@ ht-degree: 2%
 Adobe实时CDP用户界面在目标目录页面上提供了许多搜索和筛选选项：
 
 * 使用页面上的搜索功能查找特定目标。
-* 使用类别控件 **[!UICONTROL 筛选目]** 标。
-* 在所有目 **[!UICONTROL 标和我的]** 目 **[!UICONTROL 标之间切换]**。 选择 **[!UICONTROL 所有目标]** 后，将显示所有可用的Adobe实时CDP目标。 选择 **[!UICONTROL 我的目]** 标后，您只能看到已建立连接的目标。
+* 使用类别控件 [!UICONTROL 筛选目] 标。
+* 在所有目 [!UICONTROL 标和我的] 目 [!UICONTROL 标之间切换]。 选择 **[!UICONTROL 所有目标]** 后，将显示所有可用的Adobe实时CDP目标。 选择 **[!UICONTROL 我的目]** 标后，您只能看到已建立连接的目标。
 * 选择以视图 **[!UICONTROL 连接]** 和／或 **[!UICONTROL 扩展]**。 要了解两个类别之间的差异，请参 [阅目标类型和类别](/help/rtcdp/destinations/destination-types.md)。
 
 ![目标过滤和搜索演示](/help/rtcdp/destinations/assets/destinations-search-and-filter.gif)
