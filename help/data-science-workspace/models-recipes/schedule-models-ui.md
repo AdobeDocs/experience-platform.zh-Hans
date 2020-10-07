@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: Adobe Experience Platform数据科学工作区允许您在机器学习服务上设置定期评分和培训运行。 自动化培训和评分流程可与数据中的模式保持同步，从而帮助保持和提高服务的长期效率。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '533'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 Adobe Experience Platform [!DNL Data Science Workspace] 允许您在机器学习服务上设置定时评分和培训运行。 自动化培训和评分流程可与数据中的模式保持同步，从而帮助保持和提高服务的长期效率。
 
-本教程逐步介绍如何通过服务库在现有服务上配置培训和评 **[!UICONTROL 分计划]**。 它分为以下几个主要部分：
+本教程逐步介绍如何通过服务库在现有服务上配置培训和评 [!UICONTROL 分计划]。 它分为以下几个主要部分：
 
 - [配置计划评分](#configure-scheduled-scoring)
 - [配置计划培训](#configure-scheduled-training)
@@ -33,7 +33,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 允许您在机器学习
 
 模型评分可以配置为按计划自动进行。 创建服务后，您可以按照以下步骤配置和应用评分计划:
 
-1. 在Adobe Experience Platform，单击 **[!UICONTROL 左侧]** 导航列中的“服务”选项卡以访问 *[!DNL Service Gallery]*。 查找要计划评分运行的服务，并单击“打 **[!UICONTROL 开]** ”以视图 *其概* 述页。
+1. 在Adobe Experience Platform，单击 **[!UICONTROL 左侧]** 导航列中的“服务”选项卡以访问 **[!DNL Service Gallery]**。 查找要计划评分运行的服务，并单击“打 **[!UICONTROL 开]** ”以视图 **其概** 述页。
    ![](../images/models-recipes/schedule/click_to_open.png)
 
 2. “概述”页显示服务的评分信息。 单击“更 **[!UICONTROL 新计划]** ”链接以配置评分计划。
@@ -42,7 +42,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 允许您在机器学习
 3. 为评分开始配置频率、计划日期、结束日期、输入数据集和输出数据集。 对配置感到满意后，单击 **[!UICONTROL 创建]** ，以更新服务的评分计划。
    ![](../images/models-recipes/schedule/14_configure_scoring_schedule.png)
 
-4. 更新的评分计划显示在服务的概述 *页* 。
+4. 更新的评分计划显示在服务的概述 **页** 。
    ![](../images/models-recipes/schedule/service_with_scoring_schedule.png)
 
 
@@ -52,7 +52,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 允许您在机器学习
 
 创建服务后，您可以按照以下步骤配置和应用培训计划:
 
-1. 在Adobe Experience Platform，单击 **[!UICONTROL 左侧]** 导航列中的“服务”选项卡以访 **[!UICONTROL 问服务库]**。 查找要计划培训运行的服务，并单击“打 **[!UICONTROL 开]** ”以视图 *其概* 述页。
+1. 在Adobe Experience Platform，单击 **[!UICONTROL 左侧]** 导航列中的“服务”选项卡以访 **[!UICONTROL 问服务库]**。 查找要计划培训运行的服务，并单击“打 **[!UICONTROL 开]** ”以视图 **其概** 述页。
    ![](../images/models-recipes/schedule/click_to_open.png)
 
 2. “概述”页显示服务的培训信息。 单击“ **[!UICONTROL 更新计划]** ”链接以配置培训计划。
@@ -61,7 +61,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 允许您在机器学习
 3. 配置用于培训开始的频率、计划日期、结束日期和输入数据集。 对配置感到满意后，单击“ **[!UICONTROL 创建]** ”以更新服务的培训计划。
    ![](../images/models-recipes/schedule/12_configure_training_schedule.png)
 
-4. 更新的培训计划显示在服务的概述 *页面* 。
+4. 更新的培训计划显示在服务的概述 **页面** 。
    ![](../images/models-recipes/schedule/service_with_training_schedule.png)
 
 ## 后续步骤
