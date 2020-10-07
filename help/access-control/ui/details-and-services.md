@@ -5,7 +5,7 @@ title: 管理产品用户档案的详细信息和其他服务
 topic: user guide
 description: 本文档涵盖为Adobe Admin Console的产品用户档案管理详细信息和其他服务所需的必要步骤。 您可以在用户档案设置菜单中配置用户档案的详细信息并访问其他服务。
 translation-type: tm+mt
-source-git-commit: c6c5ada52321b11543254f80399c38365f0fb9d7
+source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
 workflow-type: tm+mt
 source-wordcount: '206'
 ht-degree: 1%
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 ![用户档案设置](../images/profile-settings.png)
 
-将显 **[!UICONTROL 示“用户档案]** 设置”菜单 **[!UICONTROL ，从“详细信息”选]** 项卡开始。 此选项卡允许您输入和编辑 **[!UICONTROL 用户档案名]** 和 **[!UICONTROL 描述]**。 您还可以修改显 **[!UICONTROL 示名称]** ，以及帐户的电子邮件通知设置。
+将显 **[!UICONTROL 示“用户档案]** 设置”菜单 **[!UICONTROL ，从“详细信息”选]** 项卡开始。 此选项卡允许您输入和编辑用户档案名称和说明。 您还可以修改显示名称以及帐户的电子邮件通知设置。
 
 ![edit-details-settings](../images/edit-details-settings.png)
 
