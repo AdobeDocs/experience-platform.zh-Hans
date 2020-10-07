@@ -5,7 +5,7 @@ title: Attribution AI用户指南
 topic: User guide
 description: 此文档用作与Intelligent Services用户界面中的Attribution AI交互的指南。
 translation-type: tm+mt
-source-git-commit: 2a528c705a7aa610f57047be39be1ce9886ce44c
+source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
 workflow-type: tm+mt
 source-wordcount: '1449'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Attribution AI作为智能服务的一部分，是一种多渠道算法归因服
 
 ## 创建实例
 
-在UI [!DNL Adobe Experience Platform] 中，单击左 **侧导** 航中的“服务”。 出现 *服务浏览器* ，并显示可用的Adobe智能服务。 在Attribution AI容器中，单击 **打开**。
+在UI [!DNL Adobe Experience Platform] 中，单击左 **[!UICONTROL 侧导]** 航中的“服务”。 出现 **[!UICONTROL 服务浏览器]** ，并显示可用的Adobe智能服务。 在Attribution AI容器中，单击 **[!UICONTROL 打开]**。
 
 ![访问实例](./images/user-guide/open_Attribution_ai.png)
 
@@ -35,7 +35,7 @@ Attribution AI作为智能服务的一部分，是一种多渠道算法归因服
 
 ### 命名实例
 
-在“ *基本信息*”下，为服务实例提供名称和可选说明。
+在“ **[!UICONTROL 基本信息]**”下，为服务实例提供名称和可选说明。
 
 ![命名实例](./images/user-guide/naming_instance.png)
 
@@ -67,15 +67,15 @@ Attribution AI作为智能服务的一部分，是一种多渠道算法归因服
 
 ![无下拉菜单](./images/user-guide/conversion_event_1.png)
 
-“添 *加事件* ”和“ *添加组* ”按钮用于进一步定义转换。 根据您所定义的转换，您可能需要使用“添加 *事件* ”和“ *添加组* ”按钮来提供更多上下文。
+“添 **[!UICONTROL 加事件]** ”和“ **[!UICONTROL 添加组]** ”按钮用于进一步定义转换。 根据您所定义的转换，您可能需要使用“添加 **[!UICONTROL 事件]** ”和“ **[!UICONTROL 添加组]** ”按钮来提供更多上下文。
 
 ![添加事件](./images/user-guide/add_event.png)
 
-单 **击“添加事件** ”可创建其他字段，这些字段可以使用与上述相同的方法填充。 这样做会向转 *换名* 下的字符串定义中添 *加AND语句*。 单击 **x** ，删除已添加的事件。
+单 **[!UICONTROL 击“添加事件]** ”可创建其他字段，这些字段可以使用与上述相同的方法填充。 这样做会向转换名称下的字符串定义中添加AND语句。 单击 **x** ，删除已添加的事件。
 
 ![添加事件菜单](./images/user-guide/add_event_result.png)
 
-单击 **“添加组** ”(Add Group)，可选择创建与原始字段分开的其他字段。 添加组后，将显示蓝色 *的* “和”按钮。 单 **击** “并”提供一个选项，可将参数更改为包含“或”。 “或”用于定义多个成功的转换路径。 “And”扩展了转换路径以包含其他条件。
+单击 **[!UICONTROL “添加组]** ”(Add Group)，可选择创建与原始字段分开的其他字段。 添加组后，将显示蓝色 *的* “和”按钮。 单 **击** “并”提供一个选项，可将参数更改为包含“或”。 “或”用于定义多个成功的转换路径。 “And”扩展了转换路径以包含其他条件。
 
 ![使用和](./images/user-guide/and_or.png)
 
@@ -157,7 +157,7 @@ Attribution AI中的最后一页是 *用于* 设置培训和评分的高级页�
 
 客户的行为可能因国家／地区和地理区域而有很大不同。 对于全球企业，使用基于国家或基于区域的模型可以提高归因准确性。 添加的每个区域都使用该区域的数据创建新模型。
 
-要定义新区域，请单击“添加区域” **进行开始**。 在显示的容器中，提供该区域的名称。 只有一个值(“placeContext.geo.countryCode”)从“输入字段名称”下 *拉列表中填充* 。 选择此值。
+要定义新区域，请单击“添加区域” **[!UICONTROL 进行开始]**。 在显示的容器中，提供该区域的名称。 只有一个值(“placeContext.geo.countryCode”)从“输入字段名称”下 **[!UICONTROL 拉列表中填充]** 。 选择此值。
 
 ![选择区域](./images/user-guide/select_region_att.png)
 
@@ -165,7 +165,7 @@ Attribution AI中的最后一页是 *用于* 设置培训和评分的高级页�
 
 ![区域算子](./images/user-guide/region_operators.png)
 
-最后，在“输入字段值”下拉框 *中键入国家／地* 区代码。
+最后，在“输入字段值”下拉框 **[!UICONTROL 中键入国家／地]** 区代码。
 
 >[!NOTE]
 >
@@ -183,7 +183,7 @@ Attribution AI中的最后一页是 *用于* 设置培训和评分的高级页�
 
 ![培训窗口](./images/user-guide/training_window.png)
 
-选择培训窗口后，单击 **右上** 角的“完成”。 为数据处理留出一些时间。 完成后，将显示一个弹出窗口对话框，确认实例设置已完成。 单击 **确定** ，以重定向到“服 *务实例* ”页，您可以在该页看到服务实例。
+选择培训窗口后，单击 **[!UICONTROL 右上]** 角的“完成”。 为数据处理留出一些时间。 完成后，将显示一个弹出窗口对话框，确认实例设置已完成。 单击 **[!UICONTROL 确定]** ，以重定向到“服 **[!UICONTROL 务实例]** ”页，您可以在该页看到服务实例。
 
 ![安装完成](./images/user-guide/instance_setup_complete.png)
 
