@@ -5,7 +5,7 @@ title: 根据预测得分创建客户细分
 topic: Create a segment
 description: 当预测运行完成时，用户档案会自动消耗预测倾向得分。 利用客户AI得分丰富用户档案，可以创建客户细分，根据受众的倾向得分查找客户。 本节提供使用区段生成器创建区段的步骤。
 translation-type: tm+mt
-source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
+source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
 workflow-type: tm+mt
 source-wordcount: '317'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 ![](../images/user-guide/segments.png)
 
-此时 *会显示“区段* ”生成器。 在左侧 *的* “字段”列和“属性” *选项卡下，单击名* 为“XDM个人用户档案”的文件夹 **** ，然后单击具有组织命名空间的文件夹。 名为Customer **[!UICONTROL AI的文件夹]** 包含预测运行的结果，并以得分所属的实例命名。 单击实例文件夹可访问其所需实例的结果。
+此时 **会显示“区段** ”生成器。 在左侧 **[!UICONTROL 的]** “字段”列和“属性” **[!UICONTROL 选项卡下，单击名]** 为“XDM个人用户档案”的文件夹 **** ，然后单击具有组织命名空间的文件夹。 名为Customer **[!UICONTROL AI的文件夹]** 包含预测运行的结果，并以得分所属的实例命名。 单击实例文件夹可访问其所需实例的结果。
 
 ![](../images/user-guide/results.png)
 
