@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: 本教程提供了使用平台用户界面创建FTP或SFTP源连接器的步骤。
 translation-type: tm+mt
-source-git-commit: c3352c090ce9e5a89d9285aabdc4851632d4d437
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '702'
+source-wordcount: '701'
 ht-degree: 1%
 
 ---
@@ -43,7 +43,7 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ### 收集所需的凭据
 
-要在上访问FTP或SFTP服 [!DNL Platform]务器，必须提供服 **务器的主**&#x200B;机名、 **用户名**&#x200B;和 **密码**。
+要在上访问FTP或SFTP服 [!DNL Platform]务器，必须提供服务器的主机名、用户名和密码。
 
 ## 连接到FTP或SFTP服务器
 
