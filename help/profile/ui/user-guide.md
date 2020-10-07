@@ -4,7 +4,7 @@ title: 实时客户用户档案用户指南
 topic: guide
 description: 实时客户用户档案可以为您的每位客户创建整体视图，将来自多个渠道（包括在线、离线、CRM和第三方数据）的数据相结合。 此文档可作为与Adobe Experience Platform用户界面中实时用户档案交互的指南。
 translation-type: tm+mt
-source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '1292'
 ht-degree: 0%
@@ -40,11 +40,11 @@ ht-degree: 0%
 
 ### 用户档案指标 {#profile-metrics}
 
-在“浏览”选项卡的右侧 [!UICONTROL 是与用户档案] 相关的几个重要指标，包括您的总 [用户档案数](#profile-count) ，以及按命名空间 [列出用户档案](#profiles-by-namespace)。
+在“浏览”选项卡的右侧 **[!UICONTROL 是与用户档案]** 相关的几个重要指标，包括您的总 [用户档案数](#profile-count) ，以及按命名空间 [列出用户档案](#profiles-by-namespace)。
 
 这些用户档案量度是使用单位的默认合并策略评估的。 有关使用合并策略（包括如何定义默认合并策略）的详细信息，请参阅合 [并策略用户指南](merge-policies.md)。
 
-除了这些指标外，用户档案指标部分还提供上次 [!UICONTROL 更新的日] 期和时间，显示上次评估指标的时间。
+除了这些指标外，用户档案指标部分还提供上次更新的日期和时间，显示上次评估指标的时间。
 
 ![](../images/user-guide/profiles-profile-metrics.png)
 
@@ -80,7 +80,7 @@ ht-degree: 0%
 
 ### 标识值
 
-选择身份 [!UICONTROL 命名空间]后，您返回“浏 [!UICONTROL 览] ”选项卡，在该选项卡中可以输 **[!UICONTROL 入身份值]**。 此值特定于单个客户用户档案，且必须为提供的命名空间的有效条目。 例如，选择“身 [!UICONTROL 份命名空间] ”“电子邮件”将 [!UICONTROL 需要有效电子邮] 件地址形式的“身份”值。
+选择身份命名空间后，您返回“浏 **[!UICONTROL 览]** ”选项卡，在该选项卡中可以 **[!UICONTROL 输入身份值]**。 此值特定于单个客户用户档案，且必须为提供的命名空间的有效条目。 例如，选择标识命名空间“电子邮件”将需要有效电子邮件地址形式的标识值。
 
 ![](../images/user-guide/profiles-show-profile.png)
 
@@ -90,17 +90,17 @@ ht-degree: 0%
 
 ### 用户档案详细信息 {#profile-detail}
 
-选择用户档案 [!UICONTROL ID后]，将打 **[!UICONTROL 开“详细信]** 息”选项卡。 “详细信息”标签上显 [!UICONTROL 示的用户档案] 信息已从多个用户档案片段合并到一起，以形成单个客户的单个视图。 这包括客户详细信息，如基本属性、链接身份和渠道首选项。 显示的默认字段也可以在组织级别进行更改，以显示首选用户档案属性。 要进一步了解如何自定义这些字段，包括有关添加和删除属性以及调整仪表板面板大小的分步说明，请阅读 [用户档案详细信息自定义指南](profile-customization.md)。
+选择用户档案 **[!UICONTROL ID后]**，将打 **[!UICONTROL 开“详细信]** 息”选项卡。 “详细信息”标签上显 **[!UICONTROL 示的用户档案]** 信息已从多个用户档案片段合并到一起，以形成单个客户的单个视图。 这包括客户详细信息，如基本属性、链接身份和渠道首选项。 显示的默认字段也可以在组织级别进行更改，以显示首选用户档案属性。 要进一步了解如何自定义这些字段，包括有关添加和删除属性以及调整仪表板面板大小的分步说明，请阅读 [用户档案详细信息自定义指南](profile-customization.md)。
 
 ![](../images/user-guide/profiles-profile-detail.png)
 
-您可以通过选择其他可用选项卡来视图与单个用户档案相关的其他信息。 这些选项卡包 [!UICONTROL 括属]性 [!UICONTROL 、事件]和段成 [!UICONTROL 员关系]，它们显示用户档案当前符合条  件的的段。
+您可以通过选择其他可用选项卡来视图与单个用户档案相关的其他信息。 这些选项卡包括属性、事件和区段成员关系，这些选项卡显示了用户档案当前符合条件的区段。
 
 ![](../images/user-guide/profiles-attributes-events-segments.png)
 
 ## 合并策略
 
-从主用户档案 [!UICONTROL 菜单] ，选择合 **[!UICONTROL 并策略选]** 项卡以视图属于您组织的合并策略列表。 每个列出的策略都显示其名称，无论它是否为默认合并策略，以及它所应用的模式。
+从主用户档案 **[!UICONTROL 菜单]** ，选择合 **[!UICONTROL 并策略选]** 项卡以视图属于您组织的合并策略列表。 每个列出的策略都显示其名称，无论它是否为默认合并策略，以及它所应用的模式。
 
 有关合并策略的详细信息，请参 [阅合并策略用户指南](merge-policies.md)。
 
@@ -108,7 +108,7 @@ ht-degree: 0%
 
 ## 合并模式 {#union-schema}
 
-从主用户档案 [!UICONTROL 菜单] ，选择 **[!UICONTROL 合并]** 模式选项卡，以视图用户档案数据的合并模式。 合并模式是同一类下的所 [!DNL Experience Data Model] 有(XDM)字段的合并，该类的模式已被允许在中使用 [!DNL Real-time Customer Profile]。 通过从左侧的“ [!UICONTROL 类] ”列表中选择类，您可以在画布中视图其模式的结构。 例如，选择“[!DNL XDM Profile]”将显示类的合并 [!DNL XDM Individual Profile] 模式。
+从主用户档案 **[!UICONTROL 菜单]** ，选择 **[!UICONTROL 合并]** 模式选项卡，以视图用户档案数据的合并模式。 合并模式是同一类下的所 [!DNL Experience Data Model] 有(XDM)字段的合并，该类的模式已被允许在中使用 [!DNL Real-time Customer Profile]。 通过从左侧的“[!UICONTROL Class]”列表中选择类，您可以在画布中视图其模式的结构。 例如，选择“[!DNL XDM Profile]”将显示类的合并 [!DNL XDM Individual Profile] 模式。
 
 有关合并模式及其在Adobe Experience Platform的作用的详细信息，请参阅模式构图指南中有关合并模式 [的章节](../../xdm/schema/composition.md)。
 
