@@ -6,7 +6,7 @@ seo-title: 社交网络目标工作流
 description: 连接到社交网络广告帐户的说明
 seo-description: 连接到社交网络广告帐户的说明
 translation-type: tm+mt
-source-git-commit: 120ba866cf6e6509c51a29cb07e73550006fe5eb
+source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
 source-wordcount: '501'
 ht-degree: 0%
@@ -40,7 +40,7 @@ ht-degree: 0%
 
    ![已确认凭据](/help/rtcdp/destinations/assets/facebook-post-connection-view.png)
 
-4. 在设 **[!UICONTROL 置步]** 骤中，为激活流 **[!UICONTROL 输入名]** 称和说明 **[!UICONTROL ，然后填写社交网]****** 络广告帐户的帐户ID。 <br> 此外，在此步骤中，您还可以选 **[!UICONTROL 择应用于此目标]** 的任何Marketing用例。 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。 <br> 在 **[!UICONTROL 填写上述字]** 段后，选择创建目标。
+4. 在设 **[!UICONTROL 置步]** 骤中，为激活流 [!UICONTROL 输入名] 称和说明 [!UICONTROL ，然后填写社交网] 络广告帐户的帐户ID。 <br> 此外，在此步骤中，您还可以选 **[!UICONTROL 择应用于此目标]** 的任何Marketing用例。 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关营销使用案例的更多信息， [请参阅实时CDP中的数据管理](/help/rtcdp/privacy/data-governance-overview.md#destinations) 。 有关各个Adobe定义的营销用例的信息，请参阅数据 [使用策略概述](/help/data-governance/policies/overview.md#core-actions)。 <br> 在 **[!UICONTROL 填写上述字]** 段后，选择创建目标。
 
    >[!IMPORTANT]
    >
