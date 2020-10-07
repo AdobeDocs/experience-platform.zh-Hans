@@ -5,7 +5,7 @@ title: 用户档案查询语言(PQL)概述
 topic: developer guide
 description: 本指南提供PQL的一般概述，其中包括格式准则和PQL表达式示例。
 translation-type: tm+mt
-source-git-commit: 5a10a31f4be5173af8b459b9ab8a53096348be1d
+source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
 workflow-type: tm+mt
 source-wordcount: '705'
 ht-degree: 2%
@@ -29,7 +29,7 @@ PQL查询具有以下签名：
 
 输入参数可以是简单的基元，如布尔值或字符串，也可以是更复杂的类型，如对象、数组或映射。
 
-有三种 **不同的方** 法可引用PQL表达式正文中的输入参数：
+有三种不同的方法可引用PQL表达式正文中的输入参数：
 
 ### 对第一个参数的隐式引用
 
