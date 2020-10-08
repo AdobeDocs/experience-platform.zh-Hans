@@ -3,9 +3,9 @@ keywords: Experience Platform;profile;real-time customer profile;troubleshooting
 title: 合并策略用户指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: fcced39c0a78457ebb108b7378e32f1b2f75808b
+source-git-commit: 45f42bae4060e107e6c131659cea5d10457c34f8
 workflow-type: tm+mt
-source-wordcount: '1441'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -91,7 +91,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 一个示例用例是，如果您的组织在一个数据集中存在信息，该数据集中的数据优先或受信任，而不是其他数据集中的数据。
 
-选择数 **[!UICONTROL 据集优先级]**&#x200B;时，会打开一个单独的面板，要求您从可 **[!UICONTROL 用数据集中进行选择]** （或者使用复选框选择所有数据集）。 然后，您可以将这些数据集拖放到 [**!UICONTROL选定数据集]**面板中，并将它们拖入正确的优先级顺序。 优先级最高，次优先，等等。
+选择数 **[!UICONTROL 据集优先级]**&#x200B;时，会打开一个单独的面板，要求您从可 **[!UICONTROL 用数据集中进行选择]** （或者使用复选框选择所有数据集）。 然后，您可以将这些数据集拖放到“选 **[!UICONTROL 定的数据集]** ”面板中，并将它们拖入正确的优先级顺序。 优先级最高，次优先，等等。
 
 ![](../images/merge-policies/dataset-precedence.png)
 
