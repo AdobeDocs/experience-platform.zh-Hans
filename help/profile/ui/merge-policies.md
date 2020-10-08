@@ -3,7 +3,7 @@ keywords: Experience Platform;profile;real-time customer profile;troubleshooting
 title: 合并策略用户指南
 topic: guide
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: fcced39c0a78457ebb108b7378e32f1b2f75808b
 workflow-type: tm+mt
 source-wordcount: '1441'
 ht-degree: 0%
@@ -61,7 +61,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ### 按顺序排列时间戳 {#timestamp-ordered}
 
-当用户档案记录被摄取到Experience Platform中时，在摄取时获得系统时间戳并添加到记录中。 如果 **[!UICONTROL 将Timestamp]** ordered选为合[!UICONTROL 并策略的“属]性合并”类型，则用户档案将基于系统时间戳进行合并。 换言之，合并是根据记录被引入平台的时间戳完成的。
+当用户档案记录被摄取到Experience Platform中时，在摄取时获得系统时间戳并添加到记录中。 如果 **[!UICONTROL 选择Timestamp]** ordered作为合 **[!UICONTROL 并策略的属性合并]** 类型，则用户档案将基于系统时间戳进行合并。 换言之，合并是根据记录被引入平台的时间戳完成的。
 
 有时，在某些用例中，需要提供自定义时间戳并使合并策略遵守自定义时间戳，而不是系统时间戳。 这包括回填数据或确保在记录不按顺序摄取时事件的正确顺序。
 
@@ -119,7 +119,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 创建或更新合并策略时，将执行检查以确定合并策略是否违反了组织定义的任何数据使用策略。 数据使用策略是Adobe Experience Platform的一 [!DNL Data Governance] 部分，是描述您允许或限制对特定数据执行的营销操作类型的 [!DNL Platform] 规则。 例如，如果合并策略用于创建已激活到第三方目标的区段，而您的组织拥有阻止将特定数据导出到第三方的数据使用策略，则在尝试保存合并策略时，您会收到“检测到[!UICONTROL Data governance policy ivolation]”通知。
 
-此通知包括已违反的列表使用策略，并允许您通过从列表中选择策略来视图违规的详细信息。 选择违反的策略后，“数 **[!UICONTROL 据世系]** ”选项卡会提供违规原因和受影响激活]，每个选项卡会提供有关违反数据使用策略的详细信息。
+此通知包括已违反的列表使用策略，并允许您通过从列表中选择策略来视图违规的详细信息。 选择违反的策略后，“数 **[!UICONTROL 据世系]** ”选项卡会提供违规原因和受影响的激活，每个选项卡都提供有关违反数据使用策略的详细信息。
 
 要进一步了解如何在Adobe Experience Platform内执行数据治理，请首先阅读数据治 [理概述](../../data-governance/home.md)。
 
