@@ -5,9 +5,9 @@ title: 分段服务区段生成器用户指南
 topic: ui guide
 description: '区段生成器提供丰富的工作区，允许您与用户档案数据元素交互。 工作区提供用于构建和编辑规则的直观控件，如用于表示数据属性的拖放拼贴。 '
 translation-type: tm+mt
-source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
+source-git-commit: beacce03136e1620ff57fb549f335d2199bb6001
 workflow-type: tm+mt
-source-wordcount: '1723'
+source-wordcount: '1774'
 ht-degree: 0%
 
 ---
@@ -72,6 +72,10 @@ ht-degree: 0%
 要向区段定义添加新规则，请从“字段”选项卡中拖 **[!UICONTROL 动拼贴]** ，并将其放到规则构建器画布上。 然后，将根据要添加的数据类型向您显示上下文特定选项。 可用数据类型包括：字符串、日 [!DNL ExperienceEvents]期、“[!UICONTROL 事件类型]”和受众。
 
 ![](../images/ui/segment-builder/rule-builder-canvas.png)
+
+>[!IMPORTANT]
+>
+>Adobe Experience Platform的最新变化更新了事件和逻辑运 `OR` 算符 `AND` 的使用情况。 这些更新不会影响现有区段。 但是，对现有区段和新区段创建的所有后续更新都将受到这些更改的影响。 请阅读时 [间常量更新](./segment-refactoring.md) ，了解详细信息。
 
 ### 添加受众
 
