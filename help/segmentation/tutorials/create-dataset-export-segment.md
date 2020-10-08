@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 本教程将逐步介绍创建可用于使用受众UI导出Experience Platform段的数据集所需的步骤。
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: fce215edb99cccc8be0109f8743c9e56cace2be0
 workflow-type: tm+mt
 source-wordcount: '756'
 ht-degree: 1%
@@ -78,7 +78,7 @@ UI中的数据集工 [!DNL Experience Platform] 作区允许您视图和管理IM
 
 现在已创建空数据集，您已返回到“数据集 **[!UICONTROL ”工作区]** 的“数据集 **[!UICONTROL 活动]** ”选项卡。 您应当在工作区的左上角看到数据集的名称，并显示通知“尚未添加批次”。 由于尚未向此数据集添加任何批，因此应该设置此值。
 
-在“数据集”工作区的右侧，您将看到“信 **[!UICONTROL 息]** ”选项卡，其中包含与新数据集相关的信息，如数据集ID、名称、描述、表名、模式]、流和源。 “信 **[!UICONTROL 息]** ”选项卡还包括有关数据集创建时间及其上次修改日期的信息。
+在“数据集”工作区的右侧，您将看到“信 **[!UICONTROL 息]** ”选项卡，其中包含与新数据集相关的信息，如数据集ID、名称、描述、表名、模式、流和源。 “信 **[!UICONTROL 息]** ”选项卡还包括有关数据集创建时间及其上次修改日期的信息。
 
 请记下数据集 **[!UICONTROL ID]**，因为完成受众段导出工作流时需要此值。
 
