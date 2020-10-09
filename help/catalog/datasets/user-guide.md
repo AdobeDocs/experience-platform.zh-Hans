@@ -5,7 +5,7 @@ title: 数据集用户指南
 topic: datasets
 description: 本数据集用户指南提供了有关在Adobe Experience Platform用户界面内处理数据集时执行常见操作的说明。
 translation-type: tm+mt
-source-git-commit: eaff457140ba4ac7c25a0f3a3e5aef47d1b99773
+source-git-commit: 79dca07d3e6ecf998a6278fa49178a7fa8cc0e8c
 workflow-type: tm+mt
 source-wordcount: '1162'
 ht-degree: 0%
@@ -62,10 +62,10 @@ ht-degree: 0%
 
 在下一个屏幕中，您将看到以下两个用于创建新数据集的选项：
 
-* [从模式创建数据集](#create-a-dataset-with-an-existing-schema)
-* [通过CSV文件创建数据集](#create-a-dataset-with-a-csv-file)
+* [从模式创建数据集](#schema)
+* [通过CSV文件创建数据集](#csv)
 
-### 使用现有模式创建数据集
+### 使用现有模式创建数据集 {#schema}
 
 在“创 **[!UICONTROL 建数据集]** ”屏幕中，单 **[!UICONTROL 击“从模式创建数据集]** ”以创建新的空数据集。
 
@@ -79,7 +79,7 @@ ht-degree: 0%
 
 ![](../images/datasets/user-guide/configure_dataset_schema.png)
 
-### 使用CSV文件创建数据集
+### 使用CSV文件创建数据集 {#csv}
 
 使用CSV文件创建数据集时，会创建一个专门模式，以为数据集提供与提供的CSV文件匹配的结构。 在“创 **[!UICONTROL 建数据集]** ”屏幕中，单击“从CSV文 **[!UICONTROL 件创建数据集”框]**。
 
