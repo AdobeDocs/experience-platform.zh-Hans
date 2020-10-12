@@ -5,7 +5,7 @@ seo-title: HTTP目标是Adobe实时客户数据平台目标，可帮助您将用
 description: HTTP目标是Adobe实时客户数据平台目标，可帮助您将用户档案数据发送到第三方HTTP端点。
 seo-description: HTTP目标是Adobe实时客户数据平台目标，可帮助您将用户档案数据发送到第三方HTTP端点。
 translation-type: tm+mt
-source-git-commit: cf100e8df225a665eade5ee6ddab071707e93f8b
+source-git-commit: 5a5cbc31c6445f141d41fca5082b666ec3b26510
 workflow-type: tm+mt
 source-wordcount: '572'
 ht-degree: 2%
@@ -23,7 +23,7 @@ ht-degree: 2%
 
 目 [!DNL HTTP] 标是一个流 [!DNL Adobe Real-Time Customer Data Platform] 式目标，可帮助您将用户档案数据发送到第三方端 [!DNL HTTP] 点。
 
-要将用户档案数据发 [!DNL HTTP] 送到端点，您必须先连接到中的目标 [!DNL Adobe Real-Time Customer Data Platform](#connect-destination)。
+要将用户档案数据发 [!DNL HTTP] 送到端点，您必须先连接到中的目标 [[!DNL Adobe Real-Time Customer Data Platform]](#connect-destination)。
 
 ## 用例 {#use-cases}
 
@@ -33,14 +33,15 @@ ht-degree: 2%
 
 ## 连接到目标 {#connect-destination}
 
-1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中 [!DNL  HTTP API]，选 **[!UICONTROL 择并选择“]**&#x200B;配置”。
+1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中 [!DNL HTTP API]，选 **[!UICONTROL 择并选择“]**&#x200B;配置”。
 
    ![激活HTTP目标](assets/activate-http-destination.png)
 
    >[!NOTE]
    >
    >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信]**&#x200B;息，请参 [阅目标工](../destinations/destinations-workspace.md#catalog) 作区文档的“目录”部分。
-   ![激活HTTP目标](assets/connect-http-destination.png)
+   >
+   >![激活HTTP目标](assets/connect-http-destination.png)
 
 2. 在“帐 [!UICONTROL 户] ”步骤中，您需要定义HTTP端点连接详细信息。 选 **[!UICONTROL 择“新]** 建帐户”，然后输入要连接到的HTTP端点的连接详细信息。
    * **[!UICONTROL httpEndpoint]**:要发 [!DNL URL] 送用户档案数据的HTTP端点的完整。
