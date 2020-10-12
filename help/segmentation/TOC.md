@@ -1,23 +1,23 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform分段服务帮助
+user-guide-title: Adobe Experience Platform 分段服务帮助
 breadcrumb-title: Segmentation Service Guide
 user-guide-description: Build segments and generate audiences from your Real-time Customer Profile data.
 translation-type: tm+mt
-source-git-commit: 1bfb876dc1665ebef4450a6f5363fba1ea1b7c61
+source-git-commit: beacce03136e1620ff57fb549f335d2199bb6001
 workflow-type: tm+mt
-source-wordcount: '118'
-ht-degree: 7%
+source-wordcount: '121'
+ht-degree: 17%
 
 ---
 
 
-# Adobe Experience Platform分段服务帮助 {#segmentation}
+# Adobe Experience Platform 分段服务帮助 {#segmentation}
 
 - [概述](home.md)
 - [分段数据类型](data-types.md)
-- 分段API开发人员指南{#api}
+- 分段API开发人员指南 {#api}
    - [概述](api/overview.md)
    - [入门指南](api/getting-started.md)
    - [导出作业](api/export-jobs.md)
@@ -31,6 +31,7 @@ ht-degree: 7%
    - [概述](ui/overview.md)
    - [区段生成器](ui/segment-builder.md)
    - [流细分](ui/streaming-segmentation.md)
+   - [时间约束重构](ui/segment-refactoring.md)
 - [支持退出](honoring-opt-outs.md)
 - [多实体分割](multi-entity-segmentation.md)
 - 用户档案查询语 {#pql}
