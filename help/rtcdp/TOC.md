@@ -2,12 +2,12 @@
 product: adobe experience platform
 audience: user
 user-guide-title: 实时客户数据平台指南
-user-guide-description: Bring together known and anonymous data from multiple enterprise sources to create customer profiles, create audience segments from those profiles, and activate those segments to third-party destinations.
+user-guide-description: 将多个企业来源的已知和匿名数据相结合，以创建客户档案，根据这些档案创建细分受众，并将这些细分激活到第三方目标。
 translation-type: tm+mt
-source-git-commit: e3017744bfe35c6a60cf921121135352a1119bdd
+source-git-commit: ac114a7d0313582c6adf05404e0626c618a13253
 workflow-type: tm+mt
-source-wordcount: '460'
-ht-degree: 12%
+source-wordcount: '489'
+ht-degree: 17%
 
 ---
 
@@ -31,6 +31,7 @@ ht-degree: 12%
       * [目标详细信息页](destinations/destination-details-page.md)
    * 目标目录 {#destinations-cat}
       * [目标目录概述](destinations/destinations-catalog.md)
+      * [HTTP目标](/help/rtcdp/destinations/http-destination.md)
       * Adobe destinations{#adobe-destinations}
          * [Adobe目标概述](destinations/adobe-destinations.md)
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
