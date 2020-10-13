@@ -4,9 +4,9 @@ audience: user
 user-guide-title: 实时客户数据平台指南
 user-guide-description: 将多个企业来源的已知和匿名数据相结合，以创建客户档案，根据这些档案创建细分受众，并将这些细分激活到第三方目标。
 translation-type: tm+mt
-source-git-commit: 797aff558f0f8b818609631792e96be3f6277b62
+source-git-commit: d9e9440bb8a7735aa8a5d24285c1fb56f32733cb
 workflow-type: tm+mt
-source-wordcount: '490'
+source-wordcount: '507'
 ht-degree: 17%
 
 ---
@@ -35,6 +35,7 @@ ht-degree: 17%
       * Adobe destinations{#adobe-destinations}
          * [Adobe目标概述](destinations/adobe-destinations.md)
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
+         * [Experience Platform区段共享(打开Audience Manager文档)](https://docs.adobe.com/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * 广告目标{#advertising-destinations}
          * [广告目标概述](destinations/advertising-destinations.md)
          * [Adobe Advertising Cloud延伸](/help/rtcdp/destinations/adobe-advertising-cloud-extension.md)
@@ -149,4 +150,4 @@ ht-degree: 17%
    * [源概述](sources/sources-overview.md)
    * [通过Adobe启动实施网站标记](sources/launch.md)
 * [Experience Platform发行说明](https://www.adobe.com/go/platform-release-notes-en)
-* [Experience Platform词汇表](https://www.adobe.com/go/platform-glossary-en)
+* [Experience Platform 术语表](https://www.adobe.com/go/platform-glossary-en)
