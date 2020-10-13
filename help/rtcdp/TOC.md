@@ -4,9 +4,9 @@ audience: user
 user-guide-title: 实时客户数据平台指南
 user-guide-description: 将多个企业来源的已知和匿名数据相结合，以创建客户档案，根据这些档案创建细分受众，并将这些细分激活到第三方目标。
 translation-type: tm+mt
-source-git-commit: ac114a7d0313582c6adf05404e0626c618a13253
+source-git-commit: 797aff558f0f8b818609631792e96be3f6277b62
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '490'
 ht-degree: 17%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 17%
       * [目标详细信息页](destinations/destination-details-page.md)
    * 目标目录 {#destinations-cat}
       * [目标目录概述](destinations/destinations-catalog.md)
-      * [HTTP目标](/help/rtcdp/destinations/http-destination.md)
+      * [ (Alpha)HTTP目标](/help/rtcdp/destinations/http-destination.md)
       * Adobe destinations{#adobe-destinations}
          * [Adobe目标概述](destinations/adobe-destinations.md)
          * [Adobe Campaign](destinations/adobe-campaign-destination.md)
