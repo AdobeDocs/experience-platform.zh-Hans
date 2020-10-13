@@ -1,13 +1,13 @@
 ---
-keywords: destinations;experience cloud solutions; target;target destination; ad cloud; audience manager; audience manager destination
+keywords: destinations;experience cloud solutions; target;target destination; ad cloud; advertising cloud; audience manager; adobe target destination; target; audience manager destination;
 title: Adobe目标
 seo-title: Adobe目标
 description: 通过将Adobe实时CDP中的数据与Adobe Experience Cloud的其他广告定位、个性化、营销自动化等解决方案连接起来，管理客户体验
 seo-description: 通过将Adobe实时CDP中的数据与Adobe Experience Cloud的其他广告定位、个性化、营销自动化等解决方案连接起来，管理客户体验
 translation-type: tm+mt
-source-git-commit: d1b87d696e113d229d69059a3a0f1b7786fa5add
+source-git-commit: e3e01474fcd6874f50b929116eff5bdfd4298f22
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '228'
 ht-degree: 13%
 
 ---
@@ -43,4 +43,4 @@ ht-degree: 13%
 
 使用Experience Platform细分共享功能，将Experience Platform细分共享到其他Adobe目标。 有关更多信息，请参阅以下页面(在Audience Manager文档门户中打开):
 
-* [Experience Platform细分通过核心服务集成与Adobe Audience Manager、Ad Cloud和目标共享](https://docs.adobe.com/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+* [通过集成核心服务与Adobe Audience Manager、Adobe Advertising Cloud和Adobe Target分享Experience Platform细分](https://docs.adobe.com/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
