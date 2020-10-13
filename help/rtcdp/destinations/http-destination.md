@@ -5,7 +5,7 @@ seo-title: HTTP目标是Adobe实时客户数据平台目标，可帮助您将用
 description: HTTP目标是Adobe实时客户数据平台目标，可帮助您将用户档案数据发送到第三方HTTP端点。
 seo-description: HTTP目标是Adobe实时客户数据平台目标，可帮助您将用户档案数据发送到第三方HTTP端点。
 translation-type: tm+mt
-source-git-commit: 5a5cbc31c6445f141d41fca5082b666ec3b26510
+source-git-commit: f4840f028bb855e79c0f2ae5c82bc38906a7aaec
 workflow-type: tm+mt
 source-wordcount: '572'
 ht-degree: 2%
