@@ -5,9 +5,9 @@ seo-title: 目标类型和类别
 description: '在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到几种类型的目标。 '
 seo-description: 在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到几种类型的目标。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: b510f715133cc3fed98861f977b3ce9a857a5ced
 workflow-type: tm+mt
-source-wordcount: '587'
+source-wordcount: '580'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 <br> 
 
-### 连接
+### 连接 {#connections}
 
 **[!UICONTROL 用户档案导出]****[!UICONTROL 和细分导出目标Adobe实时客户数据平台捕获事件数据，将其与其他数据源相结合，形成实时]** 客户用户档案 [](/help/profile/home.md)，应用细分并将细分和合格用户档案导出到目标。
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 #### 区段导出目标
 
-区段导出目标会将用户档案及其符合条件的区段发送到目标平台。 这些目标使用区段ID或用户ID。[[!DNL Google Display & Video 360]](/help/rtcdp/destinations/google-dv360-destination.md) 或 [[!DNL Google Ads]](/help/rtcdp/destinations/google-ads-destination.md) 广告目标是这些类型目标的示例。
+区段导出目标会将用户档案及其符合条件的区段发送到目标平台。 这些目标使用区段ID或用户ID。 广告目标， [[!DNL Google Display & Video 360]](/help/rtcdp/destinations/google-dv360-destination.md) 如 [[!DNL Google Ads]](/help/rtcdp/destinations/google-ads-destination.md) 或是这些类型的目标。
 
 #### 用户档案导出和细分导出目标——视频概述
 
@@ -47,7 +47,7 @@ ht-degree: 0%
 
 <br> 
 
-### 扩展
+### 扩展 {#extensions}
 
 Adobe实时CDP利用Experience Platform Launch的强大功能和灵活性将Launch扩展包括在Adobe实时CDP界面中。
 
