@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: 本教程使用Flow Service API指导您完成将平台连接到Salesforce帐户以收集CRM数据的步骤。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: d332226541685108b58d88096146ed6048606774
 workflow-type: tm+mt
-source-wordcount: '707'
+source-wordcount: '701'
 ht-degree: 1%
 
 ---
@@ -145,11 +145,9 @@ curl -X GET \
 }
 ```
 
-## 创建基本连接
+## 为API创建连接
 
-基本连接指定源并包含该源的凭据。 每个帐户只需要一个基 [!DNL Salesforce] 本连接，因为它可用于创建多个源连接器以导入不同的数据。
-
-执行以下POST请求以创建基本连接。
+API连接指定源并包含该源的凭据。 每个帐户只需要一个API连接， [!DNL Salesforce] 因为它可用于创建多个源连接器以导入不同的数据。
 
 **API格式**
 
@@ -161,7 +159,7 @@ POST /connections
 
 ```shell
 curl -X POST \
-    'http://platform.adobe.io/data/foundation/flowservice/connections' \
+    'https://platform.adobe.io/data/foundation/flowservice/connections' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -205,4 +203,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过本教程，您已使用API为您的帐 [!DNL Salesforce] 户创建了基本连接，并且作为响应主体的一部分获得了唯一ID。 在下一个教程中，您可以使用此基本连接ID，因为您将学习 [如何使用流服务API浏览CRM系统](../../explore/crm.md)。
+通过本教程，您已使用API为您的 [!DNL Salesforce] 帐户创建了连接，并且作为响应主体的一部分获得了唯一ID。 在下一个教程中，您可以使用此连接ID，因为您将学 [习如何使用流服务API浏览CRM系统](../../explore/crm.md)。
