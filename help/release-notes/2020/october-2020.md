@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: October, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 43ceda3d95511c3972fd0588f472c6c412dd95bf
+source-git-commit: fc1174c8435c1afc3c58dd748daf89f387a19980
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '591'
 ht-degree: 6%
 
 ---
@@ -19,6 +19,7 @@ ht-degree: 6%
 
 - [数据准备](#data-prep)
 - [实时客户资料](#profile)
+- [分段服务](#segmentation)
 - [源](#sources)
 
 ## 数据准备 {#data-prep}
@@ -44,6 +45,20 @@ Adobe Experience Platform使您能够为客户提供协调、一致和相关的�
 | 合并模式视图更新 | 在Experience PlatformUI中，用户可以更轻松地找到有关所有模式和对合并模式有贡献的数据集的信息，以及表面关键属性，如标识和关系字段。 这些更新改进了对用户档案正确配置、身份正确拼接和数据成功摄取进行故障诊断和验证的能力。 |
 
 有关更多信息( [!DNL Real-time Customer Profile]包括有关使用数据的教程和最 [!DNL Profile] 佳实践)，请阅 [读实时客户用户档案概述](../../profile/home.md)。
+
+## 分段服务 {#segmentation}
+
+Adobe Experience Platform分段服务提供用户界面和RESTful API，使您能够构建细分并根据数据生成 [!DNL Real-time Customer Profile] 受众。 这些细分集中配置并维护， [!DNL Platform]使任何Adobe应用程序都能轻松访问它们。
+
+[!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准，定义特定的用户档案子集。 细分可以基于记录数据（如人口统计信息）或表示客户与您品牌互动的时间序列事件。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 删除流分段限制 | 已删除回顾周期的七天限制。 |
+
+有关的详细信 [!DNL Segmentation Service]息，请参阅分 [段概述](../../segmentation/home.md)
 
 ## 源 {#sources}
 
