@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 本教程使用Flow Service API指导您完成将Azure文件存储连接到Experience Platform的步骤。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: d332226541685108b58d88096146ed6048606774
 workflow-type: tm+mt
 source-wordcount: '573'
 ht-degree: 2%
@@ -79,7 +79,6 @@ POST /connections
 **请求**
 
 以下请求将创建由 [!DNL Azure File Storage] 有效负荷中提供的属性配置的新连接：
-
 
 ```shell
 curl -X POST \
