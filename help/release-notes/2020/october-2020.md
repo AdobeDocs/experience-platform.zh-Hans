@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: October, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: ab87cac94ae69acde3be75ae95b11cf003a274e9
+source-git-commit: bf4271cec6126de3b5d9f98df280afdcc798589d
 workflow-type: tm+mt
-source-wordcount: '281'
-ht-degree: 7%
+source-wordcount: '478'
+ht-degree: 6%
 
 ---
 
@@ -18,6 +18,7 @@ ht-degree: 7%
 **发布日期：2020年10月**
 
 - [数据准备](#data-prep)
+- [实时客户资料](#profile)
 - [源](#sources)
 
 ## 数据准备 {#data-prep}
@@ -32,6 +33,17 @@ ht-degree: 7%
 | `get_values` 函数 | 函 `get_values` 数允许您从输入图获取任何给定键的值。 |
 
 有关详细信息，请阅读数 [据准备概述](../../data-prep/home.md)。
+
+## 实时客户资料 {#profile}
+
+Adobe Experience Platform使您能够为客户提供协调、一致和相关的体验，无论客户在何处或何时与您的品牌互动。 您 [!DNL Real-time Customer Profile]可以看到每个客户的整体视图，该渠道组合了多个的数据，包括在线、离线、CRM和第三方数据。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供一个具有可操作性、时间戳记的帐户。
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 用户档案预览API增加 | 用户档案预览API(`/previewsamplestatus`)现在包括在您的IMS组织中视图用户档案片段总数的细分，以及在身份命名空间中视图用户档案片段的分布。 |
+| 合并模式视图更新 | 在Experience PlatformUI中，用户可以更轻松地找到有关所有模式和对合并模式有贡献的数据集的信息，以及表面关键属性，如标识和关系字段。 这些更新改进了对用户档案正确配置、身份正确拼接和数据成功摄取进行故障诊断和验证的能力。 |
+
+有关更多信息( [!DNL Real-time Customer Profile]包括有关使用数据的教程和最 [!DNL Profile] 佳实践)，请阅 [读实时客户用户档案概述](../../profile/home.md)。
 
 ## 源 {#sources}
 
