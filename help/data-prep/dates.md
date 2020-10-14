@@ -5,9 +5,9 @@ title: 日期函数
 topic: overview
 description: 本文档介绍了数据准备中使用的日期功能。
 translation-type: tm+mt
-source-git-commit: db38f0666f5c945461043ad08939ebda52c21855
+source-git-commit: 1f9833c06a3423c334edb8aa7e441adfd74be0f2
 workflow-type: tm+mt
-source-wordcount: '389'
+source-wordcount: '384'
 ht-degree: 17%
 
 ---
@@ -80,4 +80,4 @@ ht-degree: 17%
 
 **示例**
 
-表达式 `date(orderDate, 'yyyy-MM-dd')` 将orderDate（如果其值为“2020年12月31日”）转换为值为“2020-12-31”的日期时间。
+表达式 `date(orderDate, 'yyyy-MM-dd')` 会将值 `orderDate` “2020年12月31日”转换为日期时间值“2020-12-31”。
