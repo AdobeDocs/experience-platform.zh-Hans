@@ -5,9 +5,9 @@ title: SQL语法
 topic: syntax
 description: 此文档显示查询服务支持的SQL语法。
 translation-type: tm+mt
-source-git-commit: 2672d0bdf1f34deb715415e7b660a35076edb06b
+source-git-commit: 43bebfbe0c0fca57d6e1ed0116e317b03125f175
 workflow-type: tm+mt
-source-wordcount: '2004'
+source-wordcount: '2067'
 ht-degree: 1%
 
 ---
@@ -482,3 +482,47 @@ where 'format_name' is be one of:
 >[!NOTE]
 >
 >完整的输出路径将 `adl://<ADLS_URI>/users/<USER_ID>/acp_foundation_queryService/folder_location/<QUERY_ID>`
+
+
+### ALTER
+
+此命令有助于向表添加或删除主键或外键约束。
+
+```sql
+Alter TABLE table_name ADD ( column_name Primary key Namespace 'namespace')
+
+Alter TABLE table_name ADD ( column_name Foreign key references referenced_table_name Namespace 'namespace')
+
+Alter TABLE table_name DROP ( column_name Primary key)
+
+Alter TABLE table_name DROP ( column_name Foreign key)
+```
+
+>[!NOTE]
+>表模式应是唯一的，并且不在多个表之间共享。 此外，命名空间是强制的。
+
+
+### 显示主键
+
+此命令列表给定数据库的所有主键约束。
+
+```sql
+SHOW PRIMARY KEYS
+    tableName | columnName    | datatype | namespace
+------------------+----------------------+----------+-----------
+ table_name_1 | column_name1  | text     | "ECID"
+ table_name_2 | column_name2  | text     | "AAID"
+```
+
+
+### 显示外键
+
+此命令列表给定数据库的所有外键约束。
+
+```sql
+SHOW FOREIGN KEYS
+    tableName   |     columnName      | datatype | referencedTableName | referencedColumnName | namespace 
+------------------+---------------------+----------+---------------------+----------------------+-----------
+ table_name_1   | column_name1        | text     | table_name_3        | column_name3         |  "ECID"
+ table_name_2   | column_name2        | text     | table_name_4        | column_name4         |  "AAID"
+```
