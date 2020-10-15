@@ -1,13 +1,13 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: 实时客户用户档案指南
-user-guide-description: Merge customer data to create a unified view of customer interactions across channels.
+user-guide-title: Real-time Customer Profile 指南
+user-guide-description: 合并客户视图，跨渠道创建统一的客户互动视图。
 translation-type: tm+mt
 source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
 workflow-type: tm+mt
-source-wordcount: '89'
-ht-degree: 16%
+source-wordcount: '96'
+ht-degree: 33%
 
 ---
 
@@ -21,10 +21,10 @@ ht-degree: 16%
    * [入门指南](api/getting-started.md)
    * [(Alpha)计算属性](api/computed-attributes.md)
    * [边缘投影](api/edge-projections.md)
-   * [实体([!DNL用户档案]访问)](api/entities.md)
-   * [导出作业([!DNL用户档案]导出)](api/export-jobs.md)
+   * [实体([!DNL Profile] 访问)](api/entities.md)
+   * [导出作业([!DNL Profile] 导出)](api/export-jobs.md)
    * [合并策略](api/merge-policies.md)
-   * [预览示例状态([!DNL用户档案]预览)](api/preview-sample-status.md)
+   * [预览示例状态([!DNL Profile] 预览)](api/preview-sample-status.md)
    * [[!DNL Profile] 系统作业（删除请求）](api/profile-system-jobs.md)
 * UI指南 {#ui}
    * [[!DNL Profile] 用户指南](ui/user-guide.md)
