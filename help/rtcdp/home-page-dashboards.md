@@ -2,13 +2,13 @@
 keywords: metrics overview; rtcdp metrics overview
 title: 实时客户数据平台主页和仪表板
 seo-title: 实时客户数据平台主页和仪表板
-description: 仪表板、主页和Adobe Experience Platform的首次用户体验
-seo-description: 仪表板、主页和Adobe Experience Platform的首次用户体验
+description: 仪表板、主页和 Adobe Experience Platform 的首次用户体验
+seo-description: 仪表板、主页和 Adobe Experience Platform 的首次用户体验
 translation-type: tm+mt
 source-git-commit: 98d3792f50f2ab95b86d162c51af9445f06343b5
 workflow-type: tm+mt
 source-wordcount: '634'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
