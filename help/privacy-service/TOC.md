@@ -1,14 +1,14 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform Privacy Service帮助
-breadcrumb-title: Privacy Service Guide
-user-guide-description: Manage customer data requests to comply with legal privacy regulations like GDPR and CCPA.
+user-guide-title: Adobe Experience Platform Privacy Service 帮助
+breadcrumb-title: Privacy Service 指南
+user-guide-description: 管理客户数据请求以遵守 GDPR 和 CCPA 等法律隐私法规。
 translation-type: tm+mt
 source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
 workflow-type: tm+mt
-source-wordcount: '87'
-ht-degree: 9%
+source-wordcount: '104'
+ht-degree: 29%
 
 ---
 
