@@ -2,13 +2,13 @@
 keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp;rtcdp
 title: Adobe实时客户数据平台入门
 seo-title: Adobe实时客户数据平台入门
-description: Adobe实时客户数据平台的示例方案
-seo-description: Adobe实时客户数据平台的示例方案
+description: Adobe 实时客户数据平台的示例情景
+seo-description: Adobe 实时客户数据平台的示例情景
 translation-type: tm+mt
 source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '2326'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
