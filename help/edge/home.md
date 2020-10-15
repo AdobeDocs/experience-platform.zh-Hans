@@ -5,9 +5,9 @@ description: 了解Adobe Experience PlatformWeb SDK是什么以及如何使用�
 seo-description: 允许Adobe Experience Cloud的客户与该Experience Cloud的各种服务进行交互。
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;edge;Visitor.js;AppMeasurement.js;AT.js;DIL.js;web sdk;SDK;web SDK;Launch;launch
 translation-type: tm+mt
-source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
+source-git-commit: db742119d8f169817080f1fd4e0dc08a0f0faa47
 workflow-type: tm+mt
-source-wordcount: '702'
+source-wordcount: '708'
 ht-degree: 2%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 2%
 
 # 什么是Adobe Experience PlatformWeb SDK
 
-Adobe Experience PlatformWeb SDK是客户端JavaScript库，它允许Adobe Experience Cloud的客户通过Adobe与各种服务 [!DNL Experience Cloud] 进行交互 [!DNL Experience Platform Edge Network]。 除了JavaScript库，还有一个Launch扩 [展](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/aep-extension/overview.html) ，可帮助您进行Web SDK配置。
+Adobe Experience PlatformWeb SDK是客户端JavaScript库，它允许Adobe Experience Cloud的客户通过Adobe与各种服务 [!DNL Experience Cloud] 进行交互 [!DNL Experience Platform Edge Network]。 除了JavaScript库，还有一个Experience Platform Launch扩 [展](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/aep-extension/overview.html) ，可帮助您配置Web SDK。
 
 ## Experience Edge
 
 [!DNL Adobe Experience Platform Web SDK] 是组成Experience Edge的集合的一部分。 Experience Edge包含三种技术：
 
-* **[!DNL Adobe Experience Platform Web SDK]:** 可大幅简化部署 [!DNL Launch] 技术的JavaScript SDK和扩 [!DNL Adobe] 展
+* **[!DNL Adobe Experience Platform Web SDK]:** 可大幅简化部署 [!DNL Experience Platform Launch] 技术的JavaScript SDK和扩 [!DNL Adobe] 展
 * **Adobe Experience Platform移动SDK:** v5移动SDK的扩展，允许客户使用新的部署方法
 * **[!DNL Adobe Experience Platform Edge Network]:** 支持部署产品的新方法的全球分布式服务器网 [!DNL Adobe] 络
 
@@ -65,7 +65,7 @@ Adobe Experience PlatformWeb SDK取代了以下SDK:
 
 ## 入门指南
 
-我们强烈建议您 [查看我们的入门指南](getting-started/quick-start-with-launch.md) ，快速学习如何开始使用Adobe启动。
+强烈建议您查阅入 [门指南](consent/iab-tcf/with-launch.md) ，快速学习如何使用Adobe Experience Platform Launch。
 
 本产品不断发展和增长，以支持越来越多的用例。 为了跟上最新的步伐，请查看我们支持 [的使用案例展示板](https://github.com/adobe/alloy/projects/5)。 我们会根据我们目前支持的使用案例以及我们正在努力帮助您做出最佳决策的案例，不断更新这些案例。
 
