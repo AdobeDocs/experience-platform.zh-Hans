@@ -1,14 +1,14 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform帮助中的沙箱
-breadcrumb-title: Sandoxes Guide
-user-guide-description: Partition a Platform instance into virtual environments for development, testing, and application deployment.
+user-guide-title: Adobe Experience Platform 中的沙盒帮助
+breadcrumb-title: Sandoxes 指南
+user-guide-description: 将平台实例分区为虚拟环境，以便进行开发、测试和应用程序部署。
 translation-type: tm+mt
 source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
 workflow-type: tm+mt
-source-wordcount: '71'
-ht-degree: 4%
+source-wordcount: '86'
+ht-degree: 27%
 
 ---
 
