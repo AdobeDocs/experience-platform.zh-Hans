@@ -1,14 +1,14 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: 访问控制在Adobe Experience Platform帮助中
-breadcrumb-title: Access Control Guide
-user-guide-description: Leverage product profiles in Adobe Admin Console to link users with permissions and sandboxes.
+user-guide-title: Adobe Experience Platform 中的访问控制帮助
+breadcrumb-title: Access Control 指南
+user-guide-description: 利用 Adobe Admin Console 中的产品配置文件将用户与权限和沙盒关联起来。
 translation-type: tm+mt
 source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
 workflow-type: tm+mt
-source-wordcount: '82'
-ht-degree: 14%
+source-wordcount: '99'
+ht-degree: 36%
 
 ---
 
