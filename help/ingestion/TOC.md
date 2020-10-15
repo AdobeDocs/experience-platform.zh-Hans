@@ -1,19 +1,19 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform数据获取帮助
-breadcrumb-title: Data Ingestion Guide
-user-guide-description: Bring your data into Platform through batch or streaming ingestion.
+user-guide-title: Adobe Experience Platform 数据提取帮助
+breadcrumb-title: Data Ingestion 指南
+user-guide-description: 通过批处理或流式获取将数据引入平台。
 translation-type: tm+mt
 source-git-commit: da0c65b5afc19e2497816c4b84270f5f5c4617f2
 workflow-type: tm+mt
-source-wordcount: '111'
-ht-degree: 5%
+source-wordcount: '124'
+ht-degree: 20%
 
 ---
 
 
-# Adobe Experience Platform数据摄取 {#ingestion}
+# Adobe Experience Platform Data Ingestion {#ingestion}
 
 - [数据摄取概述](home.md)
 - 流摄取 {#streaming}
