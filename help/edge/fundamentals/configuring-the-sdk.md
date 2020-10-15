@@ -5,7 +5,7 @@ description: 了解如何配置Experience PlatformWeb SDK
 seo-description: 了解如何配置Experience PlatformWeb SDK
 keywords: configuring;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehidingStyle;opacity;cookieDestinationsEnabled;urlDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 233bbd33e3d1e89ff67a9daa00372732934ac573
 workflow-type: tm+mt
 source-wordcount: '749'
 ht-degree: 11%
@@ -46,7 +46,7 @@ alloy("configure", {
 | ---------------- | ------------ | -------------------------------------------------- |
 | 字符串数组 | 否 | `["web", "device", "environment", "placeContext"]` |
 
-指示要自动收集的上下文类别，如自 [动信息中所述](../reference/automatic-information.md)。  如果未指定此配置，则默认情况下将使用所有类别。
+指示要自动收集的上下文类别，如自 [动信息中所述](../data-collection/automatic-information.md)。  如果未指定此配置，则默认情况下将使用所有类别。
 
 ### `debugEnabled`
 
@@ -109,7 +109,7 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 | -------- | ------------ | ----------------- |
 | 对象 | 否 | `"in"` |
 
-设置用户的默认同意。 当尚未为用户保存同意首选项时，将使用此选项。 另一个有效值是 `"pending"`。 设置此项后，工作将排队，直到用户提供同意首选项。 提供用户首选项后，工作将根据用户的首选项继续或中止。 有关详 [细信息](supporting-consent.md) ，请参阅支持同意。
+设置用户的默认同意。 当尚未为用户保存同意首选项时，将使用此选项。 另一个有效值是 `"pending"`。 设置此项后，工作将排队，直到用户提供同意首选项。 提供用户首选项后，工作将根据用户的首选项继续或中止。 有关详 [细信息](../consent/supporting-consent.md) ，请参阅支持同意。
 
 ## 个性化选项
 
