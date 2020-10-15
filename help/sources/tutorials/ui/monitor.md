@@ -6,9 +6,9 @@ title: 监视帐户和数据流
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 2514c282d16a1b6ddb2232e46e6283ab2ab3d356
 workflow-type: tm+mt
-source-wordcount: '1097'
+source-wordcount: '1103'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 - [[!DNL Experience Data Model] (XDM)系统](../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    - [模式合成基础](../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    - [模式编辑器教程](../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-- [[!DNL实时客户用户档案]](../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [[!DNL Real-time Customer Profile]](../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 ## 监视帐户
 
@@ -54,6 +54,10 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 ![](../../images/tutorials/monitor/click-edit.png)
 
 此时将 **[!UICONTROL 显示“编辑帐户]** ”详细信息模式。 在此页中，您可以更新现有帐户详细信息和身份验证凭据。
+
+>[!NOTE]
+>
+> 所有批源连接器都提供编辑帐户详细信息。
 
 ![](../../images/tutorials/monitor/edit-account.png)
 
