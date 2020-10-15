@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时客户数据平台中的IAB TCF 2.0支持
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
+source-git-commit: b24c624df188be3cbe7f71dcdf8a23d2478c287c
 workflow-type: tm+mt
 source-wordcount: '2388'
 ht-degree: 1%
@@ -42,7 +42,7 @@ ht-degree: 1%
 * [Adobe Experience Platform身份服务](../../../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
 * [实时客户用户档案](../../../profile/home.md):利 [!DNL Identity Service] 用数据集实时创建详细的客户用户档案。 [!DNL Real-time Customer Profile] 从Data Lake中提取数据，并将客户用户档案保留在其自己的单独数据存储中。
 * [Adobe Experience PlatformWeb SDK](../../../edge/home.md):客户端JavaScript库，允许您将各种服务集 [!DNL Platform] 成到面向客户的网站中。
-   * [SDK同意命令](../../../edge/fundamentals/supporting-consent.md):本指南中所示的同意相关SDK命令的用例概述。
+   * [SDK同意命令](../../../edge/consent/supporting-consent.md):本指南中所示的同意相关SDK命令的用例概述。
 * [Adobe Experience Platform细分服务](../../../segmentation/home.md):允许您将数据分 [!DNL Real-time Customer Profile] 为具有相似特征并将对营销策略做出类似响应的个人组。
 
 除了上面列 [!DNL Platform] 出的服务，您还应熟悉目 [的地](../../destinations/destinations-overview.md) 及其使用情况 [!DNL Real-time CDP]。
