@@ -5,9 +5,9 @@ description: 了解如何切换Experience PlatformWeb SDK调试
 seo-description: 了解如何切换Experience PlatformWeb SDK调试
 keywords: debugging web sdk;debugging;configure;configure command;debug command;edgeConfigId;setDebug;debugEnabled;debug;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: e21374eb51ec1d572f6a4973d33cadf9ae17969b
 workflow-type: tm+mt
-source-wordcount: '324'
+source-wordcount: '384'
 ht-degree: 0%
 
 ---
@@ -68,3 +68,17 @@ http://example.com/?alloy_debug=true
 * 会话结束
 * 您运行命 `debug` 令
 * 您再次设置查询字符串参数
+
+## 检索库信息
+
+访问加载到网站的库后的一些详细信息通常很有帮助。 要执行此操作，请按 `getLibraryInfo` 如下方式执行命令：
+
+```js
+alloy("getLibraryInfo").then(function(libraryInfo) {
+  console.log(libraryInfo.version);
+});
+```
+
+当前，提供的 `libraryInfo` 对象包含以下属性：
+
+* `version` 这是加载库的版本。 例如，如果要加载的库版本为1.0.0，则该值将为 `1.0.0`。
