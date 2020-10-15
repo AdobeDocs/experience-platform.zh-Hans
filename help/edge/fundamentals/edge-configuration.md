@@ -5,9 +5,9 @@ description: '了解如何配置Experience Platform边缘网络。 '
 seo-description: '了解如何配置Experience Platform边缘网络。 '
 keywords: configuration;edge;edge configuration id;Environment Settings;edgeConfigId;identity;id sync enabled;ID Sync Container ID;Sandbox;Streaming Inlet;Event Dataset;target;client code;Property Token;Target Environment ID;Cookie Destinations;url Destinations;Analytics Settings Blockreport suite id;
 translation-type: tm+mt
-source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
+source-git-commit: d069b3007265406367ca9de2b85540b2a070cf36
 workflow-type: tm+mt
-source-wordcount: '870'
+source-wordcount: '891'
 ht-degree: 2%
 
 ---
@@ -17,21 +17,23 @@ ht-degree: 2%
 
 Adobe Experience Platform的配置 [!DNL Web SDK] 分为两个部分。 SDK [中的](configuring-the-sdk.md) configure命令控制必须在客户端处理的事项，如 `edgeDomain`。 边缘配置处理SDK的所有其他配置。 向Adobe Experience Platform发送请求时， [!DNL Edge Network]将使 `edgeConfigId` 用该请求引用服务器端配置。 这样，您无需在网站上更改代码即可更新配置。
 
+您的组织必须配置此功能。 请联系您的认证软件经理(CSM)，开始允许列表。
+
 ## 创建边缘配置ID
 
-可使用边缘配置工具在Adobe [!DNL Launch] 中创建边缘配置ID。 此工具允许您创建边缘配置以及这些配置中的环境。
+可使用边缘配置工具在Adobe [!DNL Experience Platform Launch] 中创建边缘配置ID。 此工具允许您创建边缘配置以及这些配置中的环境。
 
 ![边缘配置工具导航](../../assets/edge_configuration_nav.png)
 
 >[!NOTE]
 >
->无论客户是否使用标签管理器，允许列表上的客户都可 [!DNL Launch] 以使用边缘配置工具。 此外，用户需要中的“开发”权 [!DNL Launch]限。 有关更多 [详细信息](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/user-permissions.html) ，请参 [!DNL Launch] 阅文档中的“用户权限”文章。
+>无论客户是否使用标签管理器，允许列表上的客户都可 [!DNL Experience Platform Launch] 以使用边缘配置工具。 此外，用户需要中的“开发”权 [!DNL Experience Platform Launch]限。 有关更多 [详细信息](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/user-permissions.html) ，请参 [!DNL Experience Platform Launch] 阅文档中的“用户权限”文章。
 
 单击屏幕右上方区域的“ **[!UICONTROL 新建边缘配置]** ”可创建边缘配置。 提供名称和说明后，系统会要求您为每个环境提供默认设置。
 
 ### 默认环境设置
 
-这些默认设置用于创建设置相同的前三个环境。 这三个环境 *是* dev *、* stage *和* prod。 它们与中的三个默认环境匹 [!DNL Launch]配。 在为开发环境 [!DNL Launch] 构建库时，库会自动使用配置中的开发环境。 您可以根据自己的喜好在各个环境中编辑设置。
+这些默认设置用于创建设置相同的前三个环境。 这三个环境 *是* dev *、* stage *和* prod。 它们与中的三个默认环境匹 [!DNL Experience Platform Launch]配。 在为开发环境 [!DNL Experience Platform Launch] 构建库时，库会自动使用配置中的开发环境。 您可以根据自己的喜好在各个环境中编辑设置。
 
 SDK中使用的ID，作为 `edgeConfigId` 一个指定配置和环境的复合ID。 如果没有环境，则使用生产环境。
 
@@ -113,7 +115,7 @@ Adobe建议对每个配置、 `dev`和边 `stage`缘配置 `prod` 环境进行�
 
 #### Adobe Analytics
 
-控制数据是否发送到Adobe Analytics。 更多详细信息请参 [阅分析概述](../solution-specific/analytics/analytics-overview.md)。
+控制数据是否发送到Adobe Analytics。 更多详细信息请参 [阅分析概述](../data-collection/adobe-analytics/analytics-overview.md)。
 
 ![Adobe Analytics设置块](../../assets/edge_configuration_aa.png)
 
