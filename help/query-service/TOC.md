@@ -1,14 +1,14 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform查询服务帮助
-breadcrumb-title: Query Service Guide
-user-guide-description: Use standard SQL to query data in Platform Data Lake.
+user-guide-title: Adobe Experience Platform 查询服务帮助
+breadcrumb-title: Query Service 指南
+user-guide-description: 使用标准 SQL 在 Platform Data Lake 中查询数据。
 translation-type: tm+mt
 source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
 workflow-type: tm+mt
-source-wordcount: '134'
-ht-degree: 5%
+source-wordcount: '147'
+ht-degree: 18%
 
 ---
 
