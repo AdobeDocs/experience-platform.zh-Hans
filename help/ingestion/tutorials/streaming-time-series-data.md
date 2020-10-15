@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform数据摄取服务API的一部分。
 translation-type: tm+mt
-source-git-commit: fce215edb99cccc8be0109f8743c9e56cace2be0
+source-git-commit: e94272bf9a18595a4efd0742103569a26e4be415
 workflow-type: tm+mt
-source-wordcount: '1163'
+source-wordcount: '1215'
 ht-degree: 2%
 
 ---
@@ -22,8 +22,8 @@ ht-degree: 2%
 
 本教程需要对Adobe Experience Platform各项服务有一定的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织体验数据 [!DNL Platform] 的标准化框架。
-- [[!DNL实时客户用户档案]](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织体验数据 [!DNL Platform] 的标准化框架。
+- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
 - [模式注册开发人员指南](../../xdm/api/getting-started.md):全面的指南，涵盖API的每个可用端点 [!DNL Schema Registry] 以及如何向它们发出调用。 这包括了解您 `{TENANT_ID}`在本教程中的调用，以及了解如何创建模式，该数据用于创建用于摄取的数据集。
 
 此外，本教程要求您已创建流连接。 有关创建流连接的详细信息，请阅读创 [建流连接教程](./create-streaming-connection.md)。
@@ -101,7 +101,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 | -------- | ----------- |
 | `title` | 要用于模式的名称。 此名称必须唯一。 |
 | `description` | 您正在创建的模式的有意义描述。 |
-| `meta:immutableTags` | 在本例中，标 `union` 签用于将您的数据 [保留到[!DNL实时客户用户档案]](../../profile/home.md)。 |
+| `meta:immutableTags` | 在本例中，标 `union` 签用于将数据保留到 [[!DNL Real-time Customer Profile]](../../profile/home.md)。 |
 
 **响应**
 
@@ -312,10 +312,13 @@ POST /collection/{CONNECTION_ID}?synchronousValidation=true
 
 **请求**
 
+将时间序列数据引入流连接可以使用或不使用源名称。
+
+以下示例请求将缺少源名称的时间序列数据引入平台。 如果数据缺少源名称，它将从流连接定义添加源ID。
+
 >[!NOTE]
 >
 >您需要生成自己的和 `xdmEntity._id` 产 `xdmEntity.timestamp`品。 生成ID的一个好方法是使用UUID。 此外，以下API调用不 **需要** 任何身份验证头。
-
 
 ```shell
 curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValidation=true \
@@ -380,6 +383,22 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
 }'
 ```
 
+如果要包含源名称，以下示例将显示如何包含它。
+
+```json
+    "header": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
+        },
+        "imsOrgId": "{IMS_ORG}",
+        "datasetId": "{DATASET_ID}",
+        "source": {
+            "name": "Sample source name"
+        }
+    }
+```
+
 **响应**
 
 成功的响应会返回HTTP状态200，其中包含新流的详细信息 [!DNL Profile]。
@@ -404,7 +423,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
 
 ## 检索新摄取的时间序列数据
 
-要验证之前摄取的记录，可 [以使用[!DNL用户档案访问API]](../../profile/api/entities.md) 检索时间序列数据。 这可以使用对端点的GET请求和 `/access/entities` 可选的查询参数来完成。 可以使用多个参数，用和号(&amp;)分隔。”
+要验证以前摄取的记录，您可以使用 [[!DNL Profile Access API]](../../profile/api/entities.md) 检索时间序列数据。 这可以使用对端点的GET请求和 `/access/entities` 可选的查询参数来完成。 可以使用多个参数，用和号(&amp;)分隔。”
 
 >[!NOTE]
 >
