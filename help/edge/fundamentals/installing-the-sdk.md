@@ -5,9 +5,9 @@ description: 了解如何安装Experience PlatformWeb SDK
 seo-description: 了解如何安装Experience PlatformWeb SDK
 keywords: web sdk installation;installing web sdk;internet explorer;promise;
 translation-type: tm+mt
-source-git-commit: 7aa0e654300f10db774794d66ece9d0d040cb2ba
+source-git-commit: 5ef902ef7f7717121744f7f0074c0aa17e5a9e9a
 workflow-type: tm+mt
-source-wordcount: '623'
+source-wordcount: '626'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 
 # 安装SDK {#installing-the-sdk}
 
-使用Adobe Experience PlatformWeb SDK的首选方式是通过 [Launch](http://launch.adobe.com/)。 在扩展 `AEP Web SDK` 目录中搜索，安装，然后配置扩展。
+使用Adobe Experience PlatformWeb SDK的首选方式是通过 [Adobe Experience Platform Launch](http://launch.adobe.com/)。 在扩展 `AEP Web SDK` 目录中搜索，安装，然后配置扩展。
 
 CDN中也提供AEP Web SDK，供您使用。 您可以引用此文件或下载此文件并在自己的基础架构上托管它。 它提供微型和非微型版本。 非精简版本有助于进行调试。
 
