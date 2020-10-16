@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform概述
 user-guide-description: 了解 Experience Platform 如何让客户能够实时提供个性化体验。
 translation-type: tm+mt
-source-git-commit: e36a6be43bffa90ce707933c5f9407fade0b6474
+source-git-commit: 36707e95a63b6be60d1d7badbe1cdc9d0bc3548c
 workflow-type: tm+mt
 source-wordcount: '402'
-ht-degree: 42%
+ht-degree: 44%
 
 ---
 
@@ -26,13 +26,13 @@ ht-degree: 42%
    * [角色和项目阶段（视频）](video/roles-project-phases.md)
 * Experience PlatformUI {#platform-ui}
    * [平台UI指南](ui-guide.md)
-   * [平台工作流指南](workflows.md)
    * [平台UI浏览（视频）](video/platform-ui.md)
+   * [工作流UI指南](workflows.md)
    * [浏览器和语言支持](browser-language-support.md)
 * Experience PlatformAPI {#platform-apis}
    * [API基础知识](api-fundamentals.md)
+   * [API参考文档](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)
    * [验证到Experience PlatformAPI](https://docs.adobe.com/content/help/en/platform-learn/tutorials/platform-api-authentication.html)
-   * [平台API参考文档](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)
 * 平台文档 {#documentation}
    * [文档概述](documentation/overview.md)
    * [访问控制](https://docs.adobe.com/content/help/zh-Hans/experience-platform/access-control/home.html)
@@ -56,8 +56,8 @@ ht-degree: 42%
    * [查询服务](https://docs.adobe.com/content/help/en/experience-platform/query/home.html)
    * [实时客户数据平台](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)
    * [沙盒](https://docs.adobe.com/content/help/zh-Hans/experience-platform/sandbox/home.html)
-   * [区段](https://docs.adobe.com/content/help/en/experience-platform/segmentation/home.html)
-   * [模式](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/home.html)
+   * [模式语(XDM)](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/home.html)
+   * [区段](https://docs.adobe.com/content/help/zh-Hans/experience-platform/segmentation/home.html)
    * [源（连接器）](https://docs.adobe.com/content/help/en/experience-platform/sources/home.html)
    * [Web SDK](https://docs.adobe.com/content/help/zh-Hans/experience-platform/edge/home.html)
 * Adobe生态系统平台 {#ecosystem}
