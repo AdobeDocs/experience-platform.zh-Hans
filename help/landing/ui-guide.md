@@ -5,9 +5,9 @@ title: Adobe Experience PlatformUI指南
 topic: ui guide
 description: 'Adobe Experience Platform '
 translation-type: tm+mt
-source-git-commit: 84f1f840e15cb4487807c13131d0787772fa063a
+source-git-commit: bde9763aafb4ba32877f7ec14873eeae99760a45
 workflow-type: tm+mt
-source-wordcount: '1586'
+source-wordcount: '1597'
 ht-degree: 0%
 
 ---
@@ -111,7 +111,7 @@ ht-degree: 0%
 
 “主 **[!UICONTROL 页]** ”部分允许您返回平台UI主页。
 
-工作流 **[!UICONTROL 部分]** 显示了在平台内执行操作的多步骤工作流的列表。
+工作流 **[!UICONTROL 部分]** 显示了在平台内执行操作的多步骤工作流的列表。 有关工作流的更多信息，请参阅 [工作流概述](./workflows.md)。
 
 ### [!UICONTROL 连接]
 
@@ -127,7 +127,7 @@ ht-degree: 0%
 
 通过 **[!UICONTROL “身份]** ”部分，您可以创建和管理身份命名空间。 有关“身份”部 [!UICONTROL 分的更多信息] ，包括有关身份命名空间以及如何在平台UI中使用身份的信息，请参阅 [身份命名空间概述](../identity-service/namespaces.md)。
 
-### [!UICONTROL 隐私]
+### [!UICONTROL 隐私权]
 
 “策 **[!UICONTROL 略]** ”部分允许您创建和管理数据使用策略。 要进一步了解如何使用“策略”部分，请阅读 [数据使用策略用户指南](../data-governance/policies/user-guide.md)。 有关数据使用策略的详细信息，请参阅数 [据使用策略概述](../data-governance/policies/overview.md)。
 
