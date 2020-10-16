@@ -5,9 +5,9 @@ title: Adobe Experience Platform概述
 topic: getting started
 description: Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理能够提升客户体验的完整解决方案。  Experience Platform 让组织可以实现源自任何系统的客户数据和内容的集中化和标准化，并应用数据科学和机器学习来显著改进丰富的个性化体验的设计和交付。
 translation-type: tm+mt
-source-git-commit: 13aa49c28db0818df5d47560ae7a220d0790610f
+source-git-commit: 36707e95a63b6be60d1d7badbe1cdc9d0bc3548c
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '466'
 ht-degree: 21%
 
 ---
@@ -33,7 +33,7 @@ Adobe在Experience Platform的基础上构建了应用程序服务。 您可以�
 
 * [[!DNL Customer Journey Analytics]](https://docs.adobe.com/content/help/en/analytics-platform/using/cja-landing.html)
 * [[!DNL Journey Orchestration]](https://docs.adobe.com/content/help/zh-Hans/journeys/using/journey-orchestration-home.html)
-* [[!DNL Real-time Customer Data Platform] （实时CDP）](../rtcdp/overview.md)
+* [[!DNL Real-time Customer Data Platform] (实时 CDP)](../rtcdp/overview.md)
 
 ## [!DNL Experience Platform] 教程
 
@@ -44,7 +44,7 @@ Adobe在Experience Platform的基础上构建了应用程序服务。 您可以�
 * [**API基础知识**](api-fundamentals.md)\
    了解使用API的基 [!DNL Platform] 础。
 
-* [**API参考**](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)\
+* [**API参考文档**](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)\
    发现 [!DNL Experience Platform] API，包括标题、参数、示例请求和响应。<br/>*这些文档托管在AdobeI/O上。*
 
 * [**术语表**](glossary.md)\
