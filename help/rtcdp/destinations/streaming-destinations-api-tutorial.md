@@ -5,9 +5,9 @@ title: 连接到流目标并激活数据
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: eb6505bdcad9eee6d7e9674504223ca919f19c34
+source-git-commit: 65ad4d09d95cdd52e75221e6646a684bab3c277d
 workflow-type: tm+mt
-source-wordcount: '1822'
+source-wordcount: '1813'
 ht-degree: 2%
 
 ---
@@ -31,8 +31,8 @@ ht-degree: 2%
 
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-* [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-* [[!DNL目录服务]](../../catalog/home.md): [!DNL Catalog] 是Experience Platform内数据位置和谱系的记录系统。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
+* [[!DNL Catalog Service]](../../catalog/home.md): [!DNL Catalog] 是Experience Platform内数据位置和谱系的记录系统。
 * [沙箱](../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了在Adobe实时CDP中将数据激活到流目标时需要了解的其他信息。
@@ -166,7 +166,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }
 ```
 
-### 连接到Experience Platform数据
+### 连接到Experience Platform数据 {#connect-to-platform-data}
 
 **API格式**
 
@@ -263,12 +263,12 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{CONNECTION_SPEC_ID}`:使用您在获取可用目标的列表 [步骤中获得的连接规范ID](#get-the-list-of-available-destinations)。
 * `{AUTHENTICATION_CREDENTIALS}`:填写流目标的名称，例如： `Amazon Kinesis authentication credentials` 或 `Azure Event Hubs authentication credentials`者
-* `{ACCESS_ID}`: *用于[!DNL Amazon Kinesis]连接。* 您的AmazonKinesis存储位置的访问ID。
-* `{SECRET_KEY}`: *用于[!DNL Amazon Kinesis]连接。* 你AmazonKinesis存储所的秘钥。
-* `{REGION}`: *用于[!DNL Amazon Kinesis]连接。* Adobe实时 [!DNL Amazon Kinesis] CDP将流化您的数据所在的区域。
-* `{SAS_KEY_NAME}`: *用于[!DNL Azure Event Hubs]连接。* 填写您的SAS密钥名称。 了解Microsoft文档 [!DNL Azure Event Hubs] 中有关使用SAS密钥进 [行身份验证](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
-* `{SAS_KEY}`: *用于[!DNL Azure Event Hubs]连接。* 填写您的SAS密钥。 了解Microsoft文档 [!DNL Azure Event Hubs] 中有关使用SAS密钥进 [行身份验证](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
-* `{EVENT_HUB_NAMESPACE}`: *用于[!DNL Azure Event Hubs]连接。* 填写命名空间 [!DNL Azure Event Hubs] ,Adobe实时CDP将流化您的数据。 有关详细信息，请参 [阅文档中的创建事件中](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) 心 [!DNL Microsoft] 命名空间。
+* `{ACCESS_ID}`: *用于 [!DNL Amazon Kinesis] 连接。* 您的AmazonKinesis存储位置的访问ID。
+* `{SECRET_KEY}`: *用于 [!DNL Amazon Kinesis] 连接。* 你AmazonKinesis存储所的秘钥。
+* `{REGION}`: *用于 [!DNL Amazon Kinesis] 连接。* Adobe实时 [!DNL Amazon Kinesis] CDP将流化您的数据所在的区域。
+* `{SAS_KEY_NAME}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写您的SAS密钥名称。 了解Microsoft文档 [!DNL Azure Event Hubs] 中有关使用SAS密钥进 [行身份验证](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
+* `{SAS_KEY}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写您的SAS密钥。 了解Microsoft文档 [!DNL Azure Event Hubs] 中有关使用SAS密钥进 [行身份验证](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
+* `{EVENT_HUB_NAMESPACE}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写命名空间 [!DNL Azure Event Hubs] ,Adobe实时CDP将流化您的数据。 有关详细信息，请参 [阅文档中的创建事件中](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) 心 [!DNL Microsoft] 命名空间。
 
 **响应**
 
@@ -319,9 +319,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 * `{BASE_CONNECTION_ID}`:使用您在上述步骤中获得的基本连接ID。
 * `{CONNECTION_SPEC_ID}`:使用您在获取可用目标列表 [步骤中获得的连接规范](#get-the-list-of-available-destinations)。
-* `{NAME_OF_DATA_STREAM}`: *用于[!DNL Amazon Kinesis]连接。* 在帐户中提供现有数据流的 [!DNL Amazon Kinesis] 名称。 Adobe实时CDP会将数据导出到此流。
-* `{REGION}`: *用于[!DNL Amazon Kinesis]连接。* 您的AmazonKinesis客户所在的Adobe实时CDP将流化您的数据的地区。
-* `{EVENT_HUB_NAME}`: *用于[!DNL Azure Event Hubs]连接。* 填写Adobe [!DNL Azure Event Hub] 实时CDP将流化您的数据的名称。 有关详细信息，请 [参阅文档中的](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) “创建事件 [!DNL Microsoft] 中心”。
+* `{NAME_OF_DATA_STREAM}`: *用于 [!DNL Amazon Kinesis] 连接。* 在帐户中提供现有数据流的 [!DNL Amazon Kinesis] 名称。 Adobe实时CDP会将数据导出到此流。
+* `{REGION}`: *用于 [!DNL Amazon Kinesis] 连接。* 您的AmazonKinesis客户所在的Adobe实时CDP将流化您的数据的地区。
+* `{EVENT_HUB_NAME}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写Adobe [!DNL Azure Event Hub] 实时CDP将流化您的数据的名称。 有关详细信息，请 [参阅文档中的](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) “创建事件 [!DNL Microsoft] 中心”。
 
 **响应**
 
