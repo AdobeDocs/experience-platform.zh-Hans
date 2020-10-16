@@ -5,7 +5,7 @@ title: Adobe Experience Platform文档概述
 topic: overview
 description: Adobe Experience Platform文档以多种格式提供，包括概述、教程和用户界面和API指南。 以下是最常见的Experience Platform服务文档类型的简要描述。
 translation-type: tm+mt
-source-git-commit: 13aa49c28db0818df5d47560ae7a220d0790610f
+source-git-commit: 36707e95a63b6be60d1d7badbe1cdc9d0bc3548c
 workflow-type: tm+mt
 source-wordcount: '1035'
 ht-degree: 1%
@@ -31,7 +31,7 @@ Adobe Experience Platform文档以多种格式提供，包括概述、教程和�
 
 * **教程：** 教程是UI、API或两者组合的分步指南，可以得出特定结果。 与开发人员指南不同，API教程只能侧重于一个或两个端点，并非完全API资源。 同样，UI教程可能只关注特定步骤，而不是该服务提供的完整用户界面。 Tutorials通常是更大工作流程和功能“后续步骤”的一部分，这些步骤描述了您接下来可能要尝试的教程。
 
-* **用户指南：** 用户指南概述了特定服务 [!DNL Platform] 在UI中可用的操作。 这些文档包含截屏和侧重于通过用户界面与平台交互的步骤。 与开发人员指南相似，用户指南概述了所有可用的操作和选项，包括要避免的“常见错误”。 这是使用UI时最详细的资源。
+* **UI指南：** UI指南概述了特定服务的 [!DNL Platform] 用户界面中可用的操作。 这些文档包含侧重于通过UI与平台交互的截屏和步骤。 与开发人员指南相似，UI指南概述了所有可用的操作和选项，包括要避免的“常见错误”。 这是使用UI时最详细的资源。
 
 ## 文档语言支持
 
@@ -63,6 +63,6 @@ Experience Platform文档提供多种语言版本。 要更改语言，请选择
 * **[!DNL Query Service]:** 使用SQL查询从Adobe Experience Platform检索数据，如Adobe解决方案数据、客户第一方数据或任何其他平台数据。
 * **[!DNL Real-time Customer Data Platform]:** 实时CDP结合了多个企业用户档案源，以实时创建统一的渠道，这些数据可用于在所有和设备上提供一对一的个性化客户体验。
 * **[!DNL Sandboxes]:** 沙箱将单个实例分 [!DNL Platform] 为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* **模式**:体验数据模型(XDM)由Adobe驱动，旨在实现客户体验数据标准化并为客户体验管理定义模式。 XDM模式支持各个组件之间的数据互 [!DNL Experience Platform] 操作性。
 * **[!DNL Segmentation]:** 根据实时客户用户档案数据创建细分，以生成受众和强大的消费者体验。
 * **[!DNL Sources]（连接）:**{#sources} 将Adobe应用程序、基于云的存储、数据库等各种来源的数据引入Adobe Experience Platform。
-* **模式**:体验数据模型(XDM)由Adobe驱动，旨在实现客户体验数据标准化并为客户体验管理定义模式。 XDM模式支持各个组件之间的数据互 [!DNL Experience Platform] 操作性。
