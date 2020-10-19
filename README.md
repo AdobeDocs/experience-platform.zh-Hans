@@ -1,11 +1,18 @@
 ---
-source-git-commit: 14cd3d17c7d9ba602d02925abddec9e0b246a8c8
+source-git-commit: e647db615371f5a153e180e5a0d06fd7439a45c6
+workflow-type: tm+mt
 translation-type: tm+mt
+source-wordcount: '643'
+ht-degree: 65%
 
 ---
 # 贡献内容
 
-| 生产 | 舞台 |
+| EXL-PR | EXL | 预览 | 激活 | 发布日期 | 帮助 |
+|--- |--- |--- |--- |--- |--- |
+| [![生成状态](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-platform.en_pr-exl/badge/icon)](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-platform.en_pr-exl/lastBuild/) | [![生成状态](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-platform.en_exl/lastBuild/badge/icon)](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-platform.en_exl/lastBuild/lastBuild) | [预览URL](https://experienceleague.corp.adobe.com/docs/experience-platform/using/home.html?lang=en) | [activate-exl](https://docs.ci.corp.adobe.com/job/experience-platform/build/) | [实时URL](https://experienceleague.adobe.com/docs/experience-platform/using/home.html?lang=en) | [Authoring 指南](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html?lang=en) |
+
+| 生产 | Stage |
 |---|---|
 | [![生成状态](https://docs.ci.corp.adobe.com/job/experience-platform.en_production/badge/icon)](https://docs.ci.corp.adobe.com/job/experience-platform.en_production/lastBuild) | [![生成状态](https://docs.ci.corp.adobe.com/job/experience-platform.en_stage/badge/icon)](https://docs.ci.corp.adobe.com/job/experience-platform.en_stage/lastBuild) |
 | [输出产品](https://docs.adobe.com/content/help/zh-Hans/experience-platform/landing/home.html) | [输出Stg](https://docs-stg.corp.adobe.com/content/help/en/experience-platform/landing/home.html) |
@@ -16,7 +23,7 @@ translation-type: tm+mt
 
 该项目采用了 [Adobe Open Source 行为准则](code-of-conduct.md)或 [.NET Foundation 行为准则](https://dotnetfoundation.org/code-of-conduct)。有关更多信息，请参阅[参与](contributing.md)文章。
 
-## 为Adobe内容作贡献的方法
+## 为Adobe内容做出贡献的方法
 
 请参阅 [Adobe Docs 参与者指南](https://docs.adobe.com/help/en/contributor/contributor-guide/introduction.html)。
 
@@ -38,7 +45,7 @@ translation-type: tm+mt
 If you submit a pull request with significant changes to documentation and code examples, you'll see a message in the pull request asking you to submit an online contribution license agreement (CLA). You must complete the online form before we can review your pull request.
 -->
 
-### Adobe Employees的重大更改或新文章
+### Adobe员工的重大更改或新文章
 
 如果您是产品团队中负责提供 Adobe Experience Cloud 解决方案的技术作家、项目经理或开发人员，并且您的工作是撰写或创作技术文章，则应使用位于 `https://git.corp.adobe.com/AdobeDocs` 的私有存储库。See the [Internal Collaboration Guide](https://docs.adobe.com/content/help/en/collaborative-doc-instructions/collaboration-guide/home.html) for more information.
 
@@ -46,7 +53,7 @@ If you submit a pull request with significant changes to documentation and code 
 
 ## 联系Experience Platform文档团队
 
-如上所述，Adobe社区成员可以提交分配给相应作者的问题。 如果您是Adobe员工，您可以提交问题或直接联系Experience Platform文档团队。 要查找特定平台区域的主要作者，请参 [阅Adobe Experience Platform文档维基](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+Documentation)。
+如上所述，Adobe群体成员可以提交将分配给相应作者的问题。 如果您是Adobe员工，您可以提交问题或直接与Experience Platform文档团队联系。 要查找特定平台区域的主要作者，请参阅 [Adobe Experience Platform文档维基](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+Documentation)。
 
 ## 工具和设置
 
