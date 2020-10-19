@@ -5,7 +5,7 @@ title: 兴趣点交互数据类型
 topic: overview
 description: 此文档概述了兴趣点交互XDM数据类型。
 translation-type: tm+mt
-source-git-commit: f5bddb39c16eb25e85297f56e331d3aa51510eb9
+source-git-commit: 032adc72db7f094b268f14e8f7d48810830a84e4
 workflow-type: tm+mt
 source-wordcount: '162'
 ht-degree: 2%
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `poiDetail` | [!UICONTROL 兴趣点详细信息](./poi-details.md) | 描述导致事件的POI的详细信息。 |
+| `poiDetail` | [[!UICONTROL 兴趣点详细信息]](./poi-details.md) | 描述导致事件的POI的详细信息。 |
 | `poiEntries` | 对象 | 描述人员输入POI的次数。 包含两个属性： <ul><li>`id`:度量的唯一标识符。</li><li>`value`:度量的可量化价值。</li></ul> |
 | `poiExits` | 对象 | 描述人员退出POI的次数。 包含两个属性： <ul><li>`id`:度量的唯一标识符。</li><li>`value`:度量的可量化价值。</li></ul> |
 
