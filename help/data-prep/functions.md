@@ -5,7 +5,7 @@ title: 数据准备功能
 topic: overview
 description: 本文档介绍了与数据准备一起使用的映射功能。
 translation-type: tm+mt
-source-git-commit: d47410106a6d3955cc9af78e605c893f08185ffa
+source-git-commit: 16c718c7c653a0cfe4c3dcefddfc5472525e1828
 workflow-type: tm+mt
 source-wordcount: '3432'
 ht-degree: 3%
@@ -102,9 +102,9 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | timestamp | 检索当前Unix时间。 |  | timestamp() | timestamp() | 1571850624571 |
 | 格式 | 根据指定的格式设置输入日期的格式。 | <ul><li>日期： **必需** ：输入日期（作为ZonedDateTime对象），您要设置格式。</li><li>格式： **必需** 。您希望将日期更改为的格式。</li></ul> | format(DATE, FORMAT) | format(2019-10-23T11:24:00+00:00, &quot;yyyy-MM-dd HH:mm:ss&quot;) | &quot;2019-10-23 11:24:35&quot; |
 | dformat | 根据指定的格式将时间戳转换为日期字符串。 | <ul><li>时间戳： **必需** 。要设置格式的时间戳。 写入时间为毫秒。</li><li>格式： **必需** 。您希望将时间戳更改为的格式。</li></ul> | dformat(TIMESTAMP, FORMAT) | dformat(1571829875, &quot;dd-MMM-yyyy hh:mm&quot;) | “2019年10月23日11:24” |
-| 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需** 。表示日期的字符串。</li><li>格式： **必需** 。表示日期格式的字符串。</li><li>DEFAULT_DATE: **必需** ：如果提供的日期为null，则返回默认日期。</li></ul> | date(DATE, FORMAT, DEFAULT_DATE) | date(&quot;2019年10月23日11:24&quot;, &quot;yyyy/MM/dd&quot;, now()) | &quot;2019-10-23T11:24:00+00:00&quot; |
-| 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需** 。表示日期的字符串。</li><li>格式： **必需** 。表示日期格式的字符串。</li></ul> | date(DATE, FORMAT) | date（&quot;2019年10月23日11:24&quot;） | &quot;2019-10-23T11:24:00+00:00&quot; |
-| 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需** 。表示日期的字符串。</li></ul> | date(DATE) | date（&quot;2019年10月23日11:24&quot;, &quot;yyyy/MM/dd&quot;） | &quot;2019-10-23T11:24:00+00:00&quot; |
+| 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需** 。表示日期的字符串。</li><li>格式： **必需** 。表示日期格式的字符串。</li><li>DEFAULT_DATE: **必需** ：如果提供的日期为null，则返回默认日期。</li></ul> | date(DATE, FORMAT, DEFAULT_DATE) | date(&quot;2019-10-23 11:24&quot;, &quot;yyyy-MM-dd HH:mm&quot;, now()) | “2019-10-23T11:24Z” |
+| 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需** 。表示日期的字符串。</li><li>格式： **必需** 。表示日期格式的字符串。</li></ul> | date(DATE, FORMAT) | date(&quot;2019-10-23 11:24&quot;, &quot;yyyy-MM-dd HH:mm&quot;) | “2019-10-23T11:24Z” |
+| 日期 | 将日期字符串转换为ZonedDateTime对象（ISO 8601格式）。 | <ul><li>日期： **必需** 。表示日期的字符串。</li></ul> | date(DATE) | date(&quot;2019-10-23 11:24&quot;) | “2019-10-23T11:24Z” |
 | date_part | 检索日期的部分。 支持以下组件值： <br><br><br>“年<br>”<br><br>“yy<br>”第4季度<br>“<br><br><br><br>”<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>“q”、“q”、“”、“ead”。“ 12”“mi”“n”“第二”“毫秒””。 | <ul><li>组件： **必需** A string，表示日期的一部分。 </li><li>日期： **必需** ，采用标准格式的日期。</li></ul> | date_part(COMPONENT, DATE) | date_part(&quot;MM&quot;, date(&quot;2019-10-17 11:55:12&quot;) | 10 |
 | set_date_part | 在给定日期替换组件。 接受以下组件： <br><br>&quot;年&quot;<br>&quot;<br>yy&quot;月<br><br>&quot;<br>&quot;<br>mm&quot;<br><br>&quot;<br>m&quot; dd&quot;日<br>&quot;<br><br>&quot;<br>&quot;小时&quot;<br><br><br><br><br><br><br><br>&quot;分钟&quot;&quot;mi&quot;mi&quot;n&quot;&quot;第二&quot;&quot; | <ul><li>组件： **必需** A string，表示日期的一部分。 </li><li>值： **必需** 。为组件设置的给定日期值。</li><li>日期： **必需** ，采用标准格式的日期。</li></ul> | set_date_part(COMPONENT, VALUE, DATE) | set_date_part(&quot;m&quot;, 4, date(&quot;2016-11-09T11:44:44.797&quot;) | &quot;2016-04-09T11:44:44.797&quot; |
 | make_date_time | 从部分创建日期。 此函数也可以使用make_timestamp来诱导。 | <ul><li>年： **必需** ，年份，以四位数写成。</li><li>月： **月** 。 允许的值为1到12。</li><li>日： **必需** 。 允许的值为1到31。</li><li>小时： **必需** ，小时。 允许的值为0到23。</li><li>分钟： **必需** ，分钟。 允许的值为0到59。</li><li>纳秒： **必需** ，纳秒值。 允许的值为0到999999999。</li><li>时区： **必需** 。日期时间的时区。</li></ul> | make_date_time（YEAR, MONTH, DAY, HOUR, MINUTE, SECOND，纳秒， TIMEZONE） | make_date_time(2019, 10, 17, 11, 55, 12, 999, &quot;America/Los_Angeles&quot;) | `2019-10-17T11:55:12.0&#x200B;00000999-07:00[America/Los_Angeles]` |
