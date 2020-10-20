@@ -8,7 +8,7 @@ description: 本教程介绍了在模式中使用模式编辑器创建Experience
 translation-type: tm+mt
 source-git-commit: 9c7119ad836007af3437dc2e938b68aff3ca0f56
 workflow-type: tm+mt
-source-wordcount: '3835'
+source-wordcount: '3819'
 ht-degree: 0%
 
 ---
@@ -28,9 +28,9 @@ Adobe Experience Platform用户界面允许您在称为“”的 [!DNL Experienc
 
 本教程需要对Adobe Experience Platform在模式创建中涉及的各个方面进行有效的理解。 在开始本教程之前，请查阅以下概念的文档：
 
-* [[!DNL体验数据模型(XDM)]](../home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [[!DNL Experience Data Model (XDM)]](../home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
    * [模式合成基础](../schema/composition.md):XDM模式及其构建块的概述，包括类、混合、数据类型和字段。
-* [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL Real-time Customer Profile]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 ## 浏览模式工作区中的现 [!UICONTROL 有模式] {#browse}
 
@@ -274,11 +274,11 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 
 ![](../images/tutorials/create-schema/identity-applied.png)
 
-现在，所有引入该 `loyaltyId` 字段的数据都将用于帮助识别该个人并整合该客户的单个视图。 要了解有关在中使用身份的更 [!DNL Experience Platform]多信息，请查 [看[!DNL Identity Service]文档](../../identity-service/home.md) 。
+现在，所有引入该 `loyaltyId` 字段的数据都将用于帮助识别该个人并整合该客户的单个视图。 要进一步了解如何在中使 [!DNL Experience Platform]用身份，请查阅 [[!DNL Identity Service]](../../identity-service/home.md) 文档。
 
 ## 启用模式以在 [!DNL Real-time Customer Profile] {#profile}
 
-[[!DNL实时客户用户档案]](../../profile/home.md) 利用身份 [!DNL Experience Platform] ，为每位客户提供整体视图。 该服务为客户在与集成的任何系统上的每次交互建立了可靠、360°用户档案的客户属性以及加盖时间戳的帐户 [!DNL Experience Platform]。
+[[!DNL Real-time Customer Profile]](../../profile/home.md) 利用身份数 [!DNL Experience Platform] 据，为每位客户提供整体视图。 该服务为客户在与集成的任何系统上的每次交互建立了可靠、360°用户档案的客户属性以及加盖时间戳的帐户 [!DNL Experience Platform]。
 
 要使模式能够与之一起使用， [!DNL Real-time Customer Profile]必须定义主标识。 如果您尝试启用模式而未先定义主标识，则会收到错误消息。
 
