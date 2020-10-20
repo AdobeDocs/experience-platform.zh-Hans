@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;Segmentation Service;segmentation;segmentation service;user guide;ui guide;segmentation ui guide;segment builder;Segment builder;
+keywords: Experience Platform;home;popular topics;Segmentation Service;segmentation;segmentation service;user guide;ui guide;segmentation ui guide;segment builder;Segment builder;realized;existing;exiting;
 solution: Experience Platform
 title: 分段服务用户指南
 topic: ui guide
 description: Adobe Experience Platform分段服务为创建和管理段定义提供了用户界面。
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 1aff9329e1ae97caa34a205bbfbbc6f51b54b8fb
 workflow-type: tm+mt
-source-wordcount: '1467'
+source-wordcount: '1449'
 ht-degree: 0%
 
 ---
@@ -21,10 +21,10 @@ ht-degree: 0%
 
 使用细分定义需要了解与细分相关 [!DNL Experience Platform] 的各种服务。 在阅读本用户指南之前，请查阅以下服务的文档：
 
-- [[!DNL分段服务]](../home.md): [!DNL Segmentation Service] 允许您将与个人(如 [!DNL Experience Platform] 客户、潜在客户、用户或组织)相关的数据分为较小的组。
-- [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-- [[!DNLAdobe Experience Platform身份服务]](../../identity-service/home.md):通过将来自不同数据源的身份融入其中，实现客户用户档案的创建 [!DNL Platform]。
-- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [[!DNL Segmentation Service]](../home.md): [!DNL Segmentation Service] 允许您将与个人(如 [!DNL Experience Platform] 客户、潜在客户、用户或组织)相关的数据分为较小的组。
+- [[!DNL Real-time Customer Profile]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md):通过将来自不同数据源的身份融入其中，实现客户用户档案的创建 [!DNL Platform]。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 了解本文档使用的两个关键术语并了解它们之间的区别也很重要：
 - **细分定义**:用于描述目标受众的关键特性或行为的规则集。
