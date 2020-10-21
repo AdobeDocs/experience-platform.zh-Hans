@@ -4,10 +4,10 @@ seo-title: Adobe Experience PlatformWeb SDK常见问题解答
 description: 关于Adobe Experience PlatformWeb SDK的常见问题
 seo-description: 关于Adobe Experience PlatformWeb SDK的常见问题
 translation-type: tm+mt
-source-git-commit: 5ef902ef7f7717121744f7f0074c0aa17e5a9e9a
+source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
 workflow-type: tm+mt
-source-wordcount: '1710'
-ht-degree: 2%
+source-wordcount: '1631'
+ht-degree: 3%
 
 ---
 
@@ -145,15 +145,9 @@ Web SDK正在快速发展。 正在开发更多使用案例。 您可以在此�
 
 * 建议您使用Experience Platform Launch进行部 `alloy.js`署，即使它是您唯一使用它的标记。
 
-## XDM是什么，我必须使用它来开发Web SDK?
-
-XDM是用于向Adobe Experience Platform和Web SDK发送数据的数据格式。 Web [SDK文档](https://docs.adobe.com/content/help/en/experience-platform/edge/get-started/quick-start-with-launch.html#prepare-a-schema) 会指导您如何轻松设置模式，然后您可以根据自己的特定需求进行自定义。
-
 ## 什么是“Adobe Experience Platform Launch服务器端”?
 
 2020年晚些时候，Experience Platform Launch将发布服务器端转发功能。 如果您使用我们的SDK并将XDM发送到Experience Edge，这些新增功能将允许您安装新的服务器端扩展并将数据映射到任何内容，并从我们的边缘网络将其发送到任何地方。 将其视为“数据收集为服务”。  这项服务将收取费用，并作为Adobe Experience Platform的一部分进行捆绑。
-
-**更多信息** Adobe[峰会演示文稿](https://adobe.bluejeans.com/playback/s/9LhauPOnRSUTYg6RMHAw4oJekhYfOQgdBLlNekVJdWevYktpxqX2IYyl5fz2Wxh9)
 
 ## 什么是CNAME或第一方域，它为何重要？
 
