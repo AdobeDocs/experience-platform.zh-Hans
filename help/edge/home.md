@@ -5,10 +5,10 @@ description: 了解Adobe Experience PlatformWeb SDK是什么以及如何使用�
 seo-description: 允许Adobe Experience Cloud的客户与该Experience Cloud的各种服务进行交互。
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;edge;Visitor.js;AppMeasurement.js;AT.js;DIL.js;web sdk;SDK;web SDK;Launch;launch
 translation-type: tm+mt
-source-git-commit: db742119d8f169817080f1fd4e0dc08a0f0faa47
+source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
 workflow-type: tm+mt
 source-wordcount: '708'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -65,7 +65,7 @@ Adobe Experience PlatformWeb SDK取代了以下SDK:
 
 ## 入门指南
 
-强烈建议您查阅入 [门指南](consent/iab-tcf/with-launch.md) ，快速学习如何使用Adobe Experience Platform Launch。
+强烈建议您查阅入 [门指南](fundamentals/prerequisite.md) ，快速学习如何使用Adobe Experience Platform Launch。
 
 本产品不断发展和增长，以支持越来越多的用例。 为了跟上最新的步伐，请查看我们支持 [的使用案例展示板](https://github.com/adobe/alloy/projects/5)。 我们会根据我们目前支持的使用案例以及我们正在努力帮助您做出最佳决策的案例，不断更新这些案例。
 
