@@ -5,7 +5,7 @@ description: 了解在Adobe Analytics使用Experience PlatformWeb SDK自动映�
 seo-description: 了解在Adobe Analytics使用Experience PlatformWeb SDK自动映射哪些变量
 keywords: adobe analytics;variables;analytics;automatic map;automatically mapped;
 translation-type: tm+mt
-source-git-commit: 5ef902ef7f7717121744f7f0074c0aa17e5a9e9a
+source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
 workflow-type: tm+mt
 source-wordcount: '547'
 ht-degree: 2%
@@ -18,7 +18,7 @@ ht-degree: 2%
 以下是Adobe Experience Platform自动映射到 [!DNL Edge Network] 的变量列表 [!DNL Analytics]。
 
 | XDM字段路径 | [!DNL Analytics Query String] / HTTP 标头 | 描述 |
-| ---------- | ------------------------- | -------- |
+| ---------- | ------------------------- | ----------------------------------------- |
 | `commerce.order.purchaseID` | `pi` | AppMeasurement查询参数PURCHASEID映射。 |
 | `commerce.order.currencyCode` | `cc` | AppMeasurement查询参数CURRENCY映射。 |
 | `commerce.purchases.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_PURCHASE `,`。 |
