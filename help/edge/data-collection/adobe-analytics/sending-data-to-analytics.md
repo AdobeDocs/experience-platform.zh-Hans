@@ -5,7 +5,7 @@ description: 了解如何使用Experience PlatformWeb SDK将链接数据发送�
 seo-description: 了解如何使用Experience PlatformWeb SDK将链接数据发送到Adobe Analytics
 keywords: adobe analytics;analytics;sendEvent;s.t();s.tl();webPageDetails;pageViews;webInteraction;web Interaction;page views;link tracking;links;track links;clickCollection;click collection;
 translation-type: tm+mt
-source-git-commit: 9e1ad05285b27a9fc8b56db903609add3fef144e
+source-git-commit: c9d777f4350f0b039608c4f9b01d5206994e2572
 workflow-type: tm+mt
 source-wordcount: '160'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # 向Adobe Analytics发送数据
 
-过去，可以区分页面视图和链接(例如 `s.t(), s.tl()`)的函数不同，在Web SDK中只有命 `sendEvent` 令。 您与事件一起发送的数据决定数据应为页面视图还是链接。 [了解有关跟踪链接的更多信息](../track-links.md)
+过去，可以区分页面视图和链接(例如 `s.t(), s.tl()`)的函数不同，在Web SDK中只有命 `sendEvent` 令。 您与事件一起发送的数据决定数据应为页面视图还是链接。 [了解有关跟踪链接的更多信息](../track-links.md)。
 
 ## 发送页面视图
 
