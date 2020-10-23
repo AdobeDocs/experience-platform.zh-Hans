@@ -6,9 +6,9 @@ topic: enforcement
 type: Tutorial
 description: 为数据创建数据使用标签并针对这些标签创建市场营销操作的使用策略后，您可以使用策略服务API评估对数据集或任意标签组执行的市场营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 00688e271b3c1e3ad1a17ceb6045e3316bd65961
 workflow-type: tm+mt
-source-wordcount: '936'
+source-wordcount: '993'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 # 使用API实施数据使用策 [!DNL Policy Service] 略
 
-为数据创建数据使用标签并针对这些标签创建市场营销操作的使用策略后，您可以使用 [[!DNL策略服务API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) ，评估对数据集或任意标签组执行的营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。
+为数据创建数据使用标签并针对这些标签创建市场营销操作的使用策略后，您便可以使用 [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) 评估对数据集或任意标签组执行的市场营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。
 
 >[!NOTE]
 >
@@ -170,7 +170,13 @@ curl -X POST \
     },
     {
       "entityType": "dataSet",
-      "entityId": "5cc1fb685410ef14b748c55f"
+      "entityId": "5cc1fb685410ef14b748c55f",
+      "entityMeta": {
+          "fields": [
+              "/properties/personalEmail/properties/address",
+              "/properties/person/properties/name/properties/fullName"
+          ]
+      }
     }
   ]'
 ```
@@ -179,6 +185,7 @@ curl -X POST \
 | --- | --- |
 | `entityType` | 有效负荷数组中的每个项目都必须指示所定义实体的类型。 对于此用例，值将始终为“dataSet”。 |
 | `entityId` | 有效负荷数组中的每个项目都必须为数据集提供唯一ID。 |
+| `entityMeta.fields` | （可选）JSON指针字 [符串的数组](../../landing/api-fundamentals.md#json-pointer) ，引用数据集模式中的特定字段。 如果包含此数组，则只有数组中包含的字段参与评估。 阵列中未包含的任何模式字段将不参与评估。<br><br>如果未包括此字段，则评估中将包括数据集模式中的所有字段。 |
 
 **响应**
 
@@ -304,13 +311,13 @@ curl -X POST \
                         "labels": [
                             "C5"
                         ],
-                        "path": "/properties/createdByBatchID"
+                        "path": "/properties/personalEmail/properties/address",
                     },
                     {
                         "labels": [
                             "C5"
                         ],
-                        "path": "/properties/faxPhone"
+                        "path": "/properties/person/properties/name/properties/fullName"
                     }
                 ]
             }
