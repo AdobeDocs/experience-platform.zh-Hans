@@ -5,9 +5,9 @@ title: 体验数据模型(XDM)系统
 topic: overview
 description: '标准化和互操作性是Adobe Experience Platform背后的关键概念。 体验Adobe模型(XDM)由客户驱动，旨在实现客户体验数据标准化并为客户体验管理定义模式。 '
 translation-type: tm+mt
-source-git-commit: b7b57c0b70b1af3a833f0386bc809bb92c9b50f8
+source-git-commit: 1aceddc02a5120b0bf7413db33c2c03d0ab2948c
 workflow-type: tm+mt
-source-wordcount: '1639'
+source-wordcount: '1638'
 ht-degree: 2%
 
 ---
@@ -48,7 +48,7 @@ XDM是一个基本框架，它允许Adobe Experience Cloud在 [!DNL Experience P
 
 尽管您可以在中定义自己的类， [!DNL Schema Registry]但建议您分别使用首选类 **[!DNL XDM Individual Profile]****[!DNL XDM ExperienceEvent]** 和记录和时间序列数据。 下文将详细介绍这些类。
 
-### [!DNL XDM Individual Profile] (#xdm-individual-用户档案)
+### [!DNL XDM Individual Profile] {#xdm-individual-profile}
 
 [!DNL XDM Individual Profile] 是基于记录的类，它对已识别和部分已识别主题的属性形成单一表示。 高度识别的用户档案可用于个人通信或定向活动，并可包含详细的个人信息，如姓名、性别、出生日期、地点和联系信息，包括电话号码和电子邮件地址。
 
