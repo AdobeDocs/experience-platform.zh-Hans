@@ -5,10 +5,10 @@ title: 细分作业
 topic: developer guide
 description: 本指南提供相关信息，帮助您更好地了解细分作业，并包含使用API执行基本操作的示例API调用。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8c5c3aed4d46c8b3873009ab9f17ff9bca93302c
 workflow-type: tm+mt
-source-wordcount: '1025'
-ht-degree: 3%
+source-wordcount: '1153'
+ht-degree: 2%
 
 ---
 
@@ -96,9 +96,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
                             "format": "pql/json",
                             "value": "{PQL_EXPRESSION}"
                         },
-                        "mergePolicyId": "b83185bb-0bc6-489c-9363-0075eb30b4c8",
+                        "mergePolicyId": "25c548a0-ca7f-4dcd-81d5-997642f178b9",
                         "mergePolicy": {
-                            "id": "b83185bb-0bc6-489c-9363-0075eb30b4c8",
+                            "id": "25c548a0-ca7f-4dcd-81d5-997642f178b9",
                             "version": 1
                         }
                     }
@@ -115,14 +115,25 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
                     "endTimeInMs": 1573204395655,
                     "totalTimeInMs": 128928
                 },
-                "totalProfiles": 0,
-                "segmentedProfileCounter": {
-                    "30230300-ccf1-48ad-8012-c5563a007069": 0,
-                    "ca763983-5572-4ea4-809c-b7dff7e0d79b": 0
+                "totalProfiles":13146432,
+                "segmentedProfileCounter":{
+                    "94509dba-7387-452f-addc-5d8d979f6ae8":1033
                 },
-                "segmentedProfileByNamespaceCounter": {
-                    "30230300-ccf1-48ad-8012-c5563a007069": {},
-                    "ca763983-5572-4ea4-809c-b7dff7e0d79b": {}
+                "segmentedProfileByNamespaceCounter":{
+                    "94509dba-7387-452f-addc-5d8d979f6ae8":{
+                        "tenantiduserobjid":1033,
+                        "campaign_profile_mscom_mkt_prod2":1033
+                    }
+                },
+                "segmentedProfileByStatusCounter":{
+                    "94509dba-7387-452f-addc-5d8d979f6ae8":{
+                        "exited":144646,
+                        "existing":10,
+                        "realized":2056
+                    }
+                },
+                "totalProfilesByMergePolicy":{
+                    "25c548a0-ca7f-4dcd-81d5-997642f178b9":13146432
                 }
             },
             "requestId": "4e538382-dbd8-449e-988a-4ac639ebe72b-1573203600264",
@@ -162,6 +173,12 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 | `segments.segment.id` | 区段定义的ID。 |
 | `segments.segment.expression` | 包含有关段定义表达式的信息的对象，用PQL编写。 |
 | `metrics` | 包含有关段作业的诊断信息的对象。 |
+| `metrics.totalTime` | 包含分段作业开始和结束时间以及所用总时间的信息的对象。 |
+| `metrics.profileSegmentationTime` | 包含分段评估开始和结束时间以及所花费总时间的信息的对象。 |
+| `metrics.segmentProfileCounter` | 按每个细分合格的用户档案数。 |
+| `metrics.segmentedProfileByNamespaceCounter` | 每个细分中每个身份命名空间的合格用户档案数。 |
+| `metrics.segmentProfileByStatusCounter` | 每个状态 **的用户档案片** 段计数。 支持以下三种状态： <ul><li>“已实现”-进入区段的新用户档案数。</li><li>“现有”-区段中继续存在的用户档案数。</li><li>“已退出”-用户档案段中不再存在的数据段数。</li></ul> |
+| `metrics.totalProfilesByMergePolicy` | 每个合并策略的合并用户档案总数。 |
 
 ## 创建新区段作业 {#create}
 
