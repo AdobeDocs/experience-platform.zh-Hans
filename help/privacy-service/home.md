@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Adobe Experience Platform Privacy Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5d88aca08b7cf1d55e1eed989de6aa514f82e113
+source-git-commit: f3872d433949e6c14c28c6833b8498d4d01b8de3
 workflow-type: tm+mt
-source-wordcount: '1565'
+source-wordcount: '1627'
 ht-degree: 2%
 
 ---
@@ -30,7 +30,7 @@ Adobe Experience Platform [!DNL Privacy Service] 是为应对企业管理客户�
    * 为了充分利用 [!DNL Privacy Service]数据，您必须详细了解您从客户那里收集的数据类型以及其中哪些数据受隐私法规的约束。 有关详细信息，请参 [阅确定隐私要求](#requirements) 一节。
 1. **我是否正确标记了我的数据？**
    * 必须正确标记数据，以便服务确定在隐私作业期间要访问或删除哪些字段。 有关详细信息，请 [参阅](#label) “标记数据”一节。
-1. **我知道要发送的ID吗[!DNL Privacy Service]?**
+1. **我知道要发送的ID吗 [!DNL Privacy Service]?**
    * 在发送隐私请求时，必须提供特定Adobe应用程序的特定客户ID。 有关详细信息，请 [参阅有关提供身](#identity)[份数据和提](#requests) 出隐私请求的章节。
 1. **如何跟踪我的隐私工作？**
    * 提出隐私请求后，有多种选项可用于跟踪其状态和结果。 有关详细信息，请 [参阅“监视隐私](#monitor) ”作业一节。
@@ -75,10 +75,12 @@ Adobe Experience Platform [!DNL Privacy Service] 是为应对企业管理客户�
 >以下各节提供文档链接，其中涵盖如何在API或UI中发出通用隐私请求。 但是，根据您所使 [!DNL Experience Cloud] 用的应用程序，您必须在请求有效负荷中发送的字段可能与这些指南中显示的示例不同。
 >
 >在您阅读API或UI指南时，请参阅文档和 [Experience Cloud应用程序Privacy Service](./experience-cloud-apps.md) ，进一步了解如何格式化特定应用 [!DNL Experience Cloud] 程序的隐私请求。
+>
+>请注意，隐私请求是跨Experience Cloud应用程序异步处理的。 Privacy Service收到请求后，每个应用程序可能需要花费几分钟到几周的时间来完成请求。 完成每个请求所花费的时间取决于您所使用的应用程序以及需要处理的数据量。
 
 #### 使用API
 
-[[!DNL Privacy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml) 为使用RESTful API调用创建和管理隐私作业提供了多个端点，允许您以编程方式处理应用程序的隐私法规合规性 [!DNL Experience Cloud] 问题。 有关如何使用API的详细步骤，请参阅 [Privacy ServiceAPI开发人员指南](api/getting-started.md)。
+它提 [[!DNL Privacy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml) 供了多个端点，用于使用RESTful API调用创建和管理隐私作业，允许您以编程方式处理应用程序的隐私法规遵 [!DNL Experience Cloud] 从性。 有关如何使用API的详细步骤，请参阅 [Privacy ServiceAPI开发人员指南](api/getting-started.md)。
 
 #### 使用UI
 
