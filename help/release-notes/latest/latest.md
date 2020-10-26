@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: October 13, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 133aa5ace2567e9380eb970b5737d7327d0c99b2
+source-git-commit: 8f646c26ce73671ef4e427d8cba51091a8884795
 workflow-type: tm+mt
-source-wordcount: '1025'
+source-wordcount: '1028'
 ht-degree: 4%
 
 ---
@@ -21,6 +21,7 @@ ht-degree: 4%
 - [实时客户资料](#profile)
 - [分段服务](#segmentation)
 - [源](#sources)
+- [价值实现时间](#time-to-value)
 
 ## 数据准备 {#data-prep}
 
@@ -76,7 +77,7 @@ Adobe Experience Platform可以从外部来源收集数据，同时允许您使�
 
 要进一步了解源，请参阅 [源概述](../../sources/home.md)。
 
-## 价值实现时间
+## 价值实现时间 {#time-to-value}
 
 Adobe Experience Platform公司完全使营销运营团队能够建立客户的360度全方位视图，而无需大量数据工程专业知识。 目标是通过数据速度加快团队和价值。
 
