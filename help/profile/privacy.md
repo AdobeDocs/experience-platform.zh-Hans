@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 实时客户用户档案中的隐私请求处理
 topic: overview
 translation-type: tm+mt
-source-git-commit: f7abccb677294e1595fb35c27e03c30eb968082a
+source-git-commit: 066337419431db24bde0a8d0d30b85132d08f43c
 workflow-type: tm+mt
-source-wordcount: '1024'
+source-wordcount: '1058'
 ht-degree: 0%
 
 ---
@@ -22,9 +22,9 @@ Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退�
 
 在阅读本指南之前，建议您对以下服 [!DNL Experience Platform] 务有一定的了解：
 
-* [[!DNLPrivacy Service]](home.md):管理跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的客户请求。
-* [[!DNL标识服务]](../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
-* [[!DNL实时客户用户档案]](../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL Privacy Service]](home.md):管理跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的客户请求。
+* [[!DNL Identity Service]](../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
+* [[!DNL Real-time Customer Profile]](../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 ## 了解身份命名空间 {#namespaces}
 
@@ -43,6 +43,8 @@ Identity Service维护全局定义（标准）和用户定义（自定义）标�
 >Privacy Service只能使用不执 [!DNL Profile] 行身份拼接的合并策略处理数据。 如果您使用UI确认是否正在处理您的隐私请求，请确保您使用的策略[!DNL None]为“” [!UICONTROL ID拼接] 。 换言之，您不能使用将ID拼接设 [!UICONTROL 置为] “专用图[!UICONTROL 形”的合并策略]。
 >
 >![](./images/privacy/no-id-stitch.png)
+>
+>还必须指出，无法保证完成隐私请求所花费的时间。 如果在请求仍处 [!DNL Profile] 理时数据中发生更改，则也无法保证是否处理了这些记录。
 
 ### 使用API
 
