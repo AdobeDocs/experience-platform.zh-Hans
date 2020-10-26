@@ -5,7 +5,7 @@ title: SQL语法
 topic: syntax
 description: 此文档显示查询服务支持的SQL语法。
 translation-type: tm+mt
-source-git-commit: 43bebfbe0c0fca57d6e1ed0116e317b03125f175
+source-git-commit: c044194ed22b5e6fcd5e2e2102f3cd4eda45aa84
 workflow-type: tm+mt
 source-wordcount: '2067'
 ht-degree: 1%
@@ -118,7 +118,7 @@ SELECT statement 2
 CREATE TABLE table_name [ WITH (schema='target_schema_title', rowvalidation='false') ] AS (select_query)
 ```
 
-其中`target_schema_title` ，是XDM模式的标题。 仅当您希望对由CTAS模式创建的新数据集使用现有XDM查询时`rowvalidation` ，才使用此子句指定用户是否希望对为创建的新数据集摄取的每个新批次进行行级别验证。 默认值为“false”
+其中`target_schema_title` ，是XDM模式的标题。 仅当您希望对由CTAS模式创建的新数据集使用现有XDM查询时`rowvalidation` ，才使用此子句指定用户是否希望对为创建的新数据集摄取的每个新批次进行行级别验证。 默认值为“true”
 
 和 `select_query` 是一 `SELECT` 个语句，其语法在此文档中定义。
 
