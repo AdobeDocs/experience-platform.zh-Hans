@@ -2,14 +2,14 @@
 product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 教程
-breadcrumb-title: Platform Tutorials
-user-guide-description: Get started with Platform quickly and easily by following along with step-by-step tutorials, covering everything from preparing your data for ingestion to working with advanced machine learning algorithms.
+breadcrumb-title: Platform 教程
+user-guide-description: 通过遵循分步教程快速轻松地开始使用Platform，它涵盖从准备数据以获取到使用高级机器学习算法等一切内容。
 type: Tutorials
 translation-type: tm+mt
-source-git-commit: 72b2172bbcc8613a2030b4784270321c3933f6aa
+source-git-commit: 516f5af13df0b96e7995a3079cf2a2ce2146676a
 workflow-type: tm+mt
-source-wordcount: '41'
-ht-degree: 19%
+source-wordcount: '70'
+ht-degree: 14%
 
 ---
 
@@ -20,8 +20,7 @@ ht-degree: 19%
 * [验证到Experience PlatformAPI](authentication.md)
 * [访问平台数据](data-access.md)
 * [数据管理和隐私](data-governance-privacy.md)
-* [数据科学工作区](data-science-workspace.md)
-* [决策](decisioning.md)
+* [数据服务工作区](data-science-workspace.md)
 * [目标](destinations-tutorials.md)
 * [将数据引入平台](data-ingestion.md)
 * [用户档案和身份](configure-profile.md)
