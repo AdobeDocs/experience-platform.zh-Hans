@@ -4,9 +4,9 @@ audience: user
 user-guide-title: Adobe Experience Platform 教程
 breadcrumb-title: Platform 教程
 user-guide-description: 通过遵循分步教程快速轻松地开始使用Platform，它涵盖从准备数据以获取到使用高级机器学习算法等一切内容。
-type: Tutorials
+type: Tutorial
 translation-type: tm+mt
-source-git-commit: 516f5af13df0b96e7995a3079cf2a2ce2146676a
+source-git-commit: 097fe219e0d64090de758f388ba98e6024db2201
 workflow-type: tm+mt
 source-wordcount: '70'
 ht-degree: 14%
