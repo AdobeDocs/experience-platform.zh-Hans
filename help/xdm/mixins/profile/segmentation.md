@@ -1,21 +1,25 @@
 ---
 keywords: Experience Platform;home;popular topics;schema;Schema;XDM;individual profile;fields;schemas;Schemas;segment;segmentMembership;segment membership;Schema design;map;Map;
 solution: Experience Platform
-title: 用户档案分段混合
+title: 混合的细分会员资格详细信息
 topic: overview
-description: 此文档概述了XDM单个用户档案类。
+description: 此文档概述了“区段会员资格详细信息”混合。
 translation-type: tm+mt
-source-git-commit: 53575488c08f73a65a7f1cc5f803f9ead707ae48
+source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
 workflow-type: tm+mt
-source-wordcount: '365'
+source-wordcount: '385'
 ht-degree: 1%
 
 ---
 
 
-# [!UICONTROL 用户档案分段] mixin
+# [!UICONTROL 混合的细分会员资] 格详细信息
 
-[!UICONTROL 用户档案分段] 是类的标准混合 [[!DNL XDM Individual Profile] 项](../../classes/individual-profile.md)。 混音提供单个地图字段，该字段捕获有关区段成员资格的信息，包括个人所属的区段、最后的资格时间以及会员资格的有效期到何时。
+>[!NOTE]
+>
+>几个混音的名称已经更改。 有关详细信息，请 [参阅混合名称](../name-updates.md) 更新文档。
+
+[!UICONTROL 区段成员资格] 详细信息是该类的标准混 [[!DNL XDM Individual Profile] 合项](../../classes/individual-profile.md)。 混音提供单个地图字段，该字段捕获有关区段成员资格的信息，包括个人所属的区段、最后的资格时间以及会员资格的有效期到何时。
 
 >[!WARNING]
 >
