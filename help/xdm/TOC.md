@@ -5,9 +5,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Data Model (XDM) 指南
 user-guide-description: 使用 Experience Data Model (XDM) 类和混合来标准化体验数据。
 translation-type: tm+mt
-source-git-commit: a091acf1cfc572df7b300a7be6a673b1e7469be5
+source-git-commit: 6c52998421b6a5d9719f287ec8cb7099780cb1ff
 workflow-type: tm+mt
-source-wordcount: '197'
+source-wordcount: '198'
 ht-degree: 19%
 
 ---
@@ -28,13 +28,13 @@ ht-degree: 19%
 * Mixins {#mixins}
    * 用户档案混合 {#profile}
       * [IdentityMap](./mixins/profile/identitymap.md)
-      * [用户档案人详细信息](./mixins/profile/person-details.md)
-      * [用户档案个人详细信息](./mixins/profile/personal-details.md)
-      * [用户档案细分](./mixins/profile/segmentation.md)
-      * [用户档案工作详细信息](./mixins/profile/work-details.md)
+      * [人口统计详细信息](./mixins/profile/person-details.md)
+      * [个人联系人详细信息](./mixins/profile/personal-details.md)
+      * [细分会员资格详细信息](./mixins/profile/segmentation.md)
+      * [工作联系人详细信息](./mixins/profile/work-details.md)
    * 事件混合 {#event}
-      * [ExperienceEvent EndUserID](./mixins/event/enduserids.md)
-      * [体验活动环境详细信息](./mixins/event/environment-details.md)
+      * [最终用户ID详细信息](./mixins/event/enduserids.md)
+      * [环境详细信息](./mixins/event/environment-details.md)
    * [混合名称更新](./mixins/name-updates.md)
 * 数据类型 {#data-types}
    * [信标](./data-types/beacon.md)
