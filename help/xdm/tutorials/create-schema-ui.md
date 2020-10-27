@@ -3,10 +3,10 @@ keywords: Experience Platform;home;popular topics;ui;UI;XDM;XDM system;;experien
 solution: Experience Platform
 title: 使用架构编辑器创建架构
 topic: tutorial
-type: Tutorials
-description: 本教程介绍了在模式中使用模式编辑器创建Experience Platform的步骤。
+type: Tutorial
+description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
 translation-type: tm+mt
-source-git-commit: 9c7119ad836007af3437dc2e938b68aff3ca0f56
+source-git-commit: 097fe219e0d64090de758f388ba98e6024db2201
 workflow-type: tm+mt
 source-wordcount: '3819'
 ht-degree: 0%
