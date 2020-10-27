@@ -4,11 +4,11 @@ solution: Experience Platform
 title: 使用模式注册表API定义两个模式之间的关系
 description: 本文档提供了一个教程，用于定义组织使用模式注册表API定义的两个模式之间的一对一关系。
 topic: tutorial
-type: Tutorials
+type: Tutorial
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 097fe219e0d64090de758f388ba98e6024db2201
 workflow-type: tm+mt
-source-wordcount: '1304'
+source-wordcount: '1296'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 虽然模式关系可以通过使用合并模式来推断， [!DNL Real-time Customer Profile]但这仅适用于共享同一类的模式。 要在属于不同类的两个模式之间建立关系，必须向源模式添加专用关系字段，该字段引用目标模式的标识。
 
-本文档提供了一个教程，用于定义组织使用[!DNL模式注册表API定义的两个模式之 [间的一对一关系](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
+本文档提供了一个教程，用于定义组织使用定义的两个模式之间的一对一关系 [[!DNL Schema Registry API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
 
 ## 入门指南
 
@@ -28,7 +28,7 @@ ht-degree: 1%
 
 * [Experience Platform中的XDM系统](../home.md):XDM及其实施概述 [!DNL Experience Platform]。
    * [模式合成基础](../schema/composition.md):介绍XDM模式的构件。
-* [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL Real-time Customer Profile]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 * [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 在开始本教程之前，请查 [看开发人员指南](../api/getting-started.md) ，了解成功调用API所需了解的重要 [!DNL Schema Registry] 信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题(尤其要注意标题及 [!DNL Accept] 其可能的值)。
