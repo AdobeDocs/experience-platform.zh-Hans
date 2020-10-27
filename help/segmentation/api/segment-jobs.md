@@ -5,9 +5,9 @@ title: 细分作业
 topic: developer guide
 description: 本指南提供相关信息，帮助您更好地了解细分作业，并包含使用API执行基本操作的示例API调用。
 translation-type: tm+mt
-source-git-commit: 8c5c3aed4d46c8b3873009ab9f17ff9bca93302c
+source-git-commit: 521b760da850144d7a8e75126453c2aae5c2ce72
 workflow-type: tm+mt
-source-wordcount: '1153'
+source-wordcount: '1152'
 ht-degree: 2%
 
 ---
@@ -177,7 +177,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 | `metrics.profileSegmentationTime` | 包含分段评估开始和结束时间以及所花费总时间的信息的对象。 |
 | `metrics.segmentProfileCounter` | 按每个细分合格的用户档案数。 |
 | `metrics.segmentedProfileByNamespaceCounter` | 每个细分中每个身份命名空间的合格用户档案数。 |
-| `metrics.segmentProfileByStatusCounter` | 每个状态 **的用户档案片** 段计数。 支持以下三种状态： <ul><li>“已实现”-进入区段的新用户档案数。</li><li>“现有”-区段中继续存在的用户档案数。</li><li>“已退出”-用户档案段中不再存在的数据段数。</li></ul> |
+| `metrics.segmentProfileByStatusCounter` | 每个状态的用户档案数。 支持以下三种状态： <ul><li>“已实现”-进入区段的新用户档案数。</li><li>“现有”-区段中继续存在的用户档案数。</li><li>“已退出”-用户档案段中不再存在的数据段数。</li></ul> |
 | `metrics.totalProfilesByMergePolicy` | 每个合并策略的合并用户档案总数。 |
 
 ## 创建新区段作业 {#create}
