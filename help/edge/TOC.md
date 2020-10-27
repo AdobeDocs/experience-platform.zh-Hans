@@ -1,14 +1,15 @@
 ---
 product: experience-platform
+solution: Experience Platform, Data Collection
 audience: user
 user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 translation-type: tm+mt
-source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
+source-git-commit: 7f3d4f0266b58b1327d2b8743538c7fc9b67669b
 workflow-type: tm+mt
-source-wordcount: '119'
-ht-degree: 31%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
