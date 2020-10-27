@@ -5,9 +5,9 @@ title: 数据集用户指南
 topic: datasets
 description: 本数据集用户指南提供了有关在Adobe Experience Platform用户界面内处理数据集时执行常见操作的说明。
 translation-type: tm+mt
-source-git-commit: 79dca07d3e6ecf998a6278fa49178a7fa8cc0e8c
+source-git-commit: 1c00456ee06c1fc09c8e4ce070c90255f51811e1
 workflow-type: tm+mt
-source-wordcount: '1162'
+source-wordcount: '1146'
 ht-degree: 0%
 
 ---
@@ -22,11 +22,11 @@ ht-degree: 0%
 本用户指南要求您对Adobe Experience Platform的以下组件有充分的了解：
 
 * [数据集](overview.md):存储和管理结构，用于数据持久性 [!DNL Experience Platform]。
-* [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    * [模式合成基础](../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式编辑器](../../xdm/tutorials/create-schema-ui.md):了解如何使用用户界面内的自定义XDM [!DNL Schema Editor] 模式 [!DNL Platform] 构建自己。
-* [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [[!DNLAdobe Experience Platform数据治理]](../../data-governance/home.md):确保遵守有关使用客户数据的法规、限制和政策。
+* [[!DNL Real-time Customer Profile]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md):确保遵守有关使用客户数据的法规、限制和政策。
 
 ## 视图数据集
 
@@ -81,7 +81,7 @@ ht-degree: 0%
 
 ### 使用CSV文件创建数据集 {#csv}
 
-使用CSV文件创建数据集时，会创建一个专门模式，以为数据集提供与提供的CSV文件匹配的结构。 在“创 **[!UICONTROL 建数据集]** ”屏幕中，单击“从CSV文 **[!UICONTROL 件创建数据集”框]**。
+当使用CSV文件创建数据集时，会创建专门模式，以为数据集提供与提供的CSV文件匹配的结构。 在“创 **[!UICONTROL 建数据集]** ”屏幕中，单击“从CSV文 **[!UICONTROL 件创建数据集”框]**。
 
 ![](../images/datasets/user-guide/create_dataset_csv.png)
 
@@ -122,7 +122,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->无法删除由Adobe应用程序和服务(如Adobe Analytics、Adobe Audience Manager或)创建和 [!DNL Decisioning Service]利用的数据集。
+>无法删除由Adobe应用程序和服务(如Adobe Analytics、Adobe Audience Manager或)创建和 [!DNL Offer Decisioning]利用的数据集。
 
 ![](../images/datasets/user-guide/delete_dataset.png)
 
