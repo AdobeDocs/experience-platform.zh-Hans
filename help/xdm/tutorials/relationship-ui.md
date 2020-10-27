@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用模式模式编辑器定义两个模式之间的关系
 description: 此文档提供了一个教程，用于使用Experience Platform用户界面中的模式编辑器定义两个模式之间的关系。
 topic: tutorial
-type: Tutorials
+type: Tutorial
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 097fe219e0d64090de758f388ba98e6024db2201
 workflow-type: tm+mt
 source-wordcount: '910'
 ht-degree: 0%
