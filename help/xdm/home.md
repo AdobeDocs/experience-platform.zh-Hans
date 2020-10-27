@@ -5,9 +5,9 @@ title: 体验数据模型(XDM)系统
 topic: overview
 description: '标准化和互操作性是Adobe Experience Platform背后的关键概念。 体验Adobe模型(XDM)由客户驱动，旨在实现客户体验数据标准化并为客户体验管理定义模式。 '
 translation-type: tm+mt
-source-git-commit: 1aceddc02a5120b0bf7413db33c2c03d0ab2948c
+source-git-commit: 1c00456ee06c1fc09c8e4ce070c90255f51811e1
 workflow-type: tm+mt
-source-wordcount: '1638'
+source-wordcount: '1586'
 ht-degree: 2%
 
 ---
@@ -109,14 +109,6 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 借助 [!DNL Data Science Workspace]数据科学家可以轻松创建由机器学习提供支持的智能服务API。 这些服务与包括Adobe Target和Adobe Analytics Cloud在内的其他Adobe解决方案配合使用，帮助您实现个性化、有针对性的数字体验自动化。
 
 有关使用数据来提 [!DNL Experience Platform] 高洞察力的更多信息，请参 [阅数据科学工作区概述](../data-science-workspace/home.md)。
-
-### [!DNL Decisioning Service]
-
-[!DNL Decisioning Service] 提供在集成应用程序中配置个性化优惠 [!DNL Platform]决策的功能。 优惠可以是产品推荐、用于Web体验的内容组件、对话脚本和要执行的操作。
-
-[!DNL Decisioning Service] 利 [!DNL Real-time Customer Profile] 用数据，因此仅与基于实现该或类的模式的 [!DNL XDM Individual Profile] 数据集 [!DNL XDM ExperienceEvent] 兼容。
-
-有关详细 [信息，请参阅](../decisioning-service/home.md) “决策服务”概述。
 
 ## 后续步骤和其他资源
 
