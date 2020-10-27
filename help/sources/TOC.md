@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 translation-type: tm+mt
-source-git-commit: da0c65b5afc19e2497816c4b84270f5f5c4617f2
+source-git-commit: 26d117726a59dea0c08cf6ca5a13bf54951f7f44
 workflow-type: tm+mt
-source-wordcount: '645'
+source-wordcount: '654'
 ht-degree: 4%
 
 ---
@@ -134,6 +134,7 @@ ht-degree: 4%
    - [使用Flow Service API创建数据集基础连接](tutorials/api/create-dataset-base-connection.md)
    - [使用Flow Service API监视数据流](tutorials/api/monitor.md)
    - [使用Flow Service API更新连接信息](tutorials/api/update.md)
+   - [使用Flow Service API删除连接](tutorials/api/delete.md)
 - UI教程 {#ui-tutorials}
    - 创建源连接器 {#create}
       - Adobe应用程序 {#adobe-applications}
@@ -195,6 +196,7 @@ ht-degree: 4%
       - [为协议连接器配置数据流](tutorials/ui/dataflow/protocols.md)
    - [激活入站数据以填充客户用户档案](tutorials/ui/profile.md)
    - [监视帐户和数据流](tutorials/ui/monitor.md)
+   - [删除帐户](tutorials/ui/delete-accounts.md)
    - [删除数据流](tutorials/ui/delete.md)
 - [流运行通知](notifications.md)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
