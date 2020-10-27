@@ -1,11 +1,12 @@
 ---
 product: experience-platform
+solution: Experience Platform, Intelligent Services
 audience: user
 user-guide-title: 智能服务帮助
 breadcrumb-title: Intelligent Services 指南
 user-guide-description: 利用智能 AI 服务，根据营销事件数据生成分数、发掘洞见和创建细分。
 translation-type: tm+mt
-source-git-commit: ada5a34ffa3ea9c90ff578ab27f425b82f7ed18c
+source-git-commit: 097fe219e0d64090de758f388ba98e6024db2201
 workflow-type: tm+mt
 source-wordcount: '114'
 ht-degree: 24%
