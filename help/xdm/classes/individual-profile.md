@@ -5,9 +5,9 @@ title: XDM个人用户档案类
 topic: overview
 description: 此文档概述了XDM单个用户档案类。
 translation-type: tm+mt
-source-git-commit: b7b57c0b70b1af3a833f0386bc809bb92c9b50f8
+source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '363'
 ht-degree: 0%
 
 ---
@@ -34,10 +34,14 @@ ht-degree: 0%
 
 ## 兼容混音 {#mixins}
 
+>[!NOTE]
+>
+>几个混音的名称已经更改。 有关详细信息，请 [参阅混合名称](../mixins/name-updates.md) 更新文档。
+
 Adobe提供多个标准混音供类使 [!DNL XDM Individual Profile] 用。 以下是该类最常用混音的列表:
 
 * [[!UICONTROL IdentityMap]](../mixins/profile/identitymap.md)
-* [[!UICONTROL 用户档案人详细信息]](../mixins/profile/person-details.md)
-* [[!UICONTROL 用户档案个人详细信息]](../mixins/profile/personal-details.md)
-* [[!UICONTROL 用户档案工作详细信息]](../mixins/profile/work-details.md)
-* [[!UICONTROL 用户档案细分]](../mixins/profile/segmentation.md)
+* [[!UICONTROL 人口统计详细信息]](../mixins/profile/person-details.md)
+* [[!UICONTROL 个人联系人详细信息]](../mixins/profile/personal-details.md)
+* [[!UICONTROL 工作联系人详细信息]](../mixins/profile/work-details.md)
+* [[!UICONTROL 细分会员资格详细信息]](../mixins/profile/segmentation.md)
