@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;ExperienceEvent;fields;schemas;Schemas;Schema design;mixin;mixin;enduserids;end-user;end user;ids;
+keywords: Experience Platform;home;popular topics;schema;Schema;XDM;ExperienceEvent;fields;schemas;Schemas;Schema design;mixin;mixin;enduserids;end-user;end user;ids;updates;
 solution: Experience Platform
 title: 混合名称更新
 topic: overview
 description: 最近XDM混音名称更改的列表。
 translation-type: tm+mt
-source-git-commit: 0f36cf30e94c53aad8cdd11174a3656fda32d961
+source-git-commit: 4f50926a9c5bc02255bd62c51cca13fc9094a9e8
 workflow-type: tm+mt
-source-wordcount: '256'
+source-wordcount: '251'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,6 @@ ht-degree: 0%
 
 | 上一个名称 | 更新的名称 |
 | --- | --- |
-| [!UICONTROL 消费者体验事件混合] | [!UICONTROL 内容使用详细信息] |
 | [!UICONTROL 体验事件隐私混合] | [!UICONTROL 隐私详细信息] |
 | [!UICONTROL ExperienceEvent应用程序详细信息] | [!UICONTROL 应用程序详细信息] |
 | [!UICONTROL 体验活动渠道详细信息] | [!UICONTROL 渠道详细信息] |
@@ -44,7 +43,7 @@ ht-degree: 0%
 | [!UICONTROL 用户档案电话] | [!UICONTROL 电话号码详细信息] |
 | [!UICONTROL 用户档案首选项详细信息] | [!UICONTROL 首选项详细信息] |
 | [!UICONTROL 用户档案隐私] | [!UICONTROL 隐私详细信息] |
-| [!UICONTROL 用户档案推送详细信息] | [!UICONTROL 推送通知详细信息] |
+| [!UICONTROL 用户档案推送详细信息] | [!UICONTROL 推送通知令牌详细信息] |
 | [!UICONTROL 用户档案细分] | [!UICONTROL 细分会员资格详细信息] |
 | [!UICONTROL 用户档案订阅] | [!UICONTROL 订阅详细信息] |
 | [!UICONTROL 用户档案工作详细信息] | [!UICONTROL 工作联系人详细信息] |
