@@ -2,12 +2,12 @@
 keywords: destinations;destination;destination types
 title: 目标类型和类别
 seo-title: 目标类型和类别
-description: '在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到几种类型的目标。 '
-seo-description: 在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 启动扩展将原始事件数据转发到几种类型的目标。
+description: '在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 Experience Platform Launch扩展将原始事件数据转发到几种类型的目标。 '
+seo-description: 在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 Experience Platform Launch扩展将原始事件数据转发到几种类型的目标。
 translation-type: tm+mt
-source-git-commit: b510f715133cc3fed98861f977b3ce9a857a5ced
+source-git-commit: e6276eac05f0a20a668051034e83831002a464f0
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '591'
 ht-degree: 0%
 
 ---
@@ -49,13 +49,13 @@ ht-degree: 0%
 
 ### 扩展 {#extensions}
 
-Adobe实时CDP利用Experience Platform Launch的强大功能和灵活性将Launch扩展包括在Adobe实时CDP界面中。
+Adobe实时CDP利用Adobe Experience Platform Launch的强大功能和灵活性将平台启动扩展包括在Adobe实时CDP界面中。
 
 >[!TIP]
 >
->有关Experience Platform Launch扩展的详细信息，包括用例以及如何在界面中查找这些扩展，请参阅 [Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
+>有关Adobe Experience Platform Launch扩展的详细信息，包括使用案例以及如何在界面中查找这些扩展，请参 [阅Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
-启动扩展将原始事件数据转发到几种类型的目标。 将扩展视为目 **标的事件** 转发类型。 这是与目标平台的集成的一种更简单类型，目标平台仅转发原始事件数据。 例如Gainsight个性化 [扩展](/help/rtcdp/destinations/gainsight-extension.md)[或客户扩展的确认声音](/help/rtcdp/destinations/confirmit-digital-feedback-extension.md)。
+Platform Launch扩展将原始事件数据转发到几种类型的目标。 将扩展视为目 **标的事件** 转发类型。 这是与目标平台的集成的一种更简单类型，目标平台仅转发原始事件数据。 例如Gainsight个性化 [扩展](/help/rtcdp/destinations/gainsight-extension.md)[或客户扩展的确认声音](/help/rtcdp/destinations/confirmit-digital-feedback-extension.md)。
 
 ![Experience Platform Launch扩展与其他目标](/help/rtcdp/destinations/assets/launch-and-other-destinations.png)
 
