@@ -5,9 +5,9 @@ seo-title: Audience ManagerDIL扩展
 description: Audience ManagerDIL扩展是Adobe实时客户数据平台中的数据管理平台(DMP)目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 seo-description: Audience ManagerDIL扩展是Adobe实时客户数据平台中的数据管理平台(DMP)目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 2dfa46906374151628d46c309df724a59f8dc50e
+source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
 workflow-type: tm+mt
-source-wordcount: '607'
+source-wordcount: '608'
 ht-degree: 7%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 7%
 
 此扩展位于目录 [!DNL Destinations] 中，面向所有已购买Adobe实时CDP的客户。
 
-要使用此扩展，您需要访问 [!DNL Experience Platform Launch]。 [!DNL Experience Platform Launch] 作为附带的增值功能提供给Adobe Experience Cloud客户。 请与您的组织管理员联系以 [!DNL Launch] 获取访问权限，并要求他们授予 **[!UICONTROL 您manage_properties]** 权限，以便您可以安装扩展。
+要使用此扩展，您需要访问 [!DNL Adobe Experience Platform Launch]。 [!DNL Platform Launch] 作为附带的增值功能提供给Adobe Experience Cloud客户。 请与您的组织管理员联系以 [!DNL Platform Launch] 获取访问权限，并要求他们授予 **[!UICONTROL 您manage_properties]** 权限，以便您可以安装扩展。
 
 ## 安装扩展 {#install-extension}
 
@@ -43,24 +43,24 @@ ht-degree: 7%
 
 有关扩展配置选项的信息，请参阅 [文档中的Audience Manager](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/adobe-audience-manager-extension.html) 扩展 [!DNL Experience Launch] 页。
 
-您还可以直接在Experience Platform Launch界面中安 [装扩展](https://launch.adobe.com/)。 请参 [阅在文档中添加](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension) 新的 [!DNL Launch] 扩展。
+您还可以直接在Adobe Experience Platform Launch界面中安 [装扩展](https://launch.adobe.com/)。 请参 [阅在文档中添加](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html#add-a-new-extension) 新的 [!DNL Platform Launch] 扩展。
 
 
 ## 如何使用扩展 {#how-to-use}
 
-安装扩展后，您可以直接在中开始为它设置规则 [!DNL Launch]。
+安装扩展后，您可以直接在中开始为它设置规则 [!DNL Platform Launch]。
 
-在中 [!DNL Launch]，您可以为已安装的扩展设置规则，以便仅在某些情况下才将事件数据发送到扩展目标。 有关为扩展设置规则的详细信息，请参阅规 [则文档](https://docs.adobe.com/help/zh-Hans/launch/using/reference/manage-resources/rules.html)。
+在中 [!DNL Platform Launch]，您可以为已安装的扩展设置规则，以便仅在某些情况下才将事件数据发送到扩展目标。 有关为扩展设置规则的详细信息，请参阅规 [则文档](https://docs.adobe.com/help/zh-Hans/launch/using/reference/manage-resources/rules.html)。
 
 ## 配置、升级和删除扩展 {#configure-upgrade-delete}
 
-您可以在界面中配置、升级和删除扩 [!DNL Launch] 展。
+您可以在界面中配置、升级和删除扩 [!DNL Platform Launch] 展。
 
 >[!TIP]
 >
->如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显 **[!UICONTROL 示]** 该扩展的安装。 按照安装扩展中的说明启 [动安装](#install-extension) 工作流 [!DNL Launch] 程，以获取并配置或删除扩展。
+>如果某个属性上已安装该扩展，Adobe实时CDP UI仍会显 **[!UICONTROL 示]** 该扩展的安装。 按照安装扩展中的说明启 [动安装](#install-extension) 工作流 [!DNL Platform Launch] 程，以获取并配置或删除扩展。
 
-要升级您的扩展，请参 [阅文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/extension-upgrade.html) 中的扩 [!DNL Launch] 展升级。
+要升级您的扩展，请参 [阅文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/extension-upgrade.html) 中的扩 [!DNL Platform Launch] 展升级。
 
 
 
