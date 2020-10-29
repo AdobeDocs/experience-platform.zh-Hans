@@ -5,10 +5,10 @@ description: 了解在Adobe Analytics使用Experience PlatformWeb SDK自动映�
 seo-description: 了解在Adobe Analytics使用Experience PlatformWeb SDK自动映射哪些变量
 keywords: adobe analytics;variables;analytics;automatic map;automatically mapped;
 translation-type: tm+mt
-source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
+source-git-commit: 8e3bef77b84e40c836a6279a9a3e3901565c9920
 workflow-type: tm+mt
-source-wordcount: '547'
-ht-degree: 2%
+source-wordcount: '681'
+ht-degree: 0%
 
 ---
 
@@ -28,11 +28,12 @@ ht-degree: 2%
 | `commerce.checkouts.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_CHECKOUT `,`。 |
 | `commerce.productListAdds.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_ADD `,`。 |
 | `commerce.productListRemovals.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_REMOVE `,`。 |
-| `commerce.productViews.id` | `events` | `prodView` 事件序列化. |
-| `commerce.productListOpens.id` | `events` | `scOpen` 事件序列化. |
-| `commerce.productListViews.id` | `events` | `scView` 事件序列化. |
-| `commerce.productListAdds.id` | `events` | `scAdd` 事件序列化. |
-| `commerce.productListRemovals.id` | `events` | `scRemove` 事件序列化. |
+| `commerce.productViews.id` | `events` | （可选）事件 `prodView` 序列化。 如果排除此字段(即，对于无序列化事件)，系统将生成它自己的ID值并分配给实体。 |
+| `commerce.productListOpens.id` | `events` | （可选）事件 `scOpen` 序列化。 如果排除此字段(即，对于无序列化事件)，系统将生成它自己的ID值并分配给实体。 |
+| `commerce.productListViews.id` | `events` | （可选）事件 `scView` 序列化。 如果排除此字段(即，对于无序列化事件)，系统将生成它自己的ID值并分配给实体。 |
+| `commerce.productListAdds.id` | `events` | （可选）事件 `scAdd` 序列化。 如果排除此字段(即，对于无序列化事件)，系统将生成它自己的ID值并分配给实体。 |
+| `commerce.productListRemovals.id` | `events` | （可选）事件 `scRemove` 序列化。 如果排除此字段(即，对于无序列化事件)，系统将生成它自己的ID值并分配给实体。 |
+| `commerce.checkouts.id` | `events` | （可选）事件 `scCheckout` 序列化。 如果排除此字段(即，对于无序列化事件)，系统将生成它自己的ID值并分配给实体。 |
 | `commerce.checkouts.id` | `events` | `scCheckout` 事件序列化. |
 | `device.screenHeight` | `s` | AppMeasurement查询参数屏幕分辨率映射。 |
 | `device.screenWidth` | `s` | AppMeasurement查询参数屏幕分辨率映射。 |
