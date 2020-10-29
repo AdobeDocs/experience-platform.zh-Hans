@@ -5,17 +5,17 @@ title: Attribution AI用户指南
 topic: User guide
 description: 此文档用作与Intelligent Services用户界面中的Attribution AI交互的指南。
 translation-type: tm+mt
-source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
+source-git-commit: 4c1aa1fc5ca1f335dedba47623709d5d2ce12c6e
 workflow-type: tm+mt
-source-wordcount: '1449'
-ht-degree: 0%
+source-wordcount: '1746'
+ht-degree: 1%
 
 ---
 
 
 # Attribution AI用户指南
 
-Attribution AI作为智能服务的一部分，是一种多渠道算法归因服务，用于计算客户交互对特定结果的影响和增量影响。 利用Attribution AI，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
+Attribution AI作为智能服务的一部分，是一种多渠道算法归因服务，用于计算客户交互对特定结果的影响和增量影响。 利用 Attribution AI，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
 
 此文档用作与Intelligent Services用户界面中的Attribution AI交互的指南。
 
@@ -25,7 +25,29 @@ Attribution AI作为智能服务的一部分，是一种多渠道算法归因服
 
 ![访问实例](./images/user-guide/open_Attribution_ai.png)
 
-将显示Attribution AI服务页面。 此页列表Attribution AI的服务实例并显示其相关信息，包括实例名称、转换事件、实例的运行频率以及上次更新的状态。 单击 **创建实例** ，开始。
+将显示Attribution AI服务页面。 此页列表Attribution AI的服务实例并显示其相关信息，包括实例名称、转换事件、实例的运行频率以及上次更新的状态。
+
+您可以在创 **[!UICONTROL 建实例事件的右下侧]** ，找到“转换容器总数”计 **[!UICONTROL 分的度量]** 。 此度量跟踪当前日历年度中由Attribution AI评分的转换事件总数，包括所有沙箱环境和所有已删除的服务实例。
+
+![](./images/user-guide/total_conversions.png)
+
+使用UI右侧的控件可以编辑、克隆和删除服务实例。 要显示这些控件，请从现有服务实例中选 **[!UICONTROL 择一个实例]**。 这些控件包含以下信息：
+
+- **[!UICONTROL 编辑]**:选择 **[!UICONTROL “编辑]** ”允许您修改现有服务实例。 您可以编辑实例的名称、描述、状态和评分频率。
+- **[!UICONTROL 克隆]**:选择 **[!UICONTROL 克隆]** ，将复制所选服务实例。 然后，您可以修改工作流以进行细微调整，并将其重命名为新实例。
+- **[!UICONTROL 删除]**:您可以删除包含任何历史运行的服务实例。
+- **[!UICONTROL 数据源]**:指向此实例使用的数据集的链接。
+- **[!UICONTROL 上次运行详细信息]**:仅当运行失败时，才显示此选项。 此处显示有关运行失败原因的信息，如错误代码。
+
+![](./images/user-guide/side_panel.png)
+
+- **[!UICONTROL 转换事件]**:为此实例配置的转换事件的快速概述。
+- **[!UICONTROL 回顾窗口]**:您定义的时间范围，指示转换事件接触点前的天数。
+- **[!UICONTROL 触点]**:创建此实例时定义的所有接触点的列表。
+
+![](./images/user-guide/side_panel_2.png)
+
+选择 **[!UICONTROL 创建实例]** ，以开始。
 
 ![创建实例](./images/user-guide/landing_page.png)
 
@@ -133,7 +155,7 @@ Attribution AI作为智能服务的一部分，是一种多渠道算法归因服
 
 ## 高级培训和评分设置
 
-Attribution AI中的最后一页是 *用于* 设置培训和评分的高级页面。
+Attribution AI中的最后一页是 **[!UICONTROL 用于]** 设置培训和评分的高级页面。
 
 ![新页面高级](./images/user-guide/advanced_settings.png)
 
@@ -152,6 +174,12 @@ Attribution AI中的最后一页是 *用于* 设置培训和评分的高级页�
 >完成每个评分过程最多可能需要24小时。
 
 ![时钟图标](./images/user-guide/time_of_day.png)
+
+### 其他得分数据集列（可选）
+
+默认情况下，在标准模式中为每个服务实例创建得分数据集。 您可以根据转换事件和触点配置选择向得分数据集输出添加其他列。 开始通过从输入数据集中选择列，您可以拖放这些列以更改顺序，方法是按住汉堡包图标上的鼠标左键。
+
+![得分数据集列添加](./images/user-guide/Add-score-dataset.png)
 
 ### 基于区域的建模（可选） {#region-based-modeling-optional}
 
@@ -189,7 +217,7 @@ Attribution AI中的最后一页是 *用于* 设置培训和评分的高级页�
 
 ## 后续步骤
 
-按照本教程，您已成功地在Attribution AI中创建了服务实例。 实例完成评分后（最多允许24小时），您就可以发现 [Attribution AI洞察](./discover-insights.md)。 此外，如果您希望下载评分结果，请访问下载 [原始得分文档](./download-scores.md) 。
+按照本教程，您已成功地在Attribution AI中创建了服务实例。 实例完成评分后（最多允许24小时），您就可以发现 [Attribution AI洞察](./discover-insights.md)。 此外，如果您希望下载评分结果，请访问下载 [得分文档](./download-scores.md) 。
 
 ## Journey Orchestration
 
