@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: 数据流是从源中检索数据并将其引入平台数据集的计划任务。 本教程提供使用云存储帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 52129cbc597c6bef6f858e581edc0db23b06ad67
 workflow-type: tm+mt
-source-wordcount: '1674'
+source-wordcount: '1790'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 * [[!DNL Experience Data Model] (XDM)系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
    * [模式合成基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL实时客户用户档案]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
 此外，本教程要求您具有已建立的云存储帐户。 有关在UI中创建不同云存储帐户的列表教程，请参阅源连接 [器概述](../../../../home.md)。
 
@@ -54,17 +54,23 @@ ht-degree: 0%
 
 ### 收录Parke或JSON文件
 
-云存储帐户支持的文件格式还包括JSON和Parke。 JSON和Parke文件必须符合XDM标准。 要收录JSON或Parke文件，请从目录浏览器中选择适当的文件格式，并从正确的界面应用兼容的数据格式。 选择 **[!UICONTROL 下一]** 步以继续。
+云存储帐户还支持JSON和Parke文件。 拼花文件必须符合XDM标准，而JSON文件不必符合XDM标准。 要收录JSON或Parke文件，请从目录浏览器中选择适当的文件格式，并从正确的界面应用兼容的数据格式。
+
+如果数据格式为JSON，则将显示预览，显示有关文件中数据的信息。 在预览屏幕上，您可以使用符合XDM的下拉菜单选择JSON是否符 **[!UICONTROL 合XDM]** 。
+
+选择 **[!UICONTROL 下一]** 步以继续。
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/json-preview.png)
 
 >[!IMPORTANT]
 >
->与分隔文件类型不同，JSON和Permage格式文件不可用于预览。
+>与分隔文件和JSON文件类型不同，拼花格式文件不可用于预览。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-parquet.png)
 
 ## 将数据字段映射到XDM模式
 
-将显 **[!UICONTROL 示]** “映射”步骤，提供一个交互界面来将源数据映射到数 [!DNL Platform] 据集。 JSON或Parke格式的源文件必须符合XDM规范，并且不需要手动配置映射。 相反，CSV文件要求您显式配置映射，但允许您选择要映射的源数据字段。
+将显 **[!UICONTROL 示]** “映射”步骤，提供一个交互界面来将源数据映射到数 [!DNL Platform] 据集。 采用Parke格式的源文件必须符合XDM要求，并且不需要手动配置映射，而CSV文件要求您显式配置映射，但允许您选择要映射的源数据字段。 JSON文件（如果标记为XDM投诉）不需要手动配置。 但是，如果未标记为符合XDM规范，则需要您显式配置映射。
 
 选择要收录到的入站数据的数据集。 您可以使用现有数据集或创建新数据集。
 
@@ -94,11 +100,19 @@ ht-degree: 0%
 
 根据您的需要，您可以选择直接映射字段，或使用映射器函数转换源数据以导出计算值或计算值。 有关数据映射和映射器功能的详细信息，请参阅将CSV数据 [映射到XDM模式字段的教程](../../../../../ingestion/tutorials/map-a-csv-file.md)。
 
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping.png)
+
+对于JSON文件，除了将字段直接映射到其他字段外，还可以将对象直接映射到其他对象和数组到其他数组。
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/source-field-json.png)
+
+![](../../../../images/tutorials/dataflow/cloud-storage/batch/target-field-json.png)
+
+请注意，您无法跨不同类型进行映射。 例如，无法将对象映射到数组，或将字段映射到对象。
+
 >[!TIP]
 >
 >[!DNL Platform] 根据您选择的目标模式或数据集，为自动映射字段提供智能建议。 您可以手动调整映射规则以适合您的用例。
-
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping.png)
 
 选 **[!UICONTROL 择预览]** ，以查看所选数据集中最多100行样本数据的映射结果。
 
