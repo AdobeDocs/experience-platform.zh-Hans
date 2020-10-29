@@ -5,9 +5,9 @@ title: 连接到流目标并激活数据
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 51dd255156229adcb80c2a04aa1ccd5b01208a66
+source-git-commit: 34bf1c8aba555c5c8a527f4c0162cec4535b1dcf
 workflow-type: tm+mt
-source-wordcount: '1813'
+source-wordcount: '1871'
 ht-degree: 2%
 
 ---
@@ -231,6 +231,10 @@ POST /connections
 
 **请求**
 
+>[!IMPORTANT]
+>
+>以下示例包含前缀为的代码注释 `//`。 这些注释突出显示不同流目标必须使用不同值的位置。 请在使用代码片断之前删除注释。
+
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
@@ -240,7 +244,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "Connection for Amazon Kinesis/ Azure Event Hubs",
-    "description": "your company's holiday campaign",
+    "description": "summer advertising campaign",
     "connectionSpec": {
         "id": "{_CONNECTION_SPEC_ID}",
         "version": "1.0"
@@ -289,6 +293,10 @@ POST /targetConnections
 ```
 
 **请求**
+
+>[!IMPORTANT]
+>
+>以下示例包含前缀为的代码注释 `//`。 这些注释突出显示不同流目标必须使用不同值的位置。 请在使用代码片断之前删除注释。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
