@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: 本教程将分两个主要部分。 首先，您将使用JupyterLab Notebook中的模板创建机器学习模型。 接下来，您将在JupyterLab中练习笔记本到菜谱工作流程，以便在数据科学工作区中创建菜谱。
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: adaa7fbaf78a37131076501c21bf18559c17ed94
 workflow-type: tm+mt
-source-wordcount: '2335'
+source-wordcount: '2350'
 ht-degree: 0%
 
 ---
@@ -67,10 +67,10 @@ Recipe Builder [!UICONTROL 笔记本] ，可在笔记本内运行培训和评分
 
 ### 要求文件 {#requirements-file}
 
-要求文件用于声明您希望在菜谱中使用的其他库。 如果存在依赖关系，则可以指定版本号。 要查找其他库，请访问https://anaconda.org。 正在使用的主要库的列表包括：
+要求文件用于声明您希望在菜谱中使用的其他库。 如果存在依赖关系，则可以指定版本号。 要查找其他库，请 [访问anaconda.org](https://anaconda.org)。 要了解如何设置要求文件的格式，请访 [问Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-file-manually)。 正在使用的主要库的列表包括：
 
 ```JSON
-python=3.5.2
+python=3.6.7
 scikit-learn
 pandas
 numpy
@@ -79,7 +79,7 @@ data_access_sdk_python
 
 >[!NOTE]
 >
->您添加的库或特定版本可能与上述库不兼容。
+>您添加的库或特定版本可能与上述库不兼容。 此外，如果选择手动创建环境文件，则 `name` 不允许覆盖该字段。
 
 ### 配置文件 {#configuration-files}
 
@@ -117,7 +117,7 @@ data_access_sdk_python
 
 这一步使用了 [熊猫数据框](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)。 数据可以使用SDK() [!DNL Adobe Experience Platform] 从文件中加 [!DNL Platform] 载，也可`platform_sdk`以使用熊猫的功能从外部 `read_csv()` 源加载 `read_json()` 数据。
 
-- [[!DNL平台SDK]](#platform-sdk)
+- [[!DNL Platform SDK]](#platform-sdk)
 - [外部源](#external-sources)
 
 >[!NOTE]
@@ -148,30 +148,32 @@ df = pd.read_json(data)
 
 现在，您的数据位于数据帧对象中，可在下一节中进行分析 [和处理](#data-preparation-and-feature-engineering)。
 
-### 从数据访问SDK（已弃用）
+### 从Platform SDK
 
->[!CAUTION]
->
-> `data_access_sdk_python` 不再推荐，请参阅将 [数据访问代码转换为平台SDK](../authoring/platform-sdk.md) ，以获取有关使用数据加载器 `platform_sdk` 的指南。
+您可以使用平台SDK加载数据。 通过包含以下行，可以在页面顶部导入库：
 
-用户可以使用数据访问SDK加载数据。 通过包含以下行，可以在页面顶部导入库：
-
-`from data_access_sdk_python.reader import DataSetReader`
+`from platform_sdk.dataset_reader import DatasetReader`
 
 然后，使用 `load()` 该方法从配置()文 `trainingDataSetId` 件中的集合中获取培训`recipe.conf`数据集。
 
 ```PYTHON
-prodreader = DataSetReader(client_id=configProperties['ML_FRAMEWORK_IMS_USER_CLIENT_ID'],
-                           user_token=configProperties['ML_FRAMEWORK_IMS_TOKEN'],
-                           service_token=configProperties['ML_FRAMEWORK_IMS_ML_TOKEN'])
+def load(config_properties):
+    print("Training Data Load Start")
 
-df = prodreader.load(data_set_id=configProperties['trainingDataSetId'],
-                     ims_org=configProperties['ML_FRAMEWORK_IMS_TENANT_ID'])
+    #########################################
+    # Load Data
+    #########################################    
+    client_context = get_client_context(config_properties)
+    
+    dataset_reader = DatasetReader(client_context, config_properties['trainingDataSetId'])
+    
+    timeframe = config_properties.get("timeframe")
+    tenant_id = config_properties.get("tenant_id")
 ```
 
 >[!NOTE]
 >
->如配置文 [件部分所述](#configuration-files)，当您从中访问数据时，将为您设置以下配置参数 [!DNL Experience Platform]:
+>如配置文 [件部分所述](#configuration-files)，当您使用以下方式从Experience Platform访问数据时，将为您设置以下配置参数 `client_context`:
 > - `ML_FRAMEWORK_IMS_USER_CLIENT_ID`
 > - `ML_FRAMEWORK_IMS_TOKEN`
 > - `ML_FRAMEWORK_IMS_ML_TOKEN`
@@ -227,46 +229,51 @@ dataframe.drop('date', axis=1, inplace=True)
 加载评分数据的过程与函数中加载培训数据的过程类 `split()` 似。 我们使用数据访问SDK从我们的文 `scoringDataSetId` 件中加载 `recipe.conf` 数据。
 
 ```PYTHON
-def load(configProperties):
+def load(config_properties):
 
     print("Scoring Data Load Start")
 
     #########################################
     # Load Data
     #########################################
-    prodreader = DataSetReader(client_id=configProperties['ML_FRAMEWORK_IMS_USER_CLIENT_ID'],
-                               user_token=configProperties['ML_FRAMEWORK_IMS_TOKEN'],
-                               service_token=configProperties['ML_FRAMEWORK_IMS_ML_TOKEN'])
+    client_context = get_client_context(config_properties)
 
-    df = prodreader.load(data_set_id=configProperties['scoringDataSetId'],
-                         ims_org=configProperties['ML_FRAMEWORK_IMS_TENANT_ID'])
+    dataset_reader = DatasetReader(client_context, config_properties['scoringDataSetId'])
+    timeframe = config_properties.get("timeframe")
+    tenant_id = config_properties.get("tenant_id")
 ```
 
 数据加载后，进行数据准备和特征工程。
 
 ```PYTHON
-#########################################
-# Data Preparation/Feature Engineering
-#########################################
-df.date = pd.to_datetime(df.date)
-df['week'] = df.date.dt.week
-df['year'] = df.date.dt.year
+    #########################################
+    # Data Preparation/Feature Engineering
+    #########################################
+    if '_id' in dataframe.columns:
+        #Rename columns to strip tenantId
+        dataframe = dataframe.rename(columns = lambda x : str(x)[str(x).find('.')+1:])
+        #Drop id, eventType and timestamp
+        dataframe.drop(['_id', 'eventType', 'timestamp'], axis=1, inplace=True)
 
-df = pd.concat([df, pd.get_dummies(df['storeType'])], axis=1)
-df.drop('storeType', axis=1, inplace=True)
-df['isHoliday'] = df['isHoliday'].astype(int)
+    dataframe.date = pd.to_datetime(dataframe.date)
+    dataframe['week'] = dataframe.date.dt.week
+    dataframe['year'] = dataframe.date.dt.year
 
-df['weeklySalesAhead'] = df.shift(-45)['weeklySales']
-df['weeklySalesLag'] = df.shift(45)['weeklySales']
-df['weeklySalesDiff'] = (df['weeklySales'] - df['weeklySalesLag']) / df['weeklySalesLag']
-df.dropna(0, inplace=True)
+    dataframe = pd.concat([dataframe, pd.get_dummies(dataframe['storeType'])], axis=1)
+    dataframe.drop('storeType', axis=1, inplace=True)
+    dataframe['isHoliday'] = dataframe['isHoliday'].astype(int)
 
-df = df.set_index(df.date)
-df.drop('date', axis=1, inplace=True)
+    dataframe['weeklySalesAhead'] = dataframe.shift(-45)['weeklySales']
+    dataframe['weeklySalesLag'] = dataframe.shift(45)['weeklySales']
+    dataframe['weeklySalesDiff'] = (dataframe['weeklySales'] - dataframe['weeklySalesLag']) / dataframe['weeklySalesLag']
+    dataframe.dropna(0, inplace=True)
 
-print("Scoring Data Load Finish")
+    dataframe = dataframe.set_index(dataframe.date)
+    dataframe.drop('date', axis=1, inplace=True)
 
-return df
+    print("Scoring Data Load Finish")
+
+    return dataframe
 ```
 
 由于我们模型的目的是预测未来每周的销售量，因此您需要创建一个评分数据集来评估模型的预测效果。
