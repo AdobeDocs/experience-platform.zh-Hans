@@ -5,10 +5,10 @@ description: 了解在Adobe Analytics使用Experience PlatformWeb SDK自动映�
 seo-description: 了解在Adobe Analytics使用Experience PlatformWeb SDK自动映射哪些变量
 keywords: adobe analytics;variables;analytics;automatic map;automatically mapped;
 translation-type: tm+mt
-source-git-commit: aa9789768cbcbb13a36c200ef7540c045c30a3fe
+source-git-commit: 3ed89011313006cf627945bf8c75bfd0b87a69bc
 workflow-type: tm+mt
-source-wordcount: '554'
-ht-degree: 2%
+source-wordcount: '680'
+ht-degree: 0%
 
 ---
 
@@ -21,19 +21,19 @@ ht-degree: 2%
 | ---------- | ------------------------- | ----------------------------------------- |
 | `application.id` | `c.a.appid` | AppMeasurement上下文数 `c.a.appid` 据映射。 |
 | `application.launches.value` | `c.a.launches` | AppMeasurement上下文数 `c.a.launches` 据映射。 |
-| `commerce.checkouts.id` | `events` | `scCheckout` 事件序列化. |
+| `commerce.checkouts.id` | `events` | `scCheckout` 事件序列化。 如果排除此字段(即，对于无序列化事件)，系统将生成它自己的ID值并分配给实体。 |
 | `commerce.checkouts.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_CHECKOUT `,`。 |
 | `commerce.order.currencyCode` | `cc` | AppMeasurement查询参数CURRENCY映射。 |
 | `commerce.order.purchaseID` | `pi` | AppMeasurement查询参数PURCHASEID映射。 |
-| `commerce.productListAdds.id` | `events` | `scAdd` 事件序列化. |
+| `commerce.productListAdds.id` | `events` | `scAdd` 事件序列化。 如果排除此字段(即，对于无序列化事件)，系统将生成它自己的ID值并分配给实体。 |
 | `commerce.productListAdds.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_ADD `,`。 |
-| `commerce.productListOpens.id` | `events` | `scOpen` 事件序列化. |
+| `commerce.productListOpens.id` | `events` | `scOpen` 事件序列化。 如果排除此字段(即，对于无序列化事件)，系统将生成它自己的ID值并分配给实体。 |
 | `commerce.productListOpens.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_OPEN `,`。 |
-| `commerce.productListRemovals.id` | `events` | `scRemove` 事件序列化. |
+| `commerce.productListRemovals.id` | `events` | `scRemove` 事件序列化。 如果排除此字段(即，对于无序列化事件)，系统将生成它自己的ID值并分配给实体。 |
 | `commerce.productListRemovals.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_REMOVE `,`。 |
-| `commerce.productListViews.id` | `events` | `scView` 事件序列化. |
+| `commerce.productListViews.id` | `events` | `scView` 事件序列化。 如果排除此字段(即，对于无序列化事件)，系统将生成它自己的ID值并分配给实体。 |
 | `commerce.productListViews.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_SC_视图 `,`。 |
-| `commerce.productViews.id` | `events` | `prodView` 事件序列化. |
+| `commerce.productViews.id` | `events` | `prodView` 事件序列化。 如果排除此字段(即，对于无序列化事件)，系统将生成它自己的ID值并分配给实体。 |
 | `commerce.productViews.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_PROD_视图 `,`。 |
 | `commerce.purchases.value` | `events` | AppMeasurement查询参数事件列表全部映射（使用分隔符），转换为COMMERCE_PURCHASE `,`。 |
 | `device.colorDepth` | `c` | AppMeasurement查询参数C_COLOR映射。 |
