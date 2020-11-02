@@ -4,9 +4,9 @@ title: 用户档案预览-实时客户用户档案API
 description: Adobe Experience Platform使您能够从多个来源收集客户数据，从而为各个客户构建强大的统一用户档案。 由于实时客户用户档案启用的数据被引入平台，因此它存储在用户档案数据存储中。 随着用户档案存储中记录数的增加或减少，将运行一个示例作业，该示例作业包括关于用户档案片段和合并用户档案在数据存储中的数量的信息。 使用用户档案API，您可以预览最新成功的示例，以及按数据集和身份命名空间列表用户档案分发。
 topic: guide
 translation-type: tm+mt
-source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
+source-git-commit: 47c65ef5bdd083c2e57254189bb4a1f1d9c23ccc
 workflow-type: tm+mt
-source-wordcount: '1478'
+source-wordcount: '1608'
 ht-degree: 1%
 
 ---
@@ -23,6 +23,12 @@ Adobe Experience Platform使您能够从多个来源收集客户数据，从而�
 ## 入门指南
 
 本指南中使用的API端点是API的一 [[!DNL Real-time Customer Profile] 部分](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
+
+## 用户档案片段与合并用户档案
+
+本指南同时引用“用户档案片段”和“合并用户档案”。 在继续操作之前，必须了解这些术语之间的区别。
+
+每个客户用户档案都由多个用户档案片段组成，这些片段已合并成该客户的单个视图。 例如，如果客户在多个渠道中与您的品牌互动，您的组织将在多个数据集中显示与该单个客户相关的多个用户档案片段。 当这些片段被引入平台时，它们会（根据合并策略）合并在一起，以便为该客户创建单个用户档案。 因此，用户档案片段的总数可能始终高于合并用户档案的总数，因为每个用户档案由多个片段组成。
 
 ## 视图上次示例状态 {#view-last-sample-status}
 
