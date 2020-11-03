@@ -5,9 +5,9 @@ title: 准备要在Intelligent Services中使用的数据
 topic: Intelligent Services
 description: '为了使智能服务能够从您的营销事件数据中发掘洞察，必须以标准结构从语义上丰富和维护数据。 智能服务利用体验数据模型(XDM)模式来实现此目标。 具体而言，在智能服务中使用的所有数据集]必须符合Consumer ExperienceEvent(CEE)XDM模式。 '
 translation-type: tm+mt
-source-git-commit: 3083c50b31746bfd32634278cb55b926bd477b2b
+source-git-commit: 630f3bd0249dc3d0e73ace52c534d5f20ec0f87a
 workflow-type: tm+mt
-source-wordcount: '1882'
+source-wordcount: '1851'
 ht-degree: 0%
 
 ---
@@ -278,11 +278,7 @@ CEE混音中有几个关键字段应用于生成有用 [!DNL Intelligent Service
 
 #### 向数据集添加标识字段
 
->[!NOTE]
->
->未来版本 [!DNL Intelligent Services] 将整合Adobe Experience Platform [身份服务](../identity-service/home.md) ，使其客户识别能力。 因此，以下概述的步骤可能会发生变化。
-
-如果导入来自、或 [!DNL Adobe Audience Manager]其 [!DNL Adobe Analytics]他外部源的模式，则可以选择将数据字段设置为标识字段。 要将模式字段设置为标识字段，请在UI教程中视图有关设置标识字段 [的部分](../xdm/tutorials/create-schema-ui.md#identity-field) ，以使用模式编辑器创建模式，或者使用 [API教程](../xdm/tutorials/create-schema-api.md#define-an-identity-descriptor)。
+如果导入来自、或 [!DNL Adobe Audience Manager]其 [!DNL Adobe Analytics]他外部源的模式，则可以选择将数据字段设置为标识字段。 要将模式字段设置为标识字段，请视图UI教程或API教程中 [有关设置标](../xdm/tutorials/create-schema-ui.md#identity-field) 识字 [段的部分](../xdm/tutorials/create-schema-api.md#define-an-identity-descriptor) ，以创建模式。
 
 如果从本地CSV文件中摄取数据，可跳到有关映射和摄取数据的下 [一节](#ingest)。
 
