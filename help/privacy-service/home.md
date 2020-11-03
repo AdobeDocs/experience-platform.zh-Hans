@@ -4,10 +4,10 @@ solution: Experience Platform
 title: Adobe Experience Platform Privacy Service
 topic: overview
 translation-type: tm+mt
-source-git-commit: f3872d433949e6c14c28c6833b8498d4d01b8de3
+source-git-commit: d2f1255be48c1df04757f7e071221e0552a0b921
 workflow-type: tm+mt
-source-wordcount: '1627'
-ht-degree: 2%
+source-wordcount: '1360'
+ht-degree: 0%
 
 ---
 
@@ -41,16 +41,9 @@ Adobe Experience Platform [!DNL Privacy Service] 是为应对企业管理客户�
 
 根据您的业务性质及其运营所在的司法管辖区，您的数据操作可能受法律隐私法规的约束。 这些法规通常允许您的客户请求访问您从他们收集的数据，并请求删除该存储的数据。 在整个文档中，这些客户对其个人数据的请求称为“隐私请求”。
 
-下表概述了管理请求的法律隐 [!DNL Privacy Service] 私法规，包括文档链接以了解更多信息：
+有关管理请求的不同法律隐私法 [!DNL Privacy Service] 规的详细信息（包括关键术语和常见问题的答案），请参阅隐私 [法规文档](./regulations/overview.md)。
 
-| 法规 | 描述 |
-| --- | --- |
-| CCPA（加利福利亚） | The [!DNL California Consumer Privacy Act] (CCPA) enhances privacy rights and consumer protection for residents of California, United States. CCPA为加州居民提供了新的数据隐私权，包括访问和删除其个人数据、了解其个人数据是否被出售或披露（以及向谁）的权利，以及将其数选择退出据出售给第三方的权利。<br/><br/>更多文档的链接： <ul><li>[法律概述](https://oag.ca.gov/privacy/ccpa)</li><li>[CCPA常见问题解答](ccpa/faq.md)</li></ul> |
-| GDPR(欧洲合并) | The [!DNL General Data Protection Regulation] (GDPR) introduced several new data privacy rights for members of the European Union, including the **Right to Access** and the **Right to be Forgotten**. 这意味着被企业收集了个人数据的任何欧盟公民都可以随时请求访问或删除其数据。<br/><br/>更多文档的链接： <ul><li>[法律概述](https://gdpr-info.eu/)</li><li>[GDPR 常见问题解答](gdpr/faq.md)</li><li>[GDPR 术语](gdpr/terminology.md)</li></ul> |
-| LGPD（巴西） | ( [!DNL Lei Geral de Proteção de Dados] LGPD)旨在规范巴西所有个人或自然人个人数据的处理。 LGPD赋予巴西公民访问和删除其个人数据的权利、了解其个人数据是被出售还是被披露（以及被披露者）的权利，以及将其选择退出数据出售给第三方的权利。<br/><br/>更多文档的链接： <ul><li>[法律概述](https://gdpr.eu/gdpr-vs-lgpd/)</li></ul> |
-| PDPA（泰国） | 泰 [!DNL Personal Data Protection Act] 国(PDPA)的引入旨在保护泰国数据所有者免遭非法收集、使用或披露其个人数据。 受欧洲合并GDPR的启发，该规定授予泰国公民访问或删除其存储的个人数据的权利。<br/><br/>更多文档的链接： <ul><li>[法律概述](https://www.dataprotectionreport.com/2020/02/thailand-personal-data-protection-law/)</li><li>[PDPA常见问题解答](pdpa-tha/faq.md)</li><li>[PDPA术语](pdpa-tha/terminology.md)</li></ul> |
-
-如果您的数据操作属于上述任何法规的权限，请查看其文档以了解重要信息，如客户承担的特定隐私权以及遵守隐私要求的合规窗口。 在确定如何集成到CRM系统中以及客 [!DNL Privacy Service] 户如何与您的网站交互以发出隐私请求时，应考虑此信息。
+如果您的数据操作属于任何受支持法规的权限范围，请查看其文档以了解重要信息，如客户承担的特定隐私权以及遵守隐私要求的合规窗口。 在确定如何集成到CRM系统中以及客 [!DNL Privacy Service] 户如何与您的网站交互以发出隐私请求时，应考虑此信息。
 
 除法律法规外，在作出这些决定时，还应考虑适用于贵组织的任何组织或行业标准。
 
