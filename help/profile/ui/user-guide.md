@@ -1,29 +1,27 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;unified profile;Unified Profile;unified;Profile;rtcp;enable profile;Enable profile;Union schema;UNION PROFILE;union profile
-title: 实时客户用户档案用户指南
+title: 实时客户用户档案UI指南
 topic: guide
 description: 实时客户用户档案可以为您的每位客户创建整体视图，将来自多个渠道（包括在线、离线、CRM和第三方数据）的数据相结合。 此文档可作为与Adobe Experience Platform用户界面中实时用户档案交互的指南。
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 342a05e4c378732331968ab7695a3ba7b47f2956
 workflow-type: tm+mt
-source-wordcount: '1292'
+source-wordcount: '1245'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Real-time Customer Profile] 用户指南
+# [!DNL Real-time Customer Profile] UI指南
 
-[!DNL Real-time Customer Profile] 为每位客户创建全面视图，将来自多个渠道（包括在线、离线、CRM和第三方数据）的数据相结合。
-
-此文档用作在Adobe Experience Platform用户界 [!DNL Real-time Customer Profile] 面中与数据交互的指南。
+[!DNL Real-time Customer Profile] 为每位客户创建全面视图，将来自多个渠道（包括在线、离线、CRM和第三方数据）的数据相结合。 此文档用作在Adobe Experience Platform用户界 [!DNL Real-time Customer Profile] 面(UI)中与数据交互的指南。
 
 ## 入门指南
 
-本用户指南需要了解与管理相关 [!DNL Experience Platform] 的各种服务 [!DNL Real-time Customer Profiles]。 在阅读本用户指南之前，请查阅以下服务的文档：
+本UI指南需要了解与管理相关 [!DNL Experience Platform] 的各种服务 [!DNL Real-time Customer Profiles]。 在阅读本指南或在UI中工作之前，请查阅以下服务的文档：
 
-* [[!DNL实时客户用户档案]](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [[!DNL标识服务]](../../identity-service/home.md):当 [!DNL Real-time Customer Profile] 不同数据源被引入时，通过连接它们的身份实现 [!DNL Platform]。
+* [[!DNL Real-time Customer Profile]](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL Identity Service]](../../identity-service/home.md):当 [!DNL Real-time Customer Profile] 不同数据源被引入时，通过连接它们的身份实现 [!DNL Platform]。
 * [[!DNL Experience Data Model] (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 ## 概述
@@ -102,15 +100,15 @@ ht-degree: 0%
 
 从主用户档案 **[!UICONTROL 菜单]** ，选择合 **[!UICONTROL 并策略选]** 项卡以视图属于您组织的合并策略列表。 每个列出的策略都显示其名称，无论它是否为默认合并策略，以及它所应用的模式。
 
-有关合并策略的详细信息，请参 [阅合并策略用户指南](merge-policies.md)。
+有关合并策略的详细信息，请参阅合 [并策略UI指南](merge-policies.md)。
 
 ![](../images/user-guide/profiles-merge-policies.png)
 
 ## 合并模式 {#union-schema}
 
-从主用户档案 **[!UICONTROL 菜单]** ，选择 **[!UICONTROL 合并]** 模式选项卡，以视图用户档案数据的合并模式。 合并模式是同一类下的所 [!DNL Experience Data Model] 有(XDM)字段的合并，该类的模式已被允许在中使用 [!DNL Real-time Customer Profile]。 通过从左侧的“[!UICONTROL Class]”列表中选择类，您可以在画布中视图其模式的结构。 例如，选择“[!DNL XDM Profile]”将显示类的合并 [!DNL XDM Individual Profile] 模式。
+从主用户档案 **[!UICONTROL 菜单]** ，选择 **[!UICONTROL 合并模式]** 选项卡，对所摄取的数据进行合并模式。 合并模式是同一类下的所 [!DNL Experience Data Model] 有(XDM)字段的合并，该类的模式已被允许在中使用 [!DNL Real-time Customer Profile]。
 
-有关合并模式及其在Adobe Experience Platform的作用的详细信息，请参阅模式构图指南中有关合并模式 [的章节](../../xdm/schema/composition.md)。
+有关合并模式的详细信息，请参阅 [合并模式UI指南](union-schema.md)。
 
 ![](../images/user-guide/profiles-union-schema.png)
 
