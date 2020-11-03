@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform Privacy Service 帮助
 breadcrumb-title: Privacy Service 指南
 user-guide-description: 管理客户数据请求以遵守 GDPR 和 CCPA 等法律隐私法规。
 translation-type: tm+mt
-source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
+source-git-commit: 37f07e11abe3c6757edc635153454339118fc45c
 workflow-type: tm+mt
-source-wordcount: '104'
-ht-degree: 29%
+source-wordcount: '91'
+ht-degree: 32%
 
 ---
 
@@ -28,14 +28,10 @@ ht-degree: 29%
    * [Privacy ServiceUI概述](ui/overview.md)
    * [Privacy Service用户指南](ui/user-guide.md)
 * [订阅隐私事件](privacy-events.md)
-* GDPR指南 {#gdpr}
-   * [GDPR 常见问题解答](gdpr/faq.md)
-   * [GDPR 术语](gdpr/terminology.md)
-* CCPA参考线 {#ccpa}
-   * [CCPA常见问题解答](ccpa/faq.md)
-* PDPA（泰国）指南 {#pdpa-tha}
-   * [PDPA（泰国）常见问题解答](./pdpa-tha/faq.md)
-   * [PDPA（泰国）术语](./pdpa-tha/terminology.md)
+* 隐私权法规指南 {#regulations}
+   * [概述](regulations/overview.md)
+   * [常见问题解答](regulations/faq.md)
+   * [术语](regulations/terminology.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/privacy-service.yaml)
 * [发行说明](release-notes.md)
