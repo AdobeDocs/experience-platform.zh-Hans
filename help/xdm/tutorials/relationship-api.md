@@ -6,7 +6,7 @@ description: 本文档提供了一个教程，用于定义组织使用模式注�
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 4d9e66a55c265b60ab12070dd5e435c6567b7d0f
+source-git-commit: ce06550e9608163e6e5819d79cc73a4b1f92e915
 workflow-type: tm+mt
 source-wordcount: '1296'
 ht-degree: 1%
@@ -37,7 +37,7 @@ ht-degree: 1%
 
 您应已创建将在关系中定义的两个模式。 本教程在组织的当前忠诚度项目(在“”模式中定义)的成员与其喜爱的酒店(在“”模式中定义)之[!DNL Loyalty Members]间创建了[!DNL Hotels]一种关系。
 
-模式关系由源 **模式表示** ，该源具有引用目标模式内的另 **一个字段**。 在接下来的步骤中，[!DNL Loyalty Members]“”将作为源模式，而“[!DNL Hotels]”将作为目标模式。
+模式关系由源 **模式表示** ，该源具有引用目标模式内的另 **一个字段**。 在接下来的步骤中，[!DNL Loyalty Members]“”将是源模式，而“[!DNL Hotels]”将充当目标模式。
 
 >[!IMPORTANT]
 >
@@ -339,7 +339,7 @@ curl -X PATCH \
 
 ## 创建引用标识描述符 {#reference-identity}
 
-如果模式字段用作关系中其他模式的引用，则必须对其应用引用标识描述符。 由于“ `favoriteHotel` ”中的字[!DNL Loyalty Members]段将引用“”中的字段，因 `hotelId` 此必须[!DNL Hotels]`favoriteHotel` 为其提供引用标识描述符。
+如果模式字段用作关系中其他模式的引用，则必须对其应用引用标识描述符。 由于“ `favoriteHotel` ”中的字[!DNL Loyalty Members]段将引用“”中的字段，因 `hotelId` 此必须[!DNL Hotels]`hotelId` 为其提供引用标识描述符。
 
 通过向端点发出模式请求，为目标POST创建引用描述 `/tenant/descriptors` 符。
 
