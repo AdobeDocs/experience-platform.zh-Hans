@@ -5,9 +5,9 @@ title: 数据准备功能
 topic: overview
 description: 本文档介绍了与数据准备一起使用的映射功能。
 translation-type: tm+mt
-source-git-commit: 16c718c7c653a0cfe4c3dcefddfc5472525e1828
+source-git-commit: 6deb8f5e11b87550601679f06c8445d90fd22709
 workflow-type: tm+mt
-source-wordcount: '3432'
+source-wordcount: '3459'
 ht-degree: 3%
 
 ---
@@ -42,7 +42,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | concat | 连接给定字符串。 | <ul><li>字符串：将连接的字符串。</li></ul> | concat(STRING_1, STRING_2) | concat（&quot;嗨， &quot;, &quot;there&quot;, &quot;!&quot;） | `"Hi, there!"` |
 | 爆炸 | 根据正则表达式拆分字符串并返回一组部分。 可以选择包含正则表达式以拆分字符串。 默认情况下，拆分解析为“,”。 | <ul><li>字符串： **必需** 。需要拆分的字符串。</li><li>正则表达式： *可选* ：可用于拆分字符串的常规表达式。</li></ul> | explode(STRING, REGEX) | explode（&quot;嗨，那儿！&quot;, &quot; &quot;） | `["Hi,", "there"]` |
 | instr | 返回子字符串的位置／索引。 | <ul><li>输入： **必需** 。正在搜索的字符串。</li><li>子字符串： **必需** 。在字符串中搜索的子字符串。</li><li>开始位置： *可选* 。开始查看字符串的位置。</li><li>具体值： *可选* ，从开始位置查找第n个匹配项。 默认情况下，它为1。 </li></ul> | instr(INPUT, SUBSTRING,开始位置，发生) | instr(&quot;adobe`<span>`.com&quot;, &quot;com&quot;) | 6 |
@@ -51,7 +51,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | lower /<br>lcase | 将字符串转换为小写。 | <ul><li>输入： **必需** 。将转换为小写的字符串。</li></ul> | lower(INPUT) | lower(&quot;HeLLo&quot;)<br>lcase(&quot;HeLLo&quot;) | “hello” |
 | 上/<br>下 | 将字符串转换为大写。 | <ul><li>输入： **必需** 。将转换为大写的字符串。</li></ul> | upper(INPUT) | upper(&quot;HeLLo&quot;)<br>ucase(&quot;HeLLo&quot;) | “您好” |
 | 拆分 | 在分隔符上拆分输入字符串。 | <ul><li>输入： **必需** 。将要拆分的输入字符串。</li><li>分隔符： **必需** 。用于拆分输入的字符串。</li></ul> | split(INPUT, SEPARATOR) | split(&quot;Hello world&quot;, &quot; &quot;) | `["Hello", "world"]` |
-| 加入 | 使用分隔符连接对象列表。 | <ul><li>分隔符： **必需** 。将用于连接对象的字符串。</li><li>对象： **必需** 。将加入的字符串数组。</li></ul> | `join(SEPARATOR, [OBJECTS])` | `join(" ", ["Hello", "world"])` | “你好世界” |
+| 加入 | 使用分隔符连接对象列表。 | <ul><li>分隔符： **必需** 。将用于连接对象的字符串。</li><li>对象： **必需** 。将加入的字符串数组。</li></ul> | `join(SEPARATOR, [OBJECTS])` | `join(" ", to_array(true, "Hello", "world"))` | “你好世界” |
 | lpad | 将字符串的左侧与另一个给定字符串进行填充。 | <ul><li>输入： **必需** 。要填充的字符串。 此字符串可以为null。</li><li>计数： **必需** 。要填充的字符串大小。</li><li>填充： **必需** 。用于输入的字符串。 如果为null或为空，则它将被视为单个空格。</li></ul> | lpad(INPUT, COUNT, PADDING) | lpad(&quot;bat&quot;, 8, &quot;yz&quot;) | “yzyzybat” |
 | rpad | 将字符串的右侧与另一个给定的字符串相连。 | <ul><li>输入： **必需** 。要填充的字符串。 此字符串可以为null。</li><li>计数： **必需** 。要填充的字符串大小。</li><li>填充： **必需** 。用于输入的字符串。 如果为null或为空，则它将被视为单个空格。</li></ul> | rpad(INPUT, COUNT, PADDING) | rpad(&quot;bat&quot;, 8, &quot;yz&quot;) | “batyzyzy” |
 | 左 | 获取给定字符串的第一个“n”字符。 | <ul><li>字符串： **必需** 。您要获得的第一个“n”字符的字符串。</li><li>计数： **必**&#x200B;需要从字符串获取的“n”字符。</li></ul> | left（字符串，计数） | left(&quot;abcde&quot;, 2) | &quot;ab&quot; |
@@ -69,7 +69,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | sha1 | 使用安全哈希算法1(SHA-1)输入并生成哈希值。 | <ul><li>输入： **必需** 。要散列的纯文本。</li><li>字符集： *可选* 。字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha1(INPUT, CHARSET) | sha1（&quot;我的文本&quot;, &quot;UTF-8&quot;） | c3599c11e47719df18a24 &#x200B; 48690840c5dfcce3c80 |
 | sha256 | 使用安全哈希算法256(SHA-256)输入并生成哈希值。 | <ul><li>输入： **必需** 。要散列的纯文本。</li><li>字符集： *可选* 。字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha256(INPUT, CHARSET) | sha256（&quot;我的文本&quot;, &quot;UTF-8&quot;） | 7330d2b39ca35eaf4cb95fc846c21 &#x200B;ee6a39af698154a83a586ee270a0d372104 |
 | sha512 | 使用安全哈希算法512(SHA-512)输入并生成哈希值。 | <ul><li>输入： **必需** 。要散列的纯文本。</li><li>字符集： *可选* 。字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha512(INPUT, CHARSET) | sha512（&quot;我的文本&quot;, &quot;UTF-8&quot;） | a3d7e45a0d9be5fd4e4b9a3b8c9c2163c21ef &#x200B;708bf11b4232b21d2a8704ada2cd7b367dd0788a89 &#x200B; a5c908cfe377aceb1072a7b386b7d4fd2ff68a8fd24d16 |
@@ -83,7 +83,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | get_url_protocol | 从给定URL返回协议。 如果输入无效，则返回null。 | <ul><li>URL: **必需** 。需要从中提取协议的URL。</li></ul> | get_url_protocol(URL) | get_url_protocol(&quot;https://platform.adobe.com/home&quot;) | https |
 | get_url_host | 返回给定URL的主机。 如果输入无效，则返回null。 | <ul><li>URL: **必需** 。需要从中提取主机的URL。</li></ul> | get_url_host(URL) | get_url_host(&quot;https://platform.adobe.com/home&quot;) | platform.adobe.com |
 | get_url_port | 返回给定URL的端口。 如果输入无效，则返回null。 | <ul><li>URL: **必需** 。需要从中提取端口的URL。</li></ul> | get_url_port(URL) | get_url_port(&quot;sftp://example.com//home/joe/employee.csv&quot;) | 22 |
@@ -97,7 +97,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | now | 检索当前时间。 |  | now() | now() | `2020-09-23T10:10:24.556-07:00[America/Los_Angeles]` |
 | timestamp | 检索当前Unix时间。 |  | timestamp() | timestamp() | 1571850624571 |
 | 格式 | 根据指定的格式设置输入日期的格式。 | <ul><li>日期： **必需** ：输入日期（作为ZonedDateTime对象），您要设置格式。</li><li>格式： **必需** 。您希望将日期更改为的格式。</li></ul> | format(DATE, FORMAT) | format(2019-10-23T11:24:00+00:00, &quot;yyyy-MM-dd HH:mm:ss&quot;) | &quot;2019-10-23 11:24:35&quot; |
@@ -118,13 +118,14 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | size_of | 返回输入的大小。 | <ul><li>输入： **必需** 。您尝试查找的对象大小。</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 | is_empty | 检查对象是否为空。 | <ul><li>输入： **必需** 。您尝试检查的对象为空。</li></ul> | is_empty(INPUT) | `is_empty([1, 2, 3])` | false |
 | arrays_to_object | 创建对象列表。 | <ul><li>输入： **必需** 。键对和数组对的分组。</li></ul> | arrays_to_object(INPUT) | 需求示例 | 需求示例 |
 | to_object | 根据给定的平键／值对创建对象。 | <ul><li>输入： **必需** ：键／值对的平面列表。</li></ul> | to_object(INPUT) | to_object(&quot;firstName&quot;, &quot;John&quot;, &quot;lastName&quot;, &quot;Doe&quot;) | `{"firstName": "John", "lastName": "Doe"}` |
 | str_to_object | 从输入字符串创建对象。 | <ul><li>字符串： **必需** 。正在分析以创建对象的字符串。</li><li>VALUE_DELIMITER: *可选* 。分隔字段与值的分隔符。 The default delimiter is `:`.</li><li>FIELD_DELIMITER: *可选* 。分隔字段值对的分隔符。 The default delimiter is `,`.</li></ul> | str_to_object(STRING, VALUE_DELIMITER, FIELD_DELIMITER) | str_to_object(&quot;firstName - John | lastName - | 电话- 123 456 7890&quot;, &quot;-&quot;, &quot; | &quot;) | `{"firstName": "John", "lastName": "Doe", "phone": "123 456 7890"}` |
 | is_set | 检查源数据中是否存在该对象。 | <ul><li>输入： **必需** ：如果源数据中存在要检查的路径。</li></ul> | is_set(INPUT) | is_set(&quot;evars.evar.field1&quot;) | true |
+| 取消 | 将属性的值设置为 `null`。 当您不希望将字段复制到目标模式时，应使用此字段。 |  | nullify() | nullify() | `null` |
 
 ### 层次结构——数组
 
@@ -133,7 +134,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | 凝聚 | 返回给定数组中的第一个非空对象。 | <ul><li>输入： **必需** 。要查找的第一个非空对象的数组。</li></ul> | coalesce(INPUT) | coalesce(null、null、null、“first”、null、“second”) | “first” |
 | 第 | 检索给定数组的第一个元素。 | <ul><li>输入： **必需** 。要查找的第一个元素的数组。</li></ul> | first(INPUT) | first(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;1&quot; |
 | 最后 | 检索给定数组的最后一个元素。 | <ul><li>输入： **必需** 。要查找的最后一个元素的数组。</li></ul> | last(INPUT) | last(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;3&quot; |
@@ -146,7 +147,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | 解码 | 如果将键和键值对列表拼合为数组，则函数返回值（如果找到键），或返回默认值（如果数组中存在）。 | <ul><li>密钥： **必需** 。要匹配的密钥。</li><li>OPTIONS: **必需** ：键／值对的拼合数组。 （可选）可以将默认值放在结尾。</li></ul> | decode(KEY,OPTIONS) | decode(stateCode, &quot;ca&quot;, &quot;California&quot;, &quot;pa&quot;, &quot;Pennysplania&quot;, &quot;N/A&quot;) | 如果给定的stateCode是“ca”、“California”。<br>如果给定的stateCode是“pa”、“Pennysvania”。<br>如果stateCode与以下内容不匹配，则为“N/A”。 |
 | ii | 计算给定的布尔表达式，并根据结果返回指定值。 | <ul><li>BOOLEAN_表达式: **必需** ：要计算的布尔表达式。</li><li>TRUE_VALUE: **必需** ：当表达式的计算结果为true时返回的值。</li><li>FALSE_VALUE: **必需** ：当表达式的计算结果为false时返回的值。</li></ul> | iif(BOOLEAN_表达式、TRUE_VALUE、FALSE_VALUE) | iif(&quot;s&quot;。equalsIgnoreCase(&quot;S&quot;), &quot;True&quot;, &quot;False&quot;) | &quot;True&quot; |
 
@@ -157,7 +158,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | min | 返回给定参数的最小值。 使用自然订购。 | <ul><li>OPTIONS: **必需** ：可相互比较的一个或多个对象。</li></ul> | min(OPTIONS) | min(3, 1, 4) | 1 |
 | max | 返回给定参数的最大值。 使用自然订购。 | <ul><li>OPTIONS: **必需** ：可相互比较的一个或多个对象。</li></ul> | max(OPTIONS) | max(3, 1, 4) | 4 |
 
@@ -168,7 +169,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | to_bigint | 将字符串转换为BigInteger。 | <ul><li>字符串： **必需** 。要转换为BigInteger的字符串。</li></ul> | to_bigint(STRING) | to_bigint(&quot;100000.34&quot;) | 1000000.34 |
 | to_decimal | 将字符串转换为多次。 | <ul><li>字符串： **必需** 要转换为多次的字符串。</li></ul> | to_decimal(STRING) | to_decimal(&quot;20.5&quot;) | 20.5 |
 | to_float | 将字符串转换为浮点。 | <ul><li>字符串： **必需** 要转换为浮点的字符串。</li></ul> | to_float(STRING) | to_float(&quot;12.3456&quot;) | 12.34566 |
@@ -181,7 +182,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | json_to_object | 反序列化给定字符串中的JSON内容。 | <ul><li>字符串： **需要** ,JSON字符串需要反序列化。</li></ul> | json_to_object(STRING) | json_to_object({&quot;info&quot;:{&quot;firstName&quot;:&quot;John&quot;,&quot;lastName&quot;:&quot;Doe&quot;}) | 表示JSON的对象。 |
 
 ### 特别行动
@@ -191,7 +192,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | uuid /<br>guid | 生成伪随机ID。 |  | uuid()<br>guid() | uuid()<br>guid() | 7c0267d2-bb74-4e1a-9275-3bf4fccda5f4<br>c7016dc7-3163-43f7-afc7-2e1c9c206333 |
 
 ### 用户代理功能
@@ -201,7 +202,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左／向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
-| -------- | ----------- | ---------- | -------| ---------- | ------------- |
+-------- | ----------- | ---------- | -------| ---------- | -------------
 | ua_os_name | 从用户代理字符串中提取操作系统名称。 | <ul><li>USER_AGENT: **必需** ：用户代理字符串。</li></ul> | ua_os_name(USER_AGENT) | ua_os_name(&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（如Mac OS X）AppleWebKit/534.46（KHTML，如Gecko）Version/5.1 Mobile/9B206 Safari/7534.48.3英寸) | iOS |
 | ua_os_version_major | 从用户代理字符串中提取操作系统的主要版本。 | <ul><li>USER_AGENT: **必需** ：用户代理字符串。</li></ul> | ua_os_version_major(USER_AGENT) | ua_os_version_major(&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（如Mac OS X）AppleWebKit/534.46（KHTML，如Gecko）Version/5.1 Mobile/9B206 Safari/7534.48.3英寸) | iOS 5 |
 | ua_os_version | 从用户代理字符串提取操作系统的版本。 | <ul><li>USER_AGENT: **必需** ：用户代理字符串。</li></ul> | ua_os_version(USER_AGENT) | ua_os_version(&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（如Mac OS X）AppleWebKit/534.46（KHTML，如Gecko）Version/5.1 Mobile/9B206 Safari/7534.48.3英寸) | 5.1.1 |
