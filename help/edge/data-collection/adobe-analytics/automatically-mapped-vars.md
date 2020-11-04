@@ -5,9 +5,9 @@ description: 了解在Adobe Analytics使用Experience PlatformWeb SDK自动映�
 seo-description: 了解在Adobe Analytics使用Experience PlatformWeb SDK自动映射哪些变量
 keywords: adobe analytics;variables;analytics;automatic map;automatically mapped;
 translation-type: tm+mt
-source-git-commit: 3ed89011313006cf627945bf8c75bfd0b87a69bc
+source-git-commit: b81c0c450ddee4b0c0abedfd8ca53c3a599fb3cb
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '674'
 ht-degree: 0%
 
 ---
@@ -91,9 +91,8 @@ ht-degree: 0%
 | `placeContext.geo.postalCode` | `zip` | AppMeasurement查询参数ZIP映射。 |
 | `placeContext.geo.stateProvince` | `state` | AppMeasurement查询参数STATE映射。 |
 | `productlistitems.[N]._[NAME_SPACE].*` | `products` | AppMeasurement查询参数产品销售事件/Evars映射。 |
-| `productlistitems.[N].lineitemid` | `products` | AppMeasurement查询参数产品类别映射。 |
 | `productlistitems.[N].name` | `products` | AppMeasurement查询参数产品名称映射。 |
-| `productlistitems.[N].pricetotal` | `products` | AppMeasurement查询参数产品价格映射。 |
+| `productlistitems.[N].priceTotal` | `products` | AppMeasurement查询参数产品价格映射。 |
 | `productlistitems.[N].quantity` | `products` | AppMeasurement查询参数产品数量映射。 |
 | `web.webInteraction.URL` | `pev1` | AppMeasurement查询参数PAGE_事件_VAR1映射。 |
 | `web.webInteraction.name` | `pev2` | AppMeasurement查询参数PAGE_事件_VAR2映射。 |
