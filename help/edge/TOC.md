@@ -6,9 +6,9 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 translation-type: tm+mt
-source-git-commit: 502da50576dfd550598111658b41da6a62bb7e79
+source-git-commit: cea3e2f32d9489f5f06be70581bd974b9374646d
 workflow-type: tm+mt
-source-wordcount: '123'
+source-wordcount: '128'
 ht-degree: 34%
 
 ---
@@ -44,6 +44,8 @@ ht-degree: 34%
    * Adobe Target {#adobe-target}
       * [Target 概述](personalization/adobe-target/target-overview.md)
       * [单页应用程序实施](personalization/adobe-target/spa-implementation.md)
+   * Offer Decisioning {#offer-decisioning}
+      * [Offer Decisioning概述](personalization/offer-decisioning/offer-decisioning-overview.md)
 * 同意 {#consent}
    * [支持同意](consent/supporting-consent.md)
    * IAB透明度和同意框架2.0 {#iab-tcf}
