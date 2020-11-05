@@ -5,9 +5,9 @@ description: Adobe Experience PlatformWeb SDK可交付和呈现在Offer Decision
 seo-description: Adobe Experience PlatformWeb SDK可交付和呈现在Offer Decisioning管理的个性化优惠。 您可以使用Offer DecisioningUI或API创建优惠和其他相关对象。
 keywords: offer decisioning;decisioning;Web SDK;Platform Web SDK;personalized offers;deliver offers;offer delivery;offer personalization;
 translation-type: tm+mt
-source-git-commit: b10b930dca504b7672eb05bd88ab44d09d9e5c0a
+source-git-commit: 86d819daf26eaf1b46afe76054d475e61720dd27
 workflow-type: tm+mt
-source-wordcount: '850'
+source-wordcount: '839'
 ht-degree: 9%
 
 ---
@@ -56,9 +56,9 @@ Adobe Experience Platform可 [!DNL Web SDK] 以提供和呈现在Offer Decisioni
 
    ![](assets/decision-scope-copy.png)
 
-**边缘配置：** 有关详细信息，请阅读 [边缘配置](../../fundamentals/edge-configuration.md) 文档。
+* **边缘配置：** 有关详细信息，请阅读 [边缘配置](../../fundamentals/edge-configuration.md) 文档。
 
-**身份**:有关详细信息，请阅读本文档，其中概 [述了Platform Web SDK如何利用Identity Service](../../identity/overview.md)。
+* **身份**:有关详细信息，请阅读本文档，其中概 [述了Platform Web SDK如何利用Identity Service](../../identity/overview.md)。
 
 ## 使Offer Decisioning
 
@@ -66,7 +66,7 @@ Adobe Experience Platform可 [!DNL Web SDK] 以提供和呈现在Offer Decisioni
 
 1. 在边缘配置中 [启用Adobe Experience Platform](../../fundamentals/edge-configuration.md) ，并选中“Offer Decisioning”框
    ![优惠决策——边缘配置](./assets/offer-decisioning-edge-config.png)
-2. 按照说明安 [装SDK](../../fundamentals/installing-the-sdk.md) (SDK可以单独安装或通过 [Adobe Experience Platform Launch安装](http://launch.adobe.com/)。 下面是Launch [的快速开始指南](https://docs.adobe.com/content/help/zh-Hans/launch/using/intro/get-started/quick-start.html))。
+2. 按照说明安 [装SDK](../../fundamentals/installing-the-sdk.md) (SDK可以单独安装或通过 [Adobe Experience Platform Launch安装](http://launch.adobe.com/)。 以下是平 [台启动的快速开始指南](https://docs.adobe.com/content/help/zh-Hans/launch/using/intro/get-started/quick-start.html))。
 3. [为Offer Decisioning配置](../../fundamentals/configuring-the-sdk.md) SDK。 下文提供Offer Decisioning的其他具体步骤。
    * 独立安装的SDK
       1. 使用 `decisionScopes`
@@ -80,19 +80,19 @@ Adobe Experience Platform可 [!DNL Web SDK] 以提供和呈现在Offer Decisioni
           ]
       })
       ```
-   * 启动已安装的SDK
-      1. [创建启动项属性](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/companies-and-properties.html)
-      2. [添加 Launch 嵌入代码](https://docs.adobe.com/content/help/en/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      3. 通过从“边缘配置”下拉菜单中选择您刚刚创建的配置，安装并配置AEP Web SDK扩展。 有关扩展的有 [用文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html)。
+   * 平台启动已安装SDK
+      1. [创建平台启动属性](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/companies-and-properties.html)
+      2. [添加平台启动嵌入代码](https://docs.adobe.com/content/help/en/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
+      3. 使用您刚刚创建的边缘配置安装和配置Adobe Experience PlatformWeb SDK扩展，方法是从“边缘配置”下拉菜单中选择该配置。 有关扩展的有 [用文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html)。
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
-      4. 创建必要的 [数据元素](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/manage-resources/data-elements.html)。 您至少需要创建AEP Web SDK标识映射和AEP Web SDK XDM对象数据元素。 （希望有更多关于AEP Web SDK数据元素的文档，我们可以在此链接）
+      4. 创建必要的 [数据元素](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/manage-resources/data-elements.html)。 至少，您需要创建一个平台Web SDK标识映射和一个平台Web SDK XDM对象数据元素。
          ![identity-map-data-element](./assets/identity-map-data-element.png)
 
          ![xdm-object-data-element](./assets/xdm-object-data-element.png)
       5. 创建规 [则](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/manage-resources/rules.html)。
-         * 添加AEP Web SDK发送事件操作，并将相 `decisionScopes` 关内容添加到该操作的配置
+         * 添加Platform Web SDK发送事件操作，并将相 `decisionScopes` 关内容添加到该操作的配置
             ![send-事件-action-decisionScopes](./assets/send-event-action-decisionScopes.png)
       6. [创建并发布包含](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/publish/libraries.html) 您配置的所有相关规则、数据元素和扩展的库
 
