@@ -5,10 +5,10 @@ title: 列表当前用户的活动沙箱
 topic: developer guide
 description: 您可以通过向根端点发出列表请求来GET当前用户处于活动状态的沙箱。
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 6326b3072737acf30ba2aee7081ce28dc9627a9a
 workflow-type: tm+mt
-source-wordcount: '241'
-ht-degree: 1%
+source-wordcount: '345'
+ht-degree: 2%
 
 ---
 
@@ -24,14 +24,18 @@ ht-degree: 1%
 **API格式**
 
 ```http
-GET /
+GET /{QUERY_PARAMS}
 ```
+
+| 参数 | 描述 |
+| --------- | ----------- |
+| `{QUERY_PARAMS}` | 可选查询参数，用于筛选结果。 有关详细信息，请 [参阅查询](#query) 参数一节。 |
 
 **请求**
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/foundation/sandbox-management/ \
+  https://platform.adobe.io/data/foundation/sandbox-management/?&limit=3&offset=1 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -84,7 +88,17 @@ curl -X GET \
             "createdBy": "{USER_ID}",
             "modifiedBy": "{USER_ID}"
         }
-    ]
+    ],
+    "_page": {
+        "limit": 3,
+        "count": 1
+    },
+    "_links": {
+        "page": {
+            "href": "https://platform.adobe.io:443/data/foundation/sandbox-management/?limit={limit}&offset={offset}",
+            "templated": true
+        }
+    }
 }
 ```
 
@@ -96,3 +110,16 @@ curl -X GET \
 | `type` | 沙箱类型，“开发”或“生产”。 |
 | `isDefault` | 一个布尔属性，用于指示此沙箱是否是组织的默认沙箱。 通常，这是生产沙箱。 |
 | `eTag` | 沙箱的特定版本的标识符。 用于版本控制和缓存效率，每次对沙箱进行更改时都会更新此值。 |
+
+## 使用查询参数 {#query}
+
+API [[!DNL Sandbox]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) 支持在列出沙箱时使用查询参数进行页面和筛选结果。
+
+>[!NOTE]
+>
+>必须 `limit` 同时 `offset` 指定查询和参数。 如果仅指定一个，API将返回错误。 如果指定无，则默认限制为50，偏移为0。
+
+| 参数 | 描述 |
+| --------- | ----------- |
+| `limit` | 响应中要返回的最大记录数。 |
+| `offset` | 从第一个记录到响应开始（偏移）的实体数。 |
