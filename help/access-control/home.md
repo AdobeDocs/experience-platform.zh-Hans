@@ -5,9 +5,9 @@ topic: overview
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制通过Adobe Admin Console提供。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。
 translation-type: tm+mt
-source-git-commit: 34cfcaac276bf2645a0365a0dfa71c4ead6e2ecb
+source-git-commit: ccb7286e47aa4cf6356d22f84111b0c0fb30dfa8
 workflow-type: tm+mt
-source-wordcount: '1162'
+source-wordcount: '1299'
 ht-degree: 3%
 
 ---
@@ -73,7 +73,7 @@ Adobe Admin Console为管理Adobe产品授权和访问您的组织提供了一�
 
 产品用户档案中的权限选项卡显示该用户档案处于活动状态的沙箱和权限：
 
-![](./images/permissions-overview.png)
+![权限概述](./images/permissions-overview.png)
 
 通过类别授予的权 [!DNL Admin Console] 限按排序，并授予对几个低级功能的访问权限。
 
@@ -83,12 +83,19 @@ Adobe Admin Console为管理Adobe产品授权和访问您的组织提供了一�
 | --- | --- | --- |
 | [!DNL Data Modeling] | [!UICONTROL 管理架构] | 访问读取、创建、编辑和删除模式及相关资源。 |
 | [!DNL Data Modeling] | [!UICONTROL 查看架构] | 对模式和相关资源的只读访问。 |
+| [!DNL Data Modeling] | [!UICONTROL 管理关系] | 访问读取、创建、编辑和删除模式关系。 |
+| [!DNL Data Modeling] | [!UICONTROL 管理标识元数据] | 访问读取、创建、编辑和删除模式的标识元数据。 |
 | [!DNL Data Management] | [!UICONTROL 管理数据集] | 访问读取、创建、编辑和删除数据集。 模式的只读访问。 |
 | [!DNL Data Management] | [!UICONTROL 查看数据集] | 数据集和模式的只读访问。 |
 | [!DNL Data Management] | [!UICONTROL 数据监控] | 对监视数据集和流的只读访问。 |
 | [!DNL Profile Management] | [!UICONTROL 管理用户档案] | 访问用于客户用户档案的读取、创建、编辑和删除数据集。 对可用用户档案的只读访问。 |
 | [!DNL Profile Management] | [!UICONTROL 视图用户档案] | 对可用用户档案的只读访问。 |
+| [!DNL Profile Management] | [!UICONTROL 管理区段] | 访问读取、创建、编辑和删除区段。 |
+| [!DNL Profile Management] | [!UICONTROL 视图细分] | 对可用区段的只读访问权限。 |
+| [!DNL Profile Management] | [!UICONTROL 管理合并策略] | 访问读取、创建、编辑和删除合并策略。 |
+| [!DNL Profile Management] | [!UICONTROL 视图合并策略] | 对可用合并策略的只读访问权限。 |
 | [!DNL Profile Management] | [!UICONTROL 导出区段受众] | 能够将评估的受众段导出到数据集。 |
+| [!DNL Profile Management] | [!UICONTROL 将区段评估为受众] | 能够通过评估区段定义为受众生成用户档案。 |
 | [!DNL Identities] | [!UICONTROL 管理身份命名空间] | 访问读取、创建、编辑和删除身份命名空间。 |
 | [!DNL Identities] | [!UICONTROL 查看身份命名空间] | 身份命名空间的只读访问。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 管理沙箱] | 访问读取、创建、编辑和删除沙箱。 |
@@ -100,8 +107,12 @@ Adobe Admin Console为管理Adobe产品授权和访问您的组织提供了一�
 | [!DNL Data Ingestion] | [!UICONTROL 管理源] | 访问读取、创建、编辑和禁用源。 |
 | [!DNL Data Ingestion] | [!UICONTROL 视图源] | 对“目录”选项卡中的可用源和“浏览” **[!UICONTROL 选项卡中]** 经过身份验证的源进行只 **[!UICONTROL 读访问]** 。 |
 | [!DNL Data Science Workspace] | [!UICONTROL 管理数据科学工作区] | 在中访问读取、创建、编辑和删除 [!DNL Data Science Workspace]。 |
+| [!DNL Data Governance] | [!UICONTROL 应用数据使用标签] | 访问读取、创建和删除使用标签。 |
+| [!DNL Data Governance] | [!UICONTROL 管理数据使用策略] | 访问读取、创建、编辑和删除数据使用策略。 |
+| [!DNL Data Governance] | [!UICONTROL 视图数据使用策略] | 对属于您组织的数据使用策略的只读访问。 |
+| [!DNL Query Service] | [!UICONTROL 管理查询] | 访问读取、创建、编辑和删除平台查询的结构化SQL数据。 |
 
-_(*)本许可要求对此作出规定[!DNL Real-time Customer Data Platform]。 有关实时CDP的详细信息，请首先阅读实[时CDP概述](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)。_
+_(*)本许可要求对此作出规定 [!DNL Real-time Customer Data Platform]。 有关实时CDP的详细信息，请首先阅读实 [时CDP概述](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)。_
 
 ## 后续步骤
 
