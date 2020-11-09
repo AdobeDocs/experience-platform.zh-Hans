@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;enum;;primary identity;primary identity;XDM individual profile;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM Experienceevenet;schema design
+keywords: Experience Platform;home;popular topics;schema;Schema;enum;;primary identity;primary identity;XDM individual profile;Experience event;XDM Experience Event;XDM ExperienceEvent;experienceEvent;experienceevent;XDM Experienceevenet;schema design;best practices
 solution: Experience Platform
 title: Adobe Experience Platform数据建模的最佳实践
 topic: overview
 description: 本文档介绍了体验数据模型(XDM)模式，以及构成要在Adobe Experience Platform使用的模式的构件、原则和最佳做法。
 translation-type: tm+mt
-source-git-commit: e15df78978c06da254319d9d394be35c4668caa9
+source-git-commit: 5fe75ab7c939c8437d675212b71229fe3fb70c01
 workflow-type: tm+mt
-source-wordcount: '2477'
+source-wordcount: '2485'
 ht-degree: 1%
 
 ---
@@ -220,7 +220,7 @@ Adobe应用程序混合会通过使用字段自动指定默认的主要 `identit
 
 * 在构建用户档案之前，将数据表排序为模式、查找和事件类别，从而使用自上而下的方法。
 * 在设计用于不同用途的模式时，通常有多种方法和选项。
-* 您的数据模型应支持细分用例。
+* 您的数据模型应支持您的业务使用案例，如细分或客户旅程分析。
 * 使模式尽可能简单，并仅在必要时添加新字段。
 
 准备就绪后，请参阅教程 [在UI中创建模式](../tutorials/create-schema-ui.md) ，以获得有关如何创建模式、为实体分配相应类以及添加要将数据映射到的字段的分步说明。
