@@ -5,9 +5,9 @@ description: 了解如何使用Experience PlatformWeb SDK使用Adobe Target呈�
 seo-description: 了解如何使用Experience PlatformWeb SDK使用Adobe Target呈现个性化内容
 keywords: target;adobe target;xdm views; views;single page applications;SPA;SPA lifecycle;client-side;AB testing;AB;Experience targeting;XT;VEC
 translation-type: tm+mt
-source-git-commit: 485c2e3b0ad7b38a8e4a482cac49c123a744c47b
+source-git-commit: 8aeeef09602386f219fd8284b332469c04e88ffb
 workflow-type: tm+mt
-source-wordcount: '1664'
+source-wordcount: '1671'
 ht-degree: 14%
 
 ---
@@ -223,7 +223,7 @@ class Checkout extends Component {
 
 >[!NOTE]
 >
->要为SPA使用Visual Experience Composer，必须安装 [Adobe TargetVEC Helper Chrome Extension](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak)。
+>要为SPA使用VEC，必须安装并激活Firefox [或](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) Chrome [VEC Helper](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) Extension。
 
 ### “修改”面板
 
