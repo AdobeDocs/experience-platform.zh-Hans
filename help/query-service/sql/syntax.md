@@ -5,7 +5,7 @@ title: SQL语法
 topic: syntax
 description: 此文档显示查询服务支持的SQL语法。
 translation-type: tm+mt
-source-git-commit: c044194ed22b5e6fcd5e2e2102f3cd4eda45aa84
+source-git-commit: e02028e9808eab3373143aba7bbc4a115c52746b
 workflow-type: tm+mt
 source-wordcount: '2067'
 ht-degree: 1%
@@ -489,13 +489,15 @@ where 'format_name' is be one of:
 此命令有助于向表添加或删除主键或外键约束。
 
 ```sql
-Alter TABLE table_name ADD ( column_name Primary key Namespace 'namespace')
+Alter TABLE table_name ADD CONSTRAINT Primary key ( column_name )
 
-Alter TABLE table_name ADD ( column_name Foreign key references referenced_table_name Namespace 'namespace')
+Alter TABLE table_name ADD CONSTRAINT Foreign key ( column_name ) references referenced_table_name ( primary_column_name )
 
-Alter TABLE table_name DROP ( column_name Primary key)
+Alter TABLE table_name ADD CONSTRAINT Foreign key ( column_name ) references referenced_table_name Namespace 'namespace'
 
-Alter TABLE table_name DROP ( column_name Foreign key)
+Alter TABLE table_name DROP CONSTRAINT Primary key ( column_name )
+
+Alter TABLE table_name DROP CONSTRAINT  Foreign key ( column_name )
 ```
 
 >[!NOTE]
