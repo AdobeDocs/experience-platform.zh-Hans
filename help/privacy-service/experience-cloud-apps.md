@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Privacy Service和Experience Cloud应用程序
 topic: overview
 translation-type: tm+mt
-source-git-commit: 5b32c1955fac4f137ba44e8189376c81cdbbfc40
+source-git-commit: 4cd7b9d3ca542c2fba83d066197b92775c053729
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '555'
 ht-degree: 20%
 
 ---
@@ -14,12 +14,12 @@ ht-degree: 20%
 
 # [!DNL Privacy Service] 和应 [!DNL Experience Cloud] 用
 
-Adobe Experience Platform [!DNL Privacy Service] 旨在支持针对多个Adobe Experience Cloud应用程序的隐私请求。 每个应用程序都支持不同的产品值和ID，用于识别数据主体。
+Adobe Experience Platform [!DNL Privacy Service] 的设计初衷是支持Adobe Experience Cloud多个应用程序的隐私请求。 每个应用程序都支持不同的产品值和ID，用于识别数据主体。
 
 此文档可作为应用程序文 [!DNL Experience Cloud] 档的参考，其中概述了如何配置该应用程序进行与隐私相关的操作。 这包括如何格式化和标记数据。 涵盖两类别应用程序：
 
-* [与Privacy Service集成的应用程序](#integrated): 能够向其发送访问、删除或选择退出请求的应用程序 [!DNL Privacy Service]。
-* [自助应用程序](#self-serve): 必须在内部管理其隐私请求且不能直接与之通信的应 [!DNL Privacy Service] 用程序。
+* [与Privacy Service集成的应用程序](#integrated):能够向其发送访问、删除或选择退出请求的应用程序 [!DNL Privacy Service]。
+* [自助应用程序](#self-serve):必须在内部管理其隐私请求且不能直接与之通信的应 [!DNL Privacy Service] 用程序。
 
 请查阅您的应用程序 [!DNL Experience Cloud] 的文档，了解如何设置隐私请求的格式以及这些请求支持哪些值。
 
@@ -29,10 +29,10 @@ Adobe Experience Platform [!DNL Privacy Service] 旨在支持针对多个Adobe E
 
 | 应用程序 | 访问／删除 | 选择退出销售 | 文档和注意事项 |
 --- | :---: | :---: | ---
-| Adobe Advertising Cloud | ✓ | ✓ | <ul><li>[访问／删除文档](https://docs.adobe.com/content/help/en/advertising-cloud/all/privacy/ad-cloud-gdpr.html) </li><li>[!DNL Advertising Cloud] 利用Adobe隐私中心提供的现有全球选择退出功能。 有关更多信息，请 [参阅有关提出数据隐私](https://docs.adobe.com/content/help/zh-Hans/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html#opt-out-requests) 请求的指南。</li></ul> |
+| Adobe Advertising Cloud | ✓ | ✓ | <ul><li>[访问／删除GDPR文档](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-gdpr.html)</li><li>[CCPA的访问／删除文档](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-access-delete.html)</li><li>[CCPA的退出销售文档](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-opt-out-of-sale.html)</li></ul> |
 | Adobe Analytics | ✓ | ✓ | <ul><li>[访问／删除文档](https://docs.adobe.com/content/help/en/analytics/admin/data-governance/an-gdpr-overview.html)</li><li>[!DNL Analytics] 使用隐私报告变量处 [理退出请求](https://docs.adobe.com/content/help/zh-Hans/analytics/admin/data-governance/consent-variables.html)</li></ul> |
 | Adobe Audience Manager | ✓ | ✓ | <ul><li>[访问／删除文档](https://docs.adobe.com/content/help/zh-Hans/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html)</li><li>[退出文档](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/declared-ids.html)</li></ul> |
-| Adobe Campaign Standard | ✓ | ✓ | <ul><li>[访问／删除文档](https://docs.campaign.adobe.com/doc/standard/getting_started/en/ACS_GDPR.html)</li><li>[退出文档](../segmentation/honoring-opt-outs.md)</li></ul> |
+| Adobe Campaign Standard | ✓ | ✓ | <ul><li>[访问／删除文档](https://docs.campaign.adobe.com/doc/standard/getting_started/cn/ACS_GDPR.html)</li><li>[退出文档](../segmentation/honoring-opt-outs.md)</li></ul> |
 | Adobe客户属性(CRS) | ✓ | 不适用 | <ul><li>[访问／删除GDPR文档](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/customer-attributes/gdpr.html)</li><li>[CCPA的访问／删除文档](https://docs.adobe.com/content/help/zh-Hans/core-services/interface/customer-attributes/ccpa.html)</li><li>客户属性无法传输数据，因此不适用退出销售请求。</li></ul> |
 | Adobe Experience Platform | ✓ | ✓ | <ul><li>[访问／删除数据湖文档](../catalog/privacy.md)</li><li>[访问／删除实时客户用户档案文档](../profile/privacy.md)</li><li>[!DNL Experience Platform] 接受 [受众区段的退出请求](../segmentation/honoring-opt-outs.md)。</li></ul> |
 | Adobe Primetime认证 | ✓ | 不适用 | <ul><li>[访问／删除文档](http://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>[!DNL Primetime] 无法传输数据，因此不适用退出销售请求。</li></ul> |
