@@ -5,9 +5,9 @@ title: 批量摄取开发人员指南
 topic: developer guide
 description: 本文档全面介绍了如何使用批量摄取API。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '2678'
+source-wordcount: '2675'
 ht-degree: 5%
 
 ---
@@ -28,8 +28,8 @@ ht-degree: 5%
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
 - [批量摄取](./overview.md):允许您将数据作为批处理文件引入Adobe Experience Platform。
-- [[!DNL Experience Data Model] (XDM)系统](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [[!DNL沙箱]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+- [[!DNL Experience Data Model (XDM)] 系统](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 ### 读取示例API调用
 
