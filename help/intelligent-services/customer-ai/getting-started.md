@@ -5,9 +5,9 @@ title: 客户人工智能入门
 topic: Getting started
 description: 本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。
 translation-type: tm+mt
-source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '555'
+source-wordcount: '560'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 - [体验数据模型(XDM)系统概述](../../xdm/home.md):XDM是一个基本框架，它 [!DNL Adobe Experience Cloud]允许在Experience Platform的支持下，在正确的渠道，在正确的时刻，向正确的人提供正确的信息。 构建Experience Platform的方法体系XDM系统可操作由平台服务使用的体验数据模型模式。
 - [模式合成基础](../../xdm/schema/composition.md):本文档介绍了体验数据模型(XDM)模式，以及构成要用于的模式的构件、原则和最佳做法 [!DNL Adobe Experience Platform]。
 - [构建模式](../../xdm/tutorials/create-schema-ui.md):本教程介绍了在模式中使用模式编辑器创建Experience Platform的步骤。
-- [实时客户用户档案概述](../../rtcdp/overview.md):构建在 [!DNL Adobe Experience Platform]上 [!DNL Adobe Real-time Customer Data Platform] （实时CDP）可帮助公司将已知和未知的数据整合在一起，通过在整个客户旅程中的智能决策激活客户用户档案。 实时CDP结合了多个企业用户档案源，以实时创建统一的渠道，这些数据可用于在所有和设备上提供一对一的个性化客户体验。
+- [实时客户用户档案概述](../../rtcdp/overview.md):Adobe实 [!DNL Adobe Experience Platform]时客户数据平台(Real-time CDP)构建于此之上，可帮助公司将已知和未知数据汇集在一起，通过在整个客户旅程中的智能决策激活客户用户档案。 实时CDP结合了多个企业用户档案源，以实时创建统一的渠道，这些数据可用于在所有和设备上提供一对一的个性化客户体验。
 - [分段服务概述](../../segmentation/home.md):分段是定义用户档案子集从用户档案商店共享的特定属性或行为的过程，以区分有价人群和客户群。 例如，在名为“您忘记购买运动鞋吗？”的电子邮件活动中，您可能希望受众过去30天内搜索跑步鞋但未完成购买的所有用户。 使用不同的细分，您可以专注于各种受众，提供更加自定义的营销体验。
 - [区段生成器用户指南](../../segmentation/tutorials/create-a-segment.md):平台允许您轻松创建和访问细分，并使用不同的构件块进一步描述细分。
 
