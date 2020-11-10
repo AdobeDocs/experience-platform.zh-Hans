@@ -5,9 +5,9 @@ title: 隐私法规概述
 topic: troubleshooting
 description: 本文档概述了Adobe Experience Cloud支持的不同隐私法规。
 translation-type: tm+mt
-source-git-commit: fa401ce2acfaabc7f0b081b8f0f206730baffd3b
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '342'
 ht-degree: 8%
 
 ---
@@ -21,10 +21,10 @@ ht-degree: 8%
 
 | 法规 | 描述 |
 | --- | --- |
-| CCPA（加利福利亚） | The [[!DNL California Consumer Privacy Act] (CCPA)](https://oag.ca.gov/privacy/ccpa) enhances privacy rights and consumer protection for residents of California, United States. CCPA为加州居民提供了新的数据隐私权，包括访问和删除其个人数据、了解其个人数据是否被出售或披露（以及向谁）的权利，以及将其数选择退出据出售给第三方的权利。 |
-| GDPR(欧洲合并) | The [[!DNL General Data Protection Regulation] (GDPR)](https://gdpr-info.eu) introduced several new data privacy rights for members of the European Union, including the Right to Access and the Right to be Forgotten. 这意味着被企业收集了个人数据的任何欧盟公民都可以随时请求访问或删除其数据。 |
-| LGPD（巴西） | 巴 [[!DNL Lei Geral de Proteção de Dados] 西的](https://gdpr.eu/gdpr-vs-lgpd/) (LGPD)旨在规范对巴西所有个人或自然人个人数据的处理。 LGPD赋予巴西公民访问和删除其个人数据的权利、了解其个人数据是被出售还是被披露（以及被披露者）的权利，以及将其选择退出数据出售给第三方的权利。 |
-| PDPA（泰国） | 引入 [[!DNL Personal Data Protection Act] 该(PDPA)](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) ，是为了保护泰国数据所有者免受非法收集、使用或披露其个人数据的侵害。 受欧洲合并GDPR的启发，该规定授予泰国公民访问或删除其存储的个人数据的权利。 |
+| CCPA（加利福利亚） | 这 [[!DNL California Consumer Privacy Act (CCPA)]](https://oag.ca.gov/privacy/ccpa) 增强了美国加利福尼亚州居民的隐私权和消费者保护。 CCPA为加州居民提供了新的数据隐私权，包括访问和删除其个人数据、了解其个人数据是否被出售或披露（以及向谁）的权利，以及将其数选择退出据出售给第三方的权利。 |
+| GDPR(欧洲合并) | The [[!DNL General Data Protection Regulation (GDPR)]](https://gdpr-info.eu) introduced several new data privacy rights for members of the European Union, including the Right to Access and the Right to be Forgotten. 这意味着被企业收集了个人数据的任何欧盟公民都可以随时请求访问或删除其数据。 |
+| LGPD（巴西） | 该项 [[!DNL Lei Geral de Proteção de Dados (LGPD)]](https://gdpr.eu/gdpr-vs-lgpd/) 目旨在规范对巴西所有个人或自然人个人数据的处理。 LGPD赋予巴西公民访问和删除其个人数据的权利、了解其个人数据是被出售还是被披露（以及被披露者）的权利，以及将其选择退出数据出售给第三方的权利。 |
+| PDPA（泰国） | 该 [[!DNL Personal Data Protection Act (PDPA)]](https://www.pdpc.gov.sg/Overview-of-PDPA/The-Legislation/Personal-Data-Protection-Act) 协议旨在保护泰国数据所有者免遭非法收集、使用或披露其个人数据的侵害。 受欧洲合并GDPR的启发，该规定授予泰国公民访问或删除其存储的个人数据的权利。 |
 
 ## 后续步骤
 
