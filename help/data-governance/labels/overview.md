@@ -5,9 +5,9 @@ title: 数据使用标签概述
 topic: labels
 description: Adobe Experience Platform数据管理使您能够将数据使用标签应用于数据集和字段，并根据相关的数据使用策略对每个标签进行分类。 此文档概述了Experience Platform中的数据使用标签。
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '616'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Adobe Experience Platform [!DNL Data Governance] 允许您将数据使用标签�
 
 ## 受众段的标签继承
 
-由Adobe Experience Platform分段服务创 [建的所有受众段](../../segmentation/home.md) ，都会继承其相应数据集的使用标签。 这样，在将区段激活到目标 [!DNL Experience Platform] 时，构建在( [!DNL Real-time Customer Data Platform]如)之上的应用程序可以自动执行数据使用策略。
+由Adobe Experience Platform分段服务创 [建的所有受众段](../../segmentation/home.md) ，都会继承其相应数据集的使用标签。 这允许在Experience Platform（如）之上构建的应用程 [!DNL Real-time Customer Data Platform]序在将区段激活到目标时提供自动数据使用策略实施。
 
 除了继承数据集级别标签外，默认情况下，区段还会继承其关联数据集中的所有字段级别标签。 根据您的基于应 [!DNL Platform]用程序对段的使用情况，您可以潜在地指定使用哪些字段，从而阻止该段从被排除的字段继承标签。
 
