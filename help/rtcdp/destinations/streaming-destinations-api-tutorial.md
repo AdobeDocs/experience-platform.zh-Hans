@@ -5,9 +5,9 @@ title: 连接到流目标并激活数据
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 34bf1c8aba555c5c8a527f4c0162cec4535b1dcf
+source-git-commit: 502d913400a8ddc0132c64253cd30ea9f9fcd239
 workflow-type: tm+mt
-source-wordcount: '1871'
+source-wordcount: '1870'
 ht-degree: 2%
 
 ---
@@ -265,8 +265,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标的列表 [步骤中获得的连接规范ID](#get-the-list-of-available-destinations)。
-* `{AUTHENTICATION_CREDENTIALS}`:填写流目标的名称，例如： `Amazon Kinesis authentication credentials` 或 `Azure Event Hubs authentication credentials`者
+* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标的列表 [步骤中获得的连接规范ID](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md#get-the-list-of-available-destinations)。
+* `{AUTHENTICATION_CREDENTIALS}`:填写流目标的名称： `Aws Kinesis authentication credentials` 或 `Azure EventHub authentication credentials`者
 * `{ACCESS_ID}`: *用于 [!DNL Amazon Kinesis] 连接。* 您的AmazonKinesis存储位置的访问ID。
 * `{SECRET_KEY}`: *用于 [!DNL Amazon Kinesis] 连接。* 你AmazonKinesis存储所的秘钥。
 * `{REGION}`: *用于 [!DNL Amazon Kinesis] 连接。* Adobe实时 [!DNL Amazon Kinesis] CDP将流化您的数据所在的区域。
@@ -313,7 +313,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         "version": "1.0"
     },
     "data": {
-        "format": "json",
+        "format": "json"
     },
     "params": { // use these values for Amazon Kinesis connections
         "stream": "{NAME_OF_DATA_STREAM}", 
@@ -326,7 +326,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{BASE_CONNECTION_ID}`:使用您在上述步骤中获得的基本连接ID。
-* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标列表 [步骤中获得的连接规范](#get-the-list-of-available-destinations)。
+* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标列表 [步骤中获得的连接规范](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md#get-the-list-of-available-destinations)。
 * `{NAME_OF_DATA_STREAM}`: *用于 [!DNL Amazon Kinesis] 连接。* 在帐户中提供现有数据流的 [!DNL Amazon Kinesis] 名称。 Adobe实时CDP会将数据导出到此流。
 * `{REGION}`: *用于 [!DNL Amazon Kinesis] 连接。* 您的AmazonKinesis客户所在的Adobe实时CDP将流化您的数据的地区。
 * `{EVENT_HUB_NAME}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写Adobe [!DNL Azure Event Hub] 实时CDP将流化您的数据的名称。 有关详细信息，请 [参阅文档中的](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) “创建事件 [!DNL Microsoft] 中心”。
@@ -368,20 +368,36 @@ curl -X POST \
 -H 'x-sandbox-name: {SANDBOX_NAME}' \
 -H 'Content-Type: application/json' \
 -d  '{
-   
-        "name": "Create dataflow to Amazon Kinesis/ Azure Event Hubs",
-        "description": "This operation creates a dataflow to Amazon Kinesis/ Azure Event Hubs",
-        "flowSpec": {
-            "id": "{FLOW_SPEC_ID}",
-            "version": "1.0"
+  "name": "Azure Event Hubs",
+  "description": "Azure Event Hubs",
+  "flowSpec": {
+    "id": "{FLOW_SPEC_ID}",
+    "version": "1.0"
+  },
+  "sourceConnectionIds": [
+    "{SOURCE_CONNECTION_ID}"
+  ],
+  "targetConnectionIds": [
+    "{TARGET_CONNECTION_ID}"
+  ],
+  "transformations": [
+    {
+      "name": "GeneralTransform",
+      "params": {
+        "profileSelectors": {
+          "selectors": [
+            
+          ]
         },
-        "sourceConnectionIds": [
-            "{SOURCE_CONNECTION_ID}"
-        ],
-        "targetConnectionIds": [
-            "{TARGET_CONNECTION_ID}"
-        ]
+        "segmentSelectors": {
+          "selectors": [
+            
+          ]
+        }
+      }
     }
+  ]
+}
 ```
 
 * `{FLOW_SPEC_ID}`:基于用户档案的目标的流规范ID是 `71471eba-b620-49e4-90fd-23f1fa0174d8`。 在调用中使用此值。
@@ -425,53 +441,29 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 --header 'If-Match: "{ETAG}"' \
 --data-raw '[
-    {
-        "op": "add",
-        "path": "/transformations/0/params/segmentSelectors/selectors/-",
-        "value": {
-            "type": "PLATFORM_SEGMENT",
-            "value": {
-                "name": "Name of the segment that you are activating",
-                "description": "Description of the segment that you are activating",
-                "id": "{SEGMENT_ID}"
-            }
-        }
-    },
-        {
-        "op": "add",
-        "path": "/transformations/0/params/segmentSelectors/selectors/-",
-        "value": {
-            "type": "PLATFORM_SEGMENT",
-            "value": {
-                "name": "Name of the segment that you are activating",
-                "description": "Description of the segment that you are activating",
-                "id": "{SEGMENT_ID}"
-            }
-        }
-    },
-        {
-        "op": "add",
-        "path": "/transformations/0/params/profileSelectors/selectors/-",
-        "value": {
-            "type": "JSON_PATH",
-            "value": {
-                "operator": "EXISTS",
-                "path": "{PROFILE_ATTRIBUTE}"
-            }
-        }
-    },
-        },
-        {
-        "op": "add",
-        "path": "/transformations/0/params/profileSelectors/selectors/-",
-        "value": {
-            "type": "JSON_PATH",
-            "value": {
-                "operator": "EXISTS",
-                "path": "{PROFILE_ATTRIBUTE}"
-            }
-        }
+  {
+    "op": "add",
+    "path": "/transformations/0/params/segmentSelectors/selectors/-",
+    "value": {
+      "type": "PLATFORM_SEGMENT",
+      "value": {
+        "name": "Name of the segment that you are activating",
+        "description": "Description of the segment that you are activating",
+        "id": "{SEGMENT_ID}"
+      }
     }
+  },
+  {
+    "op": "add",
+    "path": "/transformations/0/params/profileSelectors/selectors/-",
+    "value": {
+      "type": "JSON_PATH",
+      "value": {
+        "operator": "EXISTS",
+        "path": "{PROFILE_ATTRIBUTE}"
+      }
+    }
+  }
 ]
 ```
 
