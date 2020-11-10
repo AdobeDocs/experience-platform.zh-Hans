@@ -4,9 +4,9 @@ title: 实时客户用户档案UI指南
 topic: guide
 description: 在Adobe Experience Platform用户界面(UI)中，您可以轻松视图组织内的任何合并模式，并预览特定类的字段、身份、关系和贡献模式。 本指南提供有关如何使用平台UI视图和浏览合并模式的详细信息。
 translation-type: tm+mt
-source-git-commit: e1fc20a5f791f7628a19c5440db3741c8be3743a
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '1023'
+source-wordcount: '1022'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 * [[!DNL Real-time Customer Profile]](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 * [[!DNL Identity Service]](../../identity-service/home.md):当 [!DNL Real-time Customer Profile] 不同数据源被引入时，通过连接它们的身份实现 [!DNL Platform]。
-* [[!DNL Experience Data Model] (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 ## 了解合并模式
 
