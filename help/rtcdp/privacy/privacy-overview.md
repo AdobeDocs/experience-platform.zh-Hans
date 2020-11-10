@@ -5,9 +5,9 @@ seo-title: 实时客户数据用户档案中的隐私
 description: 实时客户用户档案使您能够简化数据操作遵守隐私法规的流程。
 seo-description: 实时客户用户档案使您能够简化数据操作遵守隐私法规的流程。
 translation-type: tm+mt
-source-git-commit: 1eaadb1877cc5221bf6b0b8eed042287e59155bf
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '361'
+source-wordcount: '360'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 0%
 
 ## IAB TCF 2.0支持
 
-[!DNL Real-time CDP] 是(IAB)所 [述的](https://iabeurope.eu/vendor-list-tcf-v2-0/) (TCF) [!DNL Transparency & Consent Framework] 注册供应商列表 [!DNL Interactive Advertising Bureau] 的一部分。 根据TCF 2.0要求，您可 [!DNL Real-time CDP] 以收集详细的客户同意数据并将其集成到存储的客户用户档案中。 此同意数据随后可以纳入导出的用户档案段中是否包括某些受众，具体取决于其用例。
+[!DNL Real-time CDP] 是注册的供 [应商列表](https://iabeurope.eu/vendor-list-tcf-v2-0/) ( [!DNL Transparency & Consent Framework (TCF)]如(IAB)所 [!DNL Interactive Advertising Bureau] 述)的一部分。 根据TCF 2.0要求，您可 [!DNL Real-time CDP] 以收集详细的客户同意数据并将其集成到存储的客户用户档案中。 此同意数据随后可以纳入导出的用户档案段中是否包括某些受众，具体取决于其用例。
 
 有关详细信息， [请参阅中有关IAB TCF 2 [!DNL Real-time CDP]](./iab/overview.md) .0支持的概述。
 
