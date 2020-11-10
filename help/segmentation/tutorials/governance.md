@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: 本教程介绍了使用API强制实时客户用户档案受众细分的数据使用合规性的步骤。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '1351'
+source-wordcount: '1338'
 ht-degree: 1%
 
 ---
@@ -22,10 +22,10 @@ ht-degree: 1%
 
 本教程需要对以下组件有一个有效的了解 [!DNL Adobe Experience Platform]:
 
-- [[!DNL实时客户用户档案]](../../profile/home.md): [!DNL Real-time Customer Profile] 是通用查找实体存储，用于管理 [!DNL Experience Data Model] (XDM)中的数 [!DNL Platform]据 用户档案可以跨各种企业数据资产合并数据，并以统一的表示形式提供对该数据的访问。
+- [[!DNL Real-time Customer Profile]](../../profile/home.md): [!DNL Real-time Customer Profile] 是通用查找实体存储，用于管理 [!DNL Experience Data Model (XDM)] 中的数 [!DNL Platform]据 用户档案可以跨各种企业数据资产合并数据，并以统一的表示形式提供对该数据的访问。
    - [合并策略](../../profile/api/merge-policies.md):用于确定 [!DNL Real-time Customer Profile] 哪些数据可在特定条件下合并为统一视图的规则。 可以配置合并策略以 [!DNL Data Governance] 用于目的。
-- [[!DNL分段]](../home.md):如何 [!DNL Real-time Customer Profile] 将用户档案商店中包含的大量个人划分为拥有相似特征并将对营销策略做出类似反应的较小群体。
-- [[!DNL数据管理]](../../data-governance/home.md): [!DNL Data Governance] 使用以下组件为数据使用标签和执行提供基础架构：
+- [[!DNL Segmentation]](../home.md):如何 [!DNL Real-time Customer Profile] 将用户档案商店中包含的大量个人划分为拥有相似特征并将对营销策略做出类似反应的较小群体。
+- [[!DNL Data Governance]](../../data-governance/home.md): [!DNL Data Governance] 使用以下组件为数据使用标签和执行提供基础架构：
    - [数据使用标签](../../data-governance/labels/user-guide.md):标签用于根据处理数据集和字段各自数据的敏感程度描述数据集和字段。
    - [数据使用策略](../../data-governance/policies/overview.md):配置，指示允许对按特定数据使用标签分类的数据执行哪些营销操作。
    - [策略实施](../../data-governance/enforcement/overview.md):允许您实施数据使用策略并防止构成违反策略的数据操作。
@@ -385,4 +385,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过遵循本教程，您查找了与受众区段关联的数据使用标签，并测试了它们是否存在针对特定营销操作的违反策略的情况。 有关中的详 [!DNL Data Governance] 细信 [!DNL Experience Platform]息，请阅读[!DNL [数据管理]的概述](../../data-governance/home.md)。
+通过遵循本教程，您查找了与受众区段关联的数据使用标签，并测试了它们是否存在针对特定营销操作的违反策略的情况。 有关中的更多 [!DNL Data Governance] 信 [!DNL Experience Platform]息，请阅读概述 [[!DNL Data Governance]](../../data-governance/home.md)。
