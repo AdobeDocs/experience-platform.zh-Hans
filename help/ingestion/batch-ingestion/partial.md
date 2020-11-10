@@ -5,9 +5,9 @@ title: 部分批摄取概述
 topic: overview
 description: 此文档提供了管理部分批摄取的教程。
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
-source-wordcount: '916'
+source-wordcount: '915'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
 本教程需要对涉及部分批量摄取的Adobe Experience Platform各项服务有一定的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
 - [批量摄取](./overview.md):从数据文 [!DNL Platform] 件（如CSV和Parke）中摄取和存储数据的方法。
-- [[!DNL Experience Data Model] (XDM)](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
