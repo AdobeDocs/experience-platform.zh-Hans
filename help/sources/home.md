@@ -5,9 +5,9 @@ title: Adobe Experience Platform源连接器概述
 topic: overview
 description: Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用平台服务构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 translation-type: tm+mt
-source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
+source-git-commit: d26eaf699a67a1bc7111f5f97da277368fcc4629
 workflow-type: tm+mt
-source-wordcount: '866'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 
 [!DNL Experience Platform] 支持从第三方广告系统中摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
 
-- [[!DNL Google AdWords]连接器](connectors/advertising/ads.md)
+- [[!DNL Google AdWords]](connectors/advertising/ads.md) 连接器
 
 ### 云存储
 
@@ -91,6 +91,12 @@ CRM系统提供的数据有助于建立客户关系，进而创造忠诚度并�
 - [[!DNL Oracle] 连接器](connectors/databases/oracle.md)
 - [[!DNL Phoenix] 连接器](connectors/databases/phoenix.md)
 - [[!DNL PostgreSQL] 连接器](connectors/databases/postgres.md)
+
+### 电子商务
+
+[!DNL Experience Platform] 支持从第三方电子商务系统中摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档:
+
+- [[!DNL Shopify]](connectors/ecommerce/shopify.md)
 
 ### 营销自动化
 
