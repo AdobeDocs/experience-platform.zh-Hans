@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 translation-type: tm+mt
-source-git-commit: 26d117726a59dea0c08cf6ca5a13bf54951f7f44
+source-git-commit: 9e005b0b225e8a643a080fb3d4b014d981748973
 workflow-type: tm+mt
-source-wordcount: '654'
-ht-degree: 4%
+source-wordcount: '676'
+ht-degree: 3%
 
 ---
 
@@ -62,6 +62,8 @@ ht-degree: 4%
       - [Oracle连接器](connectors/databases/oracle.md)
       - [菲尼克斯连接器](connectors/databases/phoenix.md)
       - [PostgreSQL连接器](connectors/databases/postgres.md)
+   - 电子商务 {#ecommerce}
+      - [Shopify连接器](connectors/ecommerce/shopify.md)
    - 营销自动化 {#marketing-automation}
       - [HubSpot连接器](connectors/marketing-automation/hubspot.md)
    - 付款 {#payments}
@@ -106,6 +108,8 @@ ht-degree: 4%
          - [菲尼克斯连接器](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL连接器](tutorials/api/create/databases/postgres.md)
          - [SQL Server连接器](tutorials/api/create/databases/sql-server.md)
+      - 电子商务 {#ecommerce}
+         - [Shopify连接器](tutorials/api/create/ecommerce/shopify.md)
       - 营销自动化 {#marketing-automation}
          - [HubSpot连接器](tutorials/api/create/marketing-automation/hubspot.md)
       - 付款 {#payments}
@@ -118,6 +122,7 @@ ht-degree: 4%
       - [浏览CRM数据](tutorials/api/explore/crm.md)
       - [浏览客户成功数据](tutorials/api/explore/customer-success.md)
       - [浏览数据库或NoSQL数据](tutorials/api/explore/database-nosql.md)
+      - [浏览电子商务数据](tutorials/api/explore/ecommerce.md)
       - [浏览营销自动化数据](tutorials/api/explore/marketing-automation.md)
       - [浏览付款数据](tutorials/api/explore/payments.md)
       - [浏览协议数据](tutorials/api/explore/protocols.md)
@@ -127,6 +132,7 @@ ht-degree: 4%
       - [收集CRM数据](tutorials/api/collect/crm.md)
       - [收集客户成功数据](tutorials/api/collect/customer-success.md)
       - [收集数据库或NoSQL数据](tutorials/api/collect/database-nosql.md)
+      - [收集电子商务数据](tutorials/api/collect/ecommerce.md)
       - [收集营销自动化数据](tutorials/api/collect/marketing-automation.md)
       - [收集付款数据](tutorials/api/collect/payments.md)
       - [收集协议数据](tutorials/api/collect/protocols.md)
@@ -178,6 +184,8 @@ ht-degree: 4%
          - [Oracle连接器](tutorials/ui/create/databases/oracle.md)
          - [菲尼克斯连接器](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL连接器](tutorials/ui/create/databases/postgres.md)
+      - 电子商务 {#ecommerce}
+         - [Shopify连接器](tutorials/ui/create/ecommerce/shopify.md)
       - 营销自动化 {#marketing-automation}
          - [HubSpot连接器](tutorials/ui/create/marketing-automation/hubspot.md)
       - 付款 {#payments}
@@ -188,9 +196,10 @@ ht-degree: 4%
       - [为广告连接器配置数据流](tutorials/ui/dataflow/advertising.md)
       - [为批处理云存储连接器配置数据流](tutorials/ui/dataflow/batch/cloud-storage.md)
       - [为流式云存储连接器配置数据流](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
-      - [为数据库连接器配置数据流](tutorials/ui/dataflow/databases.md)
       - [为CRM连接器配置数据流](tutorials/ui/dataflow/crm.md)
       - [为客户成功连接器配置数据流](tutorials/ui/dataflow/customer-success.md)
+      - [为数据库连接器配置数据流](tutorials/ui/dataflow/databases.md)
+      - [为电子商务连接器配置数据流](tutorials/ui/dataflow/ecommerce.md)
       - [为营销自动化连接器配置数据流](tutorials/ui/dataflow/marketing-automation.md)
       - [为付款连接器配置数据流](tutorials/ui/dataflow/payments.md)
       - [为协议连接器配置数据流](tutorials/ui/dataflow/protocols.md)
