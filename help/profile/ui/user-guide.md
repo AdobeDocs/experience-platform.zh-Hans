@@ -4,9 +4,9 @@ title: 实时客户用户档案UI指南
 topic: guide
 description: 实时客户用户档案可以为您的每位客户创建整体视图，将来自多个渠道（包括在线、离线、CRM和第三方数据）的数据相结合。 此文档可作为与Adobe Experience Platform用户界面中实时用户档案交互的指南。
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: 295315ab052ff151bea9037567bf2690d705367b
 workflow-type: tm+mt
-source-wordcount: '1244'
+source-wordcount: '1245'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 ### 合并策略
 
-合并 **[!UICONTROL 策略选择器]** 会自动为您的组织选择默认的合并策略。 如果不想使用该合并策略，可以选择默认合 `X` 并策略旁边的，以打开“选择合并策略 **[!UICONTROL ”对话框]** ，在该对话框中可以选择其他合并策略。 要进一步了解合并策略及其在平台中的角色，请参阅合 [并策略用户指南](merge-policies.md)。
+合并 **[!UICONTROL 策略选择器]** 会自动为您的组织选择默认的合并策略。 如果不想使用该合并策略，可以选择默认合 `X` 并策略旁边的，以打开“选择合并策略 **[!UICONTROL ”对话框]** ，在该对话框中可以选择其他合并策略。 要进一步了解合并策略及其在平台中的角色，请参阅合 [并策略UI指南](merge-policies.md)。
 
 ![](../images/user-guide/profiles-search-merge-policy.png)
 
@@ -98,7 +98,7 @@ ht-degree: 0%
 
 ## 合并策略
 
-从主用户档案 **[!UICONTROL 菜单]** ，选择合 **[!UICONTROL 并策略选]** 项卡以视图属于您组织的合并策略列表。 每个列出的策略都显示其名称，无论它是否为默认合并策略，以及它所应用的模式。
+从主用户档案 **[!UICONTROL 菜单]** ，选择合 **[!UICONTROL 并策略选]** 项卡以视图属于您组织的合并策略列表。 每个列出的策略都显示其名称，无论它是否为默认合并策略，以及它所应用的模式类。
 
 有关合并策略的详细信息，请参阅合 [并策略UI指南](merge-policies.md)。
 
