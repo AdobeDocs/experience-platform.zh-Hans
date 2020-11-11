@@ -3,9 +3,9 @@ keywords: Experience Platform;profile;real-time customer profile;troubleshooting
 title: 合并策略——实时客户用户档案API
 topic: guide
 translation-type: tm+mt
-source-git-commit: 47c65ef5bdd083c2e57254189bb4a1f1d9c23ccc
+source-git-commit: 6bfc256b50542e88e28f8a0c40cec7a109a05aa6
 workflow-type: tm+mt
-source-wordcount: '2458'
+source-wordcount: '2494'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,13 @@ Adobe Experience Platform使您能够将来自多个来源的数据片段整合�
 
 ## 合并策略的组件 {#components-of-merge-policies}
 
-合并策略是IMS组织专用的策略，允许您创建不同的策略，以便以您需要的特定方式合并模式。 任何访问数 [!DNL Profile] 据的API都需要合并策略，但如果未明确提供，则将使用默认策略。 [!DNL Platform] 提供默认的合并策略，或者您可以为特定模式创建合并策略并将其标记为组织的默认策略。 每个组织可能具有每个模式的多个合并策略，但每个模式只能有一个默认的合并策略。 在提供模式名和需要但未提供合并策略的情况下，将使用任何设置为默认的合并策略。 当您将合并策略设置为默认策略时，之前设置为默认策略的任何现有合并策略都将自动更新为不再用作默认策略。
+合并策略是IMS组织专用的策略，允许您创建不同的策略，以按您需要的特定方式合并模式。 任何访问数 [!DNL Profile] 据的API都需要合并策略，但如果未明确提供，则将使用默认策略。 [!DNL Platform] 为组织提供默认的合并策略，或者您可以为特定体验数据模型(XDM)模式类创建合并策略，并将其标记为组织的默认策略。
+
+虽然每个组织可能具有每个模式类的多个合并策略，但每个类只能有一个默认的合并策略。 在提供模式类名称且需要但不提供合并策略的情况下，将使用任何设置为默认的合并策略。
+
+>[!NOTE]
+>
+>当您将新的合并策略设置为默认策略时，之前设置为默认策略的任何现有合并策略都将自动更新为不再用作默认策略。
 
 ### 完整合并策略对象
 
@@ -41,7 +47,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据片段整合�
         "name": "{NAME}",
         "imsOrgId": "{IMS_ORG}",
         "schema": {
-            "name": "{SCHEMA_NAME}"
+            "name": "{SCHEMA_CLASS_NAME}"
         },
         "version": 1,
         "identityGraph": {
@@ -62,7 +68,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据片段整合�
 | `imsOrgId` | 此合并策略所属的组织ID |
 | `identityGraph` | [标识图对象](#identity-graph) ，指示将从中获取相关标识的标识图。 为所有相关身份找到的用户档案片段将被合并。 |
 | `attributeMerge` | [属性合并](#attribute-merge) 对象，指示在发生用户档案冲突时合并策略优先处理属性的方式。 |
-| `schema` | 可 [以使用](#schema) 合并策略的模式对象。 |
+| `schema.name` | 作为对象 [`schema`](#schema) 的一部分， `name` 该字段包含与合并策略相关的XDM模式类。 有关模式和类的详细信息，请阅读 [XDM文档](../../xdm/home.md)。 |
 | `default` | 指示此合并策略是否为指定模式的默认值的布尔值。 |
 | `version` | [!DNL Platform] 维护的合并策略版本。 只读值在更新合并策略时递增。 |
 | `updateEpoch` | 合并策略的上次更新日期。 |
@@ -132,7 +138,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据片段整合�
 * **`dataSetPrecedence`** :根据用户档案片段的来源数据集优先处理这些片段。 当一个数据集中的信息优先于或信任另一个数据集中的数据时，可以使用此选项。 使用此合并类型时，属 `order` 性是必需的，因为它按优先级顺序列表数据集。
    * **`order`**:当使用“dataSetPrecedency”时， `order` 必须向数组提供一列表数据集。 列表中未包含的任何数据集都不会合并。 换言之，必须明确列出数据集才能合并到用户档案中。 数 `order` 组按优先级列表数据集的ID。
 
-**示例attributeMerge对象(使用类 `dataSetPrecedence` 型)**
+#### 使用类 `attributeMerge` 型的示例对 `dataSetPrecedence` 象
 
 ```json
     "attributeMerge": {
@@ -146,7 +152,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据片段整合�
     }
 ```
 
-**示例attributeMerge对象(使用类 `timestampOrdered` 型)**
+#### 使用类 `attributeMerge` 型的示例对 `timestampOrdered` 象
 
 ```json
     "attributeMerge": {
@@ -156,7 +162,7 @@ Adobe Experience Platform使您能够将来自多个来源的数据片段整合�
 
 ### 架构 {#schema}
 
-模式对象指定创建此合并策略的体验模式模型(XDM)。
+模式对象指定创建此合并策略的体验模式模型(XDM)类。
 
 **`schema`对象**
 
@@ -731,7 +737,7 @@ curl -X DELETE \
 
 ## 后续步骤
 
-现在，您知道如何为IMS组织创建和配置合并策略，可以使用它们根据受众创建 [!DNL Real-time Customer Profile] 段。 请参阅Adobe Experience Platform [分段服务文档](../../segmentation/home.md) ，开始定义和使用区段。
+现在您知道如何为组织创建和配置合并策略，您可以使用这些策略调整平台内客户用户档案的视图，并根据数据创建受众 [!DNL Real-time Customer Profile] 细分。 请参阅Adobe Experience Platform [分段服务文档](../../segmentation/home.md) ，开始定义和使用区段。
 
 ## 附录
 
