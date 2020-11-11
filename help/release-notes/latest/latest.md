@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 49541c94d8f4891286ed3e9a9d314ca32fe1ed1b
+source-git-commit: 7c4b60dad1ad2071bb19a9b9e181f2db495187c2
 workflow-type: tm+mt
-source-wordcount: '2041'
+source-wordcount: '2049'
 ht-degree: 3%
 
 ---
@@ -203,7 +203,7 @@ Adobe Experience Platform可以从外部来源收集数据，同时允许您使�
 **新来源**
 |功能 |说明 |
 | — | — |
-| [!DNL Shopify] |您现在可以 [!DNL Shopify] 使 [!DNL Experience Platform] 用API [!DNL Flow Service] 或UI连接。 |
+| [!DNL Shopify] |您现在可以 [!DNL Shopify] 使 [!DNL Experience Platform] 用API [!DNL Flow Service] 或UI连接。 有关详细 [信息，请参阅](../../sources/connectors/ecommerce/shopify.md) Shopify连接器概述。 |
 
 **主要功能**
 
