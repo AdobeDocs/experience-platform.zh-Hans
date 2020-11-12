@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 5f184de8c20001f7d9a78dab17130ccadb918dfb
+source-git-commit: 5ff73aa1745e78f0026ada2c66908888be5f4498
 workflow-type: tm+mt
-source-wordcount: '2049'
+source-wordcount: '2086'
 ht-degree: 3%
 
 ---
@@ -211,6 +211,7 @@ Adobe Experience Platform可以从外部来源收集数据，同时允许您使�
 | ------- | ----------- |
 | 更新连接信息 | 您现在可以使用API和UI更新现有批处理连接的名称、 [!DNL Flow Service] 说明和凭据。 有关详细信息，请参阅有关使用流 [服务API更新连接和](../../sources/tutorials/api/update.md)[使用UI编辑帐户详细信息的教程](../../sources/tutorials/ui/monitor.md)。 |
 | 删除连接 | 现在，可以使用API和UI删除包含错误或已变得不必 [!DNL Flow Service] 要的批处理连接。 有关详细信息，请参阅教 [程，该教程涉及使用流服务API](../../sources/tutorials/api/delete.md)[删除连接以及使用UI删除帐户](../../sources/tutorials/ui/delete-accounts.md)。 |
+| 分层映射 | 在预览获取过程中，您可以分层的源文件，如JSON或Parke。 有关详细信息，请 [参阅在UI中为云存储连接器配置流](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) 。 |
 | 流源中映射的API支持 | 您现在可以使用API对流源执行映射功能。 |
 | 对云存储源的自定义分隔符的API支持 | 您现在可以使用云存储源收集非CSV分隔文件。 您可以使用任何单列分隔符（如制表符、逗号、管道、分号或哈希）以任何格式收集平面文件。 如果未提供，则该值默认为逗号。 |
 | 对Adobe Audience Manager连接器的沙箱支持 | Audience Manager连接器现在可感知沙箱。 用户可以使连接器将Audience Manager数据集路由到自己选择的沙箱（包括非生产沙箱）。 此配置仅限于每个IMS组织一个沙箱。 |
