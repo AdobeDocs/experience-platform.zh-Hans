@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 translation-type: tm+mt
-source-git-commit: 9e005b0b225e8a643a080fb3d4b014d981748973
+source-git-commit: 89a807c0adbc3c9e4396adbb96764453034c8ea3
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '680'
 ht-degree: 3%
 
 ---
@@ -208,4 +208,5 @@ ht-degree: 3%
    - [删除帐户](tutorials/ui/delete-accounts.md)
    - [删除数据流](tutorials/ui/delete.md)
 - [流运行通知](notifications.md)
+- [IP地址允许列表](ip-address-allow-list.md)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
