@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: October, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: e2b0048703816dc481eb9486310d86a8f2483af2
+source-git-commit: 5ff73aa1745e78f0026ada2c66908888be5f4498
 workflow-type: tm+mt
-source-wordcount: '1028'
+source-wordcount: '1009'
 ht-degree: 4%
 
 ---
@@ -71,7 +71,6 @@ Adobe Experience Platform可以从外部来源收集数据，同时允许您使�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 分层映射 | 在预览获取过程中，您可以分层的源文件，如JSON或Parke。 |
 | SFTP的SSH身份验证支持 | 您可以使用RSA/DSA Open SSH [!DNL Platform] 密钥将您的SFTP帐户连接到。 See the [SFTP overview](../../sources/connectors/cloud-storage/ftp-sftp.md) for more information. |
 | UX改进 | 您可以在数据获取过 [!DNL Profile] 程中启用数据集。 有关详细 [信息，请参阅云存储](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md) 数据流工作流教程。 |
 
