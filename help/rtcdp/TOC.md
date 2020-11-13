@@ -5,9 +5,9 @@ audience: user
 user-guide-title: 实时客户数据平台指南
 user-guide-description: 将多个企业来源的已知和匿名数据相结合，以创建客户档案，根据这些档案创建细分受众，并将这些细分激活到第三方目标。
 translation-type: tm+mt
-source-git-commit: 097fe219e0d64090de758f388ba98e6024db2201
+source-git-commit: 77b1ffdd20cbc4e1645688da83769277f6729091
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '510'
 ht-degree: 17%
 
 ---
@@ -56,6 +56,7 @@ ht-degree: 17%
          * [Google Gtag扩展](/help/rtcdp/destinations/gtag-advertising-extension.md)
          * [LinkedIn Insight标记扩展](/help/rtcdp/destinations/linkedin-extension.md)
          * [Pinterest转换跟踪扩展](destinations/pinterest-extension.md)
+         * [交易台](/help/rtcdp/destinations/tradedesk-destination.md)
          * [Twitter通用网站标签扩展](destinations/twitter-uwt-extension.md)
       * 分析目标 {#analytics-destinations}
          * [分析目标概述](destinations/analytics-destinations.md)
