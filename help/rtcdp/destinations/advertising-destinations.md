@@ -5,9 +5,9 @@ seo-title: 广告目标
 description: 将您的实时客户数据平台连接到第三方广告平台(如DSP、广告网络、SSP)，并将这些平台共享假名受众。
 seo-description: 将您的实时客户数据平台连接到第三方广告平台(如DSP、广告网络、SSP)，并将这些平台共享假名受众。
 translation-type: tm+mt
-source-git-commit: d20b558a6f4518be74cd5969c50a5db310370c08
+source-git-commit: 0fa7ca4bb3e8667beae307e1d40f1861805e5270
 workflow-type: tm+mt
-source-wordcount: '219'
+source-wordcount: '221'
 ht-degree: 2%
 
 ---
@@ -30,6 +30,9 @@ ht-degree: 2%
 * [Google广告](/help/rtcdp/destinations/google-ads-destination.md)
 * [Google广告经理](/help/rtcdp/destinations/google-ad-manager-destination.md)
 * [Google 客户匹配](/help/rtcdp/destinations/google-customer-match-destination.md)
+* [Microsoft Bing](/help/rtcdp/destinations/bing-destination.md)
+
+
 
 
 ## 扩展
