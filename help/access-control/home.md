@@ -5,9 +5,9 @@ topic: overview
 title: 访问控制概述
 description: Adobe Experience Platform的访问控制通过Adobe Admin Console提供。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。
 translation-type: tm+mt
-source-git-commit: ccb7286e47aa4cf6356d22f84111b0c0fb30dfa8
+source-git-commit: 205bfb5f3b3fa083f64fc0160ea6bdf7bba74c9b
 workflow-type: tm+mt
-source-wordcount: '1299'
+source-wordcount: '1298'
 ht-degree: 3%
 
 ---
@@ -52,8 +52,8 @@ Adobe Admin Console为管理Adobe产品授权和访问您的组织提供了一�
 
 | 产品配置文件 | 沙箱访问 | 权限 |
 | --- | --- | --- |
-| 默认生产——全部访问 | 生产 | 除“沙箱管理”权 [!DNL Experience Platform]限外，所有适用的权限。 |
-| 默认沙箱管理 | 不适用 | 仅提供对“沙箱管理”权限的访问。 |
+| 默认的全部生产访问 | 生产 | 除“沙箱管理”权 [!DNL Experience Platform]限外，所有适用的权限。 |
+| 沙箱管理员 | 不适用 | 仅提供对“沙箱管理”权限的访问。 |
 
 ## 沙箱和权限
 
