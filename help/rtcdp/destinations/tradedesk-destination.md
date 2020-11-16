@@ -5,9 +5,9 @@ seo-title: 交易台目的地
 description: '交易台是一个自助平台，可供广告购买者跨展示广告、视频和移动库存来源执行重定向和受众目标数字活动。 '
 seo-description: 交易台是一个自助平台，可供广告购买者跨展示广告、视频和移动库存来源执行重定向和受众目标数字活动。
 translation-type: tm+mt
-source-git-commit: c9fb63b390d4c7dddcdb35a85710ff664614ad63
+source-git-commit: 43795e31f4e39dcabeaf6d69529e80cabe9c90c5
 workflow-type: tm+mt
-source-wordcount: '575'
+source-wordcount: '577'
 ht-degree: 1%
 
 ---
@@ -46,10 +46,10 @@ ht-degree: 1%
    >[!NOTE]
    >
    >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信]**&#x200B;息，请参 [阅目标工](../destinations/destinations-workspace.md#catalog) 作区文档的“目录”部分。
-   >
-   >![激活交易台目标](assets/tradedesk-destination-activate.png)
 
-1. 在身份验证 [!UICONTROL 步骤] ，您需要输入连接详 [!DNL The Trade Desk] 细信息：
+       ![激活交易台目标](assets/tradedesk-destination-activate.png)
+   
+2. 在身份验证 [!UICONTROL 步骤] ，您需要输入连接详 [!DNL The Trade Desk] 细信息：
 
    * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
    * **[!UICONTROL 描述]**:将来帮助您识别此目标的描述。
@@ -67,13 +67,13 @@ ht-degree: 1%
 
    ![交易台身份验证步骤](assets/tradedesk-destination-authentication.png)
 
-1. 单击“ **[!UICONTROL 创建目标]**”。 您的目标现在已创建。 如果希望以 [!UICONTROL 后激活区段] ，则可以单击保存并退出，也可以选择 [!UICONTROL 下一步] ，继续工作流并选择要激活的区段。 在任一情况下，请参阅下一 [节激活](#activate-segments)“区段”，了解工作流的其余部分。
+3. 单击“ **[!UICONTROL 创建目标]**”。 您的目标现在已创建。 如果希望以 [!UICONTROL 后激活区段] ，则可以单击保存并退出，也可以选择 [!UICONTROL 下一步] ，继续工作流并选择要激活的区段。 在任一情况下，请参阅下一 [节激活](#activate-segments)“区段”，了解工作流的其余部分。
 
 ## 激活区段 {#activate-segments}
 
 有关 [区段用户档案工作流的信息](activate-destinations.md#select-attributes) ，请参阅将激活和区段激活到目标。
 
-在区 [段计划](activate-destinations.md#segment-schedule) 步骤中，您必须手动将区段映射到目标中相应的ID或友好名称。
+在“区 [段计划](activate-destinations.md#segment-schedule) ”步骤中，您必须手动将区段映射到目标中相应的ID或友好名称。
 
 在映射区段时，建议您使 [!DNL Platform] 用区段名称或更短的区段名称，以便于使用。 但是，目标中的区段ID或名称不需要与帐户中的区段ID或名称匹 [!DNL Platform] 配。 您在映射字段中插入的任何值都将反映在目标中。
 
