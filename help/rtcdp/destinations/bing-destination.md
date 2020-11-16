@@ -5,7 +5,7 @@ seo-title: Microsoft Bing目标可帮助您将用户档案数据发送到Microso
 description: 通过Microsoft Bing目标，您可以跨Microsoft展示广告执行重定位和受众目标数字活动。
 seo-description: 通过Microsoft Bing目标，您可以跨Microsoft展示广告执行重定位和受众目标数字活动。
 translation-type: tm+mt
-source-git-commit: 979256ea975dcc0c1f6c59792b70d6899ee11376
+source-git-commit: 43795e31f4e39dcabeaf6d69529e80cabe9c90c5
 workflow-type: tm+mt
 source-wordcount: '489'
 ht-degree: 0%
@@ -50,8 +50,8 @@ ht-degree: 0%
    >[!NOTE]
    >
    >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信]**&#x200B;息，请参 [阅目标工](../destinations/destinations-workspace.md#catalog) 作区文档的“目录”部分。
-   >
-   >![激活Microsoft Bing目标](assets/bing-destination-activate.png)
+
+   ![激活Microsoft Bing目标](assets/bing-destination-activate.png)
 
 1. 在身份验证 [!UICONTROL 步骤] ，您必须输入目标连接详细信息：
 
@@ -68,7 +68,7 @@ ht-degree: 0%
 
 有关 [区段用户档案工作流的信息](activate-destinations.md#select-attributes) ，请参阅将激活和区段激活到目标。
 
-在区 [段计划](activate-destinations.md#segment-schedule) 步骤中，您必须手动将区段映射到目标中相应的ID或友好名称。
+在“区 [段计划](activate-destinations.md#segment-schedule) ”步骤中，您必须手动将区段映射到目标中相应的ID或友好名称。
 
 在映射区段时，建议您使 [!DNL Platform] 用区段名称或更短的区段名称，以便于使用。 但是，目标中的区段ID或名称不需要与帐户中的区段ID或名称匹 [!DNL Platform] 配。 您在映射字段中插入的任何值都将反映在目标中。
 
