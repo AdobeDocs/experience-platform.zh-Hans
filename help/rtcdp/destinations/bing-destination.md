@@ -5,7 +5,7 @@ seo-title: Microsoft Bing目标可帮助您将用户档案数据发送到Microso
 description: 通过Microsoft Bing目标，您可以跨Microsoft展示广告执行重定位和受众目标数字活动。
 seo-description: 通过Microsoft Bing目标，您可以跨Microsoft展示广告执行重定位和受众目标数字活动。
 translation-type: tm+mt
-source-git-commit: 43795e31f4e39dcabeaf6d69529e80cabe9c90c5
+source-git-commit: a64f9f1f078d8380cc25c9760eac1699512a5870
 workflow-type: tm+mt
 source-wordcount: '489'
 ht-degree: 0%
@@ -50,8 +50,8 @@ ht-degree: 0%
    >[!NOTE]
    >
    >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信]**&#x200B;息，请参 [阅目标工](../destinations/destinations-workspace.md#catalog) 作区文档的“目录”部分。
-
-   ![激活Microsoft Bing目标](assets/bing-destination-activate.png)
+   >
+   >![激活Microsoft Bing目标](assets/bing-destination-activate.png)
 
 1. 在身份验证 [!UICONTROL 步骤] ，您必须输入目标连接详细信息：
 
