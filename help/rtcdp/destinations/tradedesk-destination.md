@@ -5,9 +5,9 @@ seo-title: 交易台目的地
 description: '交易台是一个自助平台，可供广告购买者跨展示广告、视频和移动库存来源执行重定向和受众目标数字活动。 '
 seo-description: 交易台是一个自助平台，可供广告购买者跨展示广告、视频和移动库存来源执行重定向和受众目标数字活动。
 translation-type: tm+mt
-source-git-commit: 43795e31f4e39dcabeaf6d69529e80cabe9c90c5
+source-git-commit: a64f9f1f078d8380cc25c9760eac1699512a5870
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '575'
 ht-degree: 1%
 
 ---
@@ -46,9 +46,9 @@ ht-degree: 1%
    >[!NOTE]
    >
    >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信]**&#x200B;息，请参 [阅目标工](../destinations/destinations-workspace.md#catalog) 作区文档的“目录”部分。
+   >
+   >![激活交易台目标](assets/tradedesk-destination-activate.png)
 
-       ![激活交易台目标](assets/tradedesk-destination-activate.png)
-   
 2. 在身份验证 [!UICONTROL 步骤] ，您需要输入连接详 [!DNL The Trade Desk] 细信息：
 
    * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
