@@ -5,9 +5,9 @@ title: Adobe Experience Platform Identity Service
 topic: overview
 description: Adobe Experience Platform身份服务通过跨设备和系统连接身份帮助您更好地视图客户及其行为，使您能够实时提供有影响力的个性化数字体验。
 translation-type: tm+mt
-source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
+source-git-commit: af7eab0599b17be55d5a4c129f7ebaeba91333bc
 workflow-type: tm+mt
-source-wordcount: '1711'
+source-wordcount: '1719'
 ht-degree: 0%
 
 ---
@@ -87,6 +87,8 @@ PII（如电子邮件地址和电话号码）用于直接识别客户。 因此�
 
 作为提供和标记身份数据时要考虑的潜在因素类型的示例，使用电话号码（如“工作电话”）可能会产生比您在身份图中期望的更多关系。 您可能会发现，许多员工在工作时都使用相同的数字，而“家”和“移动”更能确保关系尽可能精确。
 
+有关详细信息，请参阅有关访问标 [识图查看器的教程](./ui/identity-graph-viewer.md)
+
 ## 向提供身份数据 [!DNL Identity Service]
 
 本节介绍在为每位客户建立身份图之前，如 [!DNL Identity Service] 何处理提供给Adobe Experience Platform的数据。
@@ -146,4 +148,4 @@ Adobe Experience Platform是以隐私为重而构建的，并包含一个数据�
 
 ## 后续步骤
 
-现在，您已经了解了其中 [!DNL Identity Service] 的主要概念及 [!DNL Experience Platform]其角色，可以开始学习如何使用[!DNL Identity Service API] [使用您的身份图](./api/getting-started.md)。
+现在，您已经了解了其中的 [!DNL Identity Service] 主要概念及 [!DNL Experience Platform]其作用，您可以开始学习如何使用标识图 [[!DNL Identity Service API]](./api/getting-started.md)。
