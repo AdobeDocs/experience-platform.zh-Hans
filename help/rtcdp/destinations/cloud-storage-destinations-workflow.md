@@ -6,9 +6,9 @@ type: Tutorial
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 translation-type: tm+mt
-source-git-commit: 5238d98db0554d34c2b0bcd28b64354f544faa0f
+source-git-commit: 42b694c532f140b51913ba5ceb0aaeacc2263039
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: '558'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
    >
    >如果与此目标的连接已存在，您可以在目标卡 **[!UICONTROL 上看到]** “激活”按钮。 有关激活和配置之 **[!UICONTROL 间差异]** 的详 **[!UICONTROL 细信]**&#x200B;息，请参 [阅目标工](/help/rtcdp/destinations/destinations-workspace.md#catalog) 作区文档的“目录”部分。
 
-2. 在身份 **[!UICONTROL 验证]** 步骤中，如果您之前已设置到云存储目标的连接，请选择现 **[!UICONTROL 有帐户]** ，然后选择现有连接。 或者，您也可以选 **[!UICONTROL 择新帐户]** ，以设置到云存储目标的新连接。 填写帐户身份验证凭据，然后选 **[!UICONTROL 择连接到目标]**。 <br> 请参 [阅AmazonS](/help/rtcdp/destinations/amazon-s3-destination.md) 3目标 [[!DNL Amazon Kinesis]](/help/rtcdp/destinations/amazon-kinesis-destination.md) 、目 [[!DNL Azure Event Hubs]](/help/rtcdp/destinations/azure-event-hubs-destination.md) 标、目标和SFTP目标 [，了解身份验证步骤中凭据](/help/rtcdp/destinations/sftp-destination.md) 输入的 **** 具体信息。
+2. 在身份 **[!UICONTROL 验证]** 步骤中，如果您之前已设置到云存储目标的连接，请选择现 **[!UICONTROL 有帐户]** ，然后选择现有连接。 或者，您也可以选 **[!UICONTROL 择新帐户]** ，以设置到云存储目标的新连接。 填写帐户身份验证凭据，然后选 **[!UICONTROL 择连接到目标]**。 或者，您可以附加RSA格式的公钥，以向导出的文件添加加密。 请注意，此公钥 **必须** 作为Base64编码字符串写入。 <br> 请参 [阅AmazonS](/help/rtcdp/destinations/amazon-s3-destination.md) 3目标 [[!DNL Amazon Kinesis]](/help/rtcdp/destinations/amazon-kinesis-destination.md) 、目 [[!DNL Azure Event Hubs]](/help/rtcdp/destinations/azure-event-hubs-destination.md) 标、目标和SFTP目标 [，了解身份验证步骤中凭据](/help/rtcdp/destinations/sftp-destination.md) 输入的 **** 具体信息。
 
    >[!NOTE]
    >
