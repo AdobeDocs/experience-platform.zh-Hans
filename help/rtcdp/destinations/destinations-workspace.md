@@ -3,11 +3,11 @@ keywords: RTCDP;rtcdp
 title: 目标工作区
 seo-title: 目标工作区
 description: “目标”工作区由四个部分组成，即目录、浏览、帐户和系统视图，这些部分在以下各节中有介绍。
-seo-description: 在Adobe实时客户数据平台中，从左侧导航栏中选择目标以访问目标工作区。
+seo-description: 在实时客户数据平台中，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: a3e35dee98b7b2758a4246a63bb0e1bde6b2f165
 workflow-type: tm+mt
-source-wordcount: '825'
+source-wordcount: '905'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 # 目标工作区 {#destinations-workspace}
 
-在Adobe实时数据平台中，从左侧 **[!UICONTROL 导航栏]** 中选择目标以访问 [!UICONTROL 目标] 工作区。
+在实时客户数据平台中，从左侧导 **[!UICONTROL 航栏]** 中选择目标以访问 [!UICONTROL 目标] 工作区。
 
 工 [!UICONTROL 作区] 由四个部分组成： [!UICONTROL Catalog]、 Browse Accounts [!UICONTROL 、 Accounts]Destinations System视图, 下面几节介绍了这些部分。
 
@@ -23,13 +23,13 @@ ht-degree: 2%
 
 ## [!UICONTROL 目录] {#catalog}
 
-“目 **[!UICONTROL 录]** ”选项卡显示Adobe实时CDP中所有可用目标的列表，您可以将数据发送到这些目标。
+“目 **[!UICONTROL 录]** ”选项卡显示实时CDP中所有可用目标的列表，您可以将数据发送到这些目标。
 
-Adobe实时CDP用户界面在目标目录页面上提供了许多搜索和筛选选项：
+实时CDP用户界面在目标目录页上提供了许多搜索和筛选选项：
 
 * 使用页面上的搜索功能查找特定目标。
 * 使用类别控件 [!UICONTROL 筛选目] 标。
-* 在所有目 [!UICONTROL 标和我的] 目 [!UICONTROL 标之间切换]。 选择 **[!UICONTROL 所有目标]** 后，将显示所有可用的Adobe实时CDP目标。 选择 **[!UICONTROL 我的目]** 标后，您只能看到已建立连接的目标。
+* 在所有目 [!UICONTROL 标和我的] 目 [!UICONTROL 标之间切换]。 选择 **[!UICONTROL 所有目标]** 后，将显示所有可用的实时CDP目标。 选择 **[!UICONTROL 我的目]** 标后，您只能看到已建立连接的目标。
 * 选择以视图 **[!UICONTROL 连接]** 和／或 **[!UICONTROL 扩展]**。 要了解两个类别之间的差异，请参 [阅目标类型和类别](/help/rtcdp/destinations/destination-types.md)。
 
 ![目标过滤和搜索演示](/help/rtcdp/destinations/assets/destinations-search-and-filter.gif)
@@ -60,7 +60,7 @@ Adobe实时CDP用户界面在目标目录页面上提供了许多搜索和筛选
 >
 >使用“ ![平台](/help/rtcdp/destinations/assets/add-data-symbol.png) ”列中的“添 **[!UICONTROL 加数据]** ”按钮为该帐户创建新的目标连接。
 
-![“帐户”选项卡](/help/rtcdp/destinations/assets/accounts-tab.png)
+![“帐户”选项卡](./assets/workspace/edit-account-destinations.png)
 
 | 元素 | 描述 |
 ---------|----------
@@ -69,6 +69,18 @@ Adobe实时CDP用户界面在目标目录页面上提供了许多搜索和筛选
 | [!UICONTROL 用户名] | 在连接目标向导中选 [择的用户名](/help/rtcdp/destinations/email-marketing-destinations.md#connect-destination)。 |
 | [!UICONTROL 目标] | 表示通过为目标创建的基本信息连接的唯一成功目标流的数量。 |
 | [!UICONTROL 已授权] | 到此目标的连接被授权的日期。 |
+
+此外，您还可以编辑或更新帐户信息。 在“平 ![台](./assets/workspace/pencil-icon.png) ”列中选 **[!UICONTROL 择“编]** 辑帐户”按钮以编辑帐户信息。
+
+对于使用连接类 `OAuth2` 型的帐户，可选择 **[!UICONTROL 重新连接]** OAuth以续订帐户凭据。
+
+![Oauth图像](./assets/workspace/reconnect-oauth.png)
+
+对于使用或连 `Access Key` 接类 `ConnectionString` 型的帐户，您可以编辑帐户身份验证信息，包括访问ID、密钥或连接字符串等信息。
+
+![帐户信息图像](./assets/workspace/edit-account-details.png)
+
+编辑完帐户详细信息后，选择 **[!UICONTROL 保存]** 以完成更新。
 
 ## [!UICONTROL 浏览] {#browse}
 
