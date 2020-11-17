@@ -6,9 +6,9 @@ type: Tutorial
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 seo-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 translation-type: tm+mt
-source-git-commit: 5238d98db0554d34c2b0bcd28b64354f544faa0f
+source-git-commit: 42b694c532f140b51913ba5ceb0aaeacc2263039
 workflow-type: tm+mt
-source-wordcount: '803'
+source-wordcount: '835'
 ht-degree: 1%
 
 ---
@@ -35,6 +35,8 @@ ht-degree: 1%
 - 对 **于S3连接**，您必须提供您的Amazon访问密钥ID和秘密访问密钥。
 - 对 **于带口令的SFTP** ，您必须为SFTP服务器提供域、端口、用户名和密码。
 - 对于 **具有SSH密钥连接** 的SFTP，您必须为SFTP服务器提供域、端口、用户名和密码。
+
+或者，您可以附加RSA格式的公钥，以在“密钥”部分下为导出的文件添加 **[!UICONTROL 加密]** 。 请注意，此公钥 **必须** 作为Base64编码字符串写入。
 
 在设 **[!UICONTROL 置步]** 骤中，输入新目标的名称和说明以及导出文件的文件格式。
 
@@ -93,8 +95,8 @@ ht-degree: 1%
 
 - [Adobe Campaign](/help/rtcdp/destinations/adobe-campaign-destination.md#import-data-into-campaign)
 - [SalesforceMarketing Cloud](/help/rtcdp/destinations/salesforce-marketing-cloud-destination.md#import-data-into-salesforce)
-- [Oracle Evolca](/help/rtcdp/destinations/oracle-eloqua-destination.md#import-data-into-eloqua)
-- [Oracle Responsys](/help/rtcdp/destinations/oracle-responsys-destination.md#import-data-into-responsys)
+- [Oracle雄辩](/help/rtcdp/destinations/oracle-eloqua-destination.md#import-data-into-eloqua)
+- [OracleResponsys](/help/rtcdp/destinations/oracle-responsys-destination.md#import-data-into-responsys)
 
 ## 将区段激活到电子邮件营销目标
 
