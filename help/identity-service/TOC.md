@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform Identity Service
 breadcrumb-title: Platform Identity Service 指南
 user-guide-description: 跨设备和系统建立客户身份桥梁，以提供个性化的数字体验。
 translation-type: tm+mt
-source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
+source-git-commit: 6cee9331acde303951718a5be6f5aeaa18a458f6
 workflow-type: tm+mt
-source-wordcount: '90'
-ht-degree: 31%
+source-wordcount: '96'
+ht-degree: 29%
 
 ---
 
@@ -26,6 +26,8 @@ ht-degree: 31%
    - [列表可用命名空间](api/list-namespaces.md)
    - [创建自定义命名空间](api/create-custom-namespace.md)
    - [列表标识的本机ID](api/list-native-id.md)
+- 标识服务UI {#ui}
+   - [标识图查看器](ui/identity-graph-viewer.md)
 - [ECID概述](ecid.md)
 - [疑难解答指南](troubleshooting-guide.md)
 - [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)
