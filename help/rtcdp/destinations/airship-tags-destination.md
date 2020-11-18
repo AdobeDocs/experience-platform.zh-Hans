@@ -5,7 +5,7 @@ seo-title: 飞艇标记目标
 description: 将Adobe受众数据无缝传递给飞艇，作为飞艇内目标的受众标签。
 seo-description: 将Adobe受众数据无缝传递给飞艇，作为飞艇内目标的受众标签。
 translation-type: tm+mt
-source-git-commit: f08b90531455cdbeb73deb83eed05ba7a9b19df6
+source-git-commit: 4b1bf5bbce57a22529c5d025c5bae10557400d54
 workflow-type: tm+mt
 source-wordcount: '1236'
 ht-degree: 1%
