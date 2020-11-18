@@ -5,9 +5,9 @@ seo-title: 飞艇属性目标
 description: 将Adobe受众数据无缝传递给飞艇，作为飞艇内目标的受众属性。
 seo-description: 将Adobe受众数据无缝传递给飞艇，作为飞艇内目标的受众属性。
 translation-type: tm+mt
-source-git-commit: 0e065bbc0917d5009738b4cae890ffd13c0ab154
+source-git-commit: 4b1bf5bbce57a22529c5d025c5bae10557400d54
 workflow-type: tm+mt
-source-wordcount: '1245'
+source-wordcount: '1244'
 ht-degree: 1%
 
 ---
@@ -69,7 +69,7 @@ Adobe Experience Platform用户档案属性与属性类 [!DNL Airship] 似，可
 
 利用Adobe Experience Platform的属性进一步丰富 [!DNL Airship] 用户档案并将其与SDK或预测性数据 [!DNL Airship] 相结合。 例如，零售商可以创建包含忠诚度状态和位置数据（来自平台的属性）的细分 [!DNL Airship] ，并预测客户流失数据，以向生活在内华达州拉斯维加斯、且极有可能进行搅动的黄金忠诚度状态用户发送高度定向的消息。
 
-## 连接到属 [!DNL Airship] 性 {#connect-airship-attributes}
+## 连接到 [!DNL Airship Attributes] {#connect-airship-attributes}
 
 1. 在“ **[!UICONTROL 目标]** ”>“ **[!UICONTROL 目录]**”中 **[!UICONTROL ，滚动至“移]** 动互动”类别。 选择 **[!DNL Airship Attributes]**，然后选择 **[!UICONTROL 配置]**。
 
