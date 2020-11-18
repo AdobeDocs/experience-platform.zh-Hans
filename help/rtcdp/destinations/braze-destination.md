@@ -5,7 +5,7 @@ seo-title: Braze目标
 description: Braze是一个全面的客户互动平台，它为客户与他们喜爱的品牌之间提供相关且难忘的体验。
 seo-description: Braze是一个全面的客户互动平台，它为客户与他们喜爱的品牌之间提供相关且难忘的体验。
 translation-type: tm+mt
-source-git-commit: 9126a9b3a27aa0a0ecefb5d490475423d7840791
+source-git-commit: 4b1bf5bbce57a22529c5d025c5bae10557400d54
 workflow-type: tm+mt
 source-wordcount: '924'
 ht-degree: 1%
@@ -57,6 +57,7 @@ ht-degree: 1%
    >![激活Braze目标](assets/braze-destination-activate.png)
 
 1. 在“帐 [!UICONTROL 户] ”步骤中，您需要提供您的 [!DNL Braze] 帐户令牌。 这是你的 [!DNL Braze] 钥 [!DNL API] 匙。 您可以在以下网址找到如何获取密钥的详 [!DNL API] 细说明： [REST API密钥概述](https://www.braze.com/docs/api/api_key/)。 输入令牌，然后单 **[!UICONTROL 击连接到目标]**。
+
    ![Braze目标帐户步骤](assets/braze-destination-account.png)
 
 1. 单击&#x200B;**[!UICONTROL 下一步]**。
