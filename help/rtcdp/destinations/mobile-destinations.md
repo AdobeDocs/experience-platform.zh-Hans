@@ -1,23 +1,22 @@
 ---
 keywords: mobile messaging;mobile messaging destinations;Braze; Airship
-title: 移动目标
-seo-title: 移动目标
-description: 插入移动目标的用例
-seo-description: 插入移动目标的用例
+title: 移动互动目标
+seo-title: 移动互动目标
+description: Adobe Experience Platform支持下列移动互动目标
+seo-description: Adobe Experience Platform支持下列移动互动目标
 translation-type: tm+mt
-source-git-commit: 6c8084f35c4981b41a5beecd57ce5b3ef4e409d6
+source-git-commit: 4b1bf5bbce57a22529c5d025c5bae10557400d54
 workflow-type: tm+mt
-source-wordcount: '38'
+source-wordcount: '41'
 ht-degree: 0%
 
 ---
 
 
-# 移动目标 {#mobile-destinations}
+# 移动互动目标 {#mobile-destinations}
 
-插入移动目标的说明
+[!DNL Adobe Experience Platform] 当前支持以下移动互动目标：
 
-[!DNL Adobe Experience Platform] 当前支持以下移动目标：
-
-* Airship —— 插入指向Airship文档页的链接
+* [飞艇属性](airship-attributes-destination.md)
+* [飞艇标签](airship-tags-destination.md)
 * [布雷兹](braze-destination.md)
