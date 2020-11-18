@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 74f49db15028aa27fc7ee73a79ea236ee42f37e8
+source-git-commit: bb59d93e016d49a0ebba77af1f90563a8767f072
 workflow-type: tm+mt
-source-wordcount: '1583'
+source-wordcount: '1768'
 ht-degree: 0%
 
 ---
@@ -78,7 +78,19 @@ ht-degree: 0%
 
 ![配置步骤](./assets/configure-icon.png)
 
-在配置 **[!UICONTROL 步骤]** ，您可以为要导出的每个区段配置文件名。 配置文件名是可选的。
+在配 **[!UICONTROL 置步]** 骤中，您可以配置要导出的每个区段的计划和文件名。 必须配置计划，但配置文件名是可选的。
+
+要为区段添加计划，请选择创 **[!UICONTROL 建计划]**。
+
+![](./assets/activate-destinations/configure-destination-schedule.png)
+
+此时会显示一个弹出窗口，其中显示用于创建段计划的选项。
+
+- **文件导出**:您可以选择导出完整文件或增量文件。 导出完整文件会发布符合该区段条件的所有用户档案的完整快照。 导出增量文件会发布自上次导出以来符合该区段条件的用户档案增量。
+- **频率**:如果 **[!UICONTROL 选择“]** Export full files”（导出完整文件） **[!UICONTROL ，则可以选择“Once]** Export **[!UICONTROL ”(一次]**)或“每天”。 如果 **[!UICONTROL 选择了]** “导出增量文件”，则只能选择“每日导 **[!UICONTROL 出”]**。 导出文件 **[!UICONTROL 一次]** ，导出文件一次。 如果选择 **[!UICONTROL 完整文件]** ，则Exporting a file Daily将每天从开始日期导出文件，直到结束日期(UTC:00 AM(EST:00 PM))；如果选择增量文件，则导出文件。
+- **日期**:如 **[!UICONTROL 果选]** 择“一次”，则可以选择一次导出的日期。 如 **[!UICONTROL 果选]** 择“每日”，则可以选择导出的开始和结束日期。
+
+![](./assets/activate-destinations/export-full-file.png)
 
 默认文件名由目标名称、段ID和日期和时间指示器组成。 例如，您可以编辑导出的文件名以区分不同的活动，或将数据导出时间附加到文件。
 
