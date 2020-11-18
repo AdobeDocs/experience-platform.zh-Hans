@@ -6,9 +6,9 @@ type: Tutorial
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 seo-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 translation-type: tm+mt
-source-git-commit: 42b694c532f140b51913ba5ceb0aaeacc2263039
+source-git-commit: 425287d78deebf0113d6cf6350bcb516c99ee995
 workflow-type: tm+mt
-source-wordcount: '835'
+source-wordcount: '838'
 ht-degree: 1%
 
 ---
@@ -54,7 +54,7 @@ ht-degree: 1%
 
 ## 配置文件名
 
-有关文件名编辑选项的信息，请参阅激 [活目标](/help/rtcdp/destinations/activate-destinations.md#configure) 教程中的配置步骤。
+有关区段计划和文件名编辑选项的信息，请参 [阅激活](/help/rtcdp/destinations/activate-destinations.md#configure) 目标教程中的配置步骤。
 
 ## 选择属性——选择要在导出的文件中用作目标属性的模式字段 {#destination-attributes}
 
