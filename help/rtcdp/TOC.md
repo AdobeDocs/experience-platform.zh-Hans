@@ -5,9 +5,9 @@ audience: user
 user-guide-title: 实时客户数据平台指南
 user-guide-description: 将多个企业来源的已知和匿名数据相结合，以创建客户档案，根据这些档案创建细分受众，并将这些细分激活到第三方目标。
 translation-type: tm+mt
-source-git-commit: 2a4d55b2d429fbeb1459a6bd095b0bc39d52917d
+source-git-commit: 8fa7642f90653ba11ad6ff90175a4bb705ae6d80
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '520'
 ht-degree: 17%
 
 ---
@@ -96,12 +96,15 @@ ht-degree: 17%
          * [Bizible Analytics扩展](/help/rtcdp/destinations/bizible-extension.md)
          * [Marketo扩展](destinations/marketo-extension.md)
          * [Marketo Munchkin 扩展](destinations/marketo-munchkin-extension.md)
-         * [Oracle Evolca](destinations/oracle-eloqua-destination.md)
-         * [Oracle Responsys](destinations/oracle-responsys-destination.md)
+         * [Oracle雄辩](destinations/oracle-eloqua-destination.md)
+         * [OracleResponsys](destinations/oracle-responsys-destination.md)
          * [PebblePost扩展](destinations/pebblepost-extension.md)
          * [SalesforceMarketing Cloud](destinations/salesforce-marketing-cloud-destination.md)
       * Experience Platform Launch extensions{#launch-extensions}
          * [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)
+      * 移动目标 {#mobile}
+         * [移动目标概述](destinations/mobile-destinations.md)
+         * [Braze目标](destinations/braze-destination.md)
       * 个性化目标 {#personalization-destinations}
          * [个性化目标概述](/help/rtcdp/destinations/personalization-destinations.md)
          * [Adobe Target 扩展](/help/rtcdp/destinations/adobe-target-extension.md)
