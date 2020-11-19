@@ -2,12 +2,12 @@
 keywords: D&B Visitor Intelligence;D&B;visitor intelligence extension
 title: D&B访客智能扩展
 seo-title: D&B访客智能扩展
-description: D&B访客智能扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: D&B访客智能扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: D&B访客智能扩展是实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: D&B访客智能扩展是实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '543'
+source-wordcount: '540'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 5%
 
 分析未知访客并将其转换为潜在客户。
 
-[!DNL D&B Visitor Intelligence] 是Adobe实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参 [阅D&amp;B网站](https://www.dnb.com/)。
+[!DNL D&B Visitor Intelligence] 是实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参 [阅D&amp;B网站](https://www.dnb.com/)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
