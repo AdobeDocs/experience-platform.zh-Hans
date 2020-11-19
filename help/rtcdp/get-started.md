@@ -1,23 +1,23 @@
 ---
 keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp;rtcdp
-title: Adobe实时客户数据平台入门
-seo-title: Adobe实时客户数据平台入门
-description: Adobe 实时客户数据平台的示例情景
-seo-description: Adobe 实时客户数据平台的示例情景
+title: 实时客户数据平台入门
+seo-title: 实时客户数据平台入门
+description: ' 实时客户数据平台的示例情景'
+seo-description: ' 实时客户数据平台的示例情景'
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '2326'
+source-wordcount: '2318'
 ht-degree: 1%
 
 ---
 
 
-# Adobe实时客户数据平台入门
+# 实时客户数据平台入门
 
-本快速入门指南将引导您完成Adobe实时客户数据平台（实时CDP）的示例实施。 在设置自己的实现时，可以将它作为一个示例。 虽然本指南显示了特定示例，但它链接到您在创建安装程序时可以使用的其他信息。
+本入门指南引导您完成实时客户数据平台（实时CDP）的示例实施。 在设置自己的实现时，可以将它作为一个示例。 虽然本指南显示了特定示例，但它链接到您在创建安装程序时可以使用的其他信息。
 
-此示例展示了由Adobe Experience Platform提供技术支持的Adobe实时客户数据平台在以下方面的强大功能：
+此示例展示了由Adobe Experience Platform提供支持的实时客户数据平台在以下方面的强大功能：
 
 * 从多个源摄取数据
 * 将它们合并为一个 [!DNL real-time customer profile]
@@ -121,7 +121,7 @@ Sarah会根据她在Adobe Experience Platform的经历，动态地获得个性�
 
 莎拉分心了，离开了网站，结束了她的研习会。 Luma可以利用她在Adobe Experience Platform的数据帮助她回到网站。
 
-Adobe实时客户数据平台由Adobe Experience Platform公司提供支持，专为客户体验管理而构建。 它使组织能够：
+实时客户数据平台由Adobe Experience Platform公司提供支持，专为客户体验管理而构建。 它使组织能够：
 
 * 简化数据集成和激活
 * 管理已知和未知的数据使用
