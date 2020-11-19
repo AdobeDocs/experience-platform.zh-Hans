@@ -2,12 +2,12 @@
 keywords: TMMData;tmm data;tmmdata;TMM data
 title: TMMData扩展
 seo-title: TMMData扩展
-description: TMMData扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: TMMData扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: TMMData扩展是实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: TMMData扩展是实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '584'
+source-wordcount: '581'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 [!DNL TMMData's] Adobe Marketing Cloud的基础平台为营销团队提供工具，用于访问和混合其所有关键数据源（包括内部／外部和在线／离线数据），以实现自信、全面的跨渠道分析，并实现自动活动设置，并直接导入Adobe和其他分析和BI工具。
 
-[!DNL TMMData] 是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](hhttps://exchange.adobe.com/experiencecloud.details.100148.tmmdata-foundation-platform.html)。
+[!DNL TMMData] 是实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](hhttps://exchange.adobe.com/experiencecloud.details.100148.tmmdata-foundation-platform.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
