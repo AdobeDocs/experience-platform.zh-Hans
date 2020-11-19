@@ -5,24 +5,24 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: b4ce4c2e5ff5083f663c2daf23c32a1cec32124c
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '597'
-ht-degree: 5%
+source-wordcount: '582'
+ht-degree: 7%
 
 ---
 
 
 # Adobe Experience Platform 发行说明
 
-**发行日期：2020 年 8 月 12 日**
+**发行日期：2020 年 12 月 8 日**
 
-Adobe Experience Platform现有功能更新：
+Adobe Experience Platform 现有功能的更新包括：
 
-- [[!DNL数据科学工作区]](#dsw)
-- [[!DNL目标]](#destinations)
-- [[!DNL实时客户数据平台]](#rtcdp)
-- [[!DNL源]](#sources)
+- [[!DNL Data Science Workspace]](#dsw)
+- [[!DNL Destinations]](#destinations)
+- [[!DNL Real-time Customer Data Platform]](#rtcdp)
+- [[!DNL Sources]](#sources)
 
 ## [!DNL Data Science Workspace] {#dsw}
 
@@ -38,7 +38,7 @@ Adobe Experience Platform现有功能更新：
 
 ## 目标 {#destinations}
 
-在 [Adobe实时数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
+在实 [时客户数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
 
 **新目标**
 
@@ -57,7 +57,7 @@ Adobe Experience Platform现有功能更新：
 
 ## [!DNL Real-time Customer Data Platform] {#rtcdp}
 
-Experience Platform实时客户数据平台([!DNL Real-time CDP]Real-time Customer Data Platform)以Adobe为构建基础，可帮助公司将已知和未知的数据整合在一起，在客户旅程中通过智能决策激活客户用户档案。 [!DNL Real-time CDP] 结合多个企业数据源，实时创建客户用户档案。 然后，根据这些用户档案构建的细分可以发送到下游目标，以便在所有渠道和设备上提供一对一的个性化客户体验。
+实时客户数据平台(Real-time Customer Data Platform,[!DNL Real-time CDP])以Experience Platform为构建基础，帮助公司将已知和未知的数据整合在一起，在客户旅程中通过智能决策激活客户用户档案。 [!DNL Real-time CDP] 结合多个企业数据源，实时创建客户用户档案。 然后，根据这些用户档案构建的细分可以发送到下游目标，以便在所有渠道和设备上提供一对一的个性化客户体验。
 
 **新增功能**
 
