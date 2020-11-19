@@ -3,11 +3,11 @@ keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data pla
 title: 目标概述
 seo-title: 目标概述
 description: 将平台数据激活到跨渠道营销活动、电子邮件、定向广告等的目标。
-seo-description: 目标是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以在Adobe实时客户数据平台中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
+seo-description: 目标是预建的与目标平台集成，允许从实时客户数据平台无缝激活数据。 您可以在实时客户数据平台中使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 translation-type: tm+mt
-source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '490'
 ht-degree: 3%
 
 ---
