@@ -2,12 +2,12 @@
 keywords: Parse. ly;parsely;Parsely;parse.ly;Parse.ly
 title: Parse.ly Analytics扩展
 seo-title: Parse.ly Analytics扩展
-description: The Parse.ly Analytics扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Parse.ly Analytics扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Parse.ly Analytics扩展是实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Parse.ly Analytics扩展是实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '541'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 5%
 
 [!DNL Parse.ly Analytics] 帮助2,500多名公司使用数据了解其在线受众。 此扩展安装一个JavaScript代码片段，它跟踪访客与站点内容的交互方式。
 
-Parse.ly是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请 [参阅Parse.ly Analytics](https://www.parse.ly/)。
+Parse.ly是实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请 [参阅Parse.ly Analytics](https://www.parse.ly/)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
