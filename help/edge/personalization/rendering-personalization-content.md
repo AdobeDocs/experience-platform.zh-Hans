@@ -5,9 +5,9 @@ description: 了解如何使用Experience PlatformWeb SDK呈现个性化内容
 seo-description: 了解如何使用Experience PlatformWeb SDK呈现个性化内容
 keywords: personalization;renderDecisions;sendEvent;decisionScopes;result.decisions;
 translation-type: tm+mt
-source-git-commit: db742119d8f169817080f1fd4e0dc08a0f0faa47
+source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
 workflow-type: tm+mt
-source-wordcount: '237'
+source-wordcount: '236'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # 个性化选项概述
 
-Adobe Experience Platform支 [!DNL Web SDK] 持在包括Adobe Target在内的Adobe查询个性化解决方案。 有两种个性化模式：检索可自动渲染的内容和开发人员必须渲染的内容。 SDK还提供管理闪 [烁的工具](../personalization/manage-flicker.md)。
+Adobe Experience Platform [!DNL Web SDK] 支持在包括Adobe Target在内的Adobe查询个性化解决方案。 有两种个性化模式：检索可自动渲染的内容和开发人员必须渲染的内容。 SDK还提供管理闪 [烁的工具](../personalization/manage-flicker.md)。
 
 ## 自动呈现内容
 
@@ -51,12 +51,12 @@ alloy("sendEvent",{
     if (result.decisions){
       // Do something with the decisions.
     }
-  })
+  });
 ```
 
 这将返回一列表决策作为每个决策的JSON对象。
 
-```javascript
+```json
 {
   "decisions": [
     {
