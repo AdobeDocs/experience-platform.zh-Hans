@@ -5,9 +5,9 @@ description: 了解如何跟踪Experience PlatformWeb SDK事件
 seo-description: 了解如何跟踪Experience PlatformWeb SDK事件
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: 14b10aeeb382e9d638cf9fdf62deddbee3e72600
+source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1138'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # 跟踪事件
 
-要将事件数据发送到Adobe Experience Cloud，请使用该 `sendEvent` 命令。 该 `sendEvent` 命令是将数据发送到并检索个 [!DNL Experience Cloud]性化内容、身份和受众目标的主要方式。
+要将事件数据发送到Adobe Experience Cloud，请使用 `sendEvent` 命令。 该 `sendEvent` 命令是将数据发送到并检索个 [!DNL Experience Cloud]性化内容、身份和受众目标的主要方式。
 
 发送到Adobe Experience Cloud的数据分为两个类别:
 
