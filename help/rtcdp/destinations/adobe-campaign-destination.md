@@ -5,9 +5,9 @@ seo-title: Adobe Campaign
 description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 seo-description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 translation-type: tm+mt
-source-git-commit: 67a353c950bef11ccbaa52c49d213f08449baa96
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '618'
+source-wordcount: '617'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。 请参 [阅关于Adobe Campaign Classic](https://docs.adobe.com/content/help/en/campaign-classic/using/getting-started/starting-with-adobe-campaign/about-adobe-campaign-classic.html) ，以了解更多信息。
 
-要向Adobe Campaign发送细分数据，您必须先 [在Adobe实时平台](#connect-destination) ，然后设置从您的 [存储位置导入到Adobe Campaign的数据](#import-data-into-campaign) 。
+要向Adobe Campaign发送细分数据，您必须先 [在实时](#connect-destination) Data Platform中连接目标，然后 [](#import-data-into-campaign) 设置从存储位置导入到Adobe Campaign的数据。
 
 ## 导出类型 {#export-type}
 
