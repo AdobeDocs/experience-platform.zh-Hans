@@ -2,12 +2,12 @@
 keywords: beemray,beemray extension
 title: Beemray扩展
 seo-title: Beemray扩展
-description: Beemray扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Beemray扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Beemray扩展是实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Beemray扩展是实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '561'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 [!DNL Beemray] 帮助您根据情境加速产品。 使您能够获得洞察、构建新体验、推动互动并参与真正重要的时刻。 Beemray使用机器学习实现情境智能自动化。 Beemray连接Adobe Experience Cloud和您的其他技术合作伙伴。 一切实时进行。 此扩展在 [!DNL Beemray] 您的站点上安装SDK。
 
-Beemray是Adobe实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html)。
+Beemray是实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html)。
 
 此目标是扩 [!DNL Adobe Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Platform Launch] 实时CDP中的工作方式的更多信息，请参 [阅Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
