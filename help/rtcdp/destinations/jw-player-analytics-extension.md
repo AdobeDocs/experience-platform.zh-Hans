@@ -2,12 +2,12 @@
 keywords: JW player;jw player;JW Player;jw extension;JW extension
 title: JW Player分析（测试版）扩展
 seo-title: JW Player分析（测试版）扩展
-description: JW Player Analytics（测试版）扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: JW Player Analytics（测试版）扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: JW Player Analytics（测试版）扩展是实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: JW Player Analytics（测试版）扩展是实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '587'
+source-wordcount: '584'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 此扩展安装适 [!DNL JW Player] 配器，以将 [!DNL JW Player] 事件连接到Adobe视频分析。 利用Adobe视频分析的强大功能，获得详细的洞察，了解客户的视频观看习惯。
 
-[!DNL JW Player Analytics] （测试版）是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101523.jw-player-analytics-launch-extension.html)。
+[!DNL JW Player Analytics] （测试版）是实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101523.jw-player-analytics-launch-extension.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
