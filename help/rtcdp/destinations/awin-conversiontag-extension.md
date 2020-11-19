@@ -2,12 +2,12 @@
 keywords: Awin Advertiser Conversion Tag extension;conversion tag;Awin;awin;AWIN
 title: Awin广告商转换标签扩展
 seo-title: Awin广告商转换标签扩展
-description: Awin广告商转化标签扩展是Adobe实时客户数据平台中的广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Awin广告商转化标签扩展是Adobe实时客户数据平台中的广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Awin广告商转化标签扩展是实时客户数据平台中的广告目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Awin广告商转化标签扩展是实时客户数据平台中的广告目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '571'
+source-wordcount: '568'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 转换标签是AWIN.Tracking.Sale JavaScript对象的声明，该对象在确认页面上完成，以指示Mastertag已进行转换。 随后，它将执行必要的跟踪请求。
 
-Awin广告商转化标签是Adobe实时客户数据平台中的一种广告扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.103240.awin-conversion-tag.html)。
+Awin广告商转化标签是实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.103240.awin-conversion-tag.html)。
 
 此目标是扩 [!DNL Adobe Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Platform Launch] 实时CDP中的工作方式的更多信息，请参 [阅Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
