@@ -2,12 +2,12 @@
 keywords: livefyre;livefyre extension
 title: AdobeLivefyre扩展
 seo-title: AdobeLivefyre扩展
-description: AdobeLivefyre扩展是Adobe实时客户数据平台中的社交目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: AdobeLivefyre扩展是Adobe实时客户数据平台中的社交目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: AdobeLivefyre扩展是实时客户数据平台中的社交目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: AdobeLivefyre扩展是实时客户数据平台中的社交目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '543'
+source-wordcount: '540'
 ht-degree: 6%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 6%
 
 AdobeLivefyre使您能够发现、组织和发布用户生成的内容不断流到您的网站上，从而创建真实、高度个性化的体验。
 
-AdobeLivefyre是Adobe实时客户数据平台中的社交扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100464.html)。
+AdobeLivefyre是实时客户数据平台中的社交扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100464.html)。
 
 此目标是扩 [!DNL Adobe Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Platform Launch] 实时CDP中的工作方式的更多信息，请参 [阅Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
