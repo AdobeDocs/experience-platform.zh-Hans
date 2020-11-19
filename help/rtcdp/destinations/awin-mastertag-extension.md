@@ -2,12 +2,12 @@
 keywords: Awin Advertiser mastertag extension;mastertag tag;Awin;awin;AWIN
 title: Awin Advertiser Mastertag扩展
 seo-title: Awin Advertiser Mastertag扩展
-description: Awin Advertiser Mastertag扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Awin Advertiser Mastertag扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Awin Advertiser Mastertag扩展是实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Awin Advertiser Mastertag扩展是实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '559'
+source-wordcount: '556'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 5%
 
 它是 [!DNL MasterTag] 一个JavaScript库，包含Awin跟踪解决方案所需的所有功能，应无条件地附加到网站的每个页面（包括确认页面），但不包括显示或处理付款信息的任何页面。
 
-[!DNL Awin Advertiser Mastertag] 是Adobe实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.103176.awin-advertiser-mastertag.html)。
+[!DNL Awin Advertiser Mastertag] 是实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.103176.awin-advertiser-mastertag.html)。
 
 此目标是扩 [!DNL Experience Platform Launch] 展。 有关Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
