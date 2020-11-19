@@ -2,12 +2,12 @@
 keywords: Nielsen BSDK;nielsen bsdk;nielsen BSDK
 title: Nielsen BSDK扩展
 seo-title: Nielsen BSDK扩展
-description: The Nielsen BSDK扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Nielsen BSDK扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Nielsen BSDK扩展是实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Nielsen BSDK扩展是实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '633'
+source-wordcount: '630'
 ht-degree: 5%
 
 ---
@@ -23,7 +23,7 @@ DCR:提供对非线性数字内容（包括带有广告的内容）进行日常�
 
 DTVR:这说明参加节目源在桌面和移动设备上进行的线性电视观看。 这是MRC为在计算机和移动设备上观看的节目而对电视受众衡量做出贡献的第一个获得认证的解决方案。
 
-[!DNL Nielsen BSDK] 是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101361.html)。
+[!DNL Nielsen BSDK] 是实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101361.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
