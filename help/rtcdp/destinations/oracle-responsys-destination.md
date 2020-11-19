@@ -1,13 +1,13 @@
 ---
 keywords: email;Email;e-mail;email destinations;oracle responsys destination
-title: Oracle Responsys目标
-seo-title: Oracle Responsys目标
-description: Responsys是面向跨渠道营销活动的企业电子邮件营销工具，由Oracle提供，用于在电子邮件、移动设备、展示广告和社交平台之间实现个性化互动。
-seo-description: Responsys是面向跨渠道营销活动的企业电子邮件营销工具，由Oracle提供，用于在电子邮件、移动设备、展示广告和社交平台之间实现个性化互动。
+title: OracleResponsys目的地
+seo-title: OracleResponsys目的地
+description: Responsys是Oracle公司为跨渠道营销活动提供的企业电子邮件营销工具，可以跨电子邮件、移动设备、展示广告和社交渠道实现个性化互动。
+seo-description: Responsys是Oracle公司为跨渠道营销活动提供的企业电子邮件营销工具，可以跨电子邮件、移动设备、展示广告和社交渠道实现个性化互动。
 translation-type: tm+mt
-source-git-commit: 67a353c950bef11ccbaa52c49d213f08449baa96
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '523'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 [Responsys](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) 是面向跨渠道营销活动的企业电子邮件营销工具，可通过 [!DNL Oracle] 在电子邮件、移动设备、展示广告和社交渠道实现个性化互动。
 
-要将区段数据发 [!DNL Oracle Responsys]送到，您必 [须先连接到Adobe实时平台中的目](#connect-destination) 标，然后设置存储位置中的 [导入](#import-data-into-responsys)[!DNL Oracle Responsys]。
+要将区段数据发 [!DNL Oracle Responsys]送到，您必 [须首先连接到实时客户](#connect-destination) 数据平台中的目标，然后 [设置从存储位置导入](#import-data-into-responsys) 到的数据导入 [!DNL Oracle Responsys]。
 
 ## 导出类型 {#export-type}
 
