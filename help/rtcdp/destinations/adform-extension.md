@@ -2,12 +2,12 @@
 keywords: adform extension;adform
 title: Adform扩展
 seo-title: Adform扩展
-description: Adform扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Adform扩展是Adobe实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Adform扩展是实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Adform扩展是实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '523'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 5%
 
 Adform网站跟踪扩展使广告商能够使用该平台在其网站上轻松实施Adform跟踪 [!DNL Experience Platform Launch] 点。
 
-[!DNL Adform] 是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩展 [页面](https://exchange.adobe.com/experiencecloud.details.103195.adform-website-tracking.html)
+[!DNL Adform] 是实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩展 [页面](https://exchange.adobe.com/experiencecloud.details.103195.adform-website-tracking.html)
 
 此目标是扩 [!DNL Adobe Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Platform Launch] 实时CDP中的工作方式的更多信息，请参 [阅Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
