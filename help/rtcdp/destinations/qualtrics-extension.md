@@ -2,12 +2,12 @@
 keywords: Qualtrics;qualtrics;Qualtrics Website Feedback;qualtrics website feedback;Qualtricks website feedback
 title: Qualtrics网站反馈扩展
 seo-title: Qualtrics网站反馈扩展
-description: The Qualtrics网站反馈扩展是Adobe实时客户数据平台中的调查目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Qualtrics网站反馈扩展是Adobe实时客户数据平台中的调查目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Qualtrics网站反馈扩展是实时客户数据平台中的调查目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Qualtrics网站反馈扩展是实时客户数据平台中的调查目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '629'
+source-wordcount: '626'
 ht-degree: 4%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 4%
 
 使用直观的指向并单击界面，在几分钟内创建和部署目标明确、具有品牌的Web消息。 您从网站收集的数据和洞察会与所有渠道的客户反馈数据一起呈现，这些视图提供客户体验的完整——所有这一切均在一个平台上实现。
 
-[!DNL Qualtrics Website Feedback] 是Adobe实时客户数据平台的调查扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101569.qualtrics-website-feedback.html)。
+[!DNL Qualtrics Website Feedback] 是实时调查平台中的一种客户扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101569.qualtrics-website-feedback.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
