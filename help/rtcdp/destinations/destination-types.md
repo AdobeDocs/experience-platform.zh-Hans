@@ -2,12 +2,12 @@
 keywords: destinations;destination;destination types
 title: 目标类型和类别
 seo-title: 目标类型和类别
-description: '在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 Experience Platform Launch扩展将原始事件数据转发到几种类型的目标。 '
-seo-description: 在Adobe实时用户档案数据平台中，/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 Experience Platform Launch扩展将原始事件数据转发到几种类型的目标。
+description: '在实时用户档案数据平台中，事件/细分导出目标可捕获数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 Experience Platform Launch扩展将原始事件数据转发到几种类型的目标。 '
+seo-description: 在实时用户档案数据平台中，事件/细分导出目标可捕获数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 Experience Platform Launch扩展将原始事件数据转发到几种类型的目标。
 translation-type: tm+mt
-source-git-commit: e6276eac05f0a20a668051034e83831002a464f0
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '591'
+source-wordcount: '586'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 # 目标类型和类别
 
-阅读本页以了解Adobe实时客户数据平台目标的不同类型和类别。
+阅读本页以了解实时客户数据平台目标的不同类型和类别。
 
 ## 目标类型
 
-在Adobe实时客户数据平台中，我们区分两种目标类型——连接和扩展。 连接目标有两种类型：用户档案导出目标和段导出目标。
+在实时客户数据平台中，我们区分两种目标类型——连接和扩展。 连接目标有两种类型：用户档案导出目标和段导出目标。
 
 ![目标类型](/help/rtcdp/destinations/assets/types-of-destinations.png)
 
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 ### 连接 {#connections}
 
-**[!UICONTROL 用户档案导出]****[!UICONTROL 和细分导出目标Adobe实时客户数据平台捕获事件数据，将其与其他数据源相结合，形成实时]** 客户用户档案 [](/help/profile/home.md)，应用细分并将细分和合格用户档案导出到目标。
+**[!UICONTROL 用户档案实]** 时导出和细分导出目标 **[!UICONTROL Customer Data Platform捕获事件数据，将其与其他数据源相结合以形成实时客户]** 用户档案 [](/help/profile/home.md)，应用细分并将细分和合格用户档案导出到目标。
 
 <br> 
 
