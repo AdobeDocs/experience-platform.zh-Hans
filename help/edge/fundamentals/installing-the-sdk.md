@@ -5,9 +5,9 @@ description: 了解如何安装Experience PlatformWeb SDK
 seo-description: 了解如何安装Experience PlatformWeb SDK
 keywords: web sdk installation;installing web sdk;internet explorer;promise;
 translation-type: tm+mt
-source-git-commit: d23568f7ce63df5aa98dc237a6671eeadde0c9b2
+source-git-commit: 1b5ee9b1f9bdc7835fa8de59020b3eebb4f59505
 workflow-type: tm+mt
-source-wordcount: '626'
+source-wordcount: '623'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 使用Adobe Experience PlatformWeb SDK的首选方式是通过 [Adobe Experience Platform Launch](http://launch.adobe.com/)。 在扩展 `AEP Web SDK` 目录中搜索，安装，然后配置扩展。
 
-CDN中也提供AEP Web SDK，供您使用。 您可以引用此文件或下载此文件并在自己的基础架构上托管它。 它提供微型和非微型版本。 非精简版本有助于进行调试。
+Adobe Experience PlatformWeb SDK也可在CDN上供您使用。 您可以引用此文件或下载此文件并在自己的基础架构上托管它。 它提供微型和非微型版本。 非精简版本有助于进行调试。
 
 URL结构：https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.min.js或alloy.js，用于非微型版本。
 
@@ -28,7 +28,7 @@ URL结构：https://cdn1.adoberesources.net/alloy/[VERSION]/alloy.min.js或alloy
 
 ## 添加代码 {#adding-the-code}
 
-实施Adobe Experience Platform的第一步 [!DNL Web SDK] 是尽可能在HTML标签中复制并粘贴以下“基 `<head>` 本代码”:
+实施Adobe Experience Platform的第 [!DNL Web SDK] 一步是在HTML标签中尽可能高地复制和粘贴以 `<head>` 下“基本代码”:
 
 ```markup
 <script>
