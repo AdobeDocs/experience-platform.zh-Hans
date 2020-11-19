@@ -5,9 +5,9 @@ title: 卡夫卡连接器
 topic: overview
 description: Adobe Experience Platform的流连接器基于Apache Kafka Connect。 此库可用于将JSON事件从数据中心的Kafka主题直接流化到实时Experience Platform。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 7fc7f0e525d994904dc71b1eb7136f11c05d5672
 workflow-type: tm+mt
-source-wordcount: '181'
+source-wordcount: '177'
 ht-degree: 0%
 
 ---
@@ -22,4 +22,4 @@ Adobe Experience Platform的流连接器基于 [!DNL Apache Kafka Connect]。 �
 - 已验证的数据集合
 - 对消息进行批处理以减少网络调用并提高吞吐量
 
-有关连接器的 [!DNL Kafka] 详细信息（包括如何设置连接器的说明），请阅读 [入门指南](https://github.com/adobe/experience-platform-streaming-connect)。 有关更详细的工作流程，请阅读开发 [人员指南](https://github.com/adobe/experience-platform-streaming-connect/blob/master/DEVELOPER_GUIDE.md)。
+有关连接器的 [!DNL Kafka] 详细信息（包括如何设置连接器的说明），请阅读 [入门指南](https://github.com/adobe/experience-platform-streaming-connect)。 有关更详细的工作流程，请阅读开发 [人员指南](https://www.adobe.com/go/kafka-connector-developer-guide)。
