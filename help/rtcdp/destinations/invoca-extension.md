@@ -2,12 +2,12 @@
 keywords: Invoca;invoca
 title: Invoca标记扩展
 seo-title: Invoca标记扩展
-description: Invoca Tags扩展是Adobe实时客户数据平台中客户目标的语音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Invoca Tags扩展是Adobe实时客户数据平台中客户目标的语音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Invoca Tags扩展是实时客户数据平台中客户目标的语音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Invoca Tags扩展是实时客户数据平台中客户目标的语音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '585'
+source-wordcount: '582'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 [!DNL Invoca] 将电话数据和语音洞察引入数字客户旅程。 借助 [!DNL Invoca’s] 呼叫智能平台，营销人员终于有了分析工具来衡量呼叫结果并将线下转化率与数字支出挂钩。
 
-[!DNL Invoca Tags] 是Adobe实时客户数据平台中客户扩展的声音。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100067.invoca.html)。
+[!DNL Invoca Tags] 是实时客户数据平台中客户扩展的声音。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100067.invoca.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
