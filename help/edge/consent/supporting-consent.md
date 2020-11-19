@@ -5,9 +5,9 @@ description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
 seo-description: 了解如何使用Experience PlatformWeb SDK支持同意首选项
 keywords: consent;defaultConsent;default consent;setConsent;Profile Privacy Mixin;Experience Event Privacy Mixin;Privacy Mixin;
 translation-type: tm+mt
-source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
+source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '752'
 ht-degree: 0%
 
 ---
@@ -80,7 +80,7 @@ alloy("setConsent", {
 
 >[!NOTE]
 >
->目前，SDK仅支持此目 `general` 的。 尽管我们计划构建一套更可靠的用途或类别，这些用途或Adobe将与不同的功能和产品产品相对应，但当前的实施只是选择加入的全部或全部方法。  这仅适用于Adobe Experience Platform, [!DNL Web SDK] 而不适用于其他AdobeJavaScript库。
+>目前，SDK仅支持此目 `general` 的。 尽管我们计划构建一套更可靠的用途或类别，这些用途或Adobe将与不同的功能和产品产品相对应，但当前的实施只是选择加入的全部或全部方法。  这仅适用于Adobe Experience Platform [!DNL Web SDK] 和其他AdobeJavaScript库。
 
 ## 通过IAB TCF标准交流同意偏好
 
