@@ -2,12 +2,12 @@
 keywords: Pinterest;pinterest;Pinterest Conversion Tracking;pintrest conversion tracking
 title: Pinterest转换跟踪扩展
 seo-title: Pinterest转换跟踪扩展
-description: The Pinterest Conversion Tracking Extension是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Pinterest转化跟踪扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Pinterest转换跟踪扩展是实时客户数据平台中的广告目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Pinterest转换跟踪扩展是实时客户数据平台中的广告目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '575'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 5%
 
 在提升的Pin视图后跟踪网站上的访客操作。 衡量广告支出回报并创建目标受众。 在[这里](https://ads.pinterest.com/)了解更多。
 
-[!DNL Pinterest Conversion Tracking] 是Adobe实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100523.pinterest-conversion-tracking-for-adobe-launch.html)。
+[!DNL Pinterest Conversion Tracking] 是实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100523.pinterest-conversion-tracking-for-adobe-launch.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
