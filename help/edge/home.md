@@ -2,12 +2,12 @@
 title: Adobe Experience PlatformWeb SDK帮助
 seo-title: Adobe Experience PlatformWeb SDK帮助
 description: 了解Adobe Experience PlatformWeb SDK是什么以及如何使用它。
-seo-description: 允许Adobe Experience Cloud的客户与该Experience Cloud的各种服务进行交互。
+seo-description: 了解如何允许Adobe Experience Cloud的客户与该Experience Cloud的各种服务进行交互。
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;edge;Visitor.js;AppMeasurement.js;AT.js;DIL.js;web sdk;SDK;web SDK;Launch;launch
 translation-type: tm+mt
-source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
+source-git-commit: bdd80b15258bf4e3c0dee1e260fd3469c76d5885
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '689'
 ht-degree: 3%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 3%
 
 # 什么是Adobe Experience PlatformWeb SDK
 
-Adobe Experience PlatformWeb SDK是客户端JavaScript库，它允许Adobe Experience Cloud的客户通过Adobe与各种服务 [!DNL Experience Cloud] 进行交互 [!DNL Experience Platform Edge Network]。 除了JavaScript库，还有一个Experience Platform Launch扩 [展](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/aep-extension/overview.html) ，可帮助您配置Web SDK。
+Adobe Experience PlatformWeb SDK是一个客户端JavaScript库，它允许Adobe Experience Cloud的客户通过Adobe Experience Platform边缘网络与该网 [!DNL Experience Cloud] 络中的各种服务交互。 除了JavaScript库，还有一个Experience Platform Launch扩 [展](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/aep-extension/overview.html) ，可帮助您配置Web SDK。
 
 ## Experience Edge
 
@@ -42,7 +42,7 @@ Adobe Experience PlatformWeb SDK是客户端JavaScript库，它允许Adobe Exper
 
 ## 视频概述
 
-以下视频概述了Adobe Experience Platform [!DNL Web SDK] 和 [!DNL Edge Network]。
+以下视频概述了Adobe Experience Platform和 [!DNL Web SDK] Adobe Experience Platform [!DNL Edge Network]。
 
 >[!VIDEO](https://video.tv.adobe.com/v/34141?quality=12&learn=on)
 
@@ -59,13 +59,9 @@ Adobe Experience PlatformWeb SDK取代了以下SDK:
 
 除了新的库外，还有一个新的端点，可简化对Adobe解决方案的HTTP请求。 以前，访客ID服务会收到阻止呼叫，然后AT.js向Adobe Target发出呼叫，DILID向Adobe Audience Manager发出呼叫，最后，AppMeasurement.js向Adobe Analytics发出呼叫。 此新库和端点可以检索ID、获取体 [!DNL Target] 验、将数据发 [!DNL Audience Manager]送到Adobe Experience Platform，并通过一次调用将数据传递给。
 
-以下视频演示了Adobe Experience Platform [!DNL Web SDK] 的实 [!DNL Edge Network] 际操作情况。 该视频示例使用单个调用Adobe，将数 [!DNL Experience Platform]据发 [!DNL Analytics]送到 [!DNL Audience Manager]、和 [!DNL Target]。
+以下视频演示了Adobe Experience Platform [!DNL Web SDK] 和Adobe Experience Platform [!DNL Edge Network] 的实际操作情况。 该视频示例使用单个调用Adobe，将数 [!DNL Experience Platform]据发 [!DNL Analytics]送到 [!DNL Audience Manager]、和 [!DNL Target]。
 
 >[!VIDEO](https://video.tv.adobe.com/v/34148?quality=12&learn=on)
-
-## 入门指南
-
-强烈建议您查阅入 [门指南](fundamentals/prerequisite.md) ，快速学习如何使用Adobe Experience Platform Launch。
 
 本产品不断发展和增长，以支持越来越多的用例。 为了跟上最新的步伐，请查看我们支持 [的使用案例展示板](https://github.com/adobe/alloy/projects/5)。 我们会根据我们目前支持的使用案例以及我们正在努力帮助您做出最佳决策的案例，不断更新这些案例。
 
