@@ -2,12 +2,12 @@
 keywords: Medallia;medallia
 title: Medallia扩展
 seo-title: Medallia扩展
-description: Medallia扩展是Adobe实时客户数据平台中客户目标的声音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Medallia扩展是Adobe实时客户数据平台中客户目标的声音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Medallia扩展是实时客户数据平台中客户目标的声音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Medallia扩展是实时客户数据平台中客户目标的声音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '589'
+source-wordcount: '586'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 快速 [!DNL Medallia] 、无缝地在您的Web资产上部署。 该扩展还允许您检测调查事件，通过数据元素实时捕获客户反馈，按规则使用它个性化客户体验并与Adobe Analytics共享数据。
 
-[!DNL Medallia] 是Adobe实时客户数据平台中客户扩展的声音。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.103279.medallia-for-adobe-launch.html)。
+[!DNL Medallia] 是实时客户数据平台中客户扩展的声音。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.103279.medallia-for-adobe-launch.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
