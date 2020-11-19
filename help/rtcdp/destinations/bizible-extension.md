@@ -2,12 +2,12 @@
 keywords: bizible;bizible extension;bizible destination
 title: 可见扩展
 seo-title: 可见扩展
-description: Adobe实时客户数据平台中的可视扩展是电子邮件目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Adobe实时客户数据平台中的Bizbile扩展是电子邮件目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Bizible扩展是实时客户数据平台中的电子邮件目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Bizible扩展是实时客户数据平台中的电子邮件目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '526'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 5%
 
 [!DNL Bizible] 是行业领先的B2B归因解决方案，可让您无法并行地查看数据，从而做出明智的决策，推动数据增长。
 
-[!DNL Bizible] 是Adobe实时客户数据平台中的电子邮件扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101055.bizible-analytics.html)。
+[!DNL Bizible] 是实时客户数据平台中的电子邮件扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101055.bizible-analytics.html)。
 
 此目标是扩 [!DNL Adobe Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Platform Launch] 实时CDP中的工作方式的更多信息，请参 [阅Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
