@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: ade9da107ee6dd100a33a7e7e9a20b4335721e0a
+source-git-commit: 5aa8dbcd85fa506f90515ce3e01d35993dd99c10
 workflow-type: tm+mt
-source-wordcount: '2078'
+source-wordcount: '2077'
 ht-degree: 3%
 
 ---
@@ -107,7 +107,7 @@ For more information, please see the [[!DNL Offer Decisioning]](https://experien
 
 ## [!DNL Destinations] 服务 {#destinations}
 
-在 [Adobe实时数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
+在实 [时客户数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
 
 **新目标**
 
