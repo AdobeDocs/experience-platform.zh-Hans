@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: September 8, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 9436779e91bf82382056acd526671b30b55e11d4
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '883'
-ht-degree: 4%
+source-wordcount: '862'
+ht-degree: 6%
 
 ---
 
@@ -17,15 +17,15 @@ ht-degree: 4%
 
 **发行日期：2020 年 9 月 9 日**
 
-Adobe Experience Platform现有功能更新：
+Adobe Experience Platform 现有功能的更新包括：
 
-- [[!DNL数据管理]](#governance)
-- [[!DNL目标]](#destinations)
-- [[!DNL可观性洞察]](#observability)
-- [[!DNLPrivacy Service]](#privacy)
-- [[!DNL实时客户用户档案]](#profile)
-- [[!DNL分段服务]](#segmentation)
-- [[!DNL源]](#sources)
+- [[!DNL Data Governance]](#governance)
+- [[!DNL Destinations]](#destinations)
+- [[!DNL Observability Insights]](#observability)
+- [[!DNL Privacy Service]](#privacy)
+- [[!DNL Real-time Customer Profile]](#profile)
+- [[!DNL Segmentation Service]](#segmentation)
+- [[!DNL Sources]](#sources)
 
 ## [!DNL Data Governance] {#governance}
 
@@ -41,7 +41,7 @@ Adobe Experience Platform数据治理是用于管理客户数据并确保遵守�
 
 ## 目标 {#destinations}
 
-在 [Adobe实时数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
+在实 [时客户数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
 
 **新增功能**
 
@@ -59,7 +59,7 @@ Adobe Experience Platform数据治理是用于管理客户数据并确保遵守�
 
 | 功能 | 描述 |
 | --- | --- |
-| AdobeI/O事件通知 | [!DNL Observability Insights] 利用AdobeI/O事件为多个Experience Platform服务创建事件通知。 通知负载将发送到已配置的网络挂接，然后您可以使用它来自动执行进一步的下游流程。 有关更多 [信息，请参](../../observability/notifications/overview.md) 阅通知概述。 |
+| AdobeI/O事件通知 | [!DNL Observability Insights] 利用AdobeI/O事件为多个Experience Platform服务创建事件通知。 通知负载将发送到已配置的网络挂接，然后您可以使用它来自动执行进一步的下游流程。 See the [notifications overview](../../observability/notifications/overview.md) for more information. |
 
 有关该 [[!DNL Observability Insights] 服务的](../../observability/home.md) 更多信息，请参阅概述。
 
