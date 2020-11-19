@@ -2,12 +2,12 @@
 keywords: DoubleClick Floodlight;doubleclick floodlight extension;doubleclick;floodlight
 title: DoubleClick Floodlight（测试版）扩展
 seo-title: DoubleClick Floodlight（测试版）扩展
-description: DoubleClick Floodlight（测试版）扩展是Adobe实时客户数据平台中的广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: DoubleClick Floodlight（测试版）扩展是Adobe实时客户数据平台中的广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: DoubleClick Floodlight（测试版）扩展是实时客户数据平台中的一个广告目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: DoubleClick Floodlight（测试版）扩展是实时客户数据平台中的一个广告目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '557'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 此扩展允许使用传统泛光灯格 [!DNL DoubleClick Floodlight] 式（而非全局站点标记）快速、轻松地部署标记。 注意：此扩展为测试版。
 
-[!DNL DoubleClick Floodlight] （测试版）是Adobe实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅DoubleClick [!DNL Google] Floodlight的支 [持文档](https://support.google.com/dcm/answer/2823388?hl=en)。
+[!DNL DoubleClick Floodlight] （测试版）是实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅DoubleClick [!DNL Google] Floodlight的支 [持文档](https://support.google.com/dcm/answer/2823388?hl=en)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
