@@ -2,12 +2,12 @@
 keywords: PebblePost;pebblepost;PebblePost Programmatic Direct Mail;pebblepost programmatic direct mail
 title: PebblePost扩展
 seo-title: PebblePost扩展
-description: PebblePost扩展是Adobe实时客户数据平台中的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: PebblePost扩展是Adobe实时客户数据平台中的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: PebblePost扩展是实时客户数据平台中的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: PebblePost扩展是实时客户数据平台中的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '587'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 [!DNL PebblePost's Programmatic Direct Mail®] 该解决方案可帮助数字营销人员将在线兴趣和意图与可转换的线下、有形媒体关联起来。 营销人员可以利用他们在Adobe中创建的自定义数据细分，现在为消费者提供相关、更持久的家庭媒体印象。 根据响应路径活动和现场转换实时分析性能。
 
-[!DNL PebblePost] 是Adobe实时客户数据平台中的电子邮件扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100315.programmatic-direct-mail.html)。
+[!DNL PebblePost] 是实时客户数据平台中的电子邮件扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100315.programmatic-direct-mail.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
