@@ -2,12 +2,12 @@
 keywords: twitter;Twitter;twitter universal website tag;Twitter universal website tag;Twitter UWT Tag;Twitter uwt;twitter uwt
 title: Twitter通用网站标签扩展
 seo-title: Twitter通用网站标签扩展
-description: Twitter通用网站标签扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Twitter通用网站标签扩展是Adobe实时客户数据平台中的广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Twitter通用网站标签扩展是实时客户数据平台中的广告目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Twitter通用网站标签扩展是实时客户数据平台中的广告目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '543'
+source-wordcount: '540'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 5%
 
 [!DNL Twitter Universal Website Tag] 提供将信标发送到Twitter UWT标记的操作。
 
-[!DNL Twitter Universal Website Tag] 是Adobe实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅 [高级转换跟踪](https://business.twitter.com/en/solutions/twitter-ads/website-clicks/advanced-conversion-tracking.html)。
+[!DNL Twitter Universal Website Tag] 是实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅 [高级转换跟踪](https://business.twitter.com/en/solutions/twitter-ads/website-clicks/advanced-conversion-tracking.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
