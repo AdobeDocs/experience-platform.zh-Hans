@@ -2,12 +2,12 @@
 Keywords: ECID;ecid
 title: Experience Cloud ID 服务扩展
 seo-title: Experience Cloud ID 服务扩展
-description: Experience CloudID服务扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Experience CloudID服务扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Experience CloudID服务扩展是实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Experience CloudID服务扩展是实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '554'
 ht-degree: 10%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 10%
 
 此扩展实现ID [!DNL Experience Cloud] 服务，它可在所有解决方案中标识 [!DNL Experience Cloud] 访客。
 
-[!DNL Experience Cloud] ID服务是Adobe实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参阅 [文档中的Experience CloudID服务扩](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/id-service-extension/overview.html) 展 [!DNL Experience Platform Launch] 页。
+[!DNL Experience Cloud] ID服务是实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参阅 [文档中的Experience CloudID服务扩](https://docs.adobe.com/content/help/zh-Hans/launch/using/extensions-ref/adobe-extension/id-service-extension/overview.html) 展 [!DNL Experience Platform Launch] 页。
 
 此目标是扩 [!DNL Adobe Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Platform Launch] 实时CDP中的工作方式的更多信息，请参 [阅Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
