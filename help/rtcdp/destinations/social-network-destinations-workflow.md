@@ -6,9 +6,9 @@ seo-title: 社交网络目标工作流
 description: 连接到社交网络广告帐户的说明
 seo-description: 连接到社交网络广告帐户的说明
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '501'
+source-wordcount: '500'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 创建社交网络目标的工作流
 
-本教程以 [!DNL Facebook] 一个示例为例，但Adobe实时客户数据平台中的工作流对于所有社交网络目标将保持不变，然后再添加到产品中。
+本教程 [!DNL Facebook] 以一个示例为例，但实时客户数据平台中的工作流对于所有社交网络目标将保持不变，然后再添加到产品中。
 
 1. 在“ **[!UICONTROL 目标]** ”> **[!UICONTROL “目录]**”中，滚 **[!UICONTROL 动到Social]** 类别。 选择首选社交网络目标，然后选择 **[!UICONTROL 配置]**。
 
