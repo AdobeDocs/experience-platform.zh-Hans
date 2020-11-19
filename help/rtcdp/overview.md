@@ -5,21 +5,21 @@ seo-title: 实时客户数据平台概述
 description: 实时客户数据平台概述
 seo-description: 实时客户数据平台概述
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '289'
 ht-degree: 0%
 
 ---
 
 
-# Adobe实时客户数据平台概述
+# 实时客户数据平台概述
 
-Adobe实时客户数据平台(Real-time CDP)构建于Adobe Experience Platform之上，可帮助公司整合来自多个企业来源的已知和匿名数据，以创建可用于在所有渠道和设备上实时提供个性化客户体验的客户用户档案。
+以Adobe Experience Platform为构建基础的实时客户数据平台(Real-time CDP)可帮助公司将来自多个企业来源的已知和匿名数据汇总在一起，以创建可用于在所有渠道和设备上实时提供个性化客户体验的客户用户档案。
 
 实时CDP包括用于数据治理、身份管理、高级细分和数据科学的工具，使您能够构建用户档案和定义受众，并在能够实施严格数据治理策略的同时获得丰富的洞察。
 
-Adobe实时客户数据平台连接到一个大型合作伙伴生态系统，更不用说与Adobe Experience Cloud的本机集成了，因此您可以无缝激活这些受众并在所有渠道提供出色的客户体验，从现场或应用程序内个性化到电子邮件、付费媒体、呼叫中心、互联设备等等。
+实时客户数据平台连接到一个大型合作伙伴生态系统，更不用说与Adobe Experience Cloud的本机集成了，因此您可以无缝激活这些受众并在所有渠道提供出色的客户体验，从现场或应用程序内个性化到电子邮件、付费媒体、呼叫中心、互联设备等等。
 
 借助实时客户数据平台，您可以：
 
