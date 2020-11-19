@@ -5,9 +5,9 @@ seo-title: “目标：详细信息”页
 description: '单个目标的详细信息页面提供了目标详细信息的概述，如目标名称、ID、映射到目标的区段，以及用于编辑激活和启用和禁用数据流的控件。 '
 seo-description: '单个目标的详细信息页面提供了目标详细信息的概述，如目标名称、ID、映射到目标的区段，以及用于编辑激活和启用和禁用数据流的控件。 '
 translation-type: tm+mt
-source-git-commit: 0c2acd79492c474ba664ce32d1592969da71f385
+source-git-commit: ff36899f455848584ab2f5e236812795d2c81681
 workflow-type: tm+mt
-source-wordcount: '681'
+source-wordcount: '680'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 1%
 >
 >目标详细信息页面是平台UI中 [!UICONTROL 的] “目标”工作区的一部分。 有关详细 [[!UICONTROL 信息] ，请参阅目](./destinations-workspace.md) 标工作区概述。
 
-在平台 **[!UICONTROL UI]** 的“目标”工作区中，导航到“浏 **[!UICONTROL 览]** ”选项卡，然后选择要视图的批处理目标的名称。
+在平 **[!UICONTROL 台]** UI中的目标工作区中，导航到 **[!UICONTROL 浏览]** 选项卡，然后选择要视图的目标名称。
 
 ![](./assets/details-page/select-destination.png)
 
