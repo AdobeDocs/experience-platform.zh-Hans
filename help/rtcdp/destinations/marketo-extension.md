@@ -2,12 +2,12 @@
 keywords: Marketo;marketo;Marketo extension;marketo extension
 title: Marketo扩展
 seo-title: Marketo扩展
-description: Marketo扩展是Adobe实时客户数据平台中的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Marketo扩展是Adobe实时客户数据平台中的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Marketo扩展是实时客户数据平台中的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Marketo扩展是实时客户数据平台中的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '555'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 5%
 
 [!DNL Marketo's] 强大的营销自动化软件可帮助营销人员主控数字营销的艺术和科学，吸引客户和潜在客户。
 
-[!DNL Marketo] 是Adobe实时客户数据平台中的电子邮件扩展。 有关扩展功能的详细信息，请参 [阅AdobeExchange的扩展页](https://exchange.adobe.com/experiencecloud.details.101071.marketo-for-adobe-launch.html)。
+[!DNL Marketo] 是实时客户数据平台中的电子邮件扩展。 有关扩展功能的详细信息，请参 [阅AdobeExchange的扩展页](https://exchange.adobe.com/experiencecloud.details.101071.marketo-for-adobe-launch.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
