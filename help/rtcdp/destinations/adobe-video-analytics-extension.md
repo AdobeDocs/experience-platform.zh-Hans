@@ -2,12 +2,12 @@
 keywords: media analytics extension;media analytics;audio and video extension
 title: Adobe Media Analytics for Audio and Video 扩展
 seo-title: Adobe Media Analytics for Audio and Video 扩展
-description: Adobe媒体分析音频和视频扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Adobe媒体分析视频扩展是Adobe实时客户数据平台中的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: 音频和视频Adobe媒体分析扩展是实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Adobe媒体分析视频扩展是实时客户数据平台中的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '587'
+source-wordcount: '584'
 ht-degree: 12%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 12%
 
 Adobe音频和视频媒体分析是基础Analytics产品的附加功能，可为客户提供对视频、音频和广告的可靠衡量。
 
-Adobe媒体分析(Adobe Media Analytics for Audio and Video)是Adobe实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100157.html)。
+Adobe媒体音频和视频分析是实时客户数据平台中的分析扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.100157.html)。
 
 此目标是扩 [!DNL Adobe Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Platform Launch] 实时CDP中的工作方式的更多信息，请参 [阅Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
