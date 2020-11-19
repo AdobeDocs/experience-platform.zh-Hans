@@ -6,10 +6,10 @@ last-update: March 10, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: 0f3a4ba6ad96d2226ae5094fa8b5073152df90f7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '854'
-ht-degree: 5%
+source-wordcount: '840'
+ht-degree: 6%
 
 ---
 
@@ -18,13 +18,13 @@ ht-degree: 5%
 
 **发行日期：2020 年 3 月 11 日**
 
-Adobe Experience Platform现有功能更新：
+Adobe Experience Platform 现有功能的更新包括：
 
-* [[!DNL数据管理]](#governance)
-* [[!DNL数据摄取]](#ingestion)
-* [[!DNL目标]](#destinations)
-* [[!DNL标识服务]](#identity)
-* [[!DNL源]](#sources)
+* [[!DNL Data Governance]](#governance)
+* [[!DNL Data Ingestion]](#ingestion)
+* [[!DNL Destinations]](#destinations)
+* [[!DNL Identity Service]](#identity)
+* [[!DNL Sources]](#sources)
 
 ## [!DNL Data Governance] {#governance}
 
@@ -69,7 +69,7 @@ Adobe Experience Platform提供丰富的功能集，可采集任何类型和延�
 
 ## 目标 {#destinations}
 
-在 [Adobe实时数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
+在实 [时客户数据平台中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式向这些合作伙伴激活数据。
 
 **新目标**
 
