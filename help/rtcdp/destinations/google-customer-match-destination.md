@@ -5,9 +5,9 @@ seo-title: Google客户匹配目标
 description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 seo-description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '1555'
+source-wordcount: '1554'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 用例
 
-为了帮助您更好地了解如何以及何时使用目标 [!DNL Google Customer Match] Adobe，以下是实时客户数据平台客户可使用此功能解决的示例使用案例。
+为了帮助您更好地了解如何以及何时使用目标 [!DNL Google Customer Match] ，以下是实时客户数据平台客户可以通过此功能解决的示例使用案例。
 
 
 ### 用例#1
