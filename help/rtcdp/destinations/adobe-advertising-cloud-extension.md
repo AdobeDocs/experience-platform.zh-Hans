@@ -2,12 +2,12 @@
 keywords: Advertising Cloud;advertising cloud extension; advertising cloud destination
 title: Adobe Advertising Cloud延伸
 seo-title: Adobe Advertising Cloud延伸
-description: Adobe Advertising Cloud分机是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Adobe Advertising Cloud分机是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Adobe Advertising Cloud分机是实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Adobe Advertising Cloud分机是实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: d9bf874dbfcc00c0a6e267f1a2e96f1223054825
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '504'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 5%
 
 这是用于 [!DNL Advertising Cloud] 为DSP和 [!DNL Advertising Cloud] Search实施转换和细分标记的扩展（目前不支持DCO）。
 
-Adobe Advertising Cloud公司是Adobe实时客户数据平台的广告扩展。
+Adobe Advertising Cloud是实时客户数据平台中的广告扩展。
 
 此目标是扩 [!DNL Adobe Experience Platform Launch] 展。 有关扩展在Adobe [!DNL Platform Launch] 实时CDP中的工作方式的更多信息，请参 [阅Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
