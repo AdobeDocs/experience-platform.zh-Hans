@@ -5,9 +5,9 @@ description: Adobe Experience PlatformWeb SDK可交付和呈现在Offer Decision
 seo-description: Adobe Experience PlatformWeb SDK可交付和呈现在Offer Decisioning管理的个性化优惠。 您可以使用Offer DecisioningUI或API创建优惠和其他相关对象。
 keywords: offer decisioning;decisioning;Web SDK;Platform Web SDK;personalized offers;deliver offers;offer delivery;offer personalization;
 translation-type: tm+mt
-source-git-commit: 86d819daf26eaf1b46afe76054d475e61720dd27
+source-git-commit: a0ede8c7d3088fe80d6ea014b4a4f9f08ee8a7aa
 workflow-type: tm+mt
-source-wordcount: '839'
+source-wordcount: '810'
 ht-degree: 9%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 9%
 >
 >Offer Decisioning在Adobe Experience PlatformWeb SDK中的使用目前可供选定用户早期访问。 此功能并非所有IMS组织都可用。
 
-Adobe Experience Platform可 [!DNL Web SDK] 以提供和呈现在Offer Decisioning管理的个性化优惠。 您可以使用Offer Decisioning用户界面(UI)或API创建优惠和其他相关对象。
+Adobe Experience Platform [!DNL Web SDK] 可以提供和呈现在Offer Decisioning管理的个性化优惠。 您可以使用Offer Decisioning用户界面(UI)或API创建优惠和其他相关对象。
 
 ## 先决条件
 
@@ -29,7 +29,7 @@ Adobe Experience Platform可 [!DNL Web SDK] 以提供和呈现在Offer Decisioni
 
 ## 术语
 
-与Offer Decisioning合作时，必须了解以下术语。 有关更多信息和视图附加条款，请访问 [Offer Decisioning术语](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html?lang=en#get-started)。
+与Offer Decisioning合作时，必须了解以下术语。 <!--For more information and to view additional terms, please visit the [Offer Decisioning glossary](/docs/offer-decisioning/using/get-started/glossary.html)-->.
 
 * **容器:** 容器是一种隔离机制，可以分开不同的关注点。 容器ID是所有存储库API的第一个路径元素。 所有决策对象都驻留在容器中。
 
@@ -83,7 +83,7 @@ Adobe Experience Platform可 [!DNL Web SDK] 以提供和呈现在Offer Decisioni
    * 平台启动已安装SDK
       1. [创建平台启动属性](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/companies-and-properties.html)
       2. [添加平台启动嵌入代码](https://docs.adobe.com/content/help/en/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      3. 使用您刚刚创建的边缘配置安装和配置Adobe Experience PlatformWeb SDK扩展，方法是从“边缘配置”下拉菜单中选择该配置。 有关扩展的有 [用文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html)。
+      3. 通过从“边缘配置”下拉菜单中选择您刚刚创建的配置，安装并配置AEP Web SDK扩展。 有关扩展的有 [用文档](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html)。
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
@@ -240,7 +240,7 @@ Adobe Experience Platform可 [!DNL Web SDK] 以提供和呈现在Offer Decisioni
                 "language": [
                   "en-US"
                 ],
-                "content": "<p style="color:red;">20% Off on shipping</p>",
+                "content": "<p style=\"color:red;\">20% Off on shipping</p>",
                 "characteristics": {
                   "foo": "bar",
                   "foo1": "bar1"
