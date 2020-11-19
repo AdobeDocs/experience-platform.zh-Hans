@@ -5,9 +5,9 @@ seo-title: 社交网络目标
 description: 通过社交网络目标，您可以为活动激活用户档案，以便根据散列电子邮件进行受众定位、个性化和抑制。
 seo-description: 通过社交网络目标，您可以为活动激活用户档案，以便根据散列电子邮件进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '89'
+source-wordcount: '86'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 通过社交网络目标，您可以为活动激活用户档案，以便根据散列电子邮件进行受众定位、个性化和抑制。
 
-Adobe实时客户数据平台目前支持以下社交网络目标：
+实时客户数据平台目前支持以下社交网络目标：
 
 * [AdobeLivefyre扩展](/help/rtcdp/destinations/adobe-livefyre-extension.md)
 * [[!DNL Facebook]](/help/rtcdp/destinations/facebook-destination.md)
