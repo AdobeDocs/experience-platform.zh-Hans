@@ -5,9 +5,9 @@ seo-title: Facebook目标
 description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 seo-description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: c66fb4cf0a414e02ceb58becc9d9b59db3fe987b
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '753'
 ht-degree: 4%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 4%
 
 ## 用例
 
-为了帮助您更好地了解如何以及何时使用目 [!DNL Facebook] 标，以下是Adobe实时客户数据平台客户可以通过此功能解决的两个示例使用案例。
+为了帮助您更好地了解如何以及何时使用目标 [!DNL Facebook] ，以下是实时客户数据平台客户可以通过此功能解决的两个示例使用案例。
 
 
 ### 用例#1
@@ -101,7 +101,7 @@ ht-degree: 4%
 
 ## 导出的数据 {#exported-data}
 
-对 [!DNL Facebook]于，成功的激活意味着 [!DNL Facebook] 将在[!DNL Facebook Ads Manager] [中以编程方式创建自定义受众](https://www.facebook.com/adsmanager/manage/)。 由于用户对已激活的区段具有资格或取消资格，因此将添加和删除该受众的区段成员资格。
+对 [!DNL Facebook]于，成功的激活意味着 [!DNL Facebook] 将在中以编程方式创建自定义受众 [[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/)。 由于用户对已激活的区段具有资格或取消资格，因此将添加和删除该受众的区段成员资格。
 
 >[!TIP]
 >
