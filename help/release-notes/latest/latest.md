@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: b5fa40deb480f264b02a8be56aff2c50e4149cb2
+source-git-commit: 6cf9c88f6dc751a4cc877670a89cc99d1efb1b2a
 workflow-type: tm+mt
-source-wordcount: '2126'
+source-wordcount: '2180'
 ht-degree: 3%
 
 ---
@@ -113,20 +113,18 @@ For more information, please see the [[!DNL Offer Decisioning]](https://experien
 
 | 目标 | 描述 |
 | ----------- | ----------- |
+| 布雷兹 | Braze是一个全面的客户互动平台，它为客户与他们喜爱的品牌之间提供相关且难忘的体验。 |
 | Microsoft Bing | Microsoft Bing目标可帮助您跨Microsoft展示广告执行重定位和受众目标数字活动。 |
 | 交易台 | 交易台是一个自助平台，可供广告购买者跨展示广告、视频和移动库存来源执行重定向和受众目标数字活动。 |
-
-<!-- | Braze | Braze is a comprehensive customer engagement platform that power relevant and memorable experiences between customers and the brands they love. |  -->
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
 | 目标详细信息UX更新 | 实时CDP的目标工作流现在包括内联监视，因此您可以查看哪些批处理激活成功。 此功能将允许用户通过警报和监视仪表板直接解决批处理目标工作流中的问题，以跟踪处理管道中的错误。 |
+| 文件加密 | 对于基于文件的目标，用户现在可以向导出的文件添加加密。 |
+| 文件计划 | 对于基于电子邮件的存储和云数据目标，用户可以创建一次性导出或创建每日快照。 |
 | 必填字段 | 用户可以将字段标记为必填，确保只导出包含必填字段的字段。 |
-
-<!-- | File scheduling | For both email based and cloud storage destinations, users can create a one-time export or create daily snapshots. |
-| File encryption | For file based destinations, users can now add encryption to their exported files. | -->
 
 有关详细信息，请参阅目 [标概述](../../rtcdp/destinations/destinations-overview.md)。
 
@@ -202,9 +200,10 @@ Adobe Experience Platform可以从外部来源收集数据，同时允许您使�
 [!DNL Experience Platform] 提供REST风格的API和交互式UI，让您可以轻松为各种数据提供者设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置获取运行的时间，以及管理数据获取吞吐量。
 
 **新来源**
-|功能 |说明 |
-| — | — |
-| [!DNL Shopify] |您现在可以 [!DNL Shopify] 使 [!DNL Experience Platform] 用API [!DNL Flow Service] 或UI连接。 有关详细 [信息，请参阅](../../sources/connectors/ecommerce/shopify.md) Shopify连接器概述。 |
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| [!DNL Shopify] | 您现在可以 [!DNL Shopify] 使 [!DNL Experience Platform] 用API [!DNL Flow Service] 或UI连接到。 有关详细 [信息，请参阅](../../sources/connectors/ecommerce/shopify.md) Shopify连接器概述。 |
 
 **主要功能**
 
