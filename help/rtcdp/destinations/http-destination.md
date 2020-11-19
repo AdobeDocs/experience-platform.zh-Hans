@@ -1,13 +1,13 @@
 ---
 keywords: streaming;
-title: HTTP目标是Adobe实时客户数据平台目标，可帮助您将用户档案数据发送到第三方HTTP端点。
-seo-title: HTTP目标是Adobe实时客户数据平台目标，可帮助您将用户档案数据发送到第三方HTTP端点。
-description: HTTP目标是Adobe实时客户数据平台目标，可帮助您将用户档案数据发送到第三方HTTP端点。
-seo-description: HTTP目标是Adobe实时客户数据平台目标，可帮助您将用户档案数据发送到第三方HTTP端点。
+title: HTTP目标是实时客户数据平台目标，可帮助您将用户档案数据发送到第三方HTTP端点。
+seo-title: HTTP目标是实时客户数据平台目标，可帮助您将用户档案数据发送到第三方HTTP端点。
+description: HTTP目标是实时客户数据平台目标，可帮助您将用户档案数据发送到第三方HTTP端点。
+seo-description: HTTP目标是实时客户数据平台目标，可帮助您将用户档案数据发送到第三方HTTP端点。
 translation-type: tm+mt
-source-git-commit: f4840f028bb855e79c0f2ae5c82bc38906a7aaec
+source-git-commit: 6eabcd70b133051205b669253f280cb92c24412f
 workflow-type: tm+mt
-source-wordcount: '572'
+source-wordcount: '568'
 ht-degree: 2%
 
 ---
@@ -21,9 +21,9 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-目 [!DNL HTTP] 标是一个流 [!DNL Adobe Real-Time Customer Data Platform] 式目标，可帮助您将用户档案数据发送到第三方端 [!DNL HTTP] 点。
+目 [!DNL HTTP] 标是一个流 [!DNL Real-time Customer Data Platform] 式目标，可帮助您将用户档案数据发送到第三方端 [!DNL HTTP] 点。
 
-要将用户档案数据发 [!DNL HTTP] 送到端点，您必须先连接到中的目标 [[!DNL Adobe Real-Time Customer Data Platform]](#connect-destination)。
+要将用户档案数据发 [!DNL HTTP] 送到端点，您必须先连接到中的目标 [[!DNL Real-time Customer Data Platform]](#connect-destination)。
 
 ## 用例 {#use-cases}
 
