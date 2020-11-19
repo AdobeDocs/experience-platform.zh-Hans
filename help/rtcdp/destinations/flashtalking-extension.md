@@ -2,12 +2,12 @@
 keywords: Flashtalking OneTag extensions;Flashtalking OneTag extension;Flashtalking OneTag destinations;Flashtalking OneTag;flashtalking onetag
 title: Flashtalking OneTag扩展
 seo-title: Flashtalking OneTag扩展
-description: Flashtalking OneTag扩展是Adobe实时客户数据平台中的广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Flashtalking OneTag扩展是Adobe实时客户数据平台中的广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Flashtalking OneTag扩展是实时客户数据平台中的一个广告目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Flashtalking OneTag扩展是实时客户数据平台中的一个广告目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '573'
+source-wordcount: '570'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 Experience Platform Launch [!DNL Flashtalking OneTag] 扩展使得可以轻松地将站点操作归因于显示、视频和移动广告活动。 使用 [!DNL Flashtalking OneTag] Launch部署到Web属性。
 
-[!DNL Flashtalking OneTag] 是Adobe实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101392.flashtalking-onetag.html)。
+[!DNL Flashtalking OneTag] 是实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.101392.flashtalking-onetag.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
