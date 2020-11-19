@@ -5,9 +5,9 @@ description: 了解如何使用Experience PlatformWeb SDK将链接数据发送�
 seo-description: 了解如何使用Experience PlatformWeb SDK将链接数据发送到Adobe Analytics
 keywords: adobe analytics;analytics;sendEvent;s.t();s.tl();webPageDetails;pageViews;webInteraction;web Interaction;page views;link tracking;links;track links;clickCollection;click collection;
 translation-type: tm+mt
-source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
+source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
 workflow-type: tm+mt
-source-wordcount: '250'
+source-wordcount: '239'
 ht-degree: 0%
 
 ---
@@ -46,9 +46,9 @@ alloy("sendEvent", {
 
 ## 自动链接跟踪 {#automaticLinkTracking}
 
-默认情况下，Web SDK会捕获、标 [签](#labelingLinks)，并 [单击符](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/webinteraction.schema.md) 合条件的链 [接标](#qualifyingLinks) 记。 单击是通过附加到 [事件](https://www.w3.org/TR/uievents/#capture-phase) 的捕获单击文档监听器捕获的。
+默认情况下，Web SDK捕获、标签和记录对符合条件的链接标记的单击。 单击是通过附加到 [事件](https://www.w3.org/TR/uievents/#capture-phase) 的捕获单击文档监听器捕获的。
 
-可通过配置Web SDK来禁用 [自动](../fundamentals/configuring-the-sdk.md#clickCollectionEnabled) 链接跟踪。
+通过配置Web SDK，可以禁 [用](../fundamentals/configuring-the-sdk.md#clickCollectionEnabled) “自动链接跟踪”。
 
 ```javascript
 clickCollectionEnabled: false
