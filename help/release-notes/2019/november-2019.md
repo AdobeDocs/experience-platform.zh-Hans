@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '1908'
+source-wordcount: '1878'
 ht-degree: 2%
 
 ---
@@ -18,19 +18,19 @@ ht-degree: 2%
 **发行日期：2019 年 11 月 18 日**
 
 Adobe Experience Platform的新增功能：
-* [[!DNL实时客户数据平台]](#rtcdp)
-* [[!DNL目标]](#destinations)
-* [[!DNL源]](#sources)
+* [[!DNL Real-time Customer Data Platform]](#rtcdp)
+* [[!DNL Destinations]](#destinations)
+* [[!DNL Sources]](#sources)
 
 对现有功能的更新：
-* [[!DNL数据科学工作区]](#dsw)
-* [[!DNL体验数据模型(XDM)系统]](#xdm)
-* [[!DNL实时客户用户档案]](#profile)
-* [[!DNL分段服务]](#segmentation)
+* [[!DNL Data Science Workspace]](#dsw)
+* [[!DNL Experience Data Model (XDM) System]](#xdm)
+* [[!DNL Real-time Customer Profile]](#profile)
+* [[!DNL Segmentation Service]](#segmentation)
 
 ## [!DNL Real-time Customer Data Platform] {#rtcdp}
 
-Adobe实时客户数据平台(Real-time CDP)构建于Adobe Experience Platform之上，可帮助公司将已知和未知数据整合在一起，在客户旅程中通过智能决策激活客户用户档案。 实时CDP结合了多个企业用户档案源，以实时创建统一的渠道，这些数据可用于在所有和设备上提供一对一的个性化客户体验。
+实时客户数据平台(Real-time CDP)以Adobe Experience Platform为构建基础，可帮助公司将已知和未知的数据整合在一起，在客户旅程中通过智能决策激活客户用户档案。 实时CDP结合了多个企业用户档案源，以实时创建统一的渠道，这些数据可用于在所有和设备上提供一对一的个性化客户体验。
 
 [!DNL Real-time Customer Data Platform] 包括用于数据治理、身份管理、高级细分和数据科学的工具，使您能够构建用户档案并定义受众，并在能够实施严格数据治理策略的同时获得丰富的洞察。
 
@@ -43,19 +43,19 @@ Adobe连接到一个大型的合作伙伴生态系统，更不用说与Adobe Exp
 * 借助以Adobe Sensei为后盾、专为营销人员打造的人工智能和机器学习，生成切实可行的洞察并扩展受众。
 * 在所有渠道和目的地实时提供个性化体验。
 
-有关详细信息，请参 [阅Adobe实时客户数据平台文档](../../rtcdp/overview.md)。
+有关详细信息，请 [参阅实时客户数据平台文档](../../rtcdp/overview.md)。
 
 **主要功能**
 
 | 功能 | 描述 |
 |---|---|
 | 目标 | 预建与受Adobe支持的目标平台集成， [!DNL Real-time Customer Data Platform] 以无缝方式向这些合作伙伴激活数据。 See [Destinations](#destinations) below for more information. |
-| 主页指标仪表板 | Adobe实时客户数据平台(Real-time CDP)主页包含一个指标仪表板，它显示有关用户档案和细分的信息。 该主页还包含指向学习材料的链接。 请参阅以下 [实时客户数据平台指标部分](#real-time-customer-data-platform-metrics) 。 |
+| 主页指标仪表板 | 实时客户数据平台（实时CDP）主页包含一个指标仪表板，它显示有关用户档案和细分的信息。 该主页还包含指向学习材料的链接。 请参阅以下 [实时客户数据平台指标部分](#real-time-customer-data-platform-metrics) 。 |
 | 源 | 您可以从各种来源(如Adobe解决方案、基于云的存储、第三方软件和您的CRM)收集数据。 请参阅 [以下](#sources) “源”部分以了解更多。 |
 
 **[!DNL Real-time Customer Data Platform]指标**
 
-Adobe实时客户数据平台(Real-time CDP)主页，在您登录到实时CDP时会显示该，其中包括一个指标仪表板。
+实时客户数据平台(Real-time CDP)主页，在您登录到实时CDP时，会显示该仪表板，其中包括一个指标。
 
 主页只是显示度量卡的位置之一。 实时CDP在您的整个体验中提供度量卡。 这些指标会通知您系统中的数据、用户档案和细分受众。
 
@@ -112,7 +112,7 @@ Adobe Experience Platform [!DNL Data Science Workspace] 通过构建和运行机
 | 功能 | 描述 |
 | -----------| ---------- |
 | 使用SDK访问 [!DNL Platform] 数据 | 现在，中预建的菜谱和启动器笔 [!DNL Python] 记本电 [!DNL Platform] 脑使用SDK访问数据。 |
-| 沙箱支持 | 支持即将推出的沙箱功能（目前为测试版），包括将笔记本和菜谱隔离到开发或生产沙箱的能力。 有关更多 [信息，请参](../../sandboxes/home.md) 阅沙箱概述。 |
+| 沙箱支持 | 支持即将推出的沙箱功能（目前为测试版），包括将笔记本和菜谱隔离到开发或生产沙箱的能力。 See the [sandboxes overview](../../sandboxes/home.md) for more information. |
 
 有关详细信息，请参 [阅数据科学工作区概述](../../data-science-workspace/home.md)。
 
