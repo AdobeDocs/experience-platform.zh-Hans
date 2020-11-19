@@ -5,9 +5,9 @@ description: Adobe Experience PlatformWeb SDK可交付和呈现在Offer Decision
 seo-description: Adobe Experience PlatformWeb SDK可交付和呈现在Offer Decisioning管理的个性化优惠。 您可以使用Offer DecisioningUI或API创建优惠和其他相关对象。
 keywords: offer decisioning;decisioning;Web SDK;Platform Web SDK;personalized offers;deliver offers;offer delivery;offer personalization;
 translation-type: tm+mt
-source-git-commit: a0ede8c7d3088fe80d6ea014b4a4f9f08ee8a7aa
+source-git-commit: 5f90f238a8845cc7bf07d54b89c5c6ccff40469a
 workflow-type: tm+mt
-source-wordcount: '810'
+source-wordcount: '831'
 ht-degree: 9%
 
 ---
@@ -29,7 +29,7 @@ Adobe Experience Platform [!DNL Web SDK] 可以提供和呈现在Offer Decisioni
 
 ## 术语
 
-与Offer Decisioning合作时，必须了解以下术语。 <!--For more information and to view additional terms, please visit the [Offer Decisioning glossary](/docs/offer-decisioning/using/get-started/glossary.html)-->.
+与Offer Decisioning合作时，必须了解以下术语。 有关更多信息和视图附加条款，请访问 [Offer Decisioning术语](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html)。
 
 * **容器:** 容器是一种隔离机制，可以分开不同的关注点。 容器ID是所有存储库API的第一个路径元素。 所有决策对象都驻留在容器中。
 
