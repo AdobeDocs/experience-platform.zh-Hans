@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 5aa8dbcd85fa506f90515ce3e01d35993dd99c10
+source-git-commit: d6b603e2918b502635b11fb1aa693a4b4311c125
 workflow-type: tm+mt
-source-wordcount: '2077'
+source-wordcount: '2126'
 ht-degree: 3%
 
 ---
@@ -122,6 +122,7 @@ For more information, please see the [[!DNL Offer Decisioning]](https://experien
 
 | 功能 | 描述 |
 | ------- | ----------- |
+| 目标详细信息UX更新 | 实时CDP的目标工作流现在包括内联监视，因此您可以查看哪些批处理激活成功。 此功能将允许用户通过警报和监视仪表板直接解决批处理目标工作流中的问题，以跟踪处理管道中的错误。 |
 | 必填字段 | 用户可以将字段标记为必填，确保只导出包含必填字段的字段。 |
 
 <!-- | File scheduling | For both email based and cloud storage destinations, users can create a one-time export or create daily snapshots. |
