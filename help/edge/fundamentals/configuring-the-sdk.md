@@ -5,9 +5,9 @@ description: 了解如何配置Experience PlatformWeb SDK
 seo-description: 了解如何配置Experience PlatformWeb SDK
 keywords: configuring;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehidingStyle;opacity;cookieDestinationsEnabled;urlDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 2e28fda40a135330054c749d73439448a55db52c
+source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '710'
 ht-degree: 11%
 
 ---
@@ -85,13 +85,7 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-指示是否应自动收集与链接单击关联的数据。 对于符合链接单击条件的单击，将收 [集以下Web](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/webinteraction.schema.md) Interaction数据：
-
-| **属性** | **描述** |
-| ------------ | ----------------------------------- |
-| 链接名称 | 由链接上下文确定的名称 |
-| 链接URL | 标准化URL |
-| 链接类型 | 设置为下载、退出或其他 |
+指示是否应自动收集与链接单击关联的数据。 请参 [阅自动链接](../data-collection/track-links.md#automaticLinkTracking) ，以了解更多信息。
 
 ### `onBeforeEventSend`
 
@@ -153,7 +147,7 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | true |
 
-如果为真，则SDK将阅读并设置旧版AMCV cookie。 这有助于过渡到使用AEP Web SDK，而站点的某些部分可能仍在使用访客.js。 此外，如果页面上定义了访客API，则SDK将查询ECID的访客API。 这使您能够使用AEP Web SDK对两个标签页添加标签，同时仍具有相同的ECID。
+如果为真，则SDK将阅读并设置旧版AMCV cookie。 这有助于过渡到使用Adobe Experience PlatformWeb SDK，而站点的某些部分可能仍在使用访客.js。 此外，如果页面上定义了访客API，则SDK将查询ECID的访客API。 这使您能够使用AEP Web SDK对两个标签页添加标签，同时仍具有相同的ECID。
 
 ### `thirdPartyCookiesEnabled`
 
