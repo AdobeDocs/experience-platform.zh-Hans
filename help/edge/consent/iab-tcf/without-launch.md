@@ -1,18 +1,18 @@
 ---
 title: 使用IAB TCF 2.0而无Experience Platform Launch
-seo-title: 设置与Adobe Experience PlatformWeb SDK的IAB TCF 2.0同意
+seo-title: 设置IAB TCF 2.0与Adobe Experience PlatformWeb SDK的同意
 description: 了解如何设置IAB TCF 2.0与Adobe Experience PlatformWeb SDK的同意
 seo-description: 了解如何设置IAB TCF 2.0与Adobe Experience PlatformWeb SDK的同意
 translation-type: tm+mt
-source-git-commit: db742119d8f169817080f1fd4e0dc08a0f0faa47
+source-git-commit: 1b5ee9b1f9bdc7835fa8de59020b3eebb4f59505
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '687'
 ht-degree: 0%
 
 ---
 
 
-# 将IAB TCF 2.0与Adobe Experience PlatformWeb SDK扩展一起使用
+# 将IAB TCF 2.0与AEP Web SDK扩展一起使用
 
 本指南说明如何在不使用Experience Platform Launch的情况下将交互式广告局透明度和同意框架2.0版(IAB TCF 2.0)与Adobe Experience PlatformWeb SDK集成。 有关与IAB TCF 2.0集成的概述，请阅读 [概述](./overview.md)。 有关如何与Experience Platform Launch集成的指南，请阅 [读IAB TCF 2.0Experience Platform Launch指南](./with-launch.md)。
 
@@ -110,4 +110,4 @@ window.__tcfapi('getTCData', 2, function (tcData, success) {
 
 ## 后续步骤
 
-既然您已经学习了如何将IAB TCF 2.0与Adobe Experience PlatformWeb SDK扩展一起使用，您还可以选择与其他Adobe解决方案(如Adobe Analytics或实时客户数据平台)集成。 有关更 [多信息，请参阅IAB透明度和同意框架](./overview.md) 2.0概述。
+现在，您已学习如何将IAB TCF 2.0与AEP Web SDK扩展一起使用，您还可以选择与其他Adobe解决方案(如Adobe Analytics或实时客户数据平台)集成。 有关更 [多信息，请参阅IAB透明度和同意框架](./overview.md) 2.0概述。
