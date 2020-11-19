@@ -5,17 +5,17 @@ description: 了解如何获得Adobe Experience CloudID。
 seo-description: 了解如何获得Adobe Experience CloudID。
 keywords: Identity;First Party Identity;Identity Service;3rd Party Identity;ID Migration;Visitor ID;third party identity;thirdPartyCookiesEnabled;idMigrationEnabled;getIdentity;Syncing Identities;syncIdentity;sendEvent;identityMap;primary;ecid;Identity Namespace;namespace id;authenticationState;hashEnabled;
 translation-type: tm+mt
-source-git-commit: d069b3007265406367ca9de2b85540b2a070cf36
+source-git-commit: 1b5ee9b1f9bdc7835fa8de59020b3eebb4f59505
 workflow-type: tm+mt
-source-wordcount: '730'
-ht-degree: 5%
+source-wordcount: '731'
+ht-degree: 3%
 
 ---
 
 
 # 标识——检索Experience CloudID
 
-Adobe Experience Platform [!DNL Web SDK] 利用 [Adobe身份服务](../../identity-service/ecid.md)。 这可确保每个设备都有一个唯一标识符，该标识符会保留在设备上，以便页面之间的活动可以绑定在一起。
+Adobe Experience PlatformWeb SDK利用 [Adobe标识服务](../../identity-service/ecid.md)。 这可确保每个设备都有一个唯一标识符，该标识符会保留在设备上，以便页面之间的活动可以绑定在一起。
 
 ## 第一方身份
 
@@ -27,11 +27,11 @@ Adobe Experience Platform [!DNL Web SDK] 利用 [Adobe身份服务](../../identi
 
 ## ID迁移
 
-从使用访客API迁移时，您还可以迁移现有AMCV cookie。 要启用ECID迁移，请在配 `idMigrationEnabled` 置中设置参数。 id迁移设置为启用某些用例：
+从使用访客API迁移时，您还可以迁移现有AMCV cookie。 要启用ECID迁移，请在配 `idMigrationEnabled` 置中设置参数。 ID迁移可启用以下用例：
 
-* 当域的某些页面使用访客API，而其他页面使用此SDK时。 为支持此情况，SDK会读取现有AMCV cookie，并使用现有ECID写入新cookie。 此外，SDK会编写AMCV cookies，这样，如果首先在使用AEP Web SDK进行检测的页面上获得ECID，则使用访客API进行检测的后续页面具有相同的ECID。
-* 当AEP Web SDK在同时具有访客API的页面上设置时。 为支持此情况，如果未设置AMCV cookie，则SDK在页面上查找访客API并调用它以获取ECID。
-* 当整个站点使用AEP Web SDK且没有访客API时，迁移ECID以保留返回访客信息很有用。 在将SDK部署到某 `idMigrationEnabled` 段时间以便迁移大多数访客cookie后，可关闭该设置。
+* 当域的某些页面使用访客API，而其他页面使用此SDK时。 为支持此情况，SDK会读取现有AMCV cookie，并使用现有ECID写入新cookie。 此外，SDK会编写AMCV cookies，这样，如果ECID是首先在使用SDK进行指令的页面上获得的，则使用访客API指令的后续页面具有相同的ECID。
+* 当Adobe Experience PlatformWeb SDK设置在同时具有访客API的页面上时。 为支持此情况，如果未设置AMCV cookie,SDK将在页面上查找访客API并调用它以获取ECID。
+* 当整个站点使用Adobe Experience PlatformWeb SDK且没有访客API时，迁移ECID以便保留返回的访客信息很有用。 在将SDK部署到某 `idMigrationEnabled` 段时间以便迁移大多数访客cookie后，可关闭该设置。
 
 ## 检索访客ID
 
@@ -43,13 +43,14 @@ Adobe Experience Platform [!DNL Web SDK] 利用 [Adobe身份服务](../../identi
 
 ```javascript
 alloy("getIdentity")
-  .then(function(result.identity.ECID) {
-    // This function will get called with Adobe Experience Cloud Id when the command promise is resolved
+  .then(function(result) {
+    // The command succeeded.
+    console.log(result.identity.ECID);
   })
   .catch(function(error) {
     // The command failed.
-    // "error" will be an error object with additional information
-  })
+    // "error" will be an error object with additional information.
+  });
 ```
 
 ## 同步身份
@@ -79,21 +80,14 @@ alloy("sendEvent", {
       ]
     }
   }
-})
+});
 ```
 
+内的每个属 `identityMap` 性表示属于特定身份命名空间 [的身份](../../identity-service/namespaces.md)。 属性名称应为标识命名空间符号，您可以在“标识”下的Adobe Experience Platform用户界面中找到该[!UICONTROL 符号]。 属性值应该是与该标识命名空间相关的标识数组。
 
-### 同步身份选项
+标识数组中的每个标识对象按以下方式进行结构化：
 
-#### 身份命名空间符号
-
-| **类型** | **必需** | **默认值** |
-| -------- | ------------ | ----------------- |
-| 字符串 | 是 | 无 |
-
-对象的键是标识 [命名空间符](../../identity-service/namespaces.md) 。 您可以在Adobe Experience Platform用户界面的“身份”下找到[!UICONTROL 此列]表。
-
-#### `id`
+### `id`
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
@@ -101,7 +95,7 @@ alloy("sendEvent", {
 
 这是您要为给定命名空间同步的ID。
 
-#### `authenticationState`
+### `authenticationState`
 
 | **类型** | **必需** | **默认值** | **可能值** |
 | -------- | ------------ | ----------------- | ------------------------------------ |
@@ -109,18 +103,10 @@ alloy("sendEvent", {
 
 ID的身份验证状态。
 
-#### `primary`
+### `primary`
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
 | 布尔值 | 可选 | false |
 
 确定是否应将此标识用作统一用户档案中的主片段。 默认情况下，ECID设置为用户的主标识符。
-
-#### `hashEnabled`
-
-| **类型** | **必需** | **默认值** |
-| -------- | ------------ | ----------------- |
-| 布尔值 | 可选 | false |
-
-如果启用，它将使用SHA256哈希对标识进行哈希处理。
