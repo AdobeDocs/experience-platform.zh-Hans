@@ -5,9 +5,9 @@ seo-title: 分析目标
 description: 分析目标跟踪访客如何与您网站上的内容交互并收集数据以了解受众的行为。 这些平台可提供关于最有价值访客参与和转化的独特洞察。
 seo-description: 分析目标跟踪访客如何与您网站上的内容交互并收集数据以了解受众的行为。 这些平台可提供关于最有价值访客参与和转化的独特洞察。
 translation-type: tm+mt
-source-git-commit: 15323134f0c626cad2c4e90b3e1c0662cf7e57dd
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '202'
+source-wordcount: '201'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 分析目标跟踪访客如何与您网站上的内容交互并收集数据以了解受众的行为。 这些平台可提供关于最有价值访客参与和转化的独特洞察。
 
-目前，Adobe实时客户数据平台支持下面列出的分析目标。 有关如何连接到这些目标的信息，请参阅各个链接：
+目前，实时客户数据平台支持下面列出的分析目标。 有关如何连接到这些目标的信息，请参阅各个链接：
 
 * [Adform网站跟踪扩展](/help/rtcdp/destinations/adform-extension.md)
 * [Adobe Analytics 扩展](/help/rtcdp/destinations/adobe-analytics-extension.md)
