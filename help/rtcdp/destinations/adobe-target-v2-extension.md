@@ -2,12 +2,12 @@
 keywords: target extension;target;target v2;target v2 extension
 title: Adobe Target v2 扩展
 seo-title: Adobe Target v2 扩展
-description: Adobe Targetv2扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Adobe Targetv2扩展是Adobe实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Adobe Targetv2扩展是实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Adobe Targetv2扩展是实时客户数据平台中的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '575'
+source-wordcount: '572'
 ht-degree: 16%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 16%
 
 Adobe Target 是 Adobe Experience Cloud 解决方案，它提供定制和个性化客户体验所需的一切，从而最大限度地提高您网站和移动站点、应用程序、社交媒体和其他数字渠道的收入。
 
-Adobe Targetv2是Adobe实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.102722.adobe-target-v2-launch-extension.html)。
+Adobe Targetv2是实时客户数据平台中的个性化扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.102722.adobe-target-v2-launch-extension.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
