@@ -5,9 +5,9 @@ seo-title: Experience Platform Launch 扩展
 description: Launch 是 Adobe 推出的新一代标签管理功能。Launch 为客户提供了一种部署和管理所有分析、营销和广告标签的简便方法，这些标签是改善相关客户体验所必需的标签。
 seo-description: Launch 是 Adobe 推出的新一代标签管理功能。Launch 为客户提供了一种部署和管理所有分析、营销和广告标签的简便方法，这些标签是改善相关客户体验所必需的标签。
 translation-type: tm+mt
-source-git-commit: 6bb7bbeaceac8a69641138248a1c41cf9fb3dc63
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '645'
 ht-degree: 21%
 
 ---
@@ -31,7 +31,7 @@ Adobe Experience Platform Launch是Adobe的新一代标签管理功能。  Platf
 
 Platform Launch扩展将原始事件数据转发到几种类型的目标。 将扩展视为目 **标的事件** 转发类型。 这是与目标平台的集成的一种更简单类型，目标平台仅转发原始事件数据。 例如Gainsight个性化 [扩展](/help/rtcdp/destinations/gainsight-extension.md)[或客户扩展的确认声音](/help/rtcdp/destinations/confirmit-digital-feedback-extension.md)。
 
-**用户档案/细分** Adobe实时客户数据平台捕获事件数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 例如， [AmazonS3云存储目](/help/rtcdp/destinations/amazon-s3-destination.md) 标或Google Display &amp; Video 360广告目标 [](/help/rtcdp/destinations/google-dv360-destination.md)。
+**用户档案/细分** -实时客户数据平台中的事件数据获取目标，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 例如， [AmazonS3云存储目](/help/rtcdp/destinations/amazon-s3-destination.md) 标或Google Display &amp; Video 360广告目标 [](/help/rtcdp/destinations/google-dv360-destination.md)。
 
 ![Experience Platform Launch扩展与其他目标](/help/rtcdp/destinations/assets/launch-and-other-destinations.png)
 
