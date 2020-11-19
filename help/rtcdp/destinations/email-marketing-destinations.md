@@ -6,9 +6,9 @@ type: Tutorial
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 seo-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 translation-type: tm+mt
-source-git-commit: 425287d78deebf0113d6cf6350bcb516c99ee995
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '838'
+source-wordcount: '837'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 # 电子邮件营销目标 {#email-marketing-destinations}
 
-电子邮件服务提供商(ESP)使您能够管理电子邮件营销活动，如发送促销电子邮件活动。 Adobe实时客户数据平台通过允许您将细分激活到电子邮件营销目标，与ESP集成。
+电子邮件服务提供商(ESP)使您能够管理电子邮件营销活动，如发送促销电子邮件活动。 实时客户数据平台通过允许您将细分激活到电子邮件营销目标，与ESP集成。
 
 要向活动的电子邮件营销目标发送Adobe，实时CDP必须首先连接到目标。
 
