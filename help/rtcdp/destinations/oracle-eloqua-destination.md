@@ -1,13 +1,13 @@
 ---
 keywords: email;Email;e-mail;email destinations;oracle eloqua;oracle
-title: Oracle Evolca目标
-seo-title: Oracle Evolca目标
-description: Oracle Elova是Oracle提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
-seo-description: Oracle Elova是Oracle提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
+title: Oracle雄辩
+seo-title: Oracle雄辩
+description: Oracle雄辩是Oracle公司提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
+seo-description: Oracle雄辩是Oracle公司提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
 translation-type: tm+mt
-source-git-commit: 67a353c950bef11ccbaa52c49d213f08449baa96
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '553'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 [Eloca](https://www.oracle.com/marketingcloud/products/marketing-automation/) 是一个软件即服务(SaaS)平台，旨在实现B2B营销人员和组织对营销活动和销售线索生成的 [!DNL Oracle] 管理，并提供营销自动化。
 
-要将区段数据发 [!DNL Oracle Eloqua]送到，您必 [须先在Adobe实时平台中](#connect-destination) 连接目标 [，然后设置从存储位置](#import-data-into-eloqua) 导入到的中 [!DNL Oracle Eloqua]。
+要将区段数据发 [!DNL Oracle Eloqua]送到，您必 [须先在实时客户数据平台](#connect-destination) 中连接目标，然后 [设置从存储位置导入](#import-data-into-eloqua) 到的数据 [!DNL Oracle Eloqua]。
 
 ## 导出类型 {#export-type}
 
