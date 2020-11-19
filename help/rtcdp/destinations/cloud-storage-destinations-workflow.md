@@ -6,9 +6,9 @@ type: Tutorial
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 translation-type: tm+mt
-source-git-commit: d72f392bc3b47bb23ed36b3d1d218373f62b4679
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '557'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 概述
 
-本页介绍如何连接到Adobe实时存储平台中的云数据位置。
+本页介绍如何连接到实时存储平台中的云数据位置。
 
 1. 在“ **[!UICONTROL 连接]** ”>“ **[!UICONTROL 目标]**”中，选择首选云存储目标，然后选择 **[!UICONTROL 配置]**。
 
