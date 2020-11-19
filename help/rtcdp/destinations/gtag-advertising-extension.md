@@ -2,12 +2,12 @@
 keywords: gtag;google gtag;google extension;google gtag extension;GTAG
 title: Google Gtag扩展
 seo-title: Google Gtag扩展
-description: Google gtag扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Google gtag扩展是Adobe实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+description: Google gtag扩展是实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+seo-description: Google gtag扩展是实时客户数据平台中的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 511d64d1555151a70bdb9f71e4b50ec461c8a2e7
+source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
 workflow-type: tm+mt
-source-wordcount: '592'
+source-wordcount: '589'
 ht-degree: 4%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 4%
 
 将Google加载 `gtag.js` 到您的网站，将事件数 [!DNL Google Analytics]据发送到Google Ads和 [!DNL Google Marketing Platform]。 此扩展仅将gtag代码添加到您的站点。 您需要使用其他Google扩展来添加将使用gtag的事件和操作。
 
-Google Gtag是Adobe实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.102805.google-gtag.html)。
+Google Gtag是实时客户数据平台中的广告扩展。 有关扩展功能的详细信息，请参阅Adobe交换上的扩 [展页](https://exchange.adobe.com/experiencecloud.details.102805.google-gtag.html)。
 
 这个目的地是Adobe Experience Platform Launch。 有关Platform Launch扩展如何在Adobe实时CDP中工作的更多信息，请参阅 [Adobe Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)。
 
