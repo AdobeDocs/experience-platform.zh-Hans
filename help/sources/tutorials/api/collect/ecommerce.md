@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 本教程介绍从第三方电子商务系统检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 4696bcb17427bb50549a315294baf7fbd87ac01d
+source-git-commit: a9d6c6dda560ec401bdf41319994153e7f2c0572
 workflow-type: tm+mt
 source-wordcount: '1509'
 ht-degree: 1%
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 [!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程介绍了从第三方电子商务系统检索 **[!UICONTROL 数据]** ，并通过源连接 [!DNL Platform] 器和API将其引入的 [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 步骤。
+本教程介绍了从第三方电子商务系统检 **[!UICONTROL 索数据]** ，并通过源连接 [!DNL Platform] 器和API将其引入的 [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 步骤。
 
 ## 入门指南
 
