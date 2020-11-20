@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: 本教程使用Flow Service API指导您完成将Experience Platform连接到AmazonKinesis帐户的步骤。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 967585ba078edd13f90c820f6b1a0490140ca0cf
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '534'
 ht-degree: 2%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 2%
 | ---------- | ----------- |
 | `accessKeyId` | 您的帐户的访问密钥 [!DNL Kinesis] ID。 |
 | `secretKey` | 帐户的秘密访问 [!DNL Kinesis] 密钥。 |
-| `region` |  | 您帐户的 [!DNL Kinesis] 地区。 |
+| `region` | 您帐户的 [!DNL Kinesis] 地区。 |
 | `connectionSpec.id` | 连接 [!DNL Kinesis] 规范ID: `86043421-563b-46ec-8e6c-e23184711bf6` |
 
 有关这些值的详细信息，请参 [阅本Kinesis文档](https://docs.aws.amazon.com/streams/latest/dev/getting-started.html)。
@@ -54,17 +54,17 @@ ht-degree: 2%
 
 要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
 
-* 授权：承载者 `{ACCESS_TOKEN}`
-* x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 中的所有资 [!DNL Experience Platform]源(包括属于这些资源 [!DNL Flow Service]的资源)都隔离到特定虚拟沙箱。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
 
-* x-sandbox-name: `{SANDBOX_NAME}`
+* `x-sandbox-name: {SANDBOX_NAME}`
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
-* 内容类型： `application/json`
+* `Content-Type: application/json`
 
 ## 创建连接
 
@@ -123,4 +123,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过本教程，您已使用API [!DNL Amazon Kinesis] 创建了连接，并且作为响应主体的一部分获得了唯一ID。 您可以使用此连接ID [来使用流服务API浏览云存储](../../explore/cloud-storage.md)。
+通过本教程，您已使用API [!DNL Amazon Kinesis] 创建了连接，并且作为响应主体的一部分获得了唯一ID。 您可以使用此连接ID [来使用流服务API收集流数据](../../collect/streaming.md)。
