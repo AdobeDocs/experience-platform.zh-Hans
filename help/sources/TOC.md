@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 translation-type: tm+mt
-source-git-commit: 89a807c0adbc3c9e4396adbb96764453034c8ea3
+source-git-commit: 39e419b78938afd91e3d7471241e377f352214ee
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '683'
 ht-degree: 3%
 
 ---
@@ -50,7 +50,7 @@ ht-degree: 3%
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
       - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
       - [AzureData Explorer连接器](connectors/databases/data-explorer.md)
-      - [Azure Synapse Analytics连接器](connectors/databases/synapse-analytics.md)
+      - [azure synapse分析连接器](connectors/databases/synapse-analytics.md)
       - [Azure表存储连接器](connectors/databases/ats.md)
       - [Couchbase连接器](connectors/databases/couchbase.md)
       - [Google BigQuery连接器](connectors/databases/bigquery.md)
@@ -96,7 +96,7 @@ ht-degree: 3%
          - [Azure HDInsights连接器上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights连接器上的Apache Spark](tutorials/api/create/databases/spark.md)
          - [AzureData Explorer连接器](tutorials/api/create/databases/data-explorer.md)
-         - [Azure Synapse Analytics连接器](tutorials/api/create/databases/synapse-analytics.md)
+         - [azure synapse分析连接器](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure表存储连接器](tutorials/api/create/databases/ats.md)
          - [Couchbase连接器](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery连接器](tutorials/api/create/databases/bigquery.md)
@@ -136,6 +136,7 @@ ht-degree: 3%
       - [收集营销自动化数据](tutorials/api/collect/marketing-automation.md)
       - [收集付款数据](tutorials/api/collect/payments.md)
       - [收集协议数据](tutorials/api/collect/protocols.md)
+      - [收集流数据](tutorials/api/collect/streaming.md)
    - [从第三方云存储系统中摄取镶木数据](tutorials/api/cloud-storage-parquet.md)
    - [使用Flow Service API创建数据集基础连接](tutorials/api/create-dataset-base-connection.md)
    - [使用Flow Service API监视数据流](tutorials/api/monitor.md)
@@ -172,7 +173,7 @@ ht-degree: 3%
          - [Azure HDInsights连接器上的Apache Hive](tutorials/ui/create/databases/hive.md)
          - [Azure HDInsights连接器上的Apache Spark](tutorials/ui/create/databases/spark.md)
          - [AzureData Explorer连接器](tutorials/ui/create/databases/data-explorer.md)
-         - [Azure Synapse Analytics连接器](tutorials/ui/create/databases/synapse-analytics.md)
+         - [azure synapse分析连接器](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure表存储连接器](tutorials/ui/create/databases/ats.md)
          - [Couchbase连接器](tutorials/ui/create/databases/couchbase.md)
          - [Google大查询连接器](tutorials/ui/create/databases/bigquery.md)
