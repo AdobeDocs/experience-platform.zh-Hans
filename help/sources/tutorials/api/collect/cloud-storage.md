@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: 本教程介绍从第三方云存储检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: b0f6e51a784aec7850d92be93175c21c91654563
 workflow-type: tm+mt
-source-wordcount: '1581'
+source-wordcount: '1567'
 ht-degree: 1%
 
 ---
@@ -22,15 +22,15 @@ ht-degree: 1%
 
 ## 入门指南
 
-本教程要求您通过有效的连接以及要引入DNL平台的文件的相关信息（包括文件的路径和结构）来访问第三方云存储。 如果您没有此信息，请参阅教程，在尝 [试本教程之前，使用 [!DNL Flow Service] 该API探索第三方](../explore/cloud-storage.md) 云存储。
+本教程要求您通过有效的连接和有关要引入的文件的信息（包括文件的路径和结构） [!DNL Platform]来访问第三方云存储。 如果您没有此信息，请参阅教程，在尝 [试本教程之前，使用 [!DNL Flow Service] 该API探索第三方](../explore/cloud-storage.md) 云存储。
 
 本教程还要求您对Adobe Experience Platform的以下组件有充分的了解：
 
-- [[!DNL体验数据模型(XDM)系统]](../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
+- [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    - [模式合成基础](../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    - [模式注册开发人员指南](../../../../xdm/api/getting-started.md):包括成功执行对模式注册表API的调用时需要了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
-- [[!DNL目录服务]](../../../../catalog/home.md):目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
-- [[!DNL批量摄取]](../../../../ingestion/batch-ingestion/overview.md):批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
+- [[!DNL Catalog Service]](../../../../catalog/home.md):目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
+- [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md):批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
 - [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 以下各节提供您需要了解的其他信息，以便使用API成功连接到云存储 [!DNL Flow Service] 。
 
