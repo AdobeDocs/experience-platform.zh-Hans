@@ -5,9 +5,9 @@ title: AmazonKinesis连接器
 topic: overview
 description: 以下文档提供了如何使用API或用户界面将AmazonKinesis连接到平台的信息。
 translation-type: tm+mt
-source-git-commit: e0a0b7fc28b8cc85c5140d3840e06e5c7078c307
+source-git-commit: c0c609e3f385665cf88129def0c69e7d153ce201
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
@@ -34,8 +34,7 @@ Adobe Experience Platform为AWS、和等云提供商提供本 [!DNL Google Cloud
 ### 使用API
 
 - [使用Flow Service API创建AmazonKinesis连接器](../../tutorials/api/create/cloud-storage/kinesis.md)
-- [使用Flow Service API浏览云存储系统](../../tutorials/api/explore/cloud-storage.md)
-- [使用流服务API收集云存储数据](../../tutorials/api/collect/cloud-storage.md)
+- [使用Flow Service API收集流数据](../../tutorials/api/collect/streaming.md)
 
 ### 使用UI
 
