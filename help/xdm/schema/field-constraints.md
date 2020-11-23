@@ -5,10 +5,10 @@ title: XDM字段类型约束
 topic: overview
 description: 对XDM字段类型约束的引用，包括可以映射到的其他序列化格式以及如何在API中定义您自己的字段类型。
 translation-type: tm+mt
-source-git-commit: 19167f58fae6fac7d938deb74182d2e19960beb3
+source-git-commit: e92294b9dcea37ae2a4a398c9d3397dcf5aa9b9e
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '994'
+ht-degree: 6%
 
 ---
 
@@ -40,7 +40,7 @@ ht-degree: 0%
 | date-time | type:<br>stringformat:date-time<br>（RFC 3339，第5.6节） | INT64/TIMESTAMP_MILLIS | TimestampType | java.util.Date | java.util.Date | System.DateTime | 字符串 | timestamp | 整数<br>(unix millis) | int64<br>(unix millis) |
 | 地图 | 对象 | MAP注释组<br><br>&lt;<span>key_type</span>>必须是映射值的STRING<br><br><span>&lt;</span>value_type>类型 | MapType<br><br>&quot;keyType&quot; MUST be StringType<br><br>&quot;valueType&quot;是映射值的类型。 | java.util.Map | 地图 | --- | 对象 | 对象 | 地图 | map&lt;<span>key_type, value_type</span>> |
 
-## 在API中定义XDM字段类型
+## 在API中定义XDM字段类型 {#define-fields}
 
 XDM模式是使用JSON [模式标准和基](https://json-schema.org/) 本字段类型定义 [!DNL Experience Platform]，并对字段名称进行附加约束，这些约束由强制实施。 模式 [注册表API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml) 允许您通过使用格式和可选约束定义其他字段类型。 XDM字段类型由字段级属性公开 `meta:xdmType`。
 
@@ -50,7 +50,7 @@ XDM模式是使用JSON [模式标准和基](https://json-schema.org/) 本字段�
 
 下表概述了使用可选属性定义标量字段类型和更多特定字段类型的适当格式。 有关可选属性和类型特定关键字的更多信息，请通过JSON [模式文档获取](https://json-schema.org/understanding-json-schema/reference/type.html)。
 
-首先，找到所需的字段类型，然后使用提供的示例代码构建API请求， [以创建混合](../api/create-mixin.md)[或创建数据类型](../api/create-data-type.md)。
+首先，找到所需的字段类型，然后使用提供的示例代码构建API请求， [以创建混合](../api/mixins.md#create)[或创建数据类型](../api/data-types.md#create)。
 
 <table>
   <tr>
