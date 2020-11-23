@@ -5,9 +5,9 @@ title: 体验数据模型(XDM)系统疑难解答指南
 description: 本文档提供有关体验数据模型(XDM)系统的常见问题解答，以及常见错误的疑难解答指南。
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 2a528c705a7aa610f57047be39be1ce9886ce44c
+source-git-commit: e87fcd9f028bc6dedaec0435c4eef54e6aecae2d
 workflow-type: tm+mt
-source-wordcount: '1862'
+source-wordcount: '1831'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 您可以使用混音将字段添加到模式。 每个混音符与一个或多个类兼容，允许混音符用于实现这些兼容类之一的任何模式。 Adobe Experience Platform提供多个行业混音及其自己的预定义字段，您可以通过使用API或用户界面创建新混音，将您自己的字段添加到模式。
 
-有关在API中创建新混音的详细信息，请参 [阅API开发人员指南](api/create-mixin.md) 中的“创 [!DNL Schema Registry] 建混音”文档。 如果您使用的是UI，请参阅 [模式编辑器教程](./tutorials/create-schema-ui.md)。
+有关在API中创建新混音的详 [!DNL Schema Registry] 细信息，请参 [阅mixin端点指南](api/mixins.md#create)。 如果您使用的是UI，请参阅 [模式编辑器教程](./tutorials/create-schema-ui.md)。
 
 ### 混音与数据类型的最佳用途是什么？
 
@@ -39,21 +39,21 @@ ht-degree: 0%
 
 所 [!DNL Schema Registry] 有资源(模式、混音、数据类型、类)都有一个URI，它充当唯一ID，用于引用和查找目的。 在API中查看模式时，可以在顶级和属性中找 `$id` 到 `meta:altId` 它。
 
-有关详细信息，请参 [阅API开发](api/getting-started.md#schema-identification) 人员指南 [!DNL Schema Registry] 中的模式标识部分。
+有关详细信息，请参 [阅API开发](api/getting-started.md#resource-identification) 人员指南 [!DNL Schema Registry] 中的资源标识部分。
 
 ### 模式开始何时阻止中断更改？
 
-只要模式从未在创建数据集时使用过或在[!DNL实时用户档案中启用过，就可以对其进行 [中断更改]](../profile/home.md)。 一旦模式被用于数据集创建或启用与一起使 [!DNL Real-time Customer Profile]用，模式进化规 [则就会被系](schema/composition.md#evolution) 统严格执行。
+只要模式从未在创建数据集时使用过或启用在中使用过，就可以对其进行中断更改 [[!DNL Real-time Customer Profile]](../profile/home.md)。 一旦模式被用于数据集创建或启用与一起使 [!DNL Real-time Customer Profile]用，模式进化规 [则就会被系](schema/composition.md#evolution) 统严格执行。
 
 ### 长字段类型的最大大小是多少？
 
 长场类型是一个最大大小为53(+1)位的整数，它的势范围为-9007199254740992和9007199254740992。 这是由于JSON的JavaScript实现如何表示长整数存在限制。
 
-有关字段类型的详细信息，请参 [阅API开发人员指南](api/appendix.md#field-types) 中的定 [!DNL Schema Registry] 义XDM字段类型部分。
+有关字段类型的详细信息，请参阅XDM字段 [类型约束的文档](./schema/field-constraints.md)。
 
 ### 如何定义模式的身份？
 
-在 [!DNL Experience Platform]中，无论被解释的数据来源如何，都使用身份来标识主体（通常是个人）。 通过将键字段标记为“Identity”，在模式中定义这些字段。 常用标识字段包括电子邮件地址、电 [话号码、[!DNLExperience CloudID(ECID)]](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)、CRM ID和其他唯一ID字段。
+在 [!DNL Experience Platform]中，无论被解释的数据来源如何，都使用身份来标识主体（通常是个人）。 通过将键字段标记为“Identity”，在模式中定义这些字段。 常用的标识字段包括电子邮件地址、电 [[!DNL Experience Cloud ID (ECID)]](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)话号码、CRM ID和其他唯一ID字段。
 
 字段可以使用API或用户界面标记为标识。
 
@@ -77,7 +77,7 @@ ht-degree: 0%
 
 ### 如何启用模式以在中使用 [!DNL Real-time Customer Profile]?
 
-通过添加“模式”标 [签(位于合并的属性中)](../profile/home.md) ,模式可以在实时客户 `meta:immutableTags` 用户档案中使用。 可以使用API或 [!DNL Profile] 用户界面启用模式以与一起使用。
+模式可通过添 [[!DNL Real-time Customer Profile]](../profile/home.md) 加“合并”标签(位于模式的属性中) `meta:immutableTags` 在中使用。 可以使用API或 [!DNL Profile] 用户界面启用模式以与一起使用。
 
 #### 启用现有模式 [!DNL Profile] 以使用API
 
@@ -120,7 +120,7 @@ ht-degree: 0%
 
 系统找不到特定资源时显示此错误。 资源可能已被删除，或API调用中的路径无效。 在再次尝试之前，请确保已为API调用输入有效路径。 您可能需要检查是否已为资源输入了正确的ID，以及路径是否以适当的容器（全局或租户）命名。
 
-有关在API中构建查找路径的详细信息，请参 [阅开发](./api/getting-started.md#container) 人员指 [南中](api/getting-started.md#schema-identification)[!DNL Schema Registry] 的容器和模式识别部分。
+有关在API中构建查找路径的详细信息，请参 [阅开发](./api/getting-started.md#container) 人 [员指南](api/getting-started.md#resource-identification)[!DNL Schema Registry] 中的容器和资源标识部分。
 
 ### 标题必须唯一
 
@@ -149,7 +149,7 @@ ht-degree: 0%
 }
 ```
 
-当您尝试创建名称不正确的字段的新混音时，会显示此错误消息。 IMS组织定义的混音必须用a命名空间其字段，以 `TENANT_ID` 避免与其他行业和供应商资源发生冲突。 有关混合的正确文档结构的详细示例，请参阅API开发 [人员指南中](api/create-mixin.md) “创建混合 [!DNL Schema Registry] ”一节。
+当您尝试创建名称不正确的字段的新混音时，会显示此错误消息。 IMS组织定义的混音必须用a命名空间其字段，以 `TENANT_ID` 避免与其他行业和供应商资源发生冲突。 有关混合的正确数据结构的详细示例，请参阅混 [合子端点指南](./api/mixins.md#create)。
 
 
 ### [!DNL Real-time Customer Profile] 错误
