@@ -4,7 +4,7 @@ solution: Experience Platform
 title: Adobe Experience PlatformAPI基础知识
 topic: getting started
 translation-type: tm+mt
-source-git-commit: fac4b3d02a6e58a9d2c298f9b849fa7345e4fa93
+source-git-commit: b6d62492a60494deb848a88a9334e3ef20a93919
 workflow-type: tm+mt
 source-wordcount: '483'
 ht-degree: 2%
@@ -95,7 +95,7 @@ JSON指针是用于标识JSON文档中特[定值的标准字符串语法](https:
 >
 >处理(XDM)描 `xdm:sourceProperty` 述符 `xdm:destinationProperty` 的和属 [!DNL Experience Data Model] 性时，必须从JSON指 `properties` 针字符串 **中排除任** 何键。 有关详 [!DNL Schema Registry] 细信息，请参阅描述符的API开 [发人](../xdm/api/descriptors.md) 员指南子指南。
 
-## JSON修补程序
+## JSON修补程序 {#json-patch}
 
 API有许多PATCH操作， [!DNL Platform] 它们接受JSON修补程序对象的请求负载。 JSON修补程序是用于描述对JSON[文档所做更改的标准化格式](https://tools.ietf.org/html/rfc6902)(RFC 6902)。 它允许您定义JSON的部分更新，无需在请求主体中发送整个文档。
 
