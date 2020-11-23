@@ -5,9 +5,9 @@ title: '使用API管理数据集的数据使用标签 '
 topic: developer guide
 description: 数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的Catalog Service API分开。
 translation-type: tm+mt
-source-git-commit: f4a4e65a087313dc4e2414f999e021e3f6e17137
+source-git-commit: 4b5e116d221e6689f95c8da0c54ef3af6827adc1
 workflow-type: tm+mt
-source-wordcount: '952'
+source-wordcount: '948'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 # 使用API管理数据集的数据使用标签
 
-[[!DNL 数据集服务API]允许您](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dataset-service.yaml) ，应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元 [!DNL Catalog Service] 数据的API相分离。
+使 [[!DNL Dataset Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dataset-service.yaml) 用，您可以应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元 [!DNL Catalog Service] 数据的API相分离。
 
 本文档介绍如何使用管理数据集和字段的标签 [!DNL Dataset Service API]。 有关如何使用API调用管理数据使用标签本身的步骤，请参 [阅的标签端点指南](../api/labels.md) ( [!DNL Policy Service API])。
 
@@ -128,7 +128,7 @@ curl -X PUT \
 | 属性 | 描述 |
 | --- | --- |
 | `labels` | 要添加到数据集的列表数据使用标签。 |
-| `optionalLabels` | 列表数据集中要添加标签的任何单个字段。 此数组中的每个项目都必须具有以下属性： <br/><br/>`option`:包含字段 [!DNL Experience Data Model] (XDM)属性的对象。 以下三个属性是必需的：<ul><li>id</code>:与字段关联的</code> 模式的URI $id值。</li><li>contentType</code>:模式的内容类型和版本号。 这应采用XDM查找请求的有效 <a href="../../xdm/api/look-up-resource.md">接受标头</a> 之一的形式。</li><li>schemaPath</code>:数据集模式中字段的路径。</li></ul>`labels`:要添加到字段的列表数据使用标签。 |
+| `optionalLabels` | 列表数据集中要添加标签的任何单个字段。 此数组中的每个项目都必须具有以下属性： <br/><br/>`option`:包含字段 [!DNL Experience Data Model] (XDM)属性的对象。 以下三个属性是必需的：<ul><li>id</code>:与字段关联的</code> 模式的URI $id值。</li><li>contentType</code>:模式的内容类型和版本号。 这应采用XDM查找请求的有效 <a href="../../xdm/api/getting-started.md#accept">接受标头</a> 之一的形式。</li><li>schemaPath</code>:数据集模式中字段的路径。</li></ul>`labels`:要添加到字段的列表数据使用标签。 |
 
 **响应**
 
