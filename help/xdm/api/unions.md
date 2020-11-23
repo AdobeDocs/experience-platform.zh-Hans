@@ -2,125 +2,44 @@
 keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;union;Union;unions;Unions;segmentMembership;timeSeriesEvents;
 solution: Experience Platform
 title: 合并
-description: 合并(或合并视图)是系统生成的只读模式,聚合共享相同类(XDM ExperienceEvent或XDM单个用户档案)且启用实时客户用户档案的所有模式的字段。
+description: 模式注册表API中的/合并端点允许您以编程方式管理体验应用程序中的XDM合并模式。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 74a4a3cc713cc068be30379e8ee11572f8bb0c63
+source-git-commit: 0b55f18eabcf1d7c5c233234c59eb074b2670b93
 workflow-type: tm+mt
-source-wordcount: '825'
+source-wordcount: '877'
 ht-degree: 1%
 
 ---
 
 
-# 合并
+# 合并端点
 
-合并(或合并视图)是系统生成的只读模式，它聚合共享同一类(或[!DNL XDM ExperienceEvent][!DNL XDM Individual Profile])并启用[!DNL实 [时客户用户档案]的所有模式的字段](../../profile/home.md)。
+合并(或合并视图)是系统生成的只读模式，它聚合共享同一类（或）并启用的所[!DNL XDM ExperienceEvent] 有模式 [!DNL XDM Individual Profile]的字段 [[!DNL Real-time Customer Profile]](../../profile/home.md)。
 
 此文档涵盖在模式注册表API中与合并协作的基本概念，包括各种操作的示例调用。 有关XDM中合并的更多一般信息，请参阅模式合成基 [础知识中的合并部分](../schema/composition.md#union)。
 
-## 合并混合
+## 合并模式字段
 
-在合并 [!DNL Schema Registry] 模式中，自动包含三个混音： `identityMap`、 `timeSeriesEvents`和 `segmentMembership`。
+在合并 [!DNL Schema Registry] 模式中，自动包括三个关键字段： `identityMap`、 `timeSeriesEvents`和 `segmentMembership`。
 
 ### 身份映射
 
-合并 `identityMap` 模式是合并相关记录模式中已知身份的表示。 标识图将标识分为由命名空间键控的不同数组。 列出的每个标识本身都是包含唯一值的 `id` 对象。
-
-See the [Identity Service documentation](../../identity-service/home.md) for more information.
+合并 `identityMap` 模式是合并相关记录模式中已知身份的表示。 标识图将标识分为由命名空间键控的不同数组。 列出的每个标识本身都是包含唯一值的 `id` 对象。 See the [Identity Service documentation](../../identity-service/home.md) for more information.
 
 ### 时间系列事件
 
-阵 `timeSeriesEvents` 列是与与列表相关联的记录模式相关的时间序列事件的合并。 当数 [!DNL Profile] 据导出到数据集时，每个记录都包含此数组。 这对于各种用例都很有用，例如机器学习，其中模型除了记录属性外还需要用户档案的整个行为历史记录。
+阵 `timeSeriesEvents` 列是与与列表相关联的记录模式相关的时间序列事件的合并。 将用户档案数据导出到数据集时，每个记录都包含此数组。 这对于各种用例都很有用，例如机器学习，其中模型除了记录属性外还需要用户档案的整个行为历史记录。
 
 ### 区段成员关系图
 
-该 `segmentMembership` 地图存储分部评估的结果。 使用分段API成功运行段作 [业时](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)，将更新映射。 `segmentMembership` 还存储任何预评估的受众细分，这些细分被引入平台，允许与Adobe Audience Manager等其他解决方案集成。
+该 `segmentMembership` 地图存储分部评估的结果。 使用分段API成功运行段作 [业时](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)，将更新映射。 `segmentMembership` 还存储任何预评估的受众细分，这些细分被引入平台，允许与Adobe Audience Manager等其他解决方案集成。 有关详细信息， [请参阅有关使用API创建](../../segmentation/tutorials/create-a-segment.md) 区段的教程。
 
-有关详细信息， [请参阅有关使用API创建](../../segmentation/tutorials/create-a-segment.md) 区段的教程。
+## 检索列表合并 {#list}
 
-## 启用模式以成为合并会员
+在模式上 `union` 设置标记时， [!DNL Schema Registry] 会自动将模式添加到模式所基于的类的合并。 如果所涉及的类不存在合并，则会自动创建新合并。 合并 `$id` 的标准与其他资源的标 `$id` 准相 [!DNL Schema Registry] 似，唯一的区别是附加两个下划线和单词“合并”(`__union`)。
 
-要将模式包含在合并合并视图中，必须将“合并”标记添加到模式 `meta:immutableTags` 的属性中。 这是通过PATCH请求来更新模式并添 `meta:immutableTags` 加值为“合并”的数组。
-
->[!NOTE]
->
->不可变标记是要设置但从不删除的标记。
-
-**API格式**
-
-```http
-PATCH /tenant/schemas/{SCHEMA_ID}
-```
-
-| 参数 | 描述 |
-| --- | --- |
-| `{SCHEMA_ID}` | URL编码 `$id` 的URI `meta:altId` 或要在中启用的模式的URI [!DNL Profile]。 |
-
-**请求**
-
-```SHELL
-curl -X PATCH \
-  https://platform.adobe.io/data/foundation/schemaregistry/tenant/schemas/_{TENANT_ID}.schemas.d5cc04eb8d50190001287e4c869ebe67 \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'Content-Type: application/json' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
-  -d '[
-        { "op": "add", "path": "/meta:immutableTags", "value": ["union"]}
-      ]'
-```
-
-**响应**
-
-成功的响应会返回更新模式的详细信息，该现在包 `meta:immutableTags` 含一个包含字符串值“合并”的数组。
-
-```JSON
-{
-    "title": "Property Information",
-    "description": "Property-related information.",
-    "type": "object",
-    "allOf": [
-        {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590"
-        },
-        {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
-        }
-    ],
-    "meta:class": "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590",
-    "meta:abstract": false,
-    "meta:extensible": false,
-    "meta:extends": [
-        "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590",
-        "https://ns.adobe.com/xdm/data/record",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
-    ],
-    "meta:containerId": "tenant",
-    "imsOrg": "{IMS_ORG}",
-    "meta:immutableTags": [
-        "union"
-    ],
-    "meta:altId": "_{TENANT_ID}.schemas.d5cc04eb8d50190001287e4c869ebe67",
-    "meta:xdmType": "object",
-    "$id": "https://ns.adobe.com/{TENANT_ID}/schemas/d5cc04eb8d50190001287e4c869ebe67",
-    "version": "1.2",
-    "meta:resourceType": "schemas",
-    "meta:registryMetadata": {
-        "repo:createDate": 1552088461236,
-        "repo:lastModifiedDate": 1552091263267,
-        "xdm:createdClientId": "{CREATED_CLIENT}",
-        "xdm:repositoryCreatedBy": "{CREATED_BY}"
-    }
-}
-```
-
-## 列表合并
-
-在模式上设置“合并”标签时，将自 [!DNL Schema Registry] 动为模式所基于的类创建和维护合并。 合并 `$id` 的与类的标准相似，唯一 `$id` 的区别是用两个下划线和单词“合并”(`"__union"`)附加。
-
-要视图可用合并的列表，可以对端点执行GET请 `/unions` 求。
+您可以通过向端点发出GET请求来视图可用合并的 `/tenant/unions` 列表。
 
 **API格式**
 
@@ -140,9 +59,16 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed-id+json'
 ```
 
+响应格式取决于在请 `Accept` 求中发送的标头。 列出合并 `Accept` 时可使用以下标题：
+
+| `Accept` 标题 | 描述 |
+| --- | --- |
+| `application/vnd.adobe.xed-id+json` | 返回每个资源的简短摘要。 这是列出资源的建议标头。 (限制：300) |
+| `application/vnd.adobe.xed+json` | 为每个资源返回完整的JSON类，其中包含 `$ref` 原始 `allOf` 资源。 (限制：300) |
+
 **响应**
 
-成功的响应返回HTTP状态200(OK)和响 `results` 应主体中的数组。 如果已定义合并，则 `title`每个 `$id`的 `meta:altId`、、和 `version` 合并都作为数组中的对象提供。 如果尚未定义合并，则仍返回HTTP状态200（确定），但数 `results` 组将为空。
+成功的响应返回HTTP状态200(OK)和响 `results` 应主体中的数组。 如果已定义合并，则每个合并的详细信息将作为数组中的对象提供。 如果尚未定义合并，则仍返回HTTP状态200（确定），但数 `results` 组将为空。
 
 ```JSON
 {
@@ -163,7 +89,7 @@ curl -X GET \
 }
 ```
 
-## 查找特定合并
+## 查找合并 {#lookup}
 
 您可以通过执行包含和的视图请求来GET特 `$id` 定合并，具体取决于“接受”标题，包括合并的部分或全部详细信息。
 
@@ -180,7 +106,7 @@ GET /tenant/schemas/{UNION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{UNION_ID}` | 要查找的 `$id` 合并的URL编码URI。 合并模式的URI附加“__合并”。 |
+| `{UNION_ID}` | 要查找 `$id` 的合并的URL编码URI。 合并模式的URI附加“__合并”。 |
 
 **请求**
 
@@ -248,11 +174,13 @@ curl -X GET \
 }
 ```
 
-## 列表模式
+## 启用模式以成为合并会员 {#enable}
 
-为了查看哪些模式是特定合并的一部分，您可以使用查询参数来执行GET请求，以在租户容器内过滤模式。
+要使模式包含在其类的合并中，必须向 `union` 模式的属性中添加标 `meta:immutableTags` 记。 为此，可以发出PATCH请求，向所 `meta:immutableTags` 述模式添加单个字符串值 `union` 为的数组。 有关详细 [的示例](./schemas.md#union) ，请参阅模式端点指南。
 
-使用 `property` 查询参数，您可以配置响应以仅返回包含字段和等于 `meta:immutableTags` 您正在访 `meta:class` 问其合并的类的模式。
+## 列表模式 {#list-schemas}
+
+为了查看哪些模式是特定合并的一部分，您可以对端点执行GET请 `/tenant/schemas` 求。 使用 `property` 查询参数，您可以配置响应以仅返回包含字段和等于 `meta:immutableTags` 您正在访 `meta:class` 问其合并的类的模式。
 
 **API格式**
 
@@ -262,11 +190,11 @@ GET /tenant/schemas?property=meta:immutableTags==union&property=meta:class=={CLA
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CLASS_ID}` | 要 `$id` 访问其合并的类的名称。 |
+| `{CLASS_ID}` | 要 `$id` 合并其启用模式的类的列表。 |
 
 **请求**
 
-以下请求会查找属于类模式的所 [!DNL XDM Individual Profile] 有合并。
+以下请求检索属于类列表的所有模式的合并 [!DNL XDM Individual Profile] 符。
 
 ```SHELL
 curl -X GET \
@@ -278,9 +206,16 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
+响应格式取决于在请 `Accept` 求中发送的标头。 列出模式 `Accept` 时可使用以下标题：
+
+| `Accept` 标题 | 描述 |
+| --- | --- |
+| `application/vnd.adobe.xed-id+json` | 返回每个资源的简短摘要。 这是列出资源的建议标头。 (限制：300) |
+| `application/vnd.adobe.xed+json` | 返回每个资源的完整JSON模式，其中包 `$ref` 含原始 `allOf` 资源。 (限制：300) |
+
 **响应**
 
-成功的响应会返回已过滤的模式列表，只包含满足这两个要求的。 请记住，使用多个查询参数时，会假定AND关系。 响应的格式取决于请求中发送的接受头。
+成功的响应会返回已过滤的模式列表，该仅包含属于已启用合并成员资格的指定类的。 请记住，使用多个查询参数时，会假定AND关系。
 
 ```JSON
 {
