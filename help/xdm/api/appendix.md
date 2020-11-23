@@ -5,9 +5,9 @@ title: 模式注册开发人员附录
 description: 本文档提供与使用模式注册表API相关的补充信息。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 42d3bed14c5f926892467baeeea09ee7a140ebdc
+source-git-commit: 0b55f18eabcf1d7c5c233234c59eb074b2670b93
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '730'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,43 @@ ht-degree: 0%
 # 附录
 
 本文档提供与使用API相关的补充 [!DNL Schema Registry] 信息。
+
+## 使用查询参数 {#query}
+
+支 [!DNL Schema Registry] 持在列出资源时使用查询参数进行页面和筛选结果。
+
+>[!NOTE]
+>
+>组合多个查询参数时，必须用和号(`&`)分隔。
+
+### 分页 {#paging}
+
+用于分页的最常见的查询参数包括：
+
+| 参数 | 描述 |
+| --- | --- |
+| `start` | 指定列出的结果的开始位置。 此值可以从列表响 `_page.next` 应的属性中获取，并用于访问结果的下一页。 如果 `_page.next` 值为null，则没有其他页可用。 |
+| `limit` | 限制返回的资源数。 示例： `limit=5` 将返还列表5个资源。 |
+| `orderby` | 按特定属性对结果排序。 示例： `orderby=title` 将按标题按升序(A-Z)对结果排序。 在参 `-` 数值()之前`orderby=-title`添加一个值，将按标题以降序(Z-A)对项目排序。 |
+
+### 筛选 {#filtering}
+
+您可以使用参数筛选结 `property` 果，该参数用于对检索的资源中的给定JSON属性应用特定运算符。 支持的运算符包括：
+
+| 运算符 | 描述 | 示例 |
+| --- | --- | --- |
+| `==` | 过滤器属性是否等于提供的值。 | `property=title==test` |
+| `!=` | 过滤器：属性是否不等于提供的值。 | `property=title!=test` |
+| `<` | 过滤器该属性是否小于提供的值。 | `property=version<5` |
+| `>` | 过滤器该属性是否大于提供的值。 | `property=version>5` |
+| `<=` | 过滤器，该属性是否小于或等于提供的值。 | `property=version<=5` |
+| `>=` | 过滤器为属性是大于或等于提供的值。 | `property=version>=5` |
+| `~` | 过滤器，根据该属性是否与提供的常规表达式匹配。 | `property=title~test$` |
+| (None) | 仅声明属性名称只返回存在属性的条目。 | `property=title` |
+
+>[!TIP]
+>
+>可以使用该参 `property` 数按其兼容类过滤混音。 例如， `property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile` 只返回与类兼容的混 [!DNL XDM Individual Profile] 合。
 
 ## 兼容性模式
 
