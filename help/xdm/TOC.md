@@ -5,10 +5,10 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Data Model (XDM) 指南
 user-guide-description: 使用 Experience Data Model (XDM) 类和混合来标准化体验数据。
 translation-type: tm+mt
-source-git-commit: 0a5b6bab6a0a11a572a4cd5de95b33f8d61d34bc
+source-git-commit: 321dc16a1296aeb28ba78825f191a0368df16547
 workflow-type: tm+mt
-source-wordcount: '203'
-ht-degree: 19%
+source-wordcount: '181'
+ht-degree: 22%
 
 ---
 
@@ -56,18 +56,14 @@ ht-degree: 19%
    * [POI交互](./data-types/poi-interaction.md)
    * [邮政地址](./data-types/postal-address.md)
 * 模式注册表API {#api}
+   * [概述](api/overview.md)
    * [入门指南](api/getting-started.md)
-   * [列表资源](api/list-resources.md)
-   * [查找资源](api/look-up-resource.md)
-   * [更新资源](api/update-resource.md)
-   * [替换资源](api/replace-resource.md)
-   * [删除资源](api/delete-resource.md)
-   * [创建类](api/create-class.md)
-   * [创建混音](api/create-mixin.md)
-   * [创建数据类型](api/create-data-type.md)
-   * [创建模式](api/create-schema.md)
-   * [合并](api/unions.md)
+   * [模式](api/schemas.md)
+   * [类](api/classes.md)
+   * [Mixins](api/mixins.md)
+   * [数据类型](api/data-types.md)
    * [描述符](api/descriptors.md)
+   * [合并](api/unions.md)
    * [临时模式](api/ad-hoc.md)
    * [附录](api/appendix.md)
 * 教程 {#tutorials}
