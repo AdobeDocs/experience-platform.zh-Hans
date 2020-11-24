@@ -6,17 +6,15 @@ topic: overview
 type: Tutorial
 description: 本教程介绍从第三方云存储检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: b0f6e51a784aec7850d92be93175c21c91654563
+source-git-commit: 026007e5f80217f66795b2b53001b6cf5e6d2344
 workflow-type: tm+mt
-source-wordcount: '1567'
+source-wordcount: '1583'
 ht-degree: 1%
 
 ---
 
 
 # 通过源连接器和API收集云存储数据
-
-[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
 本教程介绍从第三方云存储检索数据并通过源连接器和API将其引入平台的 [[!DNL Flow Service] 步骤](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)。
 
@@ -62,13 +60,17 @@ ht-degree: 1%
 
 为基于文件的连接器使用以下枚举值：
 
-| Data.format | 枚举值 |
+| 数据格式 | 枚举值 |
 | ----------- | ---------- |
-| 分隔文件 | `delimited` |
-| JSON文件 | `json` |
-| 镶木文件 | `parquet` |
+| 分隔 | `delimited` |
+| JSON | `json` |
+| 镶木 | `parquet` |
 
-对于所有基于表的连接器，请使用枚举值： `tabular`.
+对于所有基于表的连接器，将值设置为 `tabular`。
+
+>[!NOTE]
+>
+>您可以通过将列分隔符指定为属性，使用云存储源连接器收录CSV和TSV文件。 任何单个字符值都是允许的列分隔符。 如果未提供， `(,)` 则使用逗号作为默认值。
 
 **API格式**
 
@@ -88,13 +90,14 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "name": "Cloud storage source connector",
-        "baseConnectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
+        "connectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
         "description": "Cloud storage source connector",
         "data": {
-            "format": "delimited"
+            "format": "delimited",
+            "columnDelimiter": "\t"
         },
         "params": {
-            "path": "/demo/data7.csv",
+            "path": "/ingestion-demos/leads/tsv_data/*.tsv",
             "recursive": "true"
         },
             "connectionSpec": {
@@ -106,7 +109,9 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `baseConnectionId` | 您正在访问的第三方云存储系统的唯一连接ID。 |
+| `connectionId` | 您正在访问的第三方云存储系统的唯一连接ID。 |
+| `data.format` | 定义数据格式属性的枚举值。 |
+| `data.columnDelimiter` | 可使用任何单字符列分隔符收集平面文件。 仅当引入CSV或TSV文件时，才需要此属性。 |
 | `params.path` | 您正在访问的源文件的路径。 |
 | `connectionSpec.id` | 与特定第三方云存储系统关联的连接规范ID。 有关连接 [规范](#appendix) ID的列表，请参阅附录。 |
 
@@ -126,8 +131,6 @@ curl -X POST \
 要在中使用源数据，必须创 [!DNL Platform]建目标模式，以根据您的需求构建源数据。 然后，目标模式用于创建包含 [!DNL Platform] 源数据的数据集。
 
 通过对目标注册表API执行POST请求，可以创 [建模式XDM模式](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
-
-如果您希望在中使用用户界 [!DNL Experience Platform]面， [模式编辑器教程](../../../../xdm/tutorials/create-schema-ui.md) 提供了在模式编辑器中执行类似操作的分步说明。
 
 **API格式**
 
@@ -279,7 +282,7 @@ curl -X POST \
 
 ## 创建目标连接 {#target-connection}
 
-目标连接表示到所摄取数据所进入的目的地的连接。 要创建目标连接，必须提供与数据库关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
+目标连接表示到所摄取数据所进入的目的地的连接。 要创建目标连接，必须提供与数据湖关联的固定连接规范ID。 此连接规范ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
 您现在将唯一标识符作为目标模式目标集和连接规范ID到数据湖。 使用这些标识符，您可以使用API创建目标 [!DNL Flow Service] 连接，以指定将包含入站源数据的数据集。
 
@@ -403,8 +406,8 @@ curl -X POST \
     "version": 0,
     "createdDate": 1597784069368,
     "modifiedDate": 1597784069368,
-    "createdBy": "28AF22BA5DE6B0B40A494036@AdobeID",
-    "modifiedBy": "28AF22BA5DE6B0B40A494036@AdobeID"
+    "createdBy": "{CREATED_BY}",
+    "modifiedBy": "{MODIFIED_BY}"
 }
 ```
 
