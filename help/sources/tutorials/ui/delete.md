@@ -6,7 +6,7 @@ title: 删除数据流
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: e327a3e195d97c0b547608f360c5b0b6a8aded61
 workflow-type: tm+mt
 source-wordcount: '447'
 ht-degree: 0%
@@ -66,4 +66,4 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 通过遵循本教程，您成功地使用 **[!UICONTROL 了Sources]** 工作区删除现有数据流。
 
-有关如何使用API以编程方式执行这些操 [!DNL Flow Service] 作的步骤，请参阅有关使用Flow Service API [删除连接的教程。](../../tutorials/api/delete.md)
+有关如何使用API以编程方式执行这些操作 [!DNL Flow Service] 的步骤，请参阅有关使用 [Flow Service API删除数据流的教程](../../tutorials/api/delete-dataflows.md)
