@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;getting started;content ai;commerce ai;content and commerce ai
 solution: Experience Platform
-title: 内容和商务AI快速入门]
+title: 内容和商务AI快速入门
 topic: Getting started
 description: 内容和商务AI利用AdobeI/O API。 要调用AdobeI/O API和I/O控制台集成，您必须先完成身份验证教程。
 translation-type: tm+mt
-source-git-commit: 9ee888b02b4a402200ca4fcaed4a59c0a7eb94cd
+source-git-commit: 2be04547b96e1a6c293cc63e782fe1b3259619ba
 workflow-type: tm+mt
-source-wordcount: '572'
+source-wordcount: '576'
 ht-degree: 0%
 
 ---
 
 
-# Getting started with [!DNL Content and Commerce AI]
+# 内容和商务AI快速入门
 
 >[!NOTE]
 >
@@ -75,4 +75,4 @@ ht-degree: 0%
 
 要进一步了解可扩展性框架，请阅读可扩展性 [文档简介进行开始](https://docs.adobe.com/content/help/en/asset-compute/using/extend/understand-extensibility.html) 。 本文档概述了先决条件和配置要求。
 
-要进一步了解如何设置环境, [!DNL Content and Commerce AI]请阅读开发人员开始 [设置指南来进行环境](https://docs.adobe.com/content/help/en/asset-compute/using/extend/setup-environment.html)。 此文档提供允许您为资产计算服务进行开发的设置说明。
+要进一步了解如何设置环境, [!DNL Content and Commerce AI]请阅读开发人员开始 [设置指南来进行环境](https://docs.adobe.com/content/help/en/asset-compute/using/extend/setup-environment.html)。 此文档提供允许您为Asset compute服务进行开发的设置说明。
