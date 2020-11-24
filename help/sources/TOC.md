@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 translation-type: tm+mt
-source-git-commit: 39e419b78938afd91e3d7471241e377f352214ee
+source-git-commit: 68ed1ceb2f7410bd970fa43c5f0db11b1b8ea388
 workflow-type: tm+mt
-source-wordcount: '683'
-ht-degree: 3%
+source-wordcount: '663'
+ht-degree: 4%
 
 ---
 
@@ -138,10 +138,11 @@ ht-degree: 3%
       - [收集协议数据](tutorials/api/collect/protocols.md)
       - [收集流数据](tutorials/api/collect/streaming.md)
    - [从第三方云存储系统中摄取镶木数据](tutorials/api/cloud-storage-parquet.md)
-   - [使用Flow Service API创建数据集基础连接](tutorials/api/create-dataset-base-connection.md)
-   - [使用Flow Service API监视数据流](tutorials/api/monitor.md)
-   - [使用Flow Service API更新连接信息](tutorials/api/update.md)
-   - [使用Flow Service API删除连接](tutorials/api/delete.md)
+   - [创建数据集连接](tutorials/api/create-dataset-base-connection.md)
+   - [监视数据流](tutorials/api/monitor.md)
+   - [更新连接](tutorials/api/update.md)
+   - [删除连接](tutorials/api/delete.md)
+   - [删除数据流](tutorials/api/delete-dataflows.md)
 - UI教程 {#ui-tutorials}
    - 创建源连接器 {#create}
       - Adobe应用程序 {#adobe-applications}
