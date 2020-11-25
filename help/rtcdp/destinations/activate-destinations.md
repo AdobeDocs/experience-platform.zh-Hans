@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: bb59d93e016d49a0ebba77af1f90563a8767f072
+source-git-commit: 5928242537acdb1f130a0e8ac1bca3f14c184c6a
 workflow-type: tm+mt
-source-wordcount: '1768'
+source-wordcount: '1722'
 ht-degree: 0%
 
 ---
@@ -127,14 +127,6 @@ ht-degree: 0%
 >对于社交目标，您必须在此步骤中选择受众的来源。 只有在选择下图中的某个选项后，才能继续执行下一步。
 
 ![选择数据来源](./assets/choose-data-origin.png)
-
-### **[!UICONTROL 计划步骤]** (S) {#scheduling}
-
-适用于：电子邮件营销目标和云存储目标
-
-![细分计划步骤](./assets/scheduling-icon.png)
-
-在“计 **[!UICONTROL 划]** ”页上，您可以查看向目标发送数据的开始日期以及向目标发送数据的频率。 无法编辑这些值。
 
 ### **[!UICONTROL 选择属性]** 步骤 {#select-attributes}
 
