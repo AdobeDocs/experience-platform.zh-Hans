@@ -1,11 +1,11 @@
 ---
 title: 在Adobe Analytics手动映射变量
 seo-title: 使用Web SDK在Adobe Analytics手动映射变量
-description: 如何用处理规则将变量手动映射到Adobe Analytics
-seo-description: 使用带有Web SDK的处理规则将变量手动映射到Adobe Analytics
+description: 如何使用处理规则将变量手动映射到Adobe Analytics
+seo-description: 使用Web SDK处理规则将变量手动映射到Adobe Analytics
 keywords: adobe analytics;analytics;variables;mapping variables;map variables;contextData;context Data;Processing rules;rules;xdm;schema;
 translation-type: tm+mt
-source-git-commit: 1b5ee9b1f9bdc7835fa8de59020b3eebb4f59505
+source-git-commit: 206b5addd6baf5a120b469b21313ee86ac1fe53b
 workflow-type: tm+mt
 source-wordcount: '385'
 ht-degree: 35%
@@ -52,7 +52,7 @@ To be used by [!DNL Analytics], XDM data is flattened using dot notation and mad
 
 可以通过[处理规则](https://docs.adobe.com/content/help/zh-Hans/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html)访问边缘网络收集的所有数据。In [!DNL Analytics], you can use processing rules to incorporate context data into [!DNL Analytics] variables.
 
-For example, in the following rule, Adobe Analytics is set to populate **Internal Search terms (eVar2)** with the data associated with **a.x_atag.search.term(Context Data)**.
+For example, in the following rule, Adobe Analytics is set to populate **Internal Search terms (eVar2)** with the data associated with **a.x._atag.search.term(Context Data)**.
 
 ![](assets/examplerule.png)
 
