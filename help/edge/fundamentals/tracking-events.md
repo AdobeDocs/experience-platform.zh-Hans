@@ -5,9 +5,9 @@ description: 了解如何跟踪Experience PlatformWeb SDK事件
 seo-description: 了解如何跟踪Experience PlatformWeb SDK事件
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;document Unloading;onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 51a846124f71012b2cb324cc1469ec7c9753e574
 workflow-type: tm+mt
-source-wordcount: '1138'
+source-wordcount: '1331'
 ht-degree: 0%
 
 ---
@@ -43,6 +43,35 @@ alloy("sendEvent", {
   }
 });
 ```
+
+执行命令和将数 `sendEvent` 据发送到服务器（例如，Web SDK库尚未完全加载或尚未收到同意）之间可能会有一段时间。 如果要在执行命令后修改对 `xdm` 象的任何 `sendEvent` 部分，强烈建议在执行命令前克隆 `xdm` 对 _象_`sendEvent` 。 例如：
+
+```javascript
+var clone = function(value) {
+  return JSON.parse(JSON.stringify(value));
+};
+
+var dataLayer = {
+  "commerce": {
+    "order": {
+      "purchaseID": "a8g784hjq1mnp3",
+      "purchaseOrderNumber": "VAU3123",
+      "currencyCode": "USD",
+      "priceTotal": 999.98
+    }
+  }
+};
+
+alloy("sendEvent", {
+  "xdm": clone(dataLayer)
+});
+
+// This change will not be reflected in the data sent to the 
+// server for the prior sendEvent command.
+dataLayer.commerce = null;
+```
+
+在此示例中，通过将数据层序列化为JSON，然后反序列化来克隆该数据层。 接下来，克隆结果被传递到命令 `sendEvent` 中。 这样做可确保命 `sendEvent` 令在执行命令时具有数据层的快照，以 `sendEvent` 便以后对原始数据层对象的修改不会反映在发送到服务器的数据中。 如果您使用事件驱动的数据层，克隆数据可能已自动处理。 例如，如果您使用Adobe客 [户端层](https://github.com/adobe/adobe-client-data-layer/wiki)，该方 `getState()` 法将提供所有先前更改的计算的克隆快照。 如果您使用的是AEP Web SDK Launch扩展，也会自动处理此问题。
 
 >[!NOTE]
 >
