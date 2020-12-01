@@ -5,10 +5,10 @@ title: Adobe Experience Platform Identity Service
 topic: tutorial
 description: 标识图是特定客户不同标识之间关系的映射，可直观地展示客户如何跨不同渠道与品牌互动。
 translation-type: tm+mt
-source-git-commit: af7eab0599b17be55d5a4c129f7ebaeba91333bc
+source-git-commit: df165baceaf8dc2b21055201ec78bd392044b938
 workflow-type: tm+mt
-source-wordcount: '840'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -98,6 +98,7 @@ ht-degree: 1%
 - 所选命名空间中不存在标识值。
 - 这个图只有两个身份。
 - 该图超过400个最大身份。
+- 您处于非生产沙箱环境。
 
 ![大集群](../images/identity-graph-viewer/error-screen.png)
 
