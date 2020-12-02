@@ -5,10 +5,10 @@ title: Audience Manager连接器
 topic: overview
 description: Adobe Audience Manager数据连接器将在Adobe Audience Manager收集的第一方数据传送到Adobe Experience Platform。 Audience Manager连接器将三类别数据引入平台。
 translation-type: tm+mt
-source-git-commit: 9bd893820c7ab60bf234456fdd110fb2fbe6697c
+source-git-commit: 4ab5c3a8f9dbecc27686c7ce7db4f66ac18c2d2a
 workflow-type: tm+mt
-source-wordcount: '673'
-ht-degree: 1%
+source-wordcount: '798'
+ht-degree: 0%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 1%
 Adobe Audience Manager数据连接器将在Adobe Audience Manager收集的第一方数据传送到Adobe Experience Platform。 Audience Manager连接器将三类别数据引入平台：
 
 - **实时数据：** 在Audience Manager的数据收集服务器上实时捕获数据。 此数据用于Audience Manager以填充基于规则的特征，并将在最短的延迟时间内在平台中显示。
-- **用户档案数据：** Audience Manager使用实时和载入的数据来推导客户用户档案。 这些用户档案用于填充区段实现上的身份图和特征。
+- **用户档案数据：** Audience Manager使用实时和载入的数据得出客户用户档案。 这些用户档案用于填充区段实现上的身份图和特征。
 
 Audience Manager连接器将这些类别映射到体验数据模型(XDM)模式，并将其发送到平台。 实时数据以XDM ExperienceEvent数据的形式发送，而用户档案数据以XDM单个用户档案的形式发送。
 
@@ -59,11 +59,11 @@ Audience Manager数据集在默认情况下处于禁用状态，并且用户能�
 | 数据集名称 | 描述 |
 | ------------ | ----------- |
 | Audience Manager实时 | 此数据集包含由Audience ManagerDCS端点上的直接点击收集的数据和Audience Manager用户档案的标识图。 启用此数据集进行用户档案摄取。 |
-| Audience Manager实时用户档案更新 | 此数据集支持Audience Manager特征和区段的实时定位。 它包含Edge区域路由、特征和区段成员资格的信息。 启用此数据集进行用户档案摄取。 |
-| Audience Manager设备数据 | 具有ECID的设备数据以及在Audience Manager中聚集的相应细分实现。 |
-| Audience Manager设备用户档案数据 | 用于Audience Manager连接器诊断。 |
-| Audience Manager验证用户档案 | 此数据集包含经Audience Manager验证的用户档案。 |
-| Audience Manager认证用户档案元数据 | 用于Audience Manager连接器诊断。 |
+| Audience Manager实时用户档案更新 | 此数据集支持Audience Manager特征和细分的实时定位。 它包含Edge区域路由、特征和区段成员资格的信息。 启用此数据集进行用户档案摄取。 数据在数据集中不以批处理形式显示。 您可以启用用户档案切换，以直接将数据收录到用户档案。 |
+| Audience Manager设备数据 | 具有ECID的设备数据以及在Audience Manager中聚集的相应细分实现。 数据在数据集中不以批处理形式显示。 您可以启用用户档案切换，以直接将数据收录到用户档案。 |
+| Audience Manager设备用户档案数据 | 用于Audience Manager连接器诊断。 数据在数据集中不以批处理形式显示。 您可以启用用户档案切换，以直接将数据收录到用户档案。 |
+| Audience Manager验证用户档案 | 此数据集包含经Audience Manager验证的用户档案。 数据在数据集中不以批处理形式显示。 您可以启用用户档案切换，以直接将数据收录到用户档案。 |
+| Audience Manager认证用户档案元数据 | 用于Audience Manager连接器诊断。 数据在数据集中不以批处理形式显示。 您可以启用用户档案切换，以直接将数据收录到用户档案。 |
 
 ### 连接
 
@@ -73,6 +73,5 @@ Adobe Audience Manager在目录中创建一个连接：Audience Manager连接。
 
 | Audience Manager数据 | 延迟 | 注释 |
 | --- | --- | --- |
-| 实时数据 | &lt; 35 分钟. | 从在Realtime节点捕获到在Platform Data Lake上显示的时间。 |
-| 入站数据 | &lt; 13 小时 | 从在S3存储桶捕获到在平台数据湖上显示的时间。 |
-| 用户档案数据 | &lt; 2 天 | 从实时／入站数据捕获到添加到用户用户档案并最终显示在平台数据湖上的时间。 |
+| 实时数据 | &lt; 35 分钟. | 从在Audience Manager边缘节点捕获到在平台数据湖上显示的时间。 |
+| 用户档案数据 | &lt; 2 天 | 从通过DCS/PCS Edge数据和已载入数据捕获的时间，被处理到用户用户档案，然后以用户档案显示。 此数据今天不直接登陆Platform Data Lake。 用户档案切换可在Audience Manager用户档案数据集上启用，以直接将此数据引入用户档案。 |
