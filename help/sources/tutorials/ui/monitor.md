@@ -1,22 +1,22 @@
 ---
-keywords: Experience Platform;home;popular topics;monitor accounts;monitor dataflows;data flows
-description: Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 本教程提供了从“源”工作区查看现有帐户和数据流的步骤。
+keywords: Experience Platform;home;popular topics;monitor accounts;monitor dataflows;dataflows
+description: Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 本教程提供了从“源”工作区查看现有数据流的步骤。
 solution: Experience Platform
-title: 监视帐户和数据流
+title: 监视数据流
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: 12b8ced6705c2b14b50ea237391d9f829c894b99
 workflow-type: tm+mt
-source-wordcount: '1102'
+source-wordcount: '822'
 ht-degree: 1%
 
 ---
 
 
-# 在UI中监视帐户和数据流
+# 监视UI中的数据流
 
-Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 本教程提供了从“源”工作区查看现有帐户和数据 [!UICONTROL 流的] 步骤。
+Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 本教程提供了从“源”工作区查看现有数据 [!UICONTROL 流的] 步骤。
 
 ## 入门指南
 
@@ -27,53 +27,9 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
    - [模式编辑器教程](../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
 - [[!DNL Real-time Customer Profile]](../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
-## 监视帐户
-
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 **[!UICONTROL “源”以访问]** “源”工作区。 “ **[!UICONTROL 目录]** ”屏幕显示各种源，您可以为其创建帐户和数据流。 每个源显示与它们关联的现有帐户和数据流的数量。
-
-从顶 **[!UICONTROL 部标题]** 中选择帐户以视图现有帐户。
-
-![目录](../../images/tutorials/monitor/catalog-accounts.png)
-
-将显 **[!UICONTROL 示]** “帐户”页面。 本页是可查看帐户的列表，包括有关其源、用户名、数据流数和创建日期的信息。
-
-选择左上角的漏斗图标以启动排序窗口。
-
-![帐户](../../images/tutorials/monitor/accounts-list.png)
-
-排序面板允许您从特定源访问帐户。 选择要处理的源，并从右侧的列表中选择帐户。
-
->[!TIP]
->
-> 使用 ![“名称](../../images/tutorials/monitor/spectrum-control.png) ”列中的 **[!UICONTROL spectrum-control]** 按钮为所选帐户创建新源数据流。
-
-![accounts-select](../../images/tutorials/monitor/accounts-sort.png)
-
-此外，您还可以编辑现有帐户信息并更新帐户凭据。 选择要编辑的帐户信息的铅笔图标。
-
-![](../../images/tutorials/monitor/click-edit.png)
-
-此时将 **[!UICONTROL 显示“编辑帐户]** ”详细信息模式。 在此页中，您可以更新现有帐户详细信息和身份验证凭据。
-
->[!NOTE]
->
-> 所有批源连接器都提供编辑帐户详细信息。
-
-![](../../images/tutorials/monitor/edit-account.png)
-
-在“帐 **[!UICONTROL 户]** ”页中，您可以视图与您访问的帐户关联的现有数据流或目标数据集的列表。 选择省略号(`...`)按钮，为所选数据流显示更多可用选项。 这些选项的进一步说明如下：
-
-| 控制 | 描述 |
-| ------- | ----------- |
-| [!UICONTROL 编辑计划] | 允许您编辑数据流的摄取计划。 |
-| [!UICONTROL 禁用数据流] | 允许您禁用所选数据流的数据摄取。 |
-| [!UICONTROL 删除] | 允许您删除所选数据流。 |
-
-![数据流](../../images/tutorials/monitor/dataflows.png)
-
 ## 监视数据流
 
-数据流可以直接从“目录”页 **[!UICONTROL 访问]** ，无需查看 **[!UICONTROL 帐户]**。 从 **[!UICONTROL 顶部标]** 题中选择数据流以视图列表数据流。
+登录以登录到Experience Platform [UI](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航]** 中选择 [!UICONTROL “源] ”以访问“源”工作区。 从顶 **[!UICONTROL 部标题]** 中选择视图流，以便对现有数据流进行数据流。
 
 ![catalog-dataflows](../../images/tutorials/monitor/catalog-dataflows.png)
 
