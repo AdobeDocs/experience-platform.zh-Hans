@@ -5,9 +5,9 @@ title: 连接到流目标并激活数据
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 502d913400a8ddc0132c64253cd30ea9f9fcd239
+source-git-commit: f12b400ca95e23d8e6ac282fafa8f4bb141d703a
 workflow-type: tm+mt
-source-wordcount: '1870'
+source-wordcount: '2012'
 ht-degree: 2%
 
 ---
@@ -592,6 +592,31 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
   }
 }
 ```
+
+## 使用Postman集合连接到流目标  {#collections}
+
+要以更简化的方式连接到本教程中介绍的流目标，您可以使用 [[!DNL Postman]](https://www.postman.com/)。
+
+[!DNL Postman] 是一种工具，可用于进行API调用并管理预定义调用和环境的库。
+
+对于此特定教程，我们包含附 [!DNL Postman] 加到本文的以下集合：
+
+* [!DNL AWS Kinesis] [!DNL Postman] 集合
+* [!DNL Azure Event Hubs] [!DNL Postman] 集合
+
+单击 [此处](assets/DestinationPostmanCollection.zip) ，下载集合存档。
+
+每个集合分别包括必需的请求和环境 [!DNL AWS Kinesis]变量， [!DNL Azure Event Hub]以及。
+
+### 如何使用邮递员集合
+
+要使用附加的集合成功连接到目 [!DNL Postman] 标，请执行以下步骤：
+
+* Download and install [!DNL Postman];
+* [下载](assets/DestinationPostmanCollection.zip) 、解压附加集合；
+* 将收藏集从其相应的文件夹导入邮递员；
+* 根据本文的说明填写环境变量；
+* 根据本 [!DNL API] 文中的说明，运行来自邮递员的请求。
 
 ## 后续步骤
 
