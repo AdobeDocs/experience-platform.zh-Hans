@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: September 8, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
 source-wordcount: '862'
 ht-degree: 6%
@@ -47,9 +47,9 @@ Adobe Experience Platform数据治理是用于管理客户数据并确保遵守�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| UX改进 | 用户可以访问内联表操作，以更轻松地访问主操作，如添加数据、编辑计划和添加区段。 有关详细 [信息，请参](../../rtcdp/destinations/destinations-workspace.md) 阅目标工作区文档。 |
+| UX改进 | 用户可以访问内联表操作，以更轻松地访问主操作，如添加数据、编辑计划和添加区段。 有关详细 [信息，请参](../../destinations/ui/destinations-workspace.md) 阅目标工作区文档。 |
 
-要了解更多信息，请访问目 [标概述](../../rtcdp/destinations/destinations-overview.md)
+要了解更多信息，请访问目 [标概述](../../destinations/home.md)
 
 ## [!DNL Observability Insights] {#observability}
 
@@ -59,7 +59,7 @@ Adobe Experience Platform数据治理是用于管理客户数据并确保遵守�
 
 | 功能 | 描述 |
 | --- | --- |
-| AdobeI/O事件通知 | [!DNL Observability Insights] 利用AdobeI/O事件为多个Experience Platform服务创建事件通知。 通知负载将发送到已配置的网络挂接，然后您可以使用它来自动执行进一步的下游流程。 See the [notifications overview](../../observability/notifications/overview.md) for more information. |
+| Adobe I/O事件通知 | [!DNL Observability Insights] 利用Adobe I/O事件为多项Experience Platform服务创建事件通知。 通知负载将发送到已配置的网络挂接，然后您可以使用它来自动执行进一步的下游流程。 See the [notifications overview](../../observability/notifications/overview.md) for more information. |
 
 有关该 [[!DNL Observability Insights] 服务的](../../observability/home.md) 更多信息，请参阅概述。
 
