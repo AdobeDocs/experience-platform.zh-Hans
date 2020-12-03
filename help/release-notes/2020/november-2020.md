@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 translation-type: tm+mt
-source-git-commit: 6cf9c88f6dc751a4cc877670a89cc99d1efb1b2a
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
 source-wordcount: '2180'
 ht-degree: 3%
@@ -126,7 +126,7 @@ For more information, please see the [[!DNL Offer Decisioning]](https://experien
 | 文件计划 | 对于基于电子邮件的存储和云数据目标，用户可以创建一次性导出或创建每日快照。 |
 | 必填字段 | 用户可以将字段标记为必填，确保只导出包含必填字段的字段。 |
 
-有关详细信息，请参阅目 [标概述](../../rtcdp/destinations/destinations-overview.md)。
+有关详细信息，请参阅目 [标概述](../../destinations/home.md)。
 
 ## Intelligent Services {#intelligent-services}
 
