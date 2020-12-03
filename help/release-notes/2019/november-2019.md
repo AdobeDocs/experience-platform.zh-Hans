@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: 5f120a716cc3396ef7749463bb6052a8ced2fbb4
 workflow-type: tm+mt
 source-wordcount: '1878'
 ht-degree: 2%
@@ -65,7 +65,7 @@ Adobe连接到一个大型的合作伙伴生态系统，更不用说与Adobe Exp
 
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] 是预建的与Adobe实时客户数据平台支持的目标平台集成，以无缝方式向这些合作伙伴激活数据。 有关详细信息，请阅读目 [标概述](../../rtcdp/destinations/destinations-overview.md) 文章。
+[!DNL Destinations] 是预建的与Adobe实时客户数据平台支持的目标平台集成，以无缝方式向这些合作伙伴激活数据。 有关详细信息，请阅读目 [标概述](../../destinations/home.md) 文章。
 
 **可用目标**
 
@@ -74,12 +74,12 @@ Adobe连接到一个大型的合作伙伴生态系统，更不用说与Adobe Exp
 * 广告: [!DNL Google]
 * 电子邮件营销：Adobe Campaign [!DNL Salesforce Marketing Cloud], [!DNL Responsys][!DNL Oracle Eloqua]
 
-有关每 [个目标](../../rtcdp/destinations/destinations-catalog.md) ，请参阅目标目录。
+有关每 [个目标](../../destinations/catalog/overview.md) ，请参阅目标目录。
 
 **已知限制**
 
-* 在初始版本中，不提供允许在激活流 [(激活步](../../rtcdp/destinations/activate-destinations.md#activate-data) )中进行自定义计划计划的控件。
-* 当前无法编辑或删除目标配置。 要绕过此限制，您可以启用或禁用目标详细信息页面右上角 [的目标](../../rtcdp/destinations/destination-details-page.md)。
+* 在初始版本中，不提供允许在激活流 [(激活步](../../destinations/ui/activate-destinations.md#activate-data) )中进行自定义计划计划的控件。
+* 当前无法编辑或删除目标配置。 要绕过此限制，您可以启用或禁用目标详细信息页面右上角 [的目标](../../destinations/ui/destination-details-page.md)。
 * 连接到目标或存储帐户时，当前没有验证帐户详细信息、路径或凭据。 确保输入正确的凭据，并对拼写错误或打字错误进行多次检查。
 * 在初始版本中没有进行凭据续订。 在帐户过期或需要刷新后，您必须创建新的目标连接并重新映射之前映射的区段。
 
