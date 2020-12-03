@@ -5,7 +5,7 @@ title: Adobe Experience PlatformUI指南
 topic: ui guide
 description: 'Adobe Experience Platform '
 translation-type: tm+mt
-source-git-commit: bde9763aafb4ba32877f7ec14873eeae99760a45
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
 source-wordcount: '1597'
 ht-degree: 0%
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 “ **[!UICONTROL 区段]** ”部分显示在IMS组织内创建的区段总数。 此编号在创建新区段时更新。 有关区段的更多信息，请参阅 [分段服务概述](../segmentation/home.md)。
 
-“目 **[!UICONTROL 标]** ”部分显示为IMS组织创建的目标总数。 此编号在创建新目标时更新。 有关目标的更多信息，请参阅目 [标概述](../rtcdp/destinations/destinations-overview.md)。
+“目 **[!UICONTROL 标]** ”部分显示为IMS组织创建的目标总数。 此编号在创建新目标时更新。 有关目标的更多信息，请参阅目 [标概述](../destinations/home.md)。
 
 ### 最近数据
 
@@ -51,7 +51,7 @@ ht-degree: 0%
 
 “最 **[!UICONTROL 近区段]** ”部分列表了IMS组织中最近创建的五个区段定义。 此列表在每次创建新的区段定义时更新。 您可以从列表中选择区段定义以视图有关指定区段定义的更多信息，或选择 **[!UICONTROL 全部视图]** ，以查看所有创建的区段定义的列表。 有关区段的更多信息，请参阅 [分段服务概述](../segmentation/home.md)。
 
-“最 **[!UICONTROL 近目标]** ”部分列表您IMS组织内最近创建的五个目标。 每次创建新目标时，都会更新此列表。 您可以从列表中选择目标，以视图有关指定目标的更多信息，或选择全 **[!UICONTROL 部视图]** ，以查看所有已创建目标的列表。 有关目标的更多信息，请参阅目 [标概述](../rtcdp/destinations/destinations-overview.md)。
+“最 **[!UICONTROL 近目标]** ”部分列表您IMS组织内最近创建的五个目标。 每次创建新目标时，都会更新此列表。 您可以从列表中选择目标，以视图有关指定目标的更多信息，或选择全 **[!UICONTROL 部视图]** ，以查看所有已创建目标的列表。 有关目标的更多信息，请参阅目 [标概述](../destinations/home.md)。
 
 ### 推荐学习
 
@@ -117,7 +117,7 @@ ht-degree: 0%
 
 “ **[!UICONTROL 源]** ”部分允许您创建、更新和删除源连接，允许您将外部源的数据引入平台。 有关源的详细信息，请参阅源 [概述](../sources/home.md)。
 
-“目 **[!UICONTROL 标]** ”部分允许您创建、更新和删除目标，允许您将数据从平台导出到许多外部目标。 有关目标的更多信息，请参阅目 [标概述](../rtcdp/destinations/destinations-overview.md)。
+“目 **[!UICONTROL 标]** ”部分允许您创建、更新和删除目标，允许您将数据从平台导出到许多外部目标。 有关目标的更多信息，请参阅目 [标概述](../destinations/home.md)。
 
 ### [!UICONTROL 客户]
 
@@ -127,7 +127,7 @@ ht-degree: 0%
 
 通过 **[!UICONTROL “身份]** ”部分，您可以创建和管理身份命名空间。 有关“身份”部 [!UICONTROL 分的更多信息] ，包括有关身份命名空间以及如何在平台UI中使用身份的信息，请参阅 [身份命名空间概述](../identity-service/namespaces.md)。
 
-### [!UICONTROL 隐私权]
+### [!UICONTROL 隐私]
 
 “策 **[!UICONTROL 略]** ”部分允许您创建和管理数据使用策略。 要进一步了解如何使用“策略”部分，请阅读 [数据使用策略用户指南](../data-governance/policies/user-guide.md)。 有关数据使用策略的详细信息，请参阅数 [据使用策略概述](../data-governance/policies/overview.md)。
 
