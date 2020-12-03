@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 了解如何创建不同类型的目标并激活数据。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: d29f7c7243ec798abe60fff895b36277996cb4a0
 workflow-type: tm+mt
 source-wordcount: '78'
 ht-degree: 10%
@@ -20,8 +20,8 @@ ht-degree: 10%
 
 ## 电子邮件营销目标 {#email-destinations}
 
-* [创建电子邮件营销目标并激活数据](/help/rtcdp/destinations/email-marketing-api.md)
+* [创建电子邮件营销目标并激活数据](../destinations/api/email-marketing.md)
 
 ## 云存储流目标 {#streaming-destinations}
 
-* [连接到流目标并激活数据](/help/rtcdp/destinations/streaming-destinations-api-tutorial.md)
+* [连接到流目标并激活数据](../destinations/api/streaming-destinations.md)
