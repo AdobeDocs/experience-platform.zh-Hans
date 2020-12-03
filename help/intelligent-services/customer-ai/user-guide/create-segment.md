@@ -5,9 +5,9 @@ title: 根据预测得分创建客户细分
 topic: Create a segment
 description: 当预测运行完成时，用户档案会自动消耗预测倾向得分。 利用客户AI得分丰富用户档案，可以创建客户细分，根据受众的倾向得分查找客户。 本节提供使用区段生成器创建区段的步骤。
 translation-type: tm+mt
-source-git-commit: c5e2ea5daf813bf580a11f0182361197e55c6fe8
+source-git-commit: d29f7c7243ec798abe60fff895b36277996cb4a0
 workflow-type: tm+mt
-source-wordcount: '317'
+source-wordcount: '308'
 ht-degree: 0%
 
 ---
@@ -41,4 +41,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过遵循本教程，您已使用区段生成器成功找到基于受众倾向得分的数据。 您现在可以通过将受众激活到目标来目标。 有关更多 [信息](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html) ，请参阅目标概述。
+通过遵循本教程，您已使用区段生成器成功找到基于受众倾向得分的数据。 您现在可以通过将受众激活到目标来目标。 See the [destinations overview](../../../destinations/home.md) for more information.
