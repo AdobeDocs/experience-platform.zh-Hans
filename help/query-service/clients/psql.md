@@ -5,10 +5,10 @@ title: 与PSQL连接
 topic: connect
 description: 'PSQL是在计算机上安装Postgres时附带的命令行界面。 您可以按照以下说明安装它。 '
 translation-type: tm+mt
-source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
+source-git-commit: 8ffe7c68c87cacb6b54d9634a5204fa24a9986ac
 workflow-type: tm+mt
-source-wordcount: '192'
-ht-degree: 1%
+source-wordcount: '209'
+ht-degree: 0%
 
 ---
 
@@ -71,7 +71,7 @@ psql (PostgreSQL) 9.5.14
 
 >[!IMPORTANT]
 >
->如果您在电脑上，使用文本编辑器删除命令字符串中的换行符，然后复制该字符串。
+>如果您在电脑上，使用文本编辑器删除命令字符串中的换行符，然后复制该字符串。 此外，如果您使用的是版本12.0或更高版本，则需要将其 `PGGSSENCMODE=disable` 添加到连接字符串中。
 
 将命令字符串粘贴到终端或命令窗口中，然后按Enter。
 
