@@ -6,9 +6,9 @@ last-update: March 10, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
-source-wordcount: '840'
+source-wordcount: '838'
 ht-degree: 6%
 
 ---
@@ -77,10 +77,10 @@ Adobe Experience Platform提供丰富的功能集，可采集任何类型和延�
 
 | 目标 | 描述 |
 |--- | ---|
-| 云存储目标 | Adobe实时CDP现在可以将细分作为数据文件提供到您或SFTP [!DNL Amazon S3] 云存储位置。 这使您能够通过CSV或制表符分隔的文件，将受众及其用户档案属性发送到您的内部系统。 |
-| 广告目标 | 目 [!DNL Google] 标卡现在分为三个目标卡，用于Adobe实时 [!DNL Google] CDP中当前支持的三个不同平台： [!DNL Google Ads]、 [!DNL Google Ad Manager]显示 [!DNL Google] 和视频360。 |
+| 云存储目标 | 实时CDP现在可以将细分作为数据文件提供给您或SFTP [!DNL Amazon S3] 云存储位置。 这使您能够通过CSV或制表符分隔的文件，将受众及其用户档案属性发送到您的内部系统。 |
+| 广告目标 | 目 [!DNL Google] 标卡现在分为三个目标卡，对于实时CDP中 [!DNL Google] 当前支持的三个不同平台： [!DNL Google Ads]、 [!DNL Google Ad Manager]显示 [!DNL Google] 和视频360。 |
 
-要了解更多信息，请访问目 [标概述](../../rtcdp/destinations/destinations-overview.md)
+要了解更多信息，请访问目 [标概述](../../destinations/home.md)
 
 ## [!DNL Identity Service] {#identity}
 
