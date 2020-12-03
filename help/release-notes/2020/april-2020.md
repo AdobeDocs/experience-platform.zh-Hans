@@ -6,9 +6,9 @@ last-update: April 13, 2020
 author: ens71067
 keywords: release notes;
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
-source-wordcount: '972'
+source-wordcount: '969'
 ht-degree: 8%
 
 ---
@@ -94,14 +94,14 @@ Adobe Experience Platform [!DNL Data Governance] 是用于管理客户数据并�
 
 **新目标**
 
-Adobe实时CDP现在支持向50多个扩展进行数据激活 [!DNL Experience Cloud Launch] ，从而支持分析、个性化和其他使用案例。 有关详细信息，请参阅以下内容：
+实时CDP现在支持向50多个扩展进行数据激活 [!DNL Experience Cloud Launch] ，从而支持分析、个性化和其他使用案例。 有关详细信息，请参阅以下内容：
 
 | 文档 | 描述 |
 |--- | ---|
-| [目标类型和类别](/help/rtcdp/destinations/destination-types.md) | 本文介绍了Adobe实时CDP接口中连接和扩展之间的区别，并建议何时使用这些目标。 |
-| [Experience Platform Launch扩展](/help/rtcdp/destinations/experience-platform-launch-extensions.md) | 本页介绍什 [!DNL Launch] 么是扩展，列表使用这些扩展的用例，以及Adobe实时CDP中每个扩 [!DNL Launch] 展的文档链接。 |
+| [目标类型和类别](../../destinations/destination-types.md) | 本文介绍了实时CDP界面中连接和扩展之间的区别，并建议何时使用这些目标。 |
+| [Experience Platform Launch扩展](../../destinations/catalog/launch-extensions/overview.md) | 本页介绍什 [!DNL Launch] 么是扩展，列表使用这些扩展的用例，以及指向实时CDP中每个 [!DNL Launch] 扩展的文档的链接。 |
 
-有关详细信息，请参阅目 [标概述](/help/rtcdp/destinations/destinations-overview.md)。
+有关详细信息，请参阅目 [标概述](../../destinations/home.md)。
 
 ## [!DNL Privacy Service] {#privacy}
 
