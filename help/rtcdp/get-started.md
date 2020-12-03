@@ -2,12 +2,12 @@
 keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp;rtcdp
 title: 实时客户数据平台入门
 seo-title: 实时客户数据平台入门
-description: ' 实时客户数据平台的示例情景'
-seo-description: ' 实时客户数据平台的示例情景'
+description: 实时客户数据平台的示例情景
+seo-description: 实时客户数据平台的示例情景
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: 8369bd517639cc66eeb95a811c3ddf46b8c4c48d
 workflow-type: tm+mt
-source-wordcount: '2318'
+source-wordcount: '2317'
 ht-degree: 1%
 
 ---
@@ -237,7 +237,7 @@ Loyalty member
 
 单击“ **[!UICONTROL 发送到目标”]**。
 
-在Adobe实时CDP中，Luma可以无缝地对受众细分采取行动，以实现个性化。\
+在实时CDP中，Luma可以无缝地对其受众细分采取行动，以实现个性化。\
 在此，我们将看到Luma可以将此目标发送到的所有目标，包括Adobe和非Adobe解决方案：
 
 ![image](assets/luma-dest.png)
