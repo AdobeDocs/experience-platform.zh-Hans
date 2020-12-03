@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: d29f7c7243ec798abe60fff895b36277996cb4a0
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '581'
 ht-degree: 7%
 
 ---
@@ -46,14 +46,14 @@ Adobe Experience Platform 现有功能的更新包括：
 
 | 目标 | 描述 |
 |--- | ---|
-| [!DNL Google Customer Match] | Google客户匹配允许您使用线上和线下数据在Google自有和运营的资产中触及客户并与其重新互动，例如： [!DNL Search]、 [!DNL Shopping]Gmail和YouTube。 <br><br> 请访 [!DNL Google Customer Match] 问目 [标目录中的页](/help/rtcdp/destinations/google-customer-match-destination.md) ，以了解有关目标以及如何在Adobe实时CDP中设置它的更多信息。 |
+| [!DNL Google Customer Match] | Google客户匹配允许您使用线上和线下数据在Google自有和运营的资产中触及客户并与其重新互动，例如： [!DNL Search]、 [!DNL Shopping]Gmail和YouTube。 <br><br> 请访 [!DNL Google Customer Match] 问目 [标目录中的页](../../destinations/catalog/advertising/google-customer-match.md) ，以了解有关目标以及如何在实时CDP中设置它的更多信息。 |
 
 **新增功能**
 
 | 功能 | 描述 |
 |------- | -----------|
-| 自定义文件名编辑器 | 更新至电子邮件营销目标和云激活目标的存储工作流，以便编辑导出文件的名称。 有关详细信息，请参阅激活 [ 工作流中](/help/rtcdp/destinations/activate-destinations.md#configure) 的配置步骤。 |
-| 推荐属性 | 更新至电子邮件营销目标和云激活目标的存储工作流，以显示您要添加到导出文件的推荐属性。 有关详细信息，请参阅激活 [工作流中的](/help/rtcdp/destinations/activate-destinations.md#select-attributes) “选择属性”步骤。 |
+| 自定义文件名编辑器 | 更新至电子邮件营销目标和云激活目标的存储工作流，以便编辑导出文件的名称。 有关详细信息，请参阅激活 [ 工作流中](../../destinations/ui/activate-destinations.md#configure) 的配置步骤。 |
+| 推荐属性 | 更新至电子邮件营销目标和云激活目标的存储工作流，以显示您要添加到导出文件的推荐属性。 有关详细信息，请参阅激活 [工作流中的](../../destinations/ui/activate-destinations.md#select-attributes) “选择属性”步骤。 |
 
 ## [!DNL Real-time Customer Data Platform] {#rtcdp}
 
