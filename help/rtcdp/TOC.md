@@ -5,7 +5,7 @@ audience: user
 user-guide-title: 实时客户数据平台指南
 user-guide-description: 将多个企业来源的已知和匿名数据相结合，以创建客户档案，根据这些档案创建细分受众，并将这些细分激活到第三方目标。
 translation-type: tm+mt
-source-git-commit: 44a129e5a92fc9994e43c199bf902459c012eca3
+source-git-commit: 24e8f6bce76c772567f9ef017ad82bdb459db1bf
 workflow-type: tm+mt
 source-wordcount: '525'
 ht-degree: 16%
@@ -101,7 +101,7 @@ ht-degree: 16%
          * [PebblePost扩展](destinations/pebblepost-extension.md)
          * [SalesforceMarketing Cloud](destinations/salesforce-marketing-cloud-destination.md)
       * Experience Platform Launch extensions{#launch-extensions}
-         * [Experience Platform Launch扩展概述](/help/rtcdp/destinations/experience-platform-launch-extensions.md)
+         * [Experience Platform Launch扩展概述](destinations/experience-platform-launch-extensions.md)
       * 移动互动目标 {#mobile-engagement-destinations}
          * [移动互动目标概述](destinations/mobile-destinations.md)
          * [飞艇属性](destinations/airship-attributes-destination.md)
