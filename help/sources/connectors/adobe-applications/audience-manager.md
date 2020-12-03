@@ -5,7 +5,7 @@ title: Audience Manager连接器
 topic: overview
 description: Adobe Audience Manager数据连接器将在Adobe Audience Manager收集的第一方数据传送到Adobe Experience Platform。 Audience Manager连接器将三类别数据引入平台。
 translation-type: tm+mt
-source-git-commit: 4ab5c3a8f9dbecc27686c7ce7db4f66ac18c2d2a
+source-git-commit: e51f750dae2a76cd05076edfe8c6423efe949891
 workflow-type: tm+mt
 source-wordcount: '798'
 ht-degree: 0%
@@ -74,4 +74,4 @@ Adobe Audience Manager在目录中创建一个连接：Audience Manager连接。
 | Audience Manager数据 | 延迟 | 注释 |
 | --- | --- | --- |
 | 实时数据 | &lt; 35 分钟. | 从在Audience Manager边缘节点捕获到在平台数据湖上显示的时间。 |
-| 用户档案数据 | &lt; 2 天 | 从通过DCS/PCS Edge数据和已载入数据捕获的时间，被处理到用户用户档案，然后以用户档案显示。 此数据今天不直接登陆Platform Data Lake。 用户档案切换可在Audience Manager用户档案数据集上启用，以直接将此数据引入用户档案。 |
+| 用户档案数据 | &lt; 2 天 | 从通过DCS/PCS Edge数据和已载入数据捕获的时间，被处理到用户用户档案，然后以用户档案显示。 此数据今天不直接登陆Platform Data Lake。 用户档案切换可启用Audience Manager用户档案数据集，以将此数据直接引入用户档案。 |
