@@ -5,7 +5,7 @@ title: 分段服务用户指南
 topic: ui guide
 description: Adobe Experience Platform分段服务为创建和管理段定义提供了用户界面。
 translation-type: tm+mt
-source-git-commit: 1aff9329e1ae97caa34a205bbfbbc6f51b54b8fb
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
 source-wordcount: '1449'
 ht-degree: 0%
@@ -102,7 +102,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> 目标是可用的功 [!DNL Real-time Customer Data Platform]能，允许您将数据导出到外部平台。 有关目标的更多信息，请阅读目 [标概述](../../rtcdp/destinations/destinations-overview.md)。 要了解如何将区段激活到目标，请阅读将区 [段激活到目标的指南](../../rtcdp/destinations/activate-destinations.md)。
+> 目标是可用的功 [!DNL Real-time Customer Data Platform]能，允许您将数据导出到外部平台。 有关目标的更多信息，请阅读目 [标概述](../../destinations/home.md)。 要了解如何将区段激活到目标，请阅读将区 [段激活到目标的指南](../../destinations/ui/activate-destinations.md)。
 
 ### 用户档案范例
 
@@ -174,7 +174,7 @@ ht-degree: 0%
 >
 >策略违规仅在创建已分配到目标的区段时适用。
 
-创建完细分后，Adobe Experience Platform数据管理将对细分进行分析，以确保细分不违反政策。 有关更多 [[!DNL Data Governance] 信息](../../data-governance/home.md) ，请参阅概述。
+创建完细分后，Adobe Experience Platform数据管理将对细分进行分析，以确保细分不违反政策。 See the [[!DNL Data Governance] overview](../../data-governance/home.md) for more information.
 
 ![](../images/ui/overview/segment-dule-policy-violations.png)
 
