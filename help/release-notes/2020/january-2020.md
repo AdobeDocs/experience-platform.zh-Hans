@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 translation-type: tm+mt
-source-git-commit: a362b67cec1e760687abb0c22dc8c46f47e766b7
+source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
 workflow-type: tm+mt
-source-wordcount: '894'
+source-wordcount: '880'
 ht-degree: 7%
 
 ---
@@ -19,10 +19,10 @@ ht-degree: 7%
 
 Adobe Experience Platform 现有功能的更新包括：
 
-* [[!DNL体验数据模型(XDM)系统]](#xdm)
-* [[!DNLPrivacy Service]](#privacy)
-* [[!DNL源]](#sources)
-* [[!DNL目标]](#destinations)
+* [[!DNL Experience Data Model (XDM) System]](#xdm)
+* [[!DNL Privacy Service]](#privacy)
+* [[!DNL Sources]](#sources)
+* [[!DNL Destinations]](#destinations)
 
 ## [!DNL Experience Data Model] (XDM)系统 {#xdm}
 
@@ -92,7 +92,7 @@ Adobe Experience Platform可以从外部来源收集数据，同时允许您使�
 
 ## 目标 {#destinations}
 
-在 [Adobe实时CDP中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，以无缝方式将数据激活给这些合作伙伴。
+在实 [时CDP中](../../rtcdp/overview.md)，目标是预建的与目标平台集成，这些平台可以无缝地向这些合作伙伴激活数据。
 
 **新增功能**
 
@@ -112,4 +112,4 @@ Adobe Experience Platform可以从外部来源收集数据，同时允许您使�
 
 * None
 
-有关更多 [信息](../../rtcdp/destinations/destinations-overview.md) ，请参阅目标概述。
+See the [Destinations overview](../../destinations/home.md) for more information.
