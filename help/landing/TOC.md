@@ -2,13 +2,13 @@
 product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 概述
-breadcrumb-title: Experience Platform概述
-user-guide-description: 了解 Experience Platform 如何让客户能够实时提供个性化体验。
+breadcrumb-title: Experience Platform 概述
+user-guide-description: 了解 Experience Platform 如何让您可以为客户实时提供个性化体验。
 translation-type: tm+mt
-source-git-commit: 36707e95a63b6be60d1d7badbe1cdc9d0bc3548c
+source-git-commit: 5761394285e56214fd59e31d530756eed1f5ad08
 workflow-type: tm+mt
-source-wordcount: '402'
-ht-degree: 44%
+source-wordcount: '399'
+ht-degree: 45%
 
 ---
 
@@ -45,7 +45,7 @@ ht-degree: 44%
    * [数据科学工作区](https://docs.adobe.com/content/help/en/experience-platform/data-science-workspace/home.html)
    * [Debugger](https://docs.adobe.com/content/help/zh-Hans/debugger/using/experience-cloud-debugger.html)
    * [调试器2.0（测试版）](https://docs.adobe.com/content/help/zh-Hans/debugger/using-v2/experience-cloud-debugger.html)
-   * [目标](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/destinations/destinations-overview.html)
+   * [目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html)
    * [ETL（提取、转换、加载）](https://docs.adobe.com/content/help/en/experience-platform/etl/home.html)
    * [标识服务](https://docs.adobe.com/content/help/zh-Hans/experience-platform/identity/home.html)
    * [Intelligent Services](https://docs.adobe.com/content/help/en/experience-platform/intelligent-services/home.html)
