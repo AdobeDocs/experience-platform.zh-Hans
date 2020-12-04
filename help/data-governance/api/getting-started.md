@@ -7,13 +7,13 @@ description: 策略服务API允许您创建和管理与Adobe Experience Platform
 translation-type: tm+mt
 source-git-commit: 3376d6cace9ab196f457e2bf7b84cde06693103c
 workflow-type: tm+mt
-source-wordcount: '440'
+source-wordcount: '427'
 ht-degree: 0%
 
 ---
 
 
-# API入 [!DNL Policy Service] 门
+# Getting started with the [!DNL Policy Service] API
 
 API [!DNL Policy Service] 允许您创建和管理与Adobe Experience Platform相关的各种资源 [!DNL Data Governance]。 此文档介绍了在尝试调用API之前需要了解的核心概 [!DNL Policy Service] 念。
 
@@ -21,9 +21,9 @@ API [!DNL Policy Service] 允许您创建和管理与Adobe Experience Platform�
 
 使用开发人员指南需要对使用数据管理功能时 [!DNL Experience Platform] 涉及的各种服务进行有效的了解。 在开始使用之前，请 [!DNL Policy Service API]查阅以下服务的文档：
 
-* [[!DNL数据管理]](../home.md):强制执行数据使 [!DNL Experience Platform] 用合规性的框架。
-* [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-* [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL Data Governance]](../home.md):强制执行数据使 [!DNL Experience Platform] 用合规性的框架。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL Real-time Customer Profile]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 * [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 ## 读取示例API调用
