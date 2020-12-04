@@ -7,7 +7,7 @@ description: Catalog Service API允许通过使用请求查询参数筛选响应
 translation-type: tm+mt
 source-git-commit: 71678b10c9e137016ea404305b272508b9c8cabe
 workflow-type: tm+mt
-source-wordcount: '2084'
+source-wordcount: '2077'
 ht-degree: 1%
 
 ---
@@ -207,8 +207,8 @@ curl -X GET \
 * 标记名称对于您的IMS组织是唯一的。
 * Adobe过程可能会利用某些行为的标签。 这些标记的名称前缀有“adobe”作为标准。 因此，在声明标记名称时应避免此约定。
 * 以下标记名称保留为在整个组 [!DNL Experience Platform]织中使用，因此不能声明为组织的标记名称：
-   * `unifiedProfile`:此标记名称是为要由[!DNL实时客 [户用户档案]摄取的数据集保留的](../../profile/home.md)。
-   * `unifiedIdentity`:此标记名称保留给要由[!DNL Identity Service] [摄取的数据集](../../identity-service/home.md)。
+   * `unifiedProfile`:此标记名称保留给要摄取的数据集 [[!DNL Real-time Customer Profile]](../../profile/home.md)。
+   * `unifiedIdentity`:此标记名称保留给要摄取的数据集 [[!DNL Identity Service]](../../identity-service/home.md)。
 
 以下是包含属性的数据集的 `tags` 示例。 该属性中的标记采用键值对的形式，每个标记值都显示为包含单个字符串的数组：
 
