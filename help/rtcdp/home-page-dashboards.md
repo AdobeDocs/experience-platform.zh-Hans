@@ -5,7 +5,7 @@ seo-title: 实时客户数据平台主页和仪表板
 description: 仪表板、主页和 Adobe Experience Platform 的首次用户体验
 seo-description: 仪表板、主页和 Adobe Experience Platform 的首次用户体验
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: f2fdc3b75d275698a4b1e4c8969b1b840429c919
 workflow-type: tm+mt
 source-wordcount: '633'
 ht-degree: 4%
@@ -68,7 +68,7 @@ Some information is shown in different ways on both the leaderboard and metric c
 
 **[!UICONTROL 目标]** 显示为组织创建的目标总数。 此编号在创建新目标时更新。
 
-有关目标的详细信息，请参阅 [目标概述](destinations/destinations-overview.md)。
+有关目标的详细信息，请参阅 [目标概述](destinations/overview.md)。
 
 <!-- ### Successful profile records
 
@@ -134,4 +134,4 @@ The number of failed profile records is updated hourly. -->
 
 单击目标以视图该项目的详细信息，或 **[!UICONTROL 全部视图]** 以查看有关更多目标的信息。
 
-有关目标的详细信息，请参阅 [目标概述](destinations/destinations-overview.md)。
+有关目标的详细信息，请参阅 [目标概述](destinations/overview.md)。
