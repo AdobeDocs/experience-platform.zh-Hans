@@ -15,7 +15,7 @@ ht-degree: 9%
 
 # 教程：通过Adobe启动实施网站标记
 
-本教程介绍如何使用Adobe启动实施网站标签以向Adobe Experience Platform发送数据。
+本教程介绍如何使用Adobe启动实施网站标签以将数据发送到Adobe Experience Platform。
 
 ## 先决条件
 
@@ -35,7 +35,7 @@ ht-degree: 9%
 
 首先，安装Adobe Experience Platform [!DNL Web SDK] 扩展。
 
-1. 在中 [!DNL Launch]，打开“扩 **[!UICONTROL 展]** ”选项卡。
+1. In [!DNL Launch], open the **[!UICONTROL Extensions]** tab.
 
    ![image](assets/launch-overview.png)
 
