@@ -7,7 +7,7 @@ description: '身份命名空间是 Identity Service 的组件，充当与身份
 translation-type: tm+mt
 source-git-commit: dfb16c1808ac61e6c4f4d97c08ac3d1dcc8499a8
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '759'
 ht-degree: 4%
 
 ---
@@ -21,9 +21,9 @@ Identity namespaces are a component of [[!DNL Identity Service]](./home.md) that
 
 与身份命名空间合作需要了解所涉的Adobe Experience Platform各项服务。 在开始与命名空间合作之前，请查看以下服务的相关文档：
 
-- [[!DNL实时客户用户档案]](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
-- [[!DNL标识服务]](./home.md):通过跨设备和系统桥接身份，更好地视图个别客户及其行为。
-- [[!DNLPrivacy Service]](../privacy-service/home.md):身份命名空间用于遵守一般数据保护规定(GDPR)，在该规定中，GDPR请求可以与命名空间相关。
+- [[!DNL Real-time Customer Profile]](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+- [[!DNL Identity Service]](./home.md):通过跨设备和系统桥接身份，更好地视图个别客户及其行为。
+- [[!DNL Privacy Service]](../privacy-service/home.md):身份命名空间用于遵守一般数据保护规定(GDPR)，在该规定中，GDPR请求可以与命名空间相关。
 
 ## 了解身份命名空间
 
