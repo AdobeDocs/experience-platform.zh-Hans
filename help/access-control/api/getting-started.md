@@ -7,8 +7,8 @@ description: Adobe Experience Platform的访问控制允许您通过使用Adobe 
 translation-type: tm+mt
 source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
 workflow-type: tm+mt
-source-wordcount: '379'
-ht-degree: 3%
+source-wordcount: '375'
+ht-degree: 4%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 [!DNL Access control] 通 [!DNL Experience Platform] 过Adobe Admin Console [管](https://adminconsole.adobe.com)。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。 有关更多 [信息](../home.md) ，请参阅访问控制概述。
 
-此开发人员指南提供如何格式化您对[! [DNL访问控制API]的请求](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)，并涵盖以下操作：
+此开发人员指南提供有关如何设置请求格式的信 [[!DNL Access Control API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)息，并涵盖以下操作：
 
 - [列表权限和资源类型的名称](./permissions-and-resource-types.md)
 - [视图当前用户的有效策略](./effective-policies.md)
