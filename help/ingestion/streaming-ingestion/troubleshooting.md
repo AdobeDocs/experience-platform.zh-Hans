@@ -7,7 +7,7 @@ description: 此文档提供有关在Adobe Experience Platform流式摄取的常
 translation-type: tm+mt
 source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '1012'
+source-wordcount: '1008'
 ht-degree: 0%
 
 ---
@@ -101,4 +101,4 @@ Adobe Experience Platform [!DNL Data Ingestion] 提供REST风格的API，您可�
 
 有两种身份命名空间:默认和自定义。 使用自定义命名空间时，请确保命名空间已在中注册 [!DNL Identity Service]。 有关使用 [默认命名空间和自定义](../../identity-service/namespaces.md) ，请参阅标识命名空间概述。
 
-您可以使用 [[!DNLExperience PlatformUI]](https://platform.adobe.com) ，查看有关消息失败接收原因的更多信息。 单击 **[!UICONTROL 左侧导航]** 中的“监视”，然后视图“ **[!UICONTROL 流式端到端”选项卡]** ，以查看在选定时间段内流化的消息批。
+您可以使用 [[!DNL Experience Platform UI]](https://platform.adobe.com) 查看邮件摄取失败原因的更多信息。 单击 **[!UICONTROL 左侧导航]** 中的“监视”，然后视图“ **[!UICONTROL 流式端到端”选项卡]** ，以查看在选定时间段内流化的消息批。
