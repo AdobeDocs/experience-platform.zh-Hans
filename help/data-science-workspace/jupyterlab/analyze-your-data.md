@@ -8,7 +8,7 @@ description: 本教程重点介绍如何使用在数据科学工作区中构建�
 translation-type: tm+mt
 source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
-source-wordcount: '1731'
+source-wordcount: '1723'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 0%
 
 介绍了以下概念：
 
-- **[!DNL JupyterLab]:**[[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) 是Project Jupyter的下一代基于Web的界面，并紧密集成到其中 [!DNL Adobe Experience Platform]。
+- **[!DNL JupyterLab]:**[[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) 是Project Jupyter的下一代基于web的界面，并紧密集成到其中 [!DNL Adobe Experience Platform]。
 - **批：** 数据集由批量组成。 批是在一段时间内收集的一组数据，并作为单个单元一起处理。 将数据添加到数据集时会创建新批。
-- **数据访问SDK（已弃用）:** 数据访问SDK现已弃用。 请使用 [[!DNL平台SDK]指南](../authoring/platform-sdk.md) 。
+- **数据访问SDK（已弃用）:** 数据访问SDK现已弃用。 请使用指 [[!DNL Platform SDK]](../authoring/platform-sdk.md) 南。
 
 ## 在数据科学工作区中探索笔记本
 
@@ -92,7 +92,7 @@ ht-degree: 0%
 
 >[!TIP]
 >
->要转换代 [码，请参阅[!DNL](../authoring/platform-sdk.md) Platform SDK]指南。
+>请参阅指 [[!DNL Platform SDK]](../authoring/platform-sdk.md) 南以转换代码。
 
 ```PYTHON
 from data_access_sdk_python.reader import DataSetReader
