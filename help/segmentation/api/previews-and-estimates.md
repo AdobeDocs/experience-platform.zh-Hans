@@ -7,7 +7,7 @@ description: 在开发细分定义时，您可以使用Adobe Experience Platform
 translation-type: tm+mt
 source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '773'
 ht-degree: 2%
 
 ---
@@ -172,7 +172,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `results` | 实体ID的列表及其相关身份。 提供的链接可用于使用[!DNL用户档案访 [问API]查找指定的实体](../../profile/api/entities.md)。 |
+| `results` | 实体ID的列表及其相关身份。 提供的链接可用于使用查找指定的实体 [[!DNL Profile Access API]](../../profile/api/entities.md)。 |
 
 ## 检索特定评估作业的结果 {#get-estimate}
 
