@@ -5,7 +5,7 @@ seo-title: Adobe Campaign
 description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 seo-description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 translation-type: tm+mt
-source-git-commit: 0bb1622895b1e0f97fc47b5c61d456bc369746c8
+source-git-commit: f2fdc3b75d275698a4b1e4c8969b1b840429c919
 workflow-type: tm+mt
 source-wordcount: '645'
 ht-degree: 1%
@@ -65,22 +65,6 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 ## 导出的数据 {#exported-data}
 
 对 [!DNL Adobe Campaign] 于目标，实时CDP会在您提供的存储位置 `.txt` 创建制 `.csv` 表符分隔的或文件。 有关这些文件的详细信息，请参 [阅区段存储教程中的电子邮件营销目](../../ui/activate-destinations.md#esp-and-cloud-storage) 标和云激活目标。
-
-<!--
-
-Expect a new file to be created in your storage location every day. The file format is:
-
-`Adobe_Campaign_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
-
-```
-Adobe_Campaign_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv
-Adobe_Campaign_segment12341e18-abcd-49c2-836d-123c88e76c39_20200409052200.csv
-Adobe_Campaign_segment12341e18-abcd-49c2-836d-123c88e76c39_20200410061130.csv
-```
-
-The presence of these files in your storage location is confirmation of successful activation. To understand how the exported files are structured, you can [download a sample .csv file](/help/rtcdp/destinations/assets/sample_export_file_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv). This sample file includes the profile attributes `person.firstname`, `person.lastname`, `person.gender`, `person.birthyear`, and `personalEmail.address`.
-
--->
 
 ## 将数据导入设置为Adobe Campaign {#import-data-into-campaign}
 
