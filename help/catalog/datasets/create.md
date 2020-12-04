@@ -7,7 +7,7 @@ description: 此文档提供了使用Adobe Experience PlatformAPI创建数据集
 translation-type: tm+mt
 source-git-commit: 1b398e479137a12bcfc3208d37472aae3d6721e1
 workflow-type: tm+mt
-source-wordcount: '1259'
+source-wordcount: '1251'
 ht-degree: 1%
 
 ---
@@ -22,8 +22,8 @@ ht-degree: 1%
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
 * [批量摄取](../../ingestion/batch-ingestion/overview.md): [!DNL Experience Platform] 允许您将数据作为批处理文件进行收录。
-* [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-* [[!DNL沙箱]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
