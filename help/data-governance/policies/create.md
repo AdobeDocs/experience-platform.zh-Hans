@@ -8,7 +8,7 @@ description: 策略服务API允许您创建和管理数据使用策略，以确�
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1209'
+source-wordcount: '1201'
 ht-degree: 2%
 
 ---
@@ -24,9 +24,9 @@ ht-degree: 2%
 
 本教程需要对创建和评估策略时涉及的下列主要概念有充分的了解：
 
-* [[!DNL数据管理]](../home.md):强制执行数据使 [!DNL Platform] 用合规性的框架。
+* [[!DNL Data Governance]](../home.md):强制执行数据使 [!DNL Platform] 用合规性的框架。
 * [数据使用标签](../labels/overview.md):数据使用标签应用于XDM数据字段，指定如何访问该数据的限制。
-* [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 * [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 在开始本教程之前，请查阅开发 [人员指南](../api/getting-started.md) ，了解成功调用API所需的重要信息，包括必需的头 [!DNL Policy Service] 以及如何读取示例API调用。
