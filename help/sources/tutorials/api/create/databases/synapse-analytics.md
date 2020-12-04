@@ -1,10 +1,10 @@
 ---
 keywords: Experience Platform;home;popular topics;Synapse;synapse;Azure Synapse Analytics
 solution: Experience Platform
-title: 使用Flow Service API创建Azure突触分析连接器
+title: 使用Flow Service API创建Azure synapse分析连接器
 topic: overview
 type: Tutorial
-description: 本教程使用Flow Service API指导您完成将Azure突触分析（以下简称“突触”）连接到Experience Platform的步骤。
+description: 本教程使用Flow Service API指导您完成将Azure synapse分析（以下称“突触”）连接到Experience Platform的步骤。
 translation-type: tm+mt
 source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
@@ -18,7 +18,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->Azure Synapse Analytics连接器处于测试状态。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
+>azure synapse分析连接器为测试版。 有关使用 [测试版标记](../../../../home.md#terms-and-conditions) 的连接器的更多信息，请参阅源概述。
 
 [!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
