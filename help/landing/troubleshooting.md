@@ -25,7 +25,7 @@ ht-degree: 4%
 
 ## 什么是 [!DNL Experience Platform] API? {#what-are-experience-platform-apis}
 
-[!DNL Experience Platform] 优惠多个使用HTTP请求访问资源的RESTful [!DNL Platform] API。 这些服务API每个都公开多个端点，并允许您对列表(GET)、查找(GET)、编辑(PUT和／或PATCH)和删除(DELETE)资源执行操作。 有关每个服务可用的特定端点和操作的详细信息，请参 [阅AdobeI/O的](https://www.adobe.io/apis/experienceplatform/home/api-reference.html) API参考文档。
+[!DNL Experience Platform] 优惠多个使用HTTP请求访问资源的RESTful [!DNL Platform] API。 这些服务API每个都公开多个端点，并允许您对列表(GET)、查找(GET)、编辑(PUT和／或PATCH)和删除(DELETE)资源执行操作。 有关每个服务可用的特定端点和操作的详细信息，请参阅 [Adobe I/O的API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html) 文档。
 
 ## 如何设置API请求的格式？ {#how-do-i-format-an-api-request}
 
@@ -175,7 +175,7 @@ API中的许多PATCH [!DNL Platform] 操作 [都使用JSON指](https://tools.iet
 }
 ```
 
-当标题中提供的访问令牌无效时 `Authorization` 显示此错误消息。 确保已正确输入令牌，或 [在AdobeI](../tutorials/authentication.md) /O控制台中生成新令牌。
+当标题中提供的访问令牌无效时 `Authorization` 显示此错误消息。 确保已正确输入令牌，或在 [Adobe I/O控制台中生](../tutorials/authentication.md) 成新令牌。
 
 ### 需要API密钥
 
@@ -197,7 +197,7 @@ API中的许多PATCH [!DNL Platform] 操作 [都使用JSON指](https://tools.iet
 }
 ```
 
-当提供的API密钥头()的值无效时，将显`x-api-key`示此错误消息。 再次尝试之前，请确保输入的密钥正确无误。 如果您不知道您的API密钥，可以在AdobeI/O控 [制台中找到它](https://console.adobe.io):在“集 **成** ”选项卡中，导 **航到“概述** ”部分，以查找特定集成的API密钥在“客户端凭据” **下的位置**。
+当提供的API密钥头()的值无效时，将显`x-api-key`示此错误消息。 再次尝试之前，请确保输入的密钥正确无误。 如果您不知道您的API密钥，可以在Adobe I/O控制台中找 [到它](https://console.adobe.io):在“集 **成** ”选项卡中，导 **航到“概述** ”部分，以查找特定集成的API密钥在“客户端凭据” **下的位置**。
 
 
 ### 缺少标题
@@ -220,7 +220,7 @@ API中的许多PATCH [!DNL Platform] 操作 [都使用JSON指](https://tools.iet
 }
 ```
 
-当用户或AdobeI/O集成(标题中的 [访问令牌](#how-do-i-get-an-access-token)`Authorization` 标识)无权调用标题中提 [!DNL Experience Platform] 供的IMS组织的API时，将显示此错 `x-gw-ims-org-id` 误消息。 在再次尝试之前，请确保已在头中为IMS组织提供了正确的ID。 如果您不知道您的组织ID，您可以在AdobeI/O控 [制台中找到它](https://console.adobe.io):在“集 **成** ”选项卡中，导 **航至“概述** ”部分，以查找特定集成的“客户端凭据 **”下的ID**。
+当用户或Adobe I/O集成(标题中的 [访问令牌](#how-do-i-get-an-access-token)`Authorization` 标识)无权调用标题中提 [!DNL Experience Platform] 供的IMS组织的API时，将显示此错 `x-gw-ims-org-id` 误消息。 在再次尝试之前，请确保已在头中为IMS组织提供了正确的ID。 如果您不知道您的组织ID，可以在Adobe I/O控制台中找 [到它](https://console.adobe.io):在“集 **成** ”选项卡中，导 **航至“概述** ”部分，以查找特定集成的“客户端凭据 **”下的ID**。
 
 ### 未指定有效的内容类型
 
