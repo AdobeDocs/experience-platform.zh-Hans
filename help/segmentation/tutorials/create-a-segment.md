@@ -8,7 +8,7 @@ description: 本文档提供了一个教程，用于使用Adobe Experience Platf
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '916'
+source-wordcount: '894'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 # 创建区段
 
-本文档提供了使用[!DNLAdobe Experience Platform分段服务API]开发、测 [试、预览和保存段定义的教程](../api/getting-started.md)。
+本文档提供了使用开发、测试、预览和保存区段定义的教程 [[!DNL Adobe Experience Platform Segmentation Service API]](../api/getting-started.md)。
 
 有关如何使用用户界面构建区段的信息，请参阅“区段 [构建器指南”](../ui/overview.md)。
 
@@ -24,9 +24,9 @@ ht-degree: 0%
 
 本教程需要对创建受众段时涉及的 [!DNL Adobe Experience Platform] 各种服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [[!DNL实时客户用户档案]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-- [[!DNLAdobe Experience Platform分段服务]](../home.md):允许您根据实时受众数据构建用户档案细分。
-- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [[!DNL Real-time Customer Profile]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md):允许您根据实时受众数据构建用户档案细分。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
 
