@@ -8,7 +8,7 @@ description: 本教程介绍从客户成功系统检索数据并通过源连接�
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1624'
+source-wordcount: '1609'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 [!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程介绍从第三方客户成功系统检索数据并通过源连接 [!DNL Platform] 器和[!DNL流服 [务] API将其引入](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 的步骤。
+本教程介绍从第三方客户成功系统检索数据并通过源连接器和API [!DNL Platform] 将其引入的 [[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 步骤。
 
 ## 入门指南
 
@@ -26,11 +26,11 @@ ht-degree: 1%
 
 本教程还要求您对Adobe Experience Platform的以下组件有充分的了解：
 
-* [[!DNL体验数据模型(XDM)系统]](../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    * [模式合成基础](../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
    * [模式注册开发人员指南](../../../../xdm/api/getting-started.md):包括成功执行对模式注册表API的调用时需要了解的重要信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
-* [[!DNL目录服务]](../../../../catalog/home.md):目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
-* [[!DNL批量摄取]](../../../../ingestion/batch-ingestion/overview.md):批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
+* [[!DNL Catalog Service]](../../../../catalog/home.md):目录是数据位置和谱系的记录系统 [!DNL Experience Platform]。
+* [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md):批处理摄取API允许您将数据作为批 [!DNL Experience Platform] 处理文件收录。
 * [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供您需要了解的其他信息，以便使用API成功连接到客户成功 [!DNL Flow Service] 系统。
