@@ -44,4 +44,4 @@ Adobe Experience Platform使您能够将来自多个来源的数据整合在一�
 
 ## 多实体分割
 
-多实体细分是指能够根据产 [!DNL Profile] 品、商店或其他非用户档案类使用额外数据扩展数据。 连接后，来自其他类的数据将变得像模式本身一样可 [!DNL Profile] 用。 要了解移动，请参 [阅多实体细分文档](../segmentation/multi-entity-segmentation.md)。
+多实体细分是指能够根据产 [!DNL Profile] 品、商店或其他非用户档案类使用额外数据扩展数据。 连接后，来自其他类的数据就变得像它们是模式的本机一样 [!DNL Profile] 可用。 要了解移动，请参 [阅多实体细分文档](../segmentation/multi-entity-segmentation.md)。
