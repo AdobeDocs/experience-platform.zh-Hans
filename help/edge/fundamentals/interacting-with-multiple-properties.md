@@ -33,7 +33,7 @@ SDK允许您通过在基本代码中向数组添加另一个名称，为每个�
 <script src="alloy.js" async></script>
 ```
 
-因此，该脚本创建SDK的两个实例。 用于与第一实例交互的全局函数被命 `mycustomname1` 名，用于与第二实例交互的全局函数被命名 `mycustomname2`。
+因此，脚本创建SDK的两个实例。 用于与第一实例交互的全局函数被命 `mycustomname1` 名，用于与第二实例交互的全局函数被命名 `mycustomname2`。
 
 通过创建两个单独的实例，可以为每个实例配置不同的属性。 由于与之交互而出现的任何通信或数据持久性 `mycustomname1` 都与之保持隔离， `mycustomname2` 反之亦然。
 
