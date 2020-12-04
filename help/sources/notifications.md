@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;home;popular topics; notifications
-description: 通过AdobeI/O事件，您可以订阅事件并使用Webhook接收有关流运行状态的通知。 这些通知包含有关流运行成功的信息或导致运行失败的错误。
+description: 通过Adobe I/O事件，您可以订阅事件并使用webhooks接收有关流运行状态的通知。 这些通知包含有关流运行成功的信息或导致运行失败的错误。
 solution: Experience Platform
 title: 流运行通知
 topic: overview
 translation-type: tm+mt
 source-git-commit: c5455dc0812b251483170ac19506d7c60ad4ecaa
 workflow-type: tm+mt
-source-wordcount: '787'
+source-wordcount: '781'
 ht-degree: 1%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 1%
 
 Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 
-[[!DNLAdobe Experience Platform流服务](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) ]用于收集和集中内部不同来源的客户数据 [!DNL Platform]。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+[[!DNL Adobe Experience Platform Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 用于收集和集中来自内部不同来源的客户数据 [!DNL Platform]。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-借助AdobeI/O事件，您可以订阅事件并使用Webhook接收有关流运行状态的通知。 这些通知包含有关流运行成功的信息或导致运行失败的错误。
+有了Adobe I/O事件，您可以订阅事件并使用Webhook接收有关流运行状态的通知。 这些通知包含有关流运行成功的信息或导致运行失败的错误。
 
 此文档提供了如何订阅事件、注册Web挂接以及接收包含流运行状态信息的通知的步骤。
 
