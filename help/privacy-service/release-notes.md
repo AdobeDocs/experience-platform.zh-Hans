@@ -63,7 +63,7 @@ ht-degree: 6%
 | --- | --- |
 | 请求度量仪表板 | UI中的新指标仪表板 [!DNL Privacy Service] 可以查看已提交、出错和完成的GDPR请求。 |
 | 请求生成器 | 为同时具有提交GDPR请求的技术用户和非技术用户的组织提供服务，UI中已添加“创建请求”功能。 对于希望继续使用JSON文件的组织， [!DNL Privacy Service] UI中仍提供JSON文件提交功能。 |
-| GDPR工作事件通知 | 关于GDPR工作状态的事件通知对许多工作流来说是一个关键元素。 虽然之前通知是使用单独的电子邮件通知发送的，但GDPR事件通知是利用AdobeI/O事件发送的消息，这些消息会发送到已配置的Webhook，以促进作业请求自动化。 [!DNL Privacy Service] UI用户可以订阅AdobeI/O GDPR事件，以便在产品或GDPR作业完成后接收更新。 |
+| GDPR工作事件通知 | 关于GDPR工作状态的事件通知对许多工作流来说是一个关键元素。 虽然以前通知是使用单个电子邮件通知发送的，但GDPR事件通知是利用Adobe I/O事件发送的消息，这些消息将发送到已配置的Webhook，以促进作业请求自动化。 [!DNL Privacy Service] UI用户可订阅Adobe I/OGDPR事件，在产品或GDPR作业完成后接收更新。 |
 
 ## 2019 年 18 月 4 日
 
