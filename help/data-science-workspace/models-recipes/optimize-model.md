@@ -39,7 +39,7 @@ ht-degree: 0%
 
 有两种方法可将指标引入菜谱。 一种是使用SDK提供的默认评估指标，另一种是编写自定义评估指标。
 
-#### Scala的默认评估指标 {#scala-1}
+#### Scala的默认评估指标
 
 默认评估作为分类算法的一部分进行计算。 以下是当前实现的计算器的一些默认值：
 
@@ -83,7 +83,7 @@ evaluation.metrics=com.adobe.platform.ml.impl.Constants.FSCORE
 | `RecommendationsEvaluator` | -平均精度(MAP)- <br>归一化积分——平均 <br>倒数秩- <br>度量K | -`MEAN_AVERAGE_PRECISION` <br>-`NDCG` <br>-`MRR` <br>-`METRIC_K` |
 
 
-#### Scala的自定义评估指标 {#scala-1-1}
+#### Scala的自定义评估指标
 
 可通过扩展文件中的接口来提供自 `MLEvaluator.scala` 定义计 `Evaluator.scala` 算器。 在示例Evaluator [.scala文件中](https://github.com/adobe/experience-platform-dsw-reference/blob/master/recipes/scala/src/main/scala/com/adobe/platform/ml/Evaluator.scala) ，我们定义自 `split()` 定义和 `evaluate()` 函数。 我们 `split()` 的函数以8:2的比率随机拆分我们的数据，我们的函数 `evaluate()` 定义并返回3个度量：MAPE、MAE和RMSE。
 
@@ -145,7 +145,7 @@ class Evaluator(AbstractEvaluator):
 
 目前，R没有默认的评估指标。因此，要获得R的评估指标，您需要将类定义 `applicationEvaluator` 为菜谱的一部分。
 
-#### R的自定义评估指标 {#r-1}
+#### R的自定义评估指标
 
 其主要目的 `applicationEvaluator` 是返回一个JSON对象，其中包含关键值对的度量。
 
