@@ -142,7 +142,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/config/schedules \
 | `name` | **必需。** 计划的名称（字符串）。 |
 | `type` | **必需。** 作业的字符串类型。 支持的两种类型是“batch_segmentation”和“export”。 |
 | `properties` | **必需。** 包含与计划相关的其他属性的对象。 |
-| `properties.segments` | **等于“`type`batch_segmentation”时必需。** 使用 `["*"]` 可确保包括所有区段。 |
+| `properties.segments` | **等于“ `type` batch_segmentation”时必需。** 使用 `["*"]` 可确保包括所有区段。 |
 | `schedule` | *可选.* 包含作业计划的字符串。 作业只能计划每天运行一次，这意味着在24小时内不能将作业计划为多次运行。 有关cron计划的更多信息，请阅读 [cron表达式格式文档](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) 。 在此示例中，“0 0 1 * *”表示此计划将在每月第一个月的午夜运行。 <br><br>如果未提供此字符串，将自动生成系统生成的计划。 |
 | `state` | *可选.* 包含计划状态的字符串。 支持的两种状态为“活动”和“非活动”。 默认情况下，状态设置为“非活动”。 |
 
