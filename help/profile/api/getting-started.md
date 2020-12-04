@@ -5,23 +5,23 @@ topic: guide
 translation-type: tm+mt
 source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
-source-wordcount: '382'
+source-wordcount: '359'
 ht-degree: 0%
 
 ---
 
 
-# API入 [!DNL Real-time Customer Profile] 门 {#getting-started}
+# Getting started with the [!DNL Real-time Customer Profile] API {#getting-started}
 
 使用 [!DNL Real-time Customer Profile] API，您可以针对用户档案资源执行基本的CRUD操作，如配置计算属性、访问实体、导出用户档案数据以及删除不需要的数据集或批量。
 
 使用开发人员指南需要对使用数据时涉及的各种Adobe Experience Platform服务进行有效 [!DNL Profile] 了解。 在开始使用API之 [!DNL Real-time Customer Profile] 前，请查阅以下服务的文档：
 
-* [[!DNL实时客户用户档案]](../home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
-* [[!DNLAdobe Experience Platform身份服务]](../../identity-service/home.md):通过跨设备和系统桥接身份，更好地视图客户及其行为。
-* [[!DNLAdobe Experience Platform分段服务]](../../segmentation/home.md):允许您根据实时受众数据构建用户档案细分。
-* [[!DNL体验数据模型(XDM)]](../../xdm/home.md):平台组织客户体验数据的标准化框架。
-* [[!DNL沙箱]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [[!DNL Real-time Customer Profile]](../home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+* [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md):通过跨设备和系统桥接身份，更好地视图客户及其行为。
+* [[!DNL Adobe Experience Platform Segmentation Service]](../../segmentation/home.md):允许您根据实时受众数据构建用户档案细分。
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):平台组织客户体验数据的标准化框架。
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了成功调用API端点所需了解的其 [!DNL Profile] 他信息。
 
