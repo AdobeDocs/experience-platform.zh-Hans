@@ -5,7 +5,7 @@ title: 创建电子邮件营销目标
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 5f120a716cc3396ef7749463bb6052a8ced2fbb4
+source-git-commit: f2fdc3b75d275698a4b1e4c8969b1b840429c919
 workflow-type: tm+mt
 source-wordcount: '1624'
 ht-degree: 1%
@@ -344,7 +344,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{CONNECTION_SPEC_ID}`:使用您在获取可用目标的列表 [步骤中获得的连接规范ID](#get-the-list-of-available-destinations)。
-* `{S3 or SFTP}`:为此目标填写所需的连接类型。 在目 [标目录中](../../rtcdp/destinations/destinations-catalog.md)，滚动到您的首选目标，查看是否支持S3和／或SFTP连接类型。
+* `{S3 or SFTP}`:为此目标填写所需的连接类型。 在目 [标目录中](../catalog/overview.md)，滚动到您的首选目标，查看是否支持S3和／或SFTP连接类型。
 * `{ACCESS_ID}`:您的S3存储 [!DNL Amazon] 位置的访问ID。
 * `{SECRET_KEY}`:您S3存储位 [!DNL Amazon] 置的密钥。
 
