@@ -6,9 +6,9 @@ title: 在UI中更新帐户详细信息
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 413687a0d9e790ea3f61a858002e9510216d7c34
+source-git-commit: 51a09cdced9a21aa785a43d8d9740d70a5fbc46c
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 0%
 
 ## 更新帐户
 
-登录以登录到Experience Platform [UI](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航]** 中选择 [!UICONTROL “源] ”以访问“源”工作区。 从顶 **[!UICONTROL 部标题]** 中选择帐户以视图现有帐户。
+登录Experience Platform [UI](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航]** 中选择 [!UICONTROL “源] ”以访问“源”工作区。 从顶 **[!UICONTROL 部标题]** 中选择帐户以视图现有帐户。
 
 ![目录](../../images/tutorials/update/catalog.png)
 
