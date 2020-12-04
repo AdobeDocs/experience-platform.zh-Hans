@@ -7,7 +7,7 @@ description: 批处理摄取API允许您将数据作为批处理文件导入到A
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1196'
+source-wordcount: '1193'
 ht-degree: 2%
 
 ---
@@ -35,7 +35,7 @@ API [!DNL Data Ingestion] 允许您通过以下三个基本步骤将数据作为
 ### [!DNL Data Ingestion] 先决条件
 
 - 要上传的数据必须采用Parke或JSON格式。
-- 在[!DNL Catalog [services]中创建的数据集](../../catalog/home.md)。
+- 在中创建的数据集 [[!DNL Catalog services]](../../catalog/home.md)。
 - 拼花文件的内容必须与要上传到的数据集的模式的子集匹配。
 - 在验证后拥有您的独特访问令牌。
 
