@@ -7,7 +7,7 @@ description: Adobe Experience Platform允许您通过Sensei机器学习框架运
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1426'
+source-wordcount: '1421'
 ht-degree: 0%
 
 ---
@@ -439,4 +439,4 @@ https://www.postman.com/collections/c5fc0d1d5805a5ddd41a
 
 [//]: # (Next steps section should refer to tutorials on how to score data using the feature pipeline Engine. Update this document once those tutorials are available)
 
-通过阅读此文档，您使用“模型创作SDK”创作了一个功能管道，创建了Docker图像，并使用Docker图像URL通过API创建了一个功能管道 [!DNL Sensei Machine Learning] 模型。 您现在可以继续使用[!DNL Sensei机器学习API]大规模转 [换数据集和提取数据功能](../api/getting-started.md)。
+通过阅读此文档，您使用“模型创作SDK”创作了一个功能管道，创建了Docker图像，并使用Docker图像URL通过API创建了一个功能管道 [!DNL Sensei Machine Learning] 模型。 现在，您可以继续使用进行数据集转换和大规模提取数据功能 [[!DNL Sensei Machine Learning API]](../api/getting-started.md)。
