@@ -8,7 +8,7 @@ description: 本教程将帮助您开始使用流式摄取API，它是Adobe Expe
 translation-type: tm+mt
 source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '662'
+source-wordcount: '653'
 ht-degree: 2%
 
 ---
@@ -26,8 +26,8 @@ ht-degree: 2%
 
 本教程还需要掌握Adobe Experience Platform各项服务的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织体验数据 [!DNL Platform] 的标准化框架。
-- [[!DNL实时客户用户档案]](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织体验数据 [!DNL Platform] 的标准化框架。
+- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
 
 以下各节提供了成功调用流式摄取API所需了解的其他信息。
 
