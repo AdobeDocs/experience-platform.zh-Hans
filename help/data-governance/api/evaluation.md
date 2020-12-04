@@ -168,7 +168,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `entityType` | 在同级属性中指示其ID的实体的类 `entityId` 型。 目前，唯一接受的值是 `dataSet`。 |
-| `entityId` | 测试其营销操作的数据集的ID。 通过在API中对端点发出列表请求，可以获得集及其 `/dataSets` 相应ID的 [!DNL Catalog Service] GET。 有关详细信 [ [!DNL Catalog] 息，请参](../../catalog/api/list-objects.md) 阅listingobjects指南。 |
+| `entityId` | 测试其营销操作的数据集的ID。 通过在API中对端点发出列表请求，可以获得集及其 `/dataSets` 相应ID的 [!DNL Catalog Service] GET。 See the guide on [listing [!DNL Catalog] objects](../../catalog/api/list-objects.md) for more information. |
 
 **响应**
 
@@ -416,7 +416,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `entityType` | 在同级属性中指示其ID的实体的类 `entityId` 型。 目前，唯一接受的值是 `dataSet`。 |
-| `entityId` | 要根据营销操作评估其字段的数据集的ID。 通过在API中对端点发出列表请求，可以获得集及其 `/dataSets` 相应ID的 [!DNL Catalog Service] GET。 有关详细信 [ [!DNL Catalog] 息，请参](../../catalog/api/list-objects.md) 阅listingobjects指南。 |
+| `entityId` | 要根据营销操作评估其字段的数据集的ID。 通过在API中对端点发出列表请求，可以获得集及其 `/dataSets` 相应ID的 [!DNL Catalog Service] GET。 See the guide on [listing [!DNL Catalog] objects](../../catalog/api/list-objects.md) for more information. |
 | `entityMeta.fields` | 数据集模式中特定字段的路径数组，以JSON指针字符串形式提供。 有关这些字符串 [已接受的语法](../../landing/api-fundamentals.md#json-pointer) ，请参阅API基础知识指南中有关JSON指针的部分。 |
 
 **响应**
