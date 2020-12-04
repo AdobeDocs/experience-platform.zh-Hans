@@ -142,7 +142,7 @@ curl -X GET \
 | --- | --- |
 | `_page.count` | 检索的策略总数。 |
 | `name` | 策略的显示名称。 |
-| `status` | 策略的当前状态。 有三种可能的状态： `DRAFT`、 `ENABLED`或 `DISABLED`。 默认情况下，只 `ENABLED` 有策略参与评估。 有关详细信息，请 [参阅](../enforcement/overview.md) “策略评估”概述。 |
+| `status` | 策略的当前状态。 有三种可能的状态： `DRAFT`、 `ENABLED`或 `DISABLED`。 默认情况下，只 `ENABLED` 有策略参与评估。 See the overview on [policy evaluation](../enforcement/overview.md) for more information. |
 | `marketingActionRefs` | 列表策略所有适用营销操作的URI的数组。 |
 | `description` | 可选描述，它提供策略用例的进一步上下文。 |
 | `deny` | 一个对象，它描述策略的关联营销操作被限制在其上执行的特定数据使用标签。 有关此属性的 [详细信息](#create-policy) ，请参阅创建策略一节。 |
@@ -223,7 +223,7 @@ curl -X GET \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 策略的显示名称。 |
-| `status` | 策略的当前状态。 有三种可能的状态： `DRAFT`、 `ENABLED`或 `DISABLED`。 默认情况下，只 `ENABLED` 有策略参与评估。 有关详细信息，请 [参阅](../enforcement/overview.md) “策略评估”概述。 |
+| `status` | 策略的当前状态。 有三种可能的状态： `DRAFT`、 `ENABLED`或 `DISABLED`。 默认情况下，只 `ENABLED` 有策略参与评估。 See the overview on [policy evaluation](../enforcement/overview.md) for more information. |
 | `marketingActionRefs` | 列表策略所有适用营销操作的URI的数组。 |
 | `description` | 可选描述，它提供策略用例的进一步上下文。 |
 | `deny` | 一个对象，它描述策略的关联营销操作被限制在其上执行的特定数据使用标签。 有关此属性的 [详细信息](#create-policy) ，请参阅创建策略一节。 |
@@ -317,7 +317,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 策略的显示名称。 |
-| `status` | 策略的当前状态。 有三种可能的状态： `DRAFT`、 `ENABLED`或 `DISABLED`。 默认情况下，只 `ENABLED` 有策略参与评估。 有关详细信息，请 [参阅](../enforcement/overview.md) “策略评估”概述。 |
+| `status` | 策略的当前状态。 有三种可能的状态： `DRAFT`、 `ENABLED`或 `DISABLED`。 默认情况下，只 `ENABLED` 有策略参与评估。 See the overview on [policy evaluation](../enforcement/overview.md) for more information. |
 | `marketingActionRefs` | 列表策略所有适用营销操作的URI的数组。 市场营销操作的URI在响应中 `_links.self.href` 提供，用 [于查找营销操作](./marketing-actions.md#look-up)。 |
 | `description` | 可选描述，它提供策略用例的进一步上下文。 |
 | `deny` | 描述策略的关联营销操作的特定数据使用标签的策略表达式被限制为不能执行。 |
@@ -425,7 +425,7 @@ curl -X PUT \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 策略的显示名称。 |
-| `status` | 策略的当前状态。 有三种可能的状态： `DRAFT`、 `ENABLED`或 `DISABLED`。 默认情况下，只 `ENABLED` 有策略参与评估。 有关详细信息，请 [参阅](../enforcement/overview.md) “策略评估”概述。 |
+| `status` | 策略的当前状态。 有三种可能的状态： `DRAFT`、 `ENABLED`或 `DISABLED`。 默认情况下，只 `ENABLED` 有策略参与评估。 See the overview on [policy evaluation](../enforcement/overview.md) for more information. |
 | `marketingActionRefs` | 列表策略所有适用营销操作的URI的数组。 市场营销操作的URI在响应中 `_links.self.href` 提供，用 [于查找营销操作](./marketing-actions.md#look-up)。 |
 | `description` | 可选描述，它提供策略用例的进一步上下文。 |
 | `deny` | 描述策略的关联营销操作的特定数据使用标签的策略表达式被限制为不能执行。 有关此属性的 [详细信息](#create-policy) ，请参阅创建策略一节。 |
