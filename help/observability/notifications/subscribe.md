@@ -1,9 +1,9 @@
 ---
 keywords: Experience Platform;home;popular topics;date range
 solution: Experience Platform
-title: 订阅AdobeI/O事件通知
+title: 订阅Adobe I/O事件通知
 topic: developer guide
-description: 本文档提供如何订阅Adobe Experience Platform服务的AdobeI/O事件通知的步骤。 还提供了有关可用事件类型的参考信息，以及指向进一步文档的链接，说明如何为每个应用程序服务解释返回的事件 [!DNL Platform] 数据。
+description: 本文档提供如何订阅Adobe I/O事件通知的Adobe Experience Platform服务步骤。 还提供了有关可用事件类型的参考信息，以及指向进一步文档的链接，说明如何为每个应用程序服务解释返回的事件 [!DNL Platform] 数据。
 translation-type: tm+mt
 source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
@@ -13,11 +13,11 @@ ht-degree: 1%
 ---
 
 
-# 订阅AdobeI/O事件通知
+# 订阅Adobe I/O事件通知
 
-[!DNL Observability Insights] 允许您订阅有关Adobe Experience PlatformAdobe的活动I/O事件通知。 这些事件被发送到配置的网络挂接，以促进活动监控的高效自动化。
+[!DNL Observability Insights] 允许您订阅Adobe I/O事件有关Adobe Experience Platform活动的通知。 这些事件被发送到配置的网络挂接，以促进活动监控的高效自动化。
 
-本文档提供如何订阅Adobe Experience Platform服务的AdobeI/O事件通知的步骤。 还提供了有关可用事件类型的参考信息，以及指向进一步文档的链接，说明如何解释每个适用服务返回的事件 [!DNL Platform] 数据。
+本文档提供如何订阅Adobe I/O事件通知的Adobe Experience Platform服务步骤。 还提供了有关可用事件类型的参考信息，以及指向进一步文档的链接，说明如何解释每个适用服务返回的事件 [!DNL Platform] 数据。
 
 ## 入门指南
 
