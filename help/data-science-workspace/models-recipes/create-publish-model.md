@@ -8,7 +8,7 @@ description: Adobe Experience Platform数据科学工作区提供了使用预建
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1595'
+source-wordcount: '1589'
 ht-degree: 0%
 
 ---
@@ -47,10 +47,10 @@ ht-degree: 0%
 * 从Adobe公 [!DNL Jupyter Notebook] 共资料 [库下 [!DNL Git] 载三个必需](https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources/Notebooks-Thurs)的 [!DNL JupyterLab] 文件 [!DNL Data Science Workspace]，这些文件将用于演示中的工作流程。
 
 * 对本教程中使用的下列主要概念的有效理解：
-   * [[!DNL体验数据模型]](../../xdm/home.md):由Adobe领导的标准化工作，为客户体验管理定 [!DNL Profile] 义标准模式，如ExperienceEvent。
+   * [[!DNL Experience Data Model]](../../xdm/home.md):由Adobe领导的标准化工作，为客户体验管理定 [!DNL Profile] 义标准模式，如ExperienceEvent。
    * 数据集：实际数据的存储和管理结构。 XDM模式的物理实例 [化实例](../../xdm/schema/field-dictionary.md)。
    * 批：数据集由批量组成。 批是在一段时间内收集的一组数据，并作为单个单元一起处理。
-   * [!DNL JupyterLab]: [[!DNL JupyterLab]是](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) 一个基于Web的开放源代码界面， [!DNL Jupyter] 它紧密集成到Project中 [!DNL Experience Platform]。
+   * [!DNL JupyterLab]: [[!DNL JupyterLab]](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) 是一个面向Project的开放源码、基于web的界 [!DNL Jupyter] 面，并紧密集成到 [!DNL Experience Platform]中
 
 ## 准备数据 {#prepare-your-data}
 
