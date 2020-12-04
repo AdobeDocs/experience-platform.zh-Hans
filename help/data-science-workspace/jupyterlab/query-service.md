@@ -8,7 +8,7 @@ description: Adobe Experience Platform将查询服务作为标准功能集成到
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '826'
+source-wordcount: '807'
 ht-degree: 1%
 
 ---
@@ -29,14 +29,14 @@ ht-degree: 1%
 - 数据 [!DNL Adobe Analytics] 集
 
 - 对本教程中使用的下列主要概念的有效理解：
-   - [[!DNL体验数据模型(XDM)和XDM系统]](../../xdm/home.md)
-   - [[!DNL查询服务]](../../query-service/home.md)
-   - [[!DNL查询服务SQL语法]](../../query-service/sql/overview.md)
+   - [[!DNL Experience Data Model (XDM) and XDM System]](../../xdm/home.md)
+   - [[!DNL Query Service]](../../query-service/home.md)
+   - [[!DNL Query Service SQL Syntax]](../../query-service/sql/overview.md)
    - Adobe Analytics
 
 ## 访问 [!DNL JupyterLab] 和 [!DNL Query Service] {#access-jupyterlab-and-query-service}
 
-1. 在[ [!DNLExperience Platform]](https://platform.adobe.com)中，从左 **[!UICONTROL 侧导航]** 列导航到“笔记本”。 请稍等片刻，JupyterLab将加载。
+1. 在中 [[!DNL Experience Platform]](https://platform.adobe.com)，从左 **[!UICONTROL 侧导航]** 列导航到笔记本。 请稍等片刻，JupyterLab将加载。
 
    ![](../images/jupyterlab/query/jupyterlab-launcher.png)
 
