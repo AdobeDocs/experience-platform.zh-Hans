@@ -27,7 +27,7 @@ ht-degree: 1%
 
 [!DNL Observability Insights] 允许您订阅有关Adobe Experience Platform事件的活动通知。 通过订阅事件，您可以设置您自己的下游协议，以便在作业完成时、工作流中的某个里程碑已到达时，或在该过程中出现任何故障。
 
-有关详细信息，请 [参阅事件](./notifications/overview.md) 通知的概述。
+See the overview on [event notifications](./notifications/overview.md) for more information.
 
 ## 后续步骤
 
