@@ -8,7 +8,7 @@ description: 流摄取允许您使用流端点实时将数据上传到Adobe Expe
 translation-type: tm+mt
 source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '852'
+source-wordcount: '843'
 ht-degree: 3%
 
 ---
@@ -22,8 +22,8 @@ ht-degree: 3%
 
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-- [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [[!DNL流摄取]](../streaming-ingestion/overview.md):数据发送方法之一 [!DNL Experience Platform]。
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [[!DNL Streaming Ingestion]](../streaming-ingestion/overview.md):数据发送方法之一 [!DNL Experience Platform]。
 
 ### 读取示例API调用
 
