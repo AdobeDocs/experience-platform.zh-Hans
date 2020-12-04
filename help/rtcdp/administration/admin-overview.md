@@ -8,7 +8,7 @@ translation-type: tm+mt
 source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
 workflow-type: tm+mt
 source-wordcount: '277'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -31,7 +31,7 @@ ht-degree: 0%
 >
 >有关授予对实时CDP功能的访问权限（包括启用UI中的可见性）的详细指南，请遵循 [访问控制用户指南中提供的步骤](../../access-control/ui/overview.md)，特别是用于管理产品用户档案的详细信息和其他服务的步骤。
 
-## 沙箱
+## 沙盒
 
 Adobe Experience Platform(以及实时CDP（扩展）)旨在在全球范围内丰富数字体验应用程序。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署的需要，同时确保操作合规性。
 
