@@ -80,7 +80,7 @@ ht-degree: 0%
 
 ### 创建基于记录的同意模式 {#profile-schema}
 
-从模式 **[!UICONTROL 工作]** 区的“浏 **[!UICONTROL 览]”选项卡中**[!DNL XDM Individual Profile] ，基于类创建新的模式。 在模式编辑器中打开模式后， **[!UICONTROL 单击]** 画布左 **[!UICONTROL 侧]** “Mixins”部分下的“添加”。
+从模式 **[!UICONTROL 工作]** 区的“浏 **[!UICONTROL 览] ”选项卡中**[!DNL XDM Individual Profile] ，基于类创建新的模式。 在模式编辑器中打开模式后， **[!UICONTROL 单击]** 画布左 **[!UICONTROL 侧]** “Mixins”部分下的“添加”。
 
 ![](../assets/iab/add-mixin-profile.png)
 
