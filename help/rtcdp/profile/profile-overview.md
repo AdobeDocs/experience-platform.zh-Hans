@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Real-time Customer Profile]概述
 
-[!DNL Real-time Customer Profile] 通过组合来自多个视图（包括在线、离线、CRM和第三方数据）的数据，您可以全面了解每位渠道。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供一个具有可操作性、时间戳记的帐户。
+[!DNL Real-time Customer Profile] 通过组合来自多个视图（包括在线、离线、CRM和第三方数据）的数据，您可以全面了解每位渠道。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供可操作、有时间戳的帐户。
 
 ## 用户档案 [!DNL Real-time Customer Data Platform]
 
@@ -31,7 +31,7 @@ ht-degree: 0%
 
 ## 用户档案查看器
 
-[!DNL Platform] 允许您轻松视图客户用户档案，并使用各种属性搜索特定用户档案。 有关如何在中视图用户档案的详细 [!DNL Platform]信息，请参阅 [用户档案查看器概述](/help/rtcdp/profile/profile-viewer.md)。
+[!DNL Platform] 允许您轻松视图客户用户档案并使用各种属性搜索特定用户档案。 有关如何在中视图用户档案的详细 [!DNL Platform]信息，请参阅 [用户档案查看器概述](/help/rtcdp/profile/profile-viewer.md)。
 
 ## 后续步骤
 
