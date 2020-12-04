@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 实时客户数据平台中的IAB TCF 2.0支持
 topic: privacy events
 translation-type: tm+mt
-source-git-commit: b24c624df188be3cbe7f71dcdf8a23d2478c287c
+source-git-commit: 75a0b4ba1342ece3e34a7ef41782b9014516d4fe
 workflow-type: tm+mt
 source-wordcount: '2388'
 ht-degree: 1%
@@ -45,7 +45,7 @@ ht-degree: 1%
    * [SDK同意命令](../../../edge/consent/supporting-consent.md):本指南中所示的同意相关SDK命令的用例概述。
 * [Adobe Experience Platform细分服务](../../../segmentation/home.md):允许您将数据分 [!DNL Real-time Customer Profile] 为具有相似特征并将对营销策略做出类似响应的个人组。
 
-除了上面列 [!DNL Platform] 出的服务，您还应熟悉目 [的地](../../destinations/destinations-overview.md) 及其使用情况 [!DNL Real-time CDP]。
+除了上面列 [!DNL Platform] 出的服务，您还应熟悉目 [的地](../../destinations/overview.md) 及其使用情况 [!DNL Real-time CDP]。
 
 ## 客户同意流程摘要 {#summary}
 
@@ -220,7 +220,7 @@ alloy("sendEvent", {
 | `consentStringValue` | 由CMP生成的基于64编码的同意字符串。 |
 | `gdprApplies` | 一个布尔值，它指示GDPR是否适用于当前登录的客户。 要为此客户强制实施TCF 2.0，必须将值设置为“true”。 |
 
-### 处理SDK响应 {#sdk-1}
+### 处理SDK响应
 
 所有 [!DNL Platform SDK] 命令都返回指示调用是成功还是失败的承诺。 然后，您可以使用这些响应获取其他逻辑，如向客户显示确认消息。 有关特定示例，请 [参阅执行SDK](../../../edge/fundamentals/executing-commands.md#handling-success-or-failure) 命令指南中有关处理成功或失败的部分。
 
