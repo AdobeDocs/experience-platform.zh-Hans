@@ -32,7 +32,7 @@ ht-degree: 2%
 
 ## 如何开始？
 
-您可以按照本教程进 [行](../jupyterlab/create-a-recipe.md)。
+您可以按照本教程开始 [学习](../jupyterlab/create-a-recipe.md)。
 
 本教程将在Jupyter笔记本中创建零售销售菜谱，并使用笔记本制作菜谱工作流程在Adobe Experience Platform创建菜谱。
 
