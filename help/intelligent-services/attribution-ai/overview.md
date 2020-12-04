@@ -1,25 +1,25 @@
 ---
 keywords: Experience Platform;attribution ai overview;popular topics;attribution ai;Attribution ai
 solution: Experience Platform
-title: Attribution AI概述
+title: Attribution AI 概述
 topic: Attribution AI
-description: Attribution AI用于将积分归因到触点，从而导致转化事件。 营销人员可以使用此功能，帮助量化客户旅程中每个营销接触点的营销影响。 接触点包括展示广告印象、电子邮件发送、电子邮件打开和付费搜索点击。
+description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
 translation-type: tm+mt
 source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
 source-wordcount: '455'
-ht-degree: 6%
+ht-degree: 29%
 
 ---
 
 
-# Attribution AI概述
+# Attribution AI 概述
 
 Attribution AI作为智能服务的一部分，是一种多渠道算法归因服务，用于计算客户交互对特定结果的影响和增量影响。 利用 Attribution AI，营销人员可以通过了解客户旅程各个阶段每个客户互动的影响来衡量和优化营销和广告支出。
 
 ## 了解Attribution AI
 
-Attribution AI用于将积分归因到触点，从而导致转化事件。 营销人员可以使用此功能，帮助量化客户旅程中每个营销接触点的营销影响。 接触点包括展示广告印象、电子邮件发送、电子邮件打开和付费搜索点击。
+Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
 
 Attribution AI输出可以跨不同维度进行分离，并且可以跨客户旅程的不同阶段使用。 无需将业务需求转化为机器学习问题、选择算法、培训或部署模型即可完成此操作。
 
