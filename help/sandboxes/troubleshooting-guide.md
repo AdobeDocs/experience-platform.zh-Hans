@@ -17,11 +17,11 @@ ht-degree: 0%
 
 此文档提供有关Adobe Experience Platform沙箱的常见问题解答。 有关其他平台服务的问题和疑难解答，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
-沙箱将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。 有关更多 [信息，请参](home.md) 阅沙箱概述。
+沙箱将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。 See the [sandboxes overview](home.md) for more information.
 
 ## 什么是沙箱？
 
-沙箱是单个Experience Platform实例中的虚拟分区。 每个沙箱都维护其自己独立的平台资源库(包括模式、数据集、用户档案等)。 在沙箱内执行的所有内容和操作仅限于该沙箱，不会影响任何其他沙箱。 有关更多 [信息，请参](home.md) 阅沙箱概述。
+沙箱是单个Experience Platform实例中的虚拟分区。 每个沙箱都维护其自己独立的平台资源库(包括模式、数据集、用户档案等)。 在沙箱内执行的所有内容和操作仅限于该沙箱，不会影响任何其他沙箱。 See the [sandboxes overview](home.md) for more information.
 
 ## 有哪些类型的沙箱可用，它们有何差异？
 
@@ -34,7 +34,7 @@ Experience Platform提供单个生产沙箱，无法删除或重置。 单个平
 
 相反，沙箱管理员可以为单个平台实例创建多个非生产沙箱。 非生产沙箱允许您测试功能、运行实验并制作自定义配置，而不会影响您的生产沙箱。 此外，非生产沙箱还具有重置功能，可从沙箱中删除所有客户创建的资源。 非生产沙箱无法转换为生产沙箱。 默认Experience Platform许可证会授予您五个沙箱（一个生产箱和四个非生产箱）。 您最多可以添加十个非生产沙箱，最多共添加75个沙箱。 有关详细信息，请与IMS组织管理员或Adobe销售代表联系。
 
-有关更多 [信息，请参](./home.md) 阅沙箱概述。
+See the [sandboxes overview](./home.md) for more information.
 
 ## 能否从多个沙箱访问资源？
 
