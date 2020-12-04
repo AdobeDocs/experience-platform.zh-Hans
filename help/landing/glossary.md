@@ -44,7 +44,7 @@ ht-degree: 0%
 
 **Adobe智能服务：** Adobe Sensei是权力的情报框架 [!DNL Experience Platform]。 它还提供一套人工智能服务，使品牌能够增强其提供实时、个性化客户体验的能力。
 
-**AdobeI/O:** AdobeI/O是开发人员集 [!DNL Experience Platform] 成、扩展和自定义Adobe Experience Platform所需的一切功能(包括API、事件、开发人员控制台和实用工具)的一部分，并提供对这些功能的访问。
+**Adobe I/O:** Adobe I/O是开发人 [!DNL Experience Platform] 员集成、扩展和自定义Adobe Experience Platform所需的一切功能的一部分，并提供对这些功能的访问，包括API、事件、开发人员控制台和有用的工具。
 
 **Adobe Sensei:** Adobe Sensei是权力的情报框架 [!DNL Experience Platform]。 它还提供一套人工智能服务，使品牌能够增强其提供实时、个性化客户体验的能力。
 
@@ -324,7 +324,7 @@ ht-degree: 0%
 
 ## L
 
-**库：** 在 [!DNL Adobe Experience Platform Launch]中，库是一组业务逻辑，包含有关库在客户端设备上 [!DNL Platform Launch] 的行为方式的说明。
+**库：** 在 [!DNL Adobe Experience Platform Launch]中，库是一组业务逻辑，其中包含有关库在客户端设备 [!DNL Platform Launch] 上的行为方式的说明。
 
 [返回页首](#adobe-experience-platform-glossary)
 
