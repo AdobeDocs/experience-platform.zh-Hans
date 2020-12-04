@@ -12,13 +12,13 @@ translation-type: tm+mt
 source-git-commit: 333b89ccf2365c04646df9dc0434036bdd6f12ac
 workflow-type: tm+mt
 source-wordcount: '42'
-ht-degree: 0%
+ht-degree: 35%
 
 ---
 
 
 # Experience Platform的基本架构
 
-此视频将浏览概述图并介绍Experience Platform的主要组件。
+此视频介绍了概览图表以及 Experience Platform 的主要组件。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32456?quality=12&learn=on)
