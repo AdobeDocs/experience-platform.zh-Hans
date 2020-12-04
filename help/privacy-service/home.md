@@ -91,7 +91,7 @@ UI [!DNL Privacy Service] 允许您使用图形界面创建和监视隐私作业
 | --- | --- |
 | [!DNL Privacy Service] UI | UI [!DNL Privacy Service] 提供了监视仪表板，允许您视图所有活动请求状态的可视表示形式。 有关详细 [信息，请参](ui/overview.md) 阅Privacy Service用户指南。 |
 | [!DNL Privacy Service] API | 您可以使用API提供的查找端点以编程方式监视隐私作业的 [!DNL Privacy Service] 状态。 有关如何 [使用API的详细步骤](./api/getting-started.md) ，请参阅Privacy Service开发人员指南。 |
-| [!DNL Privacy Events] | [!DNL Privacy Events] 利用发送到已配置网页挂接的AdobeI/O事件，以便有效地实现作业请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。 有关详细信息，请 [参阅订阅隐私事件](./privacy-events.md) 的教程。 |
+| [!DNL Privacy Events] | [!DNL Privacy Events] 利用发送到已配置网页挂接的Adobe I/O事件，以便促进高效的工作请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。 有关详细信息，请 [参阅订阅隐私事件](./privacy-events.md) 的教程。 |
 
 ## 后续步骤
 
