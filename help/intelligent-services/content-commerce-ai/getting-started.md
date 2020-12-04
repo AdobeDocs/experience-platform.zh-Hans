@@ -3,7 +3,7 @@ keywords: Experience Platform;getting started;content ai;commerce ai;content and
 solution: Experience Platform
 title: 内容和商务AI快速入门
 topic: Getting started
-description: 内容和商务AI利用AdobeI/O API。 要调用AdobeI/O API和I/O控制台集成，您必须先完成身份验证教程。
+description: 内容和商务AI利用Adobe I/OAPI。 要调用Adobe I/OAPI和I/O控制台集成，您必须先完成身份验证教程。
 translation-type: tm+mt
 source-git-commit: 2be04547b96e1a6c293cc63e782fe1b3259619ba
 workflow-type: tm+mt
@@ -19,13 +19,13 @@ ht-degree: 0%
 >
 >Content and Commerce AI为测试版。 文档可能会更改。
 
-[!DNL Content and Commerce AI] 利用AdobeI/O API。 要调用AdobeI/O API和I/O控制台集成，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。
+[!DNL Content and Commerce AI] 利用Adobe I/OAPI。 要调用Adobe I/OAPI和I/O控制台集成，您必须先完成身份验证 [教程](../../tutorials/authentication.md)。
 
 但是，当您转到“添 **加API** ”步骤时，API位于Experience Cloud而不是Adobe Experience Platform下，如以下屏幕截图所示：
 
 ![添加内容和商务AI](./images/add-api.png)
 
-完成身份验证教程后，将为所有AdobeI/O API调用中的每个所需标头提供值，如下所示：
+完成身份验证教程后，将为所有Adobe I/OAPI调用中的每个所需标头提供值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
@@ -63,7 +63,7 @@ ht-degree: 0%
 
 ![示例](./images/select-environment.png)
 
-有关使用邮递员使用AdobeI/O API的详细信息，请参阅在AdobeI/O上使 [用邮递员进行JWT身份验证的中级帖子](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f)。
+有关使用Postman使用Adobe I/OAPI的更多信息，请参阅关于使用Postman在Adobe I/O [进行JWT身份验证的“中”帖子](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f)。
 
 ## 读取示例API调用
 
