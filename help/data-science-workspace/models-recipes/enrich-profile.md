@@ -8,7 +8,7 @@ description: 此文档提供分步教程，用于通过机器学习洞察丰富�
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1218'
 ht-degree: 0%
 
 ---
@@ -28,9 +28,9 @@ ht-degree: 0%
 
 本教程需要对数据获取和区段创 [!DNL Adobe Experience Platform] 建涉及的各 [!DNL Profile] 个方面进行有效理解。 在开始本教程之前，请查看以下服务的相关文档：
 
-* [[!DNL实时客户用户档案]](../../rtcdp/overview.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [[!DNL标识服务]](../../identity-service/home.md):通过将 [!DNL Real-time Customer Profile] 来自被引入平台的不同数据源的身份连接到平台，可实现此目的。
-* [[!DNL体验数据模型(XDM)]](../../xdm/home.md):平台组织客户体验数据的标准化框架。
+* [[!DNL Real-time Customer Profile]](../../rtcdp/overview.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL Identity Service]](../../identity-service/home.md):通过将 [!DNL Real-time Customer Profile] 来自被引入平台的不同数据源的身份连接到平台，可实现此目的。
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):平台组织客户体验数据的标准化框架。
 
 除了上述文档之外，还强烈建议您查看以下模式和模式编辑指南：
 
