@@ -7,7 +7,7 @@ description: 'Adobe Experience Platform身份服务通过Adobe Experience Platfo
 translation-type: tm+mt
 source-git-commit: fa667d86c089c692f22cfd1b46f3f11b6e9a68d7
 workflow-type: tm+mt
-source-wordcount: '754'
+source-wordcount: '742'
 ht-degree: 1%
 
 ---
@@ -21,9 +21,9 @@ Adobe Experience Platform [!DNL Identity Service] 通过Adobe Experience Platfor
 
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-- [[!DNL标识服务]](../home.md):解决客户用户档案数据碎片化带来的根本挑战。 它通过跨设备和系统连接身份来实现这一点，客户可以与您的品牌互动。
-- [[!DNL实时客户用户档案]](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
-- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [[!DNL Identity Service]](../home.md):解决客户用户档案数据碎片化带来的根本挑战。 它通过跨设备和系统连接身份来实现这一点，客户可以与您的品牌互动。
+- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 以下各节提供了成功调用API所需或现有的其他信 [!DNL Identity Service] 息。
 
