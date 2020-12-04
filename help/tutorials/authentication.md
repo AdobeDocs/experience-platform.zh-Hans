@@ -4,23 +4,23 @@ solution: Experience Platform
 title: 验证和访问Experience PlatformAPI
 topic: tutorial
 type: Tutorial
-description: '此文档提供了一个分步教程，用于获取对Adobe Experience Platform开发人员帐户的访问权，以便调用Experience PlatformAPI。 '
+description: '此文档提供了如何获取 Adobe Experience Platform 开发人员帐户访问权限，以调用 Experience Platform API 的分步教程。 '
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '878'
-ht-degree: 1%
+source-wordcount: '875'
+ht-degree: 4%
 
 ---
 
 
-# 验证和访问 [!DNL Experience Platform] API
+# Authenticate and access [!DNL Experience Platform] APIs
 
-此文档提供了一个分步教程，用于获取对Adobe Experience Platform开发人员帐户的访问权，以便调用 [!DNL Experience Platform] API。
+This document provides a step-by-step tutorial for gaining access to an Adobe Experience Platform developer account in order to make calls to [!DNL Experience Platform] APIs.
 
 ## 进行身份验证以进行API调用
 
-为了维护应用程序和用户的安全性，对AdobeI/O API的所有请求都必须使用OAuth和JSON Web令牌(JWT)等标准进行身份验证和授权。 然后，JWT与客户特定信息一起使用，以生成您的个人访问令牌。
+为了维护应用程序和用户的安全性，对Adobe I/OAPI的所有请求都必须使用OAuth和JSON Web令牌(JWT)等标准进行身份验证和授权。 然后，JWT与客户特定信息一起使用，以生成您的个人访问令牌。
 
 本教程介绍通过创建流程图中概述的访问令牌进行身份验证的步骤：
 ![](images/authentication/authentication-flowchart.png)
@@ -45,11 +45,11 @@ ht-degree: 1%
 
 ## 成为组织的开发人 [!DNL Experience Platform] 员和用户
 
-在AdobeI/O上创建集成之前，您的帐户必须对IMS组织中的某个产品具有开发人员权限。 有关该Admin Console的开发人员帐户的详细信息，请参阅 [支持文档](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html) ，以管理开发人员。
+在Adobe I/O创建集成之前，您的帐户必须对IMS组织中的某个产品具有开发人员权限。 有关该Admin Console的开发人员帐户的详细信息，请参阅 [支持文档](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html) ，以管理开发人员。
 
 **获得开发人员访问权限**
 
-请与您 [!DNL Admin Console] 组织中的管理员联系，以使用[!DNLAdmin Console]将您添加为您组织的某个产品 [的开发人员](https://adminconsole.adobe.com/)。
+请与您 [!DNL Admin Console] 组织中的管理员联系，以使用将您添加为您组织的某个产品的开发人员 [[!DNL Admin Console]](https://adminconsole.adobe.com/)。
 
 ![](images/authentication/assign-developer.png)
 
@@ -57,7 +57,7 @@ ht-degree: 1%
 
 ![](images/authentication/add-developer.png)
 
-一旦您被分配为开发人员，您将拥有在AdobeI/O上创建集 [成的访问权限](https://www.adobe.com/go/devs_console_ui)。 这些集成是从外部应用程序和服务到AdobeAPI的管道。
+一旦您被分配为开发人员，您将拥有在Adobe I/O创建集成的访 [问权](https://www.adobe.com/go/devs_console_ui)。 这些集成是从外部应用程序和服务到AdobeAPI的管道。
 
 **获得用户访问权限**
 
@@ -163,4 +163,4 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
 
 通过阅读此文档，您已收集并成功测试了API的访问凭 [!DNL Platform] 据。 您现在可以按照文档中提供的示例API调 [用操作](../landing/documentation/overview.md)。
 
-除了在本教程中收集的身份验证值之外，许多 [!DNL Platform] API还要求以头 `{SANDBOX_NAME}` 形式提供有效的API。 有关更多 [信息，请参](../sandboxes/home.md) 阅沙箱概述。
+除了在本教程中收集的身份验证值之外，许多 [!DNL Platform] API还要求以头 `{SANDBOX_NAME}` 形式提供有效的API。 See the [sandboxes overview](../sandboxes/home.md) for more information.
