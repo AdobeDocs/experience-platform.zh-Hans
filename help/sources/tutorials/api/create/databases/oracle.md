@@ -38,7 +38,7 @@ ht-degree: 2%
 | `connectionString` | 用于连接的连接字符串 [!DNL Oracle]。 连接 [!DNL Oracle] 字符串模式为： `Host={HOST};Port={PORT};Sid={SID};User Id={USERNAME};Password={PASSWORD}`. |
 | `connectionSpec.id` | 创建连接所需的唯一标识符。 连接规范ID [!DNL Oracle] 为 `d6b52d86-f0f8-475f-89d4-ce54c8527328`。 |
 
-有关快速入门的详细信息，请参 [阅此Oracle文档](https://docs.oracle.com/database/121/ODPNT/featConnecting.htm#ODPNT199)。
+有关入门的详细信息，请参 [阅此Oracle文档](https://docs.oracle.com/database/121/ODPNT/featConnecting.htm#ODPNT199)。
 
 ### 读取示例API调用
 
