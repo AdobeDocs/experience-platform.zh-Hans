@@ -5,7 +5,7 @@ topic: guide
 translation-type: tm+mt
 source-git-commit: 59cf089a8bf7ce44e7a08b0bb1d4562f5d5104db
 workflow-type: tm+mt
-source-wordcount: '1201'
+source-wordcount: '1192'
 ht-degree: 1%
 
 ---
@@ -25,9 +25,9 @@ Adobe Experience Platform提供了一系列护栏，帮助您避免创建无法�
 
 建议您在尝试构建Experience Platform模型以在中使用之前阅读以下数据服务文档 [!DNL Real-time Customer Profile]。 使用文档模型和本Experience Platform中概述的保障，需要了解与管理实体相关的各种服务 [!DNL Real-time Customer Profile] :
 
-* [[!DNL实时客户用户档案]](home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL Real-time Customer Profile]](home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 * [Adobe Experience Platform身份服务](../identity-service/home.md):在客户被收录时，通过连接来自不同数据源的身份，支持创建“单一视图” [!DNL Platform]。
-* [[!DNL体验数据模型(XDM)]](../xdm/home.md):平台组织客户体验数据的标准化框架。
+* [[!DNL Experience Data Model (XDM)]](../xdm/home.md):平台组织客户体验数据的标准化框架。
    * [模式合成基础](../xdm/schema/composition.md):介绍模式和Experience Platform内数据建模。
 * [Adobe Experience Platform细分服务](../segmentation/home.md):中的细分引擎 [!DNL Platform] 用于根据客户行为和属性从客户用户档案创建受众细分。
    * [多实体细分](../segmentation/multi-entity-segmentation.md):创建将维实体与用户档案数据集成的区段的指南。
@@ -62,7 +62,7 @@ Adobe Experience Platform提供了一系列护栏，帮助您避免创建无法�
 
 | 瓜德赖尔 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 建议贡献给合并模式的数据集 [!DNL Profile] 数 | 20 | 柔和 | **建议最多支持[!DNL Profile]20个数据集。** 要为其他数据集启 [!DNL Profile]用，应首先删除或禁用现有数据集。 |
+| 建议贡献给合并模式的数据集 [!DNL Profile] 数 | 20 | 柔和 | **建议最多支持 [!DNL Profile]20个数据集。** 要为其他数据集启 [!DNL Profile]用，应首先删除或禁用现有数据集。 |
 | 建议的多实体关系数 | 5 | 柔和 | **建议在主图元和尺寸图元之间定义最多5个多实体关系。** 在删除或禁用现有关系之前，不应进行其他关系映射。 |
 | 在多实体关系中使用的ID字段的最大JSON深度 | 4 | 柔和 | **在多实体关系中使用的ID字段，建议的最大JSON深度为4。** 这意味着在高度嵌套的模式中，嵌套超过4级的字段不应用作关系中的ID字段。 |
 | 用户档案片段中的数组基数 | &lt;=500 | 柔和 | **用户档案片段（与时间无关的数据）中的最佳阵列基数为&lt;=500。** |
@@ -72,8 +72,8 @@ Adobe Experience Platform提供了一系列护栏，帮助您避免创建无法�
 
 | 瓜德赖尔 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| 不允许非实体使用时间序列数据[!DNL XDM Individual Profile] | 0 | 硬 | **用户档案服务中的非实体不允许使用[!DNL XDM Individual Profile]时间序列数据。** 如果时间序列数据集与非ID关联[!DNL XDM Individual Profile] ，则不应启用该数据集 [!DNL Profile]。 |
-| 无嵌套关系 | 0 | 柔和 | **您不应在两个非模式之间创建关系[!DNL XDM Individual Profile]。** 对于不属于模式模式的任何合并，不建议创建关系 [!DNL Profile] 。 |
+| 不允许非实体使用时间序列数据[!DNL XDM Individual Profile] | 0 | 硬 | **用户档案服务中的非实体不允许使用[!DNL XDM Individual Profile] 时间序列数据。** 如果时间序列数据集与非ID关联[!DNL XDM Individual Profile] ，则不应启用该数据集 [!DNL Profile]。 |
+| 无嵌套关系 | 0 | 柔和 | **您不应在两个非模式之间创建关系[!DNL XDM Individual Profile] 。** 对于不属于模式模式的任何合并，不建议创建关系 [!DNL Profile] 。 |
 | 主ID字段的最大JSON深度 | 4 | 柔和 | **主ID字段的建议最大JSON深度为4。** 这意味着在高度嵌套的模式中，如果字段嵌套深度超过4个级别，则不应选择该字段作为主ID。 位于第4个嵌套级别的字段可用作主ID。 |
 
 ## 数据大小护栏
