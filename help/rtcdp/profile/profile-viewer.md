@@ -19,4 +19,4 @@ ht-degree: 0%
 
 在用户界面中，您可以视图这些只读用户档案并查看有关个人客户的重要信息，如偏好、过去事件和交互以及个人所属的细分。
 
-由 [!DNL Real-time Customer Data Platform] 于Real-time CDP是在Adobe Experience Platform之上构建的，因此它能够利用属于其中的用户档案查看功能 [!DNL Experience Platform]。 有关在用户界面中查看客户用户档案的 [!DNL Platform] 详细指南，请参 [阅实时客户用户档案用户指南](../../profile/ui/user-guide.md)。
+由 [!DNL Real-time Customer Data Platform] 于Real-time CDP构建在Adobe Experience Platform之上，因此能够利用属于其中的用户档案查看功能 [!DNL Experience Platform]。 有关在用户界面中查看客户用户档案的 [!DNL Platform] 详细指南，请参 [阅实时客户用户档案用户指南](../../profile/ui/user-guide.md)。
