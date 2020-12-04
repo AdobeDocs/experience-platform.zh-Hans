@@ -6,7 +6,7 @@ seo-title: 社交网络目标工作流
 description: 连接到社交网络广告帐户的说明
 seo-description: 连接到社交网络广告帐户的说明
 translation-type: tm+mt
-source-git-commit: 85e6a65e1407ca60e7b63681c045fadaaa24aef9
+source-git-commit: f2fdc3b75d275698a4b1e4c8969b1b840429c919
 workflow-type: tm+mt
 source-wordcount: '499'
 ht-degree: 0%
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 确认您的凭据并将Adobe Experience Cloud连接到您的社交网络后，您可以选 **[!UICONTROL 择]** “下一步”以继续 **[!UICONTROL 设置]** 步骤。
 
-![已确认凭据](/help/rtcdp/destinations/assets/facebook-post-connection-view.png)
+![已确认凭据](../../assets/catalog/social/workflow/post-connect.png)
 
 在设 **[!UICONTROL 置步]** 骤中，为激活流 [!UICONTROL 输入名] 称和说明 [!UICONTROL ，然后填写社交网] 络广告帐户的帐户ID。
 
