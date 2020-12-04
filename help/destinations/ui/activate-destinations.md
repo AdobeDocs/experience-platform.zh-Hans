@@ -6,7 +6,7 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将细分映射到目标，激活您在实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将细分映射到目标，激活您在实时客户数据平台中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 5f120a716cc3396ef7749463bb6052a8ced2fbb4
+source-git-commit: f2fdc3b75d275698a4b1e4c8969b1b840429c919
 workflow-type: tm+mt
 source-wordcount: '1768'
 ht-degree: 0%
@@ -68,7 +68,7 @@ ht-degree: 0%
 
 ![作为身份的忠诚度ID](../assets/ui/activate-destinations/rewardsid-as-identity.gif)
 
-如果 `Email_LC_SHA256` 您根据电子邮件散列要求对目标接收时的客户电子邮件地址进行散列处理以进入Adobe Experience Platform, [!DNL Facebook] 请选择 [身份](/help/rtcdp/destinations/facebook-destination.md#email-hashing-requirements)。
+如果 `Email_LC_SHA256` 您根据电子邮件散列要求对目标接收时的客户电子邮件地址进行散列处理以进入Adobe Experience Platform, [!DNL Facebook] 请选择 [身份](../catalog/social/facebook.md#email-hashing-requirements)。
 
 如果 `Email` 您使用的电子邮件地址没有散列，请选择作为目标标识。 实时CDP将散列电子邮件地址以符合要 [!DNL Facebook] 求。
 
@@ -158,7 +158,7 @@ ht-degree: 0%
 
 此外，您还可以将不同属性标记为必需。 将某个属性标记为强制属性会使其成为强制属性，因此导出的区段必须包含该属性。 因此，它可以用作另外的过滤形式。 不需要将属性标记为 **必需** 。
 
-建议其中一个属性是模式的 [唯一标识符](/help/rtcdp/destinations/email-marketing-destinations.md#identity) 。 有关必选属性的详细信息，请参阅电子邮件营销目标文 [档中的标识](/help/rtcdp/destinations/email-marketing-destinations.md#identity) 部分。
+建议其中一个属性是模式的 [唯一标识符](../../destinations/catalog/email-marketing/overview.md#identity) 。 有关必选属性的详细信息，请参阅电子邮件营销目标文 [档中的标识](../../destinations/catalog/email-marketing/overview.md#identity) 部分。
 
 >[!NOTE]
 > 
