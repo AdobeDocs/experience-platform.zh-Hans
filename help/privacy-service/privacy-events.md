@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 订阅 [!DNL Privacy Service Events]
 
-[!DNL Privacy Service Events] 是Adobe Experience Platform提供的消 [!DNL Privacy Service]息，它利用发送到配置的webhook的AdobeI/O事件，以促进高效的作业请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。
+[!DNL Privacy Service Events] 是Adobe Experience Platform提供的消息， [!DNL Privacy Service]它利用发送到配置的webhook的Adobe I/O事件来促进高效的工作请求自动化。 它们减少或消除了对API进行轮询的 [!DNL Privacy Service] 需求，以便检查作业是否完成或是否到达了工作流中的特定里程碑。
 
 当前有四种类型的通知与隐私作业请求生命周期相关：
 
