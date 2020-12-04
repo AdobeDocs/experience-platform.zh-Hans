@@ -36,6 +36,6 @@ API [!DNL Policy Service] 允许您创建和管理数据使用策略，以确定
 
 允许在中使用的区段 [!DNL Real-time Customer Profile] 在其区段定义中包含合并策略ID。 此合并策略包含有关区段中要包含哪些数据集的信息，这些数据集又包含任何适用的数据使用标签。 有关强制受众区段遵守数据使用规范的具体步骤，请遵循区 [段的数据使用规范实施教程](../segmentation/tutorials/governance.md)。
 
-## Get started with [!DNL Privacy Service]
+## 开始使用 [!DNL Privacy Service]
 
 [!DNL Privacy Service] 提供RESTful API和用户界面，允许您跨Adobe Experience Cloud应用程序管理数据主体（客户）的个人数据。 [!DNL Privacy Service] 还提供了一个中央审计和日志记录机制，允许您访问涉及应用程序的作业的状态和 [!DNL Experience Cloud] 结果。 有关如何创建和监视作业的 [!DNL Privacy Service] 说明，请按照Privacy Service开发人员指 [南或Privacy Service用户指](../privacy-service/api/getting-started.md) 南中提供的步骤操作 [](../privacy-service/ui/overview.md)。
