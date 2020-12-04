@@ -6,10 +6,10 @@ title: 监视数据流
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 12b8ced6705c2b14b50ea237391d9f829c894b99
+source-git-commit: 51a09cdced9a21aa785a43d8d9740d70a5fbc46c
 workflow-type: tm+mt
-source-wordcount: '822'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -29,7 +29,7 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ## 监视数据流
 
-登录以登录到Experience Platform [UI](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航]** 中选择 [!UICONTROL “源] ”以访问“源”工作区。 从顶 **[!UICONTROL 部标题]** 中选择视图流，以便对现有数据流进行数据流。
+登录Experience Platform [UI](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航]** 中选择 [!UICONTROL “源] ”以访问“源”工作区。 从顶 **[!UICONTROL 部标题]** 中选择视图流，以便对现有数据流进行数据流。
 
 ![catalog-dataflows](../../images/tutorials/monitor/catalog-dataflows.png)
 
