@@ -8,7 +8,7 @@ description: 本文档提供了一个教程，用于使用分段API评估区段�
 translation-type: tm+mt
 source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
-source-wordcount: '1560'
+source-wordcount: '1535'
 ht-degree: 0%
 
 ---
@@ -16,15 +16,15 @@ ht-degree: 0%
 
 # 评估和访问区段结果
 
-此文档提供了一个教程，用于使用[!DNL分段API]评 [估区段和访问区段结果](../api/getting-started.md)。
+本文档提供了一个教程，用于评估区段和使用访问区段结果 [[!DNL Segmentation API]](../api/getting-started.md)。
 
 ## 入门指南
 
 本教程需要对创建受众段时涉及的 [!DNL Adobe Experience Platform] 各种服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [[!DNL实时客户用户档案]](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
-- [[!DNLAdobe Experience Platform分段服务]](../home.md):允许您根据数据构建受众 [!DNL Real-time Customer Profile] 细分。
-- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):平台组织客户体验数据的标准化框架。
+- [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
+- [[!DNL Adobe Experience Platform Segmentation Service]](../home.md):允许您根据数据构建受众 [!DNL Real-time Customer Profile] 细分。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):平台组织客户体验数据的标准化框架。
 - [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 ### 所需的标题
@@ -230,10 +230,10 @@ curl -X POST \
 
 ## 后续步骤
 
-成功完成导出后，您的数据便可在中 [!DNL Data Lake] 使用 [!DNL Experience Platform]。 然后，您可 [以使用[!DNL数据访问API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) ，使用与导出 `batchId` 关联的访问数据。 根据区段的大小，数据可能以块为单位，而批可能由多个文件组成。
+成功完成导出后，您的数据便可在中 [!DNL Data Lake] 使用 [!DNL Experience Platform]。 然后，您可以使用 [[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml) 与导出相关联的 `batchId` 访问数据。 根据区段的大小，数据可能以块为单位，而批可能由多个文件组成。
 
 有关如何使用API访问和下载批处理文 [!DNL Data Access] 件的分步说明，请遵循数 [据访问教程](../../data-access/tutorials/dataset-data.md)。
 
 您还可以使用访问成功导出的区段数 [!DNL Adobe Experience Platform Query Service]据。 使用UI或RESTful API, [!DNL Query Service] 可以对中的数据编写、验证和运行查询 [!DNL Data Lake]。
 
-有关如何查询受众数据的更多信息，请查阅有关[! [DNL查询服务]的文档](../../query-service/home.md)。
+有关如何查询受众数据的更多信息，请查看相关文档 [[!DNL Query Service]](../../query-service/home.md)。
