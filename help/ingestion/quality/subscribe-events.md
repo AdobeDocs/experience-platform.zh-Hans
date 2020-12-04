@@ -73,7 +73,7 @@ ht-degree: 1%
 
 ## 后续步骤
 
-在将通知注 [!DNL Platform] 册到项目后，您可以视图从项目概述中收 [!UICONTROL 到的事件]。 有关如何跟踪 [Adobe的详细说明](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) ，请参阅事件I/O事件跟踪指南。
+在将通知注 [!DNL Platform] 册到项目后，您可以视图从项目概述中收 [!UICONTROL 到的事件]。 有关如何跟踪您的 [Adobe I/O的详细说](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/support/tracing.md) 明，请参阅《事件事件跟踪指南》。
 
 ## 附录
 
