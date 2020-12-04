@@ -1,10 +1,10 @@
 ---
 keywords: Experience Platform;home;popular topics;Azure Synapse Analytics;Synapse;synapse;azure synapse analytics
 solution: Experience Platform
-title: 在UI中创建Azure突触分析源连接器
+title: 在UI中创建Azure synapse分析源连接器
 topic: overview
 type: Tutorial
-description: 本教程提供了使用平台用户界面创建Azure突触分析（以下称“突触”）源连接器的步骤。
+description: 本教程提供了使用平台用户界面创建Azure synapse分析（以下称“突触”）源连接器的步骤。
 translation-type: tm+mt
 source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
@@ -51,11 +51,11 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
-在“数据 **[!UICONTROL 库]** ”类别下，选 **[!UICONTROL 择Azure突触分析]**。 如果这是您首次使用此连接器，请选择“ **[!UICONTROL 配置]**”。 否则，选择 **[!UICONTROL 添加数据]** ，以创建新连 [!DNL Synapse] 接器。
+在“数据 **[!UICONTROL 库]** ”类别下，选 **[!UICONTROL 择“Azure synapse分析]**”。 如果这是您首次使用此连接器，请选择“ **[!UICONTROL 配置]**”。 否则，选择 **[!UICONTROL 添加数据]** ，以创建新连 [!DNL Synapse] 接器。
 
 ![](../../../../images/tutorials/create/azure-synapse-analytics/catalog.png)
 
-将显 **[!UICONTROL 示“连接到Azure突触分析]** ”页。 在此页上，您可以使用新凭据或现有凭据。
+此时将 **[!UICONTROL 显示“连接到Azure synapse分]** 析”页面。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
