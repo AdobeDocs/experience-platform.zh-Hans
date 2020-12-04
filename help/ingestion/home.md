@@ -39,7 +39,7 @@ Adobe Experience Platform将来自多个来源的数据整合在一起，以帮�
 
 源连接可配置为从其他Adobe应用程序(如Adobe Analytics和Adobe Audience Manager)、第三方云存储源(如 [!DNL Azure Blob]S3 [!DNL Amazon] 、FTP服务器和SFTP服务器)以及第三方CRM系统(如 [!DNL Microsoft Dynamics] 和 [!DNL Salesforce])收集数据。
 
-有关更多 [信息](../sources/home.md) ，请参阅源概述。
+See the [Sources overview](../sources/home.md) for more information.
 
 ## 后续步骤和其他资源
 
