@@ -8,7 +8,7 @@ description: 此文档提供了一个教程，用于使用流摄取在单个HTTP
 translation-type: tm+mt
 source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
 workflow-type: tm+mt
-source-wordcount: '1487'
+source-wordcount: '1480'
 ht-degree: 1%
 
 ---
@@ -510,7 +510,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
     },
 ```
 
-第三条消息失败，因为标头中使用的IMS组织ID无效。 IMS组织必须与您尝试发布到的{CONNECTION_ID}匹配。 要确定哪个IMS组织ID与您所使用的流连接相匹配，您可 `GET inlet` 以使用[! [DNL数据摄取API]执行请求](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)。 有关 [如何检索先前创建](./create-streaming-connection.md#get-data-collection-url) 的流连接的示例，请参阅检索流连接。
+第三条消息失败，因为标头中使用的IMS组织ID无效。 IMS组织必须与您尝试发布到的{CONNECTION_ID}匹配。 要确定哪个IMS组织ID与您使用的流连接匹配，您可以使用 `GET inlet` 执行请求 [[!DNL Data Ingestion API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)。 有关 [如何检索先前创建](./create-streaming-connection.md#get-data-collection-url) 的流连接的示例，请参阅检索流连接。
 
 第四条消息失败，因为它未遵循预期的XDM模式。 请 `xdmSchema` 求的标头和正文中包含的内容与XDM模式不匹配 `{DATASET_ID}`。 更正消息标头和正文中的模式允许其通过DCCS验证并成功发送到 [!DNL Platform]。 还必须更新消息正文以匹配消息的XDM模式, `{DATASET_ID}` 以便其通过流验证 [!DNL Platform]。 有关成功流入平台的消息会发生什么情况的详细信息，请参 [阅本教程的](#confirm-messages-ingested) “确认消息”一节。
 
@@ -531,7 +531,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 
 ## 后续步骤
 
-现在，您了解如何在单个请求中发送多个消息并验证消息何时成功引入目标数据集，因此可以开始将您自己的数据流化 [!DNL Platform]。 有关如何从中查询和检索所摄取数据的概 [!DNL Platform]述，请参 [阅[!DNL数据访问]](../../data-access/tutorials/dataset-data.md) 指南。
+现在，您了解如何在单个请求中发送多个消息并验证消息何时成功引入目标数据集，因此可以开始将您自己的数据流化 [!DNL Platform]。 有关如何从中查询和检索所摄取数据的概 [!DNL Platform]述，请参阅 [[!DNL Data Access]](../../data-access/tutorials/dataset-data.md) 指南。
 
 ## 附录
 
