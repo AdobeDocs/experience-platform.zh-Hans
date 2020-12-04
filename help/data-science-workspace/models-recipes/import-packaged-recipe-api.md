@@ -8,7 +8,7 @@ description: '本教程使用Sensei Machine Learning API创建引擎，在用户
 translation-type: tm+mt
 source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
-source-wordcount: '981'
+source-wordcount: '976'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 # 导入打包的菜谱(API)
 
-本教程使 [用[!DNL Sensei机器学](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) 习API] [创建引](../api/engines.md)擎，在用户界面中也称为菜谱。
+本教程使 [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) 用创建 [引擎](../api/engines.md)，在用户界面中也称为菜谱。
 
 在入门之前，请务必注意，Adobe Experience Platform [!DNL Data Science Workspace] 使用不同的术语来指代API和UI中的类似元素。 本教程中使用API术语，下表概述了相关术语：
 
