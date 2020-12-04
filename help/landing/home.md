@@ -45,7 +45,7 @@ Adobe在Experience Platform的基础上构建了应用程序服务。 您可以�
    了解使用API的基 [!DNL Platform] 础。
 
 * [**API参考文档**](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)\
-   发现 [!DNL Experience Platform] API，包括标题、参数、示例请求和响应。<br/>*这些文档托管在AdobeI/O上。*
+   发现 [!DNL Experience Platform] API，包括标题、参数、示例请求和响应。<br/>*这些文档在Adobe I/O举行。*
 
 * [**术语表**](glossary.md)\
    查看Adobe Experience Platform术语。
