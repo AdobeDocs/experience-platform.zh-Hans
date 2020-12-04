@@ -7,7 +7,7 @@ description: 此开发人员指南提供帮助您使用目录API进行开始的�
 translation-type: tm+mt
 source-git-commit: c8e53a25c5b22e8d840658fe26ff47875947a6d0
 workflow-type: tm+mt
-source-wordcount: '588'
+source-wordcount: '583'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 # [!DNL Catalog Service] 开发人员指南
 
-[!DNL Catalog Service] 是Adobe Experience Platform境内数据定位和谱系记录系统。 [!DNL Catalog] 充当元数据存储或“目录”，您可以在其中找到有关数据的信息， [!DNL Experience Platform]无需访问数据本身。 有关更多 [[!DNL Catalog] 信息](../home.md) ，请参阅概述。
+[!DNL Catalog Service] 是Adobe Experience Platform境内数据定位和谱系记录系统。 [!DNL Catalog] 充当元数据存储或“目录”，您可以在其中找到有关数据的信息， [!DNL Experience Platform]无需访问数据本身。 See the [[!DNL Catalog] overview](../home.md) for more information.
 
 此开发人员指南提供帮助您使用API进行开始 [!DNL Catalog] 的步骤。 然后，该指南提供了使用执行关键操作的示例API调 [!DNL Catalog]用。
 
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 [!DNL Catalog] 跟踪中几种资源和操作的元数据 [!DNL Experience Platform]。 本开发人员指南需要对创建和管理这些 [!DNL Experience Platform] 资源所涉及的各种服务有一个有效的了解：
 
-* [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 * [批量摄取](../../ingestion/batch-ingestion/overview.md):如何 [!DNL Experience Platform] 从数据文件（如CSV和Parke）中摄取和存储数据。
 * [流摄取](../../ingestion/streaming-ingestion/overview.md):如 [!DNL Experience Platform] 何从客户端和服务器端设备实时摄取和存储数据。
 
