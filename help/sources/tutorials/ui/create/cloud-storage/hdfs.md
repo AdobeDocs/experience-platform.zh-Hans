@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 在UI中创建Apache HDFS源连接器
 topic: overview
 type: Tutorial
-description: 本教程提供使用平台用户界面验证Apache Hadoop分布式文件系统（以下称“HDFS”）源连接器的步骤。
+description: 本教程提供了使用平台用户界面验证ApacheHadoop分布式文件系统（以下简称“HDFS”）源连接器的步骤。
 translation-type: tm+mt
 source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
 workflow-type: tm+mt
