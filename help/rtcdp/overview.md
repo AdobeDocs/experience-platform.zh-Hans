@@ -5,7 +5,7 @@ seo-title: 实时客户数据平台概述
 description: 实时客户数据平台概述
 seo-description: 实时客户数据平台概述
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: 4dfef6649b3ae07593667eb5165dad6bacc8ed2f
 workflow-type: tm+mt
 source-wordcount: '289'
 ht-degree: 0%
@@ -38,5 +38,5 @@ ht-degree: 0%
 * [如何摄取数据](sources/sources-overview.md)
 * [如何访问用户档案](profile/profile-overview.md)
 * [如何构建细分](segmentation/segmentation-overview.md)
-* [如何将区段激活到目标](destinations/activate-destinations.md)
+* [如何将区段激活到目标](destinations/overview.md)
 * [如何定义和实施数据管理策略](privacy/data-governance-overview.md)
