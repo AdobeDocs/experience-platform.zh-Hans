@@ -7,7 +7,7 @@ description: 本用户指南提供如何在Adobe Experience Platform用户界面
 translation-type: tm+mt
 source-git-commit: d2f098cb9e4aaf5beaad02173a22a25a87a43756
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '552'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 ![](../images/quality/monitor-data-flows/click-streaming-end-to-end.png)
 
-将 **[!UICONTROL 显示“流式端到端]** ”监视页。 此工作区提供一个图表，显示流事件接收率 [!DNL Platform]，一个图表，显示流事件接收率，流用户档案被[!DNL实时] [成功处理](../../profile/home.md)，以及传入数据的详细列表。
+将 **[!UICONTROL 显示“流式端到端]** ”监视页。 此工作区提供一个图表，显示接收流事件的速率 [!DNL Platform]，一个图表，显示成功处理的流事件的速率，以 [[!DNL Real-time Customer Profile]](../../profile/home.md)及传入数据的详细列表。
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 
@@ -61,7 +61,7 @@ ht-degree: 0%
 
 ## 监控批量端对端数据获取
 
-在[[!DNL Experience Platform UI]中](https://platform.adobe.com)，单 **[!UICONTROL 击左侧导]** 航菜单上的“监视”。
+在中， [[!DNL Experience Platform UI]](https://platform.adobe.com)单击左 **[!UICONTROL 侧导航]** 菜单上的“监视”。
 
 ![](../images/quality/monitor-data-flows/click-monitoring.png)
 
