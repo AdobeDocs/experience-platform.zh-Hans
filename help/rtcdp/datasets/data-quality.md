@@ -19,4 +19,4 @@ ht-degree: 0%
 
 实时CDP构建在Adobe Experience Platform之上，并利用许多服务 [!DNL Experience Platform] 和功能。 因此，您可以确信数据在摄取时会被检查和验证。
 
-有关数据质量的详细信息，请阅读 [AdobeI/O的数据质量文档](../../ingestion/quality/overview.md)。
+有关数据质量的详细信息，请阅读有关 [Adobe I/O的数据质量文档](../../ingestion/quality/overview.md)。
