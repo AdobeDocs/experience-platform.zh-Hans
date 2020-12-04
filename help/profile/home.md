@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Real-time Customer Profile]概述
 
-Adobe Experience Platform使您能够为客户提供协调、一致和相关的体验，无论客户在何处或何时与您的品牌互动。 您 [!DNL Real-time Customer Profile]可以看到每个客户的整体视图，该渠道组合了多个的数据，包括在线、离线、CRM和第三方数据。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供一个具有可操作性、时间戳记的帐户。 此概述将帮助您了解中的角色和 [!DNL Real-time Customer Profile] 使用 [!DNL Experience Platform]。
+Adobe Experience Platform使您能够为客户提供协调、一致和相关的体验，无论客户在何处或何时与您的品牌互动。 您 [!DNL Real-time Customer Profile]可以看到每个客户的整体视图，该渠道组合了多个的数据，包括在线、离线、CRM和第三方数据。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供可操作、有时间戳的帐户。 此概述将帮助您了解中的角色和 [!DNL Real-time Customer Profile] 使用 [!DNL Experience Platform]。
 
 ## [!DNL Profile] experience platform
 
