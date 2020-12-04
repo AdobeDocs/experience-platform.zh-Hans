@@ -6,7 +6,7 @@ type: Tutorial
 translation-type: tm+mt
 source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
-source-wordcount: '1035'
+source-wordcount: '1020'
 ht-degree: 1%
 
 ---
@@ -27,10 +27,10 @@ ht-degree: 1%
 
 本教程需要对管理启用数据集时涉及的各种Adobe Experience Platform服 [!DNL Profile]务进行有效了解。 在开始本教程之前，请查阅以下相关服务的 [!DNL Platform] 文档：
 
-- [[!DNL实时客户用户档案]](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-- [[!DNL标识服务]](../../identity-service/home.md):通过将 [!DNL Real-time Customer Profile] 来自被引入的不同数据源的身份连接到其中，实现 [!DNL Platform]了。
-- [[!DNL目录服务]](../../catalog/home.md):一个REST风格的API，它允许您创建数据集并为和配 [!DNL Real-time Customer Profile] 置它 [!DNL Identity Service]们。
-- [[!DNL体验数据模型(XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [[!DNL Real-time Customer Profile]](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [[!DNL Identity Service]](../../identity-service/home.md):通过将 [!DNL Real-time Customer Profile] 来自被引入的不同数据源的身份连接到其中，实现 [!DNL Platform]了。
+- [[!DNL Catalog Service]](../../catalog/home.md):一个REST风格的API，它允许您创建数据集并为和配 [!DNL Real-time Customer Profile] 置它 [!DNL Identity Service]们。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
 以下各节提供了成功调用平台API所需了解的其他信息。
 
