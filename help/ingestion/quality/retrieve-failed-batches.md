@@ -8,7 +8,7 @@ description: 本教程介绍了使用数据摄取API检索有关失败批次的�
 translation-type: tm+mt
 source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '622'
+source-wordcount: '613'
 ht-degree: 1%
 
 ---
@@ -24,8 +24,8 @@ Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以
 
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-- [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [[!DNL数据摄取]](../home.md):发送数据的方 [!DNL Experience Platform]法
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [[!DNL Data Ingestion]](../home.md):发送数据的方 [!DNL Experience Platform]法
 
 ### 读取示例API调用
 
