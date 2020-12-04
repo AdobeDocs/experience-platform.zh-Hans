@@ -8,7 +8,7 @@ translation-type: tm+mt
 source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
 workflow-type: tm+mt
 source-wordcount: '195'
-ht-degree: 10%
+ht-degree: 15%
 
 ---
 
@@ -17,13 +17,13 @@ ht-degree: 10%
 
 **发行日期：2020 年 2 月 12 日**
 
-对Adobe Experience Platform中现有功能的更新：
+Adobe Experience Platform 现有功能的更新包括：
 
 * [源](#sources)
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部源收集数据，同时允许您使用服务构建、标记和增强该 [!DNL Platform] 数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)收集数据。
+Adobe Experience Platform可以从外部来源收集数据，同时允许您使用服务来构建、标记和增强该 [!DNL Platform] 数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)收集数据。
 
 [!DNL Experience Platform] 提供REST风格的API和交互式UI，让您可以轻松为各种数据提供者设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置获取运行的时间，以及管理数据获取吞吐量。
 
