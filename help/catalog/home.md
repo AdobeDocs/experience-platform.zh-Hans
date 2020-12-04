@@ -59,7 +59,7 @@ ht-degree: 5%
 | 批 | `/batches` | 批量是由一个或多个要作为单个单位摄取的文件组成的数据单位。中的批处理对 [!DNL Catalog] 象概述了批处理的摄取量度（如已处理的记录数或磁盘大小），还可能包括指向受批处理操作影响的数据集、视图和其他资源的链接。 |
 | 连接 | `/connections` | 连接是源连接器的单个实例，对于您的组织是唯一的，并且使用相应的连接器类型身份验证凭据进行配置。 |
 | 连接器 | `/connectors` | 连接器定义源连接如何从其他Adobe应用程序(如Adobe Analytics和Adobe Audience Manager)、第三方云存储源(如 [!DNL Azure Blob]、 [!DNL Amazon S3]FTP服务器和SFTP服务器)以及第三方CRM系统(如 [!DNL Microsoft Dynamics] 和 [!DNL Salesforce])收集数据。 |
-| 数据集 | `/dataSets` | 数据集是用于存储（通常是表）集合的模式和管理构造，其中包含（列）和字段（行）。 有关更多 [信息，请参](./datasets/overview.md) 阅数据集概述。 |
+| 数据集 | `/dataSets` | 数据集是用于存储（通常是表）集合的模式和管理构造，其中包含（列）和字段（行）。 See the [datasets overview](./datasets/overview.md) for more information. |
 | 数据集文件 | `/datasetFiles` | 数据集文件表示已保存的数据块 [!DNL Platform]。 作为文本文件的记录，您可以在这些位置找到文件的大小、文件包含的记录数以及对摄取文件的批次的引用。 |
 
 ## 后续步骤
