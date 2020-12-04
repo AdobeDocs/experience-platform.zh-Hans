@@ -7,7 +7,7 @@ description: 此文档提供有关监视批处理摄取、管理部分批处理�
 translation-type: tm+mt
 source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '892'
 ht-degree: 2%
 
 ---
@@ -23,8 +23,8 @@ Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以
 
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-- [[!DNL体验数据模型(XDM)系统]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [[!DNLAdobe Experience Platform数据摄取]](../home.md):发送数据的方 [!DNL Experience Platform]法
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md):发送数据的方 [!DNL Experience Platform]法
 
 ### 读取示例API调用
 
@@ -303,7 +303,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 ### 部分批摄取错误类型 {#partial-ingestion-types}
 
-部分批处理摄取在摄取数据时有三种不同的错误类型：
+部分批量摄取在摄取数据时有三种不同的错误类型：
 
 - [不可读文件](#unreadable)
 - [模式或标题无效](#schemas-headers)
