@@ -17,7 +17,7 @@ ht-degree: 0%
 
 PC用户可从https://powerbi.microsoft.com/en-us/desktop/ [!DNL Power BI] 进行 [安装](https://powerbi.microsoft.com/en-us/desktop/)。
 
-## Set up [!DNL Power BI]
+## 设置 [!DNL Power BI]
 
 安装完 [!DNL Power BI] 毕后，需要设置必要的组件以支持PostgreSQL连接器。 按照以下步骤操作：
 
