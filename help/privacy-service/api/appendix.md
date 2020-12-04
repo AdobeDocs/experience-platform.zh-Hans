@@ -16,7 +16,7 @@ ht-degree: 10%
 
 ## 标准身份命名空间 {#standard-namespaces}
 
-发送到的所有身份 [!DNL Privacy Service] 必须在特定身份命名空间下提供。 身份命名空间是Adobe Experience Platform身 [份服务的一个组](../../identity-service/home.md) 件，用于指示与身份相关的上下文。
+发送到的所有身份 [!DNL Privacy Service] 必须在特定身份命名空间下提供。 Identity namespaces are a component of [Adobe Experience Platform Identity Service](../../identity-service/home.md) that indicate the context to which an identity relates.
 
 下表概述了几种常用的预定义身份类型及其 [!DNL Experience Platform]关联值的可 `namespace` 用性：
 
@@ -27,8 +27,8 @@ ht-degree: 10%
 | Adobe Advertising CloudID | AdCloud | 411 |
 | Adobe Audience ManagerUUID | CORE | 0 |
 | Adobe Experience Cloud ID | ECID | 4 |
-| Adobe Target ID | TNTID | 9 |
-| [!DNL Apple] ID for Advertisers | IDFA | 20915 |
+| Adobe TargetID | TNTID | 9 |
+| [!DNL Apple] 广告商的ID | IDFA | 20915 |
 | [!DNL Google] 广告 ID | GAID | 20914 |
 | [!DNL Windows] AID | WAID | 8 |
 
@@ -44,7 +44,7 @@ ht-degree: 10%
 
 | 限定符 | 定义 |
 | --------- | ---------- |
-| 标准 | One of the standard namespaces defined globally, not tied to an individual organization data set (for example, email, phone number, etc.). 命名空间ID已提供。 |
+| 标准 | 全球定义的标准命名空间之一，不与单个组织数据集（例如，电子邮件、电话号码等）关联。 命名空间ID已提供。 |
 | 自定义 | 在组织上下文中创建的唯一命名空间，不在整个组织中共享 [!DNL Experience Cloud]。 该值表示要搜索的友好名称（“名称”字段）。 命名空间ID已提供。 |
 | integrationCode | 集成代码——与“自定义”类似，但明确定义为要搜索的数据源的集成代码。 命名空间ID已提供。 |
 | namespaceId | 指示该值是通过命名空间服务创建或映射的命名空间的实际ID。 |
