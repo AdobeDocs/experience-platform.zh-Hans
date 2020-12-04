@@ -8,7 +8,7 @@ description: 本教程为您提供了所有其他Adobe Experience Platform数据
 translation-type: tm+mt
 source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '539'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 0%
    - [字典](https://pypi.org/project/dictor/)
    - [JWT](https://pypi.org/project/jwt/)
 - 对本教程中使用的以下概念的有效理解：
-   - [[!DNL体验数据模型(XDM)]](../../xdm/home.md)
+   - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)
    - [模式合成基础](../../xdm/schema/field-dictionary.md)
 
 ## 创建零售销售模式和数据集
