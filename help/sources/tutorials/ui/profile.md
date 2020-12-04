@@ -69,4 +69,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过遵循本教程，您成功激活了入站数据以进行 [!DNL Profile] 填充。 For more information, see the [[!DNL Real-time Customer Profile] overview](../../../profile/home.md).
+通过遵循本教程，您成功激活了入站数据以进行 [!DNL Profile] 填充。 有关详细信息，请参阅 [[!DNL Real-time Customer Profile] 概述](../../../profile/home.md)。
