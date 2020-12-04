@@ -1,9 +1,9 @@
 ---
 keywords: Experience Platform;home;popular topics;Azure Synapse Analytics;azure synapse analytics;Synapse;synapse
 solution: Experience Platform
-title: Azure Synapse Analytics连接器
+title: azure synapse分析连接器
 topic: overview
-description: 以下文档提供了如何使用API或用户界面将Azure突触分析连接到平台的信息。
+description: 以下文档提供了如何使用API或用户界面将Azure synapse分析连接到平台的信息。
 translation-type: tm+mt
 source-git-commit: e0a0b7fc28b8cc85c5140d3840e06e5c7078c307
 workflow-type: tm+mt
@@ -27,11 +27,11 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 
 ## 连接 [!DNL Azure Synapse Analytics] 到 [!DNL Platform] 使用API
 
-- [使用Flow Service API创建Azure突触分析连接器](../../tutorials/api/create/databases/synapse-analytics.md)
+- [使用Flow Service API创建Azure synapse分析连接器](../../tutorials/api/create/databases/synapse-analytics.md)
 - [使用Flow Service API浏览数据库系统](../../tutorials/api/explore/database-nosql.md)
 - [使用Flow Service API从数据库收集数据](../../tutorials/api/collect/database-nosql.md)
 
 ## 连接 [!DNL Azure Synapse Analytics] 到 [!DNL Platform] 使用UI
 
-- [在UI中创建Azure突触分析源连接器](../../tutorials/ui/create/databases/synapse-analytics.md)
+- [在UI中创建Azure synapse分析源连接器](../../tutorials/ui/create/databases/synapse-analytics.md)
 - [在UI中为数据库连接器配置数据流](../../tutorials/ui/dataflow/databases.md)
