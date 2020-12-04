@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform;overview;customer ai;popular topics;customer ai overview
 solution: Experience Platform
-title: 客户人工智能概述
+title: Customer AI 概述
 topic: Customer AI overview
-description: 客户AI用于生成定制倾向得分，如大规模客户流失和转化个别用户档案。 这无需将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 translation-type: tm+mt
 source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
 workflow-type: tm+mt
 source-wordcount: '526'
-ht-degree: 0%
+ht-degree: 16%
 
 ---
 
 
-# 客户人工智能概述
+# Customer AI 概述
 
 客户人工智能作为智能服务的一部分，为营销人员提供在个人层面生成客户预测并提供解释的能力。
 
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 了解客户人工智能
 
-客户AI用于生成定制倾向得分，如大规模客户流失和转化个别用户档案。 这无需将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 
 客户人工智能的构建目标是：
 
