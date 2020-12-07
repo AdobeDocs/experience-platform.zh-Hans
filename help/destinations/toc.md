@@ -2,11 +2,11 @@
 product: experience-platform
 audience: user
 user-guide-title: 目标指南
-user-guide-description: 在此插入目标描述。
+user-guide-description: 为跨渠道营销活动、电子邮件活动、定向广告和许多其他使用案例激活已知和未知数据。
 translation-type: tm+mt
-source-git-commit: eccf962fd9a24e6b5085f706766693ee7e468aea
+source-git-commit: 395a8c2aa7fc89cde04263dbbfb3315318245ef6
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '429'
 ht-degree: 0%
 
 ---
