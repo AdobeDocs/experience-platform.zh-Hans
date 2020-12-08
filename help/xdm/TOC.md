@@ -5,9 +5,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Data Model (XDM) 指南
 user-guide-description: 使用 Experience Data Model (XDM) 类和混合来标准化体验数据。
 translation-type: tm+mt
-source-git-commit: 321dc16a1296aeb28ba78825f191a0368df16547
+source-git-commit: 1a4dd167ecd4f4f61ffe26af786b355e4561b30d
 workflow-type: tm+mt
-source-wordcount: '181'
+source-wordcount: '184'
 ht-degree: 22%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 22%
    * [XDM字段类型约束](schema/field-constraints.md)
    * [XDM字段字典](schema/field-dictionary.md)
    * 模式使用案例 {#use-cases}
-      * [隐私同意混合](schema/privacy-consent.md)
+      * [同意和首选项数据类型](schema/privacy-consent.md)
 * 类 {#classes}
    * [XDM个人用户档案](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
@@ -40,6 +40,7 @@ ht-degree: 22%
 * 数据类型 {#data-types}
    * [信标](./data-types/beacon.md)
    * [浏览器详细信息](./data-types/browser-details.md)
+   * [同意和首选项](./data-types/consents.md)
    * [设备](./data-types/device.md)
    * [电子邮件地址](./data-types/email-address.md)
    * [环境](./data-types/environment.md)
