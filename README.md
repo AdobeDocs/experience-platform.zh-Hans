@@ -1,21 +1,12 @@
 ---
-source-git-commit: 87d46c0d813cd31408eaed8331677b74fc42dd38
+source-git-commit: b0cc44b33b399eb64122374251840a4298946d80
 workflow-type: tm+mt
 translation-type: tm+mt
-source-wordcount: '643'
-ht-degree: 65%
+source-wordcount: '509'
+ht-degree: 81%
 
 ---
 # 贡献内容
-
-| EXL-PR | EXL | 预览 | 激活 | 发布日期 | 帮助 |
-|--- |--- |--- |--- |--- |--- |
-| [![生成状态](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-platform.en_pr-exl/badge/icon)](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-platform.en_pr-exl/lastBuild/) | [![生成状态](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-platform.en_exl/lastBuild/badge/icon)](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-platform.en_exl/lastBuild/lastBuild) | [预览URL](https://experienceleague.corp.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=en) | [activate-exl](https://docs.ci.corp.adobe.com/job/experience-platform/build/) | [实时URL](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/overview.html?lang=en) | [Authoring 指南](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html?lang=en) |
-
-| 生产 | Stage |
-|---|---|
-| [![生成状态](https://docs.ci.corp.adobe.com/job/experience-platform.en_production/badge/icon)](https://docs.ci.corp.adobe.com/job/experience-platform.en_production/lastBuild) | [![生成状态](https://docs.ci.corp.adobe.com/job/experience-platform.en_stage/badge/icon)](https://docs.ci.corp.adobe.com/job/experience-platform.en_stage/lastBuild) |
-| [输出产品](https://docs.adobe.com/content/help/zh-Hans/experience-platform/landing/home.html) | [输出Stg](https://docs-stg.corp.adobe.com/content/help/en/experience-platform/landing/home.html) |
 
 我们欢迎来自文档团队之外的社区成员和 Adobe 员工的参与内容撰写。
 
