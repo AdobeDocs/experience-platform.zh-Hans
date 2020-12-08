@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;consent;Consent;preferences;Preferences;privacyOptOuts;marketingPreferences;optOutType;basisOfProcessing;consent;Consent
-title: 隐私混合概述
+title: 同意和首选项数据类型
 description: 隐私／营销偏好（同意）数据类型旨在支持收集由同意管理平台(CMP)和您数据操作的其他来源生成的客户权限和偏好。
 topic: guide
 translation-type: tm+mt
-source-git-commit: ba045a635f840c62980288a1a3ad5015f54121da
+source-git-commit: 1a4dd167ecd4f4f61ffe26af786b355e4561b30d
 workflow-type: tm+mt
-source-wordcount: '2022'
+source-wordcount: '2023'
 ht-degree: 1%
 
 ---
@@ -18,10 +18,6 @@ ht-degree: 1%
 
 此文档涵盖数据类型提供的字段的结构和预 [!DNL Consents & Preferences] 期用途。
 
->[!IMPORTANT]
->
->数据 [!DNL Consents & Preferences] 类型被设计为涵盖一系列同意和偏好管理用例。 因此，此文档用一般术语描述数据类型字段的使用，并仅就如何解释这些字段的使用提出建议。 请咨询您的隐私法律团队，使数据类型的结构与您的组织如何解释并向客户展示这些同意和偏好选择保持一致。
-
 ## 先决条件 {#prerequisites}
 
 此文档要求对XDM和中模式的使用进行有效的了解 [!DNL Experience Platform]。 请在继续之前查看以下文档：
@@ -30,6 +26,10 @@ ht-degree: 1%
 * [模式合成基础](http://www.adobe.com/go/xdm-schema-best-practices-en)
 
 ## 数据类型结构 {#structure}
+
+>[!IMPORTANT]
+>
+>数据 [!DNL Consents & Preferences] 类型被设计为涵盖一系列同意和偏好管理用例。 因此，此文档用一般术语描述数据类型字段的使用，并仅就如何解释这些字段的使用提出建议。 请咨询您的隐私法律团队，使数据类型的结构与您的组织如何解释并向客户展示这些同意和偏好选择保持一致。
 
 该数 [!DNL Consents & Preferences] 据类型提供多个字段，用于捕 **获同意** 和 **首选项信息** 。
 
