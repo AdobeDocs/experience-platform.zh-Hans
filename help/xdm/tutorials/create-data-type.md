@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 本教程使用Experience PlatformUI指导您完成构建自定义数据类型的步骤。
 translation-type: tm+mt
-source-git-commit: 9008b49e1eb5e32b0f4cda7049bf873c689f6442
+source-git-commit: bfb65743764b454754ca8ebb01bfe4407833b291
 workflow-type: tm+mt
 source-wordcount: '1243'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Adobe Experience Platform提供许多标准数据类型，可用于涵盖各种�
 
 本教程需要对XDM系统有一定的了解。 有关XDM在 [Experience Platform生态系统中](../home.md) 所起作用的介绍，请参阅XDM概述，并 [介绍模式构成的基](../schema/composition.md) 础知识，了解数据类型对XDM模式的贡献。
 
-虽然本教程不是必需的，但建议您也要按照教 [程在UI中编写模式](./-schema-ui.md) ，以熟悉该教程的各种功能 [!DNL Schema Editor]。
+虽然本教程不是必需的，但建议您也要按照教 [程在UI中编写模式](./create-schema-ui.md) ，以熟悉该教程的各种功能 [!DNL Schema Editor]。
 
 ## 打开 [!DNL Schema Editor] 数据类型
 
