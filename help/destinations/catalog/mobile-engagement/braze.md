@@ -5,9 +5,9 @@ seo-title: Braze目标
 description: Braze是一个全面的客户互动平台，它为客户与他们喜爱的品牌之间提供相关且难忘的体验。
 seo-description: Braze是一个全面的客户互动平台，它为客户与他们喜爱的品牌之间提供相关且难忘的体验。
 translation-type: tm+mt
-source-git-commit: 9380c9c24267f815b788eb51949da13b8c47558f
+source-git-commit: 6b19cfa3c4a5327b6b7543123f631d0355995f09
 workflow-type: tm+mt
-source-wordcount: '925'
+source-wordcount: '953'
 ht-degree: 1%
 
 ---
@@ -33,6 +33,10 @@ ht-degree: 1%
 
 * 只要将任何 [身份](../../../identity-service/namespaces.md) 映射 [!DNL Braze] 到目标，即可将其发送到目标 [!DNL Braze][`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation)。
 * [!DNL Adobe Experience Platform] 段将导出到属 [!DNL Braze] 性下的 `AdobeExperiencePlatformSegments` 属性。
+
+>[!NOTE]
+>
+>请记住，发送附加的自定义属性 [!DNL Braze] 可能会增加您的 [!DNL Braze] 数据点消耗。 在发送其他自定义 [!DNL Braze] 属性之前，请咨询客户经理。
 
 ## 用例 {#use-cases}
 
