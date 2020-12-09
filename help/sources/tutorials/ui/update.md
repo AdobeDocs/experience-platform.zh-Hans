@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;update accounts;
-description: null
+keywords: Experience Platform;home;popular topics;update accounts
+description: 在某些情况下，可能需要更新现有源帐户的详细信息。 “源”工作区允许您添加、编辑和删除现有批处理或流连接的详细信息，包括其名称、描述和凭据。
 solution: Experience Platform
 title: 在UI中更新帐户详细信息
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 51a09cdced9a21aa785a43d8d9740d70a5fbc46c
+source-git-commit: 9b48bc1426e6259ea0b2cf9b420b55b92712f7c2
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '442'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 # 在UI中更新帐户详细信息
 
-在某些情况下，可能需要更新现有源帐户的详细信息。 Sources [!UICONTROL 工作区] 可让您编辑、添加和删除帐户的详细信息，包括帐户名称、说明和身份验证凭据的值。
+在某些情况下，可能需要更新现有源帐户的详细信息。 Sources [!UICONTROL 工作区] 允许您添加、编辑和删除现有批或流连接的详细信息，包括其名称、描述和凭据。
 
 本教程提供了从“源”工作区更新现有帐户的详细信息和凭 [!UICONTROL 据的步] 骤。
 
@@ -24,10 +24,8 @@ ht-degree: 0%
 
 本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
 
-- [[!DNL Experience Data Model (XDM)] 系统](../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-   - [模式合成基础](../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
-   - [模式编辑器教程](../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-- [[!DNL Real-time Customer Profile]](../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+- [来源](../../home.md):DNLExperience Platform允许从各种源中摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。
+- [沙箱](../../../sandboxes/home.md):DNLExperience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
 ## 更新帐户
 
