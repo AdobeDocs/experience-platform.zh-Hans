@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform 分段服务帮助
 breadcrumb-title: Segmentation Service 指南
 user-guide-description: 根据实时客户档案数据构建细分并生成受众。
 translation-type: tm+mt
-source-git-commit: beacce03136e1620ff57fb549f335d2199bb6001
+source-git-commit: ff7c2854d45191b27e23df54b3638955b3535e76
 workflow-type: tm+mt
-source-wordcount: '135'
-ht-degree: 25%
+source-wordcount: '139'
+ht-degree: 24%
 
 ---
 
@@ -28,7 +28,8 @@ ht-degree: 25%
    - [区段搜索](api/segment-search.md)
    - [流细分](api/streaming-segmentation.md)
 - 分段UI {#ui}
-   - [概述](ui/overview.md)
+   - [分段UI指南](ui/overview.md)
+   - [细分仪表板](ui/segment-dashboard.md)
    - [区段生成器](ui/segment-builder.md)
    - [流细分](ui/streaming-segmentation.md)
    - [时间约束重构](ui/segment-refactoring.md)
