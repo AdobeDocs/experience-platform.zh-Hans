@@ -4,7 +4,7 @@ title: 用户档案详细信息自定义
 description: '本指南提供分步说明，用于自定义在Adobe Experience PlatformUI中显示实时客户用户档案数据的方式。 '
 topic: guide
 translation-type: tm+mt
-source-git-commit: 9068d12e60da63a6a2a2ff18c016080ea581104f
+source-git-commit: d05884c87445ec16b0ad44f593cf782b8c80d646
 workflow-type: tm+mt
 source-wordcount: '1167'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 在Adobe Experience Platform用户界面中，您可以以客户用户档案的形 [!DNL Real-time Customer Profile] 式视图数据并与其交互。 在UI中显示的用户档案信息已从多个用户档案片段合并到一起，以形成每个客户的单个视图。 这包括基本属性、链接身份和渠道首选项等详细信息。 用户档案中显示的默认字段也可以在组织级别进行更改，以显示首选 [!DNL Profile] 属性。 本指南提供有关自定义在平台UI中显示数 [!DNL Profile] 据的方式的分步说明。
 
-有关用户档案UI的完整指南，请访问 [用户档案用户指南](user-guide.md)。
+有关用户档案UI的完整指南，请访问 [用户档案UI指南](user-guide.md)。
 
 ## 对卡重新排序和调整大小 {#reorder-and-resize-cards}
 
