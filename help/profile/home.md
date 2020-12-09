@@ -4,9 +4,9 @@ title: 实时客户用户档案概述
 topic: guide
 description: 实时用户档案是一个通用查找实体存储，它合并来自各种企业数据资产的数据，然后以单个客户用户档案和相关时间序列事件的形式提供对该数据的访问。 此功能使营销人员能够跨多个渠道通过受众推动协调一致的相关体验。
 translation-type: tm+mt
-source-git-commit: 47c65ef5bdd083c2e57254189bb4a1f1d9c23ccc
+source-git-commit: b8d6bd5caf6c6f4d1da218b6ca12cec154d64412
 workflow-type: tm+mt
-source-wordcount: '1820'
+source-wordcount: '1844'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Real-time Customer Profile]概述
 
-Adobe Experience Platform使您能够为客户提供协调、一致和相关的体验，无论客户在何处或何时与您的品牌互动。 您 [!DNL Real-time Customer Profile]可以看到每个客户的整体视图，该渠道组合了多个的数据，包括在线、离线、CRM和第三方数据。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供可操作、有时间戳的帐户。 此概述将帮助您了解中的角色和 [!DNL Real-time Customer Profile] 使用 [!DNL Experience Platform]。
+Adobe Experience Platform使您能够为客户提供协调、一致和相关的体验，无论客户在何处或何时与您的品牌互动。 您 [!DNL Real-time Customer Profile]可以看到每个客户的整体视图，该渠道组合了多个的数据，包括在线、离线、CRM和第三方数据。 [!DNL Profile] 允许您将不同的客户数据整合到统一的视图中，为每次客户互动提供一个具有可操作性、时间戳记的帐户。 此概述将帮助您了解中的角色和 [!DNL Real-time Customer Profile] 使用 [!DNL Experience Platform]。
 
 ## [!DNL Profile] experience platform
 
@@ -24,7 +24,9 @@ Adobe Experience Platform使您能够为客户提供协调、一致和相关的�
 
 ### 用户档案数据存储
 
-尽管 [!DNL Real-time Customer Profile] 处理摄取的数据并使用Adobe Experience Platform [!DNL Identity Service] 通过身份映射来合并相关数据，但它在存储中保留自己的 [!DNL Profile] 数据。 换句话说，存储 [!DNL Profile] 区与数据( [!DNL Catalog] )和[!DNL Data Lake]数据(标 [!DNL Identity Service] 识图)分开。
+尽管 [!DNL Real-time Customer Profile] 处理摄取的数据并使用Adobe Experience Platform [!DNL Identity Service] 通过身份映射来合并相关数据，但它在存储中保留自己的 [!DNL Profile] 数据。 存 [!DNL Profile] 储区与标识图 [!DNL Catalog] 中的数据 [!DNL Data Lake] 和标 [!DNL Identity Service] 识图中的数据分开。
+
+用户档案商店使用Microsoft Azure Cosmos DB基础架构，而平台数据湖使用Microsoft Azure数据湖存储。
 
 ### 用户档案护栏
 
@@ -34,7 +36,7 @@ Experience Platform提供了一系列护栏，帮助您避 [免创建实时客�
 
 [!DNL Real-time Customer Profile] 合并来自各种企业系统的数据，然后以客户用户档案的形式提供对这些数据的访问，同时提供相关的时间序列事件。 此功能使营销人员能够跨多个渠道通过受众推动协调一致的相关体验。 以下各节重点介绍了在平台内有效构建和维护用户档案所必须了解的一些核心概念。
 
-### 用户档案片段与合并用户档案
+### 用户档案片段与合并用户档案 {#profile-fragments-vs-merged-profiles}
 
 每个客户用户档案都由多个用户档案片段组成，这些片段已合并成该客户的单个视图。 例如，如果客户在多个渠道中与您的品牌互动，您的组织将在多个数据集中显示与该单个客户相关的多个用户档案片段。 当这些片段被引入平台时，它们会合并在一起，以便为该客户创建单一用户档案。
 
