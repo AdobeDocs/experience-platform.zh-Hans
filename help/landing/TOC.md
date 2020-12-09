@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 了解 Experience Platform 如何让您可以为客户实时提供个性化体验。
 translation-type: tm+mt
-source-git-commit: 5761394285e56214fd59e31d530756eed1f5ad08
+source-git-commit: 761a212abc407fac5bc59c6f5a57c6c17c932230
 workflow-type: tm+mt
-source-wordcount: '399'
+source-wordcount: '402'
 ht-degree: 45%
 
 ---
@@ -64,6 +64,7 @@ ht-degree: 45%
    * [应用程序服务](application-services.md)
    * [应用程序和智能服务（视频）](video/application-intelligent-services.md)
    * [平台与Experience Cloud（视频）集成](video/experience-cloud-integrations.md)
+* [许可证使用仪表板](license-usage-dashboard.md)
 * [疑难解答指南](troubleshooting.md)
 * [ADLS第2代迁移](adls2-gen2-migration.md)
 * [术语表](glossary.md)
