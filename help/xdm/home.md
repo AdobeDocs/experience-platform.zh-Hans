@@ -5,9 +5,9 @@ title: XDM系统概述
 topic: overview
 description: '标准化和互操作性是Adobe Experience Platform背后的关键概念。 体验Adobe模型(XDM)由客户驱动，旨在实现客户体验数据标准化并为客户体验管理定义模式。 '
 translation-type: tm+mt
-source-git-commit: d96890fd79acaa09628dbba49ee6930ed4f9d0e6
+source-git-commit: b0b2f0c5aa91a5aeb5836d9795a580ccc69e3e17
 workflow-type: tm+mt
-source-wordcount: '1584'
+source-wordcount: '1581'
 ht-degree: 2%
 
 ---
@@ -46,7 +46,7 @@ XDM是一个基本框架，它允许Adobe Experience Cloud在 [!DNL Experience P
 
 所有XDM模式都描述可以分类为记录或时间序列的数据。 模式的数据行为由模式的类定义，该类在模式首次创建时被分配给。 XDM类描述模式必须包含的最小属性数，以表示特定数据行为。
 
-尽管您可以在中定义自己的类， [!DNL Schema Registry]但建议您分别使用首选类 **[!DNL XDM Individual Profile]****[!DNL XDM ExperienceEvent]** 和记录和时间序列数据。 下文将详细介绍这些类。
+尽管您可以在中定义自己的类， [!DNL Schema Registry]但建议您分别使用首选类 **[!DNL XDM Individual Profile]****[!DNL XDM ExperienceEvent]** 和记录类和时间序列数据。 下文将详细介绍这些类。
 
 ### [!DNL XDM Individual Profile] {#xdm-individual-profile}
 
@@ -68,7 +68,7 @@ XDM ExperienceEvent是一个基于时间序列的类，用于在发生事件(或
 
 ## XDM模式和服 [!DNL Experience Platform] 务
 
-[!DNL Experience Platform] 与模式无关，这意味着任何符合XDM标准的模式都可供服务 [!DNL Platform] 使用。 以下更详细介绍了不 [!DNL Platform] 同服务使用模式的方式。
+[!DNL Experience Platform] 与模式无关，这意味着任何符合XDM标准的模式都可供服务使 [!DNL Platform] 用。 以下更详细介绍了不 [!DNL Platform] 同服务使用模式的方式。
 
 ### [!DNL Catalog Service], [!DNL Data Ingestion] &amp; [!DNL Data Lake]
 
