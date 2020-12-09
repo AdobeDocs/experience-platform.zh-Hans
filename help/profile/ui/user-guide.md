@@ -4,10 +4,10 @@ title: 实时客户用户档案UI指南
 topic: guide
 description: 实时客户用户档案可以为您的每位客户创建整体视图，将来自多个渠道（包括在线、离线、CRM和第三方数据）的数据相结合。 此文档可作为与Adobe Experience Platform用户界面中实时用户档案交互的指南。
 translation-type: tm+mt
-source-git-commit: 295315ab052ff151bea9037567bf2690d705367b
+source-git-commit: b991a767f34f0e318b9ca5092fd4cf099de11e0a
 workflow-type: tm+mt
-source-wordcount: '1245'
-ht-degree: 0%
+source-wordcount: '1304'
+ht-degree: 1%
 
 ---
 
@@ -26,9 +26,19 @@ ht-degree: 0%
 
 ## 概述
 
-在UI [[!DNL Experience Platform] 中](http://platform.adobe.com)，在左 **[!UICONTROL 侧导航]** 中选 **[!UICONTROL 择用户档案以打开]** 概述选项卡。 此选项卡提供文档和视频链接，帮助您理解并开始使用用户档案。
+在Experience PlatformUI中，在左侧 **[!UICONTROL 导航]** 中选择用户档案以打开“ **[!UICONTROL 概述]** ”选项卡。 此选项卡提供文档和视频链接，帮助您理解并开始使用用户档案。
 
 ![](../images/user-guide/profiles-overview.png)
+
+### (Alpha)用户档案仪表板
+
+>[!IMPORTANT]
+>
+>仪表板功能当前位于alpha中，并非所有用户都可用。 文档和功能可能会发生变化。
+
+对于某些用户，在左 **[!UICONTROL 侧导航]** 中选择用户档案并打开“概 **[!UICONTROL 述]** ”选项卡提供仪表板，概述与用户档案数据相关的关键指标。
+
+要了解更多信息，请访问 [用户档案仪表板指南](profile-dashboard.md)。
 
 ## 浏览
 
