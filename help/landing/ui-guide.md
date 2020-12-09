@@ -5,10 +5,10 @@ title: Adobe Experience PlatformUI指南
 topic: ui guide
 description: 'Adobe Experience Platform '
 translation-type: tm+mt
-source-git-commit: adf8e8457c8ffef263223a38d3f9c345cf7c6ab2
+source-git-commit: 761a212abc407fac5bc59c6f5a57c6c17c932230
 workflow-type: tm+mt
-source-wordcount: '1597'
-ht-degree: 0%
+source-wordcount: '1726'
+ht-degree: 1%
 
 ---
 
@@ -143,13 +143,25 @@ ht-degree: 0%
 
 ### [!UICONTROL 数据管理]
 
-模式 **[!UICONTROL 部分]** ，允许您创建和管理模式。 要进一步了解如何使用模式部分，请阅读有关创建 [模式的教程](../xdm/tutorials/create-schema-ui.md)。 有关体验数据模型(XDM)的更多信息，请参 [阅XDM概述](../xdm/home.md)。
+通过 **[!UICONTROL 模式]** 部分，您可以创建和管理体验数据模型(XDM)模式。 要进一步了解模式，请阅读有关创建 [模式的教程](../xdm/tutorials/create-schema-ui.md)。 有关XDM的更多信息，请参阅 [XDM系统概述](../xdm/home.md)。
 
-数据 **[!UICONTROL 集]** (Datasets)部分允许您创建和管理数据集。 有关“数据集”部分的更多信息，请参 [阅数据集用户指南](../catalog/datasets/user-guide.md)。
+数据 **[!UICONTROL 集]** (Datasets)部分允许您创建和管理数据集。 有关数据集的更多信息，请参 [阅数据集用户指南](../catalog/datasets/user-guide.md)。
 
-通过 **[!UICONTROL 查询]** 部分，可以创建和管理查询，记录查询服务创建的SQL查询，并视图PostgreSQL凭据。 有关查询部分的更多信息，请参阅 [查询服务用户指南](../query-service/ui/overview.md)。
+通过 **[!UICONTROL 查询]** 部分，可以创建和管理查询，记录由Adobe Experience Platform查询服务创建的SQL查询，并视图PostgreSQL凭据。 有关查询的更多信息，请参 [阅查询服务用户指南](../query-service/ui/overview.md)。
 
-“监 **[!UICONTROL 视]** ”部分允许您监视批处理和流摄取。 有关“监视”部分的更多信息，请参阅“监 [视数据获取用户指南”](../ingestion/quality/monitor-data-flows.md)。
+“监 **[!UICONTROL 视]** ”部分允许您监视批处理和流摄取。 有关监视的详细信息，请参阅监 [视数据获取用户指南](../ingestion/quality/monitor-data-flows.md)。
+
+### [!UICONTROL 决策]
+
+Offer Decisioning是与Adobe Experience Platform集成的应用服务。 它允许您利用Experience Platform，在正确的时间跨所有接触点为客户提供最佳优惠和体验。 要进一步了解Offer Decisioning，包括与 [!UICONTROL 优惠][!UICONTROL 和活动] 合作 [，请访](https://experienceleague.adobe.com/docs/offer-decisioning.html)问Offer Decisioning文档。
+
+### [!UICONTROL 管理]
+
+平台用户界面(UI)提供了一个仪表板，通过该视图，您可以有关组织许可证使用情况的重要信息，这些信息在每日快照中捕获。 可通过在导航中选择“许 **[!UICONTROL 可证使用]** ”来访问此权限。 要进一步了解许可证使用仪表板，请访 [问许可证使用仪表板指南](license-usage-dashboard.md)。
+
+>[!IMPORTANT]
+>
+>许可证使用仪表板功能当前位于alpha中，并非所有用户都可用。 文档和功能可能会发生变化。
 
 ## 后续步骤
 
