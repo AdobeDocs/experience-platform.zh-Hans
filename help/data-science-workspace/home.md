@@ -5,9 +5,9 @@ title: 数据科学工作区概述
 topic: overview
 description: 本指南概述了与数据科学工作区相关的主要概念。
 translation-type: tm+mt
-source-git-commit: 581d11bdb934f46c53a6703829b4dc470076e195
+source-git-commit: 8b1be4e94c147124fd26f4b877ca807177c9f5ff
 workflow-type: tm+mt
-source-wordcount: '2578'
+source-wordcount: '2371'
 ht-degree: 0%
 
 ---
@@ -120,35 +120,12 @@ Adobe Experience Platform [!DNL Data Science Workspace] 使用机器学习和人
 
 数据科学家可以在通过Adobe服务获得新技术和数据集后立即利用它们。 通过频繁的更新，我们将数据集和技术集成到平台中，这样您就不必再进行这些工作。
 
-### 访问控制 [!DNL Data Science Workspace]
-
-访问控制 [!DNL Experience Platform] 通过Adobe Admin Console [管理](https://adminconsole.adobe.com)。 此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。 有关更多 [信息](../access-control/home.md) ，请参阅访问控制概述。
-
->[!IMPORTANT]
->
->要使用，必 [!DNL Data Science Workspace]须启 [!UICONTROL 用“管理数据科学工作区] ”权限。
-
-下表概述了启用或禁用此权限的效果：
-
-| 权限 | 已启用 | 已禁用 |
-|---|---|---|
-| [!DNL Manage Data Science Workspace] | 提供对中所有服务的访问 [!DNL Data Science Workspace]。 | 禁用对中所有服务的API和 [!DNL Data Science Workspace] UI访问。 禁用后，将阻止路由 [!DNL Data Science Workspace] 到 **[!UICONTROL “模型]** ”和“ **[!UICONTROL 服务]** ”页面。 |
-
 ### 安全与心安理得
 
 保护Adobe是重中之重。 Adobe通过为帮助遵守行业公认的标准、法规和认证而开发的安全流程和控制来保护您的数据。
 
 作为Adobe安全产品生命周期的一部分，软件和服务中内置了安全性。
 要了解Adobe数据和软件安全性、合规性等信息，请访问安全页面：https://www.adobe.com/security.html。
-
-### 沙箱支持
-
-沙箱是单个实例中的虚拟分区 [!DNL Experience Platform]。 每个 [!DNL Platform] 实例都支持一个生产沙箱和多个非生产沙箱，每个沙箱都维护自己的资源 [!DNL Platform] 库。 非生产沙箱允许您测试功能、运行实验并制作自定义配置，而不会影响您的生产沙箱。 有关沙箱的详细信息，请参阅 [沙箱概述](../sandboxes/home.md)。
-
-目前， [!DNL Data Science Workspace] 存在以下几个沙箱限制：
-
-- 计算资源跨生产沙箱和非生产沙箱进行共享。 生产沙箱的隔离设置将在将来提供。
-- 目前[!DNL Spark] ，仅在生产沙箱中支持笔记本电脑和菜谱的Scala/和PySpark工作负载。 今后将提供对非生产沙箱的支持。
 
 ## [!DNL Data Science Workspace] 实际操作
 
