@@ -3,12 +3,12 @@ title: Adobe Experience Platform 发行说明
 description: Experience Platform发行说明2020年12月9日
 doc-type: release notes
 last-update: December 9, 2020
-author: ens60013
+author: ens60013 & ens72471
 translation-type: tm+mt
-source-git-commit: 25c162f50f0a66d77eb638dbf87893af3c543ddc
+source-git-commit: 908b9e6e8b548dea8e39f9f9a5de396d4c9520f4
 workflow-type: tm+mt
-source-wordcount: '214'
-ht-degree: 10%
+source-wordcount: '343'
+ht-degree: 7%
 
 ---
 
@@ -19,7 +19,20 @@ ht-degree: 10%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [[!DNL Data Science Workspace]](#dsw)
 - [[!DNL Sources]](#sources)
+
+## [!DNL Data Science Workspace] {#dsw}
+
+数据科学工作区使用机器学习和人工智能从数据中获得洞察。 数据科学工作区集成到Adobe Experience Platform，可帮助您跨Adobe解决方案使用内容和数据资产进行预测。
+
+### 主要功能
+
+| 功能 | 描述 |
+|--- | ---|
+| Adobe Experience Platform情报程序包 | Adobe Experience Platform智能软件包加载项是数据科学工作区升级，可解锁其他主要功能，如： <li> UI驱动的模型试验和评估。</li><li> 能够部署模型并将其运行，同时进行定期培训和推荐作业。</li><li> 支持Tensorflow模型（GPU计算）中的深度学习。</li><li> 基于Spark的分布式计算，可针对大数据集（10MM +行）进行培训和评分。</li><li>等等</li> |
+
+要进一步了解Adobe Experience Platform智能软件包加载项，请参阅有关数据科 [学工作区访问和功能的文档](../../data-science-workspace/access-features-dsw.md)。
 
 ## [!DNL Sources] {#sources}
 
@@ -35,3 +48,5 @@ Adobe Experience Platform可以从外部来源收集数据，同时允许您使�
 | 删除数据流 | 现在，可以使用API和UI删除包含错误或已变得不必 [!DNL Flow Service] 要的流数据流。 有关详细信息，请参阅有关使用 [API删除数据流和](../../sources/tutorials/api/delete-dataflows.md)[使用UI删除数据流的教程](../../sources/tutorials/ui/delete.md)。 |
 
 要进一步了解源，请参阅 [源概述](../../sources/home.md)。
+
+
