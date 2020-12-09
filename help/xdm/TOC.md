@@ -2,13 +2,13 @@
 product: experience-platform
 audience: user
 user-guide-title: Experience Data Model (XDM) 系统帮助
-breadcrumb-title: Data Model (XDM) 指南
+breadcrumb-title: 体验数据模型(XDM)指南
 user-guide-description: 使用 Experience Data Model (XDM) 类和混合来标准化体验数据。
 translation-type: tm+mt
-source-git-commit: 465582e0d1503426104a048561b1c8c68e7f55ee
+source-git-commit: d96890fd79acaa09628dbba49ee6930ed4f9d0e6
 workflow-type: tm+mt
-source-wordcount: '190'
-ht-degree: 21%
+source-wordcount: '191'
+ht-degree: 19%
 
 ---
 
