@@ -5,9 +5,9 @@ seo-title: “目标：详细信息”页
 description: '单个目标的详细信息页面提供了目标详细信息的概述，如目标名称、ID、映射到目标的区段，以及用于编辑激活和启用和禁用数据流的控件。 '
 seo-description: '单个目标的详细信息页面提供了目标详细信息的概述，如目标名称、ID、映射到目标的区段，以及用于编辑激活和启用和禁用数据流的控件。 '
 translation-type: tm+mt
-source-git-commit: 5f120a716cc3396ef7749463bb6052a8ced2fbb4
+source-git-commit: 8ac368081c37ca5bfc2cc3382774a912e8ad68eb
 workflow-type: tm+mt
-source-wordcount: '680'
+source-wordcount: '735'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->目标详细信息页面是平台UI中 [!UICONTROL 的] “目标”工作区的一部分。 有关详细 [[!UICONTROL 信息] ，请参阅目](./destinations-workspace.md) 标工作区概述。
+>目标详细信息页面是平台UI中 [!UICONTROL 的] “目标”工作区的一部分。 See the [[!UICONTROL Destinations] workspace overview](./destinations-workspace.md) for more information.
 
 在平 **[!UICONTROL 台]** UI中的目标工作区中，导航到 **[!UICONTROL 浏览]** 选项卡，然后选择要视图的目标名称。
 
@@ -28,6 +28,10 @@ ht-degree: 1%
 此时将显示目标的详细信息页面，其中显示其可用控件。 如果您正在查看批处理目标的详细信息，则还会显示监视仪表板。
 
 ![](../assets/ui/details-page/details.png)
+
+此外，在“浏览”选项卡上，您可以选择垃圾桶图标，以删除选 ![定的数](../assets/ui/details-page/trash-icon.png) 据流。 在删除数据流之前，将取消映射已激活到目标的任何区段。
+
+![](../assets/ui/details-page/delete-flow.png)
 
 ## 右边栏
 
@@ -40,6 +44,7 @@ ht-degree: 1%
 | 右边栏项目 | 描述 |
 | --- | --- |
 | [!UICONTROL 激活] | 选择此控件可编辑映射到目标的区段。 有关更多信息， [请参阅将区段激活到目标](./activate-destinations.md) 的指南。 |
+| [!UICONTROL 删除] | 允许您删除此数据流并取消映射先前激活的段（如果有）。 |
 | [!UICONTROL 目标名称] | 可以编辑此字段以更新目标的名称。 |
 | [!UICONTROL 描述] | 可以编辑此字段，以更新或向目标添加可选描述。 |
 | [!UICONTROL 目标] | 表示受众被发送到的目标平台。 有关详细 [信息](../catalog/overview.md) ，请参阅目标目录。 |
@@ -75,11 +80,11 @@ ht-degree: 1%
 
 ![](../assets/ui/details-page/dataflow.png)
 
-## [!UICONTROL 区段]
+## [!UICONTROL 激活数据]
 
-“区 [!UICONTROL 段] ”选项卡显示已映射到目标的区段的列表，包括开始日期和结束日期（如果适用）。 要视图特定区段的详细信息，请从列表中选择其名称。
+激活  选项卡显示已映射到目标的列表段，包括其开始日期和结束日期（如果适用）。 要视图特定区段的详细信息，请从列表中选择其名称。
 
-![](../assets/ui/details-page/segments.png)
+![](../assets/ui/details-page/activation-data.png)
 
 >[!NOTE]
 >
