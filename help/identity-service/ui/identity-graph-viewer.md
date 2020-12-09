@@ -5,7 +5,7 @@ title: Adobe Experience Platform Identity Service
 topic: tutorial
 description: 标识图是特定客户不同标识之间关系的映射，可直观地展示客户如何跨不同渠道与品牌互动。
 translation-type: tm+mt
-source-git-commit: ef1025dfacc91b13c064db99e6304f2c09abb3d9
+source-git-commit: 7c52760bdceb8d45d76cd22d69241f8c23943674
 workflow-type: tm+mt
 source-wordcount: '910'
 ht-degree: 1%
@@ -55,7 +55,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->身份图需要至少两个链接身份才能生成，以及有效的命名空间和ID对。 图形查看器可显示的最大身份数为400。 有关详细 [信息](#appendix) ，请参阅下面的附录部分。
+>身份图需要至少两个链接身份才能生成，以及有效的命名空间和ID对。 图形查看器可显示的最大身份数为150。 有关详细 [信息](#appendix) ，请参阅下面的附录部分。
 
 ![身份图](../images/identity-graph-viewer/graph-viewer.png)
 
@@ -101,7 +101,7 @@ ht-degree: 1%
 
 - 选定命名空间中必须存在标识值。
 - 要生成标识图查看器，至少需要两个链接标识。
-- 标识图查看器不能超过400个标识。
+- 标识图查看器不能超过150个标识。
 - 当前无法在非生产沙箱中访问标识图查看器。
 - 标识图查看器当前仅支持批量摄取的数据，不显示使用流源摄取的数据。
 
