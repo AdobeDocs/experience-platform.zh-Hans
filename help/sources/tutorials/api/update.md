@@ -4,11 +4,11 @@ solution: Experience Platform
 title: 使用Flow Service API更新连接信息
 topic: overview
 type: Tutorial
-description: 本教程介绍使用流服务API更新连接信息的步骤，包括其名称、说明和凭据。
+description: 在某些情况下，可能需要更新现有源连接的详细信息。 流服务API允许您添加、编辑和删除现有批处理或流连接的详细信息，包括其名称、描述和凭据。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: d1a9f7d0c83b8bb34e26b6e5a9825488e62b43de
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '696'
 ht-degree: 2%
 
 ---
@@ -16,11 +16,9 @@ ht-degree: 2%
 
 # 使用Flow Service API更新连接信息
 
-Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
+在某些情况下，可能需要更新现有源连接的详细信息。 [!DNL Flow Service] 允许您添加、编辑和删除现有批处理或流连接的详细信息，包括其名称、描述和凭据。
 
-[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
-
-本教程介绍使用更新连接信息（包括名称、说明和凭据）的步骤 [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)。
+本教程介绍使用更新现有连接的详细信息和凭据的步骤 [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)。
 
 ## 入门指南
 
