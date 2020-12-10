@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 数据流是从源中检索数据并将其引入平台数据集的计划任务。 本教程提供使用云存储库连接器配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
 workflow-type: tm+mt
 source-wordcount: '695'
 ht-degree: 0%
@@ -78,7 +78,7 @@ ht-degree: 0%
 
 ## 监视和删除数据流
 
-创建云存储数据流后，您可以监视通过它摄取的数据。 有关监视和删除数据流的详细信息，请参阅有关监视数据流 [的教程](../../../../../ingestion/quality/monitor-data-flows.md)。
+创建云存储数据流后，您可以监视通过它摄取的数据。 有关监视和删除数据流的详细信息，请参阅有关监视数据流 [的教程](../../../../../ingestion/quality/monitor-data-ingestion.md)。
 
 ## 后续步骤
 
