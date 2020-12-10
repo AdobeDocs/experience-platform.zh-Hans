@@ -5,7 +5,7 @@ user-guide-title: Adobe Experience Platform 数据提取帮助
 breadcrumb-title: Data Ingestion 指南
 user-guide-description: 通过批处理或流式获取将数据引入平台。
 translation-type: tm+mt
-source-git-commit: da0c65b5afc19e2497816c4b84270f5f5c4617f2
+source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
 workflow-type: tm+mt
 source-wordcount: '124'
 ht-degree: 20%
@@ -36,7 +36,7 @@ ht-degree: 20%
    - [流化多条消息](tutorials/streaming-multiple-messages.md)
 - 数据摄取质量和监控{#quality}
    - [概述](quality/overview.md)
-   - [监视数据流](quality/monitor-data-flows.md)
+   - [监控数据获取](quality/monitor-data-ingestion.md)
    - [检索错误诊断](quality/error-diagnostics.md)
    - [检索失败的批](quality/retrieve-failed-batches.md)
    - [流式摄取验证](quality/streaming-validation.md)
