@@ -5,7 +5,7 @@ title: Adobe Experience PlatformUI指南
 topic: ui guide
 description: 'Adobe Experience Platform '
 translation-type: tm+mt
-source-git-commit: 761a212abc407fac5bc59c6f5a57c6c17c932230
+source-git-commit: 3fc24b996d2c8bdf062e70a1c5e8d8206641cd06
 workflow-type: tm+mt
 source-wordcount: '1726'
 ht-degree: 1%
@@ -149,7 +149,7 @@ ht-degree: 1%
 
 通过 **[!UICONTROL 查询]** 部分，可以创建和管理查询，记录由Adobe Experience Platform查询服务创建的SQL查询，并视图PostgreSQL凭据。 有关查询的更多信息，请参 [阅查询服务用户指南](../query-service/ui/overview.md)。
 
-“监 **[!UICONTROL 视]** ”部分允许您监视批处理和流摄取。 有关监视的详细信息，请参阅监 [视数据获取用户指南](../ingestion/quality/monitor-data-flows.md)。
+“监 **[!UICONTROL 视]** ”部分允许您监视批处理和流摄取。 有关监视的详细信息，请参阅监 [视数据获取用户指南](../ingestion/quality/monitor-data-ingestion.md)。
 
 ### [!UICONTROL 决策]
 
