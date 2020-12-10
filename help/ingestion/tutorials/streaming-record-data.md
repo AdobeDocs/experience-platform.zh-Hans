@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform数据摄取服务API的一部分。
 translation-type: tm+mt
-source-git-commit: e94272bf9a18595a4efd0742103569a26e4be415
+source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
 workflow-type: tm+mt
 source-wordcount: '1142'
 ht-degree: 2%
@@ -453,7 +453,7 @@ curl -X GET 'https://platform.adobe.io/data/core/ups/access/entities?schema.name
 
 ## 后续步骤
 
-通过阅读此文档，您现在了解如何使用流连接将记录 [!DNL Platform] 数据引入。 您可以尝试使用不同的值进行更多调用并检索更新的值。 此外，您还可以通过UI开始监视所摄 [!DNL Platform] 数据。 有关详细信息，请阅读监 [视数据获取指南](../quality/monitor-data-flows.md) 。
+通过阅读此文档，您现在了解如何使用流连接将记录 [!DNL Platform] 数据引入。 您可以尝试使用不同的值进行更多调用并检索更新的值。 此外，您还可以通过UI开始监视所摄 [!DNL Platform] 数据。 有关详细信息，请阅读监 [视数据获取指南](../quality/monitor-data-ingestion.md) 。
 
 有关流摄取的详细信息，请阅读流摄 [取概述](../streaming-ingestion/overview.md)。
 
