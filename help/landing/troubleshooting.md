@@ -7,10 +7,10 @@ landing-page-description: Find answers to frequently asked questions and a guide
 topic: getting started
 type: Documentation
 translation-type: tm+mt
-source-git-commit: 4a65d5e31eda3973d3e8e0d8e066692c667934e1
+source-git-commit: 72f60ef80a23f5ca4e70147ee6aa6027028fefd0
 workflow-type: tm+mt
-source-wordcount: '1940'
-ht-degree: 3%
+source-wordcount: '1954'
+ht-degree: 2%
 
 ---
 
@@ -25,7 +25,7 @@ ht-degree: 3%
 
 ## 什么是 [!DNL Experience Platform] API? {#what-are-experience-platform-apis}
 
-[!DNL Experience Platform] 优惠多个使用HTTP请求访问资源的RESTful [!DNL Platform] API。 这些服务API每个都公开多个端点，并允许您对列表(GET)、查找(GET)、编辑(PUT和／或PATCH)和删除(DELETE)资源执行操作。 有关每个服务可用的特定端点和操作的详细信息，请参阅 [Adobe I/O的API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html) 文档。
+[!DNL Experience Platform] 优惠多个使用HTTP请求访问资源的RESTful [!DNL Platform] API。 这些服务API每个都公开多个端点，并允许您对列表(GET)、查找(GET)、编辑(PUT和／或PATCH)和删除(DELETE)资源执行操作。 有关每个服务可用的特定端点和操作的详细信息，请参阅 [Adobe I/O的API参考](http://www.adobe.com/go/platform-api-reference-en) 文档。
 
 ## 如何设置API请求的格式？ {#how-do-i-format-an-api-request}
 
@@ -87,19 +87,19 @@ curl -X GET \
 }
 ```
 
-有关平台API中特定端点（包括所需的头和请求主体）的更多信息，请参阅 [API参考文档](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)。
+有关平台API中特定端点（包括所需的头和请求主体）的更多信息，请参阅 [API参考文档](http://www.adobe.com/go/platform-api-reference-en)。
 
 ## 我的IMS组织是什么？ {#what-is-my-ims-organization}
 
-IMS组织是Adobe的代表。 任何许可的Adobe解决方案都与此客户组织集成。 当IMS组织有权访问时， [!DNL Experience Platform]它可以将访问权限分配给开发人员。 IMS组织ID(`x-gw-ims-org-id`)表示应执行API调用的组织，因此作为所有API请求的头是必需的。 此ID可通过Adobe开发人 [员控制台找到](https://www.adobe.com/go/devs_console_ui):在“集 **成** ”选项卡中，导 **航至任何特定集** 成 **的“概述”部分，以在“客户端凭据”**&#x200B;下查找ID。 有关如何进行身份验证的分步演练，请参 [!DNL Platform]阅身份验证 [教程](../tutorials/authentication.md)。
+IMS组织是Adobe的代表。 任何许可的Adobe解决方案都与此客户组织集成。 当IMS组织有权访问时， [!DNL Experience Platform]它可以将访问权限分配给开发人员。 IMS组织ID(`x-gw-ims-org-id`)表示应执行API调用的组织，因此作为所有API请求的头是必需的。 此ID可通过Adobe开发人 [员控制台找到](https://www.adobe.com/go/devs_console_ui):在“集 **成** ”选项卡中，导 **航至任何特定集** 成 **的“概述”部分，以在“客户端凭据”**&#x200B;下查找ID。 有关如何进行身份验证的分步演练，请参 [!DNL Platform]阅身份验证 [教程](http://www.adobe.com/go/platform-api-authentication-en)。
 
 ## 在哪里可以找到我的API密钥？ {#where-can-i-find-my-api-key}
 
-所有API请求中都需要API密钥作为头。 它可以通过Adobe开发 [人员控制台找到](https://www.adobe.com/go/devs_console_ui)。 在控制台中，在“集 **成** ”选项卡上，导航到特定集 **成的“概述** ”部分，您将在“客户端凭据” **下找到密钥**。 有关如何进行身份验证的分步演练，请参 [!DNL Platform]阅身份验证 [教程](../tutorials/authentication.md)。
+所有API请求中都需要API密钥作为头。 它可以通过Adobe开发 [人员控制台找到](https://www.adobe.com/go/devs_console_ui)。 在控制台中，在“集 **成** ”选项卡上，导航到特定集 **成的“概述** ”部分，您将在“客户端凭据” **下找到密钥**。 有关如何进行身份验证的分步演练，请参 [!DNL Platform]阅身份验证 [教程](http://www.adobe.com/go/platform-api-authentication-en)。
 
 ## 如何获得访问令牌? {#how-do-i-get-an-access-token}
 
-访问令牌在所有API调用的“授权”标头中是必需的。 如果您有权访问IMS `curl` 组织的集成，则可以使用命令生成这些组件。 访问令牌仅在24小时内有效，之后必须生成新令牌才能继续使用API。 有关生成访问令牌的详细信息，请参 [阅身份验证教程](../tutorials/authentication.md)。
+访问令牌在所有API调用的“授权”标头中是必需的。 如果您有权访问IMS `curl` 组织的集成，则可以使用命令生成这些组件。 访问令牌仅在24小时内有效，之后必须生成新令牌才能继续使用API。 有关生成访问令牌的详细信息，请参 [阅身份验证教程](http://www.adobe.com/go/platform-api-authentication-en)。
 
 ## 如何使用查询参数？ {#how-do-i-user-query-parameters}
 
@@ -153,7 +153,7 @@ API中的许多PATCH [!DNL Platform] 操作 [都使用JSON指](https://tools.iet
 
 ## 请求标题错误 {#request-header-errors}
 
-中的所有API调用 [!DNL Platform] 都需要特定的请求标头。 要查看各个服务需要哪些标头，请参阅API [参考文档](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)。 要查找所需身份验证头的值，请参阅身份验证 [教程](../tutorials/authentication.md)。 如果在进行API调用时这些标头中的任何一个缺失或无效，则可能会发生以下错误。
+中的所有API调用 [!DNL Platform] 都需要特定的请求标头。 要查看各个服务需要哪些标头，请参阅API [参考文档](http://www.adobe.com/go/platform-api-reference-en)。 要查找所需身份验证头的值，请参阅身份验证 [教程](http://www.adobe.com/go/platform-api-authentication-en)。 如果在进行API调用时这些标头中的任何一个缺失或无效，则可能会发生以下错误。
 
 ### 缺少OAuth令牌 {#oauth-token-is-missing}
 
@@ -175,7 +175,7 @@ API中的许多PATCH [!DNL Platform] 操作 [都使用JSON指](https://tools.iet
 }
 ```
 
-当标题中提供的访问令牌无效时 `Authorization` 显示此错误消息。 确保已正确输入令牌，或在 [Adobe I/O控制台中生](../tutorials/authentication.md) 成新令牌。
+当标题中提供的访问令牌无效时 `Authorization` 显示此错误消息。 确保已正确输入令牌，或在 [Adobe I/O控制台中生](http://www.adobe.com/go/platform-api-authentication-en) 成新令牌。
 
 ### 需要API密钥
 
