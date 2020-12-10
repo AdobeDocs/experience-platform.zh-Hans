@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 了解 Experience Platform 如何让您可以为客户实时提供个性化体验。
 translation-type: tm+mt
-source-git-commit: 761a212abc407fac5bc59c6f5a57c6c17c932230
+source-git-commit: 72f60ef80a23f5ca4e70147ee6aa6027028fefd0
 workflow-type: tm+mt
-source-wordcount: '402'
-ht-degree: 45%
+source-wordcount: '142'
+ht-degree: 21%
 
 ---
 
@@ -31,35 +31,10 @@ ht-degree: 45%
    * [浏览器和语言支持](browser-language-support.md)
 * Experience PlatformAPI {#platform-apis}
    * [API基础知识](api-fundamentals.md)
-   * [API参考文档](https://www.adobe.io/apis/experienceplatform/home/api-reference.html)
-   * [验证到Experience PlatformAPI](https://docs.adobe.com/content/help/en/platform-learn/tutorials/platform-api-authentication.html)
+   * [API参考文档](http://www.adobe.com/go/platform-api-reference-en)
+   * [验证到Experience PlatformAPI](http://www.adobe.com/go/platform-api-authentication-en)
 * 平台文档 {#documentation}
    * [文档概述](documentation/overview.md)
-   * [访问控制](https://docs.adobe.com/content/help/zh-Hans/experience-platform/access-control/home.html)
-   * [Auditor](https://docs.adobe.com/content/help/zh-Hans/auditor/using/overview.html)
-   * [目录和数据集](https://docs.adobe.com/content/help/en/experience-platform/catalog/home.html)
-   * [数据访问](https://docs.adobe.com/content/help/en/experience-platform/data-access/home.html)
-   * [数据管理](https://docs.adobe.com/content/help/en/experience-platform/data-governance/home.html)
-   * [数据准备](https://docs.adobe.com/content/help/en/experience-platform/data-prep/home.html)
-   * [数据获取](https://docs.adobe.com/content/help/zh-Hans/experience-platform/ingestion/home.html)
-   * [数据科学工作区](https://docs.adobe.com/content/help/en/experience-platform/data-science-workspace/home.html)
-   * [Debugger](https://docs.adobe.com/content/help/zh-Hans/debugger/using/experience-cloud-debugger.html)
-   * [调试器2.0（测试版）](https://docs.adobe.com/content/help/zh-Hans/debugger/using-v2/experience-cloud-debugger.html)
-   * [目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html)
-   * [ETL（提取、转换、加载）](https://docs.adobe.com/content/help/en/experience-platform/etl/home.html)
-   * [标识服务](https://docs.adobe.com/content/help/zh-Hans/experience-platform/identity/home.html)
-   * [Intelligent Services](https://docs.adobe.com/content/help/en/experience-platform/intelligent-services/home.html)
-   * [Launch](https://docs.adobe.com/content/help/zh-Hans/launch/using/overview.translate.html)
-   * [可观察性洞察](https://docs.adobe.com/content/help/en/experience-platform/observability/home.html)
-   * [隐私服务](https://docs.adobe.com/content/help/en/experience-platform/privacy/home.html)
-   * [用户档案(实时客户用户档案)](https://docs.adobe.com/content/help/zh-Hans/experience-platform/profile/home.html)
-   * [查询服务](https://docs.adobe.com/content/help/en/experience-platform/query/home.html)
-   * [实时客户数据平台](https://docs.adobe.com/content/help/en/experience-platform/rtcdp/overview.html)
-   * [沙盒](https://docs.adobe.com/content/help/zh-Hans/experience-platform/sandbox/home.html)
-   * [模式语(XDM)](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/home.html)
-   * [区段](https://docs.adobe.com/content/help/zh-Hans/experience-platform/segmentation/home.html)
-   * [源（连接器）](https://docs.adobe.com/content/help/en/experience-platform/sources/home.html)
-   * [Web SDK](https://docs.adobe.com/content/help/zh-Hans/experience-platform/edge/home.html)
 * Adobe生态系统平台 {#ecosystem}
    * [应用程序服务](application-services.md)
    * [应用程序和智能服务（视频）](video/application-intelligent-services.md)
@@ -68,4 +43,4 @@ ht-degree: 45%
 * [疑难解答指南](troubleshooting.md)
 * [ADLS第2代迁移](adls2-gen2-migration.md)
 * [术语表](glossary.md)
-* [发行说明](https://docs.adobe.com/content/help/zh-Hans/experience-platform/release-notes/latest.html)
+* [发行说明](https://www.adobe.com/go/platform-release-notes-en)
