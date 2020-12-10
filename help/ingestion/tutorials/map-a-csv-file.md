@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: 本教程介绍如何使用Adobe Experience Platform用户界面将CSV文件映射到XDM模式。
 translation-type: tm+mt
-source-git-commit: d69d0dd8c5a3d3a5e92cc88e390c079ed46aba32
+source-git-commit: c19360450d7b1f11063683b796774a04f3dbe16c
 workflow-type: tm+mt
-source-wordcount: '860'
+source-wordcount: '861'
 ht-degree: 1%
 
 ---
@@ -113,9 +113,9 @@ ht-degree: 1%
 
 ![](../images/tutorials/map-a-csv-file/new-calculated-field.png)
 
-## 监视数据流
+## 监控数据获取
 
-映射和创建CSV文件后，您可以监视通过它摄取的数据。 有关监视数据流的详细信息，请参阅有关监视流数据 [流的教程](../../ingestion/quality/monitor-data-flows.md)。
+映射和创建CSV文件后，您可以监视通过它摄取的数据。 有关监视数据摄取的详细信息，请参阅监视数据 [摄取的教程](../../ingestion/quality/monitor-data-ingestion.md)。
 
 ## 后续步骤
 
