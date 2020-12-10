@@ -5,7 +5,7 @@ title: 流摄取疑难解答
 topic: troubleshooting
 description: 此文档提供有关在Adobe Experience Platform流式摄取的常见问题的解答。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
 workflow-type: tm+mt
 source-wordcount: '1008'
 ht-degree: 0%
@@ -37,7 +37,7 @@ Adobe Experience Platform [!DNL Data Ingestion] 提供REST风格的API，您可�
 
 ### 我是否可以在将请求有效负荷发送到之前验证它 [!DNL Platform]?
 
-请求有效负荷只有在发送到之后才能进行评估 [!DNL Platform]。 执行同步验证时，有效负载返回已填充的JSON对象，而无效负载返回错误消息。 在异步验证期间，服务会检测任何格式错误的数据，并将其发 [!DNL Data Lake] 送到以后可以检索到的分析。 有关更多 [信息，请参见](../quality/streaming-validation.md) “流验证”概述。
+请求有效负荷只有在发送到之后才能进行评估 [!DNL Platform]。 执行同步验证时，有效负载返回已填充的JSON对象，而无效负载返回错误消息。 在异步验证期间，服务会检测任何格式错误的数据，并将其发 [!DNL Data Lake] 送到以后可以检索到的分析。 See the [streaming validation overview](../quality/streaming-validation.md) for more information.
 
 ### 在不支持同步验证的边缘上请求同步验证时，会出现什么情况？
 
@@ -59,7 +59,7 @@ Adobe Experience Platform [!DNL Data Ingestion] 提供REST风格的API，您可�
 
 发送到的所有数据( [!DNL Platform] 成功或以其他方式)在保留到数据集中之前都会作为批处理文件存储。 批处理状态显示在发送到的数据集中。
 
-您可以使用活动用户界面检查数据集Experience Platform，以验证数据是否 [已成功摄取](https://platform.adobe.com)。 单击 **[!UICONTROL 左侧导航]** 中的“数据集”以显示数据集列表。 从显示的列表中选择要流式传送到的数据集以打开其“ **[!UICONTROL 数据集活动]** ”页，显示选定时间段内发送的所有批。 有关使用监视数 [!DNL Experience Platform] 据流的详细信息，请参阅监视流 [数据流的指南](../quality/monitor-data-flows.md)。
+您可以使用活动用户界面检查数据集Experience Platform，以验证数据是否 [已成功摄取](https://platform.adobe.com)。 单击 **[!UICONTROL 左侧导航]** 中的“数据集”以显示数据集列表。 从显示的列表中选择要流式传送到的数据集以打开其“ **[!UICONTROL 数据集活动]** ”页，显示选定时间段内发送的所有批。 有关使用监视数 [!DNL Experience Platform] 据流的详细信息，请参阅监视流 [数据流的指南](../quality/monitor-data-ingestion.md)。
 
 如果您的数据未能摄取，并且您希望从中恢复 [!DNL Platform]该数据，则可以通过将失败的批次的ID发送到 [!DNL Data Access API]。 有关详细信息，请 [参阅检索失败批](../quality/retrieve-failed-batches.md) “指南”。
 
