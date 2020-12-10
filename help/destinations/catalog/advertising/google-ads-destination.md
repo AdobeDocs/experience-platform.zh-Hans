@@ -5,9 +5,9 @@ seo-title: Google广告目标
 description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 seo-description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 translation-type: tm+mt
-source-git-commit: c24676970629f5a39297001357f8af40895533d9
+source-git-commit: 7129a375b1bf4623f78989ed75fcd2bb5dad4a02
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '663'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,9 @@ ht-degree: 0%
 
 ### 现有帐 [!DNL Google Ads] 户
 
-[!DNL Google] 已暂停与第三方 [!DNL Google Ads] 供应商的任何新集成。 您必须与现有集 [!DNL Google Ads] 成，才能执行下一节中的允许列表步骤，并在实时CDP [!DNL Google Ads] 中创建目标。
+>[!IMPORTANT]
+>
+> [!DNL Google] 已弃用与 [!DNL Google Ads] 第三方供应商的新cookie集成。 要执行下一节中的允许列表步骤，您必须已与集成 [!DNL Google Ads]。 因此，建议使用的方 [!DNL Google Ads] 法是建立集 [!DNL Google Customer Match] 成。 有关创建集成的更 [!DNL Google Customer Match] 多详细信息，请阅读创建连接的教 [[!DNL Google Customer Match]](./google-customer-match.md) 程。
 
 ### 允许列表
 
