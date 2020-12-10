@@ -5,9 +5,9 @@ title: Adobe Experience PlatformUI指南
 topic: ui guide
 description: 'Adobe Experience Platform '
 translation-type: tm+mt
-source-git-commit: 3fc24b996d2c8bdf062e70a1c5e8d8206641cd06
+source-git-commit: 852792c1288cf7b4815fb0afb742046d7a595da2
 workflow-type: tm+mt
-source-wordcount: '1726'
+source-wordcount: '1737'
 ht-degree: 1%
 
 ---
@@ -17,15 +17,15 @@ ht-degree: 1%
 
 本指南介绍如何使用Adobe Experience Platform用户界面(UI)，说明各个组件的用途，并提供指向进一步文档的链接以了解更多信息。
 
-要了解有关Adobe Experience Platform的更多信息，请阅读 [Experience Platform概述](./home.md)。
+要了解有关Adobe Experience Platform的更多信息，请阅读 [Experience Platform概述](home.md)。
 
 ## 主屏幕
 
-登录Adobe Experience Platform后，您将进入主 [!UICONTROL 页] ，主页包括度量仪表板、最近数据和推荐的学习部分。
+登录Adobe Experience Platform后，您将进入主 [!UICONTROL 页] ，主页包含指标 [仪表板](#metrics)、最 [新数据](#recent-data)，以 [及推荐](#recommended-learning) 的学习。
 
 ![](images/user-guide/homepage.png)
 
-### 指标仪表板
+### 量度
 
 量度仪表板提供卡，可为您提供有关组织内数据集、用户档案、细分和目标的信息。
 
@@ -63,13 +63,13 @@ ht-degree: 1%
 
 平台UI中的顶部导航栏显示您当前登录的IMS组织，并提供几个重要控件。
 
-导航栏的左侧是Adobe Experience Platform徽标。 选择此选项将返回平台UI主屏幕。
+导航栏的左侧是Adobe Experience Platform徽标。 随时选择此选项将返回平台UI主屏幕。
 
 ![](./images/user-guide/homepage-top-nav-bar.png)
 
 ### IMS组织切换程序
 
-导航栏右侧的第一个项目是IMS组 **织切换程序**。
+顶部导航栏右侧的第一个项目是IMS **组织切换程序**。
 
 ![](./images/user-guide/homepage-ims-org.png)
 
@@ -79,7 +79,7 @@ ht-degree: 1%
 
 ### 切换应用程序
 
-右侧的下一个项目是应用程 **序切换器**，由应用程序 ![切换器图标](./images/user-guide/app-switcher-icon.png) 表示。 选择此图标后，您可以在Experience Platform、资产、交换和启动之间切换。
+顶部导航右侧的下一个项目是应用程序切 **换器**，由应用程序 ![切换器图标](./images/user-guide/app-switcher-icon.png) 表示。 选择此图标后，您可以在IMS组织有权访问的Adobe应用程序(如Experience Platform、分析、资产和启动)之间切换。
 
 ### 帮助
 
@@ -89,7 +89,7 @@ ht-degree: 1%
 
 ### 通知和通知
 
-帮助和支持菜单后，将显示 **通知部分**，该部分由铃 ![声／通知和通知图标表示](images/user-guide/notification-icon.png) 。 “通 **[!UICONTROL 知]** ”选项卡显示有关产品和其他相关更新的重要信息，而“ **[!UICONTROL 通知]** ”选项卡显示有关服务维护的通知。
+在通知 **部分**，由铃声／通知和 ![通知图标表示](images/user-guide/notification-icon.png) 。 “通 **[!UICONTROL 知]** ”选项卡显示有关产品和其他相关更新的重要信息，而“ **[!UICONTROL 通知]** ”选项卡显示有关服务维护的信息。
 
 ### 用户用户档案
 
