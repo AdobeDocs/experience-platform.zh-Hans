@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: 本教程介绍从第三方云存储检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 026007e5f80217f66795b2b53001b6cf5e6d2344
+source-git-commit: 7f24413a99b57e28ca2106214b7eedb5b068b045
 workflow-type: tm+mt
-source-wordcount: '1583'
+source-wordcount: '1599'
 ht-degree: 1%
 
 ---
@@ -572,6 +572,10 @@ curl -X GET \
 数据流负责从源调度和收集数据。 通过在有效负荷中提供先前提到的值时执行POST请求，可以创建数据流。
 
 要计划摄取，您必须首先将开始时间值设置为纪元时间（以秒为单位）。 然后，您必须将频率值设置为以下五个选项之一： `once`、 `minute`、 `hour`、 `day`或 `week`。 间隔值指定两个连续摄取之间的周期，并且创建一次摄取不需要设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`。
+
+>[!IMPORTANT]
+>
+>强烈建议在使用FTP连接器时计划数据流以进行一 [次摄取](../../../connectors/cloud-storage/ftp.md)。
 
 **API格式**
 
