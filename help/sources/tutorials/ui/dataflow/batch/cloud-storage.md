@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: 数据流是从源中检索数据并将其引入平台数据集的计划任务。 本教程提供使用云存储帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: 7f24413a99b57e28ca2106214b7eedb5b068b045
 workflow-type: tm+mt
-source-wordcount: '1789'
+source-wordcount: '1808'
 ht-degree: 0%
 
 ---
@@ -143,11 +143,11 @@ ht-degree: 0%
 
 ### 设置一次性摄取数据流
 
-要设置一次性摄取，请选择频率下拉箭头，然后选择“ **[!UICONTROL 一次]**”。 只要开始时间在将来保持不变，您就可以继续编辑数据流集以进行一次频率摄取。 一旦开始时间过去，就不能再编辑一次频率值。
+要设置一次性摄取，请选择频率下拉箭头，然后选择“ **[!UICONTROL 一次]**”。 只要开始时间在将来保持不变，您就可以继续编辑数据流集以进行一次频率摄取。 一旦开始时间过去，就不能再编辑一次频率值。 **[!UICONTROL 设置一]** 次性摄取 **** 数据流时，间隔和回填不可见。
 
->[!TIP]
+>[!IMPORTANT]
 >
->**[!UICONTROL 在一]** 次 **[!UICONTROL 性摄取期]** 间，间隔和回填不可见。
+>强烈建议在使用FTP连接器时计划数据流以进行一 [次摄取](../../../../connectors/cloud-storage/ftp.md)。
 
 向计划提供适当的值后，选择“下 **[!UICONTROL 一步]**”。
 
