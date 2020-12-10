@@ -1,14 +1,12 @@
 ---
 keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp;rtcdp
 title: 实时客户数据平台入门
-seo-title: 实时客户数据平台入门
-description: 实时客户数据平台的示例情景
-seo-description: 实时客户数据平台的示例情景
+description: 在设置实时客户数据平台实施时，请以此示例方案为例。
 translation-type: tm+mt
-source-git-commit: 8369bd517639cc66eeb95a811c3ddf46b8c4c48d
+source-git-commit: d4a205b2e5fe4ca1f8d419eec3e7636e2ed0e5ef
 workflow-type: tm+mt
-source-wordcount: '2317'
-ht-degree: 1%
+source-wordcount: '2313'
+ht-degree: 0%
 
 ---
 
