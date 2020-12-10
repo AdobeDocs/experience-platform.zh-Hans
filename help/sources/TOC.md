@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 translation-type: tm+mt
-source-git-commit: e31e09449b79b8a1600cfb2b162f51c26d482847
+source-git-commit: 5e5ac80e0c79b3cc0354b469edc036523e29b45d
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '665'
 ht-degree: 4%
 
 ---
@@ -36,8 +36,9 @@ ht-degree: 4%
       - [Azure Blob连接器](connectors/cloud-storage/blob.md)
       - [Azure事件集线器连接器](connectors/cloud-storage/eventhub.md)
       - [Azure文件存储连接器](connectors/cloud-storage/azure-file-storage.md)
-      - [FTP和SFTP连接器](connectors/cloud-storage/ftp-sftp.md)
+      - [FTP连接器](connectors/cloud-storage/ftp.md)
       - [Google Cloud存储连接器](connectors/cloud-storage/google-cloud-storage.md)
+      - [SFTP连接器](connectors/cloud-storage/sftp.md)
       - [AmazonS3和Azure Blob连接器](connectors/cloud-storage/blob-s3.md)
    - CRM {#crm}
       - [Microsoft Dynamics连接器](connectors/crm/ms-dynamics.md)
@@ -82,6 +83,7 @@ ht-degree: 4%
          - [Azure Data Lake存储Gen2连接器](tutorials/api/create/cloud-storage/adls-gen2.md)
          - [Azure事件集线器连接器](tutorials/api/create/cloud-storage/eventhub.md)
          - [Azure文件存储连接器](tutorials/api/create/cloud-storage/azure-file-storage.md)
+         - [FTP连接器](tutorials/api/create/cloud-storage/ftp.md)
          - [Google Cloud存储连接器](tutorials/api/create/cloud-storage/google.md)
          - [SFTP连接器](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
@@ -160,8 +162,9 @@ ht-degree: 4%
          - [Azure Blob连接器](tutorials/ui/create/cloud-storage/blob.md)
          - [Azure事件集线器连接器](tutorials/ui/create/cloud-storage/eventhub.md)
          - [Azure文件存储连接器](tutorials/ui/create/cloud-storage/azure-file-storage.md)
-         - [FTP和SFTP连接器](tutorials/ui/create/cloud-storage/ftp-sftp.md)
+         - [FTP连接器](tutorials/ui/create/cloud-storage/ftp.md)
          - [Google Cloud存储连接器](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
+         - [SFTP连接器](tutorials/ui/create/cloud-storage/sftp.md)
          - [AmazonS3和Blob连接器](tutorials/ui/create/cloud-storage/blob-s3.md)
       - CRM {#crm}
          - [Microsoft Dynamics连接器](tutorials/ui/create/crm/dynamics.md)
