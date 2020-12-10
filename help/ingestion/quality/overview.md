@@ -5,7 +5,7 @@ title: 数据获取质量
 topic: overview
 description: 以下文档概述了Adobe Experience Platform的批处理和流接收支持的检查和验证行为。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
 workflow-type: tm+mt
 source-wordcount: '304'
 ht-degree: 5%
@@ -56,4 +56,4 @@ Adobe Experience Platform为通过批处理或流式接收上传的任何数据�
 | 数据集 | 确保指定、启用和未删除数据集。 |
 | Header | 确保已指定标头且其有效。 |
 
-有关如何监视 [!DNL Platform] 和验证数据的更多信息，请参 [阅监视数据流文档](./monitor-data-flows.md)。
+有关如何监视 [!DNL Platform] 和验证数据的更多信息，请参 [阅监视数据流文档](./monitor-data-ingestion.md)。
