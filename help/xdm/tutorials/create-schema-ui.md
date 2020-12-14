@@ -6,9 +6,9 @@ topic: tutorial
 type: Tutorial
 description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
 translation-type: tm+mt
-source-git-commit: 097fe219e0d64090de758f388ba98e6024db2201
+source-git-commit: 26c3aa3b21c2d9850f29816d57ddf2da953d6b10
 workflow-type: tm+mt
-source-wordcount: '3819'
+source-wordcount: '3779'
 ht-degree: 0%
 
 ---
@@ -32,15 +32,13 @@ Adobe Experience Platform用户界面允许您在称为“”的 [!DNL Experienc
    * [模式合成基础](../schema/composition.md):XDM模式及其构建块的概述，包括类、混合、数据类型和字段。
 * [[!DNL Real-time Customer Profile]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
-## 浏览模式工作区中的现 [!UICONTROL 有模式] {#browse}
+## 打开 [!UICONTROL 模式] {#browse}
 
 UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 [!DNL Schema Library]容，使您能够视图管理组织可用的模式。 工作区还包括画 [!DNL Schema Editor]布，在本教程中，您可以在画布上构建模式。
 
 登录后， [!DNL Experience Platform]在左 **[!UICONTROL 侧导航]** 中选择模式以打 **[!UICONTROL 开模式工作区]** 。 “浏 **[!UICONTROL 览]** ”选项卡显示一列表模式(表示 [!DNL Schema Library])，您可以对其进行视图和自定义。 列表包括模式所基于的名称、类型、类和行为（记录或时间序列），以及模式上次修改的日期和时间。
 
-选择搜索栏旁边的筛选器图标，以对注册表中的所有资源（包括类、混合和数据类型）使用筛选功能。 您还可以根据资源是否归Adobe或您的组织所有以及是否已启用在中使用，进行筛选 [!DNL Real-time Customer Profile]。
-
-![](../images/tutorials/create-schema/schemas_filter.png)
+有关详细信 [息，请参阅在UI中探索现有](./explore.md) XDM资源指南。
 
 ## 创建和命名模式 {#create}
 
@@ -90,11 +88,11 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 
 ![](../images/tutorials/create-schema/preview-mixin.png)
 
-在本教程中，选择混 **[!UICONTROL 音的用户档案]** ，然后选择 **[!UICONTROL 添加混音]**。
+对于本教程，选择“人口统 **[!UICONTROL 计详细信息]** ”混合，然后选择 **[!UICONTROL “添加混合”]**。
 
 ![](../images/tutorials/create-schema/add_mixin_person_details.png)
 
-模式画布将重新显示。 Mixins **[!UICONTROL 部分现在]** 列表“[!UICONTROL 用户档案人详细信息]”，而 **[!UICONTROL Structure]** 部分包括混合所贡献的字段。 您可以在“混音”部分下选择混音 **[!UICONTROL 的名称]** ，以突出显示它在画布中提供的特定字段。
+模式画布将重新显示。 Mixins **[!UICONTROL 部分现在]** 列表“[!UICONTROL 人口统计详细信]息”，而 **[!UICONTROL Structure]** 部分包括由mixin贡献的字段。 您可以在“混音”部分下选择混音 **[!UICONTROL 的名称]** ，以突出显示它在画布中提供的特定字段。
 
 ![](../images/tutorials/create-schema/person_details_structure.png)
 
@@ -104,19 +102,19 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 >
 >请记住，字段可能使用在中定义的标量类型（如字符串、整数、数组或日期）以及任何数据类型（表示通用概念的字段组） [!DNL Schema Registry]。
 
-请注意， `name` 该字段的数据类型为“[!UICONTROL 全名]”，这意味着它也描述一个通用概念，并包含与名称相关的子字段，如名字、姓氏、字幕和后缀。
+请注意， `name` 该字段的数据类型为“[!UICONTROL 人名]”，这意味着它也描述了通用概念，并包含与名称相关的子字段，如名字、姓氏、字幕和后缀。
 
 在画布中选择不同的字段，以显示它们贡献给模式结构的任何其他字段。
 
 ## 添加另一个混音 {#mixin-2}
 
-您现在可以重复相同的步骤来添加另一个混音。 当您此次视图 **[!UICONTROL “添加混音]** ”对话框时，请注意“[!UICONTROL 用户档案人详细信息]”混音已灰显，且其旁边的复选框无法选中。 这可防止您意外复制已包含在当前模式中的混音。
+您现在可以重复相同的步骤来添加另一个混音。 当您此次视图 **[!UICONTROL “添加混音]** ”对话框时，请注意“人口统[!UICONTROL 计详细信息]”混音已灰显，且其旁边的复选框无法选中。 这可防止您意外复制已包含在当前模式中的混音。
 
-对于本教程，从对话[!DNL Profile personal details]框中选择“”混音，然 **[!UICONTROL 后选择]** “添加混音”将其添加到模式。
+对于本教程，从对话[!DNL Personal Contact Details]框中选择“”混音，然 **[!UICONTROL 后选择]** “添加混音”将其添加到模式。
 
 ![](../images/tutorials/create-schema/add_mixin_personal_details.png)
 
-添加后，画布将重新显示。 “[!UICONTROL 用户档案]”现在列在“合成 **[!UICONTROL ”部分的]** Mixins下，并在结构中添加了家庭地址、手机等 ********&#x200B;字段。
+添加后，画布将重新显示。 “个[!UICONTROL 人联系人]”现在列在“合成 **[!UICONTROL ”部分的]** Mixins下，并在“结构”下添加了家庭地址、手机等 ********&#x200B;字段。
 
 与字段类 `name` 似，您刚刚添加的字段表示多字段概念。 例如， `homeAddress` 数据类型为“[!UICONTROL 邮政地址]”，数 `mobilePhone` 据类型为“电[!UICONTROL 话号码]”。 您可以选择这些字段中的每个以展开它们，并查看数据类型中包含的其他字段。
 
@@ -132,19 +130,19 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 
 与类名称一样，混音名称应简短，用于描述混音对模式的贡献。 它们也是唯一的，因此您将无法重用该名称，因此必须确保其足够具体。
 
-在本教程中，将新的混音命名为“忠[!UICONTROL 诚度详细]信息”。
+对于本教程，将新混音命名为“忠诚度详细信息”。
 
 选 **[!UICONTROL 择“添加]** 混音”返回 [!DNL Schema Editor]。 “[!UICONTROL Loyalty Details]”现在应显示在画布左侧的 **[!UICONTROL Mixins下，但还没有与它关联的字段，因此“结构”下没有新的字]** 段 ****。
 
 ## 向混音添加字段 {#mixin-fields}
 
-现在您已创建“忠[!UICONTROL 诚度]”混音，是时候定义混音将贡献给模式的字段了。
+现在您已创建“忠诚度详细信息”混音，是时候定义混音将对模式贡献的字段了。
 
-首先，在“混音”部分选择混 **[!UICONTROL 音名]** 。 执行此操作后，混音的属性显示在编辑器的右侧，并且“结构” **[!UICONTROL 下模式]** 的名称旁边会显示“添加字段” **[!UICONTROL 按钮]**。
+首先，在“混音”部分选择混 **[!UICONTROL 音名]** 。 完成此操作后，混音的属性显示在编辑器的右侧，并且“ **结构”下模式的名称** 旁会显示加号(+) **[!UICONTROL 图标]**。
 
 ![](../images/tutorials/create-schema/loyalty_details_structure.png)
 
-选 **[!UICONTROL 择“]** ”旁的“[!DNL Loyalty Members]添加”字段，在结构中创建新节点。 此节点(在 `_tenantId` 本示例中调用)表示您的IMS组织的租户ID，前面有下划线。 租户ID的存在表示您正在添加的字段包含在您组织的命名空间中。
+选择“ **”旁边的加号** (+)[!DNL Loyalty Members]图标，在结构中创建新节点。 此节点(在 `_tenantId` 本示例中调用)表示您的IMS组织的租户ID，前面有下划线。 租户ID的存在表示您正在添加的字段包含在您组织的命名空间中。
 
 换言之，您添加的字段对您的组织而言是唯一的，并将保存在仅对您的组 [!DNL Schema Registry] 织可访问的特定区域中。 您定义的字段必须始终添加到租户命名空间，以防止与来自其他标准类、混音、数据类型和字段的名称发生冲突。
 
@@ -156,7 +154,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 
 ![](../images/tutorials/create-schema/loyalty_object.png)
 
-将应用更改并显示新创建 `loyalty` 的对象。 选择 **[!UICONTROL 对象旁边]** 的“添加字段”以添加其他与忠诚度相关的字段。 将显[!UICONTROL 示“新]建字段”，画 **[!UICONTROL 布的右侧显]** 示“字段属性”部分。
+将应用更改并显示新创建 `loyalty` 的对象。 选择对 **象旁边的加号** (+)图标以添加其他与忠诚度相关的字段。 将显[!UICONTROL 示“新]建字段”，画 **[!UICONTROL 布的右侧显]** 示“字段属性”部分。
 
 ![](../images/tutorials/create-schema/new_field_in_loyalty_object.png)
 
@@ -182,7 +180,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 * 点（整数）
 * 会员自（日期）
 
-通过选择对象上 **[!UICONTROL 的“添加]** ”字段 `loyalty` 并填写所需信息来添加每个字段。
+要向模式添加每个字段，请选 **择对象旁边的加号** (+)图 `loyalty` 标并填写所需的信息。
 
 完成后，Loyalty对象将包含忠诚度ID、积分和成员自定义字段。
 
@@ -200,7 +198,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 | [!UICONTROL 身份] | 指示此字段是标识字段。 有关标识字段的更多信 [息将在本教程后面提供](#identity-field)。 |
 | [!UICONTROL 关系] | 虽然模式关系可以通过使用合并模式来推断， [!DNL Real-time Customer Profile]但这仅适用于共享同一类的模式。 “关 [!UICONTROL 系] ”约束表示此字段引用基于不同类的模式的主标识，这表示两个模式之间的关系。 有关详细信息，请 [参阅有关定义](./relationship-ui.md) 关系的教程。 |
 
-对于本教程 [!DNL "loyalty"] ,模式中的对象需要一个新枚举字段来描述客户的“忠诚度级别”，其中值只能是四个可能的选项之一。 要将此字段添加到模式，请选 **[!UICONTROL 择对象旁]**`loyalty` 边的“添加字段 **[!UICONTROL ”，并填写字段名和显]** 示名的必 **[!UICONTROL 需]**&#x200B;字段。 对于 **[!UICONTROL 类型]**，选择“[!UICONTROL 字符串]”。
+对于本教程 [!DNL "loyalty"] ,模式中的对象需要一个新枚举字段来描述客户的“忠诚度级别”，其中值只能是四个可能的选项之一。 要将此字段添加到模式，请选 **择对象旁边的加号** (+) `loyalty` 图标，并填写字段名和显示名称 **[!UICONTROL 的必需]** 字段 ****。 对于 **[!UICONTROL 类型]**，选择“[!UICONTROL 字符串]”。
 
 ![](../images/tutorials/create-schema/loyalty-level-type.png)
 
@@ -227,6 +225,10 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 ![](../images/tutorials/create-schema/loyalty_data_type.png)
 
 在将来的模式中，您现在可以将字段指定为“[!DNL Loyalty]”类型，并自动包含ID、忠诚度级别、成员自身和积分的字段。
+
+>[!NOTE]
+>
+>您还可以创建和编辑自定义数据类型，而与编辑模式无关。 有关详细信息，请 [参阅有关创建和编辑数据](./create-data-type.md) 类型的教程。
 
 ## 搜索和筛选模式字段
 
@@ -270,7 +272,7 @@ UI [!UICONTROL 中的] 模式工作 [!DNL Platform] 区提供了可视化的内 
 >
 >有关标准命名空间及其定义的列表，请参阅 [[!DNL Identity Service] 文档](../../identity-service/troubleshooting-guide.md#standard-namespaces)。
 
-应用更改后，指 `loyaltyId` 纹符号的图标显示为标识字段。 此外，左边栏 [!DNL Loyalty Details] 中的混音列表它下方的身份字段，这样您便可以轻松确定模式中的哪个混音提供模式的身份字段。
+应用更改后，指 `loyaltyId` 纹符号的图标显示为标识字段。
 
 ![](../images/tutorials/create-schema/identity-applied.png)
 
