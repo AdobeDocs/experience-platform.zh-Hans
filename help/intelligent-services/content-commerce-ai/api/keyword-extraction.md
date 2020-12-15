@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;getting started;content ai;commerce ai;content and commerce ai;keyword extraction;Keyword extraction
-solution: Experience Platform
+solution: Experience Platform, Intelligent Services
 title: 关键字提取
 topic: Developer guide
 description: 给定文本提取时，关键字文档服务会自动提取最能描述文档主题的关键字或关键字短语。 为了提取关键字，使用命名实体识别(NER)和无监督关键字提取算法的组合。
 translation-type: tm+mt
-source-git-commit: e397711baf31092402de83b826887ebef16321eb
+source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
 workflow-type: tm+mt
 source-wordcount: '1059'
 ht-degree: 3%
