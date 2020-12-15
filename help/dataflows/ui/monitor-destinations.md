@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;home;popular topics;monitor accounts;monitor dataflows;dataflows;destinations
-description: Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 本教程提供了从“源”工作区查看现有数据流的步骤。
+description: 目的地允许您将您的数据从Adobe Experience Platform激活到无数外部合作伙伴。 本教程提供了如何使用Experience Platform用户界面监视目标的数据流的说明。
 solution: Experience Platform
 title: 监视数据流
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 791ad61f2f28da03ef3e5cb5efdd89154e9b1a0b
+source-git-commit: 12a6682b6e28e656899aee5c38d3bb4a84bcdd2f
 workflow-type: tm+mt
-source-wordcount: '422'
+source-wordcount: '426'
 ht-degree: 1%
 
 ---
