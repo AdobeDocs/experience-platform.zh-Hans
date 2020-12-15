@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;getting started;content ai;commerce ai;content and commerce ai;color extraction;Color extraction
-solution: Experience Platform
+solution: Experience Platform, Intelligent Services
 title: 颜色提取
 topic: Developer guide
 description: 当给定图像时，颜色提取服务可以计算像素颜色的直方图，并按主色将其排序为桶。
 translation-type: tm+mt
-source-git-commit: 690ddbd92f0a2e4e06b988e761dabff399cd2367
+source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
 workflow-type: tm+mt
 source-wordcount: '689'
 ht-degree: 2%
