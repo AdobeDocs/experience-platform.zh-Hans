@@ -1,11 +1,11 @@
 ---
 keywords: OCR;text presence;optical character recognition
-solution: Experience Platform
+solution: Experience Platform, Intelligent Services
 title: 光学字符识别
 topic: Developer guide
 description: 给定图像时，文本存在／光学字符识别(OCR)服务可指示图像中是否存在文本。 如果存在文本，OCR可以返回文本
 translation-type: tm+mt
-source-git-commit: 4d12caf949aeb6619cd27b55855014a61d4e54bb
+source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
 workflow-type: tm+mt
 source-wordcount: '512'
 ht-degree: 3%
