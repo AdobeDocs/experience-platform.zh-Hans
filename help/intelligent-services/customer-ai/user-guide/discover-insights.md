@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;insights;customer ai;popular topics;customer ai insights
-solution: Experience Platform
+solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
 title: 利用客户人工智能发掘洞察
 topic: Discovering insights
 description: 此文档可作为参考，用于与智能服务客户人工智能用户界面中的服务实例洞察进行交互。
 translation-type: tm+mt
-source-git-commit: 0b92346065b7c9615d8aef4c9b13c84e0383b4b9
+source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
 workflow-type: tm+mt
 source-wordcount: '1389'
 ht-degree: 1%
