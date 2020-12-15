@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;getting started;content ai;commerce ai;content and commerce ai
-solution: Experience Platform
+solution: Experience Platform, Intelligent Services
 title: 内容和商务AI快速入门
 topic: Getting started
 description: 内容和商务AI利用Adobe I/OAPI。 要调用Adobe I/OAPI和I/O控制台集成，您必须先完成身份验证教程。
 translation-type: tm+mt
-source-git-commit: 2be04547b96e1a6c293cc63e782fe1b3259619ba
+source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
 workflow-type: tm+mt
 source-wordcount: '576'
 ht-degree: 0%
