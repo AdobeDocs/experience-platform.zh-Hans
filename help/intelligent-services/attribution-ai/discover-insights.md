@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;insights;attribution ai;popular topics;attribution ai insights
-solution: Experience Platform
+solution: Intelligent Services, Experience Platform
 title: 在Attribution AI中发掘洞察
 topic: Attribution AI insights
 description: 此文档可作为与Adobe智能服务用户界面中的服务实例洞察交互的指南。
 translation-type: tm+mt
-source-git-commit: 69c27fc45aa9d9acaaed29c2324d02ebd471d63d
+source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
 workflow-type: tm+mt
 source-wordcount: '1646'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Attribution AI服务实例提供的洞察有助于制定和衡量与营销绩效
 
 ## 入门指南
 
-为了利用Attribution AI洞察，您需要有一个运行状态成功的服务实例。 要创建新服务实例，请访问 [Attribution AI用户界面指南](./user-guide.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分中，请允许24小时，它才能完成运行。
+为了利用Attribution AI洞察，您需要有一个运行状态成功的服务实例。 要创建新服务实例，请访问 [Attribution AI用户界面指南](./user-guide.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分，请允许24小时，它才能完成运行。
 
 ## 服务实例洞察概述
 
