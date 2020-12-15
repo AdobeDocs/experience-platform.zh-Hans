@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform;getting started;attribution ai;popular topics
-solution: Experience Platform
+solution: Experience Platform, Intelligent Services
 title: Attribution AI入门
 topic: Getting started
 description: 以下指南需要了解与使用Attribution AI有关的Adobe Experience Platform各项服务。 开始教程之前，请查看以下文档。
 translation-type: tm+mt
-source-git-commit: c30bbaead775e68f869b080e24e18d4a23cda973
+source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
 workflow-type: tm+mt
 source-wordcount: '526'
 ht-degree: 0%
