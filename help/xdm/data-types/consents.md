@@ -4,7 +4,7 @@ title: 同意和首选项数据类型
 description: 隐私／营销偏好（同意）数据类型旨在支持收集由同意管理平台(CMP)和您数据操作的其他来源生成的客户权限和偏好。
 topic: guide
 translation-type: tm+mt
-source-git-commit: 1a4dd167ecd4f4f61ffe26af786b355e4561b30d
+source-git-commit: 640f0be8a297fada0eee10ff80fec3b3142c09b9
 workflow-type: tm+mt
 source-wordcount: '2022'
 ht-degree: 1%
@@ -333,4 +333,4 @@ ht-degree: 1%
 
 ### 完整 [!DNL Consents & Preferences] 模式 {#full-schema}
 
-要视图数据类型的完 [!DNL Consents & Preferences] 整模式，请参阅 [官方XDM存储库](https://github.com/adobe/xdm/blob/master/components/datatypes/consentpreferences.schema.json)。
+要视图数据类型的完 [!DNL Consents & Preferences] 整模式，请参阅 [官方XDM存储库](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json)。
