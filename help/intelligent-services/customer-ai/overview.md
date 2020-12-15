@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;overview;customer ai;popular topics;customer ai overview
-solution: Experience Platform
+solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
 title: Customer AI 概述
 topic: Customer AI overview
 description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 landing-page-description: Customer AI is used to generate custom propensity scores such as churn and conversion for individual profiles at-scale.
 translation-type: tm+mt
-source-git-commit: d4a205b2e5fe4ca1f8d419eec3e7636e2ed0e5ef
+source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
 workflow-type: tm+mt
 source-wordcount: '526'
 ht-degree: 16%
