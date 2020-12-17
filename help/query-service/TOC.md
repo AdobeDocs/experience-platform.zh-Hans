@@ -5,15 +5,15 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: Query Service 指南
 user-guide-description: 使用标准 SQL 在 Platform Data Lake 中查询数据。
 translation-type: tm+mt
-source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
+source-git-commit: e38190aabfa5d36de85e03eb5fb4e76283fb7934
 workflow-type: tm+mt
-source-wordcount: '147'
+source-wordcount: '144'
 ht-degree: 18%
 
 ---
 
 
-# Adobe Experience Platform Query Service {#query}
+# Adobe Experience Platform查询服务{#query}
 
 - [查询服务概述](home.md)
 - [快速入门指南](quickstart.md)
@@ -28,7 +28,6 @@ ht-degree: 18%
    - [UI概述](ui/overview.md)
    - [查询编辑器用户指南](ui/user-guide.md)
 - 创建查询 {#creating-queries}
-   - [Adobe定义函数](creating-queries/using-adobe-defined-functions.md)
    - [创建查询概述](creating-queries/creating-queries.md)
    - [数据集与表和模式](creating-queries/datasets-and-tables.md)
    - [执行查询的一般指南](creating-queries/writing-queries.md)
@@ -36,18 +35,18 @@ ht-degree: 18%
    - [加入数据集](creating-queries/joining-datasets.md)
    - [数据外部重复数据删除](creating-queries/deduplication.md)
 - [根据查询结果生成数据集](creating-queries/create-datasets.md)
-- SQL引用 {#sql}
+- SQL引用{#sql}
    - [SQL概述](sql/overview.md)
    - [SQL语法](sql/syntax.md)
    - [Adobe定义函数](sql/adobe-defined-functions.md)
    - [Spark SQL函数](sql/spark-sql-functions.md)
    - [元数据命令](sql/metadata.md)
    - [准备的声明](sql/prepared-statements.md)
-- 示例查询 {#samples}
+- 示例查询{#samples}
    - [示例查询概述](sample-queries/overview.md)
    - [Adobe Analytics](sample-queries/adobe-analytics.md)
    - [Adobe Target](sample-queries/adobe-target.md)
-- 将客户端连接到查询服务 {#clients}
+- 将客户端连接到查询服务{#clients}
    - [客户端连接概述](clients/overview.md)
    - [Aqua Data Studio](clients/aqua-data-studio.md)
    - [Looker](clients/looker.md)
