@@ -6,10 +6,10 @@ topic: overview
 type: Tutorial
 description: 本教程使用流服务API指导您完成将Experience Platform连接到SFTP（安全文件传输协议）服务器的步骤。
 translation-type: tm+mt
-source-git-commit: 9092c3d672967d3f6f7bf7116c40466a42e6e7b1
+source-git-commit: c88b9400144f511ef456fd5fdc968a5a6b7a3dc0
 workflow-type: tm+mt
-source-wordcount: '770'
-ht-degree: 2%
+source-wordcount: '807'
+ht-degree: 1%
 
 ---
 
@@ -29,6 +29,10 @@ ht-degree: 2%
 * [来源](../../../../home.md):Experience Platform允许从各种来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。
 * [沙箱](../../../../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
+>[!IMPORTANT]
+>
+>建议在使用SFTP源连接引入JSON对象时避免换行或回车。 要绕过限制，请每行使用一个JSON对象，然后使用多行生成后续文件。
+
 以下各节提供了使用[!DNL Flow Service] API成功连接到SFTP服务器时需要了解的其他信息。
 
 ### 收集所需的凭据
@@ -45,11 +49,11 @@ ht-degree: 2%
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)疑难解答指南中关于如何阅读示例API调用[的一节。[!DNL Experience Platform]
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅Experience Platform疑难解答指南中的[如何阅读示例API调用](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](../../../../../tutorials/authentication.md)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用平台API，您必须先完成[身份验证教程](../../../../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
@@ -65,7 +69,7 @@ ht-degree: 2%
 
 ## 创建连接
 
-连接指定源并包含该源的凭据。 每个SFTP帐户只需要一个连接，因为它可用于创建多个源连接器以导入不同的数据。
+连接指定源并包含该源的凭据。 只需一个连接，因为它可用于创建多个数据流以引入不同的数据。
 
 ### 使用基本身份验证创建SFTP连接
 
