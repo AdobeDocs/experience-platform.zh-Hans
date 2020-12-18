@@ -5,30 +5,30 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 translation-type: tm+mt
-source-git-commit: 5e5ac80e0c79b3cc0354b469edc036523e29b45d
+source-git-commit: c9552b4d3bbb34c81996344f2e8c7cc385c525b6
 workflow-type: tm+mt
-source-wordcount: '665'
+source-wordcount: '663'
 ht-degree: 4%
 
 ---
 
 
-# 源连接器 {#sources}
+# 源连接器{#sources}
 
 - [源连接器概述](home.md)
-- 可用源连接器 {#connectors}
-   - Adobe应用程序 {#adobe-applications}
+- 可用源连接器{#connectors}
+   - Adobe应用程序{#adobe-applications}
       - [分析分类数据连接器](connectors/adobe-applications/classifications.md)
       - [Analytics数据连接器](connectors/adobe-applications/analytics.md)
       - [Audience Manager连接器](connectors/adobe-applications/audience-manager.md)
       - [客户属性连接器](connectors/adobe-applications/customer-attributes.md)
-      - 映射Adobe应用程序字段 {#mapping}
+      - 映射Adobe应用程序字段{#mapping}
          - [分析映射字段](connectors/adobe-applications/mapping/analytics.md)
          - [Audience Manager映射字段](connectors/adobe-applications/mapping/audience-manager.md)
          - [目标映射字段](connectors/adobe-applications/mapping/target.md)
    - 广告 {#advertising}
       - [Google AdWords连接器](connectors/advertising/ads.md)
-   - 云存储 {#cloud-storage}
+   - 云存储{#cloud-storage}
       - [AmazonKinesis连接器](connectors/cloud-storage/kinesis.md)
       - [AmazonS3连接器](connectors/cloud-storage/s3.md)
       - [Apache HDFS连接器](connectors/cloud-storage/hdfs.md)
@@ -43,10 +43,10 @@ ht-degree: 4%
    - CRM {#crm}
       - [Microsoft Dynamics连接器](connectors/crm/ms-dynamics.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
-   - 客户成功 {#customer-success}
+   - 客户成功{#customer-success}
       - [Salesforce Service Cloud连接器](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow连接器](connectors/customer-success/servicenow.md)
-   - 数据库 {#databases}
+   - 数据库{#databases}
       - [Amazon红移连接器](connectors/databases/redshift.md)
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
       - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
@@ -63,19 +63,19 @@ ht-degree: 4%
       - [Oracle连接器](connectors/databases/oracle.md)
       - [菲尼克斯连接器](connectors/databases/phoenix.md)
       - [PostgreSQL连接器](connectors/databases/postgres.md)
-   - 电子商务 {#ecommerce}
+   - 电子商务{#ecommerce}
       - [Shopify连接器](connectors/ecommerce/shopify.md)
-   - 营销自动化 {#marketing-automation}
+   - 营销自动化{#marketing-automation}
       - [HubSpot连接器](connectors/marketing-automation/hubspot.md)
-   - 付款 {#payments}
+   - 付款{#payments}
       - [PayPal连接器](connectors/payments/paypal.md)
-   - 协议 {#protocols}
+   - 协议{#protocols}
       - [通用OData连接器](connectors/protocols/odata.md)
-- API教程 {#api-tutorials}
-   - 创建源连接器 {#create}
+- API教程{#api-tutorials}
+   - 创建源连接器{#create}
       - 广告 {#advertising}
          - [Google AdWords连接器](tutorials/api/create/advertising/ads.md)
-      - 云存储 {#cloud-storage}
+      - 云存储{#cloud-storage}
          - [AmazonKinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [AmazonS3连接器](tutorials/api/create/cloud-storage/s3.md)
          - [Apache HDFS连接器](tutorials/api/create/cloud-storage/hdfs.md)
@@ -87,13 +87,12 @@ ht-degree: 4%
          - [Google Cloud存储连接器](tutorials/api/create/cloud-storage/google.md)
          - [SFTP连接器](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
-         - [HubSpot连接器](tutorials/api/create/crm/hubspot.md)
          - [Microsoft Dynamics连接器](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce连接器](tutorials/api/create/crm/salesforce.md)
-      - 客户成功 {#customer-success}
+      - 客户成功{#customer-success}
          - [Salesforce Service Cloud连接器](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow连接器](tutorials/api/create/customer-success/servicenow.md)
-      - 数据库 {#databases}
+      - 数据库{#databases}
          - [Amazon红移连接器](tutorials/api/create/databases/redshift.md)
          - [Azure HDInsights连接器上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights连接器上的Apache Spark](tutorials/api/create/databases/spark.md)
@@ -110,15 +109,15 @@ ht-degree: 4%
          - [菲尼克斯连接器](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL连接器](tutorials/api/create/databases/postgres.md)
          - [SQL Server连接器](tutorials/api/create/databases/sql-server.md)
-      - 电子商务 {#ecommerce}
+      - 电子商务{#ecommerce}
          - [Shopify连接器](tutorials/api/create/ecommerce/shopify.md)
-      - 营销自动化 {#marketing-automation}
+      - 营销自动化{#marketing-automation}
          - [HubSpot连接器](tutorials/api/create/marketing-automation/hubspot.md)
-      - 付款 {#payments}
+      - 付款{#payments}
          - [PayPal连接器](tutorials/api/create/payments/paypal.md)
-      - 协议 {#protocols}
+      - 协议{#protocols}
          - [通用OData连接器](tutorials/api/create/protocols/odata.md)
-   - 浏览数据 {#explore}
+   - 浏览数据{#explore}
       - [浏览广告数据](tutorials/api/explore/advertising.md)
       - [浏览云存储数据](tutorials/api/explore/cloud-storage.md)
       - [浏览CRM数据](tutorials/api/explore/crm.md)
@@ -128,7 +127,7 @@ ht-degree: 4%
       - [浏览营销自动化数据](tutorials/api/explore/marketing-automation.md)
       - [浏览付款数据](tutorials/api/explore/payments.md)
       - [浏览协议数据](tutorials/api/explore/protocols.md)
-   - 收集数据 {#collect}
+   - 收集数据{#collect}
       - [收集广告数据](tutorials/api/collect/advertising.md)
       - [收集云存储数据](tutorials/api/collect/cloud-storage.md)
       - [收集CRM数据](tutorials/api/collect/crm.md)
@@ -145,16 +144,16 @@ ht-degree: 4%
    - [更新连接](tutorials/api/update.md)
    - [删除连接](tutorials/api/delete.md)
    - [删除数据流](tutorials/api/delete-dataflows.md)
-- UI教程 {#ui-tutorials}
-   - 创建源连接器 {#create}
-      - Adobe应用程序 {#adobe-applications}
+- UI教程{#ui-tutorials}
+   - 创建源连接器{#create}
+      - Adobe应用程序{#adobe-applications}
          - [Adobe Analytics分类数据连接器](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Analytics连接器](tutorials/ui/create/adobe-applications/analytics.md)
          - [Adobe Audience Manager连接器](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [客户属性连接器](tutorials/ui/create/adobe-applications/customer-attributes.md)
       - 广告 {#create}
          - [Google AdWords连接器](tutorials/ui/create/advertising/ads.md)
-      - 云存储 {#cloud-storage}
+      - 云存储{#cloud-storage}
          - [AmazonKinesis连接器](tutorials/ui/create/cloud-storage/kinesis.md)
          - [AmazonS3连接器](tutorials/ui/create/cloud-storage/s3.md)
          - [Apache HDFS连接器](tutorials/ui/create/cloud-storage/hdfs.md)
@@ -169,10 +168,10 @@ ht-degree: 4%
       - CRM {#crm}
          - [Microsoft Dynamics连接器](tutorials/ui/create/crm/dynamics.md)
          - [Salesforce连接器](tutorials/ui/create/crm/salesforce.md)
-      - 客户成功 {#customer-success}
+      - 客户成功{#customer-success}
          - [Salesforce Service Cloud连接器](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow连接器](tutorials/ui/create/customer-success/servicenow.md)
-      - 数据库 {#databases}
+      - 数据库{#databases}
          - [Amazon红移连接器](tutorials/ui/create/databases/redshift.md)
          - [Azure HDInsights连接器上的Apache Hive](tutorials/ui/create/databases/hive.md)
          - [Azure HDInsights连接器上的Apache Spark](tutorials/ui/create/databases/spark.md)
@@ -189,15 +188,15 @@ ht-degree: 4%
          - [Oracle连接器](tutorials/ui/create/databases/oracle.md)
          - [菲尼克斯连接器](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL连接器](tutorials/ui/create/databases/postgres.md)
-      - 电子商务 {#ecommerce}
+      - 电子商务{#ecommerce}
          - [Shopify连接器](tutorials/ui/create/ecommerce/shopify.md)
-      - 营销自动化 {#marketing-automation}
+      - 营销自动化{#marketing-automation}
          - [HubSpot连接器](tutorials/ui/create/marketing-automation/hubspot.md)
-      - 付款 {#payments}
+      - 付款{#payments}
          - [PayPal连接器](tutorials/ui/create/payments/paypal.md)
-      - 协议 {#protocols}
+      - 协议{#protocols}
          - [通用OData连接器](tutorials/ui/create/protocols/odata.md)
-   - 配置数据流 {#dataflow}
+   - 配置数据流{#dataflow}
       - [为广告连接器配置数据流](tutorials/ui/dataflow/advertising.md)
       - [为批处理云存储连接器配置数据流](tutorials/ui/dataflow/batch/cloud-storage.md)
       - [为流式云存储连接器配置数据流](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
