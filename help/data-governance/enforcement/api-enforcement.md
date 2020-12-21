@@ -6,23 +6,23 @@ topic: enforcement
 type: Tutorial
 description: 为数据创建数据使用标签并针对这些标签创建市场营销操作的使用策略后，您可以使用策略服务API评估对数据集或任意标签组执行的市场营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。
 translation-type: tm+mt
-source-git-commit: 00688e271b3c1e3ad1a17ceb6045e3316bd65961
+source-git-commit: e680191d495e4c33baa8242d40a15b9124eec8cd
 workflow-type: tm+mt
-source-wordcount: '993'
+source-wordcount: '992'
 ht-degree: 1%
 
 ---
 
 
-# 使用API实施数据使用策 [!DNL Policy Service] 略
+# 使用[!DNL Policy Service] API实施数据使用策略
 
-为数据创建数据使用标签并针对这些标签创建市场营销操作的使用策略后，您便可以使用 [[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) 评估对数据集或任意标签组执行的市场营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。
+为数据创建数据使用标签并针对这些标签创建市场营销操作的使用策略后，您可以使用[[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)评估对数据集或任意标签组执行的市场营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。
 
 >[!NOTE]
 >
->默认情况下，只有状态设置为的策略才 `ENABLED` 能参与评估。 要允许 `DRAFT` 策略参与评估，必须在请求路径中包含 `includeDraft=true` 查询参数。
+>默认情况下，只有状态设置为`ENABLED`的策略才能参与评估。 要允许`DRAFT`策略参与评估，必须在请求路径中包含查询参数`includeDraft=true`。
 
-此文档提供了如何使用API检查 [!DNL Policy Service] 不同情况下是否存在策略违规的步骤。
+此文档提供了如何使用[!DNL Policy Service] API检查不同情况下的策略违规的步骤。
 
 ## 入门指南
 
@@ -33,11 +33,11 @@ ht-degree: 1%
    * [数据使用策略](../policies/overview.md):数据使用策略是描述某些数据使用标签集允许或限制的营销操作类型的规则。
 * [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-在开始本教程之前，请查阅开发 [人员指南](../api/getting-started.md) ，了解成功调用API所需的重要信息，包括必需的头 [!DNL Policy Service] 以及如何读取示例API调用。
+在开始本教程之前，请查看[开发人员指南](../api/getting-started.md)，了解成功调用[!DNL Policy Service] API时需要了解的重要信息，包括必需的头以及如何读取示例API调用。
 
 ## 使用标签和营销操作进行评估
 
-您可以根据数据集中假设存在的一组数据使用标签测试营销操作，从而评估策略。 这是通过使用查询参数来完 `duleLabels` 成的，其中标签以逗号分隔的值列表形式提供，如下例所示。
+您可以根据数据集中假设存在的一组数据使用标签测试营销操作，从而评估策略。 这是通过使用`duleLabels`查询参数来完成的，其中标签以逗号分隔的值列表提供，如下例所示。
 
 **API格式**
 
@@ -53,11 +53,11 @@ GET /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints?duleLabels={LAB
 
 **请求**
 
-以下请求会根据标 `exportToThirdParty` 签和测试营销 `C1` 操作 `C3`。 由于您在本教程前面创建的数据使用策略将标 `C1` 签定义为其策略表达式 `deny` 中的一个条件，因此营销操作应触发策略违规。
+以下请求将针对标签`C1`和`C3`测试`exportToThirdParty`营销操作。 由于您在本教程前面创建的数据使用策略在其策略表达式中将`C1`标签定义为`deny`条件之一，因此营销操作应触发策略违规。
 
 >[!NOTE]
 >
->数据使用标签区分大小写。 只有在策略表达式中定义的标签完全匹配时，才会发生策略违规。 在此示例中，标 `C1` 签将触发违规，而标 `c1` 签则不会触发。
+>数据使用标签区分大小写。 只有在策略表达式中定义的标签完全匹配时，才会发生策略违规。 在此示例中，`C1`标签将触发违规，而`c1`标签则不会触发违规。
 
 ```shell
 curl -X GET \
@@ -70,7 +70,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回营销操作的URL、测试所针对的使用标签以及测试针对这些标签的操作而违反的任何策略的列表。 在此示例中，阵列中显示“将数据导出到第三方”策 `violatedPolicies` 略，表明营销操作触发了预期的策略违规。
+成功的响应会返回营销操作的URL、测试所针对的使用标签以及测试针对这些标签的操作而违反的任何策略的列表。 在此示例中，`violatedPolicies`阵列中显示“将数据导出到第三方”策略，指示营销操作触发了预期的策略违规。
 
 ```json
 {
@@ -130,11 +130,11 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `violatedPolicies` | 一个数组，其中列出了根据提供的测试营销操作（在中指定） `marketingActionRef`所违反的任何策略 `duleLabels`。 |
+| `violatedPolicies` | 一个数组，列出通过对提供的`duleLabels`测试营销操作（在`marketingActionRef`中指定）而违反的任何策略。 |
 
 ## 使用数据集进行评估
 
-您可以通过针对一个或多个可从中收集标签的数据集测试营销操作来评估数据使用策略。 这是通过向请求主体发出POST `/marketingActions/core/{MARKETING_ACTION_NAME}/constraints` 请求并在请求主体中提供数据集ID来完成的，如下例所示。
+您可以通过针对一个或多个可从中收集标签的数据集测试营销操作来评估数据使用策略。 这是通过向`/marketingActions/core/{MARKETING_ACTION_NAME}/constraints`发出POST请求并在请求主体中提供数据集ID来完成的，如下例所示。
 
 **API格式**
 
@@ -149,7 +149,7 @@ POST /marketingActions/custom/{MARKETING_ACTION_NAME}/constraints
 
 **请求**
 
-以下请求针对三个不 `exportToThirdParty` 同的数据集测试营销操作。 数据集由负载中提供的数组中的类型和ID引用。
+以下请求针对三个不同的数据集测试`exportToThirdParty`营销操作。 数据集由负载中提供的数组中的类型和ID引用。
 
 ```shell
 curl -X POST \
@@ -185,11 +185,11 @@ curl -X POST \
 | --- | --- |
 | `entityType` | 有效负荷数组中的每个项目都必须指示所定义实体的类型。 对于此用例，值将始终为“dataSet”。 |
 | `entityId` | 有效负荷数组中的每个项目都必须为数据集提供唯一ID。 |
-| `entityMeta.fields` | （可选）JSON指针字 [符串的数组](../../landing/api-fundamentals.md#json-pointer) ，引用数据集模式中的特定字段。 如果包含此数组，则只有数组中包含的字段参与评估。 阵列中未包含的任何模式字段将不参与评估。<br><br>如果未包括此字段，则评估中将包括数据集模式中的所有字段。 |
+| `entityMeta.fields` | （可选）[JSON指针](../../landing/api-fundamentals.md#json-pointer)字符串数组，引用数据集模式中的特定字段。 如果包含此数组，则只有数组中包含的字段参与评估。 阵列中未包含的任何模式字段将不参与评估。<br><br>如果未包括此字段，则评估中将包括数据集模式中的所有字段。 |
 
 **响应**
 
-成功的响应会返回营销操作的URL、从提供的数据集收集的使用标签以及针对这些标签测试操作而违反的任何策略的列表。 在此示例中，阵列中显示“将数据导出到第三方”策 `violatedPolicies` 略，表明营销操作触发了预期的策略违规。
+成功的响应会返回营销操作的URL、从提供的数据集收集的使用标签以及针对这些标签测试操作而违反的任何策略的列表。 在此示例中，`violatedPolicies`阵列中显示“将数据导出到第三方”策略，指示营销操作触发了预期的策略违规。
 
 ```json
 {
@@ -372,10 +372,10 @@ curl -X POST \
 | --- | --- |
 | `duleLabels` | 从请求有效负荷中提供的数据集提取的列表数据使用标签。 |
 | `discoveredLabels` | 请求有效负荷中提供的数据集的列表，显示在每个数据集中找到的数据集级别和字段级别标签。 |
-| `violatedPolicies` | 一个数组，其中列出了根据提供的测试营销操作（在中指定） `marketingActionRef`所违反的任何策略 `duleLabels`。 |
+| `violatedPolicies` | 一个数组，列出通过对提供的`duleLabels`测试营销操作（在`marketingActionRef`中指定）而违反的任何策略。 |
 
 ## 后续步骤
 
 通过阅读此文档，您已成功检查在数据集或数据集使用标签集上执行营销操作时是否存在策略违规。 使用API响应中返回的数据，您可以在体验应用程序中设置协议以在发生策略违规时相应地强制实施这些违规。
 
-有关如何为中的受众段实施数据使用策略的 [!DNL Real-time Customer Profile]步骤，请参阅以下 [教程](../../segmentation/tutorials/governance.md)。
+有关平台如何为激活的区段自动提供策略强制的信息，请参见[自动强制](./auto-enforcement.md)上的指南。
