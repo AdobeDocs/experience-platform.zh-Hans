@@ -18,4 +18,4 @@ ht-degree: 0%
 
 Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。
 
-要了解有关监视源连接器数据流的更多信息，请阅读源 [教程中的监视数](../../../dataflows/ui/monitor-sources.md) 据流。
+要了解有关监视源连接器数据流的更多信息，请阅读源](../../../dataflows/ui/monitor-sources.md)教程中的[监视数据流。
