@@ -3,37 +3,37 @@ product: experience-platform
 audience: user
 user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
-user-guide-description: 使用 Experience Data Model (XDM) 类和混合来标准化体验数据。
+user-guide-description: 使用 Experience Data Model (XDM) 类和混合 (mixin) 来标准化体验数据。
 translation-type: tm+mt
-source-git-commit: df763e246cd6930a31402f0a2c94d657159f4fe8
+source-git-commit: 099e88373d945660e7529bbd508e616869fd01da
 workflow-type: tm+mt
-source-wordcount: '197'
-ht-degree: 21%
+source-wordcount: '216'
+ht-degree: 23%
 
 ---
 
 
-# Experience Data Model (XDM) System {#xdm}
+# 体验数据模型(XDM)系统{#xdm}
 
 * [XDM系统概述](home.md)
-* 模式 {#schema}
+* 模式 (Schema){#schema}
    * [模式合成基础](schema/composition.md)
    * [数据建模的最佳实践](schema/best-practices.md)
    * [XDM字段类型约束](schema/field-constraints.md)
    * [XDM字段字典](schema/field-dictionary.md)
-   * 模式使用案例 {#use-cases}
+   * 模式用例{#use-cases}
       * [同意和首选项数据类型](schema/privacy-consent.md)
 * 类 {#classes}
    * [XDM个人用户档案](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
 * Mixins {#mixins}
-   * 用户档案混合 {#profile}
+   * 用户档案混音{#profile}
       * [IdentityMap](./mixins/profile/identitymap.md)
       * [人口统计详细信息](./mixins/profile/person-details.md)
       * [个人联系人详细信息](./mixins/profile/personal-details.md)
       * [细分会员资格详细信息](./mixins/profile/segmentation.md)
       * [工作联系人详细信息](./mixins/profile/work-details.md)
-   * 事件混合 {#event}
+   * 事件混音{#event}
       * [最终用户ID详细信息](./mixins/event/enduserids.md)
       * [环境详细信息](./mixins/event/environment-details.md)
    * [混合名称更新](./mixins/name-updates.md)
@@ -56,10 +56,26 @@ ht-degree: 21%
    * [POI详细信息](./data-types/poi-details.md)
    * [POI交互](./data-types/poi-interaction.md)
    * [邮政地址](./data-types/postal-address.md)
+* [!UICONTROL 架] 构UI  {#ui}
+   * [概述](./ui/overview.md)
+   * [浏览XDM资源](./ui/explore.md)
+   * 创建和编辑资源{#resources}
+      * [模式 (Schema)](./ui/resources/schemas.md)
+      * [类](./ui/resources/classes.md)
+      * [Mixins](./ui/resources/mixins.md)
+      * [数据类型](./ui/resources/data-types.md)
+   * 定义字段{#fields}
+      * [概述](./ui/fields/overview.md)
+      * [必填字段](./ui/fields/required.md)
+      * [对象字段](./ui/fields/object.md)
+      * [数组字段](./ui/fields/array.md)
+      * [枚举字段](./ui/fields/enum.md)
+      * [标识字段](./ui/fields/identity.md)
+      * [关系字段](./ui/fields/relationship.md)
 * 模式注册表API {#api}
    * [概述](api/overview.md)
    * [入门指南](api/getting-started.md)
-   * [模式](api/schemas.md)
+   * [模式 (Schema)](api/schemas.md)
    * [行为](api/behaviors.md)
    * [类](api/classes.md)
    * [Mixins](api/mixins.md)
@@ -69,10 +85,8 @@ ht-degree: 21%
    * [临时模式](api/ad-hoc.md)
    * [附录](api/appendix.md)
 * 教程 {#tutorials}
-   * [在UI中浏览资源](./tutorials/explore.md)
    * [创建模式(API)](tutorials/create-schema-api.md)
    * [创建模式(UI)](tutorials/create-schema-ui.md)
-   * [创建和编辑数据类型(UI)](./tutorials/create-data-type.md)
    * [定义两个模式(API)之间的关系](tutorials/relationship-api.md)
    * [定义两个模式(UI)之间的关系](tutorials/relationship-ui.md)
    * [创建点对点模式(API)](tutorials/ad-hoc.md)
