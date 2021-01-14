@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;
 solution: Experience Platform
 title: 模式注册表API入门
 description: 本文档介绍了在尝试调用模式注册表API之前需要了解的核心概念。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b79482635d87efd5b79cf4df781fc0a3a6eb1b56
+source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
 source-wordcount: '1132'
 ht-degree: 0%
@@ -13,9 +13,9 @@ ht-degree: 0%
 ---
 
 
-# Getting started with the [!DNL Schema Registry] API
+# [!DNL Schema Registry] API入门
 
-API [!DNL Schema Registry] 允许您创建和管理各种体验数据模型(XDM)资源。 此文档介绍了在尝试调用API之前需要了解的核心概 [!DNL Schema Registry] 念。
+[!DNL Schema Registry] API允许您创建和管理各种体验数据模型(XDM)资源。 本文档介绍了在尝试调用[!DNL Schema Registry] API之前需要了解的核心概念。
 
 ## 先决条件
 
@@ -26,29 +26,29 @@ API [!DNL Schema Registry] 允许您创建和管理各种体验数据模型(XDM)
 * [[!DNL Real-time Customer Profile]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-XDM使用JSON模式格式描述和验证所摄取的客户体验数据的结构。 因此，强烈建议您查看官方 [JSON模式文档](https://json-schema.org/) ，以更好地了解此基础技术。
+XDM使用JSON模式格式描述和验证所摄取的客户体验数据的结构。 因此，强烈建议您查阅[官方JSON模式文档](https://json-schema.org/)，以便更好地了解此基础技术。
 
 ## 读取示例API调用
 
-API文 [!DNL Schema Registry] 档提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅Experience Platform疑 [难解答指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用的章节。
+[!DNL Schema Registry] API文档提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅Experience Platform疑难解答指南中的[如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
 
 ## 收集所需标题的值
 
-要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](../../tutorials/authentication.md)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-中的所有资 [!DNL Experience Platform]源(包括属于这些资源 [!DNL Schema Registry]的资源)都隔离到特定虚拟沙箱。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Schema Registry]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关中沙箱的详细信 [!DNL Platform]息，请参阅沙 [箱文档](../../sandboxes/home.md)。
+>有关[!DNL Platform]中沙箱的详细信息，请参阅[沙箱文档](../../sandboxes/home.md)。
 
-所有对GET的查找() [!DNL Schema Registry] 请求都需 `Accept` 要一个附加的头，其值决定API返回的信息格式。 有关更多详 [细信息](#accept) ，请参阅下面的接受标题部分。
+所有对[!DNL Schema Registry]的查找(GET)请求都需要额外的`Accept`头，其值决定API返回的信息格式。 有关更多详细信息，请参阅下面的[接受标题](#accept)部分。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
@@ -56,7 +56,7 @@ API文 [!DNL Schema Registry] 档提供示例API调用，以演示如何格式�
 
 ## 了解您的TENANT_ID {#know-your-tenant_id}
 
-在整个API指南中，您将看到对的引用 `TENANT_ID`。 此ID用于确保您创建的资源命名正确且包含在IMS组织中。 如果您不知道您的ID，则可以通过执行以下GET请求来访问它：
+在整个API指南中，您将看到对`TENANT_ID`的引用。 此ID用于确保您创建的资源命名正确且包含在IMS组织中。 如果您不知道您的ID，则可以通过执行以下GET请求来访问它：
 
 **API格式**
 
@@ -77,7 +77,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回有关您的组织使用的信息 [!DNL Schema Registry]。 这包括一 `tenantId` 个属性，其值是您的属 `TENANT_ID`性。
+成功的响应会返回有关您的组织对[!DNL Schema Registry]的使用的信息。 这包括`tenantId`属性，其值为`TENANT_ID`。
 
 ```JSON
 {
@@ -154,15 +154,15 @@ curl -X GET \
  }
 ```
 
-## 了解 `CONTAINER_ID` {#container}
+## 了解`CONTAINER_ID` {#container}
 
-调用 [!DNL Schema Registry] API需要使用 `CONTAINER_ID`。 有两种容器可以对其进行API调用：容器 `global``tenant` 和容器。
+调用[!DNL Schema Registry] API需要使用`CONTAINER_ID`。 有两种容器可以对其进行API调用：`global`容器和`tenant`容器。
 
 ### 全球容器
 
-容器 `global` 包含所有标准Adobe和合作伙伴 [!DNL Experience Platform] 提供的类、混合、数据类型和模式。 您只能对列表执行GET和查找(容器)请 `global` 求。
+`global`容器包含所有标准Adobe和[!DNL Experience Platform]合作伙伴提供的类、混合、数据类型和模式。 您只能对`global`列表执行GET和查找(容器)请求。
 
-使用容器的调用示 `global` 例如下所示：
+使用`global`容器的调用示例如下所示：
 
 ```http
 GET /global/classes
@@ -170,48 +170,48 @@ GET /global/classes
 
 ### 租户容器
 
-请勿将容器与您的独 `TENANT_ID`特内容混淆 `tenant` ，该包含由IMS组织定义的所有类、混合、数据类型、模式和描述符。 这是每个组织特有的，这意味着它们不会被其他IMS组织看到或管理。 您可以对您在容器中创建的资源执行所有CRUD操作(GET、POST、PUT、PATCH、DELETE)。 `tenant`
+不要与您的唯一`TENANT_ID`混淆，`tenant`容器包含由IMS组织定义的所有类、混音、数据类型、模式和描述符。 这是每个组织特有的，这意味着它们不会被其他IMS组织看到或管理。 您可以对您在`tenant`容器中创建的资源执行所有CRUD操作(GET、POST、PUT、PATCH、DELETE)。
 
-使用容器的调用示 `tenant` 例如下所示：
+使用`tenant`容器的调用示例如下所示：
 
 ```http
 POST /tenant/mixins
 ```
 
-在容器中创建类、混音、模式或数据类 `tenant` 型时，该类会保存到并为 [!DNL Schema Registry] 其分配 `$id` 一个包含您的URI `TENANT_ID`。 它 `$id` 在整个API中用于引用特定资源。 值的示 `$id` 例在下一节中提供。
+在`tenant`容器中创建类、混音、模式或数据类型时，会将其保存到[!DNL Schema Registry]中，并为其分配一个`$id` URI，其中包含您的`TENANT_ID`。 此`$id`在整个API中用于引用特定资源。 下一节中提供了`$id`值的示例。
 
-## 资源标识 {#resource-identification}
+## 资源标识{#resource-identification}
 
-XDM资源以URI `$id` 形式用属性进行标识，如以下示例：
+XDM资源以URI形式使用`$id`属性进行标识，如以下示例：
 
 * `https://ns.adobe.com/xdm/context/profile`
 * `https://ns.adobe.com/{TENANT_ID}/schemas/7442343-abs2343-21232421`
 
-为使URI更适合REST,模式还在名为： `meta:altId`
+为使URI更适合REST,模式还在名为`meta:altId`的属性中具有URI的点记号编码：
 
 * `_xdm.context.profile`
 * `_{TENANT_ID}.schemas.7442343-abs2343-21232421`
 
-对API [!DNL Schema Registry] 的调用将支持URL编 `$id` 码的URI `meta:altId` 或（点记号格式）。 最佳实践是在对API进 `$id` 行REST调用时使用URL编码的URI，如：
+调用[!DNL Schema Registry] API将支持URL编码的`$id` URI或`meta:altId`（点记号格式）。 最佳实践是在对API进行REST调用时使用URL编码的`$id` URI，如：
 
 * `https%3A%2F%2Fns.adobe.com%2Fxdm%2Fcontext%2Fprofile`
 * `https%3A%2F%2Fns.adobe.com%2F{TENANT_ID}%2Fschemas%2F7442343-abs2343-21232421`
 
-## 接受标题 {#accept}
+## 接受标题{#accept}
 
-在API中执行列表和查找( [!DNL Schema Registry] GET)操 `Accept` 作时，需要一个头来确定API返回的数据的格式。 查找特定资源时，标题中还必须包含版本号 `Accept` 。
+在[!DNL Schema Registry] API中执行列表和查找(GET)操作时，需要`Accept`头来确定API返回的数据的格式。 查找特定资源时，`Accept`头中还必须包含版本号。
 
-下表列表了兼容 `Accept` 的标题值，包括版本号的标题值，以及使用API时返回的内容描述。
+下表列表兼容`Accept`标题值，包括版本号值，以及API在使用时将返回的描述。
 
 | 接受 | 描述 |
 | ------- | ------------ |
 | `application/vnd.adobe.xed-id+json` | 仅返回列表ID。 这最常用于列出资源。 |
-| `application/vnd.adobe.xed+json` | 返回包含原始的完整JSON列表 `$ref` 模式 `allOf` 符。 这用于返回一列表完整资源。 |
-| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | 包含和的 `$ref` 原始 `allOf`XDM 有标题和说明。 |
-| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` 属性和已 `allOf` 解析。 有标题和说明。 |
-| `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | 包含和的 `$ref` 原始 `allOf`XDM 无标题或描述。 |
-| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` 属性和已 `allOf` 解析。 无标题或描述。 |
-| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` 属性和已 `allOf` 解析。 包含描述符。 |
+| `application/vnd.adobe.xed+json` | 返回完整JSON列表，其中包含原始`$ref`和`allOf`模式。 这用于返回一列表完整资源。 |
+| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | 具有`$ref`和`allOf`的原始XDM。 有标题和说明。 |
+| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` 属性和已 `allOf` 解析。有标题和说明。 |
+| `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | 具有`$ref`和`allOf`的原始XDM。 无标题或描述。 |
+| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` 属性和已 `allOf` 解析。无标题或描述。 |
+| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` 属性和已 `allOf` 解析。包含描述符。 |
 
 >[!NOTE]
 >
@@ -219,9 +219,9 @@ XDM资源以URI `$id` 形式用属性进行标识，如以下示例：
 
 ## XDM现场限制和最佳实践
 
-模式的字段列在其对象 `properties` 中。 每个字段本身就是一个对象，包含用于描述和约束字段可包含的数据的属性。
+模式的字段列在其`properties`对象中。 每个字段本身就是一个对象，包含用于描述和约束字段可包含的数据的属性。
 
-有关在API中定义字段类型的更多信息，请参 [阅本指南](appendix.md) 的附录，包括代码示例和最常用数据类型的可选约束。
+有关在API中定义字段类型的详细信息，请参阅本指南的[附录](appendix.md)，包括代码示例和最常用数据类型的可选约束。
 
 以下示例字段说明了格式正确的XDM字段，其中提供了有关命名约束和最佳实践的更多详细信息。 在定义包含相似属性的其他资源时，也可以应用这些做法。
 
@@ -237,19 +237,19 @@ XDM资源以URI `$id` 形式用属性进行标识，如以下示例：
 }
 ```
 
-* 字段对象的名称可能包含字母数字、短划线或下划线字符，但 **不能以下划线** 开始。
-   * **正确：**`fieldName`, `field_name2`, `Field-Name``field-name_3`
+* 字段对象的名称可能包含字母数字、短划线或下划线字符，但&#x200B;**不能**&#x200B;带下划线的开始。
+   * **正确** `fieldName`: `field_name2`, `Field-Name`  `field-name_3`
    * **不正确：** `_fieldName`
 * 字段对象的名称首选使用camelCase。 示例: `fieldName`
-* 该字段应包含一个 `title`以标题大小写写写的字段。 示例: `Field Name`
-* 该字段需要 `type`。
-   * 定义某些类型可能需要可选 `format`。
-   * 当需要特定格式化数据时，可 `examples` 以将其添加为数组。
-   * 也可使用注册表中的任何数据类型来定义字段类型。 有关详细信息， [请参阅数据类型端点指南](./data-types.md#create) 中有关创建数据类型的一节。
-* 本文 `description` 介绍了有关现场数据的现场和相关信息。 它应该用完整的句子写成，并有清晰的语言，这样任何访问模式的人都能够理解该领域的意图。
+* 该字段应包括`title`，写在“标题大小写”中。 示例: `Field Name`
+* 该字段需要`type`。
+   * 定义某些类型可能需要可选的`format`。
+   * 当需要特定格式化数据时，可以将`examples`添加为数组。
+   * 也可使用注册表中的任何数据类型来定义字段类型。 有关详细信息，请参阅数据类型端点指南中有关创建数据类型](./data-types.md#create)的部分。[
+* `description`说明字段和有关字段数据的相关信息。 它应该用完整的句子写成，并有清晰的语言，这样任何访问模式的人都能够理解该领域的意图。
 
-有关如何在 [API中定义](../schema/field-constraints.md) 不同字段类型的更多信息，请参阅字段约束文档。
+有关如何在API中定义不同字段类型的详细信息，请参阅[字段约束](../schema/field-constraints.md)上的文档。
 
 ## 后续步骤
 
-要开始使用API进行调 [!DNL Schema Registry] 用，请选择可用的端点指南之一。
+要开始使用[!DNL Schema Registry] API进行调用，请选择可用的端点指南之一。
