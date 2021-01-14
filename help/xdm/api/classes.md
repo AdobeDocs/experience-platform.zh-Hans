@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;class registry;Schema Registry;class;Class;classes;Classes;create
+keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;class registry;Schema Registry;class;Class;classes;Classes;create
 solution: Experience Platform
 title: 创建类
 description: 模式注册表API中的/classes端点允许您在体验应用程序中以编程方式管理XDM类。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: b79482635d87efd5b79cf4df781fc0a3a6eb1b56
+source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
 source-wordcount: '1470'
 ht-degree: 1%
@@ -17,26 +17,26 @@ ht-degree: 1%
 
 所有体验模式模型(XDM)必须基于类。 类确定基于该类的所有模式必须包含的公用属性的基结构，以及哪些混合符合在这些模式中使用的条件。 此外，模式的类决定模式将包含的数据的行为方面，其中有两种类型：
 
-* **[!UICONTROL 记录]**:提供有关主题属性的信息。 主题可以是组织或个人。
+* **[!UICONTROL 记录]**:提供有关主题属性的信息。主题可以是组织或个人。
 * **[!UICONTROL 时间系列]**:提供记录主体直接或间接采取操作时系统的快照。
 
 >[!NOTE]
 >
->有关模式行为如何影响模式排版的更多信息类，请参阅排 [版的基础知识](../schema/composition.md)。
+>有关数据行为类对模式合成的影响的详细信息，请参阅[模式合成基础知识](../schema/composition.md)。
 
-API `/classes` 中的端点 [!DNL Schema Registry] 允许您以编程方式管理体验应用程序中的类。
+[!DNL Schema Registry] API中的`/classes`端点允许您以编程方式管理体验应用程序中的类。
 
 ## 入门指南
 
-本指南中使用的端点是API的一 [[!DNL Schema Registry] 部分](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/class-registry.yaml)。 在继续之前，请查 [看入门指南](./getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/class-registry.yaml)的一部分。 在继续之前，请查看[入门指南](./getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何Experience PlatformAPI所需的重要头信息。
 
-## 检索类列表 {#list}
+## 检索类{#list}的列表
 
-您可以通过分别向或发出 `global` 列表 `tenant` 请求来容器或GET下 `/global/classes` 的所有 `/tenant/classes`类。
+您可以通过分别向`/global/classes`或`/tenant/classes`发出列表请求，来GET`global`或`tenant`容器下的所有类。
 
 >[!NOTE]
 >
->列出资源时，模式注册表将结果集限制为300项。 要返回超出此限制的资源，必须使用分页参数。 还建议您使用其他查询参数来筛选结果并减少返回的资源数。 有关详细信息，请 [参阅附录](./appendix.md#query) 文档中有关查询参数的一节。
+>列出资源时，模式注册表将结果集限制为300项。 要返回超出此限制的资源，必须使用分页参数。 还建议您使用其他查询参数来筛选结果并减少返回的资源数。 有关详细信息，请参见附录文档中的[查询参数](./appendix.md#query)一节。
 
 **API格式**
 
@@ -46,12 +46,12 @@ GET /{CONTAINER_ID}/classes?{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CONTAINER_ID}` | 要从以下位置检索类的容器: `global` 用于Adobe创建的类 `tenant` 或您的组织拥有的类。 |
-| `{QUERY_PARAMS}` | 可选查询参数，用于筛选结果。 有关可 [用参数的列表](./appendix.md#query) ，请参阅附录文档。 |
+| `{CONTAINER_ID}` | 要从以下位置检索类的容器:`global`用于Adobe创建的类，或`tenant`用于您的组织拥有的类。 |
+| `{QUERY_PARAMS}` | 可选查询参数，用于筛选结果。 有关可用参数的列表，请参见[附录文档](./appendix.md#query)。 |
 
 **请求**
 
-以下请求从列表中检索类容器, `tenant` 使用查询 `orderby` 参数按类的属性对类进行 `title` 排序。
+以下请求从`tenant`列表检索类的容器，使用`orderby`查询参数按类的`title`属性对类进行排序。
 
 ```shell
 curl -X GET \
@@ -63,16 +63,16 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-响应格式取决于在请 `Accept` 求中发送的标头。 列出类 `Accept` 时可以使用以下标题：
+响应格式取决于请求中发送的`Accept`头。 以下`Accept`标头可用于列出类：
 
 | `Accept` 标题 | 描述 |
 | --- | --- |
 | `application/vnd.adobe.xed-id+json` | 返回每个资源的简短摘要。 这是列出资源的建议标头。 (限制：300) |
-| `application/vnd.adobe.xed+json` | 为每个资源返回完整的JSON类，其中包含 `$ref` 原始 `allOf` 资源。 (限制：300) |
+| `application/vnd.adobe.xed+json` | 为每个资源返回完整的JSON类，其中包含原始`$ref`和`allOf`。 (限制：300) |
 
 **响应**
 
-上述请求使用 `application/vnd.adobe.xed-id+json` 了标 `Accept` 头，因此响应只包括每个类的 `title`、 `$id`、 `meta:altId`和 `version` 属性。 使用其他 `Accept` 标题(`application/vnd.adobe.xed+json`)返回每个类的所有属性。 根据您在 `Accept` 响应中需要的信息选择相应的标题。
+上述请求使用`application/vnd.adobe.xed-id+json` `Accept`头，因此响应仅包括每个类的`title`、`$id`、`meta:altId`和`version`属性。 使用其他`Accept`头(`application/vnd.adobe.xed+json`)返回每个类的所有属性。 根据您在响应中需要的信息，选择相应的`Accept`头。
 
 ```json
 {
@@ -110,7 +110,7 @@ curl -X GET \
 }
 ```
 
-## 查找课程 {#lookup}
+## 查找类{#lookup}
 
 您可以通过在GET请求路径中包含该类的ID来查找特定类。
 
@@ -122,12 +122,12 @@ GET /{CONTAINER_ID}/classes/{CLASS_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CONTAINER_ID}` | 存放要检索的类的容器: `global` 用于Adobe创建的类 `tenant` 或您的组织拥有的类。 |
-| `{CLASS_ID}` | 要 `meta:altId` 查找的类 `$id` 的或URL编码的类。 |
+| `{CONTAINER_ID}` | 存放要检索的类的容器:`global`表示Adobe创建的类，或`tenant`表示您的组织拥有的类。 |
+| `{CLASS_ID}` | 要查找的类的`meta:altId`或URL编码的`$id`。 |
 
 **请求**
 
-以下请求按路径中提供的 `meta:altId` 类值检索类。
+以下请求按路径中提供的`meta:altId`值检索类。
 
 ```shell
 curl -X GET \
@@ -139,19 +139,19 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-响应格式取决于在请 `Accept` 求中发送的标头。 所有查找请求都 `version` 需要包含在标 `Accept` 头中。 The following `Accept` headers are available:
+响应格式取决于请求中发送的`Accept`头。 所有查找请求都要求`version`包含在`Accept`标头中。 以下`Accept`标头可用：
 
 | `Accept` 标题 | 描述 |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | 包含和 `$ref` 的 `allOf`原始数据，有标题和说明。 |
+| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | 具有`$ref`和`allOf`的原始数据具有标题和说明。 |
 | `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` 并 `allOf` 且有标题和说明。 |
-| `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | 原始数 `$ref` 据， `allOf`无标题或说明。 |
+| `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | 没有标题或说明的原始数据，具有`$ref`和`allOf`。 |
 | `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` 并解 `allOf` 析，无标题或说明。 |
 | `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` 和包 `allOf` 含的描述符。 |
 
 **响应**
 
-成功的响应会返回类的详细信息。 返回的字段取决于在请 `Accept` 求中发送的标题。 尝试不同 `Accept` 的标题以比较响应并确定最适合您的用例的标题。
+成功的响应会返回类的详细信息。 返回的字段取决于请求中发送的`Accept`头。 尝试不同的`Accept`标头，比较响应并确定最适合您的用例的标头。
 
 ```json
 {
@@ -240,15 +240,15 @@ curl -X GET \
 }
 ```
 
-## 创建类 {#create}
+## 创建类{#create}
 
-您可以通过发出容器请求 `tenant` 在POST下定义自定义类。
+您可以通过发出容器请求在`tenant`POST下定义自定义类。
 
 >[!IMPORTANT]
 >
->当根据您定义的自定义类编写模式时，您将无法使用标准混音。 每个mixin定义它们在其属性中兼容的 `meta:intendedToExtend` 类。 一旦开始定义与新类兼容的混音(通过使用混音 `$id` 字段中新类 `meta:intendedToExtend` 的混音)，您将能够在每次定义实现您定义的类的模式时重用这些混音。 有关详细信息， [请参阅](./mixins.md#create)[各端点指](./schemas.md#create) 南中有关创建混合和创建模式的部分。
+>当根据您定义的自定义类编写模式时，您将无法使用标准混音。 每个mixin定义它们在其`meta:intendedToExtend`属性中兼容的类。 一旦开始定义与新类兼容的混音（通过在混音的`meta:intendedToExtend`字段中使用新类的`$id`），您就可以在每次定义实现所定义类的模式时重用这些混音。 有关详细信息，请参见[创建mixin](./mixins.md#create)和[创建模式](./schemas.md#create)的相关部分。
 >
->如果您计划在实时客户用户档案中使用基于自定义类的模式，还必须记住，合并模式只基于共享同一类的模式构建。 如果要在合并中包含XDM Individual模式或 [!UICONTROL XDM ExperienceEvent等其他类的自定义类用户档案] , 则必须与使用该类的其他模式建立关系。 有关详细信 [息，请参阅有关在API中两个模式之间建立关系](../tutorials/relationship-api.md) 的教程。
+>如果您计划在实时客户用户档案中使用基于自定义类的模式，还必须记住，合并模式只基于共享同一类的模式构建。 如果要在合并中包含另一个类(如[!UICONTROL XDM单个用户档案]或[!UICONTROL XDM ExperienceEvent])的自定义类模式，则必须与使用该类的另一个模式建立关系。 有关详细信息，请参阅教程中的[在API](../tutorials/relationship-api.md)中建立两个模式之间的关系。
 
 **API格式**
 
@@ -258,9 +258,9 @@ POST /tenant/classes
 
 **请求**
 
-创建(POST)类的请求必须包含一个 `allOf` 属性，该属 `$ref` 性包含两个值之一： `https://ns.adobe.com/xdm/data/record` 或 `https://ns.adobe.com/xdm/data/time-series`者 这些值表示类所基于的行为（分别是记录或时间序列）。 有关记录数据与时间序列数据之间差异的详细信息，请参阅模式合成基础知识中有关 [行为类型的部分](../schema/composition.md)。
+创建(POST)类的请求必须包含`allOf`属性，该属性包含`$ref`到以下两个值之一：`https://ns.adobe.com/xdm/data/record`或`https://ns.adobe.com/xdm/data/time-series`。 这些值表示类所基于的行为（分别是记录或时间序列）。 有关记录数据和时间序列数据之间差异的详细信息，请参见[模式合成基础知识](../schema/composition.md)中有关行为类型的一节。
 
-在定义类时，您还可以在类定义中包含混音或自定义字段。 这将导致添加的混音和字段包含在实现该类的所有模式中。 以下示例请求定义一个名为“Property”的类，它捕获有关公司拥有和操作的不同属性的信息。 它包括 `propertyId` 每次使用类时要包含的字段。
+在定义类时，您还可以在类定义中包含混音或自定义字段。 这将导致添加的混音和字段包含在实现该类的所有模式中。 以下示例请求定义一个名为“Property”的类，它捕获有关公司拥有和操作的不同属性的信息。 它包含每次使用类时要包含的`propertyId`字段。
 
 ```SHELL
 curl -X POST \
@@ -311,12 +311,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `_{TENANT_ID}` | 组 `TENANT_ID` 织的命名空间。 您的组织创建的所有资源都必须包含此属性，以避免与中的其他资源发生冲突 [!DNL Schema Registry]。 |
-| `allOf` | 新类要继承其属性的资源列表。 数组中 `$ref` 的一个对象定义类的行为。 在此示例中，类继承“记录”行为。 |
+| `_{TENANT_ID}` | 您的组织的`TENANT_ID`命名空间。 您的组织创建的所有资源都必须包含此属性，以避免与[!DNL Schema Registry]中的其他资源发生冲突。 |
+| `allOf` | 新类要继承其属性的资源列表。 数组中的`$ref`对象之一定义类的行为。 在此示例中，类继承“记录”行为。 |
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建）和包含新创建类的详细信息（包括、和） `$id`的 `meta:altId`有效负荷 `version`。 这三个值是只读的，由指定 [!DNL Schema Registry]。
+成功的响应返回HTTP状态201（已创建）和包含新创建类的详细信息（包括`$id`、`meta:altId`和`version`）的有效负荷。 这三个值是只读的，由[!DNL Schema Registry]指定。
 
 ```JSON
 {
@@ -380,15 +380,15 @@ curl -X POST \
 }
 ```
 
-执行GET请求 [以容器中](#list) 的所 `tenant` 有类列表现在将包括属性类。 您还可 [以使用URL编码](#lookup) ，执行查找( `$id` GET)请求，以直接视图新类。
+执行对[的GET请求，列表`tenant`容器中的所有类](#list)现在将包括属性类。 您还可以[使用URL编码的`$id`执行查找(GET)请求](#lookup)以直接视图新类。
 
-## 更新类 {#put}
+## 更新类{#put}
 
-您可以通过PUT操作替换整个类，实质上是重写资源。 在通过PUT请求更新类时，主体必须包括在POST请求中创建新类时 [需要的所](#create) 有字段。
+您可以通过PUT操作替换整个类，实质上是重写资源。 当通过PUT请求更新类时，主体必须包括在POST请求中创建新类](#create)时所需的所有字段。[
 
 >[!NOTE]
 >
->如果只想更新某个类的一部分而不是完全替换它，请参阅有关更 [新某个类的一部分的部分](#patch)。
+>如果只想更新某个类的一部分，而不是完全替换它，请参阅[更新该类的某一部分的部分。](#patch)
 
 **API格式**
 
@@ -398,11 +398,11 @@ PUT /tenant/classes/{CLASS_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CLASS_ID}` | 要 `meta:altId` 重写的 `$id` 类的或URL编码的类。 |
+| `{CLASS_ID}` | 要重写的类的`meta:altId`或URL编码的`$id`。 |
 
 **请求**
 
-以下请求重写现有类，更改其 `description` 和其 `title` 中一个字段的值。
+以下请求重写现有类，更改其其中一个字段的`description`和`title`。
 
 ```SHELL
 curl -X PUT \
@@ -517,13 +517,13 @@ curl -X PUT \
 }
 ```
 
-## 更新类的一部分 {#patch}
+## 更新类{#patch}的一部分
 
-您可以使用PATCH请求更新类的一部分。 支 [!DNL Schema Registry] 持所有标准JSON修补程序操作， `add`包括 `remove`、和 `replace`。 有关JSON修补程序的详细信息，请参阅 [API基础指南](../../landing/api-fundamentals.md#json-patch)。
+您可以使用PATCH请求更新类的一部分。 [!DNL Schema Registry]支持所有标准JSON修补程序操作，包括`add`、`remove`和`replace`。 有关JSON修补程序的详细信息，请参阅[API基础指南](../../landing/api-fundamentals.md#json-patch)。
 
 >[!NOTE]
 >
->如果要用新值替换整个资源，而不是更新单个字段，请参阅使用 [PUT操作替换类的一节](#put)。
+>如果要用新值替换整个资源，而不是更新单个字段，请参阅[中的使用PUT操作](#put)替换类的部分。
 
 **API格式**
 
@@ -533,13 +533,13 @@ PATCH /tenant/class/{CLASS_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CLASS_ID}` | 要更新的 `$id` 类 `meta:altId` 的URL编码URI。 |
+| `{CLASS_ID}` | 要更新的类的URL编码的`$id` URI或`meta:altId`。 |
 
 **请求**
 
-以下示例请求更 `description` 新现有类及其某 `title` 个字段的更新。
+以下示例请求更新现有类的`description`及其其中一个字段的`title`。
 
-请求主体采用数组的形式，每个列出的对象代表对单个字段的特定更改。 每个对象包括要执行的(`op`)操作，该操作应在()上执行的字段`path`，以及该操作()应包括哪些信`value`息。
+请求主体采用数组的形式，每个列出的对象代表对单个字段的特定更改。 每个对象都包括要执行的操作(`op`)，应在(`path`)上执行该操作的字段，以及该操作应包括哪些信息(`value`)。
 
 ```SHELL
 curl -X PATCH \
@@ -557,7 +557,7 @@ curl -X PATCH \
 
 **响应**
 
-响应显示两个操作都成功执行。 已 `description` 更新该字段以 `title` 及该字 `propertyId` 段。
+响应显示两个操作都成功执行。 `description`和`propertyId`字段的`title`已更新。
 
 ```JSON
 {
@@ -621,7 +621,7 @@ curl -X PATCH \
 }
 ```
 
-## 删除类 {#delete}
+## 删除类{#delete}
 
 有时可能需要从模式注册表中删除类。 这是通过使用路径中提供的类ID执行DELETE请求来完成的。
 
@@ -633,7 +633,7 @@ DELETE /tenant/classes/{CLASS_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CLASS_ID}` | 要删除的 `$id` URL编 `meta:altId` 码的URI或类的URL。 |
+| `{CLASS_ID}` | 要删除的类的URL编码的`$id` URI或`meta:altId`。 |
 
 **请求**
 
@@ -650,4 +650,4 @@ curl -X DELETE \
 
 成功的响应返回HTTP状态204（无内容）和空白正文。
 
-您可以通过尝试类的查 [找(GET)请求](#lookup) ，确认删除。 您需要在请求中 `Accept` 包含一个头，但应收到HTTP状态404（未找到），因为类已从模式注册表中删除。
+可以尝试对类使用[查找(GET)请求](#lookup)来确认删除。 您需要在请求中包含`Accept`头，但应接收HTTP状态404（找不到），因为类已从模式注册表中删除。
