@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: Query Service 指南
 user-guide-description: 使用标准 SQL 在 Platform Data Lake 中查询数据。
 translation-type: tm+mt
-source-git-commit: e38190aabfa5d36de85e03eb5fb4e76283fb7934
+source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
 workflow-type: tm+mt
-source-wordcount: '144'
-ht-degree: 18%
+source-wordcount: '135'
+ht-degree: 17%
 
 ---
 
@@ -27,14 +27,13 @@ ht-degree: 18%
 - 查询服务UI {#ui}
    - [UI概述](ui/overview.md)
    - [查询编辑器用户指南](ui/user-guide.md)
-- 创建查询 {#creating-queries}
-   - [创建查询概述](creating-queries/creating-queries.md)
-   - [数据集与表和模式](creating-queries/datasets-and-tables.md)
-   - [执行查询的一般指南](creating-queries/writing-queries.md)
-   - [ExperienceEvent查询](creating-queries/experience-event-queries.md)
-   - [加入数据集](creating-queries/joining-datasets.md)
-   - [数据外部重复数据删除](creating-queries/deduplication.md)
-- [根据查询结果生成数据集](creating-queries/create-datasets.md)
+   - [根据查询结果生成数据集](ui/create-datasets.md)
+- 最佳实践 {#best-practices}
+   - [执行查询的一般指南](best-practices/writing-queries.md)
+   - [数据外部重复数据删除](best-practices/deduplication.md)
+   - [体验事件查询示例](best-practices/experience-event-queries.md)
+   - [样本Adobe Analytics查询](best-practices/adobe-analytics.md)
+   - [样本Adobe Target查询](best-practices/adobe-target.md)
 - SQL引用{#sql}
    - [SQL概述](sql/overview.md)
    - [SQL语法](sql/syntax.md)
@@ -42,10 +41,6 @@ ht-degree: 18%
    - [Spark SQL函数](sql/spark-sql-functions.md)
    - [元数据命令](sql/metadata.md)
    - [准备的声明](sql/prepared-statements.md)
-- 示例查询{#samples}
-   - [示例查询概述](sample-queries/overview.md)
-   - [Adobe Analytics](sample-queries/adobe-analytics.md)
-   - [Adobe Target](sample-queries/adobe-target.md)
 - 将客户端连接到查询服务{#clients}
    - [客户端连接概述](clients/overview.md)
    - [Aqua Data Studio](clients/aqua-data-studio.md)
