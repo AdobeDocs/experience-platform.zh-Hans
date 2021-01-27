@@ -5,7 +5,7 @@ title: 与RStudio连接
 topic: connect
 description: 此文档通过步骤将R Studio与Adobe Experience Platform查询服务连接。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 9fbb6b829cd9ddec30f22b0de66874be7710e465
 workflow-type: tm+mt
 source-wordcount: '225'
 ht-degree: 2%
@@ -13,11 +13,11 @@ ht-degree: 2%
 ---
 
 
-# 连接 [!DNL RStudio]
+# 连接[!DNL RStudio]
 
-此文档通过步骤将R Studio与Adobe Experience Platform连接 [!DNL Query Service]。
+此文档将逐步介绍将R Studio与Adobe Experience Platform[!DNL Query Service]连接的步骤。
 
-安装 [!DNL RStudio]后，在显 *示的* “控制台”屏幕上，您首先需要准备要使用的R脚本 [!DNL PostgreSQL]。
+在出现的&#x200B;*控制台*&#x200B;屏幕上安装[!DNL RStudio]后，您首先需要准备R脚本才能使用[!DNL PostgreSQL]。
 
 ```r
 install.packages("RPostgreSQL")
@@ -26,7 +26,7 @@ require("RPostgreSQL")
 require("rstudioapi")
 ```
 
-准备好R脚本使用后， [!DNL PostgreSQL]现在可以通过加 [!DNL RStudio] 载驱 [!DNL Query Service] 动程序连接到 [!DNL PostgreSQL] 。
+在您准备好使用[!DNL PostgreSQL]的R脚本后，现在可以通过加载[!DNL PostgreSQL]驱动程序将[!DNL RStudio]连接到[!DNL Query Service]。
 
 ```r
 drv <- dbDriver("PostgreSQL")
@@ -42,17 +42,17 @@ con <- dbConnect(drv,
 | -------- | ----------- |
 | `{DATABASE_NAME}` | 将使用的数据库的名称。 |
 | `{HOST_NUMBER` 和 `{PORT_NUMBER}` | 主机端点及其查询服务端口。 |
-| `{USERNAME}` 和 `{PASSWORD}` | 将使用的登录凭据。 用户名采用的形式 `ORG_ID@AdobeOrg`。 |
+| `{USERNAME}` 和 `{PASSWORD}` | 将使用的登录凭据。 用户名采用`ORG_ID@AdobeOrg`的形式。 |
 
 >[!NOTE]
 >
->有关查找数据库名称、主机、端口和登录凭据的详细信息，请访 [问平台上的凭据页](https://platform.adobe.com/query/configuration)。 要查找凭据，请登录， [!DNL Platform]单击 **[!UICONTROL 查询]**，然后单 **[!UICONTROL 击凭据]**。
+>有关查找数据库名称、主机、端口和登录凭据的详细信息，请访问Platform](https://platform.adobe.com/query/configuration)上的[凭据页。 要查找您的凭据，请登录[!DNL Platform]，单击&#x200B;**[!UICONTROL 查询]**，然后单击&#x200B;**[!UICONTROL 凭据]**。
 
 ## 后续步骤
 
-现在，您已连接 [!DNL Query Service]到，可以编写查询以执行和编辑SQL语句。 例如，您可以使 `dbGetQuery(con, sql)` 用执行查询, `sql` 其中是要运行的SQL查询。
+现在您已连接到[!DNL Query Service]，您可以编写查询以执行和编辑SQL语句。 例如，可以使用`dbGetQuery(con, sql)`执行查询，其中`sql`是要运行的SQL查询。
 
-以下查询使用包含 [ExperienceEvents的](../creating-queries/experience-event-queries.md) ，并根据设备的屏幕高度创建网站的页面视图直方图。
+以下查询使用包含[ExperienceEvents](../best-practices/experience-event-queries.md)的数据集，并根据设备的屏幕高度创建网站页面视图的直方图。
 
 ```sql
 df_pageviews <- dbGetQuery(con,
@@ -87,4 +87,4 @@ df_pageviews
 7 600-699 3097040
 ```
 
-有关如何编写和运行查询的更多信息，请阅读运 [行查询指南](../creating-queries/creating-queries.md)。
+有关如何编写和运行查询的详细信息，请阅读[运行查询指南](../best-practices/writing-queries.md)。
