@@ -5,7 +5,7 @@ title: Adobe定义函数
 topic: functions
 description: 此文档提供Adobe定义的功能在查询服务中可用的信息。
 translation-type: tm+mt
-source-git-commit: c95f976efd4a281640d2f47888b34bdd12a6c7a8
+source-git-commit: e15229601d35d1155fc9a8ab9296f8c41811ebf9
 workflow-type: tm+mt
 source-wordcount: '2889'
 ht-degree: 2%
@@ -120,7 +120,7 @@ SESS_START_IF({TIMESTAMP}, {TEST_EXPRESSION}) OVER ({PARTITION} {ORDER} {FRAME})
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{TIMESTAMP}` | 在数据集中找到的时间戳字段。 |
-| `{TEST_EXPRESSION}` | 要检查数据字段的表达式。 例如：`application.launches > 0`。 |
+| `{TEST_EXPRESSION}` | 要检查数据字段的表达式。 例如，`application.launches > 0`。 |
 
 在[窗口函数部分](#window-functions)中可以找到对`OVER()`函数中参数的说明。
 
@@ -185,7 +185,7 @@ SESS_END_IF({TIMESTAMP}, {TEST_EXPRESSION}) OVER ({PARTITION} {ORDER} {FRAME})
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{TIMESTAMP}` | 在数据集中找到的时间戳字段。 |
-| `{TEST_EXPRESSION}` | 要检查数据字段的表达式。 例如：`application.launches > 0`。 |
+| `{TEST_EXPRESSION}` | 要检查数据字段的表达式。 例如，`application.launches > 0`。 |
 
 在[窗口函数部分](#window-functions)中可以找到对`OVER()`函数中参数的说明。
 
@@ -667,14 +667,14 @@ PREVIOUS({KEY}, {SHIFT}, {IGNORE_NULLS}) OVER ({PARTITION} {ORDER} {FRAME})
 **示例查询**
 
 ```sql
-SELECT endUserIds._experience.mcid.id, _experience.analytics.session.num, timestamp, web.webPageDetails.name
+SELECT endUserIds._experience.mcid.id, timestamp, web.webPageDetails.name
     PREVIOUS(web.webPageDetails.name, 3)
-      OVER(PARTITION BY endUserIds._experience.mcid.id, _experience.analytics.session.num
+      OVER(PARTITION BY endUserIds._experience.mcid.id
            ORDER BY timestamp
            ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
       AS previous_page
 FROM experience_events
-ORDER BY endUserIds._experience.mcid.id, _experience.analytics.session.num, timestamp ASC
+ORDER BY endUserIds._experience.mcid.id, timestamp ASC
 ```
 
 **结果**
@@ -723,7 +723,7 @@ SELECT endUserIds._experience.aaid.id, timestamp, web.webPageDetails.name,
       OVER(PARTITION BY endUserIds._experience.aaid.id
            ORDER BY timestamp
            ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)
-      AS previous_page
+      AS next_page
 FROM experience_events
 ORDER BY endUserIds._experience.aaid.id, timestamp ASC
 LIMIT 10
@@ -881,7 +881,7 @@ LIMIT 10
 
 ## 后续步骤
 
-使用此处描述的函数，您可以编写查询以使用[!DNL Query Service]访问您自己的[!DNL Experience Event]数据集。 有关在[!DNL Query Service]中创作查询的更多信息，请参阅有关创建查询](../creating-queries/creating-queries.md)的文档。[
+使用此处描述的函数，您可以编写查询以使用[!DNL Query Service]访问您自己的[!DNL Experience Event]数据集。 有关在[!DNL Query Service]中创作查询的更多信息，请参阅有关创建查询](../best-practices/writing-queries.md)的文档。[
 
 ## Journey Orchestration
 
