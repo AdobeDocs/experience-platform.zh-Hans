@@ -5,9 +5,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用 Experience Data Model (XDM) 类和混合 (mixin) 来标准化体验数据。
 translation-type: tm+mt
-source-git-commit: baf39df0e03170d6b2b5a151e753d4ad269a43fa
+source-git-commit: 2c0dc4d54dcd1dcd17ffec70dbe3b16bb45ee141
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '217'
 ht-degree: 23%
 
 ---
@@ -48,12 +48,14 @@ ht-degree: 23%
    * [地理交互详细信息](./data-types/geo-interaction-details.md)
    * [地理形状](./data-types/geo-shape.md)
    * [身份](./data-types/identity.md)
+   * [人员](./data-types/person.md)
    * [人员姓名](./data-types/person-name.md)
    * [电话号码](./data-types/phone-number.md)
    * [放置上下文](./data-types/place-context.md)
    * [POI详细信息](./data-types/poi-details.md)
    * [POI交互](./data-types/poi-interaction.md)
    * [邮政地址](./data-types/postal-address.md)
+   * [订阅](./data-types/subscription.md)
 * [!UICONTROL 架] 构UI  {#ui}
    * [概述](./ui/overview.md)
    * [浏览XDM资源](./ui/explore.md)
