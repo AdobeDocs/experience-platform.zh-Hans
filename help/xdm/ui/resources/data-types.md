@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;ui;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;schema;Schema;schemas;Schemas;create;data type;data types;
+keywords: Experience Platform；主题；热门主题；ui;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；模式;模式;模式;模式；创建；数据类型；数据类型；
 solution: Experience Platform
 title: 使用UI创建和编辑数据类型
 topic: tutorial
@@ -8,7 +8,7 @@ description: 了解如何在Experience Platform用户界面中创建和编辑数
 translation-type: tm+mt
 source-git-commit: eca896ca068a02da7ec7379e8ced2105bbca9f2d
 workflow-type: tm+mt
-source-wordcount: '1102'
+source-wordcount: '1137'
 ht-degree: 0%
 
 ---
@@ -89,7 +89,7 @@ Adobe Experience Platform提供许多标准数据类型，可用于涵盖各种�
 
 创建数据类型后，即可在模式中使用它。 由于XDM模式由类和零个或多个混音组成，因此不能直接将数据类型提供的字段添加到模式。 相反，它们必须包含在类或混音中。
 
-开始，方法是按照将字段添加到类[或](./classes.md#add-fields)添加字段到mixin[中涉及的步骤。 ](./mixins.md#add-fields)为新字段选择&#x200B;**[!UICONTROL 类型]**&#x200B;时，请从下拉菜单中选择数据类型的名称。
+开始，方法是按照将字段添加到类](./classes.md#add-fields)或[添加字段到mixin](./mixins.md#add-fields)中涉及的步骤。 [为新字段选择&#x200B;**[!UICONTROL 类型]**&#x200B;时，请从下拉菜单中选择数据类型的名称。
 
 ## 将多字段对象转换为数据类型{#convert}
 
