@@ -2,12 +2,13 @@
 product: experience-platform
 audience: user
 user-guide-title: 目标指南
-user-guide-description: 为跨渠道营销活动、电子邮件活动、定向广告和许多其他使用案例激活已知和未知数据。
+user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
+description: 此文档列表Adobe Experience Platform目的地的目录
 translation-type: tm+mt
-source-git-commit: 395a8c2aa7fc89cde04263dbbfb3315318245ef6
+source-git-commit: b348a5493b13112291dd8e9234d457ff8c694147
 workflow-type: tm+mt
-source-wordcount: '429'
-ht-degree: 0%
+source-wordcount: '443'
+ht-degree: 5%
 
 ---
 
@@ -16,20 +17,20 @@ ht-degree: 0%
 
 * [目标概述](./home.md)
 * [目标类型和类别](./destination-types.md)
-* API教程 {#api}
+* API教程{#api}
    * [连接到流目标(AWSKinesis和Azure事件中心)并激活数据](./api/streaming-destinations.md)
    * [连接到电子邮件营销目标并激活数据](./api/email-marketing.md)
-* UI指南 {#ui}
+* UI指南{#ui}
    * [目标工作区](./ui/destinations-workspace.md)
    * [目标详细信息页](./ui/destination-details-page.md)
    * [连接到目标](./ui/connect-destination.md)
    * [将用户档案和区段激活到目标](./ui/activate-destinations.md)
-* 目标目录 {#catalog}
+* 目标目录{#catalog}
    * [目标目录概述](./catalog/overview.md)
    * [ (Alpha)HTTP目标](./catalog/http-destination.md)
-   * Adobe destinations{#adobe}
+   * Adobe目标{#adobe}
       * [Adobe目标概述](./catalog/adobe/overview.md)
-      * [Experience Platform段共享](https://docs.adobe.com/help/en/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
+      * [Experience Platform段共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
    * 广告目标{#advertising}
       * [广告目标概述](./catalog/advertising/overview.md)
       * [Adobe Advertising Cloud目的地](./catalog/advertising/adobe-advertising-cloud.md)
@@ -51,7 +52,7 @@ ht-degree: 0%
       * [Pinterest转换跟踪目标](./catalog/advertising/pinterest.md)
       * [贸易台的目的地](./catalog/advertising/tradedesk.md)
       * [Twitter通用网站标记目标](./catalog/advertising/twitter-uwt.md)
-   * 分析目标 {#analytics}
+   * 分析目标{#analytics}
       * [分析目标概述](./catalog/analytics/overview.md)
       * [Adform网站跟踪目标](./catalog/analytics/adform.md)
       * [Adobe Analytics目的地](./catalog/analytics/adobe-analytics.md)
@@ -77,12 +78,13 @@ ht-degree: 0%
       * [创建云存储目标的工作流](./catalog/cloud-storage/workflow.md)
       * [AmazonKinesis目的地](./catalog/cloud-storage/amazon-kinesis.md)
       * [AmazonS3目的地](./catalog/cloud-storage/amazon-s3.md)
+      * [Azure Blob目标](./catalog/cloud-storage/azure-blob.md)
       * [Azure事件集线器目标](./catalog/cloud-storage/azure-event-hubs.md)
       * [SFTP目标](./catalog/cloud-storage/sftp.md)
-   * 数据管理平台目标 {#data-management}
+   * 数据管理平台目标{#data-management}
       * [数据管理平台目标概述](./catalog/data-management/overview.md)
       * [Audience ManagerDIL目标](./catalog/data-management/aam-dil-extension.md)
-   * 电子邮件目标 {#email}
+   * 电子邮件目标{#email}
       * [可见的Analytics目标](./catalog/email/bizible.md)
       * [营销目标](./catalog/email/marketo.md)
       * [Marketo Munchkin目的地](./catalog/email/marketo-munchkin.md)
@@ -93,14 +95,14 @@ ht-degree: 0%
       * [Oracle雄辩](./catalog/email-marketing/oracle-eloqua.md)
       * [OracleResponsys目的地](./catalog/email-marketing/oracle-responsys.md)
       * [SalesforceMarketing Cloud目标](./catalog/email-marketing/salesforce-marketing-cloud.md)
-   * Experience Platform Launch extensions{#launch-extensions}
+   * Experience Platform Launch扩展{#launch-extensions}
       * [Experience Platform Launch扩展概述](./catalog/launch-extensions/overview.md)
-   * 移动互动目标 {#mobile-engagement}
+   * 移动互动目标{#mobile-engagement}
       * [移动互动目标概述](./catalog/mobile-engagement/overview.md)
       * [飞艇属性目标](./catalog/mobile-engagement/airship-attributes.md)
       * [飞艇标记目标](./catalog/mobile-engagement/airship-tags.md)
       * [Braze目标](./catalog/mobile-engagement/braze.md)
-   * 个性化目标 {#personalization}
+   * 个性化目标{#personalization}
       * [个性化目标概述](./catalog/personalization/overview.md)
       * [Adobe Target目的地](./catalog/personalization/adobe-target.md)
       * [Adobe Targetv2目的地](./catalog/personalization/adobe-target-v2.md)
@@ -115,13 +117,13 @@ ht-degree: 0%
       * [社交网络目标身份验证流](./catalog/social/workflow.md)
       * [AdobeLivefyre目标](./catalog/social/adobe-livefyre.md)
       * [Facebook目标](./catalog/social/facebook.md)
-   * 调查目标 {#survey}
+   * 调查目标{#survey}
       * [调查目标概述](./catalog/survey/overview.md)
       * [Foresee destination](./catalog/survey/foresee.md)
       * [InMoment目标](./catalog/survey/inmoment.md)
       * [Qualtrics网站反馈目标](./catalog/survey/qualtrics.md)
       * [Web截取调查- QuestionPro目标](./catalog/survey/web-intercept-surveys.md)
-   * 客户目的地之声 {#voice}
+   * 客户目标语音{#voice}
       * [客户目标语音概述](./catalog/voice/overview.md)
       * [确认数字反馈目标](./catalog/voice/confirmit-digital-feedback.md)
       * [无效标记目标](./catalog/voice/invoca.md)
