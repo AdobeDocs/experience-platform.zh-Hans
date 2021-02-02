@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;generate datasets;generate dataset;create dataset;
+keywords: Experience Platform；主题；热门主题；查询服务；查询服务；生成数据集；生成数据集；创建数据集；
 solution: Experience Platform
 title: 根据查询结果生成数据集
 topic: queries
@@ -8,7 +8,7 @@ description: '查询服务允许从UI创建数据集。 创建数据集后，可
 translation-type: tm+mt
 source-git-commit: 0ba4e26927cdc96855f35d72a8a6de55f4a34bfa
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
