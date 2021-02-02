@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;Authenticate;access
+keywords: Experience Platform；主页；热门主题；身份验证；访问
 solution: Experience Platform
 title: 验证和访问Experience PlatformAPI
 topic: tutorial
@@ -8,7 +8,7 @@ description: '此文档分步说明了如何获取 Adobe Experience Platform 开
 translation-type: tm+mt
 source-git-commit: 681a2554111f988ec03d40f23a3b2c8225a077ae
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '882'
 ht-degree: 4%
 
 ---
