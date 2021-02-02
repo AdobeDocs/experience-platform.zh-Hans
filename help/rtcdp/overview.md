@@ -1,13 +1,13 @@
 ---
-keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp
+keywords: RTCDP;CDP；实时客户数据平台；实时客户数据平台；实时cdp;cdp；客户人工智能
 title: 实时客户数据平台概述
 seo-title: 实时客户数据平台概述
 description: 实时客户数据平台概述
 seo-description: 实时客户数据平台概述
 translation-type: tm+mt
-source-git-commit: 4dfef6649b3ae07593667eb5165dad6bacc8ed2f
+source-git-commit: 9f20f8bfeefb5bc427a72a11ac1f01816cdbc4b2
 workflow-type: tm+mt
-source-wordcount: '289'
+source-wordcount: '306'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 0%
 
 ## 其他信息
 
-要了解有关Adobe Experience Platform的更多信息，请首先阅读 [Experience Platform概述](../landing/home.md)。
+要了解有关Adobe Experience Platform的更多信息，请首先阅读[Experience Platform概述](../landing/home.md)。
 
 建议使用以下文档帮助您开始使用实时客户数据平台：
 
