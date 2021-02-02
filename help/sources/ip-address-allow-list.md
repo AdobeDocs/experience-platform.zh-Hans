@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;ip address;ip addresses;ip address allow list; allow list
+keywords: Experience Platform；主页；热门主题；ip地址；ip地址；ip地址允许列表;允许列表
 description: 在使用源连接器之前，必须将IP地址添加到允许列表。
 solution: Experience Platform
 title: IP地址允许列表
 topic: overview
 translation-type: tm+mt
-source-git-commit: 7ba46b68a5910d5657ad8df73b6db574b421d513
+source-git-commit: a812ad3b130c5998013688dcda522e7d20ae578f
 workflow-type: tm+mt
-source-wordcount: '95'
+source-wordcount: '110'
 ht-degree: 0%
 
 ---
@@ -19,12 +19,12 @@ ht-degree: 0%
 
 ## 美国东部地区
 
-- `20.41.2.0/23`
-- `20.41.4.0/26`
-- `20.44.17.80/28`
-- `20.49.102.16/29`
-- `40.70.148.160/28`
-- `52.167.107.224/28`
+- `20.42.2.0/23`
+- `20.42.4.0/26`
+- `20.42.64.0/28`
+- `20.49.111.0/29`
+- `40.71.14.32/28`
+- `40.78.229.96/28`
 
 ## 西欧地区
 
