@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: January 27, 2021
 author: ens60013
 translation-type: tm+mt
-source-git-commit: cf70b21f3a8c02b25e5acd3be8c8feaa3f52a5e3
+source-git-commit: 74325dcfe9d7b117e3f812d88e0c4a980d44ef53
 workflow-type: tm+mt
-source-wordcount: '327'
-ht-degree: 8%
+source-wordcount: '478'
+ht-degree: 7%
 
 ---
 
@@ -20,6 +20,7 @@ ht-degree: 8%
 Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Data Prep]](#data-prep)
+- [[!DNL Destinations]](#destinations)
 - [[!DNL Sources]](#sources)
 
 ## [!DNL Data Prep] {#data-prep}
@@ -33,6 +34,18 @@ Adobe Experience Platform 现有功能的更新包括：
 | 常规表达式函数 | [!DNL Data Prep] 映射器现在支持基于常规表达式匹配和提取部分输入字段。 |
 
 有关详细信息，请参阅[[!DNL Data Prep] 概述](../../data-prep/home.md)。
+
+## 目标 {#destinations}
+
+[!DNL Destinations] 是预建的与目标平台的集成，允许从Adobe Experience Platform无缝激活数据。您可以使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 高级ID匹配 | 通过增加对外部ID、电话号码和移动设备ID等其他身份匹配的支持，增强了[!DNL Facebook Custom Audiences]和[!DNL Google Customer Match]中的受众匹配率功能。 有关更多详细信息，请参阅以下文档： <ul><li>[Facebook目标](../../destinations/catalog/social/facebook.md)</li><li>[Google客户匹配目标](../../destinations/catalog/advertising/google-customer-match.md)</li><li>[将用户档案和区段激活到目标](../../destinations/ui/activate-destinations.md)</li></ul> |
+
+要了解更多信息，请访问[目标概述](../../destinations/home.md)。
 
 ## [!DNL Sources] {#sources}
 
@@ -48,5 +61,6 @@ Experience Platform提供RESTful API和交互式UI，使您能轻松为各种数
 | [!DNL Google BigQuery] 源连接器增强功能 | 您现在可以使用[!DNL BigQuery]源连接器在一个流运行中摄取大于10GB的文件。 有关详细信息，请参阅[[!DNL BigQuery] 源连接器概述](../../sources/connectors/databases/bigquery.md)。 |
 | 支持云存储的复杂数据类型 | 现在，在使用云存储源连接器时，您可以收集复杂数据类型，如JSON文件中的数组。 有关详细信息，请参阅有关在UI](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md)或[中使用 [!DNL Flow Service] API](../../sources/tutorials/api/collect/cloud-storage.md)创建云存储数据流[的教程。 |
 | 支持[!DNL Microsoft Dynamics]源的基于服务主体密钥的身份验证 | 您现在可以使用服务主体密钥作为基于密码的身份验证的替代方法，对您的[!DNL Dynamics]帐户进行身份验证。 有关详细信息，请参阅[[!DNL Dynamics] 源连接器概述](../../sources/connectors/crm/ms-dynamics.md)。 |
+| 对云存储源中自定义分隔符的UI支持 | 您现在可以设置自定义列分隔符，如逗号(`,`)、制表符(`\t`)或管道(`|`)，以在UI中收集分隔的文件。 有关详细信息，请参阅[使用云存储源连接器](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md)创建数据流的教程 |
 
 要进一步了解源，请参阅[源概述](../../sources/home.md)。
