@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;schema;schemas;
+keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；体验数据模型；数据模型；ui；工作区；模式;模式;
 solution: Experience Platform
 title: 在UI中创建和编辑模式
 description: 学习如何在Experience Platform用户界面中创建和编辑模式的基础知识。
 topic: user guide
 translation-type: tm+mt
-source-git-commit: efa1d8efb26f4196f6724702784ccd13a9337a8a
+source-git-commit: 3aa838509e4e24c57508e7411b0ffcf135fbcf04
 workflow-type: tm+mt
-source-wordcount: '1032'
+source-wordcount: '1167'
 ht-degree: 0%
 
 ---
@@ -65,13 +65,21 @@ ht-degree: 0%
 
 ![](../../images/ui/resources/schemas/add-mixin-button.png)
 
-在显示的对话框中，您可以从列表中选择所需的混音。 您可以从列表中选择多个混音，每个选定的混音显示在右边栏中。
+将显示一个对话框，其中显示可为列表选择的混音模式。 由于混音只与一个类兼容，因此将仅列出与模式的选定类关联的混音。 默认情况下，列出的混音会根据其在组织内的使用受欢迎程度进行排序。
+
+![](../../images/ui/resources/schemas/mixin-popularity.png)
+
+您可以使用搜索栏帮助查找所需的混音。 其名称与查询匹配的混音显示在列表的顶部。 在&#x200B;**[!UICONTROL 标准字段]**&#x200B;下，将显示包含描述所需数据属性的字段的混音。
+
+![](../../images/ui/resources/schemas/mixin-search.png)
+
+选中要添加到模式的混音名称旁的复选框。 您可以从列表中选择多个混音，每个选定的混音显示在右边栏中。
 
 ![](../../images/ui/resources/schemas/add-mixin.png)
 
 >[!TIP]
 >
->对于列出的任何混音，在决定将其添加到预览之前，您可以选择视图图标(![](../../images/ui/resources/schemas/preview-icon.png))来模式混音提供的字段的结构。
+>对于列出的任何混音，您可以悬停或专注于信息图标(![](../../images/ui/resources/schemas/info-icon.png))，以视图混音捕获的数据类型的简短描述。 在您决定将其添加到预览之前，还可以选择视图图标(![](../../images/ui/resources/schemas/preview-icon.png))来模式混音所提供字段的结构。
 
 选择完mixin后，选择&#x200B;**[!UICONTROL 添加mixin]**&#x200B;将其添加到模式。
 
