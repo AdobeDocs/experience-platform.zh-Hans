@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mapping;date;date functions;dates;
+keywords: Experience Platform；主页；热门主题；map csv;map csv;map csv file;map csv文件到xdm;map csv到xdm;ui指南；mapper;mapping;date函数；日期；
 solution: Experience Platform
 title: 日期函数
 topic: overview
 description: 本文档介绍了数据准备中使用的日期功能。
 translation-type: tm+mt
-source-git-commit: 1f9833c06a3423c334edb8aa7e441adfd74be0f2
+source-git-commit: 28c13101be37c5c7680c5d46005509bfd122018f
 workflow-type: tm+mt
-source-wordcount: '384'
-ht-degree: 17%
+source-wordcount: '411'
+ht-degree: 16%
 
 ---
 
@@ -53,8 +53,8 @@ ht-degree: 17%
 | 符号 | 意义 | 演示文稿 | 示例 |
 | ------ | ------- | ------------ | ------- |
 | G | 时代 | 文本 | 广告；安诺·多米尼；A |
-| Y | 年，基于ISO周 | 数值 | 1996; 96 |
-| y | 年 | 数值 | 2004; 04 |
+| Y | 年，基于ISO周 | 数值 | 1996年；96 |
+| y | 年 | 数值 | 2004年；04 |
 | M/L | 年月 | 数字／文本 | 7;07;7月；7月；J |
 | w | 一年中的一周 | 数值 | 27 |
 | W | 月中的周 | 数值 | 3 |
@@ -73,11 +73,11 @@ ht-degree: 17%
 | S | 毫秒 | 数值 | 245 |
 | z | 时区 | 一般时区 | 太平洋标准时间；太平洋标准时间；GMT-08:00 |
 | Z | 时区 | RFC 822时区 | -0800 |
-| X | 时区 | ISO 8601时区 | -08; -0800; -08:00 |
+| X | 时区 | ISO 8601时区 | -08;-0800;-08:00 |
 | V | 时区ID | 文本 | 美国／洛杉矶 |
 | O | 时区偏移 | 文本 | GMT+8 |
 | Q/q | 一年中的季度 | 数字／文本 | 3;03;第三季度；第三季度 |
 
 **示例**
 
-表达式 `date(orderDate, 'yyyy-MM-dd')` 会将值 `orderDate` “2020年12月31日”转换为日期时间值“2020-12-31”。
+表达式`date(orderDate, "yyyy-MM-dd")`将`orderDate`值“2020年12月31日”转换为日期时间值“2020-12-31”。
