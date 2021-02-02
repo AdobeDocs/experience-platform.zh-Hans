@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;attribution ai;access scores;popular topics;download scores;attribution ai scores;export;Export
+keywords: Experience Platform；归因ai；访问得分；热门主题；下载得分；归因ai得分；导出；导出
 solution: Experience Platform, Intelligent Services
 title: 访问Attribution AI中的得分
 topic: Accessing scores
 description: 此文档可作为下载Attribution AI分数的指南。
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '1040'
+source-wordcount: '1056'
 ht-degree: 2%
 
 ---
@@ -19,13 +19,13 @@ ht-degree: 2%
 
 ## 入门指南
 
-Attribution AI允许您以镶木地板文件格式下载分数。 本教程要求您已阅读并完成入门指南中的下载Attribution AI [得分](./getting-started.md) 。
+Attribution AI允许您下载Parke文件格式的分数。 本教程要求您已阅读并完成[入门](./getting-started.md)指南中的下载Attribution AI得分部分。
 
-此外，要访问Attribution AI的分数，您需要有一个运行状态成功的服务实例可用。 要创建新服务实例，请访问 [Attribution AI用户指南](./user-guide.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分中，请允许24小时，它才能完成运行。
+此外，要访问Attribution AI的分数，您需要有一个运行状态成功的服务实例可用。 要创建新服务实例，请访问[Attribution AI用户指南](./user-guide.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分中，请允许24小时，它才能完成运行。
 
-## Find your dataset ID {#dataset-id}
+## 查找数据集ID {#dataset-id}
 
-在服务实例中，单击右上方导 *航中的* “更多操作”下拉框，然后选择 **[!UICONTROL 访问得分]**。
+在服务实例中，单击右上方导航中的&#x200B;*更多操作*&#x200B;下拉框，然后选择&#x200B;**[!UICONTROL 访问分数]**。
 
 ![更多操作](./images/download-scores/more-actions.png)
 
@@ -35,7 +35,7 @@ Attribution AI允许您以镶木地板文件格式下载分数。 本教程要�
 
 ## 检索批ID {#retrieve-your-batch-id}
 
-使用上一步中的数据集ID，您需要调用目录API以检索批处理ID。 此API调用使用其他查询参数，以返回最新的成功批次，而不是属于您组织的列表批次。 要返回其他批，请将查询参数 `limit` 的数量增加到您希望返回的所需数量。 有关可用查询参数类型的详细信息，请访问有关使用查询参数 [筛选目录数据的指南](../../catalog/api/filter-data.md)。
+使用上一步中的数据集ID，您需要调用目录API以检索批处理ID。 此API调用使用其他查询参数，以返回最新的成功批次，而不是属于您组织的列表批次。 要返回其他批，请将`limit`查询参数的数量增加到您希望返回的所需数量。 有关可用查询参数类型的详细信息，请访问[使用查询参数筛选目录数据的指南](../../catalog/api/filter-data.md)。
 
 **API格式**
 
@@ -63,7 +63,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?&dataSet=
 
 >[!NOTE]
 >
-> 以下响应已对对象进行 `tags` 了重新格式化，以便可读。
+> 以下响应已对`tags`对象进行了重新格式化，以便可读。
 
 ```json
 {
@@ -112,9 +112,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?&dataSet=
 }
 ```
 
-## 使用您的批ID检索下一个API调用 {#retrieve-the-next-api-call-with-your-batch-id}
+## 使用批处理ID {#retrieve-the-next-api-call-with-your-batch-id}检索下一个API调用
 
-获得批ID后，您便可以向发出新GET请求 `/batches`。 该请求返回用作下一个API请求的链接。
+获得批ID后，您便能够向`/batches`发出新的GET请求。 该请求返回用作下一个API请求的链接。
 
 **API格式**
 
@@ -124,7 +124,7 @@ GET batches/{BATCH_ID}/files
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 在上一步骤中检索的批ID可 [以检索批ID](#retrieve-your-batch-id)。 |
+| `{BATCH_ID}` | 在上一步[中检索的批ID检索您的批ID](#retrieve-your-batch-id)。 |
 
 **请求**
 
@@ -140,7 +140,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/01E5QSWCAA
 
 **响应**
 
-成功的响应返回包含对象的有效 `_links` 负荷。 对象 `_links` 中包含 `href` 一个新的API调用作为其值。 复制此值以继续执行下一步。
+成功的响应返回包含`_links`对象的有效负荷。 在`_links`对象中是一个`href`，其值为新API调用。 复制此值以继续执行下一步。
 
 ```json
 {
@@ -166,9 +166,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/01E5QSWCAA
 }
 ```
 
-## 检索文件 {#retrieving-your-files}
+## 检索文件{#retrieving-your-files}
 
-使用上 `href` 一步中获得的值作为API调用，发出新的GET请求以检索文件目录。
+使用上一步中得到的`href`值作为API调用，发出新的GET请求以检索文件目录。
 
 **API格式**
 
@@ -178,7 +178,7 @@ GET files/{DATASETFILE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{DATASETFILE_ID}` | 数据集文件ID以上一步 `href` 中的值 [返回](#retrieve-the-next-api-call-with-your-batch-id)。 也可在对象类型下 `data` 的数组中访问该 `dataSetFileId`项。 |
+| `{DATASETFILE_ID}` | dataSetFile ID以[上一步](#retrieve-the-next-api-call-with-your-batch-id)的`href`值返回。 也可以在`data`数组中对象类型`dataSetFileId`下访问它。 |
 
 **请求**
 
@@ -219,15 +219,15 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/01E5QSWCAASF
 | `_links.self.href` | 用于下载目录中文件的GET请求URL。 |
 
 
-复制数 `href` 组中任何文件对象的 `data` 值，然后继续执行下一步。
+复制`data`数组中任何文件对象的`href`值，然后继续执行下一步。
 
 ## 下载文件数据
 
-要下载文件数据，请对上一步检索文 `"href"` 件时复制的值发出GET [请求](#retrieving-your-files)。
+要下载文件数据，请向您在上一步[检索文件](#retrieving-your-files)中复制的`"href"`值发出GET请求。
 
 >[!NOTE]
 >
->如果您直接在命令行中发出此请求，可能会提示您在请求标头后添加输出。 以下请求示例使用 `--output {FILENAME.FILETYPE}`。
+>如果您直接在命令行中发出此请求，可能会提示您在请求标头后添加输出。 以下请求示例使用`--output {FILENAME.FILETYPE}`。
 
 **API格式**
 
@@ -237,7 +237,7 @@ GET files/{DATASETFILE_ID}?path={FILE_NAME}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{DATASETFILE_ID}` | 数据集文件ID在上一步 `href` 的值中 [返回](#retrieve-the-next-api-call-with-your-batch-id)。 |
+| `{DATASETFILE_ID}` | dataSetFile ID从上一步[返回的`href`值中返回。](#retrieve-the-next-api-call-with-your-batch-id) |
 | `{FILE_NAME}` | 文件的名称。 |
 
 **请求**
@@ -261,11 +261,11 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
 
 ![终端](./images/download-scores/terminal-output.png)
 
-下载的分数将采用镶木格式，需要一个 [!DNL Spark]外壳或镶木阅读器来视图分数。 查看原始分数时，可以使用镶 [木工具](https://github.com/apache/parquet-mr/tree/master/parquet-tools)。 拼花工具可以分析数据 [!DNL Spark]。
+下载的分数将采用Parke格式，并且需要[!DNL Spark]-shell或Parke阅读器来视图分数。 要查看原始分数，可使用[Apache Parce工具](https://github.com/apache/parquet-mr/tree/master/parquet-tools)。 拼花工具可以使用[!DNL Spark]分析数据。
 
 ## 后续步骤
 
-此文档概述了下载Attribution AI分数所需的步骤。 有关得分输出的详细信息，请访 [问属性AI输入和输出文](./input-output.md) 档。
+此文档概述了下载Attribution AI分数所需的步骤。 有关得分输出的详细信息，请访问[属性AI输入和输出](./input-output.md)文档。
 
 ## 使用Snowflake访问得分
 
@@ -289,11 +289,11 @@ Adobe支持处理您的请求后，将为您提供一个URL，供读者帐户Sno
 
 ### 在Snowflake中查找模式
 
-使用提供的凭据登录到Snowflake。 单击左 **上角** 的主导航中的“工作表”选项卡，然后导航到左面板中的数据库目录。
+使用提供的凭据登录到Snowflake。 单击左上角的主导航中的&#x200B;**工作表**&#x200B;选项卡，然后导航到左面板中的数据库目录。
 
 ![工作表和导航](./images/download-scores/edited_snowflake_1.png)
 
-然后，单 **击屏幕** 右上角的“选择模式”。 在出现的快门窗中，确认您选择了正确的数据库。 接下来，单击 *模式* 下拉列表，然后选择其中一个列出的模式。 您可以直接从所选查询下列出的得分表进行模式。
+接下来，单击屏幕右上角的&#x200B;**选择模式**。 在出现的快门窗中，确认您选择了正确的数据库。 然后，单击&#x200B;*模式*&#x200B;下拉列表，并选择列出的模式之一。 您可以直接从所选查询下列出的得分表进行模式。
 
 ![查找模式](./images/download-scores/edited_snowflake_2.png)
 
@@ -301,7 +301,7 @@ Adobe支持处理您的请求后，将为您提供一个URL，供读者帐户Sno
 
 您的Snowflake凭据可用于在PowerBI桌面和Snowflake数据库之间建立连接。
 
-首先，在“服 *务器* ”框下键入SnowflakeURL。 然后，在“ *仓库*”下键入“XSMALL”。 然后，键入用户名和密码。
+首先，在&#x200B;*Server*&#x200B;框下，键入您的SnowflakeURL。 接下来，在&#x200B;*Warehouse*&#x200B;下，键入“XSMALL”。 然后，键入用户名和密码。
 
 ![POWERBI示例](./images/download-scores/powerbi-snowflake.png)
 
