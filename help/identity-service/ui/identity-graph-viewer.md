@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;identity graph viewer;Identity graph viewer;graph viewer;Graph viewer;identity namespace;Identity namespace;identity;Identity;Identity service;identity service
+keywords: Experience Platform；主页；热门主题；标识图查看器；标识图查看器；图形查看器；标识命名空间；标识命名空间；标识；标识；标识服务；标识服务
 solution: Experience Platform
 title: Adobe Experience Platform Identity Service
 topic: tutorial
 description: 标识图是特定客户不同标识之间关系的映射，可直观地展示客户如何跨不同渠道与品牌互动。
 translation-type: tm+mt
-source-git-commit: 7c52760bdceb8d45d76cd22d69241f8c23943674
+source-git-commit: 7c9c81492df9333945ac62602f10b6097296d62b
 workflow-type: tm+mt
-source-wordcount: '910'
+source-wordcount: '905'
 ht-degree: 1%
 
 ---
@@ -31,23 +31,23 @@ ht-degree: 1%
 
 ### 术语
 
-- **标识（节点）:** 标识或节点是实体（通常是人）特有的数据。 标识由命名空间和标识值组成。
-- **链接（边缘）:** 链接或边缘表示标识之间的连接。
-- **图形（群集）:** 图形或群集是代表人的一组身份和链接。
+- **标识（节点）:** 标识或节点是实体（通常是人）特有的数据。标识由命名空间和标识值组成。
+- **链接（边）：链** 接或边表示标识之间的连接。
+- **图（群集）:** 图或群集是一组代表人的身份和链接。
 
 ## 访问标识图查看器
 
-要在UI中使用标识图查看器，请在左侧导 **[!UICONTROL 航中]** 选择标识，然后选择 **[!UICONTROL 标识图表选]** 项卡。 在“标 **[!UICONTROL 识命名空间]** ”屏幕中，单 **[!UICONTROL 击“选择标识命名空间]** ”图标以搜索要使用的命名空间。
+要在UI中使用标识图查看器，请在左侧导航中选择&#x200B;**[!UICONTROL 标识]**，然后选择&#x200B;**[!UICONTROL 标识图]**&#x200B;选项卡。 在&#x200B;**[!UICONTROL 标识命名空间]**&#x200B;屏幕中，单击&#x200B;**[!UICONTROL 选择标识命名空间]**&#x200B;图标以搜索要使用的命名空间。
 
 ![命名空间屏](../images/identity-graph-viewer/identity-namespace.png)
 
-出现 **[!UICONTROL “选择身份命名空间]** ”面板。 此屏幕包含可供您的组织使用的列表 **[!UICONTROL ，包括有关命名空间的显]**&#x200B;示名称 **[!UICONTROL 、]**&#x200B;标识符 **[!UICONTROL 、所有]**&#x200B;者 **[!UICONTROL 、LastUpdatedDate、]******&#x200B;命名空间和的信息。 只要您有有效的标识值连接到它们，就可以使用提供的任何命名空间。
+出现&#x200B;**[!UICONTROL 选择标识命名空间]**&#x200B;面板。 此屏幕包含可供您的组织使用的列表，包括有关命名空间的&#x200B;**[!UICONTROL 显示名称]**、**[!UICONTROL 标识符]**、**[!UICONTROL 所有者]**、**[!UICONTROL 上次更新日期]**&#x200B;和&#x200B;**[!UICONTROL 说明]**&#x200B;的信息。 只要您有有效的标识值连接到它们，就可以使用提供的任何命名空间。
 
-选择要使用的命名空间，然后单击“ **[!UICONTROL 选择]** ”继续。
+选择要使用的命名空间，然后单击&#x200B;**[!UICONTROL 选择]**&#x200B;以继续。
 
 ![select-identity-命名空间](../images/identity-graph-viewer/select-identity-namespace.png)
 
-选择命名空间后，在“标识值”文本框中为特定客户输 **[!UICONTROL 入其相应]** 值，然后选择 **[!UICONTROL 视图]**。
+选择命名空间后，在&#x200B;**[!UICONTROL 标识值]**&#x200B;文本框中为特定客户输入其相应值，然后选择&#x200B;**[!UICONTROL 视图]**。
 
 ![add-identity-value](../images/identity-graph-viewer/identity-value-filled.png)
 
@@ -55,27 +55,27 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->身份图需要至少两个链接身份才能生成，以及有效的命名空间和ID对。 图形查看器可显示的最大身份数为150。 有关详细 [信息](#appendix) ，请参阅下面的附录部分。
+>身份图需要至少两个链接身份才能生成，以及有效的命名空间和ID对。 图形查看器可显示的最大身份数为150。 有关详细信息，请参见下面的[附录](#appendix)部分。
 
 ![身份图](../images/identity-graph-viewer/graph-viewer.png)
 
-选择标识以更新“标识”表上高亮显 **[!UICONTROL 示的行]** ，并更新右边栏上提供的信息，该信息包括标识的 **[!UICONTROL Value]**、 **[!UICONTROL Batch ID]**，以及其上次更 **** 新的日期。
+选择标识以更新&#x200B;**[!UICONTROL Identities]**&#x200B;表上突出显示的行并更新右边栏上提供的信息，该信息包括标识的&#x200B;**[!UICONTROL 值]**、**[!UICONTROL 批ID]**&#x200B;及其&#x200B;**[!UICONTROL 上次更新的]**&#x200B;日期。
 
 ![select-identity](../images/identity-graph-viewer/select-identity.png)
 
-您可以通过图形进行筛选，并使用“标识”(Identities)表顶部的排序选项隔离特 **[!UICONTROL 定命名空间]** 。 从下拉菜单中，选择要突出显示的命名空间。
+您可以在图形中进行过滤，并使用&#x200B;**[!UICONTROL Identities]**&#x200B;表顶部的排序选项隔离特定命名空间。 从下拉菜单中，选择要突出显示的命名空间。
 
 ![逐命名空间](../images/identity-graph-viewer/filter-namespace.png)
 
-图形查看器返回，突出显示您选择的命名空间。 过滤器选项还更新“ **[!UICONTROL 身份]** ”表，以仅返回您选定命名空间的信息。
+图形查看器返回，突出显示您选择的命名空间。 过滤器选项还更新&#x200B;**[!UICONTROL 标识]**&#x200B;表，以仅返回所选命名空间的信息。
 
 ![已过滤](../images/identity-graph-viewer/filtered.png)
 
-图形查看器框的右上方包含放大选项。 选择 **(+)图** 标可放大图形，或 **** 选择(-)图标可缩小图形。
+图形查看器框的右上方包含放大选项。 选择&#x200B;**(+)**&#x200B;图标以放大图形，或选择&#x200B;**(-)**&#x200B;图标以缩小图形。
 
 ![缩放](../images/identity-graph-viewer/zoom.png)
 
-您可以通过从标题中选择数据源来视图有 **[!UICONTROL 关批的]** 更多信息。 “数 **[!UICONTROL 据源]** ”表显示与图 **[!UICONTROL 形关联的批ID]** 列表，以及 **[!UICONTROL 其链接ID]**、源模式和摄取日期。
+您可以通过从标题中选择&#x200B;**[!UICONTROL 数据源]**&#x200B;来视图有关批的详细信息。 **[!UICONTROL 数据源]**&#x200B;表显示与图形关联的&#x200B;**[!UICONTROL 批ID]**&#x200B;的列表，以及其&#x200B;**[!UICONTROL 链接ID]**、源模式和摄取日期。
 
 ![数据源](../images/identity-graph-viewer/data-source-table.png)
 
@@ -102,11 +102,9 @@ ht-degree: 1%
 - 选定命名空间中必须存在标识值。
 - 要生成标识图查看器，至少需要两个链接标识。
 - 标识图查看器不能超过150个标识。
-- 当前无法在非生产沙箱中访问标识图查看器。
-- 标识图查看器当前仅支持批量摄取的数据，不显示使用流源摄取的数据。
 
 ![错误屏幕](../images/identity-graph-viewer/error-screen.png)
 
 ## 后续步骤
 
-通过阅读此文档，您学习了如何在平台UI中浏览客户的身份图。 有关平台中身份的更多信息，请参阅身份 [服务概述](../home.md)
+通过阅读此文档，您学习了如何在平台UI中浏览客户的身份图。 有关平台中身份的详细信息，请参阅[Identity Service概述](../home.md)
