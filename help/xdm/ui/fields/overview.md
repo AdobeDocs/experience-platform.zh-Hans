@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;field;
+keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；体验数据模型；数据模型；ui；工作区；字段；
 solution: Experience Platform
 title: 在UI中定义XDM字段
 description: 了解如何在Experience Platform用户界面中定义XDM字段。
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 2e20403122e65d28f04114af9b7e8d41874f76e2
+source-git-commit: 70b3ad788dd78c6100782869e3065cc17a54ece1
 workflow-type: tm+mt
-source-wordcount: '1241'
+source-wordcount: '1311'
 ht-degree: 4%
 
 ---
@@ -86,10 +86,10 @@ Adobe Experience Platform用户界面中的[!DNL Schema Editor]允许您在自�
 | [!UICONTROL Format] | [!UICONTROL 字符串] | 从预定义格式列表中选择值必须符合的字符串。 可用格式包括： <ul><li>[[!UICONTROL date-time]](https://tools.ietf.org/html/rfc3339)</li><li>[[!UICONTROL 电子邮件]](https://tools.ietf.org/html/rfc2822)</li><li>[[!UICONTROL 主机名]](https://tools.ietf.org/html/rfc1123#page-13)</li><li>[[!UICONTROL ipv4]](https://tools.ietf.org/html/rfc791)</li><li>[[!UICONTROL ipv6]](https://tools.ietf.org/html/rfc2460)</li><li>[[!UICONTROL uri]](https://tools.ietf.org/html/rfc3986)</li><li>[[!UICONTROL uri-reference]](https://tools.ietf.org/html/rfc3986#section-4.1)</li><li>[[!UICONTROL url-template]](https://tools.ietf.org/html/rfc6570)</li><li>[[!UICONTROL json-pointer]](https://tools.ietf.org/html/rfc6901)</li></ul> |
 | [!UICONTROL 最小长度] | [!UICONTROL 字符串] | 字符串必须包含的最少字符数，才能在摄取过程中接受该值。 |
 | [!UICONTROL 最大长度] | [!UICONTROL 字符串] | 字符串必须包含的最大字符数，才能在摄取过程中接受该值。 |
-| [!UICONTROL 最小值] | [!UICONTROL 双精度] | 在摄取过程中接受的多次的最小值。 如果摄取的值与此处输入的值完全匹配，则接受该值。 |
-| [!UICONTROL 最大值] | [!UICONTROL 双精度] | 在摄取过程中接受多次的最大值。 如果摄取的值与此处输入的值完全匹配，则接受该值。 |
-| [!UICONTROL 独占最小值] | [!UICONTROL 双精度] | 在摄取过程中接受多次的最大值。 如果摄取的值与此处输入的值完全匹配，则该值将被拒绝。 |
-| [!UICONTROL 独占最大值] | [!UICONTROL 双精度] | 在摄取过程中接受多次的最大值。 如果摄取的值与此处输入的值完全匹配，则该值将被拒绝。 |
+| [!UICONTROL 最小值] | [!UICONTROL 双精度] | 在摄取过程中接受的多次的最小值。 如果摄取的值与此处输入的值完全匹配，则接受该值。 使用此约束时，“[!UICONTROL 独占最小值]”约束必须留空。 |
+| [!UICONTROL 最大值] | [!UICONTROL 双精度] | 在摄取过程中接受多次的最大值。 如果摄取的值与此处输入的值完全匹配，则接受该值。 使用此约束时，“[!UICONTROL 独占最大值]”约束必须留空。 |
+| [!UICONTROL 独占最小值] | [!UICONTROL 双精度] | 在摄取过程中接受多次的最大值。 如果摄取的值与此处输入的值完全匹配，则该值将被拒绝。 使用此约束时，“[!UICONTROL 最小值]”（非独占）约束必须留空。 |
+| [!UICONTROL 独占最大值] | [!UICONTROL 双精度] | 在摄取过程中接受多次的最大值。 如果摄取的值与此处输入的值完全匹配，则该值将被拒绝。 使用此约束时，“[!UICONTROL 最大值]”（非独占）约束必须留空。 |
 
 ## 特殊字段类型{#special}
 
