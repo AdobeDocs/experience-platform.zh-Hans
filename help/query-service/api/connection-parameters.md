@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;api guide;connection parameters;Query service;
+keywords: Experience Platform；主题；热门主题；查询服务；api指南；连接参数；查询服务；
 solution: Experience Platform
 title: 查询服务开发人员指南
 topic: connection parameters
@@ -7,7 +7,7 @@ description: 通过向/connection_parameters端点发出GET请求，可以检索
 translation-type: tm+mt
 source-git-commit: 648544bc60c0cee8ca8b167118391980b6c33d91
 workflow-type: tm+mt
-source-wordcount: '134'
+source-wordcount: '147'
 ht-degree: 1%
 
 ---
