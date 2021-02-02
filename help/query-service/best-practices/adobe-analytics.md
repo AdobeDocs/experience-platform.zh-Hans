@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;sample queries;sample query;adobe analytics;
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；示例查询；示例查询;adobe分析；
 solution: Experience Platform
 title: 示例查询
 topic: queries
@@ -7,7 +7,7 @@ description: 来自选定Adobe Analytics报告套件的数据将转换为XDM Exp
 translation-type: tm+mt
 source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
 workflow-type: tm+mt
-source-wordcount: '1002'
+source-wordcount: '1017'
 ht-degree: 1%
 
 ---
@@ -216,7 +216,7 @@ LIMIT 20
 | eVar6（产品查找方法） | 收入 | 订单 | 产品视图 | 购物车 |
 | ------------------------------ | ------- | ------ | ------------- | ----- |
 | 内部搜索：夏季衬衫 | 19.99 | 1 | 3 | 1 |
-| 内部搜索：冬季帽 | 12.99 | 1 | 3 | 3 |
+| 内部搜索：冬季帽 | 12.99 | 1 | 1 | 1 |
 
 要进一步了解如何使用转换语法，请阅读有关使用转换语法](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en#implement-using-conversion-variable-syntax)实现eVar的Adobe Analytics文档。[
 
