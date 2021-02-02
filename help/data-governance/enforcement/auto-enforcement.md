@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;Policy enforcement;Automatic enforcement;API-based enforcement;data governance
+keywords: Experience Platform；主页；热门主题；策略执行；自动执行；基于API的执行；数据管理
 solution: Experience Platform
-title: 策略实施概述
-topic: enforcement
+title: 自动策略实施
+topic: guide
 description: 此文档涵盖在Experience Platform中将区段激活到目标时如何自动实施数据使用策略。
 translation-type: tm+mt
-source-git-commit: 385084f3de2ebfcbee94d6b0c116dae82f5df764
+source-git-commit: acc4fa59a4808ed9a32c2aaf664039e0d12dc1d8
 workflow-type: tm+mt
-source-wordcount: '1115'
+source-wordcount: '1128'
 ht-degree: 0%
 
 ---
