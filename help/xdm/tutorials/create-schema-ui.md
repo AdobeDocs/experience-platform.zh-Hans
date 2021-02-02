@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;ui;UI;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema editor;Schema Editor;schema;Schema;schemas;Schemas;create
+keywords: Experience Platform；主题；热门主题；UI;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式编辑器；模式编辑器；模式;模式;模式;模式；创建
 solution: Experience Platform
 title: 使用模式编辑器创建模式 (schema)
 topic: tutorial
@@ -8,7 +8,7 @@ description: 本教程介绍了在 Experience Platform 中使用模式编辑器�
 translation-type: tm+mt
 source-git-commit: e5c5fea783aa4088d225f771905fa8b2098613cf
 workflow-type: tm+mt
-source-wordcount: '3568'
+source-wordcount: '3600'
 ht-degree: 0%
 
 ---
@@ -195,7 +195,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 | [!UICONTROL 必需] | 指示数据获取需要此字段。 根据此模式上传到数据集且不包含此字段的任何数据在摄取时都将失败。 |
 | [!UICONTROL 阵列] | 指示字段包含一组值，每个值都指定了数据类型。 例如，对数据类型为“[!UICONTROL String]”的字段使用此约束指定该字段将包含字符串数组。 |
 | [!UICONTROL 枚举] | 指示此字段必须包含来自可能值的枚举列表的值之一。 |
-| [!UICONTROL 身份] | 指示此字段是标识字段。 本教程[后面提供了有关标识字段的更多信息。](#identity-field) |
+| [!UICONTROL 身份] | 指示此字段是标识字段。 本教程](#identity-field)后面提供了有关标识字段的更多信息。[ |
 | [!UICONTROL 关系] | 虽然模式关系可以通过使用合并模式和[!DNL Real-time Customer Profile]来推断，但这仅适用于共享同一类的模式。 [!UICONTROL Relationship]约束表示此字段引用基于不同类的模式的主标识，这表示两个模式之间的关系。 有关详细信息，请参阅[定义关系](./relationship-ui.md)的教程。 |
 
 >[!NOTE]
@@ -314,7 +314,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 您的新模式现在可用于将数据收录到[!DNL Platform]中。 请记住，一旦模式被用于摄取数据，只能进行附加更改。 有关模式版本控制的详细信息，请参阅[模式合成基础知识](../schema/composition.md)。
 
-您现在可以按照上的教程在UI[中定义模式关系，向“Loyalty Members”模式添加新关系字段。](./relationship-ui.md)
+您现在可以按照上的教程在UI](./relationship-ui.md)中定义模式关系，向“Loyalty Members”模式添加新关系字段。[
 
 还可以使用[!DNL Schema Registry] API查看和管理“Loyalty Members”模式。 要开始使用API，请阅读[[!DNL Schema Registry API] 开发人员指南](../api/getting-started.md)进行开始。
 
@@ -338,7 +338,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ### 创建新类{#create-new-class}
 
-[!DNL Experience Platform] 提供了根据组织特有的类定义模式的灵活性。要了解如何创建新类，请参阅有关在UI[中创建和编辑类的指南。](../ui/resources/classes.md#create)
+[!DNL Experience Platform] 提供了根据组织特有的类定义模式的灵活性。要了解如何创建新类，请参阅有关在UI](../ui/resources/classes.md#create)中创建和编辑类的指南。[
 
 ### 更改模式{#change-class}的类
 
