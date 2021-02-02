@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API;preview;sample
+keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API;预览；示例
 title: 用户档案预览-实时客户用户档案API
-description: Adobe Experience Platform使您能够从多个来源收集客户数据，从而为各个客户构建强大的统一用户档案。 由于实时客户用户档案启用的数据被引入平台，因此它存储在用户档案数据存储中。 随着用户档案存储中记录数的增加或减少，将运行一个示例作业，该示例作业包括关于用户档案片段和合并用户档案在数据存储中的数量的信息。 使用用户档案API，您可以预览最新成功的示例，以及按数据集和身份命名空间列表用户档案分发。
+description: 使用实时用户档案API端点，您可以预览用户档案数据的最新成功范例，以及按数据集和Adobe Experience Platform内的身份命名空间进行列表用户档案分发。
 topic: guide
 translation-type: tm+mt
-source-git-commit: 47c65ef5bdd083c2e57254189bb4a1f1d9c23ccc
+source-git-commit: fe93a3672f65168744b3a242be7f42012f323544
 workflow-type: tm+mt
-source-wordcount: '1608'
+source-wordcount: '1554'
 ht-degree: 1%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 1%
 
 # 预览示例状态端点(用户档案预览)
 
-Adobe Experience Platform使您能够从多个来源收集客户数据，从而为各个客户构建强大的统一用户档案。 当实时用户档案启用的数据被引入时，它 [!DNL Platform]会存储在用户档案数据存储中。
+Adobe Experience Platform使您能够从多个来源收集客户数据，从而为各个客户构建强大的统一用户档案。 当为实时客户用户档案启用的数据被引入[!DNL Platform]时，它存储在用户档案数据存储中。
 
 当将记录引入用户档案存储中时，将用户档案总计数增加或减少5%以上，将触发作业以更新该计数。 对于流数据工作流，每小时检查一次以确定是否达到5%的增加或减少阈值。 如果已激活，则会自动触发作业以更新计数。 对于批量摄取，在成功将批量摄入用户档案存储的15分钟内，如果达到5%增加或减少阈值，则运行作业以更新计数。 使用用户档案API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列表用户档案分发。
 
-这些指标也可在用户档案 [!UICONTROL UI] 的Experience Platform部分中找到。 有关如何使用UI访问用户档案数据的信息，请访问 [[!DNL Profile] 用户指南](../ui/user-guide.md)。
+这些度量也可在Experience PlatformUI的[!UICONTROL 用户档案]部分中使用。 有关如何使用UI访问用户档案数据的信息，请访问[[!DNL Profile] 用户指南](../ui/user-guide.md)。
 
 ## 入门指南
 
-本指南中使用的API端点是API的一 [[!DNL Real-time Customer Profile] 部分](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
+本指南中使用的API端点是[[!DNL Real-time Customer Profile] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)的一部分。 在继续之前，请查看[快速入门指南](getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
 
 ## 用户档案片段与合并用户档案
 
@@ -30,9 +30,9 @@ Adobe Experience Platform使您能够从多个来源收集客户数据，从而�
 
 每个客户用户档案都由多个用户档案片段组成，这些片段已合并成该客户的单个视图。 例如，如果客户在多个渠道中与您的品牌互动，您的组织将在多个数据集中显示与该单个客户相关的多个用户档案片段。 当这些片段被引入平台时，它们会（根据合并策略）合并在一起，以便为该客户创建单个用户档案。 因此，用户档案片段的总数可能始终高于合并用户档案的总数，因为每个用户档案由多个片段组成。
 
-## 视图上次示例状态 {#view-last-sample-status}
+## 视图上次示例状态{#view-last-sample-status}
 
-您可以向端点执行GET请 `/previewsamplestatus` 求，以视图为您的IMS组织运行的最后一个成功示例作业的详细信息。 这包括示例中的用户档案总数，以及用户档案计数量度，或您的组织在Experience Platform内拥有的用户档案总数。 用户档案计数在合并用户档案片段后生成，以便为每个单独的客户形成单个用户档案。 换言之，您的组织可能有多个与跨不同渠道与您的品牌进行交互的单个客户相关的用户档案片段，但这些片段将合并在一起（根据默认合并策略），并将返回“1”个用户档案计数，因为它们都与同一个人相关。
+您可以向`/previewsamplestatus`端点执行GET请求，以视图为IMS组织运行的上一个成功示例作业的详细信息。 这包括示例中的用户档案总数，以及用户档案计数量度，或您的组织在Experience Platform内拥有的用户档案总数。 用户档案计数在合并用户档案片段后生成，以便为每个单独的客户形成单个用户档案。 换言之，您的组织可能有多个与跨不同渠道与您的品牌进行交互的单个客户相关的用户档案片段，但这些片段将合并在一起（根据默认合并策略），并将返回“1”个用户档案计数，因为它们都与同一个人相关。
 
 用户档案计数还包括具有属性（记录数据）的用户档案以及仅包含时间序列(事件)数据的用户档案，如Adobe Analytics用户档案。 在摄取用户档案数据时，会定期刷新示例作业，以提供平台内最新的用户档案总数。
 
@@ -59,7 +59,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->在此示例响应中， `numRowsToRead` 并 `totalRows` 且彼此相等。 根据您的组织在Experience Platform中拥有的用户档案数，情况可能是这样。 但是，这两个数字通常是不同的， `numRowsToRead` 因为它表示样本是用户档案总数()的子集，所以这两个数字是较小`totalRows`的。
+>在此示例响应中，`numRowsToRead`和`totalRows`彼此相等。 根据您的组织在Experience Platform中拥有的用户档案数，情况可能是这样。 但是，通常这两个数字是不同的，`numRowsToRead`是较小的数字，因为它将样本表示为用户档案总数(`totalRows`)的子集。
 
 ```json
 {
@@ -84,7 +84,7 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `numRowsToRead` | 示例中合并用户档案的总数。 |
-| `sampleJobRunning` | 一个布尔值，当 `true` 示例作业正在进行时返回。 为从上传批处理文件到将其实际添加到用户档案存储时发生的延迟提供透明度。 |
+| `sampleJobRunning` | 一个布尔值，当示例作业正在进行时返回`true`。 为从上传批处理文件到将其实际添加到用户档案存储时发生的延迟提供透明度。 |
 | `cosmosDocCount` | Cosmos中的文档总数。 |
 | `totalFragmentCount` | 用户档案存储中的用户档案片段总数。 |
 | `lastSuccessfulBatchTimestamp` | 上次成功的批量摄取时间戳。 |
@@ -92,13 +92,13 @@ curl -X GET \
 | `totalRows` | Experience Platform中合并用户档案的总数，也称为“用户档案数”。 |
 | `lastBatchId` | 上次批量摄取ID。 |
 | `status` | 最后一个示例的状态。 |
-| `samplingRatio` | 采样的合并用户档案()`numRowsToRead`与合并用户档案()总和的比`totalRows`率，以小数格式表示。 |
+| `samplingRatio` | 采样的合并用户档案(`numRowsToRead`)与合并用户档案(`totalRows`)的比率，以小数格式表示为百分比。 |
 | `mergeStrategy` | 示例中使用的合并策略。 |
 | `lastSampledTimestamp` | 上次成功的示例时间戳。 |
 
 ## 列表用户档案分布
 
-要按数据集查看用户档案的分布，可以向端点执行GET请 `/previewsamplestatus/report/dataset` 求。
+要按数据集查看用户档案的分布，可以向`/previewsamplestatus/report/dataset`端点执行GET请求。
 
 **API格式**
 
@@ -113,7 +113,7 @@ GET /previewsamplestatus/report/dataset?{QUERY_PARAMETERS}
 
 **请求**
 
-以下请求使用 `date` 参数返回指定日期的最近报告。
+以下请求使用`date`参数返回指定日期的最新报告。
 
 ```shell
 curl -X GET \
@@ -126,7 +126,7 @@ curl -X GET \
 
 **响应**
 
-响应包括一 `data` 个数组，其中包含列表数据集对象。 显示的响应已被截断，以显示三个数据集。
+响应包括`data`数组，其中包含数据集对象的列表。 显示的响应已被截断，以显示三个数据集。
 
 >[!NOTE]
 >
@@ -179,21 +179,21 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `sampleCount` | 使用此数据集ID的采样合并用户档案的总数。 |
-| `samplePercentage` | 以 `sampleCount` 十进制格式表示的采样合并用户档案总数( `numRowsToRead` 上一采样状态 [中返回的值](#view-last-sample-status))的百分比表示。 |
+| `samplePercentage` | `sampleCount`作为采样合并用户档案总数的百分比（在[最后一个采样状态](#view-last-sample-status)中返回的`numRowsToRead`值），以十进制格式表示。 |
 | `fullIDsCount` | 此数据集ID的合并用户档案总数。 |
-| `fullIDsPercentage` | 合 `fullIDsCount` 并用户档案总数(在上一个示例状态中返回 `totalRows` 的值)的百 [分比，以十进制格式表示](#view-last-sample-status)。 |
+| `fullIDsPercentage` | `fullIDsCount`作为合并用户档案总数的百分比（在[最后一个示例状态](#view-last-sample-status)中返回的`totalRows`值），以十进制格式表示。 |
 | `name` | 数据集的名称，在数据集创建过程中提供。 |
 | `description` | 数据集的描述，在数据集创建过程中提供。 |
 | `value` | 数据集的ID。 |
 | `streamingIngestionEnabled` | 数据集是否启用流摄取。 |
 | `createdUser` | 创建数据集的用户ID。 |
-| `reportTimestamp` | 报告的时间戳。 如果在 `date` 请求期间提供了参数，则返回的报告为提供的日期。 如果未 `date` 提供参数，则返回最近的报告。 |
+| `reportTimestamp` | 报告的时间戳。 如果在请求期间提供了`date`参数，则返回的报告为提供的日期。 如果未提供`date`参数，则返回最近的报告。 |
 
 
 
 ## 列表用户档案按命名空间分布
 
-您可以对终结点执行GET请 `/previewsamplestatus/report/namespace` 求，以在用户档案商店中的所有合并用户档案中按标识命名空间视图细分。 身份命名空间是Adobe Experience Platform身份服务的重要组成部分，可作为与客户数据相关的上下文的指标。 要了解更多信息，请访 [问身份命名空间概述](../../identity-service/namespaces.md)。
+您可以对`/previewsamplestatus/report/namespace`端点执行GET请求，以在用户档案存储中的所有合并用户档案上按标识命名空间视图细分。 身份命名空间是Adobe Experience Platform身份服务的重要组成部分，可作为与客户数据相关的上下文的指标。 要了解更多信息，请访问[标识命名空间概述](../../identity-service/namespaces.md)。
 
 >[!NOTE]
 >
@@ -212,7 +212,7 @@ GET /previewsamplestatus/report/namespace?{QUERY_PARAMETERS}
 
 **请求**
 
-以下请求未指定参 `date` 数，因此将返回最近的报告。
+以下请求未指定`date`参数，因此将返回最近的报告。
 
 ```shell
 curl -X GET \
@@ -225,7 +225,7 @@ curl -X GET \
 
 **响应**
 
-响应包括一个数 `data` 组，其中各个对象包含每个命名空间的详细信息。 显示的响应已被截断，显示四个命名空间。
+响应包括`data`数组，其中各个对象包含每个命名空间的详细信息。 显示的响应已被截断，显示四个命名空间。
 
 ```json
 {
@@ -278,15 +278,15 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `sampleCount` | 命名空间中采样的合并用户档案总数。 |
-| `samplePercentage` | 以 `sampleCount` 小数格式表示的采样合并用户档案( `numRowsToRead` 上一个采样状态 [中返回的值](#view-last-sample-status))的百分比表示。 |
-| `reportTimestamp` | 报告的时间戳。 如果在 `date` 请求期间提供了参数，则返回的报告为提供的日期。 如果未 `date` 提供参数，则返回最近的报告。 |
+| `samplePercentage` | `sampleCount`作为采样合并用户档案的百分比（在[最后一个采样状态](#view-last-sample-status)中返回的`numRowsToRead`值），以十进制格式表示。 |
+| `reportTimestamp` | 报告的时间戳。 如果在请求期间提供了`date`参数，则返回的报告为提供的日期。 如果未提供`date`参数，则返回最近的报告。 |
 | `fullIDsFragmentCount` | 用户档案中的命名空间片段总数。 |
 | `fullIDsCount` | 命名空间中合并用户档案的总数。 |
-| `fullIDsPercentage` | 以 `fullIDsCount` 小数格式表示的合并用户档案总 `totalRows` 数的百分比(上 [一示例状态中返](#view-last-sample-status)回的值)。 |
-| `code` | 为 `code` 命名空间。 这在使用 [Adobe Experience PlatformIdentity Service API处理命名空间时](../../identity-service/api/list-namespaces.md) ，也称为 [!UICONTROL Experience PlatformUI中] 的Identity符号。 要了解更多信息，请访 [问身份命名空间概述](../../identity-service/namespaces.md)。 |
-| `value` | 命名空间 `id` 的值。 在使用Identity Service API处理命名空间时 [可找到此项](../../identity-service/api/list-namespaces.md)。 |
+| `fullIDsPercentage` | `fullIDsCount`作为合并用户档案总数的百分比（在[最后一个示例状态](#view-last-sample-status)中返回的`totalRows`值），以十进制格式表示。 |
+| `code` | 命名空间的`code`。 这在使用[Adobe Experience Platform标识服务API](../../identity-service/api/list-namespaces.md)与命名空间协作时可找到，在Experience PlatformUI中也称为[!UICONTROL 标识符]。 要了解更多信息，请访问[标识命名空间概述](../../identity-service/namespaces.md)。 |
+| `value` | 命名空间的`id`值。 在使用[Identity Service API](../../identity-service/api/list-namespaces.md)的命名空间时，可以找到此问题。 |
 
 ## 后续步骤
 
-您还可以使用类似的估计和预览来视图有关细分定义的摘要级别信息，以帮助确保隔离预期受众。 要查找使用API处理细分预览和评估的详细步 [!DNL Adobe Experience Platform Segmentation Service] 骤，请访问 [预览和评估终结点指南](../../segmentation/api/previews-and-estimates.md)(API开发人员指南 [!DNL Segmentation] 的一部分)。
+您还可以使用类似的估计和预览来视图有关细分定义的摘要级别信息，以帮助确保隔离预期受众。 要查找使用[!DNL Adobe Experience Platform Segmentation Service] API处理细分预览和估算的详细步骤，请访问[预览和估算终结点指南](../../segmentation/api/previews-and-estimates.md)（[!DNL Segmentation] API开发人员指南的一部分）。
 
