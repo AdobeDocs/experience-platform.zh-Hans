@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;ui;UI;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;explore;class;mixin;data type;schema;
+keywords: Experience Platform；主题；UI;XDM;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；浏览；类；混合；数据类型；模式;
 solution: Experience Platform
 title: 在UI中浏览XDM资源
 description: 了解如何在Experience Platform用户界面中探索现有模式、类、混音和数据类型。
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: e5c5fea783aa4088d225f771905fa8b2098613cf
+source-git-commit: 912d02477febdafa4a53aebc83bc3a93b0f84f09
 workflow-type: tm+mt
-source-wordcount: '859'
+source-wordcount: '941'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ ht-degree: 0%
 
 ![](../images/ui/explore/filter.png)
 
-您还可以使用搜索栏将结果缩小到名称与搜索查询匹配的资源。
+您还可以使用搜索栏进一步缩小结果范围。 搜索词时，顶级项目表示名称与搜索查询匹配的资源。 在这些项目下，在&#x200B;**[!UICONTROL 标准字段]**&#x200B;下，将列出包含与查询匹配的字段的所有资源。 这样，您就可以根据XDM包含的数据类型搜索XDM资源，而无需事先知道资源的名称。
 
 ![](../images/ui/explore/search.png)
 
@@ -54,7 +54,7 @@ ht-degree: 0%
 
 某些字段名称以下划线作为前缀，如`_repo`和`_id`。 这些表示在摄取数据时系统将自动生成并分配的字段的占位符。
 
-因此，在引入平台时，这些字段中的大多数应排除在数据结构中。 此规则的主要例外是[`_{TENANT_ID}`字段](../api/getting-started.md#know-your-tenant_id)，您的组织下创建的所有XDM字段都必须以&lt;a0/>字段命名。
+因此，在引入平台时，这些字段中的大多数应排除在数据结构中。 此规则的主要例外是[`_{TENANT_ID}`字段](../api/getting-started.md#know-your-tenant_id)，您的组织下创建的所有XDM字段都必须以字段命名。
 
 ### 数据类型 {#data-types}
 
@@ -100,7 +100,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->有关在XDM模式中使用关系的更多信息，请参阅有关在UI[中创建关系的教程。](../tutorials/create-schema-ui.md)
+>有关在XDM模式中使用关系的更多信息，请参阅有关在UI](../tutorials/create-schema-ui.md)中创建关系的教程。[
 
 ## 后续步骤
 
