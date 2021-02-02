@@ -5,10 +5,10 @@ audience: user
 user-guide-title: 实时客户数据平台指南
 user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
 translation-type: tm+mt
-source-git-commit: de2f4b16677ec6e820903b1e586213a132b126be
+source-git-commit: 4a282f8890ace3be7808ffbf018377d792e30cb7
 workflow-type: tm+mt
-source-wordcount: '126'
-ht-degree: 42%
+source-wordcount: '109'
+ht-degree: 49%
 
 ---
 
@@ -29,9 +29,6 @@ ht-degree: 42%
 * 隐私和数据管理{#privacy}
    * [隐私概述](privacy/privacy-overview.md)
    * [数据管理概述](privacy/data-governance-overview.md)
-   * IAB TCF 2.0支持{#iab}
-      * [实时CDP中的IAB TCF 2.0支持](privacy/iab/overview.md)
-      * [创建数据集以捕获IAB TCF 2.0同意数据](privacy/iab/dataset-preparation.md)
 * 配置文件 {#profile}
    * [用户档案概述](profile/profile-overview.md)
    * [身份与身份命名空间](profile/identities-overview.md)
