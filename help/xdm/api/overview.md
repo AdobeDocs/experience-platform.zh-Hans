@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;
+keywords: Experience Platform；主题；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；
 solution: Experience Platform
 title: 模式注册表API开发人员指南
 description: '模式注册表API允许您以编程方式管理Experience Platform中可用的所有模式和相关XDM资源。 '
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: 44a727f6ce4c2b90aa010379583c7c4d3ebd011c
 workflow-type: tm+mt
 source-wordcount: '961'
 ht-degree: 0%
@@ -63,19 +63,19 @@ Mixin是可重用的组件，它们定义一个或多个表示特定概念的字
 
 模式注册表API允许您在沙箱和IMS组织之间传输和共享XDM资源。 对于任何模式、混音或数据类型，您可以生成包含资源结构和任何从属资源的导出有效负荷。 然后，此有效负荷可用于将资源导入目标沙箱和IMS组织。
 
-有关此端点的使用的详细信息，请参阅[模式注册表API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
+有关如何使用这些端点的详细信息，请参阅[导出／导入端点指南](./export-import.md)。
 
 ## 样本数据
 
 您可以为模式库中的任何指定模式生成示例数据。 返回的响应对象随后可用作数据获取源。
 
-有关此端点的使用的详细信息，请参阅[模式注册表API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
+有关此端点的使用的详细信息，请参见[示例数据端点指南](./sample-data.md)。
 
 ## 审核日志
 
 模式注册表会维护一个日志，其中列出了在不同更新之间对资源(类、混合、数据类型或模式)所做的所有更改。 您可以通过在GET请求到此端点的路径中提供特定资源的`$id`或`meta:altId`来检索该资源的日志。
 
-有关此端点的使用的详细信息，请参阅[模式注册表API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
+有关此端点的使用的详细信息，请参见[审核日志端点指南](./audit-log.md)。
 
 ## 后续步骤
 
