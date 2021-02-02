@@ -1,11 +1,11 @@
 ---
-keywords: rtcdp segments;segment builder rtcdp;rtcdp segment;customer ai rtcdp
+keywords: rtcdp区段；区段生成器rtcdp;rtcdp区段；客户ai rtcdp
 title: 实时客户数据平台中的客户人工智能
 description: 客户人工智能的概述，以及它如何帮助生成转化或客户流失等特定结果的得分。
 translation-type: tm+mt
 source-git-commit: de2f4b16677ec6e820903b1e586213a132b126be
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '304'
 ht-degree: 0%
 
 ---
