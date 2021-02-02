@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;experienceevent queries;experienceevent query;Experience Event query;
+keywords: Experience Platform；主题；热门主题；查询服务；查询服务；体验事件查询；体验事件查询；体验事件查询;
 solution: Experience Platform
 title: 体验事件查询
 topic: queries
@@ -8,7 +8,7 @@ description: 以下文档提供了涉及体验事件的查询示例。
 translation-type: tm+mt
 source-git-commit: 5348ea4fb381f938ef635077c04cbff69c1b1a45
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '310'
 ht-degree: 0%
 
 ---
