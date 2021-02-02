@@ -1,23 +1,29 @@
 ---
-keywords: Experience Platform;home;popular topics;Query service;query service;RStudio;rstudio;connect to query service;
+keywords: Experience Platform；主题；热门主题；查询服务；查询服务；RStudio;rstudio；与查询服务；
 solution: Experience Platform
 title: 与RStudio连接
 topic: connect
 description: 此文档通过步骤将R Studio与Adobe Experience Platform查询服务连接。
 translation-type: tm+mt
-source-git-commit: 9fbb6b829cd9ddec30f22b0de66874be7710e465
+source-git-commit: eac93f3465fa6ce4af7a6aa783cf5f8fb4ac9b9b
 workflow-type: tm+mt
-source-wordcount: '225'
+source-wordcount: '272'
 ht-degree: 2%
 
 ---
 
 
-# 连接[!DNL RStudio]
+# [!DNL RStudio]
 
-此文档将逐步介绍将R Studio与Adobe Experience Platform[!DNL Query Service]连接的步骤。
+此文档介绍将[!DNL RStudio]与Adobe Experience Platform[!DNL Query Service]连接的步骤。
 
-在出现的&#x200B;*控制台*&#x200B;屏幕上安装[!DNL RStudio]后，您首先需要准备R脚本才能使用[!DNL PostgreSQL]。
+>[!NOTE]
+>
+> 本指南假定您已经具有访问[!DNL RStudio]的权限，并且熟悉如何使用它。 有关[!DNL RStudio]的详细信息，请参阅[offical [!DNL RStudio] 文档](https://rstudio.com/products/rstudio/)。
+
+## 将[!DNL RStudio]与[!DNL Query Service]连接
+
+在出现的&#x200B;**[!DNL Console]**&#x200B;屏幕上安装[!DNL RStudio]后，您首先需要准备R脚本才能使用[!DNL PostgreSQL]。
 
 ```r
 install.packages("RPostgreSQL")
@@ -46,13 +52,13 @@ con <- dbConnect(drv,
 
 >[!NOTE]
 >
->有关查找数据库名称、主机、端口和登录凭据的详细信息，请访问Platform](https://platform.adobe.com/query/configuration)上的[凭据页。 要查找您的凭据，请登录[!DNL Platform]，单击&#x200B;**[!UICONTROL 查询]**，然后单击&#x200B;**[!UICONTROL 凭据]**。
+>有关查找数据库名称、主机、端口和登录凭据的详细信息，请访问Platform](https://platform.adobe.com/query/configuration)上的[凭据页。 要查找您的凭据，请登录[!DNL Platform]，然后选择&#x200B;**[!UICONTROL 查询]**，后跟&#x200B;**[!UICONTROL 凭据]**。
 
-## 后续步骤
+## 编写查询
 
 现在您已连接到[!DNL Query Service]，您可以编写查询以执行和编辑SQL语句。 例如，可以使用`dbGetQuery(con, sql)`执行查询，其中`sql`是要运行的SQL查询。
 
-以下查询使用包含[ExperienceEvents](../best-practices/experience-event-queries.md)的数据集，并根据设备的屏幕高度创建网站页面视图的直方图。
+以下查询使用包含[体验事件](../best-practices/experience-event-queries.md)的数据集，并根据设备的屏幕高度创建网站页面视图的直方图。
 
 ```sql
 df_pageviews <- dbGetQuery(con,
@@ -87,4 +93,6 @@ df_pageviews
 7 600-699 3097040
 ```
 
-有关如何编写和运行查询的详细信息，请阅读[运行查询指南](../best-practices/writing-queries.md)。
+## 后续步骤
+
+有关如何编写和运行查询的详细信息，请阅读[运行查询](../best-practices/writing-queries.md)的指南。
