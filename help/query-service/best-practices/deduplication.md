@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;data deduplication;deduplication;
+keywords: Experience Platform；主题；热门主题；查询服务；查询服务；数据外部重复数据删除;外部重复数据删除;
 solution: Experience Platform
 title: 数据外部重复数据删除
 topic: queries
@@ -8,7 +8,7 @@ description: 此文档概述了用于消除重复的三个常见用例(体验事
 translation-type: tm+mt
 source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
 workflow-type: tm+mt
-source-wordcount: '479'
+source-wordcount: '491'
 ht-degree: 0%
 
 ---
