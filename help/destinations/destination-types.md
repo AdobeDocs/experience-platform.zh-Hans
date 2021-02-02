@@ -1,13 +1,13 @@
 ---
-keywords: destinations;destination;destination types
+keywords: 目标；目标；目标类型
 title: 目标类型和类别
 seo-title: 目标类型和类别
-description: '在实时用户档案数据平台中，事件/细分导出目标可捕获数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 Experience Platform Launch扩展将原始事件数据转发到几种类型的目标。 '
-seo-description: 在实时用户档案数据平台中，事件/细分导出目标可捕获数据，将其与其他数据源相结合，应用细分，并将细分和合格用户档案导出到目标。 Experience Platform Launch扩展将原始事件数据转发到几种类型的目标。
+description: '在Adobe Experience Platform,用户档案/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分并将细分和合格用户档案导出到目标。 Experience Platform Launch扩展将原始事件数据转发到几种类型的目标。 '
+seo-description: 在Adobe Experience Platform,用户档案/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分并将细分和合格用户档案导出到目标。 Experience Platform Launch扩展将原始事件数据转发到几种类型的目标。
 translation-type: tm+mt
-source-git-commit: 5f120a716cc3396ef7749463bb6052a8ced2fbb4
+source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
 workflow-type: tm+mt
-source-wordcount: '584'
+source-wordcount: '581'
 ht-degree: 0%
 
 ---
@@ -15,25 +15,25 @@ ht-degree: 0%
 
 # 目标类型和类别
 
-阅读本页以了解实时客户数据平台目标的不同类型和类别。
+阅读本页，了解Adobe Experience Platform目标的不同类型和类别。
 
 ## 目标类型
 
-在实时客户数据平台中，我们区分两种目标类型——连接和扩展。 连接目标有两种类型：用户档案导出目标和段导出目标。
+在Adobe Experience Platform，我们区分两种目标类型——连接和扩展。 连接目标有两种类型：用户档案导出目标和段导出目标。
 
 ![目标类型](./assets/destination-types/types-of-destinations.png)
 
 ### 连接 {#connections}
 
-**[!UICONTROL 用户档案实]** 时导出和细分导出目标客户数据 **[!UICONTROL 平台捕获事件数据，将其与其他数据源相结合以形成实时客户]** 用户档案 [](../profile/home.md)，应用细分并将细分和合格用户档案导出到目标。
+**[!UICONTROL 用户档案]** 出 **[!UICONTROL 口和]** 细分Adobe Experience Platform的出口目标捕获事件数据，将其与其他数据源相结合，构成实 [时客户用户档案](../profile/home.md)，应用细分并将细分和合格用户档案导出到目标。
 
 #### 用户档案导出目标
 
-用户档案导出目标生成包含用户档案和／或属性的文件。 这些目标使用原始数据，通常以电子邮件地址作为主要密钥。 Amazon [S3云存储目标](./catalog/cloud-storage/amazon-s3.md) ，是一个可以存放包含用户档案导出的文件的目标。
+用户档案导出目标生成包含用户档案和／或属性的文件。 这些目标使用原始数据，通常以电子邮件地址作为主要密钥。 [AmazonS3云存储目标](./catalog/cloud-storage/amazon-s3.md)是可以存放包含用户档案导出的文件的目标示例。
 
 #### 区段导出目标
 
-区段导出目标会将用户档案及其符合条件的区段发送到目标平台。 这些目标使用区段ID或用户ID。 广告目标， [[!DNL Google Display & Video 360]](./catalog/advertising/google-dv360.md) 如 [[!DNL Google Ads]](./catalog/advertising/google-ads-destination.md) 或是这些类型的目标。
+区段导出目标会将用户档案及其符合条件的区段发送到目标平台。 这些目标使用区段ID或用户ID。 [[!DNL Google Display & Video 360]](./catalog/advertising/google-dv360.md)或[[!DNL Google Ads]](./catalog/advertising/google-ads-destination.md)等广告目标就是这些类型目标的示例。
 
 #### 用户档案导出和细分导出目标——视频概述
 
@@ -43,13 +43,13 @@ ht-degree: 0%
 
 ### 扩展 {#extensions}
 
-实时CDP利用Adobe Experience Platform Launch的强大功能和灵活性将Platform Launch扩展包含在实时CDP界面中。
+平台利用Adobe Experience Platform Launch的强大功能和灵活性，将Platform Launch扩展包含在平台界面中。
 
 >[!TIP]
 >
->有关Adobe Experience Platform Launch扩展的详细信息，包括使用案例以及如何在界面中查找这些扩展，请参 [阅Adobe Experience Platform Launch扩展概述](./catalog/launch-extensions/overview.md)。
+>有关Adobe Experience Platform Launch扩展的详细信息，包括使用案例以及如何在界面中查找这些扩展，请参阅[Adobe Experience Platform Launch扩展概述](./catalog/launch-extensions/overview.md)。
 
-Platform Launch扩展将原始事件数据转发到几种类型的目标。 将扩展视为目 **标的事件** 转发类型。 这是与目标平台的集成的一种更简单类型，目标平台仅转发原始事件数据。 例如Gainsight个性化 [扩展](./catalog/personalization/gainsight.md)[或客户扩展的确认声音](./catalog/voice/confirmit-digital-feedback.md)。
+Platform Launch扩展将原始事件数据转发到几种类型的目标。 将扩展视为&#x200B;**事件转发**&#x200B;类型的目标。 这是与目标平台的集成的一种更简单类型，目标平台仅转发原始事件数据。 这些示例包括[Gainsight个性化扩展](./catalog/personalization/gainsight.md)或[客户扩展的确认语音](./catalog/voice/confirmit-digital-feedback.md)。
 
 ![Experience Platform Launch扩展与其他目标](./assets/common/launch-and-other-destinations.png)
 
@@ -63,7 +63,7 @@ Platform Launch扩展将原始事件数据转发到几种类型的目标。 将�
 
 ## 目标类别
 
-目标目录中的连接 [和扩展](https://platform.adobe.com/destination/catalog) 按目标类别(**Advertising**、 **Cloud存储平台**、调查电 ********&#x200B;子邮件营销、等)进行分组，具体取决于它们帮助您实现的营销用例。 有关每个类别以及每个类别中包含的目标的详细信息，请参阅目标 [目录文档](./catalog/overview.md)。
+[目标目录](https://platform.adobe.com/destination/catalog)中的连接和扩展按目标类别(**广告**、**云存储**、**调查平台**、**电子邮件营销**&#x200B;等)进行分组，具体取决于它们有助于您实现的营销用例。 有关每个类别以及每个类别中包含的目标的详细信息，请参阅[目标目录文档](./catalog/overview.md)。
 
 ![目标类别](./assets/destination-types/destination-categories-menu.png)
 
