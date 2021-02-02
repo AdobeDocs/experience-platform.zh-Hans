@@ -1,22 +1,22 @@
 ---
-keywords: Experience Platform;home;popular topics;Azure Blob;azure blob;Azure blob connector
+keywords: Experience Platform；主页；热门主题；Azure Blob;azure Blob;Azure Blob连接器
 solution: Experience Platform
 title: 在UI中创建Azure Blob源连接器
 topic: overview
 type: Tutorial
 description: 本教程提供了使用平台用户界面创建Azure Blob（以下称“Blob”）的步骤。
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: e22e57e20b985b50e1d29e944fb8f04addc91703
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '649'
 ht-degree: 1%
 
 ---
 
 
-# 在UI [!DNL Azure Blob] 中创建源连接器
+# 在UI中创建[!DNL Azure Blob]源连接器
 
-Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用用 [!DNL Azure Blob] 户界面创建([!DNL Blob]以下称“ [!DNL Platform] ”)的步骤。
+本教程提供了使用平台用户界面创建[!DNL Azure Blob]（下称“[!DNL Blob]”）的步骤。
 
 ## 入门指南
 
@@ -27,7 +27,7 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
    - [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
 - [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
-如果已有有效的连 [!DNL Blob] 接，您可以跳过此文档的其余部分，继续学习配置 [数据流的教程](../../dataflow/batch/cloud-storage.md)。
+如果您已经有有效的[!DNL Blob]连接，您可以跳过此文档的其余部分，继续学习有关配置数据流](../../dataflow/batch/cloud-storage.md)的教程。[
 
 ### 支持的文件格式
 
@@ -39,40 +39,51 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ### 收集所需的凭据
 
-要访问您的 [!DNL Blob] 存储, [!DNL Platform]您必须为以下凭据提供有效值：
+要访问平台上的[!DNL Blob]存储，您必须为以下凭据提供有效值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 访问Blob存储中的数据所需的连接字符串。 连接 [!DNL Blob] 字符串模式为： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`. |
+| `connectionString` | 包含验证[!DNL Blob]为Experience Platform所必需的授权信息的字符串。 [!DNL Blob]连接字符串模式为：`DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`。 有关连接字符串的详细信息，请参阅[配置连接字符串](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string)的此[!DNL Blob]文档。 |
+| `sasUri` | 可用作连接[!DNL Blob]帐户的替代身份验证类型的共享访问签名URI。 [!DNL Blob] SAS URI模式为：`https://{ACCOUNT_NAME}.blob.core.windows.net/?sv=<storage version>&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>`有关详细信息，请参阅此[!DNL Blob]文档，关于[共享访问签名URI](https://docs.microsoft.com/en-us/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication)。 |
 
-有关快速入门的详细信息，请访 [ [!DNL Azure Blob] 问此文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string)。
+## 连接您的[!DNL Blob]帐户
 
-## 连接您的Blob帐户
+收集所需凭据后，您可以按照以下步骤将[!DNL Blob]帐户链接到平台。
 
-收集所需凭据后，您可以按照以下步骤将帐户链 [!DNL Blob] 接到 [!DNL Platform]。
+在[平台UI](https://platform.adobe.com)中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]屏幕显示可为其创建帐户的各种源。
 
-登录到 [Adobe Experience Platform](https://platform.adobe.com) ，然后从左 **[!UICONTROL 侧导航栏]** 中选择 **[!UICONTROL “源”以访问]** “源”工作区。 “ **[!UICONTROL 目录]** ”屏幕显示可为其创建帐户的各种源。
+您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索栏找到要使用的特定源。
 
-您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
-
-在“数 **[!UICONTROL 据库]** ”类别下， **[!UICONTROL 选择Azure Blob存储]**。 如果这是您首次使用此连接器，请选择“ **[!UICONTROL 配置]**”。 否则，选择 **[!UICONTROL 添加数据]** ，以创建新连 [!DNL Blob]接器。
+在[!UICONTROL 云存储]类别下，选择&#x200B;**[!UICONTROL Azure Blob存储]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
 
 ![目录](../../../../images/tutorials/create/blob/catalog.png)
 
-将显 **[!UICONTROL 示“连接到Azure Blob存储]** ”页。 在此页上，您可以使用新凭据或现有凭据。
-
-### 新帐户
-
-如果您使用新凭据，请选择“ **[!UICONTROL 新帐户]**”。 在显示的输入表单上，提供名称、可选说明和凭 [!DNL Blob] 据。 完成后，选 **[!UICONTROL 择]** Connect，然后允许一段时间建立新连接。
-
-![connect](../../../../images/tutorials/create/blob/new.png)
+将显示&#x200B;**[!UICONTROL 连接到Azure Blob存储符]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 现有帐户
 
-要连接现有帐户，请选 [!DNL Blob] 择要连接的帐户，然后选择 **[!UICONTROL 下一]** 步以继续。
+要使用现有帐户，请选择要用其创建新数据流的[!DNL Blob]帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;继续。
 
 ![现有](../../../../images/tutorials/create/blob/existing.png)
 
-## 后续步骤和其他资源
+### 新帐户
 
-按照本教程，您已建立了与帐户的 [!DNL Blob] 连接。 您现在可以继续阅读下一个教程 [并配置数据流，将数据从云存储引入 [!DNL Platform]](../../dataflow/batch/cloud-storage.md)。
+如果要创建新帐户，请选择&#x200B;**[!UICONTROL 新建帐户]**，然后为新[!DNL Blob]帐户提供名称和选项说明。
+
+**使用连接字符串进行身份验证**
+
+[!DNL Blob]连接器为您提供不同的访问身份验证类型。 在[!UICONTROL 帐户身份验证]下，选择&#x200B;**[!UICONTROL 连接字符串]**&#x200B;以使用基于连接字符串的凭据。
+
+![连接字符串](../../../../images/tutorials/create/blob/connectionstring.png)
+
+**使用共享访问签名URI进行身份验证**
+
+共享访问签名(SAS)URI允许对您的[!DNL Blob]帐户进行安全授权。 您可以使用SAS创建不同访问权限的身份验证凭据，因为基于SAS的身份验证允许您设置权限、开始和到期日期，以及为特定资源提供资源。
+
+选择&#x200B;**[!UICONTROL SasURIAuthentication]**，然后提供您的[!DNL Blob] SAS URI。 选择&#x200B;**[!UICONTROL 连接到源]**&#x200B;以继续。
+
+![sas-uri](../../../../images/tutorials/create/blob/sas-uri.png)
+
+## 后续步骤
+
+按照本教程，您已建立了与[!DNL Blob]帐户的连接。 您现在可以继续阅读下一个教程，并[配置数据流，将数据从您的云存储引入平台](../../dataflow/batch/cloud-storage.md)。
