@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;ad-hoc;ad hoc;adhoc;Ad-hoc;Ad hoc;Adhoc;
+keywords: Experience Platform；主题；热门主题；api;XDM;XDM；系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；ad-hoc;adhoc;adhoc;ad-hoc;Ad-hoc;Adhoc;Adhoc;Adhoc;
 solution: Experience Platform
 title: 临时模式
 description: 在特定情况下，可能需要创建一个XDM模式，其中的字段以名称命名，仅供单个数据集使用。 这称为临时模式。
@@ -7,7 +7,7 @@ topic: developer guide
 translation-type: tm+mt
 source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
-source-wordcount: '111'
+source-wordcount: '146'
 ht-degree: 0%
 
 ---
