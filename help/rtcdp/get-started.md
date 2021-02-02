@@ -1,12 +1,12 @@
 ---
-keywords: RTCDP;CDP;Real-time Customer Data Platform;real time customer data platform;real time cdp;cdp;rtcdp
+keywords: RTCDP;CDP；实时客户数据平台；实时客户数据平台；实时cdp;cdp;rtcdp
 title: 实时客户数据平台入门
-description: 在设置实时客户数据平台实施时，请以此示例方案为例。
+description: 使用此情景作为示例，来设置您的 Real-time Customer Data Platform 实施
 translation-type: tm+mt
-source-git-commit: d4a205b2e5fe4ca1f8d419eec3e7636e2ed0e5ef
+source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
 workflow-type: tm+mt
-source-wordcount: '2313'
-ht-degree: 0%
+source-wordcount: '2326'
+ht-degree: 1%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 0%
 此示例展示了由Adobe Experience Platform提供支持的实时客户数据平台在以下方面的强大功能：
 
 * 从多个源摄取数据
-* 将它们合并为一个 [!DNL real-time customer profile]
+* 将它们合并到单个[!DNL real-time customer profile]中
 * 跨设备提供一致、相关和个性化的体验。
 
 ## 用例
@@ -50,13 +50,13 @@ ht-degree: 0%
 
 本教程包括以下步骤：
 
-1. 构建客 [户用户档案](#customer-profile)。
-1. [个性化](#personalizing-the-user-experience) 、个性化的用户体验。
-1. 使用 [多个数据源](#using-multiple-data-sources)。
+1. 构建[客户用户档案](#customer-profile)。
+1. [个性](#personalizing-the-user-experience) 化用户体验。
+1. 使用[多个数据源](#using-multiple-data-sources)。
 1. [配置数据源](#configuring-a-data-source)。
-1. [收集特定客户](#bringing-the-data-together-for-a-specific-customer) 的数据。
-1. 设置 [区段](#segments)。
-1. 设置目 [标](#destinations)。
+1. [收集特](#bringing-the-data-together-for-a-specific-customer) 定客户的数据。
+1. 设置[段](#segments)。
+1. 设置[目标](#destinations)。
 1. [跨设备拼接用户档案](#cross-device-identity-stitching)。
 1. [分析用户档案](#analyzing-the-profile)。
 
@@ -66,7 +66,7 @@ ht-degree: 0%
 
 ![image](assets/luma-site.png)
 
-在导航时，数据会实时捕获并不仅发送到Adobe Analytics的报表包，还会直接发送到Adobe Experience Platform。 在收集数据时，您会开始根据中的行为数据，形成消费者的单一视图 [!DNL Experience Platform's real-time customer profile]。
+在导航时，数据会实时捕获并不仅发送到Adobe Analytics的报表包，还会直接发送到Adobe Experience Platform。 在收集数据时，您会开始根据[!DNL Experience Platform's real-time customer profile]中的行为数据，形成消费者的单个视图。
 
 网站的许多访客可能重复以前从Luma购买的客户。  对Luma来说，为满足新客户和重复访客以及已知客户的需求而个性化消息和产品非常重要。
 
@@ -74,9 +74,9 @@ ht-degree: 0%
 
 例如，一个统一身份的访客导航到Luma站点上的“男人”部分，并视图一对运行运动衫的夫妇。
 
-![image](assets/luma-sweatshirts.png)
+![图像](assets/luma-sweatshirts.png)
 
-当客户点击以进一步了解这些产品时，这些产品视图会在Adobe Analytics收集并发送至 [!DNL Experience Platform]。
+当客户导航以了解有关这些产品的更多信息时，这些产品视图会在Adobe Analytics收集并发送到[!DNL Experience Platform]。
 
 <!--![image](assets/luma-shirt-detail.png)-->
 
@@ -88,26 +88,26 @@ Luma可以将访客的行为映射到Adobe Experience Platform的用户用户档
 
 客户登录时，她将自己标识为莎拉·罗丝。
 
-![image](assets/luma-login.png)
+![图像](assets/luma-login.png)
 
 合并了两个标识：
 
 * 匿名浏览数据
 * 与莎拉·罗丝的账户相关的现有数据
 
-两者合并为一个用户档案 [!DNL Experience Platform]。 Luma现在对此消费者有统一的视图。
+在[!DNL Experience Platform]中，两个标识都合并为一个用户档案。 Luma现在对此消费者有统一的视图。
 
-根据网站“男士”部分的匿名访客的浏览行为，可能假定该客户为男性。 现在她登录了，Luma认识了Sarah Rose。 Luma利用Adobe的力量 [!DNL Real-time Customer Profile] 来优化在渠道提供给她的信息。
+根据网站“男士”部分的匿名访客的浏览行为，可能假定该客户为男性。 现在她登录了，Luma认识了Sarah Rose。 Luma使用[!DNL Real-time Customer Profile]的强大功能来优化跨渠道提供给她的消息。
 
 ## 个性化用户体验
 
 Sarah受到欢迎，并感谢她成为铜牌会员，详细了解她的益处以及如何提高地位和积分。
 
-她点击主页浏览更多内容。
+她导航到主页去浏览更多。
 
-![image](assets/luma-personal.png)
+![图像](assets/luma-personal.png)
 
-Sarah会根据她在Adobe Experience Platform的经历，动态地获得个性化的主页 [!DNL Real-time Customer Profile] 体验。
+Sarah会根据她在Adobe Experience Platform的[!DNL Real-time Customer Profile]获得动态提供的个性化主页体验。
 
 在Adobe Target,Adobe Sensei推动的个性化让她看到了相关内容，它考虑了她过去购买服装和服装的情况和关联。 Luma还根据她最近的浏览，为男性定制了男性跑步用品目录。
 
@@ -129,7 +129,7 @@ Sarah会根据她在Adobe Experience Platform的经历，动态地获得个性�
 
 Luma团队将所有的行为和客户数据放在一个位置。
 
-![image](assets/luma-dash.png)
+![图像](assets/luma-dash.png)
 
 他们可以从以下所有源中收集数据：
 
@@ -142,23 +142,23 @@ Luma团队将所有的行为和客户数据放在一个位置。
 
 ## 配置数据源
 
-用 [!DNL Real-time Customer Data Platform] 于将新数据源引入平台。 实时CDP包括一个数据源目录，只需单击几下即可添加到用户档案。
+使用[!DNL Real-time Customer Data Platform]将新数据源引入平台。 实时CDP包括一个数据源目录，可以快速、轻松地添加到用户档案。
 
-![image](assets/luma-source-cat.png)
+![图像](assets/luma-source-cat.png)
 
-例如，要获取Luma的CRM数据，请按 *CRM*&#x200B;筛选目录，并列出所有包含CRM的现成 *连接器* 。 要添加数 [!DNL Microsoft Dynamics CRM] 据：
+例如，要获取Luma的CRM数据，请按&#x200B;*CRM*&#x200B;筛选目录，并列出所有包含&#x200B;*CRM*&#x200B;的现成连接器。 要添加[!DNL Microsoft Dynamics CRM]数据：
 
 1. 授权连接。
 
-   ![image](assets/luma-source-auth.png)
+   ![图像](assets/luma-source-auth.png)
 
 1. 从建议的XDM预映射表列表中选择要导入的内容。
 
    <!--    ![image](assets/luma-source-import.png) -->
 
-   例如，选择“联 **[!UICONTROL 系人]**”。 预览的联系人数据会自动加载，这样您就可以确保一切看起来都符合预期。
+   例如，选择&#x200B;**[!UICONTROL 联系人]**。 预览的联系人数据会自动加载，这样您就可以确保一切看起来都符合预期。
 
-   Adobe Experience Platform通过自动将标准字段映射到(XDM)用户档案模式，从而节省了大量 [!DNL Experience Data Model] 手动工作。
+   Adobe Experience Platform通过自动将标准字段映射到[!DNL Experience Data Model](XDM)用户档案模式，从而节省了大量手动工作。
 
 1. 查看字段映射。
 
@@ -169,17 +169,17 @@ Luma团队将所有的行为和客户数据放在一个位置。
 
 1. 设置计划。
 
-   ![image](assets/luma-source-sched.png)
+   ![图像](assets/luma-source-sched.png)
 
-已经完成了。 您刚刚将 [!DNL Microsoft CRM] 数据源添加到 [!DNL Experience Platform]。
+已经完成了。 您刚刚将[!DNL Microsoft CRM]作为数据源添加到[!DNL Experience Platform]中。
 
 ### 为使用策略标记所摄取的数据
 
-Luma有许多内部策略限制某些类型收集信息的使用，并且还必须遵守与数据使用相关的法律和隐私相关的顾虑。 使用Adobe Experience Platform [!DNL Data Governance]，预定义的数据使用标签可以应用于数据集（以及这些数据集中的特定字段），从而允许Luma根据特定的使用限制对其数据进行分类。
+Luma有许多内部策略限制某些类型收集信息的使用，并且还必须遵守与数据使用相关的法律和隐私相关的顾虑。 使用Adobe Experience Platform[!DNL Data Governance]，预定义的数据使用标签可以应用于数据集（以及这些数据集中的特定字段），从而允许Luma根据特定的使用限制对其数据进行分类。
 
 ![](assets/governance-labels.png)
 
-应用数据使用标签后，Luma便可用来创建 [!DNL Data Governance] 数据使用策略。 数据使用策略是描述允许对包含特定标签的数据执行的操作种类的规则。 当尝试在构成策略违规的实时CDP中执行某个操作时，会阻止该操作，并会发出警报以显示违反了哪些策略以及原因。
+应用数据使用标签后，Luma可以使用[!DNL Data Governance]创建数据使用策略。 数据使用策略是描述允许对包含特定标签的数据执行的操作种类的规则。 当尝试在构成策略违规的实时CDP中执行某个操作时，会阻止该操作，并会发出警报以显示违反了哪些策略以及原因。
 
 ## 整合特定客户的数据
 
@@ -191,16 +191,16 @@ Luma有关Sarah的所有用户档案信息。 这包括她的个人信息，如�
 
 | 类别 | 描述 |
 |---|---|
-| 身份 | 显示Sarah与Luma互动中通过渠道 [!DNL Platform] 和设备链接到的身份。 将显示网站中的ECID。 她的身份还包括来自她移动应用的ECID、她的电子邮件ID、来自最近添加的数据集的CRM [!DNL Microsoft Dynamics] ID以及从Luma忠诚度系统传入Adobe Experience Platform的忠诚度ID。 |
+| 身份 | 显示在[!DNL Platform]中通过Sarah与Luma的交互关联到的身份，这些身份跨越渠道和设备。 将显示网站中的ECID。 她的身份还包括其移动应用程序的ECID、电子邮件ID、最近添加的[!DNL Microsoft Dynamics]数据集的CRM ID，以及从Luma忠诚度系统传入Adobe Experience Platform的忠诚度ID。 |
 | 事件 | 显示Sarah与Luma品牌的所有交互数据。 这包括她刚刚查看的物品，她过去查看过的任何东西，她收到的电子邮件，她与呼叫中心的互动，以及每次互动的渠道和设备。 |
 
 实时CDP用户档案将Luma营销团队的工作流程从数周减少到数分钟，并根据这一360度全方位客户视图为个性化解锁了可能。 用户档案将她登录前浏览网站时的行为数据与她现有的客户用户档案相结合，为Sarah创建了全面的视图。
 
-营销团队可以利用这一增强 [!DNL Real-time Customer Profile] 功能，更好地个性化Sarah的体验，并提高她对Luma的品牌忠诚度。
+营销团队可以使用这款增强的[!DNL Real-time Customer Profile]，更好地个性化Sarah的体验，并提高她对Luma的品牌忠诚度。
 
 ## 区段
 
-强大的Adobe Experience Platform细分功能使营销人员能够根据中捕获的数据组合属性、事件和现有细分 [!DNL Real-time Customer Profile]。
+强大的Adobe Experience Platform细分功能使营销人员能够根据[!DNL Real-time Customer Profile]中捕获的数据组合属性、事件和现有细分。
 
 <!-- ![image](assets/luma-segments.png) -->
 
@@ -233,12 +233,12 @@ Loyalty member
 
 添加“放弃购物车赠送礼物”区段后，您可以大致了解此区段中有多少人。 您可以对其采取行动，并使其可供渠道个性化。
 
-单击“ **[!UICONTROL 发送到目标”]**。
+选择&#x200B;**[!UICONTROL 发送到目标]**。
 
 在实时CDP中，Luma可以无缝地对其受众细分采取行动，以实现个性化。\
 在此，我们将看到Luma可以将此目标发送到的所有目标，包括Adobe和非Adobe解决方案：
 
-![image](assets/luma-dest.png)
+![图像](assets/luma-dest.png)
 
 ### 选择目标
 
@@ -257,9 +257,9 @@ Loyalty member
 
 >[!NOTE]
 >
->（可选）如果单击日期字段，它将自动计划90天。
+>（可选）如果您选择日期字段，它将自动计划90天外。
 
-单 **[!UICONTROL 击]** “保存”转到下一页。
+选择&#x200B;**[!UICONTROL 保存]**&#x200B;以转到下一页。
 
 当此受众中的客户进行购买时，其对此受众的会员资格会被实时抑制。 他们不再具备资格，因为他们的状态已经改变。
 
@@ -271,19 +271,19 @@ Adobe Experience Platform包括隐私和安全控制，用于确定区段是否�
 
 如果您的活动违反策略，将显示警告。 此警告包含数据世系信息，可帮助您确定违反策略的原因以及解决违规的方法。
 
-通过这些控制， [!DNL Experience Platform] 帮助Luma以负责任的方式遵守法规和营销。 这些控制是灵活的，可以修改以满足Luma安全和治理团队的要求，使他们能够自信地满足管理已知和未知客户数据的地区和组织要求。
+通过这些控制，[!DNL Experience Platform]帮助Luma以负责任的方式遵守法规和营销。 这些控制是灵活的，可以修改以满足Luma安全和治理团队的要求，使他们能够自信地满足管理已知和未知客户数据的地区和组织要求。
 
 ### 数据流画布
 
 保存时，可视化数据流画布会显示从统一用户档案映射到您选择的三个目标的区段。
 
-![image](assets/luma-flow.png)
+![图像](assets/luma-flow.png)
 
 ## 跨设备身份拼接
 
 Sarah在移动设备上浏览一个社交媒体网站，她看到一则Luma广告。 这让她想起她在车里留下的物品。
 
-之后，她打开自己的电子邮件，看到重新定位的电子邮件。 她点击了一封电子邮件中指向Luma的链接。
+之后，她打开自己的电子邮件，看到重新定位的电子邮件。 她从一封电子邮件中选择了Luma的链接。
 
 该链接将Sarah带到移动Luma主页，她在那里看到由Adobe Target提供动力的高度个性化体验。
 
