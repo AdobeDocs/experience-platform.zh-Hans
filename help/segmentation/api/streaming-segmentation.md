@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;streaming segmentation;Streaming segmentation;Continuous evaluation;
+keywords: Experience Platform；主题；热门主题；分割；分割；分割服务；流分割；流分割；连续评价；
 solution: Experience Platform
 title: 流细分
 topic: developer guide
 description: 此文档包含有关如何使用流式分段API的示例。
 translation-type: tm+mt
-source-git-commit: 2bd4b773f7763ca408b55e3b0e2d0bbe9e7b66ba
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '1310'
+source-wordcount: '1329'
 ht-degree: 1%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->以下文档说明了如何使用API使用流分段。 有关使用UI使用流式分段的信息，请阅读流式 [分段UI指南](../ui/streaming-segmentation.md)。
+>以下文档说明了如何使用API使用流分段。 有关使用UI使用流分段的信息，请阅读[流分段UI指南](../ui/streaming-segmentation.md)。
 
-基于的流 [!DNL Adobe Experience Platform] 式细分允许客户在关注数据丰富性的同时近乎实时地进行细分。 利用流细分，流数据进入时即会发生细分资格 [!DNL Platform]，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传入时评估大多数细分规则， [!DNL Platform]这意味着，在不运行计划的细分作业的情况下，区段成员关系将保持最新状态。
+[!DNL Adobe Experience Platform]上的流细分使客户能够近乎实时地进行细分，同时专注于数据的丰富性。 使用流细分，流数据进入[!DNL Platform]时，现在会发生细分资格问题，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传递到[!DNL Platform]时评估大多数细分规则，这意味着，在不运行计划的细分作业的情况下，细分成员关系将保持最新。
 
 ![](../images/api/streaming-segment-evaluation.png)
 
@@ -29,33 +29,33 @@ ht-degree: 1%
 
 ## 入门指南
 
-此开发人员指南需要对流分段所涉及的各 [!DNL Adobe Experience Platform] 种服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
+本开发人员指南需要对流分段所涉及的各种[!DNL Adobe Experience Platform]服务进行有效的了解。 在开始本教程之前，请查看以下服务的相关文档：
 
 - [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
 - [[!DNL Segmentation]](../home.md):提供根据数据创建细分和受众的 [!DNL Real-time Customer Profile] 能力。
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 
-以下各节提供了成功调用API所需了解的其他信 [!DNL Platform] 息。
+以下各节提供了成功调用[!DNL Platform] API所需了解的其他信息。
 
 ### 读取示例API调用
 
-此开发人员指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
+此开发人员指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
 
 ### 收集所需标题的值
 
-要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
-- 授权：承载者 `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{IMS_ORG}`
+- 授权：载体`{ACCESS_TOKEN}`
+- x-api-key:`{API_KEY}`
+- x-gw-ims-org-id:`{IMS_ORG}`
 
-中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
 
-- x-sandbox-name: `{SANDBOX_NAME}`
+- x-sandbox-name:`{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
+>有关[!DNL Platform]中沙箱的详细信息，请参阅[沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
@@ -63,11 +63,11 @@ ht-degree: 1%
 
 完成特定请求可能需要其他标题。 此文档中的每个示例都显示正确的标题。 请特别注意示例请求，以确保包含所有必需的标题。
 
-### 支持流式分段的查询类型 {#streaming-segmentation-query-types}
+### 启用流分段的查询类型{#streaming-segmentation-query-types}
 
 >[!NOTE]
 >
->您需要为组织启用计划分段才能使流式分段正常工作。 有关启用计划分段的信息，请参阅启用计 [划分段部分。](#enable-scheduled-segmentation)
+>您需要为组织启用计划分段才能使流式分段正常工作。 有关启用计划分段的信息，请参阅[启用计划分段部分](#enable-scheduled-segmentation)
 
 要使用流分段来评估区段，查询必须遵循以下准则。
 
@@ -78,9 +78,9 @@ ht-degree: 1%
 | 仅用户档案 | 只引用用户档案属性的任何区段定义。 |
 | 指用户档案 | 引用单个传入事件（无时间限制）和一个或多个用户档案属性的任何区段定义。 |
 | 指相对时间窗口内用户档案的传入点击 | 引用单个传入事件和一个或多个用户档案属性的任何区段定义。 |
-| 引用事件的多个用户档案 | 任何引用过去24小时内的多个事件 **并且(可选** )具有一个或多个用户档案属性的定义。 |
+| 引用事件的多个用户档案 | 在过去24小时内引用多个事件&#x200B;**且（可选）具有一个或多个用户档案属性的任何定义。** |
 
-在以下情况下 **** ，将不会为流分段启用段定义：
+在以下情况下，区段定义将&#x200B;**不**&#x200B;启用流分段：
 
 - 区段定义包括Adobe Audience Manager(AAM)区段或特征。
 - 段定义包括多个实体(多实体查询)。
@@ -90,15 +90,15 @@ ht-degree: 1%
 | 查询类型 | 准则 |
 | ---------- | -------- |
 | 单事件查询 | 回顾窗口没有限制。 |
-| 查询事件历史 | <ul><li>回顾窗口限于 **一天**。</li><li>事件之间必 **须存** 在严格的时间排序条件。</li><li>支持具有至少一个否定查询的事件。 但是，整个事件 **不能** 是否定的。</li></ul> |
+| 查询事件历史 | <ul><li>回顾窗口限制为&#x200B;**一天**。</li><li>严格的时间排序条件&#x200B;**必须**&#x200B;存在于事件之间。</li><li>支持具有至少一个否定查询的事件。 但是，整个事件&#x200B;**不能**&#x200B;为取反。</li></ul> |
 
 ## 检索支持流式分段的所有细分
 
-您可以通过向端点发出列表请求，检索IMS组织内启用流分段的所有区段的GET `/segment/definitions` 。
+您可以通过向`/segment/definitions`端点发出列表请求，检索IMS组织内启用流分段的所有区段的GET。
 
 **API格式**
 
-要检索支持流的区段，必须在请求路径中 `evaluationInfo.continuous.enabled=true` 包含查询参数。
+要检索支持流的区段，必须在请求路径中包含查询参数`evaluationInfo.continuous.enabled=true`。
 
 ```http
 GET /segment/definitions?evaluationInfo.continuous.enabled=true
@@ -207,7 +207,7 @@ curl -X GET \
 
 ## 创建支持流的细分
 
-如果区段与上面列出的流分段类型之一匹配，则该区段将 [自动启用流化](#streaming-segmentation-query-types)。
+如果区段与上面列出的[流分段类型之一匹配，则会自动启用流分段。](#streaming-segmentation-query-types)
 
 **API格式**
 
@@ -242,7 +242,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->这是标准的“创建区段”请求。 有关创建区段定义的详细信息，请阅读有关创建区段 [的教程](../tutorials/create-a-segment.md)。
+>这是标准的“创建区段”请求。 有关创建区段定义的详细信息，请阅读教程[创建区段](../tutorials/create-a-segment.md)。
 
 **响应**
 
@@ -286,17 +286,17 @@ curl -X POST \
 }
 ```
 
-## 启用计划评估 {#enable-scheduled-segmentation}
+## 启用计划评估{#enable-scheduled-segmentation}
 
 启用流评估后，必须创建基线（在此之后，区段将始终保持最新）。 必须首先启用计划评估（也称为计划分段），系统才能自动执行基线设置。 通过计划的细分，您的IMS组织可以遵守循环计划，自动运行导出作业以评估细分。
 
 >[!NOTE]
 >
->对于最多五(5)个合并策略的沙箱，可启用计划评估 [!DNL XDM Individual Profile]。 如果您的组织在单个沙箱环境内 [!DNL XDM Individual Profile] 有五个以上的合并策略，您将无法使用计划的评估。
+>对于[!DNL XDM Individual Profile]具有最多五(5)个合并策略的沙箱，可启用计划评估。 如果您的组织在单个沙箱环境内有[!DNL XDM Individual Profile]的五个以上合并策略，您将无法使用计划的评估。
 
 ### 创建计划
 
-通过向端点发出POST请 `/config/schedules` 求，您可以创建计划并包含应触发计划的特定时间。
+通过向`/config/schedules`端点发出POST请求，可以创建计划并包含应触发计划的特定时间。
 
 **API格式**
 
@@ -329,12 +329,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `name` | **(必需** )计划名称。 必须是字符串。 |
-| `type` | **（必需）** 字符串格式的作业类型。 支持的类型有 `batch_segmentation` 和 `export`。 |
-| `properties` | **(必需** )包含与计划相关的其他属性的对象。 |
-| `properties.segments` | **(等于时需 `type` 要) `batch_segmentation`使用** , `["*"]` 确保包括所有区段。 |
-| `schedule` | **（必需）** 包含作业计划的字符串。 作业只能计划每天运行一次，这意味着在24小时内不能将作业计划为多次运行。 显示的示例(`0 0 1 * * ?`)表示作业每天在1:00:00 UTC时触发。 有关详细信息，请查阅 [cron表达式格式](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) 文档。 |
-| `state` | *（可选）包含计划状态的字符串* 。 可用值： `active` 和 `inactive`。 默认值为 `inactive`。IMS组织只能创建一个计划。 更新计划的步骤将在本教程的稍后部分提供。 |
+| `name` | **（必需）** 计划的名称。必须是字符串。 |
+| `type` | **（必需）** 字符串格式的作业类型。支持的类型为`batch_segmentation`和`export`。 |
+| `properties` | **（必需）** 包含与计划相关的其他属性的对象。 |
+| `properties.segments` | **(等于时需 `type` 要) `batch_segmentation`使** 用 `["*"]` 可确保包括所有区段。 |
+| `schedule` | **（必需）** 包含作业计划的字符串。作业只能计划每天运行一次，这意味着在24小时内不能将作业计划为多次运行。 显示的示例(`0 0 1 * * ?`)表示作业每天在1:00:00 UTC时触发。 有关详细信息，请查阅[cron表达式格式](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)文档。 |
+| `state` | *（可选）包* 含计划状态的字符串。可用值：`active`和`inactive`。 默认值为 `inactive`。IMS组织只能创建一个计划。 更新计划的步骤将在本教程的稍后部分提供。 |
 
 **响应**
 
@@ -366,7 +366,7 @@ curl -X POST \
 
 ### 启用计划
 
-默认情况下，创建计划时，处于非活动状 `state` 态，除非属性在 `active` create(POST)请求主体中设置为。 您可以通过向端点发出计划请求并在路 `state` 径中包含PATCH的ID，来启 `active``/config/schedules` 用计划（将设置为）。
+默认情况下，创建计划时，POST处于非活动状态，除非在create()请求主体中将`state`属性设置为`active`。 您可以通过向`/config/schedules`端点发出计划请求并在路径中包含计划的ID来启用PATCH（将`state`设置为`active`）。
 
 **API格式**
 
@@ -376,7 +376,7 @@ POST /config/schedules/{SCHEDULE_ID}
 
 **请求**
 
-以下请求使 [用JSON修补程](http://jsonpatch.com/) 序格式，以将 `state` 计划更新为 `active`。
+以下请求使用[JSON修补程序格式](http://jsonpatch.com/)将计划的`state`更新为`active`。
 
 ```shell
 curl -X POST \
@@ -405,4 +405,4 @@ curl -X POST \
 
 现在，您已经为流式分段启用了新区段和现有区段，并启用了计划分段以开发基线和执行重复评估，因此您可以开始为组织创建区段。
 
-要了解如何使用Adobe Experience Platform用户界面执行类似操作和处理区段，请访 [问区段生成器用户指南](../ui/segment-builder.md)。
+要了解如何使用Adobe Experience Platform用户界面执行类似操作和处理区段，请访问[区段生成器用户指南](../ui/segment-builder.md)。
