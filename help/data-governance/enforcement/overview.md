@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;Policy enforcement;Automatic enforcement;API-based enforcement;data governance
+keywords: Experience Platform；主页；热门主题；策略执行；自动执行；基于API的执行；数据管理
 solution: Experience Platform
 title: 策略实施概述
-topic: enforcement
+topic: guide
 description: 在将数据使用标签应用于Adobe Experience Platform数据集并为针对这些标签的营销操作定义数据使用策略后，数据管理功能允许您实施这些策略并防止构成违反策略的数据操作。 平台上的数据管理功能提供了两种策略实施方法，即基于API的实施和自动实施。
 translation-type: tm+mt
-source-git-commit: 30733f2274ff8cb9ae73cf2b9f7f0219fefbd393
+source-git-commit: acc4fa59a4808ed9a32c2aaf664039e0d12dc1d8
 workflow-type: tm+mt
-source-wordcount: '219'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
