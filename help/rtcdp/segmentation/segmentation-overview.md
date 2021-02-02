@@ -1,22 +1,22 @@
 ---
-keywords: segmentation; segmentation rtcdp;real time customer data platform segmentation
+keywords: 分段；分段rtcdp；实时客户数据平台分段
 title: 分段服务概述
 seo-title: 实时客户数据平台中的细分服务
 description: 实时CDP构建在Adobe Experience Platform之上，并利用许多Experience Platform服务和功能。 使用分段服务，您可以将客户划分为具有相似特征的较小组，从而提供定制营销。
 translation-type: tm+mt
-source-git-commit: 0232acdc64019b9d93888e8137ef9bc8e114779b
+source-git-commit: 9f20f8bfeefb5bc427a72a11ac1f01816cdbc4b2
 workflow-type: tm+mt
-source-wordcount: '274'
-ht-degree: 1%
+source-wordcount: '540'
+ht-degree: 0%
 
 ---
 
 
 # [!DNL Segmentation Service] in [!DNL Real-time Customer Data Platform]
 
-[!DNL Real-time Customer Data Platform] （实时CDP）允许您从多个来源提供数据，为客户提供协调一致的体验。 提供相关的个性化营销活动可 [!DNL Segmentation Service]以通过Adobe Experience Platform实现。
+[!DNL Real-time Customer Data Platform] （实时CDP）允许您从多个来源提供数据，为客户提供协调一致的体验。使用Adobe Experience Platform的[!DNL Segmentation Service]可以实现相关的个性化营销活动。
 
-实时CDP构建在Adobe Experience Platform之上，并利用许多服务 [!DNL Experience Platform] 和功能。 使用 [!DNL Segmentation Service]，您可以将客户划分为具有相似特征的较小组，从而提供定制营销。
+实时CDP构建在Adobe Experience Platform之上，它利用许多[!DNL Experience Platform]服务和功能。 使用[!DNL Segmentation Service]，您可以将客户划分为具有相似特征的较小组，从而提供定制营销。
 
 ## 区段
 
@@ -24,8 +24,34 @@ ht-degree: 1%
 
 ## [!DNL Segment Builder]
 
-[!DNL Platform] 允许您轻松创建和访问区段，并使用不同的构件块进一步描述区段。 有关如何使用区段生成器的更多信息，请阅读“区 [段生成器指南](./segment-builder-guide.md)”。
+[!DNL Platform] 允许您轻松创建和访问区段，并使用不同的构件块进一步描述区段。有关如何使用区段生成器的更多信息，请阅读[区段生成器指南](./segment-builder-guide.md)。
+
+## 客户人工智能
+
+实时客户数据平台随附的客户人工智能使您能够在个人层面生成客户预测并做出解释。
+
+在影响因素的帮助下，客户人工智能可以告诉您客户可能做什么以及为什么。 此外，您还可以从客户人工智能预测和洞察中受益，通过提供最合适的优惠和消息来个性化客户体验。 客户人工智能可以协助：
+
+* 提供高准确度的客户偏好模型，以实现更强的细分和定位。
+* 了解特定客户行为背后的影响因素和可能性。
+* 为公司的独特用例和数据提供可自定义的选项。
+* 利用客户倾向得分（如客户流失和转化）增强实时客户用户档案。
+* 通过影响倾向得分的因素增强客户用户档案。
+* 根据影响因素和倾向得分创建客户细分。
+
+客户AI位于&#x200B;**[!UICONTROL Adobe服务]**&#x200B;下的&#x200B;**[!UICONTROL 服务]**&#x200B;选项卡中。
+
+![客户人工智能位置](../assets/overview/rtcdp-customer-ai.png)
+
+### 客户人工智能入门
+
+为了开始使用客户AI，您需要按照[数据预操作教程](../../intelligent-services/data-preparation.md)，并根据您的用例配置输入模式。 接下来，您需要[配置客户AI实例](../../intelligent-services/customer-ai/user-guide/configure.md)。 配置实例后，将生成一个模型，在该模型中，您可以[视图洞察和得分](../../intelligent-services/customer-ai/user-guide/discover-insights.md)。 使用从模型生成的数据，您可以为数据驱动激活创建区段。
+
+要进一步了解客户AI，请访问[客户AI概述](../../intelligent-services/customer-ai/overview.md)进行开始。 此外，以下视频展示了客户AI如何通过基于AI的倾向丰富客户用户档案，并支持客户细分和定位工作。
+
+>[!VIDEO](https://video.tv.adobe.com/v/40374/?quality=12&learn=on)
+
 
 ## 后续步骤
 
-阅读此概述后，您现在应了解实时CDP如何利 [!DNL Segmentation Service] 用它们增强营销活动的定制和个性化。 有关此分段的详 [!DNL Segmentation Service]细信息，请阅读 [分段文档](../../segmentation/home.md)。
+阅读此概述后，您现在应了解实时CDP如何利用[!DNL Segmentation Service]增强营销活动的定制和个性化。 有关[!DNL Segmentation Service]的详细信息，请阅读[分段文档](../../segmentation/home.md)。
