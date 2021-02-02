@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;database database;third party database
+keywords: Experience Platform；主页；热门主题；数据库；第三方数据库
 solution: Experience Platform
 title: 通过源连接器和API从数据库收集数据
 topic: overview
 type: Tutorial
 description: 本教程介绍从数据库检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 326de658736387ab42cd2348a052c5c5217b6c2e
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '1610'
+source-wordcount: '1624'
 ht-degree: 1%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 1%
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成[身份验证教程](../../../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用平台API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
