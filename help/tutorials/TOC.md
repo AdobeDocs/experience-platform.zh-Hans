@@ -6,18 +6,18 @@ breadcrumb-title: Platform 教程
 user-guide-description: 通过遵循分步教程快速轻松地开始使用Platform，它涵盖从准备数据以获取到使用高级机器学习算法等一切内容。
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 097fe219e0d64090de758f388ba98e6024db2201
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '70'
-ht-degree: 14%
+source-wordcount: '74'
+ht-degree: 13%
 
 ---
 
 
-# Adobe Experience Platform tutorials {#tutorials}
+# Adobe Experience Platform教程{#tutorials}
 
 * [Tutorials概述](home.md)
-* [验证到Experience PlatformAPI](authentication.md)
+* [验证到Experience PlatformAPI](https://www.adobe.com/go/platform-api-authentication-en)
 * [访问平台数据](data-access.md)
 * [数据管理和隐私](data-governance-privacy.md)
 * [数据服务工作区](data-science-workspace.md)
