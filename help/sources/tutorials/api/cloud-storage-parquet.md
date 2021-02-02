@@ -1,47 +1,47 @@
 ---
-keywords: Experience Platform;home;popular topics;data source connection
+keywords: Experience Platform；主页；热门主题；数据源连接
 solution: Experience Platform
-title: 使用Flow Service API从第三方云存储系统中摄取镶木数据
+title: 使用Flow Service API从第三方云存储系统中摄取拼花数据
 topic: overview
 type: Tutorial
-description: 本教程使用Flow Service API指导您完成从第三方云存储系统中采集镶木数据的步骤。
+description: 本教程使用Flow Service API指导您完成从第三方云存储系统中摄取Parke数据的步骤。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1100'
 ht-degree: 2%
 
 ---
 
 
-# 使用API从第三方云存储系统中摄取镶木数 [!DNL Flow Service] 据
+# 使用[!DNL Flow Service] API从第三方云存储系统中摄取拼花数据
 
-[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程使 [!DNL Flow Service] 用API指导您完成从第三方云存储系统中采集镶木数据的步骤。
+本教程使用[!DNL Flow Service] API指导您完成从第三方云存储系统中摄取Parke数据的步骤。
 
 ## 入门指南
 
 本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
 
-- [来源](../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+- [来源](../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入 [!DNL Platform] 数据。
 - [沙箱](../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供您需要了解的其他信息，以便使用API从第三方云存储成功获取镶木 [!DNL Flow Service] 数据。
+以下各节提供您需要了解的其他信息，以便使用[!DNL Flow Service] API从第三方云存储成功摄取Parke数据。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
 
 ### 收集所需标题的值
 
-要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {IMS_ORG}`
 
-中的所有资 [!DNL Experience Platform]源(包括属于这些资 [!DNL Flow Service]源)都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
 
 - `x-sandbox-name: `{SANDBOX_NAME}
 
@@ -51,7 +51,7 @@ ht-degree: 2%
 
 ## 创建连接
 
-要使用API收录拼花 [!DNL Platform] 存储，您必须对您访问的第三方云数据源具有有效连接。 如果您尚未连接要使用的存储，则可以通过以下教程创建一个连接：
+要使用[!DNL Platform] API收录Parke数据，您必须对您正在访问的第三方云存储源具有有效连接。 如果您尚未连接要使用的存储，则可以通过以下教程创建一个连接：
 
 - [Amazon S3](./create/cloud-storage/s3.md)
 - [Azure Blob](./create/cloud-storage/blob.md)
@@ -59,13 +59,13 @@ ht-degree: 2%
 - [Google Cloud商店](./create/cloud-storage/google.md)
 - [SFTP](./create/cloud-storage/sftp.md)
 
-获取并存储连接的唯`$id`一标识符()，然后继续执行本教程的下一步。
+获取并存储连接的唯一标识符(`$id`)，然后继续执行本教程的下一步。
 
 ## 创建目标模式
 
-为了在中使用源数据，还必 [!DNL Platform]须创建目标模式，以根据您的需要构建源数据。 然后，目标模式用于创建包含 [!DNL Platform] 源数据的数据集。
+要在[!DNL Platform]中使用源数据，还必须创建目标模式，以根据您的需要构建源数据。 然后，目标模式用于创建包含源数据的[!DNL Platform]数据集。
 
-如果您希望在中使用用户界 [!DNL Experience Platform]面， [模式编辑器教程](../../../xdm/tutorials/create-schema-ui.md) 提供了在模式编辑器中执行类似操作的分步说明。
+如果您希望使用[!DNL Experience Platform]中的用户界面，[模式编辑器教程](../../../xdm/tutorials/create-schema-ui.md)将提供在模式编辑器中执行类似操作的分步说明。
 
 **API格式**
 
@@ -75,7 +75,7 @@ POST /schemaregistry/tenant/schemas
 
 **请求**
 
-以下示例请求创建一个扩展XDM类的XDM模式 [!DNL Individual Profile] 符。
+以下示例请求创建一个XDM模式，它扩展了XDM [!DNL Individual Profile]类。
 
 ```shell
 curl -X POST \
@@ -118,7 +118,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新创建模式的详细信息，包括其唯一标识符(`$id`)。 下一步需要此ID才能创建源连接。
+成功的响应会返回新创建的模式的详细信息，包括其唯一标识符(`$id`)。 下一步需要此ID才能创建源连接。
 
 ```json
 {
@@ -198,9 +198,9 @@ curl -X POST \
 }
 ```
 
-## 创建源连接 {#source}
+## 创建源连接{#source}
 
-创建目标XDM模式后，现在可以使用对API的POST请求创建源连 [!DNL Flow Service] 接。 源连接包括API的连接、源数据格式和对在上一步中检索的目标XDM模式的引用。
+创建目标XDM模式后，现在可以使用对[!DNL Flow Service] API的POST请求创建源连接。 源连接包括API的连接、源数据格式和对在上一步中检索的目标XDM模式的引用。
 
 **API格式**
 
@@ -243,12 +243,12 @@ curl -X POST \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `baseConnectionId` | 表示您的云存储的API连接。 |
-| `data.schema.id` | ()`$id`如果目标xdm模式在上一步中检索到。 |
+| `data.schema.id` | (`$id`)，如果在上一步中检索到目标xdm模式。 |
 | `params.path` | 源文件的路径。 |
 
 **响应**
 
-成功的响应会返回新创建的源`id`连接的唯一标识符()。 按照以后创建目标连接的步骤中的要求存储此值。
+成功的响应会返回新创建的源连接的唯一标识符(`id`)。 按照以后创建目标连接的步骤中的要求存储此值。
 
 ```json
 {
@@ -259,15 +259,15 @@ curl -X POST \
 
 ## 创建数据集基础连接
 
-为了将外部数据引入，必 [!DNL Platform]须先获 [!DNL Experience Platform] 取数据集基础连接。
+要将外部数据引入[!DNL Platform]，必须先获取[!DNL Experience Platform]数据集基础连接。
 
-要创建数据集基础连接，请按照数据集基础连接教 [程中概述的步骤操作](./create-dataset-base-connection.md)。
+要创建数据集基础连接，请按照[数据集基础连接教程](./create-dataset-base-connection.md)中所述的步骤操作。
 
-继续按照开发人员指南中所述的步骤操作，直到您创建了数据集基础连接。 获取并存储唯一标识符(`$id`)，然后在下一步中继续将它用作基本连接ID以创建目标连接。
+继续按照开发人员指南中所述的步骤操作，直到您创建了数据集基础连接。 获取并存储唯一标识符(`$id`)，然后在下一步中继续将其用作基本连接ID以创建目标连接。
 
 ## 创建目标数据集
 
-通过向Catalog Service API执行目标请求 [，提供有效负荷中POST模式的ID](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，可以创建目标数据集。
+通过向[目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)执行目标请求，提供有效负荷内目标模式的ID，可以创建POST数据集。
 
 **API格式**
 
@@ -303,7 +303,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回一个数组，其中包含格式为新创建数据集的ID `"@/datasets/{DATASET_ID}"`。 数据集ID是由系统生成的只读字符串，用于在API调用中引用数据集。 按照后续步骤中的要求存储目标数据集ID，以创建目标连接和数据流。
+成功的响应返回一个数组，其中包含格式为`"@/datasets/{DATASET_ID}"`的新创建数据集的ID。 数据集ID是由系统生成的只读字符串，用于在API调用中引用数据集。 按照后续步骤中的要求存储目标数据集ID，以创建目标连接和数据流。
 
 ```json
 [
@@ -311,9 +311,9 @@ curl -X POST \
 ]
 ```
 
-## 创建目标连接 {#target}
+## 创建目标连接{#target}
 
-您现在具有数据集基础连接、目标模式和目标数据集的唯一标识符。 使用这些标识符，您可以使用API创建目标 [!DNL Flow Service] 连接，以指定将包含入站源数据的数据集。
+您现在具有数据集基础连接、目标模式和目标数据集的唯一标识符。 使用这些标识符，您可以使用[!DNL Flow Service] API创建目标连接，以指定将包含入站源数据的数据集。
 
 **API格式**
 
@@ -354,7 +354,7 @@ curl -X POST \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `baseConnectionId` | 数据集基础连接的ID。 |
-| `data.schema.id` | 目标 `$id` XDM模式。 |
+| `data.schema.id` | 目标XDM模式的`$id`。 |
 | `params.dataSetId` | 目标数据集的ID。 |
 | `connectionSpec.id` | 云存储的连接规范ID。 |
 
@@ -371,7 +371,7 @@ curl -X POST \
 
 ## 创建数据流
 
-从第三方云存储中获取拼花数据的最后一步是创建数据流。 现在，您准备了以下必需值：
+从第三方云存储接收Parke数据的最后一步是创建数据流。 现在，您准备了以下必需值：
 
 - [源连接ID](#source)
 - [目标连接ID](#target)
@@ -421,7 +421,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新创`id`建的数据流的ID()。
+成功的响应会返回新创建的数据流的ID(`id`)。
 
 ```json
 {
@@ -432,7 +432,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过遵循本教程，您已创建了一个源连接器，以按计划从第三方云存储系统收集拼花数据。 现在，下游服务（如和）可 [!DNL Platform] 以使用传入 [!DNL Real-time Customer Profile] 数据 [!DNL Data Science Workspace]。 有关更多详细信息，请参阅以下文档:
+通过遵循本教程，您已创建了一个源连接器，以按计划从第三方云存储系统收集Parke数据。 现在，下游[!DNL Platform]服务（如[!DNL Real-time Customer Profile]和[!DNL Data Science Workspace]）可以使用传入数据。 有关更多详细信息，请参阅以下文档:
 
 - [实时客户用户档案概述](../../../profile/home.md)
 - [数据科学工作区概述](../../../data-science-workspace/home.md)
