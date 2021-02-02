@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;mixin registry;Schema Registry;mixin;Mixin;mixins;Mixins;create
+keywords: Experience Platform；主页；热门主题；api;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；混合注册；模式注册；混合；混合；混合；混合；混合；混合；创建
 solution: Experience Platform
 title: 创建混音
 description: 模式注册表API中的/mixins端点允许您在体验应用程序中以编程方式管理XDM混合。
@@ -7,7 +7,7 @@ topic: developer guide
 translation-type: tm+mt
 source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
 workflow-type: tm+mt
-source-wordcount: '1102'
+source-wordcount: '1134'
 ht-degree: 2%
 
 ---
