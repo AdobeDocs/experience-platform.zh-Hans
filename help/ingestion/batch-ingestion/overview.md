@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;data ingestion;batch;Batch;enable dataset;Batch ingestion overview;overview;batch ingestion overview;
+keywords: Experience Platform；主页；热门主题；数据摄取；批处理；启用数据集；批处理概述；概述；批处理摄取概述；
 solution: Experience Platform
 title: 批摄取概述
 topic: overview
-description: 批处理摄取API允许您将数据作为批处理文件导入到Adobe Experience Platform。 所摄取的用户档案可以是CRM系统中平面文件（如拼花文件）中的模式数据，也可以是与体验数据模型(XDM)注册表中的已知数据相符的数据。
+description: 批处理摄取API允许您将数据作为批处理文件导入到Adobe Experience Platform。 所摄取的用户档案可以是CRM系统中平面文件（如Parke文件）中的模式数据，也可以是与体验数据模型(XDM)注册表中的已知数据相符的数据。
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '1193'
+source-wordcount: '1216'
 ht-degree: 2%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 2%
 
 # [!DNL Batch Ingestion]概述
 
-API [!DNL Batch Ingestion] 允许您将数据作为批处理文件引入Adobe Experience Platform。 所摄取的用户档案可以是CRM系统中的平面文件（如拼花文件）中的模式数据，或符合(XDM)注册表中的已知的 [!DNL Experience Data Model] 数据。
+[!DNL Batch Ingestion] API允许您将数据作为批处理文件引入Adobe Experience Platform。 所摄取的用户档案可以是CRM系统中的平面文件（如Parke文件）中的模式数据，也可以是符合[!DNL Experience Data Model](XDM)注册表中的已知数据的数据。
 
-数据 [摄取API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) ，提供了有关这些API调用的其他信息。
+[数据摄取API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)提供了有关这些API调用的其他信息。
 
 下图概述了批摄取过程：
 
@@ -25,7 +25,7 @@ API [!DNL Batch Ingestion] 允许您将数据作为批处理文件引入Adobe Ex
 
 ## 使用API
 
-API [!DNL Data Ingestion] 允许您通过以下三个基本步骤将数据作为批处理(由一个或多个要作为单个单元摄取的文件组成的数 [!DNL Experience Platform] 据单元)进行：
+[!DNL Data Ingestion] API允许您通过以下三个基本步骤将数据作为批量（由一个或多个要作为单个单元摄取的文件组成的数据单元）收录到[!DNL Experience Platform]中：
 
 1. 创建新批。
 2. 将文件上传到与数据的XDM模式匹配的指定数据集。
@@ -35,8 +35,8 @@ API [!DNL Data Ingestion] 允许您通过以下三个基本步骤将数据作为
 ### [!DNL Data Ingestion] 先决条件
 
 - 要上传的数据必须采用Parke或JSON格式。
-- 在中创建的数据集 [[!DNL Catalog services]](../../catalog/home.md)。
-- 拼花文件的内容必须与要上传到的数据集的模式的子集匹配。
+- 在[[!DNL Catalog services]](../../catalog/home.md)中创建的数据集。
+- Parke文件的内容必须与要上传到的数据集的模式的子集匹配。
 - 在验证后拥有您的独特访问令牌。
 
 ### 批摄取最佳实践
@@ -44,27 +44,27 @@ API [!DNL Data Ingestion] 允许您通过以下三个基本步骤将数据作为
 - 建议的批处理大小介于256 MB和100 GB之间。
 - 每个批次最多应包含1500个文件。
 
-要上传大于512MB的文件，需要将文件分为较小的块。 此处可找到上传大型文件的 [说明](#large-file-upload---create-file)。
+要上传大于512MB的文件，需要将文件分为较小的块。 在[此处](#large-file-upload---create-file)可以找到上传大文件的说明。
 
 ### 读取示例API调用
 
-本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
+本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
 
 ### 收集所需标题的值
 
-要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
-- 授权：承载者 `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{IMS_ORG}`
+- 授权：载体`{ACCESS_TOKEN}`
+- x-api-key:`{API_KEY}`
+- x-gw-ims-org-id:`{IMS_ORG}`
 
-中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
 
-- x-sandbox-name: `{SANDBOX_NAME}`
+- x-sandbox-name:`{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
+>有关[!DNL Platform]中沙箱的详细信息，请参阅[沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
@@ -131,7 +131,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 >[!NOTE]
 >
->以下示例使用 [镶木地板](https://parquet.apache.org/documentation/latest/) 文件格式。 使用JSON文件格式的示例可在批量摄取开发人 [员指南中找到](./api-overview.md)。
+>以下示例使用[Apache Parce](https://parquet.apache.org/documentation/latest/)文件格式。 使用JSON文件格式的示例可在[批处理摄取开发人员指南](./api-overview.md)中找到。
 
 ### 小文件上传
 
@@ -238,7 +238,7 @@ curl -X PATCH "https://platform.adobe.io/data/foundation/import/batches/{BATCH_I
 
 ## 信号批处理完成
 
-在所有文件都上传到该批后，可以指示该批完成。 通过执行此操作， [!DNL Catalog] 将为已完成的文件创建DataSetFile条目，并与上面生成的批关联。 然 [!DNL Catalog] 后将批标记为成功，这会触发下游流以获取可用数据。
+在所有文件都上传到该批后，可以指示该批完成。 通过执行此操作，将为已完成的文件创建[!DNL Catalog] DataSetFile条目，并与上面生成的批关联。 然后，[!DNL Catalog]批被标记为成功，这会触发下游流以获取可用数据。
 
 **请求**
 
@@ -382,20 +382,20 @@ curl GET "https://platform.adobe.io/data/foundation/catalog/batch/{BATCH_ID}" \
 | -------- | ----------- |
 | `{USER_ID}` | 创建或更新批的用户的ID。 |
 
-字 `"status"` 段显示请求的批的当前状态。 这些批可以具有以下状态之一：
+`"status"`字段显示所请求批的当前状态。 这些批可以具有以下状态之一：
 
 ## 批摄取状态
 
 | 状态 | 描述 |
 | ------ | ----------- |
 | 已放弃 | 批未在预期时间范围内完成。 |
-| 已中止 | 已为指定 **批** 显式调用（通过Batch Ingest API）中止操作。 批处理处于“已加载”状态后，将无法中止它。 |
+| 已中止 | 中止操作已（通过批摄取API）为指定批调用&#x200B;**显式**。 批处理处于“已加载”状态后，将无法中止它。 |
 | 活动 | 批已成功提升，可用于下游冲减。 此状态可与“成功”交替使用。 |
 | 已删除 | 批处理数据已完全删除。 |
-| 失败 | 由错误配置和／或错误数据导致的终端状态。 失败批处理的数 **据将** 不显示。 此状态可与“Failure”（故障）交替使用。 |
+| 失败 | 由错误配置和／或错误数据导致的终端状态。 失败批处理的数据将&#x200B;**不显示**。 此状态可与“Failure”（故障）交替使用。 |
 | 非活动 | 批已成功提升，但已还原或已过期。 该批不再可用于下游冲减。 |
 | 已加载 | 批处理数据已完成，批处理已准备好进行升级。 |
-| 正在加载 | 正在上传此批的数据，且该批当前 **未** 准备提升。 |
+| 正在加载 | 正在上传此批的数据，该批当前&#x200B;**未**&#x200B;准备提升。 |
 | 正在重试 | 正在处理此批的数据。 但是，由于系统或临时错误，批处理失败——因此，正在重试此批处理。 |
 | 已暂存 | 批处理的升级过程的阶段阶段已完成，并且已运行摄取作业。 |
 | 暂存 | 正在处理批的数据。 |
