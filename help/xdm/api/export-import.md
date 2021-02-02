@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;export;import;rpc;
+keywords: Experience Platform；主题；热门主题；api;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；导出；导入；rpc;
 solution: Experience Platform
 title: 导出／导入端点指南
 description: 模式注册表API中的/export和/import端点允许您在IMS组织和沙箱之间共享XDM资源。
@@ -7,7 +7,7 @@ topic: developer guide
 translation-type: tm+mt
 source-git-commit: dfa91e387b6fcd0d528a523a06d2516bc8befc20
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '500'
 ht-degree: 1%
 
 ---
