@@ -1,23 +1,23 @@
 ---
-keywords: analytics destinations;analytics destination
+keywords: 分析目标；分析目标
 title: 分析目标
 seo-title: 分析目标
 description: 分析目标跟踪访客如何与您网站上的内容交互并收集数据以了解受众的行为。 这些平台可提供关于最有价值访客参与和转化的独特洞察。
 seo-description: 分析目标跟踪访客如何与您网站上的内容交互并收集数据以了解受众的行为。 这些平台可提供关于最有价值访客参与和转化的独特洞察。
 translation-type: tm+mt
-source-git-commit: 85e6a65e1407ca60e7b63681c045fadaaa24aef9
+source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
 workflow-type: tm+mt
-source-wordcount: '201'
+source-wordcount: '204'
 ht-degree: 5%
 
 ---
 
 
-# 分析目标 {#analytics-destinations}
+# 分析目标{#analytics-destinations}
 
 分析目标跟踪访客如何与您网站上的内容交互并收集数据以了解受众的行为。 这些平台可提供关于最有价值访客参与和转化的独特洞察。
 
-目前，实时客户数据平台支持下面列出的分析目标。 有关如何连接到这些目标的信息，请参阅各个链接：
+目前，Adobe Experience Platform支持下列分析目标。 有关如何连接到这些目标的信息，请参阅各个链接：
 
 - [Adform网站跟踪扩展](./adform.md)
 - [Adobe Analytics 扩展](./adobe-analytics.md)
