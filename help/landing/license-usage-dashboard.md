@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;user interface;UI;customization;license usage dashboard;dashboard;license usage;entitlement;consumption
+keywords: Experience Platform；用户界面；UI；自定义；许可证使用仪表板;仪表板；许可证使用；授权；使用
 title: 许可证使用仪表板
 description: '本指南概述了Adobe Experience PlatformUI中提供的许可证使用仪表板。 '
 topic: guide
 type: Documentation
 translation-type: tm+mt
-source-git-commit: 63758450276d47e7e0eddeb047779222cb80a3e2
+source-git-commit: 8e4d8d29ca13017d7f6de5ca790efe91b01c129d
 workflow-type: tm+mt
-source-wordcount: '550'
-ht-degree: 2%
+source-wordcount: '629'
+ht-degree: 1%
 
 ---
 
 
-# (Alpha)许可 [!UICONTROL 证使用] 仪表板 {#license-usage-dashboard}
+# (Alpha)[!UICONTROL 许可证使用]仪表板{#license-usage-dashboard}
 
 >[!IMPORTANT]
 >
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过它可以视图有关组织许可证使用情况的重要信息，这些信息在每日快照中捕获。 本指南概述了如何在UI中访问和使用许可证使用仪表板，并提供了有关仪表板中显示的可视化的更多信息。
 
-有关平台UI的一般概述，请访问 [Experience PlatformUI指南](ui-guide.md)。
+有关平台UI的一般概述，请访问[Experience PlatformUI指南](ui-guide.md)。
 
 ## 许可证使用仪表板数据
 
@@ -33,23 +33,23 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过它可
 
 ## 浏览许可证使用仪表板
 
-要导航到平台UI中的许可证使用仪表板，请在左边 **[!UICONTROL 栏中选择]** “许可证使用情况”。 此时将打开“概 **[!UICONTROL 述]** ”选项卡，显示仪表板。
+要导航到平台UI中的许可证使用仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 许可证使用]**。 此选项卡打开，显示仪表板。****
 
 ![](images/license-usage-dashboard/dashboard-overview.png)
 
 ### 选择沙箱
 
-要在仪表板中选择要视图的沙箱，请选择“生 [!UICONTROL 产] ”或“ [!UICONTROL 开发”]。 所选沙箱由沙箱名称旁的单选按钮指示。
+要在仪表板中选择要视图的沙箱，请选择[!UICONTROL Production]或[!UICONTROL Development]。 所选沙箱由沙箱名称旁的单选按钮指示。
 
 >[!NOTE]
 >
->沙箱的消耗报告对于同一类型的所有沙箱是累积的。 换言之，选择“ [!UICONTROL 生产] ”或 [!UICONTROL “开发] ”将分别报告所有生产或开发沙箱。
+>沙箱的消耗报告对于同一类型的所有沙箱是累积的。 换言之，选择[!UICONTROL 生产]或[!UICONTROL 开发]将分别报告所有生产或开发沙箱。
 
 ![](images/license-usage-dashboard/select-sandbox.png)
 
 ### 选择日期范围
 
-选择沙箱后，您可以使用日期范围下拉列表选择要在仪表板中显示的时间段。 有三种可用选项： [!UICONTROL 最近]30 [!UICONTROL 天，最]近90天 [!UICONTROL ，最]近12个月。 默认情况下，最近30天处于选中状态。
+选择沙箱后，您可以使用日期范围下拉列表选择要在仪表板中显示的时间段。 有三种可用选项：[!UICONTROL 最近30天]、[!UICONTROL 最近90天]和[!UICONTROL 最近12个月]。 默认情况下，最近30天处于选中状态。
 
 ![](images/license-usage-dashboard/select-date-range.png)
 
@@ -57,13 +57,19 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过它可
 
 许可证使用仪表板由构件组成，构件显示只读指标，提供有关组织许可证使用情况的重要信息。 要进一步了解这些构件，请参阅本指南中的可用构件部分。
 
-## 可用构件 {#available-widgets}
+## 可用构件{#available-widgets}
 
 Experience Platform当前提供一个构件，您可以使用它直观地显示许可证使用情况，并且很快会发布更多构件。
 
 ### [!UICONTROL 可寻址受众] {#addressable-audiences}
 
-可寻 **[!UICONTROL 址受众]** 构件在应用系统生成的合并策略以使用确定（专用）图形算法组合所有当前数据集后，测量用户档案存储中存在的受众总数。 用于计算此度量的合并策略由平台生成，无法编辑，也不能选择其他合并策略。
+**[!UICONTROL 可寻址受众]**&#x200B;构件在应用系统生成的合并策略以使用确定性（专用）图形算法合并来自所有当前数据集的用户档案片段后，显示用户档案数据存储中合并用户档案的总数。
+
+有关片段和合并用户档案的详细信息，请首先阅读[用户档案概述](../profile/home.md)的&#x200B;*用户档案片段与合并用户档案*&#x200B;部分。
+
+>[!NOTE]
+>
+>用于计算此度量的合并策略由Experience Platform生成，无法编辑，也不能选择其他合并策略。 此系统生成的合并策略与用于在[!DNL Profile]仪表板中计算[!UICONTROL 受众大小]的默认合并策略不同，因此[!UICONTROL 许可证使用情况]和[!DNL Profile]仪表板中的受众计数不太可能完全相同。
 
 ![](images/license-usage-dashboard/addressable-audiences.png)
 
@@ -76,4 +82,4 @@ Experience Platform当前提供一个构件，您可以使用它直观地显示�
 
 ## 后续步骤
 
-通过遵循此文档，您现在应该能够找到许可证使用仪表板并选择沙箱以进行视图。 您还应了解可用构件中显示的度量。 要进一步了解Experience PlatformUI，请参阅平 [台UI指南](ui-guide.md)。
+通过遵循此文档，您现在应该能够找到许可证使用仪表板并选择沙箱以进行视图。 您还应了解可用构件中显示的度量。 要进一步了解Experience PlatformUI，请参阅[平台UI指南](ui-guide.md)。
