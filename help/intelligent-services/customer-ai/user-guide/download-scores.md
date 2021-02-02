@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;download scores;customer ai;popular topics;Export;export;customer ai download;customer ai scores
+keywords: Experience Platform；下载得分；用户ai；热门主题；导出；用户ai下载；用户ai得分
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
 title: 在客户AI中下载分数
 topic: Downloading scores
-description: 客户AI允许您以镶木地板文件格式下载分数。
+description: 客户AI允许您下载Parke文件格式的得分。
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '945'
+source-wordcount: '961'
 ht-degree: 2%
 
 ---
@@ -19,18 +19,18 @@ ht-degree: 2%
 
 ## 入门指南
 
-客户AI允许您以镶木地板文件格式下载分数。 本教程要求您已阅读并完成入门指南中的下载客户AI [得分](../getting-started.md) 。
+客户AI允许您下载Parke文件格式的得分。 本教程要求您已阅读并完成[入门](../getting-started.md)指南中的下载客户AI得分部分。
 
-此外，要访问客户AI的得分，您需要有一个运行状态成功的服务实例可用。 要创建新服务实例，请访 [问配置客户AI实例](./configure.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分中，请允许24小时，它才能完成运行。
+此外，要访问客户AI的得分，您需要有一个运行状态成功的服务实例可用。 要创建新服务实例，请访问[配置客户AI实例](./configure.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分，请允许24小时，它才能完成运行。
 
 目前，有两种方法可下载客户AI得分：
 
-1. 如果要在单个级别下载分数和／或未启用实时用户档案，请通过导航到查找数据集ID来 [开始该](#dataset-id)。
-2. 如果您启用了用户档案并希望下载已使用客户AI配置的区段，请导航以 [下载已使用客户AI配置的区段](#segment)。
+1. 如果要下载单个级别的得分和／或未启用实时用户档案，请导航至[查找数据集ID](#dataset-id)进行开始。
+2. 如果您启用了用户档案并希望下载已使用客户AI配置的区段，请导航至[下载已使用客户AI](#segment)配置的区段。
 
-## Find your dataset ID {#dataset-id}
+## 查找数据集ID {#dataset-id}
 
-在您的客户AI洞察服务实例中，单击右 *上方导航* 中的更多操作下拉框，然后选择 **[!UICONTROL 访问得分]**。
+在您的客户AI洞察服务实例中，单击右上方导航中的&#x200B;*更多操作*&#x200B;下拉框，然后选择&#x200B;**[!UICONTROL 访问分数]**。
 
 ![更多操作](../images/insights/more-actions.png)
 
@@ -40,7 +40,7 @@ ht-degree: 2%
 
 ## 检索批ID {#retrieve-your-batch-id}
 
-使用上一步中的数据集ID，您需要调用目录API以检索批处理ID。 此API调用使用其他查询参数，以返回最新的成功批次，而不是属于您组织的列表批次。 要返回附加批，请将限制查询参数的数量增加到您希望返回的所需数量。 有关可用查询参数类型的详细信息，请访问有关使用查询参数 [筛选目录数据的指南](../../../catalog/api/filter-data.md)。
+使用上一步中的数据集ID，您需要调用目录API以检索批处理ID。 此API调用使用其他查询参数，以返回最新的成功批次，而不是属于您组织的列表批次。 要返回附加批，请将限制查询参数的数量增加到您希望返回的所需数量。 有关可用查询参数类型的详细信息，请访问[使用查询参数筛选目录数据的指南](../../../catalog/api/filter-data.md)。
 
 **API格式**
 
@@ -113,9 +113,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?dataSet=5
 }
 ```
 
-## 使用您的批ID检索下一个API调用 {#retrieve-the-next-api-call-with-your-batch-id}
+## 使用批处理ID {#retrieve-the-next-api-call-with-your-batch-id}检索下一个API调用
 
-获得批ID后，您便可以向发出新GET请求 `/batches`。 该请求返回用作下一个API请求的链接。
+获得批ID后，您便能够向`/batches`发出新的GET请求。 该请求返回用作下一个API请求的链接。
 
 **API格式**
 
@@ -125,7 +125,7 @@ GET batches/{BATCH_ID}/files
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 在上一步骤中检索的批ID可 [以检索批ID](#retrieve-your-batch-id)。 |
+| `{BATCH_ID}` | 在上一步[中检索的批ID检索您的批ID](#retrieve-your-batch-id)。 |
 
 **请求**
 
@@ -141,7 +141,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/035e2520-5
 
 **响应**
 
-成功的响应返回包含对象的有效 `_links` 负荷。 对象 `_links` 中包含 `href` 一个新的API调用作为其值。 复制此值以继续执行下一步。
+成功的响应返回包含`_links`对象的有效负荷。 在`_links`对象中是一个`href`，其值为新API调用。 复制此值以继续执行下一步。
 
 ```json
 {
@@ -167,9 +167,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/035e2520-5
 }
 ```
 
-## 检索文件 {#retrieving-your-files}
+## 检索文件{#retrieving-your-files}
 
-使用上 `href` 一步中获得的值作为API调用，发出新的GET请求以检索文件目录。
+使用上一步中得到的`href`值作为API调用，发出新的GET请求以检索文件目录。
 
 **API格式**
 
@@ -179,7 +179,7 @@ GET files/{DATASETFILE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{DATASETFILE_ID}` | 数据集文件ID以上一步 `href` 中的值 [返回](#retrieve-the-next-api-call-with-your-batch-id)。 也可在对象类型下 `data` 的数组中访问该 `dataSetFileId`项。 |
+| `{DATASETFILE_ID}` | dataSetFile ID以[上一步](#retrieve-the-next-api-call-with-your-batch-id)的`href`值返回。 也可以在`data`数组中对象类型`dataSetFileId`下访问它。 |
 
 **请求**
 
@@ -238,15 +238,15 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
 | `_links.self.href` | 用于下载目录中文件的GET请求URL。 |
 
 
-复制数 `href` 组中任何文件对象的 `data` 值，然后继续执行下一步。
+复制`data`数组中任何文件对象的`href`值，然后继续执行下一步。
 
 ## 下载文件数据
 
-要下载文件数据，请对上一步检索文 `"href"` 件时复制的值发出GET [请求](#retrieving-your-files)。
+要下载文件数据，请向您在上一步[检索文件](#retrieving-your-files)中复制的`"href"`值发出GET请求。
 
 >[!NOTE]
 >
->如果您直接在命令行中发出此请求，可能会提示您在请求标头后添加输出。 以下请求示例使用 `--output {FILENAME.FILETYPE}`。
+>如果您直接在命令行中发出此请求，可能会提示您在请求标头后添加输出。 以下请求示例使用`--output {FILENAME.FILETYPE}`。
 
 **API格式**
 
@@ -256,7 +256,7 @@ GET files/{DATASETFILE_ID}?path={FILE_NAME}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{DATASETFILE_ID}` | 数据集文件ID在上一步 `href` 的值中 [返回](#retrieve-the-next-api-call-with-your-batch-id)。 |
+| `{DATASETFILE_ID}` | dataSetFile ID从上一步[返回的`href`值中返回。](#retrieve-the-next-api-call-with-your-batch-id) |
 | `{FILE_NAME}` | 文件的名称。 |
 
 **请求**
@@ -280,21 +280,21 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/035e2520
 
 ![终端](../images/download-scores/response.png)
 
-## 下载使用客户AI配置的区段 {#segment}
+## 下载使用客户AI {#segment}配置的区段
 
-下载得分数据的另一种方法是将受众导出到数据集。 分段作业成功完成后(属性的 `status` 值为“SUCCEEDED”)，您可以将受众导出到数据集，在该数据集中可以访问并执行操作。 要了解有关细分的更多信息，请访 [问细分概述](../../../segmentation/home.md)。
+下载得分数据的另一种方法是将受众导出到数据集。 分段作业成功完成后（`status`属性的值为“SUCCEEDED”），您可以将受众导出到数据集，在该数据集中可以访问并执行操作。 要了解有关分段的更多信息，请访问[分段概述](../../../segmentation/home.md)。
 
 >[!IMPORTANT]
 >
 >要利用此导出方法，需要为数据集启用实时客户用户档案。
 
-区段 [评估指南中](../../../segmentation/tutorials/evaluate-a-segment.md) “导出区段”部分涵盖导出受众数据集所需的步骤。 本指南概述并提供以下示例：
+区段评估指南中的[导出区段](../../../segmentation/tutorials/evaluate-a-segment.md)部分涵盖导出受众数据集所需的步骤。 本指南概述并提供以下示例：
 
-- **创建目标数据集：** 创建数据集以保存受众成员。
+- **创建目标数据集：** 创建数据集以容纳受众成员。
 - **在数据集中生成受众用户档案:** 根据区段作业的结果，用XDM单个用户档案填充数据集。
-- **监视导出进度：** 检查导出过程的当前进度。
-- **读取受众数据：** 检索表示用户档案成员的结果XDM单个受众。
+- **监视导出进** 度：检查导出过程的当前进度。
+- **读取受众数** 据：检索表示受众成员的结果XDM单个用户档案。
 
 ## 后续步骤
 
-此文档概述了下载客户AI得分所需的步骤。 您现在可以继续浏览提供 [的其他](../../home.md) “智能服务”和指南。
+此文档概述了下载客户AI得分所需的步骤。 现在，您可以继续浏览其他提供的[智能服务](../../home.md)和指南。
