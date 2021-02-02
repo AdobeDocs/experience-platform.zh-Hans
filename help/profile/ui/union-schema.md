@@ -1,24 +1,25 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;;unified profile;Unified Profile;unified;Profile;rtcp;enable profile;Enable profile;Union schema;UNION PROFILE;union profile
-title: 实时客户用户档案UI指南
+keywords: Experience Platform;用户档案；实时客户用户档案；统一用户档案；统一用户档案；统一用户档案;模式;rtcp；启用用户档案；启用用户档案;合并合并;用户档案合并用户档案;
+title: 合并模式UI指南
 topic: guide
+type: Documentation
 description: 在Adobe Experience Platform用户界面(UI)中，您可以轻松视图组织内的任何合并模式，并预览特定类的字段、身份、关系和贡献模式。 本指南提供有关如何使用平台UI视图和浏览合并模式的详细信息。
 translation-type: tm+mt
-source-git-commit: f86f7483e7e78edf106ddd34dc825389dadae26a
+source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
 workflow-type: tm+mt
-source-wordcount: '1022'
+source-wordcount: '1044'
 ht-degree: 0%
 
 ---
 
 
-# [!UICONTROL 合并模式] UI指南
+# [!UICONTROL 合并] 架构UI指南
 
 在Adobe Experience Platform用户界面(UI)中，您可以轻松视图组织内的任何合并模式，并预览特定类的字段、身份、关系和贡献模式。 本指南提供有关如何使用平台UI视图和浏览合并模式的详细信息。
 
 ## 入门指南
 
-本UI指南需要了解与管理实 [!DNL Experience Platform] 时客户用户档案数据相关的各种服务。 在阅读本指南或在UI中工作之前，请查阅以下服务的文档：
+本UI指南要求了解与管理实时客户用户档案数据相关的各种[!DNL Experience Platform]服务。 在阅读本指南或在UI中工作之前，请查阅以下服务的文档：
 
 * [[!DNL Real-time Customer Profile]](../home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 * [[!DNL Identity Service]](../../identity-service/home.md):当 [!DNL Real-time Customer Profile] 不同数据源被引入时，通过连接它们的身份实现 [!DNL Platform]。
@@ -30,25 +31,25 @@ ht-degree: 0%
 
 可以为多个用例创建模式，引用同一类，但包含特定于其使用的字段。 当模式启用用户档案时，它将成为合并模式的一部分。 换言之，合并模式由多个共享同一类并已启用用户档案的模式组成。 合并模式允许您看到共享同一类的模式中包含的所有字段的合并。 实时客户用户档案使用合并模式为每位客户创建整体视图。
 
-使用合并模式需要深入了解XDM模式。 有关详细信息，请首先阅读 [模式排版基础](../../xdm/schema/composition.md)。
+使用合并模式需要深入了解XDM模式。 有关详细信息，请首先阅读[模式合成基础知识](../../xdm/schema/composition.md)。
 
 ## 视图合并模式
 
-要导航到平台UI中的合并模式，请从左 **[!UICONTROL 侧导航]** 中选择用户档案 **[!UICONTROL ，然后选择]** 合并模式选项卡。 合并 [!UICONTROL 模式] 选项卡将打开，显示当前选定类的合并模式。
+要导航到平台UI中的合并模式，请从左侧导航中选择&#x200B;**[!UICONTROL 用户档案]**，然后选择&#x200B;**[!UICONTROL 合并模式]**&#x200B;选项卡。 将打开[!UICONTROL 合并模式]选项卡，显示当前选定类的合并模式。
 
 ![](../images/union-schema/union-schema-landing.png)
 
 ## 选择类
 
-要显示特定XDM类的合并模式，请从“类”下拉菜单中选择 **[!UICONTROL 该类]** 。 由于并非所有类都具有合并模式，因此下拉列表中仅提供具有合并模式的类(即具有已启用用户档案的模式的类)。
+要显示特定XDM类的合并模式，请从&#x200B;**[!UICONTROL 类]**&#x200B;下拉菜单中选择该类。 由于并非所有类都具有合并模式，因此下拉列表中仅提供具有合并模式的类(即具有已启用用户档案的模式的类)。
 
-选择某个类后，显示的模式会更新，以反映选定类的合并模式。 例如，您可以选择“ **[!UICONTROL XDM单个用户档案]** ”来视图该类的合并模式。
+选择某个类后，显示的模式会更新，以反映选定类的合并模式。 例如，您可以选择&#x200B;**[!UICONTROL XDM单个用户档案]**&#x200B;来视图该类的合并模式。
 
 ![](../images/union-schema/union-schema-class.png)
 
 ## 浏览合并模式
 
-您可以浏览合并模式，方法是上下滚动以视图完整的模式结构，并选择右尖括号()以展`>`开嵌套字段。
+您可以浏览合并模式，方法是上下滚动以视图完整的模式结构，并选择右尖括号(`>`)展开嵌套字段。
 
 ![](../images/union-schema/union-schema-explore.png)
 
@@ -58,13 +59,13 @@ ht-degree: 0%
 
 选择贡献模式的名称会显示与该模式相关的数据集的名称，这些数据集会将数据引入所选字段。 每个数据集名称都显示为一个链接。 选择数据集名称后，将在新窗口中打开该数据集的活动选项卡。
 
-有关数据集的更多信息(包括查看数据集活动和在UI中预览数据集数据)，请访 [问数据集UI指南](../../catalog/datasets/user-guide.md)。
+有关数据集的更多信息(包括查看数据集活动和在UI中预览数据集数据)，请访问[数据集UI指南](../../catalog/datasets/user-guide.md)。
 
 ![](../images/union-schema/union-schema-field-datasets.png)
 
 ## 视图贡献模式
 
-您还可以通过选择所有贡献视图来模式哪些特定模式对 **[!UICONTROL 合并模式有贡献]** ，以扩展模式列表。 根据您选择的类和您的组织在平台中创建的模式数，这可能是包含单个模式的短列表或包含多个模式的长列表。
+您还可以通过选择&#x200B;**[!UICONTROL 所有贡献模式]**&#x200B;来扩展合并的列表，来视图哪些特定模式对模式有贡献。 根据您选择的类和您的组织在平台中创建的模式数，这可能是包含单个模式的短列表或包含多个模式的长列表。
 
 ![](../images/union-schema/union-schema-contributing-schemas.png)
 
@@ -74,7 +75,7 @@ ht-degree: 0%
 
 ## 视图身份
 
-通过UI，您可以视图合并模式中包含的身份列表，方法是选择“ **[!UICONTROL 身份]** ”展开列表。
+通过UI，您可以视图合并模式中包含的身份列表，方法是选择&#x200B;**[!UICONTROL 标识]**&#x200B;展开列表。
 
 ![](../images/union-schema/union-schema-identities.png)
 
@@ -88,9 +89,9 @@ ht-degree: 0%
 
 合并模式UI还允许您查看已根据所选模式类为模式定义的关系。 定义关系是一种连接属于不同类的两个模式的方式，以便获得更复杂的客户数据洞察。
 
-如果已为所选类建立关系，则选择“关 **[!UICONTROL 系]** ”将显示用于创建关系的字段列表。 并非所有模式都使用或需要定义关系，因此关系部分通常不包含任何字段。
+如果已为所选类建立关系，则选择&#x200B;**[!UICONTROL 关系]**&#x200B;将显示用于创建关系的字段列表。 并非所有模式都使用或需要定义关系，因此关系部分通常不包含任何字段。
 
-要进一步了解模式关系，包括如何使用UI定义关系，请访 [问此文档，了解模式关系](../../xdm/tutorials/relationship-ui.md)。
+要进一步了解模式关系，包括如何使用UI定义模式关系，请访问[此关系文档](../../xdm/tutorials/relationship-ui.md)。
 
 ![](../images/union-schema/union-schema-relationships.png)
 
@@ -100,4 +101,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过阅读本指南，您现在了解如何使用UI视图和导航合并 [!DNL Experience Platform] 模式。 有关模式的更多信息（包括如何在整个平台中使用它们），请首先阅读XDM [系统概述](../../xdm/home.md)。
+阅读本指南，您现在了解如何使用[!DNL Experience Platform] UI视图和导航合并模式。 有关模式的更多信息（包括如何在整个平台中使用它们），请首先阅读[XDM系统概述](../../xdm/home.md)。
