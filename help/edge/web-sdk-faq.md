@@ -4,9 +4,9 @@ seo-title: Adobe Experience PlatformWeb SDK常见问题解答
 description: 关于Adobe Experience PlatformWeb SDK的常见问题
 seo-description: 关于Adobe Experience PlatformWeb SDK的常见问题
 translation-type: tm+mt
-source-git-commit: a493fad1bbd6114ba06074ebb3064268ba25b445
+source-git-commit: f4f0b00dfd324f69aa2b4348740f6e767e86a6de
 workflow-type: tm+mt
-source-wordcount: '1683'
+source-wordcount: '1808'
 ht-degree: 2%
 
 ---
@@ -124,7 +124,7 @@ Web SDK正在快速发展。 正在开发更多使用案例。 您可以在此�
 
 ## 当我使用合金进行开始时，是否可以迁移ECID，以便我的网站访客不会将开始显示为新访客?
 
-是的，Adobe Experience PlatformWeb SDK提供身份迁移功能。 请按照[此文档](https://docs.adobe.com/content/help/en/experience-platform/edge/fundamentals/identity.html#id-migration)中的说明进行操作，了解详细信息。
+是的，Adobe Experience PlatformWeb SDK提供身份迁移功能。 有关更多详细信息，请按照[平台Web SDK标识文档](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html?lang=en#id-migration)中的ID迁移说明进行操作。
 
 ## Web SDK与Adobe Experience Platform Launch有何不同？
 
@@ -153,6 +153,18 @@ Web SDK正在快速发展。 正在开发更多使用案例。 您可以在此�
 ## 什么是CNAME或第一方域，它为何重要？
 
 [Adobe文档](https://docs.adobe.com/content/help/zh-Hans/id-service/using/reference/analytics-reference/cname.html)中提供了有关CNAME的更多信息
+
+## Adobe Experience PlatformWeb SDK是否使用cookies? 如果是，它使用哪些cookie?
+
+是的，目前Web SDK在1-4 Cookies之间的任意位置使用，具体取决于您的实施。 以下是您在Web SDK中可能看到的4个Cookie的列表及其使用方式：
+
+**kndct_orgid_identity：标** 识cookie用于存储ECID以及与ECID相关的一些其他信息。
+
+**kndctr_orgid_connence:** 此cookie存储用户对网站的同意偏好。
+
+**kndctr_orgid_personalization：此cookie** 包含Adobe Target用于个性化网页的会话信息。
+
+**kndctr_orgid_acconvertcheck：此基** 于会话的cookie指示服务器查找同意首选项服务器端。
 
 ## 哪里可以获取有关Adobe Experience PlatformWeb SDK的更多信息？
 
