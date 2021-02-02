@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;streaming connection;create streaming connection;api guide;tutorial;create a streaming connection;streaming ingestion;ingestion;
+keywords: Experience Platform；主页；热门主题；流连接；创建流连接；api指南；教程；创建流连接；流摄取；
 solution: Experience Platform
 title: 使用API创建流连接
 topic: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform数据摄取服务API的一部分。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '677'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 # 使用API创建流连接
 
-本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform数据API的一 [!DNL Ingestion Service] 部分。
+本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform数据[!DNL Ingestion Service] API的一部分。
 
 ## 入门指南
 
@@ -26,30 +26,30 @@ ht-degree: 2%
 
 本教程还需要掌握Adobe Experience Platform各项服务的工作知识。 在开始本教程之前，请查看以下服务的相关文档：
 
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织体验数据 [!DNL Platform] 的标准化框架。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):用于组织体验数据 [!DNL Platform] 的标准化框架。
 - [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
 
 以下各节提供了成功调用流式摄取API所需了解的其他信息。
 
 ### 读取示例API调用
 
-本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
+本指南提供示例API调用，以演示如何格式化请求。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
 
 ### 收集所需标题的值
 
-要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
-- 授权：承载者 `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{IMS_ORG}`
+- 授权：载体`{ACCESS_TOKEN}`
+- x-api-key:`{API_KEY}`
+- x-gw-ims-org-id:`{IMS_ORG}`
 
-中的所有资源 [!DNL Experience Platform] 都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
 
-- x-sandbox-name: `{SANDBOX_NAME}`
+- x-sandbox-name:`{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关中沙箱的详细信 [!DNL Platform]息，请参阅 [沙箱概述文档](../../sandboxes/home.md)。
+>有关[!DNL Platform]中沙箱的详细信息，请参阅[沙箱概述文档](../../sandboxes/home.md)。
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
 
@@ -69,7 +69,7 @@ POST /flowservice/connections
 
 >[!NOTE]
 >
->必须如示例 `providerId` 所 `connectionSpec` 示使 **用** 列出的值和值，因为它们是您为流摄取创建流连接的API的指定值。
+>所列`providerId`和`connectionSpec` **的值必须**&#x200B;如示例所示，因为它们是为流接收创建流连接的API的指定。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
@@ -110,7 +110,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 您新 `id` 创建的连接的名称。 此处将称为 `{CONNECTION_ID}`。 |
+| `id` | 您新创建的连接的`id`。 此处将称为`{CONNECTION_ID}`。 |
 | `etag` | 分配给连接的标识符，指定连接的修订版。 |
 
 ## 获取数据收集URL
@@ -125,7 +125,7 @@ GET /flowservice/connections/{CONNECTION_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | 您之 `id` 前创建的连接的值。 |
+| `{CONNECTION_ID}` | 您先前创建的连接的`id`值。 |
 
 **请求**
 
@@ -139,7 +139,7 @@ curl -X GET https://platform.adobe.io/data/foundation/flowservice/connections/{C
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关所请求连接的详细信息。 数据收集URL是使用该连接自动创建的，并且可以使用该值进行 `inletUrl` 检索。
+成功的响应返回HTTP状态200，其中包含有关所请求连接的详细信息。 数据收集URL是使用连接自动创建的，并可使用`inletUrl`值进行检索。
 
 ```json
 {
@@ -178,7 +178,7 @@ curl -X GET https://platform.adobe.io/data/foundation/flowservice/connections/{C
 
 ## 后续步骤
 
-现在您已创建流连接，您可以流式传输时间序列或记录数据，从而在中收集数据 [!DNL Platform]。 要了解如何将时间系列数据流式传 [!DNL Platform]输到，请转 [到流式时间序列数据教程](./streaming-time-series-data.md)。 要了解如何将记录数据流化 [!DNL Platform]到，请转到流 [化记录数据教程](./streaming-record-data.md)。
+现在您已创建流连接，您可以流化时间序列或记录数据，从而在[!DNL Platform]内收集数据。 要了解如何将时间序列数据流化到[!DNL Platform]，请转至[流式时间序列数据教程](./streaming-time-series-data.md)。 要了解如何将记录数据流化到[!DNL Platform]，请转到[流记录数据教程](./streaming-record-data.md)。
 
 ## 附录
 
@@ -186,6 +186,6 @@ curl -X GET https://platform.adobe.io/data/foundation/flowservice/connections/{C
 
 ### 经过身份验证的流连接
 
-通过实名数据收集，Adobe Experience Platform服务( [!DNL Real-time Customer Profile] 如和 [!DNL Identity])可以区分来自可信来源和不可信来源的记录。 要发送个人身份信息(PII)的客户端可以通过作为POST请求的一部分发送IMS访问令牌来发送IMS-如果IMS令牌有效，则记录将标记为从受信任源收集。
+经过身份验证的数据收集使Adobe Experience Platform服务（如[!DNL Real-time Customer Profile]和[!DNL Identity]）能够区分来自可信源和不可信源的记录。 要发送个人身份信息(PII)的客户端可以通过作为POST请求的一部分发送IMS访问令牌来发送IMS-如果IMS令牌有效，则记录将标记为从受信任源收集。
 
-有关创建经过身份验证的流连接的更多信息，请参 [阅创建经过身份验证的流连接教程](create-authenticated-streaming-connection.md)。
+有关创建已验证的流连接的更多信息，请参阅[创建已验证的流连接教程](create-authenticated-streaming-connection.md)。
