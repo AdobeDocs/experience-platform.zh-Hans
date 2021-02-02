@@ -1,26 +1,26 @@
 ---
-keywords: Experience Platform;home;popular topics;CJA;journey analytics;customer journey analytics;campaign orchestration;orchestration;customer journey;journey;journey orchestration;capability;region
+keywords: Experience Platform；主页；热门主题；CJA；旅程分析；客户旅程分析；活动编排；客户旅程；旅程；旅程编排；功能；地区
 solution: Experience Platform
-title: 平台文档语言支持
+title: Experience Platform文档语言支持
 topic: getting started
-description: Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理能够提升客户体验的完整解决方案。  Experience Platform 让组织可以实现源自任何系统的客户数据和内容的集中化和标准化，并应用数据科学和机器学习来显著改进丰富的个性化体验的设计和交付。
+description: Adobe Experience Platform公司使组织能够在应用数据科学和机器学习之前集中和标准化客户数据，从而显着改进丰富的个性化体验的设计和投放。
 translation-type: tm+mt
-source-git-commit: 72f60ef80a23f5ca4e70147ee6aa6027028fefd0
+source-git-commit: 96600567bb4965a1611e2b9a7cd6cb49298a567f
 workflow-type: tm+mt
-source-wordcount: '129'
-ht-degree: 27%
+source-wordcount: '103'
+ht-degree: 0%
 
 ---
 
 
-# 平台文档语言支持
+# Experience Platform文档语言支持
 
-Adobe Experience Platform文档提供多种语言版本。 要更改语言，请单击语言下拉框，然后选择所需的语言。
+Adobe Experience Platform文档提供多种语言版本。
 
-![image](../images/overview/lang.jpg)
+要更改显示文档的语言，请在顶部导航中选择语言图标。
 
-## [!DNL Experience Platform] 文档
+![](../images/overview/documentation-language.png)
 
-要进一步了解可用文档类型，请访问平台文 [档类型概述](overview.md)。
+当语言下拉框打开时，选择要视图文档的语言。
 
-要进一步了解特定功 [!DNL Platform] 能或服务，请从Experience Platform文档登陆页 [中选择指南](https://experienceleague.adobe.com/docs/experience-platform.html)。
+![](../images/overview/documentation-language-select.png)
