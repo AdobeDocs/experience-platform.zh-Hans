@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics; flow service; update connections
+keywords: Experience Platform；主页；热门主题；流服务；更新连接
 solution: Experience Platform
 title: 使用Flow Service API更新连接信息
 topic: overview
 type: Tutorial
 description: 在某些情况下，可能需要更新现有源连接的详细信息。 流服务API允许您添加、编辑和删除现有批处理或流连接的详细信息，包括其名称、描述和凭据。
 translation-type: tm+mt
-source-git-commit: d1a9f7d0c83b8bb34e26b6e5a9825488e62b43de
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '696'
+source-wordcount: '709'
 ht-degree: 2%
 
 ---
@@ -18,32 +18,32 @@ ht-degree: 2%
 
 在某些情况下，可能需要更新现有源连接的详细信息。 [!DNL Flow Service] 允许您添加、编辑和删除现有批处理或流连接的详细信息，包括其名称、描述和凭据。
 
-本教程介绍使用更新现有连接的详细信息和凭据的步骤 [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)。
+本教程介绍使用[[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)更新现有连接的详细信息和凭据的步骤。
 
 ## 入门指南
 
-本教程要求您具有有效的连接ID。 如果您没有有效的连接ID，请从源概述中选择您选择的连接 [器](../../home.md) ，并按照概述的步骤操作，然后尝试本教程。
+本教程要求您具有有效的连接ID。 如果您没有有效的连接ID，请从[源概述](../../home.md)中选择您选择的连接器，然后按照概述的步骤操作，再尝试本教程。
 
 本教程还要求您对Adobe Experience Platform的以下组件有充分的了解：
 
-* [来源](../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+* [来源](../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入 [!DNL Platform] 数据。
 * [沙箱](../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供您需要了解的其他信息，以便使用API成功更新连接的信 [!DNL Flow Service] 息。
+以下各节提供您需要了解的其他信息，以便使用[!DNL Flow Service] API成功更新连接的信息。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅疑难解答 [指南中有关如何阅读示例API调](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 用 [!DNL Experience Platform] 一节。
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
 
 ### 收集所需标题的值
 
-要调用API，您必 [!DNL Platform] 须先完成身份验证 [教程](../../../tutorials/authentication.md)。 完成身份验证教程可为所有API调用中的每个所需 [!DNL Experience Platform] 标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-中的所有资 [!DNL Experience Platform]源(包括属于这些资 [!DNL Flow Service]源)都与特定虚拟沙箱隔离。 对API的 [!DNL Platform] 所有请求都需要一个标头，它指定操作将在中进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -54,7 +54,7 @@ ht-degree: 2%
 ## 查找连接详细信息
 
 >[!NOTE]
->本教程以Salesforce [源连接器为例](../../connectors/crm/salesforce.md) ，但概述的步骤适用于任何可用 [的源连接器](../../home.md)。
+>本教程以[Salesforce源连接器](../../connectors/crm/salesforce.md)为例，但概述的步骤适用于任何[可用源连接器](../../home.md)。
 
 更新连接信息的第一步是使用连接ID检索连接详细信息。
 
@@ -66,7 +66,7 @@ GET /connections/{CONNECTION_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | 要检 `id` 索的连接的唯一值。 |
+| `{CONNECTION_ID}` | 要检索的连接的唯一`id`值。 |
 
 **请求**
 
@@ -83,7 +83,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回连接的当前详细信息，包括其凭据、唯一标识符()`id`和版本。
+成功的响应会返回连接的当前详细信息，包括其凭据、唯一标识符(`id`)和版本。
 
 ```json
 {
@@ -121,10 +121,10 @@ curl -X GET \
 
 ## 更新连接
 
-拥有现有连接ID后，请对API执行PATCH [!DNL Flow Service] 请求。
+拥有现有连接ID后，请对[!DNL Flow Service] API执行PATCH请求。
 
 >[!IMPORTANT]
->PATCH请求需要使用标 `If-Match` 头。 此头的值是连接的唯一版本。
+>PATCH请求需要使用`If-Match`头。 此头的值是连接的唯一版本。
 
 **API格式**
 
@@ -134,7 +134,7 @@ PATCH /connections/{CONNECTION_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | 要更 `id` 新的连接的唯一值。 |
+| `{CONNECTION_ID}` | 要更新的连接的唯一`id`值。 |
 
 **请求**
 
@@ -173,7 +173,7 @@ curl -X PATCH \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `op` | 用于定义更新连接所需操作的操作调用。 操作包括： `add`、 `replace`和 `remove`。 |
+| `op` | 用于定义更新连接所需操作的操作调用。 操作包括：`add`、`replace`和`remove`。 |
 | `path` | 要更新的参数的路径。 |
 | `value` | 要更新参数的新值。 |
 
@@ -190,7 +190,7 @@ curl -X PATCH \
 
 ## 查找更新的连接详细信息
 
-您可以检索更新后的同一连接ID，以查看您通过向API发出GET请求所做的 [!DNL Flow Service] 更改。
+您可以检索已更新的同一连接ID，以查看您通过向[!DNL Flow Service] API发出GET请求所做的更改。
 
 **API格式**
 
@@ -200,7 +200,7 @@ GET /connections/{CONNECTION_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | 要检 `id` 索的连接的唯一值。 |
+| `{CONNECTION_ID}` | 要检索的连接的唯一`id`值。 |
 
 **请求**
 
@@ -255,4 +255,4 @@ curl -X GET \
 
 ## 后续步骤
 
-通过遵循本教程，您已使用API更新了与连接相关的凭据和 [!DNL Flow Service] 信息。 有关使用源连接器的详细信息，请参阅 [源概述](../../home.md)。
+通过遵循本教程，您已使用[!DNL Flow Service] API更新了与连接关联的凭据和信息。 有关使用源连接器的详细信息，请参阅[源概述](../../home.md)。
