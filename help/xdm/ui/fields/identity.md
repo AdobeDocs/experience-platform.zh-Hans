@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;data model;ui;workspace;identity;field;
+keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；体验数据模型；数据模型；ui；工作区；标识；字段；
 solution: Experience Platform
 title: 在UI中定义标识字段
 description: 了解如何在Experience Platform用户界面中定义标识字段。
@@ -7,7 +7,7 @@ topic: user guide
 translation-type: tm+mt
 source-git-commit: f5f507c2e962e2ff9f81376bfe363a6f438056cd
 workflow-type: tm+mt
-source-wordcount: '556'
+source-wordcount: '575'
 ht-degree: 0%
 
 ---
