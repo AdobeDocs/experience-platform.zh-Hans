@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;collect customer success;customer success
+keywords: Experience Platform；主页；热门主题；收集客户成功；客户成功
 solution: Experience Platform
 title: 通过源连接器和API从客户成功系统收集数据
 topic: overview
 type: Tutorial
 description: 本教程介绍从客户成功系统检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: d8ec9b4b28602bce30365fe64829c8c8df1b9211
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '1527'
+source-wordcount: '1541'
 ht-degree: 1%
 
 ---
@@ -35,11 +35,11 @@ ht-degree: 1%
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)疑难解答指南中关于如何阅读示例API调用[的一节。[!DNL Experience Platform]
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](../../../../tutorials/authentication.md)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
