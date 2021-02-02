@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;hubspot;Hubspot
+keywords: Experience Platform；主页；热门主题；hubspot;hubspot
 solution: Experience Platform
 title: 使用Flow Service API创建HubSpot连接器
 topic: overview
 type: Tutorial
 description: 本教程使用Flow Service API指导您完成将Experience Platform连接到HubSpot的步骤。
 translation-type: tm+mt
-source-git-commit: 9092c3d672967d3f6f7bf7116c40466a42e6e7b1
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '597'
 ht-degree: 1%
 
 ---
@@ -53,7 +53,7 @@ ht-degree: 1%
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](../../../../../tutorials/authentication.md)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
