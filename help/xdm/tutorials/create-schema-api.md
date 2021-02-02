@@ -1,24 +1,24 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;schema;Schema;schemas;Schemas;create
+keywords: Experience Platform；主题；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；模式;模式;模式;模式；创建
 solution: Experience Platform
 title: 使用模式注册表API创建模式
 topic: tutorial
 type: Tutorial
 description: 本教程使用模式注册表API指导您完成使用标准类构建模式的步骤。
 translation-type: tm+mt
-source-git-commit: 097fe219e0d64090de758f388ba98e6024db2201
+source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
 workflow-type: tm+mt
-source-wordcount: '2343'
+source-wordcount: '2373'
 ht-degree: 1%
 
 ---
 
 
-# 使用API创建模式 [!DNL Schema Registry]
+# 使用[!DNL Schema Registry] API创建模式
 
-它 [!DNL Schema Registry] 用来进入Adobe Experience Platform [!DNL Schema Library] 的内部。 它包 [!DNL Schema Library] 含由Adobe、合作伙伴和您所使用的 [!DNL Experience Platform] 应用程序供应商为您提供的资源。 注册表提供用户界面和RESTful API，可从中访问所有可用的库资源。
+[!DNL Schema Registry]用于访问Adobe Experience Platform内的[!DNL Schema Library]。 [!DNL Schema Library]包含由Adobe、[!DNL Experience Platform]合作伙伴以及您使用应用程序的供应商提供的资源。 注册表提供用户界面和RESTful API，可从中访问所有可用的库资源。
 
-本教程使 [!DNL Schema Registry] 用API指导您逐步使用标准类构建模式。 如果您希望在中使用用户界 [!DNL Experience Platform]面， [](create-schema-ui.md) 模式编辑器教程将提供在模式编辑器中执行类似操作的分步说明。
+本教程使用[!DNL Schema Registry] API指导您完成使用标准类构建模式的步骤。 如果您希望使用[!DNL Experience Platform]中的用户界面，[模式编辑器教程](create-schema-ui.md)将提供在模式编辑器中执行类似操作的分步说明。
 
 ## 入门指南
 
@@ -29,19 +29,19 @@ ht-degree: 1%
 * [[!DNL Real-time Customer Profile]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 * [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-在开始本教程之前，请查 [看开发人员指南](../api/getting-started.md) ，了解成功调用API所需了解的重要 [!DNL Schema Registry] 信息。 这包括您 `{TENANT_ID}`的、“容器”的概念以及发出请求所需的标题（特别要注意“接受”标题及其可能的值）。
+在开始本教程之前，请查看[开发人员指南](../api/getting-started.md)，了解成功调用[!DNL Schema Registry] API所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（特别要注意“接受”标头及其可能的值）。
 
-本教程将逐步介绍如何编写一个“忠诚度会员”模式，该项目描述与零售忠诚度的成员相关的数据。 在开始之前，您可能希望预览附录 [中的完整“忠诚会员](#complete-schema) ”模式。
+本教程将逐步介绍如何编写一个“忠诚度会员”模式，该项目描述与零售忠诚度的成员相关的数据。 在开始之前，您可能希望预览附录中的[完整的忠诚会员模式](#complete-schema)。
 
 ## 使用标准类编写模式
 
-可以将模式视为要收录到中的数据的蓝图 [!DNL Experience Platform]。 每个模式由一个类和零个或多个混音组成。 换句话说，您不必添加混音来定义模式，但在大多数情况下至少使用一个混音。
+可以将模式视为要收录到[!DNL Experience Platform]中的数据的蓝图。 每个模式由一个类和零个或多个混音组成。 换句话说，您不必添加混音来定义模式，但在大多数情况下至少使用一个混音。
 
 ### 分配类
 
 模式合成过程从选择类开始。 该类定义数据的关键行为方面（记录与时间序列）以及描述将要摄取的数据所需的最小字段。
 
-您在本教程中所做的模式使用 [!DNL XDM Individual Profile] 类。 [!DNL XDM Individual Profile] 是由Adobe提供的用于定义记录行为的标准类。 有关行为的更多信息，请参 [阅模式合成基础](../schema/composition.md)。
+您在本教程中进行的模式使用[!DNL XDM Individual Profile]类。 [!DNL XDM Individual Profile] 是由Adobe提供的用于定义记录行为的标准类。有关行为的详细信息，请参阅模式合成的[基础知识](../schema/composition.md)。
 
 要分配类，将进行API调用，以在租户容器中创建(POST)新模式。 此调用包括模式将实现的类。 每个模式只能实现一个类。
 
@@ -53,7 +53,7 @@ POST /tenant/schemas
 
 **请求**
 
-请求必须包含引 `allOf` 用类的属 `$id` 性的属性。 此属性定义模式将实现的“基类”。 在此示例中，基类是类 [!DNL XDM Individual Profile] 。 类 `$id` 的 [!DNL XDM Individual Profile] 值用作下面数组中 `$ref` 的字段 `allOf` 的值。
+请求必须包含引用类的`$id`的`allOf`属性。 此属性定义模式将实现的“基类”。 在本示例中，基类是[!DNL XDM Individual Profile]类。 [!DNL XDM Individual Profile]类的`$id`用作下面`allOf`数组中`$ref`字段的值。
 
 ```SHELL
 curl -X POST \
@@ -77,7 +77,7 @@ curl -X POST \
 
 **响应**
 
-成功的请求返回HTTP响应状态201（已创建），响应主体包含新创建模式的详细信息，包括 `$id`、 `meta:altIt`和 `version`。 这些值是只读的，由指定 [!DNL Schema Registry]。
+成功的请求返回HTTP响应状态201（已创建），响应主体包含新创建模式的详细信息，包括`$id`、`meta:altIt`和`version`。 这些值是只读的，由[!DNL Schema Registry]指定。
 
 ```JSON
 {
@@ -117,7 +117,7 @@ curl -X POST \
 
 ### 查找模式
 
-要视图新创建的模式，请使用GET的或URL编 `meta:altId` 码的URI执 `$id` 行查找(模式)请求。
+要视图新创建的模式，请使用`meta:altId`或编码为模式的URL `$id` URI执行查找(GET)请求。
 
 **API格式**
 
@@ -177,11 +177,11 @@ curl -X GET \
 }
 ```
 
-### 添加混音 {#add-a-mixin}
+### 添加混合{#add-a-mixin}
 
 现在已创建并确认“忠诚会员”模式，可以将混合添加到该客户中。
 
-根据所选模式的类别，可使用的标准混音不同。 每个混音都包 `intendedToExtend` 含一个字段，该字段定义该混音与之兼容的类。
+根据所选模式的类别，可使用的标准混音不同。 每个混音都包含一个`intendedToExtend`字段，它定义该混音与之兼容的类。
 
 混合定义了“名称”或“地址”等概念，这些概念可在需要捕获相同信息的任何模式中重用。
 
@@ -212,7 +212,7 @@ curl -X PATCH \
 
 **响应**
 
-该响应显示数组中新添加的 `meta:extends` 混音，并 `$ref` 在属性中包含混 `allOf` 音。
+该响应显示`meta:extends`数组中新添加的混音，并在`allOf`属性中包含该混音的`$ref`。
 
 ```JSON
 {
@@ -260,7 +260,7 @@ curl -X PATCH \
 
 >[!TIP]
 >
->值得查看所有可用的混音，以熟悉其中包含的字段。 您可以对“全局”和“租户”容器执行请求，只返回“meta:intededToExtend”字段与您所使用的类匹配的那些混音，从而列表(GET)可与特定类一起使用的所有混音。 在本例中，它是类 [!DNL XDM Individual Profile] ，因此使 [!DNL XDM Individual Profile] 用 `$id` 它：
+>值得查看所有可用的混音，以熟悉其中包含的字段。 您可以对“全局”和“租户”容器执行请求，只返回“meta:intededToExtend”字段与您所使用的类匹配的那些混音，从而列表(GET)可与特定类一起使用的所有混音。 在这种情况下，它是[!DNL XDM Individual Profile]类，因此使用[!DNL XDM Individual Profile] `$id`:
 
 ```http
 GET /global/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
@@ -292,9 +292,9 @@ curl -X PATCH \
 
 **响应**
 
-该响应显示数组中新添加的 `meta:extends` 混音，并 `$ref` 在属性中包含混 `allOf` 音。
+该响应显示`meta:extends`数组中新添加的混音，并在`allOf`属性中包含该混音的`$ref`。
 
-Loyalty Members模式现在应包含 `$ref` 数组中的三 `allOf` 个值：“用户档案”、“用户档案-个人——详细信息”和“用户档案-个人——详细信息”，如下所示。
+“Loyalty Members”模式现在应包含`allOf`数组中的三个`$ref`值：“用户档案”、“用户档案-个人——详细信息”和“用户档案-个人——详细信息”，如下所示。
 
 ```JSON
 {
@@ -344,11 +344,11 @@ Loyalty Members模式现在应包含 `$ref` 数组中的三 `allOf` 个值：“
 
 忠诚度会员模式需要捕获忠诚度项目特有的信息。 此信息不包括在任何标准混音中。
 
-通 [!DNL Schema Registry] 过允许您在租户容器中定义您自己的混音，可以说明这一点。 这些混合是您的组织特有的，IMS组织外的任何人都无法看到或编辑。
+[!DNL Schema Registry]允许您在租户容器中定义自己的混音，以此说明这一点。 这些混合是您的组织特有的，IMS组织外的任何人都无法看到或编辑。
 
-要创建(POST)新的混音，您的请求必须包含 `meta:intendedToExtend` 一个字 `$id` 段，其中包含混音与之兼容的基类以及混音将包含的属性。
+要创建(POST)新的混音，您的请求必须包含一个`meta:intendedToExtend`字段，其中包含与混音兼容的基类的`$id`以及混音将包含的属性。
 
-任何自定义属性都必须嵌套在您的 `TENANT_ID` 下方，以避免与其他混音或字段发生冲突。
+任何自定义属性都必须嵌套在`TENANT_ID`下，以避免与其他混音或字段发生冲突。
 
 **API格式**
 
@@ -419,7 +419,7 @@ curl -X POST\
 
 **响应**
 
-成功的请求返回HTTP响应状态201（已创建），响应主体包含新创建的混合的详细信息，包括 `$id`、 `meta:altIt`和 `version`。 这些值是只读的，由指定 [!DNL Schema Registry]。
+成功的请求返回HTTP响应状态201（已创建），响应主体包含新创建的混音的详细信息，包括`$id`、`meta:altIt`和`version`。 这些值是只读的，由[!DNL Schema Registry]指定。
 
 ```JSON
 {
@@ -498,7 +498,7 @@ curl -X POST\
 
 ### 将自定义混音添加到模式
 
-您现在可以按照相同的步骤 [添加标准混音](#add-a-mixin) ，将新创建的混音添加到模式。
+现在，您可以按照相同步骤[添加标准混音](#add-a-mixin)，将新创建的混音添加到模式。
 
 **API格式**
 
@@ -525,7 +525,7 @@ curl -X PATCH \
 
 **响应**
 
-您可以看到混音已成功添加，因为响应现在在数组中显示新添加的混 `meta:extends` 音，并 `$ref` 在属性中包含 `allOf` 混音。
+您可以看到已成功添加混音，因为响应现在在`meta:extends`数组中显示新添加的混音，并在`allOf`属性中将`$ref`包含到混音。
 
 ```JSON
 {
@@ -599,9 +599,9 @@ curl -X GET \
 
 **响应**
 
-通过使用 `application/vnd.adobe.xed-full+json; version=1` Accept头，您可以看到显示所有属性的完整模式。 这些属性是类和混合所贡献的字段，它们已用于构成模式。 在此示例响应中，单个属性属性已最小化为空间。 您可以视图此文档末尾的附录中的完整模式, [包括](#appendix) 所有属性及其属性。
+通过使用`application/vnd.adobe.xed-full+json; version=1`接受标头，您可以看到显示所有属性的完整模式。 这些属性是类和混合所贡献的字段，它们已用于构成模式。 在此示例响应中，单个属性属性已最小化为空间。 您可以视图此文档末尾[附录](#appendix)中的完整模式，包括所有属性及其属性。
 
-在下 `"properties"`面，您可以看 `_{TENANT_ID}` 到在添加自定义混音时创建的命名空间。 在该命名空间中是“loyalty”对象和创建混合时定义的字段。
+在`"properties"`下，您可以看到在添加自定义混音时创建的`_{TENANT_ID}`命名空间。 在该命名空间中是“loyalty”对象和创建混合时定义的字段。
 
 ```JSON
 {
@@ -705,7 +705,7 @@ POST /tenant/datatypes
 
 **请求**
 
-定义数据类型不需要 `meta:extends` 或字 `meta:intendedToExtend` 段，也无需嵌套字段以避免冲突。
+定义数据类型不需要`meta:extends`或`meta:intendedToExtend`字段，也不需要嵌套字段以避免冲突。
 
 ```SHELL
 curl -X POST \
@@ -756,7 +756,7 @@ curl -X POST \
 
 **响应**
 
-成功的请求返回HTTP响应状态201（已创建），响应主体包含新创建的数据类型的详细信息，包括、 `$id`和 `meta:altIt`和 `version`。 这些值是只读的，由指定 [!DNL Schema Registry]。
+成功的请求返回HTTP响应状态201（已创建），响应主体包含新创建的数据类型的详细信息，包括`$id`、`meta:altIt`和`version`。 这些值是只读的，由[!DNL Schema Registry]指定。
 
 ```JSON
 {
@@ -818,7 +818,7 @@ curl -X POST \
 }
 ```
 
-您可以使用URL编码的URI执行查找(GET)请 `$id` 求，以直接视图新的数据类型。 请务必在查找请 `version` 求的“接受”标题中包含该标题。
+您可以使用编码为`$id` URI的URL执行查找(GET)请求，以直接视图新数据类型。 请务必在查找请求的“接受”标题中包含`version`。
 
 ### 在模式中使用数据类型
 
@@ -858,7 +858,7 @@ curl -X PATCH \
 
 **响应**
 
-响应现在包括对“`$ref`loyalty”对象中数据类型的引用()，而不是之前定义的字段。
+响应现在包括对“loyalty”对象中数据类型的引用(`$ref`)，而不是之前定义的字段。
 
 ```JSON
 {
@@ -956,15 +956,15 @@ curl -X PATCH \
 
 ### 定义标识描述符
 
-模式用于将数据引入 [!DNL Experience Platform]。 此视图最终可跨多个服务使用，以创建单一、统一的个人数据。 为帮助完成此过程，关键字段可标记为“身份”，在数据获取时，这些字段中的数据将插入到该个人的“身份图”中。 然后，图形数据可以被和其 [[!DNL Real-time Customer Profile]](../../profile/home.md) 他服务访 [!DNL Experience Platform] 问，以提供每个个别客户的拼接视图。
+模式用于将数据引入[!DNL Experience Platform]。 此视图最终可跨多个服务使用，以创建单一、统一的个人数据。 为帮助完成此过程，关键字段可标记为“身份”，在数据获取时，这些字段中的数据将插入到该个人的“身份图”中。 然后，[[!DNL Real-time Customer Profile]](../../profile/home.md)和其它[!DNL Experience Platform]服务可以访问图形数据，以提供每个客户的拼接视图。
 
-通常标为“身份”的字段包括：电子邮件地址、电 [[!DNL Experience Cloud ID (ECID)]](https://docs.adobe.com/content/help/zh-Hans/id-service/using/home.html)话号码、CRM ID或其他唯一ID字段。
+通常标为“身份”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。
 
 考虑您的组织特定的所有唯一标识符，因为它们可能也是良好的标识字段。
 
 标识描述符表示“sourceSchema”的“sourceProperty”是应被视为“Identity”的唯一标识符。
 
-有关使用描述符的详细信息，请参阅 [模式注册表开发人员指南](../api/getting-started.md)。
+有关使用描述符的详细信息，请参阅[模式注册表开发人员指南](../api/getting-started.md)。
 
 **API格式**
 
@@ -974,7 +974,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求在“loyaltyId”字段上定义标识描述符。 这告 [!DNL Experience Platform] 诉您使用唯一的忠诚度项目会员标识符（本例中为会员的电子邮件地址）来帮助拼合有关个人的信息。
+以下请求在“loyaltyId”字段上定义标识描述符。 这会告知[!DNL Experience Platform]使用唯一的忠诚度项目成员标识符（本例中为成员的电子邮件地址）来帮助拼合有关个人的信息。
 
 ```SHELL
 curl -X POST \
@@ -997,11 +997,11 @@ curl -X POST \
 
 >[!NOTE]
 >
->您可以列表可用的“xdm:命名空间”值，或使用创建新值 [[!DNL Identity Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)。 “xdm:property”的值可以是“xdm:code”或“xdm:id”，具体取决于使用的“xdm:命名空间”。
+>您可以列表可用的“xdm:命名空间”值，或使用[[!DNL Identity Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)创建新值。 “xdm:property”的值可以是“xdm:code”或“xdm:id”，具体取决于使用的“xdm:命名空间”。
 
 **响应**
 
-成功的响应返回HTTP状态201（已创建），响应主体包含新创建的描述符（包括其）的详细信息 `@id`。 是 `@id` 由分配的只读字段， [!DNL Schema Registry] 用于在API中引用描述符。
+成功的响应返回HTTP状态201（已创建），响应主体包含新创建描述符的详细信息，包括其`@id`。 `@id`是由[!DNL Schema Registry]分配的只读字段，用于在API中引用描述符。
 
 ```JSON
 {
@@ -1017,15 +1017,15 @@ curl -X POST \
 }
 ```
 
-## 启用模式以在 [!DNL Real-time Customer Profile] {#profile}
+## 启用模式以在[!DNL Real-time Customer Profile] {#profile}中使用
 
-通过向属性添加“合并”标 `meta:immutableTags` 签，您可以启用“忠诚会员”模式供用户使用 [!DNL Real-time Customer Profile]。
+通过向`meta:immutableTags`属性添加“合并”标记，您可以启用“忠诚度成员”模式供[!DNL Real-time Customer Profile]使用。
 
-有关使用合并视图的更多信息，请参阅开发人 [员指南](../api/unions.md) 中有关 [!DNL Schema Registry] 合并的部分。
+有关使用合并视图的详细信息，请参阅[!DNL Schema Registry]开发人员指南中关于[合并](../api/unions.md)的部分。
 
 ### 添加“合并”标记
 
-要将模式包含在合并合并视图中，必须将“合并”标记添加到模式 `meta:immutableTags` 的属性中。 这是通过PATCH请求来更新模式并添 `meta:immutableTags` 加值为“合并”的数组。
+要将模式包含在合并合并视图中，必须将“合并”标记添加到模式的`meta:immutableTags`属性。 这是通过PATCH请求来更新模式并添加值为“合并”的`meta:immutableTags`阵列来完成的。
 
 **API格式**
 
@@ -1050,7 +1050,7 @@ curl -X PATCH \
 
 **响应**
 
-响应显示操作已成功执行，并且模式现在包含顶级属性 `meta:immutableTags`，该属性是包含值“合并”的数组。
+响应显示操作已成功执行，模式现在包含顶级属性`meta:immutableTags`，该属性是包含值“合并”的数组。
 
 ```JSON
 {
@@ -1105,9 +1105,9 @@ curl -X PATCH \
 
 ### 列表模式
 
-您现在已成功将模式添加到 [!DNL XDM Individual Profile] 合并。 要查看属于同一合并的所有模式的列表，您可以使用查询参数来过滤响应，以执行GET请求。
+您现在已成功将模式添加到[!DNL XDM Individual Profile]合并。 要查看属于同一合并的所有模式的列表，您可以使用查询参数来过滤响应，以执行GET请求。
 
-使用 `property` 查询参数，可以指定只返回包含 `meta:immutableTags` 字段且与类 `meta:class` 相等 `$id`[!DNL XDM Individual Profile] 的模式。
+使用`property`查询参数，可以指定只返回包含`meta:immutableTags`字段的模式，该字段的`meta:class`等于[!DNL XDM Individual Profile]类的`$id`。
 
 **API格式**
 
@@ -1117,7 +1117,7 @@ GET /tenant/schemas?property=meta:immutableTags==union&property=meta:class=={CLA
 
 **请求**
 
-以下示例请求返回属于该模式的所有合并 [!DNL XDM Individual Profile] 。
+以下示例请求返回属于[!DNL XDM Individual Profile]模式的所有合并。
 
 ```SHELL
 curl -X GET \
@@ -1175,17 +1175,17 @@ curl -X GET \
 
 在本教程中创建的完整“忠诚会员”模式，可在以下附录中找到。 当您查看模式时，您可以了解混音对总体结构的贡献以及哪些字段可用于数据获取。
 
-创建多个模式后，您可以使用关系描述符定义它们之间的关系。 有关详细信息， [请参阅定义两个模式之间关系](relationship-api.md) 的教程。 有关如何在注册表中执行所有操作(GET、POST、PUT、PATCH和DELETE)的详细示例，请在使用API时参 [阅模式注册表开发人员指南](../api/getting-started.md) 。
+创建多个模式后，您可以使用关系描述符定义它们之间的关系。 有关详细信息，请参阅[定义两个模式之间的关系的教程](relationship-api.md)。 有关如何在注册表中执行所有操作(GET、POST、PUT、PATCH和DELETE)的详细示例，请在使用API时参阅[模式注册表开发人员指南](../api/getting-started.md)。
 
 ## 附录 {#appendix}
 
 以下信息是对API教程的补充。
 
-## 完整忠诚度会员模式 {#complete-schema}
+## 完整忠诚会员模式{#complete-schema}
 
 在本教程中，将编写一个模式来描述零售忠诚度项目的成员。
 
-模式实现类 [!DNL XDM Individual Profile] 并组合多个混合；使用标准“人员详细信息”和“个人详细信息”混音以及通过教程中定义的“忠诚度详细信息”混音导入有关忠诚度会员的信息。
+模式实现[!DNL XDM Individual Profile]类并组合多个混音；使用标准“人员详细信息”和“个人详细信息”混音以及通过教程中定义的“忠诚度详细信息”混音导入有关忠诚度会员的信息。
 
 以下显示了JSON格式的完成的“忠诚会员”模式:
 
