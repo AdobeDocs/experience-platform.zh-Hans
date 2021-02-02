@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;schema registry;Schema Registry;
+keywords: Experience Platform；主题；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；
 solution: Experience Platform
 title: 模式注册表API入门
 description: 本文档介绍了在尝试调用模式注册表API之前需要了解的核心概念。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '1132'
+source-wordcount: '1163'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ XDM使用JSON模式格式描述和验证所摄取的客户体验数据的结构�
 
 ## 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](../../tutorials/authentication.md)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
