@@ -5,7 +5,7 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 translation-type: tm+mt
-source-git-commit: c9552b4d3bbb34c81996344f2e8c7cc385c525b6
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 4%
@@ -63,7 +63,7 @@ ht-degree: 4%
       - [Oracle连接器](connectors/databases/oracle.md)
       - [菲尼克斯连接器](connectors/databases/phoenix.md)
       - [PostgreSQL连接器](connectors/databases/postgres.md)
-   - 电子商务{#ecommerce}
+   - 电子商务 {#ecommerce}
       - [Shopify连接器](connectors/ecommerce/shopify.md)
    - 营销自动化{#marketing-automation}
       - [HubSpot连接器](connectors/marketing-automation/hubspot.md)
@@ -109,7 +109,7 @@ ht-degree: 4%
          - [菲尼克斯连接器](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL连接器](tutorials/api/create/databases/postgres.md)
          - [SQL Server连接器](tutorials/api/create/databases/sql-server.md)
-      - 电子商务{#ecommerce}
+      - 电子商务 {#ecommerce}
          - [Shopify连接器](tutorials/api/create/ecommerce/shopify.md)
       - 营销自动化{#marketing-automation}
          - [HubSpot连接器](tutorials/api/create/marketing-automation/hubspot.md)
@@ -138,7 +138,7 @@ ht-degree: 4%
       - [收集付款数据](tutorials/api/collect/payments.md)
       - [收集协议数据](tutorials/api/collect/protocols.md)
       - [收集流数据](tutorials/api/collect/streaming.md)
-   - [从第三方云存储系统中摄取镶木数据](tutorials/api/cloud-storage-parquet.md)
+   - [从第三方云存储系统中摄取Parke数据](tutorials/api/cloud-storage-parquet.md)
    - [创建数据集连接](tutorials/api/create-dataset-base-connection.md)
    - [监视数据流](tutorials/api/monitor.md)
    - [更新连接](tutorials/api/update.md)
@@ -188,7 +188,7 @@ ht-degree: 4%
          - [Oracle连接器](tutorials/ui/create/databases/oracle.md)
          - [菲尼克斯连接器](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL连接器](tutorials/ui/create/databases/postgres.md)
-      - 电子商务{#ecommerce}
+      - 电子商务 {#ecommerce}
          - [Shopify连接器](tutorials/ui/create/ecommerce/shopify.md)
       - 营销自动化{#marketing-automation}
          - [HubSpot连接器](tutorials/ui/create/marketing-automation/hubspot.md)
