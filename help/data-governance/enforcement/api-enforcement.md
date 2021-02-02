@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;Policy enforcement;Automatic enforcement;API-based enforcement;data governance;testing
+keywords: Experience Platform；主页；热门主题；策略执行；自动执行；基于API的执行；数据管理；测试
 solution: Experience Platform
 title: 使用策略服务API实施数据使用策略
-topic: enforcement
+topic: guide
 type: Tutorial
 description: 为数据创建数据使用标签并针对这些标签创建市场营销操作的使用策略后，您可以使用策略服务API评估对数据集或任意标签组执行的市场营销操作是否构成策略违规。 然后，您可以设置自己的内部协议，根据API响应处理策略违规。
 translation-type: tm+mt
-source-git-commit: e680191d495e4c33baa8242d40a15b9124eec8cd
+source-git-commit: acc4fa59a4808ed9a32c2aaf664039e0d12dc1d8
 workflow-type: tm+mt
-source-wordcount: '992'
+source-wordcount: '1006'
 ht-degree: 1%
 
 ---
