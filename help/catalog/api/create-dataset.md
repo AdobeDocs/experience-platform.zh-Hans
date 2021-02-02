@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;dataset;Dataset;create a dataset;create dataset;enable dataset
+keywords: Experience Platform；主页；热门主题；数据集；数据集；创建数据集；创建数据集；启用数据集
 solution: Experience Platform
 title: 创建数据集
 topic: developer guide
 description: 此文档介绍如何在“目录”中创建数据集对象。
 translation-type: tm+mt
-source-git-commit: bf99b08a1093a815687cc06372407949e170a0b3
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '223'
 ht-degree: 1%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 1%
 
 # 创建数据集
 
-要使用API创建数 [!DNL Catalog] 据集，您必 `$id` 须知道 [!DNL Experience Data Model] 数据集所基于的(XDM)模式的值。 获得模式ID后，您可以通过向API中的端点发出POST请求 `/datasets` 来创建数 [!DNL Catalog] 据集。
+要使用[!DNL Catalog] API创建数据集，您必须知道数据集所基于的[!DNL Experience Data Model](XDM)模式的`$id`值。 获得模式ID后，您可以通过向[!DNL Catalog] API中的`/datasets`端点发出POST请求来创建数据集。
 
 >[!NOTE]
 >
->此文档仅涵盖如何在中创建数据集对象 [!DNL Catalog]。 有关如何创建、填充和监视数据集的完整步骤，请参阅以下 [教程](../datasets/create.md)。
+>此文档仅涵盖如何在[!DNL Catalog]中创建数据集对象。 有关如何创建、填充和监视数据集的完整步骤，请参阅以下[教程](../datasets/create.md)。
 
 **API格式**
 
@@ -56,15 +56,15 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 要创建的数据集的名称。 |
-| `schemaRef.id` | 数据集 `$id` 将基于的XDM模式的URI值。 |
+| `schemaRef.id` | 数据集将基于的XDM模式的URI `$id`值。 |
 
 >[!NOTE]
 >
->此示例使用 [parce](https://parquet.apache.org/documentation/latest/) 文件格式作为其 `containerFormat` 属性。 使用JSON文件格式的示例可在批量摄取开发人 [员指南中找到](../../ingestion/batch-ingestion/api-overview.md)。
+>此示例将[Apache Parke](https://parquet.apache.org/documentation/latest/)文件格式用于其`containerFormat`属性。 使用JSON文件格式的示例可在[批处理摄取开发人员指南](../../ingestion/batch-ingestion/api-overview.md)中找到。
 
 **响应**
 
-成功的响应会返回“HTTP状态201（已创建）”和一个响应对象，该对象由一个数组组成，该数组包含格式为新创建数据集的ID `"@/datasets/{DATASET_ID}"`。 数据集ID是由系统生成的只读字符串，用于在API调用中引用数据集。
+成功的响应返回HTTP状态201（已创建）和一个响应对象，该对象由一个数组组成，该数组包含格式为`"@/datasets/{DATASET_ID}"`的新创建数据集的ID。 数据集ID是由系统生成的只读字符串，用于在API调用中引用数据集。
 
 ```JSON
 [
