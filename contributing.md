@@ -1,6 +1,9 @@
 ---
-source-git-commit: 1c79978cfbd5beb0561e336cddf1461686f73882
+source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+workflow-type: tm+mt
 translation-type: tm+mt
+source-wordcount: '296'
+ht-degree: 95%
 
 ---
 # 参与
@@ -11,11 +14,13 @@ translation-type: tm+mt
 
 ## 行为准则
 
-此项目遵守 Adobe [行为准则](code-of-conduct.md)。参与此项目时，您应遵守本准则。请联系 [Grp-opensourceoffice@adobe.com](mailto:Grp-opensourceoffice@adobe.com) 举报不可接受的行为。
+此项目遵守 Adobe [行为准则](code-of-conduct.md)。参与此项目时，您应遵守本准则。
+
+请联系 [Grp-opensourceoffice@adobe.com](mailto:Grp-opensourceoffice@adobe.com) 举报不可接受的行为。
 
 ## 参与者指南文档
 
-See the [Contributor Guide](https://docs.adobe.com/content/help/en/contributor/contributor-guide/introduction.html).
+请参阅[Contributor Guide](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=en)。
 
 ## 有疑问吗？
 
@@ -23,11 +28,15 @@ See the [Contributor Guide](https://docs.adobe.com/content/help/en/contributor/c
 
 ## 参与者许可协议
 
-所有参与到该项目的第三方稿件都必须附有签署的参与者许可协议。这将允许 Adobe 重新分配您在项目中的稿件。[签署我们的 CLA](http://opensource.adobe.com/cla.html)。您只需提交一次 Adobe CLA 即可，因此如果您之前已提交了一次，那么无需重新提交！
+所有参与到该项目的第三方稿件都必须附有签署的参与者许可协议。这将允许 Adobe 重新分配您在项目中的稿件。
+
+[签署我们的 CLA](http://opensource.adobe.com/cla.html)。
+
+您只需提交一次 Adobe CLA 即可，因此如果您之前已提交了一次，那么无需重新提交！
 
 ## 代码审阅
 
-应以拉取请求的形式提交所有提交，并需要由项目提交者进行审阅。有关发送拉取请求的更多信息，请阅读 [GitHub 的拉取请求文档](https://help.github.com/articles/about-pull-requests/)。
+应以拉取请求的形式提交所有提交，并需要由项目提交者进行审阅。有关发送拉取请求的更多信息，请阅读 [GitHub 的拉取请求文档](https://help.github.com/cn/github/collaborating-with-issues-and-pull-requests/about-pull-requests)。
 
 
 <!--
@@ -41,4 +50,4 @@ submitting a pull request!
 
 ## 安全问题
 
-不应在此问题跟踪器上报告安全问题。而是[应该将安全问题提交给我们的安全专家](https://helpx.adobe.com/security/alertus.html)
+不应在此问题跟踪器上报告安全问题。而是[应该将安全问题提交给我们的安全专家](https://helpx.adobe.com/cn/security/alertus.html)。
