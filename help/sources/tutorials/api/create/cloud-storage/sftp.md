@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;SFTP;sftp;Secure File Transfer Protocol;secure file transfer protocol
+keywords: Experience Platform；主页；热门主题；SFTP;sftp；安全文件传输协议；安全文件传输协议
 solution: Experience Platform
 title: 使用流服务API创建SFTP连接器
 topic: overview
 type: Tutorial
 description: 本教程使用流服务API指导您完成将Experience Platform连接到SFTP（安全文件传输协议）服务器的步骤。
 translation-type: tm+mt
-source-git-commit: c88b9400144f511ef456fd5fdc968a5a6b7a3dc0
+source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
 workflow-type: tm+mt
-source-wordcount: '807'
+source-wordcount: '826'
 ht-degree: 1%
 
 ---
@@ -53,7 +53,7 @@ ht-degree: 1%
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成[身份验证教程](../../../../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用平台API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
