@@ -1,9 +1,9 @@
 ---
-source-git-commit: b0cc44b33b399eb64122374251840a4298946d80
+source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
 workflow-type: tm+mt
 translation-type: tm+mt
-source-wordcount: '509'
-ht-degree: 81%
+source-wordcount: '508'
+ht-degree: 79%
 
 ---
 # 贡献内容
@@ -16,7 +16,7 @@ ht-degree: 81%
 
 ## 为Adobe内容做出贡献的方法
 
-请参阅 [Adobe Docs 参与者指南](https://docs.adobe.com/help/en/contributor/contributor-guide/introduction.html)。
+请参阅 [Adobe Docs 参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=en)。
 
 您的参与方式取决于您的身份以及您想提供的更改类型：
 
@@ -24,7 +24,7 @@ ht-degree: 81%
 
 要提交请求，请单击文章中的&#x200B;**记录问题**&#x200B;链接，这会在 GitHub 中打开一个问题。指定标题和说明，然后单击&#x200B;**提交新问题**。
 
-要请求进行细微的更新，请单击文章中的&#x200B;**编辑此页面**&#x200B;链接，这会在 GitHub 中打开来源文章。使用 GitHub UI 进行更新。有关更多信息，请参阅 [Adobe Docs 参与者指南](https://docs.adobe.com/help/en/contributor/contributor-guide/introduction.html)。
+要请求进行细微的更新，请单击文章中的&#x200B;**编辑此页面**&#x200B;链接，这会在 GitHub 中打开来源文章。使用 GitHub UI 进行更新。有关更多信息，请参阅 [Adobe Docs 参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html)。
 
 您对本存储库中文档和代码示例提交的细微更正或说明均受 Adobe 使用条款的约束。
 
@@ -38,13 +38,13 @@ If you submit a pull request with significant changes to documentation and code 
 
 ### Adobe员工的重大更改或新文章
 
-如果您是产品团队中负责提供 Adobe Experience Cloud 解决方案的技术作家、项目经理或开发人员，并且您的工作是撰写或创作技术文章，则应使用位于 `https://git.corp.adobe.com/AdobeDocs` 的私有存储库。See the [Internal Collaboration Guide](https://docs.adobe.com/content/help/en/collaborative-doc-instructions/collaboration-guide/home.html) for more information.
+如果您是产品团队中负责提供 Adobe Experience Cloud 解决方案的技术作家、项目经理或开发人员，并且您的工作是撰写或创作技术文章，则应使用位于 `https://git.corp.adobe.com/AdobeDocs` 的私有存储库。有关详细信息，请参阅[内部协作指南](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html?lang=zh-cn)。
 
 <!--Employees from other parts of the Adobe world should use the public repo for minor updates.-->
 
 ## 联系Experience Platform文档团队
 
-如上所述，Adobe群体成员可以提交将分配给相应作者的问题。 如果您是Adobe员工，您可以提交问题或直接与Experience Platform文档团队联系。 要查找特定平台区域的主要作者，请参阅 [Adobe Experience Platform文档维基](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+Documentation)。
+如上所述，Adobe群体成员可以提交将分配给相应作者的问题。 如果您是Adobe员工，您可以提交问题或直接与Experience Platform文档团队联系。 要查找特定平台区域的主要编写器，请参阅[Adobe Experience Platform文档维基](https://wiki.corp.adobe.com/display/DMSArchitecture/Adobe+Experience+Platform+Documentation)。
 
 ## 工具和设置
 
@@ -52,7 +52,7 @@ If you submit a pull request with significant changes to documentation and code 
 
 社区参与者可以使用 GitHub UI 进行基本编辑或创建存储库分支，以做出主要更改。
 
-有关详细信息，请参阅 [Adobe Docs 参与者指南](https://docs.adobe.com/help/en/contributor/contributor-guide/introduction.html)。
+有关详细信息，请参阅 [Adobe Docs 参与者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html)。
 
 ### Markdown
 
