@@ -1,11 +1,13 @@
 ---
-keywords: Experience Platform;profile;real-time customer profile;troubleshooting;API
-title: 边缘预测——实时客户用户档案API
+keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API
+title: 边缘投影API端点
 topic: guide
+type: Documentation
+description: Adobe Experience Platform使您能够在多个渠道实时为客户提供协调、一致、个性化的体验，让适当的数据随时可用并随着变化不断更新。 这是通过使用边缘来完成的，边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
 workflow-type: tm+mt
-source-wordcount: '1900'
+source-wordcount: '1961'
 ht-degree: 2%
 
 ---
@@ -13,15 +15,15 @@ ht-degree: 2%
 
 # 边缘投影配置和目标端点
 
-为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘，实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 本指南提供有关使用API处理 [!DNL Real-time Customer Profile] 边缘投影的详细说明，包括目标和配置。
+为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘，实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 本指南提供使用[!DNL Real-time Customer Profile] API处理边缘投影的详细说明，包括目标和配置。
 
 ## 入门指南
 
-本指南中使用的API端点是的一部分 [[!DNL Real-time Customer Profile API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)。 在继续之前，请查 [看入门指南](getting-started.md) ，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何API所需标头的重要信 [!DNL Experience Platform] 息。
+本指南中使用的API端点是[[!DNL Real-time Customer Profile API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)的一部分。 在继续之前，请查看[快速入门指南](getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
 
 >[!NOTE]
 >
->包含有效负荷(POST、PUT、PATCH)的请求需要 `Content-Type` 标头。 此文档 `Content-Type` 中使用了多个。 请特别注意示例调用中的标头，以确保您对每个请求使用 `Content-Type` 正确的标头。
+>包含有效负荷(POST、PUT、PATCH)的请求需要`Content-Type`头。 此文档中使用了多个`Content-Type`。 请特别注意示例调用中的标头，以确保您对每个请求使用正确的`Content-Type`。
 
 ## 投影目标
 
@@ -29,7 +31,7 @@ ht-degree: 2%
 
 ### 列表所有目标
 
-您可以通过向端点发出列表请求，来GET已为您的组织创建的边缘目 `/config/destinations` 标。
+您可以通过向`/config/destinations`端点发出列表请求，来GET已为组织创建的边缘目标。
 
 **API格式**
 
@@ -50,7 +52,7 @@ curl -X GET \
 
 **响应**
 
-响应包括一个数 `projectionDestinations` 组，其中每个目标的详细信息显示为该数组中的单个对象。 如果尚未配置投影，则数 `projectionDestinations` 组返回空。
+该响应包括一个`projectionDestinations`数组，每个目标的详细信息显示为该数组中的单个对象。 如果未配置投影，`projectionDestinations`阵列将返回空。
 
 >[!NOTE]
 >
@@ -104,13 +106,13 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `_links.self.href` | 在顶级，匹配用于发出GET请求的路径。 在每个目标对象中，此路径可用于GET请求中，以直接查找特定目标的详细信息。 |
-| `id` | 在每个目标对象 `"id"` 中，显示由系统生成的只读目标唯一ID。 在引用特定目标和创建投影配置时使用此ID。 |
+| `id` | 在每个目标对象中，`"id"`显示由系统生成的用于目标的只读唯一ID。 在引用特定目标和创建投影配置时使用此ID。 |
 
-有关单个目标的属性的详细信息，请参阅下面有关创 [建目标的](#create-a-destination) 一节。
+有关单个目标的属性的详细信息，请参见[创建目标](#create-a-destination)一节。
 
-### Create a destination {#create-a-destination}
+### 创建目标{#create-a-destination}
 
-如果所需的目标尚不存在，则可以通过向端点发出POST请求来创建新的投影目 `/config/destinations` 标。
+如果所需的目标尚不存在，则可以通过向`/config/destinations`端点发出POST请求来创建新的投影目标。
 
 **API格式**
 
@@ -124,7 +126,7 @@ POST /config/destinations
 
 >[!NOTE]
 >
->创建目标的POST请求需要特 `Content-Type` 定标题，如下所示。 使用不正确 `Content-Type` 的头会导致HTTP状态415（不支持的媒体类型）错误。
+>创建目标的POST请求需要特定的`Content-Type`头，如下所示。 使用不正确的`Content-Type`头将导致HTTP状态415（不支持的媒体类型）错误。
 
 ```shell
 curl -X POST \
@@ -153,7 +155,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新创建的边缘目标的详细信息，包括只读的、系统生成的唯一ID(`id`)。
+成功的响应会返回新创建的边缘目标的详细信息，包括只读的、由系统生成的唯一ID(`id`)。
 
 ```json
 {
@@ -179,7 +181,7 @@ curl -X POST \
 
 ### 视图目标
 
-如果您知道投影目标的唯一ID，则可以执行查找请求以视图其详细信息。 这是通过向端点发出GET请 `/config/destinations` 求并在请求路径中包括目标的ID来完成的。
+如果您知道投影目标的唯一ID，则可以执行查找请求以视图其详细信息。 这是通过向`/config/destinations`端点发出GET请求并在请求路径中包含目标的ID来完成的。
 
 **API格式**
 
@@ -206,7 +208,7 @@ curl -X GET \
 
 **响应**
 
-响应对象显示投影目标的详细信息。 属 `id` 性应与请求中提供的投影目标的ID匹配。
+响应对象显示投影目标的详细信息。 `id`属性应与请求中提供的投影目标的ID匹配。
 
 ```json
 {
@@ -226,7 +228,7 @@ curl -X GET \
 
 ### 更新目标
 
-通过向端点发出PUT请求并在请求路径中 `/config/destinations` 包括要更新的目标的ID，可以更新现有目标。 此操作实质上是重写目标，因此在请求主体中必须提供与创建新目标时提供的相同属性。
+通过向`/config/destinations`端点发出PUT请求并在请求路径中包含要更新的目标的ID，可以更新现有目标。 此操作实质上是重写目标，因此在请求主体中必须提供与创建新目标时提供的相同属性。
 
 >[!CAUTION]
 >
@@ -244,11 +246,11 @@ PUT /config/destinations/{DESTINATION_ID}
 
 **请求**
 
-以下请求更新现有目标以包含第二位置(`dataCenters`)。
+以下请求更新现有目标以包含第二个位置(`dataCenters`)。
 
 >[!IMPORTANT]
 >
->PUT请求需要特 `Content-Type` 定标头，如下所示。 使用不正确 `Content-Type` 的头会导致HTTP状态415（不支持的媒体类型）错误。
+>PUT请求需要特定的`Content-Type`头，如下所示。 使用不正确的`Content-Type`头将导致HTTP状态415（不支持的媒体类型）错误。
 
 ```shell
 curl -X PUT \
@@ -271,11 +273,11 @@ curl -X PUT \
 
 | 属性 | 描述 |
 |---|---|
-| `currentVersion` | 现有目标的当前版本。 执行目标的 `version` 查找请求时属性的值。 |
+| `currentVersion` | 现有目标的当前版本。 执行目标的查找请求时`version`属性的值。 |
 
 **响应**
 
-响应包括目标的更新详细信息，包括其ID和目 `version` 标的新。
+响应包括目标的更新详细信息，包括其ID和目标的新`version`。
 
 ```json
 {
@@ -296,11 +298,11 @@ curl -X PUT \
 
 ### 删除目标
 
-如果您的组织不再需要投影目标，可以通过向终结点发出DELETE请求并在请求路径中 `/config/destinations` 包含要删除的目标ID来删除该目标。
+如果您的组织不再需要投影目标，可以通过向`/config/destinations`端点发出DELETE请求并在请求路径中包含要删除的目标的ID来删除该目标。
 
 >[!CAUTION]
 >
->对删除请求的API响应是即时的，但边缘上数据的实际更改是异步进行的。 换言之，用户档案数据将从所有边缘(在投影目标中 `dataCenters` 指定)中删除，但该过程需要时间来完成。
+>对删除请求的API响应是即时的，但边缘上数据的实际更改是异步进行的。 换言之，用户档案数据将从所有边缘（投影目标中指定的`dataCenters`）中删除，但该过程需要时间来完成。
 
 **API格式**
 
@@ -330,11 +332,11 @@ curl -X DELETE \
 
 ## 投影配置
 
-投影配置提供关于每个边缘上哪些数据可用的信息。 投影不是将完 [!DNL Experience Data Model] 整的(XDM)模式投影到边缘，而是只提供模式中的特定数据或场。 您的组织可以为每个XDM模式定义多个投影配置。
+投影配置提供关于每个边缘上哪些数据可用的信息。 投影不是将完整的[!DNL Experience Data Model](XDM)模式投影到边缘，而是只提供模式中的特定数据或字段。 您的组织可以为每个XDM模式定义多个投影配置。
 
 ### 列表所有投影配置
 
-您可以通过向端点发出列表请求，来GET为组织创建的所有投影配 `/config/projections` 置。 您还可以向请求路径添加可选参数以访问特定模式的投影配置或按其名称查找单个投影。
+您可以通过向`/config/projections`端点发出列表请求，来GET为组织创建的所有投影配置。 您还可以向请求路径添加可选参数以访问特定模式的投影配置或按其名称查找单个投影。
 
 **API格式**
 
@@ -355,7 +357,7 @@ GET /config/projections?schemaName={SCHEMA_NAME}&name={PROJECTION_NAME}
 
 **请求**
 
-以下请求将列表与模式类关联的所 [!DNL Experience Data Model] 有投影配置 [!DNL XDM Individual Profile]。 有关XDM及其在中的角色的更 [!DNL Platform]多信息，请阅读XDM [系统概述](../../xdm/home.md)。
+以下请求列表与[!DNL Experience Data Model]模式类[!DNL XDM Individual Profile]关联的所有投影配置。 有关XDM及其在[!DNL Platform]中的角色的详细信息，请首先阅读[ XDM系统概述](../../xdm/home.md)。
 
 ```shell
 curl -X GET \
@@ -368,7 +370,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回根属性中包含的一 `_embedded` 列表投影配置 `projectionConfigs` 。 如果没有为您的组织进行投影配置， `projectionConfigs` 则阵列将为空。
+成功的响应返回根`_embedded`属性中包含在`projectionConfigs`数组中的投影配置列表。 如果未为您的组织进行投影配置，`projectionConfigs`阵列将为空。
 
 ```json
 {
@@ -436,7 +438,7 @@ POST /config/projections?schemaName={SCHEMA_NAME}
 
 >[!NOTE]
 >
->创建配置的POST请求需要特 `Content-Type` 定标头，如下所示。 使用不正确 `Content-Type` 的头会导致HTTP状态415（不支持的媒体类型）错误。
+>创建配置的POST请求需要特定的`Content-Type`头，如下所示。 使用不正确的`Content-Type`头将导致HTTP状态415（不支持的媒体类型）错误。
 
 ```shell
 curl -X POST \
@@ -455,7 +457,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| `selector` | 一个字符串，其中包含要复制到边的模式中的属性列表。 此文档的“选择器”部分提供了使 [用选](#selectors) 择器的最佳实践。 |
+| `selector` | 一个字符串，其中包含要复制到边的模式中的属性列表。 此文档的[选择器](#selectors)部分提供了有关使用选择器的最佳实践。 |
 | `name` | 新投影配置的描述性名称。 |
 | `destinationId` | 数据将投影到的边缘目标的标识符。 |
 
@@ -499,18 +501,18 @@ curl -X POST \
 }
 ```
 
-## Selectors {#selectors}
+## 选择器{#selectors}
 
-选择器是XDM字段名称的逗号分隔列表。 在投影配置中，选择器指定要包括在投影中的属性。 参数值的格 `selector` 式松散地基于XPath语法。 支持的语法概述如下，并提供了其他示例以供参考。
+选择器是XDM字段名称的逗号分隔列表。 在投影配置中，选择器指定要包括在投影中的属性。 `selector`参数值的格式松散地基于XPath语法。 支持的语法概述如下，并提供了其他示例以供参考。
 
 ### 支持的语法
 
 * 使用逗号选择多个字段。 请勿使用空格。
 * 使用点记号选择嵌套字段。
-   * 例如，要选择嵌套在名 `field` 为的字段中的名为的字 `foo`段，请使用选择器 `foo.field`。
-* 当包含包含子字段的字段时，默认情况下也会投影所有子字段。 但是，可以使用括号过滤返回的子字段 `"( )"`。
-   * 例如， `addresses(type,city.country)` 对于每个数组元素，只返回地址类型和地址城市所在的 `addresses` 国家／地区。
-   * 上例等效于 `addresses.type,addresses.city.country`。
+   * 例如，要选择嵌套在名为`foo`的字段中的名为`field`的字段，请使用选择器`foo.field`。
+* 当包含包含子字段的字段时，默认情况下也会投影所有子字段。 但是，可以使用括号`"( )"`过滤返回的子字段。
+   * 例如，`addresses(type,city.country)`仅返回每个`addresses`阵列元素的地址类型和地址城市所在的国家／地区。
+   * 以上示例等效于`addresses.type,addresses.city.country`。
 
 >[!NOTE]
 >
@@ -523,11 +525,11 @@ curl -X POST \
 
 ### 选择器参数示例
 
-以下示例显示示 `selector` 例参数，后跟它们表示的结构化值。
+以下示例显示示例`selector`参数，后跟它们表示的结构化值。
 
 **person.lastName**
 
-返回 `lastName` 所请求资源中对 `person` 象的子字段。
+返回所请求资源中`person`对象的`lastName`子字段。
 
 ```json
 {
@@ -539,7 +541,7 @@ curl -X POST \
 
 **地址**
 
-返回数组中的所 `addresses` 有元素，包括每个元素中的所有字段，但不返回其他字段。
+返回`addresses`数组中的所有元素，包括每个元素中的所有字段，但不返回其他字段。
 
 ```json
 {
@@ -566,7 +568,7 @@ curl -X POST \
 
 **person.lastName,addresses**
 
-返回字 `person.lastName` 段和数组中的所有 `addresses` 元素。
+返回`person.lastName`字段和`addresses`数组中的所有元素。
 
 ```json
 {
@@ -623,7 +625,7 @@ curl -X POST \
 
 **地址（类型，城市）**
 
-仅返回数组中每 `type` 个元 `city` 素的和字段的 `addresses` 值。 每个元素中包含的所有其他子 `addresses` 字段都被过滤掉。
+仅返回`addresses`数组中每个元素的`type`和`city`字段的值。 每个`addresses`元素中包含的所有其他子字段都被过滤掉。
 
 ```json
 {
@@ -648,4 +650,4 @@ curl -X POST \
 
 ## 后续步骤
 
-本指南向您展示了配置投影和目标所涉及的步骤，包括如何正确设置参数 `selector` 格式。 您现在可以根据组织的需求新建投影目标和配置。
+本指南向您展示了配置投影和目标所涉及的步骤，包括如何正确设置`selector`参数的格式。 您现在可以根据组织的需求新建投影目标和配置。
