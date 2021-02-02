@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;sample queries;sample query;adobe target;
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；示例查询；示例查询;adobe目标;
 solution: Experience Platform
 title: 示例查询
 topic: queries
@@ -7,7 +7,7 @@ description: 来自Adobe Target的数据将转换为体验事件XDM模式，并�
 translation-type: tm+mt
 source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
 workflow-type: tm+mt
-source-wordcount: '309'
+source-wordcount: '324'
 ht-degree: 1%
 
 ---
