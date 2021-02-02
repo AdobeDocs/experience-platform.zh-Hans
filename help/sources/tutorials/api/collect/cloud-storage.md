@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;cloud storage data
+keywords: Experience Platform；主页；热门主题；云存储数据
 solution: Experience Platform
 title: 通过源连接器和API收集云存储数据
 topic: overview
 type: Tutorial
 description: 本教程介绍从第三方云存储检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: cab1d65b643b919a6529926cd0856d89c5264d55
+source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
 workflow-type: tm+mt
-source-wordcount: '1609'
+source-wordcount: '1621'
 ht-degree: 1%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 1%
 
 ### 收集所需标题的值
 
-要调用平台API，您必须先完成[身份验证教程](../../../../tutorials/authentication.md)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用平台API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
@@ -653,7 +653,7 @@ curl -X POST \
 - [实时客户用户档案概述](../../../../profile/home.md)
 - [数据科学工作区概述](../../../../data-science-workspace/home.md)
 
-## 附录{#appendix}
+## 附录 {#appendix}
 
 以下部分列表不同的云存储源连接器及其连接规范。
 
