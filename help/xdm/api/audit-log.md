@@ -1,5 +1,5 @@
 ---
-keywords: Experience Platform;home;popular topics;api;API;XDM;XDM system;experience data model;Experience data model;Experience Data Model;data model;Data Model;audit;audit log;changelog;change log;rpc;
+keywords: Experience Platform；主页；热门主题；api;XDM;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；审核；审核；更改日志；rpc;
 solution: Experience Platform
 title: 审核日志端点指南
 description: 模式注册表API中的/auditlog端点允许您检索已对现有XDM资源所做更改的按时间顺序列表。
@@ -7,7 +7,7 @@ topic: developer guide
 translation-type: tm+mt
 source-git-commit: eb5e34dc3b48a6fe0757635cad1df08caa68b019
 workflow-type: tm+mt
-source-wordcount: '366'
+source-wordcount: '396'
 ht-degree: 2%
 
 ---
