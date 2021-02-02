@@ -1,67 +1,80 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: Experience Platform发行说明2020年12月9日
+description: Experience Platform发行说明2021年1月27日
 doc-type: release notes
-last-update: December 9, 2020
-author: ens60013 & ens72471
+last-update: January 27, 2021
+author: ens60013
 translation-type: tm+mt
-source-git-commit: ae353e6dda3f92647c32ee8e731be5785d24e5cb
+source-git-commit: 74325dcfe9d7b117e3f812d88e0c4a980d44ef53
 workflow-type: tm+mt
-source-wordcount: '426'
-ht-degree: 6%
+source-wordcount: '639'
+ht-degree: 5%
 
 ---
 
 
 # Adobe Experience Platform 发行说明
 
-**发布日期：2020年12月9日**
-
-Adobe Experience Platform的新增功能：
-
-- [[!DNL Dataflows]](#dataflows)
+**发行日期：2021 年 1 月 27 日**
 
 Adobe Experience Platform 现有功能的更新包括：
 
-- [[!DNL Data Science Workspace]](#dsw)
+- [[!DNL Data Prep]](#data-prep)
+- [[!DNL Destinations]](#destinations)
 - [[!DNL Sources]](#sources)
+- [[!DNL Experience Platform Launch Server Side]](#launch)
 
-## [!DNL Dataflows] {#dataflows}
+## [!DNL Data Prep] {#data-prep}
 
-数据流是跨平台移动数据的数据作业的表示。 这些数据流是跨不同服务配置的，有助于将数据从源连接器移动到目标数据集、标识和用户档案服务以及目标。
+[!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
 
-**主要功能**
+**新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 数据流的透明度 | 您可以监视源和目标的数据流。 有关详细信息，请阅读关 [于监视源的教程](../../dataflows/ui/monitor-sources.md) ，或 [者有关监视目标的教程](../../dataflows/ui/monitor-destinations.md)。 |
+| 常规表达式函数 | [!DNL Data Prep] 映射器现在支持基于常规表达式匹配和提取部分输入字段。 |
 
-要进一步了解数据流，请阅读数 [据流概述](../../dataflows/home.md)。
+有关详细信息，请参阅[[!DNL Data Prep] 概述](../../data-prep/home.md)。
 
-## [!DNL Data Science Workspace] {#dsw}
+## 目标 {#destinations}
 
-数据科学工作区使用机器学习和人工智能从数据中获得洞察。 数据科学工作区集成到Adobe Experience Platform，可帮助您跨Adobe解决方案使用内容和数据资产进行预测。
+[!DNL Destinations] 是预建的与目标平台的集成，允许从Adobe Experience Platform无缝激活数据。您可以使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
 
-**主要功能**
+**新增功能**
 
 | 功能 | 描述 |
-| --- | ---|
-| Adobe Experience Platform情报程序包 | Adobe Experience Platform智能软件包加载项是数据科学工作区升级，可解锁其他主要功能，如： <li> UI驱动的模型试验和评估。</li><li> 能够部署模型并将其运行，同时进行定期培训和推荐作业。</li><li> 支持Tensorflow模型（GPU计算）中的深度学习。</li><li> 基于Spark的分布式计算，可针对大数据集（10MM +行）进行培训和评分。</li><li>等等</li> |
+| ------- | ----------- |
+| 高级ID匹配 | 通过增加对外部ID、电话号码和移动设备ID等其他身份匹配的支持，增强了[!DNL Facebook Custom Audiences]和[!DNL Google Customer Match]中的受众匹配率功能。 有关更多详细信息，请参阅以下文档： <ul><li>[Facebook目标](../../destinations/catalog/social/facebook.md)</li><li>[Google客户匹配目标](../../destinations/catalog/advertising/google-customer-match.md)</li><li>[将用户档案和区段激活到目标](../../destinations/ui/activate-destinations.md)</li></ul> |
 
-要进一步了解Adobe Experience Platform智能软件包加载项，请参阅有关数据科 [学工作区访问和功能的文档](../../data-science-workspace/access-features-dsw.md)。
+要了解更多信息，请访问[目标概述](../../destinations/home.md)。
 
 ## [!DNL Sources] {#sources}
 
-Adobe Experience Platform可以从外部来源收集数据，同时允许您使用服务来构建、标记和增强该 [!DNL Platform] 数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)收集数据。
+Adobe Experience Platform可以从外部来源收集数据，同时允许您使用平台服务来构建、标记和增强这些数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)收集数据。
 
-[!DNL Experience Platform] 提供REST风格的API和交互式UI，让您可以轻松为各种数据提供者设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置获取运行的时间，以及管理数据获取吞吐量。
+Experience Platform提供RESTful API和交互式UI，使您能轻松为各种数据提供者设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置获取运行的时间，以及管理数据获取吞吐量。
 
-**主要功能**
+**新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 更新流源的帐户和连接详细信息 | 您现在可以使用API和UI更新现有流连接的名称、 [!DNL Flow Service] 说明和凭据。 有关详细信息，请参阅有关使用API [更新连接和使用UI编](../../sources/tutorials/api/update.md)[辑帐户详细信息的教程](../../sources/tutorials/ui/monitor.md)。 |
-| 删除数据流 | 现在，可以使用API和UI删除包含错误或已变得不必 [!DNL Flow Service] 要的流数据流。 有关详细信息，请参阅有关使用 [API删除数据流和](../../sources/tutorials/api/delete-dataflows.md)[使用UI删除数据流的教程](../../sources/tutorials/ui/delete.md)。 |
+| Adobe Audience Manager源连接器增强 | 您现在可以过滤和选择从Audience Manager到引入平台的各个第一方区段，并过滤掉第一方特征。 有关详细信息，请参阅关于[创建Audience Manager源连接器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)的教程。 |
+| [!DNL Google BigQuery] 源连接器增强功能 | 您现在可以使用[!DNL BigQuery]源连接器在一个流运行中摄取大于10GB的文件。 有关详细信息，请参阅[[!DNL BigQuery] 源连接器概述](../../sources/connectors/databases/bigquery.md)。 |
+| 支持云存储的复杂数据类型 | 现在，在使用云存储源连接器时，您可以收集复杂数据类型，如JSON文件中的数组。 有关详细信息，请参阅有关在UI](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md)或[中使用 [!DNL Flow Service] API](../../sources/tutorials/api/collect/cloud-storage.md)创建云存储数据流[的教程。 |
+| 支持[!DNL Microsoft Dynamics]源的基于服务主体密钥的身份验证 | 您现在可以使用服务主体密钥作为基于密码的身份验证的替代方法，对您的[!DNL Dynamics]帐户进行身份验证。 有关详细信息，请参阅[[!DNL Dynamics] 源连接器概述](../../sources/connectors/crm/ms-dynamics.md)。 |
+| 对云存储源中自定义分隔符的UI支持 | 您现在可以设置自定义列分隔符，如逗号(`,`)、制表符(`\t`)或管道(`|`)，以在UI中收集分隔的文件。 有关详细信息，请参阅[使用云存储源连接器](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md)创建数据流的教程 |
 
-要进一步了解源，请参阅 [源概述](../../sources/home.md)。
+要进一步了解源，请参阅[源概述](../../sources/home.md)。
 
+## [!DNL Experience Platform Launch Server Side] {#launch}
+
+Adobe Experience Platform Launch服务器端通过使用Adobe Experience Platform边缘网络执行在客户端上正常执行的任务，减少了网页和应用程序权重。 平台启动服务器端规则可以将数据转换并发送到新目标，而无需更改客户端实现。
+
+Platform Launch Server Side与Adobe Experience PlatformWeb和移动SDK相结合，可以：
+
+- 从包含数据有效负荷的页面进行一次调用，然后将此数据服务器端联合，以减少客户端网络流量并为客户提供更快的体验。
+- 减少网页加载所花费的时间，使您的站点符合性能方面的行业最佳实践。
+- 提高透明度并控制在所有客户端属性中从何处发送哪些类型的数据。
+- 创建服务器端规则，将以前跟踪的数据发送到新目标。
+
+有关信息，请参阅[平台启动文档](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en)。
