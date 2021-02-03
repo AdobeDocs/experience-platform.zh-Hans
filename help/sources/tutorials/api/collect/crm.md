@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 本教程介绍从第三方CRM系统检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 48a5dcfe5679e360da1e33f6021dc1229b92948f
 workflow-type: tm+mt
 source-wordcount: '1552'
 ht-degree: 1%
@@ -87,13 +87,36 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "name": "Salesforce source connection",
-        "connectionId": "4cb0c374-d3bb-4557-b139-5712880adc55",
+        "baseConnectionId": "4cb0c374-d3bb-4557-b139-5712880adc55",
         "description": "Salesforce source connection",
         "data": {
             "format": "tabular",
         },
         "params": {
-            "path": "Accounts"
+            "tableName": "Accounts",
+            "columns": [
+                {
+                    "name": "first_name",
+                    "type": "string",
+                    "xdm": {
+                        "type": "String"
+                    }
+                },
+                {
+                    "name": "last_name",
+                    "type": "string",
+                    "xdm": {
+                        "type": "String"
+                    }
+                },
+                {
+                    "name": "email",
+                    "type": "string",
+                    "xdm": {
+                        "type": "String"
+                    }
+                }
+            ]
         },
         "connectionSpec": {
             "id": "ccfc0fee1-7dc0-40ef-b73e-d8b134c436f5",
@@ -104,7 +127,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `connectionId` | 您正在访问的第三方CRM系统的唯一连接ID。 |
+| `baseConnectionId` | 您正在访问的第三方CRM系统的唯一连接ID。 |
 | `params.path` | 源文件的路径。 |
 | `connectionSpec.id` | 与特定第三方CRM系统关联的连接规范ID。 有关连接规范ID的列表，请参见[附录](#appendix)。 |
 
