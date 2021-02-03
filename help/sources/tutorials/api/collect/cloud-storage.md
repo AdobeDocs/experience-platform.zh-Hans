@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 本教程介绍从第三方云存储检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 64627592b873a48b9cb58ef911e049869a2c21fb
 workflow-type: tm+mt
 source-wordcount: '1621'
 ht-degree: 1%
@@ -89,7 +89,7 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "name": "Cloud storage source connector",
-        "connectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
+        "baseConnectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
         "description": "Cloud storage source connector",
         "data": {
             "format": "delimited",
@@ -108,7 +108,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `connectionId` | 您正在访问的第三方云存储系统的唯一连接ID。 |
+| `baseConnectionId` | 您正在访问的第三方云存储系统的唯一连接ID。 |
 | `data.format` | 定义数据格式属性的枚举值。 |
 | `data.columnDelimiter` | 可使用任何单字符列分隔符收集平面文件。 仅当引入CSV或TSV文件时，才需要此属性。 |
 | `params.path` | 您正在访问的源文件的路径。 |
