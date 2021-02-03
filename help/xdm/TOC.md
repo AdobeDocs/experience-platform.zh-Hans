@@ -5,9 +5,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用 Experience Data Model (XDM) 类和混合 (mixin) 来标准化体验数据。
 translation-type: tm+mt
-source-git-commit: 2c0dc4d54dcd1dcd17ffec70dbe3b16bb45ee141
+source-git-commit: cbdeb7529d27cb8b1cacc4a64b90637bb80f514d
 workflow-type: tm+mt
-source-wordcount: '217'
+source-wordcount: '225'
 ht-degree: 23%
 
 ---
@@ -36,6 +36,7 @@ ht-degree: 23%
       * [环境详细信息](./mixins/event/environment-details.md)
    * [混合名称更新](./mixins/name-updates.md)
 * 数据类型 {#data-types}
+   * [应用程序](./data-types/application.md)
    * [信标](./data-types/beacon.md)
    * [浏览器详细信息](./data-types/browser-details.md)
    * [同意和首选项](./data-types/consents.md)
@@ -48,6 +49,7 @@ ht-degree: 23%
    * [地理交互详细信息](./data-types/geo-interaction-details.md)
    * [地理形状](./data-types/geo-shape.md)
    * [身份](./data-types/identity.md)
+   * [度量](./data-types/measure.md)
    * [人员](./data-types/person.md)
    * [人员姓名](./data-types/person-name.md)
    * [电话号码](./data-types/phone-number.md)
@@ -55,7 +57,10 @@ ht-degree: 23%
    * [POI详细信息](./data-types/poi-details.md)
    * [POI交互](./data-types/poi-interaction.md)
    * [邮政地址](./data-types/postal-address.md)
+   * [ 搜索](./data-types/search.md)
    * [订阅](./data-types/subscription.md)
+   * [Web交互](./data-types/web-interactions.md)
+   * [网页详细信息](./data-types/webpage-details.md)
 * [!UICONTROL 架] 构UI  {#ui}
    * [概述](./ui/overview.md)
    * [浏览XDM资源](./ui/explore.md)
