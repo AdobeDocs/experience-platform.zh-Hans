@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 本教程介绍从第三方广告应用程序检索数据并通过源连接器和Flow Service API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 48a5dcfe5679e360da1e33f6021dc1229b92948f
 workflow-type: tm+mt
 source-wordcount: '1513'
 ht-degree: 1%
@@ -85,15 +85,49 @@ curl -X POST \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
-        -d '{
+    -d '{
         "name": "Google AdWords source connection",
-        "connectionId": "2484f2df-c057-4ab5-84f2-dfc0577ab592",
+        "baseConnectionId": "2484f2df-c057-4ab5-84f2-dfc0577ab592",
         "description": "Google AdWords source connection",
         "data": {
             "format": "tabular",
         },
         "params": {
-            "path": "v201809.AD_PERFORMANCE_REPORT"
+            "tableName": "v201809.AD_PERFORMANCE_REPORT",
+            "columns": [
+                {
+                    "name": "CallOnlyPhoneNumber",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "AdGroupId",
+                    "type": "long",
+                    "xdm": {
+                        "type": "integer",
+                        "minimum": -9007199254740992,
+                        "maximum": 9007199254740991
+                    }
+                },
+                {
+                    "name": "AdGroupName",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "Date",
+                    "type": "string",
+                    "meta:xdmType": "date-time",
+                    "xdm": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            ]
         },
         "connectionSpec": {
             "id": "d771e9c1-4f26-40dc-8617-ce58c4b53702",
@@ -104,7 +138,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `connectionId` | 您正在访问的广告应用程序的唯一连接ID。 |
+| `baseConnectionId` | 您正在访问的广告应用程序的唯一连接ID。 |
 | `params.path` | 源文件的路径。 |
 | `connectionSpec.id` | 与您的广告应用程序关联的连接规范ID。 |
 
