@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: 本教程介绍从第三方云存储检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 64627592b873a48b9cb58ef911e049869a2c21fb
+source-git-commit: c168a1b597a1ac2d85a8b896f3b6a8d213fcb1ae
 workflow-type: tm+mt
-source-wordcount: '1621'
+source-wordcount: '1639'
 ht-degree: 1%
 
 ---
@@ -340,6 +340,10 @@ curl -X POST \
 ## 创建映射{#mapping}
 
 为了将源数据引入目标数据集，必须首先将其映射到目标数据集所附加的目标模式。 这是通过对转换服务执行POST请求来实现的，该请求具有在请求有效负荷中定义的数据映射。
+
+>[!TIP]
+>
+>您可以使用云存储源连接器映射JSON文件中的数组等复杂数据类型。
 
 **API格式**
 
