@@ -5,7 +5,7 @@ title: 在UI中创建和编辑模式
 description: 学习如何在Experience Platform用户界面中创建和编辑模式的基础知识。
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 3aa838509e4e24c57508e7411b0ffcf135fbcf04
+source-git-commit: e9df977272524b6aba516982e93f3128d1b9278b
 workflow-type: tm+mt
 source-wordcount: '1167'
 ht-degree: 0%
@@ -81,7 +81,7 @@ ht-degree: 0%
 >
 >对于列出的任何混音，您可以悬停或专注于信息图标(![](../../images/ui/resources/schemas/info-icon.png))，以视图混音捕获的数据类型的简短描述。 在您决定将其添加到预览之前，还可以选择视图图标(![](../../images/ui/resources/schemas/preview-icon.png))来模式混音所提供字段的结构。
 
-选择完mixin后，选择&#x200B;**[!UICONTROL 添加mixin]**&#x200B;将其添加到模式。
+选择您的混音后，选择&#x200B;**[!UICONTROL 添加混音]**&#x200B;将它们添加到模式。
 
 ![](../../images/ui/resources/schemas/add-mixin-finish.png)
 
