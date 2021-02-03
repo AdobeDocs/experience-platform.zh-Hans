@@ -5,17 +5,15 @@ title: 使用Flow Service API浏览数据库
 topic: overview
 description: 本教程使用Flow Service API来浏览第三方数据库的内容和文件结构。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: ddf5be2f30bc347a881bdcbc6b880f087c03e263
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '563'
 ht-degree: 2%
 
 ---
 
 
 # 使用[!DNL Flow Service] API浏览数据库
-
-[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
 本教程使用[!DNL Flow Service] API来浏览第三方数据库的内容和文件结构。
 
@@ -40,17 +38,17 @@ ht-degree: 2%
 
 要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有E[!DNL xperience Platform] API调用中每个所需标头提供值，如下所示：
 
-* 授权：载体`{ACCESS_TOKEN}`
-* x-api-key:`{API_KEY}`
-* x-gw-ims-org-id:`{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 [!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
 
-* x-sandbox-name:`{SANDBOX_NAME}`
+* `x-sandbox-name: {SANDBOX_NAME}`
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
-* 内容类型：`application/json`
+* `Content-Type: application/json`
 
 ## 浏览数据表
 
@@ -64,13 +62,13 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=root
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BASE_CONNECTION_ID}` | 数据库连接的ID。 |
+| `{BASE_CONNECTION_ID}` | 数据库源的连接ID。 |
 
 **请求**
 
 ```shell
 curl -X GET \
-    'https://platform.adobe.io/data/foundation/flowservice/connections/54c22133-3a01-4d3b-8221-333a01bd3b03/explore?objectType=root' \
+    'https://platform.adobe.io/data/foundation/flowservice/connections/6990abad-977d-41b9-a85d-17ea8cf1c0e4/explore?objectType=root' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -119,7 +117,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=table&object={TABLE_PAT
 
 ```shell
 curl -X GET \
-    'https://platform.adobe.io/data/foundation/flowservice/connections/54c22133-3a01-4d3b-8221-333a01bd3b03/explore?objectType=table&object=test1.Mytable' \
+    'https://platform.adobe.io/data/foundation/flowservice/connections/6990abad-977d-41b9-a85d-17ea8cf1c0e4/explore?objectType=table&object=test1.Mytable' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
