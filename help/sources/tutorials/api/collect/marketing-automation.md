@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 本教程介绍从营销自动化系统检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: a9a4bbbd7128043596ebab45d12bdd6954554537
 workflow-type: tm+mt
 source-wordcount: '1537'
 ht-degree: 1%
@@ -87,7 +87,7 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "name": "HubSpot source connection",
-        "connectionId": "c6d4ee17-6752-4e83-94ee-1767522e83fa",
+        "baseConnectionId": "c6d4ee17-6752-4e83-94ee-1767522e83fa",
         "description": "HubSpot source connection",
         "data": {
             "format": "tabular",
@@ -104,7 +104,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `connectionId` | 您访问的第三方营销自动化系统的唯一连接ID。 |
+| `baseConnectionId` | 您访问的第三方营销自动化系统的唯一连接ID。 |
 | `params.path` | 您正在访问的源文件的路径。 |
 | `connectionSpec.id` | 营销自动化系统的连接规范ID。 |
 
