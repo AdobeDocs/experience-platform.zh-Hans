@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 本教程介绍从支付应用程序检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 9b4965e4256967961a92c544bbe355eae768e3dd
 workflow-type: tm+mt
 source-wordcount: '1560'
 ht-degree: 1%
@@ -87,14 +87,46 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "name": "PayPal source connection",
-        "connectionId": "24151d58-ffa7-4960-951d-58ffa7396097",
+        "baseConnectionId": "24151d58-ffa7-4960-951d-58ffa7396097",
         "description": "PayPal source connection",
         "data": {
             "format": "tabular",
             }
         },
         "params": {
-            "path": "PayPal.Catalog_Products"
+            "tableName": "PayPal.Catalog_Products",
+            "columns": [
+                {
+                    "name": "Product_Id",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "Product_Name",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "Description",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "Create_Time",
+                    "type": "string",
+                    "meta:xdmType": "date-time",
+                    "xdm": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            ]
         },
         "connectionSpec": {
             "id": "221c7626-58f6-4eec-8ee2-042b0226f03b",
@@ -105,7 +137,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `connectionId` | 您正在访问的第三方付款应用程序的唯一连接ID。 |
+| `baseConnectionId` | 您正在访问的第三方付款应用程序的唯一连接ID。 |
 | `params.path` | 源文件的路径。 |
 | `connectionSpec.id` | 您的付款应用程序的连接规范ID。 |
 
