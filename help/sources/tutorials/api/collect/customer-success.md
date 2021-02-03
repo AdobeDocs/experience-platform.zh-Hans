@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 本教程介绍从客户成功系统检索数据并通过源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 85a715a6a56c0a885cb6f5b63c1a90ba81479862
 workflow-type: tm+mt
 source-wordcount: '1541'
 ht-degree: 1%
@@ -87,24 +87,56 @@ curl -X POST \
     -H 'Content-Type: application/json' \
     -d '{
         "name": "Source connection for Customer Success",
-        "connectionId": "f1da3694-38a9-403d-9a36-9438a9203d42",
+        "baseConnectionId": "f1da3694-38a9-403d-9a36-9438a9203d42",
         "description": "Source connection for a Customer Success connector",
         "data": {
             "format": "tabular",
         },
         "params": {
-            "path": "Account"
+            "tableName": "Account",
+            "columns": [
+                {
+                    "name": "Id",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "Name",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "Phone",
+                    "type": "string",
+                    "xdm": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "CreatedDate",
+                    "type": "string",
+                    "meta:xdmType": "date-time",
+                    "xdm": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            ]
         },
         "connectionSpec": {
             "id": "cb66ab34-8619-49cb-96d1-39b37ede86ea",
             "version": "1.0"
         }
-    }}'
+    }'
 ```
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `connectionId` | 您正在访问的第三方客户成功系统的唯一连接ID。 |
+| `baseConnectionId` | 您正在访问的第三方客户成功系统的唯一连接ID。 |
 | `params.path` | 源文件的路径。 |
 | `connectionSpec.id` | 与特定第三方客户成功系统关联的连接规范ID。 有关连接规范ID的列表，请参见[附录](#appendix)。 |
 
