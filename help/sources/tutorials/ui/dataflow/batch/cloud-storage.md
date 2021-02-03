@@ -6,9 +6,9 @@ topic: overview
 type: Tutorial
 description: 数据流是从源中检索数据并将其引入平台数据集的计划任务。 本教程提供使用云存储帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: 4e85dc702cda5c6c495a6f7fb70453b7897baa36
+source-git-commit: 2d1b49d774d04e7befbcc1c9e5417ee82323634a
 workflow-type: tm+mt
-source-wordcount: '1877'
+source-wordcount: '1898'
 ht-degree: 0%
 
 ---
@@ -108,7 +108,7 @@ ht-degree: 0%
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping.png)
 
-对于JSON文件，除了将字段直接映射到其他字段外，还可以将对象直接映射到其他对象和数组到其他数组。
+对于JSON文件，除了直接将字段映射到其他字段外，您还可以将对象直接映射到其他对象和数组到其他数组。您还可以使用云存储源连接器预览和映射JSON文件中的数组等复杂数据类型。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/source-field-json.png)
 
