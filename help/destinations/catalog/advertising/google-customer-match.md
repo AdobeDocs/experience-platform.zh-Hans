@@ -5,9 +5,9 @@ seo-title: Google客户匹配目标
 description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 seo-description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 translation-type: tm+mt
-source-git-commit: 4e3b7e5ad440cae1ce15e5ecb2c9bd53863a445a
+source-git-commit: 38b2bfd93bda85cf87dde4e0345ca9c11e419c2f
 workflow-type: tm+mt
-source-wordcount: '1502'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->客户当前正在迁移到新的目标配置体验。 此时访问目标配置页面时可能遇到困难。
+>客户当前正在迁移到新的目标版本。 在迁移完成之前，您只能看到此目标的[!UICONTROL EMAIL]和[!UICONTROL EMAIL_LC_SHA_256]可用标识。
 
 [Google客](https://support.google.com/google-ads/answer/6379332?hl=en) 户匹配允许您使用线上和线下数据，通过Google自有和运营的资产触及和重新吸引客户，例如： [!DNL Search]、 [!DNL Shopping]、 [!DNL Gmail]和 [!DNL YouTube]。
 
