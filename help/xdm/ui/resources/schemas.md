@@ -5,9 +5,9 @@ title: 在UI中创建和编辑模式
 description: 学习如何在Experience Platform用户界面中创建和编辑模式的基础知识。
 topic: user guide
 translation-type: tm+mt
-source-git-commit: e9df977272524b6aba516982e93f3128d1b9278b
+source-git-commit: babe47cc864d9f79eee28989ca8b658350b9d790
 workflow-type: tm+mt
-source-wordcount: '1167'
+source-wordcount: '1321'
 ht-degree: 0%
 
 ---
@@ -53,7 +53,7 @@ ht-degree: 0%
 >
 >您可以使用工作区的搜索和筛选功能来帮助更轻松地查找模式。 有关详细信息，请参见[探索XDM资源](../explore.md)的指南。
 
-选择模式后，[!DNL Schema Editor]将显示，画布中显示模式的结构。 现在，您可以[向模式添加mixins](#add-mixins)，或者，如果模式采用任何自定义mixins](./mixins.md#edit)，则可以[编辑现有自定义mixins。
+选择模式后，[!DNL Schema Editor]将显示，画布中显示模式的结构。 现在，您可以[向模式添加mixins](#add-mixins)、[编辑字段显示名称](#display-names)或[编辑现有的自定义mixins](./mixins.md#edit)(如果模式采用任何类型)。
 
 ## 向模式{#add-mixins}添加混音
 
@@ -116,6 +116,22 @@ ht-degree: 0%
 ![](../../images/ui/resources/schemas/profile-enabled.png)
 
 该模式现在可用于实时客户用户档案。 当平台根据此模式将数据引入数据集时，该数据将并入合并的用户档案数据中。
+
+## 编辑模式字段{#display-names}的显示名称
+
+在为模式分配了类并添加了混音后，您可以编辑任何模式字段的显示名称，而不管这些字段是由标准XDM资源提供还是由自定义XDM资源提供。
+
+>[!NOTE]
+>
+>请记住，属于标准类或混合的字段的显示名称只能在特定模式的上下文中进行编辑。 换句话说，在一个模式中更改标准字段的显示名称不会影响使用相同关联类或混音的其他模式。
+
+要编辑模式字段的显示名称，请在画布中选择该字段。 在右边栏中，在&#x200B;**[!UICONTROL 显示名称]**&#x200B;下提供新名称。
+
+![](../../images/ui/resources/schemas/display-name.png)
+
+选择右边栏中的&#x200B;**[!UICONTROL 应用]**，画布将更新以显示字段的新显示名称。 选择&#x200B;**[!UICONTROL 保存]**&#x200B;以将更改应用于模式。
+
+![](../../images/ui/resources/schemas/display-name-changed.png)
 
 ## 更改模式的类{#change-class}
 
