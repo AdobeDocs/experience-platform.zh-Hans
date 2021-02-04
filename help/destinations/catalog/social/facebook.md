@@ -5,10 +5,10 @@ seo-title: Facebook目标
 description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 seo-description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 4e3b7e5ad440cae1ce15e5ecb2c9bd53863a445a
+source-git-commit: 38b2bfd93bda85cf87dde4e0345ca9c11e419c2f
 workflow-type: tm+mt
-source-wordcount: '963'
-ht-degree: 3%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->客户当前正在迁移到新的目标配置体验。 此时访问目标配置页面时可能遇到困难。
+>客户当前正在迁移到新的目标版本。 在迁移完成之前，您只能看到此目标的[!UICONTROL EMAIL]和[!UICONTROL EMAIL_LC_SHA_256]可用标识。
 
 激活[!DNL Facebook]活动的用户档案，根据散列电子邮件进行受众定位、个性化和抑制。
 
