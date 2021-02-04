@@ -5,9 +5,9 @@ title: 在UI中创建和编辑类
 description: 了解如何在Experience Platform用户界面中创建和编辑类。
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 2e20403122e65d28f04114af9b7e8d41874f76e2
+source-git-commit: 5bf729197de53e9d24675c8a1d0455e807fb90c5
 workflow-type: tm+mt
-source-wordcount: '850'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
@@ -53,9 +53,9 @@ Adobe提供几个标准（“核心”）XDM类，包括[!DNL XDM Individual Pro
 
 >[!NOTE]
 >
->只能编辑您的组织定义的自定义类。
+>只有组织定义的自定义类才能完全编辑和自定义。 对于由Adobe定义的核心类，只能在单个模式的上下文中编辑其字段的显示名称。 有关详细信息，请参阅[编辑模式字段的显示名称部分](./schemas.md#display-names)。
 >
->此外，在保存某个类并将其用于数据获取后，只能对其进行附加更改。 有关详细信息，请参阅[模式演化规则](../../schema/composition.md#evolution)。
+>保存自定义类并在数据获取中使用后，只能对其进行附加更改。 有关详细信息，请参阅[模式演化规则](../../schema/composition.md#evolution)。
 
 要编辑现有类，请选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡，然后选择使用要编辑的类的模式的名称。
 
