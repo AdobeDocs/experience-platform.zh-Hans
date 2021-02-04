@@ -5,9 +5,9 @@ seo-title: Facebook目标
 description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 seo-description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: d0b6225a726c13e2b77ea0f61446ea489df81e69
+source-git-commit: 4e3b7e5ad440cae1ce15e5ecb2c9bd53863a445a
 workflow-type: tm+mt
-source-wordcount: '939'
+source-wordcount: '963'
 ht-degree: 3%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 3%
 # [!DNL Facebook] 目标
 
 ## 概述 {#overview}
+
+>[!IMPORTANT]
+>
+>客户当前正在迁移到新的目标配置体验。 此时访问目标配置页面时可能遇到困难。
 
 激活[!DNL Facebook]活动的用户档案，根据散列电子邮件进行受众定位、个性化和抑制。
 
