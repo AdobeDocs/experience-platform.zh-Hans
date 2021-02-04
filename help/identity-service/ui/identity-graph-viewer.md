@@ -5,10 +5,10 @@ title: Adobe Experience Platform Identity Service
 topic: tutorial
 description: 标识图是特定客户不同标识之间关系的映射，可直观地展示客户如何跨不同渠道与品牌互动。
 translation-type: tm+mt
-source-git-commit: 7c9c81492df9333945ac62602f10b6097296d62b
+source-git-commit: 22685a8519529ba7afb7e50262ea4d40a450b382
 workflow-type: tm+mt
-source-wordcount: '905'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -100,7 +100,7 @@ ht-degree: 1%
 访问标识图查看器时可能会出错。 以下是使用标识图查看器时要注意的先决条件和限制列表。
 
 - 选定命名空间中必须存在标识值。
-- 要生成标识图查看器，至少需要两个链接标识。
+- 要生成标识图查看器，至少需要两个链接标识。 可能只有一个标识值，没有链接的标识，在这种情况下，该值仅存在于[!DNL Profile]查看器中。
 - 标识图查看器不能超过150个标识。
 
 ![错误屏幕](../images/identity-graph-viewer/error-screen.png)
