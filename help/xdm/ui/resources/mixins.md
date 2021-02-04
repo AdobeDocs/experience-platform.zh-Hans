@@ -5,9 +5,9 @@ title: 在UI中创建和编辑混音
 description: 了解如何在Experience Platform用户界面中创建和编辑混音。
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 2e20403122e65d28f04114af9b7e8d41874f76e2
+source-git-commit: cf74c7922271035474c7f10534692983add48616
 workflow-type: tm+mt
-source-wordcount: '668'
+source-wordcount: '704'
 ht-degree: 0%
 
 ---
@@ -45,9 +45,9 @@ Adobe Experience Platform提供许多标准混音，涵盖各种营销用例。 
 
 >[!NOTE]
 >
->只能编辑您的组织定义的自定义混音。
+>只有组织定义的自定义混音才能完全编辑和自定义。 对于Adobe定义的核心混音，在单个模式的上下文中只能编辑其字段的显示名称。 有关详细信息，请参阅[编辑模式字段的显示名称部分](./schemas.md#display-names)。
 >
->此外，一旦在模式中保存并使用混合器以获取数据，之后只能对混合器进行附加更改。 有关详细信息，请参阅[模式演化规则](../../schema/composition.md#evolution)。
+>一旦在模式中保存并使用自定义混音以获取数据，之后只能对混音进行附加更改。 有关详细信息，请参阅[模式演化规则](../../schema/composition.md#evolution)。
 
 要编辑现有的混音，必须首先在[!DNL Schema Editor]中打开使用混音的模式。 您可以[选择要编辑的现有模式](./schemas.md#edit)，也可以[创建新模式](./schemas.md#create)并添加相关的混音。
 
