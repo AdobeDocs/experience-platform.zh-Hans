@@ -5,7 +5,7 @@ description: 了解如何将现有模式导出到Adobe Experience Platform用户
 topic: user guide
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 2d6e833db7cd79135e6da4c68c9dca8cbed09ce4
+source-git-commit: 8d6916890a94300dc68d018d56579df9616c177c
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 0%
@@ -205,11 +205,11 @@ ht-degree: 0%
 
 有效负荷采用数组的形式，每个数组项都是表示要导出的自定义XDM资源的对象。 在上面的示例中，包含“[!DNL Loyalty details]”自定义混音和“[!DNL Loyalty Members]”模式。 模式使用的任何核心资源都不包括在导出中，因为这些资源可在所有沙箱和IMS组织中使用。
 
-请注意，贵组织的租户ID的每个实例在有效负荷中显示为`<XDM_TENANTID_PLACEHOLDER>`。 这些占位符将自动替换为相应的租户ID值，具体取决于您在下一步中导出模式的位置。
+请注意，贵组织的租户ID的每个实例在有效负荷中显示为`<XDM_TENANTID_PLACEHOLDER>`。 这些占位符将自动替换为相应的租户ID值，具体取决于您在下一步中导入模式的位置。
 
 ## 使用API导入资源
 
-为模式复制导出JSON后，您可以将它用作POST请求到模式注册表API中的`/import`端点的有效负荷。 有关如何配置调用以将模式发送到正确的IMS组织和沙箱的详细信息，请参阅[在API](../api/export-import.md#import)中导入XDM资源一节。
+为模式复制导出JSON后，您可以将它用作POST请求到模式注册表API中的`/import`端点的有效负荷。 有关如何配置调用以将模式发送到所需的IMS组织和沙箱的详细信息，请参阅[在API](../api/export-import.md#import)中导入XDM资源一节。
 
 ## 后续步骤
 
