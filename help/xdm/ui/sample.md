@@ -4,7 +4,7 @@ title: 在UI中为XDM模式生成示例数据
 description: 了解如何根据Adobe Experience Platform用户界面中的现有模式生成示例JSON数据。
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 87497ef8a0ebf8de8b6c2dff1650c0b982299e8a
+source-git-commit: 8d6916890a94300dc68d018d56579df9616c177c
 workflow-type: tm+mt
 source-wordcount: '336'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 对于在模式UI中定义的任何Experience Platform，您都可以生成符合模式结构的示例JSON对象。 此对象可用作任何被引入使用相关模式的数据集中的数据的模板。
 
-在平台UI中，在左侧导航中选择&#x200B;**[!UICONTROL 模式]**。 在&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡下，找到要为其生成示例模式的。 从列表中选择它，右边栏将更新，显示有关模式的详细信息。 从此处选择&#x200B;**[!UICONTROL 下载示例文件]。**
+在平台UI中，在左侧导航中选择&#x200B;**[!UICONTROL 模式]**。 在&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡下，找到要为其生成示例模式的。 从列表中选择它，右边栏将更新，显示有关模式的详细信息。 从此处，选择&#x200B;**[!UICONTROL 下载示例文件]**。
 
 ![](../images/ui/sample/sample-data.png)
 
