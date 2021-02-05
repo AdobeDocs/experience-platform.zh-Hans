@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；标识图查看器；标识图查看器；图形查看器；标识命名空间；标识命名空间；标识；标识；标识服务；标识服务
 solution: Experience Platform
-title: Adobe Experience Platform Identity Service
+title: Identity Graph Viewer概述
 topic: tutorial
 description: 标识图是特定客户不同标识之间关系的映射，可直观地展示客户如何跨不同渠道与品牌互动。
 translation-type: tm+mt
-source-git-commit: 22685a8519529ba7afb7e50262ea4d40a450b382
+source-git-commit: 8ec904d584225113a6791533ff544560fc2efdf3
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '946'
 ht-degree: 0%
 
 ---
 
 
-# （测试版）标识图查看器
+# （测试版）标识图查看器概述
 
 >[!NOTE]
 >
@@ -108,3 +108,9 @@ ht-degree: 0%
 ## 后续步骤
 
 通过阅读此文档，您学习了如何在平台UI中浏览客户的身份图。 有关平台中身份的详细信息，请参阅[Identity Service概述](../home.md)
+
+## Journey Orchestration
+
+以下视频旨在支持您对标识图查看器的理解。
+
+>[!VIDEO](https://video.tv.adobe.com/v/331030/?quality=12&learn=on)
