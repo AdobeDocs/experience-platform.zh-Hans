@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: January 27, 2021
 author: ens60013
 translation-type: tm+mt
-source-git-commit: 74325dcfe9d7b117e3f812d88e0c4a980d44ef53
+source-git-commit: 2e3a6acbfaa7f733a9843068c00f31f0b7f535b6
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '651'
 ht-degree: 5%
 
 ---
@@ -39,6 +39,12 @@ Adobe Experience Platform 现有功能的更新包括：
 ## 目标 {#destinations}
 
 [!DNL Destinations] 是预建的与目标平台的集成，允许从Adobe Experience Platform无缝激活数据。您可以使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
+
+**新目标**
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [!DNL Azure Blob] | [!DNL Azure Blob] 是微软的云对象存储解决方案。 |
 
 **新增功能**
 
