@@ -1,21 +1,17 @@
 ---
 keywords: InMoment;inmoment;Inmoment；启动集成
-title: InMoment扩展
-seo-title: InMoment扩展
+title: InMoment扩展目标
 description: InMoment扩展是Adobe Experience Platform的调查目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: InMoment扩展是Adobe Experience Platform的调查目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '538'
 ht-degree: 4%
 
 ---
 
 
 # [!DNL InMoment] 扩展 {#inmoment-extension}
-
-## 概述 {#overview}
 
 [!DNL InMoment]启动集成允许您通过Digital Intercept产品快速轻松地启用在线反馈。 在应用程序中，可以通过CXI云管理员配置和管理拦截，使CX管理者能够更好地控制其项目。
 
