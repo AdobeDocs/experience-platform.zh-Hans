@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform;用户档案；实时用户档案；故障排除；护栏；准则；限制；实体；主实体；尺寸实体；
-title: Experience Platform保障实时客户用户档案数据
+title: 实时客户用户档案数据的保障
 solution: Experience Platform
 product: experience platform
 topic: guide
 type: Documentation
 description: 'Adobe Experience Platform提供了一系列护栏，帮助您避免创建实时客户用户档案无法支持的数据模型。 本文档概述了建模用户档案数据时需要牢记的最佳实践和限制。 '
 translation-type: tm+mt
-source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
+source-git-commit: ba1cbed3b5e3f3a8879b3882856a03ef4be9b96a
 workflow-type: tm+mt
-source-wordcount: '1457'
+source-wordcount: '1456'
 ht-degree: 1%
 
 ---
 
 
-# [!DNL Platform] 护栏  [!DNL Real-time Customer Profile]
+# [!DNL Real-time Customer Profile]数据的护栏
 
 [!DNL Real-time Customer Profile] 提供个人用户档案，使您能够根据行为洞察和客户属性提供个性化的跨渠道体验。为了实现此目标，Adobe Experience Platform的[!DNL Profile]和分段引擎使用高度非规范的混合数据模型，该模型优惠了开发客户用户档案的新方法。 这种混合数据模型的使用使得正确建模所收集的数据变得尤为重要。 虽然维护用户档案数据的[!DNL Profile]数据存储不是关系存储，[!DNL Profile]允许与小维度实体集成，以便以简化和直观的方式创建段。 此集成称为多实体细分。
 
