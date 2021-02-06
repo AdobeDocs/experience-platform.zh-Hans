@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform；主页；热门主题；Microsoft Dynamics;microsoft Dynamics;Dynamics;Dynamics
 solution: Experience Platform
-title: 在UI中创建Microsoft Dynamics源连接器
+title: 在UI中创建Microsoft Dynamics源连接
 topic: overview
 type: Tutorial
-description: 本教程提供了使用平台用户界面创建Microsoft Dynamics（以下称“Dynamics”）源连接器的步骤。
+description: 了解如何使用Adobe Experience PlatformUI创建Microsoft Dynamics源连接。
 translation-type: tm+mt
-source-git-commit: 4241e00fd444969e5a40c8b34dd7786b1a3c6dcb
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '601'
-ht-degree: 0%
+source-wordcount: '596'
+ht-degree: 1%
 
 ---
 
 
-# 在UI中创建[!DNL Microsoft Dynamics]源连接器
+# 在UI中创建[!DNL Microsoft Dynamics]源连接
 
-本教程提供了使用平台用户界面创建[!DNL Microsoft Dynamics]（以下称“[!DNL Dynamics]”）源连接器的步骤。
+本教程提供了使用Adobe Experience PlatformUI创建[!DNL Microsoft Dynamics]（以下称“[!DNL Dynamics]”）源连接的步骤。
 
 ## 入门指南
 
