@@ -1,25 +1,21 @@
 ---
 keywords: 移动；大脑；消息；
-title: Braze目标
-seo-title: Braze目标
+title: Braze连接目标
 description: Braze是一个全面的客户互动平台，它为客户与他们喜爱的品牌之间提供相关且难忘的体验。
-seo-description: Braze是一个全面的客户互动平台，它为客户与他们喜爱的品牌之间提供相关且难忘的体验。
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: f4095a90ff70e8d054bae4f3b0f884552ffd30df
 workflow-type: tm+mt
-source-wordcount: '954'
+source-wordcount: '932'
 ht-degree: 1%
 
 ---
 
 
-# （测试版）[!DNL Braze]目标
+# （测试版）[!DNL Braze]连接
 
 >[!IMPORTANT]
 >
 >Adobe Experience Platform的Braze目的地目前为Beta。 文档和功能可能会发生变化。
-
-## 概述 {#overview}
 
 [!DNL Braze]目标可帮助您向[!DNL Braze]发送用户档案数据。
 
