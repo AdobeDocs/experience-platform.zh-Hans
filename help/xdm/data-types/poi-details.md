@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;fields;schemas;Schemas;poi;poi details;point of interest;point of interest details;datatype;data-type;data type;
+keywords: Experience Platform；主题；热门主题；模式;模式;XDM；字段；模式;模式;;poi;poi详细信息；兴趣点；兴趣点详细信息；数据类型；数据类型；
 solution: Experience Platform
 title: 兴趣点详细信息数据类型
 topic: overview
 description: 此文档概述了兴趣点详细信息XDM数据类型。
 translation-type: tm+mt
-source-git-commit: 27ce9b6e8608bbfccac25387ba96f998272273c1
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '175'
+source-wordcount: '200'
 ht-degree: 4%
 
 ---
 
 
-# [!UICONTROL 兴趣点详细信息] ，数据类型
+# [!UICONTROL 兴趣点详细信] 息数据类型
 
-[!UICONTROL 兴趣点详细信息] 是一种标准XDM数据类型，用于描述在其中观察到事件的地理相关数据。
+[!UICONTROL 兴趣点详] 细介绍一种标准XDM数据类型，用于描述在其中观察到事件的地理相关数据。
 
 <img src="../images/data-types/poi-details.png" width="550" /><br />
 
