@@ -1,41 +1,41 @@
 ---
-keywords: Experience Platform;preview schema data;Data Science Workspace;popular topics
+keywords: Experience Platform;预览模式数据；数据科学工作区；热门主题
 solution: Experience Platform
-title: 预览模式和数据集
+title: 预览零售销售模式和数据集
 topic: tutorial
 type: Tutorial
 description: 以下文档概述了预览Adobe Experience Platform上的模式和数据集。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '227'
+source-wordcount: '243'
 ht-degree: 0%
 
 ---
 
 
-# 预览模式和数据集
+# 预览零售模式和数据集
 
-成功完成引导脚本后，请参 [阅创建零售销售模式和数据集教程](./create-retails-sales-dataset.md) 。 可以在上查看输出模式和数据集 [!DNL Experience Platform]。 要视图模式和数据集，请按照以下步骤操作：
+成功完成[创建零售销售模式和数据集](./create-retails-sales-dataset.md)教程中的引导脚本后。 可在[!DNL Experience Platform]上查看输出模式和数据集。 要视图模式和数据集，请按照以下步骤操作：
 
-1. 单击左 **[!UICONTROL 侧导航]** 列中的模式链接，并查找由引导脚本创建的输入模式。 模式的名称将与上一步中定义 `config.yaml` 的名称相对应。 视图模式详细信息，并通过单击它进行合成。
+1. 单击左侧导航列中的&#x200B;**[!UICONTROL 模式]**&#x200B;链接，找到由引导脚本创建的输入模式。 模式的名称将与上一步中在`config.yaml`中定义的内容相对应。 视图模式详细信息，并通过单击它进行合成。
 
    ![](../images/models-recipes/access-data/schema_overview.png)
 
-2. 单击左 **[!UICONTROL 侧导航列]** 中的“数据集”链接，然后打开通过单击列表名称创建的输入数据集。 数据集的名称将与上一步中定义 `config.yaml` 的内容相对应。
+2. 单击左侧导航列中的&#x200B;**[!UICONTROL Datasets]**&#x200B;链接，然后打开通过单击列表名称创建的输入数据集。 数据集的名称将与上一步中在`config.yaml`中定义的内容相对应。
 
    ![](../images/models-recipes/access-data/dataset_overview.png)
 
-3. 单 **[!UICONTROL 击右上方]** 的预览数据集预览数据集的子集。
+3. 单击右上方的&#x200B;**[!UICONTROL 预览数据集]**&#x200B;预览数据集的子集。
 
    ![](../images/models-recipes/access-data/preview_dataset.png)
 
 ## 后续步骤
 
-您现在已使用提供的引导脚本成功将零售 [!DNL Experience Platform] 销售示例数据引入。
+您现在已使用提供的引导脚本成功将零售销售示例数据引入[!DNL Experience Platform]。
 
 要继续处理所摄取的数据：
 - [使用Jupyter笔记本分析数据](../jupyterlab/analyze-your-data.md)
-   - 使用Jupyter笔记本 [!DNL Data Science Workspace] 访问、探索、可视化和了解您的数据。
+   - 使用[!DNL Data Science Workspace]中的Jupyter Notebooks访问、浏览、可视化和了解您的数据。
 - [将源文件打包到菜谱中](./package-source-files-recipe.md)
-   - 请按照本教程学习如何通过将源文件打包到可 [!DNL Data Science Workspace] 导入的Recipe文件中，将自己的Model引入其中。
+   - 请按照本教程学习如何通过将源文件打包到可导入的Recipe文件中，将您自己的Model引入[!DNL Data Science Workspace]中。
