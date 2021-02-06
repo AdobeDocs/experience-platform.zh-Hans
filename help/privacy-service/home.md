@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；GDPR;gdpr;ccpa:CCPA;pdpa;PDPA;pdpa_t;PDPA_THA;lgpd;LGPD;lgpd;lgpd_bra;LGPD_BRA;
 solution: Experience Platform
-title: Adobe Experience Platform Privacy Service概述
+title: Privacy Service概述
 topic: overview
 description: Privacy Service允许您促进Experience Cloud数据操作中自动遵守法律隐私法规。
 translation-type: tm+mt
-source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
+source-git-commit: 37c1c98ccba50fa917acc5e93763294f4dde5c36
 workflow-type: tm+mt
-source-wordcount: '1400'
+source-wordcount: '1394'
 ht-degree: 0%
 
 ---
 
 
-# Adobe Experience Platform[!DNL Privacy Service]概述
+# [!DNL Privacy Service]概述
 
 为了提供更好的客户体验，您需要收集和存储客户的个人数据。 使用这些数据时，了解和尊重客户的隐私非常重要。 新的法律和组织法规授予用户根据请求从数据存储中访问或删除其个人数据的权利。
 
