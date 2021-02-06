@@ -1,15 +1,15 @@
 ---
 keywords: Experience Platform；主题；热门主题；查询服务；查询服务；编写查询；编写查询;
 solution: Experience Platform
-title: 编写查询
+title: 查询服务执行一般指南
 topic: queries
 type: Tutorial
 description: 本文档详细介绍了在Adobe Experience Platform查询服务中编写查询时应了解的重要细节。
 translation-type: tm+mt
-source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '970'
-ht-degree: 4%
+source-wordcount: '976'
+ht-degree: 3%
 
 ---
 
