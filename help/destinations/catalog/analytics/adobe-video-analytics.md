@@ -1,21 +1,17 @@
 ---
 keywords: 媒体分析扩展；媒体分析；音频和视频扩展
-title: Adobe Media Analytics for Audio and Video 扩展
-seo-title: Adobe Media Analytics for Audio and Video 扩展
+title: Adobe音频和视频扩展目标的媒体分析
 description: Adobe音频和视频分析扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Adobe媒体分析视频扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '575'
-ht-degree: 9%
+source-wordcount: '538'
+ht-degree: 6%
 
 ---
 
 
-# Adobe Media Analytics for Audio and Video 扩展 {#adobe-analytics-for-video-extension}
-
-## 概述 {#overview}
+# Adobe Media Analytics for Audio and Video 扩展{#adobe-analytics-for-video-extension}
 
 Adobe音频和视频媒体分析是基础Analytics产品的附加功能，可为客户提供对视频、音频和广告的可靠衡量。
 
