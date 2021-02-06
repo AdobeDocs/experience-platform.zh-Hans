@@ -5,7 +5,7 @@ title: Privacy Service疑难解答指南
 topic: troubleshooting
 description: 此文档提供有关Privacy Service的常见问题解答，以及有关API中常见错误的信息。
 translation-type: tm+mt
-source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '884'
 ht-degree: 0%
