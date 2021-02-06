@@ -5,22 +5,22 @@ user-guide-title: Adobe Experience Platform 数据提取帮助
 breadcrumb-title: Data Ingestion 指南
 user-guide-description: 通过批处理或流式获取将数据引入平台。
 translation-type: tm+mt
-source-git-commit: cfdaf72b7f4bf190877006ccd4cc6a7fd014adc2
+source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
 workflow-type: tm+mt
-source-wordcount: '124'
+source-wordcount: '121'
 ht-degree: 20%
 
 ---
 
 
-# Adobe Experience Platform Data Ingestion {#ingestion}
+# Adobe Experience Platform数据摄取{#ingestion}
 
 - [数据摄取概述](home.md)
-- 流摄取 {#streaming}
+- 流摄取{#streaming}
    - [概述](streaming-ingestion/overview.md)
    - [卡夫卡连接器](streaming-ingestion/kafka.md)
    - [故障诊断](streaming-ingestion/troubleshooting.md)
-- 批量摄取{#batch}
+- 批摄取{#batch}
    - [概述](batch-ingestion/overview.md)
    - [批处理摄取API](batch-ingestion/api-overview.md)
    - [部分批摄取](batch-ingestion/partial.md)
@@ -34,13 +34,13 @@ ht-degree: 20%
    - [流记录数据](tutorials/streaming-record-data.md)
    - [流式时间序列数据](tutorials/streaming-time-series-data.md)
    - [流化多条消息](tutorials/streaming-multiple-messages.md)
-- 数据摄取质量和监控{#quality}
+- 数据质量和监视{#quality}
    - [概述](quality/overview.md)
    - [监控数据获取](quality/monitor-data-ingestion.md)
    - [检索错误诊断](quality/error-diagnostics.md)
    - [检索失败的批](quality/retrieve-failed-batches.md)
    - [流式摄取验证](quality/streaming-validation.md)
-   - [订阅数据获取事件](quality/subscribe-events.md)
+   - [数据获取通知](quality/subscribe-events.md)
 - [源连接器](source-connectors.md)
 - [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
