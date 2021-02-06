@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;list identities;list cluster
+keywords: Experience Platform；主页；热门主题；列表标识；列表簇
 solution: Experience Platform
-title: 列表群集标识
+title: 列表群集中的所有身份
 topic: API guide
 description: 在标识图中相关的标识，无论命名空间如何，都被视为该标识图中同一“群集”的一部分。 以下选项提供访问所有群集成员的方法。
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
 workflow-type: tm+mt
-source-wordcount: '347'
+source-wordcount: '359'
 ht-degree: 1%
 
 ---
@@ -21,10 +21,10 @@ ht-degree: 1%
 
 检索所有群集成员以获得单个标识。
 
-您可以使用可选参 `graph-type` 数指示标识图以从中获取群集。 选项有：
+可以使用可选`graph-type`参数指示标识图以从中获取群集。 选项有：
 
 - 无——不执行身份拼接。
-- 专用图——根据您的专用标识图执行身份拼接。 如果未 `graph-type` 提供，则此为默认值。
+- 专用图——根据您的专用标识图执行身份拼接。 如果未提供`graph-type`，则此为默认值。
 
 **API格式**
 
@@ -34,7 +34,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/cluster/members?{PARAM
 
 **请求**
 
-选项1:将标识作为命名空间(`nsId`按ID)和ID值(`id`)提供。
+选项1:将标识作为命名空间（`nsId`，按ID）和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -45,7 +45,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2:将标识作为命名空间(`ns`按名称)和ID值(`id`)提供。
+选项2:将标识作为命名空间（`ns`，按名称）和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -56,7 +56,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3:提供XID()身`xid`份。 有关如何获取身份的XID的详细信息，请参阅此文档中 [有关获取身份的XID的部分](./list-native-id.md)。
+选项3:提供XID身份(`xid`)。 有关如何获取身份的XID的详细信息，请参阅此文档中覆盖[获取身份的XID的部分](./list-native-id.md)。
 
 ```shell
 curl -X GET \
@@ -69,7 +69,7 @@ curl -X GET \
 
 ## 获取多个身份的关联身份
 
-使用 `POST` 作为上述方法的批 `GET` 量等效值，以返回多个身份的簇中的身份。
+使用`POST`作为上述`GET`方法的批处理等效项，以返回多个标识的群集中的标识。
 
 >[!NOTE]
 >
@@ -87,7 +87,7 @@ POST https://platform-{REGION}.adobe.io/data/core/identity/clusters/members
 
 **存根请求**
 
-使用标题 `x-uis-cst-ctx: stub` 将返回一个无效响应。 这是一个临时解决方案，在服务完成的同时，促进早期的一体化发展进程。 当不再需要时，将弃用此选项。
+使用`x-uis-cst-ctx: stub`头将返回无效响应。 这是一个临时解决方案，在服务完成的同时，促进早期的一体化发展进程。 当不再需要时，将弃用此选项。
 
 ```shell
 curl -X POST \
@@ -243,4 +243,4 @@ curl -X POST \
 
 ## 后续步骤
 
-继续到下一个教程 [列表身份的群集历史](./list-cluster-history.md)
+继续下一个教程，以[列表身份的群集历史记录](./list-cluster-history.md)
