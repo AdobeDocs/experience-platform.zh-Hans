@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；下载得分；用户ai；热门主题；导出；用户ai下载；用户ai得分
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
-title: 在客户AI中下载分数
+title: 下载客户人工智能中的分数
 topic: Downloading scores
 description: 客户AI允许您下载Parke文件格式的得分。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
 source-wordcount: '961'
 ht-degree: 2%
@@ -13,7 +13,7 @@ ht-degree: 2%
 ---
 
 
-# 在客户AI中下载分数
+# 在客户人工智能中下载分数
 
 此文档可作为下载客户AI得分的指南。
 
