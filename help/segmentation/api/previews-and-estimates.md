@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;previews;estimates;previews and estimates;estimates and previews;api;API;
+keywords: Experience Platform；主题；热门主题；分段；分段；分段服务；预览；估计；预览和估计；估计和预览;api;API;
 solution: Experience Platform
-title: 预览和估计端点
+title: 预览和评估API端点
 topic: developer guide
-description: 在开发细分定义时，您可以使用Adobe Experience Platform内的估计和预览工具来视图摘要级信息，以帮助确保隔离预期受众。
+description: Adobe Experience Platform分段服务API中的预览和估计端点允许您视图摘要级信息，以帮助确保在您的区段中隔离预期受众。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '773'
+source-wordcount: '793'
 ht-degree: 2%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 2%
 
 # 预览和估计端点
 
-在开发细分定义时，您可以使用中的估计和预览工具来 [!DNL Adobe Experience Platform] 视图摘要级别信息，以帮助确保隔离预期受众。 **预览** 为区段定义提供符合条件的列表的分页用户档案，使您能够将结果与预期进行比较。 **估计** 提供关于区段定义的统计信息，如预测受众大小、置信区间和误差标准偏差。
+在开发细分定义时，您可以使用[!DNL Adobe Experience Platform]中的估计和预览工具来视图摘要级别信息，以帮助确保隔离预期受众。 **预** 览为区段定义提供符合条件的用户档案的分页列表，使您能够将结果与预期进行比较。**估** 计提供有关段定义的统计信息，如预测受众大小、置信区间和误差标准偏差。
 
 ## 入门指南
 
-本指南中使用的端点是API的一 [!DNL Adobe Experience Platform Segmentation Service] 部分。 在继续之前，请查 [看入门指南](./getting-started.md) ，了解成功调用API需要了解的重要信息，包括必需的头以及如何读取示例API调用。
+本指南中使用的端点是[!DNL Adobe Experience Platform Segmentation Service] API的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，了解成功调用API所需的重要信息，包括必需的头以及如何读取示例API调用。
 
 ## 估计的生成方式
 
@@ -41,9 +41,9 @@ ht-degree: 2%
 >
 >估计通常需要10到15秒才能运行，首先是粗略估计，然后随着读取更多记录而优化。
 
-## Create a new preview {#create-preview}
+## 创建新预览{#create-preview}
 
-可以通过向端点发出预览请求来创建新POST `/preview` 。
+可以通过向`/preview`端点发出预览请求来创建新POST。
 
 >[!NOTE]
 >
@@ -75,8 +75,8 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `predicateExpression` | 查询数据的PQL表达式。 |
-| `predicateType` | 查询表达式的谓词类型 `predicateExpression`。 当前，此属性唯一接受的值是 `pql/text`。 |
-| `predicateModel` | 用户档案数据 [!DNL Experience Data Model] 所基于的模式(XDM)的名称。 |
+| `predicateType` | `predicateExpression`下查询表达式的谓词类型。 当前，此属性唯一接受的值为`pql/text`。 |
+| `predicateModel` | 用户档案模式所基于的[!DNL Experience Data Model](XDM)的名称。 |
 
 **响应**
 
@@ -97,9 +97,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | `state` | 预览作业的当前状态。 最初创建时，它将处于“NEW”状态。 随后，它将处于“RUNNING”状态，直到处理完成，此时它将变为“RESULT_READY”或“FAILED”。 |
 | `previewId` | 预览作业的ID，用于查看评估或预览时的查找目的，如下一节所述。 |
 
-## 检索特定预览的结果 {#get-preview}
+## 检索特定预览{#get-preview}的结果
 
-您可以通过向端点发出预览请求并在请求路径中提 `/preview` 供预览ID来检索有关特定GET的详细信息。
+您可以通过向`/preview`端点发出GET请求并在请求路径中提供预览ID来检索有关特定预览的详细信息。
 
 **API格式**
 
@@ -109,7 +109,7 @@ GET /preview/{PREVIEW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | 要 `previewId` 检索的预览的值。 |
+| `{PREVIEW_ID}` | 要检索的预览的`previewId`值。 |
 
 **请求**
 
@@ -172,11 +172,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `results` | 实体ID的列表及其相关身份。 提供的链接可用于使用查找指定的实体 [[!DNL Profile Access API]](../../profile/api/entities.md)。 |
+| `results` | 实体ID的列表及其相关身份。 提供的链接可用于使用[[!DNL Profile Access API]](../../profile/api/entities.md)查找指定的实体。 |
 
-## 检索特定评估作业的结果 {#get-estimate}
+## 检索特定评估作业{#get-estimate}的结果
 
-创建预览作业后，您可以在GET请求路径中 `previewId` 使用其到终结点的 `/estimate` 信息来视图有关区段定义的统计信息，包括预计受众大小、置信区间和错误标准偏差。
+创建预览作业后，您可以在到`/estimate`端点的GET请求路径中使用其`previewId`来视图有关段定义的统计信息，包括预计受众大小、置信区间和错误标准偏差。
 
 **API格式**
 
@@ -186,7 +186,7 @@ GET /estimate/{PREVIEW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | 仅当创建预览作业，并且两个作业共享相同的ID值以用于查找时，才会触发估计作业。 具体而言，这是 `previewId` 创建预览作业时返回的值。 |
+| `{PREVIEW_ID}` | 仅当创建预览作业，并且两个作业共享相同的ID值以用于查找时，才会触发估计作业。 具体而言，这是创建预览作业时返回的`previewId`值。 |
 
 **请求**
 
@@ -231,4 +231,4 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 ## 后续步骤
 
-阅读本指南后，您现在可以更好地了解如何处理预览和评估。 要进一步了解其他API [!DNL Segmentation Service] 端点，请阅读分段服务 [开发人员指南概述](./overview.md)。
+阅读本指南后，您现在可以更好地了解如何处理预览和评估。 要进一步了解其他[!DNL Segmentation Service] API端点，请阅读[分段服务开发人员指南概述](./overview.md)。
