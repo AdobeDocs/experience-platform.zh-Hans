@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;ExperienceEvent;fields;schemas;Schemas;Schema design;mixin;mixin;environment;environment details;
+keywords: Experience Platform；主题；热门主题；模式;模式;XDM；体验事件；字段；模式;模式;模式设计；混音；环境;环境详细信息；
 solution: Experience Platform
 title: 环境详细信息混合
 topic: overview
 description: 此文档概述了ExperienceEvent环境详细信息混合。
 translation-type: tm+mt
-source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '179'
+source-wordcount: '198'
 ht-degree: 2%
 
 ---
 
 
-# [!UICONTROL 环境详细信息] （混合）
+# [!UICONTROL 环境详] 细信息
 
 >[!NOTE]
 >
->几个混音的名称已经更改。 有关详细信息，请 [参阅混合名称](../name-updates.md) 更新文档。
+>几个混音的名称已经更改。 有关详细信息，请参阅[mixin name updates](../name-updates.md)上的文档。
 
-[!UICONTROL 环境详细信] 息是类的标准混合 [[!DNL XDM ExperienceEvent] ](../../classes/individual-profile.md) ，用于捕获与体验事件相关的环境详细信息，如设备详细信息、浏览器信息、本地时间和其他地理信息。
+[!UICONTROL 环境] 详细信息是类的标准混合 [[!DNL XDM ExperienceEvent] ](../../classes/individual-profile.md) ，用于捕获与体验事件相关的环境详细信息，如设备详细信息、浏览器信息、本地时间和其他地理信息。
 
 <img src="../../images/mixins/environment-details.png" width="500" /><br />
 
