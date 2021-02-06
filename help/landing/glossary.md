@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: Adobe Experience Platform 术语表
+title: Adobe Experience Platform词汇表
 topic: getting started
 description: Experience Platform 重要术语词汇表。
 translation-type: tm+mt
-source-git-commit: a7ddba7c060e809478427ef3950360ccd67e6c60
+source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
 workflow-type: tm+mt
 source-wordcount: '7137'
 ht-degree: 0%
