@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform；主页；热门主题；CJA；旅程分析；客户旅程分析；活动编排；客户旅程；旅程；旅程编排；功能；地区
 solution: Experience Platform
-title: Adobe Experience Platform概述
+title: Adobe Experience Platform 概述
 topic: getting started
 description: Adobe Experience Platform公司使组织能够在应用数据科学和机器学习之前集中和标准化客户数据，从而显着改进丰富的个性化体验的设计和投放。
 translation-type: tm+mt
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
 workflow-type: tm+mt
 source-wordcount: '459'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
