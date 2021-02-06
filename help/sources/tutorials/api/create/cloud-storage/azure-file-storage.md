@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题；Azure;Azure文件存储;Azure文件存储
 solution: Experience Platform
-title: 使用Flow Service API创建Azure文件存储连接器
+title: 使用流服务API创建Azure文件存储源连接
 topic: overview
 type: Tutorial
-description: 本教程使用Flow Service API指导您完成将Azure文件存储连接到Experience Platform的步骤。
+description: 了解如何使用Flow Service API将Azure文件存储连接到Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '587'
 ht-degree: 2%
 
 ---
 
 
-# 使用[!DNL Flow Service] API创建[!DNL Azure File Storage]连接器
+# 使用[!DNL Flow Service] API创建[!DNL Azure File Storage]源连接
 
 >[!NOTE]
 >
