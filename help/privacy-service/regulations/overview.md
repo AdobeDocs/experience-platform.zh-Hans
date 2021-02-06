@@ -5,7 +5,7 @@ title: 隐私法规概述
 topic: troubleshooting
 description: 本文档概述了Adobe Experience Cloud支持的不同隐私法规。
 translation-type: tm+mt
-source-git-commit: 238a9200e4b43d41335bed0efab079780b252717
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '428'
 ht-degree: 6%
