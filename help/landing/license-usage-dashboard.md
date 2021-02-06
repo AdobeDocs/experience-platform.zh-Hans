@@ -5,7 +5,7 @@ description: '本指南概述了Adobe Experience PlatformUI中提供的许可证
 topic: guide
 type: Documentation
 translation-type: tm+mt
-source-git-commit: 8e4d8d29ca13017d7f6de5ca790efe91b01c129d
+source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
 workflow-type: tm+mt
 source-wordcount: '629'
 ht-degree: 1%
