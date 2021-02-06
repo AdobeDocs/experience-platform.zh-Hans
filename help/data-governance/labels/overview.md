@@ -5,7 +5,7 @@ title: 数据使用标签概述
 topic: labels
 description: Adobe Experience Platform数据管理使您能够将数据使用标签应用于数据集和字段，并根据相关的数据使用策略对每个标签进行分类。 此文档概述了Experience Platform中的数据使用标签。
 translation-type: tm+mt
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '619'
 ht-degree: 0%
