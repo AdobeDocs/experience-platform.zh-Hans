@@ -1,29 +1,29 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;individual profile;fields;schemas;Schemas;segment;segmentMembership;segment membership;Schema design;map;Map;
+keywords: Experience Platform；主题；热门主题；模式;模式;XDM；个人用户档案；字段；模式;模式；段；段成员；段成员；模式设计；映射；
 solution: Experience Platform
-title: 混合的细分会员资格详细信息
+title: 细分会员资格详细信息混合
 topic: overview
 description: 此文档概述了“区段会员资格详细信息”混合。
 translation-type: tm+mt
-source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '385'
+source-wordcount: '406'
 ht-degree: 1%
 
 ---
 
 
-# [!UICONTROL 混合的细分会员资] 格详细信息
+# [!UICONTROL 细分会员资格详] 细信息
 
 >[!NOTE]
 >
->几个混音的名称已经更改。 有关详细信息，请 [参阅混合名称](../name-updates.md) 更新文档。
+>几个混音的名称已经更改。 有关详细信息，请参阅[mixin name updates](../name-updates.md)上的文档。
 
-[!UICONTROL 区段成员资格] 详细信息是该类的标准混 [[!DNL XDM Individual Profile] 合项](../../classes/individual-profile.md)。 混音提供单个地图字段，该字段捕获有关区段成员资格的信息，包括个人所属的区段、最后的资格时间以及会员资格的有效期到何时。
+[!UICONTROL 细分会] 员资格详细信息是课程的标 [[!DNL XDM Individual Profile] 准混合](../../classes/individual-profile.md)。混音提供单个地图字段，该字段捕获有关区段成员资格的信息，包括个人所属的区段、最后的资格时间以及会员资格的有效期到何时。
 
 >[!WARNING]
 >
->虽然必 `segmentMembership` 须使用此混音将字段手动添加到用户档案模式，但您不应尝试手动填充或更新此字段。 当执行分段作业时， `segmentMembership` 系统会自动更新每个用户档案的映射。
+>虽然必须使用此混音将`segmentMembership`字段手动添加到用户档案模式，但您不应尝试手动填充或更新此字段。 在执行分段作业时，系统会自动更新每个用户档案的`segmentMembership`映射。
 
 <img src="../../images/data-types/profile-segmentation.png" width="400" /><br />
 
@@ -31,7 +31,7 @@ ht-degree: 1%
 | --- | --- | --- |
 | `segmentMembership` | 地图 | 描述个人区段成员关系的映射对象。 此对象的结构在下面有详细说明。 |
 
-以下是系统已 `segmentMembership` 为特定用户档案填充的示例映射。 段成员关系按命名空间排序，如对象的根级键所示。 反过来，每个命名空间下的各个键代表用户档案是其成员的段的ID。 每个区段对象都包含多个子字段，这些子字段提供有关成员关系的更多详细信息：
+以下是系统为特定用户档案填充的示例`segmentMembership`映射。 段成员关系按命名空间排序，如对象的根级键所示。 反过来，每个命名空间下的各个键代表用户档案是其成员的段的ID。 每个区段对象都包含多个子字段，这些子字段提供有关成员关系的更多详细信息：
 
 ```json
 {
