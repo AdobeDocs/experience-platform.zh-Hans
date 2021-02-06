@@ -1,21 +1,17 @@
 ---
 keywords: twitter;twitter;twitter通用网站标签；Twitter通用网站标签；Twitter UWT标签；Twitter UWT;twitter uwt
-title: Twitter通用网站标签扩展
-seo-title: Twitter通用网站标签扩展
+title: Twitter通用网站标记扩展目标
 description: Twitter通用网站标签扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Twitter通用网站标签扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '541'
+source-wordcount: '508'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Twitter Universal Website Tag] 扩展 {#twitter-uwt-extension}
-
-## 概述 {#overview}
 
 [!DNL Twitter Universal Website Tag] 提供将信标发送到Twitter UWT标记的操作。
 
