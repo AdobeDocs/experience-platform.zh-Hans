@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；体验数据模型；数据模型；ui；工作区；混合；混合；
 solution: Experience Platform
-title: 在UI中创建和编辑混音
+title: 在UI中创建和编辑混合
 description: 了解如何在Experience Platform用户界面中创建和编辑混音。
 topic: user guide
 translation-type: tm+mt
-source-git-commit: cf74c7922271035474c7f10534692983add48616
+source-git-commit: aa2088d30716f56ac2909214badbb39c0ae97855
 workflow-type: tm+mt
 source-wordcount: '704'
 ht-degree: 0%
