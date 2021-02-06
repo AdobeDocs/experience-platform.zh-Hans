@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;Customer Attributes connector
+keywords: Experience Platform；主页；热门主题；客户属性连接器
 solution: Experience Platform
-title: 客户属性连接器
+title: 客户属性源连接器概述
 topic: overview
-description: 以下文档提供了如何使用API或用户界面将客户属性连接到平台的信息
+description: 了解如何使用API或用户界面将客户属性连接到Adobe Experience Platform
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '121'
+source-wordcount: '130'
 ht-degree: 0%
 
 ---
@@ -19,8 +19,8 @@ Adobe Experience Platform允许从外部来源摄取数据，同时使您能够�
 
 Experience Platform支持将用户档案数据引入Adobe Experience Platform。
 
-以下文档提供了如何使用API或用户界面将客户属性连接到平台的信息：
+以下文档提供了如何使用API或用户界面将客户属性连接到Adobe Experience Platform的信息：
 
 ## 使用UI将客户属性连接到平台
 
-- [在UI中创建客户属性源连接器](../../tutorials/ui/create/adobe-applications/customer-attributes.md)
+- [在UI中创建客户属性源连接](../../tutorials/ui/create/adobe-applications/customer-attributes.md)
