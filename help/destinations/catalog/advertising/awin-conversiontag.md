@@ -1,21 +1,17 @@
 ---
 keywords: Awin广告商转换标签扩展；转换标签；Awin;awin;AWIN
-title: Awin广告商转换标签扩展
-seo-title: Awin广告商转换标签扩展
+title: Awin广告商转换标签扩展目标
 description: Awin广告商转化标签扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Awin广告商转化标签扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '529'
 ht-degree: 3%
 
 ---
 
 
 # Awin广告商转换标签扩展{#awin-conversiontag-extension}
-
-## 概述 {#overview}
 
 转换标签是AWIN.Tracking.Sale JavaScript对象的声明，该对象在确认页面上完成，以指示Mastertag已进行转换。 随后，它将执行必要的跟踪请求。
 
