@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据摄取；批处理；启用数据集；批处理概述；概述；批处理摄取概述；
 solution: Experience Platform
-title: 批摄取概述
+title: 批处理摄取概述
 topic: overview
-description: 批处理摄取API允许您将数据作为批处理文件导入到Adobe Experience Platform。 所摄取的用户档案可以是CRM系统中平面文件（如Parke文件）中的模式数据，也可以是与体验数据模型(XDM)注册表中的已知数据相符的数据。
+description: Adobe Experience Platform数据摄取API允许您将数据作为批处理文件导入到平台中。 所摄取的用户档案可以是CRM系统中平面文件（如Parke文件）中的模式数据，也可以是与体验数据模型(XDM)注册表中的已知数据相符的数据。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '1216'
+source-wordcount: '1222'
 ht-degree: 2%
 
 ---
 
 
-# [!DNL Batch Ingestion]概述
+# 批量摄取概述
 
-[!DNL Batch Ingestion] API允许您将数据作为批处理文件引入Adobe Experience Platform。 所摄取的用户档案可以是CRM系统中的平面文件（如Parke文件）中的模式数据，也可以是符合[!DNL Experience Data Model](XDM)注册表中的已知数据的数据。
+Adobe Experience Platform数据摄取API允许您将数据作为批处理文件导入到平台中。 所摄取的用户档案可以是CRM系统中的平面文件（如Parke文件）中的模式数据，也可以是符合[!DNL Experience Data Model](XDM)注册表中的已知数据的数据。
 
 [数据摄取API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)提供了有关这些API调用的其他信息。
 
