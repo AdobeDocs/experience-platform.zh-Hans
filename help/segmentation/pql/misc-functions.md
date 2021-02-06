@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;pql;PQL;Profile Query Language;miscellaneous functions;misc;
+keywords: Experience Platform；主题；热门主题；分段；分段；分段服务；pql;PQL;用户档案查询语；杂项功能；
 solution: Experience Platform
-title: 杂项函数
+title: PQL杂项函数
 topic: developer guide
 description: 以下函数是用户档案查询语言(PQL)的一个杂项函数。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '114'
+source-wordcount: '132'
 ht-degree: 3%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 3%
 
 # 杂项函数
 
-以下函数是(PQL)的一 [!DNL Profile Query Language] 个杂项函数。 有关其他PQL功能的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md)。
+以下函数是[!DNL Profile Query Language](PQL)的一个杂项函数。 有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] 概述](./overview.md)。
 
 ## 让
 
-该 `let` 函数允许将表达式存储为变量，以便以后在查询中使用。
+`let`函数允许将表达式存储为变量，以后在查询中使用。
 
 **Format**
 
@@ -37,4 +37,4 @@ let S = (sum X.commerce.order.priceTotal over X from xEvent where X.commerce.ord
 
 ## 后续步骤
 
-您已经了解了其他功能，现在可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请阅读 [用户档案查询语概述](./overview.md)。
+您已经了解了其他功能，现在可以在PQL查询中使用它们。 有关其他PQL函数的详细信息，请阅读[用户档案查询语语言概述](./overview.md)。
