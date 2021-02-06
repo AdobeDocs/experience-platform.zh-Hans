@@ -5,7 +5,7 @@ title: Privacy ServiceUI概述
 topic: UI guide
 description: 开始使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监控隐私请求。
 translation-type: tm+mt
-source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '180'
 ht-degree: 1%
