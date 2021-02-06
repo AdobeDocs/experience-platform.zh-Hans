@@ -4,11 +4,11 @@ solution: Experience Platform
 title: 使用Flow Service API从第三方云存储系统中摄取拼花数据
 topic: overview
 type: Tutorial
-description: 本教程使用Flow Service API指导您完成从第三方云存储系统中摄取Parke数据的步骤。
+description: 本教程使用Flow Service API指导您完成从第三方云存储系统中摄取Apache Parce数据的步骤。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '1100'
+source-wordcount: '1101'
 ht-degree: 2%
 
 ---
