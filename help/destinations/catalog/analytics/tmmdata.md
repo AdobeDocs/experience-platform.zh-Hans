@@ -1,21 +1,17 @@
 ---
 keywords: TMMData;tmm data;tmmdata;TMM数据
-title: TMMData扩展
-seo-title: TMMData扩展
+title: TMMData扩展目标
 description: TMMData扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: TMMData扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '571'
+source-wordcount: '544'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL TMMData] 扩展 {#tmmdata-extension}
-
-## 概述 {#overview}
 
 [!DNL TMMData's] Adobe Marketing Cloud的基础平台为营销团队提供工具，用于访问和混合其所有关键数据源（包括内部／外部和在线／离线数据），以实现自信、全面的跨渠道分析，并实现自动活动设置，并直接导入Adobe和其他分析和BI工具。
 
