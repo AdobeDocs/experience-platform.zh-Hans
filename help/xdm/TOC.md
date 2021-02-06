@@ -5,9 +5,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用 Experience Data Model (XDM) 类和混合 (mixin) 来标准化体验数据。
 translation-type: tm+mt
-source-git-commit: c82ad393ecaa46d01596dbba06f5fc756711bc31
+source-git-commit: b735e5f7eb8d1f0526d8786430c844b4d36fa09d
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '236'
 ht-degree: 22%
 
 ---
@@ -39,6 +39,7 @@ ht-degree: 22%
    * [应用程序](./data-types/application.md)
    * [信标](./data-types/beacon.md)
    * [浏览器详细信息](./data-types/browser-details.md)
+   * [商务](./data-types/commerce.md)
    * [同意和首选项](./data-types/consents.md)
    * [设备](./data-types/device.md)
    * [电子邮件地址](./data-types/email-address.md)
@@ -50,6 +51,8 @@ ht-degree: 22%
    * [地理形状](./data-types/geo-shape.md)
    * [身份](./data-types/identity.md)
    * [度量](./data-types/measure.md)
+   * [订单](./data-types/order.md)
+   * [付款项](./data-types/payment-item.md)
    * [人员](./data-types/person.md)
    * [人员姓名](./data-types/person-name.md)
    * [电话号码](./data-types/phone-number.md)
@@ -95,10 +98,10 @@ ht-degree: 22%
    * [临时模式](api/ad-hoc.md)
    * [附录](api/appendix.md)
 * 教程 {#tutorials}
-   * [创建模式(API)](tutorials/create-schema-api.md)
    * [创建模式(UI)](tutorials/create-schema-ui.md)
-   * [定义两个模式(API)之间的关系](tutorials/relationship-api.md)
+   * [创建模式(API)](tutorials/create-schema-api.md)
    * [定义两个模式(UI)之间的关系](tutorials/relationship-ui.md)
+   * [定义两个模式(API)之间的关系](tutorials/relationship-api.md)
    * [创建点对点模式(API)](tutorials/ad-hoc.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)
