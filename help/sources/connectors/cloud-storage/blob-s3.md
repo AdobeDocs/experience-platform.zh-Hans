@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；Azure Blob;AmazonS3;blob;Blob;S3;s3
 solution: Experience Platform
-title: Azure Blob和AmazonS3连接器
+title: Azure Blob和AmazonS3源连接器概述
 topic: overview
-description: 以下文档提供了如何使用API或用户界面将Azure Blob和AmazonS3连接到平台的信息。
+description: 了解如何使用API或用户界面将Azure Blob和AmazonS3连接到Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '140'
 ht-degree: 0%
 
 ---
