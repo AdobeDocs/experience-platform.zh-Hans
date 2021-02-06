@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform；主题；热门主题；查询服务；查询服务；数据外部重复数据删除;外部重复数据删除;
 solution: Experience Platform
-title: 数据外部重复数据删除
+title: 查询服务中的外部重复数据删除
 topic: queries
 type: Tutorial
 description: 此文档概述了用于消除重复的三个常见用例(体验事件、购买和指标)的子选择和完整的查询示例。
 translation-type: tm+mt
-source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '494'
 ht-degree: 0%
 
 ---
