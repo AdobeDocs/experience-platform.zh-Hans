@@ -1,12 +1,12 @@
 ---
 keywords: 分段；分段rtcdp；实时客户数据平台分段
-title: 分段服务概述
+title: 实时客户数据平台中的细分服务
 seo-title: 实时客户数据平台中的细分服务
 description: 实时CDP构建在Adobe Experience Platform之上，并利用许多Experience Platform服务和功能。 使用分段服务，您可以将客户划分为具有相似特征的较小组，从而提供定制营销。
 translation-type: tm+mt
-source-git-commit: 9f20f8bfeefb5bc427a72a11ac1f01816cdbc4b2
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '544'
 ht-degree: 0%
 
 ---
