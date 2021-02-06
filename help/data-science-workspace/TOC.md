@@ -3,12 +3,12 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 数据科学工作区帮助
 breadcrumb-title: Data Science Workspace 指南
-user-guide-description: 借助机器学习技术，使用 Adobe Sensei 和 JupyterLab Notebooks 开发、训练模型和菜谱，并进行评分。
+user-guide-description: 借助机器学习技术，使用 Adobe Sensei 和 JupyterLab Notebooks 开发、训练模型和配方，并进行评分。
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '237'
-ht-degree: 15%
+source-wordcount: '233'
+ht-degree: 16%
 
 ---
 
@@ -18,8 +18,8 @@ ht-degree: 15%
 * [数据科学工作区概述](home.md)
 * [数据科学工作区访问和功能](access-features-dsw.md)
 * [数据科学工作区演练](walkthrough.md)
-* JupyterLab笔记本 {#jupyterlab}
-   * [JupyterLab用户指南](jupyterlab/overview.md)
+* JupyterLab笔记本{#jupyterlab}
+   * [概述](jupyterlab/overview.md)
    * [数据访问](jupyterlab/access-notebook-data.md)
    * [分析数据](jupyterlab/analyze-your-data.md)
    * [查询服务](jupyterlab/query-service.md)
@@ -34,23 +34,23 @@ ht-degree: 15%
    * [MLServices](api/mlservices.md)
    * [洞察](api/insights.md)
    * [附录](api/appendix.md)
-* 实时机器学习(Alpha) {#real-time-machine-learning}
+* 实时机器学习(Alpha){#real-time-machine-learning}
    * [概述](real-time-machine-learning/home.md)
    * [入门指南](real-time-machine-learning/getting-started.md)
-   * [RTML创作笔记本用户指南](real-time-machine-learning/rtml-authoring-notebook.md)
+   * [管理笔记本](real-time-machine-learning/rtml-authoring-notebook.md)
    * [节点引用指南](real-time-machine-learning/node-reference.md)
-* 预建菜谱 {#pre-built-recipes}
+* 预建菜谱{#pre-built-recipes}
    * [产品推荐处方](pre-built-recipes/product-recommendations.md)
    * [产品购买预测](pre-built-recipes/product-purchase-prediction.md)
    * [零售销售处方](pre-built-recipes/retail-sales.md)
-* 模型创作 {#authoring}
+* 模型创作{#authoring}
    * [模型创作SDK](authoring/sdk.md)
    * [创建特征管线](authoring/feature-pipeline.md)
-   * [平台SDK指南(Python)](authoring/platform-sdk.md)
+   * [使用Platform SDK进行模型创作(Python)](authoring/platform-sdk.md)
    * [Python数据访问](authoring/python.md)
    * [Spark数据访问](authoring/spark.md)
-* 模型和菜谱教程 {#models-recipes}
-   * [创建并发布机器学习模型演练](models-recipes/create-publish-model.md)
+* 模型和菜谱教程{#models-recipes}
+   * [创建和发布机器学习模型](models-recipes/create-publish-model.md)
    * [创建零售销售模式和数据集](models-recipes/create-retails-sales-dataset.md)
    * [预览模式和数据集](models-recipes/preview-schema-data.md)
    * [将源文件打包到菜谱中](models-recipes/package-source-files-recipe.md)
