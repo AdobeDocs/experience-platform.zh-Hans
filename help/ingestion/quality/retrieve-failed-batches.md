@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题；检索失败的批；失败的批；批处理摄取；失败的批；获取失败的批；获取失败的批；下载失败的批；下载失败的批；
 solution: Experience Platform
-title: 检索失败的批
+title: 使用数据访问API检索失败的批
 topic: tutorial
 type: Tutorial
 description: 本教程介绍了使用数据摄取API检索有关失败批次的信息的步骤。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
 workflow-type: tm+mt
-source-wordcount: '645'
-ht-degree: 2%
+source-wordcount: '652'
+ht-degree: 1%
 
 ---
 
 
-# 使用API检索失败的批
+# 使用数据访问API检索失败的批
 
 Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以使用批处理摄取，它允许您使用各种文件类型（如CSV）插入其数据；或者使用流式摄取，它允许您使用流式端点将其数据实时插入到[!DNL Platform]。
 
