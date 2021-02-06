@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主题；热门主题；查询服务；api指南；连接参数；查询服务；
 solution: Experience Platform
-title: 查询服务开发人员指南
+title: 连接参数API端点
 topic: connection parameters
 description: 通过向/connection_parameters端点发出GET请求，可以检索连接参数以使用交互式服务。
 translation-type: tm+mt
-source-git-commit: 648544bc60c0cee8ca8b167118391980b6c33d91
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '147'
+source-wordcount: '148'
 ht-degree: 1%
 
 ---
 
 
-# 连接参数
+# 连接参数端点
 
 ## 示例API调用
 
