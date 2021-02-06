@@ -1,21 +1,17 @@
 ---
 keywords: demandbase扩展；demandbase;demanbase目标
-title: Demandbase扩展
-seo-title: Demandbase扩展
+title: Demandbase扩展目标
 description: Demandbase扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Demandbase扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '566'
+source-wordcount: '539'
 ht-degree: 4%
 
 ---
 
 
 # [!DNL Demandbase] 扩展 {#demandbase-extension}
-
-## 概述 {#overview}
 
 直接获得[!DNL Demandbase] B2B帐户洞察，在Adobe Analytics，您可以按行业、收入和目标帐户细分流量和行为。 此基于帐户的视图可提供关于参与度、转化率和最有价值访客来源的独特洞察。
 
