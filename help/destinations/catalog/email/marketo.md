@@ -1,21 +1,17 @@
 ---
 keywords: Marketo;marketo;Marketo扩展；marketo扩展
-title: Marketo扩展
-seo-title: Marketo扩展
+title: Marketo扩展目标
 description: Marketo扩展是Adobe Experience Platform的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Marketo扩展是Adobe Experience Platform的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '519'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Marketo] 扩展 {#marketo-extension}
-
-## 概述 {#overview}
 
 [!DNL Marketo]强大的营销自动化软件可帮助营销人员主控数字营销的艺术和科学，吸引客户和潜在客户。
 
