@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;streaming segmentation;Segmentation;Segmentation Service;segmentation service;ui guide;
+keywords: Experience Platform；主页；热门主题；流分割；分段；分段服务；分段服务；
 solution: Experience Platform
-title: 流细分
+title: 流分段UI指南
 topic: ui guide
 description: Adobe Experience Platform的流式细分使您能够近乎实时地进行细分，同时专注于数据的丰富性。 利用流细分，当数据进入平台时，现在会发生细分资格，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传入平台时评估大多数细分规则，这意味着，在不运行计划的细分作业的情况下，细分成员资格将保持最新。
 translation-type: tm+mt
-source-git-commit: 2bd4b773f7763ca408b55e3b0e2d0bbe9e7b66ba
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '714'
+source-wordcount: '730'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->以下文档说明了如何使用UI使用流式分段。 有关使用API的流分段的信息，请阅读流 [分段API指南](../api/streaming-segmentation.md)。
+>以下文档说明了如何使用UI使用流式分段。 有关使用API的流分段的信息，请阅读[流分段API指南](../api/streaming-segmentation.md)。
 
-基于的流 [!DNL Adobe Experience Platform] 式细分允许客户在关注数据丰富性的同时近乎实时地进行细分。 利用流细分，流数据进入时即会发生细分资格 [!DNL Platform]，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传入时评估大多数细分规则， [!DNL Platform]这意味着，在不运行计划的细分作业的情况下，区段成员关系将保持最新状态。
+[!DNL Adobe Experience Platform]上的流细分使客户能够近乎实时地进行细分，同时专注于数据的丰富性。 使用流细分，流数据进入[!DNL Platform]时，现在会发生细分资格问题，从而减轻计划和运行细分作业的需求。 借助此功能，现在可以在数据传递到[!DNL Platform]时评估大多数细分规则，这意味着，在不运行计划的细分作业的情况下，细分成员关系将保持最新。
 
 >[!NOTE]
 >
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->为了使流分段正常工作，您需要为组织启用计划分段。 有关启用计划分段的详细信息，请参 [阅分段用户指南中的流分段部分](./overview.md#scheduled-segmentation)。
+>为了使流分段正常工作，您需要为组织启用计划分段。 有关启用计划分段的详细信息，请参阅分段用户指南](./overview.md#scheduled-segmentation)中的[流分段部分。
 
 如果查询符合以下任何条件，则将使用流分段自动评估该数据：
 
@@ -40,9 +40,9 @@ ht-degree: 0%
 | 仅用户档案 | 只引用用户档案属性的任何区段定义。 |  |
 | 指用户档案 | 引用单个传入事件（无时间限制）和一个或多个用户档案属性的任何区段定义。 | ![](../images/ui/streaming-segmentation/profile-hit.png) |
 | 指相对时间窗口内用户档案的传入点击 | 引用单个传入事件和一个或多个用户档案属性的任何区段定义。 | ![](../images/ui/streaming-segmentation/profile-relative-success.png) |
-| 引用事件的多个用户档案 | 任何引用过去24小时内的多个事件 **并且(可选** )具有一个或多个用户档案属性的定义。 | ![](../images/ui/streaming-segmentation/event-history-success.png) |
+| 引用事件的多个用户档案 | 在过去24小时内引用多个事件&#x200B;**且（可选）具有一个或多个用户档案属性的任何定义。** | ![](../images/ui/streaming-segmentation/event-history-success.png) |
 
-在以下情况下 **** ，将不会为流分段启用段定义：
+在以下情况下，区段定义将&#x200B;**不**&#x200B;启用流分段：
 
 - 区段定义包括Adobe Audience Manager(AAM)区段或特征。
 - 段定义包括多个实体(多实体查询)。
@@ -52,7 +52,7 @@ ht-degree: 0%
 | 查询类型 | 准则 |
 | ---------- | -------- |
 | 单事件查询 | 回顾窗口没有限制。 |
-| 查询事件历史 | <ul><li>回顾窗口限于 **一天**。</li><li>事件之间必 **须存** 在严格的时间排序条件。</li><li>支持具有至少一个否定查询的事件。 但是，整个事件 **不能** 是否定的。</li></ul> |
+| 查询事件历史 | <ul><li>回顾窗口限制为&#x200B;**一天**。</li><li>严格的时间排序条件&#x200B;**必须**&#x200B;存在于事件之间。</li><li>支持具有至少一个否定查询的事件。 但是，整个事件&#x200B;**不能**&#x200B;为取反。</li></ul> |
 
 如果修改了区段定义，使其不再符合流式分段的条件，则区段定义将自动从“流式”切换为“批处理”。
 
@@ -62,7 +62,7 @@ ht-degree: 0%
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
 
-具体而言，将显示有关 **[!UICONTROL 合格受众总大小的]** 详细信息。 “ **[!UICONTROL 合格受众总数]** ”显示上次完成的区段作业运行中合格受众的总数。 如果在过去24小时内未完成细分作业，则将从估计中获取受众数。
+具体来说，显示有关&#x200B;**[!UICONTROL 总合格受众大小]**&#x200B;的详细信息。 **[!UICONTROL 合格受众大小]**&#x200B;显示上次完成段作业运行中合格受众的总数。 如果在过去24小时内未完成细分作业，则将从估计中获取受众数。
 
 下面是一个线形图，显示过去24小时内合格和被取消资格的区段数。 可以调整下拉列表以显示最近24小时、上周或最近30天。
 
@@ -72,11 +72,11 @@ ht-degree: 0%
 
 ![](../images/ui/streaming-segmentation/info-bubble.png)
 
-有关区段定义的更多信息，请阅读上一节有关区段定 [义的详细信息](#segment-details)。
+有关区段定义的详细信息，请阅读上一节[区段定义详细信息](#segment-details)。
 
 ## 流分段视频演示
 
-以下视频旨在支持您对流细分的理解。 它展示了一个客户体验示例，然后快速浏览界面中的主要 [!DNL Platform] 功能。
+以下视频旨在支持您对流细分的理解。 它展示了一个客户体验示例，然后快速浏览[!DNL Platform]界面中的主要功能。
 
 >[!VIDEO](https://video.tv.adobe.com/v/36184?quality=12&learn=on)
 
@@ -84,4 +84,4 @@ ht-degree: 0%
 
 本用户指南介绍支持流的细分定义如何在Adobe Experience Platform运行以及如何监控支持流的细分。
 
-要了解有关使用Adobe Experience Platform用户界面的更多信息，请阅 [读分段用户指南](./overview.md)。
+要了解有关使用Adobe Experience Platform用户界面的更多信息，请阅读[分段用户指南](./overview.md)。
