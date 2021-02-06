@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；兼容性；兼容性；兼容性模式；兼容性模式；字段类型；字段类型；
 solution: Experience Platform
-title: 模式注册开发人员附录
+title: 模式注册表API指南附录
 description: 本文档提供与使用模式注册表API相关的补充信息。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: b395535cbe7e4030606ee2808eb173998f5c32e0
 workflow-type: tm+mt
-source-wordcount: '767'
-ht-degree: 1%
+source-wordcount: '772'
+ht-degree: 0%
 
 ---
 
 
-# 附录
+# 模式注册表API指南附录
 
 本文档提供与使用[!DNL Schema Registry] API相关的补充信息。
 
