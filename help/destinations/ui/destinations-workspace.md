@@ -1,11 +1,10 @@
 ---
 keywords: 平台；目标；目标工作区；工作区；ui；目标ui；目录；目标目录；
-title: 目标工作区
-seo-title: 目标工作区
+title: 目标工作区概述
 description: “目标”工作区由四个部分组成，即目录、浏览、帐户和系统视图，这些部分在以下各节中有介绍。
 seo-description: 在Adobe Experience Platform，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
 source-wordcount: '910'
 ht-degree: 2%
@@ -13,7 +12,7 @@ ht-degree: 2%
 ---
 
 
-# 目标工作区{#destinations-workspace}
+# 目标工作区概述{#destinations-workspace}
 
 在Adobe Experience Platform，从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**&#x200B;以访问[!UICONTROL 目标]工作区。
 
