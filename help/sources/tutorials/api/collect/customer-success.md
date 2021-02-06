@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；收集客户成功；客户成功
 solution: Experience Platform
-title: 通过源连接器和API从客户成功系统收集数据
+title: 使用源连接器和API从客户成功系统收集数据
 topic: overview
 type: Tutorial
-description: 本教程介绍从客户成功系统检索数据并通过源连接器和API将其引入平台的步骤。
+description: 本教程介绍从客户成功系统检索数据以及使用源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 85a715a6a56c0a885cb6f5b63c1a90ba81479862
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
 source-wordcount: '1541'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 ---
 
 
-# 通过源连接器和API从客户成功系统收集数据
+# 使用源连接器和API从客户成功系统收集数据
 
 本教程介绍从第三方客户成功系统检索数据并通过源连接器和[[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) API将其引入[!DNL Platform]的步骤。
 
