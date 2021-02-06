@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；云存储数据
 solution: Experience Platform
-title: 通过源连接器和API收集云存储数据
+title: 使用源连接器和API收集云存储数据
 topic: overview
 type: Tutorial
-description: 本教程介绍从第三方云存储检索数据并通过源连接器和API将其引入平台的步骤。
+description: 本教程介绍从第三方云存储检索数据以及使用源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: c168a1b597a1ac2d85a8b896f3b6a8d213fcb1ae
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
 source-wordcount: '1639'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 ---
 
 
-# 通过源连接器和API收集云存储数据
+# 使用源连接器和API收集云存储数据
 
 本教程介绍从第三方云存储检索数据并通过源连接器和[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)将其引入平台的步骤。
 
