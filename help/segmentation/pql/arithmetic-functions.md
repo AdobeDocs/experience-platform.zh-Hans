@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;pql;PQL;Profile Query Language;arithmetic functions;arithmetic;
+keywords: Experience Platform；主题；热门主题；分段；分段；分段服务；pql;PQL;用户档案查询语；算术函数；算术；
 solution: Experience Platform
-title: 算术函数
+title: PAL算术函数
 topic: developer guide
 description: 算术函数用于对用户档案查询语言(PQL)中的值执行基本计算。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '242'
+source-wordcount: '260'
 ht-degree: 5%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 5%
 
 # 算术函数
 
-算术函数用于对(PQL)中的值执 [!DNL Profile Query Language] 行基本计算。 有关其他PQL功能的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md)。
+算术函数用于对[!DNL Profile Query Language](PQL)中的值执行基本计算。 有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] 概述](./overview.md)。
 
 ## Add
 
-( `+` addition)函数用于查找两个参数表达式的和。
+`+`(addition)函数用于查找两个参数表达式的和。
 
 **Format**
 
@@ -37,9 +37,9 @@ product1.price + product2.price
 
 ## 乘
 
-( `*` multiplication)函数用于查找两个参数表达式的乘积。
+`*`（乘法）函数用于查找两个参数表达式的乘积。
 
-**Format**
+**格式**
 
 ```sql
 {NUMBER} * {NUMBER}
@@ -55,9 +55,9 @@ product.inventory * product.price
 
 ## 相减
 
-利用 `-` （减法）函数来寻找两个参数表达式的差值。
+`-`（减法）函数用于查找两个参数表达式的差值。
 
-**Format**
+**格式**
 
 ```sql
 {NUMBER} - {NUMBER}
@@ -73,9 +73,9 @@ product1.price - product2.price
 
 ## 除法
 
-用 `/` （除法）函数求两个参数表达式的商。
+`/`(division)函数用于查找两个参数表达式的商。
 
-**Format**
+**格式**
 
 ```sql
 {NUMBER} / {NUMBER}
@@ -91,9 +91,9 @@ totalProduct.price / totalProduct.sold
 
 ## 剩余
 
-( `%` modulo/remainder)函数用于在将两个参数表达式除以后查找余数。
+`%`(modulo/remainder)函数用于在将两个参数表达式除以后查找余数。
 
-**Format**
+**格式**
 
 ```sql
 {NUMBER} % {NUMBER}
@@ -109,4 +109,4 @@ person.age % 5 = 0
 
 ## 后续步骤
 
-您已经学习了算术函数，现在可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请阅读 [用户档案查询语概述](./overview.md)。
+您已经学习了算术函数，现在可以在PQL查询中使用它们。 有关其他PQL函数的详细信息，请阅读[用户档案查询语语言概述](./overview.md)。
