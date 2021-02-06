@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；api;XDM;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；类注册；模式注册；类；类；类；类；类；类；类；创建
 solution: Experience Platform
-title: 创建类
+title: 类API端点
 description: 模式注册表API中的/classes端点允许您在体验应用程序中以编程方式管理XDM类。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
 source-wordcount: '1502'
 ht-degree: 1%
