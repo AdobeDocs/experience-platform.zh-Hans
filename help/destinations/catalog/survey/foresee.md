@@ -1,21 +1,17 @@
 ---
 keywords: 可预测；可预测扩展；可预测目标
-title: Foresee extension
-seo-title: Foresee extension
+title: Foresee Extension Destination
 description: Foresee扩展是Adobe Experience Platform的调查目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Foresee扩展是Adobe Experience Platform的调查目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '531'
+source-wordcount: '504'
 ht-degree: 5%
 
 ---
 
 
 # [!DNL Foresee] 扩展 {#foresee-extension}
-
-## 概述 {#overview}
 
 使用Experience Platform Launch配置[!DNL ForeSee]产品部署。
 
