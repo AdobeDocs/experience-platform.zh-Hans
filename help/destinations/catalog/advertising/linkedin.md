@@ -1,21 +1,17 @@
 ---
 keywords: LinkedIn;linkedin;Linkedin;LinkedIn Insight标记；Insight标记；Insight标记
-title: LinkedIn Insight标记扩展
-seo-title: LinkedIn Insight标记扩展
+title: LinkedIn Insight标记扩展目标
 description: LinkedIn Insight标签扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: LinkedIn Insight标签扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '515'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL LinkedIn Insight Tag] 扩展 {#linkedin-insights-extension}
-
-## 概述 {#overview}
 
 安装[!DNL LinkedIn Insight Tag]以使用转化跟踪、重定向和网站人口统计功能。
 
