@@ -1,21 +1,17 @@
 ---
 keywords: google universal analytics;Google Universal Analytics;Google universal analytics
-title: Google Universal Analytics扩展
-seo-title: Google Universal Analytics扩展
+title: Google Universal Analytics扩展目标
 description: Google Universal Analytics扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Google Universal Analytics扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '559'
+source-wordcount: '528'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Google Universal Analytics] 扩展 {#google-universal-analytics-extension}
-
-## 概述 {#overview}
 
 [!DNL Google Universal Analytics] 使您能够衡量广告投资回报率，并跟踪Flash、视频、社交网站和应用程序。
 
