@@ -1,21 +1,17 @@
 ---
 keywords: '广告；必应； '
-title: Microsoft Bing目标
-seo-title: Microsoft Bing目标可帮助您将用户档案数据发送到Microsoft Display Advertising。
-description: 通过Microsoft Bing目标，您可以跨Microsoft展示广告执行重定位和受众目标数字活动。
-seo-description: 通过Microsoft Bing目标，您可以跨Microsoft展示广告执行重定位和受众目标数字活动。
+title: Microsoft Bing连接目标
+description: 通过Microsoft Bing连接目标，您可以跨Microsoft Display Advertising执行重定位和受众目标数字活动。
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '461'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Microsoft Bing] 目标
-
-## 概述 {#overview}
+# [!DNL Microsoft Bing] 连接
 
 [!DNL Microsoft Bing]目标可帮助您向[!DNL Microsoft Display Advertising]发送用户档案数据。
 
