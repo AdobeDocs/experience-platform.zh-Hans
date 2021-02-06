@@ -1,21 +1,17 @@
 ---
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；salesforce;salesforce目标
-title: SalesforceMarketing Cloud
-seo-title: SalesforceMarketing Cloud
-description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
+title: SalesforceMarketing Cloud连接目标
 seo-description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '513'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Salesforce Marketing Cloud]
-
-## 概述
+# [!DNL Salesforce Marketing Cloud] 连接
 
 [[!DNL Salesforce Marketing Cloud]](https://www.salesforce.com/products/marketing-cloud/email-marketing/) 是一款以前称为ExactTarget的数字营销套件，它允许您为访客和客户构建和自定义旅程，以个性化其体验。
 
