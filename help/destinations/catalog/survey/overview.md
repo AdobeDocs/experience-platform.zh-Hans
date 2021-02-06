@@ -1,19 +1,17 @@
 ---
 keywords: 调查目的地；调查；预见；瞬时；web截取调查；质量
-title: 调查目标
-seo-title: 调查目标
-description: 调查平台可检测调查事件，通过数据元素实时捕获客户反馈并与平台共享数据。
-seo-description: 调查平台可检测调查事件，通过数据元素实时捕获客户反馈并与平台共享数据。
+title: 调查目标概述
+description: 调查平台可以检测调查事件，通过数据元素实时捕获客户反馈，并与Adobe Experience Platform共享数据。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '105'
+source-wordcount: '89'
 ht-degree: 0%
 
 ---
 
 
-# 调查目标{#survey-destinations}
+# 调查目标概述{#survey-destinations}
 
 调查平台可以检测调查事件，通过数据元素实时捕获客户反馈，并与Adobe Experience Platform共享数据。
 
