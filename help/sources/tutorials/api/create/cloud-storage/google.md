@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题；Google Cloud存储;google Cloud存储;google;Google
 solution: Experience Platform
-title: 使用Flow Service API创建Google Cloud存储连接器
+title: 使用流服务API创建Google Cloud存储源连接
 topic: overview
 type: Tutorial
-description: 本教程使用Flow Service API指导您完成将Experience Platform连接到Google Cloud存储帐户的步骤。
+description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Google Cloud存储帐户。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '554'
 ht-degree: 2%
 
 ---
 
 
-# 使用[!DNL Flow Service] API创建[!DNL Google Cloud Storage]连接器
+# 使用[!DNL Flow Service] API创建[!DNL Google Cloud Storage]源连接
 
 [!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
