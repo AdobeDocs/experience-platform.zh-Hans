@@ -5,9 +5,9 @@ title: 在UI中定义必填字段
 description: 了解如何在Experience Platform用户界面中定义所需的XDM字段。
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 48025fc11558bf6773ce5c48054483758c7e993f
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '193'
+source-wordcount: '191'
 ht-degree: 1%
 
 ---
