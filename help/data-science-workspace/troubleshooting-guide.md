@@ -5,7 +5,7 @@ title: 数据科学工作区疑难解答指南
 topic: Troubleshooting
 description: 本文档提供有关Adobe Experience Platform数据科学工作区的常见问题解答。
 translation-type: tm+mt
-source-git-commit: 045ad186efac59317635439a05b9d24e703c9859
+source-git-commit: 10ccccf72ff7a2fd726066332b9771dff1929af6
 workflow-type: tm+mt
 source-wordcount: '925'
 ht-degree: 0%
