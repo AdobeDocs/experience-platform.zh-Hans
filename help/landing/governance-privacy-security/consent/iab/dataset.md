@@ -5,7 +5,7 @@ title: 创建数据集以捕获IAB TCF 2.0同意数据
 topic: privacy events
 description: 此文档提供了设置两个必需数据集以收集IAB TCF 2.0同意数据的步骤。
 translation-type: tm+mt
-source-git-commit: 58bafd206e42caba9879594ca95fe17376be327b
+source-git-commit: b0af9d49f6cfe50f6dff745dfac174dbaa76d070
 workflow-type: tm+mt
 source-wordcount: '1645'
 ht-degree: 0%
