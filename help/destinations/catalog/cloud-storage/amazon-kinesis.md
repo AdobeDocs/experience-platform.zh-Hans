@@ -1,25 +1,21 @@
 ---
 keywords: AmazonKinesis；国籍；国籍
-title: AmazonKinesis目的地
-seo-title: AmazonKinesis目的地
+title: AmazonKinesis连接目的地
 description: 创建到您的AmazonKinesis存储的实时出站连接以从Adobe Experience Platform流数据。
-seo-description: 创建到您的AmazonKinesis存储的实时出站连接以从Adobe Experience Platform流数据。
 translation-type: tm+mt
-source-git-commit: a78dd4b95896387aa1daa022c9e1d5a6cf978448
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '471'
+source-wordcount: '451'
 ht-degree: 2%
 
 ---
 
 
-# （测试版）[!DNL Amazon Kinesis]目标
+# （测试版）[!DNL Amazon Kinesis]连接
 
 >[!IMPORTANT]
 >
 >平台中的[!DNL Amazon Kinesis]目标当前处于测试状态。 文档和功能可能会发生变化。
-
-## 概述 {#overview}
 
 [!DNL Amazon Web Services]提供的[!DNL Kinesis Data Streams]服务允许您实时收集和处理大量数据记录流。
 
