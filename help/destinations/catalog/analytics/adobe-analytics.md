@@ -1,21 +1,17 @@
 ---
 keywords: 分析扩展；分析扩展；目标分析
-title: Adobe Analytics 扩展
-seo-title: Adobe Analytics 扩展
+title: Adobe Analytics扩展目的地
 description: Adobe Analytics分机是Adobe Experience Platform的一个分析目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Adobe Analytics分机是Adobe Experience Platform的一个分析目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '528'
-ht-degree: 10%
+source-wordcount: '499'
+ht-degree: 9%
 
 ---
 
 
 # Adobe Analytics 扩展 {#adobe-analytics-extension}
-
-## 概述 {#overview}
 
 Adobe Analytics 是一款行业领先的解决方案，可帮助您充分了解客户的行为和需求，并根据客户情报掌控自己的业务发展方向。
 
