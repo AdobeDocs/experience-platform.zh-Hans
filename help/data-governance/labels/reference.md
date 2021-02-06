@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据管理；数据使用标签api；策略服务api；支持的数据使用标签；合同标签；标识标签；敏感标签
 solution: Experience Platform
-title: 核心数据使用标签
+title: 数据使用标签词汇表
 topic: labels
 description: 此文档概述了Adobe Experience Platform目前支持的所有数据使用标签。
 translation-type: tm+mt
-source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
 source-wordcount: '1904'
 ht-degree: 2%
@@ -13,7 +13,7 @@ ht-degree: 2%
 ---
 
 
-# 核心数据使用标签
+# 数据使用标签词汇表
 
 数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 Adobe Experience Platform数据管理提供了多种现成的核心数据使用标签，可用于开始数据分类。
 
