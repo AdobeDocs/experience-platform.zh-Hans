@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；adobe定义的函数；sql;
 solution: Experience Platform
-title: Adobe定义函数
+title: Adobe定义的查询服务SQL函数
 topic: functions
-description: 此文档提供Adobe定义的功能在查询服务中可用的信息。
+description: 本文档提供有关Adobe Experience Platform查询服务中可用的Adobe定义功能的信息。
 translation-type: tm+mt
-source-git-commit: e15229601d35d1155fc9a8ab9296f8c41811ebf9
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '2902'
+source-wordcount: '2913'
 ht-degree: 2%
 
 ---
 
 
-# Adobe定义函数
+# Adobe定义的SQL函数在查询服务中
 
 Adobe定义的函数（在此称为ADF）是Adobe Experience Platform查询服务中的预建函数，可帮助对[!DNL Experience Event]数据执行与业务相关的常见任务。 这些函数包括[会话化](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html)和[归因](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html)的函数，如Adobe Analytics的函数。
 
