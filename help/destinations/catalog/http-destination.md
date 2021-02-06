@@ -1,25 +1,21 @@
 ---
 keywords: 流；
-title: HTTP目标是一个Adobe Experience Platform目标，可帮助您将用户档案数据发送到第三方HTTP端点。
-seo-title: HTTP目标是一个Adobe Experience Platform目标，可帮助您将用户档案数据发送到第三方HTTP端点。
-description: HTTP目标是一个Adobe Experience Platform目标，可帮助您将用户档案数据发送到第三方HTTP端点。
-seo-description: HTTP目标是一个Adobe Experience Platform目标，可帮助您将用户档案数据发送到第三方HTTP端点。
+title: HTTP连接目标
+description: Adobe Experience Platform的HTTP目标允许您将用户档案数据发送到第三方HTTP端点。
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '488'
 ht-degree: 2%
 
 ---
 
 
-# (Alpha)[!DNL HTTP]目标
+# (Alpha)[!DNL HTTP]连接
 
 >[!IMPORTANT]
 >
 >平台中的[!DNL HTTP]目标当前位于alpha中。 文档和功能可能会发生变化。
-
-## 概述 {#overview}
 
 [!DNL HTTP]目标是[!DNL Adobe Experience Platform]流目标，可帮助您向第三方[!DNL HTTP]端点发送用户档案数据。
 
