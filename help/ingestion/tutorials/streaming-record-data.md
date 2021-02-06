@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主题；流摄取；摄取；记录数据；流记录数据；
 solution: Experience Platform
-title: 流记录数据
+title: 使用流摄取API的流记录数据
 topic: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform数据摄取服务API的一部分。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '1159'
+source-wordcount: '1163'
 ht-degree: 2%
 
 ---
 
 
-# 流记录数据到Adobe Experience Platform
+# 使用流摄取API的流记录数据
 
 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform[!DNL Data Ingestion Service] API的一部分。
 
