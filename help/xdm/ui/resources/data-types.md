@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 了解如何在Experience Platform用户界面中创建和编辑数据类型。
 translation-type: tm+mt
-source-git-commit: eca896ca068a02da7ec7379e8ced2105bbca9f2d
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '1137'
 ht-degree: 0%
