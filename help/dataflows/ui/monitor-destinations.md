@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;monitor accounts;monitor dataflows;dataflows;destinations
+keywords: Experience Platform；主页；热门主题；监视帐户；监视数据流；数据流；目标
 description: 目的地允许您将您的数据从Adobe Experience Platform激活到无数外部合作伙伴。 本教程提供了如何使用Experience Platform用户界面监视目标的数据流的说明。
 solution: Experience Platform
-title: 监视数据流
+title: 在UI中监视目标的数据流
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 12a6682b6e28e656899aee5c38d3bb4a84bcdd2f
+source-git-commit: f8186e467dc982003c6feb01886ed16d23572955
 workflow-type: tm+mt
-source-wordcount: '426'
+source-wordcount: '442'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 1%
 
 ## 监视数据流
 
-在平 **[!UICONTROL 台]** UI中的目标工作区中，导航到 **[!UICONTROL 浏览]** 选项卡，然后选择要视图的目标名称。
+在平台UI中的&#x200B;**[!UICONTROL 目标]**&#x200B;工作区中，导航到&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡，并选择要视图的目标的名称。
 
 ![](../assets/ui/monitor-destinations/select-destination.png)
 
@@ -37,17 +37,17 @@ ht-degree: 1%
 
 | 状态 | 描述 |
 | ------ | ----------- |
-| 已启用 | 状 `Enabled` 态表示数据流处于活动状态，并且正在根据它提供的计划接收数据。 |
-| 已禁用 | 状 `Disabled` 态表示数据流处于非活动状态，不接收任何数据。 |
-| 处理时间 | 状 `Processing` 态表示数据流尚未激活。 创建新数据流后，通常会立即遇到此状态。 |
-| 错误 | 状 `Error` 态表示数据流的激活进程已中断。 |
+| 已启用 | `Enabled`状态指示数据流处于活动状态，并根据所提供的计划接收数据。 |
+| 已禁用 | `Disabled`状态指示数据流处于非活动状态且未摄取任何数据。 |
+| 处理时间 | `Processing`状态指示数据流尚未处于活动状态。 创建新数据流后，通常会立即遇到此状态。 |
+| 错误 | `Error`状态表示数据流的激活进程已中断。 |
 
 ## [!UICONTROL 数据流运行]
 
-“数 [!UICONTROL 据流运行] ”选项卡提供数据流运行到批处理目标的度量数据。 将显示单个运行及其特定度量的列表，以及用户档案记录的以下总计：
+[!UICONTROL 数据流运行]选项卡提供数据流运行到批处理目标的度量数据。 将显示单个运行及其特定度量的列表，以及用户档案记录的以下总计：
 
 - **[!UICONTROL 用户档案记录已激活]**:为用户档案创建或更新的激活记录总数。
-- **[!UICONTROL 用户档案记录已跳过]**: 根据用户档案退出或缺少属性，为激活跳过的用户档案记录总数。
+- **[!UICONTROL 用户档案记录已跳过]**:根据用户档案退出或缺少属性，为激活跳过的用户档案记录总数。
 
 ![](../assets/ui/monitor-destinations/dataflow-runs.png)
 
