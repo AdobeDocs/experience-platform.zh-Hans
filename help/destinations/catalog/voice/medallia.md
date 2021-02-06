@@ -1,21 +1,17 @@
 ---
 keywords: Medallia;medallia
-title: Medallia扩展
-seo-title: Medallia扩展
+title: Medallia扩展目标
 description: Medallia扩展是Adobe Experience Platform客户目的地的声音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Medallia扩展是Adobe Experience Platform客户目的地的声音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '572'
+source-wordcount: '542'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Medallia] 扩展 {#medallia-extension}
-
-## 概述 {#overview}
 
 快速、无缝地在您的Web属性上部署[!DNL Medallia]。 该扩展还允许您检测调查事件，通过数据元素实时捕获客户反馈，按规则使用它个性化客户体验并与Adobe Analytics共享数据。
 
