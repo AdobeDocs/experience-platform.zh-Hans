@@ -1,32 +1,32 @@
 ---
-keywords: Experience Platform;home;popular topics;filter;Filter;filter data;Filter data;date range
+keywords: Experience Platform；主页；热门主题；过滤器；过滤器；过滤数据；过滤数据；日期范围
 solution: Experience Platform
 title: 使用查询参数筛选目录数据
 topic: developer guide
 description: Catalog Service API允许通过使用请求查询参数筛选响应数据。 目录的最佳实践之一是在所有API调用中使用过滤器，因为它们可减少API的负载并帮助提高整体性能。
 translation-type: tm+mt
-source-git-commit: 71678b10c9e137016ea404305b272508b9c8cabe
+source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
 workflow-type: tm+mt
-source-wordcount: '2077'
+source-wordcount: '2090'
 ht-degree: 1%
 
 ---
 
 
-# 使用查询 [!DNL Catalog] 参数筛选数据
+# 使用查询参数筛选[!DNL Catalog]数据
 
-API [!DNL Catalog Service] 允许通过使用请求查询参数过滤响应数据。 最佳实践的一 [!DNL Catalog] 部分是在所有API调用中使用过滤器，因为它们可减少API的负载并帮助提高整体性能。
+[!DNL Catalog Service] API允许通过使用请求查询参数筛选响应数据。 [!DNL Catalog]的最佳实践之一是在所有API调用中使用过滤器，因为它们可以减少API的负载并帮助提高整体性能。
 
-此文档概述了筛选API中对象 [!DNL Catalog] 的最常用方法。 建议您在阅读目录开发人员指南时参 [考此文档](getting-started.md) ，进一步了解如何与API [!DNL Catalog] 交互。 有关的更多一般 [!DNL Catalog Service]信息，请参 [[!DNL Catalog] 阅概述](../home.md)。
+此文档概述了筛选API中[!DNL Catalog]对象的最常用方法。 建议您在阅读[目录开发人员指南](getting-started.md)时引用此文档，进一步了解如何与[!DNL Catalog] API交互。 有关[!DNL Catalog Service]的更多一般信息，请参见[[!DNL Catalog] 概述](../home.md)。
 
 ## 限制返回的对象
 
-查询 `limit` 参数限制在响应中返回的对象数。 [!DNL Catalog] 根据配置的限制自动按量收费：
+`limit`查询参数限制在响应中返回的对象数。 [!DNL Catalog] 根据配置的限制自动按量收费：
 
-* 如果未 `limit` 指定参数，则每个响应有效负荷的最大对象数为20。
-* 对于数据集查询, `observableSchema` 如果使用查询参数 `properties` 请求，则返回的最大数据集数为20。
+* 如果未指定`limit`参数，则每个响应有效负荷的最大对象数为20。
+* 对于数据集查询，如果使用`properties`查询参数请求`observableSchema`，则返回的最大数据集数为20。
 * 所有其他目录查询的全局限制为100个对象。
-* 无效 `limit` 的参数( `limit=0`包括)会导致400级错误响应，其中显示正确的范围。
+* 无效的`limit`参数（包括`limit=0`）会导致400级错误响应，这些错误响应描绘了适当的范围。
 * 作为查询参数传递的限制或偏移优先于作为标头传递的限制或偏移。
 
 **API格式**
@@ -37,7 +37,7 @@ GET /{OBJECT_TYPE}?limit={LIMIT}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要检索 [!DNL Catalog] 的对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要检索的[!DNL Catalog]对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{LIMIT}` | 一个整数，表示要返回的对象数，范围从1到100。 |
 
 **请求**
@@ -55,7 +55,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回列表集，但仅限于查询参数所指示的 `limit` 数量。
+成功的响应返回列表集，但仅限于`limit`查询参数所指示的数量。
 
 ```json
 {
@@ -77,11 +77,11 @@ curl -X GET \
 
 ## 限制显示的属性
 
-即使过滤使用参数返回的对象数 `limit` 量时，返回的对象本身也可能包含的信息通常超出您的实际需要。 要进一步减少系统上的负载，最好过滤响应以仅包含所需的属性。
+即使在使用`limit`参数过滤返回的对象数时，返回的对象本身通常包含的信息也会超出您的实际需要。 要进一步减少系统上的负载，最好过滤响应以仅包含所需的属性。
 
-参 `properties` 数过滤器响应对象以仅返回一组指定属性。 可以将参数设置为返回一个或多个属性。
+`properties`参数过滤器响应对象以仅返回一组指定的属性。 可以将参数设置为返回一个或多个属性。
 
-该参 `properties` 数只接受顶级对象属性，这意味着对于以下示例对象，您可以对、和应用过滤器 `name`, `description`但对 `subItem`于NOT应用 `sampleKey`。
+`properties`参数只接受顶级对象属性，这意味着对于以下示例对象，可以对`name`、`description`和`subItem`应用过滤器，但对于`sampleKey`则不能。
 
 ```json
 {
@@ -105,13 +105,13 @@ GET /{OBJECT_TYPE}/{OBJECT_ID}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要检索 [!DNL Catalog] 的对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要检索的[!DNL Catalog]对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{PROPERTY}` | 要包含在响应主体中的属性的名称。 |
-| `{OBJECT_ID}` | 正在检索的特定对象的 [!DNL Catalog] 唯一标识符。 |
+| `{OBJECT_ID}` | 正在检索的特定[!DNL Catalog]对象的唯一标识符。 |
 
 **请求**
 
-以下请求检索一列表数据集。 参数下提供的属性名称的逗号分隔列表 `properties` 表示在响应中要返回的属性。 还包 `limit` 含一个参数，该参数限制返回的数据集数。 如果请求中不包含参 `limit` 数，则响应最多包含20个对象。
+以下请求检索一列表数据集。 在`properties`参数下提供的属性名称的逗号分隔列表表示在响应中要返回的属性。 还包含一个`limit`参数，它限制返回的数据集数。 如果请求中不包含`limit`参数，则响应最多包含20个对象。
 
 ```shell
 curl -X GET \
@@ -124,7 +124,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回一列表 [!DNL Catalog] 对象，只显示所请求的属性。
+成功的响应返回列表[!DNL Catalog]对象，只显示所请求的属性。
 
 ```json
 {
@@ -158,9 +158,9 @@ curl -X GET \
 
 ## 响应列表的偏移起始索引
 
-查询 `start` 参数使用从零开始的编号，将响应列表向前偏移指定的编号。 例如，将 `start=2` 偏移对第三个列出对象上的开始的响应。
+`start`查询参数使用从零开始的编号，将响应列表向前偏移指定的编号。 例如，`start=2`将偏移对第三个列出对象上的开始的响应。
 
-如果参 `start` 数与参数不成对， `limit` 则返回的最大对象数为20。
+如果`start`参数与`limit`参数不成对，则返回的对象最大数为20。
 
 **API格式**
 
@@ -175,7 +175,7 @@ GET /{OBJECT_TYPE}?start={OFFSET}
 
 **请求**
 
-以下请求检索数据集列表，偏移到第五个对象(`start=4`)并限制对两个返回数据集(`limit=2`)的响应。
+以下请求检索数据集列表，偏移到第五个对象(`start=4`)，并将响应限制到两个返回的数据集(`limit=2`)。
 
 ```shell
 curl -X GET \
@@ -188,7 +188,7 @@ curl -X GET \
 
 **响应**
 
-该响应包含一个JSON对象，其中包含两个顶级项目(`limit=2`)，每个数据集和其详细信息分别对应一个项目（在示例中已压缩了详细信息）。 响应被移动了四(`start=4`)，这意味着显示的数据集是数字五和六。
+该响应包含一个JSON对象，其中包含两个顶级项目(`limit=2`)、每个数据集的一个项目及其详细信息（在示例中已压缩了详细信息）。 响应移动四个(`start=4`)，这意味着显示的数据集是数字五和数字六的时序。
 
 ```json
 {
@@ -199,18 +199,18 @@ curl -X GET \
 
 ## 按标签过滤
 
-某些Catalog对象支持使用属 `tags` 性。 标记可以向对象附加信息，然后稍后用于检索该对象。 要使用哪些标记以及如何应用这些标记取决于您的组织流程。
+某些Catalog对象支持使用`tags`属性。 标记可以向对象附加信息，然后稍后用于检索该对象。 要使用哪些标记以及如何应用这些标记取决于您的组织流程。
 
 使用标记时需要考虑一些限制：
 
 * 目前唯一支持标记的目录对象是数据集、批次和连接。
 * 标记名称对于您的IMS组织是唯一的。
 * Adobe过程可能会利用某些行为的标签。 这些标记的名称前缀有“adobe”作为标准。 因此，在声明标记名称时应避免此约定。
-* 以下标记名称保留为在整个组 [!DNL Experience Platform]织中使用，因此不能声明为组织的标记名称：
+* 以下标记名称保留为在[!DNL Experience Platform]中使用，因此不能声明为您的组织的标记名称：
    * `unifiedProfile`:此标记名称保留给要摄取的数据集 [[!DNL Real-time Customer Profile]](../../profile/home.md)。
    * `unifiedIdentity`:此标记名称保留给要摄取的数据集 [[!DNL Identity Service]](../../identity-service/home.md)。
 
-以下是包含属性的数据集的 `tags` 示例。 该属性中的标记采用键值对的形式，每个标记值都显示为包含单个字符串的数组：
+以下是包含`tags`属性的数据集的示例。 该属性中的标记采用键值对的形式，每个标记值都显示为包含单个字符串的数组：
 
 ```json
 {
@@ -249,9 +249,9 @@ curl -X GET \
 
 **API格式**
 
-参数的 `tags` 值采用键值对的形式，使用格式 `{TAG_NAME}:{TAG_VALUE}`。 可以以逗号分隔的列表形式提供多个键值对。 当提供多个标记时，将假定AND关系。
+`tags`参数的值采用键值对的形式，格式为`{TAG_NAME}:{TAG_VALUE}`。 可以以逗号分隔的列表形式提供多个键值对。 当提供多个标记时，将假定AND关系。
 
-该参数支持标记值`*`的通配符()。 例如，搜索字符串返回 `test*` 标签值以“test”开头的任何对象。 仅由通配符组成的搜索字符串可用于根据对象是否包含特定标记（无论其值如何）过滤对象。
+该参数支持标记值的通配符(`*`)。 例如，搜索字符串`test*`返回标签值以“test”开头的任何对象。 仅由通配符组成的搜索字符串可用于根据对象是否包含特定标记（无论其值如何）过滤对象。
 
 ```http
 GET /{OBJECT_TYPE}?tags={TAG_NAME}:{TAG_VALUE}
@@ -262,7 +262,7 @@ GET /{OBJECT_TYPE}?tags={TAG_NAME}:*
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要检索 [!DNL Catalog] 的对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li></ul> |
+| `{OBJECT_TYPE}` | 要检索的[!DNL Catalog]对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`dataSets`</li></ul> |
 | `{TAG_NAME}` | 要筛选的标记的名称。 |
 | `{TAG_VALUE}` | 要筛选的标记的值。 支持通配符(`*`)。 |
 
@@ -281,7 +281,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回包含值为“ `sampleTag` 123456”且具有任何值的AND的列表 `secondTag` 集。 除非还指定了限制，否则响应最多包含20个对象。
+成功的响应返回包含值为“123456”的`sampleTag`和值为“`secondTag`”的数据集的列表。 除非还指定了限制，否则响应最多包含20个对象。
 
 ```json
 {
@@ -333,7 +333,7 @@ curl -X GET \
 
 ## 按日期范围筛选
 
-API中的某些 [!DNL Catalog] 端点具有允许范围查询的查询参数，大多数情况下是日期。
+[!DNL Catalog] API中的某些端点具有允许范围查询的查询参数，在日期情况下最常使用。
 
 **API格式**
 
@@ -360,7 +360,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应包含一列表 [!DNL Catalog] 在指定日期范围内的对象。 除非还指定了限制，否则响应最多包含20个对象。
+成功的响应包含列表符[!DNL Catalog]的对象，这些对象在指定的日期范围内。 除非还指定了限制，否则响应最多包含20个对象。
 
 ```json
 {
@@ -393,11 +393,11 @@ curl -X GET \
 
 ## 按属性排序
 
-查询 `orderBy` 参数允许您根据指定的属性值对响应数据进行排序（排序）。 此参数需要一个“direction”(`asc` 对于升序 `desc` 或降序)，后跟一个冒号(`:`)，然后是一个属性以对结果进行排序。 如果未指定方向，则默认方向为升序。
+`orderBy`查询参数允许您根据指定的属性值对响应数据进行排序（排序）。 此参数需要“direction”（升序为`asc`，降序为`desc`），后跟冒号(`:`)，然后使用属性对结果进行排序。 如果未指定方向，则默认方向为升序。
 
 可以以逗号分隔的列表提供多个排序属性。 如果第一个排序属性生成的多个对象包含该属性的相同值，则第二个排序属性随后用于进一步对那些匹配的对象进行排序。
 
-For example, consider the following query: `orderBy=name,desc:created`. 根据第一个排序属性，结果按升序排序 `name`。 如果多个记录共享同一属 `name` 性，则这些匹配记录随后按第二个排序属性排序 `created`。 如果没有返回的记录共享 `name`相同， `created` 则属性不会影响排序。
+例如，请考虑以下查询:`orderBy=name,desc:created`。 结果根据第一个排序属性`name`按升序排序。 如果多个记录共享相同的`name`属性，则这些匹配记录随后按第二个排序属性`created`排序。 如果没有返回的记录共享相同的`name`，则`created`属性不会影响排序。
 
 
 **API格式**
@@ -415,7 +415,7 @@ GET /{OBJECT_TYPE}?orderBy={PROPERTY_NAME_1},desc:{PROPERTY_NAME_2}
 
 **请求**
 
-以下请求检索按其属性排序的列表 `name` 集。 如果任何数据集共享 `name`相同，则这些数据集将依次按属性 `updated` 以降序排序。
+以下请求检索按其`name`属性排序的列表集。 如果任何数据集共享相同的`name`，则这些数据集将依次按其`updated`属性的降序排序。
 
 ```shell
 curl -X GET \
@@ -428,7 +428,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应包含一列表 [!DNL Catalog] 对象，这些对象根据参数进行 `orderBy` 排序。 除非还指定了限制，否则响应最多包含20个对象。
+成功的响应包含[!DNL Catalog]对象的列表，这些对象根据`orderBy`参数进行排序。 除非还指定了限制，否则响应最多包含20个对象。
 
 ```json
 {
@@ -478,13 +478,13 @@ curl -X GET \
 * [使用简单过滤器](#using-simple-filters):按特定属性是否与特定值匹配进行筛选。
 * [使用属性参数](#using-the-property-parameter):使用条件表达式根据属性是否存在，或者某个属性的值是否与其他指定值或常规表达式匹配、近似或比较，进行筛选。
 
-### 使用简单过滤器 {#using-simple-filters}
+### 使用简单过滤器{#using-simple-filters}
 
-简单过滤器允许您根据特定属性值筛选响应。 简单的过滤器采用以下形式 `{PROPERTY_NAME}={VALUE}`。
+简单过滤器允许您根据特定属性值筛选响应。 简单过滤器采用`{PROPERTY_NAME}={VALUE}`的形式。
 
-例如，查询只 `name=exampleName` 返回其属 `name` 性包含值“exampleName”的对象。 相反，查询只 `name=!exampleName` 返回属性不 `name` 是“ **exampleName** ”的对象。
+例如，查询`name=exampleName`只返回其`name`属性包含值“exampleName”的对象。 相反，查询`name=!exampleName`只返回其`name`属性为&#x200B;**not** &quot;exampleName&quot;的对象。
 
-此外，简单过滤器支持查询单个属性的多个值。 当提供多个值时，响应返回其属性与所 **提供列表** 中任意值相匹配的对象。 通过将字符预装到查询，可 `!` 以反转多值列表，只返回属性值不在 **提供的** 列表中的对象(例如 `name=!exampleName,anotherName`)。
+此外，简单过滤器支持查询单个属性的多个值。 当提供多个值时，响应返回其属性与所提供列表中值的&#x200B;**any**&#x200B;匹配的对象。 通过将`!`字符预装到列表，可以反转多值查询，在提供的列表中只返回属性值为&#x200B;**not**&#x200B;的对象（例如`name=!exampleName,anotherName`）。
 
 **API格式**
 
@@ -497,13 +497,13 @@ GET /{OBJECT_TYPE}?{PROPERTY_NAME}=!{VALUE_1},{VALUE_2},{VALUE_3}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要检索 [!DNL Catalog] 的对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要检索的[!DNL Catalog]对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{PROPERTY_NAME}` | 要筛选其值的属性的名称。 |
 | `{VALUE}` | 一个属性值，它确定要包括(或排除，具体取决于查询)的结果。 |
 
 **请求**
 
-以下请求检索数据集列表，筛选为仅包含其属 `name` 性值为“exampleName”或“anotherName”的数据集。
+以下请求检索数据集列表，筛选后的数据集只包含其`name`属性值为“exampleName”或“anotherName”的数据集。
 
 ```shell
 curl -X GET \
@@ -516,7 +516,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应包含一列表数据集，不包括任何 `name` 名为“exampleName”或“anotherName”的数据集。 除非还指定了限制，否则响应最多包含20个对象。
+成功的响应包含一列表数据集，不包括`name`为“exampleName”或“anotherName”的任何数据集。 除非还指定了限制，否则响应最多包含20个对象。
 
 ```json
 {
@@ -547,11 +547,11 @@ curl -X GET \
 }
 ```
 
-### 使用参 `property` 数 {#using-the-property-parameter}
+### 使用`property`参数{#using-the-property-parameter}
 
-与 `property` 简单查询相比，过滤器参数为基于属性的过滤提供了更大的灵活性。 除了基于某个属性是否具有特定值进行筛选外，该参 `property` 数还可以使用其他比较运算符(如“more-than”(`>`)和“less-than”(`<`))以及常规表达式按属性值筛选。 它还可以按属性是否存在进行筛选，而不管其值如何。
+与简单查询相比，`property`过滤器参数更灵活地进行基于属性的过滤。 除了基于某个属性是否具有特定值进行筛选外，`property`参数还可以使用其他比较运算符(如“more-than”(`>`)和“less-than”(`<`))以及常规表达式按属性值进行筛选。 它还可以按属性是否存在进行筛选，而不管其值如何。
 
-该参 `property` 数只接受顶级对象属性，这意味着对于以下示例对象，您可以按属性筛选 `name`、 `description`和，但 `subItem`不能筛选 `sampleKey`。
+`property`参数只接受顶级对象属性，这意味着对于以下示例对象，您可以按属性筛选`name`、`description`和`subItem`，但不能按属性筛选`sampleKey`。
 
 ```json
 {
@@ -573,26 +573,26 @@ GET /{OBJECT_TYPE}?property={CONDITION}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要检索 [!DNL Catalog] 的对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要检索的[!DNL Catalog]对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{CONDITION}` | 一个条件表达式，它指示要查询的属性以及如何评估其值。 示例如下。 |
 
-该参数的值支 `property` 持几种不同的条件表达式。 下表概述了受支持表达式的基本语法：
+`property`参数的值支持几种不同的条件表达式。 下表概述了受支持表达式的基本语法：
 
 | 符号 | 描述 | 示例 |
 | --- | --- | --- |
 | (None) | 声明不带运算符的属性名称只会返回存在该属性的对象，而不管其值如何。 | `property=name` |
-| ! | 将“”`!`前缀为参数值 `property` 只返回属性不存在的 **对象** 。 | `property=!name` |
-| ~ | 仅返回其属性值（字符串）与在代字符()符号后提供的常规表达式符`~`匹配的对象。 | `property=name~^example` |
-| == | 仅返回其属性值与在等于多次符号()之后提供的字符串完全匹配的`==`对象。 | `property=name==exampleName` |
-| != | 仅返回属性值与在不等 **号** ()之后提供的字符串不匹配的`!=`对象。 | `property=name!=exampleName` |
-| &lt; | 仅返回其属性值小于（但不等于）指定金额的对象。 | `property=version<1.0.0` |
-| &lt;= | 仅返回其属性值小于（或等于）指定金额的对象。 | `property=version<=1.0.0` |
+| ! | 将“`!`”预定为`property`参数的值只会返回属性不存在&#x200B;****&#x200B;的对象。 | `property=!name` |
+| ~ | 仅返回属性值（字符串）与在代号(`~`)符号后提供的常规表达式符相匹配的对象。 | `property=name~^example` |
+| == | 仅返回属性值与多次等于符号(`==`)后提供的字符串完全匹配的对象。 | `property=name==exampleName` |
+| != | 仅返回属性值&#x200B;**not**&#x200B;与在不等号(`!=`)后提供的字符串匹配的对象。 | `property=name!=exampleName` |
+| &lt;> | 仅返回其属性值小于（但不等于）指定金额的对象。 | `property=version<1.0.0` |
+| &lt;> | 仅返回其属性值小于（或等于）指定金额的对象。 | `property=version<=1.0.0` |
 | > | 仅返回其属性值大于（但不等于）指定金额的对象。 | `property=version>1.0.0` |
 | >= | 仅返回其属性值大于（或等于）指定金额的对象。 | `property=version>=1.0.0` |
 
 >[!NOTE]
 >
->该 `name` 属性支持使用通配符( `*`作为整个搜索字符串或作为通配符的一部分)。 通配符匹配空字符，以使搜索 `te*st` 字符串与值“test”匹配。 将星号加倍()，即可转`**`义星号。 搜索字符串中的多次星号将单个星号表示为文本字符串。
+>`name`属性支持使用通配符`*`作为整个搜索字符串或作为其一部分。 通配符匹配空字符，这样搜索字符串`te*st`将匹配值“test”。 星号加倍(`**`)即可转义。 搜索字符串中的多次星号将单个星号表示为文本字符串。
 
 **请求**
 
