@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;ExperienceEvent;fields;schemas;Schemas;Schema design;mixin;mixin;enduserids;end-user;end user;ids;
+keywords: Experience Platform；主题；热门主题；模式;模式;XDM；体验事件；字段；模式;模式;模式设计；混音；混合；最终用户；最终用户；id;
 solution: Experience Platform
-title: 混合的最终用户ID详细信息
+title: 最终用户ID详细信息混合
 topic: overview
 description: 此文档提供最终用户ID详细信息混合的概述。
 translation-type: tm+mt
-source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '175'
+source-wordcount: '196'
 ht-degree: 1%
 
 ---
 
 
-# [!UICONTROL 混合的最终用户ID] 详细信息
+# [!UICONTROL 最终用户ID ] Detailsmixin
 
 >[!NOTE]
 >
->几个混音的名称已经更改。 有关详细信息，请 [参阅混合名称](../name-updates.md) 更新文档。
+>几个混音的名称已经更改。 有关详细信息，请参阅[mixin name updates](../name-updates.md)上的文档。
 
-[!UICONTROL 最终用户ID详细信息] 是类的标准混音 [[!DNL XDM ExperienceEvent] 符](../../classes/individual-profile.md)，用于跨多个Adobe应用程序描述个人的身份信息。 mixin提供根级对象，该 `endUserIDs` 对象本身包含只读字段，该 `_experience` 字段的值在摄取数据时自动更新。
+[!UICONTROL 最终用户ID] 详细信息是类的标 [[!DNL XDM ExperienceEvent] 准混合](../../classes/individual-profile.md)，用于跨多个Adobe应用程序描述个人的身份信息。mixin提供一个根级别`endUserIDs`对象，该对象本身包含一个只读`_experience`字段，该字段的值在摄取数据时自动更新。
 
 <img src="../../images/mixins/enduserids.png" width="700" /><br />
 
