@@ -1,21 +1,17 @@
 ---
 keywords: 量子度量扩展；量子度量；量子度量
-title: 量子度量扩展
-seo-title: 量子度量扩展
+title: 量子度量扩展目标
 description: 量子度量扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: 量子度量扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '536'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Quantum Metric] 扩展 {#quantum-metric-extension}
-
-## 概述 {#overview}
 
 [!DNL Quantum Metric's] 与AdobeLaunch集成有助于数据收集标 [!DNL Quantum Metric's] 签的无代码部署。此外，此扩展还优惠了从[!DNL Quantum Metric] API捕获包含有用信息的启动数据元素的能力。
 
