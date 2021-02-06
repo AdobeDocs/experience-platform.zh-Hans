@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API;预览；示例
-title: 用户档案预览-实时客户用户档案API
+title: 用户档案示例状态API端点
 description: 使用实时用户档案API端点，您可以预览用户档案数据的最新成功范例，以及按数据集和Adobe Experience Platform内的身份命名空间进行列表用户档案分发。
 topic: guide
 translation-type: tm+mt
-source-git-commit: fe93a3672f65168744b3a242be7f42012f323544
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '1554'
+source-wordcount: '1553'
 ht-degree: 1%
 
 ---
