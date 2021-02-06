@@ -5,7 +5,7 @@ title: 在UI中创建和编辑模式
 description: 学习如何在Experience Platform用户界面中创建和编辑模式的基础知识。
 topic: user guide
 translation-type: tm+mt
-source-git-commit: babe47cc864d9f79eee28989ca8b658350b9d790
+source-git-commit: aa2088d30716f56ac2909214badbb39c0ae97855
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 0%
