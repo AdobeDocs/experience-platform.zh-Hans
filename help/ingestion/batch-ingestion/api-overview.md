@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；批处理摄取；批处理；摄取；开发人员指南；api指南；上传；摄取Parke；摄取json;
 solution: Experience Platform
-title: 批量摄取开发人员指南
+title: Batch Ingestion API指南
 topic: developer guide
 description: 本文档全面介绍了如何使用批量摄取API。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '2698'
 ht-degree: 5%
@@ -13,7 +13,7 @@ ht-degree: 5%
 ---
 
 
-# 批量摄取开发人员指南
+# 批量摄取API指南
 
 本文档全面介绍了如何使用[批处理摄取API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)。
 
