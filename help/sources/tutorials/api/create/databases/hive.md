@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题；Apache Hive;hive;Hive
 solution: Experience Platform
-title: 在Azure HDInsights连接器上使用Flow Service API创建Apache Hive
+title: 在Azure HDInsights源连接上使用Flow Service API创建Apache配置单元
 topic: overview
 type: Tutorial
-description: 本教程使用Flow Service API指导您完成将Azure HDInsights上的Apache Hive连接到Experience Platform的步骤。
+description: 了解如何使用Flow Service API将Azure HDInsights上的Apache Hive连接到Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '573'
 ht-degree: 2%
 
 ---
 
 
-# 使用[!DNL Flow Service] API在[!DNL Azure HDInsights]连接器上创建[!DNL Apache Hive]
+# 使用[!DNL Flow Service] API在[!DNL Azure HDInsights]源连接上创建[!DNL Apache Hive]
 
 >[!NOTE]
 >
