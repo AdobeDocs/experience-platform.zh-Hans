@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；访问控制;api；入门
 solution: Experience Platform
-title: 访问控制开发人员指南
+title: 访问控制API指南
 topic: developer guide
-description: Adobe Experience Platform的访问控制允许您通过使用Adobe Admin Console管理各种平台功能的角色和权限。 以下各节提供了成功调用模式注册表API所需了解的其他信息。
+description: Adobe Experience Platform的访问控制允许您通过使用Adobe Admin Console管理各种平台功能的角色和权限。 以下各节提供开发人员成功调用模式注册表API所需了解的其他信息。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
 source-wordcount: '389'
 ht-degree: 3%
@@ -13,7 +13,7 @@ ht-degree: 3%
 ---
 
 
-# [!DNL Access control] 开发人员指南
+# [!DNL Access Control] API指南
 
 [!DNL Access control] 通 [!DNL Experience Platform] 过Adobe Admin Console进 [行](https://adminconsole.adobe.com)。此功能利用Admin Console中的产品用户档案，将用户与权限和沙箱关联起来。 有关详细信息，请参阅[访问控制概述](../home.md)。
 
