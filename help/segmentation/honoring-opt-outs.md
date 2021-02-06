@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;opt-out;Segmentation;Segmentation service;segmentation service;honor opt-outs;opt-outs;opt out;opt outs;
+keywords: Experience Platform；主题；热门主题；选择退出；分段；分段服务；分段服务；遵守退出；选择退出选择退出；选择退出；
 solution: Experience Platform
-title: 支持退出
+title: 支持区段中的退出请求
 topic: overview
-description: 'Experience Platform允许您的客户发送关于在实时客户用户档案内使用和存储其数据的选择退出请求]。 这些选择退出请求是加利福尼亚消费者隐私法(CCPA)的一部分，该法案为加州居民提供访问和删除个人数据以及了解其个人数据是出售还是披露（以及向谁）的权利。 '
+description: 'Adobe Experience Platform允许您的客户发送关于在实时客户用户档案内使用和存储其数据的选择退出请求]。 这些选择退出请求是加利福尼亚消费者隐私法(CCPA)的一部分，该法案为加州居民提供访问和删除个人数据以及了解其个人数据是出售还是披露（以及向谁）的权利。 '
 translation-type: tm+mt
-source-git-commit: 17ef6c1c6ce58db2b65f1769edf719b98d260fc6
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1031'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 0%
 
 # 支持区段中的退出请求
 
-[!DNL Experience Platform] 允许您的客户发送有关其数据在中的使用和存储的退出请求 [!DNL Real-time Customer Profile]。 这些选择退出请求是(CCPA)的一部分，CCPA为加利福尼亚州居民提供访问和删除个人数据以及了解其个人数据是出售还是披露（以及向谁）的权利。 [!DNL California Consumer Privacy Act]
+Adobe Experience Platform允许您的客户发送关于[!DNL Real-time Customer Profile]内数据使用和存储的退出请求。 这些选择退出请求是[!DNL California Consumer Privacy Act](CCPA)的一部分，CCPA为加利福尼亚州居民提供访问和删除个人数据以及了解其个人数据是出售还是披露（以及向谁）的权利。
 
 客户选择退出后，贵组织在为营销活动生成受众时应遵守这些选择退出的规定。 本文档介绍有关遵守退出请求的重要详细信息。
 
 ## 入门指南
 
-遵守退出请求需要了解所涉及的各 [!DNL Adobe Experience Platform] 种服务。 在处理退出请求之前，请查看以下服务的文档：
+执行退出请求需要了解涉及的各种[!DNL Adobe Experience Platform]服务。 在处理退出请求之前，请查看以下服务的文档：
 
 - [[!DNL Real-time Customer Profile]](../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的客户用户档案。
 - [[!DNL Adobe Experience Platform Segmentation Service]](./home.md):允许您根据数据构建受众 [!DNL Real-time Customer Profile] 细分。
@@ -30,7 +30,7 @@ ht-degree: 0%
 
 ## 选择退出混音
 
-为了满足CCPA退出请求，作为模式模式一部分的合并必须包含必 [!DNL Experience Data Model] 要的(XDM)退出字段。 有两种混音可用于向模式添加退出字段，下面各节将更详细地介绍它们：
+为了满足CCPA选择退出请求，作为模式模式一部分的合并必须包含必要的[!DNL Experience Data Model](XDM)选择退出字段。 有两种混音可用于向模式添加退出字段，下面各节将更详细地介绍它们：
 
 - [用户档案隐私](#profile-privacy):用于捕获不同的退出类型（常规或销售／共享）。
 - [用户档案首选项详细信息](#profile-preferences-details):用于捕获特定XDM渠道的退出请求。
@@ -47,19 +47,19 @@ ht-degree: 0%
 
 ### [!DNL Profile Privacy] {#profile-privacy}
 
-混 [!DNL Profile Privacy] 音功能允许您捕获来自客户的两种CCPA选择退出请求：
+[!DNL Profile Privacy] mixin允许您捕获来自客户的两种CCPA选择退出请求：
 
 1. 一般退出
 2. 销售／共享选择退出
 
 ![](images/opt-outs/profile-privacy.png)
 
-混 [!DNL Profile Privacy] 音包含以下字段：
+[!DNL Profile Privacy] mixin包含以下字段：
 
-- 隐私选择退出(`privacyOptOuts`):包含一列表退出对象的数组。
+- 隐私退出(`privacyOptOuts`):包含一列表退出对象的数组。
 - 退出类型(`optOutType`):选择退出的类型。 此字段是具有两个可能值的枚举：
-   - 一般退出(`general_opt_out`)
-   - 销售共享选择退出(`sales_sharing_opt_out`)
+   - 常规退出(`general_opt_out`)
+   - 销售共享退出(`sales_sharing_opt_out`)
 - 退出值(`optOutValue`):根据指定的退出类型，退出的激活状态，也称为退出信号的值。 此字段是具有四个可能值的枚举：
    - 未提供(`not_provided`):尚未提供退出请求。
    - 待验证(`pending`):退出请求正在等待验证。
@@ -67,17 +67,17 @@ ht-degree: 0%
    - 选择加入(`in`):客户已选择加入。
 - 退出时间戳(`timestamp`):接收的退出信号的时间戳。
 
-要视图混音的完整结 [!DNL Profile Privacy] 构，请参阅 [XDM公共GitHub存储库](https://github.com/adobe/xdm/blob/master/schemas/context/profile-privacy.schema.json) ，或使用平台UI预览混音。
+要视图[!DNL Profile Privacy]混音的完整结构，请参阅[ XDM公共GitHub存储库](https://github.com/adobe/xdm/blob/master/schemas/context/profile-privacy.schema.json)或使用平台UI预览混音。
 
 ### [!DNL Profile Preferences Details] {#profile-preferences-details}
 
-混 [!DNL Profile Preferences Details] 音提供了几个表示客户用户档案偏好的字段(如电子邮件格式、首选语言和时区)。 此混音中包含的一个字段`optInOut`OptInOut()允许为单个渠道设置退出值。
+[!DNL Profile Preferences Details] mixin提供几个表示客户用户档案偏好的字段(如电子邮件格式、首选语言和时区)。 此混音中包含的一个字段OptInOut(`optInOut`)允许为单个渠道设置退出值。
 
 ![](images/opt-outs/profile-preferences-details.png)
 
-混 [!DNL Profile Preferences Details] 音包含与退出相关的以下字段：
+[!DNL Profile Preferences Details] mixin包含与退出相关的以下字段：
 
-- 退出(`optInOut`):一个对象，其中每个键代表通信渠道的有效已知URI以及每个渠道的退出活动状态。 每个渠道可能具有以下四种可能值之一：
+- OptInOut(`optInOut`):一个对象，其中每个键代表通信渠道的有效已知URI以及每个渠道的退出活动状态。 每个渠道可能具有以下四种可能值之一：
    - 未提供(`not_provided`):尚未为此渠道提供退出请求。
    - 待验证(`pending`):此渠道的退出请求正在等待验证。
    - 退出(`out`):客户已选择退出此渠道。
@@ -100,7 +100,7 @@ ht-degree: 0%
 }
 ```
 
-要视图“用户档案首选项详细信息”混音的完整结构，请访 [问XDM公共GitHub存储库](https://github.com/adobe/xdm/blob/master/schemas/context/profile-preferences-details.schema.json) ，或使用UI预览 [!DNL Platform] 混音。
+要视图“用户档案首选项详细信息”混音的完整结构，请访问[ XDM公共GitHub存储库](https://github.com/adobe/xdm/blob/master/schemas/context/profile-preferences-details.schema.json)或使用[!DNL Platform] UI预览混音。
 
 ## 在分段中处理退出功能
 
@@ -112,15 +112,15 @@ ht-degree: 0%
 
 ### 一般退出
 
-[!DNL Segmentation] 自动接受所有包含“一[!UICONTROL 般退出]”标志的用户档案，这意味着默认情况下，这些用户档案不会包括在受众或出口中。 但是，最好添加相应的字段以确保选择退出用户档案不包括在受众和营销活动中。
+[!DNL Segmentation] 自动接受所有包含“一[!UICONTROL 般退出]”标志的用户档案，这意味着默认情况下，这些用户档案不会包括在受众或出口中。但是，最好添加相应的字段以确保选择退出用户档案不包括在受众和营销活动中。
 
-这可以通过添加隐私退出属性， **[!UICONTROL 使用用户界面完]** 成。 在此实例中，区段设置为仅包含已选择的用户(这意味着他们的用户档案上没有一般选择退出标志)。 为此，声明“退出[!UICONTROL 类型]”[!UICONTROL 等于“一般退出]”,“[!UICONTROL 退出值]”等于“退出”。
+可通过添加&#x200B;**[!UICONTROL 隐私退出]**&#x200B;属性，使用用户界面完成此操作。 在此实例中，区段设置为仅包含已选择的用户(这意味着他们的用户档案上没有一般选择退出标志)。 这是通过声明“[!UICONTROL 退出类型]”等于“[!UICONTROL 一般退出]”和“[!UICONTROL 退出值]”等于“[!UICONTROL 退出]”来实现的。
 
 ![](images/opt-outs/segment-general-opt-out.png)
 
 ### 销售／共享选择退出
 
-如果用户在其用户档案上设置了销售／共享退出标志，则此用户档案不应再用于任何区段创建或营销活动。 为确保此标志得到遵守，“[!UICONTROL 退出类型]”必须等于“销售[!UICONTROL 共享选择退出”，而“]退出值[!UICONTROL ”必须等于“选]择加入”。
+如果用户在其用户档案上设置了销售／共享退出标志，则此用户档案不应再用于任何区段创建或营销活动。 为确保遵守此标志，“[!UICONTROL 退出类型]”必须等于“[!UICONTROL 销售共享退出]”，而“[!UICONTROL 退出值]”必须等于“[!UICONTROL 退出]”。
 
 ![](images/opt-outs/segment-sales-sharing-opt-out.png)
 
@@ -130,6 +130,6 @@ In some instances, such as building a segment of people who have opted out, it m
 
 ## 后续步骤
 
-有关细分的更多信息(包括通过API和用户界面使用细分定义和受众)，请首先阅读细分 [概述](./home.md)。
+有关分段的详细信息(包括通过API和用户界面使用段定义和受众)，请首先阅读[分段概述](./home.md)。
 
-要进一步了解中的数据隐 [!DNL Platform]私，包括 [!DNL Privacy Service] 如何帮助促进自动遵守法律和组织隐私法规，请参阅上的文档 [[!DNL Privacy Service]](../privacy-service/home.md)。
+要进一步了解[!DNL Platform]中的数据隐私，包括[!DNL Privacy Service]如何帮助促进自动遵守法律和组织隐私法规，请参阅[[!DNL Privacy Service]](../privacy-service/home.md)上的文档。
