@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics;delete an object;catalog service;api
+keywords: Experience Platform；主页；热门主题；删除对象；目录服务；api
 solution: Experience Platform
-title: 删除对象
+title: 删除API中的对象
 topic: developer guide
 description: 您可以通过在DELETE请求的路径中提供目录对象的ID来删除该对象。
 translation-type: tm+mt
-source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
+source-git-commit: b395535cbe7e4030606ee2808eb173998f5c32e0
 workflow-type: tm+mt
-source-wordcount: '190'
-ht-degree: 2%
+source-wordcount: '207'
+ht-degree: 1%
 
 ---
 
 
-# 删除对象
+# 删除API中的对象
 
-您可以通过 [!DNL Catalog] 在DELETE请求的路径中提供对象ID来删除对象。
+通过在DELETE请求路径中提供[!DNL Catalog]对象的ID，可以删除该对象。
 
 >[!WARNING]
 >
->删除对象时要格外小心，因为此操作无法撤消，并且可能会在其他位置产生破坏性的更改 [!DNL Experience Platform]。
+>删除对象时要格外小心，因为此操作无法撤消，并且可能会在[!DNL Experience Platform]的其他位置产生破坏性更改。
 
 **API格式**
 
@@ -29,11 +29,11 @@ DELETE /{OBJECT_TYPE}/{OBJECT_ID}
 
 >[!IMPORTANT]
 >
->终 `DELETE /batches/{ID}` 结点已弃用。 要删除批，您应使用批 [摄取API](../../ingestion/batch-ingestion/api-overview.md#delete-a-batch)。
+>`DELETE /batches/{ID}`端点已弃用。 要删除批，您应使用[批摄取API](../../ingestion/batch-ingestion/api-overview.md#delete-a-batch)。
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要删除 [!DNL Catalog] 的对象类型。 有效对象有： <ul><li>`accounts`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要删除的[!DNL Catalog]对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`connections`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要更新的特定对象的标识符。 |
 
 **请求**
@@ -61,4 +61,4 @@ curl -X DELETE \
 
 >[!NOTE]
 >
->如果没 [!DNL Catalog] 有与请求中提供的ID匹配的对象，您仍可能收到HTTP状态代码200，但响应数组为空。
+>如果没有与请求中提供的ID匹配的[!DNL Catalog]对象，您仍可能收到HTTP状态代码200，但响应数组为空。
