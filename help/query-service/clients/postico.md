@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主题；热门主题；查询服务；查询服务；主题；主题；主题；主题；连接查询服务；
 solution: Experience Platform
-title: 与Postico连接
+title: 将Postico连接到查询服务
 topic: connect
 description: 此文档包含用于为Adobe Experience Platform查询服务安装备份客户端Postico的链接。
 translation-type: tm+mt
-source-git-commit: eac93f3465fa6ce4af7a6aa783cf5f8fb4ac9b9b
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '250'
+source-wordcount: '253'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Postico]
+# 将[!DNL Postico]连接到查询服务(Mac)
 
 本文档介绍将[!DNL Postico]与Adobe Experience Platform[!DNL Query Service]连接的步骤。
 
@@ -22,8 +22,6 @@ ht-degree: 0%
 > 本指南假定您已经具有访问[!DNL Postico]的权限，并且熟悉如何导航其接口。 有关[!DNL Postico]的详细信息，请参阅[offical [!DNL Postico] 文档](https://eggerapps.at/postico/docs)。
 > 
 > 此外，[!DNL Postico]仅&#x200B;****&#x200B;可用于macOS设备。
-
-## 将[!DNL Postico]连接到查询服务
 
 要将[!DNL Postico]连接到查询服务，请打开[!DNL Postico]并选择&#x200B;**[!DNL New Favorite]**。
 
