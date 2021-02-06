@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform；主题；XDM;XDM系统；XDM个人用户档案;XDM体验事件；XDM体验事件；体验事件；体验体验事件;XDM体验事件；体验数据模型；体验数据模型；数据模型模型；模式；疑难解答；常见问题解答；常见问题；合并模式;合并用户档案;合并用户档案
 solution: Experience Platform
-title: 体验数据模型(XDM)系统疑难解答指南
-description: 本文档提供有关体验数据模型(XDM)系统的常见问题解答，以及常见错误的疑难解答指南。
+title: XDM系统疑难解答指南
+description: 本文档提供有关Adobe Experience Platform体验数据模型(XDM)和XDM系统的常见问题解答，以及常见错误的故障排除指南。
 topic: troubleshooting
 translation-type: tm+mt
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '1873'
+source-wordcount: '1879'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Experience Data Model] (XDM)系统故障排除指南
+# XDM系统疑难解答指南
 
-本文档提供有关[!DNL Experience Data Model](XDM)系统的常见问题解答，以及常见错误的疑难解答指南。 有关与Adobe Experience Platform其他服务相关的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
+本文档提供有关Adobe Experience Platform[!DNL Experience Data Model](XDM)和XDM系统的常见问题解答，以及常见错误的故障排除指南。 有关其他平台服务的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
 **[!DNL Experience Data Model](XDM)是** 一种开放源码规范，它为客户体验管理定义了标准化模式。构建[!DNL Experience Platform]的方法，**XDM系统**，操作[!DNL Experience Data Model]模式以供[!DNL Platform]服务使用。 **[!DNL Schema Registry]**&#x200B;提供一个用户界面和一个RESTful API，用于访问[!DNL Experience Platform]中的&#x200B;**[!DNL Schema Library]**。 有关详细信息，请参阅[XDM文档](home.md)。
 
