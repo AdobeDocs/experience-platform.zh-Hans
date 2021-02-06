@@ -1,10 +1,10 @@
 ---
 keywords: Experience Platform；主题；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；数据类型注册；模式注册；数据类型；数据类型；数据类型；数据类型；数据类型；数据类型；创建
 solution: Experience Platform
-title: 创建数据类型
+title: 数据类型API端点
 description: 模式注册表API中的/datatypes端点允许您在体验应用程序中以编程方式管理XDM数据类型。
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
 source-wordcount: '1147'
 ht-degree: 2%
