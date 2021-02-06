@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；ETL;etl;etl集成；ETL集成
 solution: Experience Platform
-title: 创建ETL集成
+title: 为Adobe Experience Platform开发ETL集成
 topic: overview
 description: ETL集成指南概述了创建高性能、安全连接器以进行Experience Platform并将数据引入平台的一般步骤。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '4139'
+source-wordcount: '4143'
 ht-degree: 0%
 
 ---
