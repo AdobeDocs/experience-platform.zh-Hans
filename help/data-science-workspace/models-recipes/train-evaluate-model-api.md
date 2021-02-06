@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；培训和评估；数据科学工作区；热门主题；Sensei机器学习API
 solution: Experience Platform
-title: 培训和评估模型(API)
+title: 基于Sensei机器学习API的模型训练与评价
 topic: tutorial
 type: Tutorial
 description: 本教程将向您展示如何使用Sensei机器学习API调用创建、培训和评估模型。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1237'
 ht-degree: 1%
 
 ---
 
 
-# 培训和评估模型(API)
+# 使用[!DNL Sensei Machine Learning] API培训和评估模型
 
 
 本教程将向您展示如何使用API调用创建、培训和评估模型。 有关API文档的详细列表，请参阅[此文档](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)。
