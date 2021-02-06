@@ -1,21 +1,17 @@
 ---
 keywords: 广告；贸易部门；
-title: 交易台目的地
-seo-title: 交易台目的地
+title: 交易台连接目的地
 description: '交易台是一个自助平台，可供广告购买者跨展示广告、视频和移动库存来源执行重定向和受众目标数字活动。 '
-seo-description: 交易台是一个自助平台，可供广告购买者跨展示广告、视频和移动库存来源执行重定向和受众目标数字活动。
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '579'
-ht-degree: 1%
+source-wordcount: '550'
+ht-degree: 0%
 
 ---
 
 
-# [!DNL The Trade Desk] 目标
-
-## 概述 {#overview}
+# [!DNL The Trade Desk] 连接
 
 [!DNL The Trade Desk] 目标可帮助您将用户档案数据发送 [!DNL The Trade Desk]到。
 
