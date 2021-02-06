@@ -1,21 +1,17 @@
 ---
 keywords: Invoca;invoca
-title: Invoca标记扩展
-seo-title: Invoca标记扩展
+title: Invoca标记扩展目标
 description: Invoca Tags扩展是Adobe Experience Platform客户目的地的声音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Invoca Tags扩展是Adobe Experience Platform客户目的地的声音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '536'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Invoca Tags] 扩展 {#invoca-extension}
-
-## 概述 {#overview}
 
 [!DNL Invoca] 将电话数据和语音洞察引入数字客户旅程。借助[!DNL Invoca’s]呼叫智能平台，营销人员终于有了分析工具来衡量呼叫结果并将线下转化率与数字支出挂钩。
 
