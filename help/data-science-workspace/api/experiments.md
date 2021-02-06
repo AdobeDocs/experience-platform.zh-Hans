@@ -1,23 +1,23 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;experiments;sensei machine learning api
+keywords: Experience Platform；开发人员指南；端点；数据科学工作区；热门主题；实验；sensei机器学习api
 solution: Experience Platform
-title: 实验
+title: Experies API端点
 topic: Developer guide
 description: 模型开发和培训在实验级别进行，其中实验由MLI实例、培训运行和评分运行组成。
 translation-type: tm+mt
-source-git-commit: 194a29124949571638315efe00ff0b04bff19303
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '765'
+source-wordcount: '783'
 ht-degree: 4%
 
 ---
 
 
-# 实验
+# 实验端点
 
 模型开发和培训在实验级别进行，其中实验由MLI实例、培训运行和评分运行组成。
 
-## 创建实验 {#create-an-experiment}
+## 创建实验{#create-an-experiment}
 
 您可以通过执行POST请求来创建实验，同时在请求有效负荷中提供名称和有效MLInstance ID。
 
@@ -54,7 +54,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应返回一个有效负荷，其中包含新创建实验的详细信息，包括其唯一标识符(`id`)。
+成功的响应返回包含新创建实验的详细信息(包括其唯一标识符(`id`))的有效负荷。
 
 ```json
 {
@@ -70,7 +70,7 @@ curl -X POST \
 }
 ```
 
-## 创建并执行培训或评分运行 {#experiment-training-scoring}
+## 创建并执行培训或评分运行{#experiment-training-scoring}
 
 您可以通过执行POST请求并提供有效的实验ID并指定运行任务来创建培训或评分运行。 仅当实验具有现有且成功的培训运行时，才可创建评分运行。 成功创建培训运行将初始化模型培训过程，成功完成该过程将生成一个经过培训的模型。 生成经过培训的模型将取代任何先前已有的模型，这样实验在任何给定时间只能使用单个经过培训的模型。
 
@@ -101,11 +101,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `{TASK}` | 指定运行的任务。 将此值设置为 `train` 培训、评 `score` 分或功能 `featurePipeline` 管道的值。 |
+| `{TASK}` | 指定运行的任务。 将此值设置为培训的`train`、得分的`score`或功能管道的`featurePipeline`。 |
 
 **响应**
 
-成功的响应会返回一个有效负荷，其中包含新创建运行的详细信息，包括继承的默认培训或评分参数以及运行的唯一ID(`{RUN_ID}`)。
+成功的响应返回一个有效负荷，其中包含新创建运行的详细信息，包括继承的默认培训或评分参数以及运行的唯一ID(`{RUN_ID}`)。
 
 ```json
 {
@@ -134,7 +134,7 @@ curl -X POST \
 
 ## 检索一列表实验
 
-通过执行单个GET请求并提供有效的MLInstance ID作为查询参数，可以检索属于特定MLInstance的实验列表。 有关可用查询的列表，请参阅附录部分中有关资产检 [索查询参数的部分](./appendix.md#query)。
+通过执行单个GET请求并提供有效的MLInstance ID作为查询参数，可以检索属于特定MLInstance的实验列表。 有关可用查询的列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
 
 
 **API格式**
@@ -161,7 +161,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回共享同一MLInstance ID()的一列表`{MLINSTANCE_ID}`实验。
+成功的响应返回共享相同MLInstance ID(`{MLINSTANCE_ID}`)的实验列表。
 
 ```json
 {
@@ -198,7 +198,7 @@ curl -X GET \
 }
 ```
 
-## 检索特定实验 {#retrieve-specific}
+## 检索特定实验{#retrieve-specific}
 
 通过执行在请求路径中包含所需实验ID的GET请求，可以检索特定实验的详细信息。
 
@@ -243,7 +243,7 @@ curl -X GET \
 
 ## 检索一列表实验运行
 
-通过执行单个GET请求并提供有效的实验ID，可以检索属于特定实验的培训或评分运行列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询参数的完整列表，请参阅有关资产检索 [查询参数的附录部分](./appendix.md#query)。
+通过执行单个GET请求并提供有效的实验ID，可以检索属于特定实验的培训或评分运行列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询参数的完整列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
 
 >[!NOTE]
 >
@@ -260,7 +260,7 @@ GET /experiments/{EXPERIMENT_ID}/runs?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAM
 | 参数 | 描述 |
 | --- | --- |
 | `{EXPERIMENT_ID}` | 有效的实验ID。 |
-| `{QUERY_PARAMETER}` | 用于筛选 [结果的可用查询](./appendix.md#query) 参数之一。 |
+| `{QUERY_PARAMETER}` | 用于筛选结果的[可用查询参数](./appendix.md#query)之一。 |
 | `{VALUE}` | 前一查询参数的值。 |
 
 **请求**
@@ -278,7 +278,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回一个有效负荷，它包含运行的列表及其每个详细信息(包括其实验运行ID(`{RUN_ID}`))。
+成功的响应返回一个有效负荷，它包含运行的列表以及每个运行的详细信息，包括其实验运行ID(`{RUN_ID}`)。
 
 ```json
 {
@@ -308,7 +308,7 @@ curl -X GET \
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议您首先执行GET请求，以 [按ID检索实验](#retrieve-specific)。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
+>为确保此PUT请求成功，建议您首先执行GET请求，以通过ID](#retrieve-specific)检索实验。 [然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
 
 以下示例API调用在最初具有这些属性时更新实验的名称：
 
