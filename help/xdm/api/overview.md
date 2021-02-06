@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主题；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；
 solution: Experience Platform
-title: 模式注册表API开发人员指南
-description: '模式注册表API允许您以编程方式管理Experience Platform中可用的所有模式和相关XDM资源。 '
+title: 模式注册表API指南
+description: 模式注册表API允许开发人员以编程方式管理Adobe Experience Platform内的所有模式和相关体验数据模型(XDM)资源。 请按照本指南学习如何使用API执行关键操作。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 44a727f6ce4c2b90aa010379583c7c4d3ebd011c
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '961'
+source-wordcount: '973'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Schema Registry] API开发人员指南
+# [!DNL Schema Registry] API指南
 
 [!DNL Schema Registry]用于访问Adobe Experience Platform的模式库，提供可从中访问所有可用库资源的用户界面和RESTful API。
 
