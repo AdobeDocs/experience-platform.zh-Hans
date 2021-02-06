@@ -1,21 +1,17 @@
 ---
 keywords: 可视；可视扩展；可视目标
-title: 可见扩展
-seo-title: 可见扩展
+title: 可比扩展目标
 description: Bizbile扩展是Adobe Experience Platform的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Bizbile扩展是Adobe Experience Platform的电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '488'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Bizible] 扩展 {#bizible-extension}
-
-## 概述 {#overview}
 
 [!DNL Bizible] 是行业领先的B2B归因解决方案，可让您无法并行地查看数据，从而做出明智的决策，推动数据增长。
 
