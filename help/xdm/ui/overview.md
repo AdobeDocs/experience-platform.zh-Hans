@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；体验数据模型；数据模型；ui；工作区；
 solution: Experience Platform
-title: 模式工作区概述
+title: 模式UI概述
 description: 此概述涵盖模式工作区在Experience Platform方面的主要功能。
 topic: user guide
 translation-type: tm+mt
-source-git-commit: 2e20403122e65d28f04114af9b7e8d41874f76e2
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '292'
 ht-degree: 2%
@@ -13,7 +13,7 @@ ht-degree: 2%
 ---
 
 
-# [!UICONTROL 架构] 工作区概述
+# [!UICONTROL 架] 构UI概述
 
 Adobe Experience Platform用户界面中的[!UICONTROL 模式]工作区允许您管理体验数据模型(XDM)资源，包括模式、类、混合和数据类型。 您可以视图和探索Adobe提供的核心资源，为您的组织创建自定义资源和模式。
 
