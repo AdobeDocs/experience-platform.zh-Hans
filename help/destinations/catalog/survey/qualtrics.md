@@ -1,21 +1,17 @@
 ---
 keywords: Qualtrics;qualtrics;Qualtrics网站反馈；qualtrics网站反馈；Qualtrics网站反馈
-title: Qualtrics网站反馈扩展
-seo-title: Qualtrics网站反馈扩展
+title: Qualtrics网站反馈扩展目标
 description: Qualtrics网站反馈扩展是Adobe Experience Platform的调查目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Qualtrics网站反馈扩展是Adobe Experience Platform的调查目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '621'
+source-wordcount: '590'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Qualtrics Website Feedback] 扩展 {#qualtrics-extension}
-
-## 概述 {#overview}
 
 [!DNL Qualtrics Website Feedback] 使您能够在正确的时间用正确的消息吸引网站访客。无论您是希望通过网站反馈调查改善访客体验还是提高转化率，[!DNL Qualtrics Website Feedback]都能满足您的需求。
 
