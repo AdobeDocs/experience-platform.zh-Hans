@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;individual profile;fields;schemas;Schemas;personal details;Schema design;mixin;Mixin;
+keywords: Experience Platform；主题；热门主题；模式;模式;XDM；个人用户档案；字段；模式;模式；个人细节；模式设计；混音；混音；
 solution: Experience Platform
-title: 个人联系人详细信息混合
+title: 混合个人联系人详细信息
 topic: overview
 description: 此文档概述了“个人联系人详细信息”混合。
 translation-type: tm+mt
-source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '133'
-ht-degree: 7%
+source-wordcount: '152'
+ht-degree: 6%
 
 ---
 
 
-# [!UICONTROL 混合个人联系人详] 情
+# [!UICONTROL 个人联系人详] 细信息
 
 >[!NOTE]
 >
->几个混音的名称已经更改。 有关详细信息，请 [参阅混合名称](../name-updates.md) 更新文档。
+>几个混音的名称已经更改。 有关详细信息，请参阅[mixin name updates](../name-updates.md)上的文档。
 
-[!UICONTROL “个人联系人] 详细信息”是课程的标准 [[!DNL XDM Individual Profile] 混合](../../classes/individual-profile.md) ，用于描述个人的联系信息。
+[!UICONTROL 个人联] 系信息详细说明课程的 [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md) 标准混合信息，其中描述个人的联系信息。
 
 <img src="../../images/mixins/profile-personal-details.png" width="700" /><br />
 
