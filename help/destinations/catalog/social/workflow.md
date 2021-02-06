@@ -1,22 +1,18 @@
 ---
 keywords: Facebook;facebook；社交网络；社交网络；社交网络身份验证；社交网络身份验证
-title: 社交网络目标工作流
+title: 创建社交网络目标
 type: Tutorial
-seo-title: 社交网络目标工作流
-description: 连接到社交网络广告帐户的说明
-seo-description: 连接到社交网络广告帐户的说明
+description: 了解如何连接到Adobe Experience Platform的社交网络广告帐户。
 translation-type: tm+mt
-source-git-commit: d1aa2c825cd679d593cf97d84506058482a7fe8f
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '460'
 ht-degree: 0%
 
 ---
 
 
-# 社交网络目标身份验证工作流{#social-network-destinations-workflow}
-
-## 创建社交网络目标的工作流
+# 创建社交网络目标{#social-network-destinations-workflow}
 
 本教程以[!DNL Facebook]为例，但Adobe Experience Platform的工作流对于所有社交网络目标将保持不变，再添加到产品中。
 
