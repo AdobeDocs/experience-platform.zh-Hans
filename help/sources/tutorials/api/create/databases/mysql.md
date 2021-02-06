@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题；MySQL;mysql
 solution: Experience Platform
-title: 使用Flow Service API创建MySQL连接器
+title: 使用流服务API创建MySQL源连接
 topic: overview
 type: Tutorial
-description: 本教程使用Flow Service API指导您完成将Experience Platform连接到MySQL的步骤。
+description: 了解如何使用Flow Service API将Adobe Experience Platform连接到MySQL。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '583'
+source-wordcount: '580'
 ht-degree: 2%
 
 ---
 
 
-# 使用[!DNL Flow Service] API创建MySQL连接器
+# 使用[!DNL Flow Service] API创建MySQL源连接
 
 >[!NOTE]
 >
