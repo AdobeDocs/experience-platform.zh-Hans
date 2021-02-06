@@ -1,25 +1,25 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；查询
 solution: Experience Platform
-title: 查询服务开发人员指南
+title: 查询服务API指南
 topic: query templates
-description: 此开发人员指南提供在Adobe Experience Platform查询服务API中执行各种操作的步骤。
+description: 查询服务API允许开发人员使用标准SQL查询其Adobe Experience Platform数据。 请按照本指南学习如何使用API执行关键操作。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '383'
+source-wordcount: '395'
 ht-degree: 1%
 
 ---
 
 
-# [!DNL Query Service] 开发人员指南
+# [!DNL Query Service] API指南
 
 本开发人员指南提供了在Adobe Experience Platform[!DNL Query Service] API中执行各种操作的步骤。
 
 ## 入门指南
 
-本指南要求对与使用[!DNL Query Service]相关的Adobe Experience Platform各项服务有工作的了解。
+本指南要求对使用[!DNL Query Service]时涉及的Adobe Experience Platform各项服务有工作的了解。
 
 - [[!DNL Query Service]](../home.md):提供查询数据集并将生成的查询捕获为中的新数据集的能力 [!DNL Experience Platform]。
 - [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
