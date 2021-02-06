@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；map csv;map csv;map csv file;map csv文件到xdm;map csv到xdm;ui指南；mapper;mapping;date函数；日期；
 solution: Experience Platform
-title: 日期函数
+title: 数据准备日期函数
 topic: overview
 description: 本文档介绍了数据准备中使用的日期功能。
 translation-type: tm+mt
-source-git-commit: 28c13101be37c5c7680c5d46005509bfd122018f
+source-git-commit: 37c1c98ccba50fa917acc5e93763294f4dde5c36
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '415'
 ht-degree: 16%
 
 ---
 
 
-# 日期函数
+# 数据准备日期功能
 
 数据准备支持日期函数，既作为字符串，也作为日期时间对象。
 
