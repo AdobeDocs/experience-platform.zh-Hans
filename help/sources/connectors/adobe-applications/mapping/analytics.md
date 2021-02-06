@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;home;popular topics;Analytics mapping fields;analytics mapping
+keywords: Experience Platform；主页；热门主题；分析映射字段；分析映射
 solution: Experience Platform
-title: 分析映射字段
+title: Adobe Analytics源连接器的映射字段
 topic: overview
 description: Adobe Experience Platform允许您通过Analytics Data Connector(ADC)获取Adobe Analytics数据。 通过ADC摄取的某些数据可以直接从Analytics字段映射到体验数据模型(XDM)字段，而其他数据需要转换和特定函数才能成功映射。
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '3378'
+source-wordcount: '3393'
 ht-degree: 12%
 
 ---
 
 
-# 分析映射字段
+# 分析字段映射
 
 Adobe Experience Platform允许您通过Analytics Data Connector(ADC)获取Adobe Analytics数据。 通过ADC摄取的某些数据可以直接从Analytics字段映射到体验数据模型(XDM)字段，而其他数据需要转换和特定函数才能成功映射。
 
@@ -23,7 +23,7 @@ Adobe Experience Platform允许您通过Analytics Data Connector(ADC)获取Adobe
 
 选择字段会直接从Adobe Analytics映射到体验数据模型(XDM)。
 
-下表包括显示“分析”字段（Analytics字段）的名称、相应的XDM字段(XDM字段&#x200B;*)及其类型(* XDM类型&#x200B;*)的列，以及对该字段的说明(Description***** Comprication )。
+下表包含显示分析字段名称（*分析字段*）、相应XDM字段（*XDM字段*）及其类型（*XDM类型*）的列，以及字段的说明(*Description*)。
 
 >[!NOTE]
 >
@@ -57,9 +57,9 @@ Adobe Experience Platform允许您通过Analytics Data Connector(ADC)获取Adobe
 | ipv6 | environment.ipV6 | 字符串 |
 | j_jscript | environment.browserDetails.javaScriptVersion | 字符串 | 浏览器支持的JavaScript版本。 |
 | user_agent | environment.browserDetails.userAgent | 字符串 | HTTP头中发送的用户代理字符串。 |
-| mobileappid | application.</span>name | 字符串 | 移动应用程序ID，以下列格式存储： `[AppName][BundleVersion]`. |
+| mobileappid | 应用程序。</span>名称 | 字符串 | 移动应用程序ID，以下列格式存储：`[AppName][BundleVersion]`。 |
 | mobiledevice | device.model | 字符串 | 移动设备的名称。 在iOS上，它以逗号分隔的2位数字符串形式存储。 第一数字表示设备生成，第二数字表示设备系列。 |
-| pointinterest | placeContext.POIinteraction.POIDetail.</span>name | 字符串 | 由移动服务使用。 表示兴趣点。 |
+| pointinterest | placeContext.POIinteraction.POIDetail.</span>名称 | 字符串 | 由移动服务使用。 表示兴趣点。 |
 | pointofinterestdistance | placeContext.POIinteraction.POIDetail.geoInteractionDetails.distanceToCenter | 数字 | 由移动服务使用。 表示兴趣点距离。 |
 | mobileplaceaccuracy | placeContext.POIinteraction.POIDetail.geoInteractionDetails.deviceGeoAccuracy | 数字 | 从上下文数据变量 a.loc.acc 收集。指示收集时 GPS 的精度（以米为单位）。 |
 | mobileplacecategory | placeContext.POIinteraction.POIDetail.category | 字符串 | 从上下文数据变量 a.loc.category 收集。描述特定位置的类别。 |
@@ -126,7 +126,7 @@ Adobe Experience Platform允许您通过Analytics Data Connector(ADC)获取Adobe
 
 ## 拆分映射字段
 
-这些字段有单个源，但映射到 **多个** XDM位置。
+这些字段有单个源，但映射到&#x200B;**多个** XDM位置。
 
 | 分析字段 | XDM字段 | XDM类型 | 描述 |
 | --------------- | --------- | -------- | ---------- |
@@ -138,7 +138,7 @@ Adobe Experience Platform允许您通过Analytics Data Connector(ADC)获取Adobe
 
 需要转换来自ADC的选择字段，需要逻辑超越来自Adobe Analytics的直接拷贝才能在XDM中生成。
 
-下表包括显示“分析”字段（Analytics字段）的名称、相应的XDM字段(XDM字段&#x200B;*)及其类型(* XDM类型&#x200B;*)的列，以及对该字段的说明(Description***** Comprication )。
+下表包含显示分析字段名称（*分析字段*）、相应XDM字段（*XDM字段*）及其类型（*XDM类型*）的列，以及字段的说明(*Description*)。
 
 >[!NOTE]
 >
@@ -148,7 +148,7 @@ Adobe Experience Platform允许您通过Analytics Data Connector(ADC)获取Adobe
 | --------------- | --------- | -------- | ----------- |
 | m_prop1 - m_prop75 | _experience.analytics.customDimensions.listprops.prop1 - _experience.analytics.customDimensions.listprops.prop75 | 对象 | 自定义流量变量，范围从1到75 | {} |
 | m_hier1 - m_hier5 | _experience.analytics.customDimensions.hierarchies.hier1 - _experience.analytics.customDimensions.hier5 | 对象 | 由层次结构变量使用。 它包含 | 分隔值列表。 | {values(array), delimiter(string)} |
-| m_mvvar1 - m_mvvar3 | _experience.analytics.customDimensions.列表.1.列表[] 1.列表- _experience.analytics.customDimensions.列表.列表3.列表[] | 阵列 | 变量值的列表。 包含自定义值的分隔列表，具体取决于实现 | {value(string), key(string)} |
+| m_mvvar1 - m_mvvar3 | _experience.analytics.customDimensions.列表.列表1.列表[] - _experience.analytics.customDimensions.列表.列表3.列表[] | 阵列 | 变量值的列表。 包含自定义值的分隔列表，具体取决于实现 | {value(string), key(string)} |
 | m_color | device.colorDepth | 整数 | 颜色深度ID，它基于c_color列的值。 |
 | m_cookies | environment.browserDetails.cookiesEnabled | 布尔 | Cookie支持维中使用的变量。 |
 | m_事件_列表 | commerce.purchases、commerce.productViews、commerce.productListOpens、commerce.checkouts、commerce.productListAdds、commerce.productListMelvuts、commerce.productListViews | 对象 | 标准商务事件在点击时触发。 | {id（字符串），值（数字）} |
@@ -196,9 +196,9 @@ Adobe Experience Platform允许您通过Analytics Data Connector(ADC)获取Adobe
 
 选择字段（称为“后置值”）需要更高级的转换，然后才能将它们从Adobe Analytics字段成功映射到体验数据模型(XDM)。 执行这些高级转换需要使用Adobe Experience Platfrom查询服务和预建函数(称为Adobe定义函数)进行会话化、归因和外部重复数据删除。
 
-要了解有关使用查询服务执行此转换的更多信息，请访 [问Adobe定义的函数](../../../../query-service/sql/adobe-defined-functions.md) 文档。
+要进一步了解如何使用查询服务执行此转换，请访问[Adobe定义的函数](../../../../query-service/sql/adobe-defined-functions.md)文档。
 
-下表包括显示“分析”字段（Analytics字段）的名称、相应的XDM字段(XDM字段&#x200B;*)及其类型(* XDM类型&#x200B;*)的列，以及对该字段的说明(Description***** Comprication )。
+下表包含显示分析字段名称（*分析字段*）、相应XDM字段（*XDM字段*）及其类型（*XDM类型*）的列，以及字段的说明(*Description*)。
 
 >[!NOTE]
 >
@@ -239,7 +239,7 @@ Adobe Experience Platform允许您通过Analytics Data Connector(ADC)获取Adobe
 | visit_search_page_num | _experience.analytics.session.search.pageDepth | 整数 | 访问的第一个页面名称。 |
 | post_prop1 - post_prop75 | _experience.analytics.customDimensions.listprops.prop1 - _experience.analytics.customDimensions.listprops.prop75 | 对象 | 自定义流量变量1-75。 |
 | post_hier1 - post_hier5 | _experience.analytics.customDimensions.hierarchies.hier1 - _experience.analytics.customDimensions.hier5 | 对象 | 由层次变量使用，并包含一个分隔的值列表。 | {values(array), delimiter(string)} |
-| post_mvvar1 - post_mvvar3 | _experience.analytics.customDimensions.列表.1.列表[] 1.列表- _experience.analytics.customDimensions.列表.列表3.列表[] | 阵列 | 变量值的列表。 包含自定义值的分隔列表，具体取决于实现。 | {value(string), key(string)} |
+| post_mvvar1 - post_mvvar3 | _experience.analytics.customDimensions.列表.列表1.列表[] - _experience.analytics.customDimensions.列表.列表3.列表[] | 阵列 | 变量值的列表。 包含自定义值的分隔列表，具体取决于实现。 | {value(string), key(string)} |
 | post_cookies | environment.browserDetails.cookiesEnabled | 布尔 | 在“Cookie 支持”维度中使用的变量。 |
 | post_事件_列表 | commerce.purchases、commerce.productViews、commerce.productListOpens、commerce.checkouts、commerce.productListAdds、commerce.productListMelvuts、commerce.productListViews | 对象 | 标准商务事件在点击时触发。 | {id（字符串），值（数字）} |
 | post_事件_列表 | _experience.analytics.事件1to100.事件1 - _experience.analytics.事件1to100.事件100, _experience.analytics.事件101to200.事件101 - _experience.analytics.事件101to200.事件_experience.analytics.事件201到300.事件201 - _experience.analytics.事件201到300.事件300, _experience.analytics.事件301到400.事件301 - _experience.analytics.事件301to400.事件400, _experience.analytics.事件401to500.事件401 - _experience.analytics.事件401to500.事件500, _experience.analytics.事件5001to600.事件501 - _experience.analytics.事件501to600.事件600, _experience.analytics.事件601to700.事件601 - _experience.analytics.事件601to700.事件_experience.analytics.事件701到800.事件701 - _experience.analytics.事件701到800.事件800, _experience.analytics.事件801到900.事件801 - _experience.analytics.事件801到900.事件900, _experience.analytics.事件901到1000.事件901 - _experience.analytics.事件901到1000.事件1000 | 对象 | 点击时触发的自定义事件。 | {id（对象），值（对象）} |
