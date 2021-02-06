@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 数据摄取包括使用源连接器进行批量摄取、流式摄取和摄取。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '497'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 Adobe Experience Platform将来自多个来源的数据整合在一起，以帮助营销人员更好地了解其客户的行为。 Adobe[!DNL Experience Platform Data Ingestion]表示[!DNL Platform]从这些源中收集数据的多种方法，以及该数据在数据湖中的保留方式，以供下游[!DNL Platform services]使用。 [!DNL Data Ingestion] 包括使用源连接器进行批量摄取、流式摄取和摄取。要了解更多信息，请阅读[数据摄取概述](../ingestion/home.md)或直接转到[源文档](../sources/home.md)。
 
-## 在UI和API中创建源连接器
+## 在UI和API中创建源连接
 
 源连接器允许您从多个源中摄取数据，然后使用[!DNL Platform services]对其进行标记、结构化和增强。 要开始创建源连接器，请参阅[源概述](../sources/home.md)。
 
