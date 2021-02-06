@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: Adobe Experience Platform 入门指南
+title: Adobe Experience Platform入门
 topic: getting started
 description: 此视频快速介绍Experience Platform，并概述其解决的业务难题。
 translation-type: tm+mt
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
 workflow-type: tm+mt
 source-wordcount: '49'
-ht-degree: 24%
+ht-degree: 12%
 
 ---
 
