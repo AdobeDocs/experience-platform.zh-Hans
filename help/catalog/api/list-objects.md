@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;home;popular topics;filter;Filter;filter data;Filter data
+keywords: Experience Platform；主页；热门主题；过滤器；过滤器；过滤数据；过滤数据
 solution: Experience Platform
-title: 列表对象
+title: 列表目录对象
 topic: developer guide
 description: 您可以通过单个API调用检索特定类型的所有可用对象的列表，最佳实践是包括限制响应大小的过滤器。
 translation-type: tm+mt
-source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
+source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '242'
 ht-degree: 1%
 
 ---
 
 
-# 列表对象
+# 列表目录对象
 
 您可以通过单个API调用检索特定类型的所有可用对象的列表，最佳实践是包括限制响应大小的过滤器。
 
@@ -26,12 +26,12 @@ GET /{OBJECT_TYPE}?{FILTER}={VALUE}&{FILTER_2}={VALUE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要列出 [!DNL Catalog] 的对象类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
-| `{FILTER}` | 用于筛选在响应中返回的结果的查询参数。 多个参数由和符()`&`分隔。 有关详细信息，请参 [阅有关筛选目录](filter-data.md) 数据的指南。 |
+| `{OBJECT_TYPE}` | 要列出的[!DNL Catalog]对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{FILTER}` | 用于筛选在响应中返回的结果的查询参数。 多个参数以和符(`&`)分隔。 有关详细信息，请参阅[过滤目录数据](filter-data.md)指南。 |
 
 **请求**
 
-下面的示例请求检索数据集的列表，其中 `limit` 有一个过滤器将响应减少到五个结果，以及一个 `properties` 过滤器限制每个数据集显示的属性。
+下面的示例请求检索数据集列表，其中`limit`过滤器将响应减少到五个结果，而`properties`过滤器将限制每个数据集显示的属性。
 
 ```shell
 curl -X GET \
@@ -44,11 +44,11 @@ curl -X GET \
 
 **响应**
 
-成功的响应以键值对 [!DNL Catalog] 的形式返回对象列表，按请求中提供的查询参数过滤。 对于每个键值对，键表示所涉及对象的唯一标识符， [!DNL Catalog] 然后该标识符可用于对特定对象进行视图的 [另一调用](look-up-object.md) ，以获取更多详细信息。
+成功的响应以键值对的形式返回[!DNL Catalog]对象的列表，按请求中提供的查询参数筛选。 对于每个键值对，该键代表所涉[!DNL Catalog]对象的唯一标识符，然后该标识符可用于对特定对象](look-up-object.md)视图的另一个调用，以获取更多详细信息。[
 
 >[!NOTE]
 >
->如果返回的对象不包含查询所指示的一个或多个请求属性， `properties` 则响应将仅返回它所包含的请求属性，如 ***`Sample Dataset 3`*** 下 ***`Sample Dataset 4`*** 所示。
+>如果返回的对象不包含由`properties`查询指示的一个或多个请求属性，则响应只返回其包含的请求属性，如下面的&#x200B;***`Sample Dataset 3`***&#x200B;和&#x200B;***`Sample Dataset 4`***&#x200B;所示。
 
 ```json
 {
