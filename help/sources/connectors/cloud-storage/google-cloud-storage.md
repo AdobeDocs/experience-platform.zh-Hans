@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；Google Cloud存储;Google Cloud存储
 solution: Experience Platform
-title: Google Cloud存储连接器
+title: Google Cloud存储源连接器概述
 topic: overview
-description: 以下文档提供了如何使用API或用户界面将Google Cloud存储连接到平台的信息。
+description: 了解如何使用API或用户界面将Google Cloud存储连接到Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '568'
 ht-degree: 0%
@@ -58,11 +58,11 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 
 ### 使用API
 
-- [使用Flow Service API创建Google Cloud存储连接器](../../tutorials/api/create/cloud-storage/google.md)
+- [使用Flow Service API创建Google Cloud存储源连接](../../tutorials/api/create/cloud-storage/google.md)
 - [使用Flow Service API浏览云存储系统](../../tutorials/api/explore/cloud-storage.md)
 - [使用流服务API收集云存储数据](../../tutorials/api/collect/cloud-storage.md)
 
 ### 使用UI
 
-- [在UI中创建Google Cloud存储源连接器](../../tutorials/ui/create/cloud-storage/google-cloud-storage.md)
-- [在UI中为云存储连接器配置数据流](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+- [在UI中创建Google Cloud存储源连接](../../tutorials/ui/create/cloud-storage/google-cloud-storage.md)
+- [在UI中为云存储连接配置数据流](../../tutorials/ui/dataflow/batch/cloud-storage.md)
