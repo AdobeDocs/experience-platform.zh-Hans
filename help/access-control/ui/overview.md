@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;Access control;Adobe admin console
+keywords: Experience Platform；主页；热门主题；访问控制;Adobe管理控制台
 solution: Experience Platform
-title: 访问控制用户指南
+title: 访问控制UI概述
 topic: user guide
 description: Adobe Experience Platform的访问控制允许您通过使用Adobe Admin Console管理各种平台功能的角色和权限。 此文档用于指导如何导航Admin Console以管理平台访问控制。
 translation-type: tm+mt
-source-git-commit: 14f99c23cd82894fee5eb5c4093b3c50b95c52e8
+source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
 workflow-type: tm+mt
-source-wordcount: '184'
+source-wordcount: '194'
 ht-degree: 1%
 
 ---
 
 
-# 访问控制用户指南
+# 访问控制UI概述
 
-Adobe Experience Platform的访问控制允许您使用Adobe Admin Console管理各种 [!DNL Platform] 功能的角色和 [权限](https://adminconsole.adobe.com)。 此文档用于指导如何导航以管 [!DNL Admin Console] 理访问控制 [!DNL Platform]。 有关中访问控制的高级概述， [!DNL Experience Platform]请参阅 [访问控制概述](./../home.md)。
+Adobe Experience Platform的访问控制允许您使用[Adobe Admin Console](https://adminconsole.adobe.com)管理各种[!DNL Platform]功能的角色和权限。 此文档用于指导如何导航[!DNL Admin Console]以管理[!DNL Platform]的访问控制。 有关[!DNL Experience Platform]中访问控制的高级概述，请参阅[访问控制概述](./../home.md)。
 
 涵盖以下任务:
 
@@ -25,4 +25,4 @@ Adobe Experience Platform的访问控制允许您使用Adobe Admin Console管理
 - [管理产品用户档案的详细信息和其他服务](./details-and-services.md)
 - [管理产品用户档案的用户](./users.md)
 
-重复上述步骤以根据需要继续添加用户。 现在您已经通过访问控制学习了如何控 [!DNL Platform] 制对功能的 [!DNL Admin Console]访问，请参阅概述中的附录部分 [，进一步了解他们授予的每个权限](../home.md)[!DNL Platform] 及其功能。
+重复上述步骤以根据需要继续添加用户。 现在您已学习如何通过[!DNL Admin Console]控制对[!DNL Platform]功能的访问，请参阅[访问控制概述](../home.md)中的附录部分，进一步了解他们授予的每个权限和[!DNL Platform]功能。
