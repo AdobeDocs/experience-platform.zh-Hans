@@ -1,22 +1,19 @@
 ---
 keywords: 云存储目标；云存储
-title: 云存储目标工作流
-seo-title: 云存储目标工作流
+title: 创建云存储目标
 type: Tutorial
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '539'
+source-wordcount: '534'
 ht-degree: 0%
 
 ---
 
 
-# 创建云存储目标的工作流
-
-## 概述
+# 创建云存储目标
 
 本页介绍如何连接到Adobe Experience Platform的云存储位置。
 
