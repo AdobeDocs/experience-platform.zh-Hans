@@ -5,7 +5,7 @@ title: 隐私法规常见问题解答
 topic: troubleshooting
 description: 本文档回答有关受支持法律隐私法规及其在Adobe Experience Cloud实施的常见问题。
 translation-type: tm+mt
-source-git-commit: 00904291ab7e2f119d3886b5aae9be50d4e8bd2b
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
 source-wordcount: '1599'
 ht-degree: 0%
