@@ -2,13 +2,13 @@
 keywords: 目标；adobe experience platform；平台；目标概述；激活数据；激活；
 title: 目标概述
 seo-title: 目标概述
-description: 将平台数据激活到跨渠道营销活动、电子邮件、定向广告等的目标。
+description: 了解如何将Adobe Experience Platform数据激活到跨渠道营销活动、电子邮件、定向广告等目的地。
 seo-description: 目标是预建的与目标平台集成，实现来自Adobe Experience Platform的无缝激活。 您可以使用Adobe Experience Platform的目标来激活您已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他使用案例的数据。
 translation-type: tm+mt
-source-git-commit: 32eae2ed782e46941bb21e3aca62c6bce68cde1e
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '488'
-ht-degree: 3%
+source-wordcount: '493'
+ht-degree: 1%
 
 ---
 
