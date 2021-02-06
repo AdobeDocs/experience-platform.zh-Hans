@@ -5,10 +5,10 @@ audience: user
 user-guide-title: 实时客户数据平台指南
 user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
 translation-type: tm+mt
-source-git-commit: 4a282f8890ace3be7808ffbf018377d792e30cb7
+source-git-commit: 1305d789c68ac8f84d5a5f82d8f17035e56ef712
 workflow-type: tm+mt
-source-wordcount: '109'
-ht-degree: 49%
+source-wordcount: '103'
+ht-degree: 52%
 
 ---
 
@@ -40,6 +40,5 @@ ht-degree: 49%
    * [客户人工智能](segmentation/customer-ai.md)
 * 源 {#sources}
    * [源概述](sources/sources-overview.md)
-   * [通过Adobe启动实施网站标记](sources/launch.md)
 * [Experience Platform发行说明](https://www.adobe.com/go/platform-release-notes-en)
 * [Experience Platform 术语表](https://www.adobe.com/go/platform-glossary-en)
