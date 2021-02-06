@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；广告系统；广告系统
 solution: Experience Platform
-title: 使用Flow Service API浏览广告系统
+title: 使用Flow Service API探索广告系统
 topic: overview
 description: Flow Service用于收集和集中来自Adobe Experience Platform不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。 本教程使用Flow Service API探索广告系统。
 translation-type: tm+mt
-source-git-commit: 48a5dcfe5679e360da1e33f6021dc1229b92948f
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
 source-wordcount: '633'
 ht-degree: 1%
