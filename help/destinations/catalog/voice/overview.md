@@ -1,19 +1,17 @@
 ---
 keywords: 语音目标；语音目标
-title: 客户目标之声
-seo-title: 客户目标之声
+title: 客户目标之声概述
 description: 语音平台收集和整理来自各种来源的数据，包括语音消息、通话数据和聊天对话。 可以过滤和分析所整理的信息，使公司能够优化其网站以满足其要求。
-seo-description: 语音平台收集和整理来自各种来源的数据，包括语音消息、通话数据和聊天对话。 可以过滤和分析所整理的信息，使公司能够优化其网站以满足其要求。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '166'
+source-wordcount: '127'
 ht-degree: 0%
 
 ---
 
 
-# 客户目标语音{#voice-of-customer-destinations}
+# 客户语音目标概述{#voice-of-customer-destinations}
 
 语音平台收集和整理来自各种来源的数据，包括语音消息、通话数据和聊天对话。 可以过滤和分析所整理的信息，使公司能够优化其网站以满足其要求。
 
