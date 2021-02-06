@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；云存储数据；流数据；流
 solution: Experience Platform
-title: 通过源连接器和API收集流数据
+title: 使用源连接器和API收集流数据
 topic: overview
 type: Tutorial
-description: 本教程介绍了通过源连接器和API检索流数据并将它们引入平台的步骤。
+description: 本教程介绍了使用源连接器和API检索流数据并将它们引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
 source-wordcount: '1303'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 ---
 
 
-# 通过源连接器和API收集流数据
+# 使用源连接器和API收集流数据
 
 [!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
