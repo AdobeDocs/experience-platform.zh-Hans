@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；归因ai；访问得分；热门主题；下载得分；归因ai得分；导出；导出
 solution: Experience Platform, Intelligent Services
-title: 访问Attribution AI中的得分
-topic: Accessing scores
+title: 下载Attribution AI中的分数
+topic: Downloading scores
 description: 此文档可作为下载Attribution AI分数的指南。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 2%
@@ -13,7 +13,7 @@ ht-degree: 2%
 ---
 
 
-# 下载Attribution AI中的得分
+# 下载Attribution AI得分
 
 此文档可作为下载Attribution AI分数的指南。
 
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 Attribution AI允许您下载Parke文件格式的分数。 本教程要求您已阅读并完成[入门](./getting-started.md)指南中的下载Attribution AI得分部分。
 
-此外，要访问Attribution AI的分数，您需要有一个运行状态成功的服务实例可用。 要创建新服务实例，请访问[Attribution AI用户指南](./user-guide.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分中，请允许24小时，它才能完成运行。
+此外，要访问Attribution AI的分数，您需要有一个运行状态成功的服务实例可用。 要创建新服务实例，请访问[Attribution AI用户指南](./user-guide.md)。 如果您最近创建了一个服务实例，但它仍在培训和评分，请允许24小时，它才能完成运行。
 
 ## 查找数据集ID {#dataset-id}
 
