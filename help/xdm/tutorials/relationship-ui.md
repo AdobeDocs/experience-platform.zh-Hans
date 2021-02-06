@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform；主题；主题；用户界面；用户界面；用户界面；用户界面；用户界面；用户界面；用户界面；用户界面；用户界面；用户界面；用户界面；用户界面；用户界面；用户界面；用户界面；用户界面；
 solution: Experience Platform
-title: 使用模式模式编辑器定义两个模式之间的关系
+title: 使用模式编辑器定义两个模式之间的关系
 description: 此文档提供了一个教程，用于使用Experience Platform用户界面中的模式编辑器定义两个模式之间的关系。
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '946'
+source-wordcount: '945'
 ht-degree: 0%
 
 ---
