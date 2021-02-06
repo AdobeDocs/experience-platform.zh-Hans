@@ -1,23 +1,23 @@
 ---
-keywords: Experience Platform;home;popular topics;Audience Manager mapping;audience manager mapping
+keywords: Experience Platform；主页；热门主题；Audience Manager映射；受众管理器映射
 solution: Experience Platform
-title: Audience Manager映射字段
+title: Adobe Audience Manager源连接器的映射字段
 topic: overview
-description: 下表包含Adobe Audience Manager数据(实时、载入和用户档案数据)中的字段与其对应的XDM字段之间的映射。
+description: 了解如何将Adobe Audience Manager数据(实时、载入和用户档案数据)映射到Audience Manager源连接器的相应体验数据模型(XDM)字段。
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: '169'
 ht-degree: 0%
 
 ---
 
 
-# Audience Manager映射字段
+# Audience Manager字段映射
 
 下表包含Adobe Audience Manager数据(实时、载入和用户档案数据)中的字段与其对应的XDM字段之间的映射。
 
-有关每个XDM [字段的详细信息](../../../../xdm/schema/field-dictionary.md) ，请参阅XDM字段字典。
+有关每个XDM字段的详细信息，请参阅[XDM字段字典](../../../../xdm/schema/field-dictionary.md)。
 
 ## 实时数据
 
@@ -28,7 +28,7 @@ ht-degree: 0%
 | `requestIds[]` | `ExperienceEvent.identityMap["ECID"]` |
 | `requestIds[]` | `ExperienceEvent.endUserIds` - *仅适用于endUserId中存在的命名空间，且仅适用于第一个值。* |
 | `primaryDeviceId` | `ExperienceEvent.identityMap["CORE"]` |
-| `primaryDeviceId` | ExperienceEvent.endUserId —— 仅 *适用于endUserId中存在的命名空间，且仅适用于第一个值。* |
+| `primaryDeviceId` | ExperienceEvent.endUserId - *仅用于endUserId中存在的命名空间，且仅用于第一个值。* |
 | `trait[] ` | `ExperienceEvent.segmentMemberships["AAMTraits"]` |
 | `segments[]` | `ExperienceEvent.segmentMemberships["AAMSegments"]` |
 | `mergeRules[]` | `ExperienceEvent.profileStitch[]` |
