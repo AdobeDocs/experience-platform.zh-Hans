@@ -6,7 +6,7 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: d1f357659313aba0811b267598deda9770d946a1
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
 source-wordcount: '2141'
 ht-degree: 0%
