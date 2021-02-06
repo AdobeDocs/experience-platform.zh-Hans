@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;product recommendation recipe;Data Science Workspace;popular topics;recipes;pre build recipe
+keywords: Experience Platform；产品推荐菜谱；数据科学工作区；热门主题；菜谱；预建菜谱
 solution: Experience Platform
 title: 产品推荐处方
 topic: overview
 description: 产品Recommendations菜谱使您能够根据客户的需求和兴趣提供个性化的产品推荐。 借助准确的预测模型，客户的购买历史记录可以为您提供关于他们可能感兴趣的产品的洞察。
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '477'
 ht-degree: 2%
 
 ---
@@ -27,14 +27,14 @@ ht-degree: 2%
 
 ## 如何开始？
 
-您可以通过学习Adobe Experience Platform实验室教程（请参阅下面的实验室链接）开始。 本教程将向您展示如何在Jupyter Notebook中创建产品Recommendations菜谱，方法是 [按照笔记本到菜谱工作流](../jupyterlab/create-a-recipe.md) ，并在中实施菜谱 [!DNL Experience Platform][!DNL Data Science Workspace]。
+您可以通过学习Adobe Experience Platform实验室教程（请参阅下面的实验室链接）开始。 本教程将向您展示如何在Jupyter Notebook中创建产品Recommendations菜谱，方法是按照[笔记本到菜谱](../jupyterlab/create-a-recipe.md)工作流，并在[!DNL Experience Platform] [!DNL Data Science Workspace]中实施菜谱。
 
 * [实验：利用数据科学工作区预测未来](https://expleague.azureedge.net/labs/L777/index.html)
 * [实验室资源](https://github.com/adobe/experience-platform-dsw-reference/tree/master/Summit/2019/resources)
 
 ## 数据模式
 
-此菜谱使用自 [定义XDM模式](../../xdm/schema/field-dictionary.md) ，对输入和输出数据进行建模：
+此菜谱使用自定义[XDM模式](../../xdm/schema/field-dictionary.md)来模拟输入和输出数据：
 
 ### 输入数据模式
 
