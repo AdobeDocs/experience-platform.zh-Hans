@@ -1,21 +1,17 @@
 ---
 keywords: PebblePost；鹅卵石邮件；PebblePost程序化直邮；鹅卵石邮件程序化直邮
-title: PebblePost扩展
-seo-title: PebblePost扩展
+title: PebblePost扩展目标
 description: PebblePost扩展是Adobe Experience Platform的一个电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: PebblePost扩展是Adobe Experience Platform的一个电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '554'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL PebblePost] 扩展 {#pebblepost-extension}
-
-## 概述 {#overview}
 
 [!DNL PebblePost's Programmatic Direct Mail®] 该解决方案可帮助数字营销人员将在线兴趣和意图与可转换的线下、有形媒体关联起来。营销人员可以利用他们在Adobe中创建的自定义数据细分，现在为消费者提供相关、更持久的家庭媒体印象。 根据响应路径活动和现场转换实时分析性能。
 
