@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform；主题；热门话题；区段评价；分段服务；分段；分段；评价区段；访问区段结果；评价和访问区段；
 solution: Experience Platform
-title: 评估区段
+title: 评估和访问区段结果
 topic: tutorial
 type: Tutorial
-description: 本文档提供了一个教程，用于使用分段API评估区段和访问区段结果。
+description: 按照本教程学习如何使用Adobe Experience Platform分段服务API评估区段和访问区段结果。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '1560'
+source-wordcount: '1567'
 ht-degree: 0%
 
 ---
