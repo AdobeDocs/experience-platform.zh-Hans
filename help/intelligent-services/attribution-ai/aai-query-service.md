@@ -1,19 +1,19 @@
 ---
 keywords: 洞察；归因ai；归因ai洞察；AAI查询服务；归因查询；归因得分
 solution: Intelligent Services, Experience Platform
-title: AAI查询服务快速开始指南
+title: 使用查询服务分析归因得分
 topic: Attribution AI queries
-description: 此文档提供了使用查询服务分析归因得分的指南和模板。
+description: 了解如何使用Adobe Experience Platform查询服务分析Attribution AI分数。
 translation-type: tm+mt
-source-git-commit: 32d49c9244414afeb2729ef44eb364fb2c609380
+source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '487'
 ht-degree: 0%
 
 ---
 
 
-# Adobe Experience Platform查询服务快速开始指南，用于分析归因得分
+# 使用查询服务分析归因得分
 
 数据中的每一行都表示转换，在转换中，相关触点的信息将作为`touchpointsDetail`列下的结构数组存储。
 
@@ -21,7 +21,7 @@ ht-degree: 0%
 | ---------------------- | ------ |
 | 触点名称 | `touchpointsDetail. touchpointName` |
 | 触点渠道 | `touchpointsDetail.touchPoint.mediaChannel` |
-| 触点AAI算法得分 | <li>`touchpointsDetail.scores.algorithmicSourced`</li> <li> `touchpointsDetail.scores.algorithmicInfluenced` </li> |
+| 触点Attribution AI算法得分 | <li>`touchpointsDetail.scores.algorithmicSourced`</li> <li> `touchpointsDetail.scores.algorithmicInfluenced` </li> |
 
 ## 查找数据路径
 
