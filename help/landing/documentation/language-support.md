@@ -5,7 +5,7 @@ title: Experience Platform文档语言支持
 topic: getting started
 description: Adobe Experience Platform公司使组织能够在应用数据科学和机器学习之前集中和标准化客户数据，从而显着改进丰富的个性化体验的设计和投放。
 translation-type: tm+mt
-source-git-commit: 96600567bb4965a1611e2b9a7cd6cb49298a567f
+source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
 workflow-type: tm+mt
 source-wordcount: '103'
 ht-degree: 0%
