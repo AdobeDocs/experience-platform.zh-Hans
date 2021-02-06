@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;home;popular topics;map csv;map csv file;map csv file to xdm;map csv to xdm;ui guide;mapper;mapping;data prep;data preparation;preparing data;
+keywords: Experience Platform；主页；热门主题；map csv;map csv;map csv文件；map csv文件到xdm;map csv到xdm;ui指南；mapper;mapping;data prep；数据准备；准备数据；
 solution: Experience Platform
-title: 映射函数
+title: 数据准备概述
 topic: overview
 description: 本文档介绍Adobe Experience Platform的数据准备。
 translation-type: tm+mt
-source-git-commit: db38f0666f5c945461043ad08939ebda52c21855
+source-git-commit: 37c1c98ccba50fa917acc5e93763294f4dde5c36
 workflow-type: tm+mt
-source-wordcount: '304'
-ht-degree: 1%
+source-wordcount: '335'
+ht-degree: 0%
 
 ---
 
 
-# 数据准备
+# 数据准备概述
 
 数据准备使数据工程师能够映射、转换数据并验证数据与体验数据模型(XDM)之间的关系。 数据准备在数据摄取流程（包括CSV摄取工作流）中显示为“映射”步骤。 数据工程师可以使用数据准备在获取过程中执行以下数据操作：
 
@@ -29,7 +29,7 @@ ht-degree: 1%
 
 映射是输入属性或计算字段与一个XDM属性的关联。 单个属性可以通过创建单个映射映射到多个XDM属性。
 
-要进一步了解不同的映射函数，请阅读映 [射函数指南](./functions.md)。
+要进一步了解不同的映射函数，请阅读[映射函数指南](./functions.md)。
 
 ## 映射集
 
@@ -37,4 +37,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-本文档介绍了Adobe Experience Platform数据准备的基础知识。 要进一步了解不同的映射函数，请阅读映 [射函数指南](./functions.md)。 要进一步了解不同的日期时间字符串，请阅读日 [期字符串指南](./dates.md)。
+本文档介绍了Adobe Experience Platform数据准备的基础知识。 要进一步了解不同的映射函数，请阅读[映射函数指南](./functions.md)。 要进一步了解不同的日期时间字符串，请阅读[日期字符串指南](./dates.md)。
