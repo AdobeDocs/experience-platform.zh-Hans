@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;pql;PQL;Profile Query Language;array functions;array;
+keywords: Experience Platform；主题；热门主题；分段；分段；分段服务；pql;PQL;用户档案查询语；数组函数；数组；
 solution: Experience Platform
-title: 数组、列表和设置函数
+title: 阵列、列表和设置PQL函数
 topic: developer guide
 description: 用户档案查询语言(PQL)优惠函数可简化与数组、列表和字符串的交互。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '767'
 ht-degree: 5%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 5%
 
 # 数组、列表和设置函数
 
-[!DNL Profile Query Language] (PQL)优惠函数可简化与数组、列表和字符串的交互。 有关其他PQL功能的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md)。
+[!DNL Profile Query Language] (PQL)优惠函数可简化与数组、列表和字符串的交互。有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] 概述](./overview.md)。
 
 ## 输入
 
-函 `in` 数用于确定项是否为数组或列表的成员。
+`in`函数用于确定项目是否是数组或列表的成员。
 
 **Format**
 
@@ -37,13 +37,13 @@ person.birthMonth in [3, 6, 9]
 
 ## 不在
 
-该 `notIn` 函数用于确定项是否不是数组或列表的成员。
+`notIn`函数用于确定项目是否不是数组或列表的成员。
 
 >[!NOTE]
 >
->函 `notIn` 数 *还确保* 两个值均不等于null。 因此，结果不是函数的精确取 `in` 反。
+>`notIn`函数&#x200B;*还*&#x200B;确保两个值均不等于null。 因此，结果不是`in`函数的精确取反。
 
-**Format**
+**格式**
 
 ```sql
 {VALUE} notIn {ARRAY}
@@ -59,9 +59,9 @@ person.birthMonth notIn [3, 6, 9]
 
 ## Intersects
 
-该函 `intersects` 数用于确定两个阵列或列表是否具有至少一个公共成员。
+`intersects`函数用于确定两个阵列或列表是否具有至少一个公共成员。
 
-**Format**
+**格式**
 
 ```sql
 {ARRAY}.intersects({ARRAY})
@@ -77,9 +77,9 @@ person.favoriteColors.intersects(["red", "blue", "green"])
 
 ## 交集
 
-该函 `intersection` 数用于确定两个阵列或列表的公共成员。
+`intersection`函数用于确定两个阵列或列表的公用成员。
 
-**Format**
+**格式**
 
 ```sql
 {ARRAY}.intersection({ARRAY})
@@ -95,9 +95,9 @@ person1.favoriteColors.intersection(person2.favoriteColors) = ["red", "blue", "g
 
 ## 子集
 
-该函 `subsetOf` 数用于确定特定阵列（阵列A）是否是另一阵列（阵列B）的子集。 换言之，数组A中的所有元素都是数组B的元素。
+`subsetOf`函数用于确定特定阵列（阵列A）是否是另一阵列（阵列B）的子集。 换言之，数组A中的所有元素都是数组B的元素。
 
-**Format**
+**格式**
 
 ```sql
 {ARRAY}.subsetOf({ARRAY})
@@ -113,9 +113,9 @@ person.favoriteCities.subsetOf(person.visitedCities)
 
 ## 超集
 
-该函 `supersetOf` 数用于确定特定阵列（阵列A）是否是另一阵列（阵列B）的超集。 换言之，数组A包含数组B中的所有元素。
+`supersetOf`函数用于确定特定阵列（阵列A）是否是另一阵列（阵列B）的超集。 换言之，数组A包含数组B中的所有元素。
 
-**Format**
+**格式**
 
 ```sql
 {ARRAY}.supersetOf({ARRAY})
@@ -131,9 +131,9 @@ person.eatenFoods.supersetOf(["sushi", "pizza"])
 
 ## 包括
 
-函 `includes` 数用于确定数组或列表是否包含给定项。
+`includes`函数用于确定数组或列表是否包含给定项。
 
-**Format**
+**格式**
 
 ```sql
 {ARRAY}.includes({ITEM})
@@ -149,9 +149,9 @@ person.favoriteColors.includes("red")
 
 ## Distinct
 
-该函 `distinct` 数用于从数组或重复中删除列表值。
+`distinct`函数用于从数组或重复中删除列表值。
 
-**Format**
+**格式**
 
 ```sql
 {ARRAY}.distinct()
@@ -167,9 +167,9 @@ person.orders.storeId.distinct().count() > 1
 
 ## 分组依据
 
-该函 `groupBy` 数用于根据列表的值将数组或表达式的值划分成组。
+`groupBy`函数用于根据列表的值将数组或表达式的值划分到组中。
 
-**Format**
+**格式**
 
 ```sql
 {ARRAY}.groupBy({EXPRESSION)
@@ -190,9 +190,9 @@ orders.groupBy(storeId)
 
 ## 过滤器
 
-该函 `filter` 数用于根据列表来过滤数组或表达式。
+`filter`函数用于根据列表筛选数组或表达式。
 
-**Format**
+**格式**
 
 ```sql
 {ARRAY}.filter({EXPRESSION})
@@ -213,9 +213,9 @@ person.filter(age >= 21)
 
 ## 地图
 
-该函 `map` 数用于通过对给定数组中的每个项目应用表达式来创建新数组。
+`map`函数用于通过对给定数组中的每个项应用表达式来创建新数组。
 
-**Format**
+**格式**
 
 ```sql
 array.map(expression)
@@ -229,11 +229,11 @@ array.map(expression)
 numbers.map(square)
 ```
 
-## 阵列 `n` 中的第一个 {#first-n}
+## 阵列{#first-n}中的第一个`n`
 
-该函 `topN` 数用于返回数组中 `N` 的第一个项，当它基于给定的数字表达式按升序排序时。
+`topN`函数用于返回数组中的前一个`N`项，当它根据给定的数字表达式按升序排序时。
 
-**Format**
+**格式**
 
 ```sql
 {ARRAY}.topN({VALUE}, {AMOUNT})
@@ -253,11 +253,11 @@ numbers.map(square)
 orders.topN(price, 5)
 ```
 
-## 阵列 `n` 中的最后一个
+## 阵列中的最后一个`n`
 
-函数 `bottomN` 用于返回数组中的 `N` 最后一个项，当该项基于给定的数字表达式按升序排序时。
+`bottomN`函数用于返回数组中最后一个`N`项，当它根据给定的数字表达式按升序排序时。
 
-**Format**
+**格式**
 
 ```sql
 {ARRAY}.bottomN({VALUE}, {AMOUNT})
@@ -279,9 +279,9 @@ orders.bottomN(price, 5)
 
 ## 第一项
 
-函 `head` 数用于返回数组或列表中的第一个项。
+`head`函数用于返回数组或列表中的第一个项。
 
-**Format**
+**格式**
 
 ```sql
 {ARRAY}.head()
@@ -289,7 +289,7 @@ orders.bottomN(price, 5)
 
 **示例**
 
-以下PQL查询返回价格最高的前五大订单中的第一个。 有关该函数的 `topN` 更多信息，请参 [阅 `n` 数组中的第一节](#first-n) 。
+以下PQL查询返回价格最高的前五大订单中的第一个。 有关`topN`函数的详细信息，请参阅数组](#first-n)部分的[第一个`n`。
 
 ```sql
 orders.topN(price, 5).head()
@@ -297,4 +297,4 @@ orders.topN(price, 5).head()
 
 ## 后续步骤
 
-您已经了解了阵列、列表和设置功能，现在可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请阅读 [用户档案查询语概述](./overview.md)。
+您已经了解了阵列、列表和设置功能，现在可以在PQL查询中使用它们。 有关其他PQL函数的详细信息，请阅读[用户档案查询语语言概述](./overview.md)。
