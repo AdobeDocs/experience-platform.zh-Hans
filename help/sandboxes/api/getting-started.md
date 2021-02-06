@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；沙箱开发人员指南
 solution: Experience Platform
-title: 沙箱API开发人员指南
+title: 沙箱API指南
 topic: developer guide
-description: 此开发人员指南提供帮助您使用沙箱API管理Experience Platform中沙箱的步骤，并包含用于执行各种操作的示例API调用。
+description: 沙箱API允许开发人员有计划地管理Adobe Experience Platform的沙箱。 请按照本指南学习如何使用API执行关键操作。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '373'
 ht-degree: 0%
 
 ---
 
 
-# 沙箱API开发人员指南
+# 沙箱API指南
 
 Adobe Experience Platform的沙箱提供独立的开发环境，使您能够测试功能、运行实验和制作自定义配置，而不会影响您的生产环境。
 
