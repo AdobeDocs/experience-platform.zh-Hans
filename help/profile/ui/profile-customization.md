@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；用户界面；UI；自定义；用户档案详细信息；详细信息
-title: 自定义您如何在UI中视图用户档案
+title: 用户档案详细信息自定义
 description: '本指南提供分步说明，用于自定义在Adobe Experience PlatformUI中显示实时客户用户档案数据的方式。 '
 topic: guide
 translation-type: tm+mt
-source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
+source-git-commit: ba1cbed3b5e3f3a8879b3882856a03ef4be9b96a
 workflow-type: tm+mt
-source-wordcount: '1185'
+source-wordcount: '1183'
 ht-degree: 0%
 
 ---
