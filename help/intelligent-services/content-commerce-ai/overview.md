@@ -1,13 +1,13 @@
 ---
-keywords: Experience Cloud;getting started;content and commerce ai;popular topics;Intelligent Services;ccai
+keywords: Experience Cloud；入门；内容和商务ai；热门主题；智能服务；ccai
 solution: Experience Cloud, Intelligent Services, Experience Platform
 title: 内容和商务AI概述
 topic: Content and Commerce AI
 description: 内容和商务AI是一套人工智能服务，它允许您从内容中提取智能功能，组织、简化内容流程，并为客户提供更具影响力的个性化体验。
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
 workflow-type: tm+mt
-source-wordcount: '406'
+source-wordcount: '419'
 ht-degree: 1%
 
 ---
@@ -29,8 +29,8 @@ ht-degree: 1%
 
 | 内容类型 | 功能 | 功能概述 |
 | --- | --- | --- |
-| 文本 | -关键字和实体提取 <br>-自定义分类器 | -使用现成的AI服务从企业文档和网页自动提取关键字和标记。 <br> -使用基于自定义AI模型构建的服务，根据企业分类自动标记企业文档或网页。 |
-| 图像 | -可视推荐 <br> -颜色提取 | -以基于直观产品功能（设计、颜色、形状）开发的AI模型为后盾，向消费者提供视觉上相似的产品推荐。 <br> -从产品图像中准确提取主色（标签和十六进制值）及其权重。 |
+| 文本 | -关键字和实体提取<br>-自定义分类器 | -使用现成的AI服务从企业文档和网页自动提取关键字和标记。 <br> -使用基于自定义AI模型构建的服务，根据企业分类自动标记企业文档或网页。 |
+| 图像 | -可视推荐<br> —— 颜色提取 | -以基于直观产品功能（设计、颜色、形状）开发的AI模型为后盾，向消费者提供视觉上相似的产品推荐。 <br> -从产品图像中准确提取主色（标签和十六进制值）及其权重。 |
 
 ## 了解内容和商务AI
 
