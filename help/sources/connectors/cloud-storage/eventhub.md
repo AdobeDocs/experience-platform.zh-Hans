@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；Azure事件集线器；azure事件集线器；事件集线器；事件集线器
 solution: Experience Platform
-title: Azure事件集线器连接器
+title: Azure事件集线器源连接器概述
 topic: overview
-description: 以下文档提供了如何使用API或用户界面将Azure事件集线器连接到平台的信息。
+description: 了解如何使用API或用户界面将Azure事件集线器连接到Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '248'
 ht-degree: 0%
@@ -33,10 +33,10 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 
 ### 使用API
 
-- [使用流服务API创建Azure事件集线器连接器](../../tutorials/api/create/cloud-storage/eventhub.md)
+- [使用流服务API创建Azure事件集线器源连接](../../tutorials/api/create/cloud-storage/eventhub.md)
 - [使用Flow Service API收集流数据](../../tutorials/api/collect/streaming.md)
 
 ### 使用UI
 
-- [在UI中创建Azure事件集线器源连接器](../../tutorials/ui/create/cloud-storage/eventhub.md)
-- [在UI中为云存储连接器配置数据流](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
+- [在UI中创建Azure事件集线器源连接](../../tutorials/ui/create/cloud-storage/eventhub.md)
+- [在UI中为云存储连接配置数据流](../../tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
