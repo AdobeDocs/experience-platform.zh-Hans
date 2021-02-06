@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;segment jobs;segment job;API;api;
+keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；分段作业；段作业；段作业；API;api;
 solution: Experience Platform
-title: 细分作业
+title: 段作业API端点
 topic: developer guide
-description: 本指南提供相关信息，帮助您更好地了解细分作业，并包含使用API执行基本操作的示例API调用。
+description: Adobe Experience Platform分段服务API中的段作业端点允许您以编程方式管理组织的段作业。
 translation-type: tm+mt
-source-git-commit: 521b760da850144d7a8e75126453c2aae5c2ce72
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '1152'
+source-wordcount: '1168'
 ht-degree: 2%
 
 ---
@@ -15,21 +15,21 @@ ht-degree: 2%
 
 # 段作业端点
 
-段作业是创建新受众段的异步进程。 它引用区 [段定义](./segment-definitions.md)，以及任何合并策 [略](../../profile/api/merge-policies.md) ，控制如何在用户档案片段 [!DNL Real-time Customer Profile] 中合并重叠属性。 当区段作业成功完成时，您可以收集有关区段的各种信息，如处理过程中可能发生的任何错误以及受众的最终大小。
+段作业是创建新受众段的异步进程。 它引用[段定义](./segment-definitions.md)以及任何[合并策略](../../profile/api/merge-policies.md)，控制[!DNL Real-time Customer Profile]如何合并用户档案片段中的重叠属性。 当区段作业成功完成时，您可以收集有关区段的各种信息，如处理过程中可能发生的任何错误以及受众的最终大小。
 
 本指南提供相关信息，帮助您更好地了解细分作业，并包含使用API执行基本操作的示例API调用。
 
 ## 入门指南
 
-本指南中使用的端点是API的一 [!DNL Adobe Experience Platform Segmentation Service] 部分。 在继续之前，请查 [看入门指南](./getting-started.md) ，了解成功调用API需要了解的重要信息，包括必需的头以及如何读取示例API调用。
+本指南中使用的端点是[!DNL Adobe Experience Platform Segmentation Service] API的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，了解成功调用API所需的重要信息，包括必需的头以及如何读取示例API调用。
 
-## 检索列表段作业 {#retrieve-list}
+## 检索列表段作业{#retrieve-list}
 
-您可以通过向端点发出列表请求，为IMS组织检索所有段作业的GET `/segment/jobs` 符。
+您可以通过向`/segment/jobs`端点发出列表请求，为IMS组织检索所有段作业的GET。
 
 **API格式**
 
-端点 `/segment/jobs` 支持多个查询参数，以帮助筛选结果。 虽然这些参数是可选的，但强烈建议使用它们以帮助降低昂贵的开销。 调用此端点时，无参数将检索组织可用的所有导出作业。 可以包括多个参数，用和号(`&`)分隔。
+`/segment/jobs`端点支持多个查询参数以帮助筛选结果。 虽然这些参数是可选的，但强烈建议使用它们以帮助降低昂贵的开销。 调用此端点时，无参数将检索组织可用的所有导出作业。 可以包括多个参数，用和符(`&`)分隔。
 
 ```http
 GET /segment/jobs
@@ -43,7 +43,7 @@ GET /segment/jobs?{QUERY_PARAMETERS}
 | `start` | 指定返回的段作业的起始偏移。 | `start=1` |
 | `limit` | 指定每页返回的段作业数。 | `limit=20` |
 | `status` | 过滤器基于状态的结果。 支持的值有NEW、QUEUDED、PROCESSING、SUCCEEDED、FAILED、CANCELLED、CANCELLED | `status=NEW` |
-| `sort` | 对返回的区段作业进行排序。 以格式编写 `[attributeName]:[desc|asc]`。 | `sort=creationTime:desc` |
+| `sort` | 对返回的区段作业进行排序。 格式为`[attributeName]:[desc|asc]`。 | `sort=creationTime:desc` |
 | `property` | 过滤器对作业进行细分，并获取给定筛选器的精确匹配项。 它可以采用以下任一格式编写： <ul><li>`[jsonObjectPath]==[value]` -对对象键进行筛选</li><li>`[arrayTypeAttributeName]~[objectKey]==[value]` -在数组中过滤</li></ul> | `property=segments~segmentId==workInUS` |
 
 **请求**
@@ -180,9 +180,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs?status=SUCCEEDE
 | `metrics.segmentProfileByStatusCounter` | 每个状态的用户档案数。 支持以下三种状态： <ul><li>“已实现”-进入区段的新用户档案数。</li><li>“现有”-区段中继续存在的用户档案数。</li><li>“已退出”-用户档案段中不再存在的数据段数。</li></ul> |
 | `metrics.totalProfilesByMergePolicy` | 每个合并策略的合并用户档案总数。 |
 
-## 创建新区段作业 {#create}
+## 创建新段作业{#create}
 
-您可以通过向端点发出POST请求并在正文中包 `/segment/jobs` 含要从中创建新受众的段定义的ID来创建新段作业。
+您可以通过向`/segment/jobs`端点发出POST请求并在主体中包含要从中创建新受众的段定义的ID来创建新段作业。
 
 **API格式**
 
@@ -209,7 +209,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `segmentId` | 要为其创建区段作业的区段定义的ID。 这些段定义可以属于不同的合并策略。 有关段定义的更多信息，请参阅 [段定义端点指南](./segment-definitions.md)。 |
+| `segmentId` | 要为其创建区段作业的区段定义的ID。 这些段定义可以属于不同的合并策略。 有关段定义的详细信息，请参阅[段定义终结点指南](./segment-definitions.md)。 |
 
 **响应**
 
@@ -274,9 +274,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs \
 | `segments.segment.id` | 您提供的区段定义的ID。 |
 | `segments.segment.expression` | 包含有关段定义表达式的信息的对象，用PQL编写。 |
 
-## 检索特定的区段作业 {#get}
+## 检索特定的段作业{#get}
 
-您可以通过向端点发出GET请求并提供您希望在请求路径中检索的段作业的 `/segment/jobs` ID，来检索有关特定段作业的详细信息。
+您可以通过向`/segment/jobs`端点发出GET请求并提供您希望在请求路径中检索的段作业的ID，来检索有关特定段作业的详细信息。
 
 **API格式**
 
@@ -286,7 +286,7 @@ GET /segment/jobs/{SEGMENT_JOB_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- | 
-| `{SEGMENT_JOB_ID}` | 要 `id` 检索的区段作业的值。 |
+| `{SEGMENT_JOB_ID}` | 要检索的区段作业的`id`值。 |
 
 **请求**
 
@@ -371,9 +371,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/jobs/d3b4a50d-dfea-4
 | `segments.segment.expression` | 包含有关段定义表达式的信息的对象，用PQL编写。 |
 | `metrics` | 包含有关段作业的诊断信息的对象。 |
 
-## 批量检索段作业 {#bulk-get}
+## 批量检索段作业{#bulk-get}
 
-通过向端点发出POST请求并在请求主体中提供段作 `/segment/jobs/bulk-get` 业的值，可 `id` 以检索有关多个段作业的详细信息。
+通过向`/segment/jobs/bulk-get`端点发出POST请求并在请求主体中提供段作业的`id`值，可以检索有关多个段作业的详细信息。
 
 **API格式**
 
@@ -477,9 +477,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/jobs/bulk-get \
 | `segments.segment.id` | 区段定义的ID。 |
 | `segments.segment.expression` | 包含有关段定义表达式的信息的对象，用PQL编写。 |
 
-## 取消或删除特定区段作业 {#delete}
+## 取消或删除特定段作业{#delete}
 
-您可以通过向端点发出DELETE请求并提供您希望在请求路径 `/segment/jobs` 中删除的段作业的ID来删除特定段作业。
+您可以通过向`/segment/jobs`端点发出DELETE请求并在请求路径中提供要删除的段作业的ID来删除特定段作业。
 
 >[!NOTE]
 >
@@ -493,7 +493,7 @@ DELETE /segment/jobs/{SEGMENT_JOB_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- | 
-| `{SEGMENT_JOB_ID}` | 要 `id` 删除的区段作业的值。 |
+| `{SEGMENT_JOB_ID}` | 要删除的区段作业的`id`值。 |
 
 **请求**
 
