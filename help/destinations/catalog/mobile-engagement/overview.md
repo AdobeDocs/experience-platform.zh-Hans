@@ -1,19 +1,17 @@
 ---
-keywords: mobile messaging;mobile messaging destinations;Braze; Airship
-title: 移动互动目标
-seo-title: 移动互动目标
-description: Adobe Experience Platform支持下列移动互动目标
-seo-description: Adobe Experience Platform支持下列移动互动目标
+keywords: 移动消息；移动消息目标；Braze;飞艇
+title: 移动互动目标概述
+description: 了解Adobe Experience Platform支持的不同移动参与目标。
 translation-type: tm+mt
-source-git-commit: c24676970629f5a39297001357f8af40895533d9
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '41'
+source-wordcount: '39'
 ht-degree: 0%
 
 ---
 
 
-# 移动互动目标 {#mobile-destinations}
+# 移动互动目标概述{#mobile-destinations}
 
 [!DNL Adobe Experience Platform] 当前支持以下移动互动目标：
 
