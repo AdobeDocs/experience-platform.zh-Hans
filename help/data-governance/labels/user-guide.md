@@ -1,23 +1,23 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据管理；数据使用标签；策略服务；数据使用标签用户指南
 solution: Experience Platform
-title: 数据使用标签用户指南
+title: 在UI中管理数据使用标签
 topic: labels
-description: 本用户指南介绍在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
+description: 本指南介绍在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
 translation-type: tm+mt
-source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1134'
 ht-degree: 0%
 
 ---
 
 
-# 数据使用标签用户指南
+# 在UI中管理数据使用标签
 
 本用户指南介绍了在[!DNL Experience Platform]用户界面中使用数据使用标签的步骤。 在使用指南之前，请参见[[!DNL Data Governance] 概述](../home.md)，了解有关[!DNL Data Governance]框架的更可靠介绍。
 
-## 在数据集级别管理数据使用标签
+## 在数据集级别管理标签
 
 要在数据集级别管理数据使用标签，必须选择现有数据集或创建新数据集。 登录Adobe Experience Platform后，在左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以打开&#x200B;**[!UICONTROL 数据集]**&#x200B;工作区。 此页列表属于您组织的所有已创建数据集以及与每个数据集相关的有用详细信息。
 
@@ -75,7 +75,7 @@ ht-degree: 0%
 
 ![隐藏继承的标签](../images/labels/hide_inherited_labels.png)
 
-## 在数据集字段级别管理数据使用标签
+## 在字段级别管理标签
 
 继续[在数据集级别](#add-labels)添加和编辑数据使用标签的工作流，您还可以管理该数据集的&#x200B;**[!UICONTROL 数据治理]**&#x200B;工作区中的字段级别标签。
 
