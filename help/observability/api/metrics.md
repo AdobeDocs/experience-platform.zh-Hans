@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: 度量端点
+title: 度量API端点
 topic: developer guide
 description: 了解如何使用Opengibly Insights API在Experience Platform中检索可观测性指标。
 translation-type: tm+mt
-source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '2026'
+source-wordcount: '2027'
 ht-degree: 2%
 
 ---
