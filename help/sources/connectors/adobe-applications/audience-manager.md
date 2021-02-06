@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；Audience Manager连接器；受众管理器；受众管理器
 solution: Experience Platform
-title: Audience Manager连接器
+title: Audience Manager源连接器概述
 topic: overview
-description: Adobe Audience Manager数据连接器将在Adobe Audience Manager收集的第一方数据传送到Adobe Experience Platform。 Audience Manager连接器将两类别数据引入平台。
+description: Adobe Audience Manager源连接器将Audience Manager收集的第一方数据流到Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: b88c358d128ba2016c9449fefc8862bd503c4aa5
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '875'
 ht-degree: 0%
 
 ---
