@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；源连接器；源连接器；源；数据源；数据源；数据源；数据源连接
 solution: Experience Platform
-title: Adobe Experience Platform源连接器概述
+title: 源连接器概述
 topic: overview
 description: Adobe Experience Platform允许从外部来源摄取数据，同时使您能够使用平台服务构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '943'
+source-wordcount: '940'
 ht-degree: 0%
 
 ---
@@ -30,12 +30,12 @@ Experience Platform中的源分为以下类别:
 Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics、Adobe Audience Manager和[!DNL Experience Platform Launch])中摄取数据。 有关更多信息，请参阅以下相关文档:
 
 - [Adobe Audience Manager连接器概述](connectors/adobe-applications/audience-manager.md)
-- [在UI中创建Adobe Audience Manager源连接器](./tutorials/ui/create/adobe-applications/audience-manager.md)
+- [在UI中创建Adobe Audience Manager源连接](./tutorials/ui/create/adobe-applications/audience-manager.md)
 - [Adobe Analytics分类数据连接器概述](connectors/adobe-applications/classifications.md)
-- [在UI中创建Adobe Analytics分类数据源连接器](./tutorials/ui/create/adobe-applications/classifications.md)
+- [在UI中创建Adobe Analytics分类数据源连接](./tutorials/ui/create/adobe-applications/classifications.md)
 - [Adobe Analytics数据连接器概述](connectors/adobe-applications/analytics.md)
-- [在UI中创建Adobe Analytics源连接器](./tutorials/ui/create/adobe-applications/analytics.md)
-- [在UI中创建客户属性源连接器](./tutorials/ui/create/adobe-applications/customer-attributes.md)
+- [在UI中创建Adobe Analytics源连接](./tutorials/ui/create/adobe-applications/analytics.md)
+- [在UI中创建客户属性源连接](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 
 ### 广告
 
