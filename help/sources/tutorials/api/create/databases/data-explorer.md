@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题；AzureData Explorer；数据浏览器；Data Explorer
 solution: Experience Platform
-title: 使用流服务API创建AzureData Explorer连接器
+title: 使用流服务API创建AzureData Explorer源连接
 topic: overview
 type: Tutorial
-description: 本教程使用Flow Service API指导您完成将AzureData Explorer(以下简称“Data Explorer”)连接到Experience Platform的步骤。
+description: 了解如何使用Flow Service API将AzureData Explorer连接到Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '641'
+source-wordcount: '632'
 ht-degree: 1%
 
 ---
 
 
-# 使用[!DNL Flow Service] API创建[!DNL Azure Data Explorer]连接器
+# 使用[!DNL Flow Service] API创建[!DNL Azure Data Explorer]源连接
 
 >[!NOTE]
 >
