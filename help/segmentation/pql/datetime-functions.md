@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;Segmentation Service;pql;PQL;Profile Query Language;date and time functions;datetime functions;datetime;date;time;
+keywords: Experience Platform；主题；热门主题；分段；分段；分段服务；pql;PQL;用户档案查询语；日期和时间函数；日期时间函数；日期时间；时间；时间；
 solution: Experience Platform
-title: 日期和时间函数
+title: PQL日期和时间函数
 topic: developer guide
 description: 日期和时间函数用于对用户档案查询语言(PQL)中的值执行日期和时间操作。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '484'
-ht-degree: 4%
+source-wordcount: '508'
+ht-degree: 3%
 
 ---
 
 
 # 日期和时间函数
 
-日期和时间函数用于对(PQL)中的值执行日期和 [!DNL Profile Query Language] 时间操作。 有关其他PQL功能的更多信息，请参阅 [[!DNL Profile Query Language] 概述](./overview.md)。
+日期和时间函数用于对[!DNL Profile Query Language](PQL)中的值执行日期和时间操作。 有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] 概述](./overview.md)。
 
 ## 当月
 
-该函 `currentMonth` 数将当月返回为整数。
+`currentMonth`函数以整数形式返回当前月份。
 
 **Format**
 
@@ -37,9 +37,9 @@ person.birthMonth = currentMonth()
 
 ## 获取月份
 
-该函 `getMonth` 数根据给定的时间戳以整数形式返回月份。
+`getMonth`函数根据给定的时间戳以整数形式返回月。
 
-**Format**
+**格式**
 
 ```sql
 {TIMESTAMP}.getMonth()
@@ -55,9 +55,9 @@ person.birthdate.getMonth() = 6
 
 ## 本年度
 
-该函 `currentYear` 数以整数形式返回当前年份。
+`currentYear`函数以整数形式返回当前年份。
 
-**Format**
+**格式**
 
 ```sql
 currentYear()
@@ -73,9 +73,9 @@ product.saleYear = currentYear()
 
 ## 获取年份
 
-该函 `getYear` 数根据给定的时间戳以整数形式返回年份。
+`getYear`函数根据给定的时间戳以整数形式返回年。
 
-**Format**
+**格式**
 
 ```sql
 {TIMESTAMP}.getYear()
@@ -91,9 +91,9 @@ person.birthday.getYear() in [1991, 1992, 1993, 1994, 1995]
 
 ## 当月当天
 
-函 `currentDayOfMonth` 数以整数形式返回当月的当天。
+`currentDayOfMonth`函数以整数形式返回当月的当天。
 
-**Format**
+**格式**
 
 ```sql
 currentDayOfMonth()
@@ -109,9 +109,9 @@ person.birthDay = currentDayOfMonth()
 
 ## 获取月份
 
-该函 `getDayOfMonth` 数根据给定的时间戳以整数形式返回该日。
+`getDayOfMonth`函数根据给定时间戳返回天作为整数。
 
-**Format**
+**格式**
 
 ```sql
 {TIMESTAMP}.getDayOfMonth()
@@ -127,11 +127,11 @@ product.sale.getDayOfMonth() <= 15
 
 ## 发生
 
-该 `occurs` 函数将给定时间戳函数与固定时间段进行比较。
+`occurs`函数将给定时间戳函数与固定时间段进行比较。
 
-**Format**
+**格式**
 
-函 `occurs` 数可以使用以下任一格式编写：
+`occurs`函数可以使用以下任何格式编写：
 
 ```sql
 {TIMESTAMP} occurs {COMPARISON} {INTEGER} {TIME_UNIT} {DIRECTION} {TIME}
@@ -142,15 +142,15 @@ product.sale.getDayOfMonth() <= 15
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{COMPARISON}` | 比较运算符。 可以是下列任何运算符： `>`、 `>=`、 `<`、 `<=`、 `=`、 `!=`。 在比较函数文档中可以找到有关比较函 [数的更多信息](./comparison-functions.md)。 |
+| `{COMPARISON}` | 比较运算符。 可以是下列任何运算符：`>`、`>=`、`<`、`<=`、`=`、`!=`。 有关比较函数的详细信息，请参阅[比较函数文档](./comparison-functions.md)。 |
 | `{INTEGER}` | 非负整数。 |
-| `{TIME_UNIT}` | 时间单位。 可以是以下任意单词： `millisecond(s)`、 `second(s)`、 `minute(s)`、、 `hour(s)`、、 `day(s)`、、 `week(s)`、、 `month(s)``year(s)``decade(s)``century``centuries``millennium``millennia`、、、。 |
-| `{DIRECTION}` | 描述何时将日期与之进行比较的预置。 可以是以下任意单词： `before`, `after`, `from` |
-| `{TIME}` | 可以是时间戳文`today`本( `now`、、 `yesterday`、 `tomorrow`)、相对时间单位(时间单 `this`元之一、 `last`或 `next` 后跟时间单元)或时间戳属性。 |
+| `{TIME_UNIT}` | 时间单位。 可以是以下任意单词：`millisecond(s)`、`second(s)`、`minute(s)`、`day(s)`、`week(s)`、`month(s)`、`year(s)`、`decade(s)`、`century`、`centuries`、`millennium`、`millennia`。`hour(s)` |
+| `{DIRECTION}` | 描述何时将日期与之进行比较的预置。 可以是以下任意单词：`before`、`after`、`from`。 |
+| `{TIME}` | 可以是时间戳文本(`today`、`now`、`yesterday`、`tomorrow`)、相对时间单位（`this`、`last`或`next`之一，后跟时间单位）或时间戳属性。 |
 
 >[!NOTE]
 >
->单词的使用是 `on` 可选的。 它可以提高某些组合的可读性，例如 `timestamp occurs on date(2019,12,31)`。
+>使用单词`on`是可选的。 它可以提高某些组合（如`timestamp occurs on date(2019,12,31)`）的可读性。
 
 **示例**
 
@@ -192,4 +192,4 @@ person.birthday occurs = 3 days before today
 
 ## 后续步骤
 
-现在您已经了解了日期和时间功能，可以在PQL查询中使用它们。 有关其他PQL功能的详细信息，请阅读 [用户档案查询语概述](./overview.md)。
+现在您已经了解了日期和时间功能，可以在PQL查询中使用它们。 有关其他PQL函数的详细信息，请阅读[用户档案查询语语言概述](./overview.md)。
