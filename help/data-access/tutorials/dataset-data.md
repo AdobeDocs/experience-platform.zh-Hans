@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据访问；数据访问api;查询数据访问
 solution: Experience Platform
-title: 数据访问概述
+title: 视图数据集数据（使用Data Access API）
 topic: tutorial
 type: Tutorial
-description: 此文档提供了一个分步教程，其中涵盖如何使用Adobe Experience Platform的Data Access API查找、访问和下载数据集中存储的数据。 您还将介绍Data Access API的一些独特功能，如分页和部分下载。
+description: 了解如何使用Adobe Experience Platform的Data Access API查找、访问和下载数据集中存储的数据。 您还将介绍Data Access API的一些独特功能，如分页和部分下载。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '1400'
+source-wordcount: '1398'
 ht-degree: 2%
 
 ---
 
 
-# 查询数据集数据（使用[!DNL Data Access] API）
+# 视图数据集数据（使用[!DNL Data Access] API）
 
 此文档提供一个分步教程，其中介绍如何使用Adobe Experience Platform的[!DNL Data Access] API查找、访问和下载数据集中存储的数据。 您还将介绍[!DNL Data Access] API的一些独特功能，如分页和部分下载。
 
