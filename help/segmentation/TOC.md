@@ -1,23 +1,23 @@
 ---
 product: experience-platform
 audience: user
-user-guide-title: Adobe Experience Platform 分段服务帮助
+user-guide-title: Adobe Experience Platform分段服务
 breadcrumb-title: Segmentation Service 指南
-user-guide-description: 根据实时客户档案数据构建细分并生成受众。
+user-guide-description: 根据实时客户档案数据构建区段并生成受众。
 translation-type: tm+mt
-source-git-commit: ff7c2854d45191b27e23df54b3638955b3535e76
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '139'
-ht-degree: 24%
+source-wordcount: '135'
+ht-degree: 16%
 
 ---
 
 
-# Adobe Experience Platform 分段服务帮助 {#segmentation}
+# Adobe Experience Platform分段服务{#segmentation}
 
-- [概述](home.md)
+- [分段服务概述](home.md)
 - [分段数据类型](data-types.md)
-- 分段API开发人员指南 {#api}
+- 分段API {#api}
    - [概述](api/overview.md)
    - [入门指南](api/getting-started.md)
    - [导出作业](api/export-jobs.md)
@@ -28,14 +28,14 @@ ht-degree: 24%
    - [区段搜索](api/segment-search.md)
    - [流细分](api/streaming-segmentation.md)
 - 分段UI {#ui}
-   - [分段UI指南](ui/overview.md)
+   - [概述](ui/overview.md)
    - [细分仪表板](ui/segment-dashboard.md)
    - [区段生成器](ui/segment-builder.md)
    - [流细分](ui/streaming-segmentation.md)
    - [时间约束重构](ui/segment-refactoring.md)
 - [支持退出](honoring-opt-outs.md)
 - [多实体分割](multi-entity-segmentation.md)
-- 用户档案查询语 {#pql}
+- 用户档案查询语语言{#pql}
    - [概述](pql/overview.md)
    - [布尔函数](pql/boolean-functions.md)
    - [比较函数](pql/comparison-functions.md)
