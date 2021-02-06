@@ -1,5 +1,5 @@
 ---
-title: 由Adobe Experience Platform提供支持的客户体验
+title: 以Experience Platform为后盾的客户体验
 description: 此视频以客户的视角展示了Adobe Experience Platform打造的假设体验。 了解Experience Platform如何创建丰富、相关的实时体验。
 feature: null
 topics: null
@@ -9,9 +9,9 @@ doc-type: video
 activity: understand
 thumbnail: 27361.jpg
 translation-type: tm+mt
-source-git-commit: 333b89ccf2365c04646df9dc0434036bdd6f12ac
+source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
 workflow-type: tm+mt
-source-wordcount: '78'
+source-wordcount: '77'
 ht-degree: 0%
 
 ---
