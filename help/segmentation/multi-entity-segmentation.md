@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;segment service;segments;Segments;multi-entity;multi-entity segmentation;multi-entity segments;
+keywords: Experience Platform；主题；热门主题；分割；分割；细分；细分服务；细分；多实体；多实体；
 solution: Experience Platform
-title: 多实体分割
+title: 多实体细分概述
 topic: overview
 description: 多实体细分是指能够根据产品、商店或其他非用户档案类扩展用户档案数据和附加数据。 连接后，来自其他类的数据将变得像用户档案模式的本机数据一样可用。
 translation-type: tm+mt
-source-git-commit: 4dd5a91146b116953ba180e3f39d24b4e1ec289e
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '656'
+source-wordcount: '674'
 ht-degree: 0%
 
 ---
 
 
-# 多实体分割
+# 多实体分段概述
 
-多实体分割是Adobe Experience Platform的一个高级功能 [!DNL Segmentation Service]。 此功能允许您使用 [!DNL Real-time Customer Profile] 组织可定义的其他“非人员”数据（也称为“维实体”）扩展数据，如与产品或商店相关的数据。 多实体细分在根据与您独特的业务需求相关的数据定义受众细分时提供了灵活性，并且无需在查询数据库方面具有专业知识即可执行。 通过多实体细分，您可以向细分中添加关键数据，而无需对数据流进行代价高昂的更改或等待后端数据合并。
+多实体分段是Adobe Experience Platform[!DNL Segmentation Service]的一个高级功能。 此功能允许您使用组织可定义的其他“非人员”数据（也称为“维实体”）扩展[!DNL Real-time Customer Profile]数据，如与产品或商店相关的数据。 多实体细分在根据与您独特的业务需求相关的数据定义受众细分时提供了灵活性，并且无需在查询数据库方面具有专业知识即可执行。 通过多实体细分，您可以向细分中添加关键数据，而无需对数据流进行代价高昂的更改或等待后端数据合并。
 
 ## 入门指南
 
@@ -41,7 +41,7 @@ ht-degree: 0%
 
 ## 创建多实体区段
 
-创建多实体区段首先需要定义模式之间的关系，然 [!DNL Segmentation] 后使用API或区段生成器UI构建区段定义。
+创建多实体区段首先需要定义模式之间的关系，然后使用[!DNL Segmentation] API或区段生成器UI构建区段定义。
 
 ### 定义关系
 
@@ -61,4 +61,4 @@ ht-degree: 0%
 
 ## 评估和访问多实体细分
 
-创建区段后，您可以使用分段API评估和访问区段结果。 评估多实体区段与评估标准区段非常相似。 此过程只能使用分段API完成。 有关如何使用API评估和访问区段的详细指南，请阅读评估 [和访问区段教程](./tutorials/evaluate-a-segment.md) 。
+创建区段后，您可以使用分段API评估和访问区段结果。 评估多实体区段与评估标准区段非常相似。 此过程只能使用分段API完成。 有关如何使用API评估和访问区段的详细指南，请阅读[评估和访问区段](./tutorials/evaluate-a-segment.md)教程。
