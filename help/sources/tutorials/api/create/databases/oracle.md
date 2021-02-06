@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题；Oracle;oracle
 solution: Experience Platform
-title: 使用Flow Service API创建Oracle连接器
+title: 使用流服务API创建Oracle源连接
 topic: overview
 type: Tutorial
-description: 本教程使用Flow Service API指导您完成将Oracle连接到Experience Platform的步骤。
+description: 了解如何使用Flow Service API将Oracle连接到Experience Platform。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '536'
 ht-degree: 2%
 
 ---
 
 
-# 使用[!DNL Flow Service] API创建[!DNL Oracle]连接器
+# 使用[!DNL Flow Service] API创建[!DNL Oracle]源连接
 
 >[!NOTE]
 >
