@@ -1,21 +1,17 @@
 ---
 keywords: 分贝扩展；分贝；分贝
-title: 分贝扩展
-seo-title: 分贝扩展
+title: 分贝扩展目标
 description: Decibel扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Decibel扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '521'
 ht-degree: 4%
 
 ---
 
 
 # [!DNL Decibel] 扩展 {#decibel-extension}
-
-## 概述 {#overview}
 
 快速、无缝地在您的Web属性上部署[!DNL Decibel]。 还可以使用通过扩展提供的操作使用规则部署其他高级配置。
 
