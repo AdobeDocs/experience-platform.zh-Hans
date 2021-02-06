@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；spark sql;Spark sql;spark sql函数；函数；
 solution: Experience Platform
-title: Spark SQL函数
+title: 查询服务中的Spark SQL函数
 topic: spark sql functions
 description: 本文档包含有关扩展SQL功能的Spark SQL函数的信息。
 translation-type: tm+mt
-source-git-commit: 019de34c5e4ac53d38887752e893733f843dd22f
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '3890'
+source-wordcount: '3893'
 ht-degree: 1%
 
 ---
