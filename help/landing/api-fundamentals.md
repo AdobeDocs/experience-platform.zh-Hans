@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: Adobe Experience PlatformAPI基础知识
+title: Experience PlatformAPI基础知识
 topic: getting started
 description: 本文档简要概述了与Experience PlatformAPI相关的一些基础技术和语法。
 translation-type: tm+mt
-source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
+source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '504'
 ht-degree: 1%
 
 ---
 
 
-# Adobe Experience PlatformAPI基础知识
+# Experience PlatformAPI基础知识
 
 Adobe Experience PlatformAPI采用若干基础技术和语法，这些技术和语法对于有效管理基于JSON的[!DNL Platform]资源非常重要。 本文档简要概述了这些技术，并提供了指向外部文档的链接以了解更多信息。
 
