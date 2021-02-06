@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;segmentation;Segmentation;segment builder;Segment builder
+keywords: Experience Platform；主页；热门主题；分段；分段；段构建器；段构建器
 solution: Experience Platform
-title: 分段服务区段生成器更改指南
+title: 重构分段时间约束UI指南
 topic: ui guide
 description: '区段生成器提供丰富的工作区，允许您与用户档案数据元素交互。 工作区提供用于构建和编辑规则的直观控件，如用于表示数据属性的拖放拼贴。 '
 translation-type: tm+mt
-source-git-commit: beacce03136e1620ff57fb549f335d2199bb6001
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '250'
+source-wordcount: '261'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Adobe Experience Platform2020年10月版本对Adobe Experience Platform分段服
 
 ![](../images/ui/segment-refactoring/former-time-constraint.png)
 
-如您所见，此区段在规则级别上有两个限制：一个是“[!UICONTROL 今]天”，另一个是“[!UICONTROL 昨天]”。
+如您所见，此区段在规则级别上有两个限制：“[!UICONTROL Today]”和“[!UICONTROL Yesterday]”。
 
 上一个段等效于以下段——两个事件级时间约束都已使用AND运算符连接。 第一个事件级时间约束引用名称等于“Training”的单击事件，而第二个事件级时间约束引用名称等于“Pets”的单击事件，该是昨天发生的。
 
