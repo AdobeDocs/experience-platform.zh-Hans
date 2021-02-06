@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;Query service;prepared statements;prepared;sql;
+keywords: Experience Platform；主题；热门主题；查询服务；查询服务；准备语句；准备语句；sql;
 solution: Experience Platform
-title: 准备的声明
+title: 查询服务中准备的语句
 topic: prepared statements
 description: 在SQL中，预准备语句用于模板类似的查询或更新。 Adobe Experience Platform查询服务通过使用参数化查询支持准备的语句。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '365'
+source-wordcount: '381'
 ht-degree: 9%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 9%
 
 # 准备的声明
 
-在SQL中，预准备语句用于模拟类似的查询或更新。 Adobe Experience Platform [!DNL Query Service] 通过使用参数化查询支持准备的语句。 这可用于优化性能，因为您不再需要反复重新分析查询。
+在SQL中，预准备语句用于模拟类似的查询或更新。 Adobe Experience Platform[!DNL Query Service]使用参数化查询支持预准备的语句。 这可用于优化性能，因为您不再需要反复重新分析查询。
 
 ## 使用准备的语句
 
@@ -25,9 +25,9 @@ ht-degree: 9%
 - [执行](#execute)
 - [取消分配](#deallocate)
 
-### 准备一份准备好的声明 {#prepare}
+### 准备一个准备语句{#prepare}
 
-此SQL查询将写入的SELECT查询保存为指定的名称 `PLAN_NAME`。 您可以使用变量， `$1` 如代替实际值。 此准备语句将在当前会话期间保存。 请注意，计划名称不 **区分大小写** 。
+此SQL查询将保存写入的SELECT查询，其名称为`PLAN_NAME`。 可以使用变量（如`$1`）代替实际值。 此准备语句将在当前会话期间保存。 请注意，计划名称&#x200B;**不**&#x200B;区分大小写。
 
 #### SQL格式
 
@@ -41,7 +41,7 @@ PREPARE {PLAN_NAME} AS {SELECT_QUERY}
 PREPARE test AS SELECT * FROM table WHERE country = $1 AND city = $2;
 ```
 
-### 执行准备语句 {#execute}
+### 执行预准备语句{#execute}
 
 此SQL查询使用之前创建的预准备语句。
 
@@ -57,7 +57,7 @@ EXECUTE {PLAN_NAME}('{PARAMETERS}')
 EXECUTE test('canada', 'vancouver');
 ```
 
-### 取消分配准备的语句 {#deallocate}
+### 取消分配准备语句{#deallocate}
 
 此SQL查询用于删除已命名的预准备语句。
 
@@ -106,7 +106,7 @@ EXECUTE getIdRange(10000, 10005);
 
 调用此选项时，您会看到与之前完全相同的结果：
 
-| id | 名字 | 姓氏 | 出生日期 | 电子邮件 | city | 国家 |
+| id | 名字 | 姓氏 | 出生日期 | 电子邮件 | 城市 | 国家 |
 |--- | --------- | -------- | --------- | ----- | ------- | ---- |
 | 10000 | 亚历山大 | 戴维斯 | 1993-09-15 | example@example.com | 温哥华 | 加拿大 |
 | 10001 | 安托 | 杜布瓦 | 1967-03-14 | example2@example.com | 巴黎 | 法国 |
