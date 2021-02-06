@@ -1,21 +1,17 @@
 ---
 keywords: Google广告；google广告；google adwords;Google AdWords;Google Adwords
-title: Google AdsDestination
-seo-title: Google广告目标
+title: Google Ads连接目标
 description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
-seo-description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示中按点击付费广告。
 translation-type: tm+mt
-source-git-commit: bb2fc2658d32c59b476dd9d526eb8bc2f055a1af
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '691'
+source-wordcount: '660'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Google Ads] 目标
-
-## 概述
+# [!DNL Google Ads] 连接
 
 [!DNL Google Ads]在线广告服 [!DNL Google AdWords]务，它使企业能够跨基于文本的搜索、图形显示、视频和应用程序内移动显示，按点 [!DNL YouTube] 击付费投放广告。
 
