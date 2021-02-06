@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics;update sandbox
+keywords: Experience Platform；主页；热门主题；更新沙箱
 solution: Experience Platform
-title: 更新沙箱
+title: 在API中更新沙箱
 topic: developer guide
 description: 您可以通过发出PATCH请求来更新沙箱中的一个或多个字段，该请求在请求路径中包含沙箱的名称，并在请求有效负荷中包含要更新的属性。
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '120'
+source-wordcount: '133'
 ht-degree: 3%
 
 ---
 
 
-# 更新沙箱
+# 更新API中的沙箱
 
-您可以通过发出PATCH请求来更新沙箱中的一个或多个字段，该请求在请求路径中包含沙 `name` 箱的请求，并在请求有效负荷中包含要更新的属性。
+您可以通过发出PATCH请求来更新沙箱中的一个或多个字段，该请求在请求路径中包含沙箱的`name`，并在请求负载中包含要更新的属性。
 
 >[!NOTE]
 >
->当前只能更新沙 `title` 箱的属性。
+>当前只能更新沙箱的`title`属性。
 
 **API格式**
 
@@ -29,11 +29,11 @@ PATCH /sandboxes/{SANDBOX_NAME}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SANDBOX_NAME}` | 要 `name` 更新的沙箱的属性。 |
+| `{SANDBOX_NAME}` | 要更新的沙箱的`name`属性。 |
 
 **请求**
 
-以下请求更新 `title` 名为“dev-2”的沙箱的属性。
+以下请求更新名为“dev-2”的沙箱的`title`属性。
 
 ```shell
 curl -X PATCH \
