@@ -5,7 +5,7 @@ title: Attribution AI入门
 topic: Getting started
 description: 以下指南需要了解与使用Attribution AI有关的Adobe Experience Platform各项服务。 开始教程之前，请查看以下文档。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
