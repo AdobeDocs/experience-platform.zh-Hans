@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;list sandboxes
+keywords: Experience Platform；主页；热门主题；列表沙箱
 solution: Experience Platform
-title: 列表支持的沙箱类型
+title: 列表API中支持的沙箱类型
 topic: developer guide
 description: 通过向/sandboxTypes端点发出列表请求，可以为组织检索支持的GET类型。
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '68'
+source-wordcount: '81'
 ht-degree: 2%
 
 ---
 
 
-# 列表支持的沙箱类型
+# 列表API中支持的沙箱类型
 
-您可以通过向端点发出列表请求，为组织检索支持的沙箱类型 `/sandboxTypes` GET。
+您可以通过向`/sandboxTypes`端点发出列表请求，为组织检索支持的GET类型。
 
 **API格式**
 
