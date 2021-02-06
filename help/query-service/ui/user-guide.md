@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询编辑器；查询编辑器；查询服务；查询服务；
 solution: Experience Platform
-title: 查询编辑器用户指南
+title: 查询编辑器UI指南
 topic: query editor
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，它允许您在Experience Platform用户界面中为客户体验数据编写、验证和运行查询。 查询编辑器支持开发分析和数据的查询，并允许您运行交互式查询以用于开发目的，以及运行非交互式查询以填充Experience Platform集。
 translation-type: tm+mt
-source-git-commit: f35443046a3d2bc5101d0fa2a58d07f4b6a31151
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '1081'
+source-wordcount: '1082'
 ht-degree: 1%
 
 ---
 
 
-# [!DNL Query Editor] 用户指南
+# [!DNL Query Editor] UI指南
 
 [!DNL Query Editor] 是Adobe Experience Platform提供的交互式 [!DNL Query Service]工具，它允许您在用户界面中编写、验证和运行查询以获取客 [!DNL Experience Platform] 户体验数据。[!DNL Query Editor] 支持开发查询以进行分析和数据探索，并允许您运行交互式查询以用于开发目的，以及使用非交互式查询来填充数据集 [!DNL Experience Platform]
 
