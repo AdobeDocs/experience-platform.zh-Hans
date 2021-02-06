@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;identities;cluster history
+keywords: Experience Platform；主页；热门主题；标识；群集历史
 solution: Experience Platform
 title: 获取身份的群集历史记录
 topic: API guide
 description: 身份可以在各种设备图形运行过程中移动群集。 Identity Service提供特定身份的群集关联随时间变化的可见性。
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
 workflow-type: tm+mt
-source-wordcount: '329'
+source-wordcount: '337'
 ht-degree: 1%
 
 ---
@@ -17,10 +17,10 @@ ht-degree: 1%
 
 身份可以在各种设备图形运行过程中移动群集。 [!DNL Identity Service] 提供特定身份的群集关联随时间变化的可见性。
 
-使用可 `graph-type` 选参数指示要从中获取群集的输出类型。 选项有：
+使用可选`graph-type`参数指示要从中获取群集的输出类型。 选项有：
 
 - `None` -不执行身份拼接。
-- `Private Graph` -根据您的个人身份图进行身份拼接。 如果未 `graph-type` 提供，则此为默认值。
+- `Private Graph` -根据您的个人身份图进行身份拼接。如果未提供`graph-type`，则此为默认值。
 
 ## 获取单个标识的群集历史记录
 
@@ -32,7 +32,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/cluster/history
 
 **请求**
 
-选项1:将标识作为命名空间(`nsId`按ID)和ID值(`id`)提供。
+选项1:将标识作为命名空间（`nsId`，按ID）和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -43,7 +43,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2:将标识作为命名空间(`ns`按名称)和ID值(`id`)提供。
+选项2:将标识作为命名空间（`ns`，按名称）和ID值(`id`)提供。
 
 ```shell
 curl -X GET \
@@ -54,7 +54,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3:提供XID()身`xid`份。 有关如何获取身份的XID的详细信息，请参阅此文档中 [有关获取身份的XID的部分](./list-native-id.md)。
+选项3:提供XID身份(`xid`)。 有关如何获取身份的XID的详细信息，请参阅此文档中覆盖[获取身份的XID的部分](./list-native-id.md)。
 
 ```shell
 curl -X GET \
@@ -67,7 +67,7 @@ curl -X GET \
 
 ## 获取多个身份的群集历史记录
 
-将该方 `POST` 法用作上述方法的批 `GET` 量等效值，以返回多个身份的簇历史。
+使用`POST`方法作为上述`GET`方法的批处理等效项，以返回多个身份的群集历史记录。
 
 >[!NOTE]
 >
@@ -110,7 +110,7 @@ POST https://platform-va7.adobe.io/data/core/identity/clusters/history
 
 **存根请求**
 
-使用标题 `x-uis-cst-ctx: stub` 将返回一个无效响应。 这是一个临时解决方案，在服务完成的同时，促进早期的一体化发展进程。 当不再需要时，将弃用此选项。
+使用`x-uis-cst-ctx: stub`头将返回无效响应。 这是一个临时解决方案，在服务完成的同时，促进早期的一体化发展进程。 当不再需要时，将弃用此选项。
 
 ```shell
 curl -X POST \
@@ -219,4 +219,4 @@ curl -X POST \
 
 ## 后续步骤
 
-继续到下一个教程以 [列表标识映射](./list-identity-mappings.md)
+继续到下一个教程[列表标识映射](./list-identity-mappings.md)
