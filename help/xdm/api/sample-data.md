@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主题；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；示例数据；示例数据；rpc;
 solution: Experience Platform
-title: 示例数据端点指南
+title: 示例数据API端点
 description: 模式注册表API中的/sampledata端点允许您生成映射到任何现有XDM模式结构的示例数据。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: eb5e34dc3b48a6fe0757635cad1df08caa68b019
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
 source-wordcount: '319'
 ht-degree: 1%
