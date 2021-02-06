@@ -1,21 +1,17 @@
 ---
 keywords: Google客户匹配；Google客户匹配；Google客户匹配
-title: Google客户匹配目标
-seo-title: Google客户匹配目标
+title: Google客户匹配连接目标
 description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
-seo-description: Google Customer Match允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）上触及客户并与其重新互动。
 translation-type: tm+mt
-source-git-commit: 38b2bfd93bda85cf87dde4e0345ca9c11e419c2f
+source-git-commit: aa2088d30716f56ac2909214badbb39c0ae97855
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1474'
 ht-degree: 0%
 
 ---
 
 
-# Google客户匹配目标
-
-## 概述 {#overview}
+# Google客户匹配连接
 
 >[!IMPORTANT]
 >
