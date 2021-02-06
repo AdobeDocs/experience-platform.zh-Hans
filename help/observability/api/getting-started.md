@@ -5,7 +5,7 @@ title: 可观性洞察API入门
 topic: developer guide
 description: 可观性洞察API允许您针对各种Adobe Experience Platform功能检索度量数据。 本文档介绍了在尝试调用可观性洞察API之前需要了解的核心概念。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '253'
 ht-degree: 0%
