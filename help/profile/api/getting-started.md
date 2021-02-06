@@ -5,9 +5,9 @@ topic: guide
 type: Documentation
 description: 用户档案API入门指南概述了使用实时客户用户档案API端点对用户档案数据执行基本CRUD操作时需要了解的主要概念和基本功能。
 translation-type: tm+mt
-source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
+source-git-commit: cad9c690be986961aea2969ef0ade975f33a8ee5
 workflow-type: tm+mt
-source-wordcount: '409'
+source-wordcount: '410'
 ht-degree: 0%
 
 ---
