@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform;home;popular topics;Google Big Query;google big query;GBQ;gbq
+keywords: Experience Platform；主页；热门主题；Google大查询;google大查询;GBQ;gbq
 solution: Experience Platform
-title: 在UI中创建Google大查询源连接器
+title: 在UI中创建Google大查询源连接
 topic: overview
 type: Tutorial
-description: 本教程提供了使用平台用户界面创建Google大查询（以下称“GBQ”）源连接器的步骤。
+description: 了解如何使用Adobe Experience PlatformUI创建Google大查询源连接。
 translation-type: tm+mt
-source-git-commit: 74fbf388cf645c89f9f6d00a5ae2e59ba94041b9
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '508'
+source-wordcount: '515'
 ht-degree: 0%
 
 ---
 
 
-# 在UI中创建[!DNL Google Big Query]源连接器
+# 在UI中创建[!DNL Google Big Query]源连接
 
 >[!NOTE]
 >
@@ -31,7 +31,7 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
 * [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
 
-如果您已经有有效的BigQuery连接，您可以跳过此文档的其余部分，继续学习有关配置数据流[的教程。](../../dataflow/databases.md)
+如果您已经有有效的BigQuery连接，您可以跳过此文档的其余部分，继续学习有关配置数据流](../../dataflow/databases.md)的教程。[
 
 ### 收集所需的凭据
 
@@ -74,4 +74,4 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 
 ## 后续步骤
 
-按照本教程，您已建立了与GBQ帐户的连接。 现在，您可以继续阅读下一个教程，并配置数据流以将数据导入[。 [!DNL Platform]](../../dataflow/databases.md)
+按照本教程，您已建立了与GBQ帐户的连接。 现在，您可以继续阅读下一个教程，并配置数据流以将数据导入 [!DNL Platform]](../../dataflow/databases.md)。[
