@@ -6,7 +6,7 @@ topic: tutorial
 type: Tutorial
 description: 本教程为您提供了所有其他Adobe Experience Platform数据科学工作区教程所需的先决条件和资源。 完成后，您和您的IMS组织成员将可以在Experience Platform上获得零售模式和数据集。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 0%
@@ -113,6 +113,6 @@ ht-degree: 0%
 
 要继续处理所摄取的数据：
 - [使用Jupyter笔记本分析数据](../jupyterlab/analyze-your-data.md)
-   - 在数据科学工作区中使用Jupyter笔记本，访问、探索、可视化和了解您的数据。
+   - 在数据科学工作区中使用Jupyter Notebooks访问、探索、可视化和了解您的数据。
 - [将源文件打包到菜谱中](./package-source-files-recipe.md)
    - 请按照本教程学习如何通过将源文件打包到可导入的Recipe文件中，将您自己的Model引入[!DNL Data Science Workspace]中。
