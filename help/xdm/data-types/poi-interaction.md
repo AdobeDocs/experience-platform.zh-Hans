@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;fields;schemas;Schemas;poi;interaction;point of interest;point-of-interest;datatype;data-type;data type;
+keywords: Experience Platform；主题；热门主题；模式;模式;XDM；字段；模式;模式;;poi；交互；兴趣点；兴趣点；数据类型；数据类型；
 solution: Experience Platform
 title: 兴趣点交互数据类型
 topic: overview
 description: 此文档概述了兴趣点交互XDM数据类型。
 translation-type: tm+mt
-source-git-commit: 032adc72db7f094b268f14e8f7d48810830a84e4
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '162'
+source-wordcount: '183'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 # [!UICONTROL 兴趣点交互] 数据类型
 
-[!UICONTROL 兴趣点交互] 是一种标准XDM数据类型，描述在移动设备处于范围内时向移动应用程序传送身份信息的无线设备。
+[!UICONTROL 兴趣点交] 互是一种标准XDM数据类型，描述在移动设备处于范围内时向移动应用程序通信身份信息的无线设备。
 
 <img src="../images/data-types/poi-interaction.png" width="400" /><br />
 
