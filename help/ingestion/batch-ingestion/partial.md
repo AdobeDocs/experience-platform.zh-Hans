@@ -5,7 +5,7 @@ title: 部分批摄取概述
 topic: overview
 description: 此文档提供了管理部分批摄取的教程。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
 workflow-type: tm+mt
 source-wordcount: '945'
 ht-degree: 0%
