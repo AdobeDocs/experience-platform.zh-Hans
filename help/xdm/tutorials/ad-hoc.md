@@ -6,7 +6,7 @@ description: 在特定情况下，可能需要创建一个体验数据模型(XDM
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '823'
 ht-degree: 2%
