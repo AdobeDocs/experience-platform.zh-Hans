@@ -5,7 +5,7 @@ title: 自动策略实施
 topic: guide
 description: 此文档涵盖在Experience Platform中将区段激活到目标时如何自动实施数据使用策略。
 translation-type: tm+mt
-source-git-commit: acc4fa59a4808ed9a32c2aaf664039e0d12dc1d8
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '1128'
 ht-degree: 0%
