@@ -1,21 +1,17 @@
 ---
 keywords: kickfire;kickfire;kickfire扩展；kickfire扩展
-title: KickFire扩展
-seo-title: KickFire扩展
+title: KickFire扩展目标
 description: KickFire扩展是Adobe Experience Platform的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: KickFire扩展是Adobe Experience Platform的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '507'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL KickFire] 扩展 {#kickfire-extension}
-
-## 概述 {#overview}
 
 [!DNL KickFire's] IP地址智能和B2B云数据允许您将IP地址转换为公司、识别匿名Web访客并将帐户数据集成到您的技术堆栈中——所有这些都基于公司的IP地址。
 
