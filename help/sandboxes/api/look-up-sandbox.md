@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;find sandbox;look up a sandbox
+keywords: Experience Platform；主页；热门主题；查找沙箱；查找沙箱
 solution: Experience Platform
-title: 查找沙箱
+title: 在API中查找沙箱
 topic: developer guide
 description: 通过发出一个GET请求，在请求路径中包含沙箱的name属性，可以查找单个沙箱。
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '243'
 ht-degree: 2%
 
 ---
 
 
-# 查找沙箱
+# 在API中查找沙箱
 
-通过发出GET请求（请求路径中包含沙箱的属性），可以查 `name` 找单个沙箱。
+通过在请求路径中发出包含沙箱的`name`属性的GET请求，可以查找单个沙箱。
 
 **API格式**
 
@@ -25,7 +25,7 @@ GET /sandboxes/{SANDBOX_NAME}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SANDBOX_NAME}` | 要 `name` 查找的沙箱的属性。 |
+| `{SANDBOX_NAME}` | 要查找的沙箱的`name`属性。 |
 
 **请求**
 
@@ -42,7 +42,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回沙箱的详细信息， `name`包括 `title`沙箱 `state`、和 `type`。
+成功的响应返回沙箱的详细信息，包括沙箱的`name`、`title`、`state`和`type`。
 
 ```json
 {
