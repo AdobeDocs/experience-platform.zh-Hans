@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform；主页；热门主题；Azure;azure blob;blob;Blob
 solution: Experience Platform
-title: 使用流服务API创建Azure Blob连接器
+title: 使用流服务API创建Azure Blob源连接
 topic: overview
 type: Tutorial
-description: 本教程使用Flow Service API指导您完成将Experience Platform连接到Azure Blob（以下称“Blob”）存储的步骤。
+description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Azure Blob。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '761'
 ht-degree: 2%
 
 ---
 
 
-# 使用[!DNL Flow Service] API创建[!DNL Azure Blob]连接器
+# 使用[!DNL Flow Service] API创建[!DNL Azure Blob]源连接
 
-本教程使用[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)指导您完成将[!DNL Azure Blob]（以下简称“Blob”）连接到Experience Platform的步骤。
+本教程使用[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)指导您完成将[!DNL Azure Blob]（以下简称“Blob”）连接到Adobe Experience Platform的步骤。
 
 ## 入门指南
 
@@ -25,7 +25,7 @@ ht-degree: 2%
 * [来源](../../../../home.md):Experience Platform允许从各种来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。
 * [沙箱](../../../../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
 
-以下各节提供您需要了解的其他信息，以便使用[!DNL Flow Service] API成功创建[!DNL Blob]源连接器。
+以下各节提供您需要了解的其他信息，以便使用[!DNL Flow Service] API成功创建[!DNL Blob]源连接。
 
 ### 收集所需的凭据
 
