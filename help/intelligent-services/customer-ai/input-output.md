@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;getting started;customer ai;popular topics;customer ai input;customer ai output
+keywords: Experience Platform；快速入门；用户ai；热门主题；用户ai输入；用户ai输出
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
-title: 客户人工智能输入和输出
+title: 客户人工智能中的输入和输出
 topic: Getting started
 description: 以下文档概述了客户人工智能中使用的不同输入和输出。
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '840'
 ht-degree: 1%
 
 ---
 
 
-# 客户人工智能输入和输出
+# 客户人工智能中的输入和输出
 
 以下文档概述了客户人工智能中使用的不同输入和输出。
 
 ## 客户人工智能输入数据
 
-客户人工智能使用消费者体验事件数据来计算倾向得分。 有关消费者体验事件的更多详细信息，请参 [阅准备要在Intelligent Services文档中使用的数据](../data-preparation.md)。
+客户人工智能使用消费者体验事件数据来计算倾向得分。 有关“消费者体验”事件的详细信息，请参阅[准备要在Intelligent Services文档中使用的数据](../data-preparation.md)。
 
 ### 历史数据
 
@@ -68,4 +68,4 @@ ht-degree: 1%
 
 ## 后续步骤 {#next-steps}
 
-准备数据并准备好所有凭据和模式后，请按照“配置客户人工智能 [实例”指南进行开始](./user-guide/configure.md) 。 本指南将指导您逐步创建客户人工智能实例。
+准备好数据并准备好所有凭据和模式后，请按照[配置客户AI实例](./user-guide/configure.md)指南进行开始。 本指南将指导您逐步创建客户人工智能实例。
