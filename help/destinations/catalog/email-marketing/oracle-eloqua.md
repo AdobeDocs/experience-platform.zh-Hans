@@ -1,21 +1,17 @@
 ---
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目的地；oracle雄辩；oracle
-title: Oracle雄辩
-seo-title: Oracle雄辩
+title: Oracle雄辩连接目的地
 description: Oracle雄辩是Oracle公司提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
-seo-description: Oracle雄辩是Oracle公司提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '555'
+source-wordcount: '521'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Oracle Eloqua]
-
-## 概述
+# [!DNL Oracle Eloqua] 连接
 
 [[!DNL Oracle Eloqua]](https://www.oracle.com/marketingcloud/products/marketing-automation/) 是由B2B营销人员和组织提供的用于营销自动化的软 [!DNL Oracle] 件即服务(SaaS)平台，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
 
