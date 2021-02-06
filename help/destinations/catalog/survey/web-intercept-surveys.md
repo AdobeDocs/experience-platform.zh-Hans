@@ -1,21 +1,17 @@
 ---
 keywords: QuestionPro Intercept调查;questionpro Intercept调查;QuestionPro;questionpro
-title: QuestionPro Intercept调查扩展
-seo-title: QuestionPro Intercept调查扩展
+title: QuestionPro截取调查扩展目标
 description: QuestionPro Intercept调查扩展是Adobe Experience Platform的一个调查目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: QuestionPro Intercept调查扩展是Adobe Experience Platform的一个调查目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '563'
+source-wordcount: '532'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL QuestionPro Intercept Surveys] 扩展 {#questionpro-extension}
-
-## 概述 {#overview}
 
 [!DNL QuestionPro Intercept Surveys] 是一个平台，用于在交易点或用户进入／退出您的网站时部署调查并收集态度数据。
 
