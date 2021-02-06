@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；身份命名空间；身份命名空间
 solution: Experience Platform
-title: Adobe Experience Platform身份服务疑难解答指南
+title: Identity Service疑难解答指南
 topic: troubleshooting
 description: 本文档提供有关Adobe Experience Platform身份服务的常见问题解答，以及常见错误的疑难解答指南。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
 workflow-type: tm+mt
-source-wordcount: '2191'
+source-wordcount: '2188'
 ht-degree: 0%
 
 ---
