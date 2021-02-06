@@ -1,21 +1,19 @@
 ---
-keywords: Experience Platform;product purchase recipe;Data Science Workspace;popular topics;recipes;pre build recipe
+keywords: Experience Platform；产品购买菜谱；数据科学工作区；热门主题；菜谱；预建菜谱
 solution: Experience Platform
-title: 产品购买处方
+title: 产品购买预测方法
 topic: overview
 description: “产品购买预测”菜谱使您能够预测特定类型的客户购买事件的可能性，例如产品购买。
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: f4095a90ff70e8d054bae4f3b0f884552ffd30df
 workflow-type: tm+mt
-source-wordcount: '382'
+source-wordcount: '397'
 ht-degree: 6%
 
 ---
 
 
-# 产品购买处方
-
-## 概述
+# 产品购买预测方法
 
 “产品购买预测”菜谱使您能够预测特定类型的客户购买事件的可能性，例如产品购买。
 
@@ -35,7 +33,7 @@ ht-degree: 6%
 
 ## 数据模式
 
-此菜谱使 [用XDM模式](../../xdm/home.md) ，对数据进行建模。 此菜谱使用的模式如下所示：
+此菜谱使用[XDM模式](../../xdm/home.md)来模拟数据。 此菜谱使用的模式如下所示：
 
 | 字段名称 | 类型 |
 --- | ---
@@ -60,6 +58,6 @@ ht-degree: 6%
 
 ## 算法
 
-首先，加载ProductPrediction模式 *中的培* 训数据集。 从此，利用随机森林分类器对模 [型进行训练](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)。 随机森林分类器是一种集成算法，它指的是一种结合多种算法来获得改进预测性能的算法。 该算法的思想是随机森林分类器构建多个决策树并将它们合并，以创建更准确、更稳定的预测。
+首先，加载&#x200B;*ProductPrediction*&#x200B;模式中的培训数据集。 从这里，使用[随机林分类器](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)训练模型。 随机森林分类器是一种集成算法，它指的是一种结合多种算法来获得改进预测性能的算法。 该算法的思想是随机森林分类器构建多个决策树并将它们合并，以创建更准确、更稳定的预测。
 
 该过程开始于创建一组决策树，该决策树随机选择训练数据的子集。 然后，对每个决策树的结果进行平均。
