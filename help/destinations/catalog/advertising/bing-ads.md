@@ -1,21 +1,17 @@
 ---
 keywords: bing;bing ads事件跟踪；事件跟踪bing;UET;UET扩展
-title: Bing Ads Universal事件跟踪(UET)扩展
-seo-title: Bing Ads Universal事件跟踪(UET)扩展
+title: 必应广告通用事件跟踪(UET)扩展目标
 description: 必应广告通用事件跟踪(UET)扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: 必应广告通用事件跟踪(UET)扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '574'
+source-wordcount: '537'
 ht-degree: 4%
 
 ---
 
 
 # [!DNL Bing Ads Universal Event Tracking] (UET)扩展  {#bing-ads-extension}
-
-## 概述 {#overview}
 
 [!DNL Bing Ads Universal Event Tracking] (UET)for是 [!DNL Experience Platform Launch] 跟踪某人点击您的搜索广告后发生情况的有用方法。通过使用单个UET标签记录客户在您的网站上的行为，您可以利用该数据，从而使用再营销列表跟踪转化或目标受众。
 
