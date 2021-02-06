@@ -1,21 +1,17 @@
 ---
 keywords: D&B访客智能；D&B;访客智能扩展
-title: D&B访客智能扩展
-seo-title: D&B访客智能扩展
+title: D&B访客智能扩展目标
 description: D&B访客智能扩展是Adobe Experience Platform的一个个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: D&B访客智能扩展是Adobe Experience Platform的一个个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '501'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL D&B Visitor Intelligence] 扩展 {#dnb-extension}
-
-## 概述 {#overview}
 
 分析未知访客并将其转换为潜在客户。
 
