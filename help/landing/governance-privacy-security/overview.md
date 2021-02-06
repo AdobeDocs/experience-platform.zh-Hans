@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: Adobe Experience Platform的治理、隐私和安全
+title: 管理、隐私和安全概述
 topic: overview
-description: Experience Platform提供多种服务和工具，使您能够放心地控制收集的体验数据，以符合您的业务实践、法律义务和开发流程。
+description: Adobe Experience Platform提供多种服务和工具，使您能够放心地控制收集的体验数据，以符合您的业务实践、法律义务和开发流程。
 translation-type: tm+mt
-source-git-commit: 6ec317dd790b6ad77d8181c1398934f9636c5f5f
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '813'
+source-wordcount: '811'
 ht-degree: 0%
 
 ---
