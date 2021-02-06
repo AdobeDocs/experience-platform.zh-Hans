@@ -1,24 +1,24 @@
 ---
 keywords: Experience Platform；主页；热门主题；Salesforce;salesforce
 solution: Experience Platform
-title: 使用流服务API创建Salesforce连接器
+title: 使用流服务API创建Salesforce源连接
 topic: overview
 type: Tutorial
-description: 本教程使用Flow Service API指导您完成将平台连接到Salesforce帐户以收集CRM数据的步骤。
+description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Salesforce帐户。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '570'
+source-wordcount: '565'
 ht-degree: 2%
 
 ---
 
 
-# 使用[!DNL Flow Service] API创建[!DNL Salesforce]连接器
+# 使用[!DNL Flow Service] API创建[!DNL Salesforce]源连接
 
 Flow Service用于收集和集中来自Adobe Experience Platform不同来源的客户数据。 该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程使用[!DNL Flow Service] API指导您完成将[!DNL Platform]连接到[!DNL Salesforce]帐户以收集CRM数据的步骤。
+本教程使用[!DNL Flow Service] API指导您完成使用流服务API将[!DNL Platform]连接到[!DNL Salesforce]帐户的步骤。
 
 ## 入门指南
 
