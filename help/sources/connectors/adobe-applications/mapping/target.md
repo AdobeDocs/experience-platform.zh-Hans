@@ -1,11 +1,11 @@
 ---
-keywords: Experience Platform;home;popular topics;target mapping;Target mapping
+keywords: Experience Platform；主页；热门主题；目标映射;目标映射
 solution: Experience Platform
-title: 目标映射字段
+title: 将Adobe Target事件数据映射到XDM
 topic: overview
-description: 下表概述了体验事件模式的字段（*XDM ExperienceEvent字段*），以及应将其映射到的相应目标字段(目标请求字段)。 还提供了一些映射的附加说明。
+description: 了解如何将Adobe Target事件字段映射到体验数据模型(XDM)模式，以便在Adobe Experience Platform使用。
 translation-type: tm+mt
-source-git-commit: 6934bfeee84f542558894bbd4ba5759891cd17f3
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
 source-wordcount: '462'
 ht-degree: 0%
@@ -13,11 +13,11 @@ ht-degree: 0%
 ---
 
 
-# 目标映射字段
+# 目标映射字段映射
 
-Adobe Experience Platform允许您通过目标源连接器获取Adobe Target数据。 使用连接器时，目标字段中的所有数据都必须映射 [到与XDM ExperienceEvent类关联](../../../../xdm/home.md) 的体验数据模型(XDM)字段。
+Adobe Experience Platform允许您通过目标源连接器获取Adobe Target数据。 使用连接器时，目标字段中的所有数据都必须映射到与XDM ExperienceEvent类关联的[体验数据模型(XDM)](../../../../xdm/home.md)字段。
 
-下表概述了体验事件模式(*XDM ExperienceEvent字段*)的字段，以及应将其映射到的相应目标字段(*目标请求字段*)。 还提供了一些映射的附加说明。
+下表概述了体验事件模式的字段（*XDM ExperienceEvent字段*）以及应将其映射到的相应目标字段(*目标请求字段*)。 还提供了一些映射的附加说明。
 
 >[!NOTE]
 >
@@ -62,7 +62,7 @@ Adobe Experience Platform允许您通过目标源连接器获取Adobe Target数�
 | `experience.target.activities[i].activityEvents` | 包括用户用此活动点击的事件的详细信息。 |
 | **`device`** |
 | `device.typeIDService` | `XDMDevice.Device.TypeIDService.typeIDService_deviceatlas` |
-| `device.type` | 以下属性之一( `deviceAtlas` 或NULL): <ul><li>`type_mobile`</li><li>`type_tablet`</li><li>`type_desktop`</li><li>`type_ereader`</li><li>`type_television`</li><li>`type_settop`</li><li>`type_mediaplayer`</li></ul> |
+| `device.type` | `deviceAtlas`（或NULL）的以下属性之一： <ul><li>`type_mobile`</li><li>`type_tablet`</li><li>`type_desktop`</li><li>`type_ereader`</li><li>`type_television`</li><li>`type_settop`</li><li>`type_mediaplayer`</li></ul> |
 | `device.typeID` | （空字符串） |
 | `device.manufacturer` | `deviceAtlas.manufacturer` |
 | `device.model` | `deviceAtlas.model` |
