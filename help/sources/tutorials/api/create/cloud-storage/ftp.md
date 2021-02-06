@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题；文件传输协议；文件传输协议
 solution: Experience Platform
-title: 使用流服务API创建FTP连接器
+title: 使用流服务API创建FTP源连接
 topic: overview
 type: Tutorial
-description: 本教程使用流服务API指导您完成将Experience Platform连接到FTP（文件传输协议）服务器的步骤。
+description: 了解如何使用流服务API将Adobe Experience Platform连接到FTP（文件传输协议）服务器。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '577'
 ht-degree: 2%
 
 ---
 
 
-# 使用[!DNL Flow Service] API创建FTP连接器
+# 使用[!DNL Flow Service] API创建FTP源连接
 
 >[!NOTE]
 >
