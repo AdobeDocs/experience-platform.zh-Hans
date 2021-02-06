@@ -1,24 +1,24 @@
 ---
 keywords: Experience Platform；主页；热门主题；Microsoft Dynamics;microsoft Dynamics;dynamics;Dynamics
 solution: Experience Platform
-title: 使用Flow Service API创建Microsoft Dynamics连接器
+title: 使用Flow Service API创建Microsoft Dynamics源连接
 topic: overview
 type: Tutorial
-description: 本教程使用Flow Service API指导您完成将Platform连接到Microsoft Dynamics（以下简称“Dynamics”）帐户以收集CRM数据的步骤。
+description: 了解如何使用Flow Service API将Platform连接到Microsoft Dynamics帐户。
 translation-type: tm+mt
-source-git-commit: 75566ef0dc45f59b47af0b85f4692c2496e53f29
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '751'
+source-wordcount: '739'
 ht-degree: 2%
 
 ---
 
 
-# 使用[!DNL Flow Service] API创建[!DNL Microsoft Dynamics]连接器
+# 使用[!DNL Flow Service] API创建[!DNL Microsoft Dynamics]源连接
 
 [!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
 
-本教程使用[!DNL Flow Service] API指导您完成将平台连接到用于收集CRM数据的[!DNL Microsoft Dynamics]（以下简称“Dynamics”）帐户的步骤。
+本教程使用[!DNL Flow Service] API指导您逐步使用Flow Service API将平台连接到[!DNL Microsoft Dynamics]（以下简称“Dynamics”）帐户。
 
 ## 入门指南
 
