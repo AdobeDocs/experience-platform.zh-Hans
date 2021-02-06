@@ -1,21 +1,17 @@
 ---
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；adobe活动;活动
-title: Adobe Campaign
-seo-title: Adobe Campaign
+title: Adobe Campaign连接目标
 description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
-seo-description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。
 translation-type: tm+mt
-source-git-commit: cf2d76799c03a2ea0414aedd83b35f3ce2ca3cb5
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '675'
-ht-degree: 1%
+source-wordcount: '654'
+ht-degree: 0%
 
 ---
 
 
-# Adobe Campaign
-
-## 概述
+# Adobe Campaign连接
 
 Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道中个性化和投放活动。 有关详细信息，请参阅[关于Adobe Campaign Classic](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/starting-with-adobe-campaign/about-adobe-campaign-classic.html)。
 
