@@ -1,33 +1,33 @@
 ---
-keywords: Experience Platform;developer guide;Data Science Workspace;popular topics;Real time machine learning;node reference;
+keywords: Experience Platform；开发人员指南；数据科学工作区；热门主题；实时机器学习；节点参考；
 solution: Experience Platform
-title: 实时机器学习笔记本用户指南
+title: 管理实时机器学习笔记本
 topic: Training and scoring a ML model
 description: 以下指南概述了在Adobe Experience PlatformJupyterLab中构建实时机器学习应用程序所需的步骤。
 translation-type: tm+mt
-source-git-commit: 28b733a16b067f951a885c299d59e079f0074df8
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '1656'
+source-wordcount: '1669'
 ht-degree: 0%
 
 ---
 
 
-# 实时机器学习笔记本用户指南(Alpha)
+# 管理实时机器学习笔记本(Alpha)
 
 >[!IMPORTANT]
 >
 >尚未向所有用户提供实时机器学习。 此功能在alpha中，仍在测试中。 此文档可能会更改。
 
-以下指南概述了构建实时机器学习应用程序所需的步骤。 本指南使用提 **[!UICONTROL 供的AdobeReal-time ML]** Python笔记本模板，涵盖培训模型、创建DSL、将DSL发布到Edge以及评分请求。 随着您在实现实时机器学习模型的过程中不断改进，您需要修改模板以满足数据集的需求。
+以下指南概述了构建实时机器学习应用程序所需的步骤。 使用提供的Adobe **[!UICONTROL 实时ML]** Python笔记本模板，本指南涵盖培训模型、创建DSL、将DSL发布到Edge并对请求评分。 随着您在实现实时机器学习模型的过程中不断改进，您需要修改模板以满足数据集的需求。
 
 ## 创建实时机器学习笔记本
 
-在Adobe Experience PlatformUI中，从 **[!UICONTROL 数据]** 科学中 **选择笔记本**。 接下来， **[!UICONTROL 选择Jupyter]** Lab，并允许一段时间加载环境。
+在Adobe Experience PlatformUI中，从&#x200B;**数据科学**&#x200B;中选择&#x200B;**[!UICONTROL 笔记本]**。 接下来，选择&#x200B;**[!UICONTROL JupyterLab]**&#x200B;并允许环境加载一段时间。
 
 ![打开JupyterLab](../images/rtml/open-jupyterlab.png)
 
-将出 [!DNL JupyterLab] 现启动器。 向下滚动 *到“Real-Time Learning* (实时机学 **[!UICONTROL 习)”并选择“Real-time ML(实]** 时ML)”笔记本。 此时将打开一个模板，其中包含带有示例数据集的示例笔记本单元格。
+出现[!DNL JupyterLab]启动器。 向下滚动到&#x200B;*实时机器学习*&#x200B;并选择&#x200B;**[!UICONTROL 实时ML]**&#x200B;笔记本。 此时将打开一个模板，其中包含带有示例数据集的示例笔记本单元格。
 
 ![空白python](../images/rtml/authoring-notebook.png)
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->您的导入列表可能因您希望创建的模型而有所不同。 随着时间的推移，添加新节点时，此列表将发生变化。 有关可用节 [点的完整列表](./node-reference.md) ，请参阅节点参考指南。
+>您的导入列表可能因您希望创建的模型而有所不同。 随着时间的推移，添加新节点时，此列表将发生变化。 有关可用节点的完整列表，请参阅[节点参考指南](./node-reference.md)。
 
 ```python
 from pprint import pprint
@@ -73,26 +73,26 @@ pprint(nf.discover_nodes())
 
 ## 实时机器学习模型的训练
 
-使用以下选项之一，您将编写代码 [!DNL Python] 来读取、预处理和分析数据。 接下来，您需要培训自己的ML模型，将其序列化为ONNX格式，然后将其上传到Real-time Machine Learning模型商店。
+使用以下选项之一，您将编写[!DNL Python]代码以读取、预处理和分析数据。 接下来，您需要培训自己的ML模型，将其序列化为ONNX格式，然后将其上传到Real-time Machine Learning模型商店。
 
 - [在JupyterLab笔记本中培训您自己的型号](#training-your-own-model)
 - [将您自己经过培训的ONNX型号上传到JupyterLab笔记本](#pre-trained-model-upload)
 
-### 培训您自己的模型 {#training-your-own-model}
+### 培训您自己的型号{#training-your-own-model}
 
 开始。
 
 >[!NOTE]
 >
->在实时 **ML模板中** ，从 [车险CSV数据集中](https://github.com/adobe/experience-platform-dsw-reference/tree/master/datasets/insurance) 获取 [!DNL Github]。
+>在&#x200B;**实时ML**&#x200B;模板中，从[!DNL Github]中获取[汽车保险CSV数据集](https://github.com/adobe/experience-platform-dsw-reference/tree/master/datasets/insurance)。
 
 ![加载培训数据](../images/rtml/load_training.png)
 
-如果您希望使用来自Adobe Experience Platform的数据集，请取消以下单元格的注释。 接下来，您需要用相 `DATASET_ID` 应的值替换。
+如果您希望使用来自Adobe Experience Platform的数据集，请取消以下单元格的注释。 接下来，您需要用相应的值替换`DATASET_ID`。
 
 ![rtml数据集](../images/rtml/rtml-dataset.png)
 
-要访问笔记本中的数 [!DNL JupyterLab] 据集，请选 **择** “数据”选项卡（位于的左侧导航中） [!DNL JupyterLab]。 出 **[!UICONTROL 现Dataset]****[!UICONTROL 和]** 模式目录。 选 **[!UICONTROL 择数据集]** ，右键单击，然后从要使用的数据集 **[!UICONTROL 的下拉菜单中选择浏览笔记本中的数据]** 。 可执行代码条目显示在笔记本的底部。 这个手机里有你的 `dataset_id`。
+要访问[!DNL JupyterLab]笔记本中的数据集，请在[!DNL JupyterLab]的左侧导航中选择&#x200B;**数据**&#x200B;选项卡。 出现&#x200B;**[!UICONTROL 模式集]**&#x200B;和&#x200B;**[!UICONTROL 数据集]**&#x200B;目录。 选择&#x200B;**[!UICONTROL 数据集]**&#x200B;并右键单击，然后从要使用的数据集的下拉菜单中选择&#x200B;**[!UICONTROL 在笔记本中浏览数据]**&#x200B;选项。 可执行代码条目显示在笔记本的底部。 此单元格包含您的`dataset_id`。
 
 ![数据集访问](../images/rtml/access-dataset.png)
 
@@ -100,7 +100,7 @@ pprint(nf.discover_nodes())
 
 ### 培训属性
 
-使用提供的模板，修改中的任何培训属性 `config_properties`。
+使用提供的模板，修改`config_properties`中的任何培训属性。
 
 ```python
 config_properties = {
@@ -113,15 +113,15 @@ config_properties = {
 
 ### 准备模型
 
-使用 **[!UICONTROL 实时ML模板]** ，您需要分析、预处理、培训和评估ML模型。 这是通过应用数据转换和构建培训管道来完成的。
+使用&#x200B;**[!UICONTROL 实时ML]**&#x200B;模板，您需要分析、预处理、培训和评估ML模型。 这是通过应用数据转换和构建培训管道来完成的。
 
 **数据转换**
 
-需 **[!UICONTROL 要修改实时]** ML **模板Data Transformations** 单元格，才能处理您自己的数据集。 通常，这涉及重命名列、数据汇总以及数据准备／功能工程。
+需要修改&#x200B;**[!UICONTROL 实时ML]**&#x200B;模板&#x200B;**数据转换**&#x200B;单元格，才能使用您自己的数据集。 通常，这涉及重命名列、数据汇总以及数据准备／功能工程。
 
 >[!NOTE]
 >
->以下示例已经过压缩，以便使用 `[ ... ]`。 请视图并展开 *完整代码单元格的* “实时ML模板数据转换”部分。
+>以下示例已使用`[ ... ]`进行压缩以用于可读性目的。 请视图并展开&#x200B;*实时ML*&#x200B;模板数据转换部分，以获取完整的代码单元格。
 
 ```python
 df1.rename(columns = {config_properties['ten_id']+'.identification.ecid' : 'ecid',
@@ -196,7 +196,7 @@ cat_cols = ['age_bucket', 'gender', 'city', 'dayofweek', 'country', 'carbrand', 
 df_final = pd.get_dummies(df_final, columns = cat_cols)
 ```
 
-运行提供的单元格以查看示例结果。 从数据集返回的输 `carinsurancedataset.csv` 出表返回您定义的修改。
+运行提供的单元格以查看示例结果。 从`carinsurancedataset.csv`数据集返回的输出表返回您定义的修改。
 
 ![数据转换示例](../images/rtml/table-return.png)
 
@@ -204,7 +204,7 @@ df_final = pd.get_dummies(df_final, columns = cat_cols)
 
 接下来，您需要创建培训管道。 这将与任何其他培训管道文件相似，但需要转换并生成ONNX文件除外。
 
-使用在上一个单元格中定义的数据转换，修改模板。 下面突出显示的代码用于在功能管道中生成ONNX文件。 请视图 *完整管道代码单元* 的实时ML模板。
+使用在上一个单元格中定义的数据转换，修改模板。 下面突出显示的代码用于在功能管道中生成ONNX文件。 请视图完整管道代码单元格的&#x200B;*实时ML*&#x200B;模板。
 
 ```python
 #for generating onnx
@@ -246,7 +246,7 @@ model.generate_onnx_resources()
 
 >[!NOTE]
 >
->更改 `model_path` 字符串值(`model.onnx`)以更改模型的名称。
+>更改`model_path`字符串值(`model.onnx`)以更改模型的名称。
 
 ```python
 model_path = "model.onnx"
@@ -266,13 +266,13 @@ print("Model ID : ", model_id)
 
 ![ONNX模型](../images/rtml/onnx-model-rail.png)
 
-### 上传您自己的预先培训的ONNX模型 {#pre-trained-model-upload}
+### 上传您自己的预先培训的ONNX型号{#pre-trained-model-upload}
 
-使用笔记本中的上 [!DNL JupyterLab] 传按钮，将经过培训的ONNX型号上传到笔记本 [!DNL Data Science Workspace] 环境。
+使用位于[!DNL JupyterLab]笔记本中的上传按钮，将经过培训的ONNX型号上传到[!DNL Data Science Workspace]笔记本环境。
 
 ![上传图标](../images/rtml/upload.png)
 
-接下来，更 `model_path` 改实时ML笔 *记本中的字符串值* ，使其与您的ONNX型号名称匹配。 完成后，运行“设 *置模型路径* ”单元格，然 *后运行“将模型上传到RTML模型存储* ”单元格。 成功时，您的模型位置和模型ID都会在响应中返回。
+然后，更改&#x200B;*Real-time ML*&#x200B;笔记本中的`model_path`字符串值以匹配您的ONNX型号名称。 完成后，运行&#x200B;*设置模型路径*&#x200B;单元格，然后运行&#x200B;*将模型上传到RTML模型存储*&#x200B;单元格。 成功时，您的模型位置和模型ID都会在响应中返回。
 
 ![上传自己的模型](../images/rtml/upload-own-model.png)
 
@@ -288,9 +288,9 @@ print("Model ID : ", model_id)
 
 >[!NOTE]
 >
-> 您可能会根据所使用的数据类型有多个节点。 以下示例仅概述实时ML模 *板中的单个节点* 。 请视图 *完整代码单元* 格的 *实时ML模板节* 点创作部分。
+> 您可能会根据所使用的数据类型有多个节点。 以下示例仅概述&#x200B;*Real-time ML*&#x200B;模板中的单个节点。 请视图完整代码单元格的&#x200B;*实时ML*&#x200B;模板&#x200B;*节点创作*&#x200B;部分。
 
-下面的Apnotics节点 `"import": "map"` 将方法名称作为字符串导入参数中，然后输入参数作为映射函数。 以下示例通过使用实现 `{'arg': {'dataLayerNull': 'notgiven', 'no': 'no', 'yes': 'yes', 'notgiven': 'notgiven'}}`。 在将地图置于适当位置后，您可以选择将其 `inplace` 设置为 `True` 或 `False`。 设 `inplace` 置 `True` 为 `False` 还是基于是否要就地应用转换。 默认情 `"inplace": False` 况下，创建新列。 支持提供新列名称设置为在后续版本中添加。 最后一行 `cols` 可以是单列名称或列列表。 指定要应用转换的列。 在此示例中 `leasing` 指定。 有关可用节点以及如何使用这些节点的详细信息，请访问节 [点参考指南](./node-reference.md)。
+下面的Pacnots节点使用`"import": "map"`将方法名称作为字符串导入参数中，然后输入参数作为映射函数。 以下示例使用`{'arg': {'dataLayerNull': 'notgiven', 'no': 'no', 'yes': 'yes', 'notgiven': 'notgiven'}}`执行此操作。 映射到位后，您可以选择将`inplace`设置为`True`或`False`。 根据是否要应用转换，将`inplace`设置为`True`或`False`。 默认情况下，`"inplace": False`会创建新列。 支持提供新列名称设置为在后续版本中添加。 最后一行`cols`可以是单列名称或列列表。 指定要应用转换的列。 在此示例中指定了`leasing`。 有关可用节点以及如何使用这些节点的详细信息，请访问[节点参考指南](./node-reference.md)。
 
 ```python
 # Renaming leasing column using Pandas Node
@@ -330,7 +330,7 @@ nodes = [json_df_node,
         onnx_node]
 ```
 
-然后，将节点与边连接。 每个元组都是 [!DNL Edge] 连接。
+然后，将节点与边连接。 每个元组都是[!DNL Edge]连接。
 
 >[!TIP]
 >
@@ -347,7 +347,7 @@ dsl = GraphBuilder.generate_dsl(nodes=nodes, edges=edges)
 pprint(json.loads(dsl))
 ```
 
-完成后，将返 `edge` 回一个对象，其中包含每个节点以及映射到它们的参数。
+完成后，将返回一个`edge`对象，其中包含每个节点以及映射到它们的参数。
 
 ![边返回](../images/rtml/edge-return.png)
 
@@ -355,13 +355,13 @@ pprint(json.loads(dsl))
 
 >[!NOTE]
 >
->实时机器学习临时部署到Adobe Experience Platform中心并由其管理。 有关更多详细信息，请访问“实时机 [学习体系结构”的概述部分](./home.md#architecture)。
+>实时机器学习临时部署到Adobe Experience Platform中心并由其管理。 有关其他详细信息，请访问[实时机器学习架构](./home.md#architecture)的概述部分。
 
-现在您已创建了DSL图形，可将图形部署到 [!DNL Edge]。
+现在您已创建DSL图形，可将图形部署到[!DNL Edge]。
 
 >[!IMPORTANT]
 >
->不要经常发 [!DNL Edge] 布，这会使节点过载 [!DNL Edge] 。 建议不要多次发布同一模型。
+>不要经常发布到[!DNL Edge]，这会使[!DNL Edge]节点过载。 建议不要多次发布同一模型。
 
 ```python
 edge_utils = EdgeUtils()
@@ -372,13 +372,13 @@ print(f'Service ID: {service_id}')
 
 ### 更新DSL并重新发布到Edge（可选）
 
-如果不需要更新DSL，可跳到评 [分](#scoring)。
+如果不需要更新DSL，可跳至[评分](#scoring)。
 
 >[!NOTE]
 >
 >仅当您希望更新已发布到Edge的现有DSL时，才需要以下单元格。
 
-您的模型可能会继续发展。 与其创建全新服务，不如使用新模型更新现有服务。 您可以定义要更新的节点，为其分配新ID，然后将新DSL重新上传到 [!DNL Edge]。
+您的模型可能会继续发展。 与其创建全新服务，不如使用新模型更新现有服务。 您可以定义要更新的节点，为其分配新ID，然后将新DSL重新上传到[!DNL Edge]。
 
 在以下示例中，节点0将更新为新的ID。
 
@@ -408,9 +408,9 @@ print(f'Updated dsl: {updated_dsl}')
 
 ![更新的DSL](../images/rtml/updated-dsl.png)
 
-## 评分 {#scoring}
+## 评分{#scoring}
 
-发布到后， [!DNL Edge]评分由客户端的POST请求完成。 通常，这可以从需要ML分数的客户端应用程序中完成。 您也可以从邮递员处进行。 实 **[!UICONTROL 时ML模板使用]** EdgeUtils演示此过程。
+发布到[!DNL Edge]后，由客户端的POST请求进行评分。 通常，这可以从需要ML分数的客户端应用程序中完成。 您也可以从邮递员处进行。 **[!UICONTROL 实时ML]**&#x200B;模板使用EdgeUtils演示此过程。
 
 >[!NOTE]
 >
@@ -422,21 +422,21 @@ import time
 time.sleep(20)
 ```
 
-使用与培训中使用的模式相同的评分数据生成样本评分数据。 此数据用于构建一个评分数据帧，然后转换为评分字典。 请视图 *完整代码单元格* 的实时ML模板。
+使用与培训中使用的模式相同的评分数据生成样本评分数据。 此数据用于构建一个评分数据帧，然后转换为评分字典。 请视图完整代码单元格的&#x200B;*实时ML*&#x200B;模板。
 
 ![评分数据](../images/rtml/generate-score-data.png)
 
 ### 对Edge端点进行得分
 
-使用实时ML模板中 *的以下单元格* ，根据您的服务进行 [!DNL Edge] 得分。
+使用&#x200B;*实时ML*&#x200B;模板中的以下单元格对您的[!DNL Edge]服务进行得分。
 
 ![对边缘得分](../images/rtml/scoring-edge.png)
 
-评分完成后，将返 [!DNL Edge] 回URL、有效负荷和来自的计分 [!DNL Edge] 输出。
+评分完成后，将返回[!DNL Edge]的[!DNL Edge] URL、有效负荷和计分输出。
 
-## 列表已部署的应用程序 [!DNL Edge]
+## 从[!DNL Edge]列表已部署的应用程序
 
-要在上生成当前部署的应用程序的列表 [!DNL Edge]，请运行以下代码单元格。 无法编辑或删除此单元格。
+要在[!DNL Edge]上生成当前部署的应用程序的列表，请运行以下代码单元格。 无法编辑或删除此单元格。
 
 ```python
 services = edge_utils.list_deployed_services()
@@ -457,11 +457,11 @@ print(services)
 ]
 ```
 
-## 从中删除已部署的应用程序或服 [!DNL Edge] 务ID（可选）
+## 从[!DNL Edge]中删除已部署的应用程序或服务ID（可选）
 
 >[!CAUTION]
 >
->此单元格用于删除已部署的Edge应用程序。 除非需要删除已部署的应用程序，否则不要使用以下 [!DNL Edge] 单元格。
+>此单元格用于删除已部署的Edge应用程序。 除非需要删除已部署的[!DNL Edge]应用程序，否则不要使用以下单元格。
 
 ```python
 if edge_utils.delete_from_edge(service_id=service_id):
@@ -472,4 +472,4 @@ else:
 
 ## 后续步骤
 
-按照上面的教程，您已经成功地培训了ONNX模型并将其上传到实时机器学习模型商店。 此外，您还对实时机器学习模型进行了评分和部署。 如果要进一步了解可用于模型创作的节点，请访问节 [点参考指南](./node-reference.md)。
+按照上面的教程，您已经成功地培训了ONNX模型并将其上传到实时机器学习模型商店。 此外，您还对实时机器学习模型进行了评分和部署。 如果要进一步了解可用于模型创作的节点，请访问[节点参考指南](./node-reference.md)。
