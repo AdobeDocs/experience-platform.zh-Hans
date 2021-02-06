@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；命名空间;命名空间;命名空间;命名空间；身份命名空间；身份命名空间；身份；身份；身份；身份；身份；身份服务；身份服务
 solution: Experience Platform
-title: Adobe Experience Platform Identity Service
+title: 身份命名空间概述
 topic: overview
 description: '身份命名空间是 Identity Service 的组件，充当与身份相关的上下文指示器。例如，它们将值“name@email.com”区分为电子邮件地址或数字CRM ID“443522”。 '
 translation-type: tm+mt
-source-git-commit: 0547c33e831fe1ac684f55a0e79978cd7f191e65
+source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
 workflow-type: tm+mt
-source-wordcount: '1475'
+source-wordcount: '1473'
 ht-degree: 2%
 
 ---
