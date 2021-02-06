@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform;retail sales recipe;Data Science Workspace;popular topics;recipes;pre build recipe
+keywords: Experience Platform；零售销售菜谱；数据科学工作区；热门主题；菜谱；预建菜谱
 solution: Experience Platform
 title: 零售销售处方
 topic: overview
 description: “零售销售”菜谱允许您预测特定时间段内系统初始的所有商店的销售预测。 通过准确的预测模型，零售商将能够找到需求与定价策略之间的关系并做出优化的定价决策，以最大化销售和收入。
 translation-type: tm+mt
-source-git-commit: 7615476c4b728b451638f51cfaa8e8f3b432d659
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '571'
+source-wordcount: '585'
 ht-degree: 2%
 
 ---
@@ -32,13 +32,13 @@ ht-degree: 2%
 
 ## 如何开始？
 
-您可以按照本教程开始 [学习](../jupyterlab/create-a-recipe.md)。
+您可以通过以下教程开始操作：[tutorial](../jupyterlab/create-a-recipe.md)。
 
-本教程将在Jupyter笔记本中创建零售销售菜谱，并使用笔记本制作菜谱工作流程在Adobe Experience Platform创建菜谱。
+本教程将在Jupyter笔记本中创建零售销售菜谱，并使用笔记本到菜谱工作流程在Adobe Experience Platform创建菜谱。
 
 ## 数据模式
 
-此菜谱使 [用XDM模式](../../xdm/schema/field-dictionary.md) ，对数据进行建模。 此菜谱使用的模式如下所示：
+此菜谱使用[XDM模式](../../xdm/schema/field-dictionary.md)来模拟数据。 此菜谱使用的模式如下所示：
 
 | 字段名称 | 类型 |
 --- | ---
@@ -57,7 +57,7 @@ ht-degree: 2%
 
 ## 算法
 
-首先，加载DSWRetailSales模式 *中的培训* 数据集。 在此基础上，采用梯度推进回归 [算法对模型进行训练](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)。 渐变提升使用的思想是弱学习者（至少比随机机会略好）可以形成一系列侧重于改善前一个学习者弱点的学习者。 总之，它们可用于创建强大的预测模型。
+首先，加载&#x200B;*DSWRetailSales*&#x200B;模式中的培训数据集。 在此，使用[梯度提升回归算法](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html)训练模型。 渐变提升使用的思想是弱学习者（至少比随机机会略好）可以形成一系列侧重于改善前一个学习者弱点的学习者。 总之，它们可用于创建强大的预测模型。
 
 该过程涉及三个元素：损失函数、弱学习者和加性模型。
 
