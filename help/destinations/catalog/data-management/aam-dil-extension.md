@@ -1,21 +1,17 @@
 ---
 keywords: Audience ManagerDIL扩展；目标受众管理器；dil扩展
-title: Audience ManagerDIL扩展
-seo-title: Audience ManagerDIL扩展
+title: Audience ManagerDIL扩展目标
 description: Audience ManagerDIL扩展是Adobe Experience Platform的一个数据管理平台(DMP)目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Audience ManagerDIL扩展是Adobe Experience Platform的一个数据管理平台(DMP)目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '560'
 ht-degree: 3%
 
 ---
 
 
 # Audience ManagerDIL扩展{#aam-dil-extension}
-
-## 概述 {#overview}
 
 这是Adobe Audience ManagerData Integration Library扩展（客户端实施）。 注意：此扩展不用于Adobe Analytics数据的服务器端转发(SSF)。 对于SSF，请使用Adobe Analytics扩展。 重要：从版本8.0开始，DIL对[!DNL Experience Cloud] ID服务版本3.3或更高版本有硬依赖关系。 请同时实施[!DNL Experience Cloud] ID服务和DIL以获得完整的[!DNL Audience Manager]数据集成功能。
 
