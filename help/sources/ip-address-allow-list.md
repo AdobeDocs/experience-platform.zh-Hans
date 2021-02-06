@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；ip地址；ip地址；ip地址允许列表;允许列表
 description: 在使用源连接器之前，必须将IP地址添加到允许列表。
 solution: Experience Platform
-title: IP地址允许列表
+title: 源连接的IP地址允许列表
 topic: overview
 translation-type: tm+mt
-source-git-commit: a812ad3b130c5998013688dcda522e7d20ae578f
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '110'
+source-wordcount: '113'
 ht-degree: 0%
 
 ---
