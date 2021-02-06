@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；示例查询；示例查询;adobe分析；
 solution: Experience Platform
-title: 示例查询
+title: Adobe Analytics数据查询示例
 topic: queries
 description: 来自选定Adobe Analytics报告套件的数据将转换为XDM ExperienceEvents并作为数据集引入Adobe Experience Platform。 此文档概括了Adobe Experience Platform查询服务利用此数据的许多用例，其中包含的示例查询应与您的Adobe Analytics数据集配合使用。
 translation-type: tm+mt
-source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1021'
 ht-degree: 1%
 
 ---
@@ -215,8 +215,8 @@ LIMIT 20
 
 | eVar6（产品查找方法） | 收入 | 订单 | 产品视图 | 购物车 |
 | ------------------------------ | ------- | ------ | ------------- | ----- |
-| 内部搜索：夏季衬衫 | 19.99 | 1 | 3 | 1 |
-| 内部搜索：冬季帽 | 12.99 | 1 | 1 | 1 |
+| 内部搜索：夏季衬衫 | 19.99 | 1 | 1 | 3 |
+| 内部搜索：冬季帽 | 12.99 | 1 | 3 | 1 |
 
 要进一步了解如何使用转换语法，请阅读有关使用转换语法](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en#implement-using-conversion-variable-syntax)实现eVar的Adobe Analytics文档。[
 
