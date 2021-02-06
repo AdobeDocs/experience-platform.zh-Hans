@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: 策略服务API开发人员指南
+title: 策略服务API指南
 topic: developer guide
-description: 了解如何使用策略服务API管理Experience Platform中的数据使用标签和策略。
+description: 策略服务API允许开发人员在Experience Platform中管理数据使用标签和策略。 请按照本指南学习如何使用API执行关键操作。
 translation-type: tm+mt
-source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '495'
-ht-degree: 1%
+source-wordcount: '504'
+ht-degree: 0%
 
 ---
 
 
-# [!DNL Policy Service] API开发人员指南
+# [!DNL Policy Service] API指南
 
 Adobe Experience Platform[!DNL Data Governance]允许您管理客户数据并确保符合适用于数据使用的法规、限制和政策。 它在[!DNL Experience Platform]的各个级别中起着关键作用，包括编目、数据谱系、数据使用标签、数据使用策略以及控制数据在营销活动中的使用。
 
