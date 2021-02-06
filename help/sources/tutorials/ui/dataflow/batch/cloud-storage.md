@@ -6,7 +6,7 @@ topic: overview
 type: Tutorial
 description: 数据流是从源中检索数据并将其引入平台数据集的计划任务。 本教程提供使用云存储帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: 2d1b49d774d04e7befbcc1c9e5417ee82323634a
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
 source-wordcount: '1898'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 ---
 
 
-# 在UI中为云存储批处理连接器配置数据流
+# 在UI中为云存储批处理连接配置数据流
 
 数据流是从源中检索数据并将其引入[!DNL Platform]数据集的计划任务。 本教程提供使用云存储帐户配置新数据流的步骤。
 
