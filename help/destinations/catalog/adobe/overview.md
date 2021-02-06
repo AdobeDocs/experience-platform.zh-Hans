@@ -1,19 +1,17 @@
 ---
 keywords: 目的地；体验云解决方案；目标;目标目标；广告云；advertising cloud;受众经理；adobe目标目标；目标;受众管理器目标；
-title: Adobe目标
-seo-title: Adobe目标
+title: Adobe目标概述
 description: 通过将您在Platform中的数据与Adobe Experience Cloud的其他广告定位、个性化、营销自动化等解决方案相连，管理客户体验
-seo-description: 通过将您在Platform中的数据与Adobe Experience Cloud的其他广告定位、个性化、营销自动化等解决方案相连，管理客户体验
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '243'
-ht-degree: 12%
+source-wordcount: '219'
+ht-degree: 13%
 
 ---
 
 
-# Adobe目标{#adobe-destinations}
+# Adobe目标概述{#adobe-destinations}
 
 通过将您在Adobe Experience Platform的数据与Adobe Experience Cloud的其他广告定位、个性化、营销自动化等解决方案连接，管理客户体验。
 
