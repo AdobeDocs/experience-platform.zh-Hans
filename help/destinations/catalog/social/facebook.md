@@ -1,21 +1,17 @@
 ---
 keywords: facebook扩展；facebook扩展；facebook目标；facebook;instagram;messenger;facebook messenger
-title: Facebook目标
-seo-title: Facebook目标
+title: Facebook扩展目标
 description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
-seo-description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 38b2bfd93bda85cf87dde4e0345ca9c11e419c2f
+source-git-commit: aa2088d30716f56ac2909214badbb39c0ae97855
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '952'
+ht-degree: 3%
 
 ---
 
 
-# [!DNL Facebook] 目标
-
-## 概述 {#overview}
+# [!DNL Facebook] 扩展
 
 >[!IMPORTANT]
 >
