@@ -1,21 +1,17 @@
 ---
 keywords: 分支；分支扩展；分支目标
-title: 分支扩展
-seo-title: 分支扩展
+title: 分支扩展目标
 description: 分店扩展是Adobe Experience Platform的广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: 分店扩展是Adobe Experience Platform的广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '525'
+source-wordcount: '498'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Branch] 扩展 {#branch-extension}
-
-## 概述 {#overview}
 
 Branch提供强大的链接和解决方案，帮助您跨所有设备、渠道和平台获取、吸引和衡量。
 
