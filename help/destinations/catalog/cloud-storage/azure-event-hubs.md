@@ -1,25 +1,21 @@
 ---
 keywords: Azure事件集线器目标；azure事件集线器；azure eventhub
-title: （测试版）Azure事件集线器目标
-seo-title: （测试版）Azure事件集线器目标
+title: （测试版）Azure事件集线器连接目标
 description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
-seo-description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 translation-type: tm+mt
-source-git-commit: 97c0a9f4726ec85b7a72dc682fbd201a6152c1ba
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '487'
 ht-degree: 2%
 
 ---
 
 
-# （测试版）[!DNL Azure Event Hubs]目标
+# （测试版）[!DNL Azure Event Hubs]连接
 
 >[!IMPORTANT]
 >
 >平台中的[!DNL Azure Event Hubs]目标当前处于测试状态。 文档和功能可能会发生变化。
-
-## 概述 {#overview}
 
 [!DNL Azure Event Hubs] 是大数据流平台和事件摄取服务。它每秒可以接收和处理数百万个事件。 通过使用任何实时分析提供者或批处理/事件适配器，可以转换和存储发送到存储中心的数据。
 
