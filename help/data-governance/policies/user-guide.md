@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据管理；数据使用策略用户指南
 solution: Experience Platform
-title: 数据使用策略用户指南
+title: 在UI中管理数据使用策略
 topic: policies
 description: Adobe Experience Platform数据管理提供了一个用户界面，允许您创建和管理数据使用策略。 此文档概述了在Experience Platform用户界面的“策略”工作区中可以执行的操作。
 translation-type: tm+mt
-source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '773'
+source-wordcount: '772'
 ht-degree: 0%
 
 ---
 
 
-# 数据使用策略用户指南
+# 在UI中管理数据使用策略
 
 Adobe Experience Platform[!DNL Data Governance]提供一个用户界面，允许您创建和管理数据使用策略。 此文档概述了在[!DNL Experience Platform]用户界面的&#x200B;**策略**&#x200B;工作区中可以执行的操作。
 
@@ -28,7 +28,7 @@ Adobe Experience Platform[!DNL Data Governance]提供一个用户界面，允许
 - [[!DNL Data Governance]](../home.md)
 - [数据使用策略](./overview.md)
 
-## 视图数据使用策略{#view-policies}
+## 视图现有策略{#view-policies}
 
 在[!DNL Experience Platform] UI中，选择&#x200B;**[!UICONTROL 策略]**&#x200B;以打开&#x200B;**[!UICONTROL 策略]**&#x200B;工作区。 在&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中，您可以看到可用策略的列表，包括其关联的标签、营销操作和状态。
 
@@ -38,7 +38,7 @@ Adobe Experience Platform[!DNL Data Governance]提供一个用户界面，允许
 
 ![](../images/policies/policy-details.png)
 
-## 创建自定义数据使用策略{#create-policy}
+## 创建自定义策略{#create-policy}
 
 要创建新的自定义数据使用策略，请在&#x200B;**[!UICONTROL 策略]**&#x200B;工作区的&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡的右上角选择&#x200B;**[!UICONTROL 创建策略]**。
 
@@ -68,7 +68,7 @@ Adobe Experience Platform[!DNL Data Governance]提供一个用户界面，允许
 
 ![](../images/policies/created-policy.png)
 
-## 启用或禁用数据使用策略{#enable}
+## 启用或禁用策略{#enable}
 
 默认情况下，所有数据使用策略(包括Adobe提供的核心策略)都处于禁用状态。 要考虑实施单个策略，必须通过API或UI手动启用该策略。
 
