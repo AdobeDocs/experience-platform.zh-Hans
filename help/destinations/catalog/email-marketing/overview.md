@@ -1,20 +1,18 @@
 ---
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标
-title: 电子邮件营销目标
-seo-title: 电子邮件营销目标
+title: 电子邮件营销目标概述
 type: Tutorial
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
-seo-description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，如发送促销电子邮件活动。
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '811'
+source-wordcount: '791'
 ht-degree: 1%
 
 ---
 
 
-# 电子邮件营销目标{#email-marketing-destinations}
+# 电子邮件营销目标概述{#email-marketing-destinations}
 
 电子邮件服务提供商(ESP)使您能够管理电子邮件营销活动，如发送促销电子邮件活动。 Adobe Experience Platform通过允许您将细分激活到电子邮件营销目标，与ESP集成。
 
