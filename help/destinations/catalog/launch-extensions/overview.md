@@ -1,19 +1,17 @@
 ---
 keywords: 启动扩展；启动扩展；启动目标；平台启动扩展；平台启动扩展；平台启动目标
-title: Experience Platform Launch 扩展
-seo-title: Experience Platform Launch 扩展
-description: Launch 是 Adobe 推出的新一代标签管理功能。Launch 为客户提供了一种部署和管理所有分析、营销和广告标签的简便方法，这些标签是改善相关客户体验所必需的标签。
-seo-description: Launch 是 Adobe 推出的新一代标签管理功能。Launch 为客户提供了一种部署和管理所有分析、营销和广告标签的简便方法，这些标签是改善相关客户体验所必需的标签。
+title: Adobe Experience Platform Launch扩展目的地
+description: Adobe Experience Platform Launch是Adobe的新一代标签管理功能。  Platform Launch 为客户提供了一种简单的方式来部署和管理所有用来改善相关客户体验的分析、营销和广告标记。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '648'
-ht-degree: 19%
+source-wordcount: '617'
+ht-degree: 11%
 
 ---
 
 
-# Adobe Experience Platform Launch 扩展 {#overview.md}
+# Adobe Experience Platform Launch 扩展
 
 Adobe Experience Platform Launch是Adobe的新一代标签管理功能。  Platform Launch 为客户提供了一种简单的方式来部署和管理所有用来改善相关客户体验的分析、营销和广告标记。Platform Launch作为一项附带的增值功能提供给Adobe Experience Cloud客户。
 
