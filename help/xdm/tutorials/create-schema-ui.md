@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主题；热门主题；UI;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式编辑器；模式编辑器；模式;模式;模式;模式；创建
 solution: Experience Platform
-title: 使用模式编辑器创建模式 (schema)
+title: 使用模式编辑器创建模式
 topic: tutorial
 type: Tutorial
 description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
 translation-type: tm+mt
-source-git-commit: e5c5fea783aa4088d225f771905fa8b2098613cf
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '3600'
 ht-degree: 0%
