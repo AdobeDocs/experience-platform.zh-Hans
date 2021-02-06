@@ -5,17 +5,17 @@ seo-title: 目标目录
 description: 目标目录提供已准备好接收数据的可用目标的列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
 seo-description: 目标目录提供已准备好接收数据的可用目标的列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '174'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Destinations Catalog]
+# 目标目录
 
-**[!DNL Destinations Catalog]**&#x200B;提供已准备好接收数据的可用目标平台的列表。 这些目标平台包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台、Experience Platform扩展等。
+目标目录提供可用目标平台的列表，这些平台已准备好接收数据。 这些目标平台包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台、Experience Platform扩展等。
 
 浏览目录以确定最适合您的广告和个性化使用案例的目标平台，然后设置流以激活您的细分到目标。
 
