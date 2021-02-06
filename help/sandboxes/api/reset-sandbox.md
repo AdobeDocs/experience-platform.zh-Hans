@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;reset sandbox
+keywords: Experience Platform；主页；热门主题；重置沙箱
 solution: Experience Platform
-title: 重置沙箱
+title: 在API中重置沙箱
 topic: developer guide
 description: 开发沙箱具有“工厂重置”功能，可从沙箱中删除所有非默认资源。 可以通过发出PUT请求来重置沙箱，该请求在请求路径中包含沙箱的名称。
 translation-type: tm+mt
-source-git-commit: 0af537e965605e6c3e02963889acd85b9d780654
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '169'
 ht-degree: 3%
 
 ---
 
 
-# 重置沙箱
+# 在API中重置沙箱
 
-开发沙箱具有“工厂重置”功能，可从沙箱中删除所有非默认资源。 可以通过发出PUT请求来重置沙箱，该请求在请 `name` 求路径中包含沙箱。
+开发沙箱具有“工厂重置”功能，可从沙箱中删除所有非默认资源。 可以通过发出PUT请求来重置沙箱，该请求在请求路径中包含沙箱的`name`。
 
 **API格式**
 
@@ -25,7 +25,7 @@ PUT /sandboxes/{SANDBOX_NAME}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SANDBOX_NAME}` | 要 `name` 重置的沙箱的属性。 |
+| `{SANDBOX_NAME}` | 要重置的沙箱的`name`属性。 |
 
 **请求**
 
@@ -50,7 +50,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回更新沙箱的详细信息，显示其 `state` 正在“重置”。
+成功的响应返回更新沙箱的详细信息，显示其`state`正在“重置”。
 
 ```json
 {
@@ -65,4 +65,4 @@ curl -X PUT \
 
 >[!NOTE]
 >
->重置沙箱后，系统需要大约15分钟才能进行设置。 设置沙箱后，沙箱 `state` 的变为“活动”或“失败”。
+>重置沙箱后，系统需要大约15分钟才能进行设置。 设置后，沙箱的`state`将变为“活动”或“失败”。
