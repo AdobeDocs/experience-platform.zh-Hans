@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；启用数据集；数据集；数据集
 solution: Experience Platform
-title: 数据集用户指南
+title: 数据集UI指南
 topic: datasets
-description: 本数据集用户指南提供了有关在Adobe Experience Platform用户界面内处理数据集时执行常见操作的说明。
+description: 了解如何在Adobe Experience Platform用户界面中处理数据集时执行常见操作。
 translation-type: tm+mt
-source-git-commit: d2ace7cadb06f77bdf14b6a4ef83e879c4ca88fd
+source-git-commit: 2b8c08dad34bcd69368c00050323835f05379c82
 workflow-type: tm+mt
-source-wordcount: '1143'
+source-wordcount: '1140'
 ht-degree: 0%
 
 ---
 
 
-# 数据集用户指南
+# 数据集UI指南
 
 本用户指南提供了在Adobe Experience Platform用户界面内处理数据集时执行常见操作的说明。
 
@@ -81,7 +81,7 @@ ht-degree: 0%
 
 ### 使用CSV文件{#csv}创建数据集
 
-使用CSV文件创建数据集时，会创建一个专门模式，以为数据集提供与提供的CSV文件匹配的结构。 在&#x200B;**[!UICONTROL 创建数据集]**&#x200B;屏幕中，单击标有&#x200B;**[!UICONTROL 从CSV文件创建数据集]**&#x200B;的框。
+当使用CSV文件创建数据集时，会创建专门模式，以为数据集提供与提供的CSV文件匹配的结构。 在&#x200B;**[!UICONTROL 创建数据集]**&#x200B;屏幕中，单击标有&#x200B;**[!UICONTROL 从CSV文件创建数据集]**&#x200B;的框。
 
 ![](../images/datasets/user-guide/create_dataset_csv.png)
 
