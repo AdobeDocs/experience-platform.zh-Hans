@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；示例查询；示例查询;adobe目标;
 solution: Experience Platform
-title: 示例查询
+title: Adobe Target数据查询示例
 topic: queries
 description: 来自Adobe Target的数据将转换为体验事件XDM模式，并作为数据集引入Experience Platform。 此文档包含将查询服务用于Adobe Target数据集的示例查询。
 translation-type: tm+mt
-source-git-commit: e2c648829bb3268ab319da934f5cc6cc811290b3
+source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
 workflow-type: tm+mt
-source-wordcount: '324'
+source-wordcount: '328'
 ht-degree: 1%
 
 ---
