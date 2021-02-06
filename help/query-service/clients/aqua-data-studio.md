@@ -1,27 +1,25 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；Aqua Data Studio;Aqua Data Studio；连接到查询服务；
 solution: Experience Platform
-title: 与Aqua Data Studio连接
+title: 将Aqua Data Studio连接到查询服务
 topic: connect
 description: 此文档通过步骤将Aqua Data Studio与Adobe Experience Platform查询服务连接。
 translation-type: tm+mt
-source-git-commit: eac93f3465fa6ce4af7a6aa783cf5f8fb4ac9b9b
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '297'
+source-wordcount: '300'
 ht-degree: 1%
 
 ---
 
 
-# [!DNL Aqua Data Studio]
+# 将[!DNL Aqua Data Studio]连接到查询服务
 
 本文档介绍将[!DNL Aqua Data Studio]与Adobe Experience Platform[!DNL Query Service]连接的步骤。
 
 >[!NOTE]
 >
 > 本指南假定您已经具有访问[!DNL Aqua Data Studio]的权限，并且熟悉如何导航其接口。 有关[!DNL Aqua Data Studio]的详细信息，请参阅[offical [!DNL Aqua Data Studio] 文档](https://www.aquaclusters.com/app/home/project/public/aquadatastudio/wikibook/Documentation21.1/page/0/Aqua-Data-Studio-21-1)。
-
-## 连接[!DNL Aqua Data Studio]与平台
 
 安装[!DNL Aqua Data Studio]后，必须先注册服务器。 从主菜单中，选择&#x200B;**[!DNL Server]**，后跟&#x200B;**[!DNL Register Server]**。
 
