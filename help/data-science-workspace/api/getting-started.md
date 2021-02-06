@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；开发人员指南；端点；数据科学工作区；热门主题；数据科学工作区；数据科学
 solution: Experience Platform
-title: Sensei Machine Learning API开发人员指南
+title: Sensei机器学习API指南
 topic: Developer guide
-description: 此开发人员指南提供帮助您使用Sensei机器学习API进行开始的步骤，并演示了对各种数据科学工作区资源执行CRUD操作的API调用。
+description: Sensei机器学习API允许开发人员对各种数据科学工作区资源执行CRUD操作。 请按照本指南学习如何使用API执行关键操作。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '243'
 ht-degree: 2%
 
 ---
 
 
-# [!DNL Sensei Machine Learning] API开发人员指南
+# [!DNL Sensei Machine Learning] API指南
 
 [!DNL Sensei Machine Learning] API为数据科学家提供了组织和管理机器学习服务的机制，从算法入门到实验再到服务部署。
 
