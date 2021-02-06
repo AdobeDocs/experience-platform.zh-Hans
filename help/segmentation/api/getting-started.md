@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；api;
 solution: Experience Platform
-title: 分段服务开发人员指南
+title: Segmentation Service API快速入门
 topic: developer guide
 description: 以下文档提供了成功使用分段API所需了解的其他信息。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '322'
+source-wordcount: '329'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Segmentation Service] {#getting-started}入门
+# Segmentation Service API {#getting-started}快速入门
 
 Adobe Experience Platform[!DNL Segmentation Service]允许您在Adobe Experience Platform建立细分，并根据[!DNL Real-time Customer Profile]数据生成受众。
 
