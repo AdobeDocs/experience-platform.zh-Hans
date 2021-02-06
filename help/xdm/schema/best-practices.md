@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；模式;模式；枚举；主要身份；主要身份；XDM个人用户档案；体验事件;XDM体验事件;XDM体验事件；体验事件；体验事件；XDM体验事件；模式设计；最佳实践
 solution: Experience Platform
-title: Adobe Experience Platform数据建模的最佳实践
+title: 数据建模的最佳实践
 topic: overview
 description: 本文档介绍了体验数据模型(XDM)模式，以及构成要在Adobe Experience Platform使用的模式的构件、原则和最佳做法。
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '2515'
+source-wordcount: '2507'
 ht-degree: 1%
 
 ---
 
 
-# Adobe Experience Platform数据建模的最佳实践
+# 数据建模的最佳实践
 
 [!DNL Experience Data Model] (XDM)是核心框架，它通过提供用于下游Adobe Experience Platform服务的通用结构和定义来标准化客户体验数据。通过遵守XDM标准，所有客户体验数据都可以整合到一个公共表现形式中，使您能够从客户行动中获得宝贵的洞察，通过细分定义客户受众，并表达客户属性以实现个性化。
 
@@ -75,7 +75,7 @@ ht-degree: 1%
 | --- | --- | --- | --- | --- |
 | 1234567 | Add | 邮政编码275098 | 2 | 10月1日，上午10点32分 |
 | 1234567 | 删除 | 邮政编码275098 | 1 | 10月1日，上午10点33分 |
-| 1234567 | 添加 | 486502 | 1 | 10月1日，上午10点41分 |
+| 1234567 | 添加 | 486502 | 3 | 10月1日，上午10点41分 |
 | 1234567 | 添加 | 910482 | 5 | 10月3日，下午2:15 |
 
 #### 细分用例
