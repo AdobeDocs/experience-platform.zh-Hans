@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主题；流摄取；摄取；时间序列数据；流时间序列数据；
 solution: Experience Platform
-title: 流式时间序列数据
+title: 使用流摄取API的流式时间序列数据
 topic: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform数据摄取服务API的一部分。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '1234'
+source-wordcount: '1236'
 ht-degree: 2%
 
 ---
 
 
-# 将时间序列数据流化到Adobe Experience Platform
+# 使用流摄取API流式传输时间序列数据
 
 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform[!DNL Data Ingestion Service] API的一部分。
 
