@@ -1,21 +1,17 @@
 ---
 keywords: Google广告；Google广告；Google广告扩展；Google Ads扩展
-title: Google广告扩展
-seo-title: Google广告扩展
+title: Google Ads Extension Destination
 description: Google Ads扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Google Ads扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '538'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Google Ads] 扩展
-
-## 概述 {#overview}
 
 此扩展跟踪单击[!DNL Google Ads]的用户的转换。 您还需要安装gtag.js扩展并将它添加到您的库，因为[!DNL Google Ads]取决于它。
 
