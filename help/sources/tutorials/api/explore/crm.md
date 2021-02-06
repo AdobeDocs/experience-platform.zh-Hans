@@ -5,7 +5,7 @@ title: 使用Flow Service API探索CRM系统
 topic: overview
 description: 本教程使用Flow Service API来浏览CRM系统。
 translation-type: tm+mt
-source-git-commit: 48a5dcfe5679e360da1e33f6021dc1229b92948f
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
 source-wordcount: '589'
 ht-degree: 2%
