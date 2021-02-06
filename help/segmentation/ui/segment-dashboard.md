@@ -1,19 +1,19 @@
 ---
-keywords: Experience Platform;profile;segment;segments;segmentation;user interface;UI;customization;segment dashboard;dashboard
-title: 细分仪表板
+keywords: Experience Platform;用户档案；细分；细分；细分；用户界面；UI；自定义；细分仪表板;仪表板
+title: 区段仪表板UI指南
 description: '本指南概述了Adobe Experience PlatformUI中提供的细分仪表板。 '
 topic: guide
 type: Documentation
 translation-type: tm+mt
-source-git-commit: 63758450276d47e7e0eddeb047779222cb80a3e2
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '728'
+source-wordcount: '743'
 ht-degree: 1%
 
 ---
 
 
-# (Alpha)段仪表板 {#segment-dashboard}
+# (Alpha)段仪表板{#segment-dashboard}
 
 >[!IMPORTANT]
 >
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 Adobe Experience Platform用户界面(UI)提供了一个仪表板，您可以通过它视图有关区段的重要信息，这些信息是在每日快照中捕获的。 本指南概述了如何在UI中访问和使用区段仪表板，并提供了有关仪表板中显示的可视化的更多信息。
 
-有关平台用户界面中所有Adobe Experience Platform分段服务功能的概述，请访问分段 [服务UI指南](overview.md)。
+有关平台用户界面中所有Adobe Experience Platform分段服务功能的概述，请访问[分段服务UI指南](overview.md)。
 
 ## 细分仪表板数据
 
@@ -35,23 +35,23 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，您可以通
 
 ## 探索细分仪表板
 
-要导航到平台UI中的区段仪表板，请在左 **[!UICONTROL 边栏]** 中选择区段，然后选择 **[!UICONTROL 概述]** 选项卡以显示仪表板。
+要导航到平台UI中的段仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 区段]**，然后选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡以显示仪表板。
 
 ![](../images/ui/segment-dashboard/dashboard-overview.png)
 
 ### 选择区段
 
-要在仪表板中选择要视图的区段，请为“选择区段”文本框选 **[!UICONTROL 择对话框]** 选择器。
+要在仪表板中选择要视图的区段，请为&#x200B;**[!UICONTROL 选择区段]**&#x200B;文本框选择对话框选择器。
 
 ![](../images/ui/segment-dashboard/select-segment.png)
 
 >[!NOTE]
 >
->如果已选择区段，则首先使 `X` 用删除该区段，随后将显示对话框选择器。
+>如果已选择区段，请首先使用`X`删除该区段，然后显示对话框选择器。
 >
 >![](../images/ui/segment-dashboard/remove-segment.png)
 
-此时 **[!UICONTROL 会打开]** “选择区段”对话框，您可以选择要视图的区段。 选择所需的区段后，使 **[!UICONTROL 用]** “选择”返回仪表板。
+将打开&#x200B;**[!UICONTROL 选择段]**&#x200B;对话框，允许您选择要视图的段。 选择所需的区段后，使用&#x200B;**[!UICONTROL 选择]**&#x200B;返回仪表板。
 
 ![](../images/ui/segment-dashboard/select-segment-dialog.png)
 
@@ -59,7 +59,7 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，您可以通
 
 选择区段后，合并策略文本框将自动填充与该区段相关的合并策略。
 
-要进一步了解如何在Experience Platform中构建区段，请 [访问区段构建器UI指南](segment-builder.md)。 有关合并策略的详细信息，请首先阅读实 [时客户用户档案概述](../../profile/home.md)。
+要进一步了解如何在Experience Platform中构建区段，请访问[区段生成器UI指南](segment-builder.md)。 有关合并策略的详细信息，请首先阅读[实时客户用户档案概述](../../profile/home.md)。
 
 ![](../images/ui/segment-dashboard/merge-policy.png)
 
@@ -78,27 +78,27 @@ Experience Platform提供多个构件，您可以使用这些构件来可视化�
 
 ### [!UICONTROL 区段大小] {#segment-size}
 
-区段 **[!UICONTROL 大小构件]** 显示拍摄快照时所选区段内合并用户档案的总数。 此数字是将用户档案合并策略应用于用户档案数据的结果，以便将片段合并到一起，为区段中的每个个人形成单个用户档案。
+**[!UICONTROL 区段大小]**&#x200B;构件显示拍摄快照时所选区段内合并用户档案的总数。 此数字是将用户档案合并策略应用于用户档案数据的结果，以便将片段合并到一起，为区段中的每个个人形成单个用户档案。
 
-有关片段和合并用户档案的更多信息，请首先阅读 [实时客户用户档案概述](../home.md)。
+有关片段和合并用户档案的详细信息，请首先阅读[实时客户用户档案概述](../home.md)。
 
 ![](../images/ui/segment-dashboard/segment-size.png)
 
 ### [!UICONTROL 用户档案，按命名空间] {#profiles-by-namespace}
 
-按 **[!UICONTROL 用户档案构件划分的命名空间]** ，显示选定区段中所有合并用户档案的命名空间细分。 按ID用户档案  (即，将每个命名空间显示的值相加)划分的命名空间总数通常将高于区段中的用户档案总数，因为一个用户档案可能具有与其关联的多个命名空间。 例如，如果客户在多个渠道上与您的品牌互动，则可能会有多个命名空间与该个别客户关联。
+按命名空间&#x200B;]**的**[!UICONTROL &#x200B;用户档案构件显示选定区段中所有合并用户档案的命名空间细分。 按[!UICONTROL ID用户档案](换言之，将每个命名空间显示的值相加)列出的用户档案总数通常会高于段中的命名空间总数，因为一个用户档案可能具有与其关联的多个命名空间。 例如，如果客户在多个渠道上与您的品牌互动，则可能会有多个命名空间与该个别客户关联。
 
-要进一步了解身份命名空间，请访问 [Adobe Experience Platform身份服务文档](../../identity-service/home.md)。
+要了解有关身份命名空间的更多信息，请访问[Adobe Experience Platform身份服务文档](../../identity-service/home.md)。
 
 ![](../images/ui/segment-dashboard/profiles-by-namespace.png)
 
 ## 其他仪表板
 
-平台UI提供了更多仪表板，用于在Experience Platform内查看数据快照。 这些仪表板包括实时客户用户档案和许 [!UICONTROL 可证使用]。 有关这些附加仪表板的详细信息，请从以下链接中进行选择：
+平台UI提供了更多仪表板，用于在Experience Platform内查看数据快照。 这些仪表板包括实时客户用户档案和[!UICONTROL 许可证使用情况]。 有关这些附加仪表板的详细信息，请从以下链接中进行选择：
 
 * [[!DNL Profile] 仪表板](../../profile/ui/profile-dashboard.md)
-* [[!UICONTROL 许可证使用] 仪表板](../../landing/license-usage-dashboard.md)
+* [[!UICONTROL 许可证] 用板](../../landing/license-usage-dashboard.md)
 
 ## 后续步骤
 
-通过遵循此文档，您现在应能够找到区段仪表板并选择要视图的区段。 您还应了解可用构件中显示的度量。 要进一步了解如何在Experience PlatformUI中使用区段，请参阅 [分段服务UI指南](overview.md)。
+通过遵循此文档，您现在应能够找到区段仪表板并选择要视图的区段。 您还应了解可用构件中显示的度量。 要进一步了解如何在Experience PlatformUI中使用区段，请参阅[分段服务UI指南](overview.md)。
