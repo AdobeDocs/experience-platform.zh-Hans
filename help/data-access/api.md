@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform;home;popular topics;data access;python sdk;spark sdk;data access api;export;Export
+keywords: Experience Platform；主页；热门主题；数据访问；python sdk;spark sdk；数据访问api；导出；导出
 solution: Experience Platform
-title: 数据访问开发人员指南
+title: 数据访问API指南
 topic: developer guide
-description: Data Access API为用户提供RESTful界面，侧重于在Experience Platform内摄取的数据集的可发现性和可访问性，从而支持Adobe Experience Platform。
+description: Data Access API通过为开发人员提供RESTful界面支持Adobe Experience Platform，该界面侧重于Experience Platform内所摄取数据集的可发现性和可访问性。
 translation-type: tm+mt
-source-git-commit: 172710c62b6f60de74e05364edb1191fbba0ff64
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '512'
+source-wordcount: '528'
 ht-degree: 4%
 
 ---
 
 
-# 数据访问开发人员指南
+# 数据访问API指南
 
-Data Access API为用户提供RESTful界面，侧重于Adobe Experience Platform内所摄取数据集的可发现性和可访问性，从而支持该 [!DNL Experience Platform]系统。
+Data Access API通过为用户提供一个RESTful界面，侧重于[!DNL Experience Platform]内所摄取数据集的可发现性和可访问性，从而支持Adobe Experience Platform。
 
 ![Experience Platform时的数据访问](images/Data_Access_Experience_Platform.png)
 
 ## API规范参考
 
-Swagger API参考文档可在此处 [找到](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)。
+Swagger API参考文档可在[此处](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)找到。
 
 ## 术语
 
@@ -95,7 +95,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 }
 ```
 
-数 `"data"` 组包含指定批次中所有文件的列表。 返回的每个文件在字段中都包`{FILE_ID}`含其自己的唯一 `"dataSetFileId"` ID()。 此唯一ID随后可用于访问或下载文件。
+`"data"`数组包含指定批次中所有文件的列表。 返回的每个文件在`"dataSetFileId"`字段中都有其自己的唯一ID(`{FILE_ID}`)。 此唯一ID随后可用于访问或下载文件。
 
 | 属性 | 描述 |
 | -------- | ----------- |
@@ -104,7 +104,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 
 ## 批量访问和下载文件
 
-通过使用文件标`{FILE_ID}`识符()，数据访问API可用于访问文件的特定详细信息，包括文件名称、大小（以字节为单位）和要下载的链接。
+通过使用文件标识符(`{FILE_ID}`)，数据访问API可用于访问文件的特定详细信息，包括文件名称、字节大小和要下载的链接。
 
 响应将包含一个数据数组。 根据ID所指向的文件是单个文件还是目录，返回的数据数组可能包含属于该目录的单个条目或一列表文件。 每个文件元素都将包含文件的详细信息。
 
@@ -116,7 +116,7 @@ GET /files/{FILE_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{FILE_ID}` | 与要访 `"dataSetFileId"`问的文件的ID相等。 |
+| `{FILE_ID}` | 与`"dataSetFileId"`相等，即要访问的文件的ID。 |
 
 **请求**
 
@@ -204,7 +204,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 ## 访问文件内容
 
-该 [!DNL Data Access] API还可用于访问文件的内容。 然后，这可用于将内容下载到外部源。
+[!DNL Data Access] API还可用于访问文件内容。 然后，这可用于将内容下载到外部源。
 
 **API格式**
 
@@ -237,8 +237,8 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 ## 其他代码范例
 
-有关其他示例，请参阅数 [据访问教程](tutorials/dataset-data.md)。
+有关其他示例，请参阅[数据访问教程](tutorials/dataset-data.md)。
 
 ## 订阅数据获取事件
 
-[!DNL Platform] 通过事件开发人员控制台提供特定的高 [价值订阅](https://www.adobe.com/go/devs_console_ui)。 例如，您可以订阅数据获取事件，以便收到潜在延迟和故障的通知。 有关详细信息，请 [参阅有关订阅数据获取通知](../ingestion/quality/subscribe-events.md) 的教程。
+[!DNL Platform] 通过事件开发人员控制台提供特定的高 [价值订阅](https://www.adobe.com/go/devs_console_ui)。例如，您可以订阅数据获取事件，以便收到潜在延迟和故障的通知。 有关详细信息，请参阅有关[订阅数据获取通知](../ingestion/quality/subscribe-events.md)的教程。
