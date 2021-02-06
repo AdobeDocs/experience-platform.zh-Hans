@@ -1,15 +1,15 @@
 ---
-keywords: Experience Platform;overview;customer ai;popular topics;customer ai overview
+keywords: Experience Platform；概述；客户ai；热门主题；客户ai概述
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
 title: Customer AI 概述
-topic: Customer AI overview
+topic: Customer AI Overview
 description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
-landing-page-description: Customer AI is used to generate custom propensity scores such as churn and conversion for individual profiles at-scale.
+landing-page-description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。
 translation-type: tm+mt
-source-git-commit: de16ebddd8734f082f908f5b6016a1d3eadff04c
+source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
 workflow-type: tm+mt
-source-wordcount: '526'
-ht-degree: 16%
+source-wordcount: '554'
+ht-degree: 18%
 
 ---
 
@@ -37,8 +37,8 @@ Customer AI 用于生成自定义倾向分数，如个人档案大规模的流�
 
 - 不应使用客户人工智能来预测动态定价或客户将购买的价格点。
 - 客户人工智能无法确定提供优惠是否会使客户更有可能购买物品。 虽然您可能决定根据倾向得分发送折扣优惠，但它不一定是转化这些客户的最佳方式。
-- 客户人工智能不是产品推荐工具。 如果您有数千个SKU，请不要将客户AI用作实际产品推荐解决方案(如 [!DNL Adobe Target])。
-- 客户人工智能无法预测客户在购买旅程的哪个阶段，例如，他们处于“认知”、“考虑”、“购买”或“保留”阶段。
+- 客户人工智能不是产品推荐工具。 如果您有数千个SKU，请不要将客户AI用作实际产品推荐解决方案（如[!DNL Adobe Target]）的代理。
+- 客户人工智能无法预测客户处于购买历程的哪个阶段，例如，他们处于“认知”、“考虑”、“购买”或“保留”阶段。
 - 不要使用客户人工智能来确定将来可能购买产品发布的客户。 这要求客户人工智能过去必须具备某些成功事件，才能根据您的数据成功培训机器学习算法。
 
 以下视频旨在支持您对客户人工智能的理解。
@@ -51,4 +51,4 @@ Customer AI 用于生成自定义倾向分数，如个人档案大规模的流�
 
 ## 后续步骤
 
-您可以按照入门指 [南开始](./getting-started.md) 。 本指南将指导您设置客户人工智能的所有必需先决条件。 如果您已准备好所有凭据和数据，请访 [问配置客户AI实例](./user-guide/configure.md)。 它提供了使用客户人工智能的步骤。
+您可以按照[入门指南](./getting-started.md)开始。 本指南将指导您设置客户人工智能的所有必需先决条件。 如果您已准备好所有凭据和数据，请访问[配置客户AI实例](./user-guide/configure.md)。 它提供了使用客户人工智能的步骤。
