@@ -1,21 +1,17 @@
 ---
 keywords: 目标扩展;目标;目标v2;目标v2扩展
-title: Adobe Target v2 扩展
-seo-title: Adobe Target v2 扩展
+title: Adobe Targetv2扩展目的地
 description: Adobe Targetv2扩展是Adobe Experience Platform的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Adobe Targetv2扩展是Adobe Experience Platform的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '562'
-ht-degree: 12%
+source-wordcount: '531'
+ht-degree: 11%
 
 ---
 
 
 # Adobe Target v2 扩展 {#adobe-target-v2-extension}
-
-## 概述 {#overview}
 
 Adobe Target 是 Adobe Experience Cloud 解决方案，可提供定制和个性化客户体验所需的一切功能，从而最大限度地提高您的网站和移动站点、应用程序、社交媒体以及其他数字渠道的收入。
 
