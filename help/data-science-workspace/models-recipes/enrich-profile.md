@@ -4,11 +4,11 @@ solution: Experience Platform
 title: 利用机器学习洞察丰富实时客户用户档案
 topic: tutorial
 type: Tutorial
-description: 此文档提供了如何通过机器学习的洞察丰富实时客户用户档案的指南。
+description: 此文档提供了如何通过机器学习洞察丰富实时客户用户档案的指南。
 translation-type: tm+mt
-source-git-commit: 62e6bb7e72637b06808ff87dc21f40af2c4e2d45
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '635'
+source-wordcount: '640'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 Adobe Experience Platform[!DNL Data Science Workspace]提供用于创建、评估和利用机器学习模型生成数据预测和洞察的工具和资源。 当机器学习洞察被引入支持[!DNL Profile]的数据集时，同一数据也作为[!DNL Profile]记录被引入，然后使用[!DNL Adobe Experience Platform Segmentation Service]进行分段。 在摄取用户档案和时间序列数据时，实时客户用户档案会自动决定在将数据与现有数据合并并更新合并视图之前，通过一个称为流分段的持续过程将数据包括或排除在细分中。 因此，在客户与您的品牌互动时，您可以即时执行计算并做出决策，为客户提供增强的个性化体验。
 
-本文档提供教程链接，这些教程使您能够利用机器学习的洞察丰富[!DNL Real-time Customer Profile]。
+本文档提供教程链接，这些教程使您能够通过机器学习洞察丰富[!DNL Real-time Customer Profile]。
 
 ## 入门指南
 
