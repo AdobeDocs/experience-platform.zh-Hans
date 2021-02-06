@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；导入打包菜谱；数据科学工作区；热门主题；菜谱；api;sensei机器学习；创建引擎
 solution: Experience Platform
-title: 导入打包的菜谱(API)
+title: 使用Sensei Machine Learning API导入打包的菜谱
 topic: tutorial
 type: Tutorial
 description: '本教程使用Sensei Machine Learning API创建引擎，在用户界面中也称为“菜谱”。 '
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '997'
+source-wordcount: '1007'
 ht-degree: 2%
 
 ---
 
 
-# 导入打包的菜谱(API)
+# 使用Sensei Machine Learning API导入打包的菜谱
 
 本教程使用[[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)创建[Engine](../api/engines.md)，在用户界面中也称为“菜谱”。
 
