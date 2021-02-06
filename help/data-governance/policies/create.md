@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;data governance;data usage policy
+keywords: Experience Platform；主页；热门主题；数据管理；数据使用策略
 solution: Experience Platform
-title: 创建数据使用策略
+title: 在API中创建数据使用策略
 topic: policies
 type: Tutorial
 description: 策略服务API允许您创建和管理数据使用策略，以确定可以对包含某些数据使用标签的数据采取哪些营销操作。 此文档提供了使用策略服务API创建策略的分步教程。
 translation-type: tm+mt
-source-git-commit: 8c94d3631296c1c3cc97501ccf1a3ed995ec3cab
+source-git-commit: 55a54463e918fc62378c660ef17f36e2ede471e0
 workflow-type: tm+mt
-source-wordcount: '1201'
+source-wordcount: '1219'
 ht-degree: 2%
 
 ---
@@ -16,37 +16,37 @@ ht-degree: 2%
 
 # 在API中创建数据使用策略
 
-策略 [服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml) 允许您创建和管理数据使用策略，以确定可以对包含某些数据使用标签的数据采取哪些营销操作。
+[策略服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)允许您创建和管理数据使用策略，以确定可以对包含某些数据使用标签的数据采取哪些营销操作。
 
-此文档提供了使用API创建策略的分步教 [!DNL Policy Service] 程。 有关API中提供的不同操作的更全面的指南，请参 [阅策略服务开发人员指南](../api/getting-started.md)。
+此文档提供了使用[!DNL Policy Service] API创建策略的分步教程。 有关API中可用的不同操作的更全面的指南，请参阅[策略服务开发人员指南](../api/getting-started.md)。
 
 ## 入门指南
 
 本教程需要对创建和评估策略时涉及的下列主要概念有充分的了解：
 
-* [[!DNL Data Governance]](../home.md):强制执行数据使 [!DNL Platform] 用合规性的框架。
-* [数据使用标签](../labels/overview.md):数据使用标签应用于XDM数据字段，指定如何访问该数据的限制。
+* [Adobe Experience Platform数据治理](../home.md):强制执行数据使 [!DNL Platform] 用合规性的框架。
+   * [数据使用标签](../labels/overview.md):数据使用标签应用于XDM数据字段，指定如何访问该数据的限制。
 * [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
 * [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-在开始本教程之前，请查阅开发 [人员指南](../api/getting-started.md) ，了解成功调用API所需的重要信息，包括必需的头 [!DNL Policy Service] 以及如何读取示例API调用。
+在开始本教程之前，请查看[开发人员指南](../api/getting-started.md)，了解成功调用[!DNL Policy Service] API时需要了解的重要信息，包括必需的头以及如何读取示例API调用。
 
-## 定义营销活动 {#define-action}
+## 定义营销活动{#define-action}
 
-在框 [!DNL Data Governance] 架中，营销操作是数据使用者执 [!DNL Experience Platform] 行的操作，需要检查是否存在违反数据使用策略的情况。
+在[!DNL Data Governance]框架中，营销操作是[!DNL Experience Platform]数据使用者执行的操作，需要检查其是否存在违反数据使用策略的情况。
 
 创建数据使用策略的第一步是确定策略将评估的营销操作。 可以使用以下选项之一执行此操作：
 
 * [查找现有营销活动](#look-up)
 * [创建新的营销操作](#create-new)
 
-### 查找现有营销活动 {#look-up}
+### 查找现有营销操作{#look-up}
 
-您可以通过向其中一个端点发出GET请求来查找要由策略评估的现有营销 `/marketingActions` 操作。
+您可以通过向`/marketingActions`端点之一发出GET请求来查找要由策略评估的现有营销操作。
 
 **API格式**
 
-根据您查找的是由您的组织提供的营销 [!DNL Experience Platform] 操作还是由您的组织创建的自定义营销操作，请分别使 `marketingActions/core` 用 `marketingActions/custom` 这些或端点。
+根据您查找的是由[!DNL Experience Platform]提供的营销活动还是由您的组织创建的自定义营销活动，请分别使用`marketingActions/core`或`marketingActions/custom`端点。
 
 ```http
 GET /marketingActions/core
@@ -55,7 +55,7 @@ GET /marketingActions/custom
 
 **请求**
 
-以下请求使用终 `marketingActions/custom` 结点，它获取由IMS组织定义的所有营销操作的列表。
+以下请求使用`marketingActions/custom`端点，它获取由IMS组织定义的所有营销操作的列表。
 
 ```shell
 curl -X GET \
@@ -68,7 +68,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回找到()的营销操作总数`count`，并列表阵列中营销操作本身的详细 `children` 信息。
+成功的响应会返回找到的营销操作总数(`count`)，并列表`children`阵列中营销操作本身的详细信息。
 
 ```json
 {
@@ -121,13 +121,13 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `_links.self.href` | 数组中的每 `children` 个项目都包含列出的营销操作的URI ID。 |
+| `_links.self.href` | `children`阵列中的每个项目都包含列出的营销操作的URI ID。 |
 
-当您找到要使用的营销活动时，请记录其属性的 `href` 值。 此值将在创建策略的下 [一步中使用](#create-policy)。
+当您找到要使用的营销操作时，请记录其`href`属性的值。 该值在[创建策略](#create-policy)的下一步中使用。
 
-### Create a new marketing action {#create-new}
+### 创建新的营销操作{#create-new}
 
-您可以通过向端点发出PUT请求并在请求路径 `/marketingActions/custom/` 的末尾提供营销操作的名称来创建新的营销操作。
+您可以通过向`/marketingActions/custom/`端点发出PUT请求并在请求路径的末尾提供营销操作的名称，来创建新的营销操作。
 
 **API格式**
 
@@ -141,7 +141,7 @@ PUT /marketingActions/custom/{MARKETING_ACTION_NAME}
 
 **请求**
 
-以下请求将创建一个名为“exportToThirdParty”的新自定义营销操作。 请注意， `name` 请求有效负荷中的名称与请求路径中提供的名称相同。
+以下请求将创建一个名为“exportToThirdParty”的新自定义营销操作。 请注意，请求有效负荷中的`name`与请求路径中提供的名称相同。
 
 ```shell
 curl -X PUT \  
@@ -191,11 +191,11 @@ curl -X PUT \
 
 记录新创建的营销操作的URI ID，就像在创建策略的下一步中一样。
 
-## 创建策略 {#create-policy}
+## 创建策略{#create-policy}
 
 创建新策略需要您提供营销操作的URI ID，并且表达式禁止该营销操作的使用标签。
 
-此表达式称为策略表达式，是包含(A)标签或(B)操作符和操作数（但不同时包含两者）的对象。 反过来，每个操作数也是策略表达式对象。 例如，如果存在标签，则可能禁止向第三方导出数 `C1 OR (C3 AND C7)` 据的策略。 此表达式将指定为：
+此表达式称为策略表达式，是包含(A)标签或(B)操作符和操作数（但不同时包含两者）的对象。 反过来，每个操作数也是策略表达式对象。 例如，如果存在`C1 OR (C3 AND C7)`标签，则可能禁止向第三方导出数据的策略。 此表达式将指定为：
 
 ```json
 "deny": {
@@ -223,7 +223,7 @@ curl -X PUT \
 >
 >仅支持OR和AND运算符。
 
-配置策略表达式后，您可以通过向端点发出POST请求来创建新策 `/policies/custom` 略。
+配置策略表达式后，可以通过向`/policies/custom`端点发出POST请求来创建新策略。
 
 **API格式**
 
@@ -268,8 +268,8 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `marketingActionRefs` | 包含在上一 `href` 步中获取的营销操作值 [的数组](#define-action)。 虽然上例仅列表一个营销活动，但也可以提供多个活动。 |
-| `deny` | 策略表达式对象。 定义导致策略拒绝中引用的营销操作的使用标签和条件 `marketingActionRefs`。 |
+| `marketingActionRefs` | 包含营销操作的`href`值的数组，在上一步[中获取。 ](#define-action)虽然上例仅列表一个营销活动，但也可以提供多个活动。 |
+| `deny` | 策略表达式对象。 定义导致策略拒绝`marketingActionRefs`中引用的营销操作的使用标签和条件。 |
 
 **响应**
 
@@ -328,9 +328,9 @@ curl -X POST \
 
 >[!NOTE]
 >
->如果您希望将策略保留为状态，则此步 `DRAFT` 骤是可选的，但请注意，默认情况下，策略必须将其状态设置为 `ENABLED` 才能参与评估。 有关如何为处于状 [态的策略](../enforcement/api-enforcement.md) 设置例外的信息，请参阅策略实施 `DRAFT` 指南。
+>如果您希望将策略保留为`DRAFT`状态，则此步骤是可选的，但请注意，默认情况下，策略的状态必须设置为`ENABLED`才能参与评估。 有关如何为处于`DRAFT`状态的策略设置例外的信息，请参见[策略实施](../enforcement/api-enforcement.md)指南。
 
-默认情况下，其属性 `status` 设置为不 `DRAFT` 参与评估的策略。 您可以通过向端点发出PATCH请求并在请求路径 `/policies/custom/` 的末尾提供策略的唯一标识符来启用策略评估。
+默认情况下，其`status`属性设置为`DRAFT`的策略不参与评估。 您可以通过向`/policies/custom/`端点发出PATCH请求并在请求路径末尾提供策略的唯一标识符，来启用策略进行评估。
 
 **API格式**
 
@@ -340,11 +340,11 @@ PATCH /policies/custom/{POLICY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{POLICY_ID}` | 要 `id` 启用的策略的值。 |
+| `{POLICY_ID}` | 要启用的策略的`id`值。 |
 
 **请求**
 
-以下请求对策略的属性执 `status` 行PATCH操作，将其值从更改为 `DRAFT``ENABLED`。
+以下请求对策略的`status`属性执行PATCH操作，将其值从`DRAFT`更改为`ENABLED`。
 
 ```shell
 curl -X PATCH \
@@ -367,11 +367,11 @@ curl -X PATCH \
 | --- | --- |
 | `op` | 要执行的PATCH操作的类型。 此请求执行“替换”操作。 |
 | `path` | 要更新的字段的路径。 启用策略时，必须将值设置为“/status”。 |
-| `value` | 要分配给中指定的属性的新值 `path`。 此请求将策略的属 `status` 性设置为“ENABLED”。 |
+| `value` | 要分配给`path`中指定属性的新值。 此请求将策略的`status`属性设置为“ENABLED”。 |
 
 **响应**
 
-成功的响应返回HTTP状态200(OK)和更新策略的详细信息，其现 `status` 在设置为 `ENABLED`。
+成功的响应返回HTTP状态200(OK)，并且更新策略的详细信息（其`status`现在设置为`ENABLED`）。
 
 ```json
 {
@@ -418,8 +418,8 @@ curl -X PATCH \
 
 ## 后续步骤
 
-通过遵循本教程，您已成功为营销操作创建了数据使用策略。 现在，您可以继续阅读关于强制 [使用数据策略的教程](../enforcement/api-enforcement.md) ，了解如何检查策略违规并在体验应用程序中处理这些违规。
+通过遵循本教程，您已成功为营销操作创建了数据使用策略。 现在，您可以继续阅读关于[强制数据使用策略](../enforcement/api-enforcement.md)的教程，了解如何检查策略违规并在体验应用程序中处理这些违规。
 
-有关API中不同可用操作的详细信 [!DNL Policy Service] 息，请参阅策略 [服务开发人员指南](../api/getting-started.md)。 有关如何为数据实施策略的信 [!DNL Real-time Customer Profile] 息，请参阅关于为受众 [段强制实现数据使用合规性的教程](../../segmentation/tutorials/governance.md)。
+有关[!DNL Policy Service] API中不同可用操作的详细信息，请参阅[策略服务开发人员指南](../api/getting-started.md)。 有关如何为[!DNL Real-time Customer Profile]数据实施策略的信息，请参阅关于[强制受众段符合数据使用规范的教程](../../segmentation/tutorials/governance.md)。
 
-要了解如何在用户界面中管理使 [!DNL Experience Platform] 用策略，请参阅 [策略用户指南](user-guide.md)。
+要了解如何在[!DNL Experience Platform]用户界面中管理使用策略，请参阅[策略用户指南](user-guide.md)。
