@@ -1,21 +1,17 @@
 ---
 keywords: 确认数字反馈；确认扩展；确认
-title: 确认数字反馈扩展
-seo-title: 确认数字反馈扩展
+title: 确认数字反馈扩展目标
 description: 确认数字反馈扩展是Adobe Experience Platform客户目的地之声。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: 确认数字反馈扩展是Adobe Experience Platform客户目的地之声。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '597'
+source-wordcount: '563'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Confirmit Digital Feedback] 扩展
-
-## 概述 {#overview}
 
 [!DNL Confirmit Digital Feedback] 解决方案可帮助您将网站流量转化为实时洞察。使用[!DNL Confirmit]，可以根据您的要求显示不显眼且目标明确的调查，鼓励访客提供反馈，例如：
 
