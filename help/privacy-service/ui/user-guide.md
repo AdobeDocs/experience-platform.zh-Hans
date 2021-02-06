@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；导出；导出
 solution: Experience Platform
-title: Privacy Service用户指南
+title: 在Privacy ServiceUI中管理隐私作业
 topic: UI guide
 description: 了解如何使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监控隐私请求。
 translation-type: tm+mt
-source-git-commit: 238a9200e4b43d41335bed0efab079780b252717
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '1090'
+source-wordcount: '1100'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Privacy Service] 用户指南
+# 在Privacy ServiceUI中管理隐私作业
 
 此文档提供使用[!DNL Privacy Service]用户界面创建和管理隐私请求的步骤。
 
