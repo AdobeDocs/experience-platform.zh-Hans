@@ -1,19 +1,17 @@
 ---
 keywords: 社交网络；社交网络目标；Livefyre;facebook;Facebook
-title: 社交网络目标
-seo-title: 社交网络目标
+title: 社交网络目标概述
 description: 通过社交网络目标，您可以为活动激活用户档案，以便根据散列电子邮件进行受众定位、个性化和抑制。
-seo-description: 通过社交网络目标，您可以为活动激活用户档案，以便根据散列电子邮件进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '93'
+source-wordcount: '71'
 ht-degree: 0%
 
 ---
 
 
-# 社交网络目标{#social-network-destinations}
+# 社交网络目标概述{#social-network-destinations}
 
 通过社交网络目标，您可以为活动激活用户档案，以便根据散列电子邮件进行受众定位、个性化和抑制。
 
