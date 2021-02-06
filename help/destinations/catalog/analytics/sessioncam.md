@@ -1,21 +1,17 @@
 ---
 keywords: SessionCam;sessioncam;sessioncam
-title: SessionCam扩展
-seo-title: SessionCam扩展
+title: SessionCam扩展目标
 description: SessionCam扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: SessionCam扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '544'
-ht-degree: 4%
+source-wordcount: '517'
+ht-degree: 5%
 
 ---
 
 
 # [!DNL SessionCam] 扩展 {#sessioncam-extension}
-
-## 概述 {#overview}
 
 [!DNL SessionCam] 提供了一套基本工具，可揭示用户行为并向您显示需要修复的最重要问题。
 
