@@ -1,21 +1,17 @@
 ---
 keywords: Yext转换跟踪；Yext;yext;yext转换跟踪
-title: Yext转换跟踪扩展
-seo-title: Yext转换跟踪扩展
+title: Yext转换跟踪扩展目标
 description: Yext Conversion Tracking扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Yext Conversion Tracking扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '527'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Yext Conversion Tracking] 扩展 {#yext-extension}
-
-## 概述 {#overview}
 
 [!DNL Yext Conversion Tracking]扩展允许您测量可归因于您使用Yext产品的转换。
 
