@@ -1,21 +1,17 @@
 ---
 keywords: 贝姆雷，比姆雷延伸
-title: Beemray扩展
-seo-title: Beemray扩展
+title: Beemray扩展目标
 description: Beemray扩展是Adobe Experience Platform的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Beemray扩展是Adobe Experience Platform的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '548'
+source-wordcount: '521'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Beemray] 扩展 {#beemray-extension}
-
-## 概述 {#overview}
 
 [!DNL Beemray] 帮助您根据情境加速产品。使您能够获得洞察、构建新体验、推动互动并参与真正重要的时刻。 Beemray使用机器学习实现情境智能自动化。 Beemray连接Adobe Experience Cloud和您的其他技术合作伙伴。 一切实时进行。 此扩展在您的站点上安装[!DNL Beemray] SDK。
 
