@@ -1,25 +1,21 @@
 ---
 keywords: 飞艇属性；飞艇目的地
-title: 飞艇属性目标
-seo-title: 飞艇属性目标
+title: 飞艇属性连接目标
 description: 将Adobe受众数据无缝传递给飞艇，作为飞艇内目标的受众属性。
-seo-description: 将Adobe受众数据无缝传递给飞艇，作为飞艇内目标的受众属性。
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: f4095a90ff70e8d054bae4f3b0f884552ffd30df
 workflow-type: tm+mt
-source-wordcount: '1222'
-ht-degree: 1%
+source-wordcount: '1205'
+ht-degree: 0%
 
 ---
 
 
-# （测试版）[!DNL Airship Attributes]目标{#airship-attributes-destination}
+# （测试版）[!DNL Airship Attributes]连接{#airship-attributes-destination}
 
 >[!IMPORTANT]
 >
 >Adobe Experience Platform的[!DNL Airship Attributes]目标当前为beta。 文档和功能可能会发生变化。
-
-## 概述 {#overview}
 
 [!DNL Airship] 是领先的客户互动平台，可帮助您在客户生命周期的每个阶段向用户提供有意义的个性化全渠道消息。
 
