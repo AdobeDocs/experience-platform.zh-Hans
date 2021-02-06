@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;run scheduled queries;run scheduled query;Query service;scheduled queries;scheduled query;
+keywords: Experience Platform；主页；热门主题；查询服务；运行计划查询；运行计划查询;查询服务；计划查询；计划查询;
 solution: Experience Platform
-title: 查询服务开发人员指南
+title: 计划查询运行API端点
 topic: runs for scheduled queries
 description: 以下各节将介绍使用查询服务API运行计划查询时可以进行的各种API调用。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '696'
 ht-degree: 2%
 
 ---
 
 
-# 为计划查询运行
+# 计划查询运行端点
 
 ## 示例API调用
 
-现在，您已经了解要使用哪些标头，便可开始调用 [!DNL Query Service] API。 以下各节将介绍您可以使用API进行的各种API [!DNL Query Service] 调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
+既然您了解了要使用哪些标头，就可以开始调用[!DNL Query Service] API。 以下各节将介绍您可以使用[!DNL Query Service] API进行的各种API调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
 
 ### 检索指定计划列表的所有运行查询
 
-您可以检索特定计划查询的所有运行的列表，而不管这些运行当前正在运行还是已完成。 这是通过向端点发出GET请 `/schedules/{SCHEDULE_ID}/runs` 求来完成的， `{SCHEDULE_ID}` 其中 `id` 是要检索其运行的计划查询的值。
+您可以检索特定计划查询的所有运行的列表，而不管这些运行当前正在运行还是已完成。 这是通过向`/schedules/{SCHEDULE_ID}/runs`端点发出GET请求来完成的，其中`{SCHEDULE_ID}`是要检索其运行的计划查询的`id`值。
 
 **API格式**
 
@@ -32,8 +32,8 @@ GET /schedules/{SCHEDULE_ID}/runs?{QUERY_PARAMETERS}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | 要 `id` 检索的计划查询的值。 |
-| `{QUERY_PARAMETERS}` | (可&#x200B;*选*)添加到请求路径的参数，这些参数配置在响应中返回的结果。 可以包括多个参数，用和号(`&`)分隔。 以下列出了可用参数。 |
+| `{SCHEDULE_ID}` | 要检索的计划查询的`id`值。 |
+| `{QUERY_PARAMETERS}` | （*可选*）添加到请求路径的参数，这些参数配置在响应中返回的结果。 可以包括多个参数，用和符(`&`)分隔。 以下列出了可用参数。 |
 
 **查询参数**
 
@@ -41,10 +41,10 @@ GET /schedules/{SCHEDULE_ID}/runs?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定对结果进行排序的字段。 支持的字段 `created` 有 `updated`。 例如，将 `orderby=created` 按创建的升序对结果进行排序。 添加创 `-` 建前(`orderby=-created`)将按降序创建项排序。 |
-| `limit` | 指定页面大小限制以控制页面中包含的结果数。 (*Default value: 20*) |
-| `start` | 使用从零开始的编号，偏移响应列表。 例如，将 `start=2` 返回从第三个列出的列表开始的查询。 (*Default value: 0*) |
-| `property` | 根据字段筛选结果。 过滤器 **必须** 为HTML转义。 逗号用于组合多组过滤器。 支持的字段 `created`有 `state`、和 `externalTrigger`。 支持的运算符的 `>` 列表是(大 `<` 于)、（小于） `==` 和（等于），以 `!=` 及（不等于）。 例如，将 `externalTrigger==true,state==SUCCESS,created>2019-04-20T13:37:00Z` 返回在2019年4月20日之后手动创建、成功和创建的所有运行。 |
+| `orderby` | 指定对结果进行排序的字段。 支持的字段为`created`和`updated`。 例如，`orderby=created`将按升序创建结果。 在创建前添加`-`(`orderby=-created`)将按降序创建项目。 |
+| `limit` | 指定页面大小限制以控制页面中包含的结果数。 (*默认值：20*) |
+| `start` | 使用从零开始的编号，偏移响应列表。 例如，`start=2`将返回从第三个列出的列表开始的查询。 (*默认值：0* |
+| `property` | 根据字段筛选结果。 过滤器&#x200B;**必须**&#x200B;为HTML转义。 逗号用于组合多组过滤器。 支持的字段有`created`、`state`和`externalTrigger`。 支持的运算符的列表为`>`（大于）、`<`（小于）和`==`（等于）和`!=`（不等于）。 例如，`externalTrigger==true,state==SUCCESS,created>2019-04-20T13:37:00Z`将返回在2019年4月20日之后手动创建、成功和创建的所有运行。 |
 
 **请求**
 
@@ -150,11 +150,11 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a
 
 >[!NOTE]
 >
->您可以使用值 `_links.cancel` 停 [止指定计划查询的运行](#immediately-stop-a-run-for-a-specific-scheduled-query)。
+>可以使用值`_links.cancel`来[停止指定计划查询的运行](#immediately-stop-a-run-for-a-specific-scheduled-query)。
 
 ### 立即触发特定计划查询的运行
 
-您可以通过向端点发出查询请求来立即触发指定计划POST的运行 `/schedules/{SCHEDULE_ID}/runs` ，其中 `{SCHEDULE_ID}` 是 `id` 要触发其运行的计划查询的值。
+通过向`/schedules/{SCHEDULE_ID}/runs`端点发出POST请求，可以立即触发指定计划查询的运行，其中`{SCHEDULE_ID}`是要触发其运行的计划查询的`id`值。
 
 **API格式**
 
@@ -185,7 +185,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules/e95186d65
 
 ### 检索特定计划查询的运行的详细信息
 
-通过向端点发出GET请求并提供计划查询的ID和请求路径中的运行， `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` 可以检索特定计划查询的运行的详细信息。
+通过向`/schedules/{SCHEDULE_ID}/runs/{RUN_ID}`端点发出GET请求并在请求路径中提供计划查询的ID和运行，可以检索特定计划查询的运行的详细信息。
 
 **API格式**
 
@@ -195,8 +195,8 @@ GET /schedules/{SCHEDULE_ID}/runs/{RUN_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | 要 `id` 检索其运行详细信息的计划查询的值。 |
-| `{RUN_ID}` | 要 `id` 检索的运行的值。 |
+| `{SCHEDULE_ID}` | 要检索其详细信息的计划查询的`id`值。 |
+| `{RUN_ID}` | 要检索的运行的`id`值。 |
 
 **请求**
 
@@ -246,7 +246,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a
 
 ### 立即停止特定计划查询的运行
 
-您可以立即停止特定计划查询的运行，方法是向端点发出PATCH请求 `/schedules/{SCHEDULE_ID}/runs/{RUN_ID}` ，并提供计划查询的ID和请求路径中的运行。
+通过向`/schedules/{SCHEDULE_ID}/runs/{RUN_ID}`端点发出PATCH请求并提供计划查询的ID和请求路径中的运行，可以立即停止特定计划查询的运行。
 
 **API格式**
 
@@ -256,8 +256,8 @@ PATCH /schedules/{SCHEDULE_ID}/runs/{RUN_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{SCHEDULE_ID}` | 要 `id` 检索其运行详细信息的计划查询的值。 |
-| `{RUN_ID}` | 要 `id` 检索的运行的值。 |
+| `{SCHEDULE_ID}` | 要检索其详细信息的计划查询的`id`值。 |
+| `{RUN_ID}` | 要检索的运行的`id`值。 |
 
 **请求**
 
