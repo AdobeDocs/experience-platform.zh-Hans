@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；AmazonS3;Azure Blob
 solution: Experience Platform
-title: 在UI中创建Azure Blob或AmazonS3源连接器
+title: 在UI中创建Azure Blob或AmazonS3源连接
 topic: overview
 type: Tutorial
-description: 'Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 '
+description: 了解如何使用Adobe Experience PlatformUI创建Azure Blob或AmazonS3源连接。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
 source-wordcount: '144'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 ---
 
 
-# 在UI中创建[!DNL Azure Blob]或[!DNL Amazon] S3源连接器
+# 在UI中创建[!DNL Azure Blob]或[!DNL Amazon] S3源连接
 
 Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。
 
