@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；Blob;blob;Azure Blob;azure blob
 solution: Experience Platform
-title: Azure Blob连接器
+title: Azure Blob源连接器概述
 topic: overview
-description: 以下文档提供了如何使用API或用户界面将Azure Blob连接到平台的信息。
+description: 了解如何使用API或用户界面将Azure Blob连接到Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
 workflow-type: tm+mt
-source-wordcount: '397'
+source-wordcount: '399'
 ht-degree: 0%
 
 ---
@@ -36,15 +36,15 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 
 ## 将[!DNL Azure Blob]连接到[!DNL Platform]
 
-以下文档提供了如何使用API或用户界面将Azure Blob连接到平台的信息：
+以下文档提供了如何使用API或用户界面将Azure Blob连接到Adobe Experience Platform的信息：
 
 ### 使用API
 
-- [使用流服务API创建Azure Blob连接器](../../tutorials/api/create/cloud-storage/blob.md)
+- [使用流服务API创建Azure Blob源连接](../../tutorials/api/create/cloud-storage/blob.md)
 - [使用Flow Service API浏览云存储系统](../../tutorials/api/explore/cloud-storage.md)
 - [使用流服务API收集云存储数据](../../tutorials/api/collect/cloud-storage.md)
 
 ### 使用UI
 
-- [在UI中创建Azure Blob源连接器](../../tutorials/ui/create/cloud-storage/blob.md)
-- [在UI中为云存储连接器配置数据流](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+- [在UI中创建Azure Blob源连接](../../tutorials/ui/create/cloud-storage/blob.md)
+- [在UI中为云存储连接配置数据流](../../tutorials/ui/dataflow/batch/cloud-storage.md)
