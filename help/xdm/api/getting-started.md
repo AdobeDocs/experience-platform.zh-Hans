@@ -5,7 +5,7 @@ title: 模式注册表API入门
 description: 本文档介绍了在尝试调用模式注册表API之前需要了解的核心概念。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '1163'
 ht-degree: 0%
