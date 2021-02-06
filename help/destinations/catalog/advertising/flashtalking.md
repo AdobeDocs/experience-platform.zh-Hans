@@ -1,21 +1,17 @@
 ---
 keywords: Flashtalking OneTag扩展；Flashtalking OneTag扩展；Flashtalking OneTag目标；Flashtalking OneTag;flashtalking onetag
-title: Flashtalking OneTag扩展
-seo-title: Flashtalking OneTag扩展
+title: Flashtalking OneTag扩展目标
 description: Flashtalking OneTag扩展是Adobe Experience Platform的广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Flashtalking OneTag扩展是Adobe Experience Platform的广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '538'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Flashtalking OneTag] 扩展 {#flashtalking-extension}
-
-## 概述 {#overview}
 
 [!DNL Flashtalking OneTag]扩展用于Experience Platform Launch，可轻松将站点操作归因为显示、视频和移动广告活动。 使用启动项将[!DNL Flashtalking OneTag]部署到Web属性。
 
