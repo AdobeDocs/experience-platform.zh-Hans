@@ -1,21 +1,17 @@
 ---
 keywords: JW player;jw player;JW Player;jw扩展；JW扩展
-title: JW Player分析（测试版）扩展
-seo-title: JW Player分析（测试版）扩展
+title: JW Player分析（测试版）扩展目标
 description: JW Player Analytics（测试版）扩展是Adobe Experience Platform的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: JW Player Analytics（测试版）扩展是Adobe Experience Platform的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '545'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL JW Player Analytics] （测试版）扩展  {#jw-player-analytics-extension}
-
-## 概述 {#overview}
 
 此扩展安装[!DNL JW Player]适配器，将[!DNL JW Player]事件连接到Adobe视频分析。 利用Adobe视频分析的强大功能，获得详细的洞察，了解客户的视频观看习惯。
 
