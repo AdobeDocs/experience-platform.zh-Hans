@@ -5,7 +5,7 @@ title: 将客户端连接到查询服务
 topic: connect
 description: 本文档介绍如何从各种桌面客户端应用程序连接到查询服务以及如何验证这些连接。
 translation-type: tm+mt
-source-git-commit: 5c5ea35dbed85518f7925bd13a2280cae6215927
+source-git-commit: 2b8c08dad34bcd69368c00050323835f05379c82
 workflow-type: tm+mt
 source-wordcount: '112'
 ht-degree: 0%
