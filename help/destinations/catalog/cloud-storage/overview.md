@@ -1,19 +1,17 @@
 ---
 keywords: 云存储目标；云存储
-title: 云存储目标
-seo-title: 云存储目标
-description: 平台可以将您的细分作为数据文件传送到您的AmazonS3、AWSKinesis、Azure事件中心或SFTP云存储位置。
-seo-description: 平台可以将您的细分作为数据文件传送到您的AmazonS3、AWSKinesis、Azure事件中心或SFTP云存储位置。
+title: 云存储目标概述
+description: Adobe Experience Platform可以将您的细分作为数据文件传送到您的AmazonS3、AWSKinesis、Azure事件中心或SFTP云存储位置。
 translation-type: tm+mt
-source-git-commit: b348a5493b13112291dd8e9234d457ff8c694147
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '182'
+source-wordcount: '161'
 ht-degree: 0%
 
 ---
 
 
-# 云存储目标{#cloud-storage-destinations}
+# 云存储目标概述{#cloud-storage-destinations}
 
 Adobe Experience Platform可以将您的细分作为数据文件提供给您的云存储位置。 这使您能够通过CSV或制表符分隔的文件（用于[!DNL Amazon S3]和SFTP）将受众及其用户档案属性发送到您的内部系统。 对于[!DNL AWS Kinesis]和[!DNL Azure Event Hubs]目标，以JSON格式从Experience Platform中流出数据。
 
