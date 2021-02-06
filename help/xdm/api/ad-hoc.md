@@ -5,7 +5,7 @@ title: 临时模式
 description: 在特定情况下，可能需要创建一个XDM模式，其中的字段以名称命名，仅供单个数据集使用。 这称为临时模式。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
 source-wordcount: '146'
 ht-degree: 0%
