@@ -1,19 +1,18 @@
 ---
 keywords: 连接目标；目标连接；如何连接目标
 title: 连接到Adobe Experience Platform的目标
-seo-title: 连接到Adobe Experience Platform的目标
 type: Tutorial
 description: 本教程列表了连接Adobe Experience Platform目标的步骤
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '126'
+source-wordcount: '117'
 ht-degree: 0%
 
 ---
 
 
-# 如何连接目标
+# 连接到目标
 
 请按照以下步骤连接到Adobe Experience Platform的目标：
 
