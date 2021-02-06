@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform；主页；热门主题；监视数据流；流服务api；流服务
 solution: Experience Platform
-title: 监视流和运行
+title: 使用Flow Service API监视数据流
 topic: overview
 type: Tutorial
 description: 本教程介绍了使用Flow Service API监视流运行数据是否完整、错误和度量的步骤。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: f8186e467dc982003c6feb01886ed16d23572955
 workflow-type: tm+mt
-source-wordcount: '719'
+source-wordcount: '722'
 ht-degree: 1%
 
 ---
