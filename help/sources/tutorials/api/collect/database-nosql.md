@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据库；第三方数据库
 solution: Experience Platform
-title: 通过源连接器和API从数据库收集数据
+title: 使用源连接器和API从数据库收集数据
 topic: overview
 type: Tutorial
-description: 本教程介绍从数据库检索数据并通过源连接器和API将其引入平台的步骤。
+description: 本教程介绍使用源连接器和API从数据库检索数据并将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: ddf5be2f30bc347a881bdcbc6b880f087c03e263
+source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
 workflow-type: tm+mt
 source-wordcount: '1611'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 ---
 
 
-# 通过源连接器和API从数据库收集数据
+# 使用源连接器和API从数据库收集数据
 
 本教程介绍从第三方数据库检索数据并通过源连接器和[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)将其引入平台的步骤。
 
