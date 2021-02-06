@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；收集电子商务数据；电子商务数据
 solution: Experience Platform
-title: 通过源连接器和API收集电子商务数据
+title: 使用源连接器和API收集电子商务数据
 topic: overview
 type: Tutorial
-description: 本教程介绍从第三方电子商务系统检索数据并通过源连接器和API将其引入平台的步骤。
+description: 本教程介绍从第三方电子商务系统检索数据并使用源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
 source-wordcount: '1489'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 ---
 
 
-# 通过源连接器和API收集电子商务数据
+# 使用源连接器和API收集电子商务数据
 
 本教程介绍从第三方&#x200B;**[!UICONTROL 电子商务]**&#x200B;系统检索数据并通过源连接器和[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)将其引入[!DNL Platform]的步骤。
 
