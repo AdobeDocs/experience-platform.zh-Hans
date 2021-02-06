@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;fields;schemas;Schemas;browser;browser details;datatype;data-type;data type;
+keywords: Experience Platform；主页；热门主题；模式;模式;XDM；字段；模式;模式；浏览器；浏览器详细信息；数据类型；数据类型；
 solution: Experience Platform
 title: 浏览器详细信息数据类型
 topic: overview
 description: 此文档概述了浏览器详细信息XDM数据类型。
 translation-type: tm+mt
-source-git-commit: f5bddb39c16eb25e85297f56e331d3aa51510eb9
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '262'
 ht-degree: 6%
 
 ---
 
 
-# [!UICONTROL 浏览器详细信息] ，数据类型
+# [!UICONTROL 浏览器详] 细信息数据类型
 
-[!UICONTROL 浏览器详细信息] (Browser Details)是一种标准XDM数据类型，用于描述与浏览器或应用程序相关的详细信息。
+[!UICONTROL 浏览] 器详细信息是一种标准XDM数据类型，它描述与浏览器或应用程序相关的详细信息。
 
 <img src="../images/data-types/browser-details.png" width="450" /><br />
 
