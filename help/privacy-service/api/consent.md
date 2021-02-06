@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: 同意端点
+title: 同意API端点
 topic: developer guide
 description: 了解如何使用Experience CloudAPI管理Privacy Service应用程序的客户同意请求。
 translation-type: tm+mt
-source-git-commit: 238a9200e4b43d41335bed0efab079780b252717
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '243'
+source-wordcount: '244'
 ht-degree: 1%
 
 ---
