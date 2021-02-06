@@ -1,21 +1,17 @@
 ---
 keywords: DoubleClick竞价管理器；DoubleClick竞价管理器；DoubleClick；显示和视频360；显示360；视频360；视频360；显示360；显示和视频
-title: Google Display & Video 360 Destination
-seo-title: Google Display & Video 360 Destination
+title: Google Display & Video 360连接目标
 description: Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。
-seo-description: 'Display & Video 360（以前称为DoubleClick Bid Manager）是一种工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。 '
 translation-type: tm+mt
-source-git-commit: bb2fc2658d32c59b476dd9d526eb8bc2f055a1af
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '711'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Google Display & Video 360] 目标
-
-## 概述
+# [!DNL Google Display & Video 360] 连接
 
 [!DNL Display & Video 360]它以前称为 [!DNL DoubleClick Bid Manager]工具，用于跨显示、视频和移动库存源执行重定位和受众目标数字活动。
 
