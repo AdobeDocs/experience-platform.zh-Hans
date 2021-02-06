@@ -1,21 +1,17 @@
 ---
 keywords: Marketo Munchkin;marketo munchkin;Marketo Munchkin扩展；marketo Munchkin扩展；marketo munchkin扩展；marketo;marketo
-title: Marketo Munchkin 扩展
-seo-title: Marketo Munchkin 扩展
+title: Marketo Munchkin扩展目标
 description: Marketo Munchkin扩展是Adobe Experience Platform的个性化目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Marketo Munchkin扩展是Adobe Experience Platform的个性化目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '552'
 ht-degree: 7%
 
 ---
 
 
 # [!DNL Marketo Munchkin] 扩展 {#marketo-munchkin-extension}
-
-## 概述 {#overview}
 
 从销售线索管理到基于帐户的营销，[!DNL Marketo Engagement Platform]可简化您在客户体验的每个阶段规划、编排和衡量与客户和潜在客户的互动。
 
