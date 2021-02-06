@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;mlinstances;sensei machine learning api
+keywords: Experience Platform；开发人员指南；端点；数据科学工作区；热门主题；实例；sensei机器学习api
 solution: Experience Platform
-title: MLInstances
+title: MLInstances API端点
 topic: Developer guide
 description: MLI实例是现有引擎与一组适当配置的配对，这些配置定义任何培训参数、评分参数或硬件资源配置。
 translation-type: tm+mt
-source-git-commit: 194a29124949571638315efe00ff0b04bff19303
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '601'
+source-wordcount: '619'
 ht-degree: 4%
 
 ---
 
 
-# MLInstances
+# MLInstances端点
 
-MLInstance是现有引擎与一组 [适当的配置](./engines.md) （定义任何培训参数、评分参数或硬件资源配置）的配对。
+MLInstance是现有[引擎](./engines.md)与一组适当的配置的配对，这些配置定义任何培训参数、评分参数或硬件资源配置。
 
 ## 创建MLInstance {#create-an-mlinstance}
 
-您可以通过执行POST请求来创建MLInstance，同时提供由有效的引擎ID()和一组适当的默认配置`{ENGINE_ID}`组成的请求有效负荷。
+您可以通过执行POST请求来创建MLInstance，同时提供由有效的引擎ID(`{ENGINE_ID}`)和一组适当的默认配置组成的请求有效负荷。
 
-如果引擎ID引用PySpark或Spark引擎，则您可以配置计算资源量，如核心数或内存量。 如果引用了Python引擎，您可以选择使用CPU或GPU进行培训和评分。 有关更多信息，请参 [阅PySpark和Spark资源配置](./appendix.md#resource-config)[以及Python CPU和GPU配置的附录](./appendix.md#cpu-gpu-config) 部分。
+如果引擎ID引用PySpark或Spark引擎，则您可以配置计算资源量，如核心数或内存量。 如果引用了Python引擎，您可以选择使用CPU或GPU进行培训和评分。 有关详细信息，请参阅[PySpark和Spark资源配置](./appendix.md#resource-config)和[Python CPU和GPU配置](./appendix.md#cpu-gpu-config)的附录部分。
 
 **API格式**
 
@@ -84,7 +84,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应返回包含新创建的MLI实例的详细信息(包括其唯一标识符(`id`))的有效负荷。
+成功的响应返回包含新创建的MLInstance的详细信息的有效负荷，该实例包括其唯一标识符(`id`)。
 
 ```json
 {
@@ -131,7 +131,7 @@ curl -X POST \
 
 ## 检索一列表MLInstance
 
-您可以通过执行单个列表请求来检索MLInstances的GET。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅附录部分中有关资产检 [索查询参数的部分](./appendix.md#query)。
+您可以通过执行单个列表请求来检索MLInstances的GET。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
 
 **API格式**
 
@@ -143,7 +143,7 @@ GET /mlInstances?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUERY_PARAMETER}` | 用于筛选 [结果的可用查询](./appendix.md#query) 参数之一。 |
+| `{QUERY_PARAMETER}` | 用于筛选结果的[可用查询参数](./appendix.md#query)之一。 |
 | `{VALUE}` | 前一查询参数的值。 |
 
 **请求**
@@ -276,7 +276,7 @@ curl -X GET \
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议您首先执行GET请求，以 [按ID检索MLInstance](#retrieve-specific)。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
+>为确保此PUT请求成功，建议您首先通过ID](#retrieve-specific)执行对[检索MLInstance的GET请求。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
 
 以下示例API调用将在最初具有这些属性时更新MLInstance的培训和评分参数：
 
