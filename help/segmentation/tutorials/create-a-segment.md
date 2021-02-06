@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主题；热门主题；区段；区段；创建区段；分段；创建区段；分段服务；
 solution: Experience Platform
-title: 创建区段
+title: 使用Segmentation Service API创建区段
 topic: tutorial
 type: Tutorial
-description: 本文档提供了一个教程，用于使用Adobe Experience Platform分段服务API开发、测试、预览和保存段定义。
+description: 按照本教程学习如何使用Adobe Experience Platform分段服务API开发、测试、预览和保存段定义。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '913'
+source-wordcount: '924'
 ht-degree: 0%
 
 ---
 
 
-# 创建区段
+# 使用Segmentation Service API创建区段
 
 本文档提供了使用[[!DNL Adobe Experience Platform Segmentation Service API]](../api/getting-started.md)开发、测试、预览和保存段定义的教程。
 
