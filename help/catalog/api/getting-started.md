@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；目录服务；目录服务；目录服务；目录
 solution: Experience Platform
-title: 目录服务开发人员指南
+title: 目录服务API指南
 topic: developer guide
-description: 此开发人员指南提供帮助您使用目录API进行开始的步骤。 然后，该指南提供了使用Catalog执行关键操作的示例API调用。
+description: Catalog Service API允许开发人员管理Adobe Experience Platform的数据集元数据。 请按照本指南学习如何使用API执行关键操作。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '598'
+source-wordcount: '599'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Catalog Service] 开发人员指南
+# [!DNL Catalog Service] API指南
 
 [!DNL Catalog Service] 是Adobe Experience Platform境内数据定位和谱系记录系统。[!DNL Catalog] 充当元数据存储或“目录”，您可以在其中找到有关数据的信息， [!DNL Experience Platform]无需访问数据本身。有关详细信息，请参阅[[!DNL Catalog] 概述](../home.md)。
 
