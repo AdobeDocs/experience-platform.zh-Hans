@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform;home;popular topics;query service;api guide;queries;query;Query service;
+keywords: Experience Platform；主页；热门主题；查询服务；api指南；查询;查询;查询服务；
 solution: Experience Platform
-title: 查询服务开发人员指南
+title: 查询API端点
 topic: queries
 description: 以下各节将演练您可以使用查询服务API中的/查询端点进行的调用。
 translation-type: tm+mt
-source-git-commit: 4b2df39b84b2874cbfda9ef2d68c4b50d00596ac
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '676'
 ht-degree: 2%
 
 ---
 
 
-# 查询
+# 查询端点
 
 ## 示例API调用
 
-以下各节将演练您可以使用API中的 `/queries` 端点进行的 [!DNL Query Service] 调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
+以下各节将演练您可以使用[!DNL Query Service] API中的`/queries`端点进行的调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
 
 ### 检索列表查询
 
-您可以通过向端点发出列表请求，为IMS组织检索所有查询的 `/queries` GET。
+您可以通过向`/queries`端点发出列表请求，检索IMS组织的所有查询的GET。
 
 **API格式**
 
@@ -30,7 +30,7 @@ GET /queries
 GET /queries?{QUERY_PARAMETERS}
 ```
 
-- `{QUERY_PARAMETERS}`:(可&#x200B;*选*)添加到请求路径的参数，这些参数配置在响应中返回的结果。 可以包括多个参数，用和号(`&`)分隔。 以下列出了可用参数。
+- `{QUERY_PARAMETERS}`:(可&#x200B;*选*)添加到请求路径的参数，这些参数配置在响应中返回的结果。可以包括多个参数，用和符(`&`)分隔。 以下列出了可用参数。
 
 **查询参数**
 
@@ -38,12 +38,12 @@ GET /queries?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定对结果进行排序的字段。 支持的字段 `created` 有 `updated`。 例如，将 `orderby=created` 按创建的升序对结果进行排序。 添加创 `-` 建前(`orderby=-created`)将按降序创建项排序。 |
-| `limit` | 指定页面大小限制以控制页面中包含的结果数。 (*Default value: 20*) |
-| `start` | 使用从零开始的编号，偏移响应列表。 例如，将 `start=2` 返回从第三个列出的列表开始的查询。 (*Default value: 0*) |
-| `property` | 根据字段筛选结果。 过滤器 **必须** 为HTML转义。 逗号用于组合多组过滤器。 支持的字段 `created`有 `updated`、 `state`、和 `id`。 支持的运算符 `>` 的列表是 `<` （大于）、 `>=` （小于）、（大于或等于）、 `<=` （小于或等于）、 `==` （等于）、 `!=` （不等于）和 `~` （包含）。 例如，将 `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 返回具有指定ID的所有查询。 |
-| `excludeSoftDeleted` | 指示是否应包括已软删除的查询。 例如，将包 `excludeSoftDeleted=false` 括 **软删除** 的查询。 (*布尔值，默认值：true*) |
-| `excludeHidden` | 指示是否应显示非用户驱动查询。 将此值设置为false将包 **括非用** 户驱动的查询，如CURSOR定义、FETCH或元数据查询。 (*布尔值，默认值：true*) |
+| `orderby` | 指定对结果进行排序的字段。 支持的字段为`created`和`updated`。 例如，`orderby=created`将按升序创建结果。 在创建前添加`-`(`orderby=-created`)将按降序创建项目。 |
+| `limit` | 指定页面大小限制以控制页面中包含的结果数。 (*默认值：20*) |
+| `start` | 使用从零开始的编号，偏移响应列表。 例如，`start=2`将返回从第三个列出的列表开始的查询。 (*默认值：0* |
+| `property` | 根据字段筛选结果。 过滤器&#x200B;**必须**&#x200B;为HTML转义。 逗号用于组合多组过滤器。 支持的字段有`created`、`updated`、`state`和`id`。 支持的运算符的列表为`>`（大于）、`<`（小于）、`>=`（大于或等于）、`<=`（小于或等于）、`==`（等于）、`!=`（不等于）和`~`（包含）。 例如，`id==6ebd9c2d-494d-425a-aa91-24033f3abeec`将返回具有指定ID的所有查询。 |
+| `excludeSoftDeleted` | 指示是否应包括已软删除的查询。 例如，`excludeSoftDeleted=false`将&#x200B;**包括**&#x200B;软删除查询。 (*布尔值，默认值：true* |
+| `excludeHidden` | 指示是否应显示非用户驱动查询。 将此值设置为false将&#x200B;**包括**&#x200B;非用户驱动查询，如CURSOR定义、FETCH或元数据查询。 (*布尔值，默认值：true* |
 
 **请求**
 
@@ -120,7 +120,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/queries?limit=1 \
 
 ### 创建查询
 
-可以通过向端点发出查询请求来创建新POST `/queries` 。
+可以通过向`/queries`端点发出查询请求来创建新POST。
 
 **API格式**
 
@@ -156,7 +156,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 
 **响应**
 
-成功的响应会返回HTTP状态202（已接受），并包含新创建查询的详细信息。 查询完成激活并成功运行后，将 `state` 从更改为 `SUBMITTED` 更改 `SUCCESS`。
+成功的响应会返回HTTP状态202（已接受），并包含新创建查询的详细信息。 查询完成激活并成功运行后，`state`将从`SUBMITTED`更改为`SUCCESS`。
 
 ```json
 {
@@ -199,11 +199,11 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 
 >[!NOTE]
 >
->您可以使用的值取 `_links.cancel` 消 [已创建的查询](#cancel-a-query)。
+>可以使用`_links.cancel`的值[取消创建的查询](#cancel-a-query)。
 
 ### 按ID检索查询
 
-您可以通过向端点发出查询请求并在请求路径中提供GET值来检 `/queries` 索有关特定查询 `id` 的详细信息。
+您可以通过向`/queries`端点发出GET请求并在请求路径中提供查询的`id`值，来检索有关特定查询的详细信息。
 
 **API格式**
 
@@ -213,7 +213,7 @@ GET /queries/{QUERY_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{QUERY_ID}` | 要 `id` 检索的查询的值。 |
+| `{QUERY_ID}` | 要检索的查询的`id`值。 |
 
 **请求**
 
@@ -270,11 +270,11 @@ curl -X GET https://platform.adobe.io/data/foundation/query/queries/4d64cd49-cf8
 
 >[!NOTE]
 >
->您可以使用的值取 `_links.cancel` 消 [已创建的查询](#cancel-a-query)。
+>可以使用`_links.cancel`的值[取消创建的查询](#cancel-a-query)。
 
 ### 取消查询
 
-您可以通过向端点发出查询请求并在请求路径中提 `/queries` 供PATCH值来请求 `id` 删除指定的查询。
+您可以通过向`/queries`端点发出PATCH请求并在请求路径中提供查询的`id`值来请求删除指定的查询。
 
 **API格式**
 
@@ -284,7 +284,7 @@ PATCH /queries/{QUERY_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{QUERY_ID}` | 要 `id` 取消的查询的值。 |
+| `{QUERY_ID}` | 要取消的查询的`id`值。 |
 
 
 **请求**
@@ -305,7 +305,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/queries/4d64cd49-c
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `op` | 要取消查询，必须使用值设置op参数 `cancel `。 |
+| `op` | 要取消查询，必须使用值`cancel `设置op参数。 |
 
 **响应**
 
