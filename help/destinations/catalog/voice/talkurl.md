@@ -1,21 +1,17 @@
 ---
 keywords: 交谈URL收件箱；交谈URL收件箱；交谈URL收件箱；交谈URL收件箱；交谈URL；交谈URL
-title: 交谈URL收件箱扩展
-seo-title: 交谈URL收件箱
+title: 交谈URL收件箱扩展目标
 description: Talk URL收件箱扩展是Adobe Experience Platform客户目标的语音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: Talk URL收件箱扩展是Adobe Experience Platform客户目标的语音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '583'
+source-wordcount: '550'
 ht-degree: 4%
 
 ---
 
 
 # [!DNL Talk URL Inbox] 扩展 {#talk-url-extension}
-
-## 概述 {#overview}
 
 从网页访客接收语音消息。 包括托管UI和基于云的机器学习，可即时将语音消息转录为文本洞察。
 
