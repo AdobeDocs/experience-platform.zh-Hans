@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API；统一用户档案；统一用户档案；统一用户档案;;rtcp；启用用户档案；启用用户档案
-title: 实时客户用户档案API开发人员指南
+title: 实时客户用户档案API指南
 topic: guide
-description: 实时用户档案API包括多个用于浏览和处理用户档案数据的端点，包括查看用户档案、创建和更新合并策略、导出或采样用户档案数据，以及删除您不再需要或错误地添加的用户档案数据。
+description: 实时客户用户档案API允许开发人员探索和处理用户档案数据，包括视图用户档案，创建和更新合并策略，导出或采样用户档案数据，以及删除不再需要或错误添加的用户档案数据。 请按照本指南学习如何使用API执行关键操作。
 translation-type: tm+mt
-source-git-commit: 823d89ab37156e775a2879e3a2c91bfd911b83bb
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '861'
+source-wordcount: '870'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Real-time Customer Profile] API开发人员指南
+# [!DNL Real-time Customer Profile] API指南
 
 [!DNL Real-time Customer Profile] 使您能够全面视图Adobe Experience Platform内每位客户。[!DNL Profile] 允许您将来自多个渠道（如在线、离线、CRM和第三方数据）的不同客户数据整合到一个统一的视图中，为每次客户互动提供可操作、有时间戳的帐户。
 
