@@ -1,19 +1,17 @@
 ---
 keywords: 飞艇标签；飞艇目的地
-title: 飞艇标记目标
-seo-title: 飞艇标记目标
+title: 飞艇标记连接目标
 description: 将Adobe受众数据无缝传递给飞艇，作为飞艇内目标的受众标签。
-seo-description: 将Adobe受众数据无缝传递给飞艇，作为飞艇内目标的受众标签。
 translation-type: tm+mt
-source-git-commit: 95f57f9d1b3eeb0b16ba209b9774bd94f5758009
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '1213'
+source-wordcount: '1197'
 ht-degree: 1%
 
 ---
 
 
-# （测试版）[!DNL Airship Tags]目标{#airship-tags-destination}
+# （测试版）[!DNL Airship Tags]连接{#airship-tags-destination}
 
 >[!IMPORTANT]
 >
