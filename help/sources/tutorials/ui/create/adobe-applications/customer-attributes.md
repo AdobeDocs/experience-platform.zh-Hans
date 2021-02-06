@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform；主页；热门主题；客户属性
 solution: Experience Platform
-title: 在UI中创建客户属性源连接器
+title: 在UI中创建客户属性源连接
 topic: overview
 type: Tutorial
-description: 本教程提供了在UI中创建源连接器的步骤，用于收集用户档案到Adobe Experience Platform的客户属性数据。
+description: 了解如何在UI中创建源连接，以收集用户档案数据到Adobe Experience Platform的客户属性。
 translation-type: tm+mt
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '379'
+source-wordcount: '377'
 ht-degree: 5%
 
 ---
 
 
-# 在UI中创建客户属性源连接器
+# 在UI中创建客户属性源连接
 
-本教程提供了在UI中创建源连接器的步骤，用于收集用户档案到Adobe Experience Platform的客户属性数据。 有关客户属性的详细信息，请参阅[概述文档](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/attributes.html)。
+本教程提供了在UI中创建源连接的步骤，用于收集用户档案数据到Adobe Experience Platform。 有关客户属性的详细信息，请参阅[概述文档](https://experienceleague.adobe.com/docs/core-services/interface/customer-attributes/attributes.html)。
 
 ## 创建源连接
 
