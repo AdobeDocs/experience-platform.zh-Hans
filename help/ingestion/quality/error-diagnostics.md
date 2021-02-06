@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主题；热门主题；批处理；批处理；部分摄取；部分摄取；检索错误；检索错误；部分批处理；部分批处理；部分批处理；部分摄取；部分摄取；部分摄取；
 solution: Experience Platform
-title: Adobe Experience Platform分批摄取概述
+title: 检索数据摄取错误诊断
 topic: overview
 description: 此文档提供有关监视批处理摄取、管理部分批处理摄取错误的信息，以及部分批处理摄取类型的参考。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
 workflow-type: tm+mt
 source-wordcount: '936'
 ht-degree: 2%
@@ -13,7 +13,7 @@ ht-degree: 2%
 ---
 
 
-# 检索错误诊断
+# 检索数据获取错误诊断
 
 Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以使用批处理摄取(允许您使用各种文件类型（如CSV）插入数据)或流式摄取（允许您使用流式端点将数据实时插入[!DNL Platform]）。
 
