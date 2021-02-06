@@ -5,15 +5,15 @@ seo-title: 实时客户数据平台主页和仪表板
 description: 仪表板、主页和 Adobe Experience Platform 的首次用户体验
 seo-description: 仪表板、主页和 Adobe Experience Platform 的首次用户体验
 translation-type: tm+mt
-source-git-commit: 00010d38a5d05800aeac9af8505093fee3593b45
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '636'
+source-wordcount: '638'
 ht-degree: 4%
 
 ---
 
 
-# [!DNL Real-time Customer Data Platform] 度量概述
+# [!DNL Real-time Customer Data Platform] 主页和仪表板
 
 实时客户数据平台(Real-time CDP)主页，在您登录到实时CDP时，会显示该仪表板，其中包括一个指标。
 
