@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: Privacy Service开发人员指南
-description: 使用RESTful API跨Adobe Experience Cloud应用程序管理数据主体的个人数据
+title: Privacy ServiceAPI指南
+description: Privacy ServiceAPI允许开发人员创建和管理客户请求，以跨Experience Cloud应用程序访问或删除其个人数据，这符合法律隐私法规。 请按照本指南学习如何使用API执行关键操作。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 5d1b22253f2b382bef83e30a4295218ba6b85331
+source-git-commit: e649ab3da077cdd8e98562199b8bdece6108a572
 workflow-type: tm+mt
-source-wordcount: '771'
+source-wordcount: '795'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Privacy Service] 开发人员指南
+# [!DNL Privacy Service] API指南
 
 Adobe Experience Platform[!DNL Privacy Service]提供一个RESTful API和用户界面，允许您跨Adobe Experience Cloud应用程序管理（访问和删除）数据主体（客户）的个人数据。 [!DNL Privacy Service] 还提供了一个中央审计和日志记录机制，允许您访问涉及应用程序的作业的状态和 [!DNL Experience Cloud] 结果。
 
