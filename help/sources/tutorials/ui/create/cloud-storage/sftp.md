@@ -1,26 +1,26 @@
 ---
-keywords: Experience Platform;home;popular topics;SFTP;sftp
+keywords: Experience Platform；主页；热门主题；SFTP;sftp
 solution: Experience Platform
-title: 在UI中创建SFTP源连接器
+title: 在UI中创建SFTP源连接
 topic: overview
 type: Tutorial
-description: 本教程提供了使用平台用户界面创建SFTP源连接器的步骤。
+description: 了解如何使用Adobe Experience PlatformUI创建SFTP源连接。
 translation-type: tm+mt
-source-git-commit: 0d0d3aa4213f3a8252de82c47eef6e9caa4d3e9e
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
 
 
-# 在UI中创建SFTP源连接器
+# 在UI中创建SFTP源连接
 
 >[!NOTE]
 >
 >SFTP连接器处于测试状态。 有关使用测试版标签的连接器的详细信息，请参见[源概述](../../../../home.md#terms-and-conditions)。
 
-本教程提供了使用平台用户界面创建SFTP源连接器的步骤。
+本教程提供了使用Adobe Experience PlatformUI创建SFTP源连接的步骤。
 
 ## 入门指南
 
@@ -35,7 +35,7 @@ ht-degree: 0%
 >
 >建议在使用SFTP源连接引入JSON对象时避免换行或回车。 要绕过限制，请每行使用一个JSON对象，然后使用多行生成后续文件。
 
-如果您已经有有效的SFTP连接，您可以跳过此文档的其余部分，继续学习有关配置数据流[的教程。](../../dataflow/batch/cloud-storage.md)
+如果您已经有有效的SFTP连接，您可以跳过此文档的其余部分，继续学习有关配置数据流](../../dataflow/batch/cloud-storage.md)的教程。[
 
 ### 收集所需的凭据
 
