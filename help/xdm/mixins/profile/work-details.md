@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;home;popular topics;schema;Schema;XDM;individual profile;fields;schemas;Schemas;Schema design;mixin;mixins;work details;profile work;
+keywords: Experience Platform；主题；热门主题；模式;模式; XDM；个人用户档案；字段；模式;模式;模式设计；混音；混音；工作细节；用户档案工作；
 solution: Experience Platform
 title: 混合工作联系人详细信息
 topic: overview
 description: 此文档概述了“工作联系人详细信息”混合。
 translation-type: tm+mt
-source-git-commit: f9d8021643e72e3fbb5315b54a19815dcdaaa702
+source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '177'
 ht-degree: 3%
 
 ---
 
 
-# [!UICONTROL 混合工作联系人] “详细信息”
+# [!UICONTROL 工作联系人] 详细信息
 
 >[!NOTE]
 >
->几个混音的名称已经更改。 有关详细信息，请 [参阅混合名称](../name-updates.md) 更新文档。
+>几个混音的名称已经更改。 有关详细信息，请参阅[mixin name updates](../name-updates.md)上的文档。
 
-[!UICONTROL 工作联系人详] 细信息是课程的标准混 [[!DNL XDM Individual Profile] 音符](../../classes/individual-profile.md)。 混音提供了多个字段，用于捕获有关个人的职业信息，如工作地址、工作电子邮件、工作电话号码以及该人所属的组织。
+[!UICONTROL 工作联系] 人详细信息是课程的标准 [[!DNL XDM Individual Profile] 混音](../../classes/individual-profile.md)。混音提供了多个字段，用于捕获有关个人的职业信息，如工作地址、工作电子邮件、工作电话号码以及该人所属的组织。
 
 <img src="../../images/mixins/profile-work-details.png" width="550" /><br />
 
