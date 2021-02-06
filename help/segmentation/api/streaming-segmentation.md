@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主题；热门主题；分割；分割；分割服务；流分割；流分割；连续评价；
 solution: Experience Platform
-title: 流细分
+title: '基于流分割的近实时事件评估 '
 topic: developer guide
-description: 此文档包含有关如何使用流式分段API的示例。
+description: 此文档包含有关如何使用Adobe Experience Platform分段服务API的流分段的示例。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
 workflow-type: tm+mt
-source-wordcount: '1329'
+source-wordcount: '1338'
 ht-degree: 1%
 
 ---
