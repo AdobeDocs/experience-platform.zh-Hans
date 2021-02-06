@@ -4,7 +4,7 @@ title: 同意和首选项数据类型
 description: 隐私／营销偏好（同意）数据类型旨在支持收集由同意管理平台(CMP)和您数据操作的其他来源生成的客户权限和偏好。
 topic: guide
 translation-type: tm+mt
-source-git-commit: caebdcd48e03bd8b91da624532569b55d8696fb4
+source-git-commit: 10ccccf72ff7a2fd726066332b9771dff1929af6
 workflow-type: tm+mt
 source-wordcount: '2040'
 ht-degree: 1%
