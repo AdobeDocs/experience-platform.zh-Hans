@@ -1,22 +1,22 @@
 ---
 keywords: Experience Platform；主页；热门主题；分析；分类
-description: 本教程提供了在UI中创建Adobe Analytics分类数据连接器以将分类数据引入Adobe Experience Platform的步骤。
+description: 了解如何创建Adobe Analytics源连接器UI以将分类数据引入Adobe Experience Platform。
 solution: Experience Platform
-title: 在UI中创建Adobe Analytics分类数据连接器
+title: 在UI中为分类数据创建Adobe Analytics源连接
 topic: overview
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
 workflow-type: tm+mt
-source-wordcount: '659'
+source-wordcount: '660'
 ht-degree: 0%
 
 ---
 
 
-# 在UI中创建Adobe Analytics分类数据连接器
+# 在UI中为分类数据创建Adobe Analytics源连接
 
-本教程提供了在UI中创建Adobe Analytics分类数据连接器以将分类数据引入Adobe Experience Platform的步骤。
+本教程提供了在UI中创建Adobe Analytics分类数据源连接以将分类数据引入Adobe Experience Platform的步骤。
 
 ## 入门指南
 
@@ -86,5 +86,5 @@ Analytics Classifications Data Connector要求您的数据在使用前已迁移�
 按照本教程，您创建了一个Analytics Classifications Data连接器，它将[!DNL Classifications]数据引入[!DNL Platform]。 有关[!DNL Analytics]和[!DNL Classifications]数据的详细信息，请参阅以下文档:
 
 * [Analytics数据连接器概述](../../../../connectors/adobe-applications/analytics.md)
-* [在UI中创建Analytics数据连接器](./analytics.md)
+* [在UI中创建分析数据连接](./analytics.md)
 * [关于分类](https://experienceleague.adobe.com/docs/analytics/components/classifications/c-classifications.html)
