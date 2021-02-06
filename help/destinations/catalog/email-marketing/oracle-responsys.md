@@ -1,21 +1,17 @@
 ---
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；oracle响应系统目标
-title: OracleResponsys目的地
-seo-title: OracleResponsys目的地
+title: OracleResponsys连接目标
 description: Responsys是Oracle公司为跨渠道营销活动提供的企业电子邮件营销工具，可以跨电子邮件、移动设备、展示广告和社交渠道实现个性化互动。
-seo-description: Responsys是Oracle公司为跨渠道营销活动提供的企业电子邮件营销工具，可以跨电子邮件、移动设备、展示广告和社交渠道实现个性化互动。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '501'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Oracle Responsys]
-
-## 概述
+# [!DNL Oracle Responsys] 连接
 
 [响](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) 应是面向跨渠道营销活动的企业电子邮件营销工具， [!DNL Oracle] 旨在通过电子邮件、移动设备、展示广告和社交渠道实现个性化互动。
 
