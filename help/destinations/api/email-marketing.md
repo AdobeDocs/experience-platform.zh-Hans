@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: 创建电子邮件营销目标
+title: 使用API调用创建电子邮件营销目标
 description: 本文档涵盖通过使用Adobe Experience PlatformAPI创建电子邮件营销目标
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: d1f357659313aba0811b267598deda9770d946a1
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '1645'
+source-wordcount: '1644'
 ht-degree: 1%
 
 ---
 
 
-# 在Adobe Experience Platform创建电子邮件营销目标并使用API调用激活数据
+# 创建电子邮件营销目标并使用API调用激活数据
 
 本教程演示如何使用API调用连接到您的Adobe Experience Platform数据、创建[电子邮件营销目标](../catalog/email-marketing/overview.md)、创建到新创建目标的数据流以及将数据激活到新创建的目标。
 
