@@ -1,21 +1,21 @@
 ---
-keywords: Experience Platform;home;popular topics;Sandbox;sandbox
+keywords: Experience Platform；主页；热门主题；沙箱；沙箱
 solution: Experience Platform
-title: 创建沙箱
+title: 在API中创建沙箱
 topic: developer guide
 description: 可以通过向“/沙箱”端点发出POST请求来创建新沙箱。
 translation-type: tm+mt
-source-git-commit: c081a7521be9715ca32d35504922a70767924fd7
+source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: '164'
 ht-degree: 2%
 
 ---
 
 
-# 创建沙箱
+# 在API中创建沙箱
 
-可以通过向端点发出POST请求来创建新沙 `/sandboxes` 箱。
+可以通过向`/sandboxes`端点发出POST请求来创建新沙箱。
 
 **API格式**
 
@@ -50,7 +50,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新创建的沙箱的详细信息，显示其 `state` 正在“创建”。
+成功的响应会返回新创建的沙箱的详细信息，显示其`state`是“creating”。
 
 ```json
 {
@@ -64,4 +64,4 @@ curl -X POST \
 
 >[!NOTE]
 >
->沙箱需要大约15分钟时间才能由系统进行配置，之后 `state` 沙箱将变为“活动”或“失败”。
+>沙箱需要大约15分钟才能由系统进行配置，之后其`state`将变为“活动”或“失败”。
