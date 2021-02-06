@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform；主页；热门主题；摄取；摄取批量数据；教程；批处理摄取；教程；ui指南；
 solution: Experience Platform
-title: 将数据引入Adobe Experience Platform
+title: 将数据引入Experience Platform
 topic: tutorial
 type: Tutorial
 description: Adobe Experience Platform允许您轻松将数据导入为符合已知体验数据模型(XDM)模式的Parke文件或数据形式的批处理文件。
 translation-type: tm+mt
-source-git-commit: 2940f030aa21d70cceeedc7806a148695f68739e
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '1323'
+source-wordcount: '1322'
 ht-degree: 0%
 
 ---
