@@ -1,5 +1,5 @@
 ---
-title: Adobe Experience Platform建筑
+title: Experience Platform架构概述
 description: 此视频浏览概述图并介绍Adobe Experience Platform的主要组件。
 feature: platform
 topics: null
@@ -9,16 +9,16 @@ doc-type: video
 activity: understand
 thumbnail: 32456.jpg
 translation-type: tm+mt
-source-git-commit: 333b89ccf2365c04646df9dc0434036bdd6f12ac
+source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
 workflow-type: tm+mt
-source-wordcount: '42'
-ht-degree: 35%
+source-wordcount: '40'
+ht-degree: 0%
 
 ---
 
 
-# Experience Platform的基本架构
+# Experience Platform架构概述
 
-此视频介绍了概览图表以及 Experience Platform 的主要组件。
+此视频浏览一个高级架构图，其中介绍了Experience Platform的主要组件。
 
 >[!VIDEO](https://video.tv.adobe.com/v/32456?quality=12&learn=on)
