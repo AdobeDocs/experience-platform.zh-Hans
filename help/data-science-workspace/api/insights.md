@@ -1,25 +1,25 @@
 ---
-keywords: Experience Platform;developer guide;endpoint;Data Science Workspace;popular topics;insights;sensei machine learning api
+keywords: Experience Platform；开发人员指南；端点；数据科学工作区；热门主题；洞察；sensei机器学习api
 solution: Experience Platform
-title: 洞察
+title: Insights API端点
 topic: Developer guide
 description: 洞察包含一些指标，这些指标可帮助数据科学家通过显示相关的评估指标来评估和选择最佳ML模型。
 translation-type: tm+mt
-source-git-commit: 194a29124949571638315efe00ff0b04bff19303
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '515'
 ht-degree: 3%
 
 ---
 
 
-# 洞察
+# 洞察端点
 
 洞察包含一些指标，这些指标可帮助数据科学家通过显示相关的评估指标来评估和选择最佳ML模型。
 
 ## 检索列表洞察
 
-您可以通过向洞察端点执行单个列表请求来检索洞察GET。  要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅附录部分中有关资产检 [索查询参数的部分](./appendix.md#query)。
+您可以通过向洞察端点执行单个列表请求来检索洞察GET。  要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
 
 **API格式**
 
@@ -40,7 +40,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回一个有效负荷，该负荷包含列表的洞察，并且每个分析都具有唯一标识符( `id` )。 此外，您还将收 `context` 到包含与该特定分析关联的唯一标识符(这些标识符与“洞察”事件和指标数据关联)。
+成功的响应会返回包含洞察列表的有效负荷，并且每个分析都具有唯一标识符(`id`)。 此外，您还将收到`context`，其中包含与该特定分析关联的唯一标识符，这些标识符与“洞察”事件和指标数据关联。
 
 ```json
 {
@@ -109,7 +109,7 @@ curl -X GET \
 
 ## 检索特定Insight
 
-要查找特定的分析，请发出GET请求，并在请求路 `{INSIGHT_ID}` 径中提供有效。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅附录部分中有关资产检 [索查询参数的部分](./appendix.md#query)。
+要查找特定的分析，请发出GET请求，并在请求路径中提供有效的`{INSIGHT_ID}`。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
 
 **API格式**
 
@@ -134,7 +134,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回包含洞察唯一标识符(`id`)的有效负荷。 此外，您还将收 `context` 到包含与特定分析关联的唯一标识符(这些标识符与“洞察”事件和指标数据相关)。
+成功的响应返回包含洞察唯一标识符(`id`)的有效负荷。 此外，您还将收到`context`，其中包含与“分析”事件和量度数据之后的特定分析相关联的唯一标识符。
 
 ```json
 {
@@ -230,7 +230,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应将返回一个有效负荷，该负 `{INSIGHT_ID}` 荷包含您在初始请求中提供的任何参数。
+成功的响应将返回具有`{INSIGHT_ID}`和您在初始请求中提供的任何参数的有效负荷。
 
 ```json
 {
@@ -265,7 +265,7 @@ curl -X POST \
 
 ## 检索算法的默认列表
 
-通过对度量端点执行单个列表请求，可以检索所有算法和默认度量的GET。 要查询特定度量，请发出GET请求，并在请求路 `{ALGORITHM}` 径中提供有效。
+通过对度量端点执行单个列表请求，可以检索所有算法和默认度量的GET。 要查询特定度量，请发出GET请求，并在请求路径中提供有效的`{ALGORITHM}`。
 
 **API格式**
 
@@ -280,7 +280,7 @@ GET /insights/metrics?algorithm={ALGORITHM}
 
 **请求**
 
-以下请求包含查询，并使用算法标识符检索特定度量 `{ALGORITHM}`
+以下请求包含查询，并使用算法标识符`{ALGORITHM}`检索特定度量
 
 ```shell
 curl -X GET \
@@ -293,7 +293,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回包含唯一标识符 `algorithm` 和一组默认度量的有效负荷。
+成功的响应返回一个包含`algorithm`唯一标识符和一组默认度量的有效负荷。
 
 ```json
 {
