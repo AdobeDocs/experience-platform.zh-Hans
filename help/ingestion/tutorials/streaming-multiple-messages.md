@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；流式摄取；摄取；流式多条消息；多条消息；
 solution: Experience Platform
-title: 在单个HTTP请求中流化多个消息
+title: 在单个HTTP请求中发送多条消息
 topic: tutorial
 type: Tutorial
 description: 此文档提供了一个教程，用于使用流摄取在单个HTTP请求中向Adobe Experience Platform发送多条消息。
 translation-type: tm+mt
-source-git-commit: ece2ae1eea8426813a95c18096c1b428acfd1a71
+source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
 workflow-type: tm+mt
 source-wordcount: '1497'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 ---
 
 
-# 在单个HTTP请求中发送多条消息
+# 在一个HTTP请求中发送多条消息
 
 将数据流化到Adobe Experience Platform时，进行大量HTTP调用可能会非常昂贵。 例如，创建1KB有效负荷的1个HTTP请求（每个消息200条，每个消息1KB）比创建200个HTTP请求（单个有效负荷200KB）效率更高。 正确使用时，在单个请求中对多个消息进行分组是优化发送到[!DNL Experience Platform]的数据的最佳方法。
 
