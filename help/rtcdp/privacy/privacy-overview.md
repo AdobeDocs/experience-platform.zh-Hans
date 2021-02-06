@@ -1,19 +1,19 @@
 ---
 keywords: 数据管理rtcdp;rtcdp数据治理；实时客户数据用户档案数据治理；隐私rtcdp;rtcdp隐私
-title: 实时客户数据用户档案中的隐私
-seo-title: 实时客户数据用户档案中的隐私
-description: 实时客户用户档案使您能够简化数据操作遵守隐私法规的流程。
-seo-description: 实时客户用户档案使您能够简化数据操作遵守隐私法规的流程。
+title: 实时客户数据平台中的隐私保护
+seo-title: 实时客户数据平台中的隐私保护
+description: 实时客户数据平台使您能够简化数据操作遵守隐私法规的流程。
+seo-description: 实时客户数据平台使您能够简化数据操作遵守隐私法规的流程。
 translation-type: tm+mt
-source-git-commit: 49c984a60fd699706eec508ec1d786340df40b57
+source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '390'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Real-time CDP]中的隐私
+# 实时客户数据平台中的隐私保护
 
 [!DNL Real-time Customer Data Platform] ([!DNL Real-time CDP])帮助营销人员将多个企业系统中的数据整合在一起，使他们能够更好地识别、理解和吸引客户。Adobe将消费者数据隐私视为一项基本的设计原则，并提供各种控件来帮助营销人员管理其客户的数据隐私。
 
