@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: Privacy ServiceAPI开发人员指南附录
+title: Privacy ServiceAPI指南附录
 topic: developer guide
 description: 此文档包含有关使用Privacy ServiceAPI的其他信息。
 translation-type: tm+mt
-source-git-commit: 5dad1fcc82707f6ee1bf75af6c10d34ff78ac311
+source-git-commit: b395535cbe7e4030606ee2808eb173998f5c32e0
 workflow-type: tm+mt
-source-wordcount: '498'
+source-wordcount: '501'
 ht-degree: 9%
 
 ---
 
 
-# 附录
+# Privacy ServiceAPI指南附录
 
 以下各节包含有关使用Adobe Experience Platform Privacy ServiceAPI的其他信息。
 
