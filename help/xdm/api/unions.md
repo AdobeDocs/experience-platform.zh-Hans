@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主题；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；合并;合并;合并;合并；段成员；timeSeriesEvents;
 solution: Experience Platform
-title: 合并
+title: 合并API端点
 description: 模式注册表API中的/合并端点允许您以编程方式管理体验应用程序中的XDM合并模式。
 topic: developer guide
 translation-type: tm+mt
-source-git-commit: 1f18bf7367addd204f3ef8ce23583de78c70b70c
+source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
 workflow-type: tm+mt
-source-wordcount: '910'
+source-wordcount: '912'
 ht-degree: 1%
 
 ---
