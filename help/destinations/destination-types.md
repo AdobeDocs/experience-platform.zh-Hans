@@ -2,12 +2,11 @@
 keywords: 目标；目标；目标类型
 title: 目标类型和类别
 seo-title: 目标类型和类别
-description: '在Adobe Experience Platform,用户档案/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分并将细分和合格用户档案导出到目标。 Experience Platform Launch扩展将原始事件数据转发到几种类型的目标。 '
-seo-description: 在Adobe Experience Platform,用户档案/细分导出目标可捕获事件数据，将其与其他数据源相结合，应用细分并将细分和合格用户档案导出到目标。 Experience Platform Launch扩展将原始事件数据转发到几种类型的目标。
+description: 了解Adobe Experience Platform的不同类型和类别目的地。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '514'
 ht-degree: 0%
 
 ---
