@@ -1,20 +1,20 @@
 ---
-keywords: Experience Platform;train and evaluate;Data Science Workspace;popular topics;create a model;create a training run
+keywords: Experience Platform；培训和评估；数据科学工作区；热门主题；创建模型；创建培训运行
 solution: Experience Platform
-title: 培训和评估模型(UI)
+title: 在数据科学工作区UI中训练和评估模型
 topic: tutorial
 type: Tutorial
 description: 在Adobe Experience Platform数据科学工作区中，机器学习模型是通过整合符合模型意图的现有Recipe来创建的。 然后，对模型进行训练和评估，通过微调其相关的超参数来优化其运行效率和功效。 菜谱是可重用的，这意味着可以使用单个菜谱创建多个模型并针对特定用途进行定制。
 translation-type: tm+mt
-source-git-commit: 97dfd3a9a66fe2ae82cec8954066bdf3b6346830
+source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
 workflow-type: tm+mt
-source-wordcount: '1038'
+source-wordcount: '1065'
 ht-degree: 1%
 
 ---
 
 
-# 培训和评估模型(UI)
+# 在数据科学工作区UI中培训和评估模型
 
 在Adobe Experience Platform数据科学工作区中，机器学习模型是通过整合符合模型意图的现有Recipe来创建的。 然后，对模型进行训练和评估，通过微调其相关的超参数来优化其运行效率和功效。 菜谱是可重用的，这意味着可以使用单个菜谱创建多个模型并针对特定用途进行定制。
 
@@ -22,54 +22,54 @@ ht-degree: 1%
 
 ## 入门指南
 
-要完成本教程，您必须具有访问权限 [!DNL Experience Platform]。 如果您无权访问中的IMS组织，请在继 [!DNL Experience Platform]续操作之前与系统管理员联系。
+要完成本教程，您必须具有对[!DNL Experience Platform]的访问权限。 如果您无权访问[!DNL Experience Platform]中的IMS组织，请在继续操作前与系统管理员联系。
 
-本教程需要现有的“菜谱”。 如果您没有菜谱，请按照UI教 [程中的导入打包的菜谱](./import-packaged-recipe-ui.md) ，然后继续。
+本教程需要现有的“菜谱”。 如果您没有菜谱，请按照UI](./import-packaged-recipe-ui.md)教程中的[导入打包菜谱，然后继续。
 
 ## 创建模型
 
-1. 在Adobe Experience Platform，单击左 **[!UICONTROL 侧导航]** 列中的“模型”链接以列表所有现有的“模型”。 单 **[!UICONTROL 击页面右上]** 方附近的“创建模型”(Create Model)，开始“模型”(Model)创建过程。
+1. 在Adobe Experience Platform，单击左侧导航列中的&#x200B;**[!UICONTROL Models]**&#x200B;链接以列表所有现有型号。 单击页面右上方的&#x200B;**[!UICONTROL 创建模型]**以开始模型创建过程。
    ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
-2. 浏览现有菜谱的列表，找到并选择要用于创建模型的菜谱，然后单击下 **[!UICONTROL 一步]**。
+2. 浏览现有菜谱的列表，找到并选择要用于创建模型的菜谱，然后单击&#x200B;**[!UICONTROL 下一步]**。
    ![](../images/models-recipes/train-evaluate-ui/select_recipe.png)
 
-3. 选择适当的输入数据集，然后单击“ **[!UICONTROL 下一步]**”。 这将设置“模型”的默认输入培训数据集。
+3. 选择适当的输入数据集，然后单击&#x200B;**[!UICONTROL Next]**。 这将设置“模型”的默认输入培训数据集。
    ![](../images/models-recipes/train-evaluate-ui/select_dataset.png)
 
-4. 为“模型”提供名称并查看默认的“模型”配置。 在“处方”创建过程中应用了默认配置，通过多次单击这些值来检查和修改配置值。 要提供新的配置集，请单击“ **[!UICONTROL 上传新配置]** ”，并将包含“模型”配置的JSON文件拖至浏览器窗口中。 单击 **[!UICONTROL “完]** 成”(Finish)以创建“模型”(Model)。
+4. 为“模型”提供名称并查看默认的“模型”配置。 在“处方”创建过程中应用了默认配置，通过多次单击这些值来检查和修改配置值。 要提供新的配置集，请单击&#x200B;**[!UICONTROL 上传新配置]**，并将包含模型配置的JSON文件拖至浏览器窗口。 单击&#x200B;**[!UICONTROL 完成]**&#x200B;以创建模型。
 
    >[!NOTE]
    >
-   >配置是唯一的，且特定于其预期的处方，这意味着零售销售处方的配置将不适用于产品Recommendations处方。 有关零售 [销售](#reference) 处方配置的列表，请参阅参考部分。
+   >配置是唯一的，且特定于其预期的处方，这意味着零售销售处方的配置将不适用于产品Recommendations处方。 有关零售销售处方配置的列表，请参阅[reference](#reference)部分。
 
    ![](../images/models-recipes/train-evaluate-ui/name_and_configure.png)
 
 ## 创建培训运行
 
-1. 在Adobe Experience Platform，单击左 **[!UICONTROL 侧导航]** 列中的“模型”链接以列表所有现有的“模型”。 查找并单击要培训的模型的名称。
+1. 在Adobe Experience Platform，单击左侧导航列中的&#x200B;**[!UICONTROL Models]**链接以列表所有现有型号。 查找并单击要培训的模型的名称。
    ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
-2. 将列出所有具有当前培训状态的现有培训运行。 对于使用用户界面创 [!DNL Data Science Workspace] 建的模型，将使用默认配置和输入培训数据集自动生成并执行培训运行。
+2. 将列出所有具有当前培训状态的现有培训运行。 对于使用[!DNL Data Science Workspace]用户界面创建的模型，将自动生成并使用默认配置和输入培训数据集执行培训运行。
    ![](../images/models-recipes/train-evaluate-ui/model_overview.png)
 
-3. 单击“模型概述”页 **[!UICONTROL 面右上]** 方附近的“培训”，创建新的培训运行。
+3. 单击“模型概述”页右上角的&#x200B;**[!UICONTROL Train]**，创建新的培训运行。
    ![](../images/models-recipes/train-evaluate-ui/training_input.png)
 
-4. 为培训运行选择培训输入数据集，然后单击“下 **[!UICONTROL 一步”]**。
+4. 为培训运行选择培训输入数据集，然后单击&#x200B;**[!UICONTROL 下一步]**。
    ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
-5. 在“模型”(Model)创建过程中提供的默认配置将显示出来，通过多次单击这些值，相应地更改和修改这些配置。 单击 **[!UICONTROL “完成]** ”以创建并执行培训运行。
+5. 在“模型”(Model)创建过程中提供的默认配置将显示出来，通过多次单击这些值，相应地更改和修改这些配置。 单击&#x200B;**[!UICONTROL 完成]**&#x200B;以创建并执行培训运行。
 
    >[!NOTE]
    >
-   >配置是唯一的，且特定于其预期的处方，这意味着零售销售处方的配置将不适用于产品Recommendations处方。 有关零售 [销售](#reference) 处方配置的列表，请参阅参考部分。
+   >配置是唯一的，且特定于其预期的处方，这意味着零售销售处方的配置将不适用于产品Recommendations处方。 有关零售销售处方配置的列表，请参阅[reference](#reference)部分。
 
    ![](../images/models-recipes/train-evaluate-ui/training_configuration.png)
 
 ## 评估模型
 
-1. 在Adobe Experience Platform，单击左 **[!UICONTROL 侧导航]** 列中的“模型”链接以列表所有现有的“模型”。 查找并单击要评估的模型的名称。
+1. 在Adobe Experience Platform，单击左侧导航列中的&#x200B;**[!UICONTROL Models]**链接以列表所有现有型号。 查找并单击要评估的模型的名称。
    ![](../images/models-recipes/train-evaluate-ui/models_browse.png)
 
 2. 将列出所有具有当前培训状态的现有培训运行。 对于多个已完成的培训运行，可以在模型评估图表中比较不同培训运行的评估指标，使用图表上方的下拉列表选择评估指标。
@@ -78,7 +78,7 @@ ht-degree: 1%
 
    ![](../images/models-recipes/train-evaluate-ui/complete_training_run.png)
 
-   “精确度”度量描述相关实例与检索到的实例总数的 *百分比* 。 精确度可以看作是随机选择的结果正确的概率。
+   “精确度”度量描述相关实例与已检索&#x200B;*实例总数的百分比。*精确度可以看作是随机选择的结果正确的概率。
    ![](../images/models-recipes/train-evaluate-ui/multiple_training_runs.png)
 
    单击特定培训运行以视图该运行的详细信息。 甚至可以在运行完成之前完成此操作。 在“运行详细信息”页上，您可以看到特定于培训运行的其他评估指标、配置参数和可视化。 您还可以下载活动日志以查看运行的详细信息。 日志对于失败的运行来查看出错的内容尤为有用。
@@ -88,7 +88,7 @@ ht-degree: 1%
 
 ## 后续步骤
 
-本教程将指导您在中创建、培训和评估模型 [!DNL Data Science Workspace]。 到达优化模型后，您可以使用经过培训的模型，通过在UI教程中 [对模型评分来生成洞察](./score-model-ui.md) 。
+本教程指导您在[!DNL Data Science Workspace]中创建、培训和评估模型。 到达优化模型后，您可以使用经过培训的模型根据UI](./score-model-ui.md)教程中的[对模型评分来生成洞察。
 
 ## 参考 {#reference}
 
@@ -98,7 +98,7 @@ ht-degree: 1%
 
 | 超参数 | 描述 | 推荐范围 |
 --- | --- | ---
-| learning_rate | 学习率通过learning_rate缩减了每棵树的贡献。 学习率和n估计量之间存在权衡。 | 0.1 | [2 - 10] /估计器数 |
+| learning_rate | 学习率通过learning_rate缩减了每棵树的贡献。 学习率和n估计量之间存在权衡。 | 0.1 | [2 - 10] /估值器数 |
 | n_mediators | 要执行的提升阶段数。 渐变提升对过拟合相当稳健，因此，大数量通常会产生更好的性能。 | 100 | 100 - 1000 |
 | max_depth | 单个回归估计器的最大深度。 最大深度限制树中的节点数。 调整此参数以获得最佳性能；最佳值取决于输入变量的交互。 | 3 | 4 - 10 |
 
@@ -109,7 +109,7 @@ ht-degree: 1%
 | `ACP_DSW_INPUT_FEATURES` | 字符串 | 列表以逗号分隔的输入模式属性。 |
 | `ACP_DSW_TARGET_FEATURES` | 字符串 | 列表以逗号分隔的输出模式属性。 |
 | `ACP_DSW_FEATURE_UPDATE_SUPPORT` | 布尔值 | 确定输入和输出功能是否可修改 |
-| `tenantId` | 字符串 | 此ID可确保您创建的资源命名正确且包含在IMS组织中。 [按照此处的步骤](../../xdm/api/getting-started.md#know-your-tenant_id) ，查找您的租户ID。 |
+| `tenantId` | 字符串 | 此ID可确保您创建的资源命名正确且包含在IMS组织中。 [请按照以下](../../xdm/api/getting-started.md#know-your-tenant_id) 步骤查找您的租户ID。 |
 | `ACP_DSW_TRAINING_XDM_SCHEMA` | 字符串 | 用于培训模型的输入模式。 |
 | `evaluation.labelColumn` | 字符串 | 用于评估可视化的列标签。 |
 | `evaluation.metrics` | 字符串 | 用于评估模型的评估指标的逗号分隔列表。 |
