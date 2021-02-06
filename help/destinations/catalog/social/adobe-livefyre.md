@@ -1,21 +1,17 @@
 ---
 keywords: livefyre;livefyre扩展
-title: AdobeLivefyre扩展
-seo-title: AdobeLivefyre扩展
+title: AdobeLivefyre扩展目标
 description: AdobeLivefyre扩展是Adobe Experience Platform的社交目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
-seo-description: AdobeLivefyre扩展是Adobe Experience Platform的社交目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 7aadb4b7e7c36b659490d155ad4cfa7ef0a24306
+source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
 workflow-type: tm+mt
-source-wordcount: '527'
-ht-degree: 4%
+source-wordcount: '498'
+ht-degree: 5%
 
 ---
 
 
 # AdobeLivefyre扩展{#adobe-livefyre-extension}
-
-## 概述 {#overview}
 
 AdobeLivefyre使您能够发现、组织和发布用户生成的内容不断流到您的网站上，从而创建真实、高度个性化的体验。
 
