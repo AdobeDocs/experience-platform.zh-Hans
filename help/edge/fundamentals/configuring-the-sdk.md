@@ -5,7 +5,7 @@ description: 了解如何配置Experience PlatformWeb SDK
 seo-description: 了解如何配置Experience PlatformWeb SDK
 keywords: 配置；配置；SDK;edge;Web SDK；配置；edgeConfigId;context;web;device;环境;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConnence;web sdk设置；prehidingStyle;opaty;cookieDDUrlDeDeDesDesDEntEnageEnEnEnabled;DestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 723711ee0c2b7b5ca4aea617a81241dbebbc839c
+source-git-commit: 3ac00fda2c0a43437fb212dcba7e98c63503b9c4
 workflow-type: tm+mt
 source-wordcount: '740'
 ht-degree: 11%
@@ -94,7 +94,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 函数 | 否 | ()=>未定义 |
 
-设置此设置可配置在发送每个事件之前调用的回调。  字段为`xdm`的对象将发送到回调。  修改`xdm`对象以更改发送内容。  在回调中，`xdm`对象已在事件命令中传递数据，并自动收集信息。  有关此回调的时间和示例的详细信息，请参阅[全局修改事件](tracking-events.md#modifying-events-globally)。
+设置此设置可配置在发送每个事件之前调用的回调。  字段为`xdm`的对象将发送到回调。  修改`xdm`对象以更改发送内容。  在回调中，`xdm`对象已在事件命令中传递数据，并自动收集信息。 有关此回调的时间和示例的详细信息，请参阅[全局修改事件](tracking-events.md#modifying-events-globally)。
 
 ## 隐私选项
 
