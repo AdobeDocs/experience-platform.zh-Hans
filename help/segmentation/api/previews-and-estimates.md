@@ -3,11 +3,11 @@ keywords: Experience Platform；主题；热门主题；分段；分段；分段
 solution: Experience Platform
 title: 预览和评估API端点
 topic: developer guide
-description: Adobe Experience Platform分段服务API中的预览和估计端点允许您视图摘要级信息，以帮助确保在您的区段中隔离预期受众。
+description: 在开发细分定义时，您可以使用Adobe Experience Platform的评估和预览工具来视图摘要级信息，以帮助确保隔离预期受众。
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: eba6de210dcbc12b829b09ba6e7083d342517ba2
 workflow-type: tm+mt
-source-wordcount: '793'
+source-wordcount: '949'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,15 @@ ht-degree: 2%
 
 # 预览和估计端点
 
-在开发细分定义时，您可以使用[!DNL Adobe Experience Platform]中的估计和预览工具来视图摘要级别信息，以帮助确保隔离预期受众。 **预** 览为区段定义提供符合条件的用户档案的分页列表，使您能够将结果与预期进行比较。**估** 计提供有关段定义的统计信息，如预测受众大小、置信区间和误差标准偏差。
+在开发细分定义时，您可以使用Adobe Experience Platform内的估计和预览工具来视图摘要级信息，以帮助确保隔离您期望的受众。
+
+* **预** 览为区段定义提供符合条件的用户档案的分页列表，使您能够将结果与预期进行比较。
+
+* **估** 计提供有关段定义的统计信息，如预测受众大小、置信区间和误差标准偏差。
+
+>[!NOTE]
+>
+>要访问与实时用户档案数据相关的类似指标，如特定命名空间或用户档案数据存储中的用户档案片段和合并用户档案的总数，请参阅用户档案API开发人员指南的[用户档案预览(预览示例状态)端点指南](../../profile/api/preview-sample-status.md)。
 
 ## 入门指南
 
@@ -23,11 +31,10 @@ ht-degree: 2%
 
 ## 估计的生成方式
 
-数据采样的触发方式取决于摄取的方法。
+当将记录引入用户档案存储中时，将总用户档案计数增加或减少5%以上，将触发采样作业以更新该计数。 数据采样的触发方式取决于摄取的方法：
 
-对于批量摄取，用户档案存储区每十五分钟自动扫描一次，以查看自上次采样作业运行以来是否成功摄取了新批量。 如果是这样，随后扫描用户档案存储，以查看记录数是否至少有5%的变化。 如果满足这些条件，将触发新的采样作业。
-
-对于流式摄取，每小时自动扫描用户档案商店，以查看记录数是否至少有5%的变化。 如果满足此条件，将触发新的采样作业。
+* **批处理摄** 取：对于批处理，在成功将批处理导入用户档案存储的15分钟内，如果达到5%的增加或减少阈值，则运行一个作业以更新计数。
+* **流摄取：** 对于流数据工作流，每小时检查一次，以确定是否达到5%的增加或减少阈值。如果已激活，则会自动触发作业以更新计数。
 
 扫描的样本大小取决于用户档案存储中的实体总数。 下表显示了这些示例大小：
 
@@ -76,7 +83,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | -------- | ----------- |
 | `predicateExpression` | 查询数据的PQL表达式。 |
 | `predicateType` | `predicateExpression`下查询表达式的谓词类型。 当前，此属性唯一接受的值为`pql/text`。 |
-| `predicateModel` | 用户档案模式所基于的[!DNL Experience Data Model](XDM)的名称。 |
+| `predicateModel` | 用户档案数据所基于的[!DNL Experience Data Model](XDM)模式类的名称。 |
 
 **响应**
 
@@ -172,7 +179,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `results` | 实体ID的列表及其相关身份。 提供的链接可用于使用[[!DNL Profile Access API]](../../profile/api/entities.md)查找指定的实体。 |
+| `results` | 实体ID的列表及其相关身份。 提供的链接可用于使用[用户档案访问API端点](../../profile/api/entities.md)查找指定的实体。 |
 
 ## 检索特定评估作业{#get-estimate}的结果
 
@@ -206,17 +213,27 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 ```json
 {
-    "estimatedSize": 0,
-    "numRowsToRead": 1,
+    "estimatedSize": 4275,
+    "numRowsToRead": 4275,
+    "estimatedNamespaceDistribution": [
+        {
+            "namespaceId": "4",
+            "profilesMatchedSoFar": 35
+        },
+        {
+            "namespaceId": "6",
+            "profilesMatchedSoFar": 4275
+        }
+    ],
     "state": "RESULT_READY",
-    "profilesReadSoFar": 1,
+    "profilesReadSoFar": 4275,
     "standardError": 0,
     "error": {
         "description": "",
         "traceback": ""
     },
-    "profilesMatchedSoFar": 0,
-    "totalRows": 1,
+    "profilesMatchedSoFar": 4275,
+    "totalRows": 4275,
     "confidenceInterval": "95%",
     "_links": {
         "preview": "https://platform.adobe.io/data/core/ups/preview/app-32be0328-3f31-4b64-8d84-acd0c4fbdad3/execution/0?previewQueryId=e890068b-f5ca-4a8f-a6b5-af87ff0caac3"
@@ -226,9 +243,10 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `state` | 预览作业的当前状态。 在处理完成之前，将一直为“RUNNING”，此时它将变为“RESULT_READY”或“FAILED”。 |
-| `_links.preview` | 当预览作业的当前状态为“RESULT_READY”时，此属性提供一个URL来视图估计。 |
+| `estimatedNamespaceDistribution` | 一组对象，显示区段内按标识用户档案划分的命名空间数。 按命名空间划分的用户档案总数(将每个命名空间显示的值相加)可能高于用户档案计数量度，因为一个用户档案可能与多个命名空间关联。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个别客户关联。 |
+| `state` | 预览作业的当前状态。 状态将为“RUNNING”，直到处理完成，此时它将变为“RESULT_READY”或“FAILED”。 |
+| `_links.preview` | 当`state`为“RESULT_READY”时，此字段提供一个URL来视图估计值。 |
 
 ## 后续步骤
 
-阅读本指南后，您现在可以更好地了解如何处理预览和评估。 要进一步了解其他[!DNL Segmentation Service] API端点，请阅读[分段服务开发人员指南概述](./overview.md)。
+阅读本指南后，您应该更好地了解如何使用Segmentation API进行预览和评估。 要了解如何访问与实时客户用户档案数据相关的指标，如特定命名空间或用户档案数据存储中的用户档案片段和合并用户档案总数，请访问[用户档案预览(`/previewsamplestatus`)端点指南](../../profile/api/preview-sample-status.md)。
