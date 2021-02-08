@@ -3,12 +3,12 @@ title: 'Adobe Target和Adobe Experience PlatformWeb SDK。 '
 seo-title: Adobe Experience PlatformWeb SDK和使用Adobe Target
 description: 了解如何使用Experience PlatformWeb SDK使用Adobe Target呈现个性化内容
 seo-description: 了解如何使用Experience PlatformWeb SDK使用Adobe Target呈现个性化内容
-keywords: target;adobe target;xdm views; views;single page applications;SPA;SPA lifecycle;client-side;AB testing;AB;Experience targeting;XT;VEC
+keywords: 目标;adobe目标;xdm视图;视图；单页应用程序；SPA;SPA生命周期；客户端；AB测试；AB；体验定位；XT;VEC
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 3ac00fda2c0a43437fb212dcba7e98c63503b9c4
 workflow-type: tm+mt
-source-wordcount: '1669'
-ht-degree: 14%
+source-wordcount: '1688'
+ht-degree: 12%
 
 ---
 
@@ -33,7 +33,7 @@ Adobe Experience PlatformWeb SDK提供丰富的功能，使您的企业能够基
 
 ## XDM视图和单页应用程序
 
-Adobe Target 中 SPA VEC 利用了称作“视图”的新概念，即视觉元素的逻辑组合，这些元素共同构成了 SPA 体验。因此，根据用户交互，单个页面应用程序可被视为通过视图而不是URL进行转换。 “视图”通常可显示整个站点或某个站点中分组的可视化元素。
+SPA的Adobe TargetVEC利用了一个称为视图的概念：组成SPA体验的逻辑可视元素组。 因此，根据用户交互，单个页面应用程序可被视为通过视图而不是URL进行转换。 “视图”通常可显示整个站点或某个站点中分组的可视化元素。
 
 为进一步解释哪些是视图，以下示例使用React中实现的假设在线电子商务站点来探索示例视图。
 
@@ -41,7 +41,7 @@ Adobe Target 中 SPA VEC 利用了称作“视图”的新概念，即视觉元�
 
 ![](assets/example-views.png)
 
-As the customer becomes more interested in the products that the business is selling, they decide to click the **Products** link. 与主页网站类似，可将整个产品站点定义为一个“视图”。此视图可命名为“全部产品”。
+随着客户对公司所销售的产品越来越感兴趣，他们决定单击&#x200B;**产品**&#x200B;链接。 与主页网站类似，可将整个产品站点定义为一个“视图”。此视图可命名为“全部产品”。
 
 ![](assets/example-products-all.png)
 
@@ -49,7 +49,7 @@ As the customer becomes more interested in the products that the business is sel
 
 ![](assets/example-products.png)
 
-当客户决定单击“加 **载更多** ”按钮以浏览网站上的更多产品时，网站URL在此情况下不会更改，但可以在此创建一个视图以仅表示显示的第二行产品。 视图名称可以是“products-page-2”。
+当客户决定单击&#x200B;**加载更多**&#x200B;按钮浏览站点上的更多产品时，网站URL在这种情况下不会更改，但可以在此创建一个视图以仅表示显示的第二行产品。 视图名称可以是“products-page-2”。
 
 ![](assets/example-load-more.png)
 
@@ -63,9 +63,9 @@ As the customer becomes more interested in the products that the business is sel
 
 在Adobe Target，可以利用XDM视图，使营销人员能够通过可视体验书写器在SPA上运行A/B和XT测试。 这需要执行以下步骤才能完成一次性开发人员设置：
 
-1. Install [Adobe Experience Platform Web SDK](../../fundamentals/installing-the-sdk.md)
+1. 安装[Adobe Experience PlatformWeb SDK](../../fundamentals/installing-the-sdk.md)
 2. 确定您的单页应用程序中要进行个性化的所有XDM视图。
-3. 定义XDM视图后，为了传送AB或XT VEC活动，在单页应用程 `sendEvent()` 序中 `renderDecisions` 实现 `true` 设置为的函数和相应的XDM视图。 XDM视图必须传入 `xdm.web.webPageDetails.viewName`。 此步骤允许营销人员利用Visual Experience Composer启动这些XDM的A/B和XT测试。
+3. 在定义XDM视图后，为了传送AB或XT VEC活动，在单页应用程序中实现`renderDecisions`设置为`true`的`sendEvent()`函数和相应的XDM视图。 XDM视图必须在`xdm.web.webPageDetails.viewName`中传递。 此步骤允许营销人员利用Visual Experience Composer启动这些XDM的A/B和XT测试。
 
    ```javascript
    alloy("sendEvent", { 
@@ -82,11 +82,11 @@ As the customer becomes more interested in the products that the business is sel
 
 >[!NOTE]
 >
->在第一次 `sendEvent()` 呼叫时，将读取并缓存应呈现给最终用户的所有XDM视图。 接 `sendEvent()` 入XDM视图的后续调用将从缓存中读取，并在不进行服务器调用的情况下呈现。
+>在第一个`sendEvent()`调用中，将读取并缓存应呈现给最终用户的所有XDM视图。 随后传入XDM视图的`sendEvent()`调用将从缓存中读取，并在不进行服务器调用的情况下呈现。
 
 ## `sendEvent()` 函数示例
 
-本节概述三个示例，其中显示如 `sendEvent()` 何调用假设的电子商务SPA的React中的函数。
+本节概述三个示例，说明如何调用假设的电子商务SPA的React中的`sendEvent()`函数。
 
 ### 示例1:A/B测试主页
 
@@ -94,7 +94,7 @@ As the customer becomes more interested in the products that the business is sel
 
 ![](assets/use-case-1.png)
 
-要在整个主站点上运行A/B测试， `sendEvent()` 必须调用XDM并将 `viewName` 其设置为 `home`:
+要在整个主站点上运行A/B测试，必须在将XDM `viewName`设置为`home`时调用`sendEvent()`:
 
 ```jsx
 function onViewChange() { 
@@ -134,7 +134,7 @@ history.listen(onViewChange);
 
 ### 示例2:个性化产品
 
-营销团队希望在用户单击“加载更多”后，将价格标签颜色更改为红色，从而个性化第二 **行产品**。
+营销团队希望在用户单击&#x200B;**加载更多**&#x200B;后，将价格标签颜色更改为红色，从而个性化第二行产品。
 
 ![](assets/use-case-2.png)
 
@@ -172,11 +172,11 @@ class Products extends Component {
 
 ### 示例3:A/B测试投放首选项
 
-The marketing team want to run an A/B test to see whether changing the color of the button from blue to red when **Express Delivery** is selected can boost conversions (as opposed to keeping the button color blue for both delivery options).
+营销团队希望运行A/B测试，查看在选择&#x200B;**快速投放**&#x200B;时，将按钮的颜色从蓝色更改为红色是否可以提高转换率(与使两个投放选项的按钮颜色保持蓝色相反)。
 
 ![](assets/use-case-3.png)
 
-要根据选择的投放首选项对网站上的内容进行个性化，可以为每个投放首选项创建一个视图。 选 **择“正常投放** ”后，视图可命名为“checkout-normal”。 If **Express Delivery** is selected, the View can be named &quot;checkout-express&quot;.
+要根据选择的投放首选项对网站上的内容进行个性化，可以为每个投放首选项创建一个视图。 选择&#x200B;**普通投放**&#x200B;后，视图可命名为“checkout-normal”。 如果选择&#x200B;**Express投放**，则视图可命名为“checkout-express”。
 
 ```jsx
 function onViewChange(viewName) { 
@@ -219,11 +219,11 @@ class Checkout extends Component {
 
 ## 为SPA使用Visual Experience Composer
 
-当您定义完XDM视图并实 `sendEvent()` 施传入的XDM视图后，VEC将能够检测这些视图并允许用户为A/B或XT活动创建操作和修改。
+当您定义完XDM视图并使用传入的XDM视图实现`sendEvent()`后，VEC将能够检测这些视图并允许用户为A/B或XT活动创建操作和修改。
 
 >[!NOTE]
 >
->要为SPA使用VEC，必须安装并激活Firefox [或](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) Chrome [VEC Helper](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) Extension。
+>要为SPA使用VEC，必须安装并激活[Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/)或[Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC帮助程序扩展。
 
 ### “修改”面板
 
@@ -233,7 +233,7 @@ class Checkout extends Component {
 
 ### 操作
 
-单击某个操作会突出显示将应用此操作的网站上的元素。Each VEC action created under a View has the following icons: **Information**, **Edit**, **Clone**, **Move**, and **Delete**. 下表中将更详细地介绍这些图标。
+单击某个操作会突出显示将应用此操作的网站上的元素。在视图下创建的每个VEC操作都包含以下图标：**信息**、**编辑**、**克隆**、**移动**&#x200B;和&#x200B;**删除**。 下表中将更详细地介绍这些图标。
 
 ![](assets/action-icons.png)
 
@@ -241,8 +241,8 @@ class Checkout extends Component {
 |---|---|
 | 信息 | 显示操作的详细信息。 |
 | Edit | 允许您直接编辑操作的属性。 |
-| 克隆 | 将操作克隆到位于“修改”面板上的一个或多个视图，或者您在 VEC 中浏览并导航到的一个或多个视图。该操作不一定存在于“修改”面板中。<br/><br/>**注意：** 执行克隆操作后，必须通过浏览导航到VEC中的视图，以查看克隆操作是否是有效操作。 如果该操作未应用到视图，您将看到一个错误。 |
-| 移动 | 将操作移动到“页面加载事件”或修改面板中已存在的任何其他视图。<br/><br/>**页面加载事件:** 与页面加载事件对应的任何操作都将应用于Web应用程序的初始页面加载。 <br/><br/>**注意**：执行移动操作后，必须通过浏览导航到VEC中的视图，以查看移动是否是有效操作。 如果该操作未应用到视图，您将看到一个错误。 |
+| 克隆 | 将操作克隆到位于“修改”面板上的一个或多个视图，或者您在 VEC 中浏览并导航到的一个或多个视图。该操作不一定存在于“修改”面板中。<br/><br/>**注意：** 执行克隆操作后，必须通过浏览导航到VEC中的视图，以查看克隆操作是否是有效操作。如果该操作未应用到视图，您将看到一个错误。 |
+| 移动 | 将操作移动到“页面加载事件”或修改面板中已存在的任何其他视图。<br/><br/>**页面加载事件** ：与页面加载事件对应的任何操作都会应用于Web应用程序的初始页面加载。<br/><br/>**注意**：执行移动操作后，必须通过浏览导航到VEC中的视图，以查看移动是否是有效操作。如果该操作未应用到视图，您将看到一个错误。 |
 | Delete | 删除操作。 |
 
 ## 将VEC用于SPA示例
@@ -253,24 +253,24 @@ class Checkout extends Component {
 
 在此文档的早期，为整个主站点定义了一个名为“home”的视图。 现在，营销团队希望通过以下方式更新“主”视图:
 
-* 将“添 **加到购物车** ”和“ **喜欢** ”按钮更改为蓝色的较浅分享。 在页面加载过程中应发生这种情况，因为这涉及更改标题的组件。
-* Change the **Latest Products for 2019** label to **Hottest Products for 2019** and change the text color to purple.
+* 将&#x200B;**添加到Cart**&#x200B;和&#x200B;**类似按钮更改为蓝色的较浅共享。**&#x200B;在页面加载过程中应发生这种情况，因为这涉及更改标题的组件。
+* 将&#x200B;**“2019年最新产品”**&#x200B;标签更改为&#x200B;**“2019年最热的产品”**，并将文本颜色更改为紫色。
 
-To make these updates in the VEC, select **Compose** and apply those changes to the &quot;home&quot; view.
+要在VEC中进行这些更新，请选择&#x200B;**起草**&#x200B;并将这些更改应用于“主”视图。
 
 ![](assets/vec-home.png)
 
 ### 示例2:更改产品标签
 
-对于“products-page-2”视图，营销团队希望将“价格”标签 **更改为** “销售 **价格** ”，并将标签颜色更改为红色。
+对于“products-page-2”视图，营销团队希望将&#x200B;**Price**&#x200B;标签更改为&#x200B;**销售价格**&#x200B;并将标签颜色更改为红色。
 
 要在VEC中进行这些更新，需要执行以下步骤：
 
-1. 在 **VEC中** ，选择“浏览”。
-2. 在 **站点** 顶部导航中选择产品。
-3. Select **Load More** once to view the second row of products.
-4. 在 **VEC** 中选择“合成”。
-5. Apply actions to change the text label to **Sale Price** and the color to red.
+1. 在VEC中选择&#x200B;**浏览**。
+2. 在站点的顶部导航中选择&#x200B;**产品**。
+3. 选择&#x200B;**加载更多**&#x200B;一次以视图第二行产品。
+4. 在VEC中选择&#x200B;**起草**。
+5. 应用操作，将文本标签更改为&#x200B;**销售价格**，将颜色更改为红色。
 
 ![](assets/vec-products-page-2.png)
 
@@ -280,16 +280,16 @@ To make these updates in the VEC, select **Compose** and apply those changes to 
 
 要在VEC中进行这些更新，需要执行以下步骤：
 
-1. 在 **VEC中** ，选择“浏览”。
+1. 在VEC中选择&#x200B;**浏览**。
 2. 将产品添加到站点上的购物车。
 3. 选择站点右上角的购物车图标。
-4. 选择 **结帐您的订单**。
-5. 在“投放 **首选项** ”下选择“快速 **投放”单选按钮**。
-6. 在 **VEC** 中选择“合成”。
-7. 将“付 **费** ”按钮颜色更改为红色。
+4. 选择&#x200B;**结帐您的订单**。
+5. 在&#x200B;**投放首选项**&#x200B;下选择&#x200B;**快速投放**&#x200B;单选按钮。
+6. 在VEC中选择&#x200B;**起草**。
+7. 将&#x200B;**支付**&#x200B;按钮颜色更改为红色。
 
 >[!NOTE]
 >
->在选择“Express视图”单选按钮之前，“修改”面板 **中不会显** 示“checkout-express”投放。 这是因为当选`sendEvent()` 择Express投放单选按钮 **时执行该函数** ，因此在选择单选按钮之前，VEC不会识别“checkout-express”视图。
+>选择&#x200B;**Express视图**&#x200B;单选按钮后，“修改”面板中才会显示“checkout-express”投放。 这是因为当选择&#x200B;**Express投放**&#x200B;单选按钮时执行`sendEvent()`函数，因此在选择单选按钮之前，VEC不会知道“checkout-express”视图。
 
 ![](assets/vec-delivery-preference.png)
