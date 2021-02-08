@@ -5,9 +5,9 @@ title: 区段生成器UI指南
 topic: ui guide
 description: 'Adobe Experience PlatformUI中的区段生成器提供丰富的工作区，允许您与用户档案数据元素交互。 工作区提供用于构建和编辑规则的直观控件，如用于表示数据属性的拖放拼贴。 '
 translation-type: tm+mt
-source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
+source-git-commit: 8fc1c5414f38e84ed1700ee95b1c382007ff2c27
 workflow-type: tm+mt
-source-wordcount: '1800'
+source-wordcount: '1928'
 ht-degree: 0%
 
 ---
@@ -100,6 +100,22 @@ ht-degree: 0%
 代码视图提供一个按钮，允许您复制段值以在API调用中使用。 要获取区段的最新版本，请确保您已将最新更改保存到区段。
 
 ![](../images/ui/segment-builder/copy-code.png)
+
+### 聚合函数
+
+[!DNL Segment Builder]中的聚合是对XDM属性组的计算，其数据类型是数字(多次或整数)。 区段生成器中支持的四个聚合函数是SUM、AVERAGE、MIN和MAX。
+
+要创建聚合函数，请从左边栏中选择一个事件，然后将其插入[!UICONTROL 事件]容器。
+
+![](../images/ui/segment-builder/select-event.png)
+
+将事件放入事件容器后，选择省略号图标(...)，后跟&#x200B;**[!UICONTROL 聚合]**。
+
+![](../images/ui/segment-builder/add-aggregation.png)
+
+现在添加了聚合。 您现在可以选择聚合函数，选择聚合的属性、等式函数以及值。 对于以下示例，此区段将限定任何已购买值总和大于$100的用户档案，即使每次单独购买均小于$100。
+
+![](../images/ui/segment-builder/filled-aggregation.png)
 
 ## 容器
 
