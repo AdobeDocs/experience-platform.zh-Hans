@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API;预览；示例
-title: 用户档案示例状态API端点
-description: 使用实时用户档案API端点，您可以预览用户档案数据的最新成功范例，以及按数据集和Adobe Experience Platform内的身份命名空间进行列表用户档案分发。
+title: 预览示例状态(用户档案预览)API端点
+description: 使用预览示例状态端点(实时客户用户档案API的一部分)，您可以预览最新成功的用户档案数据示例，以及按数据集和Adobe Experience Platform内的身份命名空间按列表用户档案分发。
 topic: guide
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5266c393b034d1744134522cf1769304f39733da
 workflow-type: tm+mt
-source-wordcount: '1553'
+source-wordcount: '1655'
 ht-degree: 1%
 
 ---
@@ -16,13 +16,20 @@ ht-degree: 1%
 
 Adobe Experience Platform使您能够从多个来源收集客户数据，从而为各个客户构建强大的统一用户档案。 当为实时客户用户档案启用的数据被引入[!DNL Platform]时，它存储在用户档案数据存储中。
 
-当将记录引入用户档案存储中时，将用户档案总计数增加或减少5%以上，将触发作业以更新该计数。 对于流数据工作流，每小时检查一次以确定是否达到5%的增加或减少阈值。 如果已激活，则会自动触发作业以更新计数。 对于批量摄取，在成功将批量摄入用户档案存储的15分钟内，如果达到5%增加或减少阈值，则运行作业以更新计数。 使用用户档案API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列表用户档案分发。
+当将记录引入用户档案存储中时，将总用户档案计数增加或减少5%以上，将触发采样作业以更新该计数。 触发样本的方式取决于所使用的摄取类型：
+
+* 对于&#x200B;**流数据工作流**，每小时检查以确定是否达到5%增加或减少阈值。 如果已触发，则会自动触发示例作业以更新计数。
+* 对于&#x200B;**批处理摄取**，在成功将批处理引入用户档案存储的15分钟内，如果达到5%增加或减少阈值，则运行作业以更新计数。 使用用户档案API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列表用户档案分发。
 
 这些度量也可在Experience PlatformUI的[!UICONTROL 用户档案]部分中使用。 有关如何使用UI访问用户档案数据的信息，请访问[[!DNL Profile] 用户指南](../ui/user-guide.md)。
 
+>[!NOTE]
+>
+>在Adobe Experience Platform分段服务API中提供了估计和预览端点，允许您视图有关段定义的摘要级信息，以帮助确保隔离预期受众。 要查找使用细分预览和估计端点的详细步骤，请访问[预览和估计端点指南](../../segmentation/api/previews-and-estimates.md)（[!DNL Segmentation] API开发人员指南的一部分）。
+
 ## 入门指南
 
-本指南中使用的API端点是[[!DNL Real-time Customer Profile] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)的一部分。 在继续之前，请查看[快速入门指南](getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
+本指南中使用的API端点是[[!DNL Real-time Customer Profile] API](https://www.adobe.com/go/profile-apis-en)的一部分。 在继续之前，请查看[快速入门指南](getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
 
 ## 用户档案片段与合并用户档案
 
@@ -89,7 +96,7 @@ curl -X GET \
 | `totalFragmentCount` | 用户档案存储中的用户档案片段总数。 |
 | `lastSuccessfulBatchTimestamp` | 上次成功的批量摄取时间戳。 |
 | `streamingDriven` | *此字段已弃用，且不包含对响应的重要性。* |
-| `totalRows` | Experience Platform中合并用户档案的总数，也称为“用户档案数”。 |
+| `totalRows` | Experience Platform中合并用户档案的总数，也称为“用户档案计数”。 |
 | `lastBatchId` | 上次批量摄取ID。 |
 | `status` | 最后一个示例的状态。 |
 | `samplingRatio` | 采样的合并用户档案(`numRowsToRead`)与合并用户档案(`totalRows`)的比率，以小数格式表示为百分比。 |
@@ -189,8 +196,6 @@ curl -X GET \
 | `createdUser` | 创建数据集的用户ID。 |
 | `reportTimestamp` | 报告的时间戳。 如果在请求期间提供了`date`参数，则返回的报告为提供的日期。 如果未提供`date`参数，则返回最近的报告。 |
 
-
-
 ## 列表用户档案按命名空间分布
 
 您可以对`/previewsamplestatus/report/namespace`端点执行GET请求，以在用户档案存储中的所有合并用户档案上按标识命名空间视图细分。 身份命名空间是Adobe Experience Platform身份服务的重要组成部分，可作为与客户数据相关的上下文的指标。 要了解更多信息，请访问[标识命名空间概述](../../identity-service/namespaces.md)。
@@ -288,5 +293,4 @@ curl -X GET \
 
 ## 后续步骤
 
-您还可以使用类似的估计和预览来视图有关细分定义的摘要级别信息，以帮助确保隔离预期受众。 要查找使用[!DNL Adobe Experience Platform Segmentation Service] API处理细分预览和估算的详细步骤，请访问[预览和估算终结点指南](../../segmentation/api/previews-and-estimates.md)（[!DNL Segmentation] API开发人员指南的一部分）。
-
+现在您知道如何预览用户档案存储中的样本数据，您还可以使用分段服务API的估计和预览端点来视图有关您的细分定义的摘要级信息。 此信息有助于确保您隔离区段中的预期受众。 要进一步了解如何使用细分API处理细分预览和评估，请访问[预览和评估端点指南](../../segmentation/api/previews-and-estimates.md)。
