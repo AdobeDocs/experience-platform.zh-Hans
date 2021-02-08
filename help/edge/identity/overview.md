@@ -5,9 +5,9 @@ description: 了解如何获得Adobe Experience CloudID。
 seo-description: 了解如何获得Adobe Experience CloudID。
 keywords: 身份；第一方身份；身份服务；第三方身份；身份迁移；访客ID；第三方身份；第三方身份；第三方CookiesEnabled;idMigrationEnabled;getIdentity；同步身份；syncIdentity;sendEvent;identityMap；主；ecid；身份命名空间；身份验证状态；hashEnabled;
 translation-type: tm+mt
-source-git-commit: 60945f7f3a87568b82d968692cc7a6e07593fa01
+source-git-commit: 3ac00fda2c0a43437fb212dcba7e98c63503b9c4
 workflow-type: tm+mt
-source-wordcount: '921'
+source-wordcount: '919'
 ht-degree: 3%
 
 ---
@@ -23,7 +23,7 @@ Adobe Experience PlatformWeb SDK利用[Adobe标识服务](../../identity-service
 
 ## 第三方身份
 
-[!DNL Identity Service]能够将ID与第三方域(demdex.net)同步，以启用跨站点跟踪。 启用此功能后，将向demdex.net发出对访客（例如，某个没有ECID的人）的第一个请求。 此操作仅在允许其使用的浏览器（如Chrome）上完成，并由配置中的`thirdPartyCookiesEnabled`参数控制。 如果您希望全部禁用此功能，请将`thirdPartyCookiesEnabled`设置为false。
+[!DNL Identity Service]能够将ID与第三方域(demdex.net)同步，以启用跨站点跟踪。 启用此功能后，将向demdex.net发出对访客（例如，没有ECID的人）的第一个请求。 此操作将仅在允许它（如Chrome）的浏览器上完成，并由配置中的`thirdPartyCookiesEnabled`参数控制。 如果您希望全部禁用此功能，请将`thirdPartyCookiesEnabled`设置为false。
 
 ## ID迁移
 
