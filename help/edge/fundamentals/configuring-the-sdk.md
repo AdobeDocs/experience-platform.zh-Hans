@@ -3,11 +3,11 @@ title: 配置SDK
 seo-title: 配置Adobe Experience PlatformWeb SDK
 description: 了解如何配置Experience PlatformWeb SDK
 seo-description: 了解如何配置Experience PlatformWeb SDK
-keywords: configuring;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;environment;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;web sdk settings;prehidingStyle;opacity;cookieDestinationsEnabled;urlDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
+keywords: 配置；配置；SDK;edge;Web SDK；配置；edgeConfigId;context;web;device;环境;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConnence;web sdk设置；prehidingStyle;opaty;cookieDDUrlDeDeDesDesDEntEnageEnEnEnabled;DestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 723711ee0c2b7b5ca4aea617a81241dbebbc839c
 workflow-type: tm+mt
-source-wordcount: '710'
+source-wordcount: '740'
 ht-degree: 11%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 11%
 
 # 配置SDK
 
-SDK的配置是使用命令完 `configure` 成的。
+SDK的配置是使用`configure`命令完成的。
 
 >[!IMPORTANT]
 >
->`configure` 应该 *始终* 是第一个名为的命令。
+>`configure` 应 ** 该永远是第一个命令。
 
 ```javascript
 alloy("configure", {
@@ -38,7 +38,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 字符串 | 是 | 无 |
 
-您分配的配置ID，它将SDK链接到相应的帐户和配置。  在单个页面中配置多个实例时，必须为每个实例配 `edgeConfigId` 置不同的实例。
+您分配的配置ID，它将SDK链接到相应的帐户和配置。  在单个页面中配置多个实例时，必须为每个实例配置不同的`edgeConfigId`。
 
 ### `context`
 
@@ -46,7 +46,7 @@ alloy("configure", {
 | ---------------- | ------------ | -------------------------------------------------- |
 | 字符串数组 | 否 | `["web", "device", "environment", "placeContext"]` |
 
-指示要自动收集的上下文类别，如自 [动信息中所述](../data-collection/automatic-information.md)。  如果未指定此配置，则默认情况下将使用所有类别。
+指示要自动收集的上下文类别，如[自动信息](../data-collection/automatic-information.md)中所述。  如果未指定此配置，则默认情况下将使用所有类别。
 
 ### `debugEnabled`
 
@@ -54,11 +54,11 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `false` |
 
-指示是否应启用调试。 将此配置设置 `true` 为启用以下功能：
+指示是否应启用调试。 将此配置设置为`true`将启用以下功能：
 
 | **功能** | **函数** |
 | ---------------------- | ------------------ |
-| 同步验证 | 验证根据模式收集的数据，并在以下标签下的响应中返回错误： `collect:error OR success` |
+| 同步验证 | 验证根据模式收集的数据，并在以下标签下的响应中返回错误：`collect:error OR success` |
 | 控制台日志记录 | 允许调试消息显示在浏览器的JavaScript控制台中 |
 
 ### `edgeDomain`
@@ -66,6 +66,7 @@ alloy("configure", {
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ------------------ |
 | 字符串 | 否 | `beta.adobedc.net` |
+| 字符串 | 否 | `omtrdc.net` |
 
 用于与Adobe服务交互的域。 仅当您有第一方域(CNAME)来代理对Adobe边缘基础结构的请求时，才使用此方法。
 
@@ -75,7 +76,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 字符串 | 是 | 无 |
 
-Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个实例时，必须为每个实例配 `orgId` 置不同的实例。
+您分配的[!DNL Experience Cloud]组织ID。  在页面内配置多个实例时，必须为每个实例配置不同的`orgId`。
 
 ## 数据收集
 
@@ -85,7 +86,7 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-指示是否应自动收集与链接单击关联的数据。 请参 [阅自动链接](../data-collection/track-links.md#automaticLinkTracking) ，以了解更多信息。
+指示是否应自动收集与链接单击关联的数据。 有关详细信息，请参阅[自动链接跟踪](../data-collection/track-links.md#automaticLinkTracking)。
 
 ### `onBeforeEventSend`
 
@@ -93,7 +94,7 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 | -------- | ------------ | ----------------- |
 | 函数 | 否 | ()=>未定义 |
 
-设置此设置可配置在发送每个事件之前调用的回调。  包含该字段的 `xdm` 对象将发送到回调。  修改对 `xdm` 象以更改发送的内容。  在回调中，对 `xdm` 象已在事件命令中传递数据，并自动收集信息。  有关此回调的时间安排的详细信息和示例，请参阅全局 [修改事件](tracking-events.md#modifying-events-globally)。
+设置此设置可配置在发送每个事件之前调用的回调。  字段为`xdm`的对象将发送到回调。  修改`xdm`对象以更改发送内容。  在回调中，`xdm`对象已在事件命令中传递数据，并自动收集信息。  有关此回调的时间和示例的详细信息，请参阅[全局修改事件](tracking-events.md#modifying-events-globally)。
 
 ## 隐私选项
 
@@ -103,7 +104,7 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 | -------- | ------------ | ----------------- |
 | 对象 | 否 | `"in"` |
 
-设置用户的默认同意。 当尚未为用户保存同意首选项时，将使用此选项。 另一个有效值是 `"pending"`。 设置此项后，工作将排队，直到用户提供同意首选项。 提供用户首选项后，工作将根据用户的首选项继续或中止。 有关详 [细信息](../consent/supporting-consent.md) ，请参阅支持同意。
+设置用户的默认同意。 当尚未为用户保存同意首选项时，将使用此选项。 另一个有效值为`"pending"`。 设置此项后，工作将排队，直到用户提供同意首选项。 提供用户首选项后，工作将根据用户的首选项继续或中止。 有关详细信息，请参阅[支持同意](../consent/supporting-consent.md)。
 
 ## 个性化选项
 
@@ -115,7 +116,7 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 
 用于创建CSS样式定义，该定义在从服务器加载个性化内容时隐藏网页的内容区域。 如果未提供此选项，则加载个性化内容时SDK不会尝试隐藏任何内容区域，这可能导致“闪烁”。
 
-例如，如果网页上有一个元素，其ID为您想在从服务器加载个性化 `container` 内容时隐藏其默认内容，则预隐藏样式的示例如下：
+例如，如果网页上的元素ID为`container`，在从服务器加载个性化内容时，您希望隐藏其默认内容，则预隐藏样式的示例如下：
 
 ```javascript
   prehidingStyle: "#container { opacity: 0 !important }"
@@ -129,7 +130,7 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-启 [!DNL Audience Manager] 用Cookie目标，允许根据区段资格设置Cookie。
+启用[!DNL Audience Manager] cookie目标，允许根据区段资格设置cookie。
 
 ### `urlDestinationsEnabled`
 
@@ -137,7 +138,7 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | `true` |
 
-启 [!DNL Audience Manager] 用URL目标，它允许基于段资格触发URL。
+启用[!DNL Audience Manager] URL目标，它允许基于段资格触发URL。
 
 ## 标识选项
 
@@ -153,6 +154,6 @@ Your assigned [!DNL Experience Cloud] organization ID.  在页面内配置多个
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
-| 布尔值 | 否 | true |
+| 布尔值 | 否 | 真 |
 
 启用Adobe第三方Cookie的设置。 SDK能够将访客ID保留在第三方上下文中，从而允许在多个站点上使用相同的访客ID。 如果您有多个站点或希望与合作伙伴共享数据，则此功能非常有用；但是，有时出于隐私原因而不需要这样做。
