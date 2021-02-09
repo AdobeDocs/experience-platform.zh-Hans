@@ -5,10 +5,10 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 此文档列表Adobe Experience Platform目的地的目录
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: f98fb81fee57151e6424355f64bccb29c5669dad
 workflow-type: tm+mt
-source-wordcount: '332'
-ht-degree: 21%
+source-wordcount: '339'
+ht-degree: 20%
 
 ---
 
@@ -129,3 +129,4 @@ ht-degree: 21%
       * [Invoca标记](./catalog/voice/invoca.md)
       * [梅达利亚](./catalog/voice/medallia.md)
       * [交谈URL收件箱](./catalog/voice/talkurl.md)
+* [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
