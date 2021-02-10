@@ -1,11 +1,11 @@
 ---
 keywords: kickfire;kickfire;kickfire扩展；kickfire扩展
-title: KickFire扩展目标
+title: KickFire扩展
 description: KickFire扩展是Adobe Experience Platform的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '506'
 ht-degree: 3%
 
 ---
