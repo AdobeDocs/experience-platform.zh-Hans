@@ -5,9 +5,9 @@ seo-title: 目标目录概述
 description: 目标目录提供可接收数据的可用目标列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
 seo-description: 目标目录提供可接收数据的可用目标列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
 translation-type: tm+mt
-source-git-commit: 48c5f6d6a45de5f7982543f7a43cb4ece8cf3a9f
+source-git-commit: 2efdefc69c937c70f6a463113a73ca71d8998e14
 workflow-type: tm+mt
-source-wordcount: '194'
+source-wordcount: '198'
 ht-degree: 0%
 
 ---
@@ -29,6 +29,7 @@ ht-degree: 0%
 - [云存储目标概述](./cloud-storage/overview.md)
 - [数据管理平台(DMP)目标概述](./data-management/overview.md)
 - [电子邮件营销目标概述](./email-marketing/overview.md)
+- [移动互动目标概述](./mobile-engagement/overview.md)
 - [个性化目标概述](./personalization/overview.md)
 - [社交网络目标概述](./social/overview.md)
 - [调查目标概述](./survey/overview.md)
