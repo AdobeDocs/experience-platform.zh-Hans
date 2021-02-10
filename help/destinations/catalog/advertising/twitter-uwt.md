@@ -1,11 +1,11 @@
 ---
 keywords: twitter;twitter;twitter通用网站标签；Twitter通用网站标签；Twitter UWT标签；Twitter UWT;twitter uwt
-title: Twitter通用网站标记扩展目标
+title: Twitter通用网站标签扩展
 description: Twitter通用网站标签扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '508'
+source-wordcount: '507'
 ht-degree: 3%
 
 ---
