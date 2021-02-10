@@ -1,17 +1,17 @@
 ---
 keywords: AmazonS3;S3目标；s3;amazon s3
-title: AmazonS3连接目标
+title: AmazonS3连接
 description: 创建到您的AmazonWeb服务(AWS)S3存储的实时出站连接，以定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '222'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Amazon S3] 连接
+# [!DNL Amazon S3] 连接  {#s3-connection}
 
 创建到您的[!DNL Amazon Web Services](AWS)S3存储的实时出站连接，定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 
