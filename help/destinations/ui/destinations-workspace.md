@@ -4,7 +4,7 @@ title: 目标工作区概述
 description: “目标”工作区由四个部分组成，即目录、浏览、帐户和系统视图，这些部分在以下各节中有介绍。
 seo-description: 在Adobe Experience Platform，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
 source-wordcount: '910'
 ht-degree: 2%
