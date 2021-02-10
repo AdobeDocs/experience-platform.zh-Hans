@@ -1,11 +1,11 @@
 ---
 keywords: JW player;jw player;JW Player;jw扩展；JW扩展
-title: JW Player分析（测试版）扩展目标
+title: JW Player分析（测试版）扩展
 description: JW Player Analytics（测试版）扩展是Adobe Experience Platform的分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '544'
 ht-degree: 3%
 
 ---
