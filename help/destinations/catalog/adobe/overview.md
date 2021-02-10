@@ -3,7 +3,7 @@ keywords: 目的地；体验云解决方案；目标;目标目标；广告云；
 title: Adobe目标概述
 description: 通过将您在Platform中的数据与Adobe Experience Cloud的其他广告定位、个性化、营销自动化等解决方案相连，管理客户体验
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
 source-wordcount: '219'
 ht-degree: 13%
