@@ -1,11 +1,11 @@
 ---
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；oracle响应系统目标
-title: OracleResponsys连接目标
+title: OracleResponsys连接
 description: Responsys是Oracle公司为跨渠道营销活动提供的企业电子邮件营销工具，可以跨电子邮件、移动设备、展示广告和社交渠道实现个性化互动。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '501'
+source-wordcount: '500'
 ht-degree: 0%
 
 ---
