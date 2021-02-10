@@ -1,11 +1,11 @@
 ---
 keywords: Marketo Munchkin;marketo munchkin;Marketo Munchkin扩展；marketo Munchkin扩展；marketo munchkin扩展；marketo;marketo
-title: Marketo Munchkin扩展目标
+title: Marketo Munchkin 扩展
 description: Marketo Munchkin扩展是Adobe Experience Platform的个性化目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '551'
 ht-degree: 7%
 
 ---
