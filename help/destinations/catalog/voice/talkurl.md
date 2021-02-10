@@ -1,11 +1,11 @@
 ---
 keywords: 交谈URL收件箱；交谈URL收件箱；交谈URL收件箱；交谈URL收件箱；交谈URL；交谈URL
-title: 交谈URL收件箱扩展目标
+title: 交谈URL收件箱扩展
 description: Talk URL收件箱扩展是Adobe Experience Platform客户目标的语音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '550'
+source-wordcount: '549'
 ht-degree: 4%
 
 ---
