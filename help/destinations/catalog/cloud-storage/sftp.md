@@ -1,11 +1,11 @@
 ---
 keywords: SFTP;sftp
-title: SFTP连接目标
+title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，以定期从Experience Platform导出分隔的数据文件。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '185'
+source-wordcount: '184'
 ht-degree: 0%
 
 ---
