@@ -3,7 +3,7 @@ keywords: 社交网络；社交网络目标；Livefyre;facebook;Facebook
 title: 社交网络目标概述
 description: 通过社交网络目标，您可以为活动激活用户档案，以便根据散列电子邮件进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
 source-wordcount: '71'
 ht-degree: 0%
