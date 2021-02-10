@@ -1,11 +1,11 @@
 ---
 keywords: QuestionPro Intercept调查;questionpro Intercept调查;QuestionPro;questionpro
-title: QuestionPro截取调查扩展目标
+title: QuestionPro Intercept调查扩展
 description: QuestionPro Intercept调查扩展是Adobe Experience Platform的一个调查目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '531'
 ht-degree: 3%
 
 ---
