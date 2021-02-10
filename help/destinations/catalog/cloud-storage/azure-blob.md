@@ -1,11 +1,11 @@
 ---
 keywords: Azure Blob;Blob目标；s3;azure Blob目标
-title: Azure Blob连接目标
+title: Azure Blob连接
 description: 创建到Azure Blob存储的实时出站连接，定期从Adobe Experience Platform导出制表符分隔或CSV数据文件。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '476'
 ht-degree: 1%
 
 ---
