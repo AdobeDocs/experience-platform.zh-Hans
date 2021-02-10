@@ -1,11 +1,11 @@
 ---
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目的地；oracle雄辩；oracle
-title: Oracle雄辩连接目的地
+title: Oracle雄辩
 description: Oracle雄辩是Oracle公司提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '520'
 ht-degree: 0%
 
 ---
