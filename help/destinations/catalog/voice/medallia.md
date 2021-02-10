@@ -1,11 +1,11 @@
 ---
 keywords: Medallia;medallia
-title: Medallia扩展目标
+title: 美达利亚
 description: Medallia扩展是Adobe Experience Platform客户目的地的声音。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '541'
 ht-degree: 3%
 
 ---
