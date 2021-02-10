@@ -5,7 +5,7 @@ seo-title: 目标概述
 description: 了解如何将Adobe Experience Platform数据激活到跨渠道营销活动、电子邮件、定向广告等目的地。
 seo-description: 目标是预建的与目标平台集成，实现来自Adobe Experience Platform的无缝激活。 您可以使用Adobe Experience Platform的目标来激活您已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他使用案例的数据。
 translation-type: tm+mt
-source-git-commit: fc0813b457f039c0f0fa965df2d1100170424d23
+source-git-commit: 2efdefc69c937c70f6a463113a73ca71d8998e14
 workflow-type: tm+mt
 source-wordcount: '493'
 ht-degree: 1%
@@ -21,12 +21,12 @@ ht-degree: 1%
 
 ## 目标和源{#destinations-and-sources}
 
-平台的一个核心功能是接收第一方数据并根据业务需求激活它。 使用源将数据引入平台和目标，以从平台导出数据。
+平台的一个核心功能是接收第一方数据并根据业务需求激活它。 使用[sources](../sources/home.md)将数据引入平台和目标，以从平台导出数据。
 
 ## 目标步骤{#steps}
 
 * 从[自助服务目录](./catalog/overview.md)中选择平台中可用的所有目标。
-* 使用&#x200B;**[!UICONTROL 目标]**[activate](./ui/activate-destinations.md)将用户档案或细分发送到营销自动化平台、数字广告平台等。
+* 使用目标[激活](./ui/activate-destinations.md)，并将用户档案或细分发送到营销自动化平台、数字广告平台等。
 * 计划定期导出到首选目标。
 
 ## 控件{#controls}
