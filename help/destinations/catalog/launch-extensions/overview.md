@@ -1,12 +1,12 @@
 ---
 keywords: 启动扩展；启动扩展；启动目标；平台启动扩展；平台启动扩展；平台启动目标
-title: Adobe Experience Platform Launch扩展目的地
+title: Adobe Experience Platform Launch延伸
 description: Adobe Experience Platform Launch是Adobe的新一代标签管理功能。  Platform Launch 为客户提供了一种简单的方式来部署和管理所有用来改善相关客户体验的分析、营销和广告标记。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '617'
-ht-degree: 11%
+source-wordcount: '616'
+ht-degree: 12%
 
 ---
 
