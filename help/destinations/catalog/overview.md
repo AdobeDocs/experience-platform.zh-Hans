@@ -5,9 +5,9 @@ seo-title: 目标目录概述
 description: 目标目录提供可接收数据的可用目标列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
 seo-description: 目标目录提供可接收数据的可用目标列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 48c5f6d6a45de5f7982543f7a43cb4ece8cf3a9f
 workflow-type: tm+mt
-source-wordcount: '177'
+source-wordcount: '194'
 ht-degree: 0%
 
 ---
@@ -23,13 +23,13 @@ ht-degree: 0%
 
 您可以将数据激活到Adobe Experience Platform的不同目标类别。 以下链接提供了有关每个目标类别的更多信息：
 
-- [Adobe解决方案](./adobe/overview.md)
-- [广告目标](./advertising/overview.md)
-- [分析目标](./analytics/overview.md)
-- [云存储目标](./cloud-storage/overview.md)
-- [数据管理平台](./data-management/overview.md)
-- [电子邮件营销](./email-marketing/overview.md)
-- [个性化](./personalization/overview.md)
-- [社交目的地](./social/overview.md)
-- [调查](./survey/overview.md)
-- [客户之声](./voice/overview.md)
+- [Adobe目标概述](./adobe/overview.md)
+- [广告目标概述](./advertising/overview.md)
+- [分析目标概述](./analytics/overview.md)
+- [云存储目标概述](./cloud-storage/overview.md)
+- [数据管理平台(DMP)目标概述](./data-management/overview.md)
+- [电子邮件营销目标概述](./email-marketing/overview.md)
+- [个性化目标概述](./personalization/overview.md)
+- [社交网络目标概述](./social/overview.md)
+- [调查目标概述](./survey/overview.md)
+- [客户之声目标概述](./voice/overview.md)
