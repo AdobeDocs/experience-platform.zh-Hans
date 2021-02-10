@@ -1,14 +1,14 @@
 ---
 keywords: 广告目标；目标；平台目标
-title: 广告目标
+title: 广告目标概述
 seo-title: 广告目标概述
 description: 将Adobe Experience Platform连接到第三方广告平台(如DSP、广告网络、SSP)，并与这些平台共享假名受众。
 seo-description: 将Adobe Experience Platform连接到第三方广告平台(如DSP、广告网络、SSP)，并与这些平台共享假名受众。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '227'
-ht-degree: 2%
+source-wordcount: '233'
+ht-degree: 0%
 
 ---
 
@@ -25,12 +25,12 @@ ht-degree: 2%
 
 要了解连接和扩展之间的差异，请参阅“目标类型和类别”页中的[连接](../../destination-types.md#connections)。
 
-- [Google Display &amp; Video 360](./google-dv360.md)
-- [Google广告](./google-ads-destination.md)
-- [Google广告经理](./google-ad-manager.md)
-- [Google 客户匹配](./google-customer-match.md)
-- [Microsoft Bing](./bing.md)
-- [贸易台的目的地](./tradedesk.md)
+- [Google Display &amp; Video 360连接](./google-dv360.md)
+- [Google Ads连接](./google-ads-destination.md)
+- [Google Ad Manager连接](./google-ad-manager.md)
+- [Google客户匹配连接](./google-customer-match.md)
+- [Microsoft Bing连接](./bing.md)
+- [交易台连接](./tradedesk.md)
 
 ## 扩展
 
