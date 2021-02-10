@@ -1,11 +1,11 @@
 ---
 keywords: 流；
-title: HTTP连接目标
+title: HTTP连接
 description: Adobe Experience Platform的HTTP目标允许您将用户档案数据发送到第三方HTTP端点。
 translation-type: tm+mt
-source-git-commit: 8d403e73a804953f9584d6a72f945d4444e65d11
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '487'
 ht-degree: 2%
 
 ---
