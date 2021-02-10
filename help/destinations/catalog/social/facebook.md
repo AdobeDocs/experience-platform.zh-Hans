@@ -1,9 +1,9 @@
 ---
-keywords: facebook扩展；facebook扩展；facebook目标；facebook;instagram;messenger;facebook messenger
-title: Facebook扩展
+keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;messenger;facebook messenger
+title: Facebook连接
 description: 根据散列电子邮件激活Facebook活动的用户档案，进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 2efdefc69c937c70f6a463113a73ca71d8998e14
 workflow-type: tm+mt
 source-wordcount: '951'
 ht-degree: 3%
@@ -11,7 +11,7 @@ ht-degree: 3%
 ---
 
 
-# [!DNL Facebook] 扩展
+# [!DNL Facebook] 连接
 
 >[!IMPORTANT]
 >
