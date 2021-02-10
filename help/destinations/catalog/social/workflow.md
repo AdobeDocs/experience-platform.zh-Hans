@@ -4,7 +4,7 @@ title: 创建社交网络目标
 type: Tutorial
 description: 了解如何连接到Adobe Experience Platform的社交网络广告帐户。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
 source-wordcount: '460'
 ht-degree: 0%
