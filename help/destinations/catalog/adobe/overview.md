@@ -3,10 +3,10 @@ keywords: 目的地；体验云解决方案；目标;目标目标；广告云；
 title: Adobe目标概述
 description: 通过将您在Platform中的数据与Adobe Experience Cloud的其他广告定位、个性化、营销自动化等解决方案相连，管理客户体验
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 48c5f6d6a45de5f7982543f7a43cb4ece8cf3a9f
 workflow-type: tm+mt
-source-wordcount: '219'
-ht-degree: 13%
+source-wordcount: '220'
+ht-degree: 12%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 13%
 
 要了解连接和扩展之间的差异，请参阅“目标类型和类别”页中的[连接](../../destination-types.md#connections)。
 
-- [Adobe Campaign](../email-marketing/adobe-campaign.md)
+- [Adobe Campaign连接](../email-marketing/adobe-campaign.md)
 
 ## 扩展
 
