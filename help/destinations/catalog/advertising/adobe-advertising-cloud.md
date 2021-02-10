@@ -1,11 +1,11 @@
 ---
 keywords: Advertising Cloud；广告云扩展；广告云目标
-title: Adobe Advertising Cloud扩展目的地
+title: Adobe Advertising Cloud延伸
 description: Adobe Advertising Cloud分机是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '464'
 ht-degree: 3%
 
 ---
