@@ -1,11 +1,11 @@
 ---
 keywords: LinkedIn;linkedin;Linkedin;LinkedIn Insight标记；Insight标记；Insight标记
-title: LinkedIn Insight标记扩展目标
+title: LinkedIn Insight标记扩展
 description: LinkedIn Insight标签扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '514'
 ht-degree: 3%
 
 ---
