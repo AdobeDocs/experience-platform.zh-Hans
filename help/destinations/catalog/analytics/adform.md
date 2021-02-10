@@ -1,17 +1,17 @@
 ---
 keywords: adform extension;adform
-title: Adform扩展目标
+title: Adform网站跟踪扩展
 description: Adform扩展是Adobe Experience Platform的一个分析目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '486'
 ht-degree: 3%
 
 ---
 
 
-# Adform扩展{#adform-extension}
+# Adform网站跟踪扩展{#adform-extension}
 
 Adform网站跟踪扩展使广告商能够使用[!DNL Experience Platform Launch]平台在他们的网站上毫不费力地实施Adform跟踪点。
 
