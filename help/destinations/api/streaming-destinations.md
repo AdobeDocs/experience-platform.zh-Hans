@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；API教程；流目标API;平台
 solution: Experience Platform
-title: 使用API调用连接到流目标并激活数据
+title: 使用Adobe Experience Platform的API调用连接到流目标并激活数据
 description: 此文档包括通过使用Adobe Experience PlatformAPI创建流目标
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
 source-wordcount: '2021'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 ---
 
 
-# 使用Adobe Experience Platform的API调用连接到流目标并激活数据
+# 使用API调用连接到流目标并激活数据
 
 >[!NOTE]
 >
@@ -67,7 +67,7 @@ Experience Platform中的资源可以隔离到特定虚拟沙箱。 在对平台
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
-* 内容类型：`application/json`
+* Content-Type: `application/json`
 
 ### Swagger文档{#swagger-docs}
 
@@ -615,7 +615,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 * 下载并安装[!DNL Postman];
 * [下载](../assets/api/streaming-destination/DestinationPostmanCollection.zip) 并解压缩附加的集合；
-* 将收藏集从其相应文件夹导入邮递员；
+* 将收藏集从其相应的文件夹导入邮递员；
 * 根据本文的说明填写环境变量；
 * 根据本文中的说明，运行来自邮递员的[!DNL API]请求。
 
