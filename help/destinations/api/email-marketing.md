@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: 使用API调用创建电子邮件营销目标
+title: 连接到电子邮件营销目标并使用API调用激活数据
 description: 本文档涵盖通过使用Adobe Experience PlatformAPI创建电子邮件营销目标
 topic: tutorial
 type: Tutorial
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1649'
 ht-degree: 1%
 
 ---
 
 
-# 创建电子邮件营销目标并使用API调用激活数据
+# 连接到电子邮件营销目标并使用API调用激活数据
 
 本教程演示如何使用API调用连接到您的Adobe Experience Platform数据、创建[电子邮件营销目标](../catalog/email-marketing/overview.md)、创建到新创建目标的数据流以及将数据激活到新创建的目标。
 
@@ -63,7 +63,7 @@ ht-degree: 1%
 
 所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
-* 内容类型：`application/json`
+* Content-Type: `application/json`
 
 ### Swagger文档
 
