@@ -1,11 +1,11 @@
 ---
 keywords: PebblePost；鹅卵石邮件；PebblePost程序化直邮；鹅卵石邮件程序化直邮
-title: PebblePost扩展目标
+title: PebblePost扩展
 description: PebblePost扩展是Adobe Experience Platform的一个电子邮件目的地。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '553'
 ht-degree: 3%
 
 ---
