@@ -5,7 +5,7 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 此文档列表Adobe Experience Platform目的地的目录
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 2efdefc69c937c70f6a463113a73ca71d8998e14
 workflow-type: tm+mt
 source-wordcount: '451'
 ht-degree: 11%
@@ -116,7 +116,7 @@ ht-degree: 11%
       * [社交网络目标概述](./catalog/social/overview.md)
       * [创建社交网络目标](./catalog/social/workflow.md)
       * [AdobeLivefyre扩展](./catalog/social/adobe-livefyre.md)
-      * [Facebook扩展](./catalog/social/facebook.md)
+      * [Facebook连接](./catalog/social/facebook.md)
    * 调查目标{#survey}
       * [调查目标概述](./catalog/survey/overview.md)
       * [预见扩展目标](./catalog/survey/foresee.md)
