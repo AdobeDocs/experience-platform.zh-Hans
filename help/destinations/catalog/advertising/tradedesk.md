@@ -3,9 +3,9 @@ keywords: 广告；贸易部门；
 title: 交易台连接
 description: '交易台是一个自助平台，可供广告购买者跨展示广告、视频和移动库存来源执行重定向和受众目标数字活动。 '
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: ad025630cbae5c220f5bbd7f55cad70620b6f335
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '540'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,6 @@ ht-degree: 0%
 * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**:将来帮助您识别此目标的描述。
 * **[!UICONTROL 帐户ID]**:您的 [!DNL Trade Desk] [!UICONTROL 帐户ID]。
-* **[!UICONTROL 客户端机密]**:客户 `clientSecret` 端凭据中使 [!DNL OAuth2] 用的参数。
 * **[!UICONTROL 服务器位置]**:询问您的 [!DNL The Trade Desk] 代表您应使用哪个区域服务器。这些是可供选择的区域服务器：
 
    * **[!UICONTROL 欧洲]**
