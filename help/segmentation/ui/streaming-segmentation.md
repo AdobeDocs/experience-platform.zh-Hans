@@ -5,9 +5,9 @@ title: 流分段UI指南
 topic: ui guide
 description: Adobe Experience Platform上的流细分使您能够近乎实时地进行细分，同时专注于数据的丰富性。 借助流细分，当数据进入平台时，细分资格现在会发生，从而缓解了计划和运行细分作业的需求。 借助此功能，现在可以在数据传递到平台时评估大多数细分规则，这意味着，在不运行计划的细分作业的情况下，区段成员资格将保持最新。
 translation-type: tm+mt
-source-git-commit: c0c42f872666323bfb3bdbdf5fb02475d3b5bc79
+source-git-commit: 405b7eb0c95ebef0b05d2b10ef92f28a37b7cc86
 workflow-type: tm+mt
-source-wordcount: '802'
+source-wordcount: '769'
 ht-degree: 0%
 
 ---
@@ -75,12 +75,6 @@ ht-degree: 0%
 ![](../images/ui/streaming-segmentation/info-bubble.png)
 
 有关区段定义的详细信息，请阅读上一节[区段定义详细信息](#segment-details)。
-
-## 流分段视频演示
-
-以下视频旨在支持您对流细分的理解。 它以客户体验为例，然后快速浏览[!DNL Platform]界面中的主要功能。
-
->[!VIDEO](https://video.tv.adobe.com/v/36184?quality=12&learn=on)
 
 ## 后续步骤
 
