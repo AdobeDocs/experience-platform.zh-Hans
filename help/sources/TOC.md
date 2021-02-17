@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 17eb7b9cb715d7d8d0d7bce930ddec43259149cc
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '557'
 ht-degree: 12%
 
 ---
@@ -29,17 +29,17 @@ ht-degree: 12%
    - 广告 {#advertising}
       - [Google AdWords连接器](connectors/advertising/ads.md)
    - 云存储{#cloud-storage}
-      - [AmazonKinesis连接器](connectors/cloud-storage/kinesis.md)
-      - [AmazonS3连接器](connectors/cloud-storage/s3.md)
+      - [Amazon Kinesis连接器](connectors/cloud-storage/kinesis.md)
+      - [Amazon S3连接器](connectors/cloud-storage/s3.md)
       - [Apache HDFS连接器](connectors/cloud-storage/hdfs.md)
-      - [Azure Data Lake存储Gen2连接器](connectors/cloud-storage/adls-gen2.md)
+      - [Azure Data Lake 存储 Gen2连接器](connectors/cloud-storage/adls-gen2.md)
       - [Azure Blob连接器](connectors/cloud-storage/blob.md)
       - [Azure事件集线器连接器](connectors/cloud-storage/eventhub.md)
       - [Azure文件存储连接器](connectors/cloud-storage/azure-file-storage.md)
       - [FTP连接器](connectors/cloud-storage/ftp.md)
       - [Google Cloud存储连接器](connectors/cloud-storage/google-cloud-storage.md)
       - [SFTP连接器](connectors/cloud-storage/sftp.md)
-      - [AmazonS3和Azure Blob连接器](connectors/cloud-storage/blob-s3.md)
+      - [Amazon S3和Azure Blob连接器](connectors/cloud-storage/blob-s3.md)
    - CRM {#crm}
       - [Microsoft Dynamics连接器](connectors/crm/ms-dynamics.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
@@ -47,21 +47,21 @@ ht-degree: 12%
       - [Salesforce Service Cloud连接器](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow连接器](connectors/customer-success/servicenow.md)
    - 数据库{#databases}
-      - [Amazon红移连接器](connectors/databases/redshift.md)
+      - [Amazon Redshift连接器](connectors/databases/redshift.md)
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
       - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
       - [AzureData Explorer连接器](connectors/databases/data-explorer.md)
-      - [azure synapse分析连接器](connectors/databases/synapse-analytics.md)
+      - [azure synapse Analytics连接器](connectors/databases/synapse-analytics.md)
       - [Azure表存储连接器](connectors/databases/ats.md)
       - [Couchbase连接器](connectors/databases/couchbase.md)
       - [Google BigQuery连接器](connectors/databases/bigquery.md)
-      - [GreenPlum连接器](connectors/databases/greenplum.md)
+      - [绿李连接器](connectors/databases/greenplum.md)
       - [HP Vertica连接器](connectors/databases/hp-vertica.md)
       - [IBM DB2连接器](connectors/databases/ibm-db2.md)
       - [Microsoft SQL Server连接器](connectors/databases/sql-server.md)
       - [MySQL连接器](connectors/databases/mysql.md)
-      - [Oracle连接器](connectors/databases/oracle.md)
-      - [菲尼克斯连接器](connectors/databases/phoenix.md)
+      - [Oracle connector](connectors/databases/oracle.md)
+      - [凤凰连接器](connectors/databases/phoenix.md)
       - [PostgreSQL连接器](connectors/databases/postgres.md)
    - 电子商务 {#ecommerce}
       - [Shopify连接器](connectors/ecommerce/shopify.md)
@@ -76,11 +76,11 @@ ht-degree: 12%
       - 广告 {#advertising}
          - [Google AdWords](tutorials/api/create/advertising/ads.md)
       - 云存储{#cloud-storage}
-         - [AmazonKinesis](tutorials/api/create/cloud-storage/kinesis.md)
+         - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/api/create/cloud-storage/s3.md)
          - [Apache HDFS](tutorials/api/create/cloud-storage/hdfs.md)
          - [Azure Blob](tutorials/api/create/cloud-storage/blob.md)
-         - [Azure数据湖存储Gen2](tutorials/api/create/cloud-storage/adls-gen2.md)
+         - [Azure数据湖存储第2代](tutorials/api/create/cloud-storage/adls-gen2.md)
          - [Azure事件集线器](tutorials/api/create/cloud-storage/eventhub.md)
          - [Azure文件存储](tutorials/api/create/cloud-storage/azure-file-storage.md)
          - [FTP](tutorials/api/create/cloud-storage/ftp.md)
@@ -90,18 +90,18 @@ ht-degree: 12%
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
       - 客户成功{#customer-success}
-         - [Salesforce服务云](tutorials/api/create/customer-success/salesforce-service-cloud.md)
+         - [Salesforce Service Cloud](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
       - 数据库{#databases}
          - [Amazon Redshift](tutorials/api/create/databases/redshift.md)
          - [Azure HDInsights上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/api/create/databases/spark.md)
          - [AzureData Explorer](tutorials/api/create/databases/data-explorer.md)
-         - [azure synapse分析](tutorials/api/create/databases/synapse-analytics.md)
+         - [azure synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure表存储](tutorials/api/create/databases/ats.md)
-         - [库克巴斯](tutorials/api/create/databases/couchbase.md)
+         - [库奇巴斯](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery](tutorials/api/create/databases/bigquery.md)
-         - [绿梅](tutorials/api/create/databases/greenplum.md)
+         - [绿李](tutorials/api/create/databases/greenplum.md)
          - [HP Vertica](tutorials/api/create/databases/hp-vertica.md)
          - [IBM DB2](tutorials/api/create/databases/ibm-db2.md)
          - [MySQL](tutorials/api/create/databases/mysql.md)
@@ -117,6 +117,8 @@ ht-degree: 12%
          - [PayPal](tutorials/api/create/payments/paypal.md)
       - 协议{#protocols}
          - [通用OData](tutorials/api/create/protocols/odata.md)
+      - 流{#streaming}
+         - [HTTP API](tutorials/api/create/streaming/http.md)
    - 浏览数据{#explore}
       - [浏览广告数据](tutorials/api/explore/advertising.md)
       - [浏览云存储数据](tutorials/api/explore/cloud-storage.md)
@@ -154,33 +156,33 @@ ht-degree: 12%
       - 广告 {#create}
          - [Google AdWords](tutorials/ui/create/advertising/ads.md)
       - 云存储{#cloud-storage}
-         - [AmazonKinesis](tutorials/ui/create/cloud-storage/kinesis.md)
-         - [AmazonS3](tutorials/ui/create/cloud-storage/s3.md)
+         - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
+         - [Amazon S3](tutorials/ui/create/cloud-storage/s3.md)
          - [Apache HDFS](tutorials/ui/create/cloud-storage/hdfs.md)
-         - [Azure数据湖存储Gen2](tutorials/ui/create/cloud-storage/adls-gen2.md)
+         - [Azure数据湖存储第2代](tutorials/ui/create/cloud-storage/adls-gen2.md)
          - [Azure Blob](tutorials/ui/create/cloud-storage/blob.md)
          - [Azure事件集线器](tutorials/ui/create/cloud-storage/eventhub.md)
          - [Azure文件存储](tutorials/ui/create/cloud-storage/azure-file-storage.md)
          - [FTP](tutorials/ui/create/cloud-storage/ftp.md)
          - [Google Cloud存储](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
          - [SFTP](tutorials/ui/create/cloud-storage/sftp.md)
-         - [AmazonS3和Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
+         - [Amazon S3和Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
       - 客户成功{#customer-success}
-         - [Salesforce服务云](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
+         - [Salesforce Service Cloud](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
       - 数据库{#databases}
-         - [Amazon红移](tutorials/ui/create/databases/redshift.md)
+         - [Amazon Redshift](tutorials/ui/create/databases/redshift.md)
          - [Azure HDInsights上的Apache Hive](tutorials/ui/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/ui/create/databases/spark.md)
          - [AzureData Explorer](tutorials/ui/create/databases/data-explorer.md)
-         - [azure synapse分析](tutorials/ui/create/databases/synapse-analytics.md)
+         - [azure synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure表存储](tutorials/ui/create/databases/ats.md)
-         - [库克巴斯](tutorials/ui/create/databases/couchbase.md)
+         - [库奇巴斯](tutorials/ui/create/databases/couchbase.md)
          - [Google大查询](tutorials/ui/create/databases/bigquery.md)
-         - [绿梅](tutorials/ui/create/databases/greenplum.md)
+         - [绿李](tutorials/ui/create/databases/greenplum.md)
          - [HP Vertica](tutorials/ui/create/databases/hp-vertica.md)
          - [IBM DB2](tutorials/ui/create/databases/ibm-db2.md)
          - [Microsoft SQL Server](tutorials/ui/create/databases/sql-server.md)
@@ -196,6 +198,8 @@ ht-degree: 12%
          - [PayPal](tutorials/ui/create/payments/paypal.md)
       - 协议{#protocols}
          - [通用OData](tutorials/ui/create/protocols/odata.md)
+      - 流{#streaming}
+         - [HTTP API](tutorials/ui/create/streaming/http.md)
    - 配置数据流{#dataflow}
       - [广告连接数据流](tutorials/ui/dataflow/advertising.md)
       - [批处理云存储连接数据流](tutorials/ui/dataflow/batch/cloud-storage.md)
