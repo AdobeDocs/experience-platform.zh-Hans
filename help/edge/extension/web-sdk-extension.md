@@ -1,26 +1,24 @@
 ---
-title: Adobe Experience Platform Web SDK 扩展
-seo-title: Adobe Experience Platform Launch 中的 Adobe Experience Platform Web SDK 扩展
-description: Adobe Experience Platform Launch 中的 Adobe Experience Platform Web SDK 扩展
-seo-description: 'Adobe Experience Platform Launch 中的 Adobe Experience Platform Web SDK 扩展 '
+title: Adobe Experience Platform Web SDK 扩展 概述
+description: 了解Adobe Experience Platform Web SDK扩展for Adobe Experience Platform Launch
 translation-type: tm+mt
-source-git-commit: 473cc1f7617f1d65cdb70ff0e758178ea0174f00
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '664'
-ht-degree: 58%
+source-wordcount: '645'
+ht-degree: 55%
 
 ---
 
 
-# Adobe Experience PlatformWeb SDK扩展，用于平台启动
+# Adobe Experience Platform Web SDK扩展概述
 
-Adobe Experience PlatformWeb SDK扩展通过Adobe Experience Platform边缘网络从Web属性向Adobe Experience Cloud发送数据。 Adobe Experience Platform Web SDK 扩展允许将数据流式传输到平台、同步身份、选择加入和自动收集上下文数据。
+Adobe Experience Platform Web SDK扩展通过Adobe Experience Platform Edge Network从Web属性将数据发送到Adobe Experience Cloud。 Adobe Experience Platform Web SDK 扩展允许将数据流式传输到平台、同步身份、选择加入和自动收集上下文数据。
 
 ## 配置 AEP Web SDK 扩展
 
 此部分提供有关配置 Adobe Experience Platform Web SDK 扩展时可用的选项的参考。
 
-如果尚未安装Adobe Experience PlatformWeb SDK扩展，请打开您的属性，选择&#x200B;**[!UICONTROL 扩展>目录]**，将指针悬停在Adobe Experience PlatformWeb SDK扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
+如果尚未安装Adobe Experience Platform Web SDK扩展，请打开您的属性，然后选择&#x200B;**[!UICONTROL 扩展>目录]**，将指针悬停在Adobe Experience Platform Web SDK扩展上，然后选择&#x200B;**[!UICONTROL 安装]**。
 
 要配置扩展，请打开&#x200B;**[!UICONTROL 扩展]**&#x200B;选项卡，将指针悬停在扩展上，然后选择&#x200B;**[!UICONTROL 配置]**。
 
@@ -28,11 +26,11 @@ Adobe Experience PlatformWeb SDK扩展通过Adobe Experience Platform边缘网�
 
 ### 实例名称
 
-Adobe Experience PlatformWeb SDK扩展支持页面上的多个实例。 可以利用这一点来通过单个 Adobe Experience Platform Launch 配置向多个组织发送数据。**[!UICONTROL 名称]**&#x200B;默认为合金。 但是，您可以将实例名称更改为任何有效的 JavaScript 对象名称。Adobe Experience Platform扩展要求每个实例具有不同的&#x200B;**[!UICONTROL 配置ID]**&#x200B;和不同的&#x200B;**[!UICONTROL 组织ID]**。
+Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 可以利用这一点来通过单个 Adobe Experience Platform Launch 配置向多个组织发送数据。**[!UICONTROL 名称]**&#x200B;默认为合金。 但是，您可以将实例名称更改为任何有效的 JavaScript 对象名称。Adobe Experience Platform扩展要求每个实例具有不同的&#x200B;**[!UICONTROL 配置ID]**&#x200B;和不同的&#x200B;**[!UICONTROL 组织ID]**。
 
 ## **[!UICONTROL 配置ID]**
 
-**[!UICONTROL 配置ID]**&#x200B;告诉Adobe Experience Platform数据应路由的位置以及服务器上应使用哪些配置。 这是 Adobe Experience Platform 扩展正常工作所必需的。您可以联系客户关怀获取配置 ID。
+**[!UICONTROL 配置ID]**&#x200B;告诉Adobe Experience Platform数据应路由的位置以及服务器上应使用的配置。 这是 Adobe Experience Platform 扩展正常工作所必需的。您可以联系客户关怀获取配置 ID。
 
 
 ### **[!UICONTROL Organization ID]**
@@ -63,10 +61,10 @@ Adobe Experience Platform 将始终在第一方域中存储 Cookie。此选项�
 
 此扩展会自动收集有关请求上下文的信息（例如，有关 URL 和浏览器的详细信息）。可通过取消选择特定上下文来禁用此选项。
 
-- **[!UICONTROL web]** -有关网页的详细信息，如url、推荐人等。
-- **[!UICONTROL 设备]** -有关设备的详细信息，如屏幕方向、屏幕高度和屏幕宽度。
-- **[!UICONTROL 环境]** -有关计算环境的信息（浏览器、连接等）
-- **[!UICONTROL 位置]** -有关用户位置的有限信息
+- **[!UICONTROL web]**  — 有关网页的详细信息，如url、推荐人等。
+- **[!UICONTROL device]**  — 有关设备的详细信息，如屏幕方向、屏幕高度和屏幕宽度。
+- **[!UICONTROL 环境]**  — 有关计算环境（浏览器、连接等）的信息
+- **[!UICONTROL location]**  — 有关用户位置的有限信息
 
 ## 下一步
 
