@@ -6,20 +6,20 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 translation-type: tm+mt
-source-git-commit: 090050d89c628d82ebe1da6625a2ef1f2adf3e6c
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '149'
-ht-degree: 36%
+source-wordcount: '142'
+ht-degree: 34%
 
 ---
 
 
 # Adobe Experience Platform Web SDK {#edge}
 
-* [Web SDK概述](home.md)
+* [平台Web SDK概述](home.md)
 * 基础知识{#fundamentals}
    * [先决条件](fundamentals/prerequisite.md)
-   * [配置Edge](fundamentals/edge-configuration.md)
+   * [创建边缘配置](fundamentals/edge-configuration.md)
    * [安装SDK](fundamentals/installing-the-sdk.md)
    * [配置SDK](fundamentals/configuring-the-sdk.md)
    * [执行命令](fundamentals/executing-commands.md)
@@ -34,18 +34,18 @@ ht-degree: 36%
    * [跟踪链接](data-collection/track-links.md)
    * [收集商务和产品数据](data-collection/collect-commerce-data.md)
    * Adobe Analytics {#adobe-analytics}
-      * [Analytics 概述](data-collection/adobe-analytics/analytics-overview.md)
-      * [在Adobe Analytics中手动映射变量](data-collection/adobe-analytics/manually-mapping-variables.md)
+      * [概述](data-collection/adobe-analytics/analytics-overview.md)
+      * [映射分析变量](data-collection/adobe-analytics/manually-mapping-variables.md)
       * [自动映射变量](data-collection/adobe-analytics/automatically-mapped-vars.md)
-      * [向Adobe Analytics发送数据](data-collection/adobe-analytics/sending-data-to-analytics.md)
+      * [向Analytics发送数据](data-collection/adobe-analytics/sending-data-to-analytics.md)
 * 个性化 {#personalization}
    * [呈现个性化内容](personalization/rendering-personalization-content.md)
    * [管理闪烁](personalization/manage-flicker.md)
    * Adobe Target {#adobe-target}
-      * [Target 概述](personalization/adobe-target/target-overview.md)
-      * [单页应用程序实施](personalization/adobe-target/spa-implementation.md)
+      * [概述](personalization/adobe-target/target-overview.md)
+      * [单页应用程序实现](personalization/adobe-target/spa-implementation.md)
    * Offer Decisioning {#offer-decisioning}
-      * [Offer Decisioning概述](personalization/offer-decisioning/offer-decisioning-overview.md)
+      * [概述](personalization/offer-decisioning/offer-decisioning-overview.md)
 * 同意{#consent}
    * [支持同意](consent/supporting-consent.md)
    * IAB透明度和同意框架2.0 {#iab-tcf}
