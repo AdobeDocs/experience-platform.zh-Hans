@@ -1,41 +1,39 @@
 ---
-title: 'Adobe Target和Adobe Experience PlatformWeb SDK。 '
-seo-title: Adobe Experience PlatformWeb SDK和使用Adobe Target
-description: 了解如何使用Experience PlatformWeb SDK使用Adobe Target呈现个性化内容
-seo-description: 了解如何使用Experience PlatformWeb SDK使用Adobe Target呈现个性化内容
-keywords: target;adobe target;activity.id;experience.id;renderDecisions;decisionScopes;prehiding snippet;vec;Form-Based Experience Composer;xdm;audiences;decisions;scope;schema;
+title: 将Adobe Target与Platform Web SDK结合使用
+description: 了解如何使用Experience Platform Web SDK使用Adobe Target呈现个性化内容
+keywords: 目标;adobe 目标;活动.id;experience.id;renderDecisions;decisionScopes;prehiding代码片段；vec；基于表单的体验书写器；xdm;受众；决定；范围；模式;
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '629'
+source-wordcount: '632'
 ht-degree: 3%
 
 ---
 
 
-# [!DNL Target] 概述
+# 将Adobe Target与Platform Web SDK结合使用
 
-Adobe Experience Platform [!DNL Web SDK] 可以向网络渠道提供和呈现在Adobe Target管理的个性化体验。 您可以使用WYSIWYG编辑器(称为 [Visual Experience Composer](https://docs.adobe.com/content/help/en/target/using/experiences/vec/visual-experience-composer.html) (VEC))或非可视界面(基于表 [单的体验书写器](https://docs.adobe.com/content/help/en/target/using/experiences/form-experience-composer.html))来创建、激活和提供您的活动和个性化体验。
+Adobe Experience Platform [!DNL Web SDK]可以向Web渠道提供和呈现Adobe Target中管理的个性化体验。 您可以使用称为[Visual Experience Composer](https://docs.adobe.com/content/help/en/target/using/experiences/vec/visual-experience-composer.html)(VEC)的WYSIWYG编辑器或非可视界面（[基于表单的体验编辑器](https://docs.adobe.com/content/help/en/target/using/experiences/form-experience-composer.html)）来创建、激活和提供您的活动和个性化体验。
 
-## 使Adobe Target
+## 启用Adobe Target
 
-要启 [!DNL Target]用，您需要执行以下操作：
+要启用[!DNL Target]，您需要执行以下操作：
 
-1. 在边缘配置中 [启用目标](../../fundamentals/edge-configuration.md) ，并使用相应的客户端代码。
-1. 将选项 `renderDecisions` 添加到事件。
+1. 在[边缘配置](../../fundamentals/edge-configuration.md)中启用目标，使用相应的客户端代码。
+1. 将`renderDecisions`选项添加到事件。
 
 然后（可选）您还可以：
 
-* 添加 `decisionScopes` 到事件以检索特定活动(对于使用基于表单的书写器创建的活动很有用)。
-* 添加预 [隐藏片段](../manage-flicker.md) ，以仅隐藏页面的某些部分。
+* 将`decisionScopes`添加到事件以检索特定活动(对于使用基于表单的书写器创建的活动很有用)。
+* 添加[预隐藏片段](../manage-flicker.md)以仅隐藏页面的某些部分。
 
-## 使用Adobe TargetVEC
+## 使用Adobe Target VEC
 
-要将VEC与Platform Web SDK实施一起使用，您需要安装并激活Firefox或 [Chrome](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) [](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension。
+要将VEC与平台Web SDK实现一起使用，您需要安装并激活[Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/)或[Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension。
 
 ## 自动渲染VEC活动
 
-Adobe Experience PlatformWeb SDK能够在Web上自动呈现通过Adobe Target的VEC定义的体验，供您的用户使用。 要向Adobe Experience PlatformWeb SDK指示自动渲染VEC活动，请发送事件，其中 `renderDecisions = true`:
+Adobe Experience Platform Web SDK能够在Web上自动呈现通过Adobe Target的VEC为您的用户定义的体验。 要指示Adobe Experience Platform Web SDK自动渲染VEC活动，请发送一个事件，其中`renderDecisions = true`:
 
 ```javascript
 alloy
@@ -58,7 +56,7 @@ alloy
 
 ## 使用基于表单的书写器
 
-基于表单的体验书写器是一个非可视界面，可用于配置A/B测试、 [!DNL Experience Targeting]Automated Personalization和Recommendations活动（JSON、HTML、图像等不同响应类型）。 根据Adobe Target返回的响应类型或决策，可以执行您的核心业务逻辑。 要检索基于表单的书写器活动的决策，请发送包含所有要检索决策的“决策范围”的事件。
+基于表单的体验编辑器是一个非可视界面，可用于配置具有不同响应类型（如JSON、HTML、图像等）的A/B测试、[!DNL Experience Targeting]、Automated Personalization和Recommendations活动。 根据Adobe Target返回的响应类型或决策，可以执行您的核心业务逻辑。 要检索基于表单的书写器活动的决策，请发送包含所有要检索决策的“决策范围”的事件。
 
 ```javascript
 alloy
@@ -81,11 +79,11 @@ alloy
 
 ## 决策范围
 
-`decisionScopes` 定义要呈现个性化体验的页面部分、位置或部分。 这些 `decisionScopes` 功能可自定义且由用户定义。 对于当 [!DNL Target] 前客 `decisionScopes` 户，也称为“mboxes”。 在UI [!DNL Target] 中， `decisionScopes` 显示为“位置”。
+`decisionScopes` 定义要呈现个性化体验的页面部分、位置或部分。这些`decisionScopes`是可自定义的和用户定义的。 对于当前[!DNL Target]客户，`decisionScopes`也称为“mboxes”。 在[!DNL Target] UI中，`decisionScopes`显示为“locations”。
 
-## 范 `__view__` 围
+## `__view__`范围
 
-Adobe Experience PlatformWeb SDK提供的功能使您无需依赖SDK来渲染VEC操作即可检索VEC操作。 发送定义 `__view__` 为的事件 `decisionScopes`。
+Adobe Experience Platform Web SDK提供了一些功能，您无需依赖SDK为您渲染VEC操作即可检索VEC操作。 发送定义为`decisionScopes`的`__view__`事件。
 
 ```javascript
 alloy("sendEvent", {
@@ -109,9 +107,9 @@ alloy("sendEvent", {
 
 ## 受众XDM
 
-为将通过Adobe Experience PlatformWeb SDK交付的目标活动定义受众时，必 [须定义](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/home.html) 并使用XDM。 定义XDM模式、类和混合后，您可以创建由XDM数据定义的目标受众规则进行定位。 在目标中，XDM数据在受众生成器中显示为一个自定义参数。 XDM使用点记号(例如， `web.webPageDetails.name`)序列化。
+为将通过Adobe Experience Platform Web SDK交付的目标活动定义受众时，必须定义并使用[XDM](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/home.html)。 在定义XDM模式、类和混合后，您可以创建由XDM数据定义的用于定位的目标受众规则。 在目标中，XDM数据在受众 Builder中显示为自定义参数。 XDM使用点记号进行序列化（例如`web.webPageDetails.name`）。
 
-如果您有具有预定义目标的活动，这些受众使用自定义参数或用户用户档案，请注意，这些无法通过SDK正确交付。 您必须改用XDM，而不是使用自定义参数或用户用户档案。 但是，Adobe Experience PlatformWeb SDK支持的现成受众定位字段不需要XDM。 以下是目标UI中不需要XDM的可用字段：
+如果您有具有预定义受众的目标活动，这些使用自定义参数或用户用户档案，请注意，它们无法通过SDK正确交付。 您必须改用XDM，而不是使用自定义参数或用户用户档案。 但是，Adobe Experience Platform Web SDK支持的现成受众定位字段不需要XDM。 以下是目标UI中不需要XDM的可用字段：
 
 * 定位库
 * Adobe Target 中的地域
@@ -124,10 +122,10 @@ alloy("sendEvent", {
 
 ## 术语
 
-__决策：__ 在 [!DNL Target]中，这些属性与从活动中选择的体验相关。
+__决策：__ 在 [!DNL Target]中，这些决策与从活动中选择的体验相关。
 
-__模式:__ 决策的模式是优惠的类型 [!DNL Target]。
+__模式:__ 决策的模式是中的优惠类型 [!DNL Target]。
 
-__范围：__ 决定的范围。 这 [!DNL Target]是mBox。 全局mBox是范 `__view__` 围。
+__范围：__ 决定的范围。在[!DNL Target]中，这是mBox。 全局mBox是`__view__`范围。
 
-__XDM:__ XDM被串行化为点记号，然后作为mBox参 [!DNL Target] 数输入。
+__XDM:__ XDM被串行化为点记号，然后作为mBox [!DNL Target] 参数放入。
