@@ -3,9 +3,9 @@ solution: Experience Platform
 title: Experience Platform仪表板
 topic: overview
 type: Documentation
-description: 'Adobe Experience Platform提供了多个仪表板，通过这些视图，您可以有关组织数据的重要信息，这些信息在每日快照中捕获。 '
+description: '在Adobe Experience Platform中浏览多个仪表板，以视图有关组织数据的重要信息，这些信息在日常快照中捕获。 '
 translation-type: tm+mt
-source-git-commit: 5d33b8db91491ec5d7f45b3ebe3067cd382d9d46
+source-git-commit: d97fd09b382877608edf665d7559a684be00c0bb
 workflow-type: tm+mt
 source-wordcount: '274'
 ht-degree: 3%
