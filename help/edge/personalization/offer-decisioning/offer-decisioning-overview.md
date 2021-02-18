@@ -1,39 +1,37 @@
 ---
-title: Offer Decisioning概述
-seo-title: Offer Decisioning和Adobe Experience PlatformWeb SDK
-description: Adobe Experience PlatformWeb SDK可交付和呈现在Offer Decisioning管理的个性化优惠。 您可以使用Offer DecisioningUI或API创建优惠和其他相关对象。
-seo-description: Adobe Experience PlatformWeb SDK可交付和呈现在Offer Decisioning管理的个性化优惠。 您可以使用Offer DecisioningUI或API创建优惠和其他相关对象。
+title: 将Offer Decisioning与Platform Web SDK结合使用
+description: Adobe Experience Platform Web SDK可以提供和呈现在Offer Decisioning中管理的个性化优惠。 您可以使用Offer Decisioning UI或API创建优惠和其他相关对象。
 keywords: 优惠决策；决策；Web SDK；平台Web SDK；个性化优惠；交付优惠;优惠投放;优惠个性化；
 translation-type: tm+mt
-source-git-commit: 05049025bdfc67af4d811e90218bf6e2613fab51
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '849'
 ht-degree: 9%
 
 ---
 
 
-# [!DNL Offer Decisioning] 概述
+# 将Offer Decisioning与Platform Web SDK结合使用
 
 >[!NOTE]
 >
->Offer Decisioning在Adobe Experience PlatformWeb SDK中的使用目前可供选定用户早期访问。 此功能并非所有IMS组织都可用。
+>目前，可以提前访问选定用户，在Adobe Experience Platform Web SDK中使用Offer Decisioning。 此功能并非所有IMS组织都可用。
 
-Adobe Experience Platform[!DNL Web SDK]可以提供和呈现在Offer Decisioning管理的个性化优惠。 您可以使用Offer Decisioning用户界面(UI)或API创建优惠和其他相关对象。
+Adobe Experience Platform [!DNL Web SDK]可以提供和呈现在Offer Decisioning中管理的个性化优惠。 您可以使用Offer Decisioning用户界面(UI)或API创建优惠和其他相关对象。
 
 ## 先决条件
 
 * IMS组织已启用边缘决策
 * 优惠,活动创建
-* 已发布边缘配置
+* 已发布Edge配置
 
 ## 术语
 
-与Offer Decisioning合作时，必须了解以下术语。 有关详细信息和视图附加条款，请访问[Offer Decisioning术语表](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html)。
+使用Offer Decisioning时，请务必了解以下术语。 有关详细信息和视图其他术语，请访问[Offer Decisioning词汇表](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html)。
 
-* **容器:** 容器是一种隔离机制，可以分开不同的关注点。容器ID是所有存储库API的第一个路径元素。 所有决策对象都驻留在容器中。
+* **容器:** 容器是一种隔离机制，可分开不同的疑虑。容器ID是所有存储库API的第一个路径元素。 所有决策对象都驻留在容器中。
 
-* **决策范** 围：对于Offer Decisioning，这些是Base64编码的JSON字符串，包含您希望优惠决策服务用于建议优惠的活动和位置ID。
+* **决策范** 围：对于Offer Decisioning，这些是JSON的Base64编码字符串，包含您希望优惠决策服务用于建议优惠的活动和位置ID。
 
    *决策范围JSON:*
 
@@ -58,16 +56,16 @@ Adobe Experience Platform[!DNL Web SDK]可以提供和呈现在Offer Decisioning
 
 * **边缘配置：** 有关详细信息，请阅读 [边缘](../../fundamentals/edge-configuration.md) 配置文档。
 
-* **身份**:有关详细信息，请阅读本文档，其中概 [述了Platform Web SDK如何利用Identity Service](../../identity/overview.md)。
+* **身份**:有关详细信息，请阅读此文档，其中概述 [了Platform Web SDK如何利用Identity Service](../../identity/overview.md)。
 
-## 使Offer Decisioning
+## 启用Offer Decisioning
 
 要启用Offer Decisioning，您需要执行以下步骤：
 
-1. 在[边缘配置](../../fundamentals/edge-configuration.md)中启用Adobe Experience Platform并选中“Offer Decisioning”框
-   ![优惠决策——边缘配置](./assets/offer-decisioning-edge-config.png)
-2. 按照说明[安装SDK](../../fundamentals/installing-the-sdk.md)(SDK可以单独安装，也可以通过[Adobe Experience Platform Launch](http://launch.adobe.com/)安装。 以下是平台启动的[快速开始指南](https://docs.adobe.com/content/help/zh-Hans/launch/using/intro/get-started/quick-start.html))。
-3. [为Offer Decisioning](../../fundamentals/configuring-the-sdk.md) 配置SDK。下文提供Offer Decisioning的其他具体步骤。
+1. 已在[边缘配置](../../fundamentals/edge-configuration.md)中启用Adobe Experience Platform并选中“Offer Decisioning”框
+   ![优惠-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
+2. 请按照说明[安装SDK](../../fundamentals/installing-the-sdk.md)(SDK可以单独安装，也可以通过[Adobe Experience Platform Launch](http://launch.adobe.com/)安装。 以下是平台启动](https://docs.adobe.com/content/help/zh-Hans/launch/using/intro/get-started/quick-start.html)的[快速开始指南。
+3. [为Offer Decisioning](../../fundamentals/configuring-the-sdk.md) 配置SDK。下面提供了Offer Decisioning的其他具体步骤。
    * 独立安装的SDK
       1. 使用`decisionScopes`配置“sendEvent”操作
 
@@ -80,21 +78,21 @@ Adobe Experience Platform[!DNL Web SDK]可以提供和呈现在Offer Decisioning
           ]
       })
       ```
-   * 平台启动已安装SDK
+   * Platform Launch已安装SDK
       1. [创建平台启动属性](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/companies-and-properties.html)
       2. [添加平台启动嵌入代码](https://docs.adobe.com/content/help/en/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      3. 通过从“边缘配置”下拉菜单中选择您刚刚创建的配置，安装并配置AEP Web SDK扩展。 有关[扩展](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html)的有用文档。
+      3. 使用您刚刚创建的边缘配置安装和配置AEP Web SDK扩展，方法是从“边缘配置”下拉菜单中选择配置。 有关[扩展](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html)的有用文档。
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
-      4. 创建必需的[数据元素](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/data-elements.html)。 至少，您需要创建一个平台Web SDK标识映射和一个平台Web SDK XDM对象数据元素。
+      4. 创建必要的[数据元素](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/data-elements.html)。 至少，您需要创建一个平台Web SDK标识映射和一个平台Web SDK XDM对象数据元素。
          ![identity-map-data-element](./assets/identity-map-data-element.png)
 
-         ![xdm-object-data-element](./assets/xdm-object-data-element.png)
+         ![xdm对象数据元](./assets/xdm-object-data-element.png)
       5. 创建[规则](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/rules.html)。
-         * 添加Platform Web SDK发送事件操作，并将相关的`decisionScopes`添加到该操作的配置中
+         * 添加平台Web SDK发送事件操作，并将相关的`decisionScopes`添加到该操作的配置
             ![send-事件-action-decisionScopes](./assets/send-event-action-decisionScopes.png)
-      6. [创建并发布](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/publish/libraries.html) 包含您配置的所有相关规则、数据元素和扩展的库
+      6. [创建并发布包含](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/publish/libraries.html) 您配置的所有相关规则、数据元素和扩展的库
 
 
 ## 示例请求和响应
@@ -189,10 +187,10 @@ Adobe Experience Platform[!DNL Web SDK]可以提供和呈现在Offer Decisioning
 | `schema` | 与建议的优惠关联的内容的模式。 | `"schema": "https://ns.adobe.com/experience/offer-management/content-component-html"` |
 | `data.id` | 建议优惠的ID。 | `"id": "xcore:personalized-offer:124cc332095cfa74"` |
 | `format` | 与建议的优惠关联的内容的格式。 | `"format": "text/html"` |
-| `language` | 与建议优惠中的内容关联的语言数组。 | `"language": [ "en-US" ]` |
-| `content` | 以字符串格式与建议优惠关联的内容。 | `"content": "<p style="color:red;">20% Off on shipping</p>"` |
-| `deliveryUrl` | 以URL格式与建议优惠关联的图像内容。 | `"deliveryURL": "https://image.jpeg"` |
-| `characteristics` | 与JSON对象格式的建议优惠关联的特性。 | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
+| `language` | 与来自建议优惠的内容关联的语言数组。 | `"language": [ "en-US" ]` |
+| `content` | 以字符串格式与建议的优惠关联的内容。 | `"content": "<p style="color:red;">20% Off on shipping</p>"` |
+| `deliveryUrl` | 以URL格式与建议的优惠关联的图像内容。 | `"deliveryURL": "https://image.jpeg"` |
+| `characteristics` | 以JSON对象格式与建议的优惠关联的特性。 | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
 
 ### 多个`decisionScopes`值
 
@@ -316,7 +314,7 @@ Adobe Experience Platform[!DNL Web SDK]可以提供和呈现在Offer Decisioning
 | `schema` | 与建议的优惠关联的内容的模式。 | `"schema": "https://ns.adobe.com/experience/offer-management/content-component-text"` |
 | `data.id` | 建议优惠的ID。 | `"id": "xcore:personalized-offer:11e36d4a22954123"` |
 | `format` | 与建议的优惠关联的内容的格式。 | `"format": "text/text"` |
-| `language` | 与建议优惠中的内容关联的语言数组。 | `"language": [ "en-US" ]` |
-| `content` | 以字符串格式与建议优惠关联的内容。 | `"content": "<p style="color:red;">20% Off on shipping</p>"` |
-| `deliveryUrl` | 以URL格式与建议优惠关联的图像内容。 | `"deliveryURL": "https://image.jpeg"` |
-| `characteristics` | 与JSON对象格式的建议优惠关联的特性。 | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
+| `language` | 与来自建议优惠的内容关联的语言数组。 | `"language": [ "en-US" ]` |
+| `content` | 以字符串格式与建议的优惠关联的内容。 | `"content": "<p style="color:red;">20% Off on shipping</p>"` |
+| `deliveryUrl` | 以URL格式与建议的优惠关联的图像内容。 | `"deliveryURL": "https://image.jpeg"` |
+| `characteristics` | 以JSON对象格式与建议的优惠关联的特性。 | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
