@@ -1,25 +1,23 @@
 ---
-title: 自动收集的信息
-seo-title: 由Adobe Experience PlatformWeb SDK自动收集的信息
-description: Adobe Experience CloudSDK自动收集的每条信息的描述
-seo-description: Adobe Experience CloudSDK自动收集的每条信息的描述
-keywords: collect information;context;configure;device;screenHeight;screen Height;screenOrientation;screen Orientation;screenWidth;screen Width;environment;viewportHeight;viewport Height;viewportWidth;viewport Width;crowserDetails;browser details;implementationDetails;implementation Details;name;version;placeContext;localTime;local Time;localTimezoneOffset;local Timezone Offset;timestamp;web;url;webPageDetails;web Page Details;webReferrer;web Referrer;landscape;portrait;
+title: 在Adobe Experience Platform Web SDK中自动收集信息
+description: Adobe Experience Platform SDK自动收集的每条信息的概述。
+keywords: 收集信息；上下文；配置；设备；屏幕高度；屏幕方向；屏幕方向；屏幕方向；屏幕宽度；环境；视口高度；视口高度；viewport Height;viewportWidth;viewport Width;crowserDetails；浏览器详细信息；实现详细信息；实现详细信息；名称；版本；placeContext;localTime；本地时间timezoneOffset；本地时区偏移；timestamp;web;url;webPageDetails;web页详细信息；webReferrer;web推荐人；横向；纵向；
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '385'
-ht-degree: 9%
+source-wordcount: '422'
+ht-degree: 8%
 
 ---
 
 
 # 自动收集的信息
 
-Adobe Experience PlatformWeb SDK可自动收集大量信息，无需进行任何特殊配置。 但是，如果需要，可以使用命令中的 `context` 选项禁用此 `configure` 信息。 [请参阅配置SDK](../fundamentals/configuring-the-sdk.md)。 以下是这些信息的列表。 括号中的名称指示配置上下文时要使用的字符串。
+Adobe Experience Platform Web SDK可自动收集大量信息，无需任何特殊配置。 但是，如果需要，可以使用`configure`命令中的`context`选项禁用此信息。 [请参阅配置SDK](../fundamentals/configuring-the-sdk.md)。以下是这些信息的列表。 括号中的名称表示配置上下文时要使用的字符串。
 
 ## 设备 (`device`)
 
-有关设备的信息。 这不包括可从用户代理字符串在服务器端查找的数据。
+有关设备的信息。 这不包括可从用户代理字符串中查找的服务器端数据。
 
 ### 屏幕高度
 
@@ -57,7 +55,7 @@ Adobe Experience PlatformWeb SDK可自动收集大量信息，无需进行任何
 | ------------------------------- | ------------ |
 | `events[].xdm.environment.type` | `browser` |
 
-体验通过的环境类型。 Adobe Experience PlatformWeb SDK始终将此设置为 `browser`。
+体验通过的环境类型。 Adobe Experience Platform Web SDK始终将此值设置为`browser`。
 
 ### 视口高度
 
@@ -67,7 +65,7 @@ Adobe Experience PlatformWeb SDK可自动收集大量信息，无需进行任何
 
 浏览器内容区域的高度（以像素为单位）。
 
-### 视区宽度
+### 视口宽度
 
 | **有效负荷中的路径：** | **示例：** |
 | ------------------------------------------------------- | ------------ |
@@ -110,7 +108,7 @@ Adobe Experience PlatformWeb SDK可自动收集大量信息，无需进行任何
 | ------------------------------------- | ------------------------------- |
 | `events[].xdm.placeContext.localTime` | `2019-08-07T15:47:17.129-07:00` |
 
-最终用户采用简化的扩展ISO格式ISO 8601的本 [地时间戳](https://tools.ietf.org/html/rfc3339#section-5.6)。
+以简化的扩展ISO格式[ISO 8601](https://tools.ietf.org/html/rfc3339#section-5.6)为最终用户的本地时间戳。
 
 ### 本地时区偏移
 
@@ -128,7 +126,7 @@ Adobe Experience PlatformWeb SDK可自动收集大量信息，无需进行任何
 
 事件的时间戳。  无法删除上下文的这一部分。
 
-最终用户的UTC时间戳，采用简化的扩展ISO格 [式ISO 8601](https://tools.ietf.org/html/rfc3339#section-5.6)。
+最终用户的UTC时间戳，采用简化的扩展ISO格式[ISO 8601](https://tools.ietf.org/html/rfc3339#section-5.6)。
 
 ## Web详细信息(`web`)
 
@@ -148,4 +146,4 @@ Adobe Experience PlatformWeb SDK可自动收集大量信息，无需进行任何
 | ---------------------------------- | ----------------------------------------- |
 | `events[].xdm.web.webReferrer.URL` | `http://somereferrer.com/linkedpage.html` |
 
-访问的上一页的URL。
+上一页访问的URL。
