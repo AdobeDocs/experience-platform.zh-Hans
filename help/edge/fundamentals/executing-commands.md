@@ -1,13 +1,11 @@
 ---
-title: 执行命令
-seo-title: 执行Adobe Experience PlatformWeb SDK命令
-description: 了解如何执行Experience PlatformWeb SDK命令
-seo-description: 了解如何执行Experience PlatformWeb SDK命令
-keywords: Executing commands;commandName;Promises;getLibraryInfo;response objects;consent;
+title: 执行Adobe Experience Platform Web SDK命令
+description: 了解如何执行Experience Platform Web SDK命令
+keywords: 执行命令；commandName;Promies;getLibraryInfo；响应对象；同意；
 translation-type: tm+mt
-source-git-commit: 0928dd3eb2c034fac14d14d6e53ba07cdc49a6ea
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '420'
+source-wordcount: '417'
 ht-degree: 2%
 
 ---
@@ -15,7 +13,7 @@ ht-degree: 2%
 
 # 执行命令
 
-在您的网页上实现基本代码后，您可以开始使用SDK执行命令。 您无需等待外部文件(alloy.js)从服务器加载，即可执行命令。 如果SDK尚未完成加载，SDK会尽快排队并处理命令。
+在您的网页上实现基本代码后，您可以开始使用SDK执行命令。 执行命令之前，您无需等待从服务器加载外部文件(alloy.js)。 如果SDK尚未完成加载，则命令将尽快排队并由SDK进行处理。
 
 使用以下语法执行命令。
 
@@ -23,15 +21,15 @@ ht-degree: 2%
 alloy("commandName", options);
 ```
 
-它 `commandName` 告诉SDK要做什么，而 `options` 您要将参数和数据传递给命令。 由于可用选项取决于命令，请查阅文档以了解有关每个命令的更多详细信息。
+`commandName`告诉SDK要做什么，而`options`是要传递到命令的参数和数据。 由于可用选项取决于命令，请查阅文档以了解有关每个命令的详细信息。
 
-## 承诺的便条
+## 关于承诺的便条
 
-[承诺](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 是SDK如何与您网页上的代码通信的基础。 承诺是一种通用的编程结构，并非特定于此SDK甚至JavaScript。 承诺充当创建承诺时未知的值的代理。 一旦知道该值，承诺即与该值“解析”。 处理函数可以与承诺相关联，以便在承诺已解析或在解决承诺过程中出错时向您发送通知。 要进一步了解承诺，请阅 [读本教程](https://javascript.info/promise-basics) ，或Web上的任何其他资源。
+[承](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise) 诺是SDK如何与您网页上的代码通信的基础。承诺是一种常见的编程结构，并非特定于此SDK甚至JavaScript。 承诺充当创建承诺时未知的值的代理。 一旦知道该值，承诺就与该值“解析”。 处理函数可以与承诺关联，以便当承诺已解析或在解决承诺过程中出现错误时可以通知您。 要进一步了解承诺，请阅读[本教程](https://javascript.info/promise-basics)或Web上的任何其他资源。
 
-## 处理成功或失败 {#handling-success-or-failure}
+## 处理成功或失败{#handling-success-or-failure}
 
-每次执行命令时，都会返回承诺。 这一承诺代表了指挥最终完成。 在以下示例中，您可以使用 `then` 和方 `catch` 法确定命令何时成功或失败。
+每次执行命令时，都会返回承诺。 承诺是指最终完成指挥。 在以下示例中，可以使用`then`和`catch`方法确定命令何时成功或失败。
 
 ```javascript
 alloy("commandName", options)
@@ -45,7 +43,7 @@ alloy("commandName", options)
   });
 ```
 
-如果知道命令何时成功对您不重要，您可以删除调 `then` 用。
+如果知道命令何时成功对您不重要，您可以删除`then`调用。
 
 ```javascript
 alloy("commandName", options)
@@ -55,7 +53,7 @@ alloy("commandName", options)
   });
 ```
 
-同样，如果知道命令何时失败对您不重要，您也可以删除调 `catch` 用。
+同样，如果知道命令何时失败对您来说并不重要，您可以删除`catch`调用。
 
 ```javascript
 alloy("commandName", options)
@@ -67,7 +65,7 @@ alloy("commandName", options)
 
 ### 响应对象
 
-从命令返回的所有承诺都用一个对象 `result` 解析。 结果对象将根据命令和用户同意包含数据。 例如，库信息将作为结果对象的属性在以下命令中传递。
+从命令返回的所有承诺都由`result`对象解析。 结果对象将根据命令和用户同意包含数据。 例如，库信息将作为结果对象的属性在以下命令中传递。
 
 ```js
 alloy("getLibraryInfo")
@@ -78,4 +76,4 @@ alloy("getLibraryInfo")
 
 ### 同意
 
-如果用户未就特定目的给予同意，承诺仍将解决；但是，响应对象将仅包含可在用户同意的上下文中提供的信息。
+如果用户未出于特定目的同意，承诺仍将得到解决；但是，响应对象将仅包含可在用户同意的上下文中提供的信息。
