@@ -1,13 +1,11 @@
 ---
-title: 与多个属性交互
-seo-title: Adobe Experience PlatformWeb SDK与多个属性交互
-description: 了解如何与多个Experience PlatformWeb SDK属性交互
-seo-description: 了解如何与多个Experience PlatformWeb SDK属性交互
-keywords: multiple properties;configure;sendEvent;edgeConfigId;orgId;
+title: 与Adobe Experience Platform Web SDK中的多个属性交互
+description: 了解如何与多个Experience Platform Web SDK属性交互。
+keywords: 多个属性；configure;sendEvent;edgeConfigId;orgId;
 translation-type: tm+mt
-source-git-commit: 8c256b010d5540ea0872fa7e660f71f2903bfb04
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '245'
 ht-degree: 0%
 
 ---
@@ -15,13 +13,13 @@ ht-degree: 0%
 
 # 与多个属性交互
 
-在某些情况下，您可能希望在同一页面上与两个不同的属性交互。 这些包括：
+在某些情况下，您可能希望与同一页面上的两个不同属性进行交互。 这包括：
 
-* 已获得并正在努力将其网站集成在一起的公司
+* 已获得并正在努力将其网站集成到一起的公司
 * 多个公司之间的数据共享关系
 * 正在测试新Adobe解决方案且不想破坏其现有实施的客户
 
-SDK允许您通过在基本代码中向数组添加另一个名称，为每个属性创建一个单独的实例。 在以下示例中，我们提供了两个名 `mycustomname1` 称 `mycustomname2`。
+SDK允许您通过在基本代码中向数组添加另一个名称，为每个属性创建一个单独的实例。 在以下示例中，我们提供了两个名称，`mycustomname1`和`mycustomname2`。
 
 ```markup
 <script>
@@ -33,11 +31,11 @@ SDK允许您通过在基本代码中向数组添加另一个名称，为每个�
 <script src="alloy.js" async></script>
 ```
 
-因此，脚本创建SDK的两个实例。 用于与第一实例交互的全局函数被命 `mycustomname1` 名，用于与第二实例交互的全局函数被命名 `mycustomname2`。
+因此，该脚本创建了两个SDK实例。 与第一实例交互的全局函数名为`mycustomname1`，与第二实例交互的全局函数名为`mycustomname2`。
 
-通过创建两个单独的实例，可以为每个实例配置不同的属性。 由于与之交互而出现的任何通信或数据持久性 `mycustomname1` 都与之保持隔离， `mycustomname2` 反之亦然。
+通过创建两个单独的实例，可以为每个实例配置不同的属性。 由于与`mycustomname1`交互而发生的任何通信或数据持久性都与`mycustomname2`隔离，反之亦然。
 
-按照上面的示例，您可以使用每个实例执行命令，如下所示：
+在上面的示例中，您可以使用每个实例执行命令，如下所示：
 
 ```javascript
 mycustomname1("configure", {
@@ -63,8 +61,8 @@ mycustomname2("sendEvent", {
 });
 ```
 
-请务必为每个实 `configure` 例执行命令，然后对同一实例执行其他命令。
+请务必为每个实例执行`configure`命令，然后对同一实例执行其他命令。
 
 ## 限制
 
-为避免与cookies冲突，页面中只 [!DNL Web SDK] 有一个Adobe Experience Platform实例可以具有特定 `edgeConfigId`。  同样，只有Adobe Experience Platform的一 [!DNL Web SDK] 个实例可以有特定 `orgId`。
+为避免与Cookies冲突，页面中只有Adobe Experience Platform [!DNL Web SDK]的一个实例可以具有特定的`edgeConfigId`。  同样，只有Adobe Experience Platform [!DNL Web SDK]的一个实例可以具有特定的`orgId`。
