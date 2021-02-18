@@ -1,13 +1,11 @@
 ---
-title: 管理闪烁以获得个性化体验
-seo-title: Adobe Experience PlatformWeb SDK管理闪烁
-description: 了解如何管理用户体验闪烁
-seo-description: 了解如何使用Experience PlatformWeb SDK属性管理闪烁
-keywords: target;flicker;prehidingStyle;asynchronously;asynchronous;
+title: 使用Adobe Experience Platform Web SDK管理闪烁以获得个性化体验
+description: 了解如何使用Adobe Experience Platform Web SDK管理用户体验的闪烁。
+keywords: 目标；闪烁；prehidingStyle；异步；
 translation-type: tm+mt
-source-git-commit: e0f992eafbb973fa1c48acc3b165788137d143a4
+source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
@@ -15,9 +13,9 @@ ht-degree: 0%
 
 # 管理闪烁
 
-在尝试呈现个性化内容时，SDK必须确保不会闪烁。 Flicker也称为FOOC(原始内容的Flash)，是指在测试／个性化过程中，在替代内容出现之前短暂显示原始内容。 SDK会尝试将CSS样式应用于页面的元素，以确保在个性化内容成功呈现之前，这些元素处于隐藏状态。
+在尝试呈现个性化内容时，SDK必须确保不会闪烁。 在测试/个性化过程中，当在替代内容出现之前，会短暂显示原始内容时，闪烁也称为FOOC(原始内容的Flash)。 SDK会尝试将CSS样式应用于页面的元素，以确保在个性化内容成功呈现之前这些元素是隐藏的。
 
-闪变管理功能有几个阶段：
+闪变管理功能有以下几个阶段：
 
 1. 预隐藏
 1. 预处理
@@ -25,9 +23,9 @@ ht-degree: 0%
 
 ## 预隐藏
 
-在预隐藏阶段，SDK使用 `prehidingStyle` 配置选项创建HTML样式标签并将其追加到DOM，以确保页面的大部分处于隐藏状态。 如果您不确定页面的哪些部分将进行个性化，建议将其设 `prehidingStyle` 置为 `body { opacity: 0 !important }`。 这可确保整个页面处于隐藏状态。 但是，这会导致由Lighthouse、Web页测试等工具报告的页面渲染性能下降。 要获得最佳页面渲染性能，建议将其 `prehidingStyle` 设置为列表容器元素，这些元素包含将要个性化的页面部分。
+在预隐藏阶段，SDK使用`prehidingStyle`配置选项创建HTML样式标签并将其追加到DOM中，以确保隐藏页面的大部分。 如果您不确定页面的哪些部分将进行个性化，建议将`prehidingStyle`设置为`body { opacity: 0 !important }`。 这可确保隐藏整个页面。 但是，这会导致由Lighthouse、Web页测试等工具报告的页面渲染性能下降。 要获得最佳页面渲染性能，建议将`prehidingStyle`设置为包含将要个性化的页面部分的列表容器元素。
 
-假定您有如下HTML页面，并且您知道只有和 `bar` 容器 `bazz` 元素将永远是个性化的：
+假设您有如下HTML页面，并且您知道只有`bar`和`bazz`容器元素将会变得个性化：
 
 ```html
 <html>
@@ -49,19 +47,19 @@ ht-degree: 0%
 </html>
 ```
 
-那就 `prehidingStyle` 应该设定成这样 `#bar, #bazz { opacity: 0 !important }`。
+然后，应将`prehidingStyle`设置为类似于`#bar, #bazz { opacity: 0 !important }`的内容。
 
 ## 预处理
 
-SDK从服务器收到个性化内容后，预处理阶段即开始。 在此阶段，将预先处理响应，确保隐藏必须包含个性化内容的元素。 隐藏这些元素后，将删除根据配置选项创建的 `prehidingStyle` HTML样式标签，并显示HTML正文或隐藏的容器元素。
+SDK从服务器收到个性化内容后，预处理阶段即开始。 在此阶段，将预先处理响应，确保隐藏必须包含个性化内容的元素。 隐藏这些元素后，将删除基于`prehidingStyle`配置选项创建的HTML样式标签，并显示HTML正文或隐藏的容器元素。
 
 ## 渲染
 
-在所有个性化内容均成功呈现后，或者如果出现任何错误，则会显示所有以前隐藏的元素，以确保页面上没有SDK隐藏的隐藏元素。
+在所有个性化内容都成功呈现后，或者如果出现任何错误，则会显示所有以前隐藏的元素，以确保页面上没有SDK隐藏的隐藏元素。
 
 ## 异步加载SDK时管理闪烁
 
-建议始终异步加载SDK以获得最佳页面渲染性能。 但是，这对个性化内容的呈现有一定的影响。 异步加载SDK时，需要使用预隐藏代码片段。 必须在HTML页中的SDK之前添加预隐藏代码片段。 以下是隐藏整个正文的示例片段：
+建议始终异步加载SDK以获得最佳页面呈现性能。 但是，这对个性化内容的呈现有一定影响。 异步加载SDK时，需要使用预隐藏代码段。 必须在HTML页中的SDK之前添加预隐藏代码段。 以下是隐藏整个正文的示例代码片断：
 
 ```html
 <script>
@@ -75,4 +73,4 @@ SDK从服务器收到个性化内容后，预处理阶段即开始。 在此阶�
 </script>
 ```
 
-为确保HTML正文或容器元素在较长的时间段内未隐藏，预隐藏代码片段使用计时器，默认情况下，该计时器会在毫秒后删除该代 `3000` 码片段。 毫 `3000` 秒是最长等待时间。 如果服务器响应已经收到并且处理得更快，则会尽快删除预隐藏的HTML样式标记。
+为确保HTML正文或容器元素在较长的时间段内未隐藏，预隐藏代码片段使用计时器，默认情况下，该计时器会在`3000`毫秒后删除代码片段。 `3000`毫秒是最长等待时间。 如果已尽早接收并处理来自服务器的响应，则会尽快删除预隐藏的HTML样式标签。
