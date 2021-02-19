@@ -1,11 +1,11 @@
 ---
 keywords: 流；
 title: HTTP连接
-description: Adobe Experience Platform的HTTP目标允许您将用户档案数据发送到第三方HTTP端点。
+description: Adobe Experience Platform中的HTTP目标允许您将用户档案数据发送到第三方HTTP端点。
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 5435661d750c4138ea6a2d40619a48236b7b1e4f
 workflow-type: tm+mt
-source-wordcount: '487'
+source-wordcount: '542'
 ht-degree: 2%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 2%
 >
 >平台中的[!DNL HTTP]目标当前位于alpha中。 文档和功能可能会发生变化。
 
-[!DNL HTTP]目标是[!DNL Adobe Experience Platform]流目标，可帮助您向第三方[!DNL HTTP]端点发送用户档案数据。
+[!DNL HTTP]目标是[!DNL Adobe Experience Platform]流目标，可帮助您将用户档案数据发送到第三方[!DNL HTTP]端点。
 
-要向[!DNL HTTP]端点发送用户档案数据，必须首先连接到[[!DNL Adobe Experience Platform]](#connect-destination)中的目标。
+要将用户档案数据发送到[!DNL HTTP]终结点，必须首先连接到[[!DNL Adobe Experience Platform]](#connect-destination)中的目标。
 
 ## 用例 {#use-cases}
 
@@ -39,12 +39,12 @@ ht-degree: 2%
 >
 >![激活HTTP目标](../assets/catalog/http/connect.png)
 
-在[!UICONTROL 帐户]步骤中，您需要定义HTTP端点连接详细信息。 选择&#x200B;**[!UICONTROL 新建帐户]**&#x200B;并输入要连接到的HTTP端点的连接详细信息。
+在[!UICONTROL 帐户]步骤中，需要定义HTTP端点连接详细信息。 选择&#x200B;**[!UICONTROL 新建帐户]**&#x200B;并输入要连接到的HTTP端点的连接详细信息。
 - **[!UICONTROL httpEndpoint]**:要 [!DNL URL] 将用户档案数据发送到的HTTP端点的完整。
-   - 或者，您可以向[!UICONTROL httpEndpoint] [!DNL URL]添加查询参数。
+   - 或者，您也可以向[!UICONTROL httpEndpoint] [!DNL URL]添加查询参数。
 - **[!UICONTROL authEndpoint]**:用于 [!DNL URL] 身份验证的HTTP端点的完 [!DNL OAuth2] 整。
-- **[!UICONTROL 客户端ID]**:客户 [!DNL clientID] 端凭据中使 [!DNL OAuth2] 用的参数。
-- **[!UICONTROL 客户端机密]**:客户 [!DNL clientSecret] 端凭据中使 [!DNL OAuth2] 用的参数。
+- **[!UICONTROL 客户端ID]**:客户端 [!DNL clientID] 凭据中使用 [!DNL OAuth2] 的参数。
+- **[!UICONTROL 客户机密]**:客户端 [!DNL clientSecret] 凭据中使用 [!DNL OAuth2] 的参数。
 
 >[!NOTE]
 >
@@ -52,20 +52,21 @@ ht-degree: 2%
 
 ![HTTP端点连接](../assets/catalog/http/connect.png)
 
-单击&#x200B;**[!UICONTROL 连接到目标]**。 连接成功后，单击&#x200B;**[!UICONTROL Next]**。
+单击&#x200B;**[!UICONTROL 连接到目标]**。 连接成功后，单击&#x200B;**[!UICONTROL 下一步]**。
 
 在[!UICONTROL 身份验证]步骤中，输入帐户身份验证凭据：
 - **[!UICONTROL 名称]**:输入一个名称，您将通过该名称在将来识别此目标。
-- **[!UICONTROL 描述]**:输入将帮助您在将来识别此目标的描述。
-- **[!UICONTROL 自定义标题]**:按照以下格式输入要包含在目标调用中的任何自定义标题： `header1:value1,header2:value2,...headerN:valueN`.
+- **[!UICONTROL 描述]**:输入说明，帮助您在将来识别此目标。
+- **[!UICONTROL 自定义标题]**:按照以下格式输入要包含在目标调用中的任何自定义标头： `header1:value1,header2:value2,...headerN:valueN`.
+- **[!UICONTROL 营销操作]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](/help/data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](/help/data-governance/policies/overview.md)。
 
 >[!IMPORTANT]
 >
->当前实现至少需要一个自定义头。 此限制将在将来的更新中解决。
+>当前实现至少需要一个自定义标头。 此限制将在将来的更新中解决。
 
 ![HTTP身份验证](../assets/catalog/http/authenticate.png)
 
-**[!UICONTROL 营销用例]**:市场营销用例指明要将数据导出到目标的目的。您可以从Adobe定义的营销用例中进行选择，也可以创建自己的营销用例。 有关市场营销用例的详细信息，请参阅[数据使用策略概述](../../data-governance/policies/overview.md)。
+**[!UICONTROL 营销活动]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅[数据使用策略概述](../../data-governance/policies/overview.md)。
 
 单击&#x200B;**[!UICONTROL 创建目标]**。
 
@@ -79,7 +80,7 @@ ht-degree: 2%
 
 ## 导出的数据{#exported-data}
 
-导出的[!DNL Experience Platform]数据以JSON格式进入您的[!DNL HTTP]目标。 例如，以下事件包含符合特定区段资格并退出另一区段的受众的电子邮件地址用户档案属性。 此潜在客户的身份为[!DNL ECID]和电子邮件。
+导出的[!DNL Experience Platform]数据以JSON格式进入您的[!DNL HTTP]目标。 例如，以下事件包含符合特定区段条件并退出另一区段的受众的电子邮件地址用户档案属性。 此潜在客户的标识为[!DNL ECID]和电子邮件。
 
 ```json
 {
