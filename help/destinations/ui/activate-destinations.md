@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: ef0f7e20a55804c013756e261818c2ee2df4d103
+source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
 workflow-type: tm+mt
-source-wordcount: '2141'
+source-wordcount: '2140'
 ht-degree: 0%
 
 ---
@@ -234,7 +234,7 @@ If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary id
 
 >
 > 
-例如，如果字段`person.name.firstName`具有与目标的市场营销用例冲突的特定数据使用标签，则在审核步骤中将显示数据使用策略违规。 有关详细信息，请参阅Adobe Experience Platform中的[数据治理](../../rtcdp/privacy/data-governance-overview.md#destinations)。
+例如，如果字段`person.name.firstName`具有与目标的营销操作冲突的特定数据使用标签，则在审核步骤中将显示数据使用策略违规。 有关详细信息，请参阅Adobe Experience Platform中的[数据治理](../../rtcdp/privacy/data-governance-overview.md#destinations)。
 
 ### **[!UICONTROL 查看步]** 骤  {#review}
 
