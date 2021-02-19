@@ -1,11 +1,11 @@
 ---
-keywords: 飞艇属性；飞艇目的地
+keywords: 飞艇属性；飞艇目标
 title: 飞艇属性连接
-description: 将Adobe受众数据无缝传递给飞艇，作为飞艇内目标的受众属性。
+description: 将Adobe受众数据无缝传递给Airship，作为Airship内目标的受众属性。
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
 workflow-type: tm+mt
-source-wordcount: '1204'
+source-wordcount: '1201'
 ht-degree: 0%
 
 ---
@@ -15,22 +15,22 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform的[!DNL Airship Attributes]目标当前为beta。 文档和功能可能会发生变化。
+>Adobe Experience Platform中的[!DNL Airship Attributes]目标当前处于测试状态。 文档和功能可能会发生变化。
 
 [!DNL Airship] 是领先的客户互动平台，可帮助您在客户生命周期的每个阶段向用户提供有意义的个性化全渠道消息。
 
-此集成将Adobe用户档案数据作为[属性](https://docs.airship.com/guides/audience/attributes/)传递到[!DNL Airship]中，以进行定位或触发。
+此集成将Adobe用户档案数据作为[属性](https://docs.airship.com/guides/audience/attributes/)传递到[!DNL Airship]中以进行定位或触发。
 
-要进一步了解[!DNL Airship]，请参阅[飞艇文档](https://docs.airship.com)。
+要了解有关[!DNL Airship]的更多信息，请参阅[飞艇文档](https://docs.airship.com)。
 
 
 >[!TIP]
 >
->此文档页面由[!DNL Airship]团队创建。 如有任何查询或更新请求，请直接与[support.airship.com](https://support.airship.com/)联系。
+>此文档页面由[!DNL Airship]团队创建。 如有任何查询或更新请求，请直接通过[support.airship.com](https://support.airship.com/)与他们联系。
 
 ## 先决条件 {#prerequisites}
 
-在将受众段发送到[!DNL Airship]之前，您必须：
+在将受众区段发送到[!DNL Airship]之前，您必须：
 
 * 在[!DNL Airship]项目中启用属性。
 * 生成用于身份验证的承载令牌。
@@ -41,19 +41,19 @@ ht-degree: 0%
 
 ### 启用属性{#enable-attributes}
 
-Adobe Experience Platform用户档案属性与[!DNL Airship]属性相似，可在平台中使用本页下面进一步演示的映射工具轻松映射到彼此。
+Adobe Experience Platform 用户档案属性与[!DNL Airship]属性类似，可使用本页下面进一步演示的映射工具在平台中轻松映射到彼此。
 
-[!DNL Airship] 项目具有多个预定义和默认属性。如果您有自定义属性，则必须先在[!DNL Airship]中定义它。 有关详细信息，请参阅[设置和管理属性](https://docs.airship.com/tutorials/audience/attributes/)。
+[!DNL Airship] 项目具有多个预定义和默认属性。如果您有自定义属性，则必须首先在[!DNL Airship]中定义它。 有关详细信息，请参阅[设置和管理属性](https://docs.airship.com/tutorials/audience/attributes/)。
 
 ### 承载令牌{#bearer-token}
 
-转到[飞艇仪表板](https://go.airship.com)中的&#x200B;**[!UICONTROL 设置]**&quot; **[!UICONTROL API和集成]**，并在左侧菜单中选择&#x200B;**[!UICONTROL 令牌]**。
+转到[飞艇仪表板](https://go.airship.com)中的&#x200B;**[!UICONTROL 设置]**&quot; **[!UICONTROL &quot;API和集成]**，然后在左侧菜单中选择&#x200B;**[!UICONTROL 令牌]**。
 
 单击&#x200B;**[!UICONTROL 创建令牌]**。
 
-为令牌提供用户友好名称，如“Adobe属性目标”，然后为角色选择“全部访问”。
+为令牌提供用户友好名称，例如“Adobe属性目标”，然后为角色选择“全部访问”。
 
-单击&#x200B;**[!UICONTROL 创建令牌]**&#x200B;并将详细信息另存为机密信息。
+单击&#x200B;**[!UICONTROL 创建令牌]**&#x200B;并将详细信息另存为机密。
 
 ## 用例 {#use-cases}
 
@@ -61,11 +61,11 @@ Adobe Experience Platform用户档案属性与[!DNL Airship]属性相似，可�
 
 ### 用例#1
 
-利用在Adobe Experience Platform收集的用户档案数据，在[!DNL Airship]的任何渠道中个性化消息和丰富内容。 例如，利用[!DNL Experience Platform]用户档案数据在[!DNL Airship]中设置位置属性。 这将使酒店品牌能够为每个用户显示最近的酒店位置的图像。
+利用在Adobe Experience Platform中收集的用户档案数据，在[!DNL Airship]的任何渠道中个性化消息和丰富内容。 例如，利用[!DNL Experience Platform]用户档案数据在[!DNL Airship]中设置位置属性。 这样，酒店品牌就可以为每个用户显示最近酒店位置的图像。
 
 ### 用例#2
 
-利用Adobe Experience Platform的属性进一步丰富[!DNL Airship]用户档案，并将其与SDK或[!DNL Airship]预测数据相结合。 例如，零售商可以创建具有忠诚度状态和位置数据（来自平台的属性）的细分，[!DNL Airship]预计会流失数据，以向生活在内华达州拉斯维加斯的黄金忠诚度状态用户发送高度定向的消息，这些用户很可能会频繁转移。
+利用Adobe Experience Platform的属性进一步丰富[!DNL Airship]用户档案，并将其与SDK或[!DNL Airship]预测数据结合。 例如，零售商可以创建一个具有忠诚度状态和位置数据（平台属性）的细分，并且[!DNL Airship]预计会影响数据的流失，以向生活在内华达州拉斯维加斯的黄金忠诚度状态用户发送高度定向的消息，这些用户很可能会频繁转发。
 
 ## 连接到[!DNL Airship Attributes] {#connect-airship-attributes}
 
@@ -77,19 +77,19 @@ Adobe Experience Platform用户档案属性与[!DNL Airship]属性相似，可�
 
 ![连接到飞艇属性](../../assets/catalog/mobile-engagement/airship/catalog.png)
 
-在&#x200B;**帐户**&#x200B;步骤中，如果您之前已设置到[!DNL Airship Attributes]目标的连接，请选择&#x200B;**[!UICONTROL 现有帐户]**&#x200B;并选择您的现有连接。 或者，您也可以选择&#x200B;**[!UICONTROL 新帐户]**&#x200B;来设置到[!DNL Airship Attributes]的新连接。 选择&#x200B;**[!UICONTROL 连接到目标]**，以使用您从[!DNL Airship]仪表板生成的载体令牌将Adobe Experience Platform连接到您的[!DNL Airship]项目。
+在&#x200B;**帐户**&#x200B;步骤中，如果您之前已设置到[!DNL Airship Attributes]目标的连接，请选择&#x200B;**[!UICONTROL 现有帐户]**&#x200B;并选择您的现有连接。 或者，您可以选择&#x200B;**[!UICONTROL 新建帐户]**&#x200B;来设置到[!DNL Airship Attributes]的新连接。 选择&#x200B;**[!UICONTROL 连接到目标]**&#x200B;以使用您从[!DNL Airship]仪表板生成的载体令牌将Adobe Experience Platform连接到您的[!DNL Airship]项目。
 
 >[!NOTE]
 >
->Adobe Experience Platform支持身份验证过程中的凭据验证，如果您向[!DNL Airship]帐户输入了不正确的凭据，则会显示错误消息。 这可确保您没有使用错误的凭据完成工作流。
+>Adobe Experience Platform支持身份验证过程中的凭据验证，如果您向[!DNL Airship]帐户输入了不正确的凭据，则会显示错误消息。 这可确保您没有使用不正确的凭据完成工作流。
 
 ![连接到飞艇属性](../../assets/catalog/mobile-engagement/airship/connect.png)
 
-确认您的凭据并将Adobe Experience Platform连接到您的[!DNL Airship]项目后，您可以选择&#x200B;**[!UICONTROL Next]**&#x200B;继续执行&#x200B;**[!UICONTROL 设置]**&#x200B;步骤。
+确认您的凭据并将Adobe Experience Platform连接到您的[!DNL Airship]项目后，您可以选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续执行&#x200B;**[!UICONTROL Setup]**&#x200B;步骤。
 
-在&#x200B;**[!UICONTROL 身份验证]**&#x200B;步骤中，为激活流输入&#x200B;**[!UICONTROL 名称]**&#x200B;和&#x200B;**[!UICONTROL 说明]**。
+在&#x200B;**[!UICONTROL 身份验证]**&#x200B;步骤中，输入激活流的&#x200B;**[!UICONTROL 名称]**&#x200B;和&#x200B;**[!UICONTROL 说明]**。
 
-此外，在此步骤中，您还可以选择美国或欧盟数据中心，具体取决于哪个[!DNL Airship]数据中心适用于此目标。 最后，选择一个或多个将数据导出到目标的营销用例。 您可以从Adobe定义的营销用例中进行选择，也可以创建您自己的用例。 有关市场营销用例的详细信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
+此外，在此步骤中，您还可以选择美国或欧盟数据中心，具体取决于哪个[!DNL Airship]数据中心适用于此目标。 最后，选择一个或多个&#x200B;**[!UICONTROL 营销操作]**，数据将导出到目标。 您可以从Adobe定义的营销活动中进行选择，也可以创建您自己的营销活动。 有关营销操作的详细信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
 在填写上面的字段后，选择&#x200B;**[!UICONTROL 创建目标]**。
 
@@ -103,13 +103,13 @@ Adobe Experience Platform用户档案属性与[!DNL Airship]属性相似，可�
 
 在&#x200B;**[!UICONTROL 目标>浏览]**&#x200B;中，选择要激活区段的[!DNL Airship Attributes]目标。
 
-![激活流](../../assets/catalog/mobile-engagement/airship/browse.png)
+![activate-flow](../../assets/catalog/mobile-engagement/airship/browse.png)
 
 单击目标的名称。 此操作将带您进入激活流程。
 
-请注意，如果目标激活流已存在，您可以看到当前发送到目标的区段。 选择右边栏中的&#x200B;**[!UICONTROL 编辑激活]**，然后按照以下步骤修改激活详细信息。
+请注意，如果目标激活流已存在，您可以看到当前正发送到目标的区段。 选择右边栏中的&#x200B;**[!UICONTROL 编辑激活]**，然后按照以下步骤修改激活详细信息。
 
-![激活流](../../assets/catalog/mobile-engagement/airship/activate.png)
+![activate-flow](../../assets/catalog/mobile-engagement/airship/activate.png)
 
 选择&#x200B;**[!UICONTROL 激活]**。 在&#x200B;**[!UICONTROL 激活目标]**&#x200B;工作流的&#x200B;**[!UICONTROL 选择区段]**&#x200B;页面上，选择要发送到[!DNL Airship Attributes]的区段。
 
@@ -119,7 +119,7 @@ Adobe Experience Platform用户档案属性与[!DNL Airship]属性相似，可�
 
 ![身份映射初始屏幕](../../assets/catalog/mobile-engagement/airship/identity-mapping.png)
 
-[!DNL Airship] 属性可以在表示设备实例（如iPhone）的渠道上设置，也可以在将用户的所有设备映射到通用标识符（如客户ID）的指定用户上设置。如果您的模式中有纯文本（未散列化）电子邮件地址作为主要标识，请在&#x200B;**[!UICONTROL 源属性]**&#x200B;中选择电子邮件字段，并映射到右列&#x200B;**[!UICONTROL 目标标识]**&#x200B;下的[!DNL Airship]指定用户，如下所示。
+[!DNL Airship] 可以在表示设备实例（如iPhone）的渠道或将用户的所有设备映射到通用标识符（如客户ID）的指定用户上设置属性。如果您的模式中有纯文本（未哈希化）电子邮件地址作为主要标识，请在&#x200B;**[!UICONTROL 源属性]**&#x200B;中选择电子邮件字段，并映射到右列&#x200B;**[!UICONTROL 目标标识]**&#x200B;下的[!DNL Airship]指定用户，如下所示。
 
 ![指定用户映射](../../assets/catalog/mobile-engagement/airship/mapping.png)
 
@@ -156,22 +156,22 @@ Adobe Experience Platform用户档案属性与[!DNL Airship]属性相似，可�
 
 ![渠道映射](../../assets/catalog/mobile-engagement/airship/mapping.png)
 
-在&#x200B;**[!UICONTROL 区段计划]**&#x200B;页上，当前禁用计划。 单击&#x200B;**[!UICONTROL 下一步]**&#x200B;继续执行审阅步骤。
+在&#x200B;**[!UICONTROL 区段计划]**&#x200B;页上，当前已禁用计划。 单击&#x200B;**[!UICONTROL 下一步]**&#x200B;继续执行审阅步骤。
 
 ![当前禁用计划](../../assets/catalog/mobile-engagement/airship/scheduling.png)
 
-在&#x200B;**[!UICONTROL 评论]**&#x200B;页面上，您可以看到您所做选择的摘要。 选择&#x200B;**[!UICONTROL 取消]**&#x200B;以分组流，选择&#x200B;**[!UICONTROL 返回]**&#x200B;以修改设置，或选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择并开始将数据发送到目标。
+在&#x200B;**[!UICONTROL 查看]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL 取消]**&#x200B;以分组流，选择&#x200B;**[!UICONTROL 返回]**&#x200B;以修改设置，或选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择，并开始将数据发送到目标。
 
 >[!IMPORTANT]
 >
->在此步骤中，Adobe Experience Platform检查数据使用策略是否违反。 下面显示了违反策略的示例。 在解决违规之前，您无法完成区段激活工作流。 有关如何解决策略违规的信息，请参阅数据治理文档部分中的[策略实施](../../../data-governance/enforcement/auto-enforcement.md)。
+>在此步骤中，Adobe Experience Platform将检查数据使用策略违规。 下面显示了违反策略的示例。 在解决违规之前，您无法完成区段激活工作流。 有关如何解决策略违规的信息，请参阅数据治理文档部分中的[策略实施](../../../data-governance/enforcement/auto-enforcement.md)。
 
 ![确认选择](../../assets/common/data-policy-violation.png)
 
-如果未检测到任何违反策略的情况，请选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择，并开始将数据发送到目标。
+如果未检测到任何策略违规，请选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择，并开始将数据发送到目标。
 
 ![审查](../../assets/catalog/mobile-engagement/airship/review.png)
 
 ## 数据使用和管理{#data-usage-governance}
 
-处理数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据管理的详细信息，请参见[数据管理概述](../../../data-governance/home.md)。
+处理数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请参阅[数据治理概述](../../../data-governance/home.md)。
