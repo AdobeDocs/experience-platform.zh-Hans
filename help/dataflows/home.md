@@ -1,24 +1,35 @@
 ---
-keywords: Experience Platform；主题；流程；数据流；数据；监控；数据流；监控；监控数据流；监控数据流；监控；监控数据流；监控数据流；
+keywords: Experience Platform；主题；热门主题；数据流；数据流；数据；监控；监控数据流；监控数据流；监控数据流；监控数据流；监控数据流；流程；流服务；
 solution: Experience Platform
 title: 数据流概述
 topic: overview
-description: 本文档介绍了数据流，表示它们在Adobe Experience Platform的使用情况。
+description: 本文档介绍了数据流，以表示它们在Adobe Experience Platform中的使用方式。
 translation-type: tm+mt
-source-git-commit: f8186e467dc982003c6feb01886ed16d23572955
+source-git-commit: 185c9c953a6ce923359e221d6f0f91b0f6614f05
 workflow-type: tm+mt
-source-wordcount: '178'
-ht-degree: 6%
+source-wordcount: '238'
+ht-degree: 5%
 
 ---
 
 
 # 数据流概述
 
-在Adobe Experience Platform，数据是从各种来源中摄取的，在Experience Platform内分析，并被激活到各种目的地。 通过为数据流提供透明度，平台可以更轻松地跟踪这种可能的非线性数据流。
+在Adobe Experience Platform，数据是从各种来源中摄取的，在Experience Platform中分析，并激活到各种目的地。 平台通过为数据流提供透明度，使跟踪这种可能的非线性数据流的过程更加容易。
 
-数据流是跨平台移动数据的数据作业的表示方法。这些数据流是跨不同服务配置的，有助于将数据从源连接器移动到目标数据集、标识和用户档案服务以及目标。
+## 使用数据流
+
+数据流是跨平台移动数据的数据作业的表示方法。这些用户档案流是跨不同的服务配置的，有助于将数据从源连接器移动到目标数据集，然后由Identity Service和实时客户利用数据集，最终激活到目标。
+
+要了解有关在源连接器中使用数据流的更多信息，请阅读[源概述](../sources/home.md)。
+
+## 准备数据
+
+数据准备使数据工程师能够映射、转换和验证数据到体验数据模型(XDM)和从体验数据模型(XDM)的数据。
+
+要了解有关在摄取数据后准备数据的更多信息，请阅读[数据准备概述](../data-prep/home.md)。
 
 ## 监视数据流
 
-可以使用平台API或平台UI来监视数据流。 要了解如何使用API监视数据流，请阅读[监视数据流API教程](./api/monitor.md)。 要了解如何监视平台UI中的数据流，请阅读源教程](./ui/monitor-sources.md)的[监视数据流，或目标教程](./ui/monitor-destinations.md)的[监视数据流。
+可以使用平台API或平台UI来监控数据流。 要了解如何使用API监视数据流，请阅读[监视数据流API教程](./api/monitor.md)。 要了解如何监视平台UI中的数据流，请阅读以下教程：[监视源](./ui/monitor-sources.md)的数据流和[监视目标](./ui/monitor-destinations.md)的数据流。
+
