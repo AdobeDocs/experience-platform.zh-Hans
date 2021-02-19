@@ -3,9 +3,9 @@ keywords: Google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）中触及客户并与其重新互动。
 translation-type: tm+mt
-source-git-commit: ef0f7e20a55804c013756e261818c2ee2df4d103
+source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1491'
 ht-degree: 0%
 
 ---
@@ -129,13 +129,13 @@ Attribute source data is not automatically hashed. When your source field contai
 
 在&#x200B;**[!UICONTROL 身份验证]**&#x200B;步骤中，输入激活流的[!UICONTROL 名称]和[!UICONTROL 说明]，然后在Google中填写[!UICONTROL 帐户ID]。
 
-此外，在此步骤中，您还可以选择应用于此目标的任何&#x200B;**[!UICONTROL 营销用例]**。 市场营销用例指明要将数据导出到目标的目的。 您可以从Adobe定义的营销用例中进行选择，也可以创建您自己的营销用例。 有关营销用例的详细信息，请参阅[实时CDP](../../../rtcdp/privacy/data-governance-overview.md#destinations)中的数据治理页面。 有关各个Adobe定义的营销使用案例的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md#core-actions)。
+此外，在此步骤中，您还可以选择应用于此目标的任何&#x200B;**[!UICONTROL 营销操作]**。 营销活动指示要将数据导出到目标的目的。 您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅[实时CDP](../../../rtcdp/privacy/data-governance-overview.md#destinations)数据治理页。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md#core-actions)。
 
 在填写上面的字段后，选择&#x200B;**[!UICONTROL 创建目标]**。
 
 >[!IMPORTANT]
 >
-> * 默认情况下，**[!UICONTROL 与PII]**&#x200B;组合营销用例会为[!DNL Google Customer Match]目标选择，并且无法删除。
+> * 默认情况下，**[!UICONTROL 与PII]**&#x200B;组合营销操作会为[!DNL Google Customer Match]目标选择，并且无法删除。
 > * 对于[!DNL Google Customer Match]目标。 **[!UICONTROL 帐]** 户ID是您的Google客户端ID。ID的格式为xxx-xxx-xxxx。
 
 
