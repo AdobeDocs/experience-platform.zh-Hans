@@ -4,7 +4,7 @@ description: 了解如何配置Adobe Experience Platform Web SDK。
 seo-description: 了解如何配置Experience Platform Web SDK
 keywords: configure;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;环境;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConnence;web sdk设置；prehidingStyle；不透明度；cookieDUrlDDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 85bb984231a3069aad0c63707f5024612181798c
 workflow-type: tm+mt
 source-wordcount: '741'
 ht-degree: 11%
@@ -60,7 +60,7 @@ alloy("configure", {
 | 同步验证 | 验证正在根据模式收集的数据，并在以下标签下的响应中返回错误：`collect:error OR success` |
 | 控制台日志记录 | 允许调试消息显示在浏览器的JavaScript控制台中 |
 
-### `edgeDomain`
+### `edgeDomain` {#edge-domain}
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ------------------ |
@@ -141,7 +141,7 @@ alloy("configure", {
 
 ## 标识选项
 
-### `idMigrationEnabled`
+### `idMigrationEnabled` {#id-migration-enabled}
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
