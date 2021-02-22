@@ -6,10 +6,10 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 85bb984231a3069aad0c63707f5024612181798c
 workflow-type: tm+mt
-source-wordcount: '142'
-ht-degree: 34%
+source-wordcount: '145'
+ht-degree: 33%
 
 ---
 
@@ -26,6 +26,7 @@ ht-degree: 34%
    * [跟踪事件](fundamentals/tracking-events.md)
    * [调试](fundamentals/debugging.md)
    * [合并事件数据](fundamentals/merging-event-data.md)
+   * [配置CSP](fundamentals/configuring-a-csp.md)
    * [与多个属性交互](fundamentals/interacting-with-multiple-properties.md)
 * 身份{#identity}
    * [概述](identity/overview.md)
