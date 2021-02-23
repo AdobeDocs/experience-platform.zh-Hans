@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
 translation-type: tm+mt
-source-git-commit: fca0de86630252ab31a49df1ebbc03f13955e8d2
+source-git-commit: 9f7d7ae9c721d1ce7abf0dc7d3eaff18eed09d6f
 workflow-type: tm+mt
-source-wordcount: '253'
-ht-degree: 9%
+source-wordcount: '682'
+ht-degree: 8%
 
 ---
 
@@ -19,7 +19,24 @@ ht-degree: 9%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [数据流](#dataflows)
 - [体验数据模型(XDM)系统](#xdm)
+- [标识服务](#identity)
+- [源](#sources)
+
+## 数据流 {#dataflows}
+
+在Adobe Experience Platform，数据是从各种来源中摄取的，在Experience Platform中分析，并激活到各种目的地。 平台通过为数据流提供透明度，使跟踪这种可能的非线性数据流的过程更加容易。
+
+数据流是跨平台移动数据的数据作业的表示方法。这些数据流是跨不同服务配置的，有助于将数据从源连接器移动到目标数据集，然后由[!DNL Identity Service]和[!DNL Real-time Customer Profile]使用，最终激活到[!DNL Destinations]。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 新的监视仪表板 | 您现在可以使用监控仪表板实现跨服务透明度，并为源数据摄取提供切实可行的洞察。 新的监控仪表板提供了从[!DNL Data Lake]到[!DNL Identity Service]和[!DNL Profile]处理的数据的全面视图，同时还允许您监控摄取率、成功和失败。 有关详细信息，请参阅有关[在UI](../../dataflows/ui/monitor-sources.md)中监视源数据流的教程。 |
+
+有关数据流的更多一般信息，请参阅[数据流概述](../../dataflows/home.md)。
 
 ## 体验数据模型(XDM)系统{#xdm}
 
@@ -34,3 +51,32 @@ XDM是一个公开存档的规范，旨在提高数字体验的强大功能。 �
 | 升级的搜索UI | 现在，在[!UICONTROL 模式]工作区的[!UICONTROL 浏览]选项卡和[!DNL Schema Editor]的混音选择对话框中，可使用改进的搜索功能。<br><br>在以前搜索术语时，结果将仅包含名称与搜索查询匹配的XDM资源。现在，除了名称与查询匹配的资源外，还将包括包含与术语匹配的单个属性的资源。 这允许您根据XDM资源包含的属性而不是资源名称搜索XDM资源。<br><br>有关更多信息，请 [参阅有关](../../xdm/ui/explore.md) 在UI中 [探索](../../xdm/ui/resources/schemas.md) XDM资源和管理架构的文档。 |
 
 有关XDM的更多一般信息，请参阅[XDM系统概述](../../xdm/home.md)。
+
+## Identity Service {#identity}
+
+提供相关的数字体验需要全面了解客户。 当客户数据在不同系统之间碎片化，导致每个客户似乎具有多个“身份”时，这就变得更加困难。
+
+Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统连接身份，帮助您实时提供有影响力的个性化数字体验，从而更好地视图客户及其行为。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 标识图查看器 | 通过标识图查看器，您可以验证和可视化在UI中拼接在一起的身份，从而改进调试和透明度。 有关详细信息，请参阅[标识图查看器文档](../../identity-service/ui/identity-graph-viewer.md)。 |
+
+有关[!DNL Identity Service]的更多一般信息，请参阅[Identity Service概述](../../identity-service/home.md)。
+
+## 源 {#sources}
+
+Adobe Experience Platform可以从外部源收集数据，同时允许您使用平台服务构建、标记和增强该数据。 您可以从各种来源收集数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+
+Experience Platform提供了RESTful API和交互式UI，让您可以轻松为各种数据提供者设置源连接。 这些源连接允许您对外部存储系统和CRM服务进行身份验证并连接，设置获取运行的时间，以及管理数据获取吞吐量。
+
+**新来源**
+
+| 功能 | 描述 |
+| --- | --- |
+| [!DNL Google PubSub] | 您现在可以使用[!DNL Flow Service] API或UI将[!DNL Google PubSub]连接到[!DNL Experience Platform]。 有关详细信息，请参阅[[!DNL Google PubSub] 连接器概述](../../sources/connectors/cloud-storage/google-pubsub.md)。 |
+| [!DNL Oracle Object Storage] | 您现在可以使用[!DNL Flow Service] API或UI将[!DNL Oracle Object Storage]连接到[!DNL Experience Platform]。 有关详细信息，请参阅[[!DNL Oracle Object Storage] 连接器概述](../../sources/connectors/cloud-storage/oracle-object-storage.md)。 |
+
+有关源的更多一般信息，请参阅[源概述](../../sources/home.md)。
