@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 translation-type: tm+mt
-source-git-commit: b8f7f6e7f110dc9ebd025cd594fd1a54126ccdf3
+source-git-commit: 0e4fda4abf5c02df81b74f15d2fbcafb68548070
 workflow-type: tm+mt
-source-wordcount: '563'
+source-wordcount: '572'
 ht-degree: 12%
 
 ---
@@ -39,6 +39,7 @@ ht-degree: 12%
       - [FTP连接器](connectors/cloud-storage/ftp.md)
       - [Google Cloud存储连接器](connectors/cloud-storage/google-cloud-storage.md)
       - [Google PubSub](connectors/cloud-storage/google-pubsub.md)
+      - [Oracle对象存储](connectors/cloud-storage/oracle-object-storage.md)
       - [SFTP连接器](connectors/cloud-storage/sftp.md)
       - [Amazon S3和Azure Blob连接器](connectors/cloud-storage/blob-s3.md)
    - CRM {#crm}
@@ -87,6 +88,7 @@ ht-degree: 12%
          - [FTP](tutorials/api/create/cloud-storage/ftp.md)
          - [Google Cloud存储](tutorials/api/create/cloud-storage/google.md)
          - [Google PubSub](tutorials/api/create/cloud-storage/google-pubsub.md)
+         - [Oracle对象存储](tutorials/api/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
@@ -168,6 +170,7 @@ ht-degree: 12%
          - [FTP](tutorials/ui/create/cloud-storage/ftp.md)
          - [Google Cloud存储](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
          - [Google PubSub](tutorials/ui/create/cloud-storage/google-pubsub.md)
+         - [Oracle对象存储](tutorials/ui/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/ui/create/cloud-storage/sftp.md)
          - [Amazon S3和Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
       - CRM {#crm}
