@@ -1,64 +1,65 @@
 ---
-keywords: Experience Platform；主题；热门主题；查询服务；查询服务；RStudio;rstudio；与查询服务；
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；RStudio;rstudio；与查询服务；
 solution: Experience Platform
 title: 将RStudio连接到查询服务
 topic: connect
-description: 此文档通过步骤将R Studio与Adobe Experience Platform查询服务连接。
+description: 此文档将逐步介绍将R Studio与Adobe Experience Platform 查询 Service连接的步骤。
 translation-type: tm+mt
-source-git-commit: 6655714d4b57d9c414cd40529bcee48c7bcd862d
+source-git-commit: f1b2fd7efd43f317a85c831cd64c09be29688f7a
 workflow-type: tm+mt
-source-wordcount: '282'
-ht-degree: 2%
+source-wordcount: '368'
+ht-degree: 0%
 
 ---
 
 
 # 将[!DNL RStudio]连接到查询服务
 
-此文档介绍将[!DNL RStudio]与Adobe Experience Platform[!DNL Query Service]连接的步骤。
+此文档将逐步介绍将[!DNL RStudio]与Adobe Experience Platform [!DNL Query Service]连接的步骤。
 
 >[!NOTE]
 >
-> 本指南假定您已经具有访问[!DNL RStudio]的权限，并且熟悉如何使用它。 有关[!DNL RStudio]的详细信息，请参阅[offical [!DNL RStudio] 文档](https://rstudio.com/products/rstudio/)。
+> 本指南假定您已经具有访问[!DNL RStudio]的权限，并熟悉如何使用它。 有关[!DNL RStudio]的详细信息，请参阅[official [!DNL RStudio] 文档](https://rstudio.com/products/rstudio/)。
+> 
+> 此外，要将RStudio与查询服务一起使用，您需要安装PostgreSQL JDBC 4.2驱动程序。 您可以从[PostgreSQL官方站点](https://jdbc.postgresql.org/download.html)下载JDBC驱动程序。
 
 ## 在[!DNL RStudio]接口中创建[!DNL Query Service]连接
 
-在出现的&#x200B;**[!DNL Console]**&#x200B;屏幕上安装[!DNL RStudio]后，您首先需要准备R脚本才能使用[!DNL PostgreSQL]。
+安装[!DNL RStudio]后，需要安装RJDBC包。 转到&#x200B;**[!DNL Packages]**&#x200B;窗格，然后选择&#x200B;**[!DNL Install]**。
 
-```r
-install.packages("RPostgreSQL")
-install.packages("rstudioapi")
-require("RPostgreSQL")
-require("rstudioapi")
+![](../images/clients/rstudio/install-package.png)
+
+出现一个弹出窗口，显示&#x200B;**[!DNL Install Packages]**&#x200B;屏幕。 确保为&#x200B;**[!DNL Install from]**&#x200B;部分选择了&#x200B;**[!DNL Repository (CRAN)]**。 **[!DNL Packages]**&#x200B;的值应为`RJDBC`。 确保已选择&#x200B;**[!DNL Install dependencies]**。 确认所有值均正确后，选择&#x200B;**[!DNL Install]**&#x200B;安装软件包。
+
+![](../images/clients/rstudio/install-jrdbc.png)
+
+现在已安装RJDBC包，请重新启动RStudio以完成安装过程。
+
+RStudio重新启动后，您现在可以连接到查询服务。 在&#x200B;**[!DNL Packages]**&#x200B;窗格中选择&#x200B;**[!DNL RJDBC]**&#x200B;包，然后在控制台中输入以下命令：
+
+```console
+pgsql <- JDBC("org.postgresql.Driver", "{PATH TO THE POSTGRESQL JDBC JAR}", "`")
 ```
 
-在您准备好使用[!DNL PostgreSQL]的R脚本后，现在可以通过加载[!DNL PostgreSQL]驱动程序将[!DNL RStudio]连接到[!DNL Query Service]。
+其中{PATH TO THE POSTGRESQL JDBC JAR}表示计算机上安装的PostgreSQL JDBC JAR的路径。
 
-```r
-drv <- dbDriver("PostgreSQL")
-con <- dbConnect(drv, 
- dbname = "{DATABASE_NAME}",
- host="{HOST_NUMBER}",
- port={PORT_NUMBER},
- user="{USERNAME}",
- password="{PASSWORD}")
+现在，您可以通过在控制台中输入以下命令来创建与查询服务的连接：
+
+```console
+qsconnection <- dbConnect(pgsql, "jdbc:postgresql://{HOSTNAME}:{PORT}/{DATABASE_NAME}?user={USERNAME}&password={PASSWORD}&sslmode=require")
 ```
-
-| 属性 | 描述 |
-| -------- | ----------- |
-| `{DATABASE_NAME}` | 将使用的数据库的名称。 |
-| `{HOST_NUMBER` 和 `{PORT_NUMBER}` | 主机端点及其查询服务端口。 |
-| `{USERNAME}` 和 `{PASSWORD}` | 将使用的登录凭据。 用户名采用`ORG_ID@AdobeOrg`的形式。 |
 
 >[!NOTE]
 >
->有关查找数据库名称、主机、端口和登录凭据的详细信息，请访问Platform](https://platform.adobe.com/query/configuration)上的[凭据页。 要查找您的凭据，请登录[!DNL Platform]，然后选择&#x200B;**[!UICONTROL 查询]**，后跟&#x200B;**[!UICONTROL 凭据]**。
+>有关查找数据库名称、主机、端口和登录凭据的详细信息，请访问Platform](https://platform.adobe.com/query/configuration)上的[凭据页。 要查找您的凭据，请登录[!DNL Platform]，然后选择&#x200B;**[!UICONTROL 查询]**，然后选择&#x200B;**[!UICONTROL 凭据]**。
+
+![](../images/clients/rstudio/connection-rjdbc.png)
 
 ## 编写查询
 
-现在您已连接到[!DNL Query Service]，您可以编写查询以执行和编辑SQL语句。 例如，可以使用`dbGetQuery(con, sql)`执行查询，其中`sql`是要运行的SQL查询。
+现在您已连接到[!DNL Query Service]，可以编写查询以执行和编辑SQL语句。 例如，可以使用`dbGetQuery(con, sql)`执行查询，其中`sql`是要运行的SQL查询。
 
-以下查询使用包含[体验事件](../best-practices/experience-event-queries.md)的数据集，并根据设备的屏幕高度创建网站页面视图的直方图。
+以下查询使用包含[Experience事件](../best-practices/experience-event-queries.md)的数据集，并根据设备的屏幕高度创建网站页面视图的直方图。
 
 ```sql
 df_pageviews <- dbGetQuery(con,
