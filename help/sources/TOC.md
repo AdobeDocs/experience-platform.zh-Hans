@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 translation-type: tm+mt
-source-git-commit: 17eb7b9cb715d7d8d0d7bce930ddec43259149cc
+source-git-commit: b8f7f6e7f110dc9ebd025cd594fd1a54126ccdf3
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '563'
 ht-degree: 12%
 
 ---
@@ -38,10 +38,11 @@ ht-degree: 12%
       - [Azure文件存储连接器](connectors/cloud-storage/azure-file-storage.md)
       - [FTP连接器](connectors/cloud-storage/ftp.md)
       - [Google Cloud存储连接器](connectors/cloud-storage/google-cloud-storage.md)
+      - [Google PubSub](connectors/cloud-storage/google-pubsub.md)
       - [SFTP连接器](connectors/cloud-storage/sftp.md)
       - [Amazon S3和Azure Blob连接器](connectors/cloud-storage/blob-s3.md)
    - CRM {#crm}
-      - [Microsoft Dynamics连接器](connectors/crm/ms-dynamics.md)
+      - [Microsoft Dynamics 连接器](connectors/crm/ms-dynamics.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
    - 客户成功{#customer-success}
       - [Salesforce Service Cloud连接器](connectors/customer-success/salesforce-service-cloud.md)
@@ -60,7 +61,7 @@ ht-degree: 12%
       - [IBM DB2连接器](connectors/databases/ibm-db2.md)
       - [Microsoft SQL Server连接器](connectors/databases/sql-server.md)
       - [MySQL连接器](connectors/databases/mysql.md)
-      - [Oracle connector](connectors/databases/oracle.md)
+      - [Oracle连接器](connectors/databases/oracle.md)
       - [凤凰连接器](connectors/databases/phoenix.md)
       - [PostgreSQL连接器](connectors/databases/postgres.md)
    - 电子商务 {#ecommerce}
@@ -85,6 +86,7 @@ ht-degree: 12%
          - [Azure文件存储](tutorials/api/create/cloud-storage/azure-file-storage.md)
          - [FTP](tutorials/api/create/cloud-storage/ftp.md)
          - [Google Cloud存储](tutorials/api/create/cloud-storage/google.md)
+         - [Google PubSub](tutorials/api/create/cloud-storage/google-pubsub.md)
          - [SFTP](tutorials/api/create/cloud-storage/sftp.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
@@ -97,7 +99,7 @@ ht-degree: 12%
          - [Azure HDInsights上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/api/create/databases/spark.md)
          - [AzureData Explorer](tutorials/api/create/databases/data-explorer.md)
-         - [azure synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
+         - [Azure Synapse分析](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure表存储](tutorials/api/create/databases/ats.md)
          - [库奇巴斯](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery](tutorials/api/create/databases/bigquery.md)
@@ -165,6 +167,7 @@ ht-degree: 12%
          - [Azure文件存储](tutorials/ui/create/cloud-storage/azure-file-storage.md)
          - [FTP](tutorials/ui/create/cloud-storage/ftp.md)
          - [Google Cloud存储](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
+         - [Google PubSub](tutorials/ui/create/cloud-storage/google-pubsub.md)
          - [SFTP](tutorials/ui/create/cloud-storage/sftp.md)
          - [Amazon S3和Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
       - CRM {#crm}
@@ -178,7 +181,7 @@ ht-degree: 12%
          - [Azure HDInsights上的Apache Hive](tutorials/ui/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/ui/create/databases/spark.md)
          - [AzureData Explorer](tutorials/ui/create/databases/data-explorer.md)
-         - [azure synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
+         - [Azure Synapse分析](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure表存储](tutorials/ui/create/databases/ats.md)
          - [库奇巴斯](tutorials/ui/create/databases/couchbase.md)
          - [Google大查询](tutorials/ui/create/databases/bigquery.md)
