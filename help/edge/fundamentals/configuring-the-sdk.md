@@ -4,9 +4,9 @@ description: 了解如何配置Adobe Experience Platform Web SDK。
 seo-description: 了解如何配置Experience Platform Web SDK
 keywords: configure;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;环境;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConnence;web sdk设置；prehidingStyle；不透明度；cookieDUrlDDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 85bb984231a3069aad0c63707f5024612181798c
+source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '743'
 ht-degree: 11%
 
 ---
@@ -147,7 +147,7 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 布尔值 | 否 | true |
 
-如果为true，则SDK将读取并设置旧的AMCV Cookie。 这有助于过渡到使用Adobe Experience Platform Web SDK，而站点的某些部分可能仍在使用访客.js。 此外，如果页面上定义了访客 API，则SDK将为ECID查询访客 API。 这使您能够使用AEP Web SDK将两个标签页放在一起，并且仍具有相同的ECID。
+如果为true，则SDK将读取并设置旧的AMCV Cookie。 这有助于过渡到使用Adobe Experience Platform Web SDK，而站点的某些部分可能仍在使用访客.js。 此外，如果页面上定义了访客 API，则SDK将为ECID查询访客 API。 这使您能够使用Adobe Experience Platform Web SDK将两个标签页放在一起，并且仍具有相同的ECID。
 
 ### `thirdPartyCookiesEnabled`
 
