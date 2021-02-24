@@ -1,9 +1,9 @@
 ---
 title: 将Offer Decisioning与Platform Web SDK结合使用
 description: Adobe Experience Platform Web SDK可以提供和呈现在Offer Decisioning中管理的个性化优惠。 您可以使用Offer Decisioning UI或API创建优惠和其他相关对象。
-keywords: 优惠决策；决策；Web SDK；平台Web SDK；个性化优惠；交付优惠;优惠投放;优惠个性化；
+keywords: offer decisioning；决策；Web SDK；平台Web SDK；个性化优惠；交付优惠;优惠投放;优惠个性化；
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
 workflow-type: tm+mt
 source-wordcount: '849'
 ht-degree: 9%
@@ -15,7 +15,7 @@ ht-degree: 9%
 
 >[!NOTE]
 >
->目前，可以提前访问选定用户，在Adobe Experience Platform Web SDK中使用Offer Decisioning。 此功能并非所有IMS组织都可用。
+>Adobe Experience Platform Web SDK中的Offer Decisioning当前可供选定用户提前访问。 此功能并非所有IMS组织都可用。
 
 Adobe Experience Platform [!DNL Web SDK]可以提供和呈现在Offer Decisioning中管理的个性化优惠。 您可以使用Offer Decisioning用户界面(UI)或API创建优惠和其他相关对象。
 
@@ -27,11 +27,11 @@ Adobe Experience Platform [!DNL Web SDK]可以提供和呈现在Offer Decisionin
 
 ## 术语
 
-使用Offer Decisioning时，请务必了解以下术语。 有关详细信息和视图其他术语，请访问[Offer Decisioning词汇表](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html)。
+使用Offer Decisioning时，请务必了解以下术语。 有关详细信息和视图其他术语，请访问[Offer decisioning词汇表](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html)。
 
 * **容器:** 容器是一种隔离机制，可分开不同的疑虑。容器ID是所有存储库API的第一个路径元素。 所有决策对象都驻留在容器中。
 
-* **决策范** 围：对于Offer Decisioning，这些是JSON的Base64编码字符串，包含您希望优惠决策服务用于建议优惠的活动和位置ID。
+* **决策范** 围：对于Offer decisioning，这些是JSON的Base64编码字符串，包含您希望offer decisioning服务用于建议优惠的活动和位置ID。
 
    *决策范围JSON:*
 
@@ -58,14 +58,14 @@ Adobe Experience Platform [!DNL Web SDK]可以提供和呈现在Offer Decisionin
 
 * **身份**:有关详细信息，请阅读此文档，其中概述 [了Platform Web SDK如何利用Identity Service](../../identity/overview.md)。
 
-## 启用Offer Decisioning
+## 启用Offer decisioning
 
-要启用Offer Decisioning，您需要执行以下步骤：
+要启用Offer decisioning，您需要执行以下步骤：
 
-1. 已在[边缘配置](../../fundamentals/edge-configuration.md)中启用Adobe Experience Platform并选中“Offer Decisioning”框
+1. 已在[边缘配置](../../fundamentals/edge-configuration.md)中启用Adobe Experience Platform并选中“Offer decisioning”框
    ![优惠-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
-2. 请按照说明[安装SDK](../../fundamentals/installing-the-sdk.md)(SDK可以单独安装，也可以通过[Adobe Experience Platform Launch](http://launch.adobe.com/)安装。 以下是平台启动](https://docs.adobe.com/content/help/zh-Hans/launch/using/intro/get-started/quick-start.html)的[快速开始指南。
-3. [为Offer Decisioning](../../fundamentals/configuring-the-sdk.md) 配置SDK。下面提供了Offer Decisioning的其他具体步骤。
+2. 请按照说明[安装SDK](../../fundamentals/installing-the-sdk.md)(SDK可以单独安装，也可以通过[Adobe Experience Platform Launch](http://launch.adobe.com/)安装。 以下是[开始指南，可快速Platform launch](https://docs.adobe.com/content/help/zh-Hans/launch/using/intro/get-started/quick-start.html)。
+3. [配置](../../fundamentals/configuring-the-sdk.md) SDK以Offer decisioning。下面提供了其他Offer decisioning特定步骤。
    * 独立安装的SDK
       1. 使用`decisionScopes`配置“sendEvent”操作
 
@@ -78,10 +78,10 @@ Adobe Experience Platform [!DNL Web SDK]可以提供和呈现在Offer Decisionin
           ]
       })
       ```
-   * Platform Launch已安装SDK
-      1. [创建平台启动属性](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/companies-and-properties.html)
-      2. [添加平台启动嵌入代码](https://docs.adobe.com/content/help/en/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      3. 使用您刚刚创建的边缘配置安装和配置AEP Web SDK扩展，方法是从“边缘配置”下拉菜单中选择配置。 有关[扩展](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html)的有用文档。
+   * platform launch安装的SDK
+      1. [创建Platform launch属性](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/companies-and-properties.html)
+      2. [添加Platform launch嵌入代码](https://docs.adobe.com/content/help/en/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
+      3. 使用您刚刚通过从“边缘配置”下拉菜单中选择的配置创建的边缘配置安装和配置平台Web SDK扩展。 有关[扩展](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html)的有用文档。
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
