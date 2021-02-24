@@ -1,24 +1,24 @@
 ---
-title: 使用Platform Launch和Platform Web SDK扩展集成IAB TCF 2.0支持
+title: 使用Platform launch和Platform Web SDK扩展集成IAB TCF 2.0支持
 description: 了解如何设置Adobe Experience Platform Launch和Adobe Experience Platform Web SDK扩展的IAB TCF 2.0同意。
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
 workflow-type: tm+mt
-source-wordcount: '832'
+source-wordcount: '834'
 ht-degree: 0%
 
 ---
 
 
-# 使用Platform Launch和Platform Web SDK扩展集成IAB TCF 2.0支持
+# 使用Platform launch和Platform Web SDK扩展集成IAB TCF 2.0支持
 
-Adobe Experience Platform Web SDK支持Interactive Advertising Bureau透明度和同意框架，版本2.0(IAB TCF 2.0)。 本指南向您介绍如何设置Adobe Experience Platform Launch属性，以便使用AEP Web SDK扩展将IAB TCF 2.0同意信息发送到Adobe以进行Experience Platform Launch。
+Adobe Experience Platform Web SDK支持Interactive Advertising Bureau透明度和同意框架，版本2.0(IAB TCF 2.0)。 本指南向您介绍如何设置Adobe Experience Platform Launch属性，以便使用Adobe Experience Platform Web SDK扩展将IAB TCF 2.0同意信息发送到Adobe进行Experience Platform Launch。
 
 如果您不想使用Experience Platform Launch，请参阅[上关于使用不带Experience Platform Launch的IAB TCF 2.0的指南](./without-launch.md)。
 
 ## 入门指南
 
-要将IAB TCF 2.0与Experience Platform Launch及AEP Web SDK扩展一起使用，您需要提供XDM模式和数据集。
+要将IAB TCF 2.0与Experience Platform Launch及Platform Web SDK扩展一起使用，您需要提供XDM模式和数据集。
 
 此外，本指南要求您对Adobe Experience Platform Web SDK有正确的了解。 有关快速复习，请阅读[Adobe Experience Platform Web SDK概述](../../home.md)和[常见问题解答](../../web-sdk-faq.md)文档。
 
@@ -120,7 +120,7 @@ addEventListener();
 
 此代码与以前的自定义代码相同，只是处理了`useractioncomplete`和`tcloaded`事件。 [之前的自定义代码](#consent-code-1)仅在客户首次选择其首选项时触发。 当客户已选择其首选项时，也会触发此代码。 例如，在第二页加载时。
 
-从AEP Web SDK扩展添加“发送事件”操作。 在XDM字段中，选择您在上一节中创建的XDM数据元素。
+从Platform Web SDK扩展添加“发送事件”操作。 在XDM字段中，选择您在上一节中创建的XDM数据元素。
 
 ## 使用IAB TCF 2.0同意信息发送其他事件
 
@@ -128,4 +128,4 @@ addEventListener();
 
 ## 后续步骤
 
-现在，您已学习如何将IAB TCF 2.0与AEP Web SDK扩展结合使用，您还可以选择与其他Adobe解决方案(如Adobe Analytics或实时客户数据平台)集成。 有关详细信息，请参阅[IAB透明度和同意框架2.0概述](./overview.md)。
+现在，您已学习如何将IAB TCF 2.0与Platform Web SDK扩展一起使用，您还可以选择与其他Adobe解决方案(如Adobe Analytics或实时客户数据平台)集成。 有关详细信息，请参阅[IAB透明度和同意框架2.0概述](./overview.md)。
