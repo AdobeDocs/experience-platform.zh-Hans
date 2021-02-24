@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK跟踪事件
 seo-description: 了解如何跟踪Adobe Experience Platform Web SDK事件。
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;文档卸载；onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
 workflow-type: tm+mt
-source-wordcount: '1334'
+source-wordcount: '1340'
 ht-degree: 0%
 
 ---
@@ -69,7 +69,7 @@ alloy("sendEvent", {
 dataLayer.commerce = null;
 ```
 
-在此示例中，通过将数据层序列化为JSON，然后反序列化来克隆数据层。 接下来，克隆结果将传递到`sendEvent`命令中。 这样做可确保`sendEvent`命令具有数据层的快照，就像执行`sendEvent`命令时一样，这样以后对原始数据层对象的修改不会反映在发送到服务器的数据中。 如果您使用事件驱动的数据层，克隆数据可能已自动处理。 例如，如果您使用[Adobe客户端数据层](https://github.com/adobe/adobe-client-data-layer/wiki)，则`getState()`方法将提供所有先前更改的计算的克隆快照。 如果您使用AEP Web SDK Launch扩展，也会自动为您处理此问题。
+在此示例中，通过将数据层序列化为JSON，然后反序列化来克隆数据层。 接下来，克隆结果将传递到`sendEvent`命令中。 这样做可确保`sendEvent`命令具有数据层的快照，就像执行`sendEvent`命令时一样，这样以后对原始数据层对象的修改不会反映在发送到服务器的数据中。 如果您使用事件驱动的数据层，克隆数据可能已自动处理。 例如，如果您使用[Adobe客户端数据层](https://github.com/adobe/adobe-client-data-layer/wiki)，则`getState()`方法将提供所有先前更改的计算的克隆快照。 如果您使用Adobe Experience Platform Launch中的Adobe Experience Platform Web SDK扩展，也会自动为您处理此问题。
 
 >[!NOTE]
 >
