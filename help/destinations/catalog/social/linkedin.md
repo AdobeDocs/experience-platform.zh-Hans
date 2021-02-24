@@ -1,9 +1,9 @@
 ---
 keywords: linkedin连接；linkedin连接；linkedin目标；linkedin;
-title: LinkedIn匹配受众连接
+title: Linkedin匹配受众连接
 description: 根据经过散列处理的电子邮件，为您的LinkedIn活动激活用户档案以进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: d51de1ab4b2d4e91232166657466e597093f22ef
+source-git-commit: db2e5d51a5ed07b91997df8a566272c86a7c1708
 workflow-type: tm+mt
 source-wordcount: '564'
 ht-degree: 0%
