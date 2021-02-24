@@ -3,7 +3,7 @@ keywords: linkedin连接；linkedin连接；linkedin目标；linkedin;
 title: Linkedin匹配受众连接
 description: 根据经过散列处理的电子邮件，为您的LinkedIn活动激活用户档案以进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 48cc2017e4a65321fb7ef54ea26aca0a98606516
+source-git-commit: 6d64bc362aa8c85e354f5c02cc2acbe6f1405c99
 workflow-type: tm+mt
 source-wordcount: '564'
 ht-degree: 0%
@@ -19,17 +19,17 @@ ht-degree: 0%
 
 ## 用例
 
-为了帮助您更好地了解应如何以及何时使用[!DNL LinkedIn Matched Audience]目标，以下是Adobe Experience Platform客户可通过使用此功能解决的用例。
+为了帮助您更好地了解应如何以及何时使用[!DNL LinkedIn Matched Audiences]目标，以下是Adobe Experience Platform客户可通过使用此功能解决的用例。
 
 软件公司会组织会议并希望与参加者保持联系，并根据参加者的会议出席状态向他们展示个性化的优惠。 公司可以将自己的[!DNL CRM]电子邮件地址或移动设备ID收录到Adobe Experience Platform中，根据自己的线下数据构建细分，并将这些细分发送到[!DNL LinkedIn]社交平台，优化其广告支出。
 
 ## 目标特性{#destination-specs}
 
-[!DNL LinkedIn Matched Audience] 支持激活以下身份：散乱的 [!DNL GAID]电子邮件 [!DNL IDFA]。
+[!DNL LinkedIn Matched Audiences] 支持激活以下身份：散乱的 [!DNL GAID]电子邮件 [!DNL IDFA]。
 
 ### 导出类型{#export-type}
 
-**区段导出**  — 您正在导出包含标识符（名称、电话号码等）的区段(受众)的所有成员在[!DNL LinkedIn Matched Audience]目标中使用。
+**区段导出**  — 您正在导出包含标识符（名称、电话号码等）的区段(受众)的所有成员在[!DNL LinkedIn Matched Audiences]目标中使用。
 
 ### LinkedIn帐户先决条件{#LinkedIn-account-prerequisites}
 
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 ### ID匹配要求{#id-matching-requirements}
 
-[!DNL LinkedIn Matched Audience] 要求不要发送任何清晰的个人身份信息(PII)。因此，激活到[!DNL LinkedIn Matched Audience]的受众可以键出&#x200B;*散列*&#x200B;标识符，如电子邮件地址或移动设备ID。
+[!DNL LinkedIn Matched Audiences] 要求不要发送任何清晰的个人身份信息(PII)。因此，激活到[!DNL LinkedIn Matched Audiences]的受众可以键出&#x200B;*散列*&#x200B;标识符，如电子邮件地址或移动设备ID。
 
 根据您将ID引入Adobe Experience Platform的类型，您需要遵守其相应要求。
 
@@ -71,11 +71,11 @@ ht-degree: 0%
 
 ## 连接到目标{#connect-destination}
 
-要连接到[!DNL LinkedIn Matched Audience]目标，请参阅[社交网络目标身份验证工作流](./workflow.md)。
+要连接到[!DNL LinkedIn Matched Audiences]目标，请参阅[社交网络目标身份验证工作流](./workflow.md)。
 
-## 将区段激活到[!DNL LinkedIn Matched Audience] {#activate-segments}
+## 将区段激活到[!DNL LinkedIn Matched Audiences] {#activate-segments}
 
-有关如何将区段激活到[!DNL LinkedIn Matched Audience]的说明，请参阅[将数据激活到目标](../../ui/activate-destinations.md)。
+有关如何将区段激活到[!DNL LinkedIn Matched Audiences]的说明，请参阅[将数据激活到目标](../../ui/activate-destinations.md)。
 
 ## 导出的数据{#exported-data}
 
@@ -83,4 +83,4 @@ ht-degree: 0%
 
 >[!TIP]
 >
->Adobe Experience Platform与[!DNL LinkedIn Matched Audience]之间的集成支持历史受众回填。 在将区段激活到目标时，所有历史区段资格都将发送到[!DNL LinkedIn]。
+>Adobe Experience Platform与[!DNL LinkedIn Matched Audiences]之间的集成支持历史受众回填。 在将区段激活到目标时，所有历史区段资格都将发送到[!DNL LinkedIn]。
