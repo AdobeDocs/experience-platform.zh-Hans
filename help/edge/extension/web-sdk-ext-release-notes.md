@@ -3,10 +3,10 @@ title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Launch 中的 Adobe Experience Platform Web SDK 扩展
 seo-description: Adobe Experience Platform Launch 中的 Adobe Experience Platform Web SDK 扩展
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
 workflow-type: tm+mt
-source-wordcount: '988'
-ht-degree: 94%
+source-wordcount: '990'
+ht-degree: 89%
 
 ---
 
@@ -33,7 +33,7 @@ ht-degree: 94%
 
 #### 错误修复
 
-* 当客户尝试按照沙盒模式创建 XDM 对象时，他们将会遇到身份验证问题。由于调用 AEP 的 API 现在能够识别环境，因此用户只会看到他们有权编辑的模式。
+* 当客户尝试按照沙盒模式创建 XDM 对象时，他们将会遇到身份验证问题。调用平台的API现在可以感知到环境，因此用户只能看到他们有权编辑的模式。
 
 #### 功能
 
@@ -62,7 +62,7 @@ ht-degree: 94%
 * 在 `sendEvent` 操作中支持覆盖数据集 ID。
 * 增加了 `IdentityMap` 类型的新数据元素，该数据元素可用于在（现已启用的）XDM 对象数据元素和 `setConsent` 操作中填充 `identityMap` 条目。
 * 在 `setConsent` 操作中支持传递标识映射。
-* 支持在 XDM 对象数据元素中选择 AEP 沙箱。
+* 支持在XDM对象数据元素中选择平台沙箱。
 
 
 ## 2020 年 5 月 26 日
@@ -91,7 +91,7 @@ ht-degree: 94%
 * 修复了每次引用数据元素时都会重置事件合并 ID 的问题。
 * 将 `setCustomerIds` 操作重命名为 `syncIdentity`。
 * 添加了一个 `getIdentity` 命令。现在只能通过自定义代码使用此命令。
-* 现在，允许使用 `_satellite` 进行调试可在 AEP Web SDK 中进行调试。
+* 现在，使用`_satellite`启用调试可在Adobe Experience Platform Web SDK中启用调试。
 * 添加了对 XDM 对象中键入值的支持：布尔值、数字和小数。
 
 ## 2020 年 3 月 16 日
@@ -168,7 +168,7 @@ ht-degree: 94%
 * 扩展快速形成
 * ECID 支持无需其他库或网络调用
 * 选择加入支持
-* 支持将 XDM 发送到 AEP
+* 支持将XDM发送到平台
 * 第一方域支持
 * 自动收集浏览器上下文
 * 完全开放源（[扩展](https://github.com/adobe/reactor-extension-alloy)、[SDK](https://github.com/adobe/reactor-extension-alloy)）
