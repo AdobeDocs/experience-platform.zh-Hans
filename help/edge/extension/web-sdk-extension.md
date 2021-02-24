@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK 扩展 概述
 description: 了解Adobe Experience Platform Web SDK扩展for Adobe Experience Platform Launch
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
 workflow-type: tm+mt
-source-wordcount: '645'
-ht-degree: 55%
+source-wordcount: '640'
+ht-degree: 53%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 55%
 
 Adobe Experience Platform Web SDK扩展通过Adobe Experience Platform Edge Network从Web属性将数据发送到Adobe Experience Cloud。 Adobe Experience Platform Web SDK 扩展允许将数据流式传输到平台、同步身份、选择加入和自动收集上下文数据。
 
-## 配置 AEP Web SDK 扩展
+## 配置扩展
 
 此部分提供有关配置 Adobe Experience Platform Web SDK 扩展时可用的选项的参考。
 
@@ -47,11 +47,11 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 可以�
 
 ### **[!UICONTROL 启用选择加入]**
 
-如果&#x200B;**[!UICONTROL 启用选择加入]**，则AEP Web SDK扩展可以保持点击，直到收到选择加入。 此扩展会显示用于设置选择加入首选项的操作。
+如果&#x200B;**[!UICONTROL 启用选择加入]**，则扩展可保持点击，直到收到选择加入。 此扩展会显示用于设置选择加入首选项的操作。
 
 ### **[!UICONTROL 启用迁移ECID]**
 
-AEP Web SDK 扩展使用新的 Cookie 来存储 ECID。出于迁移目的，此设置支持新 Cookie 与旧 Cookie 之间的兼容性。Adobe 强烈建议启用此功能，除非您的现有访客均未使用 ECID。
+平台Web SDK扩展使用新的cookie存储ECID。 出于迁移目的，此设置支持新 Cookie 与旧 Cookie 之间的兼容性。Adobe 强烈建议启用此功能，除非您的现有访客均未使用 ECID。
 
 ### **[!UICONTROL 使用第三方Cookie]**
 
