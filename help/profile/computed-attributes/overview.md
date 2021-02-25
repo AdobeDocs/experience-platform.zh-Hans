@@ -5,9 +5,9 @@ topic: 指南
 type: 文档
 description: 计算属性是将事件级数据聚合为用户档案级属性的函数。 这些函数会自动计算，以便能够跨细分、激活和个性化使用。
 translation-type: tm+mt
-source-git-commit: 08eff53f107549fab0f167a6c206b632f3c8c183
+source-git-commit: 4ed2b80ebfd87f8920462ae0a918b01bb13d4210
 workflow-type: tm+mt
-source-wordcount: '731'
+source-wordcount: '730'
 ht-degree: 1%
 
 ---
