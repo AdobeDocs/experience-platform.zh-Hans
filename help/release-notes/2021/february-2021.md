@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
 translation-type: tm+mt
-source-git-commit: 7142d13b144f34d92087affe101c5ccfcb52d90e
+source-git-commit: a2470d44512821996a2d5ee44722cb24990d1054
 workflow-type: tm+mt
-source-wordcount: '770'
-ht-degree: 6%
+source-wordcount: '1069'
+ht-degree: 7%
 
 ---
 
@@ -17,13 +17,28 @@ ht-degree: 6%
 
 **发行日期：2021 年 2 月 24 日**
 
+Adobe Experience Platform的新增功能：
+
+- [（测试版）仪表板](#dashboards)
+
 Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Data Science Workspace]](#dsw)
 - [[!DNL Dataflows]](#dataflows)
 - [[!DNL Experience Data Model (XDM) System]](#xdm)
 - [[!DNL Identity Service]](#identity)
+- [[!DNL Real-time Customer Profile]](#profile)
 - [[!DNL Sources]](#sources)
+
+## (Beta)仪表板{#dashboards}
+
+Adobe Experience Platform提供了多个仪表板，通过这些视图，您可以有关组织数据的重要信息，这些信息在每日快照中捕获。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 用户档案、区段、目标和许可证使用仪表板（测试版） | **注意：仪表板功能当前处于测试阶段，并非所有用户都可用。文档和功能可能会发生变化。**<br/><br/>&#x200B;仪表板针对组织的数据提供开箱即用的报告，并直接内置于平台内的营销人员工作流程中。无需额外的IT支持，也无需花费时间和精力导出和处理仪表板，即可获得这些数据，同时还需要额外的数据仓库设计和实施。 |
 
 ## [!DNL Data Science Workspace] {#dsw}
 
@@ -78,6 +93,18 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统连接�
 | 标识图查看器 | 通过标识图查看器，您可以验证和可视化在UI中拼接在一起的身份，从而改进调试和透明度。 有关详细信息，请参阅[标识图查看器文档](../../identity-service/ui/identity-graph-viewer.md)。 |
 
 有关[!DNL Identity Service]的更多一般信息，请参阅[Identity Service概述](../../identity-service/home.md)。
+
+## 实时客户资料 {#profile}
+
+Adobe Experience Platform使您能够在客户与您的品牌互动的任何地方或何时为其提供协调一致的相关体验。 通过实时客户用户档案，您可以了解每位客户的整体视图，该客户整合了来自多个渠道的数据，包括在线、离线、CRM和第三方数据。 [!DNL Profile] 允许您将客户数据整合到一个统一的视图中，为每次客户互动提供一个可操作且有时间戳的帐户。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 计算属性(Alpha) | ***注意：此功能当前位于alpha中，并且并非所有用户都可用。文档和功能可能会发生变化。*** <br/><br/>计算属性是用于将事件级数据聚合为用户档案级属性的函数。然后，您可以在细分、激活和个性化中使用聚合。 这些函数的一些示例包括count、sum、average、min、max、true/false。 计算属性当前仅通过API可用。 有关详细信息，请参阅[计算属性概述](../../profile/computed-attributes/overview.md)。 |
+
+有关实时客户用户档案的更多信息（包括使用[!DNL Profile]数据的教程和最佳实践），请首先阅读[实时客户用户档案概述](../../profile/home.md)。
 
 ## [!DNL Sources] {#sources}
 
