@@ -5,7 +5,7 @@ topic: 指南
 type: 文档
 description: 在Adobe Experience Platform中，计算属性是用于将事件级数据聚合为用户档案级属性的函数。 这些函数会自动计算，以便能够跨细分、激活和个性化使用。 本指南说明如何使用实时客户用户档案API创建、视图、更新和删除计算属性。
 translation-type: tm+mt
-source-git-commit: 6ae96ab25bd7992fe93d15bfc16b58a2fe7b4b7c
+source-git-commit: 4ed2b80ebfd87f8920462ae0a918b01bb13d4210
 workflow-type: tm+mt
 source-wordcount: '2279'
 ht-degree: 2%
@@ -96,7 +96,7 @@ curl -X POST \
     "id": "2afcf410-450e-4a39-984d-2de99ab58877",
     "imsOrgId": "{IMS_ORG}",
     "sandbox": {
-        "sandboxId": "ff0f6870-c46d-11e9-8ca3-036939a64204",
+        "sandboxId": "{SANDBOX_ID}",
         "sandboxName": "prod",
         "type": "production",
         "default": true
@@ -420,7 +420,7 @@ curl -X GET \
 | `_page.pageSize` | 在结果页上返回的计算属性数。 如果`pageSize`等于`totalCount`，则表示只有一页结果，且已返回所有计算属性。 如果它们不相等，则可以访问其他页面的结果。 有关详细信息，请参阅`_links.next`。 |
 | `children` | 由一个或多个对象组成的数组，每个对象都包含单个计算属性的详细信息。 如果未定义计算属性，则`children`数组为空。 |
 | `id` | 在创建计算属性时自动分配给该属性的唯一、只读的、系统生成的值。 有关计算属性对象的组件的详细信息，请参阅本教程前面有关创建计算属性](#create-a-computed-attribute)的部分。[ |
-| `_links.next` | 如果返回计算属性的单页，则`_links.next`是空对象，如上面的示例响应所示。 如果您的组织有许多计算属性，您可以通过向`_links.next`值发出GET请求访问的多个页面上将返回这些属性。 |
+| `_links.next` | 如果返回计算属性的单页，则`_links.next`是空对象，如上面的示例响应所示。 如果您的组织有许多计算属性，您可以通过向`_links.next`值发出GET请求来访问的多个页面上会返回这些属性。 |
 
 ### 视图计算属性{#view-a-computed-attribute}
 
