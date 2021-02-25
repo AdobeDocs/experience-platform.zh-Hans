@@ -4,10 +4,10 @@ audience: user
 user-guide-title: Real-time Customer Profile 指南
 user-guide-description: 合并客户视图，跨渠道创建统一的客户互动视图。
 translation-type: tm+mt
-source-git-commit: cab7ba65cc62d8cab402bc23ea38c17d77841363
+source-git-commit: 08eff53f107549fab0f167a6c206b632f3c8c183
 workflow-type: tm+mt
-source-wordcount: '111'
-ht-degree: 20%
+source-wordcount: '122'
+ht-degree: 19%
 
 ---
 
@@ -20,7 +20,6 @@ ht-degree: 20%
 * [!DNL Profile] API {#api}
    * [概述](api/overview.md)
    * [入门指南](api/getting-started.md)
-   * [(Alpha)计算属性](api/computed-attributes.md)
    * [边缘投影](api/edge-projections.md)
    * [实体([!DNL Profile] 访问)](api/entities.md)
    * [导出作业([!DNL Profile] 导出)](api/export-jobs.md)
@@ -30,11 +29,16 @@ ht-degree: 20%
 * 用户档案UI指南{#ui}
    * [[!DNL Profile] UI指南](ui/user-guide.md)
    * [[!DNL Profile] 仪表板](ui/profile-dashboard.md)
-   * [[!DNL Profile] 详细自定义](ui/profile-customization.md)
+   * [[!DNL Profile] 详细信息自定义](ui/profile-customization.md)
    * [合并策略UI指南](ui/merge-policies.md)
    * [创建合并策略（视频）](video/create-merge-policies.md)
    * [合并模式UI指南](ui/union-schema.md)
    * [合并模式概述（视频）](video/union-schemas-overview.md)
+* (Alpha)计算属性{#computed-attributes}
+   * [概述](computed-attributes/overview.md)
+   * [计算属性API](computed-attributes/ca-api.md)
+   * [配置计算属性字段](computed-attributes/configure-api.md)
+   * [示例表达式](computed-attributes/expressions.md)
 * 教程 {#tutorials}
    * [将数据添加到 [!DNL Profile]](tutorials/add-profile-data.md)
    * [为服务配置数 [!DNL Profile] & [!DNL Identity] 据集](tutorials/dataset-configuration.md)
