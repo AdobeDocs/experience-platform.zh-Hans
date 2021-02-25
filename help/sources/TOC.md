@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 translation-type: tm+mt
-source-git-commit: 0e4fda4abf5c02df81b74f15d2fbcafb68548070
+source-git-commit: f3b27fbe75af7499f4ce43d8904d2f7e01384cb3
 workflow-type: tm+mt
-source-wordcount: '572'
+source-wordcount: '574'
 ht-degree: 12%
 
 ---
@@ -101,7 +101,7 @@ ht-degree: 12%
          - [Azure HDInsights上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/api/create/databases/spark.md)
          - [AzureData Explorer](tutorials/api/create/databases/data-explorer.md)
-         - [Azure Synapse分析](tutorials/api/create/databases/synapse-analytics.md)
+         - [azure synapse分析](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure表存储](tutorials/api/create/databases/ats.md)
          - [库奇巴斯](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery](tutorials/api/create/databases/bigquery.md)
@@ -148,6 +148,7 @@ ht-degree: 12%
    - [创建数据集连接](tutorials/api/create-dataset-base-connection.md)
    - [监视数据流](tutorials/api/monitor.md)
    - [更新连接](tutorials/api/update.md)
+   - [更新数据流](tutorials/api/update-dataflows.md)
    - [删除连接](tutorials/api/delete.md)
    - [删除数据流](tutorials/api/delete-dataflows.md)
 - UI教程{#ui-tutorials}
@@ -184,7 +185,7 @@ ht-degree: 12%
          - [Azure HDInsights上的Apache Hive](tutorials/ui/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/ui/create/databases/spark.md)
          - [AzureData Explorer](tutorials/ui/create/databases/data-explorer.md)
-         - [Azure Synapse分析](tutorials/ui/create/databases/synapse-analytics.md)
+         - [azure synapse分析](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure表存储](tutorials/ui/create/databases/ats.md)
          - [库奇巴斯](tutorials/ui/create/databases/couchbase.md)
          - [Google大查询](tutorials/ui/create/databases/bigquery.md)
