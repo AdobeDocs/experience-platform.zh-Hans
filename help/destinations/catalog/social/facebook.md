@@ -3,21 +3,15 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据散列的电子邮件激活Facebook活动的用户档案，以实现受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 28cfac3d7fed311d9eec01ef464cf921f44a10e9
+source-git-commit: bec44832a235dd3f9e2ee0f3ffc77854ee5784d7
 workflow-type: tm+mt
-source-wordcount: '1001'
+source-wordcount: '942'
 ht-degree: 3%
 
 ---
 
 
 # [!DNL Facebook] 连接
-
->[!IMPORTANT]
->
->我们当前正在将客户迁移到此目标的新版本[!DNL Facebook Custom Audience]。
->
-> 本文中的说明适用于这两个版本，并附有以下说明：在此迁移进行中，您只能在用户界面中看到[!DNL Facebook]目标的当前版本，其中您只能使用[!UICONTROL EMAIL]和[!UICONTROL EMAIL_LC_SHA_256]标识进行激活。
 
 激活[!DNL Facebook]活动的用户档案，以根据散列电子邮件进行受众定位、个性化和抑制。
 
