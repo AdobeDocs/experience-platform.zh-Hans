@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
 translation-type: tm+mt
-source-git-commit: a2470d44512821996a2d5ee44722cb24990d1054
+source-git-commit: c1fed1ff4be5f32a93b41a74bb4c541813907354
 workflow-type: tm+mt
-source-wordcount: '1069'
+source-wordcount: '1126'
 ht-degree: 7%
 
 ---
@@ -65,6 +65,16 @@ Adobe Experience Platform提供了多个仪表板，通过这些视图，您可�
 | 新的监视仪表板 | 您现在可以使用监控仪表板实现跨服务透明度，并为源数据摄取提供切实可行的洞察。 新的监控仪表板提供了从[!DNL Data Lake]到[!DNL Identity Service]和[!DNL Profile]处理的数据的全面视图，同时还允许您监控摄取率、成功和失败。 有关详细信息，请参阅有关[在UI](../../dataflows/ui/monitor-sources.md)中监视源数据流的教程。 |
 
 有关数据流的更多一般信息，请参阅[数据流概述](../../dataflows/home.md)。
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] 是预建的与目标平台的集成，允许从Adobe Experience Platform无缝激活数据。您可以使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例的数据。
+
+**新目标**
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [[!DNL LinkedIn Matched Audiences]](../../destinations/catalog/social/linkedin.md) | [!DNL LinkedIn Matched Audiences]连接允许您在[!DNL LinkedIn]社交平台中激活受众。 |
 
 ## [!DNL Experience Data Model (XDM) System] {#xdm}
 
