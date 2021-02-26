@@ -3,7 +3,7 @@ title: Adobe Experience Platform Web SDK中的IAB TCF 2.0支持
 description: 了解如何使用Adobe Experience Platform Web SDK支持IAB TCF 2.0同意首选项
 keywords: 同意；设置同意；用户档案隐私混合；体验事件隐私混合；隐私混合；IAB TCF 2.0；实时CDP；实时客户用户档案
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 1c6238a0cf72230e019fd10d9a72f30444bd9fb9
 workflow-type: tm+mt
 source-wordcount: '878'
 ht-degree: 0%
@@ -66,7 +66,7 @@ Adobe Audience Manager(AAM)包含对IAB TCF 2.0的支持，使您能够评估、
 
 如果尚未为客户保存同意首选项，则使用默认同意。 这意味着默认的同意选项可以控制Adobe Experience Platform Web SDK的行为并根据客户区域进行更改。
 
-例如，如果您的客户不在一般数据保护规定(GDPR)的管辖范围内，默认同意可设置为`in`，但在GDPR管辖范围内，默认同意可设置为`pending`。 您的云管理平台(CMP)可能会检测客户的区域，并将标记`gdprApplies`提供给IAB TCF 2.0。此标记可用于设置默认同意。
+例如，如果您的客户不在一般数据保护规定(GDPR)的管辖范围内，默认同意可设置为`in`，但在GDPR管辖范围内，默认同意可设置为`pending`。 您的同意管理平台(CMP)可能会检测客户的区域，并将标记`gdprApplies`提供给IAB TCF 2.0。此标记可用于设置默认同意。
 
 有关默认同意的详细信息，请参阅SDK配置文档中的[默认同意部分](../../fundamentals/configuring-the-sdk.md#default-consent)。
 
