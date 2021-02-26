@@ -3,21 +3,15 @@ keywords: Google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）中触及客户并与其重新互动。
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: bec44832a235dd3f9e2ee0f3ffc77854ee5784d7
 workflow-type: tm+mt
-source-wordcount: '1491'
+source-wordcount: '1432'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Google Customer Match] 连接
-
->[!IMPORTANT]
->
->我们当前正在将客户迁移到此目标的新版本。
->
-> 本文中的说明适用于这两个版本，并附有以下说明：在此迁移进行中，您只能在用户界面中看到[!DNL Google Customer Match]目标的当前版本，其中您只能使用[!UICONTROL EMAIL]和[!UICONTROL EMAIL_LC_SHA_256]标识进行激活。
 
 [Google客](https://support.google.com/google-ads/answer/6379332?hl=en) 户匹配允许您使用线上和线下数据，通过Google自有和运营的资产触及客户并与其重新互动，例如： [!DNL Search]、 [!DNL Shopping]、 [!DNL Gmail]和 [!DNL YouTube]。
 
