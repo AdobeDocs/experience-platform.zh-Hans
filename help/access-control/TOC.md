@@ -23,7 +23,7 @@ ht-degree: 36%
    * [管理产品用户档案的详细信息和其他服务](ui/details-and-services.md)
    * [创建新产品用户档案](ui/create-profile.md)
    * [管理产品用户档案的用户](ui/users.md)
-* 访问控制API {#api}
+* 访问控制 API {#api}
    * [入门指南](api/getting-started.md)
    * [列表权限和资源类型的名称](api/permissions-and-resource-types.md)
    * [视图有效策略](api/effective-policies.md)
