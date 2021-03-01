@@ -23,7 +23,7 @@ ht-degree: 23%
    - [Attribution AI入门](attribution-ai/getting-started.md)
    - [输入和输出](attribution-ai/input-output.md)
    - [用户界面指南](attribution-ai/user-guide.md)
-   - [发掘洞察](attribution-ai/discover-insights.md)
+   - [发现洞察](attribution-ai/discover-insights.md)
    - [下载分数](attribution-ai/download-scores.md)
    - [使用查询服务分析得分](attribution-ai/aai-query-service.md)
 - Content and Commerce AI(beta){#content-commerce-ai}
@@ -41,7 +41,7 @@ ht-degree: 23%
    - [输入和输出](customer-ai/input-output.md)
    - UI指南{#user-guide}
       - [配置实例](customer-ai/user-guide/configure.md)
-      - [发掘洞察](customer-ai/user-guide/discover-insights.md)
+      - [发现洞察](customer-ai/user-guide/discover-insights.md)
       - [使用客户人工智能分数创建细分](customer-ai/user-guide/create-segment.md)
       - [下载分数](customer-ai/user-guide/download-scores.md)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
