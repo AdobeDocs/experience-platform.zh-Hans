@@ -26,12 +26,12 @@ ht-degree: 52%
    * [平台上的数据质量](datasets/data-quality.md)
 * 目标 {#destinations}
    * [目标概述](destinations/overview.md)
-* 隐私和数据管理{#privacy}
+* 隐私和数据治理{#privacy}
    * [隐私概述](privacy/privacy-overview.md)
-   * [数据管理概述](privacy/data-governance-overview.md)
+   * [数据治理概述](privacy/data-governance-overview.md)
 * 配置文件 {#profile}
    * [用户档案概述](profile/profile-overview.md)
-   * [身份与身份命名空间](profile/identities-overview.md)
+   * [身份和身份命名空间](profile/identities-overview.md)
    * [合并策略](profile/merge-policies.md)
    * [用户档案查看器](profile/profile-viewer.md)
 * 区段 {#segmentation}
