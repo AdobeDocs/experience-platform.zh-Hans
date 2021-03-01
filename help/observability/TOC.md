@@ -14,7 +14,7 @@ ht-degree: 43%
 
 # 可观察性洞察 {#observability}
 
-* [可观性洞察概述](home.md)
+* [可观察性洞察概述](home.md)
 * 可观察性洞察API {#api}
    * [概述](api/overview.md)
    * [入门指南](api/getting-started.md)
