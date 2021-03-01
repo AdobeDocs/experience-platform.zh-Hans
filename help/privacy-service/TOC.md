@@ -13,15 +13,15 @@ ht-degree: 39%
 ---
 
 
-# Adobe Experience Platform Privacy Service{#privacy}
+# Adobe Experience Platform Privacy Service {#privacy}
 
 * [Privacy Service概述](home.md)
 * [Privacy Service和Experience Cloud应用程序](experience-cloud-apps.md)
-* [隐私请求的身份数据](identity-data.md)
+* [隐私请求的标识数据](identity-data.md)
 * [隐私JS库概述](js-library.md)
-* Privacy ServiceAPI {#api}
+* Privacy Service API {#api}
    * [入门指南](api/getting-started.md)
-   * [隐私工作](api/privacy-jobs.md)
+   * [隐私作业](api/privacy-jobs.md)
    * [同意](api/consent.md)
    * [附录](api/appendix.md)
 * Privacy ServiceUI {#ui}
