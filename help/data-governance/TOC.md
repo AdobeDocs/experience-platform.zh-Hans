@@ -15,7 +15,7 @@ ht-degree: 31%
 
 # Adobe Experience Platform数据治理{#data-governance}
 
-* [数据管理概述](home.md)
+* [数据治理概述](home.md)
 * 数据使用标签{#labels}
    * [概述](labels/overview.md)
    * [标签词汇表](labels/reference.md)
@@ -27,14 +27,14 @@ ht-degree: 31%
    * [在API中创建策略](policies/create.md)
 * 策略实施{#enforcement}
    * [概述](enforcement/overview.md)
-   * [自动执行](enforcement/auto-enforcement.md)
+   * [自动强制](enforcement/auto-enforcement.md)
    * [基于API的强制](enforcement/api-enforcement.md)
 * 策略服务API {#api}
    * [概述](api/overview.md)
    * [入门指南](api/getting-started.md)
    * [标签](api/labels.md)
    * [策略](api/policies.md)
-   * [营销操作](api/marketing-actions.md)
+   * [营销活动](api/marketing-actions.md)
    * [评估](api/evaluation.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
