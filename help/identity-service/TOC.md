@@ -21,12 +21,12 @@ ht-degree: 29%
    - [入门指南](api/getting-started.md)
    - [将字段标记为标识](api/label-identities.md)
    - [列表群集标识](api/list-cluster-identites.md)
-   - [列表身份的群集历史](api/list-cluster-history.md)
-   - [列表身份映射](api/list-identity-mappings.md)
+   - [身份的列表群集历史记录](api/list-cluster-history.md)
+   - [列表标识映射](api/list-identity-mappings.md)
    - [列表可用命名空间](api/list-namespaces.md)
    - [创建自定义命名空间](api/create-custom-namespace.md)
    - [列表标识的本机ID](api/list-native-id.md)
-- 标识服务UI {#ui}
+- Identity Service UI {#ui}
    - [标识图查看器](ui/identity-graph-viewer.md)
 - [ECID概述](ecid.md)
 - [疑难解答指南](troubleshooting-guide.md)
