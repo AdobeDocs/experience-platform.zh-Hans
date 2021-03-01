@@ -31,16 +31,16 @@ ht-degree: 17%
 - 最佳实践 {#best-practices}
    - [执行查询的一般指南](best-practices/writing-queries.md)
    - [数据外部重复数据删除](best-practices/deduplication.md)
-   - [体验事件查询示例](best-practices/experience-event-queries.md)
-   - [样本Adobe Analytics查询](best-practices/adobe-analytics.md)
-   - [样本Adobe Target查询](best-practices/adobe-target.md)
+   - [体验事件查询](best-practices/experience-event-queries.md)
+   - [示例Adobe Analytics查询](best-practices/adobe-analytics.md)
+   - [示例Adobe Target查询](best-practices/adobe-target.md)
 - SQL引用{#sql}
    - [SQL概述](sql/overview.md)
    - [SQL语法](sql/syntax.md)
-   - [Adobe定义函数](sql/adobe-defined-functions.md)
+   - [Adobe定义的函数](sql/adobe-defined-functions.md)
    - [Spark SQL函数](sql/spark-sql-functions.md)
    - [元数据命令](sql/metadata.md)
-   - [准备的声明](sql/prepared-statements.md)
+   - [准备的陈述](sql/prepared-statements.md)
 - 将客户端连接到查询服务{#clients}
    - [客户端连接概述](clients/overview.md)
    - [Aqua Data Studio](clients/aqua-data-studio.md)
