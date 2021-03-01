@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK支持客户同意首选项
 description: 了解如何使用Adobe Experience Platform Web SDK支持同意首选项。
 keywords: 同意；默认同意；默认同意；setConnence;用户档案隐私混合；体验事件隐私混合；隐私混合；
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 308c10eb0d1f78dad2b8b6158f28d0384a65c78c
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '753'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 如果用户选择用于所有目的，则允许SDK执行以下任务:
 
 * 在Adobe的服务器之间发送数据。
-* 读取和写入Cookie或Web存储项（用户的选择加入首选项除外）。
+* 读写cookie或Web存储项。
 
 如果用户选择出于所有目的，则SDK不执行任何这些任务。
 
