@@ -26,7 +26,7 @@ ht-degree: 22%
    * [角色和项目阶段（视频）](video/roles-project-phases.md)
 * Experience PlatformUI {#platform-ui}
    * [平台UI指南](ui-guide.md)
-   * [平台UI浏览（视频）](video/platform-ui.md)
+   * [平台UI导览（视频）](video/platform-ui.md)
    * [工作流UI指南](workflows.md)
    * [浏览器和语言支持](browser-language-support.md)
 * Experience PlatformAPI {#platform-apis}
@@ -40,12 +40,12 @@ ht-degree: 22%
    * [应用程序服务](application-services.md)
    * [应用程序和智能服务（视频）](video/application-intelligent-services.md)
    * [平台与Experience Cloud（视频）集成](video/experience-cloud-integrations.md)
-* 管理、隐私和安全{#governance-privacy-security}
+* 治理、隐私和安全{#governance-privacy-security}
    * [概述](./governance-privacy-security/overview.md)
    * 同意管理 {#consent}
       * IAB TCF 2.0 {#iab}
          * [概述](./governance-privacy-security/consent/iab/overview.md)
-         * [配置数据集以捕获同意和偏好数据](./governance-privacy-security/consent/iab/dataset.md)
+         * [配置数据集以捕获同意和首选项数据](./governance-privacy-security/consent/iab/dataset.md)
 * [许可证使用仪表板](license-usage-dashboard.md)
 * [疑难解答指南](troubleshooting.md)
 * [Gen2数据湖迁移](adls2-gen2-migration.md)
