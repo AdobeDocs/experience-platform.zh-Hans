@@ -3,9 +3,9 @@ title: 执行Adobe Experience Platform Web SDK命令
 description: 了解如何执行Experience Platform Web SDK命令
 keywords: 执行命令；commandName;Promies;getLibraryInfo；响应对象；同意；
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 308c10eb0d1f78dad2b8b6158f28d0384a65c78c
 workflow-type: tm+mt
-source-wordcount: '417'
+source-wordcount: '416'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,8 @@ ht-degree: 2%
 
 # 执行命令
 
-在您的网页上实现基本代码后，您可以开始使用SDK执行命令。 执行命令之前，您无需等待从服务器加载外部文件(alloy.js)。 如果SDK尚未完成加载，则命令将尽快排队并由SDK进行处理。
+
+在您的网页上实现基本代码后，您可以开始使用SDK执行命令。 执行命令之前，您无需等待从服务器加载外部文件(`alloy.js`)。 如果SDK尚未完成加载，则命令将尽快排队并由SDK进行处理。
 
 使用以下语法执行命令。
 
