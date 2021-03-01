@@ -7,12 +7,12 @@ translation-type: tm+mt
 source-git-commit: 4e358fda1c8f7aebe57a009a146b8b73cf88e169
 workflow-type: tm+mt
 source-wordcount: '106'
-ht-degree: 18%
+ht-degree: 19%
 
 ---
 
 
-# 目录和数据集 {#catalog}
+# 目录和数据集{#catalog}
 
 * [目录服务概述](home.md)
 * 目录服务API {#api}
