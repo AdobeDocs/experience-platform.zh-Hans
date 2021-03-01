@@ -16,5 +16,5 @@ ht-degree: 48%
 
 * [数据准备概述](home.md)
 * [数据准备功能](functions.md)
-* [日期时间对象](dates.md)
+* [Datetime对象](dates.md)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
