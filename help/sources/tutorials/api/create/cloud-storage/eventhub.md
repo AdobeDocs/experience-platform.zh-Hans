@@ -6,7 +6,7 @@ topic: 概述
 type: 教程
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Azure事件中心帐户。
 translation-type: tm+mt
-source-git-commit: 4f3d88e1241fd19dc9963f34dd60086ae2135557
+source-git-commit: 643da0981b3c955a9f66b6542ddaf2bda7398a2e
 workflow-type: tm+mt
 source-wordcount: '568'
 ht-degree: 2%
@@ -92,9 +92,9 @@ curl -X POST \
         "auth": {
             "specName": "Azure EventHub authentication credentials",
             "params": {
-                "sasKeyName": "sasKeyName",
-                "sasKey": "sasKey",
-                "namespace": "namespace"
+                "sasKeyName": "{SAS_KEY_NAME}",
+                "sasKey": "{SAS_KEY}",
+                "namespace": "{NAMESPACE}"
             }
         },
         "connectionSpec": {
