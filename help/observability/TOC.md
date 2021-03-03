@@ -3,11 +3,12 @@ product: experience-platform
 audience: user
 user-guide-title: Observability Insights 指南
 user-guide-description: 通过使用统计指标和活动通知监控平台事件。
+feature: 数据管理
 translation-type: tm+mt
-source-git-commit: 92e3edaba5793d18e826d3e3f3151ba8a51fce53
+source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt
-source-wordcount: '53'
-ht-degree: 43%
+source-wordcount: '55'
+ht-degree: 41%
 
 ---
 
