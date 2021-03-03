@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK 扩展 概述
 description: 了解Adobe Experience Platform Web SDK扩展for Adobe Experience Platform Launch
 translation-type: tm+mt
-source-git-commit: 18e511337eaa8b6eb7785b1ee5f1ce2366ddd7c7
+source-git-commit: 2a0ae9541a8bb2bb985d43a402d0842e73b23c81
 workflow-type: tm+mt
-source-wordcount: '560'
-ht-degree: 19%
+source-wordcount: '553'
+ht-degree: 14%
 
 ---
 
@@ -32,17 +32,17 @@ Adobe Experience Platform Web SDK扩展通过Adobe Experience Platform Edge Netw
 
 ## 常规配置选项
 
-页面顶部的配置选项告诉Adobe Experience Platform数据的路由位置以及服务器上应使用的配置。
+页面顶部的配置选项告诉Adobe Experience Platform将数据路由到何处以及在服务器上使用的配置。
 
 ### [!UICONTROL 名称]
 
-Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 可以利用这一点来通过单个 Platform Launch 配置向多个组织发送数据。
+Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名称用于使用单个Platform launch配置向多个组织发送数据。
 
 扩展名的名称默认为“[!DNL alloy]”。 但是，您可以将实例名称更改为任何有效的 JavaScript 对象名称。
 
 ### **[!UICONTROL IMS 组织 ID]**
 
-[!UICONTROL IMS组织ID]是您希望在Adobe发送数据的组织。 大多数情况下，您应使用自动填充的默认值。当页面上有多个实例时，请用要向其发送数据的第二个组织的值填充此字段。
+[!UICONTROL IMS组织ID]是您希望在Adobe发送数据的组织。 大多数情况下，请使用自动填充的默认值。 当页面上有多个实例时，请用要向其发送数据的第二个组织的值填充此字段。
 
 ### **[!UICONTROL 边缘域]**
 
@@ -50,7 +50,7 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 可以�
 
 ## [!UICONTROL 边缘配置]
 
-向Adobe Experience Platform Edge Network发送请求时，会使用边缘配置ID引用服务器端配置。 这样，您无需在网站上更改代码即可更新配置。
+向Adobe Experience Platform Edge Network发送请求时，会使用边缘配置ID引用服务器端配置。 您无需在网站上更改代码即可更新配置。
 
 有关详细信息，请参阅[边缘配置](../fundamentals/edge-configuration.md)指南。
 
@@ -61,5 +61,5 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 可以�
 | [!UICONTROL 默认同意级别] | 描述 |
 | --- | --- |
 | [!UICONTROL 入] | 选择加入。 如果默认情况下您表示客户同意，并且仅遵守退出信号，则使用此选项。 |
-| [!UICONTROL 待定] | 在发送选择加入信号之前，假定具有“待定”同意的客户已选择退出。 如果您需要明确的客户同意您的业务运营，请使用此选项。 |
+| [!UICONTROL 待定] | 在发送选择加入信号之前，具有“待定”同意的客户会选择退出。 如果您需要明确的客户同意您的业务运营，请使用此选项。 |
 | [!UICONTROL 由数据元素提供] | 默认同意级别由您定义的单独数据元素决定。 使用此选项时，必须使用提供的下拉菜单指定数据元素。 |
