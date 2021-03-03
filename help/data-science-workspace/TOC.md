@@ -1,14 +1,15 @@
 ---
-product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 数据科学工作区帮助
 breadcrumb-title: Data Science Workspace 指南
 user-guide-description: 借助机器学习技术，使用 Adobe Sensei 和 JupyterLab Notebooks 开发、训练模型和配方，并进行评分。
+feature: 数据科学工作区
+solution: Experience Platform, Intelligent Services
 translation-type: tm+mt
-source-git-commit: fe2872519cfeda8024a5ad62f6a71e854822f858
+source-git-commit: a26b07302a47ceb0ba2af5267e7995118b70683f
 workflow-type: tm+mt
-source-wordcount: '237'
-ht-degree: 16%
+source-wordcount: '240'
+ht-degree: 17%
 
 ---
 
