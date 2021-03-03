@@ -4,11 +4,12 @@ audience: user
 user-guide-title: Adobe Experience Platform 仪表板帮助
 breadcrumb-title: 仪表板指南
 user-guide-description: 通过可自定义的仪表板实现 Experience Platform 数据可视化。
+feature: 数据管理
 translation-type: tm+mt
-source-git-commit: 2f2459c1c88c97a3ab322b08ee178463fbb4a592
+source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt
-source-wordcount: '34'
-ht-degree: 50%
+source-wordcount: '36'
+ht-degree: 47%
 
 ---
 
