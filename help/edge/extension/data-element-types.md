@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展中的数据元素类型
 description: 了解Adobe Experience Platform Launch中Adobe Experience Platform Web SDK扩展提供的不同数据元素类型。
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 2a0ae9541a8bb2bb985d43a402d0842e73b23c81
 workflow-type: tm+mt
-source-wordcount: '318'
-ht-degree: 78%
+source-wordcount: '305'
+ht-degree: 47%
 
 ---
 
@@ -22,18 +22,18 @@ ht-degree: 78%
 
 ## 标识映射
 
-标识映射数据元素允许您根据您指定的其他数据元素或其他值创建标识。您创建的所有标识都必须绑定回到相应的命名空间。此数据元素提供一个下拉列表，其中显示所有默认的命名空间以及您创建的任何内容。
+标识映射数据元素允许您根据您指定的其他数据元素或其他值创建标识。您创建的所有标识都必须绑定回到相应的命名空间。此命名空间元素提供一个下拉列表，显示所有默认数据以及您创建的任何数据。
 
 ![](./assets/identity-map-data-element.png)
 
 ## XDM 对象
 
-您发送到 Adobe Experience Platform Web SDK 的任何数据都应采用 XDM 格式。使用 XDM 对象数据元素可以更轻松地格式化数据。首次打开此数据元素时，请选择正确的 Adobe Experience Platform 沙箱和架构。选择架构后，您将会看到架构的结构，可以轻松地在其中填写。
+使用XDM格式将任何数据发送到Adobe Experience Platform Web SDK。 使用 XDM 对象数据元素可以更轻松地格式化数据。首次打开此数据元素时，请选择正确的 Adobe Experience Platform 沙箱和架构。选择模式后，您会看到模式的结构，您可以轻松填写。
 
 ![](./assets/XDM-object.png)
 
-请注意，打开架构的某些字段（如 `web.webPageDetails.URL`）时，会自动收集一些项目。即使自动收集了多个项目，您还是可以选择根据需要覆盖任何项目。所有值都可以手动填写或使用其他数据元素进行填写。
+请注意，打开架构的某些字段（如 `web.webPageDetails.URL`）时，会自动收集一些项目。即使自动收集了多个项目，您也可以根据需要覆盖任何项目。 所有值都可以手动填写或使用其他数据元素进行填写。
 
 >[!NOTE]
 >
->您只需填写自己有兴趣收集的信息即可。将数据发送到解决方案时，会忽略未填写的任何项目。
+>只填写您感兴趣收集的信息。 将数据发送到解决方案时，将忽略未填写的任何内容。
