@@ -4,11 +4,12 @@ audience: user
 user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 此文档列表Adobe Experience Platform目标的目录
+feature: 目标
 translation-type: tm+mt
-source-git-commit: db2e5d51a5ed07b91997df8a566272c86a7c1708
+source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt
-source-wordcount: '455'
-ht-degree: 10%
+source-wordcount: '456'
+ht-degree: 11%
 
 ---
 
