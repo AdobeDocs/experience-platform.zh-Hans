@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: efb66b6374f8c0579d90f63452528353f4d1418d
+source-git-commit: 789534c02746ed24dfa01c7b471cdf3be407711e
 workflow-type: tm+mt
-source-wordcount: '2164'
+source-wordcount: '2184'
 ht-degree: 0%
 
 ---
@@ -147,6 +147,9 @@ If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary id
 >[!IMPORTANT]
 > 
 >[!DNL Adobe Experience Platform] 以每个文件500万条记录（行）自动拆分导出文件。每行表示一个用户档案。
+>
+>拆分文件名后面附加一个数字，指示文件是较大导出的一部分，如下所示：`filename.csv`、`filename_2.csv`、`filename_3.csv`。
+
 
 要为区段添加计划，请选择&#x200B;**[!UICONTROL 创建计划]**。
 
