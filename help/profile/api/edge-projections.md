@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API
 title: 边缘投影API端点
-topic: guide
-type: Documentation
-description: Adobe Experience Platform使您能够在多个渠道实时为客户提供协调、一致、个性化的体验，让适当的数据随时可用并随着变化不断更新。 这是通过使用边缘来完成的，边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。
+topic: 指南
+type: 文档
+description: Adobe Experience Platform使您能够在多个渠道中实时为客户提供协调、一致和个性化的体验，方法是随时提供正确的数据，并在发生变化时不断更新。 这是通过使用边缘来实现的，边缘是地理位置上放置的服务器，它存储数据并使应用程序可以很容易地访问它。
 translation-type: tm+mt
-source-git-commit: e6ecc5dac1d09c7906aa7c7e01139aa194ed662b
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '1961'
+source-wordcount: '1966'
 ht-degree: 2%
 
 ---
@@ -15,23 +15,23 @@ ht-degree: 2%
 
 # 边缘投影配置和目标端点
 
-为了跨多个渠道为客户实时提供协调、一致、个性化的体验，需要随时提供正确的数据，并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘，实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够方便地访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以便实时提供个性化的客户体验。 数据通过投影被路由到边缘，投影目标定义要向其发送数据的边缘，投影配置定义要在边缘上提供的特定信息。 本指南提供使用[!DNL Real-time Customer Profile] API处理边缘投影的详细说明，包括目标和配置。
+为了实时为跨多个渠道的客户提供协调、一致和个性化的体验，需要随着变化随时提供并不断更新正确的数据。 Adobe Experience Platform通过使用所谓的边缘实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够轻松访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以实时提供个性化的客户体验。 通过投影将数据路由到边缘，投影目标定义要向其发送数据的边缘，以及定义将在边缘上提供的特定信息的投影配置。 本指南提供了有关使用[!DNL Real-time Customer Profile] API处理边缘投影（包括目标和配置）的详细说明。
 
 ## 入门指南
 
-本指南中使用的API端点是[[!DNL Real-time Customer Profile API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)的一部分。 在继续之前，请查看[快速入门指南](getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
+本指南中使用的API端点是[[!DNL Real-time Customer Profile API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)的一部分。 在继续之前，请查阅[快速入门指南](getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
 
 >[!NOTE]
 >
->包含有效负荷(POST、PUT、PATCH)的请求需要`Content-Type`头。 此文档中使用了多个`Content-Type`。 请特别注意示例调用中的标头，以确保您对每个请求使用正确的`Content-Type`。
+>包含有效负荷(POST、PUT、PATCH)的请求需要`Content-Type`标头。 此文档中使用了多个`Content-Type`。 请特别注意示例调用中的标头，以确保您对每个请求使用正确的`Content-Type`。
 
 ## 投影目标
 
-通过指定要发送数据的位置，可以将投影布线到一个或多个边缘。 创建的每个投影目标都有一个唯一的ID，然后用于创建投影配置。
+通过指定要发送数据的位置，可以将投影路由到一个或多个边缘。 创建的每个投影目标都有一个唯一的ID，然后该ID用于创建投影配置。
 
 ### 列表所有目标
 
-您可以通过向`/config/destinations`端点发出列表请求，来GET已为组织创建的边缘目标。
+您可以通过向`/config/destinations`端点发出GET请求，列表已为您的组织创建的边缘目标。
 
 **API格式**
 
@@ -52,11 +52,11 @@ curl -X GET \
 
 **响应**
 
-该响应包括一个`projectionDestinations`数组，每个目标的详细信息显示为该数组中的单个对象。 如果未配置投影，`projectionDestinations`阵列将返回空。
+响应包括一个`projectionDestinations`数组，每个目标的详细信息显示为该数组中的单个对象。 如果未配置任何投影，`projectionDestinations`数组将返回空。
 
 >[!NOTE]
 >
->此响应已缩短，只显示两个目标。
+>此响应已缩短，但仅显示两个目标。
 
 ```json
 {
@@ -106,9 +106,9 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `_links.self.href` | 在顶级，匹配用于发出GET请求的路径。 在每个目标对象中，此路径可用于GET请求中，以直接查找特定目标的详细信息。 |
-| `id` | 在每个目标对象中，`"id"`显示由系统生成的用于目标的只读唯一ID。 在引用特定目标和创建投影配置时使用此ID。 |
+| `id` | 在每个目标对象中，`"id"`显示目标的只读、系统生成的唯一ID。 在引用特定目标和创建投影配置时使用此ID。 |
 
-有关单个目标的属性的详细信息，请参见[创建目标](#create-a-destination)一节。
+有关单个目标的属性的详细信息，请参见有关创建目标](#create-a-destination)的部分。[
 
 ### 创建目标{#create-a-destination}
 
@@ -126,7 +126,7 @@ POST /config/destinations
 
 >[!NOTE]
 >
->创建目标的POST请求需要特定的`Content-Type`头，如下所示。 使用不正确的`Content-Type`头将导致HTTP状态415（不支持的媒体类型）错误。
+>创建目标的POST请求需要特定的`Content-Type`头，如下所示。 使用不正确的`Content-Type`标头会导致HTTP状态415（不支持的媒体类型）错误。
 
 ```shell
 curl -X POST \
@@ -148,14 +148,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| `type` **（必需）** | 要创建的目标类型。 唯一接受的值“EDGE”会创建边缘目标。 |
-| `dataCenters` **（必需）** | 一个字符串数组，它列表要布线投影的边缘。 可能包含以下一个或多个值：“OR1”-美国西部，“VA5”-美国东部，“NLD1”- EMEA。 |
-| `ttl` **（必需）** | 指定投影到期。 接受的值范围：600至604800。 默认值：3600。 |
-| `replicationPolicy` **（必需）** | 定义从集线器到边缘的数据复制行为。  支持的值：主动、被动。 默认值：反应。 |
+| `type` **（必需）** | 要创建的目标类型。 唯一可接受的值“EDGE”会创建边缘目标。 |
+| `dataCenters` **（必需）** | 一个字符串数组，它列表要朝其传送投影的边缘。 可能包含以下一个或多个值：“OR1” — 美国西部，“VA5” — 美国东部，“NLD1” — EMEA。 |
+| `ttl` **（必需）** | 指定投影过期。 可接受的值范围：600至604800。 默认值：3600。 |
+| `replicationPolicy` **（必需）** | 定义从集线器到边缘的数据复制行为。  支持的值：主动、被动。 默认值：被动。 |
 
 **响应**
 
-成功的响应会返回新创建的边缘目标的详细信息，包括只读的、由系统生成的唯一ID(`id`)。
+成功的响应返回新创建的边缘目标的详细信息，包括只读的、系统生成的唯一ID(`id`)。
 
 ```json
 {
@@ -177,11 +177,11 @@ curl -X POST \
 |---|---|
 | `self.href` | 此路径用于直接查找(GET)目标，也可用于更新(PUT)或删除(DELETE)目标。 |
 | `id` | 目标的只读、系统生成的唯一ID。 此ID用于直接引用目标，并在创建投影配置时使用。 |
-| `version` | 此只读值显示目标的当前版本。 更新目标后，版本号会自动递增。 |
+| `version` | 此只读值显示目标的当前版本。 更新目标时，版本号会自动增加。 |
 
 ### 视图目标
 
-如果您知道投影目标的唯一ID，则可以执行查找请求以视图其详细信息。 这是通过向`/config/destinations`端点发出GET请求并在请求路径中包含目标的ID来完成的。
+如果您知道投影目标的唯一ID，则可以执行查找请求以视图其详细信息。 通过向`/config/destinations`端点发出GET请求并在请求路径中包含目标的ID来完成此操作。
 
 **API格式**
 
@@ -228,11 +228,11 @@ curl -X GET \
 
 ### 更新目标
 
-通过向`/config/destinations`端点发出PUT请求并在请求路径中包含要更新的目标的ID，可以更新现有目标。 此操作实质上是重写目标，因此在请求主体中必须提供与创建新目标时提供的相同属性。
+通过向`/config/destinations`端点发出PUT请求并在请求路径中包含要更新的目标的ID，可以更新现有目标。 此操作实质上是重写目标，因此，在请求主体中必须提供与创建新目标时提供的相同属性。
 
 >[!CAUTION]
 >
->对更新请求的API响应是即时的，但是对预测所做的更改是异步应用的。 换句话说，在对目标的定义进行更新和应用该定义之间存在时间差。
+>对更新请求的API响应是即时的，但对预测的更改是异步应用的。 换句话说，在对目标的定义进行更新和应用目标的定义之间存在时间差。
 
 **API格式**
 
@@ -250,7 +250,7 @@ PUT /config/destinations/{DESTINATION_ID}
 
 >[!IMPORTANT]
 >
->PUT请求需要特定的`Content-Type`头，如下所示。 使用不正确的`Content-Type`头将导致HTTP状态415（不支持的媒体类型）错误。
+>PUT请求需要特定的`Content-Type`标头，如下所示。 使用不正确的`Content-Type`标头会导致HTTP状态415（不支持的媒体类型）错误。
 
 ```shell
 curl -X PUT \
@@ -298,11 +298,11 @@ curl -X PUT \
 
 ### 删除目标
 
-如果您的组织不再需要投影目标，可以通过向`/config/destinations`端点发出DELETE请求并在请求路径中包含要删除的目标的ID来删除该目标。
+如果您的组织不再需要投影目标，则可以通过向`/config/destinations`端点发出DELETE请求并在请求路径中包含要删除的目标ID来删除该目标。
 
 >[!CAUTION]
 >
->对删除请求的API响应是即时的，但边缘上数据的实际更改是异步进行的。 换言之，用户档案数据将从所有边缘（投影目标中指定的`dataCenters`）中删除，但该过程需要时间来完成。
+>对删除请求的API响应是即时的，但是边缘上数据的实际更改是异步进行的。 换句话说，用户档案数据将从所有边缘（在投影目标中指定的`dataCenters`）中删除，但完成该过程需要时间。
 
 **API格式**
 
@@ -328,15 +328,15 @@ curl -X DELETE \
 
 **响应**
 
-删除请求返回HTTP状态204（无内容）和空的响应主体。 您可以通过按目标ID对目标执行查找请求来确认删除成功。 查找应返回HTTP状态404（未找到）。
+删除请求返回HTTP状态204（无内容）和空的响应体。 您可以通过按目标ID对目标执行查找请求来确认删除是否成功。 查找应返回HTTP状态404（未找到）。
 
 ## 投影配置
 
-投影配置提供关于每个边缘上哪些数据可用的信息。 投影不是将完整的[!DNL Experience Data Model](XDM)模式投影到边缘，而是只提供模式中的特定数据或字段。 您的组织可以为每个XDM模式定义多个投影配置。
+投影配置提供关于每个边缘上应提供哪些数据的信息。 投影不是将完整的[!DNL Experience Data Model](XDM)模式投影到边缘，而是只提供来自该模式的特定数据或场。 您的组织可以为每个XDM模式定义多个投影配置。
 
 ### 列表所有投影配置
 
-您可以通过向`/config/projections`端点发出列表请求，来GET为组织创建的所有投影配置。 您还可以向请求路径添加可选参数以访问特定模式的投影配置或按其名称查找单个投影。
+您可以通过向`/config/projections`端点发出GET请求，列表为您的组织创建的所有投影配置。 您还可以向请求路径添加可选参数以访问特定模式的投影配置或按其名称查找单个投影。
 
 **API格式**
 
@@ -353,11 +353,11 @@ GET /config/projections?schemaName={SCHEMA_NAME}&name={PROJECTION_NAME}
 
 >[!NOTE]
 >
->`schemaName` 当使用参数时 `name` 是必需的，因为投影配置名称仅在模式类的上下文中是唯一的。
+>`schemaName` 当使用参数时， `name` 是必需的，因为投影配置名称仅在模式类的上下文中是唯一的。
 
 **请求**
 
-以下请求列表与[!DNL Experience Data Model]模式类[!DNL XDM Individual Profile]关联的所有投影配置。 有关XDM及其在[!DNL Platform]中的角色的详细信息，请首先阅读[ XDM系统概述](../../xdm/home.md)。
+以下请求列表与[!DNL Experience Data Model]模式类[!DNL XDM Individual Profile]关联的所有投影配置。 有关XDM及其在[!DNL Platform]中的作用的详细信息，请首先阅读[ XDM系统概述](../../xdm/home.md)。
 
 ```shell
 curl -X GET \
@@ -370,7 +370,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回根`_embedded`属性中包含在`projectionConfigs`数组中的投影配置列表。 如果未为您的组织进行投影配置，`projectionConfigs`阵列将为空。
+成功的响应返回包含在`projectionConfigs`数组中的根`_embedded`属性中的投影配置列表。 如果尚未为您的组织建立投影配置，则`projectionConfigs`阵列将为空。
 
 ```json
 {
@@ -422,7 +422,7 @@ curl -X GET \
 
 ### 创建投影配置
 
-您可以创建(POST)新的投影配置，该配置将指示哪些XDM字段在边缘上可用。
+您可以创建(POST)新的投影配置，以指示在边缘上使用哪些XDM字段。
 
 **API格式**
 
@@ -438,7 +438,7 @@ POST /config/projections?schemaName={SCHEMA_NAME}
 
 >[!NOTE]
 >
->创建配置的POST请求需要特定的`Content-Type`头，如下所示。 使用不正确的`Content-Type`头将导致HTTP状态415（不支持的媒体类型）错误。
+>创建配置的POST请求需要特定的`Content-Type`头，如下所示。 使用不正确的`Content-Type`标头会导致HTTP状态415（不支持的媒体类型）错误。
 
 ```shell
 curl -X POST \
@@ -457,13 +457,13 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| `selector` | 一个字符串，其中包含要复制到边的模式中的属性列表。 此文档的[选择器](#selectors)部分提供了有关使用选择器的最佳实践。 |
+| `selector` | 一个字符串，包含要复制到边缘的模式中的属性列表。 此文档的[选择器](#selectors)部分提供了使用选择器的最佳实践。 |
 | `name` | 新投影配置的描述性名称。 |
 | `destinationId` | 数据将投影到的边缘目标的标识符。 |
 
 **响应**
 
-成功的响应会返回新创建的投影配置的详细信息。
+成功的响应返回新创建的投影配置的详细信息。
 
 ```json
 {
@@ -503,25 +503,25 @@ curl -X POST \
 
 ## 选择器{#selectors}
 
-选择器是XDM字段名称的逗号分隔列表。 在投影配置中，选择器指定要包括在投影中的属性。 `selector`参数值的格式松散地基于XPath语法。 支持的语法概述如下，并提供了其他示例以供参考。
+选择器是XDM字段名称的逗号分隔列表。 在投影配置中，选择器指定要包括在投影中的属性。 `selector`参数值的格式基于XPath语法松散。 支持的语法概述如下，并提供了更多示例供参考。
 
 ### 支持的语法
 
 * 使用逗号选择多个字段。 请勿使用空格。
 * 使用点记号选择嵌套字段。
    * 例如，要选择嵌套在名为`foo`的字段中的名为`field`的字段，请使用选择器`foo.field`。
-* 当包含包含子字段的字段时，默认情况下也会投影所有子字段。 但是，可以使用括号`"( )"`过滤返回的子字段。
-   * 例如，`addresses(type,city.country)`仅返回每个`addresses`阵列元素的地址类型和地址城市所在的国家／地区。
-   * 以上示例等效于`addresses.type,addresses.city.country`。
+* 当包含包含子字段的字段时，默认情况下，所有子字段也会被投影。 但是，可以使用括号`"( )"`过滤返回的子字段。
+   * 例如，`addresses(type,city.country)`仅返回每个`addresses`数组元素的地址类型和地址城市所在的国家/地区。
+   * 上例等效于`addresses.type,addresses.city.country`。
 
 >[!NOTE]
 >
->引用子字段时支持点记号和圆括号记号。 但是，最好使用点记号，因为它更简洁，并更好地说明字段层次结构。
+>引用子字段时，支持点记号和圆括号记号。 但是，最好使用点记号，因为它更简洁，并更好地说明字段层次结构。
 
-* 选择器中的每个字段都指定为相对于响应的根。
+* 选择器中的每个字段都是相对于响应的根指定的。
    * 如果数据是资源集合，则投影将包括资源数组。
-   * 如果数据是单个资源，则投影将包括与该资源相关的字段。
-   * 如果您选择的字段是（或是）数组的一部分，则投影将包括该数组中所有元素的选定部分。
+   * 如果数据是单个资源，则投影将包含相对于该资源的字段。
+   * 如果您选择的字段是（或是数组的一部分）数组，则投影将包括数组中所有元素的选定部分。
 
 ### 选择器参数示例
 
@@ -541,7 +541,7 @@ curl -X POST \
 
 **地址**
 
-返回`addresses`数组中的所有元素，包括每个元素中的所有字段，但不返回其他字段。
+返回`addresses`数组中的所有元素，包括每个元素中的所有字段，但没有其他字段。
 
 ```json
 {
@@ -566,7 +566,7 @@ curl -X POST \
 }
 ```
 
-**person.lastName,addresses**
+**person.lastName，addresses**
 
 返回`person.lastName`字段和`addresses`数组中的所有元素。
 
@@ -621,9 +621,9 @@ curl -X POST \
 
 >[!NOTE]
 >
->每当返回嵌套字段时，投影都包括封闭的父对象。 除非也明确选择父字段，否则父字段不包括任何其他子字段。
+>每当返回嵌套字段时，投影都包括封闭的父对象。 除非也显式选择父字段，否则父字段不包括任何其他子字段。
 
-**地址（类型，城市）**
+**addresses(type，city)**
 
 仅返回`addresses`数组中每个元素的`type`和`city`字段的值。 每个`addresses`元素中包含的所有其他子字段都被过滤掉。
 
@@ -650,4 +650,4 @@ curl -X POST \
 
 ## 后续步骤
 
-本指南向您展示了配置投影和目标所涉及的步骤，包括如何正确设置`selector`参数的格式。 您现在可以根据组织的需求新建投影目标和配置。
+本指南向您展示了配置投影和目标所涉及的步骤，包括如何正确设置`selector`参数的格式。 现在，您可以根据组织的需求新建投影目标和配置。
