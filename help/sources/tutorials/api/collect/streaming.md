@@ -6,9 +6,9 @@ topic: 概述
 type: 教程
 description: 本教程介绍了使用源连接器和API检索流数据并将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: b8f7f6e7f110dc9ebd025cd594fd1a54126ccdf3
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '1305'
+source-wordcount: '1306'
 ht-degree: 2%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 2%
    - [模式合成的基础](../../../../xdm/schema/composition.md):了解XDM模式的基本构建基块，包括模式构成的主要原则和最佳做法。
    - [模式 Registry开发人员指南](../../../../xdm/api/getting-started.md):包括成功执行对模式注册表API的调用所需了解的重要信息。这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（特别要注意“接受”标头及其可能的值）。
 - [[!DNL Catalog Service]](../../../../catalog/home.md):目录是数据位置和谱系的记录系 [!DNL Experience Platform]统。
-- [[!DNL Streaming ingestion]](../../../../ingestion/streaming-ingestion/overview.md):流式摄取 [!DNL Platform] 为用户提供了一种将数据从客户端和服务器端设备实时发 [!DNL Experience Platform] 送到的方法。
+- [[!DNL Streaming ingestion]](../../../../ingestion/streaming-ingestion/overview.md):流式摄取 [!DNL Platform] 为用户提供了将数据从客户端和服务器端设备实时发送到 [!DNL Experience Platform] 的方法。
 - [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了使用[!DNL Flow Service] API成功收集流数据所需了解的其他信息。
