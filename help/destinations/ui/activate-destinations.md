@@ -1,14 +1,14 @@
 ---
 keywords: 激活目标；激活目标；激活数据
 title: 将用户档案和区段激活到目标
-type: Tutorial
+type: 教程
 seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: efb66b6374f8c0579d90f63452528353f4d1418d
 workflow-type: tm+mt
-source-wordcount: '2140'
+source-wordcount: '2164'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 # 将用户档案和区段激活到目标
 
-通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
+通过将区段映射到目标，激活[!DNL Adobe Experience Platform]中的数据。 要完成此操作，请按照以下步骤操作。
 
 ## 先决条件 {#prerequisites}
 
@@ -38,7 +38,9 @@ ht-degree: 0%
 
 ![activate-flow](../assets/ui/activate-destinations/activate-flow.png)
 
-请注意，如果目标已存在激活工作流，则您可以看到当前正在激活到目标的区段。 选择右边栏中的&#x200B;**[!UICONTROL 编辑激活]**，然后按照以下步骤修改激活详细信息。
+>[!NOTE]
+>
+>如果目标已存在激活工作流，则您可以看到当前正在激活到目标的区段。 选择右边栏中的&#x200B;**[!UICONTROL 编辑激活]**，然后按照以下步骤修改激活详细信息。
 
 选择目标后，选择&#x200B;**[!UICONTROL 激活]**。
 
@@ -62,7 +64,7 @@ ht-degree: 0%
 
 #### 示例：在[!DNL Facebook Custom Audience] {#example-facebook}中激活受众数据
 
-这是在[!DNL Facebook]中激活受众数据时正确标识映射的示例。
+以下是在[!DNL Facebook]中激活受众数据时正确标识映射的示例。
 
 选择源字段：
 
@@ -140,13 +142,17 @@ If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary id
 
 ![配置步骤](../assets/ui/activate-destinations/configure-icon.png)
 
-在&#x200B;**[!UICONTROL 配置]**&#x200B;步骤中，您可以配置要导出的每个区段的计划和文件名。 必须配置计划，但配置文件名是可选的。
+[!DNL Adobe Experience Platform] 以文件形式导出电子邮件营销和云存储目 [!DNL CSV] 标的数据在&#x200B;**[!UICONTROL 配置]**&#x200B;步骤中，您可以配置要导出的每个区段的计划和文件名。 必须配置计划，但配置文件名是可选的。
+
+>[!IMPORTANT]
+> 
+>[!DNL Adobe Experience Platform] 以每个文件500万条记录（行）自动拆分导出文件。每行表示一个用户档案。
 
 要为区段添加计划，请选择&#x200B;**[!UICONTROL 创建计划]**。
 
 ![](../assets/ui/activate-destinations/configure-destination-schedule.png)
 
-此时会出现一个快显窗口，其中显示用于创建区段计划的选项。
+此时将显示一个对话框，其中显示用于创建区段计划的选项。
 
 * **文件导出**:您可以选择导出完整文件或增量文件。导出完整文件会发布符合该区段条件的所有用户档案的完整快照。 导出增量文件会发布自上次导出以来符合该区段资格的用户档案增量。
 * **频率**:如果 **[!UICONTROL 选择“]** 导出完整文件”，您可以选择导出“ **** Onceor Daily ****”。如果选择了&#x200B;**[!UICONTROL 导出增量文件]**，则您只能选择导出&#x200B;**[!UICONTROL 每日]**。 导出文件&#x200B;**[!UICONTROL 一次]**&#x200B;将导出文件一次。 导出文件&#x200B;**[!UICONTROL Daily]**&#x200B;时，如果选择了完整文件，则每天将文件从开始日期导出到结束日期(UTC:00 PM)；如果选择了增量文件，则导出为12:00 PM(UTC:7:00 AM EST)。
@@ -182,7 +188,7 @@ If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary id
 
 ![细分计划步骤](../assets/ui/activate-destinations/segment-schedule-icon.png)
 
-在&#x200B;**[!UICONTROL 区段计划]**&#x200B;页上，您可以设置向目标发送数据的开始日期以及向目标发送数据的频率。
+在&#x200B;**[!UICONTROL 区段计划]**&#x200B;页上，可以设置向目标发送数据的开始日期以及向目标发送数据的频率。
 
 >[!IMPORTANT]
 >
@@ -216,7 +222,7 @@ If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary id
 >
 > Adobe Experience Platform使用您的模式中四个推荐的常用属性预填充您的选择：`person.name.firstName`、`person.name.lastName`、`personalEmail.address`、`segmentMembership.status`。
 
-根据是否选择`segmentMembership.status`，文件导出将按以下方式不同：
+根据是否选择`segmentMembership.status`，文件导出将以下方式有所不同：
 * 如果选择了`segmentMembership.status`字段，则导出的文件在初始完整快照中包括&#x200B;**[!UICONTROL Active]**&#x200B;成员，在后续增量导出中包括&#x200B;**[!UICONTROL Active]**&#x200B;和&#x200B;**[!UICONTROL Expired]**&#x200B;成员。
 * 如果未选择`segmentMembership.status`字段，则导出的文件在初始完整快照和后续增量导出中仅包含&#x200B;**[!UICONTROL Active]**&#x200B;成员。
 
