@@ -3,12 +3,12 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
-user-guide-description: 了解 Experience Platform 如何让您得以为客户实时提供个性化体验。
+user-guide-description: 了解Experience Platform如何使您能够实时向客户提供个性化体验。
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '159'
-ht-degree: 22%
+source-wordcount: '160'
+ht-degree: 11%
 
 ---
 
