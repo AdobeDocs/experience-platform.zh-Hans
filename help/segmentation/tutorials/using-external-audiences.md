@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 对受众细分强制实施数据使用合规性
 topic: 教程
 translation-type: tm+mt
-source-git-commit: 2ca0768c951cf67a775fdfc2c1f9440596d118bf
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '640'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 - [实时客户用户档案](../../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
 - [体验数据模型(XDM)](../../xdm/home.md):平台通过该标准化框架组织客户体验数据。
 - [数据集](../../catalog/datasets/overview.md):存储和管理结构，用于Experience Platform中的数据持久性。
-- [流摄取](../../ingestion/streaming-ingestion/overview.md):Experience Platform如何实时从客户端和服务器端设备收集和存储数据。
+- [流摄取](../../ingestion/streaming-ingestion/overview.md):Experience Platform如何从客户端和服务器端设备实时摄取和存储数据。
 
 ## 为外部命名空间创建标识受众
 
