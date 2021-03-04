@@ -1,11 +1,11 @@
 ---
 keywords: 贝姆雷，比姆雷延伸
-title: Beemray扩展
-description: Beemray扩展是Adobe Experience Platform的个性化目标。 有关扩展功能的详细信息，请参阅AdobeExchange上的扩展页。
+title: 贝姆雷延伸
+description: Beemray扩展是Adobe Experience Platform中的个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '520'
+source-wordcount: '521'
 ht-degree: 3%
 
 ---
@@ -13,17 +13,17 @@ ht-degree: 3%
 
 # [!DNL Beemray] 扩展 {#beemray-extension}
 
-[!DNL Beemray] 帮助您根据情境加速产品。使您能够获得洞察、构建新体验、推动互动并参与真正重要的时刻。 Beemray使用机器学习实现情境智能自动化。 Beemray连接Adobe Experience Cloud和您的其他技术合作伙伴。 一切实时进行。 此扩展在您的站点上安装[!DNL Beemray] SDK。
+[!DNL Beemray] 帮助您根据情境加速产品。使您能够获得洞察、构建新体验、推动互动并参与真正重要的时刻。 Beemray使用机器学习实现情境智能自动化。 Beemray连接到Adobe Experience Cloud和您的其他技术合作伙伴。 一切实时进行。 此扩展在您的站点上安装[!DNL Beemray] SDK。
 
-Beemray是Adobe Experience Platform的个性化扩展。 有关扩展功能的详细信息，请参见[AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html)上的扩展页。
+Beemray是Adobe Experience Platform中的个性化扩展。 有关扩展功能的详细信息，请参阅[AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html)上的扩展页。
 
 此目标是[!DNL Adobe Experience Platform Launch]扩展。 有关[!DNL Platform Launch]扩展在平台中的工作方式的详细信息，请参阅[Experience Platform Launch扩展概述](../launch-extensions/overview.md)。
 
-![Beemray扩展](../../assets/catalog/personalization/beemray/catalog.png)
+![贝姆雷延伸](../../assets/catalog/personalization/beemray/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-此扩展位于[!DNL Destinations]目录中，可供所有已购买平台的客户使用。
+此扩展位于[!DNL Destinations]目录中，可用于所有已购买平台的客户。
 
 要使用此扩展，您需要访问[!DNL Adobe Experience Platform Launch]。 [!DNL Platform Launch] 作为附带的增值功能提供给Adobe Experience Cloud客户。请与您的组织管理员联系以获取对[!DNL Platform Launch]的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
 
@@ -37,19 +37,19 @@ Beemray是Adobe Experience Platform的个性化扩展。 有关扩展功能的�
 
 单击目标以突出显示它，然后在右边栏中选择&#x200B;**[!UICONTROL 配置]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件灰显，则您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
 
-在&#x200B;**[!UICONTROL 选择可用的平台启动属性]**&#x200B;窗口中，选择要安装扩展的[!DNL Platform Launch]属性。 您还可以在[!DNL Platform Launch]中选择创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解[!DNL Launch]文档的[属性页面部分](https://experienceleague.adobe.com/docs/launch/using/reference/admin/companies-and-properties.html#properties-page)中的属性。
+在&#x200B;**[!UICONTROL 选择可用的Platform launch属性]**&#x200B;窗口中，选择要安装扩展的[!DNL Platform Launch]属性。 您还可以选择在[!DNL Platform Launch]中创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解[!DNL Launch]文档的[属性页面部分](https://experienceleague.adobe.com/docs/launch/using/reference/admin/companies-and-properties.html#properties-page)中的属性。
 
 该工作流将引导您完成[!DNL Platform Launch]安装。
 
-有关扩展配置选项和安装支持的信息，请参见AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html)上的[ Beemray页。
+有关扩展配置选项和安装支持的信息，请参阅Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101063.beemray-human-context.html)上的[ Beemray页。
 
 您还可以直接在[Adobe Experience Platform Launch接口](https://launch.adobe.com/)中安装扩展。 请参阅[!DNL Platform Launch]文档中的[添加新扩展](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/overview.html?lang=en#add-a-new-extension)。
 
 ## 如何使用扩展{#how-to-use}
 
-安装扩展后，您可以直接在[!DNL Platform Launch]中开始为其设置规则。
+安装扩展后，可以直接在[!DNL Platform Launch]中开始为它设置规则。
 
-在[!DNL Platform Launch]中，您可以为已安装的扩展设置规则，以便仅在某些情况下将事件数据发送到扩展目标。 有关为扩展设置规则的详细信息，请参阅[规则文档](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/rules.html)。
+在[!DNL Platform Launch]中，您可以设置已安装扩展的规则，以便仅在某些情况下才将事件数据发送到扩展目标。 有关设置扩展规则的详细信息，请参阅[规则文档](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/rules.html)。
 
 ## 配置、升级和删除扩展{#configure-upgrade-delete}
 
@@ -57,7 +57,7 @@ Beemray是Adobe Experience Platform的个性化扩展。 有关扩展功能的�
 
 >[!TIP]
 >
->如果某个属性上已安装该扩展，平台UI仍显示该扩展的&#x200B;**[!UICONTROL 安装]**。 启动安装工作流程（如[安装扩展](#install-extension)中所述），以访问[!DNL Platform Launch]并配置或删除您的扩展。
+>如果某个属性上已安装该扩展，则平台UI仍显示该扩展的&#x200B;**[!UICONTROL 安装]**。 启动安装工作流，如[安装扩展](#install-extension)中所述，以访问[!DNL Platform Launch]并配置或删除您的扩展。
 
 要升级您的扩展，请参阅[!DNL Platform Launch]文档中的[扩展升级](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/extension-upgrade.html)。
 
