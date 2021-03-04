@@ -1,40 +1,40 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: 连接到电子邮件营销目标并使用API调用激活数据
-description: 本文档涵盖通过使用Adobe Experience PlatformAPI创建电子邮件营销目标
-topic: tutorial
-type: Tutorial
+title: 连接到电子邮件营销目标，并使用API调用激活数据
+description: 本文档包括通过使用Adobe Experience Platform API创建电子邮件营销目标
+topic: 教程
+type: 教程
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: c8b08b2feb30bf137d802ce82df92d3f9f8bdb78
 workflow-type: tm+mt
-source-wordcount: '1649'
+source-wordcount: '1681'
 ht-degree: 1%
 
 ---
 
 
-# 连接到电子邮件营销目标并使用API调用激活数据
+# 连接到电子邮件营销目标，并使用API调用激活数据
 
-本教程演示如何使用API调用连接到您的Adobe Experience Platform数据、创建[电子邮件营销目标](../catalog/email-marketing/overview.md)、创建到新创建目标的数据流以及将数据激活到新创建的目标。
+本教程演示了如何使用API调用连接到Adobe Experience Platform数据、创建[电子邮件营销目标](../catalog/email-marketing/overview.md)、创建到新创建目标的数据流以及将数据激活到新创建的目标。
 
-本教程在所有示例中都使用Adobe Campaign目标，但所有电子邮件营销目标的步骤都相同。
+本教程在所有示例中使用Adobe Campaign目标，但所有电子邮件营销目标的步骤相同。
 
-![概述——创建目标和激活区段的步骤](../assets/api/email-marketing/overview.png)
+![概述 — 创建目标和激活区段的步骤](../assets/api/email-marketing/overview.png)
 
 如果您希望使用平台中的用户界面连接目标并激活数据，请参阅[连接目标](../ui/connect-destination.md)和[将用户档案和区段激活到目标](../ui/activate-destinations.md)教程。
 
 ## 入门指南
 
-本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
+本指南要求对Adobe Experience Platform的以下组件有充分的了解：
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-* [[!DNL Catalog Service]](../../catalog/home.md): [!DNL Catalog] 是数据位置和谱系的记录系统 [!DNL Experience Platform]。
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [[!DNL Catalog Service]](../../catalog/home.md): [!DNL Catalog] 是数据位置和谱系的记录系 [!DNL Experience Platform]统。
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下部分提供了在平台中激活电子邮件营销目标数据时需要了解的其他信息。
+以下各节提供您需要了解的更多信息，以便在平台中将数据激活到电子邮件营销目标。
 
-### 收集所需的凭据
+### 收集所需凭据
 
 要完成本教程中的步骤，您应准备好以下凭据，具体取决于要连接和激活区段的目标类型。
 
@@ -43,17 +43,17 @@ ht-degree: 1%
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
 
 ### 收集必需和可选标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
-* 授权：载体`{ACCESS_TOKEN}`
+* 授权：承载`{ACCESS_TOKEN}`
 * x-api-key:`{API_KEY}`
 * x-gw-ims-org-id:`{IMS_ORG}`
 
-[!DNL Experience Platform]中的资源可隔离到特定虚拟沙箱。 在对[!DNL Platform] API的请求中，可以指定操作将在其中进行的沙箱的名称和ID。 这些是可选参数。
+[!DNL Experience Platform]中的资源可隔离到特定虚拟沙箱。 在向[!DNL Platform] API发出的请求中，您可以指定操作将在中进行的沙箱的名称和ID。 这些是可选参数。
 
 * x-sandbox-name:`{SANDBOX_NAME}`
 
@@ -67,13 +67,13 @@ ht-degree: 1%
 
 ### Swagger文档
 
-您可以在Swagger的本教程中找到所有API调用的随附参考文档。 请参阅Adobe.io](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)上的[流服务API文档。 我们建议您同时使用本教程和Swagger文档页面。
+您可以在Swagger的本教程中找到所有API调用的随附参考文档。 请参阅Adobe.io](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)上的[流服务API文档。 我们建议您同时使用本教程和Swagger文档页。
 
-## 获取可用目标的列表{#get-the-list-of-available-destinations}
+## 获取可用目标{#get-the-list-of-available-destinations}的列表
 
 ![目标步骤概述步骤1](../assets/api/email-marketing/step1.png)
 
-作为第一步，您应确定要激活数据的电子邮件营销目标。 首先，请执行呼叫以请求可连接和激活区段的可用目标列表。 对`connectionSpecs`端点执行以下GET请求以返回可用目标的列表:
+作为第一步，您应确定要将数据激活到的电子邮件营销目标。 首先，请发出呼叫，请求列表可连接和激活区段的可用目标。 对`connectionSpecs`端点执行以下GET请求，以返回可用目标的列表:
 
 **API格式**
 
@@ -110,7 +110,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **响应**
 
-成功的响应包含可用目标及其唯一标识符的列表(`id`)。 存储您计划使用的目标的值，这是后续步骤中需要的。 例如，如果要连接区段并将其传送到Adobe Campaign，请在响应中查找以下代码片段：
+成功的响应包含可用目标及其唯一标识符的列表(`id`)。 存储您计划使用的目标的值，因为在后续步骤中需要它。 例如，如果要将区段连接并传送到Adobe Campaign，请在响应中查找以下代码片断：
 
 ```json
 {
@@ -125,10 +125,10 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 ![目标步骤概述步骤2](../assets/api/email-marketing/step2.png)
 
-接下来，必须连接到[!DNL Experience Platform]数据，以便导出用户档案数据并在首选目标中激活它。 这包括两个子步骤，如下所述。
+接下来，您必须连接到[!DNL Experience Platform]数据，以便导出用户档案数据并在首选目标中激活它。 这包括两个子步骤，如下所述。
 
 1. 首先，必须通过设置基本连接来执行对[!DNL Experience Platform]中的数据授权访问的调用。
-2. 然后，使用基本连接ID，您将再进行一次调用，在其中创建源连接，该连接建立与[!DNL Experience Platform]数据的连接。
+2. 然后，使用基连接ID，您将进行另一次调用，在其中创建源连接，该连接将建立与[!DNL Experience Platform]数据的连接。
 
 
 ### 授权访问[!DNL Experience Platform]中的数据
@@ -257,11 +257,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{BASE_CONNECTION_ID}`:使用您在上一步中获得的ID。
-* `{CONNECTION_SPEC_ID}`:将连接规范ID用 [!DNL Unified Profile Service] 于-  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
+* `{CONNECTION_SPEC_ID}`:使用连接规范ID  [!DNL Unified Profile Service] -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
 
 **响应**
 
-成功的响应会返回新创建的源连接到[!DNL Unified Profile Service]的唯一标识符(`id`)。 这将确认您已成功连接到[!DNL Experience Platform]数据。 在以后的步骤中存储此值。
+成功的响应返回新创建的源连接到[!DNL Unified Profile Service]的唯一标识符(`id`)。 这将确认您已成功连接到[!DNL Experience Platform]数据。 在后续步骤中存储所需的值。
 
 ```json
 {
@@ -276,8 +276,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 在此步骤中，您将设置到所需电子邮件营销目标的连接。 这包括两个子步骤，如下所述。
 
-1. 首先，必须通过设置基本连接来执行授权访问电子邮件服务提供商的呼叫。
-2. 然后，使用基本连接ID，您将再次进行调用，在其中创建目标连接，该连接指定存储帐户中要传送导出数据的位置以及要导出的数据的格式。
+1. 首先，您必须通过设置基本连接来执行呼叫以授权访问电子邮件服务提供商。
+2. 然后，使用基本连接ID，您将进行另一次调用，在其中创建目标连接，该连接指定存储帐户中要传送导出数据的位置，以及将导出的数据的格式。
 
 ### 授权访问电子邮件营销目标
 
@@ -344,10 +344,10 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标的列表 [步骤中获得的连接规范ID](#get-the-list-of-available-destinations)。
-* `{S3 or SFTP}`:为此目标填写所需的连接类型。在[目标目录](../catalog/overview.md)中，滚动到首选目标，查看是否支持S3和／或SFTP连接类型。
+* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标的列表步骤 [中获得的连接规范ID](#get-the-list-of-available-destinations)。
+* `{S3 or SFTP}`:为此目标填写所需的连接类型。在[目标目录](../catalog/overview.md)中，滚动到首选目标，查看是否支持S3和/或SFTP连接类型。
 * `{ACCESS_ID}`:您的S3存储 [!DNL Amazon] 位置的访问ID。
-* `{SECRET_KEY}`:您S3存储位 [!DNL Amazon] 置的密钥。
+* `{SECRET_KEY}`:您的S3存储 [!DNL Amazon] 位置的密钥。
 
 **响应**
 
@@ -360,6 +360,12 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 ### 指定存储位置和数据格式
+
+[!DNL Adobe Experience Platform] 以文件形式导出电子邮件营销和云存储目 [!DNL CSV] 标的数据
+
+>[!IMPORTANT]
+> 
+>[!DNL Adobe Experience Platform] 以每个文件500万条记录（行）自动拆分导出文件。每行表示一个用户档案。
 
 **API格式**
 
@@ -434,9 +440,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{BASE_CONNECTION_ID}`:使用您在上述步骤中获得的基本连接ID。
-* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标列表 [步骤中获得的连接规范](#get-the-list-of-available-destinations)。
+* `{CONNECTION_SPEC_ID}`:使用您在步骤获取可用目标 [的列表中获得的连接规范](#get-the-list-of-available-destinations)。
 * `{BUCKETNAME}`:您 [!DNL Amazon] 的S3存储段，平台将存放数据导出。
-* `{FILEPATH}`:S3存储段目 [!DNL Amazon] 录中平台将存放数据导出的路径。
+* `{FILEPATH}`:S3存储桶目 [!DNL Amazon] 录中的路径，平台将存放数据导出。
 
 **响应**
 
@@ -452,9 +458,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ![目标步骤概述步骤4](../assets/api/email-marketing/step4.png)
 
-使用您在前面的步骤中获得的ID，您现在可以在[!DNL Experience Platform]数据和要激活数据的目标之间创建数据流。 将此步骤想象为在[!DNL Experience Platform]和您所需的目标之间构建数据稍后通过的管道。
+现在，使用您在前面的步骤中获得的ID，您可以在[!DNL Experience Platform]数据与要激活数据的目标之间创建数据流。 将此步骤想象为在[!DNL Experience Platform]和所需目标之间构建数据稍后将通过的管道。
 
-要创建POST流，请执行如下所示的数据请求，同时在有效负荷中提供以下所述的值。
+要创建POST流，请执行如下所示的数据请求，同时在负载中提供以下所述的值。
 
 执行以下POST请求以创建数据流。
 
@@ -505,12 +511,12 @@ curl -X POST \
 ```
 
 * `{FLOW_SPEC_ID}`:使用要连接到的电子邮件营销目标的流程。要获取流规范，请对`flowspecs`端点执行GET操作。 请参阅此处的Swagger文档：https://platform.adobe.io/data/foundation/flowservice/swagger#/Flow%20Specs%20API/getFlowSpecs。 在响应中，查找`upsTo`并复制要连接到的电子邮件营销目标的相应ID。 例如，对于Adobe Campaign，请查找`upsToCampaign`并复制`id`参数。
-* `{SOURCE_CONNECTION_ID}`:使用在步骤Connect中获得的源连接 [ID连接到Experience Platform](#connect-to-your-experience-platform-data)。
-* `{TARGET_CONNECTION_ID}`:使用您在步骤Connect中获取的目标连 [接ID到电子邮件营销目标](#connect-to-email-marketing-destination)。
+* `{SOURCE_CONNECTION_ID}`:使用在步骤连接到Experience Platform中获 [得的源连接ID](#connect-to-your-experience-platform-data)。
+* `{TARGET_CONNECTION_ID}`:使用您在连接到电子邮件营销目标的 [步骤中获得的目标连接ID](#connect-to-email-marketing-destination)。
 
 **响应**
 
-成功的响应会返回新创建的数据流的ID(`id`)和`etag`。 记下这两个值。 正如您在下一步中将其激活区段一样。
+成功的响应返回新创建的数据流的ID(`id`)和`etag`。 记下这两个值。 正如您在下一步中所做的那样，激活区段。
 
 ```json
 {
@@ -524,9 +530,9 @@ curl -X POST \
 
 ![目标步骤概述步骤5](../assets/api/email-marketing/step5.png)
 
-创建了所有连接和数据流后，您现在可以将用户档案数据激活到电子邮件营销平台。 在此步骤中，您可以选择要发送到目标的区段和用户档案属性，还可以计划数据并将数据发送到目标。
+创建了所有连接和数据流后，现在您可以将用户档案数据激活到电子邮件营销平台。 在此步骤中，您可以选择要发送到目标的区段和用户档案属性，并可以计划和将数据发送到目标。
 
-要将区段激活到新目标，您必须执行JSONPATCH操作，如下例所示。 您可以在一次调用中激活多个段和用户档案属性。 要进一步了解JSONPATCH，请参阅[RFC规范](https://tools.ietf.org/html/rfc6902)。
+要将区段激活到新目标，必须执行JSONPATCH操作，如下例所示。 您可以在一次调用中激活多个区段和用户档案属性。 要进一步了解JSONPATCH，请参阅[RFC规范](https://tools.ietf.org/html/rfc6902)。
 
 **API格式**
 
@@ -590,15 +596,15 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 **响应**
 
-查找202 OK响应。 不返回响应主体。 要验证请求是否正确，请参阅下一步验证数据流。
+查找202 OK响应。 不返回响应正文。 要验证请求是否正确，请参阅下一步验证数据流。
 
 ## 验证数据流
 
-![目标步骤概述第6步](../assets/api/email-marketing/step6.png)
+![目标步骤概述步骤6](../assets/api/email-marketing/step6.png)
 
 作为教程的最后一步，您应验证区段和用户档案属性确实已正确映射到数据流。
 
-要验证此GET，请执行以下验证请求：
+要验证此项，请执行以下GET请求：
 
 **API格式**
 
@@ -619,11 +625,11 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 ```
 
 * `{DATAFLOW_ID}`:使用上一步中的数据流。
-* `{ETAG}`:使用上一步中的标记。
+* `{ETAG}`:使用上一步中的etag。
 
 **响应**
 
-返回的响应应包含在`transformations`参数中您在上一步中提交的区段和用户档案属性。 响应中的示例`transformations`参数如下所示：
+返回的响应应包含在`transformations`参数中您在上一步中提交的区段和用户档案属性。 响应中的示例`transformations`参数可能如下所示：
 
 ```json
 "transformations": [
@@ -652,7 +658,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 ## 后续步骤
 
-通过遵循本教程，您已成功将平台连接到您喜欢的电子邮件营销目标之一，并设置到相应目标的数据流。 传出数据现在可用于电子邮件活动、目标广告和许多其他使用案例的目标。 有关更多详细信息，请参阅以下页面：
+通过本教程，您已成功将平台连接到您的首选电子邮件营销目标之一，并将数据流设置到相应的目标。 传出数据现在可用于电子邮件活动、目标广告和许多其他用例的目标。 有关更多详细信息，请参阅以下页面：
 
 * [目标概述](../home.md)
 * [目标目录概述](../catalog/overview.md)
