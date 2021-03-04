@@ -6,9 +6,9 @@ description: 本文档包括通过使用Adobe Experience Platform API创建电�
 topic: 教程
 type: 教程
 translation-type: tm+mt
-source-git-commit: c8b08b2feb30bf137d802ce82df92d3f9f8bdb78
+source-git-commit: 789534c02746ed24dfa01c7b471cdf3be407711e
 workflow-type: tm+mt
-source-wordcount: '1681'
+source-wordcount: '1701'
 ht-degree: 1%
 
 ---
@@ -366,6 +366,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 >[!IMPORTANT]
 > 
 >[!DNL Adobe Experience Platform] 以每个文件500万条记录（行）自动拆分导出文件。每行表示一个用户档案。
+>
+>拆分文件名后面附加一个数字，指示文件是较大导出的一部分，如下所示：`filename.csv`、`filename_2.csv`、`filename_3.csv`。
 
 **API格式**
 
