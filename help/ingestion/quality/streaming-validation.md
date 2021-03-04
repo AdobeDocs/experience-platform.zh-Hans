@@ -6,9 +6,9 @@ topic: 教程
 type: 教程
 description: 流摄取允许您使用流端点实时将数据上传到Adobe Experience Platform。 流式摄取API支持两种验证模式 — 同步和异步。
 translation-type: tm+mt
-source-git-commit: 8f863eb3427097406237aa443262917fdc3f3e1c
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '898'
+source-wordcount: '900'
 ht-degree: 3%
 
 ---
