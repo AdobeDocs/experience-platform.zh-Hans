@@ -1,45 +1,45 @@
 ---
-keywords: Experience Platform；主页；热门主题；检索失败的批；失败的批；批处理摄取；失败的批；获取失败的批；获取失败的批；下载失败的批；下载失败的批；
+keywords: Experience Platform；主页；热门主题；检索失败的批次；失败的批次；批次摄取；失败的批次；获取失败的批次；获取失败的批次；下载失败的批次；下载失败的批次；
 solution: Experience Platform
 title: 使用数据访问API检索失败的批
-topic: tutorial
-type: Tutorial
-description: 本教程介绍了使用数据摄取API检索有关失败批次的信息的步骤。
+topic: 教程
+type: 教程
+description: 本教程介绍了使用数据摄取API检索有关失败批处理的信息的步骤。
 translation-type: tm+mt
-source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '652'
-ht-degree: 1%
+source-wordcount: '655'
+ht-degree: 2%
 
 ---
 
 
 # 使用数据访问API检索失败的批
 
-Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以使用批处理摄取，它允许您使用各种文件类型（如CSV）插入其数据；或者使用流式摄取，它允许您使用流式端点将其数据实时插入到[!DNL Platform]。
+Adobe Experience Platform提供两种上传和收录数据的方法。 您可以使用批处理摄取，它允许您使用各种文件类型（如CSV）插入其数据；或者使用流摄取，它允许您使用流端点将其数据实时插入到[!DNL Platform]。
 
-本教程介绍了使用[!DNL Data Ingestion] API检索有关失败批次的信息的步骤。
+本教程介绍了使用[!DNL Data Ingestion] API检索有关失败批处理的信息的步骤。
 
 ## 入门指南
 
-本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
+本指南要求对Adobe Experience Platform的以下组件有充分的了解：
 
 - [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [[!DNL Data Ingestion]](../home.md):发送数据的方 [!DNL Experience Platform]法
+- [[!DNL Data Ingestion]](../home.md):数据发送方 [!DNL Experience Platform]法
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
-- 授权：载体`{ACCESS_TOKEN}`
+- 授权：承载`{ACCESS_TOKEN}`
 - x-api-key:`{API_KEY}`
 - x-gw-ims-org-id:`{IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Schema Registry]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Schema Registry]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
 
 - x-sandbox-name:`{SANDBOX_NAME}`
 
@@ -47,11 +47,11 @@ Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以
 >
 >有关[!DNL Platform]中沙箱的详细信息，请参阅[沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
-- 内容类型：`application/json`
+- Content-Type: `application/json`
 
-### 失败批处理示例
+### 失败的批示例
 
 本教程将使用格式不正确的时间戳的示例数据，该时间戳将月值设置为&#x200B;**00**，如下所示：
 
@@ -78,7 +78,7 @@ Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以
 }
 ```
 
-由于时间戳格式错误，上述负载无法针对XDM模式进行正确验证。
+由于时间戳格式不正确，上述负载无法针对XDM模式正确验证。
 
 ## 检索失败的批
 
@@ -135,7 +135,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 }
 ```
 
-通过上述响应，您可以看到批处理的哪些块成功和失败。 通过此响应，您可以看到文件`part-00000-44c7b669-5e38-43fb-b56c-a0686dabb982-c000.json`包含失败的批处理。
+通过上述响应，您可以看到哪些批次成功和失败。 通过此响应，您可以看到文件`part-00000-44c7b669-5e38-43fb-b56c-a0686dabb982-c000.json`包含失败的批。
 
 ## 下载失败的批
 
@@ -150,7 +150,7 @@ GET /batches/{BATCH_ID}/failed?path={FAILED_FILE}
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{BATCH_ID}` | 包含失败文件的批处理的ID。 |
-| `{FAILED_FILE}` | 格式化失败的文件的名称。 |
+| `{FAILED_FILE}` | 格式设置失败的文件的名称。 |
 
 **请求**
 
@@ -168,7 +168,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 
 **响应**
 
-由于上一个摄取的批次的日期时间无效，因此将显示以下验证错误。
+由于上一个摄取的批次具有无效的日期时间，因此将显示以下验证错误。
 
 ```json
 {
@@ -186,7 +186,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 
 ## 后续步骤
 
-阅读本教程后，您学习了如何从失败的批中检索错误。 有关批量摄取的详细信息，请阅读[批量摄取开发人员指南](../batch-ingestion/overview.md)。 有关流摄取的详细信息，请阅读[创建流连接教程](../tutorials/create-streaming-connection.md)。
+阅读本教程后，您学会了如何从失败的批次中检索错误。 有关批摄取的详细信息，请阅读[批摄取开发人员指南](../batch-ingestion/overview.md)。 有关流摄取的详细信息，请阅读[创建流连接教程](../tutorials/create-streaming-connection.md)。
 
 ## 附录
 
@@ -194,9 +194,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
 
 ### 格式不正确的XDM
 
-与上一个示例流中的时间戳错误一样，这些错误是由于格式不正确的XDM造成的。 这些错误消息会因问题的性质而异。 因此，不能显示特定错误示例。
+与上一个示例流中的时间戳错误一样，这些错误是由于格式不正确的XDM造成的。 根据问题的性质，这些错误消息会有所不同。 因此，不能显示任何特定的错误示例。
 
-### 缺少IMS组织ID或无效
+### 缺少或无效的IMS组织ID
 
 如果有效负荷中缺少IMS组织ID，则显示此错误。
 
