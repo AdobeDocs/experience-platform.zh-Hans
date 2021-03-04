@@ -3,9 +3,9 @@ keywords: RTCDP;CDP；实时客户数据平台；实时客户数据平台；实�
 title: 实时客户数据平台入门
 description: 使用此情景作为示例，来设置您的实时客户数据平台实施。
 translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '2326'
+source-wordcount: '2328'
 ht-degree: 1%
 
 ---
