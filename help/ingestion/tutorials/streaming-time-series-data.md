@@ -6,9 +6,9 @@ topic: 教程
 type: 教程
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform Data Ingestion Service API的一部分。
 translation-type: tm+mt
-source-git-commit: d3531248f8a7116b66f9a7ca00e0eadbc3d9df3d
+source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
 workflow-type: tm+mt
-source-wordcount: '1313'
+source-wordcount: '1314'
 ht-degree: 2%
 
 ---
