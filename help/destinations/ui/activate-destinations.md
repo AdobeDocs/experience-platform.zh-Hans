@@ -6,7 +6,7 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 789534c02746ed24dfa01c7b471cdf3be407711e
+source-git-commit: 6c8bf05285dcfc3e631ae5a41dcf40f90217320a
 workflow-type: tm+mt
 source-wordcount: '2184'
 ht-degree: 0%
@@ -231,7 +231,7 @@ If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary id
 
 ![推荐属性](../assets/ui/activate-destinations/mark-mandatory.png)
 
-此外，您还可以将不同属性标记为必需。 将某个属性标记为必填，这样导出的区段就必须包含该属性。 因此，它可以用作另外的过滤形式。 将属性标记为必填项是&#x200B;**不**。
+此外，您还可以将不同属性标记为必需。 将某个属性标记为必填，这样导出的区段就必须包含该属性。 因此，它可以用作额外的过滤形式。 将属性标记为必填项是&#x200B;**不**。
 
 建议其中一个属性是模式的[唯一标识符](../../destinations/catalog/email-marketing/overview.md#identity)。 有关必选属性的详细信息，请参阅[电子邮件营销目标](../../destinations/catalog/email-marketing/overview.md#identity)文档中的标识部分。
 
