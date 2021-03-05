@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 了解Experience Platform如何使您能够实时向客户提供个性化体验。
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 36b85bee308fdcf599c9b7913cf94774404f06d2
 workflow-type: tm+mt
-source-wordcount: '160'
-ht-degree: 11%
+source-wordcount: '170'
+ht-degree: 14%
 
 ---
 
@@ -30,8 +30,10 @@ ht-degree: 11%
    * [工作流UI指南](workflows.md)
    * [浏览器和语言支持](browser-language-support.md)
 * Experience PlatformAPI {#platform-apis}
-   * [验证和访问平台API](api-authentication.md)
+   * [平台API入门](api-guide.md)
+   * [身份验证和访问 Platform API](api-authentication.md)
    * [API基础知识](api-fundamentals.md)
+   * [将Postman与Platform API结合使用](postman.md)
    * [API参考文档](http://www.adobe.com/go/platform-api-reference-en)
 * 平台文档{#documentation}
    * [概述](documentation/overview.md)
