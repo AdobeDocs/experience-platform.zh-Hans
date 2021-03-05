@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: Experience Platform API基础知识
-topic: getting started
+topic: 入门
 description: 本文档简要概述了与Experience Platform API相关的一些底层技术和语法。
 translation-type: tm+mt
-source-git-commit: 8c98632b67ddae4fb7800e80fb8c83aca9bfa291
+source-git-commit: ca5c8527b1b54856aa1e762a06ddbe404f30ec42
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '513'
 ht-degree: 1%
 
 ---
@@ -126,4 +126,4 @@ JSON模式是一种用于描述和验证JSON数据结构的格式。 [体验模�
 
 ## 后续步骤
 
-此文档引入了管理[!DNL Experience Platform]基于JSON的资源时涉及的一些技术和语法。 有关使用[!DNL Platform] API的详细信息（包括最佳实践和常见问题的解答），请参阅[平台疑难解答指南](troubleshooting.md)。
+此文档引入了管理[!DNL Experience Platform]基于JSON的资源时涉及的一些技术和语法。 有关使用平台API的更多信息（包括最佳实践），请参阅[快速入门指南](api-guide.md)。 有关常见问题解答的解答，请参阅[平台疑难解答指南](troubleshooting.md)。
