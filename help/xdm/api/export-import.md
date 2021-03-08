@@ -1,31 +1,31 @@
 ---
-keywords: Experience Platform；主题；热门主题；api;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；导出；导入；rpc;
+keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；导出；导入；rpc;
 solution: Experience Platform
-title: 导出／导入API端点
-description: 模式注册表API中的/export和/import端点允许您在IMS组织和沙箱之间共享XDM资源。
-topic: developer guide
+title: 导出/导入API端点
+description: 模式 Registry API中的/export和/import端点允许您在IMS组织和沙箱之间共享XDM资源。
+topic: 开发人员指南
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 0727ffa0c72bcb6a85de1a13215b691b97889b70
 workflow-type: tm+mt
-source-wordcount: '500'
+source-wordcount: '502'
 ht-degree: 1%
 
 ---
 
 
-# 导出／导入端点
+# 导出/导入终结点
 
-[!DNL Schema Library]中的所有资源都包含在IMS组织内的特定沙箱中。 在某些情况下，您可能希望在沙箱和IMS组织之间共享体验数据模型(XDM)资源。 [!DNL Schema Registry] API提供两个端点，允许您为[!DNL  Schema Library]中的任何模式、混音或数据类型生成导出有效负荷，然后使用该有效负荷将该资源（和所有相关资源）导入目标沙箱和IMS组织。
+[!DNL Schema Library]中的所有资源都包含在IMS组织内的特定沙箱中。 在某些情况下，您可能希望在沙箱和IMS组织之间共享体验数据模型(XDM)资源。 [!DNL Schema Registry] API提供两个端点，允许您为[!DNL  Schema Library]中的任何模式、混音或数据类型生成导出有效负荷，然后使用该有效负荷将该资源（及所有相关资源）导入目标沙箱和IMS组织。
 
 ## 入门指南
 
-本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/mixin-registry.yaml)的一部分。 在继续之前，请查看[入门指南](./getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何Experience PlatformAPI所需的重要头信息。
+本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)的一部分。 在继续之前，请查阅[快速入门指南](./getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何Experience PlatformAPI所需标头的重要信息。
 
-导出／导入端点是[!DNL Schema Registry]支持的远程过程调用(RPC)的一部分。 与[!DNL Schema Registry] API中的其他端点不同，RPC端点不需要额外的头，如`Accept`或`Content-Type`，也不使用`CONTAINER_ID`。 相反，他们必须使用`/rpc`命名空间，如以下API调用所示。
+导出/导入端点是[!DNL Schema Registry]支持的远程过程调用(RPC)的一部分。 与[!DNL Schema Registry] API中的其他端点不同，RPC端点不需要额外的标头，如`Accept`或`Content-Type`，也不使用`CONTAINER_ID`。 相反，他们必须使用`/rpc`命名空间，如以下API调用中所示。
 
-## 检索资源{#export}的导出有效负荷
+## 检索资源{#export}的导出负载
 
-对于[!DNL Schema Library]中的任何现有模式、混音或数据类型，您可以通过向`/export`端点发出GET请求，提供路径中资源的ID来生成导出有效负荷。
+对于[!DNL Schema Library]中的任何现有模式、混音或数据类型，您可以通过向`/export`端点发出GET请求，提供路径中资源的ID来生成导出负载。
 
 **API格式**
 
@@ -53,9 +53,9 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回一组对象，这些对象表示目标XDM资源及其所有相关资源。 在此示例中，数组中的第一个对象是租户创建的`Property`数据类型，`Restaurant` mixin使用此类型，而第二个对象是`Restaurant` mixin本身。 然后，此负载可用于[将资源](#import)导入到其他沙箱或IMS组织中。
+成功的响应返回一组对象，这些对象表示目标 XDM资源及其所有相关资源。 在此示例中，数组中的第一个对象是租户创建的`Property`数据类型， `Restaurant` mixin使用此类型，而第二个对象是`Restaurant` mixin本身。 然后，此负载可用于[将资源](#import)导入到其他沙箱或IMS组织中。
 
-请注意，资源的租户ID的所有实例都替换为`<XDM_TENANTID_PLACEHOLDER>`。 这允许模式注册表自动将正确的租户ID应用到资源，具体取决于在随后的导入调用中发送这些资源的位置。
+请注意，资源的租户ID的所有实例都替换为`<XDM_TENANTID_PLACEHOLDER>`。 这样，模式注册表就可以根据资源在后续导入调用中的发送位置，自动将正确的租户ID应用到资源。
 
 ```json
 [
@@ -197,7 +197,7 @@ curl -X GET \
 
 ## 导入资源{#import}
 
-一旦您为XDM资源生成了[导出有效负荷](#export)，您就可以在向`/import`端点的POST请求中使用该有效负荷将该资源导入目标IMS组织和沙箱。
+一旦您为XDM资源生成了[导出负载](#export)，您就可以在向`/import`端点的POST请求中使用该负载，将该资源导入到目标IMS组织和沙箱中。
 
 **API格式**
 
@@ -207,7 +207,7 @@ POST /rpc/import
 
 **请求**
 
-以下请求采用前一个[导出示例](#export)中返回的有效负荷，将`Restaurant`混音导入新的IMS组织和沙箱中，具体由`x-gw-ims-org-id`和`x-sandbox-name`头确定。
+以下请求采用上一个[导出示例](#export)中返回的有效负荷，以将`Restaurant`混音导入新的IMS组织和沙箱中，具体由`x-gw-ims-org-id`和`x-sandbox-name`标头分别确定。
 
 ```shell
 curl -X POST \
@@ -358,7 +358,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回已导入资源的列表，并应用相应的租户ID和IMS组织值。
+成功的响应会返回导入资源的列表，并应用相应的租户ID和IMS组织值。
 
 ```json
 [
