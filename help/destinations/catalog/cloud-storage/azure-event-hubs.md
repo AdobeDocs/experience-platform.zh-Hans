@@ -3,7 +3,7 @@ keywords: Azure事件集线器目标；Azure事件集线器；azure eventhub
 title: （测试版）Azure事件集线器连接
 description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
 workflow-type: tm+mt
 source-wordcount: '546'
 ht-degree: 2%
@@ -22,7 +22,7 @@ ht-degree: 2%
 您可以创建到[!DNL Azure Event Hubs]存储的实时出站连接以从Adobe Experience Platform流化数据。
 
 * 有关[!DNL Azure Event Hubs]的详细信息，请参阅[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about)。
-* 要使用API调用连接到[!DNL Azure Event Hubs]，请参阅[流目标API教程](../../api/streaming-destinations.md)。
+* 要以编程方式连接到[!DNL Azure Event Hubs]，请参阅[流目标API教程](../../api/streaming-destinations.md)。
 * 要使用平台用户界面连接到[!DNL Azure Event Hubs]，请参阅以下部分。
 
 ![AWS Kinesis在UI中](../../assets/catalog/cloud-storage/event-hubs/catalog.png)
@@ -108,6 +108,6 @@ ht-degree: 2%
 
 >[!MORELIKETHIS]
 >
->* [连接到Azure事件中心，并使用API调用激活数据](../../api/streaming-destinations.md)
+>* [连接到Azure事件中心，并使用流服务API激活数据](../../api/streaming-destinations.md)
 >* [AWS Kinesis目标](./amazon-kinesis.md)
 >* [目标类型和类别](../../destination-types.md)
