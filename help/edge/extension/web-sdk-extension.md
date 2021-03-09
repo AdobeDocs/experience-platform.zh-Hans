@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK 扩展 概述
 description: 了解Adobe Experience Platform Web SDK扩展for Adobe Experience Platform Launch
 translation-type: tm+mt
-source-git-commit: 2a0ae9541a8bb2bb985d43a402d0842e73b23c81
+source-git-commit: b9fb71ac7eca95c65165d6780b681ada3f16325b
 workflow-type: tm+mt
-source-wordcount: '553'
-ht-degree: 14%
+source-wordcount: '584'
+ht-degree: 13%
 
 ---
 
@@ -56,10 +56,13 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 ## [!UICONTROL 隐私]
 
-通过[!UICONTROL 隐私]部分，可配置SDK如何处理来自您网站的客户同意信号。 具体而言，如果未提供其他明确的同意首选项，则允许您选择假定客户的默认同意级别。 下表分析了每个选项所包含的内容：
+通过[!UICONTROL 隐私]部分，可配置SDK如何处理来自您网站的用户同意信号。 具体而言，它允许您选择在未提供其他明确同意首选项的情况下假定用户的默认同意级别。 默认同意级别不会保存到用户的用户档案。 下表分析了每个选项所包含的内容：
 
 | [!UICONTROL 默认同意级别] | 描述 |
 | --- | --- |
-| [!UICONTROL 入] | 选择加入。 如果默认情况下您表示客户同意，并且仅遵守退出信号，则使用此选项。 |
-| [!UICONTROL 待定] | 在发送选择加入信号之前，具有“待定”同意的客户会选择退出。 如果您需要明确的客户同意您的业务运营，请使用此选项。 |
+| [!UICONTROL 入] | 收集在用户提供同意首选项之前发生的事件。 |
+| [!UICONTROL 出] | 放弃在用户提供同意首选项之前发生的事件。 |
+| [!UICONTROL 待定] | 在用户提供同意首选项之前发生的队列事件。 当提供同意偏好时，将根据提供的偏好收集或丢弃事件。 |
 | [!UICONTROL 由数据元素提供] | 默认同意级别由您定义的单独数据元素决定。 使用此选项时，必须使用提供的下拉菜单指定数据元素。 |
+
+如果您要求明确的用户同意您的业务操作，则使用“退出”或“待定”。
