@@ -1,20 +1,20 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: 连接到电子邮件营销目标，并使用API调用激活数据
+title: 连接到电子邮件营销目标，并使用流服务API激活数据
 description: 本文档包括通过使用Adobe Experience Platform API创建电子邮件营销目标
 topic: 教程
 type: 教程
 translation-type: tm+mt
-source-git-commit: 789534c02746ed24dfa01c7b471cdf3be407711e
+source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
 workflow-type: tm+mt
-source-wordcount: '1701'
+source-wordcount: '1707'
 ht-degree: 1%
 
 ---
 
 
-# 连接到电子邮件营销目标，并使用API调用激活数据
+# 连接到电子邮件营销目标，并使用流服务API激活数据
 
 本教程演示了如何使用API调用连接到Adobe Experience Platform数据、创建[电子邮件营销目标](../catalog/email-marketing/overview.md)、创建到新创建目标的数据流以及将数据激活到新创建的目标。
 
@@ -67,7 +67,7 @@ ht-degree: 1%
 
 ### Swagger文档
 
-您可以在Swagger的本教程中找到所有API调用的随附参考文档。 请参阅Adobe.io](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)上的[流服务API文档。 我们建议您同时使用本教程和Swagger文档页。
+您可以在Swagger的本教程中找到所有API调用的随附参考文档。 请参阅Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)上的[ Flow Service API文档。 我们建议您同时使用本教程和Swagger文档页。
 
 ## 获取可用目标{#get-the-list-of-available-destinations}的列表
 
