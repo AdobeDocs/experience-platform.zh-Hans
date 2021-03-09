@@ -1,11 +1,11 @@
 ---
 title: 使用Adobe Experience Platform Web SDK跟踪事件
-seo-description: 了解如何跟踪Adobe Experience Platform Web SDK事件。
+description: 了解如何跟踪Adobe Experience Platform Web SDK事件。
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon;send Beacon;documentUnloading;文档卸载；onBeforeEventSend;
 translation-type: tm+mt
-source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
+source-git-commit: 25cf425df92528cec88ea027f3890abfa9cd9b41
 workflow-type: tm+mt
-source-wordcount: '1340'
+source-wordcount: '1397'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ dataLayer.commerce = null;
 
 当前，不支持发送与XDM模式不匹配的数据。 支持计划在将来某个日期提供。
 
-### 设置 `eventType`
+### 设置 `eventType` {#event-types}
 
 在XDM体验事件中，有一个可选的`eventType`字段。 它保存记录的主事件类型。 设置事件类型可以帮助您区分要发送的不同事件。 XDM提供了几种可供您使用的预定义事件类型，或者您始终可以为您的使用案例创建自己的自定义事件类型。 以下是XDM提供的所有预定义事件类型的列表。 [阅读XDM公开回购协议中的更多内容](https://github.com/adobe/xdm/blob/master/docs/reference/behaviors/time-series.schema.md#xdmeventtype-known-values)。
 
@@ -211,20 +211,20 @@ alloy("sendEvent", {
 
 ## 全局修改事件{#modifying-events-globally}
 
-如果要从事件全局添加、删除或修改字段，可以配置`onBeforeEventSend`回调。  每次发送事件时都会调用此回调。  此回调在具有`xdm`字段的事件对象中传递。  修改`event.xdm`以更改在事件中发送的数据。
+如果要从事件全局添加、删除或修改字段，可以配置`onBeforeEventSend`回调。  每次发送事件时都会调用此回调。  此回调在具有`xdm`字段的事件对象中传递。  修改`content.xdm`以更改随事件发送的数据。
 
 
 ```javascript
 alloy("configure", {
   "edgeConfigId": "ebebf826-a01f-4458-8cec-ef61de241c93",
   "orgId": "ADB3LETTERSANDNUMBERS@AdobeOrg",
-  "onBeforeEventSend": function(event) {
+  "onBeforeEventSend": function(content) {
     // Change existing values
-    event.xdm.web.webPageDetails.URL = xdm.web.webPageDetails.URL.toLowerCase();
+    content.xdm.web.webPageDetails.URL = xdm.web.webPageDetails.URL.toLowerCase();
     // Remove existing values
-    delete event.xdm.web.webReferrer.URL;
+    delete content.xdm.web.webReferrer.URL;
     // Or add new values
-    event.xdm._adb3lettersandnumbers.mycustomkey = "value";
+    content.xdm._adb3lettersandnumbers.mycustomkey = "value";
   }
 });
 ```
@@ -235,10 +235,54 @@ alloy("configure", {
 2. 自动收集的值。  （请参阅[自动信息](../data-collection/automatic-information.md)。）
 3. 在`onBeforeEventSend`回调中所做的更改。
 
-如果`onBeforeEventSend`回调引发异常，则仍会发送事件;但是，在回调中所做的任何更改都不会应用于最终事件。
+`onBeforeEventSend`回调的几个注意事项：
+
+* 事件XDM可在回调期间修改。 在回调返回后，任何修改的字段和值
+content.xdm和content.data对象随事件一起发送。
+
+   ```javascript
+   onBeforeEventSend: function(content){
+     //sets a query parameter in XDM
+     const queryString = window.location.search;
+     const urlParams = new URLSearchParams(queryString);
+     content.xdm.marketing.trackingCode = urlParams.get('cid')
+   }
+   ```
+
+* 如果回调引发异常，则对事件的处理将停止，并且不发送事件。
+* 如果回调返回布尔值`false`，则事件处理将停止，
+不会发送事件。 此机制允许某些事件被
+检查事件数据并返回`false`(如果不应发送事件)。
+
+   >[!NOTE]
+   >应当注意避免在页面上的第一个事件返回false。 在第一个事件返回false可能会对个性化产生负面影响。
+
+```javascript
+   onBeforeEventSend: function(content) {
+     // ignores events from bots
+     if (MyBotDetector.isABot()) {
+       return false;
+     }
+   }
+```
+
+除布尔值`false`之外的任何返回值都允许事件在回调后处理和发送。
+
+* 事件可以通过检查事件类型来过滤(请参阅[事件类型](#event-types)):
+
+```javascript
+    onBeforeEventSend: function(content) {  
+      // augments XDM if link click event is to a partner website
+      if (
+        content.xdm.eventType === "web.webinteraction.linkClicks" &&
+        content.xdm.web.webInteraction.URL ===
+          "http://example.com/partner-page.html"
+      ) {
+        content.xdm.partnerWebsiteClick = true;
+      }
+   }
+```
 
 ## 可能的可操作错误
 
 发送事件时，如果发送的数据太大（完整请求超过32KB），可能会引发错误。 在这种情况下，您需要减少发送的数据量。
-
-启用调试时，服务器同步验证正在针对所配置的XDM模式发送的事件数据。 如果模式不匹配，则服务器会返回有关不匹配的详细信息，并引发错误。 在这种情况下，请修改数据以匹配模式。 当未启用调试时，服务器将异步验证数据，因此不会引发相应的错误。
