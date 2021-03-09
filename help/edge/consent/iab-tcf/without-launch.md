@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK集成IAB TCF 2.0支持
 description: 了解如何在不使用Adobe Experience Platform Launch的情况下为您的网站设置IAB TCF 2.0支持。
 seo-description: 了解如何设置Adobe Experience Platform Web SDK的IAB TCF 2.0同意
 translation-type: tm+mt
-source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
+source-git-commit: b9fb71ac7eca95c65165d6780b681ada3f16325b
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '688'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 ## 启用默认同意
 
-如果要对所有未知用户一视同仁，可以将默认同意设置为`pending`。 此队列将体验事件排列到收到同意首选项之前。
+如果要对所有未知用户一视同仁，可以将默认同意设置为`pending`或`out`。 在收到同意首选项之前，此队列或放弃体验事件。
 
 有关默认同意的详细信息，请参阅Platform Web SDK配置文档中的[默认同意部分](../../fundamentals/configuring-the-sdk.md#default-consent)。
 
