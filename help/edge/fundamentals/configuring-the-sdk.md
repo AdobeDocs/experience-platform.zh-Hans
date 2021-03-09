@@ -4,10 +4,10 @@ description: 了解如何配置Adobe Experience Platform Web SDK。
 seo-description: 了解如何配置Experience Platform Web SDK
 keywords: configure;configuration;SDK;edge;Web SDK;configure;edgeConfigId;context;web;device;环境;placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConnence;web sdk设置；prehidingStyle；不透明度；cookieDUrlDDestinationsEnabled;idMigrationEnabled;thirdPartyCookiesEnabled;
 translation-type: tm+mt
-source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
+source-git-commit: f78da58ba7a593d9c161030833d9b69e2ba57c9a
 workflow-type: tm+mt
-source-wordcount: '743'
-ht-degree: 11%
+source-wordcount: '793'
+ht-degree: 10%
 
 ---
 
@@ -103,7 +103,10 @@ alloy("configure", {
 | -------- | ------------ | ----------------- |
 | 对象 | 否 | `"in"` |
 
-设置用户的默认同意。 当尚未为用户保存同意首选项时，会使用此选项。 另一个有效值为`"pending"`。 设置此项后，工作将排队，直到用户提供同意首选项。 在提供用户的首选项后，工作会根据用户的首选项继续或中止。 有关详细信息，请参阅[支持同意](../consent/supporting-consent.md)。
+设置用户的默认同意。 当尚未为用户保存同意首选项时，会使用此选项。 其他有效值为`"pending"`和`"out"`。 此默认值不会保留到用户的用户档案。 仅当调用setConnence时，用户的用户档案才会更新。
+* `"in"`:如果设置了此设置或未提供任何值，则工作将在没有用户同意首选项的情况下继续进行。
+* `"pending"`:设置此项后，工作将排队，直到用户提供同意首选项。
+* `"out"`:设置此项后，工作将被丢弃，直到用户提供同意首选项。在提供用户的首选项后，工作会根据用户的首选项继续或中止。 有关详细信息，请参阅[支持同意](../consent/supporting-consent.md)。
 
 ## 个性化选项
 
