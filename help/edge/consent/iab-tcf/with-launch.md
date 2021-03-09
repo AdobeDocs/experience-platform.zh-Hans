@@ -2,9 +2,9 @@
 title: 使用Platform launch和Platform Web SDK扩展集成IAB TCF 2.0支持
 description: 了解如何设置Adobe Experience Platform Launch和Adobe Experience Platform Web SDK扩展的IAB TCF 2.0同意。
 translation-type: tm+mt
-source-git-commit: 1a51ce92eb5c41ff65ebcf4c652640dd0782487f
+source-git-commit: b9fb71ac7eca95c65165d6780b681ada3f16325b
 workflow-type: tm+mt
-source-wordcount: '836'
+source-wordcount: '855'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Adobe Experience Platform Web SDK支持Interactive Advertising Bureau透明度�
 
 ## 设置默认同意
 
-在扩展配置中，存在默认同意设置。 这会控制没有同意Cookie的客户的行为。 如果要为未获得同意Cookie的客户排队体验事件，请将其设置为`pending`。 您还可以使用数据元素动态设置默认同意值。
+在扩展配置中，存在默认同意设置。 这会控制没有同意Cookie的客户的行为。 如果要为未获得同意Cookie的客户排队体验事件，请将其设置为`pending`。 如果您要放弃针对未获得同意Cookie的客户的体验事件，请将其设置为`out`。 您还可以使用数据元素动态设置默认同意值。
 
 有关如何配置默认同意的详细信息，请参阅SDK配置指南中的[默认同意部分](../../fundamentals/configuring-the-sdk.md#default-consent)。
 
