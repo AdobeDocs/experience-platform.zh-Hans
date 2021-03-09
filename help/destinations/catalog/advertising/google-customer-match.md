@@ -3,9 +3,9 @@ keywords: Google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）中触及客户并与其重新互动。
 translation-type: tm+mt
-source-git-commit: bec44832a235dd3f9e2ee0f3ffc77854ee5784d7
+source-git-commit: 494b41265a0eec71ec15c7896eb8c652b3164e18
 workflow-type: tm+mt
-source-wordcount: '1432'
+source-wordcount: '1420'
 ht-degree: 0%
 
 ---
@@ -15,45 +15,45 @@ ht-degree: 0%
 
 [Google客](https://support.google.com/google-ads/answer/6379332?hl=en) 户匹配允许您使用线上和线下数据，通过Google自有和运营的资产触及客户并与其重新互动，例如： [!DNL Search]、 [!DNL Shopping]、 [!DNL Gmail]和 [!DNL YouTube]。
 
-![Google实时CDP UI中的客户匹配目标](../../assets/catalog/advertising/google-customer-match/catalog.png)
+![Adobe Experience Platform UI中的Google客户匹配目标](../../assets/catalog/advertising/google-customer-match/catalog.png)
 
 ## 用例
 
-为了帮助您更好地了解应如何以及何时使用[!DNL Google Customer Match]目标，以下是实时客户数据平台客户可通过使用此功能解决的示例使用案例。
+为了帮助您更好地了解应如何以及何时使用[!DNL Google Customer Match]目标，以下是Adobe Experience Platform客户可通过使用此功能解决的示例使用案例。
 
 ### 用例#1
 
-运动服装品牌希望通过[!DNL Google Search]和[!DNL Google Shopping]接触现有客户，以根据其过去的购买和浏览历史个性化优惠和项目。 服装品牌可以将电子邮件地址从自己的CRM收录到实时CDP，根据自己的离线数据构建细分，并将这些细分发送到[!DNL Google Customer Match]以用于[!DNL Search]和[!DNL Shopping]，从而优化其广告支出。
+运动服装品牌希望通过[!DNL Google Search]和[!DNL Google Shopping]接触现有客户，以根据其过去的购买和浏览历史个性化优惠和项目。 服装品牌可以将电子邮件地址从自己的CRM收录到Experience Platform，根据自己的线下数据构建细分，并将这些细分发送到[!DNL Google Customer Match]以用于[!DNL Search]和[!DNL Shopping]，从而优化其广告支出。
 
 ### 用例#2
 
 一位知名科技公司刚刚发布了一部新手机。 为了推广这种新型号的手机，他们希望将手机的新特性和功能提升到拥有旧型号手机的客户的认识。
 
-要提升发行版，他们会将电子邮件地址从CRM数据库上载到实时CDP中，使用电子邮件地址作为标识符。 细分是根据拥有旧型号的客户创建的，并发送给[!DNL Google Customer Match]，以便他们能够目标当前客户、拥有旧型号的客户以及[!DNL YouTube]上的类似客户。
+要提升发行版，他们会将电子邮件地址从CRM数据库上传到Experience Platform中，使用电子邮件地址作为标识符。 细分是根据拥有旧型号的客户创建的，并发送给[!DNL Google Customer Match]，以便他们能够目标当前客户、拥有旧型号的客户以及[!DNL YouTube]上的类似客户。
 
 ## 目标特性{#destination-specs}
 
 ### [!DNL Google Customer Match]目标{#data-governance}的数据管理
 
-实时CDP中的目标可能具有特定的规则和义务，用于向目标平台发送或从目标平台接收数据。 您有责任了解数据的限制和义务，以及您如何在Adobe Experience Platform和目标平台中使用这些数据。 Adobe Experience Platform提供数据管理工具，帮助您管理其中的一些数据使用义务。 [进一步](../../..//data-governance/labels/overview.md) 了解数据治理工具和策略。
+Experience Platform中的目标可能具有特定的规则和义务，用于向目标平台发送或从目标平台接收数据。 您有责任了解数据的限制和义务，以及您如何在Adobe Experience Platform和目标平台中使用这些数据。 Adobe Experience Platform提供数据管理工具，帮助您管理其中的一些数据使用义务。 [进一步](../../..//data-governance/labels/overview.md) 了解数据治理工具和策略。
 
 ### 导出类型和标识{#export-type}
 
 **区段导出**  — 您正在导出包含标识符（名称、电话号码等）的区段(受众)的所有成员在[!DNL Google Customer Match]目标中使用。
 
-**身份**  — 您可以在Google中将原始或哈希电子邮件用作客户ID
+**身份**  — 您可以在Google中将原始或哈希电子邮件用作客户ID。
 
 ### [!DNL Google Customer Match] 帐户先决条件  {#google-account-prerequisites}
 
-在实时CDP中设置[!DNL Google Customer Match]目标之前，请确保阅读并遵守Google关于使用[!DNL Customer Match]的策略，该策略在[Google支持文档](https://support.google.com/google-ads/answer/6299717)中进行了概述。
+在Experience Platform中设置[!DNL Google Customer Match]目标之前，请确保阅读并遵守Google关于使用[!DNL Customer Match]的策略，该策略在[Google支持文档](https://support.google.com/google-ads/answer/6299717)中进行了概述。
 
 ### 允许列表{#allowlist}
 
 >[!NOTE]
 >
->必须先将它添加到Google的允许列表中，然后才能在实时CDP中设置您的第一个[!DNL Google Customer Match]目标。 在创建目标之前，请确保Google已完成下面描述的允许列表过程。
+>在Experience Platform中设置第一个[!DNL Google Customer Match]目标之前，必须将其添加到Google的允许列表。 在创建目标之前，请确保Google已完成下面描述的允许列表过程。
 
-在实时CDP中创建[!DNL Google Customer Match]目标之前，必须联系Google并按照[使用允许列表匹配合作伙伴上传Google文档中的数据](https://support.google.com/google-ads/answer/7361372?hl=en&amp;ref_topic=6296507)中的说明进行操作。
+在Experience Platform中创建[!DNL Google Customer Match]目标之前，必须联系Google并按照[使用允许列表匹配合作伙伴上传Google文档中的数据](https://support.google.com/google-ads/answer/7361372?hl=en&amp;ref_topic=6296507)中的说明进行操作。
 
 此外，如果您计划使用Google的[User_ID](https://developers.google.com/adwords/api/docs/guides/remarketing#customer_match_with_email_address_address_or_user_id)上载数据，则还必须添加第二个Google允许列表。 请与您的Google客户经理联系，以确保您已添加到允许列表。
 
@@ -92,7 +92,7 @@ ht-degree: 0%
 
 #### 使用自定义命名空间{#custom-namespaces}
 
-在使用`User_ID`命名空间向Google发送数据之前，请确保使用[!DNL gTag]同步您自己的标识符。 有关详细信息，请参阅[官方文档](https://support.google.com/google-ads/answer/9199250)。
+在使用`User_ID`命名空间向Google发送数据之前，请确保使用[!DNL gTag]同步您自己的标识符。 有关详细信息，请参阅[Google官方文档](https://support.google.com/google-ads/answer/9199250)。
 
 <!-- Data from unhashed namespaces is automatically hashed by [!DNL Platform] upon activation.
 
@@ -113,17 +113,17 @@ Attribute source data is not automatically hashed. When your source field contai
 
 >[!NOTE]
 >
->实时CDP支持身份验证过程中的凭据验证，如果您向[!DNL Google Ad]帐户输入了不正确的凭据，则会显示错误消息。 这可确保您没有使用不正确的凭据完成工作流。
+>Experience Platform支持身份验证过程中的凭据验证，如果您向[!DNL Google Ad]帐户输入了不正确的凭据，则会显示错误消息。 这可确保您没有使用不正确的凭据完成工作流。
 
 ![连接到Google客户匹配目标 — 身份验证步骤](../../assets/catalog/advertising/google-customer-match/connection.png)
 
-确认您的凭据并将Adobe Experience Cloud连接到您的Google帐户后，您可以选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续执行&#x200B;**[!UICONTROL Setup]**&#x200B;步骤。
+确认您的凭据并将Adobe Experience Cloud连接到您的Google帐户后，您可以选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续执行&#x200B;**[!UICONTROL Authentication]**&#x200B;步骤。
 
 ![已确认凭据](../../assets/catalog/advertising/google-customer-match/connection-success.png)
 
-在&#x200B;**[!UICONTROL 身份验证]**&#x200B;步骤中，输入激活流的[!UICONTROL 名称]和[!UICONTROL 说明]，然后在Google中填写[!UICONTROL 帐户ID]。
+在&#x200B;**[!UICONTROL 身份验证]**&#x200B;步骤中，输入激活流的&#x200B;**[!UICONTROL 名称]**&#x200B;和&#x200B;**[!UICONTROL 说明]**，并填写Google **[!UICONTROL 帐户ID]**。
 
-此外，在此步骤中，您还可以选择应用于此目标的任何&#x200B;**[!UICONTROL 营销操作]**。 营销活动指示要将数据导出到目标的目的。 您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅[实时CDP](../../../rtcdp/privacy/data-governance-overview.md#destinations)数据治理页。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md#core-actions)。
+在此步骤中，您还可以选择应用于此目标的任何&#x200B;**[!UICONTROL 营销操作]**。 营销活动指示要将数据导出到目标的目的。 您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
 在填写上面的字段后，选择&#x200B;**[!UICONTROL 创建目标]**。
 
@@ -146,7 +146,7 @@ Attribute source data is not automatically hashed. When your source field contai
 
 ![Google客户匹配应用程序ID](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
-有关如何查找[!DNL App ID]的详细信息，请参阅[官方文档](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid)。
+有关如何查找[!DNL App ID]的详细信息，请参阅[Google官方文档](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid)。
 
 
 
