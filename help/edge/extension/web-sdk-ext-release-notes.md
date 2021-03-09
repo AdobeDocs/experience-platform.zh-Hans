@@ -3,10 +3,10 @@ title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Launch 中的 Adobe Experience Platform Web SDK 扩展
 seo-description: Adobe Experience Platform Launch 中的 Adobe Experience Platform Web SDK 扩展
 translation-type: tm+mt
-source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
+source-git-commit: 14cf62084c88956906cd9454176619ed08081a0e
 workflow-type: tm+mt
-source-wordcount: '990'
-ht-degree: 89%
+source-wordcount: '1134'
+ht-degree: 79%
 
 ---
 
@@ -14,6 +14,19 @@ ht-degree: 89%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档涵盖Adobe Experience Platform Web SDK扩展的Adobe Experience Platform Launch发行说明。 有关SDK本身的最新发行说明，请参阅[Platform Web SDK发行说明](https://docs.adobe.com/content/help/zh-Hans/experience-platform/edge/release-notes.html)。
+
+## 2020 年 3 月 9 日
+
+### Adobe Experience Platform Web SDK 2.4.0
+
+包含 Adobe Experience Platform Web SDK 库的版本 2.4.0。
+
+* 已将[&quot;文档卸载&quot;](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#using-the-sendbeacon-api)复选框添加到“发送事件操作UI”。
+* 增加了对`out`选项的支持，当[配置默认同意](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent)时，将删除所有事件，直到收到同意(现有`pending`选项将事件排队，并在收到同意后发送它们)。
+* 在默认的“同意”字段中添加了工具提示。
+* 增加了对[Adobe的“同意2.0”标准](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/supporting-consent.html?communicating-consent-preferences-via-the-adobe-standard)的支持。
+* 如果用户的访问令牌无效或设置不当，则XDM对象数据元素UI中现在会显示一个更好的错误。
+* 修复了在查看XDM对象数据元素时显示在浏览器开发人员控制台上的跨来源错误（这不影响扩展的操作）。
 
 ## 2020 年 11 月 4 日
 
