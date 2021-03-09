@@ -3,7 +3,7 @@ keywords: Amazon Kinesis;kinesis目标；kinesis
 title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接以从Adobe Experience Platform流化数据。
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
 workflow-type: tm+mt
 source-wordcount: '510'
 ht-degree: 2%
@@ -22,7 +22,7 @@ ht-degree: 2%
 您可以创建到[!DNL Amazon Kinesis]存储的实时出站连接以从Adobe Experience Platform流化数据。
 
 * 有关[!DNL Amazon Kinesis]的详细信息，请参阅[Amazon文档](https://docs.aws.amazon.com/streams/latest/dev/introduction.html)。
-* 要使用API调用连接到[!DNL Amazon Kinesis]，请参阅[流目标API教程](../../api/streaming-destinations.md)。
+* 要以编程方式连接到[!DNL Amazon Kinesis]，请参阅[流目标API教程](../../api/streaming-destinations.md)。
 * 要使用平台用户界面连接到[!DNL Amazon Kinesis]，请参阅以下部分。
 
 ![Amazon Kinesis在UI中](../../assets/catalog/cloud-storage/amazon-kinesis/catalog.png)
@@ -117,7 +117,7 @@ ht-degree: 2%
 
 >[!MORELIKETHIS]
 >
->* [连接到Amazon Kinesis并使用API调用激活数据](../../api/streaming-destinations.md)
+>* [连接到Amazon Kinesis并使用Flow Service API激活数据](../../api/streaming-destinations.md)
 >* [Azure事件集线器目标](./azure-event-hubs.md)
 >* [目标类型和类别](../../destination-types.md)
 
