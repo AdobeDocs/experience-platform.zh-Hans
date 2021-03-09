@@ -4,9 +4,9 @@ description: 了解如何使用Adobe Experience Cloud Web SDK检索Adobe Experie
 seo-description: 了解如何获取Adobe Experience Cloud Id。
 keywords: 身份；第一方身份；身份服务；第三方身份；身份命名空间;访客ID；第三方身份；第三方身份；第三方CookieEnabled;idMigrationEnabled;getIdentity；同步身份；syncIdentity;sendEvent;identityMap；主；ecid；身份识别；命名空间id；身份验证状态；hashEnabled;
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 882bcd2f9aa7a104270865783eed82089862dea3
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '963'
 ht-degree: 3%
 
 ---
@@ -40,19 +40,20 @@ Adobe Experience Platform Web SDK利用[Adobe Identity Service](../../identity-s
 
 如果您当前启用了服务器端转发，并且正在使用`appmeasurement.js`。 和`visitor.js`，您可以保持启用服务器端转发功能，这不会导致任何问题。 在后端，Adobe会获取任何AAM区段并将其添加到对Analytics的调用中。 如果对Analytics的调用包含这些区段，则Analytics不会调用Audience Manager转发任何数据，因此不会收集任何多次数据。 使用Web SDK时也不需要位置提示，因为后端调用了相同的分段端点。
 
-## 检索访客ID
+## 检索访客ID和区域ID
 
-如果要使用此唯一ID，请使用`getIdentity`命令。 `getIdentity` 返回当前访客的现有ECID。对于尚未具有ECID的首次访客，此命令将生成新ECID。
+如果要使用唯一的访客ID，请使用`getIdentity`命令。 `getIdentity` 返回当前访客的现有ECID。对于尚未具有ECID的首次访客，此命令将生成新ECID。 `getIdentity` 还返回访客的区域ID。有关详细信息，请参阅[《Adobe Audience Manager用户指南》](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-api-reference/dcs-regions.html)。
 
 >[!NOTE]
 >
->此方法通常用于需要读取[!DNL Experience Cloud] ID的自定义解决方案。 标准实施不使用该函数。
+>此方法通常用于需要读取[!DNL Experience Cloud] ID或需要Adobe Audience Manager位置提示的自定义解决方案。 标准实施不使用该函数。
 
 ```javascript
 alloy("getIdentity")
   .then(function(result) {
     // The command succeeded.
-    console.log(result.identity.ECID);
+    console.log("ECID:", result.identity.ECID);
+    console.log("RegionId:", result.edge.regionId);
   })
   .catch(function(error) {
     // The command failed.
