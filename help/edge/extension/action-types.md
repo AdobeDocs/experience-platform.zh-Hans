@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展中的操作类型
 description: 了解Adobe Experience Platform Launch中Adobe Experience Platform Web SDK扩展提供的不同操作类型。
 translation-type: tm+mt
-source-git-commit: 2a0ae9541a8bb2bb985d43a402d0842e73b23c81
+source-git-commit: ff261c507d310b8132912680b6ddd1e7d5675d08
 workflow-type: tm+mt
-source-wordcount: '354'
-ht-degree: 18%
+source-wordcount: '341'
+ht-degree: 6%
 
 ---
 
@@ -24,9 +24,9 @@ ht-degree: 18%
 
 ## 设置同意
 
-在您收到用户的同意后，必须使用“设置同意”操作类型将此同意通知Adobe Experience Platform Web SDK。 目前，支持两种类型的标准：“Adobe”和“IAB TCF”。如果使用 Adobe 标准，您目前可以将同意设置为“In”、“Out”，您也可以使用数据元素提供此值。如果使用 IAB TCF 标准，请提供要使用的版本和值，以及有关 GDPR 的其他信息。
+在您收到用户的同意后，必须使用“设置同意”操作类型将此同意通知Adobe Experience Platform Web SDK。 目前，支持两种类型的标准：“Adobe”和“IAB TCF”。请参阅[支持客户同意首选项](../consent/supporting-consent.md)。 使用Adobe 2.0版时，仅支持数据元素值。 您需要创建一个解析到同意对象的数据元素。
 
-在此操作中，您还会获得一个可选字段，用于包含身份映射，以便在收到同意后可以同步身份。 同步在同意配置为“待定”时很有用，因为同意呼叫可能是第一个触发的呼叫。
+在此操作中，您还会获得一个可选字段，用于包含身份映射，以便在收到同意后可以同步身份。 同步在同意配置为“待定”或“已退出”时很有用，因为同意呼叫可能是第一个要触发的呼叫。
 
 ## 重置事件合并 ID
 
