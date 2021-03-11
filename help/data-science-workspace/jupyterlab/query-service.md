@@ -2,13 +2,13 @@
 keywords: Experience Platform;JupyterLab；笔记本；数据科学工作区；热门主题；查询服务
 solution: Experience Platform
 title: Jupyter笔记本中的查询服务
-topic: tutorial
-type: Tutorial
-description: Adobe Experience Platform将查询服务作为标准功能集成到JupyterLab中，使您能够在数据科学工作区中使用结构化查询语言(SQL)。 本教程演示了用于浏览、转换和分析Adobe Analytics数据的常见用例的SQL查询示例。
+topic: 教程
+type: 教程
+description: Adobe Experience Platform允许您通过将查询服务作为标准功能集成到JupyterLab，在Data Science Workspace中使用结构化查询语言(SQL)。 本教程演示了用于浏览、转换和分析Adobe Analytics数据的常见用例的SQL查询示例。
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 9d84fc1eb898020ed4b154c091fcc9fc4933c7de
 workflow-type: tm+mt
-source-wordcount: '818'
+source-wordcount: '824'
 ht-degree: 1%
 
 ---
@@ -16,19 +16,19 @@ ht-degree: 1%
 
 # Jupyter笔记本中的查询服务
 
-[!DNL Adobe Experience Platform] 允许您通过集成到标准功能中 [!DNL Data Science Workspace] 来使 [!DNL Query Service] 用结 [!DNL JupyterLab] 构化查询语言(SQL)。
+[!DNL Adobe Experience Platform] 允许您通过集成到中作为标准功 [!DNL Data Science Workspace] 能， [!DNL Query Service] 在 [!DNL JupyterLab] 中使用结构化
 
 本教程演示了用于浏览、转换和分析[!DNL Adobe Analytics]数据的常见用例的SQL查询示例。
 
 ## 入门指南
 
-在开始本教程之前，您必须具有以下先决条件：
+在开始本教程之前，您必须具备以下先决条件：
 
-- 访问[!DNL Adobe Experience Platform]。 如果您无权访问[!DNL Experience Platform]中的IMS组织，请在继续操作之前与系统管理员联系
+- 访问[!DNL Adobe Experience Platform]。 如果您无权访问[!DNL Experience Platform]中的IMS组织，请在继续操作之前与您的系统管理员联系
 
 - [!DNL Adobe Analytics]数据集
 
-- 对本教程中使用的下列主要概念的有效理解：
+- 了解本教程中使用的以下主要概念：
    - [[!DNL Experience Data Model (XDM) and XDM System]](../../xdm/home.md)
    - [[!DNL Query Service]](../../query-service/home.md)
    - [[!DNL Query Service SQL Syntax]](../../query-service/sql/overview.md)
@@ -36,13 +36,13 @@ ht-degree: 1%
 
 ## 访问[!DNL JupyterLab]和[!DNL Query Service] {#access-jupyterlab-and-query-service}
 
-1. 在[[!DNL Experience Platform]](https://platform.adobe.com)中，从左侧导航列导航到&#x200B;**[!UICONTROL 笔记本]**。 请稍等片刻，JupyterLab将加载。
+1. 在[[!DNL Experience Platform]](https://platform.adobe.com)中，从左侧导航列导航到&#x200B;**[!UICONTROL 笔记本]**。 请稍等片刻，让JupyterLab加载。
 
    ![](../images/jupyterlab/query/jupyterlab-launcher.png)
 
    >[!NOTE]
    >
-   >如果未自动显示新的启动器选项卡，请通过单击&#x200B;**[!UICONTROL 文件]**&#x200B;打开新的启动器选项卡，然后选择&#x200B;**[!UICONTROL 新建启动器]**。
+   >如果未自动显示新的“启动器”选项卡，请通过单击&#x200B;**[!UICONTROL 文件]**&#x200B;打开新的“启动器”选项卡，然后选择&#x200B;**[!UICONTROL 新建启动器]**。
 
 2. 在“启动器”选项卡中，单击Python 3环境中的&#x200B;**[!UICONTROL 空白]**&#x200B;图标以打开空笔记本。
 
@@ -50,19 +50,19 @@ ht-degree: 1%
 
    >[!NOTE]
    >
-   >Python 3目前是笔记本电脑中唯一受支持的查询服务环境。
+   >Python 3目前是笔记本电脑中唯一支持的查询服务环境。
 
-3. 在左侧选择边栏上，单击&#x200B;**[!UICONTROL 数据]**&#x200B;图标，多次单击&#x200B;**[!UICONTROL 数据集]**&#x200B;目录以列表所有数据集。
+3. 在左侧选择边栏上，单击&#x200B;**[!UICONTROL Data]**&#x200B;图标，多次单击&#x200B;**[!UICONTROL Datasets]**&#x200B;目录以列表所有数据集。
 
    ![](../images/jupyterlab/query/dataset.png)
 
-4. 查找要浏览的[!DNL Adobe Analytics]数据集并右键单击列表，单击“笔记本&#x200B;]**查询数据”，在空笔记本中生成SQL查询。**[!UICONTROL 
+4. 查找要浏览的[!DNL Adobe Analytics]数据集并右键单击列表，单击“笔记本&#x200B;]**中的**[!UICONTROL &#x200B;查询查询”以在空笔记本中生成SQL。
 
-5. 单击包含函数`qs_connect()`的第一个生成的单元格，并通过单击播放按钮执行它。 此函数在笔记本实例和[!DNL Query Service]之间创建连接。
+5. 单击包含函数`qs_connect()`的第一个生成的单元格，并通过单击“播放”按钮执行该单元格。 此函数在笔记本实例和[!DNL Query Service]之间创建连接。
 
    ![](../images/jupyterlab/query/execute.png)
 
-6. 从第二个生成的SQL查询下复制[!DNL Adobe Analytics]数据集名称，它将是`FROM`之后的值。
+6. 从第二个生成的SQL查询中向下复制[!DNL Adobe Analytics]数据集名称，它将是`FROM`之后的值。
 
    ![](../images/jupyterlab/query/dataset_name.png)
 
@@ -88,27 +88,25 @@ ht-degree: 1%
    ```
 
    - `target_table` :数据集的 [!DNL Adobe Analytics] 名称。
-   - `target_year` :目标数据的特定年份。
-   - `target_month` :目标的特定月份。
-   - `target_day` :目标数据的特定日期。
+   - `target_year` :目标数据来源的特定年份。
+   - `target_month` :目标的具体月份。
+   - `target_day` :目标数据来自的特定日期。
 
    >[!NOTE]
    >
-   >您可以随时更改这些值。 执行此操作时，请确保为要应用的更改执行变量单元格。
+   >您可以随时更改这些值。 执行此操作时，请务必为要应用的更改执行变量单元格。
 
 ## 查询数据{#query-your-data}
 
-在单个笔记本单元格中输入以下SQL查询。 单击查询的单元格，然后单击&#x200B;**[!UICONTROL play]**&#x200B;按钮。 成功的查询结果或错误日志显示在执行的单元格下方。
+在单个笔记本单元格中输入以下SQL查询。 在查询的单元格上进行选择，然后选择&#x200B;**[!UICONTROL play]**&#x200B;按钮，以执行该操作。 成功的查询结果或错误日志显示在执行单元格的下方。
 
-当笔记本处于长期非活动状态时，笔记本与[!DNL Query Service]之间的连接可能断开。 在这种情况下，请单击右上角的&#x200B;**[!UICONTROL 电源]**&#x200B;按钮，重新启动[!DNL JupyterLab]。
+当笔记本处于长期非活动状态时，笔记本与[!DNL Query Service]之间的连接可能断开。 在这种情况下，通过选择位于电源按钮旁边的右上角的&#x200B;**重新启动**&#x200B;按钮![重新启动按钮](../images/jupyterlab/user-guide/restart_button.png)来重新启动[!DNL JupyterLab]。
 
-![](../images/jupyterlab/query/restart_button.png)
-
-笔记本内核将重置，但单元格将保留，重新运行&#x200B;**all**&#x200B;单元格以继续离开的位置。
+笔记本内核将重置，但单元格将保留，重新运行所有单元格以继续离开的位置。
 
 ### 每小时访客计数{#hourly-visitor-count}
 
-以下查询返回指定日期的小时访客计数：
+以下查询返回指定日期的每小时访客计数：
 
 #### 查询
 
@@ -124,9 +122,9 @@ GROUP  BY Day, Hour
 ORDER  BY Hour;
 ```
 
-在上述查询中，`WHERE`子句中的时间戳设置为`target_year`的值。 在SQL查询中包含变量，方法是将它们包含在大括号(`{}`)中。
+在上述查询中，将`WHERE`子句中的时间戳设置为`target_year`的值。 将变量包含在大括号(`{}`)中，以便在SQL查询中包含变量。
 
-查询的第一行包含可选变量`hourly_visitor`。 查询结果将作为Pactys数据帧存储在此变量中。 将结果存储在查询帧中允许您以后使用所需的[!DNL Python]包可视化数据结果。 在新单元格中执行以下[!DNL Python]代码以生成条形图：
+查询的第一行包含可选变量`hourly_visitor`。 查询结果将作为Pactis数据帧存储在此变量中。 将结果存储在查询帧中允许您以后使用所需的[!DNL Python]包可视化数据结果。 在新单元格中执行以下[!DNL Python]代码以生成条形图：
 
 ```python
 trace = go.Bar(
@@ -170,7 +168,7 @@ ORDER  BY Hour;
 hourly_actions.head()
 ```
 
-可以修改上述查询，以使用&#x200B;**WHERE**&#x200B;子句中的逻辑运算符返回指定日期范围的小时操作计数：
+可以修改上述查询，以使用&#x200B;**WHERE**&#x200B;子句中的逻辑运算符返回指定日期范围的每小时操作计数：
 
 #### 查询 <!-- omit in toc -->
 
@@ -227,9 +225,9 @@ fig = go.Figure(data = data, layout = layout)
 iplot(fig)
 ```
 
-### 指定日期的热门页面{#popular-pages-for-a-given-day}
+### 给定日期的常用页面{#popular-pages-for-a-given-day}
 
-以下查询返回指定日期的十个最受欢迎的页面：
+以下查询返回指定日期中十个最受欢迎的页面：
 
 #### 查询 <!-- omit in toc -->
 
@@ -244,9 +242,9 @@ ORDER  BY page_views DESC
 LIMIT  10;
 ```
 
-### 给定日期的活动用户数{#active-users-for-a-given-day}
+### 给定日期{#active-users-for-a-given-day}的活动用户
 
-以下查询返回指定日期的十个最活跃的用户：
+以下查询返回指定日期中十个最活跃的用户：
 
 #### 查询 <!-- omit in toc -->
 
@@ -261,9 +259,9 @@ ORDER  BY Count DESC
 LIMIT  10;
 ```
 
-### 按用户划分的活跃城市活动{#active-cities-by-user-activity}
+### 按用户活动{#active-cities-by-user-activity}列出的活跃城市
 
-以下查询返回在指定日期生成大多数用户活动的十个城市：
+以下查询返回在指定日期生成大部分用户活动的十个城市：
 
 #### 查询 <!-- omit in toc -->
 
@@ -280,4 +278,4 @@ LIMIT  10;
 
 ## 后续步骤
 
-本教程演示了在[!DNL Jupyter]笔记本中使用[!DNL Query Service]的一些示例用例。 请按照[使用Jupyter Notebooks](./analyze-your-data.md)教程分析数据，了解如何使用Data Access SDK执行类似操作。
+本教程演示了在[!DNL Jupyter]笔记本中使用[!DNL Query Service]的一些示例使用案例。 请按照[使用Jupyter Notebooks](./analyze-your-data.md)教程分析数据，了解如何使用Data Access SDK执行类似操作。
