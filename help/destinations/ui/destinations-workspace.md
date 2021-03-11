@@ -4,7 +4,7 @@ title: 目标工作区概述
 description: “目标”工作区由四个部分组成，即“目录”、“浏览”、“帐户”和“系统视图”，这些部分在以下各节中有介绍。
 seo-description: 在Adobe Experience Platform中，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: 95ff15b212e0d6f454f0319ac1ec5bbee9c07dac
+source-git-commit: 37b0ec0e04c45cb065eca9d262249016e80655ef
 workflow-type: tm+mt
 source-wordcount: '1017'
 ht-degree: 2%
@@ -117,6 +117,6 @@ ht-degree: 2%
 
 ![数据流1](../assets/ui/workspace/data-flows1.png)
 
-选择页面上显示的任何目标，然后按&#x200B;**[!UICONTROL 视图流]**&#x200B;查看您为每个目标设置的所有连接的相关信息。
+选择页面上显示的任何目标，然后单击&#x200B;**[!UICONTROL 视图流]**&#x200B;以查看您为每个目标设置的所有连接的相关信息。
 
 ![数据流2](../assets/ui/workspace/data-flows2.png)
