@@ -4,9 +4,9 @@ title: 目标工作区概述
 description: “目标”工作区由四个部分组成，即“目录”、“浏览”、“帐户”和“系统视图”，这些部分在以下各节中有介绍。
 seo-description: 在Adobe Experience Platform中，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: 9305936ca1e73821b2fe948ff1a17a7168840cba
+source-git-commit: 95ff15b212e0d6f454f0319ac1ec5bbee9c07dac
 workflow-type: tm+mt
-source-wordcount: '939'
+source-wordcount: '1017'
 ht-degree: 2%
 
 ---
@@ -87,15 +87,19 @@ ht-degree: 2%
 
 >[!TIP]
 >
->使用&#x200B;**[!UICONTROL 名称]**&#x200B;列中的![添加数据按钮](../assets/ui/workspace/add-data-symbol.png)按钮可将其他区段激活到该目标。
+> * 使用&#x200B;**[!UICONTROL 名称]**&#x200B;列中的![添加区段按钮](../assets/ui/workspace/add-data-symbol.png)按钮可将其他区段激活到该目标。
+> * 使用&#x200B;**[!UICONTROL 名称]**&#x200B;列中的![删除目标按钮](../assets/ui/workspace/delete-destination-symbol.png)按钮可删除到目标的现有连接。
+
 
 ![浏览选项卡](../assets/ui/workspace/browse-tab.png)
 
 | 元素 | 描述 |
 ---------|----------
-| 名称 | 您为激活流提供到此目标的名称。 |
+| 名称 | 您为激活流提供到此目标的名称。 同一列包含两个控件：[!UICONTROL 激活]和[!UICONTROL 删除目标]。 |
+| 上次流运行状态 | 上次数据流运行的状态。 有关数据流运行的详细信息，请参阅[视图目标详细信息](destination-details-page.md)。 |
+| 上次流运行日期 | 上次数据流运行的时间和日期。 有关数据流运行的详细信息，请参阅[视图目标详细信息](destination-details-page.md)。 |
 | [!UICONTROL 目标] | 您为激活流选择的目标平台。 |
-| [!UICONTROL 连接类型] | 表示到存储存储段或目标的连接类型。 <ul><li>对于电子邮件营销目标：可以是S3或FTP。</li><li>对于实时广告目标：服务器到服务器</li></ul> |
+| [!UICONTROL 连接类型] | 表示到存储存储段或目标的连接类型。 <ul><li>对于电子邮件营销目标：可以是S3、FTP或[!DNL Azure Blob]。</li><li>对于实时广告目标：服务器到服务器。</li><li>对于流目标：可以是[!DNL Azure Event Hubs]或[!DNL Amazon Kinesis]。</li></ul> |
 | [!UICONTROL 用户名] | 您为目标流选择的帐户凭据。 |
 | [!UICONTROL 激活数据] | 指示要激活到此目标的区段数。 选择此控件可进一步了解已激活的区段。 有关已激活区段的详细信息，请参阅目标详细信息页中的[激活数据](/help/destinations/ui/destination-details-page.md#activation-data)。 |
 | [!UICONTROL 已创建] | 创建到目标的激活流的日期和UTC时间。 |
