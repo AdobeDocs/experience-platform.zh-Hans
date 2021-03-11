@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 6c8bf05285dcfc3e631ae5a41dcf40f90217320a
+source-git-commit: 95ff15b212e0d6f454f0319ac1ec5bbee9c07dac
 workflow-type: tm+mt
-source-wordcount: '2184'
+source-wordcount: '2151'
 ht-degree: 0%
 
 ---
@@ -30,19 +30,11 @@ ht-degree: 0%
 
 适用于：所有目标
 
-在Adobe Experience Platform用户界面中，导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**，然后选择要激活区段的目标。
+在Adobe Experience Platform用户界面中，导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**，然后按与要激活区段的目标对应的&#x200B;**[!UICONTROL 激活]**&#x200B;按钮，如下图所示。
 
-![浏览到目标](../assets/ui/activate-destinations/connect.png)
+![激活到目标](../assets/ui/activate-destinations/browse-tab-activate.png)
 
-选择要导航到激活工作流的目标名称。
-
-![activate-flow](../assets/ui/activate-destinations/activate-flow.png)
-
->[!NOTE]
->
->如果目标已存在激活工作流，则您可以看到当前正在激活到目标的区段。 选择右边栏中的&#x200B;**[!UICONTROL 编辑激活]**，然后按照以下步骤修改激活详细信息。
-
-选择目标后，选择&#x200B;**[!UICONTROL 激活]**。
+按照下一节中的步骤选择要激活的区段。
 
 ### [!UICONTROL 选择区] 段步骤  {#select-segments}
 
