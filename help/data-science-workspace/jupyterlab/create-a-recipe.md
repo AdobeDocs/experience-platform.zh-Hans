@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;JupyterLab;recipe；笔记本；数据科学工作区；热门主题；创建菜谱
+keywords: Experience Platform;JupyterLab；菜谱；笔记本；数据科学工作区；热门主题；创建菜谱
 solution: Experience Platform
 title: 使用Jupyter笔记本创建菜谱
-topic: tutorial
-type: Tutorial
-description: 本教程将分两个主要部分。 首先，您将使用JupyterLab Notebook中的模板创建机器学习模型。 接下来，您将在JupyterLab中练习笔记本到菜谱工作流程，以便在数据科学工作区中创建菜谱。
+topic: 教程
+type: 教程
+description: 本教程将分两个主要部分。 首先，您将使用JupyterLab Notebook中的模板创建机器学习模型。 接下来，您将在JupyterLab中练习笔记本到菜谱工作流，以在Data Science Workspace中创建菜谱。
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 9d84fc1eb898020ed4b154c091fcc9fc4933c7de
 workflow-type: tm+mt
-source-wordcount: '2362'
+source-wordcount: '2366'
 ht-degree: 0%
 
 ---
@@ -16,58 +16,58 @@ ht-degree: 0%
 
 # 使用Jupyter Notebooks创建菜谱
 
-本教程将分两个主要部分。 首先，您将使用[!DNL JupyterLab Notebook]中的模板创建机器学习模型。 接下来，您将练习笔记本到[!DNL JupyterLab]中的菜谱工作流，在[!DNL Data Science Workspace]中创建菜谱。
+本教程将分两个主要部分。 首先，您将使用[!DNL JupyterLab Notebook]中的模板创建机器学习模型。 接下来，您将练习笔记本到[!DNL JupyterLab]中的菜谱工作流，以在[!DNL Data Science Workspace]中创建菜谱。
 
 ## 引入的概念：
 
-- **菜谱：** 菜谱是Adobe对模型规范的术语，是代表特定机器学习、AI算法或算法集合、处理逻辑和配置的顶级容器，构建和执行经过培训的模型时需要它，因此有助于解决特定的业务问题。
-- **模型：** 模型是机器学习菜谱的实例，该菜谱使用历史数据和配置进行培训，以便为业务用例进行解决。
-- **培训：** 培训是从标记数据学习模式和洞察的过程。
+- **菜谱：** 菜谱是模型规范的Adobe术语，是表示特定机器学习、AI算法或集成算法、处理逻辑和配置的顶级容器，构建和执行经过培训的模型时需要这些功能，因此有助于解决特定的业务问题。
+- **模型：** 模型是机器学习方法的实例，该方法使用历史数据和配置进行培训，以便针对业务用例进行解决。
+- **培训：** 培训是从标记数据中学习模式和洞察的过程。
 - **评分：** 评分是使用经过培训的模型从数据生成洞察的过程。
 
 ## 开始使用[!DNL JupyterLab]笔记本环境
 
-可在[!DNL Data Science Workspace]中从头开始创建菜谱。 要开始，请导航至[Adobe Experience Platform](https://platform.adobe.com)并单击左侧的&#x200B;**[!UICONTROL 笔记本]**&#x200B;选项卡。 从[!DNL JupyterLab Launcher]中选择Recipe Builder模板，创建新笔记本。
+可以在[!DNL Data Science Workspace]中从头开始创建菜谱。 要开始，请导航到[Adobe Experience Platform](https://platform.adobe.com)并单击左侧的&#x200B;**[!UICONTROL 笔记本]**&#x200B;选项卡。 从[!DNL JupyterLab Launcher]中选择Recipe Builder模板，创建新笔记本。
 
-[!UICONTROL Recipe Builder]笔记本可在笔记本内运行培训和评分。 这使您能够灵活地在对培训和评分数据运行实验之间更改其`train()`和`score()`方法。 一旦您对培训和评分的输出感到满意，就可以创建一个菜谱，在[!DNL Data Science Workspace]中使用笔记本来创建菜谱功能，该功能内置到Recipe Builder笔记本中。
+[!UICONTROL Recipe Builder]笔记本允许您在笔记本内运行培训和评分运行。 这使您能够灵活地在对培训和评分数据运行实验之间更改其`train()`和`score()`方法。 一旦您对培训和评分的输出感到满意，您就可以创建一个菜谱，在[!DNL Data Science Workspace]中使用笔记本创建菜谱功能，该功能内置于菜谱生成器笔记本中。
 
 >[!NOTE]
 >
->Recipe Builder笔记本支持处理所有文件格式，但当前“创建菜谱”功能仅支持[!DNL Python]。
+>Recipe Builder笔记本支持使用所有文件格式，但当前“创建菜谱”功能仅支持[!DNL Python]。
 
 ![](../images/jupyterlab/create-recipe/recipe_builder.png)
 
-从启动器单击Recipe Builder笔记本时，将在选项卡中打开该笔记本。 笔记本中使用的模板是Python零售销售预测处方，也可以在[此公共存储库](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)中找到
+单击启动程序中的Recipe Builder笔记本时，将在选项卡中打开该笔记本。 笔记本中使用的模板是Python Retail Sales Forecasing Recipe，也可以在[此公共存储库](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)中找到
 
-您将注意到，在工具栏中有三个附加操作，即&#x200B;**[!UICONTROL Train]**、**[!UICONTROL Score]**&#x200B;和&#x200B;**[!UICONTROL 创建菜谱]**。 这些图标仅显示在[!UICONTROL Recipe Builder]笔记本中。 在笔记本中构建菜谱后，将在培训和评分部分](#training-and-scoring)中讨论有关这些操作的更多信息。[
+您会注意到，在工具栏中有三个附加操作，即：**[!UICONTROL 培训]**、**[!UICONTROL 得分]**&#x200B;和&#x200B;**[!UICONTROL 创建菜谱]**。 这些图标仅显示在[!UICONTROL Recipe Builder]笔记本中。 在笔记本中构建菜谱后，将在培训和评分部分](#training-and-scoring)中讨论有关这些操作的更多信息。[
 
 ![](../images/jupyterlab/create-recipe/toolbar_actions.png)
 
 ## 编辑菜谱文件
 
-要编辑菜谱文件，请导航到Jupyter中与文件路径对应的单元格。 例如，如果要更改`evaluator.py`，请查找`%%writefile demo-recipe/evaluator.py`。
+要编辑菜谱文件，请导航到Jupyter中与文件路径对应的单元格。 例如，如果要对`evaluator.py`进行更改，请查找`%%writefile demo-recipe/evaluator.py`。
 
-开始对单元格进行必要的更改，完成后，只需运行单元格。 `%%writefile filename.py`命令将单元格的内容写入`filename.py`。 您必须手动为每个文件运行更改的单元格。
+开始对单元格进行必要的更改，完成后，只需运行单元格。 `%%writefile filename.py`命令将单元格的内容写入`filename.py`。 您必须手动为每个包含更改的文件运行单元格。
 
 >[!NOTE]
 >
 >如果适用，您应手动运行单元格。
 
-## 开始使用Recipe Builder笔记本
+## Recipe Builder笔记本入门
 
-现在，您已了解[!DNL JupyterLab]笔记本环境的基础知识，可开始查看构成机器学习模型菜谱的文件。 我们将讨论的文件显示在此处：
+现在，您已了解[!DNL JupyterLab]笔记本环境的基础知识，可开始查看构成机器学习模型菜谱的文件。 下面显示了我们将讨论的文件：
 
 - [要求文件](#requirements-file)
 - [配置文件](#configuration-files)
 - [培训数据加载器](#training-data-loader)
 - [评分数据加载器](#scoring-data-loader)
-- [管道文件](#pipeline-file)
+- [管线文件](#pipeline-file)
 - [求值器文件](#evaluator-file)
 - [数据保护程序文件](#data-saver-file)
 
 ### 要求文件{#requirements-file}
 
-要求文件用于声明您希望在菜谱中使用的其他库。 如果存在依赖关系，则可以指定版本号。 要查找其他库，请访问[anaconda.org](https://anaconda.org)。 要了解如何格式化要求文件，请访问[Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-file-manually)。 正在使用的主要库的列表包括：
+要求文件用于声明您希望在菜谱中使用的其他库。 如果存在依赖关系，则可以指定版本号。 要查找其他库，请访问[anaconda.org](https://anaconda.org)。 要了解如何设置要求文件的格式，请访问[Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-file-manually)。 已在使用的主库的列表包括：
 
 ```JSON
 python=3.6.7
@@ -83,7 +83,7 @@ data_access_sdk_python
 
 ### 配置文件{#configuration-files}
 
-配置文件`training.conf`和`scoring.conf`用于指定要用于培训和评分以及添加超参数的数据集。 培训和评分有单独的配置。
+配置文件`training.conf`和`scoring.conf`用于指定要用于培训和评分以及添加超参数的数据集。 培训和评分有不同的配置。
 
 用户在运行培训和评分之前必须填写以下变量：
 - `trainingDataSetId`
@@ -92,11 +92,11 @@ data_access_sdk_python
 - `ACP_DSW_SCORING_RESULTS_XDM_SCHEMA`
 - `scoringResultsDataSetId`
 
-要查找数据集和模式ID，请转到左侧导航栏（文件夹图标下）笔记本中的“数据选项卡”。
+要查找数据集和模式ID，请转到左侧导航栏（文件夹图标下）笔记本内的“数据”选项卡![“数据”选项卡](../images/jupyterlab/create-recipe/dataset-tab.png)。
 
-![](../images/jupyterlab/create-recipe/datasets.png)
+![](../images/jupyterlab/create-recipe/dataset_tab.png)
 
-在&#x200B;**[模式](https://platform.adobe.com/schema)**&#x200B;和&#x200B;**[数据集](https://platform.adobe.com/dataset/overview)**&#x200B;标签下的[Adobe Experience Platform](https://platform.adobe.com/)上可以找到相同的信息。
+在&#x200B;**[模式](https://platform.adobe.com/schema)**&#x200B;和&#x200B;**[数据集](https://platform.adobe.com/dataset/overview)**&#x200B;选项卡下的[Adobe Experience Platform](https://platform.adobe.com/)上可以找到相同的信息。
 
 默认情况下，在访问数据时会为您设置以下配置参数：
 
@@ -111,11 +111,11 @@ data_access_sdk_python
 - 从[!DNL Platform]加载数据
 - 数据准备和功能工程
 
-以下两个部分将重新加载数据和准备数据。
+以下两节将重新介绍加载数据和数据准备。
 
 ### 正在加载数据{#loading-data}
 
-此步骤使用[熊猫数据帧](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)。 数据可以使用[!DNL Platform] SDK(`platform_sdk`)从[!DNL Adobe Experience Platform]中的文件加载，也可以使用熊猫&#39; `read_csv()`或`read_json()`函数从外部源加载。
+此步骤使用[dataframe](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)。 可以使用[!DNL Platform] SDK(`platform_sdk`)从[!DNL Adobe Experience Platform]中的文件加载数据，或使用熊猫&#39; `read_csv()`或`read_json()`函数从外部源加载数据。
 
 - [[!DNL Platform SDK]](#platform-sdk)
 - [外部源](#external-sources)
@@ -126,11 +126,11 @@ data_access_sdk_python
 
 ### [!DNL Platform] SDK {#platform-sdk}
 
-有关使用`platform_sdk`数据加载器的详细教程，请访问[平台SDK指南](../authoring/platform-sdk.md)。 本教程提供有关构建身份验证、基本数据读取和基本数据写入的信息。
+有关使用`platform_sdk`数据加载器的详细教程，请访问[平台SDK指南](../authoring/platform-sdk.md)。 本教程提供有关构建身份验证、基本读取数据和基本写入数据的信息。
 
 ### 外部源{#external-sources}
 
-本节将向您介绍如何将JSON或CSV文件导入到Apnotics对象。 熊猫图书馆的官方文件可在以下网址找到：
+本节将向您介绍如何将JSON或CSV文件导入到pacantis对象。 熊猫图书馆的官方文件可在以下网址找到：
 - [read_csv](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html)
 - [read_json](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_json.html)
 
@@ -146,11 +146,11 @@ df = pd.read_csv(data)
 df = pd.read_json(data)
 ```
 
-现在，您的数据位于数据帧对象中，可在[下一节](#data-preparation-and-feature-engineering)中分析和处理。
+现在，您的数据位于数据帧对象中，可在[下一节](#data-preparation-and-feature-engineering)中分析和处理数据。
 
 ### 从Platform SDK
 
-您可以使用平台SDK加载数据。 通过包含以下行，可以在页面顶部导入库：
+您可以使用平台SDK加载数据。 可通过包含以下行，在页面顶部导入库：
 
 `from platform_sdk.dataset_reader import DatasetReader`
 
@@ -180,7 +180,7 @@ def load(config_properties):
 > - `ML_FRAMEWORK_IMS_TENANT_ID`
 
 
-现在您拥有了数据，您可以从数据准备和功能工程开始。
+现在您掌握了数据，您可以从数据准备和功能工程开始。
 
 ### 数据准备和功能工程{#data-preparation-and-feature-engineering}
 
@@ -211,22 +211,22 @@ dataframe.drop('date', axis=1, inplace=True)
 - 添加`week`和`year`列
 - 将`storeType`转换为指示符变量
 - 将`isHoliday`转换为数字变量
-- 偏移`weeklySales`可获得未来和过去的销售值
+- 偏移`weeklySales`以获得未来和过去的销售值
 - 按日期将数据拆分为`train`和`val`数据集
 
-首先，创建`week`和`year`列，并将原始的`date`列转换为[!DNL Python] [datetime](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html)。 周值和年值从日期时间对象中提取。
+首先，创建`week`和`year`列，并将原始`date`列转换为[!DNL Python] [datetime](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html)。 周值和年值从日期时间对象中提取。
 
-然后，将`storeType`转换为表示三种不同存储类型（`A`、`B`和`C`）的三列。 每个值都将包含一个布尔值，其状态`storeType`为true。 将删除`storeType`列。
+接下来，将`storeType`转换为表示三种不同存储类型（`A`、`B`和`C`）的三列。 每个值都将包含一个布尔值，其状态`storeType`为true。 将删除`storeType`列。
 
-同样，`weeklySales`将`isHoliday`布尔值更改为数字表示法，1或0。
+同样，`weeklySales`将`isHoliday`布尔值更改为数字表示形式，1或0。
 
-此数据在`train`和`val`数据集之间进行拆分。
+此数据在`train`和`val`数据集之间拆分。
 
 `load()`函数应以`train`和`val`数据集作为输出。
 
 ### 评分数据加载器{#scoring-data-loader}
 
-加载评分数据的过程与在`split()`函数中加载培训数据的过程类似。 我们使用数据访问SDK从我们的`recipe.conf`文件中的`scoringDataSetId`加载数据。
+加载评分数据的过程与`split()`函数中加载培训数据的过程类似。 我们使用Data Access SDK从`recipe.conf`文件中的`scoringDataSetId`加载数据。
 
 ```PYTHON
 def load(config_properties):
@@ -243,7 +243,7 @@ def load(config_properties):
     tenant_id = config_properties.get("tenant_id")
 ```
 
-数据加载后，进行数据准备和特征工程。
+在加载数据后，进行数据准备和特征工程。
 
 ```PYTHON
     #########################################
@@ -276,28 +276,28 @@ def load(config_properties):
     return dataframe
 ```
 
-由于我们模型的目的是预测未来每周的销售量，因此您需要创建一个评分数据集来评估模型的预测效果。
+由于我们模型的目的是预测未来的每周销售，因此您需要创建一个评分数据集来评估模型的预测效果。
 
-此Recipe Builder笔记本可通过向后抵销我们的每周销售额7天来实现。 请注意，每周有45个存储的度量值，这样您就可以将`weeklySales`值45个数据集转发到名为`weeklySalesAhead`的新列。
+此Recipe Builder笔记本通过向前7天抵销我们的每周销售额来实现此目的。 请注意，每周有45个存储区的测量值，这样您就可以将45个数据集的`weeklySales`值转发到名为`weeklySalesAhead`的新列。
 
 ```PYTHON
 df['weeklySalesAhead'] = df.shift(-45)['weeklySales']
 ```
 
-同样，您也可以通过向后移动45来创建列`weeklySalesLag`。 使用此选项，您还可以计算每周销售额的差额，并将它们存储在列`weeklySalesDiff`中。
+同样，您也可以通过向后移动45来创建列`weeklySalesLag`。 使用此选项，您还可以计算每周销售额的差值，并将它们存储在列`weeklySalesDiff`中。
 
 ```PYTHON
 df['weeklySalesLag'] = df.shift(45)['weeklySales']
 df['weeklySalesDiff'] = (df['weeklySales'] - df['weeklySalesLag']) / df['weeklySalesLag']
 ```
 
-由于您正在向前偏移`weeklySales`数据点45个数据集，向后偏移45个数据集以创建新列，因此前45个数据点和后45个数据点将具有NaN值。 您可以使用`df.dropna()`函数从数据集中删除这些点，该函数删除所有具有NaN值的行。
+由于您正在向前偏移`weeklySales`数据点45个数据集，向后偏移45个数据集以创建新列，因此前45个数据点将具有NaN值。 您可以使用`df.dropna()`函数从数据集中删除这些点，该函数会删除所有具有NaN值的行。
 
 ```PYTHON
 df.dropna(0, inplace=True)
 ```
 
-评分数据加载器中的`load()`函数应以评分数据集作为输出完成。
+您的评分数据加载器中的`load()`函数应以评分数据集作为输出完成。
 
 ### 管道文件{#pipeline-file}
 
@@ -313,7 +313,7 @@ df.dropna(0, inplace=True)
 
 `train()`函数应包括培训模型并返回培训模型。 不同型号的一些示例可在[scikit-learn用户指南文档](https://scikit-learn.org/stable/user_guide.html)中找到。
 
-选择培训模型后，您将将x和y培训数据集拟合到该模型中，该函数将返回该培训模型。 一个显示此情况的示例如下：
+选择培训模型后，您会将x和y培训数据集拟合到该模型，该函数将返回培训的模型。 说明此问题的示例如下：
 
 ```PYTHON
 def train(configProperties, data):
@@ -351,7 +351,7 @@ def train(configProperties, data):
 
 ### 评分{#scoring}
 
-`score()`函数应包含评分算法并返回度量，以指示模型执行的成功程度。 `score()`函数使用评分数据集标签和训练的模型生成一组预测特征。 然后，将这些预测值与评分数据集中的实际特征进行比较。 在此示例中，`score()`函数使用经过培训的模型来使用评分数据集中的标签来预测特征。 返回预测特征。
+`score()`函数应包含评分算法并返回一个度量，以指示模型执行的成功程度。 `score()`函数使用评分数据集标签和训练的模型来生成一组预测特征。 然后，将这些预测值与评分数据集中的实际特征进行比较。 在此示例中，`score()`函数使用经过训练的模型来使用评分数据集中的标签来预测特征。 返回预测特征。
 
 ```PYTHON
 def score(configProperties, data, model):
@@ -373,15 +373,15 @@ def score(configProperties, data, model):
 
 ### 求值器文件{#evaluator-file}
 
-`evaluator.py`文件包含如何评估您的培训菜谱以及如何拆分培训数据的逻辑。 在零售销售示例中，将包括加载和准备培训数据的逻辑。 我们将浏览以下两节。
+`evaluator.py`文件包含如何评估培训菜谱以及如何拆分培训数据的逻辑。 在零售销售示例中，将包含加载和准备培训数据的逻辑。 我们将浏览以下两节。
 
 ### 拆分数据集{#split-the-dataset}
 
-培训的数据准备阶段需要拆分要用于培训和测试的数据集。 此`val`数据将隐式用于评估模型在训练后的性能。 此过程与评分分开。
+培训的数据准备阶段需要拆分要用于培训和测试的数据集。 此`val`数据将隐式用于在模型训练后评估模型。 此过程与评分分开。
 
-此部分将显示`split()`函数，该函数将首先将数据加载到笔记本，然后通过删除数据集中不相关的列来清理数据。 从那里，您将能够执行功能工程，即根据数据中的现有原始功能创建其他相关功能的过程。 下面显示了此过程的示例和说明。
+本节将显示`split()`函数，该函数将首先将数据加载到笔记本中，然后通过删除数据集中的不相关列来清理数据。 从那里，您将能够执行功能工程，即根据数据中的现有原始功能创建其他相关功能的过程。 下面显示了此过程的示例和说明。
 
-`split()`函数如下所示。 参数中提供的数据帧将被拆分为要返回的`train`和`val`变量。
+`split()`函数如下所示。 参数中提供的数据帧将拆分为要返回的`train`和`val`变量。
 
 ```PYTHON
 def split(self, configProperties={}, dataframe=None):
@@ -394,11 +394,11 @@ def split(self, configProperties={}, dataframe=None):
     return train, val
 ```
 
-### 评估培训的模型{#evaluate-the-trained-model}
+### 评估已训练的模型{#evaluate-the-trained-model}
 
-`evaluate()`函数在模型训练后执行，并将返回一个度量来指示模型执行的成功程度。 `evaluate()`函数使用测试数据集标签和“已培训”模型来预测一组特征。 然后，将这些预测值与测试数据集中的实际特征进行比较。 常见评分算法包括：
+`evaluate()`函数在模型训练后执行，并将返回一个度量来指示模型执行的成功程度。 `evaluate()`函数使用测试数据集标签和“训练”模型来预测一组特征。 然后将这些预测值与测试数据集中的实际特征进行比较。 常见评分算法包括：
 - [平均绝对百分比错误(MAPE)](https://en.wikipedia.org/wiki/Mean_absolute_percentage_error)
-- [平均绝对误差(MAE)](https://en.wikipedia.org/wiki/Mean_absolute_error)
+- [平均绝对误差](https://en.wikipedia.org/wiki/Mean_absolute_error)
 - [均方根误差](https://en.wikipedia.org/wiki/Root-mean-square_deviation)
 
 
@@ -421,7 +421,7 @@ def evaluate(self, data=[], model={}, configProperties={}):
     return metric
 ```
 
-请注意，该函数返回一个`metric`对象，其中包含评估度量的数组。 这些指标将用于评估经过训练的模型的性能。
+请注意，该函数返回一个`metric`对象，其中包含一个评估量度数组。 这些量度将用于评估训练模型的效果。
 
 ### 数据保护程序文件{#data-saver-file}
 
@@ -462,19 +462,19 @@ def save(configProperties, prediction):
 
 请注意，必须至少运行一次培训，然后才能运行评分。 单击&#x200B;**[!UICONTROL 运行评分]**&#x200B;按钮将对培训期间生成的培训模型进行得分。 评分脚本将显示在`datasaver.py`下。
 
-出于调试目的，如果要查看隐藏的输出，请将`debug`添加到输出单元格的末尾，然后重新运行它。
+出于调试目的，如果要查看隐藏输出，请将`debug`添加到输出单元格的末尾，然后重新运行它。
 
 ## 创建菜谱{#create-recipe}
 
-编辑完菜谱并满意培训／评分输出后，您可以通过按右上方导航中的&#x200B;**[!UICONTROL 创建菜谱]**&#x200B;从笔记本创建菜谱。
+编辑菜谱并满足培训/评分输出后，您可以在右上方导航中按&#x200B;**[!UICONTROL 创建菜谱]**&#x200B;从笔记本创建菜谱。
 
 ![](../images/jupyterlab/create-recipe/create-recipe.png)
 
-按下按钮后，系统会提示您输入菜谱名称。 此名称表示在[!DNL Platform]上创建的实际菜谱。
+按下按钮后，系统会提示您输入菜谱名称。 此名称表示在[!DNL Platform]上创建的实际处方。
 
 ![](../images/jupyterlab/create-recipe/enter_recipe_name.png)
 
-按下&#x200B;**[!UICONTROL Ok]**&#x200B;后，您将能够导航到[Adobe Experience Platform](https://platform.adobe.com/)上的新菜谱。 单击&#x200B;**[!UICONTROL 视图菜谱]**&#x200B;按钮可转到&#x200B;**[!UICONTROL ML模型]**&#x200B;下的&#x200B;**[!UICONTROL 食谱]**&#x200B;选项卡
+按&#x200B;**[!UICONTROL Ok]**&#x200B;后，您将能够导航到[Adobe Experience Platform](https://platform.adobe.com/)上的新菜谱。 单击&#x200B;**[!UICONTROL “视图菜谱]**”按钮可转到&#x200B;**[!UICONTROL ML模型]**&#x200B;下的&#x200B;**[!UICONTROL 菜谱]**&#x200B;选项卡
 
 ![](../images/jupyterlab/create-recipe/recipe_creation_started.png)
 
@@ -486,18 +486,18 @@ def save(configProperties, prediction):
 >
 > - 请勿删除任何文件单元格
 > - 请勿编辑文件单元格顶部的`%%writefile`行
-> - 不要同时在不同的笔记本中创建菜谱
+> - 请勿同时在不同笔记本中创建菜谱
 
 
 ## 后续步骤 {#next-steps}
 
-完成本教程后，您学习了如何在Recipe Builder笔记本中创建机器学习模型。 您还学习了如何在笔记本中练习笔记本到菜谱工作流，以在[!DNL Data Science Workspace]中创建菜谱。
+完成本教程后，您学会了如何在Recipe Builder笔记本中创建机器学习模型。 您还学习了如何在笔记本中练习笔记本至菜谱工作流，以在[!DNL Data Science Workspace]中创建菜谱。
 
 要继续学习如何使用[!DNL Data Science Workspace]中的资源，请访问[!DNL Data Science Workspace]菜谱和模型下拉列表。
 
 ## 其他资源 {#additional-resources}
 
-以下视频旨在支持您对构建和部署模型的理解。
+以下视频旨在帮助您理解构建和部署模型。
 
 >[!VIDEO](https://video.tv.adobe.com/v/30575?quality=12&enable10seconds=on&speedcontrol=on)
 
