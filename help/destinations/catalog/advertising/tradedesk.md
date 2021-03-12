@@ -1,11 +1,11 @@
 ---
 keywords: 广告；贸易部门；
 title: 贸易台连接
-description: '交易台是一个自助平台，可供广告购买者跨展示广告、视频和移动库存来源执行重定向和受众目标数字活动。 '
+description: '交易台是一个自助平台，可供广告购买者跨展示广告、视频和移动库存源执行重定向和受众目标数字活动。 '
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 0ef107963f7da377070eb845fd7c24218a99464b
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '609'
 ht-degree: 0%
 
 ---
@@ -17,13 +17,17 @@ ht-degree: 0%
 
 [!DNL The Trade Desk] 是一个自助平台，让广告购买者能够跨展示、视频和移动库存源执行重定向和受众目标数字活动。
 
-要将用户档案数据发送到[!DNL The Trade Desk]，您必须首先连接到目标。
+要将用户档案数据发送到[!DNL Trade Desk]，您必须首先连接到目标。
 
 ## 目标规范{#destination-specs}
 
-请注意特定于[!DNL The Trade Desk]目标的以下详细信息：
+请注意特定于[!DNL Trade Desk]目标的以下详细信息：
 
 * 可以将以下[identities](../../../identity-service/namespaces.md)发送到[!DNL The Trade Desk]目标：[!DNL The Trade Desk ID]、[!DNL IDFA]、[!DNL GAID]。
+
+>[!IMPORTANT]
+>
+>如果您希望使用[!DNL The Trade Desk]创建您的第一个目标，并且过去(使用Adobe Audience Manager或其他应用程序)未启用Experience Cloud ID服务中的[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe咨询或客户服务部门以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您设置的ID同步将结转到平台。
 
 ## 用例 {#use-cases}
 
@@ -50,7 +54,7 @@ ht-degree: 0%
 * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**:将帮助您在将来确定此目标的描述。
 * **[!UICONTROL 帐户ID]**:您的 [!DNL Trade Desk] [!UICONTROL 帐户ID]。
-* **[!UICONTROL 服务器位置]**:询问您 [!DNL The Trade Desk] 的代表您应使用哪个区域服务器。这些是可用的区域服务器，您可以从以下位置进行选择：
+* **[!UICONTROL 服务器位置]**:询问您 [!DNL Trade Desk] 的代表您应使用哪个区域服务器。这些是可用的区域服务器，您可以从以下位置进行选择：
 
    * **[!UICONTROL 欧洲]**
    * **[!UICONTROL 新加坡]**
@@ -79,4 +83,4 @@ ht-degree: 0%
 
 ## 导出的数据{#exported-data}
 
-要验证数据是否已成功导出到[!DNL The Trade Desk]目标，请检查您的[!DNL The Trade Desk]帐户。 如果激活成功，则受众将填充到您的帐户中。
+要验证数据是否已成功导出到[!DNL The Trade Desk]目标，请检查您的[!DNL Trade Desk]帐户。 如果激活成功，则受众将填充到您的帐户中。
