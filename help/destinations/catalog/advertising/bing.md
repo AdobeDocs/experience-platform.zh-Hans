@@ -3,9 +3,9 @@ keywords: '广告；bing; '
 title: Microsoft Bing连接
 description: 通过Microsoft Bing连接目标，您可以跨Microsoft Display Advertising执行重定位和受众目标数字活动。
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 0ef107963f7da377070eb845fd7c24218a99464b
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '527'
 ht-degree: 0%
 
 ---
@@ -23,6 +23,10 @@ ht-degree: 0%
 
 * 可以将以下[identities](../../../identity-service/namespaces.md)发送到[!DNL Microsoft Bing]目标：[!DNL Microsoft ID]。
 
+>[!IMPORTANT]
+>
+>如果您希望使用[!DNL Microsoft Bing]创建您的第一个目标，并且过去(使用Adobe Audience Manager或其他应用程序)未启用Experience Cloud ID服务中的[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe咨询或客户服务部门以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Microsoft Bing]集成，则您设置的ID同步将结转到平台。
+
 ## 用例 {#use-cases}
 
 作为营销人员，我希望能够通过跨[!DNL Microsoft Advertising]渠道的展示广告，将[!DNL Microsoft Advertising IDs]的细分用于目标用户。
@@ -33,7 +37,7 @@ ht-degree: 0%
 
 ## 先决条件 {#prerequisites}
 
-配置目标时，您将要求您提供以下信息：
+配置目标时，必须提供以下信息：
 
 * [!UICONTROL 帐户ID]:这是您的 [!DNL Bing Ads CID]整数格式。
 
