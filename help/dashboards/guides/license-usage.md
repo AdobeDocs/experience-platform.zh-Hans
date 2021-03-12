@@ -2,18 +2,18 @@
 keywords: Experience Platform；用户界面；UI；自定义；许可证使用仪表板;仪表板；许可证使用；授权；消耗
 title: 许可证使用仪表板
 description: Adobe Experience Platform提供了一个仪表板，您可以通过它视图有关组织许可证使用情况的重要信息。
-topic: guide
-type: Documentation
+topic: 指南
+type: 文档
 translation-type: tm+mt
-source-git-commit: 084aaa315f694d696abee7f078be3a121111f6cc
+source-git-commit: 3908011b31dd24b13a58a2bc5ad5137dd3af5f63
 workflow-type: tm+mt
-source-wordcount: '594'
-ht-degree: 1%
+source-wordcount: '656'
+ht-degree: 3%
 
 ---
 
 
-# （测试版）[!UICONTROL 许可证使用]仪表板{#license-usage-dashboard}
+# （测试版）许可证使用仪表板{#license-usage-dashboard}
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过它可
 
 >[!NOTE]
 >
->沙箱的消耗报告对于相同类型的所有沙箱是累积的。 换句话说，选择[!UICONTROL 生产]或[!UICONTROL 开发]将分别报告所有生产沙箱或开发沙箱。
+>沙箱的消耗报告对于相同类型的所有沙箱是累积的。 换句话说，选择[!UICONTROL 生产]或[!UICONTROL 开发]分别为所有生产或开发沙箱提供消费报告。
 
 ![](../images/license-usage/select-sandbox.png)
 
@@ -53,26 +53,35 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过它可
 
 ![](../images/license-usage/select-date-range.png)
 
-### 构件和量度
+## 构件
 
-许可证使用仪表板由构件组成，构件显示只读量度，提供有关组织许可证使用情况的重要信息。 要进一步了解这些构件，请参阅本指南中的可用构件部分。
+许可证使用仪表板由构件组成，构件显示只读量度，提供有关组织许可证使用情况的重要信息。 可见量度取决于贵组织的特定许可（有关详细信息，请参阅[可用量度](#available-metrics)部分）。
 
-## 可用构件{#available-widgets}
+每个小部件都会显示一个线形图，比较您组织的实际数字与您组织的许可提供的总数，并提供总使用量的百分比。
 
-Experience Platform目前提供一个构件，您可以使用它直观地显示许可证使用情况，并且很快会发布更多构件。
+![](../images/license-usage/widgets.png)
 
-### [!UICONTROL 可寻址受众] {#addressable-audiences}
+## 可用量度
 
-**[!UICONTROL 可寻址受众]**&#x200B;构件在应用系统生成的合并策略以使用确定（专用）图形算法合并来自所有当前数据集的用户档案片段后，显示用户档案数据存储中合并用户档案的总数。
+许可证使用仪表板当前提供四个量度：
 
-有关片段和合并用户档案的详细信息，请首先阅读[用户档案概述](../../profile/home.md)的&#x200B;*用户档案片段与合并用户档案*&#x200B;部分。
+* [!UICONTROL 可寻址受众] (按用户档案数量衡量)
+* [!UICONTROL 平均用户档案丰富性]
+* [!UICONTROL 总消耗存储]
+* [!UICONTROL 每分段扫描的数据]
 
->[!NOTE]
->
->用于计算此量度的合并策略由Experience Platform生成，无法编辑，也无法选择其他合并策略。 此系统生成的合并策略与用于在[!DNL Profile]仪表板中计算[!UICONTROL 受众大小]的默认合并策略不同，因此[!UICONTROL 许可证使用情况]和[!DNL Profile]仪表板中的受众计数不太可能完全相同。
+这些量度的定义因单位购买的许可而异。 有关每个量度的详细定义，请参阅相应的产品说明文档：
 
-![](../images/license-usage/addressable-audiences.png)
+| 许可 | 产品说明 |
+|---|---|
+| <ul><li>Adobe Experience Platform:OD LITE</li><li>Adobe Experience Platform:OD标准</li><li>Adobe Experience Platform:OD重</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
+| <ul><li>Adobe Experience Platform:OD</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
+| <ul><li>RT客户数据平台：OD</li><li>RT客户数据平台：OD PRFL至10M</li><li>RT客户数据平台：OD PRFL至50M</li></ul> | [Real-time Customer Data Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
+| <ul><li>AEP:OD激活</li><li>AEP:OD激活PRF至10M</li><li>AEP:OD激活最多50米</li></ul> | [Adobe Experience Platform 激活](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) |
+| <ul><li>AEP:OD INTELLIGENCE</li></ul> | [Adobe Experience Platform Intelligence](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform-intelligence---product-description.html) |
 
 ## 后续步骤
 
-通过遵循此文档，您现在应该能够找到许可证使用仪表板并选择一个沙箱以进行视图。 您还应了解可用构件中显示的量度。 要进一步了解Experience Platform UI，请参阅[平台UI指南](../../landing/ui-guide.md)。
+读取此文档后，您可以找到许可证使用仪表板并选择要视图的沙箱。 您还可以根据单位购买的许可找到有关单位可用指标的更多信息。
+
+要进一步了解Experience Platform UI中的其他功能，请参阅[平台UI指南](../../landing/ui-guide.md)。
