@@ -6,9 +6,9 @@ topic: 概述
 type: 教程
 description: 数据流是从源中检索数据并将其引入平台数据集的计划任务。 本教程提供了使用云存储帐户配置新数据流的步骤。
 translation-type: tm+mt
-source-git-commit: 115442a90ab56a93748bf161aa2e7ed680980f6e
+source-git-commit: 1fb4a272a914bf4ce7653f3f4f7fff63f36f9a48
 workflow-type: tm+mt
-source-wordcount: '1874'
+source-wordcount: '1924'
 ht-degree: 0%
 
 ---
@@ -41,38 +41,52 @@ ht-degree: 0%
 
 创建云存储帐户后，将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，为您提供一个界面来浏览云存储文件层次结构。
 
-* 界面的左半部分是目录浏览器，显示服务器的文件和目录。
-* 该界面的右半部分允许您从一个兼容文件预览多达100行数据。
+* 界面的左侧是目录浏览器，显示您的云存储文件和目录。
+* 该界面的右侧部分允许您从一个兼容文件中预览多达100行数据。
 
-通过选择列出的文件夹，您可以将文件夹层次结构遍历到更深入的文件夹中。 选择兼容文件或文件夹后，将显示&#x200B;**[!UICONTROL 选择数据格式]**&#x200B;下拉列表，您可以在预览窗口中选择显示数据的格式。
+![界面](../../../../images/tutorials/dataflow/cloud-storage/batch/interface.png)
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data.png)
+通过选择列出的文件夹，您可以将文件夹层次结构遍历到更深入的文件夹中。 您可以选择单个文件夹以递归收录该文件夹中的所有文件。 在摄取整个文件夹时，必须确保该文件夹中的所有文件共享相同的模式。
 
-为要收录的文件选择适当的预览格式，并等待几秒钟以填充“数据”窗口。
+选择兼容文件或文件夹后，从[!UICONTROL 选择数据格式]下拉菜单中选择相应的数据格式。
 
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/data-format.png)
+下表显示了支持的文件类型的相应数据格式：
 
-可在收录分隔文件时设置自定义分隔符。 选择&#x200B;**[!UICONTROL 分隔符]**&#x200B;选项，然后从下拉菜单中选择分隔符。 菜单显示最常用的分隔符选项，包括逗号(`,`)、制表符(`\t`)和管道(`|`)。 或者，您也可以选择&#x200B;**[!UICONTROL Custom]**&#x200B;并在弹出输入栏中输入您选择的自定义分隔符。
+| 文件类型 | 数据格式 |
+| --- | --- |
+| CSV | [!UICONTROL 分隔] |
+| JSON | [!UICONTROL JSON] |
+| 镶木 | [!UICONTROL XDM Parke] |
+
+选择&#x200B;**[!UICONTROL JSON]**，然后等待几秒钟以填充预览界面。
+
+![select-data](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data.png)
+
+>[!NOTE]
+>
+>与分隔文件和JSON文件类型不同，Parke格式文件不可用于预览。
+
+预览界面允许您检查文件的内容和结构。 默认情况下，预览界面显示所选文件夹中的第一个文件。
+
+要预览其他文件，请选择要检查的文件名称旁边的预览图标。
+
+![默认预览](../../../../images/tutorials/dataflow/cloud-storage/batch/default-preview.png)
+
+检查文件夹中文件的内容和结构后，选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以递归收录文件夹中的所有文件。
+
+![select-folder](../../../../images/tutorials/dataflow/cloud-storage/batch/select-folder.png)
+
+如果您希望选择特定文件，请选择要收录的文件，然后选择&#x200B;**[!UICONTROL 下一步]**。
+
+![select-file](../../../../images/tutorials/dataflow/cloud-storage/batch/select-file.png)
+
+### 为分隔文件设置自定义分隔符
+
+可在收录分隔文件时设置自定义分隔符。 选择&#x200B;**[!UICONTROL 分隔符]**&#x200B;选项，然后从下拉菜单中选择分隔符。 菜单显示最常用的分隔符选项，包括逗号(`,`)、制表符(`\t`)和管道(`|`)。 如果您希望使用自定义分隔符，请选择&#x200B;**[!UICONTROL Custom]**，然后在弹出输入栏中输入您选择的单字符分隔符。
 
 选择数据格式并设置分隔符后，请选择&#x200B;**[!UICONTROL 下一步]**。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/delimiter.png)
-
-### 收录Parke或JSON文件
-
-云存储帐户还支持JSON和Parke文件。 拼花文件必须符合XDM标准，而JSON文件不需要符合XDM标准。 要收录JSON或Parke文件，请从目录浏览器中选择适当的文件格式，并从正确的界面应用兼容的数据格式。
-
-如果数据格式为JSON，将显示预览，显示有关文件中数据的信息。 在“预览”屏幕上，可以使用&#x200B;**[!UICONTROL XDM兼容]**&#x200B;下拉列表选择JSON是否符合XDM。
-
-选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
-
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/json-preview.png)
-
->[!IMPORTANT]
->
->与分隔文件和JSON文件类型不同，Parke格式文件不可用于预览。
-
-![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-data-parquet.png)
 
 ## 将数据字段映射到XDM模式
 
