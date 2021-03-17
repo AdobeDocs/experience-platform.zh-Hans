@@ -5,10 +5,10 @@ description: Adobe Experience Platform提供了一个仪表板，您可以通过
 topic: 指南
 type: 文档
 translation-type: tm+mt
-source-git-commit: 3908011b31dd24b13a58a2bc5ad5137dd3af5f63
+source-git-commit: 6baf1fbff20a02cd599d9ad9102d56db5a9004c3
 workflow-type: tm+mt
-source-wordcount: '656'
-ht-degree: 3%
+source-wordcount: '660'
+ht-degree: 2%
 
 ---
 
@@ -75,8 +75,8 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过它可
 | 许可 | 产品说明 |
 |---|---|
 | <ul><li>Adobe Experience Platform:OD LITE</li><li>Adobe Experience Platform:OD标准</li><li>Adobe Experience Platform:OD重</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
-| <ul><li>Adobe Experience Platform:OD</li></ul> | [Adobe Experience Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
-| <ul><li>RT客户数据平台：OD</li><li>RT客户数据平台：OD PRFL至10M</li><li>RT客户数据平台：OD PRFL至50M</li></ul> | [Real-time Customer Data Platform](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform.html) |
+| <ul><li>Adobe Experience Platform:OD</li></ul> | [Experience Platform、App Services和Intelligent Services](https://helpx.adobe.com/legal/product-descriptions/exp-platform-app-svcs.html) |
+| <ul><li>RT客户数据平台：OD</li><li>RT客户数据平台：OD PRFL至10M</li><li>RT客户数据平台：OD PRFL至50M</li></ul> | [Real-time Customer Data Platform](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) |
 | <ul><li>AEP:OD激活</li><li>AEP:OD激活PRF至10M</li><li>AEP:OD激活最多50米</li></ul> | [Adobe Experience Platform 激活](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) |
 | <ul><li>AEP:OD INTELLIGENCE</li></ul> | [Adobe Experience Platform Intelligence](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform-intelligence---product-description.html) |
 
