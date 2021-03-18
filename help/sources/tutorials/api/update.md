@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；流服务；更新连接
+keywords: Experience Platform；主页；热门主题；流服务；更新帐户
 solution: Experience Platform
-title: 使用流服务API更新连接
+title: 使用流服务API更新帐户
 topic: 概述
 type: 教程
-description: 本教程介绍使用流服务API更新连接的详细信息和凭据的步骤。
+description: 本教程介绍使用流服务API更新帐户的详细信息和凭据的步骤。
 translation-type: tm+mt
-source-git-commit: 5187647dfcf82a476bc776bf2b606db228ca70a4
+source-git-commit: 37be5f5ffa4640d7d4442a24cc257069237f15cb
 workflow-type: tm+mt
 source-wordcount: '689'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 ---
 
 
-# 使用流服务API更新连接
+# 使用流服务API更新帐户
 
 在某些情况下，可能需要更新现有源连接的详细信息。 [!DNL Flow Service] 使您能够添加、编辑和删除现有批处理或流连接的详细信息，包括其名称、说明和凭据。
 
