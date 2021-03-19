@@ -6,7 +6,7 @@ user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定�
 description: 此文档列表Adobe Experience Platform目标的目录
 feature: 目标
 translation-type: tm+mt
-source-git-commit: 648be489aa77870f67564ee350c4d85885673832
+source-git-commit: 3ae5efca9744e5f5edde56038beab93be5157de3
 workflow-type: tm+mt
 source-wordcount: '464'
 ht-degree: 10%
@@ -130,6 +130,6 @@ ht-degree: 10%
       * [客户之声目标概述](./catalog/voice/overview.md)
       * [确认数字反馈扩展](./catalog/voice/confirmit-digital-feedback.md)
       * [Invoca标记扩展](./catalog/voice/invoca.md)
-      * [美达利亚](./catalog/voice/medallia.md)
+      * [Medallia扩展](./catalog/voice/medallia.md)
       * [交谈URL收件箱扩展](./catalog/voice/talkurl.md)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
