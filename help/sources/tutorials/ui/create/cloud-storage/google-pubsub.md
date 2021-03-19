@@ -6,9 +6,9 @@ topic: 概述
 type: 教程
 description: 了解如何使用平台用户界面创建Google PubSub源连接器。
 translation-type: tm+mt
-source-git-commit: 0af90253f04377149986aedf2e9d3012ca06d4f8
+source-git-commit: b5358ce206888c413035b46fe751520fd9aefb14
 workflow-type: tm+mt
-source-wordcount: '445'
+source-wordcount: '492'
 ht-degree: 1%
 
 ---
@@ -38,33 +38,37 @@ ht-degree: 1%
 | 凭据 | 描述 |
 | ---------- | ----------- |
 | `projectId` | 验证[!DNL PubSub]所需的项目ID。 |
-| `credentials` | 验证[!DNL PubSub]所需的凭据或密钥。 |
+| `credentials` | 验证[!DNL PubSub]所需的凭据或私钥ID。 |
 
-有关这些值的详细信息，请参阅以下[PubSub身份验证](https://cloud.google.com/pubsub/docs/authentication)文档。
+有关这些值的详细信息，请参阅以下[PubSub身份验证](https://cloud.google.com/pubsub/docs/authentication)文档。 如果您使用基于服务帐户的身份验证，请参阅以下[PubSub指南](https://cloud.google.com/docs/authentication/production#create_service_account)，了解有关如何生成凭据的步骤。
 
-收集所需凭据后，您可以按照以下步骤将您的[!DNL Blob]帐户链接到平台。
+>[!TIP]
+>
+>如果您使用基于服务帐户的身份验证，请确保您已授予对您的服务帐户的足够用户访问权限，并且在复制和粘贴凭据时，JSON中没有额外的空白。
+
+收集所需凭据后，您可以按照以下步骤将您的[!DNL PubSub]帐户链接到平台。
 
 ## 连接您的[!DNL PubSub]帐户
 
-在[平台UI](https://platform.adobe.com)中，从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]屏幕显示了可为其创建帐户的各种源。
+在[平台UI](https://platform.adobe.com)中，从左侧导航栏中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 [!UICONTROL Catalog]屏幕显示了可为其创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索栏找到要处理的特定源。
 
-在[!UICONTROL 云存储]类别下，选择&#x200B;**[!UICONTROL Google PubSub]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
+在[!UICONTROL Cloud storage]类别下，选择&#x200B;**[!UICONTROL Google PubSub]**，然后选择&#x200B;**[!UICONTROL Add data]**。
 
 ![目录](../../../../images/tutorials/create/google-pubsub/catalog.png)
 
-将显示&#x200B;**[!UICONTROL 连接到Google PubSub]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
+将显示&#x200B;**[!UICONTROL Connect to Google PubSub]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 现有帐户
 
-要使用现有帐户，请选择要用来创建新数据流的[!DNL PubSub]帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+要使用现有帐户，请选择要用来创建新数据流的[!DNL PubSub]帐户，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
 ![现有](../../../../images/tutorials/create/google-pubsub/existing.png)
 
 ### 新帐户
 
-如果要创建新帐户，请选择&#x200B;**[!UICONTROL 新建帐户]**，然后在输入表单上提供名称、可选说明和您的[!DNL PubSub]身份验证凭据。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，然后为建立新连接留出一些时间。
+如果要创建新帐户，请选择&#x200B;**[!UICONTROL New account]**，然后在输入表单上提供名称、可选说明和[!DNL PubSub]身份验证凭据。 完成后，选择&#x200B;**[!UICONTROL Connect to source]**，然后为新连接建立留出一些时间。
 
 ![新](../../../../images/tutorials/create/google-pubsub/new.png)
 
