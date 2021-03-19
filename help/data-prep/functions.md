@@ -5,7 +5,7 @@ title: 数据准备映射函数
 topic: 概述
 description: 本文档介绍了与数据准备一起使用的映射功能。
 translation-type: tm+mt
-source-git-commit: 6a541cca307dec8937c2d49470e8bcab770c80c7
+source-git-commit: 85a99171a6786b47bf50d4579a3ebc88af3c82f6
 workflow-type: tm+mt
 source-wordcount: '3719'
 ht-degree: 3%
@@ -35,7 +35,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 下表列表了所有支持的映射函数，包括示例表达式及其结果输出。
 
-### 字符串函数
+### 字符串函数{#string}
 
 >[!NOTE]
 >
@@ -71,7 +71,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | extract_regex | 根据常规表达式从输入字符串提取组。 | <ul><li>字符串：**必需**&#x200B;要从中提取组的字符串。</li><li>正则表达式：**必需**&#x200B;您希望组匹配的常规表达式。</li></ul> | extract_regex(STRING， REGEX) | extract_regex&#x200B;(&quot;E259,E259B_009,1_1&quot; &#x200B;, &quot;([^,]+),[^,]*,([^,]+)&quot;) | [&quot;E259,E259B_009,1_1&quot;、&quot;E259&quot;、&quot;1_1&quot;] |
 | matches_regex | 检查字符串是否与输入的常规表达式匹配。 | <ul><li>字符串：**必需**&#x200B;您正在检查的字符串与常规表达式匹配。</li><li>正则表达式：**必需**&#x200B;要与之比较的常规表达式。</li></ul> | matches_regex(STRING， REGEX) | matches_regex(&quot;E259,E259B_009,1_1&quot;, &quot;([^,]+),[^,]*,([^,]+)&quot;) | true |
 
-### 散列函数
+### 散列函数{#hashing}
 
 >[!NOTE]
 >
@@ -85,7 +85,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | md5 | 使用MD5获取输入并生成哈希值。 | <ul><li>输入：**必需**&#x200B;要散列的纯文本。</li><li>字符集：*可选*&#x200B;字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。 </li></ul> | md5(INPUT， CHARSET) | md5(&quot;my text&quot;, &quot;UTF-8&quot;) | d3b96ce8c9fb4 &#x200B;e9bd0198d03ba6852c7 |
 | crc32 | 输入使用循环冗余校验(CRC)算法来生成32位循环码。 | <ul><li>输入：**必需**&#x200B;要散列的纯文本。</li><li>字符集：*可选*&#x200B;字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | crc32(INPUT， CHARSET) | crc32(&quot;my text&quot;, &quot;UTF-8&quot;) | 8df92e80 |
 
-### URL函数
+### URL函数{#url}
 
 >[!NOTE]
 >
@@ -99,7 +99,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | get_url_path | 返回给定URL的路径。 默认情况下，返回完整路径。 | <ul><li>URL:**必需**&#x200B;需要从中提取路径的URL。</li><li>FULL_PATH:*可选*&#x200B;一个布尔值，用于确定是否返回完整路径。 如果设置为false，则只返回路径的结尾。</li></ul> | get_url_path(&#x200B;URL， FULL_PATH) | get_url_path&#x200B;(&quot;sftp://example.com// &#x200B; home/joe/employee.csv&quot;) | &quot;//home/joe/&#x200B; employee.csv&quot; |
 | get_url_查询_str | 返回给定URL的查询字符串。 | <ul><li>URL:**必需**&#x200B;您尝试从中获取查询字符串的URL。</li><li>锚点：**必需**&#x200B;确定将对查询字符串中的锚点执行什么操作。 可以是以下三个值之一：“retain”、“remove”或“append”。<br><br>如果值为“retain”，则锚点将附加到返回的值。<br>如果值为“remove”，则锚点将从返回值中删除。<br>如果值为“append”，则锚点将作为单独的值返回。</li></ul> | get_url_查询_str&#x200B;(URL， ANCHOR) | get_url_查询&#x200B;_str(&#x200B;&quot;/over/there?name &#x200B; foo://example.com:8042&#x200B;_retain=ferret#nose&quot;, &quot;append&quot;)<br><br> | `{"name": "ferret#nose"}`<br>`{"name": "ferret"}`<br>`{"name": "ferret", "_anchor_": "nose"}` |
 
-### 日期和时间函数
+### 日期和时间函数{#date-and-time}
 
 >[!NOTE]
 >
@@ -122,7 +122,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 &#x200B;
 
-### 层次 — 对象
+### 层次 — 对象{#objects}
 
 >[!NOTE]
 >
@@ -138,7 +138,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | is_set | 检查源数据中是否存在该对象。 | <ul><li>输入：**必需**&#x200B;要检查的路径（如果它存在于源数据中）。</li></ul> | is_set(INPUT) | is_set&#x200B;(&quot;evars.evar.field1&quot;) | true |
 | 无效 | 将属性的值设置为`null`。 当您不希望将字段复制到目标模式时，应使用此选项。 |  | nullify() | nullify() | `null` |
 
-### 层次结构 — 数组
+### 层次结构 — 数组{#arrays}
 
 >[!NOTE]
 >
@@ -153,7 +153,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | join_arrays | 将数组相互组合。 | <ul><li>阵列：**必需**&#x200B;要向其添加元素的数组。</li><li>值：要追加到父数组的数组。</li></ul> | join_arrays(&#x200B;ARRAY， VALUES) | join_arrays&#x200B;([&#39;a&#39;、&#39;b&#39;]、[&#39;c&#39;]、[&#39;d&#39;、&#39;e&#39;]) | [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;] |
 | to_array | 获取输入列表并将其转换为数组。 | <ul><li>INCLUDE_NULLS:**必需**&#x200B;一个布尔值，用于指示是否在响应数组中包含空值。</li><li>值：**必需**&#x200B;要转换为数组的元素。</li></ul> | to_array&#x200B;(INCLUDE_NULLS， VALUES) | to_array(false， 1, null， 2, 3) | `[1, 2, 3]` |
 
-### 逻辑运算符
+### 逻辑运算符{#logical-operators}
 
 >[!NOTE]
 >
@@ -164,7 +164,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | 解码 | 如果给定一个键和作为数组拼合的键值对的列表，则如果找到键，则函数将返回该值，如果数组中存在，则返回默认值。 | <ul><li>关键：**必需**&#x200B;要匹配的键。</li><li>OPTIONS:**必需**&#x200B;键/值对的拼合数组。 （可选）可以将默认值放在末尾。</li></ul> | decode(KEY，OPTIONS) | decode(stateCode， &quot;ca&quot;, &quot;California&quot;, &quot;pa&quot;, &quot;Pennylvania&quot;, &quot;N/A&quot;) | 如果给定的stateCode是“ca”、“California”。<br>如果给定的stateCode是“pa”、“Pennsylvania”。<br>如果stateCode与以下内容不匹配，则为“N/A”。 |
 | i | 计算给定的布尔表达式，并根据结果返回指定值。 | <ul><li>表达式:**必需**&#x200B;要求的布尔表达式。</li><li>TRUE_VALUE:**必需**&#x200B;如果表达式的计算结果为true，则返回的值。</li><li>FALSE_VALUE:**必需**&#x200B;如果表达式的计算结果为false，则返回的值。</li></ul> | if(表达式, TRUE_VALUE， FALSE_VALUE) | iif(&quot;s&quot;。equalsIgnoreCase(&quot;S&quot;), &quot;True&quot;, &quot;False&quot;) | &quot;True&quot; |
 
-### 聚合
+### 聚合 {#aggregation}
 
 >[!NOTE]
 >
@@ -175,7 +175,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | min | 返回给定参数的最小值。 使用自然排序。 | <ul><li>OPTIONS:**必需**&#x200B;可相互比较的一个或多个对象。</li></ul> | min(OPTIONS) | min(3, 1, 4) | 1 |
 | max | 返回给定参数的最大值。 使用自然排序。 | <ul><li>OPTIONS:**必需**&#x200B;可相互比较的一个或多个对象。</li></ul> | max(OPTIONS) | max(3, 1, 4) | 4 |
 
-### 类型转换
+### 类型转换{#type-conversions}
 
 >[!NOTE]
 >
@@ -188,7 +188,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | to_float | 将字符串转换为Float。 | <ul><li>字符串：**必需**&#x200B;要转换为Float的字符串。</li></ul> | to_float(STRING) | to_float(&quot;12.3456&quot;) | 12.34566 |
 | to_integer | 将字符串转换为Integer。 | <ul><li>字符串：**必需**&#x200B;要转换为整数的字符串。</li></ul> | to_integer(STRING) | to_integer(&quot;12&quot;) | 12 |
 
-### JSON函数
+### JSON函数{#json}
 
 >[!NOTE]
 >
@@ -198,7 +198,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 -------- | ----------- | ---------- | -------| ---------- | -------------
 | json_to_object | 反序列化给定字符串中的JSON内容。 | <ul><li>字符串：**必需**&#x200B;要反序列化的JSON字符串。</li></ul> | json_to_object&#x200B;(STRING) | json_to_object&#x200B;({&quot;info&quot;:{&quot;firstName&quot;:&quot;John&quot;,&quot;lastName&quot;:&quot;Doe&quot;}) | 表示JSON的对象。 |
 
-### 特别行动
+### 特殊操作{#special-operations}
 
 >[!NOTE]
 >
@@ -208,7 +208,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 -------- | ----------- | ---------- | -------| ---------- | -------------
 | uuid /<br>guid | 生成伪随机ID。 |  | uuid()<br>guid( | uuid()<br>guid( | 7c0267d2-bb74-4e1a-9275-3bf4fccda5f4<br>c7016dc7-3163-43f7-afc7-2e1c9c206333 |
 
-### 用户代理函数
+### 用户代理函数{#user-agent}
 
 >[!NOTE]
 >
