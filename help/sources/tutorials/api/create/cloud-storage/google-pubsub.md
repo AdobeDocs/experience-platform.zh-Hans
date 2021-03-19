@@ -6,9 +6,9 @@ topic: 概述
 type: 教程
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Google PubSub帐户。
 translation-type: tm+mt
-source-git-commit: 0af90253f04377149986aedf2e9d3012ca06d4f8
+source-git-commit: b5358ce206888c413035b46fe751520fd9aefb14
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '613'
 ht-degree: 2%
 
 ---
@@ -40,7 +40,11 @@ ht-degree: 2%
 | `projectId` | 验证[!DNL PubSub]所需的项目ID。 |
 | `credentials` | 验证[!DNL PubSub]所需的凭据或密钥。 |
 
-有关这些值的详细信息，请参阅以下[PubSub身份验证](https://cloud.google.com/pubsub/docs/authentication)文档。
+有关这些值的详细信息，请参阅以下[PubSub身份验证](https://cloud.google.com/pubsub/docs/authentication)文档。 如果您使用基于服务帐户的身份验证，请参阅以下[PubSub指南](https://cloud.google.com/docs/authentication/production#create_service_account)，了解有关如何生成凭据的步骤。
+
+>[!TIP]
+>
+>如果您使用基于服务帐户的身份验证，请确保您已授予对您的服务帐户的足够用户访问权限，并且在复制和粘贴凭据时，JSON中没有额外的空白。
 
 ### 读取示例API调用
 
