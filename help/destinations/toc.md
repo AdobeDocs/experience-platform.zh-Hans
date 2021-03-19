@@ -6,10 +6,10 @@ user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定�
 description: 此文档列表Adobe Experience Platform目标的目录
 feature: 目标
 translation-type: tm+mt
-source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
+source-git-commit: 648be489aa77870f67564ee350c4d85885673832
 workflow-type: tm+mt
-source-wordcount: '460'
-ht-degree: 11%
+source-wordcount: '464'
+ht-degree: 10%
 
 ---
 
@@ -82,6 +82,7 @@ ht-degree: 11%
       * [Azure Blob连接](./catalog/cloud-storage/azure-blob.md)
       * [（测试版）Azure事件集线器连接](./catalog/cloud-storage/azure-event-hubs.md)
       * [SFTP连接](./catalog/cloud-storage/sftp.md)
+      * [IP地址允许列表](./catalog/cloud-storage/ip-address-allow-list.md)
    * 数据管理平台目标{#data-management}
       * [数据管理 Platform(DMP)目标概述](./catalog/data-management/overview.md)
       * [Audience ManagerDIL扩展](./catalog/data-management/aam-dil-extension.md)
