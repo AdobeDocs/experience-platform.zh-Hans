@@ -3,9 +3,9 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据散列的电子邮件激活Facebook活动的用户档案，以实现受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: bec44832a235dd3f9e2ee0f3ffc77854ee5784d7
+source-git-commit: 950dc24e44a32cfd3e0cdde0fee967cb687c572e
 workflow-type: tm+mt
-source-wordcount: '942'
+source-wordcount: '1128'
 ht-degree: 3%
 
 ---
@@ -35,19 +35,29 @@ ht-degree: 3%
 
 接下来，他们可以使用离线数据（包括关联的会员ID和客户层）来构建新的受众细分，以便通过[!DNL Facebook]目标进行目标。
 
-## 目标特性{#destination-specs}
-
-### [!DNL Facebook]目标{#data-governance}的数据管理
+## [!DNL Facebook]目标{#data-governance}的数据管理
 
 >[!IMPORTANT]
 >
 >发送到[!DNL Facebook]的数据不应包括拼接身份。 您有责任履行此义务，并可通过确保为激活选择的区段在其合并策略中不使用拼接选项来执行。 了解有关[合并策略](/help/profile/ui/merge-policies.md)的更多信息。
 
-### 导出类型{#export-type}
+## 支持的身份{#supported-identities}
+
+[!DNL Facebook Custom Audiences] 支持下表所述身份的激活。了解有关[identities](/help/identity-service/namespaces.md)的更多信息。
+
+| 目标身份 | 描述 | 注意事项 |
+|---|---|---|
+| GAID | Google广告ID | 当源标识为GAID命名空间时，选择此目标标识。 |
+| IDFA | 面向广告商的Apple ID | 当源标识为IDFA命名空间时，选择此目标标识。 |
+| phone_sha256 | 使用SHA256算法散列化电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID matching requirements](#id-matching-requirements-id-matching-requirements)部分中的说明，分别对纯文本和散列电话号码使用适当的命名空间。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。 |
+| email_lc_sha256 | 使用SHA256算法散列化的电子邮件地址 | 纯文本和SHA256哈希电子邮件地址都受Adobe Experience Platform支持。 按照[ID matching requirements](#id-matching-requirements-id-matching-requirements)部分中的说明，分别对纯文本和散列电子邮件地址使用相应的命名空间。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。 |
+| extern_id | 自定义用户ID | 当源标识是自定义目标时，请选择此命名空间标识。 |
+
+## 导出类型{#export-type}
 
 **区段导出**  — 您正在导出包含标识符（名称、电话号码等）的区段(受众)的所有成员在Facebook目标中使用。
 
-### Facebook帐户先决条件{#facebook-account-prerequisites}
+## Facebook帐户先决条件{#facebook-account-prerequisites}
 
 在将受众区段发送到[!DNL Facebook]之前，请确保满足以下要求：
 
@@ -58,13 +68,13 @@ ht-degree: 3%
    > 配置Adobe Experience Cloud的权限时，必须启用&#x200B;**管理活动**&#x200B;权限。 [!DNL Adobe Experience Platform] 集成要求具备此权限。
 - 阅读并签署[!DNL Facebook Custom Audiences]服务条款。 为此，请转到 `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`，其中 `accountID` 是您的 [!DNL Facebook Ad Account ID]。
 
-### ID匹配要求{#id-matching-requirements}
+## ID匹配要求{#id-matching-requirements}
 
 [!DNL Facebook] 要求不要发送任何清晰的个人身份信息(PII)。因此，激活到[!DNL Facebook]的受众可以键出&#x200B;*散列*&#x200B;标识符，如电子邮件地址或电话号码。
 
 根据您将ID引入Adobe Experience Platform的类型，您需要遵守其相应要求。
 
-#### 电话号码哈希要求{#phone-number-hashing-requirements}
+### 电话号码哈希要求{#phone-number-hashing-requirements}
 
 在[!DNL Facebook]中激活电话号码有两种方法：
 
@@ -76,7 +86,7 @@ ht-degree: 3%
 >无法在[!DNL Facebook]中激活被引入`Phone`命名空间的电话号码。
 
 
-#### 电子邮件散列要求{#email-hashing-requirements}
+### 电子邮件散列要求{#email-hashing-requirements}
 
 您可以选择在将电子邮件地址引入Adobe Experience Platform之前对它们进行哈希处理，也可以选择在Experience Platform中清晰地处理电子邮件地址，并在激活上使用我们的算法对它们进行哈希处理。
 
@@ -94,12 +104,12 @@ ht-degree: 3%
 >[!NOTE]
 >
 >未散列命名空间的数据在激活时由[!DNL Platform]自动散列。
-> 属性源数据不会自动散列。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。
-> 仅当选择属性作为源字段时，才显示&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项。 在您选择命名空间时，不显示。
+> 属性源数据不会自动散列。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。
+> **[!UICONTROL Apply transformation]**&#x200B;选项仅在选择属性作为源字段时显示。 在您选择命名空间时，不显示。
 
 ![身份映射转换](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
-#### 使用自定义命名空间{#custom-namespaces}
+### 使用自定义命名空间{#custom-namespaces}
 
 在使用`Extern_ID`命名空间向[!DNL Facebook]发送数据之前，请确保使用[!DNL Facebook Pixel]同步您自己的标识符。 有关详细信息，请参阅[官方文档](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers)。
 
@@ -111,7 +121,7 @@ ht-degree: 3%
 
 有关如何将区段激活到[!DNL Facebook]的说明，请参阅[将数据激活到目标](../../ui/activate-destinations.md)。
 
-在&#x200B;**[!UICONTROL 区段计划]**&#x200B;步骤中，在将区段发送到[!DNL Facebook Custom Audiences]时，必须提供受众[!UICONTROL 来源。]
+在&#x200B;**[!UICONTROL Segment schedule]**&#x200B;步骤中，向[!DNL Facebook Custom Audiences]发送区段时，必须提供[!UICONTROL Origin of audience]。
 
 ![Facebook来源受众](../../assets/catalog/social/facebook/facebook-origin-audience.png)
 
