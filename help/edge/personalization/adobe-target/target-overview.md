@@ -3,9 +3,9 @@ title: 将Adobe Target与Platform Web SDK结合使用
 description: 了解如何使用Experience Platform Web SDK使用Adobe Target呈现个性化内容
 keywords: 目标;adobe 目标;活动.id;experience.id;renderDecisions;decisionScopes;prehiding代码片段；vec；基于表单的体验书写器；xdm;受众；决定；范围；模式;
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 98db5b92ea0f51c8641651eb14e3fe6cecf7027c
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '657'
 ht-degree: 3%
 
 ---
@@ -15,21 +15,31 @@ ht-degree: 3%
 
 Adobe Experience Platform [!DNL Web SDK]可以向Web渠道提供和呈现Adobe Target中管理的个性化体验。 您可以使用称为[Visual Experience Composer](https://docs.adobe.com/content/help/en/target/using/experiences/vec/visual-experience-composer.html)(VEC)的WYSIWYG编辑器或非可视界面（[基于表单的体验编辑器](https://docs.adobe.com/content/help/en/target/using/experiences/form-experience-composer.html)）来创建、激活和提供您的活动和个性化体验。
 
+以下功能已经过测试，目前在目标中受支持：
+
+* A/B测试
+* A4T印象和转换报告
+* 自动个性化
+* 体验定位
+* Multivariate Tests
+* 本机目标印象和转换报告
+* VEC支持
+
 ## 启用Adobe Target
 
-要启用[!DNL Target]，您需要执行以下操作：
+要启用[!DNL Target]，请执行以下操作：
 
 1. 在[边缘配置](../../fundamentals/edge-configuration.md)中启用目标，使用相应的客户端代码。
 1. 将`renderDecisions`选项添加到事件。
 
-然后（可选）您还可以：
+然后（可选），您还可以添加以下选项：
 
-* 将`decisionScopes`添加到事件以检索特定活动(对于使用基于表单的书写器创建的活动很有用)。
-* 添加[预隐藏片段](../manage-flicker.md)以仅隐藏页面的某些部分。
+* `decisionScopes`:通过将此选项添加到您的活动，检索特定事件(对于使用基于表单的书写器创建的活动很有用)。
+* [预先隐藏片段](../manage-flicker.md):仅隐藏页面的某些部分。
 
 ## 使用Adobe Target VEC
 
-要将VEC与平台Web SDK实现一起使用，您需要安装并激活[Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/)或[Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC Helper Extension。
+要将VEC与平台Web SDK实现一起使用，请安装并激活[Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/)或[Chrome](https://chrome.google.com/webstore/detail/adobe-target-vec-helper/ggjpideecfnbipkacplkhhaflkdjagak) VEC帮助程序扩展。
 
 ## 自动渲染VEC活动
 
@@ -107,9 +117,9 @@ alloy("sendEvent", {
 
 ## 受众XDM
 
-为将通过Adobe Experience Platform Web SDK交付的目标活动定义受众时，必须定义并使用[XDM](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/home.html)。 在定义XDM模式、类和混合后，您可以创建由XDM数据定义的用于定位的目标受众规则。 在目标中，XDM数据在受众 Builder中显示为自定义参数。 XDM使用点记号进行序列化（例如`web.webPageDetails.name`）。
+定义通过Adobe Experience Platform Web SDK交付的目标活动的受众时，必须定义并使用[XDM](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/home.html)。 在定义XDM模式、类和混合后，您可以创建由XDM数据定义的用于定位的目标受众规则。 在目标中，XDM数据在受众 Builder中显示为自定义参数。 XDM使用点记号进行序列化（例如`web.webPageDetails.name`）。
 
-如果您有具有预定义受众的目标活动，这些使用自定义参数或用户用户档案，请注意，它们无法通过SDK正确交付。 您必须改用XDM，而不是使用自定义参数或用户用户档案。 但是，Adobe Experience Platform Web SDK支持的现成受众定位字段不需要XDM。 以下是目标UI中不需要XDM的可用字段：
+如果您有具有预定义受众的目标活动，这些使用自定义参数或用户用户档案，则无法通过SDK正确提供。 您必须改用XDM，而不是使用自定义参数或用户用户档案。 但是，Adobe Experience Platform Web SDK支持的现成受众定位字段不需要XDM。 这些字段在不需要XDM的目标UI中可用：
 
 * 定位库
 * Adobe Target 中的地域
@@ -122,10 +132,10 @@ alloy("sendEvent", {
 
 ## 术语
 
-__决策：__ 在 [!DNL Target]中，这些决策与从活动中选择的体验相关。
+__决策：__ 决策 [!DNL Target]与从活动中选择的体验相关。
 
 __模式:__ 决策的模式是中的优惠类型 [!DNL Target]。
 
-__范围：__ 决定的范围。在[!DNL Target]中，这是mBox。 全局mBox是`__view__`范围。
+__范围：__ 决定的范围。在[!DNL Target]中，范围是mBox。 全局mBox是`__view__`范围。
 
 __XDM:__ XDM被串行化为点记号，然后作为mBox [!DNL Target] 参数放入。
