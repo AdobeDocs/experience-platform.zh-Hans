@@ -6,9 +6,9 @@ breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: 数据摄取，来源
 translation-type: tm+mt
-source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
+source-git-commit: 73ad0a264bcb0e9510ef500592fd945903c5cfea
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '579'
 ht-degree: 12%
 
 ---
@@ -148,9 +148,9 @@ ht-degree: 12%
    - [从第三方云存储系统中摄取Parke数据](tutorials/api/cloud-storage-parquet.md)
    - [创建数据集连接](tutorials/api/create-dataset-base-connection.md)
    - [监视数据流](tutorials/api/monitor.md)
-   - [更新连接](tutorials/api/update.md)
+   - [更新帐户](tutorials/api/update.md)
    - [更新数据流](tutorials/api/update-dataflows.md)
-   - [删除连接](tutorials/api/delete.md)
+   - [删除帐户](tutorials/api/delete.md)
    - [删除数据流](tutorials/api/delete-dataflows.md)
 - UI教程{#ui-tutorials}
    - 创建源连接{#create}
@@ -222,6 +222,7 @@ ht-degree: 12%
    - [激活入站数据以填充客户用户档案](tutorials/ui/profile.md)
    - [监视数据流](tutorials/ui/monitor.md)
    - [更新帐户](tutorials/ui/update.md)
+   - [更新数据流](tutorials/ui/update-dataflows.md)
    - [删除帐户](tutorials/ui/delete-accounts.md)
    - [删除数据流](tutorials/ui/delete.md)
 - [流运行通知](notifications.md)
