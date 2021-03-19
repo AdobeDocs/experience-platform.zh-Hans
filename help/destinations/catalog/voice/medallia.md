@@ -1,11 +1,11 @@
 ---
 keywords: Medallia;medallia
-title: 美达利亚
+title: Medallia扩展
 description: Medallia扩展是Adobe Experience Platform中客户目标的语音。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 205382b68bd8dde8d40a290c4c4825f851216ce2
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '528'
 ht-degree: 3%
 
 ---
@@ -31,13 +31,13 @@ ht-degree: 3%
 
 安装[!DNL Medallia]扩展：
 
-在[平台接口](http://platform.adobe.com/)中，转至&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**。
+在[平台接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
-单击目标以突出显示它，然后在右边栏中选择&#x200B;**[!UICONTROL 配置]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件灰显，则您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
+单击目标以突出显示它，然后在右边栏中选择&#x200B;**[!UICONTROL Configure]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件灰显，则您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
 
-在&#x200B;**[!UICONTROL 选择可用的Platform launch属性]**&#x200B;窗口中，选择要安装扩展的Platform launch属性。 您还可以选择在Platform launch中创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解有关Platform launch文档的[属性页面部分](https://experienceleague.adobe.com/docs/launch/using/reference/admin/companies-and-properties.html#properties-page)中的属性。
+在&#x200B;**[!UICONTROL Select available Platform Launch property]**&#x200B;窗口中，选择要安装扩展的Platform launch属性。 您还可以选择在Platform launch中创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解有关Platform launch文档的[属性页面部分](https://experienceleague.adobe.com/docs/launch/using/reference/admin/companies-and-properties.html#properties-page)中的属性。
 
 该工作流将带您Platform launch完成安装。
 
@@ -57,6 +57,6 @@ ht-degree: 3%
 
 >[!TIP]
 >
->如果某个属性上已安装该扩展，则平台UI仍显示该扩展的&#x200B;**[!UICONTROL 安装]**。 启动安装工作流程（如[安装扩展](#install-extension)中所述），开始Platform launch并配置或删除您的扩展。
+>如果某个属性上已安装该扩展，则平台UI仍会显示该扩展的&#x200B;**[!UICONTROL Install]**。 启动安装工作流程（如[安装扩展](#install-extension)中所述），开始Platform launch并配置或删除您的扩展。
 
 要升级您的扩展，请参阅Platform launch文档中的[扩展升级](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/extension-upgrade.html)。
