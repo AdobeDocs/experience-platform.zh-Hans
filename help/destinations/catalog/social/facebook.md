@@ -3,10 +3,10 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据散列的电子邮件激活Facebook活动的用户档案，以实现受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 950dc24e44a32cfd3e0cdde0fee967cb687c572e
+source-git-commit: fd95357f3e3533fe6b7b9752798dd99eb1cc0eb5
 workflow-type: tm+mt
-source-wordcount: '1128'
-ht-degree: 3%
+source-wordcount: '1118'
+ht-degree: 2%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 3%
 
 ## 用例
 
-为了帮助您更好地了解应如何以及何时使用[!DNL Facebook]目标，以下是Adobe Experience Platform客户可以通过使用此功能解决的两个示例使用案例。
+为了帮助您更好地了解如何以及何时使用[!DNL Facebook]目标，以下是Adobe Experience Platform客户可以通过使用此功能解决的两个示例使用案例。
 
 ### 用例#1
 
@@ -39,7 +39,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->发送到[!DNL Facebook]的数据不应包括拼接身份。 您有责任履行此义务，并可通过确保为激活选择的区段在其合并策略中不使用拼接选项来执行。 了解有关[合并策略](/help/profile/ui/merge-policies.md)的更多信息。
+>发送到[!DNL Facebook]的数据不能包括拼接身份。 您有责任履行此义务，并可通过确保为激活选择的区段在其合并策略中不使用拼接选项来执行。 了解有关[合并策略](/help/profile/ui/merge-policies.md)的更多信息。
 
 ## 支持的身份{#supported-identities}
 
@@ -47,15 +47,15 @@ ht-degree: 3%
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | Google广告ID | 当源标识为GAID命名空间时，选择此目标标识。 |
-| IDFA | 面向广告商的Apple ID | 当源标识为IDFA命名空间时，选择此目标标识。 |
+| GAID | Google广告ID | 当源标识为GAID目标时，选择GAID命名空间标识。 |
+| IDFA | 面向广告商的Apple ID | 当源标识为IDFA目标时，选择IDFA命名空间标识。 |
 | phone_sha256 | 使用SHA256算法散列化电话号码 | Adobe Experience Platform支持纯文本和SHA256哈希电话号码。 按照[ID matching requirements](#id-matching-requirements-id-matching-requirements)部分中的说明，分别对纯文本和散列电话号码使用适当的命名空间。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。 |
 | email_lc_sha256 | 使用SHA256算法散列化的电子邮件地址 | 纯文本和SHA256哈希电子邮件地址都受Adobe Experience Platform支持。 按照[ID matching requirements](#id-matching-requirements-id-matching-requirements)部分中的说明，分别对纯文本和散列电子邮件地址使用相应的命名空间。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。 |
 | extern_id | 自定义用户ID | 当源标识是自定义目标时，请选择此命名空间标识。 |
 
 ## 导出类型{#export-type}
 
-**区段导出**  — 您正在导出包含标识符（名称、电话号码等）的区段(受众)的所有成员在Facebook目标中使用。
+**区段导出**  — 您正在导出区段(受众)的所有成员，其中包含Facebook目标中使用的标识符（名称、电话号码或其他）。
 
 ## Facebook帐户先决条件{#facebook-account-prerequisites}
 
@@ -65,20 +65,20 @@ ht-degree: 3%
 - **Adobe Experience Cloud**&#x200B;业务帐户必须作为广告合作伙伴添加到您的[!DNL Facebook Ad Account]中。 使用 `business ID=206617933627973`. 有关详细信息，请参阅Facebook文档中的[将合作伙伴添加到您的业务经理](https://www.facebook.com/business/help/1717412048538897)。
    >[!IMPORTANT]
    >
-   > 配置Adobe Experience Cloud的权限时，必须启用&#x200B;**管理活动**&#x200B;权限。 [!DNL Adobe Experience Platform] 集成要求具备此权限。
-- 阅读并签署[!DNL Facebook Custom Audiences]服务条款。 为此，请转到 `https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`，其中 `accountID` 是您的 [!DNL Facebook Ad Account ID]。
+   > 配置Adobe Experience Cloud的权限时，必须启用&#x200B;**管理活动**&#x200B;权限。 [!DNL Adobe Experience Platform]集成需要权限。
+- 阅读并签署[!DNL Facebook Custom Audiences]服务条款。 要执行此操作，请转至`https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`，其中`accountID`是您的[!DNL Facebook Ad Account ID]。
 
 ## ID匹配要求{#id-matching-requirements}
 
 [!DNL Facebook] 要求不要发送任何清晰的个人身份信息(PII)。因此，激活到[!DNL Facebook]的受众可以键出&#x200B;*散列*&#x200B;标识符，如电子邮件地址或电话号码。
 
-根据您将ID引入Adobe Experience Platform的类型，您需要遵守其相应要求。
+根据您输入到Adobe Experience Platform的ID类型，您必须遵守其相应要求。
 
 ### 电话号码哈希要求{#phone-number-hashing-requirements}
 
 在[!DNL Facebook]中激活电话号码有两种方法：
 
-- **接收原始电话号码**:您可以将原始电话号码的格 [!DNL E.164] 式录 [!DNL Platform]制为，该格式将在激活时自动散列。如果选择此选项，请确保始终将原始电话号码收录到`Phone_E.164`命名空间。
+- **接收原始电话号码**:您可以将格式的原始电话号码 [!DNL E.164] 收录为 [!DNL Platform]。它们自动散列到激活。 如果选择此选项，请确保始终将原始电话号码收录到`Phone_E.164`命名空间。
 - **正在获取哈希电话号码**:你可以先对电话号码进行哈希处理，然后再将其引入 [!DNL Platform]。如果选择此选项，请确保始终将哈希电话号码收录到`Phone_SHA256`命名空间。
 
 >[!NOTE]
@@ -88,7 +88,7 @@ ht-degree: 3%
 
 ### 电子邮件散列要求{#email-hashing-requirements}
 
-您可以选择在将电子邮件地址引入Adobe Experience Platform之前对它们进行哈希处理，也可以选择在Experience Platform中清晰地处理电子邮件地址，并在激活上使用我们的算法对它们进行哈希处理。
+您可以先对电子邮件地址进行哈希处理，然后将其引入Adobe Experience Platform，或者在Experience Platform中使用电子邮件地址进行清除，并在激活上对它们进行[!DNL Platform]哈希处理。
 
 要了解在Experience Platform中摄取电子邮件地址的信息，请参阅[批摄取概述](/help/ingestion/batch-ingestion/overview.md)和[流摄取概述](/help/ingestion/streaming-ingestion/overview.md)。
 
