@@ -3,10 +3,10 @@ keywords: 移动；布雷兹；消息；
 title: 布雷兹连接
 description: Braze是一个全面的客户互动平台，可为客户与他们喜爱的品牌之间提供相关且难忘的体验。
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 0759919dc458798ca4bc5f233a9cb319194ea534
 workflow-type: tm+mt
-source-wordcount: '925'
-ht-degree: 1%
+source-wordcount: '899'
+ht-degree: 2%
 
 ---
 
@@ -27,7 +27,6 @@ ht-degree: 1%
 
 请注意特定于[!DNL Braze]目标的以下详细信息：
 
-* 只要将任何[identity](../../../identity-service/namespaces.md)映射到[!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation)，即可将其发送到[!DNL Braze]目标。
 * [!DNL Adobe Experience Platform] 段将导出到属 [!DNL Braze] 性的 `AdobeExperiencePlatformSegments` 下方。
 
 >[!NOTE]
@@ -38,6 +37,14 @@ ht-degree: 1%
 
 作为营销人员，我希望在移动互动目标中目标用户，[!DNL Adobe Experience Platform]中内置细分。 此外，我希望在[!DNL Adobe Experience Platform]中更新细分和用户档案后，根据[!DNL Adobe Experience Platform]用户档案的属性，立即为他们提供个性化体验。
 
+### 支持的身份{#supported-identities}
+
+[!DNL Google Ad Manager] 支持下表所述身份的激活。
+
+| 目标身份 | 描述 | 注意事项 |
+|---|---|---|
+| external_id | 支持任何标识映射的自定义[!DNL Braze]标识符。 | 只要将任何[identity](../../../identity-service/namespaces.md)映射到[!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation)，即可将其发送到[!DNL Braze]目标。 |
+
 ## 导出类型{#export-type}
 
 **[!DNL Profile-based]**  — 您正在导出区段的所有成员，以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)和/或身份。[!DNL Adobe Experience Platform] 段将导出到属 [!DNL Braze] 性的 `AdobeExperiencePlatformSegments` 下方。
@@ -45,29 +52,29 @@ ht-degree: 1%
 
 ## 连接到目标{#connect-destination}
 
-在&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**&#x200B;中，选择[!DNL Braze]，然后选择&#x200B;**[!UICONTROL 配置]**。
+在&#x200B;**[!UICONTROL Connections]** > **[!UICONTROL Destinations]**&#x200B;中，选择[!DNL Braze]，然后选择&#x200B;**[!UICONTROL Configure]**。
 
 ![配置布雷目标](../../assets/catalog/mobile-engagement/braze/configure.png)
 
 >[!NOTE]
 >
->如果与此目标的连接已存在，您可以在目标卡上看到&#x200B;**[!UICONTROL 激活]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的详细信息，请参阅目标工作区文档的[Catalog](../../ui/destinations-workspace.md#catalog)部分。
+>如果与此目标的连接已存在，您可以在目标卡上看到&#x200B;**[!UICONTROL Activate]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的详细信息，请参阅目标工作区文档的[目录](../../ui/destinations-workspace.md#catalog)部分。
 >
 >![激活布雷兹目标](../../assets/catalog/mobile-engagement/braze/activate.png)
 
-在[!UICONTROL 帐户]步骤中，您需要提供[!DNL Braze]帐户令牌。 这是您的[!DNL Braze] [!DNL API]键。 您可以在以下网址找到如何获取[!DNL API]键的详细说明：[REST API密钥概述](https://www.braze.com/docs/api/api_key/)。 输入令牌，然后单击&#x200B;**[!UICONTROL 连接到目标]**。
+在[!UICONTROL Account]步骤中，您需要提供[!DNL Braze]帐户令牌。 这是您的[!DNL Braze] [!DNL API]键。 您可以在以下网址找到如何获取[!DNL API]键的详细说明：[REST API密钥概述](https://www.braze.com/docs/api/api_key/)。 输入标记，然后单击&#x200B;**[!UICONTROL Connect to destination]**。
 
 ![布雷兹目标帐户步骤](../../assets/catalog/mobile-engagement/braze/account.png)
 
-单击&#x200B;**[!UICONTROL 下一步]**。在[!UICONTROL 身份验证]步骤中，需要输入[!DNL Braze]连接详细信息：
-* **[!UICONTROL 名称]**:输入一个名称，您将通过该名称在将来识别此目标。
-* **[!UICONTROL 描述]**:输入说明，帮助您在将来识别此目标。
-* **[!UICONTROL 端点实例]**:请咨询您 [!DNL Braze] 的代表您应使用哪个终结点实例。
-* **[!UICONTROL 营销活动]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
+单击 **[!UICONTROL Next]**。在[!UICONTROL Authentication]步骤中，您需要输入[!DNL Braze]连接详细信息：
+* **[!UICONTROL Name]**:输入一个名称，您将通过该名称在将来识别此目标。
+* **[!UICONTROL Description]**:输入说明，帮助您在将来识别此目标。
+* **[!UICONTROL Endpoint Instance]**:请咨询您 [!DNL Braze] 的代表您应使用哪个终结点实例。
+* **[!UICONTROL Marketing action]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
 ![Braze身份验证步骤](../../assets/catalog/mobile-engagement/braze/authentication.png)
 
-单击&#x200B;**[!UICONTROL 创建目标]**。 您的目标现在已创建。 如果希望稍后激活区段，可单击&#x200B;**[!UICONTROL 保存并退出]**，或选择&#x200B;**[!UICONTROL 下一步]**&#x200B;继续工作流，然后选择要激活的区段。 在任一情况下，请参阅工作流其余部分的下一节[激活区段](#activate-segments)。
+单击 **[!UICONTROL Create destination]**。您的目标现在已创建。 如果您希望稍后激活区段，可单击&#x200B;**[!UICONTROL Save & Exit]**，也可以选择&#x200B;**[!UICONTROL Next]**&#x200B;继续工作流并选择要激活的区段。 在任一情况下，请参阅工作流其余部分的下一节[激活区段](#activate-segments)。
 
 ## 激活区段{#activate-segments}
 
@@ -81,38 +88,38 @@ ht-degree: 1%
 
 要正确地将XDM字段映射到[!DNL Braze]目标字段，请执行以下步骤：
 
-在[!UICONTROL 映射]步骤中，单击&#x200B;**[!UICONTROL 添加新映射]**。
+在[!UICONTROL Mapping]步骤中，单击&#x200B;**[!UICONTROL Add new mapping]**。
 
 ![制作目标添加映射](../../assets/catalog/mobile-engagement/braze/mapping.png)
 
-在[!UICONTROL 源字段]部分，单击空字段旁边的箭头按钮。
+在[!UICONTROL Source Field]部分，单击空字段旁边的箭头按钮。
 
 ![布雷兹目标源映射](../../assets/catalog/mobile-engagement/braze/mapping-source.png)
 
-在[!UICONTROL 选择源字段]窗口中，您可以在两类别XDM字段之间进行选择：
-* [!UICONTROL 选择属性]:使用此选项可将特定字段从XDM模式映射到属 [!DNL Braze] 性。
+在[!UICONTROL Select source field]窗口中，您可以选择两类别XDM字段：
+* [!UICONTROL Select attributes]:使用此选项可将特定字段从XDM模式映射到属 [!DNL Braze] 性。
 
 ![布雷兹目标映射源属性](../../assets/catalog/mobile-engagement/braze/mapping-attributes.png)
 
-* [!UICONTROL 选择身份命名空间]:使用此选项将标识 [!DNL Platform] 命名空间映射到 [!DNL Braze] 命名空间。
+* [!UICONTROL Select identity namespace]:使用此选项将标识 [!DNL Platform] 命名空间映射到 [!DNL Braze] 命名空间。
 
 ![制作目标映射源命名空间](../../assets/catalog/mobile-engagement/braze/mapping-namespaces.png)
 
-选择源字段，然后单击&#x200B;**[!UICONTROL 选择]**。
+选择源字段，然后单击&#x200B;**[!UICONTROL Select]**。
 
-在[!UICONTROL 目标字段]部分，单击字段右侧的映射图标。
+在[!UICONTROL Target Field]部分，单击字段右侧的映射图标。
 
 ![布雷兹目标目标映射](../../assets/catalog/mobile-engagement/braze/mapping-target.png)
 
-在[!UICONTROL 选择目标字段]窗口中，您可以在三类别目标字段之间进行选择：
-* [!UICONTROL 选择属性]:使用此选项可将XDM属性映射到标准 [!DNL Braze] 属性。
-* [!UICONTROL 选择身份命名空间]:使用此选项可将身 [!DNL Platform] 份命名空间映射 [!DNL Braze] 到身份命名空间。
-* [!UICONTROL 选择自定义属性]:使用此选项可将XDM属性映射到您在 [!DNL Braze] 帐户中定义的自定义 [!DNL Braze] 属性。
+在[!UICONTROL Select target field]窗口中，您可以选择以下三类别目标字段：
+* [!UICONTROL Select attributes]:使用此选项可将XDM属性映射到标准 [!DNL Braze] 属性。
+* [!UICONTROL Select identity namespace]:使用此选项可将身 [!DNL Platform] 份命名空间映射 [!DNL Braze] 到身份命名空间。
+* [!UICONTROL Select custom attributes]:使用此选项可将XDM属性映射到您在 [!DNL Braze] 帐户中定义的自定义 [!DNL Braze] 属性。
 * 您还可以使用此选项将现有XDM属性重命名为[!DNL Braze]。 例如，将`lastName` XDM属性映射到[!DNL Braze]中的自定义`Last_Name`属性时，将在[!DNL Braze]中创建`Last_Name`属性（如果尚不存在），并将`lastName` XDM属性映射到该属性。
 
 ![布雷兹目标目标映射字段](../../assets/catalog/mobile-engagement/braze/mapping-target-fields.png)
 
-选择目标字段，然后单击&#x200B;**[!UICONTROL 选择]**。
+选择目标字段，然后单击&#x200B;**[!UICONTROL Select]**。
 
 您现在应该可以在列表中看到字段映射。
 
