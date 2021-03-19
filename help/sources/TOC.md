@@ -6,9 +6,9 @@ breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: 数据摄取，来源
 translation-type: tm+mt
-source-git-commit: 73ad0a264bcb0e9510ef500592fd945903c5cfea
+source-git-commit: 26e7116858574b366760ffd4f92b14117ccd28eb
 workflow-type: tm+mt
-source-wordcount: '579'
+source-wordcount: '582'
 ht-degree: 12%
 
 ---
@@ -227,4 +227,5 @@ ht-degree: 12%
    - [删除数据流](tutorials/ui/delete.md)
 - [流运行通知](notifications.md)
 - [IP地址允许列表](ip-address-allow-list.md)
+- [常见问题解答](./troubleshooting.md)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
