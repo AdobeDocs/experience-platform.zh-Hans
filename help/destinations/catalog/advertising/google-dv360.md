@@ -3,15 +3,17 @@ keywords: 双击竞价管理器；双击竞价管理器；双击；显示和视�
 title: Google Display & Video 360连接
 description: Display & Video 360（以前称为DoubleClick竞价管理器）是一种工具，用于跨显示、视频和移动库存源执行重定向和受众目标数字活动。
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '773'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Google Display & Video 360] 连接
+
+## 概述 {#overview}
 
 [!DNL Display & Video 360]此工具以前称 [!DNL DoubleClick Bid Manager]为，用于跨显示、视频和移动库存源执行重定向和受众目标数字活动。
 
