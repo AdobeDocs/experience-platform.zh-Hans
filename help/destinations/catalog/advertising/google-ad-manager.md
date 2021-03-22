@@ -3,9 +3,9 @@ keywords: google广告管理器；google广告；doubleclick;DoubleClick AdX;Dou
 title: Google Ad Manager连接
 description: 'Google Ad Manager以前称为DoubleClick for Publishers或DoubleClick AdX，是Google的一个广告服务平台，它为出版商提供了管理其网站上、视频和移动应用中广告显示的手段。  '
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 24e0a274e61fcf6311c647067920686e4f25e840
 workflow-type: tm+mt
-source-wordcount: '739'
+source-wordcount: '738'
 ht-degree: 0%
 
 ---
@@ -17,16 +17,12 @@ ht-degree: 0%
 
 [!DNL Google Ad Manager]此前为发行商 [!DNL DoubleClick] 或网站提供 [!DNL DoubleClick AdX]的广告服务平台，为发 [!DNL Google] 行商提供了通过视频和移动应用程序管理其网站上广告显示的方法。
 
-## 目标规范
+## 目标特性{#specifics}
 
 请注意特定于[!DNL Google Ad Manager]目标的以下详细信息：
 
 * 激活的受众是在[!DNL Google]平台中以编程方式创建的。
-* 平台当前不包括测量量度以验证成功激活。 请参阅Google中的受众计数以验证集成并了解受众定位大小。
-
->[!IMPORTANT]
->
->如果您希望使用[!DNL Google Ad Manager]创建您的第一个目标，并且过去(使用Audience Manager或其他应用程序)未启用Experience Cloud ID服务中的[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Google]集成，则您设置的ID同步将结转到平台。
+* [!DNL Platform] 当前不包括测量量度以验证成功激活。请参阅Google中的受众计数以验证集成并了解受众定位大小。
 
 ## 支持的身份{#supported-identities}
 
@@ -48,7 +44,9 @@ ht-degree: 0%
 
 ## 先决条件
 
-### 允许列表
+如果您希望使用[!DNL Google Ad Manager]创建您的第一个目标，并且过去(使用Audience Manager或其他应用程序)未启用Experience Cloud ID服务中的[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了[!DNL Google]集成，则您设置的ID同步将结转到平台。
+
+## 允许列表
 
 >[!NOTE]
 >
