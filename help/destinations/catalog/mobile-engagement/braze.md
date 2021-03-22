@@ -3,7 +3,7 @@ keywords: 移动；布雷兹；消息；
 title: 布雷兹连接
 description: Braze是一个全面的客户互动平台，可为客户与他们喜爱的品牌之间提供相关且难忘的体验。
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 24e0a274e61fcf6311c647067920686e4f25e840
 workflow-type: tm+mt
 source-wordcount: '901'
 ht-degree: 1%
@@ -25,7 +25,7 @@ ht-degree: 1%
 
 要将用户档案数据发送到[!DNL Braze]，您必须首先连接到目标。
 
-## 目标规范{#destination-specs}
+## 目标特性{#specifics}
 
 请注意特定于[!DNL Braze]目标的以下详细信息：
 
