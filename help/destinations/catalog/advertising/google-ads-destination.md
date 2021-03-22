@@ -3,7 +3,7 @@ keywords: Google广告；Google广告；Google广告；Google广告词；Google�
 title: Google Ads连接
 description: Google Ads，以前称为Google AdWords，是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用内移动显示中按点击付费广告。
 translation-type: tm+mt
-source-git-commit: 0759919dc458798ca4bc5f233a9cb319194ea534
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
 source-wordcount: '722'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!DNL Google Ads]之前称为在 [!DNL Google AdWords]线广告服务，允许企业在基于文本的搜索、图形显示、视频和应用内移动显示中按点 [!DNL YouTube] 击付费广告。
 
-## 目标规范
+## 目标特性{#specifics}
 
 请注意特定于[!DNL Google Ads]目标的以下详细信息：
 
@@ -26,7 +26,7 @@ ht-degree: 0%
 >
 >如果您希望使用[!DNL Google Ads]创建您的第一个目标，并且过去(使用Audience Manager或其他应用程序)未启用Experience Cloud ID服务中的[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置Google集成，则您设置的ID同步将结转到平台。
 
-### 支持的身份{#supported-identities}
+## 支持的身份{#supported-identities}
 
 [!DNL Google Ad Manager] 支持下表所述身份的激活。
 
@@ -40,7 +40,7 @@ ht-degree: 0%
 | MAID | Microsoft广告ID。 此ID可唯一标识运行Windows 10的设备。 |  |
 | Amazon Fire TV ID | 此ID可唯一标识Amazon Fire TV。 |  |
 
-### 导出类型{#export-type}
+## 导出类型{#export-type}
 
 **区段导出**  — 您正在将区段(受众)的所有成员导出到Google目标。
 
