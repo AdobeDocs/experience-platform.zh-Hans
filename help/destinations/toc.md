@@ -6,10 +6,10 @@ user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定�
 description: 此文档列表Adobe Experience Platform目标的目录
 feature: 目标
 translation-type: tm+mt
-source-git-commit: 3ae5efca9744e5f5edde56038beab93be5157de3
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '464'
-ht-degree: 10%
+source-wordcount: '463'
+ht-degree: 11%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 10%
    * [使用Flow Service API连接到流目标并激活数据](./api/streaming-destinations.md)
    * [连接到电子邮件营销目标，并使用流服务API激活数据](./api/email-marketing.md)
 * UI指南{#ui}
-   * [目标工作区概述](./ui/destinations-workspace.md)
+   * [目标工作区](./ui/destinations-workspace.md)
    * [视图目标详细信息](./ui/destination-details-page.md)
    * [连接到目标](./ui/connect-destination.md)
    * [将用户档案和区段激活到目标](./ui/activate-destinations.md)
