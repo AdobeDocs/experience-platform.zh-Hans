@@ -3,9 +3,9 @@ keywords: 飞艇标签；飞艇目标
 title: 飞艇标签连接
 description: 将Adobe受众数据无缝传递给Airship，作为用于在Airship内定位的受众标签。
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
-source-wordcount: '1193'
+source-wordcount: '1134'
 ht-degree: 1%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 1%
 > 
 >如果尚未通过[此注册链接](https://go.airship.eu/accounts/register/plan/starter/)创建[!DNL Airship]帐户。
 
-### 标记组
+## 标记组
 
 Adobe Experience Platform中的细分概念与Airship中的[Tags](https://docs.airship.com/guides/audience/tags/)类似，在实施方面略有差异。 此集成将Experience Platform段](https://experienceleague.adobe.com/docs/experience-platform/xdm/mixins/profile/segmentation.html?lang=en#mixins)中用户的[成员状态映射为[!DNL Airship]标记的存在或不存在。 例如，在`xdm:status`变为`realized`的平台区段中，将标记添加到[!DNL Airship]渠道或将此用户档案映射到的指定用户。 如果`xdm:status`更改为`exited`，则删除标记。
 
@@ -53,15 +53,15 @@ Adobe Experience Platform中的细分概念与Airship中的[Tags](https://docs.a
 
 有关创建标记组的说明，请参阅[管理标记组](https://docs.airship.com/tutorials/manage-project/messaging/tag-groups)。
 
-### Bearer令牌
+## 生成承载令牌
 
-转到[飞艇仪表板](https://go.airship.com)中的&#x200B;**[!UICONTROL 设置]**&quot; **[!UICONTROL &quot;API和集成]**，然后在左侧菜单中选择&#x200B;**[!UICONTROL 令牌]**。
+转到[飞艇仪表板](https://go.airship.com)中的&#x200B;**[!UICONTROL Settings]**&quot; **[!UICONTROL APIs & Integrations]**，然后在左侧菜单中选择&#x200B;**[!UICONTROL Tokens]**。
 
-单击&#x200B;**[!UICONTROL 创建令牌]**。
+单击 **[!UICONTROL Create Token]**。
 
 为您的令牌提供一个用户友好名称，例如“Adobe标记目标”，然后为该角色选择“全部访问”。
 
-单击&#x200B;**[!UICONTROL 创建令牌]**&#x200B;并将详细信息另存为机密。
+单击&#x200B;**[!UICONTROL Create Token]**&#x200B;并将详细信息另存为机密。
 
 ## 用例
 
@@ -79,15 +79,15 @@ Adobe Experience Platform中的细分概念与Airship中的[Tags](https://docs.a
 
 ## 连接到[!DNL Airship Tags] {#connect-airship-tags}
 
-在&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**&#x200B;中，滚动到&#x200B;**[!UICONTROL 移动互动]**&#x200B;类别。 选择&#x200B;**[!DNL Airship Tags]**，然后选择&#x200B;**[!UICONTROL 配置]**。
+在&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**&#x200B;中，滚动到&#x200B;**[!UICONTROL Mobile Engagement]**&#x200B;类别。 选择&#x200B;**[!DNL Airship Tags]**，然后选择&#x200B;**[!UICONTROL Configure]**。
 
 >[!NOTE]
 >
->如果与此目标的连接已存在，您可以在目标卡上看到&#x200B;**[!UICONTROL 激活]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的详细信息，请参阅目标工作区文档的[Catalog](../../ui/destinations-workspace.md#catalog)部分。
+>如果与此目标的连接已存在，您可以在目标卡上看到&#x200B;**[!UICONTROL Activate]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的详细信息，请参阅目标工作区文档的[目录](../../ui/destinations-workspace.md#catalog)部分。
 
 ![连接到Airship标签](../../assets/catalog/mobile-engagement/airship-tags/catalog.png)
 
-在&#x200B;**帐户**&#x200B;步骤中，如果您之前已设置到[!DNL Airship Tags]目标的连接，请选择&#x200B;**[!UICONTROL 现有帐户]**&#x200B;并选择您的现有连接。 或者，您可以选择&#x200B;**[!UICONTROL 新建帐户]**&#x200B;来设置到[!DNL Airship Tags]的新连接。 选择&#x200B;**[!UICONTROL 连接到目标]**&#x200B;以使用您从[!DNL Airship]仪表板生成的载体令牌将Adobe Experience Platform连接到您的[!DNL Airship]项目。
+在&#x200B;**帐户**&#x200B;步骤中，如果您之前已设置到[!DNL Airship Tags]目标的连接，请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;并选择您的现有连接。 或者，您可以选择&#x200B;**[!UICONTROL New Account]**&#x200B;来设置到[!DNL Airship Tags]的新连接。 选择&#x200B;**[!UICONTROL Connect to destination]**&#x200B;以使用您从[!DNL Airship]仪表板生成的载体令牌将Adobe Experience Platform连接到您的[!DNL Airship]项目。
 
 >[!NOTE]
 >
@@ -95,41 +95,41 @@ Adobe Experience Platform中的细分概念与Airship中的[Tags](https://docs.a
 
 ![连接到Airship标签](../../assets/catalog/mobile-engagement/airship-tags/connect-account.png)
 
-确认您的凭据并将Adobe Experience Platform连接到您的[!DNL Airship]项目后，您可以选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续执行&#x200B;**[!UICONTROL Setup]**&#x200B;步骤。
+确认您的凭据并将Adobe Experience Platform连接到您的[!DNL Airship]项目后，您可以选择&#x200B;**[!UICONTROL Next]**&#x200B;继续执行&#x200B;**[!UICONTROL Setup]**&#x200B;步骤。
 
-在&#x200B;**[!UICONTROL 身份验证]**&#x200B;步骤中，输入激活流的&#x200B;**[!UICONTROL 名称]**&#x200B;和&#x200B;**[!UICONTROL 说明]**。
+在&#x200B;**[!UICONTROL Authentication]**&#x200B;步骤中，输入&#x200B;**[!UICONTROL Name]**&#x200B;和&#x200B;**[!UICONTROL Description]**&#x200B;作为激活流。
 
-此外，在此步骤中，您还可以选择美国或欧盟数据中心，具体取决于哪个[!DNL Airship]数据中心适用于此目标。 最后，选择一个或多个&#x200B;**[!UICONTROL 营销操作]**，数据将导出到目标。 您可以从Adobe定义的营销活动中进行选择，也可以创建您自己的营销活动。 有关营销操作的详细信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
+此外，在此步骤中，您还可以选择美国或欧盟数据中心，具体取决于哪个[!DNL Airship]数据中心适用于此目标。 最后，选择一个或多个&#x200B;**[!UICONTROL Marketing Actions]**，数据将导出到目标。 您可以从Adobe定义的营销活动中进行选择，也可以创建您自己的营销活动。 有关营销操作的详细信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
-在填写上面的字段后，选择&#x200B;**[!UICONTROL 创建目标]**。
+在填写上面的字段后选择&#x200B;**[!UICONTROL Create Destination]**。
 
 ![连接到Airship标签](../../assets/catalog/mobile-engagement/airship-tags/select-domain.png)
 
-您的目标现在已创建。 如果您希望稍后激活区段，可以选择&#x200B;**[!UICONTROL 保存并退出]**，也可以选择&#x200B;**[!UICONTROL 下一步]**&#x200B;继续工作流并选择要激活的区段。 在任一情况下，请参阅工作流其余部分的下一节[激活区段](#activate-segments)。
+您的目标现在已创建。 如果您希望稍后激活区段，则可以选择&#x200B;**[!UICONTROL Save & Exit]**，也可以选择&#x200B;**[!UICONTROL Next]**&#x200B;继续工作流，然后选择要激活的区段。 在任一情况下，请参阅工作流其余部分的下一节[激活区段](#activate-segments)。
 
 ## 激活区段{#activate-segments}
 
 要将区段激活到[!DNL Airship Tags]，请执行以下步骤：
 
-在&#x200B;**[!UICONTROL 目标>浏览]**&#x200B;中，选择要激活区段的[!DNL Airship Tags]目标。
+在&#x200B;**[!UICONTROL Destinations > Browse]**&#x200B;中，选择要激活区段的[!DNL Airship Tags]目标。
 
 ![activate-flow](../../assets/catalog/mobile-engagement/airship-tags/browse.png)
 
 单击目标的名称。 此操作将带您进入激活流程。
 
-请注意，如果目标激活流已存在，您可以看到当前正发送到目标的区段。 选择右边栏中的&#x200B;**[!UICONTROL 编辑激活]**，然后按照以下步骤修改激活详细信息。
+请注意，如果目标激活流已存在，您可以看到当前正发送到目标的区段。 选择右边栏中的&#x200B;**[!UICONTROL Edit activation]**，然后按照以下步骤修改激活详细信息。
 
 ![activate-flow](../../assets/catalog/mobile-engagement/airship-tags/activate.png)
 
-选择&#x200B;**[!UICONTROL 激活]**。 在&#x200B;**[!UICONTROL 激活目标]**&#x200B;工作流的&#x200B;**[!UICONTROL 选择区段]**&#x200B;页面上，选择要发送到[!DNL Airship Tags]的区段。
+选择 **[!UICONTROL Activate]**。在&#x200B;**[!UICONTROL Activate destination]**&#x200B;工作流的&#x200B;**[!UICONTROL Select Segments]**&#x200B;页面上，选择要发送到[!DNL Airship Tags]的区段。
 
 ![细分到目标](../../assets/catalog/mobile-engagement/airship-tags/select-segments.png)
 
-在&#x200B;**[!UICONTROL 映射]**&#x200B;步骤中，从[XDM](../../../xdm/home.md)模式中选择要映射到目标模式的属性和标识。 选择&#x200B;**[!UICONTROL 添加新映射]**&#x200B;以浏览您的模式并将其映射到相应的目标标识。
+在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，从[XDM](../../../xdm/home.md)模式中选择要映射到目标模式的属性和标识。 选择&#x200B;**[!UICONTROL Add new mapping]**&#x200B;以浏览您的模式并将其映射到相应的目标标识。
 
 ![身份映射初始屏幕](../../assets/catalog/mobile-engagement/airship-tags/identity-mapping.png)
 
-[!DNL Airship] 可以在表示设备实例（如iPhone）的渠道上设置标记，也可以在将用户的所有设备映射到通用标识符（如客户ID）的指定用户上设置标记。如果您的模式中有纯文本（未哈希化）电子邮件地址作为主要标识，请在&#x200B;**[!UICONTROL 源属性]**&#x200B;中选择电子邮件字段，并映射到右列&#x200B;**[!UICONTROL 目标标识]**&#x200B;下的[!DNL Airship]指定用户，如下所示。
+[!DNL Airship] 可以在表示设备实例（如iPhone）的渠道上设置标记，也可以在将用户的所有设备映射到通用标识符（如客户ID）的指定用户上设置标记。如果您的模式中有纯文本（未哈希化）电子邮件地址作为主要标识，请选择&#x200B;**[!UICONTROL Source Attributes]**&#x200B;中的电子邮件字段，并映射到&#x200B;**[!UICONTROL Target Identities]**&#x200B;下右列中的[!DNL Airship]指定用户，如下所示。
 
 ![指定用户映射](../../assets/catalog/mobile-engagement/airship-tags/mapping-option-2.png)
 
@@ -139,9 +139,9 @@ Adobe Experience Platform中的细分概念与Airship中的[Tags](https://docs.a
 ![签连接到Airship标](../../assets/catalog/mobile-engagement/airship-tags/select-target-identity.png)
 ![签通道映射](../../assets/catalog/mobile-engagement/airship-tags/mapping-option.png)
 
-在&#x200B;**[!UICONTROL 区段计划]**&#x200B;页上，当前已禁用计划。 单击&#x200B;**[!UICONTROL 下一步]**&#x200B;继续执行审阅步骤。
+在&#x200B;**[!UICONTROL Segment schedule]**&#x200B;页面上，当前已禁用计划。 单击&#x200B;**[!UICONTROL Next]**&#x200B;继续执行审阅步骤。
 
-在&#x200B;**[!UICONTROL 查看]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL 取消]**&#x200B;以分组流，选择&#x200B;**[!UICONTROL 返回]**&#x200B;以修改设置，或选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择，并开始将数据发送到目标。
+在&#x200B;**[!UICONTROL Review]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL Cancel]**&#x200B;以划分流，选择&#x200B;**[!UICONTROL Back]**&#x200B;以修改设置，或选择&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择，并将开始发送到目标。
 
 >[!IMPORTANT]
 >
@@ -149,7 +149,7 @@ Adobe Experience Platform中的细分概念与Airship中的[Tags](https://docs.a
 
 ![确认选择](../../assets/common/data-policy-violation.png)
 
-如果未检测到任何策略违规，请选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择，并开始将数据发送到目标。
+如果未检测到任何策略违规，请选择&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择，并开始将数据发送到目标。
 
 ![确认选择](../../assets/catalog/mobile-engagement/airship-tags/review.png)
 
