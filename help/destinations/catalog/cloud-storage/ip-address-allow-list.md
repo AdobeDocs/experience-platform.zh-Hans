@@ -4,15 +4,17 @@ title: '云存储目标的IP地址允许列表 '
 type: 文档
 description: 本页提供可添加到允许列表的IP范围，以将Experience Platform数据安全地从SFTP服务器、Amazon S3或Azure Blob存储导出。
 translation-type: tm+mt
-source-git-commit: 648be489aa77870f67564ee350c4d85885673832
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '187'
-ht-degree: 0%
+source-wordcount: '188'
+ht-degree: 1%
 
 ---
 
 
 # 云存储目标{#ip-address-allow-list}的IP地址允许列表
+
+## 概述 {#overview}
 
 >[!IMPORTANT]
 >
