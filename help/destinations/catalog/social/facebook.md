@@ -3,15 +3,17 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据散列的电子邮件激活Facebook活动的用户档案，以实现受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '1118'
+source-wordcount: '1119'
 ht-degree: 2%
 
 ---
 
 
 # [!DNL Facebook] 连接
+
+## 概述 {#overview}
 
 激活[!DNL Facebook]活动的用户档案，以根据散列电子邮件进行受众定位、个性化和抑制。
 
