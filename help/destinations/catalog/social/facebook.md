@@ -3,7 +3,7 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据散列的电子邮件激活Facebook活动的用户档案，以实现受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: fd95357f3e3533fe6b7b9752798dd99eb1cc0eb5
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
 source-wordcount: '1118'
 ht-degree: 2%
@@ -74,7 +74,7 @@ ht-degree: 2%
 
 根据您输入到Adobe Experience Platform的ID类型，您必须遵守其相应要求。
 
-### 电话号码哈希要求{#phone-number-hashing-requirements}
+## 电话号码哈希要求{#phone-number-hashing-requirements}
 
 在[!DNL Facebook]中激活电话号码有两种方法：
 
@@ -86,7 +86,7 @@ ht-degree: 2%
 >无法在[!DNL Facebook]中激活被引入`Phone`命名空间的电话号码。
 
 
-### 电子邮件散列要求{#email-hashing-requirements}
+## 电子邮件散列要求{#email-hashing-requirements}
 
 您可以先对电子邮件地址进行哈希处理，然后将其引入Adobe Experience Platform，或者在Experience Platform中使用电子邮件地址进行清除，并在激活上对它们进行[!DNL Platform]哈希处理。
 
@@ -109,7 +109,7 @@ ht-degree: 2%
 
 ![身份映射转换](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
-### 使用自定义命名空间{#custom-namespaces}
+## 使用自定义命名空间{#custom-namespaces}
 
 在使用`Extern_ID`命名空间向[!DNL Facebook]发送数据之前，请确保使用[!DNL Facebook Pixel]同步您自己的标识符。 有关详细信息，请参阅[官方文档](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers)。
 
