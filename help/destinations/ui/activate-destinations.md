@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 37b0ec0e04c45cb065eca9d262249016e80655ef
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
-source-wordcount: '2151'
+source-wordcount: '2070'
 ht-degree: 0%
 
 ---
@@ -26,27 +26,27 @@ ht-degree: 0%
 
 激活工作流中的步骤因目标类型而略有不同。 以下列出了所有目标类型的完整工作流。
 
-### 选择要将数据激活到{#select-destination}的目标
+## 选择要将数据激活到{#select-destination}的目标
 
 适用于：所有目标
 
-在Adobe Experience Platform用户界面中，导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**，然后单击与要激活区段的目标对应的&#x200B;**[!UICONTROL 激活]**&#x200B;按钮，如下图所示。
+在Adobe Experience Platform用户界面中，导航到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**，然后单击与要激活区段的目标对应的&#x200B;**[!UICONTROL Activate]**&#x200B;按钮，如下图所示。
 
 ![激活到目标](../assets/ui/activate-destinations/browse-tab-activate.png)
 
 按照下一节中的步骤选择要激活的区段。
 
-### [!UICONTROL 选择区] 段步骤  {#select-segments}
+## [!UICONTROL Select Segments] 步骤  {#select-segments}
 
 适用于：所有目标
 
 ![选择区段步骤](../assets/ui/activate-destinations/select-segments-icon.png)
 
-在&#x200B;**[!UICONTROL 激活目标]**&#x200B;工作流的&#x200B;**[!UICONTROL 选择区段]**&#x200B;页面上，选择一个或多个要激活到目标的区段。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续执行下一步。
+在&#x200B;**[!UICONTROL Activate destination]**&#x200B;工作流的&#x200B;**[!UICONTROL Select Segments]**&#x200B;页面上，选择一个或多个要激活到目标的区段。 选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续执行下一步。
 
 ![细分到目标](../assets/ui/activate-destinations/email-select-segments.png)
 
-### [!UICONTROL 标识映] 射步骤  {#identity-mapping}
+## [!UICONTROL Identity mapping] 步骤  {#identity-mapping}
 
 适用于：社交目标和Google客户匹配广告目标
 
@@ -54,7 +54,7 @@ ht-degree: 0%
 
 对于社交目标，您必须选择源属性或标识命名空间以在目标中映射为目标标识。
 
-#### 示例：在[!DNL Facebook Custom Audience] {#example-facebook}中激活受众数据
+## 示例：在[!DNL Facebook Custom Audience] {#example-facebook}中激活受众数据
 
 以下是在[!DNL Facebook]中激活受众数据时正确标识映射的示例。
 
@@ -79,12 +79,12 @@ ht-degree: 0%
 
 未散列命名空间的数据在激活时由[!DNL Platform]自动散列。
 
-属性源数据不会自动散列。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。
+属性源数据不会自动散列。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。
 ![身份映射转换](../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
  
 
-#### 示例：在[!DNL Google Customer Match] {#example-gcm}中激活受众数据
+## 示例：在[!DNL Google Customer Match] {#example-gcm}中激活受众数据
 
 这是在[!DNL Google Customer Match]中激活受众数据时正确标识映射的示例。
 
@@ -109,32 +109,16 @@ ht-degree: 0%
 
 未散列命名空间的数据在激活时由[!DNL Platform]自动散列。
 
-属性源数据不会自动散列。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。
+属性源数据不会自动散列。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。
 ![身份映射转换](../assets/ui/activate-destinations/identity-mapping-gcm-transformation.png)
 
-<!-- 
-`IDFA` IDs will be mapped to:
-
-* [MADID](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences#hash) if you are activating audiences in [[!DNL Facebook]](../../destinations/catalog/social/facebook.md).
-* [mobileId](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.Member#mobileid) if you are activating audiences in [[!DNL Google Customer Match]](../../destinations/catalog/advertising/google-customer-match.md).
-
-Select `GAID` as target identity if your data consists of Android device IDs. `GAID` IDs will be mapped to:
-
-* [MADID](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences#hash) if you are activating audiences in [[!DNL Facebook]](../../destinations/catalog/social/facebook.md).
-* [mobileId](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.Member#mobileid) if you are activating audiences in [[!DNL Google Customer Match]](../../destinations/catalog/advertising/google-customer-match.md).
-
-If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary identity in your schema, you need to map it to the following target identities:
-
-* [EXTERN_ID](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences#external_identifiers) if you are activating audiences in [[!DNL Facebook]](../../destinations/catalog/social/facebook.md).
-* [USER_ID](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.Member#userid) if you are activating audiences in [[!DNL Google Customer Match]](../../destinations/catalog/advertising/google-customer-match.md). -->
-
-### **[!UICONTROL 配]** 置  {#configure}
+## **[!UICONTROL Configure]** 步骤  {#configure}
 
 适用于：电子邮件营销目标和云存储目标
 
 ![配置步骤](../assets/ui/activate-destinations/configure-icon.png)
 
-[!DNL Adobe Experience Platform] 以文件形式导出电子邮件营销和云存储目 [!DNL CSV] 标的数据在&#x200B;**[!UICONTROL 配置]**&#x200B;步骤中，您可以配置要导出的每个区段的计划和文件名。 必须配置计划，但配置文件名是可选的。
+[!DNL Adobe Experience Platform] 以文件形式导出电子邮件营销和云存储目 [!DNL CSV] 标的数据在&#x200B;**[!UICONTROL Configure]**&#x200B;步骤中，您可以配置要导出的每个区段的计划和文件名。 必须配置计划，但配置文件名是可选的。
 
 >[!IMPORTANT]
 > 
@@ -143,15 +127,15 @@ If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary id
 >拆分文件名后面附加一个数字，指示文件是较大导出的一部分，如下所示：`filename.csv`、`filename_2.csv`、`filename_3.csv`。
 
 
-要为区段添加计划，请选择&#x200B;**[!UICONTROL 创建计划]**。
+要为区段添加计划，请选择&#x200B;**[!UICONTROL Create schedule]**。
 
 ![](../assets/ui/activate-destinations/configure-destination-schedule.png)
 
 此时将显示一个对话框，其中显示用于创建区段计划的选项。
 
 * **文件导出**:您可以选择导出完整文件或增量文件。导出完整文件会发布符合该区段条件的所有用户档案的完整快照。 导出增量文件会发布自上次导出以来符合该区段资格的用户档案增量。
-* **频率**:如果 **[!UICONTROL 选择“]** 导出完整文件”，您可以选择导出“ **** Onceor Daily ****”。如果选择了&#x200B;**[!UICONTROL 导出增量文件]**，则您只能选择导出&#x200B;**[!UICONTROL 每日]**。 导出文件&#x200B;**[!UICONTROL 一次]**&#x200B;将导出文件一次。 导出文件&#x200B;**[!UICONTROL Daily]**&#x200B;时，如果选择了完整文件，则每天将文件从开始日期导出到结束日期(UTC:00 PM)；如果选择了增量文件，则导出为12:00 PM(UTC:7:00 AM EST)。
-* **日期**:如 **** 果选择了“一次性”，则可以选择一次性导出的日期。如果选择&#x200B;**[!UICONTROL 每日]**，则可以选择导出的开始和结束日期。
+* **频率**:如 **[!UICONTROL Export full files]** 果选中，您可以选择导出 **[!UICONTROL Once]** 或 **[!UICONTROL Daily]**。如果选择了&#x200B;**[!UICONTROL Export incremental files]**，则您只能选择导出&#x200B;**[!UICONTROL Daily]**。 导出文件&#x200B;**[!UICONTROL Once]**&#x200B;时，将一次性导出文件。 导出文件&#x200B;**[!UICONTROL Daily]**&#x200B;时，如果选择了完整文件，则每天从开始日期到结束日期(UTC:00 AM(EST:7:00 PM))导出文件；如果选择了增量文件，则每天导出12:00 PM(UTC:7:00 AM EST)。
+* **日期**:如 **[!UICONTROL Once]** 果选中，则可以选择一次导出的日期。如果选择&#x200B;**[!UICONTROL Daily]**，则可以选择导出的开始和结束日期。
 
 ![](../assets/ui/activate-destinations/export-full-file.png)
 
@@ -163,27 +147,27 @@ If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary id
 
 在文件名编辑器中，可以选择要添加到文件名中的不同组件。 无法从文件名中删除目标名称和区段ID。 除了这些外，您还可以添加以下内容：
 
-* **[!UICONTROL 区段名称]**:您可以将段名称追加到文件名。
-* **[!UICONTROL 日期和时间]**:在添加格 `MMDDYYYY_HHMMSS` 式或生成文件时的Unix 10位时间戳之间进行选择。如果您希望您的文件在每次增量导出时都生成动态文件名，请选择其中一个选项。
-* **[!UICONTROL 自定义文本]**:将自定义文本添加到文件名。
+* **[!UICONTROL Segment name]**:您可以将段名称追加到文件名。
+* **[!UICONTROL Date and time]**:在添加格 `MMDDYYYY_HHMMSS` 式或生成文件时的Unix 10位时间戳之间进行选择。如果您希望您的文件在每次增量导出时都生成动态文件名，请选择其中一个选项。
+* **[!UICONTROL Custom text]**:将自定义文本添加到文件名。
 
-选择&#x200B;**[!UICONTROL 应用更改]**&#x200B;以确认您的选择。
+选择&#x200B;**[!UICONTROL Apply changes]**&#x200B;以确认您的选择。
 
 >[!IMPORTANT]
 > 
->如果您未选择&#x200B;**[!UICONTROL 日期和时间]**&#x200B;组件，则文件名将是静态的，新导出的文件将使用每次导出覆盖存储位置上的以前文件。 当从存储位置将循环导入作业运行到电子邮件营销平台时，建议使用此选项。
+>如果不选择&#x200B;**[!UICONTROL Date and Time]**&#x200B;组件，则文件名将是静态的，新导出的文件将用每次导出覆盖存储位置上的先前文件。 当从存储位置将循环导入作业运行到电子邮件营销平台时，建议使用此选项。
 
 ![编辑文件名选项](../assets/ui/activate-destinations/activate-workflow-configure-step-2.png)
 
-完成所有区段的配置后，请选择&#x200B;**[!UICONTROL 下一步]**&#x200B;继续。
+完成所有区段的配置后，请选择&#x200B;**[!UICONTROL Next]**&#x200B;继续。
 
-### **[!UICONTROL 区段计]** 划  {#segment-schedule}
+## **[!UICONTROL Segment schedule]** 步骤  {#segment-schedule}
 
 适用于：广告目标，社交目标
 
 ![细分计划步骤](../assets/ui/activate-destinations/segment-schedule-icon.png)
 
-在&#x200B;**[!UICONTROL 区段计划]**&#x200B;页上，可以设置向目标发送数据的开始日期以及向目标发送数据的频率。
+在&#x200B;**[!UICONTROL Segment schedule]**&#x200B;页面上，可以设置向目标发送数据的开始日期以及向目标发送数据的频率。
 
 >[!IMPORTANT]
 >
@@ -193,31 +177,31 @@ If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary id
 
 >[!IMPORTANT]
 >
->对于Google客户匹配，在激活[!DNL IDFA]或[!DNL GAID]区段时，必须在此步骤中提供[!UICONTROL 应用程序ID]。
+>对于Google客户匹配，在激活[!DNL IDFA]或[!DNL GAID]区段时，必须在此步骤中提供[!UICONTROL App ID]。
 
 ![输入应用程序id](../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
-### **[!UICONTROL 计划步]** 骤  {#scheduling}
+## **[!UICONTROL Scheduling]** 步骤  {#scheduling}
 
 适用于：电子邮件营销目标和云存储目标
 
 ![细分计划步骤](../assets/ui/activate-destinations/scheduling-icon.png)
 
-在&#x200B;**[!UICONTROL 计划]**&#x200B;页上，您可以看到向目标发送数据的开始日期以及向目标发送数据的频率。 无法编辑这些值。
+在&#x200B;**[!UICONTROL Scheduling]**&#x200B;页面上，您可以看到向目标发送数据的开始日期以及向目标发送数据的频率。 无法编辑这些值。
 
-### **[!UICONTROL 选择属]** 性步骤  {#select-attributes}
+## **[!UICONTROL Select attributes]** 步骤  {#select-attributes}
 
 适用于：电子邮件营销目标和云存储目标
 
 ![选择属性步骤](../assets/ui/activate-destinations/select-attributes-icon.png)
 
-在&#x200B;**[!UICONTROL 选择属性]**&#x200B;页面上，选择&#x200B;**[!UICONTROL 添加新字段]**，然后选择要发送到目标的属性。
+在&#x200B;**[!UICONTROL Select attributes]**&#x200B;页面上，选择&#x200B;**[!UICONTROL Add new field]**&#x200B;并选择要发送到目标的属性。
 
 >[!NOTE]
 >
 > Adobe Experience Platform使用您的模式中四个推荐的常用属性预填充您的选择：`person.name.firstName`、`person.name.lastName`、`personalEmail.address`、`segmentMembership.status`。
 
-根据是否选择`segmentMembership.status`，文件导出将以下方式有所不同：
+根据是否选择`segmentMembership.status`，文件导出将按以下方式不同：
 * 如果选择了`segmentMembership.status`字段，则导出的文件在初始完整快照中包括&#x200B;**[!UICONTROL Active]**&#x200B;成员，在后续增量导出中包括&#x200B;**[!UICONTROL Active]**&#x200B;和&#x200B;**[!UICONTROL Expired]**&#x200B;成员。
 * 如果未选择`segmentMembership.status`字段，则导出的文件在初始完整快照和后续增量导出中仅包含&#x200B;**[!UICONTROL Active]**&#x200B;成员。
 
@@ -237,13 +221,13 @@ If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary id
 > 
 例如，如果字段`person.name.firstName`具有与目标的营销操作冲突的特定数据使用标签，则在审核步骤中将显示数据使用策略违规。 有关详细信息，请参阅Adobe Experience Platform中的[数据治理](../../rtcdp/privacy/data-governance-overview.md#destinations)。
 
-### **[!UICONTROL 查看步]** 骤  {#review}
+## **[!UICONTROL Review]** 步骤  {#review}
 
 适用于：所有目标
 
 ![审阅步骤](../assets/ui/activate-destinations/review-icon.png)
 
-在&#x200B;**[!UICONTROL 查看]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL 取消]**&#x200B;以分组流，选择&#x200B;**[!UICONTROL 返回]**&#x200B;以修改设置，或选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择，并开始将数据发送到目标。
+在&#x200B;**[!UICONTROL Review]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL Cancel]**&#x200B;以划分流，选择&#x200B;**[!UICONTROL Back]**&#x200B;以修改设置，或选择&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择，并将开始发送到目标。
 
 >[!IMPORTANT]
 >
@@ -251,7 +235,7 @@ If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary id
 
 ![数据策略违规](../assets/common/data-policy-violation.png)
 
-如果未检测到任何策略违规，请选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择，并开始将数据发送到目标。
+如果未检测到任何策略违规，请选择&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择，并开始将数据发送到目标。
 
 ![确认选择](../assets/ui/activate-destinations/confirm-selection.png)
 
@@ -259,8 +243,8 @@ If you are using another ID, such as "Rewards ID" or "Loyalty ID", as primary id
 
 请按照以下步骤编辑Adobe Experience Platform中的现有激活流：
 
-1. 在左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**，然后单击&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡，然后单击目标名称。
-2. 选择右边栏中的&#x200B;**[!UICONTROL 编辑激活]**&#x200B;以更改要发送到目标的区段。
+1. 在左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**，然后单击&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡，然后单击目标名称。
+2. 选择右边栏中的&#x200B;**[!UICONTROL Edit activation]**&#x200B;以更改要发送到目标的区段。
 
 ## 验证区段激活是否成功{#verify-activation}
 
@@ -281,11 +265,11 @@ Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_202004100
 
 这些文件在您的存储位置中的存在是成功激活的确认。 要了解导出的文件的结构，您可以[下载示例.csv文件](../assets/common/sample_export_file_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv)。 此示例文件包括用户档案属性`person.firstname`、`person.lastname`、`person.gender`、`person.birthyear`和`personalEmail.address`。
 
-### 广告目的地
+## 广告目的地
 
 在要激活数据的相应广告目标中检查您的帐户。 如果激活成功，则受众会填充到您的广告平台中。
 
-### 社交网络目标
+## 社交网络目标
 
 对于[!DNL Facebook]，成功的激活意味着将在[[!UICONTROL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/)中以编程方式创建[!DNL Facebook]自定义受众。 由于用户对已激活的区段具有资格或取消资格，将会添加和删除该受众中的区段成员资格。
 
@@ -297,6 +281,6 @@ Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_202004100
 
 要禁用现有激活流，请执行以下步骤：
 
-1. 在左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**，然后单击&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡，然后单击目标名称。
-2. 单击右边栏中的&#x200B;**[!UICONTROL 已启用]**&#x200B;控件以更改激活流状态。
+1. 在左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**，然后单击&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡，然后单击目标名称。
+2. 单击右边栏中的&#x200B;**[!UICONTROL Enabled]**&#x200B;控件以更改激活流状态。
 3. 在&#x200B;**更新激活流状态**&#x200B;窗口中，选择&#x200B;**确认**&#x200B;以禁用数据流。
