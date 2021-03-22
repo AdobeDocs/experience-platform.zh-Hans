@@ -6,15 +6,17 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '2070'
+source-wordcount: '2071'
 ht-degree: 0%
 
 ---
 
 
 # 将用户档案和区段激活到目标
+
+## 概述 {#overview}
 
 通过将区段映射到目标，激活[!DNL Adobe Experience Platform]中的数据。 要完成此操作，请按照以下步骤操作。
 
