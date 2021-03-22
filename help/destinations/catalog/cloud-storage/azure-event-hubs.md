@@ -3,15 +3,17 @@ keywords: Azure事件集线器目标；Azure事件集线器；azure eventhub
 title: （测试版）Azure事件集线器连接
 description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '531'
+source-wordcount: '532'
 ht-degree: 2%
 
 ---
 
 
 # （测试版）[!DNL Azure Event Hubs]连接
+
+## 概述 {#overview}
 
 >[!IMPORTANT]
 >
