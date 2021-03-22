@@ -1,11 +1,11 @@
 ---
-keywords: AmazonS3;S3目标；s3;amazon s3
-title: AmazonS3连接
-description: 创建到您的AmazonWeb服务(AWS)S3存储的实时出站连接，以定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
+keywords: Amazon S3;S3目标；s3;amazon s3
+title: Amazon S3连接
+description: 创建到Amazon Web Services(AWS)S3存储的实时出站连接，以定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '222'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
@@ -13,13 +13,15 @@ ht-degree: 0%
 
 # [!DNL Amazon S3] 连接  {#s3-connection}
 
-创建到您的[!DNL Amazon Web Services](AWS)S3存储的实时出站连接，定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
+## 概述 {#overview}
+
+创建到[!DNL Amazon Web Services](AWS)S3存储的实时出站连接，以定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 
 ## 导出类型{#export-type}
 
-**基于用户档案** -您正在导出区段的所有成员，以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性”屏幕 [中进行选择](../../ui/activate-destinations.md#select-attributes)。
+**基于用户档案**  — 您正在导出区段的所有成员，以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性”屏幕 [中选择](../../ui/activate-destinations.md#select-attributes)。
 
-![AmazonS3用户档案出口型](../../assets/catalog/cloud-storage/amazon-s3/catalog.png)
+![Amazon S3基于用户档案的导出类型](../../assets/catalog/cloud-storage/amazon-s3/catalog.png)
 
 ## 连接目标{#connect-destination}
 
@@ -27,11 +29,11 @@ ht-degree: 0%
 
 对于[!DNL Amazon S3]目标，在创建目标工作流中输入以下信息：
 
-* **[!DNL Amazon S3]访问密钥 [!DNL Amazon S3] 和密钥**:在中 [!DNL Amazon S3]，生成一 `access key - secret access key` 对以授予Platform对您帐户的 [!DNL Amazon S3] 访问权限。请阅读[AmazonWeb服务文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)了解更多信息。
+* **[!DNL Amazon S3]访问密钥 [!DNL Amazon S3] 和密钥**:在中 [!DNL Amazon S3]，生成一 `access key - secret access key` 对以授予对您帐户的平台 [!DNL Amazon S3] 访问权。请阅读[Amazon Web服务文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)了解更多信息。
 
 >[!IMPORTANT]
 >
->平台需要对将要传送导出文件的存储段对象具有`write`权限。
+>平台需要对要传送导出文件的存储桶对象具有`write`权限。
 
 ## 导出的数据{#exported-data}
 
