@@ -3,15 +3,17 @@ keywords: Amazon Kinesis;kinesis目标；kinesis
 title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接以从Adobe Experience Platform流化数据。
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '505'
 ht-degree: 2%
 
 ---
 
 
 # （测试版）[!DNL Amazon Kinesis]连接
+
+## 概述 {#overview}
 
 >[!IMPORTANT]
 >
