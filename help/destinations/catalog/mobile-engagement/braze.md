@@ -3,9 +3,9 @@ keywords: 移动；布雷兹；消息；
 title: 布雷兹连接
 description: Braze是一个全面的客户互动平台，可为客户与他们喜爱的品牌之间提供相关且难忘的体验。
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '900'
+source-wordcount: '901'
 ht-degree: 1%
 
 ---
@@ -16,6 +16,8 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 >Adobe Experience Platform中的Braze目标当前为测试版。 文档和功能可能会发生变化。
+
+## 概述 {#overview}
 
 [!DNL Braze]目标可帮助您向[!DNL Braze]发送用户档案数据。
 
