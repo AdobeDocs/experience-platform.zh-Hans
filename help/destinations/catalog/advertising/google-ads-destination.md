@@ -3,9 +3,9 @@ keywords: Google广告；Google广告；Google广告；Google广告词；Google�
 title: Google Ads连接
 description: Google Ads，以前称为Google AdWords，是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用内移动显示中按点击付费广告。
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 24e0a274e61fcf6311c647067920686e4f25e840
 workflow-type: tm+mt
-source-wordcount: '723'
+source-wordcount: '722'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 请注意特定于[!DNL Google Ads]目标的以下详细信息：
 
 * 激活的受众是在[!DNL Google]平台中以编程方式创建的。
-* 平台当前不包括测量量度以验证成功激活。 请参阅Google中的受众计数以验证集成并了解受众定位大小。
+* [!DNL Platform] 当前不包括测量量度以验证成功激活。请参阅Google中的受众计数以验证集成并了解受众定位大小。
 
 >[!IMPORTANT]
 >
