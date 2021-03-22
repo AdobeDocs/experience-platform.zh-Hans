@@ -3,15 +3,17 @@ keywords: Google广告；Google广告；Google广告；Google广告词；Google�
 title: Google Ads连接
 description: Google Ads，以前称为Google AdWords，是一种在线广告服务，允许企业在基于文本的搜索、图形显示、YouTube视频和应用内移动显示中按点击付费广告。
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '722'
+source-wordcount: '723'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Google Ads] 连接
+
+## 概述 {#overview}
 
 [!DNL Google Ads]之前称为在 [!DNL Google AdWords]线广告服务，允许企业在基于文本的搜索、图形显示、视频和应用内移动显示中按点 [!DNL YouTube] 击付费广告。
 
