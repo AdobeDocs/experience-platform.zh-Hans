@@ -5,7 +5,7 @@ title: Azure Data Lake 存储 Gen2源连接器概述
 topic: 概述
 description: 了解如何使用API或用户界面将Azure Data Lake 存储 Gen2连接到Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: 5c6539d45df91369c3608965fd887c013d528b98
+source-git-commit: 7fc99214272d2ce743b3666826c66f5d65e4d2ca
 workflow-type: tm+mt
 source-wordcount: '457'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 
 - 目录和文件组件名称不能超过255个字符。
 - 目录和文件名不能以正斜杠(`/`)结尾。 如果提供，则会自动删除它。
-- 以下保留的URL字符必须正确转义：`! * ' ( ) ; : @ & = + $ , / ? % # [ ]`
+- 以下保留的URL字符必须正确转义：`! ' ( ) ; @ & = + $ , % # [ ]`
 - 不允许使用以下字符：`" \ / : | < > * ?`。
 - 不允许使用非法的URL路径字符。 像`\uE000`这样的代码点在NTFS文件名中有效，但不是有效的Unicode字符。 此外，不允许使用某些ASCII或Unicode字符，如控制字符（0x00到0x1F、\u0081等）。 有关HTTP/1.1中管理Unicode字符串的规则，请参阅[RFC 2616，第2.2节：基本规则](https://www.ietf.org/rfc/rfc2616.txt)和[RFC 3987](https://www.ietf.org/rfc/rfc3987.txt)。
 - 不允许使用以下文件名：LPT1、LPT2、LPT3、LPT4、LPT5、LPT6、LPT7、LPT8、LPT9、COM1、COM2、COM3、COM4、COM5、COM6、COM7、COM9、COMPRN、AUX、NUL、CON、CLOCK$、点字符(.)和两个点字符(..)。
