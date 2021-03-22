@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 0992b223a96b77446a9f9c2823f5195541dd93fa
 workflow-type: tm+mt
-source-wordcount: '2071'
+source-wordcount: '2069'
 ht-degree: 0%
 
 ---
@@ -143,7 +143,7 @@ ht-degree: 0%
 
 默认文件名由目标名称、区段ID以及日期和时间指示器组成。 例如，您可以编辑导出的文件名以区分不同的活动，或将数据导出时间附加到文件。
 
-选择铅笔图标以打开模态窗口并编辑文件名。 请注意，文件名限制为255个字符。
+选择铅笔图标以打开模态窗口并编辑文件名。 文件名限制为255个字符。
 
 ![配置文件名](../assets/ui/activate-destinations/configure-name.png)
 
@@ -161,7 +161,7 @@ ht-degree: 0%
 
 ![编辑文件名选项](../assets/ui/activate-destinations/activate-workflow-configure-step-2.png)
 
-完成所有区段的配置后，请选择&#x200B;**[!UICONTROL Next]**&#x200B;继续。
+配置完所有区段后，请选择&#x200B;**[!UICONTROL Next]**&#x200B;继续。
 
 ## **[!UICONTROL Segment schedule]** 步骤  {#segment-schedule}
 
@@ -203,7 +203,7 @@ ht-degree: 0%
 >
 > Adobe Experience Platform使用您的模式中四个推荐的常用属性预填充您的选择：`person.name.firstName`、`person.name.lastName`、`personalEmail.address`、`segmentMembership.status`。
 
-根据是否选择`segmentMembership.status`，文件导出将按以下方式不同：
+根据是否选择`segmentMembership.status`，文件导出将以下方式有所不同：
 * 如果选择了`segmentMembership.status`字段，则导出的文件在初始完整快照中包括&#x200B;**[!UICONTROL Active]**&#x200B;成员，在后续增量导出中包括&#x200B;**[!UICONTROL Active]**&#x200B;和&#x200B;**[!UICONTROL Expired]**&#x200B;成员。
 * 如果未选择`segmentMembership.status`字段，则导出的文件在初始完整快照和后续增量导出中仅包含&#x200B;**[!UICONTROL Active]**&#x200B;成员。
 
