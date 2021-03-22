@@ -1,17 +1,19 @@
 ---
-keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；oracle响应系统目标
+keywords: 电子邮件；电子邮件；电子邮件目标；oracle响应系统目标
 title: Oracle Responsys连接
-description: Responsys是面向Oracle提供的跨渠道营销活动的企业电子邮件营销工具，旨在实现电子邮件、移动设备、展示广告和社交渠道的个性化互动。
+description: Responsys是一款企业电子邮件营销工具，面向Oracle提供的跨渠道营销活动，用于在电子邮件、移动设备、展示广告和社交渠道之间实现个性化互动。
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
 
 
 # [!DNL Oracle Responsys] 连接
+
+## 概述 {#overview}
 
 [Responsys是一](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) 款面向跨渠道营销活动的企业电子邮件营销工具， [!DNL Oracle] 旨在通过电子邮件、移动设备、展示广告和社交渠道实现个性化互动。
 
@@ -23,29 +25,29 @@ ht-degree: 0%
 
 ## 连接目标{#connect-destination}
 
-在&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**&#x200B;中，选择[!DNL Oracle Responsys]，然后选择&#x200B;**[!UICONTROL 连接目标]**。
+在&#x200B;**[!UICONTROL Connections]** > **[!UICONTROL Destinations]**&#x200B;中，选择[!DNL Oracle Responsys]，然后选择&#x200B;**[!UICONTROL Connect destination]**。
 
 ![连接到Responsys](../../assets/catalog/email-marketing/oracle-responsys/catalog.png)
 
-在&#x200B;**[!UICONTROL 身份验证]**&#x200B;步骤中，如果您之前已设置到云存储目标的连接，请选择&#x200B;**[!UICONTROL 现有帐户]**&#x200B;并选择现有连接之一。 或者，您可以选择&#x200B;**[!UICONTROL 新建帐户]**&#x200B;来设置新连接。 填写帐户身份验证凭据，然后选择&#x200B;**[!UICONTROL 连接到目标]**。 对于[!DNL Oracle Responsys]，您可以在&#x200B;**[!UICONTROL 带密码]**&#x200B;的SFTP和&#x200B;**[!UICONTROL 带SSH密钥]**&#x200B;的SFTP之间进行选择。 根据连接类型，填写以下信息，然后选择&#x200B;**[!UICONTROL 连接到目标]**。
+在&#x200B;**[!UICONTROL Authentication]**&#x200B;步骤中，如果您之前已设置到云存储目标的连接，请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;并选择现有连接之一。 或者，可以选择&#x200B;**[!UICONTROL New Account]**&#x200B;设置新连接。 填写帐户身份验证凭据并选择&#x200B;**[!UICONTROL Connect to destination]**。 对于[!DNL Oracle Responsys]，您可以在&#x200B;**[!UICONTROL SFTP with Password]**&#x200B;和&#x200B;**[!UICONTROL SFTP with SSH Key]**&#x200B;之间进行选择。 根据连接类型，填写以下信息，然后选择&#x200B;**[!UICONTROL Connect to destination]**。
 
-对于具有Password ]**连接的**[!UICONTROL  SFTP，必须提供域、端口、用户名和密码。
+对于&#x200B;**[!UICONTROL SFTP with Password]**&#x200B;连接，必须提供域、端口、用户名和密码。
 
-对于具有SSH密钥&#x200B;]**连接的**[!UICONTROL  SFTP，必须提供域、端口、用户名和密码。
+对于&#x200B;**[!UICONTROL SFTP with SSH Key]**&#x200B;连接，必须提供域、端口、用户名和密码。
 
 ![填写Responsys信息](../../assets/catalog/email-marketing/oracle-responsys/account-info.png)
 
-在&#x200B;**[!UICONTROL 设置]**&#x200B;步骤中，填写目标的相关信息，如下所示：
-- **[!UICONTROL 名称]**:为目标选择相关名称。
-- **[!UICONTROL 描述]**:输入目标的说明。
-- **[!UICONTROL 存储段名称]**:您的Amazon S3存储桶，平台将存放数据导出。输入长度必须介于3到63个字符之间。 必须以字母或数字开头和结尾。 只能包含小写字母、数字或连字符(-)。 不得将格式设置为IP地址（例如192.100.1.1）。
-- **[!UICONTROL 文件夹路径]**:在您的存储位置提供路径，平台将在该路径中将导出数据存储为CSV或制表符分隔的文件。
-- **[!UICONTROL 文件格式]**: **CSV** 或 **TAB_DELIMITED**。选择要导出到存储位置的文件格式。
-- **[!UICONTROL 营销操作]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
+在&#x200B;**[!UICONTROL Setup]**&#x200B;步骤中，填写目标的相关信息，如下所示：
+- **[!UICONTROL Name]**:为目标选择相关名称。
+- **[!UICONTROL Description]**:输入目标的说明。
+- **[!UICONTROL Bucket name]**:您的Amazon S3存储桶，平台将存放数据导出。输入长度必须介于3到63个字符之间。 必须以字母或数字开头和结尾。 只能包含小写字母、数字或连字符(-)。 不得将格式设置为IP地址（例如192.100.1.1）。
+- **[!UICONTROL Folder Path]**:在您的存储位置提供路径，平台将在该路径中将导出数据存储为CSV或制表符分隔的文件。
+- **[!UICONTROL File Format]**: **CSV** 或 **TAB_DELIMITED**。选择要导出到存储位置的文件格式。
+- **[!UICONTROL Marketing actions]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
 ![Responsys基本信息](../../assets/catalog/email-marketing/oracle-responsys/basic-information.png)
 
-填写上面的字段后，单击&#x200B;**[!UICONTROL 创建目标]**。 目标现已连接，您可以[将区段](../../ui/activate-destinations.md)激活到目标。
+填写上面的字段后，单击&#x200B;**[!UICONTROL Create destination]**。 目标现已连接，您可以[将区段](../../ui/activate-destinations.md)激活到目标。
 
 ## 激活区段{#activate-segments}
 
