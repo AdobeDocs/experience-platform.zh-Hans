@@ -3,9 +3,9 @@ keywords: Azure事件集线器目标；Azure事件集线器；azure eventhub
 title: （测试版）Azure事件集线器连接
 description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
 translation-type: tm+mt
-source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
-source-wordcount: '546'
+source-wordcount: '531'
 ht-degree: 2%
 
 ---
@@ -43,19 +43,19 @@ ht-degree: 2%
 
 对于[!DNL Azure Event Hubs]目标，在创建目标工作流中输入以下信息：
 
-### 在身份验证步骤{#authentication-step}中
+## 身份验证步骤{#authentication-step}
 
-* **[!UICONTROL SAS密钥]** 名和 **[!UICONTROL SAS密钥]**:填写您的SAS密钥名称和密钥。了解在[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)中使用SAS键对[!DNL Azure Event Hubs]进行身份验证。
-* **[!UICONTROL 命名空间]**:填写您的 [!DNL Azure Event Hubs] 命名空间。了解[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)中的[!DNL Azure Event Hubs]命名空间。
+* **[!UICONTROL SAS Key Name]** 和 **[!UICONTROL SAS Key]**:填写您的SAS密钥名称和密钥。了解在[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)中使用SAS键对[!DNL Azure Event Hubs]进行身份验证。
+* **[!UICONTROL Namespace]**:填写您的 [!DNL Azure Event Hubs] 命名空间。了解[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)中的[!DNL Azure Event Hubs]命名空间。
 
 ![身份验证步骤中所需的输入](../../assets/catalog/cloud-storage/event-hubs/authentication.png)
 
-### 在设置步骤{#setup-step}中
+## 设置步骤{#setup-step}
 
-* **[!UICONTROL 名称]**:填写连接的名称 [!DNL Azure Event Hubs]。
-* **[!UICONTROL 描述]**:提供连接描述。示例：“高级顾客”、“男性对风筝冲浪感兴趣”。
+* **[!UICONTROL Name]**:填写连接的名称 [!DNL Azure Event Hubs]。
+* **[!UICONTROL Description]**:提供连接描述。示例：“高级顾客”、“男性对风筝冲浪感兴趣”。
 * **[!UICONTROL eventHubName]**:为流提供到目标的名 [!DNL Azure Event Hubs] 称。
-* **[!UICONTROL 营销操作]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
+* **[!UICONTROL Marketing actions]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
 ![设置步骤中所需的数据](../../assets/catalog/cloud-storage/event-hubs/setup.png)
 
