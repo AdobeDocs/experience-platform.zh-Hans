@@ -3,15 +3,17 @@ keywords: Azure Blob;Blob目标；s3;Azure Blob目标
 title: Azure Blob连接
 description: 创建到Azure Blob存储的实时出站连接，以定期从Adobe Experience Platform导出制表符分隔或CSV数据文件。
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
 workflow-type: tm+mt
-source-wordcount: '579'
+source-wordcount: '580'
 ht-degree: 1%
 
 ---
 
 
 # [!DNL Azure Blob] 连接
+
+## 概述 {#overview}
 
 [!DNL Azure Blob] (以下简称“[!DNL Blob]”)是微软的云对象存储解决方案。本教程提供了使用[!DNL Platform]用户界面创建[!DNL Blob]目标的步骤。
 
