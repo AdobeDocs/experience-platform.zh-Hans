@@ -3,10 +3,10 @@ keywords: 移动；布雷兹；消息；
 title: 布雷兹连接
 description: Braze是一个全面的客户互动平台，可为客户与他们喜爱的品牌之间提供相关且难忘的体验。
 translation-type: tm+mt
-source-git-commit: 0759919dc458798ca4bc5f233a9cb319194ea534
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
-source-wordcount: '899'
-ht-degree: 2%
+source-wordcount: '900'
+ht-degree: 1%
 
 ---
 
@@ -37,7 +37,7 @@ ht-degree: 2%
 
 作为营销人员，我希望在移动互动目标中目标用户，[!DNL Adobe Experience Platform]中内置细分。 此外，我希望在[!DNL Adobe Experience Platform]中更新细分和用户档案后，根据[!DNL Adobe Experience Platform]用户档案的属性，立即为他们提供个性化体验。
 
-### 支持的身份{#supported-identities}
+## 支持的身份{#supported-identities}
 
 [!DNL Google Ad Manager] 支持下表所述身份的激活。
 
@@ -48,7 +48,6 @@ ht-degree: 2%
 ## 导出类型{#export-type}
 
 **[!DNL Profile-based]**  — 您正在导出区段的所有成员，以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)和/或身份。[!DNL Adobe Experience Platform] 段将导出到属 [!DNL Braze] 性的 `AdobeExperiencePlatformSegments` 下方。
-
 
 ## 连接到目标{#connect-destination}
 
@@ -127,7 +126,7 @@ ht-degree: 2%
 
 要添加更多映射，请重复上述步骤。
 
-### 示例 {#mapping-example}
+## 映射示例{#mapping-example}
 
 假设您的XDM用户档案模式和[!DNL Braze]实例包含以下属性和标识：
 
