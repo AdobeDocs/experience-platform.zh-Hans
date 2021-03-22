@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;kinesis目标；kinesis
 title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接以从Adobe Experience Platform流化数据。
 translation-type: tm+mt
-source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '504'
 ht-degree: 2%
 
 ---
@@ -43,19 +43,19 @@ ht-degree: 2%
 
 对于[!DNL Amazon Kinesis]目标，在创建目标工作流中输入以下信息：
 
-### 在身份验证步骤{#authentication-step}中
+## 身份验证步骤{#authentication-step}
 
 * **[!DNL Amazon Web Services]访问密钥和密钥**:在中 [!DNL Amazon Web Services]，生成一 `access key - secret access key` 对以授予对您帐户的平台 [!DNL Amazon Kinesis] 访问权。请阅读[Amazon Web服务文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)了解更多信息。
 * **区域**:指示要 [!DNL Amazon Web Services] 将数据流化到的区域。
 
 ![帐户步骤中的输入字段](../../assets/catalog/cloud-storage/amazon-kinesis/account.png)
 
-### 在设置步骤{#setup-step}中
+## 设置步骤{#setup-step}
 
 * **名称**:提供连接的名称  [!DNL Amazon Kinesis]
 * **描述**:提供与的连接说明 [!DNL Amazon Kinesis]。
 * **stream**:提供帐户中现有数据流的名 [!DNL Amazon Kinesis] 称。平台会将数据导出到此流。
-* **[!UICONTROL 营销操作]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
+* **[!UICONTROL Marketing actions]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
 ![身份验证步骤中的输入字段](../../assets/catalog/cloud-storage/amazon-kinesis/setup.png)
 
