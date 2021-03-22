@@ -3,9 +3,9 @@ keywords: linkedin连接；linkedin连接；linkedin目标；linkedin;
 title: Linkedin匹配受众连接
 description: 根据经过散列处理的电子邮件，为您的LinkedIn活动激活用户档案以进行受众定位、个性化和抑制。
 translation-type: tm+mt
-source-git-commit: fd95357f3e3533fe6b7b9752798dd99eb1cc0eb5
+source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
 workflow-type: tm+mt
-source-wordcount: '666'
+source-wordcount: '654'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,7 @@ ht-degree: 0%
 
 软件公司会组织会议并希望与参加者保持联系，并根据参加者的会议出席状态向他们展示个性化的优惠。 公司可以将自己的[!DNL CRM]电子邮件地址或移动设备ID收录到Adobe Experience Platform中。 然后，他们可以根据自己的线下数据构建细分，并将这些细分发送到[!DNL LinkedIn]社交平台，优化广告支出。
 
-## 目标特性{#destination-specs}
-
-[!DNL LinkedIn Matched Audiences] 支持激活以下身份：散乱的 [!DNL GAID]电子邮件 [!DNL IDFA]。
-
-### 支持的身份{#supported-identities}
+## 支持的身份{#supported-identities}
 
 [!DNL LinkedIn Matched Audiences] 支持下表所述身份的激活。了解有关[identities](/help/identity-service/namespaces.md)的更多信息。
 
@@ -38,23 +34,23 @@ ht-degree: 0%
 | email_lc_sha256 | 使用SHA256算法散列化的电子邮件地址 | 纯文本和SHA256哈希电子邮件地址都受Adobe Experience Platform支持。 按照[ID matching requirements](#id-matching-requirements-id-matching-requirements)部分中的说明，分别对纯文本和散列电子邮件使用相应的命名空间。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。 |
 
 
-### 导出类型{#export-type}
+## 导出类型{#export-type}
 
 **区段导出**  — 您正在导出区段(受众)的所有成员，其中包含目标中使用的标识符(名称、电话号码和其他 [!DNL LinkedIn Matched Audiences] )。
 
-### LinkedIn帐户先决条件{#LinkedIn-account-prerequisites}
+## LinkedIn帐户先决条件{#LinkedIn-account-prerequisites}
 
 在使用[!UICONTROL LinkedIn Matched Audience]目标之前，请确保您的[!DNL LinkedIn Campaign Manager]帐户具有[!DNL Creative Manager]权限级别或更高级别。
 
 要了解如何编辑您的[!DNL LinkedIn Campaign Manager]用户权限，请参阅LinkedIn文档中的[添加、编辑和删除广告帐户的用户权限](https://www.linkedin.com/help/lms/answer/5753)。
 
-### ID匹配要求{#id-matching-requirements}
+## ID匹配要求{#id-matching-requirements}
 
 [!DNL LinkedIn Matched Audiences] 要求不要发送任何清晰的个人身份信息(PII)。因此，激活到[!DNL LinkedIn Matched Audiences]的受众可以键出&#x200B;*散列*&#x200B;标识符，如电子邮件地址或移动设备ID。
 
 根据您输入到Adobe Experience Platform的ID类型，您必须遵守其相应要求。
 
-#### 电子邮件散列要求{#email-hashing-requirements}
+## 电子邮件散列要求{#email-hashing-requirements}
 
 您可以先对电子邮件地址进行哈希处理，然后将其引入Adobe Experience Platform，或者在Experience Platform中使用电子邮件地址进行清除，并在激活上对它们进行[!DNL Platform]哈希处理。
 
