@@ -1,12 +1,12 @@
 ---
 keywords: 目标；目标；目标详细信息页；目标详细信息页
 title: 视图目标详细信息
-description: '单个目标的详细信息页面提供了目标详细信息的概述，例如目标名称、ID、映射到目标的区段，以及用于编辑激活和启用和禁用数据流的控件。 '
-seo-description: '单个目标的详细信息页面提供了目标详细信息的概述，例如目标名称、ID、映射到目标的区段，以及用于编辑激活和启用和禁用数据流的控件。 '
+description: '单个目标的详细信息页面提供了目标详细信息的概述。 目标详细信息包括目标名称、ID、映射到目标的区段，以及用于编辑激活和启用和禁用数据流的控件。 '
+seo-description: '单个目标的详细信息页面提供了目标详细信息的概述。 目标详细信息包括目标名称、ID、映射到目标的区段，以及用于编辑激活和启用和禁用数据流的控件。 '
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 49905060a18fc94fe524401fb3cf86f212b639ce
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '698'
 ht-degree: 0%
 
 ---
