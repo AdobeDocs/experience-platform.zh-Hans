@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件目标；adobe活动;活动
 title: Adobe Campaign连接
 description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道个性化和投放活动。
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
 workflow-type: tm+mt
-source-wordcount: '794'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
@@ -38,12 +38,12 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 
 ![设置活动向导](../../assets/catalog/email-marketing/adobe-campaign/connection-type.png)
 
-- 对于&#x200B;**[!UICONTROL Amazon S3]**&#x200B;连接，必须提供访问密钥ID和密钥访问密钥。
-- 对于&#x200B;**[!UICONTROL SFTP with Password]**&#x200B;连接，必须提供域、端口、用户名和密码。
-- 对于&#x200B;**[!UICONTROL SFTP with SSH Key]**&#x200B;连接，必须提供域、端口、用户名和密码。
+- 对于&#x200B;**[!UICONTROL Amazon S3]**&#x200B;连接，必须提供[!UICONTROL Access Key ID]和[!UICONTROL Secret Access Key]。
+- 对于&#x200B;**[!UICONTROL SFTP with Password]**&#x200B;连接，必须提供[!UICONTROL Domain]、[!UICONTROL Port]、[!UICONTROL Username]和[!UICONTROL Password]。
+- 对于&#x200B;**[!UICONTROL SFTP with SSH Key]**&#x200B;连接，必须提供[!UICONTROL Domain]、[!UICONTROL Port]、[!UICONTROL Username]和[!UICONTROL SSH Key]。
 - 对于&#x200B;**[!UICONTROL Azure Blob]**&#x200B;连接，必须提供连接字符串。
 
-或者，您也可以附加RSA格式的公钥，以便将PGP/GPG加密添加到&#x200B;**[!UICONTROL Key]**&#x200B;部分下的导出文件。 请注意，此公钥&#x200B;**必须**&#x200B;写入为Base64编码字符串。
+或者，您也可以附加RSA格式的公钥，以便将PGP/GPG加密添加到&#x200B;**[!UICONTROL Key]**&#x200B;部分下的导出文件。 您的公钥必须写入为[!DNL Base64]编码字符串。
 
 ![填写活动信息](../../assets/catalog/email-marketing/adobe-campaign/account-info.png)
 
@@ -54,7 +54,7 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 - **[!UICONTROL Folder Path]**:在存储位置提供将导出数 [!DNL Platform] 据存储为CSV或制表符分隔文件的路径。
 - **[!UICONTROL Container]**: *用于Blob连接*。包含文件夹路径的Blob的容器在中。
 - **[!UICONTROL File Format]**: **CSV** 或 **TAB_DELIMITED**。选择要导出到存储位置的文件格式。
-- **[!UICONTROL Marketing actions]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)页。 另请参阅同一文档中的[Adobe定义的营销操作](../../../data-governance/policies/overview.md#core-actions)。
+- **[!UICONTROL Marketing actions]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)页。
 
 ![活动基本信息](../../assets/catalog/email-marketing/adobe-campaign/basic-information.png)
 
@@ -66,7 +66,7 @@ Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道
 
 ## 目标属性{#destination-attributes}
 
-当[将区段](../../ui/activate-destinations.md)激活到Adobe Campaign目标时，建议您从[合并模式](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参阅电子邮件营销目标文档中的[选择要用作导出文件中目标属性的模式字段](./overview.md#destination-attributes)。
+当[将区段](../../ui/activate-destinations.md)激活到Adobe Campaign目标时，Adobe建议您从[合并模式](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参阅[选择要用作导出文件中目标属性的模式字段](./overview.md#destination-attributes)。
 
 ## 导出的数据{#exported-data}
 
