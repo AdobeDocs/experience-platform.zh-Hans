@@ -4,9 +4,9 @@ title: 目标工作区
 description: “目标”工作区由四个部分组成，即“目录”、“浏览”、“帐户”和“系统视图”，这些部分在以下各节中有介绍。
 seo-description: 在Adobe Experience Platform中，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 49905060a18fc94fe524401fb3cf86f212b639ce
 workflow-type: tm+mt
-source-wordcount: '946'
+source-wordcount: '934'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 在Adobe Experience Platform中，从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**&#x200B;以访问[!UICONTROL Destinations]工作区。
 
-[!UICONTROL Destinations]工作区由四个部分组成，分别为[!UICONTROL Catalog]、[!UICONTROL Browse]、[!UICONTROL Accounts]和[!UICONTROL System View]，下面各节对它们进行了说明。
+[!UICONTROL Destinations]工作区由以下各节中描述的四个部分组成，分别是[!UICONTROL Catalog]、[!UICONTROL Browse]、[!UICONTROL Accounts]和[!UICONTROL System View]。
 
 ![目标 — 概述](../assets/ui/workspace/destinations-overview.png)
 
@@ -26,7 +26,7 @@ ht-degree: 1%
 
 **[!UICONTROL Catalog]**&#x200B;选项卡显示平台中所有可用目标的列表，您可以将数据发送到该目标。
 
-平台用户界面在目标目录页面上提供了许多搜索和筛选选项：
+平台用户界面在目标目录页面上提供了多个搜索和筛选选项：
 
 * 使用页面上的搜索功能查找特定目标。
 * 使用[!UICONTROL Categories]控件过滤目标。
@@ -35,7 +35,7 @@ ht-degree: 1%
 
 ![目标过滤和搜索演示](../assets/ui/workspace/destinations-search-and-filter.gif)
 
-目标卡包含&#x200B;**[!UICONTROL Configure]**&#x200B;或&#x200B;**[!UICONTROL Activate]**&#x200B;控件，以及可显示更多选项的辅助控件。 这些内容均描述如下：
+目标卡包含&#x200B;**[!UICONTROL Configure]**&#x200B;或&#x200B;**[!UICONTROL Activate]**&#x200B;控件，以及可显示更多选项的辅助控件。 这些控件描述如下：
 
 | 控制 | 描述 |
 ---------|----------
@@ -47,7 +47,7 @@ ht-degree: 1%
 
 ![目标卡上的控件](../assets/ui/workspace/destination-card-options.png)
 
-在目录中选择目标卡以打开右边栏。  此处，您可以看到目标的描述。 右边栏提供了上表中描述的相同控件，以及目标的描述，以及目标类别和类型的指示。
+在目录中选择目标卡以打开右边栏。 此处，您可以看到目标的描述。 右边栏提供了上表中描述的相同控件，以及目标的描述，以及目标类别和类型的指示。
 
 ![目标目录选项](../assets/ui/workspace/destination-right-rail.png)
 
@@ -98,14 +98,14 @@ ht-degree: 1%
 | 元素 | 描述 |
 ---------|----------
 | 名称 | 您为激活流提供到此目标的名称。 同一列包含两个控件：[!UICONTROL Activate ]和[!UICONTROL Delete destination]。 |
-| 上次流运行状态 | 上次数据流运行的状态。 有关数据流运行的详细信息，请参阅[视图目标详细信息](destination-details-page.md)。 |
-| 上次流运行日期 | 上次数据流运行的时间和日期。 有关数据流运行的详细信息，请参阅[视图目标详细信息](destination-details-page.md)。 |
+| [!UICONTROL Last Flow Run Status] | 上次数据流运行的状态。 有关数据流运行的详细信息，请参阅[视图目标详细信息](destination-details-page.md)。 |
+| [!UICONTROL Last Flow Run Date] | 上次数据流运行的时间和日期。 有关数据流运行的详细信息，请参阅[视图目标详细信息](destination-details-page.md)。 |
 | [!UICONTROL Destination] | 您为激活流选择的目标平台。 |
 | [!UICONTROL Connection Type] | 表示到存储存储段或目标的连接类型。 <ul><li>对于电子邮件营销目标：可以是S3、FTP或[!DNL Azure Blob]。</li><li>对于实时广告目标：服务器到服务器。</li><li>对于流目标：可以是[!DNL Azure Event Hubs]或[!DNL Amazon Kinesis]。</li></ul> |
 | [!UICONTROL Username] | 您为目标流选择的帐户凭据。 |
 | [!UICONTROL Activation Data] | 指示要激活到此目标的区段数。 选择此控件可进一步了解已激活的区段。 有关已激活区段的详细信息，请参阅目标详细信息页中的[激活数据](/help/destinations/ui/destination-details-page.md#activation-data)。 |
 | [!UICONTROL Created] | 创建到目标的激活流的日期和UTC时间。 |
-| [!UICONTROL Status] | `Active` 或 `Inactive`. 指示数据当前是否正在激活到此目标。 要编辑状态，请参阅[禁用激活](./activate-destinations.md#disable-activation)。 |
+| [!UICONTROL Status] | `Active` 或 `Inactive`. 指示是否正在将数据激活到此目标。 要编辑状态，请参阅[禁用激活](./activate-destinations.md#disable-activation)。 |
 
 单击目标行可在右边栏中显示有关目标的详细信息。
 
