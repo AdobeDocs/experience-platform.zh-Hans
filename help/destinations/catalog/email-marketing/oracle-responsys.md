@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件目标；oracle响应系统�
 title: Oracle Responsys连接
 description: Responsys是一款企业电子邮件营销工具，面向Oracle提供的跨渠道营销活动，用于在电子邮件、移动设备、展示广告和社交渠道之间实现个性化互动。
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-[Responsys是一](https://www.oracle.com/marketingcloud/products/cross-channel-orchestration/) 款面向跨渠道营销活动的企业电子邮件营销工具， [!DNL Oracle] 旨在通过电子邮件、移动设备、展示广告和社交渠道实现个性化互动。
+[Responsys是一](https://www.oracle.com/cx/marketing/campaign-management/) 款面向跨渠道营销活动的企业电子邮件营销工具， [!DNL Oracle] 旨在通过电子邮件、移动设备、展示广告和社交渠道实现个性化互动。
 
 要将区段数据发送到[!DNL Oracle Responsys]，您必须首先连接到Adobe Experience Platform中的目标](#connect-destination)，然后[设置从存储位置到[!DNL Oracle Responsys]的导入](#import-data-into-responsys)。[
 
@@ -29,21 +29,33 @@ ht-degree: 0%
 
 ![连接到Responsys](../../assets/catalog/email-marketing/oracle-responsys/catalog.png)
 
-在&#x200B;**[!UICONTROL Authentication]**&#x200B;步骤中，如果您之前已设置到云存储目标的连接，请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;并选择现有连接之一。 或者，可以选择&#x200B;**[!UICONTROL New Account]**&#x200B;设置新连接。 填写帐户身份验证凭据并选择&#x200B;**[!UICONTROL Connect to destination]**。 对于[!DNL Oracle Responsys]，您可以在&#x200B;**[!UICONTROL SFTP with Password]**&#x200B;和&#x200B;**[!UICONTROL SFTP with SSH Key]**&#x200B;之间进行选择。 根据连接类型，填写以下信息，然后选择&#x200B;**[!UICONTROL Connect to destination]**。
+在&#x200B;**[!UICONTROL Account]**&#x200B;步骤中，如果您之前已设置到云存储目标的连接，请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;并选择现有连接之一。 或者，可以选择&#x200B;**[!UICONTROL New Account]**&#x200B;设置新连接。 填写帐户身份验证凭据并选择&#x200B;**[!UICONTROL Connect to destination]**。 对于[!DNL Oracle Responsys]，您可以在&#x200B;**[!UICONTROL SFTP with Password]**&#x200B;和&#x200B;**[!UICONTROL SFTP with SSH Key]**&#x200B;之间进行选择。
 
-对于&#x200B;**[!UICONTROL SFTP with Password]**&#x200B;连接，必须提供域、端口、用户名和密码。
+![Connect Responsys帐户](../../assets/catalog/email-marketing/oracle-responsys/connection-type.png)
 
-对于&#x200B;**[!UICONTROL SFTP with SSH Key]**&#x200B;连接，必须提供域、端口、用户名和密码。
+根据连接类型，填写以下信息，然后选择&#x200B;**[!UICONTROL Configure]**。
+
+- 对于&#x200B;**[!UICONTROL SFTP with Password]**&#x200B;连接，必须提供[!UICONTROL Domain]、[!UICONTROL Port]、[!UICONTROL Username]和[!UICONTROL Password]。
+- 对于&#x200B;**[!UICONTROL SFTP with SSH Key]**&#x200B;连接，必须提供[!UICONTROL Domain]、[!UICONTROL Port]、[!UICONTROL Username]和[!UICONTROL SSH Key]。
+
+或者，您也可以附加RSA格式的公钥，以便将PGP/GPG加密添加到&#x200B;**[!UICONTROL Key]**&#x200B;部分下的导出文件。 您的公钥必须写入为[!DNL Base64]编码字符串。
 
 ![填写Responsys信息](../../assets/catalog/email-marketing/oracle-responsys/account-info.png)
 
-在&#x200B;**[!UICONTROL Setup]**&#x200B;步骤中，填写目标的相关信息，如下所示：
+在&#x200B;**[!UICONTROL Authentication]**&#x200B;步骤中，填写目标的相关信息，如下所示：
 - **[!UICONTROL Name]**:为目标选择相关名称。
 - **[!UICONTROL Description]**:输入目标的说明。
-- **[!UICONTROL Bucket name]**:您的Amazon S3存储桶，平台将存放数据导出。输入长度必须介于3到63个字符之间。 必须以字母或数字开头和结尾。 只能包含小写字母、数字或连字符(-)。 不得将格式设置为IP地址（例如192.100.1.1）。
 - **[!UICONTROL Folder Path]**:在您的存储位置提供路径，平台将在该路径中将导出数据存储为CSV或制表符分隔的文件。
 - **[!UICONTROL File Format]**: **CSV** 或 **TAB_DELIMITED**。选择要导出到存储位置的文件格式。
-- **[!UICONTROL Marketing actions]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
+- **[!UICONTROL Marketing actions]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
+
+<!--
+
+Commenting out Amazon S3 bucket part for now until support is clarified
+
+- **[!UICONTROL Bucket name]**: Your Amazon S3 bucket, where Platform will deposit the data export. Your input must be between 3 and 63 characters long. Must begin and end with a letter or number. Must contain only lowercase letters, numbers, or hyphens ( - ). Must not be formatted as an IP address (for example, 192.100.1.1).
+
+-->
 
 ![Responsys基本信息](../../assets/catalog/email-marketing/oracle-responsys/basic-information.png)
 
@@ -55,7 +67,7 @@ ht-degree: 0%
 
 ## 目标属性{#destination-attributes}
 
-当[将区段](../../ui/activate-destinations.md)激活到[!DNL Oracle Responsys]目标时，建议您从[合并模式](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参阅[在电子邮件营销目标中选择要用作导出文件中目标属性的模式字段](./overview.md#destination-attributes)。
+当[将区段](../../ui/activate-destinations.md)激活到[!DNL Oracle Responsys]目标时，Adobe建议您从[合并模式](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参阅[选择要用作导出文件中目标属性的模式字段](./overview.md#destination-attributes)。
 
 ## 导出的数据{#exported-data}
 
@@ -63,4 +75,4 @@ ht-degree: 0%
 
 ## 将数据导入到[!DNL Oracle Responsys] {#import-data-into-responsys}
 
-将平台连接到您的[!DNL Amazon S3]或SFTP存储后，必须将存储位置的数据导入设置为[!DNL Oracle Responsys]。 要了解如何实现此操作，请参阅[!DNL Oracle Responsys Help Center]中的[导入联系人或帐户](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCEA/Connect_WizardUpload.htm)。
+将[!DNL Platform]连接到SFTP存储后，必须将存储位置中的数据导入设置为[!DNL Oracle Responsys]。 要了解如何实现此操作，请参阅[!DNL Oracle Responsys Help Center]中的[导入联系人或帐户](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCEA/Connect_WizardUpload.htm)。
