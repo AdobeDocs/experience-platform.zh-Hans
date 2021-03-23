@@ -3,9 +3,9 @@ keywords: Azure Blob;Blob目标；s3;Azure Blob目标
 title: Azure Blob连接
 description: 创建到Azure Blob存储的实时出站连接，以定期从Adobe Experience Platform导出制表符分隔或CSV数据文件。
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '577'
 ht-degree: 1%
 
 ---
@@ -56,7 +56,7 @@ ht-degree: 1%
 
 有关配置[!DNL Blob]连接字符串的详细信息，请参阅Microsoft文档中的[配置Azure存储帐户的连接字符串](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#configure-a-connection-string-for-an-azure-storage-account)。
 
-或者，您可以附加RSA格式的公钥，以向导出的文件添加加密。 请注意，此公钥&#x200B;**必须**&#x200B;写入为Base64编码字符串。
+或者，您可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写入为[!DNL Base64]编码字符串。
 
 ![新帐户](../../assets/catalog/cloud-storage/blob/new.png)
 
