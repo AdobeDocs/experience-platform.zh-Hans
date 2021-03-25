@@ -5,7 +5,7 @@ type: 教程
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 translation-type: tm+mt
-source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
+source-git-commit: 632003773100ec8ef0389840695a1c75a1aa663d
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -27,9 +27,9 @@ ht-degree: 0%
 >
 >如果与此目标的连接已存在，您可以在目标卡上看到&#x200B;**[!UICONTROL Activate]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的详细信息，请参阅目标工作区文档的[目录](../../ui/destinations-workspace.md#catalog)部分。
 
-## 身份验证步骤{#authentication}
+## 帐户步骤{#account}
 
-在&#x200B;**[!UICONTROL Authentication]**&#x200B;步骤中，如果您之前已设置到云存储目标的连接，请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;并选择现有连接。 或者，您也可以选择&#x200B;**[!UICONTROL New Account]**&#x200B;来设置到云存储目标的新连接。 填写帐户身份验证凭据并选择&#x200B;**[!UICONTROL Connect to destination]**。 或者，您可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写入为[!DNL Base64]编码字符串。
+在&#x200B;**[!UICONTROL Account]**&#x200B;步骤中，如果您之前已设置到云存储目标的连接，请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;并选择现有连接。 或者，您也可以选择&#x200B;**[!UICONTROL New Account]**&#x200B;来设置到云存储目标的新连接。 填写帐户身份验证凭据并选择&#x200B;**[!UICONTROL Connect to destination]**。 或者，您可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写入为[!DNL Base64]编码字符串。
 
 有关在&#x200B;**身份验证**&#x200B;步骤中输入凭据的具体信息，请参阅[Amazon S3](./amazon-s3.md)目标、[[!DNL Amazon Kinesis]](./amazon-kinesis.md)目标、[[!DNL Azure Event Hubs]](./azure-event-hubs.md)目标和[SFTP](./sftp.md)目标。
 
@@ -39,9 +39,9 @@ ht-degree: 0%
 
 ![连接到云存储目标 — 身份验证步骤](../../assets/catalog/cloud-storage/workflow/destination-account.png)
 
-## 设置步骤{#setup}
+## 身份验证步骤{#authentication}
 
-在&#x200B;**[!UICONTROL Setup]**&#x200B;步骤中，输入&#x200B;**[!UICONTROL Name]**&#x200B;和&#x200B;**[!UICONTROL Description]**&#x200B;作为激活流。
+在&#x200B;**[!UICONTROL Authentication]**&#x200B;步骤中，输入&#x200B;**[!UICONTROL Name]**&#x200B;和&#x200B;**[!UICONTROL Description]**&#x200B;作为激活流。
 
 在此步骤中，您还可以选择应用于此目标的任何&#x200B;**[!UICONTROL Marketing action]**。 营销活动指示要将数据导出到目标的目的。 您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
