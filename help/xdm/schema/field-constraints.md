@@ -2,13 +2,13 @@
 keywords: Experience Platform；主页；热门主题；模式;模式；混音；混音；混音；混音；数据类型；数据类型；模式设计；数据类型；类型；数据类型；数据类型；数据类型；模式;模式;模式设计；映射；
 solution: Experience Platform
 title: XDM字段类型约束
-topic: overview
+topic: 概述
 description: 对体验数据模型(XDM)中字段类型约束的参考，包括可以映射到的其他序列化格式以及如何在API中定义您自己的字段类型。
 translation-type: tm+mt
-source-git-commit: c9ea7471bb18c92443a5e45c14c8505ef3ccf30d
+source-git-commit: cc1fa21df0bb2d49106775c75a0cb3c4f4d73941
 workflow-type: tm+mt
-source-wordcount: '1079'
-ht-degree: 2%
+source-wordcount: '1052'
+ht-degree: 1%
 
 ---
 
@@ -159,46 +159,46 @@ XDM构建在JSON模式之上，因此XDM字段在定义其类型时继承类似�
 
 | XDM类型 | 镶木 | Spark SQL | Java |
 | --- | --- | --- | --- |
-| [!UICONTROL 字符串] | 类型：`BYTE_ARRAY`<br>注释：`UTF8` | `StringType` | `java.lang.String` |
-| [!UICONTROL 双精度] | 类型：`DOUBLE` | `LongType` | `java.lang.Double` |
-| [!UICONTROL 长] | 类型：`INT64` | `LongType` | `java.lang.Long` |
-| [!UICONTROL 整数] | 类型：`INT32`<br>注释：`INT_32` | `IntegerType` | `java.lang.Integer` |
-| [!UICONTROL 短] | 类型：`INT32`<br>注释：`INT_16` | `ShortType` | `java.lang.Short` |
-| [!UICONTROL 字节] | 类型：`INT32`<br>注释：`INT_8` | `ByteType` | `java.lang.Short` |
+| [!UICONTROL String] | 类型：`BYTE_ARRAY`<br>注释：`UTF8` | `StringType` | `java.lang.String` |
+| [!UICONTROL Double] | 类型：`DOUBLE` | `LongType` | `java.lang.Double` |
+| [!UICONTROL Long] | 类型：`INT64` | `LongType` | `java.lang.Long` |
+| [!UICONTROL Integer] | 类型：`INT32`<br>注释：`INT_32` | `IntegerType` | `java.lang.Integer` |
+| [!UICONTROL Short] | 类型：`INT32`<br>注释：`INT_16` | `ShortType` | `java.lang.Short` |
+| [!UICONTROL Byte] | 类型：`INT32`<br>注释：`INT_8` | `ByteType` | `java.lang.Short` |
 | [!UICONTROL Date] | 类型：`INT32`<br>注释：`DATE` | `DateType` | `java.util.Date` |
 | [!UICONTROL DateTime] | 类型：`INT64`<br>注释：`TIMESTAMP_MILLIS` | `TimestampType` | `java.util.Date` |
-| [!UICONTROL 布尔值] | 类型：`BOOLEAN` | `BooleanType` | `java.lang.Boolean` |
-| [!UICONTROL 地图] | `MAP`-annotated group<br><br>(`<key-type>` 必须 `STRING`) | `MapType`<br><br>(`keyType` 必须 `StringType`) | `java.util.Map` |
+| [!UICONTROL Boolean] | 类型：`BOOLEAN` | `BooleanType` | `java.lang.Boolean` |
+| [!UICONTROL Map] | `MAP`-annotated group<br><br>(`<key-type>` 必须 `STRING`) | `MapType`<br><br>(`keyType` 必须 `StringType`) | `java.util.Map` |
 
 ### Scala、.NET和CosmosDB {#scala}
 
 | XDM类型 | 斯卡拉 | .NET | CosmosDB |
 | --- | --- | --- | --- |
-| [!UICONTROL 字符串] | `String` | `System.String` | `String` |
-| [!UICONTROL 双精度] | `Double` | `System.Double` | `Number` |
-| [!UICONTROL 长] | `Long` | `System.Int64` | `Number` |
-| [!UICONTROL 整数] | `Int` | `System.Int32` | `Number` |
-| [!UICONTROL 短] | `Short` | `System.Int16` | `Number` |
-| [!UICONTROL 字节] | `Byte` | `System.SByte` | `Number` |
-| [!UICONTROL 日期] | `java.util.Date` | `System.DateTime` | `String` |
+| [!UICONTROL String] | `String` | `System.String` | `String` |
+| [!UICONTROL Double] | `Double` | `System.Double` | `Number` |
+| [!UICONTROL Long] | `Long` | `System.Int64` | `Number` |
+| [!UICONTROL Integer] | `Int` | `System.Int32` | `Number` |
+| [!UICONTROL Short] | `Short` | `System.Int16` | `Number` |
+| [!UICONTROL Byte] | `Byte` | `System.SByte` | `Number` |
+| [!UICONTROL Date] | `java.util.Date` | `System.DateTime` | `String` |
 | [!UICONTROL DateTime] | `java.util.Date` | `System.DateTime` | `String` |
-| [!UICONTROL 布尔值] | `Boolean` | `System.Boolean` | `Boolean` |
-| [!UICONTROL 地图] | `Map` | (不适用) | `object` |
+| [!UICONTROL Boolean] | `Boolean` | `System.Boolean` | `Boolean` |
+| [!UICONTROL Map] | `Map` | (不适用) | `object` |
 
 ### MongoDB、Aeropspike和Protobuf 2 {#mongo}
 
 | XDM类型 | MongoDB | 气塞 | Protobuf 2 |
 | --- | --- | --- | --- |
-| [!UICONTROL 字符串] | `string` | `String` | `string` |
-| [!UICONTROL 双精度] | `double` | `Double` | `double` |
-| [!UICONTROL 长] | `long` | `Integer` | `int64` |
-| [!UICONTROL 整数] | `int` | `Integer` | `int32` |
-| [!UICONTROL 短] | `int` | `Integer` | `int32` |
-| [!UICONTROL 字节] | `int` | `Integer` | `int32` |
-| [!UICONTROL 日期] | `date` | `Integer`<br>（Unix毫秒） | `int64`<br>（Unix毫秒） |
+| [!UICONTROL String] | `string` | `String` | `string` |
+| [!UICONTROL Double] | `double` | `Double` | `double` |
+| [!UICONTROL Long] | `long` | `Integer` | `int64` |
+| [!UICONTROL Integer] | `int` | `Integer` | `int32` |
+| [!UICONTROL Short] | `int` | `Integer` | `int32` |
+| [!UICONTROL Byte] | `int` | `Integer` | `int32` |
+| [!UICONTROL Date] | `date` | `Integer`<br>（Unix毫秒） | `int64`<br>（Unix毫秒） |
 | [!UICONTROL DateTime] | `timestamp` | `Integer`<br>（Unix毫秒） | `int64`<br>（Unix毫秒） |
-| [!UICONTROL 布尔值] | `bool` | `Integer`<br>（0/1二进制） | `bool` |
-| [!UICONTROL 地图] | `object` | `map` | `map<key_type, value_type>` |
+| [!UICONTROL Boolean] | `bool` | `Integer`<br>（0/1二进制） | `bool` |
+| [!UICONTROL Map] | `object` | `map` | `map<key_type, value_type>` |
 
 ## 在API {#define-fields}中定义XDM字段类型
 
@@ -448,3 +448,5 @@ XDM构建在JSON模式之上，因此XDM字段在定义其类型时继承类似�
     </td>
   </tr>
 </table>
+
+{style=&quot;table-layout:auto&quot;}
