@@ -5,9 +5,9 @@ title: Identity Service概述
 topic: 概述
 description: Adobe Experience Platform Identity Service通过跨设备和系统连接身份，帮您实时提供有影响力的个性化数字体验，从而帮助您更好地视图客户及其行为。
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: bb218fc0cca6fe74693e99747963058bd0dc962a
 workflow-type: tm+mt
-source-wordcount: '1733'
+source-wordcount: '1718'
 ht-degree: 0%
 
 ---
@@ -63,10 +63,6 @@ PII（如电子邮件地址和电话号码）可直接标识客户。 因此，P
 [!DNL Experience Platform] 通过两个概念解决此难题： [身份](#identity-namespaces) 名称和 [身份图](#identity-graphs)。
 
 以下视频旨在支持您对身份和身份图的理解。 以下视频介绍了Identity Collection、Identity Graphs和API的三个功能。 文中还描述了如何使用确定性和概率算法来构造私有标识图，并讨论了私有标识图、Adobe Experience Platform身份服务合作图和第三方图的作用。
-
->[!IMPORTANT]
->
-> 概率专用图仍在开发中，并将在以后发布。
 
 >[!VIDEO](https://video.tv.adobe.com/v/27841?quality=12&learn=on)
 
