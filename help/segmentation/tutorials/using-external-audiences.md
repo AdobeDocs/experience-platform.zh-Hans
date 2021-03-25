@@ -1,12 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
-title: 对受众细分强制实施数据使用合规性
+title: 导入和使用外部受众
+description: 请阅读本教程，了解如何将外部受众与Adobe Experience Platform一起使用。
 topic: 教程
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 400e4d9007212ed2693d031ae912a4f1cca97c57
 workflow-type: tm+mt
-source-wordcount: '640'
+source-wordcount: '630'
 ht-degree: 0%
 
 ---
@@ -28,7 +29,7 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 使用外部受众的第一步是创建身份命名空间。 身份命名空间允许平台关联区段的来源。
 
-要创建身份命名空间，请按照[身份命名空间指南](../../identity-service/namespaces.md#manage-namespaces)中的说明操作。 创建身份命名空间时，将源详细信息添加到身份命名空间，并将其[!UICONTROL Type]标记为&#x200B;**[!UICONTROL 非人员标识符]**。
+要创建身份命名空间，请按照[身份命名空间指南](../../identity-service/namespaces.md#manage-namespaces)中的说明操作。 创建身份命名空间时，将源详细信息添加到身份命名空间，并将其[!UICONTROL Type]标记为&#x200B;**[!UICONTROL Non-people identifier]**。
 
 ![](../images/tutorials/external-audiences/identity-namespace-info.png)
 
@@ -36,11 +37,11 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 创建身份命名空间后，您需要为要创建的区段创建新模式。
 
-要开始合成模式，请首先在左侧导航栏上选择&#x200B;**[!UICONTROL 模式]**，然后在模式工作区右上角选择&#x200B;**[!UICONTROL 创建模式]**。 从此处，选择&#x200B;**[!UICONTROL 浏览]**&#x200B;以查看可用模式类型的完整选择。
+要开始合成模式，请首先在左侧导航栏上选择&#x200B;**[!UICONTROL Schemas]**，然后在模式工作区右上角选择&#x200B;**[!UICONTROL Create schema]**。 从此处，选择&#x200B;**[!UICONTROL Browse]**&#x200B;以查看可用模式类型的完整选择。
 
 ![](../images/tutorials/external-audiences/create-schema-browse.png)
 
-由于您正在创建区段定义（它是预定义的类），因此请选择&#x200B;**[!UICONTROL 使用现有类]**。 现在，选择&#x200B;**[!UICONTROL 区段定义]**&#x200B;类，然后选择&#x200B;**[!UICONTROL 分配类]**。
+由于您正在创建区段定义（它是预定义的类），因此请选择&#x200B;**[!UICONTROL Use existing class]**。 现在，选择&#x200B;**[!UICONTROL Segment definition]**&#x200B;类，后跟&#x200B;**[!UICONTROL Assign class]**。
 
 ![](../images/tutorials/external-audiences/assign-class.png)
 
@@ -48,7 +49,7 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 ![](../images/tutorials/external-audiences/mark-primary-identifier.png)
 
-在将`_id`字段标记为主标识后，选择模式的标题，然后选择标记为&#x200B;**[!UICONTROL 用户档案]**&#x200B;的切换键。 选择&#x200B;**[!UICONTROL 启用]**&#x200B;以启用[!DNL Real-time Customer Profile]的模式。
+在将`_id`字段标记为主标识后，选择模式的标题，然后选择标记为&#x200B;**[!UICONTROL Profile]**&#x200B;的切换。 选择&#x200B;**[!UICONTROL Enable]**&#x200B;以启用[!DNL Real-time Customer Profile]的模式。
 
 ![](../images/tutorials/external-audiences/schema-profile.png)
 
@@ -58,7 +59,7 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 配置模式后，您需要为区段元数据创建数据集。
 
-要创建数据集，请按照[数据集用户指南](../../catalog/datasets/user-guide.md#create)中的说明操作。 您将希望使用之前创建的模式，按照&#x200B;**[!UICONTROL 从模式]**&#x200B;创建数据集选项进行操作。
+要创建数据集，请按照[数据集用户指南](../../catalog/datasets/user-guide.md#create)中的说明操作。 您将希望使用之前创建的模式，按照&#x200B;**[!UICONTROL Create dataset from schema]**&#x200B;选项操作。
 
 ![](../images/tutorials/external-audiences/select-schema.png)
 
@@ -78,7 +79,7 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 ## 使用导入的受众构建区段
 
-设置导入的受众后，即可将其用作分段过程的一部分。 要查找外部受众，请转至“区段生成器”，然后在&#x200B;**[!UICONTROL 字段]**&#x200B;部分选择&#x200B;**[!UICONTROL 受众]**&#x200B;选项卡。
+设置导入的受众后，即可将其用作分段过程的一部分。 要查找外部受众，请转到“区段生成器”，然后在&#x200B;**[!UICONTROL Fields]**&#x200B;部分选择&#x200B;**[!UICONTROL Audiences]**&#x200B;选项卡。
 
 ![](../images/tutorials/external-audiences/external-audiences.png)
 
