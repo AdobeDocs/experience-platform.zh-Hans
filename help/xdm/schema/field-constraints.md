@@ -5,9 +5,9 @@ title: XDM字段类型约束
 topic: 概述
 description: 对体验数据模型(XDM)中字段类型约束的参考，包括可以映射到的其他序列化格式以及如何在API中定义您自己的字段类型。
 translation-type: tm+mt
-source-git-commit: cc1fa21df0bb2d49106775c75a0cb3c4f4d73941
+source-git-commit: bb5880340ca4c01d0b25c7cb16fd422d3182a89e
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1049'
 ht-degree: 1%
 
 ---
@@ -212,7 +212,7 @@ XDM构建在JSON模式之上，因此XDM字段在定义其类型时继承类似�
 
 要开始，请找到所需的字段类型，并使用提供的示例代码构建API请求，以便[创建mixin](../api/mixins.md#create)或[创建数据类型](../api/data-types.md#create)。
 
-<table>
+<table style="table-layout:auto">
   <tr>
     <th>XDM类型</th>
     <th>可选属性</th>
@@ -448,5 +448,3 @@ XDM构建在JSON模式之上，因此XDM字段在定义其类型时继承类似�
     </td>
   </tr>
 </table>
-
-{style=&quot;table-layout:auto&quot;}
