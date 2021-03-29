@@ -4,9 +4,9 @@ title: 视图目标详细信息
 description: '单个目标的详细信息页面提供了目标详细信息的概述。 目标详细信息包括目标名称、ID、映射到目标的区段，以及用于编辑激活和启用和禁用数据流的控件。 '
 seo-description: '单个目标的详细信息页面提供了目标详细信息的概述。 目标详细信息包括目标名称、ID、映射到目标的区段，以及用于编辑激活和启用和禁用数据流的控件。 '
 translation-type: tm+mt
-source-git-commit: 49905060a18fc94fe524401fb3cf86f212b639ce
+source-git-commit: 4f5e7dfee17b2dde371efb82cf52d91c08696f39
 workflow-type: tm+mt
-source-wordcount: '698'
+source-wordcount: '701'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,8 @@ ht-degree: 0%
 | [!UICONTROL Identity] | 表示目标接受的身份命名空间，如`GAID`、`IDFA`或`email`。 有关已接受的标识命名空间的详细信息，请参阅[标识命名空间概述](../../identity-service/namespaces.md)。 |
 | [!UICONTROL Created by] | 指示创建此目标的用户。 |
 | [!UICONTROL Created] | 指示创建此目标时的UTC日期时间。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## [!UICONTROL Enabled]/切[!UICONTROL Disabled] 换
 
