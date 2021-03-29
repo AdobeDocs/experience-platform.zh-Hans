@@ -5,9 +5,9 @@ title: XDM字段类型约束
 topic: 概述
 description: 对体验数据模型(XDM)中字段类型约束的参考，包括可以映射到的其他序列化格式以及如何在API中定义您自己的字段类型。
 translation-type: tm+mt
-source-git-commit: bb5880340ca4c01d0b25c7cb16fd422d3182a89e
+source-git-commit: 456e595e66436c35c7d081ddf4699263e9c87234
 workflow-type: tm+mt
-source-wordcount: '1049'
+source-wordcount: '1055'
 ht-degree: 1%
 
 ---
@@ -33,7 +33,7 @@ XDM构建在JSON模式之上，因此XDM字段在定义其类型时继承类似�
 
 下表概述了每个XDM类型在JSON模式中的表示方式，以及与类型相符的示例值：
 
-<table>
+<table style="table-layout:auto">
   <thead>
     <tr>
       <th>XDM类型</th>
@@ -185,6 +185,8 @@ XDM构建在JSON模式之上，因此XDM字段在定义其类型时继承类似�
 | [!UICONTROL Boolean] | `Boolean` | `System.Boolean` | `Boolean` |
 | [!UICONTROL Map] | `Map` | (不适用) | `object` |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### MongoDB、Aeropspike和Protobuf 2 {#mongo}
 
 | XDM类型 | MongoDB | 气塞 | Protobuf 2 |
@@ -199,6 +201,8 @@ XDM构建在JSON模式之上，因此XDM字段在定义其类型时继承类似�
 | [!UICONTROL DateTime] | `timestamp` | `Integer`<br>（Unix毫秒） | `int64`<br>（Unix毫秒） |
 | [!UICONTROL Boolean] | `bool` | `Integer`<br>（0/1二进制） | `bool` |
 | [!UICONTROL Map] | `object` | `map` | `map<key_type, value_type>` |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 在API {#define-fields}中定义XDM字段类型
 
