@@ -4,9 +4,9 @@ title: 目标工作区
 description: “目标”工作区由四个部分组成，即“目录”、“浏览”、“帐户”和“系统视图”，这些部分在以下各节中有介绍。
 seo-description: 在Adobe Experience Platform中，从左侧导航栏中选择目标以访问目标工作区。
 translation-type: tm+mt
-source-git-commit: 49905060a18fc94fe524401fb3cf86f212b639ce
+source-git-commit: 4f5e7dfee17b2dde371efb82cf52d91c08696f39
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '940'
 ht-degree: 1%
 
 ---
@@ -45,6 +45,8 @@ ht-degree: 1%
 | [!UICONTROL View dataflows] | 视图目标的激活流。 |
 | [!UICONTROL View documentation] | 打开指向该特定目标的文档页面的链接，了解详细信息并帮助您设置它。 |
 
+{style=&quot;table-layout:auto&quot;}
+
 ![目标卡上的控件](../assets/ui/workspace/destination-card-options.png)
 
 在目录中选择目标卡以打开右边栏。 此处，您可以看到目标的描述。 右边栏提供了上表中描述的相同控件，以及目标的描述，以及目标类别和类型的指示。
@@ -70,6 +72,8 @@ ht-degree: 1%
 | [!UICONTROL Username] | 您在[连接目标向导](../catalog/email-marketing/overview.md#connect-destination)中选择的用户名。 |
 | [!UICONTROL Destinations] | 表示与为目标创建的基本信息连接的唯一成功目标流的数量。 |
 | [!UICONTROL Authorized] | 到此目标的连接被授权的日期。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 此外，您还可以编辑或更新帐户信息。 在&#x200B;**[!UICONTROL Platform]**&#x200B;列中选择![编辑帐户按钮](../assets/ui/workspace/pencil-icon.png)以编辑帐户信息。
 
