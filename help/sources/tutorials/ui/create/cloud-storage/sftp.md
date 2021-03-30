@@ -6,19 +6,15 @@ topic: 概述
 type: 教程
 description: 了解如何使用Adobe Experience Platform UI创建SFTP源连接。
 translation-type: tm+mt
-source-git-commit: b39426d768a0c6fdfa742ec74e4e0bed9c432269
+source-git-commit: 0e11acc4a599d360cb3048445003f61848ad23d3
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '678'
 ht-degree: 1%
 
 ---
 
 
 # 在UI中创建SFTP源连接
-
->[!NOTE]
->
->SFTP连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 本教程提供了使用Adobe Experience Platform UI创建SFTP源连接的步骤。
 
@@ -53,25 +49,25 @@ ht-degree: 1%
 
 ## 连接到SFTP服务器
 
-登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]屏幕显示了各种源，您可以为其创建入站帐户。
+登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 [!UICONTROL Catalog]屏幕显示各种源，您可以为其创建入站帐户。
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
-在[!UICONTROL 云存储]类别下，选择&#x200B;**[!UICONTROL SFTP]**。 如果这是您首次使用此连接器，请选择&#x200B;**[!UICONTROL 配置]**。 否则，选择&#x200B;**[!UICONTROL 添加数据]**&#x200B;以创建新的SFTP连接。
+在[!UICONTROL Cloud storage]类别下，选择&#x200B;**[!UICONTROL SFTP]**。 如果这是您首次使用此连接器，请选择&#x200B;**[!UICONTROL Configure]**。 否则，选择&#x200B;**[!UICONTROL Add data]**&#x200B;以创建新的SFTP连接。
 
 ![目录](../../../../images/tutorials/create/sftp/catalog.png)
 
-将显示&#x200B;**[!UICONTROL 连接到SFTP]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
+将显示&#x200B;**[!UICONTROL Connect to SFTP]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
-如果您使用新凭据，请选择&#x200B;**[!UICONTROL 新建帐户]**。 在显示的输入表单上，提供名称、可选说明和凭据。 完成后，选择&#x200B;**[!UICONTROL Connect]**，然后为新连接建立留出一些时间。
+如果您使用新凭据，请选择&#x200B;**[!UICONTROL New account]**。 在显示的输入表单上，提供名称、可选说明和凭据。 完成后，选择&#x200B;**[!UICONTROL Connect]**，然后为新连接建立留出一些时间。
 
-SFTP连接器为您提供了不同的身份验证类型以供访问。 在&#x200B;**[!UICONTROL 帐户身份验证]**&#x200B;下，选择&#x200B;**[!UICONTROL 密码]**&#x200B;以使用基于密码的凭据。
+SFTP连接器为您提供了不同的身份验证类型以供访问。 在&#x200B;**[!UICONTROL Account authentication]**&#x200B;下，选择&#x200B;**[!UICONTROL Password]**&#x200B;以使用基于口令的凭据。
 
 ![connect-password](../../../../images/tutorials/create/sftp/password.png)
 
-或者，您也可以选择&#x200B;**[SSH公钥]**，并使用[!UICONTROL 私钥内容]和[!UICONTROL 密码]的组合连接您的SFTP帐户。
+或者，您也可以选择&#x200B;**[SSH公钥]**，并使用[!UICONTROL Private key content]和[!UICONTROL Passphrase]的组合连接您的SFTP帐户。
 
 >[!IMPORTANT]
 >
@@ -86,7 +82,7 @@ SFTP连接器为您提供了不同的身份验证类型以供访问。 在&#x200
 
 ### 现有帐户
 
-要连接现有帐户，请选择要连接的FTP或SFTP帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+要连接现有帐户，请选择要连接的FTP或SFTP帐户，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
 ![现有](../../../../images/tutorials/create/sftp/existing.png)
 
