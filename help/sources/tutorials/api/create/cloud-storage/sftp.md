@@ -6,19 +6,15 @@ topic: 概述
 type: 教程
 description: 了解如何使用流服务API将Adobe Experience Platform连接到SFTP（安全文件传输协议）服务器。
 translation-type: tm+mt
-source-git-commit: b39426d768a0c6fdfa742ec74e4e0bed9c432269
+source-git-commit: 0e11acc4a599d360cb3048445003f61848ad23d3
 workflow-type: tm+mt
-source-wordcount: '877'
+source-wordcount: '852'
 ht-degree: 2%
 
 ---
 
 
 # 使用[!DNL Flow Service] API创建SFTP源连接
-
->[!NOTE]
->
->SFTP连接器处于测试状态。 功能和文档可能会更改。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 本教程使用[!DNL Flow Service] API指导您完成将Experience Platform连接到SFTP（安全文件传输协议）服务器的步骤。
 
