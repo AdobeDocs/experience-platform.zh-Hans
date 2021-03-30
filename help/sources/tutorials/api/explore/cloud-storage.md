@@ -5,9 +5,9 @@ title: 使用Flow Service API探索Cloud存储系统
 topic: 概述
 description: 本教程使用Flow Service API来浏览第三方云存储系统。
 translation-type: tm+mt
-source-git-commit: 60a70352c2e13565fd3e8c44ae68e011a1d443a6
+source-git-commit: 457fc9e1b0c445233f0f574fefd31bc1fc3bafc8
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: '821'
 ht-degree: 2%
 
 ---
@@ -101,14 +101,25 @@ curl -X GET \
 ```json
 [
     {
-        "type": "File",
-        "name": "data.csv",
-        "path": "/some/path/data.csv"
+        "type": "file",
+        "name": "account.csv",
+        "path": "/test-connectors/testFolder-fileIngestion/account.csv",
+        "canPreview": true,
+        "canFetchSchema": true
     },
     {
-        "type": "Folder",
-        "name": "foobar",
-        "path": "/some/path/foobar"
+        "type": "file",
+        "name": "profileData.json",
+        "path": "/test-connectors/testFolder-fileIngestion/profileData.json",
+        "canPreview": true,
+        "canFetchSchema": true
+    },
+    {
+        "type": "file",
+        "name": "sampleprofile--3.parquet",
+        "path": "/test-connectors/testFolder-fileIngestion/sampleprofile--3.parquet",
+        "canPreview": true,
+        "canFetchSchema": true
     }
 ]
 ```
@@ -117,14 +128,14 @@ curl -X GET \
 
 要从云存储中检查GET文件的结构，请在提供文件路径和键入作为查询参数时执行数据请求。
 
-可以通过将自定义分隔符指定为查询周长来检查CSV或TSV文件的结构。 任何单个字符值都是允许的列分隔符。 如果未提供，则使用逗号`(,)`作为默认值。
+您可以在提供文件路径和类型的同时执行GET请求，从云存储源中检查数据文件的结构。 您还可以通过将不同文件类型指定为查询参数的一部分来检查不同的文件类型，例如CSV、TSV或压缩的JSON和分隔文件。
 
 **API格式**
 
 ```http
-GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}
-GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}&preview=true&fileType=delimited&columnDelimiter=;
-GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}&preview=true&fileType=delimited&columnDelimiter=\t
+GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}&{QUERY_PARAMS}&preview=true
+GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&preview=true&fileType=delimited&columnDelimiter=\t
+GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&preview=true&fileType=delimited&compressionType=gzip;
 ```
 
 | 参数 | 描述 |
@@ -132,13 +143,13 @@ GET /connections/{CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&file
 | `{CONNECTION_ID}` | 云存储源连接器的连接ID。 |
 | `{FILE_PATH}` | 要检查的文件的路径。 |
 | `{FILE_TYPE}` | 文件的类型。 支持的文件类型包括：<ul><li>分隔符</code>:分隔符分隔的值。 DSV文件必须以逗号分隔。</li><li>JSON</code>:JavaScript对象表示法。 JSON文件必须符合XDM</li><li>PARCE</code>:阿帕奇拼花。 拼花文件必须符合XDM。</li></ul> |
-| `columnDelimiter` | 您指定为列分隔符以检查CSV或TSV文件的单个字符值。 如果未提供该参数，则此值默认为逗号`(,)`。 |
+| `{QUERY_PARAMS}` | 可用于筛选结果的可选查询参数。 有关详细信息，请参阅[查询参数](#query)一节。 |
 
 **请求**
 
 ```shell
 curl -X GET \
-    'http://platform.adobe.io/data/foundation/flowservice/connections/{CONNECTION_ID}/explore?objectType=file&object=/some/path/data.csv&fileType=DELIMITED' \
+    'http://platform.adobe.io/data/foundation/flowservice/connections/{CONNECTION_ID}/explore?objectType=file&object=/aep-bootcamp/Adobe%20Pets%20Customer%2020190801%20EXP.json&fileType=json&preview=true' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -173,6 +184,15 @@ curl -X GET \
     }
 ]
 ```
+
+## 使用查询参数{#query}
+
+[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)支持使用查询参数来预览和检查不同的文件类型。
+
+| 参数 | 描述 |
+| --------- | ----------- |
+| `columnDelimiter` | 您指定为列分隔符以检查CSV或TSV文件的单个字符值。 如果未提供该参数，则此值默认为逗号`(,)`。 |
+| `compressionType` | 用于预览压缩的分隔文件或JSON文件的必需查询参数。 支持的压缩文件有： <ul><li>`bzip2`</li><li>`gzip`</li><li>`deflate`</li><li>`zipDeflate`</li><li>`tarGzip`</li><li>`tar`</li></ul> |
 
 ## 后续步骤
 
