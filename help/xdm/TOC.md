@@ -6,10 +6,10 @@ breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用 Experience Data Model (XDM) 类和混合 (mixin) 来标准化体验数据。
 feature: 模式 (Schema)
 translation-type: tm+mt
-source-git-commit: b99af98c99a75863ed8e8408841d93aa17d61ae0
+source-git-commit: 27cdb65c846293d7edce340e1cb5a360c0e40604
 workflow-type: tm+mt
-source-wordcount: '259'
-ht-degree: 22%
+source-wordcount: '236'
+ht-degree: 23%
 
 ---
 
@@ -22,12 +22,6 @@ ht-degree: 22%
    * [数据建模的最佳实践](schema/best-practices.md)
    * [XDM字段类型约束](schema/field-constraints.md)
    * [XDM字段词典](schema/field-dictionary.md)
-   * 行业数据模型{#industries}
-      * [概述](./schema/industries/overview.md)
-      * [零售数据模型ERD](./schema/industries/retail.md)
-      * [金融服务数据模型](./schema/industries/financial.md)
-      * [旅游和酒店业数据模型](./schema/industries/travel-hospitality.md)
-      * [电信数据模型ERD](./schema/industries/telecom.md)
 * 类 {#classes}
    * [XDM个人用户档案](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
