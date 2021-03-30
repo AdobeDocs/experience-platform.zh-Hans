@@ -6,10 +6,10 @@ topic: 概述
 type: 教程
 description: 本教程介绍了从第三方云存储检索数据并使用源连接器和API将其引入平台的步骤。
 translation-type: tm+mt
-source-git-commit: 60a70352c2e13565fd3e8c44ae68e011a1d443a6
+source-git-commit: 8b85b25112ee16b09b1411c5d001bf13fb7fbcaa
 workflow-type: tm+mt
-source-wordcount: '1639'
-ht-degree: 1%
+source-wordcount: '1768'
+ht-degree: 2%
 
 ---
 
@@ -57,7 +57,7 @@ Experience Platform中的所有资源（包括属于[!DNL Flow Service]的资源
 
 要创建源连接，还必须为数据格式属性定义枚举值。
 
-对基于文件的连接器使用以下枚举值：
+对基于文件的源使用以下枚举值：
 
 | 数据格式 | 枚举值 |
 | ----------- | ---------- |
@@ -65,11 +65,10 @@ Experience Platform中的所有资源（包括属于[!DNL Flow Service]的资源
 | JSON | `json` |
 | 镶木 | `parquet` |
 
-对于所有基于表的连接器，将值设置为`tabular`。
+对于所有基于表的源，将值设置为`tabular`。
 
->[!NOTE]
->
->您可以通过将列分隔符指定为属性，使用云存储源连接器收录CSV和TSV文件。 任何单个字符值都是允许的列分隔符。 如果未提供，则使用逗号`(,)`作为默认值。
+- [使用自定义分隔文件创建源连接](#using-custom-delimited-files)
+- [使用压缩文件创建源连接](#using-compressed-files)
 
 **API格式**
 
@@ -77,7 +76,13 @@ Experience Platform中的所有资源（包括属于[!DNL Flow Service]的资源
 POST /sourceConnections
 ```
 
+### 使用自定义分隔文件{#using-custom-delimited-files}创建源连接
+
 **请求**
+
+可以通过指定`columnDelimiter`为属性，以自定义分隔符来引用分隔文件。 任何单个字符值都是允许的列分隔符。 如果未提供，则使用逗号`(,)`作为默认值。
+
+下面的示例请求使用制表符分隔的值为分隔文件类型创建源连接。
 
 ```shell
 curl -X POST \
@@ -88,9 +93,9 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Cloud storage source connector",
-        "baseConnectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
+        "name": "Cloud storage source connection for delimited files",
         "description": "Cloud storage source connector",
+        "baseConnectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
         "data": {
             "format": "delimited",
             "columnDelimiter": "\t"
@@ -99,7 +104,7 @@ curl -X POST \
             "path": "/ingestion-demos/leads/tsv_data/*.tsv",
             "recursive": "true"
         },
-            "connectionSpec": {
+        "connectionSpec": {
             "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
             "version": "1.0"
         }
@@ -113,6 +118,64 @@ curl -X POST \
 | `data.columnDelimiter` | 可以使用任何单字符列分隔符来收集平面文件。 仅当收录CSV或TSV文件时，才需要此属性。 |
 | `params.path` | 您访问的源文件的路径。 |
 | `connectionSpec.id` | 与特定第三方云存储系统关联的连接规范ID。 有关连接规范ID的列表，请参见[附录](#appendix)。 |
+
+**响应**
+
+成功的响应返回新创建的源连接的唯一标识符(`id`)。 在后续步骤中需要此ID才能创建数据流。
+
+```json
+{
+    "id": "26b53912-1005-49f0-b539-12100559f0e2",
+    "etag": "\"11004d97-0000-0200-0000-5f3c3b140000\""
+}
+```
+
+### 使用压缩文件{#using-compressed-files}创建源连接
+
+**请求**
+
+您还可以通过将压缩的JSON或分隔文件的`compressionType`指定为属性来收录压缩的JSON或分隔文件。 支持的压缩文件类型的列表为：
+
+- `bzip2`
+- `gzip`
+- `deflate`
+- `zipDeflate`
+- `tarGzip`
+- `tar`
+
+下面的示例请求使用`gzip`文件类型为压缩分隔的文件创建源连接。
+
+```shell
+curl -X POST \
+    'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+    -H 'x-api-key: {API_KEY}' \
+    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-sandbox-name: {SANDBOX_NAME}' \
+    -H 'Content-Type: application/json' \
+    -d '{
+        "name": "Cloud storage source connection for compressed files",
+        "description": "Cloud storage source connection for compressed files",
+        "baseConnectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
+        "data": {
+            "format": "delimited",
+            "properties": {
+                "compressionType" : "gzip"
+            }
+        },
+        "params": {
+            "path": "/compressed/files.gzip"
+        },
+        "connectionSpec": {
+            "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
+            "version": "1.0"
+        }
+     }'
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `data.properties.compressionType` | 确定用于摄取的压缩文件类型。 仅当收录压缩的JSON或分隔文件时，才需要此属性。 |
 
 **响应**
 
