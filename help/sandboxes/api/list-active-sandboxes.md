@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；列表活动沙箱；列表沙箱
 solution: Experience Platform
 title: 列表API中当前用户的活动沙箱
-topic: developer guide
-description: 您可以通过向根端点发出列表请求来GET当前用户处于活动状态的沙箱。
+topic: 开发人员指南
+description: 可以通过向根端点发出列表请求，来GET当前用户处于活动状态的沙箱。
 translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+source-git-commit: ca3de18c093d7b692b582045afea4401d7133b9b
 workflow-type: tm+mt
-source-wordcount: '361'
+source-wordcount: '363'
 ht-degree: 2%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->与沙箱API中提供的其他端点不同，此端点可用于所有用户，包括那些没有沙箱管理访问权限的用户。
+>与沙箱API中提供的其他端点不同，此端点可供所有用户使用，包括那些没有沙箱管理访问权限的用户。
 
-您可以通过向根(`/`)端点发出列表请求，来GET当前用户处于活动状态的沙箱。
+可以通过向根(`/`)端点发出GET请求，列表当前用户处于活动状态的沙箱。
 
 **API格式**
 
@@ -29,7 +29,7 @@ GET /{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{QUERY_PARAMS}` | 可选查询参数，用于筛选结果。 有关详细信息，请参见[查询参数](#query)一节。 |
+| `{QUERY_PARAMS}` | 可选查询参数，用于筛选结果。 有关详细信息，请参阅[查询参数](#query)一节。 |
 
 **请求**
 
@@ -39,12 +39,11 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-成功的响应会返回当前用户处于活动状态的沙箱列表，包括诸如`name`、`title`、`state`和`type`等详细信息。
+成功的响应返回当前用户处于活动状态的沙箱的列表，包括诸如`name`、`title`、`state`和`type`等详细信息。
 
 ```json
 {
@@ -106,20 +105,20 @@ curl -X GET \
 | --- | --- |
 | `name` | 沙箱的名称。 用于API调用中的查找目的。 |
 | `title` | 沙箱的显示名称。 |
-| `state` | 沙箱的当前处理状态。 沙箱的状态可以是以下任一状态： <ul><li>**创建**:沙箱已创建，但系统仍在提供。</li><li>**活动**:沙箱已创建并处于活动状态。</li><li>**失败**:由于出错，沙箱无法由系统提供并被禁用。</li><li>**已删除**:已手动禁用沙箱。</li></ul> |
+| `state` | 沙箱的当前处理状态。 沙箱的状态可以是以下任一状态： <ul><li>**创建**:沙箱已创建，但系统仍在提供。</li><li>**活动**:沙箱已创建并处于活动状态。</li><li>**失败**:由于出错，系统无法设置沙箱并禁用沙箱。</li><li>**已删除**:已手动禁用沙箱。</li></ul> |
 | `type` | 沙箱类型，“开发”或“生产”。 |
-| `isDefault` | 一个布尔属性，用于指示此沙箱是否是组织的默认沙箱。 通常，这是生产沙箱。 |
+| `isDefault` | 一个布尔属性，指示此沙箱是否是组织的默认沙箱。 通常，这是生产沙箱。 |
 | `eTag` | 沙箱的特定版本的标识符。 用于版本控制和缓存效率，每次对沙箱进行更改时都会更新此值。 |
 
 ## 使用查询参数{#query}
 
-[[!DNL Sandbox]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) API支持在列出沙箱时使用查询参数进行页面和筛选结果。
+[[!DNL Sandbox]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) API支持在列出沙箱时使用查询参数来筛选页面和结果。
 
 >[!NOTE]
 >
->必须同时指定`limit`和`offset`查询参数。 如果仅指定一个，API将返回错误。 如果指定无，则默认限制为50，偏移为0。
+>必须同时指定`limit`和`offset`查询参数。 如果仅指定一个，则API将返回错误。 如果指定无，则默认限制为50，偏移为0。
 
 | 参数 | 描述 |
 | --------- | ----------- |
 | `limit` | 响应中要返回的最大记录数。 |
-| `offset` | 从第一个记录到响应开始（偏移）的实体数。 |
+| `offset` | 从第一个记录到响应列表的开始（偏移）的实体数。 |
