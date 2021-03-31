@@ -2,20 +2,20 @@
 keywords: Experience Platform；主页；热门主题；更新沙箱
 solution: Experience Platform
 title: 在API中更新沙箱
-topic: developer guide
-description: 您可以通过发出PATCH请求来更新沙箱中的一个或多个字段，该请求在请求路径中包含沙箱的名称，并在请求有效负荷中包含要更新的属性。
+topic: 开发人员指南
+description: 可以通过发出PATCH请求来更新沙箱中的一个或多个字段，该请求在请求路径中包含沙箱的名称，并在请求负载中包含要更新的属性。
 translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+source-git-commit: ca3de18c093d7b692b582045afea4401d7133b9b
 workflow-type: tm+mt
-source-wordcount: '133'
-ht-degree: 3%
+source-wordcount: '135'
+ht-degree: 2%
 
 ---
 
 
-# 更新API中的沙箱
+# 在API中更新沙箱
 
-您可以通过发出PATCH请求来更新沙箱中的一个或多个字段，该请求在请求路径中包含沙箱的`name`，并在请求负载中包含要更新的属性。
+可以通过发出PATCH请求来更新沙箱中的一个或多个字段，该请求在请求路径中包含沙箱的`name`，并在请求负载中包含要更新的属性。
 
 >[!NOTE]
 >
@@ -41,7 +41,6 @@ curl -X PATCH \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
     "title": "Development B"
