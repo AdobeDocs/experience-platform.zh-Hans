@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；重置沙箱
 solution: Experience Platform
 title: 在API中重置沙箱
-topic: developer guide
-description: 开发沙箱具有“工厂重置”功能，可从沙箱中删除所有非默认资源。 可以通过发出PUT请求来重置沙箱，该请求在请求路径中包含沙箱的名称。
+topic: 开发人员指南
+description: 开发沙箱具有“工厂重置”功能，可从沙箱中删除所有非默认资源。 可以通过发出在请求路径中包含沙箱名称的PUT请求来重置沙箱。
 translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+source-git-commit: ca3de18c093d7b692b582045afea4401d7133b9b
 workflow-type: tm+mt
-source-wordcount: '169'
+source-wordcount: '171'
 ht-degree: 3%
 
 ---
@@ -29,7 +29,7 @@ PUT /sandboxes/{SANDBOX_NAME}
 
 **请求**
 
-以下请求重置名为“dev-2”的沙箱。
+以下请求会重置名为“dev-2”的沙箱。
 
 ```shell
 curl -X PUT \
@@ -37,7 +37,6 @@ curl -X PUT \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
     "action": "reset"
@@ -46,11 +45,11 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `action` | 此参数必须在请求负载中提供值为“reset”，才能重置沙箱。 |
+| `action` | 此参数必须在请求负载中提供值为“reset”的值，才能重置沙箱。 |
 
 **响应**
 
-成功的响应返回更新沙箱的详细信息，显示其`state`正在“重置”。
+成功的响应返回更新沙箱的详细信息，显示其`state`是“resetting”。
 
 ```json
 {
@@ -65,4 +64,4 @@ curl -X PUT \
 
 >[!NOTE]
 >
->重置沙箱后，系统需要大约15分钟才能进行设置。 设置后，沙箱的`state`将变为“活动”或“失败”。
+>重置沙箱后，系统将需要大约15分钟才能设置沙箱。 设置后，沙箱的`state`将变为“活动”或“失败”。
