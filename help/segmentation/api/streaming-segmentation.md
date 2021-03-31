@@ -5,9 +5,9 @@ title: '利用流细分快速实时评估事件 '
 topic: 开发人员指南
 description: 本文档包含有关如何使用Adobe Experience Platform Segmentation Service API的流分段的示例。
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: bb7edcaccca87918c56d00e092e4b7154d7c5d6e
 workflow-type: tm+mt
-source-wordcount: '1341'
+source-wordcount: '1342'
 ht-degree: 1%
 
 ---
@@ -403,6 +403,6 @@ curl -X POST \
 
 ## 后续步骤
 
-现在，您已经为流细分启用了新细分和现有细分，并启用了计划细分以开发基线和执行循环评估，因此您可以开始为组织创建细分。
+现在，您已经为流分段启用了新区段和现有区段，并启用了计划分段以开发基线和执行循环评估，因此您可以开始为组织创建支持流的区段。
 
 要了解如何使用Adobe Experience Platform用户界面执行类似操作和处理区段，请访问[区段生成器用户指南](../ui/segment-builder.md)。
