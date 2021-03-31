@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: March 31, 2021
 author: ens70167
 translation-type: tm+mt
-source-git-commit: 7af082de034166e3a8a3971728d5743eaeec67ae
+source-git-commit: 58382528cc787e8d2005c8c322904266880ad0b9
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '550'
 ht-degree: 6%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 6%
 
 # Adobe Experience Platform 发行说明
 
-**发行日期：2021 年 3 月 31 日**
+**发布日期：2021 年 3 月 31 日**
 
 Adobe Experience Platform 现有功能的更新包括：
 
