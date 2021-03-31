@@ -5,9 +5,9 @@ title: 分段服务概述
 topic: 概述
 description: 了解Adobe Experience Platform Segmentation Service及其在平台生态系统中的作用。
 translation-type: tm+mt
-source-git-commit: 7eadb14dc71792174dfd750775148763f55834dd
+source-git-commit: 738256021fb583e7dc14fd33f5df193813a6e0bb
 workflow-type: tm+mt
-source-wordcount: '1449'
+source-wordcount: '1499'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了用户界面和RES
 
 分段是定义由用户档案子集从用户档案库共享的特定属性或行为的过程，以区分有价人群和客户群。 例如，在名为“您忘记购买运动鞋了吗？”的电子邮件活动中，您可能希望受众过去30天内搜索跑鞋但未完成购买的所有用户。
 
-在概念上定义区段后，它将在[!DNL Experience Platform]中构建。 通常，细分由营销人员或受众专家构建，但某些组织希望由其营销部门与数据分析师协作创建。 在查看发送到[!DNL Platform]的数据时，数据分析师通过选择将用于构建区段规则或条件的字段和值来组合区段定义。 这是使用UI或API完成的。
+在概念上定义区段后，会在[!DNL Experience Platform]中构建该区段。 通常，细分由营销人员或受众专家构建，但某些组织希望由其营销部门与数据分析师协作创建。 在查看发送到[!DNL Platform]的数据时，数据分析师通过选择将用于构建区段规则或条件的字段和值来组合区段定义。 这是使用UI或API完成的。
 
 ## 创建区段
 
@@ -59,6 +59,8 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了用户界面和RES
 
 作为当前用户档案选择流程的替代方法，批处理分段通过段定义一次移动所有受众数据以生成相应的数据。 创建后，会保存并存储此区段，以便您导出该区段以供使用。
 
+使用批细分评估的区段每24小时进行评估。 但是，对于现有区段，增量细分使用最新的批细分功能使区段评估保持长达一小时。 任何新的或最近修改的区段都需要等到运行下一个完全批量分段作业才能利用增量分段。
+
 要了解如何评估区段，请参阅[区段评估教程](./tutorials/evaluate-a-segment.md)。
 
 ### 边缘分割
@@ -79,7 +81,7 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了用户界面和RES
 
 ### 区段名称
 
-创建新区段时，您需要提供区段名称。 区段名称用于标识由[!DNL Segmentation Service]构建的集合中的特定区段。 因此，区段名称应具有描述性、简洁性和唯一性。
+创建新区段时，您需要提供区段名称。 段名称用于标识由[!DNL Segmentation Service]构建的集合中的特定段。 因此，区段名称应具有描述性、简洁性和唯一性。
 
 >[!NOTE]
 >
@@ -111,7 +113,7 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了用户界面和RES
 
 ## 顺序分段{#sequential}
 
-标准的用户旅程本质上是连续的。 Adobe Experience Platform允许您定义一系列有序的细分，以反映此旅程，从而在出现事件序列时捕获这些序列。 可以使用[!DNL Segment Builder]中的可视事件时间轴将事件排列到所需顺序。
+标准的用户旅程本质上是连续的。 Adobe Experience Platform允许您定义一系列有序的细分，以反映此旅程，从而在发生事件序列时捕获这些序列。 可以使用[!DNL Segment Builder]中的可视事件时间轴将事件排列到所需顺序。
 
 需要按顺序细分的客户旅程示例包括产品视图>产品添加>结帐>无购买。
 
@@ -137,7 +139,7 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了用户界面和RES
 
 ## 多实体分段{#multi-entity}
 
-借助高级多实体细分功能，您能够根据产品、商店或其他非人（也称为“维度”实体）使用额外数据扩展[!DNL Real-time Customer Profile]数据。 因此，[!DNL Segmentation Service]在区段定义期间可以访问其他字段，就像它们是[!DNL Profile]数据存储的本机字段一样。 多实体细分在根据与您的独特业务需求相关的数据识别受众时提供了灵活性。 有关包括用例和工作流在内的详细信息，请参阅[多实体分段指南](multi-entity-segmentation.md)。
+利用高级多实体细分功能，您可以根据产品、商店或其他非人（也称为“维”实体）使用额外数据扩展[!DNL Real-time Customer Profile]数据。 因此，[!DNL Segmentation Service]在区段定义期间可以访问其他字段，就像它们是[!DNL Profile]数据存储的本机字段一样。 多实体细分在根据与您的独特业务需求相关的数据识别受众时提供了灵活性。 有关包括用例和工作流在内的详细信息，请参阅[多实体分段指南](multi-entity-segmentation.md)。
 
 ## [!DNL Segmentation Service] 数据类型
 
