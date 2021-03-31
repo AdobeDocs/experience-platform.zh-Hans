@@ -6,9 +6,9 @@ breadcrumb-title: Segmentation Service 指南
 user-guide-description: 根据实时客户档案数据构建区段并生成受众。
 feature: 区段
 translation-type: tm+mt
-source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
+source-git-commit: 5839ab36a7d8f992e92c7f9eff8c58459c4c3260
 workflow-type: tm+mt
-source-wordcount: '158'
+source-wordcount: '162'
 ht-degree: 20%
 
 ---
@@ -21,6 +21,7 @@ ht-degree: 20%
 - 分段API {#api}
    - [概述](api/overview.md)
    - [入门指南](api/getting-started.md)
+   - [边缘分割](api/edge-segmentation.md)
    - [导出作业](api/export-jobs.md)
    - [预览和估计](api/previews-and-estimates.md)
    - [计划](api/schedules.md)
@@ -31,7 +32,8 @@ ht-degree: 20%
 - 分段UI {#ui}
    - [概述](ui/overview.md)
    - [细分仪表板](ui/segment-dashboard.md)
-   - [区段生成器](ui/segment-builder.md)
+   - [Segment Builder](ui/segment-builder.md)
+   - [边缘分割](ui/edge-segmentation.md)
    - [流细分](ui/streaming-segmentation.md)
    - [流分段（视频）](video/streaming-segmentation-overview.md)
    - [时间约束重构](ui/segment-refactoring.md)
