@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: March 31, 2021
 author: ens72741
 translation-type: tm+mt
-source-git-commit: 8d4270d9168a570fcf92ba60d70dbc8e9af98136
+source-git-commit: 0192c951a288cc1e0891a12ba9eff32aea120518
 workflow-type: tm+mt
-source-wordcount: '244'
-ht-degree: 9%
+source-wordcount: '436'
+ht-degree: 7%
 
 ---
 
@@ -19,7 +19,35 @@ ht-degree: 9%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [[!DNL Data Prep]](#data-prep)
+- [[!DNL Segmentation Service]](#segmentation)
 - [[!DNL Sources]](#sources)
+
+## [!DNL Data Prep] {#data-prep}
+
+[!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| `add_to_array` 函数 | 更新了功能，支持将数组用作参数。 |
+| `to_array` 函数 | 更新了功能，支持将对象用作参数。 |
+
+有关详细信息，请参阅[[!DNL Data Prep] 概述](../../data-prep/home.md)。
+
+## Segmentation Service {#segmentation}
+
+Adobe Experience Platform Segmentation Service提供用户界面和RESTful API，使您能够根据[!DNL Real-time Customer Profile]数据构建区段和生成受众。 这些区段在[!DNL Platform]上集中配置和维护，使任何Adobe应用程序都可轻松访问它们。
+
+[!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准，定义特定的用户档案子集。细分可以基于记录数据（如人口统计信息）或表示客户与您品牌互动的时间序列事件。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| （测试版）边缘分割 | 边缘细分可实时评估细分，允许使用相同的页面和下一页个性化用例。 有关边缘分段的详细信息，请参阅[分段UI概述](../../segmentation/ui/overview.md)。 |
+| （测试版）增量细分 | 将批细分中评估的现有区段定义的新鲜度提高到最多一小时。 |
+
+有关[!DNL Segmentation Service]的详细信息，请参阅[分段概述](../../segmentation/home.md)。
 
 ## [!DNL Sources] {#sources}
 
