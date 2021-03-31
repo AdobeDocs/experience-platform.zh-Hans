@@ -5,9 +5,9 @@ title: 在API中创建沙箱
 topic: 开发人员指南
 description: 可以通过向“/沙箱”端点发出POST请求来创建新沙箱。
 translation-type: tm+mt
-source-git-commit: ee2fb54ba59f22a1ace56a6afd78277baba5271e
+source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '166'
 ht-degree: 2%
 
 ---
@@ -15,11 +15,7 @@ ht-degree: 2%
 
 # 在API中创建沙箱
 
-可以通过向`/sandboxes`端点发出POST请求来创建开发或生产沙箱。
-
-## 创建开发沙箱
-
-要创建开发沙箱，请向`/sandboxes`端点发出POST请求，并为属性`type`提供值`development`。
+可以通过向`/sandboxes`端点发出POST请求来创建新沙箱。
 
 **API格式**
 
@@ -37,6 +33,7 @@ curl -X POST \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
     "name": "dev-3",
@@ -47,9 +44,9 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 将来请求中用于访问沙箱的标识符。 此值必须是唯一的，最佳实践是尽可能使其具有描述性。 此值不能包含任何空格或特殊字符。 |
+| `name` | 将来请求中用于访问沙箱的标识符。 此值必须是唯一的，最佳实践是尽可能使其具有描述性。 不能包含任何空格或大写字母。 |
 | `title` | 用于平台用户界面中显示目的的可读名称。 |
-| `type` | 要创建的沙箱类型。 `type`属性的值可以是开发或生产。 |
+| `type` | 要创建的沙箱类型。 当前，组织只能创建“开发”类型沙箱。 |
 
 **响应**
 
@@ -65,54 +62,6 @@ curl -X POST \
 }
 ```
 
-## 创建生产沙箱
-
 >[!NOTE]
 >
->“多个制作沙箱”功能是测试版。
-
-要创建生产沙箱，请向`/sandboxes`端点发出POST请求，并为属性`type`提供值`production`。
-
-**API格式**
-
-```http
-POST /sandboxes
-```
-
-**请求**
-
-以下请求将创建一个名为“test-prod-sandbox”的新生产沙箱。
-
-```shell
-curl -X POST \
-  https://platform.adobe.io/data/foundation/sandbox-management/sandboxes \
-  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "name": "test-prod-sandbox",
-    "title": "Test Production Sandbox",
-    "type": "production"
-}'
-```
-
-| 属性 | 描述 |
-| --- | --- |
-| `name` | 将来请求中用于访问沙箱的标识符。 此值必须是唯一的，最佳实践是尽可能使其具有描述性。 此值不能包含任何空格或特殊字符。 |
-| `title` | 用于平台用户界面中显示目的的可读名称。 |
-| `type` | 要创建的沙箱类型。 `type`属性的值可以是开发或生产。 |
-
-**响应**
-
-成功的响应返回新创建的沙箱的详细信息，表明其`state`是“creating”。
-
-```json
-{
-    "name": "test-production-sandbox",
-    "title": "Test Production Sandbox",
-    "state": "creating",
-    "type": "production",
-    "region": "VA7"
-}
-```
+>沙箱需要大约15分钟时间才能由系统配置，之后其`state`将变为“活动”或“失败”。
