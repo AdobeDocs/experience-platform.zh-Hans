@@ -5,7 +5,7 @@ title: 列表API中支持的沙箱类型
 topic: 开发人员指南
 description: 通过向/sandboxTypes端点发出列表请求，可以检索组织的受支持沙箱类型GET。
 translation-type: tm+mt
-source-git-commit: ca3de18c093d7b692b582045afea4401d7133b9b
+source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31
 workflow-type: tm+mt
 source-wordcount: '83'
 ht-degree: 2%
@@ -31,6 +31,7 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
