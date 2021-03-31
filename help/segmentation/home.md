@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；分段；分段；分段；段服务；段；段；段；段；段
 solution: Experience Platform
 title: 分段服务概述
-topic: overview
+topic: 概述
 description: 了解Adobe Experience Platform Segmentation Service及其在平台生态系统中的作用。
 translation-type: tm+mt
-source-git-commit: c0c42f872666323bfb3bdbdf5fb02475d3b5bc79
+source-git-commit: 7eadb14dc71792174dfd750775148763f55834dd
 workflow-type: tm+mt
-source-wordcount: '1407'
+source-wordcount: '1449'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,12 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了用户界面和RES
 作为当前用户档案选择流程的替代方法，批处理分段通过段定义一次移动所有受众数据以生成相应的数据。 创建后，会保存并存储此区段，以便您导出该区段以供使用。
 
 要了解如何评估区段，请参阅[区段评估教程](./tutorials/evaluate-a-segment.md)。
+
+### 边缘分割
+
+边缘细分是指在Platform中即时评估边缘区段的能力，支持相同页面和下一页个性化使用案例。
+
+要了解有关边缘分割的更多信息，请阅读[API文档](./api/edge-segmentation.md)或[UI文档](./ui/edge-segmentation.md)。
 
 ## 访问分段结果
 
