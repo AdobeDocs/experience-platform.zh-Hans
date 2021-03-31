@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: March 31, 2021
 author: ens72741
 translation-type: tm+mt
-source-git-commit: 0192c951a288cc1e0891a12ba9eff32aea120518
+source-git-commit: 523e09b9af19b1deb01a69be0673b9a17084b7e4
 workflow-type: tm+mt
-source-wordcount: '436'
-ht-degree: 7%
+source-wordcount: '554'
+ht-degree: 6%
 
 ---
 
@@ -20,6 +20,7 @@ ht-degree: 7%
 Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Data Prep]](#data-prep)
+- [[!DNL Sandboxes]](#sandboxes)
 - [[!DNL Segmentation Service]](#segmentation)
 - [[!DNL Sources]](#sources)
 
@@ -33,6 +34,18 @@ Adobe Experience Platform 现有功能的更新包括：
 | `to_array` 函数 | 更新了功能，支持将对象用作参数。 |
 
 有关详细信息，请参阅[[!DNL Data Prep] 概述](../../data-prep/home.md)。
+
+## [!DNL Sandboxes] {#sandboxes}
+
+Adobe Experience Platform旨在在全球范围内丰富数字体验应用程序。 公司经常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署的需要，同时确保操作合规性。
+
+为了满足这一需求，Experience Platform提供了沙箱，可将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| （测试版）多个制作沙箱 | 您现在可以在IMS组织中创建和管理多个制作沙箱，并将特定制作沙箱专门用于不同的业务线、品牌、项目或地区。 有关详细信息，请参阅有关在UI](../../sandboxes/ui/user-guide.md)或[中使用API](../../sandboxes/api/create-sandbox.md)创建生产沙箱[的教程。 |
+
+有关沙箱的详细信息，请参阅[沙箱概述](../../sandboxes/home.md)。
 
 ## Segmentation Service {#segmentation}
 
@@ -54,8 +67,6 @@ Adobe Experience Platform Segmentation Service提供用户界面和RESTful API�
 Adobe Experience Platform可以从外部源收集数据，同时允许您使用平台服务构建、标记和增强该数据。 您可以从各种来源收集数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
 
 Experience Platform提供了RESTful API和交互式UI，让您可以轻松为各种数据提供者设置源连接。 这些源连接允许您对外部存储系统和CRM服务进行身份验证并连接，设置获取运行的时间，以及管理数据获取吞吐量。
-
-2021年3月版的Experience Platform中包含以下源更新：
 
 | 功能 | 描述 |
 | ------- | ----------- |
