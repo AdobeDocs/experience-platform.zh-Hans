@@ -5,7 +5,7 @@ title: 列表API中的沙箱
 topic: 开发人员指南
 description: 要列表属于您的IMS组织（活动或其他）的所有沙箱，请向/sandboxs端点发出GET请求。
 translation-type: tm+mt
-source-git-commit: ca3de18c093d7b692b582045afea4401d7133b9b
+source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 2%
@@ -35,6 +35,7 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
