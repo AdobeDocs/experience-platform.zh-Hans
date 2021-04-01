@@ -5,7 +5,7 @@ title: 模式合成基础
 topic: 概述
 description: 本文档介绍了体验数据模型(XDM)模式，以及构建要在Adobe Experience Platform中使用的模式的构件、原则和最佳做法。
 translation-type: tm+mt
-source-git-commit: 9a5618674946f67528de1b40609596dbb75ced0c
+source-git-commit: ae2c5f9fa4e732fefe55a8536894844986aea1e2
 workflow-type: tm+mt
 source-wordcount: '3461'
 ht-degree: 0%
@@ -165,7 +165,7 @@ Adobe提供多个标准（“核心”）XDM类。 几乎所有下游平台进�
 
 [!DNL Experience Platform] 提供许多常用数据类型，作为 [!DNL Schema Registry] 的一部分，以支持使用标准模式描述常用数据结构。这在[!DNL Schema Registry]教程中有更详细的说明，在您逐步定义数据类型时，会更加清晰。
 
-以下屏幕截图演示了数据类型在平台UI中的表示方式。 ([!UICONTROL Demographic Details])mixin提供的一个字段使用“[!UICONTROL Person name]”数据类型，如字段名称旁的管道字符(`|`)后面的文本所示。 此特定数据类型提供与个人姓名相关的多个子字段，此构造可重用于需要捕获个人姓名的其他字段。
+以下屏幕截图演示了数据类型在平台UI中的表示方式。 [!UICONTROL Demographic Details] mixin提供的一个字段使用“[!UICONTROL Person name]”数据类型，如字段名称旁的管道字符(`|`)后面的文本所示。 此特定数据类型提供与个人姓名相关的多个子字段，此构造可重用于需要捕获个人姓名的其他字段。
 
 ![](../images/schema-composition/data-type.png)
 
