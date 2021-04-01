@@ -1,5 +1,5 @@
 ---
-cloud: experience-cloud
+cloud: Experience Cloud
 product: adobe experience platform
 feature-set: Platform
 solution-title: 平台概述
@@ -15,7 +15,7 @@ type: 文档
 index: true
 role: 架构师、开发人员、数据架构师、数据工程师、业务从业者、管理员、领导者
 translation-type: tm+mt
-source-git-commit: 467edb785bd3c8609d2fc64183edd1d7b34d7e86
+source-git-commit: b3ab087a9cae13d2ff270916d88b8086a4122af6
 workflow-type: tm+mt
 source-wordcount: '147'
 ht-degree: 74%
