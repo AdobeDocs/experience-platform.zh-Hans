@@ -5,15 +5,15 @@ title: 分段服务概述
 topic: 概述
 description: 了解Adobe Experience Platform Segmentation Service及其在平台生态系统中的作用。
 translation-type: tm+mt
-source-git-commit: 738256021fb583e7dc14fd33f5df193813a6e0bb
+source-git-commit: eff833f20eba4e51579a43fbb98c1e2333e326ef
 workflow-type: tm+mt
-source-wordcount: '1499'
+source-wordcount: '1581'
 ht-degree: 0%
 
 ---
 
 
-# [!DNL Segmentation Service]概述
+# [!DNL Segmentation Service] 概述
 
 Adobe Experience Platform [!DNL Segmentation Service]提供了用户界面和RESTful API，使您能够根据[!DNL Real-time Customer Profile]数据构建区段和生成受众。 这些区段在[!DNL Platform]上集中配置和维护，任何Adobe解决方案都可随时访问。
 
@@ -47,7 +47,7 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了用户界面和RES
 
 ## 评估区段
 
-平台目前支持两种评估细分的方法：流分段和批分段。
+平台目前支持三种评估细分的方法：流分段、批分段和边缘分段。
 
 ### 流细分
 
@@ -59,7 +59,15 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了用户界面和RES
 
 作为当前用户档案选择流程的替代方法，批处理分段通过段定义一次移动所有受众数据以生成相应的数据。 创建后，会保存并存储此区段，以便您导出该区段以供使用。
 
-使用批细分评估的区段每24小时进行评估。 但是，对于现有区段，增量细分使用最新的批细分功能使区段评估保持长达一小时。 任何新的或最近修改的区段都需要等到运行下一个完全批量分段作业才能利用增量分段。
+**增量分段（测试版）**
+
+每24小时评估一次批区段。 但是，对于现有细分，增量细分使细分保持最新，最长可保持一小时。
+
+增量分段对传入用户档案存储的新数据运行。 但是，以下警告适用于增量细分：
+
+- 对于任何新的或最近修改的区段，具有新数据的用户档案将开始在下次增量运行中获得资格。 但是，没有更改的用户档案将在下一个完整批量分段作业中赶上。
+- 多实体区段将以增量分段方式刷新。 如果存在实体更新，则具有新数据的任何用户档案将在下次增量运行中开始使用它们。 但是，没有更改的用户档案将在下一个完整批量分段作业中赶上。
+- 事件在删除区段的时间窗口时，将在下一个完整的批分段作业中协调。
 
 要了解如何评估区段，请参阅[区段评估教程](./tutorials/evaluate-a-segment.md)。
 
