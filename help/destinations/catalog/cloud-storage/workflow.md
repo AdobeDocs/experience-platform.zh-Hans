@@ -6,7 +6,7 @@ description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 exl-id: 58003c1e-2f70-4e28-8a38-3be00da7cc3c
 translation-type: tm+mt
-source-git-commit: 1e33a7b48e20d7afe9f10b206a6fd68433b205db
+source-git-commit: 7bb862c4c6c52c42e45d5e736fa6d239e812ac2c
 workflow-type: tm+mt
 source-wordcount: '581'
 ht-degree: 0%
@@ -71,22 +71,19 @@ ht-degree: 0%
 
 以下示例引用了ID为`25768be6-ebd5-45cc-8913-12fb3f348615`的示例段`Luxury Audience`。
 
-### 宏1 - `%SEGMENT_NAME%`
+**宏1:`%SEGMENT_NAME%`**
 
 输入：`acme/campaigns/2021/%SEGMENT_NAME%`
-
 您的存储位置中的文件夹路径：`acme/campaigns/2021/Luxury Audience`
 
-### 宏2 - `%SEGMENT_ID%`
+**宏2:`%SEGMENT_ID%`**
 
 输入：`acme/campaigns/2021/%SEGMENT_ID%`
-
 您的存储位置中的文件夹路径：`acme/campaigns/2021/25768be6-ebd5-45cc-8913-12fb3f348615`
 
-### 宏3 - `%SEGMENT_NAME%/%SEGMENT_ID%`
+**宏3:`%SEGMENT_NAME%/%SEGMENT_ID%`**
 
 输入：`acme/campaigns/2021/%SEGMENT_NAME%/%SEGMENT_ID%`
-
 您的存储位置中的文件夹路径：`acme/campaigns/2021/Luxury Audience/25768be6-ebd5-45cc-8913-12fb3f348615`
 
 
