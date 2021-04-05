@@ -3,15 +3,15 @@ keywords: Experience Platform；主页；热门主题；边缘分割；分割；
 solution: Experience Platform
 title: 边缘分段UI指南
 topic: ui指南
-description: '边缘细分是指在Platform中即时评估边缘区段的能力，支持相同页面和下一页个性化使用案例。 '
+description: 边缘细分是指在Platform中即时评估边缘区段的能力，支持相同页面和下一页个性化使用案例。
+exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
 translation-type: tm+mt
-source-git-commit: 7eadb14dc71792174dfd750775148763f55834dd
+source-git-commit: 692bfca8d14ac247527f956bbcba8b4eb37516e3
 workflow-type: tm+mt
-source-wordcount: '328'
+source-wordcount: '332'
 ht-degree: 1%
 
 ---
-
 
 # 边缘分割UI指南
 
@@ -25,8 +25,8 @@ ht-degree: 1%
 | ---------- | ------- | ------- |
 | 传入点击 | 任何区段定义，指没有时间限制的单个传入事件。 | ![](../images/ui/edge-segmentation/incoming-hit.png) |
 | 指用户档案的传入点击 | 引用单个传入事件（无时间限制）和一个或多个用户档案属性的任何区段定义。 | ![](../images/ui/edge-segmentation/profile-hit.png) |
-| 频率查询 | 指发生特定次数的事件的任何细分定义。 |  |
-| 引用查询的频率用户档案 | 指发生特定次数的事件且具有一个或多个用户档案属性的任何区段定义。 |  |
+| 频率查询 | 指发生至少特定次数的事件的任何区段定义。 |  |
+| 引用查询的频率用户档案 | 任何区段定义，指发生至少特定次数的事件，并具有一个或多个用户档案属性。 |  |
 
 如果查询与上述任何查询类型匹配，则可以通过打开&#x200B;**[!UICONTROL Evaluate as streaming segment on the edge]**&#x200B;切换来启用边缘分割。
 
