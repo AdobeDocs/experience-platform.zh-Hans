@@ -4,14 +4,14 @@ solution: Experience Platform
 title: '使用API进行边缘分割 '
 topic: 开发人员指南
 description: 本文档包含有关如何使用Adobe Experience Platform Segmentation Service API的边缘分割的示例。
+exl-id: effce253-3d9b-43ab-b330-943fb196180f
 translation-type: tm+mt
-source-git-commit: 0c4625ec0728c8c94b72e3e16e7ecf45ea2d0c0b
+source-git-commit: 692bfca8d14ac247527f956bbcba8b4eb37516e3
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '636'
 ht-degree: 1%
 
 ---
-
 
 # 边缘分割
 
@@ -39,8 +39,8 @@ ht-degree: 1%
 | ---------- | ------- |
 | 传入点击 | 任何区段定义，指没有时间限制的单个传入事件。 |
 | 指用户档案的传入点击 | 引用单个传入事件（无时间限制）和一个或多个用户档案属性的任何区段定义。 |
-| 频率查询 | 指发生特定次数的事件的任何细分定义。 |
-| 引用查询的频率用户档案 | 指发生特定次数的事件且具有一个或多个用户档案属性的任何区段定义。 |
+| 频率查询 | 指发生至少特定次数的事件的任何区段定义。 |
+| 引用查询的频率用户档案 | 任何区段定义，指发生至少特定次数的事件，并具有一个或多个用户档案属性。 |
 
 {style=&quot;table-layout:auto&quot;}
 
