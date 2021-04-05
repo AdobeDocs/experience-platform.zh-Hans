@@ -6,9 +6,9 @@ description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 exl-id: 58003c1e-2f70-4e28-8a38-3be00da7cc3c
 translation-type: tm+mt
-source-git-commit: 7bb862c4c6c52c42e45d5e736fa6d239e812ac2c
+source-git-commit: ecda1f1c4a2829124aedaae2395a74e54929c7ad
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '595'
 ht-degree: 0%
 
 ---
@@ -64,6 +64,10 @@ ht-degree: 0%
 您的目标现在已创建。 如果您希望稍后激活区段，则可以选择&#x200B;**[!UICONTROL Save & Exit]**，也可以选择&#x200B;**[!UICONTROL Next]**&#x200B;继续工作流，然后选择要激活的区段。 阅读[激活区段](#activate-segments)一节，了解导出数据的工作流程的其余部分。
 
 ## 使用宏在存储位置{#use-macros}中创建文件夹
+
+>[!NOTE]
+>
+> 本节介绍的功能目前仅适用于[Amazon S3](./amazon-s3.md)目标。
 
 要在存储位置为每个区段文件创建自定义文件夹，可以在文件夹路径输入字段中使用宏。 在输入字段的末尾插入宏，如下所示。
 
