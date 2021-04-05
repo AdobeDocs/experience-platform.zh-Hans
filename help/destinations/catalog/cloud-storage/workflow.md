@@ -4,14 +4,14 @@ title: 创建云存储目标
 type: 教程
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
+exl-id: 58003c1e-2f70-4e28-8a38-3be00da7cc3c
 translation-type: tm+mt
-source-git-commit: 632003773100ec8ef0389840695a1c75a1aa663d
+source-git-commit: 1e33a7b48e20d7afe9f10b206a6fd68433b205db
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '581'
 ht-degree: 0%
 
 ---
-
 
 # 创建云存储目标
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 >
 >平台支持身份验证过程中的凭据验证，如果您向云存储位置输入了不正确的凭据，则会显示错误消息。 这可确保您没有使用不正确的凭据完成工作流。
 
-![连接到云存储目标 — 身份验证步骤](../../assets/catalog/cloud-storage/workflow/destination-account.png)
+![连接到云存储目标 — 帐户步骤](../../assets/catalog/cloud-storage/workflow/destination-account.png)
 
 ## 身份验证步骤{#authentication}
 
@@ -61,7 +61,35 @@ ht-degree: 0%
 
 ![连接到事件中心云存储目标 — 身份验证步骤](../../assets/catalog/cloud-storage/workflow/event-hubs-setup.png)
 
-您的目标现在已创建。 如果您希望稍后激活区段，则可以选择&#x200B;**[!UICONTROL Save & Exit]**，也可以选择&#x200B;**[!UICONTROL Next]**&#x200B;继续工作流，然后选择要激活的区段。 无论哪种情况，在导出数据的工作流的其余部分，请参见下一节[激活区段](#activate-segments)。
+您的目标现在已创建。 如果您希望稍后激活区段，则可以选择&#x200B;**[!UICONTROL Save & Exit]**，也可以选择&#x200B;**[!UICONTROL Next]**&#x200B;继续工作流，然后选择要激活的区段。 阅读[激活区段](#activate-segments)一节，了解导出数据的工作流程的其余部分。
+
+## 使用宏在存储位置{#use-macros}中创建文件夹
+
+要在存储位置为每个区段文件创建自定义文件夹，可以在文件夹路径输入字段中使用宏。 在输入字段的末尾插入宏，如下所示。
+
+![如何使用宏在您的存储中创建文件夹](../../assets/catalog/cloud-storage/workflow/macros-folder-path.png)
+
+以下示例引用了ID为`25768be6-ebd5-45cc-8913-12fb3f348615`的示例段`Luxury Audience`。
+
+### 宏1 - `%SEGMENT_NAME%`
+
+输入：`acme/campaigns/2021/%SEGMENT_NAME%`
+
+您的存储位置中的文件夹路径：`acme/campaigns/2021/Luxury Audience`
+
+### 宏2 - `%SEGMENT_ID%`
+
+输入：`acme/campaigns/2021/%SEGMENT_ID%`
+
+您的存储位置中的文件夹路径：`acme/campaigns/2021/25768be6-ebd5-45cc-8913-12fb3f348615`
+
+### 宏3 - `%SEGMENT_NAME%/%SEGMENT_ID%`
+
+输入：`acme/campaigns/2021/%SEGMENT_NAME%/%SEGMENT_ID%`
+
+您的存储位置中的文件夹路径：`acme/campaigns/2021/Luxury Audience/25768be6-ebd5-45cc-8913-12fb3f348615`
+
+
 
 ## 激活区段{#activate-segments}
 
