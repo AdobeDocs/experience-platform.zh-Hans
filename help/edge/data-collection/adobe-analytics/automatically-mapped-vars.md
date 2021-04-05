@@ -3,14 +3,14 @@ title: 在Adobe Experience Platform Web SDK中自动映射Adobe Analytics变量
 description: 了解使用Experience Platform Web SDK在Adobe Analytics中自动映射哪些变量
 seo-description: 了解哪些变量在Adobe Analytics中使用Adobe Experience Platform Web SDK自动映射
 keywords: adobe analytics;variables;analytics；自动映射；自动映射；
+exl-id: 856fada7-b62c-4fd2-9372-a19ae1cdec33
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 7a6a9f1ee764ab614fa163f90a2051bd35b76b7f
 workflow-type: tm+mt
-source-wordcount: '681'
+source-wordcount: '684'
 ht-degree: 0%
 
 ---
-
 
 # 在[!DNL Analytics]中自动映射变量
 
@@ -103,3 +103,5 @@ ht-degree: 0%
 | `web.webPageDetails.server` | `sv` | AppMeasurement查询参数USER_SERVER映射。 |
 | `web.webPageDetails.siteSection` | `ch` | AppMeasurement查询参数渠道映射。 |
 | `web.webReferrer.URL` | `r` | AppMeasurement查询参数推荐人映射。 |
+
+{style=&quot;table-layout:auto&quot;}
