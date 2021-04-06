@@ -1,26 +1,37 @@
 ---
 keywords: 连接目标；目标连接；如何连接目标
 title: 连接到目标
-type: Tutorial
-description: 本教程列表了连接Adobe Experience Platform目标的步骤
+type: 教程
+description: 本教程列表了在Adobe Experience Platform中连接目标的步骤
+exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
 translation-type: tm+mt
-source-git-commit: e13a19640208697665b0a7e0106def33fd1e456d
+source-git-commit: cc432f7c07f0f82deec653864154016638ec8138
 workflow-type: tm+mt
-source-wordcount: '113'
+source-wordcount: '152'
 ht-degree: 0%
 
 ---
 
-
 # 连接到目标
 
-请按照以下步骤连接到Adobe Experience Platform的目标：
+请按照以下步骤连接到Adobe Experience Platform中的目标：
 
-1. 从左侧导航栏导航到&#x200B;**[!UICONTROL 目标]**。
-2. 在[[!UICONTROL 目录]](./destinations-workspace.md#catalog)选项卡中，选择要连接的目标。
-3. 按&#x200B;**[!UICONTROL 连接目标]**&#x200B;开始连接目标向导。
-4. 有关如何连接到特定目标的分步说明，请参阅目标页面。 请参阅[云存储目标](../catalog/cloud-storage/workflow.md)、[电子邮件营销目标](../catalog/email-marketing/overview.md)和[广告目标](../catalog/advertising/overview.md)。
+1. 登录到[Experience PlatformUI](https://platform.adobe.com/)并从左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**。
 
-有关如何连接目标并激活区段到目标的视频概述，请参见下文。
+   ![连接到目标](../assets/ui/connect-destinations/connect-destination.png)
 
->[!VIDEO](https://video.tv.adobe.com/v/29710?quality=12)
+2. 在[[!UICONTROL Catalog]](./destinations-workspace.md#catalog)选项卡中，选择要连接到的目标。
+
+3. 选择&#x200B;**[!UICONTROL Configure]**&#x200B;以开始连接目标向导。
+
+   ![配置目标](../assets/ui/connect-destinations/configure-destination.png)
+
+   >[!NOTE]
+   >
+   >如果存在与目标的连接，您可以在目标卡上看到&#x200B;**[!UICONTROL Activate]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的详细信息，请参阅目标工作区文档的[目录](../ui/destinations-workspace.md#catalog)部分。
+
+4. 有关如何连接到特定类型目标的说明，请参阅[目标目录概述](../catalog/overview.md)。
+
+5. （可选）观看以下视频，了解如何连接到目标并激活目标的区段。
+
+   >[!VIDEO](https://video.tv.adobe.com/v/29710?quality=12)
