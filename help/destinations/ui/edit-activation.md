@@ -1,18 +1,18 @@
 ---
-keywords: 编辑激活;编辑目标；
+keywords: 编辑激活，编辑目标
 title: 编辑激活流
 type: 教程
 seo-title: 编辑激活流
 description: 请按照本文中的步骤编辑Adobe Experience Platform中的现有激活流。
 seo-description: 请按照本文中的步骤编辑Adobe Experience Platform中的现有激活流。
+exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
 translation-type: tm+mt
-source-git-commit: 0bb6db19dc27031115e47415c1b3241661e0a0ae
+source-git-commit: 07869d63f395bbab6c49a3976051facdf94d43b7
 workflow-type: tm+mt
 source-wordcount: '192'
 ht-degree: 0%
 
 ---
-
 
 # 编辑激活流{#edit-activation-flows}
 
