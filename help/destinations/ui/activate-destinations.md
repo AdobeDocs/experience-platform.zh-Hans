@@ -5,14 +5,14 @@ type: 教程
 seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
+exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
 translation-type: tm+mt
-source-git-commit: 0992b223a96b77446a9f9c2823f5195541dd93fa
+source-git-commit: 0bb6db19dc27031115e47415c1b3241661e0a0ae
 workflow-type: tm+mt
-source-wordcount: '2069'
+source-wordcount: '2025'
 ht-degree: 0%
 
 ---
-
 
 # 将用户档案和区段激活到目标
 
@@ -203,7 +203,7 @@ ht-degree: 0%
 >
 > Adobe Experience Platform使用您的模式中四个推荐的常用属性预填充您的选择：`person.name.firstName`、`person.name.lastName`、`personalEmail.address`、`segmentMembership.status`。
 
-根据是否选择`segmentMembership.status`，文件导出将以下方式有所不同：
+根据是否选择`segmentMembership.status`，文件导出将按以下方式不同：
 * 如果选择了`segmentMembership.status`字段，则导出的文件在初始完整快照中包括&#x200B;**[!UICONTROL Active]**&#x200B;成员，在后续增量导出中包括&#x200B;**[!UICONTROL Active]**&#x200B;和&#x200B;**[!UICONTROL Expired]**&#x200B;成员。
 * 如果未选择`segmentMembership.status`字段，则导出的文件在初始完整快照和后续增量导出中仅包含&#x200B;**[!UICONTROL Active]**&#x200B;成员。
 
@@ -240,13 +240,6 @@ ht-degree: 0%
 如果未检测到任何策略违规，请选择&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择，并开始将数据发送到目标。
 
 ![确认选择](../assets/ui/activate-destinations/confirm-selection.png)
-
-## 编辑激活{#edit-activation}
-
-请按照以下步骤编辑Adobe Experience Platform中的现有激活流：
-
-1. 在左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**，然后单击&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡，然后单击目标名称。
-2. 选择右边栏中的&#x200B;**[!UICONTROL Edit activation]**&#x200B;以更改要发送到目标的区段。
 
 ## 验证区段激活是否成功{#verify-activation}
 
