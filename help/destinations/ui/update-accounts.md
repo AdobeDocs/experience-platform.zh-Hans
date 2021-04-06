@@ -4,7 +4,7 @@ title: 更新目标帐户
 type: 教程
 description: 本教程列表了在Adobe Experience Platform UI中更新目标帐户的步骤
 translation-type: tm+mt
-source-git-commit: 6fd980b486c4a330f9188065bac55c624af584a1
+source-git-commit: e4afbdd6ff8f45ea8d5506f0228f0a80b44eee51
 workflow-type: tm+mt
 source-wordcount: '313'
 ht-degree: 1%
@@ -21,7 +21,7 @@ ht-degree: 1%
 ![“帐户”选项卡](../assets/ui/update-accounts/destination-accounts.png)
 
 | 元素 | 描述 |
----------|----------
+|---|---|
 | [!UICONTROL Platform] | 您为其设置连接的目标。 |
 | [!UICONTROL Connection Type] | 表示到存储存储段或目标的连接类型。 <ul><li>对于电子邮件营销目标：可以是S3或FTP。</li><li>对于实时广告目标：服务器到服务器</li><li>对于Amazon S3云存储目标：访问密钥 </li><li>对于SFTP云存储目标：SFTP的基本身份验证</li></ul> |
 | [!UICONTROL Username] | 您在[连接目标向导](../catalog/email-marketing/overview.md#connect-destination)中选择的用户名。 |
