@@ -3,14 +3,14 @@ keywords: 删除目标；如何删除目标
 title: 删除目标
 type: 教程
 description: 本教程列表了在Adobe Experience Platform UI中删除现有目标的步骤
+exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
 translation-type: tm+mt
-source-git-commit: ebe2a35e66b78acf6a9ffa20664877913cd35648
+source-git-commit: e436d7147c613dad5b2ff596a412759fd60d228c
 workflow-type: tm+mt
 source-wordcount: '392'
 ht-degree: 1%
 
 ---
-
 
 # 删除目标{#delete-destinations}
 
