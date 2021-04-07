@@ -3,14 +3,14 @@ keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体�
 solution: Experience Platform
 title: 数据类型API端点
 description: 模式 Registry API中的/datatypes端点允许您在体验应用程序中以编程方式管理XDM数据类型。
+exl-id: 2a58d641-c681-40cf-acc8-7ad842cd6243
 translation-type: tm+mt
-source-git-commit: 0727ffa0c72bcb6a85de1a13215b691b97889b70
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
 source-wordcount: '1147'
 ht-degree: 2%
 
 ---
-
 
 # 数据类型端点
 
@@ -127,11 +127,11 @@ curl -X GET \
 
 | `Accept` 标题 | 描述 |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | 具有`$ref`和`allOf`的原始数据包含标题和说明。 |
-| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` 和 `allOf` 解析，有标题和说明。 |
-| `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | 原始数据包含`$ref`和`allOf`，没有标题或说明。 |
-| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` 并解 `allOf` 析，没有标题或说明。 |
-| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` 和解 `allOf` 析包含的描述符。 |
+| `application/vnd.adobe.xed+json; version=1` | 具有`$ref`和`allOf`的原始数据包含标题和说明。 |
+| `application/vnd.adobe.xed-full+json; version=1` | `$ref` 和 `allOf` 解析，有标题和说明。 |
+| `application/vnd.adobe.xed-notext+json; version=1` | 原始数据包含`$ref`和`allOf`，没有标题或说明。 |
+| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` 并解 `allOf` 析，没有标题或说明。 |
+| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` 和解 `allOf` 析包含的描述符。 |
 
 **响应**
 
