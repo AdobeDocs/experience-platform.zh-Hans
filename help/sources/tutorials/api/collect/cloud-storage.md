@@ -5,14 +5,14 @@ title: 使用源连接器和API收集云存储数据
 topic: 概述
 type: 教程
 description: 本教程介绍了从第三方云存储检索数据并使用源连接器和API将其引入平台的步骤。
+exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
 translation-type: tm+mt
-source-git-commit: 8b85b25112ee16b09b1411c5d001bf13fb7fbcaa
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '1768'
-ht-degree: 2%
+source-wordcount: '1806'
+ht-degree: 1%
 
 ---
-
 
 # 使用源连接器和API收集云存储数据
 
@@ -331,6 +331,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `schemaRef.id` | 目标 XDM模式的ID。 |
+| `schemaRef.contentType` | 模式版本。 此值必须设置为`application/vnd.adobe.xed-full-notext+json;version=1`，这将返回模式的最新次要版本。 |
 
 **响应**
 
@@ -370,7 +371,7 @@ curl -X POST \
         "data": {
             "schema": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/995dabbea86d58e346ff91bd8aa741a9f36f29b1019138d4",
-                "version": "application/vnd.adobe.xed-full+json;version=1.0"
+                "version": "application/vnd.adobe.xed-full+json;version=1"
             }
         },
         "params": {
@@ -386,6 +387,7 @@ curl -X POST \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `data.schema.id` | 目标XDM模式的`$id`。 |
+| `data.schema.version` | 模式版本。 此值必须设置为`application/vnd.adobe.xed-full+json;version=1`，这将返回模式的最新次要版本。 |
 | `params.dataSetId` | 目标数据集的ID。 |
 | `connectionSpec.id` | 到数据湖的固定连接规范ID。 此ID为：`c604ff05-7f1a-43c0-8e18-33bf874cb11c`。 |
 
