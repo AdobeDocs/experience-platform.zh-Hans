@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Mixins API端点
 description: 模式 Registry API中的/mixins端点允许您在体验应用程序中以编程方式管理XDM混合。
 topic: 开发人员指南
+exl-id: 93ba2fe3-0277-4c06-acf6-f236cd33252e
 translation-type: tm+mt
-source-git-commit: 0727ffa0c72bcb6a85de1a13215b691b97889b70
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
 source-wordcount: '1136'
 ht-degree: 2%
 
 ---
-
 
 # Mixins端点
 
@@ -140,11 +140,11 @@ curl -X GET \
 
 | `Accept` 标题 | 描述 |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version={MAJOR_VERSION}` | 具有`$ref`和`allOf`的原始数据包含标题和说明。 |
-| `application/vnd.adobe.xed-full+json; version={MAJOR_VERSION}` | `$ref` 和 `allOf` 解析，有标题和说明。 |
-| `application/vnd.adobe.xed-notext+json; version={MAJOR_VERSION}` | 原始数据包含`$ref`和`allOf`，没有标题或说明。 |
-| `application/vnd.adobe.xed-full-notext+json; version={MAJOR_VERSION}` | `$ref` 并解 `allOf` 析，没有标题或说明。 |
-| `application/vnd.adobe.xed-full-desc+json; version={MAJOR_VERSION}` | `$ref` 和解 `allOf` 析包含的描述符。 |
+| `application/vnd.adobe.xed+json; version=1` | 具有`$ref`和`allOf`的原始数据包含标题和说明。 |
+| `application/vnd.adobe.xed-full+json; version=1` | `$ref` 和 `allOf` 解析，有标题和说明。 |
+| `application/vnd.adobe.xed-notext+json; version=1` | 原始数据包含`$ref`和`allOf`，没有标题或说明。 |
+| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` 并解 `allOf` 析，没有标题或说明。 |
+| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` 和解 `allOf` 析包含的描述符。 |
 
 **响应**
 
