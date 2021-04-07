@@ -2,44 +2,44 @@
 keywords: Experience Platform；主页；热门主题；数据集；数据集；创建数据集；创建数据集
 solution: Experience Platform
 title: 使用API创建数据集
-topic: datasets
-description: 此文档提供了使用Adobe Experience PlatformAPI创建数据集和使用文件填充数据集的一般步骤。
+topic: 数据集
+description: 此文档提供了使用Adobe Experience Platform API创建数据集和使用文件填充数据集的一般步骤。
+exl-id: 3a5f48cf-ad05-4b9e-be1d-ff213a26a477
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
-source-wordcount: '1268'
+source-wordcount: '1306'
 ht-degree: 1%
 
 ---
 
-
 # 使用API创建数据集
 
-此文档提供了使用Adobe Experience PlatformAPI创建数据集和使用文件填充数据集的一般步骤。
+此文档提供了使用Adobe Experience Platform API创建数据集和使用文件填充数据集的一般步骤。
 
 ## 入门指南
 
-本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
+本指南要求对Adobe Experience Platform的以下组件有充分的了解：
 
-* [批量摄取](../../ingestion/batch-ingestion/overview.md): [!DNL Experience Platform] 允许您将数据作为批处理文件进行收录。
+* [批量摄取](../../ingestion/batch-ingestion/overview.md): [!DNL Experience Platform] 允许您将数据作为批处理文件收录。
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了成功调用[!DNL Platform] API所需了解的其他信息。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
 
 * x-sandbox-name:`{SANDBOX_NAME}`
 
@@ -47,21 +47,21 @@ ht-degree: 1%
 >
 >有关[!DNL Platform]中沙箱的详细信息，请参阅[沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
 * 内容类型：application/json
 
 ## 教程
 
-要创建数据集，必须先定义模式。 模式是一组规则，可帮助表示数据。 除了描述数据结构外，模式还提供约束和期望，当数据在系统之间移动时，这些约束和期望可以被应用并用于验证数据。
+要创建模式集，必须先定义数据集。 模式是一组规则，可帮助表示数据。 除了描述数据的结构外，模式还提供了约束和期望，当数据在系统之间移动时，这些约束和期望可以应用并用于验证数据。
 
-这些标准定义允许一致地解释数据，而不管来源如何，并且无需跨应用程序进行翻译。 有关模式合成的详细信息，请参见[模式合成基础知识指南](../../xdm/schema/composition.md)。
+这些标准定义允许一致地解释数据，而不管来源如何，并且不需要跨应用程序进行翻译。 有关合成模式的详细信息，请参阅[模式合成基础知识](../../xdm/schema/composition.md)指南
 
 ## 查找数据集模式
 
-本教程从[模式注册表API教程](../../xdm/tutorials/create-schema-api.md)结束的位置开始，它利用在本教程中创建的“忠诚会员”模式。
+本教程从[模式注册表API教程](../../xdm/tutorials/create-schema-api.md)结束的位置开始，并利用在该教程中创建的Loyalty Members模式。
 
-如果您尚未完成[!DNL Schema Registry]教程，请开始该教程，并仅在您编写了必要的模式后继续此数据集教程。
+如果您尚未完成[!DNL Schema Registry]教程，请在此开始并仅在您编写了必要的模式后继续此数据集教程。
 
 以下调用可用于视图您在[!DNL Schema Registry] API教程中创建的Loyalty Members模式:
 
@@ -85,7 +85,7 @@ curl -X GET \
 
 **响应**
 
-响应对象的格式取决于请求中发送的接受头。 此响应中的各个属性已最小化为空间。
+响应对象的格式取决于在请求中发送的Accept头。 此响应中的各个属性已针对空间进行最小化。
 
 ```JSON
 {
@@ -181,7 +181,7 @@ curl -X GET \
 
 ## 创建数据集
 
-现在，在“忠诚度成员”模式下，您可以创建引用该模式的数据集。
+现在，在“忠诚度成员”模式就位后，您可以创建引用该模式的数据集。
 
 **API格式**
 
@@ -213,13 +213,18 @@ curl -X POST \
 }'
 ```
 
+| 属性 | 描述 |
+| --- | --- |
+| `schemaRef.id` | 数据集将基于的XDM模式的URI `$id`值。 |
+| `schemaRef.contentType` | 指示模式的格式和版本。 有关详细信息，请参阅XDM API指南中关于[模式版本控制](../../xdm/api/getting-started.md#versioning)的部分。 |
+
 >[!NOTE]
 >
->本教程对其所有示例都使用[Apache Parke](https://parquet.apache.org/documentation/latest/)文件格式。 使用JSON文件格式的示例可在[批处理摄取开发人员指南](../../ingestion/batch-ingestion/api-overview.md)中找到
+>本教程对其所有示例使用[Apache Parce](https://parquet.apache.org/documentation/latest/)文件格式。 可在[批处理摄取开发人员指南](../../ingestion/batch-ingestion/api-overview.md)中找到使用JSON文件格式的示例
 
 **响应**
 
-成功的响应返回HTTP状态201（已创建）和一个响应对象，该对象由一个数组组成，该数组包含格式为`"@/datasets/{DATASET_ID}"`的新创建数据集的ID。 数据集ID是由系统生成的只读字符串，用于在API调用中引用数据集。
+成功的响应返回HTTP状态201（已创建）和一个响应对象，该对象由一个数组组成，该数组包含格式为`"@/datasets/{DATASET_ID}"`的新创建数据集的ID。 数据集ID是一个只读的、由系统生成的字符串，用于在API调用中引用数据集。
 
 ```JSON
 [
@@ -229,7 +234,7 @@ curl -X POST \
 
 ## 创建批
 
-在向数据集添加数据之前，必须先创建一个链接到该数据集的批。 然后，该批将用于上传。
+在向数据集添加数据之前，必须先创建链接到该数据集的批。 然后，该批将用于上传。
 
 **API格式**
 
@@ -239,7 +244,7 @@ POST /batches
 
 **请求**
 
-请求主体包含一个“datasetId”字段，其值是上一步中生成的`{DATASET_ID}`。
+请求正文包含一个“datasetId”字段，其值是上一步中生成的`{DATASET_ID}`。
 
 ```SHELL
 curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
@@ -256,7 +261,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 **响应**
 
-成功的响应返回HTTP状态201（已创建）和包含新创建批处理详细信息的响应对象，包括其`id`（只读的、系统生成的字符串）。
+成功的响应返回HTTP状态201（已创建）和包含新创建批的详细信息（包括其`id`，只读的系统生成字符串）的响应对象。
 
 ```JSON
 {
@@ -295,11 +300,11 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 ## 将文件上传到批
 
-在成功创建要上传的新批后，您现在可以将文件上传到特定数据集。 请务必记住，在定义数据集时，您将文件格式指定为Parke。 因此，您上传的文件必须采用该格式。
+在成功创建新批以上载后，您现在可以将文件上载到特定数据集。 请务必记住，在定义数据集时，您将文件格式指定为Parke。 因此，您上传的文件必须采用该格式。
 
 >[!NOTE]
 >
->支持的最大数据上传文件为512 MB。 如果数据文件大于此值，则需要将其分为不大于512 MB的块，以一次上载一个。 您可以对每个文件重复此步骤，使用相同的批ID，以同一批次上传每个文件。 如果文件可以作为批处理的一部分上传，则该数字不受限制。
+>支持的最大数据上载文件为512 MB。 如果您的数据文件大于此大小，则需要将其分为不大于512 MB的块，以便一次上载一个。 您可以使用相同的批ID，对每个文件重复此步骤，以同一批次上载每个文件。 如果您可以作为批处理的一部分上传文件，则该数字没有限制。
 
 **API格式**
 
@@ -309,8 +314,8 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BATCH_ID}` | 要上传到的批的`id`。 |
-| `{DATASET_ID}` | 批处理将保留的数据集`id`。 |
+| `{BATCH_ID}` | 要上载到的批的`id`。 |
+| `{DATASET_ID}` | 将保留批处理的数据集的`id`。 |
 | `{FILE_NAME}` | 您正在上传的文件的名称。 |
 
 **请求**
@@ -326,11 +331,11 @@ curl -X PUT 'https://platform.adobe.io/data/foundation/import/batches/5d01230fc7
 
 **响应**
 
-成功上传的文件返回空的响应正文和HTTP状态200（确定）。
+成功上载的文件返回空的响应正文和HTTP状态200（确定）。
 
 ## 信号批处理完成
 
-将所有数据文件上传到批后，可以发出批完成的信号。 信令完成导致服务为上传的文件创建[!DNL Catalog] `DataSetFile`条目，并将它们与先前生成的批处理关联。 [!DNL Catalog]批处理标记为成功，这将触发任何下游流，这些流随后可以处理当前可用的数据。
+将所有数据文件上传到批后，您可以向批发出完成的信号。 信令完成导致服务为上传的文件创建[!DNL Catalog] `DataSetFile`条目，并将它们与先前生成的批关联。 [!DNL Catalog]批标记为成功，这会触发任何下游流，然后这些流可以处理当前可用的数据。
 
 **API格式**
 
@@ -340,7 +345,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BATCH_ID}` | 您标记为完成的批的`id`。 |
+| `{BATCH_ID}` | 您标记为已完成的批的`id`。 |
 
 **请求**
 
@@ -357,7 +362,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/5d01230fc
 
 ## 监视摄取
 
-根据数据的大小，批需要不同的时间才能进行摄取。 您可以通过将包含批ID的`batch`请求参数附加到`GET /batches`请求来监视批的状态。 API会从摄取开始轮询数据集以确定批的状态，直到响应中的`status`指示完成（“success”或“failure”）。
+根据数据的大小，批次收录需要不同的时间。 您可以通过将包含批ID的`batch`请求参数附加到`GET /batches`请求来监视批的状态。 API会从摄取开始轮询数据集以了解批的状态，直到响应中的`status`指示完成（“success”或“failure”）。
 
 **API格式**
 
@@ -462,18 +467,18 @@ curl -X GET \
 
 ## 从数据集读取数据
 
-使用批处理ID，您可以使用数据访问API进行回读并验证上传到该批处理的所有文件。 该响应返回一个包含文件ID列表的数组，每个ID引用批处理中的文件。
+使用批处理ID，您可以使用数据访问API进行回读并验证上载到该批处理的所有文件。 该响应返回一个数组，其中包含文件ID的列表，每个ID都引用批处理中的文件。
 
-您还可以使用Data Access API返回名称、大小（以字节为单位）以及下载文件或文件夹的链接。
+您还可以使用数据访问API返回名称、大小（以字节为单位）以及下载文件或文件夹的链接。
 
-有关使用数据访问API的详细步骤，请参阅[数据访问开发人员指南](../../data-access/home.md)。
+有关使用Data Access API的详细步骤，请参阅[Data Access开发人员指南](../../data-access/home.md)。
 
 ## 更新数据集模式
 
-您可以添加字段并将其他数据引入您创建的数据集。 为此，您首先需要通过添加定义新模式的其他属性来更新数据。 这可以通过使用PATCH和／或PUT操作来更新现有模式。
+您可以添加字段并将其他数据引入您创建的数据集。 为此，您首先需要通过添加定义新模式的其他属性来更新数据。 这可以通过使用PATCH和/或PUT操作来更新现有模式。
 
-有关更新模式的详细信息，请参阅[模式注册表API开发人员指南](../../xdm/api/getting-started.md)。
+有关更新模式的详细信息，请参阅《[模式注册表API开发人员指南》](../../xdm/api/getting-started.md)。
 
 更新模式后，您可以重新执行本教程中的步骤，以获取符合修订模式的新数据。
 
-必须记住，模式进化纯粹是累加的，这意味着一旦模式保存到注册表并用于数据获取，您就不能对其引入突破性的更改。 要进一步了解编写模式以用于Adobe Experience Platform的最佳实践，请参阅[模式合成基础知识指南](../../xdm/schema/composition.md)。
+必须记住，模式演化纯粹是附加的，这意味着一旦将模式保存到注册表并用于数据获取，您就不能对它引入突破性的更改。 要进一步了解合成模式以用于Adobe Experience Platform的最佳实践，请参阅[模式合成基础知识](../../xdm/schema/composition.md)的指南。
