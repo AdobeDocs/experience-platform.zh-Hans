@@ -5,14 +5,14 @@ title: 使用流摄取API流式传输时间系列数据
 topic: 教程
 type: 教程
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform Data Ingestion Service API的一部分。
+exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
 source-wordcount: '1314'
 ht-degree: 2%
 
 ---
-
 
 # 使用流摄取API流式传输时间序列数据
 
@@ -112,7 +112,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
     "$id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
     "meta:altId": "_{TENANT_ID}.schemas.{SCHEMA_ID}",
     "meta:resourceType": "schemas",
-    "version": "{SCHEMA_VERSION}",
+    "version": "1",
     "type": "object",
     "title": "{SCHEMA_NAME}",
     "description": "{SCHEMA_DESCRIPTION}",
@@ -271,7 +271,7 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
     "description": "{DATASET_DESCRIPTION}",
     "schemaRef": {
         "id": "{SCHEMA_REF_ID}",
-        "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
+        "contentType": "application/vnd.adobe.xed-full+json;version=1"
     },
     "fileDescription": {
         "persisted": true,
@@ -329,7 +329,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
     "header": {
         "schemaRef": {
             "id": "{SCHEMA_REF_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version=1"
         },
         "imsOrgId": "{IMS_ORG}",
         "datasetId": "{DATASET_ID}"
@@ -338,7 +338,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
         "xdmMeta": {
             "schemaRef": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-                "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
+                "contentType": "application/vnd.adobe.xed-full+json;version=1"
             }
         },
         "xdmEntity":{
@@ -391,7 +391,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
     "header": {
         "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version=1"
         },
         "imsOrgId": "{IMS_ORG}",
         "datasetId": "{DATASET_ID}",
