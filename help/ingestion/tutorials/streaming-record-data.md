@@ -5,14 +5,14 @@ title: 使用流摄取API的流记录数据
 topic: 教程
 type: 教程
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform Data Ingestion Service API的一部分。
+exl-id: 097dfd5a-4e74-430d-8a12-cac11b1603aa
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
 workflow-type: tm+mt
 source-wordcount: '1166'
 ht-degree: 2%
 
 ---
-
 
 # 使用流摄取API流记录数据
 
@@ -245,7 +245,7 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
     "description": "Dataset description",
     "schemaRef": {
         "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID},
-        "contentType": "application/vnd.adobe.xed-full+json;version=1.0"
+        "contentType": "application/vnd.adobe.xed-full+json;version=1"
     },
     "tags": {
         "unifiedIdentity": ["enabled:true"],
@@ -297,7 +297,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
     "header": {
         "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version=1"
         },
         "imsOrgId": "{IMS_ORG}",
         "datasetId": "{DATASET_ID}"
@@ -306,7 +306,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
         "xdmMeta": {
             "schemaRef": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-                "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
+                "contentType": "application/vnd.adobe.xed-full+json;version=1"
             }
         },
         "xdmEntity": {
@@ -336,7 +336,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
     "header": {
         "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
-            "contentType": "application/vnd.adobe.xed-full+json;version={SCHEMA_VERSION}"
+            "contentType": "application/vnd.adobe.xed-full+json;version=1"
         },
         "imsOrgId": "{IMS_ORG}",
         "datasetId": "{DATASET_ID}",
@@ -456,5 +456,3 @@ curl -X GET 'https://platform.adobe.io/data/core/ups/access/entities?schema.name
 通过阅读此文档，您现在了解如何使用流连接将记录数据收录到[!DNL Platform]中。 您可以尝试使用不同的值发出更多调用并检索更新的值。 此外，您还可以通过[!DNL Platform] UI开始监视所摄数据。 有关详细信息，请阅读[监视数据摄取](../quality/monitor-data-ingestion.md)指南。
 
 有关流摄取的详细信息，请阅读[流摄取概述](../streaming-ingestion/overview.md)。
-
-
