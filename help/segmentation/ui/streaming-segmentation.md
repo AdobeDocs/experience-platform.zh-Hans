@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；流分段；分段；分段服务；分段服务；用户界面指南；
 solution: Experience Platform
 title: 流分段UI指南
-topic: ui guide
+topic: ui指南
 description: Adobe Experience Platform上的流细分使您能够近乎实时地进行细分，同时专注于数据的丰富性。 借助流细分，当数据进入平台时，细分资格现在会发生，从而缓解了计划和运行细分作业的需求。 借助此功能，现在可以在数据传递到平台时评估大多数细分规则，这意味着，在不运行计划的细分作业的情况下，区段成员资格将保持最新。
+exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
 translation-type: tm+mt
-source-git-commit: 405b7eb0c95ebef0b05d2b10ef92f28a37b7cc86
+source-git-commit: e1ae20412f449c991f53fdd0f095d0c3a6de262c
 workflow-type: tm+mt
-source-wordcount: '769'
+source-wordcount: '798'
 ht-degree: 0%
 
 ---
-
 
 # 流细分
 
@@ -39,9 +39,11 @@ ht-degree: 0%
 | ---------- | ------- | ------- |
 | 传入点击 | 任何区段定义，指没有时间限制的单个传入事件。 | ![](../images/ui/streaming-segmentation/incoming-hit.png) |
 | 在相对时间窗口内传入点击 | 引用单个传入事件的任何区段定义。 | ![](../images/ui/streaming-segmentation/relative-hit-success.png) |
+| 带时间窗口的传入点击 | 任何区段定义，指带时间窗口的单个传入事件。 | ![](../images/ui/streaming-segmentation/historic-time-window.png) |
 | 仅用户档案 | 只引用用户档案属性的任何区段定义。 |  |
 | 指用户档案的传入点击 | 引用单个传入事件（无时间限制）和一个或多个用户档案属性的任何区段定义。 | ![](../images/ui/streaming-segmentation/profile-hit.png) |
 | 在相对时间窗口内引用用户档案的传入点击 | 引用单个传入事件和一个或多个用户档案属性的任何区段定义。 | ![](../images/ui/streaming-segmentation/profile-relative-success.png) |
+| 分类 | 包含一个或多个批或流区段的任何区段定义。 | ![](../images/ui/streaming-segmentation/two-batches.png) |
 | 引用事件的多个用户档案 | 在过去24小时内引用多个事件&#x200B;**且（可选）具有一个或多个用户档案属性的任何区段定义。** | ![](../images/ui/streaming-segmentation/event-history-success.png) |
 
 在以下情况下，将&#x200B;**不**&#x200B;启用区段定义以进行流分段：
@@ -64,7 +66,7 @@ ht-degree: 0%
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
 
-具体而言，将显示有关&#x200B;**[!UICONTROL 总合格受众大小]**&#x200B;的详细信息。 **[!UICONTROL 合计合格受众大小]**&#x200B;显示上次完成区段作业运行中合格受众的总数。 如果在过去24小时内未完成区段作业，则将从估计中取得受众数。
+具体而言，将显示有关&#x200B;**[!UICONTROL total qualified audience size]**&#x200B;的详细信息。 **[!UICONTROL Total qualified audience size]**&#x200B;显示上次完成的区段作业运行中合格受众的总数。 如果在过去24小时内未完成区段作业，则将从估计中取得受众数。
 
 下面是一个折线图，显示在过去24小时内被合格和取消资格的区段数。 可以调整下拉列表以显示最近24小时、上周或最近30天。
 
