@@ -4,14 +4,14 @@ solution: Experience Platform
 title: '利用流细分快速实时评估事件 '
 topic: 开发人员指南
 description: 本文档包含有关如何使用Adobe Experience Platform Segmentation Service API的流分段的示例。
+exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
 translation-type: tm+mt
-source-git-commit: bb7edcaccca87918c56d00e092e4b7154d7c5d6e
+source-git-commit: e1ae20412f449c991f53fdd0f095d0c3a6de262c
 workflow-type: tm+mt
-source-wordcount: '1342'
+source-wordcount: '1377'
 ht-degree: 1%
 
 ---
-
 
 # 使用流细分近乎实时地评估事件
 
@@ -75,9 +75,11 @@ ht-degree: 1%
 | ---------- | ------- |
 | 传入点击 | 任何区段定义，指没有时间限制的单个传入事件。 |
 | 在相对时间窗口内传入点击 | 引用单个传入事件的任何区段定义。 |
+| 带时间窗口的传入点击 | 任何区段定义，指带时间窗口的单个传入事件。 |
 | 仅用户档案 | 只引用用户档案属性的任何区段定义。 |
 | 指用户档案的传入点击 | 引用单个传入事件（无时间限制）和一个或多个用户档案属性的任何区段定义。 |
 | 在相对时间窗口内引用用户档案的传入点击 | 引用单个传入事件和一个或多个用户档案属性的任何区段定义。 |
+| 分类 | 包含一个或多个批或流区段的任何区段定义。 |
 | 引用事件的多个用户档案 | 在过去24小时内引用多个事件&#x200B;**且（可选）具有一个或多个用户档案属性的任何区段定义。** |
 
 在以下情况下，将&#x200B;**不**&#x200B;启用区段定义以进行流分段：
