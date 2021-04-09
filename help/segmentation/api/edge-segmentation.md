@@ -6,18 +6,18 @@ topic: 开发人员指南
 description: 本文档包含有关如何使用Adobe Experience Platform Segmentation Service API的边缘分割的示例。
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
 translation-type: tm+mt
-source-git-commit: 692bfca8d14ac247527f956bbcba8b4eb37516e3
+source-git-commit: 36169a42c7f6a73ca9cc165cd338d6a1cf245bfc
 workflow-type: tm+mt
-source-wordcount: '636'
-ht-degree: 1%
+source-wordcount: '653'
+ht-degree: 3%
 
 ---
 
-# 边缘分割
+# 边缘分割（测试版）
 
 >[!NOTE]
 >
->以下文档说明如何使用API执行边缘分割。 有关使用UI执行边缘分割的信息，请阅读[边缘分割UI指南](../ui/edge-segmentation.md)。
+>以下文档说明如何使用API执行边缘分割。 有关使用UI执行边缘分割的信息，请阅读[边缘分割UI指南](../ui/edge-segmentation.md)。 此外，边缘分割当前处于测试阶段。 文档和功能可能会发生变化。
 
 边缘细分是指在边缘即时评估Adobe Experience Platform中的细分，支持相同页面和下一页个性化使用案例。
 
