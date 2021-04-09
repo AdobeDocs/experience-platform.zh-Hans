@@ -6,14 +6,18 @@ topic: ui指南
 description: 边缘细分是指在Platform中即时评估边缘区段的能力，支持相同页面和下一页个性化使用案例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
 translation-type: tm+mt
-source-git-commit: 692bfca8d14ac247527f956bbcba8b4eb37516e3
+source-git-commit: 36169a42c7f6a73ca9cc165cd338d6a1cf245bfc
 workflow-type: tm+mt
-source-wordcount: '332'
-ht-degree: 1%
+source-wordcount: '348'
+ht-degree: 4%
 
 ---
 
-# 边缘分割UI指南
+# 边缘分段UI指南（测试版）
+
+>[!NOTE]
+>
+>边缘分段当前为测试版。 文档和功能可能会发生变化。
 
 边缘细分是指在边缘即时评估Adobe Experience Platform中的细分，支持相同页面和下一页个性化使用案例。
 
