@@ -6,7 +6,7 @@ topic: 概述
 description: 本文档介绍了与数据准备一起使用的映射功能。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
 translation-type: tm+mt
-source-git-commit: 21782ee74adfe97fa0a88f499d01393155691b29
+source-git-commit: 8b74cf5f54ddf56486d7b947b38bef58823c3684
 workflow-type: tm+mt
 source-wordcount: '3793'
 ht-degree: 3%
@@ -42,7 +42,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左/向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | concat | 连接给定字符串。 | <ul><li>字符串：将连接的字符串。</li></ul> | concat(STRING_1, STRING_2) | concat（&quot;嗨，&quot;,&quot;there&quot;, &quot;!&quot;） | `"Hi, there!"` |
 | 爆炸 | 根据正则表达式拆分字符串并返回一组部分。 可以选择包含正则表达式以拆分字符串。 默认情况下，拆分解析为“，”。 以下分隔符&#x200B;**需要**&#x200B;用`\`进行转义：`+, ?, ^, |, ., [, (, {, ), *, $, \`如果包含多个字符作为分隔符，则分隔符将被视为多字符分隔符。 | <ul><li>字符串：**必需**&#x200B;需要拆分的字符串。</li><li>正则表达式：*可选*&#x200B;可用于拆分字符串的常规表达式。</li></ul> | explode(STRING， REGEX) | explode（&quot;你好！&quot;, &quot; &quot;） | `["Hi,", "there"]` |
 | instr | 返回子字符串的位置/索引。 | <ul><li>输入：**必需**&#x200B;正在搜索的字符串。</li><li>子字符串：**必需**&#x200B;在字符串中搜索的子字符串。</li><li>开始_POSITION:*可选*&#x200B;查找字符串中要开始的位置。</li><li>具体值：*可选*&#x200B;从开始位置查找的第n个事件。 默认情况下，它为1。 </li></ul> | instr(INPUT， SUBSTRING， 开始_POSITION， OCCURRENCE) | instr(&quot;adobe.com&quot;, &quot;com&quot;) | 6 |
@@ -67,7 +67,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 ### 常规表达式功能
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | extract_regex | 根据常规表达式从输入字符串提取组。 | <ul><li>字符串：**必需**&#x200B;要从中提取组的字符串。</li><li>正则表达式：**必需**&#x200B;您希望组匹配的常规表达式。</li></ul> | extract_regex(STRING， REGEX) | extract_regex&#x200B;(&quot;E259,E259B_009,1_1&quot; &#x200B;, &quot;([^,]+),[^,]*,([^,]+)&quot;) | [&quot;E259,E259B_009,1_1&quot;、&quot;E259&quot;、&quot;1_1&quot;] |
 | matches_regex | 检查字符串是否与输入的常规表达式匹配。 | <ul><li>字符串：**必需**&#x200B;您正在检查的字符串与常规表达式匹配。</li><li>正则表达式：**必需**&#x200B;要与之比较的常规表达式。</li></ul> | matches_regex(STRING， REGEX) | matches_regex(&quot;E259,E259B_009,1_1&quot;, &quot;([^,]+),[^,]*,([^,]+)&quot;) | true |
 
@@ -80,7 +80,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左/向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | sha1 | 使用安全哈希算法1(SHA-1)获取输入并生成哈希值。 | <ul><li>输入：**必需**&#x200B;要散列的纯文本。</li><li>字符集：*可选*&#x200B;字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha1(INPUT， CHARSET) | sha1(&quot;my text&quot;, &quot;UTF-8&quot;) | c3599c11e47719df18a24 &#x200B; 48690840c5dfcce3c80 |
 | sha256 | 使用安全哈希算法256(SHA-256)获取输入并生成哈希值。 | <ul><li>输入：**必需**&#x200B;要散列的纯文本。</li><li>字符集：*可选*&#x200B;字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha256(INPUT， CHARSET) | sha256(&quot;my text&quot;, &quot;UTF-8&quot;) | 7330d2b39ca35eaf4cb95fc846c21 &#x200B;ee6a39af698154a83a586ee270a0d372104 |
 | sha512 | 使用安全哈希算法512(SHA-512)获取输入并生成哈希值。 | <ul><li>输入：**必需**&#x200B;要散列的纯文本。</li><li>字符集：*可选*&#x200B;字符集的名称。 可能的值包括UTF-8、UTF-16、ISO-8859-1和US-ASCII。</li></ul> | sha512(INPUT， CHARSET) | sha512(&quot;my text&quot;, &quot;UTF-8&quot;) | a3d7e45a0d9be5fd4e4b9a3b8c9c2163c21ef &#x200B;708bf11b4232bb21d2a8704ada2cd7b367dd078a89 &#x200B; a5c908cfe377aceb1072a7b386b7d4fd2ff68a8fd24d16 |
@@ -96,7 +96,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左/向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | get_url_protocol | 返回给定URL中的协议。 如果输入无效，则返回null。 | <ul><li>URL:**必需**&#x200B;需要从中提取协议的URL。</li></ul> | get_url_protocol&#x200B;(URL) | get_url_protocol(&quot;https://platform &#x200B; .adobe.com/home&quot;) | https |
 | get_url_host | 返回给定URL的主机。 如果输入无效，则返回null。 | <ul><li>URL:**必需**&#x200B;需要提取主机的URL。</li></ul> | get_url_host&#x200B;(URL) | get_url_host&#x200B;(&quot;https://platform &#x200B; .adobe.com/home&quot;) | platform.adobe.com |
 | get_url_port | 返回给定URL的端口。 如果输入无效，则返回null。 | <ul><li>URL:**必需**&#x200B;需要提取端口的URL。</li></ul> | get_url_port(URL) | get_url_port&#x200B;(&quot;sftp://example.com//home/ &#x200B; joe/employee.csv&quot;) | 22 |
@@ -112,7 +112,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左/向右滚动以视图表的完整内容。 有关`date`函数的详细信息，请参阅[date函数指南](./dates.md)。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | now | 检索当前时间。 |  | now() | now() | `2020-09-23T10:10:24.556-07:00[America/Los_Angeles]` |
 | timestamp | 检索当前Unix时间。 |  | timestamp() | timestamp() | 1571850624571 |
 | 格式 | 根据指定的格式设置输入日期的格式。 | <ul><li>日期：**必需**&#x200B;输入日期，作为要设置格式的ZonedDateTime对象。</li><li>格式：**必需**&#x200B;您希望将日期更改为的格式。</li></ul> | format(DATE， FORMAT) | format(2019-10-23T11:24:00+00:00, &quot;yyyy-MM-dd HH:mm:ss&quot;) | “2019-10-23 11:24:35” |
@@ -136,7 +136,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左/向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | size_of | 返回输入的大小。 | <ul><li>输入：**必需**&#x200B;您尝试查找的对象大小。</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 | is_empty | 检查对象是否为空。 | <ul><li>输入：**必需**&#x200B;您尝试检查的对象为空。</li></ul> | is_empty(INPUT) | `is_empty([1, 2, 3])` | 假 |
 | arrays_to_object | 创建对象的列表。 | <ul><li>输入：**必需**&#x200B;键和数组对的分组。</li></ul> | arrays_to_object(INPUT) | 需要示例 | 需要示例 |
@@ -154,7 +154,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左/向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | 合并 | 返回给定数组中的第一个非空对象。 | <ul><li>输入：**必需**&#x200B;要查找的第一个非空对象的数组。</li></ul> | coalesce(INPUT) | coalesce(null、null、null、null、&quot;first&quot;、null、&quot;second&quot;) | &quot;first&quot; |
 | 第 | 检索给定数组的第一个元素。 | <ul><li>输入：**必需**&#x200B;要查找的第一个元素的数组。</li></ul> | first(INPUT) | first(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;1&quot; |
 | 最后 | 检索给定数组的最后一个元素。 | <ul><li>输入：**必需**&#x200B;要查找的最后一个元素的数组。</li></ul> | last(INPUT) | last(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;) | &quot;3&quot; |
@@ -171,7 +171,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左/向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | 解码 | 如果给定一个键和作为数组拼合的键值对的列表，则如果找到键，则函数将返回该值，如果数组中存在，则返回默认值。 | <ul><li>关键：**必需**&#x200B;要匹配的键。</li><li>OPTIONS:**必需**&#x200B;键/值对的拼合数组。 （可选）可以将默认值放在末尾。</li></ul> | decode(KEY，OPTIONS) | decode(stateCode， &quot;ca&quot;, &quot;California&quot;, &quot;pa&quot;, &quot;Pennylvania&quot;, &quot;N/A&quot;) | 如果给定的stateCode是“ca”、“California”。<br>如果给定的stateCode是“pa”、“Pennsylvania”。<br>如果stateCode与以下内容不匹配，则为“N/A”。 |
 | i | 计算给定的布尔表达式，并根据结果返回指定值。 | <ul><li>表达式:**必需**&#x200B;要求的布尔表达式。</li><li>TRUE_VALUE:**必需**&#x200B;如果表达式的计算结果为true，则返回的值。</li><li>FALSE_VALUE:**必需**&#x200B;如果表达式的计算结果为false，则返回的值。</li></ul> | if(表达式, TRUE_VALUE， FALSE_VALUE) | iif(&quot;s&quot;。equalsIgnoreCase(&quot;S&quot;), &quot;True&quot;, &quot;False&quot;) | &quot;True&quot; |
 
@@ -184,7 +184,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左/向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | min | 返回给定参数的最小值。 使用自然排序。 | <ul><li>OPTIONS:**必需**&#x200B;可相互比较的一个或多个对象。</li></ul> | min(OPTIONS) | min(3, 1, 4) | 1 |
 | max | 返回给定参数的最大值。 使用自然排序。 | <ul><li>OPTIONS:**必需**&#x200B;可相互比较的一个或多个对象。</li></ul> | max(OPTIONS) | max(3, 1, 4) | 4 |
 
@@ -197,7 +197,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左/向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | to_bigint | 将字符串转换为BigInteger。 | <ul><li>字符串：**必需**&#x200B;要转换为BigInteger的字符串。</li></ul> | to_bigint(STRING) | to_bigint&#x200B;(&quot;1000000.34&quot;) | 1000000.34 |
 | to_decimal | 将字符串转换为多次。 | <ul><li>字符串：**必需**&#x200B;要转换为多次的字符串。</li></ul> | to_decimal(STRING) | to_decimal(&quot;20.5&quot;) | 20.5 |
 | to_float | 将字符串转换为Float。 | <ul><li>字符串：**必需**&#x200B;要转换为Float的字符串。</li></ul> | to_float(STRING) | to_float(&quot;12.3456&quot;) | 12.34566 |
@@ -212,7 +212,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左/向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | json_to_object | 反序列化给定字符串中的JSON内容。 | <ul><li>字符串：**必需**&#x200B;要反序列化的JSON字符串。</li></ul> | json_to_object&#x200B;(STRING) | json_to_object&#x200B;({&quot;info&quot;:{&quot;firstName&quot;:&quot;John&quot;,&quot;lastName&quot;:&quot;Doe&quot;}) | 表示JSON的对象。 |
 
 {style=&quot;table-layout:auto&quot;}
@@ -224,7 +224,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左/向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | uuid /<br>guid | 生成伪随机ID。 |  | uuid()<br>guid( | uuid()<br>guid( | 7c0267d2-bb74-4e1a-9275-3bf4fccda5f4<br>c7016dc7-3163-43f7-afc7-2e1c9c206333 |
 
 {style=&quot;table-layout:auto&quot;}
@@ -236,7 +236,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 >请向左/向右滚动以视图表的完整内容。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
--------- | ----------- | ---------- | -------| ---------- | -------------
+| -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | ua_os_name | 从用户代理字符串中提取操作系统名称。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_os_name&#x200B;(USER_AGENT) | ua_os_name(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（如Mac OS X）AppleWebKit/534.46（KHTML如Gecko）Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS |
 | ua_os_version_major | 从用户代理字符串中提取操作系统的主要版本。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version_major&#x200B;(USER_AGENT) | ua_os_version_major &#x200B;s(&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（如Mac OS X）AppleWebKit/534.46（KHTML如Gecko）Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5 |
 | ua_os_version | 从用户代理字符串中提取操作系统的版本。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version&#x200B;(USER_AGENT) | ua_os_version(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（如Mac OS X）AppleWebKit/534.46（KHTML如Gecko）Version/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1.1 |
