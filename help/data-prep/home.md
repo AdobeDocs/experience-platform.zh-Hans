@@ -4,10 +4,11 @@ solution: Experience Platform
 title: 数据准备概述
 topic: 概述
 description: 本文档介绍Adobe Experience Platform中的数据准备。
+exl-id: f15eeb50-a531-4560-a524-1a670fbda706
 translation-type: tm+mt
-source-git-commit: 73bf6abb143c0866a400aafe984f9a553ffc1abf
+source-git-commit: 827a593c046530edba701edf26d9a47918cfd8f8
 workflow-type: tm+mt
-source-wordcount: '352'
+source-wordcount: '389'
 ht-degree: 1%
 
 ---
@@ -35,6 +36,10 @@ ht-degree: 1%
 
 将一个模式转换为另一个映射的一组映射统称为映射集。 将创建单个映射集作为每个数据流的一部分。 映射集是数据流的一个组成部分，并且作为数据流的一部分被创建、编辑和监视。
 
+## 数据格式处理
+
+数据准备功能可以可靠地处理引入平台的不同格式数据。 要了解有关数据准备如何处理不同数据类型的更多信息，请阅读[数据格式处理概述](./data-handling.md)。
+
 ## 后续步骤
 
-本文档介绍了Adobe Experience Platform中数据准备的基础知识。 要了解有关不同映射函数的详细信息，请阅读[映射函数指南](./functions.md)。 要了解有关不同日期时间字符串的详细信息，请阅读[日期字符串指南](./dates.md)。 要了解如何使用数据准备API，请阅读[数据准备开发人员指南](api/overview.md)。
+本文档介绍了Adobe Experience Platform中数据准备的基础知识。 要了解有关不同映射函数的详细信息，请阅读[映射函数指南](./functions.md)。 要了解有关数据准备如何处理不同数据类型的更多信息，请阅读[数据格式处理指南](./data-handling.md#dates)。 要了解如何使用数据准备API，请阅读[数据准备开发人员指南](api/overview.md)。
