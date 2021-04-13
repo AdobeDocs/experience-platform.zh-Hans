@@ -6,9 +6,9 @@ topic: 概述
 description: 本文档介绍了与数据准备一起使用的映射功能。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
 translation-type: tm+mt
-source-git-commit: 8b74cf5f54ddf56486d7b947b38bef58823c3684
+source-git-commit: c3939d4ce30bf12748b898f461a166f28f010abf
 workflow-type: tm+mt
-source-wordcount: '3793'
+source-wordcount: '3798'
 ht-degree: 3%
 
 ---
@@ -109,7 +109,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 >[!NOTE]
 >
->请向左/向右滚动以视图表的完整内容。 有关`date`函数的详细信息，请参阅[date函数指南](./dates.md)。
+>请向左/向右滚动以视图表的完整内容。 有关`date`函数的详细信息，请参阅[数据格式处理指南](./data-handling.md#dates)的日期部分。
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
