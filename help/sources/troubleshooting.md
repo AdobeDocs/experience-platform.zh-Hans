@@ -4,14 +4,14 @@ solution: Experience Platform
 title: 源疑难解答
 topic: 疑难解答
 description: 本文档提供有关Adobe Experience Platform源的常见问题解答。
+exl-id: 94875121-7d4d-4eb2-8760-aa795933dd7e
 translation-type: tm+mt
-source-git-commit: 26e7116858574b366760ffd4f92b14117ccd28eb
+source-git-commit: 827a593c046530edba701edf26d9a47918cfd8f8
 workflow-type: tm+mt
-source-wordcount: '655'
+source-wordcount: '663'
 ht-degree: 0%
 
 ---
-
 
 # （测试版）源疑难解答指南
 
@@ -57,7 +57,7 @@ ht-degree: 0%
 
 ### 支持哪些日期和时间格式？
 
-源在摄取数据时支持各种日期时间格式。 有关支持的日期时间格式的详细信息，请参阅[数据准备日期函数指南](../data-prep/dates.md)。
+源在摄取数据时支持各种日期时间格式。 有关支持的日期时间格式的详细信息，请参阅数据准备文档中[数据格式处理指南](../data-prep/data-handling.md#dates)的日期部分。
 
 ### 如何设置CSV、JSON和Parke文件中数组的格式？
 
