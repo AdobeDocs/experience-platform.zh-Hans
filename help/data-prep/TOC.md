@@ -5,10 +5,10 @@ user-guide-title: 数据准备指南
 user-guide-description: 准备数据以引入 Adobe Experience Platform。
 feature: 数据管理，数据摄取
 translation-type: tm+mt
-source-git-commit: cae6dc80d0394db51dc97478b92459be64c64498
+source-git-commit: c3939d4ce30bf12748b898f461a166f28f010abf
 workflow-type: tm+mt
-source-wordcount: '42'
-ht-degree: 42%
+source-wordcount: '43'
+ht-degree: 41%
 
 ---
 
@@ -22,5 +22,5 @@ ht-degree: 42%
    - [入门指南](./api/getting-started.md)
    - [函数](./api/functions.md)
    - [映射集](./api/mapping-set.md)
-- [Datetime对象](dates.md)
+- [处理数据格式](./data-handling.md)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
