@@ -3,16 +3,16 @@ keywords: Experience Platform；主页；热门主题；ui;UI;XDM;XDM系统；�
 solution: Experience Platform
 title: 使用模式编辑器创建模式
 topic: 教程
-type: 教程
+type: Tutorial
 description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
+exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 53bf2ad757b24ad294af32101124e8047580807a
 workflow-type: tm+mt
-source-wordcount: '3602'
+source-wordcount: '3533'
 ht-degree: 0%
 
 ---
-
 
 # 使用[!DNL Schema Editor]创建模式
 
@@ -32,23 +32,27 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
    * [模式合成的基础](../schema/composition.md):XDM模式及其构建块的概述，包括类、混合、数据类型和字段。
 * [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
 
-## 打开[!UICONTROL 模式]工作区{#browse}
+## 打开[!UICONTROL Schemas]工作区{#browse}
 
-[!DNL Platform] UI中的[!UICONTROL 模式]工作区提供了[!DNL Schema Library]的可视化，允许您视图管理组织可用的模式。 工作区还包括[!DNL Schema Editor]，在本教程中，您可以在该画布上构建模式。
+[!DNL Platform] UI中的[!UICONTROL Schemas]工作区提供了[!DNL Schema Library]的可视化，允许您视图管理组织可用的模式。 工作区还包括[!DNL Schema Editor]，在本教程中，您可以在该画布上构建模式。
 
-登录[!DNL Experience Platform]后，在左侧导航中选择&#x200B;**[!UICONTROL 模式]**&#x200B;以打开&#x200B;**[!UICONTROL 模式]**&#x200B;工作区。 **[!UICONTROL “浏览]**”选项卡显示一列表模式（[!DNL Schema Library]的表示形式），您可以对其进行视图和自定义。 列表包括模式所基于的名称、类型、类和行为（记录或时间序列），以及模式上次修改的日期和时间。
+登录[!DNL Experience Platform]后，在左侧导航中选择&#x200B;**[!UICONTROL Schemas]**&#x200B;以打开&#x200B;**[!UICONTROL Schemas]**&#x200B;工作区。 **[!UICONTROL Browse]**&#x200B;选项卡显示一列表模式（[!DNL Schema Library]的表示形式），您可以对其进行视图和自定义。 列表包括模式所基于的名称、类型、类和行为（记录或时间序列），以及模式上次修改的日期和时间。
 
 有关详细信息，请参阅[探索UI](../ui/explore.md)中现有XDM资源的指南。
 
 ## 创建模式并命名{#create}
 
-要开始合成模式，请选择&#x200B;**[!UICONTROL 模式]**&#x200B;工作区右上角的&#x200B;**[!UICONTROL 创建模式]**。 此时将显示一个下拉菜单，允许您选择核心类[!UICONTROL XDM单个用户档案]和[!UICONTROL XDM ExperienceEvent]。 如果这些类不适合您的用途，您还可以选择&#x200B;**[!UICONTROL 浏览]**&#x200B;以从其他可用类中进行选择，或者[创建新类](#create-new-class)。
+要开始合成模式，请选择&#x200B;**[!UICONTROL Schemas]**&#x200B;工作区右上角的&#x200B;**[!UICONTROL Create schema]**。 此时将显示一个下拉菜单，提供在核心类[!UICONTROL XDM Individual Profile]和[!UICONTROL XDM ExperienceEvent]之间进行选择的选项。 如果这些类不适合您的用途，您还可以选择&#x200B;**[!UICONTROL Browse]**&#x200B;从其他可用类中进行选择，或者[创建新类](#create-new-class)。
 
-为本教程的目的，请选择&#x200B;**[!UICONTROL XDM单个用户档案]**。
+为本教程的目的，请选择&#x200B;**[!UICONTROL XDM Individual Profile]**。
 
 ![](../images/tutorials/create-schema/create_schema_button.png)
 
-出现[!DNL Schema Editor]。 这是您将在其上合成模式的画布。 由于您选择了标准XDM类作为模式的基础，因此当您到达编辑器时，将在画布的&#x200B;**[!UICONTROL 结构]**&#x200B;部分自动创建未命名模式，并在基于该类的所有模式中包含标准字段。 该模式的分配类也列在&#x200B;**[!UICONTROL Composition]**&#x200B;部分的&#x200B;**[!UICONTROL Class]**&#x200B;下。
+由于您选择了标准XDM类作为模式的基础，因此将显示&#x200B;**[!UICONTROL Add mixin]**&#x200B;对话框，允许您立即开始向模式添加字段。 现在，选择&#x200B;**[!UICONTROL Cancel]**&#x200B;退出对话框。
+
+![](../images/tutorials/create-schema/cancel-mixin.png)
+
+出现[!DNL Schema Editor]。 这是您将在其上合成模式的画布。 当您到达编辑器时，未命名的模式将自动在画布的&#x200B;**[!UICONTROL Structure]**&#x200B;部分中创建，并基于该类在所有模式中包含的标准字段。 **[!UICONTROL Composition]**&#x200B;部分的&#x200B;**[!UICONTROL Class]**&#x200B;下还列出了模式的已分配类。
 
 ![](../images/tutorials/create-schema/schema_editor.png)
 
@@ -72,7 +76,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 您现在可以通过添加混音开始向模式添加字段。 混音是一个或多个字段的组，这些字段通常一起用于描述特定的概念。 本教程使用mixins描述忠诚度项目的成员并捕获关键信息，如姓名、生日、电话号码、地址等。
 
-要添加混音，请在&#x200B;**[!UICONTROL 混音]**&#x200B;子部分中选择&#x200B;**[!UICONTROL 添加]**。
+要添加混音，请在&#x200B;**[!UICONTROL Mixins]**&#x200B;子部分中选择&#x200B;**[!UICONTROL Add]**。
 
 ![](../images/tutorials/create-schema/add_mixin_button.png)
 
@@ -84,15 +88,15 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ![](../images/tutorials/create-schema/preview-mixin-button.png)
 
-预览混音时，右边栏中提供了混音的模式的详细描述。 您还可以在提供的画布中浏览混音的字段。 当您选择不同的字段时，右侧边栏会更新，以显示有关该字段的详细信息。 在完成预览后选择&#x200B;**[!UICONTROL 返回]**&#x200B;以返回到混音选择对话框。
+预览混音时，右边栏中提供了混音的模式的详细描述。 您还可以在提供的画布中浏览混音的字段。 当您选择不同的字段时，右侧边栏会更新，以显示有关该字段的详细信息。 预览完毕后，选择&#x200B;**[!UICONTROL Back]**&#x200B;以返回到混音选择对话框。
 
 ![](../images/tutorials/create-schema/preview-mixin.png)
 
-对于本教程，选择&#x200B;**[!UICONTROL 人口统计详细信息]**&#x200B;混音，然后选择&#x200B;**[!UICONTROL 添加混音]**。
+对于本教程，选择&#x200B;**[!UICONTROL Demographic Details]**&#x200B;混音，然后选择&#x200B;**[!UICONTROL Add mixin]**。
 
 ![](../images/tutorials/create-schema/add_mixin_person_details.png)
 
-将重新显示模式画布。 **[!UICONTROL Mixins]**&#x200B;部分现在列表“[!UICONTROL 人口统计详细信息]”，而&#x200B;**[!UICONTROL Structure]**&#x200B;部分包括由mixin提供的字段。 您可以在&#x200B;**[!UICONTROL Mixins]**&#x200B;部分下选择混音的名称，以突出显示它在画布中提供的特定字段。
+将重新显示模式画布。 **[!UICONTROL Mixins]**&#x200B;部分现在列表“[!UICONTROL Demographic Details]”，而&#x200B;**[!UICONTROL Structure]**&#x200B;部分包含由mixin提供的字段。 您可以在&#x200B;**[!UICONTROL Mixins]**&#x200B;部分下选择混音的名称，以突出显示它在画布中提供的特定字段。
 
 ![](../images/tutorials/create-schema/person_details_structure.png)
 
@@ -102,29 +106,31 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 >
 >请记住，字段可能使用标量类型（如字符串、整数、数组或日期）以及[!DNL Schema Registry]中定义的任何数据类型（表示通用概念的一组字段）。
 
-请注意，`name`字段的数据类型为“[!UICONTROL 人名]”，这意味着它也描述了一个通用概念，并包含与名称相关的子字段，如名、姓、名、字幕和后缀。
+请注意，`name`字段的数据类型为“[!UICONTROL Person name]”，这意味着它也描述了通用概念，并包含与名称相关的子字段，如名、姓、名、字幕和后缀。
 
 在画布中选择不同的字段，以显示它们贡献到模式结构的任何其他字段。
 
 ## 添加另一个混音{#mixin-2}
 
-现在，您可以重复相同的步骤以添加另一个混音。 当您此次视图&#x200B;**[!UICONTROL 添加mixin]**&#x200B;对话框时，请注意，“[!UICONTROL 人口统计详细信息]”混音已灰显，且其旁边的复选框无法选中。 这样可以防止您意外复制已包含在当前模式中的混音。
+现在，您可以重复相同的步骤以添加另一个混音。 当您此次视图&#x200B;**[!UICONTROL Add mixin]**&#x200B;对话框时，请注意，“[!UICONTROL Demographic Details]”混音已灰显，其旁边的复选框无法选中。 这样可以防止您意外复制已包含在当前模式中的混音。
 
-对于本教程，从对话框中选择“[!DNL Personal Contact Details]” mixin，然后选择&#x200B;**[!UICONTROL 添加mixin]**&#x200B;将其添加到模式。
+对于本教程，从对话框中选择“[!DNL Personal Contact Details]”混音，然后选择&#x200B;**[!UICONTROL Add mixin]**&#x200B;将其添加到模式。
 
 ![](../images/tutorials/create-schema/add_mixin_personal_details.png)
 
-添加后，画布将重新显示。 &quot;[!UICONTROL 个人联系详细信息]&quot;现在列在&#x200B;**[!UICONTROL 合成]**&#x200B;部分的&#x200B;**[!UICONTROL Mixins]**&#x200B;下，在&#x200B;**[!UICONTROL 结构]**&#x200B;下添加了用于家庭地址、移动电话等的字段。
+添加后，画布将重新显示。 “[!UICONTROL Personal Contact Details]”现在列在&#x200B;**[!UICONTROL Composition]**&#x200B;部分的&#x200B;**[!UICONTROL Mixins]**&#x200B;下，**[!UICONTROL Structure]**&#x200B;下添加了有关家庭地址、移动电话等的字段。
 
-与`name`字段类似，您刚添加的字段表示多字段概念。 例如，`homeAddress`的数据类型为“[!UICONTROL 邮政地址]”，而`mobilePhone`的数据类型为“[!UICONTROL 电话号码]”。 您可以选择其中每个字段以展开它们，并查看数据类型中包含的其他字段。
+与`name`字段类似，您刚添加的字段表示多字段概念。 例如，`homeAddress`的数据类型为“[!UICONTROL Postal address]”，而`mobilePhone`的数据类型为“[!UICONTROL Phone number]”。 您可以选择其中每个字段以展开它们，并查看数据类型中包含的其他字段。
 
 ![](../images/tutorials/create-schema/personal_details_structure.png)
 
-## 定义新的混音{#define-mixin}
+## 定义自定义混音{#define-mixin}
 
-“[!UICONTROL 忠诚度成员]”模式用于捕获与忠诚度项目成员相关的数据，因此它需要一些特定的忠诚度相关字段。 没有包含必要字段的标准混音，因此您需要定义新混音。
+“[!UICONTROL Loyalty Members]”模式用于捕获与忠诚度项目成员相关的数据，因此它需要一些特定的与忠诚度相关的字段。
 
-此时，打开&#x200B;**[!UICONTROL 添加混音]**&#x200B;对话框时，请选择&#x200B;**[!UICONTROL 创建新混音]**。 随后将要求您提供混音的显示名称和说明。
+您可以向模式添加标准[!UICONTROL Loyalty Details]混音，以捕获与忠诚度项目相关的常用字段。 我们强烈建议您使用标准混合来表示模式捕获的概念，但标准忠诚度混合的结构可能无法捕获特定忠诚度项目的所有相关数据。 在此方案中，您可以选择定义新的自定义混音以捕获这些字段。
+
+再次打开&#x200B;**[!UICONTROL Add Mixin]**&#x200B;对话框，但此次选择顶部附近的&#x200B;**[!UICONTROL Create New Mixin]**。 随后会要求您提供混音的显示名称和说明。
 
 ![](../images/tutorials/create-schema/mixin_create_new.png)
 
@@ -132,13 +138,13 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 在本教程中，将新混音命名为“忠诚度详细信息”。
 
-选择&#x200B;**[!UICONTROL 添加mixin]**&#x200B;以返回到[!DNL Schema Editor]。 &quot;[!UICONTROL 忠诚度详细信息]&quot;现在应显示在画布左侧的&#x200B;**[!UICONTROL Mixins]**&#x200B;下，但还没有与它关联的字段，因此在&#x200B;**[!UICONTROL Structure]**&#x200B;下不显示新字段。
+选择&#x200B;**[!UICONTROL Add mixin]**&#x200B;以返回到[!DNL Schema Editor]。 “[!UICONTROL Loyalty Details]”现在应显示在画布左侧的&#x200B;**[!UICONTROL Mixins]**&#x200B;下，但还没有与其关联的字段，因此在&#x200B;**[!UICONTROL Structure]**&#x200B;下面没有新字段。
 
 ## 将字段添加到混音{#mixin-fields}
 
 现在您已创建“忠诚度详细信息”混音，现在应该定义混音将对模式贡献的字段。
 
-要开始，请在&#x200B;**[!UICONTROL Mixins]**&#x200B;部分选择混合名称。 执行此操作后，编辑器的右侧将显示mixin的属性，并且在&#x200B;**[!UICONTROL Structure]**&#x200B;下模式名称旁边将显示一个&#x200B;**加号(+)**&#x200B;图标。
+要开始，请在&#x200B;**[!UICONTROL Mixins]**&#x200B;部分选择混音名称。 执行此操作后，编辑器的右侧将显示mixin的属性，并且在&#x200B;**[!UICONTROL Structure]**&#x200B;下模式名称旁边将显示一个&#x200B;**加号(+)**&#x200B;图标。
 
 ![](../images/tutorials/create-schema/loyalty_details_structure.png)
 
@@ -146,30 +152,30 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 换句话说，您添加的字段对您的组织而言是唯一的，将保存在[!DNL Schema Registry]中仅对您的组织可访问的特定区域。 您定义的字段必须始终添加到您的租户命名空间中，以防止与其他标准类、混音、数据类型和字段的名称发生冲突。
 
-在该命名空间节点中是“[!UICONTROL 新建字段]”。 这是“[!UICONTROL 忠诚度详细信息]”混音的开始。
+在该命名空间节点中是“[!UICONTROL New Field]”。 这是“[!UICONTROL Loyalty Details]”混音的开头。
 
 ![](../images/tutorials/create-schema/new_field_loyalty.png)
 
-使用编辑器右侧的控件，通过创建类型为“[!UICONTROL Object]”的`loyalty`字段来开始，该字段将用于保存您的忠诚度相关字段。 完成后，选择&#x200B;**[!UICONTROL 应用]**。
+使用编辑器右侧的控件，通过创建类型为“[!UICONTROL Object]”的`loyalty`字段来开始，该字段将用于保存您的忠诚度相关字段。 完成后，选择&#x200B;**[!UICONTROL Apply]**。
 
 ![](../images/tutorials/create-schema/loyalty_object.png)
 
-将应用更改，并显示新创建的`loyalty`对象。 选择对象旁边的&#x200B;**加号(+)**&#x200B;图标以添加其他与忠诚度相关的字段。 将显示“[!UICONTROL 新建字段]”，画布右侧将显示&#x200B;**[!UICONTROL 字段属性]**&#x200B;部分。
+将应用更改，并显示新创建的`loyalty`对象。 选择对象旁边的&#x200B;**加号(+)**&#x200B;图标以添加其他与忠诚度相关的字段。 画布的右侧将显示“[!UICONTROL New Field]”和&#x200B;**[!UICONTROL Field properties]**&#x200B;部分。
 
 ![](../images/tutorials/create-schema/new_field_in_loyalty_object.png)
 
 每个字段都需要以下信息：
 
-* **[!UICONTROL 字段名]:** 以大小写混合写成的字段名称。示例：loyaltyLevel
-* **[!UICONTROL 显示名称]:** 以标题大小写形式编写的字段名称。示例：忠诚度级别
-* **[!UICONTROL 类型]:** 字段的数据类型。这包括基本标量类型和在[!DNL Schema Registry]中定义的任何数据类型。 示例：[!UICONTROL 字符串]、[!UICONTROL 整数]、[!UICONTROL 布尔]、[!UICONTROL 人]、[!UICONTROL 地址]、[!UICONTROL 电话号码]等。
-* **[!UICONTROL 描述]:** 字段的可选描述应包括在内，以句子形式编写，最多包含200个字符。
+* **[!UICONTROL Field Name]:** 字段的名称，用驼峰大小写写。示例：loyaltyLevel
+* **[!UICONTROL Display Name]:** 以标题大小写写入的字段名称。示例：忠诚度级别
+* **[!UICONTROL Type]:** 字段的数据类型。这包括基本标量类型和在[!DNL Schema Registry]中定义的任何数据类型。 示例：[!UICONTROL String]、[!UICONTROL Integer]、[!UICONTROL Boolean]、[!UICONTROL Person]、[!UICONTROL Address]、[!UICONTROL Phone number]等。
+* **[!UICONTROL Description]:** 字段的可选描述应包含在内，以句子为例编写，最多包含200个字符。
 
-`Loyalty`对象的第一个字段将是名为`loyaltyId`的字符串。 将新字段的类型设置为“[!UICONTROL String]”时，**[!UICONTROL Field属性]**&#x200B;部分将填充几个用于应用约束的选项，包括默认值、格式和最大长度。
+`Loyalty`对象的第一个字段将是名为`loyaltyId`的字符串。 将新字段的类型设置为“[!UICONTROL String]”时，**[!UICONTROL Field properties]**&#x200B;部分将填充几个用于应用约束的选项，包括默认值、格式和最大长度。
 
 ![](../images/tutorials/create-schema/string_constraints.png)
 
-根据所选数据类型，可使用不同的约束选项。 由于`loyaltyId`将是电子邮件地址，请从&#x200B;**[!UICONTROL 格式]**&#x200B;下拉菜单中选择“[!UICONTROL email]”。 选择&#x200B;**[!UICONTROL 应用]**&#x200B;以应用您的更改。
+根据所选数据类型，可使用不同的约束选项。 由于`loyaltyId`将是电子邮件地址，请从&#x200B;**[!UICONTROL Format]**&#x200B;下拉菜单中选择“[!UICONTROL email]”。 选择&#x200B;**[!UICONTROL Apply]**&#x200B;以应用您所做的更改。
 
 ![](../images/tutorials/create-schema/loyaltyId_field.png)
 
@@ -192,11 +198,11 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 | 约束 | 描述 |
 | --- | --- |
-| [!UICONTROL 必需] | 指示数据获取需要此字段。 在摄取时，任何基于此模式上载到不包含此字段的数据集的数据都将失败。 |
-| [!UICONTROL 数组] | 指示字段包含一组值，每个值都指定了数据类型。 例如，对数据类型为“[!UICONTROL String]”的字段使用此约束指定该字段将包含字符串数组。 |
-| [!UICONTROL 枚举] | 指示此字段必须包含可能值的枚举列表中的值之一。 |
-| [!UICONTROL 身份] | 指示此字段是标识字段。 本教程](#identity-field)的后面提供了有关标识字段的详细信息。[ |
-| [!UICONTROL 关系] | 虽然可以通过使用模式模式和[!DNL Real-time Customer Profile]推断出合并关系，但这仅适用于共享同一类的模式。 [!UICONTROL Relationship]约束表示此字段引用基于不同类的模式的主标识，这表示两个模式之间的关系。 有关详细信息，请参阅[定义关系](./relationship-ui.md)的教程。 |
+| [!UICONTROL Required] | 指示数据获取需要此字段。 在摄取时，任何基于此模式上载到不包含此字段的数据集的数据都将失败。 |
+| [!UICONTROL Array] | 指示字段包含一组值，每个值都指定了数据类型。 例如，对数据类型为“[!UICONTROL String]”的字段使用此约束指定该字段将包含字符串数组。 |
+| [!UICONTROL Enum] | 指示此字段必须包含可能值的枚举列表中的值之一。 |
+| [!UICONTROL Identity] | 指示此字段是标识字段。 本教程](#identity-field)的后面提供了有关标识字段的详细信息。[ |
+| [!UICONTROL Relationship] | 虽然可以通过使用模式模式和[!DNL Real-time Customer Profile]推断出合并关系，但这仅适用于共享同一类的模式。 [!UICONTROL Relationship]约束表示此字段引用基于不同类的模式的主标识，这表示两个模式之间的关系。 有关详细信息，请参阅[定义关系](./relationship-ui.md)的教程。 |
 
 >[!NOTE]
 >
@@ -204,15 +210,15 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 >
 >![](../images/tutorials/create-schema/left-rail-special.png)
 
-在本教程中，模式中的[!DNL "loyalty"]对象需要一个新枚举字段来描述客户的“忠诚度级别”，其中该值只能是四个可能选项之一。 要将此字段添加到模式，请选择`loyalty`对象旁边的&#x200B;**加号(+)**&#x200B;图标，并填写&#x200B;**[!UICONTROL 字段名]**&#x200B;和&#x200B;**[!UICONTROL 显示名称]**&#x200B;的必填字段。 对于&#x200B;**[!UICONTROL 类型]**，选择“[!UICONTROL 字符串]”。
+在本教程中，模式中的[!DNL "loyalty"]对象需要一个新枚举字段来描述客户的“忠诚度级别”，其中该值只能是四个可能选项之一。 要将此字段添加到模式，请选择`loyalty`对象旁边的&#x200B;**加号(+)**&#x200B;图标，并填写&#x200B;**[!UICONTROL Field name]**&#x200B;和&#x200B;**[!UICONTROL Display name]**&#x200B;的必填字段。 对于&#x200B;**[!UICONTROL Type]**，选择“[!UICONTROL String]”。
 
 ![](../images/tutorials/create-schema/loyalty-level-type.png)
 
-在选择字段类型后，将显示其他复选框，包括&#x200B;**[!UICONTROL Array]**、**[!UICONTROL Enum]**&#x200B;和&#x200B;**[!UICONTROL Identity]**&#x200B;的复选框。
+选择字段类型后，将为其显示其他复选框，包括&#x200B;**[!UICONTROL Array]**、**[!UICONTROL Enum]**&#x200B;和&#x200B;**[!UICONTROL Identity]**&#x200B;的复选框。
 
-选中&#x200B;**[!UICONTROL Enum]**&#x200B;复选框以打开下面的&#x200B;**[!UICONTROL Enum值]**&#x200B;部分。 在此，您可以为每个可接受的忠诚度级别输入&#x200B;**[!UICONTROL Value]**（在camelCase中）和&#x200B;**[!UICONTROL Label]**（在“标题大小写”中为可选、适合读者的名称）。
+选中&#x200B;**[!UICONTROL Enum]**&#x200B;复选框以打开下面的&#x200B;**[!UICONTROL Enum values]**&#x200B;部分。 在此，您可以为每个可接受的忠诚度级别输入&#x200B;**[!UICONTROL Value]**（在camelCase中）和&#x200B;**[!UICONTROL Label]**（在“标题大小写”中输入一个可选的、对读者友好的名称）。
 
-完成所有字段属性后，选择&#x200B;**[!UICONTROL 应用]**&#x200B;以将“[!DNL loyaltyLevel]”字段添加到`loyalty`对象。
+完成所有字段属性后，选择&#x200B;**[!UICONTROL Apply]**&#x200B;以将“[!DNL loyaltyLevel]”字段添加到`loyalty`对象。
 
 ![](../images/tutorials/create-schema/loyalty_level_enum.png)
 
@@ -222,11 +228,11 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 数据类型允许一致地使用多字段结构，并提供比混音更灵活的性能，因为它们可以在模式中的任何位置使用。 这是通过将字段的&#x200B;**[!UICONTROL Type]**&#x200B;值设置为[!DNL Schema Registry]中定义的任何数据类型来实现的。
 
-要将`loyalty`对象转换为数据类型，请在&#x200B;**[!UICONTROL Structure]**&#x200B;下选择`loyalty`字段，然后在编辑器右侧的&#x200B;**[!UICONTROL Field properties]**&#x200B;下选择&#x200B;**[!UICONTROL Convert to new data type]**。 出现绿色快显，确认对象已成功转换。
+要将`loyalty`对象转换为数据类型，请选择&#x200B;**[!UICONTROL Structure]**&#x200B;下的`loyalty`字段，然后选择编辑器右侧&#x200B;**[!UICONTROL Field properties]**&#x200B;下的&#x200B;**[!UICONTROL Convert to new data type]**。 出现绿色快显，确认对象已成功转换。
 
 ![](../images/tutorials/create-schema/convert-data-type.png)
 
-现在，当您查看&#x200B;**[!UICONTROL Structure]**&#x200B;下时，您会发现`loyalty`字段的数据类型为“[!DNL Loyalty]”，并且这些字段旁边有小的锁图标，表明它们不再是单个字段，而是多字段数据类型的一部分。
+现在，当您查看&#x200B;**[!UICONTROL Structure]**&#x200B;下时，您会发现`loyalty`字段的数据类型为“[!DNL Loyalty]”，并且这些字段旁边有小的锁图标，表示它们不再是单个字段，而是多字段数据类型的一部分。
 
 ![](../images/tutorials/create-schema/loyalty_data_type.png)
 
@@ -252,9 +258,9 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ## 将模式字段设置为标识字段{#identity-field}
 
-模式提供的标准数据结构可用于在多个源中识别属于同一个人的数据，从而允许不同的下游用例，如分段、报告、数据科学分析等。 要根据个人身份拼接数据，键字段必须标为适用模式中的[!UICONTROL Identity]字段。
+模式提供的标准数据结构可用于在多个源中识别属于同一个人的数据，从而允许不同的下游用例，如分段、报告、数据科学分析等。 要根据个人身份拼接数据，键字段必须标记为适用模式中的[!UICONTROL Identity]字段。
 
-[!DNL Experience Platform] 通过使用中的“标识”复选框，可以轻松 **** 地指示标识字 [!DNL Schema Editor]段但是，您必须根据数据的性质确定哪个字段是用作标识的最佳候选。
+[!DNL Experience Platform] 通过使用中的复选框，可轻松地指示 **[!UICONTROL Identity]** 身份字段 [!DNL Schema Editor]但是，您必须根据数据的性质确定哪个字段是用作标识的最佳候选。
 
 例如，可能有数千个忠诚度项目成员属于相同的“忠诚度级别”，但忠诚度项目的每个成员都有唯一的`loyaltyId`（在本例中为单个成员的电子邮件地址）。 `loyaltyId`是每个成员的唯一标识符这一事实使其成为标识字段的良好候选者，而`loyaltyLevel`则不是。
 
@@ -264,13 +270,13 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 >
 >如果您计划使用`identityMap`，请记住，它将覆盖您直接添加到模式的任何主标识。 有关详细信息，请参阅模式合成指南[基础知识](../schema/composition.md#identityMap)中的`identityMap`部分。
 
-在编辑器的&#x200B;**[!UICONTROL 结构]**&#x200B;部分中，选择`loyaltyId`字段，并在&#x200B;**[!UICONTROL 字段属性]**&#x200B;下显示&#x200B;**[!UICONTROL 标识]**&#x200B;复选框。 选中该框和选项，将其设置为&#x200B;**[!UICONTROL 主标识]**。 也选择此框。
+在编辑器的&#x200B;**[!UICONTROL Structure]**&#x200B;部分，选择`loyaltyId`字段，并在&#x200B;**[!UICONTROL Field properties]**&#x200B;下方显示&#x200B;**[!UICONTROL Identity]**&#x200B;复选框。 选中该框和选项，在出现&#x200B;**[!UICONTROL Primary identity]**&#x200B;时设置此值。 也选择此框。
 
 >[!NOTE]
 >
 >每个模式只能包含一个主标识字段。 将模式字段设置为主标识后，如果您稍后尝试将模式中的其他标识字段设置为主标识，您将收到一条错误消息。
 
-接下来，您必须从下拉菜单中预定义命名空间的列表中提供&#x200B;**[!UICONTROL 标识命名空间]**。 由于`loyaltyId`是客户的电子邮件地址，请从下拉菜单中选择“[!UICONTROL 电子邮件]”。 选择&#x200B;**[!UICONTROL 应用]**&#x200B;以确认对`loyaltyId`字段的更新。
+接下来，您必须从下拉菜单中预定义命名空间的列表中提供&#x200B;**[!UICONTROL Identity namespace]**。 由于`loyaltyId`是客户的电子邮件地址，请从下拉菜单中选择“[!UICONTROL Email]”。 选择&#x200B;**[!UICONTROL Apply]**&#x200B;以确认对`loyaltyId`字段的更新。
 
 ![](../images/tutorials/create-schema/loyaltyId_primary_identity.png)
 
@@ -292,13 +298,13 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 <img src="../images/tutorials/create-schema/missing_primary_identity.png" width="600" /><br>
 
-要启用在[!DNL Profile]中使用的“Loyalty Members”模式，请首先在编辑器的&#x200B;**[!UICONTROL 结构]**&#x200B;部分中选择“[!DNL Loyalty Members]”。
+要启用[!DNL Profile]中的“Loyalty Members”模式，请首先在编辑器的&#x200B;**[!UICONTROL Structure]**&#x200B;部分选择“[!DNL Loyalty Members]”。
 
-在编辑器的右侧，将显示有关模式的信息，包括其显示名称、说明和类型。 除此信息外，还有一个&#x200B;**[!UICONTROL 用户档案]**&#x200B;切换按钮。
+在编辑器的右侧，将显示有关模式的信息，包括其显示名称、说明和类型。 除此信息外，还有一个&#x200B;**[!UICONTROL Profile]**&#x200B;切换按钮。
 
 ![](../images/tutorials/create-schema/profile-toggle.png)
 
-选择&#x200B;**[!UICONTROL 用户档案]**&#x200B;并显示一个快显窗口，要求您确认是否要启用[!DNL Profile]模式。
+选择&#x200B;**[!UICONTROL Profile]**&#x200B;并出现一个快显窗口，要求您确认是否要为[!DNL Profile]启用模式。
 
 <img src="../images/tutorials/create-schema/enable-profile.png" width="700" /><br>
 
@@ -306,11 +312,11 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 >
 >为[!DNL Real-time Customer Profile]启用模式并保存后，便无法禁用它。
 
-选择&#x200B;**[!UICONTROL 启用]**&#x200B;以确认您的选择。 您可以根据需要再次选择&#x200B;**[!UICONTROL 用户档案]**&#x200B;切换键以禁用模式，但在[!DNL Profile]启用时保存模式后，便无法再禁用它。
+选择&#x200B;**[!UICONTROL Enable]**&#x200B;以确认您的选择。 您可以根据需要再次选择&#x200B;**[!UICONTROL Profile]**&#x200B;切换键以禁用模式，但在[!DNL Profile]启用时保存模式后，便无法再禁用它。
 
 ## 后续步骤和其他资源
 
-现在，您已完成模式的编写，您可以在画布中看到完整的模式。 选择&#x200B;**[!UICONTROL 保存]**,模式将保存到[!DNL Schema Library]，使[!DNL Schema Registry]可访问。
+现在，您已完成模式的编写，您可以在画布中看到完整的模式。 选择&#x200B;**[!UICONTROL Save]**,模式将保存到[!DNL Schema Library]中，使[!DNL Schema Registry]可访问。
 
 您的新模式现在可用于将数据收录到[!DNL Platform]中。 请记住，一旦使用模式收录数据，只能进行附加更改。 有关模式版本控制的详细信息，请参阅[模式合成基础知识](../schema/composition.md)。
 
