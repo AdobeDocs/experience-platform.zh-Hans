@@ -2,19 +2,19 @@
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API；同意；同意；首选项；首选项；隐私选择退出；营销首选项；选择退出类型；基准选择处理；同意
 title: 同意和首选项数据类型
 description: “同意隐私、个性化和营销首选项”数据类型旨在支持收集由同意管理平台(CMP)和您数据操作中的其他来源生成的客户权限和首选项。
-topic: guide
+topic: 指南
+exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
 translation-type: tm+mt
-source-git-commit: 865379292985037b184d92e5d3fc1abc1873e962
+source-git-commit: 4e9395b4551842cf75b0d1a4ec36c85930c42da5
 workflow-type: tm+mt
-source-wordcount: '2067'
+source-wordcount: '1838'
 ht-degree: 1%
 
 ---
 
-
 # [!DNL Consents & Preferences] 数据类型
 
-[!UICONTROL 同意隐私、个性化和营销首选项]数据类型（以下称“[!DNL Consents & Preferences]数据类型”）是[!DNL Experience Data Model](XDM)数据类型，用于支持收集由同意管理平台(CMPs)生成的客户权限和偏好以及您数据操作的其他来源。
+[!UICONTROL Consent for Privacy, Personalization and Marketing Preferences]数据类型（以下称“[!DNL Consents & Preferences]数据类型”）是[!DNL Experience Data Model](XDM)数据类型，用于支持收集由同意管理平台(CMP)和您数据操作中的其他源生成的客户权限和偏好。
 
 此文档涵盖[!DNL Consents & Preferences]数据类型提供的字段的结构和预期用途。
 
@@ -80,17 +80,6 @@ ht-degree: 1%
     },
     "metadata": {
       "time": "2019-01-01T15:52:25+00:00"
-    },
-    "idSpecific": {
-      "email": {
-        "jdoe@example.com": {
-          "marketing": {
-            "email": {
-              "val": "n"
-            }
-          }
-        }
-      }
     }
   }
 }
@@ -250,36 +239,6 @@ ht-degree: 1%
 | 属性 | 描述 |
 | --- | --- |
 | `time` | 上次更新客户同意和首选项时的ISO 8601时间戳。 可以使用此字段，而不是将时间戳应用到单个首选项，以减少负载和复杂性。 在单个首选项下提供`time`值将覆盖该特定首选项的`metadata`时间戳。 |
-
-### `idSpecific`
-
-`idSpecific` 当特定同意或偏好并非普遍适用于客户，但仅限于单个设备或ID时，即可使用。例如，客户可以接收到选择退出一个地址的电子邮件，同时允许另一个地址发送电子邮件。
-
->[!IMPORTANT]
->
->渠道级同意和偏好（即，在`idSpecific`之外的`consents`下提供的同意和偏好）适用于该渠道中的ID。 因此，无论是接受对等的ID设置还是设备特定设置，所有渠道级同意和首选项都会直接影响：
->
->* 如果客户已在渠道级别退出，则会忽略`idSpecific`中的任何对等同意或首选项。
->* 如果未设置渠道级同意或偏好，或者客户已选择，则`idSpecific`中的对等同意或偏好将被接受。
-
-
-`idSpecific`对象中的每个键都表示Adobe Experience Platform Identity Service可识别的特定身份命名空间。 虽然您可以定义自己的自定义命名空间来对不同的标识符进行分类，但建议您使用标识服务提供的标准命名空间之一来减少实时客户用户档案的存储大小。 有关身份命名空间的详细信息，请参阅Identity Service文档中的[身份命名空间概述](../../identity-service/namespaces.md)。
-
-每个命名空间对象的键表示客户为其设置首选项的唯一标识值。 每个标识值可以包含一组完整的同意和首选项，格式与`consents`相同。
-
-```json
-"idSpecific": {
-  "email": {
-    "jdoe@example.com": {
-      "marketing": {
-        "email": {
-          "val": "n"
-        }
-      }
-    }
-  }
-}
-```
 
 ## 使用数据类型{#ingest}收录数据
 
