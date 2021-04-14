@@ -3,12 +3,12 @@ product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
-user-guide-description: 了解Experience Platform如何使您能够实时向客户提供个性化体验。
+user-guide-description: 了解 Experience Platform 如何实现实时地为客户营造个性化体验。
 translation-type: tm+mt
-source-git-commit: 36b85bee308fdcf599c9b7913cf94774404f06d2
+source-git-commit: 3f7808a08d033c5940d2115006c269b8c4079822
 workflow-type: tm+mt
-source-wordcount: '170'
-ht-degree: 14%
+source-wordcount: '193'
+ht-degree: 21%
 
 ---
 
@@ -45,6 +45,10 @@ ht-degree: 14%
 * 治理、隐私和安全{#governance-privacy-security}
    * [概述](./governance-privacy-security/overview.md)
    * 同意管理 {#consent}
+      * Adobe标准{#adobe}
+         * [概述](./governance-privacy-security/consent/adobe/overview.md)
+         * [配置数据集以捕获同意和首选项数据](./governance-privacy-security/consent/adobe/dataset.md)
+         * [集成Platform Web SDK以处理同意和偏好数据](./governance-privacy-security/consent/adobe/sdk.md)
       * IAB TCF 2.0 {#iab}
          * [概述](./governance-privacy-security/consent/iab/overview.md)
          * [配置数据集以捕获同意和首选项数据](./governance-privacy-security/consent/iab/dataset.md)
