@@ -6,10 +6,10 @@ breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用 Experience Data Model (XDM) 类和混合 (mixin) 来标准化体验数据。
 feature: 模式 (Schema)
 translation-type: tm+mt
-source-git-commit: 3e1005aa11b648bd633ee4f64d527cae56cca620
+source-git-commit: 8b88a828f8680ac4d064f7f84e0db9e315526833
 workflow-type: tm+mt
-source-wordcount: '257'
-ht-degree: 22%
+source-wordcount: '279'
+ht-degree: 20%
 
 ---
 
@@ -36,6 +36,7 @@ ht-degree: 22%
       * [IdentityMap](./mixins/profile/identitymap.md)
       * [人口统计详细信息](./mixins/profile/person-details.md)
       * [个人联系人详细信息](./mixins/profile/personal-details.md)
+      * [隐私/个性化/营销首选项（同意）](./mixins/profile/consents.md)
       * [区段会员资格详细信息](./mixins/profile/segmentation.md)
       * [工作联系人详细信息](./mixins/profile/work-details.md)
    * 事件混音{#event}
@@ -51,6 +52,10 @@ ht-degree: 22%
    * [设备](./data-types/device.md)
    * [电子邮件地址](./data-types/email-address.md)
    * [环境](./data-types/environment.md)
+   * [通用同意字段](./data-types/consent-field.md)
+   * [通用营销首选项字段](./data-types/marketing-field.md)
+   * [具有订阅的通用营销首选项字段](./data-types/marketing-field-subscriptions.md)
+   * [通用个性化首选项字段](./data-types/personalization-field.md)
    * [地域](./data-types/geo.md)
    * [地理圈](./data-types/geo-circle.md)
    * [地理坐标](./data-types/geo-coordinates.md)
