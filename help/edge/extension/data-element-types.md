@@ -1,14 +1,14 @@
 ---
 title: Adobe Experience Platform Web SDK扩展中的数据元素类型
 description: 了解Adobe Experience Platform Launch中Adobe Experience Platform Web SDK扩展提供的不同数据元素类型。
+exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
 translation-type: tm+mt
-source-git-commit: 2a0ae9541a8bb2bb985d43a402d0842e73b23c81
+source-git-commit: 3f7808a08d033c5940d2115006c269b8c4079822
 workflow-type: tm+mt
 source-wordcount: '305'
 ht-degree: 47%
 
 ---
-
 
 # 数据元素类型
 
@@ -26,7 +26,7 @@ ht-degree: 47%
 
 ![](./assets/identity-map-data-element.png)
 
-## XDM 对象
+## XDM 对象 {#xdm-object}
 
 使用XDM格式将任何数据发送到Adobe Experience Platform Web SDK。 使用 XDM 对象数据元素可以更轻松地格式化数据。首次打开此数据元素时，请选择正确的 Adobe Experience Platform 沙箱和架构。选择模式后，您会看到模式的结构，您可以轻松填写。
 
