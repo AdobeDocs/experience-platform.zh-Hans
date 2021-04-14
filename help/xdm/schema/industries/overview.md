@@ -4,7 +4,7 @@ title: 行业数据模型概述
 topic: 概述
 description: 了解可使用标准体验数据模型(XDM)组件构建的各种行业垂直体系的标准数据模型。
 translation-type: tm+mt
-source-git-commit: 6a7aebb64a533158f7ab17af0cd28243aeda0eca
+source-git-commit: 9862cbcb8d8c74c96dd6bf44c5fa416f4f42fe64
 workflow-type: tm+mt
 source-wordcount: '512'
 ht-degree: 0%
@@ -52,7 +52,6 @@ ERD针对以下行业垂直体系提供：
 * [[!UICONTROL Retail]](./retail.md)
 * [[!UICONTROL Financial services]](./financial.md)
 * [[!UICONTROL Travel and hospitality]](./travel-hospitality.md)
-* [[!UICONTROL Telecommunications]](./telecom.md)
 
 ## 后续步骤
 
