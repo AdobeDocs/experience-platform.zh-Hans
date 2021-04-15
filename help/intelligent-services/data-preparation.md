@@ -3,21 +3,21 @@ keywords: Experience Platform；主页；智能服务；热门话题；智能服
 solution: Experience Platform, Intelligent Services
 title: 准备要在智能服务中使用的数据
 topic: Intelligent Services
-description: 为了使智能服务能够从您的营销事件数据中发掘洞察，数据必须在语义上以标准结构进行丰富和维护。 智能服务利用体验数据模型(XDM)模式来实现这一点。 具体而言，在Intelligent Services中使用的所有数据集]必须符合Consumer ExperienceEvent(CEE)XDM模式。
+description: 为了使智能服务能够从您的营销事件数据中发掘洞察，数据必须在语义上以标准结构进行丰富和维护。 智能服务使用体验数据模型(XDM)模式来实现这一点。
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
 translation-type: tm+mt
-source-git-commit: b311a5970a121a3277bdb72f5a1285216444b339
+source-git-commit: 867c97d58f3496cb9e9e437712f81bd8929ba99f
 workflow-type: tm+mt
-source-wordcount: '2020'
-ht-degree: 1%
+source-wordcount: '2387'
+ht-degree: 0%
 
 ---
 
 # 准备要在[!DNL Intelligent Services]中使用的数据
 
-要[!DNL Intelligent Services]从营销事件数据中发掘洞察，数据必须从语义上进行丰富并以标准结构进行维护。 [!DNL Intelligent Services] 利 [!DNL Experience Data Model] 用(XDM)模式实现这一目标。具体而言，[!DNL Intelligent Services]中使用的所有数据集都必须符合Consumer ExperienceEvent(CEE)XDM模式。
+要[!DNL Intelligent Services]从营销事件数据中发掘洞察，数据必须从语义上进行丰富并以标准结构进行维护。 [!DNL Intelligent Services] 利 [!DNL Experience Data Model] 用(XDM)模式实现这一目标。具体而言，[!DNL Intelligent Services]中使用的所有数据集必须符合Consumer ExperienceEvent(CEE)XDM模式或使用Adobe Analytics连接器。 此外，客户AI支持Adobe Audience Manager连接器。
 
-本文档提供有关将您的营销事件数据从多个渠道映射到此模式的一般指导，概述有关模式中重要字段的信息，以帮助您确定如何将数据有效映射到其结构。
+本文档提供有关将您的营销事件数据从多个渠道映射到CEE模式的一般指导，概述模式中重要字段的信息，以帮助您确定如何将数据有效映射到其结构。 如果您计划使用Adobe Analytics数据，请视图[Adobe Analytics数据准备](#analytics-data)部分。 如果您计划使用Adobe Audience Manager数据（仅限客户AI），请视图[Adobe受众管理器数据准备](#AAM-data)的部分。
 
 ## 工作流摘要
 
@@ -31,12 +31,32 @@ ht-degree: 1%
 1. 使用访问凭据，将数据上传到Blob容器。
 1. 使用Adobe咨询服务，将您的数据映射到[ Consumer ExperienceEvent模式](#cee-schema)并引入[!DNL Intelligent Services]。
 
+### Adobe Analytics数据准备{#analytics-data}
+
+客户人工智能和Attribution AI本身支持Adobe Analytics数据。 要使用Adobe Analytics数据，请按照文档中概述的步骤设置[Analytics源连接器](../sources/tutorials/ui/create/adobe-applications/analytics.md)。
+
+在源连接器将数据流化到Experience Platform中后，您可以在实例配置期间选择Adobe Analytics作为数据源，然后选择数据集。 所有必需的模式字段和混音在连接设置期间自动创建。 您无需将数据集ETL（提取、转换、加载）转换为CEE格式。
+
+>[!IMPORTANT]
+>
+>Adobe Analytics连接器回填数据最长需要4周。 如果您最近设置了连接，则应验证数据集是否具有客户或Attribution AI所需的最小数据长度。 请查看[客户AI](./customer-ai/input-output.md#data-requirements)或[Attribution AI](./attribution-ai/input-output.md#data-requirements)中的历史数据部分，并验证您是否有足够的数据用于预测目标。
+
+### Adobe Audience Manager数据准备（仅限客户人工智能）{#AAM-data}
+
+客户人工智能本身支持Adobe Audience Manager数据。 要使用Audience Manager数据，请按照文档中概述的步骤设置[Audience Manager源连接器](../sources/tutorials/ui/create/adobe-applications/audience-manager.md)。
+
+在源连接器将您的数据流化到Experience Platform中后，您可以在客户AI配置期间选择Adobe Audience Manager作为数据源，然后选择数据集。 所有必需的模式字段和混音在连接设置期间自动创建。 您无需将数据集ETL（提取、转换、加载）转换为CEE格式。
+
+>[!IMPORTANT]
+>
+>如果您最近设置了连接器，则应验证数据集是否具有所需的最小数据长度。 请查看客户AI的[输入/输出文档](./customer-ai/input-output.md)中的历史数据部分，并验证您有足够的数据用于预测目标。
+
 ### [!DNL Experience Platform] 数据准备
 
-如果数据已存储在[!DNL Platform]中，请按照以下步骤操作：
+如果您的数据已存储在[!DNL Platform]中，且未通过Adobe Analytics或Adobe Audience Manager（仅限客户AI）源连接器进行流式传输，请遵循以下步骤。 如果您计划与客户人工智能合作，仍建议您了解CEE模式。
 
 1. 查看[Consumer ExperienceEvent模式](#cee-schema)的结构，并确定是否可以将数据映射到其字段。
-1. 请与Adobe咨询服务联系，帮助将数据映射到模式并将其收录到[!DNL Intelligent Services]中，或者，如果您想自己映射数据，请按照本指南](#mapping)中的步骤操作。[
+2. 请与Adobe咨询服务联系，帮助将数据映射到模式并将其收录到[!DNL Intelligent Services]中，或者，如果您想自己映射数据，请按照本指南](#mapping)中的步骤操作。[
 
 ## 了解CEE模式{#cee-schema}
 
@@ -48,7 +68,7 @@ ht-degree: 1%
 
 ![](./images/data-preparation/schema-expansion.gif)
 
-与所有XDM模式一样，CEE混音是可扩展的。 换句话说，CEE混音中可以添加其他字段，如果需要，可以在多个模式中包含不同的变体。
+与所有XDM模式一样，CEE混音是可扩展的。 换句话说，CEE混音中可以添加其他字段，如有必要，可以在多个模式中包含不同的变量。
 
 在[公共XDM存储库](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)中可以找到混合的完整示例。 此外，您还可以视图并复制以下[JSON文件](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)，以了解如何构建数据以符合CEE模式。 在了解以下部分中概述的关键字段时，请参阅这两个示例，以确定如何将您自己的数据映射到模式。
 
