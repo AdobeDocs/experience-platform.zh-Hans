@@ -5,14 +5,14 @@ title: Customer AI 概述
 topic: 客户人工智能概述
 description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 landing-page-description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。
+exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
 translation-type: tm+mt
-source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f
+source-git-commit: 0085306a2f5172eb19590cc12bc9645278bd2b42
 workflow-type: tm+mt
 source-wordcount: '557'
 ht-degree: 18%
 
 ---
-
 
 # Customer AI 概述
 
