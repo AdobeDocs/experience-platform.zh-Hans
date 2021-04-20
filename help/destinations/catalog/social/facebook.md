@@ -1,15 +1,15 @@
 ---
-keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;messenger
+keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;messenger;facebook messenger
 title: Facebook连接
-description: 根据散列的电子邮件激活Facebook活动的用户档案，以实现受众定位、个性化和抑制。
+description: 根据散列的电子邮件为Facebook活动激活受众定位、个性化和抑制。
+exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 01aed33913b5334263090aea17f75ce181717c50
 workflow-type: tm+mt
-source-wordcount: '1119'
+source-wordcount: '1134'
 ht-degree: 2%
 
 ---
-
 
 # [!DNL Facebook] 连接
 
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 您可以在[!DNL Custom Audiences]支持的[!DNL Facebook’s]系列应用程序（包括[!DNL Facebook]、[!DNL Instagram]、[!DNL Audience Network]和[!DNL Messenger]）中使用此目标进行受众定位。 [!DNL Facebook Ads Manager] 中的版面级别会显示您要针对其运行营销活动的所选应用程序。
 
-![Adobe Experience Platform UI中的Facebook目标](../../assets/catalog/social/facebook/catalog.png)
+![Facebook目标在Adobe Experience Platform UI中](../../assets/catalog/social/facebook/catalog.png)
 
 ## 用例
 
@@ -113,11 +113,15 @@ ht-degree: 2%
 
 ## 使用自定义命名空间{#custom-namespaces}
 
-在使用`Extern_ID`命名空间向[!DNL Facebook]发送数据之前，请确保使用[!DNL Facebook Pixel]同步您自己的标识符。 有关详细信息，请参阅[官方文档](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers)。
+在使用`Extern_ID`命名空间向[!DNL Facebook]发送数据之前，请确保使用[!DNL Facebook Pixel]同步您自己的标识符。 有关详细信息，请参阅[Facebook官方文档](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers)。
 
 ## 连接到目标{#connect-destination}
 
 要连接到[!DNL Facebook]目标，请参阅[社交网络目标身份验证工作流](./workflow.md)。
+
+以下视频还演示了配置[!DNL Facebook]目标和激活区段的步骤。
+
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 ## 将区段激活到[!DNL Facebook] {#activate-segments}
 
