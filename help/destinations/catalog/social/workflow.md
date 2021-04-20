@@ -1,22 +1,30 @@
 ---
-keywords: Facebook;Facebook；社交网络；社交网络；社交网络；社交网络身份验证；社交网络身份验证
+keywords: Facebook;facebook；社交网络；社交网络；社交网络身份验证；社交网络身份验证
 title: 创建社交网络目标
-type: 教程
+type: Tutorial
 description: 了解如何连接到Adobe Experience Platform中的社交网络广告帐户。
+exl-id: a0cdf2b7-b1e8-4a8e-9d5b-58a118e7b689
 translation-type: tm+mt
-source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
+source-git-commit: 95ca7112d1f2655bf33e8a1c549e886ced244a5d
 workflow-type: tm+mt
-source-wordcount: '433'
+source-wordcount: '471'
 ht-degree: 0%
 
 ---
-
 
 # 创建社交网络目标{#social-network-destinations-workflow}
 
 ## 概述 {#overview}
 
 本教程以[!DNL Facebook]为例，但Adobe Experience Platform工作流对于所有社交网络目标都是相同的。
+
+## 配置社交目标 — 视频演练{#video}
+
+以下视频演示如何在Adobe Experience Platform中配置社交目标和激活区段。 这些步骤也按顺序排列在下几节中。
+
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
+
+## 选择社交目标{#select-destination}
 
 在&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**&#x200B;中，滚动到&#x200B;**[!UICONTROL Social]**&#x200B;类别。 选择首选社交网络目标，然后选择&#x200B;**[!UICONTROL Configure]**。
 
@@ -26,9 +34,9 @@ ht-degree: 0%
 >
 >如果与此目标的连接已存在，您可以在目标卡上看到&#x200B;**[!UICONTROL Activate]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的详细信息，请参阅目标工作区文档的[目录](../../ui/destinations-workspace.md#catalog)部分。
 
-## 身份验证步骤{#authentication}
+## 帐户步骤{#account}
 
-在&#x200B;**身份验证**&#x200B;步骤中，如果您之前已设置到社交网络目标的连接，请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;并选择现有连接。 或者，您可以选择&#x200B;**[!UICONTROL New Account]**&#x200B;来设置到社交网络目标的新连接。 选择&#x200B;**[!UICONTROL Connect to destination]**，此操作将带您到选定的社交网络目标以登录，并将Adobe Experience Cloud连接到您的社交网络Ad帐户。
+在&#x200B;**帐户**&#x200B;步骤中，如果您之前已设置到社交网络目标的连接，请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;并选择您的现有连接。 或者，您可以选择&#x200B;**[!UICONTROL New Account]**&#x200B;来设置到社交网络目标的新连接。 选择&#x200B;**[!UICONTROL Connect to destination]**，此操作将带您到选定的社交网络目标以登录，并将Adobe Experience Cloud连接到您的社交网络Ad帐户。
 
 >[!NOTE]
 >
@@ -36,23 +44,21 @@ ht-degree: 0%
 
 ![连接到社交网络目标 — 身份验证步骤](../../assets/catalog/social/workflow/pre-connect.png)
 
-确认您的凭据并将Adobe Experience Cloud连接到您的社交网络后，您可以选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续执行&#x200B;**[!UICONTROL Setup]**&#x200B;步骤。
+确认您的凭据并将Adobe Experience Cloud连接到您的社交网络后，您可以选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续执行&#x200B;**[!UICONTROL Authentication]**&#x200B;步骤。
 
 ![已确认凭据](../../assets/catalog/social/workflow/post-connect.png)
 
-## 设置步骤{#setup}
+## 身份验证步骤{#authentication}
 
-在&#x200B;**[!UICONTROL Setup]**&#x200B;步骤中，为激活流输入[!UICONTROL Name]和[!UICONTROL Description]，并填写社交网络广告帐户的[!UICONTROL Account ID]。
-
->[!IMPORTANT]
->
-> 对于[!DNL Facebook]目标，**[!UICONTROL Account ID]**&#x200B;是您的[!DNL Facebook Ad Account ID]。 您可以在[!DNL Facebook Ads Manager]中找到此ID。 将ID前缀为`act_`，如下所示：
-
-![连接到社交网络目标 — 设置步骤](../../assets/catalog/social/workflow/setup.png)
+在&#x200B;**[!UICONTROL Authentication]**&#x200B;步骤中，为激活流输入[!UICONTROL Name]和[!UICONTROL Description]，并填写社交网络广告帐户的[!UICONTROL Account ID]。
 
 >[!IMPORTANT]
 >
-> 对于[!DNL LinkedIn]目标，**[!UICONTROL Account ID]**&#x200B;是您的[!DNL LinkedIn Campaign Manager Account ID]。 您可以在[!DNL LinkedIn Campaign Manager]中找到此ID。
+> * 对于[!DNL Facebook]目标，**[!UICONTROL Account ID]**&#x200B;是您的[!DNL Facebook Ad Account ID]。 您可以在[!DNL Facebook Ads Manager]中找到此ID。 如下图所示，将ID前缀为`act_`。
+> * 对于[!DNL LinkedIn]目标，**[!UICONTROL Account ID]**&#x200B;是您的[!DNL LinkedIn Campaign Manager Account ID]。 您可以在[!DNL LinkedIn Campaign Manager]中找到此ID。
+
+
+![连接到社交网络目标 — 身份验证步骤](../../assets/catalog/social/workflow/authentication.png)
 
 在此步骤中，您还可以选择应用于此目标的任何&#x200B;**[!UICONTROL Marketing action]**。 营销活动指示要将数据导出到目标的目的。 您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
