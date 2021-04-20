@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；源连接器；源连接器；源；数据源；数据源；数据源；数据源连接
 solution: Experience Platform
 title: 源连接器概述
-topic: overview
+topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用平台服务构建、标记和增强传入数据。 您可以从各种来源收集数据，如Adobe应用程序、基于云的存储、数据库和许多其他来源。
+exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
 translation-type: tm+mt
-source-git-commit: 0e4fda4abf5c02df81b74f15d2fbcafb68548070
+source-git-commit: af5564a07577a0123e1a45043d5479f6ad45d73e
 workflow-type: tm+mt
-source-wordcount: '943'
+source-wordcount: '921'
 ht-degree: 0%
 
 ---
-
 
 # 源连接器概述
 
@@ -36,6 +36,8 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics、Adob
 - [Adobe Analytics数据连接器概述](connectors/adobe-applications/analytics.md)
 - [在UI中创建Adobe Analytics源连接](./tutorials/ui/create/adobe-applications/analytics.md)
 - [在UI中创建客户属性源连接](./tutorials/ui/create/adobe-applications/customer-attributes.md)
+- [[!DNL Marketo Engage] 连接器概述](connectors/adobe-applications/marketo/marketo.md)
+- [在UI [!DNL Marketo Engage] 中创建资源连接](./tutorials/ui/create/adobe-applications/marketo.md)
 
 ### 广告
 
@@ -121,15 +123,15 @@ Experience Platform支持从第三方协议系统中摄取数据。 有关特定
 
 ## 访问控制数据获取中的源
 
-可以在Adobe Admin Console中管理数据获取中源的权限。 您可以通过特定产品用户档案中的&#x200B;**[!UICONTROL 权限]**&#x200B;选项卡访问权限。 从&#x200B;**[!UICONTROL 编辑权限]**&#x200B;面板中，可以通过&#x200B;**[!UICONTROL 数据摄取]**&#x200B;菜单条目访问与源相关的权限。 **[!UICONTROL 视图源]**&#x200B;权限授予对&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡中可用源和&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中已验证源的只读访问权限，而&#x200B;**[!UICONTROL 管理源]**&#x200B;权限授予对读取、创建、编辑和禁用源的完全访问权限。
+可以在Adobe Admin Console中管理数据获取中源的权限。 您可以通过特定产品用户档案中的&#x200B;**[!UICONTROL Permissions]**&#x200B;选项卡访问权限。 从&#x200B;**[!UICONTROL Edit Permissions]**&#x200B;面板中，可通过&#x200B;**[!UICONTROL data ingestion]**&#x200B;菜单条目访问与源相关的权限。 **[!UICONTROL View Sources]**&#x200B;权限授予对&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡中可用源和&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡中已验证源的只读访问权限，而&#x200B;**[!UICONTROL Manage Sources]**&#x200B;权限授予对读取、创建、编辑和禁用源的完全访问权限。
 
 下表概述了UI根据这些权限的不同组合而表现的方式：
 
 | 权限级别 | 描述 |
 | ---- | ----|
-| **[!UICONTROL 视图]** 源 | 授予对“目录”选项卡中每个源类型以及“浏览”、“帐户”和“数据流”选项卡中的源的只读访问权限。 |
-| **[!UICONTROL 管理源]** 于 | 除了&#x200B;**[!UICONTROL 视图源]**&#x200B;中包含的函数外，还授予对&#x200B;**[!UICONTROL 目录]**&#x200B;中的&#x200B;**[!UICONTROL 连接源]**&#x200B;选项和&#x200B;**[!UICONTROL 浏览]**&#x200B;中的&#x200B;**[!UICONTROL 选择数据]**&#x200B;选项的访问权。 **[!UICONTROL “管]** 理源”还允许您启用或禁用 **** 数据流并编辑其计划。 |
-| **[!UICONTROL 视图]** 源关闭 **[!UICONTROL 和管]** 理源关闭 | 撤销对源的所有访问权。 |
+| **[!UICONTROL View Sources]** 开 | 授予对“目录”选项卡中每个源类型以及“浏览”、“帐户”和“数据流”选项卡中的源的只读访问权限。 |
+| **[!UICONTROL Manage Sources]** 开 | 除了&#x200B;**[!UICONTROL View Sources]**&#x200B;中包含的函数外，还授予对&#x200B;**[!UICONTROL Catalog]**&#x200B;中的&#x200B;**[!UICONTROL Connect Source]**&#x200B;选项和&#x200B;**[!UICONTROL Browse]**&#x200B;中的&#x200B;**[!UICONTROL Select Data]**&#x200B;选项的访问权。 **[!UICONTROL Manage Sources]** 还允许您启用或禁用和 **[!UICONTROL DataFlows]** 编辑其计划。 |
+| **[!UICONTROL View Sources]** 关/ **[!UICONTROL Manage Sources]** 关 | 撤销对源的所有访问权。 |
 
 有关通过Admin Console授予的可用权限（包括这四个来源）的详细信息，请参阅[访问控制概述](../access-control/home.md)。
 
