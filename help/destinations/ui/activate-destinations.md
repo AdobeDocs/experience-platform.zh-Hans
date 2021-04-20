@@ -1,15 +1,15 @@
 ---
 keywords: 激活目标；激活目标；激活数据
 title: 将用户档案和区段激活到目标
-type: 教程
+type: Tutorial
 seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
 translation-type: tm+mt
-source-git-commit: 0bb6db19dc27031115e47415c1b3241661e0a0ae
+source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
 workflow-type: tm+mt
-source-wordcount: '2025'
+source-wordcount: '2023'
 ht-degree: 0%
 
 ---
@@ -264,7 +264,7 @@ Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_202004100
 
 在要激活数据的相应广告目标中检查您的帐户。 如果激活成功，则受众会填充到您的广告平台中。
 
-## 社交网络目标
+## 社交目标
 
 对于[!DNL Facebook]，成功的激活意味着将在[[!UICONTROL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/)中以编程方式创建[!DNL Facebook]自定义受众。 由于用户对已激活的区段具有资格或取消资格，将会添加和删除该受众中的区段成员资格。
 
