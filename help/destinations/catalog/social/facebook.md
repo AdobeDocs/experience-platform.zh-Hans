@@ -4,9 +4,9 @@ title: Facebook连接
 description: 根据散列的电子邮件为Facebook活动激活受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
 translation-type: tm+mt
-source-git-commit: 01aed33913b5334263090aea17f75ce181717c50
+source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
 workflow-type: tm+mt
-source-wordcount: '1134'
+source-wordcount: '1133'
 ht-degree: 2%
 
 ---
@@ -117,7 +117,7 @@ ht-degree: 2%
 
 ## 连接到目标{#connect-destination}
 
-要连接到[!DNL Facebook]目标，请参阅[社交网络目标身份验证工作流](./workflow.md)。
+要连接到[!DNL Facebook]目标，请参阅[社交目标身份验证工作流](./workflow.md)。
 
 以下视频还演示了配置[!DNL Facebook]目标和激活区段的步骤。
 
