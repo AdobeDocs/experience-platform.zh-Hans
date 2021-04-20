@@ -6,9 +6,9 @@ user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定�
 description: 此文档列表Adobe Experience Platform目标的目录
 feature: 目标
 translation-type: tm+mt
-source-git-commit: 0bb6db19dc27031115e47415c1b3241661e0a0ae
+source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '470'
 ht-degree: 10%
 
 ---
@@ -44,7 +44,7 @@ ht-degree: 10%
       * [Bing Ads Universal 事件 Tracking(UET)扩展](./catalog/advertising/bing-ads.md)
       * [分支扩展](./catalog/advertising/branch.md)
       * [DoubleClick Floodlight（测试版）扩展](./catalog/advertising/doubleclick-floodlight.md)
-      * [Facebook像素扩展](./catalog/advertising/facebook-pixel.md)
+      * [Facebook Pixel扩展](./catalog/advertising/facebook-pixel.md)
       * [Flashtalking OneTag扩展](./catalog/advertising/flashtalking.md)
       * [Google Ads连接](./catalog/advertising/google-ads-destination.md)
       * [Google广告扩展](./catalog/advertising/google-ads-extension.md)
@@ -52,11 +52,11 @@ ht-degree: 10%
       * [Google客户匹配连接](./catalog/advertising/google-customer-match.md)
       * [Google Display &amp; Video 360连接](./catalog/advertising/google-dv360.md)
       * [Google Gtag扩展](./catalog/advertising/gtag-advertising.md)
-      * [LinkedIn Insight标记扩展](./catalog/advertising/linkedin.md)
+      * [linkedIn Insight Tag扩展](./catalog/advertising/linkedin.md)
       * [Microsoft Bing连接](./catalog/advertising/bing.md)
       * [Pinterest转换跟踪扩展](./catalog/advertising/pinterest.md)
       * [贸易台连接](./catalog/advertising/tradedesk.md)
-      * [Twitter通用网站标签扩展](./catalog/advertising/twitter-uwt.md)
+      * [Twitter Universal Website标签扩展](./catalog/advertising/twitter-uwt.md)
    * 分析目标{#analytics}
       * [分析目标概述](./catalog/analytics/overview.md)
       * [Adform网站跟踪扩展](./catalog/analytics/adform.md)
@@ -118,9 +118,9 @@ ht-degree: 10%
       * [Gainsight扩展](./catalog/personalization/gainsight.md)
       * [KickFire扩展](./catalog/personalization/kickfire.md)
       * [Marketo Web Personalization扩展](./catalog/personalization/marketo-web-personalization.md)
-   * 社交网络目标{#social}
-      * [社交网络目标概述](./catalog/social/overview.md)
-      * [创建社交网络目标](./catalog/social/workflow.md)
+   * 社交目标{#social}
+      * [社交目标概述](./catalog/social/overview.md)
+      * [创建社交目标](./catalog/social/workflow.md)
       * [Adobe Livefyre扩展](./catalog/social/adobe-livefyre.md)
       * [Facebook连接](./catalog/social/facebook.md)
       * [Linkedin匹配受众连接](./catalog/social/linkedin.md)
