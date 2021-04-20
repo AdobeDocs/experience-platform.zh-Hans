@@ -2,7 +2,7 @@
 keywords: Experience Platform；入门；内容ai；商务ai；内容和商务ai
 solution: Experience Platform, Intelligent Services
 title: 内容和商务AI快速入门
-topic: Getting started
+topic: Getting started 
 description: 内容和商务AI利用Adobe I/OAPI。 要调用Adobe I/OAPI和I/O控制台集成，您必须先完成身份验证教程。
 translation-type: tm+mt
 source-git-commit: eb163949f91b0d1e9cc23180bb372b6f94fc951f

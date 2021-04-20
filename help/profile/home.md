@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API；统一用户档案；统一用户档案；统一；用户档案;rtcp;XDM图
 title: 实时客户用户档案概述
-topic: 指南
+topic: guide
 description: 实时用户档案是一个通用的查找实体存储，它合并来自各种企业数据资产的数据，然后以单个客户用户档案和相关时间序列事件的形式提供对该数据的访问。 该功能使营销人员能够跨多个渠道通过受众推动协调一致的相关体验。
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

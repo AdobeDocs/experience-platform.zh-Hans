@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；Oracle对象存储;oracle对象存储
 solution: Experience Platform
 title: Oracle对象存储源连接器概述
-topic: 概述
+topic: overview
 description: 了解如何使用API或用户界面将Oracle对象存储连接到Adobe Experience Platform。
 translation-type: tm+mt
 source-git-commit: 04c605aedd4c52b54d0f075c169ce919650cdee9

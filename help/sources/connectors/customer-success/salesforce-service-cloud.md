@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；Salesforce Service Cloud;salesforce服务云
 solution: Experience Platform
 title: Salesforce Service Cloud源连接器概述
-topic: 概述
+topic: overview
 description: 了解如何使用API或用户界面将Salesforce Service Cloud连接到Adobe Experience Platform。
 translation-type: tm+mt
 source-git-commit: a0b016e8adc519bc79701f9fd850b6ddf7d46127

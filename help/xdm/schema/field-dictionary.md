@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；模式;模式；字段；标准字段；标准字段；词典；地图；地图
 solution: Experience Platform
 title: 体验数据模型(XDM)字段词典
-topic: overview
+topic: overviews
 description: 体验数据模型(XDM)定义一组标准字段，在组成Adobe Experience Platform模式时可以使用这些字段。 使用这些字段可使平台服务之间的行为保持一致，因为使用XDM的所有服务都将显式了解这些字段提供的特定定义。
 translation-type: tm+mt
 source-git-commit: cc1fa21df0bb2d49106775c75a0cb3c4f4d73941

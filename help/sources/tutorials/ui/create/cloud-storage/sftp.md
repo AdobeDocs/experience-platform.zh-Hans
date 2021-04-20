@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；SFTP;sftp
 solution: Experience Platform
 title: 在UI中创建SFTP源连接
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建SFTP源连接。
 translation-type: tm+mt
 source-git-commit: 0e11acc4a599d360cb3048445003f61848ad23d3

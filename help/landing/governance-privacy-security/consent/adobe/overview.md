@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 在Adobe Experience Platform中处理同意
-topic: 入门
+topic: getting started
 description: 了解如何使用Adobe 2.0标准在Adobe Experience Platform中处理客户同意信号。
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
 translation-type: tm+mt

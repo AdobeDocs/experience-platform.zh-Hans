@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；更新沙箱
 solution: Experience Platform
 title: 在API中更新沙箱
-topic: 开发人员指南
+topic: developer guide
 description: 可以通过发出PATCH请求来更新沙箱中的一个或多个字段，该请求在请求路径中包含沙箱的名称，并在请求负载中包含要更新的属性。
 translation-type: tm+mt
 source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31

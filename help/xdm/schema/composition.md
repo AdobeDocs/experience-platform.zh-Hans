@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；模式;模式；枚举；混音；混音；混音；数据类型；数据类型；数据类型；主标识；主标识；XDM个人用户档案;XDM字段；数据类型；枚举；体验事件;XDM体验事件;XDM体验事件；体验事件；体验事件；XDM Experienceevent;模式设计；类；类；类；类；数据类型；数据类型；数据类型；模式;模式；标识；标识映射；标识映射；模式设计；映射；映射；合并模式;合并
 solution: Experience Platform
 title: 模式合成基础
-topic: 概述
+topic: overview
 description: 本文档介绍了体验数据模型(XDM)模式，以及构建要在Adobe Experience Platform中使用的模式的构件、原则和最佳做法。
 translation-type: tm+mt
 source-git-commit: ae2c5f9fa4e732fefe55a8536894844986aea1e2

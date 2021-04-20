@@ -4,7 +4,7 @@ audience: user
 user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用 Experience Data Model (XDM) 类和混合 (mixin) 来标准化体验数据。
-feature: 模式 (Schema)
+feature: Schemas
 translation-type: tm+mt
 source-git-commit: 8b88a828f8680ac4d064f7f84e0db9e315526833
 workflow-type: tm+mt

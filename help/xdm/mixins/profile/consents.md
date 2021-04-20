@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: 隐私/个性化/营销首选项（同意）混合
-topic: 概述
+topic: overview
 description: 本文档概述了隐私/个性化/营销首选项（同意）混合。
 translation-type: tm+mt
 source-git-commit: 8c5ab298bad69305358ae961ebaf7836a90a0eaa

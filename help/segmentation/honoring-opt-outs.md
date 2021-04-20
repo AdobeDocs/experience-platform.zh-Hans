@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；选择退出；分段；分段服务；分段服务；荣誉退出；选择退出选择退出；选择退出；
 solution: Experience Platform
 title: 支持区段中的退出请求
-topic: 概述
+topic: overview
 description: 'Adobe Experience Platform允许您的客户发送有关在实时客户用户档案中使用和存储其数据的选择退出请求]。 这些选择退出请求是加利福尼亚消费者隐私法(CCPA)的一部分，CCPA为加州居民提供访问和删除其个人数据以及了解其个人数据是出售还是披露（以及向谁）的权利。 '
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

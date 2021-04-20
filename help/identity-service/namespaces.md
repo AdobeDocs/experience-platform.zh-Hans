@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；命名空间;命名空间;命名空间;命名空间；标识命名空间；标识命名空间；标识；标识；标识；标识服务；标识服务
 solution: Experience Platform
 title: 身份命名空间概述
-topic: 概述
+topic: overview
 description: '身份命名空间是 Identity Service 的组件，充当与身份相关的上下文指示器。例如，它们将值“name@email.com”区分为电子邮件地址或数字CRM ID“443522”。 '
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

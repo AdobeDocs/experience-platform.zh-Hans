@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；api;XDM;XDM;XDM系统；
 solution: Experience Platform
 title: 合并API端点
 description: 模式 Registry API中的/合并端点允许您在体验应用程序中以编程方式管理XDM合并模式。
-topic: 开发人员指南
+topic: developer guide
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
 translation-type: tm+mt
 source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27

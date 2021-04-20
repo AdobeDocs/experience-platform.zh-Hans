@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；流；流摄取；流摄取验证；验证；流摄取验证；验证；同步验证；同步验证；异步验证；异步验证；
 solution: Experience Platform
 title: 流摄取验证
-topic: 教程
-type: 教程
+topic: tutorial
+type: Tutorial
 description: 流摄取允许您使用流端点实时将数据上传到Adobe Experience Platform。 流式摄取API支持两种验证模式 — 同步和异步。
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；数据摄取；摄取的数据；流；概述；流摄取；延迟；流延迟；
 solution: Experience Platform
 title: 流摄取概述
-topic: 概述
+topic: overview
 description: Adobe Experience Platform的流式获取为用户提供了一种将数据从客户端和服务器端设备实时发送到Experience Platform的方法。
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

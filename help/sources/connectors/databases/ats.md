@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；Azure表存储;azure表存储;ATS;ats
 solution: Experience Platform
 title: Azure表存储源连接器概述
-topic: 概述
+topic: overview
 description: 了解如何使用API或用户界面将Azure表存储连接到Adobe Experience Platform。
 translation-type: tm+mt
 source-git-commit: 0fb97fcf5d3f8230ff86906aeef245e4a7f44f30

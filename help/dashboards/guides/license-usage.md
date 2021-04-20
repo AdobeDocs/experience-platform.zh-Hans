@@ -2,8 +2,8 @@
 keywords: Experience Platform；用户界面；UI；自定义；许可证使用仪表板;仪表板；许可证使用；授权；消耗
 title: 许可证使用仪表板
 description: Adobe Experience Platform提供了一个仪表板，您可以通过它视图有关组织许可证使用情况的重要信息。
-topic: 指南
-type: 文档
+topic: guide
+type: Documentation
 translation-type: tm+mt
 source-git-commit: 6baf1fbff20a02cd599d9ad9102d56db5a9004c3
 workflow-type: tm+mt

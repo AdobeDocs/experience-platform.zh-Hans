@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；SFTP;sftp
 solution: Experience Platform
 title: SFTP源连接器概述
-topic: 概述
+topic: overview
 description: 了解如何使用API或用户界面将SFTP服务器连接到Adobe Experience Platform。
 translation-type: tm+mt
 source-git-commit: 0e11acc4a599d360cb3048445003f61848ad23d3

@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；沙箱；沙箱
 solution: Experience Platform
 title: 在API中创建沙箱
-topic: 开发人员指南
+topic: developer guide
 description: 可以通过向“/沙箱”端点发出POST请求来创建新沙箱。
 translation-type: tm+mt
 source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31

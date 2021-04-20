@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；Adobe Experience Platform;api指南；平台api指南；平台简介；开发人员指南
 solution: Experience Platform
 title: Adobe Experience Platform API入门
-topic: api指南
+topic: api guide
 description: Adobe Experience Platform提供彼此紧密关联的API服务。 本指南包含有关可用服务、CRUD操作所需标头、错误消息、Postman集合和示例API调用的信息。
 translation-type: tm+mt
 source-git-commit: 85d2ae5ccf1b27baaafe839f1d3f00d588abe4fc

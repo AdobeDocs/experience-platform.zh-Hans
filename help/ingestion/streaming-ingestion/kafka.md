@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门话题；kafka;kafka连接器；
 solution: Experience Platform
 title: 卡夫卡连接器
-topic: 概述
+topic: overview
 description: Adobe Experience Platform的流连接器基于Apache Kafka Connect。 此库可用于将JSON事件从数据中心的Kafka主题直接流化到Experience Platform。
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

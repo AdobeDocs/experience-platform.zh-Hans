@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；数据源连接
 solution: Experience Platform
 title: 使用Flow Service API从第三方云存储系统中摄取拼花数据
-topic: 概述
+topic: overview
 type: Tutorial
 description: 本教程使用Flow Service API指导您完成从第三方云存储系统中摄取Apache Parce数据的步骤。
 exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041

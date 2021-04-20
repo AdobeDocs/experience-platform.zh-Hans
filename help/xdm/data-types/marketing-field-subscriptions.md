@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: 具有订阅数据类型的通用营销首选项字段
-topic: 概述
+topic: overview
 description: 此文档概述了具有订阅XDM数据类型的“通用营销首选项”字段。
 translation-type: tm+mt
 source-git-commit: 8c5ab298bad69305358ae961ebaf7836a90a0eaa

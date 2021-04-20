@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；Google PubSub;google pubsub
 solution: Experience Platform
 title: Google PubSub源连接器概述
-topic: 概述
+topic: overview
 description: 了解如何使用API或用户界面将Google PubSub连接到Adobe Experience Platform。
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

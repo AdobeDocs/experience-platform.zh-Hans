@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；流服务；删除帐户；删除；api
 solution: Experience Platform
 title: 使用流服务API删除帐户
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 description: 了解如何使用流服务API删除帐户。
 translation-type: tm+mt
 source-git-commit: 37be5f5ffa4640d7d4442a24cc257069237f15cb

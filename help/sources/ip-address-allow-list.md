@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；ip地址；ip地址；ip
 description: 必须先将IP地址添加到允许列表，然后才能使用源连接器。
 solution: Experience Platform
 title: 源连接的IP地址允许列表
-topic: 概述
+topic: overview
 translation-type: tm+mt
 source-git-commit: 6ee71de86d487a38ca4acc76813111994eb44bd9
 workflow-type: tm+mt

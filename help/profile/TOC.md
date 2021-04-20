@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: Real-time Customer Profile 指南
 user-guide-description: 合并客户视图，跨渠道创建统一的客户互动视图。
-feature: 配置文件
+feature: Profiles
 translation-type: tm+mt
 source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt

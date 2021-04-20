@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform；数据准备；数据准备api；疑难解答；API
 title: 数据准备API入门
-topic: 指南
+topic: guide
 description: 了解您需要了解的关键概念和基本功能，以便使用数据准备API端点执行与映射器一起使用的基本CRUD操作。
 translation-type: tm+mt
 source-git-commit: a3ea7a6b68c81ee91a338735009ae0fa63884ded

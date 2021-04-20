@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；数据管理；数据使用标签；策略服务；数据使用标签用户指南
 solution: Experience Platform
 title: 在UI中管理数据使用标签
-topic: 标签
+topic: labels
 description: 本指南涵盖在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
 translation-type: tm+mt
 source-git-commit: 41d01b3aec0afa60dd602716a30cc94402702a70

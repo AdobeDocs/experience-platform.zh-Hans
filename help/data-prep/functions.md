@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；map csv;map csv;map csv文件；map csv文件到xdm;map csv到xdm;ui指南；mapper;mapping字段；mapping函数；
 solution: Experience Platform
 title: 数据准备映射函数
-topic: 概述
+topic: overview
 description: 本文档介绍了与数据准备一起使用的映射功能。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
 translation-type: tm+mt

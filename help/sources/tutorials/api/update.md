@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；流服务；更新帐户
 solution: Experience Platform
 title: 使用流服务API更新帐户
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 description: 本教程介绍使用流服务API更新帐户的详细信息和凭据的步骤。
 translation-type: tm+mt
 source-git-commit: 37be5f5ffa4640d7d4442a24cc257069237f15cb

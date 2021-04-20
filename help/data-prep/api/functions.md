@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；数据准备；api指南；模式;
 solution: Experience Platform
 title: 模式API端点
-topic: 模式
+topic: schemas
 description: '您可以使用Adobe Experience Platform API中的“/functions”端点验证映射表达式和列表可用的映射集函数。 '
 translation-type: tm+mt
 source-git-commit: 60c80a73deb8c77f19d5963cc3319d46143fb4c3

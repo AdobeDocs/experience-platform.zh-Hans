@@ -1,7 +1,7 @@
 ---
 keywords: 电子邮件；电子邮件；电子邮件目标
 title: 电子邮件营销目标概述
-type: 教程
+type: Tutorial
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，例如发送促销电子邮件活动。
 translation-type: tm+mt
 source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c

@@ -2,7 +2,7 @@
 keywords: Experience Platform；入门；客户ai；热门主题；客户ai输入；客户ai输出
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
 title: 客户人工智能中的输入与输出
-topic: 入门指南
+topic: Getting started
 description: 进一步了解客户人工智能所使用的所需事件、输入和输出。
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
 translation-type: tm+mt

@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；流连接；创建流连接；ui指南；教程；创建流连接；流摄取；
 solution: Experience Platform
 title: 使用UI创建流连接
-topic: 教程
+topic: tutorial
 type: Tutorial
 description: 此UI指南将帮助您使用Adobe Experience Platform创建流连接。
 exl-id: 7932471c-a9ce-4dd3-8189-8bc760ced5d6

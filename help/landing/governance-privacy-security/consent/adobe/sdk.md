@@ -1,6 +1,6 @@
 ---
 title: 使用Adobe Experience Platform Web SDK处理客户同意数据
-topic: 入门
+topic: getting started
 description: 了解如何使用Adobe 2.0标准集成Adobe Experience Platform Web SDK以在Adobe Experience Platform中处理客户同意数据。
 translation-type: tm+mt
 source-git-commit: fee3f005ca3679f8639cea45c16150090b2a1e0f

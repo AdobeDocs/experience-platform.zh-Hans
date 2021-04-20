@@ -1,7 +1,7 @@
 ---
 keywords: 连接目标；目标连接；如何连接目标
 title: 连接到目标
-type: 教程
+type: Tutorial
 description: 本教程列表了在Adobe Experience Platform中连接目标的步骤
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
 translation-type: tm+mt

@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；云存储；云存储
 solution: Experience Platform
 title: 使用Flow Service API探索Cloud存储系统
-topic: 概述
+topic: overview
 description: 本教程使用Flow Service API来浏览第三方云存储系统。
 translation-type: tm+mt
 source-git-commit: 457fc9e1b0c445233f0f574fefd31bc1fc3bafc8

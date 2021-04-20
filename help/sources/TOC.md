@@ -4,7 +4,7 @@ audience: user
 user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
-feature: 数据摄取，来源
+feature: Data Ingestion, Sources
 translation-type: tm+mt
 source-git-commit: 26e7116858574b366760ffd4f92b14117ccd28eb
 workflow-type: tm+mt

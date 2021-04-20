@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: 通用同意字段数据类型
-topic: 概述
+topic: overview
 description: 本文档概述了通用同意字段XDM数据类型。
 translation-type: tm+mt
 source-git-commit: ebcd8900687b6e91d3f06690a9db0e118bbc3b58

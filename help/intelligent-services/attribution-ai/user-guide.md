@@ -2,7 +2,7 @@
 keywords: Experience Platform；用户指南；归因ai；热门主题；区域
 solution: Experience Platform, Intelligent Services
 title: Attribution AIUI指南
-topic: '用户指南 '
+topic: User guide 
 description: 此文档用作与Intelligent Services用户界面中的Attribution AI交互的指南。
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
 translation-type: tm+mt

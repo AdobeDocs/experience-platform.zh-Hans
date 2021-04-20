@@ -2,8 +2,8 @@
 keywords: Experience Platform;JupyterLab；笔记本；数据科学工作区；热门主题；分析数据笔记；eda；探索性数据分析；数据科学
 solution: Experience Platform
 title: 探索性数据分析(EDA)笔记本
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 description: 本指南重点介绍如何使用探索性分析(EDA)笔记本来发现Web数据中的模式，使用预测目标聚合事件，清理聚集数据，并了解预测者和目标之间的关系。
 translation-type: tm+mt
 source-git-commit: 1d1a19c75d2972a6fce0d39aa508cca91fb4becd

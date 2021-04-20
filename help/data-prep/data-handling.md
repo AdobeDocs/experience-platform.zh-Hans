@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；map csv;map csv;map csv文件；map csv文件到xdm;map csv到xdm;ui指南；mapper;mapping;data preparation;data preparation;preparing data;
 solution: Experience Platform
 title: 使用数据准备处理数据格式
-topic: 概述
+topic: overview
 description: 本文档概述了在数据准备中处理不同数据类型的方式。
 translation-type: tm+mt
 source-git-commit: 41656d204f7227388ee1a0a7cad01f737fb96c4f

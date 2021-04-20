@@ -4,7 +4,7 @@ audience: user
 user-guide-title: Adobe Experience Platform Identity Service
 breadcrumb-title: Platform Identity Service 指南
 user-guide-description: 跨设备和系统建立客户身份桥梁，以提供个性化的数字体验。
-feature: 身份
+feature: Identities
 translation-type: tm+mt
 source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt

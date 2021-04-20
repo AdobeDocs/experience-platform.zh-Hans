@@ -3,8 +3,8 @@ keywords: Experience Platform；主页；热门主题；更新帐户
 description: 在某些情况下，可能需要更新现有源帐户的详细信息。 “源”工作区允许您添加、编辑和删除现有批处理或流连接的详细信息，包括其名称、说明和凭据。
 solution: Experience Platform
 title: 在UI中更新源连接帐户详细信息
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 translation-type: tm+mt
 source-git-commit: 4a7405e2c8c97442d2781295dd827c6940aa33eb
 workflow-type: tm+mt

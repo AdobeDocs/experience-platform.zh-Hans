@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 导入和使用外部受众
 description: 请阅读本教程，了解如何将外部受众与Adobe Experience Platform一起使用。
-topic: 教程
+topic: tutorial
 translation-type: tm+mt
 source-git-commit: 400e4d9007212ed2693d031ae912a4f1cca97c57
 workflow-type: tm+mt

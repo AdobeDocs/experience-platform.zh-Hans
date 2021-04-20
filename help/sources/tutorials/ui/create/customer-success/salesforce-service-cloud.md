@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；Salesforce Service Cloud;salesforce服务云
 solution: Experience Platform
 title: 在UI中创建Salesforce服务云源连接
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Salesforce Service Cloud源连接。
 translation-type: tm+mt
 source-git-commit: a0b016e8adc519bc79701f9fd850b6ddf7d46127

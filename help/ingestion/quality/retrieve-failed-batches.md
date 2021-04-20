@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；检索失败的批次；失败的批次；批次摄取；失败的批次；获取失败的批次；获取失败的批次；下载失败的批次；下载失败的批次；
 solution: Experience Platform
 title: 使用数据访问API检索失败的批
-topic: 教程
-type: 教程
+topic: tutorial
+type: Tutorial
 description: 本教程介绍了使用数据摄取API检索有关失败批处理的信息的步骤。
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

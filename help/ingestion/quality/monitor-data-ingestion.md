@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门话题；监控；监控；数据流；监控摄取；数据摄取；视图记录；视图批；
 solution: Experience Platform
 title: 监控数据摄取
-topic: 概述
+topic: overview
 description: 本用户指南提供了如何在Adobe Experience Platform用户界面中监控数据的步骤。 本指南要求您拥有Adobe ID并访问Adobe Experience Platform。
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

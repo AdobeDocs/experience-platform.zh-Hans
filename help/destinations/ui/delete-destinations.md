@@ -1,7 +1,7 @@
 ---
 keywords: 删除目标；如何删除目标
 title: 删除目标
-type: 教程
+type: Tutorial
 description: 本教程列表了在Adobe Experience Platform UI中删除现有目标的步骤
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
 translation-type: tm+mt

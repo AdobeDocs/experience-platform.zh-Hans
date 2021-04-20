@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；Adobe Experience Platform;api指南；平台api指南；平台简介；开发人员指南
 solution: Experience Platform
 title: Adobe Experience Platform邮递员
-topic: api指南
+topic: api guide
 description: 此文档包含概述如何设置邮递环境、导入邮递员集合以及每个平台服务可用集合列表的步骤。
 translation-type: tm+mt
 source-git-commit: effc8fef666ffbf62c2e0874d048245f19c12111

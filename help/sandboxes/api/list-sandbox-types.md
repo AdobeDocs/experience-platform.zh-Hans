@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；列表沙箱
 solution: Experience Platform
 title: 列表API中支持的沙箱类型
-topic: 开发人员指南
+topic: developer guide
 description: 通过向/sandboxTypes端点发出列表请求，可以检索组织的受支持沙箱类型GET。
 translation-type: tm+mt
 source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31

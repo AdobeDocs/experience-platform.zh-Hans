@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；收集客户成功；客户成功
 solution: Experience Platform
 title: 使用源连接器和API从客户成功系统收集数据
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 description: 本教程介绍从客户成功系统检索数据并使用源连接器和API将其引入平台的步骤。
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
 translation-type: tm+mt

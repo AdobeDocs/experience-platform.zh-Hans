@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；标识服务api；标识服务开发人员指南；区域
 solution: Experience Platform
 title: Identity Service API指南
-topic: API指南
+topic: API guide
 description: Identity Service API允许开发人员使用Adobe Experience Platform中的标识图管理客户的跨设备、跨渠道和近乎实时的标识。 请按照本指南学习如何使用API执行关键操作。
 translation-type: tm+mt
 source-git-commit: 69c3106070e31377ea8571cd14dc33aa9b6f7037

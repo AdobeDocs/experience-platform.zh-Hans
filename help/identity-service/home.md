@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；身份；身份；XDM图；身份服务；身份服务
 solution: Experience Platform
 title: Identity Service概述
-topic: 概述
+topic: overview
 description: Adobe Experience Platform Identity Service通过跨设备和系统连接身份，帮您实时提供有影响力的个性化数字体验，从而帮助您更好地视图客户及其行为。
 translation-type: tm+mt
 source-git-commit: bb218fc0cca6fe74693e99747963058bd0dc962a

@@ -1,8 +1,8 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API
 title: 计算属性的PQL表达式示例
-topic: 指南
-type: 文档
+topic: guide
+type: Documentation
 description: 计算属性是用于将事件级数据聚合为用户档案级属性的函数。 这些函数需要使用有效的用户档案查询语言(PQL)表达式。 本指南概述了计算属性中一些最常用的PQL表达式。
 translation-type: tm+mt
 source-git-commit: 92533f732cc14b57d2a0a34ce9afe99554f9af04

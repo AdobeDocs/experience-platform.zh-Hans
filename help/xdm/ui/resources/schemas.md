@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；
 solution: Experience Platform
 title: 在UI中创建和编辑模式
 description: 学习如何在Experience Platform用户界面中创建和编辑模式的基础知识。
-topic: 用户指南
+topic: user guide
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
 translation-type: tm+mt
 source-git-commit: 90a0c4e8d47d9bce38c9e13272e4f41f78f46e35

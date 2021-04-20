@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；数据准备；api指南；模式;
 solution: Experience Platform
 title: 模式API端点
-topic: 模式
+topic: schemas
 description: '您可以使用Adobe Experience Platform API中的“/模式”端点以编程方式检索、创建和更新模式，以便与平台中的映射器一起使用。 '
 translation-type: tm+mt
 source-git-commit: 435d27f7187074c78209948c0e57b610b63d2055

@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: 数据准备指南
 user-guide-description: 准备数据以引入 Adobe Experience Platform。
-feature: 数据管理，数据摄取
+feature: Data Management, Data Ingestion
 translation-type: tm+mt
 source-git-commit: c3939d4ce30bf12748b898f461a166f28f010abf
 workflow-type: tm+mt

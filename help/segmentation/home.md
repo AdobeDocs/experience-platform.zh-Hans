@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；分段；分段；分段；段服务；段；段；段；段；段
 solution: Experience Platform
 title: 分段服务概述
-topic: 概述
+topic: overview
 description: 了解Adobe Experience Platform Segmentation Service及其在平台生态系统中的作用。
 translation-type: tm+mt
 source-git-commit: eff833f20eba4e51579a43fbb98c1e2333e326ef

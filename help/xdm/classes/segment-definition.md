@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: 区段定义类
-topic: 概述
+topic: overview
 description: 本文档概述了体验数据模型(XDM)中的区段定义类。
 translation-type: tm+mt
 source-git-commit: f4e80cc6a5e5e135bedb77b2d56ae5cb2c8d8c53

@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；Azure Data Lake存储Gen2;ADLS-Gen2;adls gen2;ADLS Gen2
 solution: Experience Platform
 title: Azure Data Lake 存储 Gen2源连接器概述
-topic: 概述
+topic: overview
 description: 了解如何使用API或用户界面将Azure Data Lake 存储 Gen2连接到Adobe Experience Platform。
 translation-type: tm+mt
 source-git-commit: 7fc99214272d2ce743b3666826c66f5d65e4d2ca

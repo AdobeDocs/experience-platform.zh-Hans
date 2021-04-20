@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；实时客户用户档案；身份服务；
 solution: Experience Platform
 title: 实时客户用户档案教程
-topic: 教程
-type: 教程
+topic: tutorial
+type: Tutorial
 description: 本文档概述了所涉及的步骤，并提供了用于完成每个工作流程的教程的链接。
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

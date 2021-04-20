@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: 通用营销首选项字段数据类型
-topic: 概述
+topic: overview
 description: 此文档概述了通用营销首选项字段XDM数据类型。
 translation-type: tm+mt
 source-git-commit: f5ec59e609fda66d379847dca068d19d4cce8228

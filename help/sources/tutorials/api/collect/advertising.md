@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；流式服务；广告；google adwords；广告
 solution: Experience Platform
 title: 使用源连接器和API收集广告数据
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 description: 本教程介绍从第三方广告应用程序检索数据并使用源连接器和流服务API将其引入平台的步骤。
 exl-id: 2a0eb13b-d09e-4bc1-aae3-84c8741eead1
 translation-type: tm+mt

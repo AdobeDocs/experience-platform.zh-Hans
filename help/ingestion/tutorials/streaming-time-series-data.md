@@ -2,7 +2,7 @@
 keywords: Experience Platform；主题；热门话题；流摄取；摄取；时间序列数据；流时间序列数据；
 solution: Experience Platform
 title: 使用流摄取API流式传输时间系列数据
-topic: 教程
+topic: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform Data Ingestion Service API的一部分。
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500

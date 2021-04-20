@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；批处理摄取；批处理摄取；开发人员指南；api指南；上传；摄取Parke；摄取json;
 solution: Experience Platform
 title: 批量摄取API指南
-topic: 开发人员指南
+topic: developer guide
 description: 本文档全面介绍了如何使用批量摄取API。
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
 translation-type: tm+mt

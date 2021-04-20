@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；边缘分割；分割；分割服务；分割服务；用户界面指南；流边缘；
 solution: Experience Platform
 title: 边缘分段UI指南
-topic: ui指南
+topic: ui guide
 description: 边缘细分是指在Platform中即时评估边缘区段的能力，支持相同页面和下一页个性化使用案例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
 translation-type: tm+mt

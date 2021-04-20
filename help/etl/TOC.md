@@ -4,7 +4,7 @@ audience: user
 user-guide-title: Adobe Experience Platform ETL 指南
 breadcrumb-title: ETL 指南
 user-guide-description: 了解创建安全、高性能连接器以将数据引入平台的一般步骤。
-feature: 数据管理，数据摄取
+feature: Data Management, Data Ingestion
 translation-type: tm+mt
 source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt

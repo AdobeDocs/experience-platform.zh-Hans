@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；
 solution: Experience Platform
 title: 导出/导入API端点
 description: 模式 Registry API中的/export和/import端点允许您在IMS组织和沙箱之间共享XDM资源。
-topic: 开发人员指南
+topic: developer guide
 translation-type: tm+mt
 source-git-commit: 0727ffa0c72bcb6a85de1a13215b691b97889b70
 workflow-type: tm+mt

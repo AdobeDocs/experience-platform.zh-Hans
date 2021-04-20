@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；云存储数据；流数据；流
 solution: Experience Platform
 title: 使用源连接器和API收集流数据
-topic: 概述
+topic: overview
 type: Tutorial
 description: 本教程介绍了使用源连接器和API检索流数据并将其引入平台的步骤。
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4

@@ -2,7 +2,7 @@
 keywords: Experience Platform；洞察；客户ai；热门主题；客户ai洞察
 solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
 title: 通过客户人工智能发掘洞察
-topic: 发现洞察
+topic: Discovering insights
 description: 此文档可作为与智能服务客户人工智能用户界面中的服务实例洞察交互的指南。
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
 translation-type: tm+mt

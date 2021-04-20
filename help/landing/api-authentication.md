@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；身份验证；访问
 solution: Experience Platform
 title: 验证和访问Experience PlatformAPI
-topic: 教程
-type: 教程
+topic: tutorial
+type: Tutorial
 description: '此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。 '
 translation-type: tm+mt
 source-git-commit: ca5c8527b1b54856aa1e762a06ddbe404f30ec42

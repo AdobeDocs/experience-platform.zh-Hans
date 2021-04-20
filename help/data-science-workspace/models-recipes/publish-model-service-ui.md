@@ -2,8 +2,8 @@
 keywords: Experience Platform；发布模型；数据科学工作区；热门主题；为服务打分
 solution: Experience Platform
 title: 在数据科学工作区用户界面中将模型发布为服务
-topic: 教程
-type: 教程
+topic: tutorial
+type: Tutorial
 description: Adobe Experience Platform Data Science Workspace允许您将经过培训和评估的模型作为服务发布，使IMS组织内的用户无需创建自己的模型即可对数据进行评分。
 translation-type: tm+mt
 source-git-commit: 13fa4af388c6f31768a6b7e1da05cb56c5635c9e

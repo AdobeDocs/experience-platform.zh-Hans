@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 量度API端点
-topic: 开发人员指南
+topic: developer guide
 description: 了解如何使用Oncentibry Insights API在Experience Platform中检索可观测性指标。
 translation-type: tm+mt
 source-git-commit: 136c75f56c2ba4d61fef7981ff8a7889a0ade3d1

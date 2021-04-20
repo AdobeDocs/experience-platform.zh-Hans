@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform；数据准备；数据准备api；疑难解答；API
 title: 数据准备API概述
-topic: 指南
+topic: guide
 description: 数据准备API允许您以编程方式创建映射集和函数，从而在源模式和目标应用程序之间转换数据。
 translation-type: tm+mt
 source-git-commit: cae6dc80d0394db51dc97478b92459be64c64498

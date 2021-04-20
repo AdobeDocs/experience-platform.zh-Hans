@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；目录服务；目录服务；目录服务；目录
 solution: Experience Platform
 title: 目录服务API指南
-topic: 开发人员指南
+topic: developer guide
 description: Catalog Service API允许开发人员管理Adobe Experience Platform中的数据集元数据。 请按照本指南学习如何使用API执行关键操作。
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

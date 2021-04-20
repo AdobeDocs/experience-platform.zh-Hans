@@ -2,8 +2,8 @@
 keywords: Experience Platform；首页；热门主题；收集付款数据；付款数据
 solution: Experience Platform
 title: 使用源连接器和API收集付款数据
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 description: 本教程介绍了从支付应用程序检索数据并使用源连接器和API将其引入平台的步骤。
 exl-id: b75e2a3d-6590-4079-a261-fa4e9626e8dc
 translation-type: tm+mt

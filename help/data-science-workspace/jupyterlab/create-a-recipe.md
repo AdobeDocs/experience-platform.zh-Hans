@@ -2,8 +2,8 @@
 keywords: Experience Platform;JupyterLab；菜谱；笔记本；数据科学工作区；热门主题；创建菜谱
 solution: Experience Platform
 title: 使用Jupyter笔记本创建菜谱
-topic: 教程
-type: 教程
+topic: tutorial
+type: Tutorial
 description: 本教程将分两个主要部分。 首先，您将使用JupyterLab Notebook中的模板创建机器学习模型。 接下来，您将在JupyterLab中练习笔记本到菜谱工作流，以在Data Science Workspace中创建菜谱。
 translation-type: tm+mt
 source-git-commit: 9d84fc1eb898020ed4b154c091fcc9fc4933c7de

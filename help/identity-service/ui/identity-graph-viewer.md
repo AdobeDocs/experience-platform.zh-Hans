@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；标识图查看器；标识图查看器；图形查看器；标识命名空间；标识命名空间；标识；标识；标识服务；标识服务
 solution: Experience Platform
 title: Identity Graph Viewer概述
-topic: 教程
+topic: tutorial
 description: 身份图是特定客户不同身份之间关系的映射，可直观地展示不同渠道中客户如何与您的品牌互动。
 translation-type: tm+mt
 source-git-commit: f4326c7a8bb8af90c092d3790e51c133744d498f

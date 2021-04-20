@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；流分段；分段；分段服务；分段服务；用户界面指南；
 solution: Experience Platform
 title: 流分段UI指南
-topic: ui指南
+topic: ui guide
 description: Adobe Experience Platform上的流细分使您能够近乎实时地进行细分，同时专注于数据的丰富性。 借助流细分，当数据进入平台时，细分资格现在会发生，从而缓解了计划和运行细分作业的需求。 借助此功能，现在可以在数据传递到平台时评估大多数细分规则，这意味着，在不运行计划的细分作业的情况下，区段成员资格将保持最新。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
 translation-type: tm+mt

@@ -1,7 +1,7 @@
 ---
 keywords: 编辑激活;编辑目标；
 title: 编辑激活流
-type: 教程
+type: Tutorial
 seo-title: 编辑激活流
 description: 请按照本文中的步骤编辑Adobe Experience Platform中的现有激活流。
 seo-description: 请按照本文中的步骤编辑Adobe Experience Platform中的现有激活流。

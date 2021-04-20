@@ -2,8 +2,8 @@
 keywords: Experience Platform;预览模式数据；数据科学工作区；热门主题
 solution: Experience Platform
 title: 预览零售销售模式和数据集
-topic: 教程
-type: 教程
+topic: tutorial
+type: Tutorial
 description: 以下文档概述了在Adobe Experience Platform上预览模式和数据集。
 translation-type: tm+mt
 source-git-commit: 5129a75071af680bc54a7f60bb89ce32d3216d09

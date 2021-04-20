@@ -1,8 +1,8 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API
 title: 实时客户用户档案API入门
-topic: 指南
-type: 文档
+topic: guide
+type: Documentation
 description: 用户档案 API入门指南概述了使用实时客户用户档案API端点对用户档案数据执行基本CRUD操作所需了解的关键概念和基本功能。
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

@@ -2,7 +2,7 @@
 keywords: Experience Platform；用户界面；UI;仪表板;仪表板;用户档案；区段；目标；许可证使用
 title: 在UI中修改平台仪表板
 description: '本指南提供有关自定义组织的Adobe Experience Platform数据在仪表板中的显示方式的分步说明。 '
-topic: 指南
+topic: guide
 translation-type: tm+mt
 source-git-commit: 5cc973a5db88eb23c6e1aeee3695820a0555e4cf
 workflow-type: tm+mt

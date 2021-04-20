@@ -3,8 +3,8 @@ keywords: Experience Platform；主页；热门主题；监视帐户；监视数
 description: 本教程提供了使用聚合监视视图和跨服务监视来监视数据流的步骤。
 solution: Experience Platform
 title: 监视UI中源的数据流
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 translation-type: tm+mt
 source-git-commit: 4c668a47e62ba7736dd2d7afe4e71fd015198356
 workflow-type: tm+mt

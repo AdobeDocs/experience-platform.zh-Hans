@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；
 solution: Experience Platform
 title: 类API端点
 description: 模式 Registry API中的/classes端点允许您在体验应用程序内以编程方式管理XDM类。
-topic: 开发人员指南
+topic: developer guide
 exl-id: 7beddb37-0bf2-4893-baaf-5b292830f368
 translation-type: tm+mt
 source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27

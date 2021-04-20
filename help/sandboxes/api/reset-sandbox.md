@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；重置沙箱
 solution: Experience Platform
 title: 在API中重置沙箱
-topic: 开发人员指南
+topic: developer guide
 description: 开发沙箱具有“工厂重置”功能，可从沙箱中删除所有非默认资源。 可以通过发出在请求路径中包含沙箱名称的PUT请求来重置沙箱。
 translation-type: tm+mt
 source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31

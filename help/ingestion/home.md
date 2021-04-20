@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；数据摄取；数据位置；数据管理;数据管理；世系；世系；批处理；批处理；摄取的数据
 solution: Experience Platform
 title: 数据摄取概述
-topic: 概述
+topic: overview
 description: 本文档介绍了将数据引入平台的三种主要方式，并提供了相应概述文档的链接，以了解更多详细信息。
 translation-type: tm+mt
 source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac

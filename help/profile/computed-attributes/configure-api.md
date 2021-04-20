@@ -1,8 +1,8 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API
 title: 如何配置计算属性字段
-topic: 指南
-type: 文档
+topic: guide
+type: Documentation
 description: 计算属性是用于将事件级数据聚合为用户档案级属性的函数。 要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用模式 Registry API创建此字段，以定义包含计算属性字段的模式和自定义混音。
 translation-type: tm+mt
 source-git-commit: 2a4fb8af8cd29254c499bfa6bfb8b316a4834526

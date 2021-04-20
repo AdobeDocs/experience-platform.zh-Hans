@@ -1,7 +1,7 @@
 ---
 keywords: 云存储目标；云存储
 title: 创建云存储目标
-type: 教程
+type: Tutorial
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 exl-id: 58003c1e-2f70-4e28-8a38-3be00da7cc3c

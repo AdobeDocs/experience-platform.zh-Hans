@@ -11,9 +11,9 @@ tutorials-title: 教程
 tutorials-url: https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html
 git-repo: https://git.corp.adobe.com/AdobeDocs/experience-platform.zh-Hans
 solution: Experience Platform
-type: 文档
+type: Documentation
 index: true
-role: 架构师、开发人员、数据架构师、数据工程师、业务从业者、管理员、领导者
+role: Architect, Developer, Data Architect, Data Engineer, Business Practitioner, Administrator, Leader
 translation-type: tm+mt
 source-git-commit: b3ab087a9cae13d2ff270916d88b8086a4122af6
 workflow-type: tm+mt

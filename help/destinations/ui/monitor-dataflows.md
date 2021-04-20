@@ -3,8 +3,8 @@ keywords: Experience Platform；主页；热门主题；监视帐户；监视数
 description: 目标是预建的与目标平台集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例的数据。
 solution: Experience Platform
 title: 监视数据流
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 exl-id: fbe35ee1-4ee8-4d67-976b-0c45f0168da4
 translation-type: tm+mt
 source-git-commit: e436d7147c613dad5b2ff596a412759fd60d228c

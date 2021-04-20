@@ -2,7 +2,7 @@
 keywords: Experience Platform；主题；热门主题；分段；分段；分段服务；流分段；流分段；流分段；连续评价；
 solution: Experience Platform
 title: '利用流细分快速实时评估事件 '
-topic: 开发人员指南
+topic: developer guide
 description: 本文档包含有关如何使用Adobe Experience Platform Segmentation Service API的流分段的示例。
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
 translation-type: tm+mt

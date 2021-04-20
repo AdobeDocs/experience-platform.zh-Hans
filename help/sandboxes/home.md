@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；沙箱；沙箱；测试；测试
 solution: Experience Platform
 title: 沙箱概述
-topic: 概述
+topic: overview
 description: 沙箱是Experience Platform单个实例中的虚拟分区，它允许与数字体验应用程序的开发过程无缝集成。
 translation-type: tm+mt
 source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31

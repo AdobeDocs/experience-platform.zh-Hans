@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；Google Cloud存储;google Cloud存储;google;Google
 solution: Experience Platform
 title: 使用流服务API创建Google Cloud存储源连接
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Google Cloud存储帐户。
 translation-type: tm+mt
 source-git-commit: f6a63ca1e21b3c3f6a55574f31fdf04038b7e5c4

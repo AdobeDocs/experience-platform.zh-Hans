@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: 金融服务业数据模型ERD
-topic: 概述
+topic: overview
 description: 视图实体关系图(ERD)，它描述了银行、金融服务和保险(BFSI)行业的标准化数据模型。 此数据模型与在Adobe Experience Platform中使用的体验数据模型(XDM)兼容。
 translation-type: tm+mt
 source-git-commit: ffc113c0c85c76e6645fb4276c174779682f2b60

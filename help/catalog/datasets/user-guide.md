@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；启用数据集；数据集；数据集
 solution: Experience Platform
 title: 数据集UI指南
-topic: 数据集
+topic: datasets
 description: 了解如何在Adobe Experience Platform用户界面中处理数据集时执行常见操作。
 translation-type: tm+mt
 source-git-commit: fc493a207e305887e798238ba6883f4934c5cba5

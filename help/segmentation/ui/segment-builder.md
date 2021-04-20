@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；分段服务；分段服务；用户指南；ui指南；分段ui指南；段生成器；段生成器；
 solution: Experience Platform
 title: 区段生成器用户界面指南
-topic: ui指南
+topic: ui guide
 description: Adobe Experience Platform UI中的区段生成器提供了丰富的工作区，允许您与用户档案数据元素进行交互。 工作区提供用于构建和编辑规则的直观控件，如用于表示数据属性的拖放拼贴。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
 translation-type: tm+mt

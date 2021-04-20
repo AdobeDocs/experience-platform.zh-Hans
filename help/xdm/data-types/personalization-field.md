@@ -1,7 +1,7 @@
 ---
 solution: Experience Platform
 title: 通用个性化首选项字段数据类型
-topic: 概述
+topic: overview
 description: 本文档概述了通用个性化首选项字段XDM数据类型。
 translation-type: tm+mt
 source-git-commit: 9ca0978cdf42926303d622a4d536ac48bca32e70

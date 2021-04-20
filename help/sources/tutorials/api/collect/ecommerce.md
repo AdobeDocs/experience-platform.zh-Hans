@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；收集电子商务数据；电子商务数据
 solution: Experience Platform
 title: 使用源连接器和API收集电子商务数据
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 description: 本教程介绍了从第三方电子商务系统检索数据并使用源连接器和API将其引入平台的步骤。
 exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
 translation-type: tm+mt

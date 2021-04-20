@@ -3,7 +3,7 @@ product: experience-platform
 audience: user
 user-guide-title: 数据流指南
 user-guide-description: 数据流是跨平台移动数据的数据作业的表示方法。
-feature: 数据管理，数据摄取
+feature: Data Management, Data Ingestion
 translation-type: tm+mt
 source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
 workflow-type: tm+mt

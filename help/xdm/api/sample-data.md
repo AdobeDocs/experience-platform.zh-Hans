@@ -3,7 +3,7 @@ keywords: Experience Platform；主题；热门主题；api;API;XDM;XDM系统；
 solution: Experience Platform
 title: 示例数据API端点
 description: 通过模式 Registry API中的/sampledata端点，可以生成映射到任何现有XDM模式结构的示例数据。
-topic: 开发人员指南
+topic: developer guide
 translation-type: tm+mt
 source-git-commit: 0727ffa0c72bcb6a85de1a13215b691b97889b70
 workflow-type: tm+mt

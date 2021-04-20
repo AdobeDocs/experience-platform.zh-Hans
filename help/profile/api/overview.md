@@ -1,7 +1,7 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API；统一用户档案；统一用户档案；统一用户档案;;rtcp；启用用户档案；启用用户档案
 title: 实时客户用户档案API指南
-topic: 指南
+topic: guide
 description: 实时客户用户档案API允许开发人员探索和使用用户档案数据，包括视图用户档案，创建和更新合并策略，导出或采样用户档案数据，以及删除不再需要或错误添加的用户档案数据。 请按照本指南学习如何使用API执行关键操作。
 translation-type: tm+mt
 source-git-commit: 24a5af0440f58b4e1db639ec971c4e1611f107d8

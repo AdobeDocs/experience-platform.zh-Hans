@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；查找沙箱；查找沙箱
 solution: Experience Platform
 title: 在API中查找沙箱
-topic: 开发人员指南
+topic: developer guide
 description: 可以通过发出一个GET请求来查找单个沙箱，该请求在请求路径中包含沙箱的name属性。
 translation-type: tm+mt
 source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31

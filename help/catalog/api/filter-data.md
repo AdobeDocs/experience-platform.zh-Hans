@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；过滤器；过滤器；过滤数据；过滤数据；日期范围
 solution: Experience Platform
 title: 使用查询参数筛选目录数据
-topic: 开发人员指南
+topic: developer guide
 description: Catalog Service API允许通过使用请求查询参数筛选响应数据。 Catalog的最佳实践之一是在所有API调用中使用过滤器，因为它们可减少API上的负载并帮助提高整体性能。
 exl-id: 0cdb5a7e-527b-46be-9ad8-5337c8dc72b7
 translation-type: tm+mt

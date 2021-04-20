@@ -2,7 +2,7 @@
 keywords: Experience Platform；用户界面；UI;仪表板;仪表板;用户档案；区段；目标；许可证使用
 title: 使用Widget库添加和创建仪表板Widget
 description: '本指南提供了有关添加标准构件和创建自定义构件以在Adobe Experience Platform中可视化仪表板数据的分步说明。 '
-topic: 指南
+topic: guide
 translation-type: tm+mt
 source-git-commit: 27444a0106eacbd69149168d7439773ebbb26119
 workflow-type: tm+mt

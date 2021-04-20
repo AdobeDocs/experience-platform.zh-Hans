@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；ECID;ecid
 solution: Experience Platform
 title: ECID概述
-topic: 概述
+topic: overview
 description: Experience Cloud标识符(ECID)是客户端模块，提供对身份管理的访问，提供三个主要功能。
 exl-id: da7717d2-da2e-414b-978d-2eab8ff2c5a0
 translation-type: tm+mt

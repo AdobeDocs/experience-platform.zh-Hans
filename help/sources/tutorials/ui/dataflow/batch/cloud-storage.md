@@ -2,8 +2,8 @@
 keywords: Experience Platform；主页；热门主题；数据流；数据流
 solution: Experience Platform
 title: 在UI中为云存储批处理连接器配置数据流
-topic: 概述
-type: 教程
+topic: overview
+type: Tutorial
 description: 数据流是从源中检索数据并将其引入平台数据集的计划任务。 本教程提供了使用云存储帐户配置新数据流的步骤。
 translation-type: tm+mt
 source-git-commit: 1fb4a272a914bf4ce7653f3f4f7fff63f36f9a48

@@ -3,8 +3,8 @@ keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 连接到电子邮件营销目标，并使用流服务API激活数据
 description: 本文档包括通过使用Adobe Experience Platform API创建电子邮件营销目标
-topic: 教程
-type: 教程
+topic: tutorial
+type: Tutorial
 translation-type: tm+mt
 source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
 workflow-type: tm+mt

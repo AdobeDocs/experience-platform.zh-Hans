@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；数据集；数据集；创建数据集；创建数据集；启用数据集
 solution: Experience Platform
 title: 在API中创建数据集
-topic: 开发人员指南
+topic: developer guide
 description: 此文档介绍如何在Catalog Service API中创建数据集对象。
 exl-id: f3e5de7f-1781-4898-ac42-063eb51e661a
 translation-type: tm+mt
