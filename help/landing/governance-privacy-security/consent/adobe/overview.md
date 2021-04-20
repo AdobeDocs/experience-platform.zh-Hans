@@ -4,14 +4,14 @@ solution: Experience Platform
 title: 在Adobe Experience Platform中处理同意
 topic: 入门
 description: 了解如何使用Adobe 2.0标准在Adobe Experience Platform中处理客户同意信号。
+exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
 translation-type: tm+mt
-source-git-commit: f7fde2cb6828ebdd1763171008858fdd7242c784
+source-git-commit: a0f585e4aaeecb968a9fc9f408630946e1c30b2b
 workflow-type: tm+mt
-source-wordcount: '1448'
+source-wordcount: '1565'
 ht-degree: 0%
 
 ---
-
 
 # 在Adobe Experience Platform中处理同意
 
@@ -83,13 +83,19 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 
 在您拥有数据集并合并策略以在客户用户档案中表示必需的同意字段后，下一步是将同意数据本身引入平台。
 
-主要是，只要您的CMP检测到同意更改事件，您应使用Adobe Experience Platform Web SDK将同意数据发送到平台。 但是，如果您已经将同意数据存储在其他位置，您还可以选择直接收集收集的同意数据，方法是将其映射到您的同意数据集的XDM模式，并通过批量摄取将其发送到平台。
+主要是，只要您的CMP检测到同意更改事件，您应使用Adobe Experience Platform Web SDK将同意数据发送到平台。 如果您在移动平台上收集同意数据，应使用Adobe Experience Platform Mobile SDK。 您还可以选择直接收集收集的同意数据，方法是将其映射到您同意数据集的XDM模式，并通过批量摄取将其发送到平台。
 
 以下各小节提供了每种方法的详细信息。
 
-### 集成Experience Platform Web SDK以处理客户同意数据{#sdk}
+### 配置Experience Platform Web SDK以处理同意数据{#web-sdk}
 
-一旦您将CMP配置为在您的网站上侦听同意更改事件，您就可以集成Experience Platform Web SDK以接收更新的同意设置，并在出现同意更改事件时将它们发送到平台。 有关详细信息，请按照[配置SDK以处理客户同意数据](./sdk.md)中的指南进行操作。
+一旦您将CMP配置为在您的网站上侦听同意更改事件，您就可以集成Experience Platform Web SDK以接收更新的同意设置，并在每次加载页面时以及每当发生同意更改事件时将它们发送到平台。 有关详细信息，请参阅[配置Web SDK以处理客户同意数据](./sdk.md)的指南。
+
+### 配置Experience Platform Mobile SDK以处理同意数据{#mobile-sdk}
+
+如果您的移动应用程序中需要Experience Platform同意首选项，您可以集成Mobile SDK以检索和更新同意设置，每当调用同意API时会将其发送到平台。
+
+有关使用“同意API”](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-consent/edge-consent-api-reference)配置“同意移动扩展”](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/using-mobile-extensions/adobe-edge-consent)和“[”的信息，请参阅Mobile SDK文档。 [有关如何使用Mobile SDK处理隐私问题的更多详细信息，请参阅[隐私和GDPR](https://aep-sdks.gitbook.io/docs/v/AEP-Edge-Docs/resources/privacy-and-gdpr)部分。
 
 ### 直接收集符合XDM的同意数据{#batch}
 
