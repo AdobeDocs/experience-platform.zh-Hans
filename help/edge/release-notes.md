@@ -2,18 +2,18 @@
 title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK；发行说明；
+exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
 translation-type: tm+mt
-source-git-commit: b0e6d1f7cf7302bb3a7403bb18dfd8b7489d583e
+source-git-commit: d4ed6c8fa9c86eb2beec829ab24c381b665c2f03
 workflow-type: tm+mt
-source-wordcount: '496'
-ht-degree: 6%
+source-wordcount: '500'
+ht-degree: 5%
 
 ---
 
-
 # 发行说明
 
-## 版本 2.4.0
+## 版本2.4.0,2021年3月
 
 * SDK现在可以[作为npm包](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/installing-the-sdk.html)安装。
 * 增加了对[配置默认同意](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent)时`out`选项的支持，该选项将删除所有事件，直到收到同意(现有`pending`选项将事件排队，并在收到同意后发送它们)。
@@ -27,7 +27,7 @@ ht-degree: 6%
 * 错误修复：个性化交互通知事件将包含有关同一活动的重复信息，当用户导航到新的单页应用程序视图，返回到原始视图，并单击某个符合转换条件的元素时。
 * 错误修复：如果SDK发送的第一个事件的`documentUnloading`设置为`true`，则将使用[`sendBeacon`](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon)发送事件，从而导致有关未建立身份的错误。
 
-## 版本 2.3.0
+## 版本2.3.0,2020年11月
 
 * 增加了一次性支持，以允许更严格的内容安全策略。
 * 增加了对单页应用程序的个性化支持。
@@ -37,12 +37,12 @@ ht-degree: 6%
 * 错误修复：某些包含只读`message`属性的浏览器错误未得到适当处理，导致向客户公开了其他错误。
 * 错误修复：如果iframe的HTML页来自父窗口的HTML页以外的子域，则在iframe中运行SDK将导致错误。
 
-## 版本 2.2.0
+## 版本2.2.0,2020年10月
 
 * 错误修复：当`idMigrationEnabled`为`true`时，Opt-in对象阻止Alloy发出调用。
 * 错误修复：让Alloy了解应返回个性化优惠以防止出现闪烁问题的请求。
 
-## 版本 2.1.0
+## 版本2.1.0,2020年8月
 
 * 删除`syncIdentity`命令并支持在`sendEvent`命令中传递这些ID。
 * 支持IAB 2.0同意标准。
