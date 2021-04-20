@@ -1,15 +1,15 @@
 ---
 keywords: linkedin连接；linkedin连接；linkedin目标；linkedin;
 title: Linkedin匹配受众连接
-description: 根据经过散列处理的电子邮件，为您的LinkedIn活动激活用户档案以进行受众定位、个性化和抑制。
+description: 根据经过散列处理的电子邮件，为您的LinkedIn活动激活受众定位、个性化和抑制。
+exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 95ca7112d1f2655bf33e8a1c549e886ced244a5d
 workflow-type: tm+mt
-source-wordcount: '655'
+source-wordcount: '669'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL LinkedIn Matched Audiences] 连接
 
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 根据经过散列处理的电子邮件和移动ID，激活[!DNL LinkedIn]活动的用户档案，以实现受众定位、个性化和抑制。
 
-![Adobe Experience Platform UI中的LinkedIn目标](../../assets/catalog/social/linkedin/catalog.png)
+![linkedIn目标在Adobe Experience Platform UI中](../../assets/catalog/social/linkedin/catalog.png)
 
 ## 用例
 
@@ -40,7 +40,7 @@ ht-degree: 1%
 
 **区段导出**  — 您正在导出区段(受众)的所有成员，其中包含目标中使用的标识符(名称、电话号码和其他 [!DNL LinkedIn Matched Audiences] )。
 
-## LinkedIn帐户先决条件{#LinkedIn-account-prerequisites}
+## linkedIn帐户先决条件{#LinkedIn-account-prerequisites}
 
 在使用[!UICONTROL LinkedIn Matched Audience]目标之前，请确保您的[!DNL LinkedIn Campaign Manager]帐户具有[!DNL Creative Manager]权限级别或更高级别。
 
@@ -81,6 +81,10 @@ ht-degree: 1%
 ## 连接到目标{#connect-destination}
 
 要连接到[!DNL LinkedIn Matched Audiences]目标，请参阅[社交网络目标身份验证工作流](./workflow.md)。
+
+以下视频还演示了配置[!DNL LinkedIn Matched Audiences]目标和激活区段的步骤。
+
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 ## 将区段激活到[!DNL LinkedIn Matched Audiences] {#activate-segments}
 
