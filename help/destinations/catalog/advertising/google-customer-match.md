@@ -1,15 +1,15 @@
 ---
 keywords: Google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
-description: Google客户匹配允许您使用线上和线下数据在Google自有和运营的资产（如搜索、购物、Gmail和YouTube）中触及客户并与其重新互动。
+description: Google客户匹配允许您使用线上和线下数据在Google自有和运营的资产(如搜索、购物、Gmail和YouTube)中触及客户并与其重新互动。
+exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: 95ca7112d1f2655bf33e8a1c549e886ced244a5d
 workflow-type: tm+mt
-source-wordcount: '1546'
+source-wordcount: '1574'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Google Customer Match] 连接
 
@@ -108,6 +108,12 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 
 Attribute source data is not automatically hashed. When your source field contains unhashed attributes, check the **[!UICONTROL Apply transformation]** option, to have [!DNL Platform] automatically hash the data on activation.
 ![Identity mapping transformation](../../assets/ui/activate-destinations/identity-mapping-transformation.png) -->
+
+## 配置目标 — 视频演练{#video}
+
+以下视频演示了配置[!DNL Google Customer Match]目标和激活区段的步骤。 这些步骤也按顺序排列在下几节中。
+
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
 ## 连接到目标{#connect-destination}
 
