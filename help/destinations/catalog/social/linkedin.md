@@ -4,9 +4,9 @@ title: Linkedin匹配受众连接
 description: 根据经过散列处理的电子邮件，为您的LinkedIn活动激活受众定位、个性化和抑制。
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
 translation-type: tm+mt
-source-git-commit: 95ca7112d1f2655bf33e8a1c549e886ced244a5d
+source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
 workflow-type: tm+mt
-source-wordcount: '669'
+source-wordcount: '668'
 ht-degree: 1%
 
 ---
@@ -80,7 +80,7 @@ ht-degree: 1%
 
 ## 连接到目标{#connect-destination}
 
-要连接到[!DNL LinkedIn Matched Audiences]目标，请参阅[社交网络目标身份验证工作流](./workflow.md)。
+要连接到[!DNL LinkedIn Matched Audiences]目标，请参阅[社交目标身份验证工作流](./workflow.md)。
 
 以下视频还演示了配置[!DNL LinkedIn Matched Audiences]目标和激活区段的步骤。
 
