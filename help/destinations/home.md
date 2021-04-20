@@ -4,16 +4,16 @@ title: 目标概述
 seo-title: 目标概述
 description: 了解如何将Adobe Experience Platform数据激活到跨渠道营销活动、电子邮件、定向广告等目标。
 seo-description: 目标是预建的与目标平台集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用Adobe Experience Platform中的目标来激活您已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他使用案例的数据。
+exl-id: afd07ddc-652e-4e22-b298-feba27332462
 translation-type: tm+mt
-source-git-commit: 6e7ecfdc0b2cbf6f07e6b2220ec163289511375e
+source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '488'
 ht-degree: 1%
 
 ---
 
-
-# [!DNL Destinations]概述{#overview}
+# [!DNL Destinations] 概述 {#overview}
 
 ![目标概述横幅](./assets/overview/destinations-overview-banner.png)
 
@@ -65,6 +65,6 @@ ht-degree: 1%
 * [广告目的地 — Google Display &amp; Video 360  ](./catalog/advertising/google-dv360.md)
 * [云存储目标](./catalog/cloud-storage/workflow.md)
 * [电子邮件营销目标](./catalog/email-marketing/overview.md)
-* [社交网络目标](./catalog/social/workflow.md)
+* [社交目标](./catalog/social/workflow.md)
 
 有关区段激活工作流中违反用户档案策略的详细信息，请参阅[将数据和区段激活到目标](./ui/activate-destinations.md#review)中的查看步骤。
