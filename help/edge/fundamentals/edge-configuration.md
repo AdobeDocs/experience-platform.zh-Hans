@@ -2,14 +2,14 @@
 title: 为Experience Platform Web SDK创建边缘配置
 description: '了解如何配置Experience Platform Edge Network。 '
 keywords: 配置；edge;edge配置id;环境设置；edgeConfigId;id同步启用；id同步；ID同步容器ID；沙箱；流入；事件数据集；目标；客户端代码；属性令牌；目标环境ID;Cookie目标；url目标；分析设置块报表包ID;
+exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: d4ed6c8fa9c86eb2beec829ab24c381b665c2f03
 workflow-type: tm+mt
-source-wordcount: '916'
+source-wordcount: '861'
 ht-degree: 1%
 
 ---
-
 
 # 创建边缘配置
 
@@ -27,7 +27,7 @@ Adobe Experience Platform Web SDK的配置分为两个位置。 SDK中的[config
 >
 >无论客户是否使用[!DNL Experience Platform Launch]作为标签管理器，允许列表上的客户都可以使用边缘配置工具。 此外，用户需要[!DNL Experience Platform Launch]中的“开发”权限。 有关详细信息，请参阅[!DNL Experience Platform Launch]文档中的[用户权限](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/user-permissions.html)文章。
 
-单击屏幕右上方区域的&#x200B;**[!UICONTROL 新建边缘配置]**，创建边缘配置。 提供名称和说明后，系统会要求您为每个环境提供默认设置。 可用设置详见下文。
+单击屏幕右上角区域的&#x200B;**[!UICONTROL New Edge Configuration]**&#x200B;可创建边缘配置。 提供名称和说明后，系统会要求您为每个环境提供默认设置。 可用设置详见下文。
 
 创建边缘配置时，将自动创建三个环境，其设置相同。 这三个环境是&#x200B;*dev*、*stage*&#x200B;和&#x200B;*prod*。 它们与[!DNL Experience Platform Launch]中的三个默认环境匹配。 在将[!DNL Experience Platform Launch]库构建到开发环境时，库会自动使用配置中的开发环境。 您可以按自己喜欢的任意环境编辑设置。
 
@@ -35,17 +35,17 @@ SDK中用作`edgeConfigId`的ID是指定配置和环境（例如`1c86778b-cdba-4
 
 在下面，您将找到每个配置环境的可用设置。 大多数部分可以启用或禁用。 禁用后，将保存您的设置，但不处于活动状态。
 
-## [!UICONTROL IdentitySettings] 
+## [!UICONTROL Third Party ID] Settings
 
-标识部分是始终打开的唯一部分。 它有两个可用设置：&quot;[!UICONTROL ID Syncs Enabled]&quot;和&quot;[!UICONTROL ID同步容器ID]&quot;。
+第三方ID部分是始终打开的唯一部分。 它有两个可用设置：&quot;[!UICONTROL Third Party ID Sync Enabled]&quot;和&quot;[!UICONTROL Third Party ID Sync Container ID]&quot;。
 
 ![配置UI的标识部分](../../assets/edge_configuration_identity.png)
 
-### [!UICONTROL 已启用ID同步]
+### [!UICONTROL Third Party ID Sync Enabled]
 
 控制SDK是否与第三方合作伙伴执行身份同步。
 
-### [!UICONTROL ID同步容器ID]
+### [!UICONTROL Third Party ID Sync Container ID]
 
 ID同步可以分组为容器，以允许在不同时间运行不同的ID同步。 这控制为给定配置ID运行哪个容器的ID同步。
 
@@ -55,17 +55,17 @@ ID同步可以分组为容器，以允许在不同时间运行不同的ID同步�
 
 ![Adobe Experience Platform设置块](../../assets/edge_configuration_aep.png)
 
-### [!UICONTROL 沙箱]
+### [!UICONTROL Sandbox]
 
 沙箱是Adobe Experience Platform中允许客户将其数据和实施彼此隔离的位置。 有关它们如何工作的详细信息，请参阅[沙箱文档](../../sandboxes/home.md)。
 
 ### [!UICONTROL Streaming Inlet]
 
-流入口是Adobe Experience Platform中的HTTP源。 这些API在Adobe Experience Platform的“[!UICONTROL 源]”选项卡下创建为HTTP API。
+流入口是Adobe Experience Platform中的HTTP源。 这些API在Adobe Experience Platform的“[!UICONTROL Sources]”选项卡下创建为HTTP API。
 
-### [!UICONTROL 事件数据集]
+### [!UICONTROL Event Dataset]
 
-边缘配置支持向具有[!UICONTROL 体验事件]类模式的数据集发送数据。
+边缘配置支持向具有[!UICONTROL Experience Event]类模式的数据集发送数据。
 
 ## Adobe Target设置
 
@@ -77,17 +77,17 @@ ID同步可以分组为容器，以允许在不同时间运行不同的ID同步�
 >
 >与客户端代码关联的组织必须与创建配置ID的组织匹配。
 
-### [!UICONTROL 客户端代码]
+### [!UICONTROL Client Code]
 
-目标帐户的唯一ID。 要找到这一点，您可以导航到[!UICONTROL at.js]或[!UICONTROL ]]][!UICONTROL >[!UICONTROL >[!UICONTROL 2/>mbox.js]
+目标帐户的唯一ID。 要找到此问题，您可以导航到[!UICONTROL at.js]或[!UICONTROL mbox.js]的[!UICONTROL download]按钮旁的[!UICONTROL Adobe Target] > [!UICONTROL Setup]> [!UICONTROL Implementation] > [!UICONTROL edit settings]
 
-### [!UICONTROL 属性令牌]
+### [!UICONTROL Property Token]
 
 [!DNL Target] 允许客户通过使用属性来控制权限。有关详细信息，请参阅[!DNL Target]文档的[企业权限](https://docs.adobe.com/content/help/en/target/using/administer/manage-users/enterprise/properties-overview.html)部分。
 
-可以在[!UICONTROL Adobe Target] > [!UICONTROL setup] > [!UICONTROL 属性]中找到属性令牌
+可以在[!UICONTROL Adobe Target] > [!UICONTROL setup] > [!UICONTROL Properties]中找到属性令牌
 
-### [!UICONTROL 目标环境ID]
+### [!UICONTROL Target Environment ID]
 
 [Adobe Target](https://docs.adobe.com/content/help/en/target/using/administer/hosts.html) 中的环境可帮助您管理整个开发阶段的实施。此设置指定将与每个环境一起使用的环境。
 
@@ -99,11 +99,11 @@ Adobe建议对`dev`、`stage`和`prod`边缘配置环境以不同方式设置此
 
 ![Adobe受众管理设置块](../../assets/edge_configuration_aam.png)
 
-### [!UICONTROL 已启用Cookie目标]
+### [!UICONTROL Cookie Destinations Enabled]
 
 允许SDK通过[!DNL Audience Manager]的Cookie目标](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html)共享区段信息。[
 
-### [!UICONTROL 已启用URL目标]
+### [!UICONTROL URL Destinations Enabled]
 
 允许SDK通过[URL目标](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/destinations/custom-destinations/create-url-destination.html)共享区段信息。 这些配置在[!DNL Audience Manager]中。
 
@@ -113,6 +113,6 @@ Adobe建议对`dev`、`stage`和`prod`边缘配置环境以不同方式设置此
 
 ![Adobe Analytics设置块](../../assets/edge_configuration_aa.png)
 
-### [!UICONTROL 报表包 ID]
+### [!UICONTROL Report Suite ID]
 
-报表包位于[!UICONTROL 管理> ReportSuites]下的“Adobe Analytics管理”部分。 如果指定了多个报表包，则数据将复制到每个报表包。
+报表包位于[!UICONTROL Admin > ReportSuites]下的“Adobe Analytics管理”部分。 如果指定了多个报表包，则数据将复制到每个报表包。
