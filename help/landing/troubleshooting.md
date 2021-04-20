@@ -4,16 +4,16 @@ solution: Experience Platform
 title: Adobe Experience Platform常见问题解答和疑难解答指南
 description: 查找常见问题的解答以及 Experience Platform 中常见错误的疑难解答指南。
 landing-page-description: 查找常见问题的解答以及 Experience Platform 中常见错误的疑难解答指南。
-topic: getting started
+topic: 入门
 type: Documentation
+exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
 translation-type: tm+mt
-source-git-commit: 83cc3ddbf067f413cb524a3a685d985d5853eafd
+source-git-commit: e722d7598a558bcbc5c48d237d394f91c0803352
 workflow-type: tm+mt
-source-wordcount: '1718'
+source-wordcount: '1717'
 ht-degree: 4%
 
 ---
-
 
 # [!DNL Platform] 常见问题解答和疑难解答指南
 
@@ -88,7 +88,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 在任何[!DNL Experience Platform] API上都可能遇到以下状态代码。 每种解释都有各种原因，因此本节中的解释是一般性的。 有关单个[!DNL Platform]服务中的特定错误的详细信息，请参见下面的[服务疑难解答目录](#service-troubleshooting-directory)。
 
 | 状态代码 | 描述 | 可能的原因 |
---- | --- | ---
+|--- | --- | ---|
 | 400 | 错误请求 | 请求构造不正确、缺少关键信息和/或包含不正确的语法。 |
 | 401 | 身份验证失败 | 请求未通过身份验证检查。 您的访问令牌可能缺失或无效。 有关更多详细信息，请参阅下面的[OAuth令牌错误](#oauth-token-is-missing)部分。 |
 | 403 | 禁止 | 已找到该资源，但您没有正确的凭据来视图它。 |
@@ -184,7 +184,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 以下是[!DNL Experience Platform] API的疑难解答指南和API参考文档的列表。 每个故障排除指南都针对特定于单个[!DNL Platform]服务的常见问题和问题提供解答。 API参考文档为每个服务的所有可用端点提供了全面指南，并显示您可能收到的示例请求主体、响应和错误代码。
 
-| 服务 | API 参考 | 故障诊断 |
+| 服务 | API 参考 | 疑难解答 |
 | --- | --- | --- |
 | 访问控制 | [访问控制 API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml) | [访问控制疑难解答指南](../access-control/troubleshooting-guide.md) |
 | Adobe Experience Platform数据摄取 | [[!DNL Data Ingestion API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml) | [批量摄取疑难解答](../ingestion/batch-ingestion/troubleshooting.md)<br><br>[指南流式摄取疑难解答指南](../ingestion/streaming-ingestion/troubleshooting.md) |
@@ -198,4 +198,3 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 | [!DNL Flow Service] ([!DNL Sources] 和 [!DNL Destinations]) | [[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) |  |
 | [!DNL Real-time Customer Profile] | [[!DNL Real-time Customer Profile API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml) | [[!DNL Profile] 疑难解答指南](../profile/troubleshooting.md) |
 | 沙盒 | [沙箱API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml) | [沙箱疑难解答指南](../sandboxes/troubleshooting-guide.md) |
-
