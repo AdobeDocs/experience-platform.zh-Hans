@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: April 21, 2021
 author: ens72741
 translation-type: tm+mt
-source-git-commit: fff9e6455c6eae5f9903e1d28ab365cddfd51ef8
+source-git-commit: 73ecf6e6f9796088e2d14f9dc3d9667104b22a8e
 workflow-type: tm+mt
-source-wordcount: '331'
-ht-degree: 23%
+source-wordcount: '586'
+ht-degree: 14%
 
 ---
 
@@ -19,7 +19,22 @@ ht-degree: 23%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [[!DNL Data Prep]](#data-prep)
 - [[!DNL Intelligent Services]](#intelligent-services)
+- [[!DNL Sources]](#sources)
+
+## [!DNL Data Prep] {#data-prep}
+
+[!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 支持编辑现有数据流的映射 | 您现在可以更新现有数据流的映射集。 无法更新为一次性摄取计划的数据流的映射集。 HTTP API、Adobe Analytics、Adobe Audience Manager和[!DNL Marketo Engage]不支持此功能。 有关详细信息，请参阅有关[更新UI](../../sources/tutorials/ui/update-dataflows.md)中的源数据流的教程。 |
+| 支持流摄取 | 现在，您可以在创建流源连接时使用数据准备函数。 有关详细信息，请参阅有关在UI](../../sources/tutorials/ui/create/streaming/http.md)中创建流源连接的教程。[ |
+
+有关详细信息，请参阅[[!DNL Data Prep] 概述](../../data-prep/home.md)。
 
 ## [!DNL Intelligent Services] {#intelligent-services}
 
@@ -47,3 +62,14 @@ Attribution AI 用于将点数归因于导致转化事件的接触点。营销�
 
 有关受支持数据集的详细信息，请参阅[[!DNL Intelligent Services] 数据准备文档](../../intelligent-services/data-preparation.md)。
 
+## [!DNL Sources] {#sources}
+
+Adobe Experience Platform可以从外部源收集数据，同时允许您使用平台服务构建、标记和增强该数据。 您可以从各种来源收集数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+
+Experience Platform提供了RESTful API和交互式UI，让您可以轻松为各种数据提供者设置源连接。 这些源连接允许您对外部存储系统和CRM服务进行身份验证并连接，设置获取运行的时间，以及管理数据获取吞吐量。
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| [!DNL Marketo Engage] （测试版） | 您现在可以使用UI创建[!DNL Marketo Engage]源连接，以将B2B数据引入平台，并使用连接到平台的应用程序保持此数据最新。 有关详细信息，请参阅[[!DNL Marketo Engage] 源连接器文档](../../sources/connectors/adobe-applications/marketo/marketo.md)。 |
+
+要了解有关源的详细信息，请参阅[源概述](../../sources/home.md)。
