@@ -5,7 +5,7 @@ type: Tutorial
 description: 了解如何连接到Adobe Experience Platform中的社交广告帐户。
 exl-id: a0cdf2b7-b1e8-4a8e-9d5b-58a118e7b689
 translation-type: tm+mt
-source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
+source-git-commit: e2af4fcfe232889f3f928c00c9f9b37cf9754ca1
 workflow-type: tm+mt
 source-wordcount: '457'
 ht-degree: 0%
@@ -64,8 +64,8 @@ ht-degree: 0%
 
 在填写上面的字段后，选择&#x200B;**[!UICONTROL Create Destination]**。
 
-您的目标现在已创建。 如果您希望稍后激活区段，则可以选择&#x200B;**[!UICONTROL Save & Exit]**，也可以选择&#x200B;**[!UICONTROL Next]**&#x200B;继续工作流，然后选择要激活的区段。 在任一情况下，请参阅工作流的下一节[将区段激活到社交网络](#activate-segments)。
+您的目标现在已创建。 如果您希望稍后激活区段，则可以选择&#x200B;**[!UICONTROL Save & Exit]**，也可以选择&#x200B;**[!UICONTROL Next]**&#x200B;继续工作流，然后选择要激活的区段。 无论哪种情况，请参阅工作流其余部分的下一节[将区段激活到社交目标](#activate-segments)。
 
-## 将区段激活到社交网络{#activate-segments}
+## 将区段激活到社交目标{#activate-segments}
 
-有关如何将区段激活到社交网络的说明，请参阅[将数据激活到目标](../../ui/activate-destinations.md)。
+有关如何将区段激活到社交目标的说明，请参阅[将数据激活到目标](../../ui/activate-destinations.md)。
