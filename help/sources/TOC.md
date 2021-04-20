@@ -1,14 +1,13 @@
 ---
-product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
-feature: Data Ingestion, Sources
+feature: 数据摄取，来源
 translation-type: tm+mt
-source-git-commit: 26e7116858574b366760ffd4f92b14117ccd28eb
+source-git-commit: af5564a07577a0123e1a45043d5479f6ad45d73e
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '602'
 ht-degree: 12%
 
 ---
@@ -27,6 +26,11 @@ ht-degree: 12%
          - [分析字段映射](connectors/adobe-applications/mapping/analytics.md)
          - [Audience Manager字段映射](connectors/adobe-applications/mapping/audience-manager.md)
          - [目标字段映射](connectors/adobe-applications/mapping/target.md)
+         - [Marketo Engage字段映射](connectors/adobe-applications/mapping/marketo.md)
+      - Marketo Engage{#marketo}
+         - [Marketo Engage连接器](connectors/adobe-applications/marketo/marketo.md)
+         - [Marketo Engage身份验证指南](connectors/adobe-applications/marketo/marketo-auth.md)
+         - [Marketo Engage命名空间和模式](connectors/adobe-applications/marketo/marketo-namespaces.md)
    - 广告 {#advertising}
       - [Google AdWords连接器](connectors/advertising/ads.md)
    - 云存储{#cloud-storage}
@@ -159,6 +163,7 @@ ht-degree: 12%
          - [Adobe Analytics（分类数据）](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Audience Manager](tutorials/ui/create/adobe-applications/audience-manager.md)
          - [客户属性](tutorials/ui/create/adobe-applications/customer-attributes.md)
+         - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
       - 广告 {#create}
          - [Google AdWords](tutorials/ui/create/advertising/ads.md)
       - 云存储{#cloud-storage}
