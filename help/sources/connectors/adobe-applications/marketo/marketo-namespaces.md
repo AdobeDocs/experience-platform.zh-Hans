@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；Marketo源连接器；命名空间;模式
 solution: Experience Platform
 title: 'Marketo命名空间 '
-topic: 概述
+topic-legacy: overview
 description: 本文档概述创建Marketo Engage源连接器时所需的自定义命名空间。
 translation-type: tm+mt
-source-git-commit: 2563b413ec35cb4c5f05a54bce6f7271917e51f3
+source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
 workflow-type: tm+mt
-source-wordcount: '1177'
+source-wordcount: '1176'
 ht-degree: 5%
 
 ---
