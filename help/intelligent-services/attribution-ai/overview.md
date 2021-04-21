@@ -2,14 +2,14 @@
 keywords: Experience Platform；归因ai概述；流行主题；归因ai；归因ai
 solution: Experience Platform, Intelligent Services
 title: Attribution AI概述
-topic: Attribution AI
+topic-legacy: Attribution AI
 description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。接触点示例包括显示广告展示、电子邮件发送、电子邮件打开和付费搜索点击。
 landing-page-description: Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
 exl-id: a5991b08-217a-4b39-9948-d28eadea7ded
 translation-type: tm+mt
-source-git-commit: 0085306a2f5172eb19590cc12bc9645278bd2b42
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '501'
+source-wordcount: '499'
 ht-degree: 32%
 
 ---
