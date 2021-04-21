@@ -1,12 +1,11 @@
 ---
-product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 中的沙盒帮助
 breadcrumb-title: Sandoxes 指南
 user-guide-description: 将平台实例分区为虚拟环境，以便进行开发、测试和应用程序部署。
-feature: Data Management
+feature: 数据管理
 translation-type: tm+mt
-source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '88'
 ht-degree: 27%
@@ -21,7 +20,7 @@ ht-degree: 27%
    * [沙箱UI概述](ui/overview.md)
    * [沙箱用户指南](ui/user-guide.md)
 * 沙箱API {#api}
-   * [入门指南](api/getting-started.md)
+   * [快速入门](api/getting-started.md)
    * [列表支持的沙箱类型](api/list-sandbox-types.md)
    * [列表所有沙箱](api/list-all-sandboxes.md)
    * [列表当前用户的活动沙箱](api/list-active-sandboxes.md)
