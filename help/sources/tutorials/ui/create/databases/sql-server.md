@@ -2,38 +2,38 @@
 keywords: Experience Platform；主页；热门主题；Microsoft SQL Server;SQL Server;sql Server
 solution: Experience Platform
 title: 在UI中创建Microsoft SQL Server源连接
-topic: overview
+topic-legacy: overview
 type: Tutorial
-description: 了解如何使用Adobe Experience PlatformUI创建Microsoft SQL Server源连接。
+description: 了解如何使用Adobe Experience Platform UI创建Microsoft SQL Server源连接。
+exl-id: aba4e317-1c59-4999-a525-dba15f8d4df9
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '458'
 ht-degree: 1%
 
 ---
-
 
 # 在UI中创建[!DNL Microsoft SQL Server]源连接
 
 >[!NOTE]
 >
-> [!DNL Microsoft SQL Server]接头为测试版。 有关使用测试版标签的连接器的详细信息，请参见[源概述](../../../../home.md#terms-and-conditions)。
+> [!DNL Microsoft SQL Server]连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
-Adobe Experience Platform的源连接器提供按计划接收外部源数据的能力。 本教程提供了使用[!DNL Platform]用户界面创建[!DNL Microsoft SQL Server]（以下称“[!DNL SQL Server]”）源连接器的步骤。
+Adobe Experience Platform中的源连接器提供按计划收集外部源数据的能力。 本教程提供了使用[!DNL Platform]用户界面创建[!DNL Microsoft SQL Server]（以下称为“[!DNL SQL Server]”）源连接器的步骤。
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
+本教程需要对Adobe Experience Platform的以下组件有充分的了解：
 
 * [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-   * [模式合成基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构件，包括模式构成的主要原则和最佳做法。
+   * [模式合成的基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建基块，包括模式构成的主要原则和最佳做法。
    * [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
+* [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
 
-如果您已经有有效的[!DNL SQL Server]连接，您可以跳过此文档的其余部分，继续学习有关配置数据流](../../dataflow/databases.md)的教程。[
+如果您已有有效的[!DNL SQL Server]连接，则可以跳过此文档的其余部分，继续学习有关[配置数据流](../../dataflow/databases.md)的教程。
 
-### 收集所需的凭据
+### 收集所需凭据
 
 要连接到[!DNL Platform]上的[!DNL SQL Server]，必须提供以下连接属性：
 
@@ -41,34 +41,34 @@ Adobe Experience Platform的源连接器提供按计划接收外部源数据的�
 | ---------- | ----------- |
 | `connectionString` | 与[!DNL SQL Server]帐户关联的连接字符串。 [!DNL SQL Server]连接字符串模式为：`Data Source={SERVER_NAME}\\<{INSTANCE_NAME} if using named instance>;Initial Catalog={DATABASE};Integrated Security=False;User ID={USERNAME};Password={PASSWORD};`。 |
 
-有关入门的详细信息，请参阅[this [!DNL SQL Server] 文档](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server)。
+有关快速入门的详细信息，请参阅[this [!DNL SQL Server] 文档](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server)。
 
 ## 连接您的[!DNL SQL Server]帐户
 
-收集所需凭据后，您可以按照以下步骤将[!DNL SQL Server]帐户链接到[!DNL Platform]。
+收集所需凭据后，您可以按照以下步骤将您的[!DNL SQL Server]帐户链接到[!DNL Platform]。
 
-登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问&#x200B;**[!UICONTROL 源]**&#x200B;工作区。 **[!UICONTROL 目录]**&#x200B;屏幕显示可为其创建帐户的各种源。
+登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问&#x200B;**[!UICONTROL Sources]**&#x200B;工作区。 **[!UICONTROL Catalog]**&#x200B;屏幕显示了可为其创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
-在&#x200B;**[!UICONTROL Databases]**&#x200B;类别下，选择&#x200B;**[!UICONTROL Microsoft SQL Server]**。 如果这是您首次使用此连接器，请选择&#x200B;**[!UICONTROL 配置]**。 否则，选择&#x200B;**[!UICONTROL 添加数据]**&#x200B;以创建新的[!DNL SQL Server]连接器。
+在&#x200B;**[!UICONTROL Databases]**&#x200B;类别下，选择&#x200B;**[!UICONTROL Microsoft SQL Server]**。 如果这是您首次使用此连接器，请选择&#x200B;**[!UICONTROL Configure]**。 否则，选择&#x200B;**[!UICONTROL Add data]**&#x200B;以创建新[!DNL SQL Server]连接器。
 
 ![](../../../../images/tutorials/create/microsoft-sql-server/catalog.png)
 
-将显示&#x200B;**[!UICONTROL 连接到Microsoft SQL Server]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
+将显示&#x200B;**[!UICONTROL Connect to Microsoft SQL Server]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 新帐户
 
-如果您使用新凭据，请选择&#x200B;**[!UICONTROL 新建帐户]**。 在显示的输入表单上，提供名称、可选说明和[!DNL SQL Server]凭据。 完成后，选择&#x200B;**[!UICONTROL Connect]**，然后为新连接建立留出一些时间。
+如果您使用新凭据，请选择&#x200B;**[!UICONTROL New account]**。 在显示的输入表单上，提供名称、可选说明和[!DNL SQL Server]凭据。 完成后，选择&#x200B;**[!UICONTROL Connect]**，然后为新连接建立留出一些时间。
 
 ![](../../../../images/tutorials/create/microsoft-sql-server/new.png)
 
 ### 现有帐户
 
-要连接现有帐户，请选择要连接的[!DNL SQL Server]帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+要连接现有帐户，请选择要连接的[!DNL SQL Server]帐户，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
 ![](../../../../images/tutorials/create/microsoft-sql-server/existing.png)
 
 ## 后续步骤
 
-按照本教程，您已建立了与[!DNL SQL Server]帐户的连接。 现在，您可以继续阅读下一个教程，并配置数据流以将数据导入 [!DNL Platform]](../../dataflow/databases.md)。[
+按照本教程，您已建立了与[!DNL SQL Server]帐户的连接。 您现在可以继续下一个教程，并[配置一个数据流以将数据导入 [!DNL Platform]](../../dataflow/databases.md)。
