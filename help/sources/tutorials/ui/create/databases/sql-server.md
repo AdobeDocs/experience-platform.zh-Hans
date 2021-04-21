@@ -7,18 +7,14 @@ type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Microsoft SQL Server源连接。
 exl-id: aba4e317-1c59-4999-a525-dba15f8d4df9
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b2384bfe26fa3d111c342062b2d9bb37c4226857
 workflow-type: tm+mt
-source-wordcount: '458'
+source-wordcount: '442'
 ht-degree: 1%
 
 ---
 
 # 在UI中创建[!DNL Microsoft SQL Server]源连接
-
->[!NOTE]
->
-> [!DNL Microsoft SQL Server]连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 Adobe Experience Platform中的源连接器提供按计划收集外部源数据的能力。 本教程提供了使用[!DNL Platform]用户界面创建[!DNL Microsoft SQL Server]（以下称为“[!DNL SQL Server]”）源连接器的步骤。
 
