@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API；启用数据集
 title: 使用API为用户档案和标识服务配置数据集
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: 本教程向您介绍如何使用Adobe Experience Platform API启用数据集以与实时客户用户档案和身份服务一起使用。
 exl-id: 142cb7df-072a-4f3a-8a9c-9a78afb35312
 translation-type: tm+mt
-source-git-commit: 87729e4996b0b2ac26e1a0abaa80af717825f9e6
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1058'
+source-wordcount: '1057'
 ht-degree: 1%
 
 ---
