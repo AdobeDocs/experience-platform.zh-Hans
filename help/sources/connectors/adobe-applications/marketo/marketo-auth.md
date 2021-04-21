@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；Marketo Engage；营销参与；营销
 solution: Experience Platform
 title: 验证Marketo源连接器
-topic: 概述
+topic-legacy: overview
 description: 此文档提供有关如何生成Marketo身份验证凭据的信息。
 translation-type: tm+mt
-source-git-commit: 2563b413ec35cb4c5f05a54bce6f7271917e51f3
+source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
 workflow-type: tm+mt
-source-wordcount: '620'
+source-wordcount: '619'
 ht-degree: 0%
 
 ---
