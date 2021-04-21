@@ -1,18 +1,18 @@
 ---
-keywords: Experience Platform；主题；热门主题；数据使用规范；强制；强制数据使用规范；分段服务；分段；分段；
+keywords: Experience Platform；主页；热门主题；数据使用规范；强制；强制数据使用规范；分段服务；分段；分段；
 solution: Experience Platform
-title: 使用API对受众段强制实施数据使用合规性
-topic: tutorial
+title: 使用API对受众区段强制实施数据使用合规性
+topic-legacy: tutorial
 type: Tutorial
 description: 本教程介绍了使用API强制实时客户用户档案受众细分的数据使用合规性的步骤。
+exl-id: 2299328c-d41a-4fdc-b7ed-72891569eaf2
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1362'
 ht-degree: 1%
 
 ---
-
 
 # 使用API为受众区段强制实施数据使用合规性
 
@@ -20,32 +20,32 @@ ht-degree: 1%
 
 ## 入门指南
 
-本教程需要对[!DNL Adobe Experience Platform]的以下组件有一定的了解：
+本教程需要对[!DNL Adobe Experience Platform]的以下组件有充分的了解：
 
-- [[!DNL Real-time Customer Profile]](../../profile/home.md): [!DNL Real-time Customer Profile] 是通用查找实体存储，用于管理 [!DNL Experience Data Model (XDM)] 中的数 [!DNL Platform]据用户档案可以跨各种企业数据资产合并数据，并以统一的表示形式提供对该数据的访问。
-   - [合并策略](../../profile/api/merge-policies.md):用于确定 [!DNL Real-time Customer Profile] 哪些数据可在特定条件下合并为统一视图的规则。可以为[!DNL Data Governance]配置合并策略。
-- [[!DNL Segmentation]](../home.md):如何 [!DNL Real-time Customer Profile] 将用户档案商店中的一大群人划分为拥有相似特征、将对营销策略做出类似反应的较小群体。
+- [[!DNL Real-time Customer Profile]](../../profile/home.md): [!DNL Real-time Customer Profile] 是通用查找实体存储，用于管理 [!DNL Experience Data Model (XDM)] 中的数 [!DNL Platform]据用户档案将不同企业数据资产中的数据合并，并以统一的表示形式提供对该数据的访问。
+   - [合并策略](../../profile/api/merge-policies.md):用于确定 [!DNL Real-time Customer Profile] 在某些条件下哪些数据可以合并为统一视图的规则。可以为[!DNL Data Governance]目的配置合并策略。
+- [[!DNL Segmentation]](../home.md):如 [!DNL Real-time Customer Profile] 何将用户档案商店中所含的大量个人划分为具有相似特征并将对营销策略做出类似反应的较小群体。
 - [[!DNL Data Governance]](../../data-governance/home.md): [!DNL Data Governance] 使用以下组件为数据使用标签和执行提供基础架构：
-   - [数据使用标签](../../data-governance/labels/user-guide.md):标签用于根据处理数据集和字段各自数据的敏感程度描述数据集和字段。
-   - [数据使用策略](../../data-governance/policies/overview.md):配置，指示允许对按特定数据使用标签分类的数据执行哪些营销操作。
-   - [策略实施](../../data-governance/enforcement/overview.md):允许您实施数据使用策略并防止构成违反策略的数据操作。
-- [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+   - [数据使用标签](../../data-governance/labels/user-guide.md):用于根据处理数据集和字段各自数据的敏感程度描述数据集和字段的标签。
+   - [数据使用策略](../../data-governance/policies/overview.md):指示允许对按特定数据使用标签分类的数据执行哪些营销操作的配置。
+   - [政策执行](../../data-governance/enforcement/overview.md):允许您实施数据使用策略并防止构成策略违规的数据操作。
+- [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
 以下各节提供了成功调用[!DNL Platform] API所需了解的其他信息。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
-- 授权：载体`{ACCESS_TOKEN}`
+- 授权：承载`{ACCESS_TOKEN}`
 - x-api-key:`{API_KEY}`
 - x-gw-ims-org-id:`{IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
 
 - x-sandbox-name:`{SANDBOX_NAME}`
 
@@ -53,15 +53,15 @@ ht-degree: 1%
 >
 >有关[!DNL Platform]中沙箱的详细信息，请参阅[沙箱概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要附加标头：
+所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
 
 - 内容类型：application/json
 
-## 查找段定义{#merge-policy}的合并策略
+## 查找区段定义{#merge-policy}的合并策略
 
-此工作流首先访问已知的受众段。 在[!DNL Real-time Customer Profile]中启用的段在其段定义中包含合并策略ID。 此合并策略包含有关区段中要包含哪些数据集的信息，这些数据集又包含任何适用的数据使用标签。
+此工作流首先访问已知的受众区段。 允许在[!DNL Real-time Customer Profile]中使用的区段在其区段定义中包含合并策略ID。 此合并策略包含有关区段中要包含哪些数据集的信息，这些数据集又包含任何适用的数据使用标签。
 
-使用[!DNL Segmentation] API，您可以按其ID查找段定义以找到其关联的合并策略。
+使用[!DNL Segmentation] API，您可以通过其ID查找区段定义，以找到其关联的合并策略。
 
 **API格式**
 
@@ -124,11 +124,11 @@ curl -X GET \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `mergePolicyId` | 用于段定义的合并策略的ID。 此操作将用于下一步。 |
+| `mergePolicyId` | 用于区段定义的合并策略的ID。 此操作将在下一步中使用。 |
 
 ## 从合并策略{#datasets}中查找源数据集
 
-合并策略包含有关其源数据集的信息，而源数据集又包含数据使用标签。 您可以通过在GET请求中向[!DNL Profile] API提供合并策略ID来查找合并策略的详细信息。 有关合并策略的详细信息，请参阅[合并策略端点指南](../../profile/api/merge-policies.md)。
+合并策略包含有关其源数据集的信息，这些信息又包含数据使用标签。 可以通过在向[!DNL Profile] API的GET请求中提供合并策略ID来查找合并策略的详细信息。 有关合并策略的详细信息，请参阅[合并策略终结点指南](../../profile/api/merge-policies.md)。
 
 **API格式**
 
@@ -180,18 +180,18 @@ curl -X GET \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `schema.name` | 与合并策略关联的模式的名称。 |
-| `attributeMerge.type` | 合并策略的数据优先级配置类型。 如果值为`dataSetPrecedence`，则与此合并策略关联的数据集将列在`attributeMerge > data > order`下。 如果值为`timestampOrdered`，则与`schema.name`中引用的模式关联的所有数据集都将由合并策略使用。 |
-| `attributeMerge.data.order` | 如果`attributeMerge.type`是`dataSetPrecedence`，则此属性将是一个数组，其中包含此合并策略所使用数据集的ID。 这些ID将用于下一步。 |
+| `attributeMerge.type` | 合并策略的数据优先级配置类型。 如果值为`dataSetPrecedence`，则与此合并策略关联的数据集将列在`attributeMerge > data > order`下。 如果值为`timestampOrdered`，则与`schema.name`中引用的模式关联的所有数据集都由合并策略使用。 |
+| `attributeMerge.data.order` | 如果`attributeMerge.type`为`dataSetPrecedence`，则此属性将是一个数组，包含此合并策略所使用数据集的ID。 这些ID将用于下一步。 |
 
-## 评估数据集中是否存在策略违规
+## 评估数据集中的策略违规情况
 
 >[!NOTE]
 >
-> 此步骤假定您至少有一个活动数据使用策略，该策略可阻止对包含特定标签的数据执行特定营销操作。 如果您对要评估的数据集没有任何适用的使用策略，请按照[策略创建教程](../../data-governance/policies/create.md)创建策略，然后继续此步骤。
+> 此步骤假定您至少有一个活动数据使用策略，该策略可阻止对包含特定标签的数据执行特定营销操作。 如果您对要评估的数据集没有任何适用的使用策略，请按照[策略创建教程](../../data-governance/policies/create.md)创建一个策略，然后继续执行此步骤。
 
 获得合并策略的源数据集的ID后，您可以使用[策略服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)根据特定营销操作评估这些数据集，以检查数据使用策略违规。
 
-要评估POST集，您必须在请求主体中提供数据集ID时，在请求请求路径中提供营销操作的名称，如下例所示。
+要评估POST集，您必须在请求路径中提供营销操作的名称，同时在请求主体中提供数据集ID，如下例所示。
 
 **API格式**
 
@@ -230,12 +230,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `entityType` | 有效负荷数组中的每个项目都必须指示所定义实体的类型。 对于此用例，值将始终为“dataSet”。 |
-| `entityID` | 有效负荷数组中的每个项目都必须为数据集提供唯一ID。 |
+| `entityType` | 有效负荷数组中的每个项目都必须指示要定义的实体类型。 对于此用例，值将始终为“dataSet”。 |
+| `entityID` | 有效负荷数组中的每个项目都必须提供数据集的唯一ID。 |
 
 **响应**
 
-成功的响应会返回营销操作的URI、从提供的数据集收集的数据使用标签，以及测试针对这些标签的操作而违反的任何数据使用策略的列表。 在此示例中，`violatedPolicies`阵列中显示“将数据导出到第三方”策略，表明营销操作触发了策略违规。
+成功的响应返回营销操作的URI、从提供的数据集收集的数据使用标签以及针对这些标签测试操作而违反的任何数据使用策略的列表。 在此示例中，`violatedPolicies`阵列中显示“将数据导出到第三方”策略，指示营销操作触发了策略违规。
 
 ```json
 {
@@ -361,28 +361,28 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `duleLabels` | 从提供的数据集中提取的列表数据使用标签。 |
-| `discoveredLabels` | 请求有效负荷中提供的数据集的列表，显示在每个数据集中找到的数据集级别和字段级别标签。 |
-| `violatedPolicies` | 一个数组，其中列出了根据提供的`duleLabels`测试营销操作（在`marketingActionRef`中指定）时违反的任何数据使用策略。 |
+| `duleLabels` | 从提供的数据集中提取的数据使用标签的列表。 |
+| `discoveredLabels` | 请求负载中提供的数据集的列表，显示在每个数据集中找到的数据集级别和字段级别标签。 |
+| `violatedPolicies` | 一个数组，列出通过针对提供的`duleLabels`测试营销操作（在`marketingActionRef`中指定）而违反的任何数据使用策略。 |
 
-使用API响应中返回的数据，您可以在体验应用程序中设置协议以在发生策略违规时相应地强制实施这些违规。
+使用API响应中返回的数据，您可以在体验应用程序中设置协议，以在发生策略违规时相应地强制实施这些违规。
 
 ## 筛选数据字段
 
-如果您的受众细分未通过评估，您可以通过以下两种方法之一调整该细分中包含的数据。
+如果您的受众区段未通过评估，您可以通过以下两种方法之一调整区段中包含的数据。
 
-### 更新段定义的合并策略
+### 更新区段定义的合并策略
 
-更新区段定义的合并策略将调整运行区段作业时将包含的数据集和字段。 有关详细信息，请参阅API合并策略教程中有关[更新现有合并策略](../../profile/api/merge-policies.md#update)的部分。
+更新区段定义的合并策略将调整运行区段作业时将包含的数据集和字段。 有关详细信息，请参阅API合并策略教程中关于[更新现有合并策略](../../profile/api/merge-policies.md#update)的部分。
 
 ### 导出区段时限制特定数据字段
 
-使用[!DNL Segmentation] API将区段导出到数据集时，可以使用`fields`参数过滤导出中包含的数据。 添加到此参数的所有数据字段都将包含在导出中，而所有其他数据字段将被排除。
+使用[!DNL Segmentation] API将区段导出到数据集时，可以使用`fields`参数过滤导出中包含的数据。 添加到此参数的任何数据字段都将包含在导出中，而所有其他数据字段将被排除。
 
-考虑具有名为“A”、“B”和“C”的数据字段的区段。 如果只希望导出字段“C”，则`fields`参数将仅包含字段“C”。 通过执行此操作，导出区段时将排除字段“A”和“B”。
+考虑具有名为“A”、“B”和“C”的数据字段的区段。 如果只希望导出字段“C”，则`fields`参数将仅包含字段“C”。 通过执行此操作，在导出区段时将排除字段“A”和“B”。
 
-有关详细信息，请参阅分段教程中关于[导出段](./evaluate-a-segment.md#export)的部分。
+有关详细信息，请参阅分段教程中有关导出区段](./evaluate-a-segment.md#export)的部分。[
 
 ## 后续步骤
 
-通过遵循本教程，您查找了与受众区段关联的数据使用标签，并测试了它们是否存在针对特定营销操作的违反策略的情况。 有关[!DNL Experience Platform]中[!DNL Data Governance]的详细信息，请阅读[[!DNL Data Governance]](../../data-governance/home.md)的概述。
+通过本教程，您查找了与受众区段关联的数据使用标签，并测试了它们是否存在针对特定营销操作的策略违规。 有关[!DNL Experience Platform]中[!DNL Data Governance]的详细信息，请阅读[[!DNL Data Governance]](../../data-governance/home.md)的概述。
