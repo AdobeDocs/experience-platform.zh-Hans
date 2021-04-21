@@ -2,18 +2,18 @@
 keywords: Experience Platform；用户界面；UI；自定义；许可证使用仪表板;仪表板；许可证使用；授权；消耗
 title: 目标仪表板
 description: 'Adobe Experience Platform UI提供了一个仪表板，通过它可以视图有关组织活动目标的重要信息。 '
-topic: guide
+topic-legacy: guide
 type: Documentation
 translation-type: tm+mt
-source-git-commit: ecce042332fed790bbcf8b8a554217842f63a647
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '144'
+source-wordcount: '143'
 ht-degree: 6%
 
 ---
 
 
-# (Beta)[!UICONTROL 目标]仪表板{#destinations-dashboard}
+# (Beta)[!UICONTROL Destinations]仪表板{#destinations-dashboard}
 
 >[!IMPORTANT]
 >
