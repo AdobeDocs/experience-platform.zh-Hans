@@ -2,14 +2,14 @@
 keywords: Experience Platform；主页；热门主题；数据库数据库；第三方数据库
 solution: Experience Platform
 title: 使用源连接器和API从数据库收集数据
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 本教程介绍使用源连接器和API从数据库检索数据并将其引入平台的步骤。
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1651'
+source-wordcount: '1649'
 ht-degree: 1%
 
 ---
