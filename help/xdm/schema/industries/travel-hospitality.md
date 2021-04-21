@@ -1,16 +1,16 @@
 ---
 solution: Experience Platform
 title: 旅游和酒店业数据模型ERD
-topic: overview
+topic-legacy: overview
 description: 视图实体关系图(ERD)，它描述了旅游和酒店业的标准数据模型，与在Adobe Experience Platform中使用的体验数据模型(XDM)兼容。
+exl-id: 4d454160-9066-4702-815b-9509942f709e
 translation-type: tm+mt
-source-git-commit: ffc113c0c85c76e6645fb4276c174779682f2b60
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '80'
-ht-degree: 1%
+source-wordcount: '79'
+ht-degree: 0%
 
 ---
-
 
 # [!UICONTROL Travel and hospitality] 行业数据模型ERD
 
