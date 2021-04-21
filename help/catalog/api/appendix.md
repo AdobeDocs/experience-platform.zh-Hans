@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；目录服务；目录api；附录
 solution: Experience Platform
 title: 目录服务API指南附录
-topic: developer guide
-description: 此文档包含帮助您使用Adobe Experience Platform的Catalog API的其他信息。
+topic-legacy: developer guide
+description: 本文档包含帮助您在Adobe Experience Platform中使用目录API的其他信息。
+exl-id: fafc8187-a95b-4592-9736-cfd9d32fd135
 translation-type: tm+mt
-source-git-commit: b395535cbe7e4030606ee2808eb173998f5c32e0
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '920'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
-
 
 # [!DNL Catalog Service] API指南附录
 
@@ -19,9 +19,9 @@ ht-degree: 0%
 
 ## 视图相关对象{#view-interrelated-objects}
 
-某些[!DNL Catalog]对象可以与其他[!DNL Catalog]对象相关联。 响应有效负荷中由`@`前缀的任何字段都表示相关对象。 这些字段的值采用URI的形式，URI可在单独的GET请求中使用，以检索它们表示的相关对象。
+某些[!DNL Catalog]对象可以与其他[!DNL Catalog]对象相关联。 响应负载中由`@`前缀的任何字段都表示相关对象。 这些字段的值采用URI的形式，URI可在单独的GET请求中使用，以检索它们表示的相关对象。
 
-在[查找特定数据集](look-up-object.md)的文档中返回的示例数据集包含具有以下URI值的`files`字段：`"@/dataSets/5ba9452f7de80400007fc52a/views/5ba9452f7de80400007fc52b/files"`。 `files`字段的内容可以使用此URI作为新GET请求的路径进行查看。
+在[查找特定数据集](look-up-object.md)的文档中返回的示例数据集包含具有以下URI值的`files`字段：`"@/dataSets/5ba9452f7de80400007fc52a/views/5ba9452f7de80400007fc52b/files"`。 可以使用此URI作为新GET请求的路径来查看`files`字段的内容。
 
 **API格式**
 
@@ -48,7 +48,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回相关对象的列表。 在此示例中，返回列表数据集文件。
+成功的响应返回相关对象的列表。 在此示例中，返回列表集文件。
 
 ```json
 {
@@ -93,9 +93,9 @@ curl -X GET \
 
 ## 在一次呼叫中发出多个请求
 
-[!DNL Catalog] API的根端点允许在单个调用中发出多个请求。 请求有效负荷包含表示通常是单个请求的对象的数组，然后按顺序执行。
+[!DNL Catalog] API的根端点允许在单个调用中发出多个请求。 请求有效负荷包含表示通常是单个请求的对象的数组，然后按顺序执行这些请求。
 
-如果这些请求是对[!DNL Catalog]的修改或添加，并且任何一项更改都失败，则所有更改都将恢复。
+如果这些请求是对[!DNL Catalog]的修改或添加，并且任何更改都会失败，则所有更改都将恢复。
 
 **API格式**
 
@@ -107,11 +107,11 @@ POST /
 
 以下请求会创建新数据集，然后为该数据集创建相关视图。 此示例演示如何使用模板语言访问先前调用中返回的值，以便在后续调用中使用。
 
-例如，如果要引用从以前的子请求返回的值，则可以创建以下格式的引用：`<<{REQUEST_ID}.{ATTRIBUTE_NAME}>>`（其中`{REQUEST_ID}`是用户为子请求提供的ID，如下所示）。 您可以使用这些模板来引用先前子请求响应对象正文中可用的任何属性。
+例如，如果要引用从上一个子请求返回的值，则可以创建以下格式的引用：`<<{REQUEST_ID}.{ATTRIBUTE_NAME}>>`（其中`{REQUEST_ID}`是用户为子请求提供的ID，如下所示）。 您可以使用这些模板引用上一个子请求响应对象正文中可用的任何属性。
 
 >[!NOTE]
 >
->当执行的子请求仅返回对对象的引用(Catalog API中大多数POST和PUT请求的默认值)时，此引用将别名设置为值`id`，并可用作`<<{OBJECT_ID}.id>>`。
+>当执行的子请求只返回对对象的引用(这是目录API中大多数POST和PUT请求的默认值)时，此引用将别名化为值`id`，可用作`<<{OBJECT_ID}.id>>`。
 
 ```shell
 curl -X POST \
@@ -145,14 +145,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 用户提供的ID，该ID附加到响应对象，以便您能够匹配对响应的请求。 [!DNL Catalog] 不存储此值，只是将其返回到响应中以供参考。 |
-| `resource` | 相对于[!DNL Catalog] API根的资源路径。 协议和域不应是此值的一部分，它应前缀为“/”。 <br/><br/> 将PATCH或DELETE用作子请求时， `method`在资源路径中包含对象ID。请勿将资源路径与用户提供的`id`混淆，该资源路径使用[!DNL Catalog]对象本身的ID（例如`resource: "/dataSets/1234567890"`）。 |
-| `method` | 与请求中所执行的操作相关的方法的名称(GET、PUT、POST、PATCH或DELETE)。 |
-| `body` | 通常在POST、PUT或PATCH请求中作为有效负荷传递的JSON文档。 GET或DELETE请求不需要此属性。 |
+| `id` | 用户提供的ID，附加到响应对象，以便您能够匹配对响应的请求。 [!DNL Catalog] 不存储此值，只是将其返回到响应中以供参考。 |
+| `resource` | 相对于[!DNL Catalog] API根的资源路径。 协议和域不应是此值的一部分，它应前缀为“/”。 <br/><br/> 将PATCH或DELETE用作子请求时， `method`在资源路径中包含对象ID。请勿与用户提供的`id`混淆，资源路径使用[!DNL Catalog]对象本身的ID（例如`resource: "/dataSets/1234567890"`）。 |
+| `method` | 与请求中发生的操作相关的方法的名称(GET、PUT、POST、PATCH或DELETE)。 |
+| `body` | 通常作为POST、PUT或PATCH请求中的有效负荷传递的JSON文档。 GET或DELETE请求不需要此属性。 |
 
 **响应**
 
-成功的响应返回一组对象，这些对象包含您分配给每个请求的`id`、单个请求的HTTP状态代码和响应`body`。 由于三个示例请求都是为创建新对象而发出的，因此每个对象的`body`都是一个仅包含新创建对象ID的数组，同[!DNL Catalog]中POST响应最成功的标准一样。
+成功的响应返回一组对象，这些对象包含您分配给每个请求的`id`、单个请求的HTTP状态代码和响应`body`。 由于三个示例请求都是为了创建新对象，因此每个对象的`body`是一个仅包含新创建对象ID的数组，而[!DNL Catalog]中POST响应最成功的标准也是如此。
 
 ```json
 [
@@ -173,7 +173,7 @@ curl -X POST \
 ]
 ```
 
-检查对多个请求的响应时要小心，因为您需要验证每个单个子请求的代码，而不是只依赖父POST请求的HTTP状态代码。  单个子请求可返回404(例如对无效资源的GET请求)，而总请求返回200。
+检查对多个请求的响应时要小心，因为您需要验证每个子请求的代码，而不仅仅依赖父POST请求的HTTP状态代码。  单个子请求可返回404(例如对无效资源的GET请求)，而总请求返回200。
 
 ## 其他请求标头
 
@@ -181,18 +181,18 @@ curl -X POST \
 
 ### If-Match
 
-最好使用对象版本控制来防止在多个用户几乎同时保存对象时发生的数据损坏类型。
+最好使用对象版本控制来防止当多个用户几乎同时保存对象时发生的数据损坏类型。
 
-更新对象时的最佳实践是首先对要更新的对象进行API调用视图(GET)。 包含在响应中（以及响应包含单个对象的任何调用）是包含该对象版本的`E-Tag`头。 在更新(PUT或PATCH)调用中将对象版本添加为名为`If-Match`的请求标头，将导致更新仅在版本仍然相同的情况下才成功，从而有助于防止数据冲突。
+更新对象时的最佳做法是首先对要更新的对象进行API调用视图(GET)。 包含在响应中（以及响应包含单个对象的任何调用）是包含该对象版本的`E-Tag`标头。 将对象版本添加为更新(PUT或PATCH)调用中名为`If-Match`的请求标头时，只有在版本仍然相同的情况下，更新才会成功，从而有助于防止数据冲突。
 
-如果版本不匹配（自您检索到该对象后，该对象被其他进程修改），您将收到HTTP状态412（先决条件失败），表示已拒绝访问目标资源。
+如果版本不匹配（自您检索到该对象后，该对象被其他进程修改），您将收到HTTP状态412（先决条件失败），指示已拒绝访问目标资源。
 
 ### Pragma
 
-有时，您可能希望验证对象而不保存信息。 使用值为`validate-only`的`Pragma`头，您只能发送POST或PUT请求以用于验证目的，从而防止对数据所做的任何更改被保留。
+有时，您可能希望验证对象而不保存信息。 将值为`validate-only`的`Pragma`标头用于仅用于验证目的，可以发送POST或PUT请求，防止对数据的任何更改被保留。
 
 ## 数据压缩
 
-压缩是一种[!DNL Experience Platform]服务，可将小文件中的数据合并到大文件中，而不更改任何数据。 出于性能原因，有时将一组小文件合并为较大的文件，以便在查询时能够更快地访问数据。
+压缩是一种[!DNL Experience Platform]服务，可将小文件中的数据合并到大文件中，而不更改任何数据。 出于性能原因，有时将一组小文件合并为较大的文件，以便在查询时能够更快地访问数据是有益的。
 
-当摄取的批次中的文件已压缩时，其关联的[!DNL Catalog]对象将更新以用于监视目的。
+当收录的批次中的文件已压缩时，其关联的[!DNL Catalog]对象将更新以用于监视目的。
