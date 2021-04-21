@@ -2,16 +2,16 @@
 keywords: 洞察；归因ai；归因ai洞察；AAI查询服务；归因查询；归因得分
 solution: Intelligent Services, Experience Platform
 title: 使用查询服务分析归因分数
-topic: Attribution AI queries
+topic-legacy: Attribution AI queries
 description: 了解如何使用Adobe Experience Platform 查询 Service分析Attribution AI分数。
+exl-id: 35d7f6f2-a118-4093-8dbc-cb020ec35e90
 translation-type: tm+mt
-source-git-commit: d83244ac93830b0e40f6d14e87497d4cb78544d9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '578'
 ht-degree: 0%
 
 ---
-
 
 # 使用查询服务分析归因得分
 
