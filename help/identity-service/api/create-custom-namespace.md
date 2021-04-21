@@ -1,17 +1,17 @@
 ---
-keywords: Experience Platform；主页；热门主题；命名空间;命名空间;命名空间;命名空间；身份命名空间；身份命名空间；身份；身份；身份
+keywords: Experience Platform；主页；热门主题；命名空间;命名空间;命名空间;命名空间；标识命名空间；标识命名空间；标识；标识；标识
 solution: Experience Platform
 title: 在Identity Service API中创建自定义命名空间
-topic: API guide
-description: 使用身份命名空间API，您可以创建只适用于您的组织的自定义身份命名空间。
+topic-legacy: API guide
+description: 使用Identity 命名空间 API，您可以创建仅对您的组织可用的自定义标识命名空间。
+exl-id: 6015a225-4508-49cc-9dda-fb9f73a8746c
 translation-type: tm+mt
-source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '120'
 ht-degree: 3%
 
 ---
-
 
 # 在Identity Service API中创建自定义命名空间
 
@@ -65,4 +65,4 @@ curl -X POST \
 
 ## 后续步骤
 
-继续下一个教程，以[列表标识的本机ID](./list-native-id.md)
+继续下一个教程，使用[列表标识的本机ID](./list-native-id.md)
