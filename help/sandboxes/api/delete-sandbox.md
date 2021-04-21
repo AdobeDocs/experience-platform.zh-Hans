@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；删除沙箱
 solution: Experience Platform
 title: 删除API中的沙箱
-topic: developer guide
+topic-legacy: developer guide
 description: 可以通过发出DELETE请求来删除沙箱，该请求在请求路径中包含沙箱的名称。
+exl-id: c900325e-bc28-42f1-bc9a-eecb33fa9be4
 translation-type: tm+mt
-source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '118'
+source-wordcount: '116'
 ht-degree: 3%
 
 ---
-
 
 # 删除API中的沙箱
 
