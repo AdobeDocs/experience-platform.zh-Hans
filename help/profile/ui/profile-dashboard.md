@@ -2,18 +2,18 @@
 keywords: Experience Platform;用户档案；实时客户用户档案；用户界面；UI；自定义；用户档案仪表板;仪表板
 title: 用户档案仪表板
 description: Adobe Experience Platform UI提供了一个仪表板，通过它可以视图有关实时客户用户档案数据的重要信息。
-topic: guide
+topic-legacy: guide
 type: Documentation
+exl-id: 2c99cbb3-515f-4982-9f2a-84e1ab14542e
 translation-type: tm+mt
-source-git-commit: 077525d597d457ab2c3b8733490920da89f15ebb
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '145'
+source-wordcount: '142'
 ht-degree: 6%
 
 ---
 
-
-# (Beta)[!UICONTROL 用户档案]仪表板{#profile-dashboard}
+# (Beta)[!UICONTROL Profiles]仪表板{#profile-dashboard}
 
 >[!IMPORTANT]
 >
@@ -21,7 +21,7 @@ ht-degree: 6%
 
 Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过它可以视图有关[!DNL Real-time Customer Profile]数据的重要信息，这些信息是在每日快照中捕获的。
 
-有关如何在UI中访问[!UICONTROL 用户档案]仪表板并与之交互的详细说明，以及有关仪表板中显示的可用量度的详细信息，请访问[[!UICONTROL 用户档案]仪表板指南](../../dashboards/guides/profiles.md)。
+有关如何在UI中访问[!UICONTROL Profiles]仪表板并与之交互的详细说明，以及有关该仪表板中显示的可用量度的更多信息，请访问[[!UICONTROL Profiles]仪表板指南](../../dashboards/guides/profiles.md)。
 
 有关仪表板用户界面中所有Experience Platform功能的概述，请首先阅读[仪表板概述](../../dashboards/home.md)。
 
