@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform；主题；热门主题；分段；分段；分段服务；pql;PQL;用户档案查询语；数组函数；数组；
+keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql;PQL;用户档案查询语；数组函数；数组；
 solution: Experience Platform
 title: 阵列、列表和设置PQL函数
-topic: developer guide
+topic-legacy: developer guide
 description: 用户档案查询语言(PQL)优惠函数可简化与数组、列表和字符串的交互。
+exl-id: 5ff2b066-8857-4cde-9932-c8bf09e273d3
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '767'
 ht-degree: 5%
 
 ---
 
-
 # 数组、列表和设置函数
 
-[!DNL Profile Query Language] (PQL)优惠函数可简化与数组、列表和字符串的交互。有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] 概述](./overview.md)。
+[!DNL Profile Query Language] (PQL)优惠函数可使与数组、列表和字符串的交互更简单。有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] overview](./overview.md)。
 
-## 输入
+## 入
 
 `in`函数用于确定项目是否是数组或列表的成员。
 
-**Format**
+**格式**
 
 ```sql
 {VALUE} in {ARRAY}
@@ -29,7 +29,7 @@ ht-degree: 5%
 
 **示例**
 
-以下PQL查询定义三月、六月或九月的生日人群。
+以下PQL查询定义三月、六月或九月的生日。
 
 ```sql
 person.birthMonth in [3, 6, 9]
@@ -41,7 +41,7 @@ person.birthMonth in [3, 6, 9]
 
 >[!NOTE]
 >
->`notIn`函数&#x200B;*还*&#x200B;确保两个值均不等于null。 因此，结果不是`in`函数的精确取反。
+>`notIn`函数&#x200B;*还*&#x200B;确保这两个值均不等于null。 因此，结果不是对`in`函数的精确取反。
 
 **格式**
 
@@ -51,7 +51,7 @@ person.birthMonth in [3, 6, 9]
 
 **示例**
 
-以下PQL查询定义了不在3月、6月或9月的生日。
+以下PQL查询定义生日不在3月、6月或9月的人。
 
 ```sql
 person.birthMonth notIn [3, 6, 9]
@@ -69,7 +69,7 @@ person.birthMonth notIn [3, 6, 9]
 
 **示例**
 
-以下PQL查询定义其喜爱的颜色至少包括红色、蓝色或绿色之一的人。
+以下PQL查询定义其最喜爱的颜色至少包括红色、蓝色或绿色之一的人。
 
 ```sql
 person.favoriteColors.intersects(["red", "blue", "green"])
@@ -95,7 +95,7 @@ person1.favoriteColors.intersection(person2.favoriteColors) = ["red", "blue", "g
 
 ## 子集
 
-`subsetOf`函数用于确定特定阵列（阵列A）是否是另一阵列（阵列B）的子集。 换言之，数组A中的所有元素都是数组B的元素。
+`subsetOf`函数用于确定特定阵列（阵列A）是否是另一阵列（阵列B）的子集。 换句话说，数组A中的所有元素都是数组B的元素。
 
 **格式**
 
@@ -113,7 +113,7 @@ person.favoriteCities.subsetOf(person.visitedCities)
 
 ## 超集
 
-`supersetOf`函数用于确定特定阵列（阵列A）是否是另一阵列（阵列B）的超集。 换言之，数组A包含数组B中的所有元素。
+`supersetOf`函数用于确定特定阵列（阵列A）是否是另一阵列（阵列B）的超集。 换句话说，数组A包含数组B中的所有元素。
 
 **格式**
 
@@ -141,7 +141,7 @@ person.eatenFoods.supersetOf(["sushi", "pizza"])
 
 **示例**
 
-以下PQL查询定义其喜爱颜色包括红色的人。
+以下PQL查询定义其喜爱颜色包含红色的人。
 
 ```sql
 person.favoriteColors.includes("red")
@@ -149,7 +149,7 @@ person.favoriteColors.includes("red")
 
 ## Distinct
 
-`distinct`函数用于从数组或重复中删除列表值。
+`distinct`函数用于从数组或列表中删除重复值。
 
 **格式**
 
@@ -159,7 +159,7 @@ person.favoriteColors.includes("red")
 
 **示例**
 
-以下PQL查询指定在多个商店下订单的人员。
+以下PQL查询指定在多个商店中下订单的人员。
 
 ```sql
 person.orders.storeId.distinct().count() > 1
@@ -178,7 +178,7 @@ person.orders.storeId.distinct().count() > 1
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{ARRAY}` | 要分组的数组或列表。 |
-| `{EXPRESSION}` | 返回的表达式映射数组或列表中的每个项。 |
+| `{EXPRESSION}` | 映射数组或列表中每个项的表达式返回。 |
 
 **示例**
 
@@ -190,7 +190,7 @@ orders.groupBy(storeId)
 
 ## 过滤器
 
-`filter`函数用于根据列表筛选数组或表达式。
+`filter`函数用于根据表达式过滤数组或列表。
 
 **格式**
 
@@ -223,15 +223,15 @@ array.map(expression)
 
 **示例**
 
-以下PQL查询将创建原始数字值的新数组和平方。
+以下PQL查询将创建一个新的数字数组，并将原始数字的值用正方形表示。
 
 ```sql
 numbers.map(square)
 ```
 
-## 阵列{#first-n}中的第一个`n`
+## 数组{#first-n}中的第一个`n`
 
-`topN`函数用于返回数组中的前一个`N`项，当它根据给定的数字表达式按升序排序时。
+`topN`函数用于返回数组中的前一个`N`项，当这些项基于给定的数字表达式按升序排序时。
 
 **格式**
 
@@ -242,20 +242,20 @@ numbers.map(square)
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{ARRAY}` | 要排序的数组或列表。 |
-| `{VALUE}` | 要对数组或列表排序的属性。 |
+| `{VALUE}` | 对数组或列表排序的属性。 |
 | `{AMOUNT}` | 要返回的项目数。 |
 
 **示例**
 
-以下PQL查询返回价格最高的前五个订单。
+以下PQL查询返回价格最高的前5个订单。
 
 ```sql
 orders.topN(price, 5)
 ```
 
-## 阵列中的最后一个`n`
+## 数组中最后一个`n`
 
-`bottomN`函数用于返回数组中最后一个`N`项，当它根据给定的数字表达式按升序排序时。
+`bottomN`函数用于返回数组中最后的`N`项，当这些项根据给定的数字表达式按升序排序时。
 
 **格式**
 
@@ -266,12 +266,12 @@ orders.topN(price, 5)
 | 参数 | 描述 |
 | --------- | ----------- | 
 | `{ARRAY}` | 要排序的数组或列表。 |
-| `{VALUE}` | 要对数组或列表排序的属性。 |
+| `{VALUE}` | 对数组或列表排序的属性。 |
 | `{AMOUNT}` | 要返回的项目数。 |
 
 **示例**
 
-以下PQL查询返回价格最低的前五个订单。
+以下PQL查询返回价格最低的前5个订单。
 
 ```sql
 orders.bottomN(price, 5)
@@ -289,7 +289,7 @@ orders.bottomN(price, 5)
 
 **示例**
 
-以下PQL查询返回价格最高的前五大订单中的第一个。 有关`topN`函数的详细信息，请参阅数组](#first-n)部分的[第一个`n`。
+以下PQL查询返回价格最高的前五个订单中的第一个。 有关`topN`函数的详细信息，请参阅数组](#first-n)部分的[第一个`n`。
 
 ```sql
 orders.topN(price, 5).head()
@@ -297,4 +297,4 @@ orders.topN(price, 5).head()
 
 ## 后续步骤
 
-您已经了解了阵列、列表和设置功能，现在可以在PQL查询中使用它们。 有关其他PQL函数的详细信息，请阅读[用户档案查询语语言概述](./overview.md)。
+您已经了解了阵列、列表和设置函数，现在可以在PQL查询中使用它们。 有关其他PQL函数的详细信息，请阅读[用户档案查询语言概述](./overview.md)。
