@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；目标教程
 solution: Experience Platform
 title: 创建目标并使用API激活数据
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: 了解如何创建不同类型的目标并激活数据。
+exl-id: f9c421e5-7e07-4587-8cf7-dc14b716865c
 translation-type: tm+mt
-source-git-commit: 2dbd92efbd992b70f4f750b09e9d2e0626e71315
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '77'
 ht-degree: 0%
 
 ---
-
 
 # 创建目标并使用API激活数据
 
