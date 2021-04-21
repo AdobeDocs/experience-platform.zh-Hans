@@ -2,13 +2,13 @@
 keywords: Experience Platform；主页；热门主题；map csv;map csv;map csv文件；map csv文件到xdm;map csv到xdm;ui指南；mapper;mapping字段；mapping函数；
 solution: Experience Platform
 title: 数据准备映射函数
-topic: overview
+topic-legacy: overview
 description: 本文档介绍了与数据准备一起使用的映射功能。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
 translation-type: tm+mt
-source-git-commit: c3939d4ce30bf12748b898f461a166f28f010abf
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '3798'
+source-wordcount: '3797'
 ht-degree: 3%
 
 ---
@@ -45,7 +45,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
 | concat | 连接给定字符串。 | <ul><li>字符串：将连接的字符串。</li></ul> | concat(STRING_1, STRING_2) | concat（&quot;嗨，&quot;,&quot;there&quot;, &quot;!&quot;） | `"Hi, there!"` |
 | 爆炸 | 根据正则表达式拆分字符串并返回一组部分。 可以选择包含正则表达式以拆分字符串。 默认情况下，拆分解析为“，”。 以下分隔符&#x200B;**需要**&#x200B;用`\`进行转义：`+, ?, ^, |, ., [, (, {, ), *, $, \`如果包含多个字符作为分隔符，则分隔符将被视为多字符分隔符。 | <ul><li>字符串：**必需**&#x200B;需要拆分的字符串。</li><li>正则表达式：*可选*&#x200B;可用于拆分字符串的常规表达式。</li></ul> | explode(STRING， REGEX) | explode（&quot;你好！&quot;, &quot; &quot;） | `["Hi,", "there"]` |
-| instr | 返回子字符串的位置/索引。 | <ul><li>输入：**必需**&#x200B;正在搜索的字符串。</li><li>子字符串：**必需**&#x200B;在字符串中搜索的子字符串。</li><li>开始_POSITION:*可选*&#x200B;查找字符串中要开始的位置。</li><li>具体值：*可选*&#x200B;从开始位置查找的第n个事件。 默认情况下，它为1。 </li></ul> | instr(INPUT， SUBSTRING， 开始_POSITION， OCCURRENCE) | instr(&quot;adobe.com&quot;, &quot;com&quot;) | 6 |
+| instr | 返回子字符串的位置/索引。 | <ul><li>输入：**必需**&#x200B;正在搜索的字符串。</li><li>子字符串：**必需**&#x200B;字符串中正在搜索的子字符串。</li><li>开始_POSITION:*可选*&#x200B;查找字符串中要开始的位置。</li><li>具体值：*可选*&#x200B;从开始位置查找的第n个事件。 默认情况下，它为1。 </li></ul> | instr(INPUT， SUBSTRING， 开始_POSITION， OCCURRENCE) | instr(&quot;adobe.com&quot;, &quot;com&quot;) | 6 |
 | replacestr | 替换搜索字符串（如果原始字符串中存在）。 | <ul><li>输入：**必需**&#x200B;输入字符串。</li><li>TO_FIND:**必需**&#x200B;要在输入中查找的字符串。</li><li>TO_REPLACE:**必需**&#x200B;将替换“TO_FIND”中值的字符串。</li></ul> | replacestr(INPUT， TO_FIND， TO_REPLACE) | replacestr(&quot;This is a string retest&quot;, &quot;re&quot;, &quot;replace&quot;) | &quot;这是字符串替换测试&quot; |
 | substr | 返回给定长度的子字符串。 | <ul><li>输入：**必需**&#x200B;输入字符串。</li><li>开始_INDEX:**必需**&#x200B;子字符串开始的输入字符串的索引。</li><li>长度：**必需**&#x200B;子字符串的长度。</li></ul> | substr(INPUT， 开始_INDEX， LENGTH) | substr（&quot;这是子字符串测试&quot;, 7, 8） | &quot; a subst&quot; |
 | lower /<br>lcase | 将字符串转换为小写。 | <ul><li>输入：**必需**&#x200B;将转换为小写的字符串。</li></ul> | lower(INPUT) | lower(&quot;HeLLo&quot;)<br>lcase(&quot;HeLLo&quot;) | “你好” |
