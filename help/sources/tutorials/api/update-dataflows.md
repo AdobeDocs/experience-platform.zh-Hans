@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；流服务；更新数据流
 solution: Experience Platform
 title: 使用Flow Service API更新数据流
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用流服务API更新数据流的步骤，包括数据流的名称、描述和计划。
+exl-id: 367a3a9e-0980-4144-a669-e4cfa7a9c722
 translation-type: tm+mt
-source-git-commit: e19b5b905a38c63b7dc47904c5af30dc2ed21e22
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '617'
-ht-degree: 2%
+source-wordcount: '615'
+ht-degree: 1%
 
 ---
-
 
 # 使用Flow Service API更新数据流
 
