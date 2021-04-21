@@ -2,24 +2,24 @@
 keywords: Experience Platform；主页；热门主题；目录；对象查找；api
 solution: Experience Platform
 title: 查找目录对象
-topic: developer guide
-description: '如果您知道特定Catalog对象的唯一标识符，则可以执行GET请求以视图该对象的详细信息。 '
+topic-legacy: developer guide
+description: 如果您知道特定Catalog对象的唯一标识符，则可以执行GET请求以视图该对象的详细信息。
+exl-id: fd6fbe72-0108-4be3-a065-c753e7a19d24
 translation-type: tm+mt
-source-git-commit: a1103bfbf79f9c87bac5b113c01386a6fb8950e7
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '165'
 ht-degree: 2%
 
 ---
 
-
-# 查找目录对象
+# 查找Catalog对象
 
 如果您知道特定[!DNL Catalog]对象的唯一标识符，则可以执行GET请求以视图该对象的详细信息。
 
 >[!NOTE]
 >
->查看特定对象时，仍最好按属性](filter-data.md)进行[过滤，只返回您感兴趣的属性。
+>在查看特定对象时，最好还是按属性](filter-data.md)筛选并仅返回您感兴趣的属性。[
 
 **API格式**
 
@@ -30,7 +30,7 @@ GET /{OBJECT_TYPE}/{OBJECT_ID}?properties={PROPERTY_1},{PROPERTY_2},{PROPERTY_3}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{OBJECT_TYPE}` | 要检索的[!DNL Catalog]对象的类型。 有效对象有： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
+| `{OBJECT_TYPE}` | 要检索的[!DNL Catalog]对象的类型。 有效对象包括： <ul><li>`accounts`</li><li>`batches`</li><li>`connections`</li><li>`connectors`</li><li>`dataSets`</li><li>`dataSetFiles`</li><li>`dataSetViews`</li></ul> |
 | `{OBJECT_ID}` | 要检索的特定对象的标识符。 |
 
 **请求**
@@ -48,7 +48,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回的指定数据集中只有请求的主体`properties`。
+成功的响应返回的指定数据集中只有主体中请求的`properties`。
 
 ```json
 {
@@ -68,4 +68,4 @@ curl -X GET \
 
 >[!NOTE]
 >
->其值前缀为`@`的属性表示相关对象。 有关如何视图这些对象详细信息的步骤，请参见[查看相关对象](appendix.md#view-interrelated-objects)的附录部分。
+>其值前缀为`@`的属性表示相关对象。 有关如何视图这些对象详细信息的步骤，请参见[查看相关对象](appendix.md#view-interrelated-objects)上的附录部分。
