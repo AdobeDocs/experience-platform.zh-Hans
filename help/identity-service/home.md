@@ -2,18 +2,18 @@
 keywords: Experience Platform；主页；热门主题；身份；身份；XDM图；身份服务；身份服务
 solution: Experience Platform
 title: Identity Service概述
-topic: overview
+topic-legacy: overview
 description: Adobe Experience Platform Identity Service通过跨设备和系统连接身份，帮您实时提供有影响力的个性化数字体验，从而帮助您更好地视图客户及其行为。
+exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
 translation-type: tm+mt
-source-git-commit: bb218fc0cca6fe74693e99747963058bd0dc962a
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1718'
+source-wordcount: '1717'
 ht-degree: 0%
 
 ---
 
-
-# [!DNL Identity Service]概述
+# [!DNL Identity Service] 概述
 
 提供相关的数字体验需要全面了解客户。 当客户数据在不同系统之间碎片化，导致每个客户似乎具有多个“身份”时，这就变得更加困难。 Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统连接身份，帮助您获得对客户及其行为的更好视图，从而使您能够实时提供有影响力的个性化数字体验。
 
