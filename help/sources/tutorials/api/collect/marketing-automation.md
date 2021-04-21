@@ -2,14 +2,14 @@
 keywords: Experience Platform；主页；热门主题；营销自动化系统；收集营销自动化数据
 solution: Experience Platform
 title: 使用源连接器和API收集营销自动化数据
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从营销自动化系统检索数据以及使用源连接器和API将其导入Adobe Experience Platform的步骤。
 exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1578'
+source-wordcount: '1576'
 ht-degree: 1%
 
 ---
