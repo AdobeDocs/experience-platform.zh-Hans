@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；map csv;map csv;map csv文件；map csv文件到xdm;map csv到xdm;ui指南；mapper;mapping;data preparation;data preparation;preparing data;
 solution: Experience Platform
 title: 使用数据准备处理数据格式
-topic: overview
+topic-legacy: overview
 description: 本文档概述了在数据准备中处理不同数据类型的方式。
+exl-id: 4ad253b7-3f83-48cd-9c46-8b5ba627c09e
 translation-type: tm+mt
-source-git-commit: 41656d204f7227388ee1a0a7cad01f737fb96c4f
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '567'
 ht-degree: 13%
 
 ---
-
 
 # 使用数据准备处理数据格式
 
@@ -33,7 +33,7 @@ Data Prep支持date函数，既作为字符串，也作为datetime对象。
 
 date函数将字符串和日期时间对象转换为ISO 8601格式化的ZonedDateTime对象。
 
-**Format**
+**格式**
 
 ```http
 date({DATE}, {FORMAT}, {DEFAULT_DATE})
