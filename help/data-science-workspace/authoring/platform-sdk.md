@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform；开发人员指南；SDK；数据访问SDK；数据科学工作区；热门主题
 solution: Experience Platform
-title: 使用Adobe Experience Platform平台SDK进行模型创作
-topic: SDK authoring
-description: 本教程提供有关在Python和R中将data_access_sdk_python转换为新的Python平台_sdk的信息。
+title: 使用Adobe Experience Platform Platform SDK进行模型创作
+topic-legacy: SDK authoring
+description: 本教程向您提供有关在Python和R中将data_access_sdk_python转换为新的Python平台_sdk的信息。
+exl-id: 20909cae-5cd2-422b-8dbb-35bc63e69b2a
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 5%
 
 ---
 
+# 使用Adobe Experience Platform [!DNL Platform] SDK进行模型创作
 
-# 使用Adobe Experience Platform[!DNL Platform] SDK进行模型创作
-
-本教程提供有关将`data_access_sdk_python`转换为Python和R中新的Python `platform_sdk`的信息。本教程提供有关以下操作的信息：
+本教程向您提供了有关将`data_access_sdk_python`转换为Python和R中的新Python `platform_sdk`的信息。本教程提供有关以下操作的信息：
 
 - [构建身份验证](#build-authentication)
 - [数据的基本读取](#basic-reading-of-data)
@@ -70,18 +70,18 @@ client_context <- psdk$client_context$ClientContext(api_key={API_KEY},
 
 ## 数据{#basic-reading-of-data}的基本读取
 
-使用新的[!DNL Platform] SDK，最大读取大小为32 GB，最长读取时间为10分钟。
+使用新的[!DNL Platform] SDK，最大读取大小为32 GB，最大读取时间为10分钟。
 
 如果您的读取时间过长，您可以尝试使用以下筛选选项之一：
 
 - [按偏移和限制筛选数据](#filter-by-offset-and-limit)
 - [按日期筛选数据](#filter-by-date)
-- [按列过滤数据](#filter-by-selected-columns)
+- [按列筛选数据](#filter-by-selected-columns)
 - [获取排序结果](#get-sorted-results)
 
 >[!NOTE]
 >
->IMS组织在`client_context`中设置。
+>IMS组织设置在`client_context`中。
 
 ### Python
 
@@ -105,9 +105,9 @@ df <- dataset_reader$read()
 df
 ```
 
-## 按偏移和限制筛选{#filter-by-offset-and-limit}
+## 按偏移和限制{#filter-by-offset-and-limit}过滤
 
-由于不再支持按批ID过滤，因此，要对数据进行范围读取，您需要使用`offset`和`limit`。
+由于不再支持按批ID过滤，因此要对数据进行范围读取，您需要使用`offset`和`limit`。
 
 ### Python
 
@@ -123,7 +123,7 @@ df <- dataset_reader$limit(100L)$offset(1L)$read()
 df
 ```
 
-## 按日期{#filter-by-date}过滤
+## 按日期{#filter-by-date}筛选
 
 日期筛选的粒度现在由时间戳定义，而不是按日设置。
 
@@ -159,9 +159,9 @@ df2
 | 和(`&`) | `And()` |
 | 或 (`|`) | `Or()` |
 
-## 按选定列{#filter-by-selected-columns}进行筛选
+## 按选定列{#filter-by-selected-columns}过滤
 
-要进一步细化数据读取，还可以按列名进行筛选。
+要进一步优化数据阅读，您还可以按列名进行筛选。
 
 ### Python
 
@@ -177,9 +177,9 @@ df <- dataset_reader$select(c('column-a','column-b'))$read()
 
 ## 获取排序结果{#get-sorted-results}
 
-接收的结果可以按目标数据集的指定列和其顺序(asc/desc)分别排序。
+收到的结果可以按目标数据集的指定列及其顺序(asc/desc)分别排序。
 
-在以下示例中，数据帧按“column-a”首先以升序顺序排序。 对“column-a”具有相同值的行随后按“column-b”以降序排序。
+在下面的示例中，数据帧按“column-a”首先以升序顺序排序。 对“column-a”具有相同值的行随后按“column-b”以降序排序。
 
 ### Python
 
@@ -197,7 +197,7 @@ df <- dataset_reader$sort(c(('column-a', 'asc'), ('column-b', 'desc')))$read()
 
 >[!NOTE]
 >
->IMS组织在`client_context`中设置。
+>IMS组织设置在`client_context`中。
 
 要在Python和R中写入数据，请使用以下示例之一：
 
@@ -222,4 +222,4 @@ write_tracker <- dataset_writer$write({PANDA_DATAFRAME}, file_format='json')
 
 ## 后续步骤
 
-配置`platform_sdk`数据加载器后，将准备数据，然后将其拆分到`train`和`val`数据集。 要了解数据准备和功能工程，请访问教程中关于[数据准备和功能工程的](../jupyterlab/create-a-recipe.md#data-preparation-and-feature-engineering)部分，该部分用于使用[!DNL JupyterLab]笔记本创建菜谱。
+配置`platform_sdk`数据加载器后，数据将进行准备，然后被拆分到`train`和`val`数据集。 要了解数据准备和功能工程，请访问使用[!DNL JupyterLab]笔记本创建菜谱的教程中[数据准备和功能工程](../jupyterlab/create-a-recipe.md#data-preparation-and-feature-engineering)部分。
