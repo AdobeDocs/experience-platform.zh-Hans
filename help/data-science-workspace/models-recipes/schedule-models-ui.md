@@ -2,17 +2,17 @@
 keywords: Experience Platform;计划模型；数据科学工作区；热门主题；计划评分；计划培训
 solution: Experience Platform
 title: 计划数据科学工作区UI中的模型
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Adobe Experience Platform Data Science Workspace允许您在机器学习服务上设置计划的评分和培训运行。 自动化培训和评分流程有助于跟上数据中的模式，从而在一段时间内保持和提高服务的效率。
+exl-id: 51f6f328-7c63-4de1-9184-2ba526bb82e2
 translation-type: tm+mt
-source-git-commit: 8f5b7018a52d4c5860e03cec3108435ede8815f1
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '539'
+source-wordcount: '537'
 ht-degree: 0%
 
 ---
-
 
 # 计划数据科学工作区UI中的模型
 
