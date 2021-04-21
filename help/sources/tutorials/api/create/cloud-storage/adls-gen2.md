@@ -1,35 +1,35 @@
 ---
 keywords: Experience Platform；主页；热门主题；Azure数据湖存储Gen2;azure数据湖存储;Azure
 solution: Experience Platform
-title: 使用Flow Service API创建Azure存储湖数据Gen2源连接
-topic: overview
+title: 使用流服务API创建Azure Data Lake 存储 Gen2源连接
+topic-legacy: overview
 type: Tutorial
-description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Azure Data Lake存储Gen2。
+description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Azure Data Lake 存储 Gen2。
+exl-id: cad5e2a0-e27c-4130-9ad8-888352c92f04
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '602'
 ht-degree: 1%
 
 ---
 
+# 使用[!DNL Flow Service] API创建[!DNL Azure] Data Lake 存储 Gen2源连接
 
-# 使用[!DNL Flow Service] API创建[!DNL Azure]存储库Gen2源连接
+[!DNL Flow Service] 用于收集和集中来自Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有受支持的源都可从中连接。
 
-[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
-
-本教程使用[!DNL Flow Service] API指导您完成将[!DNL Experience Platform]连接到[!DNL Azure]数据湖存储Gen2（以下称“ADLS Gen2”）的步骤。
+本教程使用[!DNL Flow Service] API指导您完成将[!DNL Experience Platform]连接到[!DNL Azure] Data Lake 存储 Gen2（以下称“ADLS Gen2”）的步骤。
 
 ## 入门指南
 
-本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
+本指南要求对Adobe Experience Platform的以下组件有充分的了解：
 
-* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入 [!DNL Platform] 数据。
-* [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个平台实例分为单独的虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+* [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个平台实例分区为单独的虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供您需要了解的其他信息，以便使用[!DNL Flow Service] API成功创建ADLS Gen2源连接。
+以下各节提供了您需要了解的其他信息，以便使用[!DNL Flow Service] API成功创建ADLS Gen2源连接。
 
-### 收集所需的凭据
+### 收集所需凭据
 
 要使[!DNL Flow Service]连接到ADLS Gen2，必须为以下连接属性提供值：
 
@@ -44,17 +44,17 @@ ht-degree: 1%
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -74,7 +74,7 @@ POST /connections
 
 **请求**
 
-要创建ADLS-Gen2连接，其唯一连接规范ID必须作为POST请求的一部分提供。 ADLS-Gen2的连接规范ID为`0ed90a81-07f4-4586-8190-b40eccef1c5a`。
+要创建ADLS-Gen2连接，必须在POST请求中提供其唯一连接规范ID。 ADLS-Gen2的连接规范ID为`0ed90a81-07f4-4586-8190-b40eccef1c5a`。
 
 ```shell
 curl -X POST \
@@ -107,13 +107,13 @@ curl -X POST \
 | -------- | ----------- |
 | `auth.params.url` | 您的ADLS Gen2帐户的URL端点。 |
 | `auth.params.servicePrincipalId` | 您的ADLS Gen2帐户的服务主体ID。 |
-| `auth.params.servicePrincipalKey` | ADLS Gen2帐户的服务主体密钥。 |
+| `auth.params.servicePrincipalKey` | 您的ADLS Gen2帐户的服务主体密钥。 |
 | `auth.params.tenant` | ADLS Gen2帐户的租户信息。 |
 | `connectionSpec.id` | ADLS Gen2连接规范ID:`0ed90a81-07f4-4586-8190-b40eccef1c5a1`。 |
 
 **响应**
 
-成功的响应会返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 需要此ID，才能在下一步探索您的云存储。
+成功的响应返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 需要此ID才能在下一步中浏览您的云存储。
 
 ```json
 {
@@ -124,4 +124,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过本教程，您已使用API创建了ADLS Gen2连接，并且作为响应主体的一部分获得了唯一ID。 您可以使用此连接ID来[使用流服务API](../../explore/cloud-storage.md)或[使用流服务API](../../cloud-storage-parquet.md)采集拼花存储。
+通过本教程，您已使用API创建了ADLS Gen2连接，并获取了作为响应主体一部分的唯一ID。 您可以使用此连接ID来使用流服务API](../../explore/cloud-storage.md)或[使用流服务API](../../cloud-storage-parquet.md)收录Parke存储来浏览云数据。[
