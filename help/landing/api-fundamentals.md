@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: Experience Platform API基础知识
-topic: getting started
+topic-legacy: getting started
 description: 本文档简要概述了与Experience Platform API相关的一些底层技术和语法。
+exl-id: cd69ba48-f78c-4da5-80d1-efab5f508756
 translation-type: tm+mt
-source-git-commit: ca5c8527b1b54856aa1e762a06ddbe404f30ec42
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '511'
 ht-degree: 1%
 
 ---
-
 
 # Experience Platform API基础知识
 
