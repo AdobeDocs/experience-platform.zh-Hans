@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: April 21, 2021
 author: ens72741
 translation-type: tm+mt
-source-git-commit: 73ecf6e6f9796088e2d14f9dc3d9667104b22a8e
+source-git-commit: 875d3838e16a3b79fa9ab3ec61e4ffb15ea1cf20
 workflow-type: tm+mt
-source-wordcount: '586'
-ht-degree: 14%
+source-wordcount: '728'
+ht-degree: 12%
 
 ---
 
@@ -21,6 +21,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Data Prep]](#data-prep)
 - [[!DNL Intelligent Services]](#intelligent-services)
+- [[!DNL Segmentation Service]](#segmentation)
 - [[!DNL Sources]](#sources)
 
 ## [!DNL Data Prep] {#data-prep}
@@ -61,6 +62,21 @@ Attribution AI 用于将点数归因于导致转化事件的接触点。营销�
 | 支持Adobe Analytics数据 | 更新了功能，可通过Analytics源连接器支持Adobe Analytics数据集，无需ETL数据以符合消费者体验事件(CEE)模式。 |
 
 有关受支持数据集的详细信息，请参阅[[!DNL Intelligent Services] 数据准备文档](../../intelligent-services/data-preparation.md)。
+
+## Segmentation Service {#segmentation}
+
+Adobe Experience Platform Segmentation Service提供用户界面和RESTful API，使您能够根据[!DNL Real-time Customer Profile]数据构建区段和生成受众。 这些区段在[!DNL Platform]上集中配置和维护，使任何Adobe应用程序都可轻松访问它们。
+
+[!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准，定义特定的用户档案子集。细分可以基于记录数据（如人口统计信息）或表示客户与您品牌互动的时间序列事件。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 其他汇总函数 | 已在区段生成器中添加计数功能。 “计数”函数可让您计算指定事件完成的次数。 有关计数函数的详细信息，请参阅[区段生成器指南](../../segmentation/ui/segment-builder.md#count-functions)的计数函数部分 |
+
+有关[!DNL Segmentation Service]的详细信息，请参阅[分段概述](../../segmentation/home.md)。
+
 
 ## [!DNL Sources] {#sources}
 
