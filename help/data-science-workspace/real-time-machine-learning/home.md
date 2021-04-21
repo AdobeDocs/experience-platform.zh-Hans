@@ -2,16 +2,16 @@
 keywords: Experience Platform；开发人员指南；数据科学工作区；热门主题；实时机器学习；
 solution: Experience Platform
 title: 实时机器学习概述
-topic: Overview
+topic-legacy: Overview
 description: 实时机器学习可以显着增强您的数字体验内容对最终用户的相关性。 通过在Experience Edge上利用实时参考和持续学习，可以实现这一点。
+exl-id: 23eb1877-1bdf-4982-b58c-cfb58467035a
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '550'
-ht-degree: 2%
+source-wordcount: '547'
+ht-degree: 1%
 
 ---
-
 
 # 实时机器学习概述(Alpha)
 
@@ -45,7 +45,7 @@ ht-degree: 2%
 
 ### 部署
 
-将模型部署到[!DNL Experience Edge]，以使用预测API端点在[!UICONTROL 服务库]中创建实时机器学习服务。
+将模型部署到[!DNL Experience Edge]，以使用预测API端点在[!UICONTROL Service Gallery]中创建实时机器学习服务。
 
 ### 推理
 
@@ -81,4 +81,3 @@ ht-degree: 2%
 ## 后续步骤
 
 您可以按照[入门指南](./getting-started.md)开始。 本指南将指导您设置创建实时机器学习模型所需的所有先决条件。
-
