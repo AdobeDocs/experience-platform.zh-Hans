@@ -1,12 +1,11 @@
 ---
-product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 数据访问
 breadcrumb-title: Data Access 指南
 user-guide-description: 在平台内发现和访问提取的数据集。
-feature: Data Management, Data Ingestion
+feature: 数据管理，数据摄取
 translation-type: tm+mt
-source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '41'
 ht-degree: 51%
