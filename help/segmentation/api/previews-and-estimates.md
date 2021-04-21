@@ -2,55 +2,55 @@
 keywords: Experience Platform；主题；热门主题；分段；分段；分段服务；预览；估计；预览和估计；估计和预览;api;API;
 solution: Experience Platform
 title: 预览和评估API端点
-topic: developer guide
-description: 在开发细分定义时，您可以使用Adobe Experience Platform的评估和预览工具来视图摘要级信息，以帮助确保隔离预期受众。
+topic-legacy: developer guide
+description: 在开发细分定义时，您可以使用Adobe Experience Platform中的估计和预览工具来视图摘要级信息，以帮助确保隔离预期受众。
+exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
 translation-type: tm+mt
-source-git-commit: eba6de210dcbc12b829b09ba6e7083d342517ba2
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '949'
 ht-degree: 2%
 
 ---
 
-
 # 预览和估计端点
 
-在开发细分定义时，您可以使用Adobe Experience Platform内的估计和预览工具来视图摘要级信息，以帮助确保隔离您期望的受众。
+在开发区段定义时，您可以使用Adobe Experience Platform中的估计和预览工具来视图摘要级信息，以帮助确保隔离您期望的受众。
 
-* **预** 览为区段定义提供符合条件的用户档案的分页列表，使您能够将结果与预期进行比较。
+* **预** 览为区段定义提供符合条件的用户档案的分页列表，使您能够将结果与预期结果进行比较。
 
-* **估** 计提供有关段定义的统计信息，如预测受众大小、置信区间和误差标准偏差。
+* **估** 计提供有关区段定义的统计信息，如预测受众大小、置信区间和误差标准偏差。
 
 >[!NOTE]
 >
->要访问与实时用户档案数据相关的类似指标，如特定命名空间或用户档案数据存储中的用户档案片段和合并用户档案的总数，请参阅用户档案API开发人员指南的[用户档案预览(预览示例状态)端点指南](../../profile/api/preview-sample-status.md)。
+>要访问与实时客户用户档案数据相关的类似指标，如特定命名空间或用户档案数据存储中的用户档案片段和合并用户档案的总数，请参阅用户档案API开发人员指南的[用户档案预览(预览示例状态)终结点指南](../../profile/api/preview-sample-status.md)。
 
 ## 入门指南
 
-本指南中使用的端点是[!DNL Adobe Experience Platform Segmentation Service] API的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)，了解成功调用API所需的重要信息，包括必需的头以及如何读取示例API调用。
+本指南中使用的端点是[!DNL Adobe Experience Platform Segmentation Service] API的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)以了解成功调用API所需的重要信息，包括必需的标头以及如何读取示例API调用。
 
 ## 估计的生成方式
 
-当将记录引入用户档案存储中时，将总用户档案计数增加或减少5%以上，将触发采样作业以更新该计数。 数据采样的触发方式取决于摄取的方法：
+当将记录引入用户档案存储中时，将总用户档案计数增加或减少5%以上时，将触发采样作业以更新该计数。 数据采样的触发方式取决于摄取方法：
 
-* **批处理摄** 取：对于批处理，在成功将批处理导入用户档案存储的15分钟内，如果达到5%的增加或减少阈值，则运行一个作业以更新计数。
-* **流摄取：** 对于流数据工作流，每小时检查一次，以确定是否达到5%的增加或减少阈值。如果已激活，则会自动触发作业以更新计数。
+* **批摄取：** 对于批摄取，在成功将批摄入用户档案存储区的15分钟内，如果达到5%的增加或减少阈值，则运行一个作业以更新计数。
+* **流摄取：** 对于流式数据工作流，会每小时检查一次，以确定是否达到5%的增加或减少阈值。如果已触发，则会自动触发作业以更新计数。
 
-扫描的样本大小取决于用户档案存储中的实体总数。 下表显示了这些示例大小：
+扫描的样本大小取决于用户档案存储中的实体总数。 下表显示了这些样本大小：
 
-| 用户档案商店中的实体 | 样本大小 |
+| 用户档案存储中的实体 | 样本大小 |
 | ------------------------- | ----------- |
 | 不到100万 | 完整数据集 |
-| 1000万到2000万 | 100万 |
+| 1到2000万 | 100万 |
 | 2000多万 | 总共5% |
 
 >[!NOTE]
 >
 >估计通常需要10到15秒才能运行，首先是粗略估计，然后随着读取更多记录而优化。
 
-## 创建新预览{#create-preview}
+## 新建预览{#create-preview}
 
-可以通过向`/preview`端点发出预览请求来创建新POST。
+可以通过向`/preview`端点发出POST请求来创建新预览。
 
 >[!NOTE]
 >
@@ -82,12 +82,12 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `predicateExpression` | 查询数据的PQL表达式。 |
-| `predicateType` | `predicateExpression`下查询表达式的谓词类型。 当前，此属性唯一接受的值为`pql/text`。 |
+| `predicateType` | `predicateExpression`下查询表达式的谓词类型。 当前，此属性唯一可接受的值为`pql/text`。 |
 | `predicateModel` | 用户档案数据所基于的[!DNL Experience Data Model](XDM)模式类的名称。 |
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建），其中包含新创建预览的详细信息。
+成功的响应会返回HTTP状态201（已创建），其中包含您新创建的预览的详细信息。
 
 ```json
 {
@@ -181,9 +181,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 | -------- | ----------- |
 | `results` | 实体ID的列表及其相关身份。 提供的链接可用于使用[用户档案访问API端点](../../profile/api/entities.md)查找指定的实体。 |
 
-## 检索特定评估作业{#get-estimate}的结果
+## 检索特定估计作业{#get-estimate}的结果
 
-创建预览作业后，您可以在到`/estimate`端点的GET请求路径中使用其`previewId`来视图有关段定义的统计信息，包括预计受众大小、置信区间和错误标准偏差。
+创建预览作业后，您可以在到`/estimate`端点的GET请求路径中使用其`previewId`来视图有关段定义的统计信息，包括预测受众大小、置信区间和误差标准偏差。
 
 **API格式**
 
@@ -193,7 +193,7 @@ GET /estimate/{PREVIEW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | 仅当创建预览作业，并且两个作业共享相同的ID值以用于查找时，才会触发估计作业。 具体而言，这是创建预览作业时返回的`previewId`值。 |
+| `{PREVIEW_ID}` | 只有在创建预览作业时才会触发估计作业，并且这两个作业共享相同的ID值以用于查找目的。 具体而言，这是创建预览作业时返回的`previewId`值。 |
 
 **请求**
 
@@ -209,7 +209,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 **响应**
 
-成功的响应会返回HTTP状态200，其中包含估计作业的详细信息。
+成功的响应返回HTTP状态200，其中包含估计作业的详细信息。
 
 ```json
 {
@@ -243,10 +243,10 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `estimatedNamespaceDistribution` | 一组对象，显示区段内按标识用户档案划分的命名空间数。 按命名空间划分的用户档案总数(将每个命名空间显示的值相加)可能高于用户档案计数量度，因为一个用户档案可能与多个命名空间关联。 例如，如果客户在多个渠道上与您的品牌互动，则多个命名空间将与该个别客户关联。 |
-| `state` | 预览作业的当前状态。 状态将为“RUNNING”，直到处理完成，此时它将变为“RESULT_READY”或“FAILED”。 |
-| `_links.preview` | 当`state`为“RESULT_READY”时，此字段提供一个URL来视图估计值。 |
+| `estimatedNamespaceDistribution` | 一组对象，显示区段内按标识命名空间划分的用户档案数。 按命名空间划分的用户档案总数(将每个命名空间显示的值相加)可能高于用户档案计数量度，因为一个用户档案可能与多个命名空间关联。 例如，如果一个客户在多个渠道上与您的品牌互动，则多个命名空间将与该个别客户关联。 |
+| `state` | 预览作业的当前状态。 状态将为“RUNNING”，直到处理完成，此时状态将变为“RESULT_READY”或“FAILED”。 |
+| `_links.preview` | 当`state`为“RESULT_READY”时，此字段提供一个URL以视图估计。 |
 
 ## 后续步骤
 
-阅读本指南后，您应该更好地了解如何使用Segmentation API进行预览和评估。 要了解如何访问与实时客户用户档案数据相关的指标，如特定命名空间或用户档案数据存储中的用户档案片段和合并用户档案总数，请访问[用户档案预览(`/previewsamplestatus`)端点指南](../../profile/api/preview-sample-status.md)。
+阅读本指南后，您应该更好地了解如何使用分段API的预览和估计。 要了解如何访问与实时客户用户档案数据相关的指标，如特定命名空间或用户档案数据存储中的用户档案片段和合并用户档案总数，请访问[用户档案预览(`/previewsamplestatus`)端点指南](../../profile/api/preview-sample-status.md)。
