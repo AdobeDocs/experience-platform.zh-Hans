@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；ssc;SSC;Salesforce Service Cloud;salesforce服务云
 solution: Experience Platform
 title: 使用流服务API创建Salesforce服务云源连接
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Salesforce Service Cloud。
+exl-id: ed133bca-8e88-4c85-ae52-c3269b6bf3c9
 translation-type: tm+mt
-source-git-commit: a0b016e8adc519bc79701f9fd850b6ddf7d46127
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '578'
 ht-degree: 2%
 
 ---
-
 
 # 使用[!DNL Flow Service] API创建[!DNL Salesforce Service Cloud]源连接
 
