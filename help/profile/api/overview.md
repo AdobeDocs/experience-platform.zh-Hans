@@ -1,16 +1,16 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API；统一用户档案；统一用户档案；统一用户档案;;rtcp；启用用户档案；启用用户档案
 title: 实时客户用户档案API指南
-topic: guide
+topic-legacy: guide
 description: 实时客户用户档案API允许开发人员探索和使用用户档案数据，包括视图用户档案，创建和更新合并策略，导出或采样用户档案数据，以及删除不再需要或错误添加的用户档案数据。 请按照本指南学习如何使用API执行关键操作。
+exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
 translation-type: tm+mt
-source-git-commit: 24a5af0440f58b4e1db639ec971c4e1611f107d8
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '895'
+source-wordcount: '894'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Real-time Customer Profile] API指南
 
@@ -54,7 +54,7 @@ Adobe Experience Platform通过使数据易于在战略性位置的称为“边�
 
 ## 预览采样状态([!DNL Profile]预览){#profile-preview}
 
-当启用用户档案的数据被引入Experience Platform时，它存储在用户档案数据存储中。 随着用户档案存储中记录数的增加或减少，将运行一个示例作业，该示例作业包括关于用户档案片段和合并用户档案在数据存储中有多少个的信息。 使用用户档案 API，您可以预览最新成功的示例，以及按数据集和身份命名空间列表用户档案分发。 要开始使用`/profilepreviewstatus`端点，请参阅[预览示例状态端点指南](preview-sample-status.md)。
+当启用用户档案的数据被引入Experience Platform时，它存储在用户档案数据存储中。 随着用户档案存储中记录数的增加或减少，将运行示例作业，该示例作业包括关于用户档案片段和合并用户档案在数据存储中的数量的信息。 使用用户档案 API，您可以预览最新成功的示例，以及按数据集和身份命名空间列表用户档案分发。 要开始使用`/profilepreviewstatus`端点，请参阅[预览示例状态端点指南](preview-sample-status.md)。
 
 ## 用户档案系统作业{#profile-system-jobs}
 
