@@ -1,11 +1,10 @@
 ---
-product: experience-platform
 audience: user
 user-guide-title: Adobe Experience Platform 发行说明
 breadcrumb-title: Platform 发行说明
 user-guide-description: Adobe Experience Platform 的月度发行说明。
 translation-type: tm+mt
-source-git-commit: fb4fb3ba79c6eb3a5439c119157a43b38dfd85dc
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '43'
 ht-degree: 100%
