@@ -1,49 +1,49 @@
 ---
-keywords: Experience Platform；主题；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；模式;模式;模式;模式；关系；关系描述符；关系描述符；参考身份；参考身份；
+keywords: Experience Platform；主题；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；模式;模式;模式;模式；关系；关系描述符；关系描述符；参考标识；
 solution: Experience Platform
 title: 使用模式注册表API定义两个模式之间的关系
-description: 本文档提供了一个教程，用于定义组织使用模式注册表API定义的两个模式之间的一对一关系。
-topic: tutorial
+description: 本文档提供了一个教程，用于定义您的组织使用模式注册表API定义的两个模式之间的一对一关系。
+topic-legacy: tutorial
 type: Tutorial
+exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1337'
 ht-degree: 1%
 
 ---
 
-
 # 使用[!DNL Schema Registry] API定义两个模式之间的关系
 
-了解不同渠道客户之间的关系及其与您品牌的互动是Adobe Experience Platform的重要部分。 在[!DNL Experience Data Model](XDM)模式的结构中定义这些关系使您能够获得对客户数据的复杂洞察。
+了解不同渠道客户之间的关系及其与品牌互动是Adobe Experience Platform的重要部分。 在[!DNL Experience Data Model](XDM)模式的结构中定义这些关系使您能够获得对客户数据的复杂洞察。
 
-虽然模式关系可以通过使用合并模式和[!DNL Real-time Customer Profile]来推断，但这仅适用于共享同一类的模式。 要在属于不同类的两个模式之间建立关系，必须向源模式添加专用关系字段，该字段引用目标模式的标识。
+虽然可以通过使用模式模式和[!DNL Real-time Customer Profile]推断出合并关系，但这仅适用于共享同一类的模式。 要在属于不同类的两个模式之间建立关系，必须将专用关系字段添加到引用目标模式标识的源模式。
 
 本文档提供了一个教程，用于定义组织使用[[!DNL Schema Registry API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)定义的两个模式之间的一对一关系。
 
 ## 入门指南
 
-本教程需要对[!DNL Experience Data Model](XDM)和[!DNL XDM System]有有效的了解。 在开始本教程之前，请查阅以下文档：
+本教程需要对[!DNL Experience Data Model](XDM)和[!DNL XDM System]有所了解。 开始本教程之前，请查阅以下文档：
 
 * [Experience Platform中的XDM系统](../home.md):XDM及其实施概述 [!DNL Experience Platform]。
-   * [模式合成基础](../schema/composition.md):介绍XDM模式的构件。
-* [[!DNL Real-time Customer Profile]](../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+   * [模式合成的基础](../schema/composition.md):介绍XDM模式的构建块。
+* [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
+* [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-在开始本教程之前，请查看[开发人员指南](../api/getting-started.md)，了解成功调用[!DNL Schema Registry] API所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（特别要注意[!DNL Accept]标头及其可能的值）。
+在开始本教程之前，请查看[开发人员指南](../api/getting-started.md)以了解成功调用[!DNL Schema Registry] API所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（特别要注意[!DNL Accept]标头及其可能的值）。
 
-## 定义源和目标模式{#define-schemas}
+## 定义源模式和目标{#define-schemas}
 
-您应已创建将在关系中定义的两个模式。 本教程在组织的当前忠诚度项目(在“[!DNL Loyalty Members]”模式中定义)的成员与其喜爱的酒店(在“[!DNL Hotels]”模式中定义)之间建立关系。
+应该您已经创建了将在关系中定义的两个模式。 本教程在组织的当前忠诚度项目(在“[!DNL Loyalty Members]”模式中定义)的成员与其喜爱的酒店(在“[!DNL Hotels]”模式中定义)之间建立关系。
 
-模式关系由&#x200B;**源模式**&#x200B;表示，该源模式具有引用&#x200B;**目标**&#x200B;内的另一个字段的字段。 在接下来的步骤中，“[!DNL Loyalty Members]”将作为源模式，而“[!DNL Hotels]”将作为目标模式。
+模式关系由&#x200B;**源模式**&#x200B;表示，该源模式具有引用&#x200B;**目标**&#x200B;中的另一个字段的字段。 在接下来的步骤中，“[!DNL Loyalty Members]”将作为源模式，而“[!DNL Hotels]”将作为目标模式。
 
 >[!IMPORTANT]
 >
->要建立关系，两个模式都必须定义主身份，并为[!DNL Real-time Customer Profile]启用。 如果您需要有关如何相应配置模式的指导，请参阅模式创建教程中的[启用用户档案](./create-schema-api.md#profile)一节。
+>要建立关系，两个模式必须定义主身份，并为[!DNL Real-time Customer Profile]启用。 如果您需要有关如何相应地配置模式的指导，请参阅模式创建教程中的[启用用于用户档案](./create-schema-api.md#profile)的模式部分。
 
-要定义两个模式之间的关系，您必须首先获取两个模式的`$id`值。 如果您知道模式的显示名称(`title`)，则可以通过在[!DNL Schema Registry] API中向`/tenant/schemas`端点发出GET请求来找到其`$id`值。
+要定义两个模式之间的关系，必须首先获取两个模式的`$id`值。 如果您知道模式的显示名称(`title`)，则可以通过向[!DNL Schema Registry] API中的`/tenant/schemas`端点发出GET请求来查找其`$id`值。
 
 **API格式**
 
@@ -69,7 +69,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回由您的组织定义的列表模式，包括其`name`、`$id`、`meta:altId`和`version`。
+成功的响应会返回由您的组织定义的列表模式，包括其`name`、`$id`、`meta:altId`和`version`。
 
 ```json
 {
@@ -111,13 +111,13 @@ curl -X GET \
 
 ## 为源模式定义引用字段
 
-在[!DNL Schema Registry]中，关系描述符的工作方式与关系数据库表中的外键类似：源模式中的字段用作对目标模式的主标识字段的引用。 如果您的源模式没有用于此目的的字段，您可能需要使用新字段创建混音并将其添加到模式。 此新字段的`type`值必须为“[!DNL string]”。
+在[!DNL Schema Registry]中，关系描述符的工作方式与关系数据库表中的外键类似：源模式中的字段用作对目标模式的主标识字段的引用。 如果源模式没有用于此目的的字段，您可能需要使用新字段创建混音并将其添加到模式。 此新字段的`type`值必须为“[!DNL string]”。
 
 >[!IMPORTANT]
 >
 >与目标模式不同，源模式不能将其主标识用作引用字段。
 
-在本教程中，目标模式“[!DNL Hotels]”包含一个`hotelId`字段，它用作模式的主标识，因此也将用作其引用字段。 但是，源模式“[!DNL Loyalty Members]”没有要用作引用的专用字段，并且必须为该模式提供新的混音：`favoriteHotel`。
+在本教程中，目标模式“[!DNL Hotels]”包含一个`hotelId`字段，它用作模式的主要标识，因此也将用作其引用字段。 但是，源模式“[!DNL Loyalty Members]”没有要用作引用的专用字段，并且必须为该源模式指定新的混音符，以向该字段添加新字段：`favoriteHotel`。
 
 >[!NOTE]
 >
@@ -125,7 +125,7 @@ curl -X GET \
 
 ### 创建新混音
 
-要向模式添加新字段，必须先在混音中定义该字段。 可以通过向`/tenant/mixins`端点发出POST请求来创建新混音。
+要向模式添加新字段，必须首先在混音中定义该字段。 可以通过向`/tenant/mixins`端点发出POST请求来创建新混音。
 
 **API格式**
 
@@ -135,7 +135,7 @@ POST /tenant/mixins
 
 **请求**
 
-以下请求将创建一个新的混音，该混音在其添加到的任何模式的`_{TENANT_ID}`命名空间下添加一个`favoriteHotel`字段。
+以下请求将创建一个新混音，该混音在其添加到的任何模式的`_{TENANT_ID}`命名空间下添加一个`favoriteHotel`字段。
 
 ```shell
 curl -X POST\
@@ -229,13 +229,13 @@ curl -X POST\
 
 | 属性 | 描述 |
 | --- | --- |
-| `$id` | 只读，系统生成新混音的唯一标识符。 采用URI的形式。 |
+| `$id` | 只读，系统生成新混音的唯一标识符。 以URI的形式。 |
 
-记录混音的`$id` URI，在将混音添加到源模式的下一步中使用。
+记录混音的`$id` URI，以在将混音添加到源模式的下一步中使用。
 
 ### 将混音添加到源模式
 
-创建混音后，可以通过向`/tenant/schemas/{SCHEMA_ID}`端点发出PATCH请求，将其添加到源模式。
+创建混音后，可以通过向`/tenant/schemas/{SCHEMA_ID}`端点发出PATCH请求将其添加到源模式。
 
 **API格式**
 
@@ -273,12 +273,12 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `op` | 要执行的PATCH操作。 此请求使用`add`操作。 |
-| `path` | 将添加新资源的模式字段的路径。 向模式添加混音时，值必须为“/allOf/-”。 |
+| `path` | 将添加新资源的模式字段的路径。 向模式添加混音时，值必须为“/allOf/ — ”。 |
 | `value.$ref` | 要添加的混音的`$id`。 |
 
 **响应**
 
-成功的响应会返回更新模式的详细信息，该详细信息现在包括其`allOf`数组下添加的混音的`$ref`值。
+成功的响应会返回更新模式的详细信息，该更新现在包括其`allOf`数组下添加的混音的`$ref`值。
 
 ```json
 {
@@ -339,9 +339,9 @@ curl -X PATCH \
 
 ## 创建引用标识描述符{#reference-identity}
 
-如果模式字段用作关系中其他模式的引用，则必须对其应用引用标识描述符。 由于“[!DNL Loyalty Members]”中的`favoriteHotel`字段将引用“[!DNL Hotels]”中的`hotelId`字段，因此必须为`hotelId`提供引用标识描述符。
+如果模式字段用作关系中其他模式的引用，则必须对它们应用引用标识描述符。 由于“[!DNL Loyalty Members]”中的`favoriteHotel`字段将引用“[!DNL Hotels]”中的`hotelId`字段，因此必须为`hotelId`提供引用标识描述符。
 
-通过向`/tenant/descriptors`端点发出模式请求，为目标POST创建引用描述符。
+通过向`/tenant/descriptors`端点发出POST请求，为目标模式创建引用描述符。
 
 **API格式**
 
@@ -376,11 +376,11 @@ curl -X POST \
 | `xdm:sourceSchema` | 目标模式的`$id` URL。 |
 | `xdm:sourceVersion` | 目标模式的版本号。 |
 | `sourceProperty` | 目标模式的主标识字段的路径。 |
-| `xdm:identityNamespace` | 引用字段的标识命名空间。 这必须是定义字段作为命名空间主标识时使用的模式。 有关详细信息，请参阅[标识命名空间概述](../../identity-service/home.md)。 |
+| `xdm:identityNamespace` | 引用字段的标识命名空间。 这必须是定义字段作为模式主标识时使用的命名空间。 有关详细信息，请参阅[标识命名空间概述](../../identity-service/home.md)。 |
 
 **响应**
 
-成功的响应会返回新创建的目标模式引用描述符的详细信息。
+成功的响应返回新创建的目标模式引用描述符的详细信息。
 
 ```json
 {
@@ -406,7 +406,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求创建新的关系描述符，其中“[!DNL Loyalty Members]”作为源模式,“[!DNL Legacy Loyalty Members]”作为目标模式。
+以下请求创建新的关系描述符，其中“[!DNL Loyalty Members]”作为源模式，“[!DNL Legacy Loyalty Members]”作为目标模式。
 
 ```shell
 curl -X POST \
@@ -429,7 +429,7 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `@type` | 要创建的描述符的类型。 关系描述符的`@type`值为“xdm:descriptorOneToOne”。 |
+| `@type` | 要创建的描述符的类型。 关系描述符的`@type`值为&quot;xdm:descriptorOneToOne&quot;。 |
 | `xdm:sourceSchema` | 源模式的`$id` URL。 |
 | `xdm:sourceVersion` | 源模式的版本号。 |
 | `xdm:sourceProperty` | 源模式中引用字段的路径。 |
@@ -457,4 +457,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过遵循本教程，您成功地创建了两个模式之间的一对一关系。 有关使用[!DNL Schema Registry] API使用描述符的详细信息，请参阅[模式注册表开发人员指南](../api/descriptors.md)。 有关如何在UI中定义模式关系的步骤，请参阅教程[使用模式编辑器](relationship-ui.md)定义模式关系。
+通过完成本教程，您成功地创建了两个模式之间的一对一关系。 有关使用[!DNL Schema Registry] API使用描述符的详细信息，请参阅[模式注册表开发人员指南](../api/descriptors.md)。 有关如何在UI中定义模式关系的步骤，请参阅有关使用模式编辑器](relationship-ui.md)定义模式关系的教程。[
