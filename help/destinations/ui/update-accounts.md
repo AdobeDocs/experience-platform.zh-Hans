@@ -1,14 +1,14 @@
 ---
-keywords: 更新目标帐户；目标帐户；如何更新帐户
+keywords: 更新目标帐户，目标帐户，如何更新帐户，更新目标
 title: 更新目标帐户
 type: Tutorial
 description: 本教程列表了在Adobe Experience Platform UI中更新目标帐户的步骤
 exl-id: afb41878-4205-4c64-af4d-e2740f852785
 translation-type: tm+mt
-source-git-commit: e436d7147c613dad5b2ff596a412759fd60d228c
+source-git-commit: 5b72433fcf2318f98538278c6d2650b366e391a2
 workflow-type: tm+mt
-source-wordcount: '313'
-ht-degree: 1%
+source-wordcount: '314'
+ht-degree: 0%
 
 ---
 
