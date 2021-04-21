@@ -2,18 +2,18 @@
 keywords: Experience Platform；用户界面；UI；自定义；许可证使用仪表板;仪表板；许可证使用；授权；消耗
 title: 许可证使用仪表板
 description: 'Adobe Experience Platform UI提供了一个仪表板，通过它可以视图有关单位许可证使用情况的重要信息。 '
-topic: guide
+topic-legacy: guide
 type: Documentation
+exl-id: 8cf34653-acf6-4af3-af7b-6c07e68bbc03
 translation-type: tm+mt
-source-git-commit: a3233ba44652c280775f77ef326dc7aeabd4ed71
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: '146'
 ht-degree: 6%
 
 ---
 
-
-# （测试版）[!UICONTROL 许可证使用]仪表板{#license-usage-dashboard}
+# (Beta)[!UICONTROL License usage]仪表板{#license-usage-dashboard}
 
 >[!IMPORTANT]
 >
