@@ -1,16 +1,16 @@
 ---
 solution: Experience Platform
 title: 隐私/个性化/营销首选项（同意）混合
-topic: overview
+topic-legacy: overview
 description: 本文档概述了隐私/个性化/营销首选项（同意）混合。
+exl-id: ec592102-a9d3-4cac-8b94-58296a138573
 translation-type: tm+mt
-source-git-commit: 8c5ab298bad69305358ae961ebaf7836a90a0eaa
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '2239'
+source-wordcount: '2238'
 ht-degree: 1%
 
 ---
-
 
 # [!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)] mixin
 
