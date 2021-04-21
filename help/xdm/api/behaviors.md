@@ -1,40 +1,40 @@
 ---
-keywords: Experience Platform；主题；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；行为；行为；行为；行为；
+keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；行为；行为；行为；
 solution: Experience Platform
 title: 行为API端点
-description: 模式注册表API中的/behaviors端点允许您检索全局容器中的所有可用行为。
-topic: developer guide
+description: 模式 Registry API中的/behaviors端点允许您检索全局容器中的所有可用行为。
+topic-legacy: developer guide
+exl-id: 3b45431f-1d55-4279-8b62-9b27863885ec
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '423'
 ht-degree: 2%
 
 ---
 
-
 # 行为端点
 
-在体验数据模型(XDM)中，行为定义模式描述的数据性质。 每个XDM类必须引用特定行为，使用该类的所有模式都将继承该行为。 对于平台中的几乎所有用例，有两种可用行为：
+在体验数据模型(XDM)中，行为定义模式描述的数据的性质。 每个XDM类必须引用特定行为，使用该类的所有模式都将继承该行为。 对于平台中的几乎所有用例，有两种可用行为：
 
-* **[!UICONTROL 记录]**:提供有关主题属性的信息。主题可以是组织或个人。
-* **[!UICONTROL 时间系列]**:提供记录主体直接或间接采取操作时系统的快照。
+* **[!UICONTROL Record]**:提供有关主题属性的信息。主题可以是组织或个人。
+* **[!UICONTROL Time-series]**:提供记录主体直接或间接采取操作时系统的快照。
 
 >[!NOTE]
 >
->在平台中，有些用例要求使用不采用上述任何一种行为的模式。 对于这些情况，有第三种“临时”行为可用。 有关详细信息，请参阅教程中的[创建点对点模式](../tutorials/ad-hoc.md)。
+>在平台中，有些用例要求使用不采用上述任一行为的模式。 对于这些情况，有第三种“临时”行为可用。 有关详细信息，请参阅教程[创建临时模式](../tutorials/ad-hoc.md)。
 >
->有关模式行为如何影响模式合成的更多一般信息，请参阅[合成基础知识指南](../schema/composition.md)。
+>有关模式行为如何影响模式合成的更多一般信息，请参阅[合成基础知识](../schema/composition.md)的指南。
 
-[!DNL Schema Registry] API中的`/behaviors`端点允许您视图`global`容器中的可用行为。
+通过[!DNL Schema Registry] API中的`/behaviors`端点，可以视图`global`容器中的可用行为。
 
 ## 入门指南
 
-本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/behavior-registry.yaml)的一部分。 在继续之前，请查看[入门指南](./getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南，以及成功调用任何Experience PlatformAPI所需的重要头信息。
+本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/behavior-registry.yaml)的一部分。 在继续之前，请查阅[快速入门指南](./getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何Experience PlatformAPI所需标头的重要信息。
 
-## 检索行为列表{#list}
+## 检索行为{#list}的列表
 
-通过向`/behaviors`端点发出列表请求，可以检索所有可用行为的GET。
+通过向`/behaviors`端点发出GET请求，可以检索所有可用行为的列表。
 
 **API格式**
 
@@ -91,7 +91,7 @@ curl -X GET \
 
 ## 查找行为{#lookup}
 
-您可以通过在GET请求路径中向`/behaviors`端点提供其ID来查找特定行为。
+您可以通过在`/behaviors`端点的GET请求路径中提供其ID来查找特定行为。
 
 **API格式**
 
@@ -119,7 +119,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回行为的详细信息，包括其版本、描述以及行为提供给使用它的类的属性。
+成功的响应返回行为的详细信息，包括其版本、描述以及行为提供给使用它的类的属性。
 
 ```json
 {
@@ -172,4 +172,4 @@ curl -X GET \
 
 ## 后续步骤
 
-本指南介绍了在[!DNL Schema Registry] API中使用`/behaviors`端点。 要了解如何使用API将行为指定给类，请参阅[类端点指南](./classes.md)。
+本指南介绍了[!DNL Schema Registry] API中`/behaviors`端点的使用。 要了解如何使用API将行为指派给类，请参阅[类终结点指南](./classes.md)。
