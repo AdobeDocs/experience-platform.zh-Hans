@@ -5,10 +5,10 @@ breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: 数据摄取，来源
 translation-type: tm+mt
-source-git-commit: fb24f7cf82038a38c2861bd84404531062e47485
+source-git-commit: 121e2f410acdcd6de3953c6063a15901c853dd07
 workflow-type: tm+mt
-source-wordcount: '606'
-ht-degree: 12%
+source-wordcount: '610'
+ht-degree: 11%
 
 ---
 
@@ -79,6 +79,8 @@ ht-degree: 12%
       - [PayPal连接器](connectors/payments/paypal.md)
    - 协议{#protocols}
       - [通用OData连接器](connectors/protocols/odata.md)
+   - 流{#streaming}
+      - [HTTP API连接器](connectors/streaming/http.md)
 - API教程{#api-tutorials}
    - 创建源连接{#create}
       - 广告 {#advertising}
