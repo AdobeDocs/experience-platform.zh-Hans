@@ -2,23 +2,23 @@
 keywords: Experience Platform;预览模式数据；数据科学工作区；热门主题
 solution: Experience Platform
 title: 预览零售销售模式和数据集
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: 以下文档概述了在Adobe Experience Platform上预览模式和数据集。
+exl-id: dca9835b-4f76-42cc-b262-b20323bf4356
 translation-type: tm+mt
-source-git-commit: 5129a75071af680bc54a7f60bb89ce32d3216d09
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '238'
-ht-degree: 1%
+source-wordcount: '232'
+ht-degree: 0%
 
 ---
-
 
 # 预览零售销售模式和数据集
 
 成功完成[零售销售模式和数据集](./create-retails-sales-dataset.md)教程中的引导脚本后。 可以在[!DNL Experience Platform]上查看输出模式和数据集。 要视图模式和数据集，请执行以下步骤：
 
-选择位于左侧导航中的&#x200B;**[!UICONTROL 模式]**&#x200B;选项卡，并查找由引导脚本创建的输入模式。 模式的名称将与上一步中在`config.yaml`中定义的内容相对应。 视图模式详细信息，并通过单击它进行合成。
+选择左侧导航中的&#x200B;**[!UICONTROL Schemas]**&#x200B;选项卡，并查找由引导脚本创建的输入模式。 模式的名称将与上一步中在`config.yaml`中定义的内容相对应。 视图模式详细信息，并通过单击它进行合成。
 
 ![](../images/models-recipes/access-data/schema.PNG)
 
@@ -26,7 +26,7 @@ ht-degree: 1%
 
 ![](../images/models-recipes/access-data/dataset.PNG)
 
-选择位于右上角的&#x200B;**[!UICONTROL 预览数据集]**&#x200B;以预览数据集的子集。
+选择位于右上角的&#x200B;**[!UICONTROL Preview Dataset]**&#x200B;以预览数据集的子集。
 
 ![](../images/models-recipes/access-data/preview.PNG)
 
