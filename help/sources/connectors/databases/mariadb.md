@@ -5,19 +5,15 @@ title: MariaDB源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将MariaDB连接到Adobe Experience Platform。
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b2384bfe26fa3d111c342062b2d9bb37c4226857
 workflow-type: tm+mt
-source-wordcount: '247'
+source-wordcount: '230'
 ht-degree: 0%
 
 ---
 
 
-# （测试版）[!DNL MariaDB]连接器
-
->[!NOTE]
->
->[!DNL MariaDB]连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../home.md#terms-and-conditions)。
+# [!DNL MariaDB] 连接器
 
 Adobe Experience Platform允许从外部源摄取数据，同时为您提供使用[!DNL Platform]服务构建、标记和增强传入数据的能力。 您可以从各种来源收集数据，如Adobe应用程序、基于云的存储、数据库和许多其他来源。
 
