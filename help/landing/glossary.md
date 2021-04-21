@@ -2,20 +2,20 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: Adobe Experience Platform词汇表
-topic: getting started
+topic-legacy: getting started
 description: Experience Platform 重要术语词汇表。
+exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
 translation-type: tm+mt
-source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '7139'
+source-wordcount: '7131'
 ht-degree: 1%
 
 ---
 
-
 # Adobe Experience Platform 术语表 {#adobe-experience-platform-glossary}
 
-## 同类群组
+## A
 
 **访问控制**:基于角色的访问控制使管理员能够向Experience Platform用户分配访问权限和权限。权限包括视图和/或使用Experience Platform功能的能力，如创建沙箱、定义模式和管理数据集。
 
@@ -57,7 +57,7 @@ ht-degree: 1%
 
 **属性**:属性是指表示用户档案的特征。
 
-**属性合并**:当使用实时客户用户档案API定义合并策略时，该对 `attributeMerge` 象指示在发生用户档案冲突时合并策略优先处理属性的方式。它等效于在平台UI中定义合并策略时选择[!UICONTROL 合并方法]。
+**属性合并**:当使用实时客户用户档案API定义合并策略时，该对 `attributeMerge` 象指示在发生用户档案冲突时合并策略优先处理属性的方式。它等效于在平台UI中定义合并策略时选择[!UICONTROL Merge method]。
 
 **Attribution AI**: [!DNL Attribution AI] 是由Adobe Sensei提供支持的智能服务，可在整个客户生命周期中提供算法多渠道归因功能。
 
@@ -263,7 +263,7 @@ ht-degree: 1%
 
 **标识(“I”)标签**:标识(“I”)数据使用标签用于分类可识别或联系特定人的数据。
 
-**身份图**:标识图是针对单个客户的拼接和链接标识之间关系的映射。每个身份图都能与客户活动近乎实时地更新。 数据中标识关系的公共结构由[!UICONTROL 专用图]表示，它用作每个个别标识图的结构蓝图。
+**身份图**:标识图是针对单个客户的拼接和链接标识之间关系的映射。每个身份图都能与客户活动近乎实时地更新。 数据中标识关系的公共结构由[!UICONTROL Private Graph]表示，用作每个个人标识图的结构蓝图。
 
 **身份命名空间**:标识命名空间定义标识符的上下文，如电子邮件地址或CRM ID。
 
