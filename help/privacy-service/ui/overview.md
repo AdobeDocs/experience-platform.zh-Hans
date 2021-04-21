@@ -2,37 +2,37 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: Privacy ServiceUI概述
-topic: UI guide
-description: 开始使用Privacy Service用户界面跨各种Experience Cloud应用程序协调和监控隐私请求。
+topic-legacy: UI guide
+description: 开始使用Privacy Service用户界面来协调和监视跨各种Experience Cloud应用程序的隐私请求。
+exl-id: 5624691f-0b9a-4565-8277-ea273a0d239a
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '180'
+source-wordcount: '171'
 ht-degree: 1%
 
 ---
 
-
 # [!DNL Privacy Service] UI概述
 
-Adobe Experience Platform[!DNL Privacy Service]提供RESTful API和用户界面，使您能够协调各种解决方案中的隐私和合规性请求。 本文档探讨[!DNL Privacy Service] UI。 有关使用API的信息，请参阅[Privacy Service开发人员指南](../api/getting-started.md)。
+Adobe Experience Platform [!DNL Privacy Service]提供一个RESTful API和用户界面，允许您协调各种解决方案中的隐私和合规性请求。 本文档探讨[!DNL Privacy Service] UI。 有关使用API的信息，请参阅[Privacy Service开发人员指南](../api/getting-started.md)。
 
-## 登录[!DNL Privacy Service] UI
+## 登录到[!DNL Privacy Service] UI
 
 您必须具有Adobe ID才能验证到[!DNL Privacy Service] UI。 此外，您必须在您的Adobe ID所关联的组织内具有系统管理员权限。
 
-选择&#x200B;**[!UICONTROL 用Adobe ID]**&#x200B;登录，并在出现提示时输入您的Adobe ID凭据。
+选择&#x200B;**[!UICONTROL Sign In with an Adobe ID]**，并在出现提示时输入Adobe ID凭据。
 
-登录后，选择&#x200B;**[!UICONTROL 隐私UI]**。
+登录后，选择&#x200B;**[!UICONTROL Privacy UI]**。
 
 ![](../images/ui-overview/quick-access.png)
 
 ### 从[!DNL Experience Platform]登录
 
-如果您有权访问Adobe Experience PlatformUI，则还可以通过左侧导航中的&#x200B;**[!UICONTROL 请求]**&#x200B;选项卡访问[!DNL Privacy Service] UI。
+如果您有权访问Adobe Experience Platform UI，则还可以通过左侧导航中的&#x200B;**[!UICONTROL Requests]**&#x200B;选项卡访问[!DNL Privacy Service] UI。
 
 ![](../images/ui-overview/platform.png)
 
 ## 后续步骤
 
-既然您已成功登录，请参阅[用户指南](user-guide.md)，了解如何使用[!DNL Privacy Service] UI执行各种操作的步骤。
+现在您已成功登录，请参阅[用户指南](user-guide.md)，了解如何使用[!DNL Privacy Service] UI执行各种操作的步骤。
