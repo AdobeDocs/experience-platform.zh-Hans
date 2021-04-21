@@ -2,14 +2,14 @@
 keywords: Experience Platform；主页；热门主题；map csv;map csv;map csv文件；map csv文件到xdm;map csv到xdm;ui指南；mapper;mapping;data preparation;data preparation;preparing data;
 solution: Experience Platform
 title: 数据准备概述
-topic: overview
+topic-legacy: overview
 description: 本文档介绍Adobe Experience Platform中的数据准备。
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
 translation-type: tm+mt
-source-git-commit: 827a593c046530edba701edf26d9a47918cfd8f8
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '389'
-ht-degree: 1%
+source-wordcount: '388'
+ht-degree: 0%
 
 ---
 
