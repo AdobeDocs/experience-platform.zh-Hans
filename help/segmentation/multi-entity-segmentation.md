@@ -2,16 +2,16 @@
 keywords: Experience Platform；主题；热门主题；分段；分段；分段；分段；分段服务；分段；多实体；多实体分段；
 solution: Experience Platform
 title: 多实体细分概述
-topic: overview
+topic-legacy: overview
 description: 多实体细分是指能够根据产品、商店或其他非用户档案类使用附加数据扩展用户档案数据。 连接后，来自其他类的数据就变得像它们是用户档案模式的本机数据一样可用。
+exl-id: 01a37fdc-2abe-4a84-b7da-fcbd141ff51f
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '675'
 ht-degree: 0%
 
 ---
-
 
 # 多实体细分概述
 
