@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform；主题；热门主题；分段；分段；分段服务；pql;PQL;用户档案查询语；算术函数；算术；
+keywords: Experience Platform；主题；热门主题；分段；分段；分段服务；pql;PQL;用户档案查询语言；算术函数；算术；
 solution: Experience Platform
 title: PAL算术函数
-topic: developer guide
+topic-legacy: developer guide
 description: 算术函数用于对用户档案查询语言(PQL)中的值执行基本计算。
+exl-id: 3540ef7c-dbe4-4302-a414-3cf85618f870
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '260'
 ht-degree: 5%
 
 ---
 
-
 # 算术函数
 
-算术函数用于对[!DNL Profile Query Language](PQL)中的值执行基本计算。 有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] 概述](./overview.md)。
+算术函数用于对[!DNL Profile Query Language](PQL)中的值执行基本计算。 有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] overview](./overview.md)。
 
 ## Add
 
 `+`(addition)函数用于查找两个参数表达式的和。
 
-**Format**
+**格式**
 
 ```sql
 {NUMBER} + {NUMBER}
@@ -47,13 +47,13 @@ product1.price + product2.price
 
 **示例**
 
-以下PQL查询会查找库存的产品和产品的价格，以查找产品的总价值。
+以下PQL查询查找库存产品和产品价格以查找产品的总价值。
 
 ```sql
 product.inventory * product.price
 ```
 
-## 相减
+## 减
 
 `-`（减法）函数用于查找两个参数表达式的差值。
 
@@ -65,7 +65,7 @@ product.inventory * product.price
 
 **示例**
 
-以下PQL查询会查找两个不同产品之间的价格差异。
+以下PQL查询会查找两种不同产品之间的价格差异。
 
 ```sql
 product1.price - product2.price
@@ -83,7 +83,7 @@ product1.price - product2.price
 
 **示例**
 
-以下PQL查询将查找销售产品总额与收入总额之间的商数，以查看每个项目的平均成本。
+以下PQL查询将查找销售产品总数与查看每个项目的平均成本所赚总金额之间的商。
 
 ```sql
 totalProduct.price / totalProduct.sold
@@ -91,7 +91,7 @@ totalProduct.price / totalProduct.sold
 
 ## 剩余
 
-`%`(modulo/remainder)函数用于在将两个参数表达式除以后查找余数。
+`%`(modulo/remainer)函数用于在将两个参数表达式除以后查找余数。
 
 **格式**
 
@@ -109,4 +109,4 @@ person.age % 5 = 0
 
 ## 后续步骤
 
-您已经学习了算术函数，现在可以在PQL查询中使用它们。 有关其他PQL函数的详细信息，请阅读[用户档案查询语语言概述](./overview.md)。
+现在，您已经了解了算术函数，可以在PQL查询中使用它们。 有关其他PQL函数的详细信息，请阅读[用户档案查询语言概述](./overview.md)。
