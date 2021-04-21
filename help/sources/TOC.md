@@ -5,9 +5,9 @@ breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: 数据摄取，来源
 translation-type: tm+mt
-source-git-commit: af5564a07577a0123e1a45043d5479f6ad45d73e
+source-git-commit: fb24f7cf82038a38c2861bd84404531062e47485
 workflow-type: tm+mt
-source-wordcount: '602'
+source-wordcount: '606'
 ht-degree: 12%
 
 ---
@@ -65,6 +65,7 @@ ht-degree: 12%
       - [绿李连接器](connectors/databases/greenplum.md)
       - [HP Vertica连接器](connectors/databases/hp-vertica.md)
       - [IBM DB2连接器](connectors/databases/ibm-db2.md)
+      - [MariaDB连接器](connectors/databases/mariadb.md)
       - [Microsoft SQL Server连接器](connectors/databases/sql-server.md)
       - [MySQL连接器](connectors/databases/mysql.md)
       - [Oracle连接器](connectors/databases/oracle.md)
@@ -113,6 +114,7 @@ ht-degree: 12%
          - [绿李](tutorials/api/create/databases/greenplum.md)
          - [HP Vertica](tutorials/api/create/databases/hp-vertica.md)
          - [IBM DB2](tutorials/api/create/databases/ibm-db2.md)
+         - [MariaDB](tutorials/api/create/databases/mariadb.md)
          - [MySQL](tutorials/api/create/databases/mysql.md)
          - [Oracle](tutorials/api/create/databases/oracle.md)
          - [凤凰城](tutorials/api/create/databases/phoenix.md)
@@ -198,6 +200,7 @@ ht-degree: 12%
          - [绿李](tutorials/ui/create/databases/greenplum.md)
          - [HP Vertica](tutorials/ui/create/databases/hp-vertica.md)
          - [IBM DB2](tutorials/ui/create/databases/ibm-db2.md)
+         - [MariaDB](tutorials/ui/create/databases/mariadb.md)
          - [Microsoft SQL Server](tutorials/ui/create/databases/sql-server.md)
          - [MySQL](tutorials/ui/create/databases/mysql.md)
          - [Oracle](tutorials/ui/create/databases/oracle.md)
