@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；实时客户用户档案；身份服务；
 solution: Experience Platform
 title: 实时客户用户档案教程
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: 本文档概述了所涉及的步骤，并提供了用于完成每个工作流程的教程的链接。
+exl-id: cda6e7a7-9498-454c-94df-c6271a5a4fd4
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '793'
 ht-degree: 0%
 
 ---
-
 
 # 配置 [!DNL Real-time Customer Profile]
 
@@ -25,7 +25,7 @@ ht-degree: 0%
 实时客户用户档案可以为每位客户创建整体视图，将来自多个渠道（包括在线、离线、CRM和第三方数据）的数据组合在一起。
 
 **本指南将帮助您：**
-- 了解[!UICONTROL 用户档案] UI和可用功能。
+- 了解[!UICONTROL Profiles] UI和可用功能。
 - 视图和管理用户档案数据。
 
 要了解更多信息，请访问[实时客户用户档案用户指南](../profile/ui/user-guide.md)
