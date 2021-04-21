@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；身份验证；访问
 solution: Experience Platform
 title: 验证和访问Experience PlatformAPI
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
-description: '此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。 '
+description: 此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。
+exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
 translation-type: tm+mt
-source-git-commit: ca5c8527b1b54856aa1e762a06ddbe404f30ec42
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '908'
+source-wordcount: '896'
 ht-degree: 4%
 
 ---
-
 
 # 验证和访问[!DNL Experience Platform] API
 
@@ -40,7 +40,7 @@ ht-degree: 4%
 如果您没有Adobe ID，则可以使用以下步骤创建一个：
 
 1. 转到[Adobe开发人员控制台](https://console.adobe.io)
-2. 选择&#x200B;**[!UICONTROL 创建新帐户]**
+2. 选择 **[!UICONTROL create a new account]**
 3. 完成注册过程
 
 ## 成为组织[!DNL Experience Platform]的开发人员和用户
@@ -89,11 +89,11 @@ ht-degree: 4%
 
 转到[Adobe Developer Console](https://www.adobe.com/go/devs_console_ui)并使用您的Adobe ID登录。 接下来，按照教程中概述的步骤操作，该教程位于“Adobe开发人员控制台”文档中的[创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md)。
 
-创建新项目后，在&#x200B;**项目概述**&#x200B;屏幕上选择&#x200B;**[!UICONTROL 添加API]**。
+创建新项目后，在&#x200B;**项目概述**&#x200B;屏幕上选择&#x200B;**[!UICONTROL Add API]**。
 
 ![](images/api-authentication/add-api-button.png)
 
-出现&#x200B;**添加API**&#x200B;屏幕。 选择Adobe Experience Platform的产品图标，然后选择&#x200B;**[!UICONTROL Experience PlatformAPI]**，然后选择&#x200B;**[!UICONTROL 下一步]**。
+出现&#x200B;**添加API**&#x200B;屏幕。 选择Adobe Experience Platform的产品图标，然后选择&#x200B;**[!UICONTROL Experience Platform API]**&#x200B;后再选择&#x200B;**[!UICONTROL Next]**。
 
 ![](images/api-authentication/add-platform-api.png)
 
