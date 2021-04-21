@@ -1,46 +1,46 @@
 ---
 keywords: Experience Platform；主页；热门主题；通知
-description: 通过订阅Adobe I/O事件，您可以使用网络挂接接收有关源连接的流运行状态的通知。 这些通知包含有关流运行成功的信息或导致运行失败的错误。
+description: 通过订阅Adobe I/O事件，您可以使用Webhook来接收有关源连接的流运行状态的通知。 这些通知包含有关流运行成功的信息或导致运行失败的错误。
 solution: Experience Platform
 title: 流运行通知
-topic: overview
+topic-legacy: overview
+exl-id: 0f1cde97-3030-4b8e-be08-21f64e78b794
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '771'
 ht-degree: 1%
 
 ---
 
-
 # 流运行通知
 
-Adobe Experience Platform允许从外部源摄取数据，同时使您能够使用[!DNL Platform]服务来构建、标记和增强传入数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、数据库和许多其他来源)收集数据。
+Adobe Experience Platform允许从外部源摄取数据，同时为您提供使用[!DNL Platform]服务构建、标记和增强传入数据的能力。 您可以从各种来源收集数据，如Adobe应用程序、基于云的存储、数据库和许多其他来源。
 
-[[!DNL Adobe Experience Platform Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 用于收集和集中来自内部不同来源的客户数据 [!DNL Platform]。该服务提供用户界面和RESTful API，所有支持的源都可从中连接。
+[[!DNL Adobe Experience Platform Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 用于收集和集中来自内部不同来源的客户数 [!DNL Platform]据。该服务提供用户界面和RESTful API，所有受支持的源都可从中连接。
 
-有了Adobe I/O事件，您可以订阅事件并使用Webhook接收有关流运行状态的通知。 这些通知包含有关流运行成功的信息或导致运行失败的错误。
+通过Adobe I/O事件，您可以订阅事件并使用Webhook接收有关流运行状态的通知。 这些通知包含有关流运行成功的信息或导致运行失败的错误。
 
-此文档提供了如何订阅事件、注册Web挂接以及接收包含流运行状态信息的通知的步骤。
+本文档提供了有关如何订阅事件、注册Webhook以及接收包含流运行状态信息的通知的步骤。
 
 ## 入门指南
 
-本教程假定您已创建至少一个源连接，其流运行要监视。 如果尚未配置源连接，请开始访问[源概述](./home.md)以配置您选择的源，然后返回本指南。
+本教程假定您已创建至少一个源连接，其流运行要监视。 如果尚未配置源连接，请通过访问[源概述](./home.md)开始，在返回本指南之前配置您选择的源。
 
-此文档还需要了解webhook以及如何将webhook从一个应用程序连接到另一个应用程序。 有关Webhooks的简介，请参阅[[!DNL I/O Events] 文档](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md)。
+此文档还需要了解webhook以及如何将webhook从一个应用程序连接到另一个应用程序。 有关webhook的简介，请参阅[[!DNL I/O Events] 文档](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md)。
 
 ## 为流运行通知注册Webhook
 
-要接收流运行通知，您必须使用Adobe开发者控制台来注册您的[!DNL Experience Platform]集成的Webhook。
+要接收流运行通知，您必须使用Adobe Developer Console注册到[!DNL Experience Platform]集成的Webhook。
 
-有关如何实现此操作的详细步骤，请参阅[订阅 [!DNL I/O Event] 通知](../observability/notifications/subscribe.md)的教程。
+有关如何实现此操作的详细步骤，请按照[订阅 [!DNL I/O Event] 通知](../observability/notifications/subscribe.md)的教程进行操作。
 
 >[!IMPORTANT]
 >
->在订阅过程中，请确保选择&#x200B;**[!UICONTROL 平台通知]**&#x200B;作为事件提供者，然后选择以下事件订阅:
+>在订阅过程中，请确保选择&#x200B;**[!UICONTROL Platform notifications]**&#x200B;作为事件提供者，然后选择以下事件订阅:
 >
->* **[!UICONTROL Experience Platform源的流运行成功]**
->* **[!UICONTROL Experience Platform源的流运行失败]**
+>* **[!UICONTROL Experience Platform Source's Flow Run Succeeded]**
+>* **[!UICONTROL Experience Platform Source's Flow Run Failed]**
 
 
 ## 接收流运行通知
@@ -55,7 +55,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时使您能够使�
 
 ### 成功
 
-成功的响应返回一组`metrics`，它们定义特定流运行的特性，并且`activities`描绘数据如何转换。
+成功的响应返回一组`metrics`，它们定义特定流运行的特性，以及描述数据如何转换的`activities`。
 
 ```json
 {
@@ -187,17 +187,17 @@ Adobe Experience Platform允许从外部源摄取数据，同时使您能够使�
 | 属性 | 描述 |
 | -------- | ----------- |
 | `metrics` | 定义流运行中数据的特性。 |
-| `activities` | 定义转换数据时执行的不同步骤和活动。 |
+| `activities` | 定义为转换数据而执行的不同步骤和活动。 |
 | `durationSummary` | 定义流运行的开始和结束时间。 |
 | `sizeSummary` | 定义数据的卷（以字节为单位）。 |
 | `recordSummary` | 定义数据的记录计数。 |
 | `fileSummary` | 定义数据的文件计数。 |
-| `fileInfo` | 一个URL，用于导致成功摄取的文件的概述。 |
+| `fileInfo` | 一个URL，用于导致成功收录的文件的概述。 |
 | `statusSummary` | 定义流运行是成功还是失败。 |
 
 ### 失败
 
-以下响应是流运行失败的示例，在处理复制的数据时出错。 从源复制数据时也可能出错。 失败的流运行包含有关导致运行失败的错误的信息，包括其错误和说明。
+以下响应是流运行失败的示例，在处理复制的数据时出错。 从源复制数据时，也可能发生错误。 失败的流运行包括有关导致运行失败的错误的信息，包括其错误和说明。
 
 ```json
 [
@@ -310,7 +310,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时使您能够使�
 
 | 属性 | 描述 |
 | ---------- | ----------- |
-| `fileInfo` | 一个URL，用于导致对成功和未成功摄取的文件进行概述。 |
+| `fileInfo` | 一个URL，它导致对成功和未成功摄取的文件进行概述。 |
 
 >[!NOTE]
 >
@@ -318,11 +318,11 @@ Adobe Experience Platform允许从外部源摄取数据，同时使您能够使�
 
 ## 后续步骤
 
-您现在可以订阅事件，它们允许您接收流运行状态的实时通知。 有关流运行和源的详细信息，请参阅[源概述](./home.md)。
+您现在可以订阅事件，这些应用程序允许您接收流运行状态的实时通知。 有关流运行和源的详细信息，请参阅[源概述](./home.md)。
 
 ## 附录
 
-以下各节提供了有关处理流运行通知的其他信息。
+以下部分提供了有关处理流运行通知的其他信息。
 
 ### 了解错误消息{#errors}
 
@@ -331,4 +331,4 @@ Adobe Experience Platform允许从外部源摄取数据，同时使您能够使�
 | 错误 | 描述 |
 | ---------- | ----------- |
 | `CONNECTOR-1001-500` | 从源复制数据时出错。 |
-| `CONNECTOR-2001-500` | 将复制的数据处理到[!DNL Platform]时出错。 此错误可能与分析、验证或转换相关。 |
+| `CONNECTOR-2001-500` | 将复制的数据处理到[!DNL Platform]时出错。 此错误可能与分析、验证或转换有关。 |
