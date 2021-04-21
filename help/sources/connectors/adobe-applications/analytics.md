@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；Analytics Data Connector；分析；分析
 solution: Experience Platform
 title: Adobe Analytics Source Connector for Report-Suite Data
-topic: overview
+topic-legacy: overview
 description: 本文档概述了Analytics，并描述了Analytics数据的用例。
+exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '503'
 ht-degree: 3%
 
 ---
-
 
 # Adobe Analytics connector for report-suite data
 
