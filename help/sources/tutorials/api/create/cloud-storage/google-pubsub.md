@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；Google PubSub;google pubsub
 solution: Experience Platform
 title: 使用流服务API创建Google PubSub源连接
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Google PubSub帐户。
+exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
 translation-type: tm+mt
-source-git-commit: b5358ce206888c413035b46fe751520fd9aefb14
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '613'
-ht-degree: 2%
+source-wordcount: '611'
+ht-degree: 1%
 
 ---
-
 
 # 使用流服务API创建[!DNL Google PubSub]源连接
 
