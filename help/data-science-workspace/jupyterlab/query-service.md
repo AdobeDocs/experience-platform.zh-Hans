@@ -2,17 +2,17 @@
 keywords: Experience Platform;JupyterLab；笔记本；数据科学工作区；热门主题；查询服务
 solution: Experience Platform
 title: Jupyter笔记本中的查询服务
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Adobe Experience Platform允许您通过将查询服务作为标准功能集成到JupyterLab，在Data Science Workspace中使用结构化查询语言(SQL)。 本教程演示了用于浏览、转换和分析Adobe Analytics数据的常见用例的SQL查询示例。
+exl-id: c5ac7d11-a3bd-4ef8-a650-9f496a8bbaa7
 translation-type: tm+mt
-source-git-commit: 9d84fc1eb898020ed4b154c091fcc9fc4933c7de
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '810'
 ht-degree: 1%
 
 ---
-
 
 # Jupyter笔记本中的查询服务
 
@@ -36,15 +36,15 @@ ht-degree: 1%
 
 ## 访问[!DNL JupyterLab]和[!DNL Query Service] {#access-jupyterlab-and-query-service}
 
-1. 在[[!DNL Experience Platform]](https://platform.adobe.com)中，从左侧导航列导航到&#x200B;**[!UICONTROL 笔记本]**。 请稍等片刻，让JupyterLab加载。
+1. 在[[!DNL Experience Platform]](https://platform.adobe.com)中，从左侧导航列导航到&#x200B;**[!UICONTROL Notebooks]**。 请稍等片刻，让JupyterLab加载。
 
    ![](../images/jupyterlab/query/jupyterlab-launcher.png)
 
    >[!NOTE]
    >
-   >如果未自动显示新的“启动器”选项卡，请通过单击&#x200B;**[!UICONTROL 文件]**&#x200B;打开新的“启动器”选项卡，然后选择&#x200B;**[!UICONTROL 新建启动器]**。
+   >如果未自动显示新的“启动器”选项卡，请通过单击&#x200B;**[!UICONTROL File]**&#x200B;打开新的“启动器”选项卡，然后选择&#x200B;**[!UICONTROL New Launcher]**。
 
-2. 在“启动器”选项卡中，单击Python 3环境中的&#x200B;**[!UICONTROL 空白]**&#x200B;图标以打开空笔记本。
+2. 在“启动器”选项卡中，单击Python 3环境中的&#x200B;**[!UICONTROL Blank]**&#x200B;图标以打开空笔记本。
 
    ![](../images/jupyterlab/query/blank_notebook.png)
 
@@ -56,7 +56,7 @@ ht-degree: 1%
 
    ![](../images/jupyterlab/query/dataset.png)
 
-4. 查找要浏览的[!DNL Adobe Analytics]数据集并右键单击列表，单击“笔记本&#x200B;]**中的**[!UICONTROL &#x200B;查询查询”以在空笔记本中生成SQL。
+4. 查找要浏览的[!DNL Adobe Analytics]数据集并右键单击列表，单击&#x200B;**[!UICONTROL Query Data in Notebook]**&#x200B;在空笔记本中生成SQL查询。
 
 5. 单击包含函数`qs_connect()`的第一个生成的单元格，并通过单击“播放”按钮执行该单元格。 此函数在笔记本实例和[!DNL Query Service]之间创建连接。
 
@@ -98,7 +98,7 @@ ht-degree: 1%
 
 ## 查询数据{#query-your-data}
 
-在单个笔记本单元格中输入以下SQL查询。 在查询的单元格上进行选择，然后选择&#x200B;**[!UICONTROL play]**&#x200B;按钮，以执行该操作。 成功的查询结果或错误日志显示在执行单元格的下方。
+在单个笔记本单元格中输入以下SQL查询。 在查询的单元格上选择，然后选择&#x200B;**[!UICONTROL play]**&#x200B;按钮，以执行该操作。 成功的查询结果或错误日志显示在执行单元格的下方。
 
 当笔记本处于长期非活动状态时，笔记本与[!DNL Query Service]之间的连接可能断开。 在这种情况下，通过选择位于电源按钮旁边的右上角的&#x200B;**重新启动**&#x200B;按钮![重新启动按钮](../images/jupyterlab/user-guide/restart_button.png)来重新启动[!DNL JupyterLab]。
 
