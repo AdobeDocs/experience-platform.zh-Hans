@@ -2,22 +2,22 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；示例查询；示例查询;adobe目标;
 solution: Experience Platform
 title: Adobe Target数据查询示例
-topic: queries
-description: 来自Adobe Target的数据将转换为体验事件XDM模式，并作为数据集引入Experience Platform。 此文档包含将查询服务用于Adobe Target数据集的示例查询。
+topic-legacy: queries
+description: 来自Adobe Target的数据将转换为Experience 事件 XDM模式，并作为数据集引入Experience Platform。 此文档包含将查询服务用于Adobe Target数据集的示例查询。
+exl-id: 0ab3cd6e-25ed-43dc-b8f0-a2b71621ae50
 translation-type: tm+mt
-source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '328'
 ht-degree: 1%
 
 ---
 
+# Adobe Target数据的示例查询
 
-# Adobe Target数据查询示例
+来自Adobe Target的数据将转换为Experience 事件 XDM模式，并作为数据集引入Adobe Experience Platform。 Adobe Experience Platform 查询 Service使用此数据有许多用例，以下示例查询应使用您的Adobe Target数据集。
 
-来自Adobe Target的数据将转换为体验事件XDM模式，并作为数据集引入Adobe Experience Platform。 Adobe Experience Platform查询服务使用此数据有许多用例，以下示例查询应使用您的Adobe Target数据集。
-
-在Experience Platform中，自动创建的数据集的名称为“Adobe Target体验事件”。 将此数据集与查询一起使用时，应使用名称`adobe_target_experience_events`。
+在Experience Platform中，自动创建的数据集的名称为“Adobe Target Experience事件”。 将此数据集与查询一起使用时，应使用名称`adobe_target_experience_events`。
 
 ## 高级部分XDM场映射
 
@@ -41,7 +41,7 @@ ht-degree: 1%
 
 以下查询显示了Adobe Target常用查询的示例。
 
-在以下示例中，您将需要编辑SQL，以根据您感兴趣的数据集、变量或评估时间范围来填写查询的预期参数。 在SQL中显示`{ }`时提供参数。
+在以下示例中，您将需要编辑SQL，以根据您感兴趣的评估数据集、变量或时间范围来填写查询的预期参数。 在SQL中看到`{ }`时提供参数。
 
 ### 给定日的每小时活动计数
 
@@ -64,7 +64,7 @@ ORDER BY Hour DESC, Instances DESC
 LIMIT 24
 ```
 
-### 特定活动的每小时详细信息
+### 特定活动在指定日的每小时详细信息
 
 ```sql
 SELECT
@@ -81,7 +81,7 @@ ORDER BY Hour DESC
 LIMIT 24
 ```
 
-### 特定活动的特定体验ID
+### 特定活动的体验ID
 
 ```sql
 SELECT
@@ -112,7 +112,7 @@ ORDER BY Day DESC, Instances DESC
 LIMIT 20
 ```
 
-### 按每个列表ID在指定一天按实例返回事件范围(访客、访问、印象)的活动
+### 在给定日期按每个事件ID的实例返回列表范围(访客、访问、印象)
 
 ```sql
 SELECT
@@ -142,7 +142,7 @@ ORDER BY Day DESC, Instances DESC
 LIMIT 30
 ```
 
-### 给定一天内每个访客的活动、访问次数和展示次数的返回计数
+### 给定日内每个访客的活动、访问次数和展示次数的回访计数
 
 ```sql
 SELECT
@@ -166,7 +166,7 @@ ORDER BY Hour DESC, Visitors DESC
 LIMIT 30
 ```
 
-### 在指定的一天内返回访客、访问、体验ID、区段ID和EventScope的展示次数
+### 在指定日期返回访客、访问、体验ID、区段ID和EventScope的展示次数
 
 ```sql
 SELECT
