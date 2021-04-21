@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；SFTP;sftp；安全文件传输协议；安全文件传输协议
 solution: Experience Platform
 title: 使用流服务API创建SFTP源连接
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到SFTP（安全文件传输协议）服务器。
+exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
 translation-type: tm+mt
-source-git-commit: 0e11acc4a599d360cb3048445003f61848ad23d3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '852'
-ht-degree: 2%
+source-wordcount: '850'
+ht-degree: 1%
 
 ---
-
 
 # 使用[!DNL Flow Service] API创建SFTP源连接
 
