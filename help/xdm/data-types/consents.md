@@ -2,12 +2,12 @@
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API；同意；同意；首选项；首选项；隐私选择退出；营销首选项；选择退出类型；基准选择处理；同意
 title: 同意和首选项数据类型
 description: “同意隐私、个性化和营销首选项”数据类型旨在支持收集由同意管理平台(CMP)和您数据操作中的其他来源生成的客户权限和首选项。
-topic: guide
+topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
 translation-type: tm+mt
-source-git-commit: 4e9395b4551842cf75b0d1a4ec36c85930c42da5
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1838'
+source-wordcount: '1837'
 ht-degree: 1%
 
 ---
