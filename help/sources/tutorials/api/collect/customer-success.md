@@ -2,14 +2,14 @@
 keywords: Experience Platform；主页；热门主题；收集客户成功；客户成功
 solution: Experience Platform
 title: 使用源连接器和API从客户成功系统收集数据
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 本教程介绍从客户成功系统检索数据并使用源连接器和API将其引入平台的步骤。
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1581'
+source-wordcount: '1579'
 ht-degree: 1%
 
 ---
