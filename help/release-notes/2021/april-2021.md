@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: April 21, 2021
 author: ens72741
 translation-type: tm+mt
-source-git-commit: 1072b95469fac19a2e03ca4eacaae05250e11be8
+source-git-commit: f0350be580394516016373b1754a49951b58e846
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '883'
 ht-degree: 10%
 
 ---
@@ -95,5 +95,6 @@ Experience Platform提供了RESTful API和交互式UI，让您可以轻松为各
 | 功能 | 描述 |
 | ------- | ----------- |
 | [!DNL Marketo Engage] （测试版） | 您现在可以使用UI创建[!DNL Marketo Engage]源连接，以将B2B数据引入平台，并使用连接到平台的应用程序保持此数据最新。 有关详细信息，请参阅[[!DNL Marketo Engage] 源连接器文档](../../sources/connectors/adobe-applications/marketo/marketo.md)。 |
+| 测试版源迁移至GA | 以下源已从测试版提升为GA: <ul><li>[[!DNL Amazon Kinesis]](../../sources/connectors/cloud-storage/kinesis.md)</li><li>[[!DNL Azure EventHubs]](../../sources/connectors/cloud-storage/eventhub.md)</li><li>[[!DNL HTTP API]](../../sources/connectors/streaming/http.md)</li><li>[[!DNL MariaDB]](../../sources/connectors/databases/mariadb.md)</li><li>[[!DNL Microsoft SQL Server]](../../sources/connectors/databases/sql-server.md)</li><li>[[!DNL Oracle]](../../sources/connectors/databases/oracle.md)</li></ul> |
 
 要了解有关源的详细信息，请参阅[源概述](../../sources/home.md)。
