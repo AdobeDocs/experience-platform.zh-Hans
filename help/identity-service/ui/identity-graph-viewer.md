@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；标识图查看器；标识图查看器；图形查看器；标识命名空间；标识命名空间；标识；标识；标识服务；标识服务
 solution: Experience Platform
 title: Identity Graph Viewer概述
-topic: tutorial
+topic-legacy: tutorial
 description: 身份图是特定客户不同身份之间关系的映射，可直观地展示不同渠道中客户如何与您的品牌互动。
+exl-id: ccd5f8d8-595b-4636-9191-553214e426bd
 translation-type: tm+mt
-source-git-commit: f4326c7a8bb8af90c092d3790e51c133744d498f
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1038'
+source-wordcount: '995'
 ht-degree: 1%
 
 ---
-
 
 # Identity Graph查看器概述
 
@@ -39,23 +39,23 @@ ht-degree: 1%
 
 ## 访问标识图查看器
 
-要在UI中使用标识图查看器，请在左侧导航中选择&#x200B;**[!UICONTROL 标识]**，然后选择&#x200B;**[!UICONTROL 标识图]**&#x200B;选项卡。 在&#x200B;**[!UICONTROL 标识命名空间]**&#x200B;屏幕中，单击&#x200B;**[!UICONTROL 选择标识命名空间]**&#x200B;图标以搜索您要使用的命名空间。
+要在UI中使用标识图查看器，请在左侧导航中选择&#x200B;**[!UICONTROL Identities]**，然后选择&#x200B;**[!UICONTROL Identity graph]**&#x200B;选项卡。 在&#x200B;**[!UICONTROL Identity Namespace]**&#x200B;屏幕中，单击&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;图标以搜索要使用的命名空间。
 
 ![命名空间屏幕](../images/identity-graph-viewer/identity-namespace.png)
 
-出现&#x200B;**[!UICONTROL 选择标识命名空间]**&#x200B;面板。 此屏幕包含可供您的组织使用的命名空间列表，包括有关命名空间的&#x200B;**[!UICONTROL 显示名称]**、**[!UICONTROL 标识符]**、**[!UICONTROL 所有者]**、**[!UICONTROL 上次更新日期]**&#x200B;和&#x200B;**[!UICONTROL 说明]**&#x200B;的信息。 只要您有有效的标识值连接到它们，就可以使用提供的任何命名空间。
+出现&#x200B;**[!UICONTROL Select identity namespace]**&#x200B;面板。 此屏幕包含可用于您的组织的列表命名空间，包括有关命名空间的&#x200B;**[!UICONTROL Display name]**、**[!UICONTROL Identity symbol]**、**[!UICONTROL Owner]**、**[!UICONTROL Last updated]**&#x200B;日期和&#x200B;**[!UICONTROL Description]**&#x200B;的信息。 只要您有有效的标识值连接到它们，就可以使用提供的任何命名空间。
 
-选择要使用的命名空间，然后单击&#x200B;**[!UICONTROL 选择]**&#x200B;以继续。
+选择要使用的命名空间，然后单击&#x200B;**[!UICONTROL Select]**&#x200B;继续。
 
 ![select-identity-命名空间](../images/identity-graph-viewer/select-identity-namespace.png)
 
-选择命名空间后，在&#x200B;**[!UICONTROL 标识值]**&#x200B;文本框中为特定客户输入其相应值，然后选择&#x200B;**[!UICONTROL 视图]**。
+选择命名空间后，在&#x200B;**[!UICONTROL Identity value]**&#x200B;文本框中为特定客户输入相应的值，然后选择&#x200B;**[!UICONTROL View]**。
 
 ![add-identity-value](../images/identity-graph-viewer/identity-value-filled.png)
 
 ### 从数据集访问标识图查看器
 
-您还可以使用数据集界面访问标识图查看器。 从数据集[!UICONTROL 浏览]页中，选择要与之交互的数据集，然后选择&#x200B;**[!UICONTROL 预览数据集]**
+您还可以使用数据集界面访问标识图查看器。 从数据集[!UICONTROL Browse]页中，选择要与之交互的数据集，然后选择&#x200B;**[!UICONTROL Preview dataset]**
 
 ![预览集](../images/identity-graph-viewer/preview-dataset.png)
 
@@ -75,15 +75,15 @@ ht-degree: 1%
 
 ![标识图](../images/identity-graph-viewer/graph-viewer.png)
 
-选择标识以更新&#x200B;**[!UICONTROL Identities]**&#x200B;表上高亮显示的行，并更新右边栏上提供的信息，该信息包括标识的&#x200B;**[!UICONTROL Value]**、**[!UICONTROL 批ID]**&#x200B;及其&#x200B;**[!UICONTROL 上次更新]**&#x200B;日期。
+选择标识以更新&#x200B;**[!UICONTROL Identities]**&#x200B;表上高亮显示的行，并更新右边栏上提供的信息，该信息包括标识的&#x200B;**[!UICONTROL Value]**、**[!UICONTROL Batch ID]**&#x200B;及其&#x200B;**[!UICONTROL Last updated]**&#x200B;日期。
 
 ![select-identity](../images/identity-graph-viewer/select-identity.png)
 
-您可以在图表中进行过滤，并使用&#x200B;**[!UICONTROL Identities]**&#x200B;表顶部的排序选项隔离特定命名空间。 从下拉菜单中，选择要突出显示的命名空间。
+您可以通过图表进行筛选，并使用&#x200B;**[!UICONTROL Identities]**&#x200B;表顶部的排序选项隔离特定命名空间。 从下拉菜单中，选择要突出显示的命名空间。
 
 ![逐命名空间](../images/identity-graph-viewer/filter-namespace.png)
 
-图形查看器返回，突出显示您选择的命名空间。 筛选器选项还更新&#x200B;**[!UICONTROL Identities]**&#x200B;表，以仅返回您选择的命名空间的信息。
+图形查看器返回，突出显示您选择的命名空间。 过滤器选项还更新&#x200B;**[!UICONTROL Identities]**&#x200B;表，以仅返回您选择的命名空间的信息。
 
 ![筛选](../images/identity-graph-viewer/filtered.png)
 
@@ -91,7 +91,7 @@ ht-degree: 1%
 
 ![缩放](../images/identity-graph-viewer/zoom.png)
 
-您可以通过从标题中选择&#x200B;**[!UICONTROL 数据源]**&#x200B;来视图有关批的详细信息。 **[!UICONTROL 数据源]**&#x200B;表显示与图形关联的&#x200B;**[!UICONTROL 批ID]**&#x200B;的列表，以及其&#x200B;**[!UICONTROL 链接ID]**、源模式和摄取日期。
+您可以通过从题头中选择&#x200B;**[!UICONTROL Data source]**&#x200B;来视图有关批的详细信息。 **[!UICONTROL Data source]**&#x200B;表显示与图形关联的&#x200B;**[!UICONTROL Batch IDs]**&#x200B;的列表，以及其&#x200B;**[!UICONTROL Linked IDs]**、源模式和摄取日期。
 
 ![数据源](../images/identity-graph-viewer/data-source-table.png)
 
