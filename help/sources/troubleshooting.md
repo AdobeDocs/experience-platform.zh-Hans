@@ -2,13 +2,13 @@
 keywords: Experience Platform；主页；热门主题；源；摄取；疑难解答；源疑难解答；源常见问题；常见问题解答；源连接器；源连接器；源连接器常见问题；源连接器问题；源连接器疑难解答；
 solution: Experience Platform
 title: 源疑难解答
-topic: troubleshooting
+topic-legacy: troubleshooting
 description: 本文档提供有关Adobe Experience Platform源的常见问题解答。
 exl-id: 94875121-7d4d-4eb2-8760-aa795933dd7e
 translation-type: tm+mt
-source-git-commit: 827a593c046530edba701edf26d9a47918cfd8f8
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '662'
 ht-degree: 0%
 
 ---
