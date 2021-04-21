@@ -3,12 +3,12 @@ keywords: Experience Platform；主题；热门主题；api;API;XDM;XDM系统；
 solution: Experience Platform
 title: 模式注册表API入门
 description: 本文档介绍了在尝试调用模式注册表API之前需要了解的核心概念。
-topic: developer guide
+topic-legacy: developer guide
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1365'
+source-wordcount: '1363'
 ht-degree: 0%
 
 ---
