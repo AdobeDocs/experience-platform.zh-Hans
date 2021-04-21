@@ -2,12 +2,12 @@
 keywords: Experience Platform；主页；热门主题；Marketo Engage；营销参与；营销
 solution: Experience Platform
 title: Marketo Engage连接器
-topic: 概述
+topic-legacy: overview
 description: 本文档概述了Marketo Engage源连接器，包括有关其身份验证、映射和数据延迟的信息。
 translation-type: tm+mt
-source-git-commit: 2563b413ec35cb4c5f05a54bce6f7271917e51f3
+source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '479'
 ht-degree: 1%
 
 ---
