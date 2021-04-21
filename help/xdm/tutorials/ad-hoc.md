@@ -1,33 +1,33 @@
 ---
-keywords: Experience Platform；主页；热门主题；API;XDM;XDM；系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；ad-hoc;adhoc;ad-hoc;Ad-hoc;Ad-hoc；教程；教程；创建；模式;模式
+keywords: Experience Platform；主页；热门主题；api;XDM;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；ad-hoc;adhoc;adhoc;ad-hoc；教程；教程；创建；模式;模式
 solution: Experience Platform
-title: 创建点对点模式
+title: 创建临时模式
 description: 在特定情况下，可能需要创建一个体验数据模型(XDM)模式，其中的字段以仅由单个数据集使用的名称命名。 这称为“临时”模式。 临时模式用于各种Experience Platform数据获取工作流，包括获取CSV文件和创建某些类型的源连接。
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
+exl-id: bef01000-909a-4594-8cf4-b9dbe0b358d5
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '823'
 ht-degree: 2%
 
 ---
 
-
 # 创建点对点模式
 
-在特定情况下，可能需要创建一个[!DNL Experience Data Model](XDM)模式，其中的字段以仅由单个数据集使用的名称命名。 这称为“临时”模式。 专门模式用于[!DNL Experience Platform]的各种数据获取工作流，包括获取CSV文件和创建某些类型的源连接。
+在特定情况下，可能需要创建一个[!DNL Experience Data Model](XDM)模式，其中的字段以仅由单个数据集使用命名。 这称为“临时”模式。 Ad-hoc模式用于[!DNL Experience Platform]的各种数据获取工作流，包括获取CSV文件和创建某些类型的源连接。
 
-此文档提供了使用[模式注册表API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)创建点对点模式的一般步骤。 它旨在与其他需要创建临时模式作为其工作流程的一部分的[!DNL Experience Platform]教程结合使用。 这些文档中的每一个都提供了有关如何为其特定用例正确配置点对点模式的详细信息。
+此文档提供了使用[模式注册表API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)创建点对点模式的一般步骤。 它旨在与其他需要创建临时模式作为其工作流的一部分的[!DNL Experience Platform]教程一起使用。 这些文档中的每个都提供了有关如何为其特定用例正确配置点对点模式的详细信息。
 
 ## 入门指南
 
-本教程需要对[!DNL Experience Data Model](XDM)系统有正确的了解。 在开始本教程之前，请查看以下XDM文档：
+本教程要求对[!DNL Experience Data Model](XDM)系统有正确的了解。 在开始本教程之前，请查看以下XDM文档：
 
 - [XDM系统概述](../home.md):XDM及其实施的高级概述 [!DNL Experience Platform]。
-- [模式合成基础](../schema/composition.md):XDM模式的基本组件概述。
+- [模式合成的基础](../schema/composition.md):XDM模式的基本组件概述。
 
-在开始本教程之前，请查看[开发人员指南](../api/getting-started.md)，了解成功调用[!DNL Schema Registry] API所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（特别要注意“接受”标头及其可能的值）。
+在开始本教程之前，请查看[开发人员指南](../api/getting-started.md)以了解成功调用[!DNL Schema Registry] API所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（特别要注意“接受”标头及其可能的值）。
 
 ## 创建点对点类
 
@@ -41,11 +41,11 @@ POST /tenant/classes
 
 **请求**
 
-以下请求将创建一个新的XDM类，该类由有效负荷中提供的属性进行配置。 通过提供设置为`allOf`数组中`https://ns.adobe.com/xdm/data/adhoc`的`$ref`属性，此类继承了`adhoc`行为。 请求还定义一个`_adhoc`对象，该对象包含类的自定义字段。
+以下请求将创建一个新的XDM类，该类由负载中提供的属性进行配置。 通过提供设置为`allOf`数组中`https://ns.adobe.com/xdm/data/adhoc`的`$ref`属性，该类继承了`adhoc`行为。 该请求还定义一个`_adhoc`对象，它包含类的自定义字段。
 
 >[!NOTE]
 >
->在`_adhoc`下定义的自定义字段因临时模式的用例而异。 请参考相应教程中的特定工作流，以了解根据用例需要的自定义字段。
+>在`_adhoc`下定义的自定义字段因临时模式的用例而异。 请参阅相应教程中的特定工作流程，了解基于用例的必需自定义字段。
 
 ```shell
 curl -X POST \
@@ -89,7 +89,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新类的详细信息，将`properties._adhoc`对象的名称替换为系统生成的、只读的类唯一标识符的GUID。 `meta:datasetNamespace`属性也会自动生成并包含在响应中。
+成功的响应返回新类的详细信息，将`properties._adhoc`对象的名称替换为系统生成的、只读的类唯一标识符的GUID。 `meta:datasetNamespace`属性也会自动生成并包含在响应中。
 
 ```json
 {
@@ -150,7 +150,7 @@ curl -X POST \
 
 ## 创建点对点模式
 
-创建点对点类后，可以创建新模式，通过向`/tenant/schemas`端点发出POST请求来实现该类。
+创建点对点类后，您可以创建新模式，通过向`/tenant/schemas`端点发出POST请求来实现该类。
 
 **API格式**
 
@@ -160,7 +160,7 @@ POST /tenant/schemas
 
 **请求**
 
-以下请求创建新模式，为先前创建的点对点类在其负载中的`$id`提供引用(`$ref`)。
+以下请求创建新的模式，提供对其负载中先前创建的ad-hoc类的`$id`的引用(`$ref`)。
 
 ```shell
 curl -X POST \
@@ -184,7 +184,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新创建模式的详细信息，包括系统生成的只读`$id`。
+成功的响应返回新创建的模式的详细信息，包括系统生成的只读`$id`。
 
 ```json
 {
@@ -221,13 +221,13 @@ curl -X POST \
 }
 ```
 
-## 视图完整临时模式
+## 视图完整的临时模式
 
 >[!NOTE]
 >
->此步骤是可选的。如果您不想检查临时模式的字段结构，可跳到本教程末尾的[后续步骤](#next-steps)部分。
+>此步骤是可选的。如果您不想检查临时模式的字段结构，可以跳到本教程结尾的[后续步骤](#next-steps)部分。
 
-创建临时模式后，您可以发出查找(GET)请求，以视图其展开形式的模式。 在GET请求中使用相应的接受标头即可完成此操作，如下所示。
+创建临时模式后，您可以发出查找(GET)请求，以将模式视图为其展开的形式。 在GET请求中使用相应的接受标题即可完成此操作，如下所示。
 
 **API格式**
 
@@ -241,7 +241,7 @@ GET /tenant/schemas/{SCHEMA_ID}
 
 **请求**
 
-以下请求使用Accept头`application/vnd.adobe.xed-full+json; version=1`，它返回模式的扩展形式。 请注意，从[!DNL Schema Registry]检索特定资源时，请求的“接受”标头必须包含相关资源的主要版本。
+以下请求使用“接受”标头`application/vnd.adobe.xed-full+json; version=1`，它返回模式的扩展形式。 请注意，从[!DNL Schema Registry]检索特定资源时，请求的“接受”标头必须包含相关资源的主要版本。
 
 ```shell
 curl -X GET \
@@ -305,6 +305,6 @@ curl -X GET \
 
 ## 后续步骤 {#next-steps}
 
-通过遵循本教程，您已成功创建了新的临时模式。 如果您是作为另一个教程的一部分被带到此文档的，您现在可以按照指示使用临时模式的`$id`来完成工作流。
+通过完成本教程，您已成功创建了新的临时模式。 如果您作为其他教程的一部分被带到此文档，您现在可以按照指示使用临时模式的`$id`来完成工作流。
 
 有关使用[!DNL Schema Registry] API的详细信息，请参阅[开发人员指南](../api/getting-started.md)。
