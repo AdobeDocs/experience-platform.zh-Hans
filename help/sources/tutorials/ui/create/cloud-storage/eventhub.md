@@ -7,18 +7,15 @@ type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Azure事件集线器源连接。
 exl-id: 7e67e213-8ccb-4fa5-b09f-ae77aba8614c
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d6f1521470b8dc630060584189690545c724de6b
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '460'
 ht-degree: 1%
 
 ---
 
-# 在UI中创建[!DNL Azure Event Hubs]源连接
 
->[!NOTE]
->
-> [!DNL Azure Event Hubs]连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
+# 在UI中创建[!DNL Azure Event Hubs]源连接
 
 Adobe Experience Platform中的源连接器提供按计划收集外部源数据的能力。 本教程提供了使用[!DNL Platform]用户界面验证[!DNL Azure Event Hubs]（以下称“[!DNL Event Hubs]”）源连接器的步骤。
 
