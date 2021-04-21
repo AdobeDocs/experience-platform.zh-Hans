@@ -2,49 +2,49 @@
 keywords: Experience Platform；零售销售菜谱；数据科学工作区；热门主题；菜谱
 solution: Experience Platform
 title: 创建零售销售模式和数据集
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
-description: 本教程为您提供了所有其他Adobe Experience Platform数据科学工作区教程所需的先决条件和资源。 完成后，您和您的IMS组织成员将可以在Experience Platform上获得零售模式和数据集。
+description: 本教程为您提供了所有其他Adobe Experience Platform数据科学工作区教程所需的先决条件和资源。 完成后，您和您的IMS组织成员将可以使用零售销售模式和数据集进行Experience Platform。
+exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 0%
 
 ---
 
-
 # 创建零售销售模式和数据集
 
-本教程为您提供所有其他[!DNL Adobe Experience Platform] [!DNL Data Science Workspace]教程所需的入门项目和资源。 完成后，您和[!DNL Experience Platform]上的IMS组织成员将获得零售销售模式和数据集。
+本教程为您提供了所有其他[!DNL Adobe Experience Platform] [!DNL Data Science Workspace]教程所需的入门项目和资源。 完成后，您和[!DNL Experience Platform]上IMS组织的成员将可以使用零售销售模式和数据集。
 
 ## 入门指南
 
-在开始本教程之前，您必须具有以下先决条件：
-- 访问[!DNL Adobe Experience Platform]。 如果您无权访问[!DNL Experience Platform]中的IMS组织，请在继续操作前与系统管理员联系。
-- 进行[!DNL Experience Platform] API调用的授权。 完成[验证和访问Adobe Experience PlatformAPI](https://www.adobe.com/go/platform-api-authentication-en)教程，获取以下值以成功完成本教程：
-   - 授权：`{ACCESS_TOKEN}`
+在开始本教程之前，您必须具备以下先决条件：
+- 访问[!DNL Adobe Experience Platform]。 如果您无权访问[!DNL Experience Platform]中的IMS组织，请在继续操作之前与您的系统管理员联系。
+- 进行[!DNL Experience Platform] API调用的授权。 请完成[验证和访问Adobe Experience Platform API](https://www.adobe.com/go/platform-api-authentication-en)教程，以获得以下值，以成功完成本教程：
+   - Authorization: `{ACCESS_TOKEN}`
    - x-api-key:`{API_KEY}`
    - x-gw-ims-org-id:`{IMS_ORG}`
-   - 客户机密码：`{CLIENT_SECRET}`
+   - 客户机密：`{CLIENT_SECRET}`
    - 客户端证书：`{PRIVATE_KEY}`
-- [零售销售处方](../pre-built-recipes/retail-sales.md)的示例数据和源文件。 从[Adobe公共Git存储库](https://github.com/adobe/experience-platform-dsw-reference/)下载此教程和其他[!DNL Data Science Workspace]教程所需的资源。
+- [零售销售方法](../pre-built-recipes/retail-sales.md)的示例数据和源文件。 从[Adobe公共Git存储库](https://github.com/adobe/experience-platform-dsw-reference/)下载此教程和其他[!DNL Data Science Workspace]教程所需的资源。
 - [Python >= 2.7](https://www.python.org/downloads/) 和以下 [!DNL Python] 包：
-   - [画](https://pypi.org/project/pip/)
+   - [pi](https://pypi.org/project/pip/)
    - [PyYAML](https://pyyaml.org/)
-   - [字典](https://pypi.org/project/dictor/)
+   - [dictor](https://pypi.org/project/dictor/)
    - [JWT](https://pypi.org/project/jwt/)
-- 对本教程中使用的以下概念的有效理解：
+- 了解本教程中使用的以下概念：
    - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md)
    - [模式合成基础](../../xdm/schema/field-dictionary.md)
 
 ## 创建零售销售模式和数据集
 
-零售销售模式和数据集是使用提供的引导脚本自动创建的。 按照以下步骤操作：
+零售销售模式和数据集是使用提供的引导脚本自动创建的。 请按照以下步骤操作：
 
 ### 配置文件
 
-1. 在[!DNL Experience Platform]教程资源包中，导览至目录`bootstrap`，然后使用相应的文本编辑器打开`config.yaml`。
+1. 在[!DNL Experience Platform]教程资源包中，导航到目录`bootstrap`，然后使用相应的文本编辑器打开`config.yaml`。
 2. 在`Enterprise`部分下，输入以下值：
 
    ```yaml
@@ -69,9 +69,9 @@ ht-degree: 0%
 
    - `platform_gateway` :API调用的基本路径。请勿修改此值。
    - `ims_token` :你 `{ACCESS_TOKEN}` 来这。
-   - `ingest_data` :在本教程中，请将此值设 `"True"` 置为创建零售模式和数据集。值`"False"`将仅创建模式。
-   - `build_recipe_artifacts` :为在本教程中起作用，请将此值设 `"False"` 置为阻止脚本生成Recipe对象。
-   - `kernel_type` :Recipe对象的执行类型。如果`build_recipe_artifacts`设置为`"False"`，则将此值保留为`Python`，否则请指定正确的执行类型。
+   - `ingest_data` :在本教程中，请将此值设置为， `"True"` 以创建零售销售模式和数据集。值`"False"`将仅创建模式。
+   - `build_recipe_artifacts` :为在本教程中起作用，将此值设置为 `"False"` 防止脚本生成Recipe项目。
+   - `kernel_type` :Recipe对象的执行类型。如果将`build_recipe_artifacts`设置为`"False"`，则将此值保留为`Python`，否则请指定正确的执行类型。
 
 4. 在`Titles`部分下，为零售销售示例数据提供相应的以下信息，在编辑到位后保存并关闭文件。 示例如下：
 
@@ -106,13 +106,13 @@ ht-degree: 0%
 
 ## 后续步骤
 
-成功完成引导脚本后，可在[!DNL Experience Platform]上查看零售销售输入和输出模式和数据集。 请参阅[预览模式数据教程](./preview-schema-data.md)
-的双曲余切值。
+成功完成引导脚本后，可在[!DNL Experience Platform]上查看零售销售输入和输出模式及数据集。 请参阅[预览模式数据教程](./preview-schema-data.md)
+。
 
-您还使用提供的引导脚本成功地将零售销售示例数据引入[!DNL Experience Platform]。
+您还使用提供的引导脚本成功将零售销售示例数据引入[!DNL Experience Platform]。
 
-要继续处理所摄取的数据：
+要继续使用摄取的数据，请执行以下操作：
 - [使用Jupyter笔记本分析数据](../jupyterlab/analyze-your-data.md)
-   - 在数据科学工作区中使用Jupyter Notebooks访问、探索、可视化和了解您的数据。
+   - 使用数据科学工作区中的Jupyter Notebooks访问、探索、可视化和了解您的数据。
 - [将源文件打包到菜谱中](./package-source-files-recipe.md)
-   - 请按照本教程学习如何通过将源文件打包到可导入的Recipe文件中，将您自己的Model引入[!DNL Data Science Workspace]中。
+   - 请按照本教程学习如何通过将源文件打包到可导入的处方文件中，将您自己的模型引入[!DNL Data Science Workspace]中。
