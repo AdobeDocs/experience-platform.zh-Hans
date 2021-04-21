@@ -2,14 +2,14 @@
 keywords: Experience Platform；主页；热门主题；收集协议数据；协议数据
 solution: Experience Platform
 title: 使用源连接器和API收集协议数据
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用源连接器和API从协议应用程序检索数据并将其引入平台的步骤。
 exl-id: e14e75c2-2a93-45d8-8056-f06075bd4b8d
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1549'
+source-wordcount: '1547'
 ht-degree: 1%
 
 ---
