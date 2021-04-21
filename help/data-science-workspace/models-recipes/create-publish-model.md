@@ -2,17 +2,17 @@
 keywords: Experience Platform；机器学习模型；数据科学工作区；热门主题；创建和发布模型
 solution: Experience Platform
 title: 创建和发布机器学习模型
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: Adobe Experience Platform Data Science Workspace提供了使用预建的产品Recommendations菜谱实现目标的方法。 按照本教程，了解如何访问和了解您的零售数据、创建和优化机器学习模型以及在数据科学工作区中生成洞察。
+exl-id: f71e5a17-9952-411e-8e6a-aab46bc4c006
 translation-type: tm+mt
-source-git-commit: b5d42c6a38a50d39e1ca46e18623dde59c33833b
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1580'
+source-wordcount: '1531'
 ht-degree: 0%
 
 ---
-
 
 # 创建和发布机器学习模型
 
@@ -58,11 +58,11 @@ ht-degree: 0%
 
 ### 浏览数据并了解模式
 
-登录到[Adobe Experience Platform](https://platform.adobe.com/)并选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以列表所有现有数据集并选择要浏览的数据集。 在这种情况下，[!DNL Analytics]数据集&#x200B;**Golden Data Set postValues**。
+登录到[Adobe Experience Platform](https://platform.adobe.com/)并选择&#x200B;**[!UICONTROL Datasets]**&#x200B;以列表所有现有数据集并选择要浏览的数据集。 在这种情况下，[!DNL Analytics]数据集&#x200B;**Golden Data Set postValues**。
 
 ![](../images/models-recipes/model-walkthrough/dataset-browse.png)
 
-此时将打开数据集活动页，其中列出与您的数据集相关的信息。 您可以选择右上角附近的&#x200B;**[!UICONTROL 预览数据集]**&#x200B;来检查示例记录。 您还可以视图所选数据集的模式。 在右边栏中选择模式链接。 出现一个弹出窗口，选择&#x200B;**[!UICONTROL 模式名称]**&#x200B;下的链接将在新选项卡中打开模式。
+此时将打开数据集活动页，其中列出与您的数据集相关的信息。 您可以选择右上角附近的&#x200B;**[!UICONTROL Preview Dataset]**&#x200B;来检查示例记录。 您还可以视图所选数据集的模式。 在右边栏中选择模式链接。 出现一个快显窗口，选择&#x200B;**[!UICONTROL schema name]**&#x200B;下的链接将在新选项卡中打开模式。
 
 ![](../images/models-recipes/model-walkthrough/dataset-activity.png)
 
@@ -85,15 +85,15 @@ ht-degree: 0%
 
 ### 浏览产品Recommendations菜谱
 
-在Experience Platform中，从左侧导航列导航到&#x200B;**[!UICONTROL Models]**，然后在顶部导航中选择&#x200B;**[!UICONTROL 方法]**&#x200B;以视图组织的可用方法列表。
+在Experience Platform中，从左侧导航列导航到&#x200B;**[!UICONTROL Models]**，然后在顶部导航中选择&#x200B;**[!UICONTROL Recipes]**&#x200B;以视图组织的可用方法列表。
 
 ![](../images/models-recipes/model-walkthrough/recipe-tab.png)
 
-接下来，通过选择提供的&#x200B;**[!UICONTROL Recommendations菜谱]**&#x200B;名称，找到并打开它。 此时将显示“菜谱”概述页。
+接下来，选择提供的&#x200B;**[!UICONTROL Recommendations Recipe]**&#x200B;名称，找到并打开它。 此时将显示“菜谱”概述页。
 
 ![](../images/models-recipes/model-walkthrough/Recipe-view.png)
 
-然后，在右边栏中，选择&#x200B;**[!UICONTROL Recommendations输入模式]**&#x200B;以视图为菜谱加电的模式。 模式字段“[!UICONTROL itemId]”和“[!UICONTROL userId]”对应于该客户在特定时间([!UICONTROL timestamp])购买的产品([!UICONTROL interactionType])。 按照相同的步骤查看&#x200B;**[!UICONTROL Recommendations输出模式]**&#x200B;的字段。
+然后，在右边栏中，选择&#x200B;**[!UICONTROL Recommendations Input Schema]**&#x200B;以视图为菜谱提供动力的模式。 模式字段“[!UICONTROL itemId]”和“[!UICONTROL userId]”对应于该客户在特定时间([!UICONTROL timestamp])购买的产品([!UICONTROL interactionType])。 按照相同的步骤查看&#x200B;**[!UICONTROL Recommendations Output Schema]**&#x200B;的字段。
 
 ![](../images/models-recipes/model-walkthrough/input-output.png)
 
@@ -107,19 +107,19 @@ ht-degree: 0%
 
 “模型”是“处方”的实例，使您能够大规模地对数据进行培训和评分。
 
-在Experience Platform中，从左侧导航列导航到&#x200B;**[!UICONTROL Models]**，然后在顶部导航中选择&#x200B;**[!UICONTROL 方法]**。 它显示组织的可用菜谱的列表。选择产品推荐菜谱。
+在Experience Platform中，从左侧导航列导航到&#x200B;**[!UICONTROL Models]**，然后在顶部导航中选择&#x200B;**[!UICONTROL Recipes]**。 它显示组织的可用菜谱的列表。选择产品推荐菜谱。
 
 ![](../images/models-recipes/model-walkthrough/recipe-tab.png)
 
-在菜谱页中，选择&#x200B;**[!UICONTROL 创建模型]**。
+在菜谱页面中，选择&#x200B;**[!UICONTROL Create Model]**。
 
 ![创建模型](../images/models-recipes/model-walkthrough/create-model-recipe.png)
 
-通过选择菜谱开始创建模型工作流。 选择&#x200B;**[!UICONTROL Recommendations菜谱]**，然后选择右上角的&#x200B;**[!UICONTROL 下一个]**。
+通过选择菜谱开始创建模型工作流。 选择&#x200B;**[!UICONTROL Recommendations Recipe]**，然后选择右上角的&#x200B;**[!UICONTROL Next]**。
 
 ![](../images/models-recipes/model-walkthrough/create-model.png)
 
-然后，提供模型名称。 列出了模型的可用配置，其中包含模型默认培训和评分行为的设置。 查看配置并选择&#x200B;**[!UICONTROL 完成]**。
+然后，提供模型名称。 列出了模型的可用配置，其中包含模型默认培训和评分行为的设置。 查看配置并选择&#x200B;**[!UICONTROL Finish]**。
 
 ![](../images/models-recipes/model-walkthrough/configure-model.png)
 
@@ -131,7 +131,7 @@ ht-degree: 0%
 
 ### 使用自定超参数训练模型
 
-在&#x200B;**模型概述**&#x200B;页面上，选择右上角附近的&#x200B;**[!UICONTROL 培训]**&#x200B;以创建新的培训运行。 选择创建模型时使用的相同输入数据集，然后选择&#x200B;**[!UICONTROL 下一步]**。
+在&#x200B;**模型概述**&#x200B;页面上，选择右上角附近的&#x200B;**[!UICONTROL Train]**&#x200B;以创建新的培训运行。 选择创建模型时使用的相同输入数据集，然后选择&#x200B;**[!UICONTROL Next]**。
 
 ![](../images/models-recipes/model-walkthrough/select-train.png)
 
@@ -173,19 +173,19 @@ ht-degree: 0%
 
 ![打得最好](../images/models-recipes/model-walkthrough/select-training-run.png)
 
-然后，在培训运行详细信息页面的右上角，选择&#x200B;**[!UICONTROL 得分]**。
+然后，在培训运行详细信息页面的右上角，选择&#x200B;**[!UICONTROL Score]**。
 
 ![选择分数](../images/models-recipes/model-walkthrough/select-score.png)
 
-接下来，选择&#x200B;**[!UICONTROL Recommendations输入数据集]**&#x200B;作为评分输入数据集，该数据集与您创建模型并执行其培训运行时使用的数据集相同。 然后，选择&#x200B;**[!UICONTROL 下一步]**。
+接下来，选择&#x200B;**[!UICONTROL Recommendations Input Dataset]**&#x200B;作为评分输入数据集，该数据集与您创建“模型”并执行其培训运行时使用的数据集相同。 然后，选择&#x200B;**[!UICONTROL Next]**。
 
 ![](../images/models-recipes/model-walkthrough/score-input.png)
 
-获得输入数据集后，选择&#x200B;**[!UICONTROL Recommendations输出数据集]**&#x200B;作为评分输出数据集。 评分结果作为批存储在此数据集中。
+获得输入数据集后，选择&#x200B;**[!UICONTROL Recommendations Output Dataset]**&#x200B;作为评分输出数据集。 评分结果作为批存储在此数据集中。
 
 ![](../images/models-recipes/model-walkthrough/score-output.png)
 
-最后，查看评分配置。 这些参数包含您之前选择的输入和输出数据集以及相应的模式。 选择&#x200B;**[!UICONTROL 完成]**&#x200B;以开始计分运行。 运行可能需要几分钟才能完成。
+最后，查看评分配置。 这些参数包含您之前选择的输入和输出数据集以及相应的模式。 选择&#x200B;**[!UICONTROL Finish]**&#x200B;开始计分运行。 运行可能需要几分钟才能完成。
 
 ![](../images/models-recipes/model-walkthrough/score-finish.png)
 
@@ -193,11 +193,11 @@ ht-degree: 0%
 
 评分运行成功完成后，您可以预览结果并视图生成的洞察。
 
-在评分运行页面上，选择已完成的评分运行，然后选择右边栏上的&#x200B;**[!UICONTROL 预览评分结果数据集]**。
+在评分运行页面上，选择已完成的评分运行，然后在右边栏上选择&#x200B;**[!UICONTROL Preview Scoring Results Dataset]**。
 
 ![](../images/models-recipes/model-walkthrough/preview-scores.png)
 
-在预览表中，每行包含针对特定客户的产品推荐，分别标记为[!UICONTROL recommendations]和[!UICONTROL userId]。 由于在示例截屏中将[!UICONTROL num_recommendations]超参数设置为10，因此每行推荐最多可包含10个以数字符号(#)分隔的产品标识。
+在预览表中，每行包含针对特定客户的产品推荐，分别标记为[!UICONTROL recommendations]和[!UICONTROL userId]。 由于示例屏幕截图中的[!UICONTROL num_recommendations]超参数设置为10，因此每行推荐最多可包含10个产品标识，用数字符号(#)分隔。
 
 ![](../images/models-recipes/model-walkthrough/preview_score_results.png)
 
