@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；流连接；创建流连接；api指南；教程；创建流连接；流摄取；
 solution: Experience Platform
 title: 使用API创建流连接
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform Data Ingestion Service API的一部分。
+exl-id: 23c03ace-795f-4a92-a220-c47ee86cec64
 translation-type: tm+mt
-source-git-commit: 17eb7b9cb715d7d8d0d7bce930ddec43259149cc
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '128'
 ht-degree: 0%
 
 ---
-
 
 # 使用API创建流连接
 
