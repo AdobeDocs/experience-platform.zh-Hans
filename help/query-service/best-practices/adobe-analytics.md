@@ -1,31 +1,31 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；示例查询；示例查询;adobe分析；
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；示例查询；示例查询;adobe analytics;
 solution: Experience Platform
 title: Adobe Analytics数据查询示例
-topic: queries
-description: 来自选定Adobe Analytics报告套件的数据将转换为XDM ExperienceEvents并作为数据集引入Adobe Experience Platform。 此文档概括了Adobe Experience Platform查询服务利用此数据的许多用例，其中包含的示例查询应与您的Adobe Analytics数据集配合使用。
+topic-legacy: queries
+description: 来自选定Adobe Analytics报表包的数据将转换为XDM ExperienceEvents并作为数据集引入Adobe Experience Platform。 本文档概述了Adobe Experience Platform 查询 Service利用此数据的许多用例，其中包含的示例查询应与您的Adobe Analytics数据集一起使用。
+exl-id: 96da3713-c7ab-41b3-9a9d-397756d9dd07
 translation-type: tm+mt
-source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '1021'
 ht-degree: 1%
 
 ---
 
+# Adobe Analytics数据的示例查询
 
-# Adobe Analytics数据查询示例
+来自选定Adobe Analytics报表包的数据将转换为符合[!DNL XDM ExperienceEvent]类的数据并作为数据集引入Adobe Experience Platform。
 
-来自选定Adobe Analytics报告套组的数据被转换为符合[!DNL XDM ExperienceEvent]类的数据，并作为数据集被引入Adobe Experience Platform。
-
-此文档概括了Adobe Experience Platform[!DNL Query Service]利用此数据的许多用例，包括示例查询应使用您的Adobe Analytics数据集。 有关映射到[!DNL Experience Events]的详细信息，请参阅[分析字段映射](../../sources/connectors/adobe-applications/mapping/analytics.md)上的文档。
+本文档概述了Adobe Experience Platform [!DNL Query Service]利用此数据(包括示例查询应使用您的Adobe Analytics数据集)的许多用例。 有关映射到[!DNL Experience Events]的详细信息，请参阅[分析字段映射](../../sources/connectors/adobe-applications/mapping/analytics.md)上的文档。
 
 ## 入门指南
 
-此文档中的SQL示例要求您编辑SQL，并根据您想要评估的数据集、eVar、事件或时间范围为查询填写预期参数。 在后面的SQL示例中，提供您看到`{ }`的任何位置的参数。
+本文档中的SQL示例要求您编辑SQL，并根据您有兴趣评估的数据集、eVar、事件或时间范围，为查询填写预期参数。 在后面的SQL示例中显示`{ }`时提供参数。
 
 ## 常用SQL示例
 
-以下示例显示了常用的SQL查询来分析您的Adobe Analytics数据。
+以下示例显示了分析Adobe Analytics数据时常用的SQL查询。
 
 ### 给定日的每小时访客计数
 
@@ -39,7 +39,7 @@ GROUP BY Day, Hour
 ORDER BY Hour;
 ```
 
-### 给定一天内查看的前10个页面
+### 指定日期前10个查看页面
 
 ```sql
 SELECT web.webpagedetails.name AS Page_Name, 
@@ -63,7 +63,7 @@ ORDER BY Count DESC
 LIMIT  10;
 ```
 
-### 按用户划分的十大城市活动
+### 按用户划分的10大城市活动
 
 ```sql
 SELECT concat(placeContext.geo.stateProvince, ' - ', placeContext.geo.city) AS state_city, 
@@ -75,7 +75,7 @@ ORDER BY Count DESC
 LIMIT  10;
 ```
 
-### 10大查看产品
+### 查看次数最多的10种产品
 
 ```sql
 SELECT Product_SKU,
@@ -90,7 +90,7 @@ ORDER BY Total_Product_Views DESC
 LIMIT  10;
 ```
 
-### 前10个订单总收入
+### 前10大订单收入
 
 ```sql
 SELECT Purchase_ID, 
@@ -106,7 +106,7 @@ ORDER BY total_order_revenue DESC
 LIMIT  10;
 ```
 
-### 事件数（按日）
+### 事件数
 
 ```sql
 SELECT Substring(from_utc_timestamp(timestamp, 'America/New_York'), 1, 10) AS Day, 
@@ -124,13 +124,13 @@ ORDER BY Hour;
 
 ### 产品语法
 
-在Adobe Analytics，可通过称为销售变量的专门配置变量收集定制产品级数据。 这些eVar或自定义事件。 这些变量与其标准用途的不同之处在于它们代表在点击中找到的每个产品的单独值，而不是只代表点击的单个值。
+在Adobe Analytics中，可通过称为促销变量的专门配置变量来收集自定义产品级别数据。 这些属性基于eVar或自定义事件。 这些变量与其标准用途的不同之处在于它们代表点击上找到的每个产品的单独值，而不是仅代表点击的单个值。
 
-这些变量称为产品语法推销变量。 这允许收集信息，如每个产品的“折扣额”或客户搜索结果中有关产品“页面位置”的信息。
+这些变量称为产品语法促销变量。 这允许收集信息，例如每个产品的“折扣额”或客户搜索结果中有关产品“页面位置”的信息。
 
 要了解有关使用产品语法的更多信息，请阅读有关使用产品语法](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en#implement-using-product-syntax)实现eVar的Adobe Analytics文档。[
 
-以下各节概述访问[!DNL Analytics]数据集中的销售变量所需的XDM字段：
+以下各节概述了访问[!DNL Analytics]数据集中的促销变量所需的XDM字段：
 
 #### eVar
 
@@ -139,7 +139,7 @@ productListItems[#]._experience.analytics.customDimensions.evars.evar#
 ```
 
 - `#`:您访问的数组的索引。
-- `evar#`:您正在访问的特定eVar变量。
+- `evar#`:您访问的特定eVar变量。
 
 #### 自定义事件
 
@@ -148,11 +148,11 @@ productListItems[#]._experience.analytics.event1to100.event#.value
 ```
 
 - `#`:您访问的数组的索引。
-- `event#`:您正在访问的特定自定义事件变量。
+- `event#`:您访问的特定自定义事件变量。
 
 #### 示例查询
 
-以下是示例查询，返回`productListItems`中第一个产品的销售eVar和事件。
+以下是一个示例查询，它返回`productListItems`中找到的第一个产品的销售eVar和事件。
 
 ```sql
 SELECT
@@ -166,7 +166,7 @@ WHERE timestamp = to_timestamp('2019-07-23')
 LIMIT 10
 ```
 
-下一个查询将爆炸`productListItems`阵列，并返回每个产品的每个销售eVar和事件。 包含`_id`字段以显示与原始点击的关系。 `_id`值是数据集的唯一主键。
+下一个查询将分解`productListItems`阵列，并返回每个产品的每个销售eVar和事件。 包含`_id`字段以显示与原始点击的关系。 `_id`值是数据集的唯一主键。
 
 ```sql
 SELECT
@@ -188,7 +188,7 @@ LIMIT 20
 
 >[!NOTE]
 >
-> 如果尝试检索当前数据集中不存在的字段，将发生“No suck struct field”（无此类结构字段）错误。 评估错误消息中返回的原因以标识可用字段，然后更新查询并重新运行。
+> 如果尝试检索当前数据集中不存在的字段，将出现“No suck struct field”（无此类结构字段）错误。 评估错误消息中返回的原因以标识可用字段，然后更新查询并重新运行。
 >
 >
 ```console
@@ -197,30 +197,30 @@ LIMIT 20
 
 ### 转换语法
 
-在Adobe Analytics找到的另一种推销变量是转换语法。 使用产品语法时，值会与产品同时收集，但这要求数据出现在同一页面上。 在转换或事件与产品相关的兴趣之前，会在页面上发生数据。 例如，考虑产品查找方法的用例。
+在Adobe Analytics中找到的另一种类型的促销变量是转换语法。 对于产品语法，值是在收集产品的同时收集的，但这要求数据在同一页面上存在。 在转换或事件与产品相关的兴趣之前，会在页面上发生数据。 例如，考虑产品查找方法的用例。
 
-1. 用户执行“winter hat”的内部搜索，将启用“转换语法”的“推销eVar6”设置为“内部搜索：winter hat”
-2. 用户单击“华夫饼”并登录产品详细信息页面。\
-   a.降落在这里，以12.99美元的价格点燃了一个`Product View`的“华夫饼”事件。\
-   b.由于`Product View`被配置为绑定事件，因此产品“华夫饼”现在绑定到“internal search:winter hat”的eVar6值。 收集“华夫饼”产品后，它将与“内部搜索：冬季帽子”关联，直到(1)达到到期设置或(2)设置新eVar6值，并再次对该产品发生绑定事件。
-3. 用户将产品添加到购物车中，并触发`Cart Add`事件。
-4. 用户对“夏季衬衫”执行另一个内部搜索，该搜索将启用“转换语法”的“推销eVar6”设置为“内部搜索：夏季衬衫”
-5. 用户单击“sporty t-shirt”并登录产品详细信息页面。\
-   a.登陆此处将以每件19.99美元的“运动T恤”的`Product View`事件点燃。\
-   b.`Product View`事件仍是我们的绑定事件，因此现在产品“sporty t-shirt”与“internal search:summer shirt”的eVar6值绑定，而先前产品“华夫饼”仍与“internal search:waffle beanie”的eVar6值绑定。
-6. 用户将产品添加到购物车中，并触发`Cart Add`事件。
-7. 用户签出这两种产品。
+1. 用户对“winter hat”执行内部搜索，将启用“转换语法”的“促销eVar6”设置为“内部搜索：winter hat”
+2. 用户单击“华夫饼”，然后进入产品详细信息页面。\
+   a.Landing here以12.99美元的价格，在`Product View`事件上放“华夫饼”。\
+   b.由于`Product View`配置为绑定事件，因此产品“waffle beanie”现在绑定到“internal search:winter hat”的eVar6值。 无论何时收集“华夫饼豆”产品，它都将与“内部搜索：冬天帽子”关联，直到(1)达到过期设置或(2)设置新eVar6值并再次对该产品发生绑定事件。
+3. 用户将产品添加到其购物车中，并触发`Cart Add`事件。
+4. 用户对“夏季衬衫”执行另一个内部搜索，将启用“转换语法”的“促销eVar6”设置为“内部搜索：夏季衬衫”
+5. 用户单击“sporty t-shirt”，然后进入产品详细信息页面。\
+   a.Landing here将一个`Product View`事件的“sporty T-shirt，售价19.99美元。\
+   b.`Product View`事件仍是我们的有约束力的事件，因此现在，产品“sporty t-shirt”与“internal search:summer shirt”的eVar6值相绑定，而上一产品“华夫饼”仍与“internal search:waffle beanie”的eVar6值相绑定。
+6. 用户将产品添加到其购物车中，并触发`Cart Add`事件。
+7. 用户签出这两个产品。
 
-在报告中，订单、收入、产品视图和购物车添加将根据eVar6进行报告，并与绑定产品的活动保持一致。
+在报告中，订单、收入、产品视图和购物车添加将针对eVar6进行报告，并与绑定产品的活动一致。
 
-| eVar6（产品查找方法） | 收入 | 订单 | 产品视图 | 购物车 |
+| eVar6（产品查找方法） | 收入 | 订单 | 产品视图 | 购物 |
 | ------------------------------ | ------- | ------ | ------------- | ----- |
-| 内部搜索：夏季衬衫 | 19.99 | 1 | 1 | 3 |
-| 内部搜索：冬季帽 | 12.99 | 1 | 3 | 1 |
+| 内部搜索：夏令时衬衫 | 19.99 | 1 | 1 | 3 |
+| 内部搜索：冬帽 | 12.99 | 1 | 1 | 1 |
 
-要进一步了解如何使用转换语法，请阅读有关使用转换语法](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en#implement-using-conversion-variable-syntax)实现eVar的Adobe Analytics文档。[
+要了解有关使用转换语法的更多信息，请阅读有关使用转换语法](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en#implement-using-conversion-variable-syntax)实现eVar的Adobe Analytics文档。[
 
-以下是要在[!DNL Analytics]数据集中生成转换语法的XDM字段：
+以下是用于在[!DNL Analytics]数据集中生成转换语法的XDM字段：
 
 #### eVar
 
@@ -228,7 +228,7 @@ LIMIT 20
 _experience.analytics.customDimensions.evars.evar#
 ```
 
-- `evar#`:您正在访问的特定eVar变量。
+- `evar#`:您访问的特定eVar变量。
 
 #### 产品
 
@@ -259,7 +259,7 @@ WHERE commerce.productViews.value = 1 OR commerce.purchases.value = 1 OR _experi
 LIMIT 100
 ```
 
-以下是将绑定值保持到相应产品后续出现的示例查询。 最低子查询在所声明的绑定事件上建立与产品的值关系。 下一个子查询在与相应产品的后续交互中执行该绑定值的归因。 顶层选择聚合结果以生成报告。
+以下是将绑定值保持到相应产品后续出现的示例查询。 最低子查询在所声明的绑定事件上建立与产品的值关系。 下一个子查询在后续与相应产品的交互中执行该绑定值的归因。 顶层选择聚合结果以生成报告。
 
 ```sql
 SELECT
