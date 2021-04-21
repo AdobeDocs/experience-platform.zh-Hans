@@ -1,16 +1,16 @@
 ---
 solution: Experience Platform
 title: 零售业数据模型ERD
-topic: overview
+topic-legacy: overview
 description: 视图实体关系图(ERD)，它描述了零售行业的标准化数据模型，与在Adobe Experience Platform中使用的体验数据模型(XDM)兼容。
+exl-id: 40cbb243-668b-4280-815f-1f94a06b6b87
 translation-type: tm+mt
-source-git-commit: ffc113c0c85c76e6645fb4276c174779682f2b60
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '74'
-ht-degree: 1%
+source-wordcount: '73'
+ht-degree: 0%
 
 ---
-
 
 # [!UICONTROL Retail] 行业数据模型ERD
 
