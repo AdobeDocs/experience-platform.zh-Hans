@@ -2,80 +2,80 @@
 keywords: Experience Platform；主页；热门主题；分析源连接器；分析连接器；分析源；分析
 solution: Experience Platform
 title: 在UI中创建Adobe Analytics源连接
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建Adobe Analytics源连接，将消费者数据引入Adobe Experience Platform。
+exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
 translation-type: tm+mt
-source-git-commit: c7fb0d50761fa53c1fdf4dd70a63c62f2dcf6c85
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '801'
-ht-degree: 1%
+source-wordcount: '777'
+ht-degree: 2%
 
 ---
 
-
 # 在UI中创建Adobe Analytics源连接
 
-本教程提供了在UI中创建Adobe Analytics源连接以将消费者数据引入Adobe Experience Platform的步骤。
+本教程提供了在UI中创建Adobe Analytics源连接以将消费者数据导入Adobe Experience Platform的步骤。
 
 ## 入门指南
 
-本教程需要对Adobe Experience Platform的以下组件进行有效的理解：
+本教程需要对Adobe Experience Platform的以下组件有充分的了解：
 
 * [体验数据模型(XDM)系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
-* [实时客户用户档案](../../../../../profile/home.md):基于来自多个来源的聚集数据提供统一、实时的消费者用户档案。
-* [沙箱](../../../../../sandboxes/home.md):Experience Platform提供虚拟沙箱，将单个平台实例分为单独的虚拟环境，以帮助开发和发展数字体验应用程序。
+* [实时客户用户档案](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
+* [沙箱](../../../../../sandboxes/home.md):Experience Platform提供将单个平台实例分为单独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-## 创建与Adobe Analytics的源连接
+## 使用Adobe Analytics创建源连接
 
-登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问源工作区。 **Catalog**&#x200B;屏幕显示用于创建入站连接的可用源，每个源显示与其关联的现有帐户和数据集流的数量。
+登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问源工作区。 **目录**&#x200B;屏幕显示用于创建入站连接的可用源，每个源显示与它们关联的现有帐户和数据集流的数量。
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索选项找到要使用的特定源。
 
-在&#x200B;**[!UICONTROL Adobe应用程序]**&#x200B;类别下，选择&#x200B;**[!UICONTROL Adobe Analytics]**&#x200B;以在屏幕右侧显示一个信息栏。 信息栏提供所选源的简短描述以及与源或视图其文档的选项。 要视图现有帐户，请选择&#x200B;**[!UICONTROL 帐户]**。
+在&#x200B;**[!UICONTROL Adobe applications]**&#x200B;类别下，选择&#x200B;**[!UICONTROL Adobe Analytics]**&#x200B;以在屏幕右侧显示信息栏。 信息栏提供所选源的简短说明以及与源或视图其文档连接的选项。 要视图现有帐户，请选择&#x200B;**[!UICONTROL Accounts]**。
 
 ![](../../../../images/tutorials/create/analytics/catalog.png)
 
 ### 选择数据
 
-出现&#x200B;**[!UICONTROL Adobe Analytics]**&#x200B;步骤。 此屏幕上列出了以前为Analytics建立的数据集流。 单击&#x200B;**[!UICONTROL 选择数据]**&#x200B;可创建新数据集流。
+出现&#x200B;**[!UICONTROL Adobe Analytics]**&#x200B;步骤。 此屏幕上会列出以前为Analytics建立的数据集流。 单击&#x200B;**[!UICONTROL Select data]**&#x200B;可创建新数据集流。
 
 >[!NOTE]
 >
->可以建立与源的多个绑定连接以引入不同的数据。
+>可以建立与源的多个绑定连接以导入不同的数据。
 
 ![](../../../../images/tutorials/create/analytics/dataset-flows.png)
 
 <!---Analytics report suites can be configured for one sandbox at a time. To import the same report suite into a different sandbox, the dataset flow will have to be deleted and instantiated again via configuration for a different sandbox.--->
 
-从可用报表包的列表中，选择要引入平台的报表包，然后单击&#x200B;**[!UICONTROL 下一步]**。
+在可用报表包的列表中，选择要引入平台的报表包，然后单击&#x200B;**[!UICONTROL Next]**。
 
 ![](../../../../images/tutorials/create/analytics/select-data.png)
 
 ### 命名数据集流
 
-出现&#x200B;**[!UICONTROL 数据集流详细信息]**&#x200B;步骤，其中必须为数据集流提供名称和可选描述。 完成后，选择&#x200B;**[!UICONTROL Next]**。
+将出现&#x200B;**[!UICONTROL Dataset flow detail]**&#x200B;步骤，您必须在其中为数据集流提供名称和可选描述。 完成后，选择 **[!UICONTROL Next]**。
 
 ![](../../../../images/tutorials/create/analytics/dataset-flow-detail.png)
 
 ### 查看数据集流
 
-出现&#x200B;**[!UICONTROL Review]**&#x200B;步骤，允许您在创建新的Analytics内绑定数据集流之前查看该流。 连接的详细信息按类别分组，包括：
+此时会显示&#x200B;**[!UICONTROL Review]**&#x200B;步骤，允许您在创建新的Analytics内绑定数据集流之前查看该流。 连接的详细信息按类别分组，包括：
 
-* **[!UICONTROL 连接]**:显示源连接的类型和所选报表包。
-* **[!UICONTROL 分配数据集和地图字段]**:创建其他源连接器时，此容器显示源数据正被引入的数据集，包括数据集所附加的模式。输出模式和数据集会自动为Analytics数据集流配置。
+* **[!UICONTROL Connection]**:显示源连接的类型和选定的报表包。
+* **[!UICONTROL Assign dataset & map fields]**:创建其他源连接器时，此容器显示源数据所接收的数据集，包括数据集所附加的模式。输出模式和数据集将自动为Analytics数据集流配置。
 
 ![](../../../../images/tutorials/create/analytics/review.png)
 
 ### 监控数据集流
 
-创建数据集流后，您可以监视通过它摄取的数据。 从&#x200B;**[!UICONTROL Catalog]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL 数据集流]**&#x200B;以视图与您的Analytics帐户关联的已建立流的列表。
+创建数据集流后，您可以监视通过它摄取的数据。 从&#x200B;**[!UICONTROL Catalog]**&#x200B;屏幕中，选择&#x200B;**[!UICONTROL Dataset flows]**&#x200B;以视图与您的Analytics帐户关联的已建立流的列表。
 
 ![](../../../../images/tutorials/create/analytics/catalog-dataset-flows.png)
 
-出现&#x200B;**数据集流**&#x200B;屏幕。 此页上是一对数据集流，包括有关其名称、源数据、创建时间和状态的信息。
+出现&#x200B;**数据集流**&#x200B;屏幕。 在此页上是一对数据集流，包括有关其名称、源数据、创建时间和状态的信息。
 
-连接器将实例化两个数据集流。 一个流代表回填数据，另一个流代表实时数据。 回填数据未配置为用户档案，而是发送到数据湖以用于分析和数据科学用例。
+连接器实例化两个数据集流。 一个流表示回填数据，另一个流表示实时数据。 回填数据未配置为用户档案，而是发送到数据湖以用于分析和数据科学用例。
 
 有关回填、实时数据及其各自延迟的详细信息，请参阅[分析数据连接器概述](../../../../connectors/adobe-applications/analytics.md)。
 
@@ -83,15 +83,15 @@ ht-degree: 1%
 
 ![](../../../../images/tutorials/create/analytics/backfill.png)
 
-将显示&#x200B;**数据集活动**&#x200B;页。 此页以图表形式显示消息的消费率。 从顶部标题中选择&#x200B;*数据管理*&#x200B;以访问标记字段。
+将显示&#x200B;**数据集活动**&#x200B;页。 此页以图表形式显示消费的消息速率。 从顶部标题中选择&#x200B;*数据治理*&#x200B;以访问标签字段。
 
 ![](../../../../images/tutorials/create/analytics/batches.png)
 
-您可以从&#x200B;*数据管理*&#x200B;屏幕视图数据集流的继承标签。 要访问特定标签，请选择右上方的编辑按钮。
+您可以从&#x200B;*数据治理*&#x200B;屏幕视图数据集流继承的标签。 要访问特定标签，请选择右上角的编辑按钮。
 
 ![](../../../../images/tutorials/create/analytics/data-gov.png)
 
-出现&#x200B;**编辑管理标签**&#x200B;面板。 此屏幕允许您访问和编辑数据集流的合同、身份和敏感标签。
+出现&#x200B;**编辑管理标签**&#x200B;面板。 此屏幕允许您访问和编辑数据集流的合同、标识和敏感标签。
 
 有关如何标记来自Analytics的数据的详细信息，请访问[数据使用标签指南](../../../../../data-governance/labels/user-guide.md)。
 
@@ -106,11 +106,10 @@ ht-degree: 1%
 * [数据科学工作区概述](../../../../../data-science-workspace/home.md)
 * [查询服务概述](../../../../../query-service/home.md)
 
-以下视频旨在支持您对使用Adobe Analytics源连接器接收数据的理解：
+以下视频旨在支持您了解如何使用Adobe Analytics源连接器收录数据：
 
 >[!WARNING]
 >
-> 以下视频中显示的[!DNL Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上面的文档。
+> 以下视频中显示的[!DNL Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
-
