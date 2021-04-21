@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 配置数据集以捕获同意和首选项数据
-topic: getting started
+topic-legacy: getting started
 description: 了解如何在Adobe Experience Platform中配置体验数据模型(XDM)模式和数据集以捕获同意和偏好数据。
+exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
 translation-type: tm+mt
-source-git-commit: 980bff169659d3ffc92a0678f8a0b153b3189906
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1405'
+source-wordcount: '1403'
 ht-degree: 0%
 
 ---
-
 
 # 配置数据集以捕获同意和首选项数据
 
