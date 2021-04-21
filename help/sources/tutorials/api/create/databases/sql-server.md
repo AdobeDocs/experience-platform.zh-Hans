@@ -7,18 +7,14 @@ type: Tutorial
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Microsoft SQL Server。
 exl-id: 00455a61-c8c1-42f4-a962-fc16f7370cbd
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b2384bfe26fa3d111c342062b2d9bb37c4226857
 workflow-type: tm+mt
-source-wordcount: '609'
-ht-degree: 1%
+source-wordcount: '591'
+ht-degree: 2%
 
 ---
 
 # 使用[!DNL Flow Service] API创建[!DNL Microsoft] SQL Server源连接
-
->[!NOTE]
->
->[!DNL Microsoft] SQL Server连接器处于测试阶段。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 [!DNL Flow Service] 用于收集和集中来自Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有受支持的源都可从中连接。
 
