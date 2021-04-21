@@ -1,16 +1,16 @@
 ---
 solution: Experience Platform
 title: 行业数据模型概述
-topic: overview
+topic-legacy: overview
 description: 了解可使用标准体验数据模型(XDM)组件构建的各种行业垂直体系的标准数据模型。
+exl-id: 8fa9a610-36b5-470f-ad63-f2a4a060e0f1
 translation-type: tm+mt
-source-git-commit: 9862cbcb8d8c74c96dd6bf44c5fa416f4f42fe64
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '512'
+source-wordcount: '511'
 ht-degree: 0%
 
 ---
-
 
 # 行业数据模型概述
 
