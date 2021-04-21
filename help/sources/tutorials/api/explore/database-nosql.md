@@ -1,17 +1,17 @@
 ---
-keywords: Experience Platform；主页；热门主题；第三方数据库；数据流服务
+keywords: Experience Platform；主页；热门话题；第三方数据库；数据库流服务
 solution: Experience Platform
 title: 使用Flow Service API浏览数据库
-topic: overview
+topic-legacy: overview
 description: 本教程使用Flow Service API来浏览第三方数据库的内容和文件结构。
+exl-id: 94935492-a7be-48dc-8089-18476590bf98
 translation-type: tm+mt
-source-git-commit: 62266187ed1f3ce2f0acca3f50487fb70cfa7307
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '563'
 ht-degree: 2%
 
 ---
-
 
 # 使用[!DNL Flow Service] API浏览数据库
 
@@ -19,30 +19,30 @@ ht-degree: 2%
 
 ## 入门指南
 
-本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
+本指南要求对Adobe Experience Platform的以下组件有充分的了解：
 
-* [来源](../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入 [!DNL Platform] 数据。
-* [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [来源](../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+* [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供了使用[!DNL Flow Service] API成功连接到第三方数据库所需了解的其他信息。
+以下各节提供了使用[!DNL Flow Service] API成功连接到第三方数据库所需的其他信息。
 
-### 收集所需的凭据
+### 收集所需凭据
 
-本教程要求您与要从中获取数据的第三方数据库建立有效连接。 有效连接涉及数据库的连接规范ID和连接ID。 有关创建数据库连接和检索这些值的详细信息，请参阅[源连接器概述](./../../../home.md#database)。
+本教程要求您与要从中摄取数据的第三方数据库建立有效连接。 有效的连接涉及数据库的连接规范ID和连接ID。 有关创建数据库连接和检索这些值的详细信息，请参阅[源连接器概述](./../../../home.md#database)。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有E[!DNL xperience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有E[!DNL xperience Platform] API调用中每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -52,7 +52,7 @@ ht-degree: 2%
 
 ## 浏览数据表
 
-使用数据库的连接ID，您可以通过执行GET请求来浏览数据表。 使用以下调用查找要检查或收录到[!DNL Platform]中的表的路径。
+使用数据库的连接ID，可以通过执行GET请求来浏览数据表。 使用以下调用查找要检查或收录到[!DNL Platform]中的表的路径。
 
 **API格式**
 
@@ -77,7 +77,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会从数据库返回一组表。 查找要引入[!DNL Platform]的表并记下其`path`属性，因为您需要在下一步中提供它来检查其结构。
+成功的响应会从数据库返回一组表。 查找要引入[!DNL Platform]的表，并记下其`path`属性，因为在下一步中需要提供它来检查其结构。
 
 ```json
 [
@@ -98,9 +98,9 @@ curl -X GET \
 ]
 ```
 
-## Inspect桌子的结构
+## Inspect表的结构
 
-要从GET库中检查表的结构，请在将表的路径指定为查询参数时执行数据请求。
+要从数据库中检查表的结构，请在将表的路径指定为GET参数时执行查询请求。
 
 **API格式**
 
@@ -126,7 +126,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回指定表的结构。 有关每个表列的详细信息位于`columns`数组的元素中。
+成功的响应返回指定表的结构。 有关每个表列的详细信息位于`columns`数组的元素中。
 
 ```json
 {
@@ -154,4 +154,4 @@ curl -X GET \
 
 ## 后续步骤
 
-通过本教程，您探索了数据库，找到了要收录到[!DNL Platform]中的表的路径，并获取了有关其结构的信息。 您可以在下一个教程中使用此信息来[从数据库收集数据并将其引入平台](../collect/database-nosql.md)。
+通过本教程，您探索了数据库，找到了要收录到[!DNL Platform]中的表的路径，并获取了有关其结构的信息。 您可以在下一个教程中使用此信息来从数据库收集数据并将其引入Platform](../collect/database-nosql.md)。[
