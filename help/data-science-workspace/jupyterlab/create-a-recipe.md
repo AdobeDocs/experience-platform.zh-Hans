@@ -2,17 +2,17 @@
 keywords: Experience Platform;JupyterLab；菜谱；笔记本；数据科学工作区；热门主题；创建菜谱
 solution: Experience Platform
 title: 使用Jupyter笔记本创建菜谱
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: 本教程将分两个主要部分。 首先，您将使用JupyterLab Notebook中的模板创建机器学习模型。 接下来，您将在JupyterLab中练习笔记本到菜谱工作流，以在Data Science Workspace中创建菜谱。
+exl-id: d3f300ce-c9e8-4500-81d2-ea338454bfde
 translation-type: tm+mt
-source-git-commit: 9d84fc1eb898020ed4b154c091fcc9fc4933c7de
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '2366'
+source-wordcount: '2345'
 ht-degree: 0%
 
 ---
-
 
 # 使用Jupyter Notebooks创建菜谱
 
@@ -27,9 +27,9 @@ ht-degree: 0%
 
 ## 开始使用[!DNL JupyterLab]笔记本环境
 
-可以在[!DNL Data Science Workspace]中从头开始创建菜谱。 要开始，请导航到[Adobe Experience Platform](https://platform.adobe.com)并单击左侧的&#x200B;**[!UICONTROL 笔记本]**&#x200B;选项卡。 从[!DNL JupyterLab Launcher]中选择Recipe Builder模板，创建新笔记本。
+可以在[!DNL Data Science Workspace]中从头开始创建菜谱。 要进行开始，请导航到[Adobe Experience Platform](https://platform.adobe.com)并单击左侧的&#x200B;**[!UICONTROL Notebooks]**&#x200B;选项卡。 从[!DNL JupyterLab Launcher]中选择Recipe Builder模板，创建新笔记本。
 
-[!UICONTROL Recipe Builder]笔记本允许您在笔记本内运行培训和评分运行。 这使您能够灵活地在对培训和评分数据运行实验之间更改其`train()`和`score()`方法。 一旦您对培训和评分的输出感到满意，您就可以创建一个菜谱，在[!DNL Data Science Workspace]中使用笔记本创建菜谱功能，该功能内置于菜谱生成器笔记本中。
+[!UICONTROL Recipe Builder]笔记本可以在笔记本内运行培训和评分。 这使您能够灵活地在对培训和评分数据运行实验之间更改其`train()`和`score()`方法。 一旦您对培训和评分的输出感到满意，您就可以创建一个菜谱，在[!DNL Data Science Workspace]中使用笔记本创建菜谱功能，该功能内置于菜谱生成器笔记本中。
 
 >[!NOTE]
 >
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 单击启动程序中的Recipe Builder笔记本时，将在选项卡中打开该笔记本。 笔记本中使用的模板是Python Retail Sales Forecasing Recipe，也可以在[此公共存储库](https://github.com/adobe/experience-platform-dsw-reference/tree/master/recipes/python/retail/)中找到
 
-您会注意到，在工具栏中有三个附加操作，即：**[!UICONTROL 培训]**、**[!UICONTROL 得分]**&#x200B;和&#x200B;**[!UICONTROL 创建菜谱]**。 这些图标仅显示在[!UICONTROL Recipe Builder]笔记本中。 在笔记本中构建菜谱后，将在培训和评分部分](#training-and-scoring)中讨论有关这些操作的更多信息。[
+您会注意到，工具栏中还有三个其他操作，即&#x200B;**[!UICONTROL Train]**、**[!UICONTROL Score]**&#x200B;和&#x200B;**[!UICONTROL Create Recipe]**。 这些图标仅显示在[!UICONTROL Recipe Builder]笔记本中。 在笔记本中构建菜谱后，将在培训和评分部分](#training-and-scoring)中讨论有关这些操作的更多信息。[
 
 ![](../images/jupyterlab/create-recipe/toolbar_actions.png)
 
@@ -460,13 +460,13 @@ def save(configProperties, prediction):
 
 在对笔记本进行更改并要培训菜谱后，您可以单击栏顶部的关联按钮在单元格中创建培训运行。 单击该按钮后，培训脚本的命令和输出日志将显示在笔记本（`evaluator.py`单元格下）中。 首先安装所有依赖项，然后启动培训。
 
-请注意，必须至少运行一次培训，然后才能运行评分。 单击&#x200B;**[!UICONTROL 运行评分]**&#x200B;按钮将对培训期间生成的培训模型进行得分。 评分脚本将显示在`datasaver.py`下。
+请注意，必须至少运行一次培训，然后才能运行评分。 单击&#x200B;**[!UICONTROL Run Scoring]**&#x200B;按钮将对培训期间生成的培训模型得分。 评分脚本将显示在`datasaver.py`下。
 
 出于调试目的，如果要查看隐藏输出，请将`debug`添加到输出单元格的末尾，然后重新运行它。
 
 ## 创建菜谱{#create-recipe}
 
-编辑菜谱并满足培训/评分输出后，您可以在右上方导航中按&#x200B;**[!UICONTROL 创建菜谱]**&#x200B;从笔记本创建菜谱。
+编辑菜谱并满足培训/评分输出后，可以按右上方导航中的&#x200B;**[!UICONTROL Create Recipe]**&#x200B;从笔记本创建菜谱。
 
 ![](../images/jupyterlab/create-recipe/create-recipe.png)
 
@@ -474,7 +474,7 @@ def save(configProperties, prediction):
 
 ![](../images/jupyterlab/create-recipe/enter_recipe_name.png)
 
-按&#x200B;**[!UICONTROL Ok]**&#x200B;后，您将能够导航到[Adobe Experience Platform](https://platform.adobe.com/)上的新菜谱。 单击&#x200B;**[!UICONTROL “视图菜谱]**”按钮可转到&#x200B;**[!UICONTROL ML模型]**&#x200B;下的&#x200B;**[!UICONTROL 菜谱]**&#x200B;选项卡
+按&#x200B;**[!UICONTROL Ok]**&#x200B;后，您将能够导航到[Adobe Experience Platform](https://platform.adobe.com/)上的新菜谱。 单击&#x200B;**[!UICONTROL View Recipes]**&#x200B;按钮可转到&#x200B;**[!UICONTROL ML Models]**&#x200B;下的&#x200B;**[!UICONTROL Recipes]**&#x200B;选项卡
 
 ![](../images/jupyterlab/create-recipe/recipe_creation_started.png)
 
@@ -500,5 +500,3 @@ def save(configProperties, prediction):
 以下视频旨在帮助您理解构建和部署模型。
 
 >[!VIDEO](https://video.tv.adobe.com/v/30575?quality=12&enable10seconds=on&speedcontrol=on)
-
-
