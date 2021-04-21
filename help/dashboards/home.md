@@ -1,17 +1,17 @@
 ---
 solution: Experience Platform
 title: Experience Platform仪表板
-topic: overview
+topic-legacy: overview
 type: Documentation
-description: '在Adobe Experience Platform中浏览多个仪表板，以视图有关组织数据的重要信息，这些信息在日常快照中捕获。 '
+description: 在Adobe Experience Platform中浏览多个仪表板，以视图有关组织数据的重要信息，这些信息在日常快照中捕获。
+exl-id: d56cb139-392d-4bbc-97ec-202a0c8a2863
 translation-type: tm+mt
-source-git-commit: d97fd09b382877608edf665d7559a684be00c0bb
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '274'
+source-wordcount: '273'
 ht-degree: 3%
 
 ---
-
 
 # （测试版）仪表板概述{#dashboards}
 
@@ -27,7 +27,7 @@ Adobe Experience Platform提供了多个仪表板，通过这些视图，您可�
 
 ## 仪表板
 
-要访问仪表板，请导航到平台用户界面(UI)中的相应部分。 在部分中，选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡（如果未自动选择）以视图仪表板。
+要访问仪表板，请导航到平台用户界面(UI)中的相应部分。 在部分中，选择&#x200B;**[!UICONTROL Overview]**&#x200B;选项卡（如果未自动选择）以视图仪表板。
 
 快照中的数据与拍摄快照时在特定时间点显示的数据完全一样。 换句话说，快照不是数据的近似值或样本，仪表板不会实时更新。
 
