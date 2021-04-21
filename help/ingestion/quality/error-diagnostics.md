@@ -1,44 +1,44 @@
 ---
-keywords: Experience Platform；主题；热门主题；批处理；批处理；部分摄取；部分摄取；检索错误；检索错误；部分批处理；部分批处理；部分批处理；部分摄取；部分摄取；部分摄取；
+keywords: Experience Platform；主题；热门主题；批处理；批处理；部分摄取；部分摄取；检索错误；检索错误；部分批处理；部分批处理；部分摄取；部分摄取；获取；错误诊断；检索错误诊断；获取错误诊断；获取错误；获取错误；检索错误；
 solution: Experience Platform
 title: 检索数据摄取错误诊断
-topic: overview
-description: 此文档提供有关监视批处理摄取、管理部分批处理摄取错误的信息，以及部分批处理摄取类型的参考。
+topic-legacy: overview
+description: 此文档提供有关监视批摄取、管理部分批摄取错误的信息，以及关于部分批摄取类型的参考。
+exl-id: b885fb00-b66d-453b-80b7-8821117c2041
 translation-type: tm+mt
-source-git-commit: 089a4d517476b614521d1db4718966e3ebb13064
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '936'
 ht-degree: 2%
 
 ---
 
+# 检索数据摄取错误诊断
 
-# 检索数据获取错误诊断
+Adobe Experience Platform提供两种上传和收录数据的方法。 您可以使用批处理摄取(允许您使用各种文件类型（如CSV）插入数据)或流摄取（允许您使用流端点将数据实时插入[!DNL Platform]）。
 
-Adobe Experience Platform提供两种上传和摄取数据的方法。 您可以使用批处理摄取(允许您使用各种文件类型（如CSV）插入数据)或流式摄取（允许您使用流式端点将数据实时插入[!DNL Platform]）。
-
-此文档提供有关监视批处理摄取、管理部分批处理摄取错误的信息，以及部分批处理摄取类型的参考。
+此文档提供有关监视批摄取、管理部分批摄取错误的信息，以及关于部分批摄取类型的参考。
 
 ## 入门指南
 
-本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
+本指南要求对Adobe Experience Platform的以下组件有充分的了解：
 
 - [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md):发送数据的方 [!DNL Experience Platform]法
+- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md):数据发送方 [!DNL Experience Platform]法
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Schema Registry]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Schema Registry]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -52,7 +52,7 @@ Adobe Experience Platform允许用户下载输入文件的错误诊断。 诊断
 
 ### 列表输入文件{#list-files}
 
-以下请求检索最终批中提供的所有文件的列表。
+以下请求将检索最终批中提供的所有文件的列表。
 
 **API格式**
 
@@ -134,7 +134,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 **响应**
 
-成功的响应将返回包含`path`对象的JSON对象，详细说明诊断的保存位置。 响应将返回[JSON Lines](https://jsonlines.org/)格式的`path`对象。
+成功的响应将返回包含`path`对象的JSON对象，这些对象详细说明了保存诊断的位置。 响应将返回[JSON Lines](https://jsonlines.org/)格式的`path`对象。
 
 ```json
 {"path": "F1.json"}
@@ -157,7 +157,7 @@ GET /catalog/batches/{BATCH_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 要检查状态的批处理的`id`值。 |
+| `{BATCH_ID}` | 要检查其状态的批的`id`值。 |
 
 **请求**
 
@@ -171,7 +171,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 **无错误响应**
 
-成功的响应会返回，并包含有关批状态的详细信息。
+成功的响应返回，其中包含有关批状态的详细信息。
 
 ```json
 {
@@ -214,11 +214,11 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | 由于分析、转换或验证而无法处理的行数。 可通过从`outputRecordCount`中减去`inputRecordCount`来导出此值。 无论是否启用`errorDiagnostics`，都会在所有批上生成此值。 |
+| `metrics.failedRecordCount` | 由于分析、转换或验证而无法处理的行数。 可通过从`outputRecordCount`中减去`inputRecordCount`来导出此值。 无论启用了`errorDiagnostics`，都将在所有批上生成此值。 |
 
 **有错误的响应**
 
-如果批处理有一个或多个错误并启用了错误诊断，则响应将返回有关错误的更多信息，包括有效负荷本身以及可下载的错误文件。 请注意，包含错误的批的状态可能仍为成功状态。
+如果批处理有一个或多个错误并启用了错误诊断，则响应将返回有关这些错误的更多信息，包括在有效负荷本身内以及可下载的错误文件。 请注意，包含错误的批的状态可能仍为成功状态。
 
 ```json
 {
@@ -277,8 +277,8 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | 由于分析、转换或验证而无法处理的行数。 可通过从`outputRecordCount`中减去`inputRecordCount`来导出此值。 无论是否启用`errorDiagnostics`，都会在所有批上生成此值。 |
-| `errors.recordCount` | 指定错误代码失败的行数。 如果启用`errorDiagnostics`，则此值仅&#x200B;****&#x200B;生成。 |
+| `metrics.failedRecordCount` | 由于分析、转换或验证而无法处理的行数。 可通过从`outputRecordCount`中减去`inputRecordCount`来导出此值。 无论启用了`errorDiagnostics`，都将在所有批上生成此值。 |
+| `errors.recordCount` | 指定错误代码失败的行数。 如果启用`errorDiagnostics`，则仅生成&#x200B;****。 |
 
 >[!NOTE]
 >
@@ -295,7 +295,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 ## 后续步骤 {#next-steps}
 
-本教程介绍了如何监视部分批摄取错误。 有关批量摄取的详细信息，请阅读[批量摄取开发人员指南](../batch-ingestion/api-overview.md)。
+本教程介绍了如何监控部分批摄取错误。 有关批摄取的详细信息，请阅读[批摄取开发人员指南](../batch-ingestion/api-overview.md)。
 
 ## 附录 {#appendix}
 
@@ -303,23 +303,23 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 ### 部分批摄取错误类型{#partial-ingestion-types}
 
-部分批处理摄取在摄取数据时有三种不同的错误类型：
+部分批处理摄取数据时有三种不同的错误类型：
 
-- [不可读文件](#unreadable)
-- [模式或标题无效](#schemas-headers)
+- [不可读的文件](#unreadable)
+- [无效模式或标题](#schemas-headers)
 - [不可分行](#unparsable)
 
 ### 不可读的文件{#unreadable}
 
-如果所摄取的批次具有不可读的文件，则批次的错误将附加到该批次本身。 有关检索失败批次的详细信息，请参阅[检索失败批次指南](../quality/retrieve-failed-batches.md)。
+如果摄取的批文件不可读，则批的错误将附加到该批本身。 有关检索失败批次的详细信息，请参阅[检索失败批次指南](../quality/retrieve-failed-batches.md)。
 
-### 模式或标头{#schemas-headers}无效
+### 无效的模式或标头{#schemas-headers}
 
-如果所摄取的批具有无效的模式或无效的题头，则该批的错误将附加到该批本身。 有关检索失败批次的详细信息，请参阅[检索失败批次指南](../quality/retrieve-failed-batches.md)。
+如果所摄取的批具有无效模式或无效标题，则该批的错误将附加到该批本身。 有关检索失败批次的详细信息，请参阅[检索失败批次指南](../quality/retrieve-failed-batches.md)。
 
 ### 不可分行{#unparsable}
 
-如果所摄取的批次具有不可分割的行，您可以使用以下请求视图包含错误的一列表文件。
+如果所摄取的批具有不可分割的行，则可以使用以下请求视图包含错误的文件列表。
 
 **API格式**
 
@@ -329,7 +329,7 @@ GET /export/batches/{BATCH_ID}/meta?path=row_errors
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 要从中检索错误信息的批处理的`id`值。 |
+| `{BATCH_ID}` | 要从中检索错误信息的批的`id`值。 |
 
 **请求**
 
