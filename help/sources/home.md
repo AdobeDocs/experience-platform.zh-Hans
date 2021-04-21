@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用平台服务构建、标记和增强传入数据。 您可以从各种来源收集数据，如Adobe应用程序、基于云的存储、数据库和许多其他来源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
 translation-type: tm+mt
-source-git-commit: af5564a07577a0123e1a45043d5479f6ad45d73e
+source-git-commit: 412d7c247353bfd30e134656140ba13f55d2ca07
 workflow-type: tm+mt
-source-wordcount: '921'
+source-wordcount: '922'
 ht-degree: 0%
 
 ---
@@ -91,6 +91,7 @@ Experience Platform支持从第三方数据库中摄取数据。 有关特定源
 - [[!DNL GreenPlum] 连接器](connectors/databases/greenplum.md)
 - [[!DNL HP Vertica] 连接器](connectors/databases/hp-vertica.md)
 - [[!DNL IBM DB2] 连接器](connectors/databases/ibm-db2.md)
+- [[!DNL MariaDB] 连接器](connectors/databases/mariadb.md)
 - [[!DNL Microsoft SQL Server] 连接器](connectors/databases/sql-server.md)
 - [[!DNL MySQL] 连接器](connectors/databases/mysql.md)
 - [[!DNL Oracle] 连接器](connectors/databases/oracle.md)
