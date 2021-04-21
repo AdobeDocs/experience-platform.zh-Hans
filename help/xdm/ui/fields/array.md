@@ -3,44 +3,44 @@ keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；
 solution: Experience Platform
 title: 在UI中定义数组字段
 description: 了解如何在Experience Platform用户界面中定义数组字段。
-topic: user guide
+topic-legacy: user guide
+exl-id: 9ac55554-c29b-40b2-9987-c8c17cc2c00c
 translation-type: tm+mt
-source-git-commit: f2238d35f3e2a279fbe8ef8b581282102039e932
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '363'
-ht-degree: 1%
+source-wordcount: '347'
+ht-degree: 0%
 
 ---
-
 
 # 在UI中定义数组字段
 
 在Adobe Experience Platform用户界面中定义体验数据模型(XDM)字段时，可以将该字段指定为数组。
 
-数组的内容取决于为该字段选择的[!UICONTROL 类型]。 例如，如果字段的[!UICONTROL Type]设置为“[!UICONTROL String]”，则将该字段设置为数组会将该字段指定为字符串数组。 如果字段的[!UICONTROL 类型]设置为多字段数据类型，如“[!UICONTROL 邮政地址]”，则该字段将成为符合数据类型的邮政地址对象的数组。
+数组的内容取决于为该字段选择的[!UICONTROL Type]。 例如，如果字段的[!UICONTROL Type]设置为“[!UICONTROL String]”，则将该字段设置为数组会将该字段指定为字符串数组。 如果字段的[!UICONTROL Type]设置为多字段数据类型，如“[!UICONTROL Postal address]”，则该字段将成为符合数据类型的邮政地址对象的数组。
 
-在UI](./overview.md#define)中定义了[新字段后，可以选中右边栏中的&#x200B;**[!UICONTROL Array]**&#x200B;复选框，将其设置为数组字段。
+在UI](./overview.md#define)中定义了[新字段后，可以通过选中右边栏中的&#x200B;**[!UICONTROL Array]**&#x200B;复选框将其设置为数组字段。
 
 ![](../../images/ui/fields/special/array.png)
 
-选中该复选框后，右边栏中会显示其他控件，允许您选择进一步限制数组。 如果您不想强制实施特定约束，请将字段留空。
+选中此复选框后，右侧边栏中会显示其他控件，允许您选择进一步限制数组。 如果您不希望强制实施特定约束，请将该字段留空。
 
 阵列的其他配置控件如下：
 
 | 字段属性 | 描述 |
 | --- | --- |
-| [!UICONTROL 最小长度] | 阵列必须包含的最小项数，才能成功摄取。 |
-| [!UICONTROL 最大长度] | 要成功摄取，阵列必须包含的最大项目数。 |
-| [!UICONTROL 仅唯一项目] | 如果设置为“[!UICONTROL True]”，则数组中的每个项必须是唯一的，才能成功获取。 |
+| [!UICONTROL Minimum length] | 数组必须包含的最小项数，才能成功摄取。 |
+| [!UICONTROL Maximum length] | 数组必须包含的最大项数，才能成功摄取。 |
+| [!UICONTROL Unique items only] | 如果设置为“[!UICONTROL True]”，则数组中的每个项目必须是唯一的，才能成功获取。 |
 
-完成字段配置后，选择&#x200B;**[!UICONTROL 应用]**&#x200B;以将更改应用到模式。
+完成字段配置后，选择&#x200B;**[!UICONTROL Apply]**&#x200B;以将更改应用于模式。
 
 ![](../../images/ui/fields/special/array-config.png)
 
-画布会更新，以反映对字段所做的更改。 请注意，画布中字段名称旁边显示的数据类型会附加一对方括号(`[]`)，表示该字段代表该数据类型的数组。
+画布会更新，以反映对字段所做的更改。 请注意，画布中字段名称旁边显示的数据类型会附加一对方括号(`[]`)，表示该字段表示该数据类型的数组。
 
 ![](../../images/ui/fields/special/array-applied.png)
 
 ## 后续步骤
 
-本指南介绍如何在UI中定义阵列字段。 请参见[定义UI](./overview.md#special)中的字段的概述，了解如何定义[!DNL Schema Editor]中的其他XDM字段类型。
+本指南介绍如何在UI中定义数组字段。 有关在UI](./overview.md#special)中定义字段的概述，请参阅[，以了解如何在[!DNL Schema Editor]中定义其他XDM字段类型。
