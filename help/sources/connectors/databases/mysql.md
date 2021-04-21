@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；MySQL;mysql；我的sql；我的SQL
 solution: Experience Platform
 title: MySQL源连接器概述
-topic: overview
+topic-legacy: overview
 description: 了解如何使用API或用户界面将MySQL连接到Adobe Experience Platform。
+exl-id: a18e8e69-880f-4bee-b339-726091d6f858
 translation-type: tm+mt
-source-git-commit: 8851e11e956b393e56714d4d48870b7f68947c18
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '233'
 ht-degree: 0%
 
 ---
-
 
 # MySQL连接器
 
