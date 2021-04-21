@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；列表活动沙箱；列表沙箱
 solution: Experience Platform
 title: 列表API中当前用户的活动沙箱
-topic: developer guide
+topic-legacy: developer guide
 description: 可以通过向根端点发出列表请求，来GET当前用户处于活动状态的沙箱。
+exl-id: 9b0719af-c1ca-439a-9c8b-86c7fa26a3b8
 translation-type: tm+mt
-source-git-commit: 62ce5ac92d03a6e85589fc92e8d953f7fc1d8f31
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '361'
 ht-degree: 2%
 
 ---
-
 
 # 列表API中当前用户的活动沙箱
 
