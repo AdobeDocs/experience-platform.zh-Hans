@@ -3,15 +3,15 @@ keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；
 solution: Experience Platform
 title: 审核日志API端点
 description: 模式 Registry API中的/auditlog端点允许您检索对现有XDM资源所做更改的按时间顺序列表。
-topic: developer guide
+topic-legacy: developer guide
+exl-id: 8d33ae7c-0aa4-4f38-a183-a2ff1801e291
 translation-type: tm+mt
-source-git-commit: 0727ffa0c72bcb6a85de1a13215b691b97889b70
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '398'
+source-wordcount: '396'
 ht-degree: 2%
 
 ---
-
 
 # 审核日志端点
 
