@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API
 title: 计算属性API端点
-topic: guide
+topic-legacy: guide
 type: Documentation
 description: 在Adobe Experience Platform中，计算属性是用于将事件级数据聚合为用户档案级属性的函数。 这些函数会自动计算，以便能够跨细分、激活和个性化使用。 本指南说明如何使用实时客户用户档案API创建、视图、更新和删除计算属性。
+exl-id: 6b35ff63-590b-4ef5-ab39-c36c39ab1d58
 translation-type: tm+mt
-source-git-commit: 4ed2b80ebfd87f8920462ae0a918b01bb13d4210
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '2279'
+source-wordcount: '2277'
 ht-degree: 2%
 
 ---
-
 
 # (Alpha)计算属性API端点
 
