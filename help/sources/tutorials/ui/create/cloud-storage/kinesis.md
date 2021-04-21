@@ -7,18 +7,14 @@ type: Tutorial
 description: 了解如何使用Amazon Kinesis UI创建Adobe Experience Platform源连接。
 exl-id: 4152e48b-bec7-4b05-a172-eea71c9d9880
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d6f1521470b8dc630060584189690545c724de6b
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '448'
 ht-degree: 1%
 
 ---
 
 # 在UI中创建[!DNL Amazon Kinesis]源连接
-
->[!NOTE]
->
->[!DNL Amazon Kinesis]连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 Adobe Experience Platform中的源连接器提供按计划收集外部源数据的能力。 本教程提供了使用[!DNL Platform]用户界面验证[!DNL Amazon Kinesis]（以下称[!DNL "Kinesis"]）源连接器的步骤。
 
