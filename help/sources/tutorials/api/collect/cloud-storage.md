@@ -2,14 +2,14 @@
 keywords: Experience Platform；主页；热门主题；云存储数据
 solution: Experience Platform
 title: 使用源连接器和API收集云存储数据
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方云存储检索数据并使用源连接器和API将其引入平台的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1806'
+source-wordcount: '1804'
 ht-degree: 1%
 
 ---
