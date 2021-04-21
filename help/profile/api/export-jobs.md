@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API
 title: 导出作业API端点
-topic: guide
+topic-legacy: guide
 type: Documentation
 description: 实时客户用户档案使您能够通过将来自多个来源的数据（包括属性数据和行为数据）汇总在Adobe Experience Platform中为各个客户构建单一视图。 用户档案数据随后可导出到数据集以进一步处理。
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
 translation-type: tm+mt
-source-git-commit: 87729e4996b0b2ac26e1a0abaa80af717825f9e6
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1543'
+source-wordcount: '1542'
 ht-degree: 2%
 
 ---
