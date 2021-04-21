@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；数据收集；启动；web sdk
 solution: Experience Platform
 title: 数据收集概述
-topic: overview
+topic-legacy: overview
 description: 了解与收集Adobe Experience Platform客户体验数据相关的各种技术。
+exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
 translation-type: tm+mt
-source-git-commit: 629fe68029a9f45e45d5e2d238ffff455c7d6de6
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '321'
+source-wordcount: '320'
 ht-degree: 3%
 
 ---
-
 
 # 数据收集概述
 
