@@ -6,19 +6,15 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到MariaDB。
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b2384bfe26fa3d111c342062b2d9bb37c4226857
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '542'
 ht-degree: 2%
 
 ---
 
 
 # 使用[!DNL Flow Service] API创建[!DNL MariaDB]源连接
-
->[!NOTE]
->
->[!DNL MariaDB]连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 [!DNL Flow Service] 用于收集和集中来自Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有受支持的源都可从中连接。
 
