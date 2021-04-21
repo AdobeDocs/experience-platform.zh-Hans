@@ -1,25 +1,23 @@
 ---
 title: Adobe Experience Platform概述视频
-description: 此视频快速概述了Adobe Experience Platform的特点及其解决的业务挑战。
-feature: null
-topics: null
+description: 此视频快速概述了Adobe Experience Platform的功能及其解决的业务难题。
 kt: 4804
 audience: all
 doc-type: video
 activity: understand
 thumbnail: 32797.jpg
+exl-id: 6ed25b0c-ac12-4572-8d3d-39e0eb3e2112
 translation-type: tm+mt
-source-git-commit: 5575d5e45bddcc007dcf78720cd7a7e20475f78c
+source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
 workflow-type: tm+mt
 source-wordcount: '55'
 ht-degree: 0%
 
 ---
 
-
 # Adobe Experience Platform概述
 
-此视频快速介绍Experience Platform，并概述其解决的一些业务难题。
+此视频简要介绍Experience Platform，并概述了它解决的一些业务难题。
 
 要了解更多信息，请首先阅读[Experience Platform概述](../home.md)。
 
