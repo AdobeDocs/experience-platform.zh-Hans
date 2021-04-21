@@ -2,40 +2,40 @@
 solution: Experience Platform
 title: 在UI中导出XDM模式
 description: 了解如何将现有模式导出到Adobe Experience Platform用户界面中的其他沙箱或IMS组织。
-topic: user guide
+topic-legacy: user guide
 type: Tutorial
+exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
 translation-type: tm+mt
-source-git-commit: 8d6916890a94300dc68d018d56579df9616c177c
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '502'
+source-wordcount: '495'
 ht-degree: 0%
 
 ---
-
 
 # 在UI中导出XDM模式
 
 模式库中的所有资源都包含在IMS组织内的特定沙箱中。 在某些情况下，您可能希望在沙箱和IMS组织之间共享体验数据模型(XDM)资源。
 
-为满足这一需求，Adobe Experience PlatformUI中的[!UICONTROL 模式]工作区允许您为模式库中的任何模式生成导出有效负荷。 然后，此有效负荷可用于对模式注册表API的调用，以将模式（和所有相关资源）导入目标沙箱和IMS组织。
+为满足此需求，Adobe Experience Platform UI中的[!UICONTROL Schemas]工作区允许您为模式库中的任何模式生成导出负载。 然后，此有效负荷可用于对模式注册表API的调用，以将模式（和所有相关资源）导入目标沙箱和IMS组织。
 
 >[!NOTE]
 >
->除了模式(包括类、混合和模式类型)，您还可以使用注册表API导出其他资源。 有关详细信息，请参阅[导出／导入端点](../api/export-import.md)上的指南。
+>除了模式（包括类、混合和数据类型）之外，您还可以使用模式 Registry API导出其他资源。 有关详细信息，请参阅[导出/导入端点](../api/export-import.md)上的指南。
 
 ## 先决条件
 
-平台UI允许您导出XDM资源，但必须使用模式注册表API将这些资源导入其他沙箱或IMS组织以完成工作流。 有关必需的身份验证头的重要信息，请参阅[模式注册表API](../api/getting-started.md)快速入门指南，然后按照本指南操作。
+虽然平台UI允许您导出XDM资源，但您必须使用模式 Registry API将这些资源导入其他沙箱或IMS组织以完成工作流。 有关所需的模式头的重要信息，请参阅[指南，以了解注册表API](../api/getting-started.md)快速入门。
 
 ## 生成导出有效负荷
 
-在平台UI中，在左侧导航中选择&#x200B;**[!UICONTROL 模式]**。 在[!UICONTROL 模式]工作区中，找到要导出的模式并在[!DNL Schema Editor]中打开它。
+在平台UI中，选择左侧导航中的&#x200B;**[!UICONTROL Schemas]**。 在[!UICONTROL Schemas]工作区中，找到要导出的模式，并在[!DNL Schema Editor]中将其打开。
 
 >[!TIP]
 >
->有关如何查找要查找的XDM资源的详细信息，请参见[探索XDM资源](./explore.md)的指南。
+>有关如何查找要查找的XDM资源的详细信息，请参阅[探索XDM资源](./explore.md)指南。
 
-打开模式后，请选择画布右上方的&#x200B;**[!UICONTROL 复制JSON]**&#x200B;图标（![复制图标](../images/ui/export/icon.png)）。
+打开模式后，请选择画布右上角的&#x200B;**[!UICONTROL Copy JSON]**&#x200B;图标（![复制图标](../images/ui/export/icon.png)）。
 
 ![](../images/ui/export/copy-json.png)
 
@@ -203,14 +203,14 @@ ht-degree: 0%
 ]
 ```
 
-有效负荷采用数组的形式，每个数组项都是表示要导出的自定义XDM资源的对象。 在上面的示例中，包含“[!DNL Loyalty details]”自定义混音和“[!DNL Loyalty Members]”模式。 模式使用的任何核心资源都不包括在导出中，因为这些资源可在所有沙箱和IMS组织中使用。
+负载采用数组的形式，每个数组项都是表示要导出的自定义XDM资源的对象。 在上面的示例中，包含“[!DNL Loyalty details]”自定义混音和“[!DNL Loyalty Members]”模式。 模式使用的任何核心资源不包括在导出中，因为这些资源可在所有沙箱和IMS组织中使用。
 
 请注意，贵组织的租户ID的每个实例在有效负荷中显示为`<XDM_TENANTID_PLACEHOLDER>`。 这些占位符将自动替换为相应的租户ID值，具体取决于您在下一步中导入模式的位置。
 
 ## 使用API导入资源
 
-为模式复制导出JSON后，您可以将它用作POST请求到模式注册表API中的`/import`端点的有效负荷。 有关如何配置调用以将模式发送到所需的IMS组织和沙箱的详细信息，请参阅[在API](../api/export-import.md#import)中导入XDM资源一节。
+复制模式的导出JSON后，您可以将它用作POST请求到模式注册表API中`/import`端点的有效负荷。 有关如何配置调用以将模式发送到所需的IMS组织和沙箱的详细信息，请参阅[在API](../api/export-import.md#import)中导入XDM资源一节。
 
 ## 后续步骤
 
-通过遵循本指南，您已成功将XDM模式导出到其他IMS组织或沙箱。 有关[!UICONTROL 模式] UI功能的详细信息，请参阅[[!UICONTROL 模式] UI概述](./overview.md)。
+按照本指南，您已成功将XDM模式导出到其他IMS组织或沙箱。 有关[!UICONTROL Schemas] UI功能的详细信息，请参阅[[!UICONTROL Schemas] UI概述](./overview.md)。
