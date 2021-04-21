@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；经过身份验证的流连接；流连接；创建流连接；创建经过身份验证的流连接；流摄取；
 solution: Experience Platform
 title: 创建经过身份验证的流连接
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: 经身份验证的数据收集使Adobe Experience Platform服务(如实时客户用户档案和身份)能够区分来自可信来源和不可信来源的记录。
+exl-id: 14228cd9-4508-4605-8f50-04a74f1c6236
 translation-type: tm+mt
-source-git-commit: 17eb7b9cb715d7d8d0d7bce930ddec43259149cc
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '117'
 ht-degree: 0%
 
 ---
-
 
 # 创建经过身份验证的流连接
 
