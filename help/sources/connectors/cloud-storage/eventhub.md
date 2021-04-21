@@ -6,18 +6,15 @@ topic-legacy: overview
 description: 了解如何使用API或用户界面将Azure事件集线器连接到Adobe Experience Platform。
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 6dac267be93241bffb4eb5092a6e8da5093c63a6
 workflow-type: tm+mt
-source-wordcount: '249'
+source-wordcount: '226'
 ht-degree: 0%
 
 ---
 
-# （测试版）Azure事件集线器连接器
 
->[!NOTE]
->
->Azure事件集线器连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../home.md#terms-and-conditions)。
+# [!DNL Azure Event Hubs] 连接器
 
 Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等云提供商提供本机连接。 您可以将这些系统中的数据导入[!DNL Platform]。
 
