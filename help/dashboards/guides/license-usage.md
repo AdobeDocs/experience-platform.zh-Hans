@@ -2,16 +2,16 @@
 keywords: Experience Platform；用户界面；UI；自定义；许可证使用仪表板;仪表板；许可证使用；授权；消耗
 title: 许可证使用仪表板
 description: Adobe Experience Platform提供了一个仪表板，您可以通过它视图有关组织许可证使用情况的重要信息。
-topic: guide
+topic-legacy: guide
 type: Documentation
+exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
 translation-type: tm+mt
-source-git-commit: 6baf1fbff20a02cd599d9ad9102d56db5a9004c3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '660'
+source-wordcount: '632'
 ht-degree: 2%
 
 ---
-
 
 # （测试版）许可证使用仪表板{#license-usage-dashboard}
 
@@ -33,7 +33,7 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过它可
 
 ## 浏览许可证使用仪表板
 
-要导航到平台UI中的许可证使用仪表板，请在左边栏中选择&#x200B;**[!UICONTROL 许可证使用]**。 此时将打开&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡，其中显示仪表板。
+要导航到平台UI中的许可证使用仪表板，请选择左边栏中的&#x200B;**[!UICONTROL License usage]**。 此时将打开&#x200B;**[!UICONTROL Overview]**&#x200B;选项卡，其中显示仪表板。
 
 ![](../images/license-usage/dashboard-overview.png)
 
@@ -43,13 +43,13 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过它可
 
 >[!NOTE]
 >
->沙箱的消耗报告对于相同类型的所有沙箱是累积的。 换句话说，选择[!UICONTROL 生产]或[!UICONTROL 开发]分别为所有生产或开发沙箱提供消费报告。
+>沙箱的消耗报告对于相同类型的所有沙箱是累积的。 换句话说，选择[!UICONTROL Production]或[!UICONTROL Development]分别为所有生产沙箱或开发沙箱提供消费报告。
 
 ![](../images/license-usage/select-sandbox.png)
 
 ### 选择日期范围
 
-选择沙箱后，可以使用日期范围下拉列表选择要在仪表板中显示的时间段。 有三种可用选项：[!UICONTROL 最近30天]、[!UICONTROL 最近90天]和[!UICONTROL 最近12个月]。 默认情况下，将选择最近30天。
+选择沙箱后，可以使用日期范围下拉列表选择要在仪表板中显示的时间段。 有三种可用选项：[!UICONTROL Last 30 days]、[!UICONTROL Last 90 days]和[!UICONTROL Last 12 months]。 默认情况下，将选择最近30天。
 
 ![](../images/license-usage/select-date-range.png)
 
@@ -65,10 +65,10 @@ Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过它可
 
 许可证使用仪表板当前提供四个量度：
 
-* [!UICONTROL 可寻址受众] (按用户档案数量衡量)
-* [!UICONTROL 平均用户档案丰富性]
-* [!UICONTROL 总消耗存储]
-* [!UICONTROL 每分段扫描的数据]
+* [!UICONTROL Addressable Audience] (按用户档案数衡量)
+* [!UICONTROL Average profile richness]
+* [!UICONTROL Total consumed storage]
+* [!UICONTROL Data scanned per segmentation ratio]
 
 这些量度的定义因单位购买的许可而异。 有关每个量度的详细定义，请参阅相应的产品说明文档：
 
