@@ -2,18 +2,18 @@
 keywords: Experience Platform;用户档案；段；段；分段；用户界面；UI；自定义；段仪表板;仪表板
 title: 细分仪表板
 description: 'Adobe Experience Platform UI提供了一个仪表板，通过它可以视图与由您的组织创建和维护的区段相关的重要指标。 '
-topic: guide
+topic-legacy: guide
 type: Documentation
+exl-id: 4a45bc3a-be5e-42b5-abd1-f0fb5795f5f4
 translation-type: tm+mt
-source-git-commit: 77c94fb4654f7dcb0eb4ba9af6972be439eca55e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: '147'
 ht-degree: 6%
 
 ---
 
-
-# （测试版）[!UICONTROL 区段]仪表板{#segment-dashboard}
+# (Beta)[!UICONTROL Segments]仪表板{#segment-dashboard}
 
 >[!IMPORTANT]
 >
