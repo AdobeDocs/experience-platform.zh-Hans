@@ -2,13 +2,13 @@
 keywords: Experience Platform；主题；流行主题；分割；分割；分割服务；边缘分割；边缘分割；流边缘；
 solution: Experience Platform
 title: '使用API进行边缘分割 '
-topic: developer guide
+topic-legacy: developer guide
 description: 本文档包含有关如何使用Adobe Experience Platform Segmentation Service API的边缘分割的示例。
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
 translation-type: tm+mt
-source-git-commit: 36169a42c7f6a73ca9cc165cd338d6a1cf245bfc
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '651'
 ht-degree: 3%
 
 ---
