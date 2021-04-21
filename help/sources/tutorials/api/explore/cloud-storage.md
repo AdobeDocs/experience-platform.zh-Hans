@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；云存储；云存储
 solution: Experience Platform
 title: 使用Flow Service API探索Cloud存储系统
-topic: overview
+topic-legacy: overview
 description: 本教程使用Flow Service API来浏览第三方云存储系统。
+exl-id: ba1a9bff-43a6-44fb-a4e7-e6a45b7eeebd
 translation-type: tm+mt
-source-git-commit: 457fc9e1b0c445233f0f574fefd31bc1fc3bafc8
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '821'
-ht-degree: 2%
+source-wordcount: '820'
+ht-degree: 1%
 
 ---
-
 
 # 使用[!DNL Flow Service] API浏览云存储系统
 
