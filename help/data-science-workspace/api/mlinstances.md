@@ -2,26 +2,26 @@
 keywords: Experience Platform；开发人员指南；端点；数据科学工作区；热门主题；实例；sensei机器学习api
 solution: Experience Platform
 title: MLInstances API端点
-topic: Developer guide
-description: MLI实例是现有引擎与一组适当配置的配对，这些配置定义任何培训参数、评分参数或硬件资源配置。
+topic-legacy: Developer guide
+description: MLInstance是现有引擎与一组适当配置的配对，这些配置定义任何培训参数、评分参数或硬件资源配置。
+exl-id: e78cda69-1ff9-47ce-b25d-915de4633e11
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '619'
 ht-degree: 4%
 
 ---
 
-
 # MLInstances端点
 
-MLInstance是现有[引擎](./engines.md)与一组适当的配置的配对，这些配置定义任何培训参数、评分参数或硬件资源配置。
+MLInstance是现有[Engine](./engines.md)与定义任何培训参数、评分参数或硬件资源配置的适当配置集的配对。
 
 ## 创建MLInstance {#create-an-mlinstance}
 
 您可以通过执行POST请求来创建MLInstance，同时提供由有效的引擎ID(`{ENGINE_ID}`)和一组适当的默认配置组成的请求有效负荷。
 
-如果引擎ID引用PySpark或Spark引擎，则您可以配置计算资源量，如核心数或内存量。 如果引用了Python引擎，您可以选择使用CPU或GPU进行培训和评分。 有关详细信息，请参阅[PySpark和Spark资源配置](./appendix.md#resource-config)和[Python CPU和GPU配置](./appendix.md#cpu-gpu-config)的附录部分。
+如果引擎ID引用了PySpark或Spark引擎，则您可以配置计算资源量，如内核数或内存量。 如果引用了Python引擎，则您可以选择使用CPU或GPU进行培训和评分。 有关详细信息，请参阅[PySpark和Spark资源配置](./appendix.md#resource-config)和[Python CPU和GPU配置](./appendix.md#cpu-gpu-config)的附录部分。
 
 **API格式**
 
@@ -77,14 +77,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | MLInstance的所需名称。 与此MLInstance对应的模型将继承此值，该值将作为模型的名称显示在UI中。 |
-| `description` | MLInstance的可选描述。 与此MLInstance对应的模型将继承此值，并作为模型的描述显示在UI中。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
+| `name` | MLInstance的所需名称。 与此MLInstance对应的Model将继承此值，以在UI中作为Model的名称显示。 |
+| `description` | MLInstance的可选描述。 与此MLInstance对应的Model将继承此值，以在UI中作为Model的描述显示。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
 | `engineId` | 现有引擎的ID。 |
 | `tasks` | 用于培训、评分或功能管道的一组配置。 |
 
 **响应**
 
-成功的响应返回包含新创建的MLInstance的详细信息的有效负荷，该实例包括其唯一标识符(`id`)。
+成功的响应返回包含新创建的MLInstance的详细信息(包括其唯一标识符(`id`))的有效负荷。
 
 ```json
 {
@@ -129,9 +129,9 @@ curl -X POST \
 }
 ```
 
-## 检索一列表MLInstance
+## 检索MLInstance的列表
 
-您可以通过执行单个列表请求来检索MLInstances的GET。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
+您可以通过执行单个列表请求来检索MLInstancesGET。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
 
 **API格式**
 
@@ -144,7 +144,7 @@ GET /mlInstances?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 | 参数 | 描述 |
 | --- | --- |
 | `{QUERY_PARAMETER}` | 用于筛选结果的[可用查询参数](./appendix.md#query)之一。 |
-| `{VALUE}` | 前一查询参数的值。 |
+| `{VALUE}` | 前一个查询参数的值。 |
 
 **请求**
 
@@ -159,7 +159,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回MLI实例的列表及其详细信息。
+成功的响应会返回MLInstances的列表及其详细信息。
 
 ```json
 {
@@ -209,7 +209,7 @@ GET /mlInstances/{MLINSTANCE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MLINSTANCE_ID}` | 所需MLI实例的ID。 |
+| `{MLINSTANCE_ID}` | 所需MLInstance的ID。 |
 
 **请求**
 
@@ -272,11 +272,11 @@ curl -X GET \
 
 ## 更新MLInstance
 
-您可以通过以下方式更新现有MLInstance：通过PUT请求覆盖其属性，该请求在请求路径中包含目标MLInstance的ID，并提供包含已更新属性的JSON有效负荷。
+您可以通过PUT请求覆盖现有MLInstance的属性，该请求在请求路径中包含目标 MLInstance的ID并提供包含已更新属性的JSON有效负荷。
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议您首先通过ID](#retrieve-specific)执行对[检索MLInstance的GET请求。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
+>为确保此PUT请求成功，建议您首先通过ID](#retrieve-specific)执行GET请求以检索MLInstance。 [然后，修改并更新返回的JSON对象，并应用修改后的JSON对象的整个作为PUT请求的有效负荷。
 
 以下示例API调用将在最初具有这些属性时更新MLInstance的培训和评分参数：
 
@@ -367,7 +367,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回包含MLInstance的更新详细信息的有效负荷。
+成功的响应返回包含MLInstance的更新详细信息的有效负荷。
 
 ```json
 {
@@ -406,7 +406,7 @@ curl -X PUT \
 
 ## 按引擎ID删除MLInstances
 
-您可以通过执行将引擎ID作为DELETE参数包含在内的查询请求，删除共享同一引擎的所有MLI实例。
+您可以通过执行包含引擎ID作为DELETE参数的查询请求来删除共享同一引擎的所有MLInstance。
 
 **API格式**
 
@@ -441,7 +441,7 @@ curl -X DELETE \
 
 ## 删除MLInstance
 
-您可以通过执行DELETE请求来删除单个MLInstance，该请求在请求路径中包含目标MLInstance的ID。
+您可以通过执行在请求路径中包含DELETEMLInstance ID的目标请求来删除单个MLInstance。
 
 **API格式**
 
