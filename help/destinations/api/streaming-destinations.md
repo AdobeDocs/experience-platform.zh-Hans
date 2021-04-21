@@ -3,16 +3,16 @@ keywords: Experience Platform；主页；热门主题；API教程；流目标API
 solution: Experience Platform
 title: 使用Adobe Experience Platform中的Flow Service API连接到流目标并激活数据
 description: 本文档包括通过使用Adobe Experience Platform API创建流目标
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
+exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
 translation-type: tm+mt
-source-git-commit: 32cb198bcf2c142b50c4b7a60282f0c923be06b1
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '2029'
+source-wordcount: '2022'
 ht-degree: 1%
 
 ---
-
 
 # 使用Flow Service API连接到流目标并激活数据
 
@@ -28,7 +28,7 @@ ht-degree: 1%
 
 如果您希望使用平台中的用户界面连接到目标并激活数据，请参阅[连接目标](../ui/connect-destination.md)和[将用户档案和区段激活到目标](../ui/activate-destinations.md)教程。
 
-## 入门指南
+## 快速入门
 
 本指南要求对Adobe Experience Platform的以下组件有充分的了解：
 
@@ -470,7 +470,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 * `{DATAFLOW_ID}`:使用您在上一步中获得的数据流。
 * `{ETAG}`:使用您在上一步中获得的标签。
-* `{SEGMENT_ID}`:提供要导出到此目标的区段ID。要检索要激活的区段的区段ID，请转到&#x200B;**https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/**，在左侧导航菜单中选择&#x200B;**[!UICONTROL 分段服务API]**，然后在&#x200B;**[!UICONTROL 区段定义]**&#x200B;中查找`GET /segment/definitions`操作。
+* `{SEGMENT_ID}`:提供要导出到此目标的区段ID。要检索要激活的区段的区段ID，请转到&#x200B;**https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/**，在左侧导航菜单中选择&#x200B;**[!UICONTROL Segmentation Service API]**，然后在&#x200B;**[!UICONTROL Segment Definitions]**&#x200B;中查找`GET /segment/definitions`操作。
 * `{PROFILE_ATTRIBUTE}`:例如， `personalEmail.address` 或  `person.lastName`
 
 **响应**
