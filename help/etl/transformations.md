@@ -2,33 +2,33 @@
 keywords: Experience Platform；主页；热门主题；etl;ETL;etl转换；ETL转换
 solution: Experience Platform
 title: 示例ETL转换
-topic: overview
-description: 本文演示了以下示例转换，这些转换是提取、转换、加载(ETL)开发人员可能遇到的。
+topic-legacy: overview
+description: 本文演示了以下示例转换，这些转换是Extract、Transform、Load(ETL)开发人员可以遇到的。
+exl-id: 8084f5fd-b621-4515-a329-5a06c137d11c
 translation-type: tm+mt
-source-git-commit: f8186e467dc982003c6feb01886ed16d23572955
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '493'
 ht-degree: 1%
 
 ---
 
-
 # 示例ETL转换
 
-本文演示了以下示例转换，这些转换是提取、转换、加载(ETL)开发人员可能遇到的。
+本文演示了以下示例转换，这些转换是Extract、Transform、Load(ETL)开发人员可以遇到的。
 
 ## 将CSV简化为层次结构
 
 ### 示例文件
 
-示例CSV和JSON文件可从由Adobe维护的公共ETL参考[!DNL GitHub]回购中获得：
+示例CSV和JSON文件可从由Adobe维护的公共ETL参考[!DNL GitHub]回购中获取：
 
 - [CRM_用户档案.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_用户档案.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)
 
 ### CSV 示例
 
-以下CRM数据已作为`CRM_profiles.csv`导出：
+以下CRM数据已导出为`CRM_profiles.csv`:
 
 ```shell
 TITLE   F_NAME  L_NAME  GENDER  DOB EMAIL   CRMID   ECID    LOYALTYID   ECID2   PHONE   STREET  CITY    STATE   COUNTRY ZIP LAT LONG
@@ -45,7 +45,7 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 
 下表概述了CRM数据的映射要求，并包含以下转换：
 - `identityMap`属性的标识列
-- 出生日期(DOB)至年和月日
+- 出生日期(DOB)至年和月
 - 多次或短整数的字符串。
 
 | CSV列 | XDM路径 | 数据格式 |
@@ -54,17 +54,17 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 | F_NAME | person.name.firstName | 复制为字符串 |
 | L_NAME | person.name.lastName | 复制为字符串 |
 | 性别 | person.gender | 将性别转换为相应的人。性别枚举值 |
-| DOB | person.byrthDayAndMonth:&quot;MM-DD&quot;<br/>person.birthDate:&quot;YYYY-MM-DD&quot;<br/>person.byrthYear:YYYY | 将birthDayAndMonth转换为string<br/>将birthDate转换为string<br/>将birthYear转换为short int |
+| DOB | person.byrthDayAndMonth:&quot;MM-DD&quot;<br/>person.birthDate:&quot;YYYY-MM-DD&quot;<br/>person.phirsYear:YYYY | 将birthDayAndMonth转换为字符串<br/>将birthDate转换为字符串<br/>将birthYear转换为短int |
 | 电子邮件 | personalEmail.address | 复制为字符串 |
-| CRMID | identityMap.CRMID[{&quot;id&quot;:x, primary:false}] | 复制为字符串并将Primary设置为false（在identityMap中复制为字符串）到CRMID数组 |
-| ECID | identityMap.ECID[{&quot;id&quot;:x，主：false}] | 复制为字符串并将Primary设置为false（在identityMap中复制为ECID数组中的第一个条目） |
-| 洛亚尔蒂 | identityMap.LOYALTYID[{&quot;id&quot;:x, primary:true}] | 复制为字符串并将“主”设置为true（在identityMap中复制为字符串）到LOYALTYID数组 |
-| ECID2 | identityMap.ECID[{&quot;id&quot;:x, primary:false}] | 将“作为字符串”复制到identityMap中ECID数组中的第二个条目，并将“主”设置为false |
+| CRMID | identityMap.CRMID[{&quot;id&quot;:x， primary:false}] | 复制为字符串并在identityMap中将Primary设置为false |
+| ECID | identityMap.ECID[{&quot;id&quot;:x，主：false}] | 复制为字符串并将Primary设置为false（复制到identityMap中ECID数组中的第一个条目） |
+| 洛亚尔蒂 | identityMap.LOYALTYID[{&quot;id&quot;:x， primary:true}] | 复制为字符串并将Primary设置为true |
+| ECID2 | identityMap.ECID[{&quot;id&quot;:x， primary:false}] | 复制为字符串并复制到identityMap中ECID数组中的第二个条目，将Primary设置为false |
 | 电话 | homePhone.number | 复制为字符串 |
-| STREET | homeAddress.street1 | 复制为字符串 |
+| 街 | homeAddress.street1 | 复制为字符串 |
 | 城市 | homeAddress.city | 复制为字符串 |
 | 州 | homeAddress.stateProvince | 复制为字符串 |
-| 国家／地区 | homeAddress.country | 复制为字符串 |
+| 国家/地区 | homeAddress.country | 复制为字符串 |
 | ZIP | homeAddress.postalCode | 复制为字符串 |
 | LAT | homeAddress.latitude | 转换为多次 |
 | 长 | homeAddress.longitude | 转换为多次 |
@@ -72,7 +72,7 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 
 ### 输出XDM
 
-以下示例显示了转换为XDM的CSV的前两行，如`CRM_profiles.json`所示：
+以下示例显示了转换为XDM的CSV的前两行，如`CRM_profiles.json`中所示：
 
 ```json
 {
@@ -174,11 +174,11 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 
 ## 数据帧到XDM模式
 
-数据帧的层次结构（如Parke文件）必须与要上传到的XDM模式的层次结构相匹配。
+数据帧（如Parce文件）的层次结构必须与要上载到的XDM模式的层次结构相匹配。
 
 ### 数据帧示例
 
-以下示例模式帧的结构已映射到实现[!DNL XDM Individual Profile]类的模式，并且包含与该类型的相关的最常见字段。
+下面的示例模式的结构已映射到实现[!DNL XDM Individual Profile]类的模式，并包含与该类型的关联的最常见字段。
 
 ```python
 [
@@ -251,11 +251,11 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 ]
 ```
 
-在Adobe Experience Platform建立数据帧以供使用时，务必确保其分层结构与现有XDM模式的层次结构精确匹配，以便字段能够正确映射。
+构建要在Adobe Experience Platform中使用的模式帧时，务必确保其分层结构与现有XDM数据的层次结构完全匹配，以便字段能够正确映射。
 
 ## 标识到标识映射
 
-### 身份阵列
+### 身份数组
 
 ```json
 [
@@ -286,13 +286,13 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
 
 | 标识字段 | identityMap字段 | 数据类型 |
 | -------------- | ----------------- | --------- |
-| 标识[0]id | identityMap[电子邮件][{"id"}] | 复制为字符串 |
-| 标识[1]id | identityMap[CRMID][{"id"}] | 复制为字符串 |
-| 标识[2]id | identityMap[LOYALTYID][{"id"}] | 复制为字符串 |
+| identity[0].id | identityMap[Email][{"id"}] | 作为字符串复制 |
+| identity[1].id | identityMap[CRMID][{"id"}] | 作为字符串复制 |
+| identity[2].id | identityMap[LOYALTYID][{"id"}] | 作为字符串复制 |
 
 ### 输出XDM
 
-下面是转换为XDM的身份的数组：
+下面是转换为XDM的标识数组：
 
 ```JSON
 "identityMap": {
@@ -307,4 +307,3 @@ Dr  Cammi   Haslen  F   1973-12-17  chaslenqv@ehow.com  56059cd5-5006-ce5f-2f5f-
       }]
    }
 ```
-
