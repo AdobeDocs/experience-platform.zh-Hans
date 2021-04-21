@@ -2,26 +2,26 @@
 keywords: Experience Platform；开发人员指南；端点；数据科学工作区；热门主题；mlservices;sensei机器学习api
 solution: Experience Platform
 title: MLServices API端点
-topic: Developer guide
-description: MLService是已发布的经过培训的模型，它使您的组织能够访问和重用以前开发的模型。 MLServices的一个主要功能是能够按计划自动进行培训和评分。 计划的培训运行有助于保持模型的效率和准确性，而计划的评分运行可以确保一致地生成新的洞察。
+topic-legacy: Developer guide
+description: MLService是一个经过培训的已发布模型，它使您的组织能够访问和重用以前开发的模型。 MLServices的一个关键功能是能够按计划自动执行培训和评分。 计划的培训运行有助于保持模型的效率和准确性，而计划的评分运行可确保一致地生成新的洞察。
+exl-id: cd236e0b-3bfc-4d37-83eb-432f6ad5c5b6
 translation-type: tm+mt
-source-git-commit: 698639d6c2f7897f0eb4cce2a1f265a0f7bb57c9
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '890'
 ht-degree: 2%
 
 ---
 
-
 # MLServices端点
 
-MLService是已发布的经过培训的模型，它使您的组织能够访问和重用以前开发的模型。 MLServices的一个主要功能是能够按计划自动进行培训和评分。 计划的培训运行有助于保持模型的效率和准确性，而计划的评分运行可以确保一致地生成新的洞察。
+MLService是一个经过培训的已发布模型，它使您的组织能够访问和重用以前开发的模型。 MLServices的一个关键功能是能够按计划自动执行培训和评分。 计划的培训运行有助于保持模型的效率和准确性，而计划的评分运行可确保一致地生成新的洞察。
 
-自动化培训和评分计划用开始时间戳、结束时间戳和表示为[cron表达式](https://en.wikipedia.org/wiki/Cron)的频率来定义。 当[创建MLService](#create-an-mlservice)或[更新现有MLService](#update-an-mlservice)应用计划时，可以定义。
+自动化培训和评分计划用开始时间戳、结束时间戳和表示为[cron表达式](https://en.wikipedia.org/wiki/Cron)的频率来定义。 当[创建MLService](#create-an-mlservice)或通过[更新现有MLService](#update-an-mlservice)应用计划时，可以定义。
 
 ## 创建MLService {#create-an-mlservice}
 
-您可以通过执行POST请求和提供服务名称和有效MLInstance ID的有效负荷来创建MLService。 用于创建MLService的MLInstance不需要具有现有的培训实验，但您可以通过提供相应的实验ID和培训运行ID来选择使用现有的培训模型创建MLService。
+您可以通过执行POST请求和提供服务名称和有效MLInstance ID的有效负荷来创建MLService。 用于创建MLService的MLInstance不需要具有现有培训实验，但您可以通过提供相应的实验ID和培训运行ID来选择使用现有培训模型创建MLService。
 
 **API格式**
 
@@ -61,24 +61,24 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | MLService的所需名称。 与此MLService对应的服务将继承此值，该值将作为服务的名称显示在服务库UI中。 |
+| `name` | MLService的所需名称。 与此MLService对应的服务将继承此值，该值将作为服务名称显示在服务库UI中。 |
 | `description` | MLService的可选描述。 与此MLService对应的服务将继承此值，该值将作为服务的说明显示在服务库UI中。 |
 | `mlInstanceId` | 有效的MLInstance ID。 |
-| `trainingDataSetId` | 培训数据集ID，如果提供，将覆盖MLInstance的默认数据集ID。 如果用于创建MLService的MLInstance未定义培训数据集，则必须提供相应的培训数据集ID。 |
-| `trainingExperimentId` | 您可以选择提供的实验ID。 如果未提供此值，则创建MLService还将使用MLInstance的默认配置创建新实验。 |
-| `trainingExperimentRunId` | 培训运行ID，您可以选择提供它。 如果未提供此值，则创建MLService还将使用MLInstance的默认培训参数创建并执行培训运行。 |
-| `trainingSchedule` | 自动化培训运行的计划。 如果定义了此属性，则MLService将自动按计划执行培训运行。 |
-| `trainingSchedule.startTime` | 将开始进行预定培训的时间戳。 |
+| `trainingDataSetId` | 培训数据集ID（如果提供）将覆盖MLInstance的默认数据集ID。 如果用于创建MLService的MLInstance未定义培训数据集，则必须提供适当的培训数据集ID。 |
+| `trainingExperimentId` | 您可以选择提供的实验ID。 如果未提供此值，则创建MLService也将使用MLInstance的默认配置创建新实验。 |
+| `trainingExperimentRunId` | 您可以选择提供的培训运行ID。 如果未提供此值，则创建MLService还将使用MLInstance的默认培训参数创建并执行培训运行。 |
+| `trainingSchedule` | 用于自动培训运行的计划。 如果定义了此属性，则MLService将自动按计划执行培训运行。 |
+| `trainingSchedule.startTime` | 将开始计划培训运行的时间戳。 |
 | `trainingSchedule.endTime` | 将结束预定培训运行的时间戳。 |
 | `trainingSchedule.cron` | 定义自动培训运行频率的cron表达式。 |
-| `scoringSchedule` | 自动评分的计划运行。 如果定义了此属性，则MLService将自动按计划执行评分运行。 |
-| `scoringSchedule.startTime` | 将开始计划评分的时间戳。 |
-| `scoringSchedule.endTime` | 将结束计划评分运行的时间戳。 |
+| `scoringSchedule` | 自动评分的计划运行。 如果定义了此属性，则MLService将自动执行计划的评分运行。 |
+| `scoringSchedule.startTime` | 将开始计划评分运行的时间戳。 |
+| `scoringSchedule.endTime` | 计划评分运行将结束的时间戳。 |
 | `scoringSchedule.cron` | 定义自动评分运行频率的cron表达式。 |
 
 **响应**
 
-成功的响应返回包含新创建的MLService的详细信息的有效负荷，包括其唯一标识符(`id`)、培训实验ID(`trainingExperimentId`)、评分实验ID(`scoringExperimentId`)和输入培训数据集ID(`trainingDataSetId`)。
+成功响应返回包含新创建的MLService的详细信息的有效负荷，包括其唯一标识符(`id`)、培训的实验ID(`trainingExperimentId`)、评分的实验ID(`scoringExperimentId`)和输入培训数据集ID(`trainingDataSetId`)。
 
 ```json
 {
@@ -107,7 +107,7 @@ curl -X POST \
 }
 ```
 
-## 检索MLServices的列表{#retrieve-a-list-of-mlservices}
+## 检索MLServices {#retrieve-a-list-of-mlservices}的列表
 
 您可以通过执行单个列表请求来检索MLServicesGET。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
 
@@ -122,11 +122,11 @@ GET /mlServices?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 | 参数 | 描述 |
 | --- | --- |
 | `{QUERY_PARAMETER}` | 用于筛选结果的[可用查询参数](./appendix.md#query)之一。 |
-| `{VALUE}` | 前一查询参数的值。 |
+| `{VALUE}` | 前一个查询参数的值。 |
 
 **请求**
 
-以下请求包含一个查询，并检索共享相同MLInstance ID(`{MLINSTANCE_ID}`)的MLServices列表。
+以下请求包含一个查询，并检索共享同一MLInstance ID(`{MLINSTANCE_ID}`)的MLServices列表。
 
 ```shell
 curl -X GET \
@@ -139,7 +139,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回MLServices的列表及其详细信息，包括其MLService ID(`{MLSERVICE_ID}`)、培训的实验ID(`{TRAINING_ID}`)、得分的实验ID(`{SCORING_ID}`)和输入培训数据集ID(`{DATASET_ID}`)。
+成功的响应返回MLServices的列表及其详细信息，包括其MLService ID(`{MLSERVICE_ID}`)、培训实验ID(`{TRAINING_ID}`)、评分实验ID(`{SCORING_ID}`)和输入培训数据集ID(`{DATASET_ID}`)。
 
 ```json
 {
@@ -168,7 +168,7 @@ curl -X GET \
 
 ## 检索特定MLService {#retrieve-a-specific-mlservice}
 
-通过执行在请求路径中包含所需MLService ID的GET请求，可以检索特定实验的详细信息。
+您可以通过执行在请求路径中包含所需MLService ID的GET请求来检索特定实验的详细信息。
 
 **API格式**
 
@@ -191,7 +191,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回包含所请求MLService的详细信息的有效负荷。
+成功的响应返回包含所请求MLService的详细信息的有效负荷。
 
 ```json
 {
@@ -212,11 +212,11 @@ curl -X GET \
 
 ## 更新MLService {#update-an-mlservice}
 
-您可以通过以下方式更新现有MLService：通过PUT请求覆盖其属性，该请求在请求路径中包含目标MLService的ID，并提供包含已更新属性的JSON有效负荷。
+您可以通过PUT请求覆盖现有MLService的属性，该请求在请求路径中包含目标 MLService的ID，并提供包含已更新属性的JSON有效负荷，从而更新现有MLService。
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议您首先通过ID](#retrieve-a-specific-mlservice)执行对[的GET请求来检索MLService。 然后，修改并更新返回的JSON对象，并应用已修改的JSON对象的整个作为PUT请求的有效负荷。
+>为确保此PUT请求成功，建议您首先通过ID](#retrieve-a-specific-mlservice)执行GET请求以检索MLService。 [然后，修改并更新返回的JSON对象，并应用修改后的JSON对象的整个作为PUT请求的有效负荷。
 
 **API格式**
 
@@ -258,7 +258,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回包含MLService的更新详细信息的有效负荷。
+成功的响应返回包含MLService的更新详细信息的有效负荷。
 
 ```json
 {
@@ -289,7 +289,7 @@ curl -X PUT \
 
 ## 删除MLService
 
-您可以通过执行DELETE请求来删除单个MLService，该请求在请求路径中包含目标MLService的ID。
+可以通过执行在请求路径中包含DELETEMLService ID的目标请求来删除单个MLService。
 
 **API格式**
 
@@ -324,7 +324,7 @@ curl -X DELETE \
 
 ## 按MLInstance ID删除MLServices
 
-您可以通过执行指定MLInstance ID作为DELETE参数的查询请求，删除属于特定MLInstance的所有MLService。
+您可以通过执行指定MLInstance ID作为DELETE参数的查询请求来删除属于特定MLInstance的所有MLServices。
 
 **API格式**
 
