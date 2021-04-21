@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；Oracle对象存储;oracle对象存储
 solution: Experience Platform
 title: 在UI中创建Oracle对象存储源连接
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Oracle对象存储源连接。
+exl-id: 32284163-5dde-4171-8977-f76ceeebcef2
 translation-type: tm+mt
-source-git-commit: c1453a9f0be42f834d35af871051324df8dadf80
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '446'
 ht-degree: 1%
 
 ---
-
 
 # 在UI中创建[!DNL Oracle Object Storage]源连接
 
@@ -43,23 +43,23 @@ ht-degree: 1%
 
 ## 连接到Oracle对象存储
 
-在平台UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 [!UICONTROL 目录]屏幕显示了可创建帐户的各种源。
+在平台UI中，从左侧导航中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 [!UICONTROL Catalog]屏幕显示了可创建帐户的各种源。
 
 您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索栏找到要处理的特定源。
 
-在[!UICONTROL 云存储]类别下，选择&#x200B;**[!UICONTROL Oracle对象存储]**，然后选择&#x200B;**[!UICONTROL 添加数据]**。
+在[!UICONTROL Cloud storage]类别下，选择&#x200B;**[!UICONTROL Oracle Object Storage]**，然后选择&#x200B;**[!UICONTROL Add data]**。
 
 ![目录](../../../../images/tutorials/create/oracle-object-storage/catalog.png)
 
 ### 现有帐户
 
-要使用现有帐户，请选择要用来创建新数据流的[!DNL Oracle Object Storage]帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+要使用现有帐户，请选择要用来创建新数据流的[!DNL Oracle Object Storage]帐户，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
 ![现有](../../../../images/tutorials/create/oracle-object-storage/existing.png)
 
 ### 新帐户
 
-如果要创建新帐户，请选择&#x200B;**[!UICONTROL 新建帐户]**，然后提供名称、可选说明和[!DNL Oracle Object Storage]凭据。 完成后，选择&#x200B;**[!UICONTROL 连接到源]**，然后为建立新连接留出一些时间。
+如果要创建新帐户，请选择&#x200B;**[!UICONTROL New account]**，然后提供名称、可选说明和[!DNL Oracle Object Storage]凭据。 完成后，选择&#x200B;**[!UICONTROL Connect to source]**，然后为新连接建立留出一些时间。
 
 ![新](../../../../images/tutorials/create/oracle-object-storage/new.png)
 
