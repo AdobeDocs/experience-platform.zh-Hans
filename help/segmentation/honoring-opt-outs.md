@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；选择退出；分段；分段服务；分段服务；荣誉退出；选择退出选择退出；选择退出；
 solution: Experience Platform
 title: 支持区段中的退出请求
-topic: overview
-description: 'Adobe Experience Platform允许您的客户发送有关在实时客户用户档案中使用和存储其数据的选择退出请求]。 这些选择退出请求是加利福尼亚消费者隐私法(CCPA)的一部分，CCPA为加州居民提供访问和删除其个人数据以及了解其个人数据是出售还是披露（以及向谁）的权利。 '
+topic-legacy: overview
+description: Adobe Experience Platform允许您的客户发送有关在实时客户用户档案中使用和存储其数据的选择退出请求]。 这些选择退出请求是加利福尼亚消费者隐私法(CCPA)的一部分，CCPA为加州居民提供访问和删除其个人数据以及了解其个人数据是出售还是披露（以及向谁）的权利。
+exl-id: fe851ce3-60db-4984-a73c-f9c5964bfbad
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1033'
+source-wordcount: '1013'
 ht-degree: 0%
 
 ---
-
 
 # 支持区段中的退出请求
 
@@ -112,15 +112,15 @@ Adobe Experience Platform允许您的客户发送关于[!DNL Real-time Customer 
 
 ### 一般退出
 
-[!DNL Segmentation] 自动接受所有包含“一[!UICONTROL 般退出”标志的用户档案]，这意味着默认情况下，这些用户档案不会包括在受众或出口中。但是，最好添加相应的字段，以确保在受众和营销活动中不包括选择退出的用户档案。
+[!DNL Segmentation] 自动接受包含“”标志的[!UICONTROL General Opt-Out]所有用户档案，这意味着默认情况下，这些用户档案不会包括在受众或导出中。但是，最好添加相应的字段，以确保在受众和营销活动中不包括选择退出的用户档案。
 
-可通过添加&#x200B;**[!UICONTROL 隐私退出]**&#x200B;属性，使用用户界面完成此操作。 在此实例中，区段设置为仅包括已选择的群体(即，他们的用户档案上没有一般选择退出标志)。 为此，声明“[!UICONTROL 退出类型]”等于“[!UICONTROL 一般退出]”，而“[!UICONTROL 退出值]”等于“[!UICONTROL 退出]”。
+可通过添加&#x200B;**[!UICONTROL Privacy Opt-Outs]**&#x200B;属性，使用用户界面完成此操作。 在此实例中，区段设置为仅包括已选择的群体(即，他们的用户档案上没有一般选择退出标志)。 为此，请声明“[!UICONTROL Opt-Out Type]”等于“[!UICONTROL General Opt-Out]”，“[!UICONTROL Opt-Out Value]”等于“[!UICONTROL Opt-in]”。
 
 ![](images/opt-outs/segment-general-opt-out.png)
 
 ### 销售/共享选择退出
 
-如果用户的用户档案上设置了销售/共享退出标志，则此用户档案不应再用于任何区段创建或营销活动。 为确保遵守此标志，“[!UICONTROL 退出类型]”必须等于“[!UICONTROL 销售共享退出]”，而“[!UICONTROL 退出值]”必须等于“[!UICONTROL 退出]”。
+如果用户的用户档案上设置了销售/共享退出标志，则此用户档案不应再用于任何区段创建或营销活动。 为确保执行此标志，“[!UICONTROL Opt-Out Type]”必须等于“[!UICONTROL Sales Sharing Opt-Out]”，而“[!UICONTROL Opt-Out Value]”必须等于“[!UICONTROL Opt-in]”。
 
 ![](images/opt-outs/segment-sales-sharing-opt-out.png)
 
