@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；shopify;Shopify;
 solution: Experience Platform
 title: Shopify源连接器概述
-topic: overview
+topic-legacy: overview
 description: 了解如何使用API或用户界面将Shopify连接到Adobe Experience Platform。
+exl-id: 636b31a7-e5f9-434a-acd1-226096522495
 translation-type: tm+mt
-source-git-commit: cc23228cb410dc4c70a56c5142be00c2ca1c40d3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '155'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Shopify] 连接器
 
