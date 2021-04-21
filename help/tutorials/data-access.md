@@ -1,28 +1,28 @@
 ---
-keywords: Experience Platform;home;popular topics;access data sources;data access;spark sdk;python sdk
+keywords: Experience Platform；主页；热门主题；访问数据源；数据访问；spark sdk;python sdk
 solution: Experience Platform
 title: 数据访问教程
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
-description: Adobe Experience Platform使用户能够使用数据访问API发现和访问Experience Platform内摄取的数据集。
+description: Adobe Experience Platform使用户能够使用数据访问API发现和访问Experience Platform中收录的数据集。
+exl-id: c0b6eb7d-8874-4f3a-927e-9ff51e3c0cc9
 translation-type: tm+mt
-source-git-commit: bececfde1df15fd8648d75b937da5e264d60b9a4
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '140'
+source-wordcount: '154'
 ht-degree: 0%
 
 ---
 
-
 # 数据访问教程
 
-Data Access通过为用户提供侧重于在Experience Platform内摄取的数据集的可发现性和可访问性的工具来支持Adobe Experience Platform。
+Data Access通过为用户提供侧重于在Experience Platform中发现和访问所摄取数据集的工具来支持Adobe Experience Platform。
 
-要了解更多信息，请首先阅读数 [据访问概述](../data-access/home.md)。
+要了解更多信息，请首先阅读[数据访问概述](../data-access/home.md)。
 
-## 使用Data Access API查询数据集数据
+## 查询使用Data Access API的数据集数据
 
-Data Access API为用户提供RESTful界面，侧重于在Experience Platform内摄取的数据集的可发现性和可访问性，从而支持Adobe Experience Platform。
+Data Access API为用户提供了一个RESTful界面，侧重于Experience Platform中所收录数据集的可发现性和可访问性，从而支持Adobe Experience Platform。
 
 **本教程将帮助您：**
 - 在平台内查找数据。
@@ -32,4 +32,4 @@ Data Access API为用户提供RESTful界面，侧重于在Experience Platform内
 - 下载文件的部分内容。
 - 配置API响应分页。
 
-要开始，请按照数据访 [问API教程操作](../data-access/tutorials/dataset-data.md)。
+要开始，请按照[数据访问API教程](../data-access/tutorials/dataset-data.md)操作。
