@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；模式;模式；字段；标准字段；标准字段；词典；地图；地图
 solution: Experience Platform
 title: 体验数据模型(XDM)字段词典
-topic: overviews
+topic-legacy: overviews
 description: 体验数据模型(XDM)定义一组标准字段，在组成Adobe Experience Platform模式时可以使用这些字段。 使用这些字段可使平台服务之间的行为保持一致，因为使用XDM的所有服务都将显式了解这些字段提供的特定定义。
+exl-id: 9e183305-cd6c-444d-bd0b-f0cba3bcbe4d
 translation-type: tm+mt
-source-git-commit: cc1fa21df0bb2d49106775c75a0cb3c4f4d73941
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '25239'
+source-wordcount: '25238'
 ht-degree: 3%
 
 ---
-
 
 # XDM字段词典
 
@@ -466,7 +466,7 @@ ht-degree: 3%
 | xdm:subscriptionDate | 订阅日期 | 最终用户订阅通知主题的日期和时间。 如果最终用户具有订阅日期且`unsubscriptiondetails/unsubscriptionDate`为空，则会订阅该最终用户。 | 字符串 | date-time | date-time | https://ns.adobe.com/experience/campaign/notificationsubscription, https://ns.adobe.com/experience/campaign/profile-all |
 | xdm:订阅 | 订阅 | 订阅，此用户档案有权将已终止、过期或已用尽的订阅包括在内。 | 阵列 |  | 阵列 | https://ns.adobe.com/experience/campaign/experienceevent-profile-subscriptions, https://ns.adobe.com/xdm/context/profile-subscriptions |
 | xdm:supplierName | 供应商名称 | 产品的分销商。 | 字符串 |  | 字符串 | https://ns.adobe.com/xdm/context/product |
-| xdm:syncedRemarketingAudiences | 同步的区段 | 已与[!DNL adCloud]合作伙伴同步的搜索重定位实体列表，以在平台上构建受众，如RLSA for [!DNL Google]或WCA for Facebook | 阵列 |  | 阵列 | https://ns.adobe.com/experience/adcloud-profile, https://ns.adobe.com/experience/adcloud/profile-all |
+| xdm:syncedRemarketingAudiences | 同步的区段 | 列表已与[!DNL adCloud]合作伙伴同步的搜索重定位实体以在平台上构建受众，如RLSA for [!DNL Google]或WCA for Facebook | 阵列 |  | 阵列 | https://ns.adobe.com/experience/adcloud-profile, https://ns.adobe.com/experience/adcloud/profile-all |
 | xdm：标签 | 标记 | 标签用于指示给定数据源所表示的别名应如何由使用这些别名的应用程序进行解释。示例：* `isAVID`:表示[!DNL Analytics]访客ID的数据源。* `isCRSKey`:表示应在CRS.Tags中用作键的别名的数据源在创建数据源时进行设置，但在引用给定数据源时，这些别名也包含在管道消息中。 | 阵列 |  | 阵列 | https://ns.adobe.com/experience/adcloud-experienceevent、https://ns.adobe.com/experience/analytics-experienceevent、https://ns.adobe.com/experience/campaign-experienceevent、https://ns.adobe.com/experience/campaign/experienceevent-all、https://ns.adobe.com/experience/campaign/offer-detail、https://ns.adobe.com/experience/target-experienceevent、https://ns.adobe.com/xdm/context/experienceevent-technical-details |
 | xdm:templateID | 模板的标识符 | 用于初始化此投放的投放模板ID。可以使用`messageClass`来标识Adobe Campaign中使用的模板类型。* `messageClass` = `oneTime`:模板是标准投放模板。* `messageClass` = `continuous`:模板是循环投放。* `messageClass` = `transactional`:模板是事务性消息模板。 | 整数 |  | int | https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/campaign/experienceevent-all |
 | xdm:templateName | 投放模板的内部名称 | 源自此消息的活动活动的父实体(基于事件或连续消息类)的人性化标识符。 | 字符串 |  | 字符串 | https://ns.adobe.com/experience/campaign-experienceevent, https://ns.adobe.com/experience/campaign/experienceevent-all |
