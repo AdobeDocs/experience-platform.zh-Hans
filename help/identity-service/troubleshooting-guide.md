@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；身份命名空间；身份命名空间
 solution: Experience Platform
 title: Identity Service疑难解答指南
-topic: troubleshooting
+topic-legacy: troubleshooting
 description: 本文档提供有关Adobe Experience Platform Identity Service的常见问题解答以及常见错误的疑难解答指南。
+exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '2190'
+source-wordcount: '2189'
 ht-degree: 0%
 
 ---
-
 
 # Identity Service疑难解答指南
 
@@ -121,7 +121,7 @@ Internal solutions|Preferred|Common
 
 --- -->
 
-## 故障诊断
+## 疑难解答
 
 以下部分针对使用[!DNL Identity Service] API时可能遇到的特定错误代码和意外行为提供疑难解答建议。
 
