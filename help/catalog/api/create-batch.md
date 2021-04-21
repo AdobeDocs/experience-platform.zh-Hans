@@ -2,20 +2,20 @@
 keywords: Experience Platform；主页；热门主题；创建批处理；目录服务；api
 solution: Experience Platform
 title: 在API中创建批
-topic: developer guide
-description: 您可以通过向目录API中的/batches端点发出POST请求来创建批。
+topic-legacy: developer guide
+description: 可以通过向目录API中的/batches端点发出POST请求来创建批。
+exl-id: 1d2cbca9-1cd6-4b89-9b77-3687268bd849
 translation-type: tm+mt
-source-git-commit: 8a213ac0ef1ac0f9c42e4b880b24157d28878bf1
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '117'
 ht-degree: 3%
 
 ---
 
-
 # 创建批
 
-为了使数据集能够摄取数据，它必须具有与其关联的批。 使用现有数据集的`id`值，可以通过在[!DNL Catalog] API中向`/batches`端点发出POST请求来创建批。
+为了使数据集能够摄取数据，它必须具有与其关联的批。 使用现有数据集的`id`值，可以通过向[!DNL Catalog] API中的`/batches`端点发出POST请求来创建批。
 
 **API格式**
 
@@ -40,11 +40,11 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 | 属性 | 描述 |
 | --- | --- |
-| `datasetId` | 批处理将关联的数据集的`id`。 |
+| `datasetId` | 批处理将与的数据集`id`关联。 |
 
 **响应**
 
-成功的响应返回HTTP状态201（已创建）和包含新创建批处理详细信息的响应对象，包括其`id`（只读的、系统生成的字符串）。
+成功的响应返回HTTP状态201（已创建）和包含新创建批的详细信息（包括其`id`，只读的系统生成字符串）的响应对象。
 
 ```JSON
 {
