@@ -6,9 +6,9 @@ topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用平台服务构建、标记和增强传入数据。 您可以从各种来源收集数据，如Adobe应用程序、基于云的存储、数据库和许多其他来源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
 translation-type: tm+mt
-source-git-commit: 412d7c247353bfd30e134656140ba13f55d2ca07
+source-git-commit: 8edcb3697337edd0043f26553b92c31e52d3c87c
 workflow-type: tm+mt
-source-wordcount: '922'
+source-wordcount: '945'
 ht-degree: 0%
 
 ---
@@ -115,6 +115,13 @@ Experience Platform支持从第三方营销自动化系统中获取数据。 有
 Experience Platform支持从第三方支付系统中摄取数据。 有关特定源连接器的详细信息，请参阅以下相关文档:
 
 - [[!DNL PayPal] 连接器](connectors/payments/paypal.md)
+
+### 流
+
+Experience Platform支持从流源中摄取数据。 有关特定源连接器的详细信息，请参阅以下相关文档:
+
+- [[!DNL HTTP API]](connectors/streaming/http.md)
+
 
 ### 协议
 
