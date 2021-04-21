@@ -2,17 +2,17 @@
 keywords: Experience Platform;JupyterLab；笔记本；数据科学工作区；热门主题；分析数据笔记
 solution: Experience Platform
 title: 使用笔记本分析数据
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: 本教程重点介绍如何使用在数据科学工作区中构建的Jupyter Notebooks来访问、探索和可视化您的数据。
+exl-id: 3b0148d1-9c08-458b-9601-979cb6c7a0fb
 translation-type: tm+mt
-source-git-commit: 6908c582cb7e0d60b82112dbc0854411d76b4fd4
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1733'
+source-wordcount: '1730'
 ht-degree: 0%
 
 ---
-
 
 # 使用笔记本分析数据
 
