@@ -2,42 +2,42 @@
 keywords: Experience Platform；主页；数据科学工作区；热门主题；数据科学工作区；数据科学
 solution: Experience Platform
 title: 数据科学工作区概述
-topic: overview
-description: 本指南概述了与Adobe Experience Platform的数据科学工作区相关的主要概念。
+topic-legacy: overview
+description: 本指南概述了与Adobe Experience Platform中的数据科学工作区相关的主要概念。
+exl-id: bef25073-0dfb-453d-8c32-7f44d917d62d
 translation-type: tm+mt
-source-git-commit: f6cfd691ed772339c888ac34fcbd535360baa116
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '2388'
 ht-degree: 0%
 
 ---
 
-
 # 数据科学工作区概述
 
-Adobe Experience Platform[!DNL Data Science Workspace]使用机器学习和人工智能从数据中释放洞察。 [!DNL Data Science Workspace]集成到Adobe Experience Platform，可帮助您跨Adobe解决方案使用内容和数据资产进行预测。
+Adobe Experience Platform [!DNL Data Science Workspace]使用机器学习和人工智能从数据中释放洞察。 [!DNL Data Science Workspace]集成到Adobe Experience Platform中，可帮助您跨Adobe解决方案使用内容和数据资产进行预测。
 
-所有技能级别的数据科学家都将发现复杂、易用的工具，它们支持机器学习方法的快速开发、培训和调整——人工智能技术的所有优势，而不必复杂。
+所有技能水平的数据科学家都将发现复杂易用的工具，这些工具支持机器学习方法的快速开发、培训和调整 — 人工智能技术的所有优势，而不必复杂。
 
-借助[!DNL Data Science Workspace]，数据科学家可以轻松创建由机器学习提供支持的智能服务API。 这些服务与包括Adobe Target和Adobe Analytics Cloud在内的其他Adobe服务协同工作，帮助您在Web、桌面和移动应用程序中自动实现个性化、有针对性的数字体验。
+借助[!DNL Data Science Workspace]，数据科学家可以轻松创建由机器学习提供支持的智能服务API。 这些服务可与包括Adobe Target和Adobe Analytics Cloud在内的其他Adobe服务结合使用，帮助您在Web、桌面和移动应用程序中自动实现个性化、有针对性的数字体验。
 
 本指南概述了与[!DNL Data Science Workspace]相关的主要概念。
 
 ## 简介
 
-如今的企业将挖掘大数据作为重中之重来进行预测和洞察，帮助他们个性化客户体验，为客户和业务提供更多价值。
-从数据到洞察同样重要，成本也很高。 它通常需要技能娴熟的数据科学家进行密集且耗时的数据研究，以开发支持智能服务的机器学习模型或方法。 过程漫长，技术复杂，而且很难找到熟练的数据科学家。
+如今的企业将挖掘大数据作为重中之重来提供预测和洞察，帮助他们个性化客户体验，为客户和业务提供更多价值。
+从数据到洞察固然重要，但成本却很高。 它通常需要技能娴熟的数据科学家进行密集且耗时的数据研究，以开发支持智能服务的机器学习模型或方法。 这一过程漫长，技术复杂，而且很难找到熟练的数据科学家。
 
-借助[!DNL Data Science Workspace],Adobe Experience Platform允许您在整个企业内引入注重体验的人工智能，通过以下工具简化并加速数据到洞察到代码的实现：
+借助[!DNL Data Science Workspace],Adobe Experience Platform允许您在整个企业内引入注重体验的人工智能，通过以下工具简化并加速数据到洞察到代码的编写：
 - 机器学习框架和运行时
-- 集成访问存储在Adobe Experience Platform的数据
-- 基于[!DNL Experience Data Model](XDM)构建的统一模式
-- 机器学习／人工智能和管理大数据集所必不可少的计算能力
+- 集成访问存储在Adobe Experience Platform中的数据
+- 构建在[!DNL Experience Data Model](XDM)上的统一数据模式
+- 计算能力是机器学习/人工智能和管理大数据集所必不可少的
 - 预建的机器学习方法可加速向人工智能驱动体验的飞跃
-- 为不同技能水平的数据科学家简化方法的创作、重用和修改
-- 只需点击几下即可实现智能服务发布和共享——无需开发人员——还可进行监控和再培训，以持续优化个性化客户体验
+- 为不同技能水平的数据科学家简化方法的创作、重复使用和修改
+- 只需点击几下即可实现智能服务发布和共享（无需开发人员），并可监控和再培训以持续优化个性化客户体验
 
-所有技能级别的数据科学家都可以更快地获得更快、更有效的数字体验。
+所有技能水平的数据科学家都能更快地获得更快、更有效的数字体验。
 
 ## 入门指南
 
@@ -45,52 +45,52 @@ Adobe Experience Platform[!DNL Data Science Workspace]使用机器学习和人�
 
 | 搜索词 | 定义 |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [!DNL Data Science Workspace] | [!DNL Data Science Workspace] 使 [!DNL Experience Platform] 客户能够利用跨Adobe和解决方 [!DNL Experience Platform] 案的数据创建机器学习模型，从而生成智能洞察和预测，从而打造令人愉悦的最终用户数字体验。 |
-| 人工智能 | 人工智能是计算机系统的理论和发展，能够执行通常需要人类智能的任务，如视觉感知、语音识别、决策和语言之间的翻译。 |
-| 机器学习 | 机器学习是一个研究领域，它使计算机能够学习，而无需明确编程。 |
-| [!DNL Sensei] ML Framework | [!DNL Sensei] ML Framework是跨Adobe的统一机器学习框架，它利用上的数 [!DNL Experience Platform] 据支持数据科学家以更快、可扩展和可重用的方式开发机器学习驱动的智能服务。 |
-| [!DNL Experience Data Model] | [!DNL Experience Data Model] (XDM)是由Adobe牵头的标准化工作，旨在为客户体验管 [!DNL Profile] 理定 [!DNL ExperienceEvent]义标准模式，如和。 |
-| [!DNL JupyterLab] | [!DNL JupyterLab] 是Project Jupyter的一个基于web的开放源代码界面，并紧密集成到其中 [!DNL Experience Platform]。 |
-| 菜谱 | 处方是模型规范的Adobe术语，是代表特定机器学习、AI算法或算法集合、处理逻辑和配置的顶级容器，用于构建和执行经过培训的模型，从而帮助解决特定的业务问题。 |
-| 模型 | 模型是机器学习配方的实例，该配方使用历史数据和配置进行培训，以便为业务用例进行解决。 |
+| [!DNL Data Science Workspace] | [!DNL Data Science Workspace] 使 [!DNL Experience Platform] 客户能够创建机器学习模型，利用跨Adobe和 [!DNL Experience Platform] 解决方案的数据，生成智能洞察和预测，从而打造令人愉悦的最终用户数字体验。 |
+| 人工智能 | 人工智能是计算机系统的理论和发展，能够执行通常需要人类智能的任务，例如视觉感知、语音识别、决策和语言之间的翻译。 |
+| 机器学习 | 机器学习是一个研究领域，它使计算机能够在不明确编程的情况下进行学习。 |
+| [!DNL Sensei] ML Framework | [!DNL Sensei] ML Framework是跨Adobe的统一机器学习框架，它利用上的数据，以更快、 [!DNL Experience Platform] 可扩展和可重用的方式支持数据科学家开发机器学习驱动的智能服务。 |
+| [!DNL Experience Data Model] | [!DNL Experience Data Model] (XDM)是Adobe在定义客户体验管理等标准模式（和）方面 [!DNL Profile] 的 [!DNL ExperienceEvent]标准化工作。 |
+| [!DNL JupyterLab] | [!DNL JupyterLab] 是Project Jupyter的一个基于web的开放源代码界面，并紧密集成到其中 [!DNL Experience Platform] |
+| 菜谱 | 菜谱是模型规范的Adobe术语，是表示特定机器学习、AI算法或集成算法、处理逻辑和配置的顶级容器，用于构建和执行经过训练的模型，从而帮助解决特定的业务问题。 |
+| 模型 | 模型是机器学习方法的实例，该方法使用历史数据和配置进行培训，以便为业务用例解决问题。 |
 | 培训 | 培训是从标记数据中学习模式和洞察的过程。 |
-| 训练模型 | 训练模型表示模型训练过程的可执行输出，其中一组训练数据被应用到模型实例。 经过培训的模型将保留对从其创建的任何智能Web服务的引用。 该模型适合于评分和创建智能Web服务。 可以将训练模型的修改作为新版本进行跟踪。 |
+| 训练模型 | 训练模型表示模型训练过程的可执行输出，其中一组训练数据被应用到模型实例。 经过训练的模型将保留对任何由其创建的智能Web服务的引用。 训练后的模型适合于评分和创建智能Web服务。 可以将训练模型的修改作为新版本进行跟踪。 |
 | 评分 | 评分是指使用经过培训的模型从数据生成洞察的过程。 |
-| 服务 | 已部署的服务通过API公开人工智能、机器学习模型或高级算法的功能，以便其他服务或应用程序能够使用它来创建智能应用。 |
+| 服务 | 部署的服务通过API公开人工智能、机器学习模型或高级算法的功能，以便其他服务或应用程序能够使用它来创建智能应用程序。 |
 
-下表概述了方法、模型、培训运行和评分运行之间的层次关系。
+下图概述了方法、模型、培训运行和评分运行之间的分层关系。
 
 ![](./images/home/recipe_hiearchy_ui.png)
 
 ## 了解 [!DNL Data Science Workspace]
 
-借助[!DNL Data Science Workspace]，您的数据科学家可以简化在大数据集中发掘洞察的繁琐过程。 [!DNL Data Science Workspace]构建于通用的机器学习框架和运行时之上，可提供高级工作流管理、模型管理和可伸缩性。 智能服务支持重新使用机器学习方法，为使用Adobe产品和解决方案创建的各种应用程序提供动力。
+借助[!DNL Data Science Workspace]，您的数据科学家可以简化在大数据集中发现洞察的繁琐过程。 [!DNL Data Science Workspace]构建于通用的机器学习框架和运行时之上，可提供高级工作流管理、模型管理和可伸缩性。 智能服务支持重复使用机器学习方法，为使用Adobe产品和解决方案创建的各种应用程序提供动力。
 
 ### 一站式数据访问
 
 数据是人工智能和机器学习的基石。
 
-[!DNL Data Science Workspace] 与Adobe Experience Platform（包括数据湖）、和等完 [!DNL Real-time Customer Profile]全集成 [!DNL Unified Edge]。同时浏览存储在Adobe Experience Platform的所有组织数据，以及常用大数据和深入学习库，如[!DNL Spark] ML和[!DNL TensorFlow]。 如果您找不到所需内容，请使用XDM标准化模式收集您自己的数据集。
+[!DNL Data Science Workspace] 与Adobe Experience Platform完全集成，包括Data Lake [!DNL Real-time Customer Profile]和 [!DNL Unified Edge]。浏览一次存储在Adobe Experience Platform中的所有组织数据，以及常用大数据和深入学习库，如[!DNL Spark] ML和[!DNL TensorFlow]。 如果您找不到所需内容，请使用XDM标准化模式收集您自己的数据集。
 
 ### 预建的机器学习方法
 
-[!DNL Data Science Workspace] 包括预建的机器学习方法，可满足常见的业务需求，如零售销售预测和异常检测，因此数据科学家和开发人员无需从头开始开始。目前提供三种方法，[产品购买预测](./pre-built-recipes/product-purchase-prediction.md)、[产品推荐](./pre-built-recipes/product-recommendations.md)和[零售销售](./pre-built-recipes/retail-sales.md)。
+[!DNL Data Science Workspace] 包括预建的机器学习方法，可满足常见业务需求，如零售销售预测和异常检测，因此数据科学家和开发人员无需从头开始开始。目前提供三种方法，[产品购买预测](./pre-built-recipes/product-purchase-prediction.md)、[产品推荐](./pre-built-recipes/product-recommendations.md)和[零售销售](./pre-built-recipes/retail-sales.md)。
 
 [//]: # (The built-in recipe gallery offers recommendations for prebuilt recipes based on your business needs.)
 
-如果您愿意，您可以根据自己的需求调整预建菜谱，导入菜谱或从头开始开始，以构建自定义菜谱。 但是，一旦您开始对菜谱进行培训并进行优化，创建自定义智能服务就不需要开发人员——只需点击几下，您就可以构建有针对性的个性化数字体验。
+如果您愿意，您可以根据自己的需求调整预建菜谱，导入菜谱，或从头开始开始以构建自定义菜谱。 无论您如何开始，一旦您对菜谱进行了培训并进行了超调，创建自定义智能服务并不需要开发人员 — 只需点击几下即可，您随时可以构建有针对性的个性化数字体验。
 
-### 侧重于数据科学家的工作流程
+### 以数据科学家为重点的工作流程
 
-无论您具备何种数据科学专业知识水平，[!DNL Data Science Workspace]都有助于简化并加速发现数据洞察并将其应用于数字体验的过程。
+无论您具备何种数据科学专业知识，[!DNL Data Science Workspace]都能帮助简化并加速发现数据洞察并将其应用于数字体验的过程。
 
 ### 数据探索
 
-寻找正确的数据并准备数据是构建有效配方最耗费劳动力的部分。 [!DNL Data Science Workspace] adobe experience platform将帮助您更快地从数据获得洞察。
+寻找正确的数据并准备数据是构建有效配方中最耗费劳动力的部分。 [!DNL Data Science Workspace] 而Adobe Experience Platform将帮助您更快地从数据获得洞察。
 
-在Adobe Experience Platform，跨渠道数据集中存储在XDM标准模式中，因此数据更易于查找、理解和清理。 基于普通模式的单一数据存储可以为您节省大量数据探索和准备时间。
+在Adobe Experience Platform上，跨渠道数据集中存储在XDM标准模式中，因此数据更易于查找、理解和清理。 基于通用模式的单一数据存储可以为您节省大量数据探索和准备时间。
 
-在您浏览时，将R、[!DNL Python]或Scala与集成的托管[!DNL Jupyter Notebook]一起使用，以浏览[!DNL Platform]上的数据目录。 使用这些语言之一，您还可以利用[!DNL Spark] ML和TensorFlow。 从头开始开始，或使用为特定业务问题提供的笔记本模板之一。
+在您浏览时，将R、[!DNL Python]或Scala与集成的托管[!DNL Jupyter Notebook]一起使用，以浏览[!DNL Platform]上的数据目录。 使用这些语言之一，您还可以利用[!DNL Spark] ML和TensorFlow。 从头开始开始，或使用针对特定业务问题提供的笔记本模板之一。
 
 作为数据探索工作流程的一部分，您还可以获取新数据或使用现有功能来帮助准备数据。
 
@@ -98,74 +98,74 @@ Adobe Experience Platform[!DNL Data Science Workspace]使用机器学习和人�
 
 使用[!DNL Data Science Workspace]，您可以决定如何创作菜谱。
 
-- 通过浏览预建的菜谱节省时间，该菜谱可满足您的业务需求，您可以按原样使用或配置以满足您的特定需求。
+- 通过浏览预建的菜谱节省时间，它可满足您的业务需求，您可以按原样使用或配置以满足您的特定需求。
 - 从头开始创建菜谱，使用Jupyter Notebook中的创作运行时开发和注册菜谱。
-- 使用[!DNL Git]和[!DNL Data Science Workspace]之间提供的身份验证和集成，将Adobe Experience Platform以外创作的菜谱上传到[!DNL Data Science Workspace]或从存储库（如[!DNL Git]）导入菜谱代码。
+- 使用[!DNL Git]和[!DNL Data Science Workspace]之间提供的身份验证和集成，将Adobe Experience Platform外部创作的菜谱上传到[!DNL Data Science Workspace]或从存储库（如[!DNL Git]）导入菜谱代码。
 
 ### 实验
 
-数据科学工作区为实验过程带来极大的灵活性。 开始您的菜谱。 然后，使用与特征（如超调参数）配对的相同核心算法创建单独的实例。 您可以创建所需数量的实例，并根据需要对每个实例进行培训和评分。 在培训菜谱时，[!DNL Data Science Workspace]会跟踪菜谱、菜谱实例和经过培训的实例以及评估指标，因此您不必进行培训。
+数据科学工作区为实验过程提供了巨大的灵活性。 开始。 然后，使用与特性（如超调参数）配对的相同核心算法创建单独的实例。 您可以根据需要创建任意多个实例，并根据需要对每个实例进行培训和评分。 在您进行培训时，[!DNL Data Science Workspace]会跟踪菜谱、菜谱实例和经过培训的实例，以及评估量度，因此您不必进行培训。
 
-### 操作化
+### 业务化
 
-当您对菜谱感到满意时，只需点击几下即可创建智能服务。 无需编码——您无需注册开发人员或工程师即可自行完成。 最后，将智能服务发布到AdobeIO，让您的数字体验团队可以享用。
+当您对菜谱感到满意时，只需单击几下即可创建出智能服务。 无需编码 — 您无需招募开发人员或工程师即可自行完成。 最后，将智能服务发布到Adobe IO，让您的数字体验团队可以使用它。
 
 <!--You can also publish your intelligent service to the Service Gallery, where it's available to specific people, specific organizations, or everyone who develops data solutions on Adobe Experience Platform. You can even share it with your external partners, and they can share their intelligent service with you. And the next time you're starting a new recipe, you can check the Service Gallery to see if there's a similar intelligent service you can use to get started. -->
 
 ### 持续改进
 
-[!DNL Data Science Workspace] 跟踪调用智能服务的位置及其执行方式。数据滚入后，您可以评估智能服务的准确性以关闭循环，并根据需要重新培训菜谱以提高性能。 结果是不断改进客户个性化的精确度。
+[!DNL Data Science Workspace] 跟踪调用智能服务的位置及其执行方式。数据滚入后，您可以评估智能服务的准确性以关闭循环，并根据需要重新培训方法以提高性能。 结果是不断改进客户个性化的准确性。
 
 ### 访问新功能和数据集
 
-数据科学家可以在通过Adobe服务获得新技术和数据集后立即利用它们。 通过频繁的更新，我们将数据集和技术集成到平台中，这样您就不必再进行这些工作。
+数据科学家一旦通过Adobe服务获得新技术和数据集，就可以利用它们。 通过频繁的更新，我们将数据集和技术集成到平台中，因此您不必再进行这样的工作。
 
-### 安全与心安理得
+### 安全与心安
 
-保护Adobe是重中之重。 Adobe通过为帮助遵守行业公认的标准、法规和认证而开发的安全流程和控制来保护您的数据。
+保护数据是Adobe的首要任务。 Adobe通过为帮助遵守行业公认的标准、法规和认证而开发的安全流程和控制来保护您的数据。
 
 作为Adobe安全产品生命周期的一部分，软件和服务中内置了安全性。
-要了解Adobe数据和软件安全性、合规性等信息，请访问安全页面：https://www.adobe.com/security.html。
+要了解Adobe数据和软件安全性、合规性等信息，请访问安全页https://www.adobe.com/security.html。
 
 ## [!DNL Data Science Workspace] 实际操作
 
-预测和洞察可为您提供所需的信息，以便为访问您的网站、联系您的呼叫中心或参与其他数字体验的每位客户提供高度个性化的体验。 下面介绍了您的日常工作在[!DNL Data Science Workspace]中是如何进行的。
+预测和洞察可为您提供所需的信息，以便为访问网站、联系呼叫中心或参与其他数字体验的每位客户提供高度个性化的体验。 以下是您的日常工作在[!DNL Data Science Workspace]中的处理方式。
 
 ### 定义问题
 
-所有开始都有业务问题。 例如，在线呼叫中心需要情境来帮助他们将负面客户情绪转化为积极情绪。
+所有开始都面临业务问题。 例如，在线呼叫中心需要上下文来帮助他们将负面客户情绪转化为正面情绪。
 
-有关客户的大量数据。 他们浏览了网站，将商品放入购物车，甚至下了订单。 他们可能以前收到过电子邮件、使用过优惠券或联系过呼叫中心。 然后，菜谱需要使用有关客户及其活动的可用数据来确定购买倾向，并推荐客户可能欣赏和使用的优惠。
+有关客户的大量数据。 他们浏览了网站，将商品放入购物车，甚至下了订单。 他们可能已经收到电子邮件、使用了优惠券，或曾联系过呼叫中心。 然后，菜谱需要使用有关客户及其活动的可用数据来确定购买倾向，并推荐客户可能喜欢和使用的优惠。
 
 ![](./images/home/example_problem.png)
 
-在呼叫中心联系时，客户仍在购物车中有两双鞋，但移走了一件衬衫。 有了此信息，智能服务可能会建议呼叫中心代理在呼叫期间为鞋子优惠20%的优惠券。 如果客户使用优惠券，则该信息会添加到数据集中，并且客户下次致电时预测结果会更好。
+在呼叫中心联系时，客户仍在购物车中有两双鞋，但已移除了一件衬衫。 有了此信息，智能服务可能会建议呼叫中心代理在呼叫期间为鞋子优惠20%的优惠券。 如果客户使用优惠券，则该信息将添加到数据集中，并且下次客户调用时预测结果会更好。
 
 ### 浏览和准备数据
 
-根据定义的业务问题，您知道菜谱应查看客户的所有Web交易，包括网站访问、搜索、页面视图、链接、点击、购物车操作、收到的优惠、收到的电子邮件、呼叫中心互动等。
+根据定义的业务问题，您知道菜谱应查看客户的所有Web交易，包括网站访问、搜索、页面视图、链接、点击、购物车操作、接收的优惠、收到的电子邮件、呼叫中心互动等。
 
-数据科学家通常花费75%的时间来创建探索和转换数据的配方。 数据通常来自多个存储库并保存在不同模式中——必须先合并并映射数据，才能用它创建菜谱。
+数据科学家通常花费75%的时间来创建探索和转换数据的方法。 数据通常来自多个存储库，并保存在不同的模式中 — 数据必须经过组合和映射，才能用于创建菜谱。
 
 [//]: # (Your first step is to check the recipe gallery to see if an existing recipe meets your needs, or comes close. An alternative is to import a recipe you created outside of Adobe Experience Platform. Starting with an existing recipe often streamlines the data exploration phase and makes it easier for a data scientist.)
 
-如果您从头开始或配置现有菜谱，您可以在组织的集中标准化数据目录中开始数据搜索，这大大简化了寻找工作。 你甚至可能发现组织中的另一位数据科学家已经识别出了一个类似的数据集，并选择对该数据集进行微调，而不是从头开始开始。
-Adobe Experience Platform的所有数据都符合标准化的XDM模式，无需创建复杂的模型来加入数据或从数据工程师那里获得帮助。
+如果您从头开始或配置现有菜谱，则可以在组织的集中化标准化数据目录中开始数据搜索，这将大大简化搜索工作。 您甚至会发现，您组织中的另一位数据科学家已经识别出了一个类似的数据集，并选择对该数据集进行微调，而不是从头开始进行开始。
+Adobe Experience Platform中的所有数据都符合标准化的XDM模式，无需创建用于加入数据的复杂模型或从数据工程师那里获得帮助。
 
-如果您不能立即找到所需数据，但它存在于Adobe Experience Platform以外，那么它是一个相对简单的任务，可以收集更多的数据集，这也将转变为标准化的XDM模式。\
-您可以使用[!DNL Jupyter Notebook]简化数据预处理——可能从以前用于购买倾向的笔记本模板或笔记本开始。
+如果您没有立即找到所需的数据，但它存在于Adobe Experience Platform之外，那么它是收集更多数据集的相对简单的任务，它还将转变为标准化的XDM模式。\
+您可以使用[!DNL Jupyter Notebook]简化数据预处理 — 可能从笔记本模板或您以前用于购买倾向的笔记本开始。
 
 ![](./images/home/notebook_templates.png)
 
 ### 创作菜谱
 
-如果您已经找到满足所有需求的菜谱，您可以继续尝试。 或者，您也可以修改菜谱，或从头开始创建菜谱——充分利用[!DNL Jupyter Notebook]中的[!DNL Data Science Workspace]创作运行时。 使用创作运行时可确保您既可以使用[!DNL Data Science Workspace]培训和评分工作流，也可以稍后转换菜谱，以便您的组织中的其他人可以存储和重用菜谱。
+如果您已经找到了满足您所有需求的菜谱，您可以继续尝试。 或者，您可以稍作修改菜谱或从头开始创建菜谱 — 充分利用[!DNL Jupyter Notebook]中的[!DNL Data Science Workspace]创作运行时。 使用创作运行时可确保您既可以使用[!DNL Data Science Workspace]培训和评分工作流，也可以稍后转换菜谱，以便您的组织中的其他人可以存储和重复使用它。
 
 您还可以将菜谱导入[!DNL Data Science Workspace]，并在创建智能服务时利用实验工作流。
 
 ### 试用配方
 
-借助包含核心机器学习算法的菜谱，可以使用单个菜谱创建许多菜谱实例。 这些菜谱实例称为模型。 一个模型需要进行培训和评估以优化其运行效率和功效，这一过程通常由试验和错误组成。
+使用包含核心机器学习算法的菜谱，可以使用单个菜谱创建许多菜谱实例。 这些菜谱实例称为模型。 一个模型需要训练和评估以优化其运行效率和效果，这一过程通常由试验和错误组成。
 
 ![](./images/home/recipe_hiearchy_ui.png)
 
@@ -175,25 +175,24 @@ Adobe Experience Platform的所有数据都符合标准化的XDM模式，无需�
 
 请访问[API](./models-recipes/train-evaluate-model-api.md)或[UI](./models-recipes/train-evaluate-model-ui.md)教程，了解如何在[!DNL Data Science Workspace]中培训和评估模型。
 
-### 操作模型
+### 使模型可操作
 
-当您选择了经过培训的最佳菜谱来满足您的业务需求时，您可以在[!DNL Data Science Workspace]中创建智能服务，而无需开发人员帮助。 只需点击几下即可——无需编码。 您组织的其他成员无需重新创建模型即可访问发布的智能服务。
+当您选择了经过培训的最佳菜谱来满足您的业务需求时，您可以在[!DNL Data Science Workspace]中创建智能服务，而无需开发人员协助。 只需点击几下，无需编码。 您组织的其他成员无需重新创建模型即可访问发布的智能服务。
 
-已发布的智能服务可配置为在新数据可用时不时使用新数据自动进行培训。 这可确保您的服务在时间持续时保持其效率和功效。
+发布的智能服务可配置为在新数据可用时，不时使用新数据自动进行培训。 这可确保您的服务在持续的时间内保持其效率和功效。
 
 ## 后续步骤
 
-[!DNL Data Science Workspace] 帮助简化数据科学工作流程，从数据收集到算法，再到面向各个技能水平的数据科学家的智能服务。借助[!DNL Data Science Workspace]提供的精良工具，您可以显着缩短从数据到洞察的时间。
+[!DNL Data Science Workspace] 帮助简化数据科学工作流程，从数据收集到算法，再到面向各个技能水平的数据科学家的智能服务。使用[!DNL Data Science Workspace]提供的精良工具，您可以显着缩短从数据到洞察的时间。
 
-更重要的是，[!DNL Data Science Workspace]将Adobe领先营销平台的数据科学和算法优化能力交给企业数据科学家。 企业首次可以将专有算法引入该平台，利用Adobe强大的机器学习和AI功能大规模提供高度个性化的客户体验。
+更重要的是，[!DNL Data Science Workspace]将Adobe领先营销平台的数据科学和算法优化能力交给企业数据科学家。 企业首次将专有算法引入该平台，利用Adobe强大的机器学习和AI功能大规模提供高度个性化的客户体验。
 
-将品牌专业知识和Adobe的机器学习和人工智能技能结合在一起，企业有能力在客户提出要求之前为客户提供他们想要的东西，从而提升商业价值和品牌忠诚度。
+将品牌专业知识和Adobe的机器学习和AI技能结合在一起，企业有能力在客户提出要求之前为客户提供他们想要的东西，从而推动更多的商业价值和品牌忠诚度。
 
-有关详细信息（如完整的日常工作流），请首先阅读[数据科学工作区浏览](./walkthrough.md)文档。
+有关其他信息（如完整的日常工作流），请首先阅读[Data Science Workspace指导文档](./walkthrough.md)。
 
-## Journey Orchestration
+## 其他资源
 
 以下视频旨在支持您对[!DNL Data Science Workspace]的理解。
 
 >[!VIDEO](https://video.tv.adobe.com/v/30567?quality=12&amp;enable10seconds=on&amp;speedcontrol=on)
-
