@@ -2,13 +2,13 @@
 keywords: Experience Platform；主页；热门主题；数据集；数据集；创建数据集；创建数据集
 solution: Experience Platform
 title: 使用API创建数据集
-topic: datasets
+topic-legacy: datasets
 description: 此文档提供了使用Adobe Experience Platform API创建数据集和使用文件填充数据集的一般步骤。
 exl-id: 3a5f48cf-ad05-4b9e-be1d-ff213a26a477
 translation-type: tm+mt
-source-git-commit: 727c9dbd87bacfd0094ca29157a2d0283c530969
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1306'
+source-wordcount: '1305'
 ht-degree: 1%
 
 ---
