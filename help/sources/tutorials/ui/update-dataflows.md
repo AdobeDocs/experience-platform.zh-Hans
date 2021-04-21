@@ -3,13 +3,13 @@ keywords: Experience Platform；主页；热门主题；更新数据流；编辑
 description: 本教程介绍了使用“源”工作区更新数据流计划的步骤，包括其摄取频率和间隔速率。
 solution: Experience Platform
 title: 在UI中更新源连接数据流
-topic: overview
+topic-legacy: overview
 type: Tutorial
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
 translation-type: tm+mt
-source-git-commit: 3a36996b43760bc9161b8d4750a1121e9ada8d30
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '717'
 ht-degree: 1%
 
 ---
