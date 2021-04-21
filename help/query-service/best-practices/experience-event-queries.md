@@ -1,30 +1,30 @@
 ---
-keywords: Experience Platform；主题；热门主题；查询服务；查询服务；体验事件查询；体验事件查询；体验事件查询;
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；体验事件查询；体验事件查询；体验事件查询;
 solution: Experience Platform
 title: 体验查询的示例事件
-topic: queries
+topic-legacy: queries
 type: Tutorial
-description: 以下文档提供了Adobe Experience Platform查询服务中涉及体验事件的查询示例。
+description: 以下文档提供了在Adobe Experience Platform 查询 Service中涉及体验事件的查询示例。
+exl-id: e6793a03-e474-4ae4-acb2-a052ff1c6d68
 translation-type: tm+mt
-source-git-commit: 97dc0b5fb44f5345fd89f3f56bd7861668da9a6e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '320'
 ht-degree: 0%
 
 ---
 
-
 # [!DNL Experience Events]的示例查询
 
-除了标准SQL查询,Adobe Experience Platform[!DNL Query Service]还支持使用[!DNL Experience Events]编写查询。 体验事件由体验数据模型(XDM)ExperienceEvent类表示，当用户与网站或服务交互时，该类捕获系统的不可变和非聚集快照，因此可用于时域分析。
+除了标准SQL查询,Adobe Experience Platform [!DNL Query Service]还支持使用[!DNL Experience Events]编写查询。 体验事件由体验数据模型(XDM)ExperienceEvent类表示，该类在用户与网站或服务交互时捕获系统的不可变和非聚集快照，因此可用于时域分析。
 
-有关XDM和[!DNL Experience Events]的详细信息，请参阅[[!DNL XDM System] 概述](../../xdm/home.md)。 通过将[!DNL Query Service]与[!DNL Experience Events]相结合，您可以有效跟踪用户之间的行为趋势。 以下文档提供了涉及[!DNL Experience Events]的查询的示例。
+有关XDM和[!DNL Experience Events]的详细信息，请参阅[[!DNL XDM System] overview](../../xdm/home.md)。 通过将[!DNL Query Service]与[!DNL Experience Events]相结合，您可以有效跟踪用户之间的行为趋势。 以下文档提供了涉及[!DNL Experience Events]的查询示例。
 
 ## 按天创建特定日期范围内的事件趋势报表
 
-以下示例创建按日期分组的指定日期范围内事件的趋势报表。 具体而言，它将各种分析值汇总为A、B和C，然后汇总已查看parka的次数。
+下面的示例创建按日期分组的指定日期范围内事件的趋势报表。 具体而言，它将各种分析值汇总为A、B和C，然后总结parkas被查看的次数。
 
-在[!DNL Experience Event]数据集中找到的时间戳列以UTC为单位。 以下示例使用`from_utc_timestamp()`函数将时间戳从UTC转换为EDT。 然后，它使用`date_format()`函数将日期与时间戳的其余部分隔离。
+在[!DNL Experience Event]数据集中找到的时间戳列以UTC格式。 下面的示例使用`from_utc_timestamp()`函数将时间戳从UTC转换为EDT。 然后，它使用`date_format()`函数将日期与时间戳的其余部分隔离开。
 
 ```sql
 SELECT 
@@ -84,7 +84,7 @@ ORDER BY Day ASC, pageViews DESC;
 
 ## 检索按页面列表数组织的访客视图。
 
-以下示例创建一个报告，其中列表了已查看最多页面的用户的ID。
+下面的示例创建一个报表，它列表查看最多页面的用户的ID。
 
 ```sql
 SELECT 
@@ -114,7 +114,7 @@ LIMIT 10;
 
 ## 重播访客会话
 
-以下示例列表了指定用户最近查看的100个页面。
+以下示例列表了指定用户查看的最后100个页面。
 
 
 ```sql
@@ -158,7 +158,7 @@ LIMIT 100;
 2019-11-08 20:14:05.0 | typed_bookmark |                                                                    | Seasonal Sale                       |     |     |     |          1.0
 ```
 
-## 查看访客的汇总报告
+## 查看访客的汇总报表
 
 以下示例显示了指定用户的各种分析值的聚合报告。
 
@@ -189,5 +189,4 @@ ORDER BY pageViews DESC;
 
 ## 后续步骤
 
-有关使用Adobe定义函数(ADF)的示例查询的更多信息，请阅读Adobe定义函数指南。 有关查询执行的一般指南，请阅读[关于查询服务中查询执行的指南](./writing-queries.md)。
-
+有关使用Adobe定义函数(ADF)的示例查询的更多信息，请阅读“Adobe定义函数”指南。 有关查询执行的一般指导，请阅读[关于查询服务中查询执行的指南](./writing-queries.md)。
