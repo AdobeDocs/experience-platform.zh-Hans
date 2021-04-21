@@ -1,27 +1,27 @@
 ---
-keywords: Experience Platform；主题；热门主题；分段；分段；分段服务；pql;PQL;用户档案查询语；字符串函数；字符串；
+keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；pql;PQL;用户档案查询语；字符串函数；字符串；
 solution: Experience Platform
 title: PQL字符串函数
-topic: developer guide
+topic-legacy: developer guide
 description: 用户档案查询语言(PQL)优惠函数可简化与字符串的交互。
+exl-id: 9fd79d86-0802-4312-abce-f6ef5ba5bb34
 translation-type: tm+mt
-source-git-commit: b3defc3e33a55855e307ab70b9797d985d5719e3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '784'
 ht-degree: 6%
 
 ---
 
-
 # 字符串函数
 
-[!DNL Profile Query Language] (PQL)优惠函数可简化与字符串的交互。有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] 概述](./overview.md)。
+[!DNL Profile Query Language] (PQL)优惠函数可简化与字符串的交互。有关其他PQL函数的详细信息，请参阅[[!DNL Profile Query Language] overview](./overview.md)。
 
 ## 喜欢
 
 `like`函数用于确定字符串是否与指定的模式匹配。
 
-**Format**
+**格式**
 
 ```sql
 {STRING_1} like {STRING_2}
@@ -30,11 +30,11 @@ ht-degree: 6%
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{STRING_1}` | 要执行检查的字符串。 |
-| `{STRING_2}` | 要与第一个字符串匹配的表达式。 有两个支持的特殊字符用于创建表达式:`%`和`_`。 <ul><li>`%` 用于表示零个或多个字符。</li><li>`_` 用于表示一个字符。</li></ul> |
+| `{STRING_2}` | 要与第一个字符串匹配的表达式。 有两个支持的特殊字符用于创建表达式:`%`和`_`。 <ul><li>`%` 用于表示零个或多个字符。</li><li>`_` 仅用于表示一个字符。</li></ul> |
 
 **示例**
 
-以下PQL查询检索包含模式“es”的所有城市。
+以下PQL查询将检索包含模式“es”的所有城市。
 
 ```sql
 city like "%es%"
@@ -42,7 +42,7 @@ city like "%es%"
 
 ## 开始于
 
-`startsWith`函数用于确定字符串是否开始指定的子字符串。
+`startsWith`函数用于确定字符串是否开始了指定的子字符串。
 
 **格式**
 
@@ -53,12 +53,12 @@ city like "%es%"
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{STRING_1}` | 要执行检查的字符串。 |
-| `{STRING_2}` | 要在第一个字符串中搜索的字符串。 |
+| `{STRING_2}` | 要在第一个字符串内搜索的字符串。 |
 | `{BOOLEAN}` | 用于确定检查是否区分大小写的可选参数。 默认情况下，此值设置为true。 |
 
 **示例**
 
-以下PQL查询区分大小写确定人员的姓名开始是否为“Joe”。
+以下PQL查询根据区分大小写确定人员的姓名开始是否为“Joe”。
 
 ```sql
 person.name.startsWith("Joe")
@@ -77,12 +77,12 @@ person.name.startsWith("Joe")
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{STRING_1}` | 要执行检查的字符串。 |
-| `{STRING_2}` | 要在第一个字符串中搜索的字符串。 |
+| `{STRING_2}` | 要在第一个字符串内搜索的字符串。 |
 | `{BOOLEAN}` | 用于确定检查是否区分大小写的可选参数。 默认情况下，此值设置为true。 |
 
 **示例**
 
-以下PQL查询区分大小写确定人员的姓名不与“Joe”开始。
+以下PQL查询根据区分大小写的特性确定人员姓名不与“Joe”开始。
 
 ```sql
 person.name.doesNotStartWith("Joe")
@@ -101,12 +101,12 @@ person.name.doesNotStartWith("Joe")
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{STRING_1}` | 要执行检查的字符串。 |
-| `{STRING_2}` | 要在第一个字符串中搜索的字符串。 |
+| `{STRING_2}` | 要在第一个字符串内搜索的字符串。 |
 | `{BOOLEAN}` | 用于确定检查是否区分大小写的可选参数。 默认情况下，此值设置为true。 |
 
 **示例**
 
-以下PQL查询区域根据大小写确定人员的电子邮件地址是否以“.com”结尾。
+以下PQL查询根据大小写区分确定此人的电子邮件地址是否以“.com”结尾。
 
 ```sql
 person.emailAddress.endsWith(".com")
@@ -114,7 +114,7 @@ person.emailAddress.endsWith(".com")
 
 ## 不以
 
-`doesNotEndWith`函数用于确定字符串是否以指定的子字符串结尾。
+`doesNotEndWith`函数用于确定字符串是否不以指定的子字符串结尾。
 
 **格式**
 
@@ -125,12 +125,12 @@ person.emailAddress.endsWith(".com")
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{STRING_1}` | 要执行检查的字符串。 |
-| `{STRING_2}` | 要在第一个字符串中搜索的字符串。 |
+| `{STRING_2}` | 要在第一个字符串内搜索的字符串。 |
 | `{BOOLEAN}` | 用于确定检查是否区分大小写的可选参数。 默认情况下，此值设置为true。 |
 
 **示例**
 
-以下PQL查询区域根据大小写确定人员的电子邮件地址以“.com”结尾。
+以下PQL查询根据区分大小写的特性确定人员的电子邮件地址是否以“.com”结尾。
 
 ```sql
 person.emailAddress.doesNotEndWith(".com")
@@ -149,12 +149,12 @@ person.emailAddress.doesNotEndWith(".com")
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{STRING_1}` | 要执行检查的字符串。 |
-| `{STRING_2}` | 要在第一个字符串中搜索的字符串。 |
+| `{STRING_2}` | 要在第一个字符串内搜索的字符串。 |
 | `{BOOLEAN}` | 用于确定检查是否区分大小写的可选参数。 默认情况下，此值设置为true。 |
 
 **示例**
 
-以下PQL查询区分大小写确定人员的电子邮件地址是否包含字符串“2010@gm”。
+以下PQL查询将根据大小写确定人员的电子邮件地址是否包含字符串“2010@gm”。
 
 ```sql
 person.emailAddress.contains("2010@gm")
@@ -173,12 +173,12 @@ person.emailAddress.contains("2010@gm")
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{STRING_1}` | 要执行检查的字符串。 |
-| `{STRING_2}` | 要在第一个字符串中搜索的字符串。 |
+| `{STRING_2}` | 要在第一个字符串内搜索的字符串。 |
 | `{BOOLEAN}` | 用于确定检查是否区分大小写的可选参数。 默认情况下，此值设置为true。 |
 
 **示例**
 
-以下PQL查询区分大小写确定人员的电子邮件地址不包含字符串“2010@gm”。
+以下PQL查询根据大小写区分确定人员的电子邮件地址是否不包含字符串“2010@gm”。
 
 ```sql
 person.emailAddress.doesNotContain("2010@gm")
@@ -201,7 +201,7 @@ person.emailAddress.doesNotContain("2010@gm")
 
 **示例**
 
-以下PQL查询根据大小写确定人员的姓名是否为“John”。
+以下PQL查询根据区分大小写的特性确定人员的姓名是“John”。
 
 ```sql
 person.name.equals("John")
@@ -224,7 +224,7 @@ person.name.equals("John")
 
 **示例**
 
-以下PQL查询区分大小写确定人员的姓名不是“John”。
+以下PQL查询根据区分大小写的特性确定人员姓名不是“John”。
 
 ```sql
 person.name.notEqualTo("John")
@@ -232,7 +232,7 @@ person.name.notEqualTo("John")
 
 ## 匹配
 
-`matches`函数用于确定字符串是否与特定常规表达式匹配。 请参阅[此文档](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)以了解有关常规表达式中匹配模式的更多信息。
+`matches`函数用于确定字符串是否与特定常规表达式匹配。 请参阅[此文档](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)以了解有关常规表达式中匹配模式的详细信息。
 
 **格式**
 
@@ -242,7 +242,7 @@ person.name.notEqualTo("John")
 
 **示例**
 
-以下PQL查询将确定人员的姓名开始是否带有“John”，但不区分大小写。
+以下PQL查询将确定此人的姓名开始是否为“John”，而不区分大小写。
 
 ```sql
 person.name.matches("(?i)^John")
@@ -268,5 +268,4 @@ emailAddress.regexGroup("@(\w+)", 1)
 
 ## 后续步骤
 
-现在您已经了解了字符串函数，可以在PQL查询中使用它们。 有关其他PQL函数的详细信息，请阅读[用户档案查询语语言概述](./overview.md)。
-
+现在，您已经了解了字符串函数，可以在PQL查询中使用它们。 有关其他PQL函数的详细信息，请阅读[用户档案查询语言概述](./overview.md)。
