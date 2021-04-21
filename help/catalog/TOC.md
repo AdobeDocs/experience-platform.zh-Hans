@@ -1,11 +1,10 @@
 ---
-product: experience-platform
 audience: user
 user-guide-title: Catalog and Datasets 指南
 user-guide-description: 浏览数据湖中的数据谱系、元数据、文件描述、目录和数据集。
-feature: Data Management
+feature: 数据管理
 translation-type: tm+mt
-source-git-commit: ac6935f09f620ea55cf8f612ff0a1fba503b5e17
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '108'
 ht-degree: 19%
@@ -17,7 +16,7 @@ ht-degree: 19%
 
 * [目录服务概述](home.md)
 * 目录服务API {#api}
-   * [入门指南](api/getting-started.md)
+   * [快速入门](api/getting-started.md)
    * [使用查询参数筛选目录数据](api/filter-data.md)
    * [列表对象](api/list-objects.md)
    * [查找对象](api/look-up-object.md)
