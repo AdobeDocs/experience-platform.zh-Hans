@@ -2,14 +2,14 @@
 keywords: Experience Platform；主页；热门主题；crm;CRM
 solution: Experience Platform
 title: 通过源连接器和API收集CRM数据
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方CRM系统检索数据并使用源连接器和API将其引入平台的步骤。
 exl-id: b07dd640-bce6-4699-9d2b-b7096746934a
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1592'
+source-wordcount: '1590'
 ht-degree: 1%
 
 ---
