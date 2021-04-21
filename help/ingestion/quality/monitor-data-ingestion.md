@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门话题；监控；监控；数据流；监控摄取；数据摄取；视图记录；视图批；
 solution: Experience Platform
 title: 监控数据摄取
-topic: overview
+topic-legacy: overview
 description: 本用户指南提供了如何在Adobe Experience Platform用户界面中监控数据的步骤。 本指南要求您拥有Adobe ID并访问Adobe Experience Platform。
+exl-id: 85711a06-2756-46f9-83ba-1568310c9f73
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '573'
+source-wordcount: '564'
 ht-degree: 0%
 
 ---
-
 
 # 监控数据摄取
 
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 ## 监控端对端数据流摄取
 
-在[Experience PlatformUI](https://platform.adobe.com)中，单击左侧导航菜单上的&#x200B;**[!UICONTROL 监视]**，然后单击&#x200B;**[!UICONTROL 端到端流]**。
+在[Experience PlatformUI](https://platform.adobe.com)中，单击左侧导航菜单上的&#x200B;**[!UICONTROL Monitoring]**，然后单击&#x200B;**[!UICONTROL Streaming end-to-end]**。
 
 ![](../images/quality/monitor-data-flows/click-streaming-end-to-end.png)
 
-将显示&#x200B;**[!UICONTROL 端到端流]**&#x200B;监视页面。 此工作区提供一个图表，显示[!DNL Platform]接收流事件的速率，一个图表，显示[[!DNL Real-time Customer Profile]](../../profile/home.md)成功处理的流事件的速率，以及传入数据的详细列表。
+将显示&#x200B;**[!UICONTROL Streaming end-to-end]**&#x200B;监视页面。 此工作区提供一个图表，显示[!DNL Platform]接收流事件的速率，一个图表，显示[[!DNL Real-time Customer Profile]](../../profile/home.md)成功处理的流事件的速率，以及传入数据的详细列表。
 
 ![](../images/quality/monitor-data-flows/list-streams.png)
 
@@ -61,11 +61,11 @@ ht-degree: 0%
 
 ## 监控批处理端对端数据获取
 
-在[[!DNL Experience Platform UI]](https://platform.adobe.com)中，单击左侧导航菜单上的&#x200B;**[!UICONTROL 监视]**。
+在[[!DNL Experience Platform UI]](https://platform.adobe.com)中，单击左侧导航菜单上的&#x200B;**[!UICONTROL Monitoring]**。
 
 ![](../images/quality/monitor-data-flows/click-monitoring.png)
 
-将显示&#x200B;**[!UICONTROL 批端到端]**&#x200B;监视页，其中显示以前摄取的批的列表。 您可以单击任何批，以了解有关该记录的更多详细信息。
+将显示&#x200B;**[!UICONTROL Batch end-to-end]**&#x200B;监视页，其中显示以前摄取的批的列表。 您可以单击任何批，以了解有关该记录的更多详细信息。
 
 ![](../images/quality/monitor-data-flows/list-batches.png)
 
