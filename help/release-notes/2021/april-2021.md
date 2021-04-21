@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: April 21, 2021
 author: ens72741
 translation-type: tm+mt
-source-git-commit: 0c9b60fe0777286819841c520a41007634622578
+source-git-commit: 1072b95469fac19a2e03ca4eacaae05250e11be8
 workflow-type: tm+mt
-source-wordcount: '729'
-ht-degree: 12%
+source-wordcount: '868'
+ht-degree: 10%
 
 ---
 
@@ -20,6 +20,7 @@ ht-degree: 12%
 Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Data Prep]](#data-prep)
+- [[!DNL Experience Data Model (XDM)]](#xdm)
 - [[!DNL Intelligent Services]](#intelligent-services)
 - [[!DNL Segmentation Service]](#segmentation)
 - [[!DNL Sources]](#sources)
@@ -36,6 +37,14 @@ Adobe Experience Platform 现有功能的更新包括：
 | 支持流摄取 | 现在，您可以在创建流源连接时使用数据准备函数。 有关详细信息，请参阅有关在UI](../../sources/tutorials/ui/create/streaming/http.md)中创建流源连接的教程。[ |
 
 有关详细信息，请参阅[[!DNL Data Prep] 概述](../../data-prep/home.md)。
+
+## [!DNL Experience Data Model (XDM)] {#xdm}
+
+体验数据模型(XDM)是一种开源规范，旨在提高数字体验的强大功能。 它为任何与Adobe Experience Platform上的服务通信的应用程序提供了通用结构和定义。 通过遵守XDM标准，所有客户体验数据都可以整合到一个通用代表中，以更快、更集成的方式提供洞察。 您可以从客户行动中获得宝贵的洞察，通过细分定义客户受众，并将客户属性用于个性化目的。
+
+| 功能 | 描述 |
+| --- | --- |
+| 模式建议 | 在模式编辑器UI中选择类和混合时，您可以使用新筛选器根据您的特定行业视图推荐的标准组件。 有关不同行业使用案例中这些组件如何彼此关联的更多信息，请参阅[行业数据模型](https://www.adobe.com/go/xdm-industry-erds-en)上的文档。 |
 
 ## [!DNL Intelligent Services] {#intelligent-services}
 
