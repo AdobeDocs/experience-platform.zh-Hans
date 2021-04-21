@@ -2,17 +2,17 @@
 keywords: Experience Platform；导入打包菜谱；数据科学工作区；热门主题；菜谱；ui；创建引擎
 solution: Experience Platform
 title: 在Data Science Workspace UI中导入打包菜谱
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: 本教程使用提供的零售销售示例提供了有关如何配置和导入打包菜谱的分析。 在本教程结束时，您将准备好在Adobe Experience Platform Data Science Workspace中创建、培训和评估模型。
+exl-id: 2556e1f0-3f9c-4884-a699-06c041d5c4d1
 translation-type: tm+mt
-source-git-commit: 13fa4af388c6f31768a6b7e1da05cb56c5635c9e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1740'
+source-wordcount: '1738'
 ht-degree: 0%
 
 ---
-
 
 # 在数据科学工作区用户界面中导入打包菜谱
 
