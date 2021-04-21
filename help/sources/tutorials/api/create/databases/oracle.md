@@ -7,18 +7,14 @@ type: Tutorial
 description: 了解如何使用Flow Service API将Oracle连接到Experience Platform。
 exl-id: b1cea714-93ff-425f-8e12-6061da97d094
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b2384bfe26fa3d111c342062b2d9bb37c4226857
 workflow-type: tm+mt
-source-wordcount: '536'
+source-wordcount: '520'
 ht-degree: 2%
 
 ---
 
 # 使用[!DNL Flow Service] API创建[!DNL Oracle]源连接
-
->[!NOTE]
->
->[!DNL Oracle]连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 [!DNL Flow Service] 用于收集和集中来自Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有受支持的源都可从中连接。
 
