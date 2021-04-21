@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；模式;模式；混音；混音；混音；混音；数据类型；数据类型；模式设计；数据类型；类型；数据类型；数据类型；数据类型；模式;模式;模式设计；映射；
 solution: Experience Platform
 title: XDM字段类型约束
-topic: overview
+topic-legacy: overview
 description: 对体验数据模型(XDM)中字段类型约束的参考，包括可以映射到的其他序列化格式以及如何在API中定义您自己的字段类型。
+exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
 translation-type: tm+mt
-source-git-commit: 456e595e66436c35c7d081ddf4699263e9c87234
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1055'
+source-wordcount: '1054'
 ht-degree: 1%
 
 ---
-
 
 # XDM字段类型约束
 
