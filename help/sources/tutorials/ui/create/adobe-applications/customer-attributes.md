@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；客户属性
 solution: Experience Platform
 title: 在UI中创建客户属性源连接
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建源连接，以收集用户档案数据到Adobe Experience Platform中的客户属性。
+exl-id: 66bdab8f-c00e-4ebe-8b8e-f9e12cf86bbe
 translation-type: tm+mt
-source-git-commit: 08a3026e969a8739a8b57226c35a6d1d3150006e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '399'
-ht-degree: 6%
+source-wordcount: '397'
+ht-degree: 5%
 
 ---
-
 
 # 在UI中创建客户属性源连接
 
