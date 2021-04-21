@@ -2,17 +2,17 @@
 keywords: Experience Platform；为模型得分；数据科学工作区；热门主题；ui；得分运行；得分结果
 solution: Experience Platform
 title: 在数据科学工作区UI中为模型打分
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
-description: '通过将输入数据输入到现有培训模型中，可以在Adobe Experience Platform数据科学工作区中获得评分。 然后，将评分结果作为新批存储在指定的输出数据集中并可查看。 '
+description: 通过将输入数据输入到现有培训模型中，可以在Adobe Experience Platform数据科学工作区中获得评分。 然后，将评分结果作为新批存储在指定的输出数据集中并可查看。
+exl-id: 00d6a872-d71a-47f4-8625-92621d4eed56
 translation-type: tm+mt
-source-git-commit: 7feda18351061600b05dc7be8afbbfb9a0fa7ec1
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '621'
+source-wordcount: '619'
 ht-degree: 0%
 
 ---
-
 
 # 在数据科学工作区UI中为模型打分
 
