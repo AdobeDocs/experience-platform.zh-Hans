@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；PostgreSQL;postgresql;PSQL;psql
 solution: Experience Platform
 title: 使用流服务API创建PostgreSQL源连接
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到PostgreSQL。
+exl-id: 5225368a-08c1-421d-aec2-d50ad09ae454
 translation-type: tm+mt
-source-git-commit: 8851e11e956b393e56714d4d48870b7f68947c18
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '560'
 ht-degree: 2%
 
 ---
-
 
 # 使用[!DNL Flow Service] API创建[!DNL PostgreSQL]源连接
 
