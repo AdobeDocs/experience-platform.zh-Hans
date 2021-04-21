@@ -2,17 +2,17 @@
 keywords: Experience Platform；培训和评估；数据科学工作区；热门主题；创建模型；创建培训运行
 solution: Experience Platform
 title: 在数据科学工作区用户界面中训练和评估模型
-topic: tutorial
+topic-legacy: tutorial
 type: Tutorial
 description: 在Adobe Experience Platform Data Science Workspace中，通过合并适合模型意图的现有菜谱来创建机器学习模型。 然后，对模型进行训练和评估，通过微调其相关的超参数来优化其运行效率和效能。 菜谱是可重用的，这意味着可以使用单个菜谱创建多个模型并针对特定用途进行定制。
+exl-id: 6f674cfa-c123-46a3-80e2-9342fe687976
 translation-type: tm+mt
-source-git-commit: 52415eb572a82f18f6daa3f45be1c670cae98b83
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1085'
+source-wordcount: '1083'
 ht-degree: 1%
 
 ---
-
 
 # 在数据科学工作区用户界面中培训和评估模型
 
