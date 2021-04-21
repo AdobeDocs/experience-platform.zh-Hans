@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；Google Cloud存储;Google Cloud存储
 solution: Experience Platform
 title: Google Cloud存储源连接器概述
-topic: overview
+topic-legacy: overview
 description: 了解如何使用API或用户界面将Google Cloud存储连接到Adobe Experience Platform。
+exl-id: f7ebd213-f914-4c49-aebd-1df4514ffec0
 translation-type: tm+mt
-source-git-commit: 7fc99214272d2ce743b3666826c66f5d65e4d2ca
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '528'
 ht-degree: 0%
 
 ---
-
 
 # Google Cloud存储连接器
 
