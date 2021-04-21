@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；IAB;IAB 2.0；同意；同意
 solution: Experience Platform
 title: IAB TCF 2.0在Experience Platform中支持
-topic: privacy events
+topic-legacy: privacy events
 description: 了解如何配置数据操作和模式，以在将区段激活到Adobe Experience Platform中的目标时传达客户同意选择。
+exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
 translation-type: tm+mt
-source-git-commit: a845ade0fc1e6e18c36b5f837fe7673a976f01c7
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '2472'
+source-wordcount: '2459'
 ht-degree: 0%
 
 ---
-
 
 # IAB TCF 2.0在Experience Platform中支持
 
@@ -126,14 +126,14 @@ Adobe Audience Manager与平台共享的任何区段（通过[!DNL Audience Mana
 
 | 边缘配置字段 | 值 |
 | --- | --- |
-| [!UICONTROL 沙箱] | 平台[沙箱](../../../../sandboxes/home.md)的名称，其中包含设置边缘配置所需的流连接和数据集。 |
+| [!UICONTROL Sandbox] | 平台[沙箱](../../../../sandboxes/home.md)的名称，其中包含设置边缘配置所需的流连接和数据集。 |
 | [!UICONTROL Streaming Inlet] | Experience Platform的有效流连接。 如果您没有现有的流入口，请参阅有关创建流连接的教程[。](../../../../ingestion/tutorials/create-streaming-connection-ui.md) |
-| [!UICONTROL 事件数据集] | 选择在上一步[中创建的[!DNL XDM ExperienceEvent]数据集。](#datasets) |
-| [!UICONTROL 用户档案数据集] | 选择在上一步[中创建的[!DNL XDM Individual Profile]数据集。](#datasets) |
+| [!UICONTROL Event Dataset] | 选择在上一步[中创建的[!DNL XDM ExperienceEvent]数据集。](#datasets) |
+| [!UICONTROL Profile Dataset] | 选择在上一步[中创建的[!DNL XDM Individual Profile]数据集。](#datasets) |
 
 ![](../../../images/governance-privacy-security/consent/iab/overview/edge-config.png)
 
-完成后，选择屏幕底部的&#x200B;**[!UICONTROL 保存]**，然后继续按照任何其他提示完成配置。
+完成后，选择屏幕底部的&#x200B;**[!UICONTROL Save]**&#x200B;并继续按照任何其他提示完成配置。
 
 ### 发出同意更改命令
 
