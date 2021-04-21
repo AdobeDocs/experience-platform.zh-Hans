@@ -1,15 +1,15 @@
 ---
-keywords: 广告；贸易部门；
+keywords: 广告；贸易部门；广告贸易
 title: 贸易台连接
-description: '交易台是一个自助平台，可供广告购买者跨展示广告、视频和移动库存源执行重定向和受众目标数字活动。 '
+description: 交易台是一个自助平台，可供广告购买者跨展示广告、视频和移动库存源执行重定向和受众目标数字活动。
+exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
 translation-type: tm+mt
-source-git-commit: 24e0a274e61fcf6311c647067920686e4f25e840
+source-git-commit: 5b72433fcf2318f98538278c6d2650b366e391a2
 workflow-type: tm+mt
-source-wordcount: '592'
+source-wordcount: '595'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL The Trade Desk] 连接
 
