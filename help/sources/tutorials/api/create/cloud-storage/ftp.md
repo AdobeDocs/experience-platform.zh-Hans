@@ -2,58 +2,58 @@
 keywords: Experience Platform；主页；热门主题；文件传输协议；文件传输协议
 solution: Experience Platform
 title: 使用流服务API创建FTP源连接
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到FTP（文件传输协议）服务器。
+exl-id: a7bef346-b357-49bc-ac54-ac8b42adac50
 translation-type: tm+mt
-source-git-commit: a489ab248793a063295578943ad600d8eacab6a2
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '577'
 ht-degree: 2%
 
 ---
 
-
 # 使用[!DNL Flow Service] API创建FTP源连接
 
 >[!NOTE]
 >
->FTP连接器处于测试状态。 功能和文档可能会发生更改。 有关使用测试版标签的连接器的详细信息，请参见[源概述](../../../../home.md#terms-and-conditions)。
+>FTP连接器处于测试状态。 功能和文档可能会更改。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 本教程使用[!DNL Flow Service] API指导您完成将[!DNL Experience Platform]连接到FTP（文件传输协议）服务器的步骤。
 
 ## 入门指南
 
-本指南要求对Adobe Experience Platform的下列部分有工作上的理解：
+本指南要求对Adobe Experience Platform的以下组件有充分的了解：
 
-* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入 [!DNL Platform] 数据。
-* [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分为单独的虚 [!DNL Platform] 拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+* [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
 
-以下各节提供了使用[!DNL Flow Service] API成功连接到FTP服务器时需要了解的其他信息。
+以下各节提供了使用[!DNL Flow Service] API成功连接到FTP服务器所需了解的其他信息。
 
-### 收集所需的凭据
+### 收集所需凭据
 
 要使[!DNL Flow Service]连接到FTP，必须为以下连接属性提供值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
 | `host` | 与您的FTP服务器关联的名称或IP地址。 |
-| `username` | 有权访问FTP服务器的用户名。 |
+| `username` | 有权访问您的FTP服务器的用户名。 |
 | `password` | FTP服务器的密码。 |
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参见[!DNL Experience Platform]疑难解答指南中关于如何阅读示例API调用](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的一节。[
+本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个标头，它指定操作将在以下位置进行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -77,7 +77,7 @@ POST /connections
 
 **请求**
 
-要创建FTP连接，其唯一连接规范ID必须作为POST请求的一部分提供。 FTP的连接规范ID为`fb2e94c9-c031-467d-8103-6bd6e0a432f2`。
+要创建FTP连接，必须在POST请求中提供其唯一连接规范ID。 FTP的连接规范ID为`fb2e94c9-c031-467d-8103-6bd6e0a432f2`。
 
 ```shell
 curl -X POST \
@@ -114,7 +114,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新创建的连接的唯一标识符(`id`)。 在下一个教程中浏览您的FTP服务器需要此ID。
+成功的响应返回新创建的连接的唯一标识符(`id`)。 在下一个教程中浏览FTP服务器时需要此ID。
 
 ```json
 {
@@ -125,4 +125,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过本教程，您已使用[!DNL Flow Service] API创建了FTP连接，并获得了该连接的唯一ID值。 您可以使用此连接ID来[使用流服务API](../../explore/cloud-storage.md)或[使用流服务API](../../cloud-storage-parquet.md)采集拼花存储。
+通过本教程，您已使用[!DNL Flow Service] API创建了FTP连接，并获得了连接的唯一ID值。 您可以使用此连接ID来使用流服务API](../../explore/cloud-storage.md)或[使用流服务API](../../cloud-storage-parquet.md)收录Parke存储来浏览云数据。[
