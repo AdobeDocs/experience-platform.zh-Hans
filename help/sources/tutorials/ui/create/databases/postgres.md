@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；PSQL;psql;PostgreSQL
 solution: Experience Platform
 title: 在UI中创建PostgreSQL源连接
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建PostgreSQL源连接。
+exl-id: e556d867-a1eb-4900-b8a9-189666a4f3f1
 translation-type: tm+mt
-source-git-commit: 8851e11e956b393e56714d4d48870b7f68947c18
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '441'
+source-wordcount: '439'
 ht-degree: 1%
 
 ---
-
 
 # 在UI中创建[!DNL PostgreSQL]源连接
 
