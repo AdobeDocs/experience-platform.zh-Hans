@@ -2,17 +2,17 @@
 keywords: Experience Platform；主页；热门主题；Kinesis;kinesis;Amazon Kinesis;amazon kinesis
 solution: Experience Platform
 title: 使用Flow Service API创建Amazon Kinesis源连接
-topic: overview
+topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Amazon Kinesis帐户。
+exl-id: 64da8894-12ac-45a0-b03e-fe9b6aa435d3
 translation-type: tm+mt
-source-git-commit: ed14fe464a4dc82f54902c8dc92fe00bc2a5381e
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '559'
 ht-degree: 2%
 
 ---
-
 
 # 使用流服务API创建[!DNL Amazon Kinesis]源连接
 
