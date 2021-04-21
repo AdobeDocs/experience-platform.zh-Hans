@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API；统一用户档案；统一用户档案；统一；用户档案;rtcp;XDM图
 title: 实时客户用户档案概述
-topic: guide
+topic-legacy: guide
 description: 实时用户档案是一个通用的查找实体存储，它合并来自各种企业数据资产的数据，然后以单个客户用户档案和相关时间序列事件的形式提供对该数据的访问。 该功能使营销人员能够跨多个渠道通过受众推动协调一致的相关体验。
+exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
 translation-type: tm+mt
-source-git-commit: 126b3d1cf6d47da73c6ab045825424cf6f99e5ac
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '1827'
+source-wordcount: '1826'
 ht-degree: 0%
 
 ---
 
-
-# [!DNL Real-time Customer Profile]概述
+# [!DNL Real-time Customer Profile] 概述
 
 Adobe Experience Platform使您能够在客户与您的品牌互动的任何地方或何时为其提供协调一致的相关体验。 通过[!DNL Real-time Customer Profile]，您可以通过组合来自多个渠道（包括联机、脱机、CRM和第三方）的数据，了解每个客户的整体视图。 [!DNL Profile] 允许您将客户数据整合到一个统一的视图中，为每次客户互动提供一个可操作且有时间戳的帐户。本概述将帮助您了解[!DNL Experience Platform]中[!DNL Real-time Customer Profile]的角色和用法。
 
@@ -92,7 +92,7 @@ Adobe Experience Platform [!DNL Segmentation Service]提供为个人客户提供
 
 ## 边缘投影
 
-为了实时为跨多个渠道的客户提供协调、一致和个性化的体验，需要随着变化随时提供并不断更新正确的数据。 Adobe Experience Platform通过使用所谓的边缘实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够轻松访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以实时提供个性化的客户体验。 通过投影将数据路由到边缘，投影目标定义要向其发送数据的边缘，以及定义将在边缘上提供的特定信息的投影配置。 要了解更多信息并开始使用[!DNL Real-time Customer Profile] API处理投影，请参阅[边缘投影端点指南](api/edge-projections.md)。
+为了实时为跨多个渠道的客户提供协调、一致和个性化的体验，需要随时提供正确的数据并在发生变化时不断更新。 Adobe Experience Platform通过使用所谓的边缘实现对数据的实时访问。 边缘是一个地理上放置的服务器，它存储数据并使应用程序能够轻松访问它。 例如，Adobe应用程序(如Adobe Target和Adobe Campaign)使用边缘，以实时提供个性化的客户体验。 通过投影将数据路由到边缘，投影目标定义要向其发送数据的边缘，以及定义将在边缘上提供的特定信息的投影配置。 要了解更多信息并开始使用[!DNL Real-time Customer Profile] API处理投影，请参阅[边缘投影端点指南](api/edge-projections.md)。
 
 ## 将数据收录到[!DNL Profile]
 
