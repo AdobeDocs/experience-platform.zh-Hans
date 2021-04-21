@@ -2,16 +2,16 @@
 keywords: Experience Platform；主题；热门主题；数据流；数据流；数据；监控；监控数据流；监控数据流；监控数据流；监控数据流；监控数据流；流程；流服务；
 solution: Experience Platform
 title: 数据流概述
-topic: overview
+topic-legacy: overview
 description: 本文档介绍了数据流，以表示它们在Adobe Experience Platform中的使用方式。
+exl-id: 8fe08ffa-f095-4e9f-8bab-d060985f0236
 translation-type: tm+mt
-source-git-commit: 185c9c953a6ce923359e221d6f0f91b0f6614f05
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
 source-wordcount: '238'
 ht-degree: 5%
 
 ---
-
 
 # 数据流概述
 
@@ -32,4 +32,3 @@ ht-degree: 5%
 ## 监视数据流
 
 可以使用平台API或平台UI来监控数据流。 要了解如何使用API监视数据流，请阅读[监视数据流API教程](./api/monitor.md)。 要了解如何监视平台UI中的数据流，请阅读以下教程：[监视源](./ui/monitor-sources.md)的数据流和[监视目标](./ui/monitor-destinations.md)的数据流。
-
