@@ -2,16 +2,16 @@
 keywords: Experience Platform；主页；热门主题；命名空间列表;列表命名空间
 solution: Experience Platform
 title: 列表可用身份命名空间
-topic: API guide
+topic-legacy: API guide
 description: 列表所有可用命名空间。
+exl-id: b65e5f86-143d-4ca5-8b3f-2c0a24433bbf
 translation-type: tm+mt
-source-git-commit: 73035aec86297cfc4ee9337cf922d599001379c3
+source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
 workflow-type: tm+mt
-source-wordcount: '83'
-ht-degree: 4%
+source-wordcount: '79'
+ht-degree: 5%
 
 ---
-
 
 # 列表可用身份命名空间
 
@@ -34,11 +34,11 @@ curl -X GET \
 
 **响应**
 
-响应包括对象的数组，每个对象表示可用命名空间。 “[!UICONTROL custom]”值为“[!UICONTROL false]”的命名空间是标准命名空间，而“[!UICONTROL custom]”值为“[!UICONTROL true]”的命名空间是您的组织创建的。
+响应包括对象数组，每个对象表示可用命名空间。 值为“[!UICONTROL custom]”的命名空间是标准命名空间，而值为“[!UICONTROL custom]”的命名空间是您的组织创建的。[!UICONTROL false][!UICONTROL true]
 
 >[!NOTE]
 >
->此响应已被截断为空间。
+>此响应已截断空间。
 
 ```json
 [
@@ -80,4 +80,4 @@ curl -X GET \
 
 ## 后续步骤
 
-进入下一个教程，[创建自定义命名空间](./create-custom-namespace.md)
+转到下一个教程，[创建自定义命名空间](./create-custom-namespace.md)
