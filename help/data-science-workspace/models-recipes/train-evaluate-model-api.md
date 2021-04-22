@@ -7,9 +7,9 @@ type: Tutorial
 description: 本教程将向您介绍如何使用Sensei机器学习API调用创建、培训和评估模型。
 exl-id: 8107221f-184c-426c-a33e-0ef55ed7796e
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
 workflow-type: tm+mt
-source-wordcount: '1237'
+source-wordcount: '1235'
 ht-degree: 1%
 
 ---
@@ -42,15 +42,13 @@ ht-degree: 1%
 >[!NOTE]
 >
 >术语“Engine”、“MLInstance”、“MLService”、“Emperice”和“Model”在UI中称为不同术语。 如果您来自UI，下表将映射差异。
-> 
-> | UI术语 | API术语 |
-> --- | ---
-> | 菜谱 | 引擎 |
-> | 模型 | MLInstance |
-> | 培训运行 | 实验 |
-> | 服务 | MLService |
 
-
+| UI术语 | API术语 |
+| --- | --- |
+| 菜谱 | 引擎 |
+| 模型 | MLInstance |
+| 培训运行 | 实验 |
+| 服务 | MLService |
 
 ### 创建MLInstance
 
@@ -128,7 +126,7 @@ curl -X POST \
 >
 >在`{JSON_PAYLOAD}`中，我们定义用于`tasks`数组中培训和评分的参数。 `{ENGINE_ID}`是要使用的引擎的ID，`tag`字段是用于标识实例的可选参数。
 
-该响应将包含`{INSTANCE_ID}`，它表示所创建的MLInstance。 可以创建具有不同配置的多模型MLI实例。
+该响应包含表示所创建的MLInstance的`{INSTANCE_ID}`。 可以创建具有不同配置的多模型MLI实例。
 
 **响应**
 
