@@ -6,10 +6,10 @@ topic-legacy: developer guide
 description: 了解如何使用Experience Cloud API管理Privacy Service应用程序的隐私作业。
 exl-id: 74a45f29-ae08-496c-aa54-b71779eaeeae
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e226990fc84926587308077b32b128bfe334e812
 workflow-type: tm+mt
-source-wordcount: '1344'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -38,9 +38,11 @@ GET /jobs?regulation={REGULATION}&page={PAGE}&size={SIZE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{REGULATION}` | 要查询的调节类型。 接受的值包括： <ul><li>`gdpr` (欧洲合并)</li><li>`ccpa` （加利福尼亚）</li><li>`lgpd_bra` （巴西）</li><li>`nzpa_nzl` （新西兰）</li><li>`pdpa_tha` （泰国）</li></ul> |
+| `{REGULATION}` | 要查询的调节类型。 接受的值包括： <ul><li>`gdpr` (欧洲合并)</li><li>`ccpa` （加利福尼亚）</li><li>`lgpd_bra` (巴西)</li><li>`nzpa_nzl` (新西兰)</li><li>`pdpa_tha` (泰国)</li></ul> |
 | `{PAGE}` | 要显示的数据页，使用基于0的编号。 默认值为 `0`。 |
 | `{SIZE}` | 每个页面上要显示的结果数。 默认值为`1`，最大值为`100`。 超过最大值会导致API返回400代码错误。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 **请求**
 
@@ -158,7 +160,9 @@ curl -X POST \
 | `expandIDs` | 一个可选属性，当设置为`true`时，它表示处理应用程序中ID的优化（当前仅受[!DNL Analytics]支持）。 如果省略，则此值默认为`false`。 |
 | `priority` | Adobe Analytics使用的可选属性，用于设置处理请求的优先级。 接受的值为`normal`和`low`。 如果省略`priority`，则默认行为为`normal`。 |
 | `analyticsDeleteMethod` | 一个可选属性，它指定Adobe Analytics如何处理个人数据。 此属性接受两个可能的值： <ul><li>`anonymize`:给定用户ID集合引用的所有数据均为匿名数据。如果省略`analyticsDeleteMethod`，则这是默认行为。</li><li>`purge`:所有数据都被完全删除。</li></ul> |
-| `regulation` **（必需）** | 隐私工作的规定。 接受以下值： <ul><li>`gdpr` (欧洲合并)</li><li>`ccpa` （加利福尼亚）</li><li>`lgpd_bra` （巴西）</li><li>`nzpa_nzl` （新西兰）</li><li>`pdpa_tha` （泰国）</li></ul> |
+| `regulation` **（必需）** | 隐私工作的规定。 接受以下值： <ul><li>`gdpr` (欧洲合并)</li><li>`ccpa` （加利福尼亚）</li><li>`lgpd_bra` (巴西)</li><li>`nzpa_nzl` (新西兰)</li><li>`pdpa_tha` (泰国)</li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
 
 **响应**
 
@@ -210,6 +214,8 @@ curl -X POST \
 | --- | --- |
 | `jobId` | 作业的只读、唯一的系统生成的ID。 该值用于查找特定作业的下一步。 |
 
+{style=&quot;table-layout:auto&quot;}
+
 成功提交作业请求后，可以继续执行下一步[检查作业状态](#check-status)。
 
 ## 检查作业{#check-status}的状态
@@ -229,6 +235,8 @@ GET /jobs/{JOB_ID}
 | 参数 | 描述 |
 | --- | --- |
 | `{JOB_ID}` | 要查找的作业的ID。 在[成功创建作业](#create-job)和[列出所有作业](#list)的API响应下返回此ID。`jobId` |
+
+{style=&quot;table-layout:auto&quot;}
 
 **请求**
 
@@ -326,6 +334,8 @@ curl -X GET \
 | `productStatusResponse.results` | 对于某些状态，某些产品可能会返回一个`results`对象，该对象提供`responseMsgDetail`未涵盖的其他信息。 |
 | `downloadURL` | 如果作业的状态为`complete`，则此属性提供URL以将作业结果作为ZIP文件下载。 作业完成后60天内可下载此文件。 |
 
+{style=&quot;table-layout:auto&quot;}
+
 ### 作业状态类别{#status-categories}
 
 下表列表了不同的可能作业状态类别及其相应含义：
@@ -336,6 +346,8 @@ curl -X GET \
 | `processing` | 应用程序已确认该作业，并且当前正在处理。 |
 | `submitted` | 作业会提交到每个适用的应用程序。 |
 | `error` | 在处理作业时发生故障 — 通过检索单个作业详细信息可以获得更具体的信息。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
