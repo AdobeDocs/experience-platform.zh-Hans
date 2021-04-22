@@ -7,9 +7,9 @@ type: Tutorial
 description: 在Adobe Experience Platform Data Science Workspace中，通过合并适合模型意图的现有菜谱来创建机器学习模型。 然后，对模型进行训练和评估，通过微调其相关的超参数来优化其运行效率和效能。 菜谱是可重用的，这意味着可以使用单个菜谱创建多个模型并针对特定用途进行定制。
 exl-id: 6f674cfa-c123-46a3-80e2-9342fe687976
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1078'
 ht-degree: 1%
 
 ---
@@ -110,10 +110,10 @@ ht-degree: 1%
 超参数决定了模型的训练行为，修改超参数将影响模型的精度和精度：
 
 | 超参数 | 描述 | 推荐范围 |
---- | --- | ---
-| learning_rate | 学习率通过learning_rate缩小了每棵树的贡献。 学习率和n估计量之间存在着权衡。 | 0.1 | [2 - 10] /估计数 |
-| n_maitors | 要执行的提升阶段数。 渐变提升对过拟合相当稳健，因此大量渐变通常会产生更好的性能。 | 100 | 100 - 1000 |
-| max_depth | 单个回归估计器的最大深度。 最大深度限制了树中的节点数。 调整此参数以获得最佳性能；最佳值取决于输入变量的交互。 | 3 | 4 - 10 |
+| --- | --- | --- |
+| learning_rate | 学习率通过learning_rate缩小了每棵树的贡献。 学习率和n估计量之间存在着权衡。 | 0.1 |
+| n_maitors | 要执行的提升阶段数。 渐变提升对过拟合相当稳健，因此大量渐变通常会产生更好的性能。 | 100 |
+| max_depth | 单个回归估计器的最大深度。 最大深度限制了树中的节点数。 调整此参数以获得最佳性能；最佳值取决于输入变量的交互。 | 3 |
 
 其他参数确定模型的技术属性：
 
