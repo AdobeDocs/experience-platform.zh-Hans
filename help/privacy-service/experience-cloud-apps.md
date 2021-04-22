@@ -6,10 +6,10 @@ topic-legacy: overview
 description: 本文档提供了有关如何为隐私相关操作配置不同Experience Cloud应用程序的参考。
 exl-id: da21c15f-0b99-4eb7-ac9a-f0fe5e3ba842
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e226990fc84926587308077b32b128bfe334e812
 workflow-type: tm+mt
-source-wordcount: '576'
-ht-degree: 19%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -29,7 +29,7 @@ Adobe Experience Platform [!DNL Privacy Service]是为支持多个Adobe Experien
 以下是与[!DNL Privacy Service]集成的[!DNL Experience Cloud]应用程序的列表，包括它们兼容的[!DNL Privacy Service]功能，以及指向文档的链接以获取详细信息。
 
 | 应用程序 | 访问/删除 | 选择退出销售 | 文档和注意事项 |
---- | :---: | :---: | ---
+| --- | :---: | :---: | --- |
 | Adobe Advertising Cloud | ✓ | ✓ | <ul><li>[访问/删除GDPR文档](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-gdpr.html)</li><li>[CCPA的访问/删除文档](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-access-delete.html)</li><li>[CCPA的选择退出销售文档](https://experienceleague.adobe.com/docs/advertising-cloud/privacy/ad-cloud-ccpa-opt-out-of-sale.html)</li></ul> |
 | Adobe Analytics | ✓ | ✓ | <ul><li>[访问/删除文档](https://docs.adobe.com/content/help/en/analytics/admin/data-governance/an-gdpr-overview.html)</li><li>[!DNL Analytics] 使用隐私报告变量处理 [退出请求](https://docs.adobe.com/content/help/en/analytics/admin/data-governance/consent-variables.html)</li></ul> |
 | Adobe Audience Manager | ✓ | ✓ | <ul><li>[访问/删除文档](https://docs.adobe.com/content/help/zh-Hans/audience-manager/user-guide/overview/data-privacy/data-privacy-requests.html)</li><li>[选择退出文档](https://docs.adobe.com/content/help/en/audience-manager/user-guide/features/declared-ids.html)</li></ul> |
@@ -39,6 +39,7 @@ Adobe Experience Platform [!DNL Privacy Service]是为支持多个Adobe Experien
 | Adobe Primetime身份验证 | ✓ | 不适用 | <ul><li>[访问/删除文档](http://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>[!DNL Primetime] 无法传输数据，因此不适用选择退出销售请求。</li></ul> |
 | Adobe Target | ✓ | 不适用 | <ul><li>[访问/删除文档](https://docs.adobe.com/content/help/zh-Hans/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)</li><li>[!DNL Target] 无法传输数据，因此不适用选择退出销售请求。</li></ul> |
 
+{style=&quot;table-layout:auto&quot;}
 
 ## 自助式应用程序{#self-serve}
 
@@ -51,3 +52,5 @@ Adobe Experience Platform [!DNL Privacy Service]是为支持多个Adobe Experien
 | [Adobe Experience Manager](https://helpx.adobe.com/experience-manager/6-4/managing/using/gdpr-compliance.html) | 概述客户隐私管理员或AEM管理员如何处理GDPR请求。 |
 | [Adobe Experience Manager Livefyre](https://docs.adobe.com/content/help/en/livefyre/using/settings-other/privacy-requests/c-gdpr-compliance.html) | 使用Livefyre进行GDPR访问和删除请求的步骤。 |
 | [Adobe Experience Platform Launch](https://docs.adobelaunch.com/client-side-information/deploy-javascript-tags-to-opt-in-to-launch) | 介绍开发人员如何使用扩展功能和规则生成器，来定义“选择加入”和“选择退出”解决方案。 |
+
+{style=&quot;table-layout:auto&quot;}
