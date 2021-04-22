@@ -6,7 +6,7 @@ topic-legacy: overview
 description: “产品购买预测”方法使您能够预测某类客户购买事件（例如产品购买）的可能性。
 exl-id: 66a45629-33a3-4081-8dbd-b864983b8f57
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
 workflow-type: tm+mt
 source-wordcount: '397'
 ht-degree: 6%
@@ -36,7 +36,7 @@ ht-degree: 6%
 此菜谱使用[XDM模式](../../xdm/home.md)来模拟数据。 用于此菜谱的模式如下所示：
 
 | 字段名称 | 类型 |
---- | ---
+| --- | --- |
 | userId | 字符串 |
 | 性别比 | 数值 |
 | ageY | 数值 |
