@@ -6,7 +6,7 @@ type: Tutorial
 description: Adobe Experience Platform允许您构建和创建自定义功能管道，通过Sensei机器学习框架运行时大规模执行功能工程。 本文档描述了在功能管道中找到的各种类，并提供了一个分步教程，用于使用PySpark中的“模型创作SDK”创建自定义功能管道。
 exl-id: c2c821d5-7bfb-4667-ace9-9566e6754f98
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
 workflow-type: tm+mt
 source-wordcount: '1441'
 ht-degree: 0%
@@ -163,7 +163,6 @@ class MyDataLoader(DataLoader):
 DatasetTransformer提供用于转换输入DataFrame的逻辑并返回新的派生DataFrame。 可以实现此类，以与FeaturePipelineFactory协同工作、作为唯一的特征工程组件工作，或者您可以选择不实现此类。
 
 以下示例扩展了DatasetTransformer类：
-
 
 **PySpark示例**
 
