@@ -6,9 +6,9 @@ topic-legacy: ui guide
 description: 边缘细分是指在Platform中即时评估边缘区段的能力，支持相同页面和下一页个性化使用案例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5256c2a13fc75f7d46911f2ad368188d9e818921
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '349'
 ht-degree: 4%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 4%
 | 查询类型 | 详细信息 |
 | ---------- | ------- |
 | 相对时间窗口 | 如果查询引用时间窗口，则无法使用边缘分割来评估该窗口。 |
-| 取反 | 如果查询包含取反，则无法使用边缘分段对其进行计算。 |
+| 取反 | 如果查询包含取反或`not`事件，则无法使用边缘分段对其进行计算。 |
 | 多个事件 | 如果查询包含多个事件，则无法使用边缘分割对其进行评估。 |
 
 ## 后续步骤
