@@ -6,9 +6,9 @@ topic-legacy: datasets
 description: 了解如何在Adobe Experience Platform用户界面中处理数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d2f19cc97082f75e66cf38e54b5bdb89482930ed
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1082'
 ht-degree: 0%
 
 ---
@@ -32,22 +32,22 @@ ht-degree: 0%
 
 在[!DNL Experience Platform] UI中，单击左侧导航中的&#x200B;**[!UICONTROL Datasets]**&#x200B;以打开&#x200B;**[!UICONTROL Datasets]**&#x200B;仪表板。 仪表板会列表您组织的所有可用数据集。 将显示每个列出的数据集的详细信息，包括其名称、数据集附带的模式和最近摄取运行的状态。
 
-![](../images/datasets/user-guide/browse_datasets.png)
+![](../images/datasets/user-guide/browse-datasets.png)
 
 单击数据集的名称以访问其&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕并查看您选择的数据集的详细信息。 “活动”选项卡包括图形，该图形可视化消费消息的速率，以及成功和失败批的列表。
 
-![](../images/datasets/user-guide/dataset_activity_1.png)
-![](../images/datasets/user-guide/dataset_activity_2.png)
+![](../images/datasets/user-guide/dataset-activity-1.png)
+![](../images/datasets/user-guide/dataset-activity-2.png)
 
 ## 预览数据集
 
 在&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕中，单击屏幕右上角附近的&#x200B;**[!UICONTROL Preview dataset]**&#x200B;以预览最多100行数据。 如果预览集为空，则预览链接将停用，而是表示该数据集不可用。
 
-![](../images/datasets/user-guide/click_to_preview.png)
+![](../images/datasets/user-guide/click-to-preview.png)
 
 在“预览”窗口中，右侧将显示模式集的分层视图。
 
-![](../images/datasets/user-guide/preview_dataset.png)
+![](../images/datasets/user-guide/preview-dataset.png)
 
 要获得更可靠的数据访问方法，[!DNL Experience Platform]提供下游服务，如[!DNL Query Service]和[!DNL JupyterLab]来浏览和分析数据。 有关更多信息，请参阅以下文档:
 
@@ -58,7 +58,7 @@ ht-degree: 0%
 
 要创建新数据集，请单击&#x200B;**[!UICONTROL Datasets]**&#x200B;仪表板中的&#x200B;**[!UICONTROL Create dataset]**&#x200B;进行开始。
 
-![](../images/datasets/user-guide/click_to_create.png)
+![](../images/datasets/user-guide/click-to-create.png)
 
 在下一个屏幕中，您将看到以下两个用于创建新数据集的选项：
 
@@ -69,25 +69,25 @@ ht-degree: 0%
 
 在&#x200B;**[!UICONTROL Create dataset]**&#x200B;屏幕中，单击&#x200B;**[!UICONTROL Create dataset from schema]**&#x200B;以创建新的空数据集。
 
-![](../images/datasets/user-guide/create_dataset_schema.png)
+![](../images/datasets/user-guide/create-dataset-schema.png)
 
 出现&#x200B;**[!UICONTROL Select schema]**&#x200B;步骤。 浏览模式列表，选择模式集将遵循的，然后单击&#x200B;**[!UICONTROL Next]**。
 
-![](../images/datasets/user-guide/select_schema.png)
+![](../images/datasets/user-guide/select-schema.png)
 
 出现&#x200B;**[!UICONTROL Configure dataset]**&#x200B;步骤。 为数据集提供名称和可选描述，然后单击&#x200B;**[!UICONTROL Finish]**&#x200B;以创建数据集。
 
-![](../images/datasets/user-guide/configure_dataset_schema.png)
+![](../images/datasets/user-guide/configure-dataset-schema.png)
 
 ### 使用CSV文件{#csv}创建数据集
 
 使用CSV文件创建数据集时，会创建一个专门模式来为数据集提供与提供的CSV文件匹配的结构。 在&#x200B;**[!UICONTROL Create dataset]**&#x200B;屏幕中，单击显示&#x200B;**[!UICONTROL Create dataset from CSV file]**&#x200B;的框。
 
-![](../images/datasets/user-guide/create_dataset_csv.png)
+![](../images/datasets/user-guide/create-dataset-csv.png)
 
 出现&#x200B;**[!UICONTROL Configure]**&#x200B;步骤。 为数据集提供名称和可选描述，然后单击&#x200B;**[!UICONTROL Next]**。
 
-![](../images/datasets/user-guide/configure_dataset_csv.png)
+![](../images/datasets/user-guide/configure-dataset-csv.png)
 
 出现&#x200B;**[!UICONTROL Add data]**&#x200B;步骤。 通过将CSV文件拖放到屏幕的中心，或单击&#x200B;**[!UICONTROL Browse]**&#x200B;浏览您的文件目录，即可上传该CSV文件。 文件最大可以有10GB大小。 上载CSV文件后，单击&#x200B;**[!UICONTROL Save]**&#x200B;创建数据集。
 
@@ -95,7 +95,7 @@ ht-degree: 0%
 >
 >CSV列名必须与字母数字字符开始，并且只能包含字母、数字和下划线。
 
-![](../images/datasets/user-guide/add_csv_data.png)
+![](../images/datasets/user-guide/add-csv-data.png)
 
 ## 为实时客户用户档案{#enable-profile}启用数据集
 
@@ -112,7 +112,7 @@ ht-degree: 0%
 >
 >如果数据集已包含数据，然后为[!DNL Profile]启用，则[!DNL Profile]不会自动使用现有数据。 在为[!DNL Profile]启用数据集后，建议您重新摄取任何现有数据，以使其向客户用户档案贡献。
 
-![](../images/datasets/user-guide/enable_dataset_profiles.png)
+![](../images/datasets/user-guide/enable-dataset-profiles.png)
 
 ## 管理和强制数据集上的数据管理
 
@@ -126,11 +126,11 @@ ht-degree: 0%
 >
 >无法删除由Adobe应用程序和服务(如Adobe Analytics、Adobe Audience Manager或[!DNL Offer Decisioning])创建和使用的数据集。
 
-![](../images/datasets/user-guide/delete_dataset.png)
+![](../images/datasets/user-guide/delete-dataset.png)
 
 此时将显示确认框。 单击&#x200B;**[!UICONTROL Delete]**&#x200B;以确认删除数据集。
 
-![](../images/datasets/user-guide/confirm_delete.png)
+![](../images/datasets/user-guide/confirm-delete.png)
 
 ## 删除启用用户档案的数据集
 
@@ -142,15 +142,15 @@ ht-degree: 0%
 
 在[!DNL Experience Platform] UI中，单击左侧导航中的&#x200B;**[!UICONTROL Monitoring]**。 **[!UICONTROL Monitoring]**&#x200B;仪表板允许您视图来自批处理或流摄取的入站数据的状态。 要视图单个批的状态，请单击&#x200B;**[!UICONTROL Batch end-to-end]**&#x200B;或&#x200B;**[!UICONTROL Streaming end-to-end]**。 仪表板列表所有批处理或流式摄取运行，包括那些成功、失败或仍在进行的运行。 每个列表都提供批的详细信息，包括批ID、目标数据集的名称和摄取的记录数。 如果为[!DNL Profile]启用目标数据集，则还会显示所摄取的标识和用户档案记录数。
 
-![](../images/datasets/user-guide/batch_listing.png)
+![](../images/datasets/user-guide/batch-listing.png)
 
 您可以单击单个&#x200B;**[!UICONTROL Batch ID]**&#x200B;访问&#x200B;**[!UICONTROL Batch overview]**&#x200B;仪表板，并查看该批的详细信息，包括当该批未能收录时的错误日志。
 
-![](../images/datasets/user-guide/batch_overview.png)
+![](../images/datasets/user-guide/batch-overview.png)
 
 如果要删除批，可以单击仪表板右上角附近的&#x200B;**[!UICONTROL Delete batch]**&#x200B;进行删除。 这样做还会从最初摄取批的数据集中删除其记录。
 
-![](../images/datasets/user-guide/delete_batch.png)
+![](../images/datasets/user-guide/delete-batch.png)
 
 ## 后续步骤
 
