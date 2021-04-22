@@ -6,9 +6,9 @@ topic-legacy: overview
 description: 本文档概述了XDM ExperienceEvent类。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 9b63b38e664e5776ca638f8ed407896f185bcab0
 workflow-type: tm+mt
-source-wordcount: '812'
+source-wordcount: '861'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 1%
 | `eventMergeId` | 导致创建记录的所摄取批的ID。 数据摄取时，系统会自动填充此字段。 |
 | `eventType` | 一个字符串，它指示记录的主事件类型。 [附录部分](#eventType)中提供了已接受的值及其定义。 |
 | `identityMap` | 一个映射字段，其中包含事件所应用的个人的一组命名空间标识。 系统会在摄取标识数据时自动更新此字段。 为了将此字段正确用于[实时客户用户档案](../../profile/home.md)，请不要尝试手动更新数据操作中字段的内容。<br /><br />有关模式合成的用例的详细信 [息，请参](../schema/composition.md#identityMap) 阅合成基础知识中有关标识映射的部分。 |
-| `timestamp` | 事件或观察发生的时间，按照[RFC 3339第5.6](https://tools.ietf.org/html/rfc3339#section-5.6)节的格式设置。 |
+| `timestamp` | 事件发生时的ISO 8601时间戳，格式按照[RFC 3339第5.6](https://tools.ietf.org/html/rfc3339#section-5.6)节进行。<br><br>此时间戳只 **** 能表示事件本身的观察，并且必须发生在过去。如果您的细分使用案例需要使用将来可能发生的时间戳（如启程日期），则这些值必须在您的体验事件模式的其他位置受到约束。 |
 
 ## 兼容混音{#mixins}
 
