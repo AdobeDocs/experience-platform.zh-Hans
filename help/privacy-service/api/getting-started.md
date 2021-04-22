@@ -6,9 +6,9 @@ description: Privacy Service API允许开发人员创建和管理客户请求，
 topic-legacy: developer guide
 exl-id: c1d05e30-ef8f-4adf-87e0-1d6e3e9e9f9e
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e226990fc84926587308077b32b128bfe334e812
 workflow-type: tm+mt
-source-wordcount: '761'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -35,9 +35,9 @@ Adobe Experience Platform [!DNL Privacy Service]提供一个RESTful API和用户
 
 要调用[!DNL Privacy Service] API，必须首先收集要在所需标头中使用的访问凭据：
 
-* 授权：承载`{ACCESS_TOKEN}`
-* x-api-key:`{API_KEY}`
-* x-gw-ims-org-id:`{IMS_ORG}`
+* `Authorization: Bearer {ACCESS_TOKEN}`
+* `x-api-key: {API_KEY}`
+* `x-gw-ims-org-id: {IMS_ORG}`
 
 这包括获取Adobe Admin Console中[!DNL Experience Platform]的开发人员权限，然后在Adobe开发人员控制台中生成凭据。
 
