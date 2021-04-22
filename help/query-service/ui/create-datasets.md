@@ -7,7 +7,7 @@ type: Tutorial
 description: Adobe Experience Platform 查询 Service允许从UI创建数据集。 创建数据集后，可以像Data Lake中的任何其他数据集一样访问该数据集，并用于各种用例。
 exl-id: 6f6c049d-f19f-4161-aeb4-3a01eca7dc75
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d2f19cc97082f75e66cf38e54b5bdb89482930ed
 workflow-type: tm+mt
 source-wordcount: '323'
 ht-degree: 0%
@@ -23,9 +23,9 @@ ht-degree: 0%
 1. 使用连接的客户端编写查询并验证输出。
 2. 登录到[!DNL Platform] UI并转到查询。
 3. 在列表中查找查询并将鼠标悬停在行上。
-4. 单击 **[!UICONTROL Create Dataset]**。![图像](../images/ui/output-dataset.png)
+4. 选择 **[!UICONTROL Create Dataset]**。![图像](../images/ui/create-datasets/output-dataset.png)
 5. 输入以LDAP ID为前缀的数据集名称(不必是唯一的或SQL安全的；系统根据此处提供的名称生成“表名”)。
-6. 输入数据集描述，然后单击&#x200B;**[!UICONTROL Run Query]**。![图像](../images/ui/run-query.png)
+6. 输入数据集描述并选择&#x200B;**[!UICONTROL Run Query]**。![图像](../images/ui/create-datasets/run-query.png)
 7. 观看查询完成，然后转到数据集列表页以查看刚刚创建的数据集。
 
 创建数据集后，可以像[!DNL Data Lake]中的任何其他数据集一样访问该数据集，并用于各种用例。
