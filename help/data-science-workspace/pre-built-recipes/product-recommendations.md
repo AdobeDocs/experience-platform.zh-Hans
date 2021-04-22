@@ -6,7 +6,7 @@ topic-legacy: overview
 description: 产品Recommendations菜谱使您能够根据客户的需求和兴趣提供个性化的产品推荐。 借助准确的预测模型，客户的购买历史记录可以为您提供关于他们可能感兴趣的产品的洞察。
 exl-id: 508d55af-c33b-4f1d-b1b6-f00ed5d12bf9
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 441d7822f287fabf1b06cdf3f6982f9c910387a8
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 2%
@@ -39,7 +39,7 @@ ht-degree: 2%
 ### 输入数据模式
 
 | 字段名称 | 类型 |
---- | ---
+| --- | --- |
 | itemId | 字符串 |
 | interactionType | 字符串 |
 | timestamp | 字符串 |
@@ -48,7 +48,7 @@ ht-degree: 2%
 ### 输出数据模式
 
 | 字段名称 | 类型 |
---- | ---
+| --- | --- |
 | 建议 | 字符串 |
 | userId | 整数 |
 
