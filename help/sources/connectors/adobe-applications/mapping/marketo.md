@@ -4,14 +4,14 @@ solution: Experience Platform
 title: Marketo Engage源的映射字段
 topic-legacy: overview
 description: 下表包含Marketo数据集中的字段与其相应XDM字段之间的映射。
+exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
 translation-type: tm+mt
-source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
+source-git-commit: 8f03b2e8a10d57fcae77dedecdce0e0176ba04fd
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '453'
 ht-degree: 3%
 
 ---
-
 
 # （测试版）[!DNL Marketo Engage]字段映射
 
@@ -158,6 +158,7 @@ ht-degree: 3%
 | `company` | `accountName` |
 | `companyNotes` | `accountDescription` |
 | `site` | `accountSite` |
+| `mktoCdpParentOrgId` | `accountParentID` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -177,8 +178,8 @@ ht-degree: 3%
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
-| `marketingListMemberID` | `staticListMemberID` | 主标识 |
-| `marketingListID` | `staticListID` | 关系 |
+| `staticListMemberID` | `marketingListMemberID` | 主标识 |
+| `staticListID` | `marketingListID` | 关系 |
 | `personID` | `personID` | 关系 |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 
@@ -234,7 +235,7 @@ ht-degree: 3%
 | `isWon` | `isWon` |
 | `quantity` | `opportunityQuantity` |
 | `probability` | `probabilityPercentage` |
-| `Campaign-ID` | `campaignID` | 仅在您使用Salesforce集成时建议。 |
+| `mktoCdpSourceCampaignId` | `campaignID` | 仅在您使用Salesforce集成时建议。 |
 | `lastActivityDate` | `lastActivityDate` |
 | `leadSource` | `leadSource` |
 | `nextStep` | `nextStep` |
@@ -279,7 +280,7 @@ ht-degree: 3%
 | `mktoCdpCnvContactPersonId` | `b2b.convertedContactID` |
 | `mktoCdpIsConverted` | `b2b.isConverted` |
 | `mktoCdpConvertedDate` | `b2b.convertedDate` |
-| `sfdcId` | `extSourceSystemAudit.externalID` | 次身份 |
+| `sfdcLeadId` | `extSourceSystemAudit.externalID` | 次身份 |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 | `title` | `extendedWorkDetails.jobTitle` |
@@ -308,8 +309,13 @@ ht-degree: 3%
 | `id` | `personComponents.sourcePersonID` |
 | `email` | `personComponents.workEmail.address` |
 | `email` | `workEmail.address` |
+| `to_object('ECID',arrays_to_objects('id',explode(ecids)))` | `identityMap` |
 
 {style=&quot;table-layout:auto&quot;}
+
+>[!TIP]
+>
+>`to_object('ECID',arrays_to_objects('id',explode(ecids)))`源字段是一个计算字段，必须使用平台UI中的[!UICONTROL Add calculated field]选项添加该字段。 有关详细信息，请参阅关于[添加计算字段](../../../../ingestion/tutorials/map-a-csv-file.md)的教程。
 
 ## 后续步骤
 
