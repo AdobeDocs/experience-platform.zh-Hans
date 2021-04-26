@@ -7,7 +7,7 @@ type: Tutorial
 description: 本教程介绍如何使用Adobe Experience Platform用户界面将CSV文件映射到XDM模式。
 exl-id: 15f55562-269d-421d-ad3a-5c10fb8f109c
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 0e79d339ddc0301486ea3e53a3fd52877ff6a2c8
 workflow-type: tm+mt
 source-wordcount: '828'
 ht-degree: 1%
@@ -85,7 +85,7 @@ ht-degree: 1%
 
 如果要删除其中一个映射，请将鼠标悬停在该映射上，然后选择减号图标。
 
-### 添加计算字段
+### 添加计算字段{#add-calculated-field}
 
 计算字段允许根据输入模式中的属性创建值。 然后，可以将这些值分配给目标模式中的属性，并为其提供名称和说明，以便更轻松地引用。
 
