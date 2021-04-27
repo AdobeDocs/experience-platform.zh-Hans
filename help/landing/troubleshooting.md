@@ -8,9 +8,9 @@ topic-legacy: getting started
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a03d851f3e0037b8241ca1f1de890903b08feac4
 workflow-type: tm+mt
-source-wordcount: '1715'
+source-wordcount: '1768'
 ht-degree: 4%
 
 ---
@@ -179,6 +179,16 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 当POST、PUT或PATCH请求的标头无效或缺少`Content-Type`标头时，将显示此错误消息。 请确保请求中包含标头，并且其值为`application/json`。
 
+### 用户区域缺失
+
+```json
+{
+    "error_code": "403027",
+    "message": "User region is missing"
+}
+```
+
+当您的帐户（由提供的身份验证凭据表示）未与产品用户档案关联以进行Experience Platform时，将显示此错误消息。 按照平台API身份验证教程中[生成访问凭据](./api-authentication.md#authentication-for-each-session)的步骤，将平台添加到您的帐户并相应地更新您的身份验证凭据。
 
 ## 服务疑难解答目录{#service-troubleshooting-directory}
 
