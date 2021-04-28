@@ -2,14 +2,14 @@
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；oracle雄辩；oracle
 title: Oracle Elvoca连接
 description: Oracle Evola是由Oracle提供的一个软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索生成。
+exl-id: 6eaa79ff-8874-423b-bdff-aa04f6101a53
 translation-type: tm+mt
-source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
+source-git-commit: 29b4eaca06e2f1032584a0b4720490934a6e1fa7
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '622'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Oracle Eloqua] 连接
 
@@ -20,6 +20,12 @@ ht-degree: 0%
 ## 导出类型{#export-type}
 
 **基于用户档案**  — 您正在导出区段的所有成员，以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性”屏幕 [中选择](../../ui/activate-destinations.md#select-attributes)。
+
+## IP地址允许列表{#allow-list}
+
+在使用SFTP存储设置电子邮件营销目标时，Adobe建议您向允许列表添加某些IP范围。
+
+如果您需要将AdobeIP添加到允许列表，请参阅云存储目标](../cloud-storage/ip-address-allow-list.md)的[ IP地址允许列表。
 
 ## 连接到目标{#connect-destination}
 
