@@ -4,9 +4,9 @@ title: Facebook连接
 description: 根据散列的电子邮件为Facebook活动激活受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
 translation-type: tm+mt
-source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
+source-git-commit: 1e9e5831b19738285affeb0337985c7cb0d45ebf
 workflow-type: tm+mt
-source-wordcount: '1133'
+source-wordcount: '1089'
 ht-degree: 2%
 
 ---
@@ -36,12 +36,6 @@ ht-degree: 2%
 要跨社交媒体进行目标，他们可以将客户数据从CRM载入Adobe Experience Platform，然后使用电子邮件地址作为标识符。
 
 接下来，他们可以使用离线数据（包括关联的会员ID和客户层）来构建新的受众细分，以便通过[!DNL Facebook]目标进行目标。
-
-## [!DNL Facebook]目标{#data-governance}的数据管理
-
->[!IMPORTANT]
->
->发送到[!DNL Facebook]的数据不能包括拼接身份。 您有责任履行此义务，并可通过确保为激活选择的区段在其合并策略中不使用拼接选项来执行。 了解有关[合并策略](/help/profile/ui/merge-policies.md)的更多信息。
 
 ## 支持的身份{#supported-identities}
 
