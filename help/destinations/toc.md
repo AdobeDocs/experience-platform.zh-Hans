@@ -5,9 +5,9 @@ user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定�
 description: 此文档列表Adobe Experience Platform目标的目录
 feature: 目标
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 020192469127e8f25f0d61e33b4b5dc60da6b57d
 workflow-type: tm+mt
-source-wordcount: '470'
+source-wordcount: '471'
 ht-degree: 10%
 
 ---
@@ -80,7 +80,7 @@ ht-degree: 10%
    * 云存储目标{#cloud-storage}
       * [云存储目标概述](./catalog/cloud-storage/overview.md)
       * [创建云存储目标](./catalog/cloud-storage/workflow.md)
-      * [Amazon Kinesis连接](./catalog/cloud-storage/amazon-kinesis.md)
+      * [（测试版）Amazon Kinesis连接](./catalog/cloud-storage/amazon-kinesis.md)
       * [Amazon S3连接](./catalog/cloud-storage/amazon-s3.md)
       * [Azure Blob连接](./catalog/cloud-storage/azure-blob.md)
       * [（测试版）Azure事件集线器连接](./catalog/cloud-storage/azure-event-hubs.md)
@@ -122,7 +122,7 @@ ht-degree: 10%
       * [创建社交目标](./catalog/social/workflow.md)
       * [Adobe Livefyre扩展](./catalog/social/adobe-livefyre.md)
       * [Facebook连接](./catalog/social/facebook.md)
-      * [Linkedin匹配受众连接](./catalog/social/linkedin.md)
+      * [linkedIn匹配受众连接](./catalog/social/linkedin.md)
    * 调查目标{#survey}
       * [调查目标概述](./catalog/survey/overview.md)
       * [Foresee扩展目标](./catalog/survey/foresee.md)
