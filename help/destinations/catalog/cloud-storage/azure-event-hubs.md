@@ -1,15 +1,15 @@
 ---
 keywords: Azure事件集线器目标；Azure事件集线器；azure eventhub
-title: （测试版）Azure事件集线器连接
-description: 创建到Azure事件集线器存储的实时出站连接，以流式传输来自Experience Platform的数据。
+title: （测试版）！DNL Azure 事件集线器]连接
+description: 创建到！DNL Azure 事件 Hubs]存储的实时出站连接，以流化来自Experience Platform的数据。
+exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
 translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+source-git-commit: ce5001d0a1c95901089915ae9836fdd436f12297
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '534'
 ht-degree: 2%
 
 ---
-
 
 # （测试版）[!DNL Azure Event Hubs]连接
 
@@ -113,3 +113,4 @@ ht-degree: 2%
 >* [连接到Azure事件中心，并使用流服务API激活数据](../../api/streaming-destinations.md)
 >* [AWS Kinesis目标](./amazon-kinesis.md)
 >* [目标类型和类别](../../destination-types.md)
+
