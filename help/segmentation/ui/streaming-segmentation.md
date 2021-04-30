@@ -6,9 +6,9 @@ topic-legacy: ui guide
 description: Adobe Experience Platform上的流细分使您能够近乎实时地进行细分，同时专注于数据的丰富性。 借助流细分，当数据进入平台时，细分资格现在会发生，从而缓解了计划和运行细分作业的需求。 借助此功能，现在可以在数据传递到平台时评估大多数细分规则，这意味着，在不运行计划的细分作业的情况下，区段成员资格将保持最新。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b4a04b52ff9a2b7a36fda58d70a2286fea600ff1
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '810'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ ht-degree: 0%
 | 仅用户档案 | 只引用用户档案属性的任何区段定义。 |  |
 | 指用户档案的传入点击 | 引用单个传入事件（无时间限制）和一个或多个用户档案属性的任何区段定义。 | ![](../images/ui/streaming-segmentation/profile-hit.png) |
 | 在相对时间窗口内引用用户档案的传入点击 | 引用单个传入事件和一个或多个用户档案属性的任何区段定义。 | ![](../images/ui/streaming-segmentation/profile-relative-success.png) |
-| 分类 | 包含一个或多个批或流区段的任何区段定义。 | ![](../images/ui/streaming-segmentation/two-batches.png) |
+| 分类 | 包含一个或多个批或流区段的任何区段定义。 **注意：** 如果使用区段，则每24小时发生一次用户档案 **资格取消**。 | ![](../images/ui/streaming-segmentation/two-batches.png) |
 | 引用事件的多个用户档案 | 在过去24小时内引用多个事件&#x200B;**且（可选）具有一个或多个用户档案属性的任何区段定义。** | ![](../images/ui/streaming-segmentation/event-history-success.png) |
 
 在以下情况下，将&#x200B;**不**&#x200B;启用区段定义以进行流分段：
