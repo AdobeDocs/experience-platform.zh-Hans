@@ -2,12 +2,11 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 实时客户用户档案中的隐私请求处理
-topic-legacy: overview
 type: Documentation
 description: Adobe Experience Platform Privacy Service处理客户访问、销选择退出售或删除其个人数据的请求，这些请求由许多隐私法规规定。 本文档涵盖与处理实时客户用户档案的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8d16a3030c663d40daed6c5105af07b2d2d5c7bf
 workflow-type: tm+mt
 source-wordcount: '1091'
 ht-degree: 0%
@@ -24,9 +23,9 @@ Adobe Experience Platform [!DNL Privacy Service]处理客户访问、销选择�
 
 在阅读本指南之前，建议您对以下[!DNL Experience Platform]服务有所了解：
 
-* [[!DNL Privacy Service]](home.md):管理跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的客户请求。
+* [[!DNL Privacy Service]](../privacy-service/home.md):管理跨Adobe Experience Cloud应用程序访问、选择退出销售或删除其个人数据的客户请求。
 * [[!DNL Identity Service]](../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化带来的根本挑战。
-* [[!DNL Real-time Customer Profile]](../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
+* [[!DNL Real-time Customer Profile]](home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
 
 ## 了解身份命名空间{#namespaces}
 
@@ -48,7 +47,7 @@ Identity Service维护全局定义（标准）和用户定义（自定义）标�
 >
 >还必须指出，无法保证完成隐私请求所花费的时间。 如果在请求仍在处理时，您的[!DNL Profile]数据中发生更改，则也无法保证是否处理了这些记录。
 
-### 使用API
+### 使用 API
 
 在API中创建作业请求时，`userIDs`中提供的任何ID都必须使用特定的`namespace`和`type`。 必须为`namespace`值提供由[!DNL Identity Service]识别的有效[标识命名空间](#namespaces)，而`type`必须为`standard`或`unregistered`(对于标准和自定义命名空间，分别为)。
 
