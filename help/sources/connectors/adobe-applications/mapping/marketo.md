@@ -6,10 +6,10 @@ topic-legacy: overview
 description: 下表包含Marketo数据集中的字段与其相应XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
 translation-type: tm+mt
-source-git-commit: 8f03b2e8a10d57fcae77dedecdce0e0176ba04fd
+source-git-commit: 5d37c9664f60e9d962e866c6d480d2ef2e0bfff3
 workflow-type: tm+mt
-source-wordcount: '453'
-ht-degree: 3%
+source-wordcount: '330'
+ht-degree: 4%
 
 ---
 
@@ -259,10 +259,6 @@ ht-degree: 3%
 
 ## 人{#persons}
 
-在平台UI的[!DNL Profiles]仪表板中，如果用于浏览的合并策略中ID拼接的值设置为`None`，则链接的标识窗口将仅显示主标识属性。
-
-作为解决方法，您可以将ID拼接字段从`None`更新为`Private graph`，以便查看所有与[!DNL Profile]链接的身份。 或者，您也可以创建新的合并策略，或者使用包含设置为`Private graph`的ID拼接值的其他合并策略。 如果选择创建新的合并策略或使用其他合并策略，则必须确保策略包含用于[!DNL Marketo]人员映射集的相同模式类型。 有关详细信息，请参阅[合并策略UI指南](../../../../profile/ui/merge-policies.md)。
-
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
 | `id` | `personID` | 主要身份 |
@@ -313,7 +309,7 @@ ht-degree: 3%
 
 {style=&quot;table-layout:auto&quot;}
 
->[!TIP]
+>[!NOTE]
 >
 >`to_object('ECID',arrays_to_objects('id',explode(ecids)))`源字段是一个计算字段，必须使用平台UI中的[!UICONTROL Add calculated field]选项添加该字段。 有关详细信息，请参阅关于[添加计算字段](../../../../ingestion/tutorials/map-a-csv-file.md)的教程。
 
