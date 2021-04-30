@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform；主页；热门主题；Marketo源连接器；命名空间;模式
 solution: Experience Platform
-title: 'Marketo命名空间 '
+title: Marketo命名空间
 topic-legacy: overview
 description: 本文档概述创建Marketo Engage源连接器时所需的自定义命名空间。
+exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
 translation-type: tm+mt
-source-git-commit: bea6b35627b0e913c894c38ba9553085ba0aa26f
+source-git-commit: 5322adb4b3a244de92300e7ce9d942ad4b968454
 workflow-type: tm+mt
-source-wordcount: '1215'
-ht-degree: 5%
+source-wordcount: '1161'
+ht-degree: 6%
 
 ---
-
 
 # （测试版）[!DNL Marketo Engage]命名空间和模式
 
@@ -80,7 +80,7 @@ ht-degree: 5%
 
 | 显示名称 | 身份符号 | 身份类型 | 颁发者类型 | 颁发者实体类型 | [!DNL Salesforce] 订阅组织ID示例 |
 | --- | --- | --- | --- | --- | --- |
-| `salesforce_person_{SALESFORCE_ORGANIZATION_ID}` | 自动生成 | `CROSS_DEVICE` | [!DNL Salesforce] | `person` | `00DA0000000Hz79` |
+| `salesforce_lead_{SALESFORCE_ORGANIZATION_ID}` | 自动生成 | `CROSS_DEVICE` | [!DNL Salesforce] | `lead` | `00DA0000000Hz79` |
 | `salesforce_account_{SALESFORCE_ORGANIZATION_ID}` | 自动生成 | `B2B_ACCOUNT` | [!DNL Salesforce] | `account` | `00DA0000000Hz79` |
 | `salesforce_opportunity_{SALESFORCE_ORGANIZATION_ID}` | 自动生成 | `B2B_OPPORTUNITY` | [!DNL Salesforce] | `opportunity` | `00DA0000000Hz79` |
 | `salesforce_opportunity_contact_role_{SALESFORCE_ORGANIZATION_ID}` | 自动生成 | `B2B_OPPORTUNITY_PERSON` | [!DNL Salesforce] | `opportunity contact role` | `00DA0000000Hz79` |
@@ -124,24 +124,20 @@ Experience Platform 会使用架构，以便以可重用的一致方式描述数
 >
 >请向左/向右滚动以视图表的完整内容。
 
-| 模式名称 | 基类 | Mixins | 主要身份 | 主要身份命名空间 | 次身份 | 辅助身份命名空间 | 关系 | 注释 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [!DNL Marketo] 公司{MUNCHKIN_ID} | XDM业务帐户 | XDM业务帐户详细信息 | `accountID` 在基类中 | `marketo_company_{MUNCHKIN_ID}` | `extSourceSystemAudit.externalID` 在基类中 | `salesforce_account_{SALESFORCE_ORGANIZATION_ID}` | <ul><li>`accountParentID` XDM业务帐户详细信息混合</li><li>类型：一对一</li><li>参考模式:Marketo公司{MUNCHKIN_ID}</li><li>命名空间: `marketo_company_{MUNCHKIN_ID}`</li></ul> |
-| [!DNL Marketo] 人物{MUNCHKIN_ID} | XDM个人用户档案 | <ul><li>XDM业务人员详细信息</li><li>XDM业务人员组件</li></ul> | `personID` 在基类中 | `marketo_person_{MUNCHKIN_ID}` | <ol><li>`extSourceSystemAudit.externalID` XDM企业人员详细信息混合</li><li>`workEmail.address` XDM企业人员详细信息混合</li><li>`identityMap` 身份映射混音</ol></li> | <ol><li>`salesforce_person_{SALESFORCE_ORGANIZATION_ID}`</li><li>电子邮件</li><li>ECID</li></ol> | <ul><li>`personComponents.sourceAccountID` XDM企业人员组件混合</li><li>类型：多对一</li><li>参考模式:Marketo公司{MUNCHKIN_ID}</li><li>命名空间: `marketo_company_{MUNCHKIN_ID}`</li><li>目标属性：`accountID`</li><li>当前模式中的关系名称：帐户</li><li>引用模式中的关系名称：人物</li></ul> |
-| [!DNL Marketo] 机会{MUNCHKIN_ID} | XDM业务机会 | XDM业务机会详细信息 | `opportunityID` 在基类中 | `marketo_opportunity_{MUNCHKIN_ID}` | `extSourceSystemAudit.externalID` 在基类中 | `salesforce_opportunity_{SALESFORCE_ORGANIZATION_ID}` | <ul><li>`accountID` 在基类中</li><li>类型：多对一</li><li>参考模式:Marketo公司{MUNCHKIN_ID}</li><li>命名空间: `marketo_company_{MUNCHKIN_ID}`</li><li>目标属性：`accountID`</li><li>当前模式中的关系名称：帐户</li><li>引用模式中的关系名称：机会</li></ul> |
-| [!DNL Marketo] 机会联系角色{MUNCHKIN_ID} | XDM业务机会人关系 | None | `opportunityPersonID` 在基类中 | `marketo_opportunity_contact_role_{MUNCHKIN_ID}` | `extSourceSystemAudit.externalID` 在基类中 | `salesforce_opportunity_contact_role_{SALESFORCE_ORGANIZATION_ID}` | 第一种关系<ul><li>`personID` 在基类中</li><li>类型：多对一</li><li>参考模式:Marketo人{MUNCHKIN_ID}</li><li>命名空间: `marketo_person_{MUNCHKIN_ID}`</li><li>目标属性：`personID`</li><li>当前模式中的关系名称：人</li><li>引用模式中的关系名称：机会</li></ul>第二种关系<ul><li>`opportunityID` 在基类中</li><li>类型：多对一</li><li>参考模式:Marketo机会{MUNCHKIN_ID}</li><li>命名空间: `marketo_opportunity_{MUNCHKIN_ID}`</li><li>目标属性：`opportunityID`</li><li>当前模式中的关系名称：机会</li><li>引用模式中的关系名称：人物</li></ul> |
-| [!DNL Marketo] 项目{MUNCHKIN_ID} | XDM业务活动 | XDM业务活动详细信息 | `campaignID` 在基类中 | `marketo_program_{MUNCHKIN_ID}` | `extSourceSystemAudit.externalID` 在基类中 | `salesforce_campaign_SALESFORCE_ORGANIZATION_ID}` |
-| [!DNL Marketo] 项目成员{MUNCHKIN_ID} | XDM业务活动会员 | XDM业务活动会员详细信息 | `campaignMemberID` 在基类中 | `marketo_program_member_{MUNCHKIN_ID}` | 无 | 无 | 第一种关系<ul><li>`personID` 在基类中</li><li>类型：多对一</li><li>参考模式:Marketo人{MUNCHKIN_ID}</li><li>命名空间: `marketo_person_{MUNCHKIN_ID}`</li><li>目标属性：`personID`</li><li>当前模式中的关系名称：人</li><li>引用模式中的关系名称：项目</li></ul>第二种关系<ul><li>`campaignID` 在基类中</li><li>类型：多对一</li><li>参考模式:Marketo项目{MUNCHKIN_ID}</li><li>命名空间: `marketo_program_{MUNCHKIN_ID}`</li><li>目标属性：campaignID</li><li>当前模式中的关系名称：项目</li><li>引用模式中的关系名称：人物</li></ul> |
-| [!DNL Marketo] 静态列表{MUNCHKIN_ID} | XDM业务营销列表 | 无 | `marketingListID` 在基类中 | `marketo_static_list_{MUNCHKIN_ID}` | 无 | 无 | 无 | 静态列表未从[!DNL Salesforce]同步，因此没有辅助标识 |
-| [!DNL Marketo] 静态列表成员{MUNCHKIN_ID} | XDM业务营销列表会员 | 无 | `marketingListMemberID` 在基类中 | `marketo_static_list_member_{MUNCHKIN_ID}` | 无 | 无 | 第一种关系<ul><li>`personID` 在基类中</li><li>类型：多对一</li><li>参考模式:Marketo人{MUNCHKIN_ID}</li><li>命名空间: `marketo_person_{MUNCHKIN_ID}`</li><li>目标属性：`personID`</li><li>当前模式中的关系名称：人</li><li>引用模式中的关系名称：列表</li></ul>第二种关系<ul><li>`marketingListID` 在基类中</li><li>类型：多对一</li><li>参考模式:Marketo静态列表{MUNCHKIN_ID}</li><li>命名空间: `marketo_static_list_{MUNCHKIN_ID}`</li><li>目标属性：`marketingListID`</li><li>当前模式中的关系名称：列表</li><li>引用模式中的关系名称：人物</li></ul> |
-| [!DNL Marketo] 命名帐户{MUNCHKIN_ID} | XDM业务帐户 | XDM业务帐户详细信息 | `accountID` 在基类中 | `marketo_named_account_{MUNCHKIN_ID}` | `extSourceSystemAudit.externalID` 在基类中 | `salesforce_account_{SALESFORCE_ORGANIZATION_ID}` | <ul><li>`accountParentID` XDM业务帐户详细信息混合</li><li>类型：一对一</li><li>参考模式:Marketo指定帐户{MUNCHKIN_ID}</li><li>命名空间: `marketo_named_account_{MUNCHKIN_ID}` |
-| [!DNL Marketo] 活动{MUNCHKIN ID} | XDM体验事件 | <ul><li>访问网页</li><li>新建潜在客户</li><li>转换潜在客户</li><li>添加到列表</li><li>从列表</li><li>添加到业务机会</li><li>从业务机会中删除</li><li>填写的表单</li><li>链接点击</li><li>电子邮件已送达</li><li>电子邮件已打开</li><li>已点击电子邮件</li><li>电子邮件退回</li><li>电子邮件退回软</li><li>取消订阅电子邮件</li><li>分数已更改</li><li>已更新业务机会</li><li>活动进展状态已更改</li><li>人员标识符</li><li>Marketo Web URL | `personID` 人物标识符混合 | marketo_person_{MUNCHKIN_ID} | 无 | 无 | 第一种关系<ul><li>`listOperations.listID` 字段</li><li>类型：一对一</li><li>参考模式:Marketo静态列表{MUNCHKIN_ID}</li><li>命名空间: `marketo_static_list_{MUNCHKIN_ID}`</li></ul>第二种关系<ul><li>`opportunityEvent.opportunityID` 字段</li><li>类型：一对一</li><li>参考模式:Marketo机会{MUNCHKIN_ID}</li><li>命名空间: `marketo_opportunity_{MUNCHKIN_ID}`</li></ul>第三种关系<ul><li>`leadOperation.campaignProgression.campaignID` 字段</li><li>类型：一对一</li><li>参考模式:Marketo项目{MUNCHKIN_ID}</li><li>命名空间: `marketo_program_{MUNCHKIN_ID}`</li></ul> |
+| 模式名称 | 基类 | Mixins | [!DNL Profile] 模式 | 主要身份 | 主要身份命名空间 | 次身份 | 辅助身份命名空间 | 关系 | 注释 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `[!DNL Marketo] Company {MUNCHKIN_ID}` | XDM业务帐户 | XDM业务帐户详细信息 | 已启用 | `accountID` 在基类中 | `marketo_company_{MUNCHKIN_ID}` | `extSourceSystemAudit.externalID` 在基类中 | `salesforce_account_{SALESFORCE_ORGANIZATION_ID}` | <ul><li>`accountParentID` XDM业务帐户详细信息混合</li><li>类型：一对一</li><li>参考模式:`[!DNL Marketo] Company {MUNCHKIN_ID}`</li><li>命名空间: `marketo_company_{MUNCHKIN_ID}`</li></ul> |
+| `[!DNL Marketo] Person {MUNCHKIN_ID}` | XDM个人用户档案 | <ul><li>XDM业务人员详细信息</li><li>XDM业务人员组件</li><li>IdentityMap</li></ul> | 已启用 | `personID` 在基类中 | `marketo_person_{MUNCHKIN_ID}` | <ol><li>`extSourceSystemAudit.externalID` XDM企业人员详细信息混合</li><li>`workEmail.address` XDM企业人员详细信息混合</li><li>`identityMap` 身份映射混音</ol></li> | <ol><li>`salesforce_lead_{SALESFORCE_ORGANIZATION_ID}`</li><li>电子邮件</li><li>ECID</li></ol> | <ul><li>`personComponents.sourceAccountID` XDM企业人员组件混合</li><li>类型：多对一</li><li>参考模式:`[!DNL Marketo] Company {MUNCHKIN_ID}`</li><li>命名空间: `marketo_company_{MUNCHKIN_ID}`</li><li>目标属性：`accountID`</li><li>当前模式中的关系名称：帐户</li><li>引用模式中的关系名称：人物</li></ul> |
+| `[!DNL Marketo] Opportunity {MUNCHKIN_ID}` | XDM业务机会 | XDM业务机会详细信息 | 已启用 | `opportunityID` 在基类中 | `marketo_opportunity_{MUNCHKIN_ID}` | `extSourceSystemAudit.externalID` 在基类中 | `salesforce_opportunity_{SALESFORCE_ORGANIZATION_ID}` | <ul><li>`accountID` 在基类中</li><li>类型：多对一</li><li>参考模式:`[!DNL Marketo] Company {MUNCHKIN_ID}`</li><li>命名空间: `marketo_company_{MUNCHKIN_ID}`</li><li>目标属性：`accountID`</li><li>当前模式中的关系名称：帐户</li><li>引用模式中的关系名称：机会</li></ul> |
+| `[!DNL Marketo] Opportunity Contact Role {MUNCHKIN_ID}` | XDM业务机会人关系 | None | 已启用 | `opportunityPersonID` 在基类中 | `marketo_opportunity_contact_role_{MUNCHKIN_ID}` | `extSourceSystemAudit.externalID` 在基类中 | `salesforce_opportunity_contact_role_{SALESFORCE_ORGANIZATION_ID}` | 第一种关系<ul><li>`personID` 在基类中</li><li>类型：多对一</li><li>参考模式:`[!DNL Marketo] Person {MUNCHKIN_ID}`</li><li>命名空间: `marketo_person_{MUNCHKIN_ID}`</li><li>目标属性：`personID`</li><li>当前模式中的关系名称：人</li><li>引用模式中的关系名称：机会</li></ul>第二种关系<ul><li>`opportunityID` 在基类中</li><li>类型：多对一</li><li>参考模式:`[!DNL Marketo] Opportunity {MUNCHKIN_ID}`</li><li>命名空间: `marketo_opportunity_{MUNCHKIN_ID}`</li><li>目标属性：`opportunityID`</li><li>当前模式中的关系名称：机会</li><li>引用模式中的关系名称：人物</li></ul> |
+| `[!DNL Marketo] Program {MUNCHKIN_ID}` | XDM业务活动 | XDM业务活动详细信息 | 已启用 | `campaignID` 在基类中 | `marketo_program_{MUNCHKIN_ID}` | `extSourceSystemAudit.externalID` 在基类中 | `salesforce_campaign_{SALESFORCE_ORGANIZATION_ID}` |
+| `[!DNL Marketo] Program Member {MUNCHKIN_ID}` | XDM业务活动会员 | XDM业务活动会员详细信息 | 已启用 | `campaignMemberID` 在基类中 | `marketo_program_member_{MUNCHKIN_ID}` | 无 | 无 | 第一种关系<ul><li>`personID` 在基类中</li><li>类型：多对一</li><li>参考模式:Marketo人{MUNCHKIN_ID}</li><li>命名空间: `marketo_person_{MUNCHKIN_ID}`</li><li>目标属性：`personID`</li><li>当前模式中的关系名称：人</li><li>引用模式中的关系名称：项目</li></ul>第二种关系<ul><li>`campaignID` 在基类中</li><li>类型：多对一</li><li>参考模式:`[!DNL Marketo] Program {MUNCHKIN_ID}`</li><li>命名空间: `marketo_program_{MUNCHKIN_ID}`</li><li>目标属性：`campaignID`</li><li>当前模式中的关系名称：项目</li><li>引用模式中的关系名称：人物</li></ul> |
+| `[!DNL Marketo] Static List {MUNCHKIN_ID}` | XDM业务营销列表 | 无 | 已启用 | `marketingListID` 在基类中 | `marketo_static_list_{MUNCHKIN_ID}` | 无 | 无 | 无 | 静态列表未从[!DNL Salesforce]同步，因此没有辅助标识。 |
+| `[!DNL Marketo] Static List Member {MUNCHKIN_ID}` | XDM业务营销列表会员 | 无 | 已启用 | `marketingListMemberID` 在基类中 | `marketo_static_list_member_{MUNCHKIN_ID}` | 无 | 无 | 第一种关系<ul><li>`personID` 在基类中</li><li>类型：多对一</li><li>参考模式:`[!DNL Marketo] Person {MUNCHKIN_ID}`</li><li>命名空间: `marketo_person_{MUNCHKIN_ID}`</li><li>目标属性：`personID`</li><li>当前模式中的关系名称：人</li><li>引用模式中的关系名称：列表</li></ul>第二种关系<ul><li>`marketingListID` 在基类中</li><li>类型：多对一</li><li>参考模式:`[!DNL Marketo] Static List {MUNCHKIN_ID}`</li><li>命名空间: `marketo_static_list_{MUNCHKIN_ID}`</li><li>目标属性：`marketingListID`</li><li>当前模式中的关系名称：列表</li><li>引用模式中的关系名称：人物</li></ul> | 静态列表成员未从[!DNL Salesforce]同步，因此没有辅助标识。 |
+| `[!DNL Marketo] Named Account {MUNCHKIN_ID}` | XDM业务帐户 | XDM业务帐户详细信息 | 已启用 | `accountID` 在基类中 | `marketo_named_account_{MUNCHKIN_ID}` | `extSourceSystemAudit.externalID` 在基类中 | `salesforce_account_{SALESFORCE_ORGANIZATION_ID}` | <ul><li>`accountParentID` XDM业务帐户详细信息混合</li><li>类型：一对一</li><li>参考模式:`[!DNL Marketo] Named Account {MUNCHKIN_ID}`</li><li>命名空间: `marketo_named_account_{MUNCHKIN_ID}` |
+| [!DNL Marketo] 活动 `{MUNCHKIN ID}` | XDM ExperienceEvent | <ul><li>访问网页</li><li>新建潜在客户</li><li>转换潜在客户</li><li>添加到列表</li><li>从列表</li><li>添加到业务机会</li><li>从业务机会中删除</li><li>填写的表单</li><li>链接点击</li><li>电子邮件已送达</li><li>电子邮件已打开</li><li>已点击电子邮件</li><li>电子邮件退回</li><li>电子邮件退回软</li><li>取消订阅电子邮件</li><li>分数已更改</li><li>已更新业务机会</li><li>活动进展状态已更改</li><li>人员标识符</li><li>Marketo Web URL | 已启用 | `personID` 人物标识符混合 | `marketo_person_{MUNCHKIN_ID}` | 无 | 无 | 第一种关系<ul><li>`listOperations.listID` 字段</li><li>类型：一对一</li><li>参考模式:`[!DNL Marketo] Static List {MUNCHKIN_ID}`</li><li>命名空间: `marketo_static_list_{MUNCHKIN_ID}`</li></ul>第二种关系<ul><li>`opportunityEvent.opportunityID` 字段</li><li>类型：一对一</li><li>参考模式:`[!DNL Marketo] Opportunity {MUNCHKIN_ID}`</li><li>命名空间: `marketo_opportunity_{MUNCHKIN_ID}`</li></ul>第三种关系<ul><li>`leadOperation.campaignProgression.campaignID` 字段</li><li>类型：一对一</li><li>参考模式:`[!DNL Marketo] Program {MUNCHKIN_ID}`</li><li>命名空间: `marketo_program_{MUNCHKIN_ID}`</li></ul> | `[!DNL Marketo] Activity {MUNCHKIN_ID}`模式的主标识为`personID`，与`[!DNL Marketo] Person {MUNCHKIN_ID}`模式的主标识相同。 |
 
 {style=&quot;table-layout:auto&quot;}
-
->[!NOTE]
->
->[!DNL Real-time Customer Profile]启用所有模式
 
 ## 后续步骤
 
