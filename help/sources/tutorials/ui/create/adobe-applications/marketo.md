@@ -5,14 +5,14 @@ title: 在UI中创建Marketo Engage源连接器
 topic-legacy: overview
 type: Tutorial
 description: 本教程提供了在UI中创建Marketo Engage源连接器以将B2B数据导入Adobe Experience Platform的步骤。
+exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
 translation-type: tm+mt
-source-git-commit: f12baaa9d4b37f1101792a4ae479b5a62893eb68
+source-git-commit: 5322adb4b3a244de92300e7ce9d942ad4b968454
 workflow-type: tm+mt
-source-wordcount: '1317'
+source-wordcount: '1324'
 ht-degree: 0%
 
 ---
-
 
 # （测试版）在UI中创建[!DNL Marketo Engage]源连接器
 
@@ -75,25 +75,25 @@ ht-degree: 0%
 
 创建[!DNL Marketo]帐户后，下一步将提供一个界面，供您浏览[!DNL Marketo]数据集。
 
-界面的左半部分是目录浏览器，显示10个[!DNL Marketo]数据集。 全功能[!DNL Marketo]源连接需要获取9个不同的数据集。 如果您还使用[!DNL Marketo's]基于帐户的营销(ABM)功能，则还必须创建第10个数据流以收集[!UICONTROL Named Accounts]数据集。
+界面的左半部分是目录浏览器，显示10个[!DNL Marketo]数据集。 全功能[!DNL Marketo]源连接需要获取9个不同的数据集。 如果您还使用[!DNL Marketo]基于帐户的营销(ABM)功能，则还必须创建第10个数据流以收集[!UICONTROL Named Accounts]数据集。
 
 >[!NOTE]
 >
->为了简便起见，以下教程以[!UICONTROL Named Acccounts]为例，但下面概述的步骤适用于10个[!DNL Marketo]数据集中的任何一个。
+>为了简便起见，以下教程以[!UICONTROL Named Accounts]为例，但下面概述的步骤适用于10个[!DNL Marketo]数据集中的任何一个。
 
 先选择要收录的数据集，然后选择&#x200B;**[!UICONTROL Next]**。
 
 ![select-data](../../../../images/tutorials/create/marketo/select-data.png)
 
-## 将数据字段映射到XDM模式
+## 将[!DNL Marketo]模式映射到平台
 
-将显示[!UICONTROL Mapping]步骤，提供一个接口将[!DNL Marketo]数据集映射到平台数据集。
+出现[!UICONTROL Mapping]步骤，提供一个接口将[!DNL Marketo]模式映射到平台。
 
 为要摄取的入站数据选择数据集。 您可以使用现有数据集或创建新数据集。
 
 ### 使用现有数据集
 
-要将数据收录到现有数据集中，请选择&#x200B;**[!UICONTROL Use existing dataset]**，然后选择数据集图标。
+要将数据收录到现有数据集中，请选择&#x200B;**[!UICONTROL Existing dataset]**，然后选择数据集图标。
 
 ![existing-dataset](../../../../images/tutorials/create/marketo/existing-dataset.png)
 
@@ -103,7 +103,7 @@ ht-degree: 0%
 
 ### 使用新数据集
 
-要将数据收录到新数据集中，请选择&#x200B;**[!UICONTROL Create new dataset]**，并在提供的字段中输入数据集的名称和说明。
+要将数据收录到新数据集中，请选择&#x200B;**[!UICONTROL New dataset]**，并在提供的字段中输入数据集的名称和说明。
 
 您可以通过在&#x200B;**[!UICONTROL Select schema]**&#x200B;搜索栏中输入模式名称来搜索该应用程序。 您还可以选择下拉图标来查看现有模式的列表。 或者，您也可以选择&#x200B;**[!UICONTROL Advanced search]**&#x200B;访问现有模式的页面，包括其各自的详细信息。
 
@@ -144,7 +144,7 @@ ht-degree: 0%
 
 ![数据流详细信息](../../../../images/tutorials/create/marketo/dataflow-detail.png)
 
-启用&#x200B;**[!UICONTROL Error diagnostics]**&#x200B;切换，可为新收录的批生成详细的错误消息，您可以使用API下载这些消息。
+启用&#x200B;**[!UICONTROL Error diagnostics]**&#x200B;切换，可为新收录的批生成详细的错误消息，您可以使用API下载这些消息。 有关详细信息，请参阅教程[检索数据摄取错误诊断](../../../../../ingestion/quality/error-diagnostics.md)。
 
 ![错误](../../../../images/tutorials/create/marketo/errors.png)
 
@@ -160,7 +160,7 @@ ht-degree: 0%
 
 将显示&#x200B;**[!UICONTROL Review]**&#x200B;步骤，允许您在创建新数据流之前查看新数据流。 详细信息按以下类别分组：
 
-* **[!UICONTROL Connection]**:显示源类型、所选源文件的相关路径以及该源文件中的列数。
+* **[!UICONTROL Connection]**:显示源类型、所选源实体的相关路径以及该源实体中的列数。
 * **[!UICONTROL Assign dataset & map fields]**:显示接收源数据的模式集，包括数据集附带的数据集。
 
 查看数据流后，请选择&#x200B;**[!UICONTROL Finish]**&#x200B;并允许一段时间创建数据流。
