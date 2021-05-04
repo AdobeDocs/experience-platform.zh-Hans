@@ -7,9 +7,9 @@ type: Tutorial
 description: 本教程介绍了使用源连接器和API检索流数据并将其引入平台的步骤。
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: f35c59843451267d0a054cfd594aea3e5d5ea8c6
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1526'
 ht-degree: 2%
 
 ---
@@ -202,7 +202,6 @@ curl -X GET https://platform.adobe.io/data/foundation/flowservice/sourceConnecti
 }
 ```
 
-
 ## 创建目标XDM模式{#target-schema}
 
 要在[!DNL Platform]中使用源模式，必须创建一个目标，以根据您的需要构建源数据。 然后，目标模式用于创建包含源数据的[!DNL Platform]数据集。 此目标XDM模式还扩展了XDM [!DNL Individual Profile]类。
@@ -334,6 +333,7 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
+        "name": "Test streaming dataset",
         "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/e45dd983026ce0daec5185cfddd48cbc0509015d880d6186",
             "contentType": "application/vnd.adobe.xed-full-notext+json; version=1"
@@ -345,15 +345,15 @@ curl -X POST \
             "profile": [
             "enabled:true"
             ]
-        },
-        "name": "Test streaming dataset"
+        }
     }'
 ```
 
 | 属性 | 描述 |
 | --- | --- |
-| `schemaRef.id` | 目标 XDM模式的ID。 |
-| `schemaRef.contentType` | 模式版本。 此值必须设置为`application/vnd.adobe.xed-full-notext+json;version=1`，这将返回模式的最新次要版本。 |
+| `name` | 要创建的数据集的名称。 |
+| `schemaRef.id` | 数据集将基于的XDM模式的URI `$id`。 |
+| `schemaRef.contentType` | 模式版本。 此值必须设置为`application/vnd.adobe.xed-full-notext+json;version=1`，它返回模式的最新次要版本。 有关详细信息，请参阅XDM API指南中关于[模式版本控制](../../../../xdm/api/getting-started.md#versioning)的部分。 |
 
 **响应**
 
