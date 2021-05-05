@@ -5,7 +5,7 @@ description: “目标”工作区由四个部分组成，即目录、浏览、�
 seo-description: 在Adobe Experience Platform中，从左侧导航栏中选择目标以访问目标工作区。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
 translation-type: tm+mt
-source-git-commit: cc432f7c07f0f82deec653864154016638ec8138
+source-git-commit: eaa4a7efc248104d823267eca574f2eca16edc3f
 workflow-type: tm+mt
 source-wordcount: '742'
 ht-degree: 1%
@@ -38,7 +38,7 @@ ht-degree: 1%
 目标卡包含&#x200B;**[!UICONTROL Configure]**&#x200B;或&#x200B;**[!UICONTROL Activate]**&#x200B;控件，以及可显示更多选项的辅助控件。 这些控件描述如下：
 
 | 控制 | 描述 |
----------|----------
+|---------|----------|
 | [!UICONTROL Configure] | 允许您创建到目标的连接。 |
 | [!UICONTROL Activate] | 建立到目标的连接后，即可激活区段。 |
 | [!UICONTROL View account] | 视图您为目标连接的帐户。 |
@@ -72,7 +72,7 @@ ht-degree: 1%
 ![浏览选项卡](../assets/ui/workspace/browse-tab.png)
 
 | 元素 | 描述 |
----------|----------
+|---------|----------|
 | 名称 | 您为激活流提供到此目标的名称。 同一列包含两个控件：[!UICONTROL Activate ]和[!UICONTROL Delete destination]。 |
 | [!UICONTROL Last Flow Run Status] | 上次数据流运行的状态。 有关数据流运行的详细信息，请参阅[视图目标详细信息](destination-details-page.md)。 |
 | [!UICONTROL Last Flow Run Date] | 上次数据流运行发生的时间和日期。 有关数据流运行的详细信息，请参阅[视图目标详细信息](destination-details-page.md)。 |
