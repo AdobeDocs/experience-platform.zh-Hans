@@ -7,12 +7,13 @@ type: Tutorial
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform Data Ingestion Service API的一部分。
 exl-id: 097dfd5a-4e74-430d-8a12-cac11b1603aa
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 544eeb3a27d0b218885e3000deb214f21c8e9fcd
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1168'
 ht-degree: 2%
 
 ---
+
 
 # 使用流摄取API流记录数据
 
@@ -23,10 +24,8 @@ ht-degree: 2%
 本教程需要对各种Adobe Experience Platform服务具备工作知识。 在开始本教程之前，请查阅以下服务的文档：
 
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):用于组织体验数 [!DNL Platform] 据的标准化框架。
+   - [模式 Registry开发人员指南](../../xdm/api/getting-started.md):全面的指南，涵盖API的每个可用端 [!DNL Schema Registry] 点以及如何向它们发出调用。这包括了解您的`{TENANT_ID}`（在本教程的调用中显示），以及了解如何创建模式（用于创建用于摄取的数据集）。
 - [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
-- [模式 Registry开发人员指南](../../xdm/api/getting-started.md):全面的指南，涵盖API的每个可用端 [!DNL Schema Registry] 点以及如何向它们发出调用。这包括了解您的`{TENANT_ID}`（在本教程的调用中显示），以及了解如何创建模式（用于创建用于摄取的数据集）。
-
-此外，本教程要求您已经创建了流连接。 有关创建流连接的详细信息，请阅读[创建流连接教程](./create-streaming-connection.md)。
 
 以下各节提供了成功调用流化Ingestion API所需了解的其他信息。
 
@@ -264,6 +263,12 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
 ]
 ```
 
+## 创建流连接
+
+创建模式和数据集后，可以创建流连接
+
+有关创建流连接的详细信息，请阅读[创建流连接教程](./create-streaming-connection.md)。
+
 ## 将记录数据收录到流连接{#ingest-data}
 
 在数据集和流连接到位后，您可以收录XDM格式的JSON记录，以将记录数据收录到[!DNL Platform]中。
@@ -276,7 +281,7 @@ POST /collection/{CONNECTION_ID}?synchronousValidation=true
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | 先前创建的流连接的`id`值。 |
+| `{CONNECTION_ID}` | 先前创建的流连接的`inletId`值。 |
 | `synchronousValidation` | 用于开发目的的可选查询参数。 如果设置为`true`，则可用于立即反馈，以确定请求是否成功发送。 默认情况下，此值设置为`false`。 |
 
 **请求**
