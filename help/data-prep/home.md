@@ -6,9 +6,9 @@ topic-legacy: overview
 description: 本文档介绍Adobe Experience Platform中的数据准备。
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: daefd977cd09bd9cd7f8d6101b45be98f30d24ae
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '437'
 ht-degree: 0%
 
 ---
@@ -35,6 +35,8 @@ ht-degree: 0%
 ## 映射集
 
 将一个模式转换为另一个映射的一组映射统称为映射集。 将创建单个映射集作为每个数据流的一部分。 映射集是数据流的一个组成部分，并且作为数据流的一部分被创建、编辑和监视。
+
+要了解有关映射集的更多信息，包括如何使用映射集中的字段，请阅读[映射集指南](./mapping-set.md)。 要了解如何创建映射集和使用与映射集相关的其他API调用，请阅读[开发人员指南](./api/mapping-set.md)中的映射集部分。
 
 ## 数据格式处理
 
