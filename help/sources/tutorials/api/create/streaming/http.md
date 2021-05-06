@@ -7,9 +7,9 @@ type: Tutorial
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform Data Ingestion Service API的一部分。
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 96f400466366d8a79babc194bc2ba8bf19ede6bb
 workflow-type: tm+mt
-source-wordcount: '883'
+source-wordcount: '1090'
 ht-degree: 2%
 
 ---
@@ -27,6 +27,8 @@ ht-degree: 2%
 
 - [[!DNL Experience Data Model (XDM)]](../../../../../xdm/home.md):用于组织体验数 [!DNL Platform] 据的标准化框架。
 - [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据实时提供统一的消费者用户档案。
+
+此外，创建流连接需要您具有目标 XDM模式和数据集。 要了解如何创建这些数据，请阅读关于[流记录数据](../../../../../ingestion/tutorials/streaming-record-data.md)的教程或关于[流时间系列数据](../../../../../ingestion/tutorials/streaming-time-series-data.md)的教程。
 
 以下各节提供了成功调用流化Ingestion API所需了解的其他信息。
 
@@ -54,9 +56,9 @@ ht-degree: 2%
 
 - 内容类型：application/json
 
-## 创建连接
+## 创建基本连接
 
-连接指定源并包含使流与流摄取API兼容所需的信息。 创建连接时，您可以选择创建未验证和已验证的连接。
+基本连接指定源并包含使流与流摄取API兼容所需的信息。 创建基本连接时，您可以选择创建未验证和已验证的连接。
 
 ### 未验证连接
 
@@ -95,7 +97,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
              "name": "Sample connection"
          }
      }
- }
+ }'
 ```
 
 | 属性 | 描述 |
@@ -189,7 +191,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 ## 获取流端点URL
 
-创建连接后，您现在可以检索流端点URL。
+创建基本连接后，您现在可以检索流端点URL。
 
 **API格式**
 
@@ -247,6 +249,142 @@ curl -X GET https://platform.adobe.io/data/foundation/flowservice/connections/{C
             "etag": "\"56008aee-0000-0200-0000-5e697e150000\""
         }
     ]
+}
+```
+
+## 创建源连接
+
+创建基本连接后，您需要创建源连接。 创建源连接时，您需要创建的基连接中的`id`值。
+
+**API格式**
+
+```http
+POST /flowservice/sourceConnections
+```
+
+**请求**
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+    "name": "Sample source connection",
+    "description": "Sample source connection description",
+    "baseConnectionId": "{BASE_CONNECTION_ID}",
+    "connectionSpec": {
+        "id": "bc7b00d6-623a-4dfc-9fdb-f1240aeadaeb",
+        "version": "1.0"
+    }
+}'
+```
+
+**响应**
+
+成功的响应返回HTTP状态201，其中包含新创建的源连接的详细信息，包括其唯一标识符(`id`)。
+
+```json
+{
+    "id": "63070871-ec3f-4cb5-af47-cf7abb25e8bb",
+    "etag": "\"28000b90-0000-0200-0000-6091b0150000\""
+}
+```
+
+## 创建目标连接
+
+创建源连接后，可以创建目标连接。 创建目标连接时，您将需要之前创建的数据集的`id`值。
+
+**API格式**
+
+```http
+POST /flowservice/targetConnections
+```
+
+**请求**
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+    "name": "Sample target connection",
+    "description": "Sample target connection description",
+    "connectionSpec": {
+        "id": "c604ff05-7f1a-43c0-8e18-33bf874cb11c",
+        "version": "1.0"
+    },
+    "data": {
+        "format": "parquet_xdm"
+    },
+    "params": {
+        "dataSetId": "{DATASET_ID}"
+    }
+}'
+```
+
+**响应**
+
+成功的响应返回HTTP状态201，其中包含新创建的目标连接的详细信息，包括其唯一标识符(`id`)。
+
+```json
+{
+    "id": "98a2a72e-a80f-49ae-aaa3-4783cc9404c2",
+    "etag": "\"0500b73f-0000-0200-0000-6091b0b90000\""
+}
+```
+
+## 创建数据流
+
+创建源连接和目标连接后，您现在可以创建数据流。 数据流负责从源调度和收集数据。 可以通过对`/flows`端点执行POST请求来创建数据流。
+
+**API格式**
+
+```http
+POST /flows
+```
+
+**请求**
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/flows' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -d '{
+    "name": "Sample flow",
+    "description": "Sample flow description",
+    "flowSpec": {
+        "id": "d8a6f005-7eaf-4153-983e-e8574508b877",
+        "version": "1.0"
+    },
+    "sourceConnectionIds": [
+        "{SOURCE_CONNECTION_ID}"
+    ],
+    "targetConnectionIds": [
+        "{TARGET_CONNECTION_ID}"
+    ]
+}'
+```
+
+**响应**
+
+成功的响应返回HTTP状态201，其中包含新创建的数据流的详细信息，包括其唯一标识符(`id`)。
+
+```json
+{
+    "id": "ab03bde0-86f2-45c7-b6a5-ad8374f7db1f",
+    "etag": "\"1200c123-0000-0200-0000-6091b1730000\""
 }
 ```
 
