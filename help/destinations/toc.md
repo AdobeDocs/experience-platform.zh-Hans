@@ -5,9 +5,9 @@ user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定�
 description: 此文档列表Adobe Experience Platform目标的目录
 feature: 目标
 translation-type: tm+mt
-source-git-commit: 020192469127e8f25f0d61e33b4b5dc60da6b57d
+source-git-commit: 9b383f09a3a73f785b0e3a415deda126b9ef6b39
 workflow-type: tm+mt
-source-wordcount: '471'
+source-wordcount: '474'
 ht-degree: 10%
 
 ---
@@ -104,9 +104,9 @@ ht-degree: 10%
       * [Adobe Experience Platform Launch扩展概述](./catalog/launch-extensions/overview.md)
    * 移动互动目标{#mobile-engagement}
       * [移动互动目标概述](./catalog/mobile-engagement/overview.md)
-      * [飞艇属性连接](./catalog/mobile-engagement/airship-attributes.md)
-      * [飞艇标签连接](./catalog/mobile-engagement/airship-tags.md)
-      * [布雷兹连接](./catalog/mobile-engagement/braze.md)
+      * [（测试版）飞艇属性连接](./catalog/mobile-engagement/airship-attributes.md)
+      * [（测试版）飞艇标签连接](./catalog/mobile-engagement/airship-tags.md)
+      * [（测试版）Braze连接](./catalog/mobile-engagement/braze.md)
    * 个性化目标{#personalization}
       * [个性化目标概述](./catalog/personalization/overview.md)
       * [Adobe Target 扩展](./catalog/personalization/adobe-target.md)
