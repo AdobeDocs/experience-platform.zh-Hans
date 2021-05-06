@@ -7,9 +7,9 @@ type: Tutorial
 description: 本教程将帮助您开始使用流式摄取API，它是Adobe Experience Platform Data Ingestion Service API的一部分。
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 544eeb3a27d0b218885e3000deb214f21c8e9fcd
 workflow-type: tm+mt
-source-wordcount: '1312'
+source-wordcount: '1349'
 ht-degree: 2%
 
 ---
@@ -290,9 +290,16 @@ curl -X POST https://platform.adobe.io/data/foundation/catalog/dataSets \
 ]
 ```
 
+
+## 创建流连接
+
+在创建模式和数据集后，您需要创建流连接以收集数据。
+
+有关创建流连接的详细信息，请阅读[创建流连接教程](./create-streaming-connection.md)。
+
 ## 将时间序列数据收录到流连接
 
-在数据集和流连接到位后，您可以收录XDM格式的JSON记录以在[!DNL Platform]内收录时间序列数据。
+创建数据集、流连接和数据流后，您可以收录XDM格式的JSON记录，以在[!DNL Platform]内收录时间序列数据。
 
 **API格式**
 
@@ -326,7 +333,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
             "id": "{SCHEMA_REF_ID}",
             "contentType": "application/vnd.adobe.xed-full+json;version=1"
         },
-        "imsOrgId": "{IMS_ORG}",
+        "flowId": "{FLOW_ID}",
         "datasetId": "{DATASET_ID}"
     },
     "body": {
@@ -413,7 +420,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?synchronousValid
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{CONNECTION_ID}` | 先前创建的流连接的ID。 |
+| `{CONNECTION_ID}` | 先前创建的流连接的`inletId`。 |
 | `xactionId` | 您刚刚发送的记录在服务器端生成的唯一标识符。 此ID可帮助Adobe在各种系统和调试过程中跟踪此记录的生命周期。 |
 | `receivedTimeMs`:显示接收请求的时间的时间戳（以毫秒为单位）。 |
 | `synchronousValidation.status` | 由于添加了查询参数`synchronousValidation=true`，因此将显示此值。 如果验证成功，状态将为`pass`。 |
@@ -445,7 +452,7 @@ GET /access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name
 
 ```shell
 curl -X GET \
-  https://platform-stage.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=janedoe@example.com&relatedEntityIdNS=email \
+  https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=janedoe@example.com&relatedEntityIdNS=email \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
   -H "x-api-key: {API_KEY}" \
   -H "x-gw-ims-org-id: {IMS_ORG}" \
