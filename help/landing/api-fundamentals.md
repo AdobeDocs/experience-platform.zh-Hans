@@ -6,9 +6,9 @@ topic-legacy: getting started
 description: 本文档简要概述了与Experience Platform API相关的一些底层技术和语法。
 exl-id: cd69ba48-f78c-4da5-80d1-efab5f508756
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '516'
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ JSON指针是用于标识JSON文档中特定值的标准字符串语法([RFC 690
 
 ### JSON模式对象示例
 
-以下JSON表示一个简化的XDM模式，其字段可使用JSON指针字符串引用。 请注意，已使用自定义混音添加的所有字段（如`loyaltyLevel`）均以`_{TENANT_ID}`对象命名，而已使用核心混音添加的字段（如`fullName`）则不以名称命名。
+以下JSON表示一个简化的XDM模式，其字段可使用JSON指针字符串引用。 请注意，已使用自定义模式字段组添加的所有字段（如`loyaltyLevel`）均以`_{TENANT_ID}`对象命名，而已使用核心字段组添加的字段（如`fullName`）则不以名称命名。
 
 ```json
 {
@@ -87,8 +87,8 @@ JSON指针是用于标识JSON文档中特定值的标准字符串语法([RFC 690
 | JSON指针 | 解析为 |
 | --- | --- |
 | `"/title"` | `"Example schema"` |
-| `"/properties/person/properties/name/properties/fullName"` | （返回对由核心混音器提供的`fullName`字段的引用。） |
-| `"/properties/_{TENANT_ID}/properties/loyaltyLevel"` | （返回对由自定义混音提供的`loyaltyLevel`字段的引用。） |
+| `"/properties/person/properties/name/properties/fullName"` | （返回对核心字段组提供的`fullName`字段的引用。） |
+| `"/properties/_{TENANT_ID}/properties/loyaltyLevel"` | （返回对自定义字段组提供的`loyaltyLevel`字段的引用。） |
 | `"/properties/_{TENANT_ID}/properties/loyaltyLevel/enum"` | `["platinum", "gold", "silver", "bronze"]` |
 | `"/properties/_{TENANT_ID}/properties/loyaltyLevel/enum/0"` | `"platinum"` |
 
