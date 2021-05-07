@@ -7,7 +7,7 @@ type: Tutorial
 description: 本教程介绍从客户成功系统检索数据并使用源连接器和API将其引入平台的步骤。
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: c7cbf6812e2c600aa1e831b91f15982d7bf82cdb
 workflow-type: tm+mt
 source-wordcount: '1579'
 ht-degree: 1%
@@ -336,7 +336,7 @@ curl -X POST \
         "params": {
             "dataSetId": "5e543e8a60b15218ad44b95f"
         },
-            "connectionSpec": {
+        "connectionSpec": {
             "id": "c604ff05-7f1a-43c0-8e18-33bf874cb11c",
             "version": "1.0"
         }
