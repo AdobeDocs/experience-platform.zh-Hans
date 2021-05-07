@@ -6,9 +6,9 @@ topic-legacy: overview
 description: 本文档概述了环境 XDM数据类型。
 exl-id: ec806ee5-ed65-4148-9dbe-e297d9e8cd73
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '461'
+source-wordcount: '462'
 ht-degree: 4%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 4%
 | `viewportHeight` | 整数 | 体验显示在其中的窗口的垂直大小（以像素为单位）。 对于Web视图事件，这是浏览器视口高度。 |
 | `viewPortWidth` | 整数 | 体验内部显示的窗口的水平大小（以像素为单位）。 对于Web视图事件，这是浏览器视图端口宽度。 |
 
-有关混音的更多详细信息，请参阅公共XDM存储库：
+有关数据类型的详细信息，请参阅公共XDM存储库：
 
 * [已填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/environment.example.1.json)
 * [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/environment.schema.json)
