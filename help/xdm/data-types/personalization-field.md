@@ -5,9 +5,9 @@ topic-legacy: overview
 description: 本文档概述了通用个性化首选项字段XDM数据类型。
 exl-id: 3f6a3c31-19f3-4bad-921e-9ad33c6b9ac9
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '466'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->此模式类型旨在用于使用[[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)] mixin](../mixins/profile/consents.md)作为基线来自定义组织的同意的结构。
+>此模式类型旨在用于使用[[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)]字段组](../field-groups/profile/consents.md)作为基线来自定义组织的同意的结构。
 
 ![](../images/data-types/personalization-field.png)
 
