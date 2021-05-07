@@ -1,15 +1,15 @@
 ---
 title: 使用Adobe Experience Platform Web SDK支持客户同意首选项
 description: 了解如何使用Adobe Experience Platform Web SDK支持同意首选项。
-keywords: 同意；默认同意；默认同意；setConnence;用户档案隐私混合；体验事件隐私混合；隐私混合；
+keywords: 同意；默认同意；默认同意；默认同意；setConnence;用户档案隐私字段组；体验事件隐私字段组；隐私字段组；
+exl-id: 647e4a84-4a66-45d6-8b05-d78786bca63a
 translation-type: tm+mt
-source-git-commit: dd9101079a1093c109f43b268a78c07770221156
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '977'
+source-wordcount: '986'
 ht-degree: 0%
 
 ---
-
 
 # 支持客户同意首选项
 
@@ -54,7 +54,7 @@ SDK支持Adobe Experience Platform同意标准的1.0和2.0版。 目前，1.0和
 
 ### 使用Adobe标准版2.0
 
-如果您使用Adobe Experience Platform，则需要在用户档案模式中包含隐私混音。 有关Adobe标准版本2.0的更多信息，请参阅Adobe Experience Platform](../../landing/governance-privacy-security/overview.md)中的[治理、隐私和安全性。您可以在与“同意和首选项”用户档案混音的`consents`字段对应的下面值对象内添加数据。
+如果您使用Adobe Experience Platform，则需要在用户档案模式中包含一个隐私模式字段组。 有关Adobe标准版本2.0的更多信息，请参阅Adobe Experience Platform](../../landing/governance-privacy-security/overview.md)中的[治理、隐私和安全性。您可以在下面的值对象内添加，该对象对应于“同意和首选项”用户档案字段组的`consents`字段的模式。
 
 如果用户选择登录，请执行`setConsent`命令，并将收集首选项设置为`y`，如下所示：
 
@@ -147,7 +147,7 @@ alloy("setConsent", {
 });
 ```
 
-以这种方式设置同意后，实时客户用户档案会使用同意信息进行更新。 要使此功能正常工作，用户档案XDM模式需要包含[用户档案隐私混合](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-privacy.schema.md)。 发送事件时，需要将IAB同意信息手动添加到事件XDM对象。 SDK不会自动在事件中包含同意信息。 要在事件中发送同意信息，[体验事件隐私混音](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/experience-event/experienceevent-privacy.schema.md)需要添加到体验事件模式。
+以这种方式设置同意后，实时客户用户档案会使用同意信息进行更新。 为了使此工作正常，用户档案XDM模式需要包含[用户档案隐私模式字段组](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/profile/profile-privacy.schema.md)。 发送事件时，需要将IAB同意信息手动添加到事件XDM对象。 SDK不会自动在事件中包含同意信息。 要在事件中发送同意信息，[体验事件隐私字段组](https://github.com/adobe/xdm/blob/master/docs/reference/mixins/experience-event/experienceevent-privacy.schema.md)需要添加到体验事件模式。
 
 ## 在一个请求中发送多个标准
 
@@ -184,4 +184,3 @@ alloy("setConsent", {
 ## 在设置同意时同步身份
 
 当默认同意待决或结束时，`setConsent`可能是第一个发出并确定身份的请求。 因此，在第一个请求上同步身份可能很重要。 可以将标识映射添加到`setConsent`命令，就像在`sendEvent`命令中一样。 请参阅[检索Experience CloudID](../identity/overview.md)
-
