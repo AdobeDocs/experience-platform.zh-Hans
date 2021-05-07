@@ -6,9 +6,9 @@ topic-legacy: getting started
 description: 了解如何使用Adobe 2.0标准在Adobe Experience Platform中处理客户同意信号。
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '1563'
+source-wordcount: '1565'
 ht-degree: 0%
 
 ---
@@ -77,7 +77,7 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 >
 >如果没有任何冲突的数据集，则应改为设置合并策略的时间戳优先级。 这有助于确保客户指定的最新同意是使用的同意设置。
 
-有关如何使用合并策略的详细信息，请参阅[合并策略用户指南](../../../../profile/ui/merge-policies.md)。 在设置合并策略时，您必须确保您的用户档案包含由“同意和首选项”混合提供的所有必需的同意属性，如[数据集准备](./dataset.md)指南中所述。
+有关如何使用合并策略的详细信息，请参阅[合并策略用户指南](../../../../profile/ui/merge-policies.md)。 在设置合并策略时，您必须确保您的用户档案包含“同意和首选项”模式字段组提供的所有必需同意属性，如[数据集准备](./dataset.md)指南中所述。
 
 ## 将同意数据导入平台
 
