@@ -6,9 +6,9 @@ topic-legacy: overview
 description: 本文档概述了设备XDM数据类型。
 exl-id: 049a2ca1-6bc3-4b9c-832a-77102e8a0ed2
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '322'
+source-wordcount: '323'
 ht-degree: 4%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 4%
 | `typeID` | 字符串 | 设备的标识符。 这可以是来自DeviceAtlas的标识符或标识正在使用的硬件的其他服务。 |
 | `typeIDService` | 字符串 | 用于标识设备类型的服务的命名空间。 有关已接受值的详细信息，请参见[附录](#typeIDService)。 |
 
-有关混音的更多详细信息，请参阅公共XDM存储库：
+有关字段组的详细信息，请参阅公共XDM存储库：
 
 * [已填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/device.example.1.json)
 * [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/device.schema.json)
