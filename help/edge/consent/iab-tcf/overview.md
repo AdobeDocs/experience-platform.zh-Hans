@@ -1,15 +1,15 @@
 ---
 title: Adobe Experience Platform Web SDK中的IAB TCF 2.0支持
 description: 了解如何使用Adobe Experience Platform Web SDK支持IAB TCF 2.0同意首选项
-keywords: 同意；设置同意；用户档案隐私混合；体验事件隐私混合；隐私混合；IAB TCF 2.0；实时CDP；实时客户用户档案
+keywords: 同意；setConnence;用户档案隐私字段组；体验事件隐私字段组；隐私字段组；IAB TCF 2.0；实时CDP；实时客户用户档案
+exl-id: 78e728f4-1604-40bf-9e21-a056024bbc98
 translation-type: tm+mt
-source-git-commit: 1c6238a0cf72230e019fd10d9a72f30444bd9fb9
+source-git-commit: 7d7502b238f96eda1a15b622ba10bbccc289b725
 workflow-type: tm+mt
-source-wordcount: '878'
+source-wordcount: '883'
 ht-degree: 0%
 
 ---
-
 
 # Adobe Experience Platform Web SDK中的IAB TCF 2.0支持
 
@@ -49,7 +49,7 @@ Adobe Audience Manager(AAM)包含对IAB TCF 2.0的支持，使您能够评估、
 
 要收集有关事件的同意信息，必须具备以下条件：
 
-- 基于[!DNL XDM Experience Event]类的数据集，带有[!DNL Experience Event]隐私混合。
+- 基于[!DNL XDM Experience Event]类的数据集，带有[!DNL Experience Event]隐私模式字段组。
 - 使用上面的[!DNL XDM Experience Event]数据集设置的边缘配置。
 
 有关如何将XDM体验事件转换为Analytics点击的更多信息，请阅读[分析概述](../../data-collection/adobe-analytics/analytics-overview.md)文档进行开始。
