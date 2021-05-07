@@ -6,16 +6,16 @@ description: 此概述涵盖模式工作区在Experience Platform中的主要功
 topic-legacy: user guide
 exl-id: b6e089ce-cf9e-4150-92ab-368382a75049
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '287'
-ht-degree: 2%
+source-wordcount: '291'
+ht-degree: 3%
 
 ---
 
 # [!UICONTROL Schemas] UI概述
 
-Adobe Experience Platform用户界面中的[!UICONTROL Schemas]工作区允许您管理体验数据模型(XDM)资源，包括模式、类、混合和数据类型。 您可以视图和探索Adobe提供的核心资源，为组织创建自定义资源和模式。
+Adobe Experience Platform用户界面中的[!UICONTROL Schemas]工作区允许您管理Experience Data Model(XDM)资源，包括模式、类、模式字段组和数据类型。 您可以视图和探索Adobe提供的核心资源，为组织创建自定义资源和模式。
 
 要访问平台UI中的工作区，请选择左边栏中的&#x200B;**[!UICONTROL Schemas]**。
 
@@ -33,12 +33,12 @@ Adobe Experience Platform用户界面中的[!UICONTROL Schemas]工作区允许�
 
 * [模式 (Schema)](./resources/schemas.md)
 * [类](./resources/classes.md)
-* [Mixins](./resources/mixins.md)
+* [字段组](./resources/field-groups.md)
 * [数据类型](./resources/data-types.md)
 
 ## 定义XDM字段
 
-类、混合和数据类型都会将字段贡献给模式。 在向这些资源添加字段时，您可以从标准字段类型的列表中进行选择，也可以为某些用例定义专用字段。 有关详细信息，请参阅[定义UI](./fields/overview.md)中的XDM字段的指南。
+类、字段组和数据类型都会将字段贡献给模式。 在向这些资源添加字段时，您可以从标准字段类型的列表中进行选择，也可以为某些用例定义专用字段。 有关详细信息，请参阅[定义UI](./fields/overview.md)中的XDM字段的指南。
 
 ## 后续步骤
 
