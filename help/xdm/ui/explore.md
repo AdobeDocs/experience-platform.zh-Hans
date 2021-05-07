@@ -1,28 +1,28 @@
 ---
-keywords: Experience Platform；主页；热门主题；ui;UI;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；浏览；类；混合；数据类型；模式;
+keywords: Experience Platform；主页；热门主题；ui;UI;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；浏览；类；字段组；数据类型；模式;
 solution: Experience Platform
 title: 在UI中浏览XDM资源
-description: 了解如何在Experience Platform用户界面中探索现有模式、类、混音和数据类型。
+description: 了解如何在Experience Platform用户界面中探索现有模式、类、模式字段组和数据类型。
 topic-legacy: tutorial
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '912'
+source-wordcount: '919'
 ht-degree: 0%
 
 ---
 
 # 在UI中浏览XDM资源
 
-在Adobe Experience Platform中，所有体验数据模型(XDM)资源都存储在[!DNL Schema Library]中，包括由Adobe提供的标准资源和您的组织定义的自定义资源。 在Experience Platform UI中，您可以视图[!DNL Schema Library]中任何现有模式、类、混音或数据类型的结构和字段。 在规划和准备数据摄取时，此功能特别有用，因为UI提供了有关这些XDM资源提供的每个字段的预期数据类型和使用案例的信息。
+在Adobe Experience Platform中，所有体验数据模型(XDM)资源都存储在[!DNL Schema Library]中，包括由Adobe提供的标准资源和您的组织定义的自定义资源。 在Experience Platform UI中，您可以视图[!DNL Schema Library]中任何现有模式、类、模式字段组或数据类型的结构和字段。 在规划和准备数据摄取时，此功能特别有用，因为UI提供了有关这些XDM资源提供的每个字段的预期数据类型和使用案例的信息。
 
-本教程介绍了在Experience Platform UI中探索现有模式、类、混合和数据类型的步骤。
+本教程介绍了在Experience Platform UI中探索现有模式、类、字段组和数据类型的步骤。
 
 ## 查找XDM资源{#lookup}
 
-在平台UI中，选择左侧导航中的&#x200B;**[!UICONTROL Schemas]**。 [!UICONTROL Schemas]工作区提供了&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡，用于浏览您组织中的所有现有XDM资源，以及用于专门浏览&#x200B;**[!UICONTROL Classes]**、**[!UICONTROL Mixins]**&#x200B;和&#x200B;**[!UICONTROL Data types]**&#x200B;的其他专用选项卡。
+在平台UI中，选择左侧导航中的&#x200B;**[!UICONTROL Schemas]**。 [!UICONTROL Schemas]工作区提供了&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡，用于浏览您组织中的所有现有XDM资源，以及用于专门浏览&#x200B;**[!UICONTROL Classes]**、**[!UICONTROL Field groups]**&#x200B;和&#x200B;**[!UICONTROL Data types]**&#x200B;的其他专用选项卡。
 
 ![](../images/ui/explore/tabs.png)
 
@@ -80,7 +80,7 @@ ht-degree: 0%
 
 ### 标识字段{#identity}
 
-在检查包含标识字段的模式时，这些字段将列在向模式提供标识字段的类或混音的左边栏中。 在左边栏中选择标识字段名称以在画布中显示该字段，而不管其嵌套的深度如何。
+在检查包含标识字段的模式时，这些字段将列在向模式提供标识字段的类或字段组的左边栏中。 在左边栏中选择标识字段名称以在画布中显示该字段，而不管其嵌套的深度如何。
 
 在画布中，标识字段会用指纹图标（![指纹图标图像](../images/ui/explore/identity-symbol.png)）高亮显示。 如果选择标识字段的名称，则可以视图其他信息，如[标识命名空间](../../identity-service/namespaces.md)，以及字段是否是模式的主标识。
 
