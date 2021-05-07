@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform；主页；热门主题；模式;模式；枚举；混音；混音；混音；数据类型；数据类型；数据类型；主标识；主标识；XDM个人用户档案;XDM字段；数据类型；枚举；体验事件;XDM体验事件;XDM体验事件；体验事件；体验事件；XDM Experienceevent;模式设计；类；类；类；类；数据类型；数据类型；数据类型；模式;模式；标识；标识映射；标识映射；模式设计；映射；映射；合并模式;合并
+keywords: Experience Platform；主页；热门主题；模式;模式；枚举；混音；字段组；字段组；混合；数据类型；数据类型；数据类型；主标识；主标识；XDM个人用户档案;XDM字段；数据类型；枚举；体验事件;XDM体验事件;XDM体验事件；体验事件；体验事件；XDM Experienceevent;模式设计；类；类；类；类；数据类型；数据类型；数据类型；模式;模式；标识；标识映射；标识映射；模式设计；映射；映射；合并模式;合并
 solution: Experience Platform
 title: 模式合成基础
 topic-legacy: overview
 description: 本文档介绍了体验数据模型(XDM)模式，以及构建要在Adobe Experience Platform中使用的模式的构件、原则和最佳做法。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '3460'
+source-wordcount: '3497'
 ht-degree: 0%
 
 ---
@@ -123,49 +123,49 @@ XDM模式是以自包含格式存储大量复杂数据的理想之选。 有关X
 
 模式使用以下公式组成：
 
-**类+混音(&amp;A);= XDM模式**
+**类+模式字段组(&amp;A);= XDM模式**
 
-&amp;ast;模式由类和零个或多个混合组成。 这意味着您无需使用混音即可构建数据集模式。
+&amp;ast;模式由类和零个或多个模式字段组组成。 这意味着您无需使用字段组即可构建数据集模式。
 
 ### 类{#class}
 
 编写模式从指定类开始。 类定义模式将包含的数据的行为方面（记录或时间序列）。 除此之外，类还描述了所有基于该类的模式需要包含的公共属性的最小数量，并为合并多个兼容数据集提供了一种方法。
 
-模式的类决定哪些混音符合在该模式中使用的条件。 在下一节[中将详细讨论此问题。](#mixin)
+模式的类决定哪些字段组有资格在该模式中使用。 在下一节[中将详细讨论此问题。](#field-group)
 
 Adobe提供多个标准（“核心”）XDM类。 几乎所有下游平台进程都需要其中两个类[!DNL XDM Individual Profile]和[!DNL XDM ExperienceEvent]。 除了这些核心类，您还可以创建自己的自定义类来描述组织的更具体用例。 当没有Adobe定义的核心类可用于描述唯一用例时，自定义类由组织定义。
 
-以下屏幕截图演示了类在平台UI中的表示方式。 由于显示的示例模式不包含任何混音，所有显示的字段都由模式的类([!UICONTROL XDM Individual Profile])提供。
+以下屏幕截图演示了类在平台UI中的表示方式。 由于显示的示例模式不包含任何字段组，所有显示的字段都由模式的类([!UICONTROL XDM Individual Profile])提供。
 
 ![](../images/schema-composition/class.png)
 
 有关可用标准XDM类的最新列表，请参阅[官方XDM存储库](https://github.com/adobe/xdm/tree/master/components/classes)。 或者，如果您希望在UI中视图资源，也可以参阅[探索XDM组件](../ui/explore.md)的指南。
 
-### Mixin {#mixin}
+### 字段组{#field-group}
 
-混音是可重用的组件，它定义一个或多个字段，这些字段实现某些功能，如个人详细信息、酒店首选项或地址。 混合将作为实现兼容类的模式的一部分包含。
+字段组是可重用的组件，它定义一个或多个字段，这些字段实现某些功能，如个人详细信息、酒店首选项或地址。 字段组将作为实现兼容类的模式的一部分包含。
 
-混音根据所表示数据（记录或时间序列）的行为定义它们与哪些类兼容。 这意味着并非所有混音都可用于所有类。
+字段组根据所表示数据（记录或时间序列）的行为定义它们与哪些类兼容。 这意味着并非所有字段组都可用于所有类。
 
-[!DNL Experience Platform] 包括许多标准Adobe混合，同时允许供应商为其用户定义混合，并允许个人用户为自己的特定概念定义混合。
+[!DNL Experience Platform] 包括许多标准的Adobe字段组，同时允许供应商为其用户定义字段组，并允许个人用户为自己的特定概念定义字段组。
 
-例如，要为“[!UICONTROL Loyalty Members]”模式捕获“[!UICONTROL First Name]”和“[!UICONTROL Home Address]”等详细信息，您将能够使用定义这些常见概念的标准混合。 但是，特定于较不常见用例（如“[!UICONTROL Loyalty Program Level]”）的概念通常没有预定义的混音。 在这种情况下，您必须定义自己的混音才能捕获此信息。
+例如，要为“[!UICONTROL Loyalty Members]”模式捕获“[!UICONTROL First Name]”和“[!UICONTROL Home Address]”等详细信息，您可以使用定义这些常见概念的标准字段组。 但是，特定于不常见用例（如“[!UICONTROL Loyalty Program Level]”）的概念通常没有预定义的字段组。 在这种情况下，您必须定义自己的字段组才能捕获此信息。
 
-请记住，模式由“零个或更多”混音组成，因此这意味着您无需使用任何混音即可构建有效的模式。
+请记住，模式由“零个或更多”字段组组成，因此这意味着您无需使用任何字段组即可构建有效模式。
 
-以下屏幕截图演示了如何在平台UI中显示混合。 在本例中，单个混音([!UICONTROL Demographic Details])被添加到模式，该混音为模式的结构提供字段分组。
+以下屏幕截图演示了字段组在平台UI中的显示方式。 本例中，单个字段组([!UICONTROL Demographic Details])被添加到模式中，该组为模式的结构提供字段分组。
 
-![](../images/schema-composition/mixin.png)
+![](../images/schema-composition/field-group.png)
 
-有关可用标准XDM混合的最新列表，请参阅[官方XDM存储库](https://github.com/adobe/xdm/tree/master/components/mixins)。 或者，如果您希望在UI中视图资源，也可以参阅[探索XDM组件](../ui/explore.md)的指南。
+有关可用标准XDM字段组的最新列表，请参阅[官方XDM存储库](https://github.com/adobe/xdm/tree/master/components/mixins)。 或者，如果您希望在UI中视图资源，也可以参阅[探索XDM组件](../ui/explore.md)的指南。
 
 ### 数据类型{#data-type}
 
-数据类型与基本文本字段一样用作类或模式中的引用字段类型。 关键区别在于数据类型可以定义多个子字段。 与混音类似，数据类型允许多字段结构的一致使用，但比混音更具灵活性，因为通过将数据类型添加为字段的“数据类型”，可以在模式的任意位置包含数据类型。
+数据类型与基本文本字段一样用作类或模式中的引用字段类型。 关键区别在于数据类型可以定义多个子字段。 与字段组类似，数据类型允许多字段结构的一致使用，但比字段组具有更大的灵活性，因为通过将数据类型添加为字段的“数据类型”，可以在模式的任意位置包括数据类型。
 
 [!DNL Experience Platform] 提供许多常用数据类型，作为 [!DNL Schema Registry] 的一部分，以支持使用标准模式描述常用数据结构。这在[!DNL Schema Registry]教程中有更详细的说明，在您逐步定义数据类型时，会更加清晰。
 
-以下屏幕截图演示了数据类型在平台UI中的表示方式。 [!UICONTROL Demographic Details] mixin提供的一个字段使用“[!UICONTROL Person name]”数据类型，如字段名称旁的管道字符(`|`)后面的文本所示。 此特定数据类型提供与个人姓名相关的多个子字段，此构造可重用于需要捕获个人姓名的其他字段。
+以下屏幕截图演示了数据类型在平台UI中的表示方式。 [!UICONTROL Demographic Details]字段组提供的字段之一使用“[!UICONTROL Person name]”数据类型，如字段名称旁的管道字符(`|`)后面的文本所示。 此特定数据类型提供与个人姓名相关的多个子字段，此构造可重用于需要捕获个人姓名的其他字段。
 
 ![](../images/schema-composition/data-type.png)
 
@@ -192,7 +192,7 @@ Adobe提供多个标准（“核心”）XDM类。 几乎所有下游平台进�
 * 长
 * 短
 * 字节
-* Date
+* 日期
 * 日期时间
 * 地图
 
@@ -220,13 +220,13 @@ Adobe提供多个标准（“核心”）XDM类。 几乎所有下游平台进�
 
 ## 合成示例
 
-模式表示将被引入[!DNL Platform]并使用合成模型构建的数据的格式和结构。 如前所述，这些模式由一个类和与该类兼容的零个或多个混合组成。
+模式表示将被引入[!DNL Platform]并使用合成模型构建的数据的格式和结构。 如前所述，这些模式由一个类和与该类兼容的零个或多个字段组组成。
 
-例如，描述在零售商店购买情况的模式可能称为“[!UICONTROL Store Transactions]”。 该模式实现与标准[!UICONTROL Commerce] mixin和用户定义的[!UICONTROL Product Info] mixin组合的[!DNL XDM ExperienceEvent]类。
+例如，描述在零售商店购买情况的模式可能称为“[!UICONTROL Store Transactions]”。 模式实现与标准[!UICONTROL Commerce]字段组和用户定义的[!UICONTROL Product Info]字段组组合的[!DNL XDM ExperienceEvent]类。
 
-跟踪网站流量的另一个模式可能称为“[!UICONTROL Web Visits]”。 它还实现[!DNL XDM ExperienceEvent]类，但此次合并了标准[!UICONTROL Web] mixin。
+跟踪网站流量的另一个模式可能称为“[!UICONTROL Web Visits]”。 它还实现[!DNL XDM ExperienceEvent]类，但此次合并标准[!UICONTROL Web]字段组。
 
-下图显示了这些模式和每个混音贡献的字段。 它还包含基于[!DNL XDM Individual Profile]类的两个模式，包括本指南中前面提到的“[!UICONTROL Loyalty Members]”模式。
+下图显示了这些模式以及每个字段组贡献的字段。 它还包含基于[!DNL XDM Individual Profile]类的两个模式，包括本指南中前面提到的“[!UICONTROL Loyalty Members]”模式。
 
 ![](../images/schema-composition/composition.png)
 
@@ -249,18 +249,18 @@ Adobe提供多个标准（“核心”）XDM类。 几乎所有下游平台进�
 如果要将来自外部系统的细分引入平台，则必须使用以下组件在您的模式中捕获这些细分：
 
 * [[!UICONTROL Segment definition] 类](../classes/segment-definition.md):使用此标准类捕获外部区段定义的关键属性。
-* [[!UICONTROL Segment Membership Details] mixin](../mixins/profile/segmentation.md):将此混音添加到您 [!UICONTROL XDM Individual Profile] 的模式，以将用户档案与特定细分关联。
+* [[!UICONTROL Segment Membership Details] 字段组](../field-groups/profile/segmentation.md):将此字段组添加到您 [!UICONTROL XDM Individual Profile] 的模式，以将客户用户档案与特定区段关联。
 
 ## 后续步骤
 
 现在，您已经了解了模式合成的基础知识，现在，您可以开始使用[!DNL Schema Registry]探索和构建模式。
 
-要查看两个核心XDM类及其常用兼容混合的结构，请参阅以下参考文档：
+要查看两个核心XDM类及其常用的兼容字段组的结构，请参阅以下参考文档：
 
 * [[!DNL XDM Individual Profile]](../classes/individual-profile.md)
 * [[!DNL XDM ExperienceEvent]](../classes/experienceevent.md)
 
-[!DNL Schema Registry]用于访问Adobe Experience Platform中的[!DNL Schema Library]，并提供可从中访问所有可用库资源的用户界面和RESTful API。 [!DNL Schema Library]包含由Adobe定义的行业资源、由[!DNL Experience Platform]合作伙伴定义的供应商资源以及由组织成员组成的类、混合、数据类型和模式。
+[!DNL Schema Registry]用于访问Adobe Experience Platform中的[!DNL Schema Library]，并提供可从中访问所有可用库资源的用户界面和RESTful API。 [!DNL Schema Library]包含由Adobe定义的行业资源、由[!DNL Experience Platform]合作伙伴定义的供应商资源以及由组织成员组成的类、字段组、数据类型和模式。
 
 要开始使用UI编写模式，请配合[模式编辑器教程](../tutorials/create-schema-ui.md)，构建本文档中提到的“忠诚会员”模式。
 
