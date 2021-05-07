@@ -6,7 +6,7 @@ topic-legacy: overview
 description: 标准化和互操作性是Adobe Experience Platform的主要概念。 由Adobe驱动的体验数据模型(XDM)旨在实现客户体验数据标准化并定义客户体验管理模式。
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
 translation-type: tm+mt
-source-git-commit: 58f6c5e3ac77070807f7486bf429493d14fdda9e
+source-git-commit: b70e693b4ffeda561de4d4c8dd8fd1adeec489f7
 workflow-type: tm+mt
 source-wordcount: '1694'
 ht-degree: 1%
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->术语“mixin”已更新为“模式字段组”以促进理解。 字段组是可重复使用的字段集，用于支持业务用例。 此更改现在反映在模式 Registry API、Adobe Experience Platform UI和所有平台文档中。
+>术语“mixin”已更新为模式“字段组”以增进了解。 字段组是可重复使用的字段集，用于支持业务用例。 此更改现在反映在模式 Registry API、Adobe Experience Platform UI和所有平台文档中。
 
 标准化和互操作性是Adobe Experience Platform的主要概念。 [!DNL Experience Data Model] (XDM)由Adobe驱动，旨在实现客户体验数据标准化并定义客户体验管理模式。
 
