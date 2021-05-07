@@ -4,9 +4,9 @@ description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
 translation-type: tm+mt
-source-git-commit: d4ed6c8fa9c86eb2beec829ab24c381b665c2f03
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '500'
+source-wordcount: '502'
 ht-degree: 5%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 5%
 * SDK现在可以[作为npm包](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/installing-the-sdk.html)安装。
 * 增加了对[配置默认同意](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent)时`out`选项的支持，该选项将删除所有事件，直到收到同意(现有`pending`选项将事件排队，并在收到同意后发送它们)。
 * [onBeforeEventSend回调](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#onbeforeeventsend)现在可用于阻止发送事件。
-* 现在，在发送有关呈现或单击的个性化内容的事件时，使用XDM混音，而不是`meta.personalization`。
+* 现在，在发送有关呈现或单击的个性化内容的事件时，使用XDM模式字段组而不是`meta.personalization`。
 * 现在，[getIdentity命令](https://experienceleague.adobe.com/docs/experience-platform/edge/identity/overview.html#retrieving-the-visitor-id)将返回边缘区域ID和标识。
 * 从服务器收到的警告和错误已得到改进，并以更适当的方式处理。
 * 增加了对[Adobe的“同意2.0”标准](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/supporting-consent.html?communicating-consent-preferences-via-the-adobe-standard)的支持。
