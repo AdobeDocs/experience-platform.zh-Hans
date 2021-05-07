@@ -7,9 +7,9 @@ type: Tutorial
 description: 本教程使用模式 Registry API指导您完成使用标准类构建模式的步骤。
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2373'
+source-wordcount: '2426'
 ht-degree: 1%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 1%
 
 ## 使用标准类编写模式
 
-可以将模式视为要收录到[!DNL Experience Platform]中的数据的蓝图。 每个模式由一个类和零个或多个混合组成。 换句话说，您不必添加混音来定义模式，但在大多数情况下，至少使用了一个混音。
+可以将模式视为要收录到[!DNL Experience Platform]中的数据的蓝图。 每个模式由一个类和零个或多个模式字段组组成。 换句话说，您不必添加字段组来定义模式，但在大多数情况下，至少使用一个字段组。
 
 ### 分配类
 
@@ -177,13 +177,13 @@ curl -X GET \
 }
 ```
 
-### 添加混合{#add-a-mixin}
+### 添加字段组{#add-a-field-group}
 
-现在，已创建并确认“忠诚度会员”模式，可以将混合添加到其中。
+现在已创建并确认“忠诚会员”模式，可以将字段组添加到该模块中。
 
-根据所选模式的类别，有不同的标准混音可供使用。 每个混音都包含一个`intendedToExtend`字段，该字段定义了该混音与之兼容的类。
+根据所选模式的类别，有不同的标准字段组可供使用。 每个字段组都包含一个`intendedToExtend`字段，该字段定义了与该字段组兼容的类。
 
-混合定义了可在需要捕获相同信息的任何模式中重用的概念，如“名称”或“地址”。
+字段组定义了可在任何需要捕获相同信息的模式中重用的概念，如“名称”或“地址”。
 
 **API格式**
 
@@ -193,9 +193,9 @@ PATCH /tenant/schemas/{schema meta:altId or url encoded $id URI}
 
 **请求**
 
-此项请求更新(PATCH)“忠诚会员”模式，以在“用户档案 — 个人 — 详细信息”混合中包含字段。
+此项请求更新(PATCH)“忠诚度成员”模式，以在“用户档案-person-details”字段组中包含这些字段。
 
-通过添加“用户档案 — 个人 — 详细信息”混音，忠诚度会员模式现在可捕获有关忠诚度项目会员的信息，如其名、姓和生日。
+通过添加“用户档案 — 人 — 详细信息”字段组，忠诚度成员模式现在可捕获有关忠诚度项目成员的信息，如其名、姓和生日。
 
 ```SHELL
 curl -X PATCH \
@@ -212,7 +212,7 @@ curl -X PATCH \
 
 **响应**
 
-该响应显示`meta:extends`数组中新添加的混音，并在`allOf`属性中包含对混音的`$ref`。
+该响应显示`meta:extends`数组中新添加的字段组，并包含`allOf`属性中字段组的`$ref`。
 
 ```JSON
 {
@@ -254,17 +254,17 @@ curl -X PATCH \
 }
 ```
 
-### 添加另一个混音
+### 添加另一个字段组
 
-您现在可以使用另一个混音重复这些步骤，从而添加另一个标准混音。
+您现在可以使用另一个字段组重复这些步骤，从而添加另一个标准字段组。
 
 >[!TIP]
 >
->值得查看所有可用的混音，以熟悉其中包含的字段。 您可以列表(GET)所有可与特定类一起使用的混合，方法是对每个“全局”和“租户”容器执行请求，仅返回那些“meta:intenededToExtend”字段与您所使用的类匹配的混合。 在这种情况下，它是[!DNL XDM Individual Profile]类，因此使用[!DNL XDM Individual Profile] `$id`:
+>值得查看所有可用字段组，以熟悉每个字段中包含的字段。 您可以列表(GET)所有可与特定类一起使用的字段组，方法是对每个“全局”和“租户”容器执行请求，仅返回那些“meta:intenedToExtend”字段与您使用的类匹配的字段组。 在这种情况下，它是[!DNL XDM Individual Profile]类，因此使用[!DNL XDM Individual Profile] `$id`:
 
 ```http
-GET /global/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
-GET /tenant/mixins?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
+GET /global/fieldgroups?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
+GET /tenant/fieldgroups?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
 ```
 
 **API格式**
@@ -275,7 +275,7 @@ PATCH /tenant/schemas/{schema meta:altId or url encoded $id URI}
 
 **请求**
 
-此项请求更新(PATCH)“忠诚会员”模式，以在“用户档案 — 个人详细信息”混音中包含字段，并向模式添加“家庭地址”、“电子邮件地址”和“家庭电话”字段。
+此项请求更新(PATCH)“忠诚会员”模式，以将“用户档案 — 个人 — 详细信息”字段组中的字段包括在内，并向模式添加“家庭地址”、“电子邮件地址”和“家庭电话”字段。
 
 ```SHELL
 curl -X PATCH \
@@ -292,7 +292,7 @@ curl -X PATCH \
 
 **响应**
 
-该响应显示`meta:extends`数组中新添加的混音，并在`allOf`属性中包含对混音的`$ref`。
+该响应显示`meta:extends`数组中新添加的字段组，并包含`allOf`属性中字段组的`$ref`。
 
 “Loyalty Members”模式现在应包含`allOf`数组中的三个`$ref`值：“用户档案”、“用户档案-person-details”和“用户档案-personal-details”，如下所示。
 
@@ -340,29 +340,29 @@ curl -X PATCH \
 }
 ```
 
-### 定义新混音
+### 定义新字段组
 
-忠诚度会员模式需要捕获忠诚度项目特有的信息。 此信息不包括在任何标准混合中。
+忠诚度会员模式需要捕获忠诚度项目特有的信息。 此信息不包含在任何标准字段组中。
 
-[!DNL Schema Registry]允许您在租户容器中定义自己的混合，从而说明这一点。 这些混音是您的组织特有的，IMS组织外的任何人都无法看到或编辑。
+[!DNL Schema Registry]允许您在租户容器中定义自己的字段组，从而说明这一点。 这些字段组是您的组织特有的，IMS组织外的任何人都无法看到或编辑。
 
-要创建(POST)新混音，您的请求必须包含一个`meta:intendedToExtend`字段，其中包含与混音兼容的基类的`$id`以及混音将包含的属性。
+要创建(POST)新字段组，您的请求必须包含`meta:intendedToExtend`字段，其中包含与字段组兼容的基类的`$id`以及字段组将包含的属性。
 
-任何自定义属性都必须嵌套在`TENANT_ID`下，以避免与其他混音或字段发生冲突。
+任何自定义属性都必须嵌套在`TENANT_ID`下，以避免与其他字段组或字段发生冲突。
 
 **API格式**
 
 ```http
-POST /tenant/mixins
+POST /tenant/fieldgroups
 ```
 
 **请求**
 
-此请求创建一个新混音，其中有一个“loyalty”对象，其中包含四个特定于忠诚度的项目字段：“loyaltyId”、“loyaltyLevel”、“loyaltyPoints”和“memberSince”。
+此请求将创建一个新字段组，该字段组具有一个“loyalty”对象，其中包含四个特定于忠诚度的项目字段：“loyaltyId”、“loyaltyLevel”、“loyaltyPoints”和“memberSince”。
 
 ```SHELL
 curl -X POST\
-  https://platform.adobe.io/data/foundation/schemaregistry/tenant/mixins\
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups\
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -372,7 +372,7 @@ curl -X POST\
         "type": "object",
         "title": "Loyalty Member Details",
         "meta:intendedToExtend": ["https://ns.adobe.com/xdm/context/profile"],
-        "description": "Loyalty Program Mixin.",
+        "description": "Loyalty Program Field Group.",
         "definitions": {
             "loyalty": {
               "properties": {
@@ -419,7 +419,7 @@ curl -X POST\
 
 **响应**
 
-成功的请求返回HTTP响应状态201（已创建），响应主体包含新创建的混合的详细信息，包括`$id`、`meta:altIt`和`version`。 这些值是只读的，由[!DNL Schema Registry]指定。
+成功的请求返回HTTP响应状态201（已创建），响应主体包含新创建字段组的详细信息，包括`$id`、`meta:altIt`和`version`。 这些值是只读的，由[!DNL Schema Registry]指定。
 
 ```JSON
 {
@@ -428,7 +428,7 @@ curl -X POST\
     "meta:intendedToExtend": [
         "https://ns.adobe.com/xdm/context/profile"
     ],
-    "description": "Loyalty Program Mixin.",
+    "description": "Loyalty Program Field Group.",
     "definitions": {
         "loyalty": {
             "properties": {
@@ -482,11 +482,11 @@ curl -X POST\
     "meta:extensible": true,
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
-    "meta:altId": "_{TENANT_ID}.mixins.bb118e507bb848fd85df68fedea70c62",
+    "meta:altId": "_{TENANT_ID}.fieldgroups.bb118e507bb848fd85df68fedea70c62",
     "meta:xdmType": "object",
-    "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62",
+    "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62",
     "version": "1.1",
-    "meta:resourceType": "mixins",
+    "meta:resourceType": "fieldgroups",
     "meta:registryMetadata": {
         "repo:createDate": 1551838135803,
         "repo:lastModifiedDate": 1552078296885,
@@ -496,9 +496,9 @@ curl -X POST\
 }
 ```
 
-### 将自定义混音添加到模式
+### 将自定义字段组添加到模式
 
-现在，您可以按照相同步骤[添加标准混音](#add-a-mixin)，将新创建的混音添加到模式。
+现在，您可以按照相同步骤[添加标准字段组](#add-a-field-group)，将新创建的字段组添加到模式。
 
 **API格式**
 
@@ -508,7 +508,7 @@ PATCH /tenant/schemas/{schema meta:altId or url encoded $id URI}
 
 **请求**
 
-此项请求更新(PATCH)“忠诚度会员”模式，以在新的“忠诚度会员详细信息”混合中包含字段。
+此项请求更新(PATCH)“忠诚度成员”模式，以在新的“忠诚度成员详细信息”字段组中包含这些字段。
 
 ```SHELL
 curl -X PATCH \
@@ -519,13 +519,13 @@ curl -X PATCH \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '[
-        { "op": "add", "path": "/allOf/-", "value":  {"$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"}}
+        { "op": "add", "path": "/allOf/-", "value":  {"$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"}}
       ]'
 ```
 
 **响应**
 
-您可以看到已成功添加混音，因为响应现在在`meta:extends`数组中显示新添加的混音，并在`allOf`属性中包含对混音的`$ref`。
+您可以看到字段组已成功添加，因为响应现在显示`meta:extends`数组中新添加的字段组，并且在`allOf`属性中的字段组中包含`$ref`。
 
 ```JSON
 {
@@ -543,7 +543,7 @@ curl -X PATCH \
             "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"
         }
     ],
     "meta:class": "https://ns.adobe.com/xdm/context/profile",
@@ -557,7 +557,7 @@ curl -X PATCH \
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/context/profile-person-details",
         "https://ns.adobe.com/xdm/context/profile-personal-details",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"
     ],
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
@@ -577,7 +577,7 @@ curl -X PATCH \
 
 ### 视图当前模式
 
-您现在可以执行GET请求来视图当前模式，并查看添加的混音对模式整体结构的贡献。
+您现在可以执行GET请求来视图当前模式，并查看添加的字段组对模式整体结构的贡献。
 
 **API格式**
 
@@ -599,9 +599,9 @@ curl -X GET \
 
 **响应**
 
-通过使用`application/vnd.adobe.xed-full+json; version=1`接受标头，您可以看到显示所有属性的完整模式。 这些属性是类和混合所贡献的字段，它们已用于合成模式。 在此示例响应中，单个属性属性已最小化为空间。 您可以视图此文档末尾[附录](#appendix)中的完整模式，包括所有属性及其属性。
+通过使用`application/vnd.adobe.xed-full+json; version=1`接受标头，您可以看到显示所有属性的完整模式。 这些属性是类和字段组贡献的字段，它们已用于组成模式。 在此示例响应中，单个属性属性已最小化为空间。 您可以视图此文档末尾[附录](#appendix)中的完整模式，包括所有属性及其属性。
 
-在`"properties"`下，您可以看到在添加自定义混音时创建的`_{TENANT_ID}`命名空间。 在该命名空间中是“loyalty”对象和创建混合时定义的字段。
+在`"properties"`下，您可以看到在添加自定义字段组时创建的`_{TENANT_ID}`命名空间。 在该命名空间中是“loyalty”对象和创建字段组时定义的字段。
 
 ```JSON
 {
@@ -619,7 +619,7 @@ curl -X GET \
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/context/profile-person-details",
         "https://ns.adobe.com/xdm/context/profile-personal-details",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"
     ],
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
@@ -691,11 +691,11 @@ curl -X GET \
 
 ### 创建数据类型
 
-您创建的忠诚度混合包含特定忠诚度属性，这些属性可能在其他模式中有用。 例如，数据可能被摄取为体验事件的一部分，或由实现其他类的模式使用。 在这种情况下，将对象层次结构另存为数据类型是有意义的，以便更轻松地在其他位置重用定义。
+您创建的“忠诚度”字段组包含可能在其他模式中有用的特定忠诚度属性。 例如，数据可能被摄取为体验事件的一部分，或由实现其他类的模式使用。 在这种情况下，将对象层次结构另存为数据类型是有意义的，以便更轻松地在其他位置重用定义。
 
 数据类型允许您定义对象层次结构一次，并在与任何其他标量类型类似的字段中引用它。
 
-换句话说，数据类型允许一致地使用多字段结构，比混音更灵活，因为通过将它们添加为字段的“类型”，可以将它们包含在模式的任意位置。
+换句话说，数据类型允许一致地使用多字段结构，比字段组更灵活，因为通过将它们添加为字段的“类型”，可以将它们包含在模式的任何位置。
 
 **API格式**
 
@@ -822,19 +822,19 @@ curl -X POST \
 
 ### 在模式中使用数据类型
 
-既然已创建“忠诚度详细信息”数据类型，您就可以更新(PATCH)您创建的混音中的“loyalty”字段，以引用数据类型代替之前在其中的字段。
+既然已创建“忠诚度详细信息”数据类型，您可以更新(PATCH)您创建的字段组中的“loyalty”字段，以引用数据类型代替之前在该字段中的字段。
 
 **API格式**
 
 ```http
-PATCH /tenant/mixins/{mixin meta:altId or URL encoded $id URI}
+PATCH /tenant/fieldgroups/{field group meta:altId or URL encoded $id URI}
 ```
 
 **请求**
 
 ```SHELL
 curl -X PATCH \
-  https://platform.adobe.io/data/foundation/schemaregistry/tenant/mixins/_{TENANT_ID}.mixins.bb118e507bb848fd85df68fedea70c62 \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/_{TENANT_ID}.fieldgroups.bb118e507bb848fd85df68fedea70c62 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
@@ -867,7 +867,7 @@ curl -X PATCH \
     "meta:intendedToExtend": [
         "https://ns.adobe.com/xdm/context/profile"
     ],
-    "description": "Loyalty Program Mixin.",
+    "description": "Loyalty Program Field Group.",
     "definitions": {
         "loyalty": {
             "properties": {
@@ -896,11 +896,11 @@ curl -X PATCH \
     "meta:extensible": true,
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
-    "meta:altId": "_{TENANT_ID}.mixins.bb118e507bb848fd85df68fedea70c62",
+    "meta:altId": "_{TENANT_ID}.fieldgroups.bb118e507bb848fd85df68fedea70c62",
     "meta:xdmType": "object",
-    "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62",
+    "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62",
     "version": "1.2",
-    "meta:resourceType": "mixins",
+    "meta:resourceType": "fieldgroups",
     "meta:registryMetadata": {
         "repo:createDate": 1551838135803,
         "repo:lastModifiedDate": 1552080570051,
@@ -1068,7 +1068,7 @@ curl -X PATCH \
             "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"
         }
     ],
     "meta:class": "https://ns.adobe.com/xdm/context/profile",
@@ -1082,7 +1082,7 @@ curl -X PATCH \
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/context/profile-person-details",
         "https://ns.adobe.com/xdm/context/profile-personal-details",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"
     ],
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
@@ -1171,9 +1171,9 @@ curl -X GET \
 
 ## 后续步骤
 
-通过完成本教程，您已成功使用您定义的标准混音和混音合成模式。 您现在可以使用此模式创建数据集并将记录数据收录到Adobe Experience Platform。
+通过完成本教程，您已使用标准字段组和您定义的字段组成功合成了模式。 您现在可以使用此模式创建数据集并将记录数据收录到Adobe Experience Platform。
 
-在本教程中创建的完整“忠诚会员”模式可在以下附录中找到。 当您查看模式时，您可以看到混音对整体结构的贡献，以及哪些字段可用于数据获取。
+在本教程中创建的完整“忠诚会员”模式可在以下附录中找到。 在查看模式时，您可以看到字段组对整体结构的贡献，以及哪些字段可用于数据获取。
 
 创建多个模式后，您可以使用关系描述符定义它们之间的关系。 有关详细信息，请参阅[定义两个模式之间关系的教程](relationship-api.md)。 有关如何在注册表中执行所有操作(GET、POST、PUT、PATCH和DELETE)的详细示例，请在使用API时参阅[模式注册表开发人员指南](../api/getting-started.md)。
 
@@ -1185,7 +1185,7 @@ curl -X GET \
 
 在本教程中，将编写一个模式来描述零售忠诚度项目的成员。
 
-该模式实现[!DNL XDM Individual Profile]类并组合多个混合；使用标准“人员详细信息”和“个人详细信息”混合以及教程中定义的“忠诚度详细信息”混合来导入有关忠诚度会员的信息。
+模式实现[!DNL XDM Individual Profile]类并组合多个字段组；使用标准“人员详细信息”和“个人详细信息”字段组以及教程中定义的“忠诚度详细信息”字段组导入有关忠诚度成员的信息。
 
 以下显示了JSON格式的已完成的“忠诚会员”模式:
 
@@ -1205,7 +1205,7 @@ curl -X GET \
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/context/profile-person-details",
         "https://ns.adobe.com/xdm/context/profile-personal-details",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/bb118e507bb848fd85df68fedea70c62"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/bb118e507bb848fd85df68fedea70c62"
     ],
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
