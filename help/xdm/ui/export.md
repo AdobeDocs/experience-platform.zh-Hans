@@ -6,9 +6,9 @@ topic-legacy: user guide
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->除了模式（包括类、混合和数据类型）之外，您还可以使用模式 Registry API导出其他资源。 有关详细信息，请参阅[导出/导入端点](../api/export-import.md)上的指南。
+>除了模式(包括类、模式字段组和数据类型)，您还可以使用模式 Registry API导出其他资源。 有关详细信息，请参阅[导出/导入端点](../api/export-import.md)上的指南。
 
 ## 先决条件
 
@@ -44,9 +44,9 @@ ht-degree: 0%
 ```json
 [
   {
-    "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
-    "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.mixins.9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
-    "meta:resourceType": "mixins",
+    "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/fieldgroups/9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
+    "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.fieldgroups.9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
+    "meta:resourceType": "fieldgroups",
     "version": "1.0",
     "title": "Loyalty details",
     "type": "object",
@@ -171,12 +171,12 @@ ht-degree: 0%
         "meta:xdmType": "object"
       },
       {
-        "$ref": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
+        "$ref": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/fieldgroups/9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
         "type": "object",
         "meta:xdmType": "object"
       },
       {
-        "$ref": "https://ns.adobe.com/xdm/mixins/profile-consents",
+        "$ref": "https://ns.adobe.com/xdm/fieldgroups/profile-consents",
         "type": "object",
         "meta:xdmType": "object"
       }
@@ -189,8 +189,8 @@ ht-degree: 0%
       "https://ns.adobe.com/xdm/common/auditable",
       "https://ns.adobe.com/xdm/data/record",
       "https://ns.adobe.com/xdm/context/profile",
-      "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
-      "https://ns.adobe.com/xdm/mixins/profile-consents"
+      "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/fieldgroups/9ecfd881d0053568d277b792e4d24c6b70ffa7782bd31265",
+      "https://ns.adobe.com/xdm/fieldgroups/profile-consents"
     ],
     "meta:xdmType": "object",
     "meta:class": "https://ns.adobe.com/xdm/context/profile",
@@ -203,7 +203,7 @@ ht-degree: 0%
 ]
 ```
 
-负载采用数组的形式，每个数组项都是表示要导出的自定义XDM资源的对象。 在上面的示例中，包含“[!DNL Loyalty details]”自定义混音和“[!DNL Loyalty Members]”模式。 模式使用的任何核心资源不包括在导出中，因为这些资源可在所有沙箱和IMS组织中使用。
+负载采用数组的形式，每个数组项都是表示要导出的自定义XDM资源的对象。 在上面的示例中，包括“[!DNL Loyalty details]”自定义字段组和“[!DNL Loyalty Members]”模式。 模式使用的任何核心资源不包括在导出中，因为这些资源可在所有沙箱和IMS组织中使用。
 
 请注意，贵组织的租户ID的每个实例在有效负荷中显示为`<XDM_TENANTID_PLACEHOLDER>`。 这些占位符将自动替换为相应的租户ID值，具体取决于您在下一步中导入模式的位置。
 
