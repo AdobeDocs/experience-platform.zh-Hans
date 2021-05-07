@@ -6,16 +6,16 @@ description: 模式 Registry API中的/export和/import端点允许您在IMS组�
 topic-legacy: developer guide
 exl-id: 33b62f75-2670-42f4-9aac-fa1540cd7d4a
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '500'
+source-wordcount: '507'
 ht-degree: 1%
 
 ---
 
 # 导出/导入终结点
 
-[!DNL Schema Library]中的所有资源都包含在IMS组织内的特定沙箱中。 在某些情况下，您可能希望在沙箱和IMS组织之间共享体验数据模型(XDM)资源。 [!DNL Schema Registry] API提供两个端点，允许您为[!DNL  Schema Library]中的任何模式、混音或数据类型生成导出有效负荷，然后使用该有效负荷将该资源（及所有相关资源）导入目标沙箱和IMS组织。
+[!DNL Schema Library]中的所有资源都包含在IMS组织内的特定沙箱中。 在某些情况下，您可能希望在沙箱和IMS组织之间共享体验数据模型(XDM)资源。 [!DNL Schema Registry] API提供两个端点，允许您为[!DNL  Schema Library]中的任何模式、模式字段组或数据类型生成导出有效负荷，然后使用该有效负荷将该资源（及所有相关资源）导入目标沙箱和IMS组织。
 
 ## 入门指南
 
@@ -25,7 +25,7 @@ ht-degree: 1%
 
 ## 检索资源{#export}的导出负载
 
-对于[!DNL Schema Library]中的任何现有模式、混音或数据类型，您可以通过向`/export`端点发出GET请求，提供路径中资源的ID来生成导出负载。
+对于[!DNL Schema Library]中的任何现有模式、字段组或数据类型，您可以通过向`/export`端点发出GET请求，提供路径中资源的ID来生成导出负载。
 
 **API格式**
 
@@ -39,11 +39,11 @@ GET /rpc/export/{RESOURCE_ID}
 
 **请求**
 
-以下请求检索`Restaurant`混音的导出有效负荷。
+以下请求将检索`Restaurant`字段组的导出有效负荷。
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/foundation/schemaregistry/rpc/export/_{TENANT_ID}.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9 \
+  https://platform.adobe.io/data/foundation/schemaregistry/rpc/export/_{TENANT_ID}.fieldgroups.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -53,7 +53,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回一组对象，这些对象表示目标 XDM资源及其所有相关资源。 在此示例中，数组中的第一个对象是租户创建的`Property`数据类型， `Restaurant` mixin使用此类型，而第二个对象是`Restaurant` mixin本身。 然后，此负载可用于[将资源](#import)导入到其他沙箱或IMS组织中。
+成功的响应返回一组对象，这些对象表示目标 XDM资源及其所有相关资源。 在此示例中，数组中的第一个对象是由租户创建的`Restaurant`字段组使用的`Property`数据类型，而第二个对象是`Restaurant`字段组本身。 然后，此负载可用于[将资源](#import)导入到其他沙箱或IMS组织中。
 
 请注意，资源的租户ID的所有实例都替换为`<XDM_TENANTID_PLACEHOLDER>`。 这样，模式注册表就可以根据资源在后续导入调用中的发送位置，自动将正确的租户ID应用到资源。
 
@@ -129,9 +129,9 @@ curl -X GET \
         "meta:sandboxType": "production"
     },
     {
-        "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "meta:resourceType": "mixins",
+        "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.fieldgroups.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "meta:resourceType": "fieldgroups",
         "version": "1.0",
         "title": "Restaurant",
         "type": "object",
@@ -207,7 +207,7 @@ POST /rpc/import
 
 **请求**
 
-以下请求采用上一个[导出示例](#export)中返回的有效负荷，以将`Restaurant`混音导入新的IMS组织和沙箱中，具体由`x-gw-ims-org-id`和`x-sandbox-name`标头分别确定。
+以下请求采用上一个[导出示例](#export)中返回的有效负荷，以将`Restaurant`字段组导入新的IMS组织和沙箱中，具体由`x-gw-ims-org-id`和`x-sandbox-name`头确定。
 
 ```shell
 curl -X POST \
@@ -288,9 +288,9 @@ curl -X POST \
           "meta:sandboxType": "production"
         },
         {
-          "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-          "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-          "meta:resourceType": "mixins",
+          "$id": "https://ns.adobe.com/<XDM_TENANTID_PLACEHOLDER>/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+          "meta:altId": "_<XDM_TENANTID_PLACEHOLDER>.fieldgroups.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+          "meta:resourceType": "fieldgroups",
           "version": "1.0",
           "title": "Restaurant",
           "type": "object",
@@ -446,9 +446,9 @@ curl -X POST \
         "meta:tenantNamespace": "_{TENANT_ID}"
     },
     {
-        "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "meta:altId": "_{TENANT_ID}.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "meta:resourceType": "mixins",
+        "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "meta:altId": "_{TENANT_ID}.fieldgroups.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "meta:resourceType": "fieldgroups",
         "version": "1.0",
         "title": "Restaurant",
         "type": "object",
