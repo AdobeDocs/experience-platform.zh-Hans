@@ -6,16 +6,16 @@ description: 模式 Registry API中的/模式端点允许您在体验应用程�
 topic-legacy: developer guide
 exl-id: d0bda683-9cd3-412b-a8d1-4af700297abf
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '1418'
+source-wordcount: '1431'
 ht-degree: 2%
 
 ---
 
 # 模式端点
 
-可以将模式视为要收录到Adobe Experience Platform中的数据的蓝图。 每个模式由一个类和零个或多个混合组成。 [!DNL Schema Registry] API中的`/schemas`端点允许您以编程方式管理体验应用程序中的模式。
+可以将模式视为要收录到Adobe Experience Platform中的数据的蓝图。 每个模式由一个类和零个或多个模式字段组组成。 [!DNL Schema Registry] API中的`/schemas`端点允许您以编程方式管理体验应用程序中的模式。
 
 ## 入门指南
 
@@ -154,7 +154,7 @@ curl -X GET \
           "meta:xdmType": "object"
       },
       {
-          "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/443fe51457047d958f4a97853e64e0eca93ef34d7990583b",
+          "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/443fe51457047d958f4a97853e64e0eca93ef34d7990583b",
           "type": "object",
           "meta:xdmType": "object"
       }
@@ -163,7 +163,7 @@ curl -X GET \
   "meta:extensible": false,
   "meta:abstract": false,
   "meta:extends": [
-      "https://ns.adobe.com/{TENANT_ID}/mixins/443fe51457047d958f4a97853e64e0eca93ef34d7990583b",
+      "https://ns.adobe.com/{TENANT_ID}/fieldgroups/443fe51457047d958f4a97853e64e0eca93ef34d7990583b",
       "https://ns.adobe.com/xdm/common/auditable",
       "https://ns.adobe.com/xdm/data/record",
       "https://ns.adobe.com/xdm/context/profile"
@@ -193,7 +193,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->下面的示例调用只是有关如何在API中创建模式的基准示例，类的最小合成要求和没有混合。 有关如何在API中创建模式（包括如何使用混合和数据类型分配字段）的完整步骤，请参阅[模式创建教程](../tutorials/create-schema-api.md)。
+>以下示例调用只是有关如何在API中创建模式的基准示例，类的合成要求最低且没有字段组。 有关如何在API中创建模式（包括如何使用字段组和数据类型分配字段）的完整步骤，请参阅[模式创建教程](../tutorials/create-schema-api.md)。
 
 **API格式**
 
@@ -227,7 +227,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `allOf` | 对象的数组，每个对象引用一个类或混合，模式实现其字段。 每个对象都包含一个属性(`$ref`)，其值表示将实现的类的`$id`或新模式的混合。 必须提供一个类，并且不包含或多个附加混音。 在上例中，`allOf`数组中的单个对象是模式的类。 |
+| `allOf` | 对象的数组，每个对象引用一个类或字段组，该类或字段组的字段由模式实现。 每个对象都包含一个属性(`$ref`)，其值表示新模式将实现的类或字段组的`$id`。 必须提供一个类，并包含零个或多个附加字段组。 在上例中，`allOf`数组中的单个对象是模式的类。 |
 
 **响应**
 
@@ -268,7 +268,7 @@ curl -X POST \
 
 对[列表租户容器中的所有模式](#list)执行GET请求现在将包括新模式。 您可以使用URL编码的`$id` URI执行[查找(GET)请求](#lookup)以直接视图新模式。
 
-要向模式添加其他字段，可以执行[PATCH操作](#patch)以向模式的`allOf`和`meta:extends`数组添加混音。
+要向模式添加其他字段，可以执行[PATCH操作](#patch)，以向模式的`allOf`和`meta:extends`数组添加字段组。
 
 ## 更新模式{#put}
 
@@ -357,7 +357,7 @@ curl -X PUT \
 >
 >如果要用新值替换整个资源，而不是更新单个字段，请参阅[中有关使用PUT操作替换模式的部分](#put)。
 
-最常见的PATCH操作之一涉及向模式添加以前定义的混音，如下例所示。
+最常见的PATCH操作之一涉及向模式添加以前定义的字段组，如下例所示。
 
 **API格式**
 
@@ -371,7 +371,7 @@ PATCH /tenant/schema/{SCHEMA_ID}
 
 **请求**
 
-下面的示例请求通过将混合的`$id`值添加到`meta:extends`和`allOf`数组，将新混合添加到模式。
+下面的示例请求通过将字段组的`$id`值添加到`meta:extends`和`allOf`数组，将新字段组添加到模式。
 
 请求主体采用数组的形式，每个列出的对象代表对单个字段的特定更改。 每个对象都包括要执行的操作(`op`)，应在(`path`)上执行操作的字段，以及应在该操作中包括哪些信息(`value`)。
 
@@ -387,13 +387,13 @@ curl -X PATCH\
         { 
           "op": "add",
           "path": "/meta:extends/-",
-          "value":  "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
+          "value":  "https://ns.adobe.com/{TENANT_ID}/fieldgroups/e49cbb2eec33618f686b8344b4597ecf"
         },
         {
           "op": "add",
           "path": "/allOf/-",
           "value":  {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/e49cbb2eec33618f686b8344b4597ecf"
           }
         }
       ]'
@@ -401,7 +401,7 @@ curl -X PATCH\
 
 **响应**
 
-响应显示，这两个操作都成功执行。 混音`$id`已添加到`meta:extends`数组中，现在在`allOf`数组中显示对混音`$id`的引用(`$ref`)。
+响应显示，这两个操作都成功执行。 字段组`$id`已添加到`meta:extends`数组中，`allOf`数组中现在显示对字段组`$id`的引用(`$ref`)。
 
 ```JSON
 {
@@ -413,7 +413,7 @@ curl -X PATCH\
             "$ref": "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/e49cbb2eec33618f686b8344b4597ecf"
         }
     ],
     "meta:class": "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590",
@@ -422,7 +422,7 @@ curl -X PATCH\
     "meta:extends": [
         "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590",
         "https://ns.adobe.com/xdm/data/record",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/e49cbb2eec33618f686b8344b4597ecf"
     ],
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
@@ -493,7 +493,7 @@ curl -X PATCH\
             "$ref": "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/e49cbb2eec33618f686b8344b4597ecf"
         }
     ],
     "meta:class": "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590",
@@ -502,7 +502,7 @@ curl -X PATCH\
     "meta:extends": [
         "https://ns.adobe.com/{TENANT_ID}/classes/19e1d8b5098a7a76e2c10a81cbc99590",
         "https://ns.adobe.com/xdm/data/record",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/e49cbb2eec33618f686b8344b4597ecf"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/e49cbb2eec33618f686b8344b4597ecf"
     ],
     "meta:containerId": "tenant",
     "imsOrg": "{IMS_ORG}",
