@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform；主页；热门主题；模式;模式；混音；混音；混音；混音；数据类型；数据类型；模式设计；数据类型；类型；数据类型；数据类型；数据类型；模式;模式;模式设计；映射；
+keywords: Experience Platform；主页；热门主题；模式;模式；字段组；字段组；字段组；字段组；数据类型；数据类型；数据类型；模式设计；数据类型；数据类型；数据类型；数据类型；模式类型；模式;模式设计；映射；
 solution: Experience Platform
 title: XDM字段类型约束
 topic-legacy: overview
 description: 对体验数据模型(XDM)中字段类型约束的参考，包括可以映射到的其他序列化格式以及如何在API中定义您自己的字段类型。
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
 workflow-type: tm+mt
-source-wordcount: '1054'
+source-wordcount: '1063'
 ht-degree: 1%
 
 ---
@@ -19,9 +19,9 @@ ht-degree: 1%
 
 ## 入门指南
 
-在使用本指南之前，请阅读模式合成的[基础知识](./composition.md)，了解XDM模式、类和混合的简介。
+在使用本指南之前，请阅读模式合成的[基础知识](./composition.md)，了解XDM模式、类和模式字段组的简介。
 
-如果您计划在API中定义自己的字段类型，强烈建议您开始[模式注册表开发人员指南](../api/getting-started.md)，以了解如何创建混音和数据类型以将您的自定义字段包含在中。 如果您使用Experience Platform UI创建模式，请参阅[定义UI](../ui/fields/overview.md)中的字段的指南，了解如何对自定义混合和数据类型中定义的字段实现约束。
+如果您计划在API中定义自己的字段类型，强烈建议您开始[模式注册表开发人员指南](../api/getting-started.md)，以了解如何创建字段组和数据类型以将您的自定义字段包含在中。 如果您使用Experience Platform UI创建模式，请参阅[定义UI](../ui/fields/overview.md)中的字段的指南，了解如何对自定义字段组和数据类型中定义的字段实现约束。
 
 ## 基本结构和示例
 
@@ -214,7 +214,7 @@ XDM构建在JSON模式之上，因此XDM字段在定义其类型时继承类似�
 
 下表概述了定义不同字段类型（包括具有可选属性的字段类型）的适当格式。 有关可选属性和类型特定关键字的详细信息，请通过[JSON模式文档](https://json-schema.org/understanding-json-schema/reference/type.html)获取。
 
-要开始，请找到所需的字段类型，并使用提供的示例代码构建API请求，以便[创建mixin](../api/mixins.md#create)或[创建数据类型](../api/data-types.md#create)。
+要开始，请找到所需的字段类型，并使用提供的示例代码构建API请求，以便[创建字段组](../api/field-groups.md#create)或[创建数据类型](../api/data-types.md#create)。
 
 <table style="table-layout:auto">
   <tr>
