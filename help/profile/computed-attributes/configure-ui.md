@@ -3,11 +3,11 @@ keywords: Experience Platform;用户档案；实时客户用户档案；疑难�
 title: 如何配置计算属性字段
 topic-legacy: guide
 type: Documentation
-description: 计算属性是用于将事件级数据聚合为用户档案级属性的函数。 要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用混音创建此字段，以将该字段添加到现有模式，或通过选择已在模式中定义的字段来创建此字段。
+description: 计算属性是用于将事件级数据聚合为用户档案级属性的函数。 要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用模式字段组创建此字段，以将该字段添加到现有模式，或选择已在模式中定义的字段。
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 6e0f7578d0818f88e13b963f64cb2de6729f0574
 workflow-type: tm+mt
-source-wordcount: '806'
+source-wordcount: '822'
 ht-degree: 1%
 
 ---
@@ -19,19 +19,19 @@ ht-degree: 1%
 >
 >计算属性功能当前位于Alpha中，并且不适用于所有用户。 文档和功能可能会发生变化。
 
-要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用混音创建此字段，以将该字段添加到现有模式，或通过选择已在模式中定义的字段来创建此字段。
+要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用模式字段组创建此字段，以将该字段添加到现有模式，或选择已在模式中定义的字段。
 
 >[!NOTE]
 >
->无法将计算属性添加到Adobe定义的混音中的字段。 该字段必须位于`tenant`命名空间内，这意味着它必须是您定义并添加到模式的字段。
+>不能将计算属性添加到Adobe定义的字段组中的字段。 该字段必须位于`tenant`命名空间内，这意味着它必须是您定义并添加到模式的字段。
 
 为了成功定义计算的属性字段，必须为[!DNL Profile]启用模式，并作为模式所基于的类的合并模式的一部分显示。 有关[!DNL Profile]启用的模式和合并的详细信息，请查看[上[!DNL Schema Registry]开发人员指南部分中启用用户档案和查看合并模式的模式的部分](../../xdm/api/getting-started.md)。 还建议查看模式合成基础文档中关于合并](../../xdm/schema/composition.md)的[部分。
 
-本教程中的工作流使用启用了[!DNL Profile]的模式，并遵循定义包含计算属性字段的新混音并确保它是正确命名空间的步骤。 如果已在启用用户档案的模式中有一个字段处于正确命名空间，则可以直接继续执行创建计算属性](#create-a-computed-attribute)的步骤。[
+本教程中的工作流使用启用了[!DNL Profile]的模式，并遵循定义包含计算属性字段的新字段组的步骤，并确保该字段是正确的命名空间。 如果已在启用用户档案的模式中有一个字段处于正确命名空间，则可以直接继续执行创建计算属性](#create-a-computed-attribute)的步骤。[
 
 ## 视图模式
 
-随后的步骤使用Adobe Experience Platform用户界面查找模式、添加混音和定义字段。 如果您希望使用[!DNL Schema Registry] API，请参阅[模式注册表开发人员指南](../../xdm/api/getting-started.md)，了解有关如何创建混音、向模式添加混音以及启用模式以与[!DNL Real-time Customer Profile]一起使用的步骤。
+随后的步骤使用Adobe Experience Platform用户界面查找模式、添加字段组和定义字段。 如果您希望使用[!DNL Schema Registry] API，请参阅[模式注册表开发人员指南](../../xdm/api/getting-started.md)，了解有关如何创建字段组、向模式添加字段组以及启用与[!DNL Real-time Customer Profile]一起使用的模式的步骤。
 
 在用户界面中，单击左边栏中的&#x200B;**[!UICONTROL Schemas]**，然后使用&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡上的搜索栏快速找到要更新的模式。
 
@@ -41,17 +41,17 @@ ht-degree: 1%
 
 ![](../images/computed-attributes/Schema-Editor.png)
 
-## 创建混音
+## 创建字段组
 
-要创建新混音，请单击编辑器左侧&#x200B;**[!UICONTROL Composition]**&#x200B;部分&#x200B;**[!UICONTROL Mixins]**&#x200B;旁边的&#x200B;**[!UICONTROL Add]**。 这会打开&#x200B;**[!UICONTROL Add mixin]**&#x200B;对话框，您可以在其中看到现有的混音。 单击&#x200B;**[!UICONTROL Create new mixin]**&#x200B;的单选按钮以定义新混音。
+要创建新字段组，请单击编辑器左侧&#x200B;**[!UICONTROL Composition]**&#x200B;部分&#x200B;**[!UICONTROL Field groups]**&#x200B;旁边的&#x200B;**[!UICONTROL Add]**。 此操作将打开&#x200B;**[!UICONTROL Add field group]**&#x200B;对话框，您可以在其中看到现有字段组。 单击&#x200B;**[!UICONTROL Create new field group]**&#x200B;的单选按钮以定义新字段组。
 
-为混音指定名称和说明，完成后单击&#x200B;**[!UICONTROL Add mixin]**。
+为字段组提供名称和说明，完成后单击&#x200B;**[!UICONTROL Add field group]**。
 
-![](../images/computed-attributes/Add-mixin.png)
+![](../images/computed-attributes/Add-field-group.png)
 
 ## 向模式添加计算属性字段
 
-您的新混音现在应显示在“[!UICONTROL Composition]”下的“[!UICONTROL Mixins]”部分。 单击混音的名称，编辑器的&#x200B;**[!UICONTROL Structure]**&#x200B;部分将显示多个&#x200B;**[!UICONTROL Add field]**&#x200B;按钮。
+您的新字段组现在应显示在“[!UICONTROL Composition]”下的“[!UICONTROL Field groups]”部分中。 单击字段组的名称，编辑器的&#x200B;**[!UICONTROL Structure]**&#x200B;部分将显示多个&#x200B;**[!UICONTROL Add field]**&#x200B;按钮。
 
 选择模式名称旁的&#x200B;**[!UICONTROL Add field]**&#x200B;以添加顶级字段，也可以选择在您喜欢的模式的任意位置添加该字段。
 
