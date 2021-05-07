@@ -6,9 +6,9 @@ topic-legacy: overview
 description: 本文档概述了Place Context XDM数据类型。
 exl-id: d7cf7366-0136-49ee-84d2-ec663db66eb4
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '169'
+source-wordcount: '170'
 ht-degree: 4%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 4%
 | `localTime` | DateTime | 以[RFC 3339](https://tools.ietf.org/html/rfc3339)格式的时间戳，指示使用的本地时间与规定的时区偏移。 格式设置模式为`yyyy-MM-dd'T'HH:mm:ssXXX`（例如`2001-07-04T12:08:56-07:00`）。 |
 | `localTimezoneOffset` | 整数 | 当前本地时区偏移（以分钟为单位）与`localTime`值的UTC之间的偏移。 这应包括当前DST偏移（如果适用）。 |
 
-有关混音的更多详细信息，请参阅公共XDM存储库：
+有关数据类型的详细信息，请参阅公共XDM存储库：
 
 * [已填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/placecontext.example.1.json)
 * [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/placecontext.schema.json)
