@@ -2,14 +2,14 @@
 title: 将Adobe Target与Platform Web SDK结合使用
 description: 了解如何使用Experience Platform Web SDK使用Adobe Target呈现个性化内容
 keywords: 目标;adobe 目标;活动.id;experience.id;renderDecisions;decisionScopes;prehiding代码片段；vec；基于表单的体验书写器；xdm;受众；决定；范围；模式;
+exl-id: 021171ab-0490-4b27-b350-c37d2a569245
 translation-type: tm+mt
-source-git-commit: 98db5b92ea0f51c8641651eb14e3fe6cecf7027c
+source-git-commit: e12b1337c44095ee8731f99c5829ab83bba14889
 workflow-type: tm+mt
-source-wordcount: '657'
-ht-degree: 3%
+source-wordcount: '659'
+ht-degree: 4%
 
 ---
-
 
 # 将Adobe Target与Platform Web SDK结合使用
 
@@ -21,7 +21,7 @@ Adobe Experience Platform [!DNL Web SDK]可以向Web渠道提供和呈现Adobe T
 * A4T印象和转换报告
 * 自动个性化
 * 体验定位
-* Multivariate Tests
+* 多变量测试
 * 本机目标印象和转换报告
 * VEC支持
 
@@ -117,7 +117,7 @@ alloy("sendEvent", {
 
 ## 受众XDM
 
-定义通过Adobe Experience Platform Web SDK交付的目标活动的受众时，必须定义并使用[XDM](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/home.html)。 在定义XDM模式、类和混合后，您可以创建由XDM数据定义的用于定位的目标受众规则。 在目标中，XDM数据在受众 Builder中显示为自定义参数。 XDM使用点记号进行序列化（例如`web.webPageDetails.name`）。
+定义通过Adobe Experience Platform Web SDK交付的目标活动的受众时，必须定义并使用[XDM](https://docs.adobe.com/content/help/zh-Hans/experience-platform/xdm/home.html)。 在定义XDM模式、类和模式字段组后，您可以创建由XDM数据定义的用于定位的目标受众规则。 在目标中，XDM数据在受众 Builder中显示为自定义参数。 XDM使用点记号进行序列化（例如`web.webPageDetails.name`）。
 
 如果您有具有预定义受众的目标活动，这些使用自定义参数或用户用户档案，则无法通过SDK正确提供。 您必须改用XDM，而不是使用自定义参数或用户用户档案。 但是，Adobe Experience Platform Web SDK支持的现成受众定位字段不需要XDM。 这些字段在不需要XDM的目标UI中可用：
 
