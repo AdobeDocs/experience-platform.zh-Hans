@@ -6,9 +6,9 @@ topic-legacy: overviews
 description: 体验数据模型(XDM)定义一组标准字段，在组成Adobe Experience Platform模式时可以使用这些字段。 使用这些字段可使平台服务之间的行为保持一致，因为使用XDM的所有服务都将显式了解这些字段提供的特定定义。
 exl-id: 9e183305-cd6c-444d-bd0b-f0cba3bcbe4d
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '25238'
+source-wordcount: '25240'
 ht-degree: 3%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 3%
 
 有关模式构建块的更多信息，请参见[模式构成基础知识](composition.md)，包括定义[!DNL Experience Platform]模式的原则和最佳做法。
 
-下表包括字段名称（并非所有XDM字段都使用“xdm”命名）、其标题和描述、类型和格式（在需要时），以及其相应的XDM类型和可在其中找到该字段的资源(混合、数据类型和模式)。
+下表包括字段名称（并非所有XDM字段都使用“xdm”命名）、其标题和描述、类型和格式（在需要时），以及相应的XDM类型和可在其中找到该字段的资源(模式、模式字段组和数据类型)。
 
 您可以使用[!DNL Schema Editor]中的搜索功能视图这些资源的详细信息，如[模式编辑器教程](../tutorials/create-schema-ui.md#browse)中所示。
 
