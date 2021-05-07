@@ -5,9 +5,9 @@ topic-legacy: overview
 description: 本文档概述了体验数据模型(XDM)中的区段定义类。
 exl-id: c0f7b04c-2266-4d08-89a1-67ba758a51a7
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '378'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此类应仅用于捕获有关区段定义本身的信息。 为了捕获用户档案数据中的区段成员关系信息，您应在[!UICONTROL XDM Individual Profile]模式中使用混合[区段成员关系详细信息。](../mixins/profile/segmentation.md)
+>此类应仅用于捕获有关区段定义本身的信息。 为了捕获用户档案数据中的区段成员关系信息，您应在[!UICONTROL XDM Individual Profile]模式中使用[区段成员关系详细信息字段组](../field-groups/profile/segmentation.md)。
 
 ![](../images/classes/segment-definition.png)
 
