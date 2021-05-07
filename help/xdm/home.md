@@ -1,19 +1,23 @@
 ---
-keywords: Experience Platform；主页；热门主题；XDM;XDM系统；XDM个人用户档案;XDM体验事件；XDM体验事件；体验事件；体验事件；混合；混合；体验事件;XDM体验事件;XDM体验事件；体验事件；体验事件；XDM Experienceevent；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；模式库；模式库；模式库；；记录数据；时间序列；时间序列
+keywords: Experience Platform；主题；热门主题；XDM;XDM系统；XDM个人用户档案;XDM体验事件；XDM体验事件；体验事件；字段组；字段组；字段组；体验事件;XDM体验事件;XDM体验事件；体验事件；体验事件；XDM Experienceevent；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；模式库；事件库；模式库；模式；记录数据；时间序列；时间序列
 solution: Experience Platform
 title: XDM系统概述
 topic-legacy: overview
 description: 标准化和互操作性是Adobe Experience Platform的主要概念。 由Adobe驱动的体验数据模型(XDM)旨在实现客户体验数据标准化并定义客户体验管理模式。
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 58f6c5e3ac77070807f7486bf429493d14fdda9e
 workflow-type: tm+mt
-source-wordcount: '1642'
-ht-degree: 2%
+source-wordcount: '1694'
+ht-degree: 1%
 
 ---
 
 # XDM系统概述
+
+>[!NOTE]
+>
+>术语“mixin”已更新为“模式字段组”以促进理解。 字段组是可重复使用的字段集，用于支持业务用例。 此更改现在反映在模式 Registry API、Adobe Experience Platform UI和所有平台文档中。
 
 标准化和互操作性是Adobe Experience Platform的主要概念。 [!DNL Experience Data Model] (XDM)由Adobe驱动，旨在实现客户体验数据标准化并定义客户体验管理模式。
 
@@ -27,7 +31,7 @@ XDM是基本框架，它允许Adobe Experience Cloud在[!DNL Experience Platform
 
 [!DNL Experience Platform] 会使用架构，以便以可重用的一致方式描述数据结构。通过在整个系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。
 
-在将数据引入[!DNL Platform]之前，必须构成一个模式来描述数据的结构，并对每个字段中可以包含的数据类型提供约束。 模式由基类和零个或多个混合组成。
+在将数据引入[!DNL Platform]之前，必须构成一个模式来描述数据的结构，并对每个字段中可以包含的数据类型提供约束。 模式由基类和零个或多个模式字段组组成。
 
 有关模式合成模型的详细信息（包括设计原则和最佳实践），请参阅[模式合成基础知识](schema/composition.md)。
 
