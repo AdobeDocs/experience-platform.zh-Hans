@@ -6,16 +6,16 @@ description: 模式 Registry API中的/classes端点允许您在体验应用程�
 topic-legacy: developer guide
 exl-id: 7beddb37-0bf2-4893-baaf-5b292830f368
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
 workflow-type: tm+mt
-source-wordcount: '1495'
+source-wordcount: '1505'
 ht-degree: 1%
 
 ---
 
 # 类端点
 
-所有体验数据模型(XDM)模式都必须基于类。 类确定基于该类的所有模式必须包含的公用属性的基结构，以及哪些混合符可以在这些模式中使用。 此外，模式的类确定模式将包含的数据的行为方面，其中有两种类型：
+所有体验数据模型(XDM)模式都必须基于类。 类确定基于该类的所有模式必须包含的公用属性的基结构，以及哪些模式字段组有资格在这些模式中使用。 此外，模式的类确定模式将包含的数据的行为方面，其中有两种类型：
 
 * **[!UICONTROL Record]**:提供有关主题属性的信息。主题可以是组织或个人。
 * **[!UICONTROL Time-series]**:提供记录主体直接或间接采取操作时系统的快照。
@@ -246,7 +246,7 @@ curl -X GET \
 
 >[!IMPORTANT]
 >
->在基于您定义的自定义类编写模式时，您将无法使用标准混音。 每个mixin定义它们与其`meta:intendedToExtend`属性中兼容的类。 一旦开始定义与新类兼容的混音（通过使用混音的`meta:intendedToExtend`字段中新类的`$id`），您就可以在每次定义实现所定义类的模式时重用这些混音。 有关详细信息，请参见[中创建mixin](./mixins.md#create)和[创建模式](./schemas.md#create)的部分。
+>在基于您定义的自定义类编写模式时，您将无法使用标准字段组。 每个字段组定义它们与之兼容的类（在其`meta:intendedToExtend`属性中）。 一旦开始定义与新类兼容的字段组（通过使用字段组`meta:intendedToExtend`字段中新类的`$id`），您就可以在每次定义实现所定义类的模式时重用这些字段组。 有关详细信息，请参见[创建字段组](./field-groups.md#create)和[创建模式](./schemas.md#create)中的各节。
 >
 >如果您计划在实时客户用户档案中使用基于自定义类的模式，还应记住，合并模式仅基于共享同一类的模式构建。 如果要在合并中包含另一个类（如[!UICONTROL XDM Individual Profile]或[!UICONTROL XDM ExperienceEvent]）的自定义类模式，则必须与使用该类的其他模式建立关系。 有关详细信息，请参阅教程[在API](../tutorials/relationship-api.md)中建立两个模式之间的关系。
 
@@ -260,7 +260,7 @@ POST /tenant/classes
 
 创建(POST)类的请求必须包含`allOf`属性，该属性包含`$ref`到以下两个值之一的值：`https://ns.adobe.com/xdm/data/record`或`https://ns.adobe.com/xdm/data/time-series`。 这些值表示类所基于的行为（分别是记录或时间序列）。 有关记录数据和时间序列数据之间差异的详细信息，请参阅[模式合成基础知识](../schema/composition.md)中有关行为类型的部分。
 
-在定义类时，您还可以在类定义中包含混音或自定义字段。 这将导致添加的混音和字段包含在实现该类的所有模式中。 下面的示例请求定义一个名为“Property”的类，该类捕获有关公司拥有和操作的不同属性的信息。 它包含一个`propertyId`字段，每次使用该类时都将包含该字段。
+在定义类时，您还可以在类定义中包含字段组或自定义字段。 这将导致添加的字段组和字段包含在实现该类的所有模式中。 下面的示例请求定义一个名为“Property”的类，该类捕获有关公司拥有和操作的不同属性的信息。 它包含一个`propertyId`字段，每次使用该类时都将包含该字段。
 
 ```SHELL
 curl -X POST \
