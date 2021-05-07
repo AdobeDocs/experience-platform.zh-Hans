@@ -7,9 +7,9 @@ type: Tutorial
 description: 本教程介绍了在 Experience Platform 中使用模式编辑器创建模式的步骤。
 exl-id: 3edeb879-3ce4-4adb-a0bd-8d7ad2ec6102
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '3532'
+source-wordcount: '3588'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 本教程要求对Adobe Experience Platform在创建模式时涉及的各个方面有充分的了解。 在开始本教程之前，请查阅以下概念的文档：
 
 * [[!DNL Experience Data Model (XDM)]](../home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
-   * [模式合成的基础](../schema/composition.md):XDM模式及其构建块的概述，包括类、混合、数据类型和字段。
+   * [模式合成的基础](../schema/composition.md):XDM模式及其构建块的概述，包括类、模式字段组、数据类型和单个字段。
 * [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
 
 ## 打开[!UICONTROL Schemas]工作区{#browse}
@@ -48,9 +48,9 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ![](../images/tutorials/create-schema/create_schema_button.png)
 
-由于您选择了标准XDM类作为模式的基础，因此将显示&#x200B;**[!UICONTROL Add mixin]**&#x200B;对话框，允许您立即开始向模式添加字段。 现在，选择&#x200B;**[!UICONTROL Cancel]**&#x200B;退出对话框。
+由于您选择了标准XDM类作为模式的基础，因此将显示&#x200B;**[!UICONTROL Add field group]**&#x200B;对话框，允许您立即开始向模式添加字段。 现在，选择&#x200B;**[!UICONTROL Cancel]**&#x200B;退出对话框。
 
-![](../images/tutorials/create-schema/cancel-mixin.png)
+![](../images/tutorials/create-schema/cancel-field-group.png)
 
 出现[!DNL Schema Editor]。 这是您将在其上合成模式的画布。 当您到达编辑器时，未命名的模式将自动在画布的&#x200B;**[!UICONTROL Structure]**&#x200B;部分中创建，并基于该类在所有模式中包含的标准字段。 **[!UICONTROL Composition]**&#x200B;部分的&#x200B;**[!UICONTROL Class]**&#x200B;下还列出了模式的已分配类。
 
@@ -58,7 +58,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 >[!NOTE]
 >
->在保存模式之前，您可以在初始合成过程中的任何时间点[更改模式](#change-class)的类，但应非常小心。 Mixins仅与某些类兼容，因此更改类将重置画布和您添加的任何字段。
+>在保存模式之前，您可以在初始合成过程中的任何时间点[更改模式](#change-class)的类，但应非常小心。 字段组仅与某些类兼容，因此更改类将重置画布和您添加的任何字段。
 
 使用编辑器右侧的字段为模式提供显示名称和可选说明。 输入名称后，画布会随之更新，以反映模式的新名称。
 
@@ -72,35 +72,35 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 本教程组成一个模式，用于收集与忠诚度项目成员相关的数据，因此该模式名为“忠诚度成员”。
 
-## 添加混合{#mixin}
+## 添加字段组{#field-group}
 
-您现在可以通过添加混音开始向模式添加字段。 混音是一个或多个字段的组，这些字段通常一起用于描述特定的概念。 本教程使用mixins描述忠诚度项目的成员并捕获关键信息，如姓名、生日、电话号码、地址等。
+您现在可以通过添加字段组开始向模式添加字段。 字段组是一个或多个字段的组，这些字段通常一起用于描述特定概念。 本教程使用字段组描述忠诚度项目的成员并捕获关键信息，如姓名、生日、电话号码、地址等。
 
-要添加混音，请在&#x200B;**[!UICONTROL Mixins]**&#x200B;子部分中选择&#x200B;**[!UICONTROL Add]**。
+要添加字段组，请在&#x200B;**[!UICONTROL Field groups]**&#x200B;子部分中选择&#x200B;**[!UICONTROL Add]**。
 
-![](../images/tutorials/create-schema/add_mixin_button.png)
+![](../images/tutorials/create-schema/add-field-group-button.png)
 
-此时将显示新对话框，显示可用混音的列表。 每个混音仅用于特定类，因此对话框仅列表与所选类（本例中为[!DNL XDM Individual Profile]类）兼容的混音。 如果您使用标准XDM类，将根据使用人气智能地对混合列表进行排序。
+此时将显示新对话框，显示可用字段组的列表。 每个字段组仅用于特定类，因此对话框仅列表与所选类（本例中为[!DNL XDM Individual Profile]类）兼容的字段组。 如果您使用标准XDM类，则将根据使用人气智能地对字段组的列表进行排序。
 
-![](../images/tutorials/create-schema/mixin-popularity.png)
+![](../images/tutorials/create-schema/field-group-popularity.png)
 
-从列表中选择混音会导致混音显示在右侧边栏中。 您可以根据需要选择多个混音，在确认之前将每个混音添加到右侧边栏的列表。 此外，当前所选混音的右侧会显示一个图标，通过该图标可以预览其提供的字段的结构。
+从列表中选择字段组会使其显示在右侧边栏中。 您可以根据需要选择多个字段组，在确认之前将每个字段组添加到右侧边栏中的列表。 此外，当前选定字段组的右侧会显示一个图标，通过该图标可预览其提供的字段的结构。
 
-![](../images/tutorials/create-schema/preview-mixin-button.png)
+![](../images/tutorials/create-schema/preview-field-group-button.png)
 
-预览混音时，右边栏中提供了混音的模式的详细描述。 您还可以在提供的画布中浏览混音的字段。 当您选择不同的字段时，右侧边栏会更新，以显示有关该字段的详细信息。 预览完毕后，选择&#x200B;**[!UICONTROL Back]**&#x200B;以返回到混音选择对话框。
+预览字段组时，右侧边栏中会提供字段组模式的详细说明。 您还可以在提供的画布中浏览字段组的字段。 当您选择不同的字段时，右侧边栏会更新，以显示有关该字段的详细信息。 预览完毕后，选择&#x200B;**[!UICONTROL Back]**&#x200B;以返回到字段组选择对话框。
 
-![](../images/tutorials/create-schema/preview-mixin.png)
+![](../images/tutorials/create-schema/preview-field-group.png)
 
-对于本教程，选择&#x200B;**[!UICONTROL Demographic Details]**&#x200B;混音，然后选择&#x200B;**[!UICONTROL Add mixin]**。
+对于本教程，选择&#x200B;**[!UICONTROL Demographic Details]**&#x200B;字段组，然后选择&#x200B;**[!UICONTROL Add field group]**。
 
-![](../images/tutorials/create-schema/add_mixin_person_details.png)
+![](../images/tutorials/create-schema/demographic-details.png)
 
-将重新显示模式画布。 **[!UICONTROL Mixins]**&#x200B;部分现在列表“[!UICONTROL Demographic Details]”，而&#x200B;**[!UICONTROL Structure]**&#x200B;部分包含由mixin提供的字段。 您可以在&#x200B;**[!UICONTROL Mixins]**&#x200B;部分下选择混音的名称，以突出显示它在画布中提供的特定字段。
+将重新显示模式画布。 **[!UICONTROL Field groups]**&#x200B;部分现在列表“[!UICONTROL Demographic Details]”，而&#x200B;**[!UICONTROL Structure]**&#x200B;部分包含字段组提供的字段。 您可以在&#x200B;**[!UICONTROL Field groups]**&#x200B;部分下选择字段组的名称，以突出显示它在画布中提供的特定字段。
 
-![](../images/tutorials/create-schema/person_details_structure.png)
+![](../images/tutorials/create-schema/demographic-details-structure.png)
 
-此混音在顶级名称`person`下提供数据类型为“[!UICONTROL Person]”的多个字段。 这组字段描述有关个人的信息，包括姓名、出生日期和性别。
+此字段组在顶级名称`person`下提供数据类型为“[!UICONTROL Person]”的多个字段。 这组字段描述有关个人的信息，包括姓名、出生日期和性别。
 
 >[!NOTE]
 >
@@ -110,49 +110,49 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 在画布中选择不同的字段，以显示它们贡献到模式结构的任何其他字段。
 
-## 添加另一个混音{#mixin-2}
+## 添加另一个字段组{#field-group-2}
 
-现在，您可以重复相同的步骤以添加另一个混音。 当您此次视图&#x200B;**[!UICONTROL Add mixin]**&#x200B;对话框时，请注意，“[!UICONTROL Demographic Details]”混音已灰显，其旁边的复选框无法选中。 这样可以防止您意外复制已包含在当前模式中的混音。
+您现在可以重复相同步骤以添加另一个字段组。 当您此次视图&#x200B;**[!UICONTROL Add field group]**&#x200B;对话框时，请注意，“[!UICONTROL Demographic Details]”字段组已灰显，并且其旁边的复选框无法选中。 这可防止您意外复制当前模式中已包含的字段组。
 
-对于本教程，从对话框中选择“[!DNL Personal Contact Details]”混音，然后选择&#x200B;**[!UICONTROL Add mixin]**&#x200B;将其添加到模式。
+对于本教程，从对话框中选择“[!DNL Personal Contact Details]”字段组，然后选择&#x200B;**[!UICONTROL Add field group]**&#x200B;将其添加到模式。
 
-![](../images/tutorials/create-schema/add_mixin_personal_details.png)
+![](../images/tutorials/create-schema/personal-contact-details.png)
 
-添加后，画布将重新显示。 “[!UICONTROL Personal Contact Details]”现在列在&#x200B;**[!UICONTROL Composition]**&#x200B;部分的&#x200B;**[!UICONTROL Mixins]**&#x200B;下，**[!UICONTROL Structure]**&#x200B;下添加了有关家庭地址、移动电话等的字段。
+添加后，画布将重新显示。 “[!UICONTROL Personal Contact Details]”现在列在&#x200B;**[!UICONTROL Composition]**&#x200B;部分的&#x200B;**[!UICONTROL Field groups]**&#x200B;下，**[!UICONTROL Structure]**&#x200B;下添加了有关家庭地址、移动电话等的字段。
 
 与`name`字段类似，您刚添加的字段表示多字段概念。 例如，`homeAddress`的数据类型为“[!UICONTROL Postal address]”，而`mobilePhone`的数据类型为“[!UICONTROL Phone number]”。 您可以选择其中每个字段以展开它们，并查看数据类型中包含的其他字段。
 
-![](../images/tutorials/create-schema/personal_details_structure.png)
+![](../images/tutorials/create-schema/personal-contact-details-structure.png)
 
-## 定义自定义混音{#define-mixin}
+## 定义自定义字段组{#define-field-group}
 
 “[!UICONTROL Loyalty Members]”模式用于捕获与忠诚度项目成员相关的数据，因此它需要一些特定的与忠诚度相关的字段。
 
-您可以向模式添加标准[!UICONTROL Loyalty Details]混音，以捕获与忠诚度项目相关的常用字段。 我们强烈建议您使用标准混合来表示模式捕获的概念，但标准忠诚度混合的结构可能无法捕获特定忠诚度项目的所有相关数据。 在此方案中，您可以选择定义新的自定义混音以捕获这些字段。
+您可以向模式添加一个标准[!UICONTROL Loyalty Details]字段组，以捕获与忠诚度项目相关的常用字段。 尽管强烈建议您使用标准字段组来表示模式捕获的概念，但标准忠诚度字段组的结构可能无法捕获特定忠诚度项目的所有相关数据。 在此方案中，您可以选择定义新的自定义字段组来捕获这些字段。
 
-再次打开&#x200B;**[!UICONTROL Add Mixin]**&#x200B;对话框，但此次选择顶部附近的&#x200B;**[!UICONTROL Create New Mixin]**。 随后会要求您提供混音的显示名称和说明。
+再次打开&#x200B;**[!UICONTROL Add Field group]**&#x200B;对话框，但此次选择顶部附近的&#x200B;**[!UICONTROL Create New Field group]**。 随后会要求您提供字段组的显示名称和说明。
 
-![](../images/tutorials/create-schema/mixin_create_new.png)
+![](../images/tutorials/create-schema/create-new-field-group.png)
 
-与类名一样，混音名称应简短，用于描述混音对模式的贡献。 这些名称也是唯一的，因此您将无法重用该名称，因此必须确保其足够具体。
+与类名一样，字段组名称应简短，用于描述字段组将对模式的贡献。 这些名称也是唯一的，因此您将无法重用该名称，因此必须确保其足够具体。
 
-在本教程中，将新混音命名为“忠诚度详细信息”。
+在本教程中，将新字段组命名为“忠诚度详细信息”。
 
-选择&#x200B;**[!UICONTROL Add mixin]**&#x200B;以返回到[!DNL Schema Editor]。 “[!UICONTROL Loyalty Details]”现在应显示在画布左侧的&#x200B;**[!UICONTROL Mixins]**&#x200B;下，但还没有与其关联的字段，因此在&#x200B;**[!UICONTROL Structure]**&#x200B;下面没有新字段。
+选择&#x200B;**[!UICONTROL Add field group]**&#x200B;以返回到[!DNL Schema Editor]。 “[!UICONTROL Loyalty Details]”现在应显示在画布左侧的&#x200B;**[!UICONTROL Field groups]**&#x200B;下，但还没有与其关联的字段，因此在&#x200B;**[!UICONTROL Structure]**&#x200B;下面没有新字段。
 
-## 将字段添加到混音{#mixin-fields}
+## 将字段添加到字段组{#field-group-fields}
 
-现在您已创建“忠诚度详细信息”混音，现在应该定义混音将对模式贡献的字段。
+现在您已创建“忠诚度详细信息”字段组，现在应该定义字段组将贡献给模式的字段。
 
-要开始，请在&#x200B;**[!UICONTROL Mixins]**&#x200B;部分选择混音名称。 执行此操作后，编辑器的右侧将显示mixin的属性，并且在&#x200B;**[!UICONTROL Structure]**&#x200B;下模式名称旁边将显示一个&#x200B;**加号(+)**&#x200B;图标。
+要开始，请在&#x200B;**[!UICONTROL Field groups]**&#x200B;部分选择字段组名称。 执行此操作后，字段组的属性显示在编辑器的右侧，并且&#x200B;**[!UICONTROL Structure]**&#x200B;下模式名称旁边将显示一个&#x200B;**加号(+)**&#x200B;图标。
 
 ![](../images/tutorials/create-schema/loyalty_details_structure.png)
 
 选择“[!DNL Loyalty Members]”旁边的&#x200B;**加号(+)**&#x200B;图标以在结构中创建新节点。 此节点（在此示例中称为`_tenantId`）表示您的IMS组织的租户ID，前面加下划线。 租户ID的存在表示您正在添加的字段包含在您组织的命名空间中。
 
-换句话说，您添加的字段对您的组织而言是唯一的，将保存在[!DNL Schema Registry]中仅对您的组织可访问的特定区域。 您定义的字段必须始终添加到您的租户命名空间中，以防止与其他标准类、混音、数据类型和字段的名称发生冲突。
+换句话说，您添加的字段对您的组织而言是唯一的，将保存在[!DNL Schema Registry]中仅对您的组织可访问的特定区域。 您定义的字段必须始终添加到您的租户命名空间中，以防止与来自其他标准类、字段组、数据类型和字段的名称发生冲突。
 
-在该命名空间节点中是“[!UICONTROL New Field]”。 这是“[!UICONTROL Loyalty Details]”混音的开头。
+在该命名空间节点中是“[!UICONTROL New Field]”。 这是“[!UICONTROL Loyalty Details]”字段组的开头。
 
 ![](../images/tutorials/create-schema/new_field_loyalty.png)
 
@@ -179,7 +179,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ![](../images/tutorials/create-schema/loyaltyId_field.png)
 
-## 将更多字段添加到混音{#mixin-fields-2}
+## 向字段组{#field-group-fields-2}添加更多字段
 
 现在，您已经添加了`loyaltyId`字段，可以添加其他字段来捕获与忠诚度相关的信息，例如：
 
@@ -192,7 +192,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ![](../images/tutorials/create-schema/loyalty_object_fields.png)
 
-## 向混音{#enum}添加枚举字段
+## 向字段组{#enum}添加枚举字段
 
 在[!DNL Schema Editor]中定义字段时，可以对基本字段类型应用一些其他选项，以便对字段可包含的数据提供进一步约束。 下表说明了这些约束的用例：
 
@@ -226,7 +226,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 `loyalty`对象现在包含多个特定于忠诚度的字段，并表示一个在其他模式中可能有用的通用数据结构。 [!DNL Schema Editor]允许您通过将这些对象的结构转换为数据类型来轻松应用可重用的多字段对象。
 
-数据类型允许一致地使用多字段结构，并提供比混音更灵活的性能，因为它们可以在模式中的任何位置使用。 这是通过将字段的&#x200B;**[!UICONTROL Type]**&#x200B;值设置为[!DNL Schema Registry]中定义的任何数据类型来实现的。
+数据类型允许一致地使用多字段结构，并提供比字段组更灵活的性，因为它们可以在模式中的任意位置使用。 这是通过将字段的&#x200B;**[!UICONTROL Type]**&#x200B;值设置为[!DNL Schema Registry]中定义的任何数据类型来实现的。
 
 要将`loyalty`对象转换为数据类型，请选择&#x200B;**[!UICONTROL Structure]**&#x200B;下的`loyalty`字段，然后选择编辑器右侧&#x200B;**[!UICONTROL Field properties]**&#x200B;下的&#x200B;**[!UICONTROL Convert to new data type]**。 出现绿色快显，确认对象已成功转换。
 
@@ -244,17 +244,17 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 ## 搜索和筛选模式字段
 
-除了基类提供的字段外，您的模式现在还包含多个混音。 处理较大的模式时，您可以选中左边栏中混合名称旁边的复选框，以将显示的字段筛选为仅由您感兴趣的混合提供的字段。
+除了基类提供的字段外，您的模式现在还包含多个字段组。 处理较大的模式时，您可以选中左边栏中字段组名称旁边的复选框，以将显示的字段筛选为仅由您感兴趣的字段组提供的字段。
 
-![](../images/tutorials/create-schema/filter-by-mixin.png)
+![](../images/tutorials/create-schema/filter-by-field-group.png)
 
-如果您要在模式中查找特定字段，则还可以使用搜索栏按名称筛选显示的字段，而不管这些字段是在哪个混音中提供的。
+如果您要在模式中查找特定字段，则还可以使用搜索栏按名称筛选显示的字段，而不管这些字段是在哪个字段组下提供的。
 
 ![](../images/tutorials/create-schema/search.png)
 
 >[!IMPORTANT]
 >
->在显示匹配字段时，搜索函数会考虑任何选定的混音过滤器。 如果搜索查询未显示您期望的结果，您可能需要多次检查您是否未过滤掉任何相关混合。
+>搜索函数在显示匹配字段时会考虑任何选定的字段组过滤器。 如果搜索查询未显示您期望的结果，您可能需要多次检查您是否未过滤掉任何相关字段组。
 
 ## 将模式字段设置为标识字段{#identity-field}
 
@@ -334,7 +334,7 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 >[!VIDEO](https://video.tv.adobe.com/v/27012?quality=12&learn=on)
 
-以下视频旨在加深您对使用混音和类的理解。
+以下视频旨在加深您对使用字段组和类的理解。
 
 >[!VIDEO](https://video.tv.adobe.com/v/27013?quality=12&learn=on)
 
@@ -352,6 +352,6 @@ Adobe Experience Platform用户界面允许您在称为[!DNL Schema Editor]的�
 
 >[!WARNING]
 >
->重新分配模式的类应非常谨慎。 Mixins仅与某些类兼容，因此更改类将重置画布和您添加的任何字段。
+>重新分配模式的类应非常谨慎。 字段组仅与某些类兼容，因此更改类将重置画布和您添加的任何字段。
 
 要了解如何更改模式的类，请参阅有关在UI](../ui/resources/schemas.md)中管理模式的指南。[
