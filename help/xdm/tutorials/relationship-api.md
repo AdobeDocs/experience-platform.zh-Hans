@@ -7,9 +7,9 @@ topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '1337'
+source-wordcount: '1354'
 ht-degree: 1%
 
 ---
@@ -111,35 +111,35 @@ curl -X GET \
 
 ## 为源模式定义引用字段
 
-在[!DNL Schema Registry]中，关系描述符的工作方式与关系数据库表中的外键类似：源模式中的字段用作对目标模式的主标识字段的引用。 如果源模式没有用于此目的的字段，您可能需要使用新字段创建混音并将其添加到模式。 此新字段的`type`值必须为“[!DNL string]”。
+在[!DNL Schema Registry]中，关系描述符的工作方式与关系数据库表中的外键类似：源模式中的字段用作对目标模式的主标识字段的引用。 如果源模式没有用于此目的的字段，您可能需要使用新字段创建一个模式字段组并将其添加到模式。 此新字段的`type`值必须为“[!DNL string]”。
 
 >[!IMPORTANT]
 >
 >与目标模式不同，源模式不能将其主标识用作引用字段。
 
-在本教程中，目标模式“[!DNL Hotels]”包含一个`hotelId`字段，它用作模式的主要标识，因此也将用作其引用字段。 但是，源模式“[!DNL Loyalty Members]”没有要用作引用的专用字段，并且必须为该源模式指定新的混音符，以向该字段添加新字段：`favoriteHotel`。
+在本教程中，目标模式“[!DNL Hotels]”包含一个`hotelId`字段，它用作模式的主要标识，因此也将用作其引用字段。 但是，源模式“[!DNL Loyalty Members]”没有要用作引用的专用字段，必须为该模式指定新字段组以向该字段添加新字段：`favoriteHotel`。
 
 >[!NOTE]
 >
 >如果您的源模式已经有一个您计划用作引用字段的专用字段，则可以跳到创建引用描述符](#reference-identity)的步骤。[
 
-### 创建新混音
+### 创建新字段组
 
-要向模式添加新字段，必须首先在混音中定义该字段。 可以通过向`/tenant/mixins`端点发出POST请求来创建新混音。
+要向模式添加新字段，必须首先在字段组中定义该字段。 可以通过向`/tenant/fieldgroups`端点发出POST请求来创建新字段组。
 
 **API格式**
 
 ```http
-POST /tenant/mixins
+POST /tenant/fieldgroups
 ```
 
 **请求**
 
-以下请求将创建一个新混音，该混音在其添加到的任何模式的`_{TENANT_ID}`命名空间下添加一个`favoriteHotel`字段。
+以下请求将创建一个新字段组，该字段组将在其所添加的任何模式的`_{TENANT_ID}`命名空间下添加一个`favoriteHotel`字段。
 
 ```shell
 curl -X POST\
-  https://platform.adobe.io/data/foundation/schemaregistry/tenant/mixins \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -149,7 +149,7 @@ curl -X POST\
         "type": "object",
         "title": "Favorite Hotel",
         "meta:intendedToExtend": ["https://ns.adobe.com/xdm/context/profile"],
-        "description": "Favorite hotel mixin for the Loyalty Members schema.",
+        "description": "Favorite hotel field group for the Loyalty Members schema.",
         "definitions": {
             "favoriteHotel": {
               "properties": {
@@ -176,20 +176,20 @@ curl -X POST\
 
 **响应**
 
-成功的响应会返回新创建的混音的详细信息。
+成功的响应会返回新创建的字段组的详细信息。
 
 ```json
 {
-    "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/3387945212ad76ee59b6d2b964afb220",
-    "meta:altId": "_{TENANT_ID}.mixins.3387945212ad76ee59b6d2b964afb220",
-    "meta:resourceType": "mixins",
+    "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/3387945212ad76ee59b6d2b964afb220",
+    "meta:altId": "_{TENANT_ID}.fieldgroups.3387945212ad76ee59b6d2b964afb220",
+    "meta:resourceType": "fieldgroups",
     "version": "1.0",
     "type": "object",
     "title": "Favorite Hotel",
     "meta:intendedToExtend": [
         "https://ns.adobe.com/xdm/context/profile"
     ],
-    "description": "Favorite hotel mixin for the Loyalty Members schema.",
+    "description": "Favorite hotel field group for the Loyalty Members schema.",
     "definitions": {
         "favoriteHotel": {
             "properties": {
@@ -229,13 +229,13 @@ curl -X POST\
 
 | 属性 | 描述 |
 | --- | --- |
-| `$id` | 只读，系统生成新混音的唯一标识符。 以URI的形式。 |
+| `$id` | 只读的系统生成了新字段组的唯一标识符。 以URI的形式。 |
 
-记录混音的`$id` URI，以在将混音添加到源模式的下一步中使用。
+记录字段组的`$id` URI，以在将字段组添加到源模式的下一步中使用。
 
-### 将混音添加到源模式
+### 将字段组添加到源模式
 
-创建混音后，可以通过向`/tenant/schemas/{SCHEMA_ID}`端点发出PATCH请求将其添加到源模式。
+创建字段组后，可以通过向`/tenant/schemas/{SCHEMA_ID}`端点发出PATCH请求，将其添加到源模式。
 
 **API格式**
 
@@ -249,7 +249,7 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 **请求**
 
-以下请求将“[!DNL Favorite Hotel]”混音添加到“[!DNL Loyalty Members]”模式。
+以下请求将“[!DNL Favorite Hotel]”字段组添加到“[!DNL Loyalty Members]”模式。
 
 ```shell
 curl -X PATCH \
@@ -264,7 +264,7 @@ curl -X PATCH \
       "op": "add", 
       "path": "/allOf/-", 
       "value":  {
-        "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/3387945212ad76ee59b6d2b964afb220"
+        "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/3387945212ad76ee59b6d2b964afb220"
       }
     }
   ]'
@@ -273,12 +273,12 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `op` | 要执行的PATCH操作。 此请求使用`add`操作。 |
-| `path` | 将添加新资源的模式字段的路径。 向模式添加混音时，值必须为“/allOf/ — ”。 |
-| `value.$ref` | 要添加的混音的`$id`。 |
+| `path` | 将添加新资源的模式字段的路径。 向模式添加字段组时，值必须为“/allOf/ — ”。 |
+| `value.$ref` | 要添加的字段组的`$id`。 |
 
 **响应**
 
-成功的响应会返回更新模式的详细信息，该更新现在包括其`allOf`数组下添加的混音的`$ref`值。
+成功的响应会返回更新模式的详细信息，该更新现在包括其`allOf`数组下所添加字段组的`$ref`值。
 
 ```json
 {
@@ -300,13 +300,13 @@ curl -X PATCH \
             "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/ec16dfa484358f80478b75cde8c430d3"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/ec16dfa484358f80478b75cde8c430d3"
         },
         {
             "$ref": "https://ns.adobe.com/xdm/context/identitymap"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/3387945212ad76ee59b6d2b964afb220"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/3387945212ad76ee59b6d2b964afb220"
         }
     ],
     "meta:containerId": "tenant",
@@ -323,8 +323,8 @@ curl -X PATCH \
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/context/profile-person-details",
         "https://ns.adobe.com/xdm/context/profile-personal-details",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/ec16dfa484358f80478b75cde8c430d3",
-        "https://ns.adobe.com/{TENANT_ID}/mixins/61969bc646b66a6230a7e8840f4a4d33"
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/ec16dfa484358f80478b75cde8c430d3",
+        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/61969bc646b66a6230a7e8840f4a4d33"
     ],
     "meta:xdmType": "object",
     "meta:registryMetadata": {
