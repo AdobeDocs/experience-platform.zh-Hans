@@ -6,7 +6,7 @@ topic-legacy: Getting started
 description: 以下指南需要了解与使用Attribution AI相关的各种Adobe Experience Platform服务。 在开始教程之前，请查看以下文档。
 exl-id: ab269c24-97ac-4da9-9b6c-7d2dde61f0dc
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 - [模式合成的基础](../../xdm/schema/composition.md):本文档介绍了体验数据模型(XDM)模式，以及构建要在中使用的模式的构件、原则和最佳做法 [!DNL Adobe Experience Platform]。
 - [构建模式](../../xdm/tutorials/create-schema-ui.md):本教程介绍了在Experience Platform中使用模式编辑器创建模式的步骤。
 
-Attribution AI需要数据集才能符合“消费者体验事件”(CEE)模式，该是“体验数据模型”(XDM)中的混音。 [](../../xdm/home.md)请通过attributionai-support@adobe.com与Adobe支持联系，以实施或更改此数据。 如果存在媒体支出数据，您可以进行进一步的分析，如增加收入和ROI。 如果客户用户档案数据可用，您可以进一步将积分归因到客户用户档案级别。
+Attribution AI需要数据集才能符合“消费者体验事件”(CEE)模式，该是“体验数据模型”(XDM)](../../xdm/home.md)“模式”字段组。 [请通过attributionai-support@adobe.com与Adobe支持联系，以实施或更改此数据。 如果存在媒体支出数据，您可以进行进一步的分析，如增加收入和ROI。 如果客户用户档案数据可用，您可以进一步将积分归因到客户用户档案级别。
 
 ## 术语
 
