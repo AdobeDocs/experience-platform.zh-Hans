@@ -7,9 +7,9 @@ topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '915'
+source-wordcount: '921'
 ht-degree: 1%
 
 ---
@@ -54,23 +54,23 @@ ht-degree: 1%
 
 ![](../images/tutorials/relationship/hotels.png)
 
-## 创建关系混音
+## 创建关系模式字段组
 
 >[!NOTE]
 >
 >仅当源模式没有要用作目标模式引用的专用字符串类型字段时，才需要执行此步骤。 如果已在源模式中定义此字段，请跳到定义关系字段](#relationship-field)的下一步。[
 
-要定义两个模式之间的关系，源模式必须有一个专用字段，用作对目标模式的引用。 可以通过创建新混音将此字段添加到源模式。
+要定义两个模式之间的关系，源模式必须有一个专用字段，用作对目标模式的引用。 您可以通过创建新的模式字段组将此字段添加到源模式。
 
-开始。**[!UICONTROL Add]****[!UICONTROL Mixins]**
+开始。**[!UICONTROL Add]****[!UICONTROL Field groups]**
 
-![](../images/tutorials/relationship/loyalty-add-mixin.png)
+![](../images/tutorials/relationship/loyalty-add-field-group.png)
 
-出现[!UICONTROL Add Mixin]对话框。 从此处选择&#x200B;**[!UICONTROL Create new mixin]**。 在显示的文本字段中，输入新混音的显示名称和说明。 完成后，选择 **[!UICONTROL Add mixin]**。
+出现[!UICONTROL Add field group]对话框。 从此处选择&#x200B;**[!UICONTROL Create new field group]**。 在显示的文本字段中，输入新字段组的显示名称和说明。 完成后，选择 **[!UICONTROL Add field groups]**。
 
-<img src="../images/tutorials/relationship/loyalty-create-new-mixin.png" width="750"><br>
+![](../images/tutorials/relationship/create-field-group.png)
 
-画布将重新显示，“[!DNL Favorite Hotel]”将显示在&#x200B;**[!UICONTROL Mixins]**&#x200B;部分中。 选择混音名称，然后选择根级别`Loyalty Members`字段旁边的&#x200B;**[!UICONTROL Add field]**。
+画布将重新显示，“[!DNL Favorite Hotel]”将显示在&#x200B;**[!UICONTROL Field groups]**&#x200B;部分中。 选择字段组名称，然后选择根级别`Loyalty Members`字段旁边的&#x200B;**[!UICONTROL Add field]**。
 
 ![](../images/tutorials/relationship/loyalty-add-field.png)
 
