@@ -6,16 +6,16 @@ description: 模式 Registry API中的/auditlog端点允许您检索对现有XDM
 topic-legacy: developer guide
 exl-id: 8d33ae7c-0aa4-4f38-a183-a2ff1801e291
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '396'
+source-wordcount: '400'
 ht-degree: 2%
 
 ---
 
 # 审核日志端点
 
-对于每个体验数据模型(XDM)资源，[!DNL Schema Registry]会保留在不同更新之间发生的所有更改的日志。 [!DNL Schema Registry] API中的`/auditlog`端点允许您检索由ID指定的任何类、混音、数据类型或模式的审核日志。
+对于每个体验数据模型(XDM)资源，[!DNL Schema Registry]会保留在不同更新之间发生的所有更改的日志。 [!DNL Schema Registry] API中的`/auditlog`端点允许您检索由ID指定的任何类、模式字段组、数据类型或模式的审核日志。
 
 ## 入门指南
 
@@ -25,7 +25,7 @@ ht-degree: 2%
 
 ## 检索资源的审核日志
 
-您可以通过在到`/auditlog`端点的GET请求路径中指定资源的ID，检索模式库中任何类、混合、数据类型或模式的审核日志。
+您可以通过在到`/auditlog`端点的GET请求路径中指定资源的ID，检索模式库中任何类、字段组、数据类型或模式的审核日志。
 
 **API格式**
 
@@ -39,11 +39,11 @@ GET /rpc/auditlog/{RESOURCE_ID}
 
 **请求**
 
-以下请求将检索`Restaurant`混音的审核日志。
+以下请求将检索`Restaurant`字段组的审核日志。
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/foundation/schemaregistry/rpc/auditlog/_{TENANT_ID}.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9 \
+  https://platform.adobe.io/data/foundation/schemaregistry/rpc/auditlog/_{TENANT_ID}.fieldgroups.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -57,11 +57,11 @@ curl -X GET \
 ```json
 [
   {
-    "id": "https://ns.adobe.com/{TENANT_ID}/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+    "id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
     "auditTrails": [
       {
-        "id": "https://ns.adobe.com/{TENANT_ID}/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "xdmType": "mixins",
+        "id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "xdmType": "fieldgroups",
         "action": "add",
         "path": "/definitions/customFields/properties/_{TENANT_ID}/properties/brand",
         "value": {
@@ -73,8 +73,8 @@ curl -X GET \
         }
       },
       {
-        "id": "https://ns.adobe.com/{TENANT_ID}/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "xdmType": "mixins",
+        "id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "xdmType": "fieldgroups",
         "action": "add",
         "path": "/meta:usageCount",
         "value": 0
