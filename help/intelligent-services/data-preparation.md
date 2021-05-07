@@ -6,9 +6,9 @@ topic-legacy: Intelligent Services
 description: 为了使智能服务能够从您的营销事件数据中发掘洞察，数据必须在语义上以标准结构进行丰富和维护。 智能服务使用体验数据模型(XDM)模式来实现这一点。
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2385'
+source-wordcount: '2397'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 0%
 
 客户人工智能和Attribution AI本身支持Adobe Analytics数据。 要使用Adobe Analytics数据，请按照文档中概述的步骤设置[Analytics源连接器](../sources/tutorials/ui/create/adobe-applications/analytics.md)。
 
-在源连接器将数据流化到Experience Platform中后，您可以在实例配置期间选择Adobe Analytics作为数据源，然后选择数据集。 所有必需的模式字段和混音在连接设置期间自动创建。 您无需将数据集ETL（提取、转换、加载）转换为CEE格式。
+在源连接器将数据流化到Experience Platform中后，您可以在实例配置期间选择Adobe Analytics作为数据源，然后选择数据集。 在连接设置过程中，将自动创建所有必需的模式字段组和各个字段。 您无需将数据集ETL（提取、转换、加载）转换为CEE格式。
 
 >[!IMPORTANT]
 >
@@ -45,7 +45,7 @@ ht-degree: 0%
 
 客户人工智能本身支持Adobe Audience Manager数据。 要使用Audience Manager数据，请按照文档中概述的步骤设置[Audience Manager源连接器](../sources/tutorials/ui/create/adobe-applications/audience-manager.md)。
 
-在源连接器将您的数据流化到Experience Platform中后，您可以在客户AI配置期间选择Adobe Audience Manager作为数据源，然后选择数据集。 所有必需的模式字段和混音在连接设置期间自动创建。 您无需将数据集ETL（提取、转换、加载）转换为CEE格式。
+在源连接器将您的数据流化到Experience Platform中后，您可以在客户AI配置期间选择Adobe Audience Manager作为数据源，然后选择数据集。 在连接设置过程中，将自动创建所有模式字段组和各个字段。 您无需将数据集ETL（提取、转换、加载）转换为CEE格式。
 
 >[!IMPORTANT]
 >
@@ -68,13 +68,13 @@ ht-degree: 0%
 
 ![](./images/data-preparation/schema-expansion.gif)
 
-与所有XDM模式一样，CEE混音是可扩展的。 换句话说，CEE混音中可以添加其他字段，如有必要，可以在多个模式中包含不同的变量。
+与所有XDM模式一样，CEE模式字段组是可扩展的。 换句话说，CEE字段组中可以添加其他字段，如有必要，可以在多个模式中包括不同的变量。
 
-在[公共XDM存储库](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)中可以找到混合的完整示例。 此外，您还可以视图并复制以下[JSON文件](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)，以了解如何构建数据以符合CEE模式。 在了解以下部分中概述的关键字段时，请参阅这两个示例，以确定如何将您自己的数据映射到模式。
+在[公共XDM存储库](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)中可以找到字段组的完整示例。 此外，您还可以视图并复制以下[JSON文件](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)，以了解如何构建数据以符合CEE模式。 在了解以下部分中概述的关键字段时，请参阅这两个示例，以确定如何将您自己的数据映射到模式。
 
 ## 键字段
 
-CEE混音中有几个关键字段应加以利用，以便[!DNL Intelligent Services]生成有用的洞察。 本节介绍这些字段的用例和预期数据，并提供指向参考文档的链接以获取更多示例。
+CEE字段组中有几个关键字段，应使用这些字段以生成有用的洞察。 [!DNL Intelligent Services]本节介绍这些字段的用例和预期数据，并提供指向参考文档的链接以获取更多示例。
 
 ### 必填字段
 
@@ -297,16 +297,16 @@ CEE混音中有几个关键字段应加以利用，以便[!DNL Intelligent Servi
 
 #### 创建CEE模式和数据集
 
-当您准备好开始准备数据以用于摄取时，第一步是创建一个使用CEE混音的新XDM模式。 以下教程将演练在UI或API中创建新模式的过程：
+当您准备好开始准备数据以用于摄取时，第一步是创建一个新的XDM模式，它使用CEE字段组。 以下教程将演练在UI或API中创建新模式的过程：
 
 * [在UI中创建模式](../xdm/tutorials/create-schema-ui.md)
 * [在API中创建模式](../xdm/tutorials/create-schema-api.md)
 
 >[!IMPORTANT]
 >
->以上教程遵循创建模式的通用工作流程。 为模式选择类时，必须使用&#x200B;**XDM ExperienceEvent类**。 选择此类后，您即可将CEE混音添加到模式。
+>以上教程遵循创建模式的通用工作流程。 为模式选择类时，必须使用&#x200B;**XDM ExperienceEvent类**。 选择此类后，您即可将CEE字段组添加到模式。
 
-在将CEE混音添加到模式后，您可以根据数据中其他字段的需要添加其他混音。
+将CEE字段组添加到模式后，您可以根据数据中其他字段的需要添加其他字段组。
 
 创建并保存模式后，即可基于该模式创建新数据集。 以下教程将指导您在UI或API中创建新数据集的过程：
 
