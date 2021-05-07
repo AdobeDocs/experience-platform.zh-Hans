@@ -5,16 +5,16 @@ title: 数据类型API端点
 description: 模式 Registry API中的/datatypes端点允许您在体验应用程序中以编程方式管理XDM数据类型。
 exl-id: 2a58d641-c681-40cf-acc8-7ad842cd6243
 translation-type: tm+mt
-source-git-commit: 610ce5c6dca5e7375b941e7d6f550382da10ca27
+source-git-commit: 7d7502b238f96eda1a15b622ba10bbccc289b725
 workflow-type: tm+mt
-source-wordcount: '1147'
+source-wordcount: '1151'
 ht-degree: 2%
 
 ---
 
 # 数据类型端点
 
-数据类型在类或混合中用作引用类型字段的方式与基本文本字段相同，其关键区别在于数据类型可以定义多个子字段。 虽然与混合类似，它们允许一致地使用多字段结构，但数据类型更灵活，因为它们可以包含在模式结构中的任何位置，而混合类只能添加在根级别。 [!DNL Schema Registry] API中的`/datatypes`端点允许您以编程方式管理体验应用程序中的数据类型。
+数据类型在类或模式字段组中用作引用类型字段的方式与基本文本字段相同，关键区别在于数据类型可以定义多个子字段。 虽然与字段组中允许一致使用多字段结构的字段组类似，但数据类型更灵活，因为它们可以包含在模式结构中的任意位置，而字段组只能添加在根级别。 [!DNL Schema Registry] API中的`/datatypes`端点允许您以编程方式管理体验应用程序中的数据类型。
 
 ## 入门指南
 
