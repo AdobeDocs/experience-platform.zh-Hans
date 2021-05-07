@@ -2,14 +2,14 @@
 keywords: 飞艇标签；飞艇目标
 title: 飞艇标签连接
 description: 将Adobe受众数据无缝传递给Airship，作为用于在Airship内定位的受众标签。
+exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
 translation-type: tm+mt
-source-git-commit: 7d579d85d427c45f39d000288ed883c7ffd003bf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '1134'
+source-wordcount: '1123'
 ht-degree: 1%
 
 ---
-
 
 # （测试版）[!DNL Airship Tags]连接{#airship-tags-destination}
 
@@ -43,7 +43,7 @@ ht-degree: 1%
 
 ## 标记组
 
-Adobe Experience Platform中的细分概念与Airship中的[Tags](https://docs.airship.com/guides/audience/tags/)类似，在实施方面略有差异。 此集成将Experience Platform段](https://experienceleague.adobe.com/docs/experience-platform/xdm/mixins/profile/segmentation.html?lang=en#mixins)中用户的[成员状态映射为[!DNL Airship]标记的存在或不存在。 例如，在`xdm:status`变为`realized`的平台区段中，将标记添加到[!DNL Airship]渠道或将此用户档案映射到的指定用户。 如果`xdm:status`更改为`exited`，则删除标记。
+Adobe Experience Platform中的细分概念与Airship中的[Tags](https://docs.airship.com/guides/audience/tags/)类似，在实施方面略有差异。 此集成将Experience Platform段](../../../xdm/field-groups/profile/segmentation.md)中用户的[成员状态映射为[!DNL Airship]标记的存在或不存在。 例如，在`xdm:status`变为`realized`的平台区段中，将标记添加到[!DNL Airship]渠道或将此用户档案映射到的指定用户。 如果`xdm:status`更改为`exited`，则删除标记。
 
 要启用此集成，请在[!DNL Airship]中创建名为`adobe-segments`的&#x200B;*标签组*。
 
@@ -157,4 +157,3 @@ Adobe Experience Platform中的细分概念与Airship中的[Tags](https://docs.a
 ## 数据使用和管理{#data-usage-governance}
 
 处理数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请参阅[数据治理概述](../../../data-governance/home.md)。
-
