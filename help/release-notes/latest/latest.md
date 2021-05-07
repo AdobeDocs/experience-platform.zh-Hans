@@ -6,9 +6,9 @@ last-update: April 21, 2021
 author: ens72741
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
 translation-type: tm+mt
-source-git-commit: f0350be580394516016373b1754a49951b58e846
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '883'
+source-wordcount: '885'
 ht-degree: 10%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 10%
 
 # Adobe Experience Platform 发行说明
 
-**发行日期：2021 年 4 月 21 日**
+**发布日期：2021 年 4 月 21 日**
 
 Adobe Experience Platform 现有功能的更新包括：
 
@@ -45,7 +45,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 | 功能 | 描述 |
 | --- | --- |
-| 模式建议 | 在模式编辑器UI中选择类和混合时，您可以使用新筛选器根据您的特定行业视图推荐的标准组件。 有关不同行业使用案例中这些组件如何彼此关联的更多信息，请参阅[行业数据模型](https://www.adobe.com/go/xdm-industry-erds-en)上的文档。 |
+| 模式建议 | 在模式编辑器UI中选择类和模式字段组时，您可以使用新的过滤器根据您的特定行业视图推荐的标准组件。 有关不同行业使用案例中这些组件如何彼此关联的更多信息，请参阅[行业数据模型](https://www.adobe.com/go/xdm-industry-erds-en)上的文档。 |
 
 ## [!DNL Intelligent Services] {#intelligent-services}
 
