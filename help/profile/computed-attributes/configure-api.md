@@ -3,12 +3,12 @@ keywords: Experience Platform;用户档案；实时客户用户档案；疑难�
 title: 如何配置计算属性字段
 topic-legacy: guide
 type: Documentation
-description: 计算属性是用于将事件级数据聚合为用户档案级属性的函数。 要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用模式 Registry API创建此字段，以定义包含计算属性字段的模式和自定义混音。
+description: 计算属性是用于将事件级数据聚合为用户档案级属性的函数。 要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用模式 Registry API创建此字段，以定义将保存计算属性字段的模式和自定义字段组。
 exl-id: 91c5d125-8ab5-4291-a974-48dd44c68a13
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
 workflow-type: tm+mt
-source-wordcount: '713'
+source-wordcount: '736'
 ht-degree: 2%
 
 ---
@@ -19,33 +19,33 @@ ht-degree: 2%
 >
 >计算属性功能当前位于Alpha中，并且不适用于所有用户。 文档和功能可能会发生变化。
 
-要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用模式 Registry API创建此字段，以定义包含计算属性字段的模式和自定义混音。 建议您创建单独的“计算属性”模式并混合，以便您的组织可以在其中添加任何用作计算属性的属性。 这使您的组织能够将计算的属性模式与用于数据获取的其他模式完全分离。
+要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用模式 Registry API创建此字段，以定义将包含计算属性字段的模式和自定义模式字段组。 建议您创建单独的“计算属性”模式和字段组，您的组织可以在其中添加任何用作计算属性的属性。 这使您的组织能够将计算的属性模式与用于数据获取的其他模式完全分离。
 
-此文档中的工作流概述了如何使用模式 Registry API创建引用自定义混音的启用用户档案的“计算属性”模式。 此文档包含特定于计算属性的示例代码，但有关使用API定义混合和模式的详细信息，请参阅[模式注册表API指南](../../xdm/api/overview.md)。
+此文档中的工作流概述了如何使用模式 Registry API创建引用自定义字段组的启用了用户档案的“计算属性”模式。 此文档包含特定于计算属性的示例代码，但请参阅[模式注册表API指南](../../xdm/api/overview.md)，了解有关使用API定义字段组和模式的详细信息。
 
-## 创建计算属性混合
+## 创建计算属性字段组
 
-要使用模式 Registry API创建混音，首先向`/tenant/mixins`端点发出POST请求，并在请求体中提供混音的详细信息。 有关使用模式 Registry API处理混合的详细信息，请参阅[mixins API终结点指南](../../xdm/api/mixins.md)。
+要使用模式注册表API创建字段组，首先向`/tenant/fieldgroups`端点发出POST请求，并提供请求主体中字段组的详细信息。 有关使用模式 Registry API处理字段组的详细信息，请参阅[字段组API终结点指南](../../xdm/api/field-groups.md)。
 
 **API格式**
 
 ```http
-POST /tenant/mixins
+POST /tenant/fieldgroups
 ```
 
 **请求**
 
 ```shell
 curl -X POST \
-  https://platform.adobe.io/data/foundation/schemaregistry/tenant/mixins\
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups\
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'content-type: application/json' \
   -d '{
-        "title":"Computed Attributes Mixin",
-        "description":"Description of the mixin.",
+        "title":"Computed Attributes Field Group",
+        "description":"Description of the field group.",
         "type":"object",
         "meta:extensible": true,
         "meta:abstract": true,
@@ -53,7 +53,7 @@ curl -X POST \
           "https://ns.adobe.com/xdm/context/profile"
         ],
         "definitions": {
-          "computedAttributesMixin": {
+          "computedAttributesFieldGroup": {
             "type": "object",
             "meta:xdmType": "object",
             "properties": {
@@ -72,7 +72,7 @@ curl -X POST \
         },
         "allOf": [
           {
-            "$ref": "#/definitions/computedAttributesMixin"
+            "$ref": "#/definitions/computedAttributesFieldGroup"
           }
         ]
       }'
@@ -80,24 +80,24 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| `title` | 要创建的混音的名称。 |
-| `meta:intendedToExtend` | 可以使用混音的XDM类。 |
+| `title` | 要创建的字段组的名称。 |
+| `meta:intendedToExtend` | 可使用字段组的XDM类。 |
 
 **响应**
 
-成功的请求返回HTTP响应状态201（已创建），响应主体包含新创建的混合的详细信息，包括`$id`、`meta:altIt`和`version`。 这些值是只读的，由模式注册表指定。
+成功的请求返回HTTP响应状态201（已创建），响应主体包含新创建字段组的详细信息，包括`$id`、`meta:altIt`和`version`。 这些值是只读的，由模式注册表指定。
 
 ```json
 {
-  "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
-  "meta:altId": "_{TENANT_ID}.mixins.860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
-  "meta:resourceType": "mixins",
+  "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+  "meta:altId": "_{TENANT_ID}.fieldgroups.860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+  "meta:resourceType": "fieldgroups",
   "version": "1.0",
-  "title": "Computed Attributes Mixin",
+  "title": "Computed Attributes Field Group",
   "type": "object",
-  "description": "Description of the mixin.",
+  "description": "Description of the field group.",
   "definitions": {
-    "computedAttributesMixin": {
+    "computedAttributesFieldGroup": {
       "type": "object",
       "meta:xdmType": "object",
       "properties": {
@@ -116,7 +116,7 @@ curl -X POST \
   },
   "allOf": [
     {
-      "$ref": "#/definitions/computedAttributesMixin",
+      "$ref": "#/definitions/computedAttributesFieldGroup",
       "type": "object",
       "meta:xdmType": "object"
     }
@@ -145,16 +145,16 @@ curl -X POST \
 }
 ```
 
-## 使用其他计算属性更新混音
+## 使用其他计算属性更新字段组
 
-由于需要更多的计算属性，您可以通过向`/tenant/mixins`端点发出PUT请求来更新与其他属性混合的计算属性。 此请求要求您包含在路径中创建的混音的唯一ID以及要在正文中添加的所有新字段。
+由于需要更多的计算属性，您可以通过向`/tenant/fieldgroups`端点发出PUT请求，使用附加属性更新计算属性字段组。 此请求要求您包含在路径中创建的字段组的唯一ID以及要在正文中添加的所有新字段。
 
-有关使用模式 Registry API更新混合的详细信息，请参阅[mixins API终结点指南](../../xdm/api/mixins.md)。
+有关使用模式 Registry API更新字段组的详细信息，请参阅[字段组API终结点指南](../../xdm/api/field-groups.md)。
 
 **API格式**
 
 ```http
-PUT /tenant/mixins/{MIXIN_ID}
+PUT /tenant/fieldgroups/{FIELD_GROUP_ID}
 ```
 
 **请求**
@@ -163,11 +163,11 @@ PUT /tenant/mixins/{MIXIN_ID}
 
 >[!NOTE]
 >
->当通过PUT请求更新混音时，主体必须包括在POST请求中创建新混音时所需的所有字段。
+>通过PUT请求更新字段组时，主体必须包括在POST请求中创建新字段组时所需的所有字段。
 
 ```shell
 curl -X PUT \
-  https://platform.adobe.io/data/foundation/schemaregistry/tenant/mixins/_{TENANT_ID}.mixins.8779fd45d6e4eb074300023a439862bbba359b60d451627a \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/_{TENANT_ID}.fieldgroups.8779fd45d6e4eb074300023a439862bbba359b60d451627a \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
@@ -175,15 +175,15 @@ curl -X PUT \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
         "type": "object",
-        "title": "Computed Attributes Mixin",
+        "title": "Computed Attributes Field Group",
         "meta:extensible": true,
         "meta:abstract": true,
         "meta:intendedToExtend": [
           "https://ns.adobe.com/xdm/context/profile"
         ],
-        "description": "Description of mixin.",
+        "description": "Description of field group.",
         "definitions": {
-          "computedAttributesMixin": {
+          "computedAttributesFieldGroup": {
             "type": "object",
             "meta:xdmType": "object",
             "properties": {
@@ -222,7 +222,7 @@ curl -X PUT \
         },
         "allOf": [
           {
-            "$ref": "#/definitions/computedAttributesMixin"
+            "$ref": "#/definitions/computedAttributesFieldGroup"
           }
         ]
       }'
@@ -230,19 +230,19 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回更新的混音的详细信息。
+成功的响应会返回更新的字段组的详细信息。
 
 ```json
 {
-  "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
-  "meta:altId": "_{TENANT_ID}.mixins.860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
-  "meta:resourceType": "mixins",
+  "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+  "meta:altId": "_{TENANT_ID}.fieldgroups.860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+  "meta:resourceType": "fieldgroups",
   "version": "1.0",
-  "title": "Computed Attributes Mixin",
+  "title": "Computed Attributes Field Group",
   "type": "object",
-  "description": "Description of mixin.",
+  "description": "Description of field group.",
   "definitions": {
-    "computedAttributesMixin": {
+    "computedAttributesFieldGroup": {
       "type": "object",
       "meta:xdmType": "object",
       "properties": {
@@ -281,7 +281,7 @@ curl -X PUT \
   },
   "allOf": [
     {
-      "$ref": "#/definitions/computedAttributesMixin",
+      "$ref": "#/definitions/computedAttributesFieldGroup",
       "type": "object",
       "meta:xdmType": "object"
     }
@@ -324,7 +324,7 @@ POST /tenants/schemas
 
 **请求**
 
-以下请求将创建一个新模式，引用在此文档中先前创建的`computedAttributesMixin`（使用其唯一ID），并启用用户档案合并模式（使用`meta:immutableTags`数组）。 有关如何使用模式 Registry API创建模式的详细说明，请参阅[模式API终结点指南](../../xdm/api/schemas.md)。
+以下请求将创建一个新模式，引用在此文档中先前创建的`computedAttributesFieldGroup`（使用其唯一ID），并启用用户档案合并模式（使用`meta:immutableTags`数组）。 有关如何使用模式 Registry API创建模式的详细说明，请参阅[模式API终结点指南](../../xdm/api/schemas.md)。
 
 ```shell
 curl -X POST \
@@ -345,7 +345,7 @@ curl -X POST \
         "meta:extends": [
           "https://ns.adobe.com/xdm/context/profile",
           "https://ns.adobe.com/xdm/context/identitymap",
-          "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
+          "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
         ],
         "description": "Description of schema.",
         "definitions": {
@@ -358,7 +358,7 @@ curl -X POST \
             "$ref": "https://ns.adobe.com/xdm/context/identitymap"
           },
           {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
           }
         ],
         "meta:class": "https://ns.adobe.com/xdm/context/profile"
@@ -391,7 +391,7 @@ curl -X POST \
       "meta:xdmType": "object"
     },
     {
-      "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+      "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
       "type": "object",
       "meta:xdmType": "object"
     }
@@ -399,7 +399,7 @@ curl -X POST \
   "refs": [
     "https://ns.adobe.com/xdm/context/profile",
     "https://ns.adobe.com/xdm/context/identitymap",
-    "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
+    "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
   ],
   "imsOrg": "{IMS_ORG}",
   "meta:extensible": false,
@@ -409,7 +409,7 @@ curl -X POST \
     "https://ns.adobe.com/xdm/data/record",
     "https://ns.adobe.com/xdm/context/profile",
     "https://ns.adobe.com/xdm/context/identitymap",
-    "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
+    "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
   ],
   "meta:xdmType": "object",
   "meta:registryMetadata": {
@@ -435,4 +435,4 @@ curl -X POST \
 
 ## 后续步骤
 
-现在，您已创建了一个模式和混音，计算属性将存储在其中，因此，您可以使用`/computedattributes` API端点创建计算属性。 有关在API中创建计算属性的详细步骤，请按照[计算属性API端点指南](ca-api.md)中提供的步骤进行操作。
+现在，您已创建了计算属性存储在其中的模式和字段组，现在，您可以使用`/computedattributes` API端点创建计算属性。 有关在API中创建计算属性的详细步骤，请按照[计算属性API端点指南](ca-api.md)中提供的步骤进行操作。
