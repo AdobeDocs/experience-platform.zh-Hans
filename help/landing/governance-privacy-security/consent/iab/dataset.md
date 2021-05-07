@@ -6,9 +6,9 @@ topic-legacy: privacy events
 description: 此文档提供了设置两个必需数据集以收集IAB TCF 2.0同意数据的步骤。
 exl-id: 36b2924d-7893-4c55-bc33-2c0234f1120e
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '1564'
+source-wordcount: '1582'
 ht-degree: 0%
 
 ---
@@ -34,15 +34,15 @@ ht-degree: 0%
    * [身份命名空间](../../../../identity-service/namespaces.md):客户身份命名空间必须根据由Identity Service识别的特定身份数据提供。
 * [实时客户用户档案](../../../../profile/home.md):利 [!DNL Identity Service] 用数据集实时创建详细的客户用户档案。[!DNL Real-time Customer Profile] 从Data Lake中提取数据，并将客户用户档案保留在其自己的单独数据存储中。
 
-## [!UICONTROL Privacy Details] 混合结构  {#structure}
+## [!UICONTROL Privacy Details] 字段组结构  {#structure}
 
-[!UICONTROL Privacy Details] mixin提供TCF 2.0支持所需的客户同意字段。 此混音有两种版本：一个与[!DNL XDM Individual Profile]类兼容，另一个与[!DNL XDM ExperienceEvent]类兼容。
+[!UICONTROL Privacy Details]模式字段组提供TCF 2.0支持所需的客户同意字段。 此字段组有两个版本：一个与[!DNL XDM Individual Profile]类兼容，另一个与[!DNL XDM ExperienceEvent]类兼容。
 
-以下各节说明了每个混合的结构，包括在摄取期间他们期望的数据。
+以下各节说明了每个字段组的结构，包括在摄取期间他们期望的数据。
 
-### 用户档案混音{#profile-mixin}
+### 用户档案字段组{#profile-field-group}
 
-对于基于[!DNL XDM Individual Profile]的模式,[!UICONTROL Privacy Details] mixin提供单个映射类型字段`xdm:identityPrivacyInfo`，该字段将客户身份映射到其TCF同意偏好。 以下JSON是`xdm:identityPrivacyInfo`在数据获取时所需的数据类型的示例：
+对于基于[!DNL XDM Individual Profile]的模式,[!UICONTROL Privacy Details]字段组提供单个映射类型字段`xdm:identityPrivacyInfo`，该字段将客户身份映射到其TCF同意偏好。 以下JSON是`xdm:identityPrivacyInfo`在数据获取时所需的数据类型的示例：
 
 ```json
 {
@@ -78,9 +78,9 @@ ht-degree: 0%
 | `xdm:consentTimestamp` | TCF同意值更改时的[ISO 8601](https://www.ietf.org/rfc/rfc3339.txt)时间戳。 |
 | `xdm:consentString` | 包含客户更新的同意数据和其他上下文信息的对象。 请参阅[同意字符串属性](#consent-string)中的部分，了解此对象的必需子属性。 |
 
-### 事件混音{#event-mixin}
+### 事件字段组{#event-field-group}
 
-对于基于[!DNL XDM ExperienceEvent]的模式,[!UICONTROL Privacy Details] mixin提供单个数组类型字段：`xdm:consentStrings`。 此数组中的每个项都必须是包含TCF同意字符串必需属性的对象，与用户档案混音中的`xdm:consentString`字段类似。 有关这些子属性的详细信息，请参阅[下一节](#consent-string)。
+对于基于[!DNL XDM ExperienceEvent]的模式,[!UICONTROL Privacy Details]字段组提供单个数组类型字段：`xdm:consentStrings`。 此数组中的每个项都必须是包含TCF同意字符串必需属性的对象，与用户档案字段组中的`xdm:consentString`字段类似。 有关这些子属性的详细信息，请参阅[下一节](#consent-string)。
 
 ```json
 {
@@ -98,7 +98,7 @@ ht-degree: 0%
 
 ### 同意字符串属性{#consent-string}
 
-[!UICONTROL Privacy Details] mixin的两个版本都需要至少一个对象，该对象捕获描述客户的TCF同意字符串的必要字段。 这些属性的说明如下：
+[!UICONTROL Privacy Details]字段组的两个版本都至少需要一个对象来捕获描述客户的TCF同意字符串的必要字段。 这些属性的说明如下：
 
 | 属性 | 描述 |
 | --- | --- |
@@ -126,11 +126,11 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/create-schema-profile.png)
 
-出现[!DNL Schema Editor]，显示画布中模式的结构。 使用右边栏为模式提供名称和说明，然后在画布左侧的&#x200B;**[!UICONTROL Mixins]**&#x200B;部分下选择&#x200B;**[!UICONTROL Add]**。
+出现[!DNL Schema Editor]，显示画布中模式的结构。 使用右边栏为模式提供名称和说明，然后在画布左侧的&#x200B;**[!UICONTROL Field groups]**&#x200B;部分下选择&#x200B;**[!UICONTROL Add]**。
 
-![](../../../images/governance-privacy-security/consent/iab/dataset/add-mixin-profile.png)
+![](../../../images/governance-privacy-security/consent/iab/dataset/add-field-group-profile.png)
 
-出现&#x200B;**[!UICONTROL Add mixin]**&#x200B;对话框。 从此处，从列表中选择&#x200B;**[!UICONTROL Privacy Details]**。 您可以选择使用搜索栏缩小结果范围，以便更轻松地定位混音。 选择混音后，选择&#x200B;**[!UICONTROL Add mixin]**。
+出现&#x200B;**[!UICONTROL Add field groups]**&#x200B;对话框。 从此处，从列表中选择&#x200B;**[!UICONTROL Privacy Details]**。 您可以选择使用搜索栏缩小结果范围，以便更轻松地定位字段组。 选择字段组后，选择&#x200B;**[!UICONTROL Add field groups]**。
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/add-profile-privacy.png)
 
@@ -138,14 +138,14 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/profile-privacy-structure.png)
 
-在此处，重复上述步骤，向模式添加以下附加混音：
+在此处，重复上述步骤，将以下附加字段组添加到模式:
 
 * [!UICONTROL IdentityMap]
 * [!UICONTROL Data capture region for Profile]
 * [!UICONTROL Demographic Details]
 * [!UICONTROL Personal Contact Details]
 
-![](../../../images/governance-privacy-security/consent/iab/dataset/profile-all-mixins.png)
+![](../../../images/governance-privacy-security/consent/iab/dataset/profile-all-field-groups.png)
 
 如果您正在编辑已启用在[!DNL Real-time Customer Profile]中使用的现有模式，请选择&#x200B;**[!UICONTROL Save]**&#x200B;以确认您的更改，然后跳到[中的“根据您的同意模式](#dataset)创建数据集”部分。 如果要创建新模式，请继续执行下面子部分中概述的步骤。
 
@@ -177,11 +177,11 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/create-schema-event.png)
 
-出现[!DNL Schema Editor]，显示画布中模式的结构。 使用右边栏为模式提供名称和说明，然后在画布左侧的&#x200B;**[!UICONTROL Mixins]**&#x200B;部分下选择&#x200B;**[!UICONTROL Add]**。
+出现[!DNL Schema Editor]，显示画布中模式的结构。 使用右边栏为模式提供名称和说明，然后在画布左侧的&#x200B;**[!UICONTROL Field groups]**&#x200B;部分下选择&#x200B;**[!UICONTROL Add]**。
 
-![](../../../images/governance-privacy-security/consent/iab/dataset/add-mixin-event.png)
+![](../../../images/governance-privacy-security/consent/iab/dataset/add-field-group-event.png)
 
-出现&#x200B;**[!UICONTROL Add mixin]**&#x200B;对话框。 从此处，从列表中选择&#x200B;**[!UICONTROL Privacy Details]**。 您可以选择使用搜索栏缩小结果范围，以便更轻松地定位混音。 选择混音后，选择&#x200B;**[!UICONTROL Add mixin]**。
+出现&#x200B;**[!UICONTROL Add field groups]**&#x200B;对话框。 从此处，从列表中选择&#x200B;**[!UICONTROL Privacy Details]**。 您可以选择使用搜索栏缩小结果范围，以便更轻松地定位字段组。 选择字段组后，请选择&#x200B;**[!UICONTROL Add field groups]**。
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/add-event-privacy.png)
 
@@ -189,16 +189,16 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/event-privacy-structure.png)
 
-在此处，重复上述步骤，向模式添加以下附加混音：
+在此处，重复上述步骤，将以下附加字段组添加到模式:
 
 * [!UICONTROL IdentityMap]
 * [!UICONTROL Environment Details]
 * [!UICONTROL Web Details]
 * [!UICONTROL Implementation Details]
 
-添加混音后，选择&#x200B;**[!UICONTROL Save]**&#x200B;即可完成。
+添加字段组后，选择&#x200B;**[!UICONTROL Save]**&#x200B;即可完成。
 
-![](../../../images/governance-privacy-security/consent/iab/dataset/event-all-mixins.png)
+![](../../../images/governance-privacy-security/consent/iab/dataset/event-all-field-groups.png)
 
 ## 根据您的同意模式{#datasets}创建数据集
 
