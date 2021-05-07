@@ -6,9 +6,9 @@ topic-legacy: Getting started
 description: 进一步了解客户人工智能所使用的所需事件、输入和输出。
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2865'
+source-wordcount: '2878'
 ht-degree: 1%
 
 ---
@@ -36,10 +36,10 @@ ht-degree: 1%
 | 搜索词 | 定义 |
 | --- | --- |
 | [体验数据模型(XDM)](../../xdm/home.md) | XDM是基本框架，它允许以Adobe Experience Platform为后盾的Adobe Experience Cloud在恰当的时刻，在适当的渠道向适当的人员提供适当的信息。 构建Experience Platform的方法，即XDM系统，可操作由平台服务使用的体验数据模型模式。 |
-| XDM 架构 | Experience Platform 会使用架构，以便以可重用的一致方式描述数据结构。通过在整个系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。在将数据引入平台之前，必须构建一个模式来描述数据的结构，并对每个字段中可以包含的数据类型提供约束。 模式由基XDM类和零个或多个混音组成。 |
+| XDM 架构 | Experience Platform 会使用架构，以便以可重用的一致方式描述数据结构。通过在整个系统中以一致的方式定义数据，更容易保留含义并因此从数据中获取价值。在将数据引入平台之前，必须构建一个模式来描述数据的结构，并对每个字段中可以包含的数据类型提供约束。 模式由基XDM类和零个或多个模式字段组组成。 |
 | XDM类 | 所有XDM模式都描述了可以分类为记录或时间序列的数据。 模式的模式行为由的类定义，该类在首次创建模式时分配给。 XDM类描述模式必须包含的最小属性数，以表示特定数据行为。 |
-| [Mixins](../../xdm/schema/composition.md) | 定义模式中一个或多个字段的组件。 Mixins强制实现其字段在模式层次结构中的显示方式，因此在每个模式中都显示其包含在中的相同结构。 Mixins仅与特定类兼容，由其`meta:intendedToExtend`属性标识。 |
-| [数据类型](../../xdm/schema/composition.md) | 还可为模式提供一个或多个字段的组件。 但是，与混音不同，数据类型不限于特定类。 这使数据类型成为描述可跨具有潜在不同类的多个模式重用的常见数据结构的更灵活的选项。 CEE和Adobe Analytics模式均支持本文档中概述的数据类型。 |
+| [字段组](../../xdm/schema/composition.md) | 定义模式中一个或多个字段的组件。 字段组强制实现其字段在模式层次结构中的显示方式，因此，在每个模式中，它们所包含的结构都相同。 字段组仅与特定类兼容，由其`meta:intendedToExtend`属性标识。 |
+| [数据类型](../../xdm/schema/composition.md) | 还可为模式提供一个或多个字段的组件。 但是，与字段组不同，数据类型不受特定类的限制。 这使数据类型成为描述可跨具有潜在不同类的多个模式重用的常见数据结构的更灵活的选项。 CEE和Adobe Analytics模式均支持本文档中概述的数据类型。 |
 | 客户流失 | 取消或选择不续订其订阅的帐户百分比度量。 较高的客户流失率可能会对月度经常性收入(MRR)产生负面影响，也可能表明对产品或服务的不满。 |
 | [实时客户资料](../../profile/home.md) | 实时客户用户档案为有针对性的个性化体验管理提供了集中化的消费者用户档案。 每个用户档案都包含跨所有系统聚合的事件，以及涉及您与Experience Platform一起使用的任何系统中发生的个人的可操作时间戳帐户。 |
 
@@ -49,7 +49,7 @@ ht-degree: 1%
 >
 > 客户人工智能自动确定哪些事件对预测有用，并在可用数据不足以生成质量预测时发出警告。
 
-客户人工智能支持CEE、Adobe Analytics和Adobe Audience Manager数据集。 CEE模式要求您在创建模式的过程中添加混音。 如果您使用Adobe Analytics或Adobe Audience Manager数据集，源连接器会在连接过程中直接映射下面列出的标准事件（商务、网页详细信息、应用程序和搜索）。
+客户人工智能支持CEE、Adobe Analytics和Adobe Audience Manager数据集。 CEE模式要求您在创建模式的过程中添加字段组。 如果您使用Adobe Analytics或Adobe Audience Manager数据集，源连接器会在连接过程中直接映射下面列出的标准事件（商务、网页详细信息、应用程序和搜索）。
 
 有关映射Adobe Analytics数据或Audience Manager数据的详细信息，请访问[分析字段映射](../../sources/connectors/adobe-applications/analytics.md)或[Audience Manager字段映射](../../sources/connectors/adobe-applications/mapping/audience-manager.md)指南。
 
@@ -57,18 +57,17 @@ ht-degree: 1%
 
 XDM体验事件用于确定各种客户行为。 根据您的事件类型的结构，以下列出的数据可能不包括您的所有客户行为。 由您决定哪些字段具有明确、明确地识别Web用户活动所需的必要数据。 根据您的预测目标，需要的必填字段可能会更改。
 
-客户人工智能依赖不同的事件类型来构建模型功能。 这些事件类型会使用多个XDM混音自动添加到您的模式。
+客户人工智能依赖不同的事件类型来构建模型功能。 这些事件类型会使用多个XDM字段组自动添加到您的模式。
 
 >[!NOTE]
 >
->如果您使用Adobe Analytics或Adobe Audience Manager数据，则会自动创建模式，并使用捕获数据所需的标准事件。 如果您要创建自己的自定义CEE模式来捕获数据，您需要考虑捕获数据所需的混音。
+>如果您使用Adobe Analytics或Adobe Audience Manager数据，则会自动创建模式，并使用捕获数据所需的标准事件。 如果您要创建自己的自定义CEE模式来捕获数据，您需要考虑捕获数据所需的字段组。
 
 不必为下面列出的每个标准事件提供数据，但某些情况需要某些事件。 如果您有任何标准事件数据可用，建议您将其包含在模式中。 例如，如果要创建用于预测购买事件的客户人工智能应用程序，则使用`Commerce`和`Web page details`数据类型中的数据会很有用。
 
-要在平台UI中视图混音，请选择左边栏上的&#x200B;**[!UICONTROL Schemas]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL Mixins]**&#x200B;选项卡。
+要在平台UI中视图字段组，请选择左边栏上的&#x200B;**[!UICONTROL Schemas]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL Field groups]**&#x200B;选项卡。
 
-
-| Mixin | 事件类型 | XDM字段路径 |
+| 字段组 | 事件类型 | XDM字段路径 |
 | --- | --- | --- |
 | [!UICONTROL Commerce Details] | or | <li> commerce.order.purchaseID </li> <li> productListItems.SKU </li> |
 |  | productListViews | <li> commerce.productListViews.value </li> <li> productListItems.SKU </li> |
@@ -118,7 +117,7 @@ XDM体验事件用于确定各种客户行为。 根据您的事件类型的结�
 
 ### 示例方案
 
-在本节中，描述了客户人工智能实例的不同方案以及所需的和推荐的事件类型。 有关mixin及其字段路径的详细信息，请参阅上面的[标准事件表](#standard-events)。
+在本节中，描述了客户人工智能实例的不同方案以及所需的和推荐的事件类型。 有关字段组及其字段路径的详细信息，请参阅上面的[标准事件表](#standard-events)。
 
 >[!NOTE]
 >
@@ -249,7 +248,7 @@ XDM体验事件用于确定各种客户行为。 根据您的事件类型的结�
 
 **所需的标准事件类型:**
 
-要使用Adobe Audience Manager的特征，您需要使用[Audience Manager源连接器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)创建源连接。 源连接器自动创建具有适当混音的模式。 您无需手动添加其他事件类型,模式便可与客户人工智能结合使用。
+要使用Adobe Audience Manager的特征，您需要使用[Audience Manager源连接器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)创建源连接。 源连接器自动创建具有相应字段组的模式。 您无需手动添加其他事件类型,模式便可与客户人工智能结合使用。
 
 在配置新客户AI实例时，`audienceName`和`audienceID`可用于在定义目标时为得分选择特定特征。
 
