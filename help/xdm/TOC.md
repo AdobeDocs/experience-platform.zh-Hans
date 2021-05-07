@@ -2,13 +2,13 @@
 audience: user
 user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
-user-guide-description: 使用 Experience Data Model (XDM) 类和混合 (mixin) 来标准化体验数据。
+user-guide-description: 使用体验数据模型(XDM)类和模式字段组来标准化体验数据。
 feature: 模式 (Schema)
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a19a89d347b9197ab2766bd8a57018f5ac4f058d
 workflow-type: tm+mt
-source-wordcount: '279'
-ht-degree: 20%
+source-wordcount: '291'
+ht-degree: 17%
 
 ---
 
@@ -30,18 +30,18 @@ ht-degree: 20%
    * [XDM个人用户档案](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
    * [区段定义](./classes/segment-definition.md)
-* Mixins {#mixins}
-   * 用户档案混音{#profile}
-      * [IdentityMap](./mixins/profile/identitymap.md)
-      * [人口统计详细信息](./mixins/profile/person-details.md)
-      * [个人联系人详细信息](./mixins/profile/personal-details.md)
-      * [隐私/个性化/营销首选项（同意）](./mixins/profile/consents.md)
-      * [区段会员资格详细信息](./mixins/profile/segmentation.md)
-      * [工作联系人详细信息](./mixins/profile/work-details.md)
-   * 事件混音{#event}
-      * [最终用户ID详细信息](./mixins/event/enduserids.md)
-      * [环境详细信息](./mixins/event/environment-details.md)
-   * [混合名称更新](./mixins/name-updates.md)
+* 模式字段组{#field-groups}
+   * 用户档案字段组{#profile}
+      * [IdentityMap](./field-groups/profile/identitymap.md)
+      * [人口统计详细信息](./field-groups/profile/demographic-details.md)
+      * [个人联系人详细信息](./field-groups/profile/personal-contact-details.md)
+      * [区段会员资格详细信息](./field-groups/profile/segmentation.md)
+      * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
+      * [隐私/个性化/营销首选项（同意）](./field-groups/profile/consents.md)
+   * 事件字段组{#event}
+      * [最终用户ID详细信息](./field-groups/event/enduserids.md)
+      * [环境详细信息](./field-groups/event/environment-details.md)
+   * [字段组名称更新](./field-groups/name-updates.md)
 * 数据类型 {#data-types}
    * [应用程序](./data-types/application.md)
    * [信标](./data-types/beacon.md)
@@ -77,11 +77,11 @@ ht-degree: 20%
    * [网页详细信息](./data-types/webpage-details.md)
 * [!UICONTROL Schemas] UI {#ui}
    * [概述](./ui/overview.md)
-   * [浏览XDM资源](./ui/explore.md)
+   * [浏览 XDM 资源](./ui/explore.md)
    * 创建和编辑资源{#resources}
       * [模式 (Schema)](./ui/resources/schemas.md)
       * [类](./ui/resources/classes.md)
-      * [Mixins](./ui/resources/mixins.md)
+      * [字段组](./ui/resources/field-groups.md)
       * [数据类型](./ui/resources/data-types.md)
    * 定义字段{#fields}
       * [概述](./ui/fields/overview.md)
@@ -99,7 +99,7 @@ ht-degree: 20%
    * [模式 (Schema)](api/schemas.md)
    * [行为](api/behaviors.md)
    * [类](api/classes.md)
-   * [Mixins](api/mixins.md)
+   * [模式字段组](api/field-groups.md)
    * [数据类型](api/data-types.md)
    * [描述符](api/descriptors.md)
    * [合并](api/unions.md)
@@ -107,6 +107,7 @@ ht-degree: 20%
    * [样本数据](api/sample-data.md)
    * [审核日志](api/audit-log.md)
    * [临时模式](api/ad-hoc.md)
+   * [Mixin（已弃用）](api/mixins.md)
    * [附录](api/appendix.md)
 * 教程 {#tutorials}
    * [创建模式(UI)](tutorials/create-schema-ui.md)
