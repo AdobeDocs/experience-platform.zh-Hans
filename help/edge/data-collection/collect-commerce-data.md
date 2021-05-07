@@ -2,20 +2,20 @@
 title: 使用Adobe Experience Platform Web SDK收集商务和产品信息
 description: 了解如何使用Adobe Experience Platform Web SDK添加与产品或购物车相关的数据。
 keywords: products;commerce;measure;order;cartAndons；结帐；productListAdds;productListOpens;productListReopens;productListViews;productViews;purchases;saveForLaters;currencyCode;paymentAmount;paymentType;transactionIDpriceTotal;purchaseID;purchaseOrderNumber;
+exl-id: 3c79e776-89ef-494b-a2ea-3c23efce09ae
 translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+source-git-commit: 7d7502b238f96eda1a15b622ba10bbccc289b725
 workflow-type: tm+mt
-source-wordcount: '1321'
+source-wordcount: '1324'
 ht-degree: 6%
 
 ---
-
 
 # 收集商务和产品信息
 
 如果您的网站上有产品，则这是您可能希望发送的默认内容集，以启用Adobe中的最大功能。 尽管这是一个建议，但它提供了一套非常强大的开始数据。
 
-此文档使用[ExperienceEvent商务详细信息](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md) mixin。 `commerce`混音分为两部分：`commerce`对象和`productListItems`数组。 通过`commerce`对象，可以指示正在对`productListItems`数组执行哪些操作。
+此文档使用[ExperienceEvent商务详细信息](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/context/experienceevent-commerce.schema.md)模式字段组。 `commerce`字段组分为两部分：`commerce`对象和`productListItems`数组。 通过`commerce`对象，可以指示正在对`productListItems`数组执行哪些操作。
 
 >[!TIP]
 >
