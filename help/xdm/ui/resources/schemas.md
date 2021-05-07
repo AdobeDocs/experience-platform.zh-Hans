@@ -6,9 +6,9 @@ description: 学习如何在Experience Platform用户界面中创建和编辑模
 topic-legacy: user guide
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '1340'
+source-wordcount: '1370'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->XDM模式是极其可自定义的，因此创建模式所涉及的步骤可能因模式要捕获的数据类型而异。 因此，此文档仅涵盖您可以在UI中与模式进行的基本交互，并不包括自定义类、混合、数据类型和字段等相关步骤。
+>XDM模式是极其可自定义的，因此创建模式所涉及的步骤可能因模式要捕获的数据类型而异。 因此，此文档仅涵盖您可以在UI中与模式进行的基本交互，并不包括自定义类、模式字段组、数据类型和字段等相关步骤。
 >
 >有关模式创建过程的完整演示，请按照[模式创建教程](../../tutorials/create-schema-ui.md)创建一个完整的示例模式，并熟悉[!DNL Schema Editor]的许多功能。
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 ![](../../images/ui/resources/schemas/schema-details.png)
 
-您现在可以通过添加mixins](#add-mixins)来开始构建模式的结构。[
+您现在可以通过[添加开始字段组](#add-field-groups)模式构建模式结构。
 
 ## 编辑现有模式{#edit}
 
@@ -53,23 +53,23 @@ ht-degree: 0%
 >
 >您可以使用工作区的搜索和筛选功能来帮助更轻松地查找模式。 有关详细信息，请参阅[探索XDM资源](../explore.md)指南。
 
-选择模式后，[!DNL Schema Editor]将显示，画布中显示了模式的结构。 现在，您可以[向模式添加mixins](#add-mixins)、[编辑字段显示名称](#display-names)或[编辑现有的自定义mixins](./mixins.md#edit)(如果模式使用任何)。
+选择模式后，[!DNL Schema Editor]将显示，画布中显示了模式的结构。 现在，您可以[向模式添加字段组](#add-field-groups)、[编辑字段显示名称](#display-names)或[编辑现有自定义字段组](./field-groups.md#edit)(如果模式使用任何字段)。
 
-## 向模式{#add-mixins}添加混音
+## 向模式{#add-field-groups}添加字段组
 
 >[!NOTE]
 >
->本节介绍如何将现有混音添加到模式。 如果要创建新的自定义混音，请参阅[创建和编辑混音](./mixins.md#create)的指南。
+>本节介绍如何将现有字段组添加到模式。 如果要创建新的自定义字段组，请参阅[创建和编辑字段组](./field-groups.md#create)的指南。
 
-在[!DNL Schema Editor]中打开模式后，可以通过使用mixins将字段添加到模式。 要开始，请选择左边栏中&#x200B;**[!UICONTROL Mixins]**&#x200B;旁边的&#x200B;**[!UICONTROL Add]**。
+在[!DNL Schema Editor]中打开模式后，可以通过使用字段组向模式添加字段。 要开始，请选择左边栏中&#x200B;**[!UICONTROL Field groups]**&#x200B;旁边的&#x200B;**[!UICONTROL Add]**。
 
-![](../../images/ui/resources/schemas/add-mixin-button.png)
+![](../../images/ui/resources/schemas/add-field-group-button.png)
 
-将显示一个对话框，其中显示可为模式选择的混音列表。 由于混合仅与一个类兼容，因此将只列出与模式的选定类关联的混合。 默认情况下，列出的混合会根据其在您组织中的使用受欢迎程度进行排序。
+将显示一个对话框，其中显示可为模式选择的字段组列表。 由于字段组只与一个类兼容，因此将只列出与模式的选定类关联的字段组。 默认情况下，列出的字段组会根据其在您组织中的使用受欢迎程度进行排序。
 
-![](../../images/ui/resources/schemas/mixin-popularity.png)
+![](../../images/ui/resources/schemas/field-group-popularity.png)
 
-如果您知道要添加的混合字段的常规活动或业务区，请在左边栏中选择一个或多个行业垂直类别以过滤显示的混合列表。
+如果您知道要添加的字段的一般活动或业务区域，请在左边栏中选择一个或多个行业垂直类别，以过滤显示的字段组列表。
 
 ![](../../images/ui/resources/schemas/industry-filter.png)
 
@@ -77,25 +77,25 @@ ht-degree: 0%
 >
 >有关XDM中特定于行业的数据建模的最佳实践的详细信息，请参阅[行业数据模型](../../schema/industries/overview.md)的相关文档。
 
-您还可以使用搜索栏帮助查找所需的混音。 其名称与查询匹配的混合显示在列表的顶部。 在&#x200B;**[!UICONTROL Standard Fields]**&#x200B;下，将显示包含描述所需数据属性的字段的混合。
+您还可以使用搜索栏帮助查找所需的字段组。 其名称与查询匹配的字段组显示在列表的顶部。 在&#x200B;**[!UICONTROL Standard Fields]**&#x200B;下，将显示包含描述所需数据属性的字段的字段组。
 
-![](../../images/ui/resources/schemas/mixin-search.png)
+![](../../images/ui/resources/schemas/field-group-search.png)
 
-选中要添加到模式的混音名称旁边的复选框。 您可以从列表中选择多个混音，每个选定的混音将显示在右侧边栏中。
+选中要添加到模式的字段组名称旁边的复选框。 您可以从列表中选择多个字段组，每个选定的字段组将显示在右侧边栏中。
 
-![](../../images/ui/resources/schemas/add-mixin.png)
+![](../../images/ui/resources/schemas/add-field-group.png)
 
 >[!TIP]
 >
->对于列出的任何混音，您可以将鼠标悬停在信息图标(![](../../images/ui/resources/schemas/info-icon.png))上或将焦点放在该图标上，以视图混音捕获的数据类型的简短描述。 在您决定将其添加到模式之前，您还可以选择预览图标(![](../../images/ui/resources/schemas/preview-icon.png))来视图混音所提供字段的结构。
+>对于任何列出的字段组，您可以将鼠标悬停在信息图标(![](../../images/ui/resources/schemas/info-icon.png))上，或将焦点放在该图标上，以视图字段组捕获的数据类型的简短描述。 您还可以选择预览图标(![](../../images/ui/resources/schemas/preview-icon.png))以视图字段组提供的字段的结构，然后再决定将其添加到模式。
 
-选择混音后，选择&#x200B;**[!UICONTROL Add mixin]**&#x200B;将其添加到模式。
+选择字段组后，选择&#x200B;**[!UICONTROL Add field groups]**&#x200B;将其添加到模式。
 
-![](../../images/ui/resources/schemas/add-mixin-finish.png)
+![](../../images/ui/resources/schemas/add-field-group-finish.png)
 
-[!DNL Schema Editor]将重新显示，画布中显示混音提供的字段。
+[!DNL Schema Editor]将重新显示，画布中显示的是字段组提供的字段。
 
-![](../../images/ui/resources/schemas/mixins-added.png)
+![](../../images/ui/resources/schemas/field-groups-added.png)
 
 ## 为实时客户用户档案{#profile}启用模式
 
@@ -127,11 +127,11 @@ ht-degree: 0%
 
 ## 编辑模式字段{#display-names}的显示名称
 
-在为模式分配了类并添加了混音后，您可以编辑任何模式字段的显示名称，而不管这些字段是由标准还是自定义XDM资源提供的。
+在为模式分配了类并添加了字段组后，您可以编辑任何模式字段的显示名称，而不管这些字段是由标准还是自定义XDM资源提供的。
 
 >[!NOTE]
 >
->请记住，属于标准类或混合的字段的显示名称只能在特定模式的上下文中编辑。 换句话说，在一个模式中更改标准字段的显示名称不会影响使用相同关联类或混合的其他模式。
+>请记住，属于标准类或字段组的字段的显示名称只能在特定模式的上下文中进行编辑。 换句话说，在一个模式中更改标准字段的显示名称不会影响使用相同关联类或字段组的其他模式。
 
 要编辑模式字段的显示名称，请在画布中选择该字段。 在右边栏中，在&#x200B;**[!UICONTROL Display name]**&#x200B;下提供新名称。
 
@@ -147,7 +147,7 @@ ht-degree: 0%
 
 >[!WARNING]
 >
->重新分配模式的类应非常谨慎。 Mixins仅与某些类兼容，因此更改类将重置画布和您添加的任何字段。
+>重新分配模式的类应非常谨慎。 字段组仅与某些类兼容，因此更改类将重置画布和您添加的任何字段。
 
 要重新分配类，请在画布左侧选择&#x200B;**[!UICONTROL Assign]**。
 
@@ -167,7 +167,7 @@ ht-degree: 0%
 
 ## 后续步骤
 
-本文档介绍了在平台UI中创建和编辑模式的基础知识。 强烈建议您阅读[模式创建教程](../../tutorials/create-schema-ui.md)，了解在UI中构建完整模式（包括为独特用例创建自定义混合和数据类型）的全面工作流。
+本文档介绍了在平台UI中创建和编辑模式的基础知识。 强烈建议您阅读[模式创建教程](../../tutorials/create-schema-ui.md)，了解在UI中构建完整模式的全面工作流，包括为独特用例创建自定义字段组和数据类型。
 
 有关[!UICONTROL Schemas]工作区功能的详细信息，请参阅[[!UICONTROL Schemas]工作区概述](../overview.md)。
 
