@@ -6,9 +6,9 @@ topic-legacy: privacy events
 description: 了解如何配置数据操作和模式，以在将区段激活到Adobe Experience Platform中的目标时传达客户同意选择。
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2459'
+source-wordcount: '2466'
 ht-degree: 0%
 
 ---
@@ -104,7 +104,7 @@ Adobe Audience Manager与平台共享的任何区段（通过[!DNL Audience Mana
 
 创建启用[!DNL Profile]的数据集以收集同意数据后，必须确保将合并策略配置为始终在客户用户档案中包含TCF同意字段。 这包括设置数据集优先级，以便您的同意数据集优先于其他可能冲突的数据集。
 
-有关如何使用合并策略的详细信息，请参阅[合并策略用户指南](../../../../profile/ui/merge-policies.md)。 在设置合并策略时，您必须确保您的区段包含[XDM隐私混音](./dataset.md#privacy-mixin)提供的所有必需同意属性，如数据集准备指南中所述。
+有关如何使用合并策略的详细信息，请参阅[合并策略用户指南](../../../../profile/ui/merge-policies.md)。 在设置合并策略时，您必须确保您的区段包含[XDM隐私模式字段组](./dataset.md#privacy-field-group)提供的所有必需同意属性，如数据集准备指南中所述。
 
 ## 集成Experience Platform Web SDK以收集客户同意数据{#sdk}
 
@@ -196,7 +196,7 @@ OneTrust.OnConsentChanged(function () {
 
 >[!NOTE]
 >
->要使用此方法，您必须将[!DNL Experience Event Privacy mixin]添加到[!DNL Profile]已启用的[!DNL XDM ExperienceEvent]模式。 有关如何配置此模式的步骤，请参阅数据集准备指南中关于[更新ExperienceEvent](./dataset.md#event-schema)的部分。
+>要使用此方法，您必须已将“体验事件隐私”字段组添加到启用了[!DNL Profile]的[!DNL XDM ExperienceEvent]模式。 有关如何配置此模式的步骤，请参阅数据集准备指南中关于[更新ExperienceEvent](./dataset.md#event-schema)的部分。
 
 `sendEvent`命令应用作网站上相应的事件侦听器中的回调。 该命令需要两个参数：(1)指示命令类型（本例中为`sendEvent`）的字符串，以及(2)包含`xdm`对象的有效负荷，该对象将必需的同意字段作为JSON提供：
 
