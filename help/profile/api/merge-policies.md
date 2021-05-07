@@ -6,9 +6,9 @@ type: Documentation
 description: Adobe Experience Platform使您能够将来自多个来源的数据片段整合在一起，并将它们合并在一起，以全面视图每位客户。 整合这些数据时，合并策略是平台用来确定如何对数据进行优先级排序以及将哪些数据合并以创建统一视图的规则。
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2560'
+source-wordcount: '2569'
 ht-degree: 1%
 
 ---
@@ -752,19 +752,19 @@ curl -X DELETE \
 
 有时可能会出现一些用例，如回填数据或确保在未按顺序摄取记录时事件的正确顺序，在这些情况下需要提供自定义时间戳并使合并策略遵守自定义时间戳而不是系统时间戳。
 
-要使用自定义时间戳，必须将[[!DNL External Source System Audit Details Mixin]](#mixin-details)添加到您的用户档案模式。 添加后，可以使用`xdm:lastUpdatedDate`字段填充自定义时间戳。 当在摄取记录时填充`xdm:lastUpdatedDate`字段，Experience Platform将使用该字段在数据集内和跨数据集合并记录或用户档案片段。 如果`xdm:lastUpdatedDate`不存在或未填充，平台将继续使用系统时间戳。
+要使用自定义时间戳，必须将[[!DNL External Source System Audit Details] 模式字段组](#field-group-details)添加到用户档案模式。 添加后，可以使用`xdm:lastUpdatedDate`字段填充自定义时间戳。 当在摄取记录时填充`xdm:lastUpdatedDate`字段，Experience Platform将使用该字段在数据集内和跨数据集合并记录或用户档案片段。 如果`xdm:lastUpdatedDate`不存在或未填充，平台将继续使用系统时间戳。
 
 >[!NOTE]
 >
 >必须确保在同一记录上发送PATCH时填充`xdm:lastUpdatedDate`时间戳。
 
-有关使用模式 Registry API使用模式的分步说明(包括如何向模式添加混音)，请访问[教程，了解如何使用API](../../xdm/tutorials/create-schema-api.md)创建模式。
+有关使用模式 Registry API使用模式的分步说明(包括如何向模式添加字段组)，请访问[教程，了解如何使用API](../../xdm/tutorials/create-schema-api.md)创建模式。
 
 要使用UI使用自定义时间戳，请参阅[合并策略用户指南](../ui/merge-policies.md)中的[使用自定义时间戳](../ui/merge-policies.md#custom-timestamps)一节。
 
-#### [!DNL External Source System Audit Details Mixin] 详细信息  {#mixin-details}
+#### [!DNL External Source System Audit Details] 字段组详细信息  {#field-group-details}
 
-以下示例显示了[!DNL External Source System Audit Details Mixin]中正确填充的字段。 还可以在GitHub上的[公共体验数据模型(XDM)repo](https://github.com/adobe/xdm/blob/master/components/mixins/shared/external-source-system-audit-details.schema.json)中查看完整的混合JSON。
+以下示例显示了[!DNL External Source System Audit Details]字段组中正确填充的字段。 还可以在GitHub上的[公共体验数据模型(XDM)repo](https://github.com/adobe/xdm/blob/master/components/mixins/shared/external-source-system-audit-details.schema.json)中查看完整字段组JSON。
 
 ```json
 {
