@@ -6,9 +6,9 @@ topic-legacy: overview
 description: 本文档概述了Identity XDM数据类型。
 exl-id: fb02b6b4-255b-442f-895c-600022231a1c
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '280'
+source-wordcount: '281'
 ht-degree: 3%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 3%
 | `primary` | 布尔值 | 指示这是否为个人的主要身份。 每个人只能有一个主要身份。 |
 | `xid` | 字符串 | 当存在时，此值表示跨命名空间标识符，该标识符在所有命名空间中所有命名空间范围标识符之间是唯一的。 |
 
-有关混音的更多详细信息，请参阅公共XDM存储库：
+有关数据类型的详细信息，请参阅公共XDM存储库：
 
 * [已填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/identity.example.1.json)
 * [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/identity.schema.json)
