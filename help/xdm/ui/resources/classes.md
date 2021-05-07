@@ -6,9 +6,9 @@ description: 了解如何在Experience Platform用户界面中创建和编辑类
 topic-legacy: user guide
 exl-id: 1b4c3996-2319-45dd-9edd-a5bcad46578b
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '871'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ Adobe提供多个标准（“核心”）XDM类，包括[!DNL XDM Individual Pro
 
 >[!IMPORTANT]
 >
->构建实现由您的组织定义的类的模式时，请记住，混合仅可与兼容类一起使用。 由于您定义的类是新类，因此&#x200B;**[!UICONTROL Add mixin]**&#x200B;对话框中没有列出兼容的混音。 相反，您需要[创建新的mixin](./mixins.md#create)以与该类一起使用。 下次您构建实现新类的模式时，您定义的混音将列出并可供使用。
+>在构建实现由您的组织定义的类的模式时，请记住，模式字段组仅可与兼容类一起使用。 由于您定义的类是新类，因此&#x200B;**[!UICONTROL Add field group]**&#x200B;对话框中没有列出兼容的字段组。 相反，您需要[创建新字段组](./field-groups.md#create)以与该类一起使用。 下次创建实现新类的模式时，将列出您定义的字段组并可供使用。
 
 您现在可以开始[向类](#add-fields)添加字段，该类将由使用该类的所有模式共享。
 
@@ -77,7 +77,7 @@ Adobe提供多个标准（“核心”）XDM类，包括[!DNL XDM Individual Pro
 
 >[!IMPORTANT]
 >
->请记住，您添加到某个类的任何字段都将用于使用该类的所有模式。 因此，您应仔细考虑哪些字段在所有模式用例中都会有用。 如果您考虑添加只能在此类下的某些模式中使用的字段，您可能希望考虑通过[创建混音](./mixins.md#create)将其添加到这些模式。
+>请记住，您添加到某个类的任何字段都将用于使用该类的所有模式。 因此，您应仔细考虑哪些字段在所有模式用例中都会有用。 如果您正在考虑添加只能在此类下的某些模式中使用的字段，则可能希望考虑通过[创建字段组](./field-groups.md#create)将其添加到这些模式。
 
 画布中会显示&#x200B;**[!UICONTROL New field]**，右边栏会更新，显示用于配置字段属性的控件。 有关如何配置字段并将其添加到类的具体步骤，请参阅[在UI](../fields/overview.md#define)中定义字段的指南。
 
