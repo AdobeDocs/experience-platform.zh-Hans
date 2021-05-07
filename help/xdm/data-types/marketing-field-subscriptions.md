@@ -5,9 +5,9 @@ topic-legacy: overview
 description: 此文档概述了具有订阅XDM数据类型的“通用营销首选项”字段。
 exl-id: 170ea6ca-77fc-4b0a-87f9-6d4b6f32d953
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '712'
 ht-degree: 2%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->此模式类型旨在用于使用[[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)] mixin](../mixins/profile/consents.md)作为基线来自定义组织的同意的结构。
+>此模式类型旨在用于使用[[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)]字段组](../field-groups/profile/consents.md)作为基线来自定义组织的同意的结构。
 >
 >如果您不需要特定营销首选项字段的`subscriptions`映射，则可以改用[基本营销字段数据类型](./marketing-field.md)。
 
