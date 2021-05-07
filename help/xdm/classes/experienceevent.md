@@ -6,9 +6,9 @@ topic-legacy: overview
 description: 本文档概述了XDM ExperienceEvent类。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
 translation-type: tm+mt
-source-git-commit: 9b63b38e664e5776ca638f8ed407896f185bcab0
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '861'
+source-wordcount: '867'
 ht-degree: 1%
 
 ---
@@ -31,16 +31,16 @@ ht-degree: 1%
 | `identityMap` | 一个映射字段，其中包含事件所应用的个人的一组命名空间标识。 系统会在摄取标识数据时自动更新此字段。 为了将此字段正确用于[实时客户用户档案](../../profile/home.md)，请不要尝试手动更新数据操作中字段的内容。<br /><br />有关模式合成的用例的详细信 [息，请参](../schema/composition.md#identityMap) 阅合成基础知识中有关标识映射的部分。 |
 | `timestamp` | 事件发生时的ISO 8601时间戳，格式按照[RFC 3339第5.6](https://tools.ietf.org/html/rfc3339#section-5.6)节进行。<br><br>此时间戳只 **** 能表示事件本身的观察，并且必须发生在过去。如果您的细分使用案例需要使用将来可能发生的时间戳（如启程日期），则这些值必须在您的体验事件模式的其他位置受到约束。 |
 
-## 兼容混音{#mixins}
+## 兼容的模式字段组{#field-groups}
 
 >[!NOTE]
 >
->几个混音的名称已经更改。 有关详细信息，请参阅[mixin name updates](../mixins/name-updates.md)上的文档。
+>多个字段组的名称已更改。 有关详细信息，请参阅[字段组名称更新](../field-groups/name-updates.md)上的文档。
 
-Adobe提供多个标准混音以用于[!DNL XDM ExperienceEvent]类。 以下是某类一些常用混合的列表:
+Adobe提供多个标准字段组，以用于[!DNL XDM ExperienceEvent]类。 以下是某类一些常用字段组的列表:
 
-* [[!UICONTROL End User ID Details]](../mixins/event/enduserids.md)
-* [[!UICONTROL Environment Details]](../mixins/event/environment-details.md)
+* [[!UICONTROL End User ID Details]](../field-groups/event/enduserids.md)
+* [[!UICONTROL Environment Details]](../field-groups/event/environment-details.md)
 
 ## 附录
 
