@@ -6,9 +6,9 @@ topic-legacy: overview
 description: 本文档介绍了体验数据模型(XDM)模式，以及构建要在Adobe Experience Platform中使用的模式的构件、原则和最佳做法。
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '2502'
+source-wordcount: '2511'
 ht-degree: 1%
 
 ---
@@ -75,7 +75,7 @@ ht-degree: 1%
 | --- | --- | --- | --- | --- |
 | 1234567 | Add | 275098 | 2 | 10月1日，上午10点32分 |
 | 1234567 | 删除 | 275098 | 1 | 10月1日，上午10点33分 |
-| 1234567 | 添加 | 486502 | 1 | 10月1日，上午10点41分 |
+| 1234567 | 添加 | 486502 | 3 | 10月1日，上午10点41分 |
 | 1234567 | 添加 | 910482 | 5 | 10月3日，下午2:15 |
 
 #### 分段用例
@@ -193,26 +193,26 @@ ht-degree: 1%
 
 在设计模式时，关系数据库表中的任何主键都可能是主标识的候选项。 适用标识字段的其他示例包括客户电子邮件地址、电话号码、帐户ID和[ECID](../../identity-service/ecid.md)。
 
-### Adobe应用程序混合
+### Adobe应用程序模式字段组
 
-Experience Platform提供了几个现成的XDM混合，用于捕获与以下Adobe应用程序相关的数据：
+Experience Platform提供了几个现成的XDM模式字段组，用于捕获与以下Adobe应用程序相关的数据：
 
 * Adobe Analytics
 * Adobe Audience Manager
 * Adobe Campaign
 * Adobe Target
 
-例如，[[!UICONTROL Adobe Analytics ExperienceEvent Template Mixin]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json)允许您将[!DNL Analytics]特定字段映射到XDM模式。 根据您使用的Adobe应用程序，您应在模式中使用这些Adobe提供的混音。
+例如，[[!UICONTROL Adobe Analytics ExperienceEvent Template]字段组](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json)允许您将[!DNL Analytics]特定字段映射到XDM模式。 根据您使用的Adobe应用程序，您应在模式中使用这些Adobe提供的字段组。
 
-<img src="../images/best-practices/analytics-mixin.png" width="700"><br>
+<img src="../images/best-practices/analytics-field-group.png" width="700"><br>
 
-Adobe应用程序混合会通过使用`identityMap`字段自动指定默认的主标识，该字段是系统生成的只读对象，用于映射单个客户的标准标识值。
+Adobe应用程序字段组通过使用`identityMap`字段自动分配默认的主标识，该字段是系统生成的只读对象，用于映射单个客户的标准标识值。
 
 对于Adobe Analytics,ECID是默认主标识。 如果客户未提供ECID值，则主标识将默认为AAID。
 
 >[!IMPORTANT]
 >
->使用Adobe应用程序混合时，不应将任何其他字段标记为主标识。 如果有其他属性需要标记为身份，则需要将这些字段指定为辅助身份。
+>使用Adobe应用程序字段组时，不应将任何其他字段标记为主标识。 如果有其他属性需要标记为身份，则需要将这些字段指定为辅助身份。
 
 ## 后续步骤
 
