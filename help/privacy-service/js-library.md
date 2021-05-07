@@ -6,10 +6,10 @@ topic-legacy: overview
 description: Adobe隐私JavaScript库允许您检索数据主体标识以用于Privacy Service。
 exl-id: 757bf69e-25bf-4ef9-9787-3e74b213908a
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: b70e693b4ffeda561de4d4c8dd8fd1adeec489f7
 workflow-type: tm+mt
-source-wordcount: '944'
-ht-degree: 6%
+source-wordcount: '953'
+ht-degree: 5%
 
 ---
 
@@ -47,7 +47,7 @@ ht-degree: 6%
 要使用[!DNL Privacy JS Library]进行开始，必须使用以下方法之一将其安装到计算机上：
 
 * 通过运行以下命令使用npm进行安装：`npm install @adobe/adobe-privacy`
-* 使用名称`AdobePrivacy`下的Adobe启动扩展
+* 使用[名称`AdobePrivacy`下的Adobe Experience Platform Launch](https://adobe.com/go/launch_help_en)安装Adobe隐私扩展
 * 从[Experience CloudGitHub存储库](https://github.com/Adobe-Marketing-Cloud/adobe-privacy)下载
 
 ## 实例化[!DNL Privacy JS Library]
@@ -67,7 +67,7 @@ var adobePrivacy = new AdobePrivacy({
 
 ## 代码示例
 
-以下代码示例演示了如何在不使用[!DNL Launch]或DTM的情况下，对于几个常见情况使用[!DNL Privacy JS Library]。
+以下代码示例演示了如何对几个常见场景使用[!DNL Privacy JS Library]，前提是您没有使用[!DNL Platform Launch]。
 
 ### Retrieve identities
 
