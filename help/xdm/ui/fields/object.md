@@ -6,16 +6,16 @@ description: 了解如何在Experience Platform用户界面中定义对象类型
 topic-legacy: user guide
 exl-id: 5b7b3cf0-7f11-4e15-af87-09127f4423a5
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '301'
+source-wordcount: '304'
 ht-degree: 0%
 
 ---
 
 # 在UI中定义对象字段
 
-Adobe Experience Platform允许您完全自定义自定义体验数据模型(XDM)类、混合和数据类型的结构。 为了在自定义XDM资源中组织和嵌套相关字段，您可以定义可包含其他子字段的对象类型字段。
+Adobe Experience Platform允许您完全自定义自定义体验数据模型(XDM)类、模式字段组和数据类型的结构。 为了在自定义XDM资源中组织和嵌套相关字段，您可以定义可包含其他子字段的对象类型字段。
 
 当[在Adobe Experience Platform用户界面中定义新字段](./overview.md#define)时，请使用&#x200B;**[!UICONTROL Type]**&#x200B;下拉列表并从列表中选择“[!UICONTROL Object]”。
 
@@ -33,7 +33,7 @@ Adobe Experience Platform允许您完全自定义自定义体验数据模型(XDM
 
 ![](../../images/ui/fields/special/object-nested.png)
 
-构建完对象后，您可能会发现希望在不同的类和混合中重复使用其结构。 在这种情况下，您可以选择将对象转换为数据类型。 有关详细信息，请参阅数据类型UI指南中有关将对象转换为数据类型](../resources/data-types.md#convert)的部分。[
+构建完对象后，您可能会发现要在不同的类和字段组中重复使用其结构。 在这种情况下，您可以选择将对象转换为数据类型。 有关详细信息，请参阅数据类型UI指南中有关将对象转换为数据类型](../resources/data-types.md#convert)的部分。[
 
 ## 后续步骤
 
