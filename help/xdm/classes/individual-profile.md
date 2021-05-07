@@ -6,9 +6,9 @@ topic-legacy: overview
 description: 本文档概述了XDM单个用户档案类。
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
 translation-type: tm+mt
-source-git-commit: 81d96b629ce628f663a86701d8f076eb771fdf77
+source-git-commit: 612917b23d1841556a71f6378497e1d033bc3b62
 workflow-type: tm+mt
-source-wordcount: '412'
+source-wordcount: '420'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 用户档案可以包括匿名行为信号（如浏览器cookie）和包含详细信息（如姓名、出生日期、位置和电子邮件地址）的高度识别的用户档案。 随着用户档案的增长，它将成为个人个人信息、身份、联系信息和通信首选项的可靠存储库。 有关在平台生态系统中使用此类的详细信息，请参阅[ XDM概述](../home.md#data-behaviors)。
 
-[!DNL XDM Individual Profile]类本身提供了几个系统生成的值，这些值在摄取数据时自动填充，而所有其他字段必须通过使用[兼容的mixins](#mixins)来添加：
+[!DNL XDM Individual Profile]类本身提供了几个系统生成的值，这些值在摄取数据时自动填充，而所有其他字段必须通过使用[兼容的模式字段组](#field-groups)添加：
 
 ![](../images/classes/individual-profile.png)
 
@@ -33,18 +33,18 @@ ht-degree: 0%
 | `repositoryCreatedBy` | 创建记录的用户的ID。 |
 | `repositoryLastModifiedBy` | 上次修改记录的用户的ID。 |
 
-## 兼容混音{#mixins}
+## 兼容字段组{#field-groups}
 
 >[!NOTE]
 >
->几个混音的名称已经更改。 有关详细信息，请参阅[mixin name updates](../mixins/name-updates.md)上的文档。
+>多个字段组的名称已更改。 有关详细信息，请参阅[字段组名称更新](../field-groups/name-updates.md)上的文档。
 
-Adobe提供多个标准混音以用于[!DNL XDM Individual Profile]类。 以下是某类一些常用混合的列表:
+Adobe提供多个标准字段组，以用于[!DNL XDM Individual Profile]类。 以下是某类一些常用字段组的列表:
 
-* [[!UICONTROL IdentityMap]](../mixins/profile/identitymap.md)
-* [[!UICONTROL Demographic Details]](../mixins/profile/person-details.md)
-* [[!UICONTROL Personal Contact Details]](../mixins/profile/personal-details.md)
-* [[!UICONTROL Work Contact Details]](../mixins/profile/work-details.md)
-* [[!UICONTROL Segment Membership Details]](../mixins/profile/segmentation.md)
+* [[!UICONTROL IdentityMap]](../field-groups/profile/identitymap.md)
+* [[!UICONTROL Demographic Details]](../field-groups/profile/demographic-details.md)
+* [[!UICONTROL Personal Contact Details]](../field-groups/profile/personal-contact-details.md)
+* [[!UICONTROL Work Contact Details]](../field-groups/profile/work-contact-details.md)
+* [[!UICONTROL Segment Membership Details]](../field-groups/profile/segmentation.md)
 
-有关[!DNL XDM Individual Profile]的所有兼容混合的完整列表，请参阅[ XDM GitHub存储库](https://github.com/adobe/xdm/tree/master/components/mixins/profile)。
+有关[!DNL XDM Individual Profile]的所有兼容字段组的完整列表，请参阅[ XDM GitHub存储库](https://github.com/adobe/xdm/tree/master/components/mixins/profile)。
