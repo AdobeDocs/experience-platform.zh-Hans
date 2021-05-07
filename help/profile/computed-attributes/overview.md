@@ -6,9 +6,9 @@ type: Documentation
 description: 计算属性是将事件级数据聚合为用户档案级属性的函数。 这些函数会自动计算，以便能够跨细分、激活和个性化使用。
 exl-id: 13878363-589d-4a3c-811c-21d014a5f3c2
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '723'
+source-wordcount: '725'
 ht-degree: 1%
 
 ---
@@ -55,4 +55,4 @@ Adobe Experience Platform使您能够轻松导入和合并来自多个源的数�
 
 由于未检测到任何依赖关系，因此每次评估段定义时，Experience Platform不会自动评估关联的计算属性。
 
-或者，可以通过添加与现有属性不冲突的新计算属性的特定混音来管理计算属性的创建。 另一种方法是只对新计算属性重新创建具有正确依赖关系跟踪的区段。
+或者，可以通过添加与现有属性不冲突的新计算属性的特定模式字段组来管理计算属性的创建。 另一种方法是只对新计算属性重新创建具有正确依赖关系跟踪的区段。
