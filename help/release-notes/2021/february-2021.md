@@ -4,14 +4,14 @@ description: Experience Platform 2021年2月24日发行说明。
 doc-type: release notes
 last-update: February 24, 2021
 author: ens70167
+exl-id: 8c3142af-4021-4f7e-acbd-c5277dd188d1
 translation-type: tm+mt
-source-git-commit: 398e55f442a2c8ecab0c3d9315fbdd5c02946e45
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1138'
 ht-degree: 7%
 
 ---
-
 
 # Adobe Experience Platform 发行说明
 
@@ -89,7 +89,7 @@ XDM是一个公开存档的规范，旨在提高数字体验的强大功能。 �
 
 | 功能 | 描述 |
 | --- | --- |
-| 升级的搜索UI | 现在，在[!UICONTROL Schemas]工作区的[!UICONTROL Browse]选项卡和[!DNL Schema Editor]的混音选择对话框中，可以使用改进的搜索功能。<br><br>在以前搜索术语时，结果将仅包含名称与搜索查询匹配的XDM资源。现在，除了名称与查询匹配的资源外，还将包括包含与术语匹配的单个属性的资源。 这允许您根据XDM资源包含的属性而不是资源名称搜索XDM资源。<br><br>有关更多信息，请 [参阅有关](../../xdm/ui/explore.md) 在UI中 [探索](../../xdm/ui/resources/schemas.md) XDM资源和管理架构的文档。 |
+| 升级的搜索UI | 现在，在[!UICONTROL Schemas]工作区的[!UICONTROL Browse]选项卡和[!DNL Schema Editor]的“模式字段组选择”对话框中，可以使用改进的搜索功能。<br><br>在以前搜索术语时，结果将仅包含名称与搜索查询匹配的XDM资源。现在，除了名称与查询匹配的资源外，还将包括包含与术语匹配的单个属性的资源。 这允许您根据XDM资源包含的属性而不是资源名称搜索XDM资源。<br><br>有关更多信息，请 [参阅有关](../../xdm/ui/explore.md) 在UI中 [探索](../../xdm/ui/resources/schemas.md) XDM资源和管理架构的文档。 |
 
 有关XDM的更多一般信息，请参阅[XDM系统概述](../../xdm/home.md)。
 
