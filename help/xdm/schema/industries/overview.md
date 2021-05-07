@@ -5,9 +5,9 @@ topic-legacy: overview
 description: 了解可使用标准体验数据模型(XDM)组件构建的各种行业垂直体系的标准数据模型。
 exl-id: 8fa9a610-36b5-470f-ad63-f2a4a060e0f1
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '514'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 0%
 要阅读本指南中引用的ERD，您必须了解XDM组件如何交互以形成模式，以及XDM模式如何在整个Experience Platform中运行。 在继续之前，请确保您已阅读以下概述文档：
 
 * [XDM系统概述](../../home.md):了解XDM如何在平台生态系统中运行。
-* [模式合成的基础](../../schema/composition.md):了解XDM组件（如混合、类和数据类型）对模式结构以及身份字段角色的贡献。
+* [模式合成的基础](../../schema/composition.md):了解XDM组件(如模式字段组、类和数据类型)对模式结构以及身份字段角色的贡献。
 
 还建议您查看[数据建模最佳实践指南](../../schema/best-practices.md)，了解有关如何将数据映射到XDM的一般准则。
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 以下ERD代表的行业垂直模型是有意以去标准化的方式创建的，并考虑数据在平台中的存储方式。
 
-对于给定ERD，中显示的每个实体都基于基础XDM类。 对于给定实体，在&#x200B;**bold**&#x200B;中标记的每行都表示混音或数据类型，其提供的相关字段将以未加粗的文本列出。 给定实体最重要的字段以红色突出显示。
+对于给定ERD，中显示的每个实体都基于基础XDM类。 对于给定实体，在&#x200B;**bold**&#x200B;中标记的每行代表字段组或数据类型，其提供的相关字段将以未加粗文本列出。 给定实体最重要的字段以红色突出显示。
 
 >[!NOTE]
 >
