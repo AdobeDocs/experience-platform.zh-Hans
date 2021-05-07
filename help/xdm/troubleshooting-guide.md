@@ -6,9 +6,9 @@ description: 本文档提供有关Adobe Experience Platform中体验数据模型
 topic-legacy: troubleshooting
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
 workflow-type: tm+mt
-source-wordcount: '1869'
+source-wordcount: '1888'
 ht-degree: 0%
 
 ---
@@ -25,19 +25,19 @@ ht-degree: 0%
 
 ### 如何向模式添加字段？
 
-可以使用混音将字段添加到模式。 每个混音都与一个或多个类兼容，允许混音在实现这些兼容类之一的任何模式中使用。 虽然Adobe Experience Platform为多个行业混合提供其自己的预定义字段，但您可以通过使用API或用户界面创建新混合来向模式添加您自己的字段。
+您可以使用模式字段组向模式添加字段。 每个字段组都与一个或多个类兼容，允许该字段组在实现这些兼容类之一的任何模式中使用。 虽然Adobe Experience Platform为多个行业字段组提供了自己的预定义字段，但您可以通过使用API或用户界面创建新字段组，将自己的字段添加到模式。
 
-有关在[!DNL Schema Registry] API中创建新混音的详细信息，请参阅[mixin端点指南](api/mixins.md#create)。 如果您使用的是UI，请参阅[模式编辑器教程](./tutorials/create-schema-ui.md)。
+有关在[!DNL Schema Registry] API中创建新字段组的详细信息，请参阅[字段组终结点指南](api/field-groups.md#create)。 如果您使用的是UI，请参阅[模式编辑器教程](./tutorials/create-schema-ui.md)。
 
-### 混音与数据类型的最佳用途是什么？
+### 与数据类型相比，字段组的最佳用途是什么？
 
-[Mixinshare](./schema/composition.md#mixin) 组件，它们在模式中定义一个或多个字段。Mixins强制实现其字段在模式层次结构中的显示方式，因此在每个模式中都显示其包含在中的相同结构。 Mixins仅与特定类兼容，由其`meta:intendedToExtend`属性标识。
+[字段](./schema/composition.md#field-group) 组共享在模式中定义一个或多个字段的组件。字段组强制实现其字段在模式层次结构中的显示方式，因此，在每个模式中，它们所包含的结构都相同。 字段组仅与特定类兼容，由其`meta:intendedToExtend`属性标识。
 
-[数](./schema/composition.md#data-type) 据类型还可以为模式提供一个或多个字段。但是，与混音不同，数据类型不限于特定类。 这使数据类型成为描述可跨具有潜在不同类的多个模式重用的常见数据结构的更灵活的选项。
+[数](./schema/composition.md#data-type) 据类型还可以为模式提供一个或多个字段。但是，与字段组不同，数据类型不受特定类的限制。 这使数据类型成为描述可跨具有潜在不同类的多个模式重用的常见数据结构的更灵活的选项。
 
 ### 什么是模式的唯一ID?
 
-所有[!DNL Schema Registry]资源(模式、混合、数据类型、类)都有一个URI，它充当唯一ID，用于引用和查找目的。 在API中查看模式时，可以在顶级`$id`和`meta:altId`属性中找到。
+所有[!DNL Schema Registry]资源(模式、字段组、数据类型、类)都有一个URI，它充当一个唯一ID，用于引用和查找目的。 在API中查看模式时，可以在顶级`$id`和`meta:altId`属性中找到。
 
 有关详细信息，请参阅[!DNL Schema Registry] API开发人员指南中的[资源标识](api/getting-started.md#resource-identification)部分。
 
@@ -135,7 +135,7 @@ ht-degree: 0%
 }
 ```
 
-当您尝试创建标题已被其他资源使用的资源时，会显示此错误消息。 标题在所有资源类型中必须是唯一的。 例如，如果您尝试创建标题已被模式使用的混音，您将收到此错误。
+当您尝试创建标题已被其他资源使用的资源时，会显示此错误消息。 标题在所有资源类型中必须是唯一的。 例如，如果您尝试创建标题已被模式使用的字段组，您将收到此错误。
 
 ### 自定义字段必须使用顶级字段
 
@@ -149,7 +149,7 @@ ht-degree: 0%
 }
 ```
 
-当您尝试创建新混音时，以不恰当的命名空间字段显示此错误消息。 IMS组织定义的混合必须使用`TENANT_ID`命名空间其字段，以避免与其他行业和供应商资源发生冲突。 在[mixins端点指南](./api/mixins.md#create)中可以找到混合的正确数据结构的详细示例。
+当您尝试创建名称不正确的字段的新字段组时，将显示此错误消息。 您的IMS组织定义的字段组必须将其字段命名空间为`TENANT_ID`，以避免与其他行业和供应商资源发生冲突。 [字段组终结点指南](./api/field-groups.md#create)中提供了有关字段组正确数据结构的详细示例。
 
 
 ### [!DNL Real-time Customer Profile] 错误
