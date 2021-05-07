@@ -6,20 +6,20 @@ description: 了解如何在Experience Platform用户界面中定义XDM字段。
 topic-legacy: user guide
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1250'
 ht-degree: 3%
 
 ---
 
 # 在UI中定义XDM字段
 
-Adobe Experience Platform用户界面中的[!DNL Schema Editor]允许您在自定义体验数据模型(XDM)类和混合中定义自己的字段。 本指南介绍了在UI中定义XDM字段的步骤，包括每个字段类型的可用配置选项。
+Adobe Experience Platform用户界面中的[!DNL Schema Editor]允许您在自定义体验数据模型(XDM)类和模式字段组中定义您自己的字段。 本指南介绍了在UI中定义XDM字段的步骤，包括每个字段类型的可用配置选项。
 
 ## 先决条件
 
-本指南要求对XDM系统有充分的了解。 有关Experience Platform生态系统中XDM角色的介绍，请参阅[XDM概述](../../home.md)以及模式合成](../../schema/composition.md)基础知识[，了解类和混合如何将字段贡献给XDM模式。
+本指南要求对XDM系统有充分的了解。 有关Experience Platform生态系统中XDM角色的介绍，请参阅[XDM概述](../../home.md)以及模式合成](../../schema/composition.md)基础知识[，了解类和字段组如何将字段贡献给XDM模式。
 
 虽然本指南不是必需的，但建议您也要按照有关在UI](../../tutorials/create-schema-ui.md)中编写模式的教程来熟悉[!DNL Schema Editor]的各种功能。[
 
@@ -27,13 +27,13 @@ Adobe Experience Platform用户界面中的[!DNL Schema Editor]允许您在自�
 
 要在UI中定义新的XDM字段，必须首先在[!DNL Schema Editor]中打开模式。 根据[!DNL Schema Library]中当前可用的模式，您可以选择[创建新模式](../resources/schemas.md#create)或[选择现有模式以编辑](../resources/schemas.md#edit)。
 
-打开[!DNL Schema Editor]后，使用左边栏选择要为其定义字段的类或混音。 如果资源是您的组织定义的自定义资源，则用于添加或编辑字段的控件将显示在画布中。 这些控件显示在模式名称旁边，以及在选定类或混合下定义的任何对象类型字段。
+打开[!DNL Schema Editor]后，使用左边栏选择要为其定义字段的类或字段组。 如果资源是您的组织定义的自定义资源，则用于添加或编辑字段的控件将显示在画布中。 这些控件显示在模式名称旁边，以及在选定类或字段组下定义的任何对象类型字段。
 
 ![](../../images/ui/fields/overview/select-resource.png)
 
 >[!NOTE]
 >
->如果您选择的类或混音是Adobe提供的核心资源，则无法编辑它，因此将不显示上面显示的控件。 如果要向中添加字段的模式基于核心XDM类，并且不包含任何自定义混音，则可以[创建新的混音](../resources/mixins.md#create)以添加到模式。
+>如果您选择的类或字段组是Adobe提供的核心资源，则无法编辑它，因此将不显示上面显示的控件。 如果要向中添加字段的模式基于核心XDM类，并且不包含任何自定义字段组，则可以[创建新字段组](../resources/field-groups.md#create)以添加到模式。
 
 要向资源添加新字段，请在画布中模式名称旁边或要定义字段的对象类型字段旁边选择加号(+)**图标。**
 
@@ -41,7 +41,7 @@ Adobe Experience Platform用户界面中的[!DNL Schema Editor]允许您在自�
 
 ## 为资源{#define}定义字段
 
-在选择&#x200B;**加号(+)**&#x200B;图标后，画布中会出现一个&#x200B;**[!UICONTROL New field]**，它位于根级对象中，该对象与您的唯一租户ID同名（在以下示例中显示为`_tenantId`）。 通过自定义类和混合添加到模式的所有字段将自动放置在此命名空间中，以防止与Adobe提供的类和混合中的其他字段发生冲突。
+在选择&#x200B;**加号(+)**&#x200B;图标后，画布中会出现一个&#x200B;**[!UICONTROL New field]**，它位于根级对象中，该对象与您的唯一租户ID同名（在以下示例中显示为`_tenantId`）。 通过自定义类和字段组添加到模式的所有字段将自动放置在此命名空间中，以防止与Adobe提供的类和字段组中的其他字段发生冲突。
 
 ![](../../images/ui/fields/overview/new-field.png)
 
@@ -69,11 +69,11 @@ Adobe Experience Platform用户界面中的[!DNL Schema Editor]允许您在自�
 
 ![](../../images/ui/fields/overview/field-added.png)
 
-您可以继续执行上述步骤，向模式添加更多字段。 保存模式后，如果对基类和混合进行了任何更改，也会保存它们。
+您可以继续执行上述步骤，向模式添加更多字段。 保存模式后，如果对基类和字段组进行了任何更改，也会保存基类和字段组。
 
 >[!NOTE]
 >
->您对某个模式的混音或类所做的任何更改将反映在雇佣它们的所有其他模式中。
+>您对某个模式的字段组或类所做的任何更改都将反映在雇佣这些字段组或类的所有其他模式中。
 
 ## 类型特定字段属性{#type-specific-properties}
 
@@ -107,6 +107,6 @@ Adobe Experience Platform用户界面中的[!DNL Schema Editor]允许您在自�
 
 ## 后续步骤
 
-本指南概述了如何在UI中定义XDM字段。 请记住，只能通过使用类和混合将字段添加到模式。 要进一步了解如何在UI中管理这些资源，请参阅有关创建和编辑[类](../resources/classes.md)和[mixins](../resources/mixins.md)的指南。
+本指南概述了如何在UI中定义XDM字段。 请记住，只能通过使用类和字段组将字段添加到模式。 要进一步了解如何在UI中管理这些资源，请参阅有关创建和编辑[类](../resources/classes.md)和[字段组](../resources/field-groups.md)的指南。
 
 有关[!UICONTROL Schemas]工作区功能的详细信息，请参阅[[!UICONTROL Schemas]工作区概述](../overview.md)。
