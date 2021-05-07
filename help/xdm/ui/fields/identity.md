@@ -6,9 +6,9 @@ description: 了解如何在Experience Platform用户界面中定义标识字段
 topic-legacy: user guide
 exl-id: 11a53345-4c3f-4537-b3eb-ee7a5952df2a
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ ht-degree: 0%
 
 ![](../../images/ui/fields/special/identity-config.png)
 
-画布更新以反映更改，所选字段获得指纹符号(![](../../images/ui/fields/special/identity-symbol.png))以将其指定为标识。 在左边栏中，标识字段现在以类或混合的名称列出，此类或混合将字段提供给模式。
+画布更新以反映更改，所选字段获得指纹符号(![](../../images/ui/fields/special/identity-symbol.png))以将其指定为标识。 在左边栏中，标识字段现在列在为模式提供字段的类或模式字段组的名称下。
 
 由于默认情况下所有标识字段都是必填字段，因此该字段现在列在左边栏的&#x200B;**[!UICONTROL Required fields]**&#x200B;下。 如果标识字段嵌套在模式结构中，则所有父字段也将按要求列出。
 
