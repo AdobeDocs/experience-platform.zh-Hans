@@ -1,12 +1,12 @@
 ---
-keywords: Experience Platform；主页；热门主题；Adobe Analytics分类数据连接器
+keywords: Experience Platform；主页；热门主题；Adobe Analytics分类源连接器
 solution: Experience Platform
 title: Adobe Analytics Source Connector for Classifications Data
 topic-legacy: overview
 description: 了解如何使用用户界面将分析分类连接到平台
 exl-id: c26002df-dce4-415e-93e9-268e0efebc9f
 translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 32a6d0311169486b1273129c0ee87c242bee1e47
 workflow-type: tm+mt
 source-wordcount: '181'
 ht-degree: 0%
