@@ -5,9 +5,9 @@ breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: 数据摄取，来源
 translation-type: tm+mt
-source-git-commit: 121e2f410acdcd6de3953c6063a15901c853dd07
+source-git-commit: 32a6d0311169486b1273129c0ee87c242bee1e47
 workflow-type: tm+mt
-source-wordcount: '610'
+source-wordcount: '612'
 ht-degree: 11%
 
 ---
@@ -18,10 +18,10 @@ ht-degree: 11%
 - [源连接器概述](home.md)
 - 可用源连接器{#connectors}
    - Adobe应用程序{#adobe-applications}
-      - [分析分类数据连接器](connectors/adobe-applications/classifications.md)
-      - [Analytics数据连接器](connectors/adobe-applications/analytics.md)
-      - [Audience Manager连接器](connectors/adobe-applications/audience-manager.md)
-      - [客户属性连接器](connectors/adobe-applications/customer-attributes.md)
+      - [分析分类源连接器](connectors/adobe-applications/classifications.md)
+      - [分析源连接器](connectors/adobe-applications/analytics.md)
+      - [Audience Manager源连接器](connectors/adobe-applications/audience-manager.md)
+      - [客户属性源连接器](connectors/adobe-applications/customer-attributes.md)
       - Adobe应用程序字段映射{#mapping}
          - [分析字段映射](connectors/adobe-applications/mapping/analytics.md)
          - [Audience Manager字段映射](connectors/adobe-applications/mapping/audience-manager.md)
