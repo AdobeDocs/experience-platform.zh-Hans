@@ -7,9 +7,9 @@ topic-legacy: tutorial
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
 translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: ddf66ab277e5882afe7ffbdd87ee5df958c3e7b0
 workflow-type: tm+mt
-source-wordcount: '919'
+source-wordcount: '992'
 ht-degree: 0%
 
 ---
@@ -37,6 +37,12 @@ ht-degree: 0%
 您还可以使用搜索栏进一步缩小结果范围。 搜索词时，顶级项目表示其名称与搜索查询匹配的资源。 这些项目下方的&#x200B;**[!UICONTROL Standard Fields]**&#x200B;下将列出所有包含与查询匹配的字段的资源。 这样，您无需事先知道资源名称，即可根据所包含数据的类型搜索XDM资源。
 
 ![](../images/ui/explore/search.png)
+
+搜索结果中显示的资源首先按标题匹配、然后按说明匹配进行排序。 反过来，任一类别中匹配的单词越多，资源在列表中显示得越高。
+
+>[!NOTE]
+>
+>对于标准XDM资源，搜索功能只返回包含`xdm`命名空间的各个字段。 仅当自定义资源中包含位于其他命名空间（如您的租户ID）下的字段时，才会返回这些字段。
 
 找到要浏览的资源后，从列表中选择其名称以在画布中视图其结构。
 
@@ -100,7 +106,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->有关在XDM模式中使用关系的详细信息，请参阅有关在UI](../tutorials/create-schema-ui.md)中创建关系的教程。[
+>有关在XDM模式中使用关系的详细信息，请参阅有关在UI](../tutorials/relationship-ui.md)中创建关系的教程。[
 
 ## 后续步骤
 
