@@ -2,14 +2,14 @@
 title: 将Offer Decisioning与Platform Web SDK结合使用
 description: Adobe Experience Platform Web SDK可以提供和呈现在Offer Decisioning中管理的个性化优惠。 您可以使用Offer Decisioning UI或API创建优惠和其他相关对象。
 keywords: offer decisioning；决策；Web SDK；平台Web SDK；个性化优惠；交付优惠;优惠投放;优惠个性化；
+exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
 translation-type: tm+mt
-source-git-commit: 0b9a92f006d1ec151a0bb11c10c607ea9362f729
+source-git-commit: 2113eb265020b1d1c2e73dba95554c8bf97acf13
 workflow-type: tm+mt
 source-wordcount: '849'
 ht-degree: 9%
 
 ---
-
 
 # 将Offer Decisioning与Platform Web SDK结合使用
 
@@ -78,6 +78,7 @@ Adobe Experience Platform [!DNL Web SDK]可以提供和呈现在Offer Decisionin
           ]
       })
       ```
+
    * platform launch安装的SDK
       1. [创建Platform launch属性](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/companies-and-properties.html)
       2. [添加Platform launch嵌入代码](https://docs.adobe.com/content/help/en/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
@@ -93,6 +94,7 @@ Adobe Experience Platform [!DNL Web SDK]可以提供和呈现在Offer Decisionin
          * 添加平台Web SDK发送事件操作，并将相关的`decisionScopes`添加到该操作的配置
             ![send-事件-action-decisionScopes](./assets/send-event-action-decisionScopes.png)
       6. [创建并发布包含](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/publish/libraries.html) 您配置的所有相关规则、数据元素和扩展的库
+
 
 
 ## 示例请求和响应
