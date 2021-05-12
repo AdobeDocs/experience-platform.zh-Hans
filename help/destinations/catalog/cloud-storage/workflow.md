@@ -5,10 +5,9 @@ type: Tutorial
 description: 连接到云存储位置的说明
 seo-description: 连接到云存储位置的说明
 exl-id: 58003c1e-2f70-4e28-8a38-3be00da7cc3c
-translation-type: tm+mt
-source-git-commit: ecda1f1c4a2829124aedaae2395a74e54929c7ad
+source-git-commit: 4dff8a95af79d14cf0c79fa1468df36f040ab1ad
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '594'
 ht-degree: 0%
 
 ---
@@ -27,7 +26,7 @@ ht-degree: 0%
 >
 >如果与此目标的连接已存在，您可以在目标卡上看到&#x200B;**[!UICONTROL Activate]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的详细信息，请参阅目标工作区文档的[目录](../../ui/destinations-workspace.md#catalog)部分。
 
-## 帐户步骤{#account}
+## 帐户步骤 {#account}
 
 在&#x200B;**[!UICONTROL Account]**&#x200B;步骤中，如果您之前已设置到云存储目标的连接，请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;并选择现有连接。 或者，您也可以选择&#x200B;**[!UICONTROL New Account]**&#x200B;来设置到云存储目标的新连接。 填写帐户身份验证凭据并选择&#x200B;**[!UICONTROL Connect to destination]**。 或者，您可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写入为[!DNL Base64]编码字符串。
 
@@ -39,7 +38,7 @@ ht-degree: 0%
 
 ![连接到云存储目标 — 帐户步骤](../../assets/catalog/cloud-storage/workflow/destination-account.png)
 
-## 身份验证步骤{#authentication}
+## 身份验证步骤 {#authentication}
 
 在&#x200B;**[!UICONTROL Authentication]**&#x200B;步骤中，输入&#x200B;**[!UICONTROL Name]**&#x200B;和&#x200B;**[!UICONTROL Description]**&#x200B;作为激活流。
 
