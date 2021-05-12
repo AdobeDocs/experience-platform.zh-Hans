@@ -3,10 +3,9 @@ keywords: Amazon S3;S3目标；s3;amazon s3
 title: Amazon S3连接
 description: 创建到Amazon Web Services(AWS)S3存储的实时出站连接，以定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-translation-type: tm+mt
-source-git-commit: 7780a2b3b518ab976ec14531892e0734a6342e4c
+source-git-commit: 49a59e5b081243679f5d94b03a63d30df22cdc6a
 workflow-type: tm+mt
-source-wordcount: '233'
+source-wordcount: '270'
 ht-degree: 0%
 
 ---
@@ -31,9 +30,13 @@ ht-degree: 0%
 
 * **[!DNL Amazon S3]访问密钥 [!DNL Amazon S3] 和密钥**:在中 [!DNL Amazon S3]，生成一 `access key - secret access key` 对以授予对您帐户的平台 [!DNL Amazon S3] 访问权。请阅读[Amazon Web服务文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)了解更多信息。
 
+>[!TIP]
+>
+>在连接目标工作流中，您可以根据导出的段文件在Amazon S3存储中创建自定义文件夹。 有关说明，请阅读[使用宏在存储位置](./workflow.md#use-macros)中创建文件夹。
+
 ## 所需的[!DNL Amazon S3]权限{#required-s3-permission}
 
-要成功将数据连接并导出到您的[!DNL Amazon S3]存储位置，请在[!DNL Amazon S3]中为[!DNL Platform]创建一个IAM用户，并为以下操作分配权限：
+要成功将数据连接并导出到您的[!DNL Amazon S3]存储位置，请在[!DNL Amazon S3]中为[!DNL Platform]创建一个Identity and Access Management(IAM)用户，并为以下操作分配权限：
 
 * `s3:DeleteObject`
 * `s3:GetBucketLocation`
