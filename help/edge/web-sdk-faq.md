@@ -1,14 +1,13 @@
 ---
 title: Adobe Experience Platform Web SDK常见问题解答
 description: 获取有关Adobe Experience Platform Web SDK的常见问题解答。
-translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
+source-git-commit: 5ead9dc72b8b9fe89e0a1bc8365ceff8affd3c85
 workflow-type: tm+mt
-source-wordcount: '1804'
+source-wordcount: '1847'
 ht-degree: 2%
 
 ---
-
 
 # 关于 Experience Cloud 核心服务
 
@@ -75,7 +74,7 @@ Adobe Experience Platform Web SDK还可以直接将数据发送到Adobe Experien
 
 **现代且面向未来：** Web SDK及其与Experience Edge Network的连接使Adobe能够使Adobe处理数据收集、个性化、同意和第三方Cookie未来的方式大幅现代化。(它启用由Adobe管理的第一方域。)
 
-**时间到价值：** Adobe努力（并将继续），以尽可能轻松地通过Experience Platform Launch部署Web SDK，并将客户端数据映射到XDM。完成该工作后，所有其他Adobe解决方案和Adobe Experience Platform服务都可以在服务器端打开或关闭。 例如，如果您将此功能用于Adobe Analytics，并且要打开目标或Experience Platform，您只需打开Experience Edge配置上的切换开关，然后启动这些用例。
+**时间到价值：** Adobe努力（并将继续），以尽可能轻松地通过Experience Platform Launch部署Web SDK，并将客户端数据映射到XDM。完成该工作后，所有其他Adobe解决方案和Adobe Experience Platform服务都可以在服务器端打开或关闭。 例如，如果您将此功能用于Adobe Analytics，并且要打开目标或Experience Platform，您只需打开Datastream配置上的切换开关，然后启动这些用例。
 
 ## 什么是合金？
 
@@ -104,7 +103,7 @@ Adobe Experience Platform Web SDK是为以下人员开发的：
 
 ## 如何使用Adobe Experience Platform Web SDK访问开始?
 
-Web SDK目前对公众可用，并可用于向Adobe Experience Cloud产品发送数据。 将数据发送到第三方解决方案的能力即将到来。 SDK是免费的，由Adobe免费托管，并且可以下载，这样您就可以在自己的服务器上免费托管它（如果需要）。 平台Web SDK需要访问平台边缘网络配置和Adobe Experience Platform XDM模式构建器，以便Adobe的服务器正确处理来自SDK的入站数据。 如果您希望获得访问权限，请联系您的客户成功经理(CSM)以开始请求流程。
+Web SDK目前对公众可用，并可用于向Adobe Experience Cloud产品发送数据。 将数据发送到第三方解决方案的能力即将到来。 SDK是免费的，由Adobe免费托管，并且可以下载，这样您就可以在自己的服务器上免费托管它（如果需要）。 Platform Web SDK需要访问Datastream配置和Adobe Experience Platform XDM模式生成器，以便Adobe的服务器正确处理来自SDK的入站数据。 如果您希望获得访问权限，请联系您的客户成功经理(CSM)以开始请求流程。
 
 ## Web SDK当前支持哪些用例？
 
@@ -138,7 +137,7 @@ Web SDK正在迅速发展。 正在制定更多使用案例。 您可以在此�
 
 但是：
 
-* Adobe Experience Platform Web SDK需要一种称为Experience Edge配置ID的工具，这样边缘网络就可以识别流并确定如何处理数据。 此ID是在Experience Platform Launch中创建的。 这并不意味着您必须使用Experience Platform Launch创建属性或部署JavaScript代码，但您确实需要使用Experience Platform Launch创建配置ID。
+* Adobe Experience Platform Web SDK需要一种称为Datastream ID的东西，这样边缘网络就可以识别流并确定如何处理数据。 此ID是在Experience Platform Launch中创建的。 这并不意味着您必须使用Experience Platform Launch创建属性或部署JavaScript代码，但您确实需要使用Experience Platform Launch创建配置ID。
 
 * Adobe Experience Platform Launch不仅是最佳的可用标签和SDK管理器，还使部署`alloy.js`和将数据映射到XDM模式变得非常容易。 如果您决定不使用Experience Platform Launch，则必须先管理`alloy.js`的部署、事件处理以及将数据映射到XDM，然后再发送数据。 这是比使用Experience Platform Launch更难的&#x200B;__&#x200B;过程。
 
@@ -163,6 +162,10 @@ Web SDK正在迅速发展。 正在制定更多使用案例。 您可以在此�
 **kndctr_orgid_personalization：此** Cookie包含Adobe Target用于个性化网页的会话信息。
 
 **kndctr_orgid_anconventcheck：此基** 于会话的cookie指示服务器查找同意首选项服务器端。
+
+## Adobe Experience Platform Web SDK支持哪些浏览器？
+
+Adobe Experience Platform Web SDK设计为可在最新版Google Chrome、Safari、Firefox、Internet Explorer 11和Microsoft Edge Chromium中发挥最佳作用。 在旧版本的浏览器上使用某些功能时可能遇到问题。
 
 ## 哪里可以获取有关Adobe Experience Platform Web SDK的更多信息？
 
