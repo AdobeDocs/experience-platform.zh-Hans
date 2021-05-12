@@ -5,8 +5,7 @@ title: 配置数据集以捕获同意和首选项数据
 topic-legacy: getting started
 description: 了解如何在Adobe Experience Platform中配置体验数据模型(XDM)模式和数据集以捕获同意和偏好数据。
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-translation-type: tm+mt
-source-git-commit: 30a2ddb875b035b4509b4be3692b95d0d3ef50b3
+source-git-commit: 20adb26fbd55302ac8005978968a0d69bdda8755
 workflow-type: tm+mt
 source-wordcount: '1424'
 ht-degree: 0%
@@ -42,7 +41,7 @@ ht-degree: 0%
 >
 >本教程假定您了解要用于捕获客户属性信息的平台中的[!DNL Profile]模式。 无论您使用何种方法收集同意模式，对实时客户用户档案](../../../../xdm/ui/resources/schemas.md#profile)必须启用此[。 此外，模式的主要身份不能是禁止在基于兴趣的广告（如电子邮件地址）中使用的直接可识别字段。 如果您不确定哪些字段受限，请咨询您的法律顾问。
 
-## “同意和首选项”字段组结构{#structure}
+## “同意和首选项”字段组结构 {#structure}
 
 [!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)]字段组（以下简称“同意和首选项字段组”）为模式提供标准化的同意字段。 当前，此字段组仅与基于[!DNL XDM Individual Profile]类的模式兼容。
 
@@ -121,7 +120,7 @@ ht-degree: 0%
 
 如果尚未为此模式创建数据集，请按照下一节中的步骤操作。
 
-## 根据您的同意模式{#dataset}创建数据集
+## 根据您的同意模式创建数据集 {#dataset}
 
 在创建具有同意字段的模式后，您必须创建一个数据集，以最终摄取客户的同意数据。 必须为[!DNL Real-time Customer Profile]启用此数据集。
 
@@ -151,7 +150,7 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/enable-dataset.png)
 
-现在已保存数据集，并且允许在[!DNL Profile]中使用。 如果您计划使用Platform Web SDK将同意数据发送到用户档案，则在设置[边缘配置](../../../../edge/fundamentals/edge-configuration.md)时，必须选择此数据集作为[!UICONTROL Profile Dataset]。
+现在已保存数据集，并且允许在[!DNL Profile]中使用。 如果您计划使用Platform Web SDK将同意数据发送到用户档案，则在设置[边缘配置](../../../../edge/fundamentals/datastreams.md)时，必须选择此数据集作为[!UICONTROL Profile Dataset]。
 
 ## 后续步骤
 
