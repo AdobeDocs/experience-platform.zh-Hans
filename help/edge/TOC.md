@@ -5,11 +5,10 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: 数据管理
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 4ed738b2b71332db1602d5571797ed61214afc2d
 workflow-type: tm+mt
-source-wordcount: '147'
-ht-degree: 33%
+source-wordcount: '149'
+ht-degree: 32%
 
 ---
 
@@ -19,7 +18,7 @@ ht-degree: 33%
 * [平台Web SDK概述](home.md)
 * 基础知识{#fundamentals}
    * [先决条件](fundamentals/prerequisite.md)
-   * [创建边缘配置](fundamentals/edge-configuration.md)
+   * [配置数据流](fundamentals/datastreams.md)
    * [安装SDK](fundamentals/installing-the-sdk.md)
    * [配置SDK](fundamentals/configuring-the-sdk.md)
    * [执行命令](fundamentals/executing-commands.md)
@@ -57,6 +56,7 @@ ht-degree: 33%
    * [Web SDK扩展](extension/web-sdk-extension.md)
    * [操作类型](extension/action-types.md)
    * [数据元素类型](extension/data-element-types.md)
+   * [访问ECID](extension/accessing-the-ecid.md)
    * [Web SDK扩展发行说明](extension/web-sdk-ext-release-notes.md)
 * [发行说明](release-notes.md)
 * [常见问题解答](web-sdk-faq.md)
