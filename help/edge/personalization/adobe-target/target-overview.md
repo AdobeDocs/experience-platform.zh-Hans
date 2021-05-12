@@ -3,10 +3,9 @@ title: 将Adobe Target与Platform Web SDK结合使用
 description: 了解如何使用Experience Platform Web SDK使用Adobe Target呈现个性化内容
 keywords: 目标;adobe 目标;活动.id;experience.id;renderDecisions;decisionScopes;prehiding代码片段；vec；基于表单的体验书写器；xdm;受众；决定；范围；模式;
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-translation-type: tm+mt
-source-git-commit: e12b1337c44095ee8731f99c5829ab83bba14889
+source-git-commit: 20adb26fbd55302ac8005978968a0d69bdda8755
 workflow-type: tm+mt
-source-wordcount: '659'
+source-wordcount: '658'
 ht-degree: 4%
 
 ---
@@ -29,7 +28,7 @@ Adobe Experience Platform [!DNL Web SDK]可以向Web渠道提供和呈现Adobe T
 
 要启用[!DNL Target]，请执行以下操作：
 
-1. 在[边缘配置](../../fundamentals/edge-configuration.md)中启用目标，使用相应的客户端代码。
+1. 在[datastream](../../fundamentals/datastreams.md)中启用目标，使用相应的客户端代码。
 1. 将`renderDecisions`选项添加到事件。
 
 然后（可选），您还可以添加以下选项：
