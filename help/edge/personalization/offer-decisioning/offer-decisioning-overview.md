@@ -3,10 +3,9 @@ title: 将Offer Decisioning与Platform Web SDK结合使用
 description: Adobe Experience Platform Web SDK可以提供和呈现在Offer Decisioning中管理的个性化优惠。 您可以使用Offer Decisioning UI或API创建优惠和其他相关对象。
 keywords: offer decisioning；决策；Web SDK；平台Web SDK；个性化优惠；交付优惠;优惠投放;优惠个性化；
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-translation-type: tm+mt
-source-git-commit: 2113eb265020b1d1c2e73dba95554c8bf97acf13
+source-git-commit: 20adb26fbd55302ac8005978968a0d69bdda8755
 workflow-type: tm+mt
-source-wordcount: '849'
+source-wordcount: '842'
 ht-degree: 9%
 
 ---
@@ -23,7 +22,7 @@ Adobe Experience Platform [!DNL Web SDK]可以提供和呈现在Offer Decisionin
 
 * IMS组织已启用边缘决策
 * 优惠,活动创建
-* 已发布Edge配置
+* 数据流已发布
 
 ## 术语
 
@@ -54,7 +53,7 @@ Adobe Experience Platform [!DNL Web SDK]可以提供和呈现在Offer Decisionin
 
    ![](assets/decision-scope-copy.png)
 
-* **边缘配置：** 有关详细信息，请阅读 [边缘](../../fundamentals/edge-configuration.md) 配置文档。
+* **Datastreams：有** 关详细信息，请阅读 [](../../fundamentals/datastreams.md) datastreams文档。
 
 * **身份**:有关详细信息，请阅读此文档，其中概述 [了Platform Web SDK如何利用Identity Service](../../identity/overview.md)。
 
@@ -62,7 +61,7 @@ Adobe Experience Platform [!DNL Web SDK]可以提供和呈现在Offer Decisionin
 
 要启用Offer decisioning，您需要执行以下步骤：
 
-1. 已在[边缘配置](../../fundamentals/edge-configuration.md)中启用Adobe Experience Platform并选中“Offer decisioning”框
+1. 已在[datastream](../../fundamentals/datastreams.md)中启用Adobe Experience Platform并选中“Offer decisioning”框
    ![优惠-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
 2. 请按照说明[安装SDK](../../fundamentals/installing-the-sdk.md)(SDK可以单独安装，也可以通过[Adobe Experience Platform Launch](http://launch.adobe.com/)安装。 以下是[开始指南，可快速Platform launch](https://docs.adobe.com/content/help/zh-Hans/launch/using/intro/get-started/quick-start.html)。
 3. [配置](../../fundamentals/configuring-the-sdk.md) SDK以Offer decisioning。下面提供了其他Offer decisioning特定步骤。
@@ -82,11 +81,11 @@ Adobe Experience Platform [!DNL Web SDK]可以提供和呈现在Offer Decisionin
    * platform launch安装的SDK
       1. [创建Platform launch属性](https://docs.adobe.com/content/help/zh-Hans/launch/using/reference/admin/companies-and-properties.html)
       2. [添加Platform launch嵌入代码](https://docs.adobe.com/content/help/en/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      3. 使用您刚刚通过从“边缘配置”下拉菜单中选择的配置创建的边缘配置安装和配置平台Web SDK扩展。 有关[扩展](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html)的有用文档。
+      3. 使用您刚刚通过从“Datastream”下拉菜单中选择配置创建的Datastream安装和配置Platform Web SDK扩展。 请参阅[扩展](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/extensions/overview.html)的相关文档。
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
-      4. 创建必要的[数据元素](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/data-elements.html)。 至少，您需要创建一个平台Web SDK标识映射和一个平台Web SDK XDM对象数据元素。
+      4. 创建必要的[数据元素](https://docs.adobe.com/content/help/en/launch/using/reference/manage-resources/data-elements.html)。 至少，您必须创建一个平台Web SDK标识映射和一个平台Web SDK XDM对象数据元素。
          ![identity-map-data-element](./assets/identity-map-data-element.png)
 
          ![xdm对象数据元](./assets/xdm-object-data-element.png)
