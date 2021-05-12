@@ -5,8 +5,7 @@ title: 数据收集概述
 topic-legacy: overview
 description: 了解与收集Adobe Experience Platform客户体验数据相关的各种技术。
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: a150c23dffde9431953a019509e9554159052d21
 workflow-type: tm+mt
 source-wordcount: '320'
 ht-degree: 3%
@@ -38,7 +37,7 @@ Adobe Experience Platform Web和移动SDK可折叠所有Adobe产品库并将其�
 
 ## 通过切换过程部署Adobe技术
 
-Platform Edge Network是一个全球分布式、快速、可靠的服务器网络，能够大规模地接收和处理数据。 使用Platform launch，您可以为Adobe Target、Adobe Audience Manager和Adobe Analytics等产品设置[边缘配置](../edge/fundamentals/edge-configuration.md)，这样您就可以在服务器端激活这些产品，而无需更改客户端代码。
+Platform Edge Network是一个全球分布式、快速、可靠的服务器网络，能够大规模地接收和处理数据。 使用Platform launch，您可以为Adobe Target、Adobe Audience Manager和Adobe Analytics等产品设置[边缘配置](../edge/fundamentals/datastreams.md)，这样您就可以在服务器端激活这些产品，而无需更改客户端代码。
 
 ![](./images/deploy.png)
 
