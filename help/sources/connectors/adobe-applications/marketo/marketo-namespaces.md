@@ -6,10 +6,10 @@ topic-legacy: overview
 description: 本文档概述创建Marketo Engage源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
 translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 8dd7b1724f3de12bf6a3a1b77ee8050fd1a9eaf3
 workflow-type: tm+mt
-source-wordcount: '1171'
-ht-degree: 6%
+source-wordcount: '1602'
+ht-degree: 4%
 
 ---
 
@@ -21,22 +21,39 @@ ht-degree: 6%
 
 本文档提供有关与[!DNL Marketo Engage]一起使用的B2B命名空间和模式（下称“[!DNL Marketo]”）的基础设置的信息。 本文档还提供了有关设置生成[!DNL Marketo] B2B命名空间和模式所需的邮递员自动化实用程序的详细信息。
 
-## 先决条件
+## 设置[!DNL Marketo]命名空间和模式自动生成实用程序
 
-在生成B2B命名空间和模式之前，必须先设置平台开发者控制台和[!DNL Postman]环境。 有关详细信息，请参阅教程中的[设置开发人员控制台和 [!DNL Postman]](../../../../landing/postman.md)。
+使用[!DNL Marketo]命名空间和模式自动生成实用程序的第一步是设置您的平台开发人员控制台和[!DNL Postman]环境。
 
-通过平台开发人员控制台和[!DNL Postman]设置，将以下变量应用于您的[!DNL Marketo]环境:
+- 您可以从此[GitHub存储库](https://git.corp.adobe.com/marketo-engineering/namespace_schema_utility)下载命名空间和模式自动生成实用程序集合和环境。
+- 有关使用平台API的信息，包括有关如何收集所需标头值和读取示例API调用的详细信息，请参阅[平台API入门指南](../../../../landing/api-guide.md)。
+- 有关如何为平台API生成凭据的信息，请参阅教程[验证和访问Experience PlatformAPI](../../../../landing/api-authentication.md)。
+- 有关如何为平台API设置[!DNL Postman]的信息，请参阅教程（位于[设置开发人员控制台和 [!DNL Postman]](../../../../landing/postman.md)）。
 
-| 环境变量 | 示例值 | 注释 |
+通过设置平台开发人员控制台和[!DNL Postman]，您现在可以开始将适当的环境值应用到您的[!DNL Postman]环境。
+
+下表包含示例值以及有关填充[!DNL Postman]环境的其他信息：
+
+| Variable | 描述 | 示例 |
 | --- | --- | --- |
-| `PRIVATE_KEY` | `{PRIVATE_KEY}` |
-| `SANDBOX_NAME` | `prod` |
-| `TENANT_ID` | `b2bcdpproductiontest` |
-| `munchkinId` | `123-ABC-456 ` | 有关详细信息，请参阅教程[验证 [!DNL Marketo] 实例](./marketo-auth.md)。 |
-| `sfdc_org_id` | `00D4W000000FgYJUA0` | 有关获取组织ID的详细信息，请参阅以下[[!DNL Salesforce] 指南](https://help.salesforce.com/articleView?id=000325251&amp;type=1&amp;mode=1)。 |
-| `msd_org_id` | `f6438fab-67e8-4814-a6b5-8c8dcdf7a98f` | 有关获取组织ID的详细信息，请参阅以下[[!DNL Microsoft Dynamics] 指南](https://docs.microsoft.com/en-us/power-platform/admin/determine-org-id-name)。 |
-| `has_abm` | `false` | 如果您订阅了基于帐户的营销，则此值设置为`true`。 |
-| `has_msi` | `false` | 如果您订阅[!DNL Marketo Sales Insight]，则此值设置为`true`。 |
+| `CLIENT_SECRET` | 用于生成`{ACCESS_TOKEN}`的唯一标识符。 有关如何检索`{CLIENT_SECRET}`的信息，请参阅教程中的[验证和访问Experience Platform API](../../../../landing/api-authentication.md)。 | `{CLIENT_SECRET}` |
+| `JWT_TOKEN` | JSON Web令牌(JWT)是用于生成{ACCESS_TOKEN}的身份验证凭据。 有关如何生成`{JWT_TOKEN}`的信息，请参阅有关[验证和访问Experience Platform API](../../../../landing/api-authentication.md)的教程。 | `{JWT_TOKEN}` |
+| `API_KEY` | 用于验证对Experience PlatformAPI的调用的唯一标识符。 有关如何检索`{API_KEY}`的信息，请参阅教程中的[验证和访问Experience Platform API](../../../../landing/api-authentication.md)。 | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
+| `ACCESS_TOKEN` | 完成对Experience Platform API的调用所需的授权令牌。 有关如何检索`{ACCESS_TOKEN}`的信息，请参阅教程中的[验证和访问Experience Platform API](../../../../landing/api-authentication.md)。 | `Bearer {ACCESS_TOKEN}` |
+| `META_SCOPE` | 对于[!DNL Marketo]，此值是固定的，并且始终设置为：`ent_dataservices_sdk`。 | `ent_dataservices_sdk` |
+| `CONTAINER_ID` | `global`容器包含所有标准Adobe和Experience Platform合作伙伴提供的类、模式字段组、数据类型和模式。 对于[!DNL Marketo]，此值是固定的，始终设置为`global`。 | `global` |
+| `PRIVATE_KEY` | 用于验证[!DNL Postman]实例以Experience PlatformAPI的凭据。 有关如何检索{PRIVATE_KEY}的说明，请参见有关设置开发人员控制台和[设置开发人员控制台和 [!DNL Postman]](../../../../landing/postman.md)的教程。 | `{PRIVATE_KEY}` |
+| `TECHNICAL_ACCOUNT_ID` | 用于集成到Adobe I/O的凭据。 | `D42AEVJZTTJC6LZADUBVPA15@techacct.adobe.com` |
+| `IMS` | Identity Management系统(IMS)为Adobe服务提供身份验证框架。 对于[!DNL Marketo]，此值是固定的，始终设置为：`ims-na1.adobelogin.com`。 | `ims-na1.adobelogin.com` |
+| `IMS_ORG` | 拥有或许可产品和服务并允许访问其成员的企业实体。 有关如何检索`{IMS_ORG}`信息的说明，请参阅[设置开发人员控制台和 [!DNL Postman]](../../../../landing/postman.md)上的教程。 | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
+| `SANDBOX_NAME` | 您使用的虚拟沙箱分区的名称。 | `prod` |
+| `TENANT_ID` | 一个ID，用于确保您创建的资源命名正确且包含在您的IMS组织中。 | `b2bcdpproductiontest` |
+| `PLATFORM_URL` | 您对其进行API调用的URL端点。 此值是固定的，始终设置为：`http://platform.adobe.io/`。 | `http://platform.adobe.io/` |
+| `munchkinId` | [!DNL Marketo]帐户的唯一ID。 有关如何检索`munchkinId`的信息，请参见[对您的 [!DNL Marketo] 实例](./marketo-auth.md)进行身份验证的教程。 | `123-ABC-456` |
+| `sfdc_org_id` | [!DNL Salesforce]帐户的组织ID。 有关获取[!DNL Salesforce]组织ID的详细信息，请参阅以下[[!DNL Salesforce] 指南](https://help.salesforce.com/articleView?id=000325251&amp;type=1&amp;mode=1)。 | `00D4W000000FgYJUA0` |
+| `msd_org_id` | [!DNL Dynamics]帐户的组织ID。 有关获取[!DNL Dynamics]组织ID的详细信息，请参阅以下[[!DNL Microsoft Dynamics] 指南](https://docs.microsoft.com/en-us/power-platform/admin/determine-org-id-name)。 | `f6438fab-67e8-4814-a6b5-8c8dcdf7a98f` |
+| `has_abm` | 一个布尔值，指示您是否订阅[!DNL Marketo Account-Based Marketing]。 | `false` |
+| `has_msi` | 一个布尔值，指示您是否被限定为[!DNL Marketo Sales Insight]。 | `false` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -99,7 +116,7 @@ ht-degree: 6%
 >
 >请向左/向右滚动以视图表的完整内容。
 
-| 显示名称 | 身份符号 | 身份类型 | 颁发者类型 | 颁发者实体类型 | [!DNL Salesforce] 订阅组织ID示例 |
+| 显示名称 | 身份符号 | 身份类型 | 颁发者类型 | 颁发者实体类型 | [!DNL Dynamics] 订阅组织ID示例 |
 | --- | --- | --- | --- | --- | --- |
 | `microsoft_person_{DYNAMICS_ID}` | 自动生成 | `CROSS_DEVICE` | [!DNL Microsoft] | `person` | `94cahe38-e51h-3d57-a9c6-2edklb7184mh` |
 | `microsoft_account_{DYNAMICS_ID}` | 自动生成 | `B2B_ACCOUNT` | [!DNL Microsoft] | `account` | `94cahe38-e51h-3d57-a9c6-2edklb7184mh` |
