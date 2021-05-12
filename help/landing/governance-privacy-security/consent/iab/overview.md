@@ -5,8 +5,7 @@ title: IAB TCF 2.0在Experience Platform中支持
 topic-legacy: privacy events
 description: 了解如何配置数据操作和模式，以在将区段激活到Adobe Experience Platform中的目标时传达客户同意选择。
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 20adb26fbd55302ac8005978968a0d69bdda8755
 workflow-type: tm+mt
 source-wordcount: '2466'
 ht-degree: 0%
@@ -48,7 +47,7 @@ Adobe Experience Platform是已注册的[IAB TCF 2.0供应商列表](https://iab
 
 除了上述平台服务之外，您还应熟悉[目标](../../../../data-governance/home.md)及其在平台生态系统中的角色。
 
-## 客户同意流程摘要{#summary}
+## 客户同意流程摘要 {#summary}
 
 以下各节介绍了在正确配置系统后如何收集和实施同意数据。
 
@@ -96,7 +95,7 @@ Adobe Audience Manager与平台共享的任何区段（通过[!DNL Audience Mana
 
 同意字符串只能由向IAB TCF注册的CMP创建。 有关如何使用您的特定CMP生成同意字符串的详细信息，请参阅IAB TCF GitHub回购协议中的[同意字符串格式指南](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20Consent%20string%20and%20vendor%20list%20formats%20v2.md)。
 
-## 使用TCF同意字段{#datasets}创建数据集
+## 使用TCF同意字段创建数据集 {#datasets}
 
 客户同意数据必须发送到模式包含TCF同意字段的数据集。 请参阅[上的教程，创建用于捕获TCF 2.0 connence](./dataset.md)的数据集，了解如何在继续使用本指南之前创建两个必需的数据集。
 
@@ -106,7 +105,7 @@ Adobe Audience Manager与平台共享的任何区段（通过[!DNL Audience Mana
 
 有关如何使用合并策略的详细信息，请参阅[合并策略用户指南](../../../../profile/ui/merge-policies.md)。 在设置合并策略时，您必须确保您的区段包含[XDM隐私模式字段组](./dataset.md#privacy-field-group)提供的所有必需同意属性，如数据集准备指南中所述。
 
-## 集成Experience Platform Web SDK以收集客户同意数据{#sdk}
+## 集成Experience Platform Web SDK以收集客户同意数据 {#sdk}
 
 >[!NOTE]
 >
@@ -120,7 +119,7 @@ Adobe Audience Manager与平台共享的任何区段（通过[!DNL Audience Mana
 
 ### 创建新的边缘配置
 
-要使SDK将数据发送到Experience Platform，您必须首先在[!DNL Adobe Experience Platform Launch]中为平台创建新的边缘配置。 有关如何创建新配置的具体步骤在[SDK文档](../../../../edge/fundamentals/edge-configuration.md)中提供。
+要使SDK将数据发送到Experience Platform，您必须首先在[!DNL Adobe Experience Platform Launch]中为平台创建新的边缘配置。 有关如何创建新配置的具体步骤在[SDK文档](../../../../edge/fundamentals/datastreams.md)中提供。
 
 为配置提供唯一名称后，选择&#x200B;**[!UICONTROL Adobe Experience Platform]**&#x200B;旁边的切换按钮。 接下来，使用以下值完成表单的其余部分：
 
@@ -225,7 +224,7 @@ alloy("sendEvent", {
 
 所有[!DNL Platform SDK]命令都返回指示调用是成功还是失败的承诺。 然后，您可以使用这些响应获取其他逻辑，如向客户显示确认消息。 有关特定示例，请参见有关执行SDK命令的指南中关于[处理成功或失败](../../../../edge/fundamentals/executing-commands.md#handling-success-or-failure)的部分。
 
-## 导出区段{#export}
+## 导出区段 {#export}
 
 >[!NOTE]
 >
