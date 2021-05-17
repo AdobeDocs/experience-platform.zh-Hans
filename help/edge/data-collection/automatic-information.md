@@ -2,14 +2,13 @@
 title: 在Adobe Experience Platform Web SDK中自动收集信息
 description: Adobe Experience Platform SDK自动收集的每条信息的概述。
 keywords: 收集信息；上下文；配置；设备；屏幕高度；屏幕方向；屏幕方向；屏幕方向；屏幕宽度；环境；视口高度；视口高度；viewport Height;viewportWidth;viewport Width;crowserDetails；浏览器详细信息；实现详细信息；实现详细信息；名称；版本；placeContext;localTime；本地时间timezoneOffset；本地时区偏移；timestamp;web;url;webPageDetails;web页详细信息；webReferrer;web推荐人；横向；纵向；
-translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+exl-id: 901df786-df36-4986-9c74-a32d29c11b71
+source-git-commit: 0f671a967a67761e0cfef6fa0d022e3c3790c2d8
 workflow-type: tm+mt
-source-wordcount: '422'
-ht-degree: 8%
+source-wordcount: '515'
+ht-degree: 6%
 
 ---
-
 
 # 自动收集的信息
 
@@ -83,7 +82,7 @@ Adobe Experience Platform Web SDK可自动收集大量信息，无需任何特�
 | ----------------------------------------- | --------------------------------------- |
 | `events[].xdm.implementationDetails.name` | `https://ns.adobe.com/experience/alloy` |
 
-软件开发工具包(SDK)标识符。  此字段使用URI来改进由不同软件库提供的标识符之间的唯一性。
+软件开发工具包(SDK)标识符。  此字段使用URI来改进由不同软件库提供的标识符之间的唯一性。 使用独立库时，值为`https://ns.adobe.com/experience/alloy`。 将库用作Platform launch扩展的一部分时，该值为`https://ns.adobe.com/experience/alloy+reactor`。
 
 ### 版本
 
@@ -91,12 +90,15 @@ Adobe Experience Platform Web SDK可自动收集大量信息，无需任何特�
 | -------------------------------------------- | ------------ |
 | `events[].xdm.implementationDetails.version` | `0.11.0` |
 
+当使用独立库时，其值只是库版本。 将库用作Platform launch扩展的一部分时，这是与“+”联接的库版本和Platform launch扩展版本。 例如，如果库版本为2.1.0，而Platform launch扩展版本为2.1.3，则值为`2.1.0+2.1.3`。
+
 ### 环境
 
 | **有效负荷中的路径：** | **示例：** |
 | ------------------------------------------------ | ------------ |
 | `events[].xdm.implementationDetails.environment` | `browser` |
 
+收集数据的环境。 此值始终设置为`browser`。
 
 ## 放置上下文(`placeContext`)
 
