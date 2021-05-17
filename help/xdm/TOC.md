@@ -4,22 +4,22 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用体验数据模型(XDM)类和模式字段组来标准化体验数据。
 feature: 模式 (Schema)
-translation-type: tm+mt
-source-git-commit: a19a89d347b9197ab2766bd8a57018f5ac4f058d
+source-git-commit: dcfdc9c479e8a77296f7cb0bf9f5bb36e9261b75
 workflow-type: tm+mt
-source-wordcount: '291'
-ht-degree: 17%
+source-wordcount: '295'
+ht-degree: 16%
 
 ---
 
 
-# 体验数据模型(XDM)系统{#xdm}
+# 体验数据模型(XDM)系统 {#xdm}
 
 * [XDM系统概述](home.md)
 * 模式 (Schema){#schema}
    * [模式合成基础](schema/composition.md)
    * [数据建模的最佳实践](schema/best-practices.md)
    * [XDM字段类型约束](schema/field-constraints.md)
+   * [XDM中的命名空间](./schema/namespaces.md)
    * [XDM字段词典](schema/field-dictionary.md)
    * 行业数据模型{#industries}
       * [概述](./schema/industries/overview.md)
@@ -55,7 +55,7 @@ ht-degree: 17%
    * [通用营销首选项字段](./data-types/marketing-field.md)
    * [具有订阅的通用营销首选项字段](./data-types/marketing-field-subscriptions.md)
    * [通用个性化首选项字段](./data-types/personalization-field.md)
-   * [地域](./data-types/geo.md)
+   * [Adobe Target 中的地域](./data-types/geo.md)
    * [地理圈](./data-types/geo-circle.md)
    * [地理坐标](./data-types/geo-coordinates.md)
    * [地域交互详细信息](./data-types/geo-interaction-details.md)
@@ -71,11 +71,11 @@ ht-degree: 17%
    * [POI详细信息](./data-types/poi-details.md)
    * [POI交互](./data-types/poi-interaction.md)
    * [邮政地址](./data-types/postal-address.md)
-   * [ 搜索](./data-types/search.md)
+   * [搜索](./data-types/search.md)
    * [订阅](./data-types/subscription.md)
    * [Web交互](./data-types/web-interactions.md)
    * [网页详细信息](./data-types/webpage-details.md)
-* [!UICONTROL Schemas] UI {#ui}
+* [!UICONTROL 架] 构UI  {#ui}
    * [概述](./ui/overview.md)
    * [浏览 XDM 资源](./ui/explore.md)
    * 创建和编辑资源{#resources}
