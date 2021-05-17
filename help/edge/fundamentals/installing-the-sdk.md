@@ -2,14 +2,13 @@
 title: 安装Adobe Experience Platform Web SDK
 description: 了解如何安装Experience Platform Web SDK。
 keywords: web sdk安装；安装web sdk;internet explorer;promise;npm包
-translation-type: tm+mt
-source-git-commit: 63c0c5cae5ca2800b1f049b2b33e2a6f36ee7255
+exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
+source-git-commit: 07f598a9fd7c0e5af7802fe979a44bbafa7afae4
 workflow-type: tm+mt
-source-wordcount: '901'
-ht-degree: 4%
+source-wordcount: '939'
+ht-degree: 3%
 
 ---
-
 
 # 安装SDK {#installing-the-sdk}
 
@@ -130,6 +129,10 @@ const alloy = createInstance({ name: "alloy" });
 alloy("config", { ... });
 alloy("sendEvent", { ... });
 ```
+
+>[!NOTE]
+>
+>NPM包依赖CommonJS模块；因此，使用bundler时，请确保bundler支持CommonJS模块。 某些捆绑程序（如[Rollup](https://rollupjs.org)）需要提供CommonJS支持的[plugin](https://www.npmjs.com/package/@rollup/plugin-commonjs)。
 
 ### 将包用作ECMAScript 5模块
 
