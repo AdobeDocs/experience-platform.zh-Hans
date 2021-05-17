@@ -5,8 +5,7 @@ title: 模式注册表API指南附录
 description: 本文档提供与使用模式 Registry API相关的补充信息。
 topic-legacy: developer guide
 exl-id: 2ddc7fe8-dd0b-4cf9-8561-e89fcdadbfce
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: dcfdc9c479e8a77296f7cb0bf9f5bb36e9261b75
 workflow-type: tm+mt
 source-wordcount: '775'
 ht-degree: 0%
@@ -17,7 +16,7 @@ ht-degree: 0%
 
 本文档提供与使用[!DNL Schema Registry] API相关的补充信息。
 
-## 使用查询参数{#query}
+## 使用查询参数 {#query}
 
 [!DNL Schema Registry]支持在列出资源时使用查询参数来筛选结果。
 
@@ -25,7 +24,7 @@ ht-degree: 0%
 >
 >组合多个查询参数时，必须用&amp;符号(`&`)分隔。
 
-### 分页{#paging}
+### 分页 {#paging}
 
 用于分页的最常见查询参数包括：
 
@@ -54,7 +53,7 @@ ht-degree: 0%
 >
 >可以使用`property`参数按模式字段组的兼容类筛选字段组。 例如，`property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile`只返回与[!DNL XDM Individual Profile]类兼容的字段组。
 
-## 兼容性模式
+## 兼容性模式 {#compatibility}
 
 [!DNL Experience Data Model] (XDM)是一个公开记录的规范，它由Adobe驱动，旨在提高数字体验的互操作性、表现力和强大功能。Adobe在GitHub](https://github.com/adobe/xdm/)上的[开放源项目中维护源代码和正式的XDM定义。 这些定义以XDM标准表示法编写，使用JSON-LD（链接数据的JavaScript对象表示法）和JSON模式作为定义XDM模式的语法。
 
