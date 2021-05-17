@@ -5,17 +5,16 @@ title: XDM个人用户档案类
 topic-legacy: overview
 description: 本文档概述了XDM单个用户档案类。
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
-translation-type: tm+mt
-source-git-commit: 612917b23d1841556a71f6378497e1d033bc3b62
+source-git-commit: 9fbb40a401250496761dcce63a3f033a8746ae7e
 workflow-type: tm+mt
-source-wordcount: '420'
+source-wordcount: '452'
 ht-degree: 0%
 
 ---
 
 # [!DNL XDM Individual Profile] class
 
-[!DNL XDM Individual Profile] 是一个标准XDM类，它构成了已识别和部分已识别个人的属性和兴趣的单一表示(或“用户档案”)。
+[!DNL XDM Individual Profile] 是一个标准的体验数据模型(XDM)类，它构成了个人的单一表示形式(或“用户档案”)。具体而言，该类（及其兼容的混合）捕获与您的品牌进行互动的已识别和部分识别的个人的属性和兴趣。
 
 用户档案可以包括匿名行为信号（如浏览器cookie）和包含详细信息（如姓名、出生日期、位置和电子邮件地址）的高度识别的用户档案。 随着用户档案的增长，它将成为个人个人信息、身份、联系信息和通信首选项的可靠存储库。 有关在平台生态系统中使用此类的详细信息，请参阅[ XDM概述](../home.md#data-behaviors)。
 
@@ -42,9 +41,9 @@ ht-degree: 0%
 Adobe提供多个标准字段组，以用于[!DNL XDM Individual Profile]类。 以下是某类一些常用字段组的列表:
 
 * [[!UICONTROL IdentityMap]](../field-groups/profile/identitymap.md)
-* [[!UICONTROL Demographic Details]](../field-groups/profile/demographic-details.md)
-* [[!UICONTROL Personal Contact Details]](../field-groups/profile/personal-contact-details.md)
-* [[!UICONTROL Work Contact Details]](../field-groups/profile/work-contact-details.md)
-* [[!UICONTROL Segment Membership Details]](../field-groups/profile/segmentation.md)
+* [[!UICONTROL 人口统计详细信息]](../field-groups/profile/demographic-details.md)
+* [[!UICONTROL 个人联系人详细信息]](../field-groups/profile/personal-contact-details.md)
+* [[!UICONTROL 工作联系人详细信息]](../field-groups/profile/work-contact-details.md)
+* [[!UICONTROL 区段会员资格详细信息]](../field-groups/profile/segmentation.md)
 
 有关[!DNL XDM Individual Profile]的所有兼容字段组的完整列表，请参阅[ XDM GitHub存储库](https://github.com/adobe/xdm/tree/master/components/mixins/profile)。
