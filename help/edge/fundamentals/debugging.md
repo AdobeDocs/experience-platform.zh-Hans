@@ -2,14 +2,13 @@
 title: 在Adobe Experience Platform Web SDK中调试
 description: 了解如何在Experience Platform Web SDK中切换调试功能。
 keywords: 调试web sdk；调试；配置；配置命令；调试命令；edgeConfigId;setDebug;debugEnabled；调试；
-translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+exl-id: 4e893af8-a48e-48dc-9737-4c61b3355f03
+source-git-commit: 0f671a967a67761e0cfef6fa0d022e3c3790c2d8
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '446'
 ht-degree: 0%
 
 ---
-
 
 # 调试
 
@@ -79,4 +78,4 @@ alloy("getLibraryInfo").then(function(result) {
 
 当前，提供的`libraryInfo`对象包含以下属性：
 
-* `version` 这是加载库的版本。例如，如果要加载的库版本为1.0.0，则值将为`1.0.0`。
+* `version` 这是加载库的版本。例如，如果要加载的库版本为1.0.0，则值将为`1.0.0`。 当库在Adobe Experience Platform Launch扩展（名为“AEP Web SDK”）中运行时，版本为库版本，Platform launch扩展版本以“+”符号联接。 例如，如果库的版本为1.0.0，而Platform launch扩展的版本为1.2.0，则值将为`1.0.0+1.2.0`。
