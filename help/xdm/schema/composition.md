@@ -5,10 +5,9 @@ title: 模式合成基础
 topic-legacy: overview
 description: 本文档介绍了体验数据模型(XDM)模式，以及构建要在Adobe Experience Platform中使用的模式的构件、原则和最佳做法。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 632ea4e2a94bfcad098a5fc5a5ed8985c0f41e0e
 workflow-type: tm+mt
-source-wordcount: '3497'
+source-wordcount: '3621'
 ht-degree: 0%
 
 ---
@@ -50,19 +49,23 @@ XDM模式是以自包含格式存储大量复杂数据的理想之选。 有关X
 
 记录和时间序列模式都包含身份映射(`xdm:identityMap`)。 此字段包含主题的标识表示形式，它取自标为“标识”的字段（如下一节所述）。
 
-### [!UICONTROL Identity] {#identity}
+### [!UICONTROL 身份] {#identity}
 
 模式用于将数据引入[!DNL Experience Platform]。 此视图可跨多个服务使用，以创建单个实体的统一数据。 因此，在考虑模式时，务必考虑客户身份，以及无论数据来自何处，都可以使用哪些字段来标识主题。
 
-为了帮助处理此过程，您的模式中的关键字段可以标记为身份。 在数据摄取时，这些字段中的数据将插入该个人的“[!UICONTROL Identity Graph]”中。 然后，可以通过[[!DNL Real-time Customer Profile]](../../profile/home.md)和其他[!DNL Experience Platform]服务访问图表数据，以提供每个客户的拼接视图。
+为了帮助处理此过程，您的模式中的关键字段可以标记为身份。 在数据摄取时，这些字段中的数据将插入该个人的“[!UICONTROL 标识图]”中。 然后，可以通过[[!DNL Real-time Customer Profile]](../../profile/home.md)和其他[!DNL Experience Platform]服务访问图表数据，以提供每个客户的拼接视图。
 
-通常标记为“[!UICONTROL Identity]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。 您还应考虑特定于您组织的任何唯一标识符，因为它们可能也是好的“[!UICONTROL Identity]”字段。
+通常标为“[!UICONTROL Identity]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。 您还应考虑特定于您组织的任何唯一标识符，因为它们可能也是好的“[!UICONTROL 标识]”字段。
 
 在模式规划阶段考虑客户身份非常重要，这有助于确保将数据汇总在一起，以构建最可靠的用户档案。 请参阅[Adobe Experience Platform Identity Service](../../identity-service/home.md)的概述，进一步了解身份信息如何帮助您向客户提供数字体验。
 
-#### `xdm:identityMap` {#identityMap}
+#### `identityMap` {#identityMap}
 
-`xdm:identityMap` 是一个映射类型字段，它描述个人的各种标识值及其关联的命名空间。此字段可用于为模式提供身份信息，而不是在模式本身的结构中定义身份值。
+`identityMap` 是一个映射类型字段，它描述个人的各种标识值及其关联的命名空间。此字段可用于为模式提供身份信息，而不是在模式本身的结构中定义身份值。
+
+使用`identityMap`的主要缺点是身份会嵌入到数据中，因此变得不那么可见。 如果您要获取原始数据，则应该在实际模式结构中定义单个标识字段。
+
+但是，如果要从存储身份的源(如[!DNL Airship]或Adobe Audience Manager)导入数据，则标识映射可能特别有用。 此外，如果您使用[Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/)，则需要标识映射。
 
 简单标识映射的示例如下所示：
 
@@ -99,7 +102,7 @@ XDM模式是以自包含格式存储大量复杂数据的理想之选。 有关X
 >
 >还可为每个标识值提供一个布尔值，用于确定该值是否为主标识(`primary`)。 只需为要在[!DNL Real-time Customer Profile]中使用的模式设置主标识。 有关详细信息，请参阅[合并模式](#union)中的一节。
 
-### 模式演化原则{#evolution}
+### 模式进化原则 {#evolution}
 
 随着数字体验的性质不断演变，用于代表数字体验的模式也必须如此。 因此，设计良好的模式能够根据需要进行调整和发展，而不会对模式的先前版本造成破坏性的变化。
 
@@ -127,7 +130,7 @@ XDM模式是以自包含格式存储大量复杂数据的理想之选。 有关X
 
 &amp;ast;模式由类和零个或多个模式字段组组成。 这意味着您无需使用字段组即可构建数据集模式。
 
-### 类{#class}
+### 类 {#class}
 
 编写模式从指定类开始。 类定义模式将包含的数据的行为方面（记录或时间序列）。 除此之外，类还描述了所有基于该类的模式需要包含的公共属性的最小数量，并为合并多个兼容数据集提供了一种方法。
 
@@ -135,7 +138,7 @@ XDM模式是以自包含格式存储大量复杂数据的理想之选。 有关X
 
 Adobe提供多个标准（“核心”）XDM类。 几乎所有下游平台进程都需要其中两个类[!DNL XDM Individual Profile]和[!DNL XDM ExperienceEvent]。 除了这些核心类，您还可以创建自己的自定义类来描述组织的更具体用例。 当没有Adobe定义的核心类可用于描述唯一用例时，自定义类由组织定义。
 
-以下屏幕截图演示了类在平台UI中的表示方式。 由于显示的示例模式不包含任何字段组，所有显示的字段都由模式的类([!UICONTROL XDM Individual Profile])提供。
+以下屏幕截图演示了类在平台UI中的表示方式。 由于显示的示例模式不包含任何字段组，所有显示的字段都由模式的类([!UICONTROL XDM单个用户档案])提供。
 
 ![](../images/schema-composition/class.png)
 
@@ -149,11 +152,11 @@ Adobe提供多个标准（“核心”）XDM类。 几乎所有下游平台进�
 
 [!DNL Experience Platform] 包括许多标准的Adobe字段组，同时允许供应商为其用户定义字段组，并允许个人用户为自己的特定概念定义字段组。
 
-例如，要为“[!UICONTROL Loyalty Members]”模式捕获“[!UICONTROL First Name]”和“[!UICONTROL Home Address]”等详细信息，您可以使用定义这些常见概念的标准字段组。 但是，特定于不常见用例（如“[!UICONTROL Loyalty Program Level]”）的概念通常没有预定义的字段组。 在这种情况下，您必须定义自己的字段组才能捕获此信息。
+例如，要为“[!UICONTROL Loyalty Members]”模式捕获诸如“[!UICONTROL First Name]”和“[!UICONTROL Home Address]”等详细信息，您可以使用定义这些常见概念的标准字段组。 但是，特定于较不常见用例的概念(如“[!UICONTROL 忠诚度项目级别]”)通常没有预定义的字段组。 在这种情况下，您必须定义自己的字段组才能捕获此信息。
 
 请记住，模式由“零个或更多”字段组组成，因此这意味着您无需使用任何字段组即可构建有效模式。
 
-以下屏幕截图演示了字段组在平台UI中的显示方式。 本例中，单个字段组([!UICONTROL Demographic Details])被添加到模式中，该组为模式的结构提供字段分组。
+以下屏幕截图演示了字段组在平台UI中的显示方式。 本例中，单个字段组（[!UICONTROL 人口统计详细信息]）被添加到模式，该字段组为模式的结构提供字段分组。
 
 ![](../images/schema-composition/field-group.png)
 
@@ -165,7 +168,7 @@ Adobe提供多个标准（“核心”）XDM类。 几乎所有下游平台进�
 
 [!DNL Experience Platform] 提供许多常用数据类型，作为 [!DNL Schema Registry] 的一部分，以支持使用标准模式描述常用数据结构。这在[!DNL Schema Registry]教程中有更详细的说明，在您逐步定义数据类型时，会更加清晰。
 
-以下屏幕截图演示了数据类型在平台UI中的表示方式。 [!UICONTROL Demographic Details]字段组提供的字段之一使用“[!UICONTROL Person name]”数据类型，如字段名称旁的管道字符(`|`)后面的文本所示。 此特定数据类型提供与个人姓名相关的多个子字段，此构造可重用于需要捕获个人姓名的其他字段。
+以下屏幕截图演示了数据类型在平台UI中的表示方式。 [!UICONTROL 人口统计详细信息]字段组提供的字段之一使用“[!UICONTROL 人员名称]”数据类型，如字段名称旁的管道字符(`|`)后面的文本所指示。 此特定数据类型提供与个人姓名相关的多个子字段，此构造可重用于需要捕获个人姓名的其他字段。
 
 ![](../images/schema-composition/data-type.png)
 
@@ -222,11 +225,11 @@ Adobe提供多个标准（“核心”）XDM类。 几乎所有下游平台进�
 
 模式表示将被引入[!DNL Platform]并使用合成模型构建的数据的格式和结构。 如前所述，这些模式由一个类和与该类兼容的零个或多个字段组组成。
 
-例如，描述在零售商店购买情况的模式可能称为“[!UICONTROL Store Transactions]”。 模式实现与标准[!UICONTROL Commerce]字段组和用户定义的[!UICONTROL Product Info]字段组组合的[!DNL XDM ExperienceEvent]类。
+例如，描述在零售商店购买情况的模式可能称为“[!UICONTROL 商店交易]”。 该模式实现与标准[!UICONTROL Commerce]字段组和用户定义的[!UICONTROL 产品信息]字段组组合的[!DNL XDM ExperienceEvent]类。
 
-跟踪网站流量的另一个模式可能称为“[!UICONTROL Web Visits]”。 它还实现[!DNL XDM ExperienceEvent]类，但此次合并标准[!UICONTROL Web]字段组。
+跟踪网站流量的另一个模式可能称为“[!UICONTROL Web访问]”。 它还实现[!DNL XDM ExperienceEvent]类，但此次合并标准[!UICONTROL Web]字段组。
 
-下图显示了这些模式以及每个字段组贡献的字段。 它还包含基于[!DNL XDM Individual Profile]类的两个模式，包括本指南中前面提到的“[!UICONTROL Loyalty Members]”模式。
+下图显示了这些模式以及每个字段组贡献的字段。 它还包含两个基于[!DNL XDM Individual Profile]类的模式，包括本指南中前面提到的“[!UICONTROL 忠诚会员]”模式。
 
 ![](../images/schema-composition/composition.png)
 
@@ -248,8 +251,8 @@ Adobe提供多个标准（“核心”）XDM类。 几乎所有下游平台进�
 
 如果要将来自外部系统的细分引入平台，则必须使用以下组件在您的模式中捕获这些细分：
 
-* [[!UICONTROL Segment definition] 类](../classes/segment-definition.md):使用此标准类捕获外部区段定义的关键属性。
-* [[!UICONTROL Segment Membership Details] 字段组](../field-groups/profile/segmentation.md):将此字段组添加到您 [!UICONTROL XDM Individual Profile] 的模式，以将客户用户档案与特定区段关联。
+* [[!UICONTROL 区段] 定义类](../classes/segment-definition.md):使用此标准类捕获外部区段定义的关键属性。
+* [[!UICONTROL 区段成员] 资格Detailsfield组](../field-groups/profile/segmentation.md):将此字段组添加到您的XDM [!UICONTROL 单个概] 要文件架构，以便将客户用户档案与特定区段关联。
 
 ## 后续步骤
 
@@ -270,7 +273,7 @@ Adobe提供多个标准（“核心”）XDM类。 几乎所有下游平台进�
 
 以下各节载有关于模式组成原则的补充资料。
 
-### 关系表与嵌入对象{#embedded}
+### 关系表与嵌入式对象 {#embedded}
 
 使用关系数据库时，最佳实践是标准化数据，或将实体划分为离散部分，然后在多个表中显示。 为了将数据作为一个整体读取或更新实体，必须使用JOIN对多个单独的表执行读写操作。
 
