@@ -2,14 +2,13 @@
 keywords: Amazon Kinesis;kinesis目标；kinesis
 title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接以从Adobe Experience Platform流化数据。
-translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
+source-git-commit: 7f15da092928ed09f898c9197c4679e834b11779
 workflow-type: tm+mt
-source-wordcount: '505'
+source-wordcount: '507'
 ht-degree: 2%
 
 ---
-
 
 # （测试版）[!DNL Amazon Kinesis]连接
 
@@ -45,21 +44,21 @@ ht-degree: 2%
 
 对于[!DNL Amazon Kinesis]目标，在创建目标工作流中输入以下信息：
 
-## 身份验证步骤{#authentication-step}
+## 帐户步骤{#account-step}
 
 * **[!DNL Amazon Web Services]访问密钥和密钥**:在中 [!DNL Amazon Web Services]，生成一 `access key - secret access key` 对以授予对您帐户的平台 [!DNL Amazon Kinesis] 访问权。请阅读[Amazon Web服务文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)了解更多信息。
 * **区域**:指示要 [!DNL Amazon Web Services] 将数据流化到的区域。
 
 ![帐户步骤中的输入字段](../../assets/catalog/cloud-storage/amazon-kinesis/account.png)
 
-## 设置步骤{#setup-step}
+## 身份验证步骤{#authentication-step}
 
 * **名称**:提供连接的名称  [!DNL Amazon Kinesis]
 * **描述**:提供与的连接说明 [!DNL Amazon Kinesis]。
 * **stream**:提供帐户中现有数据流的名 [!DNL Amazon Kinesis] 称。平台会将数据导出到此流。
-* **[!UICONTROL Marketing actions]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
+* **[!UICONTROL 营销操作]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
-![身份验证步骤中的输入字段](../../assets/catalog/cloud-storage/amazon-kinesis/setup.png)
+![身份验证步骤中的输入字段](../../assets/catalog/cloud-storage/amazon-kinesis/authentication.png)
 
 <!--
 
@@ -120,6 +119,6 @@ ht-degree: 2%
 >[!MORELIKETHIS]
 >
 >* [连接到Amazon Kinesis并使用Flow Service API激活数据](../../api/streaming-destinations.md)
->* [Azure事件集线器目标](./azure-event-hubs.md)
->* [目标类型和类别](../../destination-types.md)
+* [Azure事件集线器目标](./azure-event-hubs.md)
+* [目标类型和类别](../../destination-types.md)
 
