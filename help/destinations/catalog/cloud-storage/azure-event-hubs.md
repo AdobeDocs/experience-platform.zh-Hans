@@ -3,10 +3,9 @@ keywords: Azure事件集线器目标；Azure事件集线器；azure eventhub
 title: （测试版）！DNL Azure 事件集线器]连接
 description: 创建到！DNL Azure 事件 Hubs]存储的实时出站连接，以流化来自Experience Platform的数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-translation-type: tm+mt
-source-git-commit: ce5001d0a1c95901089915ae9836fdd436f12297
+source-git-commit: 7f15da092928ed09f898c9197c4679e834b11779
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '545'
 ht-degree: 2%
 
 ---
@@ -45,21 +44,21 @@ ht-degree: 2%
 
 对于[!DNL Azure Event Hubs]目标，在创建目标工作流中输入以下信息：
 
+## 帐户步骤{#account-step}
+
+* **[!UICONTROL SAS密钥]** 名和 **[!UICONTROL SAS密钥]**:填写您的SAS密钥名称和密钥。了解在[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)中使用SAS键对[!DNL Azure Event Hubs]进行身份验证。
+* **[!UICONTROL 命名空间]**:填写您的 [!DNL Azure Event Hubs] 命名空间。了解[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)中的[!DNL Azure Event Hubs]命名空间。
+
+![帐户步骤中所需的输入](../../assets/catalog/cloud-storage/event-hubs/account.png)
+
 ## 身份验证步骤{#authentication-step}
 
-* **[!UICONTROL SAS Key Name]** 和 **[!UICONTROL SAS Key]**:填写您的SAS密钥名称和密钥。了解在[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)中使用SAS键对[!DNL Azure Event Hubs]进行身份验证。
-* **[!UICONTROL Namespace]**:填写您的 [!DNL Azure Event Hubs] 命名空间。了解[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)中的[!DNL Azure Event Hubs]命名空间。
-
-![身份验证步骤中所需的输入](../../assets/catalog/cloud-storage/event-hubs/authentication.png)
-
-## 设置步骤{#setup-step}
-
-* **[!UICONTROL Name]**:填写连接的名称 [!DNL Azure Event Hubs]。
-* **[!UICONTROL Description]**:提供连接描述。示例：“高级顾客”、“男性对风筝冲浪感兴趣”。
+* **[!UICONTROL 名称]**:填写连接的名称 [!DNL Azure Event Hubs]。
+* **[!UICONTROL 描述]**:提供连接描述。示例：“高级顾客”、“男性对风筝冲浪感兴趣”。
 * **[!UICONTROL eventHubName]**:为流提供到目标的名 [!DNL Azure Event Hubs] 称。
-* **[!UICONTROL Marketing actions]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
+* **[!UICONTROL 营销操作]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
-![设置步骤中所需的数据](../../assets/catalog/cloud-storage/event-hubs/setup.png)
+![身份验证步骤中需要的数据](../../assets/catalog/cloud-storage/event-hubs/authentication.png)
 
 ## 激活区段{#activate-segments}
 
@@ -111,6 +110,6 @@ ht-degree: 2%
 >[!MORELIKETHIS]
 >
 >* [连接到Azure事件中心，并使用流服务API激活数据](../../api/streaming-destinations.md)
->* [AWS Kinesis目标](./amazon-kinesis.md)
->* [目标类型和类别](../../destination-types.md)
+* [AWS Kinesis目标](./amazon-kinesis.md)
+* [目标类型和类别](../../destination-types.md)
 
