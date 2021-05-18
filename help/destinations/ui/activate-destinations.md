@@ -6,10 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请按照以下步骤操作。
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-translation-type: tm+mt
-source-git-commit: 805cb72e91e6446f74cc3461d39841740eb576c7
+source-git-commit: 70be44e919070df910d618af4507b600ad51123c
 workflow-type: tm+mt
-source-wordcount: '2023'
+source-wordcount: '2566'
 ht-degree: 0%
 
 ---
@@ -32,23 +31,23 @@ ht-degree: 0%
 
 适用于：所有目标
 
-在Adobe Experience Platform用户界面中，导航到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Browse]**，然后单击与要激活区段的目标对应的&#x200B;**[!UICONTROL Activate]**&#x200B;按钮，如下图所示。
+在Adobe Experience Platform用户界面中，导航到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 浏览]**，然后单击与要激活区段的目标对应的&#x200B;**[!UICONTROL 激活]**&#x200B;按钮，如下图所示。
 
 ![激活到目标](../assets/ui/activate-destinations/browse-tab-activate.png)
 
 按照下一节中的步骤选择要激活的区段。
 
-## [!UICONTROL Select Segments] 步骤  {#select-segments}
+## [!UICONTROL 选择区] 段步骤  {#select-segments}
 
 适用于：所有目标
 
 ![选择区段步骤](../assets/ui/activate-destinations/select-segments-icon.png)
 
-在&#x200B;**[!UICONTROL Activate destination]**&#x200B;工作流的&#x200B;**[!UICONTROL Select Segments]**&#x200B;页面上，选择一个或多个要激活到目标的区段。 选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续执行下一步。
+在&#x200B;**[!UICONTROL 激活目标]**&#x200B;工作流的&#x200B;**[!UICONTROL 选择区段]**&#x200B;页面上，选择一个或多个要激活到目标的区段。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续执行下一步。
 
 ![细分到目标](../assets/ui/activate-destinations/email-select-segments.png)
 
-## [!UICONTROL Identity mapping] 步骤  {#identity-mapping}
+## [!UICONTROL 标识映] 射步骤  {#identity-mapping}
 
 适用于：社交目标和Google客户匹配广告目标
 
@@ -81,7 +80,7 @@ ht-degree: 0%
 
 未散列命名空间的数据在激活时由[!DNL Platform]自动散列。
 
-属性源数据不会自动散列。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。
+属性源数据不会自动散列。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。
 ![身份映射转换](../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
  
@@ -111,16 +110,16 @@ ht-degree: 0%
 
 未散列命名空间的数据在激活时由[!DNL Platform]自动散列。
 
-属性源数据不会自动散列。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。
+属性源数据不会自动散列。 当源字段包含未哈希化属性时，请选中&#x200B;**[!UICONTROL 应用转换]**&#x200B;选项，以使[!DNL Platform]自动对激活上的数据进行哈希处理。
 ![身份映射转换](../assets/ui/activate-destinations/identity-mapping-gcm-transformation.png)
 
-## **[!UICONTROL Configure]** 步骤  {#configure}
+## **[!UICONTROL 计划步]** 骤 {#scheduling}
 
 适用于：电子邮件营销目标和云存储目标
 
-![配置步骤](../assets/ui/activate-destinations/configure-icon.png)
+![计划步骤](../assets/ui/activate-destinations/scheduling-icon.png)
 
-[!DNL Adobe Experience Platform] 以文件形式导出电子邮件营销和云存储目 [!DNL CSV] 标的数据在&#x200B;**[!UICONTROL Configure]**&#x200B;步骤中，您可以配置要导出的每个区段的计划和文件名。 必须配置计划，但配置文件名是可选的。
+[!DNL Adobe Experience Platform] 以文件形式导出电子邮件营销和云存储目 [!DNL CSV] 标的数据在&#x200B;**[!UICONTROL 计划]**&#x200B;步骤中，您可以配置要导出的每个区段的计划和文件名。 必须配置计划，但配置文件名是可选的。
 
 >[!IMPORTANT]
 > 
@@ -128,18 +127,53 @@ ht-degree: 0%
 >
 >拆分文件名后面附加一个数字，指示文件是较大导出的一部分，如下所示：`filename.csv`、`filename_2.csv`、`filename_3.csv`。
 
+选择与要发送到目标的区段对应的&#x200B;**[!UICONTROL 创建计划]**&#x200B;按钮。
 
-要为区段添加计划，请选择&#x200B;**[!UICONTROL Create schedule]**。
+![创建计划按钮](../assets/ui/activate-destinations/create-schedule-button.png)
 
-![](../assets/ui/activate-destinations/configure-destination-schedule.png)
+### 导出完整文件{#export-full-files}
 
-此时将显示一个对话框，其中显示用于创建区段计划的选项。
+选择&#x200B;**[!UICONTROL 导出完整文件]**，以使导出的文件包含符合该段条件的所有用户档案的完整快照。
 
-* **文件导出**:您可以选择导出完整文件或增量文件。导出完整文件会发布符合该区段条件的所有用户档案的完整快照。 导出增量文件会发布自上次导出以来符合该区段资格的用户档案增量。
-* **频率**:如 **[!UICONTROL Export full files]** 果选中，您可以选择导出 **[!UICONTROL Once]** 或 **[!UICONTROL Daily]**。如果选择了&#x200B;**[!UICONTROL Export incremental files]**，则您只能选择导出&#x200B;**[!UICONTROL Daily]**。 导出文件&#x200B;**[!UICONTROL Once]**&#x200B;时，将一次性导出文件。 导出文件&#x200B;**[!UICONTROL Daily]**&#x200B;时，如果选择了完整文件，则每天从开始日期到结束日期(UTC:00 AM(EST:7:00 PM))导出文件；如果选择了增量文件，则每天导出12:00 PM(UTC:7:00 AM EST)。
-* **日期**:如 **[!UICONTROL Once]** 果选中，则可以选择一次导出的日期。如果选择&#x200B;**[!UICONTROL Daily]**，则可以选择导出的开始和结束日期。
+![导出完整文件](../assets/ui/activate-destinations/export-full-files.png)
 
-![](../assets/ui/activate-destinations/export-full-file.png)
+1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器在一次性（**[!UICONTROL 一次]**）或&#x200B;**[!UICONTROL 每日]**&#x200B;导出之间进行选择。 导出完整文件&#x200B;**[!UICONTROL Daily]**&#x200B;时，每天从开始日期到UTC（东部时间晚上7:00）的结束日期导出文件。
+2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器以[!DNL UTC]格式选择应在何时进行导出。 导出文件&#x200B;**[!UICONTROL Daily]**&#x200B;时，每天将文件从开始日期导出到选择时的结束日期。
+
+   >[!IMPORTANT]
+   >
+   >在一天的某个时间导出文件的选项当前为测试版，并且仅对选定数量的客户可用。
+
+3. 使用&#x200B;**[!UICONTROL 日期]**&#x200B;选择器选择应进行导出的日期或间隔。
+4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
+
+### 导出增量文件{#export-incremental-files}
+
+选择&#x200B;**[!UICONTROL 导出增量文件]**&#x200B;以使导出的文件仅包含上次导出后限定该段的用户档案。
+
+>[!IMPORTANT]
+>
+>第一个导出的增量文件包括符合某个区段资格的所有用户档案，这些区段用作回填。
+
+![导出增量文件](../assets/ui/activate-destinations/export-incremental-files.png)
+
+1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器在&#x200B;**[!UICONTROL Daily]**&#x200B;或&#x200B;**[!UICONTROL Hourly]**&#x200B;导出中进行选择。 导出增量文件&#x200B;**[!UICONTROL Daily]**&#x200B;时，每天从开始日期到UTC（东部标准时间早7:00）中午12:00结束日期导出文件。
+   * 选择&#x200B;**[!UICONTROL 每小时]**&#x200B;时，使用&#x200B;**[!UICONTROL 每]**&#x200B;选择器在&#x200B;**[!UICONTROL 3]**、**[!UICONTROL 6]**、**[!UICONTROL 8]**&#x200B;和&#x200B;**[!UICONTROL 12]**&#x200B;小时选项之间进行选择。
+
+      >[!IMPORTANT]
+      >
+      >每3、6、8或12小时导出增量文件的选项目前处于测试阶段，并且仅对选定数量的客户可用。 非测试版客户每天可以导出增量文件一次。
+
+2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器以[!DNL UTC]格式选择应在何时进行导出。
+
+   >[!IMPORTANT]
+   >
+   >选择导出的一天时间选项仅对选定数量的客户可用。 非测试版客户每天可以在UTC中午12:00（东部标准时间早上7:00）导出增量文件一次。
+
+3. 使用&#x200B;**[!UICONTROL 日期]**&#x200B;选择器选择应进行导出的日期或间隔。
+4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
+
+### 配置文件名{#file-names}
 
 默认文件名由目标名称、区段ID以及日期和时间指示器组成。 例如，您可以编辑导出的文件名以区分不同的活动，或将数据导出时间附加到文件。
 
@@ -147,29 +181,31 @@ ht-degree: 0%
 
 ![配置文件名](../assets/ui/activate-destinations/configure-name.png)
 
-在文件名编辑器中，可以选择要添加到文件名中的不同组件。 无法从文件名中删除目标名称和区段ID。 除了这些外，您还可以添加以下内容：
-
-* **[!UICONTROL Segment name]**:您可以将段名称追加到文件名。
-* **[!UICONTROL Date and time]**:在添加格 `MMDDYYYY_HHMMSS` 式或生成文件时的Unix 10位时间戳之间进行选择。如果您希望您的文件在每次增量导出时都生成动态文件名，请选择其中一个选项。
-* **[!UICONTROL Custom text]**:将自定义文本添加到文件名。
-
-选择&#x200B;**[!UICONTROL Apply changes]**&#x200B;以确认您的选择。
-
->[!IMPORTANT]
-> 
->如果不选择&#x200B;**[!UICONTROL Date and Time]**&#x200B;组件，则文件名将是静态的，新导出的文件将用每次导出覆盖存储位置上的先前文件。 当从存储位置将循环导入作业运行到电子邮件营销平台时，建议使用此选项。
+在文件名编辑器中，可以选择要添加到文件名中的不同组件。
 
 ![编辑文件名选项](../assets/ui/activate-destinations/activate-workflow-configure-step-2.png)
 
-配置完所有区段后，请选择&#x200B;**[!UICONTROL Next]**&#x200B;继续。
+无法从文件名中删除目标名称和区段ID。 除了这些外，您还可以添加以下内容：
 
-## **[!UICONTROL Segment schedule]** 步骤  {#segment-schedule}
+* **[!UICONTROL 区段名称]**:您可以将段名称追加到文件名。
+* **[!UICONTROL 日期和时间]**:在添加格 `MMDDYYYY_HHMMSS` 式或生成文件时的Unix 10位时间戳之间进行选择。如果您希望您的文件在每次增量导出时都生成动态文件名，请选择其中一个选项。
+* **[!UICONTROL 自定义文本]**:将自定义文本添加到文件名。
+
+选择&#x200B;**[!UICONTROL 应用更改]**&#x200B;以确认您的选择。
+
+>[!IMPORTANT]
+> 
+>如果您未选择&#x200B;**[!UICONTROL 日期和时间]**&#x200B;组件，则文件名将是静态的，新导出的文件将使用每次导出覆盖存储位置上的以前文件。 当从存储位置将循环导入作业运行到电子邮件营销平台时，建议使用此选项。
+
+配置完所有区段后，请选择&#x200B;**[!UICONTROL 下一步]**&#x200B;继续。
+
+## **[!UICONTROL 区段计]** 划  {#segment-schedule}
 
 适用于：广告目标，社交目标
 
 ![细分计划步骤](../assets/ui/activate-destinations/segment-schedule-icon.png)
 
-在&#x200B;**[!UICONTROL Segment schedule]**&#x200B;页面上，可以设置向目标发送数据的开始日期以及向目标发送数据的频率。
+在&#x200B;**[!UICONTROL 区段计划]**&#x200B;页上，可以设置向目标发送数据的开始日期以及向目标发送数据的频率。
 
 >[!IMPORTANT]
 >
@@ -179,25 +215,17 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->对于Google客户匹配，在激活[!DNL IDFA]或[!DNL GAID]区段时，必须在此步骤中提供[!UICONTROL App ID]。
+>对于Google客户匹配，在激活[!DNL IDFA]或[!DNL GAID]区段时，必须在此步骤中提供[!UICONTROL 应用程序ID]。
 
 ![输入应用程序id](../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
-## **[!UICONTROL Scheduling]** 步骤  {#scheduling}
-
-适用于：电子邮件营销目标和云存储目标
-
-![细分计划步骤](../assets/ui/activate-destinations/scheduling-icon.png)
-
-在&#x200B;**[!UICONTROL Scheduling]**&#x200B;页面上，您可以看到向目标发送数据的开始日期以及向目标发送数据的频率。 无法编辑这些值。
-
-## **[!UICONTROL Select attributes]** 步骤  {#select-attributes}
+## **[!UICONTROL 选择属]** 性步骤  {#select-attributes}
 
 适用于：电子邮件营销目标和云存储目标
 
 ![选择属性步骤](../assets/ui/activate-destinations/select-attributes-icon.png)
 
-在&#x200B;**[!UICONTROL Select attributes]**&#x200B;页面上，选择&#x200B;**[!UICONTROL Add new field]**&#x200B;并选择要发送到目标的属性。
+在&#x200B;**[!UICONTROL 选择属性]**&#x200B;页面上，选择&#x200B;**[!UICONTROL 添加新字段]**，然后选择要发送到目标的属性。
 
 >[!NOTE]
 >
@@ -207,15 +235,154 @@ ht-degree: 0%
 * 如果选择了`segmentMembership.status`字段，则导出的文件在初始完整快照中包括&#x200B;**[!UICONTROL Active]**&#x200B;成员，在后续增量导出中包括&#x200B;**[!UICONTROL Active]**&#x200B;和&#x200B;**[!UICONTROL Expired]**&#x200B;成员。
 * 如果未选择`segmentMembership.status`字段，则导出的文件在初始完整快照和后续增量导出中仅包含&#x200B;**[!UICONTROL Active]**&#x200B;成员。
 
-![推荐属性](../assets/ui/activate-destinations/mark-mandatory.png)
+![推荐属性](../assets/ui/activate-destinations/mandatory-deduplication.png)
 
-此外，您还可以将不同属性标记为必需。 将某个属性标记为必填，这样导出的区段就必须包含该属性。 因此，它可以用作额外的过滤形式。 将属性标记为必填项是&#x200B;**不**。
+### 必选属性{#mandatory-attributes}
+
+您可以将属性标记为必填，以确保[!DNL Platform]仅导出包含特定属性的用户档案。 因此，它可以用作额外的过滤形式。 将属性标记为必填项是&#x200B;**不**。
+
+不选择必选属性将导出所有限定的用户档案，而不管其属性。
 
 建议其中一个属性是模式的[唯一标识符](../../destinations/catalog/email-marketing/overview.md#identity)。 有关必选属性的详细信息，请参阅[电子邮件营销目标](../../destinations/catalog/email-marketing/overview.md#identity)文档中的标识部分。
+
+### 外部重复数据删除键{#deduplication-keys}
+
+>[!IMPORTANT]
+>
+>使用外部重复数据删除键的选项目前处于测试阶段，并且仅对选定数量的客户可用。
+
+外部重复数据删除键消除了在一个导出文件中具有相同用户档案的多个记录的可能性。
+
+在[!DNL Platform]中有三种使用外部重复数据删除键的方法：
+
+* 使用单个身份命名空间作为[!UICONTROL 外部重复数据删除键]
+* 将[!DNL XDM]用户档案中的单个用户档案属性用作[!UICONTROL 外部重复数据删除键]
+* 将[!DNL XDM]用户档案的两个用户档案属性组合用作复合键
+
+>[!IMPORTANT]
+>
+> 您可以将单个标识命名空间导出到目标，该命名空间会自动设置为外部重复数据删除键。 不支持向目标发送多个命名空间。
+> 
+> 不能将标识命名空间和用户档案属性的组合用作外部重复数据删除键。
+
+### 外部重复数据删除示例{#deduplication-example}
+
+此示例说明了外部重复数据删除的工作方式，具体取决于选定的外部重复数据删除键。
+
+让我们考虑以下两个用户档案。
+
+**用户档案A**
+
+```json
+{
+  "identityMap": {
+    "Email": [
+      {
+        "id": "johndoe_1@example.com"
+      },
+      {
+        "id": "johndoe_2@example.com"
+      }
+    ]
+  },
+  "segmentMembership": {
+    "ups": {
+      "fa5c4622-6847-4199-8dd4-8b7c7c7ed1d6": {
+        "status": "existing",
+        "lastQualificationTime": "2021-03-10 10:03:08"
+      }
+    }
+  },
+  "person": {
+    "name": {
+      "lastName": "Doe",
+      "firstName": "John"
+    }
+  },
+  "personalEmail": {
+    "address": "johndoe@example.com"
+  }
+}
+```
+
+**用户档案 B**
+
+```json
+{
+  "identityMap": {
+    "Email": [
+      {
+        "id": "johndoe_1@example.com"
+      },
+      {
+        "id": "johndoe_2@example.com"
+      }
+    ]
+  },
+  "segmentMembership": {
+    "ups": {
+      "fa5c4622-6847-4199-8dd4-8b7c7c7ed1d6": {
+        "status": "existing",
+        "lastQualificationTime": "2021-04-10 11:33:28"
+      }
+    }
+  },
+  "person": {
+    "name": {
+      "lastName": "D",
+      "firstName": "John"
+    }
+  },
+  "personalEmail": {
+    "address": "johndoe@example.com"
+  }
+}
+```
+
+### 外部重复数据删除用例1:无外部重复数据删除
+
+不使用外部重复数据删除，导出文件将包含以下条目。
+
+| personalEmail | firstName | lastName |
+|---|---|---|
+| johndoe@example.com | 约翰 | Doe |
+| johndoe@example.com | 约翰 | D |
+
+
+### 外部重复数据删除用例2:外部重复数据删除基于身份命名空间
+
+假定由[!DNL Email]命名空间外部重复数据删除，导出文件将包含以下条目。 用户档案 B是符合区段资格的最新版本，因此它是唯一导出的版本。
+
+| 电子邮件* | personalEmail | firstName | lastName |
+|---|---|---|---|
+| johndoe_1@example.com | johndoe@example.com | 约翰 | D |
+| johndoe_2@example.com | johndoe@example.com | 约翰 | D |
+
+### 外部重复数据删除用例3:外部重复数据删除基于单一用户档案属性
+
+假定外部重复数据删除为`personal Email`属性，则导出文件将包含以下条目。 用户档案 B是符合区段资格的最新版本，因此它是唯一导出的版本。
+
+| personalEmail* | firstName | lastName |
+|---|---|---|
+| johndoe@example.com | 约翰 | D |
+
+
+### 外部重复数据删除用例4:外部重复数据删除基于两个用户档案属性(复合外部重复数据删除键)
+
+假定按复合键`personalEmail + lastName`进行外部重复数据删除，导出文件将包含以下条目。
+
+| personalEmail* | lastName* | firstName |
+|---|---|---|
+| johndoe@example.com | D | 约翰 |
+| johndoe@example.com | Doe | 约翰 |
+
+
+Adobe建议选择一个身份命名空间（如[!DNL CRM ID]或电子邮件地址）作为外部重复数据删除密钥，以确保所有用户档案记录都是唯一标识的。
 
 >[!NOTE]
 > 
 >如果任何激活使用标签已应用到数据集（而非整个数据集）中的某些字段，则在以下条件下将执行这些字段级别标签：
+>
 >* 这些字段用于区段定义。
 >* 字段将配置为目标目标的投影属性。
 
@@ -223,13 +390,13 @@ ht-degree: 0%
 > 
 例如，如果字段`person.name.firstName`具有与目标的营销操作冲突的特定数据使用标签，则在审核步骤中将显示数据使用策略违规。 有关详细信息，请参阅Adobe Experience Platform中的[数据治理](../../rtcdp/privacy/data-governance-overview.md#destinations)。
 
-## **[!UICONTROL Review]** 步骤  {#review}
+## **[!UICONTROL 查看步]** 骤 {#review}
 
 适用于：所有目标
 
 ![审阅步骤](../assets/ui/activate-destinations/review-icon.png)
 
-在&#x200B;**[!UICONTROL Review]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL Cancel]**&#x200B;以划分流，选择&#x200B;**[!UICONTROL Back]**&#x200B;以修改设置，或选择&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择，并将开始发送到目标。
+在&#x200B;**[!UICONTROL 查看]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL 取消]**&#x200B;以分组流，选择&#x200B;**[!UICONTROL 返回]**&#x200B;以修改设置，或选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择，并开始将数据发送到目标。
 
 >[!IMPORTANT]
 >
@@ -237,7 +404,7 @@ ht-degree: 0%
 
 ![数据策略违规](../assets/common/data-policy-violation.png)
 
-如果未检测到任何策略违规，请选择&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择，并开始将数据发送到目标。
+如果未检测到任何策略违规，请选择&#x200B;**[!UICONTROL 完成]**&#x200B;以确认您的选择，并开始将数据发送到目标。
 
 ![确认选择](../assets/ui/activate-destinations/confirm-selection.png)
 
@@ -245,12 +412,10 @@ ht-degree: 0%
 
 ### 电子邮件营销目标和云存储目标{#esp-and-cloud-storage}
 
-对于电子邮件营销目标和云存储目标，Adobe Experience Platform会在您提供的存储位置创建制表符分隔的`.csv`或`.txt`文件。 期望每天在您的存储位置创建新文件。 默认文件格式为：
-`<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv|txt`
+对于电子邮件营销目标和云存储目标，Adobe Experience Platform会在您提供的存储位置创建制表符分隔的`.csv`文件。 期望每天在您的存储位置创建新文件。 默认文件格式为：
+`<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
 
-请注意，您可以编辑文件格式。 有关详细信息，请转至云存储目标和电子邮件营销目标的[配置](#configure)步骤。
-
-使用默认文件格式，您连续三天收到的文件可能如下所示：
+您连续三天收到的文件可能如下所示：
 
 ```console
 Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv
@@ -276,6 +441,6 @@ Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_202004100
 
 要禁用现有激活流，请执行以下步骤：
 
-1. 在左侧导航栏中选择&#x200B;**[!UICONTROL Destinations]**，然后单击&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡，然后单击目标名称。
-2. 单击右边栏中的&#x200B;**[!UICONTROL Enabled]**&#x200B;控件以更改激活流状态。
+1. 在左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**，然后单击&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡，然后单击目标名称。
+2. 单击右边栏中的&#x200B;**[!UICONTROL 已启用]**&#x200B;控件以更改激活流状态。
 3. 在&#x200B;**更新激活流状态**&#x200B;窗口中，选择&#x200B;**确认**&#x200B;以禁用数据流。
