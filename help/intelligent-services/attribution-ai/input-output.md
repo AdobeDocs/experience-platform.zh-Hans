@@ -5,10 +5,9 @@ title: 输入和输出Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: 以下文档概述了Attribution AI中使用的不同输入和输出。
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 91f586746c8d1db4e9219b261d7be36e572f1b50
 workflow-type: tm+mt
-source-wordcount: '2175'
+source-wordcount: '2230'
 ht-degree: 3%
 
 ---
@@ -48,7 +47,11 @@ Attribution AI通过分析以下数据集之一来计算算法得分：
 | Marketing.campaigngroup | 触点 |
 | 商务 | 转化 |
 
-通常，归因在“商务”下的转换列（如订单、购买和结帐）上运行。 强烈建议使用“渠道”和“营销”栏来定义接触点，以便获得良好的洞察。 但是，您可以将任何其他列与上述列一起加入，以配置为转换或触点定义。
+通常，归因在“商务”下的转换列（如订单、购买和结帐）上运行。 “渠道”和“营销”的列用于定义Attribution AI的接触点（例如，`channel._type = 'https://ns.adobe.com/xdm/channel-types/email'`）。 为获得最佳结果和洞察，强烈建议您尽可能多地加入转化列和接触点列。 此外，您不仅限于上述列。 您可以将任何其他推荐或自定义列作为转换或触点定义。
+
+>[!TIP]
+>
+>如果您在CEE模式中使用Adobe Analytics数据，则Analytics的触点信息通常存储在`channel.typeAtSource`中（例如`channel.typeAtSource = 'email'`）。
 
 以下列不是必需的，但如果您有可用的信息，建议您将这些列包含在CEE模式中。
 
@@ -58,7 +61,7 @@ Attribution AI通过分析以下数据集之一来计算算法得分：
 - web.webPageDetails
 - xdm:productListItems
 
-### 历史数据 {#data-requirements}
+## 历史数据 {#data-requirements}
 
 >[!IMPORTANT]
 >
@@ -145,11 +148,11 @@ Attribution AI以尽可能最细的粒度输出归因分数，以便您可以按
 
 ### 查看原始分数路径(UI){#raw-score-path}
 
-您可以在UI中视图原始分数的路径。 开始：在平台UI中选择&#x200B;**[!UICONTROL Schemas]**，然后在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡中搜索并选择您的归因AI得分模式。
+您可以在UI中视图原始分数的路径。 开始：在平台UI中选择&#x200B;**[!UICONTROL 模式]**，然后在&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中搜索并选择您的归因AI得分模式。
 
 ![选择模式](./images/input-output/schemas_browse.png)
 
-接下来，在UI的&#x200B;**[!UICONTROL Structure]**&#x200B;窗口中选择一个字段，此时将打开&#x200B;**[!UICONTROL Field properties]**&#x200B;选项卡。 在&#x200B;**[!UICONTROL Field properties]**&#x200B;中是映射到原始分数的路径字段。
+接下来，在UI的&#x200B;**[!UICONTROL 结构]**&#x200B;窗口中选择一个字段，此时将打开&#x200B;**[!UICONTROL 字段属性]**&#x200B;选项卡。 在&#x200B;**[!UICONTROL 字段属性]**&#x200B;中是映射到原始分数的路径字段。
 
 ![选择模式](./images/input-output/field_properties.png)
 
