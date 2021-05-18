@@ -2,14 +2,13 @@
 keywords: SFTP;sftp
 title: SFTP连接
 description: 创建到SFTP服务器的实时出站连接，以定期从Adobe Experience Platform导出分隔的数据文件。
-translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+exl-id: 27abfc38-ec19-4321-b743-169370d585a0
+source-git-commit: a21abb44bb9cbe6fefa0ff70a1ff19e31cc0c7de
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '230'
 ht-degree: 0%
 
 ---
-
 
 # SFTP连接
 
@@ -39,7 +38,7 @@ ht-degree: 0%
 
 ## 导出的数据{#exported-data}
 
-对于SFTP目标，平台会在您提供的存储位置创建制表符分隔的`.txt`或`.csv`文件。 有关这些文件的详细信息，请参阅区段存储教程中的[电子邮件营销目标和云激活目标](../../ui/activate-destinations.md#esp-and-cloud-storage)。
+对于[!DNL SFTP]目标，平台会在您提供的存储位置创建制表符分隔的`.csv`文件。 有关这些文件的详细信息，请参阅区段存储教程中的[电子邮件营销目标和云激活目标](../../ui/activate-destinations.md#esp-and-cloud-storage)。
 
 ## IP地址允许列表
 
