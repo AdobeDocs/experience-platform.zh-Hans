@@ -5,10 +5,9 @@ title: Marketo Engage源的映射字段
 topic-legacy: overview
 description: 下表包含Marketo数据集中的字段与其相应XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-translation-type: tm+mt
-source-git-commit: e4823a2b787667fc181f8a4d474c7d2eb73c8eec
+source-git-commit: db7fde343b3ebf4428020c8256df2b9cfa1486ad
 workflow-type: tm+mt
-source-wordcount: '330'
+source-wordcount: '333'
 ht-degree: 4%
 
 ---
@@ -210,7 +209,7 @@ ht-degree: 4%
 
 {style=&quot;table-layout:auto&quot;}
 
-## 机会{#opportunities}
+## 机会 {#opportunities}
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
@@ -256,14 +255,11 @@ ht-degree: 4%
 
 {style=&quot;table-layout:auto&quot;}
 
-## 人{#persons}
+## 人 {#persons}
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
 | `id` | `personID` | 主要身份 |
-| `emailSuspended` | `b2b.personOptInOut._channels.email` |
-| `emailSuspendedAt` | `b2b.personOptInOut.optOutDetails.email.optOutDate` |
-| `emailSuspendedCause` | `b2b.personOptInOut.optOutDetails.email.optOutReason` |
 | `contactCompany` | `b2b.accountID` |
 | `marketingSuspended` | `b2b.isMarketingSuspended` |
 | `marketingSuspendedCause` | `b2b.marketingSuspendedCause` |
@@ -310,7 +306,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->`to_object('ECID',arrays_to_objects('id',explode(ecids)))`源字段是一个计算字段，必须使用平台UI中的[!UICONTROL Add calculated field]选项添加该字段。 有关详细信息，请参阅关于[添加计算字段](../../../../ingestion/tutorials/map-a-csv-file.md)的教程。
+>`to_object('ECID',arrays_to_objects('id',explode(ecids)))`源字段是一个计算字段，必须使用平台UI中的[!UICONTROL 添加计算字段]选项添加该字段。 有关详细信息，请参阅关于[添加计算字段](../../../../ingestion/tutorials/map-a-csv-file.md)的教程。
 
 ## 后续步骤
 
