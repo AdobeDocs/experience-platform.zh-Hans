@@ -3,9 +3,9 @@ keywords: Amazon S3;S3目标；s3;amazon s3
 title: Amazon S3连接
 description: 创建到Amazon Web Services(AWS)S3存储的实时出站连接，以定期将制表符分隔或CSV数据文件从Adobe Experience Platform导出到您自己的S3存储桶中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: 49a59e5b081243679f5d94b03a63d30df22cdc6a
+source-git-commit: 70be44e919070df910d618af4507b600ad51123c
 workflow-type: tm+mt
-source-wordcount: '270'
+source-wordcount: '269'
 ht-degree: 0%
 
 ---
@@ -59,4 +59,4 @@ Commenting out this note, as write permissions are assigned through the s3:PutOb
 
 ## 导出的数据{#exported-data}
 
-对于[!DNL Amazon S3]目标，[!DNL Platform]会在您提供的存储位置创建制表符分隔的`.txt`或`.csv`文件。 有关这些文件的详细信息，请参阅区段存储教程中的[电子邮件营销目标和云激活目标](../../ui/activate-destinations.md#esp-and-cloud-storage)。
+对于[!DNL Amazon S3]目标，[!DNL Platform]会在您提供的存储位置创建制表符分隔的`.csv`文件。 有关这些文件的详细信息，请参阅区段存储教程中的[电子邮件营销目标和云激活目标](../../ui/activate-destinations.md#esp-and-cloud-storage)。
