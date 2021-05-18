@@ -5,9 +5,9 @@ title: Marketo命名空间
 topic-legacy: overview
 description: 本文档概述创建Marketo Engage源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: af728fb508c514db3d5871114f9a406c1ed428f2
+source-git-commit: 609b951cbde880a9f354b343adb1796def0a812c
 workflow-type: tm+mt
-source-wordcount: '1670'
+source-wordcount: '1677'
 ht-degree: 4%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 4%
 
 使用[!DNL Marketo]命名空间和模式自动生成实用程序的第一步是设置您的平台开发人员控制台和[!DNL Postman]环境。
 
-- 您可以从此[GitHub存储库](https://git.corp.adobe.com/marketo-engineering/namespace_schema_utility)下载命名空间和模式自动生成实用程序集合和环境。
+- 您可以从此[GitHub存储库](https://github.com/adobe/experience-platform-postman-samples/tree/master/Postman%20Collections/CDP%20Namespaces%20and%20Schemas%20Utility)下载命名空间和模式自动生成实用程序集合和环境。
 - 有关使用平台API的信息，包括有关如何收集所需标头值和读取示例API调用的详细信息，请参阅[平台API入门指南](../../../../landing/api-guide.md)。
 - 有关如何为平台API生成凭据的信息，请参阅教程[验证和访问Experience PlatformAPI](../../../../landing/api-authentication.md)。
 - 有关如何为平台API设置[!DNL Postman]的信息，请参阅教程（位于[设置开发人员控制台和 [!DNL Postman]](../../../../landing/postman.md)）。
