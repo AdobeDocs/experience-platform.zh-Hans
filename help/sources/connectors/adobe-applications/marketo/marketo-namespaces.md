@@ -5,10 +5,9 @@ title: Marketo命名空间
 topic-legacy: overview
 description: 本文档概述创建Marketo Engage源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-translation-type: tm+mt
-source-git-commit: 8dd7b1724f3de12bf6a3a1b77ee8050fd1a9eaf3
+source-git-commit: af728fb508c514db3d5871114f9a406c1ed428f2
 workflow-type: tm+mt
-source-wordcount: '1602'
+source-wordcount: '1670'
 ht-degree: 4%
 
 ---
@@ -56,6 +55,20 @@ ht-degree: 4%
 | `has_msi` | 一个布尔值，指示您是否被限定为[!DNL Marketo Sales Insight]。 | `false` |
 
 {style=&quot;table-layout:auto&quot;}
+
+### 运行脚本
+
+通过设置[!DNL Postman]集合和环境，您现在可以通过[!DNL Postman]接口运行脚本。
+
+在[!DNL Postman]接口中，选择自动生成器实用程序的根文件夹，然后从顶部标题中选择&#x200B;**[!DNL Run]**。
+
+![根文件夹](../images/marketo/root-folder.png)
+
+出现[!DNL Runner]接口。 在此处，确保选中所有复选框，然后选择&#x200B;**[!DNL Run Adobe I/O Access Token Generation + Automate Namespace creation]**。
+
+![运行生成器](../images/marketo/run-generator.png)
+
+成功的请求会根据测试版规范创建B2B命名空间和模式。
 
 ## [!DNL Marketo] 命名空间
 
