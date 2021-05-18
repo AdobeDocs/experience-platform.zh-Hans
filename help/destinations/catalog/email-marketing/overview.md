@@ -3,14 +3,13 @@ keywords: 电子邮件；电子邮件；电子邮件目标
 title: 电子邮件营销目标概述
 type: Tutorial
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，例如发送促销电子邮件活动。
-translation-type: tm+mt
-source-git-commit: 02754055e2be8a45a0699386cb559dad8f25717c
+exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
+source-git-commit: a21abb44bb9cbe6fefa0ff70a1ff19e31cc0c7de
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '790'
 ht-degree: 1%
 
 ---
-
 
 # 电子邮件营销目标概述{#email-marketing-destinations}
 
@@ -20,23 +19,23 @@ ht-degree: 1%
 
 连接到电子邮件营销目标是一个三步过程([配置目标](#connect-destination)、[激活区段](#select-segments)、[将存储位置的数据导入目标](#import-data-into-destination))。 本页将进一步介绍每个步骤。
 
-在连接目标流中（如以下部分所述），连接到Amazon S3或SFTP。 Platform将您的区段导出为`.csv`或`.txt`文件，并将它们发送到您的首选位置。 计划从平台中启用的存储位置导入电子邮件营销平台中的数据。 导入数据的过程因每个合作伙伴而异。 有关详细信息，请阅读各个目标文章。
+在连接目标流中（如以下部分所述），连接到[!DNL Amazon S3]或[!DNL SFTP]。 平台将您的区段导出为`.csv`文件，并将它们发送到您的首选位置。 从[!DNL Platform]中启用的计划位置您在电子邮件营销平台中的存储导入。 导入数据的过程因每个合作伙伴而异。 有关详细信息，请阅读各个目标文章。
 
 ## 配置目标{#connect-destination}
 
-在&#x200B;**[!UICONTROL Connections]** > **[!UICONTROL Destinations]**&#x200B;中，选择要连接的电子邮件营销目标，然后选择&#x200B;**[!UICONTROL Configure]**。
+在&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**&#x200B;中，选择要连接到的电子邮件营销目标，然后选择&#x200B;**[!UICONTROL 配置]**。
 
 ![连接到目标](../../assets/catalog/email-marketing/overview/connect-email-marketing.png)
 
-在&#x200B;**[!UICONTROL Account]**&#x200B;步骤中，如果您之前已设置到电子邮件营销目标的连接，请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;并选择现有连接。 或者，您也可以选择&#x200B;**[!UICONTROL New Account]**&#x200B;来设置到电子邮件营销目标的新连接。 在&#x200B;**[!UICONTROL Connection type]**&#x200B;选择器中，您可以在[!UICONTROL Amazon S3]、[!UICONTROL Azure Blob]、[!UICONTROL SFTP with Password]或[!UICONTROL SFTP with SSH Key]之间进行选择。 根据连接类型，填写以下信息，然后选择&#x200B;**[!UICONTROL Connect]**。
+在&#x200B;**[!UICONTROL 帐户]**&#x200B;步骤中，如果您之前已设置到电子邮件营销目标的连接，请选择&#x200B;**[!UICONTROL 现有帐户]**&#x200B;并选择您的现有连接。 或者，您也可以选择&#x200B;**[!UICONTROL 新建帐户]**&#x200B;来设置到电子邮件营销目标的新连接。 在&#x200B;**[!UICONTROL 连接类型]**&#x200B;选择器中，可以在[!UICONTROL Amazon S3]、[!UICONTROL Azure Blob]、[!UICONTROL 带密码的SFTP或[!UICONTROL 带SSH密钥的SFTP]之间进行选择。 ]根据连接类型，填写以下信息，然后选择&#x200B;**[!UICONTROL Connect]**。
 
 - 对于&#x200B;**S3连接**，必须提供Amazon访问密钥ID和密钥访问密钥。
 - 对于&#x200B;**具有Password**&#x200B;连接的SFTP，您必须为SFTP服务器提供域、端口、用户名和密码。
 - 对于具有SSH密钥&#x200B;**连接的** SFTP，必须为SFTP服务器提供域、端口、用户名和密码。
 
-或者，您也可以附加RSA格式的公钥，以在&#x200B;**[!UICONTROL Key]**&#x200B;部分下为导出的文件添加加密。 您的公钥必须写入为[!DNL Base64]编码字符串。
+或者，您也可以附加RSA格式的公钥，以在&#x200B;**[!UICONTROL 密钥]**&#x200B;部分下为导出的文件添加加密。 您的公钥必须写入为[!DNL Base64]编码字符串。
 
-在&#x200B;**[!UICONTROL Authentication]**&#x200B;步骤中，输入新目标的名称和说明以及导出文件的文件格式。
+在&#x200B;**[!UICONTROL 身份验证]**&#x200B;步骤中，输入新目标的名称和说明以及导出文件的文件格式。
 
 如果您在上一步中选择了Amazon S3作为存储选项，请在云存储目标中插入存储段名称和文件夹路径，以便将文件传送到该目标。 对于SFTP存储选项，插入要传送文件的文件夹路径。
 
@@ -46,7 +45,7 @@ ht-degree: 1%
 
 ## 选择要包含在目标导出中的区段成员{#select-segments}
 
-在&#x200B;**[!UICONTROL Select Segments]**&#x200B;页面上，选择要发送到目标的区段。 有关以下部分中字段的更多信息。
+在&#x200B;**[!UICONTROL 选择区段]**&#x200B;页面上，选择要发送到目标的区段。 有关以下部分中字段的更多信息。
 
 ![选择区段](../../assets/common/email-select-segments.png)
 
@@ -59,7 +58,7 @@ ht-degree: 1%
 在此步骤中，您将选择要导出到电子邮件营销目标的字段，并标记哪些字段为必填字段。
 有关此步骤的信息，请参阅激活目标教程中的[选择属性](../../ui/activate-destinations.md#select-attributes)步骤。
 
-## 身份{#identity}
+## 身份 {#identity}
 
 Adobe建议您从[合并模式](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 这是您的用户身份被抠离的字段。 最常用的字段是电子邮件地址，但也可以是忠诚度项目ID或电话号码。 请参阅下表，了解该模式中最常见的唯一标识符及其XDM字段。
 
@@ -97,7 +96,7 @@ Adobe建议您从[合并模式](../../../profile/home.md#profile-fragments-and-u
 
 有关如何将区段激活到电子邮件营销目标的说明，请参阅[将用户档案和区段激活到目标](../../ui/activate-destinations.md)。
 
-## Journey Orchestration
+## 其他资源
 
 - [将数据激活到目标](../../ui/activate-destinations.md)
 - [使用流服务API创建电子邮件营销目标并激活数据](../../api/email-marketing.md)
