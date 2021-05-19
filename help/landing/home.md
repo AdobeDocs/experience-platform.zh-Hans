@@ -5,19 +5,14 @@ title: Adobe Experience Platform 概述
 topic-legacy: getting started
 description: Adobe Experience Platform使组织能够在应用数据科学和机器学习之前集中化和标准化客户数据，从而显着改进丰富的个性化体验的设计和投放。
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5fae56fcfc395984d29c74e90cb56b3964d99767
 workflow-type: tm+mt
-source-wordcount: '459'
-ht-degree: 8%
+source-wordcount: '437'
+ht-degree: 9%
 
 ---
 
 # Adobe Experience Platform概述
-
->[!NOTE]
->
->Adobe Experience Platform文档最近已移动。 请花点时间查看新的导航并更新任何现有书签。
 
 Adobe Experience Platform是市场上功能最强大、最灵活、最开放的系统，用于构建和管理可推动客户体验的完整解决方案。 [!DNL Experience Platform] 让组织可以实现源自任何系统的客户数据和内容的集中化和标准化，并应用数据科学和机器学习来显著改进丰富的个性化体验的设计和交付。
 
