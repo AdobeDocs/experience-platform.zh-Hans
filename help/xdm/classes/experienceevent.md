@@ -1,13 +1,13 @@
 ---
-keywords: Experience Platform；主页；热门主题；模式;模式;XDM；个人用户档案；字段；模式;模式；标识映射；标识映射；模式设计；映射；映射；合并模式;合并
+keywords: Experience Platform；主页；热门主题；模式;模式;XDM；字段；模式;模式；标识映射；标识映射；模式设计；映射；事件建模；事件建模；最佳做法；事件;事件;;
 solution: Experience Platform
 title: XDM ExperienceEvent类
 topic-legacy: overview
-description: 本文档概述了XDM ExperienceEvent类。
+description: 本文档概述了XDM ExperienceEvent类以及事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 9fbb40a401250496761dcce63a3f033a8746ae7e
+source-git-commit: 4f1fe7ca5f09bb1e8e1b913d1dee1cff347d6a24
 workflow-type: tm+mt
-source-wordcount: '1466'
+source-wordcount: '1476'
 ht-degree: 1%
 
 ---
