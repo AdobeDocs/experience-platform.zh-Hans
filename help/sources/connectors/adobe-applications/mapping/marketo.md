@@ -5,7 +5,7 @@ title: Marketo Engage源的映射字段
 topic-legacy: overview
 description: 下表包含Marketo数据集中的字段与其相应XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: db7fde343b3ebf4428020c8256df2b9cfa1486ad
+source-git-commit: 178c0c4079d620b9a8380fcfcdd90cb74eb24bbb
 workflow-type: tm+mt
 source-wordcount: '333'
 ht-degree: 4%
@@ -129,6 +129,10 @@ ht-degree: 4%
 | `webinarUrl` | `webinarConfirmationUrl` |
 | `registrationCode` | `webinarRegistrationID` |
 | `reachedSuccessDate` | `reachedSuccessDate` |
+| `sfdc.crmId` | `extSourceSystemAudit.externalID` |
+| `sfdc.lastStatus` | `lastStatus` |
+| `sfdc.hasResponded` | `hasResponded` |
+| `sfdc.firstRespondedDate` | `firstRespondedDate` |
 | `createdAt` | `extSourceSystemAudit.createdDate` |
 | `updatedAt` | `extSourceSystemAudit.lastUpdatedDate` |
 
