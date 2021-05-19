@@ -4,9 +4,9 @@ title: 目标常见问题解答
 seo-title: 目标常见问题解答
 description: 有关Adobe Experience Platform目标的常见问题解答
 seo-description: 有关Adobe Experience Platform目标的常见问题解答
-source-git-commit: 117f0f82adb764cedaa048e718cd72fa033845a0
+source-git-commit: 61678c5a62980cdb81714420016b7c4b2093f5c6
 workflow-type: tm+mt
-source-wordcount: '598'
+source-wordcount: '597'
 ht-degree: 5%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 # 目标常见问题解答 {#faq}
 
-## [!DNL Facebook Custom Audiences] (#facebook-faq)
+## [!DNL Facebook Custom Audiences] {#facebook-faq}
 
 **在中激活受众之前，我需要做什么 [!DNL Facebook Custom Audiences]?**
 
