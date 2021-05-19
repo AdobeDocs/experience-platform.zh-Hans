@@ -4,10 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 此文档列表Adobe Experience Platform目标的目录
 feature: 目标
-translation-type: tm+mt
-source-git-commit: 9b383f09a3a73f785b0e3a415deda126b9ef6b39
+source-git-commit: d62b2df54357449f35894f9c8ab45f87d97363d2
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '476'
 ht-degree: 10%
 
 ---
@@ -17,6 +16,7 @@ ht-degree: 10%
 
 * [目标概述](./home.md)
 * [目标类型和类别](./destination-types.md)
+* [目标常见问题解答](./destinations-faq.md)
 * API教程{#api}
    * [使用Flow Service API连接到流目标并激活数据](./api/streaming-destinations.md)
    * [连接到电子邮件营销目标，并使用流服务API激活数据](./api/email-marketing.md)
