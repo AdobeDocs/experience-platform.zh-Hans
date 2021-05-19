@@ -3,11 +3,10 @@ audience: user
 user-guide-title: Real-time Customer Profile 指南
 user-guide-description: 合并客户视图，跨渠道创建统一的客户互动视图。
 feature: 配置文件
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 167407a8103acecb9846a6e0f8e38c66f3f3292d
 workflow-type: tm+mt
-source-wordcount: '123'
-ht-degree: 20%
+source-wordcount: '128'
+ht-degree: 19%
 
 ---
 
@@ -21,10 +20,10 @@ ht-degree: 20%
    * [概述](api/overview.md)
    * [入门指南](api/getting-started.md)
    * [边缘投影](api/edge-projections.md)
-   * [实体([!DNL Profile] 访问)](api/entities.md)
-   * [导出作业([!DNL Profile] 导出)](api/export-jobs.md)
+   * [实体（[!DNL Profile]访问）](api/entities.md)
+   * [导出作业（[!DNL Profile]导出）](api/export-jobs.md)
    * [合并策略](api/merge-policies.md)
-   * [预览示例状态([!DNL Profile] 预览)](api/preview-sample-status.md)
+   * [预览采样状态([!DNL Profile]预览)](api/preview-sample-status.md)
    * [[!DNL Profile] 系统作业（删除请求）](api/profile-system-jobs.md)
 * 用户档案UI指南{#ui}
    * [[!DNL Profile] UI指南](ui/user-guide.md)
@@ -40,8 +39,9 @@ ht-degree: 20%
    * [配置计算属性字段](computed-attributes/configure-api.md)
    * [示例表达式](computed-attributes/expressions.md)
 * 教程 {#tutorials}
-   * [将数据添加到 [!DNL Profile]](tutorials/add-profile-data.md)
-   * [为服务配置数 [!DNL Profile] & [!DNL Identity] 据集](tutorials/dataset-configuration.md)
+   * [向 [!DNL Profile]添加数据](tutorials/add-profile-data.md)
+   * [为 [!DNL Profile] & [!DNL Identity] 服务配置数据集](tutorials/dataset-configuration.md)
+   * [生成数据集重叠报告](tutorials/dataset-overlap-report.md)
    * [更多教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
 * [隐私请求处理](privacy.md)
 * [[!DNL Profile] 疑难解答指南](troubleshooting.md)
