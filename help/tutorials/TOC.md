@@ -2,27 +2,25 @@
 audience: user
 user-guide-title: Adobe Experience Platform 教程
 breadcrumb-title: Platform 教程
-user-guide-description: 通过遵循分步教程快速轻松地开始使用Platform，它涵盖从准备用于摄取的数据到使用高级机器学习算法等一切内容。
+user-guide-description: 通过遵循分步教程快速轻松地开始使用Platform，这些教程涵盖从准备用于摄取的数据到使用高级机器学习算法等方方面面。
 type: Tutorial
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 11e8acc3da7f7540421b5c7f3d91658c571fdb6f
 workflow-type: tm+mt
-source-wordcount: '74'
-ht-degree: 13%
+source-wordcount: '71'
+ht-degree: 14%
 
 ---
 
 
-# Adobe Experience Platform教程{#tutorials}
+# Adobe Experience Platform教程 {#tutorials}
 
 * [Tutorials概述](home.md)
-* [验证到Experience PlatformAPI](https://www.adobe.com/go/platform-api-authentication-en)
+* [验证Experience PlatformAPI](https://www.adobe.com/go/platform-api-authentication-en)
 * [访问平台数据](data-access.md)
-* [数据治理和隐私](data-governance-privacy.md)
-* [数据服务工作区](data-science-workspace.md)
+* [数据管理和隐私](data-governance-privacy.md)
+* [数据科学工作区](data-science-workspace.md)
 * [目标](destinations-tutorials.md)
-* [将数据引入平台](data-ingestion.md)
-* [用户档案和身份](configure-profile.md)
+* [将数据摄取到平台](data-ingestion.md)
 * [模式和关系描述符](schemas.md)
-* [细分和受众](segmentation.md)
+* [区段和受众](segmentation.md)
 
