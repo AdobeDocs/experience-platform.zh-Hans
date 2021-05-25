@@ -3,7 +3,7 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据经过哈希处理的电子邮件，激活Facebook营销活动的用户档案以进行受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: d82eb1a839518dbd9831808485d9d5029e3dcaf5
+source-git-commit: 41cfa5b30d8816baf55b8b4e1609ca724e9efe24
 workflow-type: tm+mt
 source-wordcount: '1160'
 ht-degree: 2%
