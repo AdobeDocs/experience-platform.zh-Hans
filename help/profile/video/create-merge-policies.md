@@ -1,6 +1,6 @@
 ---
-title: 在Adobe Experience Platform创建合并策略
-description: 此视频基本了解Adobe Experience Platform的合并策略，并概述如何使用平台UI定义合并策略。
+title: 在Adobe Experience Platform中创建合并策略
+description: 此视频基本介绍了Adobe Experience Platform中的合并策略，并概述了如何使用Platform UI定义合并策略。
 product: experience platform
 type: Documentation
 solution: Experience Platform
@@ -9,23 +9,20 @@ audience: all
 doc-type: video
 activity: understand
 thumbnail: null
-translation-type: tm+mt
-source-git-commit: cab7ba65cc62d8cab402bc23ea38c17d77841363
+exl-id: 4bb804f5-1ad7-47b0-bc38-ba22877490d4
+source-git-commit: 7283fcb2edde4598b1ef8e0ee1f1b002434ba492
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '111'
 ht-degree: 0%
 
 ---
 
-
 # 在Experience PlatformUI中创建合并策略
 
-此视频基本了解Adobe Experience Platform的合并策略，并概述如何使用平台用户界面定义合并策略。 要进一步了解合并策略以及如何使用平台UI创建这些策略，请访问[合并策略UI指南](../ui/merge-policies.md)。
-
-如果您有兴趣使用实时客户用户档案API处理合并策略，请访问[合并策略端点指南](../api/merge-policies.md)。
+此视频基本介绍了Adobe Experience Platform中的合并策略，并概述了如何使用Platform用户界面定义合并策略。 要了解有关合并策略的更多信息，请首先阅读[合并策略概述](../merge-policies/overview.md)。
 
 >[!NOTE]
 >
->Experience Platform用户界面经常更新，自录制此视频以来可能已更改。 有关最新信息，请参阅[合并策略UI指南](../ui/merge-policies.md)。
+>Experience Platform用户界面经常更新，自此视频录制以来可能已发生更改。 有关最新信息，请参阅[合并策略UI指南](../merge-policies/ui-guide.md)。
 
 >[!VIDEO](https://video.tv.adobe.com/v/330433?quality=12&learn=on&captions=eng)
