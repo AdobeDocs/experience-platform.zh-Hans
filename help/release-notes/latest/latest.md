@@ -1,101 +1,84 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: Experience Platform 2021年4月21日发行说明。
+description: Experience Platform2021年5月26日发行说明。
 doc-type: release notes
-last-update: April 21, 2021
+last-update: May 26, 2021
 author: ens72741
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-translation-type: tm+mt
-source-git-commit: ab0798851e5f2b174d9f4241ad64ac8afa20a938
+source-git-commit: 8508d213834bb21951df4fe118732b60465b6d73
 workflow-type: tm+mt
-source-wordcount: '885'
-ht-degree: 10%
+source-wordcount: '831'
+ht-degree: 4%
 
 ---
 
 
 # Adobe Experience Platform 发行说明
 
-**发布日期：2021 年 4 月 21 日**
+**发行日期：2021 年 5 月 26 日**
+
+Adobe Experience Platform的新增功能：
+
+- [仪表板](#dashboards)
 
 Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Data Prep]](#data-prep)
+- [[!DNL Destinations]](#destinations)
 - [[!DNL Experience Data Model (XDM)]](#xdm)
-- [[!DNL Intelligent Services]](#intelligent-services)
-- [[!DNL Segmentation Service]](#segmentation)
-- [[!DNL Sources]](#sources)
+- [实时客户资料](#profile)
+
+## 仪表板 {#dashboards}
+
+Adobe Experience Platform提供了多个功能板，您可以通过这些功能板查看有关组织数据的重要分析（在每日快照中捕获）。
+
+| 功能 | 描述 |
+| --- | --- |
+| 用户档案分析 | 用户档案功能板每天提供每个组织合并策略的“实时客户资料”量度的概述Experience Platform。 所有能够在Platform中访问和查看配置文件数据的用户，都可以使用这些配置文件分析。 |
+| 受众分析 | 区段功能板为所有用户提供了与受众相关的分析，以便有权在Platform中查看区段。 功能板每天提供使用区段生成器UI创建或从Adobe Audience Manager导入的受众量度的概述。 |
+| 激活分析 | 目标功能板可供所有能够访问和查看目标的用户使用。 功能板提供所有目标中激活的激活量度的每日概述。 |
+| 特定于用户的分析 | 功能板的外观可以由每个用户进行个性化，包括通过添加、删除、调整大小和重新排列小组件来修改功能板的布局。 |
+| 构件创建和管理 | 营销人员可以在集中的存储库中访问所有标准和自定义小组件，以实现分析创建和共享的民主化：<br/><ul><li>标准选项卡包含可在功能板上下文中访问的Adobe提供的小组件。 </li><li>自定义选项卡包含由组织创建的自定义小组件，其中包含一个用于在视图中隐藏小组件的选项。</li><li>“配置文件”和“受众分析”中的小组件创建工作流程可编辑、选择、预览和发布自定义小组件。</li></ul> |
+| 自定义分析 | 访问权限使数据工程师和营销专家能够自定义可用于创建小组件的配置文件属性。 |
+
+有关功能板的更多信息（包括如何授予访问权限和创建自定义小组件），请首先阅读[功能板概述](../../dashboards/home.md)。
 
 ## [!DNL Data Prep] {#data-prep}
 
 [!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
 
-**新增功能**
-
 | 功能 | 描述 |
 | ------- | ----------- |
-| 支持编辑现有数据流的映射 | 您现在可以更新现有数据流的映射集。 无法更新为一次性摄取计划的数据流的映射集。 HTTP API、Adobe Analytics、Adobe Audience Manager和[!DNL Marketo Engage]不支持此功能。 有关详细信息，请参阅有关[更新UI](../../sources/tutorials/ui/update-dataflows.md)中的源数据流的教程。 |
-| 支持流摄取 | 现在，您可以在创建流源连接时使用数据准备函数。 有关详细信息，请参阅有关在UI](../../sources/tutorials/ui/create/streaming/http.md)中创建流源连接的教程。[ |
+| 从宽错误警告 | 现在，数据准备映射器错误消息将更加宽松，提供警告而不是错误以及部分转换的行。 |
+| 新函数 | 添加了用于获取键、将元素附加到现有数组、将多个数组的元素附加到现有数组、使用对象构建数组，以及将JSON对象的名称用作字符串文字的函数。 |
 
 有关详细信息，请参阅[[!DNL Data Prep] 概述](../../data-prep/home.md)。
 
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 改进了监控（测试版） | 增强了对目标（包括批处理目标和流目标的信息）的监控功能 |
+
+有关目标的更多常规信息，请参阅[目标概述](../../destinations/home.md)。
+
 ## [!DNL Experience Data Model (XDM)] {#xdm}
 
-体验数据模型(XDM)是一种开源规范，旨在提高数字体验的强大功能。 它为任何与Adobe Experience Platform上的服务通信的应用程序提供了通用结构和定义。 通过遵守XDM标准，所有客户体验数据都可以整合到一个通用代表中，以更快、更集成的方式提供洞察。 您可以从客户行动中获得宝贵的洞察，通过细分定义客户受众，并将客户属性用于个性化目的。
+体验数据模型(XDM)是一项开源规范，旨在提高数字体验的功能。 它为任何与Adobe Experience Platform上的服务通信的应用程序提供了通用结构和定义。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
 
 | 功能 | 描述 |
 | --- | --- |
-| 模式建议 | 在模式编辑器UI中选择类和模式字段组时，您可以使用新的过滤器根据您的特定行业视图推荐的标准组件。 有关不同行业使用案例中这些组件如何彼此关联的更多信息，请参阅[行业数据模型](https://www.adobe.com/go/xdm-industry-erds-en)上的文档。 |
+| 架构字段组 | 术语“mixin”已更新为“字段组”。 此更改将反映在Adobe Experience Platform UI中。 此外，架构注册表API具有新的[字段组端点](../../xdm/api/field-groups.md)，而mixins端点已作为旧端点被弃用。 有关更多信息，请参阅[XDM文档](../../xdm/home.md)。 |
 
-## [!DNL Intelligent Services] {#intelligent-services}
+## 实时客户资料 {#profile}
 
-智能服务使营销分析师和从业人员能够在客户体验使用案例中利用人工智能和机器学习的强大功能。 这使营销分析师能够使用业务级配置设置特定于公司需求的预测，而无需数据科学专业知识。
-
-### 客户人工智能
-
-实时客户数据平台中提供的客户人工智能用于生成自定义倾向得分，如大规模订购和转化个别用户档案。 这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 通过实时客户资料，您可以查看每个客户的整体视图，该视图将来自多个渠道的数据（包括在线、离线、CRM和第三方数据）进行整合。 [!DNL Profile] 允许您将客户数据整合到统一视图中，为每次客户交互提供一个可操作且带有时间戳的帐户。
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 支持Adobe Analytics数据 | 更新了功能，可通过Analytics源连接器支持Adobe Analytics数据集，无需ETL数据以符合消费者体验事件(CEE)模式。 |
-| 支持Adobe Audience Manager数据 | 更新了功能，可通过Audience Manager源连接器支持Adobe Audience Manager数据集，无需ETL数据即可符合消费者体验事件(CEE)模式。 |
-| 模型性能摘要 | 客户AI现在在服务实例分析页面中有一个[模型性能摘要选项卡](../../intelligent-services/customer-ai/user-guide/discover-insights.md#performance-metrics)。 “模型性能”选项卡显示所有实际转化率和客户流失率。 这使您能够解读和了解每个倾向桶中的情况。 |
+| 合并策略工作流更新 | 现在，在UI中创建和更新合并策略时，用户可以基于并集架构预览20个示例用户档案。 这允许用户在保存合并策略配置之前预览客户配置文件的外观。 有关更多信息，请参阅[合并策略UI指南](../../profile/merge-policies/ui-guide.md)。 |
+| 数据集重叠报表 | 数据集重叠报表通过公开对可寻址受众贡献最大的数据集，提供了对用户档案存储构成的可见性。 除了提供对用户档案数据的分析之外，此报表还可帮助用户采取措施来优化许可证使用情况，例如为特定数据的有效期设置限制。 要了解更多信息，请按照[生成数据集重叠报表](../../profile/tutorials/dataset-overlap-report.md)上的教程操作。 |
 
-有关受支持数据集的详细信息，请参阅[[!DNL Intelligent Services] 数据准备文档](../../intelligent-services/data-preparation.md)。
-
-### Attribution AI
-
-Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 支持Adobe Analytics数据 | 更新了功能，可通过Analytics源连接器支持Adobe Analytics数据集，无需ETL数据以符合消费者体验事件(CEE)模式。 |
-
-有关受支持数据集的详细信息，请参阅[[!DNL Intelligent Services] 数据准备文档](../../intelligent-services/data-preparation.md)。
-
-## Segmentation Service {#segmentation}
-
-Adobe Experience Platform Segmentation Service提供用户界面和RESTful API，使您能够根据[!DNL Real-time Customer Profile]数据构建区段和生成受众。 这些细分在平台上集中配置和维护，使任何Adobe应用程序都能轻松访问。
-
-[!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准，定义特定的用户档案子集。细分可以基于记录数据（如人口统计信息）或表示客户与您品牌互动的时间序列事件。
-
-**新增功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 其他汇总函数 | 已在区段生成器中添加计数功能。 “计数”函数可让您计算指定事件完成的次数。 有关计数函数的详细信息，请参阅[区段生成器指南](../../segmentation/ui/segment-builder.md#count-functions)的计数函数部分 |
-
-有关[!DNL Segmentation Service]的详细信息，请参阅[分段概述](../../segmentation/home.md)。
-
-## [!DNL Sources] {#sources}
-
-Adobe Experience Platform可以从外部源收集数据，同时允许您使用平台服务构建、标记和增强该数据。 您可以从各种来源收集数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
-
-Experience Platform提供了RESTful API和交互式UI，让您可以轻松为各种数据提供者设置源连接。 这些源连接允许您对外部存储系统和CRM服务进行身份验证并连接，设置获取运行的时间，以及管理数据获取吞吐量。
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| [!DNL Marketo Engage] （测试版） | 您现在可以使用UI创建[!DNL Marketo Engage]源连接，以将B2B数据引入平台，并使用连接到平台的应用程序保持此数据最新。 有关详细信息，请参阅[[!DNL Marketo Engage] 源连接器文档](../../sources/connectors/adobe-applications/marketo/marketo.md)。 |
-| 测试版源迁移至GA | 以下源已从测试版提升为GA: <ul><li>[[!DNL Amazon Kinesis]](../../sources/connectors/cloud-storage/kinesis.md)</li><li>[[!DNL Azure EventHubs]](../../sources/connectors/cloud-storage/eventhub.md)</li><li>[[!DNL HTTP API]](../../sources/connectors/streaming/http.md)</li><li>[[!DNL MariaDB]](../../sources/connectors/databases/mariadb.md)</li><li>[[!DNL Microsoft SQL Server]](../../sources/connectors/databases/sql-server.md)</li><li>[[!DNL Oracle]](../../sources/connectors/databases/oracle.md)</li></ul> |
-
-要了解有关源的详细信息，请参阅[源概述](../../sources/home.md)。
+有关实时客户资料的更多信息，包括有关使用[!DNL Profile]数据的教程和最佳实践，请首先阅读[实时客户资料概述](../../profile/home.md)。
