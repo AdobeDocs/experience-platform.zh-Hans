@@ -1,28 +1,22 @@
 ---
-keywords: Experience Platform；用户界面；UI；自定义；许可证使用仪表板;仪表板；许可证使用；授权；消耗
-title: 目标仪表板
-description: 'Adobe Experience Platform UI提供了一个仪表板，通过它可以视图有关组织活动目标的重要信息。 '
-topic-legacy: guide
+keywords: Experience Platform；用户界面；UI；自定义；许可证使用功能板；功能板；许可证使用；权利；使用情况
+title: 目标功能板
+description: 'Adobe Experience Platform UI提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。 '
 type: Documentation
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 998332007465c1f8457b5d8cf0e153d513505d39
 workflow-type: tm+mt
-source-wordcount: '143'
-ht-degree: 6%
+source-wordcount: '121'
+ht-degree: 0%
 
 ---
 
 
-# (Beta)[!UICONTROL Destinations]仪表板{#destinations-dashboard}
+#  Destinationsdatashboard  {#destinations-dashboard}
 
->[!IMPORTANT]
->
->仪表板功能当前处于测试阶段，并非所有用户都可用。 文档和功能可能会发生变化。
+Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息，这些信息是在每日快照期间捕获的。
 
-Adobe Experience Platform用户界面(UI)提供了一个仪表板，通过它可以视图有关组织活动目标的重要信息，这些信息是在每日快照中捕获的。
+有关如何访问UI中的目标功能板并与之进行交互的详细说明，以及如何进一步了解功能板中显示的可用量度，请访问[目标功能板指南](../dashboards/guides/destinations.md)。
 
-有关如何在UI中访问目标仪表板并与其交互的详细说明，以及有关仪表板中显示的可用量度的更多信息，请访问[目标仪表板指南](../dashboards/guides/destinations.md)。
-
-有关Experience Platform中所有仪表板功能的概述，请首先阅读[仪表板概述](../../dashboards/home.md)。
+有关Experience Platform中所有功能板功能的概述，请首先阅读[功能板概述](../../dashboards/home.md)。
 
 ![](images/destinations-dashboard/dashboard-overview.png)
