@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 探索和处理支持Experience Platform功能板的原始数据集
 type: Documentation
 description: 了解如何使用查询服务来探索和处理在Experience Platform中为配置文件、区段和目标功能板提供动力的原始数据集。
-source-git-commit: 743367431144e9714a967b0340c755bf2120559c
+source-git-commit: 1facf7079213918c2ef966b704319827eaa4a53d
 workflow-type: tm+mt
-source-wordcount: '592'
+source-wordcount: '614'
 ht-degree: 1%
 
 ---
@@ -29,27 +29,27 @@ Adobe Experience Platform查询服务允许使用标准SQL在数据湖中查询�
 
 对于“实时客户配置文件”中的每个活动合并策略，数据湖中都有一个可用的配置文件属性数据集。
 
-此数据集的命名约定为&#x200B;**配置文件属性**，后跟一个字母数字值。 例如：`Profile Attribute 14adf268-2a20-4dee-bee6-a6b0e34616a9`
+这些数据集的命名约定为&#x200B;**配置文件属性**，后跟字母数字值。 例如：`Profile Attribute 14adf268-2a20-4dee-bee6-a6b0e34616a9`
 
-要了解数据集的完整架构，您可以使用Experience PlatformUI中的数据集查看器预览和浏览该架构。
+要了解每个数据集的完整架构，您可以使用Experience PlatformUI中的数据集查看器预览和浏览数据集。
 
 ### 区段元数据数据集
 
-数据湖中有一个区段元数据数据集可用于您组织的每个区段。
+数据湖中有一个可用的区段元数据数据集，其中包含贵组织每个区段的元数据。
 
 此数据集的命名约定为&#x200B;**配置文件区段定义**，后跟一个字母数字值。 例如：`Profile Segment Definition 6591ba8f-1422-499d-822a-543b2f7613a3`
 
-下图显示了区段元数据数据集的架构。
+要了解数据集的完整架构，您可以使用Experience PlatformUI中的数据集查看器预览和浏览该架构。
 
 ![](images/query/segment-metadata.png)
 
 ### 目标元数据数据集
 
-您激活的目标的元数据可用作数据湖中的原始数据集。
+您组织的所有激活目标的元数据可作为数据湖中的原始数据集使用。
 
 此数据集的命名约定为&#x200B;**DIM_Destination**。
 
-下图显示了目标元数据数据集的架构。
+要了解数据集的完整架构，您可以使用Experience PlatformUI中的数据集查看器预览和浏览该架构。
 
 ![](images/query/destinations-metadata.png)
 
@@ -102,8 +102,6 @@ Select
       group by
       segment_id
 ```
-
-### 所有目标的每个目标激活的区段计数
 
 ## 后续步骤
 
