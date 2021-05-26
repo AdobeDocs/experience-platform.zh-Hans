@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: May 26, 2021
 author: ens72741
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: 8508d213834bb21951df4fe118732b60465b6d73
+source-git-commit: d78f2d0fc8d1117614b0d8add0cada21619d8357
 workflow-type: tm+mt
-source-wordcount: '831'
+source-wordcount: '978'
 ht-degree: 4%
 
 ---
@@ -27,6 +27,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [[!DNL Destinations]](#destinations)
 - [[!DNL Experience Data Model (XDM)]](#xdm)
 - [实时客户资料](#profile)
+- [源](#sources)
 
 ## 仪表板 {#dashboards}
 
@@ -82,3 +83,15 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 | 数据集重叠报表 | 数据集重叠报表通过公开对可寻址受众贡献最大的数据集，提供了对用户档案存储构成的可见性。 除了提供对用户档案数据的分析之外，此报表还可帮助用户采取措施来优化许可证使用情况，例如为特定数据的有效期设置限制。 要了解更多信息，请按照[生成数据集重叠报表](../../profile/tutorials/dataset-overlap-report.md)上的教程操作。 |
 
 有关实时客户资料的更多信息，包括有关使用[!DNL Profile]数据的教程和最佳实践，请首先阅读[实时客户资料概述](../../profile/home.md)。
+
+## [!DNL Sources] {#sources}
+
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强该数据。 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+
+Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，以及管理数据摄取吞吐量。
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 对压缩文件摄取的UI支持 | 您现在可以在UI中使用云存储源预览和摄取压缩的JSON或分隔文件。 有关更多信息，请参阅教程[在UI](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md)中为云存储源连接配置数据流。 |
+
+要了解有关源的更多信息，请参阅[源概述](../../sources/home.md)。
