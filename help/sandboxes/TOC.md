@@ -4,11 +4,10 @@ user-guide-title: Adobe Experience Platform 中的沙盒帮助
 breadcrumb-title: Sandoxes 指南
 user-guide-description: 将平台实例分区为虚拟环境，以便进行开发、测试和应用程序部署。
 feature: 数据管理
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: f00e6161d82f1fd7ba442be9f06283f3c866573f
 workflow-type: tm+mt
-source-wordcount: '88'
-ht-degree: 27%
+source-wordcount: '66'
+ht-degree: 39%
 
 ---
 
@@ -16,19 +15,16 @@ ht-degree: 27%
 # 沙盒 {#sandbox}
 
 * [沙箱概述](home.md)
-* 沙箱UI {#ui}
-   * [沙箱UI概述](ui/overview.md)
-   * [沙箱用户指南](ui/user-guide.md)
-* 沙箱API {#api}
-   * [快速入门](api/getting-started.md)
-   * [列表支持的沙箱类型](api/list-sandbox-types.md)
-   * [列表所有沙箱](api/list-all-sandboxes.md)
-   * [列表当前用户的活动沙箱](api/list-active-sandboxes.md)
-   * [查找沙箱](api/look-up-sandbox.md)
-   * [创建沙箱](api/create-sandbox.md)
-   * [更新沙箱](api/update-sandbox.md)
-   * [重置沙箱](api/reset-sandbox.md)
-   * [删除沙箱](api/delete-sandbox.md)
+* 沙盒UI {#ui}
+   * [沙盒UI概述](ui/overview.md)
+   * [沙盒用户指南](ui/user-guide.md)
+* 沙盒API {#api}
+   * [概述](api/overview.md)
+   * [入门指南](api/getting-started.md)
+   * [可用沙箱](api/available.md)
+   * [沙盒管理](api/sandboxes.md)
+   * [沙盒类型](api/types.md)
+   * [附录](api/appendix.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
