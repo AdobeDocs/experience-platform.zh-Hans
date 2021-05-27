@@ -1,32 +1,31 @@
 ---
-keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；数据类型注册；模式注册；数据类型；数据类型；数据类型；数据类型；数据类型；创建
+keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；数据类型注册表；架构注册表；数据类型；数据类型；数据类型；数据类型；数据类型；数据类型；创建
 solution: Experience Platform
 title: 数据类型API端点
-description: 模式 Registry API中的/datatypes端点允许您在体验应用程序中以编程方式管理XDM数据类型。
+description: 架构注册表API中的/datatypes端点允许您以编程方式管理体验应用程序中的XDM数据类型。
 exl-id: 2a58d641-c681-40cf-acc8-7ad842cd6243
-translation-type: tm+mt
-source-git-commit: 7d7502b238f96eda1a15b622ba10bbccc289b725
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '1151'
-ht-degree: 2%
+source-wordcount: '1172'
+ht-degree: 4%
 
 ---
 
 # 数据类型端点
 
-数据类型在类或模式字段组中用作引用类型字段的方式与基本文本字段相同，关键区别在于数据类型可以定义多个子字段。 虽然与字段组中允许一致使用多字段结构的字段组类似，但数据类型更灵活，因为它们可以包含在模式结构中的任意位置，而字段组只能添加在根级别。 [!DNL Schema Registry] API中的`/datatypes`端点允许您以编程方式管理体验应用程序中的数据类型。
+数据类型在类或架构字段组中用作引用类型字段，其方式与基本文字字段相同，关键区别在于数据类型可以定义多个子字段。 虽然与中的字段组类似，它们允许一致地使用多字段结构，但数据类型更加灵活，因为它们可以包含在架构结构中的任意位置，而字段组只能在根级别添加。 [!DNL Schema Registry] API中的`/datatypes`端点允许您以编程方式管理体验应用程序中的数据类型。
 
 ## 入门指南
 
-本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)的一部分。 在继续之前，请查阅[快速入门指南](./getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)的一部分。 在继续操作之前，请查阅[快速入门指南](./getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及成功调用任何Experience PlatformAPI所需的标头的重要信息。
 
-## 检索列表数据类型{#list}
+## 检索数据类型列表 {#list}
 
-您可以通过分别向`/global/datatypes`或`/tenant/datatypes`发出列表请求，GET`global`或`tenant`容器下的所有数据类型。
+您可以通过分别向`/global/datatypes`或`/tenant/datatypes`发出GET请求，在`global`或`tenant`容器下列出所有数据类型。
 
 >[!NOTE]
 >
->列出资源时，模式注册表将结果集限制为300项。 要返回超出此限制的资源，必须使用分页参数。 还建议您使用其他查询参数来筛选结果并减少返回的资源数。 有关详细信息，请参阅附录文档中关于[查询参数](./appendix.md#query)的部分。
+>列出资源时，方案注册表将结果集限制为300个项目。 要返回超出此限制的资源，您必须使用分页参数。 还建议您使用其他查询参数来筛选结果并减少返回的资源数。 有关详细信息，请参阅附录文档中关于[查询参数](./appendix.md#query)的部分。
 
 **API格式**
 
@@ -36,12 +35,14 @@ GET /{CONTAINER_ID}/datatypes?{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CONTAINER_ID}` | 要从以下位置检索数据类型的容器:`global`用于Adobe创建的数据类型，或`tenant`用于您的组织拥有的数据类型。 |
-| `{QUERY_PARAMS}` | 可选查询参数，用于筛选结果。 有关可用参数的列表，请参见[附录文档](./appendix.md#query)。 |
+| `{CONTAINER_ID}` | 要从以下位置检索数据类型的容器：`global`用于Adobe创建的数据类型，或`tenant`用于您的组织拥有的数据类型。 |
+| `{QUERY_PARAMS}` | 用于按筛选结果的可选查询参数。 有关可用参数的列表，请参阅[附录文档](./appendix.md#query)。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求从`tenant`列表中检索数据类型容器，使用`orderby`查询参数按数据类型的`title`属性对数据类型进行排序。
+以下请求从`tenant`容器中检索数据类型列表，使用`orderby`查询参数按数据类型的`title`属性对数据类型进行排序。
 
 ```shell
 curl -X GET \
@@ -57,12 +58,14 @@ curl -X GET \
 
 | `Accept` 标题 | 描述 |
 | --- | --- |
-| `application/vnd.adobe.xed-id+json` | 返回每个资源的简短摘要。 这是列出资源的建议标题。 (限制：300) |
-| `application/vnd.adobe.xed+json` | 返回每个资源的完整JSON数据类型，其中包含原始`$ref`和`allOf`。 (限制：300) |
+| `application/vnd.adobe.xed-id+json` | 返回每个资源的简短摘要。 这是列出资源的建议标头。 (限制：300) |
+| `application/vnd.adobe.xed+json` | 为每个资源返回完整的JSON数据类型，其中包含原始的`$ref`和`allOf`。 (限制：300) |
+
+{style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-上述请求使用`application/vnd.adobe.xed-id+json` `Accept`标头，因此响应仅包括每个数据类型的`title`、`$id`、`meta:altId`和`version`属性。 使用其它`Accept`标头(`application/vnd.adobe.xed+json`)可返回每个数据类型的所有属性。 根据您在响应中需要的信息，选择相应的`Accept`标头。
+上述请求使用了`application/vnd.adobe.xed-id+json` `Accept`标头，因此响应仅包含每个数据类型的`title`、`$id`、`meta:altId`和`version`属性。 使用另一个`Accept`标头(`application/vnd.adobe.xed+json`)可返回每种数据类型的所有属性。 根据响应中需要的信息选择相应的`Accept`标头。
 
 ```json
 {
@@ -94,7 +97,7 @@ curl -X GET \
 }
 ```
 
-## 查找数据类型{#lookup}
+## 查找数据类型 {#lookup}
 
 您可以通过在GET请求的路径中包含数据类型的ID来查找特定数据类型。
 
@@ -106,8 +109,10 @@ GET /{CONTAINER_ID}/datatypes/{DATA_TYPE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CONTAINER_ID}` | 存放要检索的数据类型的容器:`global`表示Adobe创建的数据类型，或`tenant`表示您的组织拥有的数据类型。 |
+| `{CONTAINER_ID}` | 存储要检索的数据类型的容器：`global`表示Adobe创建的数据类型，或`tenant`表示您组织拥有的数据类型。 |
 | `{DATA_TYPE_ID}` | 要查找的数据类型的`meta:altId`或URL编码的`$id`。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 **请求**
 
@@ -127,15 +132,17 @@ curl -X GET \
 
 | `Accept` 标题 | 描述 |
 | ------- | ------------ |
-| `application/vnd.adobe.xed+json; version=1` | 具有`$ref`和`allOf`的原始数据包含标题和说明。 |
-| `application/vnd.adobe.xed-full+json; version=1` | `$ref` 和 `allOf` 解析，有标题和说明。 |
-| `application/vnd.adobe.xed-notext+json; version=1` | 原始数据包含`$ref`和`allOf`，没有标题或说明。 |
-| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` 并解 `allOf` 析，没有标题或说明。 |
-| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` 和解 `allOf` 析包含的描述符。 |
+| `application/vnd.adobe.xed+json; version=1` | 具有`$ref`和`allOf`的Raw具有标题和描述。 |
+| `application/vnd.adobe.xed-full+json; version=1` | `$ref` 和 `allOf` 已解析，有标题和描述。 |
+| `application/vnd.adobe.xed-notext+json; version=1` | 具有`$ref`和`allOf`的原始文件，没有标题或描述。 |
+| `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` 和解 `allOf` 析后，不会显示标题或描述。 |
+| `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` 和已 `allOf` 解析的描述符。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-成功的响应会返回数据类型的详细信息。 返回的字段取决于在请求中发送的`Accept`标头。 尝试不同的`Accept`标头以比较响应并确定最适合您的用例的标头。
+成功的响应会返回数据类型的详细信息。 返回的字段取决于请求中发送的`Accept`标头。 尝试使用不同的`Accept`标头来比较响应并确定哪个标头最适合您的用例。
 
 ```json
 {
@@ -214,9 +221,9 @@ curl -X GET \
 }
 ```
 
-## 创建数据类型{#create}
+## 创建数据类型 {#create}
 
-您可以通过发出容器请求，在`tenant`下定义自定义POST类型。
+您可以通过发出POST请求，在`tenant`容器下定义自定义数据类型。
 
 **API格式**
 
@@ -267,7 +274,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应返回HTTP状态201（已创建）和包含新创建数据类型的详细信息（包括`$id`、`meta:altId`和`version`）的有效负荷。 这三个值是只读的，由[!DNL Schema Registry]指定。
+成功响应会返回HTTP状态201（已创建）和包含新创建数据类型详细信息（包括`$id`、`meta:altId`和`version`）的有效负载。 这三个值是只读的，由[!DNL Schema Registry]分配。
 
 ```JSON
 {
@@ -324,15 +331,15 @@ curl -X POST \
 }
 ```
 
-对[列表租户容器中的所有数据类型](#list)执行GET请求现在将包括“属性详细信息”数据类型，或者，您可以[使用URL编码的`$id` URI执行查找(GET)请求](#lookup)以直接视图新数据类型。
+对[列出租户容器中所有数据类型](#list)执行GET请求时，现在将包含“属性详细信息”数据类型，或者您可以[使用URL编码的`$id` URI执行查找(GET)请求](#lookup)以直接查看新的数据类型。
 
-## 更新数据类型{#put}
+## 更新数据类型 {#put}
 
-您可以通过PUT操作替换整个数据类型，实质上是重写资源。 当通过PUT请求更新POST类型时，主体必须包括在请求中创建新数据类型[时所需的所有字段。](#create)
+您可以通过PUT操作替换整个数据类型，实质上是重写资源。 通过PUT请求更新数据类型时，主体必须包含在POST请求中创建新数据类型](#create)时需要填写的所有字段。[
 
 >[!NOTE]
 >
->如果您只想更新部分数据类型而不是完全替换它，请参阅[更新部分数据类型](#patch)的部分。
+>如果您只想更新部分数据类型而不是完全替换它，请参阅[更新部分数据类型](#patch)中的部分。
 
 **API格式**
 
@@ -344,9 +351,11 @@ PUT /tenant/datatypes/{DATA_TYPE_ID}
 | --- | --- |
 | `{DATA_TYPE_ID}` | 要重写的数据类型的`meta:altId`或URL编码的`$id`。 |
 
+{style=&quot;table-layout:auto&quot;}
+
 **请求**
 
-以下请求将重写现有数据类型，并添加一个新的`floorSize`字段。
+以下请求会重写现有数据类型，并添加新的`floorSize`字段。
 
 ```SHELL
 curl -X PUT \
@@ -392,7 +401,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应会返回已更新数据类型的详细信息。
+成功的响应会返回更新数据类型的详细信息。
 
 ```JSON
 {
@@ -455,13 +464,13 @@ curl -X PUT \
 }
 ```
 
-## 更新{#patch}数据类型的一部分
+## 更新数据类型的一部分 {#patch}
 
-您可以使用PATCH请求更新数据类型的一部分。 [!DNL Schema Registry]支持所有标准JSON修补程序操作，包括`add`、`remove`和`replace`。 有关JSON修补程序的详细信息，请参阅[API基础指南](../../landing/api-fundamentals.md#json-patch)。
+您可以使用PATCH请求更新部分数据类型。 [!DNL Schema Registry]支持所有标准的JSON修补程序操作，包括`add`、`remove`和`replace`。 有关JSON修补程序的更多信息，请参阅[API基础知识指南](../../landing/api-fundamentals.md#json-patch)。
 
 >[!NOTE]
 >
->如果要用新值替换整个资源，而不是更新单个字段，请参阅[中有关使用PUT操作](#put)替换数据类型的部分。
+>如果要使用新值替换整个资源，而不是更新单个字段，请参阅[中使用PUT操作](#put)替换数据类型的部分。
 
 **API格式**
 
@@ -473,11 +482,13 @@ PATCH /tenant/data type/{DATA_TYPE_ID}
 | --- | --- |
 | `{DATA_TYPE_ID}` | 要更新的数据类型的URL编码的`$id` URI或`meta:altId`。 |
 
+{style=&quot;table-layout:auto&quot;}
+
 **请求**
 
-下面的示例请求更新现有数据类型的`description`，并添加新的`floorSize`字段。
+以下示例请求更新了现有数据类型的`description`，并添加了新的`floorSize`字段。
 
-请求主体采用数组的形式，每个列出的对象代表对单个字段的特定更改。 每个对象都包括要执行的操作(`op`)，应在(`path`)上执行操作的字段，以及应在该操作中包括哪些信息(`value`)。
+请求正文采用数组的形式，每个列出的对象都表示对单个字段的特定更改。 每个对象包括要执行的操作(`op`)，该操作应在(`path`)上执行的字段，以及该操作中应包含哪些信息(`value`)。
 
 ```SHELL
 curl -X PATCH \
@@ -507,7 +518,7 @@ curl -X PATCH \
 
 **响应**
 
-响应显示，这两个操作都成功执行。 `description`已更新，`floorSize`已添加到`definitions`下。
+响应显示两个操作均已成功执行。 `description`已更新，`floorSize`已添加到`definitions`下。
 
 ```JSON
 {
@@ -596,9 +607,9 @@ curl -X PATCH \
 }
 ```
 
-## 删除数据类型{#delete}
+## 删除数据类型 {#delete}
 
-有时可能需要从模式注册表中删除数据类型。 这是通过使用路径中提供的DELETE类型ID执行数据请求来完成的。
+有时可能需要从架构注册表中删除数据类型。 这是通过使用路径中提供的数据类型ID执行DELETE请求来完成的。
 
 **API格式**
 
@@ -609,6 +620,8 @@ DELETE /tenant/datatypes/{DATA_TYPE_ID}
 | 参数 | 描述 |
 | --- | --- |
 | `{DATA_TYPE_ID}` | 要删除的数据类型的URL编码的`$id` URI或`meta:altId`。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 **请求**
 
@@ -623,6 +636,6 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应返回HTTP状态204（无内容）和空白正文。
+成功响应会返回HTTP状态204（无内容）和空白正文。
 
-您可以通过尝试对数据类型[查找(GET)请求](#lookup)来确认删除。 您需要在请求中包含`Accept`标头，但应接收HTTP状态404（“找不到”），因为模式类型已从注册表中删除。
+您可以通过尝试[查询(GET)请求](#lookup)数据类型来确认删除。 您需要在请求中包含`Accept`标头，但应会收到HTTP状态404（未找到），因为数据类型已从架构注册表中删除。
