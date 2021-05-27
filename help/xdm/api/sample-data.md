@@ -1,33 +1,32 @@
 ---
-keywords: Experience Platform；主题；热门主题；api;API;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；数据模型；示例数据；rpc;
+keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；示例数据；示例数据；RPC;
 solution: Experience Platform
 title: 示例数据API端点
-description: 通过模式 Registry API中的/sampledata端点，可以生成映射到任何现有XDM模式结构的示例数据。
+description: 架构注册表API中的/sampledata端点允许您生成映射到任何现有XDM架构的示例数据。
 topic-legacy: developer guide
 exl-id: 424d33ca-0624-4891-bf83-044ac2861579
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '319'
-ht-degree: 1%
+source-wordcount: '322'
+ht-degree: 2%
 
 ---
 
 # 示例数据端点
 
-要将数据引入Adobe Experience Platform，数据的格式和结构必须符合现有的体验数据模型(XDM)模式。 根据特定数据集的模式复杂性，可能难以确定数据集需要的数据的确切形状。
+要将数据摄取到Adobe Experience Platform中，数据的格式和结构必须符合现有的体验数据模型(XDM)架构。 根据特定数据集架构的复杂性，可能很难确定数据集在摄取时所需数据的确切形状。
 
-使用[!DNL Schema Registry] API中的`/sampledata`端点，可以为之前创建的任何模式生成一个示例摄取对象。
+使用[!DNL Schema Registry] API中的`/sampledata`端点，您可以为之前创建的任何架构生成一个示例摄取对象。
 
 ## 入门指南
 
-本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)的一部分。 在继续之前，请查阅[快速入门指南](./getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)的一部分。 在继续操作之前，请查阅[快速入门指南](./getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及成功调用任何Experience PlatformAPI所需的标头的重要信息。
 
-示例数据端点是[!DNL Schema Registry]支持的远程过程调用(RPC)的一部分。 与[!DNL Schema Registry] API中的其他端点不同，RPC端点不需要额外的标头，如`Accept`或`Content-Type`，也不使用`CONTAINER_ID`。 相反，他们必须使用`/rpc`命名空间，如以下API调用中所示。
+示例数据端点是[!DNL Schema Registry]支持的远程过程调用(RPC)的一部分。 与[!DNL Schema Registry] API中的其他端点不同，RPC端点不需要诸如`Accept`或`Content-Type`之类的额外标头，也不使用`CONTAINER_ID`。 相反，它们必须使用`/rpc`命名空间，如以下API调用中所示。
 
-## 检索模式的示例数据
+## 检索架构的示例数据
 
-通过在指向端点的GET请求路径中指定模式的ID，可以检索模式库中任何模式的示例数据。
+您可以通过在到端点的GET请求路径中指定架构的ID，来检索架构库中任何架构的示例数据。
 
 **API格式**
 
@@ -37,11 +36,13 @@ GET /rpc/sampledata/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | 要为其生成示例模式的`meta:altId`或URL编码的`$id`。 |
+| `{SCHEMA_ID}` | 要为其生成示例数据的架构的`meta:altId`或URL编码的`$id`。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求为“忠诚会员”模式生成示例数据。
+以下请求为会员架构生成示例数据。
 
 ```shell
 curl -X GET \
@@ -54,7 +55,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回指定模式的示例数据对象。
+成功的响应返回指定架构的示例数据对象。
 
 ```json
 {
