@@ -5,9 +5,9 @@ title: 沙盒UI指南
 topic-legacy: user guide
 description: 本文档提供了有关如何在Adobe Experience Platform用户界面中执行与沙箱相关的各种操作的步骤。
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: 8c1c7b6b01b55bd15c492b0f62d280c1e9a98070
+source-git-commit: ba03ec805d29a95ee7d0d1a23a756feaadcea407
 workflow-type: tm+mt
-source-wordcount: '699'
+source-wordcount: '833'
 ht-degree: 0%
 
 ---
@@ -84,6 +84,28 @@ ht-degree: 0%
 
 ![重置确认](../images/ui/reset-confirm.png)
 
+片刻后，屏幕底部会显示一个确认框，确认成功重置。
+
+![success](../images/ui/success.png)
+
+### 错误消息
+
+无法重置包含CDA数据的默认生产沙盒，并返回以下错误。
+
+![cda](../images/ui/cda.png)
+
+包含PBD数据的默认生产沙盒也无法重置，并返回以下错误。
+
+![pbd](../images/ui/pbd.png)
+
+包含CDA和PBD数据的默认生产沙盒也无法重置，并返回以下错误。
+
+![both](../images/ui/both.png)
+
+用于与Adobe Audience Manager或受众核心服务进行双向区段共享的生产沙盒也无法重置，并返回以下错误。
+
+![seg](../images/ui/seg.png)
+
 ## 删除沙盒
 
 >[!IMPORTANT]
@@ -103,6 +125,10 @@ ht-degree: 0%
 在最终确认窗口中，在对话框中输入沙盒的名称，然后选择&#x200B;**[!UICONTROL 继续]**
 
 ![delete-confirm](../images/ui/delete-confirm.png)
+
+用于与Adobe Audience Manager或受众核心服务进行双向区段共享的生产沙盒，无法删除，并返回以下错误。
+
+![seg](../images/ui/seg.png)
 
 ## 后续步骤
 
