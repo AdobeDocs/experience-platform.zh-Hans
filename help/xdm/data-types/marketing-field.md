@@ -2,49 +2,52 @@
 solution: Experience Platform
 title: 通用营销首选项字段数据类型
 topic-legacy: overview
-description: 此文档概述了通用营销首选项字段XDM数据类型。
+description: 本文档概述了通用营销首选项字段XDM数据类型。
 exl-id: d4c53885-f34f-4721-aa34-1fe02dc7006f
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '522'
-ht-degree: 1%
+source-wordcount: '541'
+ht-degree: 2%
 
 ---
 
-# [!UICONTROL Generic Marketing Preference Field] 数据类型
+# [!UICONTROL 通用营销首选项字] 段数据类型
 
-[!UICONTROL Generic Marketing Preference Field] 是一种标准XDM数据类型，用于描述客户针对特定营销首选项的选择。
+[!UICONTROL 通用营销首] 选项字段是一个标准XDM数据类型，用于描述客户对特定营销首选项的选择。
 
 >[!NOTE]
 >
->此模式类型旨在用于使用[[!UICONTROL Privacy/Personalization/Marketing Preferences (Consents)]字段组](../field-groups/profile/consents.md)作为基线来自定义组织的同意的结构。
+>此数据类型旨在用于使用[[!UICONTROL 隐私/个性化/营销首选项（同意）]字段组](../field-groups/profile/consents.md)作为基线来自定义组织同意架构的结构。
 >
->如果您需要特定营销首选项字段的`subscriptions`映射，则必须将[营销字段与订阅数据类型](./marketing-field-subscriptions.md)一起使用。
+>如果您需要特定营销首选项字段的`subscriptions`映射，则必须改用[营销字段来提供订阅数据类型](./marketing-field-subscriptions.md)。
 
 ![](../images/data-types/marketing-field.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
 | `reason` | 字符串 | 当客户选择退出营销用例时，此字符串字段表示客户选择退出的原因。 |
-| `time` | DateTime | 市场营销首选项更改时的ISO 8601时间戳（如果适用）。 |
-| `val` | 字符串 | 客户为此营销用例提供的首选项选择。 有关已接受的值和定义，请参阅下表。 |
+| `time` | DateTime | 营销首选项更改时的ISO 8601时间戳（如果适用）。 |
+| `val` | 字符串 | 客户为此营销用例提供的首选项选择。 有关接受的值和定义，请参阅下表。 |
 
-下表概述了`val`的已接受值：
+{style=&quot;table-layout:auto&quot;}
+
+下表概述了`val`的接受值：
 
 | 值 | 标题 | 描述 |
 | --- | --- | --- |
-| `y` | 是 | 客户已选择此首选项。 换句话说，他们&#x200B;**do**&#x200B;同意使用其数据，如有关偏好所示。 |
-| `n` | 否 | 客户已选择退出此首选项。 换句话说，他们&#x200B;**不**&#x200B;同意使用其数据，如有关偏好所示。 |
-| `p` | 待验证 | 系统尚未收到最终的偏好值。 这通常是需要两步核查的同意的一部分。 例如，如果客户选择接收电子邮件，则该同意将设置为`p`，直到他们选择电子邮件中的链接以验证他们提供了正确的电子邮件地址，此时该同意将更新为`y`。<br><br>如果此首选项不使用两组验证过程，则 `p` 该选择可用于指示客户尚未响应同意提示。例如，您可以在客户响应同意提示之前，在网站的第一页自动将值设置为`p`。 在不需要明确同意的司法管辖区，您还可以使用它指示客户未明确选择退出（即假定客户同意）。 |
-| `u` | Unknown | 客户的偏好信息未知。 |
-| `LI` | 合法利益 | 为特定目的收集和处理这些数据的合法商业利益超过数据对个人的潜在伤害。 |
+| `y` | 是 | 客户已选择使用该首选项。 换言之，他们&#x200B;**do**&#x200B;同意使用其数据，如相关首选项所示。 |
+| `n` | 否 | 客户已选择退出该首选项。 换言之，他们&#x200B;**不**&#x200B;同意使用其数据，如相关首选项所示。 |
+| `p` | 待验证 | 系统尚未收到最终的偏好值。 这通常用作需要两步验证的同意的一部分。 例如，如果客户选择接收电子邮件，则该同意将设置为`p`，直到他们选择电子邮件中的链接来验证他们是否提供了正确的电子邮件地址，此时同意将更新为`y`。<br><br>如果此首选项不使用两套验证过程，则 `p` 可以使用选择来指示客户尚未响应同意提示。例如，您可以在客户响应同意提示之前，在网站的首页上自动将值设置为`p`。 在不需要明确同意的司法管辖区中，您还可以使用它来指示客户未明确选择退出（换言之，假设同意）。 |
+| `u` | Unknown | 客户的首选项信息未知。 |
+| `LI` | 合法利益 | 为特定目的收集和处理这些数据的正当商业利益，超过了这些数据对个人的潜在损害。 |
 | `CT` | 合同 | 为达到指定目的而收集数据，是为了履行与个人的合同义务。 |
-| `CP` | 遵守法律义务 | 为达到特定目的而收集数据，是为了履行业务的法律义务。 |
-| `VI` | 个人的切身利益 | 为了保护个人的切身利益，需要为特定目的收集数据。 |
-| `PI` | Public Interest | 为特定目的收集数据，是为了公共利益或行使官方权力而进行任务。 |
+| `CP` | 遵守法律义务 | 为达到指定目的而收集数据，是为了履行业务的法律义务。 |
+| `VI` | 个人的重大利益 | 为了保护个人的重大利益，需要为特定目的收集数据。 |
+| `PI` | 公共利益 | 为特定目的收集数据是为了公共利益或行使官方权力而执行一项任务所必需的。 |
 
-有关数据类型的详细信息，请参阅公共XDM存储库：
+{style=&quot;table-layout:auto&quot;}
 
-* [已填充示例](https://github.com/adobe/xdm/blob/master/components/datatypes/consent/marketing-field-basic.example.1.json)
+有关数据类型的更多详细信息，请参阅公共XDM存储库：
+
+* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/consent/marketing-field-basic.example.1.json)
 * [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/consent/marketing-field-basic.schema.json)
