@@ -1,45 +1,44 @@
 ---
-keywords: Experience Platform；主页；热门主题；api;XDM;XDM;XDM系统；体验数据模型；体验数据模型；数据模型；模式注册；模式注册；合并;合并;合并;合并;segmentMembership;timeSeriesEvents;
+keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；架构注册；架构注册；合并；合并；合并；合并；合并；会合；区段成员资格；timeSeriesEvents;
 solution: Experience Platform
-title: 合并API端点
-description: 模式 Registry API中的/合并端点允许您在体验应用程序中以编程方式管理XDM合并模式。
+title: Unions API端点
+description: 架构注册表API中的/unions端点允许您以编程方式管理体验应用程序中的XDM并集架构。
 topic-legacy: developer guide
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '900'
-ht-degree: 1%
+source-wordcount: '915'
+ht-degree: 3%
 
 ---
 
-# 合并端点
+# Unions端点
 
-合并(或合并视图)是系统生成的只读模式，用于聚合共享相同类（[!DNL XDM ExperienceEvent]或[!DNL XDM Individual Profile]）且为[[!DNL Real-time Customer Profile]](../../profile/home.md)启用的所有模式的字段。
+联合（或联合视图）是系统生成的只读架构，用于聚合共享相同类（[!DNL XDM ExperienceEvent]或[!DNL XDM Individual Profile]）并为[[!DNL Real-time Customer Profile]](../../profile/home.md)启用的所有架构的字段。
 
-此文档涵盖在模式 Registry API中使用合并的基本概念，包括对各种操作的示例调用。 有关XDM中合并的更多一般信息，请参阅模式合成[基础知识](../schema/composition.md#union)中有关合并的部分。
+本文档介绍了在架构注册表API中与工会合作的基本概念，包括各种操作的示例调用。 有关XDM中联合的更多常规信息，请参阅[架构组合基础知识](../schema/composition.md#union)中有关联合的部分。
 
-## 合并模式字段
+## 并集架构字段
 
-[!DNL Schema Registry]在合并模式中自动包含三个键字段：`identityMap`、`timeSeriesEvents`和`segmentMembership`。
+[!DNL Schema Registry]会自动在并集架构中包含三个关键字段：`identityMap`、`timeSeriesEvents`和`segmentMembership`。
 
 ### 身份映射
 
-合并模式的`identityMap`是合并关联记录模式中已知身份的表示。 标识映射将标识分为由命名空间键控的不同数组。 每个列出的标识本身都是包含唯一`id`值的对象。 有关详细信息，请参阅[Identity Service文档](../../identity-service/home.md)。
+并集架构的`identityMap`是并集关联记录架构内已知标识的表示形式。 标识映射将标识分隔为由命名空间键控的不同数组。 列出的每个标识本身都是一个包含唯一`id`值的对象。 有关更多信息，请参阅[Identity Service文档](../../identity-service/home.md)。
 
 ### 时间系列事件
 
-`timeSeriesEvents`阵列是与与该合并相关联的记录事件相关的时间序列模式的列表。 将用户档案数据导出到数据集时，每个记录都包含此数组。 这对于各种用例非常有用，例如机器学习，其中模型除了记录属性外还需要用户档案的整个行为历史记录。
+`timeSeriesEvents`数组是与与并集关联的记录架构相关的时间序列事件列表。 将配置文件数据导出到数据集时，每个记录都包含此数组。 这对于各种用例非常有用，例如机器学习，在该用例中，模型除了需要记录属性之外，还需要用户档案的整个行为历史记录。
 
-### 区段成员关系图
+### 区段成员资格映射
 
-`segmentMembership`映射存储区段评估的结果。 使用[分段API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)成功运行段作业时，将更新映射。 `segmentMembership` 还存储任何已预评估的受众细分，这些细分被引入平台中，允许与Adobe Audience Manager等其他解决方案集成。有关详细信息，请参阅有关使用API](../../segmentation/tutorials/create-a-segment.md)创建区段的教程。[
+`segmentMembership`映射存储区段评估的结果。 使用[分段API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)成功运行区段作业时，将更新映射。 `segmentMembership` 此外，还存储了摄取到Platform中的任何预评估受众区段，以便与Adobe Audience Manager等其他解决方案集成。有关更多信息，请参阅有关[使用API创建区段的教程](../../segmentation/tutorials/create-a-segment.md) 。
 
-## 检索列表合并{#list}
+## 检索工会列表 {#list}
 
-在模式上设置`union`标签时，[!DNL Schema Registry]会自动将模式添加到模式所基于的类的合并中。 如果相关类不存在合并，则会自动创建新合并。 该合并的`$id`与其他[!DNL Schema Registry]资源的标准`$id`类似，唯一的区别是附加两个下划线和单词“合并”(`__union`)。
+在架构上设置`union`标记后，[!DNL Schema Registry]会自动将架构添加到该架构所依据的类的并集中。 如果相关类不存在并集，则会自动创建新并集。 并集的`$id`与其他[!DNL Schema Registry]资源的标准`$id`类似，唯一的区别在于附加了两个下划线和单词“union”(`__union`)。
 
-您可以通过向`/tenant/unions`端点发出GET请求来视图可用合并的列表。
+通过向`/tenant/unions`端点发出GET请求，可以查看可用联合的列表。
 
 **API格式**
 
@@ -59,16 +58,18 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed-id+json'
 ```
 
-响应格式取决于请求中发送的`Accept`标头。 以下`Accept`标头可用于列出合并:
+响应格式取决于请求中发送的`Accept`标头。 以下`Accept`标头可用于列表联合：
 
 | `Accept` 标题 | 描述 |
 | --- | --- |
-| `application/vnd.adobe.xed-id+json` | 返回每个资源的简短摘要。 这是列出资源的建议标题。 (限制：300) |
+| `application/vnd.adobe.xed-id+json` | 返回每个资源的简短摘要。 这是列出资源的建议标头。 (限制：300) |
 | `application/vnd.adobe.xed+json` | 为每个资源返回完整的JSON类，其中包含原始的`$ref`和`allOf`。 (限制：300) |
+
+{style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-成功的响应返回HTTP状态200(OK)和响应体中的`results`数组。 如果已定义合并，则每个合并的详细信息将作为数组中的对象提供。 如果未定义合并，则仍返回HTTP状态200（确定），但`results`数组将为空。
+成功的响应会返回HTTP状态200(OK)和响应正文中的`results`数组。 如果定义了并集，则每个并集的详细信息将作为数组中的对象提供。 如果尚未定义联合，则仍会返回HTTP状态200（确定），但`results`数组将为空。
 
 ```JSON
 {
@@ -89,13 +90,13 @@ curl -X GET \
 }
 ```
 
-## 查找合并{#lookup}
+## 查找工会 {#lookup}
 
-您可以通过执行包含`$id`的GET请求来视图特定合并，并根据“接受”标头，执行合并的部分或全部详细信息。
+您可以通过执行包含`$id`的GET请求来查看特定的并集，并根据Accept标头，查看并集的部分或全部详细信息。
 
 >[!NOTE]
 >
->合并查找可使用`/unions`和`/schemas`端点来启用，以在[!DNL Profile]导出到数据集中时使用。
+>使用`/unions`和`/schemas`端点可进行并集查找，以启用它们以在[!DNL Profile]导出到数据集中时使用。
 
 **API格式**
 
@@ -106,7 +107,9 @@ GET /tenant/schemas/{UNION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{UNION_ID}` | 要查找的合并的URL编码的`$id` URI。 合并模式的URI会附加“__合并”。 |
+| `{UNION_ID}` | 要查找的并集的URL编码的`$id` URI。 并集模式的URI将附加“__union”。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 **请求**
 
@@ -120,20 +123,22 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed+json; version=1'
 ```
 
-合并查找请求要求在“接受”标头中包含`version`。
+并集查找请求要求在Accept标头中包含`version`。
 
-以下“接受”标题可用于合并模式查找：
+以下接受标头可用于并集架构查找：
 
 | Accept | 描述 |
 | -------|------------ |
-| `application/vnd.adobe.xed+json; version=1` | 具有`$ref`和`allOf`的原始数据。 包括标题和说明。 |
-| `application/vnd.adobe.xed-full+json; version=1` | `$ref` 属性和已 `allOf` 解析。包括标题和说明。 |
+| `application/vnd.adobe.xed+json; version=1` | 具有`$ref`和`allOf`的原始数据。 包括标题和描述。 |
+| `application/vnd.adobe.xed-full+json; version=1` | `$ref` 属性和已 `allOf` 解析。包括标题和描述。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-成功的响应返回实现其`$id`在请求路径中提供的类的所有模式的合并视图。
+成功响应会返回实现请求路径中提供`$id`类的所有架构的并集视图。
 
-响应格式取决于在请求中发送的Accept头。 尝试不同的接受标头以比较响应并确定最适合您的用例的标头。
+响应格式取决于请求中发送的Accept标头。 尝试使用不同的接受标头来比较响应并确定最适合您的用例的标头。
 
 ```JSON
 {
@@ -174,13 +179,13 @@ curl -X GET \
 }
 ```
 
-## 为合并成员资格{#enable}启用模式
+## 启用联合成员资格的架构 {#enable}
 
-要将模式包含在其类的合并中，必须将`union`标记添加到模式的`meta:immutableTags`属性中。 为此，可以发出PATCH请求，将`meta:immutableTags`数组（单个字符串值为`union`）添加到所述模式。 有关详细示例，请参见[模式端点指南](./schemas.md#union)。
+要将架构包含在其类的并集中，必须将`union`标记添加到架构的`meta:immutableTags`属性中。 为此，您可以发出PATCH请求，将`meta:immutableTags`数组（单个字符串值为`union`）添加到相关架构中。 有关详细示例，请参阅[架构端点指南](./schemas.md#union)。
 
-## 列表合并{#list-schemas}中的模式
+## 列出并集{#list-schemas}中的架构
 
-要查看哪些模式是特定合并的一部分，可以对`/tenant/schemas`端点执行GET请求。 使用`property`查询参数，可以配置响应以仅返回包含`meta:immutableTags`字段和与您访问其合并的类相等的`meta:class`的模式。
+为了查看哪些架构是特定并集的一部分，您可以对`/tenant/schemas`端点执行GET请求。 使用`property`查询参数，您可以配置响应，以仅返回包含`meta:immutableTags`字段和等于您正在访问的并集的类的`meta:class`架构。
 
 **API格式**
 
@@ -190,11 +195,13 @@ GET /tenant/schemas?property=meta:immutableTags==union&property=meta:class=={CLA
 
 | 参数 | 描述 |
 | --- | --- |
-| `{CLASS_ID}` | 要列表其启用合并的模式的类的`$id`。 |
+| `{CLASS_ID}` | 要列出其启用并集架构的类的`$id`。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求将检索属于[!DNL XDM Individual Profile]类合并的所有模式的列表。
+以下请求将检索属于[!DNL XDM Individual Profile]类并集的所有架构的列表。
 
 ```SHELL
 curl -X GET \
@@ -206,16 +213,18 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-响应格式取决于请求中发送的`Accept`标头。 以下`Accept`标头可用于列出模式:
+响应格式取决于请求中发送的`Accept`标头。 以下`Accept`标头可用于列出架构：
 
 | `Accept` 标题 | 描述 |
 | --- | --- |
-| `application/vnd.adobe.xed-id+json` | 返回每个资源的简短摘要。 这是列出资源的建议标题。 (限制：300) |
-| `application/vnd.adobe.xed+json` | 返回每个资源的完整JSON模式，其中包含原始`$ref`和`allOf`。 (限制：300) |
+| `application/vnd.adobe.xed-id+json` | 返回每个资源的简短摘要。 这是列出资源的建议标头。 (限制：300) |
+| `application/vnd.adobe.xed+json` | 为每个资源返回完整的JSON架构，其中包含原始的`$ref`和`allOf`。 (限制：300) |
+
+{style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-成功的响应返回已过滤的模式列表，只包含属于已启用合并成员资格的指定类的。 请记住，使用多个查询参数时，假定为AND关系。
+成功响应会返回一个已过滤的架构列表，其中仅包含属于已启用并集成员资格的指定类的架构列表。 请记住，使用多个查询参数时，假定为AND关系。
 
 ```JSON
 {
