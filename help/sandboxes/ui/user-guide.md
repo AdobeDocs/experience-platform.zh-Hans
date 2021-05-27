@@ -1,31 +1,30 @@
 ---
-keywords: Experience Platform；主页；热门主题；沙箱用户指南；沙箱指南
+keywords: Experience Platform；主页；热门主题；沙盒用户指南；沙盒指南
 solution: Experience Platform
-title: 沙箱UI指南
+title: 沙盒UI指南
 topic-legacy: user guide
-description: 本文档提供了有关如何执行与Adobe Experience Platform用户界面中的沙箱相关的各种操作的步骤。
+description: 本文档提供了有关如何在Adobe Experience Platform用户界面中执行与沙箱相关的各种操作的步骤。
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8c1c7b6b01b55bd15c492b0f62d280c1e9a98070
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '699'
 ht-degree: 0%
 
 ---
 
-# 沙箱UI指南
+# 沙盒UI指南
 
-本文档提供了有关如何执行与Adobe Experience Platform用户界面中的沙箱相关的各种操作的步骤。
+本文档提供了有关如何在Adobe Experience Platform用户界面中执行与沙箱相关的各种操作的步骤。
 
-## 视图沙箱
+## 查看沙箱
 
-在Experience PlatformUI中，在左侧导航中选择&#x200B;**[!UICONTROL Sandboxes]**&#x200B;以打开&#x200B;**[!UICONTROL Sandboxes]**&#x200B;仪表板。 仪表板将列表组织的所有可用沙箱，包括沙箱类型（生产或开发）和状态（活动、创建、删除或失败）。
+在平台UI中，选择左侧导航中的&#x200B;**[!UICONTROL 沙盒]**&#x200B;以打开[!UICONTROL 沙盒]功能板。 功能板列出了贵组织的所有可用沙箱，包括沙盒类型（生产或开发）和状态（活动、创建、删除或失败）。
 
 ![](../images/ui/view-sandboxes.png)
 
 ## 在沙箱之间切换
 
-屏幕左上角的&#x200B;**沙箱切换器**&#x200B;控件显示当前活动的沙箱。
+屏幕左上角的&#x200B;**沙盒切换器**&#x200B;控件显示当前活动的沙盒。
 
 ![](../images/ui/sandbox-switcher.png)
 
@@ -33,78 +32,78 @@ ht-degree: 0%
 
 ![](../images/ui/switcher-menu.png)
 
-选择沙箱后，屏幕将刷新，沙箱切换器中现在提供选定沙箱。
+选择沙盒后，屏幕将随选定的沙盒（现在位于沙盒切换器中）一起刷新。
 
 ![](../images/ui/switched.png)
 
-## 沙箱会话
+## 搜索沙盒
 
-使用沙箱切换器菜单中的搜索功能，您可以浏览可用沙箱的列表。 键入要访问的沙箱的名称，以过滤组织可用的所有沙箱。
+您可以使用沙盒切换器菜单中的搜索功能，在可供您使用的沙箱列表中导航。 键入您要访问的沙盒的名称，以过滤组织可用的所有沙箱。
 
 ![](../images/ui/sandbox-search.png)
 
-## 创建新沙箱
+## 创建新沙盒
 
-使用以下视频快速概述如何在Experience Platform中使用沙箱。
+请使用以下视频快速了解如何在Experience Platform中使用沙箱。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29838/?quality=12&learn=on)
 
-要在UI中创建新沙箱，请选择屏幕右上方的&#x200B;**[!UICONTROL Create Sandbox]**&#x200B;按钮。
+要创建新沙盒，请选择屏幕右上角的&#x200B;**[!UICONTROL 创建沙盒]** 。
 
-![](../images/ui/create-sandbox.png)
+![创建](../images/ui/create.png)
 
-将显示&#x200B;**[!UICONTROL Create Sandbox]**&#x200B;对话框，提示您提供沙箱的显示标题和名称。 **显示标题**&#x200B;的用意是可读的，且描述性应足以易于识别。 沙箱&#x200B;**[!UICONTROL Name]**&#x200B;是用于API调用的全小写标识符，因此应该是唯一和简洁的。 沙箱&#x200B;**[!UICONTROL Name]**&#x200B;只能由字母数字字符和连字符&#x200B;**(-)**&#x200B;组成，它必须以字母开头，最多包含256个字符。
+出现&#x200B;**[!UICONTROL 创建沙盒]**&#x200B;对话框。 如果要创建开发沙盒，请在下拉面板中选择&#x200B;**[!UICONTROL 开发]**。 要创建新的生产沙盒，请选择&#x200B;**[!UICONTROL 生产]**。
 
-完成后，选择&#x200B;**[!UICONTROL Create]**。
+![type](../images/ui/type.png)
 
-![](../images/ui/create-dialog.png)
+选择类型后，为沙盒提供名称和标题。 标题应当具有人类可读性，且应当具有足够的描述性，以便于识别。 沙盒名称是在API调用中使用的全小写标识符，因此应该是唯一的且简洁。 沙盒名称必须以字母开头，且最多包含256个字符，且只能由字母数字字符和连字符(-)组成。
 
->[!NOTE]
+完成后，选择&#x200B;**[!UICONTROL 创建]**。
+
+![信息](../images/ui/info.png)
+
+创建完沙盒后，刷新页面，新沙盒将显示在&#x200B;**[!UICONTROL 沙盒]**&#x200B;功能板中，状态为“[!UICONTROL 创建]”。 新沙箱需要大约30秒才能由系统进行配置，之后其状态将变为“[!UICONTROL Active]”。
+
+## 重置沙盒
+
+>[!IMPORTANT]
 >
->由于您仅限于创建非生产沙箱类型，因此&#x200B;**[!UICONTROL type]**&#x200B;选项在“非生产”处被锁定，无法进行操作。
+>如果Adobe Analytics还在为[跨设备分析(CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html)功能使用其中托管的身份图，或者为[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html)功能使用其中托管的身份图，则无法重置默认的生产沙盒。 也无法重置用于与Adobe Audience Manager或受众核心服务进行双向区段共享的生产沙箱。
 
-创建完沙箱后，请刷新页面，新沙箱将显示在&#x200B;**[!UICONTROL Sandboxes]**&#x200B;仪表板中，状态为“[!UICONTROL Creating]”。 新沙箱需要大约15分钟才能由系统设置，之后其状态将更改为“[!UICONTROL Active]”。
+重置生产或开发沙盒会删除与该沙盒（架构、数据集等）关联的所有资源，同时维护沙盒的名称和关联的权限。 对于有权访问该“干净”沙盒的用户，该沙盒将继续以相同的名称提供。
 
-![](../images/ui/creating.png)
+从沙箱列表中选择要重置的沙箱。 在显示的右侧导航面板中，选择&#x200B;**[!UICONTROL 沙盒重置]**。
 
-## 重置沙箱
+![重置](../images/ui/reset.png)
 
->[!NOTE]
+出现一个对话框，提示您确认您的选择。 选择&#x200B;**[!UICONTROL 继续]**&#x200B;以继续。
+
+![重置警告](../images/ui/reset-warning.png)
+
+在最终的确认窗口中，在对话框中输入沙盒的名称，然后选择&#x200B;**[!UICONTROL Reset]**
+
+![重置确认](../images/ui/reset-confirm.png)
+
+## 删除沙盒
+
+>[!IMPORTANT]
 >
->此功能仅适用于非生产沙箱。 无法重置生产沙箱。
+>无法删除默认的生产沙盒，也无法删除用于与Adobe Audience Manager或Audience Core Service进行双向区段共享的生产沙盒。
 
-重置非生产沙箱将删除与该沙箱(模式、数据集等)关联的所有资源，同时保持沙箱的名称和关联权限。 对于具有访问权限的用户，该“干净”沙箱将继续以同一名称可用。
+删除生产或开发沙盒会永久删除与该沙盒关联的所有资源，包括权限。
 
-要在UI中重置沙箱，请在左导航中选择&#x200B;**[!UICONTROL Sandboxes]**，然后选择要重置的沙箱。 在屏幕右侧显示的对话框中，选择&#x200B;**[!UICONTROL Reset Sandbox]**。
+从沙箱列表中选择要删除的沙箱。 在显示的右侧导航面板中，选择&#x200B;**[!UICONTROL Delete]**。
 
-![](../images/ui/reset-sandbox.png)
+![删除](../images/ui/delete.png)
 
-将出现一个对话框，提示您确认您的选择。 选择&#x200B;**[!UICONTROL Reset]**&#x200B;继续。
+出现一个对话框，提示您确认您的选择。 选择&#x200B;**[!UICONTROL 继续]**&#x200B;以继续。
 
-![](../images/ui/reset-confirm.png)
+![delete-warning](../images/ui/delete-warning.png)
 
-将显示确认消息，沙箱的状态将更改为“**[!UICONTROL Resetting]”**。 系统设置后，其状态将更新为&#x200B;**&quot;[!UICONTROL Active]&quot;**&#x200B;或&#x200B;**&quot;[!UICONTROL Failed]&quot;**。
+在最终确认窗口中，在对话框中输入沙盒的名称，然后选择&#x200B;**[!UICONTROL 继续]**
 
-![](../images/ui/resetting.png)
-
-## 删除沙箱
-
->[!NOTE]
->
->此功能仅适用于非生产沙箱。 无法删除生产沙箱。
-
-删除非生产沙箱将永久删除与该沙箱关联的所有资源，包括权限。
-
-要在UI中删除沙箱，请在左导航中选择&#x200B;**[!UICONTROL Sandboxes]**，然后选择要删除的沙箱。 在屏幕右侧显示的对话框中，选择&#x200B;**[!UICONTROL Delete Sandbox]**。
-
-![](../images/ui/delete-sandbox.png)
-
-将出现一个对话框，提示您确认您的选择。 选择&#x200B;**[!UICONTROL Delete]**&#x200B;继续。
-
-![](../images/ui/delete-confirm.png)
-
-将显示确认消息，并从&#x200B;**[!UICONTROL Sandboxes]**&#x200B;工作区中删除沙箱。
+![delete-confirm](../images/ui/delete-confirm.png)
 
 ## 后续步骤
 
-此文档演示了如何在Experience Platform UI中管理沙箱。 有关如何使用沙箱API管理沙箱的信息，请参阅[沙箱开发人员指南](../api/getting-started.md)。
+本文档演示了如何在Experience PlatformUI中管理沙箱。 有关如何使用沙盒API管理沙盒的信息，请参阅[沙盒开发人员指南](../api/getting-started.md)。
