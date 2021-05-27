@@ -5,9 +5,9 @@ title: 身份命名空间概述
 topic-legacy: overview
 description: 身份命名空间是 Identity Service 的组件，充当与身份相关的上下文指示器。例如，它们将值“name@email.com”区分为电子邮件地址或“443522”作为数字CRM ID。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: c2db929a96883607ea99f08bffc92a5a9bafd01a
+source-git-commit: 700012988fd46e835dcbc441c39f08e4c172ef0f
 workflow-type: tm+mt
-source-wordcount: '1635'
+source-wordcount: '1638'
 ht-degree: 2%
 
 ---
@@ -72,6 +72,8 @@ Experience Platform提供了多个适用于所有组织的身份命名空间。 
 | 电话(SHA256_E.164) | 表示需要使用SHA256和E.164格式进行哈希处理的原始电话号码的命名空间。 |
 | TNTID | 表示Adobe Target的命名空间。 有关更多信息，请参阅[Target](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=en)上的以下文档。 |
 | Windows AID | 表示Windows广告ID的命名空间。 有关详细信息，请参阅[Windows广告ID](https://docs.microsoft.com/en-us/uwp/api/windows.system.userprofile.advertisingmanager.advertisingid?view=winrt-19041)上的以下文档。 |
+
+### 查看身份命名空间
 
 要在UI中查看身份命名空间，请在左侧导航中选择&#x200B;**[!UICONTROL Identities]**，然后选择&#x200B;**[!UICONTROL Browse]**。
 
