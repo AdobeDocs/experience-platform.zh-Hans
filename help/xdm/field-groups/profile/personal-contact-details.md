@@ -1,38 +1,39 @@
 ---
-keywords: Experience Platform；主页；热门主题；模式;模式;XDM；个人用户档案；字段；模式;模式；个人详细信息；模式设计；字段组；字段组；
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；个人配置文件；字段；架构；个人详细信息；架构设计；字段组；字段组；
 solution: Experience Platform
-title: 个人联系人详细信息模式字段组
+title: 个人联系人详细信息架构字段组
 topic-legacy: overview
-description: 此文档概述了“个人联系人详细信息”模式字段组。
+description: 本文档概述了个人联系人详细信息架构字段组。
 exl-id: a78d9aee-ecf6-45a9-b270-cdad5b800a86
-translation-type: tm+mt
-source-git-commit: 4755f9b7666efd8354a5f15aeed40a7da4a06efe
+source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
 workflow-type: tm+mt
-source-wordcount: '160'
-ht-degree: 6%
+source-wordcount: '169'
+ht-degree: 7%
 
 ---
 
 
-# [!UICONTROL Personal Contact Details] 模式字段组
+# [!UICONTROL 个人联系人] 详细信息架构字段组
 
 >[!NOTE]
 >
->多个模式字段组的名称已更改。 有关详细信息，请参阅[字段组名称更新](../name-updates.md)上的文档。
+>多个架构字段组的名称已更改。 有关详细信息，请参阅[字段组名称更新](../name-updates.md)上的文档。
 
-[!UICONTROL Personal Contact Details] 是类的标准模式字段 [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md) 组，它描述个人的联系信息。
+[!UICONTROL 个人联] 系人详细信息此类的标准架构字 [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md) 段组，描述个人的联系信息。
 
 ![](../../images/field-groups/personal-contact-details.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `faxPhone` | [电话号码](../../data-types/phone-number.md) | 描述此人的传真号码。 |
+| `faxPhone` | [电话号码](../../data-types/phone-number.md) | 描述人员的传真号码。 |
 | `homeAddress` | [邮政地址](../../data-types/postal-address.md) | 描述人员的住宅地址。 |
-| `homePhone` | [电话号码](../../data-types/phone-number.md) | 描述此人的家庭电话号码。 |
-| `mobilePhone` | [电话号码](../../data-types/phone-number.md) | 描述此人的移动电话号码。 |
+| `homePhone` | [电话号码](../../data-types/phone-number.md) | 描述人员的家庭电话号码。 |
+| `mobilePhone` | [电话号码](../../data-types/phone-number.md) | 描述人员的手机号码。 |
 | `personalEmail` | [电子邮件地址](../../data-types/email-address.md) | 描述人员的电子邮件地址。 |
 
-有关字段组的详细信息，请参阅公共XDM存储库：
+{style=&quot;table-layout:auto&quot;}
 
-* [已填充示例](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-personal-details.example.1.json)
+有关字段组的更多详细信息，请参阅公共XDM存储库：
+
+* [填充的示例](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-personal-details.example.1.json)
 * [完整模式](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-personal-details.schema.json)
