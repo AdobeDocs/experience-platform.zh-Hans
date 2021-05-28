@@ -1,75 +1,70 @@
 ---
-keywords: Experience Platform；主页；热门主题；hubspot;Hubspot
+keywords: Experience Platform；主页；热门主题；Hubspot;Hubspot
 solution: Experience Platform
 title: 使用流服务API创建HubSpot源连接
 topic-legacy: overview
 type: Tutorial
-description: 了解如何使用Flow Service API将Adobe Experience Platform连接到HubSpot。
+description: 了解如何使用流量服务API将Adobe Experience Platform连接到HubSpot。
 exl-id: a3e64215-a82d-4aa7-8e6a-48c84c056201
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '578'
 ht-degree: 1%
 
 ---
 
 # 使用[!DNL Flow Service] API创建[!DNL HubSpot]源连接
 
->[!NOTE]
->
->[!DNL HubSpot]连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
-
-[!DNL Flow Service] 用于收集和集中来自Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有受支持的源都可从中连接。
+[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。该服务提供了用户界面和RESTful API，所有受支持的源都可从中连接。
 
 本教程使用[!DNL Flow Service] API指导您完成将[!DNL Experience Platform]连接到[!DNL HubSpot]的步骤。
 
 ## 入门指南
 
-本指南要求对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
-* [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+* [沙盒](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下各节提供了使用[!DNL Flow Service] API成功连接到[!DNL HubSpot]所需的其他信息。
+以下部分提供了您需要了解的其他信息，以便您能够使用[!DNL Flow Service] API成功连接到[!DNL HubSpot]。
 
-### 收集所需凭据
+### 收集所需的凭据
 
 要使[!DNL Flow Service]与[!DNL HubSpot]连接，必须提供以下连接属性：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
 | `clientId` | 与[!DNL HubSpot]应用程序关联的客户端ID。 |
-| `clientSecret` | 与[!DNL HubSpot]应用程序关联的客户端机密。 |
-| `accessToken` | 最初验证您的OAuth集成时获得的访问令牌。 |
-| `refreshToken` | 最初验证您的OAuth集成时获取的刷新令牌。 |
-| `connectionSpec` | 创建连接所需的唯一标识符。 [!DNL HubSpot]的连接规范ID为：`cc6a4487-9e91-433e-a3a3-9cf6626c1806` |
+| `clientSecret` | 与[!DNL HubSpot]应用程序关联的客户端密钥。 |
+| `accessToken` | 首次验证OAuth集成时获取的访问令牌。 |
+| `refreshToken` | 首次验证OAuth集成时获取的刷新令牌。 |
+| `connectionSpec` | 创建连接所需的唯一标识符。 [!DNL HubSpot]的连接规范ID是：`cc6a4487-9e91-433e-a3a3-9cf6626c1806` |
 
-有关快速入门的详细信息，请参阅此[HubSpot文档](https://developers.hubspot.com/docs/methods/oauth2/oauth2-overview)。
+有关入门的更多信息，请参阅此[HubSpot文档](https://developers.hubspot.com/docs/methods/oauth2/oauth2-overview)。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关文档中用于示例API调用的约定的信息，请参阅Experience Platform疑难解答指南中关于如何读取示例API调用](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
+本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅Experience Platform疑难解答指南中[如何阅读示例API调用](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程可为所有[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都与特定虚拟沙箱隔离。 对[!DNL Platform] API的所有请求都需要一个标头来指定操作将在其中进行的沙盒的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
 * `Content-Type: application/json`
 
 ## 创建连接
 
-连接指定源并包含该源的凭据。 每个[!DNL HubSpot]帐户只需要一个连接，因为它可用于创建多个源连接器以导入不同的数据。
+连接指定源并包含该源的凭据。 每个[!DNL HubSpot]帐户只需要一个连接，因为它可用于创建多个源连接器以引入不同的数据。
 
 **API格式**
 
@@ -111,13 +106,13 @@ curl -X POST \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `auth.params.clientId` | 与[!DNL HubSpot]应用程序关联的客户端ID。 |
-| `auth.params.clientSecret` | 与[!DNL HubSpot]应用程序关联的客户端机密。 |
-| `auth.params.accessToken` | 最初验证您的OAuth集成时获得的访问令牌。 |
-| `auth.params.refreshToken` | 最初验证您的OAuth集成时获取的刷新令牌。 |
+| `auth.params.clientSecret` | 与[!DNL HubSpot]应用程序关联的客户端密钥。 |
+| `auth.params.accessToken` | 首次验证OAuth集成时获取的访问令牌。 |
+| `auth.params.refreshToken` | 首次验证OAuth集成时获取的刷新令牌。 |
 
 **响应**
 
-成功的响应返回新创建的连接，包括其唯一连接标识符(`id`)。 在下一个教程中浏览数据时需要此ID。
+成功的响应会返回新创建的连接，包括其唯一连接标识符(`id`)。 在下一个教程中探索数据时需要此ID。
 
 ```json
 {
@@ -126,4 +121,4 @@ curl -X POST \
 }
 ```
 
-通过本教程，您已使用[!DNL Flow Service] API创建了[!DNL HubSpot]连接，并已获得该连接的唯一ID值。 在下一个教程中，您可以使用此连接ID，因为您将学习如何[使用流服务API](../../explore/marketing-automation.md)探索营销自动化系统。
+在本教程中，您已使用[!DNL Flow Service] API创建了[!DNL HubSpot]连接，并获取了该连接的唯一ID值。 在下一个教程中，您可以使用此连接ID，因为您正在学习如何[使用流量服务API](../../explore/marketing-automation.md)探索营销自动化系统。
