@@ -2,18 +2,17 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Launch 中的 Adobe Experience Platform Web SDK 扩展
 seo-description: Adobe Experience Platform Launch 中的 Adobe Experience Platform Web SDK 扩展
-translation-type: tm+mt
-source-git-commit: 14cf62084c88956906cd9454176619ed08081a0e
+exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
+source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
 workflow-type: tm+mt
-source-wordcount: '1134'
-ht-degree: 79%
+source-wordcount: '1130'
+ht-degree: 78%
 
 ---
 
-
 # Adobe Experience Platform Web SDK扩展发行说明
 
-本文档涵盖Adobe Experience Platform Web SDK扩展的Adobe Experience Platform Launch发行说明。 有关SDK本身的最新发行说明，请参阅[Platform Web SDK发行说明](https://docs.adobe.com/content/help/zh-Hans/experience-platform/edge/release-notes.html)。
+本文档介绍了适用于Adobe Experience Platform Launch的Adobe Experience Platform Web SDK扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[平台Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html)。
 
 ## 2020 年 3 月 9 日
 
@@ -21,12 +20,12 @@ ht-degree: 79%
 
 包含 Adobe Experience Platform Web SDK 库的版本 2.4.0。
 
-* 已将[&quot;文档卸载&quot;](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#using-the-sendbeacon-api)复选框添加到“发送事件操作UI”。
-* 增加了对`out`选项的支持，当[配置默认同意](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent)时，将删除所有事件，直到收到同意(现有`pending`选项将事件排队，并在收到同意后发送它们)。
-* 在默认的“同意”字段中添加了工具提示。
-* 增加了对[Adobe的“同意2.0”标准](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/supporting-consent.html?communicating-consent-preferences-via-the-adobe-standard)的支持。
-* 如果用户的访问令牌无效或设置不当，则XDM对象数据元素UI中现在会显示一个更好的错误。
-* 修复了在查看XDM对象数据元素时显示在浏览器开发人员控制台上的跨来源错误（这不影响扩展的操作）。
+* 已将[&quot;document unloading&quot;](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#using-the-sendbeacon-api)复选框添加到“发送事件操作UI”。
+* 添加了对`out`选项的支持，当[配置默认同意](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html#default-consent)时，该选项会丢弃所有事件直到收到同意（现有的`pending`选项会将事件排入队列，并在收到同意后发送它们）。
+* 在默认同意字段中添加了工具提示。
+* 添加了对[Adobe的“同意2.0”标准](https://experienceleague.adobe.com/docs/experience-platform/edge/consent/supporting-consent.html?communicating-consent-preferences-via-the-adobe-standard)的支持。
+* 现在，如果用户的访问令牌无效或配置不正确，则XDM对象数据元素UI中会显示更好的错误。
+* 修复了在查看XDM对象数据元素时显示在浏览器开发人员控制台中的跨域错误（这不会影响扩展的操作）。
 
 ## 2020 年 11 月 4 日
 
@@ -46,7 +45,7 @@ ht-degree: 79%
 
 #### 错误修复
 
-* 当客户尝试按照沙盒模式创建 XDM 对象时，他们将会遇到身份验证问题。调用平台的API现在可以感知到环境，因此用户只能看到他们有权编辑的模式。
+* 当客户尝试按照沙盒模式创建 XDM 对象时，他们将会遇到身份验证问题。现在，调用平台的API可以感知到各种环境，因此用户只能看到他们有权编辑的架构。
 
 #### 功能
 
@@ -70,12 +69,12 @@ ht-degree: 79%
 #### 功能
 
 * 重大变更：移除了 `syncIdentity` 操作，取而代之，在 `sendEvent` 操作中支持传递这些 ID。请在升级扩展之前，通过这项操作来禁用任何现有规则。
-* 更新至 Alloy v. 2.1.0（[发行说明](https://docs.adobe.com/content/help/en/experience-platform/edge/release-notes.html)）
+* 更新至 Alloy v. 2.1.0（[发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html)）
 * 在 `setConsent` 操作中支持 IAB 2.0 Consent Standard。
 * 在 `sendEvent` 操作中支持覆盖数据集 ID。
 * 增加了 `IdentityMap` 类型的新数据元素，该数据元素可用于在（现已启用的）XDM 对象数据元素和 `setConsent` 操作中填充 `identityMap` 条目。
 * 在 `setConsent` 操作中支持传递标识映射。
-* 支持在XDM对象数据元素中选择平台沙箱。
+* 支持在XDM对象数据元素中选择平台沙盒。
 
 
 ## 2020 年 5 月 26 日
@@ -104,7 +103,7 @@ ht-degree: 79%
 * 修复了每次引用数据元素时都会重置事件合并 ID 的问题。
 * 将 `setCustomerIds` 操作重命名为 `syncIdentity`。
 * 添加了一个 `getIdentity` 命令。现在只能通过自定义代码使用此命令。
-* 现在，使用`_satellite`启用调试可在Adobe Experience Platform Web SDK中启用调试。
+* 现在，允许使用`_satellite`进行调试可在Adobe Experience Platform Web SDK中进行调试。
 * 添加了对 XDM 对象中键入值的支持：布尔值、数字和小数。
 
 ## 2020 年 3 月 16 日
