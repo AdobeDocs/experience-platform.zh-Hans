@@ -3,7 +3,7 @@ title: 将Offer decisioning与Platform Web SDK结合使用
 description: Adobe Experience Platform Web SDK可以提供和渲染在Offer decisioning中管理的个性化选件。 您可以使用Offer decisioningUI或API创建选件和其他相关对象。
 keywords: offer decisioning；决策；Web SDK;Platform Web SDK；个性化选件；提供选件；选件交付；选件个性化；
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
+source-git-commit: 6b3548e2db596d56aeacec8f2d5cdd29ddc09bf2
 workflow-type: tm+mt
 source-wordcount: '828'
 ht-degree: 3%
@@ -62,37 +62,47 @@ Adobe Experience Platform [!DNL Web SDK]可以交付和渲染在Offer decisionin
 要启用Offer decisioning，您需要执行以下步骤：
 
 1. 在[datastream](../../fundamentals/datastreams.md)中启用Adobe Experience Platform，并选中“Offer decisioning”框
+
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
-2. 按照[安装SDK](../../fundamentals/installing-the-sdk.md)的说明操作(SDK可以独立安装，也可以通过[Adobe Experience Platform Launch](http://launch.adobe.com/)进行安装。 以下是[Platform launch快速入门指南](https://experienceleague.adobe.com/docs/launch/using/intro/get-started/quick-start.html))。
-3. [配置SDK](../../fundamentals/configuring-the-sdk.md) 以Offer decisioning。下面提供了其他Offer decisioning特定步骤。
+
+1. 按照[安装SDK](../../fundamentals/installing-the-sdk.md)的说明操作(SDK可以独立安装，也可以通过[Adobe Experience Platform Launch](http://launch.adobe.com/)进行安装。 以下是[Platform launch快速入门指南](https://experienceleague.adobe.com/docs/launch/using/intro/get-started/quick-start.html))。
+1. [配置SDK](../../fundamentals/configuring-the-sdk.md) 以Offer decisioning。下面提供了其他Offer decisioning特定步骤。
+
    * 独立安装的SDK
+
       1. 使用`decisionScopes`配置“sendEvent”操作
 
-      ```javascript
-      alloy("sendEvent", {
-          ...
-          "decisionScopes": [
-              "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTIxYWIwOWMxM2JkZDIyNCIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjEyMWFiMDZhODRkMDViMTEifQ==",
-              "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTIxYWIyNWI5NTUwNWIxZiIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjEyMWFiMjFmOTQzMDE0MmIifQ=="
-          ]
-      })
-      ```
-
+         ```javascript
+          alloy("sendEvent", {
+             ...
+             "decisionScopes": [
+                 "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTIxYWIwOWMxM2JkZDIyNCIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjEyMWFiMDZhODRkMDViMTEifQ==",
+                 "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTIxYWIyNWI5NTUwNWIxZiIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjEyMWFiMjFmOTQzMDE0MmIifQ=="
+             ]
+          })
+         ```
    * platform launch安装的SDK
+
       1. [创建Platform launch资产](https://experienceleague.adobe.com/docs/launch/using/reference/admin/companies-and-properties.html)
-      2. [添加Platform launch嵌入代码](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      3. 使用您刚刚创建的数据流安装和配置Platform Web SDK扩展，方法是从“数据流”下拉菜单中选择配置。 请参阅关于[extensions](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/overview.html)的文档。
+      1. [添加Platform launch嵌入代码](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
+      1. 使用您刚刚创建的数据流安装和配置Platform Web SDK扩展，方法是从“数据流”下拉菜单中选择配置。 请参阅关于[extensions](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/overview.html)的文档。
+
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
-      4. 创建必要的[数据元素](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/data-elements.html)。 您至少必须创建Platform Web SDK身份映射和Platform Web SDK XDM对象数据元素。
+
+      1. 创建必要的[数据元素](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/data-elements.html)。 您至少必须创建Platform Web SDK身份映射和Platform Web SDK XDM对象数据元素。
+
          ![identity-map-data-element](./assets/identity-map-data-element.png)
 
          ![xdm-object-data-element](./assets/xdm-object-data-element.png)
-      5. 创建[Rules](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/rules.html)。
+
+      1. 创建[Rules](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/rules.html)。
+
          * 添加Platform Web SDK发送事件操作，并将相关的`decisionScopes`添加到该操作的配置中
+
             ![send-event-action-decisionScopes](./assets/send-event-action-decisionScopes.png)
-      6. [创建并发布包](https://experienceleague.adobe.com/docs/launch/using/reference/publish/libraries.html) 含您配置的所有相关规则、数据元素和扩展的库
+      1. [创建并发布包](https://experienceleague.adobe.com/docs/launch/using/reference/publish/libraries.html) 含您配置的所有相关规则、数据元素和扩展的库
 
 
 
