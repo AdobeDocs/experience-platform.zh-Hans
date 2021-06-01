@@ -1,282 +1,294 @@
 ---
-keywords: Experience Platform；主题；XDM;XDM系统；XDM个人用户档案;XDM体验事件；XDM体验事件；体验事件；体验体验事件;XDM体验事件；体验数据模型；体验数据模型；数据模型；数据模型模型；模式；疑难解答；常见问题解答；合并模式;合并事件;用户档案
+keywords: Experience Platform；主页；热门主题；XDM;XDM系统；XDM个人配置文件；XDM ExperienceEvent;XDM体验事件；体验事件；体验事件；XDM体验事件；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；架构；疑难解答；FAQ;FAQ；联合架构；联合配置文件；http://ns.adobe.com/aep/errors/XDM-1010-404;http://ns.adobe.com/aep/errors/XDM-1011-404;http://ns.adobe.com/aep/errors/XDM-1012-404;http://ns.adobe.com/aep/errors/XDM-1013-404;http://ns.adobe.com/aep/errors/XDM-1014-404;http://ns.adobe.com/aep/errors/XDM-1015-404;http://ns.adobe.com/aep/errors/XDM-1016-404;http://ns.adobe.com/aep/errors/XDM-1017-404;http://ns.adobe.com/aep/errors/XDM-1521-400;http://ns.adobe.com/aep/errors/XDM-1020-400;http://ns.adobe.com/aep/errors/XDM-1021-400;http://ns.adobe.com/aep/errors/XDM-1022-400;http://ns.adobe.com/aep/errors/XDM-1023-400;http://ns.adobe.com/aep/errors/XDM-1024-400;http://ns.adobe.com/aep/errors/XDM-1006-400;http://ns.adobe.com/aep/errors/XDM-1007-400;http://ns.adobe.com/aep/errors/XDM-1008-400;http://ns.adobe.com/aep/errors/XDM-1009-400;http://ns.adobe.com/aep/errors/XDM-1526-400;http://ns.adobe.com/aep/errors/XDM-1527-400;http://ns.adobe.com/aep/errors/XDM-1528-400;
 solution: Experience Platform
-title: XDM系统故障排除指南
-description: 本文档提供有关Adobe Experience Platform中体验数据模型(XDM)和XDM系统的常见问题解答，以及常见错误的疑难解答指南。
+title: XDM系统疑难解答指南
+description: 查找有关Experience Data Model(XDM)的常见问题解答，包括解决常见API错误的步骤。
 topic-legacy: troubleshooting
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-translation-type: tm+mt
-source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
+source-git-commit: 415938f6f3aeec342774b73d1ae5f2dc0e27349c
 workflow-type: tm+mt
-source-wordcount: '1888'
+source-wordcount: '1898'
 ht-degree: 0%
 
 ---
 
 # XDM系统疑难解答指南
 
-本文档提供有关Adobe Experience Platform中[!DNL Experience Data Model](XDM)和XDM系统的常见问题解答，以及常见错误的故障排除指南。 有关其他平台服务的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
+本文档提供了有关Adobe Experience Platform中[!DNL Experience Data Model](XDM)和XDM系统的常见问题解答，包括常见错误的疑难解答指南。 有关与其他Platform服务相关的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
 
-**[!DNL Experience Data Model](XDM)是一** 种开放源代码规范，它为客户体验管理定义了标准化模式。构建[!DNL Experience Platform]的方法，**XDM系统**，操作[!DNL Experience Data Model]模式以供[!DNL Platform]服务使用。 **[!DNL Schema Registry]**&#x200B;提供用户界面和RESTful API以访问[!DNL Experience Platform]中的&#x200B;**[!DNL Schema Library]**。 有关详细信息，请参阅[XDM文档](home.md)。
+**[!DNL Experience Data Model](XDM)** 是一种开源规范，它为客户体验管理定义了标准化架构。构建[!DNL Experience Platform]的方法， **XDM系统**&#x200B;可操作[!DNL Experience Data Model]架构以供[!DNL Platform]服务使用。 **[!DNL Schema Registry]**&#x200B;提供用于访问[!DNL Experience Platform]内&#x200B;**[!DNL Schema Library]**&#x200B;的用户界面和RESTful API。 有关更多信息，请参阅[XDM文档](home.md)。
 
 ## 常见问题解答
 
-以下是有关XDM系统和[!DNL Schema Registry] API使用的常见问题的列表解答。
+以下是有关XDM系统和[!DNL Schema Registry] API使用的常见问题解答列表。
 
-### 如何向模式添加字段？
+### 如何向架构添加字段？
 
-您可以使用模式字段组向模式添加字段。 每个字段组都与一个或多个类兼容，允许该字段组在实现这些兼容类之一的任何模式中使用。 虽然Adobe Experience Platform为多个行业字段组提供了自己的预定义字段，但您可以通过使用API或用户界面创建新字段组，将自己的字段添加到模式。
+您可以使用架构字段组向架构添加字段。 每个字段组都与一个或多个类兼容，从而允许在实现这些兼容类之一的任何架构中使用字段组。 虽然Adobe Experience Platform为多个行业字段组提供了其自己的预定义字段，但您可以通过使用API或用户界面创建自定义字段组，将自己的字段添加到架构中。
 
-有关在[!DNL Schema Registry] API中创建新字段组的详细信息，请参阅[字段组终结点指南](api/field-groups.md#create)。 如果您使用的是UI，请参阅[模式编辑器教程](./tutorials/create-schema-ui.md)。
+有关在[!DNL Schema Registry] API中创建字段组的详细信息，请参阅[字段组端点指南](api/field-groups.md#create)。 如果您使用的是UI，请参阅[架构编辑器教程](./tutorials/create-schema-ui.md)。
 
-### 与数据类型相比，字段组的最佳用途是什么？
+### 字段组与数据类型的最佳用法是什么？
 
-[字段](./schema/composition.md#field-group) 组共享在模式中定义一个或多个字段的组件。字段组强制实现其字段在模式层次结构中的显示方式，因此，在每个模式中，它们所包含的结构都相同。 字段组仅与特定类兼容，由其`meta:intendedToExtend`属性标识。
+[字段](./schema/composition.md#field-group) 组共享在架构中定义一个或多个字段的组件。字段组强制执行其字段在架构层次结构中的显示方式，因此在每个架构中显示的结构都与其中包含的结构相同。 字段组仅与特定类兼容，这些类由其`meta:intendedToExtend`属性标识。
 
-[数](./schema/composition.md#data-type) 据类型还可以为模式提供一个或多个字段。但是，与字段组不同，数据类型不受特定类的限制。 这使数据类型成为描述可跨具有潜在不同类的多个模式重用的常见数据结构的更灵活的选项。
+[数据](./schema/composition.md#data-type) 类型还可以为架构提供一个或多个字段。但是，与字段组不同，数据类型不受特定类的限制。 这使数据类型成为一种更灵活的选项，用于描述在具有潜在不同类的多个架构中可重复使用的常用数据结构。
 
-### 什么是模式的唯一ID?
+### 架构的唯一ID是什么？
 
-所有[!DNL Schema Registry]资源(模式、字段组、数据类型、类)都有一个URI，它充当一个唯一ID，用于引用和查找目的。 在API中查看模式时，可以在顶级`$id`和`meta:altId`属性中找到。
+所有[!DNL Schema Registry]资源（架构、字段组、数据类型、类）都具有用作唯一ID的URI，以用于引用和查找目的。 在API中查看架构时，可在顶级`$id`和`meta:altId`属性中找到该架构。
 
-有关详细信息，请参阅[!DNL Schema Registry] API开发人员指南中的[资源标识](api/getting-started.md#resource-identification)部分。
+有关更多信息，请参阅[!DNL Schema Registry] API指南中的[资源标识](api/getting-started.md#resource-identification)部分。
 
-### 模式开始何时能阻止中断更改？
+### 架构何时开始阻止中断更改？
 
-只要模式在创建数据集时从未使用过，或在[[!DNL Real-time Customer Profile]](../profile/home.md)中启用过，就可以对其进行中断更改。 在模式集创建中使用模式或启用与[!DNL Real-time Customer Profile]一起使用后，系统将严格执行[演化](schema/composition.md#evolution)的规则。
+只要架构从未在创建数据集时使用过，或者已启用在[[!DNL Real-time Customer Profile]](../profile/home.md)中使用，架构就可以进行中断更改。 在数据集创建中使用架构或启用架构以与[!DNL Real-time Customer Profile]一起使用后，系统将严格强制执行[架构演变](schema/composition.md#evolution)的规则。
 
 ### 长字段类型的最大大小是多少？
 
-长字段类型是一个最大大小为53(+1)位的整数，它给它一个介于 — 9007199254740992和9007199254740992之间的势范围。 这是由于JSON的JavaScript实现如何表示长整数存在限制。
+长字段类型是一个最大大小为53(+1)位的整数，它赋予它一个介于 — 9007199254740992和9007199254740992之间的潜在范围。 这是由于JSON的JavaScript实施如何表示长整数存在限制。
 
 有关字段类型的详细信息，请参阅[XDM字段类型约束](./schema/field-constraints.md)的文档。
 
-### 如何为我的模式定义身份？
+### 如何为架构定义标识？
 
-在[!DNL Experience Platform]中，无论被解释的数据源如何，身份用于标识对象（通常是个人）。 通过将键字段标记为“Identity”，在模式中定义这些字段。 常用的标识字段包括电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID和其他唯一ID字段。
+在[!DNL Experience Platform]中，无论解释的数据源如何，均使用身份来识别主体（通常是个人）。 在架构中，可通过将键字段标记为“标识”来定义这些字段。 标识的常用字段包括电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID和其他唯一ID字段。
 
-字段可以使用API或用户界面标记为身份。
+字段可以使用API或用户界面标记为标识。
 
-#### 在API中定义身份
+#### 在API中定义标识
 
-在API中，通过创建标识描述符来建立标识。 标识描述符表示模式的特定属性是唯一标识符。
+在API中，通过创建身份描述符来建立身份。 标识描述符表示模式的特定属性是唯一标识符。
 
-标识描述符是由到/descriptors端点的POST请求创建的。 如果成功，您将收到一个HTTP状态201（已创建）和一个包含新描述符详细信息的响应对象。
+身份描述符由对/descriptors端点的POST请求创建。 如果成功，您将收到HTTP状态201（已创建）和包含新描述符详细信息的响应对象。
 
-有关在API中创建标识描述符的详细信息，请参阅[!DNL Schema Registry]开发人员指南中[描述符](api/descriptors.md)部分的文档。
+有关在API中创建身份描述符的更多详细信息，请参阅[!DNL Schema Registry]开发人员指南中[描述符](api/descriptors.md)部分的文档。
 
-#### 在UI中定义身份
+#### 在UI中定义标识
 
-在模式编辑器中打开模式后，在编辑器的&#x200B;**[!UICONTROL Structure]**&#x200B;部分中选择要标记为标识的字段。 在右侧的&#x200B;**[!UICONTROL Field Properties]**&#x200B;下，选中&#x200B;**[!UICONTROL Identity]**&#x200B;复选框。
+在架构编辑器中打开架构后，在编辑器的&#x200B;**[!UICONTROL Structure]**&#x200B;部分中选择要标记为标识的字段。 在右侧的&#x200B;**[!UICONTROL 字段属性]**&#x200B;下，选中&#x200B;**[!UICONTROL Identity]**&#x200B;复选框。
 
-有关在UI中管理身份的更多详细信息，请参阅模式编辑器教程中[“定义身份字段](./tutorials/create-schema-ui.md#identity-field)”一节。
+有关在UI中管理身份的更多详细信息，请参阅架构编辑器教程中[defining identity fields](./tutorials/create-schema-ui.md#identity-field)部分的部分。
 
-### 我的模式需要主身份吗？
+### 我的架构是否需要主标识？
 
-主要身份是可选的，因为模式可能有0个或1个。 但是，模式必须具有主标识，才能在[!DNL Real-time Customer Profile]中启用模式。 有关详细信息，请参阅模式编辑器教程的[identity](./tutorials/create-schema-ui.md#identity-field)部分。
+主标识是可选的，因为架构可能具有零个或其中一个标识。 但是，架构必须具有主标识，才能在[!DNL Real-time Customer Profile]中启用该架构。 有关更多信息，请参阅架构编辑器教程的[identity](./tutorials/create-schema-ui.md#identity-field)部分。
 
-### 如何启用模式以在[!DNL Real-time Customer Profile]中使用？
+### 如何启用架构以在[!DNL Real-time Customer Profile]中使用？
 
-通过添加位于模式的`meta:immutableTags`属性中的“合并”标签，可以在[[!DNL Real-time Customer Profile]](../profile/home.md)中使用模式。 可以使用API或用户界面启用与[!DNL Profile]一起使用的模式。
+通过在架构的`meta:immutableTags`属性中添加“union”标记，可以在[[!DNL Real-time Customer Profile]](../profile/home.md)中使用架构。 可以使用API或用户界面来启用与[!DNL Profile]一起使用的架构。
 
-#### 使用API为[!DNL Profile]启用现有模式
+#### 使用API为[!DNL Profile]启用现有架构
 
-发出PATCH请求以更新模式，并将`meta:immutableTags`属性添加为包含值“合并”的数组。 如果更新成功，则响应将显示更新的模式，该更新的合并现在包含该更新标记。
+发出PATCH请求以更新架构，并将`meta:immutableTags`属性添加为包含值“union”的数组。 如果更新成功，则响应将显示更新的架构，该架构现在包含并集标记。
 
-有关使用API启用在[!DNL Real-time Customer Profile]中使用的模式的详细信息，请参阅[!DNL Schema Registry]开发人员指南的[合并](./api/unions.md)文档。
+有关使用API启用架构以在[!DNL Real-time Customer Profile]中使用的更多信息，请参阅[!DNL Schema Registry]开发人员指南的[unions](./api/unions.md)文档。
 
-#### 使用UI为[!DNL Profile]启用现有模式
+#### 使用UI为[!DNL Profile]启用现有架构
 
-在[!DNL Experience Platform]中，在左侧导航中选择&#x200B;**[!UICONTROL Schemas]**，然后从模式列表中选择要启用的模式的名称。 然后，在编辑器右侧的&#x200B;**[!UICONTROL Schema Properties]**&#x200B;下，选择&#x200B;**[!UICONTROL Profile]**&#x200B;以将其打开。
+在[!DNL Experience Platform]中，在左侧导航中选择&#x200B;**[!UICONTROL 架构]**，然后从架构列表中选择要启用的架构的名称。 然后，在编辑器右侧的&#x200B;**[!UICONTROL 架构属性]**&#x200B;下，选择&#x200B;**[!UICONTROL 配置文件]**&#x200B;以将其打开。
 
 
-有关详细信息，请参阅[!UICONTROL Schema Editor]教程中关于[在实时客户用户档案](./tutorials/create-schema-ui.md#profile)中使用的部分。
+有关更多信息，请参阅[!UICONTROL 架构编辑器]教程中的[在实时客户资料](./tutorials/create-schema-ui.md#profile)中使用部分。
 
-### 是否可以直接编辑合并模式?
+### 能否直接编辑并集架构？
 
-合并模式是只读的，由系统自动生成。 不能直接编辑。 当将“合并”标签添加到实现该类的模式时，将为特定类创建合并模式。
+并集架构是只读的，并由系统自动生成。 无法直接编辑它们。 将“并集”标记添加到实现该类的架构时，会为特定类创建并集架构。
 
-有关XDM中合并的详细信息，请参阅[!DNL Schema Registry] API开发人员指南中的[合并](./api/unions.md)部分。
+有关XDM中联合的更多信息，请参阅[!DNL Schema Registry] API指南中的[联合](./api/unions.md)部分。
 
-### 如何格式化数据文件以将数据引入模式?
+### 如何设置数据文件格式，以将数据摄取到我的架构中？
 
-[!DNL Experience Platform] 接受或JSON格 [!DNL Parquet] 式的数据文件。这些文件的内容必须符合数据集引用的模式。 有关数据文件摄取的最佳实践的详细信息，请参阅[批处理摄取概述](../ingestion/home.md)。
+[!DNL Experience Platform] 接受或JSON格 [!DNL Parquet] 式的数据文件。这些文件的内容必须符合数据集引用的架构。 有关数据文件摄取的最佳实践的详细信息，请参阅[批量摄取概述](../ingestion/home.md)。
 
 ## 错误和疑难解答
 
 以下是使用[!DNL Schema Registry] API时可能遇到的错误消息列表。
 
-### 未找到对象
+### 未找到资源
 
 ```json
 {
-    "type": "/placeholder/type/uri",
+    "type": "http://ns.adobe.com/aep/errors/XDM-1010-404",
+    "title": "Resource not found",
     "status": 404,
-    "title": "NotFoundError",
-    "detail": "Object https://ns.adobe.com/incorrectTenantId/schemas/ee067e31b08514d21e2b82577813409d 
-      with version 1 not found"
+    "report": {
+        "registryRequestId": "a15996b5-5133-4cec-9bf7-7d1207904ae3",
+        "timestamp": "06-01-2021 04:11:06",
+        "detailed-message": "The requested class resource https://ns.adobe.com/{TENANT_ID}/classes/11447bb484d4599d2cd9b0aseefff78b463cbbde1527f498 with version 1 is not found.",
+        "sub-errors": []
+    },
+    "detail": "The requested class resource https://ns.adobe.com/{TENANT_ID}/classes/11447bb484d4599d2cd9b0aseefff78b463cbbde1527f498 with version 1 is not found."
 }
 ```
 
-当系统找不到特定资源时，将显示此错误。 资源可能已被删除，或API调用中的路径无效。 在重试之前，请确保您已为API调用输入了有效路径。 您可能希望检查您是否为资源输入了正确的ID，以及路径是否以适当的容器（全局或租户）正确命名。
+当系统找不到特定资源时，将显示此错误。 资源可能已删除，或API调用中的路径无效。 再次尝试之前，请确保您为API调用输入了有效路径。 您可能需要检查是否已为资源输入正确的ID，以及路径是否与相应的容器（全局或租户）正确命名。
 
-有关在API中构建查找路径的详细信息，请参阅[!DNL Schema Registry]开发人员指南中的[容器](./api/getting-started.md#container)和[资源标识](api/getting-started.md#resource-identification)部分。
+>[!NOTE]
+>
+>根据所检索的资源类型，此错误可能使用以下任一`type` URI:
+>
+>* `http://ns.adobe.com/aep/errors/XDM-1010-404`
+>* `http://ns.adobe.com/aep/errors/XDM-1011-404`
+>* `http://ns.adobe.com/aep/errors/XDM-1012-404`
+>* `http://ns.adobe.com/aep/errors/XDM-1013-404`
+>* `http://ns.adobe.com/aep/errors/XDM-1014-404`
+>* `http://ns.adobe.com/aep/errors/XDM-1015-404`
+>* `http://ns.adobe.com/aep/errors/XDM-1016-404`
+>* `http://ns.adobe.com/aep/errors/XDM-1017-404`
 
-### 标题必须唯一
+
+有关在API中构建查找路径的更多信息，请参阅[!DNL Schema Registry]开发人员指南中的[容器](./api/getting-started.md#container)和[资源标识](api/getting-started.md#resource-identification)部分。
+
+### 标题不唯一
 
 ```json
 {
-    "type": "/placeholder/type/uri",
+    "type": "http://ns.adobe.com/aep/errors/XDM-1521-400",
+    "title": "Title not unique",
     "status": 400,
-    "title": "BadRequestError",
-    "detail": "Title must be unique. An object 
-      https://ns.adobe.com/{TENANT_ID}/schemas/26f6833e55db1dd8308aa07a64f2042d 
-      already exists with the same title."
+    "report": {
+        "registryRequestId": "a15996b5-5133-4cec-9bf7-7d1207904ae3",
+        "timestamp": "06-01-2021 04:11:06",
+        "detailed-message": "Object titles must be unique. An object https://ns.adobe.com/{TENANT_ID}/classes/11447bb484d4599d2cd9b0aseefff78b463cbbde1527f498 already exists with the same title",
+        "sub-errors": []
+    },
+    "detail": "Object titles must be unique. An object https://ns.adobe.com/{TENANT_ID}/classes/11447bb484d4599d2cd9b0aseefff78b463cbbde1527f498 already exists with the same title"
 }
 ```
 
-当您尝试创建标题已被其他资源使用的资源时，会显示此错误消息。 标题在所有资源类型中必须是唯一的。 例如，如果您尝试创建标题已被模式使用的字段组，您将收到此错误。
+当您尝试创建标题已被其他资源使用的资源时，会显示此错误消息。 标题在所有资源类型中必须是唯一的。 例如，如果您尝试创建的字段组的标题已经由架构使用，则会收到此错误。
 
-### 自定义字段必须使用顶级字段
+### 命名空间验证错误
 
 ```json
 {
-    "type": "/placeholder/type/uri",
+    "type": "http://ns.adobe.com/aep/errors/XDM-1021-400",
+    "title": "Namespace validation error",
     "status": 400,
-    "title": "BadRequestError",
-    "detail": "For custom fields, you must use a top level field named _{TENANT_ID}
-       and all the other fields must be defined under it"
+    "report": {
+        "registryRequestId": "a15996b5-5133-4cec-9bf7-7d1207904ae3",
+        "timestamp": "06-01-2021 04:11:06",
+        "detailed-message": "A custom field is defined under an invalid namespace. All custom fields must be defined under a top-level field named {TENANT_ID}.",
+        "sub-errors": []
+    },
+    "detail": "A custom field is defined under an invalid namespace. All custom fields must be defined under a top-level field named {TENANT_ID}."
 }
 ```
 
-当您尝试创建名称不正确的字段的新字段组时，将显示此错误消息。 您的IMS组织定义的字段组必须将其字段命名空间为`TENANT_ID`，以避免与其他行业和供应商资源发生冲突。 [字段组终结点指南](./api/field-groups.md#create)中提供了有关字段组正确数据结构的详细示例。
+当您尝试创建名称不正确的字段的资源，或向现有资源添加名称不正确的字段时，会显示此错误消息。
 
+由IMS组织定义的资源必须在租户ID下命名其字段的命名空间，以避免与其他行业和供应商资源发生冲突。 在使用标准字段组构建架构时，您在这些字段组结构中添加的任何自定义字段也必须与租户ID下的名称同步。
+
+>[!NOTE]
+>
+>根据命名空间错误的特定性质，此错误可能会使用以下任何`type` URI以及不同的消息详细信息：
+>
+>* `http://ns.adobe.com/aep/errors/XDM-1020-400`
+>* `http://ns.adobe.com/aep/errors/XDM-1021-400`
+>* `http://ns.adobe.com/aep/errors/XDM-1022-400`
+>* `http://ns.adobe.com/aep/errors/XDM-1023-400`
+>* `http://ns.adobe.com/aep/errors/XDM-1024-400`
+
+
+有关XDM资源正确数据结构的详细示例，请参阅架构注册API指南：
+
+* [创建自定义类](./api/classes.md#create)
+* [创建自定义字段组](./api/field-groups.md#create)
+* [创建自定义数据类型](./api/data-types.md#create)
+
+### 接受标头无效
+
+```json
+{
+    "type": "http://ns.adobe.com/aep/errors/XDM-1006-400",
+    "title": "Accept header invalid",
+    "status": 400,
+    "report": {
+        "registryRequestId": "a15996b5-5133-4cec-9bf7-7d1207904ae3",
+        "timestamp": "06-01-2021 04:11:06",
+        "detailed-message": "The supplied Accept header is not valid: application/vnd.adobe.xed+json;version=1 - A valid Accept value should look like application/vnd.adobe.{xed|xdm}+json",
+        "sub-errors": []
+    },
+    "detail": "The supplied Accept header is not valid: application/vnd.adobe.xed+json;version=1 - A valid Accept value should look like application/vnd.adobe.{xed|xdm}+json"
+}
+```
+
+[!DNL Schema Registry] API中的GET请求需要`Accept`标头，以便系统确定如何设置响应的格式。 当所需的`Accept`标头无效或缺失时，会发生此错误。
+
+根据您使用的端点， `detailed-message`属性指示有效的`Accept`标头对于成功响应应该是什么样的。 再次尝试之前，请确保已正确输入与您尝试发出的API请求兼容的`Accept`标头。
+
+>[!NOTE]
+>
+>根据所使用的端点，此错误可能使用以下任何`type` URI:
+>
+>* `http://ns.adobe.com/aep/errors/XDM-1006-400`
+>* `http://ns.adobe.com/aep/errors/XDM-1007-400`
+>* `http://ns.adobe.com/aep/errors/XDM-1008-400`
+>* `http://ns.adobe.com/aep/errors/XDM-1009-400`
+
+
+有关不同API请求的兼容Accept标头列表，请参阅[架构注册开发人员指南](./api/overview.md)中相应的章节。
 
 ### [!DNL Real-time Customer Profile] 错误
 
-以下错误消息与为[!DNL Real-time Customer Profile]启用模式涉及的操作相关。 有关详细信息，请参阅[!DNL Schema Registry] API开发人员指南中的[合并](./api/unions.md)部分。
-
-#### 要启用用户档案数据集，模式应有效
-
-```json
-{
-    "type": "/placeholder/type/uri",
-    "status": 400,
-    "title": "BadRequestError",
-    "detail": "To enable profile datasets the schema should be valid"
-}
-```
-
-当您尝试为尚未为[!DNL Real-time Customer Profile]启用的用户档案启用模式数据集时，将显示此错误消息。 在启用合并集之前，请确保该模式包含一个“”标记。
+以下错误消息与启用[!DNL Real-time Customer Profile]架构时涉及的操作相关联。 有关更多信息，请参阅[!DNL Schema Registry] API指南中的[unions](./api/unions.md)部分。
 
 #### 必须有引用标识描述符
 
 ```json
 {
-    "type": "/placeholder/type/uri",
+    "type": "http://ns.adobe.com/aep/errors/XDM-1526-400",
+    "title": "Union descriptor validation error",
     "status": 400,
-    "title": "BadRequestError",
-    "detail": "For a schema to be able to participate in union, if any of its 
-      property is associated with a xdm:descriptorOneToOne descriptor, there must 
-      be a xdm:descriptorReferenceIdentity descriptor for that property"
+    "report": {
+        "registryRequestId": "a15996b5-5133-4cec-9bf7-7d1207904ae3",
+        "timestamp": "06-01-2021 04:11:06",
+        "detailed-message": "If a schema contains properties that are associated with an xdm:descriptorOneToOne descriptor, those properties must also have a xdm:descriptorReferenceIdentity descriptor for that schema to participate in a union.",
+        "sub-errors": []
+    },
+    "detail": "If a schema contains properties that are associated with an xdm:descriptorOneToOne descriptor, those properties must also have a xdm:descriptorReferenceIdentity descriptor for that schema to participate in a union."
 }
 ```
 
-当您尝试为[!DNL Profile]启用模式时，将显示此错误消息，其中一个属性包含没有引用标识描述符的关系描述符。 将引用标识描述符添加到相关的模式字段以解决此错误。
+当您尝试启用[!DNL Profile]的架构时，将显示此错误消息，其其中一个属性包含没有引用标识描述符的关系描述符。 将引用标识描述符添加到相关架构字段以解决此错误。
 
-#### 引用标识描述符字段和目标模式的命名空间必须匹配
+#### 引用标识描述符字段和目标架构的命名空间必须匹配
 
 ```json
 {
-    "type": "/placeholder/type/uri",
+    "type": "http://ns.adobe.com/aep/errors/XDM-1527-400",
+    "title": "Union descriptor validation error",
     "status": 400,
-    "title": "BadRequestError",
-    "detail": "If both schemas from an already defined xdm:descriptorOneToOne 
-      descriptor are promoted to union, and if there is a primary identity on one of 
-      the schemas from the xdm:descriptorOneToOne descriptor, the 
-      xdm:identityNamespace of the sourceSchema's descriptorReferenceIdentity and the 
-      xdm:namespace field of the xdm:descriptorIdentity for the destinationSchema must 
-      match"
+    "report": {
+        "registryRequestId": "a15996b5-5133-4cec-9bf7-7d1207904ae3",
+        "timestamp": "06-01-2021 04:11:06",
+        "detailed-message": "If both schemas from an existing xdm:descriptorOneToOne descriptor are promoted to union, and one of those schemas contains a primary identity, the xdm:identityNamespace of the source schema's descriptorReferenceIdentity field must match the xdm:namespace field of destination schema's xdm:descriptorIdentity field.",
+        "sub-errors": []
+    },
+    "detail": "If both schemas from an existing xdm:descriptorOneToOne descriptor are promoted to union, and one of those schemas contains a primary identity, the xdm:identityNamespace of the source schema's descriptorReferenceIdentity field must match the xdm:namespace field of destination schema's xdm:descriptorIdentity field."
 }
 ```
 
-要启用包含关系描述符的模式以在[!DNL Profile]中使用，源字段的命名空间和目标字段的主命名空间必须相同。 当您尝试启用包含引用标识描述符的不匹配命名空间的模式时，将显示此错误消息。 确保目标模式的标识字段的`xdm:namespace`值与源字段的引用标识描述符中的`xdm:identityNamespace`属性的值相匹配，以解决此问题。
+要启用包含关系描述符的架构以在[!DNL Profile]中使用，源字段的命名空间和目标字段的主命名空间必须相同。 当您尝试启用某个架构，该架构的引用标识描述符包含不匹配的命名空间时，将显示此错误消息。 确保目标架构的标识字段的`xdm:namespace`值与源字段的引用标识描述符中的`xdm:identityNamespace`属性的值匹配，以解决此问题。
 
-有关受支持身份命名空间代码的列表，请参阅标识命名空间概述中[标准命名空间](../identity-service/namespaces.md)的部分。
+有关标准身份命名空间代码的列表，请参阅身份命名空间概述中[标准命名空间](../identity-service/namespaces.md)的部分。
 
-### 接受标头错误
-
-[!DNL Schema Registry] API中的大多数GET请求都需要一个Accept头，以便系统确定如何格式化响应。 以下是与“接受”标题关联的常见错误列表。 有关不同API请求的列表兼容接受标头，请参阅[模式注册表开发人员指南](api/getting-started.md)中的相应部分。
-
-#### 必须接受标头参数
+#### 架构必须包含identityMap或主标识
 
 ```json
 {
-    "type": "/placeholder/type/uri",
-    "status": 406,
-    "title": "NotAcceptableError",
-    "detail": "Accept header parameter is required"
-}
-```
-
-当API请求中缺少接受标头时，将显示此错误消息。 在再次尝试之前，请确保包含“接受”标头。
-
-#### 未知接受提供的媒体
-
-```json
-{
-    "type": "/placeholder/type/uri",
-    "status": 406,
-    "title": "NotAcceptableError",
-    "detail": "Unknown Accept media supplied: xed+json"
-}
-```
-
-当Accept头无效时，将显示此错误消息。 在重试之前，请确保已正确输入与您尝试发出的API请求兼容的接受标头。
-
-#### 可用的未知接受格式
-
-```json
-{
-    "type": "/placeholder/type/uri",
-    "status": 406,
-    "title": "NotAcceptableError",
-    "detail": "Unknown Accept format available "
-}
-```
-
-在查找描述符时，当Accept标头未正确提供时，将显示此错误消息。 在重试之前，请确保已正确输入了描述符](./api/descriptors.md)支持的[接受标头之一。
-
-#### 必须在“接受”标题中提供版本
-
-```json
-{
-    "type": "/placeholder/type/uri",
+    "type": "http://ns.adobe.com/aep/errors/XDM-1528-400",
+    "title": "Union descriptor validation error",
     "status": 400,
-    "title": "BadRequestError",
-    "detail": "version must be supplied in the accept header. Example: 
-      application/vnd.adobe.xed-full-notext+json; version=1"
+    "report": {
+        "registryRequestId": "a15996b5-5133-4cec-9bf7-7d1207904ae3",
+        "timestamp": "06-01-2021 04:11:06",
+        "detailed-message": "To participate in a union, a schema must include an identityMap fieldgroup or a primary identity descriptor.",
+        "sub-errors": []
+    },
+    "detail": "To participate in a union, a schema must include an identityMap fieldgroup or a primary identity descriptor."
 }
 ```
 
-当Accept头中未包含版本号时，将显示此错误消息。 某些元素(如模式)在查找单个实例时需要指定版本。 包含版本号的Accept头将类似于：
-
-```plaintext
-application/vnd.adobe.xed+json; version=1
-```
-
-有关受支持的接受标头的列表，请参阅[!DNL Schema Registry]开发人员指南中的[接受标头](api/getting-started.md#accept)部分。
-
-#### Accept头中不能提供版本
-
-```json
-{
-    "type": "/placeholder/type/uri",
-    "status": 400,
-    "title": "BadRequestError",
-    "detail": "version must not be supplied in the accept header. Example: 
-      application/vnd.adobe.xed-full+json"
-}
-```
-
-如果在列出(GET)资源时尝试在“接受”标题中包含版本，您将收到此错误。 仅当尝试对单个资源进行查找请求时，才需要版本。 从“接受”标题中删除版本以解决错误。
+在为配置文件启用架构之前，必须先为架构创建主标识描述符](./api/descriptors.md#create)，或者包含标识映射字段以改为以主标识操作。[
