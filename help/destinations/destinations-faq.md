@@ -1,22 +1,34 @@
 ---
 keywords: 目标；问题；常见问题解答；常见问题解答；目标常见问题解答
-title: 关于 Experience Cloud 核心服务
-seo-title: 关于 Experience Cloud 核心服务
+title: 常见问题
+seo-title: 常见问题
 description: 有关Adobe Experience Platform目标的最常见问题解答
 seo-description: 有关Adobe Experience Platform目标的最常见问题解答
-source-git-commit: 47b3ef28281e3480e8b194486845f4fb4326b7d4
+source-git-commit: a01b53758f4ad42272c39f71a08021d30900e7af
 workflow-type: tm+mt
-source-wordcount: '636'
-ht-degree: 6%
+source-wordcount: '733'
+ht-degree: 5%
 
 ---
 
 
-# 关于 Experience Cloud 核心服务 {#faq}
+# 常见问题 {#faq}
 
 ## 概述 {#overview}
 
 本文档提供了有关Adobe Experience Platform目标的常见问题解答。 有关与其他[!DNL Platform]服务（包括所有[!DNL Platform] API中遇到的服务）相关的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
+
+## 一般目标问题 {#general}
+
+**为什么我在Experience PlatformUI和导出的CSV文件中看到不同的配置文件计数？**
+
+这是由于Experience Platform执行分段的方式而导致的正常行为。
+
+流式客户细分会更新一天中流式客户细分的配置文件计数，而批量客户细分会每24小时更新一次批量客户细分的配置文件计数。
+
+当区段导出计划与分段计划不同时，UI和导出的[!DNL CSV]文件之间的配置文件计数将不同，尤其是对于流区段而言。
+
+有关更多详细信息，请参阅[Segmentation Service文档](../segmentation/home.md)。
 
 ## [!DNL Facebook Custom Audiences] {#facebook-faq}
 
