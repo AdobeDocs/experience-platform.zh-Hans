@@ -4,10 +4,9 @@ user-guide-title: Adobe Experience Platform Segmentation Service
 breadcrumb-title: Segmentation Service 指南
 user-guide-description: 根据实时客户档案数据构建区段并生成受众。
 feature: 区段
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 48ef54759ff62efa84aac493af3a7799e1b6d141
 workflow-type: tm+mt
-source-wordcount: '162'
+source-wordcount: '164'
 ht-degree: 20%
 
 ---
@@ -15,7 +14,7 @@ ht-degree: 20%
 
 # Adobe Experience Platform Segmentation Service {#segmentation}
 
-- [分段服务概述](home.md)
+- [Segmentation Service概述](home.md)
 - [分段数据类型](data-types.md)
 - 分段API {#api}
    - [概述](api/overview.md)
@@ -23,33 +22,34 @@ ht-degree: 20%
    - [边缘分割](api/edge-segmentation.md)
    - [导出作业](api/export-jobs.md)
    - [预览和估计](api/previews-and-estimates.md)
-   - [计划](api/schedules.md)
+   - [调度程序](api/schedules.md)
    - [区段定义](api/segment-definitions.md)
-   - [细分作业](api/segment-jobs.md)
+   - [区段作业](api/segment-jobs.md)
    - [区段搜索](api/segment-search.md)
-   - [流细分](api/streaming-segmentation.md)
+   - [流分段](api/streaming-segmentation.md)
 - 分段UI {#ui}
    - [概述](ui/overview.md)
-   - [细分仪表板](ui/segment-dashboard.md)
+   - [区段功能板](ui/segment-dashboard.md)
    - [Segment Builder](ui/segment-builder.md)
+   - [区段匹配](ui/segment-match.md)
    - [边缘分割](ui/edge-segmentation.md)
-   - [流细分](ui/streaming-segmentation.md)
+   - [流分段](ui/streaming-segmentation.md)
    - [流分段（视频）](video/streaming-segmentation-overview.md)
    - [时间约束重构](ui/segment-refactoring.md)
-- [支持退出](honoring-opt-outs.md)
-- [多实体细分](multi-entity-segmentation.md)
+- [遵守选择退出](honoring-opt-outs.md)
+- [多实体分段](multi-entity-segmentation.md)
 - 用户档案查询语言{#pql}
    - [概述](pql/overview.md)
    - [布尔函数](pql/boolean-functions.md)
    - [比较函数](pql/comparison-functions.md)
    - [数组、列表和设置函数](pql/array-functions.md)
-   - [地图函数](pql/map-functions.md)
+   - [映射函数](pql/map-functions.md)
    - [字符串函数](pql/string-functions.md)
    - [对象函数](pql/object-functions.md)
    - [算术函数](pql/arithmetic-functions.md)
    - [聚合函数](pql/aggregation-functions.md)
    - [日期和时间函数](pql/datetime-functions.md)
-   - [滤镜函数](pql/filter-functions.md)
+   - [筛选函数](pql/filter-functions.md)
    - [逻辑量词](pql/logical-quantifiers.md)
    - [其他函数](pql/misc-functions.md)
 - 教程 {#tutorials}
@@ -59,7 +59,7 @@ ht-degree: 20%
    - [创建多实体区段（视频）](video/create-multi-entity-segments.md)
    - [评估区段](tutorials/evaluate-a-segment.md)
    - [导入和使用外部受众](tutorials/using-external-audiences.md)
-   - [创建数据集以导出数据](tutorials/create-dataset-export-segment.md)
-   - [强制区段遵守数据使用规范](tutorials/governance.md)
+   - [创建用于导出数据的数据集](tutorials/create-dataset-export-segment.md)
+   - [为区段强制实施数据使用合规性](tutorials/governance.md)
 - [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
