@@ -5,9 +5,9 @@ title: XDM个人配置文件类
 topic-legacy: overview
 description: 本文档概述了XDM Individual Profile类。
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: eddaa7090af2d2c947f154272bb219dc2e3bca08
 workflow-type: tm+mt
-source-wordcount: '455'
+source-wordcount: '561'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 1%
 | 属性 | 描述 |
 | --- | --- |
 | `_repo` | 包含以下[!UICONTROL DateTime]字段的对象： <ul><li>`createDate`:在数据存储中创建资源的日期和时间，例如首次摄取数据时。</li><li>`modifyDate`:上次修改资源的日期和时间。</li></ul> |
-| `_id` | 记录的唯一标识符。 此字段用于跟踪单个记录的唯一性，防止重复数据，并在下游服务中查找该记录。<br><br>必须明确的是，此字段不 **会** 显示与个人相关的身份，而是显示数据本身的记录。与人员相关的身份数据应被降级到[标识字段](../schema/composition.md#identity)。 |
+| `_id` | 记录的唯一字符串标识符。 此字段用于跟踪单个记录的唯一性，防止重复数据，并在下游服务中查找该记录。 在某些情况下，`_id`可以是[通用唯一标识符(UUID)](https://tools.ietf.org/html/rfc4122)或[全局唯一标识符(GUID)](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0)。<br><br>如果从源连接流式传输数据或直接从Parquet文件摄取数据，则应通过关联使记录具有唯一性的特定字段组合（如主ID、时间戳、记录类型等）来生成此值。连接值必须是带有`uri-reference`格式的字符串，这意味着必须删除任何冒号字符。 之后，连接值应使用SHA-256或您选择的其他算法进行哈希处理。<br><br>务必要区分的是， **此字段不表示与个人相关的身份**，而是表示数据本身的记录。与人员相关的身份数据应被降级到由兼容字段组提供的[身份字段](../schema/composition.md#identity)中。 |
 | `createdByBatchID` | 导致创建记录的摄取批次的ID。 |
 | `modifiedByBatchID` | 导致记录更新的上次摄取的批处理的ID。 |
 | `personID` | 与此记录相关的个人的唯一标识符。 除非该字段也被指定为[identity字段](../schema/composition.md#identity)，否则该字段不一定表示与人员相关的身份。 |
