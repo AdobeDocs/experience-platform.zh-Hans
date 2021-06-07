@@ -4,10 +4,10 @@ description: 了解如何使用Experience PlatformWeb SDK中的处理规则手�
 seo-description: 通过Web SDK使用处理规则将变量手动映射到Adobe Analytics
 keywords: Adobe Analytics;Analytics；变量；映射变量；映射变量；ContextData；上下文数据；处理规则；规则；XDM；架构；
 exl-id: 395050c1-8d39-4da8-acea-6e618ed662dd
-source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
+source-git-commit: d67c8c0ada6dc4bf07b73547f9e571a8a7386b75
 workflow-type: tm+mt
-source-wordcount: '391'
-ht-degree: 17%
+source-wordcount: '395'
+ht-degree: 16%
 
 ---
 
@@ -17,7 +17,7 @@ Adobe Experience Platform [!DNL Web SDK]可以自动映射某些变量，但必�
 
 对于未自动映射到[!DNL Analytics]的XDM数据，您可以使用[上下文数据](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html)来匹配[架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html)。 然后，可以使用[处理规则](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules-configuration/t-processing-rules.html)将其映射到[!DNL Analytics]中以填充[!DNL Analytics]变量。
 
-此外，您还可以使用一组默认的操作和产品列表，通过Adobe Experience Platform Web SDK发送或检索数据。 为此，请参阅[产品](https://experienceleague.adobe.com/docs/experience-platform/edge/implement/commerce.html)。
+此外，您还可以使用一组默认的操作和产品列表，通过Adobe Experience Platform Web SDK发送或检索数据。 为此，请参阅[收集商务和产品信息](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/collect-commerce-data.html)。
 
 ## 上下文数据
 
