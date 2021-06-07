@@ -5,7 +5,7 @@ title: 最终用户ID详细信息架构字段组
 topic-legacy: overview
 description: 本文档概述了最终用户ID详细信息架构字段组。
 exl-id: ff5b74f4-7700-4d10-821e-b50f80ea8c05
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: b22dce52563d5f3bbd1796c11d7c7b2a49fa6d5f
 workflow-type: tm+mt
 source-wordcount: '214'
 ht-degree: 2%
@@ -19,7 +19,7 @@ ht-degree: 2%
 >
 >多个架构字段组的名称已更改。 有关详细信息，请参阅[字段组名称更新](../name-updates.md)上的文档。
 
-[!UICONTROL 最终用户ID] 详细信息类的标准架构字段 [[!DNL XDM ExperienceEvent] 组](../../classes/individual-profile.md)，用于在多个Adobe应用程序中描述个人的身份信息。字段组提供一个根级别`endUserIDs`对象，该对象本身包含一个只读`_experience`字段，其值会在摄取数据时自动更新。
+[!UICONTROL 最终用户ID] 详细信息类的标准架构字段 [[!DNL XDM ExperienceEvent] 组](../../classes/experienceevent.md)，用于在多个Adobe应用程序中描述个人的身份信息。字段组提供一个根级别`endUserIDs`对象，该对象本身包含一个只读`_experience`字段，其值会在摄取数据时自动更新。
 
 <img src="../../images/field-groups/enduserids.png" width="700" /><br />
 
