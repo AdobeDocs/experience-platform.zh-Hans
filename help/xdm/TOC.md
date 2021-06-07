@@ -2,45 +2,50 @@
 audience: user
 user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
-user-guide-description: 使用体验数据模型(XDM)类和模式字段组来标准化体验数据。
-feature: 模式 (Schema)
-source-git-commit: dcfdc9c479e8a77296f7cb0bf9f5bb36e9261b75
+user-guide-description: 使用体验数据模型(XDM)类和架构字段组来标准化体验数据。
+feature: 架构
+source-git-commit: 9b6352eec56cf32e58d49be4d72b2fb4cf933b89
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '305'
 ht-degree: 16%
 
 ---
 
 
-# 体验数据模型(XDM)系统 {#xdm}
+# Experience Data Model(XDM)系统 {#xdm}
 
 * [XDM系统概述](home.md)
-* 模式 (Schema){#schema}
-   * [模式合成基础](schema/composition.md)
-   * [数据建模的最佳实践](schema/best-practices.md)
+* 架构 {#schema}
+   * [架构组合的基础知识](schema/composition.md)
+   * [数据建模最佳实践](schema/best-practices.md)
    * [XDM字段类型约束](schema/field-constraints.md)
-   * [XDM中的命名空间](./schema/namespaces.md)
-   * [XDM字段词典](schema/field-dictionary.md)
+   * [XDM中的名称步调](./schema/namespaces.md)
+   * [XDM字段字典](schema/field-dictionary.md)
    * 行业数据模型{#industries}
       * [概述](./schema/industries/overview.md)
-      * [零售数据模型ERD](./schema/industries/retail.md)
-      * [金融服务数据模型](./schema/industries/financial.md)
-      * [旅游和酒店业数据模型](./schema/industries/travel-hospitality.md)
+      * [零售](./schema/industries/retail.md)
+      * [金融服务](./schema/industries/financial.md)
+      * [旅游和酒店业](./schema/industries/travel-hospitality.md)
 * 类 {#classes}
-   * [XDM个人用户档案](./classes/individual-profile.md)
+   * [XDM个人配置文件](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
    * [区段定义](./classes/segment-definition.md)
-* 模式字段组{#field-groups}
-   * 用户档案字段组{#profile}
-      * [IdentityMap](./field-groups/profile/identitymap.md)
+* 架构字段组{#field-groups}
+   * 配置文件字段组{#profile}
       * [人口统计详细信息](./field-groups/profile/demographic-details.md)
-      * [个人联系人详细信息](./field-groups/profile/personal-contact-details.md)
-      * [区段会员资格详细信息](./field-groups/profile/segmentation.md)
-      * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
+      * [IdentityMap](./field-groups/profile/identitymap.md)
+      * [忠诚度详细信息](./field-groups/profile/loyalty-details.md)
+      * [个人联系详细信息](./field-groups/profile/personal-contact-details.md)
       * [隐私/个性化/营销首选项（同意）](./field-groups/profile/consents.md)
+      * [区段成员资格详细信息](./field-groups/profile/segmentation.md)
+      * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
    * 事件字段组{#event}
+      * [促销活动营销详细信息](./field-groups/event/campaign-marketing-details.md)
+      * [渠道详细信息](./field-groups/event/channel-details.md)
+      * [商务详细信息](./field-groups/event/commerce-details.md)
       * [最终用户ID详细信息](./field-groups/event/enduserids.md)
       * [环境详细信息](./field-groups/event/environment-details.md)
+      * [Web详细信息](./field-groups/event/web-details.md)
    * [字段组名称更新](./field-groups/name-updates.md)
 * 数据类型 {#data-types}
    * [应用程序](./data-types/application.md)
@@ -51,35 +56,39 @@ ht-degree: 16%
    * [设备](./data-types/device.md)
    * [电子邮件地址](./data-types/email-address.md)
    * [环境](./data-types/environment.md)
-   * [通用同意字段](./data-types/consent-field.md)
-   * [通用营销首选项字段](./data-types/marketing-field.md)
-   * [具有订阅的通用营销首选项字段](./data-types/marketing-field-subscriptions.md)
-   * [通用个性化首选项字段](./data-types/personalization-field.md)
+   * [体验渠道](./data-types/experience-channel.md)
+   * [一般同意字段](./data-types/consent-field.md)
+   * [一般营销首选项字段](./data-types/marketing-field.md)
+   * [包含订阅的通用营销首选项字段](./data-types/marketing-field-subscriptions.md)
+   * [一般个性化首选项字段](./data-types/personalization-field.md)
    * [Adobe Target 中的地域](./data-types/geo.md)
-   * [地理圈](./data-types/geo-circle.md)
+   * [地域圈子](./data-types/geo-circle.md)
    * [地理坐标](./data-types/geo-coordinates.md)
    * [地域交互详细信息](./data-types/geo-interaction-details.md)
    * [地理形状](./data-types/geo-shape.md)
    * [身份](./data-types/identity.md)
-   * [度量](./data-types/measure.md)
-   * [订单](./data-types/order.md)
+   * [营销](./data-types/marketing.md)
+   * [测量](./data-types/measure.md)
+   * [订购](./data-types/order.md)
    * [付款项](./data-types/payment-item.md)
    * [人员](./data-types/person.md)
    * [人员姓名](./data-types/person-name.md)
    * [电话号码](./data-types/phone-number.md)
    * [放置上下文](./data-types/place-context.md)
    * [POI详细信息](./data-types/poi-details.md)
-   * [POI交互](./data-types/poi-interaction.md)
+   * [POI互动](./data-types/poi-interaction.md)
    * [邮政地址](./data-types/postal-address.md)
+   * [产品列表项](./data-types/product-list-item.md)
    * [搜索](./data-types/search.md)
    * [订阅](./data-types/subscription.md)
-   * [Web交互](./data-types/web-interactions.md)
+   * [Web信息](./data-types/web-information.md)
+   * [Web交互](./data-types/web-interaction.md)
    * [网页详细信息](./data-types/webpage-details.md)
-* [!UICONTROL 架] 构UI  {#ui}
+*  模式UI  {#ui}
    * [概述](./ui/overview.md)
    * [浏览 XDM 资源](./ui/explore.md)
    * 创建和编辑资源{#resources}
-      * [模式 (Schema)](./ui/resources/schemas.md)
+      * [架构](./ui/resources/schemas.md)
       * [类](./ui/resources/classes.md)
       * [字段组](./ui/resources/field-groups.md)
       * [数据类型](./ui/resources/data-types.md)
@@ -93,28 +102,28 @@ ht-degree: 16%
       * [关系字段](./ui/fields/relationship.md)
    * [生成示例XDM数据](./ui/sample.md)
    * [导出XDM模式](./ui/export.md)
-* 模式注册表API {#api}
+* 架构注册表API {#api}
    * [概述](api/overview.md)
    * [入门指南](api/getting-started.md)
-   * [模式 (Schema)](api/schemas.md)
+   * [架构](api/schemas.md)
    * [行为](api/behaviors.md)
    * [类](api/classes.md)
-   * [模式字段组](api/field-groups.md)
+   * [架构字段组](api/field-groups.md)
    * [数据类型](api/data-types.md)
    * [描述符](api/descriptors.md)
-   * [合并](api/unions.md)
+   * [工会](api/unions.md)
    * [导出/导入](api/export-import.md)
-   * [样本数据](api/sample-data.md)
+   * [示例数据](api/sample-data.md)
    * [审核日志](api/audit-log.md)
-   * [临时模式](api/ad-hoc.md)
+   * [临时架构](api/ad-hoc.md)
    * [Mixin（已弃用）](api/mixins.md)
    * [附录](api/appendix.md)
 * 教程 {#tutorials}
-   * [创建模式(UI)](tutorials/create-schema-ui.md)
+   * [创建架构(UI)](tutorials/create-schema-ui.md)
    * [创建模式(API)](tutorials/create-schema-api.md)
-   * [定义两个模式(UI)之间的关系](tutorials/relationship-ui.md)
-   * [定义两个模式(API)之间的关系](tutorials/relationship-api.md)
-   * [创建点对点模式(API)](tutorials/ad-hoc.md)
+   * [定义两个架构(UI)之间的关系](tutorials/relationship-ui.md)
+   * [定义两个架构(API)之间的关系](tutorials/relationship-api.md)
+   * [创建临时架构(API)](tutorials/ad-hoc.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
