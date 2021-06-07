@@ -5,7 +5,7 @@ title: 网页详细信息数据类型
 topic-legacy: overview
 description: 本文档概述了Web页面详细信息体验数据模型(XDM)数据类型。
 exl-id: 31108e57-d416-485b-a6c3-4ebc4f5b1152
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: b22dce52563d5f3bbd1796c11d7c7b2a49fa6d5f
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 3%
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 [!UICONTROL 网页详] 细信息是一种标准的体验数据模型(XDM)数据类型，用于描述由ExperienceEvent记录且刚刚加载和查看的网页的详细信息。
 
-数据类型适用于单页Web应用程序(SPA)的完整页面详细信息和初始页面加载。 对于在加载的页面上发生的不触发新页面加载的交互，请参阅[web交互](./web-interactions.md)数据类型。
+数据类型适用于单页Web应用程序(SPA)的完整页面详细信息和初始页面加载。 对于在加载的页面上发生的不触发新页面加载的交互，请参阅[web交互](./web-interaction.md)数据类型。
 
 <img src="../images/data-types/web-page-details.PNG" width="500" /><br />
 
