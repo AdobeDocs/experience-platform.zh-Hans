@@ -1,23 +1,30 @@
 ---
 solution: Experience Platform
-title: 零售业数据模型ERD
+title: 零售行业数据模型ERD
 topic-legacy: overview
-description: 视图实体关系图(ERD)，它描述了零售行业的标准化数据模型，与在Adobe Experience Platform中使用的体验数据模型(XDM)兼容。
+description: 查看实体关系图(ERD)，该图描述了适用于零售业的标准化数据模型，该数据模型与在Adobe Experience Platform中使用的体验数据模型(XDM)兼容。
 exl-id: 40cbb243-668b-4280-815f-1f94a06b6b87
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 629f47b934c59fe875a54cb13962033122097538
 workflow-type: tm+mt
-source-wordcount: '73'
+source-wordcount: '218'
 ht-degree: 0%
 
 ---
 
-# [!UICONTROL Retail] 行业数据模型ERD
+#  零售行业数据模型ERD
 
-以下实体关系图(ERD)代表零售行业的标准化数据模型。
+以下实体关系图(ERD)代表零售行业的标准化数据模型。 ERD特意以非标准化方式呈现，并考虑数据如何存储在Adobe Experience Platform中。
+
+请使用以下图例来解释此ERD:
+
+* 中显示的每个实体都基于基础的[体验数据模型(XDM)类](../composition.md#class)。
+* 对于给定实体，标有&#x200B;**粗体**&#x200B;的每一行代表字段组或数据类型，其提供的相关字段以未加粗的文本列出。
+* 给定实体最重要的字段以红色突出显示。
+* 所有可用于标识单个客户的资产都会标记为“identity”，其中一个资产会标记为“主要身份”。
+* 实体关系被标记为非依赖关系，因为基于Cookie的事件通常无法确定执行交易的人员或个人。
+
+![](../../images/industries/retail.png)
 
 >[!NOTE]
 >
->有关行业数据模型以及如何解释此ERD的详细信息，请参阅[行业数据模型概述](./overview.md)。
-
-![](../../images/industries/retail.png)
+>体验事件实体包含“_ID”字段，该字段表示XDM ExperienceEvent类提供的唯一标识符(`_id`)属性。 有关此值预期内容的更多详细信息，请参阅[XDM ExperienceEvent](../../classes/experienceevent.md)上的参考文档。
