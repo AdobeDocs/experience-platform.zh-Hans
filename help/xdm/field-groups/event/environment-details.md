@@ -5,7 +5,7 @@ title: 环境详细信息架构字段组
 topic-legacy: overview
 description: 本文档概述了ExperienceEvent环境详细信息架构字段组。
 exl-id: 1d25b98f-66ac-443f-9b1c-dfd20a168c59
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: b22dce52563d5f3bbd1796c11d7c7b2a49fa6d5f
 workflow-type: tm+mt
 source-wordcount: '215'
 ht-degree: 3%
@@ -19,7 +19,7 @@ ht-degree: 3%
 >
 >多个架构字段组的名称已更改。 有关详细信息，请参阅[字段组名称更新](../name-updates.md)上的文档。
 
-[!UICONTROL 环境] 详细信息类的标准架构字段组 [[!DNL XDM ExperienceEvent] ](../../classes/individual-profile.md) ，用于捕获与体验事件相关的环境详细信息（如设备详细信息、浏览器信息、本地时间和其他地理信息）。
+[!UICONTROL 环境] 详细信息类的标准架构字段组 [[!DNL XDM ExperienceEvent] ](../../classes/experienceevent.md) ，用于捕获与体验事件相关的环境详细信息（如设备详细信息、浏览器信息、本地时间和其他地理信息）。
 
 <img src="../../images/field-groups/environment-details.png" width="500" /><br />
 
