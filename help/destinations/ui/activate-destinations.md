@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: 27aafcbfc8f52491387561514e3b34313cc5d943
+source-git-commit: a8822d66443cc4cda761e1f0963b0e0251427911
 workflow-type: tm+mt
-source-wordcount: '2565'
+source-wordcount: '2688'
 ht-degree: 0%
 
 ---
@@ -48,6 +48,11 @@ ht-degree: 0%
 ![区段到目标](../assets/ui/activate-destinations/email-select-segments.png)
 
 ##  映射步骤 {#mapping}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_applytransformation"
+>title="应用转换"
+>abstract="使用未哈希源字段时，请勾选此选项，以使Adobe Experience Platform在激活时自动对它们进行哈希处理。"
 
 适用于：社交目标和Google客户匹配广告目标
 
@@ -239,6 +244,12 @@ ht-degree: 0%
 
 ### 必需属性{#mandatory-attributes}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_mandatorykey"
+>title="关于必填属性"
+>abstract="选择所有导出的配置文件都应包含的XDM架构属性。 不会将没有必填项的用户档案导出到目标。 不选择强制键会导出所有符合条件的用户档案，而不考虑其属性。"
+>additional-url="http://www.adobe.com/go/destinations-mandatory-attributes-en" text="在文档中了解更多信息"
+
 您可以将属性标记为必填项，以确保[!DNL Platform]仅导出包含特定属性的配置文件。 因此，它可用作附加的过滤形式。 将属性标记为必需属性是&#x200B;**不**&#x200B;必需的。
 
 不选择强制属性会导出所有符合条件的用户档案，而不考虑其属性。
@@ -246,6 +257,12 @@ ht-degree: 0%
 建议其中一个属性是架构中的[唯一标识符](../../destinations/catalog/email-marketing/overview.md#identity)。 有关必需属性的更多信息，请参阅[电子邮件营销目标](../../destinations/catalog/email-marketing/overview.md#identity)文档中的标识部分。
 
 ### 重复数据删除键{#deduplication-keys}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_deduplicationkey"
+>title="关于重复数据删除键"
+>abstract="通过选择重复数据删除键，消除导出文件中同一用户档案的多个记录。 选择一个命名空间或最多两个XDM架构属性作为重复数据删除键值。 未选择重复数据删除键可能会导致导出文件中出现重复的配置文件条目。"
+>additional-url="http://www.adobe.com/go/destinations-deduplication-keys-en" text="在文档中了解更多信息"
 
 >[!IMPORTANT]
 >
