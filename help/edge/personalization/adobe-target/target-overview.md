@@ -3,10 +3,10 @@ title: 将Adobe Target与Platform Web SDK结合使用
 description: 了解如何使用Experience PlatformWeb SDK渲染个性化内容(使用Adobe Target)
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 202a77e4f9e8c7d5515ea0a5004b1c339f1d58ba
+source-git-commit: e7f5074ef776fc6ccd4f9951722861d771a371de
 workflow-type: tm+mt
-source-wordcount: '822'
-ht-degree: 3%
+source-wordcount: '918'
+ht-degree: 5%
 
 ---
 
@@ -21,6 +21,7 @@ ht-degree: 3%
 * [Automated Personalization活动](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [体验定位活动](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [多变量测试(MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
+* [Recommendations活动](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)
 * [本机Target展示和转化报表](https://experienceleague.adobe.com/docs/target/using/reports/reports.html)
 * [VEC支持](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)
 
@@ -176,13 +177,42 @@ alloy("sendEvent", {
     __adobe: {
       target: {
         "profile.gender": "female",
-        "profile.age": 30
+        "profile.age": 30,
+	"entity.id" : "123",
+	"entity.genre" : "Drama"
       }
     }
   }
 }) 
 .then(console.log);
 ```
+
+## 请求推荐
+
+下表列出了[!DNL Recommendations]属性，以及是否通过[!DNL Platform Web SDK]支持每个属性：
+
+| 类别 | 属性 | 支持状态 |
+| --- | --- | --- |
+| Recommendations — 默认实体属性 | entity.id | 受支持 |
+|  | entity.name | 受支持 |
+|  | entity.categoryId | 受支持 |
+|  | entity.pageUrl | 受支持 |
+|  | entity.thumbnailUrl | 受支持 |
+|  | entity.message | 受支持 |
+|  | entity.value | 受支持 |
+|  | entity.inventory | 受支持 |
+|  | entity.brand | 受支持 |
+|  | entity.margin | 受支持 |
+|  | entity.event.detailsOnly | 受支持 |
+| Recommendations — 自定义实体属性 | entity.yourCustomAttributeName | 受支持 |
+| Recommendations — 保留的mbox/页面参数 | excludedIds | 受支持 |
+|  | cartIds | 受支持 |
+|  | productPurchasedId | 受支持 |
+| 类别亲和度的页面或项目类别 | user.categoryId | 受支持 |
+
+## 调试
+
+mboxTrace和mboxDebug已被弃用。 使用[[!DNL Platform Web SDK] 调试](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/debugging.html)。
 
 ## 术语
 
