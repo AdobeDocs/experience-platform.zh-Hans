@@ -3,7 +3,7 @@ keywords: Google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用在线和离线数据，通过Google自有资产和运营资产(如搜索、购物、Gmail和YouTube)来联系客户并与其重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 6c4e68e2f347cadaf3bf36de73c74e1240ed975b
+source-git-commit: da069c6c931bfd2af38b40fc061d5eb633aba9ea
 workflow-type: tm+mt
 source-wordcount: '1521'
 ht-degree: 0%
@@ -34,7 +34,7 @@ ht-degree: 0%
 
 ## [!DNL Google Customer Match]目标{#data-governance}的数据管理
 
-Experience Platform中的某些目标对于发送到目标平台或从目标平台接收的数据具有特定规则和义务。 您有责任了解数据的限制和义务，以及如何在Adobe Experience Platform和目标平台中使用该数据。 Adobe Experience Platform提供了数据管理工具，可帮助您管理其中一些数据使用义务。 [进一](../../..//data-governance/labels/overview.md) 步了解数据管理工具和策略。
+Experience Platform中的某些目标对于发送到目标平台或从目标平台接收的数据具有特定规则和义务。 您有责任了解数据的限制和义务，以及如何在Adobe Experience Platform和目标平台中使用该数据。 Adobe Experience Platform提供了数据管理工具，可帮助您管理其中一些数据使用义务。 [进一](../../../data-governance/labels/overview.md) 步了解数据管理工具和策略。
 
 ## 支持的标识{#supported-identities}
 
