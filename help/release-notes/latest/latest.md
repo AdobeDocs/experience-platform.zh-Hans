@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: May 26, 2021
 author: ens72741
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: fb5d5e7ecb36d1caa70d5c2d2a4f467e3067de4a
+source-git-commit: 487d6dbef21459a7ce78cdc70215ad46e06ba892
 workflow-type: tm+mt
-source-wordcount: '1355'
+source-wordcount: '1306'
 ht-degree: 3%
 
 ---
@@ -63,7 +63,7 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 | 功能 | 描述 |
 | ------- | ----------- |
 | 改进了监控（测试版） | 增强了对目标（包括批处理目标和流目标的信息）的监控功能 |
-| [更快的增量文件导出（测试版）](../../destinations/ui/activate-destinations.md#export-incremental-files) | 添加了每3、6、8或12小时将增量文件导出到目标的功能。<br> <br>此功能目前为测试版，仅适用于一定数量的客户。非测试版客户每天可导出一次增量文件。 |
+| [更快的增量文件导出（测试版）](../../destinations/ui/activate-destinations.md#export-incremental-files) | 添加了每3、6、8或12小时将增量文件导出到目标的功能。<br> <br>此功能目前处于测试阶段，仅适用于一定数量的客户。非测试版客户每天可导出一次增量文件。 |
 | [重复数据删除关键支持（测试版）](../../destinations/ui/activate-destinations.md#deduplication-keys) | 添加了将身份命名空间或配置文件属性设置为重复数据删除键的功能。 重复数据删除键消除了在一个导出文件中存在多个相同用户档案记录的可能性。<br> <br>此功能目前为测试版，仅适用于一定数量的客户。 |
 
 有关目标的更多常规信息，请参阅[目标概述](../../destinations/home.md)。
@@ -82,7 +82,6 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 合并策略工作流更新 | 现在，在UI中创建和更新合并策略时，用户可以基于并集架构预览20个示例用户档案。 这允许用户在保存合并策略配置之前预览客户配置文件的外观。 有关更多信息，请参阅[合并策略UI指南](../../profile/merge-policies/ui-guide.md)。 |
 | 数据集重叠报表 | 数据集重叠报表通过公开对可寻址受众贡献最大的数据集，提供了对用户档案存储构成的可见性。 除了提供对用户档案数据的分析之外，此报表还可帮助用户采取措施来优化许可证使用情况，例如为特定数据的有效期设置限制。 要了解更多信息，请按照[生成数据集重叠报表](../../profile/tutorials/dataset-overlap-report.md)上的教程操作。 |
 
 有关实时客户资料的更多信息，包括有关使用[!DNL Profile]数据的教程和最佳实践，请首先阅读[实时客户资料概述](../../profile/home.md)。
