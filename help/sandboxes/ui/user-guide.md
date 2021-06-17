@@ -5,9 +5,9 @@ title: 沙盒UI指南
 topic-legacy: user guide
 description: 本文档提供了有关如何在Adobe Experience Platform用户界面中执行与沙箱相关的各种操作的步骤。
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: ba03ec805d29a95ee7d0d1a23a756feaadcea407
+source-git-commit: 3b0f156d3d6a13fbad45a153749b81a0d6244283
 workflow-type: tm+mt
-source-wordcount: '833'
+source-wordcount: '779'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->如果Adobe Analytics还在为[跨设备分析(CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html)功能使用其中托管的身份图，或者为[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html)功能使用其中托管的身份图，则无法重置默认的生产沙盒。 也无法重置用于与Adobe Audience Manager或受众核心服务进行双向区段共享的生产沙箱。
+>如果Adobe Analytics还在为[跨设备分析(CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html)功能使用其中托管的身份图，或者为[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html)功能使用其中托管的身份图，则无法重置默认的生产沙盒。
 
 重置生产或开发沙盒会删除与该沙盒（架构、数据集等）关联的所有资源，同时维护沙盒的名称和关联的权限。 对于有权访问该“干净”沙盒的用户，该沙盒将继续以相同的名称提供。
 
@@ -88,29 +88,29 @@ ht-degree: 0%
 
 ![success](../images/ui/success.png)
 
-### 错误消息
+### 警告
 
-无法重置包含CDA数据的默认生产沙盒，并返回以下错误。
+无法重置包含CDA数据的默认生产沙盒，并返回以下警告。
 
 ![cda](../images/ui/cda.png)
 
-包含PBD数据的默认生产沙盒也无法重置，并返回以下错误。
+包含PBD数据的默认生产沙盒也无法重置，并返回以下警告。
 
 ![pbd](../images/ui/pbd.png)
 
-包含CDA和PBD数据的默认生产沙盒也无法重置，并返回以下错误。
+包含CDA和PBD数据的默认生产沙盒也无法重置，并返回以下警告。
 
 ![both](../images/ui/both.png)
 
-用于与Adobe Audience Manager或受众核心服务进行双向区段共享的生产沙盒也无法重置，并返回以下错误。
+您可以重置用于与[!DNL Audience Manager]或[!DNL Audience Core Service]进行双向区段共享的生产沙盒。 选择[!UICONTROL 继续]以继续重置。
 
-![seg](../images/ui/seg.png)
+![both](../images/ui/seg.png)
 
 ## 删除沙盒
 
 >[!IMPORTANT]
 >
->无法删除默认的生产沙盒，也无法删除用于与Adobe Audience Manager或Audience Core Service进行双向区段共享的生产沙盒。
+>无法删除默认的生产沙盒。
 
 删除生产或开发沙盒会永久删除与该沙盒关联的所有资源，包括权限。
 
@@ -126,9 +126,9 @@ ht-degree: 0%
 
 ![delete-confirm](../images/ui/delete-confirm.png)
 
-用于与Adobe Audience Manager或受众核心服务进行双向区段共享的生产沙盒，无法删除，并返回以下错误。
+在发出以下警告后，仍可以删除用户创建的生产沙盒，该沙盒用于与[!DNL Audience Manager]或[!DNL Audience Core Service]进行双向区段共享。
 
-![seg](../images/ui/seg.png)
+![seg](../images/ui/delete-seg.png)
 
 ## 后续步骤
 
