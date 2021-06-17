@@ -5,9 +5,9 @@ title: Jupyterlab笔记本中的数据访问
 topic-legacy: Developer Guide
 description: 本指南重点介绍如何使用Jupyter Notebooks（在Data Science Workspace中构建）来访问您的数据。
 exl-id: 2035a627-5afc-4b72-9119-158b95a35d32
-source-git-commit: c2c2b1684e2c2c3c76dc23ad1df720abd6c4356c
+source-git-commit: 9e41db60580146fa90542ed00ceedd4eecb88b47
 workflow-type: tm+mt
-source-wordcount: '3290'
+source-wordcount: '3294'
 ht-degree: 8%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 8%
 
 每个受支持的内核都提供内置功能，允许您从笔记本内的数据集中读取平台数据。 目前，Adobe Experience Platform Data Science Workspace中的JupyterLab支持[!DNL Python]、R、PySpark和Scala的笔记本。 但是，对分页数据的支持仅限于[!DNL Python]和R笔记本。 本指南重点介绍如何使用JupyterLab笔记本访问数据。
 
-## 入门指南
+## 快速入门
 
 在阅读本指南之前，请查阅[[!DNL JupyterLab] 用户指南](./overview.md) ，以了解[!DNL JupyterLab]及其在数据科学工作区中的角色的高级简介。
 
@@ -362,7 +362,7 @@ spark = SparkSession.builder.getOrCreate()
 **用法**
 
 ```scala
-%dataset {action} --datasetId {id} --dataFrame {df}`
+%dataset {action} --datasetId {id} --dataFrame {df} --mode batch
 ```
 
 **描述**
@@ -373,8 +373,8 @@ spark = SparkSession.builder.getOrCreate()
 | --- | --- | --- |
 | `{action}` | 要对数据集执行的操作类型。 “读取”或“写入”两个操作均可用。 | 是 |
 | `--datasetId {id}` | 用于提供要读取或写入的数据集的ID。 | 是 |
-| `--dataFrame {df}` | 熊猫数据帧。 <ul><li> 当操作为“读取”时，{df}是数据集读取操作结果可用的变量。 </li><li> 当操作为“写入”时，此数据帧{df}将写入数据集。 </li></ul> | 是 |
-| `--mode` | 用于更改数据读取方式的其他参数。 允许的参数为“batch”和“interactive”。 默认情况下，模式将设置为“交互”。 在读取大量数据时，建议使用“批处理”模式。 | 否 |
+| `--dataFrame {df}` | 熊猫数据帧。 <ul><li> 当操作为“读取”时，{df}是数据集读取操作结果可用的变量（如数据帧）。 </li><li> 当操作为“写入”时，此数据帧{df}将写入数据集。 </li></ul> | 是 |
+| `--mode` | 用于更改数据读取方式的其他参数。 允许的参数为“batch”和“interactive”。 默认情况下，该模式将设置为“批处理”。<br> 建议您使用“交互”模式，以提高较小数据集上的查询性能。 | 是 |
 
 >[!TIP]
 >
@@ -382,8 +382,8 @@ spark = SparkSession.builder.getOrCreate()
 
 **示例**
 
-- **阅读示例**:  `%dataset read --datasetId 5e68141134492718af974841 --dataFrame pd0`
-- **编写示例**:  `%dataset write --datasetId 5e68141134492718af974842 --dataFrame pd0`
+- **阅读示例**:  `%dataset read --datasetId 5e68141134492718af974841 --dataFrame pd0 --mode batch`
+- **编写示例**:  `%dataset write --datasetId 5e68141134492718af974842 --dataFrame pd0 --mode batch`
 
 >[!IMPORTANT]
 >
@@ -449,7 +449,7 @@ sample_df = df.sample(fraction)
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.getOrCreate()
 
-%dataset read --datasetId {DATASET_ID} --dataFrame df
+%dataset read --datasetId {DATASET_ID} --dataFrame df --mode batch
 
 df.createOrReplaceTempView("event")
 timepd = spark.sql("""
@@ -511,7 +511,7 @@ val df1 = spark.read.format("com.adobe.platform.query")
   .option("api-key", clientContext.getApiKey())
   .option("service-token", clientContext.getServiceToken())
   .option("sandbox-name", clientContext.getSandboxName())
-  .option("mode", "interactive")
+  .option("mode", "batch")
   .option("dataset-id", "5e68141134492718af974844")
   .load()
 
@@ -568,7 +568,7 @@ df1.write.format("com.adobe.platform.query")
   .option("ims-org", clientContext.getOrgId())
   .option("api-key", clientContext.getApiKey())
   .option("sandbox-name", clientContext.getSandboxName())
-  .option("mode", "interactive")
+  .option("mode", "batch")
   .option("dataset-id", "5e68141134492718af974844")
   .save()
 ```
