@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 沙盒管理API端点
 topic-legacy: developer guide
 description: 沙盒API中的/沙盒端点允许您以编程方式管理Adobe Experience Platform中的沙盒。
-source-git-commit: f84898a87a8a86783220af7f74e17f464a780918
+source-git-commit: 1ec141fa5a13bb4ca6a4ec57f597f38802a92b3f
 workflow-type: tm+mt
-source-wordcount: '1323'
+source-wordcount: '1440'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 Adobe Experience Platform中的沙箱提供了独立的开发环境，允许您在不影响生产环境的情况下测试功能、运行实验和进行自定义配置。 [!DNL Sandbox] API中的`/sandboxes`端点允许您以编程方式管理Platform中的沙箱。
 
-## 入门指南
+## 快速入门
 
 本指南中使用的API端点是[[!DNL Sandbox] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml)的一部分。 在继续操作之前，请查阅[快速入门指南](./getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及成功调用任何Experience PlatformAPI所需的标头的重要信息。
 
@@ -348,11 +348,7 @@ curl -X PATCH \
 
 ## 重置沙盒 {#reset}
 
->[!IMPORTANT]
->
->如果Adobe Analytics还在为[跨设备分析(CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html)功能使用其中托管的身份图，或者为[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html)功能使用其中托管的身份图，则无法重置默认的生产沙盒。
-
-开发沙盒具有“工厂重置”功能，该功能会从沙盒中删除所有非默认资源。 您可以通过发出PUT请求来重置沙盒，该请求在请求路径中包含沙盒的`name`。
+沙盒具有“工厂重置”功能，可从沙盒中删除所有非默认资源。 您可以通过发出PUT请求来重置沙盒，该请求在请求路径中包含沙盒的`name`。
 
 **API格式**
 
@@ -363,6 +359,7 @@ PUT /sandboxes/{SANDBOX_NAME}
 | 参数 | 描述 |
 | --- | --- |
 | `{SANDBOX_NAME}` | 要重置的沙盒的`name`属性。 |
+| `validationOnly` | 一个可选参数，允许您对沙盒重置操作进行试运行前检查，而无需发出实际请求。 将此参数设置为`validationOnly=true` ，以检查要重置的沙盒是否包含任何Adobe Analytics、Adobe Audience Manager或区段共享数据。 |
 
 **请求**
 
@@ -370,7 +367,7 @@ PUT /sandboxes/{SANDBOX_NAME}
 
 ```shell
 curl -X PUT \
-  https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/acme-dev \
+  https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/acme-dev?validationOnly=true \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -386,6 +383,10 @@ curl -X PUT \
 
 **响应**
 
+>[!NOTE]
+>
+>重置沙盒后，系统大约需要30秒才能进行配置。
+
 成功的响应会返回更新的沙盒的详细信息，表明其`state`是“重置”的。
 
 ```json
@@ -399,18 +400,76 @@ curl -X PUT \
 }
 ```
 
->[!NOTE]
->
->重置沙盒后，系统大约需要30秒才能进行配置。 配置后，沙盒的`state`将变为“活动”或“失败”。
+如果Adobe Analytics还在为[跨设备分析(CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html)功能使用其中托管的身份图，或者如果Adobe Audience Manager也在为[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html)功能使用其中托管的身份图，则无法重置默认生产沙盒和任何用户创建的生产沙盒。
 
-下表包含可能会阻止重置沙盒的异常：
+以下是可能会阻止重置沙盒的可能异常列表：
 
-| 错误代码 | 描述 |
+```json
+{
+    "status": 400,
+    "title": "Sandbox `{SANDBOX_NAME}` cannot be reset. The identity graph hosted in this sandbox is also being used by Adobe Analytics for the Cross Device Analytics (CDA) feature.",
+    "type": "http://ns.adobe.com/aep/errors/SMS-2074-400"
+},
+{
+    "status": 400,
+    "title": "Sandbox `{SANDBOX_NAME}` cannot be reset. The identity graph hosted in this sandbox is also being used by Adobe Audience Manager for the People Based Destinations (PBD) feature.",
+    "type": "http://ns.adobe.com/aep/errors/SMS-2075-400"
+},
+{
+    "status": 400,
+    "title": "Sandbox `{SANDBOX_NAME}` cannot be reset. The identity graph hosted in this sandbox is also being used by Adobe Audience Manager for the People Based Destinations (PBD) feature, as well by Adobe Analytics for the Cross Device Analytics (CDA) feature.",
+    "type": "http://ns.adobe.com/aep/errors/SMS-2076-400"
+},
+{
+    "status": 400,
+    "title": "Warning: Sandbox `{SANDBOX_NAME}` is used for bi-directional segment sharing with Adobe Audience Manager or Audience Core Service.",
+    "type": "http://ns.adobe.com/aep/errors/SMS-2077-400"
+}
+```
+
+您可以通过向请求添加`ignoreWarnings`参数，继续重置用于与[!DNL Audience Manager]或[!DNL Audience Core Service]进行双向区段共享的生产沙盒。
+
+**API格式**
+
+```http
+PUT /sandboxes/{SANDBOX_NAME}?ignoreWarnings=true
+```
+
+| 参数 | 描述 |
 | --- | --- |
-| `2074-400` | 无法重置此沙盒，因为Adobe Analytics还在使用此沙盒中托管的标识图来实现跨设备分析(CDA)功能。 |
-| `2075-400` | 无法重置此沙盒，因为Adobe Audience Manager还将此沙盒中托管的身份图用于基于人员的目标(PBD)功能。 |
-| `2076-400` | 无法重置此沙盒，因为此沙盒中托管的身份图也由Adobe Audience Manager用于基于人员的目标(PBD)功能，而Adobe Analytics用于跨设备分析(CDA)功能。 |
-| `2077-400` | 警告：沙盒`{SANDBOX_NAME}`用于与Adobe Audience Manager或受众核心服务进行双向区段共享。 |
+| `{SANDBOX_NAME}` | 要重置的沙盒的`name`属性。 |
+| `ignoreWarnings` | 可选参数，用于跳过验证检查并强制重置用于与[!DNL Audience Manager]或[!DNL Audience Core Service]进行双向区段共享的生产沙盒。 此参数不能应用于默认的生产沙盒。 |
+
+**请求**
+
+以下请求会重置名为“acme”的生产沙箱。
+
+```shell
+curl -X PUT \
+  https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/acme?ignoreWarnings=true \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'Content-Type: application/json'
+  -d '{
+    "action": "reset"
+  }'
+```
+
+**响应**
+
+成功的响应会返回更新的沙盒的详细信息，表明其`state`是“重置”的。
+
+```json
+{
+    "id": "d8184350-dbf5-11e9-875f-6bf1873fec16",
+    "name": "acme",
+    "title": "Acme Business Group prod",
+    "state": "resetting",
+    "type": "production",
+    "region": "VA7"
+}
+```
 
 ## 删除沙盒 {#delete}
 
@@ -433,14 +492,16 @@ DELETE /sandboxes/{SANDBOX_NAME}
 | 参数 | 描述 |
 | --- | --- |
 | `{SANDBOX_NAME}` | 要删除的沙盒的`name`。 |
+| `validationOnly` | 一个可选参数，允许您在执行沙盒删除操作时进行试运行前检查，而无需发出实际请求。 将此参数设置为`validationOnly=true` ，以检查要重置的沙盒是否包含任何Adobe Analytics、Adobe Audience Manager或区段共享数据。 |
+| `ignoreWarnings` | 可选参数，允许您跳过验证检查并强制删除用户创建的生产沙盒，该沙盒用于与[!DNL Audience Manager]或[!DNL Audience Core Service]进行双向区段共享。 此参数不能应用于默认的生产沙盒。 |
 
 **请求**
 
-以下请求会删除名为“acme-dev”的沙盒。
+以下请求会删除名为“acme”的生产沙箱。
 
 ```shell
 curl -X DELETE \
-  https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/dev-2 \
+  https://platform.adobe.io/data/foundation/sandbox-management/sandboxes/acme?ignoreWarnings=true \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}'
@@ -452,8 +513,8 @@ curl -X DELETE \
 
 ```json
 {
-    "name": "acme-dev",
-    "title": "Acme Business Group dev",
+    "name": "acme",
+    "title": "Acme Business Group prod",
     "state": "deleted",
     "type": "development",
     "region": "VA7"
