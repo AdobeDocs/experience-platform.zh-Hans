@@ -4,20 +4,28 @@ description: 了解如何使用Adobe Experience Cloud Web SDK检索Adobe Experie
 seo-description: 了解如何获取Adobe Experience Cloud Id。
 keywords: 身份；第一方身份；身份服务；第三方身份；ID迁移；访客ID；第三方身份；ThirdPartyCookiesEnabled;idMigrationEnabled;getIdentity；同步身份；sendEvent;identityMap；主；EID；身份命名空间；命名空间ID;authenticationState;hashEnabled;
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
+source-git-commit: d753cfca6f518dfe2cafa1cb30ad26bd0b591c54
 workflow-type: tm+mt
-source-wordcount: '961'
-ht-degree: 3%
+source-wordcount: '1217'
+ht-degree: 6%
 
 ---
 
-# 检索Adobe Experience Cloud ID
+# Adobe Experience Cloud ID
 
 Adobe Experience Platform Web SDK利用[AdobeIdentity服务](../../identity-service/ecid.md)。 这可确保每个设备都有一个唯一标识符，该标识符会保留在设备上，以便页面之间的活动可以绑定在一起。
 
 ## 第一方身份
 
-[!DNL Identity Service]将标识存储在第一方域的Cookie中。 [!DNL Identity Service]尝试使用域上的HTTP标头来设置Cookie。 如果操作失败， [!DNL Identity Service]将回退到通过Javascript设置Cookie。 Adobe建议您设置CNAME，以确保客户端ITP限制不会对您的Cookie设置上限。
+[!DNL Identity Service]将标识存储在第一方域的Cookie中。 [!DNL Identity Service]尝试使用域上的HTTP标头来设置Cookie。 如果操作失败， [!DNL Identity Service]将返回使用JavaScript设置Cookie。 建议您为[边缘域配置](../fundamentals/configuring-the-sdk.md#edgeConfigId)设置CNAME。
+
+来自Platform Web SDK的每次点击，都会由边缘网络上的Identity服务向其添加一个ECID。 对于首次访客，将生成ECID并将其添加到有效负载中。 对于重复访客，将从`kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie中检索ECID，并将其添加到有效负载中。
+
+ECID将添加在`xdm`的`identityMap`字段下。 使用浏览器的开发工具，您可以在响应中的有效负荷下查看ECID，其类型为：`identity:result`，但您在请求中看不到ECID。
+
+通过 CNAME 实施，您可以自定义 Adobe 使用的收藏集域名，以便与您自己的域名匹配。这将允许 Adobe 在服务器端设置第一方 Cookie，而不是使用 JavaScript 在客户端进行设置。过去，这些服务器端第一方Cookie不受Apple对Safari浏览器的智能防跟踪(ITP)政策所施加的限制。 但是，2020年11月，Apple更新了其策略，以便这些限制也适用于通过CNAME设置的Cookie。 目前，根据ITP，在服务器端设置的Cookie（由CNAME设置）和在客户端设置的Cookie（由JavaScript设置）均受七天或24小时的到期限制。 有关ITP策略的更多信息，请参阅此Apple文档，其中介绍了[跟踪预防](https://webkit.org/tracking-prevention/#intelligent-tracking-prevention-itp)。
+
+虽然CNAME实施在Cookie生命周期方面不提供任何好处，但还有其他一些好处，例如广告拦截器和不太常见的浏览器会阻止数据发送到它们分类为跟踪器的域。 在这些情况下，使用CNAME可能会阻止使用这些工具的用户中断您的数据收集。
 
 ## 第三方标识
 
