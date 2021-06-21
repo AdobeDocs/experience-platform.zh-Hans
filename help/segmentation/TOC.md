@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform Segmentation Service
 breadcrumb-title: Segmentation Service 指南
 user-guide-description: 根据实时客户档案数据构建区段并生成受众。
 feature: 区段
-source-git-commit: 48ef54759ff62efa84aac493af3a7799e1b6d141
+source-git-commit: f193787ac27e30c69d25418656ae9c59c89622dc
 workflow-type: tm+mt
 source-wordcount: '164'
-ht-degree: 20%
+ht-degree: 26%
 
 ---
 
@@ -18,11 +18,11 @@ ht-degree: 20%
 - [分段数据类型](data-types.md)
 - 分段API {#api}
    - [概述](api/overview.md)
-   - [入门指南](api/getting-started.md)
+   - [快速入门](api/getting-started.md)
    - [边缘分割](api/edge-segmentation.md)
    - [导出作业](api/export-jobs.md)
    - [预览和估计](api/previews-and-estimates.md)
-   - [调度程序](api/schedules.md)
+   - [计划](api/schedules.md)
    - [区段定义](api/segment-definitions.md)
    - [区段作业](api/segment-jobs.md)
    - [区段搜索](api/segment-search.md)
@@ -36,7 +36,7 @@ ht-degree: 20%
    - [流分段](ui/streaming-segmentation.md)
    - [流分段（视频）](video/streaming-segmentation-overview.md)
    - [时间约束重构](ui/segment-refactoring.md)
-- [遵守选择退出](honoring-opt-outs.md)
+- [尊重同意](consents.md)
 - [多实体分段](multi-entity-segmentation.md)
 - 用户档案查询语言{#pql}
    - [概述](pql/overview.md)
@@ -45,7 +45,7 @@ ht-degree: 20%
    - [数组、列表和设置函数](pql/array-functions.md)
    - [映射函数](pql/map-functions.md)
    - [字符串函数](pql/string-functions.md)
-   - [对象函数](pql/object-functions.md)
+   - [目标函数](pql/object-functions.md)
    - [算术函数](pql/arithmetic-functions.md)
    - [聚合函数](pql/aggregation-functions.md)
    - [日期和时间函数](pql/datetime-functions.md)
