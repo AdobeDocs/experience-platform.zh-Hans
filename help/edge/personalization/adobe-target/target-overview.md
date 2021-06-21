@@ -3,9 +3,9 @@ title: 将Adobe Target与Platform Web SDK结合使用
 description: 了解如何使用Experience PlatformWeb SDK渲染个性化内容(使用Adobe Target)
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: e7f5074ef776fc6ccd4f9951722861d771a371de
+source-git-commit: ed6f0891958670c3c5896c4c9cbefef2a245bc15
 workflow-type: tm+mt
-source-wordcount: '918'
+source-wordcount: '932'
 ht-degree: 5%
 
 ---
@@ -159,32 +159,24 @@ alloy("sendEvent", {
 alloy("sendEvent", {
    renderDecisions: true|false,
    xdm: { // Experience Event XDM data },
-   data: { // Freeform stuff (event & profile) }
+   data: { // Freeform data }
 });
 ```
 
-**示例代码**
+**如何将用户档案属性发送到Adobe Target:**
 
 ```
 alloy("sendEvent", {
   renderDecisions: true,
-  xdm: {
-    device: {
-      screenWidth: 9999
-    }
-  },
   data: {
     __adobe: {
       target: {
         "profile.gender": "female",
-        "profile.age": 30,
-	"entity.id" : "123",
-	"entity.genre" : "Drama"
+        "profile.age": 30
       }
     }
   }
-}) 
-.then(console.log);
+});
 ```
 
 ## 请求推荐
@@ -209,6 +201,22 @@ alloy("sendEvent", {
 |  | cartIds | 受支持 |
 |  | productPurchasedId | 受支持 |
 | 类别亲和度的页面或项目类别 | user.categoryId | 受支持 |
+
+**如何将Recommendations属性发送到Adobe Target:**
+
+```
+alloy("sendEvent", {
+  renderDecisions: true,
+  data: {
+    __adobe: {
+      target: {
+        "entity.id" : "123",
+        "entity.genre" : "Drama"
+      }
+    }
+  }
+});
+```
 
 ## 调试
 
