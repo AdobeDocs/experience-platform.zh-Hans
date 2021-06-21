@@ -4,7 +4,7 @@ title: 实时客户资料概述
 topic-legacy: guide
 description: 实时客户资料是一个通用的查找实体存储，用于合并来自各种企业数据资产的数据，然后以单个客户资料和相关时间序列事件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 598f86188bcd9bde22333ccafb85f3f566aaae44
+source-git-commit: f193787ac27e30c69d25418656ae9c59c89622dc
 workflow-type: tm+mt
 source-wordcount: '1813'
 ht-degree: 0%
@@ -89,7 +89,7 @@ Adobe Experience Platform [!DNL Segmentation Service]会生成为各个客户提
 
 ### 流式摄取和流式分段
 
-通过称为流摄取的过程实现实时输入。 在摄取用户档案和时间序列数据时，[!DNL Real-time Customer Profile]会自动决定通过称为流分段的持续过程，在将数据与现有数据合并并更新并集视图之前，将该数据包含或排除在区段中。 因此，您可以即时执行计算并做出决策，在客户与您的品牌进行交互时为客户提供增强的个性化体验。 在摄取数据时，还会进行验证以确保正确摄取数据，并符合数据集所基于的架构。 有关在摄取期间执行的验证的更多信息，请首先阅读[数据摄取质量概述](../ingestion/quality/overview.md)。
+通过称为流摄取的过程实现实时输入。 在摄取用户档案和时间序列数据时，[!DNL Real-time Customer Profile]会自动决定通过称为流分段的持续过程从区段中包含或排除该数据，然后再将其与现有数据合并并更新并集视图。 因此，您可以即时执行计算并做出决策，在客户与您的品牌进行交互时为客户提供增强的个性化体验。 在摄取数据时，还会进行验证以确保正确摄取数据，并符合数据集所基于的架构。 有关在摄取期间执行的验证的更多信息，请首先阅读[数据摄取质量概述](../ingestion/quality/overview.md)。
 
 ## 边缘投影
 
@@ -120,7 +120,7 @@ Adobe Experience Platform [!DNL Segmentation Service]会生成为各个客户提
 
 ### 处理选择禁用和数据隐私请求
 
-[!DNL Experience Platform] 允许您的客户发送与其数据在中的使用和存储相关的选择退出请 [!DNL Real-time Customer Profile]求。有关如何处理选择退出请求的更多信息，请参阅[支持选择退出请求](../segmentation/honoring-opt-outs.md)上的文档。
+[!DNL Experience Platform] 允许您的客户发送与其数据在中的使用和存储相关的选择退出请 [!DNL Real-time Customer Profile]求。有关如何处理选择退出请求的更多信息，请参阅[支持选择退出请求](../segmentation/consents.md)上的文档。
 
 ## 后续步骤和其他资源
 
