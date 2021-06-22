@@ -5,7 +5,7 @@ title: 审核日志API端点
 description: 通过架构注册表API中的/auditlog端点，可以按时间顺序检索对现有XDM资源所做更改的列表。
 topic-legacy: developer guide
 exl-id: 8d33ae7c-0aa4-4f38-a183-a2ff1801e291
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
 workflow-type: tm+mt
 source-wordcount: '406'
 ht-degree: 3%
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 对于每个体验数据模型(XDM)资源， [!DNL Schema Registry]会维护一个日志，其中包含不同更新之间发生的所有更改。 [!DNL Schema Registry] API中的`/auditlog`端点允许您检索由ID指定的任何类、架构字段组、数据类型或架构的审核日志。
 
-## 入门指南
+## 快速入门
 
 本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)的一部分。 在继续操作之前，请查阅[快速入门指南](./getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及成功调用任何Experience PlatformAPI所需的标头的重要信息。
 
@@ -44,7 +44,7 @@ GET /rpc/auditlog/{RESOURCE_ID}
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/foundation/schemaregistry/rpc/auditlog/_{TENANT_ID}.fieldgroups.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9 \
+  https://platform.adobe.io/data/foundation/schemaregistry/rpc/auditlog/_{TENANT_ID}.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
@@ -58,11 +58,11 @@ curl -X GET \
 ```json
 [
   {
-    "id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+    "id": "https://ns.adobe.com/{TENANT_ID}/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
     "auditTrails": [
       {
-        "id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "xdmType": "fieldgroups",
+        "id": "https://ns.adobe.com/{TENANT_ID}/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "xdmType": "mixins",
         "action": "add",
         "path": "/definitions/customFields/properties/_{TENANT_ID}/properties/brand",
         "value": {
@@ -74,8 +74,8 @@ curl -X GET \
         }
       },
       {
-        "id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
-        "xdmType": "fieldgroups",
+        "id": "https://ns.adobe.com/{TENANT_ID}/mixins/922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9",
+        "xdmType": "mixins",
         "action": "add",
         "path": "/meta:usageCount",
         "value": 0
