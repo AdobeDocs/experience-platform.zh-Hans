@@ -1,55 +1,55 @@
 ---
-keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API;预览；示例
-title: 预览示例状态(用户档案预览)API端点
-description: 使用预览示例状态端点(实时客户用户档案API的一部分)，您可以预览最新成功的用户档案数据示例、按数据集和身份分发列表用户档案，并生成数据集重叠报告。
+keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；预览；示例
+title: 预览示例状态（配置文件预览）API端点
+description: 使用预览示例状态端点（实时客户配置文件API的一部分），您可以预览配置文件数据的最新成功示例、按数据集和身份列出配置文件分发，以及生成数据集重叠报表。
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: 459eb626101b7382b8fe497835cc19f7d7adc6b2
+source-git-commit: 0c7dc02ed0bacf7e0405b836f566149a872fc31a
 workflow-type: tm+mt
-source-wordcount: '2066'
+source-wordcount: '2450'
 ht-degree: 1%
 
 ---
 
-# 预览示例状态端点(用户档案预览)
+# 预览示例状态端点（配置文件预览）
 
-Adobe Experience Platform使您能够从多个来源收集客户数据，以便为每个客户构建可靠、统一的用户档案。 当数据被引入平台时，将运行一个示例作业以更新用户档案计数和其他与用户档案相关的量度。
+Adobe Experience Platform允许您从多个来源摄取客户数据，以便为每个单独的客户构建一个强大、统一的配置文件。 将数据摄取到Platform后，将运行一个示例作业以更新用户档案计数和其他与实时客户档案数据相关的量度。
 
-此示例作业的结果可以使用实时客户用户档案API的`/previewsamplestatus`端点进行查看。 此端点还可用于通过数据集和身份命名空间列表用户档案分布，以及生成数据集重叠报告以查看您组织的用户档案存储的合成。 本指南将介绍使用`/previewsamplestatus` API端点视图这些量度所需的步骤。
+此示例作业的结果可以使用`/previewsamplestatus`端点（实时客户资料API的一部分）查看。 此端点还可用于按数据集和身份命名空间列出配置文件分配，以及生成数据集重叠报表和身份重叠报表，以便查看您组织的配置文件存储的构成。 本指南将介绍使用`/previewsamplestatus` API端点查看这些量度所需的步骤。
 
 >[!NOTE]
 >
->Adobe Experience Platform分段服务API中提供了一些估计和预览端点，允许您视图有关区段定义的摘要级别信息，以帮助确保隔离预期受众。 要查找使用区段预览和估计端点的详细步骤，请访问[预览和估计端点指南](../../segmentation/api/previews-and-estimates.md)（[!DNL Segmentation] API开发人员指南的一部分）。
+>Adobe Experience Platform Segmentation Service API提供了一些可用的预估和预览端点，通过这些端点可以查看有关区段定义的摘要级别信息，以帮助确保隔离预期受众。 要查找有关使用区段预览和评估端点的详细步骤，请访问[预览和评估端点指南](../../segmentation/api/previews-and-estimates.md)（[!DNL Segmentation] API开发人员指南的一部分）。
 
-## 入门指南
+## 快速入门
 
-本指南中使用的API端点是[[!DNL Real-time Customer Profile] API](https://www.adobe.com/go/profile-apis-en)的一部分。 在继续之前，请查阅[快速入门指南](getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
+本指南中使用的API端点是[[!DNL Real-time Customer Profile] API](https://www.adobe.com/go/profile-apis-en)的一部分。 在继续操作之前，请查阅[快速入门指南](getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及有关成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
 
-## 用户档案片段与合并用户档案
+## 配置文件片段与合并的配置文件
 
-本指南同时引用“用户档案片段”和“合并用户档案”。 在继续之前，必须了解这些术语之间的差异。
+本指南同时引用“配置文件片段”和“合并的配置文件”。 在继续操作之前，务必要了解这些术语之间的差异。
 
-每个客户用户档案都由多个用户档案片段组成，这些片段已合并，以形成该客户的单个视图。 例如，如果一个渠道跨多个用户档案与您的品牌互动，则您的组织可能有多个与该单个客户相关的片段出现在多个数据集中。
+每个客户配置文件都由多个配置文件片段组成，这些片段已合并，以形成该客户的单一视图。 例如，如果客户跨多个渠道与您的品牌进行交互，则贵组织可能在多个数据集中显示与该单个客户相关的多个配置文件片段。
 
-当用户档案片段被引入平台时，它们会合并在一起（基于合并策略），以便为该客户创建单个用户档案。 因此，用户档案片段的总数可能始终高于合并用户档案的总数，因为每个用户档案由多个片段组成。
+将配置文件片段摄取到Platform后，它们会合并在一起（基于合并策略），以便为该客户创建单个配置文件。 因此，由于每个配置文件都由多个片段组成，因此配置文件片段的总数可能始终高于合并的配置文件的总数。
 
-要进一步了解用户档案及其在Experience Platform中的作用，请首先阅读[实时客户用户档案概述](../home.md)。
+要进一步了解Experience Platform中的用户档案及其角色，请首先阅读[实时客户用户档案概述](../home.md)。
 
 ## 示例作业的触发方式
 
-当为实时客户用户档案启用的数据被引入[!DNL Platform]时，它存储在用户档案数据存储中。 当将记录引入用户档案存储中时，将总用户档案计数增加或减少5%以上时，将触发采样作业以更新该计数。 触发样本的方式取决于所使用的摄取类型：
+由于为实时客户资料启用的数据会被摄取到[!DNL Platform]中，因此该数据会存储在资料数据存储中。 当将记录摄取到用户档案存储区时，总用户档案计数增加或减少5%以上，则会触发取样作业以更新计数。 触发示例的方式取决于所使用的摄取类型：
 
-* 对于&#x200B;**流数据工作流**，每小时检查以确定是否达到5%增加或减少阈值。 如果已触发，则会自动触发示例作业以更新计数。
-* 对于&#x200B;**批处理摄取**，在成功将批处理摄取到用户档案存储区的15分钟内，如果达到5%增加或减少阈值，则运行作业以更新计数。 使用用户档案 API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列表用户档案分发。
+* 对于&#x200B;**流数据工作流**，每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果已执行此操作，则会自动触发示例作业以更新计数。
+* 对于&#x200B;**批量摄取**，在成功将批摄取到配置文件存储的15分钟内，如果满足5%的增加或减少阈值，则运行一个作业以更新计数。 使用配置文件API，您可以预览最新成功的示例作业，以及按数据集和身份命名空间列出配置文件分发。
 
-按命名空间量度划分的用户档案计数和用户档案也可在Experience PlatformUI的[!UICONTROL 用户档案]部分中使用。 有关如何使用UI访问用户档案数据的信息，请访问[[!DNL Profile] UI指南](../ui/user-guide.md)。
+在Experience PlatformUI的[!UICONTROL Profiles]部分中，还提供了按命名空间量度的配置文件计数和配置文件。 有关如何使用UI访问配置文件数据的信息，请访问[[!DNL Profile] UI指南](../ui/user-guide.md)。
 
-## 视图上次示例状态{#view-last-sample-status}
+## 查看最后一个示例状态{#view-last-sample-status}
 
-您可以向`/previewsamplestatus`端点执行GET请求，以视图为IMS组织运行的上次成功示例作业的详细信息。 这包括示例中的用户档案总数，以及用户档案计数量度，或您的组织在Experience Platform中拥有的用户档案总数。
+您可以对`/previewsamplestatus`端点执行GET请求，以查看为IMS组织运行的上一个成功示例作业的详细信息。 这包括示例中的用户档案总数，以及用户档案计数量度，或您的组织在Experience Platform中拥有的用户档案总数。
 
-用户档案计数在合并用户档案片段后生成，以便为每个单独的客户形成单个用户档案。 换句话说，当用户档案片段合并到一起时，它们返回“1”个用户档案计数，因为它们都与同一个人相关。
+将配置文件片段合并到一起后，会生成配置文件计数，以便为每个单独的客户形成一个配置文件。 换言之，当配置文件片段合并在一起时，它们会返回“1”个配置文件的计数，因为它们都与同一个人相关。
 
-用户档案计数还包括具有属性（记录数据）的用户档案和仅包含时间序列(事件)数据的用户档案，如Adobe Analytics用户档案。 在摄取用户档案数据时，将定期刷新示例作业，以便在平台内提供最新的用户档案总数。
+用户档案计数还包含具有属性（记录数据）的用户档案，以及仅包含时间系列（事件）数据的用户档案，如Adobe Analytics用户档案。 在摄取用户档案数据时，将定期刷新示例作业，以便在Platform中提供最新的用户档案总数。
 
 **API格式**
 
@@ -70,11 +70,11 @@ curl -X GET \
 
 **响应**
 
-响应包括为组织运行的上次成功示例作业的详细信息。
+响应包含为组织运行的最后一个成功示例作业的详细信息。
 
 >[!NOTE]
 >
->在此示例响应中，`numRowsToRead`和`totalRows`彼此相等。 根据您的组织在Experience Platform中拥有的用户档案数，情况可能是这样。 但是，这两个数字通常不同，`numRowsToRead`是较小的数字，因为它将样本表示为用户档案总数(`totalRows`)的子集。
+>在此示例响应中，`numRowsToRead`和`totalRows`彼此相等。 根据贵组织在Experience Platform中拥有的用户档案数，情况可能如此。 但是，这两个数字通常不同，其中`numRowsToRead`是较小的数字，因为它将示例表示为用户档案总数(`totalRows`)的子集。
 
 ```json
 {
@@ -98,22 +98,22 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `numRowsToRead` | 样本中合并用户档案的总数。 |
-| `sampleJobRunning` | 一个布尔值，当示例作业正在进行时返回`true`。 为从批处理文件上传到实际添加到用户档案存储时的延迟提供透明度。 |
-| `cosmosDocCount` | Cosmos中的文档总数。 |
-| `totalFragmentCount` | 用户档案存储中的用户档案片段总数。 |
-| `lastSuccessfulBatchTimestamp` | 上次成功的批摄取时间戳。 |
-| `streamingDriven` | *此字段已弃用，且不包含对响应的重要性。* |
-| `totalRows` | Experience Platform中合并用户档案的总数，也称为“用户档案计数”。 |
+| `numRowsToRead` | 示例中合并的用户档案总数。 |
+| `sampleJobRunning` | 一个布尔值，在进行示例作业时返回`true`。 为从上传批处理文件到将其实际添加到用户档案存储的延迟提供透明度。 |
+| `cosmosDocCount` | Cosmos中的文档总计数。 |
+| `totalFragmentCount` | 配置文件存储中的配置文件片段总数。 |
+| `lastSuccessfulBatchTimestamp` | 上次成功的批量摄取时间戳。 |
+| `streamingDriven` | *此字段已弃用，且不包含对响应的显着性。* |
+| `totalRows` | Experience Platform中合并的用户档案总数，也称为“用户档案计数”。 |
 | `lastBatchId` | 上次批量摄取ID。 |
-| `status` | 上一个示例的状态。 |
-| `samplingRatio` | 采样的合并用户档案(`numRowsToRead`)与合并用户档案(`totalRows`)的比率，以小数格式表示为百分比。 |
+| `status` | 最后一个示例的状态。 |
+| `samplingRatio` | 采样的合并配置文件(`numRowsToRead`)与合并配置文件(`totalRows`)总数的比率，以小数格式以百分比表示。 |
 | `mergeStrategy` | 示例中使用的合并策略。 |
 | `lastSampledTimestamp` | 上次成功的示例时间戳。 |
 
-## 列表用户档案分布（按数据集）
+## 按数据集列出配置文件分发
 
-要按用户档案集查看GET分布，可以向`/previewsamplestatus/report/dataset`端点执行请求。
+要按GET集查看配置文件的分布，您可以向`/previewsamplestatus/report/dataset`端点执行数据请求。
 
 **API格式**
 
@@ -124,7 +124,7 @@ GET /previewsamplestatus/report/dataset?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报表，则将返回该日期的最新报表。 如果在指定日期不存在报表，则将返回404错误。 如果未指定日期，则将返回最近的报表。 格式：YYYY-MM-DD。 示例: `date=2024-12-31` |
+| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
@@ -141,11 +141,11 @@ curl -X GET \
 
 **响应**
 
-响应包括`data`数组，其中包含数据集对象的列表。 显示的响应已截断，以显示三个数据集。
+响应包含一个`data`数组，其中包含数据集对象的列表。 显示的响应已被截断，以显示三个数据集。
 
 >[!NOTE]
 >
->如果该日期存在多个报表，则只返回最新的报表。 如果提供的日期不存在数据集报告，则返回“HTTP状态404（未找到）”。
+>如果日期存在多个报表，则只会返回最新的报表。 如果提供的日期不存在数据集报表，则会返回“HTTP状态404（未找到）”。
 
 ```json
 {
@@ -194,25 +194,25 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `sampleCount` | 使用此数据集ID的采样合并用户档案总数。 |
-| `samplePercentage` | `sampleCount`作为采样合并用户档案总数的百分比（在[最后一个采样状态](#view-last-sample-status)中返回的`numRowsToRead`值），以十进制格式表示。 |
-| `fullIDsCount` | 具有此用户档案集ID的合并数据集总数。 |
-| `fullIDsPercentage` | `fullIDsCount`作为合并用户档案总数的百分比（在[最后一个示例状态](#view-last-sample-status)中返回的`totalRows`值），以十进制格式表示。 |
-| `name` | 数据集的名称，在创建数据集时提供。 |
-| `description` | 数据集的描述，在创建数据集时提供。 |
+| `samplePercentage` | `sampleCount`作为采样的合并配置文件总数的百分比（在[最后一个示例状态](#view-last-sample-status)中返回的`numRowsToRead`值），以小数格式表示。 |
+| `fullIDsCount` | 具有此数据集ID的合并用户档案总数。 |
+| `fullIDsPercentage` | `fullIDsCount`作为合并配置文件总数的百分比（在[最后一个示例状态](#view-last-sample-status)中返回的`totalRows`值），以小数格式表示。 |
+| `name` | 数据集的名称，在数据集创建期间提供。 |
+| `description` | 数据集的描述，在数据集创建期间提供。 |
 | `value` | 数据集的ID。 |
-| `streamingIngestionEnabled` | 是否启用了数据集以进行流摄取。 |
+| `streamingIngestionEnabled` | 是否为流摄取启用了数据集。 |
 | `createdUser` | 创建数据集的用户的用户ID。 |
-| `reportTimestamp` | 报表的时间戳。 如果在请求期间提供了`date`参数，则返回的报表为提供的日期。 如果未提供`date`参数，则返回最近的报告。 |
+| `reportTimestamp` | 报表的时间戳。 如果在请求期间提供了`date`参数，则返回的报表为提供的日期。 如果未提供`date`参数，则返回最新的报告。 |
 
-## 列表用户档案按命名空间分发
+## 按身份命名空间列出配置文件分发
 
-您可以对`/previewsamplestatus/report/namespace`端点执行GET请求，以在用户档案存储中的所有合并用户档案上按标识命名空间视图划分。
+您可以对`/previewsamplestatus/report/namespace`端点执行GET请求，以在Profile存储中查看所有合并配置文件中按身份命名空间划分的内容。 这包括由Adobe提供的标准身份以及由您的组织定义的自定义身份。
 
-身份命名空间是Adobe Experience Platform Identity Service的一个重要组件，可作为与客户数据相关的上下文的指示器。 要了解更多信息，请首先阅读[标识命名空间概述](../../identity-service/namespaces.md)。
+身份命名空间是Adobe Experience Platform Identity Service的重要组件，充当与客户数据相关的上下文指示器。 要了解更多信息，请首先阅读[标识命名空间概述](../../identity-service/namespaces.md)。
 
 >[!NOTE]
 >
->按命名空间划分的用户档案总数(将每个命名空间显示的值相加)将始终高于用户档案计数量度，因为一个用户档案可能与多个命名空间关联。 例如，如果一个客户在多个渠道上与您的品牌互动，则多个命名空间将与该个别客户关联。
+>按命名空间划分的配置文件总数（将每个命名空间显示的值相加）可能高于配置文件计数量度，因为一个配置文件可能与多个命名空间关联。 例如，如果客户在多个渠道上与您的品牌交互，则多个命名空间将与该个别客户关联。
 
 **API格式**
 
@@ -223,11 +223,11 @@ GET /previewsamplestatus/report/namespace?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报表，则将返回该日期的最新报表。 如果在指定日期不存在报表，则将返回404错误。 如果未指定日期，则将返回最近的报表。 格式：YYYY-MM-DD。 示例: `date=2024-12-31` |
+| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
-以下请求未指定`date`参数，因此将返回最近的报告。
+以下请求未指定`date`参数，因此将返回最新的报表。
 
 ```shell
 curl -X GET \
@@ -240,7 +240,7 @@ curl -X GET \
 
 **响应**
 
-响应包括`data`数组，其中各个对象包含每个命名空间的详细信息。 显示的响应已截断，显示四个命名空间。
+响应包含一个`data`数组，其中各个对象包含每个命名空间的详细信息。 显示的响应已被截断为显示四个命名空间。
 
 ```json
 {
@@ -292,22 +292,22 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `sampleCount` | 命名空间中采样合并用户档案的总数。 |
-| `samplePercentage` | `sampleCount`作为采样合并用户档案的百分比（在[最后一个采样状态](#view-last-sample-status)中返回的`numRowsToRead`值），以十进制格式表示。 |
-| `reportTimestamp` | 报表的时间戳。 如果在请求期间提供了`date`参数，则返回的报表为提供的日期。 如果未提供`date`参数，则返回最近的报告。 |
-| `fullIDsFragmentCount` | 命名空间中的用户档案片段总数。 |
-| `fullIDsCount` | 命名空间中的合并用户档案总数。 |
-| `fullIDsPercentage` | `fullIDsCount`作为合并用户档案总数的百分比（在[最后一个示例状态](#view-last-sample-status)中返回的`totalRows`值），以十进制格式表示。 |
-| `code` | 该命名空间的`code`。 这在使用[Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md)处理命名空间时可找到，在Experience PlatformUI中也称为[!UICONTROL Identity符号]。 要了解更多信息，请访问[标识命名空间概述](../../identity-service/namespaces.md)。 |
-| `value` | 命名空间的`id`值。 使用[Identity Service API](../../identity-service/api/list-namespaces.md)处理命名空间时，可以找到这一点。 |
+| `sampleCount` | 命名空间中取样的合并配置文件总数。 |
+| `samplePercentage` | `sampleCount`作为采样的合并配置文件的百分比（在[最后一个示例状态](#view-last-sample-status)中返回的`numRowsToRead`值），以小数格式表示。 |
+| `reportTimestamp` | 报表的时间戳。 如果在请求期间提供了`date`参数，则返回的报表为提供的日期。 如果未提供`date`参数，则返回最新的报告。 |
+| `fullIDsFragmentCount` | 命名空间中的配置文件片段总数。 |
+| `fullIDsCount` | 命名空间中合并的配置文件总数。 |
+| `fullIDsPercentage` | `fullIDsCount`占合并配置文件总数的百分比（在[最后一个示例状态](#view-last-sample-status)中返回的`totalRows`值），以小数格式表示。 |
+| `code` | 命名空间的`code`。 使用[Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md)处理命名空间时可以找到该值，在Experience PlatformUI中也称为[!UICONTROL Identity符号]。 要了解更多信息，请访问[标识命名空间概述](../../identity-service/namespaces.md)。 |
+| `value` | 命名空间的`id`值。 使用[Identity Service API](../../identity-service/api/list-namespaces.md)处理命名空间时，可以找到此值。 |
 
-## 生成数据集重叠报告
+## 生成数据集重叠报表
 
-数据集重叠报表可显示对可寻址受众(用户档案)贡献最大的数据集，从而使您能够了解组织的用户档案存储的组成。 除了提供对数据的洞察外，此报告还可以帮助您采取措施来优化许可证使用情况，如为某些数据集设置TTL。
+数据集重叠报表通过公开对可寻址受众（合并的配置文件）贡献最大的数据集，可以显示贵组织的配置文件存储的构成。 除了提供对数据的分析之外，此报表还可以帮助您采取措施来优化许可证使用情况，例如为某些数据集设置TTL。
 
-您可以通过对`/previewsamplestatus/report/dataset/overlap`端点执行GET请求来生成数据集重叠报告。
+您可以通过向`/previewsamplestatus/report/dataset/overlap`端点执行GET请求来生成数据集重叠报表。
 
-有关如何使用命令行或Postman UI生成数据集重叠报告的分步说明，请参阅生成数据集重叠报告教程[。](../tutorials/dataset-overlap-report.md)
+有关如何使用命令行或Postman UI生成数据集重叠报表的分步说明，请参阅[生成数据集重叠报表教程](../tutorials/dataset-overlap-report.md)。
 
 **API格式**
 
@@ -318,7 +318,7 @@ GET /previewsamplestatus/report/dataset/overlap?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在同一日期运行了多个报表，则返回该日期的最新报表。 如果在指定日期不存在报表，则返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例: `date=2024-12-31` |
+| `date` | 指定要返回的报表的日期。 如果在同一日期运行多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
@@ -334,7 +334,7 @@ curl -X GET \
 
 **响应**
 
-成功的请求返回HTTP状态200（确定）和数据集重叠报告。
+成功的请求会返回“HTTP状态200（确定）”和数据集重叠报表。
 
 ```json
 {
@@ -349,10 +349,12 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `data` | `data`对象包含以逗号分隔的列表集及其各自的用户档案计数。 |
-| `reportTimestamp` | 报表的时间戳。 如果在请求期间提供了`date`参数，则返回的报表为提供的日期。 如果未提供`date`参数，则返回最近的报告。 |
+| `data` | `data`对象包含以逗号分隔的数据集列表及其各自的配置文件计数。 |
+| `reportTimestamp` | 报表的时间戳。 如果在请求期间提供了`date`参数，则返回的报表为提供的日期。 如果未提供`date`参数，则返回最新的报告。 |
 
-报告的结果可以从响应中的数据集和用户档案计数中解释。 请考虑以下示例报表`data`对象：
+### 解释数据集重叠报表
+
+可以从响应中的数据集和用户档案计数来解释报表结果。 请考虑以下示例报表`data`对象：
 
 ```json
   "5d92921872831c163452edc8,5da7292579975918a851db57,5eb2cdc6fa3f9a18a7592a98": 123,
@@ -360,13 +362,108 @@ curl -X GET \
   "5eeda0032af7bb19162172a7": 107
 ```
 
-此报告提供以下信息：
-* 有123个用户档案，包括来自以下数据集的数据：`5d92921872831c163452edc8`、`5da7292579975918a851db57`、`5eb2cdc6fa3f9a18a7592a98`。
-* 共有454,412个用户档案，包括来自这两个数据集的数据：`5d92921872831c163452edc8`和`5eb2cdc6fa3f9a18a7592a98`。
-* 有107个用户档案只包含来自数据集`5eeda0032af7bb19162172a7`的数据。
-* 本组织共有454 642名用户档案。
+此报表提供以下信息：
+* 共有123个用户档案，其中包含来自以下数据集的数据：`5d92921872831c163452edc8`、`5da7292579975918a851db57`、`5eb2cdc6fa3f9a18a7592a98`。
+* 共有454,412个用户档案，包含来自以下两个数据集的数据：`5d92921872831c163452edc8`和`5eb2cdc6fa3f9a18a7592a98`。
+* 有107个配置文件，它们只包含来自数据集`5eeda0032af7bb19162172a7`的数据。
+* 组织共有454,642个用户档案。
+
+## 生成身份重叠报表
+
+身份重叠报表可公开对可寻址受众（合并的用户档案）贡献最大的身份，从而显示贵组织的用户档案存储的构成。 这包括由Adobe提供的标准身份以及由您的组织定义的自定义身份。
+
+通过对`/previewsamplestatus/report/identity/overlap`端点执行GET请求，可以生成身份重叠报告。
+
+**API格式**
+
+```http
+GET /previewsamplestatus/report/identity/overlap
+GET /previewsamplestatus/report/identity/overlap?{QUERY_PARAMETERS}
+```
+
+| 参数 | 描述 |
+|---|---|
+| `date` | 指定要返回的报表的日期。 如果在同一日期运行多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
+
+**请求**
+
+以下请求使用`date`参数返回指定日期的最新报表。
+
+```shell
+curl -X GET \
+  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/identity/overlap?date=2021-12-29 \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+```
+
+**响应**
+
+成功的请求会返回HTTP状态200（确定）和身份重叠报表。
+
+```json
+{
+    "data": {
+        "Email,crmid,loyal": 2,
+        "ECID,Email,crmid": 7,
+        "ECID,Email,mobilenr": 12,
+        "AAID,ECID,loyal": 1,
+        "mobilenr": 25,
+        "AAID,ECID": 1508,
+        "ECID,crmid": 1,
+        "AAID,ECID,crmid": 2,
+        "Email,crmid": 328,
+        "CORE": 49,
+        "AAID": 446,
+        "crmid,loyal": 20988,
+        "Email": 10904,
+        "crmid": 249,
+        "ECID,Email": 74,
+        "Phone": 40,
+        "Email,Phone,loyal": 48,
+        "AAID,AVID,ECID": 85,
+        "Email,loyal": 1002,
+        "AAID,ECID,Email,Phone,crmid": 5,
+        "AAID,ECID,Email,crmid,loyal": 23,
+        "AAID,AVID,ECID,Email,crmid": 2,
+        "AVID": 3,
+        "AAID,ECID,Phone": 1,
+        "loyal": 43,
+        "ECID,Email,crmid,loyal": 6,
+        "AAID,ECID,Email,Phone,crmid,loyal": 1,
+        "AAID,ECID,Email": 2,
+        "AAID,ECID,Email,crmid": 142,
+        "AVID,ECID": 24,
+        "ECID": 6565
+    },
+    "reportTimestamp": "2021-12-29T16:55:03.624"
+}
+```
+
+| 属性 | 描述 |
+|---|---|
+| `data` | `data`对象包含以逗号分隔的列表，这些列表具有身份命名空间代码及其相应配置文件计数的唯一组合。 |
+| 命名空间代码 | `code`是每个身份命名空间名称的短格式。 使用[Adobe Experience Platform Identity Service API](../../identity-service/api/list-namespaces.md)可以找到每个`code`到其`name`的映射。 `code`也称为Experience PlatformUI中的[!UICONTROL 标识符]。 要了解更多信息，请访问[标识命名空间概述](../../identity-service/namespaces.md)。 |
+| `reportTimestamp` | 报表的时间戳。 如果在请求期间提供了`date`参数，则返回的报表为提供的日期。 如果未提供`date`参数，则返回最新的报告。 |
+
+### 解释身份重叠报表
+
+报告的结果可以从响应中的标识和用户档案计数来解释。 每行的数字值可告知您有多少个配置文件由标准和自定义身份命名空间的确切组合组成。
+
+请考虑以下摘录，摘自`data`对象：
+
+```json
+  "AAID,ECID,Email,crmid": 142,
+  "AVID,ECID": 24,
+  "ECID": 6565
+```
+
+此报表提供以下信息：
+* 共有142个配置文件，其中包含`AAID`、`ECID`和`Email`标准标识，以及来自自定义`crmid`标识命名空间的标识。
+* 有24个配置文件，由`AAID`和`ECID`身份命名空间组成。
+* 有6,565个仅包含`ECID`标识的用户档案。
 
 ## 后续步骤
 
-现在，您知道如何在用户档案存储中预览样本数据并运行数据集重叠报告，您还可以使用分段服务API的估计和预览端点来视图有关区段定义的摘要级别信息。 此信息有助于确保您隔离区段中的预期受众。 要了解有关使用分段API处理区段预览和估计的更多信息，请访问[预览和估计终结点指南](../../segmentation/api/previews-and-estimates.md)。
+现在，您已了解如何预览配置文件存储中的示例数据并运行多个重叠报表，因此还可以使用分段服务API的估计和预览端点来查看有关区段定义的摘要级别信息。 此信息有助于确保隔离区段中的预期受众。 要了解有关使用分段API进行区段预览和估算的更多信息，请访问[预览和估算端点指南](../../segmentation/api/previews-and-estimates.md)。
 
