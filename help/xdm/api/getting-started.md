@@ -5,7 +5,7 @@ title: 架构注册API快速入门
 description: 本文档简要介绍在尝试调用架构注册表API之前需要了解的核心概念。
 topic-legacy: developer guide
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
 workflow-type: tm+mt
 source-wordcount: '1370'
 ht-degree: 0%
@@ -84,7 +84,7 @@ curl -X GET \
   "tenantId":"{TENANT_ID}",
   "counts": {
     "schemas": 4,
-    "fieldgroups": 3,
+    "mixins": 3,
     "datatypes": 1,
     "classes": 2,
     "unions": 0,
@@ -93,7 +93,7 @@ curl -X GET \
     {
       "title": "Sample Field Group",
       "description": "New Sample Field Group.",
-      "meta:resourceType": "fieldgroups",
+      "meta:resourceType": "mixins",
       "meta:created": "Sat Feb 02 2019 00:24:30 GMT+0000 (UTC)",
       "version": "1.1"
     },
@@ -110,7 +110,7 @@ curl -X GET \
     {
       "title": "Sample Field Group",
       "description": "New Sample Field Group.",
-      "meta:resourceType": "fieldgroups",
+      "meta:resourceType": "mixins",
       "meta:updated": "Sat Feb 02 2019 00:34:06 GMT+0000 (UTC)",
       "version": "1.1"
     },
