@@ -4,9 +4,9 @@ title: 区段功能板
 description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 36aaccddeb207e22a22d5124ec8592ac8dddf8bc
+source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
 workflow-type: tm+mt
-source-wordcount: '900'
+source-wordcount: '940'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,11 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 ## 浏览区段功能板
 
-要导航到Platform UI中的区段功能板，请选择左边栏中的&#x200B;**[!UICONTROL 区段]**，然后选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡以显示功能板。
+要导航到Platform UI中的[!UICONTROL 区段]功能板，请选择左边栏中的&#x200B;**[!UICONTROL 区段]**，然后选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡以显示功能板。
+
+>[!NOTE]
+>
+>如果贵组织是Platform的新用户，但尚未创建活动的配置文件数据集或合并策略，则[!UICONTROL 区段]功能板将不可见。 相反， [!UICONTROL 概述]选项卡会显示可帮助您开始分段的链接和文档。
 
 ![](../images/segments/dashboard-overview.png)
 
