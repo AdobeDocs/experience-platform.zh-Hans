@@ -1,31 +1,30 @@
 ---
-keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API
+keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 如何配置计算属性字段
 topic-legacy: guide
 type: Documentation
-description: 计算属性是用于将事件级数据聚合为用户档案级属性的函数。 要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用模式 Registry API创建此字段，以定义将保存计算属性字段的模式和自定义字段组。
+description: 计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用架构注册表API创建此字段，以定义架构和将包含计算属性字段的自定义字段组。
 exl-id: 91c5d125-8ab5-4291-a974-48dd44c68a13
-translation-type: tm+mt
-source-git-commit: 3985ba8f46a62e8d9ea8b1f084198b245318a24f
+source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
 workflow-type: tm+mt
 source-wordcount: '736'
 ht-degree: 2%
 
 ---
 
-# (Alpha)使用模式注册表API配置计算属性字段
+# (Alpha)使用架构注册表API配置计算属性字段
 
 >[!IMPORTANT]
 >
->计算属性功能当前位于Alpha中，并且不适用于所有用户。 文档和功能可能会发生变化。
+>计算属性功能当前位于Alpha中，并非所有用户都可用。 文档和功能可能会发生变化。
 
-要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用模式 Registry API创建此字段，以定义将包含计算属性字段的模式和自定义模式字段组。 建议您创建单独的“计算属性”模式和字段组，您的组织可以在其中添加任何用作计算属性的属性。 这使您的组织能够将计算的属性模式与用于数据获取的其他模式完全分离。
+要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用架构注册表API创建此字段，以定义架构和将保存计算属性字段的自定义架构字段组。 建议最好创建一个单独的“计算属性”架构和字段组，贵组织可以在其中添加任何用作计算属性的属性。 这样，您的组织就可以将计算的属性架构与用于数据摄取的其他架构完全分离。
 
-此文档中的工作流概述了如何使用模式 Registry API创建引用自定义字段组的启用了用户档案的“计算属性”模式。 此文档包含特定于计算属性的示例代码，但请参阅[模式注册表API指南](../../xdm/api/overview.md)，了解有关使用API定义字段组和模式的详细信息。
+本文档中的工作流概述了如何使用架构注册表API创建引用自定义字段组的启用配置文件的“计算属性”架构。 本文档包含特定于计算属性的示例代码，但有关使用API定义字段组和架构的详细信息，请参阅[架构注册表API指南](../../xdm/api/overview.md)。
 
 ## 创建计算属性字段组
 
-要使用模式注册表API创建字段组，首先向`/tenant/fieldgroups`端点发出POST请求，并提供请求主体中字段组的详细信息。 有关使用模式 Registry API处理字段组的详细信息，请参阅[字段组API终结点指南](../../xdm/api/field-groups.md)。
+要使用架构注册表API创建字段组，请首先向`/tenant/fieldgroups`端点发出POST请求，并提供请求正文中字段组的详细信息。 有关使用架构注册表API处理字段组的详细信息，请参阅[字段组API端点指南](../../xdm/api/field-groups.md)。
 
 **API格式**
 
@@ -85,13 +84,13 @@ curl -X POST \
 
 **响应**
 
-成功的请求返回HTTP响应状态201（已创建），响应主体包含新创建字段组的详细信息，包括`$id`、`meta:altIt`和`version`。 这些值是只读的，由模式注册表指定。
+成功的请求会返回HTTP响应状态201（已创建），其中包含新创建字段组的详细信息（包括`$id`、`meta:altIt`和`version`）的响应主体。 这些值是只读的，由架构注册表分配。
 
 ```json
 {
-  "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
-  "meta:altId": "_{TENANT_ID}.fieldgroups.860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
-  "meta:resourceType": "fieldgroups",
+  "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+  "meta:altId": "_{TENANT_ID}.mixins.860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+  "meta:resourceType": "mixins",
   "version": "1.0",
   "title": "Computed Attributes Field Group",
   "type": "object",
@@ -147,9 +146,9 @@ curl -X POST \
 
 ## 使用其他计算属性更新字段组
 
-由于需要更多的计算属性，您可以通过向`/tenant/fieldgroups`端点发出PUT请求，使用附加属性更新计算属性字段组。 此请求要求您包含在路径中创建的字段组的唯一ID以及要在正文中添加的所有新字段。
+由于需要更多计算属性，因此您可以通过向`/tenant/fieldgroups`端点发出PUT请求来使用附加属性更新计算属性字段组。 此请求要求您包含在路径中创建的字段组的唯一ID，以及要在正文中添加的所有新字段。
 
-有关使用模式 Registry API更新字段组的详细信息，请参阅[字段组API终结点指南](../../xdm/api/field-groups.md)。
+有关使用架构注册表API更新字段组的更多信息，请参阅[字段组API端点指南](../../xdm/api/field-groups.md)。
 
 **API格式**
 
@@ -163,11 +162,11 @@ PUT /tenant/fieldgroups/{FIELD_GROUP_ID}
 
 >[!NOTE]
 >
->通过PUT请求更新字段组时，主体必须包括在POST请求中创建新字段组时所需的所有字段。
+>通过PUT请求更新字段组时，主体必须包含在POST请求中创建新字段组时需要填写的所有字段。
 
 ```shell
 curl -X PUT \
-  https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/_{TENANT_ID}.fieldgroups.8779fd45d6e4eb074300023a439862bbba359b60d451627a \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups/_{TENANT_ID}.mixins.8779fd45d6e4eb074300023a439862bbba359b60d451627a \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
@@ -234,9 +233,9 @@ curl -X PUT \
 
 ```json
 {
-  "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
-  "meta:altId": "_{TENANT_ID}.fieldgroups.860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
-  "meta:resourceType": "fieldgroups",
+  "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+  "meta:altId": "_{TENANT_ID}.mixins.860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+  "meta:resourceType": "mixins",
   "version": "1.0",
   "title": "Computed Attributes Field Group",
   "type": "object",
@@ -310,11 +309,11 @@ curl -X PUT \
 }
 ```
 
-## 创建支持用户档案的模式
+## 创建启用了用户档案的架构
 
-要使用模式注册表API创建模式，首先向`/tenant/schemas`端点发出POST请求，并提供请求主体中模式的详细信息。 还必须为[!DNL Profile]启用模式，并作为模式类的合并模式的一部分显示。
+要使用架构注册表API创建架构，请首先向`/tenant/schemas`端点发出POST请求，并在请求正文中提供架构的详细信息。 还必须为[!DNL Profile]启用架构，并作为架构类的并集架构的一部分显示。
 
-有关[!DNL Profile]启用的模式和合并模式的详细信息，请查阅[[!DNL Schema Registry] API指南](../../xdm/api/overview.md)和[模式合成基础文档](../../xdm/schema/composition.md)。
+有关启用[!DNL Profile]的架构和并集架构的更多信息，请参阅[[!DNL Schema Registry] API指南](../../xdm/api/overview.md)和[架构组合基础知识文档](../../xdm/schema/composition.md)。
 
 **API格式**
 
@@ -324,7 +323,7 @@ POST /tenants/schemas
 
 **请求**
 
-以下请求将创建一个新模式，引用在此文档中先前创建的`computedAttributesFieldGroup`（使用其唯一ID），并启用用户档案合并模式（使用`meta:immutableTags`数组）。 有关如何使用模式 Registry API创建模式的详细说明，请参阅[模式API终结点指南](../../xdm/api/schemas.md)。
+以下请求将创建一个新架构，该架构引用本文档前面创建的`computedAttributesFieldGroup`（使用其唯一ID），并为配置文件并集架构启用（使用`meta:immutableTags`数组）。 有关如何使用架构注册表API创建架构的详细说明，请参阅[架构API端点指南](../../xdm/api/schemas.md)。
 
 ```shell
 curl -X POST \
@@ -345,7 +344,7 @@ curl -X POST \
         "meta:extends": [
           "https://ns.adobe.com/xdm/context/profile",
           "https://ns.adobe.com/xdm/context/identitymap",
-          "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
+          "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
         ],
         "description": "Description of schema.",
         "definitions": {
@@ -358,7 +357,7 @@ curl -X POST \
             "$ref": "https://ns.adobe.com/xdm/context/identitymap"
           },
           {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
           }
         ],
         "meta:class": "https://ns.adobe.com/xdm/context/profile"
@@ -367,7 +366,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应返回HTTP状态201（已创建）和包含新创建模式详细信息（包括`$id`、`meta:altId`和`version`）的有效负荷。 这些值是只读的，由模式注册表指定。
+成功响应会返回HTTP状态201（已创建）和包含新创建架构详细信息（包括`$id`、`meta:altId`和`version`）的有效负载。 这些值是只读的，由架构注册表分配。
 
 ```json
 {
@@ -391,7 +390,7 @@ curl -X POST \
       "meta:xdmType": "object"
     },
     {
-      "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
+      "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352",
       "type": "object",
       "meta:xdmType": "object"
     }
@@ -399,7 +398,7 @@ curl -X POST \
   "refs": [
     "https://ns.adobe.com/xdm/context/profile",
     "https://ns.adobe.com/xdm/context/identitymap",
-    "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
+    "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
   ],
   "imsOrg": "{IMS_ORG}",
   "meta:extensible": false,
@@ -409,7 +408,7 @@ curl -X POST \
     "https://ns.adobe.com/xdm/data/record",
     "https://ns.adobe.com/xdm/context/profile",
     "https://ns.adobe.com/xdm/context/identitymap",
-    "https://ns.adobe.com/{TENANT_ID}/fieldgroups/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
+    "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
   ],
   "meta:xdmType": "object",
   "meta:registryMetadata": {
@@ -435,4 +434,4 @@ curl -X POST \
 
 ## 后续步骤
 
-现在，您已创建了计算属性存储在其中的模式和字段组，现在，您可以使用`/computedattributes` API端点创建计算属性。 有关在API中创建计算属性的详细步骤，请按照[计算属性API端点指南](ca-api.md)中提供的步骤进行操作。
+现在，您已创建一个架构和字段组，计算属性将存储到其中，接下来可以使用`/computedattributes` API端点创建计算属性。 有关在API中创建计算属性的详细步骤，请按照[计算属性API端点指南](ca-api.md)中提供的步骤操作。
