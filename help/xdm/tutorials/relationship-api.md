@@ -6,7 +6,7 @@ description: 本文档提供了一个教程，用于定义由贵组织使用架�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
 workflow-type: tm+mt
 source-wordcount: '1369'
 ht-degree: 2%
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 本文档提供了一个教程，用于定义由您的组织使用[[!DNL Schema Registry API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)定义的两个架构之间的一对一关系。
 
-## 入门指南
+## 快速入门
 
 本教程需要对[!DNL Experience Data Model](XDM)和[!DNL XDM System]有一定的了解。 在开始使用本教程之前，请查阅以下文档：
 
@@ -36,7 +36,7 @@ ht-degree: 2%
 
 您应该已经创建了将在关系中定义的两个架构。 本教程在组织的当前忠诚度计划（在“[!DNL Loyalty Members]”模式中定义）的成员与其最喜爱的酒店（在“[!DNL Hotels]”模式中定义）之间创建关系。
 
-架构关系由&#x200B;**源架构**&#x200B;表示，该架构具有引用&#x200B;**目标架构**&#x200B;中其他字段的字段。 在后续步骤中，“[!DNL Loyalty Members]”将作为源架构，而“[!DNL Hotels]”将作为目标架构。
+架构关系由&#x200B;**源架构**&#x200B;表示，该架构具有引用&#x200B;**目标架构**&#x200B;内其他字段的字段。 在后续步骤中，“[!DNL Loyalty Members]”将作为源架构，而“[!DNL Hotels]”将作为目标架构。
 
 >[!IMPORTANT]
 >
@@ -179,9 +179,9 @@ curl -X POST\
 
 ```json
 {
-    "$id": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/3387945212ad76ee59b6d2b964afb220",
-    "meta:altId": "_{TENANT_ID}.fieldgroups.3387945212ad76ee59b6d2b964afb220",
-    "meta:resourceType": "fieldgroups",
+    "$id": "https://ns.adobe.com/{TENANT_ID}/mixins/3387945212ad76ee59b6d2b964afb220",
+    "meta:altId": "_{TENANT_ID}.mixins.3387945212ad76ee59b6d2b964afb220",
+    "meta:resourceType": "mixins",
     "version": "1.0",
     "type": "object",
     "title": "Favorite Hotel",
@@ -267,7 +267,7 @@ curl -X PATCH \
       "op": "add", 
       "path": "/allOf/-", 
       "value":  {
-        "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/3387945212ad76ee59b6d2b964afb220"
+        "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/3387945212ad76ee59b6d2b964afb220"
       }
     }
   ]'
@@ -305,13 +305,13 @@ curl -X PATCH \
             "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/ec16dfa484358f80478b75cde8c430d3"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/ec16dfa484358f80478b75cde8c430d3"
         },
         {
             "$ref": "https://ns.adobe.com/xdm/context/identitymap"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/3387945212ad76ee59b6d2b964afb220"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/3387945212ad76ee59b6d2b964afb220"
         }
     ],
     "meta:containerId": "tenant",
@@ -328,8 +328,8 @@ curl -X PATCH \
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/context/profile-person-details",
         "https://ns.adobe.com/xdm/context/profile-personal-details",
-        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/ec16dfa484358f80478b75cde8c430d3",
-        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/61969bc646b66a6230a7e8840f4a4d33"
+        "https://ns.adobe.com/{TENANT_ID}/mixins/ec16dfa484358f80478b75cde8c430d3",
+        "https://ns.adobe.com/{TENANT_ID}/mixins/61969bc646b66a6230a7e8840f4a4d33"
     ],
     "meta:xdmType": "object",
     "meta:registryMetadata": {
