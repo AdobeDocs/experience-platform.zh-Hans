@@ -5,7 +5,7 @@ title: Unions API端点
 description: 架构注册表API中的/unions端点允许您以编程方式管理体验应用程序中的XDM并集架构。
 topic-legacy: developer guide
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
 workflow-type: tm+mt
 source-wordcount: '915'
 ht-degree: 3%
@@ -152,7 +152,7 @@ curl -X GET \
             "$ref": "https://ns.adobe.com/xdm/context/profile-person-details"
         },
         {
-            "$ref": "https://ns.adobe.com/{TENANT_ID}/fieldgroups/477bb01d7125b015b4feba7bccc2e599"
+            "$ref": "https://ns.adobe.com/{TENANT_ID}/mixins/477bb01d7125b015b4feba7bccc2e599"
         },
         {
             "$ref": "https://ns.adobe.com/xdm/context/profile-personal-details"
@@ -165,7 +165,7 @@ curl -X GET \
         "https://ns.adobe.com/xdm/common/extensible",
         "https://ns.adobe.com/xdm/common/auditable",
         "https://ns.adobe.com/xdm/context/profile-person-details",
-        "https://ns.adobe.com/{TENANT_ID}/fieldgroups/477bb01d7125b015b4feba7bccc2e599",
+        "https://ns.adobe.com/{TENANT_ID}/mixins/477bb01d7125b015b4feba7bccc2e599",
         "https://ns.adobe.com/xdm/context/profile-personal-details"
     ],
     "title": "Union object for https://ns.adobe.com/xdm/context/profile",
