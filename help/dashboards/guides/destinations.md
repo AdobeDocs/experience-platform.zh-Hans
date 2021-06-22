@@ -4,9 +4,9 @@ title: 目标功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 8312d1523ab68dd0a4ba437dd826adde544838fe
+source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
 workflow-type: tm+mt
-source-wordcount: '744'
+source-wordcount: '792'
 ht-degree: 0%
 
 ---
@@ -28,6 +28,10 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 ## 浏览目标仪表板
 
 要导航到Platform UI中的目标功能板，请选择左边栏中的&#x200B;**[!UICONTROL 目标]**，然后选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡以显示功能板。
+
+>[!NOTE]
+>
+>如果贵组织是新Experience Platform，并且还没有活动目标，则将不显示[!UICONTROL 目标]功能板和[!UICONTROL 概述]选项卡。 相反，从左侧导航中选择[!UICONTROL 目标]会显示[!UICONTROL 目录]选项卡。 要详细了解[!UICONTROL Catalog]选项卡，请参阅[[!UICONTROL Destinations]工作区指南](../../destinations/ui/destinations-workspace.md)。
 
 ![](../images/destinations/dashboard-overview.png)
 
