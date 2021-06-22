@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK支持的用例
 description: 了解Adobe Experience Platform Web SDK支持哪些用例。
 keywords: Web SDK；用例
-source-git-commit: b630a00f3985769243bd42ecd3c49f0d0ce60b07
+source-git-commit: da305a65a7d5fc3d8214f1d046181b463d324ee0
 workflow-type: tm+mt
-source-wordcount: '528'
-ht-degree: 14%
+source-wordcount: '574'
+ht-degree: 13%
 
 ---
 
@@ -40,7 +40,7 @@ ht-degree: 14%
 | --- | --- |
 | 发送体验事件 |  |
 | Offer Decisioning | [文档](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/offer-decisioning/offer-decisioning-overview.html?lang=en#personalization) |
-| 以低延迟将数据发送到实时客户数据配置文件 |
+| 如果为用户档案启用了数据集，则能够实时将数据发送到实时客户数据用户档案 |  |
 | 实时将数据发送到Customer Journey Analytics |  |
 | 将同意写入用户档案 | [文档](https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/consent/adobe/sdk.html?lang=en) |
 | 实时将数据服务器端转发给第三方 | [文档](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en) |
@@ -87,6 +87,10 @@ ht-degree: 14%
 | 访客属性支持 |  |
 | 配置文件脚本 |  |
 | XDM成为mbox参数 |  |
+| A4T报表支持的重定向选件 | [文档](https://experienceleague.adobe.com/docs/target/using/experiences/offers/offer-redirect.html?lang=en) |
+| 更新Target配置文件 | [文档](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/adobe-target/target-overview.html?lang=en#single-profile-update) |
+| 推荐 |  |
+| mBox第三方ID |  |
 
 {style=&quot;table-layout:auto&quot;}
 
