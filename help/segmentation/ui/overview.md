@@ -5,9 +5,9 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 998332007465c1f8457b5d8cf0e153d513505d39
+source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
 workflow-type: tm+mt
-source-wordcount: '1547'
+source-wordcount: '1561'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 [!DNL Adobe Experience Platform Segmentation Service] 提供了用于创建和管理区段定义的用户界面。
 
-## 入门指南
+## 快速入门
 
 使用区段定义需要了解与区段相关的各种[!DNL Experience Platform]服务。 在阅读本用户指南之前，请查阅以下服务的文档：
 
@@ -31,15 +31,19 @@ ht-degree: 0%
 
 ## 概述
 
-在[[!DNL Experience Platform] UI](https://platform.adobe.com/)的左侧导航中，选择&#x200B;**[!UICONTROL 区段]**&#x200B;以打开&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡。 此选项卡提供文档和视频的链接，以帮助您了解和开始使用区段。
+在Experience PlatformUI中，在左侧导航中选择&#x200B;**[!UICONTROL 区段]**&#x200B;以打开显示[!UICONTROL 区段]功能板的&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡。
 
-![](../images/ui/overview/segment-overview.png)
+>[!NOTE]
+>
+>如果贵组织是Platform的新用户，但尚未创建活动的配置文件数据集或合并策略，则[!UICONTROL 区段]功能板将不可见。 相反， [!UICONTROL 概述]选项卡会显示可帮助您开始使用区段的链接和文档。
 
-### 区段功能板
+###  区段功能板  {#segments-dashboard}
 
-对于某些用户，在左侧导航中选择&#x200B;**[!UICONTROL 区段]**&#x200B;并打开&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡会提供一个功能板，其中概述了与区段数据相关的关键量度。
+**[!UICONTROL 区段]**&#x200B;功能板概述了与贵组织的区段数据相关的关键量度。
 
-要了解更多信息，请访问[区段功能板指南](segment-dashboard.md)。
+要了解更多信息，请访问[区段功能板指南](../../dashboards/guides/segments.md)。
+
+![](../../dashboards/images/segments/dashboard-overview.png)
 
 ## 浏览
 
