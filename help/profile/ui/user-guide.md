@@ -4,9 +4,9 @@ title: Real-time Customer Profile UI指南
 topic-legacy: guide
 description: 实时客户资料可整合来自多个渠道的数据（包括在线、离线、CRM和第三方数据），从而创建每个客户的整体视图。 本文档是在Adobe Experience Platform用户界面中与实时客户资料进行交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: db094aac82b1d0a6671c213f3e98824f828771ab
+source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
 workflow-type: tm+mt
-source-wordcount: '1303'
+source-wordcount: '1319'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!DNL Real-time Customer Profile] 通过整合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据，创建每个客户的整体视图。本文档是与Adobe Experience Platform用户界面(UI)中的[!DNL Real-time Customer Profile]数据交互的指南。
 
-## 入门指南
+## 快速入门
 
 本UI指南要求您了解管理[!DNL Real-time Customer Profiles]涉及的各种[!DNL Experience Platform]服务。 在阅读本指南或在UI中工作之前，请查阅以下服务的文档：
 
@@ -25,15 +25,19 @@ ht-degree: 0%
 
 ## 概述
 
-在Experience PlatformUI中，选择左侧导航中的&#x200B;**[!UICONTROL Profiles]**&#x200B;以打开&#x200B;**[!UICONTROL Overview]**&#x200B;选项卡。 此选项卡提供了文档和视频的链接，可帮助您了解和开始使用用户档案。
+在Experience PlatformUI中，选择左侧导航中的&#x200B;**[!UICONTROL Profiles]**&#x200B;以打开显示[!UICONTROL Profiles]功能板的&#x200B;**[!UICONTROL Overview]**&#x200B;选项卡。
 
-![](../images/user-guide/profiles-overview.png)
+>[!NOTE]
+>
+>如果贵组织是Platform的新用户，但尚未创建活动的配置文件数据集或合并策略，则[!UICONTROL Profiles]功能板将不可见。 相反， [!UICONTROL 概述]选项卡会显示可帮助您开始使用实时客户资料的链接和文档。
 
-### 用户档案仪表板
+###  用户档案仪表板  {#profile-dashboard}
 
-对于某些用户，在左侧导航中选择&#x200B;**[!UICONTROL Profiles]**&#x200B;并打开&#x200B;**[!UICONTROL Overview]**&#x200B;选项卡会提供一个功能板，其中概述了与您的配置文件数据相关的关键量度。
+**[!UICONTROL Profiles]**&#x200B;功能板概述了与贵组织的Profile数据相关的关键量度。
 
-要了解更多信息，请访问[配置文件仪表板指南](profile-dashboard.md)。
+要了解更多信息，请访问[配置文件仪表板指南](../../dashboards/guides/profiles.md)。
+
+![](../../dashboards/images/profiles/dashboard-overview.png)
 
 ## 浏览
 
