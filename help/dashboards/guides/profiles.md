@@ -4,9 +4,9 @@ title: 用户档案仪表板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 36aaccddeb207e22a22d5124ec8592ac8dddf8bc
+source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
 workflow-type: tm+mt
-source-wordcount: '1150'
+source-wordcount: '1192'
 ht-degree: 0%
 
 ---
@@ -30,6 +30,10 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 ## 浏览[!UICONTROL Profiles]功能板
 
 要导航到Platform UI中的[!UICONTROL Profiles]功能板，请选择左边栏中的&#x200B;**[!UICONTROL Profiles]** ，然后选择&#x200B;**[!UICONTROL Overview]**&#x200B;选项卡以显示功能板。
+
+>[!NOTE]
+>
+>如果贵组织是Platform的新用户，但尚未创建活动的配置文件数据集或合并策略，则[!UICONTROL Profiles]功能板将不可见。 相反， [!UICONTROL 概述]选项卡会显示可帮助您开始使用实时客户资料的链接和文档。
 
 ![](../images/profiles/dashboard-overview.png)
 
