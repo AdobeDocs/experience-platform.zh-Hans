@@ -5,9 +5,9 @@ title: Adobe Analytics报表包数据的源连接器
 topic-legacy: overview
 description: 本文档概述了Analytics，并介绍了Analytics数据的用例。
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
+source-git-commit: 9defe1c3087c2f1284ceedede9d274a51cf97b96
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '542'
 ht-degree: 1%
 
 ---
@@ -44,6 +44,8 @@ XDM是一项公开记录的规范，它为应用程序在Experience Platform时�
 
 ## 平台上Analytics数据的预期滞后时间是多少？
 
+下表概述了平台上Analytics数据的预期滞后。 滞后时间会因客户配置、数据量和客户应用程序而异。 例如，如果Analytics实施配置了`A4T` ，则到管道的延迟将增加到5到10分钟。
+
 | Analytics 数据 | 预期滞后 |
 | -------------- | ---------------- |
 | 新数据到[!DNL Real-time Customer Profile]（已启用A4T **未**） | &lt; 2 分钟 |
@@ -53,7 +55,7 @@ XDM是一项公开记录的规范，它为应用程序在Experience Platform时�
 
 >[!NOTE]
 >
->滞后时间会因客户配置、数据量和客户应用程序而异。 例如，如果[!DNL Analytics]实施配置了`A4T` ，则到管道的延迟将增加到5到10分钟。
+>Analytics回填数据不会摄取到[!DNL Profile]中，因此许可证配置文件中不会计入这些数据。
 
 ## [!DNL Analytics]数据中的主标识符
 
