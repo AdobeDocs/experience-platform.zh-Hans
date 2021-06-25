@@ -2,11 +2,11 @@
 keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；统一配置文件；统一配置文件；统一；配置文件；rtcp;XDM图形
 title: 实时客户资料概述
 topic-legacy: guide
-description: 实时客户资料是一个通用的查找实体存储，用于合并来自各种企业数据资产的数据，然后以单个客户资料和相关时间序列事件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。
+description: 实时客户资料可合并各种来源的数据，并以单个客户资料和相关时间系列事件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: f193787ac27e30c69d25418656ae9c59c89622dc
+source-git-commit: 7ebd84f31161b45c2904545a2310c8b1f7831593
 workflow-type: tm+mt
-source-wordcount: '1813'
+source-wordcount: '1779'
 ht-degree: 0%
 
 ---
@@ -35,15 +35,11 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 
 Experience Platform提供了一系列防护，以帮助您避免创建实时客户资料不支持的[体验数据模型(XDM)架构](../xdm/home.md)。 这包括软限制，这些软限制将导致性能降低，而硬限制将导致错误和系统中断。 有关更多信息（包括准则列表和示例用例），请阅读[配置文件护栏](guardrails.md)文档。
 
-### （测试版）用户档案仪表板{#profile-dashboard}
-
->[!IMPORTANT]
->
->功能板功能目前处于测试阶段，并非所有用户都能使用。 文档和功能可能会发生变化。
+### 用户档案仪表板 {#profile-dashboard}
 
 Experience PlatformUI提供了一个功能板，您可以通过该功能板查看有关实时客户配置文件数据的重要信息，这些信息是在每日快照期间捕获的。 要了解如何在UI中访问和使用[!DNL Profile]功能板，以及有关功能板中显示的量度的详细信息，请参阅[配置文件功能板UI指南](ui/profile-dashboard.md)。
 
-### 配置文件片段与合并的配置文件{#profile-fragments-vs-merged-profiles}
+### 配置文件片段与合并的配置文件 {#profile-fragments-vs-merged-profiles}
 
 每个客户配置文件都由多个配置文件片段组成，这些片段已合并，以形成该客户的单一视图。 例如，如果客户跨多个渠道与您的品牌进行交互，则您的组织将在多个数据集中显示与该单个客户相关的多个配置文件片段。 将这些片段摄取到Platform后，它们会合并在一起，以便为该客户创建单个配置文件。
 
@@ -69,7 +65,7 @@ Experience PlatformUI提供了一个功能板，您可以通过该功能板查�
 
 要了解有关合并策略及其在Experience Platform中的角色的更多信息，请首先阅读[合并策略概述](merge-policies/overview.md)。
 
-### 并集架构{#profile-fragments-and-union-schemas}
+### 并集模式 {#profile-fragments-and-union-schemas}
 
 [!DNL Real-time Customer Profile]的一个关键特征是能够统一多通道数据。 当使用[!DNL Real-time Customer Profile]访问实体时，它可以为您提供跨数据集的该实体所有配置文件片段的合并视图（称为“并集视图”），并可通过称为并集架构的架构实现。
 
