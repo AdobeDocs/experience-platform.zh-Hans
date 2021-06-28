@@ -3,31 +3,30 @@ audience: user
 user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
-feature: 数据摄取，来源
-translation-type: tm+mt
-source-git-commit: 32a6d0311169486b1273129c0ee87c242bee1e47
+feature: 数据摄取，源
+source-git-commit: 6c78549860e54748f43cf0b41540ee441a09331e
 workflow-type: tm+mt
-source-wordcount: '612'
-ht-degree: 11%
+source-wordcount: '616'
+ht-degree: 12%
 
 ---
 
 
-# 源连接器{#sources}
+# 源连接器 {#sources}
 
 - [源连接器概述](home.md)
-- 可用源连接器{#connectors}
+- 可用的源连接器{#connectors}
    - Adobe应用程序{#adobe-applications}
-      - [分析分类源连接器](connectors/adobe-applications/classifications.md)
-      - [分析源连接器](connectors/adobe-applications/analytics.md)
+      - [Analytics分类源连接器](connectors/adobe-applications/classifications.md)
+      - [Analytics源连接器](connectors/adobe-applications/analytics.md)
       - [Audience Manager源连接器](connectors/adobe-applications/audience-manager.md)
-      - [客户属性源连接器](connectors/adobe-applications/customer-attributes.md)
+      - [客户属性来源连接器](connectors/adobe-applications/customer-attributes.md)
       - Adobe应用程序字段映射{#mapping}
-         - [分析字段映射](connectors/adobe-applications/mapping/analytics.md)
+         - [Analytics字段映射](connectors/adobe-applications/mapping/analytics.md)
          - [Audience Manager字段映射](connectors/adobe-applications/mapping/audience-manager.md)
          - [目标字段映射](connectors/adobe-applications/mapping/target.md)
          - [Marketo Engage字段映射](connectors/adobe-applications/mapping/marketo.md)
-      - Marketo Engage{#marketo}
+      - Marketo Engage {#marketo}
          - [Marketo Engage连接器](connectors/adobe-applications/marketo/marketo.md)
          - [Marketo Engage身份验证指南](connectors/adobe-applications/marketo/marketo-auth.md)
          - [Marketo Engage命名空间和模式](connectors/adobe-applications/marketo/marketo-namespaces.md)
@@ -37,16 +36,16 @@ ht-degree: 11%
       - [Amazon Kinesis连接器](connectors/cloud-storage/kinesis.md)
       - [Amazon S3连接器](connectors/cloud-storage/s3.md)
       - [Apache HDFS连接器](connectors/cloud-storage/hdfs.md)
-      - [Azure Data Lake 存储 Gen2连接器](connectors/cloud-storage/adls-gen2.md)
+      - [Azure Data Lake Storage Gen2连接器](connectors/cloud-storage/adls-gen2.md)
       - [Azure Blob连接器](connectors/cloud-storage/blob.md)
       - [Azure事件集线器连接器](connectors/cloud-storage/eventhub.md)
       - [Azure文件存储连接器](connectors/cloud-storage/azure-file-storage.md)
       - [FTP连接器](connectors/cloud-storage/ftp.md)
-      - [Google Cloud存储连接器](connectors/cloud-storage/google-cloud-storage.md)
+      - [Google云存储连接器](connectors/cloud-storage/google-cloud-storage.md)
       - [Google PubSub](connectors/cloud-storage/google-pubsub.md)
       - [Oracle对象存储](connectors/cloud-storage/oracle-object-storage.md)
       - [SFTP连接器](connectors/cloud-storage/sftp.md)
-      - [Amazon S3和Azure Blob连接器](connectors/cloud-storage/blob-s3.md)
+      - [Amazon S3和Azure Blob Connector](connectors/cloud-storage/blob-s3.md)
    - CRM {#crm}
       - [Microsoft Dynamics 连接器](connectors/crm/ms-dynamics.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
@@ -58,7 +57,7 @@ ht-degree: 11%
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
       - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
       - [AzureData Explorer连接器](connectors/databases/data-explorer.md)
-      - [azure synapse Analytics连接器](connectors/databases/synapse-analytics.md)
+      - [azure synapse分析连接器](connectors/databases/synapse-analytics.md)
       - [Azure表存储连接器](connectors/databases/ats.md)
       - [Couchbase连接器](connectors/databases/couchbase.md)
       - [Google BigQuery连接器](connectors/databases/bigquery.md)
@@ -86,15 +85,15 @@ ht-degree: 11%
       - 广告 {#advertising}
          - [Google AdWords](tutorials/api/create/advertising/ads.md)
       - 云存储{#cloud-storage}
-         - [Amazon Kinesis](tutorials/api/create/cloud-storage/kinesis.md)
+         - [AmazonKinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/api/create/cloud-storage/s3.md)
          - [Apache HDFS](tutorials/api/create/cloud-storage/hdfs.md)
          - [Azure Blob](tutorials/api/create/cloud-storage/blob.md)
          - [Azure数据湖存储第2代](tutorials/api/create/cloud-storage/adls-gen2.md)
-         - [Azure事件集线器](tutorials/api/create/cloud-storage/eventhub.md)
+         - [Azure事件中心](tutorials/api/create/cloud-storage/eventhub.md)
          - [Azure文件存储](tutorials/api/create/cloud-storage/azure-file-storage.md)
          - [FTP](tutorials/api/create/cloud-storage/ftp.md)
-         - [Google Cloud存储](tutorials/api/create/cloud-storage/google.md)
+         - [Google云存储](tutorials/api/create/cloud-storage/google.md)
          - [Google PubSub](tutorials/api/create/cloud-storage/google-pubsub.md)
          - [Oracle对象存储](tutorials/api/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/api/create/cloud-storage/sftp.md)
@@ -102,7 +101,7 @@ ht-degree: 11%
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
       - 客户成功{#customer-success}
-         - [Salesforce Service Cloud](tutorials/api/create/customer-success/salesforce-service-cloud.md)
+         - [Salesforce服务云](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
       - 数据库{#databases}
          - [Amazon Redshift](tutorials/api/create/databases/redshift.md)
@@ -111,9 +110,9 @@ ht-degree: 11%
          - [AzureData Explorer](tutorials/api/create/databases/data-explorer.md)
          - [azure synapse分析](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure表存储](tutorials/api/create/databases/ats.md)
-         - [库奇巴斯](tutorials/api/create/databases/couchbase.md)
+         - [库克巴斯](tutorials/api/create/databases/couchbase.md)
          - [Google BigQuery](tutorials/api/create/databases/bigquery.md)
-         - [绿李](tutorials/api/create/databases/greenplum.md)
+         - [绿梅](tutorials/api/create/databases/greenplum.md)
          - [HP Vertica](tutorials/api/create/databases/hp-vertica.md)
          - [IBM DB2](tutorials/api/create/databases/ibm-db2.md)
          - [MariaDB](tutorials/api/create/databases/mariadb.md)
@@ -135,12 +134,12 @@ ht-degree: 11%
    - 浏览数据{#explore}
       - [浏览广告数据](tutorials/api/explore/advertising.md)
       - [浏览云存储数据](tutorials/api/explore/cloud-storage.md)
-      - [浏览CRM数据](tutorials/api/explore/crm.md)
-      - [浏览客户成功数据](tutorials/api/explore/customer-success.md)
+      - [探索CRM数据](tutorials/api/explore/crm.md)
+      - [探索客户成功数据](tutorials/api/explore/customer-success.md)
       - [浏览数据库或NoSQL数据](tutorials/api/explore/database-nosql.md)
       - [浏览电子商务数据](tutorials/api/explore/ecommerce.md)
-      - [浏览营销自动化数据](tutorials/api/explore/marketing-automation.md)
-      - [浏览付款数据](tutorials/api/explore/payments.md)
+      - [探索营销自动化数据](tutorials/api/explore/marketing-automation.md)
+      - [浏览支付数据](tutorials/api/explore/payments.md)
       - [浏览协议数据](tutorials/api/explore/protocols.md)
    - 收集数据{#collect}
       - [收集广告数据](tutorials/api/collect/advertising.md)
@@ -153,7 +152,7 @@ ht-degree: 11%
       - [收集付款数据](tutorials/api/collect/payments.md)
       - [收集协议数据](tutorials/api/collect/protocols.md)
       - [收集流数据](tutorials/api/collect/streaming.md)
-   - [从第三方云存储系统中摄取Parke数据](tutorials/api/cloud-storage-parquet.md)
+   - [从第三方云存储系统中摄取Parquet数据](tutorials/api/cloud-storage-parquet.md)
    - [创建数据集连接](tutorials/api/create-dataset-base-connection.md)
    - [监视数据流](tutorials/api/monitor.md)
    - [更新帐户](tutorials/api/update.md)
@@ -171,15 +170,15 @@ ht-degree: 11%
       - 广告 {#create}
          - [Google AdWords](tutorials/ui/create/advertising/ads.md)
       - 云存储{#cloud-storage}
-         - [Amazon Kinesis](tutorials/ui/create/cloud-storage/kinesis.md)
+         - [AmazonKinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/ui/create/cloud-storage/s3.md)
          - [Apache HDFS](tutorials/ui/create/cloud-storage/hdfs.md)
          - [Azure数据湖存储第2代](tutorials/ui/create/cloud-storage/adls-gen2.md)
          - [Azure Blob](tutorials/ui/create/cloud-storage/blob.md)
-         - [Azure事件集线器](tutorials/ui/create/cloud-storage/eventhub.md)
+         - [Azure事件中心](tutorials/ui/create/cloud-storage/eventhub.md)
          - [Azure文件存储](tutorials/ui/create/cloud-storage/azure-file-storage.md)
          - [FTP](tutorials/ui/create/cloud-storage/ftp.md)
-         - [Google Cloud存储](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
+         - [Google云存储](tutorials/ui/create/cloud-storage/google-cloud-storage.md)
          - [Google PubSub](tutorials/ui/create/cloud-storage/google-pubsub.md)
          - [Oracle对象存储](tutorials/ui/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/ui/create/cloud-storage/sftp.md)
@@ -188,7 +187,7 @@ ht-degree: 11%
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
       - 客户成功{#customer-success}
-         - [Salesforce Service Cloud](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
+         - [Salesforce服务云](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
       - 数据库{#databases}
          - [Amazon Redshift](tutorials/ui/create/databases/redshift.md)
@@ -197,9 +196,9 @@ ht-degree: 11%
          - [AzureData Explorer](tutorials/ui/create/databases/data-explorer.md)
          - [azure synapse分析](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure表存储](tutorials/ui/create/databases/ats.md)
-         - [库奇巴斯](tutorials/ui/create/databases/couchbase.md)
-         - [Google大查询](tutorials/ui/create/databases/bigquery.md)
-         - [绿李](tutorials/ui/create/databases/greenplum.md)
+         - [库克巴斯](tutorials/ui/create/databases/couchbase.md)
+         - [Google Big Query](tutorials/ui/create/databases/bigquery.md)
+         - [绿梅](tutorials/ui/create/databases/greenplum.md)
          - [HP Vertica](tutorials/ui/create/databases/hp-vertica.md)
          - [IBM DB2](tutorials/ui/create/databases/ibm-db2.md)
          - [MariaDB](tutorials/ui/create/databases/mariadb.md)
@@ -221,21 +220,22 @@ ht-degree: 11%
    - 配置数据流{#dataflow}
       - [广告连接数据流](tutorials/ui/dataflow/advertising.md)
       - [批处理云存储连接数据流](tutorials/ui/dataflow/batch/cloud-storage.md)
-      - [流式云存储连接数据流](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
+      - [流云存储连接数据流](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
       - [CRM连接数据流](tutorials/ui/dataflow/crm.md)
       - [客户成功连接数据流](tutorials/ui/dataflow/customer-success.md)
       - [数据库连接数据流](tutorials/ui/dataflow/databases.md)
       - [电子商务连接数据流](tutorials/ui/dataflow/ecommerce.md)
       - [营销自动化连接数据流](tutorials/ui/dataflow/marketing-automation.md)
-      - [付款连接数据流](tutorials/ui/dataflow/payments.md)
+      - [支付连接数据流](tutorials/ui/dataflow/payments.md)
       - [协议连接数据流](tutorials/ui/dataflow/protocols.md)
    - [激活入站数据以填充客户用户档案](tutorials/ui/profile.md)
-   - [监视数据流](tutorials/ui/monitor.md)
+   - [监控批处理数据流](tutorials/ui/monitor.md)
+   - [监控流数据流](tutorials/ui/monitor-streaming.md)
    - [更新帐户](tutorials/ui/update.md)
    - [更新数据流](tutorials/ui/update-dataflows.md)
    - [删除帐户](tutorials/ui/delete-accounts.md)
    - [删除数据流](tutorials/ui/delete.md)
 - [流运行通知](notifications.md)
 - [IP地址允许列表](ip-address-allow-list.md)
-- [常见问题解答](./troubleshooting.md)
+- [常见问题](./troubleshooting.md)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
