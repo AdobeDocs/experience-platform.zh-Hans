@@ -5,7 +5,7 @@ title: 源连接器概述
 topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 9c8f19e8b5259bcef526273addbd7711ef6082fb
+source-git-commit: 8236fb3a5786a6990fe85482c2fee0eda48bcf1f
 workflow-type: tm+mt
 source-wordcount: '979'
 ht-degree: 0%
@@ -67,6 +67,7 @@ CRM系统提供的数据有助于建立客户关系，这反过来又可以创�
 
 - [[!DNL Microsoft Dynamics] 连接器](connectors/crm/ms-dynamics.md)
 - [[!DNL Salesforce] 连接器](connectors/crm/salesforce.md)
+- [[!DNL Veeva CRM]](connectors/crm/veeva.md)
 
 ### 客户成功
 
