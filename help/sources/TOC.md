@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: 数据摄取，源
-source-git-commit: 6c78549860e54748f43cf0b41540ee441a09331e
+source-git-commit: 2b2dcf51098f8263044d56bf65a00d1d48ceddd8
 workflow-type: tm+mt
-source-wordcount: '616'
+source-wordcount: '623'
 ht-degree: 12%
 
 ---
@@ -49,6 +49,7 @@ ht-degree: 12%
    - CRM {#crm}
       - [Microsoft Dynamics 连接器](connectors/crm/ms-dynamics.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
+      - [Veva CRM连接器](connectors/crm/veeva.md)
    - 客户成功{#customer-success}
       - [Salesforce Service Cloud连接器](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow连接器](connectors/customer-success/servicenow.md)
@@ -100,6 +101,7 @@ ht-degree: 12%
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
+         - [Veeva CRM](tutorials/api/create/crm/veeva.md)
       - 客户成功{#customer-success}
          - [Salesforce服务云](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
@@ -186,6 +188,7 @@ ht-degree: 12%
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
+         - [Veeva CRM](tutorials/ui/create/crm/veeva.md)
       - 客户成功{#customer-success}
          - [Salesforce服务云](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
