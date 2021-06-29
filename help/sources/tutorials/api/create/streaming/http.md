@@ -6,10 +6,10 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流摄取API，这是Adobe Experience Platform数据摄取服务API的一部分。
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: b672eab481a8286f92741a971991c7f83102acf7
+source-git-commit: 42b8710cf6c04fabf7df1f005fae6b3828eeee49
 workflow-type: tm+mt
 source-wordcount: '1206'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 2%
 
 本教程使用[!DNL Flow Service] API指导您完成使用流服务API创建流连接的步骤。
 
-## 入门指南
+## 快速入门
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
@@ -40,12 +40,12 @@ ht-degree: 2%
 要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程可为所有[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
 
 - 授权：载体`{ACCESS_TOKEN}`
-- x-api密钥：`{API_KEY}`
-- x-gw-ims-org-id:`{IMS_ORG}`
+- x-api-key: `{API_KEY}`
+- x-gw-ims-org-id: `{IMS_ORG}`
 
 [!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都与特定虚拟沙箱隔离。 对[!DNL Platform] API的所有请求都需要一个标头来指定操作将在其中进行的沙盒的名称：
 
-- x-sandbox-name:`{SANDBOX_NAME}`
+- x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
@@ -416,7 +416,7 @@ curl -X POST \
 }
 ```
 
-### 将要摄取到平台的原始数据发布到{#ingest-data}
+### 将要摄取到平台的原始数据发布到Platform {#ingest-data}
 
 现在，您已创建流程，接下来可以将JSON消息发送到之前创建的流端点。
 
@@ -445,10 +445,10 @@ curl -X POST https://dcs.adobedc.net/collection/2301a1f761f6d7bf62c5312c535e1076
           "country": "United State of America",
           "address": "3692 Main Street"
       },
-      "gender": "Male"
+      "gender": "Male",
       "birthday": {
-          "year": 1984
-          "month": 6
+          "year": 1984,
+          "month": 6,
           "day": 9
       }
   }'
