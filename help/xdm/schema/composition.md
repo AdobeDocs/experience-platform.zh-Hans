@@ -5,9 +5,9 @@ title: 架构组合的基础知识
 topic-legacy: overview
 description: 本文档介绍了Experience Data Model(XDM)架构，以及构建架构以在Adobe Experience Platform中使用的构建基块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 9786b810d7b203300db49637039dc034a70f95a7
+source-git-commit: 7158ae97d0260111b76edddbd447e6b302ddeb77
 workflow-type: tm+mt
-source-wordcount: '3657'
+source-wordcount: '3708'
 ht-degree: 0%
 
 ---
@@ -55,17 +55,22 @@ XDM模式非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 为了帮助完成此过程，可以将架构中的关键字段标记为标识。 在摄取数据时，这些字段中的数据会插入到该个人的“[!UICONTROL 身份图]”中。 然后，[[!DNL Real-time Customer Profile]](../../profile/home.md)和其他[!DNL Experience Platform]服务可以访问图形数据，以提供每个客户的拼合视图。
 
-通常标记为“[!UICONTROL Identity]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。 您还应考虑特定于贵组织的任何唯一标识符，因为它们可能也是良好的“[!UICONTROL Identity]”字段。
+通常标记为“[!UICONTROL Identity]”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。 您还应考虑特定于贵组织的任何唯一标识符，因为它们可能也是良好的“[!UICONTROL Identity]”字段。
 
 在架构规划阶段考虑客户身份非常重要，以帮助确保将数据汇总在一起，构建尽可能最可靠的配置文件。 请参阅[Adobe Experience Platform Identity Service](../../identity-service/home.md)上的概述，了解有关身份信息如何帮助您向客户交付数字体验的更多信息。
+
+可通过两种方式将身份数据发送到Platform:
+
+1. 通过[架构编辑器UI](../ui/fields/identity.md)或使用[架构注册表API](../api/descriptors.md#create)向单个字段添加标识描述符
+1. 使用[`identityMap`字段](#identityMap)
 
 #### `identityMap` {#identityMap}
 
 `identityMap` 是一个映射类型字段，用于描述个人的各种身份值及其关联的命名空间。此字段可用于为架构提供标识信息，而不是在架构本身的结构中定义标识值。
 
-使用`identityMap`的主要缺点是身份会嵌入到数据中，并因此变得不那么可见。 如果要摄取原始数据，则应该在实际架构结构中定义单个标识字段。
+使用`identityMap`的主要缺点是身份会嵌入到数据中，并因此变得不那么可见。 如果要摄取原始数据，则应该在实际架构结构中定义单个标识字段。 使用`identityMap`的架构也无法参与关系。
 
-但是，如果要从存储身份的源(如[!DNL Airship]或Adobe Audience Manager)中导入数据，则身份映射会特别有用。 此外，如果您使用的是[Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/)，则需要身份映射。
+但是，如果您要从存储身份的源(例如[!DNL Airship]或Adobe Audience Manager)中导入数据，或者架构的标识数量存在变量，则身份映射会特别有用。 此外，如果您使用的是[Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/)，则需要身份映射。
 
 简单身份映射的示例如下所示：
 
@@ -146,7 +151,7 @@ Adobe提供了多个标准（“核心”）XDM类。 几乎所有下游平台�
 
 有关可用标准XDM类的最新列表，请参阅[官方XDM存储库](https://github.com/adobe/xdm/tree/master/components/classes)。 或者，如果您希望在UI中查看资源，请参阅[探索XDM组件](../ui/explore.md)上的指南。
 
-### 字段组{#field-group}
+### 字段组 {#field-group}
 
 字段组是可重用的组件，它定义一个或多个字段，以实现某些功能，如个人详细信息、酒店首选项或地址。 字段组将作为实现兼容类的架构的一部分包含在内。
 
@@ -164,7 +169,7 @@ Adobe提供了多个标准（“核心”）XDM类。 几乎所有下游平台�
 
 有关可用标准XDM字段组的最新列表，请参阅[官方XDM存储库](https://github.com/adobe/xdm/tree/master/components/mixins)。 或者，如果您希望在UI中查看资源，请参阅[探索XDM组件](../ui/explore.md)上的指南。
 
-### 数据类型{#data-type}
+### 数据类型 {#data-type}
 
 数据类型在类或架构中用作引用字段类型，其方式与基本文字字段相同。 关键区别在于数据类型可以定义多个子字段。 与字段组类似，数据类型允许一致地使用多字段结构，但比字段组具有更大的灵活性，因为通过将数据类型添加为字段的“数据类型”，数据类型可以包含在架构中的任意位置。
 
@@ -281,13 +286,13 @@ Adobe提供了多个标准（“核心”）XDM类。 几乎所有下游平台�
 
 XDM模式通过使用嵌入式对象，可以直接表示复杂的数据并将其存储在具有分层结构的自包含文档中。 此结构的主要优势之一是它允许您查询数据，而无需通过与多个非规范化表的昂贵连接来重建实体。 对于架构层次结构的级别数，没有硬性限制。
 
-### 架构和大数据{#big-data}
+### 模式和大数据 {#big-data}
 
 现代数字系统会生成大量的行为信号（交易数据、网络日志、物联网、显示等）。 这种大数据提供了超凡的优化体验的机会，但由于数据的规模和种类繁多，使用起来也极具挑战性。 为了从数据中获得价值，必须对其结构、格式和定义进行标准化，以便能够一致、高效地对其进行处理。
 
 模式通过允许从多个源集成数据、通过通用结构和定义进行标准化以及跨解决方案共享来解决此问题。 这允许后续流程和服务回答任何类型的数据问题，从传统的数据建模方法转向数据建模方法，在该方法中，将要询问数据的所有问题都事先已知，并且数据建模符合这些预期。
 
-### 对象与自由格式字段{#objects-v-freeform}
+### 对象与自由格式字段 {#objects-v-freeform}
 
 在设计架构时，在自由格式字段上选择对象时需要考虑一些关键因素：
 
