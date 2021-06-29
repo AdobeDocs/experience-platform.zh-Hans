@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: a8822d66443cc4cda761e1f0963b0e0251427911
+source-git-commit: 694a647b9f268b84d55a960b360ce28527c6c652
 workflow-type: tm+mt
-source-wordcount: '2688'
+source-wordcount: '2826'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,11 @@ ht-degree: 0%
 
 要将数据激活到目标，您必须已成功地[连接目标](./connect-destination.md)。 如果您尚未执行此操作，请转到[目标目录](../catalog/overview.md)，浏览支持的目标，然后设置一个或多个目标。
 
-## 激活数据{#activate-data}
+## 激活数据 {#activate-data}
 
 激活工作流中的步骤因目标类型而略有不同。 下面概述了所有目标类型的完整工作流。
 
-## 选择要将数据激活到{#select-destination}的目标
+## 选择要激活数据的目标 {#select-destination}
 
 适用于：所有目标
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 按照下一节中的步骤，选择要激活的区段。
 
-## [!UICONTROL 选择区] 段步骤  {#select-segments}
+## [!UICONTROL 选择区] 段步骤 {#select-segments}
 
 适用于：所有目标
 
@@ -60,7 +60,7 @@ ht-degree: 0%
 
 对于社交目标，您必须选择源属性或身份命名空间以在目标中映射为目标身份。
 
-## 示例：在[!DNL Facebook Custom Audience] {#example-facebook}中激活受众数据
+## 示例：在[!DNL Facebook Custom Audience]中激活受众数据 {#example-facebook}
 
 以下示例用于在[!DNL Facebook]中激活受众数据时正确映射身份。
 
@@ -90,7 +90,7 @@ ht-degree: 0%
 
  
 
-## 示例：在[!DNL Google Customer Match] {#example-gcm}中激活受众数据
+## 示例：在[!DNL Google Customer Match]中激活受众数据 {#example-gcm}
 
 以下示例用于在[!DNL Google Customer Match]中激活受众数据时正确映射身份。
 
@@ -136,7 +136,7 @@ ht-degree: 0%
 
 ![“创建计划”按钮](../assets/ui/activate-destinations/create-schedule-button.png)
 
-### 导出完整文件{#export-full-files}
+### 导出完整文件 {#export-full-files}
 
 选择&#x200B;**[!UICONTROL 导出完整文件]**&#x200B;以使导出的文件包含符合该区段资格的所有配置文件的完整快照。
 
@@ -149,10 +149,15 @@ ht-degree: 0%
    >
    >在一天中的某个特定时间导出文件的选项当前处于测试阶段，并且仅对选定数量的客户可用。
 
+   >[!IMPORTANT]
+   >
+   >根据配置文件导出作业完成运行以及目标服务启动区段激活作业时的情况，第一次增量或完整文件导出可能不包含所有必需的回填数据。 为确保完整文件和增量文件的回填数据导出完整且最新，我们建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。 这是将在未来版本中解决的限制。
+
 3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
 4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
 
-### 导出增量文件{#export-incremental-files}
+
+### 导出增量文件 {#export-incremental-files}
 
 选择&#x200B;**[!UICONTROL 导出增量文件]**，以使导出的文件仅包含自上次导出后符合该区段条件的配置文件。
 
@@ -173,12 +178,16 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   >选择导出时间的选项仅适用于选定数量的客户。 非测试版客户每天可在UTC中午12:00（东部标准时间上午7:00）导出增量文件一次。
+   >选择导出时间的选项仅适用于选定数量的客户。
+
+   >[!IMPORTANT]
+   >
+   >根据配置文件导出作业完成运行以及目标服务启动区段激活作业时的情况，第一次增量或完整文件导出可能不包含所有必需的回填数据。 为确保完整文件和增量文件的回填数据导出完整且最新，我们建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。 这是将在未来版本中解决的限制。
 
 3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
 4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
 
-### 配置文件名{#file-names}
+### 配置文件名 {#file-names}
 
 默认文件名由目标名称、区段ID以及日期和时间指示器组成。 例如，您可以编辑导出的文件名以区分不同的营销活动，或将数据导出时间附加到文件中。
 
@@ -204,7 +213,7 @@ ht-degree: 0%
 
 配置完所有区段后，请选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
-## **[!UICONTROL 区段计]** 划  {#segment-schedule}
+## **[!UICONTROL 区段计]** 划 {#segment-schedule}
 
 适用于：广告目标、社交目标
 
@@ -224,7 +233,7 @@ ht-degree: 0%
 
 ![输入应用程序id](../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
-## **[!UICONTROL 选择属]** 性步骤  {#select-attributes}
+## **[!UICONTROL 选择属]** 性步骤 {#select-attributes}
 
 适用于：电子邮件营销目标和云存储目标
 
@@ -242,7 +251,7 @@ ht-degree: 0%
 
 ![推荐属性](../assets/ui/activate-destinations/mandatory-deduplication.png)
 
-### 必需属性{#mandatory-attributes}
+### 必需属性 {#mandatory-attributes}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_mandatorykey"
@@ -256,7 +265,7 @@ ht-degree: 0%
 
 建议其中一个属性是架构中的[唯一标识符](../../destinations/catalog/email-marketing/overview.md#identity)。 有关必需属性的更多信息，请参阅[电子邮件营销目标](../../destinations/catalog/email-marketing/overview.md#identity)文档中的标识部分。
 
-### 重复数据删除键{#deduplication-keys}
+### 重复数据删除键 {#deduplication-keys}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_deduplicationkey"
@@ -282,7 +291,7 @@ ht-degree: 0%
 > 
 > 不能将身份命名空间和配置文件属性的组合用作重复数据删除键。
 
-### 重复数据删除示例{#deduplication-example}
+### 重复数据删除示例 {#deduplication-example}
 
 此示例说明了重复数据删除的工作方式，具体取决于所选的重复数据删除键。
 
@@ -425,9 +434,9 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 ![确认选择](../assets/ui/activate-destinations/confirm-selection.png)
 
-## 验证区段激活是否成功{#verify-activation}
+## 验证区段激活是否成功 {#verify-activation}
 
-### 电子邮件营销目标和云存储目标{#esp-and-cloud-storage}
+### 电子邮件营销目标和云存储目标 {#esp-and-cloud-storage}
 
 对于电子邮件营销目标和云存储目标，Adobe Experience Platform会在您提供的存储位置中创建一个以制表符分隔的`.csv`文件。 希望每天在您的存储位置中创建一个新文件。 默认文件格式为：
 `<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
@@ -454,7 +463,7 @@ Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_202004100
 >
 >Adobe Experience Platform与[!DNL Facebook]之间的集成支持历史受众回填。 当您将区段激活到目标时，所有历史区段资格都会发送到[!DNL Facebook]。
 
-## 禁用激活{#disable-activation}
+## 禁用激活 {#disable-activation}
 
 要禁用现有激活流程，请执行以下步骤：
 
