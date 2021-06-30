@@ -5,9 +5,9 @@ title: GreenPlum源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将GreenPlum连接到Adobe Experience Platform。
 exl-id: 41757062-9ac8-42d3-91f6-a00866195882
-source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '190'
+source-wordcount: '199'
 ht-degree: 0%
 
 ---
@@ -26,11 +26,11 @@ Adobe Experience Platform为[!DNL Microsoft]、MySQL和[!DNL Azure]等数据库�
 
 ## 使用API将[!DNL GreenPlum]连接到[!DNL Platform]
 
-- [使用流服务API创建GreenPlum源连接](../../tutorials/api/create/databases/greenplum.md)
-- [使用流服务API浏览数据库系统](../../tutorials/api/explore/database-nosql.md)
-- [使用流服务API从数据库收集数据](../../tutorials/api/collect/database-nosql.md)
+- [使用流量服务API创建GreenPlum基连接](../../tutorials/api/create/databases/greenplum.md)
+- [使用流服务API探索数据库源的数据结构和内容](../../tutorials/api/explore/database-nosql.md)
+- [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
 
 ## 使用UI将[!DNL GreenPlum]连接到[!DNL Platform]
 
 - [在UI中创建GreenPlum源连接](../../tutorials/ui/create/databases/greenplum.md)
-- [在UI中为数据库连接配置数据流](../../tutorials/ui/dataflow/databases.md)
+- [在UI中为数据库源连接创建数据流](../../tutorials/ui/dataflow/databases.md)
