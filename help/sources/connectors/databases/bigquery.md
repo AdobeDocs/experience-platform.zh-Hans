@@ -5,9 +5,9 @@ title: Google BigQuery源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Google BigQuery连接到Adobe Experience Platform。
 exl-id: 35c61382-a909-47f4-a937-15cb725ecbe3
-source-git-commit: 9d68e54baa894ebeff4603c7df01a1fe42aa217f
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '395'
 ht-degree: 0%
 
 ---
@@ -49,11 +49,11 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ### 使用API
 
-- [使用流服务API创建Google BigQuery源连接](../../tutorials/api/create/databases/bigquery.md)
-- [使用流服务API浏览数据库系统](../../tutorials/api/explore/database-nosql.md)
-- [使用流服务API从数据库收集数据](../../tutorials/api/collect/database-nosql.md)
+- [使用流服务API创建Google BigQuery基连接](../../tutorials/api/create/databases/bigquery.md)
+- [使用流服务API探索数据库源的数据结构和内容](../../tutorials/api/explore/database-nosql.md)
+- [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
 
 ### 使用UI
 
 - [在UI中创建Google BigQuery源连接](../../tutorials/ui/create/databases/bigquery.md)
-- [在UI中为数据库连接配置数据流](../../tutorials/ui/dataflow/databases.md)
+- [在UI中为数据库源连接创建数据流](../../tutorials/ui/dataflow/databases.md)
