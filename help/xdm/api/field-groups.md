@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体�
 solution: Experience Platform
 title: 字段组API端点
 description: 架构注册表API中的/fieldgroups端点允许您以编程方式管理体验应用程序中的XDM架构字段组。
-topic: 开发人员指南
-source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
+topic-legacy: developer guide
+source-git-commit: 97f803f649b2c42b0449a2f8f0cff370ed1aba93
 workflow-type: tm+mt
-source-wordcount: '1217'
+source-wordcount: '1215'
 ht-degree: 3%
 
 ---
