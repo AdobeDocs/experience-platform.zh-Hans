@@ -5,9 +5,9 @@ title: azure synapse分析源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Azure synapse分析连接到Adobe Experience Platform。
 exl-id: 5b94ae74-e5a7-40e9-a952-41eddf06dcde
-source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '288'
+source-wordcount: '297'
 ht-degree: 0%
 
 ---
@@ -30,11 +30,11 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## 使用API将[!DNL Azure Synapse Analytics]连接到[!DNL Platform]
 
-- [使用流量服务API创建Azure synapse分析源连接](../../tutorials/api/create/databases/synapse-analytics.md)
-- [使用流服务API浏览数据库系统](../../tutorials/api/explore/database-nosql.md)
-- [使用流服务API从数据库收集数据](../../tutorials/api/collect/database-nosql.md)
+- [使用流量服务API创建Azure synapse分析基本连接](../../tutorials/api/create/databases/synapse-analytics.md)
+- [使用流服务API探索数据库源的数据结构和内容](../../tutorials/api/explore/database-nosql.md)
+- [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
 
 ## 使用UI将[!DNL Azure Synapse Analytics]连接到[!DNL Platform]
 
 - [在UI中创建Azure synapse分析源连接](../../tutorials/ui/create/databases/synapse-analytics.md)
-- [在UI中为数据库连接配置数据流](../../tutorials/ui/dataflow/databases.md)
+- [在UI中为数据库源连接创建数据流](../../tutorials/ui/dataflow/databases.md)
