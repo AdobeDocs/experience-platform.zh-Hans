@@ -5,9 +5,9 @@ title: ServiceNow Source Connector概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将ServiceNow连接到Adobe Experience Platform。
 exl-id: f491b367-ec6d-4fb8-8eeb-3178673c0085
-source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
+source-git-commit: 4aed960fb3873e604efb36268887ac36a7331064
 workflow-type: tm+mt
-source-wordcount: '216'
+source-wordcount: '224'
 ht-degree: 0%
 
 ---
@@ -26,11 +26,11 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## 使用API将[!DNL ServiceNow]连接到[!DNL Platform]
 
-- [使用流服务API创建ServiceNow源连接](../../tutorials/api/create/customer-success/servicenow.md)
-- [使用流量服务API探索客户成功系统](../../tutorials/api/explore/customer-success.md)
-- [使用流量服务API从客户成功系统收集数据](../../tutorials/api/collect/customer-success.md)
+- [使用流服务API创建ServiceNow基连接](../../tutorials/api/create/customer-success/servicenow.md)
+- [使用流量服务API探索客户成功来源的数据结构和内容](../../tutorials/api/explore/customer-success.md)
+- [使用流服务API为客户成功源创建数据流](../../tutorials/api/collect/customer-success.md)
 
 ## 使用UI将[!DNL ServiceNow]连接到[!DNL Platform]
 
 - [在UI中创建ServiceNow源连接](../../tutorials/ui/create/customer-success/servicenow.md)
-- [在UI中为客户成功连接配置数据流](../../tutorials/ui/dataflow/customer-success.md)
+- [在UI中为客户成功源连接创建数据流](../../tutorials/ui/dataflow/customer-success.md)
