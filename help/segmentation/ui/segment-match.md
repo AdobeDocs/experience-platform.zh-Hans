@@ -2,11 +2,11 @@
 keywords: Experience Platform；主页；热门主题；分段；区段匹配；区段匹配
 solution: Experience Platform
 title: 区段匹配概述
-topic: 概述
+topic-legacy: overview
 description: 区段匹配是Adobe Experience Platform中的一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。
-source-git-commit: 481160f83e82c80ea5b73e9b56003dc625a34b5e
+source-git-commit: 97f803f649b2c42b0449a2f8f0cff370ed1aba93
 workflow-type: tm+mt
-source-wordcount: '1901'
+source-wordcount: '1900'
 ht-degree: 1%
 
 ---
@@ -115,7 +115,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 ![create-feed.png](../images/ui/segment-match/create-feed.png)
 
-信息源的基本设置包括有关营销用例和身份设置的名称、描述和配置。 为您的信息源提供名称和描述，然后应用您希望从中排除数据的营销用例。 您可以从列表中选择多个用例，这些用例包括：
+信息源的基本设置包括有关营销用例和身份设置的名称、描述和配置。 为您的信息源提供名称和描述，然后应用您希望将数据从中排除的营销用例。 您可以从列表中选择多个用例，这些用例包括：
 
 * [!UICONTROL Analytics]
 * [!UICONTROL 与PII组合]
