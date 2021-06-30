@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: 数据摄取，源
-source-git-commit: 2b2dcf51098f8263044d56bf65a00d1d48ceddd8
+source-git-commit: e04df6e2ffabac6e70164dfccbad8440976b2755
 workflow-type: tm+mt
-source-wordcount: '623'
+source-wordcount: '619'
 ht-degree: 12%
 
 ---
@@ -82,7 +82,7 @@ ht-degree: 12%
    - 流{#streaming}
       - [HTTP API连接器](connectors/streaming/http.md)
 - API教程{#api-tutorials}
-   - 创建源连接{#create}
+   - 创建基本连接{#create}
       - 广告 {#advertising}
          - [Google AdWords](tutorials/api/create/advertising/ads.md)
       - 云存储{#cloud-storage}
@@ -138,7 +138,7 @@ ht-degree: 12%
       - [浏览云存储数据](tutorials/api/explore/cloud-storage.md)
       - [探索CRM数据](tutorials/api/explore/crm.md)
       - [探索客户成功数据](tutorials/api/explore/customer-success.md)
-      - [浏览数据库或NoSQL数据](tutorials/api/explore/database-nosql.md)
+      - [浏览数据库数据](tutorials/api/explore/database-nosql.md)
       - [浏览电子商务数据](tutorials/api/explore/ecommerce.md)
       - [探索营销自动化数据](tutorials/api/explore/marketing-automation.md)
       - [浏览支付数据](tutorials/api/explore/payments.md)
@@ -148,7 +148,7 @@ ht-degree: 12%
       - [收集云存储数据](tutorials/api/collect/cloud-storage.md)
       - [收集CRM数据](tutorials/api/collect/crm.md)
       - [收集客户成功数据](tutorials/api/collect/customer-success.md)
-      - [收集数据库或NoSQL数据](tutorials/api/collect/database-nosql.md)
+      - [收集数据库数据](tutorials/api/collect/database-nosql.md)
       - [收集电子商务数据](tutorials/api/collect/ecommerce.md)
       - [收集营销自动化数据](tutorials/api/collect/marketing-automation.md)
       - [收集付款数据](tutorials/api/collect/payments.md)
