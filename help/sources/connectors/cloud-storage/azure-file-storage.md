@@ -5,9 +5,9 @@ title: Azure文件存储源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Azure文件存储连接到Adobe Experience Platform。
 exl-id: 0a5e9df6-9760-4eeb-86d5-d92d77df3d2b
-source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
+source-git-commit: 1f9948d6e419ee5d6a021a589378f7aa990b7291
 workflow-type: tm+mt
-source-wordcount: '449'
+source-wordcount: '459'
 ht-degree: 0%
 
 ---
@@ -43,11 +43,11 @@ Adobe Experience Platform为AWS、[!DNL Google Cloud Platform]和[!DNL Azure]等
 
 ### 使用API
 
-- [使用流服务API创建Azure文件存储源连接](../../tutorials/api/create/cloud-storage/azure-file-storage.md)
-- [使用流服务API探索云存储系统](../../tutorials/api/explore/cloud-storage.md)
-- [使用流量服务API收集云存储数据](../../tutorials/api/collect/cloud-storage.md)
+- [使用流服务API创建Azure文件存储基连接](../../tutorials/api/create/cloud-storage/azure-file-storage.md)
+- [使用流量服务API探索云存储源的数据结构和内容](../../tutorials/api/explore/cloud-storage.md)
+- [使用流服务API为云存储源创建数据流](../../tutorials/api/collect/cloud-storage.md)
 
 ### 使用UI
 
 - [在UI中创建Azure文件存储源连接](../../tutorials/ui/create/cloud-storage/azure-file-storage.md)
-- [在UI中为云存储连接配置数据流](../../tutorials/ui/dataflow/batch/cloud-storage.md)
+- [在UI中为云存储连接创建数据流](../../tutorials/ui/dataflow/batch/cloud-storage.md)
