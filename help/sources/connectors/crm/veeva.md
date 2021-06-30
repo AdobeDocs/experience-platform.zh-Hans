@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；Veeva CRM;Veeva CRM;Veeva;CRM
 solution: Experience Platform
-title: 源连接器概述
+title: Veva CRM源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Veeva CRM连接到Adobe Experience Platform。
-source-git-commit: 5b8c6ae7c45048e026b018b6c91478648fdbea85
+source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '247'
 ht-degree: 0%
 
 ---
@@ -29,11 +29,11 @@ Experience Platform支持从第三方CRM系统摄取数据。 对CRM提供程序
 
 ## 使用API将[!DNL Veeva CRM]连接到[!DNL Platform]
 
-- [使用流量服务API创建Veeva CRM源连接](../../tutorials/api/create/crm/veeva.md)
-- [使用流服务API探索CRM系统](../../tutorials/api/explore/crm.md)
-- [使用流量服务API收集CRM数据](../../tutorials/api/collect/crm.md)
+- [使用流量服务API创建Veeva CRM基连接](../../tutorials/api/create/crm/veeva.md)
+- [使用流服务API探索CRM源的数据结构和内容](../../tutorials/api/explore/crm.md)
+- [使用流服务API为CRM源创建数据流](../../tutorials/api/collect/crm.md)
 
 ## 使用UI将[!DNL Veeva CRM]连接到[!DNL Platform]
 
 - [在UI中创建Microsoft Dynamics源连接](../../tutorials/ui/create/crm/veeva.md)
-- [在UI中为CRM连接配置数据流](../../tutorials/ui/dataflow/crm.md)
+- [在UI中为CRM源连接创建数据流](../../tutorials/ui/dataflow/crm.md)
