@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: 0f0a71d8c1c3f36d6966ab37bd9749a59bc4aecf
+source-git-commit: a670823139eab37d319e834de5e3025d44e9c9b4
 workflow-type: tm+mt
-source-wordcount: '2674'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -148,10 +148,7 @@ ht-degree: 0%
    >[!IMPORTANT]
    >
    >在一天中的某个特定时间导出文件的选项当前处于测试阶段，并且仅对选定数量的客户可用。
-
-   <!-- >[!IMPORTANT]
-      >
-      >Depending on when the profile export job finishes running and when the destination service starts the segment activation job, the first incremental or full file export may not contain all the necessary backfill data. To ensure a complete and most up-to-date backfill data export for both full and incremental files, we recommend setting the first file export time after 12 PM GMT of the following day. This is a limitation that will be addressed in future releases. -->
+   ><br> <br> 由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有必需的回填数据。  <br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，我们建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。这是将在未来版本中解决的限制。
 
 3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
 4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
@@ -178,11 +175,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   >选择导出时间的选项仅适用于选定数量的客户。
-
-   <!-- >[!IMPORTANT]
-     >
-     >Depending on when the profile export job finishes running and when the destination service starts the segment activation job, the first incremental or full file export may not contain all the necessary backfill data. To ensure a complete and most up-to-date backfill data export for both full and incremental files, we recommend setting the first file export time after 12 PM GMT of the following day. This is a limitation that will be addressed in future releases. -->
+   >选择导出时间的选项仅适用于选定数量的客户。<br> <br> 由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有必需的回填数据。  <br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，我们建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。这是将在未来版本中解决的限制。
 
 3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
 4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
