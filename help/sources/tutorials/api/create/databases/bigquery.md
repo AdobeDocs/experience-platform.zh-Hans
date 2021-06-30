@@ -1,84 +1,70 @@
 ---
-keywords: Experience Platform；主页；热门主题；bigquery;Google;google;Google BigQuery
+keywords: Experience Platform；主页；热门主题；bigquery;Google;Google;Google BigQuery
 solution: Experience Platform
-title: 使用Flow Service API创建Google BigQuery源连接
+title: 使用流服务API创建Google BigQuery基连接
 topic-legacy: overview
 type: Tutorial
-description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Google BigQuery。
+description: 了解如何使用流量服务API将Adobe Experience Platform连接到Google BigQuery。
 exl-id: 51f90366-7a0e-49f1-bd57-b540fa1d15af
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e8c6620a6d2447a577bd56192030ff4353c62c62
 workflow-type: tm+mt
-source-wordcount: '616'
+source-wordcount: '526'
 ht-degree: 1%
 
 ---
 
-# 使用[!DNL Flow Service] API创建[!DNL Google BigQuery]源连接
+# 使用[!DNL Flow Service] API创建[!DNL Google BigQuery]基本连接
 
 >[!NOTE]
 >
->[!DNL Google BigQuery]连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
+>[!DNL Google BigQuery]连接器处于测试阶段。 有关使用测试版标记的连接器的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
-[!DNL Flow Service] 用于收集和集中来自Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有受支持的源都可从中连接。
+基本连接表示源与Adobe Experience Platform之间经过验证的连接。
 
-本教程使用[!DNL Flow Service] API指导您完成将[!DNL Experience Platform]连接到[!DNL Google BigQuery]（以下称“BigQuery”）的步骤。
+本教程将指导您完成使用[[!DNL Flow Service]  API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)为[!DNL Google BigQuery]（以下称“[!DNL BigQuery]”）创建基本连接的步骤。
 
-## 入门指南
+## 快速入门
 
-本指南要求对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
-* [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+* [沙盒](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下各节提供了使用[!DNL Flow Service] API成功连接到BigQuery所需的其他信息。
+以下部分提供了您需要了解的其他信息，以便您能够使用[!DNL Flow Service] API成功连接到[!DNL BigQuery]。
 
-### 收集所需凭据
+### 收集所需的凭据
 
-要[!DNL Flow Service]将BigQuery连接到平台，必须提供以下OAuth 2.0身份验证值：
+要使[!DNL Flow Service]连接[!DNL BigQuery]到平台，您必须提供以下OAuth 2.0身份验证值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
 | `project` | 要查询的默认[!DNL BigQuery]项目的项目ID。 |
 | `clientID` | 用于生成刷新令牌的ID值。 |
-| `clientSecret` | 用于生成刷新令牌的机密值。 |
-| `refreshToken` | 从[!DNL Google]获取的用于授权访问[!DNL BigQuery]的刷新令牌。 |
+| `clientSecret` | 用于生成刷新令牌的密钥值。 |
+| `refreshToken` | 从[!DNL Google]获取的刷新令牌，用于授权对[!DNL BigQuery]的访问。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 [!DNL BigQuery]的连接规范ID是：`3c9b37f8-13a6-43d8-bad3-b863b941fedd`。 |
 
-有关这些值的详细信息，请参阅[此BigQuery文档](https://cloud.google.com/storage/docs/json_api/v1/how-tos/authorizing)。
+有关这些值的详细信息，请参阅此[[!DNL BigQuery] 文档](https://cloud.google.com/storage/docs/json_api/v1/how-tos/authorizing)。
 
-### 读取示例API调用
+### 使用Platform API
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
+有关如何成功调用Platform API的信息，请参阅[Platform API入门指南](../../../../../landing/api-guide.md)。
 
-### 收集所需标题的值
+## 创建基本连接
 
-要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+基本连接保留了源和平台之间的信息，包括源的身份验证凭据、连接的当前状态和唯一基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
-
-* `Content-Type: application/json`
-
-## 创建连接
-
-连接指定源并包含该源的凭据。 每个[!DNL BigQuery]帐户只需要一个连接，因为它可用于创建多个数据流以引入不同的数据。
+要创建基本连接ID，请在请求参数中提供[!DNL BigQuery]身份验证凭据时，向`/connections`端点发出POST请求。
 
 **API格式**
 
-```http
+```https
 POST /connections
 ```
 
 **请求**
 
-要创建[!DNL BigQuery]连接，必须在POST请求中提供其唯一连接规范ID。 [!DNL BigQuery]的连接规范ID为`3c9b37f8-13a6-43d8-bad3-b863b941fedd`。
+以下请求为[!DNL BigQuery]创建基本连接：
 
 ```shell
 curl -X POST \
@@ -110,15 +96,15 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `auth.params.project` | 默认[!DNL BigQuery]项目要查询的项目ID。 反对。 |
+| `auth.params.project` | 要查询的默认[!DNL BigQuery]项目的项目ID。 反对。 |
 | `auth.params.clientId` | 用于生成刷新令牌的ID值。 |
 | `auth.params.clientSecret` | 用于生成刷新令牌的客户端值。 |
-| `auth.params.refreshToken` | 从[!DNL Google]获取的用于授权访问[!DNL BigQuery]的刷新令牌。 |
-| `connectionSpec.id` | 在上一步中检索到的[!DNL BigQuery]帐户的连接规范`id`。 |
+| `auth.params.refreshToken` | 从[!DNL Google]获取的刷新令牌，用于授权对[!DNL BigQuery]的访问。 |
+| `connectionSpec.id` | [!DNL Google BigQuery]连接规范ID:`3c9b37f8-13a6-43d8-bad3-b863b941fedd`。 |
 
 **响应**
 
-成功的响应返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中浏览数据时需要此ID。
+成功的响应返回新创建连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中探索数据时需要此ID。
 
 ```json
 {
@@ -129,4 +115,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过本教程，您已使用[!DNL Flow Service] API创建了[!DNL BigQuery]连接，并已获得该连接的唯一ID值。 在下一个教程中，您可以使用此连接ID，因为您将学习如何使用流服务API](../../explore/database-nosql.md)浏览数据库或NoSQL系统。[
+在本教程中，您已使用[!DNL Flow Service] API创建了[!DNL BigQuery]连接，并获取了该连接的唯一ID值。 在下一个教程中，您可以使用此连接ID，因为您正在学习如何使用流服务API](../../explore/database-nosql.md)来浏览数据库或NoSQL系统。[
