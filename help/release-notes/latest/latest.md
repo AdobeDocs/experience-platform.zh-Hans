@@ -1,80 +1,27 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: Experience Platform2021年5月26日发行说明。
+description: Experience Platform2021年6月30日发行说明。
 doc-type: release notes
-last-update: May 26, 2021
-author: ens72741
+last-update: June 30, 2021
+author: ens60013
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: 487d6dbef21459a7ce78cdc70215ad46e06ba892
+source-git-commit: fc916f87bf07e5eabf7d1681059406e2fea362e0
 workflow-type: tm+mt
-source-wordcount: '1306'
-ht-degree: 3%
+source-wordcount: '530'
+ht-degree: 6%
 
 ---
 
 
 # Adobe Experience Platform 发行说明
 
-**发行日期：2021 年 5 月 26 日**
-
-Adobe Experience Platform的新增功能：
-
-- [仪表板](#dashboards)
+**发布日期：2021 年 6 月 30 日**
 
 Adobe Experience Platform 现有功能的更新包括：
 
-- [[!DNL Data Prep]](#data-prep)
-- [[!DNL Destinations]](#destinations)
-- [[!DNL Experience Data Model (XDM)]](#xdm)
 - [实时客户资料](#profile)
 - [沙盒](#sandboxes)
 - [源](#sources)
-
-## 仪表板 {#dashboards}
-
-Adobe Experience Platform提供了多个功能板，您可以通过这些功能板查看有关组织数据的重要分析（在每日快照中捕获）。
-
-| 功能 | 描述 |
-| --- | --- |
-| 用户档案分析 | 用户档案功能板每天提供每个组织合并策略的“实时客户资料”量度的概述Experience Platform。 所有能够在Platform中访问和查看配置文件数据的用户，都可以使用这些配置文件分析。 |
-| 受众分析 | 区段功能板为所有用户提供了与受众相关的分析，以便有权在Platform中查看区段。 功能板每天提供使用区段生成器UI创建或从Adobe Audience Manager导入的受众量度的概述。 |
-| 激活分析 | 目标功能板可供所有能够访问和查看目标的用户使用。 功能板提供所有目标中激活的激活量度的每日概述。 |
-| 特定于用户的分析 | 功能板的外观可以由每个用户进行个性化，包括通过添加、删除、调整大小和重新排列小组件来修改功能板的布局。 |
-| 构件创建和管理 | 营销人员可以在集中的存储库中访问所有标准和自定义小组件，以实现分析创建和共享的民主化：<br/><ul><li>标准选项卡包含可在功能板上下文中访问的Adobe提供的小组件。 </li><li>自定义选项卡包含由组织创建的自定义小组件，其中包含一个用于在视图中隐藏小组件的选项。</li><li>“配置文件”和“受众分析”中的小组件创建工作流程可编辑、选择、预览和发布自定义小组件。</li></ul> |
-| 自定义分析 | 访问权限使数据工程师和营销专家能够自定义可用于创建小组件的配置文件属性。 |
-
-有关功能板的更多信息（包括如何授予访问权限和创建自定义小组件），请首先阅读[功能板概述](../../dashboards/home.md)。
-
-## [!DNL Data Prep] {#data-prep}
-
-[!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 从宽错误警告 | 现在，数据准备映射器错误消息将更加宽松，提供警告而不是错误以及部分转换的行。 |
-| 新函数 | 添加了用于获取键、将元素附加到现有数组、将多个数组的元素附加到现有数组、使用对象构建数组，以及将JSON对象的名称用作字符串文字的函数。 |
-
-有关详细信息，请参阅[[!DNL Data Prep] 概述](../../data-prep/home.md)。
-
-## [!DNL Destinations] {#destinations}
-
-[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 改进了监控（测试版） | 增强了对目标（包括批处理目标和流目标的信息）的监控功能 |
-| [更快的增量文件导出（测试版）](../../destinations/ui/activate-destinations.md#export-incremental-files) | 添加了每3、6、8或12小时将增量文件导出到目标的功能。<br> <br>此功能目前处于测试阶段，仅适用于一定数量的客户。非测试版客户每天可导出一次增量文件。 |
-| [重复数据删除关键支持（测试版）](../../destinations/ui/activate-destinations.md#deduplication-keys) | 添加了将身份命名空间或配置文件属性设置为重复数据删除键的功能。 重复数据删除键消除了在一个导出文件中存在多个相同用户档案记录的可能性。<br> <br>此功能目前为测试版，仅适用于一定数量的客户。 |
-
-有关目标的更多常规信息，请参阅[目标概述](../../destinations/home.md)。
-
-## [!DNL Experience Data Model (XDM)] {#xdm}
-
-体验数据模型(XDM)是一项开源规范，旨在提高数字体验的功能。 它为任何与Adobe Experience Platform上的服务通信的应用程序提供了通用结构和定义。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
-
-| 功能 | 描述 |
-| --- | --- |
-| 架构字段组 | 术语“mixin”已更新为“字段组”。 此更改将反映在Adobe Experience Platform UI中。 此外，架构注册表API具有新的[字段组端点](../../xdm/api/field-groups.md)，而mixins端点已作为旧端点被弃用。 有关更多信息，请参阅[XDM文档](../../xdm/home.md)。 |
 
 ## 实时客户资料 {#profile}
 
@@ -82,27 +29,20 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 数据集重叠报表 | 数据集重叠报表通过公开对可寻址受众贡献最大的数据集，提供了对用户档案存储构成的可见性。 除了提供对用户档案数据的分析之外，此报表还可帮助用户采取措施来优化许可证使用情况，例如为特定数据的有效期设置限制。 要了解更多信息，请按照[生成数据集重叠报表](../../profile/tutorials/dataset-overlap-report.md)上的教程操作。 |
+| 合并策略工作流更新 | 现在，在UI中创建和更新合并策略时，用户可以基于并集架构预览20个示例用户档案。 这允许用户在保存合并策略配置之前预览客户配置文件的外观。 有关更多信息，请参阅[合并策略UI指南](../../profile/merge-policies/ui-guide.md)。 |
+| 身份重叠报表 | 身份重叠报表是实时客户用户档案API的一部分，可显示用户档案存储的构成。 身份重叠报表使用`/previewsamplestatus`端点会公开对可寻址受众贡献最大的身份。 要了解更多信息，请访问[预览示例状态API端点指南](../../profile/api/preview-sample-status.md)。 |
 
 有关实时客户资料的更多信息，包括有关使用[!DNL Profile]数据的教程和最佳实践，请首先阅读[实时客户资料概述](../../profile/home.md)。
 
-## [!DNL Sandboxes] {#sandboxes}
+## 沙盒 {#sandboxes}
 
 Adobe Experience Platform旨在在全球范围内丰富数字体验应用程序。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署的需要，同时确保操作合规性。 为了满足这一需求，Experience Platform提供了将单个Platform实例分区为单独虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 多个生产沙箱 | 您现在可以在IMS组织中创建和管理多个生产沙箱，并将特定的生产沙箱专门用于不同的业务线、品牌、项目或地区。 有关更多信息，请参阅有关在UI](../../sandboxes/ui/user-guide.md)或[中使用API](../../sandboxes/api/overview.md)创建生产沙盒[的教程。 |
+| 生产沙盒重置增强功能 | 您现在可以重置用于与Adobe Audience Manager或Audience Core Service进行双向区段共享的生产沙箱。 这可以从UI中完成，也可以使用API中新的`validationOnly`和`ignoreWarnings`参数来完成。 有关更多信息，请参阅有关在UI](../../sandboxes/ui/user-guide.md)中重置沙盒以及在API](../../sandboxes/api/sandboxes.md)中重置沙盒的教程。[[ |
 
-### 已知限制
-
-- 每个Experience Cloud组织都提供一个预先创建的默认生产沙箱。 此沙盒用作从其他Adobe应用程序或尚不符合沙盒的非Adobe应用程序发送到平台的每个请求的默认目标。 如果Adobe Analytics还在为[跨设备分析(CDA)](https://experienceleague.adobe.com/docs/analytics/components/cda/overview.html)功能使用其中托管的身份图，或者为[基于人员的目标(PBD)](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/people-based/people-based-destinations-overview.html)功能使用其中托管的身份图，则无法重置默认的生产沙盒。
-- 用于与Adobe Audience Manager或受众核心服务进行双向区段共享的生产沙盒不能重置或删除。
-- 除默认的生产沙箱外，可以删除用户创建的所有生产和开发沙箱。
-
-有关沙箱的更多信息，请参阅[沙箱概述](../../sandboxes/home.md)。
-
-## [!DNL Sources] {#sources}
+## 源 {#sources}
 
 Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强该数据。 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
 
@@ -110,7 +50,7 @@ Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 对压缩文件摄取的UI支持 | 您现在可以在UI中使用云存储源预览和摄取压缩的JSON或分隔文件。 有关更多信息，请参阅教程[在UI](../../sources/tutorials/ui/dataflow/batch/cloud-storage.md)中为云存储源连接配置数据流。 |
-| 测试版源迁移至GA | 以下来源已从测试版提升为正式发布： <ul><li>[[!DNL Azure File Storage]](../../sources/connectors/cloud-storage/azure-file-storage.md)</li><li>[[!DNL Azure Synapse Analytics]](../../sources/connectors/databases/synapse-analytics.md)</li><li>[[!DNL Greenplum]](../../sources/connectors/databases/greenplum.md)</li><li>[[!DNL HubSpot]](../../sources/connectors/marketing-automation/hubspot.md)</li><li>[[!DNL ServiceNow]](../../sources/connectors/customer-success/servicenow.md)</li></ul> |
+| [!DNL Veeva CRM] （测试版） | 您现在可以使用[!DNL Flow Service] API或UI将[!DNL Veeva CRM]连接到Experience Platform。 有关更多信息，请参阅[[!DNL Veeva CRM] 连接器概述](../../sources/connectors/crm/veeva.md)。 |
+| 支持监控流数据流 | 现在，您可以使用源UI工作区来监控来自具有相应量度和状态的流源的数据摄取活动。 有关更多信息，请参阅[监控流数据流](../../sources/tutorials/ui/monitor-streaming.md)教程。 |
 
 要了解有关源的更多信息，请参阅[源概述](../../sources/home.md)。
