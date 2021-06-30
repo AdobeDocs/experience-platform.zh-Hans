@@ -1,60 +1,43 @@
 ---
 keywords: Experience Platform；主页；热门主题；广告系统；广告系统
 solution: Experience Platform
-title: 使用Flow Service API探索广告系统
+title: 利用流量服务API开发广告系统
 topic-legacy: overview
-description: 流服务用于收集和集中来自Adobe Experience Platform内不同来源的客户数据。 该服务提供用户界面和RESTful API，所有受支持的源都可从中连接。 本教程使用Flow Service API来浏览广告系统。
+description: 流量服务用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供了用户界面和RESTful API，所有受支持的源都可从中连接。 本教程使用流量服务API来探索广告系统。
 exl-id: 3016ce1e-12e6-47ce-a4c5-52f8d440f515
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8aa8dfcc4f8a36d0898a9cc079bd98b89e3589a1
 workflow-type: tm+mt
-source-wordcount: '633'
-ht-degree: 1%
+source-wordcount: '506'
+ht-degree: 2%
 
 ---
 
 # 使用[!DNL Flow Service] API浏览广告系统
 
-[!DNL Flow Service] 用于收集和集中来自Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有受支持的源都可从中连接。
+创建基本连接后，您现在可以使用唯一的基本连接ID来导航和浏览源的数据结构和内容。 这样，您就可以在创建数据流并将其移至Adobe Experience Platform之前，识别特定项目及其各自的数据类型和格式。
 
-本教程使用[!DNL Flow Service] API来浏览广告系统。
+本教程使用[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)。 探索广告系统。
 
-## 入门指南
+## 快速入门
 
-本指南要求对Adobe Experience Platform的以下组件有充分的了解：
+>[!IMPORTANT]
 
-* [来源](../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
-* [沙箱](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+本教程要求您拥有广告源的唯一基本连接ID。 如果您没有此ID，请参阅[将广告源连接到Platform](../../api/create/advertising/ads.md)教程中的教程。
 
-以下各节提供您需要了解的其他信息，以便使用[!DNL Flow Service] API成功连接到广告系统。
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-### 收集所需凭据
+* [来源](../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+* [沙盒](../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-本教程要求您与要从中获取数据的第三方广告应用程序建立有效连接。 有效的连接涉及应用程序的连接规范ID和连接ID。 有关创建广告连接和检索这些值的详细信息，请参阅[将广告源连接到Platform](../../api/create/advertising/ads.md)教程。
+以下部分提供了您需要了解的其他信息，以便您能够使用[!DNL Flow Service] API成功连接到广告系统。
 
-### 读取示例API调用
+### 使用Platform API
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
-
-### 收集所需标题的值
-
-要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
-
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
-
-* `Content-Type: application/json`
+有关如何成功调用Platform API的信息，请参阅[Platform API入门指南](../../../../landing/api-guide.md)。
 
 ## 浏览数据表
 
-使用广告系统的基本连接，您可以执行GET请求来浏览数据表。 使用以下调用查找要检查或收录到[!DNL Platform]中的表的路径。
+使用广告系统的基本连接，您可以通过执行GET请求来浏览数据表。 使用以下调用查找要检查或摄取到[!DNL Platform]中的表的路径。
 
 **API格式**
 
@@ -64,7 +47,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=root
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BASE_CONNECTION_ID}` | 广告系统的基本连接ID。 |
+| `{BASE_CONNECTION_ID}` | 广告系统的基本连接的ID。 |
 
 **请求**
 
@@ -79,7 +62,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应是从广告系统到广告系统的一系列表。 查找要引入[!DNL Platform]的表，并记下其`path`属性，因为在下一步中需要提供它来检查其结构。
+成功的响应是从到广告系统的一组表。 查找要引入[!DNL Platform]的表，并记下其`path`属性，因为需要在下一步中提供该表来检查其结构。
 
 ```json
 [
@@ -116,7 +99,7 @@ curl -X GET \
 
 ## Inspect表的结构
 
-要从广告系统中检查表的结构，请在将表的路径指定为GET参数时执行查询请求。
+要从广告系统中检查表的结构，请在将表的路径指定为查询参数时执行GET请求。
 
 **API格式**
 
@@ -127,7 +110,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=table&object={TABLE_PAT
 | 参数 | 描述 |
 | --- | --- |
 | `{BASE_CONNECTION_ID}` | 广告系统的连接ID。 |
-| `{TABLE_PATH}` | 广告系统中表格的路径。 |
+| `{TABLE_PATH}` | 广告系统中表的路径。 |
 
 **请求**
 
@@ -142,7 +125,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回表的结构。 有关每个表列的详细信息位于`columns`数组的元素中。
+成功的响应会返回表的结构。 有关每个表列的详细信息都位于`columns`数组的元素内。
 
 ```json
 {
@@ -188,4 +171,4 @@ curl -X GET \
 
 ## 后续步骤
 
-通过本教程，您探索了广告系统，找到了要引入[!DNL Platform]的表的路径，并获取了有关其结构的信息。 您可以在下一个教程中使用此信息来从广告系统收集数据并将其引入Platform](../collect/advertising.md)。[
+通过阅读本教程，您探索了广告系统，找到了要引入[!DNL Platform]的表的路径，并获取了有关其结构的信息。 在下一个教程中，您可以使用此信息从广告系统中收集数据，并将其导入Platform](../collect/advertising.md)。[
