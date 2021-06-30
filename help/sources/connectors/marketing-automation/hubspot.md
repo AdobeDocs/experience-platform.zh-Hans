@@ -5,9 +5,9 @@ title: HubSpot源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将HubSpot连接到Adobe Experience Platform。
 exl-id: 4bc279ac-9388-4bac-bfae-98878625a554
-source-git-commit: e150f05df2107d7b3a2e95a55dc4ad072294279e
+source-git-commit: 9d21d83204941db2db69f6be0f20d4e8627fc2ff
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '226'
 ht-degree: 0%
 
 ---
@@ -26,11 +26,11 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## 使用API将[!DNL HubSpot]连接到[!DNL Platform]
 
-- [使用流量服务API创建HubSpot源连接](../../tutorials/api/create/marketing-automation/hubspot.md)
-- [使用流量服务API探索营销自动化系统](../../tutorials/api/explore/marketing-automation.md)
-- [使用流量服务API收集营销自动化数据](../../tutorials/api/collect/marketing-automation.md)
+- [使用流量服务API创建HubSpot基连接](../../tutorials/api/create/marketing-automation/hubspot.md)
+- [使用流量服务API探索营销自动化源的数据结构和内容](../../tutorials/api/explore/marketing-automation.md)
+- [使用流服务API为营销自动化源创建数据流](../../tutorials/api/collect/marketing-automation.md)
 
 ## 使用UI将[!DNL HubSpot]连接到[!DNL Platform]
 
 - [在UI中创建HubSpot源连接](../../tutorials/ui/create/marketing-automation/hubspot.md)
-- [在UI中为营销自动化连接配置数据流](../../tutorials/ui/dataflow/marketing-automation.md)
+- [在UI中为营销自动化源连接创建数据流](../../tutorials/ui/dataflow/marketing-automation.md)
