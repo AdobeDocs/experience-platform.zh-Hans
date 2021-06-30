@@ -1,76 +1,61 @@
 ---
-keywords: Experience Platform；主页；热门主题；google adwords;Google AdWords;adwords
+keywords: Experience Platform；主页；热门主题；Google AdWords;Google AdWords;Adwords
 solution: Experience Platform
-title: 使用流服务API创建Google AdWords源连接
+title: 使用流服务API创建Google AdWords基本连接
 topic-legacy: overview
 type: Tutorial
-description: 了解如何使用Flow Service API将Adobe Experience Platform连接到Google AdWords。
+description: 了解如何使用流量服务API将Adobe Experience Platform连接到Google AdWords。
 exl-id: 4658e392-1bd9-4e74-aa05-96109f9b62a0
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: ff0f6bc6b8a57b678b329fe2b47c53919e0e2d64
 workflow-type: tm+mt
-source-wordcount: '619'
+source-wordcount: '529'
 ht-degree: 1%
 
 ---
 
-# 使用[!DNL Flow Service] API创建[!DNL Google AdWords]源连接
+# 使用[!DNL Flow Service] API创建[!DNL Google AdWords]基本连接
 
 >[!NOTE]
 >
->[!DNL Google AdWords]连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
+>[!DNL Google AdWords]连接器处于测试阶段。 有关使用测试版标记的连接器的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
-[!DNL Flow Service] 用于收集和集中来自Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有受支持的源都可从中连接。
+基本连接表示源与Adobe Experience Platform之间经过验证的连接。
 
-本教程使用[!DNL Flow Service] API指导您完成将[!DNL Experience Platform]连接到[!DNL Google AdWords]的步骤。
+本教程将指导您完成使用[[!DNL Flow Service]  API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)为[!DNL Google AdWords]（以下称“[!DNL AdWords]”）创建基本连接的步骤。
 
 ## 入门指南
 
-本指南要求对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
-* [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+* [沙盒](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下各节提供了使用[!DNL Flow Service] API成功连接到广告所需的其他信息。
+以下部分提供了您需要了解的其他信息，以便您能够使用[!DNL Flow Service] API成功连接到[!DNL AdWords]。
 
-### 收集所需凭据
+### 收集所需的凭据
 
-要使[!DNL Flow Service]与AdWords连接，必须为以下连接属性提供值：
+要使[!DNL Flow Service]与[!DNL AdWords]连接，必须为以下连接属性提供值：
 
-| **凭据** | **描述** |
-| -------------- | --------------- |
-| `clientCustomerId` | AdWords帐户的客户ID。 |
-| `developerToken` | 与管理者帐户关联的开发人员令牌。 |
-| `refreshToken` | 从[!DNL Google]获取的用于授权访问AdWord的刷新令牌。 |
+| 凭据 | 描述 |
+| ---------- | ----------- |
+| `clientCustomerId` | [!DNL AdWords]帐户的客户ID。 |
+| `developerToken` | 与管理员帐户关联的开发人员令牌。 |
+| `refreshToken` | 从[!DNL Google]获取的用于授权访问[!DNL AdWords]的刷新令牌。 |
 | `clientId` | 用于获取刷新令牌的[!DNL Google]应用程序的客户端ID。 |
 | `clientSecret` | 用于获取刷新令牌的[!DNL Google]应用程序的客户端密钥。 |
-| `connectionSpec` | 创建连接所需的唯一标识符。 [!DNL Google AdWords]的连接规范ID为：`d771e9c1-4f26-40dc-8617-ce58c4b53702` |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 [!DNL AdWords]的连接规范ID是：`d771e9c1-4f26-40dc-8617-ce58c4b53702`。 |
 
-有关这些值的详细信息，请参阅此[Google AdWords文档](https://developers.google.com/adwords/api/docs/guides/authentication)。
+有关这些值的更多信息，请参阅此[Google AdWords文档](https://developers.google.com/adwords/api/docs/guides/authentication)。
 
-### 读取示例API调用
+### 使用Platform API
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../../../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
+有关如何成功调用Platform API的信息，请参阅[Platform API入门指南](../../../../../landing/api-guide.md)。
 
-### 收集所需标题的值
+## 创建基本连接
 
-要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+基本连接保留了源和平台之间的信息，包括源的身份验证凭据、连接的当前状态和唯一基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
-
-* `Content-Type: application/json`
-
-## 创建连接
-
-连接指定源并包含该源的凭据。 每个[!DNL Google AdWords]帐户只需要一个连接，因为它可用于创建多个源连接器以导入不同的数据。
+要创建基本连接ID，请在请求参数中提供[!DNL AdWords]身份验证凭据时，向`/connections`端点发出POST请求。
 
 **API格式**
 
@@ -80,7 +65,7 @@ POST /connections
 
 **请求**
 
-要创建[!DNL Google AdWords]连接，必须在POST请求中提供其唯一连接规范ID。 [!DNL Google AdWords]的连接规范ID为`d771e9c1-4f26-40dc-8617-ce58c4b53702`。
+以下请求为[!DNL AdWords]创建基本连接：
 
 ```shell
 curl -X POST \
@@ -89,7 +74,7 @@ curl -X POST \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {IMS_ORG}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
+    -H 'Content-Type: application/json'
     -d '{
         "name": "google-AdWords connection",
         "description": "Connection for google-AdWords",
@@ -113,16 +98,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `auth.params.clientCustomerID` | 您的[!DNL AdWords]帐户的客户ID。 |
-| `auth.params.developerToken` | 您的[!DNL AdWords]帐户的开发人员令牌。 |
+| `auth.params.clientCustomerID` | [!DNL AdWords]帐户的客户ID。 |
+| `auth.params.developerToken` | [!DNL AdWords]帐户的开发人员令牌。 |
 | `auth.params.refreshToken` | [!DNL AdWords]帐户的刷新令牌。 |
 | `auth.params.clientID` | [!DNL AdWords]帐户的客户端ID。 |
-| `auth.params.clientSecret` | [!DNL AdWords]帐户的客户端机密。 |
+| `auth.params.clientSecret` | [!DNL AdWords]帐户的客户端密钥。 |
 | `connectionSpec.id` | [!DNL Google AdWords]连接规范ID:`d771e9c1-4f26-40dc-8617-ce58c4b53702`。 |
 
 **响应**
 
-成功的响应返回新创建的连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中浏览数据时需要此ID。
+成功的响应返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一步中需要此ID才能创建源连接。
 
 ```json
 {
@@ -133,4 +118,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过本教程，您已使用[!DNL Flow Service] API创建了[!DNL Google AdWords]连接，并已获得该连接的唯一ID值。 在下一个教程中，您可以使用此ID，因为您将学习如何[使用流服务API](../../explore/advertising.md)浏览广告系统。
+在本教程中，您已使用[!DNL Flow Service] API创建了[!DNL AdWords]基本连接，并获取了该连接的唯一ID值。 在下一个教程中，您可以使用此ID，因为您正在学习如何[使用流量服务API](../../explore/advertising.md)探索广告系统。
