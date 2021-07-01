@@ -1,83 +1,82 @@
 ---
 keywords: Experience Platform；主页；热门主题；API教程；流目标API;平台
 solution: Experience Platform
-title: 使用Adobe Experience Platform中的Flow Service API连接到流目标并激活数据
-description: 本文档包括通过使用Adobe Experience Platform API创建流目标
+title: 在Adobe Experience Platform中使用流服务API连接到流目标并激活数据
+description: 本文档介绍了如何使用Adobe Experience Platform API创建流目标
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 0bc85d79bab690d433dc29d558a4d9caf086586d
 workflow-type: tm+mt
-source-wordcount: '2022'
+source-wordcount: '2024'
 ht-degree: 1%
 
 ---
 
-# 使用Flow Service API连接到流目标并激活数据
+# 使用流服务API连接到流目标并激活数据
 
 >[!NOTE]
 >
->平台中的[!DNL Amazon Kinesis]和[!DNL Azure Event Hubs]目标当前处于测试阶段。 文档和功能可能会发生变化。
+>平台中的[!DNL Amazon Kinesis]和[!DNL Azure Event Hubs]目标当前为测试版。 文档和功能可能会发生变化。
 
-本教程演示了如何使用API调用连接到Adobe Experience Platform存储，创建到流云事件目标([Amazon Kinesis](../catalog/cloud-storage/amazon-kinesis.md)或[Azure集线器](../catalog/cloud-storage/azure-event-hubs.md))的连接，创建到新创建目标的数据流，以及将数据激活到新创建的目标。
+本教程演示了如何使用API调用连接到Adobe Experience Platform数据，创建到流云存储目标([Amazon Kinesis](../catalog/cloud-storage/amazon-kinesis.md)或[Azure事件中心](../catalog/cloud-storage/azure-event-hubs.md))的连接，创建到新创建目标的数据流，以及将数据激活到新创建的目标。
 
-本教程在所有示例中使用[!DNL Amazon Kinesis]目标，但对于[!DNL Azure Event Hubs]，这些步骤是相同的。
+本教程在所有示例中都使用[!DNL Amazon Kinesis]目标，但[!DNL Azure Event Hubs]的步骤相同。
 
 ![概述 — 创建流目标和激活区段的步骤](../assets/api/streaming-destination/overview.png)
 
-如果您希望使用平台中的用户界面连接到目标并激活数据，请参阅[连接目标](../ui/connect-destination.md)和[将用户档案和区段激活到目标](../ui/activate-destinations.md)教程。
+如果您希望使用Platform中的用户界面连接到目标并激活数据，请参阅[连接目标](../ui/connect-destination.md)和[激活配置文件和区段到目标](../ui/activate-destinations.md)教程。
 
-## 快速入门
+## 入门
 
-本指南要求对Adobe Experience Platform的以下组件有充分的了解：
+本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
 * [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
 * [[!DNL Catalog Service]](../../catalog/home.md): [!DNL Catalog] 是Experience Platform中数据位置和谱系的记录系统。
-* [沙箱](../../sandboxes/home.md):Experience Platform提供将单个平台实例分为单独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [沙盒](../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下各节提供了在平台中将数据激活到流目标所需的其他信息。
+以下部分提供了在平台中激活数据到流目标的需要了解的其他信息。
 
-### 收集所需凭据
+### 收集所需的凭据
 
-要完成本教程中的步骤，您应准备好以下凭据，具体取决于要连接和激活区段的目标类型。
+要完成本教程中的步骤，您应该准备好以下凭据，具体取决于您连接和激活区段的目标类型。
 
 * 对于[!DNL Amazon Kinesis]连接：`accessKeyId`、`secretKey`、`region`或`connectionUrl`
 * 对于[!DNL Azure Event Hubs]连接：`sasKeyName`、`sasKey`、`namespace`
 
-### 读取示例API调用{#reading-sample-api-calls}
+### 读取示例API调用 {#reading-sample-api-calls}
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关文档中用于示例API调用的约定的信息，请参阅Experience Platform疑难解答指南中关于如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
+本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅Experience Platform疑难解答指南中[如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
 
-### 收集必需和可选标头{#gather-values}的值
+### 收集必需和可选标题的值 {#gather-values}
 
-要调用平台API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程将提供所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
+要调用Platform API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程可为所有Experience PlatformAPI调用中每个所需标头的值，如下所示：
 
-* 授权：承载`{ACCESS_TOKEN}`
-* x-api-key:`{API_KEY}`
-* x-gw-ims-org-id:`{IMS_ORG}`
+* 授权：载体`{ACCESS_TOKEN}`
+* x-api-key: `{API_KEY}`
+* x-gw-ims-org-id: `{IMS_ORG}`
 
-Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在向平台API发出的请求中，您可以指定操作将在中进行的沙箱的名称和ID。 这些是可选参数。
+Experience Platform中的资源可以与特定虚拟沙箱隔离。 在对Platform API的请求中，您可以指定操作将在其中进行的沙盒的名称和ID。 这些是可选参数。
 
-* x-sandbox-name:`{SANDBOX_NAME}`
+* x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关Experience Platform中沙箱的详细信息，请参阅[沙箱概述文档](../../sandboxes/home.md)。
+>有关Experience Platform中沙箱的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
 * Content-Type: `application/json`
 
-### Swagger文档{#swagger-docs}
+### Swagger文档 {#swagger-docs}
 
-您可以在Swagger的本教程中找到所有API调用的随附参考文档。 请参阅Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)上的[ Flow Service API文档。 我们建议您同时使用本教程和Swagger文档页。
+在本教程中，您可以在Swagger中找到所有API调用的随附参考文档。 请参阅[Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)上的流服务API文档。 我们建议您同时使用本教程和Swagger文档页面。
 
-## 获取可用流目标{#get-the-list-of-available-streaming-destinations}的列表
+## 获取可用流目标列表 {#get-the-list-of-available-streaming-destinations}
 
-![目标步骤概述步骤1](../assets/api/streaming-destination/step1.png)
+![目标步骤概述第1步](../assets/api/streaming-destination/step1.png)
 
-作为第一步，您应确定要激活数据的流目标。 首先，请发出呼叫，请求列表可连接和激活区段的可用目标。 对`connectionSpecs`端点执行以下GET请求，以返回可用目标的列表:
+作为第一步，您应该确定要激活数据的流目标。 首先，执行调用以请求可连接和激活区段的可用目标列表。 对`connectionSpecs`端点执行以下GET请求，以返回可用目标列表：
 
 **API格式**
 
@@ -99,7 +98,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **响应**
 
-成功的响应包含可用目标及其唯一标识符的列表(`id`)。 存储您计划使用的目标的值，因为在后续步骤中需要它。 例如，如果要将区段连接到[!DNL Amazon Kinesis]或[!DNL Azure Event Hubs]并将其传送，请在响应中查找以下代码片段：
+成功的响应包含可用目标及其唯一标识符的列表(`id`)。 存储您计划使用的目标值，因为在后续步骤中需要该值。 例如，如果要连接区段并将其交付到[!DNL Amazon Kinesis]或[!DNL Azure Event Hubs]，请在响应中查找以下代码片段：
 
 ```json
 {
@@ -117,17 +116,17 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 }
 ```
 
-## 连接到您的Experience Platform数据{#connect-to-your-experience-platform-data}
+## 连接到Experience Platform数据 {#connect-to-your-experience-platform-data}
 
-![目标步骤概述步骤2](../assets/api/streaming-destination/step2.png)
+![目标步骤概述第2步](../assets/api/streaming-destination/step2.png)
 
-接下来，您必须连接到Experience Platform数据，以便导出用户档案数据并在首选目标中激活它。 这包括两个子步骤，如下所述。
+接下来，您必须连接到Experience Platform数据，以便导出配置文件数据并在首选目标中激活该数据。 这包括两个子步骤，如下所述。
 
-1. 首先，您必须通过设置基本连接来执行呼叫，以授权访问Experience Platform中的数据。
-2. 然后，使用基本连接ID，您将再进行一次调用，在其中创建源连接，从而建立与Experience Platform数据的连接。
+1. 首先，您必须通过设置基本连接来执行调用，以授权对Experience Platform中的数据的访问。
+2. 然后，使用基本连接ID，您将再次进行调用，在该调用中创建源连接，以建立与Experience Platform数据的连接。
 
 
-### 授权访问您的Experience Platform
+### 授权访问Experience Platform中的数据
 
 **API格式**
 
@@ -155,11 +154,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 
-* `{CONNECTION_SPEC_ID}`:使用统一用户档案服务的连接规范ID -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
+* `{CONNECTION_SPEC_ID}`:使用配置文件服务的连接规范ID -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
 
 **响应**
 
-成功的响应包含基连接的唯一标识符(`id`)。 在下一步创建源连接时，按需要存储此值。
+成功的响应包含基本连接的唯一标识符(`id`)。 在创建源连接的下一步中根据需要存储此值。
 
 ```json
 {
@@ -167,7 +166,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }
 ```
 
-### 连接到您的Experience Platform数据{#connect-to-platform-data}
+### 连接到Experience Platform数据 {#connect-to-platform-data}
 
 **API格式**
 
@@ -185,7 +184,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-            "name": "Connecting to Unified Profile Service",
+            "name": "Connecting to Profile Service",
             "description": "Optional",
             "connectionSpec": {
                 "id": "{CONNECTION_SPEC_ID}",
@@ -199,12 +198,12 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-* `{BASE_CONNECTION_ID}`:使用您在上一步中获得的ID。
-* `{CONNECTION_SPEC_ID}`:使用统一用户档案服务的连接规范ID -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
+* `{BASE_CONNECTION_ID}`:使用您在上一步中获取的ID。
+* `{CONNECTION_SPEC_ID}`:使用配置文件服务的连接规范ID -  `8a9c3494-9708-43d7-ae3f-cda01e5030e1`。
 
 **响应**
 
-成功的响应返回新创建的源连接到统一用户档案服务的唯一标识符(`id`)。 这将确认您已成功连接到Experience Platform数据。 在后续步骤中存储所需的值。
+成功的响应会返回新创建的与配置文件服务的源连接的唯一标识符(`id`)。 这表示您已成功连接到Experience Platform数据。 在后续步骤中根据需要存储此值。
 
 ```json
 {
@@ -213,16 +212,16 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 
-## 连接到流目标{#connect-to-streaming-destination}
+## 连接到流目标 {#connect-to-streaming-destination}
 
-![目标步骤概述步骤3](../assets/api/streaming-destination/step3.png)
+![目标步骤概述第3步](../assets/api/streaming-destination/step3.png)
 
 在此步骤中，您将设置到所需流目标的连接。 这包括两个子步骤，如下所述。
 
-1. 首先，必须通过设置基本连接来执行对流目标的访问授权调用。
-2. 然后，使用基本连接ID，您将进行另一次调用，在其中创建目标连接，该连接指定存储帐户中要传送导出数据的位置，以及将导出的数据的格式。
+1. 首先，您必须通过设置基本连接来执行调用以授权对流目标的访问。
+2. 然后，使用基本连接ID，您将再次调用，以在其中创建目标连接，该连接指定将传送导出数据的存储帐户位置以及将导出的数据格式。
 
-### 授权访问流目标
+### 授权对流目标的访问
 
 **API格式**
 
@@ -234,7 +233,7 @@ POST /connections
 
 >[!IMPORTANT]
 >
->以下示例包含前缀为`//`的代码注释。 这些注释突出显示了必须对不同的流目标使用不同值的位置。 请在使用代码片断之前删除注释。
+>以下示例包含前缀为`//`的代码注释。 这些注释会突出显示不同流目标必须使用不同值的位置。 请在使用代码片段之前删除注释。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -266,18 +265,18 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标的列表步骤 [中获得的连接规范ID](#get-the-list-of-available-destinations)。
-* `{AUTHENTICATION_CREDENTIALS}`:填写流目标的名称： `Aws Kinesis authentication credentials` 或 `Azure EventHub authentication credentials`者
-* `{ACCESS_ID}`: *用于 [!DNL Amazon Kinesis] 连接。* 您的Amazon Kinesis存储位置访问ID。
-* `{SECRET_KEY}`: *用于 [!DNL Amazon Kinesis] 连接。* 您Amazon Kinesis存储位置的密钥。
-* `{REGION}`: *用于 [!DNL Amazon Kinesis] 连接。* 您帐户中平台 [!DNL Amazon Kinesis] 将流式传输您数据的区域。
-* `{SAS_KEY_NAME}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写您的SAS密钥名称。了解在[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)中使用SAS键对[!DNL Azure Event Hubs]进行身份验证。
-* `{SAS_KEY}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写您的SAS密钥。了解在[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)中使用SAS键对[!DNL Azure Event Hubs]进行身份验证。
-* `{EVENT_HUB_NAMESPACE}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写平台 [!DNL Azure Event Hubs] 将在何处传输您的数据。有关详细信息，请参阅[!DNL Microsoft]文档中的[创建事件集线器命名空间](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)。
+* `{CONNECTION_SPEC_ID}`:使用在获取可用目标列表步骤中 [获得的连接规范ID](#get-the-list-of-available-destinations)。
+* `{AUTHENTICATION_CREDENTIALS}`:填写流目标的名称： `Aws Kinesis authentication credentials` 或 `Azure EventHub authentication credentials`。
+* `{ACCESS_ID}`: *用于 [!DNL Amazon Kinesis] 连接。* 您的Amazon Kinesis存储位置的访问ID。
+* `{SECRET_KEY}`: *用于 [!DNL Amazon Kinesis] 连接。* 您的Amazon Kinesis存储位置的密钥。
+* `{REGION}`: *用于 [!DNL Amazon Kinesis] 连接。* 您帐户中Platform [!DNL Amazon Kinesis] 将在其中传输您数据的区域。
+* `{SAS_KEY_NAME}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写SAS密钥名称。了解在[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)中使用SAS密钥对[!DNL Azure Event Hubs]进行身份验证的信息。
+* `{SAS_KEY}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写SAS密钥。了解在[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)中使用SAS密钥对[!DNL Azure Event Hubs]进行身份验证的信息。
+* `{EVENT_HUB_NAMESPACE}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写Platform将 [!DNL Azure Event Hubs] 在其中流您数据的命名空间。有关更多信息，请参阅[!DNL Microsoft]文档中的[创建事件中心命名空间](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace) 。
 
 **响应**
 
-成功的响应包含基连接的唯一标识符(`id`)。 在下一步创建目标连接时，按需要存储此值。
+成功的响应包含基本连接的唯一标识符(`id`)。 在创建目标连接的下一步中根据需要存储此值。
 
 ```json
 {
@@ -297,7 +296,7 @@ POST /targetConnections
 
 >[!IMPORTANT]
 >
->以下示例包含前缀为`//`的代码注释。 这些注释突出显示了必须对不同的流目标使用不同值的位置。 请在使用代码片断之前删除注释。
+>以下示例包含前缀为`//`的代码注释。 这些注释会突出显示不同流目标必须使用不同值的位置。 请在使用代码片段之前删除注释。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -327,14 +326,14 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 ```
 
 * `{BASE_CONNECTION_ID}`:使用您在上述步骤中获得的基本连接ID。
-* `{CONNECTION_SPEC_ID}`:使用您在步骤获取可用目标 [的列表中获得的连接规范](#get-the-list-of-available-destinations)。
-* `{NAME_OF_DATA_STREAM}`: *用于 [!DNL Amazon Kinesis] 连接。* 在帐户中提供现有数据流的 [!DNL Amazon Kinesis] 名称。平台会将数据导出到此流。
-* `{REGION}`: *用于 [!DNL Amazon Kinesis] 连接。* 您的Amazon Kinesis帐户中的平台将在此传输您的数据的区域。
-* `{EVENT_HUB_NAME}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写平台 [!DNL Azure Event Hub] 将在其中流式传输您的数据的名称。有关详细信息，请参阅[!DNL Microsoft]文档中的[创建事件集线器](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub)。
+* `{CONNECTION_SPEC_ID}`:使用您在获取可用目标列表 [步骤中获得的连接规范](#get-the-list-of-available-destinations)。
+* `{NAME_OF_DATA_STREAM}`: *用于 [!DNL Amazon Kinesis] 连接。* 在帐户中提供现有数据流的名 [!DNL Amazon Kinesis] 称。平台会将数据导出到此流。
+* `{REGION}`: *用于 [!DNL Amazon Kinesis] 连接。* Amazon Kinesis帐户中Platform将在其中传输您数据的区域。
+* `{EVENT_HUB_NAME}`: *用于 [!DNL Azure Event Hubs] 连接。* 填写Platform将 [!DNL Azure Event Hub] 在其中传输您的数据的名称。有关更多信息，请参阅[!DNL Microsoft]文档中的[创建事件中心](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) 。
 
 **响应**
 
-成功的响应返回新创建的目标到流目标的连接的唯一标识符(`id`)。 按照后续步骤中的要求存储此值。
+成功的响应会返回新创建的目标与流目标连接的唯一标识符(`id`)。 按照后续步骤中的要求存储此值。
 
 ```json
 {
@@ -344,11 +343,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 ## 创建数据流
 
-![目标步骤概述步骤4](../assets/api/streaming-destination/step4.png)
+![目标步骤概述第4步](../assets/api/streaming-destination/step4.png)
 
-使用您在前面的步骤中获得的ID，您现在可以在Experience Platform数据与要激活数据的目标之间创建数据流。 将此步骤视为构建Experience Platform和目标之间的管道，数据随后将通过管道流动。
+现在，使用您在上面步骤中获取的ID，您可以在Experience Platform数据与要将数据激活到的目标之间创建数据流。 将此步骤视为构建Experience Platform与所需目标之间的管道，数据稍后将通过管道流动。
 
-要创建POST流，请执行如下所示的数据请求，同时在负载中提供以下所述的值。
+要创建数据流，请执行如下所示的POST请求，同时在负载中提供以下所述的值。
 
 执行以下POST请求以创建数据流。
 
@@ -401,13 +400,13 @@ curl -X POST \
 }
 ```
 
-* `{FLOW_SPEC_ID}`:基于用户档案的目标的流规范ID为 `71471eba-b620-49e4-90fd-23f1fa0174d8`。在调用中使用此值。
-* `{SOURCE_CONNECTION_ID}`:使用在步骤连接到Experience Platform中获 [得的源连接ID](#connect-to-your-experience-platform-data)。
-* `{TARGET_CONNECTION_ID}`:使用您在步骤连接到流目标时获 [得的目标连接ID](#connect-to-streaming-destination)。
+* `{FLOW_SPEC_ID}`:基于用户档案的目标的流量规范ID是 `71471eba-b620-49e4-90fd-23f1fa0174d8`。在调用中使用此值。
+* `{SOURCE_CONNECTION_ID}`:使用您在连接到Experience Platform [步骤中获](#connect-to-your-experience-platform-data)得的源连接ID。
+* `{TARGET_CONNECTION_ID}`:使用您在连接到流目标 [步骤中获](#connect-to-streaming-destination)得的目标连接ID。
 
 **响应**
 
-成功的响应返回新创建的数据流的ID(`id`)和`etag`。 记下这两个值。 正如您在下一步中所做的那样，激活区段。
+成功的响应会返回新创建的数据流的ID(`id`)和`etag`。 请记下这两个值。 正如您在下一步中所做的那样，激活区段。
 
 ```json
 {
@@ -417,13 +416,13 @@ curl -X POST \
 ```
 
 
-## 将数据激活到新目标{#activate-data}
+## 将数据激活到新目标 {#activate-data}
 
 ![目标步骤概述步骤5](../assets/api/streaming-destination/step5.png)
 
-创建了所有连接和数据流后，现在您可以将用户档案数据激活到流平台。 在此步骤中，您可以选择要发送到目标的区段和用户档案属性，并可以计划和将数据发送到目标。
+创建了所有连接和数据流后，现在您可以将配置文件数据激活到流平台。 在此步骤中，您可以选择要发送到目标的区段和配置文件属性，并可以安排数据发送到目标。
 
-要将区段激活到新目标，必须执行JSONPATCH操作，如下例所示。 您可以在一次调用中激活多个区段和用户档案属性。 要进一步了解JSONPATCH，请参阅[RFC规范](https://tools.ietf.org/html/rfc6902)。
+要将区段激活到新目标，您必须执行JSONPATCH操作，如下例所示。 您可以在一次调用中激活多个区段和配置文件属性。 要了解有关JSONPATCH的更多信息，请参阅[RFC规范](https://tools.ietf.org/html/rfc6902)。
 
 **API格式**
 
@@ -468,22 +467,22 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 ]
 ```
 
-* `{DATAFLOW_ID}`:使用您在上一步中获得的数据流。
-* `{ETAG}`:使用您在上一步中获得的标签。
-* `{SEGMENT_ID}`:提供要导出到此目标的区段ID。要检索要激活的区段的区段ID，请转到&#x200B;**https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/**，在左侧导航菜单中选择&#x200B;**[!UICONTROL Segmentation Service API]**，然后在&#x200B;**[!UICONTROL Segment Definitions]**&#x200B;中查找`GET /segment/definitions`操作。
+* `{DATAFLOW_ID}`:使用在上一步中获取的数据流。
+* `{ETAG}`:使用您在上一步中获取的标记。
+* `{SEGMENT_ID}`:提供要导出到此目标的区段ID。要检索要激活的区段的区段ID，请转到&#x200B;**https://www.adobe.io/apis/experienceplatform/home/api-reference.html#/**，在左侧导航菜单中选择&#x200B;**[!UICONTROL 分段服务API]**，然后在&#x200B;**[!UICONTROL 区段定义]**&#x200B;中查找`GET /segment/definitions`操作。
 * `{PROFILE_ATTRIBUTE}`:例如， `personalEmail.address` 或  `person.lastName`
 
 **响应**
 
-查找202 OK响应。 不返回响应正文。 要验证请求是否正确，请参阅下一步验证数据流。
+查找202 OK响应。 未返回响应主体。 要验证请求是否正确，请参阅下一步验证数据流。
 
 ## 验证数据流
 
 ![目标步骤概述步骤6](../assets/api/streaming-destination/step6.png)
 
-作为教程的最后一步，您应验证区段和用户档案属性确实已正确映射到数据流。
+在教程的最后一步中，您应该验证区段和配置文件属性是否确实已正确映射到数据流。
 
-要验证此项，请执行以下GET请求：
+要验证此请求，请执行以下GET请求：
 
 **API格式**
 
@@ -504,11 +503,11 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 ```
 
 * `{DATAFLOW_ID}`:使用上一步中的数据流。
-* `{ETAG}`:使用上一步中的etag。
+* `{ETAG}`:使用上一步中的标记。
 
 **响应**
 
-返回的响应应包含在`transformations`参数中您在上一步中提交的区段和用户档案属性。 响应中的示例`transformations`参数可能如下所示：
+返回的响应应包含在`transformations`参数中，以及您在上一步中提交的区段和配置文件属性。 响应中的`transformations`参数示例如下所示：
 
 ```json
 "transformations": [
@@ -554,7 +553,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 
 >[!IMPORTANT]
 >
-> 除了步骤[将用户档案激活到新目标](#activate-data)中的属性和区段之外，[!DNL AWS Kinesis]和[!DNL Azure Event Hubs]中导出的数据还将包含有关标识映射的信息。 这表示导出的用户档案的身份（例如[ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html)、移动ID、Google ID、电子邮件地址等）。 请参阅以下示例。
+> 除了配置文件属性和步骤[将数据激活到新目标](#activate-data)中的区段外，[!DNL AWS Kinesis]和[!DNL Azure Event Hubs]中的导出数据还将包含有关身份映射的信息。 这表示导出的配置文件的标识（例如[ECID](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html)、移动ID、Google ID、电子邮件地址等）。 请参阅下面的示例。
 
 ```json
 {
@@ -594,34 +593,34 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 }
 ```
 
-## 使用Postman集合连接到流目标{#collections}
+## 使用Postman集合连接到流目标  {#collections}
 
-要以更简化的方式连接到本教程中介绍的流目标，您可以使用[[!DNL Postman]](https://www.postman.com/)。
+要以更简化的方式连接到本教程中描述的流目标，您可以使用[[!DNL Postman]](https://www.postman.com/)。
 
-[!DNL Postman] 是一种工具，可用于进行API调用和管理预定义调用和环境库。
+[!DNL Postman] 是一个工具，可用于进行API调用并管理预定义调用和环境的库。
 
-对于此特定教程，已附加以下[!DNL Postman]集合：
+在本特定教程中，已附加以下[!DNL Postman]集合：
 
-* [!DNL AWS Kinesis] [!DNL Postman] collection
-* [!DNL Azure Event Hubs] [!DNL Postman] collection
+* [!DNL AWS Kinesis] [!DNL Postman] 收藏集
+* [!DNL Azure Event Hubs] [!DNL Postman] 收藏集
 
-单击[此处](../assets/api/streaming-destination/DestinationPostmanCollection.zip)下载集合存档。
+单击[此处](../assets/api/streaming-destination/DestinationPostmanCollection.zip)下载收藏集存档。
 
-每个集合分别包含[!DNL AWS Kinesis]和[!DNL Azure Event Hub]所需的请求和环境变量。
+每个集合分别包含[!DNL AWS Kinesis]和[!DNL Azure Event Hub]的必需请求和环境变量。
 
-### 如何使用Postman集合
+### 如何使用Postman收藏集
 
 要使用附加的[!DNL Postman]集合成功连接到目标，请执行以下步骤：
 
 * 下载并安装[!DNL Postman];
-* [下](../assets/api/streaming-destination/DestinationPostmanCollection.zip) 载并解压缩附加的集合；
-* 将收藏集从相应的文件夹导入邮递员；
-* 按照本文的说明填写环境变量；
-* 根据本文中的说明，运行来自Postman的[!DNL API]请求。
+* [](../assets/api/streaming-destination/DestinationPostmanCollection.zip) 下载并解压缩附加的收藏集；
+* 将收藏集从相应的文件夹导入Postman;
+* 按照本文中的说明填写环境变量；
+* 根据本文中的说明，运行Postman的[!DNL API]请求。
 
 ## 后续步骤
 
-通过本教程，您已成功将平台连接到您的首选流目标之一，并设置到相应目标的数据流。 传出数据现在可用于目标位置，以便进行客户分析或您希望执行的任何其他数据操作。 有关更多详细信息，请参阅以下页面：
+通过阅读本教程，您已成功将Platform连接到您的其中一个首选流目标，并设置到相应目标的数据流。 传出数据现在可用于客户分析目标或您可能希望执行的任何其他数据操作。 有关更多详细信息，请参阅以下页面：
 
 * [目标概述](../home.md)
 * [目标目录概述](../catalog/overview.md)
