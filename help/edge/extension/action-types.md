@@ -4,10 +4,10 @@ description: 了解Adobe Experience Platform Launch中Adobe Experience Platform 
 solution: Experience Platform
 feature: Web SDK
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: 27b26605cd03ff6d83a9a5bd308e55fcdc955da6
+source-git-commit: 17ebf50965136f2c075f21eb3ecdcb1ce6da0b7d
 workflow-type: tm+mt
-source-wordcount: '547'
-ht-degree: 4%
+source-wordcount: '595'
+ht-degree: 3%
 
 ---
 
@@ -24,6 +24,7 @@ ht-degree: 4%
 “发送事件”操作类型中还有其他一些字段，根据您的实施，这些字段也会很有用。 请注意，这些字段都是可选的。
 
 - **类型：** 利用此字段，可指定将在XDM架构中记录的事件类型。有关默认事件类型的更多信息，请参阅[文档](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#using-the-sendbeacon-api) 。
+- **数据：** 使用此字段可发送与XDM架构不匹配的数据。如果您尝试更新Adobe Target配置文件或发送Target Recommendations属性，则此字段非常有用。 有关示例，请参阅我们的[文档](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en)。
 - **合并ID:** 如果要为事件指 [定](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/merging-event-data.html?lang=en#fundamentals) 合并ID，可以在此字段中执行此操作。请注意，下游解决方案当前无法合并您的事件数据。
 - **数据集ID:** 如果您需要将数据发送到数据流中指定的数据集以外的数据集，则可以在此处指定该数据集ID。
 - **文档将卸载：** 如果要确保即使用户离开页面，事件也会到达服务器，请选中“文档将 **[!UICONTROL 卸载”]** 复选框。这允许事件到达服务器，但会忽略响应。
