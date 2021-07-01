@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Real-time Customer Profile 指南
 user-guide-description: 合并客户视图，跨渠道创建统一的客户互动视图。
 feature: 配置文件
-source-git-commit: 1c2e4cd2b4070f3844a9848b5574e9d5b1688926
+source-git-commit: e56898542bc9cd305173fc2d7f3b6dd53dca7eb2
 workflow-type: tm+mt
-source-wordcount: '135'
-ht-degree: 19%
+source-wordcount: '139'
+ht-degree: 18%
 
 ---
 
@@ -17,9 +17,10 @@ ht-degree: 19%
 * [配置文件概述（视频）](video/profile-overview.md)
 * [[!DNL Profile] 和分段护栏](guardrails.md)
 * [[!DNL Profile] 仪表板](ui/profile-dashboard.md)
+* [数据集的生存时间(TTL)](apply-ttl.md)
 * [!DNL Profile] API {#api}
    * [概述](api/overview.md)
-   * [入门指南](api/getting-started.md)
+   * [快速入门](api/getting-started.md)
    * [边缘投影](api/edge-projections.md)
    * [实体（[!DNL Profile]访问）](api/entities.md)
    * [导出作业（[!DNL Profile]导出）](api/export-jobs.md)
