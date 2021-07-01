@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK跟踪事件
 description: 了解如何跟踪Adobe Experience Platform Web SDK事件。
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon；发送信标；documentUnloading；文档卸载；onBeforeEventSend;
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: 3f5f17275e28ba35a302a42d66b151c4234bc79c
+source-git-commit: a6fca344e6b307e503e29ca7dda3534cdea62f53
 workflow-type: tm+mt
-source-wordcount: '1462'
+source-wordcount: '1460'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 发送到Adobe Experience Cloud的数据分为两类：
 
 * XDM数据
-* 非XDM数据（当前不支持）
+* 非XDM数据
 
 ## 发送XDM数据
 
@@ -75,7 +75,7 @@ dataLayer.commerce = null;
 >在XDM字段中，每个事件中可发送的数据均受32 KB的限制。
 
 
-### 发送非XDM数据
+## 发送非XDM数据
 
 与XDM架构不匹配的数据应使用`sendEvent`命令的`data`选项发送。 Web SDK版本2.5.0及更高版本支持此功能。
 
@@ -85,7 +85,7 @@ dataLayer.commerce = null;
 
 **如何将用户档案和Recommendations属性发送到Adobe Target:**
 
-```
+```javascript
 alloy("sendEvent", {
   data: {
     __adobe: {
@@ -231,7 +231,7 @@ alloy("sendEvent", {
   });
 ```
 
-## 全局修改事件{#modifying-events-globally}
+## 全局修改事件 {#modifying-events-globally}
 
 如果要全局添加、删除或修改事件中的字段，可以配置`onBeforeEventSend`回调。  每次发送事件时都会调用此回调。  此回调在具有`xdm`字段的事件对象中传递。  修改`content.xdm`以更改随事件发送的数据。
 
