@@ -3,9 +3,9 @@ keywords: Google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用在线和离线数据，通过Google自有资产和运营资产(如搜索、购物、Gmail和YouTube)来联系客户并与其重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: da069c6c931bfd2af38b40fc061d5eb633aba9ea
+source-git-commit: 4fed44edb3e201422f765493c9019be1cddffccc
 workflow-type: tm+mt
-source-wordcount: '1521'
+source-wordcount: '1548'
 ht-degree: 0%
 
 ---
@@ -32,11 +32,11 @@ ht-degree: 0%
 
 要推广此版本，他们会将电子邮件地址从其CRM数据库上传到Experience Platform，并使用电子邮件地址作为标识符。 区段是根据拥有旧手机型号的客户创建的。 然后，区段会发送到[!DNL Google Customer Match]，以便公司可以定位当前客户、拥有旧手机型号的客户以及[!DNL YouTube]上的类似客户。
 
-## [!DNL Google Customer Match]目标{#data-governance}的数据管理
+## [!DNL Google Customer Match]目标的数据管理 {#data-governance}
 
 Experience Platform中的某些目标对于发送到目标平台或从目标平台接收的数据具有特定规则和义务。 您有责任了解数据的限制和义务，以及如何在Adobe Experience Platform和目标平台中使用该数据。 Adobe Experience Platform提供了数据管理工具，可帮助您管理其中一些数据使用义务。 [进一](../../../data-governance/labels/overview.md) 步了解数据管理工具和策略。
 
-## 支持的标识{#supported-identities}
+## 支持的身份 {#supported-identities}
 
 [!DNL Google Customer Match] 支持激活下表所述的身份。了解有关[identities](/help/identity-service/namespaces.md)的更多信息。
 
@@ -48,13 +48,15 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 | email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明，分别对纯文本和经过哈希处理的电子邮件地址使用适当的命名空间。 当源字段包含未哈希属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。 |
 | user_id | 自定义用户ID | 如果源标识是自定义命名空间，请选择此目标标识。 |
 
-## 导出类型{#export-type}
+## 导出类型 {#export-type}
 
 **区段导出**  — 您正在导出区段（受众）的所有成员，以及目标中使用的标识符（名称、电话号码和其他） [!DNL Google Customer Match] 。
 
-## [!DNL Google Customer Match] 帐户先决条件  {#google-account-prerequisites}
+## [!DNL Google Customer Match] 帐户先决条件 {#google-account-prerequisites}
 
 在Experience Platform中设置[!DNL Google Customer Match]目标之前，请确保阅读并遵循Google关于使用[!DNL Customer Match]的策略，如[Google支持文档](https://support.google.com/google-ads/answer/6299717)中所述。
+
+接下来，确保为[!DNL Standard]或更高访问级别配置了[!DNL Google]帐户。 有关详细信息，请参阅[Google Ads文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1)。
 
 ### 允许列表 {#allowlist}
 
@@ -62,13 +64,13 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 
 具有合规帐户的客户会自动被Google允许列出。
 
-## ID匹配要求{#id-matching-requirements}
+## ID匹配要求 {#id-matching-requirements}
 
 [!DNL Google] 要求不要发送任何个人身份信息(PII)。因此，激活到[!DNL Google Customer Match]的受众可以与&#x200B;*哈希*&#x200B;标识符（如电子邮件地址或电话号码）关联。
 
 根据您摄取到Adobe Experience Platform中的ID类型，您必须遵循其相应要求。
 
-## 电话号码哈希处理要求{#phone-number-hashing-requirements}
+## 电话号码哈希处理要求 {#phone-number-hashing-requirements}
 
 在[!DNL Google Customer Match]中激活电话号码的方法有两种：
 
@@ -79,7 +81,7 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 >
 >无法在[!DNL Google Customer Match]中激活被摄取到`Phone`命名空间的电话号码。
 
-## 电子邮件哈希处理要求{#hashing-requirements}
+## 电子邮件哈希处理要求 {#hashing-requirements}
 
 您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或在Experience Platform中明确使用电子邮件地址，并在激活时对它们进行[!DNL Platform]哈希处理。
 
@@ -95,7 +97,7 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 
 如果您选择自行对电子邮件地址进行哈希处理，请确保符合上面链接中所述的Google要求。
 
-## 使用自定义命名空间{#custom-namespaces}
+## 使用自定义命名空间 {#custom-namespaces}
 
 在使用`User_ID`命名空间将数据发送到Google之前，请确保使用[!DNL gTag]同步您自己的标识符。 有关详细信息，请参阅[Google官方文档](https://support.google.com/google-ads/answer/9199250)。
 
@@ -110,7 +112,7 @@ Attribute source data is not automatically hashed. When your source field contai
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
-## 连接到目标{#connect-destination}
+## 连接到目标 {#connect-destination}
 
 在&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**&#x200B;中，滚动到&#x200B;**[!UICONTROL Advertising]**&#x200B;类别。 选择[!DNL Google Customer Match]，然后选择&#x200B;**[!UICONTROL 配置]**。
 
@@ -159,12 +161,12 @@ Attribute source data is not automatically hashed. When your source field contai
 
 有关如何查找[!DNL App ID]的详细信息，请参阅[Google官方文档](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid)。
 
-## 验证区段激活是否成功{#verify-activation}
+## 验证区段激活是否成功 {#verify-activation}
 
 完成激活流程后，切换到您的&#x200B;**[!UICONTROL Google Ads]**&#x200B;帐户。 激活的区段将作为客户列表显示在您的Google帐户中。 请注意，根据区段大小，某些受众不会填充，除非要提供的活动用户超过100个。
 
 将区段同时映射到[!DNL IDFA]和[!DNL GAID]移动ID时， [!DNL Google Customer Match]会为每个ID映射创建一个单独的区段。 您的[!DNL Google Ads]帐户显示两个不同的区段，一个用于[!DNL IDFA]，另一个用于[!DNL GAID]映射。
 
-## 额外资源{#additional-resources}
+## 额外资源 {#additional-resources}
 
 * [集成Google客户匹配 — 视频教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
