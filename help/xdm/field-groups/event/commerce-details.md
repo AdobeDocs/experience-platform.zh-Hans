@@ -1,10 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；架构；架构；XDM;ExperienceEvent；字段；架构；架构；架构设计；字段组；字段组；
+keywords: Experience Platform;home;popular topics;schema;Schema;XDM;ExperienceEvent;fields;schemas;Schemas;Schema design;field group;field group;
 solution: Experience Platform
 title: 商务详细信息架构字段组
 topic-legacy: overview
 description: 本文档概述了“商务详细信息”架构字段组。
-source-git-commit: b22dce52563d5f3bbd1796c11d7c7b2a49fa6d5f
+source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
 workflow-type: tm+mt
 source-wordcount: '184'
 ht-degree: 3%
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->多个架构字段组的名称已更改。 有关详细信息，请参阅[字段组名称更新](../name-updates.md)上的文档。
+>The names of several schema field groups have changed. 有关详细信息，请参阅[字段组名称更新](../name-updates.md)上的文档。
 
 [!UICONTROL 商务] 详细信息是类的标准架构字段 [[!DNL XDM ExperienceEvent] 组](../../classes/experienceevent.md)，用于描述商务数据，如产品信息（SKU、名称、数量）和标准购物车操作（订单、结账、放弃）。
 
@@ -29,7 +29,7 @@ ht-degree: 3%
 
 {style=&quot;table-layout:auto&quot;}
 
-有关字段组的更多详细信息，请参阅公共XDM存储库：
+For more details on the field group, refer to the public XDM repository:
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/mixins/experience-event/experienceevent-commerce.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/mixins/experience-event/experienceevent-commerce.schema.json)
+* [填充的示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-commerce.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-commerce.schema.json)
