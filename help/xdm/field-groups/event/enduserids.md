@@ -5,7 +5,7 @@ title: 最终用户ID详细信息架构字段组
 topic-legacy: overview
 description: 本文档概述了最终用户ID详细信息架构字段组。
 exl-id: ff5b74f4-7700-4d10-821e-b50f80ea8c05
-source-git-commit: b22dce52563d5f3bbd1796c11d7c7b2a49fa6d5f
+source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
 workflow-type: tm+mt
 source-wordcount: '214'
 ht-degree: 2%
@@ -38,5 +38,5 @@ ht-degree: 2%
 
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/mixins/experience-event/experienceevent-enduserids.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/mixins/experience-event/experienceevent-enduserids.schema.json)
+* [填充的示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-enduserids.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-enduserids.schema.json)
