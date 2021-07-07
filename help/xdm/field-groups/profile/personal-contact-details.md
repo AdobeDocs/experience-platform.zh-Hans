@@ -5,7 +5,7 @@ title: 个人联系人详细信息架构字段组
 topic-legacy: overview
 description: 本文档概述了个人联系人详细信息架构字段组。
 exl-id: a78d9aee-ecf6-45a9-b270-cdad5b800a86
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
 workflow-type: tm+mt
 source-wordcount: '169'
 ht-degree: 7%
@@ -35,5 +35,5 @@ ht-degree: 7%
 
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-personal-details.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-personal-details.schema.json)
+* [填充的示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
