@@ -5,7 +5,7 @@ title: 区段成员资格详细信息架构字段组
 topic-legacy: overview
 description: 本文档概述了区段成员资格详细信息架构字段组。
 exl-id: 4d463f3a-2247-4307-8afe-9527e7fd72a7
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
 workflow-type: tm+mt
 source-wordcount: '426'
 ht-degree: 2%
@@ -84,5 +84,5 @@ ht-degree: 2%
 
 有关字段组的更多详细信息，请参阅公共XDM存储库：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-personal-details.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/mixins/profile/profile-personal-details.schema.json)
+* [填充的示例](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/fieldgroups/profile/profile-personal-details.schema.json)
