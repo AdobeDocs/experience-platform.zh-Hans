@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: 73a8d65255359de6cff6a9410310554ca419fe1c
+source-git-commit: a451e462ac38d157335568310e26cf6375699c6b
 workflow-type: tm+mt
-source-wordcount: '2806'
+source-wordcount: '2928'
 ht-degree: 0%
 
 ---
@@ -152,6 +152,9 @@ ht-degree: 0%
 3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
 4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
 
+>[!IMPORTANT]
+>
+>如果对于已导出的区段，将文件导出计划从任何计划配置更改为完整文件导出，并将&#x200B;**[!UICONTROL Frequency]**&#x200B;设置为&#x200B;**[!UICONTROL Once]**，则不会导出新的回填文件。 要导出具有不同计划的新回填文件，您必须创建新的目标实例。 这是一项限制，将在未来版本中加以解决。
 
 ### 导出增量文件 {#export-incremental-files}
 
@@ -178,6 +181,10 @@ ht-degree: 0%
 
 3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
 4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
+
+>[!IMPORTANT]
+>
+>如果对于已导出的区段，将文件导出计划从任何计划配置更改为完整文件导出，并将&#x200B;**[!UICONTROL Frequency]**&#x200B;设置为&#x200B;**[!UICONTROL Once]**，则不会导出新的回填文件。 要导出具有不同计划的新回填文件，您必须创建新的目标实例。 这是一项限制，将在未来版本中加以解决。
 
 ### 配置文件名 {#file-names}
 
