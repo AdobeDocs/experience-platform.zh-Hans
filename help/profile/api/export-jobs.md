@@ -1,47 +1,46 @@
 ---
-keywords: Experience Platform;用户档案；实时客户用户档案；疑难解答；API
+keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
 title: 导出作业API端点
 topic-legacy: guide
 type: Documentation
-description: 实时客户用户档案使您能够通过将来自多个来源的数据（包括属性数据和行为数据）汇总在Adobe Experience Platform中为各个客户构建单一视图。 用户档案数据随后可导出到数据集以进一步处理。
+description: 实时客户配置文件允许您通过将来自多个来源的数据（包括属性数据和行为数据）汇总在一起，在Adobe Experience Platform中构建单个客户视图。 然后，可以将配置文件数据导出到数据集以进一步处理。
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 453e120fa20232533289ee5ff34821ce8c0c310b
 workflow-type: tm+mt
-source-wordcount: '1542'
+source-wordcount: '1526'
 ht-degree: 2%
 
 ---
 
 # 导出作业端点
 
-[!DNL Real-time Customer Profile] 通过将来自多个来源的数据（包括属性数据和行为数据）汇总在一起，使您能够为单个客户构建视图。用户档案数据随后可导出到数据集以进一步处理。 例如，可以导出[!DNL Profile]受众中的用户档案段以用于激活，也可以导出属性以用于报告。
+[!DNL Real-time Customer Profile] 通过将来自多个来源的数据（包括属性数据和行为数据）汇总在一起，使您能够构建单个客户视图。然后，可以将配置文件数据导出到数据集以进一步处理。 例如，可以导出[!DNL Profile]数据中的受众区段以进行激活，也可以导出配置文件属性以进行报告。
 
-本文档提供使用[用户档案API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)创建和管理导出作业的分步说明。
+本文档提供了使用[配置文件API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)创建和管理导出作业的分步说明。
 
 >[!NOTE]
 >
->本指南介绍在[!DNL Profile API]中使用导出作业。 有关如何为Adobe Experience Platform Segmentation Service管理导出作业的信息，请参阅分段API](../../profile/api/export-jobs.md)中[导出作业的指南。
+>本指南介绍[!DNL Profile API]中导出作业的使用。 有关如何管理Adobe Experience Platform Segmentation Service的导出作业的信息，请参阅分段API](../../profile/api/export-jobs.md)中[导出作业的指南。
 
-除了创建导出作业外，您还可以使用`/entities`端点访问[!DNL Profile]数据，也称为“[!DNL Profile Access]”。 有关详细信息，请参阅[entities endpoint guide](./entities.md)。 有关如何使用UI访问[!DNL Profile]数据的步骤，请参阅[用户指南](../ui/user-guide.md)。
+除了创建导出作业外，您还可以使用`/entities`端点（也称为“[!DNL Profile Access]”）访问[!DNL Profile]数据。 有关更多信息，请参阅[entities endpoint guide](./entities.md) 。 有关如何使用UI访问[!DNL Profile]数据的步骤，请参阅[用户指南](../ui/user-guide.md)。
 
-## 入门指南
+## 快速入门
 
-本指南中使用的API端点是[!DNL Real-time Customer Profile] API的一部分。 在继续之前，请查阅[快速入门指南](getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
+本指南中使用的API端点是[!DNL Real-time Customer Profile] API的一部分。 在继续操作之前，请查阅[快速入门指南](getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及有关成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
 
 ## 创建导出作业
 
-导出[!DNL Profile]数据需要先创建要将数据导出到的数据集，然后启动新的导出作业。 这两个步骤都可以使用Experience Platform API实现，前者使用目录服务API，后者使用实时客户用户档案API。 以下各节概述了完成每个步骤的详细说明。
+要导出[!DNL Profile]数据，首先需要创建一个要将数据导出到的数据集，然后启动新的导出作业。 这两个步骤都可以使用Experience PlatformAPI来实现，前者使用目录服务API，后者使用实时客户资料API。 有关完成每个步骤的详细说明，请参见下面的章节。
 
 ### 创建目标数据集
 
-导出[!DNL Profile]数据时，必须先创建目标数据集。 必须正确配置数据集以确保导出成功。
+导出[!DNL Profile]数据时，必须首先创建目标数据集。 必须正确配置数据集，以确保成功导出。
 
-一个关键注意事项是数据集所基于的模式（`schemaRef.id`在以下API示例请求中）。 要导出用户档案数据，数据集必须基于[!DNL XDM Individual Profile]合并模式(`https://ns.adobe.com/xdm/context/profile__union`)。 合并模式是系统生成的只读模式，它聚合共享同一类的模式的字段。 在这种情况下，这是[!DNL XDM Individual Profile]类。 有关合并视图模式的详细信息，请参阅模式合成指南基础知识中的[合并部分](../../xdm/schema/composition.md#union)。
+其中一个关键注意事项是数据集所基于的架构（在下面的API示例请求中为`schemaRef.id`）。 要导出配置文件数据，数据集必须基于[!DNL XDM Individual Profile]并集架构(`https://ns.adobe.com/xdm/context/profile__union`)。 并集模式是系统生成的只读模式，用于聚合共享相同类的模式的字段。 在本例中，为[!DNL XDM Individual Profile]类。 有关并集视图架构的更多信息，请参阅架构组合指南基础知识中的[并集部分](../../xdm/schema/composition.md#union)。
 
-本教程中的以下步骤概述了如何使用[!DNL Catalog] API创建引用[!DNL XDM Individual Profile]合并模式的数据集。 您还可以使用[!DNL Platform]用户界面创建引用合并模式的数据集。 [此UI教程介绍了使用UI的步骤，用于导出区段](../../segmentation/tutorials/create-dataset-export-segment.md)，但也适用于此。 完成后，您可以返回本教程，继续执行启动新导出作业](#initiate)的步骤。[
+本教程中的后续步骤将概述如何使用[!DNL Catalog] API创建引用[!DNL XDM Individual Profile]并集架构的数据集。 您还可以使用[!DNL Platform]用户界面创建引用并集架构的数据集。 [此UI教程中概述了使用UI的步骤，介绍了如何导出区段](../../segmentation/tutorials/create-dataset-export-segment.md)，但此处也适用。 完成后，您可以返回到本教程以继续执行[启动新导出作业的步骤](#initiate)。
 
-如果您已经有一个兼容数据集并且知道其ID，则可以直接继续执行[启动新导出作业的步骤](#initiate)。
+如果您已经有一个兼容的数据集并且知道其ID，则可以直接继续执行[启动新导出作业的步骤](#initiate)。
 
 **API格式**
 
@@ -51,7 +50,7 @@ POST /dataSets
 
 **请求**
 
-以下请求将创建新数据集，在有效负荷中提供配置参数。
+以下请求会创建一个新数据集，并在有效负载中提供配置参数。
 
 ```shell
 curl -X POST \
@@ -66,9 +65,6 @@ curl -X POST \
         "schemaRef": {
           "id": "https://ns.adobe.com/xdm/context/profile__union",
           "contentType": "application/vnd.adobe.xed+json;version=1"
-        },
-        "fileDescription": {
-          "persisted": true
         }
       }'
 ```
@@ -76,12 +72,11 @@ curl -X POST \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `name` | 数据集的描述性名称。 |
-| `schemaRef.id` | 合并集将与之关联的视图(模式)的ID。 |
-| `fileDescription.persisted` | 一个布尔值，当设置为`true`时，它使数据集能够在合并视图中保留。 |
+| `schemaRef.id` | 数据集将与之关联的并集视图（架构）的ID。 |
 
 **响应**
 
-成功的响应返回一个数组，其中包含新创建的数据集的只读、系统生成的唯一ID。 要成功导出用户档案数据，需要正确配置的数据集ID。
+成功的响应会返回一个数组，其中包含新创建数据集的只读、系统生成的唯一ID。 要成功导出配置文件数据，需要正确配置的数据集ID。
 
 ```json
 [
@@ -89,9 +84,9 @@ curl -X POST \
 ] 
 ```
 
-### 启动导出作业{#initiate}
+### 启动导出作业 {#initiate}
 
-一旦有了合并持久数据集，您就可以创建导出作业以将用户档案数据保留到数据集，方法是在实时客户用户档案API中向`/export/jobs`端点发出POST请求，并在请求正文中提供要导出的数据的详细信息。
+拥有并集持久保留的数据集后，您可以创建一个导出作业，以通过向实时客户配置文件API的`/export/jobs`端点发出POST请求并在请求正文中提供要导出的数据的详细信息，将配置文件数据保留到数据集。
 
 **API格式**
 
@@ -101,7 +96,7 @@ POST /export/jobs
 
 **请求**
 
-以下请求将创建新的导出作业，在有效负荷中提供配置参数。
+以下请求会创建一个新的导出作业，在有效负载中提供配置参数。
 
 ```shell
 curl -X POST \
@@ -137,21 +132,21 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `fields` | *（可选）* 将要包含在导出中的数据字段限制为仅包含在此参数中提供的数据字段。忽略此值将导致导出数据中包含所有字段。 |
-| `mergePolicy` | *（可选）指* 定用于管理导出数据的合并策略。当导出多个区段时，请包含此参数。 |
+| `fields` | *（可选）* 将要包含在导出中的数据字段限制为仅包含在此参数中提供的数据字段。省略此值将导致导出数据中包含所有字段。 |
+| `mergePolicy` | *（可选）* 指定用于管理导出数据的合并策略。当有多个区段要导出时，请包含此参数。 |
 | `mergePolicy.id` | 合并策略的ID。 |
-| `mergePolicy.version` | 要使用的合并策略的特定版本。 省略此值将默认为最新版本。 |
-| `additionalFields.eventList` | *（可选）通* 过提供以下一个或多个设置，控制为子对象或关联对象导出的时间序列事件字段：<ul><li>`eventList.fields`:控制要导出的字段。</li><li>`eventList.filter`:指定限制关联对象中包含的结果的条件。需要导出所需的最小值，通常是日期。</li><li>`eventList.filter.fromIngestTimestamp`:过滤器时间序列事件到在提供的时间戳后摄取的时间序列。这不是事件时间本身，而是事件的摄取时间。</li></ul> |
-| `destination` | **（必需）导** 出数据的目标信息：<ul><li>`destination.datasetId`: **（必需）** 要导出数据的数据集的ID。</li><li>`destination.segmentPerBatch`: *（可选）* 一个布尔值，如果未提供，则默认为 `false`。值`false`将所有段ID导出为单个批ID。 值`true`将一个段ID导出为一个批ID。 请注意，将值设置为`true`可能会影响批导出性能。</li></ul> |
-| `schema.name` | **（必需）** 与要导出数据的模式集关联的数据集的名称。 |
+| `mergePolicy.version` | 要使用的合并策略的特定版本。 省略此值将默认使用最新版本。 |
+| `additionalFields.eventList` | *（可选）* 通过提供以下一个或多个设置，控制为子对象或关联对象导出的时间系列事件字段：<ul><li>`eventList.fields`:控制要导出的字段。</li><li>`eventList.filter`:指定限制关联对象中包含的结果的标准。预期导出所需的最小值，通常为日期。</li><li>`eventList.filter.fromIngestTimestamp`:将时间系列事件筛选为在提供的时间戳后摄取的事件。这不是事件时间本身，而是事件的摄取时间。</li></ul> |
+| `destination` | **（必需）** 导出数据的目标信息：<ul><li>`destination.datasetId`: **（必需）** 要导出数据的数据集的ID。</li><li>`destination.segmentPerBatch`: *（可选）* 一个布尔值，如果未提供，则默认为 `false`。值`false`会将所有区段ID导出为单个批量ID。 值`true`会将一个区段ID导出为一个批ID。 请注意，将值设置为`true`可能会影响批量导出性能。</li></ul> |
+| `schema.name` | **（必需）** 与要导出数据的数据集关联的架构的名称。 |
 
 >[!NOTE]
 >
->要仅导出用户档案数据而不包括相关的时间序列数据，请从请求中删除“additionalFields”对象。
+>要仅导出配置文件数据而不包含相关的时序数据，请从请求中删除“additionalFields”对象。
 
 **响应**
 
-成功的响应返回一个数据集，其中填充了请求中指定的用户档案数据。
+成功响应会返回一个数据集，其中填充了请求中指定的配置文件数据。
 
 ```json
 {
@@ -184,9 +179,9 @@ curl -X POST \
 }
 ```
 
-## 列表所有导出作业
+## 列出所有导出作业
 
-通过对`export/jobs`端点执行GET请求，可以返回特定IMS组织的所有导出作业的列表。 该请求还支持查询参数`limit`和`offset`，如下所示。
+通过向`export/jobs`端点执行GET请求，可以返回特定IMS组织的所有导出作业的列表。 该请求还支持查询参数`limit`和`offset`，如下所示。
 
 **API格式**
 
@@ -197,10 +192,10 @@ GET /export/jobs?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `start` | 根据请求的创建时间，偏移返回的结果页。 示例: `start=4` |
-| `limit` | 限制返回的结果数。 示例: `limit=10` |
-| `page` | 按照请求的创建时间返回特定的结果页面。 示例: `page=2` |
-| `sort` | 按特定字段按升序(**`asc`**)或降序(**`desc`**)顺序对结果排序。 返回多页结果时，sort参数不起作用。 示例: `sort=updateTime:asc` |
+| `start` | 根据请求的创建时间，偏移返回的结果页面。 示例：`start=4` |
+| `limit` | 限制返回的结果数。 示例：`limit=10` |
+| `page` | 根据请求的创建时间返回特定的结果页面。 示例：`page=2` |
+| `sort` | 按特定字段的升序(**`asc`**)或降序(**`desc`**)对结果进行排序。 返回多个结果页面时，排序参数不起作用。 示例：`sort=updateTime:asc` |
 
 **请求**
 
@@ -215,7 +210,7 @@ curl -X GET \
 
 **响应**
 
-响应包括一个`records`对象，其中包含由IMS组织创建的导出作业。
+响应包含一个`records`对象，其中包含由IMS组织创建的导出作业。
 
 ```json
 {
@@ -332,7 +327,7 @@ curl -X GET \
 
 ## 监视导出进度
 
-要视图特定导出作业的详细信息，或在其处理过程中监视其状态，可向`/export/jobs`端点发出GET请求，并将导出作业的`id`包含在路径中。 一旦`status`字段返回值“SUCCEEDED”，导出作业即完成。
+要查看特定导出作业的详细信息或在其处理过程中监视其状态，您可以向`/export/jobs`端点发出GET请求，并将导出作业的`id`包含在路径中。 `status`字段返回值“SUCCEEDED”后，导出作业即完成。
 
 **API格式**
 
@@ -405,11 +400,11 @@ curl -X GET \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `batchId` | 从成功导出创建的批的标识符，用于读取用户档案数据时的查找目的。 |
+| `batchId` | 从成功导出创建的批次的标识符，用于读取用户档案数据时的查找目的。 |
 
 ## 取消导出作业
 
-Experience Platform允许您取消现有的导出作业，这可能由于多种原因（包括导出作业未完成或在处理阶段卡住）而很有用。 要取消导出作业，您可以向`/export/jobs`端点执行DELETE请求，并将要取消的导出作业的`id`包含到请求路径。
+Experience Platform允许您取消现有的导出作业，这可能由于多种原因（包括导出作业未完成或在处理阶段卡住）而有用。 要取消导出作业，您可以对`/export/jobs`端点执行DELETE请求，并将要取消的导出作业的`id`包含到请求路径中。
 
 **API格式**
 
@@ -434,27 +429,27 @@ curl -X POST \
 
 **响应**
 
-成功的删除请求返回HTTP状态204（无内容）和空的响应体，指示取消操作成功。
+成功的删除请求会返回HTTP状态204（无内容）和空的响应正文，指示取消操作已成功。
 
 ## 后续步骤
 
-成功完成导出后，您的数据即可在Experience Platform中的数据湖中使用。 然后，您可以使用[数据访问API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)来使用与导出关联的`batchId`访问数据。 根据导出的大小，数据可能以块为单位，而批可能由多个文件组成。
+成功完成导出后，您的数据即可在数据湖中Experience Platform。 然后，您可以使用[数据访问API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)来使用与导出关联的`batchId`访问数据。 根据导出的大小，数据可能以块为单位，并且批处理可能由多个文件组成。
 
-有关如何使用数据访问API访问和下载批处理文件的分步说明，请按照[数据访问教程](../../data-access/tutorials/dataset-data.md)进行操作。
+有关如何使用数据访问API访问和下载批处理文件的分步说明，请参阅[数据访问教程](../../data-access/tutorials/dataset-data.md)。
 
-您还可以使用Adobe Experience Platform用户档案服务访问成功导出的实时客户查询数据。 查询服务使用UI或RESTful API允许您对数据湖中的数据写入、验证和运行查询。
+您还可以使用Adobe Experience Platform查询服务访问成功导出的实时客户资料数据。 通过使用UI或RESTful API，查询服务允许您对数据湖中的数据写入、验证和运行查询。
 
-有关如何查询受众数据的详细信息，请查阅[查询服务文档](../../query-service/home.md)。
+有关如何查询受众数据的更多信息，请查阅[查询服务文档](../../query-service/home.md)。
 
 ## 附录
 
-以下部分包含有关用户档案 API中导出作业的其他信息。
+以下部分包含有关配置文件API中导出作业的其他信息。
 
-### 其他导出有效负荷示例
+### 其他导出负载示例
 
-在[启动导出作业](#initiate)的部分中显示的示例API调用会创建一个同时包含用户档案（记录）和事件（时间序列）数据的作业。 本节提供其他请求有效负荷示例，以限制导出包含一种或另一种数据类型。
+在[启动导出作业](#initiate)的部分中显示的示例API调用会创建一个同时包含用户档案（记录）和事件（时间系列）数据的作业。 此部分提供了其他请求有效负载示例，以限制您的导出包含一种或另一种数据类型。
 
-以下有效负荷创建的导出作业仅包含用户档案数据(无事件):
+以下有效负载会创建一个仅包含用户档案数据（无事件）的导出作业：
 
 ```json
 {
@@ -473,7 +468,7 @@ curl -X POST \
   }
 ```
 
-要创建仅包含事件数据(无用户档案属性)的导出作业，有效负荷可能如下所示：
+要创建只包含事件数据（无配置文件属性）的导出作业，有效负载可能类似于以下内容：
 
 ```json
 {
@@ -502,4 +497,4 @@ curl -X POST \
 
 ### 导出区段
 
-还可以使用导出作业端点导出受众段，而不是[!DNL Profile]数据。 有关详细信息，请参阅分段API](../../segmentation/api/export-jobs.md)中有关[导出作业的指南。
+您还可以使用导出作业端点导出受众区段，而不是[!DNL Profile]数据。 有关更多信息，请参阅分段API](../../segmentation/api/export-jobs.md)中[导出作业的指南。
