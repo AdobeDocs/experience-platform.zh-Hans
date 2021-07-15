@@ -1,19 +1,19 @@
 ---
 solution: Experience Platform
-title: 隐私/个性化/营销首选项（同意）架构字段组
+title: 同意和首选项架构字段组
 topic-legacy: overview
-description: 本文档概述了隐私/个性化/营销首选项（同意）架构字段组。
+description: 本文档概述了同意和首选项架构字段组。
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
-source-wordcount: '2304'
+source-wordcount: '2316'
 ht-degree: 2%
 
 ---
 
-# [!UICONTROL 隐私/个性化/营销首选项（同意）] 字段组
+# [!UICONTROL 同意和] 首选项字段组
 
-[!UICONTROL 隐私/个性化/营销首选项（同意）] (以下简称 [!DNL Privacy & Consents] 字段组)是类的标准字段组 [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md)，用于捕获客户同意和首选项信息。
+[!UICONTROL 同意和]首选项是 [[!DNL XDM Individual Profile] 类的标准字](../../classes/individual-profile.md)段组，用于捕获客户同意和首选项信息。
 
 >[!NOTE]
 >
@@ -23,9 +23,9 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Consents & Preferences]字段组旨在涵盖一系列同意和首选项管理用例。 因此，本文档以一般术语介绍了字段组字段的使用情况，并仅就如何解释这些字段的使用提出建议。 请咨询您的隐私法律团队，将字段组的结构与贵组织如何解释并向客户展示这些同意和首选项选择保持一致。
+>[!UICONTROL 同意和首选项]字段组旨在涵盖一系列同意和首选项管理用例。 因此，本文档以一般术语介绍了字段组字段的使用情况，并仅就如何解释这些字段的使用提出建议。 请咨询您的隐私法律团队，将字段组的结构与贵组织如何解释并向客户展示这些同意和首选项选择保持一致。
 
-[!DNL Consents & Preferences]字段组提供了多个用于捕获&#x200B;**consent**&#x200B;和&#x200B;**preference**&#x200B;信息的字段。
+[!UICONTROL 同意和首选项]字段组提供了多个用于捕获&#x200B;**同意**&#x200B;和&#x200B;**首选项**&#x200B;信息的字段。
 
 同意是允许客户指定如何使用其数据的选项。 大多数同意具有法律方面的内容，因为某些司法辖区需要获得许可才能以特定方式使用数据，或者要求客户有权在不需要肯定同意的情况下停止使用（选择退出）。
 
@@ -42,7 +42,7 @@ ht-degree: 2%
 >
 >有关如何查找任何XDM资源并在平台UI中检查其结构的步骤，请参阅[探索XDM资源](../../ui/explore.md)指南。
 
-以下JSON显示了[!DNL Consents & Preferences]字段组可处理的数据类型示例。 以下各节提供了有关每个字段具体用途的信息。
+以下JSON显示了[!UICONTROL 同意和首选项]字段组可以处理的数据类型示例。 以下各节提供了有关每个字段具体用途的信息。
 
 ```json
 {
@@ -343,12 +343,12 @@ ht-degree: 2%
 
 ## 使用字段组摄取数据 {#ingest}
 
-要使用[!DNL Consents & Preferences]字段组从客户那里摄取同意数据，您必须基于包含该字段组的架构创建数据集。
+要使用[!UICONTROL 同意和首选项]字段组从客户那里摄取同意数据，您必须基于包含该字段组的架构创建数据集。
 
-有关如何将字段组分配给字段的步骤，请参阅有关在UI](http://www.adobe.com/go/xdm-schema-editor-tutorial-en)中创建架构的教程。 [创建包含字段（包含[!DNL Consents & Preferences]字段组）的架构后，请参阅数据集用户指南中[创建数据集](../../../catalog/datasets/user-guide.md#create)部分，以按照使用现有架构创建数据集的步骤操作。
+有关如何将字段组分配给字段的步骤，请参阅有关在UI](http://www.adobe.com/go/xdm-schema-editor-tutorial-en)中创建架构的教程。 [在创建包含字段（包含[!UICONTROL 同意和首选项]字段组）的架构后，请参阅数据集用户指南中[创建数据集](../../../catalog/datasets/user-guide.md#create)部分，以按照使用现有架构创建数据集的步骤操作。
 
 >[!IMPORTANT]
-如果要向[!DNL Real-time Customer Profile]发送同意数据，则需要根据包含[!DNL Consents & Preferences]字段组的[!DNL XDM Individual Profile]类创建启用[!DNL Profile]的架构。 还必须为[!DNL Profile]启用您基于该架构创建的数据集。 有关架构和数据集的[!DNL Real-time Customer Profile]要求的具体步骤，请参阅上面链接的教程。
+如果要向[!DNL Real-time Customer Profile]发送同意数据，则需要根据[!DNL XDM Individual Profile]类创建启用[!DNL Profile]的架构，该类包含[!UICONTROL 同意和首选项]字段组。 还必须为[!DNL Profile]启用您基于该架构创建的数据集。 有关架构和数据集的[!DNL Real-time Customer Profile]要求的具体步骤，请参阅上面链接的教程。
 此外，您还必须确保将合并策略配置为对包含最新同意和首选项数据的数据集优先级，以便正确更新客户配置文件。 有关更多信息，请参阅[合并策略](../../../rtcdp/profile/merge-policies.md)的概述。
 
 ## 处理同意和首选项更改
@@ -357,9 +357,9 @@ ht-degree: 2%
 
 ## 附录 {#appendix}
 
-以下各节提供了有关[!DNL Consents & Preferences]字段组的其他参考信息。
+以下各节提供了有关[!UICONTROL 同意和首选项]字段组的其他参考信息。
 
-### `val` {#choice-values}的已接受值
+### `val`的已接受值 {#choice-values}
 
 下表概述了`val`的接受值：
 
@@ -377,7 +377,7 @@ ht-degree: 2%
 
 {style=&quot;table-layout:auto&quot;}
 
-### `preferred` {#preferred-values}的已接受值
+### `preferred`的已接受值 {#preferred-values}
 
 下表概述了`preferred`的接受值：
 
@@ -399,6 +399,6 @@ ht-degree: 2%
 
 {style=&quot;table-layout:auto&quot;}
 
-### 完整[!DNL Consents & Preferences]架构{#full-schema}
+### 完整的[!UICONTROL 同意和首选项]架构 {#full-schema}
 
-要查看[!DNL Consents & Preferences]字段组的完整架构，请参阅[官方XDM存储库](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json)。
+要查看[!UICONTROL 同意和首选项]字段组的完整架构，请参阅[官方XDM存储库](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json)。
