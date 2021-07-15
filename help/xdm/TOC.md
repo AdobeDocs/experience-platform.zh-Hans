@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用体验数据模型(XDM)类和架构字段组来标准化体验数据。
 feature: 架构
-source-git-commit: 9b6352eec56cf32e58d49be4d72b2fb4cf933b89
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '311'
 ht-degree: 16%
 
 ---
@@ -33,10 +33,11 @@ ht-degree: 16%
 * 架构字段组{#field-groups}
    * 配置文件字段组{#profile}
       * [人口统计详细信息](./field-groups/profile/demographic-details.md)
+      * [IAB TCF 2.0同意](./field-groups/profile/iab.md)
       * [IdentityMap](./field-groups/profile/identitymap.md)
       * [忠诚度详细信息](./field-groups/profile/loyalty-details.md)
       * [个人联系详细信息](./field-groups/profile/personal-contact-details.md)
-      * [隐私/个性化/营销首选项（同意）](./field-groups/profile/consents.md)
+      * [同意和首选项](./field-groups/profile/consents.md)
       * [区段成员资格详细信息](./field-groups/profile/segmentation.md)
       * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
    * 事件字段组{#event}
@@ -45,6 +46,7 @@ ht-degree: 16%
       * [商务详细信息](./field-groups/event/commerce-details.md)
       * [最终用户ID详细信息](./field-groups/event/enduserids.md)
       * [环境详细信息](./field-groups/event/environment-details.md)
+      * [IAB TCF 2.0同意](./field-groups/event/iab.md)
       * [Web详细信息](./field-groups/event/web-details.md)
    * [字段组名称更新](./field-groups/name-updates.md)
 * 数据类型 {#data-types}
@@ -52,6 +54,7 @@ ht-degree: 16%
    * [信标](./data-types/beacon.md)
    * [浏览器详细信息](./data-types/browser-details.md)
    * [商务](./data-types/commerce.md)
+   * [同意字符串](./data-types/consent-string.md)
    * [同意和首选项](./data-types/consents.md)
    * [设备](./data-types/device.md)
    * [电子邮件地址](./data-types/email-address.md)
@@ -104,7 +107,7 @@ ht-degree: 16%
    * [导出XDM模式](./ui/export.md)
 * 架构注册表API {#api}
    * [概述](api/overview.md)
-   * [入门指南](api/getting-started.md)
+   * [快速入门](api/getting-started.md)
    * [架构](api/schemas.md)
    * [行为](api/behaviors.md)
    * [类](api/classes.md)
