@@ -4,18 +4,18 @@ title: 同意和首选项数据类型
 description: “隐私、个性化和营销首选项的同意”数据类型旨在支持收集由同意管理平台(CMP)和其他来自您数据操作来源的客户权限和首选项。
 topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
-source-wordcount: '1868'
+source-wordcount: '1904'
 ht-degree: 2%
 
 ---
 
-# [!DNL Consents & Preferences] 数据类型
+# [!UICONTROL 同意和首] 选项数据类型
 
-[!UICONTROL 隐私、个性化和营销首选项的同意]数据类型（以下称“[!DNL Consents & Preferences]数据类型”）是[!DNL Experience Data Model](XDM)数据类型，旨在支持由同意管理平台(CMP)和其他数据操作来源生成的客户权限和首选项的收集。
+[!UICONTROL 隐私、个性化和营销首选项的同意]数据类型（以下称“[!UICONTROL 同意和首选项]数据类型”）是[!DNL Experience Data Model](XDM)数据类型，旨在支持由同意管理平台(CMP)生成的客户权限和首选项以及数据操作中的其他来源的收集。
 
-本文档介绍[!DNL Consents & Preferences]数据类型提供的字段的结构和预期用途。
+本文档介绍[!UICONTROL 同意和首选项]数据类型提供的字段的结构和预期用途。
 
 ## 先决条件 {#prerequisites}
 
@@ -28,9 +28,9 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->[!DNL Consents & Preferences]数据类型旨在涵盖一系列同意和首选项管理用例。 因此，本文档以一般术语介绍了数据类型字段的使用情况，并仅就如何解释这些字段的使用提出建议。 请咨询您的隐私法律团队，将数据类型的结构与贵组织如何解释并向客户展示这些同意和首选项选择保持一致。
+>[!UICONTROL 同意和首选项]数据类型旨在涵盖一系列同意和首选项管理用例。 因此，本文档以一般术语介绍了数据类型字段的使用情况，并仅就如何解释这些字段的使用提出建议。 请咨询您的隐私法律团队，将数据类型的结构与贵组织如何解释并向客户展示这些同意和首选项选择保持一致。
 
-[!DNL Consents & Preferences]数据类型提供了多个用于捕获&#x200B;**consent**&#x200B;和&#x200B;**preference**&#x200B;信息的字段。
+[!UICONTROL 同意和首选项]数据类型提供了多个用于捕获&#x200B;**同意**&#x200B;和&#x200B;**首选项**&#x200B;信息的字段。
 
 同意是允许客户指定如何使用其数据的选项。 大多数同意具有法律方面的内容，因为某些司法辖区需要获得许可才能以特定方式使用数据，或者要求客户有权在不需要肯定同意的情况下停止使用（选择退出）。
 
@@ -47,7 +47,7 @@ ht-degree: 2%
 >
 >有关如何查找任何XDM资源并在平台UI中检查其结构的步骤，请参阅[探索XDM资源](../ui/explore.md)指南。
 
-以下JSON显示了[!DNL Consents & Preferences]数据类型可处理的数据类型示例。 以下各节提供了有关每个字段具体用途的信息。
+以下JSON显示了[!UICONTROL Consorents and Preferences]数据类型可以处理的数据类型示例。 以下各节提供了有关每个字段具体用途的信息。
 
 ```json
 {
@@ -251,12 +251,12 @@ ht-degree: 2%
 
 ## 使用数据类型摄取数据 {#ingest}
 
-要使用[!DNL Consents & Preferences]数据类型从客户那里摄取同意数据，您必须基于包含该数据类型的架构创建数据集。
+要使用[!UICONTROL 同意和首选项]数据类型从客户那里摄取同意数据，您必须基于包含该数据类型的架构创建数据集。
 
-有关如何将数据类型分配给字段的步骤，请参阅有关在UI](http://www.adobe.com/go/xdm-schema-editor-tutorial-en)中创建架构的教程。 [创建包含数据类型为[!DNL Consents & Preferences]的字段的架构后，请参阅数据集用户指南中[创建数据集](../../catalog/datasets/user-guide.md#create)部分，按照使用现有架构创建数据集的步骤操作。
+有关如何将数据类型分配给字段的步骤，请参阅有关在UI](http://www.adobe.com/go/xdm-schema-editor-tutorial-en)中创建架构的教程。 [创建包含数据类型为[!UICONTROL Consorents and Preferences]的字段的架构后，请参阅数据集用户指南中[创建数据集](../../catalog/datasets/user-guide.md#create)部分，以按照使用现有架构创建数据集的步骤操作。
 
 >[!IMPORTANT]
-如果要向[!DNL Real-time Customer Profile]发送同意数据，则需要根据包含[!DNL Consents & Preferences]数据类型的[!DNL XDM Individual Profile]类创建启用[!DNL Profile]的架构。 还必须为[!DNL Profile]启用您基于该架构创建的数据集。 有关架构和数据集的[!DNL Real-time Customer Profile]要求的具体步骤，请参阅上面链接的教程。
+如果要向[!DNL Real-time Customer Profile]发送同意数据，则需要根据[!DNL XDM Individual Profile]类创建启用[!DNL Profile]的架构，该类包含[!UICONTROL 同意和首选项]数据类型。 还必须为[!DNL Profile]启用您基于该架构创建的数据集。 有关架构和数据集的[!DNL Real-time Customer Profile]要求的具体步骤，请参阅上面链接的教程。
 此外，您还必须确保将合并策略配置为对包含最新同意和首选项数据的数据集优先级，以便正确更新客户配置文件。 有关更多信息，请参阅[合并策略](../../rtcdp/profile/merge-policies.md)的概述。
 
 ## 处理同意和首选项更改
@@ -265,9 +265,9 @@ ht-degree: 2%
 
 ## 附录 {#appendix}
 
-以下各节提供了有关[!DNL Consents & Preferences]数据类型的其他参考信息。
+以下各节提供了有关[!UICONTROL 同意和首选项]数据类型的其他参考信息。
 
-### `val` {#choice-values}的已接受值
+### `val`的已接受值 {#choice-values}
 
 下表概述了`val`的接受值：
 
@@ -285,7 +285,7 @@ ht-degree: 2%
 
 {style=&quot;table-layout:auto&quot;}
 
-### `preferred` {#preferred-values}的已接受值
+### `preferred`的已接受值 {#preferred-values}
 
 下表概述了`preferred`的接受值：
 
@@ -307,6 +307,6 @@ ht-degree: 2%
 
 {style=&quot;table-layout:auto&quot;}
 
-### 完整[!DNL Consents & Preferences]架构{#full-schema}
+### 完整的[!UICONTROL 同意和首选项]架构 {#full-schema}
 
-要查看[!DNL Consents & Preferences]数据类型的完整架构，请参阅[官方XDM存储库](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json)。
+要查看[!UICONTROL 同意和首选项]数据类型的完整架构，请参阅[官方XDM存储库](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json)。
