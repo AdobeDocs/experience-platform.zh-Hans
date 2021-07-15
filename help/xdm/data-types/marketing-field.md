@@ -4,9 +4,9 @@ title: 通用营销首选项字段数据类型
 topic-legacy: overview
 description: 本文档概述了通用营销首选项字段XDM数据类型。
 exl-id: d4c53885-f34f-4721-aa34-1fe02dc7006f
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
-source-wordcount: '541'
+source-wordcount: '539'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->此数据类型旨在用于使用[[!UICONTROL 隐私/个性化/营销首选项（同意）]字段组](../field-groups/profile/consents.md)作为基线来自定义组织同意架构的结构。
+>此数据类型旨在用于使用[[!UICONTROL 同意和首选项]字段组](../field-groups/profile/consents.md)作为基线来自定义组织同意架构的结构。
 >
 >如果您需要特定营销首选项字段的`subscriptions`映射，则必须改用[营销字段来提供订阅数据类型](./marketing-field-subscriptions.md)。
 
