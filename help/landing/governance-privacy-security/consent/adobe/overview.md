@@ -5,9 +5,9 @@ title: 在Adobe Experience Platform中处理同意
 topic-legacy: getting started
 description: 了解如何在Adobe Experience Platform中使用Adobe2.0标准处理客户同意信号。
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: 11e8acc3da7f7540421b5c7f3d91658c571fdb6f
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
-source-wordcount: '1570'
+source-wordcount: '1572'
 ht-degree: 0%
 
 ---
@@ -50,11 +50,11 @@ Adobe Experience Platform允许您处理从客户收集的同意数据，并将�
 
 >[!NOTE]
 >
->有关上述XDM同意字段结构的更多信息，请参阅[Consorents &amp; Preferences数据类型](../../../../xdm/data-types/consents.md)上的指南。
+>有关上述XDM同意字段结构的更多信息，请参阅[[!UICONTROL 同意和首选项]数据类型](../../../../xdm/data-types/consents.md)中的指南。
 
 配置系统后，Platform Web SDK会解释当前用户的数据收集同意值，以确定是否应将数据发送到Adobe Experience Platform边缘网络、从客户端删除，还是持久保留，直到数据收集权限设置为“是”或“否”。
 
-## 确定如何在CMP {#consent-data}中生成客户同意数据
+## 确定如何在CMP中生成客户同意数据 {#consent-data}
 
 由于每个CMP系统都是唯一的，因此您必须确定在客户与您的服务进行交互时允许其提供同意的最佳方式。 实现此目的的常见方法是使用Cookie同意对话框，如下例所示：
 
@@ -68,7 +68,7 @@ Adobe Experience Platform允许您处理从客户收集的同意数据，并将�
 
 请参阅[配置数据集以捕获同意数据](./dataset.md)的教程，详细了解如何在继续使用本指南之前，将这些必填字段添加到启用了[!DNL Profile]的数据集。
 
-## 更新[!DNL Profile]合并策略以包含同意数据{#merge-policies}
+## 更新[!DNL Profile]合并策略以包含同意数据 {#merge-policies}
 
 为处理同意数据创建启用[!DNL Profile]的数据集后，必须确保将合并策略配置为始终在每个客户配置文件中包含同意字段。 这包括设置数据集优先级，以便同意数据集优先于其他可能存在冲突的数据集。
 
@@ -76,7 +76,7 @@ Adobe Experience Platform允许您处理从客户收集的同意数据，并将�
 >
 >如果没有任何冲突的数据集，则应该为合并策略设置时间戳优先级。 这有助于确保客户指定的最新同意是所使用的同意设置。
 
-有关如何使用合并策略的更多信息，请首先阅读[合并策略概述](../../../../profile/merge-policies/overview.md)。 在设置合并策略时，必须确保配置文件包含由同意和首选项架构字段组提供的所有必需同意属性，如[数据集准备](./dataset.md)指南中所述。
+有关如何使用合并策略的更多信息，请首先阅读[合并策略概述](../../../../profile/merge-policies/overview.md)。 在设置合并策略时，必须确保配置文件包含[!UICONTROL Consorents and Preferences]架构字段组提供的所有必需同意属性，如[数据集准备](./dataset.md)指南中所述。
 
 ## 将同意数据导入平台
 
@@ -86,11 +86,11 @@ Adobe Experience Platform允许您处理从客户收集的同意数据，并将�
 
 下面各小节中提供了每种方法的详细信息。
 
-### 配置Experience PlatformWeb SDK以处理同意数据{#web-sdk}
+### 配置Experience PlatformWeb SDK以处理同意数据 {#web-sdk}
 
 将CMP配置为监听网站上的同意更改事件后，您可以集成Experience PlatformWeb SDK以接收更新的同意设置，并在每次页面加载时以及每当发生同意更改事件时将它们发送到平台。 有关更多信息，请参阅[配置Web SDK以处理客户同意数据](./sdk.md)的指南。
 
-### 配置Experience PlatformMobile SDK以处理同意数据{#mobile-sdk}
+### 配置Experience PlatformMobile SDK以处理同意数据 {#mobile-sdk}
 
 如果您的移动设备应用程序中需要Experience Platform同意首选项，则可以集成客户Mobile SDK以检索和更新同意设置，每当调用同意API时，都会将它们发送到Platform。
 
@@ -102,7 +102,7 @@ Adobe Experience Platform允许您处理从客户收集的同意数据，并将�
 
 按照[将CSV文件映射到XDM](../../../../ingestion/tutorials/map-a-csv-file.md)中的教程，了解如何将数据字段转换为XDM并将其摄取到平台。 为映射选择[!UICONTROL 目标]时，请确保选择&#x200B;**[!UICONTROL 使用现有数据集]**&#x200B;选项，然后选择之前创建的已启用[!DNL Profile]的同意数据集。
 
-## 测试实施{#test-implementation}
+## 测试实施 {#test-implementation}
 
 在将客户同意数据摄取到启用了[!DNL Profile]的数据集后，您可以检查更新的配置文件以查看它们是否包含同意属性。
 
