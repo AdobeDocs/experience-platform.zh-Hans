@@ -5,9 +5,9 @@ title: 在区段中尊重同意
 topic-legacy: overview
 description: 了解如何在区段操作中执行个人数据收集和共享的客户同意首选项。
 exl-id: fe851ce3-60db-4984-a73c-f9c5964bfbad
-source-git-commit: 6d11a94d45b4a089ca6960aaf1ce78ae654ebc3f
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
-source-wordcount: '677'
+source-wordcount: '675'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 ## 同意架构字段
 
-为了遵守客户的同意和首选项，作为[!UICONTROL XDM个人资料]并集架构一部分的架构必须包含标准字段组&#x200B;**[!UICONTROL 隐私/个性化/营销首选项（同意）]**。
+为了遵守客户的同意和首选项，作为[!UICONTROL XDM个人用户档案]并集架构一部分的架构必须包含标准字段组&#x200B;**[!UICONTROL 同意和首选项]**。
 
 有关字段组提供的每个属性的结构和预期用例的详细信息，请参阅[同意和首选项参考指南](../xdm/field-groups/profile/consents.md)。 有关如何将字段组添加到架构的分步说明，请参阅[XDM UI指南](../xdm/ui/resources/schemas.md#add-field-groups)。
 
