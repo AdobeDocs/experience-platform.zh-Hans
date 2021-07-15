@@ -4,9 +4,9 @@ title: 通用个性化首选项字段数据类型
 topic-legacy: overview
 description: 本文档概述了通用个性化首选项字段XDM数据类型。
 exl-id: 3f6a3c31-19f3-4bad-921e-9ad33c6b9ac9
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '483'
 ht-degree: 3%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->此数据类型旨在用于使用[[!UICONTROL 隐私/个性化/营销首选项（同意）]字段组](../field-groups/profile/consents.md)作为基线来自定义组织同意架构的结构。
+>此数据类型旨在用于使用[[!UICONTROL 同意和首选项]字段组](../field-groups/profile/consents.md)作为基线来自定义组织同意架构的结构。
 
 ![](../images/data-types/personalization-field.png)
 
