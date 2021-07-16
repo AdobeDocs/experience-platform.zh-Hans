@@ -6,7 +6,7 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: 4ad261c4ca5878f7ef5abb2c2957b5714cf3101a
+source-git-commit: 7a1cd379eb002f92c19fbe0e569d5fac90ab5334
 workflow-type: tm+mt
 source-wordcount: '2888'
 ht-degree: 0%
@@ -47,7 +47,7 @@ ht-degree: 0%
 
 ![区段到目标](../assets/ui/activate-destinations/email-select-segments.png)
 
-##  映射步骤 {#mapping}
+## 映射步骤 {#mapping}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_applytransformation"
