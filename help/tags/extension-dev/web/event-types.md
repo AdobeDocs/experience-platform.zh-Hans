@@ -1,0 +1,136 @@
+---
+title: 适用于Web扩展的事件类型
+description: 了解如何在Adobe Experience Platform中为Web扩展定义事件类型库模块。
+source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+workflow-type: tm+mt
+source-wordcount: '930'
+ht-degree: 38%
+
+---
+
+# 事件类型
+
+>[!NOTE]
+>
+>Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+
+事件类型库模块旨在检测活动何时发生，然后调用函数以触发关联规则。 检测到的事件是可自定义的。 它可以检测用户何时做出特定手势、快速滚动或与某些内容交互？
+
+>[!NOTE]
+>
+>本文档假定您熟悉库模块以及它们在标记扩展中的集成方式。 在返回到本指南之前，请参阅关于[库模块格式](./format.md)的概述，以了解实施概况。
+
+`module.exports` 接受和 `settings` 参 `trigger` 数。这允许自定义事件类型。
+
+```js
+module.exports = function(settings, trigger) { … };
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `settings` | 一个对象，其中包含用户在事件类型视图中配置的任何设置。您对此对象中的内容拥有最终控制权。 |
+| `trigger` | 每当应该触发规则时，模块应调用的函数。`settings`对象、`trigger`函数和规则之间存在一对一的关系。 这意味着您收到的一个规则的触发器函数不能用于触发其他规则。 |
+
+>[!NOTE]
+>
+>对于每个已配置为使用您的事件类型的规则，都将调用一次导出函数。
+
+以传递5秒的活动为例，5秒后，活动已发生，规则将触发。 模块将类似于此示例。
+
+```js
+module.exports = function(settings, trigger) {
+  setTimeout(trigger, 5000);
+};
+```
+
+如果要使持续时间可由Adobe Experience Platform用户配置，则需要用于输入并保存设置对象的持续时间的选项。 该对象可能如下所示：
+
+```js
+{
+  "duration": 25000
+}
+```
+
+为了在用户定义的持续时间上操作，需要更新模块以包括此功能。
+
+```js
+module.exports = function(settings, trigger) {
+  setTimeout(trigger, settings.duration);
+};
+```
+
+## 传递上下文事件数据
+
+触发规则时，提供有关所发生事件的更多详细信息通常会非常有用。 创建规则的用户会发现，该信息对于实现特定行为非常有用。例如，如果营销人员想要创建一个规则，即每当用户轻扫屏幕时，都会发送分析信标。 扩展必须提供`swipe`事件类型，以便营销人员可以使用此事件类型触发相应的规则。 假设营销人员希望包含信标上发生轻扫的角度，那么在不提供其他信息的情况下，将很难实现这一点。 要提供有关所发生事件的更多信息，请在调用 `trigger` 函数时传递一个对象。例如：
+
+```js
+trigger({
+  swipeAngle: 90 // the value would be the detected angle
+});
+```
+
+接下来，营销人员可通过在文本字段中指定值 `%event.swipeAngle%`，在分析信标中使用该值。另外，他们也可以从其他上下文（例如，自定义代码操作）中访问 `event.swipeAngle`。可以包含其他类型的可选事件信息，这些信息可能会以相同的方式对营销人员有用。
+
+### [!DNL nativeEvent]
+
+如果事件类型基于本机事件（例如，如果扩展提供了`click`事件类型），则建议按如下方式设置`nativeEvent`属性。
+
+```js
+trigger({
+  nativeEvent: nativeEvent // the value would be the underlying native event
+});
+```
+
+这对于尝试从本机事件中访问任何信息（例如，光标的坐标位置）的营销人员会非常有用。
+
+### [!DNL element]
+
+如果元素与发生的事件之间存在紧密联系，则建议将`element`属性设置为元素的DOM节点。 例如，如果您的扩展提供了`click`事件类型，并且您允许营销人员对其进行配置，则只有在选择ID为`herobanner`的元素时，才会触发规则。 在这种情况下，如果用户选择主页横幅，则建议调用`trigger`并将`element`设置为主页横幅的DOM节点。
+
+```js
+trigger({
+  element: element // the value would be the DOM node
+});
+```
+
+## 遵守规则顺序
+
+Adobe Experience Platform中的标记允许用户对规则进行排序。 例如，用户可能会创建两个规则，这两个规则既使用方向更改事件类型，又自定义规则触发的顺序。 假定Adobe Experience Platform用户在规则A中为方向更改事件指定顺序值`2`，在规则B中为方向更改事件指定顺序值`1`。这表示当移动设备上的方向发生更改时，规则B应在规则A之前触发（顺序值较低的规则首先触发）。
+
+如前所述，对于每个已配置为使用我们的事件类型的规则，将调用一次我们事件模块中的导出函数。每次调用导出函数时，都会传递一个与特定规则绑定的唯一 `trigger` 函数。在刚才所述的情况中，将调用一次导出函数，其中，`trigger` 函数与规则 B 绑定，然后再次调用导出函数，其中 `trigger` 函数与规则 A 绑定。规则 B 先于规则 A 触发的原因在于用户为它提供了更低的顺序值。当我们的库模块检测到方向更改时，我们务必要按照用户提供给库模块的相同顺序来调用 `trigger` 函数，这一点非常重要。
+
+在下面的示例代码中，请注意当检测到方向更改时，将按照提供给导出函数的相同顺序来调用 trigger 函数：
+
+```js
+var triggers = [];
+
+window.addEventListener('orientationchange', function() {
+  triggers.forEach(function(trigger) {
+    trigger();
+  });
+});
+
+module.exports = function(settings, trigger) {
+  triggers.push(trigger);
+};
+```
+
+这可以确保遵守用户指定的顺序。
+
+如果实施不当，则会导致以不同的顺序调用 trigger 函数：
+
+```js
+var triggers = [];
+
+window.addEventListener('orientationchange', function() {
+  for (var i = triggers.length - 1; i >= 0; i--) {
+    triggers[i]();
+  }
+});
+
+module.exports = function(settings, trigger) {
+  triggers.push(trigger);
+};
+```
+
+通常，自然的编程惯例可遵守正确的顺序，但是务必要了解其影响并相应地进行开发。
