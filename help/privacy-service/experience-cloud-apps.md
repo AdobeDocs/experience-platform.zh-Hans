@@ -5,10 +5,10 @@ title: Privacy Service和Experience Cloud应用程序
 topic-legacy: overview
 description: 本文档提供了有关如何为隐私相关操作配置不同Experience Cloud应用程序的参考。
 exl-id: da21c15f-0b99-4eb7-ac9a-f0fe5e3ba842
-source-git-commit: 55d6d8ad7b0fc5457dc0fdc981aaa92717adbe68
+source-git-commit: 892bb4fa5302d63923c1a2e4759f0253955576e2
 workflow-type: tm+mt
-source-wordcount: '600'
-ht-degree: 12%
+source-wordcount: '594'
+ht-degree: 11%
 
 ---
 
@@ -49,9 +49,9 @@ Adobe Experience Platform [!DNL Privacy Service]旨在支持多个Adobe Experien
 | [Adobe Campaign Classic](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/privacy/privacy-management.html) | 概述适用于Adobe Campaign Classic的GDPR功能。 |
 | [Adobe Experience Manager](https://experienceleague.adobe.com/docs/experience-manager-64/managing/data-protection/data-protection-and-privacy.html) | 概述客户隐私管理员或AEM管理员如何处理GDPR请求。 |
 | [Adobe Experience Manager Livefyre](https://experienceleague.adobe.com/docs/livefyre/using/settings-other/privacy-requests/c-gdpr-compliance.html) | 使用Livefyre发出GDPR访问和删除请求的步骤。 |
-| [Adobe Experience Platform Launch](https://experienceleague.adobe.com/docs/launch/using/client-side-info/deploy-javascript-tags-to-opt-in-to-launch.html) | 介绍开发人员如何使用扩展功能和规则生成器，来定义“选择加入”和“选择退出”解决方案。 |
 | [Magento](https://devdocs.magento.com/compliance/industry-compliance.html) | 确保您的Magento Commerce安装符合特定隐私法规的要求。 |
 | [Marketo](https://www.marketo.com/company/trust/gdpr/) | 了解隐私法规如何应用于Marketo。 |
+| [Adobe Experience Platform中的标记](../tags/ui/client-side/consent.md) | 介绍开发人员如何使用扩展功能和规则生成器，来定义“选择加入”和“选择退出”解决方案。 |
 | [Workfront](https://www.workfront.com/privacy-notice) | 了解Workfront如何收集个人数据，以及数据主体如何通过表单提交隐私请求。 |
 
 {style=&quot;table-layout:auto&quot;}
