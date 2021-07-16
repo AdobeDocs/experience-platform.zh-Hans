@@ -1,0 +1,35 @@
+---
+title: 扩展提交流程概述
+description: 了解在Adobe Experience Platform中从开发到发行提交扩展的步骤。
+source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+workflow-type: tm+mt
+source-wordcount: '228'
+ht-degree: 26%
+
+---
+
+# 扩展提交流程概述
+
+>[!NOTE]
+>
+>Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+
+在Adobe Experience Platform中向数据收集目录提交扩展似乎是一项艰巨的任务。 本文档提供了使用各个连续指南提交扩展的分步指南。 要提交扩展，您需要完成以下步骤：
+
+1. [设置 Adobe Experience Cloud 组织](./setup.md)
+1. [授予用户开发扩展的权限](./access.md)
+1. [开发扩展](./develop.md)
+1. [创建 Exchange 列表](./create-listing.md)
+1. 创建扩展包
+1. [上载并测试扩展](./upload-and-test.md)
+1. [发布扩展](./release.md)
+
+选择相应的链接，以了解有关每个步骤的更多信息。
+
+## 支持
+
+在构建和测试扩展时，可通过标记开发人员社区Slack工作区获取支持。 Slack工作区是扩展作者相互支持的在线社区。 您可以在 [http://join.launchdevelopers.chat](http://join.launchdevelopers.chat) 中请求获取访问权限。
+
+>[!NOTE]
+>
+>虽然此Adobe工作区中有Slack团队的成员，但它不是由Adobe赞助或管理的社区资源。
