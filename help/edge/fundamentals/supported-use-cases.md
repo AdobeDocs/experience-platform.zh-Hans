@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK支持的用例
 description: 了解Adobe Experience Platform Web SDK支持哪些用例。
 keywords: Web SDK；用例
-source-git-commit: da305a65a7d5fc3d8214f1d046181b463d324ee0
+source-git-commit: 7a6bec77895458cf1735bc7a00d16b78df9776a5
 workflow-type: tm+mt
-source-wordcount: '574'
-ht-degree: 13%
+source-wordcount: '565'
+ht-degree: 14%
 
 ---
 
@@ -43,7 +43,7 @@ ht-degree: 13%
 | 如果为用户档案启用了数据集，则能够实时将数据发送到实时客户数据用户档案 |  |
 | 实时将数据发送到Customer Journey Analytics |  |
 | 将同意写入用户档案 | [文档](https://experienceleague.adobe.com/docs/experience-platform/landing/governance-privacy-security/consent/adobe/sdk.html?lang=en) |
-| 实时将数据服务器端转发给第三方 | [文档](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en) |
+| 实时将数据服务器端转发给第三方 | [文档](../../tags/ui/event-forwarding/overview.md) |
 | 身份命名空间支持 |  |
 
 {style=&quot;table-layout:auto&quot;}
