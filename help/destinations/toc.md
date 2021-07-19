@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: 目标
-source-git-commit: 47b3ef28281e3480e8b194486845f4fb4326b7d4
+source-git-commit: 3ab15ceaf33a33f8bbda80cbf09228d16ce5a374
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '481'
 ht-degree: 11%
 
 ---
@@ -33,6 +33,7 @@ ht-degree: 11%
    * [ (Alpha)HTTP连接](./catalog/http-destination.md)
    * Adobe目标{#adobe}
       * [Adobe目标概述](./catalog/adobe/overview.md)
+      * [（测试版）Marketo Engage连接](./catalog/adobe/marketo-engage.md)
       * [Experience Platform区段共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
    * 广告目标{#advertising}
       * [广告目标概述](./catalog/advertising/overview.md)
@@ -134,5 +135,5 @@ ht-degree: 11%
       * [Invoca标记扩展](./catalog/voice/invoca.md)
       * [Medallia扩展](./catalog/voice/medallia.md)
       * [Talk URL Inbox扩展](./catalog/voice/talkurl.md)
-* [关于 Experience Cloud 核心服务](./destinations-faq.md)
+* [常见问题](./destinations-faq.md)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
