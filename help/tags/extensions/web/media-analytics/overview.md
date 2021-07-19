@@ -1,9 +1,9 @@
 ---
 title: Adobe MediumAnalytics for Audio and Video扩展概述
 description: 了解Adobe Experience Platform中的Adobe MediumAnalytics for Audio and Video标记扩展。
-source-git-commit: 573c13f5136a4efc3accf2838783a91ea914e949
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '1015'
+source-wordcount: '991'
 ht-degree: 80%
 
 ---
@@ -52,7 +52,7 @@ Media Analytics (MA) 扩展添加了核心 JavaScript Media SDK (Media 2.x SDK)�
 | Export APIs to Window Object | 允许或禁止将 Media Analytics API 导出到全局范围 |
 | Variable Name | `window` 对象下用于导出 Media Analytics API 的变量 |
 
-**提醒：** MA 扩展要求使用 [Analytics](../analytics/overview.md) 和 [Experience Cloud ID](https://experienceleague.adobe.com/docs/launch/using/extensions-ref/adobe-extension/id-service-extension/overview.html?lang=zh-Hans) 扩展。您还必须将这些扩展添加到您的扩展资产并对其进行配置。
+**提醒：** MA 扩展要求使用 [Analytics](../analytics/overview.md) 和 [Experience Cloud ID](../id-service/overview.md) 扩展。您还必须将这些扩展添加到您的扩展资产并对其进行配置。
 
 ## 使用 MA 扩展
 
@@ -176,7 +176,7 @@ MA 扩展会将 `get-instance` 和 `media-heartbeat` 共享模块公开给其他
 
 >[!NOTE]
 >
->**测试：**&#x200B;对于此版本，要测试您的扩展，必须将其上传到 [ Platform ](https://github.com/Adobe-Marketing-Cloud/reactor-user-docs/tree/73a73bd5ff53162339ce5ded3f4bba4712146d20/extension-reference/launch.adobe.com)，您可以在其中访问所有依赖的扩展。
+>**测试：**&#x200B;对于此版本，要测试您的扩展，必须将其上传到 [ Platform ](../../../extension-dev/submit/upload-and-test.md)，您可以在其中访问所有依赖的扩展。
 
 
 <!--
