@@ -1,10 +1,10 @@
 ---
 title: Adobe Target v2扩展的发行说明
 description: Adobe Experience Platform中Adobe Target v2标记扩展的最新发行说明。
-source-git-commit: 573c13f5136a4efc3accf2838783a91ea914e949
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '452'
-ht-degree: 53%
+source-wordcount: '438'
+ht-degree: 55%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 53%
 
 ### Adobe Target v2 扩展 0.14
 
-- 添加了新的操作Load Target with [On-Device Decisioning](https://experienceleague.adobe.com/docs/launch/using/extensions-ref/adobe-extension/targetv2-extension/adobe-target-extension-v2.html?lang=en#load-target-with-on-device-decisioning)，该工具加载了at.js 2.5，且具备设备决策功能
+- 添加了新的操作Load Target with [On-Device Decisioning](./overview.md#load-target-with-on-device-decisioning)，该工具加载了at.js 2.5，且具备设备决策功能
 - 已将at.js更新到2.5
 
 
