@@ -1,65 +1,61 @@
 ---
-keywords: D&B访客智能；D&B;访客智能扩展
-title: D&B访客智能扩展
-description: D&B访客智能扩展是Adobe Experience Platform中的个性化目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
-translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+keywords: D&B Visitor Intelligence;D&B；访客智能扩展
+title: D&B Visitor Intelligence扩展
+description: D&B Visitor Intelligence扩展是Adobe Experience Platform中的个性化目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
+exl-id: e06833d9-51d7-4b0c-a9ce-28e0fadc2b62
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '487'
-ht-degree: 3%
+source-wordcount: '463'
+ht-degree: 4%
 
 ---
-
 
 # [!DNL D&B Visitor Intelligence] 扩展 {#dnb-extension}
 
 ## 概述 {#overview}
 
-分析未知访客并将其转换为潜在客户。
+分析未知访客并将他们转化为潜在客户。
 
-[!DNL D&B Visitor Intelligence] 是Adobe Experience Platform的个性化扩展。有关扩展功能的详细信息，请参阅[D&amp;B网站](https://www.dnb.com/)。
+[!DNL D&B Visitor Intelligence] 是Adobe Experience Platform中的一个个性化扩展。有关扩展功能的更多信息，请参阅[D&amp;B网站](https://www.dnb.com/)。
 
-此目标是Adobe Experience Platform Launch扩展。 有关Platform launch扩展在Platform中的工作方式的详细信息，请参阅[Adobe Experience Platform Launch扩展概述](../launch-extensions/overview.md)。
+此目标是Adobe Experience Platform Launch扩展。 有关Platform launch扩展如何在Platform中工作的更多信息，请参阅[Adobe Experience Platform Launch扩展概述](../launch-extensions/overview.md)。
 
-![D&amp;B访客智能扩展](../../assets/catalog/personalization/dnb/catalog.png)
+![D&amp;B Visitor Intelligence扩展](../../assets/catalog/personalization/dnb/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-此扩展位于[!DNL Destinations]目录中，可用于所有已购买平台的客户。
+[!DNL Destinations]目录中提供了此扩展，可供已购买Platform的所有客户使用。
 
-要使用此扩展，您需要访问Adobe Experience Platform Launch。 platform launch作为附带的增值功能提供给Adobe Experience Cloud客户。 请与您的组织管理员联系以获取对Platform launch的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
+要使用此扩展，您需要访问Adobe Experience Platform Launch。 platform launch以内置增值功能的形式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取Platform launch的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
 
-## 安装扩展{#install-extension}
+## 安装扩展 {#install-extension}
 
-安装D&amp;B访客智能扩展：
+要安装D&amp;B Visitor Intelligence扩展，请执行以下操作：
 
-在[平台接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**。
+在[Platform接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
-单击目标以突出显示它，然后在右边栏中选择&#x200B;**[!UICONTROL Configure]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件灰显，则您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
+单击目标以将其突出显示，然后选择右边栏中的&#x200B;**[!UICONTROL 配置]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件呈灰显状态，则您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
 
-在&#x200B;**[!UICONTROL Select available Platform Launch property]**&#x200B;窗口中，选择要安装扩展的Platform launch属性。 您还可以选择在Platform launch中创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解有关Platform launch文档的[属性页面部分](https://experienceleague.adobe.com/docs/launch/using/reference/admin/companies-and-properties.html#properties-page)中的属性。
+在&#x200B;**[!UICONTROL 选择可用的Platform launch属性]**&#x200B;窗口中，选择要在其中安装扩展的Platform launch属性。 您还可以选择在Platform launch中创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解Platform launch文档[属性页面部分](../../../tags/ui/administration/companies-and-properties.md#properties-page)中的属性。
 
-该工作流将带您Platform launch完成安装。
+利用工作流，可Platform launch完成安装。
 
-您还可以直接在[Adobe Experience Platform Launch接口](https://launch.adobe.com/)中安装扩展。 请参阅Platform launch文档中的[添加新扩展](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/overview.html?lang=en#add-a-new-extension)。
+您还可以直接在[Adobe Experience Platform Launch界面](https://launch.adobe.com/)中安装该扩展。 请参阅Platform launch文档中的[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) 。
 
-## 如何使用扩展{#how-to-use}
+## 如何使用扩展 {#how-to-use}
 
-安装扩展后，您可以直接在Platform launch中开始为它设置规则。
+安装扩展后，您可以直接在Platform launch中为其设置规则。
 
-在Platform launch中，您可以为已安装的扩展设置规则，以便仅在某些情况下将事件数据发送到扩展目标。 有关设置扩展规则的详细信息，请参阅[规则文档](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/rules.html)。
+在Platform launch中，您可以为已安装的扩展设置规则，以便仅在某些情况下将事件数据发送到扩展目标。 有关为扩展设置规则的更多信息，请参阅[规则文档](../../../tags/ui/managing-resources/rules.md)。
 
-## 配置、升级和删除扩展{#configure-upgrade-delete}
+## 配置、升级和删除扩展 {#configure-upgrade-delete}
 
 您可以在Platform launch界面中配置、升级和删除扩展。
 
 >[!TIP]
 >
->如果某个属性上已安装该扩展，则平台UI仍会显示该扩展的&#x200B;**[!UICONTROL Install]**。 启动安装工作流程（如[安装扩展](#install-extension)中所述），开始Platform launch并配置或删除您的扩展。
+>如果您的某个资产上已安装扩展，则Platform UI仍会为该扩展显示&#x200B;**[!UICONTROL Install]**。 按照[Install extension](#install-extension)中所述启动安装工作流，以开始Platform launch并配置或删除您的扩展。
 
-要升级您的扩展，请参阅Platform launch文档中的[扩展升级](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/extension-upgrade.html)。
-
-
-
+要升级扩展，请参阅Platform launch文档中的[扩展升级](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) 。
