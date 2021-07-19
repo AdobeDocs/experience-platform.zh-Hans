@@ -1,9 +1,9 @@
 ---
 title: 发行说明
 description: Adobe Experience Platform中标记的最新发行说明。
-source-git-commit: 7a6bec77895458cf1735bc7a00d16b78df9776a5
+source-git-commit: f1e6741de9aa00652e9af290a89f73788e0f1d83
 workflow-type: tm+mt
-source-wordcount: '400'
+source-wordcount: '498'
 ht-degree: 2%
 
 ---
@@ -13,6 +13,14 @@ ht-degree: 2%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
+
+## 2021 年 7 月 19 日
+
+**对“管理资产”权限的调整**  — “管理资产”权限遇到了以下问题：用户有权创建新资产，但在创建后无法看到该资产(如此处的社区线程中 [所述](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/technical-advisory-adjustments-to-the-manage-properties/ba-p/399176))。现在，已实施修复，并按照文章中所述强制实施权限。
+
+>[!NOTE]
+>
+>如果您将新的“编辑属性”权限分配给用户组，则UI将不会更新，以启用属性配置屏幕中的字段。 此问题的修复将在即将发布的版本中实施。
 
 ## 2021 年 5 月 17 日
 
