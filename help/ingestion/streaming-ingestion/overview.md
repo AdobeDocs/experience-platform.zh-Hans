@@ -1,49 +1,48 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据摄取；摄取的数据；流；概述；流摄取；延迟；流延迟；
+keywords: Experience Platform；主页；热门主题；数据摄取；摄取数据；流；概述；流摄取；延迟；流延迟；
 solution: Experience Platform
 title: 流摄取概述
 topic-legacy: overview
-description: Adobe Experience Platform的流式获取为用户提供了一种将数据从客户端和服务器端设备实时发送到Experience Platform的方法。
+description: Adobe Experience Platform的流式摄取为用户提供了一种方法，可将数据从客户端和服务器端设备实时发送到Experience Platform。
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '285'
+source-wordcount: '277'
 ht-degree: 3%
 
 ---
 
 # 流摄取概述
 
-Adobe Experience Platform的流式获取为用户提供了一种将数据从客户端和服务器端设备实时发送到[!DNL Experience Platform]的方法。
+Adobe Experience Platform的流式摄取为用户提供了一种方法，可将数据从客户端和服务器端设备实时发送到[!DNL Experience Platform]。
 
-## 您可以使用流式摄取做什么？
+## 使用流式引入可以执行哪些操作？
 
-Adobe Experience Platform使您能够为每位客户生成[!DNL Real-time Customer Profile]，从而推动协调、一致和相关的体验。 流化摄取在构建这些用户档案中起着关键作用，您可以在尽可能少的延迟下将[!DNL Profile]数据传送到[!DNL Data Lake]中。
+Adobe Experience Platform可以为您的每个客户生成[!DNL Real-time Customer Profile] ，从而促进协调、一致和相关的体验。 流式摄取在构建这些配置文件方面发挥着关键作用，具体方法是让您能够在尽可能少的延迟下将[!DNL Profile]数据交付到[!DNL Data Lake]中。
 
-以下视频旨在帮助您理解流摄取，并概述上述概念。
+以下视频旨在帮助支持您了解流摄取，并概述了上述概念。
 
 >[!VIDEO](https://video.tv.adobe.com/v/28425?quality=12&learn=on)
 
-### 流用户档案记录和[!DNL ExperienceEvents]
+### 流配置文件记录和[!DNL ExperienceEvents]
 
-借助流式摄取，用户可以在数秒内将用户档案记录和[!DNL ExperienceEvents]流化到[!DNL Platform]，从而帮助推动实时个性化。 发送到流式摄取API的所有数据将自动保留在[!DNL Data Lake]中。
+通过流式引入，用户可以在数秒内将用户档案记录和[!DNL ExperienceEvents]流式传输到[!DNL Platform]，以帮助促进实时个性化。 发送到流式引入API的所有数据都会自动保留在[!DNL Data Lake]中。
 
-有关详细信息，请阅读[创建流连接指南](../tutorials/create-streaming-connection.md)。
+请阅读[创建流连接指南](../tutorials/create-streaming-connection.md)以了解详细信息。
 
 ### 流到数据集
 
-一旦您确信数据是干净的，您就可以为[!DNL Real-time Customer Profile]和[!DNL Identity Service]启用数据集。
+确定数据是干净的后，您便可以为[!DNL Real-time Customer Profile]和[!DNL Identity Service]启用数据集。
 
-有关为[!DNL Profile]和[!DNL Identity Service]启用数据集的详细信息，请阅读[配置数据集指南](../../profile/tutorials/dataset-configuration.md)。
+有关为[!DNL Profile]和[!DNL Identity Service]启用数据集的更多信息，请阅读[配置数据集指南](../../profile/tutorials/dataset-configuration.md)。
 
-## 在[!DNL Platform]上流化摄取的预期延迟是什么？
+## [!DNL Platform]上的流式引入的预期滞后时间是多少？
 
-| 目标 | 预期延迟 |
+| 目标 | 预期滞后 |
 | --------- | ---------------- |
 | 实时客户资料 | &lt; 1=&quot;&quot; minute=&quot;&quot;> |
 | 数据湖 | &lt; 60 分钟 |
 
 ## Adobe Experience Platform 扩展
 
-您可以使用Adobe Experience Platform扩展创建新的流连接。 [!DNL Experience Platform]扩展提供将在[!DNL Experience Data Model](XDM)中格式化的信标实时发送到[!DNL Experience Platform]的操作。 有关详细信息，请访问[Experience Platform扩展](https://experienceleague.adobe.com/docs/launch/using/extensions-ref/adobe-extension/adobe-experience-platform-extension.html)文档。
+您可以使用Adobe Experience Platform扩展创建新的流连接。 [!DNL Experience Platform]扩展提供操作，以将[!DNL Experience Data Model](XDM)中格式的信标实时摄取到[!DNL Experience Platform]。 有关更多信息，请访问[Experience Platform扩展](../../tags/extensions/web/sdk/overview.md)文档。
