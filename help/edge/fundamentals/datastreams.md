@@ -3,9 +3,9 @@ title: 为Experience PlatformWeb SDK配置数据流
 description: '了解如何配置数据流。 '
 keywords: 配置；数据流；数据流ID；边缘；边缘配置ID；环境设置；边缘配置ID；标识；启用ID同步；ID同步容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: c3d66e50f647c2203fcdd5ad36ad86ed223733e3
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '896'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Adobe Experience Platform Web SDK的配置分为两个位置。 SDK中的[config
 
 >[!NOTE]
 >
->无论客户是否使用[!DNL Experience Platform Launch]作为标签管理器，允许列表上的客户都可以使用数据流配置工具。 此外，用户需要在[!DNL Experience Platform Launch]中拥有开发权限。 有关更多详细信息，请参阅[!DNL Experience Platform Launch]文档中的[用户权限](https://experienceleague.adobe.com/docs/launch/using/reference/admin/user-permissions.html)文章。
+>无论客户是否使用[!DNL Experience Platform Launch]作为标签管理器，允许列表上的客户都可以使用数据流配置工具。 此外，用户需要在[!DNL Experience Platform Launch]中拥有开发权限。 有关更多详细信息，请参阅[!DNL Experience Platform Launch]文档中的[用户权限](../../tags/ui/administration/user-permissions.md)文章。
 
 单击屏幕右上方的&#x200B;**[!UICONTROL 新建数据流]**&#x200B;来创建数据流。 提供名称和描述后，系统会要求您为每个环境提供默认设置。 下面详细介绍了可用设置。
 
