@@ -1,10 +1,10 @@
 ---
 title: 事件转发入门
 description: 请按照此分步教程，开始使用Adobe Experience Platform中的事件转发。
-source-git-commit: 1d3415146335d3011963c969d5b6aeea1f1a51d0
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '915'
-ht-degree: 28%
+source-wordcount: '906'
+ht-degree: 27%
 
 ---
 
@@ -110,7 +110,7 @@ ht-degree: 28%
 
 1. 选择 Edge Domain。
 
-有关更多配置，请参阅 [Web SDK 扩展文档](https://experienceleague.adobe.com/docs/launch/using/extensions-ref/adobe-extension/aep-extension/overview.html?lang=zh-Hans)。
+有关更多配置，请参阅 [Web SDK 扩展文档](../../extensions/web/sdk/overview.md)。
 
 ## 创建标记规则以将数据发送到Platform Web SDK
 
