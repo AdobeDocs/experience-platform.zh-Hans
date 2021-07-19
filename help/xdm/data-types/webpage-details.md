@@ -5,7 +5,7 @@ title: 网页详细信息数据类型
 topic-legacy: overview
 description: 本文档概述了Web页面详细信息体验数据模型(XDM)数据类型。
 exl-id: 31108e57-d416-485b-a6c3-4ebc4f5b1152
-source-git-commit: b22dce52563d5f3bbd1796c11d7c7b2a49fa6d5f
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 3%
@@ -35,5 +35,5 @@ ht-degree: 3%
 
 有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/web/webpagedetails.example.2.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/web/webpagedetails.schema.json)
+* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/webpagedetails.example.2.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/webpagedetails.schema.json)
