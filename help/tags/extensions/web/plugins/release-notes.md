@@ -1,14 +1,22 @@
 ---
 title: “常用Analytics插件”扩展的发行说明
 description: Adobe Experience Platform中“常用Analytics插件”标记扩展的最新发行说明。
-source-git-commit: 5f810ada57eeb12a56de603d974a091b888dc9d2
+source-git-commit: cce218d984bae92428c7d48aefcd0f57dab837ea
 workflow-type: tm+mt
-source-wordcount: '297'
-ht-degree: 58%
+source-wordcount: '314'
+ht-degree: 57%
 
 ---
 
 # “常用Analytics插件”发行说明
+
+## 2021 年 6 月 23 日
+
+### “常用 Analytics 插件”扩展 3.0.6
+
+#### 错误修复
+
+* 修复了getPercentPageViewed在使用特殊字符时中断的问题
 
 ## 2021 年 5 月 20 日
 
