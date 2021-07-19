@@ -3,9 +3,9 @@ title: 安装Adobe Experience Platform Web SDK
 description: 了解如何安装Experience PlatformWeb SDK。
 keywords: Web SDK安装；安装Web SDK;Internet Explorer;promise;npm包
 exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
-source-git-commit: fccad34ad4ad028c7b34356dec7bb34892396317
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '937'
+source-wordcount: '928'
 ht-degree: 2%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 2%
 
 ## 选项1:安装Adobe Experience Platform Launch扩展
 
-有关Adobe Experience Platform Launch扩展的文档，请参阅[launch文档](https://experienceleague.adobe.com/docs/launch/using/extensions-ref/adobe-extension/aep-extension/overview.html)
+有关Adobe Experience Platform Launch扩展的文档，请参阅[launch文档](../../tags/extensions/web/sdk/overview.md)
 
 ## 选项2:安装预建的独立版本
 
@@ -35,7 +35,7 @@ URL结构：https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或用于
 * 未缩小：[https://cdn1.adoberesources.net/alloy/2.5.0/alloy.js](https://cdn1.adoberesources.net/alloy/2.5.0/alloy.js)
 
 
-### 添加代码{#adding-the-code}
+### 添加代码 {#adding-the-code}
 
 预建的独立版本要求直接将“基础代码”添加到页面。 在HTML的`<head>`标记中尽可能高地复制并粘贴以下“基本代码”：
 
@@ -93,7 +93,7 @@ URL结构：https://cdn1.adoberesources.net/alloy/[版本]/alloy.min.js或用于
 >
 >如果选择加载其他Promise实施，请确保它支持`Promise.prototype.finally`。
 
-### 同步加载JavaScript文件{#loading-javascript-synchronously}
+### 同步加载JavaScript文件 {#loading-javascript-synchronously}
 
 如[添加代码](#adding-the-code)部分中所述，您复制并粘贴到网站HTML中的基本代码会加载外部文件。 外部文件包含SDK的核心功能。 加载此文件时尝试执行的任何命令都将排入队列，然后在加载文件后进行处理。 异步加载文件是安装效率最高的方法。
 
