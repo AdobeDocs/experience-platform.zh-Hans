@@ -1,9 +1,9 @@
 ---
 title: 内容安全策略(CSP)支持
 description: 了解在Adobe Experience Platform中将您的网站与标记集成时，如何处理内容安全策略(CSP)限制。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '1087'
+source-wordcount: '1079'
 ht-degree: 54%
 
 ---
@@ -64,7 +64,7 @@ Content-Security-Policy: script-src 'self' assets.adobedtm.com
 **HTML `<meta>` 标记**
 
 
-有一个非常重要的先决条件：必须异步](https://experienceleague.adobe.com/docs/launch/using/reference/client-side-info/asynchronous-deployment.html)加载标记库[。 同步加载标记库行不通（因为会导致控制台错误和规则无法正确执行）。
+有一个非常重要的先决条件：必须异步](./asynchronous-deployment.md)加载标记库[。 同步加载标记库行不通（因为会导致控制台错误和规则无法正确执行）。
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' assets.adobedtm.com">
