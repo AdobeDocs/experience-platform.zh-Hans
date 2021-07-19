@@ -1,68 +1,67 @@
 ---
-keywords: Nielsen BSDK;nielsen bsdk;nielsen BSDK
+keywords: Nielsen BSDK;nielsen bsdk;Nielsen BSDK
 title: Nielsen BSDK扩展
-description: Nielsen BSDK扩展是Adobe Experience Platform中的一个分析目标。 有关扩展功能的详细信息，请参阅Adobe Exchange上的扩展页。
-translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+description: Nielsen BSDK扩展是Adobe Experience Platform中的一个分析目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
+exl-id: e1c10673-e3f4-474d-98d7-960124b2bfc7
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '553'
 ht-degree: 4%
 
 ---
-
 
 # [!DNL Nielsen BSDK] 扩展 {#nielsen-bsdk-extension}
 
 ## 概述 {#overview}
 
-[!DNL Nielsen Digital SDK] 通过以下数字测量产品启动扩展优惠受众测量：
+[!DNL Nielsen Digital SDK] launch扩展通过以下数字测量产品提供受众测量：
 
-DCR:提供对非线性数字内容（包括包含广告的内容）进行日常测量的测量解决方案可全面视图桌面、移动、平板电脑和互联设备上的数字内容受众消费。
+DCR:提供对非线性数字内容（包括含广告的内容）进行日常测量的测量解决方案，可全面了解台式机、移动设备、平板电脑和连接设备上的数字内容受众使用情况。
 
-DTVR:这说明参加节目源在桌面和移动设备上进行的线性电视观看。 这是MRC获得认证的首个解决方案，因为MRC为在电脑和移动设备上观看的节目的电视受众衡量做出了贡献。
+DTVR:这表示在参与节目源的桌面和移动设备上发生线性电视观看。 这是MRC获得认证的第一个解决方案，因为MRC对电视观众测量的贡献是在计算机和移动设备上观看节目。
 
-[!DNL Nielsen BSDK] 是Adobe Experience Platform的分析扩展。有关扩展功能的详细信息，请参阅[AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101361.html)上的扩展页。
+[!DNL Nielsen BSDK] 是Adobe Experience Platform中的一项analytics扩展。有关扩展功能的更多信息，请参阅[AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101361.html)上的扩展页面。
 
-此目标是Adobe Experience Platform Launch扩展。 有关Platform launch扩展在Platform中的工作方式的详细信息，请参阅[Adobe Experience Platform Launch扩展概述](../launch-extensions/overview.md)。
+此目标是Adobe Experience Platform Launch扩展。 有关Platform launch扩展如何在Platform中工作的更多信息，请参阅[Adobe Experience Platform Launch扩展概述](../launch-extensions/overview.md)。
 
 ![Nielsen BSDK扩展](../../assets/catalog/analytics/nielsen-bsdk/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
-此扩展位于[!DNL Destinations]目录中，可用于所有已购买平台的客户。
+[!DNL Destinations]目录中提供了此扩展，可供已购买Platform的所有客户使用。
 
-要使用此扩展，您需要访问Adobe Experience Platform Launch。 platform launch作为附带的增值功能提供给Adobe Experience Cloud客户。 请与您的组织管理员联系以获取对Platform launch的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
+要使用此扩展，您需要访问Adobe Experience Platform Launch。 platform launch以内置增值功能的形式提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取Platform launch的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
 
-## 安装扩展{#install-extension}
+## 安装扩展 {#install-extension}
 
-安装[!DNL Nielsen BSDK]扩展：
+要安装[!DNL Nielsen BSDK]扩展，请执行以下操作：
 
-在[平台接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**。
+在[Platform接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
-单击目标以突出显示它，然后在右边栏中选择&#x200B;**[!UICONTROL Configure]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件灰显，则您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
+单击目标以将其突出显示，然后选择右边栏中的&#x200B;**[!UICONTROL 配置]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件呈灰显状态，则您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
 
-在&#x200B;**[!UICONTROL Select available Platform Launch property]**&#x200B;窗口中，选择要安装扩展的Platform launch属性。 您还可以选择在Platform launch中创建新属性。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解有关Platform launch文档的[属性页面部分](https://experienceleague.adobe.com/docs/launch/using/reference/admin/companies-and-properties.html#properties-page)中的属性。
+在&#x200B;**[!UICONTROL 选择可用的Platform launch属性]**&#x200B;窗口中，选择要在其中安装扩展的Platform launch属性。 您还可以选择在Platform launch中创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解Platform launch文档[属性页面部分](../../../tags/ui/administration/companies-and-properties.md#properties-page)中的属性。
 
-该工作流将带您Platform launch完成安装。
+利用工作流，可Platform launch完成安装。
 
-有关扩展配置选项和安装支持的信息，请参阅Adobe Exchange](https://exchange.adobe.com/experiencecloud.details.101361.html)上的[Nielsen BSDK页。
+有关扩展配置选项和安装支持的信息，请参阅AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101361.html)上的[Nielsen BSDK页面。
 
-您还可以直接在[Adobe Experience Platform Launch接口](https://launch.adobe.com/)中安装扩展。 请参阅Platform launch文档中的[添加新扩展](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/overview.html?lang=en#add-a-new-extension)。
+您还可以直接在[Adobe Experience Platform Launch界面](https://launch.adobe.com/)中安装该扩展。 请参阅Platform launch文档中的[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension) 。
 
-## 如何使用扩展{#how-to-use}
+## 如何使用扩展 {#how-to-use}
 
-安装扩展后，您可以直接在Platform launch中开始为它设置规则。
+安装扩展后，您可以直接在Platform launch中为其设置规则。
 
-在Platform launch中，您可以为已安装的扩展设置规则，以便仅在某些情况下将事件数据发送到扩展目标。 有关设置扩展规则的详细信息，请参阅[规则文档](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/rules.html)。
+在Platform launch中，您可以为已安装的扩展设置规则，以便仅在某些情况下将事件数据发送到扩展目标。 有关为扩展设置规则的更多信息，请参阅[规则文档](../../../tags/ui/managing-resources/rules.md)。
 
-## 配置、升级和删除扩展{#configure-upgrade-delete}
+## 配置、升级和删除扩展 {#configure-upgrade-delete}
 
 您可以在Platform launch界面中配置、升级和删除扩展。
 
 >[!TIP]
 >
->如果某个属性上已安装该扩展，则平台UI仍会显示该扩展的&#x200B;**[!UICONTROL Install]**。 启动安装工作流程（如[安装扩展](#install-extension)中所述），开始Platform launch并配置或删除您的扩展。
+>如果您的某个资产上已安装扩展，则Platform UI仍会为该扩展显示&#x200B;**[!UICONTROL Install]**。 按照[Install extension](#install-extension)中所述启动安装工作流，以开始Platform launch并配置或删除您的扩展。
 
-要升级您的扩展，请参阅Platform launch文档中的[扩展升级](https://experienceleague.adobe.com/docs/launch/using/reference/manage-resources/extensions/extension-upgrade.html)。
+要升级扩展，请参阅Platform launch文档中的[扩展升级](../../../tags/ui/managing-resources/extensions/extension-upgrade.md) 。
