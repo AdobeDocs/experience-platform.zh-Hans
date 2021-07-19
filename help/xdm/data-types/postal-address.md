@@ -5,9 +5,9 @@ title: 邮政地址数据类型
 topic-legacy: overview
 description: 本文档概述了邮政地址XDM数据类型。
 exl-id: 94457fe5-80bc-4822-9f6c-48f77d56c89b
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '339'
+source-wordcount: '341'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 1%
 | 属性 | 描述 |
 | --- | --- |
 | `city` | 城市的名称。 |
-| `country` | 政府管理领土的名称。 这是一个自由格式字段，可使用任何语言提供国家/地区名称。 |
+| `country` | 政府管理领土的名称。 这是一个自由格式字段，可以使用任何语言提供国家/地区名称。 |
 | `countryCode` | 国家/地区的双字符<a href="https://datahub.io/core/country-list">ISO 3166-1 alpha-2</a>代码。 |
 | `createdByBatchID` | 创建地址记录的所摄取批处理文件的ID。 |
 | `dmaID` | 尼尔森媒体研究指定了市场区域。 |
@@ -44,5 +44,5 @@ ht-degree: 1%
 
 有关邮政地址数据类型的更多详细信息，请参阅公共XDM存储库：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/address.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/address.schema.json)
+* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/address.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/address.schema.json)
