@@ -1,9 +1,9 @@
 ---
 title: Adobe Analytics Product String扩展概述
 description: 了解Adobe Experience Platform中的Adobe Analytics Product String标记扩展。
-source-git-commit: 8dfb7bdc16d0654ee1d76dc5f5af50938b122d33
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '524'
 ht-degree: 84%
 
 ---
@@ -93,4 +93,4 @@ digitalData.transaction.item.productInfo.productName
 ### 要求
 
 * 基于对象的[数据层](https://theblog.adobe.com/data-layers-buzzword-best-practice/)，其变量适用于所有产品相关数据（如产品 ID、数量和价格）。此扩展不适用于基于数组的数据层。
-* 必须安装 [Adobe Analytics](https://experienceleague.adobe.com/docs/launch/using/extensions-ref/adobe-extension/analytics-extension/overview.html?lang=zh-Hans) 扩展。
+* 必须安装 [Adobe Analytics](../analytics/overview.md) 扩展。
