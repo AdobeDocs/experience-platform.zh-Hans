@@ -4,9 +4,9 @@ title: 同意和首选项数据类型
 description: “隐私、个性化和营销首选项的同意”数据类型旨在支持收集由同意管理平台(CMP)和其他来自您数据操作来源的客户权限和首选项。
 topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '1904'
+source-wordcount: '1905'
 ht-degree: 2%
 
 ---
@@ -309,4 +309,4 @@ ht-degree: 2%
 
 ### 完整的[!UICONTROL 同意和首选项]架构 {#full-schema}
 
-要查看[!UICONTROL 同意和首选项]数据类型的完整架构，请参阅[官方XDM存储库](https://github.com/adobe/xdm/blob/master/components/datatypes/consent-preferences.schema.json)。
+要查看[!UICONTROL 同意和首选项]数据类型的完整架构，请参阅[官方XDM存储库](https://github.com/adobe/xdm/blob/master/components/datatypes/consent/consent-preferences.schema.json)。
