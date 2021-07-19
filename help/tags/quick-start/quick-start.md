@@ -1,10 +1,10 @@
 ---
 title: 快速入门指南
 description: 了解如何在Adobe Experience Platform中快速启动和运行标记。
-source-git-commit: 5f810ada57eeb12a56de603d974a091b888dc9d2
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '1562'
-ht-degree: 42%
+source-wordcount: '1533'
+ht-degree: 41%
 
 ---
 
@@ -134,8 +134,6 @@ Platform中的标记之所以真正独特，是因为这些扩展可由任何人
 ## 其他资源
 
 要了解有关标记的更多信息，请参阅以下资源：
-
-[https://forums.adobe.com/community/experience-cloud/platform/launchAsk](https://forums.adobe.com/community/experience-cloud/platform/launchAsk)：回答他人提出的问题、发表自己的意见或对他人的意见进行投票。使用您的Adobe ID登录。
 
 * **[数据收集社区](https://forums.adobe.com/community/experience-cloud/platform/launch)**:提问或回答他人提出的问题、发表自己的意见、对他人的意见进行投票。使用您的Adobe ID登录。
 * **[开发人员文档](https://developer.adobelaunch.com/)**:加入标记开发人员社区，构建扩展或使用标记API
