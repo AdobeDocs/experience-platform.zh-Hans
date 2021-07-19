@@ -5,9 +5,9 @@ title: 兴趣点交互数据类型
 topic-legacy: overview
 description: 本文档概述了兴趣点交互XDM数据类型。
 exl-id: 398f56d9-1802-458d-b565-4096beb5b014
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '186'
+source-wordcount: '188'
 ht-degree: 3%
 
 ---
@@ -28,5 +28,5 @@ ht-degree: 3%
 
 有关数据类型的更多详细信息，请参阅公共XDM存储库：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/poi-interaction.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/poi-interaction.schema.json)
+* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/poi-interaction.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/deprecated/poi-interaction.schema.json)
