@@ -1,7 +1,7 @@
 ---
 title: 上传和实施扩展的端到端测试
 description: 了解如何在Adobe Experience Platform中验证、上传和测试扩展。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
 source-wordcount: '2391'
 ht-degree: 33%
@@ -228,9 +228,3 @@ Uploader要求您输入多段信息。 技术帐户ID、API密钥和其他一些
 1. 修改资源 — 如果任何扩展组件的配置已更改，则需要在数据收集UI中更新这些资源。
 1. 将最新更改添加到库，然后再次构建.
 1. 完成另一轮测试。
-
-<!--
-## Document {#document}
-
-Your [exchange listing](./create-listing.md) is a great place for marketing and support information for your extension, but our tags [Help Docs](https://experienceleague.adobe.com/docs/launch/using/overview.html) are used every day by our customers. We encourage you to submit a pull request to [add your extension documentation](https://github.com/AdobeDocs/launch.en/blob/master/help/extension-reference/3rd-party-extensions.md) into the tags user docs. Open source docs for the win! 🚀
--->
