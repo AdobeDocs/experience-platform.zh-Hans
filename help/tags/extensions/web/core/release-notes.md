@@ -1,9 +1,9 @@
 ---
 title: 核心扩展的发行说明
 description: Adobe Experience Platform中核心扩展的最新发行说明。
-source-git-commit: 5f810ada57eeb12a56de603d974a091b888dc9d2
+source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
 workflow-type: tm+mt
-source-wordcount: '1219'
+source-wordcount: '1211'
 ht-degree: 74%
 
 ---
@@ -103,7 +103,7 @@ v1.6.2
 
 v1.6.1
 
-* **支持 CSP Nonce** - 现在，核心扩展有一个可选配置参数。您可以添加引用 nonce 的数据元素。如果已配置，则标记添加到页面的所有内联脚本都将使用您配置的nonce。 此更改支持使用包含 nonce 的内容安全策略，以便仍然可以在 CSP 环境中加载 Platform Launch 脚本。您可以在[此处](https://experienceleague.adobe.com/docs/launch/using/reference/client-side-info/content-security-policy.html)阅读有关将 Platform Launch 与 CSP 结合使用的更多信息。
+* **支持 CSP Nonce** - 现在，核心扩展有一个可选配置参数。您可以添加引用 nonce 的数据元素。如果已配置，则标记添加到页面的所有内联脚本都将使用您配置的nonce。 此更改支持使用包含 nonce 的内容安全策略，以便仍然可以在 CSP 环境中加载 Platform Launch 脚本。您可以在[此处](../../../ui/client-side/content-security-policy.md)阅读有关将 Platform Launch 与 CSP 结合使用的更多信息。
 
 ## 2019 年 6 月 18 日
 
