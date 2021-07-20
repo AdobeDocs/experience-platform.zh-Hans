@@ -5,9 +5,9 @@ title: 配置数据集以捕获同意和首选项数据
 topic-legacy: getting started
 description: 了解如何配置体验数据模型(XDM)架构和数据集，以在Adobe Experience Platform中捕获同意和首选项数据。
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: ff793c207a181ca6d2486e7fd6ef5c4f57744fba
+source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
 workflow-type: tm+mt
-source-wordcount: '1482'
+source-wordcount: '1480'
 ht-degree: 0%
 
 ---
@@ -116,7 +116,7 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/save-schema.png)
 
-如果您编辑的架构由Platform Web SDK边缘配置中指定的[!UICONTROL 配置文件数据集]使用，则该数据集现在将包含新的同意字段。 现在，您可以返回[同意处理指南](./overview.md#merge-policies)以继续配置Experience Platform以处理同意数据的过程。
+如果您编辑的架构由Platform Web SDK数据流中指定的[!UICONTROL 配置文件数据集]使用，则该数据集现在将包含新的同意字段。 现在，您可以返回[同意处理指南](./overview.md#merge-policies)以继续配置Experience Platform以处理同意数据的过程。
 
 如果您尚未为此架构创建数据集，请按照下一部分中的步骤操作。
 
@@ -150,7 +150,7 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/enable-dataset.png)
 
-数据集现已保存并启用，可在[!DNL Profile]中使用。 如果您计划使用Platform Web SDK将同意数据发送到配置文件，则在设置[边缘配置](../../../../edge/fundamentals/datastreams.md)时，必须将此数据集选为[!UICONTROL 配置文件数据集]。
+数据集现已保存并启用，可在[!DNL Profile]中使用。 如果您计划使用Platform Web SDK将同意数据发送到配置文件，则在设置[datastream](../../../../edge/fundamentals/datastreams.md)时，必须将此数据集选为[!UICONTROL 配置文件数据集]。
 
 ## 后续步骤
 
