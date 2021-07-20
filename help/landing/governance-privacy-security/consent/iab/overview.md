@@ -5,9 +5,9 @@ title: IAB TCF 2.0支持Experience Platform
 topic-legacy: privacy events
 description: 了解在Adobe Experience Platform中将区段激活到目标时，如何配置数据操作和模式以传达客户同意选择。
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: a3468d55d95b89c075abf91391bd7dfaa974742c
+source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
 workflow-type: tm+mt
-source-wordcount: '2564'
+source-wordcount: '2559'
 ht-degree: 1%
 
 ---
@@ -117,15 +117,15 @@ Adobe Experience Platform是已注册的[IAB TCF 2.0供应商列表](https://iab
 
 **SDK不会与任何现成的CMP进行接口**。至于如何将SDK集成到您的网站，如何监听CMP中的同意更改，以及如何调用相应的命令，这将由您来决定。
 
-### 创建新的边缘配置
+### 创建新数据流
 
-为了使SDK将数据发送到Experience Platform，您必须首先在[!DNL Adobe Experience Platform Launch]中为Platform创建新的边缘配置。 有关如何创建新配置的具体步骤，请参阅[SDK文档](../../../../edge/fundamentals/datastreams.md)。
+为了使SDK能够将数据发送到Experience Platform，您必须首先在[!DNL Adobe Experience Platform Launch]中为Platform创建新的数据流。 有关如何创建新配置的具体步骤，请参阅[SDK文档](../../../../edge/fundamentals/datastreams.md)。
 
 为配置提供唯一名称后，选择&#x200B;**[!UICONTROL Adobe Experience Platform]**&#x200B;旁边的切换按钮。 接下来，使用以下值完成表单的其余部分：
 
-| 边缘配置字段 | 值 |
+| 数据流字段 | 值 |
 | --- | --- |
-| [!UICONTROL 沙盒] | 平台[sandbox](../../../../sandboxes/home.md)的名称，其中包含设置边缘配置所需的流连接和数据集。 |
+| [!UICONTROL 沙盒] | 平台[sandbox](../../../../sandboxes/home.md)的名称，其中包含设置数据流所需的流连接和数据集。 |
 | [!UICONTROL 流入口] | 有效的流连接，用于Experience Platform。 如果您没有现有的流入口，请参阅有关创建流连接](../../../../ingestion/tutorials/create-streaming-connection-ui.md)的教程。[ |
 | [!UICONTROL 事件数据集] | 选择在[上一步](#datasets)中创建的[!DNL XDM ExperienceEvent]数据集。 如果您在此数据集的架构中包含[[!UICONTROL IAB TCF 2.0 Consent]字段组](../../../../xdm/field-groups/event/iab.md)，则可以使用[`sendEvent`](#sendEvent)命令跟踪随时间发生的同意更改事件，并将该数据存储在此数据集中。 请记住，此数据集中存储的同意值&#x200B;**不**&#x200B;用于自动执行工作流。 |
 | [!UICONTROL 配置文件数据集] | 选择在[上一步](#datasets)中创建的[!DNL XDM Individual Profile]数据集。 使用[`setConsent`](#setConsent)命令响应CMP同意更改挂接时，收集的数据将存储在此数据集中。 由于此数据集启用了配置文件，因此在自动执行工作流中会遵循存储在此数据集中的同意值。 |
@@ -136,7 +136,7 @@ Adobe Experience Platform是已注册的[IAB TCF 2.0供应商列表](https://iab
 
 ### 发出同意更改命令
 
-创建上一节中所述的边缘配置后，您可以开始使用SDK命令将同意数据发送到平台。 以下部分提供了如何在不同情景中使用每个SDK命令的示例。
+创建上一节中所述的数据流后，您可以开始使用SDK命令将同意数据发送到平台。 以下部分提供了如何在不同情景中使用每个SDK命令的示例。
 
 >[!NOTE]
 >
