@@ -1,10 +1,10 @@
 ---
 title: Adobe Target v2扩展的发行说明
 description: Adobe Experience Platform中Adobe Target v2标记扩展的最新发行说明。
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: ae6b69ecea54942c1bbf8a2765768bac50a8b930
 workflow-type: tm+mt
-source-wordcount: '438'
-ht-degree: 55%
+source-wordcount: '572'
+ht-degree: 44%
 
 ---
 
@@ -13,6 +13,30 @@ ht-degree: 55%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+
+## 2021 年 7 月 20 日
+
+### Adobe Target v2 扩展 0.15.1
+
+- 修复了`stringify`函数名称冲突的问题，该问题会导致为`sessionId`、`requestId`等生成不正确的UUID值。
+
+## 2021 年 7 月 16 日
+
+### Adobe Target v2 扩展 0.15.0
+
+- 每当at.js设置secureOnly设置为true时，向Cookie添加安全属性
+- 现在，使用`triggerView()`时，可使用响应令牌
+- 修复了与`CONTENT_RENDERING_NO_OFFERS`事件相关的错误。 现在，当没有从Target返回内容时，可以正确触发该事件
+- 使用预取请求时，可正确返回A4T点击量度详细信息
+- UUID生成不再使用`Math.random()`，而是依赖于`window.crypto`
+- `sessionId` 每次网络调用时，Cookie到期正确延长
+- SPA视图缓存初始化现已得到正确处理，并遵循`viewsEnable`设置
+
+## 2021 年 6 月 2 日
+
+### Adobe Target v2 扩展 0.14.2
+
+- 修复了最终Launch包包含两个at.js版本的错误，一个包含设备决策版本，另一个不包含。
 
 ## 2021 年 5 月 19 日
 
