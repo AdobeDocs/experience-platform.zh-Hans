@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: 7a1cd379eb002f92c19fbe0e569d5fac90ab5334
+source-git-commit: 0162ec101c820c4870dea0f2c2bc09523eca862a
 workflow-type: tm+mt
-source-wordcount: '2888'
+source-wordcount: '3054'
 ht-degree: 0%
 
 ---
@@ -143,6 +143,21 @@ ht-degree: 0%
 ![导出完整文件](../assets/ui/activate-destinations/export-full-files.png)
 
 1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器可在一次性（**[!UICONTROL 一次]**）或&#x200B;**[!UICONTROL 每日]**&#x200B;导出之间进行选择。 导出完整文件&#x200B;**[!UICONTROL Daily]**&#x200B;会每天从开始日期到结束日期(UTC时间上午12:00（东部标准时间晚上7:00）导出文件。
+
+   >[!IMPORTANT]
+   >
+   >在设置开始和结束日期时，**[!UICONTROL 开始日期]**&#x200B;指示文件导出计划何时开始，**[!UICONTROL 结束日期]**&#x200B;指示文件导出计划何时停止。 文件导出从&#x200B;**[!UICONTROL 开始日期]**&#x200B;开始，但不包括&#x200B;**[!UICONTROL 结束日期]**。
+   >
+   >例如，如果设置了以下计划：
+   >
+   >* 导出：每3小时增量一次
+   >* 开始日期：7/19
+   >* 结束日期：7/21
+
+   >
+   >文件将在7/19时开始导出，并将在7/20时在23:59:59 UTC时停止导出。 7/21上不会有任何文件。
+
+
 2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。 导出文件&#x200B;**[!UICONTROL Daily]**&#x200B;会每天从开始日期导出文件，直到您选择的结束日期。
 
    >[!IMPORTANT]
@@ -167,11 +182,27 @@ ht-degree: 0%
 ![导出增量文件](../assets/ui/activate-destinations/export-incremental-files.png)
 
 1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器在&#x200B;**[!UICONTROL Daily]**&#x200B;或&#x200B;**[!UICONTROL Hourly]**&#x200B;导出中进行选择。 导出增量文件&#x200B;**[!UICONTROL Daily]**&#x200B;会每天从开始日期到结束日期（UTC时间中午7:00）导出文件。
+
+
+   >[!IMPORTANT]
+   >
+   >在设置开始和结束日期时，**[!UICONTROL 开始日期]**&#x200B;指示文件导出计划何时开始，**[!UICONTROL 结束日期]**&#x200B;指示文件导出计划何时停止。 文件导出从&#x200B;**[!UICONTROL 开始日期]**&#x200B;开始，但不包括&#x200B;**[!UICONTROL 结束日期]**。
+   >
+   >例如，如果设置了以下计划：
+   >
+   >* 导出：每3小时增量一次
+   >* 开始日期：7/19
+   >* 结束日期：7/21
+
+   >
+   >文件将在7/19时开始导出，并将在7/20时在23:59:59 UTC时停止导出。 7/21上不会有任何文件。
+
    * 选择&#x200B;**[!UICONTROL 每小时]**&#x200B;时，使用&#x200B;**[!UICONTROL 每]**&#x200B;选择器在&#x200B;**[!UICONTROL 3]**、**[!UICONTROL 6]**、**[!UICONTROL 8]**&#x200B;和&#x200B;**[!UICONTROL 12]**&#x200B;小时选项之间进行选择。
 
       >[!IMPORTANT]
       >
       >每3、6、8或12小时导出增量文件的选项目前处于测试阶段，并且仅对选定数量的客户可用。 非测试版客户每天可导出一次增量文件。
+
 
 2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。
 
