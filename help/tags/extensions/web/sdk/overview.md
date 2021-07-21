@@ -1,10 +1,10 @@
 ---
 title: Web SDK扩展概述
 description: 了解Adobe Experience Platform中的Web SDK标记扩展。
-source-git-commit: de35da5a2c59b3df310b928265f2acc3648e66e5
+source-git-commit: 934e74528a5bde72f3cbd216f56157b18f884cba
 workflow-type: tm+mt
-source-wordcount: '136'
-ht-degree: 13%
+source-wordcount: '126'
+ht-degree: 15%
 
 ---
 
@@ -16,4 +16,4 @@ ht-degree: 13%
 
 Adobe Experience Platform Web SDK扩展通过Adobe Experience Platform Edge Network从Web属性将数据发送到Adobe Experience Cloud。  Platform Web SDK 扩展允许将数据流式传输到平台、同步身份、选择加入和自动收集上下文数据。
 
-有关配置Platform Web SDK扩展的详细信息，请参阅[Adobe Experience Platform Web SDK文档](https://experienceleague.adobe.com/docs/experience-platform/edge/extension/web-sdk-extension.html?lang=en#extension)。
+有关配置Platform Web SDK扩展的详细信息，请参阅[Adobe Experience Platform Web SDK文档](../../../../edge/extension/web-sdk-extension-configuration.md)。
