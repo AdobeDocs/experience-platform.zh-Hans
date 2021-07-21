@@ -1,14 +1,13 @@
 ---
-keywords: Experience Platform；主页；热门主题；边缘分割；分割；分割服务；分割服务；用户界面指南；流边缘；
+keywords: Experience Platform；主页；热门主题；边缘分段；分段；分段服务；分段服务；UI指南；流式边缘；
 solution: Experience Platform
 title: 边缘分段UI指南
 topic-legacy: ui guide
-description: 边缘细分是指在Platform中即时评估边缘区段的能力，支持相同页面和下一页个性化使用案例。
+description: 边缘分段功能可以即时评估Platform中的边缘区段，从而实现同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-translation-type: tm+mt
-source-git-commit: 5256c2a13fc75f7d46911f2ad368188d9e818921
+source-git-commit: 8375d5a35ef652335c60b4b8b4571bf42ec1924a
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '345'
 ht-degree: 4%
 
 ---
@@ -19,30 +18,28 @@ ht-degree: 4%
 >
 >边缘分段当前为测试版。 文档和功能可能会发生变化。
 
-边缘细分是指在边缘即时评估Adobe Experience Platform中的细分，支持相同页面和下一页个性化使用案例。
+边缘分段功能可以即时在边缘上评估Adobe Experience Platform中的区段，从而实现同一页面和下一页面的个性化用例。
 
-## 边缘分割查询类型
+## 边缘分段查询类型
 
-如果查询满足以下任一条件，则可以使用边缘分割来评估该数据：
+如果查询满足以下任一条件，则可以使用边缘分段来评估该查询：
 
 | 查询类型 | 详细信息 | 示例 |
 | ---------- | ------- | ------- |
-| 传入点击 | 任何区段定义，指没有时间限制的单个传入事件。 | ![](../images/ui/edge-segmentation/incoming-hit.png) |
-| 指用户档案的传入点击 | 引用单个传入事件（无时间限制）和一个或多个用户档案属性的任何区段定义。 | ![](../images/ui/edge-segmentation/profile-hit.png) |
-| 频率查询 | 指发生至少特定次数的事件的任何区段定义。 |  |
-| 引用查询的频率用户档案 | 任何区段定义，指发生至少特定次数的事件，并具有一个或多个用户档案属性。 |  |
+| 传入点击 | 任何引用无时间限制的单个传入事件的区段定义。 | ![](../images/ui/edge-segmentation/incoming-hit.png) |
+| 引用用户档案的传入点击 | 任何引用单个传入事件（无时间限制）和一个或多个用户档案属性的区段定义。 | ![](../images/ui/edge-segmentation/profile-hit.png) |
+| 频度查询 | 任何区段定义，指发生至少特定次数的事件。 |  |
+| 引用用户档案的频率查询 | 任何区段定义，指发生至少特定次数且具有一个或多个用户档案属性的事件。 |  |
 
-如果查询与上述任何查询类型匹配，则可以通过打开&#x200B;**[!UICONTROL Evaluate as streaming segment on the edge]**&#x200B;切换来启用边缘分割。
+如果查询与上述任何查询类型匹配，则将使用边缘分段自动评估该查询。
 
-![](../images/ui/edge-segmentation/mark-on-edge.png)
-
-以下查询类型&#x200B;**当前不**&#x200B;用于边缘分割：
+以下查询类型是当前支持边缘分段的&#x200B;**not**:
 
 | 查询类型 | 详细信息 |
 | ---------- | ------- |
-| 相对时间窗口 | 如果查询引用时间窗口，则无法使用边缘分割来评估该窗口。 |
-| 取反 | 如果查询包含取反或`not`事件，则无法使用边缘分段对其进行计算。 |
-| 多个事件 | 如果查询包含多个事件，则无法使用边缘分割对其进行评估。 |
+| 相对时间窗口 | 如果查询引用的是时间窗口，则无法使用边缘分段来评估查询。 |
+| 求反 | 如果查询包含求反或`not`事件，则无法使用边缘分段来评估该查询。 |
+| 多个事件 | 如果查询包含多个事件，则无法使用边缘分段来评估该查询。 |
 
 ## 后续步骤
 
