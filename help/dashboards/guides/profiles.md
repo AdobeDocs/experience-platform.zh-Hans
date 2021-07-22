@@ -4,9 +4,9 @@ title: 用户档案仪表板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
+source-git-commit: 41ef7a6e6d3b0ee9afe762b19c8c286ceb361dbb
 workflow-type: tm+mt
-source-wordcount: '1192'
+source-wordcount: '1234'
 ht-degree: 0%
 
 ---
@@ -39,9 +39,9 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ### 修改[!UICONTROL Profiles]功能板
 
-通过选择&#x200B;**[!UICONTROL 修改功能板]**，可以修改[!UICONTROL Profiles]功能板的外观。 这样，您就可以在功能板中移动、添加和删除小组件，以及访问[!UICONTROL 小组件库]，以探索可用的小组件并为贵组织创建自定义小组件。
+通过选择&#x200B;**[!UICONTROL 修改功能板]**，可以修改[!UICONTROL Profiles]功能板的外观。 这样，您就可以在功能板中移动、添加和删除小组件，以及访问&#x200B;**[!UICONTROL 小组件库]**，以探索可用的小组件并为贵组织创建自定义小组件。
 
-有关更多信息，请参阅[修改功能板](../modify.md)和[小组件库](../widget-library.md)文档。
+有关更多信息，请参阅[修改功能板](../customize/modify.md)和[小组件库概述](../customize/widget-library.md)文档。
 
 ## 合并策略
 
@@ -63,9 +63,11 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 小组件上的“上次更新”日期和时间，会显示拍摄数据的最后快照的时间。 快照的日期和时间以UTC格式提供；它不在单个用户或IMS组织的时区中。
 
-## 可用小组件
+## 标准小组件
 
-Experience Platform提供了多个小组件，您可以使用这些小组件来可视化与用户档案数据相关的不同量度。 选择下面小组件的名称，以了解更多信息：
+Adobe提供了多个标准小组件，您可以使用这些小组件来可视化与用户档案数据相关的不同量度。 您还可以使用[!UICONTROL Widget库]创建要与贵组织共享的自定义小组件。 要了解有关创建自定义小组件的更多信息，请首先阅读[小组件库概述](../customize/widget-library.md)。
+
+要进一步了解每个可用的标准小组件，请从以下列表中选择小组件的名称：
 
 * [[!UICONTROL 用户档案计数]](#profile-count)
 * [[!UICONTROL 添加了用户档案]](#profiles-added)
