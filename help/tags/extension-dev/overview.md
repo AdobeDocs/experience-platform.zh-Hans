@@ -1,7 +1,7 @@
 ---
 title: 扩展开发概述
 description: 了解Adobe Experience Platform中不同标记扩展类型的主要组件和扩展开发过程。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 421d1d0660c4c9c7280974f8a812a8f0e4f7cbea
 workflow-type: tm+mt
 source-wordcount: '1888'
 ht-degree: 67%
@@ -14,7 +14,7 @@ ht-degree: 67%
 >
 >Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
 
-Adobe Experience Platform的主要目标之一是创建一个开放的生态系统，在该生态系统中，核心工程团队以外的工程师可以通过标记来展示其他功能。 这是通过 Reactor 扩展来实现的。用户将某个扩展安装到标记资产上后，该扩展的功能便可供该资产的所有用户使用。
+Adobe Experience Platform的主要目标之一是创建一个开放的生态系统，在该生态系统中，核心工程团队以外的工程师可以通过标记来展示其他功能。 这可通过标记扩展来完成。 用户将某个扩展安装到标记资产上后，该扩展的功能便可供该资产的所有用户使用。
 
 本文档概述了不同扩展类型的主要组件，并提供了更多文档链接，以指导您完成扩展开发过程。
 
