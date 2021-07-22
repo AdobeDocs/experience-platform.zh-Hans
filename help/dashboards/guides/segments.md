@@ -4,14 +4,14 @@ title: 区段功能板
 description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
+source-git-commit: 41ef7a6e6d3b0ee9afe762b19c8c286ceb361dbb
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '982'
 ht-degree: 0%
 
 ---
 
-# 区段功能板{#segment-dashboard}
+# 区段功能板 {#segment-dashboard}
 
 Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关区段的重要信息，这些信息是在每日快照期间捕获的。 本指南概述了如何在UI中访问和使用区段功能板，并提供了有关功能板中显示的可视化的更多信息。
 
@@ -39,9 +39,9 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 ### 修改[!UICONTROL 区段]功能板
 
-通过选择&#x200B;**[!UICONTROL 修改功能板]**，可以修改[!UICONTROL 区段]功能板的外观。 这样，您就可以在功能板中移动、添加和删除小组件，以及访问[!UICONTROL 小组件库]，以探索可用的小组件并为贵组织创建自定义小组件。
+通过选择&#x200B;**[!UICONTROL 修改功能板]**，可以修改[!UICONTROL 区段]功能板的外观。 这样，您就可以在功能板中移动、添加和删除小组件，以及访问&#x200B;**[!UICONTROL 小组件库]**，以探索可用的小组件并为贵组织创建自定义小组件。
 
-有关更多信息，请参阅[修改功能板](../modify.md)和[小组件库](../widget-library.md)文档。
+有关更多信息，请参阅[修改功能板](../customize/modify.md)和[小组件库概述](../customize/widget-library.md)文档。
 
 ## 选择区段
 
@@ -61,9 +61,11 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 ![](../images/segments/widget-timestamp.png)
 
-## 可用小组件
+## 标准小组件
 
-Experience Platform提供了多个小组件，您可以使用这些小组件来显示与区段相关的不同量度。 选择下面小组件的名称，以了解更多信息：
+Adobe提供了多个标准小组件，您可以使用这些小组件来可视化与区段相关的不同量度。 您还可以使用[!UICONTROL Widget库]创建要与贵组织共享的自定义小组件。 要了解有关创建自定义小组件的更多信息，请首先阅读[小组件库概述](../customize/widget-library.md)。
+
+要进一步了解每个可用的标准小组件，请从以下列表中选择小组件的名称：
 
 * [[!UICONTROL 受众大小]](#audience-size)
 * [[!UICONTROL 受众大小趋势]](#audience-size-trend)
