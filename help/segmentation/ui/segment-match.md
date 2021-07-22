@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 区段匹配概述
 topic-legacy: overview
 description: 区段匹配是Adobe Experience Platform中的一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: d6eefc8c10a44fd31eaed00f22d09ee8a300db83
 workflow-type: tm+mt
 source-wordcount: '1901'
 ht-degree: 1%
@@ -12,11 +12,11 @@ ht-degree: 1%
 ---
 
 
-# (Alpha)[!DNL Segment Match]概述
+# （测试版）[!DNL Segment Match]概述
 
 >[!IMPORTANT]
 >
->[!DNL Segment Match] 当前位于alpha中。文档和功能可能会发生变化。
+>[!DNL Segment Match] 当前为测试版。文档和功能可能会发生变化。
 
 Adobe Experience Platform区段匹配是一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。 [!DNL Segment Match] 使用平台隐私标准和个人标识符，如经过哈希处理的电子邮件、经过哈希处理的电话号码，以及设备标识符（如IDFA和GAID）。
 
