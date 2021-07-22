@@ -1,9 +1,9 @@
 ---
 title: 扩展清单
 description: 了解如何配置JSON清单文件，以告知Adobe Experience Platform如何正确使用您的扩展。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 421d1d0660c4c9c7280974f8a812a8f0e4f7cbea
 workflow-type: tm+mt
-source-wordcount: '2647'
+source-wordcount: '2646'
 ht-degree: 75%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 75%
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 扩展的名称。此名称必须唯一，不同于所有其他 Reactor 扩展，且必须符合[命名规则](#naming-rules)。**标记将用作标识符，在发布扩展后不应更改此设置。** |
+| `name` | 扩展的名称。此名称必须唯一，不同于所有其他 扩展，且必须符合[命名规则](#naming-rules)。**标记将用作标识符，在发布扩展后不应更改此设置。** |
 | `platform` | 用于此扩展的平台。目前唯一接受的值是 `web`。 |
 | `version` | 此扩展的版本。必须遵循 [semver](http://semver.org/) 版本控制格式。与 [npm 版本字段](https://docs.npmjs.com/files/package.json#version)规则相一致。 |
 | `displayName` | 用户可读的扩展名称。这将向Platform用户显示。 无需提及“标记”或“扩展”；用户已经知道他们正在查看标记扩展。 |
