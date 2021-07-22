@@ -6,7 +6,7 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: 0162ec101c820c4870dea0f2c2bc09523eca862a
+source-git-commit: a28dc64cfe7f352a023aa2a5bd1156307bbad39f
 workflow-type: tm+mt
 source-wordcount: '3054'
 ht-degree: 0%
@@ -169,7 +169,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->当前不支持更改已导出区段的文件导出计划。 要重新导出具有不同计划的区段，您必须创建一个新的目标实例。 这是一项限制，将在未来版本中加以解决。
+>当前不支持更改已保存区段的文件导出计划。 要重新导出具有不同计划的区段，您必须创建一个新的目标实例。 这是一项限制，将在未来版本中加以解决。
 
 ### 导出增量文件 {#export-incremental-files}
 
@@ -215,7 +215,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->当前不支持更改已导出区段的文件导出计划。 要重新导出具有不同计划的区段，您必须创建一个新的目标实例。 这是一项限制，将在未来版本中加以解决。
+>当前不支持更改已保存区段的文件导出计划。 要重新导出具有不同计划的区段，您必须创建一个新的目标实例。 这是一项限制，将在未来版本中加以解决。
 
 ### 配置文件名 {#file-names}
 
