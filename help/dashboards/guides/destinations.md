@@ -4,9 +4,9 @@ title: 目标功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
+source-git-commit: 41ef7a6e6d3b0ee9afe762b19c8c286ceb361dbb
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '895'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 有关目标的概述以及Experience Platform中所有可用目标的目录，请访问[目标文档](../../destinations/home.md)。
 
-##  Destinationsdatashboard数据  {#destinations-dashboard-data}
+##  Destinationsdatashboard数据 {#destinations-dashboard-data}
 
 [!UICONTROL 目标]功能板显示您的组织在体验配置文件中已启用的目标的快照。 快照中的数据与拍摄快照时在特定时间点显示的数据完全一样。 换句话说，快照不是数据的近似值或样本，目标功能板不会实时更新。
 
@@ -35,9 +35,17 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 ![](../images/destinations/dashboard-overview.png)
 
-## 可用小组件
+### 修改目标功能板
 
-Experience Platform提供了多个小组件，您可以使用这些小组件来可视化与您的目标相关的不同量度。 选择下面小组件的名称，以了解更多信息：
+通过选择&#x200B;**[!UICONTROL 修改功能板]**，可以修改目标功能板的外观。 这样，您就可以在功能板中移动、添加和删除小组件，以及访问&#x200B;**[!UICONTROL 小组件库]**，以探索可用的小组件并为贵组织创建自定义小组件。
+
+有关更多信息，请参阅[修改功能板](../customize/modify.md)和[小组件库概述](../customize/widget-library.md)文档。
+
+## 标准小组件
+
+Adobe提供了多个标准小组件，您可以使用这些小组件来可视化与目标相关的不同量度。 您还可以使用[!UICONTROL Widget库]创建要与贵组织共享的自定义小组件。 要了解有关创建自定义小组件的更多信息，请首先阅读[小组件库概述](../customize/widget-library.md)。
+
+要进一步了解每个可用的标准小组件，请从以下列表中选择小组件的名称：
 
 * [[!UICONTROL 最常用的目标]](#most-used-destinations)
 * [[!UICONTROL 最近创建的目标]](#recently-created-destinations)
