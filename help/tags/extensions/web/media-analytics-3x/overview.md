@@ -1,9 +1,9 @@
 ---
 title: Adobe MediumAnalytics(3.x SDK)for Audio and Video扩展概述
 description: 了解Adobe Experience Platform中的Adobe MediumAnalytics(3.x SDK)for Audio and Video标记扩展。
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 7f694310b17ab257eae459003bb820f7221bb55e
 workflow-type: tm+mt
-source-wordcount: '768'
+source-wordcount: '763'
 ht-degree: 73%
 
 ---
@@ -84,7 +84,7 @@ MA扩展通过启用[!UICONTROL Configuration]页面中的“Export APIs to Wind
 
 ### 通过其他扩展使用
 
-MA扩展会将`media`作为共享模块公开给其他扩展。 （有关共享模块的其他信息，请参阅[共享模块文档](https://developer.adobelaunch.com/extensions/shared_modules/)。）
+MA扩展会将`media`作为共享模块公开给其他扩展。 （有关共享模块的其他信息，请参阅[共享模块文档](../../../extension-dev/web/shared.md)。）
 
 >[!IMPORTANT]
 >
