@@ -1,54 +1,53 @@
 ---
 title: 在Adobe Experience Platform Web SDK中自动映射Adobe Analytics变量
-description: 了解使用Experience Platform Web SDK在Adobe Analytics中自动映射哪些变量
-seo-description: 了解哪些变量在Adobe Analytics中使用Adobe Experience Platform Web SDK自动映射
-keywords: adobe analytics;variables;analytics；自动映射；自动映射；
+description: 了解哪些变量在Adobe Analytics中通过Experience PlatformWeb SDK自动映射
+seo-description: 了解哪些变量在Adobe Analytics中通过Adobe Experience Platform Web SDK自动映射
+keywords: adobe analytics；变量；analytics；自动映射；自动映射；
 exl-id: 856fada7-b62c-4fd2-9372-a19ae1cdec33
-translation-type: tm+mt
-source-git-commit: 7a6a9f1ee764ab614fa163f90a2051bd35b76b7f
+source-git-commit: 2e004fdd87c8a74eb161ef7af93c7102953ea85c
 workflow-type: tm+mt
-source-wordcount: '684'
+source-wordcount: '708'
 ht-degree: 0%
 
 ---
 
-# 在[!DNL Analytics]中自动映射变量
+# 在[!DNL Analytics]中自动映射的变量
 
-以下是Adobe Experience Platform Edge Network自动映射到Adobe Analytics的变量列表。
+以下是Adobe Experience Platform Edge Network自动映射到Adobe Analytics的变量列表。 有关Adobe Analytics数据收集查询参数的详细信息，请参阅[Analytics实施指南](https://experienceleague.adobe.com/docs/analytics/implementation/validate/query-parameters.html)。
 
 | XDM字段路径 | [!DNL Analytics Query String] / HTTP 标头 | 描述 |
 | ---------- | ------------------------- | ----------------------------------------- |
 | `application.id` | `c.a.appid` | AppMeasurement上下文数据`c.a.appid`映射。 |
 | `application.launches.value` | `c.a.launches` | AppMeasurement上下文数据`c.a.launches`映射。 |
-| `commerce.checkouts.id` | `events` | `scCheckout` 事件序列化。如果排除此字段(例如，对于无序列化事件)，则系统将生成其自己的ID值并将其赋给实体。 |
-| `commerce.checkouts.value` | `events` | AppMeasurement查询参数事件_列表_FULL映射（转换为COMMERCE_SC_CHECKOUT），使用分隔符`,`。 |
+| `commerce.checkouts.id` | `events` | `scCheckout` 事件序列化。如果排除此字段（即，对于未序列化事件），则系统会生成它自己的ID值，并将其分配给实体。 |
+| `commerce.checkouts.value` | `events` | 使用分隔符`,`的AppMeasurement查询参数EVENT_LIST_FULL与转化COMMERCE_SC_CHECKOUT的映射。 |
 | `commerce.order.currencyCode` | `cc` | AppMeasurement查询参数CURRENCY映射。 |
 | `commerce.order.purchaseID` | `pi` | AppMeasurement查询参数PURCHASEID映射。 |
-| `commerce.productListAdds.id` | `events` | `scAdd` 事件序列化。如果排除此字段(例如，对于无序列化事件)，则系统将生成其自己的ID值并将其赋给实体。 |
-| `commerce.productListAdds.value` | `events` | AppMeasurement查询参数事件_列表_FULL映射（转换为COMMERCE_SC_ADD），使用分隔符`,`。 |
-| `commerce.productListOpens.id` | `events` | `scOpen` 事件序列化。如果排除此字段(例如，对于无序列化事件)，则系统将生成其自己的ID值并将其赋给实体。 |
-| `commerce.productListOpens.value` | `events` | AppMeasurement查询参数事件_列表_FULL映射（转换为COMMERCE_SC_OPEN），使用分隔符`,`。 |
-| `commerce.productListRemovals.id` | `events` | `scRemove` 事件序列化。如果排除此字段(例如，对于无序列化事件)，则系统将生成其自己的ID值并将其赋给实体。 |
-| `commerce.productListRemovals.value` | `events` | AppMeasurement查询参数事件_列表_FULL映射（转换为COMMERCE_SC_REMOVE），使用分隔符`,`。 |
-| `commerce.productListViews.id` | `events` | `scView` 事件序列化。如果排除此字段(例如，对于无序列化事件)，则系统将生成其自己的ID值并将其赋给实体。 |
-| `commerce.productListViews.value` | `events` | AppMeasurement查询参数事件_列表_FULL映射(转换为COMMERCE_SC_视图，使用分隔符`,`)。 |
-| `commerce.productViews.id` | `events` | `prodView` 事件序列化。如果排除此字段(例如，对于无序列化事件)，则系统将生成其自己的ID值并将其赋给实体。 |
-| `commerce.productViews.value` | `events` | AppMeasurement查询参数事件_列表_FULL映射(转换为COMMERCE_PROD_视图，使用分隔符`,`)。 |
-| `commerce.purchases.value` | `events` | AppMeasurement查询参数事件_列表_FULL映射（转换为COMMERCE_PURCHASE），使用分隔符`,`。 |
+| `commerce.productListAdds.id` | `events` | `scAdd` 事件序列化。如果排除此字段（即，对于未序列化事件），则系统会生成它自己的ID值，并将其分配给实体。 |
+| `commerce.productListAdds.value` | `events` | 使用分隔符`,`的AppMeasurement查询参数EVENT_LIST_FULL与转化COMMERCE_SC_ADD的映射。 |
+| `commerce.productListOpens.id` | `events` | `scOpen` 事件序列化。如果排除此字段（即，对于未序列化事件），则系统会生成它自己的ID值，并将其分配给实体。 |
+| `commerce.productListOpens.value` | `events` | 使用分隔符`,`的AppMeasurement查询参数EVENT_LIST_FULL与转化COMMERCE_SC_OPEN的映射。 |
+| `commerce.productListRemovals.id` | `events` | `scRemove` 事件序列化。如果排除此字段（即，对于未序列化事件），则系统会生成它自己的ID值，并将其分配给实体。 |
+| `commerce.productListRemovals.value` | `events` | 使用分隔符`,`的AppMeasurement查询参数EVENT_LIST_FULL与转化COMMERCE_SC_REMOVE的映射。 |
+| `commerce.productListViews.id` | `events` | `scView` 事件序列化。如果排除此字段（即，对于未序列化事件），则系统会生成它自己的ID值，并将其分配给实体。 |
+| `commerce.productListViews.value` | `events` | 使用分隔符`,`的AppMeasurement查询参数EVENT_LIST_FULL与转化COMMERCE_SC_VIEW的映射。 |
+| `commerce.productViews.id` | `events` | `prodView` 事件序列化。如果排除此字段（即，对于未序列化事件），则系统会生成它自己的ID值，并将其分配给实体。 |
+| `commerce.productViews.value` | `events` | 使用分隔符`,`的AppMeasurement查询参数EVENT_LIST_FULL与转换COMMERCE_PROD_VIEW的映射。 |
+| `commerce.purchases.value` | `events` | AppMeasurement查询参数EVENT_LIST_FULL与转化COMMERCE_PURCHASE的映射，使用分隔符`,`。 |
 | `device.colorDepth` | `c` | AppMeasurement查询参数C_COLOR映射。 |
 | `device.screenHeight` | `s` | AppMeasurement查询参数屏幕分辨率映射。 |
 | `device.screenWidth` | `s` | AppMeasurement查询参数屏幕分辨率映射。 |
-| `environment.browserDetails.acceptLanguage` | `Accept-Language` | 这是HTTP头映射，HEADER_ACCEPT_LANGUAGE。 |
-| `environment.browserDetails.cookiesEnabled` | `k` | AppMeasurement查询参数COOKIE映射（转换为BOOLEAN_TO_YN）。 |
+| `environment.browserDetails.acceptLanguage` | `Accept-Language` | 这是HTTP标头映射，即HEADER_ACCEPT_LANGUAGE。 |
+| `environment.browserDetails.cookiesEnabled` | `k` | 转换为BOOLEAN_TO_YN的AppMeasurement查询参数COOKIE映射。 |
 | `environment.browserDetails.javaEnabled` | `v` | AppMeasurement查询参数JAVA_ENABLED映射，转换为BOOLEAN_TO_YN。 |
 | `environment.browserDetails.javaScriptVersion` | `j` | AppMeasurement查询参数J_JSCRIPT映射。 |
-| `environment.browserDetails.userAgent` | `User-Agent` | 这是HTTP头映射，HEADER_USER_AGENT。 |
+| `environment.browserDetails.userAgent` | `User-Agent` | 这是HTTP标头映射，即HEADER_USER_AGENT。 |
 | `environment.browserDetails.viewportHeight` | `bh` | AppMeasurement查询参数BROWSER_HEIGHT映射。 |
 | `environment.browserDetails.viewportWidth` | `bw` | AppMeasurement查询参数BROWSER_WIDTH映射。 |
 | `environment.connectionType` | `ct` | AppMeasurement查询参数CT_CONNECT_TYPE映射。 |
-| `environment.ipV4` | `X-Forwarded-For` | 这是HTTP头映射，X-FORWARDED-FOR。 |
+| `environment.ipV4` | `X-Forwarded-For` | 这是HTTP标头映射，X-FORWARDED-FOR。 |
 | `identityMap.ECID.[0].id` | `mid` | AppMeasurement查询参数MID映射。 |
-| `marketing.trackingCode` | `v0` | AppMeasurement查询参数活动映射。 |
+| `marketing.trackingCode` | `v0` | AppMeasurement查询参数CAMPAIGN映射。 |
 | `media.mediaTimed.completes.value` | `c.a.media.complete` | AppMeasurement上下文数据。 |
 | `media.mediaTimed.dropBeforeStart.value` | `c.a.media.view`、`c.a.media.timePlayed`、`c.a.media.play` | AppMeasurement上下文数据。 |
 | `media.mediaTimed.federated.value` | `c.a.media.federated` | AppMeasurement上下文数据`c.a.media.federated`映射。 |
@@ -66,7 +65,7 @@ ht-degree: 0%
 | `media.mediaTimed.primaryAssetReference.iptc4xmpExt:Season.iptc4xmpExt:Number` | `c.a.media.season` | AppMeasurement上下文数据`c.a.media.season`映射。 |
 | `media.mediaTimed.primaryAssetReference.iptc4xmpExt:Series.iptc4xmpExt:Identifier` | `a.media.name` | AppMeasurement上下文数据`a.media.name`映射。 |
 | `media.mediaTimed.primaryAssetReference.iptc4xmpExt:Series.iptc4xmpExt:Name` | `c.a.media.show` | AppMeasurement上下文数据`c.a.media.show`映射。 |
-| `media.mediaTimed.primaryAssetReference.showType` | `c.a.media.type` | 转换为VEDIO_SHOW_TYPE的AppMeasurement上下文数据`c.a.media.type`映射。 |
+| `media.mediaTimed.primaryAssetReference.showType` | `c.a.media.type` | AppMeasurement上下文数据`c.a.media.type`映射，转换为VEDIO_SHOW_TYPE。 |
 | `media.mediaTimed.primaryAssetReference.showType` | `c.a.media.type` | AppMeasurement上下文数据`c.a.media.type`映射，转换为VIDEO_SHOW_TYPE。 |
 | `media.mediaTimed.primaryAssetReference.xmpDM:duration` | `c.a.media.length` | AppMeasurement上下文数据`c.a.media.length`映射。 |
 | `media.mediaTimed.primaryAssetViewDetails.@id` | `c.a.media.vsid` | AppMeasurement上下文数据。 |
@@ -86,22 +85,22 @@ ht-degree: 0%
 | `media.mediaTimed.timePlayed.value` | `c.a.media.timePlayed` | AppMeasurement上下文数据`c.a.media.timePlayed`映射。 |
 | `media.mediaTimed.totalTimePlayed.value` | `c.a.media.totalTimePlayed` | AppMeasurement上下文数据`c.a.media.totalTimePlayed`映射。 |
 | `placeContext.geo.latitude` | `lat` | AppMeasurement查询参数LATITUDE映射。 |
-| `placeContext.geo.longitude` | `lon` | AppMeasurement查询参数LONGITUE映射。 |
+| `placeContext.geo.longitude` | `lon` | AppMeasurement查询参数LONGITUDE映射。 |
 | `placeContext.geo.postalCode` | `zip` | AppMeasurement查询参数ZIP映射。 |
 | `placeContext.geo.stateProvince` | `state` | AppMeasurement查询参数STATE映射。 |
-| `productlistitems.[N]._[NAME_SPACE].*` | `products` | AppMeasurement查询参数产品商品事件/Evars映射。 |
+| `productlistitems.[N]._[NAME_SPACE].*` | `products` | AppMeasurement查询参数产品促销事件/Evar映射。 |
 | `productlistitems.[N].name` | `products` | AppMeasurement查询参数产品名称映射。 |
 | `productlistitems.[N].priceTotal` | `products` | AppMeasurement查询参数产品价格映射。 |
 | `productlistitems.[N].quantity` | `products` | AppMeasurement查询参数产品数量映射。 |
-| `web.webInteraction.URL` | `pev1` | AppMeasurement查询参数PAGE_事件_VAR1映射。 |
-| `web.webInteraction.name` | `pev2` | AppMeasurement查询参数PAGE_事件_VAR2映射。 |
+| `web.webInteraction.URL` | `pev1` | AppMeasurement查询参数PAGE_EVENT_VAR1映射。 |
+| `web.webInteraction.name` | `pev2` | AppMeasurement查询参数PAGE_EVENT_VAR2映射。 |
 | `web.webInteraction.type` | `pe` | `web.webInteraction.type=other` 至 `pe=lnk_o`; `web.webInteraction.type=download` 至 `pe=lnk_d`; `web.webInteraction.type=exit` to  `pe=lnk_e` |
 | `web.webPageDetails.URL` | `g` | AppMeasurement查询参数PAGE_URL映射。 |
-| `web.webPageDetails.errorPage` | `pageType` | AppMeasurement查询参数PAGE_TYPE_FULL映射，转换ERROR_PAGE_TYPE。 |
-| `web.webPageDetails.homePage` | `hp` | AppMeasurement查询参数HOMEPAGE映射（转换为BOOLEAN_TO_YN）。 |
+| `web.webPageDetails.errorPage` | `pageType` | AppMeasurement查询参数PAGE_TYPE_FULL映射，转换为ERROR_PAGE_TYPE。 |
+| `web.webPageDetails.homePage` | `hp` | AppMeasurement查询参数HOMEPAGE映射，转换为BOOLEAN_TO_YN。 |
 | `web.webPageDetails.name` | `gn` | AppMeasurement查询参数PAGENAME映射。 |
 | `web.webPageDetails.server` | `sv` | AppMeasurement查询参数USER_SERVER映射。 |
-| `web.webPageDetails.siteSection` | `ch` | AppMeasurement查询参数渠道映射。 |
-| `web.webReferrer.URL` | `r` | AppMeasurement查询参数推荐人映射。 |
+| `web.webPageDetails.siteSection` | `ch` | AppMeasurement查询参数CHANNEL映射。 |
+| `web.webReferrer.URL` | `r` | AppMeasurement查询参数REFERRER映射。 |
 
 {style=&quot;table-layout:auto&quot;}
