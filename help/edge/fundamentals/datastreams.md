@@ -3,7 +3,7 @@ title: 为Experience PlatformWeb SDK配置数据流
 description: '了解如何配置数据流。 '
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；edgeConfigId；身份；启用ID同步的容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
+source-git-commit: 3a1d08a4ea87ee3db7a2a8b048d5721fa679c372
 workflow-type: tm+mt
 source-wordcount: '895'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Adobe Experience Platform Web SDK的配置分为两个位置。 SDK中的[config
 
 可以使用数据流配置工具在Adobe[!DNL Experience Platform Launch]中创建数据流。
 
-![datastreams工具导航](../../assets/datastreams_config.png)
+![datastreams工具导航](../images/datastreams/config.png)
 
 >[!NOTE]
 >
@@ -39,7 +39,7 @@ SDK中用作`edgeConfigId`的ID是一个复合ID，用于指定配置和环境�
 
 第三方ID部分是唯一始终打开的部分。 它有两个可用的设置：&quot;[!UICONTROL 已启用第三方ID同步]&quot;和&quot;[!UICONTROL 第三方ID同步容器ID]&quot;。
 
-![配置UI的标识部分](../../assets/edge_configuration_identity.png)
+![配置UI的标识部分](../images/datastreams/edge_configuration_identity.png)
 
 ### [!UICONTROL 已启用第三方ID同步]
 
@@ -53,7 +53,7 @@ ID同步可以分组到容器中，以允许在不同时间运行不同的ID同�
 
 通过此处列出的设置，您可以将数据发送到Adobe Experience Platform。 仅当您购买了Adobe Experience Platform时，才应启用此部分。
 
-![Adobe Experience Platform设置块](../../assets/edge_configuration_aep.png)
+![Adobe Experience Platform设置块](../images/datastreams/edge_configuration_aep.png)
 
 ### [!UICONTROL 沙盒]
 
@@ -71,7 +71,7 @@ ID同步可以分组到容器中，以允许在不同时间运行不同的ID同�
 
 要配置Adobe Target，必须提供客户端代码。 其他字段为可选字段。
 
-![Adobe Target设置块](../../assets/edge_configuration_target.png)
+![Adobe Target设置块](../images/datastreams/edge_configuration_target.png)
 
 >[!NOTE]
 >
@@ -97,7 +97,7 @@ Adobe建议对`dev`、`stage`和`prod`数据流环境分别设置不同的设置
 
 将数据发送到Adobe Audience Manager所需的一切就是启用此部分。 其他设置是可选的，但鼓励使用。
 
-![Adobe受众管理设置块](../../assets/edge_configuration_aam.png)
+![Adobe受众管理设置块](../images/datastreams/edge_configuration_aam.png)
 
 ### [!UICONTROL Cookie目标已启用]
 
@@ -111,7 +111,7 @@ Adobe建议对`dev`、`stage`和`prod`数据流环境分别设置不同的设置
 
 控制数据是否被发送到Adobe Analytics。 有关更多详细信息，请参阅[Analytics概述](../data-collection/adobe-analytics/analytics-overview.md)。
 
-![Adobe Analytics设置块](../../assets/edge_configuration_aa.png)
+![Adobe Analytics设置块](../images/datastreams/edge_configuration_aa.png)
 
 ### [!UICONTROL 报表包 ID]
 
