@@ -4,16 +4,16 @@ title: 行业数据模型概述
 topic-legacy: overview
 description: 了解各种垂直行业的标准化数据模型，这些数据模型可以使用标准的体验数据模型(XDM)组件构建。
 exl-id: 8fa9a610-36b5-470f-ad63-f2a4a060e0f1
-source-git-commit: 4ff97408659559174110a2234b24e9433007c9dc
+source-git-commit: e44da39dcdd4af4ab883b3ff8f61ca2fd44adb0b
 workflow-type: tm+mt
-source-wordcount: '353'
+source-wordcount: '354'
 ht-degree: 1%
 
 ---
 
 # 行业数据模型概述
 
-体验数据模型(XDM)允许您创建高度可自定义的架构，以捕获与您的业务相关的关键客户体验数据。 为帮助简化数据建模过程以符合XDM，Adobe Experience Platform提供了一套通用的标准XDM组件，这些组件可捕获多个行业中常用的概念。
+体验数据模型(XDM)允许您创建高度可自定义的架构，以捕获与您的业务相关的关键客户体验数据。 为帮助简化数据建模过程以符合XDM，Adobe Experience Platform提供了一套通用的标准XDM组件，这些组件捕获了多个行业中常用的概念。
 
 >[!NOTE]
 >
@@ -38,6 +38,7 @@ ERD针对以下垂直行业提供：
 
 * [[!UICONTROL 零售业]](./retail.md)
 * [[!UICONTROL 金融服务]](./financial.md)
+* [[!UICONTROL 电信]](./telecom.md)
 * [[!UICONTROL 旅游和酒店业]](./travel-hospitality.md)
 
 ## 后续步骤
