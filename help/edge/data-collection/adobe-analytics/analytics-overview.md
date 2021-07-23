@@ -1,33 +1,32 @@
 ---
 title: 使用Adobe Experience Platform Web SDK将数据发送到Adobe Analytics
 description: 了解如何使用Adobe Experience Platform Web SDK将数据发送到Adobe Analytics。
-keywords: adobe analytics;analytics；映射数据；映射变量；
-translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+keywords: adobe analytics;analytics；映射的数据；映射的变量；
+exl-id: b18d1163-9edf-4a9c-b247-cd1aa7dfca50
+source-git-commit: 3a1d08a4ea87ee3db7a2a8b048d5721fa679c372
 workflow-type: tm+mt
 source-wordcount: '192'
 ht-degree: 7%
 
 ---
 
+# 将数据发送到Adobe Analytics
 
-# 向Adobe Analytics发送数据
-
-Adobe Experience Platform [!DNL Web SDK]可向Adobe Analytics发送数据。 通过将`xdm`转换为Adobe Analytics可以使用的格式，即可实现。
+Adobe Experience Platform [!DNL Web SDK]可以将数据发送到Adobe Analytics。 这通过将`xdm`转换为Adobe Analytics可以使用的格式来实现。
 
 ## 设置
 
-如果您在客户配置UI中映射了报表包，Adobe Analytics会自动选取您要发送的数据。 您可以在此将一个或多个报告映射到给定配置。 映射报表包后，数据将自动开始流动。
+如果您在客户配置UI中映射了报表包，Adobe Analytics会自动选取您发送的数据。 在此，您可以将一个或多个报表映射到给定配置。 报表包映射后，数据将自动开始流动。
 
-## 自动映射数据
+## 自动映射的数据
 
-Adobe Experience Platform [!DNL Edge Network]会自动映射许多XDM变量。 这些变量的完整列表列在[此处](automatically-mapped-vars.md)。
+Adobe Experience Platform [!DNL Edge Network]会自动映射许多XDM变量。 这些变量的完整列表在[此处](automatically-mapped-vars.md)列出。
 
 ## 手动映射的数据
 
-可以通过处理规则访问边缘网络收集的所有数据。数据使用点记号进行拼合，并作为contextData可用。
+可以通过处理规则访问边缘网络收集的所有数据。数据使用点表示法进行扁平化，可用作contextData。
 
-如果你的模式是这样的。
+如果你有这样的模式。
 
 ```javascript
 {
@@ -52,7 +51,7 @@ Adobe Experience Platform [!DNL Edge Network]会自动映射许多XDM变量。 �
 }
 ```
 
-然后这些将是可供您使用的上下文数据键。
+然后，这些将是可供您使用的上下文数据键。
 
 ```javascript
 a.x.key //value
@@ -65,6 +64,6 @@ a.x.arrayofobjects.0.obj1key //objval0
 a.x.arrayofobjects.1.obj2key //objval1
 ```
 
-此处是一个使用此数据的处理规则示例。
+以下是使用此数据的处理规则示例。
 
-![处理规则接口](../../../assets/edge_analytics_processing_rules.png)
+![处理规则界面](./assets/edge_analytics_processing_rules.png)
