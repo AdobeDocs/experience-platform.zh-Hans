@@ -5,9 +5,9 @@ title: 电话号码数据类型
 topic-legacy: overview
 description: 本文档概述了电话号码XDM数据类型。
 exl-id: b84e48f9-bbb4-4b8b-9476-4bc1c455ecfd
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 7f694310b17ab257eae459003bb820f7221bb55e
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '213'
 ht-degree: 2%
 
 ---
@@ -31,5 +31,5 @@ ht-degree: 2%
 
 有关电话号码数据类型的更多详细信息，请参阅公共XDM存储库：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/phonenumber.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/phonenumber.schema.json)
+* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/phonenumber.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/demographic/phonenumber.schema.json)
