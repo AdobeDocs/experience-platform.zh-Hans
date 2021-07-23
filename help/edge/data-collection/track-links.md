@@ -1,19 +1,18 @@
 ---
 title: 使用Adobe Experience Platform Web SDK跟踪链接
-description: 了解如何使用Experience Platform Web SDK将链接数据发送到Adobe Analytics
-keywords: adobe analytics;analytics;sendEvent;s.t();s.tl();webPageDetails;pageViews;webInteraction;web Interaction；页面视图；链接跟踪；链接；跟踪链接；clickCollection；单击集合；
-translation-type: tm+mt
-source-git-commit: 69f2e6069546cd8b913db453dd9e4bc3f99dd3d9
+description: 了解如何使用Experience PlatformWeb SDK将链接数据发送到Adobe Analytics
+keywords: Adobe Analytics;Analytics;sendEvent;s.t();s.tl();webPageDetails;pageViews;webInteraction;Web Interaction；页面查看次数；链接跟踪；链接；跟踪链接；clickCollection；点击收藏集；
+exl-id: d5a1804c-8f91-4083-a46e-ea8f7edf36b6
+source-git-commit: b22eccb34e98ca2da47fe849492ee464d679d2a0
 workflow-type: tm+mt
-source-wordcount: '239'
+source-wordcount: '340'
 ht-degree: 0%
 
 ---
 
-
 # 跟踪链接
 
-可以手动设置链接或跟踪[自动](#automaticLinkTracking)。 手动跟踪是通过在模式的`web.webInteraction`部分下添加详细信息来完成的。 有三个必需变量：
+可以手动设置或跟踪[自动](#automaticLinkTracking)的链接。 通过在架构的`web.webInteraction`部分下添加详细信息，可完成手动跟踪。 有三个必需变量：
 
 * `web.webInteraction.name`
 * `web.webInteraction.type`
@@ -27,8 +26,8 @@ alloy("sendEvent", {
         "linkClicks": {
             "value":1
       },
-      "name":"My Custom Link", //Name that shows up in the custom links report
-      "URL":"https://myurl.com", //the URL of the link
+      "name":"My Custom Link", // Name that shows up in the custom links report
+      "URL":"https://myurl.com", // The URL of the link
       "type":"other", // values: other, download, exit
       }
     }
@@ -42,28 +41,52 @@ alloy("sendEvent", {
 * **`download`:** 下载链接
 * **`exit`:** 退出链接
 
-## 自动链接跟踪{#automaticLinkTracking}
+如果[配置为](adobe-analytics/analytics-overview.md) ，则这些值会自动映射到](adobe-analytics/automatically-mapped-vars.md)Adobe Analytics中。[
 
-默认情况下，Web SDK捕获、标签和记录对符合条件的链接标记的点击。 单击是通过附加到文档的[capture](https://www.w3.org/TR/uievents/#capture-phase)单击事件侦听器捕获的。
+## 自动链接跟踪 {#automaticLinkTracking}
 
-[配置](../fundamentals/configuring-the-sdk.md#clickCollectionEnabled) Web SDK可禁用自动链接跟踪。
+默认情况下，Web SDK会捕获、标签和记录对符合条件的链接标记的点击。 使用附加到文档的[capture](https://www.w3.org/TR/uievents/#capture-phase) click事件侦听器捕获点击。
+
+[配置](../fundamentals/configuring-the-sdk.md#clickCollectionEnabled) Web SDK可以禁用自动链接跟踪。
 
 ```javascript
 clickCollectionEnabled: false
 ```
 
-### 哪些标记符合链接跟踪条件？{#qualifyingLinks}
+### 哪些标记符合链接跟踪的条件？{#qualifyingLinks}
 
-对锚点`A`和`AREA`标记执行自动链接跟踪。 但是，如果这些标签具有附加的`onclick`处理函数，则不会将其考虑用于链接跟踪。
+已对锚点`A`和`AREA`标记完成自动链接跟踪。 但是，如果这些标记具有附加的`onclick`处理程序，则不会将其考虑用于链接跟踪。
 
-### 链接如何标记？{#labelingLinks}
+### 链接的标签如何？{#labelingLinks}
 
-如果锚点标签包含下载属性或链接以流行的文件扩展名结尾，则链接将标记为下载链接。 下载链接限定符可以[配置为](../fundamentals/configuring-the-sdk.md)，具有常规表达式:
+如果锚点标记包含下载属性或链接以常用文件扩展名结尾，则将标记为下载链接。 下载链接限定符可以是[configured](../fundamentals/configuring-the-sdk.md) ，其中包含正则表达式：
 
 ```javascript
 downloadLinkQualifier: "\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"
 ```
 
-如果链接目标域与当前`window.location.hostname`不同，则链接将标记为退出链接。
+如果链接目标域与当前`window.location.hostname`不同，则会将链接标记为退出链接。
 
-不符合下载或退出链接的链接将标记为“其他”。
+不符合下载或退出链接资格的链接将标记为“其他”。
+
+### 如何过滤链接跟踪值？
+
+通过提供[onBeforeEventSend回调函数](../fundamentals/tracking-events.md#modifying-events-globally)，可以检查和过滤通过自动链接跟踪收集的数据。
+
+在为Analytics报表准备数据时，过滤链接跟踪数据可能会很有用。 自动链接跟踪可捕获链接名称和链接URL。 在Analytics报表中，链接名称优先于链接URL。 如果您希望报告链接URL，则需要删除链接名称。 以下示例显示了一个`onBeforeEventSend`函数，用于删除下载链接的链接名称：
+
+```javascript
+alloy("configure", {
+  onBeforeEventSend: function(options) {
+    if (options
+      && options.xdm
+      && options.xdm.web
+      && options.xdm.web.webInteraction) {
+        if (options.xdm.web.webInteraction.type === "download") {
+          options.xdm.web.webInteraction.name = undefined;
+        }
+    }
+  }
+});
+```
+
