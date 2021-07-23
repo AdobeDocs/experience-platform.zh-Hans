@@ -5,9 +5,9 @@ title: 人员姓名数据类型
 topic-legacy: overview
 description: 本文档概述了人员名称XDM数据类型。
 exl-id: 5cf55fb1-b6b0-4d1c-93c3-7e2b7766599e
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 7f694310b17ab257eae459003bb820f7221bb55e
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '256'
 ht-degree: 1%
 
 ---
@@ -33,5 +33,5 @@ ht-degree: 1%
 
 有关人员姓名数据类型的更多详细信息，请参阅公共XDM存储库：
 
-* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/person-name.example.1.json)
-* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/person-name.schema.json)
+* [填充的示例](https://github.com/adobe/xdm/blob/master/components/datatypes/person/person-name.example.1.json)
+* [完整模式](https://github.com/adobe/xdm/blob/master/components/datatypes/person/person-name.schema.json)
