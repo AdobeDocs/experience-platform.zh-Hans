@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用体验数据模型(XDM)类和架构字段组来标准化体验数据。
 feature: 架构
-source-git-commit: e44da39dcdd4af4ab883b3ff8f61ca2fd44adb0b
+source-git-commit: 2592d4f494d4d3dcfba63eb539498416fbdf6707
 workflow-type: tm+mt
-source-wordcount: '312'
+source-wordcount: '320'
 ht-degree: 16%
 
 ---
@@ -40,11 +40,13 @@ ht-degree: 16%
       * [个人联系详细信息](./field-groups/profile/personal-contact-details.md)
       * [同意和首选项](./field-groups/profile/consents.md)
       * [区段成员资格详细信息](./field-groups/profile/segmentation.md)
+      * [电信订购](./field-groups/profile/telecom-subscription.md)
       * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
    * 事件字段组{#event}
       * [促销活动营销详细信息](./field-groups/event/campaign-marketing-details.md)
       * [渠道详细信息](./field-groups/event/channel-details.md)
       * [商务详细信息](./field-groups/event/commerce-details.md)
+      * [设备更换详细信息](./field-groups/event/device-trade-in-details.md)
       * [最终用户ID详细信息](./field-groups/event/enduserids.md)
       * [环境详细信息](./field-groups/event/environment-details.md)
       * [IAB TCF 2.0同意](./field-groups/event/iab.md)
@@ -57,6 +59,7 @@ ht-degree: 16%
    * [商务](./data-types/commerce.md)
    * [同意字符串](./data-types/consent-string.md)
    * [同意和首选项](./data-types/consents.md)
+   * [货币](./data-types/currency.md)
    * [设备](./data-types/device.md)
    * [电子邮件地址](./data-types/email-address.md)
    * [环境](./data-types/environment.md)
@@ -85,6 +88,7 @@ ht-degree: 16%
    * [产品列表项](./data-types/product-list-item.md)
    * [搜索](./data-types/search.md)
    * [订阅](./data-types/subscription.md)
+   * [电信订购](./data-types/telecom-subscription.md)
    * [Web信息](./data-types/web-information.md)
    * [Web交互](./data-types/web-interaction.md)
    * [网页详细信息](./data-types/webpage-details.md)
