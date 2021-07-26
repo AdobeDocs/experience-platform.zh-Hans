@@ -3,9 +3,9 @@ title: 将Adobe Target与Platform Web SDK结合使用
 description: 了解如何使用Experience PlatformWeb SDK渲染个性化内容(使用Adobe Target)
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: ed6f0891958670c3c5896c4c9cbefef2a245bc15
+source-git-commit: c83b6ea336cfe5d6d340a2dbbfb663b6bec84312
 workflow-type: tm+mt
-source-wordcount: '932'
+source-wordcount: '1220'
 ht-degree: 5%
 
 ---
@@ -17,13 +17,29 @@ ht-degree: 5%
 以下功能已经过测试，目前在[!DNL Target]中受支持：
 
 * [A/B测试](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html)
-* [A4T展示和转化报表](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html)
+* [A4T展示和转化报表](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=zh-Hans)
 * [Automated Personalization活动](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [体验定位活动](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
 * [多变量测试(MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
 * [Recommendations活动](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)
 * [本机Target展示和转化报表](https://experienceleague.adobe.com/docs/target/using/reports/reports.html)
 * [VEC支持](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)
+
+## [!DNL Platform Web SDK] 系统图
+
+下图可帮助您了解[!DNL Target]和[!DNL Platform Web SDK]边缘决策的工作流程。
+
+![Adobe Target Web SDK边缘决策图](./assets/target-platform-web-sdk.png)
+
+| 调用 | 详细信息 |
+| --- | --- |
+| 1 | 设备加载[!DNL Platform Web SDK]。 [!DNL Platform Web SDK]会向边缘网络发送一个请求，其中包含XDM数据、数据流环境ID、传递的参数和客户ID（可选）。 页面（或容器）已预隐藏。 |
+| 2 | 边缘网络会向边缘服务发送请求，以便通过访客ID、同意和其他访客上下文信息（如地理位置和设备友好名称）来扩充请求。 |
+| 3 | 边缘网络会使用访客ID和传递的参数将扩充的个性化请求发送到[!DNL Target]边缘。 |
+| 4 | 配置文件脚本先执行，然后馈送到[!DNL Target]配置文件存储中。 配置文件存储从[!UICONTROL 受众库]中提取区段（例如，从[!DNL Adobe Analytics]、[!DNL Adobe Audience Manager]和[!DNL Adobe Experience Platform]共享的区段）。 |
+| 5 | [!DNL Target]根据URL请求参数和配置文件数据，确定要为访客显示哪些活动和体验以用于当前页面查看和将来预取的查看。 [!DNL Target] 然后将此数据发送回边缘网络。 |
+| 6 | a.边缘网络会将个性化响应发送回页面，其中可能包含其他个性化的配置文件值。 当前页面上的个性化内容会在默认内容不发生闪烁的情况下尽快显示。<br>b.单页应用程序(SPA)中作为用户操作结果显示的视图的个性化内容会缓存，以便在触发视图时无需额外的服务器调用即可立即应用该内容&#x200B;。<br>c.边缘网络发送访客ID以及Cookie中的其他值，例如同意、会话ID、身份、Cookie检查、个性化等。 |
+| 7 | 边缘网络会将[!UICONTROL Analytics for Target](A4T)详细信息（活动、体验和转化元数据）转发到[!DNL Analytics]边缘&#x200B;。 |
 
 ## 启用[!DNL Adobe Target]
 
