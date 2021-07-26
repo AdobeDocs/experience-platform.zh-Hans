@@ -4,9 +4,9 @@ title: 金融服务行业数据模型ERD
 topic-legacy: overview
 description: 查看实体关系图(ERD)，该图描述银行、金融服务和保险(BFSI)行业的标准化数据模型。 此数据模型与Experience Data Model(XDM)兼容，可在Adobe Experience Platform中使用。
 exl-id: 2e8f6b2a-10e7-4394-b45f-c03db0f25400
-source-git-commit: 88c17992a391b24a76c3e387d3033df4c75a6aa6
+source-git-commit: 38fa2345cb87e50bd4c8788996f03939fb199cf9
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '286'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 # [!UICONTROL 金融] 服务行业数据模型ERD
 
 以下实体关系图(ERD)代表银行、金融服务和保险(BFSI)行业的标准化数据模型。 ERD特意以非标准化方式呈现，并考虑数据如何存储在Adobe Experience Platform中。
+
+>[!NOTE]
+>
+>如上所述的ERD是一项建议，建议您如何为此行业用例建模数据。 要在Platform中利用此数据模型，您必须自行构建推荐的架构及其关系。 有关更多信息，请参阅UI中有关管理[架构](../../ui/resources/schemas.md)和[关系](../../tutorials/relationship-ui.md)的指南。
 
 请使用以下图例来解释此ERD:
 
