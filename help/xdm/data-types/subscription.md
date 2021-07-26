@@ -5,9 +5,9 @@ title: 订阅数据类型
 topic-legacy: overview
 description: 本文档概述了订阅体验数据模型(XDM)数据类型。
 exl-id: 6fd1e073-441b-45f0-bb4f-54f51ab18694
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: d99ddc65849a88350bf61977b399b07989554426
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '420'
 ht-degree: 10%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 10%
 | `billingPeriod` | 字符串 | 付款之间的持续时间。 |
 | `billingStartDate` | 日期 | 第一张账单到期的日期。 日期格式（无时间）应遵循[RFC 3339第5.6节](https://tools.ietf.org/html/rfc3339#section-5.6)标准。 |
 | `category` | 字符串 | 此类订阅的主要顶级分类。 |
-| `chargeMethod` | 字符串 | 设置计费以向客户收费的方式。 |
+| `chargeMethod` | 字符串 | 计费的设置方式来向客户收费。 |
 | `contractID` | 字符串 | 控制此订阅的合同的唯一ID。 |
 | `country` | 字符串 | 订购合同和协议条款根植的国家/地区。 |
 | `endDate` | 日期 | 当前订阅条款结束的日期。 日期格式（无时间）应遵循[RFC 3339第5.6节](https://tools.ietf.org/html/rfc3339#section-5.6)标准。 |
