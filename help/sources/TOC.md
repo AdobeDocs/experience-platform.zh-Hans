@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: 数据摄取，源
-source-git-commit: e04df6e2ffabac6e70164dfccbad8440976b2755
+source-git-commit: 031849fcc351794e7eb1da691bd4015368a043b6
 workflow-type: tm+mt
-source-wordcount: '619'
+source-wordcount: '628'
 ht-degree: 12%
 
 ---
@@ -75,6 +75,7 @@ ht-degree: 12%
       - [Shopify连接器](connectors/ecommerce/shopify.md)
    - 营销自动化{#marketing-automation}
       - [HubSpot连接器](connectors/marketing-automation/hubspot.md)
+      - [SalesforceMarketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
    - 付款{#payments}
       - [PayPal连接器](connectors/payments/paypal.md)
    - 协议{#protocols}
@@ -127,6 +128,7 @@ ht-degree: 12%
          - [Shopify](tutorials/api/create/ecommerce/shopify.md)
       - 营销自动化{#marketing-automation}
          - [HubSpot](tutorials/api/create/marketing-automation/hubspot.md)
+         - [SalesforceMarketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
       - 付款{#payments}
          - [PayPal](tutorials/api/create/payments/paypal.md)
       - 协议{#protocols}
@@ -214,6 +216,7 @@ ht-degree: 12%
          - [Shopify](tutorials/ui/create/ecommerce/shopify.md)
       - 营销自动化{#marketing-automation}
          - [HubSpot](tutorials/ui/create/marketing-automation/hubspot.md)
+         - [SalesforceMarketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - 付款{#payments}
          - [PayPal](tutorials/ui/create/payments/paypal.md)
       - 协议{#protocols}
