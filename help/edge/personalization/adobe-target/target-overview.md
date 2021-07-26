@@ -1,11 +1,11 @@
 ---
 title: 将Adobe Target与Platform Web SDK结合使用
 description: 了解如何使用Experience PlatformWeb SDK渲染个性化内容(使用Adobe Target)
-keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；
+keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；系统图；图
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: c83b6ea336cfe5d6d340a2dbbfb663b6bec84312
+source-git-commit: c99bc94226b296463e92340723d1318e0775f6a7
 workflow-type: tm+mt
-source-wordcount: '1220'
+source-wordcount: '1223'
 ht-degree: 5%
 
 ---
