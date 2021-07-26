@@ -6,18 +6,14 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将PayPal连接到Adobe Experience Platform。
 exl-id: 5e6ca7b4-5e2f-4706-a339-ac159e2e0938
-source-git-commit: 5cb853da21e41b38c88f25a4989a602dbcfceabc
+source-git-commit: 6b6bd67e70267e81c144c37549b0dcba20534eb6
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '462'
 ht-degree: 1%
 
 ---
 
 # 使用[!DNL Flow Service] API创建[!DNL PayPal]基本连接
-
->[!NOTE]
->
->[!DNL PayPal]连接器处于测试阶段。 有关使用测试版标记的连接器的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
 
 基本连接表示源与Adobe Experience Platform之间经过验证的连接。
 
