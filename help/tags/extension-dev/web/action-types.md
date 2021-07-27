@@ -1,10 +1,10 @@
 ---
 title: Web扩展的操作类型
 description: 了解如何在Web属性中为标记扩展定义操作类型库模块。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 99780f64c8f09acea06e47ebf5cabc762e05cab2
 workflow-type: tm+mt
-source-wordcount: '338'
-ht-degree: 54%
+source-wordcount: '407'
+ht-degree: 44%
 
 ---
 
@@ -14,13 +14,22 @@ ht-degree: 54%
 >
 >Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
-操作类型库模块用于执行预定义的操作。 该操作具体做什么完全由您来决定。是否要发送信标、显示选件、感谢用户访问、保存 Cookie 或打开支持聊天？
+在数据收集标记的上下文中，操作是在发生规则事件并且所有条件都通过评估后执行的操作。
+
+例如，扩展可以提供“显示支持聊天”操作类型，该操作类型可以显示支持聊天对话框，以帮助在注销时可能遇到困难的用户。
+
+本文档介绍如何在Adobe Experience Platform中为Web扩展定义操作类型。
 
 >[!IMPORTANT]
 >
 >本文档介绍 Web 扩展的操作类型。如果您正在开发 Edge 扩展，请另外参阅关于 [Edge 扩展的操作类型](../edge/action-types.md)的指南。
 >
->本文档还假定您熟悉库模块以及它们在标记扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
+>本文档还假定您熟悉库模块以及它们在Web扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
+
+操作类型通常包括：
+
+1. 数据收集UI中显示的[视图](./views.md)，允许用户修改操作的设置。
+2. 标记运行时库中发出的库模块，用于解释设置并执行操作。
 
 ```js
 module.exports = function(settings) {
