@@ -1,26 +1,35 @@
 ---
 title: Web扩展的数据元素类型
 description: 了解如何在Web属性中为标记扩展定义数据元素类型库模块。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 99780f64c8f09acea06e47ebf5cabc762e05cab2
 workflow-type: tm+mt
-source-wordcount: '451'
-ht-degree: 61%
+source-wordcount: '595'
+ht-degree: 56%
 
 ---
 
-# Edge 扩展的数据元素类型
+# Web扩展的数据元素类型
 
 >[!NOTE]
 >
 >Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
-数据元素类型库模块的用途是检索一段数据。 用于此检索的方法是可定制的。 不同的数据元素类型允许Adobe Experience Platform用户从本地存储、Cookie或DOM元素中检索数据。
+在数据收集标记中，数据元素本质上是页面上数据段的别名。 此数据可在查询字符串参数、Cookie、DOM元素或其他位置中找到。 数据元素可以被规则引用，并充当访问这些数据段的抽象。
+
+数据元素类型由扩展提供，并允许用户配置数据元素以特定方式访问数据段。 例如，扩展可以提供“本地存储项”数据元素类型， 用户可在其中指定本地存储项名称。当数据元素被规则引用时，扩展将能够使用用户在配置数据元素时提供的本地存储项名称来查找本地存储项值。
+
+本文档介绍如何在Adobe Experience Platform中为Web扩展定义数据元素类型。
 
 >[!IMPORTANT]
 >
->本文档提供了有关Web扩展的数据元素类型的信息。 如果要开发 Edge 扩展，请另外参阅关于 [Edge 扩展的数据元素类型](../edge/data-element-types.md)的指南。
+>如果要开发边缘扩展，请参阅[边缘扩展的数据元素类型指南](../edge/data-element-types.md)。
 >
->本文档还假定您熟悉库模块以及它们在标记扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
+>本文档还假定您熟悉库模块以及它们在Web扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
+
+数据元素类型通常包括：
+
+1. 数据收集UI中显示的[视图](./views.md)，允许用户修改数据元素的设置。
+2. 标记运行时库中发出的库模块，用于解释设置并检索数据段。
 
 假设您想要允许用户从名为 `productName` 的本地存储项中检索一段数据。您的模块可能如下所示：
 
