@@ -1,10 +1,10 @@
 ---
 title: Web扩展的条件类型
 description: 了解如何在Web属性中为标记扩展定义条件类型库模块。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 99780f64c8f09acea06e47ebf5cabc762e05cab2
 workflow-type: tm+mt
-source-wordcount: '340'
-ht-degree: 75%
+source-wordcount: '497'
+ht-degree: 60%
 
 ---
 
@@ -14,13 +14,24 @@ ht-degree: 75%
 >
 >Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
-条件类型库模块的一个目标是：评估某件事为 true 还是 false。具体评估的内容由您来决定。
+在规则的上下文中，在事件发生后评估条件。 所有条件必须返回 true，规则才会继续处理。例外情况是用户将条件明确放入“例外”存储段中，在这种情况下，该存储段中的所有条件都必须返回false，规则才能继续处理。
+
+例如，扩展可以提供“视区包含”条件类型， 用户可在其中指定 CSS 选择器。在客户端网站上评估条件时，扩展将能够找到与 CSS 选择器匹配的元素，并返回其中是否有任何元素包含在用户视区中。
+
+本文档介绍如何在Adobe Experience Platform中为Web扩展定义条件类型。
 
 >[!NOTE]
 >
->本文档介绍 Web 扩展的条件类型。如果您正在开发 Edge 扩展，请另外参阅关于 [Edge 扩展的条件类型](../edge/condition-types.md)的指南。
+>如果您正在开发 Edge 扩展，请另外参阅关于 [Edge 扩展的条件类型](../edge/condition-types.md)的指南。
 >
->本文档还假定您熟悉库模块以及它们在标记扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
+>本文档假定您熟悉库模块以及它们在Web扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
+
+条件类型通常包括：
+
+1. 数据收集UI中显示的[视图](./views.md)，允许用户修改条件的设置。
+2. 标记运行时库中发出的库模块，用于解释设置并评估条件。
+
+条件类型库模块有一个目标：评估某些内容是true还是false。 具体评估的内容由您来决定。
 
 例如，如果要评估用户是否位于主机 `example.com` 上，则您的模块可能如下所示：
 
