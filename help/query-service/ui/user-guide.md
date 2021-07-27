@@ -5,9 +5,9 @@ title: 查询编辑器UI指南
 topic-legacy: query editor
 description: 查询编辑器是Adobe Experience Platform查询服务提供的一个交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并且允许您运行交互式查询以用于开发目的，以及非交互式查询以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 483bcea231ed5f25c76771d0acba7e0c62dfed16
+source-git-commit: 7eaa808ecc644fdb9bc6b3fe1347c7651d54a33b
 workflow-type: tm+mt
-source-wordcount: '1082'
+source-wordcount: '1572'
 ht-degree: 1%
 
 ---
@@ -80,7 +80,57 @@ ht-degree: 1%
 
 ![图像](../images/ui/query-editor/query-details.png)
 
-此面板允许您直接从UI中生成输出数据集、删除或命名显示的查询，并在&#x200B;**[!UICONTROL SQL查询]**&#x200B;选项卡上以易于复制的格式查看SQL代码。 此面板还显示有用的元数据，例如上次修改查询的时间以及修改查询的人员（如果适用）。 要生成数据集，请选择&#x200B;**[!UICONTROL 输出数据集]**。 出现&#x200B;**[!UICONTROL 输出数据集]**&#x200B;对话框。 输入名称和描述，然后选择&#x200B;**[!UICONTROL 运行查询]**。 新数据集显示在[!DNL Platform]用户界面的[!DNL Query Service]Datasets ]**选项卡中。**[!UICONTROL 
+利用此面板，可直接从UI中生成输出数据集、删除或命名显示的查询，以及向查询添加计划。
+
+此面板还显示有用的元数据，例如上次修改查询的时间以及修改查询的人员（如果适用）。 要生成数据集，请选择&#x200B;**[!UICONTROL 输出数据集]**。 出现&#x200B;**[!UICONTROL 输出数据集]**&#x200B;对话框。 输入名称和描述，然后选择&#x200B;**[!UICONTROL 运行查询]**。 新数据集显示在[!DNL Platform]用户界面的[!DNL Query Service]Datasets ]**选项卡中。**[!UICONTROL 
+
+### 计划查询 {#scheduled-queries}
+
+>[!NOTE]
+>
+> 您只能向已创建、保存和运行的查询添加计划。 此外，您还将能够向参数化查询添加计划&#x200B;**不**。
+
+要向查询添加计划，请选择&#x200B;**[!UICONTROL 添加计划]**。
+
+![图像](../images/ui/query-editor/add-schedule.png)
+
+此时将显示&#x200B;**[!UICONTROL 计划详细信息]**&#x200B;页。 在此页面上，您可以选择计划查询的频率、计划查询运行的日期以及要将查询导出到的数据集。
+
+![图像](../images/ui/query-editor/schedule-details.png)
+
+您可以为&#x200B;**[!UICONTROL Frequency]**&#x200B;选择以下选项：
+
+- **[!UICONTROL 每小时]**:在您选择的日期期间，计划查询将每小时运行一次。
+- **[!UICONTROL 每日]**:计划查询将在您选择的时间和日期期间每X天运行一次。请注意，选择的时间在&#x200B;**UTC**&#x200B;中，而不是您的本地时区。
+- **[!UICONTROL 每周]**:所选查询将在您选择的周、时间和日期期间的天数运行。请注意，选择的时间在&#x200B;**UTC**&#x200B;中，而不是您的本地时区。
+- **[!UICONTROL 每月]**:选定的查询将每月在您选择的日期、时间和日期期间运行。请注意，选择的时间在&#x200B;**UTC**&#x200B;中，而不是您的本地时区。
+- **[!UICONTROL 每年]**:选定的查询将每年在您选择的日期、月、时间和日期期间运行。请注意，选择的时间在&#x200B;**UTC**&#x200B;中，而不是您的本地时区。
+
+对于数据集，您可以选择使用现有数据集或创建新数据集。
+
+>[!IMPORTANT]
+>
+> 由于您使用的是现有数据集或创建了新数据集，因此&#x200B;**not**&#x200B;需要在查询中包含`INSERT INTO`或`CREATE TABLE AS SELECT` ，因为数据集已经设置。 将`INSERT INTO`或`CREATE TABLE AS SELECT`作为计划查询的一部分包含将导致错误。
+
+确认所有这些详细信息后，选择&#x200B;**[!UICONTROL 保存]**&#x200B;以创建计划。
+
+此时将重新显示查询详细信息页面，并显示新创建计划的详细信息，包括计划ID、计划本身和计划的输出数据集。 您可以使用计划ID查找有关计划查询本身运行的更多信息。 要了解更多信息，请阅读[计划查询运行端点指南](../api/runs-scheduled-queries.md)。
+
+>[!NOTE]
+>
+> 您只能使用UI计划&#x200B;**一个**&#x200B;查询模板。 如果要向查询模板添加其他计划，则需要使用API。 如果已使用API添加计划，您将使用UI添加&#x200B;**not**&#x200B;其他计划。 如果已将多个计划附加到查询模板，则只会显示最早的计划。 要了解如何使用API添加计划，请阅读[计划查询端点指南](../api/scheduled-queries.md)。
+>
+> 此外，如果要确保所查看的计划具有最新状态，则应刷新页面。
+
+#### 删除计划
+
+您可以通过选择&#x200B;**[!UICONTROL 删除计划]**&#x200B;来删除计划。
+
+![图像](../images/ui/query-editor/delete-schedule.png)
+
+>[!IMPORTANT]
+>
+> 如果要删除查询的计划，必须先禁用该计划。
 
 ### 保存查询
 
