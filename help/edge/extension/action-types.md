@@ -4,9 +4,9 @@ description: 了解Adobe Experience Platform Launch中Adobe Experience Platform 
 solution: Experience Platform
 feature: Web SDK
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: 17ebf50965136f2c075f21eb3ecdcb1ce6da0b7d
+source-git-commit: 53864097af7d3278f56a3f23186de4eb405bcb51
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '585'
 ht-degree: 3%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 3%
 
 - **类型：** 利用此字段，可指定将在XDM架构中记录的事件类型。有关默认事件类型的更多信息，请参阅[文档](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#using-the-sendbeacon-api) 。
 - **数据：** 使用此字段可发送与XDM架构不匹配的数据。如果您尝试更新Adobe Target配置文件或发送Target Recommendations属性，则此字段非常有用。 有关示例，请参阅我们的[文档](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en)。
-- **合并ID:** 如果要为事件指 [定](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/merging-event-data.html?lang=en#fundamentals) 合并ID，可以在此字段中执行此操作。请注意，下游解决方案当前无法合并您的事件数据。
+- **合并ID:** 如果要为事件指定合并ID，可以在此字段中执行此操作。请注意，下游解决方案当前无法合并您的事件数据。
 - **数据集ID:** 如果您需要将数据发送到数据流中指定的数据集以外的数据集，则可以在此处指定该数据集ID。
 - **文档将卸载：** 如果要确保即使用户离开页面，事件也会到达服务器，请选中“文档将 **[!UICONTROL 卸载”]** 复选框。这允许事件到达服务器，但会忽略响应。
 - **渲染可视化个性化决策：** 如果要在页面上渲染个性化内容，请选中“渲染可视化个性化 **[!UICONTROL 决策”]** 复选框。您还可以根据需要指定决策范围。 有关呈现个性化内容的更多信息，请参阅[个性化文档](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/rendering-personalization-content.html?lang=en#automatically-rendering-content)。
