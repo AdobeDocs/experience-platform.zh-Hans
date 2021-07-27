@@ -1,27 +1,26 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询服务；计划查询；计划查询;
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；计划查询；计划查询；
 solution: Experience Platform
 title: 计划查询API端点
 topic-legacy: scheduled queries
-description: 以下部分将介绍您可以使用查询服务API为计划查询进行的各种API调用。
+description: 以下各节将介绍您可以使用查询服务API对计划查询进行的各种API调用。
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: e99b57706bb5bdb0abaf4209a259b478d9406783
 workflow-type: tm+mt
-source-wordcount: '977'
-ht-degree: 3%
+source-wordcount: '1010'
+ht-degree: 2%
 
 ---
 
 # 计划查询端点
 
-## 示例API调用
+## API调用示例
 
-既然您了解了要使用哪些标头，就可以开始调用[!DNL Query Service] API。 以下部分将介绍您可以使用[!DNL Query Service] API进行的各种API调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
+了解了要使用的标头后，您便可以开始调用[!DNL Query Service] API。 以下各节介绍了您可以使用[!DNL Query Service] API进行的各种API调用。 每个调用都包含常规API格式、显示所需标头的示例请求以及示例响应。
 
-### 检索计划列表查询
+### 检索计划查询列表
 
-您可以通过向`/schedules`端点发出列表请求，检索IMS组织的所有计划查询的GET。
+您可以通过向`/schedules`端点发出GET请求，来检索IMS组织的所有计划查询列表。
 
 **API格式**
 
@@ -32,22 +31,22 @@ GET /schedules?{QUERY_PARAMETERS}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{QUERY_PARAMETERS}` | （*可选*）添加到请求路径的参数，用于配置在响应中返回的结果。 可以包含多个参数，用&amp;符号(`&`)分隔。 以下列出了可用参数。 |
+| `{QUERY_PARAMETERS}` | （*可选*）添加到请求路径的参数，用于配置响应中返回的结果。 可以包含多个参数，并以与号(`&`)分隔。 以下列出了可用参数。 |
 
 **查询参数**
 
-以下是列出计划查询的可用查询参数的列表。 所有这些参数都是可选的。 调用此端点时不含参数，将检索组织可用的所有计划查询。
+以下是列出计划查询的可用查询参数列表。 所有这些参数都是可选的。 对此端点进行无参数调用将检索适用于贵组织的所有计划查询。
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定对结果排序所依据的字段。 支持的字段为`created`和`updated`。 例如，`orderby=created`将按升序创建结果排序。 在创建前添加`-`(`orderby=-created`)将按降序对创建的项目进行排序。 |
+| `orderby` | 指定对结果排序所依据的字段。 支持的字段有`created`和`updated`。 例如，`orderby=created`将按照创建的升序对结果进行排序。 在创建之前添加`-`(`orderby=-created`)将按创建项的降序排序。 |
 | `limit` | 指定页面大小限制以控制页面中包含的结果数。 (*默认值：20*) |
-| `start` | 使用从零开始的编号来偏移响应列表。 例如，`start=2`将返回从第三个列出的列表开始的查询。 (*默认值：0*) |
-| `property` | 根据字段筛选结果。 过滤器&#x200B;**必须**&#x200B;为HTML转义。 多组过滤器用逗号分隔。 支持的字段有`created`、`templateId`和`userId`。 支持的运算符的列表为`>`（大于）、`<`（小于）和`==`（等于）。 例如，`userId==6ebd9c2d-494d-425a-aa91-24033f3abeec`将返回用户ID指定的所有计划查询。 |
+| `start` | 使用从零开始的编号来偏移响应列表。 例如，`start=2`将返回从第三个列出的查询开始的列表。 (*默认值：0*) |
+| `property` | 根据字段筛选结果。 过滤器&#x200B;**必须**&#x200B;被HTML转义。 可使用逗号组合多组过滤器。 支持的字段包括`created`、`templateId`和`userId`。 支持的运算符列表包括`>`（大于）、`<`（小于）和`==`（等于）。 例如，`userId==6ebd9c2d-494d-425a-aa91-24033f3abeec`将返回用户ID按指定方式表示的所有计划查询。 |
 
 **请求**
 
-以下请求将检索为您的IMS组织创建的最新计划查询。
+以下请求可检索为IMS组织创建的最新计划查询。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/schedules?limit=1
@@ -59,7 +58,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules?limit=1
 
 **响应**
 
-成功的响应返回HTTP状态200，并为指定的IMS组织列表计划查询。 以下响应返回为您的IMS组织创建的最新计划查询。
+成功响应会返回HTTP状态200，其中包含指定IMS组织的计划查询列表。 以下响应会返回为IMS组织创建的最新计划查询。
 
 ```json
 {
@@ -123,9 +122,9 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules?limit=1
 }
 ```
 
-### 新建计划查询
+### 创建新的计划查询
 
-可以通过向`/schedules`端点发出POST请求来创建新的计划查询。
+通过向`/schedules`端点发出POST请求，可以创建新的计划查询。 在API中创建计划查询时，还可以在查询编辑器中看到该查询。 有关UI中计划查询的更多信息，请阅读[查询编辑器文档](../ui/user-guide.md#scheduled-queries)。
 
 **API格式**
 
@@ -159,15 +158,15 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `query.dbName` | 要为其创建计划查询的数据库的名称。 |
+| `query.dbName` | 要为其创建计划查询的数据库名称。 |
 | `query.sql` | 要创建的SQL查询。 |
 | `query.name` | 计划查询的名称。 |
-| `schedule.schedule` | 查询的cron计划。 有关cron计划的详细信息，请阅读[cron表达式格式](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)文档。 在此示例中，“30 * * * * *”表示查询将在30分钟标记下每小时运行一次。 |
+| `schedule.schedule` | 查询的CRON计划。 有关cron计划的更多信息，请阅读[cron表达式格式](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)文档。 在此示例中，“30 * * * *”表示查询将在30分钟标记下每小时运行一次。 |
 | `schedule.startDate` | 计划查询的开始日期，以UTC时间戳写入。 |
 
 **响应**
 
-成功的响应会返回HTTP状态202（已接受），其中包含您新创建的计划查询的详细信息。 计划查询激活完毕后，`state`将从`REGISTERING`更改为`ENABLED`。
+成功响应会返回HTTP状态202（已接受），其中包含新创建的计划查询的详细信息。 计划查询激活完成后，`state`将从`REGISTERING`更改为`ENABLED`。
 
 ```json
 {
@@ -220,11 +219,11 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules
 
 >[!NOTE]
 >
->可以使用`_links.delete`的值[删除您创建的计划查询](#delete-a-specified-scheduled-query)。
+>可以使用`_links.delete`的值[删除创建的计划查询](#delete-a-specified-scheduled-query)。
 
 ### 指定计划查询的请求详细信息
 
-您可以通过向`/schedules`端点发出GET请求并在请求路径中提供其ID，检索特定计划查询的信息。
+您可以通过向`/schedules`端点发出GET请求并在请求路径中提供其ID来检索特定计划查询的信息。
 
 **API格式**
 
@@ -248,7 +247,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含指定计划查询的详细信息。
+成功响应会返回HTTP状态200，其中包含指定计划查询的详细信息。
 
 ```json
 {
@@ -303,17 +302,17 @@ curl -X GET https://platform.adobe.io/data/foundation/query/schedules/e95186d65a
 
 >[!NOTE]
 >
->可以使用`_links.delete`的值[删除您创建的计划查询](#delete-a-specified-scheduled-query)。
+>可以使用`_links.delete`的值[删除创建的计划查询](#delete-a-specified-scheduled-query)。
 
 ### 更新指定计划查询的详细信息
 
-您可以通过向`/schedules`终结点发出PATCH请求并在请求路径中提供其ID来更新指定计划查询的详细信息。
+您可以通过向`/schedules`端点发出PATCH请求并在请求路径中提供其ID来更新指定计划查询的详细信息。
 
-PATCH请求支持两个不同的路径：`/state`和`/schedule/schedule`。
+PATCH请求支持两种不同的路径：`/state`和`/schedule/schedule`。
 
 ### 更新计划查询状态
 
-可以使用`/state`更新选定计划查询的状态 — ENABLED或DISABLED。 要更新状态，您需要将值设置为`enable`或`disable`。
+您可以使用`/state`来更新选定计划查询的状态 — “已启用”或“已禁用”。 要更新状态，您需要将值设置为`enable`或`disable`。
 
 **API格式**
 
@@ -328,7 +327,7 @@ PATCH /schedules/{SCHEDULE_ID}
 
 **请求**
 
-此API请求使用JSON修补程序语法来处理其负载。 有关JSON修补程序工作原理的更多信息，请阅读API基础文档。
+此API请求的有效负载使用JSON修补程序语法。 有关JSON修补程序工作方式的更多信息，请阅读API基础知识文档。
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d65a28abf00a495d82_28e74200-e3de-11e9-8f5d-7f27416c5f0d_sample_scheduled_query7omob151bm_birvwm
@@ -350,11 +349,11 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d6
 | 属性 | 描述 |
 | -------- | ----------- |
 | `path` | 要修补的值的路径。 在这种情况下，由于您正在更新计划查询的状态，因此需要将`path`的值设置为`/state`。 |
-| `value` | `/state`的更新值。 此值可以设置为`enable`或`disable`以启用或禁用计划查询。 |
+| `value` | `/state`的更新值。 此值可设置为`enable`或`disable`以启用或禁用计划查询。 |
 
 **响应**
 
-成功的响应会返回HTTP状态202（已接受），并显示以下消息。
+成功响应会通过以下消息返回HTTP状态202（已接受）。
 
 ```json
 {
@@ -365,7 +364,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d6
 
 ### 更新计划查询计划
 
-可以使用`/schedule/schedule`更新计划查询的cron计划。 有关cron计划的详细信息，请阅读[cron表达式格式](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)文档。
+您可以使用`/schedule/schedule`来更新计划查询的cron计划。 有关cron计划的更多信息，请阅读[cron表达式格式](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)文档。
 
 **API格式**
 
@@ -379,7 +378,7 @@ PATCH /schedules/{SCHEDULE_ID}
 
 **请求**
 
-此API请求使用JSON修补程序语法来处理其负载。 有关JSON修补程序工作原理的更多信息，请阅读API基础文档。
+此API请求的有效负载使用JSON修补程序语法。 有关JSON修补程序工作方式的更多信息，请阅读API基础知识文档。
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d65a28abf00a495d82_28e74200-e3de-11e9-8f5d-7f27416c5f0d_sample_scheduled_query7omob151bm_birvwm
@@ -400,12 +399,12 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d6
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `path` | 要修补的值的路径。 在这种情况下，由于您要更新计划查询的计划，因此需要将`path`的值设置为`/schedule/schedule`。 |
-| `value` | `/schedule`的更新值。 此值必须为cron计划。 因此，在此示例中，计划查询将在45分钟时每小时运行一次。 |
+| `path` | 要修补的值的路径。 在这种情况下，由于您正在更新计划查询的计划，因此需要将`path`的值设置为`/schedule/schedule`。 |
+| `value` | `/schedule`的更新值。 此值需要采用cron计划的形式。 因此，在本例中，计划查询将在45分钟标记下每小时运行一次。 |
 
 **响应**
 
-成功的响应会返回HTTP状态202（已接受），并显示以下消息。
+成功响应会通过以下消息返回HTTP状态202（已接受）。
 
 ```json
 {
@@ -416,11 +415,11 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/schedules/e95186d6
 
 ### 删除指定的计划查询
 
-您可以通过向`/schedules`端点发出DELETE请求并在请求路径中提供要删除的计划查询的ID，来删除指定的计划查询。
+您可以删除指定的计划查询，方法是向`/schedules`端点发出DELETE请求，并在请求路径中提供要删除的计划查询的ID。
 
 >[!NOTE]
 >
->计划&#x200B;**必须**&#x200B;被禁用，才能被删除。
+>计划&#x200B;**必须**&#x200B;在被删除之前被禁用。
 
 **API格式**
 
@@ -444,7 +443,7 @@ curl -X DELETE https://platform.adobe.io/data/foundation/query/schedules/e95186d
 
 **响应**
 
-成功的响应会返回HTTP状态202（已接受），并显示以下消息。
+成功响应会通过以下消息返回HTTP状态202（已接受）。
 
 ```json
 {
