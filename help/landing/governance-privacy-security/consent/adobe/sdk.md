@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK处理客户同意数据
 topic-legacy: getting started
 description: 了解如何使用Adobe Experience Platform 2.0标准集成Adobe Experience Platform Web SDK以在Adobe中处理客户同意数据。
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
+source-git-commit: 8b58bb60ae40f224433f3513060f4ae7ddc7d5b3
 workflow-type: tm+mt
-source-wordcount: '1237'
+source-wordcount: '1285'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,15 @@ ht-degree: 2%
 利用Adobe Experience Platform Web SDK，可检索由同意管理平台(CMP)生成的客户同意信号，并在发生同意更改事件时将其发送到Adobe Experience Platform。
 
 **SDK不会与任何现成的CMP进行接口**。至于如何将SDK集成到您的网站，如何监听CMP中的同意更改，以及如何调用相应的命令，这将由您来决定。 本文档提供了有关如何将CMP与Platform Web SDK集成的一般指导。
+
+>[!NOTE]
+>
+>本指南将指导您完成在数据收集UI中通过标记扩展集成SDK的步骤。 如果您想改用独立版本的SDK，请参阅以下文档：
+>
+>* [配置数据流](../../../../edge/fundamentals/datastreams.md)
+* [安装SDK](../../../../edge/fundamentals/installing-the-sdk.md)
+* [为同意命令配置SDK](../../../../edge/consent/supporting-consent.md)
+
 
 ## 先决条件
 
@@ -44,7 +53,7 @@ ht-degree: 2%
 完成后，选择屏幕底部的&#x200B;**[!UICONTROL Save]**，然后继续按任何其他提示完成配置。
 
 
-## 安装和配置平台Web SDK扩展
+## 安装和配置平台Web SDK
 
 按照上一节所述创建数据流后，必须配置最终将在您的网站上部署的Platform Web SDK扩展。 如果您的Platform launch资产上未安装SDK扩展，请在左侧导航中选择&#x200B;**[!UICONTROL Extensions]**，然后选择&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡。 然后，在可用扩展列表的Platform SDK扩展下选择&#x200B;**[!UICONTROL Install]**。
 
@@ -86,7 +95,7 @@ ht-degree: 2%
 
 配置完该扩展后，即可将其集成到您的网站中。 有关如何部署更新的库内部版本的详细信息，请参阅Platform launch文档中的[发布指南](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html)。
 
-## 发出同意更改命令
+## 发出同意更改命令 {#commands}
 
 将SDK扩展集成到网站后，您可以开始使用Platform Web SDK `setConsent`命令将同意数据发送到Platform。
 
@@ -96,8 +105,7 @@ ht-degree: 2%
 1. 作为检测同意设置更改的CMP挂接或事件侦听器的一部分
 
 >[!NOTE]
->
->有关Platform SDK命令的常见语法的介绍，请参阅[正在执行命令](../../../../edge/fundamentals/executing-commands.md)的文档。
+有关Platform SDK命令的常见语法的介绍，请参阅[正在执行命令](../../../../edge/fundamentals/executing-commands.md)的文档。
 
 `setConsent`命令需要两个参数：
 
@@ -138,8 +146,7 @@ alloy("setConsent", {
 | `value` | 客户更新的同意信息，作为XDM对象提供，该对象符合启用了用户档案的数据集同意字段的结构。 |
 
 >[!NOTE]
->
->如果您将其他同意标准与`Adobe`（例如`IAB TCF`）结合使用，则可以为每个标准向`consent`数组添加其他对象。 每个对象必须包含`standard`、`version`和`value`的相应值，以表示同意标准。
+如果您将其他同意标准与`Adobe`（例如`IAB TCF`）结合使用，则可以为每个标准向`consent`数组添加其他对象。 每个对象必须包含`standard`、`version`和`value`的相应值，以表示同意标准。
 
 以下JavaScript提供了一个函数示例，该函数用于处理网站上的同意首选项更改，该函数可用作事件侦听器或CMP挂接中的回调：
 
