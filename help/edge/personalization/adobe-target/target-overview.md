@@ -3,9 +3,9 @@ title: 将Adobe Target与Platform Web SDK结合使用
 description: 了解如何使用Experience PlatformWeb SDK渲染个性化内容(使用Adobe Target)
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；系统图；图
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: c99bc94226b296463e92340723d1318e0775f6a7
+source-git-commit: 1d2f1651dc9d9ab41507e65fd4b2bb84e9660187
 workflow-type: tm+mt
-source-wordcount: '1223'
+source-wordcount: '1256'
 ht-degree: 5%
 
 ---
@@ -13,6 +13,10 @@ ht-degree: 5%
 # 将[!DNL Adobe Target]与[!DNL Platform Web SDK]一起使用
 
 [!DNL Adobe Experience Platform] [!DNL Web SDK] 可以在web渠道中提供和呈现管理 [!DNL Adobe Target] 的个性化体验。您可以使用名为[可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)(VEC)的WYSIWYG编辑器，或者使用非可视化界面（[基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)）来创建、激活和提供活动和个性化体验。
+
+>[!IMPORTANT]
+>
+>[Adobe Target文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/aep-implementation/aep-web-sdk.html?lang=en)包含的主题包含特定于Platform Web SDK的信息，这些信息与Target特性和功能相关。
 
 以下功能已经过测试，目前在[!DNL Target]中受支持：
 
