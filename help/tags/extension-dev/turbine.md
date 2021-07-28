@@ -1,10 +1,10 @@
 ---
 title: Turbine自由变量
 description: 了解turbine对象，该对象是一个自由变量，可提供特定于Adobe Experience Platform标记运行时的信息和实用程序。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '590'
-ht-degree: 52%
+source-wordcount: '577'
+ht-degree: 48%
 
 ---
 
@@ -12,7 +12,7 @@ ht-degree: 52%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
 
 `turbine` 对象是扩展库模块范围内的“自由变量”。它提供了特定于Adobe Experience Platform标记运行时的信息和实用程序，并且始终可供库模块使用，而无需使用`require()`。
 
@@ -90,7 +90,7 @@ var mcidInstance = turbine.getSharedModule('adobe-mcid', 'mcid-instance');
 turbine.logger.error('Error!');
 ```
 
-日志记录实用程序用于将消息记录到控制台。 仅当用户开启调试功能时，消息才会显示在控制台中。开启调试功能的推荐方法是：使用 [Adobe Experience Cloud Debugger](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj?src=propaganda) 或 [ Launch 和 DTM Switch](https://chrome.google.com/webstore/detail/adobe-dtm-switch/nlgdemkdapolikbjimjajpmonpbpmipk) Chrome 扩展。作为替代方法，用户可以在浏览器开发人员控制台中运行以下命令`_satellite.setDebug(true)`。 该日志记录器包括以下方法：
+日志记录实用程序用于将消息记录到控制台。 仅当用户开启调试功能时，消息才会显示在控制台中。开启调试功能的推荐方法是使用[Adobe Experience Cloud Debugger](https://chrome.google.com/webstore/detail/adobe-experience-cloud-de/ocdmogmohccmeicdhlhhgepeaijenapj?src=propaganda)。 作为替代方法，用户可以在浏览器开发人员控制台中运行以下命令`_satellite.setDebug(true)`。 该日志记录器包括以下方法：
 
 * `logger.log(message: string)`：将消息记录到控制台。
 * `logger.info(message: string)`：将信息性消息记录到控制台。
