@@ -1,9 +1,9 @@
 ---
 title: 扩展开发入门
 description: 开始在Adobe Experience Platform中开发您自己的标记扩展。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '429'
+source-wordcount: '430'
 ht-degree: 85%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 85%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
 
 为了帮助您启动、运行和构建扩展，我们将使用由 Adobe 工程师提供的开源基架工具为扩展包创建必要的文件和文件结构，因此您要完成的是最有价值的部分：实际编写代码。
 
