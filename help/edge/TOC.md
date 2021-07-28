@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: 数据管理
-source-git-commit: a1fcea17432954e2b81ff1657d18a1f865270adc
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '149'
-ht-degree: 34%
+source-wordcount: '139'
+ht-degree: 36%
 
 ---
 
@@ -50,9 +50,9 @@ ht-degree: 34%
    * [支持同意](consent/supporting-consent.md)
    * IAB透明度和同意框架2.0 {#iab-tcf}
       * [概述](consent/iab-tcf/overview.md)
-      * [与Adobe Experience Platform Launch集成](consent/iab-tcf/with-launch.md)
-      * [不使用Adobe Experience Platform Launch进行集成](consent/iab-tcf/without-launch.md)
-* 适用于Adobe Experience Platform Launch的Web SDK扩展{#extension}
+      * [与标记集成](consent/iab-tcf/with-launch.md)
+      * [无标记集成](consent/iab-tcf/without-launch.md)
+* Web SDK标记扩展{#extension}
    * [Web SDK扩展](extension/web-sdk-extension-configuration.md)
    * [操作类型](extension/action-types.md)
    * [数据元素类型](extension/data-element-types.md)
