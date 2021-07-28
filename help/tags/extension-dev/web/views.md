@@ -1,9 +1,9 @@
 ---
 title: 视图 Web扩展中
 description: 了解如何在Adobe Experience Platform Web扩展中为库模块定义视图。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '2062'
+source-wordcount: '2063'
 ht-degree: 74%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 74%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 每个事件、条件、操作或数据元素类型可以提供允许用户提供设置的视图。扩展还可以具有顶级[扩展配置视图](../configuration.md)，通过该视图，用户可以为整个扩展提供全局设置。在所有类型的视图中，视图的构建过程都是相同的。
 
