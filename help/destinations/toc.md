@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: 目标
-source-git-commit: 3ab15ceaf33a33f8bbda80cbf09228d16ce5a374
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '481'
+source-wordcount: '476'
 ht-degree: 11%
 
 ---
@@ -100,8 +100,8 @@ ht-degree: 11%
       * [OracleEloqua连接](./catalog/email-marketing/oracle-eloqua.md)
       * [OracleResponsys连接](./catalog/email-marketing/oracle-responsys.md)
       * [SalesforceMarketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud.md)
-   * Experience Platform Launch扩展{#launch-extensions}
-      * [Adobe Experience Platform Launch扩展概述](./catalog/launch-extensions/overview.md)
+   * 标记扩展{#launch-extensions}
+      * [标记扩展概述](./catalog/launch-extensions/overview.md)
    * 移动参与目标{#mobile-engagement}
       * [移动设备参与目标概述](./catalog/mobile-engagement/overview.md)
       * [(Beta)Airship属性连接](./catalog/mobile-engagement/airship-attributes.md)
