@@ -1,9 +1,9 @@
 ---
 title: Reactor API快速入门
 description: 了解如何开始使用Reactor API，包括生成所需访问凭据的步骤。
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1070'
+source-wordcount: '1064'
 ht-degree: 1%
 
 ---
@@ -60,7 +60,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->产品配置文件由您的组织通过Adobe Admin Console进行管理，并包含Adobe Experience Platform Launch中用于粒度功能的特定权限集。 产品配置文件及其权限只能由组织内具有管理员权限的用户管理。 如果不确定要为API选择哪些产品配置文件，请联系您的管理员。
+>产品配置文件由您的组织通过Adobe Admin Console进行管理，并包含针对具体功能的特定权限集。 产品配置文件及其权限只能由组织内具有管理员权限的用户管理。 如果不确定要为API选择哪些产品配置文件，请联系您的管理员。
 
 从列表中选择所需的产品配置文件，然后选择&#x200B;**保存配置的API**&#x200B;以完成API注册。
 
@@ -98,7 +98,7 @@ ht-degree: 1%
 
 #### 以编程方式生成访问令牌 {#program}
 
-如果您将Launch集成用于应用程序，则可以通过API请求以编程方式生成访问令牌。 要完成此操作，您必须获取以下值：
+如果您将集成用于应用程序，则可以通过API请求以编程方式生成访问令牌。 要完成此操作，您必须获取以下值：
 
 * 客户端ID(`{API_KEY}`)
 * 客户端密钥(`{SECRET}`)
