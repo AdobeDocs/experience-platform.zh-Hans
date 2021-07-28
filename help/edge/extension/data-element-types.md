@@ -1,17 +1,17 @@
 ---
 title: Adobe Experience Platform Web SDK扩展中的数据元素类型
-description: 了解Adobe Experience Platform Launch中Adobe Experience Platform Web SDK扩展提供的不同数据元素类型。
+description: 了解Adobe Experience Platform Web SDK标记扩展提供的不同数据元素类型。
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 5a295a1f6e64c33ac4a48e1d74253d0527f495f9
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '305'
-ht-degree: 47%
+source-wordcount: '293'
+ht-degree: 49%
 
 ---
 
 # 数据元素类型
 
-在[Adobe Experience Platform Web SDK扩展](web-sdk-extension-configuration.md)中为[Adobe Experience Platform Launch](https://experienceleague.adobe.com/docs/launch.html)设置[操作类型](action-types.md)后，配置数据元素类型。
+在[Adobe Experience Platform Web SDK标记扩展](web-sdk-extension-configuration.md)中设置[操作类型](action-types.md)后，配置数据元素类型。
 
 本页介绍可用的数据元素类型。
 
