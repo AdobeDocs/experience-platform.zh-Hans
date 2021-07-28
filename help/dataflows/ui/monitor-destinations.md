@@ -6,7 +6,7 @@ title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 029e990f5b30713ceea5da80ace8002368ac5652
+source-git-commit: 96855ec4e42e7adb17dc36a734561f63f926693b
 workflow-type: tm+mt
 source-wordcount: '1733'
 ht-degree: 0%
@@ -117,7 +117,7 @@ ht-degree: 0%
 
 ![](../assets/ui/monitor-destinations/dataflow-records-batch.png)
 
-## 监控目标功能板
+## 监控目标功能板 {#monitoring-destinations-dashboard}
 
 要访问[!UICONTROL 监视]功能板，请选择&#x200B;**[!UICONTROL 监视]**（![监视图标](../assets/ui/monitor-destinations/monitoring-icon.png)）
 )。 在[!UICONTROL 监视]页面上，选择[!UICONTROL 目标]。 [!UICONTROL 监视]功能板包含有关目标运行作业的量度和信息。
