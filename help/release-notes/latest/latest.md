@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: July 28, 2021
 author: ens60013
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: dc01e03975fdda375b31f44edc8459fa32b5a61b
+source-git-commit: ab868a813815e10b520cda2a0abe76e3acdd2ac6
 workflow-type: tm+mt
-source-wordcount: '387'
-ht-degree: 10%
+source-wordcount: '531'
+ht-degree: 8%
 
 ---
 
@@ -20,6 +20,7 @@ ht-degree: 10%
 Adobe Experience Platform 现有功能的更新包括：
 
 - [数据科学工作区](#dsw)
+- [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [源](#sources)
 
@@ -34,6 +35,17 @@ Adobe Experience Platform 现有功能的更新包括：
 | 库和操作系统更新 | Data Science Workspace已对库和操作系统进行了重大更新，以改进功能和可用性。 这包括支持CUDA 11和CUDNN 8的JupyterLab 1.2.20、Python 3.7、Pants 1.2.4、Tensorflow 2.4.1等。 要了解如何在JupyterLab中查看可用库，请访问JupyterLab笔记本概述文档中的[受支持的库](../../data-science-workspace/jupyterlab/overview.md#supported-libraries)部分。 |
 
 有关数据科学工作区的更多常规信息，请参阅[数据科学工作区概述](../../data-science-workspace/home.md)。
+
+## 目标 {#destinations}
+
+目标是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| [更快的增量文件导出](../../destinations/ui/activate-destinations.md#export-incremental-files) | 您现在可以安排每3、6、8和12小时为基于文件的目标执行增量文件导出。 当前不支持更改已保存区段的文件导出计划。 要重新导出具有不同计划的区段，您必须创建一个新的目标实例。 这是一项限制，将在未来版本中加以解决。 |
+| [支持重复数据删除键](../../destinations/ui/activate-destinations.md#deduplication-keys) | 通过选择重复数据删除键，消除导出文件中同一用户档案的多个记录。 您可以选择单个命名空间或最多两个XDM架构属性作为重复数据删除键。 |
 
 ## 体验数据模型(XDM) {#xdm}
 
