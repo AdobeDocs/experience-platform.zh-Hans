@@ -1,9 +1,9 @@
 ---
 title: 授予用户访问权限
 description: 在Adobe Experience Platform中设置团队成员的标记用户帐户和权限。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '738'
 ht-degree: 20%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 20%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 开始使用 extension_package 之前，您需要为团队成员设置用户帐户和权限。此操作可以在 [Adobe Admin Console](https://adminconsole.adobe.com/) 中完成。
 
@@ -39,7 +39,7 @@ ht-degree: 20%
 
 产品配置文件是一个组。 单个权限将会分配给产品配置文件，然后配置文件中的所有用户都会继承这些权限。
 
-选择顶部的&#x200B;**[!UICONTROL Products]**&#x200B;链接，并选择左侧的&#x200B;**[!UICONTROL Experience Cloud]**&#x200B;链接。 如果Adobe Experience Platform Launch未列出，则客户应联系其客户团队，合作伙伴应发送电子邮件至<ExchangeTechEC@adobe.com>。
+选择顶部的&#x200B;**[!UICONTROL Products]**&#x200B;链接，并选择左侧的&#x200B;**[!UICONTROL Experience Cloud]**&#x200B;链接。 如果未列出数据收集UI，则客户应联系其客户团队，合作伙伴应发送电子邮件至<ExchangeTechEC@adobe.com>。
 
 ![“管理控制台产品”选项卡](../images/getting-started/admin-console-products-launch.png)
 
