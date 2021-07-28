@@ -1,9 +1,9 @@
 ---
 title: 快速入门指南
 description: 了解如何在Adobe Experience Platform中快速启动和运行标记。
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
 workflow-type: tm+mt
-source-wordcount: '1533'
+source-wordcount: '1532'
 ht-degree: 41%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 41%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
 
 标记是Adobe Experience Platform的下一代标签管理技术。 它是完全从头开始构建的，旨在支持一个开放且可持续的生态系统，在该生态系统中，任何人都可以构建自己的集成，以便Adobe客户可以将该集成部署到其网站。 Launch 是一个以 API 为主导的应用程序，因此所有可以通过用户界面执行的操作也都可以通过 API 以编程方式执行。
 
@@ -26,8 +26,6 @@ ht-degree: 41%
 6. 在开发环境中测试。
 7. 提升至生产。
 
-有关介绍性视频，请参阅[介绍性视频](videos.md)文档。
-
 ## 1. 设置组和用户
 
 标记已与您的Adobe ID完全集成。 用户权限通过Admin Console与[!DNL Creative Cloud]、[!DNL Document Cloud]和Experience Cloud中的其他Adobe产品和解决方案一起管理。
@@ -38,7 +36,7 @@ ht-degree: 41%
 
 ## 2. 登录
 
-将标记权限添加到Adobe ID后，您需要登录到数据收集UI。 为此，您可以直接导航到[Experience Cloud登录屏幕](https://experiencecloud.adobe.com)，然后从“快速访问”选项卡中选择&#x200B;**[!UICONTROL 启动/数据收集]**。
+将标记权限添加到Adobe ID后，您需要登录到数据收集UI。 为此，您可以直接导航到[Experience Cloud登录屏幕](https://experiencecloud.adobe.com)，然后从“快速访问”选项卡中选择数据收集UI。
 
 >[!NOTE]
 >
@@ -56,7 +54,7 @@ ht-degree: 41%
 
 所有新资产均随安装的[核心扩展](../extensions/web/core/overview.md)一起提供。移动资产则随其他扩展一起提供。核心扩展由Adobe构建，可提供一组可靠的默认数据元素类型和事件类型，分别供数据层和规则使用。 您要执行的大多数操作（获取 ECID、发送 [!DNL Adobe Analytics] 信标、加载 [!DNL Target] 全局 mbox 等等）都来自于您从目录安装的扩展。
 
-Platform中的标记之所以真正独特，是因为这些扩展可由任何人构建。 您是否需要丢弃网站上的 Facebook 再营销像素？可考虑使用 Facebook 构建的扩展。您是否希望对 Twitter 或 Linked In 执行相同的操作？可使用这些扩展。您是否需要运行调查？可考虑使用 Question Pro 或 Foresee。您是否需要管理最终用户的隐私和同意，以帮助您[!DNL GDPR]? 可认真考虑使用 Evidon 和 Trust Arc。您是否希望对网站上各个用户的行为进行精细的分析？ 或许可以考虑使用 Clicktale。有关更多信息，请参阅[添加新扩展](../ui/managing-resources/extensions/overview.md#add-a-new-extension)。
+Platform中的标记之所以真正独特，是因为这些扩展可由任何人构建。 您是否需要丢弃网站上的 Facebook 再营销像素？可考虑使用 Facebook 构建的扩展。您是否希望对 Twitter 或 Linked In 执行相同的操作？可使用这些扩展。您是否需要运行调查？可考虑使用 Question Pro 或 Foresee。您是否需要管理最终用户的隐私和同意，以帮助您[!DNL GDPR]? 可认真考虑使用 Evidon 和 Trust Arc。您是否希望对网站上各个用户的行为进行精细的分析？ 或许可以考虑使用 Clicktale。有关更多信息，请参阅[添加新扩展](../ui/managing-resources/extensions/overview.md#add-a-new-extension)中的部分。
 
 ## 5. 创建数据元素和规则
 
