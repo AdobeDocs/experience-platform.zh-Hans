@@ -1,9 +1,9 @@
 ---
 title: 扩展清单
 description: 了解如何配置JSON清单文件，以告知Adobe Experience Platform如何正确使用您的扩展。
-source-git-commit: 421d1d0660c4c9c7280974f8a812a8f0e4f7cbea
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '2646'
+source-wordcount: '2647'
 ht-degree: 75%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 75%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
 
 在扩展的基目录中，必须创建一个名为 `extension.json` 的文件。该文件包含有关扩展的重要详细信息，借助该信息，Adobe Experience Platform 可以正确使用扩展。其中的部分内容采用 [npm 的 `package.json`](https://docs.npmjs.com/files/package.json) 方式构成。
 
