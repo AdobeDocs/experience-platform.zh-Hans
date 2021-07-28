@@ -1,9 +1,9 @@
 ---
 title: 发布流程
 description: 了解在Adobe Experience Platform中创建库、测试内部版本并批准这些版本以用于生产的过程。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1498'
+source-wordcount: '1499'
 ht-degree: 7%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 7%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 Adobe Experience Platform中的标记发布流程是指创建库、测试内部版本以及批准这些版本以用于生产环境的过程。
 
@@ -63,7 +63,7 @@ Adobe Experience Platform中的标记发布流程是指创建库、测试内部�
 | [!UICONTROL 提交并构建到暂存环境] | 此操作只能由同时具有开发和批准权限的用户执行。 此操作会从开发环境中取消分配库，将库移动到[!UICONTROL Submitted]状态，并将库构建到暂存环境。 必须成功生成库的最新版本，才能启用此选项。 |
 | [!UICONTROL Approve for Publishing] | 此操作只能由同时具有开发和批准权限的用户执行。 此操作将从开发环境中取消分配库，并将其移动到[!UICONTROL Approved]状态 — 完全跳过暂存环境和[!UICONTROL Submitted]状态。 必须成功生成库的最新版本，才能启用此选项。 |
 | [!UICONTROL 批准并发布到生产环境] | 此操作只能由具有开发、批准和发布权限的用户执行。 此操作将从开发环境中取消分配库，将其移动到[!UICONTROL Approved]状态，然后发布到生产环境。 生产内部版本完成后，库将变为[!UICONTROL Published]状态。 必须成功生成库的最新版本，才能启用此选项。 |
-| [!UICONTROL 删除] | 将库从Platform launch中删除。 这不会从环境中删除内部版本。 |
+| [!UICONTROL 删除] | 从系统中删除库。 这不会从环境中删除内部版本。 |
 
 ### [!UICONTROL 已提交] {#submitted}
 
