@@ -6,9 +6,9 @@ seo-title: 将用户档案和区段激活到目标
 description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 seo-description: 通过将区段映射到目标，激活您在Adobe Experience Platform中拥有的数据。 要完成此操作，请执行以下步骤。
 exl-id: c3792046-ffa8-4851-918f-98ced8b8a835
-source-git-commit: a28dc64cfe7f352a023aa2a5bd1156307bbad39f
+source-git-commit: 1b750f0dc51983251d39515de15cd0286f5b51c1
 workflow-type: tm+mt
-source-wordcount: '3054'
+source-wordcount: '2957'
 ht-degree: 0%
 
 ---
@@ -162,7 +162,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   >在一天中的某个特定时间导出文件的选项当前处于测试阶段，并且仅对选定数量的客户可用。<br> <br> 由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。  <br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。这是将在未来版本中解决的限制。
+   >由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。<br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。这是将在未来版本中解决的限制。
 
 3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
 4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
@@ -199,19 +199,15 @@ ht-degree: 0%
 
    * 选择&#x200B;**[!UICONTROL 每小时]**&#x200B;时，使用&#x200B;**[!UICONTROL 每]**&#x200B;选择器在&#x200B;**[!UICONTROL 3]**、**[!UICONTROL 6]**、**[!UICONTROL 8]**&#x200B;和&#x200B;**[!UICONTROL 12]**&#x200B;小时选项之间进行选择。
 
-      >[!IMPORTANT]
-      >
-      >每3、6、8或12小时导出增量文件的选项目前处于测试阶段，并且仅对选定数量的客户可用。 非测试版客户每天可导出一次增量文件。
 
-
-2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。
+1. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。
 
    >[!IMPORTANT]
    >
-   >选择导出时间的选项仅适用于选定数量的客户。<br> <br> 由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。  <br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。这是将在未来版本中解决的限制。
+   >由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。<br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。这是将在未来版本中解决的限制。
 
-3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
-4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
+1. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
+1. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
 
 >[!IMPORTANT]
 >
@@ -302,10 +298,6 @@ ht-degree: 0%
 >title="关于重复数据删除键"
 >abstract="通过选择重复数据删除键，消除导出文件中同一用户档案的多个记录。 选择一个命名空间或最多两个XDM架构属性作为重复数据删除键值。 未选择重复数据删除键可能会导致导出文件中出现重复的配置文件条目。"
 >additional-url="http://www.adobe.com/go/destinations-deduplication-keys-en" text="在文档中了解更多信息"
-
->[!IMPORTANT]
->
->使用重复数据删除键的选项当前处于测试阶段，并且仅对选定数量的客户可用。
 
 重复数据删除键消除了在一个导出文件中存在多个相同用户档案记录的可能性。
 
