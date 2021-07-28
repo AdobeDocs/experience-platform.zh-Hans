@@ -1,38 +1,37 @@
 ---
-title: 使用Platform launch和Platform Web SDK扩展集成IAB TCF 2.0支持
-description: 了解如何设置Adobe Experience Platform Launch和Adobe Experience Platform Web SDK扩展的IAB TCF 2.0同意。
+title: 使用标记和平台Web SDK扩展集成IAB TCF 2.0支持
+description: 了解如何使用标记和Adobe Experience Platform Web SDK扩展设置IAB TCF 2.0同意。
 exl-id: dc0e6b68-8257-4862-9fc4-50b370ef204f
-translation-type: tm+mt
-source-git-commit: 7d7502b238f96eda1a15b622ba10bbccc289b725
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '850'
+source-wordcount: '838'
 ht-degree: 0%
 
 ---
 
-# 使用Platform launch和Platform Web SDK扩展集成IAB TCF 2.0支持
+# 使用标记和Platform Web SDK扩展集成IAB TCF 2.0支持
 
-Adobe Experience Platform Web SDK支持Interactive Advertising Bureau透明度和同意框架，版本2.0(IAB TCF 2.0)。 本指南向您介绍如何设置Adobe Experience Platform Launch属性，以便使用Adobe Experience Platform Web SDK扩展将IAB TCF 2.0同意信息发送到Adobe进行Experience Platform Launch。
+Adobe Experience Platform Web SDK支持交互式广告局透明度与同意框架版本2.0(IAB TCF 2.0)。 本指南将向您演示如何设置标记属性，以便使用Adobe Experience Platform Web SDK标记扩展将IAB TCF 2.0同意信息发送到Adobe。
 
-如果您不想使用Experience Platform Launch，请参阅[上关于使用不带Experience Platform Launch的IAB TCF 2.0的指南](./without-launch.md)。
+如果您不希望使用标记，请参阅[上的使用不带标记的IAB TCF 2.0指南](./without-launch.md)。
 
-## 入门指南
+## 快速入门
 
-要将IAB TCF 2.0与Experience Platform Launch及Platform Web SDK扩展一起使用，您需要提供XDM模式和数据集。
+要将IAB TCF 2.0与标记和Platform Web SDK扩展一起使用，您需要具有可用的XDM架构和数据集。
 
-此外，本指南要求您对Adobe Experience Platform Web SDK有正确的了解。 有关快速复习，请阅读[Adobe Experience Platform Web SDK概述](../../home.md)和[常见问题解答](../../web-sdk-faq.md)文档。
+此外，本指南还要求您对Adobe Experience Platform Web SDK有一定的了解。 要快速刷新，请阅读[Adobe Experience Platform Web SDK概述](../../home.md)和[常见问题解答](../../web-sdk-faq.md)文档。
 
 ## 设置默认同意
 
-在扩展配置中，存在默认同意设置。 这会控制没有同意Cookie的客户的行为。 如果要为未获得同意Cookie的客户排队体验事件，请将其设置为`pending`。 如果您要放弃针对未获得同意Cookie的客户的体验事件，请将其设置为`out`。 您还可以使用数据元素动态设置默认同意值。
+在扩展配置中，有一个默认同意设置。 这可控制没有同意Cookie的客户的行为。 如果要为没有同意Cookie的客户排入体验事件队列，请将其设置为`pending`。 如果要放弃没有同意Cookie的客户的体验事件，请将其设置为`out`。 您还可以使用数据元素动态设置默认同意值。
 
-有关如何配置默认同意的详细信息，请参阅SDK配置指南中的[默认同意部分](../../fundamentals/configuring-the-sdk.md#default-consent)。
+有关如何配置默认同意的更多信息，请参阅SDK配置指南中的[默认同意部分](../../fundamentals/configuring-the-sdk.md#default-consent)。
 
-## 使用同意信息{#consent-code-1}更新用户档案
+## 使用同意信息更新用户档案 {#consent-code-1}
 
-要在客户同意偏好发生更改时调用`setConsent`操作，您需要创建新的Experience Platform Launch规则。 开始，添加新事件并选择核心扩展的“自定义代码”事件类型。
+要在客户同意首选项发生更改时调用`setConsent`操作，您需要创建新的标记规则。 首先添加新事件，然后选择核心扩展的“Custom Code”事件类型。
 
-对新事件使用以下代码示例：
+为新事件使用以下代码示例：
 
 ```javascript
 // Wait for window.__tcfapi to be defined, then trigger when the customer has completed their consent and preferences.
@@ -54,14 +53,14 @@ function addEventListener() {
 addEventListener();
 ```
 
-此自定义代码具有两项功能：
+此自定义代码可执行两项操作：
 
-* 设置两个数据元素，一个包含同意字符串，另一个包含`gdprApplies`标志。 这在以后填写“设置同意”操作时很有用。
+* 设置两个数据元素，一个包含同意字符串，另一个包含`gdprApplies`标记。 这在以后填写“设置同意”操作时非常有用。
 
-* 在同意偏好发生更改时触发规则。 每当同意偏好发生更改时，应使用“设置同意”操作。 在扩展中添加“设置同意”操作，然后按如下方式填写表单：
+* 在同意首选项发生更改时触发规则。 每当同意首选项发生更改时，应使用“设置同意”操作。 在扩展中添加“Set Consent”操作，并按如下方式填写表单：
 
 * 标准：&quot;IAB TCF&quot;
-* 版本：“2.0”
+* 版本：&quot;2.0&quot;
 * 值：&quot;%IAB TCF同意字符串%&quot;
 * GDPR适用：&quot;%IAB TCF同意GDPR%&quot;
 
@@ -69,15 +68,15 @@ addEventListener();
 
 >[!IMPORTANT]
 >
->您无法使用数据元素选择器选择这些数据元素，因为它们是通过自定义代码创建的。 您必须在数据元素名称中键入百分号。 此代码会在客户更改时使用新的同意首选项更新其用户档案。 此外，服务器返回一个Cookie值，这可能会阻止Adobe Experience Platform Web SDK录制Experience事件。
+>您无法使用数据元素选择器选择这些数据元素，因为它们是通过自定义代码创建的。 您必须在数据元素名称中键入百分比符号。 此代码会在客户发生更改时使用其新同意首选项来更新其配置文件。 此外，服务器会返回一个Cookie值，这可能会阻止Adobe Experience Platform Web SDK记录体验事件。
 
 ## 为体验事件创建XDM数据元素
 
-同意字符串应包含在XDM体验事件中。 为此，请使用XDM对象数据元素。 开始，方法是创建新的XDM对象数据元素，或者使用您已创建的用于发送事件的元素。 如果您已将“体验事件隐私模式”字段组添加到您的模式，则XDM对象中应包含`consentStrings`键。
+同意字符串应包含在XDM体验事件中。 要实现此目的，请使用XDM对象数据元素。 首先，创建新的XDM对象数据元素，或者使用已创建的数据元素来发送事件。 如果已将体验事件隐私架构字段组添加到架构，则XDM对象中应具有`consentStrings`键。
 
-1. 选择 **[!UICONTROL consentStrings]**。
+1. 选择&#x200B;**[!UICONTROL consentStrings]**。
 
-1. 选择&#x200B;**[!UICONTROL Provide individual items]**&#x200B;并选择&#x200B;**[!UICONTROL Add Item]**。
+1. 选择&#x200B;**[!UICONTROL 提供单个项目]**&#x200B;并选择&#x200B;**[!UICONTROL 添加项目]**。
 
 1. 展开&#x200B;**[!UICONTROL consentString]**&#x200B;标题，展开第一个项目，然后填写以下值：
 
@@ -88,11 +87,11 @@ addEventListener();
 
 >[!IMPORTANT]
 >
->您无法使用数据元素选择器选择这些数据元素，因为它们是通过自定义代码创建的。 您必须在数据元素名称中键入百分号。
+>您无法使用数据元素选择器选择这些数据元素，因为它们是通过自定义代码创建的。 您必须在数据元素名称中键入百分比符号。
 
-## 使用IAB TCF 2.0同意信息发送初始体验事件
+## 发送包含IAB TCF 2.0同意信息的初始体验事件
 
-如果页面上的初始体验事件是通过页面加载事件触发的，则同意字符串可能尚未加载。 此规则旨在替换当前页面加载事件。 要确保首先加载同意信息，请创建新规则，并将以下代码添加为自定义代码事件:
+如果页面上的初始体验事件是通过页面加载事件触发的，则可能尚未加载同意字符串。 此规则旨在替换您当前的页面加载事件。 要确保先加载同意信息，请创建新规则，并将以下代码添加为自定义代码事件：
 
 ```javascript
 // Wait for window.__tcfapi to be defined, then trigger when there is a consent string
@@ -114,14 +113,14 @@ function addEventListener() {
 addEventListener();
 ```
 
-此代码与以前的自定义代码相同，只是处理了`useractioncomplete`和`tcloaded`事件。 [之前的自定义代码](#consent-code-1)仅在客户首次选择其首选项时触发。 当客户已选择其首选项时，也会触发此代码。 例如，在第二页加载时。
+此代码与之前的自定义代码相同，不同之处在于处理了`useractioncomplete`和`tcloaded`事件。 只有当客户首次选择其首选项时，才会触发[之前的自定义代码](#consent-code-1)。 当客户已选择其首选项时，也会触发此代码。 例如，第二次加载页面时。
 
-从Platform Web SDK扩展添加“发送事件”操作。 在XDM字段中，选择您在上一节中创建的XDM数据元素。
+从Platform Web SDK扩展添加“发送事件”操作。 在XDM字段中，选择在上一部分中创建的XDM数据元素。
 
 ## 使用IAB TCF 2.0同意信息发送其他事件
 
-当事件在初始体验事件后触发时，仍会定义两个数据元素，并可用于发送IAB同意信息。 使用相同的XDM数据元素发送将来的事件。 包括IAB TCF 2.0信息。
+当事件在初始体验事件后触发时，仍然会定义这两个数据元素，可用于发送IAB同意信息。 使用相同的XDM数据元素发送将来的事件。 包含IAB TCF 2.0信息。
 
 ## 后续步骤
 
-现在，您已学习如何将IAB TCF 2.0与Platform Web SDK扩展一起使用，您还可以选择与其他Adobe解决方案(如Adobe Analytics或实时客户数据平台)集成。 有关详细信息，请参阅[IAB透明度和同意框架2.0概述](./overview.md)。
+现在，您已经学会如何将IAB TCF 2.0与Platform Web SDK扩展一起使用，接下来您还可以选择与其他Adobe解决方案(如Adobe Analytics或实时客户数据平台)集成。 有关更多信息，请参阅[IAB透明度与同意框架2.0概述](./overview.md)。
