@@ -1,9 +1,9 @@
 ---
 title: 标记概述
 description: Adobe Experience Platform中的标记是Adobe推出的新一代标签管理功能。 标记为客户提供了一种简单的方式来部署和管理所有用来改善相关客户体验的分析、营销和广告标记。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '562'
 ht-degree: 56%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 56%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](./term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](./term-updates.md)。
 
 Adobe Experience Platform中的标记是Adobe推出的新一代标签管理功能。 标记为客户提供了一种简单的方式来部署和管理所有用来改善相关客户体验的分析、营销和广告标记。
 
