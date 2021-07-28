@@ -1,9 +1,9 @@
 ---
 title: 事件转发入门
 description: 请按照此分步教程，开始使用Adobe Experience Platform中的事件转发。
-source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '906'
+source-wordcount: '907'
 ht-degree: 27%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 27%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 要在Adobe Experience Platform中使用事件转发，必须使用以下三个选项中的一个或多个选项将数据发送到Adobe Experience Platform边缘网络：
 
