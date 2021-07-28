@@ -5,9 +5,9 @@ title: IAB TCF 2.0支持Experience Platform
 topic-legacy: privacy events
 description: 了解在Adobe Experience Platform中将区段激活到目标时，如何配置数据操作和模式以传达客户同意选择。
 exl-id: af787adf-b46e-43cf-84ac-dfb0bc274025
-source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '2559'
+source-wordcount: '2563'
 ht-degree: 1%
 
 ---
@@ -119,9 +119,9 @@ Adobe Experience Platform是已注册的[IAB TCF 2.0供应商列表](https://iab
 
 ### 创建新数据流
 
-为了使SDK能够将数据发送到Experience Platform，您必须首先在[!DNL Adobe Experience Platform Launch]中为Platform创建新的数据流。 有关如何创建新配置的具体步骤，请参阅[SDK文档](../../../../edge/fundamentals/datastreams.md)。
+为了使SDK能够将数据发送到Experience Platform，您必须首先在数据收集UI中为平台创建新的数据流。 有关如何创建新数据流的具体步骤，请参见[SDK文档](../../../../edge/fundamentals/datastreams.md)。
 
-为配置提供唯一名称后，选择&#x200B;**[!UICONTROL Adobe Experience Platform]**&#x200B;旁边的切换按钮。 接下来，使用以下值完成表单的其余部分：
+为数据流提供唯一名称后，选择&#x200B;**[!UICONTROL Adobe Experience Platform]**&#x200B;旁边的切换按钮。 接下来，使用以下值完成表单的其余部分：
 
 | 数据流字段 | 值 |
 | --- | --- |
