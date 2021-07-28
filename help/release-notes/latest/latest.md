@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: July 28, 2021
 author: ens60013
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: ab868a813815e10b520cda2a0abe76e3acdd2ac6
+source-git-commit: c06e7b5c70613dc560fb5c0dcc28590206fc1734
 workflow-type: tm+mt
-source-wordcount: '531'
-ht-degree: 8%
+source-wordcount: '802'
+ht-degree: 7%
 
 ---
 
@@ -20,8 +20,10 @@ ht-degree: 8%
 Adobe Experience Platform 现有功能的更新包括：
 
 - [数据科学工作区](#dsw)
+- [数据流](#destinations)
 - [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
+- [查询服务](#query)
 - [源](#sources)
 
 ## 数据科学工作区 {#dsw}
@@ -35,6 +37,20 @@ Adobe Experience Platform 现有功能的更新包括：
 | 库和操作系统更新 | Data Science Workspace已对库和操作系统进行了重大更新，以改进功能和可用性。 这包括支持CUDA 11和CUDNN 8的JupyterLab 1.2.20、Python 3.7、Pants 1.2.4、Tensorflow 2.4.1等。 要了解如何在JupyterLab中查看可用库，请访问JupyterLab笔记本概述文档中的[受支持的库](../../data-science-workspace/jupyterlab/overview.md#supported-libraries)部分。 |
 
 有关数据科学工作区的更多常规信息，请参阅[数据科学工作区概述](../../data-science-workspace/home.md)。
+
+## 数据流 {#dataflows}
+
+在Platform中，数据是从许多不同的源中摄取的，在系统内进行分析，并激活到各种不同的目标。 Platform通过提供数据流的透明度，使跟踪这种潜在的非线性数据流的过程变得更加容易。
+
+数据流是跨平台移动数据的作业的表示形式。 这些数据流是跨不同服务配置的，有助于将数据从源连接器移动到目标数据集，然后由Identity服务和实时客户资料使用这些数据流，最终激活到目标。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 目标功能板 | 您现在可以使用监控仪表板来监控目标的数据流。 要了解更多信息，请阅读有关UI](../../dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中[监控目标的教程 |
+
+有关数据流的更多常规信息，请参阅[数据流概述](../../dataflows/home.md)。 要了解有关目标的更多信息，请参阅[目标概述](../../destinations/home.md)。
 
 ## 目标 {#destinations}
 
@@ -51,13 +67,25 @@ Adobe Experience Platform 现有功能的更新包括：
 
 体验数据模型(XDM)是一项开源规范，旨在提高数字体验的功能。 它以模式形式为数据提供了通用结构和定义，使任何应用程序都能够与Platform服务进行通信。
 
-**新增功能**
-
 | 功能 | 描述 |
 | --- | --- |
 | 电信行业过滤器 | 将字段组添加到UI中的架构时，您现在可以按电信行业进行过滤。 请参阅[电信行业实体关系图(ERD)](../../xdm/schema/industries/telecom.md)以查看电信用例的推荐数据模型。 |
 
 有关Platform中XDM的更多常规信息，请参阅[XDM系统概述](../../xdm/home.md)。
+
+## 查询服务 {#query}
+
+查询服务提供了在Adobe Experience Platform中使用标准SQL查询数据的功能，支持各种分析和数据管理用例。 它是一个无服务器工具，允许您连接数据湖中的数据集，并捕获查询结果作为新数据集，以用于报表、Data Science Workspace或将其摄取到实时客户资料中。
+
+您可以使用查询服务来构建数据分析生态系统，从而创建客户在各种交互渠道中的全景图。 这些渠道可能包括销售点、Web、移动设备或CRM系统。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 计划查询 | 您现在可以使用查询编辑器在平台中计划查询。 要了解更多信息，请阅读[查询编辑器](../../query-service/ui/user-guide.md#scheduled-queries)上的文档。 |
+
+有关更多信息，请参阅[查询服务文档](../../query-service/home.md)。
 
 ## 源 {#sources}
 
