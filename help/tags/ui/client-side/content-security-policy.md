@@ -1,9 +1,9 @@
 ---
 title: 内容安全策略(CSP)支持
 description: 了解在Adobe Experience Platform中将您的网站与标记集成时，如何处理内容安全策略(CSP)限制。
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1079'
+source-wordcount: '1080'
 ht-degree: 54%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 54%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 内容安全策略 (CSP) 是一项安全功能，有助于防止跨站点脚本攻击 (XSS)。当浏览器受到欺骗，运行似乎来自可信来源但实际上来自其他来源的恶意内容时，会发生这种攻击。 CSP 允许浏览器（代表用户）验证脚本是否实际来自可信来源。
 
