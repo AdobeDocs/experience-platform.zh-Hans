@@ -1,10 +1,10 @@
 ---
 title: Adobe MediumAnalytics for Audio and Video扩展概述
 description: 了解Adobe Experience Platform中的Adobe MediumAnalytics for Audio and Video标记扩展。
-source-git-commit: 7f694310b17ab257eae459003bb820f7221bb55e
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '986'
-ht-degree: 80%
+source-wordcount: '987'
+ht-degree: 79%
 
 ---
 
@@ -12,7 +12,7 @@ ht-degree: 80%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本文档了解有关安装、配置和实施 Adobe Media Analytics for Audio and Video 扩展（Media Analytics 扩展）的信息。其中包括使用此扩展构建规则时可用的选项，以及一些示例和指向示例的链接。
 
