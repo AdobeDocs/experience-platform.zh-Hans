@@ -1,9 +1,9 @@
 ---
 title: 核心事件转发扩展概述
 description: 了解Adobe Experience Platform中的核心事件转发扩展。
-source-git-commit: 5f810ada57eeb12a56de603d974a091b888dc9d2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1725'
+source-wordcount: '1724'
 ht-degree: 90%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 90%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 核心事件转发扩展提供了在Adobe Experience Platform中进行事件转发的默认事件、条件和数据类型。
 
@@ -165,7 +165,7 @@ module.exports = (context) => {
 getDataElementValue('productName') 
 ```
 
-Platform Launch 服务器端操作按顺序执行。对于某项操作中的自定义代码而言，也有可能会返回一个可用于后续操作的值。返回的值可能来自该操作中的代码，也可能来自对外部源发起调用的响应正文。要在使用核心扩展的单个规则中，引用先前执行的操作中的数据，请创建一个 `Path` 类型的数据元素，并使用以下路径引用名为 `productCategory` 的变量的值（该变量在核心扩展内的自定义代码中定义）：
+事件转发操作按顺序执行。 对于某项操作中的自定义代码而言，也有可能会返回一个可用于后续操作的值。返回的值可能来自该操作中的代码，也可能来自对外部源发起调用的响应正文。要在使用核心扩展的单个规则中，引用先前执行的操作中的数据，请创建一个 `Path` 类型的数据元素，并使用以下路径引用名为 `productCategory` 的变量的值（该变量在核心扩展内的自定义代码中定义）：
 
 ```javascript
 arc.ruleStash.[Extension-Name].[key-as-defined-by-action] 
