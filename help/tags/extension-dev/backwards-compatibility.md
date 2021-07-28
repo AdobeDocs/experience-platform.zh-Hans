@@ -1,9 +1,9 @@
 ---
 title: 向后兼容标准
 description: 了解Adobe Experience Platform中的向后兼容性标准，该标准可确保更新版本的标记扩展与先前版本兼容。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '832'
+source-wordcount: '833'
 ht-degree: 81%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 81%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
 
 对Adobe Experience Platform中标记扩展的更新必须能够向后兼容该扩展的先前版本。 这意味着：
 
