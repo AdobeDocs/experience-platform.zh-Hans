@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform Web SDK配置
-description: 了解适用于Adobe Experience Platform Launch的Adobe Experience Platform Web SDK扩展
+description: 了解Adobe Experience Platform Web SDK标记扩展。
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: e5b43a65bb9907f333f1ffedfbeed00f02f8ef39
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1043'
+source-wordcount: '1034'
 ht-degree: 7%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 7%
 
 Adobe Experience Platform Web SDK扩展通过Adobe Experience Platform Edge Network从Web属性向Adobe Experience Cloud发送数据。 该扩展允许您将数据流式传输到平台、同步身份、处理客户同意信号并自动收集上下文数据。
 
-本文档介绍如何在Adobe Experience Platform Launch用户界面中配置扩展。
+本文档介绍如何在数据收集UI中配置扩展。
 
 ## 配置扩展
 
-如果已经为资产安装了Platform Web SDK扩展，请在Platform launchUI中打开该资产，然后选择&#x200B;**[!UICONTROL Extensions]**&#x200B;选项卡。 在Platform Web SDK下，选择&#x200B;**[!UICONTROL 配置]**。
+如果已经为资产安装了Platform Web SDK扩展，请在数据收集UI中打开该资产，然后选择&#x200B;**[!UICONTROL Extensions]**&#x200B;选项卡。 在Platform Web SDK下，选择&#x200B;**[!UICONTROL 配置]**。
 
 ![](../images/extension/overview/configure.png)
 
@@ -35,7 +35,7 @@ Adobe Experience Platform Web SDK扩展通过Adobe Experience Platform Edge Netw
 
 ### [!UICONTROL 名称]
 
-Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名称用于通过单个Platform launch配置向多个组织发送数据。
+Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名称用于通过标记配置向多个组织发送数据。
 
 扩展的名称默认为“[!DNL alloy]”。 但是，您可以将实例名称更改为任何有效的 JavaScript 对象名称。
 
@@ -45,7 +45,7 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 ### **[!UICONTROL 边缘域]**
 
-[!UICONTROL Edge Domain]是Adobe Experience Platform扩展发送和接收数据的域。 该扩展要求您对生产流量使用第一方 CNAME。默认的第三方域适用于开发环境，但不适合生产环境。[此处](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html)列出了有关如何设置第一方 CNAME 的说明。
+[!UICONTROL Edge Domain]是Adobe Experience Platform扩展发送和接收数据的域。 该扩展要求您对生产流量使用第一方 CNAME。默认的第三方域适用于开发环境，但不适合生产环境。[此处](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)列出了有关如何设置第一方 CNAME 的说明。
 
 ## [!UICONTROL 数据流]
 
