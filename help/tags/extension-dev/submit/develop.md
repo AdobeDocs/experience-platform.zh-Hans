@@ -1,10 +1,10 @@
 ---
 title: 开发扩展
 description: 本文档提供了标记扩展开发过程的一般概述，其中包含指向更多详细流程文档的链接。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '530'
-ht-degree: 40%
+source-wordcount: '531'
+ht-degree: 39%
 
 ---
 
@@ -12,7 +12,7 @@ ht-degree: 40%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 标记扩展应被视为具有其自身要求的（小）产品。 确定 Adobe Experience Platform 用户将希望如何使用您的扩展，可以帮助您将功能分类为扩展应提供的事件类型、条件类型、操作类型和数据元素类型。
 
