@@ -1,9 +1,9 @@
 ---
 title: 部署用于管理客户同意的JavaScript标记
 description: 了解如何在Adobe Experience Platform中管理各种Adobe解决方案的客户选择加入和选择退出信号。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '650'
+source-wordcount: '651'
 ht-degree: 77%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 77%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 欧盟[《通用数据保护条例》(GDPR)](https://gdpr-info.eu/art-7-gdpr/) 和 [ePrivacy](https://medium.com/mydata/consent-lost-gdpr-and-found-eprivacy-e85cf881ffb) 法规要求公司能够管理其用户的知情同意。Adobe客户在为任何给定访客执行Adobe解决方案之前，可能会要求访客选择加入。 访客应该能够管理其“选择启用”和“选择禁用”状态。
 
