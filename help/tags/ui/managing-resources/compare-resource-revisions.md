@@ -1,9 +1,9 @@
 ---
 title: 比较资源修订版本
 description: 了解如何在Adobe Experience Platform中查看标记资源修订的历史记录。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '909'
+source-wordcount: '910'
 ht-degree: 83%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 83%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 比较资源修订版本可查看单个资源的历史记录。您可以将资源的当前状态与旧版本进行比较，也可以将资源的当前已发布版本与已保存的一组最新更改进行比较。
 
