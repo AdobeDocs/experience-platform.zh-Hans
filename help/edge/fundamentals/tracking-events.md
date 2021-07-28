@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK跟踪事件
 description: 了解如何跟踪Adobe Experience Platform Web SDK事件。
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon；发送信标；documentUnloading；文档卸载；onBeforeEventSend;
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: a6fca344e6b307e503e29ca7dda3534cdea62f53
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1460'
+source-wordcount: '1451'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ alloy("sendEvent", {
 dataLayer.commerce = null;
 ```
 
-在此示例中，数据层通过序列化到JSON并反序列化来克隆。 接下来，克隆的结果被传递到`sendEvent`命令中。 这样做可确保`sendEvent`命令具有与执行`sendEvent`命令时所存在的数据层快照一样的数据层快照，以便以后对原始数据层对象的修改不会反映在发送到服务器的数据中。 如果您使用事件驱动的数据层，则克隆数据可能已经自动处理。 例如，如果您使用[Adobe客户端数据层](https://github.com/adobe/adobe-client-data-layer/wiki)，则`getState()`方法会提供所有先前更改的计算克隆快照。 如果您在Adobe Experience Platform Launch中使用Adobe Experience Platform Web SDK扩展，也会自动为您处理此问题。
+在此示例中，数据层通过序列化到JSON并反序列化来克隆。 接下来，克隆的结果被传递到`sendEvent`命令中。 这样做可确保`sendEvent`命令具有与执行`sendEvent`命令时所存在的数据层快照一样的数据层快照，以便以后对原始数据层对象的修改不会反映在发送到服务器的数据中。 如果您使用事件驱动的数据层，则克隆数据可能已经自动处理。 例如，如果您使用[Adobe客户端数据层](https://github.com/adobe/adobe-client-data-layer/wiki)，则`getState()`方法会提供所有先前更改的计算克隆快照。 如果您使用Adobe Experience Platform Web SDK标记扩展，也会自动为您处理此问题。
 
 >[!NOTE]
 >
@@ -132,7 +132,7 @@ alloy("sendEvent", {
 | delivery.feedback | 投放的反馈事件。 电子邮件投放的反馈事件示例 |
 
 
-如果使用Adobe Experience Platform Launch扩展，则这些事件类型将显示在下拉菜单中，或者您始终可以在不进行Experience Platform Launch的情况下将它们传递到中。 它们可作为`xdm`选项的一部分传入。
+如果使用标记扩展，则这些事件类型将显示在下拉菜单中，或者您始终可以在不使用标记的情况下传递它们。 它们可作为`xdm`选项的一部分传入。
 
 
 ```javascript
