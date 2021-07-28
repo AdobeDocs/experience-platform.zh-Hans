@@ -1,9 +1,9 @@
 ---
 title: 实施第三方库
 description: 了解在Adobe Experience Platform标记扩展中托管第三方库的不同方法。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1329'
+source-wordcount: '1330'
 ht-degree: 66%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 66%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
 
 Adobe Experience Platform中标记扩展的主要用途之一是让您能够轻松地将现有营销技术（库）实施到您的网站中。 通过使用扩展，您可以实施由第三方内容交付网络 (CDN) 提供的库，而无需手动编辑网站的 HTML。
 
