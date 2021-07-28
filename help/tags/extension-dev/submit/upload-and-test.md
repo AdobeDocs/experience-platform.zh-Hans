@@ -1,9 +1,9 @@
 ---
 title: 上传和实施扩展的端到端测试
 description: 了解如何在Adobe Experience Platform中验证、上传和测试扩展。
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '2391'
+source-wordcount: '2392'
 ht-degree: 33%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 33%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 要在Adobe Experience Platform中测试标记扩展，请使用标记API和/或命令行工具上传扩展包。 接下来，使用数据收集UI将扩展包安装到资产，并在标记库和内部版本中执行其功能。
 
