@@ -1,9 +1,9 @@
 ---
 title: 数据元素
 description: 数据元素是数据字典（或数据映射）的构建块。使用数据元素可跨市场营销和广告技术收集、组织和交付数据。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
 workflow-type: tm+mt
-source-wordcount: '1637'
+source-wordcount: '1631'
 ht-degree: 72%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 72%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 数据元素是数据字典（或数据映射）的构建块。使用数据元素可跨市场营销和广告技术收集、组织和交付数据。
 
@@ -38,8 +38,6 @@ ht-degree: 72%
 
 1. [创建一个数据元素](#create-a-data-element)（如果尚未创建）。
 1. 在[规则](./rules.md)或自定义脚本中使用该数据元素。
-
-有关介绍性视频，请参阅[数据元素](../../quick-start/videos.md)。
 
 ## 使用数据元素
 
