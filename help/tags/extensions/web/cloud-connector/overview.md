@@ -1,9 +1,9 @@
 ---
 title: Cloud Connector扩展概述
 description: 了解Adobe Experience Platform中的Cloud Connector事件转发扩展。
-source-git-commit: 1d3415146335d3011963c969d5b6aeea1f1a51d0
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1615'
+source-wordcount: '1616'
 ht-degree: 85%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 85%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 Cloud Connector事件转发扩展允许您创建自定义HTTP请求，以将数据发送到目标或从目标检索数据。 云连接器扩展类似于在 Adobe Experience Platform Edge Network 上部署了邮递员，可用来将数据发送到尚未具备专用扩展的端点。
 
