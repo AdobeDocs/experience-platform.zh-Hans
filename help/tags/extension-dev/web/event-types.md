@@ -1,9 +1,9 @@
 ---
 title: 适用于Web扩展的事件类型
 description: 了解如何在Adobe Experience Platform中为Web扩展定义事件类型库模块。
-source-git-commit: 5a6549577c61817f6fe239e1e9e47ab06d2bc807
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1047'
+source-wordcount: '1048'
 ht-degree: 28%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 28%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 在标记规则中，事件是要使规则触发而必须发生的活动。 例如，Web扩展可以提供“手势”事件类型，用于监控特定鼠标或触摸手势的发生。 一旦该手势发生，事件逻辑就会触发规则。
 
