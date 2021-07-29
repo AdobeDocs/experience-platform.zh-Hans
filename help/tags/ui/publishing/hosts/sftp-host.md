@@ -1,9 +1,9 @@
 ---
 title: SFTP 主机
 description: 了解如何在Adobe Experience Platform中配置标记，以将库内部版本交付到安全的自托管SFTP服务器。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '527'
 ht-degree: 39%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 39%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 如果您不希望 Adobe 管理您的托管文件库，那么还有另外一个选项，即让 Adobe Experience Platform 将内部版本交付到您托管的安全 SFTP 服务器。
 
