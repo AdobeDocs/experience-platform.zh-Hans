@@ -1,9 +1,9 @@
 ---
 title: 规则
 description: 了解标记扩展在Adobe Experience Platform中的工作方式。
-source-git-commit: 5f810ada57eeb12a56de603d974a091b888dc9d2
+source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
 workflow-type: tm+mt
-source-wordcount: '1983'
+source-wordcount: '1977'
 ht-degree: 77%
 
 ---
@@ -12,13 +12,11 @@ ht-degree: 77%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 Adobe Experience Platform中的标记遵循基于规则的系统。 他们查找用户交互和关联的数据。 如果满足您的规则中所列的标准，则规则会触发您已识别的扩展、脚本或客户端代码。
 
 构建规则可将数据与营销和广告技术的功能整合到一起，从而将不同的产品统一到单个解决方案中。
-
-有关介绍性视频，请参阅[规则生成器](../../quick-start/videos.md)。
 
 ## 规则结构
 
