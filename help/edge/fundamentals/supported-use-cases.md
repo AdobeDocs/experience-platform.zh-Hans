@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK支持的用例
 description: 了解Adobe Experience Platform Web SDK支持哪些用例。
 keywords: Web SDK；用例
-source-git-commit: 7f694310b17ab257eae459003bb820f7221bb55e
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '555'
+source-wordcount: '552'
 ht-degree: 14%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 14%
 | 将数据发送到页面上的多个组织 | [文档](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/interacting-with-multiple-properties.html?lang=en#fundamentals) |
 | 详细的错误报告和日志 |  |
 | 跟踪请求客户端和服务器端 |  |
-| Adobe Experience Platform Launch扩展 | [Web SDK扩展文档](../../tags/extensions/web/sdk/overview.md) |
+| 标记扩展 | [Web SDK扩展文档](../../tags/extensions/web/sdk/overview.md) |
 | 提供调试工具 | [Debugger扩](https://experienceleague.adobe.com/docs/debugger-learn/tutorials/experience-platform-debugger/introduction-to-the-experience-platform-debugger.html?lang=en) 展和 [Griffon](https://aep-sdks.gitbook.io/docs/beta/project-griffon) |
 
 {style=&quot;table-layout:auto&quot;}
