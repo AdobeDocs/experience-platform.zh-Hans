@@ -3,9 +3,9 @@ keywords: demandbase扩展；demandbase;demandbase目标
 title: Demandbase扩展
 description: Demandbase扩展是Adobe Experience Platform中的一个分析目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 112a9575-4527-4a32-9610-a9d18ffd84f1
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
 workflow-type: tm+mt
-source-wordcount: '475'
+source-wordcount: '476'
 ht-degree: 5%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 5%
 
 目标目录中提供的这项扩展适用于已购买平台的所有客户。
 
-要使用此扩展，您需要访问Adobe Experience Platform中的标记。 以内置增值功能的形式提供给Adobe Experience Cloud客户的标记。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
+要使用此扩展，您需要访问Adobe Experience Platform中的标记。 标记作为内置增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
 
 ## 安装扩展 {#install-extension}
 
