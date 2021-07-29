@@ -1,7 +1,7 @@
 ---
 title: 为扩展创建Exchange列表
 description: 了解如何在Adobe Experience Platform中将扩展添加到公共目录。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
 source-wordcount: '1162'
 ht-degree: 28%
@@ -12,7 +12,7 @@ ht-degree: 28%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 Adobe Experience Platform有一个统一的目录，用户可以在其中查看可用于安装的标记扩展。 此目录在产品中可用，其中包含三种类型的扩展：
 
@@ -44,7 +44,6 @@ Adobe Experience Platform有一个统一的目录，用户可以在其中查看�
    >[!NOTE]
    >
    >这是与扩展代码中使用的文件格式不同。 扩展本身将包含 svg 文件作为[图标](../manifest.md)。
-   
    - **特色图像**  — 使用可独立显示您的品牌并突出显示您的应用程序的图像，吸引关注。 特色图像是指当某人共享指向您的Exchange列表的链接或在社交媒体上发布有关该列表的信息时显示的图像。 因此，它必须是品牌的模型表示形式。
    - **应用程序发布者的徽标** - 这是您公司的徽标，请确保该图标具有适当的尺寸，即，1280 x 720 或 2560 x 1440 (16:9) 的 png 或 jpg 格式。
    - **配置说明**  — 告知客户如何配置您的Adobe Experience Platform扩展。当客户在资产中安装了您的扩展后，您的[配置视图](../configuration.md)会立即显示，请确保客户了解所有必需的设置和后续步骤。
@@ -69,4 +68,4 @@ Adobe Experience Platform有一个统一的目录，用户可以在其中查看�
 
 ## 将扩展包链接到列表
 
-在您的列表获得批准并公开可用后，我们建议您在扩展包内`extension.json`文件的`exchange_url`字段中提供一个指向公共列表的链接。  这将在Platform launch扩展目录中创建“更多信息”链接，以便产品中的用户能够找到您的列表及其附加信息。
+在您的列表获得批准并公开可用后，我们建议您在扩展包内`extension.json`文件的`exchange_url`字段中提供一个指向公共列表的链接。  这将在标记扩展目录中创建“更多信息”链接，以便产品中的用户能够找到您的列表及其附加信息。
