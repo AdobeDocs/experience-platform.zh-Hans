@@ -1,9 +1,9 @@
 ---
 title: Adobe Analytics扩展概述
 description: 了解Adobe Experience Platform中的Adobe Analytics标记扩展。
-source-git-commit: 8dfb7bdc16d0654ee1d76dc5f5af50938b122d33
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '2201'
+source-wordcount: '2202'
 ht-degree: 83%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 83%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关配置 Adobe Analytics 扩展以及使用此扩展构建规则时可用的选项的信息。
 
