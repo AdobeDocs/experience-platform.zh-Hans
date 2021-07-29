@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: c6feab3c9cda479c7dabdbf0533145fdcaa36ab1
 workflow-type: tm+mt
-source-wordcount: '1071'
-ht-degree: 52%
+source-wordcount: '1093'
+ht-degree: 53%
 
 ---
 
@@ -13,7 +13,13 @@ ht-degree: 52%
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[平台Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html)。
 
+## 2.6.1版 — 2021年7月29日
+
+包含 Adobe Experience Platform Web SDK 库的版本 2.6.1。
+
 ## 2.6.0版 — 2021年7月27日
+
+包含 Adobe Experience Platform Web SDK 库的版本 2.6.0。
 
 * 使用术语“边缘配置”的标签、描述和错误消息已更改为使用术语“datastream”来与最新的Adobe Experience Platform术语保持一致。
 * 在扩展配置视图中，添加了对处理大量数据流和数据流环境的支持。
