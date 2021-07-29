@@ -1,9 +1,9 @@
 ---
 title: 发布概述
 description: 了解将更改发布到Adobe Experience Platform中的标签管理代码库的过程。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '609'
 ht-degree: 1%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 Adobe Experience Platform允许您在各个库中封装对标签管理代码所做的更改。 由于多个库现在可由不同的团队并行开发，因此这些库必须遵循一个经过周密考虑且获得许可的流程，以便将更改合并在一起，然后才能推送到生产环境。
 
