@@ -1,9 +1,9 @@
 ---
 title: BrightCove视频跟踪扩展概述
 description: 了解Adobe Experience Platform中的BrightCove视频跟踪标记扩展。
-source-git-commit: 5da1fd18e0032c5e3d6695639f98a7ee683819f1
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '914'
+source-wordcount: '915'
 ht-degree: 34%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 34%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 先决条件
 
