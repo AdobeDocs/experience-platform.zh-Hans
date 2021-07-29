@@ -1,9 +1,9 @@
 ---
 title: 复制资源
 description: 了解如何使用Adobe Experience Platform中现有标记资源的设置创建新标记资源。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '784'
+source-wordcount: '785'
 ht-degree: 75%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 75%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 有时，使用现有资源的设置制作新资源会很方便。在这些情况下，您可以制作副本。
 
