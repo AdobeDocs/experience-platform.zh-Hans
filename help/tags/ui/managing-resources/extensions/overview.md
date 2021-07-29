@@ -1,10 +1,10 @@
 ---
 title: 扩展
 description: 了解标记扩展在Adobe Experience Platform中的工作方式。
-source-git-commit: 5b8ef30b1d0e6d682c94453117677c806eba1e02
+source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
 workflow-type: tm+mt
-source-wordcount: '496'
-ht-degree: 61%
+source-wordcount: '497'
+ht-degree: 57%
 
 ---
 
@@ -12,7 +12,7 @@ ht-degree: 61%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 扩展是一组打包的代码，用于扩展标记或事件转发提供的功能。
 
@@ -26,15 +26,13 @@ ht-degree: 61%
 
 使用扩展列表顶部的链接可以查看已安装的扩展、扩展目录或更新。
 
-选择一个扩展，然后选择[!UICONTROL Configure]以查看和更改扩展的设置。 有关扩展选项的信息，请参阅[添加新扩展](#add-a-new-extension)。
+选择一个扩展，然后选择[!UICONTROL Configure]以查看和更改扩展的设置。 有关更多信息，请参阅[添加新扩展](#add-a-new-extension)中的部分，以了解有关扩展选项的信息。
 
 >[!IMPORTANT]
 >
 >所做的更改在[发布](../../publishing/overview.md)之后才会生效。
 
 默认情况下，Adobe会提供支持常用集成的扩展。 可以使用自定义配置修改扩展。配置则通过扩展提供。要创建配置，请选择扩展卡，然后选择&#x200B;**[!UICONTROL Add New Configuration]**。
-
-有关视频介绍，请参阅[扩展](../../../quick-start/videos.md)。
 
 ## 扩展目录
 
