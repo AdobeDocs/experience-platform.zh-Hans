@@ -1,9 +1,9 @@
 ---
 title: AEM资产分析扩展概述
 description: 了解Adobe Experience Platform中的AEM资产分析标记扩展。
-source-git-commit: 1d3415146335d3011963c969d5b6aeea1f1a51d0
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1117'
+source-wordcount: '1118'
 ht-degree: 75%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 75%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 这项扩展旨在与 [AEM 资产分析](https://experienceleague.adobe.com/docs/experience-manager-65/assets/managing/touch-ui-configuring-asset-insights.html)结合使用。更具体地说，它可以替换“pageTracker”进程和嵌入代码。当完成配置后，这项扩展会向 Adobe Analytics 发送资产“展示次数”和“单击次数”量度，随后，这些量度将导入 AEM 资产分析报表中。****&#x200B;接下来，可使用 AEM 资产分析或 Adobe Analytics 项目工作区来报告资产量度。
 
