@@ -3,9 +3,9 @@ title: 为Experience PlatformWeb SDK配置数据流
 description: '了解如何配置数据流。 '
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；edgeConfigId；身份；启用ID同步的容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 3a1d08a4ea87ee3db7a2a8b048d5721fa679c372
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '895'
+source-wordcount: '901'
 ht-degree: 0%
 
 ---
@@ -19,17 +19,17 @@ Adobe Experience Platform Web SDK的配置分为两个位置。 SDK中的[config
 
 ## 创建数据流配置
 
-可以使用数据流配置工具在Adobe[!DNL Experience Platform Launch]中创建数据流。
+可以使用数据流配置工具在数据收集UI中创建数据流。
 
 ![datastreams工具导航](../images/datastreams/config.png)
 
 >[!NOTE]
 >
->无论客户是否使用[!DNL Experience Platform Launch]作为标签管理器，允许列表上的客户都可以使用数据流配置工具。 此外，用户需要在[!DNL Experience Platform Launch]中拥有开发权限。 有关更多详细信息，请参阅[!DNL Experience Platform Launch]文档中的[用户权限](../../tags/ui/administration/user-permissions.md)文章。
+>无论客户是否使用平台作为标签管理器，允许列表上的客户都可以使用数据流配置工具。 此外，用户需要开发权限。 有关更多详细信息，请参阅标记文档中的[用户权限](../../tags/ui/administration/user-permissions.md)文章。
 
 单击屏幕右上方的&#x200B;**[!UICONTROL 新建数据流]**&#x200B;来创建数据流。 提供名称和描述后，系统会要求您为每个环境提供默认设置。 下面详细介绍了可用设置。
 
-创建数据流时，会自动使用相同的设置创建三个环境。 这三个环境包括&#x200B;*dev*、*stage*&#x200B;和&#x200B;*prod*。 它们与[!DNL Experience Platform Launch]中的三个默认环境相匹配。 在将[!DNL Experience Platform Launch]库构建到开发环境时，库会自动使用您配置中的开发环境。 您可以根据需要，编辑各个环境中的设置。
+创建数据流时，会自动使用相同的设置创建三个环境。 这三个环境包括&#x200B;*dev*、*stage*&#x200B;和&#x200B;*prod*。 它们与标记的三个默认环境相匹配。 在将标记库构建到开发环境时，该库会自动使用您配置中的开发环境。 您可以根据需要，编辑各个环境中的设置。
 
 SDK中用作`edgeConfigId`的ID是一个复合ID，用于指定配置和环境（例如，`1c86778b-cdba-4684-9903-750e52912ad1:stage`）。 如果复合ID中不存在任何环境（例如，上一个示例中的`stage`），则会使用生产环境。
 
