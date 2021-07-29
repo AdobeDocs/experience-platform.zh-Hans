@@ -3,9 +3,9 @@ keywords: D&B Visitor Intelligence;D&B；访客智能扩展
 title: D&B Visitor Intelligence扩展
 description: D&B Visitor Intelligence扩展是Adobe Experience Platform中的个性化目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: e06833d9-51d7-4b0c-a9ce-28e0fadc2b62
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
 workflow-type: tm+mt
-source-wordcount: '452'
+source-wordcount: '453'
 ht-degree: 3%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 3%
 
 [!DNL Destinations]目录中提供了此扩展，可供已购买Platform的所有客户使用。
 
-要使用此扩展，您需要访问Adobe Experience Platform中的标记。 以内置增值功能的形式提供给Adobe Experience Cloud客户的标记。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。 并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
+要使用此扩展，您需要访问Adobe Experience Platform中的标记。 标记作为内置增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。 并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
 
 ## 安装扩展 {#install-extension}
 
