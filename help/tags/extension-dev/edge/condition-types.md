@@ -1,9 +1,9 @@
 ---
 title: 边缘扩展的条件类型
 description: 了解如何在Adobe Experience Platform中为边缘扩展定义条件类型库模块。
-source-git-commit: 99780f64c8f09acea06e47ebf5cabc762e05cab2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '408'
 ht-degree: 44%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 44%
 
 >[!NOTE]
 >
-> Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+> Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 在标记规则中，在事件发生后评估条件。 所有条件必须返回 true，规则才会继续处理。条件类型由扩展提供并评估某些内容是true还是false，从而返回布尔值。
 
