@@ -3,14 +3,18 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK;Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: e158b8129fe5afe71af48b7c64ca34b00e79965c
+source-git-commit: c6feab3c9cda479c7dabdbf0533145fdcaa36ab1
 workflow-type: tm+mt
-source-wordcount: '637'
+source-wordcount: '670'
 ht-degree: 5%
 
 ---
 
 # 发行说明
+
+## 2.6.1版 — 2021年7月29日
+
+* 修复了在对没有个性化内容的单页应用程序视图进行个性化渲染时会引发错误，并导致从`sendEvent`命令返回的promise被拒绝的问题。
 
 ## 2.6.0版 — 2021年7月27日
 
