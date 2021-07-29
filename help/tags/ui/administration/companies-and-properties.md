@@ -1,9 +1,9 @@
 ---
 title: 属性
 description: 了解如何在Adobe Experience Platform中为您的组织组织和分组扩展、环境和库。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
 workflow-type: tm+mt
-source-wordcount: '1186'
+source-wordcount: '1178'
 ht-degree: 56%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 56%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 ## Web 资产
 
@@ -21,8 +21,6 @@ Web 属性是规则、数据元素、配置的扩展、环境和库的集合。�
 ## 移动资产
 
 移动资产类型可以包含多个应用程序。例如，在移动资产中，您可以跨多个 iOS 和 Android 应用程序管理相同的规则和扩展集。
-
-有关视频教程，请参阅[创建您的第一个资产](../../quick-start/videos.md)。
 
 ## 规划资产的最佳做法 {#best-practices-for-planning-properties}
 
