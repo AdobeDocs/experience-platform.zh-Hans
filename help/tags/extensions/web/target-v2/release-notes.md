@@ -1,7 +1,7 @@
 ---
 title: Adobe Target v2扩展的发行说明
 description: Adobe Experience Platform中Adobe Target v2标记扩展的最新发行说明。
-source-git-commit: ae6b69ecea54942c1bbf8a2765768bac50a8b930
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
 source-wordcount: '572'
 ht-degree: 44%
@@ -12,7 +12,7 @@ ht-degree: 44%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2021 年 7 月 20 日
 
@@ -36,7 +36,7 @@ ht-degree: 44%
 
 ### Adobe Target v2 扩展 0.14.2
 
-- 修复了最终Launch包包含两个at.js版本的错误，一个包含设备决策版本，另一个不包含。
+- 修复了最终包含两个at.js版本（一个包含设备决策版本，一个不包含设备决策版本）的错误。
 
 ## 2021 年 5 月 19 日
 
