@@ -1,9 +1,9 @@
 ---
 title: Web扩展的数据元素类型
 description: 了解如何在Web属性中为标记扩展定义数据元素类型库模块。
-source-git-commit: 99780f64c8f09acea06e47ebf5cabc762e05cab2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '595'
+source-wordcount: '596'
 ht-degree: 56%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 56%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 在数据收集标记中，数据元素本质上是页面上数据段的别名。 此数据可在查询字符串参数、Cookie、DOM元素或其他位置中找到。 数据元素可以被规则引用，并充当访问这些数据段的抽象。
 
