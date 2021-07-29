@@ -1,9 +1,9 @@
 ---
 title: Marketo Munchkin 扩展 概述
 description: 了解Adobe Experience Platform中的Marketo Munchkin标记扩展。
-source-git-commit: 5f810ada57eeb12a56de603d974a091b888dc9d2
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '213'
+source-wordcount: '214'
 ht-degree: 62%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 62%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用此扩展可将 [!DNL Marketo Munchkin] JavaScript 跟踪代码与您的资产相集成。[!DNL Marketo Munchkin] JavaScript 允许跟踪最终用户对 Marketo 登陆页面和外部网页的页面访问次数和导航次数。
 
