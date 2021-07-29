@@ -1,10 +1,10 @@
 ---
 title: 核心扩展的发行说明
 description: Adobe Experience Platform中核心扩展的最新发行说明。
-source-git-commit: 12c3f440319046491054b3ef3ec404798bb61f06
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1211'
-ht-degree: 74%
+source-wordcount: '1210'
+ht-degree: 71%
 
 ---
 
@@ -12,7 +12,7 @@ ht-degree: 74%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2021 年 5 月 20 日
 
@@ -103,7 +103,7 @@ v1.6.2
 
 v1.6.1
 
-* **支持 CSP Nonce** - 现在，核心扩展有一个可选配置参数。您可以添加引用 nonce 的数据元素。如果已配置，则标记添加到页面的所有内联脚本都将使用您配置的nonce。 此更改支持使用包含 nonce 的内容安全策略，以便仍然可以在 CSP 环境中加载 Platform Launch 脚本。您可以在[此处](../../../ui/client-side/content-security-policy.md)阅读有关将 Platform Launch 与 CSP 结合使用的更多信息。
+* **支持 CSP Nonce** - 现在，核心扩展有一个可选配置参数。您可以添加引用 nonce 的数据元素。如果已配置，则标记添加到页面的所有内联脚本都将使用您配置的nonce。 此更改支持使用包含nonce的内容安全策略，以便仍然可以在CSP环境中加载标记脚本。 有关将标记与CSP [一起使用的更多信息，请参阅此处](../../../ui/client-side/content-security-policy.md)。
 
 ## 2019 年 6 月 18 日
 
