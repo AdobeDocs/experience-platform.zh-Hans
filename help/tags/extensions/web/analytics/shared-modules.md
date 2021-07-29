@@ -1,10 +1,10 @@
 ---
 title: Adobe Analytics 扩展的共享模块
 description: 了解Adobe Experience Platform中Adobe Analytics标记扩展提供的共享库模块。
-source-git-commit: 8dfb7bdc16d0654ee1d76dc5f5af50938b122d33
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '430'
-ht-degree: 71%
+source-wordcount: '431'
+ht-degree: 70%
 
 ---
 
@@ -12,7 +12,7 @@ ht-degree: 71%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 [Adobe Analytics 扩展](./overview.md)提供两个不同的[共享模块](../../../extension-dev/web/shared.md)，您可以将这两个模块集成到体验应用程序中。以下各部分将对这些模块进行介绍。
 
