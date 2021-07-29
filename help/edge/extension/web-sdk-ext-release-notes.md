@@ -1,18 +1,17 @@
 ---
 title: Adobe Experience Platform Web SDK扩展发行说明
-description: Adobe Experience Platform Launch 中的 Adobe Experience Platform Web SDK 扩展
-seo-description: Adobe Experience Platform Launch 中的 Adobe Experience Platform Web SDK 扩展
+description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: dfcfdf90ae857e6a6ff0ddc7810cb6a6939c9758
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1096'
-ht-degree: 56%
+source-wordcount: '1071'
+ht-degree: 52%
 
 ---
 
 # Adobe Experience Platform Web SDK扩展发行说明
 
-本文档介绍了适用于Adobe Experience Platform Launch的Adobe Experience Platform Web SDK扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[平台Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html)。
+本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[平台Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html)。
 
 ## 2.6.0版 — 2021年7月27日
 
@@ -102,14 +101,14 @@ ht-degree: 56%
 * 在 ID 迁移期间发出的请求将发送到 demdex 端点，以改进未设置 demdex Cookie 时的跨域识别
 * 在 ID 迁移过程中发出的请求始终需要响应，以确保设置身份标识 Cookie
 * 执行无效命令时，控制台中将记录有效命令名称列表
-* 向 Adobe Experience Platform Launch 扩展中添加了用于切换第三方 Cookie 支持的复选框。这将禁用对 demdex.net 的调用
+* 向标记扩展中添加了用于切换第三方Cookie支持的复选框。 这将禁用对 demdex.net 的调用
 
 ## 0.0.5版 — 2019年12月20日
 
-* 将活动跟踪器配置添加到 Platform Launch 扩展
+* 将活动跟踪器配置添加到标记扩展
 * 在事件命令中公开 EventType 和 EventMergeId
-* 将 onBeforeEventSend 配置添加到 Platform Launch 扩展
-* 将 edgeBasePath 配置添加到 Platform Launch 扩展
+* 将onBeforeEventSend配置添加到标记扩展
+* 将edgeBasePath配置添加到标记扩展
 
 ## 0.0.3版 — 2019年11月25日
 
