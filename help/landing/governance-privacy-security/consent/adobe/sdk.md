@@ -3,10 +3,10 @@ title: 使用Adobe Experience Platform Web SDK处理客户同意数据
 topic-legacy: getting started
 description: 了解如何使用Adobe Experience Platform 2.0标准集成Adobe Experience Platform Web SDK以在Adobe中处理客户同意数据。
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 8b58bb60ae40f224433f3513060f4ae7ddc7d5b3
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '1285'
-ht-degree: 2%
+source-wordcount: '1254'
+ht-degree: 1%
 
 ---
 
@@ -29,15 +29,15 @@ ht-degree: 2%
 
 本教程假定您已确定如何在CMP中生成同意数据，并已创建一个包含已为实时客户资料启用同意字段的数据集。 要进一步了解这些步骤，请在返回本指南之前，参阅Experience Platform](./overview.md)中的[同意处理概述。
 
-此外，本指南还要求您对Adobe Experience Platform Launch扩展以及它们在Web应用程序中的安装方式有一定的了解。 有关更多信息，请参阅以下文档：
+此外，本指南还要求您对标记扩展及其在Web应用程序中的安装方式有一定的了解。 有关更多信息，请参阅以下文档：
 
-* [platform launch概述](https://experienceleague.adobe.com/docs/launch/using/home.html?lang=zh-Hans)
-* [快速入门指南](https://experienceleague.adobe.com/docs/launch/using/get-started/quick-start.html?lang=zh-Hans)
-* [发布概述](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html?lang=zh-Hans)
+* [标记概述](../../../../tags/home.md)
+* [快速入门指南](../../../../tags/quick-start/quick-start.md)
+* [发布概述](../../../../tags/ui/publishing/overview.md)
 
 ## 设置数据流
 
-要使SDK将数据发送到Experience Platform，您必须在Adobe Experience Platform Launch中设置适用于Platform的现有数据流。 此外，您为配置选择的[!UICONTROL 配置文件数据集]必须包含标准化的同意字段。
+要使SDK将数据发送到Experience Platform，您必须在数据收集UI中设置适用于平台的现有数据流。 此外，您为配置选择的[!UICONTROL 配置文件数据集]必须包含标准化的同意字段。
 
 创建新配置或选择要编辑的现有配置后，选择&#x200B;**[!UICONTROL Adobe Experience Platform]**&#x200B;旁边的切换按钮。 接下来，使用下面列出的值填写表单。
 
@@ -55,7 +55,7 @@ ht-degree: 2%
 
 ## 安装和配置平台Web SDK
 
-按照上一节所述创建数据流后，必须配置最终将在您的网站上部署的Platform Web SDK扩展。 如果您的Platform launch资产上未安装SDK扩展，请在左侧导航中选择&#x200B;**[!UICONTROL Extensions]**，然后选择&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡。 然后，在可用扩展列表的Platform SDK扩展下选择&#x200B;**[!UICONTROL Install]**。
+按照上一节所述创建数据流后，必须配置最终将在您的网站上部署的Platform Web SDK扩展。 如果您的标记资产上未安装SDK扩展，请在左侧导航中选择&#x200B;**[!UICONTROL Extensions]**，然后选择&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡。 然后，在可用扩展列表的Platform SDK扩展下选择&#x200B;**[!UICONTROL Install]**。
 
 ![](../../../images/governance-privacy-security/consent/adobe/sdk/install.png)
 
@@ -72,16 +72,16 @@ ht-degree: 2%
 在此用例中，您可以实施以下内容，以根据用户的区域设置默认同意：
 
 1. 确定Web服务器上的用户区域。
-1. 在网页上的Platform launch脚本标记（嵌入代码）之前，渲染一个单独的脚本标记，该标记会根据用户的区域设置一个`adobeDefaultConsent`变量。
+1. 在网页上的`script`标记（嵌入代码）之前，渲染一个单独的`script`标记，该标记会根据用户的区域设置一个`adobeDefaultConsent`变量。
 1. 设置一个使用`adobeDefaultConsent` JavaScript变量的数据元素，并将此数据元素用作用户的默认同意值。
 
 如果用户的区域由CMP确定，则可以改用以下步骤：
 
 1. 处理页面上的“CMP loaded”事件。
-1. 在事件处理程序中，根据用户区域设置一个`adobeDefaultConsent`变量，然后使用JavaScript加载Platform launch库脚本。
+1. 在事件处理程序中，根据用户区域设置一个`adobeDefaultConsent`变量，然后使用JavaScript加载标记库脚本。
 1. 设置一个使用`adobeDefaultConsent` JavaScript变量的数据元素，并将此数据元素用作用户的默认同意值。
 
-要在Platform launchUI中创建数据元素，请在左侧导航中选择&#x200B;**[!UICONTROL 数据元素]**，然后选择&#x200B;**[!UICONTROL 添加数据元素]**&#x200B;以导航到数据元素创建对话框。
+要在数据收集UI中创建数据元素，请在左侧导航中选择&#x200B;**[!UICONTROL 数据元素]**，然后选择&#x200B;**[!UICONTROL 添加数据元素]**&#x200B;以导航到数据元素创建对话框。
 
 在此，必须基于`adobeDefaultConsent`创建[!UICONTROL JavaScript变量]数据元素。 完成后，选择&#x200B;**[!UICONTROL 保存]**。
 
@@ -93,7 +93,7 @@ ht-degree: 2%
 
 ### 在您的网站上部署扩展
 
-配置完该扩展后，即可将其集成到您的网站中。 有关如何部署更新的库内部版本的详细信息，请参阅Platform launch文档中的[发布指南](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html)。
+配置完该扩展后，即可将其集成到您的网站中。 有关如何部署更新的库内部版本的详细信息，请参阅标记文档中的[发布指南](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html?lang=zh-Hans)。
 
 ## 发出同意更改命令 {#commands}
 
