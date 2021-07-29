@@ -3,9 +3,9 @@ keywords: Marketo Web个性化；marketo Web个性化；Marketo Web个性化扩�
 title: Marketo Web个性化扩展
 description: Marketo Web个性化扩展是Adobe Experience Platform中的一个个性化目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 2f194a5e-13b7-460a-a968-29131771efca
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
 workflow-type: tm+mt
-source-wordcount: '531'
+source-wordcount: '532'
 ht-degree: 3%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 3%
 
 [!DNL Destinations]目录中提供了此扩展，可供已购买Platform的所有客户使用。
 
-要使用此扩展，您需要访问Adobe Experience Platform中的标记。 以内置增值功能的形式提供给Adobe Experience Cloud客户的标记。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。 并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
+要使用此扩展，您需要访问Adobe Experience Platform中的标记。 标记作为内置增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。 并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
 
 ## 安装扩展 {#install-extension}
 
