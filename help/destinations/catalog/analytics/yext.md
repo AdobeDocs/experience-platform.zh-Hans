@@ -3,9 +3,9 @@ keywords: Yext转换跟踪；Yext;Yext;Yext转换跟踪
 title: Yext转化跟踪扩展
 description: “转化跟踪”扩展是Adobe Experience Platform中的一个分析目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 786ea14c-25a3-40ac-906d-6a8f7de04f41
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '479'
 ht-degree: 3%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 3%
 
 [!DNL Destinations]目录中提供了此扩展，可供已购买Platform的所有客户使用。
 
-要使用此扩展，您需要访问Adobe Experience Platform中的标记。 以内置增值功能的形式提供给Adobe Experience Cloud客户的标记。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。 并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
+要使用此扩展，您需要访问Adobe Experience Platform中的标记。 标记作为内置增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取对标记的访问权限，并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。 并要求他们授予您&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限，以便您可以安装扩展。
 
 ## 安装扩展 {#install-extension}
 
