@@ -1,9 +1,9 @@
 ---
 title: 库
 description: 了解标记库的概念及其在Adobe Experience Platform中的工作方式。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '790'
+source-wordcount: '791'
 ht-degree: 59%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 59%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 库由一系列指令构成，这些指令用于指示扩展、数据元素和规则在部署后如何彼此进行交互。创建库时，您可以指定要对库进行的更改。生成时，这些更改将与在之前的库中提交、批准或发布的所有内容组合到一起。
 
