@@ -1,10 +1,10 @@
 ---
 title: Analytics(3.x SDK)for Audio and Video扩展的Adobe Medium发行说明
 description: Adobe Experience Platform中Adobe MediumAnalytics(3.x SDK)for Audio and Video标记扩展的最新发行说明。
-source-git-commit: 573c13f5136a4efc3accf2838783a91ea914e949
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '170'
-ht-degree: 40%
+source-wordcount: '171'
+ht-degree: 39%
 
 ---
 
@@ -12,7 +12,7 @@ ht-degree: 40%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 ## 2021 年 4 月 5 日
 
