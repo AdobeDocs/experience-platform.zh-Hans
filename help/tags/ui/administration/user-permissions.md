@@ -1,7 +1,7 @@
 ---
 title: 用户权限
 description: 了解Adobe Experience Platform用户的不同可用标记权限。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
 source-wordcount: '2397'
 ht-degree: 66%
@@ -12,7 +12,7 @@ ht-degree: 66%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
 
 ## 权限类型
 
@@ -76,7 +76,7 @@ ht-degree: 66%
 
 * **管理属性：** 这允许您在数据收集UI中创建新属性，并在属性级别修改元数据和设置。您还可以删除资产。有关更多信息，请阅读[属性文档](companies-and-properties.md)。 管理员通常执行此角色。
 * 
-* 授予在[!DNL Platform Launch]中创建新属性以及在属性级别修改元数据和设置的功能。 您还可以删除资产。有关资产的更多信息，请参阅[此处](companies-and-properties.md)。管理员通常执行此角色。
+* 授予创建新属性以及在属性级别修改元数据和设置的能力。 您还可以删除资产。有关资产的更多信息，请参阅[此处](companies-and-properties.md)。管理员通常执行此角色。
 * **开发扩展：**&#x200B;授予创建和修改公司拥有的扩展包（包括私有版本和公共发布请求）的能力。
 * **管理应用程序配置：** 此设置仅适用于已获得Adobe Journey Optimizer许可的客户，或某些允许他们访问移动应用程序内消息和推送消息的其他解决方案。这允许您管理Experience Cloud了解的应用程序以及与Firebase Cloud Messaging服务和Apple推送通知服务通信所需的推送凭据。
 
