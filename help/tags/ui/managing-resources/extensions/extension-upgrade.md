@@ -1,9 +1,9 @@
 ---
 title: 扩展升级
 description: 了解扩展升级的打包和显示在扩展目录中的方式。
-source-git-commit: 39d9468e5d512c75c9d540fa5d2bcba4967e2881
+source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
 workflow-type: tm+mt
-source-wordcount: '681'
+source-wordcount: '682'
 ht-degree: 68%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 68%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
 
 扩展开发人员会不断向其扩展中添加新功能，并且还经常修复错误。这些更新将打包到扩展的新版本中，并在扩展目录中作为升级提供。
 
