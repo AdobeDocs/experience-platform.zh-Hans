@@ -3,9 +3,9 @@ keywords: PebblePost；卵石帖子；PebblePost程序化直邮；卵石帖子�
 title: PebblePost扩展
 description: PebblePost扩展是Adobe Experience Platform的电子邮件目的地。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 2d0308db-9d75-4cd1-97de-70ce3837369d
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '485'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 [!DNL PebblePost's Programmatic Direct Mail®] 解决方案可帮助数字营销人员将在线兴趣和意图与可转化的离线有形媒体连接起来。营销人员可以利用他们在Adobe中创建的自定义数据区段，现在通过相关的、更持久的家庭媒体展示来定位消费者。 根据响应路径活动和现场转化实时分析性能。
 
-[!DNL PebblePost] 是Adobe Experience Platform中的电子邮件扩展。有关扩展功能的更多信息，请参阅[AdobeExchange](https://exchange.adobe.com/experiencecloud.details.100315.programmatic-direct-mail.html)上的扩展页面。
+[!DNL PebblePost] 是Adobe Experience Platform中的电子邮件扩展。有关PebblePost的更多信息，请阅读[集成博客文章](https://blog.adobe.com/en/publish/2017/11/16/pebblepost-builds-integration-launch-adobe.html#gs.7lejiq)。
 
 此目标是一个标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -41,8 +41,6 @@ ht-degree: 3%
 选择要在其中安装扩展的资产。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解标记文档的[属性页面部分](../../../tags/ui/administration/companies-and-properties.md#properties-page)中的属性。
 
 工作流可指导您完成完成安装的步骤。
-
-有关扩展配置选项和安装支持的信息，请参阅AdobeExchange](https://exchange.adobe.com/experiencecloud.details.100315.programmatic-direct-mail.html)上的[PebblePost页面。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装扩展。 有关更多信息，请参阅标记文档中关于[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的部分。
 
