@@ -1,7 +1,7 @@
 ---
 title: 用户权限
 description: 了解Adobe Experience Platform用户的不同可用标记权限。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: e93cb075dc8c8d01fcda3edf0014f86a47b5b710
 workflow-type: tm+mt
 source-wordcount: '2397'
 ht-degree: 66%
@@ -75,7 +75,6 @@ ht-degree: 66%
 公司权限适用于跨多个资产的权限。目前有三个：
 
 * **管理属性：** 这允许您在数据收集UI中创建新属性，并在属性级别修改元数据和设置。您还可以删除资产。有关更多信息，请阅读[属性文档](companies-and-properties.md)。 管理员通常执行此角色。
-* 
 * 授予创建新属性以及在属性级别修改元数据和设置的能力。 您还可以删除资产。有关资产的更多信息，请参阅[此处](companies-and-properties.md)。管理员通常执行此角色。
 * **开发扩展：**&#x200B;授予创建和修改公司拥有的扩展包（包括私有版本和公共发布请求）的能力。
 * **管理应用程序配置：** 此设置仅适用于已获得Adobe Journey Optimizer许可的客户，或某些允许他们访问移动应用程序内消息和推送消息的其他解决方案。这允许您管理Experience Cloud了解的应用程序以及与Firebase Cloud Messaging服务和Apple推送通知服务通信所需的推送凭据。
