@@ -3,10 +3,10 @@ keywords: Marketo Munchkin;marketo munchkin;Marketo Munchkin扩展；marketo mun
 title: Marketo Munchkin 扩展
 description: Marketo Munchkin扩展是Adobe Experience Platform中的一个个性化目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 0639ff74-5450-456e-b030-8118814ed705
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
-source-wordcount: '504'
-ht-degree: 8%
+source-wordcount: '481'
+ht-degree: 9%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 8%
 
 [!DNL Marketo’s Munchkin][!DNL Marketo] JavaScript 允许跟踪最终用户对 登陆页面和外部网页的访问次数和点击次数。
 
-[!DNL Marketo Munchkin] 是Adobe Experience Platform中的电子邮件扩展。有关扩展功能的更多信息，请参阅[AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101054.marketo-munchkin.html)上的扩展页面。
+[!DNL Marketo Munchkin] 是Adobe Experience Platform中的电子邮件扩展。有关Marketo Munchkin的更多信息，请阅读Marketo文档中的[潜在客户跟踪](https://developers.marketo.com/javascript-api/lead-tracking/)。
 
 此目标是一个标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -43,8 +43,6 @@ ht-degree: 8%
 选择要在其中安装扩展的资产。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解标记文档的[属性页面部分](../../../tags/ui/administration/companies-and-properties.md#properties-page)中的属性。
 
 工作流可指导您完成完成安装的步骤。
-
-有关扩展配置选项和安装支持的信息，请参阅AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101054.marketo-munchkin.html)上的[Marketo Munchkin页面。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装扩展。 有关更多信息，请参阅标记文档中关于[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的部分。
 
