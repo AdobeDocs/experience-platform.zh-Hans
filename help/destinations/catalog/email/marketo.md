@@ -3,7 +3,7 @@ keywords: Marketo;marketo;Marketo扩展；marketo扩展
 title: Marketo扩展
 description: Marketo扩展是Adobe Experience Platform中的一个电子邮件目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 3841eb19-a17e-4c28-a101-7332d178af34
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
 source-wordcount: '471'
 ht-degree: 3%
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 [!DNL Marketo]功能强大的营销自动化软件可帮助营销人员主控数字营销的艺术和科学，以吸引客户和潜在客户。
 
-[!DNL Marketo] 是Adobe Experience Platform中的电子邮件扩展。有关扩展功能的更多信息，请参阅AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101071.marketo-for-adobe-launch.html)上的[扩展页面。
+[!DNL Marketo] 是Adobe Experience Platform中的电子邮件扩展。有关扩展功能的更多信息，请参阅AdobeExchange](https://exchange.adobe.com/experiencecloud.details.106250.bounteous-extension-for-adobe-launch-and-marketo.html)上的[扩展页面。
 
 此目标是一个标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -38,7 +38,7 @@ ht-degree: 3%
 4. 选择要在其中安装扩展的资产。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解标记文档的[属性页面部分](../../../tags/ui/administration/companies-and-properties.md#properties-page)中的属性。
 5. 工作流可指导您完成完成安装的步骤。
 
-有关扩展配置选项和安装支持的信息，请参阅AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101071.marketo-for-adobe-launch.html)上的[Marketo页面。
+有关扩展配置选项和安装支持的信息，请参阅AdobeExchange](https://exchange.adobe.com/experiencecloud.details.106250.bounteous-extension-for-adobe-launch-and-marketo.html)上的[Marketo页面。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装扩展。 有关更多信息，请参阅标记文档中关于[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的部分。
 
