@@ -3,10 +3,10 @@ keywords: livefyre;livefyre扩展
 title: AdobeLivefyre扩展
 description: AdobeLivefyre扩展是Adobe Experience Platform中的一个社交目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: a134c144-e7b8-4d48-8c90-5999e5ceb8a0
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
-source-wordcount: '472'
-ht-degree: 5%
+source-wordcount: '452'
+ht-degree: 3%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 5%
 
 AdobeLivefyre让您能够发现、组织和发布用户生成的内容不断流向您的网站，以创建真实且高度个性化的体验。
 
-AdobeLivefyre是Adobe Experience Platform中的一项社交扩展。 有关扩展功能的更多信息，请参阅[AdobeExchange](https://exchange.adobe.com/experiencecloud.details.100464.html)上的扩展页面。
+AdobeLivefyre是Adobe Experience Platform中的一项社交扩展。 有关LivefyreAdobe的更多信息，请阅读[Livefyre实施指南](https://experienceleague.adobe.com/docs/livefyre/implementation/home.html?lang=en)。
 
 此目标是一个标记扩展。 有关标记扩展在Platform中工作方式的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -42,10 +42,7 @@ AdobeLivefyre是Adobe Experience Platform中的一项社交扩展。 有关扩�
 
 利用工作流，可转到数据收集UI以完成安装。
 
-有关扩展配置选项和安装支持的信息，请参阅AdobeExchange](https://exchange.adobe.com/experiencecloud.details.100464.html)上的[AdobeLivefyre页面。
-
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装扩展。 有关更多信息，请参阅[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的指南。
-
 
 ## 如何使用扩展 {#how-to-use}
 
