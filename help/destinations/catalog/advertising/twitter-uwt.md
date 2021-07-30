@@ -3,9 +3,9 @@ keywords: twitter;Twitter;twitter通用网站标记；Twitter通用网站标记�
 title: Twitter通用网站标记扩展
 description: twitter通用网站标签扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 51ee94f7-e44a-4192-b684-3d7838af4359
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
-source-wordcount: '460'
+source-wordcount: '462'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 [!DNL Twitter Universal Website Tag] 提供将信标发送到Twitter UWT标记的操作。
 
-[!DNL Twitter Universal Website Tag] 是Adobe Experience Platform的一项广告扩展。有关扩展功能的更多信息，请参阅[高级转化跟踪](https://business.twitter.com/en/solutions/twitter-ads/website-clicks/advanced-conversion-tracking.html)。
+[!DNL Twitter Universal Website Tag] 是Adobe Experience Platform的一项广告扩展。有关扩展功能的更多信息，请参阅Twitter文档中的[转化跟踪](https://business.twitter.com/en/help/campaign-measurement-and-analytics/conversion-tracking-for-websites.html) 。
 
 此目标是一个标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
