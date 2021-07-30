@@ -3,9 +3,9 @@ keywords: Marketo Web个性化；marketo Web个性化；Marketo Web个性化扩�
 title: Marketo Web个性化扩展
 description: Marketo Web个性化扩展是Adobe Experience Platform中的一个个性化目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 2f194a5e-13b7-460a-a968-29131771efca
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '516'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 此扩展将部署[!DNL Marketo’s] Web个性化和ContentAI应用程序的脚本。 [!DNL Marketo] Web个性化可唯一地识别内容并将其个性化为Web访客特征，例如匿名访客的Firmagraphics和已知访客的参与平台中的 [!DNL Marketo] 一系列行为属性。[!DNL Marketo] ContentAI包含针对B2B客户独有的Web和电子邮件促销活动的AI支持的推荐和个性化功能。
 
-[!DNL Marketo Web Personalization] 是Adobe Experience Platform中的一个个性化扩展。有关扩展功能的更多信息，请参阅[AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101232.marketo-web-personalization.html)上的扩展页面。
+[!DNL Marketo Web Personalization] 是Adobe Experience Platform中的一个个性化扩展。有关Marketo中Web个性化和ContentAI的更多信息，请阅读[Web个性化概述](https://experienceleague.adobe.com/docs/marketo/using/product-docs/web-personalization/understanding-web-personalization/web-personalization-overview.html?lang=en)。
 
 此目标是一个标记扩展。 有关标记扩展如何在Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -41,8 +41,6 @@ ht-degree: 3%
 选择要在其中安装扩展的资产。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解标记文档的[属性页面部分](../../../tags/ui/administration/companies-and-properties.md#properties-page)中的属性。
 
 工作流可指导您完成完成安装的步骤。
-
-有关扩展配置选项和安装支持的信息，请参阅AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101232.marketo-web-personalization.html)上的[Marketo Web个性化页面。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装扩展。 有关更多信息，请参阅标记文档中关于[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的部分。
 
