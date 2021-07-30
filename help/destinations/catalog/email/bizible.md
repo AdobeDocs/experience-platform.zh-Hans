@@ -3,9 +3,9 @@ keywords: bizible;bizible扩展；bizible目标
 title: Bizible扩展
 description: Bizible扩展是Adobe Experience Platform中的电子邮件目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 9e45416d-b951-411c-a59f-34f84529f721
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '446'
 ht-degree: 3%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 3%
 
 ## 概述 {#overview}
 
-[!DNL Bizible] 是行业领先的B2B归因解决方案，可让您不受并行影响地查看数据，从而做出明智的决策，助力增长。
+[!DNL Bizible] 是行业领先的B2B归因解决方案，可让您以无与伦比的方式查看数据，从而做出明智的决策，推动数据增长。
 
-[!DNL Bizible] 是Adobe Experience Platform中的电子邮件扩展。有关扩展功能的更多信息，请参阅[AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101055.bizible-analytics.html)上的扩展页面。
+[!DNL Bizible] 是Adobe Experience Platform中的电子邮件扩展。有关Bizible的更多信息，请阅读Bizible概述资源中的[营销归因](https://experienceleague.adobe.com/docs/bizible/using/introduction-to-bizible/overview-resources/marketing-attribution.html?lang=en) 。
 
 此目标是一个标记扩展。 有关标记扩展在Platform中工作方式的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
@@ -41,8 +41,6 @@ ht-degree: 3%
 选择要在其中安装扩展的标记属性。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解[标记文档](../../../tags/ui/administration/companies-and-properties.md)中的属性。
 
 利用工作流，可转到数据收集UI以完成安装。
-
-有关扩展配置选项和安装支持的信息，请参阅AdobeExchange](https://exchange.adobe.com/experiencecloud.details.101055.bizible-analytics.html)上的[Bizible页面。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装扩展。 有关更多信息，请参阅[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的指南。
 
