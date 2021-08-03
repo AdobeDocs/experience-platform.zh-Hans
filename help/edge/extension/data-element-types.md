@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展中的数据元素类型
 description: 了解Adobe Experience Platform Web SDK标记扩展提供的不同数据元素类型。
 exl-id: 3c2c257f-1fbc-4722-8040-61ad19aa533f
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 2f9ff95529c907cfc28bc98198eca9fcfc21e9b9
 workflow-type: tm+mt
-source-wordcount: '293'
-ht-degree: 49%
+source-wordcount: '292'
+ht-degree: 43%
 
 ---
 
@@ -14,6 +14,7 @@ ht-degree: 49%
 在[Adobe Experience Platform Web SDK标记扩展](web-sdk-extension-configuration.md)中设置[操作类型](action-types.md)后，配置数据元素类型。
 
 本页介绍可用的数据元素类型。
+
 
 ## 事件合并 ID
 
@@ -31,7 +32,7 @@ ht-degree: 49%
 
 ![](./assets/XDM-object.png)
 
-请注意，打开架构的某些字段（如 `web.webPageDetails.URL`）时，会自动收集一些项目。即使自动收集了多个项目，您仍可以根据需要覆盖任意项目。 所有值都可以手动填写或使用其他数据元素进行填写。
+请注意，当您打开架构的某些字段（如`web.webPageDetails.URL`）时，系统会自动收集一些项目。 即使自动收集了多个项目，您仍可以根据需要覆盖任意项目。 所有值都可以手动填写或使用其他数据元素进行填写。
 
 >[!NOTE]
 >
