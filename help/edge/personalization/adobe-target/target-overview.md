@@ -3,9 +3,9 @@ title: 将Adobe Target与Platform Web SDK结合使用
 description: 了解如何使用Experience PlatformWeb SDK渲染个性化内容(使用Adobe Target)
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；系统图；图
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 1d2f1651dc9d9ab41507e65fd4b2bb84e9660187
+source-git-commit: 930756b4e10c42edf2d58be16c51d71df207d1af
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1273'
 ht-degree: 5%
 
 ---
@@ -42,8 +42,8 @@ ht-degree: 5%
 | 3 | 边缘网络会使用访客ID和传递的参数将扩充的个性化请求发送到[!DNL Target]边缘。 |
 | 4 | 配置文件脚本先执行，然后馈送到[!DNL Target]配置文件存储中。 配置文件存储从[!UICONTROL 受众库]中提取区段（例如，从[!DNL Adobe Analytics]、[!DNL Adobe Audience Manager]和[!DNL Adobe Experience Platform]共享的区段）。 |
 | 5 | [!DNL Target]根据URL请求参数和配置文件数据，确定要为访客显示哪些活动和体验以用于当前页面查看和将来预取的查看。 [!DNL Target] 然后将此数据发送回边缘网络。 |
-| 6 | a.边缘网络会将个性化响应发送回页面，其中可能包含其他个性化的配置文件值。 当前页面上的个性化内容会在默认内容不发生闪烁的情况下尽快显示。<br>b.单页应用程序(SPA)中作为用户操作结果显示的视图的个性化内容会缓存，以便在触发视图时无需额外的服务器调用即可立即应用该内容&#x200B;。<br>c.边缘网络发送访客ID以及Cookie中的其他值，例如同意、会话ID、身份、Cookie检查、个性化等。 |
-| 7 | 边缘网络会将[!UICONTROL Analytics for Target](A4T)详细信息（活动、体验和转化元数据）转发到[!DNL Analytics]边缘&#x200B;。 |
+| 6 | a.边缘网络会将个性化响应发送回页面，其中可能包含其他个性化的配置文件值。 当前页面上的个性化内容会在默认内容不发生闪烁的情况下尽快显示。<br>b.单页应用程序(SPA)中作为用户操作结果显示的视图的个性化内容会被缓存，这样在触发视图时，便可以立即应用该内容，而无需额外的服务器调用。<br>c.边缘网络发送访客ID以及Cookie中的其他值，例如同意、会话ID、身份、Cookie检查、个性化等。 |
+| 7 | 边缘网络将[!UICONTROL Analytics for Target](A4T)详细信息（活动、体验和转化元数据）转发到[!DNL Analytics]边缘。 |
 
 ## 启用[!DNL Adobe Target]
 
@@ -63,79 +63,9 @@ ht-degree: 5%
 
 有关更多信息，请参阅&#x200B;*Adobe Target指南*&#x200B;中的[Visual Experience Composer帮助程序扩展](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html)。
 
-## 自动渲染VEC活动
+## 呈现个性化内容
 
-[!DNL Adobe Experience Platform Web SDK]能够在Web上自动呈现通过[!DNL Adobe Target]的VEC定义的体验，以供用户使用。 要指示[!DNL Experience Platform Web SDK]自动渲染VEC活动，请发送包含`renderDecisions = true`的事件：
-
-```javascript
-alloy
-("sendEvent", 
-  { 
-  "renderDecisions": true, 
-  "xdm": {
-    "commerce": { 
-      "order": {
-        "purchaseID": "a8g784hjq1mnp3", 
-         "purchaseOrderNumber": "VAU3123", 
-         "currencyCode": "USD", 
-         "priceTotal": 999.98 
-         } 
-      } 
-    }
-  }
-);
-```
-
-## 使用基于表单的编辑器
-
-[基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html)是一个非可视化界面，可用于配置具有不同响应类型（如JSON、HTML、图像等）的[!UICONTROL A/B测试]、[!UICONTROL 体验定位]、[!UICONTROL Automated Personalization]和[!UICONTROL Recommendations]活动。 根据[!DNL Target]返回的响应类型或决策，可以执行您的核心业务逻辑。 要检索基于表单的编辑器活动的决策，请发送一个事件，其中包含您要为其检索决策的所有“decisionScopes”。
-
-```javascript
-alloy
-  ("sendEvent", { 
-    decisionScopes: [
-      "foo", "bar"], 
-      "xdm": {
-        "commerce": { 
-          "order": { 
-            "purchaseID": "a8g784hjq1mnp3", 
-            "purchaseOrderNumber": "VAU3123", 
-            "currencyCode": "USD", 
-            "priceTotal": 999.98 
-          } 
-        } 
-      } 
-    }
-  );
-```
-
-## 决策范围
-
-`decisionScopes` 定义要在其中呈现个性化体验的页面区域、位置或部分。这些`decisionScopes`是可自定义的，且由用户定义。 对于当前的[!DNL Target]客户，`decisionScopes`也称为“mbox”。 在[!DNL Target] UI中， `decisionScopes`显示为“位置”。
-
-## `__view__`范围
-
-[!DNL Experience Platform Web SDK]提供了无需依赖SDK即可检索VEC操作来为您呈现VEC操作的功能。 发送定义为`decisionScopes`的`__view__`事件。
-
-```javascript
-alloy("sendEvent", {
-      "decisionScopes": ["__view__", "foo", "bar"], 
-      "xdm": { 
-        "web": { 
-          "webPageDetails": { 
-            "name": "Home Page"
-          }
-        } 
-      }
-    }
-  ).then(function(results) {
-    for (decision of results.decisions) {
-      if (decision.decisionScope === "__view__") {
-        console.log(decision.content)
-      }
-    }
-  });
-```
+有关更多信息，请参阅[渲染个性化内容](../rendering-personalization-content.md)。
 
 ## XDM中的受众
 
@@ -153,6 +83,86 @@ alloy("sendEvent", {
 * 时间范围
 
 有关更多信息，请参阅&#x200B;*Adobe Target指南*&#x200B;中的[受众类别](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html?lang=en)。
+
+### 响应令牌
+
+响应令牌主要用于将元数据发送到Google、Facebook等第三方。 返回响应令牌
+`propositions` -> `items`内的`meta`字段中。 以下是一个示例：
+
+```
+{
+  "id": "AT:eyJhY3Rpdml0eUlkIjoiMTI2NzM2IiwiZXhwZXJpZW5jZUlkIjoiMCJ9",
+  "scope": "__view__",
+  "scopeDetails": ...,
+  "renderAttempted": true,
+  "items": [
+    {
+      "id": "0",
+      "schema": "https://ns.adobe.com/personalization/dom-action",
+      "meta": {
+        "experience.id": "0",
+        "activity.id": "126736",
+        "offer.name": "Default Content",
+        "offer.id": "0"
+      }
+    }
+  ]
+}
+```
+
+要收集响应令牌，您必须订阅`alloy.sendEvent` promise，并遍历`propositions`
+并从`items` -> `meta`中提取详细信息。 每个`proposition`都有一个`renderAttempted`布尔字段
+指示是否呈现了`proposition`。 请参阅以下示例：
+
+```
+alloy("sendEvent",
+  {
+    renderDecisions: true,
+    decisionScopes: [
+      "hero-container"
+    ]
+  }).then(result => {
+    const { propositions } = result;
+
+    // filter rendered propositions
+    const renderedPropositions = propositions.filter(proposition => proposition.renderAttempted === true);
+
+    // collect the item metadata that represents the response tokens
+    const collectMetaData = (items) => {
+      return items.filter(item => item.meta !== undefined).map(item => item.meta);
+    }
+
+    const pageLoadResponseTokens = renderedPropositions
+      .map(proposition => collectMetaData(proposition.items))
+      .filter(e => e.length > 0)
+      .flatMap(e => e);
+  });
+  
+```
+
+启用自动渲染后，命题数组包含：
+
+#### 在页面加载时：
+
+* 基于表单的编辑器，其标记设置为`renderAttempted`且基于`propositions``false`
+* 基于可视化体验编辑器的命题，其中`renderAttempted`标记设置为`true`
+* 基于可视化体验编辑器的建议，提供了将`renderAttempted`标记设置为`true`的单页应用程序视图
+
+#### 在查看时 — 更改（对于缓存的视图）：
+
+* 基于可视化体验编辑器的建议，提供了将`renderAttempted`标记设置为`true`的单页应用程序视图
+
+禁用自动渲染时，命题数组包含：
+
+#### 在页面加载时：
+
+* 基于表单的编辑器，其标记设置为`renderAttempted`且基于`propositions``false`
+* 基于可视化体验编辑器的命题，其中`renderAttempted`标记设置为`false`
+* 基于可视化体验编辑器的建议，提供了将`renderAttempted`标记设置为`false`的单页应用程序视图
+
+#### 在查看时 — 更改（对于缓存的视图）：
+
+* 基于可视化体验编辑器的建议，提供了将`renderAttempted`标记设置为`false`的单页应用程序视图
 
 ### 单个配置文件更新
 
@@ -244,7 +254,7 @@ mboxTrace和mboxDebug已被弃用。 使用[[!DNL Platform Web SDK] 调试](http
 
 ## 术语
 
-__决策：__ 在中 [!DNL Target]，决策与从活动中选择的体验相关联。
+__命题：__ 在中 [!DNL Target]，命题与从活动中选择的体验相关联。
 
 __架构：__ 决策的架构是中的选件类 [!DNL Target]型。
 
