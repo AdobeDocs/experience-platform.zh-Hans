@@ -4,7 +4,7 @@ description: 了解Adobe Experience Platform Web SDK标记扩展提供的不同�
 solution: Experience Platform
 feature: Web SDK
 exl-id: a4bf0bb9-59b4-4c43-97e6-387768176517
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 2f9ff95529c907cfc28bc98198eca9fcfc21e9b9
 workflow-type: tm+mt
 source-wordcount: '573'
 ht-degree: 4%
@@ -16,6 +16,7 @@ ht-degree: 4%
 配置[Adobe Experience Platform Web SDK标记扩展](web-sdk-extension-configuration.md)后，请配置操作类型。
 
 本页介绍可用的操作类型。
+
 
 ## 发送事件
 
