@@ -3,7 +3,7 @@ keywords: beemray，beemray扩展
 title: Beemray扩展
 description: Beemray扩展是Adobe Experience Platform中的个性化目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 5bb639f5-42b5-48ae-a3e9-7585595ab925
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 3%
@@ -32,7 +32,7 @@ Beemray是Adobe Experience Platform中的一个个性化扩展。 有关扩展�
 
 要安装[!DNL Beemray]扩展，请执行以下操作：
 
-在[Platform接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
+在[Platform接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
