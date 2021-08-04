@@ -3,7 +3,7 @@ keywords: GTAG;Google Gtag;Google扩展；Google Gtag扩展；GTAG
 title: Google Gtag扩展
 description: Google gtag扩展是Adobe Experience Platform中的一个广告目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 14a466f2-78a0-4493-93cd-3dcdae048042
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '505'
 ht-degree: 3%
@@ -32,7 +32,7 @@ Google gtag是Adobe Experience Platform中的一项广告扩展。 有关扩展�
 
 要安装Google gtag扩展，请执行以下操作：
 
-在[Platform接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
+在[Platform接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
