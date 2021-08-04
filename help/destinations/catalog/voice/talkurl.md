@@ -3,7 +3,7 @@ keywords: “通话URL收件箱”；“通话URL收件箱”；“通话URL收�
 title: Talk URL Inbox扩展
 description: Talk URL Inbox扩展是Adobe Experience Platform中客户目标的语音。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: f3e962c6-82c0-4d2f-9a78-275f261f058d
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '501'
 ht-degree: 4%
@@ -30,7 +30,7 @@ ht-degree: 4%
 
 要安装[!DNL Talk URL Inbox]扩展，请执行以下操作：
 
-在[Platform接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
+在[Platform接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
