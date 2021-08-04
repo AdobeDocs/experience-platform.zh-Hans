@@ -3,7 +3,7 @@ keywords: bizible;bizible扩展；bizible目标
 title: Bizible扩展
 description: Bizible扩展是Adobe Experience Platform中的电子邮件目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 9e45416d-b951-411c-a59f-34f84529f721
-source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '446'
 ht-degree: 3%
@@ -32,7 +32,7 @@ ht-degree: 3%
 
 要安装[!DNL Bizible]扩展，请执行以下操作：
 
-在[Platform接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
+在[Platform接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
