@@ -3,9 +3,9 @@ keywords: Google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用在线和离线数据，通过Google自有资产和运营资产(如搜索、购物、Gmail和YouTube)来联系客户并与其重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 4fed44edb3e201422f765493c9019be1cddffccc
+source-git-commit: 8a521b2b846c953b74b8e48fb76b94966a652318
 workflow-type: tm+mt
-source-wordcount: '1548'
+source-wordcount: '1568'
 ht-degree: 0%
 
 ---
@@ -108,7 +108,7 @@ Attribute source data is not automatically hashed. When your source field contai
 
 ## 配置目标 — 视频演练 {#video}
 
-以下视频演示了配置[!DNL Google Customer Match]目标和激活区段的步骤。 这些步骤也在后续各节中按顺序排列。
+以下视频演示了配置社交目标和激活区段的步骤。 视频以LinkedIn为例，但各个社交目标（包括[!DNL Google Customer Match]）中的步骤相似。 视频中的步骤也会在后续部分中按顺序排列。
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
