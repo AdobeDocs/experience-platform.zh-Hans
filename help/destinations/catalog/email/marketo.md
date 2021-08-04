@@ -3,7 +3,7 @@ keywords: Marketo;marketo;Marketo扩展；marketo扩展
 title: Marketo扩展
 description: Marketo扩展是Adobe Experience Platform中的一个电子邮件目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 3841eb19-a17e-4c28-a101-7332d178af34
-source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '471'
 ht-degree: 3%
@@ -32,7 +32,7 @@ ht-degree: 3%
 
 要安装[!DNL Marketo]扩展，请执行以下操作：
 
-1. 在[Platform接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
+1. 在[Platform接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
 2. 从目录中选择扩展或使用搜索栏。
 3. 单击目标以将其突出显示，然后选择右边栏中的&#x200B;**[!UICONTROL 配置]**。 如果&#x200B;**[!UICONTROL Configure]**&#x200B;控件呈灰显状态，则您缺少&#x200B;**[!UICONTROL manage_properties]**&#x200B;权限。 请参阅[先决条件](#prerequisites)。
 4. 选择要在其中安装扩展的资产。 您还可以选择创建新资产。 资产是规则、数据元素、配置的扩展、环境和库的集合。了解标记文档的[属性页面部分](../../../tags/ui/administration/companies-and-properties.md#properties-page)中的属性。
