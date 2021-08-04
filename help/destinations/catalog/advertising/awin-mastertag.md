@@ -3,7 +3,7 @@ keywords: Awin广告商Mastertag扩展；Mastertag;Awin;AWIN
 title: Awin广告商Mastertag扩展
 description: Awin Advertiser Mastertag扩展是Adobe Experience Platform中的一个广告目的地。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 99a9ea40-b89f-4503-91a7-60cc8e1cd6d3
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '490'
 ht-degree: 3%
@@ -32,7 +32,7 @@ ht-degree: 3%
 
 要安装[!DNL Awin Advertiser Mastertag]扩展，请执行以下操作：
 
-在[Platform接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
+在[Platform接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
