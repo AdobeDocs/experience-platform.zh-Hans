@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK;Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 165c9bce5dabce9704202ebab6b97a4a30e4ca00
+source-git-commit: f3821176b0cbc4ad07fbd2e0e20caa1205324a44
 workflow-type: tm+mt
-source-wordcount: '714'
+source-wordcount: '717'
 ht-degree: 4%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 4%
 
 ## 2.6.0版 — 2021年7月27日
 
-* 在`sendEvent`已解析的承诺中提供更多个性化内容，包括Adobe Target响应令牌。 执行`sendEvent`命令时，将返回一个promise，该promise最终通过包含从服务器接收的信息的`result`对象进行解析。 此结果对象包含名为`decisions`的属性。 此`decisions`属性已弃用。 添加了新属性`propositions`。 通过此新属性，客户可以访问更多个性化内容，包括响应令牌。 更多文档即将发布。
+* 在`sendEvent`已解析的承诺中提供更多个性化内容，包括Adobe Target响应令牌。 执行`sendEvent`命令时，将返回一个promise，该promise最终通过包含从服务器接收的信息的`result`对象进行解析。 以前，此结果对象包含名为`decisions`的属性。 此`decisions`属性已弃用。 添加了新属性`propositions`。 此新属性为客户提供了对更多个性化内容的访问权限，这些内容包括[响应令牌](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/adobe-target/accessing-response-tokens.html)。
 
 ## 2.5.0版 — 2021年6月
 
