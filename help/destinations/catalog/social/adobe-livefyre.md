@@ -3,7 +3,7 @@ keywords: livefyre;livefyre扩展
 title: AdobeLivefyre扩展
 description: AdobeLivefyre扩展是Adobe Experience Platform中的一个社交目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: a134c144-e7b8-4d48-8c90-5999e5ceb8a0
-source-git-commit: 967a287852ce4f479f658900593aed1f1f2bc0ad
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '452'
 ht-degree: 3%
@@ -32,7 +32,7 @@ AdobeLivefyre是Adobe Experience Platform中的一项社交扩展。 有关Livef
 
 要安装AdobeLivefyre扩展，请执行以下操作：
 
-在[Platform接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
+在[Platform接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
