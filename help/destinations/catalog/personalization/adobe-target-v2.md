@@ -3,7 +3,7 @@ keywords: Target扩展；Target v2;Target v2扩展
 title: Adobe Target v2 扩展
 description: Adobe Target v2扩展是Adobe Experience Platform中的一个个性化目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: d1d5ebbc-9093-42b0-8d88-58779df3ec89
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '492'
 ht-degree: 13%
@@ -32,7 +32,7 @@ Adobe Target v2是Adobe Experience Platform中的一个个性化扩展。 有关
 
 安装Adobe Target v2扩展：
 
-在[Platform接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
+在[Platform接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
