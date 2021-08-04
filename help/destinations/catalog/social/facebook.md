@@ -3,9 +3,9 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据经过哈希处理的电子邮件，激活Facebook营销活动的用户档案以进行受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 41cfa5b30d8816baf55b8b4e1609ca724e9efe24
+source-git-commit: 32da733eda61049738e87bce48978196a1fea96d
 workflow-type: tm+mt
-source-wordcount: '1160'
+source-wordcount: '1176'
 ht-degree: 2%
 
 ---
@@ -36,7 +36,7 @@ ht-degree: 2%
 
 接下来，他们可以使用离线数据（包括关联的会员ID和客户层）来构建新的受众区段，并通过[!DNL Facebook]目标进行定位。
 
-## 支持的标识{#supported-identities}
+## 支持的身份 {#supported-identities}
 
 [!DNL Facebook Custom Audiences] 支持激活下表所述的身份。了解有关[identities](/help/identity-service/namespaces.md)的更多信息。
 
@@ -48,11 +48,11 @@ ht-degree: 2%
 | email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照[ID匹配要求](#id-matching-requirements-id-matching-requirements)部分中的说明，分别对纯文本和经过哈希处理的电子邮件地址使用适当的命名空间。 当源字段包含未哈希属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。 |
 | extern_id | 自定义用户ID | 如果源标识是自定义命名空间，请选择此目标标识。 |
 
-## 导出类型{#export-type}
+## 导出类型 {#export-type}
 
 **区段导出**  — 您要导出区段（受众）的所有成员，以及Facebook目标中使用的标识符（名称、电话号码或其他）。
 
-## Facebook帐户先决条件{#facebook-account-prerequisites}
+## Facebook帐户先决条件 {#facebook-account-prerequisites}
 
 在将受众区段发送到[!DNL Facebook]之前，请确保满足以下要求：
 
@@ -63,13 +63,13 @@ ht-degree: 2%
    > 配置Adobe Experience Cloud的权限时，必须启用&#x200B;**管理促销活动**&#x200B;权限。 [!DNL Adobe Experience Platform]集成需要权限。
 - 阅读并签署[!DNL Facebook Custom Audiences]服务条款。 为此，请转到`https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`，其中`accountID`是您的[!DNL Facebook Ad Account ID]。
 
-## ID匹配要求{#id-matching-requirements}
+## ID匹配要求 {#id-matching-requirements}
 
 [!DNL Facebook] 要求不要发送任何个人身份信息(PII)。因此，激活到[!DNL Facebook]的受众可以与&#x200B;*哈希*&#x200B;标识符（如电子邮件地址或电话号码）关联。
 
 根据您摄取到Adobe Experience Platform中的ID类型，您必须遵循其相应要求。
 
-## 电话号码哈希处理要求{#phone-number-hashing-requirements}
+## 电话号码哈希处理要求 {#phone-number-hashing-requirements}
 
 在[!DNL Facebook]中激活电话号码的方法有两种：
 
@@ -81,7 +81,7 @@ ht-degree: 2%
 >无法在[!DNL Facebook]中激活被摄取到`Phone`命名空间的电话号码。
 
 
-## 电子邮件哈希处理要求{#email-hashing-requirements}
+## 电子邮件哈希处理要求 {#email-hashing-requirements}
 
 您可以在将电子邮件地址摄取到Adobe Experience Platform之前对其进行哈希处理，或在Experience Platform中明确使用电子邮件地址，并在激活时对它们进行[!DNL Platform]哈希处理。
 
@@ -104,15 +104,15 @@ ht-degree: 2%
 
 ![身份映射转换](../../assets/ui/activate-destinations/identity-mapping-transformation.png)
 
-## 使用自定义命名空间{#custom-namespaces}
+## 使用自定义命名空间 {#custom-namespaces}
 
 在使用`Extern_ID`命名空间将数据发送到[!DNL Facebook]之前，请确保使用[!DNL Facebook Pixel]同步您自己的标识符。 有关详细信息，请参阅[Facebook官方文档](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers)。
 
-## 连接到目标{#connect-destination}
+## 连接到目标 {#connect-destination}
 
 要连接到[!DNL Facebook]目标，请参阅[社交目标身份验证工作流](./workflow.md)。
 
-以下视频还演示了配置[!DNL Facebook]目标和激活区段的步骤。
+以下视频还演示了配置社交目标和激活区段的步骤。 视频以LinkedIn为例，但各个社交目标的步骤相似。
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
@@ -124,7 +124,7 @@ ht-degree: 2%
 
 ![Facebook受众来源](../../assets/catalog/social/facebook/facebook-origin-audience.png)
 
-## 导出的数据{#exported-data}
+## 导出的数据 {#exported-data}
 
 对于[!DNL Facebook]，成功激活意味着将在[[!DNL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/)中以编程方式创建[!DNL Facebook]自定义受众。 由于用户符合激活区段的资格条件或被取消资格，因此将会添加和删除受众中的区段成员资格。
 
@@ -134,7 +134,7 @@ ht-degree: 2%
 
 ## 疑难解答 {#troubleshooting}
 
-### 400错误请求错误消息{#bad-request}
+### 400错误请求错误消息 {#bad-request}
 
 将区段激活到[!DNL Facebook]时，可能会收到以下错误：
 
