@@ -3,7 +3,7 @@ keywords: 量度扩展；量度；量度；量度
 title: 量度扩展
 description: 量度扩展是Adobe Experience Platform中的一个分析目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: b88df05f-0559-4568-9251-2d00f9223edb
-source-git-commit: 6bbccf6751240637c861c2962b64e5247d8abb43
+source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
 workflow-type: tm+mt
 source-wordcount: '486'
 ht-degree: 3%
@@ -32,7 +32,7 @@ ht-degree: 3%
 
 要安装[!DNL Quantum Metric]扩展，请执行以下操作：
 
-在[Platform接口](http://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
+在[Platform接口](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL Catalog]**。
 
 从目录中选择扩展或使用搜索栏。
 
