@@ -3,7 +3,7 @@ title: Adobe Experience Platform Web SDK扩展中的事件类型
 description: 了解如何使用Adobe Experience Platform Launch中Adobe Experience Platform Web SDK扩展提供的事件类型。
 solution: Experience Platform
 feature: Web SDK
-source-git-commit: 5ae7488e715ff97d2b667c40505b79433eb74f49
+source-git-commit: 4bddd9f23ae885468148d1592af219290d6fafd9
 workflow-type: tm+mt
 source-wordcount: '1026'
 ht-degree: 1%
@@ -249,7 +249,7 @@ if (propositions) {
           var activityName = item.meta["activity.name"];
           // Ignore duplicates
           if (activityNames.indexOf(activityName) === -1) {
-            activityNames.push(item.meta);  
+            activityNames.push(activityName);  
           }
         }
       });
