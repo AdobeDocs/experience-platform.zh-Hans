@@ -1,35 +1,34 @@
 ---
-keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；分段定义；段定义；api;API;
+keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；区段定义；区段定义；API;API;
 solution: Experience Platform
 title: 区段定义API端点
 topic-legacy: developer guide
-description: Adobe Experience Platform Segmentation Service API中的区段定义端点允许您以编程方式管理组织的区段定义。
+description: Adobe Experience Platform Segmentation Service API中的区段定义端点允许您以编程方式管理贵组织的区段定义。
 exl-id: e7811b96-32bf-4b28-9abb-74c17a71ffab
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 265607b3b21fda48a92899ec3d750058ca48868a
 workflow-type: tm+mt
-source-wordcount: '1172'
+source-wordcount: '1188'
 ht-degree: 3%
 
 ---
 
-# 段定义端点
+# 区段定义端点
 
-Adobe Experience Platform允许您创建区段，这些区段从一组用户档案中定义一组特定属性或行为。 段定义是封装写入[!DNL Profile Query Language](PQL)中的查询的对象。 此对象也称为PQL谓词。 PQL谓词根据与提供给[!DNL Real-time Customer Profile]的任何记录或时间序列数据相关的条件定义区段规则。 有关编写PQL查询的详细信息，请参阅[ PQL指南](../pql/overview.md)。
+Adobe Experience Platform允许您从一组用户档案创建用于定义一组特定属性或行为的区段。 区段定义是封装在[!DNL Profile Query Language](PQL)中写入的查询的对象。 此对象也称为PQL谓词。 PQL谓词根据与提供给[!DNL Real-time Customer Profile]的任何记录或时间序列数据相关的条件定义区段的规则。 有关编写PQL查询的更多信息，请参阅[ PQL指南](../pql/overview.md) 。
 
-本指南提供相关信息，帮助您更好地了解细分定义，并包含使用API执行基本操作的示例API调用。
+本指南提供了相关信息，以帮助您更好地了解区段定义，并包含用于使用API执行基本操作的示例API调用。
 
-## 入门指南
+## 快速入门
 
-本指南中使用的端点是[!DNL Adobe Experience Platform Segmentation Service] API的一部分。 在继续之前，请查看[快速入门指南](./getting-started.md)以了解成功调用API所需的重要信息，包括必需的标头以及如何读取示例API调用。
+本指南中使用的端点是[!DNL Adobe Experience Platform Segmentation Service] API的一部分。 在继续操作之前，请查看[快速入门指南](./getting-started.md) ，以了解成功调用API所需的重要信息，包括所需的标头以及如何读取示例API调用。
 
-## 检索区段定义{#list}的列表
+## 检索区段定义列表 {#list}
 
-您可以通过向`/segment/definitions`端点发出列表请求，检索IMS组织的所有区段定义的GET。
+您可以通过向`/segment/definitions`端点发出GET请求，来检索IMS组织的所有区段定义的列表。
 
 **API格式**
 
-`/segment/definitions`端点支持多个查询参数，以帮助筛选结果。 尽管这些参数是可选的，但强烈建议使用这些参数以帮助降低昂贵的开销。 调用此端点时不含参数将检索组织可用的所有区段定义。 可以包含多个参数，用&amp;符号(`&`)分隔。
+`/segment/definitions`端点支持多个查询参数，以帮助筛选结果。 虽然这些参数是可选的，但强烈建议使用这些参数，以帮助减少昂贵的开销。 对此端点进行无参数调用将检索适用于贵组织的所有区段定义。 可以包含多个参数，并以与号(`&`)分隔。
 
 ```http
 GET /segment/definitions
@@ -40,11 +39,11 @@ GET /segment/definitions?{QUERY_PARAMETERS}
 
 | 参数 | 描述 | 示例 |
 | --------- | ----------- | ------- |
-| `start` | 为返回的段定义指定起始偏移。 | `start=4` |
+| `start` | 为返回的区段定义指定起始偏移。 | `start=4` |
 | `limit` | 指定每页返回的区段定义数。 | `limit=20` |
-| `page` | 指定段定义结果将从哪个页开始。 | `page=5` |
-| `sort` | 指定将结果排序依据的字段。 以下格式编写：`[attributeName]:[desc|asc]`。 | `sort=updateTime:desc` |
-| `evaluationInfo.continuous.enabled` | 指定段定义是否启用流。 | `evaluationInfo.continuous.enabled=true` |
+| `page` | 指定区段定义结果将从哪个页面开始。 | `page=5` |
+| `sort` | 指定要按哪个字段对结果排序。 采用以下格式编写：`[attributeName]:[desc|asc]`。 | `sort=updateTime:desc` |
+| `evaluationInfo.continuous.enabled` | 指定区段定义是否启用流式传输。 | `evaluationInfo.continuous.enabled=true` |
 
 **请求**
 
@@ -60,7 +59,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions?limit=2 
 
 **响应**
 
-成功的响应返回HTTP状态200，并列表指定IMS组织的段定义为JSON。
+成功响应会返回HTTP状态200，其中包含指定IMS组织的区段定义列表(JSON)。
 
 ```json
 {
@@ -152,9 +151,9 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions?limit=2 
 }
 ```
 
-## 创建新的区段定义{#create}
+## 创建新区段定义 {#create}
 
-可以通过向`/segment/definitions`端点发出POST请求来创建新的段定义。
+您可以通过向`/segment/definitions`端点发出POST请求来创建新的区段定义。
 
 **API格式**
 
@@ -191,22 +190,22 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | 属性 | 描述 |
 | -------- | ----------- |
 | `name` | **必需。** 引用区段的唯一名称。 |
-| `schema` | **必需。** 与区段中的实体关联的模式。由`id`或`name`字段组成。 |
+| `schema` | **必需。** 与区段中的实体关联的架构。由`id`或`name`字段组成。 |
 | `expression` | **必需。** 包含有关区段定义的字段信息的实体。 |
-| `expression.type` | 指定表达式类型。 目前，仅支持“PQL”。 |
-| `expression.format` | 以值表示表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`:根据已发布的PQL语法的段定义的文本表示。例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
+| `expression.type` | 指定表达式类型。 目前仅支持“PQL”。 |
+| `expression.format` | 指示值中表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`:根据发布的PQL语法，区段定义的文本表示形式。例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
 | `expression.value` | 符合`expression.format`中指示的类型的表达式。 |
-| `description` | 定义的用户可读描述。 |
+| `description` | 定义的人类可读描述。 |
 
 >[!NOTE]
 >
->段定义表达式也可以引用计算的属性。 要了解更多信息，请参阅[计算属性API端点指南](../../profile/computed-attributes/ca-api.md)
+>区段定义表达式也可引用计算的属性。 要了解更多信息，请参阅[计算属性API端点指南](../../profile/computed-attributes/ca-api.md)
 >
->计算的属性功能位于alpha中，并且不适用于所有用户。 文档和功能可能会更改。
+>计算属性功能位于Alpha中，并非所有用户都可用。 文档和功能可能会发生更改。
 
 **响应**
 
-成功的响应会返回HTTP状态200，其中包含您新创建的区段定义的详细信息。
+成功响应会返回HTTP状态200，其中包含新创建的区段定义的详细信息。
 
 ```json
 {
@@ -252,12 +251,12 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `id` | 您新创建的区段定义的系统生成的ID。 |
-| `evaluationInfo` | 系统生成的对象，用于告知区段定义将进行的评估类型。 它可以是批量、连续（也称为流）或同步分段。 |
+| `id` | 系统生成的新创建区段定义ID。 |
+| `evaluationInfo` | 系统生成的对象，用于告知区段定义将执行的评估类型。 它可以是批量、连续（也称为流）或同步分段。 |
 
-## 检索特定的段定义{#get}
+## 检索特定区段定义 {#get}
 
-您可以通过向`/segment/definitions`端点发出GET请求并提供您希望在请求路径中检索的区段定义的ID，来检索有关特定区段定义的详细信息。
+您可以通过向`/segment/definitions`端点发出GET请求，并提供您希望在请求路径中检索的区段定义的ID，来检索有关特定区段定义的详细信息。
 
 **API格式**
 
@@ -281,7 +280,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关指定区段定义的详细信息。
+成功响应会返回HTTP状态200，其中包含有关指定区段定义的详细信息。
 
 ```json
 {
@@ -329,17 +328,17 @@ curl -X GET https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae
 | -------- | ----------- |
 | `id` | 区段定义的系统生成的只读ID。 |
 | `name` | 引用区段的唯一名称。 |
-| `schema` | 与区段中的实体关联的模式。 由`id`或`name`字段组成。 |
+| `schema` | 与区段中的实体关联的架构。 由`id`或`name`字段组成。 |
 | `expression` | 包含有关区段定义的字段信息的实体。 |
-| `expression.type` | 指定表达式类型。 目前，仅支持“PQL”。 |
-| `expression.format` | 以值表示表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`:根据已发布的PQL语法的段定义的文本表示。例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
+| `expression.type` | 指定表达式类型。 目前仅支持“PQL”。 |
+| `expression.format` | 指示值中表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`:根据发布的PQL语法，区段定义的文本表示形式。例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
 | `expression.value` | 符合`expression.format`中指示的类型的表达式。 |
 | `description` | 定义的可读描述。 |
-| `evaluationInfo` | 系统生成的对象，它告诉将要进行的评估、批处理、连续（也称为流）或同步的区段定义。 |
+| `evaluationInfo` | 系统生成的对象，用于告知区段定义将要执行的评估类型、批处理、连续（也称为流）或同步。 |
 
-## 批量检索段定义{#bulk-get}
+## 批量检索区段定义 {#bulk-get}
 
-您可以通过向`/segment/definitions/bulk-get`端点发出POST请求并在请求主体中提供段定义的`id`值，检索有关多个指定段定义的详细信息。
+您可以通过向`/segment/definitions/bulk-get`端点发出POST请求并在请求正文中提供区段定义的`id`值，来检索有关多个指定区段定义的详细信息。
 
 **API格式**
 
@@ -370,7 +369,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions/bulk-ge
 
 **响应**
 
-成功的响应会返回HTTP状态207，并返回请求的区段定义。
+成功的响应会返回包含请求的区段定义的HTTP状态207。
 
 ```json
 {
@@ -462,17 +461,21 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions/bulk-ge
 | -------- | ----------- |
 | `id` | 区段定义的系统生成的只读ID。 |
 | `name` | 引用区段的唯一名称。 |
-| `schema` | 与区段中的实体关联的模式。 由`id`或`name`字段组成。 |
+| `schema` | 与区段中的实体关联的架构。 由`id`或`name`字段组成。 |
 | `expression` | 包含有关区段定义的字段信息的实体。 |
-| `expression.type` | 指定表达式类型。 目前，仅支持“PQL”。 |
-| `expression.format` | 以值表示表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`:根据已发布的PQL语法的段定义的文本表示。例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
+| `expression.type` | 指定表达式类型。 目前仅支持“PQL”。 |
+| `expression.format` | 指示值中表达式的结构。 目前，支持以下格式： <ul><li>`pql/text`:根据发布的PQL语法，区段定义的文本表示形式。例如：`workAddress.stateProvince = homeAddress.stateProvince`。</li></ul> |
 | `expression.value` | 符合`expression.format`中指示的类型的表达式。 |
 | `description` | 定义的可读描述。 |
-| `evaluationInfo` | 系统生成的对象，它告诉将要进行的评估、批处理、连续（也称为流）或同步的区段定义。 |
+| `evaluationInfo` | 系统生成的对象，用于告知区段定义将要执行的评估类型、批处理、连续（也称为流）或同步。 |
 
-## 删除特定区段定义{#delete}
+## 删除特定区段定义 {#delete}
 
-您可以请求删除特定区段定义，方法是向`/segment/definitions`端点发出DELETE请求，并提供您希望在请求路径中删除的区段定义的ID。
+您可以通过向`/segment/definitions`端点发出DELETE请求，并在请求路径中提供您要删除的区段定义的ID，来请求删除特定的区段定义。
+
+>[!NOTE]
+>
+> 您将能够删除目标激活中使用的区段，**不**。
 
 **API格式**
 
@@ -496,7 +499,7 @@ curl -X DELETE https://platform.adobe.io/data/core/ups/segment/definitions/4afe3
 
 **响应**
 
-成功的响应返回HTTP状态200，无消息。
+成功响应会返回HTTP状态200，且没有消息。
 
 ## 更新特定区段定义
 
@@ -514,7 +517,7 @@ PATCH /segment/definitions/{SEGMENT_ID}
 
 **请求**
 
-以下请求将将工作地址国家/地区从美国更新至加拿大。
+以下请求将将工作地址国家/地区从美国更新为加拿大。
 
 ```shell
 curl -X PATCH https://platform.adobe.io/data/core/ups/segment/definitions/4afe34ae-8c98-4513-8a1d-67ccaa54bc05 \
@@ -547,7 +550,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/segment/definitions/4afe34
 
 **响应**
 
-成功的响应会返回HTTP状态200，其中包含您最近更新的区段定义的详细信息。 请注意，工作地址国家/地区已如何从美国（美国）更新至加拿大(CA)。
+成功响应会返回HTTP状态200，其中包含您新更新的区段定义的详细信息。 请注意工作地址国家/地区如何从美国（美国）更新为加拿大(CA)。
 
 ```json
 {
@@ -593,7 +596,7 @@ curl -X PATCH https://platform.adobe.io/data/core/ups/segment/definitions/4afe34
 
 ## 转换区段定义
 
-可以通过向`/segment/conversion`端点发出POST请求，将`pql/text`和`pql/json`或`pql/json`之间的段定义转换为`pql/text`。
+您可以通过向`/segment/conversion`端点发出POST请求，将`pql/text`和`pql/json`或`pql/json`之间的区段定义转换为`pql/text`。
 
 **API格式**
 
@@ -631,7 +634,7 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/conversion \
 
 **响应**
 
-成功的响应会返回HTTP状态200，其中包含您新转换的区段定义的详细信息。
+成功响应会返回HTTP状态200，其中包含您新转换的区段定义的详细信息。
 
 ```json
 {
@@ -654,4 +657,4 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/conversion \
 
 ## 后续步骤
 
-阅读本指南后，您现在可以更好地了解细分定义的工作方式。 有关创建区段的详细信息，请阅读[创建区段](../tutorials/create-a-segment.md)教程。
+阅读本指南后，您现在可以更好地了解区段定义的工作方式。 有关创建区段的更多信息，请阅读[创建区段](../tutorials/create-a-segment.md)教程。
