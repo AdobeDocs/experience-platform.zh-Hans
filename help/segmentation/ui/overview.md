@@ -5,9 +5,9 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
+source-git-commit: 265607b3b21fda48a92899ec3d750058ca48868a
 workflow-type: tm+mt
-source-wordcount: '1561'
+source-wordcount: '1577'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 0%
 >
 >如果贵组织是Platform的新用户，但尚未创建活动的配置文件数据集或合并策略，则[!UICONTROL 区段]功能板将不可见。 相反， [!UICONTROL 概述]选项卡会显示可帮助您开始使用区段的链接和文档。
 
-###  区段功能板  {#segments-dashboard}
+###  区段功能板 {#segments-dashboard}
 
 **[!UICONTROL 区段]**&#x200B;功能板概述了与贵组织的区段数据相关的关键量度。
 
@@ -83,9 +83,13 @@ ht-degree: 0%
 
 选择区段定义的行可提供区段定义的摘要，包括用于编辑或删除区段的选项、区段的限定受众、总受众大小，以及区段的名称、描述、评估方法、创建日期和上次修改日期。
 
+>[!NOTE]
+>
+> 您将能够删除目标激活中使用的区段，**不**。
+
 ![](../images/ui/overview/segment-browse-details.png)
 
-## 区段定义详细信息{#segment-details}
+## 区段定义详细信息 {#segment-details}
 
 要查看有关特定区段定义的更多详细信息，请在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡中选择区段的名称。
 
@@ -149,13 +153,13 @@ ht-degree: 0%
 
 ![](../images/ui/overview/segment-builder.png)
 
-## 计划分段{#scheduled-segmentation}
+## 计划分段 {#scheduled-segmentation}
 
 创建区段定义后，您可以通过按需或计划（连续）评估来评估区段定义。 评估是指通过区段定义移动[!DNL Real-time Customer Profile]数据以生成相应的受众。 创建受众后，将保存并存储受众，以便使用[!DNL Experience Platform] API导出受众。
 
 按需评估包括使用API执行评估并根据需要构建受众，而计划评估（也称为“计划分段”）则允许您创建定期计划以在特定时间（最多每天一次）评估区段定义。
 
-### 启用计划分段{#enable-scheduled-segmentation}
+### 启用计划分段 {#enable-scheduled-segmentation}
 
 可以使用UI或API来启用区段定义以进行计划评估。 在UI中，返回到&#x200B;**[!UICONTROL 区段]**&#x200B;中的&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡，然后打开&#x200B;**[!UICONTROL 添加所有区段以计划]**。 这将导致根据您的组织设置的计划来评估所有区段。
 
@@ -167,7 +171,7 @@ ht-degree: 0%
 
 ![](../images/ui/overview/segment-browse-scheduled.png)
 
-## 流分段{#streaming-segmentation}
+## 流分段 {#streaming-segmentation}
 
 流式分段能够近乎实时地对[!DNL Platform]进行分段，同时重点关注数据的丰富性。 使用流分段时，当数据进入[!DNL Platform]时，即会进行区段鉴别，从而无需计划和运行分段作业。
 
@@ -177,7 +181,7 @@ ht-degree: 0%
 >
 >为了使流式客户细分正常工作，您需要为组织启用计划客户细分。 有关启用计划分段的详细信息，请参阅本用户指南中的[流分段部分](#scheduled-segmentation)。
 
-## 边缘分割{#edge-segmentation}
+## 边缘分割 {#edge-segmentation}
 
 边缘分段功能可以即时评估Platform中的边缘区段，从而实现同一页面和下一页面个性化用例。
 
@@ -193,7 +197,7 @@ ht-degree: 0%
 
 ![](../images/ui/overview/segment-dule-policy-violations.png)
 
-## 后续步骤和其他资源{#next-steps}
+## 后续步骤和其他资源 {#next-steps}
 
 [!DNL Segmentation Service] UI提供了一个丰富的工作流，允许您从[!DNL Real-time Customer Profile]数据中隔离可销售的受众。
 
