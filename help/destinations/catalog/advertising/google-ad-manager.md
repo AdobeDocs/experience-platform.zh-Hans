@@ -3,10 +3,10 @@ keywords: Google Ad Manager;Google Ad;Doubleclick;DoubleClick AdX;DoubleClick;Go
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告服务平台，它使出版商能够通过视频和移动设备应用程序管理其网站上的广告显示。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 4df2e7ce9c7e94da4ea0be50ba21232c639e2587
+source-git-commit: 7e2f6f54e754c52c8de7f98372d041b2a6520d46
 workflow-type: tm+mt
-source-wordcount: '754'
-ht-degree: 0%
+source-wordcount: '732'
+ht-degree: 2%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 0%
 * 在[!DNL Google]平台中以编程方式创建激活的受众。
 * [!DNL Platform] 当前不包括用于验证激活是否成功的测量量度。请参阅Google中的受众计数，以验证集成并了解受众定位大小。
 
-## 支持的标识{#supported-identities}
+## 支持的标识 {#supported-identities}
 
 [!DNL Google Ad Manager] 支持激活下表所述的身份。
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 | 女佣 | Microsoft广告ID。 此ID唯一标识运行Windows 10的设备。 |  |
 | Amazon Fire TV ID | 此ID可唯一标识Amazon Fire TV。 |  |
 
-## 导出类型{#export-type}
+## 导出类型 {#export-type}
 
 **区段导出**  — 您要将区段（受众）的所有成员导出到Google目标。
 
@@ -53,8 +53,8 @@ ht-degree: 0%
 
 在Platform中创建[!DNL Google Ad Manager]目标之前，您必须联系[!DNL Google]，以便Adobe被列入允许的数据提供程序列表，并将帐户添加到允许列表。 联系[!DNL Google]并提供以下信息：
 
-* **帐户ID** :这是Adobe的帐户ID，包含 [!DNL Google]。请联系Adobe客户关怀团队或您的Adobe代表以获取此ID。
-* **客户ID** :这是Adobe的客户帐户ID，包含 [!DNL Google]。请联系Adobe客户关怀团队或您的Adobe代表以获取此ID。
+* **帐户ID**:Adobe的帐户ID。帐户ID:87933855。
+* **客户ID**:Adobe的客户帐户ID与Google。客户ID:89690775。
 * **网络ID** :这是你的帐户  [!DNL Google Ad Manager]
 * **受众链接ID** :这是你的帐户  [!DNL Google Ad Manager]
 * 您的帐户类型。 由Google或AdX购买者提供的DFP。
