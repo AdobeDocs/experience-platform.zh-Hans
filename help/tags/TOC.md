@@ -4,9 +4,9 @@ user-guide-title: 标记帮助
 breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标签以提升客户体验。
 feature: 数据收集
-source-git-commit: bddad4476d6943c7549028e93c84c8ca29059dc0
+source-git-commit: 3658384ec39226f457fd9cea86d1838613a9508c
 workflow-type: tm+mt
-source-wordcount: '385'
+source-wordcount: '378'
 ht-degree: 67%
 
 ---
@@ -88,9 +88,6 @@ ht-degree: 67%
       * Adobe Experience Manager资产分析{#asset-insights}
          * [概述](./extensions/web/asset-insights/overview.md)
          * [发行说明](./extensions/web/asset-insights/release-notes.md)
-      * Adobe Experience Manager Forms {#forms}
-         * [概述](./extensions/web/forms/overview.md)
-         * [发行说明](./extensions/web/forms/release-notes.md)
       * Adobe Medium音频和视频分析{#media-analytics}
          * [概述](./extensions/web/media-analytics/overview.md)
          * [发行说明](./extensions/web/media-analytics/release-notes.md)
