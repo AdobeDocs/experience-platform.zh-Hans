@@ -5,9 +5,9 @@ title: 数据科学工作区访问和功能
 topic-legacy: Access and features for data science workspace
 description: 以下文档概述了Data Science Workspace的权限和对功能的访问权限。
 exl-id: 6759fea4-adb9-4e4e-9f3d-e0e8c885b1dd
-source-git-commit: 319cdb13c965010062aa9179b197d6f5b6a20287
+source-git-commit: 2ff2721f5420483ddc5caffd1eb0532df729e01b
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '684'
 ht-degree: 2%
 
 ---
@@ -63,7 +63,7 @@ Experience Platform的访问控制通过[Adobe Admin Console](https://adminconso
 
 ## 沙盒支持
 
-沙箱是单个Experience Platform实例中的虚拟分区。 每个Platform实例都支持多个生产沙盒和非生产沙盒，每个沙盒都维护其自己的Platform资源库。 非生产沙箱允许您测试功能、运行实验和进行自定义配置，而不会影响生产沙箱。 有关沙箱的更多信息，请参阅[沙箱概述](../sandboxes/home.md)。
+沙箱是单个Experience Platform实例中的虚拟分区。 每个Platform实例都支持多个生产和非生产沙箱，每个沙箱都维护其自己的Platform资源库。 非生产沙箱允许您测试功能、运行实验和进行自定义配置，而不会影响生产沙箱。 有关沙箱的更多信息，请参阅[沙箱概述](../sandboxes/home.md)。
 
 目前，数据科学工作区存在以下沙盒限制：
 
