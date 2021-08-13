@@ -5,9 +5,9 @@ title: 计划查询API端点
 topic-legacy: scheduled queries
 description: 以下各节将介绍您可以使用查询服务API对计划查询进行的各种API调用。
 exl-id: f57dbda5-da50-4812-a924-c8571349f1cd
-source-git-commit: e99b57706bb5bdb0abaf4209a259b478d9406783
+source-git-commit: 0b1afcb23e070209006383d27eb68edcf92d02cd
 workflow-type: tm+mt
-source-wordcount: '1010'
+source-wordcount: '1113'
 ht-degree: 2%
 
 ---
@@ -161,7 +161,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/schedules
 | `query.dbName` | 要为其创建计划查询的数据库名称。 |
 | `query.sql` | 要创建的SQL查询。 |
 | `query.name` | 计划查询的名称。 |
-| `schedule.schedule` | 查询的CRON计划。 有关cron计划的更多信息，请阅读[cron表达式格式](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)文档。 在此示例中，“30 * * * *”表示查询将在30分钟标记下每小时运行一次。 |
+| `schedule.schedule` | 查询的CRON计划。 有关cron计划的更多信息，请阅读[cron表达式格式](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)文档。 在此示例中，“30 * * * *”表示查询将在30分钟标记下每小时运行一次。<br><br>或者，您也可以使用以下简写表达式：<ul><li>`@once`:查询只运行一次。</li><li>`@hourly`:查询在每小时开始时每小时运行一次。这等同于cron表达式`0 * * * *`。</li><li>`@daily`:查询每天午夜运行一次。这等同于cron表达式`0 0 * * *`。</li><li>`@weekly`:该查询每周一次，在星期日的午夜运行。这等同于cron表达式`0 0 * * 0`。</li><li>`@monthly`:查询每月在月的第一天午夜运行一次。这等同于cron表达式`0 0 1 * *`。</li><li>`@yearly`:查询每年1月1日午夜运行一次。这等同于cron表达式`1 0 0 1 1 *`。 |
 | `schedule.startDate` | 计划查询的开始日期，以UTC时间戳写入。 |
 
 **响应**
