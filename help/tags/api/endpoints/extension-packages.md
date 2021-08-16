@@ -1,10 +1,10 @@
 ---
 title: 扩展包端点
 description: 了解如何在Reactor API中调用/extension_packages端点。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 53612919dc040a8a3ad35a3c5c0991554ffbea7c
 workflow-type: tm+mt
-source-wordcount: '741'
-ht-degree: 6%
+source-wordcount: '955'
+ht-degree: 5%
 
 ---
 
@@ -23,6 +23,32 @@ ht-degree: 6%
 ## 快速入门
 
 本指南中使用的端点是[Reactor API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+
+除了了解如何调用Reactor API之外，还务必要了解扩展包的`status`和`availability`属性如何影响您可以对其执行的操作。 下面各节对此进行了说明。
+
+### 状态
+
+扩展包具有三种潜在状态：`pending`、`succeeded`和`failed`。
+
+| 状态 | 描述 |
+| --- | --- |
+| `pending` | 创建扩展包后，其`status`将设置为`pending`。 这表示系统已收到扩展包的信息并将开始处理。 状态为`pending`的扩展包不可用。 |
+| `succeeded` | 如果扩展包成功完成处理，则其状态将更新为`succeeded`。 |
+| `failed` | 如果扩展包完成处理失败，则其状态将更新为`failed`。 状态为`failed`的扩展包可能会更新，直到处理成功为止。 状态为`failed`的扩展包不可用。 |
+
+### 可用性
+
+扩展包的可用性级别包括：`development`、`private`和`public`。
+
+| 可用性 | 描述 |
+| --- | --- |
+| `development` | `development`中的扩展包仅对拥有该扩展包的公司可见，并且在公司中可用。 此外，它只能用于为扩展开发配置的资产。 |
+| `private` | `private`扩展包仅对拥有该扩展包的公司可见，并且只能安装在公司拥有的资产上。 |
+| `public` | `public`扩展包可见，可供所有公司和资产使用。 |
+
+>[!NOTE]
+>
+>创建扩展包后，会将`availability`设置为`development`。 测试完成后，您可以将扩展包转换为`private`或`public`。
 
 ## 检索扩展包列表 {#list}
 
@@ -46,6 +72,7 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
 
@@ -231,6 +258,7 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
 
@@ -441,11 +469,11 @@ curl -X GET \
 }
 ```
 
-## 创建或更新扩展包 {#create}
+## 创建扩展包 {#create}
 
 扩展包是使用Node.js基架工具创建的，并保存在本地计算机上，然后才能提交到Reactor API。 有关配置扩展包的更多信息，请参阅[扩展开发入门](../../extension-dev/getting-started.md)中的指南。
 
-创建扩展包文件后，可以通过POST请求将其提交到Reactor API。 如果API中已存在扩展包，则此调用会将包更新到新版本。
+创建扩展包文件后，可以通过POST请求将其提交到Reactor API。
 
 **API格式**
 
@@ -676,12 +704,12 @@ curl -X POST \
 
 ## 更新扩展包 {#update}
 
-您可以通过在扩展请求的路径中包含扩展包的ID来更新POST包。
+您可以通过在扩展请求的路径中包含扩展包的ID来更新PATCH包。
 
 **API格式**
 
 ```http
-POST /extension_packages/{EXTENSION_PACKAGE_ID}
+PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 ```
 
 | 参数 | 描述 |
@@ -695,7 +723,7 @@ POST /extension_packages/{EXTENSION_PACKAGE_ID}
 与[创建扩展包](#create)一样，必须通过表单数据上载更新包的本地版本。
 
 ```shell
-curl -X POST \
+curl -X PATCH \
   https://reactor.adobe.io/extension_packages/EP10bb503178694d73bc0cd84387b82172 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
@@ -934,7 +962,7 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 通过在请求数据的`meta`中提供值`release_private`的`action`来实现私有版本。
 
 ```shell
-curl -X POST \
+curl -X PATCH \
   https://reactor.adobe.io/extension_packages/EP10bb503178694d73bc0cd84387b82172 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
@@ -1179,7 +1207,7 @@ PATCH /extension_packages/{EXTENSION_PACKAGE_ID}
 通过在请求数据的`meta`中提供值`release_private`的`action`来实现私有版本。
 
 ```shell
-curl -X POST \
+curl -X PATCH \
   https://reactor.adobe.io/extension_packages/EP10bb503178694d73bc0cd84387b82172 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
@@ -1275,6 +1303,7 @@ curl -X GET \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
 
