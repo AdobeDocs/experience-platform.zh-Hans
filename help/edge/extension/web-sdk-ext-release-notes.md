@@ -2,16 +2,24 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 7c30df7ea126ec7c7c794b8daaf3d2b813873b98
+source-git-commit: 40d280eb1d9810d679428ffd42c88035459f2b7d
 workflow-type: tm+mt
-source-wordcount: '1105'
-ht-degree: 53%
+source-wordcount: '1173'
+ht-degree: 51%
 
 ---
 
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[平台Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html)。
+
+## 2.7.0版 — 2021年8月16日
+
+包含 Adobe Experience Platform Web SDK 库的版本 2.6.3。
+
+* 现在，使用身份映射数据元素类型时，其ID解析为未填充字符串值的标识符将自动从身份映射中删除。
+* 修复了尝试使用XDM对象数据元素类型保存数据元素时，未选择架构时可能发生的错误。
+* 改进了用户界面排版规则。
 
 ## 2.6.2版 — 2021年8月4日
 
