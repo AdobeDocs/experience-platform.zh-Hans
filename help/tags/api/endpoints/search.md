@@ -1,10 +1,10 @@
 ---
 title: 搜索端点
 description: 了解如何在Reactor API中调用/search端点。
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+source-git-commit: 53612919dc040a8a3ad35a3c5c0991554ffbea7c
 workflow-type: tm+mt
-source-wordcount: '709'
-ht-degree: 2%
+source-wordcount: '662'
+ht-degree: 1%
 
 ---
 
@@ -43,25 +43,15 @@ Reactor API中的`/search`端点提供了一种查找符合所需条件的资源
 
 本指南中使用的端点是[Reactor API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
 
-## 检索规则列表 {#list}
+## 执行搜索 {#perform}
 
-您可以通过发出GET请求来检索属于某个属性的规则列表。
+您可以通过发出POST请求来执行搜索。
 
 **API格式**
 
 ```http
-GET /properties/{PROPERTY_ID}/rules
+POST /search
 ```
-
-| 参数 | 描述 |
-| --- | --- |
-| `PROPERTY_ID` | 要列出其组件的属性的`id`。 |
-
-{style=&quot;table-layout:auto&quot;}
-
->[!NOTE]
->
->使用查询参数，可以根据以下属性过滤列出的规则：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>有关更多信息，请参阅[筛选响应](../guides/filtering.md)指南。
 
 **请求**
 
@@ -71,6 +61,7 @@ curl -X POST \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -d '{
         "data" : {
