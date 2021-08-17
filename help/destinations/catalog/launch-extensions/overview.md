@@ -3,10 +3,10 @@ keywords: 标记扩展；标记扩展；launch目标；平台标记扩展；平�
 title: 在Adobe Experience Platform中标记扩展
 description: Adobe Experience Platform提供了新一代Adobe标签管理功能。 Platform为您提供了一种简单的方式来部署和管理所有用来改善相关客户体验的分析、营销和广告标签。
 exl-id: 54fca635-0e37-460e-abb3-5da294d4e0cf
-source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
+source-git-commit: 272cf2906b44ccfeca041d9620ac0780e24ad1ae
 workflow-type: tm+mt
-source-wordcount: '514'
-ht-degree: 1%
+source-wordcount: '508'
+ht-degree: 0%
 
 ---
 
@@ -16,7 +16,7 @@ Adobe Experience Platform提供了新一代Adobe标签管理功能。 Platform�
 
 有关标记的简介，请参阅以下资源：
 
-- [标记概述](https://experienceleague.adobe.com/docs/launch/using/home.html?lang=zh-Hans)
+- [标记概述](../../../tags/home.md)
 - [快速入门指南](../../../tags/quick-start/quick-start.md)
 
 ## 如何在Platform界面中查找标记扩展 {#how-to-find-extensions-in-interface}
