@@ -3,9 +3,9 @@ keywords: Google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用在线和离线数据，通过Google自有资产和运营资产(如搜索、购物、Gmail和YouTube)来联系客户并与其重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1252'
 ht-degree: 0%
 
 ---
@@ -131,7 +131,7 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
 在&#x200B;**[!UICONTROL 区段计划]**&#x200B;步骤中，在向[!DNL Google Customer Match]发送[!DNL IDFA]或[!DNL GAID]区段时，必须提供[!UICONTROL 应用程序ID]。
 
