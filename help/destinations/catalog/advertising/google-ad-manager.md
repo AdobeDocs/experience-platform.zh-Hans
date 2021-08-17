@@ -3,9 +3,9 @@ keywords: Google Ad Manager;Google Ad;Doubleclick;DoubleClick AdX;DoubleClick;Go
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告服务平台，它使出版商能够通过视频和移动设备应用程序管理其网站上的广告显示。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 7e2f6f54e754c52c8de7f98372d041b2a6520d46
+source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
 workflow-type: tm+mt
-source-wordcount: '732'
+source-wordcount: '651'
 ht-degree: 2%
 
 ---
@@ -59,19 +59,13 @@ ht-degree: 2%
 * **受众链接ID** :这是你的帐户  [!DNL Google Ad Manager]
 * 您的帐户类型。 由Google或AdX购买者提供的DFP。
 
-## 配置目标
+## 连接到目标 {#connect}
 
-在&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**&#x200B;中，选择&#x200B;**[!DNL Google Ad Manager]**，然后选择&#x200B;**[!UICONTROL 配置]**。
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
 
-![连接Google Ad Manager目标](../../assets/catalog/advertising/google-ad-manager/catalog.png)
+### 连接参数 {#parameters}
 
->[!NOTE]
->
->如果与此目标的连接已存在，则可以在目标卡上看到&#x200B;**[!UICONTROL 激活]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的更多信息，请参阅目标工作区文档的[Catalog](../../ui/destinations-workspace.md#catalog)部分。
-
-在创建目标工作流的&#x200B;**设置**&#x200B;步骤中，填写目标的[!UICONTROL 基本信息]。
-
-![Google Ad Manager的基本信息](../../assets/catalog/advertising/google-ad-manager/setup.png)
+在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
 * **[!UICONTROL 名称]**:填写此目标的首选名称。
 * **[!UICONTROL 描述]**:可选。例如，您可以提及您使用此目标的促销活动。
@@ -79,15 +73,14 @@ ht-degree: 2%
    * 对于[!DNL DoubleClick]，使用`DFP by Google`作为发布者
    * 对[!DNL Google AdX]使用`AdX buyer`
 * **[!UICONTROL 帐户ID]**:使用填写您的帐户ID  [!DNL Google]。这可以是您的网络ID或受众链接ID。 通常，这是一个八位数的ID。
-* **[!UICONTROL 营销操作]**:营销操作指示将数据导出到目标的意图。您可以从Adobe定义的营销操作中进行选择，也可以创建自己的营销操作。 有关营销操作的更多信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
 >[!NOTE]
 >
 >设置[!DNL Google Ad Manager]目标时，请与您的[!DNL Google Account Manager]或Adobe代表合作，了解您拥有的帐户类型。
 
-## 将区段激活到[!DNL Google Ad Manager]
+## 将区段激活到此目标 {#activate}
 
-有关如何将区段激活到[!DNL Google Ad Manager]的说明，请参阅[将数据激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
 
 ## 导出的数据
 
