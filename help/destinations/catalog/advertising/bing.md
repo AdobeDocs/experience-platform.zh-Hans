@@ -3,9 +3,9 @@ keywords: '广告；bing; '
 title: Microsoft Bing连接
 description: 通过Microsoft Bing连接目标，您可以在Microsoft Display Advertising中执行重定位和受众定位的数字营销活动。
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '382'
+source-wordcount: '384'
 ht-degree: 1%
 
 ---
@@ -56,9 +56,9 @@ ht-degree: 1%
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
-在[区段计划](../../ui/activate-destinations.md#segment-schedule)步骤中，您必须手动将区段映射到目标中相应的ID或友好名称。
+在[区段计划](../../ui/activate-segment-streaming-destinations.md#scheduling)步骤中，您必须手动将区段映射到目标中相应的ID或友好名称。
 
 在映射区段时，我们建议您使用[!DNL Platform]区段名称或更短的区段名称，以便于使用。 但是，目标中的区段ID或名称不需要与[!DNL Platform]帐户中的区段ID或名称匹配。 您在映射字段中插入的任何值都将反映在目标中。
 
