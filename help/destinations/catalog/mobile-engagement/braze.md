@@ -3,10 +3,10 @@ keywords: 移动设备；布雷；报文传送；
 title: Braze连接
 description: Braze是一个全面的客户参与平台，可为客户和他们喜爱的品牌之间提供相关且令人难忘的体验。
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 66c3e81dfdbf6f6c3ff9a127fbca8943c0e32279
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '953'
-ht-degree: 1%
+source-wordcount: '789'
+ht-degree: 2%
 
 ---
 
@@ -38,7 +38,7 @@ ht-degree: 1%
 
 作为营销人员，我希望定位移动设备参与目标中的用户，并在[!DNL Adobe Experience Platform]中构建区段。 此外，我希望在[!DNL Adobe Experience Platform]中更新区段和配置文件后，根据[!DNL Adobe Experience Platform]配置文件的属性，尽快向他们提供个性化体验。
 
-## 支持的标识{#supported-identities}
+## 支持的身份 {#supported-identities}
 
 [!DNL Braze] 支持激活下表所述的身份。
 
@@ -46,41 +46,28 @@ ht-degree: 1%
 |---|---|---|
 | external_id | 支持映射任何标识的自定义[!DNL Braze]标识符。 | 只要您将任何[identity](../../../identity-service/namespaces.md)映射到[!DNL Braze] [`external_id`](https://www.braze.com/docs/api/basics/#external-user-id-explanation)，就可以将任何标识发送到[!DNL Braze]目标。 |
 
-## 导出类型{#export-type}
+## 导出类型 {#export-type}
 
 **[!DNL Profile-based]**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)和/或身份，具体取决于字段映射。[!DNL Adobe Experience Platform] 区段将导出到 [!DNL Braze] 属性下 `AdobeExperiencePlatformSegments` 的。
 
-## 连接到目标{#connect-destination}
+## 连接到目标 {#connect}
 
-在&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**&#x200B;中，选择[!DNL Braze]，然后选择&#x200B;**[!UICONTROL 配置]**。
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
 
-![配置布雷目标](../../assets/catalog/mobile-engagement/braze/configure.png)
+### 连接参数 {#parameters}
 
->[!NOTE]
->
->如果与此目标的连接已存在，则可以在目标卡上看到&#x200B;**[!UICONTROL 激活]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的更多信息，请参阅目标工作区文档的[Catalog](../../ui/destinations-workspace.md#catalog)部分。
->
->![激活布雷兹目标](../../assets/catalog/mobile-engagement/braze/activate.png)
+在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
-在[!UICONTROL 帐户]步骤中，您需要提供[!DNL Braze]帐户令牌。 这是您的[!DNL Braze] [!DNL API]键。 您可以在此处找到如何获取[!DNL API]键的详细说明：[REST API密钥概述](https://www.braze.com/docs/api/api_key/)。 输入令牌，然后单击&#x200B;**[!UICONTROL 连接到目标]**。
-
-![冻结目标帐户步骤](../../assets/catalog/mobile-engagement/braze/account.png)
-
-单击&#x200B;**[!UICONTROL 下一步]**。在[!UICONTROL 身份验证]步骤中，您需要输入[!DNL Braze]连接详细信息：
+* **[!UICONTROL Braze帐户令牌]**:这是你的 [!DNL Braze] [!DNL API] 钥匙。您可以在此处找到如何获取[!DNL API]键的详细说明：[REST API密钥概述](https://www.braze.com/docs/api/api_key/)。
 * **[!UICONTROL 名称]**:输入一个名称，在将来，您将通过该名称来识别此目标。
 * **[!UICONTROL 描述]**:输入描述，以帮助您在将来标识此目标。
 * **[!UICONTROL 端点实例]**:请咨询您 [!DNL Braze] 的代表您应使用哪个端点实例。
-* **[!UICONTROL 营销操作]**:营销操作指示将数据导出到目标的意图。您可以从Adobe定义的营销操作中进行选择，也可以创建自己的营销操作。 有关营销操作的更多信息，请参阅[Adobe Experience Platform中的数据管理](../../../data-governance/policies/overview.md)页面。 有关单个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
-![Braze身份验证步骤](../../assets/catalog/mobile-engagement/braze/authentication.png)
+## 将区段激活到此目标 {#activate}
 
-单击&#x200B;**[!UICONTROL 创建目标]**。 您的目标现已创建完成。 如果要稍后激活区段，可以单击&#x200B;**[!UICONTROL 保存并退出]**，也可以选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续工作流并选择要激活的区段。 无论哪种情况，请参阅下一节（[激活区段](#activate-segments)），以了解工作流的其余部分。
+有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
 
-## 激活区段{#activate-segments}
-
-请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md#select-attributes) ，以了解有关区段激活工作流的信息。
-
-## 字段映射{#field-mapping}
+## 映射注意事项 {#mapping-considerations}
 
 要将受众数据从[!DNL Adobe Experience Platform]正确发送到[!DNL Braze]目标，您需要完成字段映射步骤。
 
@@ -127,7 +114,7 @@ ht-degree: 1%
 
 要添加更多映射，请重复上述步骤。
 
-## 映射示例{#mapping-example}
+## 映射示例 {#mapping-example}
 
 假设您的XDM配置文件架构和[!DNL Braze]实例包含以下属性和标识：
 
@@ -140,10 +127,10 @@ ht-degree: 1%
 
 ![布雷兹目标映射示例](../../assets/catalog/mobile-engagement/braze/mapping-example.png)
 
-## 导出的数据{#exported-data}
+## 导出的数据 {#exported-data}
 
 要验证数据是否已成功导出到[!DNL Braze]目标，请检查您的[!DNL Braze]帐户。 [!DNL Adobe Experience Platform] 区段将导出到 [!DNL Braze] 属性下 `AdobeExperiencePlatformSegments` 的。
 
-## 数据使用和管理{#data-usage-governance}
+## 数据使用和管理 {#data-usage-governance}
 
 处理数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据管理的详细信息，请参阅[数据管理概述](../../../data-governance/home.md)。
