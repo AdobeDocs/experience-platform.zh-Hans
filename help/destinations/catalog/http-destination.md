@@ -1,15 +1,14 @@
 ---
 keywords: 流；
 title: HTTP连接
-description: Adobe Experience Platform中的HTTP目标允许您将用户档案数据发送到第三方HTTP端点。
-translation-type: tm+mt
-source-git-commit: 709908196bb5df665c7e7df10dc58ee9f3b0edbf
+description: 利用Adobe Experience Platform中的HTTP目标，可将配置文件数据发送到第三方HTTP端点。
+exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
+source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
 workflow-type: tm+mt
-source-wordcount: '510'
-ht-degree: 2%
+source-wordcount: '361'
+ht-degree: 3%
 
 ---
-
 
 # (Alpha)[!DNL HTTP]连接
 
@@ -19,68 +18,53 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-[!DNL HTTP]目标是[!DNL Adobe Experience Platform]流目标，可帮助您将用户档案数据发送到第三方[!DNL HTTP]端点。
+[!DNL HTTP]目标是一个[!DNL Adobe Experience Platform]流目标，可帮助您将用户档案数据发送到第三方[!DNL HTTP]端点。
 
-要将用户档案数据发送到[!DNL HTTP]终结点，必须首先连接到[[!DNL Adobe Experience Platform]](#connect-destination)中的目标。
+要向[!DNL HTTP]端点发送用户档案数据，您必须先连接到[[!DNL Adobe Experience Platform]](#connect-destination)中的目标。
 
 ## 用例 {#use-cases}
 
-[!DNL HTTP]目标针对需要将XDM用户档案数据和受众段导出到通用[!DNL HTTP]端点的客户。
+[!DNL HTTP]目标面向需要将XDM配置文件数据和受众区段导出到通用[!DNL HTTP]端点的客户。
 
 [!DNL HTTP] 端点可以是客户自己的系统或第三方解决方案。
 
-## 连接到目标{#connect-destination}
+## 连接到目标 {#connect}
 
-在&#x200B;**[!UICONTROL Connections]** > **[!UICONTROL Destinations]**&#x200B;中，选择[!DNL HTTP API]，然后选择&#x200B;**[!UICONTROL Configure]**。
+要连接到此目标，请按照[目标配置教程](../ui/connect-destination.md)中描述的步骤操作。
 
-![激活HTTP目标](../assets/catalog/http/activate.png)
+### 连接参数 {#parameters}
 
-如果与此目标的连接已存在，您可以在目标卡上看到&#x200B;**[!UICONTROL Activate]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的详细信息，请参阅目标工作区文档的[目录](../ui/destinations-workspace.md#catalog)部分。
+在[设置](../ui/connect-destination.md)此目标时，必须提供以下信息：
 
-![激活HTTP目标](../assets/catalog/http/connect.png)
+* **[!UICONTROL httpEndpoint]**:要 [!DNL URL] 将用户档案数据发送到的HTTP端点的。
+   * 或者，您也可以将查询参数添加到[!UICONTROL httpEndpoint] [!DNL URL]。
+* **[!UICONTROL authEndpoint]**:用于 [!DNL URL] 身份验证的HTTP端点的 [!DNL OAuth2] 。
+* **[!UICONTROL 客户端ID]**:客户 [!DNL clientID] 端凭据中使 [!DNL OAuth2] 用的参数。
+* **[!UICONTROL 客户端密钥]**:客户 [!DNL clientSecret] 端凭据中使 [!DNL OAuth2] 用的参数。
 
-在[!UICONTROL Account]步骤中，您需要定义HTTP端点连接详细信息。 选择&#x200B;**[!UICONTROL New account]**&#x200B;并输入要连接到的HTTP端点的连接详细信息。
-- **[!UICONTROL httpEndpoint]**:要 [!DNL URL] 将用户档案数据发送到的HTTP端点的完整。
-   - 或者，您也可以将查询参数添加到[!UICONTROL httpEndpoint] [!DNL URL]。
-- **[!UICONTROL authEndpoint]**:用于 [!DNL URL] 身份验证的HTTP端点的完 [!DNL OAuth2] 整。
-- **[!UICONTROL Client ID]**:客户端 [!DNL clientID] 凭据中使用 [!DNL OAuth2] 的参数。
-- **[!UICONTROL Client Secret]**:客户端 [!DNL clientSecret] 凭据中使用 [!DNL OAuth2] 的参数。
+   >[!NOTE]
+   >
+   >当前仅支持[!DNL OAuth2]客户端凭据。
 
->[!NOTE]
->
->当前仅支持[!DNL OAuth2]客户端凭据。
+* **[!UICONTROL 名称]**:输入一个名称，在将来，您将通过该名称来识别此目标。
+* **[!UICONTROL 描述]**:输入描述，以帮助您在将来标识此目标。
+* **[!UICONTROL 自定义标题]**:按照以下格式，输入要包含在目标调用中的任何自定义标头： `header1:value1,header2:value2,...headerN:valueN`.
 
-![HTTP端点连接](../assets/catalog/http/connect.png)
+   >[!IMPORTANT]
+   >
+   >当前实施至少需要一个自定义标头。 此限制将在将来的更新中解决。
 
-单击 **[!UICONTROL Connect to destination]**。连接成功后，单击&#x200B;**[!UICONTROL Next]**。
+## 将区段激活到此目标 {#activate}
 
-在[!UICONTROL Authentication]步骤中，输入帐户身份验证凭据：
-- **[!UICONTROL Name]**:输入一个名称，您将通过该名称在将来识别此目标。
-- **[!UICONTROL Description]**:输入说明，帮助您在将来识别此目标。
-- **[!UICONTROL Custom Headers]**:按照以下格式输入要包含在目标调用中的任何自定义标头： `header1:value1,header2:value2,...headerN:valueN`.
-- **[!UICONTROL Marketing actions]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](/help/data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](/help/data-governance/policies/overview.md)。
+有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../ui/activate-destinations.md#select-attributes)。
 
->[!IMPORTANT]
->
->当前实现至少需要一个自定义标头。 此限制将在将来的更新中解决。
+## 目标属性 {#attributes}
 
-![HTTP身份验证](../assets/catalog/http/authenticate.png)
+在[[!UICONTROL 选择属性]](../ui/activate-destinations.md#select-attributes)步骤中，当[将区段](../ui/activate-destinations.md)激活到[!DNL HTTP]目标时，Adobe建议您从[并集架构](../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。
 
-**[!UICONTROL Marketing action]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅[数据使用策略概述](../../data-governance/policies/overview.md)。
+## 导出的数据 {#exported-data}
 
-单击 **[!UICONTROL Create destination]**。
-
-## 激活区段
-
-有关区段用户档案工作流的信息，请参阅[将激活和区段激活到目标](../ui/activate-destinations.md#select-attributes)。
-
-## 目标属性
-
-在[[!UICONTROL Select attributes]](../ui/activate-destinations.md#select-attributes)步骤中，当[将区段](../ui/activate-destinations.md)激活到[!DNL HTTP]目标时，建议您从[合并模式](../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。
-
-## 导出的数据{#exported-data}
-
-导出的[!DNL Experience Platform]数据以JSON格式进入您的[!DNL HTTP]目标。 例如，以下事件包含符合特定区段条件并退出另一区段的受众的电子邮件地址用户档案属性。 此潜在客户的标识为[!DNL ECID]和电子邮件。
+导出的[!DNL Experience Platform]数据以JSON格式登陆到[!DNL HTTP]目标中。 例如，以下事件包含符合特定区段资格并退出另一个区段的受众的电子邮件地址配置文件属性。 此潜在客户的标识为[!DNL ECID]和电子邮件。
 
 ```json
 {
