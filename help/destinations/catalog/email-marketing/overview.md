@@ -4,9 +4,9 @@ title: 电子邮件营销目标概述
 type: Tutorial
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，例如发送促销电子邮件活动。
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '382'
+source-wordcount: '387'
 ht-degree: 4%
 
 ---
@@ -70,9 +70,9 @@ Adobe建议您从[并集架构](../../../profile/home.md#profile-fragments-and-u
 
 ## 将区段激活到电子邮件营销目标 {#activate}
 
-有关如何将区段激活到电子邮件营销目标的说明，请参阅[将用户档案和区段激活到目标](../../ui/activate-destinations.md)。
+有关如何将区段激活到电子邮件营销目标的说明，请参阅[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
 
 ## 其他资源
 
-* [将数据激活到目标](../../ui/activate-destinations.md)
+* [激活受众数据以批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)
 * [使用流量服务API创建电子邮件营销目标并激活数据](../../api/email-marketing.md)
