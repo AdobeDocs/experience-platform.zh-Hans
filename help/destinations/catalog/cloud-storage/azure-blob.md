@@ -3,9 +3,9 @@ keywords: Azure Blob;Blob目标；s3;Azure Blob目标
 title: Azure Blob连接
 description: 创建到Azure Blob存储的实时出站连接，以定期从Adobe Experience Platform导出制表符分隔或CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: 8d1594aeb1d6671eec187643245d940ed3ff74cd
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '416'
+source-wordcount: '400'
 ht-degree: 1%
 
 ---
@@ -25,13 +25,13 @@ ht-degree: 1%
    * [模式编辑器教程](../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
 * [[!DNL Real-time Customer Profile]](../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 
-如果您已经拥有有效的[!DNL Blob]目标，则可以跳过本文档的其余部分，并继续阅读有关[将区段激活到目标](../../ui/activate-destinations.md)的教程。
+如果您已经拥有有效的[!DNL Blob]目标，则可以跳过本文档的其余部分，并继续阅读有关[将区段激活到目标](../../ui/activate-batch-profile-destinations.md)的教程。
 
 ## 支持的文件格式 {#file-formats}
 
 [!DNL Experience Platform] 支持以下要导出到的文件格式 [!DNL Blob]:
 
-* 分隔符分隔值(DSV):目前，对DSV格式化数据文件的支持仅限于逗号分隔值。 将来将提供对一般DSV文件的支持。 有关受支持文件的更多信息，请阅读教程中关于[激活目标](../../ui/activate-destinations.md#esp-and-cloud-storage)的云存储部分。
+* 分隔符分隔值(DSV):目前，对DSV格式化数据文件的支持仅限于逗号分隔值。 将来将提供对一般DSV文件的支持。
 
 ## 连接到目标 {#connect}
 
@@ -54,4 +54,4 @@ ht-degree: 1%
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
