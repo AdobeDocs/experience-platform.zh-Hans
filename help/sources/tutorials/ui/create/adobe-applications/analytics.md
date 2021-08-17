@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 952b2caa6983b331c046618aff255131a6480e67
+source-git-commit: 0af9290a3143b85311fbbd8d194f4799b0c9a873
 workflow-type: tm+mt
-source-wordcount: '1450'
+source-wordcount: '1441'
 ht-degree: 1%
 
 ---
@@ -134,7 +134,7 @@ ht-degree: 1%
 
 * [数据准备概述](../../../../../data-prep/home.md)
 * [数据准备映射函数](../../../../../data-prep/functions.md)
-* [将CSV文件映射到XDM架构并添加计算字段](../../../../../ingestion/tutorials/map-a-csv-file.md#add-calculated-field)
+* [添加计算字段](../../../../../data-prep/calculated-fields.md)
 
 ### 提供数据流详细信息
 
