@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;Kinesis目标；Kinesis
 title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '550'
+source-wordcount: '552'
 ht-degree: 2%
 
 ---
@@ -36,7 +36,7 @@ ht-degree: 2%
 
 ## 导出类型 {#export-type}
 
-**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性”屏幕 [中选择](../../ui/activate-destinations.md#select-attributes)。
+**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从受众激活工作流的“选择属性”屏幕 [中选择](../../ui/activate-streaming-profile-destinations.md#select-attributes)。
 
 ## 所需的[!DNL Amazon Kinesis]权限 {#required-kinesis-permission}
 
@@ -101,7 +101,7 @@ ht-degree: 2%
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流配置文件导出目标](../../ui/activate-streaming-profile-destinations.md)。
 
 ## 导出的数据 {#exported-data}
 
