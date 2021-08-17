@@ -6,9 +6,9 @@ description: 本文档介绍了如何使用Adobe Experience Platform API创建�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 0bc85d79bab690d433dc29d558a4d9caf086586d
+source-git-commit: 02c22453470d55236d4235c479742997e8407ef3
 workflow-type: tm+mt
-source-wordcount: '2024'
+source-wordcount: '2025'
 ht-degree: 1%
 
 ---
@@ -25,9 +25,9 @@ ht-degree: 1%
 
 ![概述 — 创建流目标和激活区段的步骤](../assets/api/streaming-destination/overview.png)
 
-如果您希望使用Platform中的用户界面连接到目标并激活数据，请参阅[连接目标](../ui/connect-destination.md)和[激活配置文件和区段到目标](../ui/activate-destinations.md)教程。
+如果您希望使用Platform中的用户界面连接到目标并激活数据，请参阅[连接目标](../ui/connect-destination.md)和[将受众数据激活到流区段导出目标](../ui/activate-segment-streaming-destinations.md)教程。
 
-## 入门
+## 快速入门
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
