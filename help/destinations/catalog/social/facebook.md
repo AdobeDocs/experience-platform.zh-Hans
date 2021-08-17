@@ -3,9 +3,9 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据经过哈希处理的电子邮件，激活Facebook营销活动的用户档案以进行受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '1257'
+source-wordcount: '1259'
 ht-degree: 2%
 
 ---
@@ -130,7 +130,7 @@ ht-degree: 2%
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
 在&#x200B;**[!UICONTROL 区段计划]**&#x200B;步骤中，向[!DNL Facebook Custom Audiences]发送区段时，必须提供[!UICONTROL 受众的来源]。
 
