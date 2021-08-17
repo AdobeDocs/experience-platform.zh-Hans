@@ -3,9 +3,9 @@ keywords: 流；
 title: HTTP连接
 description: 利用Adobe Experience Platform中的HTTP目标，可将配置文件数据发送到第三方HTTP端点。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '361'
+source-wordcount: '357'
 ht-degree: 3%
 
 ---
@@ -56,11 +56,11 @@ ht-degree: 3%
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../ui/activate-destinations.md#select-attributes)。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流配置文件导出目标](../ui/activate-streaming-profile-destinations.md)。
 
-## 目标属性 {#attributes}
+### 目标属性 {#attributes}
 
-在[[!UICONTROL 选择属性]](../ui/activate-destinations.md#select-attributes)步骤中，当[将区段](../ui/activate-destinations.md)激活到[!DNL HTTP]目标时，Adobe建议您从[并集架构](../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。
+在[[!UICONTROL 选择属性]](../ui/activate-streaming-profile-destinations.md#select-attributes)步骤中，Adobe建议您从[并集架构](../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。
 
 ## 导出的数据 {#exported-data}
 
