@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: 将受众数据激活到流区段导出目标
 description: 了解如何通过将区段映射到区段流目标，来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: 了解如何通过将区段映射到区段流目标，来激活您在Adobe Experience Platform中拥有的受众数据。
-source-git-commit: 02c22453470d55236d4235c479742997e8407ef3
+source-git-commit: 65e74041aeb285cb80c67e47ccdaca18de9889fa
 workflow-type: tm+mt
-source-wordcount: '1145'
+source-wordcount: '1165'
 ht-degree: 0%
 
 ---
@@ -42,6 +42,11 @@ ht-degree: 0%
 ![选择区段](../assets/ui/activate-segment-streaming-destinations/select-segments.png)
 
 ## 映射属性和标识 {#mapping}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_applytransformation"
+>title="应用转换"
+>abstract="使用未哈希源字段时，请勾选此选项，以使Adobe Experience Platform在激活时自动对它们进行哈希处理。"
 
 >[!IMPORTANT]
 >
