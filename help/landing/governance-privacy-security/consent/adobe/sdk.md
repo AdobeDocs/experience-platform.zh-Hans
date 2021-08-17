@@ -3,10 +3,10 @@ title: 使用Adobe Experience Platform Web SDK处理客户同意数据
 topic-legacy: getting started
 description: 了解如何使用Adobe Experience Platform 2.0标准集成Adobe Experience Platform Web SDK以在Adobe中处理客户同意数据。
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 272cf2906b44ccfeca041d9620ac0780e24ad1ae
 workflow-type: tm+mt
-source-wordcount: '1254'
-ht-degree: 1%
+source-wordcount: '1247'
+ht-degree: 0%
 
 ---
 
@@ -93,7 +93,7 @@ ht-degree: 1%
 
 ### 在您的网站上部署扩展
 
-配置完该扩展后，即可将其集成到您的网站中。 有关如何部署更新的库内部版本的详细信息，请参阅标记文档中的[发布指南](https://experienceleague.adobe.com/docs/launch/using/publish/overview.html?lang=zh-Hans)。
+配置完该扩展后，即可将其集成到您的网站中。 有关如何部署更新的库内部版本的详细信息，请参阅标记文档中的[发布指南](../../../../tags/ui/publishing/overview.md)。
 
 ## 发出同意更改命令 {#commands}
 
