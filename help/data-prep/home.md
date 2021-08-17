@@ -5,9 +5,9 @@ title: 数据准备概述
 topic-legacy: overview
 description: 本文档介绍了Adobe Experience Platform中的数据准备。
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-source-git-commit: 764b8e8a120ab53e7d39202b47d7c6f0195193a2
+source-git-commit: f8ad7ce2ed5a45fa0200715a2b961d75f17d192c
 workflow-type: tm+mt
-source-wordcount: '492'
+source-wordcount: '547'
 ht-degree: 0%
 
 ---
@@ -34,6 +34,12 @@ ht-degree: 0%
 映射是输入属性或计算字段与一个XDM属性的关联。 通过创建单个映射，可以将单个属性映射到多个XDM属性。
 
 要了解有关不同映射函数的更多信息，请阅读[映射函数指南](./functions.md)。
+
+### 计算字段
+
+计算量度字段允许根据输入架构中的属性创建值。 然后，可以将这些值分配给目标架构中的属性，并提供名称和说明，以便更便于引用。
+
+要了解有关计算字段的更多信息，请阅读[计算字段指南](./functions.md#calculated-fields)。
 
 ## 映射集
 
