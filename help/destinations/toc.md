@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: 目标
-source-git-commit: f73598224d527535aaf9ecb2aa1c26786cae2d82
+source-git-commit: 0fef443c1979fec0c0d239a0b630cb3a0a134402
 workflow-type: tm+mt
-source-wordcount: '467'
+source-wordcount: '492'
 ht-degree: 11%
 
 ---
@@ -21,9 +21,13 @@ ht-degree: 11%
    * [连接到电子邮件营销目标，并使用流量服务API激活数据](./api/email-marketing.md)
 * UI指南{#ui}
    * [目标工作区](./ui/destinations-workspace.md)
-   * [连接到目标](./ui/connect-destination.md)
+   * [创建新目标连接](./ui/connect-destination.md)
+   * 将受众数据激活到目标{#activate}
+      * [激活概述](./ui/activation-overview.md)
+      * [将受众数据激活到流区段导出目标](./ui/activate-segment-streaming-destinations.md)
+      * [将受众数据激活到流配置文件导出目标](./ui/activate-streaming-profile-destinations.md)
+      * [激活受众数据以批量配置文件导出目标](./ui/activate-batch-profile-destinations.md)
    * [查看目标详细信息](./ui/destination-details-page.md)
-   * [将用户档案和区段激活到目标](./ui/activate-destinations.md)
    * [更新目标帐户](./ui/update-accounts.md)
    * [编辑激活流](./ui/edit-activation.md)
    * [删除目标](./ui/delete-destinations.md)
