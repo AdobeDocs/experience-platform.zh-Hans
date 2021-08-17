@@ -5,9 +5,9 @@ topic-legacy: overview
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 36aaccddeb207e22a22d5124ec8592ac8dddf8bc
+source-git-commit: f340ecfb850ef50504938a5db136e70b8bede61a
 workflow-type: tm+mt
-source-wordcount: '1307'
+source-wordcount: '1320'
 ht-degree: 2%
 
 ---
@@ -109,6 +109,7 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 | [!DNL Data Governance] | [!UICONTROL 应用数据使用情况标签] | 访问读取、创建和删除使用情况标签。 |
 | [!DNL Data Governance] | [!UICONTROL 管理数据使用策略] | 访问读取、创建、编辑和删除数据使用策略。 |
 | [!DNL Data Governance] | [!UICONTROL 查看数据使用策略] | 对属于贵组织的数据使用策略的只读访问权限。 |
+| [!DNL Data Governance] | [!UICONTROL 查看审核日志] | 对查看记录的平台活动[审核日志](../landing/governance-privacy-security/audit-logs/overview.md)的只读访问权限。 |
 | [!DNL Dashboards] | [!UICONTROL 查看许可证使用情况功能板] | 以只读方式访问许可证使用功能板。 |
 | [!DNL Dashboards] | [!UICONTROL 管理标准功能板] | 添加data warehouse中尚未包含的自定义属性。 |
 | [!DNL Query Service] | [!UICONTROL 管理查询] | 访问读取、创建、编辑和删除Platform数据的结构化SQL查询。 |
