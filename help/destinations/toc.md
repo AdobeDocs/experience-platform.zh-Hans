@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: 目标
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: f73598224d527535aaf9ecb2aa1c26786cae2d82
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '467'
 ht-degree: 11%
 
 ---
@@ -79,7 +79,6 @@ ht-degree: 11%
       * [Yext转化跟踪扩展](./catalog/analytics/yext.md)
    * 云存储目标{#cloud-storage}
       * [云存储目标概述](./catalog/cloud-storage/overview.md)
-      * [创建云存储目标](./catalog/cloud-storage/workflow.md)
       * [(Beta)Amazon Kinesis连接](./catalog/cloud-storage/amazon-kinesis.md)
       * [Amazon S3连接](./catalog/cloud-storage/amazon-s3.md)
       * [Azure Blob连接](./catalog/cloud-storage/azure-blob.md)
@@ -119,7 +118,6 @@ ht-degree: 11%
       * [Marketo Web个性化扩展](./catalog/personalization/marketo-web-personalization.md)
    * 社交目标{#social}
       * [社交目标概述](./catalog/social/overview.md)
-      * [创建社交目标](./catalog/social/workflow.md)
       * [AdobeLivefyre扩展](./catalog/social/adobe-livefyre.md)
       * [Facebook连接](./catalog/social/facebook.md)
       * [linkedIn匹配的受众连接](./catalog/social/linkedin.md)
