@@ -3,9 +3,9 @@ keywords: 广告；交易台；广告交易台
 title: 交易台连接
 description: 交易台是一个自助平台，可让广告购买者跨展示、视频和移动设备库存源执行重定位和受众定位的数字促销活动。
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '482'
+source-wordcount: '484'
 ht-degree: 2%
 
 ---
@@ -63,9 +63,9 @@ ht-degree: 2%
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
-在[区段计划](../../ui/activate-destinations.md#segment-schedule)步骤中，您必须在目标平台中手动将区段映射到其相应的ID或友好名称。
+在[区段计划](../../ui/activate-segment-streaming-destinations.md#scheduling)步骤中，您必须在目标平台中手动将区段映射到其相应的ID或友好名称。
 
 在映射区段时，我们建议您使用平台区段名称或更短的区段名称，以便于使用。 但是，目标中的区段ID或名称不需要与Platform帐户中的区段ID或名称匹配。 您在映射字段中插入的任何值都将反映在目标中。
 
