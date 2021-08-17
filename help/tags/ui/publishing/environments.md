@@ -1,9 +1,9 @@
 ---
 title: 环境
 description: 了解标记环境的概念及其在Adobe Experience Platform中的工作方式。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 272cf2906b44ccfeca041d9620ac0780e24ad1ae
 workflow-type: tm+mt
-source-wordcount: '1483'
+source-wordcount: '1468'
 ht-degree: 71%
 
 ---
@@ -128,7 +128,7 @@ ht-degree: 71%
 
 #### 同步部署
 
-浏览器使用同步部署读取嵌入代码时，它会先检索并执行标记库，然后再继续加载页面。 这也是 [Dynamic Tag Management (DTM)](https://experienceleague.adobe.com/docs/dtm/using/dtm-home.html?lang=zh-Hans) 的工作方式。
+浏览器使用同步部署读取嵌入代码时，它会先检索并执行标记库，然后再继续加载页面。
 
 同步嵌入代码由两个 `<script>` 标记组成，这些标记必须放置在网站的 HTML 中。必须将其中一个 `<script>` 标记放置在文档 `<head>` 中，同时将另一个标记放置在紧靠结束标记 `</body>` 之前。
 
