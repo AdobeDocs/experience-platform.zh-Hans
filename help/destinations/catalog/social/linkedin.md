@@ -3,9 +3,9 @@ keywords: linkedin连接；linkedin连接；linkedin目标；linkedin;
 title: Linkedin匹配的受众连接
 description: 根据经过哈希处理的电子邮件，激活LinkedIn营销活动的用户档案以进行受众定位、个性化和抑制。
 exl-id: 74c233e9-161a-4e4a-98ef-038a031feff0
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '766'
+source-wordcount: '768'
 ht-degree: 0%
 
 ---
@@ -71,7 +71,7 @@ ht-degree: 0%
 >未哈希命名空间中的数据在激活后由[!DNL Platform]自动进行哈希处理。
 > 属性源数据不会自动进行哈希处理。
 > 
-> 在[身份映射](../../ui/activate-destinations.md#mapping)步骤中，当源字段包含未哈希属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。
+> 在[身份映射](../../ui/activate-segment-streaming-destinations.md#mapping)步骤中，当源字段包含未哈希属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。
 > 
 > 仅当选择属性作为源字段时，才会显示&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项。 选择命名空间时，不会显示该参数。
 
@@ -99,7 +99,7 @@ ht-degree: 0%
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
 ## 导出的数据 {#exported-data}
 
