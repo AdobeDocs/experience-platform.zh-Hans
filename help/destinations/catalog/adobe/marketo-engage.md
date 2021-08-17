@@ -1,9 +1,9 @@
 ---
 title: Marketo Engage目标
 description: Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户体验管理(CXM)解决方案。 它让您能够自动执行和管理活动，从CRM潜在客户管理和客户参与到基于帐户的营销和收入归因中。
-source-git-commit: 9b1c805f0717d0ed2c5759420d20abf5dcdeaabc
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '325'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户
 
 区段连接器允许营销人员将在Adobe Experience Platform中创建的区段推送到Marketo，在那里，这些区段将显示为静态列表。
 
-## 支持的标识 {#supported-identities}
+## 支持的身份 {#supported-identities}
 
 | Target标识 | 描述 |
 |---|---|
@@ -36,6 +36,14 @@ Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户
 
 有关如何设置目标[的说明，请参阅此处](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html?lang=en)。
 
+## 连接到目标 {#connect}
+
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
+
 ## 数据使用和管理 {#data-usage-governance}
 
 处理数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据管理的详细信息，请参阅[数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html)。
+
+## 将区段激活到此目标 {#activate}
+
+有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
