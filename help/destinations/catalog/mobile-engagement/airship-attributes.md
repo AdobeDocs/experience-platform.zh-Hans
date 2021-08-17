@@ -3,9 +3,9 @@ keywords: 飞艇属性；飞艇目的地
 title: 飞艇属性连接
 description: 将Adobe受众数据无缝地作为受众属性传递到Airship，以便在Airship中进行定位。
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '720'
+source-wordcount: '726'
 ht-degree: 1%
 
 ---
@@ -69,7 +69,7 @@ Adobe Experience Platform配置文件属性与[!DNL Airship]属性类似，并�
 
 ## 连接到目标 {#connect}
 
-要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
 ### 连接参数 {#parameters}
 
@@ -82,7 +82,7 @@ Adobe Experience Platform配置文件属性与[!DNL Airship]属性类似，并�
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
 ## 映射注意事项 {#mapping-considerations}
 
