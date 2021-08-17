@@ -1,7 +1,7 @@
 ---
 title: 规则
 description: 了解标记扩展在Adobe Experience Platform中的工作方式。
-source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
+source-git-commit: 272cf2906b44ccfeca041d9620ac0780e24ad1ae
 workflow-type: tm+mt
 source-wordcount: '1977'
 ht-degree: 77%
@@ -168,7 +168,7 @@ Adobe 无法保证会实际触发任何其他规则，并且会需要其操作�
 * **JavaScript：** JavaScript 将作为常规文本从服务器加载，封装在脚本标记中，并使用 Postscribe 添加到文档中。如果规则具有多个 JavaScript 自定义脚本，则它们将同时从服务器加载，但会以规则中配置的顺序执行。
 * **HTML：** HTML 将从服务器加载，并使用 Postscribe 添加到文档中。如果规则具有多个自定义 HTML 脚本，则它们将同时从服务器加载，但会以规则中配置的顺序执行。
 
-## 规则组件排序
+## 规则组件排序 {#sequencing}
 
 标记运行时环境的行为取决于&#x200B;**[!UICONTROL 按顺序]**&#x200B;运行规则组件是否针对您的资产启用或关闭。
 
