@@ -1,11 +1,11 @@
 ---
-keywords: Azure事件集线器目标；Azure事件集线器；azure eventhub
-title: （测试版）！DNL Azure 事件集线器]连接
-description: 创建到！DNL Azure 事件 Hubs]存储的实时出站连接，以流化来自Experience Platform的数据。
+keywords: Azure事件中心目标；Azure事件中心；Azure事件Hub
+title: （测试版）！DNL Azure Event Hubs]连接
+description: 创建到！DNL Azure Event Hubs]存储的实时出站连接，以从Experience Platform流数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 7f15da092928ed09f898c9197c4679e834b11779
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '474'
 ht-degree: 2%
 
 ---
@@ -18,55 +18,47 @@ ht-degree: 2%
 >
 >平台中的[!DNL Azure Event Hubs]目标当前处于测试阶段。 文档和功能可能会发生变化。
 
-[!DNL Azure Event Hubs] 是大数据流平台和事件摄取服务。它每秒可以接收和处理数百万个事件。 通过使用任何实时分析提供者或批处理/存储适配器，可以转换和存储发送到事件中心的数据。
+[!DNL Azure Event Hubs] 是一种大数据流平台和事件摄取服务。它每秒可以接收和处理数百万个事件。 通过使用任何实时分析提供程序或批量处理/存储适配器，可以转换和存储发送到事件中心的数据。
 
-您可以创建到[!DNL Azure Event Hubs]存储的实时出站连接以从Adobe Experience Platform流化数据。
+您可以创建到[!DNL Azure Event Hubs]存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 
-* 有关[!DNL Azure Event Hubs]的详细信息，请参阅[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about)。
+* 有关[!DNL Azure Event Hubs]的更多信息，请参阅[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about)。
 * 要以编程方式连接到[!DNL Azure Event Hubs]，请参阅[流目标API教程](../../api/streaming-destinations.md)。
-* 要使用平台用户界面连接到[!DNL Azure Event Hubs]，请参阅以下部分。
+* 要使用Platform用户界面连接到[!DNL Azure Event Hubs]，请参阅以下部分。
 
 ![AWS Kinesis在UI中](../../assets/catalog/cloud-storage/event-hubs/catalog.png)
 
 ## 用例 {#use-cases}
 
-通过使用流目标（如[!DNL Azure Event Hubs]），您可以轻松将高价值细分事件和关联的用户档案属性馈送到您选择的系统中。
+通过使用[!DNL Azure Event Hubs]等流目标，您可以轻松地将高价值分段事件和关联的配置文件属性馈送到您选择的系统中。
 
-例如，潜在客户下载了一份白皮书，使其符合“高倾向转换”区段的条件。 通过将潜在客户所属的区段映射到[!DNL Azure Event Hubs]目标，您将在[!DNL Azure Event Hubs]中收到此事件。 在这里，您可以采用自己动手的方法，在事件上描述业务逻辑，因为您认为最适合您的企业IT系统。
+例如，潜在客户下载了一份白皮书，使其符合“高倾向转化”区段的条件。 通过将潜在客户所在的区段映射到[!DNL Azure Event Hubs]目标，您将在[!DNL Azure Event Hubs]中收到此事件。 在这里，您可以采用DIY（自己动手）方法，并在活动之上描述业务逻辑，因为您认为最适合企业IT系统。
 
-## 导出类型{#export-type}
+## 导出类型 {#export-type}
 
-**基于用户档案**  — 您正在导出区段的所有成员，以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性”屏幕 [中选择](../../ui/activate-destinations.md#select-attributes)。
+**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性”屏幕 [中选择](../../ui/activate-destinations.md#select-attributes)。
 
-## 连接目标{#connect-destination}
+## 连接到目标 {#connect}
 
-有关如何连接到您的云存储目标（包括[!DNL Azure Event Hubs]）的说明，请参阅[云存储目标工作流](./workflow.md)。
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
 
-对于[!DNL Azure Event Hubs]目标，在创建目标工作流中输入以下信息：
+### 连接参数 {#parameters}
 
-## 帐户步骤{#account-step}
+在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
-* **[!UICONTROL SAS密钥]** 名和 **[!UICONTROL SAS密钥]**:填写您的SAS密钥名称和密钥。了解在[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)中使用SAS键对[!DNL Azure Event Hubs]进行身份验证。
-* **[!UICONTROL 命名空间]**:填写您的 [!DNL Azure Event Hubs] 命名空间。了解[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)中的[!DNL Azure Event Hubs]命名空间。
+* **[!UICONTROL SAS密钥]** 名称 **[!UICONTROL 和SAS密钥]**:填写SAS密钥名称和密钥。了解在[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)中使用SAS密钥对[!DNL Azure Event Hubs]进行身份验证的信息。
+* **[!UICONTROL 命名空间]**:填写命名 [!DNL Azure Event Hubs] 空间。了解[Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)中的[!DNL Azure Event Hubs]命名空间。
+* **[!UICONTROL 名称]**:填写与的连接名 [!DNL Azure Event Hubs]称。
+* **[!UICONTROL 描述]**:提供连接的描述。示例：“高级顾客”、“男性对冲浪感兴趣”。
+* **[!UICONTROL eventHubName]**:为到您目标的流提供名 [!DNL Azure Event Hubs] 称。
 
-![帐户步骤中所需的输入](../../assets/catalog/cloud-storage/event-hubs/account.png)
+## 将区段激活到此目标 {#activate}
 
-## 身份验证步骤{#authentication-step}
+有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
 
-* **[!UICONTROL 名称]**:填写连接的名称 [!DNL Azure Event Hubs]。
-* **[!UICONTROL 描述]**:提供连接描述。示例：“高级顾客”、“男性对风筝冲浪感兴趣”。
-* **[!UICONTROL eventHubName]**:为流提供到目标的名 [!DNL Azure Event Hubs] 称。
-* **[!UICONTROL 营销操作]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅Adobe Experience Platform](../../../data-governance/policies/overview.md)中的[数据治理页面。 有关各个Adobe定义的营销操作的信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
+## 导出的数据 {#exported-data}
 
-![身份验证步骤中需要的数据](../../assets/catalog/cloud-storage/event-hubs/authentication.png)
-
-## 激活区段{#activate-segments}
-
-有关区段用户档案工作流的信息，请参阅[将激活和区段激活到目标](../../ui/activate-destinations.md)。
-
-## 导出的数据{#exported-data}
-
-导出的[!DNL Experience Platform]数据以JSON格式进入[!DNL Azure Event Hubs]。 例如，以下事件包含符合特定区段条件并退出另一区段的受众的电子邮件地址用户档案属性。 此潜在客户的身份为ECID和电子邮件。
+导出的[!DNL Experience Platform]数据以JSON格式登陆[!DNL Azure Event Hubs]。 例如，以下事件包含符合特定区段资格并退出另一个区段的受众的电子邮件地址配置文件属性。 此潜在客户的标识为ECID和电子邮件。
 
 ```json
 {
@@ -109,7 +101,7 @@ ht-degree: 2%
 
 >[!MORELIKETHIS]
 >
->* [连接到Azure事件中心，并使用流服务API激活数据](../../api/streaming-destinations.md)
+>* [连接到Azure事件中心并使用流服务API激活数据](../../api/streaming-destinations.md)
 * [AWS Kinesis目标](./amazon-kinesis.md)
 * [目标类型和类别](../../destination-types.md)
 
