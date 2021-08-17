@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Sale
 title: SalesforceMarketing Cloud连接
 seo-description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，允许您为访客和客户构建和自定义历程，以个性化其体验。
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: '490'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ## 导出类型 {#export-type}
 
-**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性”屏幕 [中选择](../../ui/activate-destinations.md#select-attributes)。
+**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从受众激活工作流的“选择属性”屏幕 [中选择](../../ui/activate-batch-profile-destinations.md#select-attributes)。
 
 ## IP地址允许列表 {#allow-list}
 
@@ -68,15 +68,15 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
 
-## 目标属性 {#destination-attributes}
+### 目标属性 {#destination-attributes}
 
-当[激活区段](../../ui/activate-destinations.md)到此目标时，Adobe建议您从[并集架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关更多信息，请参阅[选择要在导出的文件中用作目标属性的架构字段](./overview.md#destination-attributes)。
+在将区段激活到此目标时，Adobe建议您从[并集架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关更多信息，请参阅[将受众激活到电子邮件营销目标的最佳实践](overview.md#best-practices)。
 
 ## 导出的数据 {#exported-data}
 
-对于[!DNL Salesforce Marketing Cloud]目标，Platform会在您提供的存储位置中创建一个以制表符分隔的`.csv`文件。 有关这些文件的更多信息，请参阅区段激活教程中的[电子邮件营销目标和云存储目标](../../ui/activate-destinations.md#esp-and-cloud-storage) 。
+对于[!DNL Salesforce Marketing Cloud]目标，Platform会在您提供的存储位置中创建一个以制表符分隔的`.csv`文件。 有关这些文件的更多信息，请参阅区段激活教程中的[验证区段激活](../../ui/activate-batch-profile-destinations.md#verify) 。
 
 ## 设置数据导入到[!DNL Salesforce Marketing Cloud] {#import-data-into-salesforce}
 
