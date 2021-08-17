@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: July 28, 2021
 author: ens60013
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: c06e7b5c70613dc560fb5c0dcc28590206fc1734
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
 source-wordcount: '802'
 ht-degree: 7%
@@ -60,8 +60,8 @@ Adobe Experience Platform 现有功能的更新包括：
 
 | 功能 | 描述 |
 | --- | --- |
-| [更快的增量文件导出](../../destinations/ui/activate-destinations.md#export-incremental-files) | 您现在可以安排每3、6、8和12小时为基于文件的目标执行增量文件导出。 当前不支持更改已保存区段的文件导出计划。 要重新导出具有不同计划的区段，您必须创建一个新的目标实例。 这是一项限制，将在未来版本中加以解决。 |
-| [支持重复数据删除键](../../destinations/ui/activate-destinations.md#deduplication-keys) | 通过选择重复数据删除键，消除导出文件中同一用户档案的多个记录。 您可以选择单个命名空间或最多两个XDM架构属性作为重复数据删除键。 |
+| [更快的增量文件导出](../../destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) | 您现在可以安排每3、6、8和12小时为基于文件的目标执行增量文件导出。 当前不支持更改已保存区段的文件导出计划。 要重新导出具有不同计划的区段，您必须创建一个新的目标实例。 这是一项限制，将在未来版本中加以解决。 |
+| [支持重复数据删除键](../../destinations/ui/activate-batch-profile-destinations.md#deduplication-keys) | 通过选择重复数据删除键，消除导出文件中同一用户档案的多个记录。 您可以选择单个命名空间或最多两个XDM架构属性作为重复数据删除键。 |
 
 ## 体验数据模型(XDM) {#xdm}
 
