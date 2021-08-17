@@ -1,9 +1,9 @@
 ---
 title: '访问ECID '
 description: Adobe Experience Platform Web SDK扩展在标记中利用ECID
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: befe1efa884706165b8d65803d06f6370a8a60f2
 workflow-type: tm+mt
-source-wordcount: '134'
+source-wordcount: '124'
 ht-degree: 5%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 5%
 
 要在标记中访问ECID，Adobe建议执行以下操作：
 
-1. 确保为您的资产配置了[规则组件排序](https://experienceleague.adobe.com/docs/launch/using/ui/rules.html?lang=en#rule-component-sequencing)。
+1. 确保为您的资产配置了[规则组件排序](../../tags/ui/managing-resources/rules.md#sequencing)。
 1. 创建新规则。
 1. 向规则中添加[!UICONTROL Library Loaded]事件。
 1. 将[!UICONTROL Custom Condition]操作添加到具有以下代码的规则中（假定您为SDK实例配置的名称为`alloy`）：
