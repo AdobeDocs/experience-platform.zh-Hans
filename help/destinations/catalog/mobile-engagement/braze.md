@@ -3,9 +3,9 @@ keywords: 移动设备；布雷；报文传送；
 title: Braze连接
 description: Braze是一个全面的客户参与平台，可为客户和他们喜爱的品牌之间提供相关且令人难忘的体验。
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '791'
 ht-degree: 2%
 
 ---
@@ -65,7 +65,7 @@ ht-degree: 2%
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
 ## 映射注意事项 {#mapping-considerations}
 
