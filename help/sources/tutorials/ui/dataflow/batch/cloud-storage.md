@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了使用云存储帐户配置新数据流的步骤。
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: 5478143e681257c6885d99d83380a35de263ed3d
+source-git-commit: df6ddf52f5cab7e5faae591594f060d641977783
 workflow-type: tm+mt
-source-wordcount: '1999'
+source-wordcount: '2001'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 数据流是一项计划任务，用于从源中检索数据并将其摄取到[!DNL Platform]数据集。 本教程提供了使用云存储帐户配置新数据流的步骤。
 
-## 入门指南
+## 快速入门
 
 本教程需要对Adobe Experience Platform的以下组件有一定的了解：
 
@@ -128,7 +128,7 @@ ht-degree: 0%
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-schema.png)
 
-根据您的需要，您可以选择直接映射字段，或使用映射器函数转换源数据以导出计算值或计算值。 有关数据映射和映射器函数的更多信息，请参阅关于[将CSV数据映射到XDM架构字段](../../../../../ingestion/tutorials/map-a-csv-file.md)的教程。
+根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关映射器函数和计算字段的详细信息，请参阅[数据准备函数指南](../../../../../data-prep/functions.md)或[计算字段指南](../../../../../data-prep/calculated-fields.md)。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping.png)
 
