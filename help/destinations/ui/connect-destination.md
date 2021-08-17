@@ -4,7 +4,7 @@ title: 创建新目标连接
 type: Tutorial
 description: 本教程列出了连接到Adobe Experience Platform中目标的步骤
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: 1c67d9eb1b7762ecfcad5b0b7db5c317621f144e
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
 source-wordcount: '430'
 ht-degree: 0%
@@ -65,4 +65,4 @@ ht-degree: 0%
 
    ![连接到目标](../assets/ui/connect-destinations/connect-destination.png)
 
-1. 选择&#x200B;**[!UICONTROL 保存并退出]**&#x200B;以保存目标配置，或选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续访问受众数据[激活流程](activate-destinations.md)。
+1. 选择&#x200B;**[!UICONTROL 保存并退出]**&#x200B;以保存目标配置，或选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续访问受众数据[激活流程](activation-overview.md)。
