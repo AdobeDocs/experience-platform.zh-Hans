@@ -4,14 +4,14 @@ title: 目标工作区
 description: “目标”工作区包含四个部分：“目录”、“浏览”、“帐户”和“系统视图”。 下面各节对这些参数进行了描述。
 seo-description: 在Adobe Experience Platform中，从左侧导航栏中选择目标以访问目标工作区。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 2791c32abe582d51d05d4bf0488ba82dfadfd053
+source-git-commit: a619227de30513bb06a22ce7b4f2fc13847c1ab6
 workflow-type: tm+mt
-source-wordcount: '869'
+source-wordcount: '861'
 ht-degree: 2%
 
 ---
 
-# 目标工作区{#destinations-workspace}
+# 目标工作区 {#destinations-workspace}
 
 在Adobe Experience Platform中，从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**&#x200B;以访问[!UICONTROL 目标]工作区。
 
@@ -72,7 +72,7 @@ ht-degree: 2%
 
 >[!TIP]
 >
-> * 使用&#x200B;**[!UICONTROL 名称]**&#x200B;列中的![添加区段按钮](../assets/ui/workspace/add-data-symbol.png)按钮，将[激活](activate-destinations.md)更多区段到该目标。
+> * 使用&#x200B;**[!UICONTROL 名称]**&#x200B;列中的![添加区段按钮](../assets/ui/workspace/add-data-symbol.png)按钮将区段发送到该目标。
 > * 使用&#x200B;**[!UICONTROL 名称]**&#x200B;列中的![删除目标按钮](../assets/ui/workspace/delete-destination-symbol.png)按钮，可以[删除](delete-destinations.md)与目标的现有连接。
 
 
@@ -88,7 +88,7 @@ ht-degree: 2%
 | [!UICONTROL 用户名] | 您为目标流程选择的帐户凭据。 |
 | [!UICONTROL 激活数据] | 指示正在激活到此目标的区段数。 选择此控件可了解有关已激活区段的更多信息。 有关已激活区段的更多信息，请参阅目标详细信息页面中的[激活数据](/help/destinations/ui/destination-details-page.md#activation-data)。 |
 | [!UICONTROL 已创建] | 创建到目标的激活流程的日期和UTC时间。 |
-| [!UICONTROL 状态] | `Active` 或 `Inactive`. 指示数据是否正在激活到此目标。 要编辑状态，请参阅[禁用激活](./activate-destinations.md#disable-activation)。 |
+| [!UICONTROL 状态] | `Active` 或 `Inactive`. 指示数据是否正在激活到此目标。 |
 
 单击目标行可在右边栏中显示有关目标的更多信息。
 
