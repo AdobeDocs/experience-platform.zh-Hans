@@ -3,9 +3,9 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据经过哈希处理的电子邮件，激活Facebook营销活动的用户档案以进行受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 32da733eda61049738e87bce48978196a1fea96d
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '1176'
+source-wordcount: '1257'
 ht-degree: 2%
 
 ---
@@ -56,12 +56,12 @@ ht-degree: 2%
 
 在将受众区段发送到[!DNL Facebook]之前，请确保满足以下要求：
 
-- 您的[!DNL Facebook]用户帐户必须为您计划使用的广告帐户启用&#x200B;**[!DNL Manage campaigns]**&#x200B;权限。
-- **Adobe Experience Cloud**&#x200B;业务帐户必须作为广告合作伙伴添加到您的[!DNL Facebook Ad Account]中。 使用 `business ID=206617933627973`. 有关详细信息，请参阅Facebook文档中的[将合作伙伴添加到您的业务经理](https://www.facebook.com/business/help/1717412048538897)。
+* 您的[!DNL Facebook]用户帐户必须为您计划使用的广告帐户启用&#x200B;**[!DNL Manage campaigns]**&#x200B;权限。
+* **Adobe Experience Cloud**&#x200B;业务帐户必须作为广告合作伙伴添加到您的[!DNL Facebook Ad Account]中。 使用 `business ID=206617933627973`. 有关详细信息，请参阅Facebook文档中的[将合作伙伴添加到您的业务经理](https://www.facebook.com/business/help/1717412048538897)。
    >[!IMPORTANT]
    >
    > 配置Adobe Experience Cloud的权限时，必须启用&#x200B;**管理促销活动**&#x200B;权限。 [!DNL Adobe Experience Platform]集成需要权限。
-- 阅读并签署[!DNL Facebook Custom Audiences]服务条款。 为此，请转到`https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`，其中`accountID`是您的[!DNL Facebook Ad Account ID]。
+* 阅读并签署[!DNL Facebook Custom Audiences]服务条款。 为此，请转到`https://business.facebook.com/ads/manage/customaudiences/tos/?act=[accountID]`，其中`accountID`是您的[!DNL Facebook Ad Account ID]。
 
 ## ID匹配要求 {#id-matching-requirements}
 
@@ -73,8 +73,8 @@ ht-degree: 2%
 
 在[!DNL Facebook]中激活电话号码的方法有两种：
 
-- **摄取原始电话号码**:您可以将格式的原始电话号码 [!DNL E.164] 摄取到 [!DNL Platform]中。激活后，它们会自动进行哈希处理。 如果选择此选项，请确保始终将原始电话号码摄取到`Phone_E.164`命名空间中。
-- **摄取经过哈希处理的电话号码**:您可以在将电话号码摄取到中之前，对您的电话号码进行 [!DNL Platform]哈希处理。如果选择此选项，请确保始终将您经过哈希处理的电话号码摄取到`Phone_SHA256`命名空间中。
+* **摄取原始电话号码**:您可以将格式的原始电话号码 [!DNL E.164] 摄取到 [!DNL Platform]中。激活后，它们会自动进行哈希处理。 如果选择此选项，请确保始终将原始电话号码摄取到`Phone_E.164`命名空间中。
+* **摄取经过哈希处理的电话号码**:您可以在将电话号码摄取到中之前，对您的电话号码进行 [!DNL Platform]哈希处理。如果选择此选项，请确保始终将您经过哈希处理的电话号码摄取到`Phone_SHA256`命名空间中。
 
 >[!NOTE]
 >
@@ -89,12 +89,12 @@ ht-degree: 2%
 
 如果您选择自行对电子邮件地址进行哈希处理，请确保符合以下要求：
 
-- 从电子邮件字符串中裁切所有前导和尾随空格；示例：`johndoe@example.com`，不是`<space>johndoe@example.com<space>`;
-- 对电子邮件字符串进行哈希处理时，请确保对小写字符串进行哈希处理；
-   - 示例：`example@email.com`，不是`EXAMPLE@EMAIL.COM`;
-- 确保经过哈希处理的字符串全部为小写
-   - 示例：`55e79200c1635b37ad31a378c39feb12f120f116625093a19bc32fff15041149`，不是`55E79200C1635B37AD31A378C39FEB12F120F116625093A19bC32FFF15041149`;
-- 不要加盐。
+* 从电子邮件字符串中裁切所有前导和尾随空格；示例：`johndoe@example.com`，不是`<space>johndoe@example.com<space>`;
+* 对电子邮件字符串进行哈希处理时，请确保对小写字符串进行哈希处理；
+   * 示例：`example@email.com`，不是`EXAMPLE@EMAIL.COM`;
+* 确保经过哈希处理的字符串全部为小写
+   * 示例：`55e79200c1635b37ad31a378c39feb12f120f116625093a19bc32fff15041149`，不是`55E79200C1635B37AD31A378C39FEB12F120F116625093A19bC32FFF15041149`;
+* 不要加盐。
 
 >[!NOTE]
 >
@@ -108,17 +108,29 @@ ht-degree: 2%
 
 在使用`Extern_ID`命名空间将数据发送到[!DNL Facebook]之前，请确保使用[!DNL Facebook Pixel]同步您自己的标识符。 有关详细信息，请参阅[Facebook官方文档](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences/#external_identifiers)。
 
-## 连接到目标 {#connect-destination}
+## 连接到目标 {#connect}
 
-要连接到[!DNL Facebook]目标，请参阅[社交目标身份验证工作流](./workflow.md)。
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
 
-以下视频还演示了配置社交目标和激活区段的步骤。 视频以LinkedIn为例，但各个社交目标的步骤相似。
+以下视频还演示了配置[!DNL Facebook]目标和激活区段的步骤。
 
 >[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
 
-## 将区段激活到[!DNL Facebook] {#activate-segments}
+>[!NOTE]
+>
+>Experience Platform用户界面经常更新，自此视频录制以来可能已发生更改。 有关最新信息，请参阅[目标配置教程](../../ui/connect-destination.md)。
 
-有关如何将区段激活到[!DNL Facebook]的说明，请参阅[将数据激活到目标](../../ui/activate-destinations.md)。
+### 连接参数 {#parameters}
+
+在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
+
+* **[!UICONTROL 名称]**:将来用于识别此目标的名称。
+* **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
+* **[!UICONTROL 帐户ID]**:您的 [!DNL Facebook Ad Account ID]。您可以在[!DNL Facebook Ads Manager]帐户中找到此ID。 输入此ID时，应始终为其添加`act_`前缀。
+
+## 将区段激活到此目标 {#activate}
+
+有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
 
 在&#x200B;**[!UICONTROL 区段计划]**&#x200B;步骤中，向[!DNL Facebook Custom Audiences]发送区段时，必须提供[!UICONTROL 受众的来源]。
 
