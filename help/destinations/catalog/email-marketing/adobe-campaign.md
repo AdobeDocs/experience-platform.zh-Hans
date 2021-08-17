@@ -1,12 +1,12 @@
 ---
-keywords: 电子邮件；电子邮件；电子邮件目标；adobe活动;活动
+keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Adobe Campaign;Campaign
 title: Adobe Campaign连接
-description: Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道个性化和投放活动。
+description: Adobe Campaign是一套解决方案，可帮助您在所有在线渠道和离线渠道之间个性化并交付促销活动。
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: 70be44e919070df910d618af4507b600ad51123c
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '871'
-ht-degree: 0%
+source-wordcount: '728'
+ht-degree: 1%
 
 ---
 
@@ -14,79 +14,70 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-Adobe Campaign是一套解决方案，可帮助您在所有线上和线下渠道个性化和投放活动。 有关详细信息，请参阅[Campaign Classic](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/starting-with-adobe-campaign/about-adobe-campaign-classic.html)快速入门。
+Adobe Campaign是一套解决方案，可帮助您在所有在线渠道和离线渠道之间个性化并交付促销活动。 有关更多信息，请参阅[Campaign Classic入门](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/starting-with-adobe-campaign/about-adobe-campaign-classic.html)。
 
-要向Adobe Campaign发送区段数据，您必须先在Adobe Experience Platform中[连接目标](#connect-destination)，然后[设置从存储位置导入](#import-data-into-campaign)的Adobe Campaign。
+要将区段数据发送到Adobe Campaign，您必须先在Adobe Experience Platform中连接目标](#connect-destination)，然后[设置从存储位置将数据导入](#import-data-into-campaign)到Adobe Campaign。[
 
-## 导出类型{#export-type}
+## 导出类型 {#export-type}
 
-**基于用户档案**  — 您正在导出区段的所有成员，以及所需的模式字段(例如：电子邮件地址、电话号码、姓氏)，在目标激活工作 **[!UICONTROL 流]** 的“选择属 [性”步骤中选择](../../ui/activate-destinations.md#select-attributes)。
+**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在目标激活工作 **[!UICONTROL 流]** 的“选择属 [性”步骤中选择](../../ui/activate-destinations.md#select-attributes)。
 
-## IP地址允许列表{#allow-list}
+## IP地址允许列表 {#allow-list}
 
-在使用SFTP存储设置电子邮件营销目标时，Adobe建议您向允许列表添加某些IP范围。
+通过SFTP存储设置电子邮件营销目标时，Adobe建议您向允许列表添加某些IP范围。
 
-如果您需要将AdobeIP添加到允许列表，请参阅云存储目标](../cloud-storage/ip-address-allow-list.md)的[ IP地址允许列表。
+如果需要向允许列表添加AdobeIP，请参阅云存储目标的[IP地址允许列表](../cloud-storage/ip-address-allow-list.md) 。
 
-## 连接目标{#connect-destination}
+## 连接到目标 {#connect}
 
-在&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**&#x200B;中，选择Adobe Campaign，然后选择&#x200B;**[!UICONTROL 配置]**。
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
 
->[!NOTE]
->
->如果与此目标的连接已存在，您可以在目标卡上看到&#x200B;**[!UICONTROL 激活]**&#x200B;按钮。 有关[!UICONTROL Activate]和[!UICONTROL Configure]之间差异的详细信息，请参阅目标工作区文档的[Catalog](../../ui/destinations-workspace.md#catalog)部分。
+Adobe Campaign支持以下连接类型：
 
-![连接到Adobe Campaign](../../assets/catalog/email-marketing/adobe-campaign/catalog.png)
+* **[!UICONTROL Amazon S3]**
+* **[!UICONTROL 带密码的SFTP]**
+* **[!UICONTROL 具有SSH密钥的SFTP]**
+* **[!UICONTROL Azure Blob]**
 
-在Connect目标工作流的&#x200B;**[!UICONTROL 帐户]**&#x200B;步骤中，为存储位置选择&#x200B;**[!UICONTROL 连接类型]**。 对于Adobe Campaign，您可以在&#x200B;**[!UICONTROL Amazon S3]**、**[!UICONTROL 带密码的SFTP]**、**[!UICONTROL 带SSH密钥的SFTP]**&#x200B;和&#x200B;**[!UICONTROL Azure Blob]**&#x200B;之间进行选择。 向Adobe Campaign发送数据的首选方法是通过[!DNL Amazon S3]或[!DNL Azure Blob]。 根据连接类型，填写以下信息，然后选择&#x200B;**[!UICONTROL Connect]**。
+向Adobe Campaign发送数据的首选方法是通过[!DNL Amazon S3]或[!DNL Azure Blob]。
 
+### 连接参数 {#parameters}
 
-![设置活动向导](../../assets/catalog/email-marketing/adobe-campaign/connection-type.png)
+在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
-- 对于&#x200B;**[!UICONTROL Amazon S3]**&#x200B;连接，必须提供[!UICONTROL 访问密钥ID]和[!UICONTROL 秘密访问密钥]。
-- 对于具有Password ]**连接的**[!UICONTROL  SFTP，必须提供[!UICONTROL Domain]、[!UICONTROL Port]、[!UICONTROL Username]和[!UICONTROL Password]。
-- 对于具有SSH密钥&#x200B;]**连接的**[!UICONTROL  SFTP，必须提供[!UICONTROL 域]、[!UICONTROL 端口]、[!UICONTROL 用户名]和[!UICONTROL SSH密钥]。
-- 对于&#x200B;**[!UICONTROL Azure Blob]**&#x200B;连接，必须提供连接字符串。
+* 对于&#x200B;**[!UICONTROL Amazon S3]**&#x200B;连接，必须提供[!UICONTROL 访问密钥ID]和[!UICONTROL 密钥访问密钥]。
+* 对于具有密码&#x200B;]**连接的**[!UICONTROL  SFTP，必须提供[!UICONTROL 域]、[!UICONTROL 端口]、[!UICONTROL 用户名]和[!UICONTROL 密码]。
+* 对于具有SSH密钥&#x200B;]**连接的**[!UICONTROL  SFTP，必须提供[!UICONTROL 域]、[!UICONTROL 端口]、[!UICONTROL 用户名]和[!UICONTROL SSH密钥]。
+* 对于&#x200B;**[!UICONTROL Azure Blob]**&#x200B;连接，必须提供连接字符串。
+* 或者，您也可以附加RSA格式的公钥，以在&#x200B;**[!UICONTROL Key]**&#x200B;部分下将PGP/GPG加密添加到导出的文件中。 您的公钥必须写为[!DNL Base64]编码字符串。
+* **[!UICONTROL 名称]**:为您的目标选择相关名称。
+* **[!UICONTROL 描述]**:输入目标的描述。
+* **[!UICONTROL 存储段名称]**: *对于S3连接*。输入S3存储段的位置，其中[!DNL Platform]将将导出数据存储为CSV或制表符分隔的文件。
+* **[!UICONTROL 文件夹路径]**:在存储位置中提供路径，将 [!DNL Platform] 将导出数据存储为CSV或制表符分隔的文件。
+* **[!UICONTROL 容器]**: *对于Blob连接*。包含文件夹路径中的Blob的容器。
+* **[!UICONTROL 文件格式]**: **** CSV或 **TAB_DELIMITED**。选择要导出到存储位置的文件格式。
 
-或者，您也可以附加RSA格式的公钥，以便在&#x200B;**[!UICONTROL 密钥]**&#x200B;部分下向导出的文件添加PGP/GPG加密。 您的公钥必须写入为[!DNL Base64]编码字符串。
+## 将区段激活到此目标 {#activate}
 
-![填写活动信息](../../assets/catalog/email-marketing/adobe-campaign/account-info.png)
+有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
 
-在&#x200B;**[!UICONTROL 帐户身份验证]**&#x200B;中，填写目标的相关信息，如下所示：
-- **[!UICONTROL 名称]**:为目标选择相关名称。
-- **[!UICONTROL 描述]**:输入目标的说明。
-- **[!UICONTROL 存储段名称]**: *对于S3连接*。输入S3存储段的位置，其中[!DNL Platform]会将导出数据存储为CSV或制表符分隔的文件。
-- **[!UICONTROL 文件夹路径]**:在存储位置提供将导出数 [!DNL Platform] 据存储为CSV或制表符分隔文件的路径。
-- **[!UICONTROL 容器]**: *用于Blob连接*。包含文件夹路径的Blob的容器在中。
-- **[!UICONTROL 文件格式]**: **CSV** 或 **TAB_DELIMITED**。选择要导出到存储位置的文件格式。
-- **[!UICONTROL 营销操作]**:营销活动指示要将数据导出到目标的目的。您可以从Adobe定义的营销活动中进行选择，也可以创建自己的营销活动。 有关营销操作的详细信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)页。
+## 目标属性 {#destination-attributes}
 
-![活动基本信息](../../assets/catalog/email-marketing/adobe-campaign/basic-information.png)
+当[激活区段](../../ui/activate-destinations.md)到此目标时，Adobe建议您从[并集架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关更多信息，请参阅[选择要在导出的文件中用作目标属性的架构字段](./overview.md#destination-attributes)。
 
-填写上面的字段后，选择&#x200B;**[!UICONTROL 创建目标]**。 目标现已连接，您可以[将区段](../../ui/activate-destinations.md)激活到目标。
+## 导出的数据 {#exported-data}
 
-## 激活区段{#activate-segments}
+对于[!DNL Adobe Campaign]目标， [!DNL Platform]会在您提供的存储位置创建以制表符分隔的`.csv`文件。 有关这些文件的更多信息，请参阅区段激活教程中的[电子邮件营销目标和云存储目标](../../ui/activate-destinations.md#esp-and-cloud-storage) 。
 
-有关区段用户档案工作流的信息，请参阅[将激活和区段激活到目标](../../ui/activate-destinations.md)。
-
-## 目标属性{#destination-attributes}
-
-当[将区段](../../ui/activate-destinations.md)激活到Adobe Campaign目标时，Adobe建议您从[合并模式](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关详细信息，请参阅[选择要用作导出文件中目标属性的模式字段](./overview.md#destination-attributes)。
-
-## 导出的数据{#exported-data}
-
-对于[!DNL Adobe Campaign]目标，[!DNL Platform]会在您提供的存储位置创建制表符分隔的`.csv`文件。 有关这些文件的详细信息，请参阅区段存储教程中的[电子邮件营销目标和云激活目标](../../ui/activate-destinations.md#esp-and-cloud-storage)。
-
-## 设置Adobe Campaign{#import-data-into-campaign}中的数据导入
+## 设置数据导入Adobe Campaign {#import-data-into-campaign}
 
 >[!IMPORTANT]
 >
->- 执行此集成时，请记住[!DNL SFTP]存储限制、存储库Adobe Campaign限制和有效用户档案限制。
->- 您需要使用[!DNL Campaign]工作流在Adobe Campaign中计划、导入和映射导出的区段。 请参阅Adobe Campaign Classic文档中的[设置循环导入](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/use-cases/data-management/recurring-import-workflow.html)和Adobe Campaign Standard文档中的[关于数据管理活动](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/about-data-management-activities.html)。
->- 向Adobe Campaign发送数据的首选方法是通过[!DNL Amazon S3]或[!DNL Azure Blob]。
+>* 在执行此集成时，请记住[!DNL SFTP]存储限制、数据库存储限制和活动配置文件限制(根据您的Adobe Campaign合同)。
+>* 您需要使用[!DNL Campaign]工作流在Adobe Campaign中计划、导入和映射导出的区段。 请参阅Adobe Campaign Classic文档中的[设置定期导入](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/use-cases/data-management/recurring-import-workflow.html)和Adobe Campaign Standard文档中的[关于数据管理活动](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/about-data-management-activities.html)。
+>* 向Adobe Campaign发送数据的首选方法是通过[!DNL Amazon S3]或[!DNL Azure Blob]。
 
 
-
-将[!DNL Platform]连接到[!DNL Amazon S3]或[!DNL Azure Blob]存储后，必须将存储位置中的数据导入设置为Adobe Campaign。 要了解如何完成此操作，请参阅以下Adobe Campaign文档页：
-- [开始使用Adobe Campaign Classic文档中](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/importing-and-exporting-data/get-started-data-import-export.html) 的 [数据导入和](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/action-activities/data-loading--file-.html) 导出数据加载（文件）。
-- [开始使用Adobe Campaign Standard文档中](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/get-started-workflows.html) 的流 [程和](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/load-file.html) 数据管理和加载文件。
+将[!DNL Platform]连接到[!DNL Amazon S3]或[!DNL Azure Blob]存储后，必须将数据从存储位置导入Adobe Campaign。 要了解如何完成此操作，请参阅以下Adobe Campaign文档页面：
+* [数据导入和导出以](https://experienceleague.adobe.com/docs/campaign-classic/using/getting-started/importing-and-exporting-data/get-started-data-import-export.html?lang=zh-Hans) 及数 [据加载（文件）](https://experienceleague.adobe.com/docs/campaign-classic/using/automating-with-workflows/action-activities/data-loading--file-.html) (位于Adobe Campaign Classic文档中)。
+* [在Adobe Campaign Standard文档中开始使用流程](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/get-started-workflows.html) 和数 [据](https://experienceleague.adobe.com/docs/campaign-standard/using/managing-processes-and-data/data-management-activities/load-file.html) 管理和加载文件。
