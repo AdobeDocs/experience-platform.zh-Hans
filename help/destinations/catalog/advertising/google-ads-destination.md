@@ -3,9 +3,9 @@ keywords: Google广告；Google广告；Google AdWords;Google AdWords
 title: Google Ads连接
 description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示，按次点击付费广告。
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: 7e2f6f54e754c52c8de7f98372d041b2a6520d46
+source-git-commit: ca388912d6634f72cab15a6bfb3e9f92264e52db
 workflow-type: tm+mt
-source-wordcount: '716'
+source-wordcount: '637'
 ht-degree: 2%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 2%
 >
 >如果您希望使用[!DNL Google Ads]创建您的第一个目标，并且过去(使用Audience Manager或其他应用程序)未在Experience CloudID服务中启用[ ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步会传递到Platform。
 
-## 支持的标识 {#supported-identities}
+## 支持的身份 {#supported-identities}
 
 [!DNL Google Ad Manager] 支持激活下表所述的身份。
 
@@ -66,29 +66,22 @@ ht-degree: 2%
 * 您的帐户类型：**AdWords**
 * **Google AdWords ID**:这是您的ID  [!DNL Google]。ID格式通常为123-456-7890。
 
-## 配置目标
+## 连接到目标 {#connect}
 
-在&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**&#x200B;中，选择[!DNL Google Ads]，然后选择&#x200B;**[!UICONTROL 配置]**。
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
 
-![连接Google Ads目标](../../assets/catalog/advertising/google-ads-destination/catalog.png)
+### 连接参数 {#parameters}
 
->[!NOTE]
->
->如果与此目标的连接已存在，则可以在目标卡上看到&#x200B;**[!UICONTROL 激活]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的更多信息，请参阅目标工作区文档的[Catalog](../../ui/destinations-workspace.md#catalog)部分。
-
-在创建目标工作流的&#x200B;**设置**&#x200B;步骤中，填写目标的[!UICONTROL 基本信息]。
-
-![Google Ads基本信息](../../assets/catalog/advertising/google-ads-destination/setup.png)
+在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
 * **[!UICONTROL 名称]**:填写此目标的首选名称。
 * **[!UICONTROL 描述]**:可选。例如，您可以提及您使用此目标的促销活动。
 * **[!UICONTROL 帐户类型]**:AdWords是唯一可用的选项。
 * **[!UICONTROL 帐户ID]**:使用填写您的帐户ID  [!DNL Google Ads]。ID格式通常为123-456-7890。
-* **[!UICONTROL 营销操作]**:营销操作指示将数据导出到目标的意图。您可以从Adobe定义的营销操作中进行选择，也可以创建自己的营销操作。 有关营销操作的更多信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
-## 将区段激活到[!DNL Google Ads]
+## 将区段激活到此目标 {#activate}
 
-有关如何将区段激活到[!DNL Google Ads]的说明，请参阅[将数据激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
 
 ## 导出的数据
 
