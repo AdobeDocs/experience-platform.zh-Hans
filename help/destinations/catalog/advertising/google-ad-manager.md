@@ -3,9 +3,9 @@ keywords: Google Ad Manager;Google Ad;Doubleclick;DoubleClick AdX;DoubleClick;Go
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告服务平台，它使出版商能够通过视频和移动设备应用程序管理其网站上的广告显示。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
+source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
 workflow-type: tm+mt
-source-wordcount: '651'
+source-wordcount: '653'
 ht-degree: 2%
 
 ---
@@ -80,7 +80,7 @@ ht-degree: 2%
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
 ## 导出的数据
 
