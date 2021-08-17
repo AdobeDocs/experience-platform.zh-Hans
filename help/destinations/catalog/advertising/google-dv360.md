@@ -3,10 +3,10 @@ keywords: 双击竞价管理器；双击竞价管理器；双击；显示和视�
 title: Google Display & Video 360连接
 description: 显示和视频360（以前称为“双击竞价管理器”）是一种工具，用于在显示、视频和移动设备库存源中执行重定位和受众定位的数字促销活动。
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: 7e2f6f54e754c52c8de7f98372d041b2a6520d46
+source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
 workflow-type: tm+mt
-source-wordcount: '764'
-ht-degree: 1%
+source-wordcount: '671'
+ht-degree: 2%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 1%
 >
 >如果您希望使用Google Display &amp; Video 360创建您的第一个目标，并且过去(使用Adobe Audience Manager或其他应用程序)未在Experience CloudID服务中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前在Audience Manager中设置了Google集成，则您设置的ID同步会传递到Platform。
 
-## 支持的标识 {#supported-identities}
+## 支持的身份 {#supported-identities}
 
 [!DNL Google Ad Manager] 支持激活下表所述的身份。
 
@@ -59,19 +59,13 @@ ht-degree: 1%
 * **客户ID**:Adobe的客户帐户ID与Google。客户ID:89690775。
 * **您的帐户类型**:使 **[!DNL Invite advertiser]** 用可仅将受众共享到Display &amp; Video 360帐户中的特定品牌，或使用 **[!DNL Invite partner]** 可将受众共享到Display &amp; Video 360帐户中的所有品牌。
 
-## 配置目标
+## 连接到目标 {#connect}
 
-在&#x200B;**[!UICONTROL 连接]** > **[!UICONTROL 目标]**&#x200B;中，选择[!DNL Google Display & Video 360]，然后选择&#x200B;**[!UICONTROL 配置]**。
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
 
-![连接Google Display &amp; Video 360目标](../../assets/catalog/advertising/google-dv360/catalog.png)
+### 连接参数 {#parameters}
 
->[!NOTE]
->
->如果与此目标的连接已存在，则可以在目标卡上看到&#x200B;**[!UICONTROL 激活]**&#x200B;按钮。 有关[!UICONTROL Activate]和[!UICONTROL Configure]之间差异的更多信息，请参阅目标工作区文档的[Catalog](../../ui/destinations-workspace.md#catalog)部分。
-
-在创建目标工作流的&#x200B;**设置**&#x200B;步骤中，填写目标的[!UICONTROL 基本信息]以及应用于此目标的营销操作。
-
-![Google Display &amp; Video 360的基本信息](../../assets/catalog/advertising/google-dv360/setup.png)
+在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
 * **[!UICONTROL 名称]**:填写此目标的首选名称。
 * **[!UICONTROL 描述]**:可选。例如，您可以提及您使用此目标的促销活动。
@@ -79,15 +73,14 @@ ht-degree: 1%
    * 使用`Invite Advertiser`可仅将受众共享到您的Display &amp; Video 360帐户中的特定品牌。
    * 使用`Invite Partner`可允许将受众共享到您的Display &amp; Video 360帐户中的所有品牌。
 * **[!UICONTROL 帐户ID]**:使用Google填 **[!DNL Invite partner]** 写您 **[!DNL Invite advertiser]** 的或帐户ID。通常是一个六位或七位数的ID。
-* **[!UICONTROL 营销操作]**:营销操作指示将数据导出到目标的意图。您可以从Adobe定义的营销操作中进行选择，也可以创建自己的营销操作。 有关营销操作的更多信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
 
 >[!NOTE]
 >
 >设置[!DNL Google Display & Video 360]目标时，请与您的[!DNL Google Account Manager]或Adobe代表合作，了解您拥有的帐户类型。
 
-## 将区段激活到[!DNL Google Display & Video 360]
+## 将区段激活到此目标 {#activate}
 
-有关如何将区段激活到[!DNL Google Display & Video 360]的说明，请参阅[将数据激活到目标](../../ui/activate-destinations.md)。
+有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
 
 ## 导出的数据
 
