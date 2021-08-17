@@ -3,9 +3,9 @@ keywords: Google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用在线和离线数据，通过Google自有资产和运营资产(如搜索、购物、Gmail和YouTube)来联系客户并与其重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 8a521b2b846c953b74b8e48fb76b94966a652318
+source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
 workflow-type: tm+mt
-source-wordcount: '1568'
+source-wordcount: '1250'
 ht-degree: 0%
 
 ---
@@ -106,54 +106,32 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 Attribute source data is not automatically hashed. When your source field contains unhashed attributes, check the **[!UICONTROL Apply transformation]** option, to have [!DNL Platform] automatically hash the data on activation.
 ![Identity mapping transformation](../../assets/ui/activate-destinations/identity-mapping-transformation.png) -->
 
-## 配置目标 — 视频演练 {#video}
+<!-- ## Configure destination - video walkthrough {#video}
 
-以下视频演示了配置社交目标和激活区段的步骤。 视频以LinkedIn为例，但各个社交目标（包括[!DNL Google Customer Match]）中的步骤相似。 视频中的步骤也会在后续部分中按顺序排列。
+The video below demonstrates the steps to configure a [!DNL Google Customer Match] destination and activate segments. The steps are also laid out sequentially in the next sections.
 
->[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng)
+>[!VIDEO](https://video.tv.adobe.com/v/332599/?quality=12&learn=on&captions=eng) -->
 
-## 连接到目标 {#connect-destination}
+## 连接到目标 {#connect}
 
-在&#x200B;**[!UICONTROL 目标]** > **[!UICONTROL 目录]**&#x200B;中，滚动到&#x200B;**[!UICONTROL Advertising]**&#x200B;类别。 选择[!DNL Google Customer Match]，然后选择&#x200B;**[!UICONTROL 配置]**。
+要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
 
-![连接到Google客户匹配目标](../../assets/catalog/advertising/google-customer-match/connect.png)
+### 连接参数 {#parameters}
 
->[!NOTE]
->
->如果与此目标存在连接，则可以在目标卡上看到&#x200B;**[!UICONTROL 激活]**&#x200B;按钮。 有关&#x200B;**[!UICONTROL Activate]**&#x200B;和&#x200B;**[!UICONTROL Configure]**&#x200B;之间差异的更多信息，请参阅目标工作区文档的[Catalog](../../ui/destinations-workspace.md#catalog)部分。
+在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
-在&#x200B;**帐户**&#x200B;步骤中，如果您之前已设置到[!DNL Google Customer Match]目标的连接，请选择&#x200B;**[!UICONTROL 现有帐户]**&#x200B;并选择现有连接。 或者，您也可以选择&#x200B;**[!UICONTROL 新帐户]**&#x200B;以设置到[!DNL Google Customer Match]的新连接。 要登录并将Adobe Experience Cloud连接到您的[!DNL Google Ad]帐户，请选择&#x200B;**[!UICONTROL 连接到目标]**。
-
->[!NOTE]
->
->Experience Platform支持身份验证过程中的凭据验证。 如果您向[!DNL Google Ad]帐户输入了不正确的凭据，则会显示一条错误消息，以确保您没有使用不正确的凭据完成工作流。
-
-![连接到Google客户匹配目标 — 身份验证步骤](../../assets/catalog/advertising/google-customer-match/connection.png)
-
-确认您的凭据并将Adobe Experience Cloud连接到您的Google帐户后，您可以选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续执行&#x200B;**[!UICONTROL Authentication]**&#x200B;步骤。
-
-![已确认凭据](../../assets/catalog/advertising/google-customer-match/connection-success.png)
-
-在&#x200B;**[!UICONTROL 身份验证]**&#x200B;步骤中，为激活流程输入&#x200B;**[!UICONTROL 名称]**&#x200B;和&#x200B;**[!UICONTROL 描述]**，并填写Google **[!UICONTROL 帐户ID]**。
-
-在此步骤中，您还可以选择应用于此目标的任何&#x200B;**[!UICONTROL 营销操作]**。 营销操作指示将数据导出到目标的意图。 您可以从Adobe定义的营销操作中进行选择，也可以创建自己的营销操作。 有关营销操作的更多信息，请参阅[数据使用策略概述](../../../data-governance/policies/overview.md)。
-
-在填写上面的字段后，选择&#x200B;**[!UICONTROL 创建目标]**。
+* **[!UICONTROL 名称]**:为此目标连接提供名称
+* **[!UICONTROL 描述]**:提供此目标连接的描述
+* **[!UICONTROL 帐户ID]**:您的Google客户客户ID。ID的格式为xxx-xxx-xxxx。
 
 >[!IMPORTANT]
 >
 > * 默认情况下，**[!UICONTROL 与PII]**&#x200B;组合营销操作会为[!DNL Google Customer Match]目标选中，且无法删除。
-> * 用于[!DNL Google Customer Match]目标。 **[!UICONTROL 帐]** 户ID是您使用Google的客户客户ID。ID的格式为xxx-xxx-xxxx。
 
 
-![连接Google客户匹配 — 身份验证步骤](../../assets/catalog/advertising/google-customer-match/authentication.png)
+## 将区段激活到此目标 {#activate}
 
-您的目标现已创建完成。 如果要稍后激活区段，则可以选择&#x200B;**[!UICONTROL 保存并退出]**，或者选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续工作流并选择要激活的区段。 无论哪种情况，请参阅下一节[将区段激活到 [!DNL Google Customer Match]](#activate-segments)，以了解工作流的其余部分。
-
-## 将区段激活到[!DNL Google Customer Match] {#activate-segments}
-
-有关如何将区段激活到[!DNL Google Customer Match]的说明，请参阅[将数据激活到目标](../../ui/activate-destinations.md)。
-
+有关将受众区段激活到目标的说明，请参阅[将配置文件和区段激活到目标](../../ui/activate-destinations.md)。
 
 在&#x200B;**[!UICONTROL 区段计划]**&#x200B;步骤中，在向[!DNL Google Customer Match]发送[!DNL IDFA]或[!DNL GAID]区段时，必须提供[!UICONTROL 应用程序ID]。
 
