@@ -3,9 +3,9 @@ keywords: SFTP;SFTP
 title: SFTP连接
 description: 创建与SFTP服务器的实时出站连接，以定期从Adobe Experience Platform导出分隔数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 8d1594aeb1d6671eec187643245d940ed3ff74cd
+source-git-commit: b7392596c7ed96032dc8ad6bb8e423640f562394
 workflow-type: tm+mt
-source-wordcount: '281'
+source-wordcount: '282'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 导出类型 {#export-type}
 
-**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性”屏幕 [中选择](../../ui/activate-destinations.md#select-attributes)。
+**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从目标激活工作流的“选择属性”屏幕 [中选择](../../ui/activate-batch-profile-destinations.md)。
 
 ![基于SFTP配置文件的导出类型](../../assets/catalog/cloud-storage/sftp/catalog.png)
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 
 ## 导出的数据 {#exported-data}
 
-对于[!DNL SFTP]目标，Platform会在您提供的存储位置中创建一个以制表符分隔的`.csv`文件。 有关这些文件的更多信息，请参阅区段激活教程中的[电子邮件营销目标和云存储目标](../../ui/activate-destinations.md#esp-and-cloud-storage) 。
+对于[!DNL SFTP]目标，Platform会在您提供的存储位置中创建一个以制表符分隔的`.csv`文件。 有关这些文件的更多信息，请参阅区段激活教程中的[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 。
 
 ## IP地址允许列表
 
