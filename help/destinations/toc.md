@@ -4,7 +4,7 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: 目标
-source-git-commit: 0fef443c1979fec0c0d239a0b630cb3a0a134402
+source-git-commit: 9c9ea0d9e8247dbc4a1a4078dbdba2ae80ed70ef
 workflow-type: tm+mt
 source-wordcount: '492'
 ht-degree: 11%
@@ -57,7 +57,7 @@ ht-degree: 11%
       * [Google Gtag扩展](./catalog/advertising/gtag-advertising.md)
       * [linkedIn Insight Tag扩展](./catalog/advertising/linkedin.md)
       * [Microsoft Bing连接](./catalog/advertising/bing.md)
-      * [Pinterest转化跟踪扩展](./catalog/advertising/pinterest.md)
+      * [Pinterest转化跟踪扩展](./catalog/advertising/pinterest-extension.md)
       * [交易台连接](./catalog/advertising/tradedesk.md)
       * [Twitter通用网站标记扩展](./catalog/advertising/twitter-uwt.md)
    * Analytics目标{#analytics}
