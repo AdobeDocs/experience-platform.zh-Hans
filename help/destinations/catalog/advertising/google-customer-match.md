@@ -3,9 +3,9 @@ keywords: Google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用在线和离线数据，通过Google自有资产和运营资产(如搜索、购物、Gmail和YouTube)来联系客户并与其重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: 183aff5a3b6bcc1635ae7b4b0e503a9d4b6d4d31
 workflow-type: tm+mt
-source-wordcount: '1252'
+source-wordcount: '1494'
 ht-degree: 0%
 
 ---
@@ -138,6 +138,35 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 ![Google客户匹配应用程序ID](../../assets/catalog/advertising/google-customer-match/gcm-destination-appid.png)
 
 有关如何查找[!DNL App ID]的详细信息，请参阅[Google官方文档](https://developers.google.com/adwords/api/docs/reference/v201809/AdwordsUserListService.CrmBasedUserList#appid)。
+
+### 映射示例：在[!DNL Google Customer Match]中激活受众数据 {#example-gcm}
+
+以下示例用于在[!DNL Google Customer Match]中激活受众数据时正确映射身份。
+
+选择源字段：
+
+* 如果您使用的电子邮件地址没有经过哈希处理，请选择`Email`命名空间作为源标识。
+* 如果您根据[!DNL Google Customer Match] [电子邮件哈希处理要求](#hashing-requirements)对数据摄取时的客户电子邮件地址进行哈希处理，并将其转换为[!DNL Platform]，请选择`Email_LC_SHA256`命名空间作为源标识。
+* 如果您的数据包含非哈希电话号码，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Platform] 将对电话号码进行哈希处理以符合 [!DNL Google Customer Match] 要求。
+* 如果您根据[!DNL Facebook] [电话号码哈希处理要求](#phone-number-hashing-requirements)对数据摄取时的电话号码进行哈希处理，请选择`Phone_SHA256_E.164`命名空间作为源标识。[!DNL Platform]
+* 如果您的数据包含[!DNL Apple]设备ID，请选择`IDFA`命名空间作为源标识。
+* 如果您的数据包含[!DNL Android]设备ID，请选择`GAID`命名空间作为源标识。
+* 如果您的数据包含其他类型的标识符，请选择`Custom`命名空间作为源标识。
+
+选择目标字段：
+
+* 当源命名空间为`Email`或`Email_LC_SHA256`时，选择`Email_LC_SHA256`命名空间作为目标标识。
+* 当源命名空间为`PHONE_E.164`或`Phone_SHA256_E.164`时，选择`Phone_SHA256_E.164`命名空间作为目标标识。
+* 当源命名空间为`IDFA`或`GAID`时，选择`IDFA`或`GAID`命名空间作为目标标识。
+* 如果源命名空间是自定义命名空间，请选择`User_ID`命名空间作为目标标识。
+
+![身份映射](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm.png)
+
+未哈希命名空间中的数据在激活后由[!DNL Platform]自动进行哈希处理。
+
+属性源数据不会自动进行哈希处理。 当源字段包含未哈希属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。
+
+![身份映射转换](../../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
 
 ## 验证区段激活是否成功 {#verify-activation}
 
