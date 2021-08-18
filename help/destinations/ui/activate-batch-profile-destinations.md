@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: 激活受众数据以批量配置文件导出目标
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
-source-git-commit: 02c22453470d55236d4235c479742997e8407ef3
+source-git-commit: f814f11db0a258d1c5265206d6ec61c27ad2ee7d
 workflow-type: tm+mt
-source-wordcount: '2011'
+source-wordcount: '2008'
 ht-degree: 0%
 
 ---
@@ -270,7 +270,7 @@ ht-degree: 0%
 }
 ```
 
-### 重复数据删除用例1:无重复数据删除
+### 重复数据删除用例1:无重复数据删除 {#deduplication-use-case-1}
 
 如果不使用重复数据删除，则导出文件将包含以下条目。
 
@@ -280,7 +280,7 @@ ht-degree: 0%
 | johndoe@example.com | 约翰 | D |
 
 
-### 重复数据删除用例2:基于身份命名空间的重复数据删除
+### 重复数据删除用例2:基于身份命名空间的重复数据删除 {#deduplication-use-case-2}
 
 假设使用[!DNL Email]命名空间进行重复数据删除，则导出文件将包含以下条目。 配置文件B是符合区段资格条件的最新配置文件，因此它是唯一一个要导出的配置文件。
 
@@ -289,7 +289,7 @@ ht-degree: 0%
 | johndoe_1@example.com | johndoe@example.com | 约翰 | D |
 | johndoe_2@example.com | johndoe@example.com | 约翰 | D |
 
-### 重复数据删除用例3:基于单个配置文件属性的重复数据删除
+### 重复数据删除用例3:基于单个配置文件属性的重复数据删除 {#deduplication-use-case-3}
 
 假设使用`personal Email`属性进行重复数据删除，则导出文件将包含以下条目。 配置文件B是符合区段资格条件的最新配置文件，因此它是唯一一个要导出的配置文件。
 
@@ -298,7 +298,7 @@ ht-degree: 0%
 | johndoe@example.com | 约翰 | D |
 
 
-### 重复数据删除用例4:基于两个用户档案属性的重复数据删除（复合重复数据删除键）
+### 重复数据删除用例4:基于两个配置文件属性进行重复数据删除 {#deduplication-use-case-4}
 
 假设复合键`personalEmail + lastName`执行重复数据删除，则导出文件将包含以下条目。
 
