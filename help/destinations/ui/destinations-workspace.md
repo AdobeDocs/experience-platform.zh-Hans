@@ -4,9 +4,9 @@ title: 目标工作区
 description: “目标”工作区包含四个部分：“目录”、“浏览”、“帐户”和“系统视图”。 下面各节对这些参数进行了描述。
 seo-description: 在Adobe Experience Platform中，从左侧导航栏中选择目标以访问目标工作区。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: a619227de30513bb06a22ce7b4f2fc13847c1ab6
+source-git-commit: a97b235e2d8834f6be002923be9cdbca5f08495b
 workflow-type: tm+mt
-source-wordcount: '861'
+source-wordcount: '873'
 ht-degree: 2%
 
 ---
@@ -72,8 +72,8 @@ ht-degree: 2%
 
 >[!TIP]
 >
-> * 使用&#x200B;**[!UICONTROL 名称]**&#x200B;列中的![添加区段按钮](../assets/ui/workspace/add-data-symbol.png)按钮将区段发送到该目标。
-> * 使用&#x200B;**[!UICONTROL 名称]**&#x200B;列中的![删除目标按钮](../assets/ui/workspace/delete-destination-symbol.png)按钮，可以[删除](delete-destinations.md)与目标的现有连接。
+> * 选择[!UICONTROL 名称]列上的三个圆点，然后使用![添加区段按钮](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活&#x200B;]**按钮将区段发送到该目标。
+> * 选择[!UICONTROL 名称]列上的三个圆点，然后使用![删除目标按钮](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL 删除&#x200B;]**按钮以[删除](delete-destinations.md)到目标的现有连接。
 
 
 ![“浏览”选项卡](../assets/ui/workspace/browse-tab.png)
@@ -102,6 +102,6 @@ ht-degree: 2%
 
 ![数据流1](../assets/ui/workspace/data-flows1.png)
 
-选择页面上显示的任意目标，然后单击&#x200B;**[!UICONTROL 查看流]**&#x200B;以查看您为每个目标设置的所有连接的信息。
+选择页面上显示的任意目标，然后单击&#x200B;**[!UICONTROL 查看数据流]**&#x200B;以查看您为每个目标设置的所有连接的信息。
 
 ![数据流2](../assets/ui/workspace/data-flows2.png)
