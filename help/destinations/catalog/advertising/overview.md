@@ -5,7 +5,7 @@ seo-title: 广告目标概述
 description: 将Adobe Experience Platform连接到第三方广告平台(例如DSP、广告网络、SSP)，并将假名受众共享到这些平台。
 seo-description: 将Adobe Experience Platform连接到第三方广告平台(例如DSP、广告网络、SSP)，并将假名受众共享到这些平台。
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
+source-git-commit: 9c9ea0d9e8247dbc4a1a4078dbdba2ae80ed70ef
 workflow-type: tm+mt
 source-wordcount: '248'
 ht-degree: 1%
@@ -48,7 +48,7 @@ ht-degree: 1%
 * [Google Ads扩展](google-ads-extension.md)
 * [Google Gtag扩展](gtag-advertising.md)
 * [linkedIn Insight Tag扩展](linkedin.md)
-* [Pinterest转化跟踪扩展](pinterest.md)
+* [Pinterest转化跟踪扩展](pinterest-extension.md)
 * [Twitter通用网站标记扩展](twitter-uwt.md)
 
 ## 连接到新的广告目标 {#connect-destination}
