@@ -3,10 +3,10 @@ keywords: 社交；社交目标；Livefyre;facebook;Facebook
 title: 社交目标概述
 description: 通过社交目标，您可以激活营销活动的用户档案，以便根据经过哈希处理的电子邮件进行受众定位、个性化和抑制。
 exl-id: c5da8dae-c1ff-45a8-b769-037d7bb7947a
-source-git-commit: 802b1844bec1e577e978da5d5a69de87278c04b9
+source-git-commit: 9c9ea0d9e8247dbc4a1a4078dbdba2ae80ed70ef
 workflow-type: tm+mt
-source-wordcount: '109'
-ht-degree: 1%
+source-wordcount: '105'
+ht-degree: 0%
 
 ---
 
@@ -20,9 +20,9 @@ ht-degree: 1%
 
 Adobe Experience Platform当前支持以下社交目标：
 
-* [AdobeLivefyre扩展](adobe-livefyre.md)
-* [[!DNL Facebook] 扩展](facebook.md)
-* [Linkedin匹配的受众连接](linkedin.md)
+* [Adobe [!DNL Livefyre] 扩展](adobe-livefyre.md)
+* [[!DNL Facebook] 连接](facebook.md)
+* [[!DNL LinkedIn Matched Audiences] 连接](linkedin.md)
 
 ## 连接到新的社交目标 {#connect-destination}
 
