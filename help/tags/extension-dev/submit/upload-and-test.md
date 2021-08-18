@@ -1,7 +1,7 @@
 ---
 title: 上传和实施扩展的端到端测试
 description: 了解如何在Adobe Experience Platform中验证、上传和测试扩展。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 41a394974153883dc300bdd8a00fc3106c4f0ac6
 workflow-type: tm+mt
 source-wordcount: '2392'
 ht-degree: 33%
