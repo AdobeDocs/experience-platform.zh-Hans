@@ -4,9 +4,9 @@ title: 删除目标
 type: Tutorial
 description: 本教程列出了在Adobe Experience Platform UI中删除现有目标的步骤
 exl-id: 7b672859-e61a-4b3c-9db9-62048258f0aa
-source-git-commit: 84deb9d1eecee8ec4369915a0b3c1eb810fd7c9b
+source-git-commit: a97b235e2d8834f6be002923be9cdbca5f08495b
 workflow-type: tm+mt
-source-wordcount: '430'
+source-wordcount: '437'
 ht-degree: 0%
 
 ---
@@ -40,10 +40,10 @@ ht-degree: 0%
 
    ![筛选目标](../assets/ui/delete-destinations/filter-destinations.png)
 
-3. 在&#x200B;**[!UICONTROL Platform]**&#x200B;列中选择![删除按钮](../assets/ui/delete-destinations/delete-icon.png) **[!UICONTROL 删除]**按钮，以删除现有目标。
+3. 在“名称”列中选择![更多按钮](../assets/ui/delete-destinations/more-icon.png)按钮，然后选择![删除按钮](../assets/ui/delete-destinations/delete-icon.png) **[!UICONTROL 删除]**以删除现有目标连接。
    ![删除目标](../assets/ui/delete-destinations/delete-destinations.png)
 
-4. 选择&#x200B;**[!UICONTROL Delete]**&#x200B;以确认删除目标。
+4. 选择&#x200B;**[!UICONTROL Delete]**&#x200B;以确认删除目标连接。
 
    ![确认删除目标](../assets/ui/delete-destinations/delete-destinations-confirm.png)
 
