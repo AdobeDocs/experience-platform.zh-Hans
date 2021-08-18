@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: 将受众数据激活到流配置文件导出目标
 description: 了解如何通过将区段发送到基于用户档案的流目标来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: 了解如何通过将区段发送到基于用户档案的流目标来激活您在Adobe Experience Platform中拥有的受众数据。
-source-git-commit: 02c22453470d55236d4235c479742997e8407ef3
+source-git-commit: f0c854e1b6b89d499c720328fa5054611147772f
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '532'
 ht-degree: 0%
 
 ---
@@ -86,16 +86,42 @@ ht-degree: 0%
 
 ## 验证区段激活 {#verify}
 
+导出的[!DNL Experience Platform]数据以JSON格式登陆目标目标。 例如，以下事件包含符合特定区段资格并退出另一个区段的受众的电子邮件地址配置文件属性。 此潜在客户的标识为ECID和电子邮件。
 
-对于电子邮件营销目标和云存储目标，Adobe Experience Platform会在您提供的存储位置中创建一个以制表符分隔的`.csv`文件。 希望每天在您的存储位置中创建一个新文件。 默认文件格式为：
-`<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
-
-您将连续三天收到的文件可能如下所示：
-
-```console
-Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv
-Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200409052200.csv
-Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200410061130.csv
+```json
+{
+  "person": {
+    "email": "yourstruly@adobe.con"
+  },
+  "segmentMembership": {
+    "ups": {
+      "7841ba61-23c1-4bb3-a495-00d3g5fe1e93": {
+        "lastQualificationTime": "2020-05-25T21:24:39Z",
+        "status": "exited"
+      },
+      "59bd2fkd-3c48-4b18-bf56-4f5c5e6967ae": {
+        "lastQualificationTime": "2020-05-25T23:37:33Z",
+        "status": "existing"
+      }
+    }
+  },
+  "identityMap": {
+    "ecid": [
+      {
+        "id": "14575006536349286404619648085736425115"
+      },
+      {
+        "id": "66478888669296734530114754794777368480"
+      }
+    ],
+    "email_lc_sha256": [
+      {
+        "id": "655332b5fa2aea4498bf7a290cff017cb4"
+      },
+      {
+        "id": "66baf76ef9de8b42df8903f00e0e3dc0b7"
+      }
+    ]
+  }
+}
 ```
-
-这些文件在您的存储位置中的存在，即表明激活成功。 要了解导出文件的结构方式，您可以[下载一个.csv文件示例](../assets/common/sample_export_file_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv)。 此示例文件包括配置文件属性`person.firstname`、`person.lastname`、`person.gender`、`person.birthyear`和`personalEmail.address`。
