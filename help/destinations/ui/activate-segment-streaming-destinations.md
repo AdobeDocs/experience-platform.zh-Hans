@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: 将受众数据激活到流区段导出目标
 description: 了解如何通过将区段映射到区段流目标，来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: 了解如何通过将区段映射到区段流目标，来激活您在Adobe Experience Platform中拥有的受众数据。
-source-git-commit: 65e74041aeb285cb80c67e47ccdaca18de9889fa
+source-git-commit: 0d5e0d57d209e4cf9a832531676e836add4256d0
 workflow-type: tm+mt
-source-wordcount: '1165'
+source-wordcount: '684'
 ht-degree: 0%
 
 ---
@@ -76,63 +76,9 @@ ht-degree: 0%
 
 1. 要添加更多映射，请重复步骤1至5。
 
-### 映射示例：在[!DNL Facebook Custom Audience]中激活受众数据 {#example-facebook}
 
-以下示例用于在[!DNL Facebook Custom Audience]中激活受众数据时正确映射身份。
 
-选择源字段：
 
-* 如果您使用的电子邮件地址没有经过哈希处理，请选择`Email`命名空间作为源标识。
-* 如果您根据[!DNL Facebook] [电子邮件哈希处理要求](../catalog/social/facebook.md#email-hashing-requirements)对数据摄取时的客户电子邮件地址进行哈希处理，并将其转换为[!DNL Platform]，请选择`Email_LC_SHA256`命名空间作为源标识。
-* 如果您的数据包含非哈希电话号码，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Platform] 将对电话号码进行哈希处理以符合 [!DNL Facebook] 要求。
-* 如果您根据[!DNL Facebook] [电话号码哈希处理要求](../catalog/social/facebook.md#phone-number-hashing-requirements)对数据摄取时的电话号码进行哈希处理，请选择`Phone_SHA256`命名空间作为源标识。[!DNL Platform]
-* 如果您的数据包含[!DNL Apple]设备ID，请选择`IDFA`命名空间作为源标识。
-* 如果您的数据包含[!DNL Android]设备ID，请选择`GAID`命名空间作为源标识。
-* 如果您的数据包含其他类型的标识符，请选择`Custom`命名空间作为源标识。
-
-选择目标字段：
-
-* 当源命名空间为`Email`或`Email_LC_SHA256`时，选择`Email_LC_SHA256`命名空间作为目标标识。
-* 当源命名空间为`PHONE_E.164`或`Phone_SHA256`时，选择`Phone_SHA256`命名空间作为目标标识。
-* 当源命名空间为`IDFA`或`GAID`时，选择`IDFA`或`GAID`命名空间作为目标标识。
-* 如果源命名空间是自定义命名空间，请选择`Extern_ID`命名空间作为目标标识。
-
->[!IMPORTANT]
->
->未哈希命名空间中的数据在激活后由[!DNL Platform]自动进行哈希处理。
-> 
->属性源数据不会自动进行哈希处理。 当源字段包含未哈希属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。
-
-![身份映射](../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
-
-### 映射示例：在[!DNL Google Customer Match]中激活受众数据 {#example-gcm}
-
-以下示例用于在[!DNL Google Customer Match]中激活受众数据时正确映射身份。
-
-选择源字段：
-
-* 如果您使用的电子邮件地址没有经过哈希处理，请选择`Email`命名空间作为源标识。
-* 如果您根据[!DNL Google Customer Match] [电子邮件哈希处理要求](../catalog/social/../advertising/google-customer-match.md)对数据摄取时的客户电子邮件地址进行哈希处理，并将其转换为[!DNL Platform]，请选择`Email_LC_SHA256`命名空间作为源标识。
-* 如果您的数据包含非哈希电话号码，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Platform] 将对电话号码进行哈希处理以符合 [!DNL Google Customer Match] 要求。
-* 如果您根据[!DNL Facebook] [电话号码哈希处理要求](../catalog/social/../advertising/google-customer-match.md)对数据摄取时的电话号码进行哈希处理，请选择`Phone_SHA256_E.164`命名空间作为源标识。[!DNL Platform]
-* 如果您的数据包含[!DNL Apple]设备ID，请选择`IDFA`命名空间作为源标识。
-* 如果您的数据包含[!DNL Android]设备ID，请选择`GAID`命名空间作为源标识。
-* 如果您的数据包含其他类型的标识符，请选择`Custom`命名空间作为源标识。
-
-选择目标字段：
-
-* 当源命名空间为`Email`或`Email_LC_SHA256`时，选择`Email_LC_SHA256`命名空间作为目标标识。
-* 当源命名空间为`PHONE_E.164`或`Phone_SHA256_E.164`时，选择`Phone_SHA256_E.164`命名空间作为目标标识。
-* 当源命名空间为`IDFA`或`GAID`时，选择`IDFA`或`GAID`命名空间作为目标标识。
-* 如果源命名空间是自定义命名空间，请选择`User_ID`命名空间作为目标标识。
-
-![身份映射](../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm.png)
-
-未哈希命名空间中的数据在激活后由[!DNL Platform]自动进行哈希处理。
-
-属性源数据不会自动进行哈希处理。 当源字段包含未哈希属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。
-
-![身份映射转换](../assets/ui/activate-segment-streaming-destinations/identity-mapping-gcm-transformation.png)
 
 ## 计划区段导出 {#scheduling}
 
