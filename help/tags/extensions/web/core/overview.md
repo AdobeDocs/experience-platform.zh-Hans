@@ -1,7 +1,7 @@
 ---
 title: 核心扩展概述
 description: 了解Adobe Experience Platform中的核心标记扩展。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 41a394974153883dc300bdd8a00fc3106c4f0ac6
 workflow-type: tm+mt
 source-wordcount: '4905'
 ht-degree: 70%
