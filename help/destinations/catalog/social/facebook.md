@@ -3,10 +3,10 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据经过哈希处理的电子邮件，激活Facebook营销活动的用户档案以进行受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: 183aff5a3b6bcc1635ae7b4b0e503a9d4b6d4d31
 workflow-type: tm+mt
-source-wordcount: '1259'
-ht-degree: 2%
+source-wordcount: '1498'
+ht-degree: 1%
 
 ---
 
@@ -135,6 +135,35 @@ ht-degree: 2%
 在&#x200B;**[!UICONTROL 区段计划]**&#x200B;步骤中，向[!DNL Facebook Custom Audiences]发送区段时，必须提供[!UICONTROL 受众的来源]。
 
 ![Facebook受众来源](../../assets/catalog/social/facebook/facebook-origin-audience.png)
+
+### 映射示例：在[!DNL Facebook Custom Audience]中激活受众数据 {#example-facebook}
+
+以下示例用于在[!DNL Facebook Custom Audience]中激活受众数据时正确映射身份。
+
+选择源字段：
+
+* 如果您使用的电子邮件地址没有经过哈希处理，请选择`Email`命名空间作为源标识。
+* 如果您根据[!DNL Facebook] [电子邮件哈希处理要求](#email-hashing-requirements)对数据摄取时的客户电子邮件地址进行哈希处理，并将其转换为[!DNL Platform]，请选择`Email_LC_SHA256`命名空间作为源标识。
+* 如果您的数据包含非哈希电话号码，请选择`PHONE_E.164`命名空间作为源标识。 [!DNL Platform] 将对电话号码进行哈希处理以符合 [!DNL Facebook] 要求。
+* 如果您根据[!DNL Facebook] [电话号码哈希处理要求](#phone-number-hashing-requirements)对数据摄取时的电话号码进行哈希处理，请选择`Phone_SHA256`命名空间作为源标识。[!DNL Platform]
+* 如果您的数据包含[!DNL Apple]设备ID，请选择`IDFA`命名空间作为源标识。
+* 如果您的数据包含[!DNL Android]设备ID，请选择`GAID`命名空间作为源标识。
+* 如果您的数据包含其他类型的标识符，请选择`Custom`命名空间作为源标识。
+
+选择目标字段：
+
+* 当源命名空间为`Email`或`Email_LC_SHA256`时，选择`Email_LC_SHA256`命名空间作为目标标识。
+* 当源命名空间为`PHONE_E.164`或`Phone_SHA256`时，选择`Phone_SHA256`命名空间作为目标标识。
+* 当源命名空间为`IDFA`或`GAID`时，选择`IDFA`或`GAID`命名空间作为目标标识。
+* 如果源命名空间是自定义命名空间，请选择`Extern_ID`命名空间作为目标标识。
+
+>[!IMPORTANT]
+>
+>未哈希命名空间中的数据在激活后由[!DNL Platform]自动进行哈希处理。
+> 
+>属性源数据不会自动进行哈希处理。 当源字段包含未哈希属性时，请选中&#x200B;**[!UICONTROL Apply transformation]**&#x200B;选项，以使[!DNL Platform]在激活时自动对数据进行哈希处理。
+
+![身份映射](../../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
 ## 导出的数据 {#exported-data}
 
