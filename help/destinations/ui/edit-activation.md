@@ -6,9 +6,9 @@ seo-title: 编辑激活流
 description: 按照本文中的步骤，编辑Adobe Experience Platform中的现有激活流程。
 seo-description: 按照本文中的步骤，编辑Adobe Experience Platform中的现有激活流程。
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: a619227de30513bb06a22ce7b4f2fc13847c1ab6
+source-git-commit: a97b235e2d8834f6be002923be9cdbca5f08495b
 workflow-type: tm+mt
-source-wordcount: '191'
+source-wordcount: '204'
 ht-degree: 0%
 
 ---
@@ -29,8 +29,10 @@ ht-degree: 0%
 
    ![选择目标](../assets/ui/edit-activation/destination-select.png)
 
-4. 此时会显示目标的详细信息页面，其中显示了其可用控件。 选择右边栏中的&#x200B;**[!UICONTROL 激活]**&#x200B;以更改要发送到目标的区段。
+4. 出现目标的&#x200B;**[!UICONTROL 数据流运行]**&#x200B;页，显示其可用控件。 选择右边栏中的&#x200B;**[!UICONTROL 激活]**&#x200B;以更改要发送到目标的区段。
+
+   此外，您还可以编辑目标名称和描述。
 
    ![目标详细信息](../assets/ui/edit-activation/destination-details.png)
 
-5. 有关如何激活新区段的详细信息，请参阅[激活概述](activation-overview.md)。
+5. 有关如何将新区段激活到您的目标的详细信息，请参阅[激活概述](activation-overview.md)。
