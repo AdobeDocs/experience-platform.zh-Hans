@@ -4,9 +4,9 @@ user-guide-title: 标记帮助
 breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标签以提升客户体验。
 feature: 数据收集
-source-git-commit: 3658384ec39226f457fd9cea86d1838613a9508c
+source-git-commit: d2df8ac5edca32ac9228cb7db1810763c57de0b3
 workflow-type: tm+mt
-source-wordcount: '378'
+source-wordcount: '380'
 ht-degree: 67%
 
 ---
@@ -58,6 +58,7 @@ ht-degree: 67%
    * [概述](./ui/administration/overview.md)
    * [公司和资产](./ui/administration/companies-and-properties.md)
    * [用户权限](./ui/administration/user-permissions.md)
+   * [管理权限](./ui/administration/manage-permissions.md)
 * 扩展 {#extensions}
    * [概述](./extensions/overview.md)
    * Adobe 扩展 {#adobe}
