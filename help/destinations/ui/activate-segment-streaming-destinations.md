@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: 将受众数据激活到流区段导出目标
 description: 了解如何通过将区段映射到区段流目标，来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: 了解如何通过将区段映射到区段流目标，来激活您在Adobe Experience Platform中拥有的受众数据。
-source-git-commit: 0d5e0d57d209e4cf9a832531676e836add4256d0
+source-git-commit: c3e273c66ffe0542258e5418104e0bcf154f5235
 workflow-type: tm+mt
-source-wordcount: '684'
+source-wordcount: '740'
 ht-degree: 0%
 
 ---
@@ -43,14 +43,9 @@ ht-degree: 0%
 
 ## 映射属性和标识 {#mapping}
 
->[!CONTEXTUALHELP]
->id="platform_destinations_activate_applytransformation"
->title="应用转换"
->abstract="使用未哈希源字段时，请勾选此选项，以使Adobe Experience Platform在激活时自动对它们进行哈希处理。"
-
 >[!IMPORTANT]
 >
->此步骤仅适用于某些区段流目标。 如果您的目标没有&#x200B;**[!UICONTROL 映射]**&#x200B;步骤，请跳转至[计划区段导出](#scheduling)。
+>此步骤仅适用于某些区段流目标。 如果您的目标没有&#x200B;**[!UICONTROL 映射]**&#x200B;步骤，请跳到[计划区段导出](#scheduling)。
 
 某些区段流目标要求您选择源属性或身份命名空间以映射为目标标识。
 
@@ -76,8 +71,17 @@ ht-degree: 0%
 
 1. 要添加更多映射，请重复步骤1至5。
 
+### 应用转换 {#apply-transformation}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_applytransformation"
+>title="应用转换"
+>abstract="使用未哈希源字段时，请勾选此选项，以使Adobe Experience Platform在激活时自动对它们进行哈希处理。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en#apply-transformation" text="在文档中了解更多信息"
 
+当您将未哈希化的源属性映射到目标预期经过哈希化的目标属性时(例如：`email_lc_sha256`或`phone_sha256`)，选中&#x200B;**Apply transformation**&#x200B;选项，让Adobe Experience Platform在激活时自动对源属性进行哈希处理。
+
+![身份映射](/help/destinations/assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
 
 ## 计划区段导出 {#scheduling}
