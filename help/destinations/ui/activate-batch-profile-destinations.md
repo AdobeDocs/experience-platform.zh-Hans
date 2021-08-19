@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: 激活受众数据以批量配置文件导出目标
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
-source-git-commit: f814f11db0a258d1c5265206d6ec61c27ad2ee7d
+source-git-commit: b1d9b03af1d5266a03d0f16c6a9803a08f19b7bd
 workflow-type: tm+mt
-source-wordcount: '2008'
+source-wordcount: '1990'
 ht-degree: 0%
 
 ---
@@ -58,24 +58,28 @@ ht-degree: 0%
 
 ### 导出完整文件 {#export-full-files}
 
-选择&#x200B;**[!UICONTROL 导出完整文件]**&#x200B;以使导出的文件包含符合该区段资格的所有配置文件的完整快照。
+选择&#x200B;**[!UICONTROL 导出完整文件]**&#x200B;可触发导出文件的操作，该文件包含选定区段的所有配置文件资格的完整快照。
 
 ![导出完整文件](../assets/ui/activate-batch-profile-destinations/export-full-files.png)
 
-1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器可在一次性（**[!UICONTROL 一次]**）或&#x200B;**[!UICONTROL 每日]**&#x200B;导出之间进行选择。 导出完整文件&#x200B;**[!UICONTROL Daily]**&#x200B;会每天从开始日期到结束日期(UTC时间上午12:00（东部标准时间晚上7:00）导出文件。
-2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。 导出文件&#x200B;**[!UICONTROL Daily]**&#x200B;会每天从开始日期导出文件，直到您选择的结束日期。
+1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器选择导出频率：
+
+   * **[!UICONTROL 一次]**:计划一次性按需文件导出。
+   * **[!UICONTROL 每日]**:计划完整文件每天从开始日期到结束日期(UTC上午12:00（东部标准时间晚上7:00）导出一次。
+
+1. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。 导出文件&#x200B;**[!UICONTROL Daily]**&#x200B;会每天从开始日期导出文件，直到您选择的结束日期。
 
    >[!IMPORTANT]
    >
-   >在一天中的某个特定时间导出文件的选项当前处于测试阶段，并且仅对选定数量的客户可用。<br> <br> 由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。  <br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。这是将在未来版本中解决的限制。
+   >由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。<br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。这是将在未来版本中解决的限制。
 
-3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
-4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
+1. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
+1. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
 
 
 ### 导出增量文件 {#export-incremental-files}
 
-选择&#x200B;**[!UICONTROL 导出增量文件]**，以使导出的文件仅包含自上次导出后符合该区段条件的配置文件。
+选择&#x200B;**[!UICONTROL 导出增量文件]**&#x200B;可触发导出，其中第一个文件是选定区段所有配置文件资格的完整快照，后续文件是自上次导出以来的增量配置文件资格。
 
 >[!IMPORTANT]
 >
@@ -83,12 +87,10 @@ ht-degree: 0%
 
 ![导出增量文件](../assets/ui/activate-batch-profile-destinations/export-incremental-files.png)
 
-1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器在&#x200B;**[!UICONTROL Daily]**&#x200B;或&#x200B;**[!UICONTROL Hourly]**&#x200B;导出中进行选择。 导出增量文件&#x200B;**[!UICONTROL Daily]**&#x200B;会每天从开始日期到结束日期（UTC时间中午7:00）导出文件。
-   * 选择&#x200B;**[!UICONTROL 每小时]**&#x200B;时，使用&#x200B;**[!UICONTROL 每]**&#x200B;选择器在&#x200B;**[!UICONTROL 3]**、**[!UICONTROL 6]**、**[!UICONTROL 8]**&#x200B;和&#x200B;**[!UICONTROL 12]**&#x200B;小时选项之间进行选择。
+1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器选择导出频率：
 
-      >[!IMPORTANT]
-      >
-      >每3、6、8或12小时导出增量文件的选项目前处于测试阶段，并且仅对选定数量的客户可用。 非测试版客户每天可导出一次增量文件。
+   * **[!UICONTROL 每日]**:计划增量文件每天从开始日期到结束日期(UTC上午12:00（东部标准时间晚上7:00）导出一次。
+   * **[!UICONTROL 每小时]**:计划每3、6、7或12小时执行一次增量文件导出。
 
 2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。
 
@@ -164,6 +166,8 @@ ht-degree: 0%
 >abstract="选择所有导出的配置文件都应包含的XDM架构属性。 不会将没有必填项的用户档案导出到目标。 不选择强制键会导出所有符合条件的用户档案，而不考虑其属性。"
 >additional-url="http://www.adobe.com/go/destinations-mandatory-attributes-en" text="在文档中了解更多信息"
 
+“必选属性”是用户启用的复选框，可确保所有配置文件记录都包含选定的属性。 例如：所有导出的用户档案都包含电子邮件地址&#x200B;。
+
 您可以将属性标记为必填项，以确保[!DNL Platform]仅导出包含特定属性的配置文件。 因此，它可用作附加的过滤形式。 将属性标记为必需属性是&#x200B;**不**&#x200B;必需的。
 
 不选择强制属性会导出所有符合条件的用户档案，而不考虑其属性。
@@ -178,9 +182,7 @@ ht-degree: 0%
 >abstract="通过选择重复数据删除键，消除导出文件中同一用户档案的多个记录。 选择一个命名空间或最多两个XDM架构属性作为重复数据删除键值。 未选择重复数据删除键可能会导致导出文件中出现重复的配置文件条目。"
 >additional-url="http://www.adobe.com/go/destinations-deduplication-keys-en" text="在文档中了解更多信息"
 
->[!IMPORTANT]
->
->使用重复数据删除键的选项当前处于测试阶段，并且仅对选定数量的客户可用。
+重复数据删除键是用户定义的主键，可确定用户希望删除其配置文件的身份&#x200B;。
 
 重复数据删除键消除了在一个导出文件中存在多个相同用户档案记录的可能性。
 
