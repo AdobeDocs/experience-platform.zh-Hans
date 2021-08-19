@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: 激活受众数据以批量配置文件导出目标
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
-source-git-commit: b1d9b03af1d5266a03d0f16c6a9803a08f19b7bd
+source-git-commit: eebebcdc5e5f94d90eceb291dfe487fcd0f8c254
 workflow-type: tm+mt
-source-wordcount: '1990'
+source-wordcount: '1933'
 ht-degree: 0%
 
 ---
@@ -64,10 +64,10 @@ ht-degree: 0%
 
 1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器选择导出频率：
 
-   * **[!UICONTROL 一次]**:计划一次性按需文件导出。
-   * **[!UICONTROL 每日]**:计划完整文件每天从开始日期到结束日期(UTC上午12:00（东部标准时间晚上7:00）导出一次。
+   * **[!UICONTROL 一次]**:计划一次性按需完整文件导出。
+   * **[!UICONTROL 每日]**:在您指定的时间，安排每天一次完整文件导出。
 
-1. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。 导出文件&#x200B;**[!UICONTROL Daily]**&#x200B;会每天从开始日期导出文件，直到您选择的结束日期。
+1. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。
 
    >[!IMPORTANT]
    >
@@ -89,14 +89,14 @@ ht-degree: 0%
 
 1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器选择导出频率：
 
-   * **[!UICONTROL 每日]**:计划增量文件每天从开始日期到结束日期(UTC上午12:00（东部标准时间晚上7:00）导出一次。
+   * **[!UICONTROL 每日]**:在您指定的时间，计划每天一次增量文件导出。
    * **[!UICONTROL 每小时]**:计划每3、6、7或12小时执行一次增量文件导出。
 
 2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。
 
    >[!IMPORTANT]
    >
-   >选择导出时间的选项仅适用于选定数量的客户。<br> <br> 由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。  <br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。这是将在未来版本中解决的限制。
+   >由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。<br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。这是将在未来版本中解决的限制。
 
 3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
 4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
