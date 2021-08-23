@@ -5,9 +5,9 @@ title: 源连接器概述
 topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 5f5e4f91862fe4ec8840224a9bdb5dc6d7338288
 workflow-type: tm+mt
-source-wordcount: '979'
+source-wordcount: '1007'
 ht-degree: 0%
 
 ---
@@ -104,6 +104,12 @@ Experience Platform支持从第三方电子商务系统摄取数据。 有关特
 
 - [[!DNL Shopify]](connectors/ecommerce/shopify.md)
 
+### 本地系统
+
+Experience Platform支持从本地系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
+
+- [本地文件上传](connectors/local-system/local-file-upload.md)
+
 ### 营销自动化
 
 Experience Platform支持从第三方营销自动化系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
@@ -122,7 +128,6 @@ Experience Platform支持从第三方支付系统摄取数据。 有关特定源
 Experience Platform支持从流源摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [[!DNL HTTP API]](connectors/streaming/http.md)
-
 
 ### 协议
 
