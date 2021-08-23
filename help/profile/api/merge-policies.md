@@ -5,9 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: Adobe Experience Platform允许您从多个来源将数据片段合并在一起，以便查看各个客户的完整视图。 合并策略是Platform用来确定数据优先级以及合并哪些数据以创建统一视图的规则，将这些数据整合在一起。
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: afe748d443aad7b6da5b348cd569c9e806e4419b
+source-git-commit: acf88ba3c4181fce85ffec3b0041a30b7bb14cef
 workflow-type: tm+mt
-source-wordcount: '2590'
+source-wordcount: '2263'
 ht-degree: 1%
 
 ---
@@ -64,17 +64,17 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 | 属性 | 描述 |
 |---|---|
-| `id` | The system generated unique identifier assigned at creation time |
-| `name` | Friendly name by which the merge policy can be identified in list views. |
+| `id` | 系统生成的唯一标识符在创建时分配 |
+| `name` | 用于在列表视图中标识合并策略的易记名称。 |
 | `imsOrgId` | 此合并策略所属的组织ID |
 | `identityGraph` | [标](#identity-graph) 识图对象，用于指示将从中获取相关标识的标识图。将合并找到的所有相关身份的配置文件片段。 |
-| `attributeMerge` | [Attribute merge](#attribute-merge) object indicating the manner by which the merge policy will prioritize profile attributes in the case of data conflicts. |
+| `attributeMerge` | [属性](#attribute-merge) mergeobject ，指示在发生数据冲突时合并策略优先处理配置文件属性的方式。 |
 | `schema.name` | 在[`schema`](#schema)对象中， `name`字段包含与合并策略相关的XDM架构类。 有关架构和类的更多信息，请阅读[XDM文档](../../xdm/home.md)。 |
 | `default` | 布尔值，指示此合并策略是否是指定架构的默认策略。 |
 | `version` | [!DNL Platform] 维护的合并策略版本。每当更新合并策略时，此只读值都会递增。 |
 | `updateEpoch` | 合并策略的上次更新日期。 |
 
-**Example merge policy**
+**合并策略示例**
 
 ```json
     {
@@ -108,7 +108,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
     }
 ```
 
-Where `{IDENTITY_GRAPH_TYPE}` is one of the following:
+其中`{IDENTITY_GRAPH_TYPE}`是以下任一值：
 
 * **“无”：** 不执行身份拼合。
 * **“pdg”：** 根据您的专用身份图执行身份拼合。
@@ -135,11 +135,11 @@ Where `{IDENTITY_GRAPH_TYPE}` is one of the following:
 
 其中`{ATTRIBUTE_MERGE_TYPE}`是以下任一值：
 
-* **`timestampOrdered`**:（默认）优先于上次更新的用户档案。使用此合并类型时，不需要`data`属性。 `timestampOrdered` 还支持自定义时间戳，在数据集内或跨数据集合并配置文件片段时，该时间戳将优先使用。要了解更多信息，请参阅使用自定义时间戳](#custom-timestamps)的[上的附录部分。
-* **`dataSetPrecedence`** :根据来自的数据集，优先考虑配置文件片段。当一个数据集中存在的信息比另一个数据集中的数据更可取或更可信时，可以使用此方法。 When using this merge type, the `order` attribute is required, as it lists the datasets in the order of priority.
-   * **`order`**: When &quot;dataSetPrecedence&quot; is used, an `order` array must be supplied with a list of datasets. 列表中未包含的任何数据集都将不会合并。 换言之，必须明确列出数据集才能将其合并到用户档案中。 `order`数组按优先级顺序列出数据集的ID。
+* **`timestampOrdered`**:（默认）优先于上次更新的用户档案。使用此合并类型时，不需要`data`属性。
+* **`dataSetPrecedence`** :根据来自的数据集，优先考虑配置文件片段。当一个数据集中存在的信息比另一个数据集中的数据更可取或更可信时，可以使用此方法。 使用此合并类型时，需要`order`属性，因为它会按优先级顺序列出数据集。
+   * **`order`**:使用“dataSetPreperance”时，必须为数 `order` 组提供数据集列表。列表中未包含的任何数据集都将不会合并。 换言之，必须明确列出数据集才能将其合并到用户档案中。 `order`数组按优先级顺序列出数据集的ID。
 
-#### Example `attributeMerge` object using `dataSetPrecedence` type
+#### 使用`dataSetPrecedence`类型的`attributeMerge`对象示例
 
 ```json
     "attributeMerge": {
@@ -153,7 +153,7 @@ Where `{IDENTITY_GRAPH_TYPE}` is one of the following:
     }
 ```
 
-#### Example `attributeMerge` object using `timestampOrdered` type
+#### 使用`timestampOrdered`类型的`attributeMerge`对象示例
 
 ```json
     "attributeMerge": {
@@ -334,13 +334,13 @@ curl -X POST \
 }
 ```
 
-See the [components of merge policies](#components-of-merge-policies) section at the beginning of this document for details on each of the individual elements that make up a merge policy.
+有关构成合并策略的各个元素的详细信息，请参阅本文档开头的合并策略的[组件](#components-of-merge-policies)部分。
 
-### List multiple merge policies by criteria
+### 按条件列出多个合并策略
 
-您可以在IMS组织内列出多个合并策略，方法是向`/config/mergePolicies`端点发出GET请求，并使用可选的查询参数对响应进行筛选、排序和分页。 可以包含多个参数，并以与号(&amp;)分隔。 Making a call to this endpoint with no parameters will retrieve all merge policies available for your organization.
+您可以在IMS组织内列出多个合并策略，方法是向`/config/mergePolicies`端点发出GET请求，并使用可选的查询参数对响应进行筛选、排序和分页。 可以包含多个参数，并以与号(&amp;)分隔。 在没有参数的情况下调用此端点将检索适用于贵组织的所有合并策略。
 
-**API format**
+**API格式**
 
 ```http
 GET /config/mergePolicies?{QUERY_PARAMS}
@@ -352,8 +352,8 @@ GET /config/mergePolicies?{QUERY_PARAMS}
 | `limit` | 指定页面大小限制以控制页面中包含的结果数。 默认值：20 |
 | `orderBy` | 指定将结果排序为`orderBy=name`或`orderBy=+name`的字段，以按名称升序排序，或按`orderBy=-name`降序排序。 省略此值会导致默认按升序排序`name`。 |
 | `schema.name` | 用于检索可用合并策略的架构的名称。 |
-| `identityGraph.type` | 按身份图表类型筛选结果。 Possible values include &quot;none&quot; and &quot;pdg&quot; (Private graph). |
-| `attributeMerge.type` | 按使用的属性合并类型筛选结果。 Possible values include &quot;timestampOrdered&quot; and &quot;dataSetPrecedence&quot;. |
+| `identityGraph.type` | 按身份图表类型筛选结果。 可能的值包括“无”和“pdg”（专用图）。 |
+| `attributeMerge.type` | 按使用的属性合并类型筛选结果。 可能的值包括“timestampOrdered”和“dataSetPreperance”。 |
 | `start` | 页面偏移 — 指定要检索数据的起始ID。 默认值：0 |
 | `version` | 如果要使用合并策略的特定版本，请指定此选项。 默认情况下，将使用最新版本。 |
 
@@ -445,7 +445,7 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `_links.next.href` | 结果下一页的URI地址。 Use this URI as the request parameter for another API call to the same endpoint to view the page. 如果不存在下一页，则此值将为空字符串。 |
+| `_links.next.href` | 结果下一页的URI地址。 使用此URI作为对同一端点的另一API调用的请求参数，以查看页面。 如果不存在下一页，则此值将为空字符串。 |
 
 ## 创建合并策略
 
@@ -457,8 +457,8 @@ curl -X GET \
 POST /config/mergePolicies
 ```
 
-**Request**
-The following request creates a new merge policy, which is configured by the attribute values provided in the payload:
+****
+请求以下请求会创建一个新的合并策略，该策略由有效负载中提供的属性值进行配置：
 
 ```shell
 curl -X POST \
@@ -489,7 +489,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| `name` | A human-friendly name by which the merge policy can be identified in list views. |
+| `name` | 在列表视图中标识合并策略的人类易记名称。 |
 | `identityGraph.type` | 要从中获取要合并的相关标识的标识图类型。 可能值：“无”或“pdg”（专用图）。 |
 | `attributeMerge` | 在发生数据冲突时优先配置文件属性值的方式。 |
 | `schema` | 与合并策略关联的XDM架构类。 |
@@ -613,7 +613,7 @@ curl -X PATCH \
 }
 ```
 
-### Overwrite a merge policy
+### 覆盖合并策略
 
 修改合并策略的另一种方法是使用PUT请求，该请求会覆盖整个合并策略。
 
@@ -663,18 +663,18 @@ curl -X PUT \
 
 | 属性 | 描述 |
 |---|---|
-| `name` | A human-friendly name by which the merge policy can be identified in list views. |
+| `name` | 在列表视图中标识合并策略的人类易记名称。 |
 | `identityGraph` | 要从中获取要合并的相关标识的标识图。 |
 | `attributeMerge` | 在发生数据冲突时优先配置文件属性值的方式。 |
 | `schema` | 与合并策略关联的XDM架构类。 |
 | `default` | 指定此合并策略是否为架构的默认策略。 |
 
-Refer to the [components of merge policies](#components-of-merge-policies) section for more information.
+有关更多信息，请参阅合并策略的[组件](#components-of-merge-policies)一节。
 
 
 **响应**
 
-A successful response returns the details of the updated merge policy.
+成功的响应会返回更新的合并策略的详细信息。
 
 ```json
 {
@@ -735,44 +735,10 @@ curl -X DELETE \
 
 **响应**
 
-成功的删除请求会返回HTTP状态200（确定）和空的响应正文。 To confirm the deletion was successful, you can perform a GET request to view the merge policy by its ID. If the merge policy was deleted, you will receive an HTTP Status 404 (Not Found) error.
+成功的删除请求会返回HTTP状态200（确定）和空的响应正文。 要确认删除成功，您可以执行GET请求以按其ID查看合并策略。 如果删除了合并策略，您将收到HTTP状态404（未找到）错误。
 
 ## 后续步骤
 
-现在，您已了解如何为组织创建和配置合并策略，接下来可以使用这些策略来调整Platform中客户配置文件的视图，并根据[!DNL Real-time Customer Profile]数据创建受众区段。 请参阅[Adobe Experience Platform Segmentation Service文档](../../segmentation/home.md)以开始定义和使用区段。
+现在，您已了解如何为组织创建和配置合并策略，接下来可以使用这些策略来调整Platform中客户配置文件的视图，并根据[!DNL Real-time Customer Profile]数据创建受众区段。
 
-## 附录
-
-本节提供了与使用合并策略有关的补充信息。
-
-### 使用自定义时间戳 {#custom-timestamps}
-
-当将记录摄取到Experience Platform中时，在摄取时获取系统时间戳并将其添加到记录中。 选择`timestampOrdered`作为合并策略的`attributeMerge`类型时，将根据系统时间戳合并配置文件。 换言之，将根据将记录摄取到平台的时间戳进行合并。
-
-有时可能会出现这样的用例，例如回填数据或确保在不按顺序摄取记录时事件的顺序正确，在这些用例中，需要提供自定义时间戳，并且合并策略遵循自定义时间戳，而不是系统时间戳。
-
-要使用自定义时间戳，必须将[[!DNL External Source System Audit Details] 架构字段组](#field-group-details)添加到您的配置文件架构中。 添加后，可以使用`xdm:lastUpdatedDate`字段填充自定义时间戳。 在填充`xdm:lastUpdatedDate`字段的情况下摄取记录时，Experience Platform将使用该字段在数据集内和跨数据集合并记录或配置文件片段。 如果`xdm:lastUpdatedDate`不存在或未填充，平台将继续使用系统时间戳。
-
->[!NOTE]
->
->在同一记录上发送PATCH时，必须确保填充`xdm:lastUpdatedDate`时间戳。
-
-有关使用架构注册表API处理架构的分步说明（包括如何向架构添加字段组），请访问[有关使用API创建架构的教程](../../xdm/tutorials/create-schema-api.md)。
-
-要使用UI处理自定义时间戳，请参阅[合并策略概述](../merge-policies/overview.md)中的使用自定义时间戳](../merge-policies/overview.md#custom-timestamps)的[部分。
-
-#### [!DNL External Source System Audit Details] 字段组详细信息 {#field-group-details}
-
-以下示例显示了[!DNL External Source System Audit Details]字段组中正确填充的字段。 还可以在GitHub上的[公共Experience Data Model(XDM)存储库](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/external-source-system-audit-details.schema.json)中查看完整字段组JSON。
-
-```json
-{
-  "xdm:createdBy": "{CREATED_BY}",
-  "xdm:createdDate": "2018-01-02T15:52:25+00:00",
-  "xdm:lastUpdatedBy": "{LAST_UPDATED_BY}",
-  "xdm:lastUpdatedDate": "2018-01-02T15:52:25+00:00",
-  "xdm:lastActivityDate": "2018-01-02T15:52:25+00:00",
-  "xdm:lastReferencedDate": "2018-01-02T15:52:25+00:00",
-  "xdm:lastViewedDate": "2018-01-02T15:52:25+00:00"
- }
-```
+请参阅[Adobe Experience Platform Segmentation Service文档](../../segmentation/home.md)以开始定义和使用区段。
