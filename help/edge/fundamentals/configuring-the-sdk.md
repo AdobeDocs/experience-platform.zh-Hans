@@ -4,9 +4,9 @@ description: 了解如何配置Adobe Experience Platform Web SDK。
 seo-description: 了解如何配置Experience PlatformWeb SDK
 keywords: 配置；配置；SDK;Edge;Web SDK；配置；edgeConfigId；上下文；Web；设备；placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;Web SDK设置；prehidingStyle;ocookieDestinationsEnable;urlDestinationsEnabled;idMigCookiesEnabled；第三方Cookies
 exl-id: d1e95afc-0b8a-49c0-a20e-e2ab3d657e45
-source-git-commit: 4b04f02a7a8843e667ea05b000bc93ebb065babd
+source-git-commit: 549203c8ddc94e00cf4e4ba432f367ddc371cb27
 workflow-type: tm+mt
-source-wordcount: '839'
+source-wordcount: '856'
 ht-degree: 14%
 
 ---
@@ -32,6 +32,10 @@ alloy("configure", {
 
 ### `edgeConfigId`
 
+>[!NOTE]
+>
+>**边缘配置已重新命名为数据流。数据流ID与配置ID相同。**
+
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
 | 字符串 | 是 | None |
@@ -54,7 +58,7 @@ alloy("configure", {
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
-| 布尔值 | 否 | `false` |
+| 布尔型 | 否 | `false` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -69,7 +73,7 @@ alloy("configure", {
 
 ### `edgeDomain` {#edge-domain}
 
-使用第一方域填充此字段。 有关更多详细信息，请参阅[文档](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html)。
+使用第一方域填充此字段。 有关更多详细信息，请参阅[文档](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)。
 
 该域与位于www的网站的`data.{customerdomain.com}`类似。{customerdomain.com}。
 
@@ -89,7 +93,7 @@ alloy("configure", {
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
-| 布尔值 | 否 | `true` |
+| 布尔型 | 否 | `true` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -144,7 +148,7 @@ alloy("configure", {
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
-| 布尔值 | 否 | `true` |
+| 布尔型 | 否 | `true` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -154,7 +158,7 @@ alloy("configure", {
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
-| 布尔值 | 否 | `true` |
+| 布尔型 | 否 | `true` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -166,7 +170,7 @@ alloy("configure", {
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
-| 布尔值 | 否 | `true` |
+| 布尔型 | 否 | `true` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -176,7 +180,7 @@ alloy("configure", {
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
-| 布尔值 | 否 | `true` |
+| 布尔型 | 否 | `true` |
 
 {style=&quot;table-layout:auto&quot;}
 
