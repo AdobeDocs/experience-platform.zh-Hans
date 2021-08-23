@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK支持的用例
 description: 了解Adobe Experience Platform Web SDK支持哪些用例。
 keywords: Web SDK；用例
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: e012e12a8cadb8c13781b0380d84652c23567180
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '565'
 ht-degree: 14%
 
 ---
@@ -85,12 +85,13 @@ ht-degree: 14%
 | Adobe Target中的QA链接 |  |
 | 在Adobe Target中根据地理/设备进行定位 |  |
 | 访客属性支持 |  |
-| 配置文件脚本 |  |
+| 个人资料脚本 |  |
 | XDM成为mbox参数 |  |
 | A4T报表支持的重定向选件 | [文档](https://experienceleague.adobe.com/docs/target/using/experiences/offers/offer-redirect.html?lang=en) |
 | 更新Target配置文件 | [文档](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/adobe-target/target-overview.html?lang=en#single-profile-update) |
 | 推荐 |  |
 | mBox第三方ID |  |
+| 响应令牌 | [文档](https://experienceleague.adobe.com/docs/experience-platform/edge/personalization/adobe-target/accessing-response-tokens.html?lang=en) |
 
 {style=&quot;table-layout:auto&quot;}
 
