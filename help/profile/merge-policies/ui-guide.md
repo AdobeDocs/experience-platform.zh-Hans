@@ -4,7 +4,7 @@ title: 合并策略UI指南
 type: Documentation
 description: 在Experience Platform中将来自多个源的数据汇集在一起时，合并策略是Platform用来确定数据优先级和合并哪些数据以创建统一视图的规则。 本指南提供了使用Adobe Experience Platform用户界面使用合并策略的分步说明。
 exl-id: 0489217a-6a53-428c-a531-fd0a0e5bb71f
-source-git-commit: 2696dab922d9c1992b61ffefe50a4e3155793282
+source-git-commit: a6a49b4cf9c89b5c6b4679f36daede93590ffb3c
 workflow-type: tm+mt
 source-wordcount: '2193'
 ht-degree: 0%
@@ -20,7 +20,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 要进一步了解合并策略以及它们在Experience Platform中所起的作用，请首先阅读[合并策略概述](overview.md)。
 
-## 入门指南
+## 快速入门
 
 本指南要求您对以下几个重要功能有一定的了解。 [!DNL Experience Platform]在阅读本指南之前，请查阅以下服务的文档：
 
@@ -28,7 +28,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 * [Adobe Experience Platform Identity服务](../../identity-service/home.md):通过桥接从被摄取到的不同数据源中的身份，支持实时客户资料 [!DNL Platform]。
 * [体验数据模型(XDM)](../../xdm/home.md):用于组织客户体验数 [!DNL Platform] 据的标准化框架。
 
-## 查看合并策略{#view-merge-policies}
+## 查看合并策略 {#view-merge-policies}
 
 在[!DNL Experience Platform] UI中，您可以开始使用合并策略，方法是在左侧导航中选择&#x200B;**[!UICONTROL Profiles]** ，然后选择&#x200B;**[!UICONTROL Merge Policies]**&#x200B;选项卡。 此选项卡包含贵组织的所有现有合并策略的列表，以及每个合并策略的详细信息，包括策略名称、合并策略是否是默认合并策略以及与合并策略相关的架构类。
 
@@ -38,7 +38,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 ![](../images/merge-policies/adjust-view.png)
 
-## 创建合并策略{#create-a-merge-policy}
+## 创建合并策略 {#create-a-merge-policy}
 
 要创建新的合并策略，请在合并策略选项卡中选择&#x200B;**[!UICONTROL 创建合并策略]**&#x200B;以进入新的合并策略工作流。
 
@@ -84,7 +84,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 有关合并方法的更多信息，请参阅[合并策略概述](overview.md)。
 
-### 按{#timestamp-ordered-profile}排序的时间戳
+### 已排序时间戳 {#timestamp-ordered-profile}
 
 选择&#x200B;**[!UICONTROL 按顺序排序的时间戳]**&#x200B;作为合并方法意味着将优先从最近更新的数据集中获取属性。 这适用于所有配置文件数据集。
 
@@ -94,7 +94,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 ![](../images/merge-policies/timestamp-ordered.png)
 
-### 数据集优先级{#dataset-precedence-profile}
+### 数据集优先级 {#dataset-precedence-profile}
 
 选择&#x200B;**[!UICONTROL 数据集优先级]**&#x200B;作为合并方法要求您选择配置文件数据集并手动对其进行优先级排序。 列出的每个数据集还包含上次摄取的批次的状态，或显示一条通知，指示尚未将任何批次摄取到该数据集。
 
@@ -114,7 +114,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 工作流的下一步要求您选择ExperienceEvent数据集。 此屏幕受您在[[!UICONTROL 选择配置文件数据集]](#select-profile-datasets)屏幕中选择的合并方法的影响。
 
-### 按{#timestamp-ordered-experienceevent}排序的时间戳
+### 已排序时间戳 {#timestamp-ordered-experienceevent}
 
 如果您选择&#x200B;**[!UICONTROL 按顺序排序的时间戳]**&#x200B;作为配置文件数据集的合并方法，则此处还将优先使用最近更新的ExperienceEvent数据集的属性。
 
@@ -124,7 +124,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 ![](../images/merge-policies/timestamp-experienceevent.png)
 
-### 数据集优先级{#dataset-precedence-experienceevent}
+### 数据集优先级 {#dataset-precedence-experienceevent}
 
 如果您选择&#x200B;**[!UICONTROL 数据集优先级]**&#x200B;作为配置文件数据集的合并方法，则需要选择要包含的ExperienceEvent数据集。 您最多可以从数据集列表中选择50个ExperienceEvent数据集。
 
@@ -148,7 +148,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 在选择&#x200B;**[!UICONTROL 完成]**&#x200B;以完成创建工作流之前，请确保仔细查看合并策略配置并预览数据。
 
-### 按{#timestamp-ordered-review}排序的时间戳
+### 已排序时间戳 {#timestamp-ordered-review}
 
 如果您选择&#x200B;**[!UICONTROL 按顺序排序的时间戳]**&#x200B;作为合并策略的合并方法，则配置文件数据集列表将按照时间戳的顺序，包含由您的组织创建的与架构类相关的所有数据集。 ExperienceEvent数据集列表包含您的组织为所选架构类创建的所有数据集，这些数据集将附加到配置文件数据集。
 
@@ -156,7 +156,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 ![](../images/merge-policies/timestamp-review.png)
 
-### 数据集优先级{#dataset-precedence-review}
+### 数据集优先级 {#dataset-precedence-review}
 
 如果您选择&#x200B;**[!UICONTROL 数据集优先级]**&#x200B;作为合并策略的合并方法，则配置文件数据集和ExperienceEvent数据集列表将分别仅包含您在创建工作流中选择的配置文件数据集和ExperienceEvent数据集。 配置文件数据集的顺序应与创建期间指定的优先级匹配。 如果没有，请使用[!UICONTROL 返回]按钮返回到上一个工作流步骤并调整优先级。
 
@@ -164,7 +164,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 ![](../images/merge-policies/dataset-precedence-review.png)
 
-### 更新了合并策略列表{#updated-list}
+### 更新了合并策略列表 {#updated-list}
 
 完成创建新合并策略的工作流后，您将返回到&#x200B;**[!UICONTROL 合并策略]**&#x200B;选项卡。 现在，贵组织的合并策略列表应包含刚刚创建的合并策略。
 
