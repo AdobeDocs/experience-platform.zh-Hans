@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；合并
 title: 合并策略概述
 type: Documentation
 description: Adobe Experience Platform允许您从多个来源将数据片段合并在一起，以便查看各个客户的完整视图。 合并策略是Platform用来确定数据优先级以及合并哪些数据以创建统一视图的规则，将这些数据整合在一起。
-source-git-commit: c2cc1428e3a70cf987adab583e9f9fb5d5140c74
+source-git-commit: a6a49b4cf9c89b5c6b4679f36daede93590ffb3c
 workflow-type: tm+mt
-source-wordcount: '1492'
+source-wordcount: '1252'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 使用RESTful API或用户界面，您可以创建新的合并策略、管理现有策略，并为您的组织设置默认的合并策略。 本文档概述了合并策略以及它们在Experience Platform中发挥的作用。
 
-## 入门指南
+## 快速入门
 
 本指南要求您对以下几个重要功能有一定的了解。 [!DNL Experience Platform]在遵循本指南并使用合并策略之前，请查阅以下服务的文档：
 
@@ -35,7 +35,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 合并策略是IMS组织的专用策略，允许您创建不同的策略以按照所需的特定方式合并架构。 您还可以指定在未明确提供时使用的默认合并策略。 请参阅本文档后面关于[默认合并策略](#default-merge-policy)的部分，以了解更多信息。
 
-## 合并方法{#merge-methods}
+## 合并方法 {#merge-methods}
 
 每个配置文件片段都包含个人身份总数中只有一个身份的信息。 将这些数据合并到一起以构成客户用户档案时，可能会导致该信息发生冲突，并且必须指定优先级。
 
@@ -45,35 +45,18 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 * **[!UICONTROL 数据集优先级]:** 在发生冲突时，请根据配置文件片段的来源数据集，为其优先级。选择此选项时，必须选择相关数据集及其优先级顺序。 详细了解[数据集优先级](#dataset-precedence)合并方法。
 * **[!UICONTROL 按顺序排列时间戳]:** 在发生冲突时，将优先于最近更新的用户档案片段。了解有关[timestamp ordered](#timestamp-ordered)合并方法的更多信息。
-   * **自定义时间戳：** 按时间戳顺序合并方法还支持自定义时间戳，当合并同一数据集（多个身份）或跨数据集的数据时，该时间戳优先于系统时间戳。要了解更多信息，请参阅[上使用自定义时间戳](#custom-timestamps)的部分。
 
-### 数据集优先级{#dataset-precedence}
+### 数据集优先级 {#dataset-precedence}
 
 选择&#x200B;**[!UICONTROL 数据集优先级]**&#x200B;作为合并策略的合并方法时，您可以根据来自的数据集优先考虑配置文件片段。 例如，如果贵组织在一个数据集中存在比另一个数据集中的数据更可取或可信的信息，则使用案例会是。
 
 要使用&#x200B;**[!UICONTROL 数据集优先级]**&#x200B;创建合并策略，您必须选择包含的配置文件和ExperienceEvent数据集，然后可以手动对配置文件数据集进行优先级排序。 选择并排序数据集后，最高的数据集将获得最高优先级，第二个数据集将获得第二高优先级，依此类推。
 
-### 按{#timestamp-ordered}排序的时间戳
+### 已排序时间戳 {#timestamp-ordered}
 
 当将用户档案记录摄取到Experience Platform中时，将在摄取时获取系统时间戳并将其添加到记录中。 选择&#x200B;**[!UICONTROL 按顺序排列的时间戳]**&#x200B;作为合并策略的合并方法时，将根据系统时间戳来合并配置文件。 换言之，将根据将记录摄取到平台的时间戳进行合并。
 
-#### 使用自定义时间戳{#custom-timestamps}
-
-有时，在某些用例中，需要提供自定义时间戳，并且合并策略遵循自定义时间戳，而不是系统时间戳。 例如，回填数据或确保在不按顺序摄取记录时事件的顺序正确。
-
-要使用自定义时间戳，必须将&#x200B;**[!UICONTROL 外部源系统审核详细信息]架构字段组**&#x200B;添加到您的配置文件架构中。 添加后，可以使用`lastUpdatedDate`字段填充自定义时间戳。 在填充`lastUpdatedDate`字段的情况下摄取记录时，Experience Platform将使用该字段来合并跨数据集的记录。 如果`lastUpdatedDate`不存在或未填充，平台将继续使用系统时间戳。
-
->[!NOTE]
->
->在摄取同一记录上的更新时，必须确保填充`lastUpdatedDate`时间戳。
-
-以下屏幕截图显示[!UICONTROL External Source System Audit Details]字段组中的字段。 有关使用Platform UI处理架构的分步说明（包括如何向架构添加字段组），请访问[有关使用UI](../../xdm/tutorials/create-schema-ui.md)创建架构的教程。
-
-![](../images/merge-policies/custom-timestamp-field-group.png)
-
-要使用API处理自定义时间戳，请参阅使用自定义时间戳的[合并策略端点指南部分](../api/merge-policies.md#custom-timestamps)。
-
-## 身份拼合{#id-stitching}
+## 身份拼合 {#id-stitching}
 
 身份拼合（[!UICONTROL ID拼合]）是识别数据片段并将它们组合在一起以形成完整配置文件记录的过程。 为帮助说明不同的拼合行为，请考虑使用两个不同电子邮件地址与品牌进行交互的单个客户。
 
@@ -82,7 +65,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 要了解有关身份及其在生成用户档案和区段方面的作用的更多信息，请首先阅读[Identity Service概述](../../identity-service/home.md)。
 
-## 默认合并策略{#default-merge-policy}
+## 默认合并策略 {#default-merge-policy}
 
 组织可以为其组织创建默认合并策略，以便在合并配置文件片段时使用。 这样，在Experience Platform中执行操作（如查看客户配置文件或创建区段）时，用户便可轻松选择默认策略。 在大多数情况下，除非指定其他合并策略，否则将使用默认的合并策略。
 
