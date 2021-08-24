@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 区段匹配概述
 topic-legacy: overview
 description: 区段匹配是Adobe Experience Platform中的一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。
-source-git-commit: d6eefc8c10a44fd31eaed00f22d09ee8a300db83
+source-git-commit: ee59da6c075573af366403e1059b5318fb924d21
 workflow-type: tm+mt
-source-wordcount: '1901'
+source-wordcount: '1982'
 ht-degree: 1%
 
 ---
@@ -74,6 +74,17 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 [!DNL Segment Match] 使用C11标签，这是特定于的合同标签，您可 [!DNL Segment Match] 以手动将其添加到任何数据集或属性，以确保将其排除在合作 [!DNL Segment Match] 伙伴共享流程之外。C11标签表示不应在[!DNL Segment Match]进程中使用的数据。 在确定要从[!DNL Segment Match]中排除的数据集和/或字段并相应地添加了C11标签后，[!DNL Segment Match]工作流将自动强制实施该标签。 [!DNL Segment Match] 自动启用“限 [!UICONTROL 制数据共] 享核心”策略。有关如何将数据使用情况标签应用于数据集的特定说明，请参阅[在UI](../../data-governance/labels/user-guide.md)中管理数据使用情况标签的教程。
 
 有关数据使用标签及其定义的列表，请参阅[数据使用标签术语表](../../data-governance/labels/reference.md)。 有关数据使用策略的信息，请参阅[数据使用策略概述](../../data-governance/policies/overview.md)。
+
+### 了解[!DNL Segment Match]权限
+
+有两个权限与[!DNL Segment Match]关联：
+
+| 权限 | 描述 |
+| --- | --- |
+| 管理受众共享连接 | 此权限允许您完成合作伙伴握手过程，该过程会连接两个IMS组织以启用[!DNL Segment Match]流。 |
+| 管理受众共享 | 此权限允许您与活动合作伙伴（已由管理员用户通过&#x200B;**[!UICONTROL 受众共享连接]**&#x200B;访问权限连接的合作伙伴）一起创建、编辑和发布信息源（用于[!DNL Segment Match]的数据包）。 |
+
+有关访问控制和权限的更多信息，请参阅[访问控制概述](../../access-control/home.md) 。
 
 ## [!DNL Segment Match] 端到端工作流
 
