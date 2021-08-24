@@ -4,9 +4,9 @@ title: 目标类型和类别
 seo-title: 目标类型和类别
 description: 了解Adobe Experience Platform中的不同目标类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 5a6f14ba65584a6bd61d62c4fb0b46e8f9e8e96d
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '534'
 ht-degree: 0%
 
 ---
@@ -23,15 +23,26 @@ ht-degree: 0%
 
 ## 连接 {#connections}
 
-**[!UICONTROL 配置]** 文件导 **[!UICONTROL 出]** 和区段Adobe Experience Platform中的导出目标可捕获事件数据，将其与其他数据源合并以构成 [实时客户配置文件](../profile/home.md)，应用分段，以及将区段和符合条件的配置文件导出到目标。
+**[!UICONTROL 配置文]** 件导 **[!UICONTROL 出和流]** 区段导出Adobe Experience Platform中的目标可捕获事件数据，将其与其他数据源合并以构成实时客户配置文件 [](../profile/home.md)，应用分段，并将区段和符合条件的配置文件导出到目标。
 
 ## 配置文件导出目标
 
-配置文件导出目标会生成包含配置文件和/或属性的文件。 这些目标使用原始数据，通常以电子邮件地址作为主键。 [Amazon S3云存储目标](./catalog/cloud-storage/amazon-s3.md)是一个目标示例，您可以在其中存放包含配置文件导出的文件。
+配置文件导出目标会接收原始数据，通常以电子邮件地址作为主键。 Experience Platform当前支持两种类型的配置文件导出目标：
 
-## 区段导出目标
+* [流配置文件导出目标](#streaming-profile-export)
+* [基于文件的目标](#file-based)
 
-区段导出目标会将用户档案及其符合条件的区段发送到目标平台。 这些目标使用区段ID或用户ID。 例如，[[!DNL Google Display & Video 360]](./catalog/advertising/google-dv360.md)或[[!DNL Google Ads]](./catalog/advertising/google-ads-destination.md)等广告目标就是这些类型目标的示例。
+### 流配置文件导出目标 {#streaming-profile-export}
+
+流配置文件导出目标将区段和配置文件数据作为Experience Platform数据流接收。 [Amazon](catalog/cloud-storage/amazon-kinesis.md) 运动 [和Azure事](catalog/cloud-storage/azure-event-hubs.md) 件轮ub是此类目标的示例。
+
+### 基于文件的目标 {#file-based}
+
+基于文件的目标将接收包含配置文件和/或属性的`.csv`文件。 [Amazon S3](catalog/cloud-storage/amazon-s3.md) 是一个目标示例，您可以在其中存放包含配置文件导出的文件。
+
+## 流区段导出目标
+
+区段导出目标可接收Experience Platform区段数据。 这些目标使用区段ID或用户ID。 [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md) 和 [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md) 此类目标的示例。
 
 ## 配置文件导出和区段导出目标 — 视频概述
 
