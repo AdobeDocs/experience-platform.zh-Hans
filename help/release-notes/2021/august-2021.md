@@ -4,10 +4,10 @@ description: Experience Platform2021年8月25日发行说明。
 doc-type: release notes
 last-update: August 25, 2021
 author: ens28527
-source-git-commit: 17d4e91aeeca988f5b047007f87062872f36365c
+source-git-commit: bd3d60e1960b1f4c32ade8c4070d7c1b01e5ba07
 workflow-type: tm+mt
-source-wordcount: '300'
-ht-degree: 12%
+source-wordcount: '457'
+ht-degree: 9%
 
 ---
 
@@ -20,6 +20,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 - [可观察性洞察](#observability)
 - [Real-time Customer Profile](#profile)
+- [源](#sources)
 
 ## 可观察性洞察 {#observability}
 
@@ -42,3 +43,15 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 | 按合并策略或标识浏览用户档案 | 现在，在Experience Platform中浏览用户档案时，您可以按合并策略浏览，以根据选定的合并策略预览20个示例用户档案。 您还可以按身份浏览，以便使用身份命名空间和相关身份值搜索特定的配置文件。 有关更多信息，请参阅[Real-time Customer Profile UI指南](../../profile/ui/user-guide.md)。 |
 
 要了解有关实时客户资料的更多信息，包括有关使用资料数据的教程和最佳实践，请首先阅读[实时客户资料概述](../../profile/home.md)。
+
+## 源 {#sources}
+
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强该数据。 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+
+Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，以及管理数据摄取吞吐量。
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 本地文件上传源连接器 | 文件摄取类别已重命名为本地系统，允许您使用本地文件上传连接器将本地文件直接导入到平台。 通过此连接器摄取的数据可通过监控仪表板进行监控。 有关更多信息，请参阅[本地文件上载源概述](../../sources/connectors/local-system/local-file-upload.md) 。 |
+
+要了解有关源的更多信息，请参阅[源概述](../../sources/home.md)。
