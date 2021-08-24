@@ -5,10 +5,10 @@ title: '使用API进行边缘分段 '
 topic-legacy: developer guide
 description: 本文档包含有关如何将边缘分段与Adobe Experience Platform Segmentation Service API结合使用的示例。
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: 3de00fb9ae5348b129a499cfd81d8db6dbac2d46
+source-git-commit: af1eee8787d7fa2ae2d56e541823100d2620dd2d
 workflow-type: tm+mt
-source-wordcount: '616'
-ht-degree: 4%
+source-wordcount: '633'
+ht-degree: 3%
 
 ---
 
@@ -38,8 +38,8 @@ ht-degree: 4%
 | ---------- | ------- |
 | 传入点击 | 任何引用无时间限制的单个传入事件的区段定义。 |
 | 引用用户档案的传入点击 | 任何引用单个传入事件（无时间限制）和一个或多个用户档案属性的区段定义。 |
-| 频度查询 | 任何区段定义，指发生至少特定次数的事件。 |
-| 引用用户档案的频率查询 | 任何区段定义，指发生至少特定次数且具有一个或多个用户档案属性的事件。 |
+| 时间窗口为24小时的传入点击 | 在24小时内引用单个传入事件的任何区段定义 |
+| 引用时间窗口为24小时的用户档案的传入点击 | 在24小时内引用单个传入事件以及一个或多个用户档案属性的任何区段定义 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -47,9 +47,9 @@ ht-degree: 4%
 
 | 查询类型 | 详细信息 |
 | ---------- | ------- |
-| 相对时间窗口 | 如果查询引用的是时间窗口，则无法使用边缘分段来评估查询。 |
-| 求反 | 如果查询包含求反或`not`事件，则无法使用边缘分段来评估该查询。 |
 | 多个事件 | 如果查询包含多个事件，则无法使用边缘分段来评估该查询。 |
+| 频度查询 | 任何区段定义，指发生至少特定次数的事件。 |
+| 引用用户档案的频率查询 | 任何区段定义，指发生至少特定次数且具有一个或多个用户档案属性的事件。 |
 
 {style=&quot;table-layout:auto&quot;}
 
