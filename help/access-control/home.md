@@ -5,9 +5,9 @@ topic-legacy: overview
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: f340ecfb850ef50504938a5db136e70b8bede61a
+source-git-commit: 4425f7d61aa5ff357c7ba25cf986201fefeacd67
 workflow-type: tm+mt
-source-wordcount: '1320'
+source-wordcount: '1347'
 ht-degree: 2%
 
 ---
@@ -105,6 +105,8 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 | [!DNL Destinations] | [!UICONTROL 激活目标] | 能够将数据激活到已创建的活动目标。 此权限要求将“查看目标”或“管理[!UICONTROL 目标”]授予将激活目标的用户。 |
 | [!DNL Data Ingestion] | [!UICONTROL 管理源] | 对读取、创建、编辑和禁用源的访问权限。 |
 | [!DNL Data Ingestion] | [!UICONTROL 查看源] | 对&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡中可用源的只读访问，对&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中的已验证源的只读访问。 |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 访问创建、接受和拒绝合作伙伴握手，以连接两个IMS组织并启用[!DNL Segment Match]流。 |
+| [!DNL Data Ingestion] | [!DNL Manage Audience Share] | 与活动合作伙伴一起读取、创建、编辑和发布[!DNL Segment Match]信息源。 |
 | [!DNL Data Science Workspace] | [!UICONTROL 管理数据科学工作区] | 在[!DNL Data Science Workspace]中访问读取、创建、编辑和删除操作。 |
 | [!DNL Data Governance] | [!UICONTROL 应用数据使用情况标签] | 访问读取、创建和删除使用情况标签。 |
 | [!DNL Data Governance] | [!UICONTROL 管理数据使用策略] | 访问读取、创建、编辑和删除数据使用策略。 |
