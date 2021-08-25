@@ -5,9 +5,9 @@ title: 可观测性洞察概述
 topic-legacy: overview
 description: Adobe Experience Platform可观察性分析是一个RESTful API，它允许您在Platform活动中显示关键量度。 这些量度提供对平台使用情况统计数据的分析、平台服务的运行状况检查、历史趋势以及各种平台功能的性能指标。
 exl-id: ad9fcd1b-b649-47d8-93f3-4a3752480129
-source-git-commit: 0a64737c805f5e1a4856aa49084a61e64e401ed6
+source-git-commit: 444f63054c1e4e429498c95c7bba8c4ddd612799
 workflow-type: tm+mt
-source-wordcount: '290'
+source-wordcount: '262'
 ht-degree: 1%
 
 ---
@@ -22,11 +22,7 @@ Adobe Experience Platform [!DNL Observability Insights]允许您通过使用统�
 
 有关使用API的更多信息，请参阅[[!DNL Observability Insights]  API开发人员指南](./api/overview.md)。
 
-## 警报（测试版）
-
->[!IMPORTANT]
->
->Adobe Experience Platform中的警报并非对所有用户都可用。 此功能已在测试版中，且仍在测试中。 此部分可能会发生更改。
+## 警报
 
 Experience Platform允许您在达到Platform操作中的一组特定条件时，根据特定的可观察性量度订阅警报。 警报可以采用一次性通知的形式，也可以在预定义的时间间隔内重复，直到触发警报的条件得到解决为止。
 
