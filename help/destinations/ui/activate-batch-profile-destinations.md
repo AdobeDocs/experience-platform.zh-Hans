@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: Activate audience data to batch profile export destinations
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
-source-git-commit: bd93c21ae439a8802218b8d664b7109467f8a013
+source-git-commit: 7c10f39e7452481a00fb4269925c80aab34a7319
 workflow-type: tm+mt
-source-wordcount: '1905'
+source-wordcount: '1925'
 ht-degree: 0%
 
 ---
@@ -25,13 +25,17 @@ ht-degree: 0%
 
 ## 选择您的目标 {#select-destination}
 
-1. 转到&#x200B;**[!UICONTROL 连接>目标]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。
+1. 转到&#x200B;**[!UICONTROL 连接>目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。
 
-   ![“目标浏览”选项卡](../assets/ui/activate-batch-profile-destinations/browse-tab.png)
+   ![“目标目录”选项卡](../assets/ui/activate-batch-profile-destinations/catalog-tab.png)
 
-1. 选择与要激活区段的目标对应的&#x200B;**[!UICONTROL 添加区段]**&#x200B;按钮，如下图所示。
+1. 在与要激活区段的目标对应的卡上选择&#x200B;**[!UICONTROL 激活区段]**，如下图所示。
 
-   ![激活按钮](../assets/ui/activate-batch-profile-destinations/activate-buttons-browse.png)
+   ![“激活区段”按钮](../assets/ui/activate-batch-profile-destinations/activate-segments-button.png)
+
+1. 选择要用于激活区段的目标连接，然后选择&#x200B;**[!UICONTROL Next]**。
+
+   ![选择目标](../assets/ui/activate-batch-profile-destinations/select-destination.png)
 
 1. 移到下一部分，选择[区段](#select-segments)。
 
@@ -144,9 +148,7 @@ ht-degree: 0%
 
    ![“选择源字段”页](../assets/ui/activate-batch-profile-destinations/target-field-page.png)
 
-
 1. 要添加更多映射，请重复步骤1至3。
-
 
 >[!NOTE]
 >
