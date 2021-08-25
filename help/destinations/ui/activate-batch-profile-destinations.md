@@ -2,12 +2,12 @@
 keywords: 激活用户档案目标；激活目标；激活数据；激活电子邮件营销目标；激活云存储目标
 title: 激活受众数据以批量配置文件导出目标
 type: Tutorial
-seo-title: 激活受众数据以批量配置文件导出目标
+seo-title: Activate audience data to batch profile export destinations
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
-seo-description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
-source-git-commit: eebebcdc5e5f94d90eceb291dfe487fcd0f8c254
+seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
+source-git-commit: bd93c21ae439a8802218b8d664b7109467f8a013
 workflow-type: tm+mt
-source-wordcount: '1933'
+source-wordcount: '1905'
 ht-degree: 0%
 
 ---
@@ -90,7 +90,7 @@ ht-degree: 0%
 1. 使用&#x200B;**[!UICONTROL Frequency]**&#x200B;选择器选择导出频率：
 
    * **[!UICONTROL 每日]**:在您指定的时间，计划每天一次增量文件导出。
-   * **[!UICONTROL 每小时]**:计划每3、6、7或12小时执行一次增量文件导出。
+   * **[!UICONTROL 每小时]**:计划每3、6、8或12小时执行一次增量文件导出。
 
 2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。
 
@@ -320,8 +320,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 >* 这些字段配置为目标目标的投影属性。
 
 >
-> 
-例如，如果字段`person.name.firstName`具有与目标的营销操作冲突的某些数据使用标签，则在审核步骤中将显示数据使用策略违规。 有关更多信息，请参阅Adobe Experience Platform中的[数据管理](../../rtcdp/privacy/data-governance-overview.md#destinations)。
+> 例如，如果字段`person.name.firstName`具有与目标的营销操作冲突的某些数据使用标签，则在审核步骤中将显示数据使用策略违规。 有关更多信息，请参阅Adobe Experience Platform中的[数据管理](../../rtcdp/privacy/data-governance-overview.md#destinations)。
 
 ## 审阅 {#review}
 
