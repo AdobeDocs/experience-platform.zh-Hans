@@ -2,12 +2,12 @@
 keywords: 激活用户档案目标；激活目标；激活数据；激活电子邮件营销目标；激活云存储目标
 title: 将受众数据激活到流配置文件导出目标
 type: Tutorial
-seo-title: 将受众数据激活到流配置文件导出目标
+seo-title: Activate audience data to streaming profile export destinations
 description: 了解如何通过将区段发送到基于用户档案的流目标来激活您在Adobe Experience Platform中拥有的受众数据。
-seo-description: 了解如何通过将区段发送到基于用户档案的流目标来激活您在Adobe Experience Platform中拥有的受众数据。
-source-git-commit: f0c854e1b6b89d499c720328fa5054611147772f
+seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to streaming profile-based destinations.
+source-git-commit: d13920250fafd2ba4ff37dd5d4a45d417ed3ecc7
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '524'
 ht-degree: 0%
 
 ---
@@ -25,13 +25,17 @@ ht-degree: 0%
 
 ## 选择您的目标 {#select-destination}
 
-1. 转到&#x200B;**[!UICONTROL 连接>目标]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。
+1. 转到&#x200B;**[!UICONTROL 连接>目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。
 
-   ![“目标浏览”选项卡](../assets/ui/activate-streaming-profile-destinations/browse-tab.png)
+   ![“目标目录”选项卡](../assets/ui/activate-streaming-profile-destinations/catalog-tab.png)
 
-1. 选择与要激活区段的目标对应的&#x200B;**[!UICONTROL 添加区段]**&#x200B;按钮，如下图所示。
+1. 在与要激活区段的目标对应的卡上选择&#x200B;**[!UICONTROL 激活区段]**，如下图所示。
 
-   ![激活按钮](../assets/ui/activate-streaming-profile-destinations/activate-buttons-browse.png)
+   ![“激活区段”按钮](../assets/ui/activate-streaming-profile-destinations/activate-segments-button.png)
+
+1. 选择要用于激活区段的目标连接，然后选择&#x200B;**[!UICONTROL Next]**。
+
+   ![选择目标](../assets/ui/activate-streaming-profile-destinations/select-destination.png)
 
 1. 移到下一部分，选择[区段](#select-segments)。
 
