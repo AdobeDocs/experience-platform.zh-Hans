@@ -5,7 +5,7 @@ title: Adobe Experience Platform术语表
 topic-legacy: getting started
 description: Experience Platform 重要术语词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 83efc9f3c203cf4743514dc4b7a480715dadb19a
+source-git-commit: bd93c21ae439a8802218b8d664b7109467f8a013
 workflow-type: tm+mt
 source-wordcount: '7386'
 ht-degree: 1%
@@ -262,7 +262,7 @@ ht-degree: 1%
 
 **主机**:在标记的上下文中，主机指定系统交付内部版本所需的位置、域和用户凭据。
 
-**每小时**:在计划文件导出的上下文中，每3、6、7或12小时计划一次增量文件导出。
+**每小时**:在计划文件导出的上下文中，每3、6、8或12小时计划一次增量文件导出。
 
 ## I
 
