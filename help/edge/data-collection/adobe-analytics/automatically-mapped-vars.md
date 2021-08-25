@@ -1,12 +1,12 @@
 ---
 title: 在Adobe Experience Platform Web SDK中自动映射Adobe Analytics变量
 description: 了解哪些变量在Adobe Analytics中通过Experience PlatformWeb SDK自动映射
-seo-description: 了解哪些变量在Adobe Analytics中通过Adobe Experience Platform Web SDK自动映射
+seo-description: Learn which variables are automatically mapped in Adobe Analytics with the Adobe Experience Platform Web SDK
 keywords: adobe analytics；变量；analytics；自动映射；自动映射；
 exl-id: 856fada7-b62c-4fd2-9372-a19ae1cdec33
-source-git-commit: 2e004fdd87c8a74eb161ef7af93c7102953ea85c
+source-git-commit: 09c6986fcd3682377725ded389496d5076e9e1e2
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '698'
 ht-degree: 0%
 
 ---
@@ -89,7 +89,8 @@ ht-degree: 0%
 | `placeContext.geo.postalCode` | `zip` | AppMeasurement查询参数ZIP映射。 |
 | `placeContext.geo.stateProvince` | `state` | AppMeasurement查询参数STATE映射。 |
 | `productlistitems.[N]._[NAME_SPACE].*` | `products` | AppMeasurement查询参数产品促销事件/Evar映射。 |
-| `productlistitems.[N].name` | `products` | AppMeasurement查询参数产品名称映射。 |
+| `productListItems[N].lineItemId` | `products` | AppMeasurement查询参数产品名称映射。 |
+| `productlistitems.[N].name` | `products` | AppMeasurement查询参数产品类别映射。 |
 | `productlistitems.[N].priceTotal` | `products` | AppMeasurement查询参数产品价格映射。 |
 | `productlistitems.[N].quantity` | `products` | AppMeasurement查询参数产品数量映射。 |
 | `web.webInteraction.URL` | `pev1` | AppMeasurement查询参数PAGE_EVENT_VAR1映射。 |
