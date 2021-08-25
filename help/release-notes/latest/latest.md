@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: 3d6402a35e1813b94af866d7aaea975d4f103906
+source-git-commit: b1dca51264582788ccbde005b063c57e2f3edc8f
 workflow-type: tm+mt
-source-wordcount: '459'
-ht-degree: 9%
+source-wordcount: '536'
+ht-degree: 8%
 
 ---
 
@@ -16,9 +16,22 @@ ht-degree: 9%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [目标](#destinations)
 - [可观察性洞察](#observability)
 - [Real-time Customer Profile](#profile)
 - [源](#sources)
+
+## 目标 {#destinations}
+
+目标是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| [改进了目标的可用性](../../destinations/ui/activation-overview.md) | 目标的可用性改进使营销人员能够将区段无缝地激活到现有目标。 |
+
+有关目标的更多常规信息，请参阅[目标概述](../../destinations/home.md)。
 
 ## 可观察性洞察 {#observability}
 
