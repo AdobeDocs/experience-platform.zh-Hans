@@ -2,11 +2,11 @@
 keywords: 平台；目标；目标工作区；UI；目标UI；目录；目标目录
 title: 目标工作区
 description: “目标”工作区包含四个部分：“目录”、“浏览”、“帐户”和“系统视图”。 下面各节对这些参数进行了描述。
-seo-description: 在Adobe Experience Platform中，从左侧导航栏中选择目标以访问目标工作区。
+seo-description: In Adobe Experience Platform, select Destinations from the left navigation bar to access the destinations workspace.
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: a97b235e2d8834f6be002923be9cdbca5f08495b
+source-git-commit: f4721d3f114357b25517e4e66f1f626f82621c34
 workflow-type: tm+mt
-source-wordcount: '873'
+source-wordcount: '858'
 ht-degree: 2%
 
 ---
@@ -40,14 +40,14 @@ ht-degree: 2%
 * 在[!UICONTROL 所有目标]和[!UICONTROL 我的目标]之间切换。 选择&#x200B;**[!UICONTROL 所有目标]**&#x200B;后，将显示所有可用的[!DNL Platform]目标。 选择&#x200B;**[!UICONTROL My destinations]**&#x200B;后，您只能看到已建立连接的目标。
 * 选择以查看&#x200B;**[!UICONTROL 连接]**&#x200B;和/或&#x200B;**[!UICONTROL 扩展]**。 要了解这两个类别之间的差异，请参阅[目标类型和类别](../destination-types.md)。
 
-![目标筛选和搜索演示](../assets/ui/workspace/destinations-search-and-filter.gif)
+![目录](../assets/ui/workspace/catalog.png)
 
-目标卡包含&#x200B;**[!UICONTROL Configure]**&#x200B;或&#x200B;**[!UICONTROL Activate]**&#x200B;控件，以及可显示更多选项的辅助控件。 这些控件描述如下：
+目标卡包含&#x200B;**[!UICONTROL Set up]**&#x200B;或&#x200B;**[!UICONTROL Activate segments]**&#x200B;控件，以及可显示更多选项的辅助控件。 这些控件描述如下：
 
 | 控制 | 描述 |
 |---------|----------|
-| [!UICONTROL 配置] | 用于创建与目标的连接。 |
-| [!UICONTROL 激活] | 建立与目标的连接后，即可激活区段。 |
+| [!UICONTROL 设置] | 用于创建与目标的连接。 |
+| [!UICONTROL 激活区段] | 建立与目标的连接后，即可激活区段。 |
 | [!UICONTROL 查看帐户] | 查看您为目标连接的帐户。 |
 | [!UICONTROL 查看数据流] | 查看目标存在的数据激活流。 |
 | [!UICONTROL 查看文档] | 打开指向该特定目标的文档页面的链接，以了解更多信息并帮助您进行设置。 |
@@ -72,7 +72,7 @@ ht-degree: 2%
 
 >[!TIP]
 >
-> * 选择[!UICONTROL 名称]列上的三个圆点，然后使用![添加区段按钮](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活&#x200B;]**按钮将区段发送到该目标。
+> * 选择[!UICONTROL 名称]列上的三个圆点，然后使用![添加区段按钮](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活区段&#x200B;]**按钮将区段发送到该目标。
 > * 选择[!UICONTROL 名称]列上的三个圆点，然后使用![删除目标按钮](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL 删除&#x200B;]**按钮以[删除](delete-destinations.md)到目标的现有连接。
 
 
