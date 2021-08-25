@@ -3,16 +3,16 @@ title: 在Adobe Experience Platform Web SDK中进行调试
 description: 了解如何在Experience PlatformWeb SDK中切换调试功能。
 keywords: 调试Web SDK；调试；配置；配置命令；调试命令；edgeConfigId;setDebug;debugEnabled；调试；
 exl-id: 4e893af8-a48e-48dc-9737-4c61b3355f03
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: c0e2d01bd21405f07f4857e1ccf45dd0e4d0f414
 workflow-type: tm+mt
-source-wordcount: '441'
+source-wordcount: '422'
 ht-degree: 0%
 
 ---
 
 # 调试
 
-启用调试功能后，SDK会将消息输出到浏览器控制台，这有助于调试您的实施并了解SDK的行为方式。 调试还会导致服务器端同步验证根据您配置的架构收集的数据。
+启用调试功能后，SDK会将消息输出到浏览器控制台，这有助于调试您的实施并了解SDK的行为方式。
 
 默认情况下，调试处于禁用状态，但可以通过三种不同的方式打开：
 
