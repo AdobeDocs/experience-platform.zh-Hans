@@ -1,91 +1,46 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: Experience Platform2021年7月28日发行说明。
-doc-type: release notes
-last-update: July 28, 2021
-author: ens60013
+description: Adobe Experience Platform的最新发行说明。
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: 3d6402a35e1813b94af866d7aaea975d4f103906
 workflow-type: tm+mt
-source-wordcount: '802'
-ht-degree: 7%
+source-wordcount: '459'
+ht-degree: 9%
 
 ---
 
 
 # Adobe Experience Platform 发行说明
 
-**发行日期：2021 年 7 月 28 日**
+**发行日期：2021 年 25 月 8 日**
 
 Adobe Experience Platform 现有功能的更新包括：
 
-- [数据科学工作区](#dsw)
-- [数据流](#destinations)
-- [目标](#destinations)
-- [体验数据模型(XDM)](#xdm)
-- [查询服务](#query)
+- [可观察性洞察](#observability)
+- [Real-time Customer Profile](#profile)
 - [源](#sources)
 
-## 数据科学工作区 {#dsw}
+## 可观察性洞察 {#observability}
 
-数据科学工作区使用机器学习和人工智能从您的数据中创建分析。 Data Science Workspace集成到Adobe Experience Platform中，可帮助您跨Adobe解决方案使用内容和数据资产进行预测。
+可观察性分析允许您通过使用统计量度和事件通知来监视平台活动。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 库和操作系统更新 | Data Science Workspace已对库和操作系统进行了重大更新，以改进功能和可用性。 这包括支持CUDA 11和CUDNN 8的JupyterLab 1.2.20、Python 3.7、Pants 1.2.4、Tensorflow 2.4.1等。 要了解如何在JupyterLab中查看可用库，请访问JupyterLab笔记本概述文档中的[受支持的库](../../data-science-workspace/jupyterlab/overview.md#supported-libraries)部分。 |
+| 警报 | 您现在可以订阅与平台上运行的工作流相关的重要警报。 订阅特定警报规则后，当发生重要的生命周期事件（例如成功数据摄取）或存在需要您注意的问题（例如摄取流失败或区段作业花费比预期的时间长）时，您将收到UI内通知和电子邮件。 有关更多信息，请参阅[警报概述](../../observability/alerts/overview.md)。 |
 
-有关数据科学工作区的更多常规信息，请参阅[数据科学工作区概述](../../data-science-workspace/home.md)。
+有关该服务的更多信息，请参阅[可观测性分析概述](../../observability/home.md) 。
 
-## 数据流 {#dataflows}
+## 实时客户资料 {#profile}
 
-在Platform中，数据是从许多不同的源中摄取的，在系统内进行分析，并激活到各种不同的目标。 Platform通过提供数据流的透明度，使跟踪这种潜在的非线性数据流的过程变得更加容易。
-
-数据流是跨平台移动数据的作业的表示形式。 这些数据流是跨不同服务配置的，有助于将数据从源连接器移动到目标数据集，然后由Identity服务和实时客户资料使用这些数据流，最终激活到目标。
-
-**新增功能**
+Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 通过实时客户资料，您可以查看每个客户的整体视图，该视图将来自多个渠道的数据（包括在线、离线、CRM和第三方数据）进行整合。 利用用户档案，可将客户数据整合到统一视图中，为每次客户互动提供一个加盖时间戳的可操作帐户。
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 目标功能板 | 您现在可以使用监控仪表板来监控目标的数据流。 要了解更多信息，请阅读有关UI](../../dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard)中[监控目标的教程 |
+| 按合并策略或标识浏览用户档案 | 现在，在Experience Platform中浏览用户档案时，您可以按合并策略浏览，以根据选定的合并策略预览20个示例用户档案。 您还可以按身份浏览，以便使用身份命名空间和相关身份值搜索特定的配置文件。 有关更多信息，请参阅[Real-time Customer Profile UI指南](../../profile/ui/user-guide.md)。 |
 
-有关数据流的更多常规信息，请参阅[数据流概述](../../dataflows/home.md)。 要了解有关目标的更多信息，请参阅[目标概述](../../destinations/home.md)。
-
-## 目标 {#destinations}
-
-目标是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
-
-**新增功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| [更快的增量文件导出](../../destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) | 您现在可以安排每3、6、8和12小时为基于文件的目标执行增量文件导出。 当前不支持更改已保存区段的文件导出计划。 要重新导出具有不同计划的区段，您必须创建一个新的目标实例。 这是一项限制，将在未来版本中加以解决。 |
-| [支持重复数据删除键](../../destinations/ui/activate-batch-profile-destinations.md#deduplication-keys) | 通过选择重复数据删除键，消除导出文件中同一用户档案的多个记录。 您可以选择单个命名空间或最多两个XDM架构属性作为重复数据删除键。 |
-
-## 体验数据模型(XDM) {#xdm}
-
-体验数据模型(XDM)是一项开源规范，旨在提高数字体验的功能。 它以模式形式为数据提供了通用结构和定义，使任何应用程序都能够与Platform服务进行通信。
-
-| 功能 | 描述 |
-| --- | --- |
-| 电信行业过滤器 | 将字段组添加到UI中的架构时，您现在可以按电信行业进行过滤。 请参阅[电信行业实体关系图(ERD)](../../xdm/schema/industries/telecom.md)以查看电信用例的推荐数据模型。 |
-
-有关Platform中XDM的更多常规信息，请参阅[XDM系统概述](../../xdm/home.md)。
-
-## 查询服务 {#query}
-
-查询服务提供了在Adobe Experience Platform中使用标准SQL查询数据的功能，支持各种分析和数据管理用例。 它是一个无服务器工具，允许您连接数据湖中的数据集，并捕获查询结果作为新数据集，以用于报表、Data Science Workspace或将其摄取到实时客户资料中。
-
-您可以使用查询服务来构建数据分析生态系统，从而创建客户在各种交互渠道中的全景图。 这些渠道可能包括销售点、Web、移动设备或CRM系统。
-
-**新增功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 计划查询 | 您现在可以使用查询编辑器在平台中计划查询。 要了解更多信息，请阅读[查询编辑器](../../query-service/ui/user-guide.md#scheduled-queries)上的文档。 |
-
-有关更多信息，请参阅[查询服务文档](../../query-service/home.md)。
+要了解有关实时客户资料的更多信息，包括有关使用资料数据的教程和最佳实践，请首先阅读[实时客户资料概述](../../profile/home.md)。
 
 ## 源 {#sources}
 
@@ -95,7 +50,6 @@ Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 测试版源迁移至GA | 以下来源已从测试版提升为正式发布： <ul><li>[[!DNL Amazon Redshift]](../../sources/connectors/databases/redshift.md)</li><li>[[!DNL Azure Table Storage]](../../sources/connectors/databases/ats.md)</li><li>[[!DNL PayPal]](../../sources/connectors/payments/paypal.md)</li></ul> |
-| [!DNL Salesforce Marketing Cloud] （测试版） | 您现在可以使用[!DNL Flow Service] API或UI将[!DNL Salesforce Marketing Cloud]连接到Experience Platform。 有关更多信息，请参阅[[!DNL Salesforce Marketing Cloud] 连接器概述](../../sources/connectors/marketing-automation/salesforce-marketing-cloud.md)。 |
+| 本地文件上传源连接器 | 文件摄取类别已重命名为本地系统，允许您使用本地文件上传连接器将本地文件直接导入到平台。 通过此连接器摄取的数据可通过监控仪表板进行监控。 有关更多信息，请参阅[本地文件上载源概述](../../sources/connectors/local-system/local-file-upload.md) 。 |
 
 要了解有关源的更多信息，请参阅[源概述](../../sources/home.md)。
