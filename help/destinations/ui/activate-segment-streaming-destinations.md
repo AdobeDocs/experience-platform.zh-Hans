@@ -2,12 +2,12 @@
 keywords: 激活区段流目标；激活区段流目标；激活数据
 title: 将受众数据激活到流区段导出目标
 type: Tutorial
-seo-title: 将受众数据激活到流区段导出目标
+seo-title: Activate audience data to streaming segment export destinations
 description: 了解如何通过将区段映射到区段流目标，来激活您在Adobe Experience Platform中拥有的受众数据。
-seo-description: 了解如何通过将区段映射到区段流目标，来激活您在Adobe Experience Platform中拥有的受众数据。
-source-git-commit: c3e273c66ffe0542258e5418104e0bcf154f5235
+seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by mapping segments to segment streaming destinations.
+source-git-commit: f4721d3f114357b25517e4e66f1f626f82621c34
 workflow-type: tm+mt
-source-wordcount: '740'
+source-wordcount: '781'
 ht-degree: 0%
 
 ---
@@ -25,13 +25,17 @@ ht-degree: 0%
 
 ## 选择您的目标 {#select-destination}
 
-1. 转到&#x200B;**[!UICONTROL 连接>目标]**，然后选择&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡。
+1. 转到&#x200B;**[!UICONTROL 连接>目标]**，然后选择&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡。
 
-   ![“目标浏览”选项卡](../assets/ui/activate-segment-streaming-destinations/browse-tab.png)
+   ![“目标目录”选项卡](../assets/ui/activate-segment-streaming-destinations/catalog-tab.png)
 
-1. 选择与要激活区段的目标对应的&#x200B;**[!UICONTROL 添加区段]**&#x200B;按钮，如下图所示。
+1. 在与要激活区段的目标对应的卡上选择&#x200B;**[!UICONTROL 激活区段]**，如下图所示。
 
-   ![激活按钮](../assets/ui/activate-segment-streaming-destinations/activate-buttons-browse.png)
+   ![激活按钮](../assets/ui/activate-segment-streaming-destinations/activate-segments-button.png)
+
+1. 选择要用于激活区段的目标连接，然后选择&#x200B;**[!UICONTROL Next]**。
+
+   ![选择目标](../assets/ui/activate-segment-streaming-destinations/select-destination.png)
 
 1. 移到下一部分，选择[区段](#select-segments)。
 
@@ -81,10 +85,17 @@ ht-degree: 0%
 
 当您将未哈希化的源属性映射到目标预期经过哈希化的目标属性时(例如：`email_lc_sha256`或`phone_sha256`)，选中&#x200B;**Apply transformation**&#x200B;选项，让Adobe Experience Platform在激活时自动对源属性进行哈希处理。
 
-![身份映射](/help/destinations/assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
-
+![身份映射](../assets/ui/activate-segment-streaming-destinations/mapping-summary.png)
 
 ## 计划区段导出 {#scheduling}
+
+默认情况下，[!UICONTROL 区段计划]页面仅显示您在当前激活流程中选择的新选定区段。
+
+![新区段](../assets/ui/activate-segment-streaming-destinations/new-segments.png)
+
+要查看已激活到您目标的所有区段，请使用筛选选项并禁用&#x200B;**[!UICONTROL 仅显示新区段]**&#x200B;筛选器。
+
+![所有区段](../assets/ui/activate-segment-streaming-destinations/all-segments.png)
 
 1. 在&#x200B;**[!UICONTROL 区段计划]**&#x200B;页面上，选择每个区段，然后使用&#x200B;**[!UICONTROL 开始日期]**&#x200B;和&#x200B;**[!UICONTROL 结束日期]**&#x200B;选择器来配置向目标发送数据的时间间隔。
 
@@ -120,7 +131,7 @@ ht-degree: 0%
 
 ## 验证区段激活 {#verify}
 
-检查您的目标帐户。 如果激活成功，则目标平台中会填充受众。
+请查看[目标监控文档](../../dataflows/ui/monitor-destinations.md) ，以了解有关如何监控目标数据流的详细信息。
 
 <!-- 
 For [!DNL Facebook Custom Audience], a successful activation means that a [!DNL Facebook] custom audience would be created programmatically in [[!UICONTROL Facebook Ads Manager]](https://www.facebook.com/adsmanager/manage/). Segment membership in the audience would be added and removed as users are qualified or disqualified for the activated segments.
