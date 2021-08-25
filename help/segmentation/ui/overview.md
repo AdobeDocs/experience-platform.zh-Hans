@@ -5,9 +5,9 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: b7392596c7ed96032dc8ad6bb8e423640f562394
+source-git-commit: fc59ad026a746bc75192fc6b314989894f8f6c45
 workflow-type: tm+mt
-source-wordcount: '1570'
+source-wordcount: '1613'
 ht-degree: 0%
 
 ---
@@ -81,7 +81,7 @@ ht-degree: 0%
 
 ![](../images/ui/overview/segment-browse-segment-info.png)
 
-选择区段定义的行可提供区段定义的摘要，包括用于编辑或删除区段的选项、区段的限定受众、总受众大小，以及区段的名称、描述、评估方法、创建日期和上次修改日期。
+选择区段定义的行可提供区段定义的摘要，包括用于编辑或删除区段、将区段激活到目标、区段的合格受众、总受众大小的选项，以及区段的名称、描述、评估方法、创建日期和上次修改日期的选项。
 
 >[!NOTE]
 >
@@ -101,7 +101,13 @@ ht-degree: 0%
 
 **[!UICONTROL 区段摘要]**&#x200B;部分提供属性的ID、名称、描述和详细信息等信息。
 
-此外，您还可以选择编辑区段。 选择&#x200B;**[!UICONTROL 编辑区段]**&#x200B;将转到[!DNL Segment Builder]。 有关使用[!DNL Segment Builder]工作区的更多详细信息，请阅读[[!DNL Segment Builder] 用户指南](./segment-builder.md)。
+此外，您还可以选择将区段激活到目标或编辑区段。 选择&#x200B;**[!UICONTROL 激活到目标]**&#x200B;将允许您将区段激活到目标。 有关将区段激活到目标的更多详细信息，请阅读[激活概述](../../destinations/ui/activation-overview.md)。
+
+![](../images/ui/overview/segment-details-activate.png)
+
+选择&#x200B;**[!UICONTROL 编辑区段]**&#x200B;将转到[!DNL Segment Builder]。 有关使用[!DNL Segment Builder]工作区的更多详细信息，请阅读[[!DNL Segment Builder] 用户指南](./segment-builder.md)。
+
+![](../images/ui/overview/segment-details-edit-segment.png)
 
 ### 区段中的受众总数
 
