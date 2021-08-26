@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 26bd2abc998320245091b0917fb6f236ed09b95c
+source-git-commit: 8dceab8cdba1ac6b4a649f0e01b2bbda5f025bef
 workflow-type: tm+mt
-source-wordcount: '2066'
+source-wordcount: '2154'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Adobe Experience Platform查询服务提供了对`SELECT`语句和其他有限命令使用标准ANSI SQL的功能。 本文档介绍[!DNL Query Service]支持的SQL语法。
 
-## 选择查询{#select-queries}
+## 选择查询 {#select-queries}
 
 以下语法定义了[!DNL Query Service]支持的`SELECT`查询：
 
@@ -117,6 +117,15 @@ SELECT * FROM Customers SNAPSHOT SINCE 123 INNER JOIN Inventory AS OF 789 ON Cus
 请注意，`SNAPSHOT`子句可与表或表别名一起使用，但不能在子查询或视图上使用。 `SNAPSHOT`子句可以在任何可以应用表`SELECT`查询的位置使用。
 
 此外，还可以将`HEAD`和`TAIL`用作快照子句的特殊偏移值。 使用`HEAD`表示第一个快照之前的偏移，而使用`TAIL`表示最后一个快照之后的偏移。
+
+>[!NOTE]
+>
+>如果您在两个快照ID之间进行查询，并且启动快照已过期，则可能会出现以下两种情况，具体取决于是否设置了可选的回退行为标记(`resolve_fallback_snapshot_on_failure`):
+>
+>- 如果设置了可选的回退行为标志，查询服务将选择最早的可用快照，将其设置为开始快照，并返回最早可用快照和指定的结束快照之间的数据。 此数据是最早可用快照的&#x200B;**inclusive**。
+>
+>- 如果未设置可选的回退行为标记，则将返回错误。
+
 
 ### WHERE子句
 
