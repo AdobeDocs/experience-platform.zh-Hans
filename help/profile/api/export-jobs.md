@@ -5,9 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: 实时客户配置文件允许您通过将来自多个来源的数据（包括属性数据和行为数据）汇总在一起，在Adobe Experience Platform中构建单个客户视图。 然后，可以将配置文件数据导出到数据集以进一步处理。
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: 453e120fa20232533289ee5ff34821ce8c0c310b
+source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
 workflow-type: tm+mt
-source-wordcount: '1526'
+source-wordcount: '1521'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 [!DNL Real-time Customer Profile] 通过将来自多个来源的数据（包括属性数据和行为数据）汇总在一起，使您能够构建单个客户视图。然后，可以将配置文件数据导出到数据集以进一步处理。 例如，可以导出[!DNL Profile]数据中的受众区段以进行激活，也可以导出配置文件属性以进行报告。
 
-本文档提供了使用[配置文件API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)创建和管理导出作业的分步说明。
+本文档提供了使用[配置文件API](https://www.adobe.com/go/profile-apis-en)创建和管理导出作业的分步说明。
 
 >[!NOTE]
 >
