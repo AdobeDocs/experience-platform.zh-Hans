@@ -5,16 +5,16 @@ title: 数据摄取通知
 topic-legacy: overview
 description: 为了帮助监控摄取过程，Adobe Experience Platform允许订阅一组在该过程的每个步骤发布的事件，并通知您摄取数据的状态以及任何可能的失败。
 exl-id: fd34e1ab-f6f6-44f0-88ee-7020e9322c39
-source-git-commit: a455134a45137b171636d6525ce9124bc95f4335
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '681'
+source-wordcount: '677'
 ht-degree: 1%
 
 ---
 
 # 数据摄取通知
 
-将数据摄取到Adobe Experience Platform的过程由多个步骤组成。 在确定需要摄取到[!DNL Platform]的数据文件后，摄取过程将开始，并且每个步骤都会连续进行，直到数据被成功摄取或失败为止。 可以使用[Adobe Experience Platform数据摄取API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/ingest-api.yaml)或使用[!DNL Experience Platform]用户界面来启动摄取过程。
+将数据摄取到Adobe Experience Platform的过程由多个步骤组成。 在确定需要摄取到[!DNL Platform]的数据文件后，摄取过程将开始，并且每个步骤都会连续进行，直到数据被成功摄取或失败为止。 可以使用[Adobe Experience Platform数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)或使用[!DNL Experience Platform]用户界面来启动摄取过程。
 
 加载到[!DNL Platform]的数据必须经过多个步骤才能到达其目标、[!DNL Data Lake]或[!DNL Real-time Customer Profile]数据存储。 每个步骤都包括处理数据、验证数据，然后存储数据，然后再将其传递到下一步。 根据所摄取的数据量，这可能会成为一个耗时的过程，并且该过程始终可能因验证、语义或处理错误而失败。 在失败时，需要修复数据问题，然后必须使用更正的数据文件重新启动整个摄取过程。
 

@@ -5,9 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: 实时客户配置文件允许您通过将来自多个来源的数据（包括属性数据和行为数据）汇总在一起，在Adobe Experience Platform中构建单个客户视图。 然后，可以将配置文件数据导出到数据集以进一步处理。
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
+source-git-commit: b47a52920f82a962ff044a0dacf9777b6eeae447
 workflow-type: tm+mt
-source-wordcount: '1521'
+source-wordcount: '1517'
 ht-degree: 2%
 
 ---
@@ -433,7 +433,7 @@ curl -X POST \
 
 ## 后续步骤
 
-成功完成导出后，您的数据即可在数据湖中Experience Platform。 然后，您可以使用[数据访问API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)来使用与导出关联的`batchId`访问数据。 根据导出的大小，数据可能以块为单位，并且批处理可能由多个文件组成。
+成功完成导出后，您的数据即可在数据湖中Experience Platform。 然后，您可以使用[数据访问API](https://www.adobe.io/experience-platform-apis/references/data-access/)来使用与导出关联的`batchId`访问数据。 根据导出的大小，数据可能以块为单位，并且批处理可能由多个文件组成。
 
 有关如何使用数据访问API访问和下载批处理文件的分步说明，请参阅[数据访问教程](../../data-access/tutorials/dataset-data.md)。
 

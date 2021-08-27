@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程使用流服务API来指导您完成从第三方云存储系统中摄取Apache Parquet数据的步骤。
 exl-id: fb1b19d6-16bb-4a5f-9e81-f537bac95041
-source-git-commit: d3e1bc9bc075117dcc96c85b8b9c81d6ee617d29
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1099'
+source-wordcount: '1095'
 ht-degree: 2%
 
 ---
@@ -266,7 +266,7 @@ curl -X POST \
 
 ## 创建目标数据集
 
-通过向[Catalog Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)执行POST请求，并提供有效负载中目标架构的ID，可以创建目标数据集。
+通过向[Catalog Service API](https://www.adobe.io/experience-platform-apis/references/catalog/)执行POST请求，并提供有效负载中目标架构的ID，可以创建目标数据集。
 
 **API格式**
 

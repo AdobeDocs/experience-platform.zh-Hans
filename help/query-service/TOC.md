@@ -3,17 +3,16 @@ audience: user
 user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: Query Service 指南
 user-guide-description: 使用标准 SQL 在 Platform Data Lake 中查询数据。
-feature: 查询
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+feature: Queries
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '136'
-ht-degree: 16%
+source-wordcount: '131'
+ht-degree: 17%
 
 ---
 
 
-# Adobe Experience Platform查询服务{#query}
+# Adobe Experience Platform查询服务 {#query}
 
 - [查询服务概述](home.md)
 - [快速入门指南](quickstart.md)
@@ -22,16 +21,16 @@ ht-degree: 16%
    - [查询](api/queries.md)
    - [连接参数](api/connection-parameters.md)
    - [计划查询](api/scheduled-queries.md)
-   - [为计划查询运行](api/runs-scheduled-queries.md)
+   - [针对计划查询运行](api/runs-scheduled-queries.md)
    - [查询模板](api/query-templates.md)
 - 查询服务UI {#ui}
    - [UI概述](ui/overview.md)
    - [查询编辑器用户指南](ui/user-guide.md)
-   - [根据查询结果生成数据集](ui/create-datasets.md)
+   - [从查询结果生成数据集](ui/create-datasets.md)
 - 最佳实践 {#best-practices}
-   - [执行查询的一般指南](best-practices/writing-queries.md)
-   - [数据外部重复数据删除](best-practices/deduplication.md)
-   - [体验事件查询](best-practices/experience-event-queries.md)
+   - [查询执行的一般指导](best-practices/writing-queries.md)
+   - [重复数据删除](best-practices/deduplication.md)
+   - [体验事件查询示例](best-practices/experience-event-queries.md)
    - [示例Adobe Analytics查询](best-practices/adobe-analytics.md)
    - [示例Adobe Target查询](best-practices/adobe-target.md)
 - SQL引用{#sql}
@@ -51,5 +50,5 @@ ht-degree: 16%
    - [RStudio](clients/rstudio.md)
    - [塔布洛](clients/tableau.md)
 - [疑难解答指南](troubleshooting-guide.md)
-- [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/qs-api.yaml)
+- [API参考](https://www.adobe.io/experience-platform-apis/references/query-service/)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)

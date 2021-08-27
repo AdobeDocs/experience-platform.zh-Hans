@@ -5,9 +5,9 @@ title: Unions API端点
 description: 架构注册表API中的/unions端点允许您以编程方式管理体验应用程序中的XDM并集架构。
 topic-legacy: developer guide
 exl-id: d0ece235-72e8-49d9-856b-5dba44e16ee7
-source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '915'
+source-wordcount: '911'
 ht-degree: 3%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 3%
 
 ### 区段成员资格映射
 
-`segmentMembership`映射存储区段评估的结果。 使用[分段API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)成功运行区段作业时，将更新映射。 `segmentMembership` 此外，还存储了摄取到Platform中的任何预评估受众区段，以便与Adobe Audience Manager等其他解决方案集成。有关更多信息，请参阅有关[使用API创建区段的教程](../../segmentation/tutorials/create-a-segment.md) 。
+`segmentMembership`映射存储区段评估的结果。 使用[分段API](https://www.adobe.io/experience-platform-apis/references/segmentation/)成功运行区段作业时，将更新映射。 `segmentMembership` 此外，还存储了摄取到Platform中的任何预评估受众区段，以便与Adobe Audience Manager等其他解决方案集成。有关更多信息，请参阅有关[使用API创建区段的教程](../../segmentation/tutorials/create-a-segment.md) 。
 
 ## 检索工会列表 {#list}
 
@@ -183,7 +183,7 @@ curl -X GET \
 
 要将架构包含在其类的并集中，必须将`union`标记添加到架构的`meta:immutableTags`属性中。 为此，您可以发出PATCH请求，将`meta:immutableTags`数组（单个字符串值为`union`）添加到相关架构中。 有关详细示例，请参阅[架构端点指南](./schemas.md#union)。
 
-## 列出并集{#list-schemas}中的架构
+## 在并集中列出架构 {#list-schemas}
 
 为了查看哪些架构是特定并集的一部分，您可以对`/tenant/schemas`端点执行GET请求。 使用`property`查询参数，您可以配置响应，以仅返回包含`meta:immutableTags`字段和等于您正在访问的并集的类的`meta:class`架构。
 

@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: 请阅读本教程，了解如何使用Adobe Experience Platform Segmentation Service API评估区段并访问区段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 453e120fa20232533289ee5ff34821ce8c0c310b
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1552'
+source-wordcount: '1548'
 ht-degree: 0%
 
 ---
@@ -223,7 +223,7 @@ curl -X POST \
 
 ## 后续步骤
 
-成功完成导出后，您的数据即可在[!DNL Experience Platform]的[!DNL Data Lake]中使用。 然后，可以使用[[!DNL Data Access API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/data-access-api.yaml)使用与导出关联的`batchId`访问数据。 根据区段的大小，数据可能以块为单位，并且批处理可能由多个文件组成。
+成功完成导出后，您的数据即可在[!DNL Experience Platform]的[!DNL Data Lake]中使用。 然后，可以使用[[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/)使用与导出关联的`batchId`访问数据。 根据区段的大小，数据可能以块为单位，并且批处理可能由多个文件组成。
 
 有关如何使用[!DNL Data Access] API访问和下载批处理文件的分步说明，请参阅[数据访问教程](../../data-access/tutorials/dataset-data.md)。
 

@@ -1,72 +1,71 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据访问；数据访问api;查询数据访问
+keywords: Experience Platform；主页；热门主题；数据访问；数据访问API；查询数据访问
 solution: Experience Platform
-title: 视图数据集数据（使用Data Access API）
+title: 使用数据访问API查看数据集数据
 topic-legacy: tutorial
 type: Tutorial
-description: 了解如何使用Adobe Experience Platform中的Data Access API定位、访问和下载数据集中存储的数据。 您还将介绍Data Access API的一些独特功能，如分页和部分下载。
+description: 了解如何使用Adobe Experience Platform中的数据访问API查找、访问和下载存储在数据集中的数据。 此外，还将介绍数据访问API的一些独特功能，如分页和部分下载。
 exl-id: 1c1e5549-d085-41d5-b2c8-990876000f08
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1398'
-ht-degree: 2%
+source-wordcount: '1390'
+ht-degree: 3%
 
 ---
 
-# 视图数据集数据（使用[!DNL Data Access] API）
+# 使用[!DNL Data Access] API查看数据集数据
 
-本文档提供了一个分步教程，其中介绍如何使用Adobe Experience Platform中的[!DNL Data Access] API查找、访问和下载数据集中存储的数据。 还将向您介绍[!DNL Data Access] API的一些独特功能，如分页和部分下载。
+本文档提供了分步教程，其中介绍了如何使用Adobe Experience Platform中的[!DNL Data Access] API查找、访问和下载存储在数据集中的数据。 此外，还将介绍[!DNL Data Access] API的一些独特功能，如分页和部分下载。
 
-## 入门指南
+## 快速入门
 
-本教程需要了解如何创建和填充数据集。 有关详细信息，请参阅[数据集创建教程](../../catalog/datasets/create.md)。
+本教程要求您对如何创建和填充数据集有一定的了解。 有关更多信息，请参阅[数据集创建教程](../../catalog/datasets/create.md) 。
 
-以下各节提供了成功调用平台API所需了解的其他信息。
+以下部分提供了成功调用平台API所需了解的其他信息。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
+本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅[!DNL Experience Platform]疑难解答指南中[如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程可为所有[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
 
-- 授权：承载`{ACCESS_TOKEN}`
-- x-api-key:`{API_KEY}`
-- x-gw-ims-org-id:`{IMS_ORG}`
+- 授权：载体`{ACCESS_TOKEN}`
+- x-api-key: `{API_KEY}`
+- x-gw-ims-org-id: `{IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源均与特定虚拟沙箱隔离。 对[!DNL Platform] API的所有请求都需要一个标头来指定操作将在其中进行的沙盒的名称：
 
-- x-sandbox-name:`{SANDBOX_NAME}`
+- x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关[!DNL Platform]中沙箱的详细信息，请参阅[沙箱概述文档](../../sandboxes/home.md)。
+>有关[!DNL Platform]中沙箱的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的标头：
 
-- 内容类型：application/json
+- Content-Type:application/json
 
 ## 序列图
 
-本教程遵循以下序列图中概述的步骤，重点介绍[!DNL Data Access] API的核心功能。</br>
+本教程将遵循下面的序列图中概述的步骤，其中重点介绍了[!DNL Data Access] API的核心功能。</br>
 ![](../images/sequence_diagram.png)
 
-[!DNL Catalog] API允许您检索有关批处理和文件的信息。 [!DNL Data Access] API允许您通过HTTP作为完整或部分下载访问和下载这些文件，具体取决于文件的大小。
+[!DNL Catalog] API允许您检索有关批次和文件的信息。 [!DNL Data Access] API允许您通过HTTP访问和下载这些文件，以执行完整或部分下载，具体取决于文件的大小。
 
-## 定位数据
+## 查找数据
 
-在开始使用[!DNL Data Access] API之前，您需要确定要访问的数据的位置。 在[!DNL Catalog] API中，您可以使用两个端点浏览组织的元数据并检索要访问的批处理或文件的ID:
+在开始使用[!DNL Data Access] API之前，您需要确定要访问的数据位置。 在[!DNL Catalog] API中，您可以使用两个端点来浏览组织的元数据并检索要访问的批处理或文件的ID:
 
-- `GET /batches`:返回您组织下的批列表
-- `GET /dataSetFiles`:返回列表您组织下的文件
+- `GET /batches`:返回组织下的批列表
+- `GET /dataSetFiles`:返回您组织下的文件列表
 
-有关[!DNL Catalog] API中端点的全面列表，请参阅[API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)。
+有关[!DNL Catalog] API中端点的完整列表，请参阅[ API引用](https://www.adobe.io/experience-platform-apis/references/catalog/)。
 
 ## 在IMS组织下检索批列表
 
-使用[!DNL Catalog] API，您可以返回组织下的批列表:
+使用[!DNL Catalog] API，可以返回组织下的批次列表：
 
 **API格式**
 
@@ -86,7 +85,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches/' \
 
 **响应**
 
-响应包括一个对象，该对象列表与IMS组织相关的所有批，每个顶级值表示一个批。 单个批处理对象包含该特定批处理的详细信息。 以下响应已最小化。
+响应包括一个对象，其中列出了与IMS组织相关的所有批次，每个顶级值代表一个批次。 单个批处理对象包含该特定批处理的详细信息。 对于空间，以下响应已最小化。
 
 ```json
 {
@@ -107,9 +106,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches/' \
 }
 ```
 
-### 筛选批列表
+### 过滤批列表
 
-过滤器通常需要查找特定批，以便检索特定用例的相关数据。 可以将参数添加到`GET /batches`请求中，以过滤返回的响应。 以下请求将返回在指定时间后创建的所有批，这些批在特定数据集中按创建时间排序。
+筛选器通常需要查找特定批次，才能针对特定用例检索相关数据。 可以将参数添加到`GET /batches`请求中，以过滤返回的响应。 以下请求将返回在指定时间后在特定数据集内创建的所有批次，这些批次在创建时按照创建时进行排序。
 
 **API格式**
 
@@ -119,9 +118,9 @@ GET /batches?createdAfter={START_TIMESTAMP}&dataSet={DATASET_ID}&sort={SORT_BY}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{START_TIMESTAMP}` | 开始时间戳(以毫秒为单位，例如1514836799000)。 |
+| `{START_TIMESTAMP}` | 以毫秒为单位的开始时间戳(例如，1514836799000)。 |
 | `{DATASET_ID}` | 数据集标识符。 |
-| `{SORT_BY}` | 按提供的值对响应进行排序。 例如，`desc:created`按创建日期以降序对对象排序。 |
+| `{SORT_BY}` | 按提供的值对响应进行排序。 例如，`desc:created`按创建日期以降序方式对对象进行排序。 |
 
 **请求**
 
@@ -193,11 +192,11 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?createdAf
 }
 ```
 
-[目录API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)中可找到参数和过滤器的完整列表。
+[目录API引用](https://www.adobe.io/experience-platform-apis/references/catalog/)中提供了参数和过滤器的完整列表。
 
-## 检索属于特定批的所有文件的列表
+## 检索属于特定批次的所有文件的列表
 
-现在，您拥有要访问的批的ID，可以使用[!DNL Data Access] API获取属于该批的文件的列表。
+现在，您已拥有要访问的批处理ID，接下来可以使用[!DNL Data Access] API获取属于该批处理的文件列表。
 
 **API格式**
 
@@ -207,7 +206,7 @@ GET /batches/{BATCH_ID}/files
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{BATCH_ID}` | 您尝试访问的批的批标识符。 |
+| `{BATCH_ID}` | 您尝试访问的批次的批次标识符。 |
 
 **请求**
 
@@ -248,13 +247,13 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/5c6f332168
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `data._links.self.href` | 访问此文件的URL。 |
+| `data._links.self.href` | 用于访问此文件的URL。 |
 
-响应包含一个数据数组，用于列表指定批中的所有文件。 文件由其文件ID引用，该文件ID位于`dataSetFileId`字段下。
+响应包含一个数据数组，其中列出了指定批处理中的所有文件。 文件由其文件ID引用，该ID位于`dataSetFileId`字段下。
 
 ## 使用文件ID访问文件
 
-拥有唯一的文件ID后，您可以使用[!DNL Data Access] API访问有关该文件的特定详细信息，包括其名称、大小（以字节为单位）以及下载该文件的链接。
+拥有唯一的文件ID后，可以使用[!DNL Data Access] API访问有关该文件的特定详细信息，包括其名称、大小（以字节为单位）以及用于下载该文件的链接。
 
 **API格式**
 
@@ -276,9 +275,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-根据文件ID是指向单个文件还是目录，返回的数据数组可能包含属于该目录的单个条目或文件列表。 每个文件元素都将包含详细信息，如文件名、大小（以字节为单位）以及用于下载文件的链接。
+根据文件ID是指向单个文件还是目录，返回的数据数组可能包含一个条目或属于该目录的文件列表。 每个文件元素都将包含详细信息，如文件名、大小（以字节为单位）以及用于下载文件的链接。
 
-**案例1:文件ID指向单个文件**
+**用例1:文件ID指向单个文件**
 
 **响应**
 
@@ -307,7 +306,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 | `{FILE_NAME}.parquet` | 文件的名称。 |
 | `_links.self.href` | 用于下载文件的URL。 |
 
-**案例2:文件ID指向目录**
+**用例2:文件ID指向目录**
 
 **响应**
 
@@ -352,11 +351,11 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 | -------- | ----------- | 
 | `data._links.self.href` | 用于下载关联文件的URL。 |
 
-此响应返回一个包含两个单独文件的目录，ID为`{FILE_ID_2}`和`{FILE_ID_3}`。 在此方案中，您需要按照每个文件的URL来访问该文件。
+此响应会返回一个包含两个单独文件的目录，其ID为`{FILE_ID_2}`和`{FILE_ID_3}`。 在此方案中，您需要遵循每个文件的URL才能访问该文件。
 
 ## 检索文件的元数据
 
-可以通过发出HEAD请求来检索文件的元数据。 这将返回文件的元数据标头，包括其大小（以字节为单位）和文件格式。
+您可以通过发出HEAD请求来检索文件的元数据。 这会返回文件的元数据标头，包括其大小（字节）和文件格式。
 
 **API格式**
 
@@ -367,7 +366,7 @@ HEAD /files/{FILE_ID}?path={FILE_NAME}
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{FILE_ID}` | 文件的标识符。 |
-| `{FILE_NAME}` | 文件名(例如，用户档案.parce) |
+| `{FILE_NAME}` | 文件名（例如profiles.parquet） |
 
 **请求**
 
@@ -381,9 +380,9 @@ curl -I 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb2-44
 
 **响应**
 
-响应标头包含查询的文件的元数据，包括：
-- `Content-Length`:指示有效负荷的大小（以字节为单位）
-- `Content-Type`:指示文件类型。
+响应标头包含查询文件的元数据，包括：
+- `Content-Length`:指示有效负载的大小（以字节为单位）
+- `Content-Type`:指示文件的类型。
 
 ## 访问文件的内容
 
@@ -398,7 +397,7 @@ GET /files/{FILE_ID}?path={FILE_NAME}
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{FILE_ID}` | 文件的标识符。 |
-| `{FILE_NAME}` | 文件名(例如，用户档案.parce)。 |
+| `{FILE_NAME}` | 文件名（例如profiles.parquet）。 |
 
 **请求**
 
@@ -412,13 +411,13 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 
 **响应**
 
-成功的响应返回文件的内容。
+成功的响应会返回文件的内容。
 
 ## 下载文件的部分内容
 
-[!DNL Data Access] API允许下载块中的文件。 可以在`GET /files/{FILE_ID}`请求期间指定范围标头，以便从文件下载特定范围的字节。 如果未指定范围，则默认情况下API将下载整个文件。
+[!DNL Data Access] API允许下载块中的文件。 可以在`GET /files/{FILE_ID}`请求期间指定范围标头，以从文件下载特定范围的字节。 如果未指定范围，则API将默认下载整个文件。
 
-[上一节](#retrieve-the-metadata-of-a-file)中的HEAD示例给出了特定文件的大小（以字节为单位）。
+[上一部分](#retrieve-the-metadata-of-a-file)中的HEAD示例以字节为单位显示特定文件的大小。
 
 **API格式**
 
@@ -429,7 +428,7 @@ GET /files/{FILE_ID}?path={FILE_NAME}
 | 属性 | 描述 |
 | -------- | ----------- |
 | `{FILE_ID} ` | 文件的标识符。 |
-| `{FILE_NAME}` | 文件名(例如，用户档案.parce) |
+| `{FILE_NAME}` | 文件名（例如profiles.parquet） |
 
 **请求**
 
@@ -444,23 +443,23 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/8dcedb36-1cb
 
 | 属性 | 描述 |
 | -------- | ----------- | 
-| `Range: bytes=0-99` | 指定要下载的字节范围。 如果未指定，API将下载整个文件。 在此示例中，将下载前100个字节。 |
+| `Range: bytes=0-99` | 指定要下载的字节范围。 如果未指定，则API将下载整个文件。 在本例中，将下载前100字节。 |
 
 **响应**
 
-响应主体包括文件的前100个字节（由请求中的“范围”标头指定）和HTTP状态206（部分内容）。 响应还包括以下标题：
+响应主体包括文件的前100字节（由请求中的“范围”标头指定）和HTTP状态206（部分内容）。 响应还包括以下标头：
 
-- 内容长度：100（返回的字节数）
-- 内容类型：application/parke（请求了拼花文件，因此响应内容类型为`parquet`）
-- 内容范围：字节0-99/249058(在总字节数(249058)中请求的范围(0-99))
+- Content-Length:100（返回的字节数）
+- 内容类型：application/parquet（请求了Parquet文件，因此响应内容类型为`parquet`）
+- 内容范围：字节0-99/249058(请求的范围(0-99)，占字节总数(249058)
 
 ## 配置API响应分页
 
-[!DNL Data Access] API中的响应将分页。 默认情况下，每页最大条目数为100。 分页参数可用于修改默认行为。
+对[!DNL Data Access] API中的响应进行分页。 默认情况下，每页的最大条目数为100。 分页参数可用于修改默认行为。
 
 - `limit`:您可以使用“limit”参数根据您的要求指定每页的条目数。
-- `start`:偏移可以由“开始”查询参数设置。
-- `&`:您可以使用“和号”在单个调用中组合多个参数。
+- `start`:偏移量可由“start”查询参数设置。
+- `&`:您可以使用与号在单个调用中组合多个参数。
 
 **API格式**
 
@@ -472,9 +471,9 @@ GET /batches/{BATCH_ID}/files?start={OFFSET}&limit={LIMIT}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{BATCH_ID}` | 您尝试访问的批的批标识符。 |
-| `{OFFSET}` | 要开始结果数组的指定索引(例如，开始=0) |
-| `{LIMIT}` | 控制结果数组中返回的结果数（例如，limit=1） |
+| `{BATCH_ID}` | 您尝试访问的批次的批次标识符。 |
+| `{OFFSET}` | 用于启动结果数组的指定索引（例如，start=0） |
+| `{LIMIT}` | 控制在结果数组中返回多少个结果（例如，limit=1） |
 
 **请求**
 
@@ -488,9 +487,9 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/5c102cac7c
 
 **响应**:
 
-响应包含一个`"data"`数组，其中包含单个元素，由请求参数`limit=1`指定。 此元素是包含第一个可用文件的详细信息的对象，如请求中`start=0`参数所指定（请记住，在从零开始的编号中，第一个元素是&quot;0&quot;）。
+响应包含由请求参数`limit=1`指定的具有单个元素的`"data"`数组。 此元素是一个对象，其中包含由请求中的`start=0`参数指定的第一个可用文件的详细信息（请记住，在从零开始的编号中，第一个元素为“0”）。
 
-`_links.next.href`值包含指向下一页响应的链接，在该页中可以看到`start`参数已高级到`start=1`。
+`_links.next.href`值包含指向下一页响应的链接，在该页中，您可以看到`start`参数已高级为`start=1`。
 
 ```json
 {

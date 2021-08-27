@@ -1,62 +1,61 @@
 ---
-keywords: Experience Platform；主页；热门主题；监控数据流；流服务api；流服务
+keywords: Experience Platform；主页；热门主题；监视数据流；流服务API；流服务
 solution: Experience Platform
-title: 使用Flow Service API监视数据流
+title: 使用流服务API监控数据流
 topic-legacy: overview
 type: Tutorial
-description: 本教程介绍使用流服务API监控流运行数据的完整性、错误和量度的步骤。
+description: 本教程介绍了使用流服务API监控流程运行数据的完整性、错误和量度的步骤。
 exl-id: c4b2db97-eba4-460d-8c00-c76c666ed70e
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '722'
+source-wordcount: '718'
 ht-degree: 1%
 
 ---
 
-# 使用Flow Service API监视数据流
+# 使用流服务API监控数据流
 
-Adobe Experience Platform允许从外部源摄取数据，同时为您提供使用[!DNL Platform]服务构建、标记和增强传入数据的能力。 您可以从各种来源收集数据，如Adobe应用程序、基于云的存储、数据库和许多其他来源。 此外，Experience Platform还允许将数据激活给外部合作伙伴。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用[!DNL Platform]服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。 此外，Experience Platform还允许将数据激活给外部合作伙伴。
 
-[!DNL Flow Service] 用于收集和集中来自Adobe Experience Platform内不同来源的客户数据。该服务提供用户界面和RESTful API，所有受支持的源和目标都可从中连接。
+[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。该服务提供了用户界面和RESTful API，所有受支持的源和目标都可从中连接。
 
-本教程介绍使用[[!DNL Flow Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)监视流运行数据的完整性、错误和量度的步骤。
+本教程介绍使用[[!DNL Flow Service API]](https://www.adobe.io/experience-platform-apis/references/flow-service/)监控流程运行数据是否完整、错误和量度的步骤。
 
-## 入门指南
+## 快速入门
 
-本教程要求您具有有效数据流的ID值。 如果您没有有效的数据流ID，请从[sources overview](../../sources/home.md)或[目标概述](../../destinations/catalog/overview.md)中选择您选择的连接器，然后按照尝试本教程之前概述的步骤操作。
+本教程要求您具有有效数据流的ID值。 如果您没有有效的数据流ID，请从[源概述](../../sources/home.md)或[目标概述](../../destinations/catalog/overview.md)中选择您选择的连接器，然后按照概述的步骤操作，然后再尝试本教程。
 
-本教程还要求您对Adobe Experience Platform的以下组件有充分的了解：
+此外，本教程还要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-- [目标](../../destinations/home.md):目标是与常用应用程序预建集成，允许从平台无缝激活数据，以实现跨渠道营销活动、电子邮件活动、定向广告和许多其他使用案例。
-- [来源](../../sources/home.md): [!DNL Experience Platform] 允许从各种来源摄取数据，同时使您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
-- [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+- [目标](../../destinations/home.md):目标是与常用应用程序的预建集成，允许从平台无缝激活数据以用于跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例。
+- [来源](../../sources/home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
+- [沙盒](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下各节提供了您需要了解的其他信息，以便使用[!DNL Flow Service] API成功监视流运行。
+以下各节提供了您需要了解的其他信息，以便您能够使用[!DNL Flow Service] API成功监视流量运行。
 
 ### 读取示例API调用
 
-本教程提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
+本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅[!DNL Experience Platform]疑难解答指南中[如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程可为所有[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
+[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都与特定虚拟沙箱隔离。 对[!DNL Platform] API的所有请求都需要一个标头来指定操作将在其中进行的沙盒的名称：
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
 
 - `Content-Type: application/json`
 
-## 监视流运行
+## 监视器流运行
 
-创建GET流后，请对[!DNL Flow Service] API执行数据请求。
+发出GET流后，请向[!DNL Flow Service] API执行数据请求。
 
 **API格式**
 
@@ -83,7 +82,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回有关流运行的详细信息，包括有关其创建日期、源和目标连接的信息，以及流运行的唯一标识符(`id`)。
+成功的响应会返回有关流运行的详细信息，包括有关其创建日期、源连接和目标连接以及流运行的唯一标识符(`id`)的信息。
 
 ```json
 {
@@ -190,16 +189,16 @@ curl -X GET \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `items` | 包含与特定流运行关联的元数据的单个有效负荷。 |
-| `metrics` | 流中数据的特性。 |
-| `activities` | 显示数据的转换方式。 |
+| `items` | 包含与您的特定流程运行关联的元数据的单个有效负荷。 |
+| `metrics` | 流运行中数据的特性。 |
+| `activities` | 显示数据是如何转换的。 |
 | `durationSummary` | 流运行的开始和结束时间。 |
 | `sizeSummary` | 数据的卷（以字节为单位）。 |
 | `recordSummary` | 数据的记录计数。 |
 | `fileSummary` | 数据的文件计数。 |
-| `fileSummary.extensions` | 包含特定于活动的信息。 例如，`manifest`仅是“升级活动”的一部分，因此它随`extensions`对象一起提供。 |
-| `statusSummary` | 显示流运行是成功还是失败。 |
+| `fileSummary.extensions` | 包含特定于活动的信息。 例如，`manifest`只是“促销活动”的一部分，因此它包含在`extensions`对象中。 |
+| `statusSummary` | 显示流量运行是成功还是失败。 |
 
 ## 后续步骤
 
-通过本教程，您已使用[!DNL Flow Service] API检索了有关数据流的量度和错误信息。 现在，您可以根据您的摄取计划继续监视数据流，以跟踪其状态和摄取速率。 有关如何监视源数据流的信息，请阅读使用用户界面](../ui/monitor-sources.md)教程的[监视源数据流。 有关如何监视目标数据流的详细信息，请阅读使用用户界面](../ui/monitor-destinations.md)教程的[监视目标的数据流。
+在本教程中，您已使用[!DNL Flow Service] API检索了数据流上的量度和错误信息。 您现在可以根据您的摄取计划继续监控数据流，以跟踪其状态和摄取率。 有关如何监视源数据流的信息，请阅读[使用用户界面](../ui/monitor-sources.md)教程监视源的数据流。 有关如何监控目标数据流的更多信息，请阅读[使用用户界面监控目标数据流的](../ui/monitor-destinations.md)教程。

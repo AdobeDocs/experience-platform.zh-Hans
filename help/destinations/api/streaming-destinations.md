@@ -6,9 +6,9 @@ description: 本文档介绍了如何使用Adobe Experience Platform API创建�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 02c22453470d55236d4235c479742997e8407ef3
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '2025'
+source-wordcount: '2021'
 ht-degree: 1%
 
 ---
@@ -70,7 +70,7 @@ Experience Platform中的资源可以与特定虚拟沙箱隔离。 在对Platfo
 
 ### Swagger文档 {#swagger-docs}
 
-在本教程中，您可以在Swagger中找到所有API调用的随附参考文档。 请参阅[Adobe I/O](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)上的流服务API文档。 我们建议您同时使用本教程和Swagger文档页面。
+在本教程中，您可以在Swagger中找到所有API调用的随附参考文档。 请参阅[Adobe I/O](https://www.adobe.io/experience-platform-apis/references/flow-service/)上的流服务API文档。 我们建议您同时使用本教程和Swagger文档页面。
 
 ## 获取可用流目标列表 {#get-the-list-of-available-streaming-destinations}
 

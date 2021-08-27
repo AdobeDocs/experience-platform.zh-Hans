@@ -5,9 +5,9 @@ title: 沙箱概述
 topic-legacy: overview
 description: 沙盒是单个Experience Platform实例内的虚拟分区，它允许与数字体验应用程序的开发过程无缝集成。
 exl-id: b760a979-8134-4a44-8433-ec6fb49bc508
-source-git-commit: f00e6161d82f1fd7ba442be9f06283f3c866573f
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1009'
+source-wordcount: '1005'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,7 @@ Adobe Experience Platform旨在在全球范围内丰富数字体验应用程序�
 
 ## Experience PlatformAPI中的沙箱
 
-调用Experience PlatformAPI时，必须在标头`x-sandbox-name`下提供沙盒名称。 例如，在调用[[!DNL Catalog Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)以查看“生产”沙盒内的所有数据集时，沙盒的名称(&quot;prod&quot;)将作为API请求中的标头提供：
+调用Experience PlatformAPI时，必须在标头`x-sandbox-name`下提供沙盒名称。 例如，在调用[[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/)以查看“生产”沙盒内的所有数据集时，沙盒的名称(&quot;prod&quot;)将作为API请求中的标头提供：
 
 ```shell
 curl -X GET \

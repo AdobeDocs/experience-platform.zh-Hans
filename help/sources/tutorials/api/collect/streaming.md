@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用源连接器和API检索流数据并将它们引入平台的步骤。
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: b672eab481a8286f92741a971991c7f83102acf7
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '1111'
+source-wordcount: '1107'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 本教程介绍了从流源连接器检索原始数据并使用[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)将其Experience Platform的步骤。
 
-## 入门指南
+## 快速入门
 
 本教程要求您对Adobe Experience Platform的以下组件有一定的了解：
 
@@ -40,7 +40,7 @@ ht-degree: 2%
 - [[!DNL Azure Event Hubs]](../create/cloud-storage/eventhub.md)
 - [[!DNL Google PubSub]](../create/cloud-storage/google-pubsub.md)
 
-## 创建目标XDM架构{#target-schema}
+## 创建目标XDM架构 {#target-schema}
 
 要在Platform中使用源数据，必须创建目标架构以根据您的需求构建源数据。 然后，目标架构用于创建包含源数据的Platform数据集。 此目标XDM架构还扩展了XDM [!DNL Individual Profile]类。
 
@@ -152,7 +152,7 @@ curl -X POST \
 
 ## 创建目标数据集
 
-现在，创建目标XDM架构并创建其唯一`$id`后，即可创建目标数据集以包含源数据。 要创建目标数据集，请向[目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)的`dataSets`端点发出POST请求，同时在有效负载中提供目标架构的ID。
+现在，创建目标XDM架构并创建其唯一`$id`后，即可创建目标数据集以包含源数据。 要创建目标数据集，请向[目录服务API](https://www.adobe.io/experience-platform-apis/references/catalog/)的`dataSets`端点发出POST请求，同时在有效负载中提供目标架构的ID。
 
 **API格式**
 
@@ -203,7 +203,7 @@ curl -X POST \
 ]
 ```
 
-## 创建目标连接{#target-connection}
+## 创建目标连接 {#target-connection}
 
 Target连接创建并管理到平台的目标连接或传输数据将登陆的任何位置。 目标连接包含有关创建数据流所需的数据目标、数据格式和目标连接ID的信息。 Target连接实例特定于租户和IMS组织。
 

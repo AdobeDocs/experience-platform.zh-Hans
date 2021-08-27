@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform Segmentation Service
 breadcrumb-title: Segmentation Service 指南
 user-guide-description: 根据实时客户档案数据构建区段并生成受众。
-feature: 区段
-source-git-commit: f193787ac27e30c69d25418656ae9c59c89622dc
+feature: Segments
+source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
 workflow-type: tm+mt
-source-wordcount: '164'
+source-wordcount: '159'
 ht-degree: 26%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 26%
    - [边缘分割](api/edge-segmentation.md)
    - [导出作业](api/export-jobs.md)
    - [预览和估计](api/previews-and-estimates.md)
-   - [计划](api/schedules.md)
+   - [调度程序](api/schedules.md)
    - [区段定义](api/segment-definitions.md)
    - [区段作业](api/segment-jobs.md)
    - [区段搜索](api/segment-search.md)
@@ -30,7 +30,7 @@ ht-degree: 26%
 - 分段UI {#ui}
    - [概述](ui/overview.md)
    - [区段功能板](ui/segment-dashboard.md)
-   - [Segment Builder](ui/segment-builder.md)
+   - [区段生成器](ui/segment-builder.md)
    - [区段匹配](ui/segment-match.md)
    - [边缘分割](ui/edge-segmentation.md)
    - [流分段](ui/streaming-segmentation.md)
@@ -61,5 +61,5 @@ ht-degree: 26%
    - [导入和使用外部受众](tutorials/using-external-audiences.md)
    - [创建用于导出数据的数据集](tutorials/create-dataset-export-segment.md)
    - [为区段强制实施数据使用合规性](tutorials/governance.md)
-- [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/segmentation.yaml)
+- [API参考](https://www.adobe.io/experience-platform-apis/references/segmentation/)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
