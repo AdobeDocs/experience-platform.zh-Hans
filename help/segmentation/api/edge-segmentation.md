@@ -5,7 +5,7 @@ title: '使用API进行边缘分段 '
 topic-legacy: developer guide
 description: 本文档包含有关如何将边缘分段与Adobe Experience Platform Segmentation Service API结合使用的示例。
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: af1eee8787d7fa2ae2d56e541823100d2620dd2d
+source-git-commit: f92b12d343584f33870dd42288977e7b6e446b0f
 workflow-type: tm+mt
 source-wordcount: '633'
 ht-degree: 3%
@@ -227,7 +227,7 @@ curl -X POST \
     "expression": {
         "type": "PQL",
         "format": "pql/text",
-        "value": "select var1 from xEvent where var1._experience.analytics.endUser.firstWeb.webPageDetails.isHomePage = true"
+        "value": "chain(xEvent, timestamp, [X: WHAT(var1._experience.analytics.endUser.firstWeb.webPageDetails.isHomePage = "true")])"
     },
     "evaluationInfo": {
         "batch": {
