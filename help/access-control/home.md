@@ -5,9 +5,9 @@ topic-legacy: overview
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 4425f7d61aa5ff357c7ba25cf986201fefeacd67
+source-git-commit: 6ecfad588f97474988b86199c008953714a3bed8
 workflow-type: tm+mt
-source-wordcount: '1347'
+source-wordcount: '1363'
 ht-degree: 2%
 
 ---
@@ -115,6 +115,7 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 | [!DNL Dashboards] | [!UICONTROL 查看许可证使用情况功能板] | 以只读方式访问许可证使用功能板。 |
 | [!DNL Dashboards] | [!UICONTROL 管理标准功能板] | 添加data warehouse中尚未包含的自定义属性。 |
 | [!DNL Query Service] | [!UICONTROL 管理查询] | 访问读取、创建、编辑和删除Platform数据的结构化SQL查询。 |
+| [!DNL Query Service] | [!UICONTROL 管理查询服务集成] | 有权创建、更新和删除查询服务访问权限的未过期凭据。 |
 
 ## 后续步骤
 

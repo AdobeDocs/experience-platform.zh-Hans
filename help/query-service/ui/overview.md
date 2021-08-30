@@ -5,10 +5,10 @@ title: 查询服务UI指南
 topic-legacy: guide
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 483bcea231ed5f25c76771d0acba7e0c62dfed16
+source-git-commit: 30c3ca4aa3e8f42140566c8fdf9fbc855ec72e1b
 workflow-type: tm+mt
-source-wordcount: '628'
-ht-degree: 2%
+source-wordcount: '614'
+ht-degree: 3%
 
 ---
 
@@ -57,7 +57,7 @@ Adobe Experience Platform [!DNL Query Service]提供了一个用户界面，可�
 
 ## 凭据
 
-**[!UICONTROL 凭据]**&#x200B;选项卡显示您的[!DNL Postgres]凭据。 选择任何字段旁边的&#x200B;**[!UICONTROL 复制]**&#x200B;图标，以将其内容存储在键盘缓冲区中。 有关如何使用这些凭据与外部客户端连接的更多信息，请阅读[与客户端连接指南](../clients/overview.md)。
+**[!UICONTROL 凭据]**&#x200B;选项卡同时显示即将过期和未过期的凭据。 有关如何使用这些凭据与外部客户端连接的更多信息，请阅读[凭据指南](../clients/overview.md)。
 
 ![图像](../images/ui/overview/credentials.png)
 
