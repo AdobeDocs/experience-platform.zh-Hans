@@ -5,9 +5,9 @@ type: Tutorial
 seo-title: Activate audience data to batch profile export destinations
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
-source-git-commit: 7c10f39e7452481a00fb4269925c80aab34a7319
+source-git-commit: 99835d0b3d8ab64422be7f878cf556ac8890b123
 workflow-type: tm+mt
-source-wordcount: '1925'
+source-wordcount: '1959'
 ht-degree: 0%
 
 ---
@@ -75,9 +75,12 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   >由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。<br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。这是将在未来版本中解决的限制。
+   >由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。<br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。未来版本将解决此限制。
 
 1. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
+   >[!TIP]
+   >
+   > 对于每日导出，请将开始和结束日期设置为与下游平台中促销活动的持续时间保持一致。
 1. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
 
 
@@ -96,14 +99,17 @@ ht-degree: 0%
    * **[!UICONTROL 每日]**:在您指定的时间，计划每天一次增量文件导出。
    * **[!UICONTROL 每小时]**:计划每3、6、8或12小时执行一次增量文件导出。
 
-2. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。
+1. 使用&#x200B;**[!UICONTROL Time]**&#x200B;选择器选择应何时进行导出，并采用[!DNL UTC]格式选择一天中的时间。
 
    >[!IMPORTANT]
    >
-   >由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。<br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。这是将在未来版本中解决的限制。
+   >由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。<br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。未来版本将解决此限制。
 
-3. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
-4. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
+1. 使用&#x200B;**[!UICONTROL Date]**&#x200B;选择器选择导出的日期或间隔。
+   >[!TIP]
+   >
+   >将开始和结束日期设置为与下游平台中的促销活动持续时间保持一致。
+1. 选择&#x200B;**[!UICONTROL 创建]**&#x200B;以保存计划。
 
 ### 配置文件名 {#file-names}
 
