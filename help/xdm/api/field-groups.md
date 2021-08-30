@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 字段组API端点
 description: 架构注册表API中的/fieldgroups端点允许您以编程方式管理体验应用程序中的XDM架构字段组。
 topic-legacy: developer guide
-source-git-commit: 97f803f649b2c42b0449a2f8f0cff370ed1aba93
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1215'
+source-wordcount: '1211'
 ht-degree: 3%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 3%
 
 ## 快速入门
 
-本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)的一部分。 在继续操作之前，请查阅[快速入门指南](./getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及成功调用任何Experience PlatformAPI所需的标头的重要信息。
+本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)的一部分。 在继续操作之前，请查阅[快速入门指南](./getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及成功调用任何Experience PlatformAPI所需的标头的重要信息。
 
 ## 检索字段组列表 {#list}
 

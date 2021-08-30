@@ -5,29 +5,28 @@ title: 标签API端点
 topic-legacy: developer guide
 description: 了解如何使用策略服务API在Experience Platform中管理数据使用标签。
 exl-id: 9a01f65c-01f1-4298-bdcf-b7e00ccfe9f2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '506'
 ht-degree: 3%
 
 ---
 
 # 标签端点
 
-数据使用标签允许您根据可能适用于该数据的使用策略对数据进行分类。 [!DNL Policy Service API]中的`/labels`端点允许您以编程方式管理体验应用程序中的数据使用标签。
+数据使用标签允许您根据可能应用于该数据的使用策略对数据进行分类。 [!DNL Policy Service API]中的`/labels`端点允许您以编程方式管理体验应用程序中的数据使用标签。
 
 >[!NOTE]
 >
->`/labels`端点仅用于检索、创建和更新数据使用标签。 有关如何使用API调用向数据集和字段添加标签的步骤，请参阅[管理数据集标签](../labels/dataset-api.md)的指南。
+>`/labels`端点仅用于检索、创建和更新数据使用标签。 有关如何使用API调用向数据集和字段添加标签的步骤，请参阅[管理数据集标签](../labels/dataset-api.md)上的指南。
 
-## 入门指南
+## 快速入门
 
-本指南中使用的API端点是[[!DNL Policy Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)的一部分。 在继续之前，请查阅[快速入门指南](getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
+本指南中使用的API端点是[[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/)的一部分。 在继续操作之前，请查阅[快速入门指南](getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及有关成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
 
-## 检索标签{#list}的列表
+## 检索标签列表 {#list}
 
-您可以通过分别向`/labels/core`或`/labels/custom`发出GET请求来列表所有`core`或`custom`标签。
+您可以通过分别向`/labels/core`或`/labels/custom`发出GET请求来列出所有`core`或`custom`标签。
 
 **API格式**
 
@@ -38,7 +37,7 @@ GET /labels/custom
 
 **请求**
 
-以下请求将列表在您的组织下创建的所有自定义标签。
+以下请求列出了在您的组织下创建的所有自定义标签。
 
 ```shell
 curl -X GET \
@@ -51,7 +50,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回从系统检索的自定义标签的列表。 由于以上示例请求是向`/labels/custom`发出的，因此下面的响应仅显示自定义标签。
+成功的响应会返回从系统检索的自定义标签列表。 由于上面的示例请求是向`/labels/custom`发出的，因此下面的响应仅显示自定义标签。
 
 ```json
 {
@@ -107,9 +106,9 @@ curl -X GET \
 }
 ```
 
-## 查找标签{#look-up}
+## 查找标签 {#look-up}
 
-您可以通过在GET请求到[!DNL Policy Service] API的路径中包含该标签的`name`属性来查找特定标签。
+您可以在[!DNL Policy Service] API的GET请求路径中包含特定标签的`name`属性，以查找特定标签。
 
 **API格式**
 
@@ -124,7 +123,7 @@ GET /labels/custom/{LABEL_NAME}
 
 **请求**
 
-以下请求将检索自定义标签`L2`，如路径中所示。
+以下请求会检索路径中指示的自定义标签`L2`。
 
 ```shell
 curl -X GET \
@@ -161,7 +160,7 @@ curl -X GET \
 }
 ```
 
-## 创建或更新自定义标签{#create-update}
+## 创建或更新自定义标签 {#create-update}
 
 要创建或更新自定义标签，必须向[!DNL Policy Service] API发出PUT请求。
 
@@ -173,11 +172,11 @@ PUT /labels/custom/{LABEL_NAME}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LABEL_NAME}` | 自定义标签的`name`属性。 如果不存在具有此名称的自定义标签，则将创建新标签。 如果确实存在，该标签将更新。 |
+| `{LABEL_NAME}` | 自定义标签的`name`属性。 如果不存在具有此名称的自定义标签，则将创建新标签。 如果存在，则将更新该标签。 |
 
 **请求**
 
-以下请求创建新标签`L3`，旨在描述包含与客户所选付款计划相关信息的数据。
+以下请求会创建一个新标签`L3`，该标签旨在描述包含与客户选择的付款计划相关的信息的数据。
 
 ```shell
 curl -X PUT \
@@ -196,14 +195,14 @@ curl -X PUT \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 标签的唯一字符串标识符。 此值用于查找目的并将标签应用于数据集和字段，因此建议它简短和简洁。 |
-| `category` | 标签的类别。 虽然您可以为自定义标签创建自己的类别，但强烈建议您使用`Custom`（如果希望标签显示在UI中）。 |
-| `friendlyName` | 用于显示目的的标签的易记名称。 |
+| `name` | 标签的唯一字符串标识符。 此值用于查找目的并将标签应用于数据集和字段，因此建议使用简短。 |
+| `category` | 标签的类别。 虽然您可以为自定义标签创建自己的类别，但强烈建议您使用`Custom`，如果您希望该标签显示在UI中。 |
+| `friendlyName` | 标签的易记名称，用于显示。 |
 | `description` | （可选）用于提供更多上下文的标签描述。 |
 
 **响应**
 
-成功的响应会返回自定义标签的详细信息，如果更新了现有标签，则返回HTTP代码为200（确定）；如果创建了新标签，则返回201（已创建）。
+成功的响应会返回自定义标签的详细信息，如果更新了现有标签，则返回HTTP代码为200(OK)；如果创建了新标签，则返回201（已创建）。
 
 ```json
 {

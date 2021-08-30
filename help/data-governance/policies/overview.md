@@ -5,9 +5,9 @@ title: 数据使用策略概述
 topic-legacy: policies
 description: 为了有效支持数据合规性的数据使用标签，必须实施数据使用策略。 数据使用策略是描述您允许或限制对Experience Platform内数据执行的营销操作类型的规则。
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: 4aeb12aec026ab2dc29133dd44e54b453fb71fe3
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1077'
+source-wordcount: '1073'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 本文档提供了数据使用策略的高级概述，并提供了指向在UI或API中使用策略的更多文档的链接。
 
-## 营销操作{#marketing-actions}
+## 营销操作 {#marketing-actions}
 
 数据管理框架中的营销操作（也称为营销用例）是[!DNL Experience Platform]数据消费者可以采取的操作，贵组织希望对其限制数据使用。 因此，数据使用策略由以下各项定义：
 
@@ -31,7 +31,7 @@ ht-degree: 0%
 >
 >营销操作本身不会限制数据的使用。 必须将它们包含在已启用的数据使用策略中，才能针对策略违规评估这些操作。
 
-当贵组织的服务中发生数据使用情况时，应指示相关的营销操作，以便识别任何违反策略的情况。 然后，您可以使用[策略服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)检查集成中是否存在策略违规。
+当贵组织的服务中发生数据使用情况时，应指示相关的营销操作，以便识别任何违反策略的情况。 然后，您可以使用[策略服务API](https://www.adobe.io/experience-platform-apis/references/policy-service/)检查集成中是否存在策略违规。
 
 >[!NOTE]
 >
@@ -67,7 +67,7 @@ For a reference on how specific Data Export Controls map to marketing actions in
 
 以下部分提供了有关数据使用策略的其他信息。
 
-### Adobe定义的营销操作{#core-actions}
+### Adobe定义的营销操作 {#core-actions}
 
 下表描述了按Adobe提供的现成核心营销操作。
 

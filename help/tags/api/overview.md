@@ -1,9 +1,9 @@
 ---
 title: Reactor API指南
 description: Reactor API允许开发人员以编程方式管理Adobe Experience Platform中标记的所有资源。 请阅读本指南，了解如何使用API执行关键操作。
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1039'
+source-wordcount: '1035'
 ht-degree: 1%
 
 ---
@@ -14,7 +14,7 @@ Reactor API提供了多个端点，允许您以编程方式管理Adobe Experienc
 
 下面概述了这些端点。 有关详细信息，请访问各个端点指南，并参阅[快速入门指南](./getting-started.md) ，以了解如何对API进行身份验证的重要信息。
 
-要查看所有可用的端点和CRUD操作，请访问[Reactor API引用](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml)。
+要查看所有可用的端点和CRUD操作，请访问[Reactor API引用](https://www.adobe.io/experience-platform-apis/references/reactor/)。
 
 ## 公司
 

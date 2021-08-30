@@ -6,9 +6,9 @@ description: 在特定情况下，可能需要创建体验数据模型(XDM)架�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: bef01000-909a-4594-8cf4-b9dbe0b358d5
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '832'
+source-wordcount: '828'
 ht-degree: 3%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 3%
 
 在特定情况下，可能需要创建[!DNL Experience Data Model](XDM)架构，其中的字段名称仅由单个数据集使用。 这称为“临时”架构。 临时架构用于[!DNL Experience Platform]的各种数据获取工作流，包括获取CSV文件并创建某些类型的源连接。
 
-本文档提供了使用[架构注册表API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)创建临时架构的一般步骤。 它将与其他需要在工作流中创建临时架构的[!DNL Experience Platform]教程结合使用。 这些文档中的每个文档都提供了有关如何为其特定用例正确配置临时架构的详细信息。
+本文档提供了使用[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)创建临时架构的一般步骤。 它将与其他需要在工作流中创建临时架构的[!DNL Experience Platform]教程结合使用。 这些文档中的每个文档都提供了有关如何为其特定用例正确配置临时架构的详细信息。
 
-## 入门指南
+## 快速入门
 
 本教程需要对[!DNL Experience Data Model](XDM)系统有正确的了解。 在开始本教程之前，请查阅以下XDM文档：
 

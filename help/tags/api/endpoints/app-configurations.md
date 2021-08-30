@@ -1,10 +1,10 @@
 ---
 title: 应用程序配置端点
 description: 了解如何在Reactor API中调用/app_configurations端点。
-source-git-commit: 59592154eeb8592fa171b5488ecb0385e0e59f39
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '590'
-ht-degree: 7%
+source-wordcount: '586'
+ht-degree: 8%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 7%
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索应用程序配置列表 {#list}
 

@@ -1,9 +1,9 @@
 ---
 title: 审核日志概述
 description: 了解审核日志如何让您了解谁在Adobe Experience Platform中执行了哪些操作。
-source-git-commit: eb8144ace087c68a159aab89195832860df431e2
+source-git-commit: 937225ff08e2e02c5840f86d6ed50644e05bdfe5
 workflow-type: tm+mt
-source-wordcount: '467'
+source-wordcount: '463'
 ht-degree: 4%
 
 ---
@@ -58,7 +58,7 @@ Select **[!UICONTROL Download log]** to export an audit log.
 
 ## 在API中管理审核日志
 
-您可以在UI中执行的所有操作也可以使用API调用来完成。 有关更多信息，请参阅[API参考文档](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/audit-query.yaml)。
+您可以在UI中执行的所有操作也可以使用API调用来完成。 有关更多信息，请参阅[API参考文档](https://www.adobe.io/experience-platform-apis/references/audit-query/)。
 
 ## 管理Adobe Admin Console的审核日志
 

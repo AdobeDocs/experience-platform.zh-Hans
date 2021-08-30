@@ -5,9 +5,9 @@ title: 架构注册API指南
 description: 架构注册表API允许开发人员以编程方式管理Adobe Experience Platform中的所有架构和相关的Experience Data Model(XDM)资源。 请阅读本指南，了解如何使用API执行关键操作。
 topic-legacy: developer guide
 exl-id: 9e693d29-303e-462a-a1e2-93c0d517b8e3
-source-git-commit: c2ca679e046f59d05e2d12ca83bc1b2496b2288f
+source-git-commit: 6ba8da07a4fb36c6e8bd2ede8ac415edaabe0ef6
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '983'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
 >
 >XDM使用JSON模式格式来描述和验证摄取的客户体验数据的结构。 在使用架构注册表API之前，强烈建议您查看[官方JSON架构文档](https://json-schema.org/)，以更好地了解此基础技术。
 
-要查看所有可用的端点和CRUD操作，请访问[架构注册表API引用](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)。
+要查看所有可用的端点和CRUD操作，请访问[架构注册表API引用](https://www.adobe.io/experience-platform-apis/references/schema-registry/)。
 
 ## 架构
 

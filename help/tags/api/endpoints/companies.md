@@ -1,9 +1,9 @@
 ---
 title: 公司端点
 description: 了解如何在Reactor API中对/companys端点进行调用。
-source-git-commit: 59592154eeb8592fa171b5488ecb0385e0e59f39
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '247'
+source-wordcount: '243'
 ht-degree: 4%
 
 ---
@@ -16,7 +16,7 @@ Reactor API中的`/companies`端点允许您以编程方式检索您在体验应
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/reactor.yaml)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索公司列表 {#list}
 

@@ -6,9 +6,9 @@ description: 本文档提供了一个教程，用于定义由贵组织使用架�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1369'
+source-wordcount: '1365'
 ht-degree: 2%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 虽然架构关系可以通过使用并集架构和[!DNL Real-time Customer Profile]来推断，但这仅适用于共享同一类的架构。 要在属于不同类的两个架构之间建立关系，必须将专用关系字段添加到源架构中，该源架构引用目标架构的标识。
 
-本文档提供了一个教程，用于定义由您的组织使用[[!DNL Schema Registry API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)定义的两个架构之间的一对一关系。
+本文档提供了一个教程，用于定义由您的组织使用[[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/)定义的两个架构之间的一对一关系。
 
 ## 快速入门
 
@@ -32,7 +32,7 @@ ht-degree: 2%
 
 在开始本教程之前，请查看[开发人员指南](../api/getting-started.md) ，以了解成功调用[!DNL Schema Registry] API所需了解的重要信息。 这包括您的`{TENANT_ID}`、“containers”的概念以及发出请求所需的标头（请特别注意[!DNL Accept]标头及其可能值）。
 
-## 定义源架构和目标架构{#define-schemas}
+## 定义源架构和目标架构 {#define-schemas}
 
 您应该已经创建了将在关系中定义的两个架构。 本教程在组织的当前忠诚度计划（在“[!DNL Loyalty Members]”模式中定义）的成员与其最喜爱的酒店（在“[!DNL Hotels]”模式中定义）之间创建关系。
 
@@ -342,7 +342,7 @@ curl -X PATCH \
 }
 ```
 
-## 创建引用标识描述符{#reference-identity}
+## 创建引用标识描述符 {#reference-identity}
 
 如果架构字段用作关系中其他架构的引用，则它们必须应用引用标识描述符。 由于“[!DNL Loyalty Members]”中的`favoriteHotel`字段将引用“[!DNL Hotels]”中的`hotelId`字段，因此必须为`hotelId`提供引用标识描述符。
 
@@ -401,7 +401,7 @@ curl -X POST \
 }
 ```
 
-## 创建关系描述符{#create-descriptor}
+## 创建关系描述符 {#create-descriptor}
 
 关系描述符在源模式和目标模式之间建立一对一关系。 定义目标架构的引用描述符后，可以通过向`/tenant/descriptors`端点发出POST请求来创建新的关系描述符。
 

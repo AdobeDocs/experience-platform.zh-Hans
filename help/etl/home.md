@@ -5,9 +5,9 @@ title: 为Adobe Experience Platform开发ETL集成
 topic-legacy: overview
 description: ETL集成指南概述了创建高性能、安全的连接器以Experience Platform数据并将数据引入平台的一般步骤。
 exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '4083'
+source-wordcount: '4075'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ ETL集成指南概述了为[!DNL Experience Platform]创建高性能、安全的
 - [[!DNL Data Access]](https://www.adobe.io/experience-platform-apis/references/data-access/)
 - [[!DNL Data Ingestion]](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)
 - [Experience PlatformAPI的身份验证和授权](https://www.adobe.com/go/platform-api-authentication-en)
-- [[!DNL Schema Registry]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)
+- [[!DNL Schema Registry]](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
 
 本指南还包含设计ETL连接器时要使用的示例API调用，其中包含概述每项[!DNL Experience Platform]服务的文档链接以及其API的使用，这些链接将提供更多详细信息。
 
@@ -257,7 +257,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/xdms/context/pers
 
 >[!NOTE]
 >
->当“schema”字段为空或完全不存在时，连接器应读取“schemaRef”字段，并使用[架构注册表API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)，如前面步骤[查看数据集架构](#view-dataset-schema)中所示。
+>当“schema”字段为空或完全不存在时，连接器应读取“schemaRef”字段，并使用[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)，如前面步骤[查看数据集架构](#view-dataset-schema)中所示。
 
 ### “ovearableSchema”属性
 

@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用体验数据模型(XDM)类和架构字段组来标准化体验数据。
-feature: 架构
-source-git-commit: 2592d4f494d4d3dcfba63eb539498416fbdf6707
+feature: Schemas
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '320'
+source-wordcount: '315'
 ht-degree: 16%
 
 ---
@@ -68,7 +68,7 @@ ht-degree: 16%
    * [一般营销首选项字段](./data-types/marketing-field.md)
    * [包含订阅的通用营销首选项字段](./data-types/marketing-field-subscriptions.md)
    * [一般个性化首选项字段](./data-types/personalization-field.md)
-   * [Adobe Target 中的地域](./data-types/geo.md)
+   * [地域](./data-types/geo.md)
    * [地域圈子](./data-types/geo-circle.md)
    * [地理坐标](./data-types/geo-coordinates.md)
    * [地域交互详细信息](./data-types/geo-interaction-details.md)
@@ -133,5 +133,5 @@ ht-degree: 16%
    * [定义两个架构(API)之间的关系](tutorials/relationship-api.md)
    * [创建临时架构(API)](tutorials/ad-hoc.md)
 * [疑难解答指南](troubleshooting-guide.md)
-* [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)
+* [API参考](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)

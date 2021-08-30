@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据类型API端点
 description: 架构注册表API中的/datatypes端点允许您以编程方式管理体验应用程序中的XDM数据类型。
 exl-id: 2a58d641-c681-40cf-acc8-7ad842cd6243
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1172'
+source-wordcount: '1168'
 ht-degree: 4%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 4%
 
 数据类型在类或架构字段组中用作引用类型字段，其方式与基本文字字段相同，关键区别在于数据类型可以定义多个子字段。 虽然与中的字段组类似，它们允许一致地使用多字段结构，但数据类型更加灵活，因为它们可以包含在架构结构中的任意位置，而字段组只能在根级别添加。 [!DNL Schema Registry] API中的`/datatypes`端点允许您以编程方式管理体验应用程序中的数据类型。
 
-## 入门指南
+## 快速入门
 
-本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)的一部分。 在继续操作之前，请查阅[快速入门指南](./getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及成功调用任何Experience PlatformAPI所需的标头的重要信息。
+本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)的一部分。 在继续操作之前，请查阅[快速入门指南](./getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及成功调用任何Experience PlatformAPI所需的标头的重要信息。
 
 ## 检索数据类型列表 {#list}
 

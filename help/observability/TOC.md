@@ -2,11 +2,11 @@
 audience: user
 user-guide-title: Observability Insights 指南
 user-guide-description: 通过使用统计指标和活动通知监控平台事件。
-feature: 数据管理
-source-git-commit: 905d364796911f35111d42c46c91744bc18304f2
+feature: Data Management
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '60'
-ht-degree: 41%
+source-wordcount: '54'
+ht-degree: 42%
 
 ---
 
@@ -23,5 +23,5 @@ ht-degree: 41%
    * [标准警报规则](./alerts/rules.md)
    * [UI指南](./alerts/ui.md)
    * [订阅I/O事件通知](./alerts/subscribe.md)
-* [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/observability-insights.yaml)
+* [API参考](https://www.adobe.io/experience-platform-apis/references/observability-insights/)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)

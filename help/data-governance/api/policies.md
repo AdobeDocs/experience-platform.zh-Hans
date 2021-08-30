@@ -1,29 +1,28 @@
 ---
-keywords: Experience Platform；主页；热门主题；策略实施；基于API的实施；数据治理
+keywords: Experience Platform；主页；热门主题；策略执行；基于API的执行；数据管理
 solution: Experience Platform
 title: 策略API端点
 topic-legacy: developer guide
-description: 数据使用策略是贵组织采用的规则，用于描述您允许或限制对Experience Platform内数据执行的营销操作的类型。 /policies端点用于与查看、创建、更新或删除数据使用策略相关的所有API调用。
+description: 数据使用策略是贵组织采用的规则，用于描述您允许或限制对Experience Platform内数据执行的营销操作类型。 /policys端点用于与查看、创建、更新或删除数据使用策略相关的所有API调用。
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1817'
+source-wordcount: '1813'
 ht-degree: 2%
 
 ---
 
 # 策略端点
 
-数据使用策略是描述允许或限制您对[!DNL Experience Platform]内的数据执行的营销操作类型的规则。 [!DNL Policy Service API]中的`/policies`端点允许您以编程方式管理组织的数据使用策略。
+数据使用策略是描述允许或限制您对[!DNL Experience Platform]内的数据执行的营销操作类型的规则。 [!DNL Policy Service API]中的`/policies`端点允许您以编程方式管理贵组织的数据使用策略。
 
-## 入门指南
+## 快速入门
 
-本指南中使用的API端点是[[!DNL Policy Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/dule-policy-service.yaml)的一部分。 在继续之前，请查阅[快速入门指南](getting-started.md)，了解相关文档的链接、阅读此文档中示例API调用的指南以及成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
+本指南中使用的API端点是[[!DNL Policy Service] API](https://www.adobe.io/experience-platform-apis/references/policy-service/)的一部分。 在继续操作之前，请查阅[快速入门指南](getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及有关成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
 
-## 检索策略列表{#list}
+## 检索策略列表 {#list}
 
-您可以通过分别向`/policies/core`或`/policies/custom`发出GET请求来列表所有`core`或`custom`策略。
+您可以通过分别向`/policies/core`或`/policies/custom`发出GET请求来列出所有`core`或`custom`策略。
 
 **API格式**
 
@@ -34,7 +33,7 @@ GET /policies/custom
 
 **请求**
 
-以下请求检索由您的组织定义的自定义策略列表。
+以下请求可检索由您的组织定义的自定义策略列表。
 
 ```shell
 curl -X GET \
@@ -47,7 +46,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应包括一个`children`数组，用于列表每个检索到的策略的详细信息，包括其`id`值。 您可以使用特定策略的`id`字段执行[查找](#lookup)、[update](#update)和[delete](#delete)请求。
+成功的响应包含一个`children`数组，其中列出了每个检索到的策略的详细信息，包括其`id`值。 您可以使用特定策略的`id`字段执行[查找](#lookup)、[更新](#update)和[删除](#delete)请求。
 
 ```JSON
 {
@@ -140,16 +139,16 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `_page.count` | 检索的策略总数。 |
+| `_page.count` | 检索到的策略总数。 |
 | `name` | 策略的显示名称。 |
-| `status` | 策略的当前状态。 有三种可能的状态：`DRAFT`、`ENABLED`或`DISABLED`。 默认情况下，只有`ENABLED`策略参与评估。 有关详细信息，请参阅[策略评估](../enforcement/overview.md)的概述。 |
-| `marketingActionRefs` | 一个数组，用于列表策略所有适用营销操作的URI。 |
-| `description` | 提供策略用例的进一步上下文的可选描述。 |
-| `deny` | 描述特定数据使用标签的对象，策略的关联营销操作被限制在其上执行。 有关此属性的详细信息，请参见[创建策略](#create-policy)一节。 |
+| `status` | 策略的当前状态。 有三种可能的状态：`DRAFT`、`ENABLED`或`DISABLED`。 默认情况下，只有`ENABLED`策略参与评估。 有关更多信息，请参阅[策略评估](../enforcement/overview.md)的概述。 |
+| `marketingActionRefs` | 列出策略所有适用营销操作的URI的数组。 |
+| `description` | 可选描述，提供了策略用例的进一步上下文。 |
+| `deny` | 描述特定数据使用标签的对象，策略的关联营销操作被限制在其上执行。 有关此属性的详细信息，请参阅[创建策略](#create-policy)中的部分。 |
 
-## 查找策略{#look-up}
+## 查找策略 {#look-up}
 
-通过在GET请求的路径中包含该策略的`id`属性，可以查找特定策略。
+您可以通过在GET请求的路径中包含该策略的`id`属性来查找特定策略。
 
 **API格式**
 
@@ -223,21 +222,21 @@ curl -X GET \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 策略的显示名称。 |
-| `status` | 策略的当前状态。 有三种可能的状态：`DRAFT`、`ENABLED`或`DISABLED`。 默认情况下，只有`ENABLED`策略参与评估。 有关详细信息，请参阅[策略评估](../enforcement/overview.md)的概述。 |
-| `marketingActionRefs` | 一个数组，用于列表策略所有适用营销操作的URI。 |
-| `description` | 提供策略用例的进一步上下文的可选描述。 |
-| `deny` | 描述特定数据使用标签的对象，其中策略的关联营销操作被限制在其上执行。 有关此属性的详细信息，请参见[创建策略](#create-policy)一节。 |
+| `status` | 策略的当前状态。 有三种可能的状态：`DRAFT`、`ENABLED`或`DISABLED`。 默认情况下，只有`ENABLED`策略参与评估。 有关更多信息，请参阅[策略评估](../enforcement/overview.md)的概述。 |
+| `marketingActionRefs` | 一个数组，其中列出了策略所有适用营销操作的URI。 |
+| `description` | 可选描述，提供了策略用例的进一步上下文。 |
+| `deny` | 描述特定数据使用标签的对象，策略的关联营销操作被限制为不执行。 有关此属性的详细信息，请参阅[创建策略](#create-policy)中的部分。 |
 
-## 创建自定义策略{#create-policy}
+## 创建自定义策略 {#create-policy}
 
 在[!DNL Policy Service] API中，策略由以下内容定义：
 
 * 对特定营销操作的引用
-* 表达式，用于描述禁止对其执行营销操作的数据使用标签
+* 描述限制对其执行营销操作的数据使用标签的表达式
 
-为满足后一要求，策略定义必须包含关于存在数据使用标签的布尔表达式。 此表达式称为策略表达式。
+要满足后一要求，策略定义必须包含有关存在数据使用标签的布尔表达式。 此表达式称为策略表达式。
 
-策略表达式以`deny`属性的形式在每个策略定义中提供。 仅检查单个标签是否存在的简单`deny`对象的示例如下所示：
+在每个策略定义中，策略表达式以`deny`属性的形式提供。 仅检查单个标签是否存在的简单`deny`对象的示例如下所示：
 
 ```json
 "deny": {
@@ -245,7 +244,7 @@ curl -X GET \
 }
 ```
 
-但是，许多策略指定了关于存在数据使用标签的更复杂的条件。 要支持这些用例，您还可以包含用于描述策略表达式的布尔运算。 策略表达式对象必须包含标签或操作符和操作数，但不能同时包含这两者。 反过来，每个操作数也是策略表达式对象。
+但是，许多策略指定了关于存在数据使用标签的更复杂的条件。 要支持这些用例，您还可以包含布尔运算来描述策略表达式。 策略表达式对象必须包含标签或运算符和操作数，但不能同时包含这两者。 反过来，每个操作数也是策略表达式对象。
 
 例如，为了定义一个策略，禁止对存在`C1 OR (C3 AND C7)`标签的数据执行营销操作，策略的`deny`属性将指定为：
 
@@ -267,11 +266,11 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `operator` | 指示在同级`operands`数组中提供的标签之间的条件关系。 接受的值为： <ul><li>`OR`:如果数组中存在任何标签，表达式会解 `operands` 析为true。</li><li>`AND`:该表达式仅解析为true(如果数组中的所有标 `operands` 签都存在)。</li></ul> |
-| `operands` | 对象的数组，每个对象表示单个标签或`operator`和`operands`属性的额外对。 `operands`数组中存在标签和/或操作将根据其同级`operator`属性的值解析为true或false。 |
+| `operator` | 指示同级`operands`数组中提供的标签之间的条件关系。 接受的值包括： <ul><li>`OR`:如果数组中存在任何标签，则表达式 `operands` 解析为true。</li><li>`AND`:仅当数组中的所有标签都存在时，表达式才解 `operands` 析为true。</li></ul> |
+| `operands` | 对象数组，每个对象表示单个标签或`operator`和`operands`属性的附加对。 `operands`数组中存在的标签和/或操作根据其同级`operator`属性的值解析为true或false。 |
 | `label` | 应用于策略的单个数据使用标签的名称。 |
 
-可以通过向`/policies/custom`端点发出POST请求来创建新的自定义策略。
+您可以通过向`/policies/custom`端点发出POST请求来创建新的自定义策略。
 
 **API格式**
 
@@ -281,7 +280,7 @@ POST /policies/custom
 
 **请求**
 
-以下请求创建了新策略，该策略限制对包含标签`C1 OR (C3 AND C7)`的数据执行营销操作`exportToThirdParty`。
+以下请求会创建一个新策略，以限制对包含标签`C1 OR (C3 AND C7)`的数据执行营销操作`exportToThirdParty`。
 
 ```shell
 curl -X POST \
@@ -317,14 +316,14 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 策略的显示名称。 |
-| `status` | 策略的当前状态。 有三种可能的状态：`DRAFT`、`ENABLED`或`DISABLED`。 默认情况下，只有`ENABLED`策略参与评估。 有关详细信息，请参阅[策略评估](../enforcement/overview.md)的概述。 |
-| `marketingActionRefs` | 一个数组，用于列表策略所有适用营销操作的URI。 市场营销操作的URI在[响应中的`_links.self.href`下提供，以查找营销操作](./marketing-actions.md#look-up)。 |
-| `description` | 提供策略用例的进一步上下文的可选描述。 |
-| `deny` | 描述策略关联营销操作的特定数据使用标签的策略表达式被限制不能对其执行。 |
+| `status` | 策略的当前状态。 有三种可能的状态：`DRAFT`、`ENABLED`或`DISABLED`。 默认情况下，只有`ENABLED`策略参与评估。 有关更多信息，请参阅[策略评估](../enforcement/overview.md)的概述。 |
+| `marketingActionRefs` | 一个数组，其中列出了策略所有适用营销操作的URI。 营销操作的URI在[查找营销操作](./marketing-actions.md#look-up)的响应的`_links.self.href`下提供。 |
+| `description` | 可选描述，提供了策略用例的进一步上下文。 |
+| `deny` | 描述特定数据使用情况的策略表达式会限制不对其执行策略关联的营销操作。 |
 
 **响应**
 
-成功的响应返回新创建的策略的详细信息，包括其`id`。 此值为只读，在创建策略时自动分配。
+成功的响应会返回新创建策略的详细信息，包括其`id`。 此值为只读，在创建策略时自动分配。
 
 ```JSON
 {
@@ -369,17 +368,17 @@ curl -X POST \
 }
 ```
 
-## 更新自定义策略{#update}
+## 更新自定义策略 {#update}
 
 >[!IMPORTANT]
 >
->您只能更新自定义策略。 如果要启用或禁用核心策略，请参阅[更新已启用核心策略的列表的部分](#update-enabled-core)。
+>您只能更新自定义策略。 如果要启用或禁用核心策略，请参阅[更新已启用核心策略列表](#update-enabled-core)中的部分。
 
-您可以通过在PUT请求路径中提供现有自定义策略的ID来更新现有自定义策略，该ID包含完整策略的更新形式的有效负荷。 换句话说，PUT请求实质上会重写策略。
+您可以更新现有的自定义策略，方法是在PUT请求的路径中提供其ID，其有效负载包含完整策略的更新形式。 换句话说，PUT请求实际上会重写策略。
 
 >[!NOTE]
 >
->如果您只想更新策略的一个或多个字段，而不是覆盖策略，请参阅[更新自定义策略](#patch)的一部分部分。
+>如果您只想更新策略的一个或多个字段，而不是覆盖策略，请参阅[更新自定义策略的某一部分](#patch)。
 
 **API格式**
 
@@ -393,9 +392,9 @@ PUT /policies/custom/{POLICY_ID}
 
 **请求**
 
-在此示例中，将数据导出到第三方的条件已更改，现在您需要创建的策略以在存在`C1 AND C5`数据标签时拒绝此营销操作。
+在此示例中，将数据导出到第三方的条件已发生更改，现在，如果存在`C1 AND C5`数据标签，则需要您创建的策略才能拒绝此营销操作。
 
-以下请求将更新现有策略以包含新策略表达式。 请注意，由于此请求实质上会重写策略，因此所有字段都必须包含在负载中，即使某些值未更新也是如此。
+以下请求会更新现有策略以包含新策略表达式。 请注意，由于此请求实质上重写了策略，因此所有字段都必须包含在有效负载中，即使其某些值未更新也是如此。
 
 ```shell
 curl -X PUT \
@@ -425,10 +424,10 @@ curl -X PUT \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 策略的显示名称。 |
-| `status` | 策略的当前状态。 有三种可能的状态：`DRAFT`、`ENABLED`或`DISABLED`。 默认情况下，只有`ENABLED`策略参与评估。 有关详细信息，请参阅[策略评估](../enforcement/overview.md)的概述。 |
-| `marketingActionRefs` | 一个数组，用于列表策略所有适用营销操作的URI。 市场营销操作的URI在[响应中的`_links.self.href`下提供，以查找营销操作](./marketing-actions.md#look-up)。 |
-| `description` | 提供策略用例的进一步上下文的可选描述。 |
-| `deny` | 描述策略关联营销操作的特定数据使用标签的策略表达式被限制不能对其执行。 有关此属性的详细信息，请参见[创建策略](#create-policy)一节。 |
+| `status` | 策略的当前状态。 有三种可能的状态：`DRAFT`、`ENABLED`或`DISABLED`。 默认情况下，只有`ENABLED`策略参与评估。 有关更多信息，请参阅[策略评估](../enforcement/overview.md)的概述。 |
+| `marketingActionRefs` | 一个数组，其中列出了策略所有适用营销操作的URI。 营销操作的URI在[查找营销操作](./marketing-actions.md#look-up)的响应的`_links.self.href`下提供。 |
+| `description` | 可选描述，提供了策略用例的进一步上下文。 |
+| `deny` | 描述特定数据使用情况的策略表达式会限制不对其执行策略关联的营销操作。 有关此属性的详细信息，请参阅[创建策略](#create-policy)中的部分。 |
 
 **响应**
 
@@ -469,19 +468,19 @@ curl -X PUT \
 }
 ```
 
-## 更新自定义策略{#patch}的一部分
+## 更新自定义策略的一部分 {#patch}
 
 >[!IMPORTANT]
 >
->您只能更新自定义策略。 如果要启用或禁用核心策略，请参阅[更新已启用核心策略的列表的部分](#update-enabled-core)。
+>您只能更新自定义策略。 如果要启用或禁用核心策略，请参阅[更新已启用核心策略列表](#update-enabled-core)中的部分。
 
-可以使用PATCH请求更新策略的特定部分。 与重写策略的PUT请求不同，PATCH请求只更新在请求主体中指定的属性。 当您希望启用或禁用策略时，这特别有用，因为您只需提供相应属性(`/status`)及其值（`ENABLED`或`DISABLED`）的路径。
+可以使用PATCH请求来更新策略的特定部分。 与重写策略的PUT请求不同，PATCH请求只更新请求正文中指定的属性。 当您想要启用或禁用策略时，这特别有用，因为您只需提供相应属性(`/status`)及其值（`ENABLED`或`DISABLED`）的路径。
 
 >[!NOTE]
 >
->PATCH请求的负载遵循JSON修补程序格式。 有关已接受语法的详细信息，请参阅[API基础指南](../../landing/api-fundamentals.md)。
+>PATCH请求的负载遵循JSON修补程序格式。 有关已接受语法的更多信息，请参阅[API基础知识指南](../../landing/api-fundamentals.md) 。
 
-[!DNL Policy Service] API支持JSON修补程序操作`add`、`remove`和`replace`，并允许您将多个更新组合到单个调用中，如下例所示。
+[!DNL Policy Service] API支持JSON修补程序操作`add`、`remove`和`replace`，并允许您将多个更新合并到单个调用中，如以下示例所示。
 
 **API格式**
 
@@ -495,11 +494,11 @@ PATCH /policies/custom/{POLICY_ID}
 
 **请求**
 
-以下请求使用两个`replace`操作将策略状态从`DRAFT`更改为`ENABLED`，并使用新说明更新`description`字段。
+以下请求使用两个`replace`操作将策略状态从`DRAFT`更改为`ENABLED`，并使用新描述更新`description`字段。
 
 >[!IMPORTANT]
 >
->在单个请求中发送多个PATCH操作时，将按它们在数组中的显示顺序进行处理。 请确保您在必要时以正确的顺序发送请求。
+>在单个请求中发送多个PATCH操作时，将按它们在数组中的显示顺序进行处理。 确保在必要时按正确的顺序发送请求。
 
 ```SHELL
 curl -X PATCH \
@@ -571,13 +570,13 @@ curl -X PATCH \
 }
 ```
 
-## 删除自定义策略{#delete}
+## 删除自定义策略 {#delete}
 
-可以通过将自定义策略`id`包含在DELETE请求的路径中来删除该策略。
+您可以删除自定义策略，方法是在DELETE请求的路径中包含其`id`。
 
 >[!WARNING]
 >
->删除后，无法恢复策略。 最好先[执行查找(GET)请求](#lookup)以视图策略并确认其是您要删除的正确策略。
+>删除后，将无法恢复策略。 最好先执行[查找(GET)请求](#lookup)，以查看该策略并确认它是您希望删除的正确策略。
 
 **API格式**
 
@@ -602,13 +601,13 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应返回HTTP状态200(OK)，正文为空。
+成功的响应会返回HTTP状态200(OK)，并带有空白正文。
 
-您可以通过尝试再次查找(GET)策略来确认删除。 如果策略已成功删除，您应收到HTTP 404（未找到）错误。
+您可以再次尝试查找(GET)策略以确认删除。 如果策略已成功删除，您应会收到HTTP 404（未找到）错误。
 
-## 检索已启用核心策略{#list-enabled-core}的列表
+## 检索已启用的核心策略列表 {#list-enabled-core}
 
-默认情况下，只有启用的数据使用策略才会参与评估。 通过向`/enabledCorePolicies`端点发出GET请求，可以检索当前由您的组织启用的核心策略列表。
+默认情况下，只有启用的数据使用策略才会参与评估。 您可以通过向`/enabledCorePolicies`端点发出GET请求，来检索您的组织当前启用的核心策略列表。
 
 **API格式**
 
@@ -629,7 +628,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回`policyIds`阵列下启用的核心策略的列表。
+成功的响应会返回`policyIds`阵列下已启用的核心策略列表。
 
 ```json
 {
@@ -658,13 +657,13 @@ curl -X GET \
 }
 ```
 
-## 更新已启用核心策略{#update-enabled-core}的列表
+## 更新已启用的核心策略列表 {#update-enabled-core}
 
-默认情况下，只有启用的数据使用策略才会参与评估。 通过向`/enabledCorePolicies`端点发出PUT请求，您可以使用一次调用来更新组织已启用核心策略的列表。
+默认情况下，只有启用的数据使用策略才会参与评估。 通过向`/enabledCorePolicies`端点发出PUT请求，您可以使用一次调用更新组织已启用的核心策略列表。
 
 >[!NOTE]
 >
->此端点只能启用或禁用核心策略。 要启用或禁用自定义策略，请参阅[更新策略](#patch)的一部分。
+>此端点只能启用或禁用核心策略。 要启用或禁用自定义策略，请参阅[更新部分策略](#patch)中的部分。
 
 **API格式**
 
@@ -674,7 +673,7 @@ PUT /enabledCorePolicies
 
 **请求**
 
-以下请求根据在有效负荷中提供的ID更新已启用核心策略的列表。
+以下请求会根据有效负载中提供的ID更新已启用的核心策略列表。
 
 ```shell
 curl -X GET \
@@ -695,11 +694,11 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `policyIds` | 要启用的核心策略ID的列表。 未包含的任何核心策略均设置为`DISABLED`状态，且不会参与评估。 |
+| `policyIds` | 要启用的核心策略ID列表。 未包含的任何核心策略均设置为`DISABLED`状态，且不会参与评估。 |
 
 **响应**
 
-成功的响应返回`policyIds`阵列下已启用核心策略的更新列表。
+成功响应会返回`policyIds`阵列下已启用核心策略的更新列表。
 
 ```json
 {
@@ -726,4 +725,4 @@ curl -X GET \
 
 ## 后续步骤
 
-定义新策略或更新现有策略后，您可以使用[!DNL Policy Service] API测试针对特定标签或数据集的营销操作，并查看您的策略是否按预期引发违规。 有关详细信息，请参阅[策略评估端点](./evaluation.md)上的指南。
+定义新策略或更新现有策略后，您可以使用[!DNL Policy Service] API来针对特定标签或数据集测试营销操作，并查看您的策略是否按预期引发违规。 有关更多信息，请参阅[策略评估端点](./evaluation.md)上的指南。

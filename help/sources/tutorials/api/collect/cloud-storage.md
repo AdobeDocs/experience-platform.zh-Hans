@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方云存储检索数据，以及使用源连接器和API将数据导入平台的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '1800'
+source-wordcount: '1796'
 ht-degree: 1%
 
 ---
@@ -191,7 +191,7 @@ curl -X POST \
 
 要在Platform中使用源数据，必须创建目标架构以根据您的需求构建源数据。 然后，目标架构用于创建包含源数据的Platform数据集。
 
-通过对[架构注册表API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml)执行POST请求，可以创建目标XDM架构。
+通过对[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
 
 **API格式**
 
