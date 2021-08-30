@@ -5,10 +5,10 @@ title: 描述符API端点
 description: 通过架构注册表API中的/descriptors端点，您可以以编程方式管理体验应用程序中的XDM描述符。
 topic-legacy: developer guide
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 39d04cf482e862569277211d465bb2060a49224a
+source-git-commit: f269a7b1584a6e4a0e1820a0c587a647c0c8f7b5
 workflow-type: tm+mt
-source-wordcount: '1634'
-ht-degree: 2%
+source-wordcount: '1630'
+ht-degree: 3%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 2%
 
 [!DNL Schema Registry] API中的`/descriptors`端点允许您以编程方式管理体验应用程序中的描述符。
 
-## 入门指南
+## 快速入门
 
 本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/class-registry.yaml)的一部分。 在继续操作之前，请查阅[快速入门指南](./getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及成功调用任何Experience PlatformAPI所需的标头的重要信息。
 
@@ -288,7 +288,7 @@ curl -X DELETE \
 
 以下部分提供了有关在[!DNL Schema Registry] API中使用描述符的其他信息。
 
-### 定义描述符{#defining-descriptors}
+### 定义描述符 {#defining-descriptors}
 
 以下各节概述了可用的描述符类型，包括定义每种类型的描述符的必填字段。
 
@@ -315,7 +315,7 @@ curl -X DELETE \
 | `xdm:sourceSchema` | 定义描述符的架构的`$id` URI。 |
 | `xdm:sourceVersion` | 源架构的主要版本。 |
 | `xdm:sourceProperty` | 将作为标识的特定属性的路径。 路径应以“/”开头，而不应以“/”结尾。 在路径中不要包含“属性”（例如，使用“/personalEmail/address”而不是“/properties/personalEmail/properties/address”） |
-| `xdm:namespace` | 标识命名空间的`id`或`code`值。 使用[[!DNL Identity Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)可找到命名空间列表。 |
+| `xdm:namespace` | 标识命名空间的`id`或`code`值。 使用[[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service)可找到命名空间列表。 |
 | `xdm:property` | 根据使用的`xdm:namespace`，可选择`xdm:id`或`xdm:code`。 |
 | `xdm:isPrimary` | 可选布尔值。 当为true时，将字段指示为主标识。 架构只能包含一个主标识。 |
 

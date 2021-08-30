@@ -3,12 +3,11 @@ audience: user
 user-guide-title: Adobe Experience Platform Identity Service
 breadcrumb-title: Platform Identity Service 指南
 user-guide-description: 跨设备和系统建立客户身份桥梁，以提供个性化的数字体验。
-feature: 身份
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+feature: Identities
+source-git-commit: f269a7b1584a6e4a0e1820a0c587a647c0c8f7b5
 workflow-type: tm+mt
-source-wordcount: '97'
-ht-degree: 28%
+source-wordcount: '92'
+ht-degree: 30%
 
 ---
 
@@ -19,16 +18,16 @@ ht-degree: 28%
 - [身份命名空间概述](namespaces.md)
 - Identity Service API {#api}
    - [入门指南](api/getting-started.md)
-   - [将字段标记为标识](api/label-identities.md)
-   - [列表群集标识](api/list-cluster-identites.md)
-   - [身份的列表群集历史记录](api/list-cluster-history.md)
+   - [为字段设置标签以作为标识](api/label-identities.md)
+   - [列出群集标识](api/list-cluster-identites.md)
+   - [列出标识的群集历史记录](api/list-cluster-history.md)
    - [列表标识映射](api/list-identity-mappings.md)
-   - [列表可用命名空间](api/list-namespaces.md)
+   - [列出可用的命名空间](api/list-namespaces.md)
    - [创建自定义命名空间](api/create-custom-namespace.md)
-   - [列表标识的本机ID](api/list-native-id.md)
+   - [列出标识的本机ID](api/list-native-id.md)
 - Identity Service UI {#ui}
-   - [标识图查看器](ui/identity-graph-viewer.md)
+   - [身份图查看器](ui/identity-graph-viewer.md)
 - [ECID概述](ecid.md)
 - [疑难解答指南](troubleshooting-guide.md)
-- [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)
+- [API参考](https://www.adobe.io/experience-platform-apis/references/identity-service)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)

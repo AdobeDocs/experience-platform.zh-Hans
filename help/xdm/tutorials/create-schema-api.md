@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程使用架构注册表API来指导您完成使用标准类编写架构的步骤。
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
-source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
+source-git-commit: f269a7b1584a6e4a0e1820a0c587a647c0c8f7b5
 workflow-type: tm+mt
-source-wordcount: '2426'
+source-wordcount: '2422'
 ht-degree: 1%
 
 ---
@@ -176,7 +176,7 @@ curl -X GET \
 }
 ```
 
-### 添加字段组{#add-a-field-group}
+### 添加字段组 {#add-a-field-group}
 
 现在，已创建并确认忠诚度会员架构，接下来可以向其添加字段组。
 
@@ -957,7 +957,7 @@ curl -X PATCH \
 
 架构用于将数据摄取到[!DNL Experience Platform]中。 此数据最终可跨多项服务使用，以创建单个统一视图。 为了帮助完成此过程，可将关键字段标记为“身份”，并且在摄取数据时，这些字段中的数据会插入该个人的“身份图”中。 然后，[[!DNL Real-time Customer Profile]](../../profile/home.md)和其他[!DNL Experience Platform]服务可以访问图形数据，以提供每个客户的拼合视图。
 
-通常标记为“身份”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID或其他唯一ID字段。
+通常标记为“身份”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。
 
 考虑特定于贵组织的任何唯一标识符，因为它们也可能是良好的标识字段。
 
@@ -996,7 +996,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->您可以列出可用的“xdm:namespace”值，或使用[[!DNL Identity Service API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/id-service-api.yaml)创建新值。 “xdm:property”的值可以是“xdm:code”或“xdm:id”，具体取决于使用的“xdm:namespace”。
+>您可以列出可用的“xdm:namespace”值，或使用[[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service)创建新值。 “xdm:property”的值可以是“xdm:code”或“xdm:id”，具体取决于使用的“xdm:namespace”。
 
 **响应**
 
@@ -1180,11 +1180,11 @@ curl -X GET \
 
 以下信息补充了API教程。
 
-## 完整的会员架构{#complete-schema}
+## 完整的会员架构 {#complete-schema}
 
 在本教程中，我们构建了一个架构来描述零售忠诚度计划的成员。
 
-该模式实现[!DNL XDM Individual Profile]类并组合多个字段组；使用标准“人员详细信息”和“个人详细信息”字段组，以及通过教程中定义的“忠诚度详细信息”字段组，引入有关忠诚会员的信息。
+该模式实现[!DNL XDM Individual Profile]类并组合多个字段组；使用标准“人员详细信息”和“个人详细信息”字段组，以及通过教程中定义的“忠诚度详细信息”字段组，引入有关忠诚度会员的信息。
 
 以下显示了JSON格式的已完成会员架构：
 
