@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 沙盒API指南附录
 description: 本文档提供了与使用沙盒API相关的补充信息。
 topic-legacy: developer guide
-source-git-commit: e4067f79e9da106fe2d2a86fa0024c2e5fe5d0ba
+source-git-commit: f5ce7b7f09c624c53065757bb8a9b09f989dce0a
 workflow-type: tm+mt
-source-wordcount: '128'
+source-wordcount: '124'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 ## 使用查询参数 {#query}
 
-[[!DNL Sandbox] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml)支持在列出沙箱时使用查询参数来筛选页面和结果。
+[[!DNL Sandbox] API](https://www.adobe.io/experience-platform-apis/references/sandbox)支持在列出沙箱时使用查询参数来筛选页面和结果。
 
 >[!NOTE]
 >

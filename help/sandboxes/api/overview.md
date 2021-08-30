@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 沙盒API指南
 topic-legacy: developer guide
 description: Adobe Experience Platform中的沙箱提供了独立的开发环境，允许您在不影响生产环境的情况下测试功能、运行实验和进行自定义配置。
-source-git-commit: f00e6161d82f1fd7ba442be9f06283f3c866573f
+source-git-commit: f5ce7b7f09c624c53065757bb8a9b09f989dce0a
 workflow-type: tm+mt
-source-wordcount: '334'
+source-wordcount: '330'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 [!DNL Sandbox] API提供了多个端点，允许您以编程方式管理IMS组织内所有可用的沙箱。 下面概述了这些端点。 有关详细信息，请访问各个端点指南，并参阅[快速入门指南](./getting-started.md) ，以了解有关所需标头、读取示例API调用等的重要信息。
 
-要查看所有可用的端点和CRUD操作，请访问[[!DNL Sandbox] API引用](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sandbox-api.yaml)。
+要查看所有可用的端点和CRUD操作，请访问[[!DNL Sandbox] API引用](https://www.adobe.io/experience-platform-apis/references/sandbox)。
 
 ## 可用沙箱
 
