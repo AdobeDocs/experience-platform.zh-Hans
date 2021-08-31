@@ -5,9 +5,9 @@ title: 使用流服务API创建SalesforceMarketing Cloud库连接
 topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform与SalesforceMarketing Cloud连接。
-source-git-commit: 56458ed6e74a76e2787ab3b9f1409b11556bdee2
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '483'
+source-wordcount: '479'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 基本连接表示源与Adobe Experience Platform之间经过验证的连接。
 
-本教程将指导您完成使用[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)为[!DNL Salesforce Marketing Cloud]创建基本连接的步骤。
+本教程将指导您完成使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)为[!DNL Salesforce Marketing Cloud]创建基本连接的步骤。
 
 ## 快速入门
 

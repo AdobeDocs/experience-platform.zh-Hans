@@ -6,16 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍使用源连接器和API从数据库检索数据并将其摄取到平台中的步骤。
 exl-id: 1e1f9bbe-eb5e-40fb-a03c-52df957cb683
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '1641'
+source-wordcount: '1619'
 ht-degree: 1%
 
 ---
 
 # 使用源连接器和API从数据库收集数据
 
-本教程介绍从第三方数据库检索数据并通过源连接器和[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)将其摄取到平台中的步骤。
+本教程介绍从第三方数据库检索数据并通过源连接器和[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将其摄取到平台中的步骤。
 
 ## 快速入门
 
@@ -30,7 +30,7 @@ ht-degree: 1%
 * [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md):批量摄取API允许您将数据作为批处理文件导入到Experience Platform中。
 * [沙盒](../../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下各节提供了您需要了解的其他信息，以便您能够使用[[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) API成功连接到第三方数据库。
+以下各节提供了您需要了解的其他信息，以便您能够使用[!DNL Flow Service] API成功连接到第三方数据库。
 
 ### 读取示例API调用
 
@@ -431,7 +431,7 @@ curl -X POST \
 
 ## 检索数据流规范 {#specs}
 
-数据流负责从源中收集数据并将它们引入平台。 要创建数据流，必须首先通过向[[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) API执行GET请求来获取数据流规范。 数据流规范负责从外部数据库或NoSQL系统中收集数据。
+数据流负责从源中收集数据并将它们引入平台。 要创建数据流，必须首先通过向[!DNL Flow Service] API执行GET请求来获取数据流规范。 数据流规范负责从外部数据库或NoSQL系统中收集数据。
 
 **API格式**
 

@@ -6,16 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方云存储检索数据，以及使用源连接器和API将数据导入平台的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '1796'
+source-wordcount: '1792'
 ht-degree: 1%
 
 ---
 
 # 使用源连接器和API收集云存储数据
 
-本教程介绍了从第三方云存储检索数据，并通过源连接器和[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)将数据引入平台的步骤。
+本教程介绍了从第三方云存储检索数据，并通过源连接器和[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将数据引入平台的步骤。
 
 ## 快速入门
 

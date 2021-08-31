@@ -6,16 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从营销自动化系统检索数据以及使用源连接器和API将数据导入Adobe Experience Platform的步骤。
 exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '1568'
+source-wordcount: '1564'
 ht-degree: 1%
 
 ---
 
 # 使用源连接器和API收集营销自动化数据
 
-本教程介绍了从第三方营销自动化系统检索数据，并通过源连接器和[[!DNL Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) API将其摄取到平台中的步骤。
+本教程介绍从第三方营销自动化系统检索数据，并通过源连接器和[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将其摄取到平台中的步骤。
 
 ## 快速入门
 

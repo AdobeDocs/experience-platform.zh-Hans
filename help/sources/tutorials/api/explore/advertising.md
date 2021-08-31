@@ -5,9 +5,9 @@ title: 利用流量服务API开发广告系统
 topic-legacy: overview
 description: 流量服务用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供了用户界面和RESTful API，所有受支持的源都可从中连接。 本教程使用流量服务API来探索广告系统。
 exl-id: 3016ce1e-12e6-47ce-a4c5-52f8d440f515
-source-git-commit: 8aa8dfcc4f8a36d0898a9cc079bd98b89e3589a1
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '502'
 ht-degree: 2%
 
 ---
@@ -16,12 +16,11 @@ ht-degree: 2%
 
 创建基本连接后，您现在可以使用唯一的基本连接ID来导航和浏览源的数据结构和内容。 这样，您就可以在创建数据流并将其移至Adobe Experience Platform之前，识别特定项目及其各自的数据类型和格式。
 
-本教程使用[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)。 探索广告系统。
+本教程使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)来探索广告系统。
 
 ## 快速入门
 
 >[!IMPORTANT]
-
 本教程要求您拥有广告源的唯一基本连接ID。 如果您没有此ID，请参阅[将广告源连接到Platform](../../api/create/advertising/ads.md)教程中的教程。
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：

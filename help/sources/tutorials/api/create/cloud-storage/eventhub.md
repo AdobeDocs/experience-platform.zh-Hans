@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Azure事件中心帐户。
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: 091f6751f4377a25844328ce924f3c33899b3344
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '723'
+source-wordcount: '719'
 ht-degree: 1%
 
 ---
@@ -16,9 +16,9 @@ ht-degree: 1%
 
 # 使用[!DNL Flow Service] API创建[!DNL Azure Event Hubs]源连接
 
-本教程将指导您完成使用[[!DNL Flow Service]  API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)将[!DNL Azure Event Hubs]（以下称“[!DNL Event Hubs]”）连接到Experience Platform的步骤。
+本教程将指导您完成使用[[!DNL Flow Service]  API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将[!DNL Azure Event Hubs]（以下称“[!DNL Event Hubs]”）连接到Experience Platform的步骤。
 
-## 入门指南
+## 快速入门
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 

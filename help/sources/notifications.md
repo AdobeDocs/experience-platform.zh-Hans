@@ -5,9 +5,9 @@ solution: Experience Platform
 title: 流运行通知
 topic-legacy: overview
 exl-id: 0f1cde97-3030-4b8e-be08-21f64e78b794
-source-git-commit: a455134a45137b171636d6525ce9124bc95f4335
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '782'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用[!DNL Platform]服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 
-[[!DNL Adobe Experience Platform Flow Service]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml) 用于收集和集中来自内不同来源的客户数据 [!DNL Platform]。该服务提供了用户界面和RESTful API，所有受支持的源都可从中连接。
+[[!DNL Flow Service] ](https://www.adobe.io/experience-platform-apis/references/flow-service/) API用于收集和集中来自内不同来源的客户数据 [!DNL Platform]。该服务提供了用户界面和RESTful API，所有受支持的源都可从中连接。
 
 通过Adobe I/O事件，您可以订阅事件并使用Web挂接接收有关流运行状态的通知。 这些通知包含有关流运行成功或导致运行失败的错误的信息。
 

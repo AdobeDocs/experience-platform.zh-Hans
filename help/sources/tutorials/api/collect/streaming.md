@@ -6,16 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用源连接器和API检索流数据并将它们引入平台的步骤。
 exl-id: 898df7fe-37a9-4495-ac05-30029258a6f4
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
 workflow-type: tm+mt
-source-wordcount: '1103'
+source-wordcount: '1099'
 ht-degree: 2%
 
 ---
 
 # 使用[!DNL Flow Service] API为原始数据创建流数据流
 
-本教程介绍了从流源连接器检索原始数据并使用[[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml)将其Experience Platform的步骤。
+本教程介绍了从流源连接器检索原始数据并使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将其Experience Platform的步骤。
 
 ## 快速入门
 
