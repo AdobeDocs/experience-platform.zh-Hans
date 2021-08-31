@@ -5,9 +5,9 @@ title: 为捕获IAB TCF 2.0同意数据创建数据集
 topic-legacy: privacy events
 description: 本文档提供了设置两个收集IAB TCF 2.0同意数据所需的数据集的步骤。
 exl-id: 36b2924d-7893-4c55-bc33-2c0234f1120e
-source-git-commit: 9b75a69cc6e31ea0ad77048a6ec1541df2026f27
+source-git-commit: 656d772335c2f5ae58b471b31bfbd6dfa82490cd
 workflow-type: tm+mt
-source-wordcount: '1576'
+source-wordcount: '1655'
 ht-degree: 0%
 
 ---
@@ -39,19 +39,19 @@ ht-degree: 0%
 
 ## TCF 2.0字段组 {#field-groups}
 
-[!UICONTROL IAB TCF 2.0同意]架构字段组提供TCF 2.0支持所需的客户同意字段。 此字段组有两个版本：一个与[!DNL XDM Individual Profile]类兼容，另一个与[!DNL XDM ExperienceEvent]类兼容。
+[!UICONTROL IAB TCF 2.0同意详细信息]架构字段组提供TCF 2.0支持所需的客户同意字段。 此字段组有两个版本：一个与[!DNL XDM Individual Profile]类兼容，另一个与[!DNL XDM ExperienceEvent]类兼容。
 
 以下各节介绍了每个字段组的结构，包括它们在摄取期间预期的数据。
 
 ### 用户档案字段组 {#profile-field-group}
 
-对于基于[!DNL XDM Individual Profile]的架构，[!UICONTROL IAB TCF 2.0 Consent]字段组提供了单个映射类型字段`identityPrivacyInfo`，该字段将客户身份映射到其TCF同意首选项。 此字段组必须包含在为实时客户资料启用的基于记录的架构中，才能自动执行。
+对于基于[!DNL XDM Individual Profile]的架构，[!UICONTROL IAB TCF 2.0同意详细信息]字段组提供了单个映射类型字段`identityPrivacyInfo`，该字段将客户身份映射到其TCF同意首选项。 此字段组必须包含在为实时客户资料启用的基于记录的架构中，才能自动执行。
 
 请参阅此字段组的[参考指南](../../../../xdm/field-groups/profile/iab.md) ，了解有关其结构和用例的更多信息。
 
 ### 事件字段组 {#event-field-group}
 
-如果要跟踪随时间推移发生的同意更改事件，可以将[!UICONTROL IAB TCF 2.0 Consent]字段组添加到您的[!UICONTROL XDM ExperienceEvent]架构中。
+如果要跟踪随时间推移发生的同意更改事件，可以将[!UICONTROL IAB TCF 2.0同意详细信息]字段组添加到您的[!UICONTROL XDM ExperienceEvent]架构中。
 
 如果您不打算跟踪随时间推移的同意更改事件，则无需在事件架构中包含此字段组。 自动强制实施TCF同意值时，Experience Platform仅使用摄取到[配置文件字段组](#profile-field-group)的最新同意信息。 由事件捕获的同意值不会参与自动执行工作流。
 
@@ -60,6 +60,8 @@ ht-degree: 0%
 ## 创建客户同意架构 {#create-schemas}
 
 要创建可捕获同意数据的数据集，您必须首先创建XDM模式以基于这些数据集。
+
+如上节所述，为了在下游平台工作流中强制执行同意，需要使用[!UICONTROL XDM个人配置文件]类的架构。 如果您希望跟踪随时间推移的同意更改，则还可以选择根据[!UICONTROL XDM ExperienceEvent]创建单独的架构。 两个架构都必须包含`identityMap`字段和相应的TCF 2.0字段组。
 
 在平台UI的左侧导航中，选择&#x200B;**[!UICONTROL 架构]**&#x200B;以打开[!UICONTROL 架构]工作区。 在此，请按照以下部分中的步骤创建每个必需的架构。
 
@@ -75,11 +77,15 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/create-schema-profile.png)
 
-出现&#x200B;**[!UICONTROL 添加字段组]**&#x200B;对话框，允许您立即开始向架构添加字段组。 从此处，从列表中选择&#x200B;**[!UICONTROL IAB TCF 2.0 Consent]**。 您可以选择使用搜索栏来缩小结果范围，以便更轻松地找到字段组。 选择字段组后，选择&#x200B;**[!UICONTROL 添加字段组]**。
+出现&#x200B;**[!UICONTROL 添加字段组]**&#x200B;对话框，允许您立即开始向架构添加字段组。 从此处，从列表中选择&#x200B;**[!UICONTROL IAB TCF 2.0同意详细信息]**。 您可以选择使用搜索栏来缩小结果范围，以便更轻松地找到字段组。
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/add-profile-privacy.png)
 
-画布将重新出现，显示`identityPrivacyInfo`字段已添加到架构结构。
+接下来，从列表中找到&#x200B;**[!UICONTROL IdentityMap]**&#x200B;字段组，并将其选中。 在右边栏中列出两个字段组后，选择&#x200B;**[!UICONTROL 添加字段组]**。
+
+![](../../../images/governance-privacy-security/consent/iab/dataset/add-profile-identitymap.png)
+
+画布将重新出现，显示`identityPrivacyInfo`和`identityMap`字段已添加到架构结构中。
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/profile-privacy-structure.png)
 
@@ -87,18 +93,9 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/schema-details-profile.png)
 
-提供名称和描述后，请选择画布左侧&#x200B;**[!UICONTROL 字段组]**&#x200B;部分下的&#x200B;**[!UICONTROL 添加]**。
+在提供了名称和描述后，您可以选择向架构添加更多字段，方法是：在画布左侧的&#x200B;**[!UICONTROL 字段组]**&#x200B;部分下选择&#x200B;**[!UICONTROL 添加]**。
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/add-field-group-profile.png)
-
-从此处，使用对话框将以下其他字段组添加到架构：
-
-* [!UICONTROL IdentityMap]
-* [!UICONTROL 配置文件的数据捕获区域]
-* [!UICONTROL 人口统计详细信息]
-* [!UICONTROL 个人联系详细信息]
-
-![](../../../images/governance-privacy-security/consent/iab/dataset/profile-all-field-groups.png)
 
 如果您正在编辑已启用以供在[!DNL Real-time Customer Profile]中使用的现有架构，请选择&#x200B;**[!UICONTROL Save]**&#x200B;以确认您所做的更改，然后再跳到[上的部分，该部分基于您的同意架构](#dataset)创建数据集。 如果要创建新架构，请继续执行下面子部分中列出的步骤。
 
@@ -110,7 +107,7 @@ ht-degree: 0%
 >
 >此部分中显示的示例架构使用其`identityMap`字段作为其主标识。 如果您希望将其他字段设置为主标识，请确保您使用的是间接标识符（如Cookie ID），而不是基于兴趣的广告中禁止使用的直接可识别字段（如电子邮件地址）。 如果您不确定哪些字段受到限制，请咨询您的法律顾问。
 >
->有关如何为架构设置主标识字段的步骤，可在[架构创建教程](../../../../xdm/tutorials/create-schema-ui.md#identity-field)中找到。
+>有关如何为架构设置主标识字段的步骤可在[[!UICONTROL Schemas] UI指南](../../../../xdm/ui/fields/identity.md)中找到。
 
 要启用[!DNL Profile]的架构，请在左边栏中选择该架构的名称，以打开&#x200B;**[!UICONTROL 架构属性]**&#x200B;部分。 从此处，选择&#x200B;**[!UICONTROL Profile]**&#x200B;切换按钮。
 
@@ -126,19 +123,24 @@ ht-degree: 0%
 
 ### 创建事件同意架构 {#event-schema}
 
+>[!NOTE]
+>
+>事件同意架构仅用于跟踪一段时间内的同意更改事件，并且不参与下游实施工作流。 如果您不希望跟踪随时间推移的同意更改，则可以跳到[创建同意数据集](#datasets)的下一部分。
+
 在&#x200B;**[!UICONTROL 架构]**&#x200B;工作区中，选择&#x200B;**[!UICONTROL 创建架构]**，然后从下拉菜单中选择&#x200B;**[!UICONTROL XDM ExperienceEvent]**。
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/create-schema-event.png)
 
-出现&#x200B;**[!UICONTROL 添加字段组]**&#x200B;对话框。 从此处，从列表中选择&#x200B;**[!UICONTROL IAB TCF 2.0 Consent]**。 您可以选择使用搜索栏来缩小结果范围，以便更轻松地找到字段组。 选择字段组后，选择&#x200B;**[!UICONTROL 添加字段组]**。
+出现&#x200B;**[!UICONTROL 添加字段组]**&#x200B;对话框。 从此处，从列表中选择&#x200B;**[!UICONTROL IAB TCF 2.0同意详细信息]**。 您可以选择使用搜索栏来缩小结果范围，以便更轻松地找到字段组。
 
->[!NOTE]
->
->仅当您计划跟踪一段时间内的同意更改事件时，才需要在事件架构中包含此字段组。 如果您不希望跟踪这些事件，则可以在设置Web SDK时使用不包含这些字段的事件模式。
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/add-event-privacy.png)
 
-画布将重新出现，显示`consentStrings`字段已添加到架构结构。
+接下来，从列表中找到&#x200B;**[!UICONTROL IdentityMap]**&#x200B;字段组，并将其选中。 在右边栏中列出两个字段组后，选择&#x200B;**[!UICONTROL 添加字段组]**。
+
+![](../../../images/governance-privacy-security/consent/iab/dataset/add-event-identitymap.png)
+
+画布将重新出现，显示`consentStrings`和`identityMap`字段已添加到架构结构中。
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/event-privacy-structure.png)
 
@@ -146,18 +148,11 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/schema-details-event.png)
 
-提供名称和描述后，请选择画布左侧&#x200B;**[!UICONTROL 字段组]**&#x200B;部分下的&#x200B;**[!UICONTROL 添加]**。
+在提供了名称和描述后，您可以选择向架构添加更多字段，方法是：在画布左侧的&#x200B;**[!UICONTROL 字段组]**&#x200B;部分下选择&#x200B;**[!UICONTROL 添加]**。
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/add-field-group-event.png)
 
-在此，重复上述步骤以将以下其他字段组添加到架构：
-
-* [!UICONTROL IdentityMap]
-* [!UICONTROL 环境详细信息]
-* [!UICONTROL Web详细信息]
-* [!UICONTROL 实施详细信息]
-
-添加字段组后，通过选择&#x200B;**[!UICONTROL Save]**&#x200B;来完成。
+添加所需的字段组后，选择&#x200B;**[!UICONTROL Save]**&#x200B;即可完成。
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/event-all-field-groups.png)
 
@@ -187,13 +182,13 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/iab/dataset/dataset-enable-profile.png)
 
-再次按照上述步骤创建符合TCF 2.0要求的其他所需数据集。
+如果您为数据集创建了架构，请再次按照上述步骤创建基于事件的数据集。
 
 ## 后续步骤
 
-通过阅读本教程，您创建了两个数据集，现在可用于收集客户同意数据：
+在本教程之后，您至少创建了一个数据集，现在可以用它来收集客户同意数据：
 
-* 基于记录的数据集，在“实时客户资料”中启用。
-* 未为[!DNL Profile]启用的基于时间序列的数据集。
+* 基于记录的数据集，在“实时客户资料”中启用。 **(必需)**
+* 未为[!DNL Profile]启用的基于时间序列的数据集。 （可选）
 
 现在，您可以返回到[IAB TCF 2.0概述](./overview.md#merge-policies)以继续配置Platform for TCF 2.0合规性的过程。

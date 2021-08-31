@@ -5,9 +5,9 @@ title: 配置数据集以捕获同意和首选项数据
 topic-legacy: getting started
 description: 了解如何配置体验数据模型(XDM)架构和数据集，以在Adobe Experience Platform中捕获同意和首选项数据。
 exl-id: 61ceaa2a-c5ac-43f5-b118-502bdc432234
-source-git-commit: da7696d288543abd21ff8a1402e81dcea32efbc2
+source-git-commit: 656d772335c2f5ae58b471b31bfbd6dfa82490cd
 workflow-type: tm+mt
-source-wordcount: '1480'
+source-wordcount: '1573'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->本指南中的示例使用一组标准化字段来表示客户同意值，这些字段由[[!UICONTROL 同意和首选项]架构字段组](../../../../xdm/field-groups/profile/consents.md)定义。 这些字段的结构旨在提供一个高效的数据模型，以涵盖许多常见的同意收集用例。
+>本指南中的示例使用一组标准化字段来表示客户同意值，具体由[[!UICONTROL 同意和首选项详细信息]架构字段组](../../../../xdm/field-groups/profile/consents.md)定义。 这些字段的结构旨在提供一个高效的数据模型，以涵盖许多常见的同意收集用例。
 >
 >但是，您也可以定义自己的字段组，以根据自己的数据模型表示同意。 根据以下选项，请咨询您的法律团队，以获得符合您业务需求的同意数据模型的批准：
 >
@@ -41,9 +41,9 @@ ht-degree: 0%
 >
 >本教程假定您知道Platform中的[!DNL Profile]架构，您想要使用该架构来捕获客户属性信息。 无论您使用何种方法收集同意数据，此架构都必须为实时客户资料](../../../../xdm/ui/resources/schemas.md#profile)启用[。 此外，架构的主标识不能是禁止在基于兴趣的广告（如电子邮件地址）中使用的直接可识别字段。 如果您不确定哪些字段受到限制，请咨询您的法律顾问。
 
-## [!UICONTROL 同意和首] 选字段组结构 {#structure}
+## [!UICONTROL 同意和首选项详] 细信息字段组结构 {#structure}
 
-[!UICONTROL 同意和首选项]字段组为架构提供标准化的同意字段。 目前，此字段组仅与基于[!DNL XDM Individual Profile]类的架构兼容。
+[!UICONTROL 同意和首选项详细信息]字段组为架构提供标准化的同意字段。 目前，此字段组仅与基于[!DNL XDM Individual Profile]类的架构兼容。
 
 字段组提供了一个对象类型字段`consents`，其子属性捕获一组标准化同意字段。 以下JSON是`consents`在摄取数据时所需的数据类型示例：
 
@@ -92,9 +92,14 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->有关`consents`中子属性的结构和含义的详细信息，请参阅[[!UICONTROL 同意和首选项]字段组](../../../../xdm/field-groups/profile/consents.md)上的概述。
+>有关`consents`中子属性的结构和含义的更多信息，请参阅[[!UICONTROL 同意和首选项详细信息]字段组](../../../../xdm/field-groups/profile/consents.md)上的概述。
 
-## 将[!UICONTROL 同意和首选项]字段组添加到[!DNL Profile]架构中 {#add-field-group}
+## 将必填字段组添加到[!DNL Profile]架构 {#add-field-group}
+
+要使用Adobe标准收集同意数据，您必须具有启用了用户档案的架构，该架构包含以下两个字段组：
+
+* [!UICONTROL 同意和首选项详细信息]
+* [!UICONTROL IdentityMap] （使用Platform Web或Mobile SDK发送同意信号时需要使用此函数）
 
 在Platform UI的左侧导航中，选择&#x200B;**[!UICONTROL 架构]**，然后选择&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡以显示现有架构的列表。 从此处，选择要向其添加同意字段的已启用[!DNL Profile]架构的名称。 此部分中的屏幕截图使用在[架构创建教程](../../../../xdm/tutorials/create-schema-ui.md)中构建的“忠诚会员”架构作为示例。
 
@@ -108,17 +113,23 @@ ht-degree: 0%
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-field-group.png)
 
-出现&#x200B;**[!UICONTROL 添加字段组]**&#x200B;对话框。 从此处，从列表中选择&#x200B;**[!UICONTROL 同意和首选项]**。 您可以选择使用搜索栏来缩小结果范围，以便更轻松地找到字段组。 选择字段组后，选择&#x200B;**[!UICONTROL 添加字段组]**。
+出现&#x200B;**[!UICONTROL 添加字段组]**&#x200B;对话框。 从此处，从列表中选择&#x200B;**[!UICONTROL 同意和首选项详细信息]**。 您可以选择使用搜索栏来缩小结果范围，以便更轻松地找到字段组。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/field-group-dialog.png)
 
-画布将重新出现，显示`consents`对象已添加到架构结构中。 如果您需要标准字段组未捕获的其他同意和首选项字段，请参阅[向架构](#custom-consent)添加自定义同意和首选项字段的附录部分。 否则，请选择&#x200B;**[!UICONTROL Save]**&#x200B;以完成对架构的更改。
+接下来，从列表中找到&#x200B;**[!UICONTROL IdentityMap]**&#x200B;字段组，并将其选中。 在右边栏中列出两个字段组后，选择&#x200B;**[!UICONTROL 添加字段组]**。
+
+![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/identitymap.png)
+
+画布将重新出现，显示`consents`和`identityMap`字段已添加到架构结构中。 如果您需要标准字段组未捕获的其他同意和首选项字段，请参阅[向架构](#custom-consent)添加自定义同意和首选项字段的附录部分。 否则，请选择&#x200B;**[!UICONTROL Save]**&#x200B;以完成对架构的更改。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/save-schema.png)
 
-如果您编辑的架构由Platform Web SDK数据流中指定的[!UICONTROL 配置文件数据集]使用，则该数据集现在将包含新的同意字段。 现在，您可以返回[同意处理指南](./overview.md#merge-policies)以继续配置Experience Platform以处理同意数据的过程。
+>[!IMPORTANT]
+>
+>如果要创建新架构，或编辑尚未为配置文件启用的现有架构，则必须[在保存前启用配置文件](../../../../xdm/ui/resources/schemas.md#profile)的架构。
 
-如果您尚未为此架构创建数据集，请按照下一部分中的步骤操作。
+如果您编辑的架构由Platform Web SDK数据流中指定的[!UICONTROL 配置文件数据集]使用，则该数据集现在将包含新的同意字段。 现在，您可以返回[同意处理指南](./overview.md#merge-policies)以继续配置Experience Platform以处理同意数据的过程。 如果您尚未为此架构创建数据集，请按照下一部分中的步骤操作。
 
 ## 根据您的同意架构创建数据集 {#dataset}
 
@@ -164,15 +175,15 @@ ht-degree: 0%
 
 ### 在架构中添加自定义同意和首选项字段 {#custom-consent}
 
-如果您需要捕获标准[!UICONTROL 同意和首选项]字段组表示的同意信号以外的其他同意信号，则可以使用自定义XDM组件来增强您的同意架构，以满足您的特定业务需求。 本节概述了如何自定义同意模式以将这些信号摄取到用户档案的基本原则。
+如果您需要捕获标准[!UICONTROL 同意和首选项详细信息]字段组所表示的同意信号以外的其他同意信号，则可以使用自定义XDM组件来增强您的同意架构，以满足您的特定业务需求。 本节概述了如何自定义同意模式以将这些信号摄取到用户档案的基本原则。
 
 >[!IMPORTANT]
 >
 >平台Web SDK和移动SDK不支持在其同意更改命令中使用自定义字段。 目前，将自定义同意字段摄取到配置文件的唯一方法是通过[批量摄取](../../../../ingestion/batch-ingestion/overview.md)或[源连接](../../../../sources/home.md)。
 
-强烈建议您使用[!UICONTROL 同意和首选项]字段组作为同意数据结构的基线，并根据需要添加其他字段，而不是尝试从头开始创建整个结构。
+强烈建议您使用[!UICONTROL 同意和首选项详细信息]字段组作为同意数据结构的基线，并根据需要添加其他字段，而不是尝试从头开始创建整个结构。
 
-要向标准字段组的结构添加自定义字段，您必须首先创建自定义字段组。 在将[!UICONTROL 同意和首选项]字段组添加到架构后，选择&#x200B;**[!UICONTROL 字段组]**&#x200B;部分中的&#x200B;**加号(+)**&#x200B;图标，然后选择&#x200B;**[!UICONTROL 创建新字段组]**。 为字段组提供名称和可选描述，然后选择&#x200B;**[!UICONTROL 添加字段组]**。
+要向标准字段组的结构添加自定义字段，您必须首先创建自定义字段组。 将[!UICONTROL 同意和首选项详细信息]字段组添加到架构后，在&#x200B;**[!UICONTROL 字段组]**&#x200B;部分中选择&#x200B;**加号(+)**&#x200B;图标，然后选择&#x200B;**[!UICONTROL 创建新字段组]**。 为字段组提供名称和可选描述，然后选择&#x200B;**[!UICONTROL 添加字段组]**。
 
 ![](../../../images/governance-privacy-security/consent/adobe/dataset-prep/add-custom-field-group.png)
 
