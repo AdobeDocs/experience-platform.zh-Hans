@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
-feature: 数据摄取，源
-source-git-commit: 5f5e4f91862fe4ec8840224a9bdb5dc6d7338288
+feature: Data Ingestion, Sources
+source-git-commit: ebe620b078096349c514420746902ce406a910d1
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '643'
 ht-degree: 12%
 
 ---
@@ -248,4 +248,5 @@ ht-degree: 12%
 - [流运行通知](notifications.md)
 - [IP地址允许列表](ip-address-allow-list.md)
 - [常见问题](./troubleshooting.md)
+- [API参考](https://www.adobe.io/experience-platform-apis/references/flow-service/)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)

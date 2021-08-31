@@ -7,9 +7,9 @@ landing-page-description: 查找常见问题的解答以及 Experience Platform 
 topic-legacy: getting started
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: f83e4150210af8d3e9e67285d1f9665b6e243f54
+source-git-commit: 2a73571d806f1653dad29d2c0b0067c5ce63e0e7
 workflow-type: tm+mt
-source-wordcount: '1727'
+source-wordcount: '1723'
 ht-degree: 4%
 
 ---
@@ -195,7 +195,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 | 服务 | API 参考 | 疑难解答 |
 | --- | --- | --- |
-| 访问控制 | [访问控制API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml) | [访问控制疑难解答指南](../access-control/troubleshooting-guide.md) |
+| 访问控制 | [访问控制API](https://www.adobe.io/experience-platform-apis/references/access-control/) | [访问控制疑难解答指南](../access-control/troubleshooting-guide.md) |
 | Adobe Experience Platform数据摄取 | [[!DNL Data Ingestion API]](https://www.adobe.io/experience-platform-apis/references/data-ingestion/) | [批量摄取疑难解答指](../ingestion/batch-ingestion/troubleshooting.md)<br><br>[南流式摄取疑难解答指南](../ingestion/streaming-ingestion/troubleshooting.md) |
 | Adobe Experience Platform数据科学工作区 | [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) | [[!DNL Data Science Workspace] 疑难解答指南](../data-science-workspace/troubleshooting-guide.md) |
 | Adobe Experience Platform数据管理 | [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/) |  |

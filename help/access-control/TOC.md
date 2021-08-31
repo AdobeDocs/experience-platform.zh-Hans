@@ -3,30 +3,29 @@ audience: user
 user-guide-title: Adobe Experience Platform 中的访问控制帮助
 breadcrumb-title: Access Control 指南
 user-guide-description: 利用 Adobe Admin Console 中的产品配置文件将用户与权限和沙盒关联起来。
-feature: 访问控制
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+feature: Access Control
+source-git-commit: 2a73571d806f1653dad29d2c0b0067c5ce63e0e7
 workflow-type: tm+mt
-source-wordcount: '100'
-ht-degree: 38%
+source-wordcount: '94'
+ht-degree: 34%
 
 ---
 
 
-# 访问控制{#access-control}
+# 访问控制 {#access-control}
 
 * [访问控制概述](home.md)
 * 访问控制UI {#ui}
    * [概述](ui/overview.md)
-   * [选择产品用户档案](ui/browse.md)
-   * [管理产品用户档案的权限](ui/permissions.md)
-   * [管理产品用户档案的详细信息和其他服务](ui/details-and-services.md)
-   * [创建新产品用户档案](ui/create-profile.md)
-   * [管理产品用户档案的用户](ui/users.md)
-* 访问控制 API {#api}
+   * [选择产品配置文件](ui/browse.md)
+   * [管理产品配置文件的权限](ui/permissions.md)
+   * [管理产品配置文件的详细信息和其他服务](ui/details-and-services.md)
+   * [创建新的产品用户档案](ui/create-profile.md)
+   * [管理产品配置文件的用户](ui/users.md)
+* 访问控制API {#api}
    * [快速入门](api/getting-started.md)
-   * [列表权限和资源类型的名称](api/permissions-and-resource-types.md)
-   * [视图有效策略](api/effective-policies.md)
+   * [权限和资源类型的列表名称](api/permissions-and-resource-types.md)
+   * [查看有效策略](api/effective-policies.md)
 * [疑难解答指南](troubleshooting-guide.md)
-* [API参考](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/access-control.yaml)
+* [API参考](https://www.adobe.io/experience-platform-apis/references/access-control/)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
