@@ -6,10 +6,10 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流摄取API，这是Adobe Experience Platform数据摄取服务API的一部分。
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 42b8710cf6c04fabf7df1f005fae6b3828eeee49
+source-git-commit: 0ff93d580482f44954321089659bd2fc062f3f61
 workflow-type: tm+mt
-source-wordcount: '1206'
-ht-degree: 3%
+source-wordcount: '1268'
+ht-degree: 2%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 3%
 
 流量服务用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供了用户界面和RESTful API，所有受支持的源都可从中连接。
 
-本教程使用[!DNL Flow Service] API指导您完成使用流服务API创建流连接的步骤。
+本教程使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)来指导您完成使用流服务API创建流连接的步骤。
 
 ## 快速入门
 
@@ -295,7 +295,9 @@ curl -X POST \
 
 ## 创建目标连接
 
-创建源连接后，可以创建目标连接。 创建Target连接时，您将需要之前创建的数据集的`id`值。
+目标连接表示所摄取数据所登陆目标的连接。 要创建目标连接，必须提供与数据湖关联的固定连接规范ID。 此连接规范ID为：`c604ff05-7f1a-43c0-8e18-33bf874cb11c`。
+
+现在，您将唯一标识符作为目标数据集的目标架构，并将连接规范ID用于数据湖。 使用这些标识符，您可以使用[!DNL Flow Service] API创建目标连接，以指定将包含集客源数据的数据集。
 
 **API格式**
 
