@@ -3,7 +3,7 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据经过哈希处理的电子邮件，激活Facebook营销活动的用户档案以进行受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 183aff5a3b6bcc1635ae7b4b0e503a9d4b6d4d31
+source-git-commit: d0112cb26fcb85ad91ba403f81ee7f11d0889046
 workflow-type: tm+mt
 source-wordcount: '1498'
 ht-degree: 1%
@@ -177,7 +177,7 @@ ht-degree: 1%
 
 ### 400错误请求错误消息 {#bad-request}
 
-将区段激活到[!DNL Facebook]时，可能会收到以下错误：
+配置此目标时，您可能会收到以下错误：
 
 `{"message":"Facebook Error: Permission error","code":"400 BAD_REQUEST"}`
 

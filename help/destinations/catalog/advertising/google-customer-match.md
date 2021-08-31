@@ -3,9 +3,9 @@ keywords: Google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用在线和离线数据，通过Google自有资产和运营资产(如搜索、购物、Gmail和YouTube)来联系客户并与其重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 183aff5a3b6bcc1635ae7b4b0e503a9d4b6d4d31
+source-git-commit: d0112cb26fcb85ad91ba403f81ee7f11d0889046
 workflow-type: tm+mt
-source-wordcount: '1494'
+source-wordcount: '1557'
 ht-degree: 0%
 
 ---
@@ -56,7 +56,7 @@ Experience Platform中的某些目标对于发送到目标平台或从目标平�
 
 在Experience Platform中设置[!DNL Google Customer Match]目标之前，请确保阅读并遵循Google关于使用[!DNL Customer Match]的策略，如[Google支持文档](https://support.google.com/google-ads/answer/6299717)中所述。
 
-接下来，确保为[!DNL Standard]或更高访问级别配置了[!DNL Google]帐户。 有关详细信息，请参阅[Google Ads文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1)。
+接下来，确保为[!DNL Standard]或更高权限级别配置了[!DNL Google]帐户。 有关详细信息，请参阅[Google Ads文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1)。
 
 ### 允许列表 {#allowlist}
 
@@ -174,6 +174,17 @@ The video below demonstrates the steps to configure a [!DNL Google Customer Matc
 
 将区段同时映射到[!DNL IDFA]和[!DNL GAID]移动ID时， [!DNL Google Customer Match]会为每个ID映射创建一个单独的区段。 您的[!DNL Google Ads]帐户显示两个不同的区段，一个用于[!DNL IDFA]，另一个用于[!DNL GAID]映射。
 
+## 疑难解答 {#troubleshooting}
+
+### 400错误请求错误消息 {#bad-request}
+
+配置此目标时，您可能会收到以下错误：
+
+`{"message":"Google Customer Match Error: OperationAccessDenied.ACTION_NOT_PERMITTED","code":"400 BAD_REQUEST"}`
+
+当客户帐户不符合[先决条件](#google-account-prerequisites)时，会发生此错误。 要解决此问题，请联系Google并确保您的帐户已列入允许列表，且已配置[!DNL Standard]或更高权限级别。 有关详细信息，请参阅[Google Ads文档](https://support.google.com/google-ads/answer/9978556?visit_id=637611563637058259-4176462731&amp;rd=1)。
+
 ## 额外资源 {#additional-resources}
 
 * [集成Google客户匹配 — 视频教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/rtcdp/integrate-with-google-customer-match.html)
+

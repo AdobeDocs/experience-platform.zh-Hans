@@ -3,9 +3,9 @@ keywords: 双击竞价管理器；双击竞价管理器；双击；显示和视�
 title: Google Display & Video 360连接
 description: 显示和视频360（以前称为“双击竞价管理器”）是一种工具，用于在显示、视频和移动设备库存源中执行重定位和受众定位的数字促销活动。
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: d0112cb26fcb85ad91ba403f81ee7f11d0889046
 workflow-type: tm+mt
-source-wordcount: '673'
+source-wordcount: '709'
 ht-degree: 2%
 
 ---
@@ -45,13 +45,13 @@ ht-degree: 2%
 
 **区段导出**  — 您要将区段（受众）的所有成员导出到Google目标。
 
-## 先决条件
+## 先决条件 {#prerequisites}
 
 ### 允许列表
 
 >[!NOTE]
 >
->在Platform中设置您的第一个[!DNL Google Display & Video 360]目标之前，必须允许列表。 在创建目标之前，请确保Google已完成下述允许列表过程。
+>在Platform中设置第一个[!DNL Google Display & Video 360]目标之前，必须将允许列表列入。 在创建目标之前，请确保Google已完成下面描述的允许列表流程。
 
 在Platform中创建[!DNL Google Display & Video 360]目标之前，您必须联系Google以请求将Adobe添加到允许的数据提供商列表中，并将您的帐户添加到允许列表中。 联系Google并提供以下信息：
 
@@ -85,3 +85,13 @@ ht-degree: 2%
 ## 导出的数据
 
 要验证数据是否已成功导出到[!DNL Google Display & Video 360]目标，请检查您的[!DNL Google Display & Video 360]帐户。 如果激活成功，则帐户中会填充受众。
+
+## 疑难解答 {#troubleshooting}
+
+### 400错误请求错误消息 {#bad-request}
+
+配置此目标时，您可能会收到以下错误：
+
+`{"message":"Google Error: AuthorizationError.USER_PERMISSION_DENIED","code":"400 BAD_REQUEST"}`
+
+当客户帐户不符合[先决条件](#prerequisites)时，会发生此错误。 要解决此问题，请联系Google并确保您的帐户已列入允许列表。

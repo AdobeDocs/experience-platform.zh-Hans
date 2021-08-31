@@ -3,9 +3,9 @@ keywords: Google广告；Google广告；Google AdWords;Google AdWords
 title: Google Ads连接
 description: Google Ads（以前称为Google AdWords）是一种在线广告服务，允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示，按次点击付费广告。
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: d0112cb26fcb85ad91ba403f81ee7f11d0889046
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '698'
 ht-degree: 2%
 
 ---
@@ -53,7 +53,7 @@ ht-degree: 2%
 >
 > [!DNL Google] 已弃用与 [!DNL Google Ads] 第三方供应商的新cookie集成。要执行下一节中的允许列表步骤，您必须具有与[!DNL Google Ads]的现有集成。 因此，使用[!DNL Google Ads]的建议方法是设置[!DNL Google Customer Match]集成。 有关创建[!DNL Google Customer Match]集成的更多详细信息，请阅读有关创建[[!DNL Google Customer Match]](./google-customer-match.md)连接的教程。
 
-### 允许列表
+### 允许列表 {#allow-listing}
 
 >[!NOTE]
 >
@@ -83,7 +83,20 @@ ht-degree: 2%
 
 有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md)。
 
-
 ## 导出的数据
 
 要验证数据是否已成功导出到[!DNL Google Ads]目标，请检查您的[!DNL Google Ads]帐户。 如果激活成功，则帐户中会填充受众。
+
+## 疑难解答 {#troubleshooting}
+
+### 400错误请求错误消息 {#bad-request}
+
+配置此目标时，您可能会收到以下错误：
+
+`{"message":"Google Error: AuthorizationError.USER_PERMISSION_DENIED","code":"400 BAD_REQUEST"}`
+
+当客户尝试配置目标而没有现有[!DNL Google Ads]帐户时，会发生此错误。
+
+[!DNL Google] 已弃用与 [!DNL Google Ads] 第三方供应商的新cookie集成。要执行[allow-list](#allow-listing)步骤，您必须与[!DNL Google Ads]存在现有集成。
+
+使用[!DNL Google Ads]的建议方法是设置[[!DNL Google Customer Match]](google-customer-match.md)集成。
