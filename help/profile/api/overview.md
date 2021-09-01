@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户资料API指南
 description: 实时客户配置文件API允许开发人员探索和使用配置文件数据，包括查看配置文件、创建和更新合并策略、导出或采样配置文件数据，以及删除不再需要或错误添加的配置文件数据。 请阅读本指南，了解如何使用API执行关键操作。
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
+source-git-commit: b2ae2b4ca2efe606aa148e06ca988a6285bedfee
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '890'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,7 @@ Adobe Experience Platform通过使数据能够在战略位置称为“边缘”�
 
 ## 预览示例状态（[!DNL Profile]预览） {#profile-preview}
 
-由于为配置文件启用的数据会被摄取到Experience Platform中，因此它存储在配置文件数据存储中。 随着配置文件存储中记录数的增加或减少，将运行一个示例作业，其中包含有关数据存储中有多少个配置文件片段和合并的配置文件的信息。 使用配置文件API，您可以预览最新成功的示例，以及按数据集和身份命名空间列出配置文件分发。 要开始使用`/profilepreviewstatus`端点，请参阅[预览示例状态端点指南](preview-sample-status.md)。
+将数据摄取到Platform后，将运行一个示例作业以更新用户档案计数和其他与实时客户档案数据相关的量度。 此示例作业的结果可以使用`/previewsamplestatus`端点（实时客户资料API的一部分）查看。 此端点还可用于按数据集和身份命名空间列出配置文件分配，以及生成多个报表，以便查看您组织的配置文件存储的组成。  要开始使用`/profilepreviewstatus`端点，请参阅[预览示例状态端点指南](preview-sample-status.md)。
 
 ## 配置文件系统作业 {#profile-system-jobs}
 
