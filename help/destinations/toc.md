@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 316bad8b7b33d212c7ec304c064edb9f2c17859a
+source-git-commit: 09bae0d24eead5f0b6533ba5b89e1fc87c8c71b5
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '495'
 ht-degree: 11%
 
 ---
@@ -60,7 +60,7 @@ ht-degree: 11%
       * [Pinterest转化跟踪扩展](./catalog/advertising/pinterest-extension.md)
       * [交易台连接](./catalog/advertising/tradedesk.md)
       * [Twitter通用网站标记扩展](./catalog/advertising/twitter-uwt.md)
-      * [Yahoo/Verizon DataX](./catalog/advertising/datax.md)
+      * [Yahoo/Verizon DataX连接](./catalog/advertising/datax.md)
    * Analytics目标{#analytics}
       * [Analytics目标概述](./catalog/analytics/overview.md)
       * [Adform网站跟踪扩展](./catalog/analytics/adform.md)
