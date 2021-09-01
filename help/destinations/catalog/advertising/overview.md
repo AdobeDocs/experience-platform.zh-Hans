@@ -1,13 +1,13 @@
 ---
 keywords: 广告目标；目标；平台目标
 title: 广告目标概述
-seo-title: 广告目标概述
+seo-title: Advertising destinations overview
 description: 将Adobe Experience Platform连接到第三方广告平台(例如DSP、广告网络、SSP)，并将假名受众共享到这些平台。
-seo-description: 将Adobe Experience Platform连接到第三方广告平台(例如DSP、广告网络、SSP)，并将假名受众共享到这些平台。
+seo-description: Connect Adobe Experience Platform to a 3rd-party advertising platform (e.g. DSP, ad network, SSP) and share pseudonymous audiences to these platforms.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 9c9ea0d9e8247dbc4a1a4078dbdba2ae80ed70ef
+source-git-commit: 316bad8b7b33d212c7ec304c064edb9f2c17859a
 workflow-type: tm+mt
-source-wordcount: '248'
+source-wordcount: '227'
 ht-degree: 1%
 
 ---
@@ -34,6 +34,7 @@ ht-degree: 1%
 * [Google客户匹配连接](google-customer-match.md)
 * [Microsoft Bing连接](bing.md)
 * [交易台连接](tradedesk.md)
+* [Yahoo/Verizon DataX](datax.md)
 
 ### 扩展
 
