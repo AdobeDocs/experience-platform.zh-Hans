@@ -5,9 +5,9 @@ title: 架构组合的基础知识
 topic-legacy: overview
 description: 本文档介绍了Experience Data Model(XDM)架构，以及构建架构以在Adobe Experience Platform中使用的构建基块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 7d05b5d57ec4597b168be0261e75da5f243cb660
+source-git-commit: 2bd7c12209a1944aa954ba4490bb0c57f2a5ea61
 workflow-type: tm+mt
-source-wordcount: '3629'
+source-wordcount: '3684'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,11 @@ XDM模式非常适合以自包含格式存储大量复杂数据。 有关XDM如�
 
 `identityMap` 是一个映射类型字段，用于描述个人的各种身份值及其关联的命名空间。此字段可用于为架构提供标识信息，而不是在架构本身的结构中定义标识值。
 
-使用`identityMap`的主要缺点是身份会嵌入到数据中，并因此变得不那么可见。 如果要摄取原始数据，则应该在实际架构结构中定义单个标识字段。 使用`identityMap`的架构也无法参与关系。
+使用`identityMap`的主要缺点是身份会嵌入到数据中，并因此变得不那么可见。 如果要摄取原始数据，则应该在实际架构结构中定义单个标识字段。
+
+>[!NOTE]
+>
+>使用`identityMap`的架构可用作关系中的源架构，但不能用作目标架构。 这是因为所有目标架构都必须具有可见标识，该标识可以映射到源架构的引用字段中。 有关源架构和目标架构要求的更多信息，请参阅[关系](../tutorials/relationship-ui.md)上的UI指南。
 
 但是，如果您要从存储身份的源(例如[!DNL Airship]或Adobe Audience Manager)中导入数据，或者架构的标识数量存在变量，则身份映射会特别有用。 此外，如果您使用的是[Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/)，则需要身份映射。
 
@@ -194,7 +198,7 @@ Adobe提供了多个标准（“核心”）XDM类。 几乎所有下游平台�
 * 字符串
 * 整数
 * 双精度
-* 布尔值
+* 布尔型
 * 数组
 * 对象
 
