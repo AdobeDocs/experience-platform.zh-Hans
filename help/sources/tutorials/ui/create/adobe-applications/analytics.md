@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 0af9290a3143b85311fbbd8d194f4799b0c9a873
+source-git-commit: e28158bbd4e89e5fcf19f4dc89f266d737b34e65
 workflow-type: tm+mt
-source-wordcount: '1441'
+source-wordcount: '1493'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 1%
 请务必了解本文档中使用的以下关键术语：
 
 * **标准属性**:标准属性是指由Adobe预定义的任何属性。对于所有客户，它们包含相同的含义，它们可在[!DNL Analytics]源数据和[!DNL Analytics]架构字段组中使用。
-* **自定义属性**:自定义属性是中自定义维度层次结构中的任何 [!DNL Analytics]属性。它们也属于Adobe定义的模式之一，但不同的客户可以以不同的方式对其进行解释。 自定义属性包括eVar、prop和列表。 有关eVar的更多信息，请参阅以下关于转化变量的[[!DNL Analytics] 文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en)。
+* **自定义属性**:自定义属性是中自定义变量层次结构中的任何 [!DNL Analytics]属性。自定义属性用于在Adobe Analytics实施中将特定信息捕获到报表包中，并且在从报表包到报表包的使用方式上可能有所不同。 自定义属性包括eVar、prop和列表。 有关eVar的更多信息，请参阅以下关于转化变量的[[!DNL Analytics] 文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en)。
 * **自定义字段组中的任何属性**:源自客户创建的字段组的属性都由用户定义，因此既不是标准属性，也不是自定义属性。
 * **友好名称**:友好名称是实施中自定义变量的人为提供的 [!DNL Analytics] 标签。有关友好名称的更多信息，请参阅以下关于转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en)的[[!DNL Analytics] 文档。
 
@@ -46,15 +46,15 @@ ht-degree: 1%
 
 ### 选择数据
 
-此时会出现&#x200B;**[!UICONTROL Analytics源添加数据]**&#x200B;步骤。 选择&#x200B;**[!UICONTROL 报表包]**&#x200B;以开始为Analytics报表包数据创建源连接，然后选择要摄取的报表包。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+此时会出现&#x200B;**[!UICONTROL Analytics源添加数据]**&#x200B;步骤。 选择&#x200B;**[!UICONTROL 报表包]**&#x200B;以开始为Analytics报表包数据创建源连接，然后选择要摄取的报表包。 尚未摄取此沙盒或其他沙盒中无法选择的报表包。 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
 >[!NOTE]
 >
->可以与源建立多个绑定内连接以引入不同的数据。
+>可以建立多个绑定连接以引入多个报表包，但一次只能与实时客户数据平台一起使用一个报表包。
 
 ![](../../../../images/tutorials/create/analytics/add-data.png)
 
-<!---Analytics report suites can be configured for one sandbox at a time. To import the same report suite into a different sandbox, the dataset flow will have to be deleted and instantiated again via configuration for a different sandbox.--->
+<!---Analytics Report Suites can be configured for one sandbox at a time. To import the same Report Suite into a different sandbox, the dataset flow will have to be deleted and instantiated again via configuration for a different sandbox.--->
 
 ### 映射
 
@@ -74,9 +74,9 @@ ht-degree: 1%
 
 | 映射标准字段 | 描述 |
 | --- | --- |
-| [!UICONTROL 已应用标准映射] | 应用的[!UICONTROL 标准映射]面板显示映射的标准属性总数。 标准映射是指源[!DNL Analytics]数据中的标准属性与[!DNL Analytics]字段组中的标准属性之间的映射集。 这些是预映射的，无法编辑。 |
-| [!UICONTROL 不匹配标准映射] | [!UICONTROL 不匹配的标准映射]面板是指映射的包含友好名称冲突的标准属性的数量。 当您重新使用已填充字段描述符集的架构时，会出现这些冲突。 即使存在友好名称冲突，您也可以继续处理[!DNL Analytics]数据流。 |
-| [!UICONTROL 自定义映射] | [!UICONTROL 自定义映射]面板显示映射的自定义属性数量，包括eVar、prop和列表。 自定义映射是指源[!DNL Analytics]数据中的自定义属性与[!DNL Analytics]字段组中的自定义属性之间的映射集。 自定义属性可以映射到其他自定义属性以及标准属性。 |
+| [!UICONTROL 已应用标准映射] | 应用的[!UICONTROL 标准映射]面板显示映射属性的总数。 标准映射是指源[!DNL Analytics]数据中的所有属性与[!DNL Analytics]字段组中相应属性之间的映射集。 这些是预映射的，无法编辑。 |
+| [!UICONTROL 不匹配标准映射] | [!UICONTROL 不匹配的标准映射]面板是指包含友好名称冲突的映射属性数。 当您重新使用的架构已从其他报表包中填充了一组字段描述符时，会出现这些冲突。 即使存在友好名称冲突，您也可以继续处理[!DNL Analytics]数据流。 |
+| [!UICONTROL 自定义映射] | [!UICONTROL 自定义映射]面板显示映射的自定义属性数量，包括eVar、prop和列表。 自定义映射是指源[!DNL Analytics]数据中的自定义属性与所选架构中包含的自定义字段组中的属性之间的映射集。 |
 
 ![map-standard-fields](../../../../images/tutorials/create/analytics/map-standard-fields.png)
 
@@ -92,7 +92,7 @@ ht-degree: 1%
 
 ![映射](../../../../images/tutorials/create/analytics/mapping.png)
 
-如果映射集中存在友好名称冲突，您仍然可以继续使用[!DNL Analytics]数据流，同时确认字段描述符将相同。 或者，您也可以选择使用一组空白描述符创建新架构。
+如果源报表包与您选择的架构之间存在友好名称冲突，您仍然可以继续使用[!DNL Analytics]数据流，同时确认字段描述符不会发生更改。 或者，您也可以选择使用一组空白描述符创建新架构。
 
 选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
 
@@ -181,7 +181,7 @@ ht-degree: 1%
 
 ## 后续步骤和其他资源
 
-创建连接后，将自动创建目标架构和数据流以包含传入数据。 此外，还会进行数据回填，并摄取至多 13 个月的历史数据。完成初始摄取后，将[!DNL Analytics]数据用于下游Platform服务（如[!DNL Real-time Customer Profile]和Segmentation Service）。 有关更多详细信息，请参阅以下文档：
+创建连接后，将自动创建数据流以包含传入数据，并使用您选择的架构填充数据集。 此外，还会进行数据回填，并摄取至多 13 个月的历史数据。完成初始摄取后，将[!DNL Analytics]数据用于下游Platform服务（如[!DNL Real-time Customer Profile]和Segmentation Service）。 有关更多详细信息，请参阅以下文档：
 
 * [[!DNL Real-time Customer Profile] 概述](../../../../../profile/home.md)
 * [[!DNL Segmentation Service] 概述](../../../../../segmentation/home.md)
