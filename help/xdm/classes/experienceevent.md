@@ -5,9 +5,9 @@ title: XDM ExperienceEvent类
 topic-legacy: overview
 description: 本文档概述了XDM ExperienceEvent类以及事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 0af9290a3143b85311fbbd8d194f4799b0c9a873
+source-git-commit: ff446e2b9a2573889bcd1a5ab0933f60e871c353
 workflow-type: tm+mt
-source-wordcount: '1573'
+source-wordcount: '1745'
 ht-degree: 1%
 
 ---
@@ -82,18 +82,18 @@ Adobe提供了多个用于[!DNL XDM ExperienceEvent]类的标准字段组。 以
 
 | 值 | 定义 |
 | --- | --- |
-| `advertising.completes` | 已观看至结束定时媒体资产。 这不一定意味着查看者观看了整个视频，因为查看者可以跳到前面。 |
-| `advertising.timePlayed` | 描述用户在特定定时媒体资产上所花费的时间。 |
-| `advertising.federated` | 指示体验事件是否是通过数据联合（客户之间的数据共享）创建的。 |
 | `advertising.clicks` | 单击广告上的操作。 |
+| `advertising.completes` | 已观看至结束定时媒体资产。 这不一定意味着查看者观看了整个视频，因为查看者可以跳到前面。 |
 | `advertising.conversions` | 由客户执行的预定义操作，该操作会触发事件以进行性能评估。 |
+| `advertising.federated` | 指示体验事件是否是通过数据联合（客户之间的数据共享）创建的。 |
 | `advertising.firstQuartiles` | 数字视频广告以正常速度播放了其持续时间的25%。 |
 | `advertising.impressions` | 向客户展示的广告，有可能被查看。 |
 | `advertising.midpoints` | 数字视频广告以正常速度播放了其持续时间的50%。 |
 | `advertising.starts` | 开始播放数字视频广告。 |
 | `advertising.thirdQuartiles` | 数字视频广告以正常速度播放了其持续时间的75%。 |
-| `web.webpagedetails.pageViews` | 网页已收到一个或多个查看。 |
-| `web.webinteraction.linkClicks` | 已选择链接一次或多次。 |
+| `advertising.timePlayed` | 描述用户在特定定时媒体资产上所花费的时间。 |
+| `application.close` | 应用程序已关闭或已发送到后台。 |
+| `application.launch` | 应用程序已启动或已置于前台。 |
 | `commerce.checkouts` | 产品列表已发生结帐事件。 如果结帐流程中存在多个步骤，则可能会有多个结帐事件。 如果有多个步骤，则会使用每个事件的时间戳和引用的页面/体验来标识按顺序表示的每个单个事件（步骤）。 |
 | `commerce.productListAdds` | 产品已添加到产品列表或购物车。 |
 | `commerce.productListOpens` | 已初始化或创建新产品列表（购物车）。 |
@@ -103,9 +103,32 @@ Adobe提供了多个用于[!DNL XDM ExperienceEvent]类的标准字段组。 以
 | `commerce.productViews` | 产品已收到一个或多个查看。 |
 | `commerce.purchases` | 已接受命令。 这是商务转化中唯一必需的操作。 购买事件必须引用产品列表。 |
 | `commerce.saveForLaters` | 已保存产品列表供将来使用，如产品愿望列表。 |
+| `decisioning.propositionDisplay` | 一个决策建议被展示给一个人。 |
+| `decisioning.propositionInteract` | 一个人与决策建议互动。 |
 | `delivery.feedback` | 投放的反馈事件，如电子邮件投放。 |
+| `directMarketing.emailBounced` | 向人员发送的电子邮件已退回。 |
+| `directMarketing.emailBouncedSoft` | 向人员发送的电子邮件已软退件。 |
+| `directMarketing.emailClicked` | 人员单击了营销电子邮件中的链接。 |
+| `directMarketing.emailDelivered` | 已成功将电子邮件发送给人员的电子邮件服务 |
+| `directMarketing.emailOpened` | 某人打开了营销电子邮件。 |
+| `directMarketing.emailUnsubscribed` | 从营销电子邮件取消订阅的用户。 |
+| `leadOperation.convertLead` | 商机已转换。 |
+| `leadOperation.interestingMoment` | 为一个人录制了一个有趣的时刻。 |
+| `leadOperation.newLead` | 已创建潜在客户。 |
+| `leadOperation.scoreChanged` | 潜在客户的分数属性的值已更改。 |
+| `leadOperation.statusInCampaignProgressionChanged` | 营销活动中潜在客户的状态已更改。 |
+| `listOperation.addToList` | 将人员添加到营销列表。 |
+| `listOperation.removeFromList` | 人员已从营销列表中删除。 |
 | `message.feedback` | 向客户发送的消息的反馈事件，如已发送/退回/错误。 |
 | `message.tracking` | 跟踪事件，如对发送给客户的消息执行打开/点击/自定义操作。 |
+| `opportunityEvent.addToOpportunity` | 将人员添加到机会中。 |
+| `opportunityEvent.opportunityUpdated` | 更新了机会。 |
+| `opportunityEvent.removeFromOpportunity` | 人员被从机会中移走。 |
+| `pushTracking.applicationOpened` | 人员从推送通知中打开了应用程序。 |
+| `pushTracking.customAction` | 人员在推送通知中单击了自定义操作。 |
+| `web.formFilledOut` | 某人在wep页上填写了表格。 |
+| `web.webinteraction.linkClicks` | 已选择链接一次或多次。 |
+| `web.webpagedetails.pageViews` | 网页已收到一个或多个查看。 |
 
 {style=&quot;table-layout:auto&quot;}
 

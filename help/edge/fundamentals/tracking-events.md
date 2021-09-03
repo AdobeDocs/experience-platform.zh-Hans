@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK跟踪事件
 description: 了解如何跟踪Adobe Experience Platform Web SDK事件。
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon；发送信标；documentUnloading；文档卸载；onBeforeEventSend;
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 53a14b2b7d7ca8bdd278f2aeec2c2e8a30fdac7b
 workflow-type: tm+mt
-source-wordcount: '1451'
+source-wordcount: '1082'
 ht-degree: 0%
 
 ---
@@ -103,34 +103,7 @@ alloy("sendEvent", {
 
 ### 设置 `eventType` {#event-types}
 
-在XDM体验事件中，有一个可选的`eventType`字段。 它保存记录的主事件类型。 设置事件类型可以帮助您区分要发送的不同事件。 XDM提供了多种预定义事件类型，您可以使用这些类型，也可以始终为用例创建自己的自定义事件类型。 以下是XDM提供的所有预定义事件类型的列表。 [有关更多信息，请参阅XDM公共存储库](https://github.com/adobe/xdm/blob/master/docs/reference/behaviors/time-series.schema.md#xdmeventtype-known-values)。
-
-
-| **事件类型:** | **定义:** |
-| ---------------------------------- | ------------ |
-| advertising.completes | 指示定时媒体资产是否已观看至结束 — 这不一定意味着查看者已观看了整个视频；查看者可以跳到前面 |
-| advertising.timePlayed | 描述用户在特定定时媒体资产上花费的时间 |
-| advertising.federated | 指示是否通过数据联合（客户之间的数据共享）创建了体验事件 |
-| advertising.clicks | 广告上的点击操作 |
-| advertising.conversions | 客户预定义的操作，可触发用于绩效评估的事件 |
-| advertising.firstQuartiles | 数字视频广告以正常速度播放了其持续时间的25% |
-| advertising.impressions | 向具有被查看潜力的最终用户展示广告 |
-| advertising.midpoints | 数字视频广告以正常速度播放了其50%的持续时间 |
-| advertising.starts | 开始播放数字视频广告 |
-| advertising.thirdQuartiles | 数字视频广告以正常速度播放了其持续时间的75% |
-| web.webpagedetails.pageViews | 已发生网页查看事件 |
-| web.webinteraction.linkClicks | 发生Web链接的点击 |
-| commerce.checkouts | 在产品列表的结帐过程中执行的操作，如果结帐过程中存在多个步骤，则可能会发生多个结帐事件。 如果有多个步骤，则会使用事件时间信息和引用的页面或体验来标识按顺序表示的各个事件的步骤 |
-| commerce.productListAdds | 将产品添加到产品列表。 将产品添加到购物车的示例 |
-| commerce.productListOpens | 新产品列表的初始化。 创建购物车的示例 |
-| commerce.productListRemovals | 从产品列表中删除产品条目。 示例从购物车中删除产品 |
-| commerce.productListReopens | 用户已重新激活不再可访问（放弃）的产品列表。 再营销活动的示例 |
-| commerce.productListViews | 产品列表的查看已发生 |
-| commerce.productViews | 产品的查看已发生 |
-| commerce.purchases | 已接受命令。 购买是商务转化中唯一必需的操作。 购买必须引用产品列表 |
-| commerce.saveForLaters | 产品列表已保存以供将来使用。 产品愿望列表示例 |
-| delivery.feedback | 投放的反馈事件。 电子邮件投放的反馈事件示例 |
-
+在XDM ExperienceEvent架构中，有一个可选的`eventType`字段。 它保存记录的主事件类型。 设置事件类型可以帮助您区分要发送的不同事件。 XDM提供了多种预定义事件类型，您可以使用这些类型，也可以始终为用例创建自己的自定义事件类型。 有关所有预定义事件类型](../../xdm/classes/experienceevent.md#eventType)的列表，请参阅XDM文档。[
 
 如果使用标记扩展，则这些事件类型将显示在下拉菜单中，或者您始终可以在不使用标记的情况下传递它们。 它们可作为`xdm`选项的一部分传入。
 
