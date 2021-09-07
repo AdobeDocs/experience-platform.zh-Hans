@@ -2,16 +2,20 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 40d280eb1d9810d679428ffd42c88035459f2b7d
+source-git-commit: a4a41a91429104b302e223034bf15f9839ddb5ad
 workflow-type: tm+mt
-source-wordcount: '1173'
-ht-degree: 51%
+source-wordcount: '1185'
+ht-degree: 49%
 
 ---
 
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[平台Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html)。
+
+## 2.7.1版 — 2021年9月7日
+
+包含 Adobe Experience Platform Web SDK 库的版本 2.6.4。
 
 ## 2.7.0版 — 2021年8月16日
 
@@ -70,7 +74,7 @@ ht-degree: 51%
 ## 2.2.0版 — 2020年10月1日
 
 * 当客户尝试按照沙盒模式创建 XDM 对象时，他们将会遇到身份验证问题。现在，调用平台的API可以感知到各种环境，因此用户只能看到他们有权编辑的架构。
-* 使用 `identityMap` 数据元素时，命名空间会即时预填充到下拉框中，因此您不必手动进行填充。
+* 使用`identityMap`数据元素时，命名空间会立即预填充到下拉列表中，因此您无需手动进行填充。
 * 翻新了 `xdmObject` 数据元素的 UI。在新的 UI 中，您无需输入对象中的每个项目，即可查看已填充字段。
 
 ## 2.1.1版 — 2020年8月26日
