@@ -1,10 +1,11 @@
 ---
 title: 卫星对象引用
 description: 了解客户端_satellite对象以及您可以在标记中使用该对象执行的各种功能。
-source-git-commit: 5adb3ed403bddd3b985d0a790eca117fb2f39288
+exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
+source-git-commit: 57b4d11d0a7fd587dc45066737726a52533e33f0
 workflow-type: tm+mt
-source-wordcount: '1251'
-ht-degree: 42%
+source-wordcount: '1285'
+ht-degree: 44%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 42%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 本文档用作客户端`_satellite`对象以及您可以使用该对象执行的各种函数的引用。
 
@@ -214,7 +215,31 @@ _satellite.buildInfo
 
 生成当前库的 ISO 8601 日期。
 
-### `environment`
+以下示例展示了对象值：
+
+```javascript
+{
+  turbineVersion: "14.0.0",
+  turbineBuildDate: "2016-07-01T18:10:34Z",
+  buildDate: "2016-03-30T16:27:10Z"
+}
+```
+
+## `environment`
+
+**代码**
+
+```javascript
+_satellite.environment
+```
+
+此对象包含有关当前标记运行时库所部署的环境的信息。 该对象包含以下属性：
+
+### `id`
+
+环境的id。
+
+### `stage`
 
 生成此库的环境。可能的值包括：
 
@@ -226,10 +251,8 @@ _satellite.buildInfo
 
 ```javascript
 {
-  turbineVersion: "14.0.0",
-  turbineBuildDate: "2016-07-01T18:10:34Z",
-  buildDate: "2016-03-30T16:27:10Z",
-  environment: "development"
+  id: "EN123456...",
+  stage: "development"
 }
 ```
 
