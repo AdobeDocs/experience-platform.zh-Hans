@@ -1,15 +1,15 @@
 ---
 title: Pinterest客户列表连接
 description: 从客户列表创建受众、访问过您网站的人员或已在Pinterest上与您的内容进行交互的人员。
-source-git-commit: dc7e43a16923cb17a39a8ddb4ba114c0e9c0cc39
+exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
+source-git-commit: 3d7151645bc90a2dcbd6b31251ed459029ab77c9
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '516'
 ht-degree: 2%
 
 ---
 
-
-# Pinterest客户列表连接
+# [!DNL Pinterest Customer List] 连接
 
 ## 概述 {#overview}
 
@@ -27,14 +27,14 @@ ht-degree: 2%
 
 ## 支持的身份 {#supported-identities}
 
-pinterest客户列表目标支持激活下表中所述的身份。 了解有关[identities](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started)的更多信息。
+[!DNL Pinterest Customer List]目标支持激活下表中描述的身份。 了解有关[identities](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started)的更多信息。
 
 在目标激活工作流的[映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)中，将所需的标识映射到目标字段&#x200B;*pinterest_audience*。 身份在将数据摄取到Pinterest中时进行区分和解析。
 
 | Target标识 | 描述 | 注意事项 |
 |---|---|---|
-| GAID | Google广告ID | 将&#x200B;*GAID*&#x200B;源标识命名空间映射到目标标识字段&#x200B;*pinterest_audience*。 身份在将数据摄取到Pinterest中时进行区分和解析。 |
-| IDFA | 适用于广告商的Apple ID | 将&#x200B;*IDFA*&#x200B;源标识命名空间映射到目标标识字段&#x200B;*pinterest_audience*。 身份在将数据摄取到Pinterest中时进行区分和解析。 |
+| GAID | [!DNL Google Advertising ID] | 将&#x200B;*GAID*&#x200B;源标识命名空间映射到目标标识字段&#x200B;*pinterest_audience*。 身份在将数据摄取到Pinterest中时进行区分和解析。 |
+| IDFA | [!DNL Apple ID for Advertisers] | 将&#x200B;*IDFA*&#x200B;源标识命名空间映射到目标标识字段&#x200B;*pinterest_audience*。 身份在将数据摄取到Pinterest中时进行区分和解析。 |
 | 电子邮件 | 电子邮件地址（使用SHA256算法进行明文或哈希处理） | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 <br> 将Emailor  ** Email_ *LC_SHA256* 源标识命名空间映射到目标标识字段 *pinterest_audience*。 |
 
 {style=&quot;table-layout:auto&quot;}
@@ -45,7 +45,7 @@ pinterest客户列表目标支持激活下表中所述的身份。 了解有关[
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解如何以及何时使用Pinterest客户列表目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解应如何以及何时使用[!DNL Pinterest Customer List]目标，以下是Adobe Experience Platform客户可通过使用此目标解决的示例用例。
 
 
 ### 用例#1

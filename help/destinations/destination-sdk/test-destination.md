@@ -1,9 +1,10 @@
 ---
-description: '作为目标SDK的一部分，Adobe提供了开发人员工具，可帮助您配置和测试目标。 本页介绍如何测试目标配置。 '
+description: 作为目标SDK的一部分，Adobe提供了开发人员工具，可帮助您配置和测试目标。 本页介绍如何测试目标配置。
 title: 测试目标配置
-source-git-commit: cf6c6adf128ec867cd67af609a40b04d2c632bf9
+exl-id: 21e4d647-1168-4cb4-a2f8-22d201e39bba
+source-git-commit: 3d7151645bc90a2dcbd6b31251ed459029ab77c9
 workflow-type: tm+mt
-source-wordcount: '482'
+source-wordcount: '484'
 ht-degree: 1%
 
 ---
@@ -228,4 +229,4 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 ## 后续步骤
 
-确认目标配置正确后，使用Adobe[自助文档流程](./docs-framework/documentation-instructions.md)为目标创建文档页面。
+测试目标并确认其配置正确后，使用[目标发布API](./destination-publish-api.md)将配置提交到Adobe以供审核。

@@ -3,7 +3,8 @@ description: 本页介绍如何使用目标SDK配置选项中的参考信息，�
 seo-description: This page describes how to use the reference information in Configuration options for the Destinations SDK to configure your destination using Destination SDK.
 seo-title: How to use Destination SDK to configure your destination
 title: 如何使用Destination SDK配置目标
-source-git-commit: 2841adc0ce212a945c35ba38209d4c00c519ad7b
+exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
+source-git-commit: 3d7151645bc90a2dcbd6b31251ed459029ab77c9
 workflow-type: tm+mt
 source-wordcount: '568'
 ht-degree: 0%
@@ -161,7 +162,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 ## 步骤7:发布目标 {#publish-destination}
 
-配置和测试目标后。 使用[目标发布API](./destination-publish-api.md)将配置提交给Adobe以供审核。
+配置并测试目标后，使用[目标发布API](./destination-publish-api.md)将配置提交给Adobe以供审核。
 
 ## 步骤8:记录目标 {#document-destination}
 

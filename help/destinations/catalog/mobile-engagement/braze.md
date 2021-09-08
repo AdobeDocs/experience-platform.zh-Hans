@@ -3,18 +3,14 @@ keywords: 移动设备；布雷；报文传送；
 title: Braze连接
 description: Braze是一个全面的客户参与平台，可为客户和他们喜爱的品牌之间提供相关且令人难忘的体验。
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: 3d7151645bc90a2dcbd6b31251ed459029ab77c9
 workflow-type: tm+mt
-source-wordcount: '791'
-ht-degree: 2%
+source-wordcount: '757'
+ht-degree: 0%
 
 ---
 
-# （测试版）[!DNL Braze]连接
-
->[!IMPORTANT]
->
->Adobe Experience Platform中的Braze目标当前为测试版。 文档和功能可能会发生变化。
+# [!DNL Braze] 连接
 
 ## 概述 {#overview}
 
@@ -98,11 +94,9 @@ ht-degree: 2%
 
 ![制作目标映射](../../assets/catalog/mobile-engagement/braze/mapping-target.png)
 
-在[!UICONTROL 选择目标字段]窗口中，您可以选择以下三类目标字段：
-* [!UICONTROL 选择属性]:使用此选项可将XDM属性映射到标准 [!DNL Braze] 属性。
+在[!UICONTROL 选择目标字段]窗口中，您可以选择两类目标字段：
 * [!UICONTROL 选择身份命名空间]:使用此选项可将身份命名 [!DNL Platform] 空间映射到身 [!DNL Braze] 份命名空间。
-* [!UICONTROL 选择自定义属性]:使用此选项可将XDM属性映射到您在帐 [!DNL Braze] 户中定义的自定义 [!DNL Braze] 属性。
-* 您还可以使用此选项将现有XDM属性重命名为[!DNL Braze]。 例如，将`lastName` XDM属性映射到[!DNL Braze]中的自定义`Last_Name`属性时，将在[!DNL Braze]中创建`Last_Name`属性（如果不存在），并将`lastName` XDM属性映射到该属性。
+* [!UICONTROL 选择自定义属性]:使用此选项可将XDM属性映射到您在帐 [!DNL Braze] 户中定义的自定义 [!DNL Braze] 属性。<br> 您还可以使用此选项将现有XDM属性重命名为 [!DNL Braze]。例如，将`lastName` XDM属性映射到[!DNL Braze]中的自定义`Last_Name`属性时，将在[!DNL Braze]中创建`Last_Name`属性（如果不存在），并将`lastName` XDM属性映射到该属性。
 
 ![标记目标映射字段](../../assets/catalog/mobile-engagement/braze/mapping-target-fields.png)
 
