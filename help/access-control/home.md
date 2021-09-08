@@ -5,9 +5,9 @@ topic-legacy: overview
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 6ecfad588f97474988b86199c008953714a3bed8
+source-git-commit: 13055c9b569a67b5b44a90ac2b40776e271db008
 workflow-type: tm+mt
-source-wordcount: '1363'
+source-wordcount: '1375'
 ht-degree: 2%
 
 ---
@@ -103,6 +103,7 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 | [!DNL Destinations] | [!UICONTROL 管理目标] | 访问读取、创建、编辑和禁用目标。 |
 | [!DNL Destinations] | [!UICONTROL 查看目标] | 对&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡中可用目标以及&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中已验证目标的只读访问权限。 |
 | [!DNL Destinations] | [!UICONTROL 激活目标] | 能够将数据激活到已创建的活动目标。 此权限要求将“查看目标”或“管理[!UICONTROL 目标”]授予将激活目标的用户。 |
+| [!DNL Destinations] | [!UICONTROL 目标创作] | 能够使用[Adobe Experience Platform目标SDK](../destinations/destination-sdk/overview.md)创作目标。 |
 | [!DNL Data Ingestion] | [!UICONTROL 管理源] | 对读取、创建、编辑和禁用源的访问权限。 |
 | [!DNL Data Ingestion] | [!UICONTROL 查看源] | 对&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡中可用源的只读访问，对&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中的已验证源的只读访问。 |
 | [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 访问创建、接受和拒绝合作伙伴握手，以连接两个IMS组织并启用[!DNL Segment Match]流。 |
