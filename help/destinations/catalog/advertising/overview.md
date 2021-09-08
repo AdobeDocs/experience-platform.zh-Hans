@@ -5,9 +5,9 @@ seo-title: Advertising destinations overview
 description: 将Adobe Experience Platform连接到第三方广告平台(例如DSP、广告网络、SSP)，并将假名受众共享到这些平台。
 seo-description: Connect Adobe Experience Platform to a 3rd-party advertising platform (e.g. DSP, ad network, SSP) and share pseudonymous audiences to these platforms.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 316bad8b7b33d212c7ec304c064edb9f2c17859a
+source-git-commit: 0911a0a08c5571161acdafa6857095e275a50600
 workflow-type: tm+mt
-source-wordcount: '227'
+source-wordcount: '231'
 ht-degree: 1%
 
 ---
@@ -33,6 +33,7 @@ ht-degree: 1%
 * [Google Ad Manager连接](google-ad-manager.md)
 * [Google客户匹配连接](google-customer-match.md)
 * [Microsoft Bing连接](bing.md)
+* [Pinterest客户列表连接](pinterest.md)
 * [交易台连接](tradedesk.md)
 * [Yahoo/Verizon DataX](datax.md)
 
