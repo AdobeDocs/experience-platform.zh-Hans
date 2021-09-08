@@ -1,0 +1,322 @@
+---
+description: 本页列出并介绍了可使用“/authoring/destination-servers” API端点执行的所有API操作。 可以在Adobe Experience Platform目标SDK中通过公共端点“/authoring/destination-servers”配置目标的服务器和模板规范。
+title: 目标服务器端点API操作
+source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+workflow-type: tm+mt
+source-wordcount: '938'
+ht-degree: 4%
+
+---
+
+# 目标服务器端点API操作
+
+>[!IMPORTANT]
+>
+>**API端点**:  `platform.adobe.io/data/core/activation/authoring/destination-servers`
+
+本页列出并描述了可使用`/authoring/destination-servers` API端点执行的所有API操作。 可以在Adobe Experience Platform目标SDK中通过公共端点`/authoring/destination-servers`配置目标的服务器和模板规范。 有关此端点提供的功能的说明，请阅读[服务器和模板规范](./server-and-template-configuration.md)。
+
+## 目标服务器API操作快速入门 {#get-started}
+
+在继续操作之前，请查看[快速入门指南](./getting-started.md) ，了解成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
+
+## 为目标服务器创建配置 {#create}
+
+通过向`/authoring/destination-servers`端点发出POST请求，可以创建新的目标服务器配置。
+
+**API格式**
+
+
+```http
+POST /authoring/destination-servers
+```
+
+**请求**
+
+以下请求会创建一个新的目标服务器配置，该配置由有效负载中提供的参数进行配置。 以下负载包括`/authoring/destination-servers`端点接受的所有参数。 请注意，您不必在调用中添加所有参数，并且该模板可根据您的API要求进行自定义。
+
+```shell
+curl -X POST https://platform.adobe.io/data/core/activation/authoring/destination-servers \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d '
+{
+   "name":"Moviestar destination server",
+   "destinationServerType":"URL_BASED",
+   "urlBasedDestination":{
+      "url":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"https://api.moviestar.com/data/{{endpoint.region}}/items"
+      }
+   },
+   "httpTemplate":{
+      "httpMethod":"POST",
+      "requestBody":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{ \"attributes\": [ {% for ns in [\"external_id\", \"yourdestination_id\"] %} {% if input.profile.identityMap[ns] is not empty and first_namespace_encountered %} , {% endif %} {% set first_namespace_encountered = true %} {% for identity in input.profile.identityMap[ns]%} { \"{{ ns }}\": \"{{ identity.id }}\" {% if input.profile.segmentMembership.ups is not empty %} , \"AEPSegments\": { \"add\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"realized\" or segment.value.status == \"existing\" %} {% if added_segment_found %} , {% endif %} {% set added_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ], \"remove\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"exited\" %} {% if removed_segment_found %} , {% endif %} {% set removed_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ] } {% set removed_segment_found = false %} {% set added_segment_found = false %} {% endif %} {% if input.profile.attributes is not empty %} , {% endif %} {% for attribute in input.profile.attributes %} \"{{ attribute.key }}\": {% if attribute.value is empty %} null {% else %} \"{{ attribute.value.value }}\" {% endif %} {% if not loop.last%} , {% endif %} {% endfor %} } {% if not loop.last %} , {% endif %} {% endfor %} {% endfor %} ] }"
+      },
+      "contentType":"application/json"
+   }
+}
+```
+
+| 参数 | 类型 | 描述 |
+| -------- | ----------- | ----------- |
+| `name` | 字符串 | 表示服务器的友好名称，仅对Adobe可见。 合作伙伴或客户看不到此名称。 示例 `Moviestar destination server`. |
+| `destinationServerType` | 字符串 | `URL_BASED` 是当前唯一可用的选项。 |
+| `urlBasedDestination.url.templatingStrategy` | 字符串 | <ul><li>如果Adobe需要转换下面`value`字段中的URL，请使用`PEBBLE_V1`。 如果您具有如下端点，请使用此选项：`https://api.moviestar.com/data/{{endpoint.region}}/items`。 </li><li> 如果Adobe端不需要转换，例如，如果您具有如下端点，则使用`NONE`:`https://api.moviestar.com/data/items`。</li></ul> |
+| `urlBasedDestination.url.value` | 字符串 | 填写Experience Platform应连接到的API端点的地址。 |
+| `urlBasedDestination.maxUsersPerRequest` | 整数 | Adobe可以在一个HTTP调用中聚合多个导出的配置文件。 指定您的端点在单个HTTP调用中应接收的最大配置文件数。 请注意，这是一种尽力的聚合。 例如，如果您指定值100，则Adobe可能会在一次调用中发送小于100的任何用户档案数。 <br> 如果您的服务器不接受每个请求的多个用户，请将此值设置为1。 |
+| `urlBasedDestination.splitUserById` | 布尔型 | 如果目标的调用应按身份进行拆分，则使用此标记。 如果服务器在给定的命名空间中每次调用仅接受一个标识，则将此标记设置为`true`。 |
+| `httpTemplate.httpMethod` | 字符串 | Adobe在对服务器的调用中将使用的方法。 选项包括`GET`、`PUT`、`POST`、`DELETE`、`PATCH`。 |
+| `httpTemplate.requestBody.templatingStrategy` | 字符串 | 使用 `PEBBLE_V1`. |
+| `httpTemplate.requestBody.value` | 字符串 | 此字符串是字符转义版本，可将Platform客户的数据转换为您的服务所需的格式。<br> <ul><li> 有关如何编写模板的信息，请阅读[使用模板部分](./message-format.md#using-templating)。 </li><li> 有关字符转义的更多信息，请参阅[RFC JSON标准第七节](https://tools.ietf.org/html/rfc8259#section-7)。 </li><li> 有关简单转换的示例，请参阅[配置文件属性](./message-format.md#attributes)转换。 </li></ul> |
+| `httpTemplate.contentType` | 字符串 | 服务器接受的内容类型。 该值很可能为`application/json`。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+**响应**
+
+成功响应会返回HTTP状态200，其中包含新创建的目标服务器配置的详细信息。
+
+## 列出目标服务器配置 {#retrieve-list}
+
+您可以通过向`/authoring/destination-servers`端点发出GET请求，来检索IMS组织的所有目标服务器配置的列表。
+
+**API格式**
+
+
+```http
+GET /authoring/destination-servers
+```
+
+**请求**
+
+以下请求将根据IMS组织和沙盒配置，检索您有权访问的目标服务器配置列表。
+
+```shell
+curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination-servers \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**响应**
+
+以下响应会根据您使用的IMS组织ID和沙盒名称，返回HTTP状态200，其中包含您有权访问的目标服务器配置列表。 一个`instanceId`对应于一个目标服务器的模板。 响应因简短而被截断。
+
+```json
+{
+   "items":[
+      {
+         "instanceId":"2307ec2b-4798-45a4-9239-5d0a2fb0ed67",
+         "createdDate":"2020-11-17T06:49:24.331012Z",
+         "lastModifiedDate":"2020-11-17T06:49:24.331012Z",
+         "name":"Moviestar Destination Server",
+         "destinationServerType":"URL_BASED",
+         "urlBasedDestination":{
+            "url":{
+               "templatingStrategy":"PEBBLE_V1",
+               "value":"https://go.{% if destination.config.domain == \"US\" %}moviestar.com{% else %}moviestar.eu{% endif%}/api/named_users/tags"
+            }
+         },
+         "httpTemplate":{
+            "requestBody":{
+               "templatingStrategy":"PEBBLE_V1",
+               "value":"{ \"audience\": { \"named_user_id\": [ {% for named_user in input.profile.identityMap.named_user_id %} \"{{ named_user.id }}\"{% if not loop.last %},{% endif %} {% endfor %} ] }, {% if addedSegments(input.profile.segmentMembership.ups) is not empty %} \"add\": { \"adobe-segments\": [ {% for added_segment in addedSegments(input.profile.segmentMembership.ups) %} \"{{ destination.segmentNames[added_segment.key] }}\"{% if not loop.last %},{% endif %} {% endfor %} ] } {% endif %} {% if addedSegments(input.profile.segmentMembership.ups) is not empty and removedSegments(input.profile.segmentMembership.ups) is not empty %} , {% endif %} {% if removedSegments(input.profile.segmentMembership.ups) is not empty %} \"remove\": { \"adobe-segments\": [ {% for removed_segment in removedSegments(input.profile.segmentMembership.ups) %} \"{{ destination.segmentNames[removed_segment.key] }}\"{% if not loop.last %},{% endif %} {% endfor %} ] } {% endif %} }"
+            },
+            "httpMethod":"POST",
+            "contentType":"application/json",
+            "headers":[
+               {
+                  "header":"Accept",
+                  "value":{
+                     "templatingStrategy":"NONE",
+                     "value":"application/vnd.moviestar+json; version=3;"
+                  }
+               }
+            ]
+         },
+         "qos":{
+            "name":"freeform"
+         }
+      },
+      {
+         "instanceId":"d88de647-a352-4824-8b46-354afc7acbff",
+         "createdDate":"2020-11-17T16:50:59.635228Z",
+         "lastModifiedDate":"2020-11-17T16:50:59.635228Z",
+         "name":"Test11 Destination Server",
+         "destinationServerType":"URL_BASED",
+         "urlBasedDestination":{
+            "url":{
+               "templatingStrategy":"PEBBLE_V1",
+               "value":"https://go.{% if destination.config.domain == \"US\" %}moviestar.com{% else %}moviestar.eu{% endif%}/api/named_users/tags"
+            }
+         },
+         "httpTemplate":{
+            "requestBody":{
+               "templatingStrategy":"PEBBLE_V1",
+               "value":"{ \"audience\": { \"named_user_id\": [ {% for named_user in input.profile.identityMap.named_user_id %} \"{{ named_user.id }}\"{% if not loop.last %},{% endif %} {% endfor %} ] }, {% if addedSegments(input.profile.segmentMembership.ups) is not empty %} \"add\": { \"adobe-segments\": [ {% for added_segment in addedSegments(input.profile.segmentMembership.ups) %} \"{{ destination.segmentNames[added_segment.key] }}\"{% if not loop.last %},{% endif %} {% endfor %} ] } {% endif %} {% if addedSegments(input.profile.segmentMembership.ups) is not empty and removedSegments(input.profile.segmentMembership.ups) is not empty %} , {% endif %} {% if removedSegments(input.profile.segmentMembership.ups) is not empty %} \"remove\": { \"adobe-segments\": [ {% for removed_segment in removedSegments(input.profile.segmentMembership.ups) %} \"{{ destination.segmentNames[removed_segment.key] }}\"{% if not loop.last %},{% endif %} {% endfor %} ] } {% endif %} }"
+            },
+            "httpMethod":"POST",
+            "contentType":"application/json",
+            "headers":[
+               {
+                  "header":"Accept",
+                  "value":{
+                     "templatingStrategy":"NONE",
+                     "value":"application/vnd.moviestar+json; version=3;"
+                  }
+               }
+            ]
+         },
+         "qos":{
+            "name":"freeform"
+         }
+      }
+   ]
+}
+    
+```
+
+## 更新现有目标服务器配置 {#update}
+
+您可以通过向`/authoring/destination-servers`端点发出PUT请求并提供要更新的目标服务器配置的实例ID来更新现有的目标服务器配置。 在调用的正文中，提供更新的目标服务器配置。
+
+**API格式**
+
+
+```http
+PUT /authoring/destination-servers/{INSTANCE_ID}
+```
+
+| 参数 | 描述 |
+| -------- | ----------- |
+| `{INSTANCE_ID}` | 要更新的目标服务器配置的ID。 |
+
+**请求**
+
+以下请求更新了由有效负载中提供的参数配置的现有目标服务器配置。
+
+```shell
+curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination-servers/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d '
+{
+   "name":"Moviestar destination server",
+   "destinationServerType":"URL_BASED",
+   "urlBasedDestination":{
+      "url":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"https://api.moviestar.com/data/{{endpoint.region}}/items"
+      }
+   },
+   "httpTemplate":{
+      "httpMethod":"POST",
+      "requestBody":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{ \"attributes\": [ {% for ns in [\"external_id\", \"yourdestination_id\"] %} {% if input.profile.identityMap[ns] is not empty and first_namespace_encountered %} , {% endif %} {% set first_namespace_encountered = true %} {% for identity in input.profile.identityMap[ns]%} { \"{{ ns }}\": \"{{ identity.id }}\" {% if input.profile.segmentMembership.ups is not empty %} , \"AEPSegments\": { \"add\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"realized\" or segment.value.status == \"existing\" %} {% if added_segment_found %} , {% endif %} {% set added_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ], \"remove\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"exited\" %} {% if removed_segment_found %} , {% endif %} {% set removed_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ] } {% set removed_segment_found = false %} {% set added_segment_found = false %} {% endif %} {% if input.profile.attributes is not empty %} , {% endif %} {% for attribute in input.profile.attributes %} \"{{ attribute.key }}\": {% if attribute.value is empty %} null {% else %} \"{{ attribute.value.value }}\" {% endif %} {% if not loop.last%} , {% endif %} {% endfor %} } {% if not loop.last %} , {% endif %} {% endfor %} {% endfor %} ] }"
+      },
+      "contentType":"application/json"
+   }
+}
+```
+
+
+
+
+
+## 检索特定目标服务器配置 {#get}
+
+您可以通过向`/authoring/destination-servers`端点发出GET请求并提供要更新的目标服务器配置的实例ID来检索有关特定目标服务器配置的详细信息。
+
+**API格式**
+
+
+```http
+GET /authoring/destination-servers/{INSTANCE_ID}
+```
+
+| 参数 | 描述 |
+| -------- | ----------- |
+| `{INSTANCE_ID}` | 要检索的目标服务器配置的ID。 |
+
+**请求**
+
+```shell
+curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination-servers/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}'
+```
+
+**响应**
+
+成功响应会返回HTTP状态200，其中包含有关指定目标服务器配置的详细信息。
+
+```json
+{
+   "name":"Moviestar destination server",
+   "destinationServerType":"URL_BASED",
+   "urlBasedDestination":{
+      "url":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"https://api.moviestar.com/data/{{endpoint.region}}/items"
+      }
+   },
+   "httpTemplate":{
+      "httpMethod":"POST",
+      "requestBody":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{ \"attributes\": [ {% for ns in [\"external_id\", \"yourdestination_id\"] %} {% if input.profile.identityMap[ns] is not empty and first_namespace_encountered %} , {% endif %} {% set first_namespace_encountered = true %} {% for identity in input.profile.identityMap[ns]%} { \"{{ ns }}\": \"{{ identity.id }}\" {% if input.profile.segmentMembership.ups is not empty %} , \"AEPSegments\": { \"add\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"realized\" or segment.value.status == \"existing\" %} {% if added_segment_found %} , {% endif %} {% set added_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ], \"remove\": [ {% for segment in input.profile.segmentMembership.ups %} {% if segment.value.status == \"exited\" %} {% if removed_segment_found %} , {% endif %} {% set removed_segment_found = true %} \"{{ destination.segmentAliases[segment.key] }}\" {% endif %} {% endfor %} ] } {% set removed_segment_found = false %} {% set added_segment_found = false %} {% endif %} {% if input.profile.attributes is not empty %} , {% endif %} {% for attribute in input.profile.attributes %} \"{{ attribute.key }}\": {% if attribute.value is empty %} null {% else %} \"{{ attribute.value.value }}\" {% endif %} {% if not loop.last%} , {% endif %} {% endfor %} } {% if not loop.last %} , {% endif %} {% endfor %} {% endfor %} ] }"
+      },
+      "contentType":"application/json"
+   }
+}
+```
+
+
+## 删除特定目标服务器配置 {#delete}
+
+您可以通过向`/authoring/destination-servers`端点发出DELETE请求并提供您希望在请求路径中删除的目标服务器配置的ID来删除指定的目标服务器配置。
+
+**API格式**
+
+```http
+DELETE /authoring/destination-servers/{INSTANCE_ID}
+```
+
+| 参数 | 描述 |
+| --------- | ----------- |
+| `{INSTANCE_ID}` | 要删除的目标服务器配置的`id`。 |
+
+**请求**
+
+```shell
+curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/destination-servers/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+```
+
+**响应**
+
+成功的响应会返回HTTP状态200以及空的HTTP响应。
+
+## API错误处理
+
+目标SDK API端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes)和[请求标头错误](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors)。
+
+## 后续步骤
+
+阅读本文档后，您现在知道如何使用`/authoring/destination-servers` API端点配置目标服务器和模板。 请阅读[如何使用目标SDK配置目标](./configure-destination-instructions.md) ，以了解此步骤在配置目标过程中的适用位置。
