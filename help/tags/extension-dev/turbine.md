@@ -2,10 +2,10 @@
 title: Turbine自由变量
 description: 了解turbine对象，该对象是一个自由变量，可提供特定于Adobe Experience Platform标记运行时的信息和实用程序。
 exl-id: 1664ab2e-8704-4a56-8b6b-acb71534084e
-source-git-commit: 814f853d16219021d9151458d93fc5bdc6c860fb
+source-git-commit: 86a009fd5c633ff45943d86b16c34a779d4141be
 workflow-type: tm+mt
-source-wordcount: '602'
-ht-degree: 50%
+source-wordcount: '619'
+ht-degree: 49%
 
 ---
 
@@ -117,6 +117,7 @@ turbine.logger.error('Error!');
 * `logger.warn(message: string)`：将警告消息记录到控制台。
 * `logger.error(message: string)`：将错误消息记录到控制台。
 * `logger.debug(message: string)`：将调试消息记录到控制台。（仅当在浏览器控制台中启用 `verbose` 日志记录时才可见。）
+* `logger.deprecation(message: string)`:无论用户是否启用了标记调试，都会将警告消息记录到控制台。
 
 ### `onDebugChanged`
 
