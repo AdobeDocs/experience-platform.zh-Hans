@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用体验数据模型(XDM)类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: 6b3a1cc4cfba5475aba781a1d0511a59e399135f
+source-git-commit: 295dc040f3af7342226e3d78d0ae21e73db58d57
 workflow-type: tm+mt
-source-wordcount: '315'
+source-wordcount: '324'
 ht-degree: 16%
 
 ---
@@ -47,9 +47,13 @@ ht-degree: 16%
       * [渠道详细信息](./field-groups/event/channel-details.md)
       * [商务详细信息](./field-groups/event/commerce-details.md)
       * [设备更换详细信息](./field-groups/event/device-trade-in-details.md)
+      * [餐饮预订](./field-groups/event/dining-reservation.md)
       * [最终用户ID详细信息](./field-groups/event/enduserids.md)
       * [环境详细信息](./field-groups/event/environment-details.md)
+      * [航班预订](./field-groups/event/flight-reservation.md)
       * [IAB TCF 2.0同意](./field-groups/event/iab.md)
+      * [住宿预订](./field-groups/event/lodging-reservation.md)
+      * [保留详细信息](./field-groups/event/reservation-details.md)
       * [Web详细信息](./field-groups/event/web-details.md)
    * [字段组名称更新](./field-groups/name-updates.md)
 * 数据类型 {#data-types}
@@ -89,6 +93,7 @@ ht-degree: 16%
    * [搜索](./data-types/search.md)
    * [订阅](./data-types/subscription.md)
    * [电信订购](./data-types/telecom-subscription.md)
+   * [交易](./data-types/transaction.md)
    * [Web信息](./data-types/web-information.md)
    * [Web交互](./data-types/web-interaction.md)
    * [网页详细信息](./data-types/webpage-details.md)
