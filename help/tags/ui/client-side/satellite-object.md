@@ -2,9 +2,9 @@
 title: 卫星对象引用
 description: 了解客户端_satellite对象以及您可以在标记中使用该对象执行的各种功能。
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: 57b4d11d0a7fd587dc45066737726a52533e33f0
+source-git-commit: 814f853d16219021d9151458d93fc5bdc6c860fb
 workflow-type: tm+mt
-source-wordcount: '1285'
+source-wordcount: '1279'
 ht-degree: 44%
 
 ---
@@ -117,7 +117,7 @@ _satellite.logger.error('No product ID found.');
 
 `logger`对象允许消息记录到浏览器控制台。 仅当用户启用了标记调试（通过调用`_satellite.setDebug(true)`或使用适当的浏览器扩展）时，才会显示该消息。
 
-### 日志记录弃用警告
+### 记录弃用警告
 
 ```javascript
 _satellite.logger.deprecation(message: string)
@@ -227,34 +227,27 @@ _satellite.buildInfo
 
 ## `environment`
 
+此对象包含有关当前标记运行时库所部署的环境的信息。
+
 **代码**
 
 ```javascript
 _satellite.environment
 ```
 
-此对象包含有关当前标记运行时库所部署的环境的信息。 该对象包含以下属性：
-
-### `id`
-
-环境的id。
-
-### `stage`
-
-生成此库的环境。可能的值包括：
-
-* development
-* staging
-* production
-
-以下示例展示了对象值：
+该对象包含以下属性：
 
 ```javascript
 {
-  id: "EN123456...",
+  id: "ENbe322acb4fc64dfdb603254ffe98b5d3",
   stage: "development"
 }
 ```
+
+| 属性 | 描述 |
+| --- | --- |
+| `id` | 环境的id。 |
+| `stage` | 生成此库的环境。可能的值为`development`、`staging`和`production`。 |
 
 ## `notify`
 

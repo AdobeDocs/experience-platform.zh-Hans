@@ -3,18 +3,14 @@ keywords: 飞艇属性；飞艇目的地
 title: 飞艇属性连接
 description: 将Adobe受众数据无缝地作为受众属性传递到Airship，以便在Airship中进行定位。
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: a765f6829f08f36010e0e12a7186bf5552dfe843
 workflow-type: tm+mt
-source-wordcount: '726'
-ht-degree: 1%
+source-wordcount: '706'
+ht-degree: 0%
 
 ---
 
-# （测试版）[!DNL Airship Attributes]连接 {#airship-attributes-destination}
-
->[!IMPORTANT]
->
->Adobe Experience Platform中的[!DNL Airship Attributes]目标当前处于测试阶段。 文档和功能可能会发生变化。
+# [!DNL Airship Attributes] 连接 {#airship-attributes-destination}
 
 ## 概述 {#overview}
 

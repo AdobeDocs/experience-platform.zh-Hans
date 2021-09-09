@@ -2,10 +2,10 @@
 title: Turbine自由变量
 description: 了解turbine对象，该对象是一个自由变量，可提供特定于Adobe Experience Platform标记运行时的信息和实用程序。
 exl-id: 1664ab2e-8704-4a56-8b6b-acb71534084e
-source-git-commit: 57b4d11d0a7fd587dc45066737726a52533e33f0
+source-git-commit: 814f853d16219021d9151458d93fc5bdc6c860fb
 workflow-type: tm+mt
-source-wordcount: '598'
-ht-degree: 51%
+source-wordcount: '602'
+ht-degree: 50%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 51%
 
 `turbine` 对象是扩展库模块范围内的“自由变量”。它提供了特定于Adobe Experience Platform标记运行时的信息和实用程序，并且始终可供库模块使用，而无需使用`require()`。
 
-## [!DNL buildInfo]
+## `buildInfo`
 
 ```js
 console.log(turbine.buildInfo.turbineBuildDate);
@@ -40,7 +40,7 @@ console.log(turbine.buildInfo.turbineBuildDate);
 | `buildDate` | 生成当前库的 ISO 8601 日期。 |
 
 
-## [!DNL environment]
+## `environment`
 
 ```js
 console.log(turbine.environment.stage);
@@ -50,24 +50,24 @@ console.log(turbine.environment.stage);
 
 ```js
 {
-    id: "EN123456...",
+    id: "ENbe322acb4fc64dfdb603254ffe98b5d3",
     stage: "development"
 }
 ```
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 环境的id。 |
-| `stage` | 生成此库的环境。接受的值包括 `development`、`staging` 和 `production`。 |
+| `id` | 环境的ID。 |
+| `stage` | 生成此库的环境。可能的值为`development`、`staging`和`production`。 |
 
 
-## [!DNL debugEnabled]
+## `debugEnabled`
 
-当前是否启用标记调试。
+一个布尔值，用于指示当前是否启用标记调试。
 
 如果您只是尝试记录消息，则可能不需要使用此功能。相反，应始终使用`turbine.logger`记录消息，以确保在启用标记调试后，消息只打印到控制台。
 
-### [!DNL getDataElementValue]
+### `getDataElementValue`
 
 ```js
 console.log(turbine.getDataElementValue(dataElementName));
@@ -75,7 +75,7 @@ console.log(turbine.getDataElementValue(dataElementName));
 
 返回数据元素的值。
 
-### [!DNL getExtensionSettings] {#get-extension-settings}
+### `getExtensionSettings` {#get-extension-settings}
 
 ```js
 var extensionSettings = turbine.getExtensionSettings();
@@ -85,7 +85,7 @@ var extensionSettings = turbine.getExtensionSettings();
 
 请注意，返回的设置对象中的值可能来自数据元素。因此，如果数据元素的值发生变化，那么在不同时间调用 `getExtensionSettings()` 可能会产生不同的结果。要获取最新的值，请尽可能等待，然后再调用`getExtensionSettings()`。
 
-### [!DNL getHostedLibFileUrl] {#get-hosted-lib-file}
+### `getHostedLibFileUrl` {#get-hosted-lib-file}
 
 ```js
 var loadScript = require('@adobe/reactor-load-script');
@@ -96,7 +96,7 @@ loadScript(turbine.getHostedLibFileUrl('AppMeasurement.js')).then(function() {
 
 [hostedLibFiles](./manifest.md)属性可在扩展清单中定义，以便将各种文件与标记运行时库一起托管。 此模块会返回托管给定库文件的 URL。
 
-### [!DNL getSharedModule] {#shared}
+### `getSharedModule` {#shared}
 
 ```js
 var mcidInstance = turbine.getSharedModule('adobe-mcid', 'mcid-instance');
@@ -104,7 +104,7 @@ var mcidInstance = turbine.getSharedModule('adobe-mcid', 'mcid-instance');
 
 检索已从其他扩展共享的模块。 如果找不到匹配的模块，则返回 `undefined`。有关共享模块的更多信息，请参阅[实施共享模块](./web/shared.md)。
 
-### [!DNL logger]
+### `logger`
 
 ```js
 turbine.logger.error('Error!');
@@ -118,13 +118,13 @@ turbine.logger.error('Error!');
 * `logger.error(message: string)`：将错误消息记录到控制台。
 * `logger.debug(message: string)`：将调试消息记录到控制台。（仅当在浏览器控制台中启用 `verbose` 日志记录时才可见。）
 
-### [!DNL onDebugChanged]
+### `onDebugChanged`
 
 每当切换调试功能时，标记通过将回调函数传递到`turbine.onDebugChanged`来调用您的回调。 标记将向回调函数传递一个布尔值，如果启用了调试，则该布尔值为true；如果禁用了调试，则该布尔值为false。
 
 如果您只是尝试记录消息，则可能不需要使用此功能。相反，始终使用`turbine.logger`和标记来记录消息，以确保在启用标记调试后，消息只会打印到控制台。
 
-### [!DNL propertySettings] {#property-settings}
+### `propertySettings` {#property-settings}
 
 ```js
 console.log(turbine.propertySettings.domains);

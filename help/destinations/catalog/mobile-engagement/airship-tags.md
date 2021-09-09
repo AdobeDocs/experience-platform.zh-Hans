@@ -3,18 +3,14 @@ keywords: 飞艇标签；飞艇目的地
 title: Airship Tags连接
 description: 将Adobe受众数据无缝地作为受众标记传递到Airship，以便在Airship中进行定位。
 exl-id: 84cf5504-f0b5-48d8-8da1-ff91ee1dc171
-source-git-commit: e413933920028e3239f6044111d9cf215c865eba
+source-git-commit: a765f6829f08f36010e0e12a7186bf5552dfe843
 workflow-type: tm+mt
-source-wordcount: '705'
-ht-degree: 1%
+source-wordcount: '685'
+ht-degree: 0%
 
 ---
 
-# （测试版）[!DNL Airship Tags]连接 {#airship-tags-destination}
-
->[!IMPORTANT]
->
->Adobe Experience Platform中的[!DNL Airship Tags]目标当前处于测试阶段。 文档和功能可能会发生变化。
+# [!DNL Airship Tags] 连接 {#airship-tags-destination}
 
 ## 概述
 
