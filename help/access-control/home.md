@@ -5,7 +5,7 @@ topic-legacy: overview
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 13055c9b569a67b5b44a90ac2b40776e271db008
+source-git-commit: 88593d921d6ad97fc4dfb059f0272817caee06c7
 workflow-type: tm+mt
 source-wordcount: '1375'
 ht-degree: 2%
@@ -68,7 +68,7 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 
 “沙盒管理”权限允许用户管理、查看或重置沙箱。
 
-### 权限
+### 权限 {#permissions}
 
 产品配置文件中的权限选项卡会显示该配置文件处于活动状态的沙箱和权限：
 

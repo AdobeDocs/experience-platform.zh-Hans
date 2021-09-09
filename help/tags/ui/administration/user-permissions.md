@@ -1,10 +1,11 @@
 ---
 title: 标记的用户权限
 description: 了解可用于标记的不同类型权限以及针对不同业务用例的一些基本实施策略。
-source-git-commit: acef25fe46f0ac0c45c18d4590be4af95ad5e0ab
+exl-id: 9b48847a-6133-4dbd-b17d-e7b88152ad7d
+source-git-commit: 88593d921d6ad97fc4dfb059f0272817caee06c7
 workflow-type: tm+mt
 source-wordcount: '1307'
-ht-degree: 15%
+ht-degree: 17%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 15%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配给用户。 不同的权限集不会分配给单个用户，而是单独配置为产品配置文件。 然后，会将用户分配到这些产品配置文件，以授予他们配置的权限。
 
@@ -39,7 +40,7 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 
 默认情况下，产品配置文件会授予对公司中当前和将来存在的所有资产的访问权限。 使用此权限类型，您可以按名称限制或授予对特定现有属性的访问权限。
 
-### 资产权限
+### 资产权限 {#property-rights}
 
 您在数据收集UI中创建的任何资产都将在Admin Console中可用，从而允许您使用同一产品配置文件中的特定资产权限对资产进行分组。
 
