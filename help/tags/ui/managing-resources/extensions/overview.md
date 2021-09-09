@@ -1,10 +1,11 @@
 ---
 title: 扩展
 description: 了解标记扩展在Adobe Experience Platform中的工作方式。
-source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
+exl-id: e911bedd-6c67-4339-91d7-839c8b00c153
+source-git-commit: f7edfa05e25c17f9ace34287c8a2d8426d0f36d4
 workflow-type: tm+mt
 source-wordcount: '497'
-ht-degree: 57%
+ht-degree: 63%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 57%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 扩展是一组打包的代码，用于扩展标记或事件转发提供的功能。
 
@@ -61,7 +62,7 @@ Extensions 页面提供了三个视图：
 1. 在资产的概述页面中，打开&#x200B;**[!UICONTROL Extensions]**&#x200B;选项卡。
 1. 选择一个扩展。
 
-   ![]()../../../images/extensions.png)
+   ![核心扩展](../../../images/extensions.png)
 
    * 如果该扩展存在，请从扩展目录中选择它。
    * 将鼠标悬停在列表中的扩展上以配置或禁用该扩展。
