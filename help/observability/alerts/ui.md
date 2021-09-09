@@ -2,13 +2,14 @@
 keywords: Experience Platform；主页；热门主题；日期范围
 title: 警报UI指南
 description: 了解如何在Experience Platform用户界面中管理警报。
-source-git-commit: 5fabf5fa12f0a117a50bf694dea5118e5ea03500
+feature: Alerts
+exl-id: 4ba3ef2b-7394-405e-979d-0e5e1fe676f3
+source-git-commit: d82487f34c0879ed27ac55e42d70346f45806131
 workflow-type: tm+mt
 source-wordcount: '240'
 ht-degree: 0%
 
 ---
-
 
 # 警报UI指南
 

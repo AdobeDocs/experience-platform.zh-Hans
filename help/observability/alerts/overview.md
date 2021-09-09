@@ -2,13 +2,14 @@
 keywords: Experience Platform；主页；热门主题；日期范围
 title: 警报概述
 description: 了解Adobe Experience Platform中的警报，包括警报规则的定义结构。
-source-git-commit: 5fabf5fa12f0a117a50bf694dea5118e5ea03500
+feature: Alerts
+exl-id: c38a93c6-1618-4ef9-8f94-41c7ab4af43c
+source-git-commit: d82487f34c0879ed27ac55e42d70346f45806131
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '740'
 ht-degree: 3%
 
 ---
-
 
 # 警报概述
 
@@ -34,7 +35,7 @@ Adobe Experience Platform允许您订阅有关Adobe Experience Platform活动的
 
 警报可以划分为以下组件：
 
-| Component | 描述 |
+| 组件 | 描述 |
 | --- | --- |
 | **量度** | 可观察性[量度](../api/metrics.md#available-metrics)，其值会触发警报，如失败的批量摄取事件数(`timeseries.ingestion.dataset.batchfailed.count`)。 |
 | **条件** | 与量度相关的条件，如果量度解析为true，则会触发警报，例如超过特定数字的计数量度。 此条件可能与预定义的时间窗口相关联。 |
@@ -56,6 +57,10 @@ Adobe Experience Platform允许您订阅有关Adobe Experience Platform活动的
 警报可发送到配置的Webhook，以促进活动监控的高效自动化。 要通过WebHook接收警报，您必须在Adobe开发人员控制台中为平台警报注册WebHook。 有关具体步骤，请参阅[订阅Adobe I/O事件通知](./subscribe.md)的指南。
 
 ### 平台UI {#ui}
+
+平台UI允许您查看收到的警报并管理警报规则。 以下视频介绍了这些功能。
+
+>[!VIDEO](https://video.tv.adobe.com/v/336218?quality=12&learn=on)
 
 要在Platform UI中处理警报，您必须通过Adobe Admin Console启用以下访问控制权限：
 

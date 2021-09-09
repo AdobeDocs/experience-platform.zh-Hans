@@ -1,14 +1,15 @@
 ---
 keywords: Experience Platform；主页；热门主题；日期范围
 title: 标准警报规则
-description: '本文档涵盖由Experience Platform提供的预定义警报规则。 '
-source-git-commit: de8d8d92622abc75f2d09f4bb771dbe4268d0b38
+description: 本文档涵盖由Experience Platform提供的预定义警报规则。
+feature: Alerts
+exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
+source-git-commit: d82487f34c0879ed27ac55e42d70346f45806131
 workflow-type: tm+mt
 source-wordcount: '148'
 ht-degree: 12%
 
 ---
-
 
 # 标准警报规则
 
