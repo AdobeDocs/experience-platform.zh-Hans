@@ -2,8 +2,7 @@
 keywords: Experience Platform；用户界面；UI；功能板；功能板；配置文件；区段；目标；许可证使用
 title: 标准功能板小组件
 description: '本指南提供了向Adobe Experience Platform功能板添加标准小组件的分步说明。 '
-exl-id: 1d33e3ea-a8a8-4a09-8bd9-2e04ecedebdc
-source-git-commit: 16a8764fd27e6b1ae32bc37b3abcd521aaf88887
+source-git-commit: 3235c48ec1f449e45b3f4b096585b67e14600407
 workflow-type: tm+mt
 source-wordcount: '403'
 ht-degree: 0%

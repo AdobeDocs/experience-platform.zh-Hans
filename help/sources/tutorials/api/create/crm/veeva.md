@@ -5,8 +5,7 @@ title: 使用流服务API创建Veeva CRM基本连接
 topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Veeva CRM。
-exl-id: 4658e392-1bd9-4e74-aa05-96109f9b62a0
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 3235c48ec1f449e45b3f4b096585b67e14600407
 workflow-type: tm+mt
 source-wordcount: '514'
 ht-degree: 1%
@@ -23,7 +22,7 @@ ht-degree: 1%
 
 本教程将指导您完成使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)为[!DNL Veeva CRM]创建基本连接的步骤。
 
-## 入门指南
+## 快速入门
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 

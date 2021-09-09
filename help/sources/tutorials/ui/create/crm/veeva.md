@@ -5,8 +5,7 @@ title: 在UI中创建Veeva CRM源连接
 topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Veeva CRM源连接。
-exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: 076e0880c9efd1fe1cbfb4c610c5e15093adf460
+source-git-commit: 3235c48ec1f449e45b3f4b096585b67e14600407
 workflow-type: tm+mt
 source-wordcount: '426'
 ht-degree: 1%

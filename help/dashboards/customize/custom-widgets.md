@@ -2,8 +2,7 @@
 keywords: Experience Platform；用户界面；UI；功能板；功能板；配置文件；区段；目标；许可证使用情况；小组件；量度；
 title: 为功能板创建自定义小组件
 description: '本指南提供了有关创建自定义小组件以便在Adobe Experience Platform功能板中使用的分步说明。 '
-exl-id: 1d33e3ea-a8a8-4a09-8bd9-2e04ecedebdc
-source-git-commit: 4a578721cfc5e6e35179bec82886808fd6e18b53
+source-git-commit: 3235c48ec1f449e45b3f4b096585b67e14600407
 workflow-type: tm+mt
 source-wordcount: '902'
 ht-degree: 0%
