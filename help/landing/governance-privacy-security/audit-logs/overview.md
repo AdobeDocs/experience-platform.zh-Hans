@@ -1,9 +1,10 @@
 ---
 title: 审核日志概述
 description: 了解审核日志如何让您了解谁在Adobe Experience Platform中执行了哪些操作。
-source-git-commit: 937225ff08e2e02c5840f86d6ed50644e05bdfe5
+exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
+source-git-commit: df269a30251cb17e337ec25787d6a1eed41e9c0b
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '469'
 ht-degree: 4%
 
 ---
@@ -36,7 +37,7 @@ ht-degree: 4%
 
 为贵组织启用该功能后，会在发生活动时自动收集审核日志。 您无需手动启用日志收集。
 
-要查看和导出审核日志，您必须获得“查看审核日志”访问控制权限。 要了解如何管理Platform功能的各个权限，请参阅[访问控制文档](../../../access-control/home.md)。
+要查看和导出审核日志，您必须已授予“查看审核日志”访问控制权限（位于“数据管理”类别下）。 要了解如何管理Platform功能的各个权限，请参阅[访问控制文档](../../../access-control/home.md)。
 
 ## 在UI中管理审核日志
 
