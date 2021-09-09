@@ -1,16 +1,16 @@
 ---
-title: Adobe Experience Platform数据收集端到端概述
-description: 有关如何使用Adobe Experience Cloud数据收集将事件数据发送到Adobe Experience Platform解决方案的高级概述。
-source-git-commit: b14d592c8beb5fc545ae0682000e4e05b6dac3a0
+title: 数据收集端到端概述
+description: 简要概述如何使用Adobe Experience Platform提供的数据收集技术将事件数据发送到Adobe Experience Cloud解决方案。
+source-git-commit: 2bcb42b83020a9ce620cb8162b7fc072b72ff23e
 workflow-type: tm+mt
-source-wordcount: '2569'
+source-wordcount: '2568'
 ht-degree: 0%
 
 ---
 
-# Adobe Experience Platform数据收集端到端概述
+# 数据收集端到端概述
 
-Adobe Experience Platform数据收集提供了多种技术，可通力协作来收集将数据传输到其他Adobe产品或第三方目标。 要将事件数据从您的应用程序发送到Adobe Experience Platform边缘网络，请务必了解这些核心技术以及如何配置它们以在需要时将数据交付到所需的目标。
+在Adobe Experience Platform中，数据收集是指一些技术，它们可通过协作来收集将您的数据传输到其他Adobe产品或第三方目标。 要将事件数据从您的应用程序发送到Adobe Experience Platform边缘网络，请务必了解这些核心技术以及如何配置它们以在需要时将数据交付到所需的目标。
 
 本指南提供了有关如何使用数据收集技术通过边缘网络发送事件的高级教程。 具体而言，本教程将演示在数据收集UI中安装和配置Adobe Experience Platform Web SDK标记扩展的步骤。
 
