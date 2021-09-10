@@ -2,9 +2,9 @@
 title: 数据收集端到端概述
 description: 简要概述如何使用Adobe Experience Platform提供的数据收集技术将事件数据发送到Adobe Experience Cloud解决方案。
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 1b2c0c2e5b05e30b6cf0e284f15f28989c580efe
+source-git-commit: 3f5a05068a24432237a5241dd20680d2f8ed0b55
 workflow-type: tm+mt
-source-wordcount: '2619'
+source-wordcount: '2618'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 ## 流程摘要
 
-为您的网站配置边缘网络的过程可概括如下：
+为网站配置数据收集的过程可概括如下：
 
 1. [创建一](#schema) 个架构，以确定在将数据发送到边缘网络时数据的结构方式。
 1. [创建数](#datastream) 据流以配置您希望将数据发送到的目标。
