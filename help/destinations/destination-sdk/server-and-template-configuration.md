@@ -1,7 +1,8 @@
 ---
 description: 可以在Adobe Experience Platform目标SDK中通过公共端点“/authoring/destination-servers”配置服务器和模板规范。
 title: 目标SDK中服务器和模板规范的配置选项
-source-git-commit: d2452bf0e59866d3deca57090001c4c5a0935525
+exl-id: cf493ed5-0bdb-4b90-b84d-73926a566a2a
+source-git-commit: bd65cfa557fb42d23022578b98bc5482e8bd50b1
 workflow-type: tm+mt
 source-wordcount: '411'
 ht-degree: 7%
@@ -23,7 +24,7 @@ ht-degree: 7%
    "urlBasedDestination":{
       "url":{
          "templatingStrategy":"PEBBLE_V1",
-         "value":"https://api.moviestar.com/data/{{endpoint.region}}/items"
+         "value":"https://api.moviestar.com/data/{{customerData.region}}/items"
       }
    },
    "httpTemplate":{
@@ -49,7 +50,7 @@ ht-degree: 7%
 |---|---|---|
 | `name` | 字符串 | 表示服务器的友好名称，仅对Adobe可见。 合作伙伴或客户看不到此名称。 示例 `Moviestar destination server`. |
 | `destinationServerType` | 字符串 | `URL_BASED` 是当前唯一可用的选项。 |
-| `templatingStrategy` | 字符串 | <ul><li>如果Adobe需要转换下面`value`字段中的URL，请使用`PEBBLE_V1`。 如果您具有如下端点，请使用此选项：`https://api.moviestar.com/data/{{endpoint.region}}/items` </li><li> 如果Adobe端不需要转换，例如，如果您具有如下端点，则使用`NONE`:`https://api.moviestar.com/data/items` </li></ul> |
+| `templatingStrategy` | 字符串 | <ul><li>如果Adobe需要转换下面`value`字段中的URL，请使用`PEBBLE_V1`。 如果您具有如下端点，请使用此选项：`https://api.moviestar.com/data/{{customerData.region}}/items` </li><li> 如果Adobe端不需要转换，例如，如果您具有如下端点，则使用`NONE`:`https://api.moviestar.com/data/items` </li></ul> |
 | `value` | 字符串 | 填写Experience Platform应连接到的API端点的地址。 |
 
 {style=&quot;table-layout:auto&quot;}

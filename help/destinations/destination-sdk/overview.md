@@ -2,9 +2,9 @@
 description: Adobe Experience Platform目标SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式将受众和配置文件数据交付到您的端点。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。
 title: Adobe Experience Platform目标SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: 2841adc0ce212a945c35ba38209d4c00c519ad7b
+source-git-commit: bd65cfa557fb42d23022578b98bc5482e8bd50b1
 workflow-type: tm+mt
-source-wordcount: '691'
+source-wordcount: '702'
 ht-degree: 2%
 
 ---
@@ -63,8 +63,8 @@ This documentation set provides you with all the necessary information to add yo
 ---------|----------|
 | 独立软件供应商(ISV) | 加入[AdobeExchange程序](https://partners.adobe.com/exchangeprogram/experiencecloud.html)并请求获取配置了Experience Platform沙箱以访问目标SDK。 |
 | 系统集成商(SI) | 您需要在[Adobe解决方案合作伙伴计划](https://solutionpartners.adobe.com/home.html)中处于金牌或白金级别，并且您将获得一个Experience Platform沙盒的配置和目标SDK的访问权限。 |
-| Experience Platform客户激活包 | 默认情况下，您可以访问Experience Platform沙箱和目标SDK。 |
-| Experience Platform客户使用实时CDP包 | 您无权访问目标SDK，但有权访问由使用目标SDK的其他公司配置并跨Experience Platform组织发布的所有产品化目标。 |
+| Experience Platform[激活包](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html)上的客户 | 默认情况下，您可以访问Experience Platform沙箱和目标SDK。 |
+| Experience Platform[Real-time CDP包](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)上的客户 | 您无权访问目标SDK，但有权访问由使用目标SDK的其他公司配置并跨Experience Platform组织发布的所有产品化目标。 |
 
 {style=&quot;table-layout:auto&quot;}
 
