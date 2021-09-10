@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 834814cc2929c618b9f41c0fcf3ef79a831a969d
+source-git-commit: 9ec7bd591af6c76a794f83d5a984017330328238
 workflow-type: tm+mt
-source-wordcount: '627'
+source-wordcount: '628'
 ht-degree: 9%
 
 ---
@@ -127,6 +127,7 @@ ht-degree: 9%
       * [AdobeLivefyre扩展](./catalog/social/adobe-livefyre.md)
       * [Facebook连接](./catalog/social/facebook.md)
       * [linkedIn匹配的受众连接](./catalog/social/linkedin.md)
+      * [[!DNL Twitter Custom Audiences] 连接](./catalog/social/twitter.md)
    * 调查目标{#survey}
       * [Survey目标概述](./catalog/survey/overview.md)
       * [Foresee扩展目标](./catalog/survey/foresee.md)
