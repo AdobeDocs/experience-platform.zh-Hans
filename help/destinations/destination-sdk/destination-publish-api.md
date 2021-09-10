@@ -1,9 +1,10 @@
 ---
 description: 本页列出并介绍了您可以使用“/authoring/destinations/publish” API端点执行的所有API操作。
 title: 发布目标API端点操作
-source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+exl-id: 0564a132-42f4-478c-9197-9b051acf093c
+source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '775'
 ht-degree: 4%
 
 ---
@@ -123,6 +124,8 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 | `publishDetailsList.allowedOrgs` | 字符串 | 返回目标应可用的Experience Platform组织。 |
 | `publishDetailsList.status` | 字符串 | 目标发布请求的状态。 可能的值包括`TEST`、`REVIEW`、`APPROVED`、`PUBLISHED`、`DENIED`、`REVOKED`、`DEPRECATED`。 |
 | `publishDetailsList.publishedDate` | 字符串 | 提交目标以进行发布的日期（以纪元时间表示）。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 更新现有目标发布请求 {#update}
 

@@ -1,10 +1,11 @@
 ---
 description: 本页列出并介绍了可使用“/authoring/sample-profiles” API端点执行的所有API操作，以生成要在目标测试中使用的示例配置文件。
 title: 配置文件生成API操作示例
-source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
+source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
 workflow-type: tm+mt
-source-wordcount: '796'
-ht-degree: 1%
+source-wordcount: '805'
+ht-degree: 2%
 
 ---
 
@@ -47,6 +48,8 @@ GET authoring/sample-profiles?destinationInstanceId={DESTINATION_INSTANCE_ID}&co
 | -------- | ----------- |
 | `{DESTINATION_INSTANCE_ID}` | 您生成示例用户档案所依据的目标实例的ID。 |
 | `{COUNT}` | *可选*. 要生成的示例用户档案数。 参数可采用`1 - 1000`之间的值。 <br> 如果未指定count参数，则生成的配置文件的默认数量由目标服务 `maxUsersPerRequest` 器配置中 [的值确定](./destination-server-api.md#create)。如果未定义此属性，则Adobe将生成一个示例配置文件。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 
 **请求**
@@ -170,6 +173,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 | `xdm:status` | 指示区段成员资格是否已作为当前请求的一部分实现。 接受以下值： <ul><li>`existing`:在请求之前，用户档案已经是区段的一部分，并将继续保持其会员资格。</li><li>`realized`:用户档案将在当前请求中输入区段。</li><li>`exited`:该用户档案将作为当前请求的一部分退出该区段。</li></ul> |
 | `identityMap` | 映射类型字段，用于描述个人的各种身份值及其关联的命名空间。 有关`identityMap`的更多信息，请阅读[架构组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#identityMap)。 |
 
+{style=&quot;table-layout:auto&quot;}
 
 ## 根据目标架构生成示例用户档案 {#generate-sample-profiles-target-schema}
 
@@ -191,6 +195,8 @@ GET authoring/sample-profiles?destinationId={DESTINATION_ID}&count={COUNT}
 | -------- | ----------- |
 | `{DESTINATION_ID}` | 基于生成示例用户档案的目标配置的ID。 |
 | `{COUNT}` | *可选*. 要生成的示例用户档案数。 参数可采用`1 - 1000`之间的值。 <br> 如果未指定count参数，则生成的配置文件的默认数量由目标服务 `maxUsersPerRequest` 器配置中 [的值确定](./destination-server-api.md#create)。如果未定义此属性，则Adobe将生成一个示例配置文件。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 **请求**
 

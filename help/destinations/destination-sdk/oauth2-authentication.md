@@ -1,7 +1,8 @@
 ---
 description: 本页介绍了目标SDK支持的各种OAuth 2身份验证流，并提供了为目标设置OAuth 2身份验证的说明。
 title: OAuth 2身份验证
-source-git-commit: d2452bf0e59866d3deca57090001c4c5a0935525
+exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
+source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 5%

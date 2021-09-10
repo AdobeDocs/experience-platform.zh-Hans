@@ -1,9 +1,10 @@
 ---
 description: 本页列出并描述了您可以使用“/authoring/testing/destinationInstance/” API端点执行的所有API操作，以测试目标是否配置正确，以及验证数据流到您配置的目标的完整性。
 title: 目标测试API操作
-source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+exl-id: 2b54250d-ec30-4ad7-a8be-b86b14e4f074
+source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '657'
 ht-degree: 1%
 
 ---
@@ -158,6 +159,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 | `results.httpCalls.response` | 包括Adobe从您的目的地接收的响应。 |
 | `inputProfiles` | 包括在目标调用中导出的用户档案。 配置文件与您的源架构匹配。 |
 
+{style=&quot;table-layout:auto&quot;}
 
 ## 通过向调用添加的用户档案测试目标配置 {#test-with-added-profiles}
 

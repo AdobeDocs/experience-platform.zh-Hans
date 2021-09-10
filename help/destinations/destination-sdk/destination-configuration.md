@@ -1,10 +1,11 @@
 ---
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 目标SDK的目标配置选项
-source-git-commit: d2452bf0e59866d3deca57090001c4c5a0935525
+exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
+source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
 workflow-type: tm+mt
-source-wordcount: '1506'
-ht-degree: 4%
+source-wordcount: '1527'
+ht-degree: 5%
 
 ---
 
@@ -123,6 +124,8 @@ ht-degree: 4%
 | `description` | 字符串 | 提供Adobe将在目标卡的Experience Platform目标目录中使用的描述。 目标不超过4-5句。 |
 | `status` | 字符串 | 指示目标卡的生命周期状态。 接受的值包括 `TEST`、`PUBLISHED` 和 `DELETED`。首次配置目标时，请使用`TEST`。 |
 
+{style=&quot;table-layout:auto&quot;}
+
 ## 客户身份验证配置 {#customer-authentication-configurations}
 
 此部分在Experience Platform用户界面中生成帐户页面，用户可在该页面中将Experience Platform连接到他们与您的目标拥有的帐户。 根据您在`authType`字段中指示的身份验证选项，将为用户生成Experience Platform页面，如下所示：
@@ -145,6 +148,8 @@ ht-degree: 4%
 | `customerAuthenticationConfigurations` | 字符串 | 指示用于向服务器验证Experience Platform客户的配置。 有关已接受的值，请参阅下面的`authType`。 |
 | `authType` | 字符串 | 接受的值为`OAUTH2, BEARER`。 <br><ul><li> 如果您的目标支持OAuth 2身份验证，请选择`OAUTH2`值并添加OAuth 2的必填字段，如目标SDK OAuth 2身份验证页面中所示。 此外，您还应在[目标投放部分](./destination-configuration.md)中选择`authenticationRule=CUSTOMER_AUTHENTICATION`。 </li><li>对于承载身份验证，请选择`BEARER`并在[目标投放部分](./destination-configuration.md)中选择`authenticationRule=CUSTOMER_AUTHENTICATION`。</li></ul> |
 
+{style=&quot;table-layout:auto&quot;}
+
 ## 客户数据字段 {#customer-data-fields}
 
 此部分允许合作伙伴引入自定义字段。 在上面的示例配置中，`customerDataFields`要求用户在身份验证流程中选择一个端点，并在目标中指示其客户ID。 配置会反映在身份验证流程中，如下所示：
@@ -161,6 +166,8 @@ ht-degree: 4%
 | `enum` | 字符串 | 将自定义字段呈现为下拉菜单，并列出可供用户使用的选项。 |
 | `pattern` | 字符串 | 如果需要，可为自定义字段实施模式。 使用正则表达式来强制实施模式。 例如，如果您的客户ID不包含数字或下划线，请在此字段中输入`^[A-Za-z]+$`。 |
 
+{style=&quot;table-layout:auto&quot;}
+
 ## UI属性 {#ui-attributes}
 
 此部分引用上述配置中的UI元素，Adobe应在Adobe Experience Platform用户界面中将其用于您的目标。 请参阅下文：
@@ -171,6 +178,8 @@ ht-degree: 4%
 | `category` | 字符串 | 是指分配给您在Adobe Experience Platform中的目标的类别。 有关更多信息，请阅读[目标类别](https://experienceleague.adobe.com/docs/experience-platform/destinations/destination-types.html)。 使用以下任一值：`adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`。 |
 | `connectionType` | 字符串 | `Server-to-server` 是当前唯一可用的选项。 |
 | `frequency` | 字符串 | `Streaming` 是当前唯一可用的选项。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 映射步骤中的架构配置 {#schema-configuration}
 
@@ -184,6 +193,8 @@ ht-degree: 4%
 | `profileRequired` | 布尔型 | 如果用户应该能够将配置文件属性从Experience Platform映射到目标侧的自定义属性，请使用`true` ，如上面的示例配置中所示。 |
 | `segmentRequired` | 布尔型 | 始终使用`segmentRequired:true`。 |
 | `identityRequired` | 布尔型 | 如果用户应能够将身份命名空间从Experience Platform映射到所需的架构，请使用`true`。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 身份和属性 {#identities-and-attributes}
 
@@ -205,6 +216,8 @@ Adobe需要知道哪些[!DNL Platform]标识客户能够导出到您的目标。
 | `allowedAttributesTransformation` | 字符串 | *示例配置中未显示*。例如，当[!DNL Platform]客户将纯电子邮件地址作为属性，且您的平台仅接受经过哈希处理的电子邮件时，便会使用。 在这里，您将提供需要应用的转换（例如，将电子邮件转换为小写，然后再转换为哈希）。 |
 | `acceptedGlobalNamespaces` | - | *示例配置中未显示*。用于平台接受[标准身份命名空间](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces)（例如IDFA）时的情况，因此您可以限制Platform用户仅选择这些身份命名空间。 |
 
+{style=&quot;table-layout:auto&quot;}
+
 ## 目标投放 {#destination-delivery}
 
 | 参数 | 类型 | 描述 |
@@ -212,6 +225,8 @@ Adobe需要知道哪些[!DNL Platform]标识客户能够导出到您的目标。
 | `authenticationRule` | 字符串 | 指示[!DNL Platform]客户如何连接到您的目标。 接受的值为`CUSTOMER_AUTHENTICATION`、`PLATFORM_AUTHENTICATION`、`NONE`。 <br> <ul><li>如果Platform客户通过用户名和密码、载体令牌或其他身份验证方法登录您的系统，请使用`CUSTOMER_AUTHENTICATION`。 例如，如果您还在`customerAuthenticationConfigurations`中选择了`authType: OAUTH2`或`authType:BEARER`，则可以选择此选项。 </li><li> 如果Adobe与目标之间存在全局身份验证系统，且[!DNL Platform]客户不需要提供任何身份验证凭据即可连接到您的目标，则使用`PLATFORM_AUTHENTICATION`。 在这种情况下，必须使用[Credentials](./credentials-configuration.md)配置创建凭据对象。 </li><li>如果向目标平台发送数据不需要任何身份验证，则使用`NONE`。 </li></ul> |
 | `destinationServerId` | 字符串 | 用于此目标的[目标服务器配置](./destination-server-api.md)的`instanceId`。 |
 | `backfillHistoricalProfileData` | 布尔型 | 控制在将区段激活到目标时是否导出历史配置文件数据。<br> <ul><li> `true`: [!DNL Platform] 发送在激活区段之前符合区段资格条件的历史用户配置文件。 </li><li> `false`: [!DNL Platform] 仅包括激活区段后符合区段资格的用户配置文件。 </li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 区段映射配置 {#segment-mapping}
 

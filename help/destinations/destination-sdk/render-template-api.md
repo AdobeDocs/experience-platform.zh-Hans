@@ -1,10 +1,11 @@
 ---
 description: 本页列出并描述了您可以使用“/authoring/testing/template/render” API端点执行的所有API操作，以根据消息转换模板为目标渲染导出的数据。
 title: 渲染模板API操作
-source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
+source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
 workflow-type: tm+mt
-source-wordcount: '520'
-ht-degree: 1%
+source-wordcount: '523'
+ht-degree: 2%
 
 ---
 
@@ -42,6 +43,8 @@ POST authoring/testing/template/render
 | `destinationId` | 要为其渲染导出数据的目标配置的ID。 |
 | `template` | 基于其渲染导出数据的模板的字符转义版本。 |
 | `profiles` | 如果要向调用正文添加用户档案，可以使用[示例配置文件生成API](./sample-profile-generation-api.md)生成部分。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 
 您可以渲染导出的数据，如以下示例所示：
