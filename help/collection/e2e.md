@@ -1,9 +1,10 @@
 ---
 title: 数据收集端到端概述
 description: 简要概述如何使用Adobe Experience Platform提供的数据收集技术将事件数据发送到Adobe Experience Cloud解决方案。
-source-git-commit: 2bcb42b83020a9ce620cb8162b7fc072b72ff23e
+exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
+source-git-commit: 1b2c0c2e5b05e30b6cf0e284f15f28989c580efe
 workflow-type: tm+mt
-source-wordcount: '2568'
+source-wordcount: '2619'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 在Adobe Experience Platform中，数据收集是指一些技术，它们可通过协作来收集将您的数据传输到其他Adobe产品或第三方目标。 要将事件数据从您的应用程序发送到Adobe Experience Platform边缘网络，请务必了解这些核心技术以及如何配置它们以在需要时将数据交付到所需的目标。
 
-本指南提供了有关如何使用数据收集技术通过边缘网络发送事件的高级教程。 具体而言，本教程将演示在数据收集UI中安装和配置Adobe Experience Platform Web SDK标记扩展的步骤。
+本指南提供了有关如何使用数据收集技术通过边缘网络发送事件的高级教程。 具体而言，本教程将指导您完成在数据收集UI(以前称为Adobe Experience Platform)中安装和配置Adobe Experience Platform Launch Web SDK标记扩展的步骤。
 
 >[!NOTE]
 >
@@ -96,7 +97,7 @@ ht-degree: 0%
 >
 >如果要使用[事件转发](../tags/ui/event-forwarding/overview.md)（假定贵组织已获得该功能的许可），则必须为数据流启用该功能，其方式与启用Adobe产品的方式相同。 [后面部分](#event-forwarding)中介绍了有关此过程的详细信息。
 
-在数据收集UI中，选择&#x200B;**[!UICONTROL 数据流]**。 在此，您可以从列表中选择要编辑的现有数据流，也可以通过选择&#x200B;**[!UICONTROL 新建数据流]**&#x200B;来创建新配置。
+在数据收集UI中，选择&#x200B;**[!UICONTROL 数据流]**。 在此，您可以从列表中选择要编辑的现有数据流，或通过选择&#x200B;**[!UICONTROL 新建数据流]**&#x200B;创建新配置。
 
 ![数据流](./images/e2e/datastreams.png)
 
@@ -179,9 +180,26 @@ ht-degree: 0%
 
 保存数据元素后，下一步是创建一个规则，当您的网站上发生特定事件时（例如，客户将产品添加到购物车时），该规则会将其发送到边缘网络。
 
-例如，此部分演示如何创建客户将项目添加到购物车时将触发的规则。 但是，您几乎可以为网站上可能发生的任何事件设置规则。
+您几乎可以为网站上可能发生的任何事件设置规则。 例如，本节将演示如何创建将在客户提交表单时触发的规则。 以下HTML表示一个包含“添加到购物车”表单的简单网页，该网页将成为规则的主题：
 
-在左侧导航中选择&#x200B;**[!UICONTROL Rules]**，然后选择&#x200B;**[!UICONTROL 创建新规则]**。
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+  <form id="add-to-cart-form">
+    <label for="item">Product:</label><br>
+    <input type="text" id="item" name="item"><br>
+    <label for="amount">Amount:</label><br>
+    <input type="number" id="amount" name="amount" value="1"><br><br>
+    <input type="submit" value="Add to Cart">
+  </form> 
+
+</body>
+</html>
+```
+
+在数据收集UI的左侧导航中，选择&#x200B;**[!UICONTROL Rules]**，然后选择&#x200B;**[!UICONTROL Create New Rule]**。
 
 ![规则](./images/e2e/rules.png)
 
@@ -189,13 +207,13 @@ ht-degree: 0%
 
 ![名称规则](./images/e2e/name-rule.png)
 
-将显示事件配置页面。 要配置事件，必须先选择事件类型。 事件类型由扩展提供。 例如，要设置“表单提交”事件，请选择&#x200B;**[!UICONTROL Core]**&#x200B;扩展，然后选择&#x200B;**[!UICONTROL Form]**&#x200B;类别下的&#x200B;**[!UICONTROL Submit]**&#x200B;事件类型。 在显示的配置对话框中，您可以为希望此规则触发的特定表单提供CSS选择器。
+将显示事件配置页面。 要配置事件，必须先选择事件类型。 事件类型由扩展提供。 例如，要设置“表单提交”事件，请选择&#x200B;**[!UICONTROL Core]**&#x200B;扩展，然后选择&#x200B;**[!UICONTROL Form]**&#x200B;类别下的&#x200B;**[!UICONTROL Submit]**&#x200B;事件类型。
 
 >[!NOTE]
 >
 >有关AdobeWeb扩展提供的不同事件类型（包括如何配置事件类型）的更多信息，请参阅标记文档中的[Adobe扩展引用](../tags/extensions/web/overview.md)。
 
-选择&#x200B;**[!UICONTROL Keep Changes]**&#x200B;以将事件添加到规则中。
+表单提交事件允许您使用[CSS选择器](https://www.w3schools.com/css/css_selectors.asp)来引用要触发的规则的特定元素。 在以下示例中，使用了ID `add-to-cart-form`，以便此规则仅针对“Add to Cart”表单触发。 选择&#x200B;**[!UICONTROL Keep Changes]**&#x200B;以将事件添加到规则中。
 
 ![事件配置](./images/e2e/event-config.png)
 
