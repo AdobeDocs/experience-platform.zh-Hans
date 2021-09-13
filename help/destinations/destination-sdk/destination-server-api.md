@@ -2,9 +2,9 @@
 description: 本页列出并介绍了可使用“/authoring/destination-servers” API端点执行的所有API操作。 可以在Adobe Experience Platform目标SDK中通过公共端点“/authoring/destination-servers”配置目标的服务器和模板规范。
 title: 目标服务器端点API操作
 exl-id: a144b0fb-d34f-42d1-912b-8576296e59d2
-source-git-commit: bd65cfa557fb42d23022578b98bc5482e8bd50b1
+source-git-commit: 3ab19995d9520c35701912087158bf63755c55c8
 workflow-type: tm+mt
-source-wordcount: '938'
+source-wordcount: '837'
 ht-degree: 4%
 
 ---
@@ -70,8 +70,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `destinationServerType` | 字符串 | `URL_BASED` 是当前唯一可用的选项。 |
 | `urlBasedDestination.url.templatingStrategy` | 字符串 | <ul><li>如果Adobe需要转换下面`value`字段中的URL，请使用`PEBBLE_V1`。 如果您具有如下端点，请使用此选项：`https://api.moviestar.com/data/{{customerData.region}}/items`。 </li><li> 如果Adobe端不需要转换，例如，如果您具有如下端点，则使用`NONE`:`https://api.moviestar.com/data/items`。</li></ul> |
 | `urlBasedDestination.url.value` | 字符串 | 填写Experience Platform应连接到的API端点的地址。 |
-| `urlBasedDestination.maxUsersPerRequest` | 整数 | Adobe可以在一个HTTP调用中聚合多个导出的配置文件。 指定您的端点在单个HTTP调用中应接收的最大配置文件数。 请注意，这是一种尽力的聚合。 例如，如果您指定值100，则Adobe可能会在一次调用中发送小于100的任何用户档案数。 <br> 如果您的服务器不接受每个请求的多个用户，请将此值设置为1。 |
-| `urlBasedDestination.splitUserById` | 布尔型 | 如果目标的调用应按身份进行拆分，则使用此标记。 如果服务器在给定的命名空间中每次调用仅接受一个标识，则将此标记设置为`true`。 |
 | `httpTemplate.httpMethod` | 字符串 | Adobe在对服务器的调用中将使用的方法。 选项包括`GET`、`PUT`、`POST`、`DELETE`、`PATCH`。 |
 | `httpTemplate.requestBody.templatingStrategy` | 字符串 | 使用 `PEBBLE_V1`. |
 | `httpTemplate.requestBody.value` | 字符串 | 此字符串是字符转义版本，可将Platform客户的数据转换为您的服务所需的格式。<br> <ul><li> 有关如何编写模板的信息，请阅读[使用模板部分](./message-format.md#using-templating)。 </li><li> 有关字符转义的更多信息，请参阅[RFC JSON标准第七节](https://tools.ietf.org/html/rfc8259#section-7)。 </li><li> 有关简单转换的示例，请参阅[配置文件属性](./message-format.md#attributes)转换。 </li></ul> |
