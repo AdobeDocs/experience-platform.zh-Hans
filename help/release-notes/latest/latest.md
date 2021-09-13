@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: b1dca51264582788ccbde005b063c57e2f3edc8f
+source-git-commit: e9d5f24bec8cd2793ce30245b46c1d912bf17cc7
 workflow-type: tm+mt
-source-wordcount: '536'
-ht-degree: 8%
+source-wordcount: '711'
+ht-degree: 7%
 
 ---
 
@@ -25,10 +25,22 @@ Adobe Experience Platform 现有功能的更新包括：
 
 目标是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
 
+**新目标**
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [[!DNL Airship Attributes]](../../destinations/catalog/mobile-engagement/airship-attributes.md) | “飞艇属性”目标（以前为测试版）现已普遍可用。 |
+| [[!DNL Airship Tags]](../../destinations/catalog/mobile-engagement/airship-tags.md) | Airship Tags目标（以前为测试版）现已正式可用。 |
+| [[!DNL Braze]](../../destinations/catalog/mobile-engagement/braze.md) | Braze目标（以前为测试版）现在正式可用。 |
+| [[!DNL Pinterest Customer List]](../../destinations/catalog/advertising/pinterest.md) | 在Pinterest客户列表目标中，您可以从客户列表创建受众，从访问过您网站的人员或在Pinterest上已与您的内容进行交互的人员。 |
+| [[!DNL Twitter Custom Audiences]](../../destinations/catalog/social/twitter.md) | 通过激活在Twitter中构建的受众，定位您的现有关注者和客户，并创建相关的再营销活动。 |
+| [[!DNL Verizon Media/Yahoo DataX]](../../destinations/catalog/advertising/datax.md) | DataX是Verizon Media/Yahoo的聚合基础架构，它托管各种组件，使Verizon Media/Yahoo能够以安全、自动和可扩展的方式与其外部合作伙伴交换数据。 |
+
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
+| [[!DNL Destination SDK]](../../destinations/destination-sdk/overview.md) | Adobe Experience Platform目标SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式，将受众和配置文件数据交付到您的端点。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。 |
 | [改进了目标的可用性](../../destinations/ui/activation-overview.md) | 目标的可用性改进使营销人员能够将区段无缝地激活到现有目标。 |
 
 有关目标的更多常规信息，请参阅[目标概述](../../destinations/home.md)。
