@@ -4,9 +4,9 @@ seo-description: Use the content on this page together with the rest of the conf
 seo-title: Message format
 title: 消息格式
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: 63fe3b7cc429a1c18cebe998bc82fdea99a6679b
+source-git-commit: 91228b5f2008e55b681053296e8b3ff4448c92db
 workflow-type: tm+mt
-source-wordcount: '1982'
+source-wordcount: '1972'
 ht-degree: 2%
 
 ---
@@ -779,7 +779,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 
 在目标配置中使用[可配置聚合](./destination-configuration.md#configurable-aggregation)时，可以编辑消息转换模板，以根据区段ID、区段别名、区段成员资格或身份命名空间等条件对导出到目标的用户档案进行分组，如以下示例所示。
 
-#### 在模板中使用区段ID聚合键值的示例 {#aggregation-key-segment-id}
+#### 在模板中使用区段ID聚合键 {#aggregation-key-segment-id}
 
 如果您使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`设置为true，则可以在模板中使用`segmentId`将导出到目标的HTTP消息中的用户档案分组：
 
@@ -942,7 +942,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 }
 ```
 
-#### 在模板中使用区段别名聚合键的示例 {#aggregation-key-segment-alias}
+#### 在模板中使用区段别名聚合键 {#aggregation-key-segment-alias}
 
 如果您使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`设置为true，则可以使用模板中的区段别名在导出到目标的HTTP消息中对配置文件进行分组。
 
@@ -952,7 +952,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 "customerList={{input.aggregationKey.segmentAlias}}"
 ```
 
-#### 在模板中使用区段状态聚合键值的示例 {#aggregation-key-segment-status}
+#### 在模板中使用区段状态聚合键 {#aggregation-key-segment-status}
 
 如果您使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`和`includeSegmentStatus`设置为true，则可以使用模板中的区段状态在导出到目标的HTTP消息中对配置文件进行分组，具体取决于应添加配置文件还是从区段中删除配置文件。
 
@@ -968,7 +968,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 "action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}ADD{% endif%}"
 ```
 
-#### 在模板中使用身份命名空间聚合键的示例 {#aggregation-key-identity}
+#### 在模板中使用身份命名空间聚合键 {#aggregation-key-identity}
 
 以下示例将目标配置中的[可配置聚合](./destination-configuration.md#configurable-aggregation)设置为按身份命名空间（格式为`"identityNamespaces": ["email", "phone"]`）聚合导出的配置文件
 
@@ -1071,7 +1071,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 }
 ```
 
-#### 在URL模板中使用聚合键的示例
+#### 在URL模板中使用聚合键
 
 请注意，根据您的用例，您还可以在URL中使用此处描述的聚合键，如下所示：
 
