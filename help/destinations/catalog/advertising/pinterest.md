@@ -1,7 +1,7 @@
 ---
 title: Pinterest客户列表连接
 description: 从客户列表创建受众、访问过您网站的人员或已在Pinterest上与您的内容进行交互的人员。
-source-git-commit: e6fa353c74c652f82ff187692de8784463d0fd01
+source-git-commit: a071aaaf5e9b8ef9223ef4f9ea204460f18bf95e
 workflow-type: tm+mt
 source-wordcount: '516'
 ht-degree: 2%
