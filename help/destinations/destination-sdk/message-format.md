@@ -4,9 +4,9 @@ seo-description: Use the content on this page together with the rest of the conf
 seo-title: Message format
 title: 消息格式
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: 91228b5f2008e55b681053296e8b3ff4448c92db
+source-git-commit: add6c7c4f3a60bd9ee2c2b77a8a242c4df03377b
 workflow-type: tm+mt
-source-wordcount: '1972'
+source-wordcount: '2056'
 ht-degree: 2%
 
 ---
@@ -775,17 +775,22 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 }
 ```
 
-### 在模板中包含聚合键值，以按各种条件对导出的用户档案进行分组 {#template-aggregation-key}
+### 在模板中包含聚合键以访问按各种标准分组的导出用户档案 {#template-aggregation-key}
 
-在目标配置中使用[可配置聚合](./destination-configuration.md#configurable-aggregation)时，可以编辑消息转换模板，以根据区段ID、区段别名、区段成员资格或身份命名空间等条件对导出到目标的用户档案进行分组，如以下示例所示。
+在目标配置中使用[可配置聚合](./destination-configuration.md#configurable-aggregation)时，可以根据区段ID、区段别名、区段成员资格或身份命名空间等条件对导出到目标的配置文件进行分组。
+
+在消息转换模板中，您可以访问上述聚合键，如以下各节的示例中所示。 这有助于您将导出的HTTP消息格式化为非Experience Platform格式，以匹配目标所需的格式。
 
 #### 在模板中使用区段ID聚合键 {#aggregation-key-segment-id}
 
-如果您使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`设置为true，则可以在模板中使用`segmentId`将导出到目标的HTTP消息中的用户档案分组：
+如果您使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`设置为true，则导出到目标的HTTP消息中的配置文件将按区段ID分组。 请参阅下面的如何访问模板中的区段ID。
 
 **输入**
 
-请考虑以下四个配置文件，其中前两个配置文件是区段ID为`788d8874-8007-4253-92b7-ee6b6c20c6f3`的区段的一部分，而另外两个配置文件是区段ID为`8f812592-3f06-416b-bd50-e7831848a31a`的区段的一部分。
+请考虑以下四个用户档案，其中：
+* 前两个区段是区段ID `788d8874-8007-4253-92b7-ee6b6c20c6f3`的一部分
+* 第三个配置文件是区段ID `8f812592-3f06-416b-bd50-e7831848a31a`的一部分
+* 第四个配置文件是上述两个区段的一部分。
 
 用户档案1:
 
@@ -873,6 +878,10 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
          "8f812592-3f06-416b-bd50-e7831848a31a":{
             "lastQualificationTime":"2021-02-20T12:00:00Z",
             "status":"existing"
+         },
+         "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
+            "lastQualificationTime":"2020-11-20T13:15:49Z",
+            "status":"existing"
          }
       }
    }
@@ -885,24 +894,18 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 >
 >对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)中的第9章。
 
+请注意模板中如何使用`audienceId`访问区段ID。 这假定您在目标分类中使用`audienceId`作为区段成员。 您可以改用任何其他字段名称，具体取决于您自己的分类。
+
 ```python
 {
+    "audienceId": "{{ input.aggregationKey.segmentId }}",
     "profiles": [
         {% for profile in input.profiles %}
         {
-            {% for attribute in profile.attributes %}
-            "{{ attribute.key }}":
-                {% if attribute.value is empty %}
-                    null
-                {% else %}
-                    "{{ attribute.value.value }}"
-                {% endif %}
-            {% if not loop.last %},{% endif %}
-            {% endfor %}
+            "first_name": "{{ profile.attributes.firstName.value }}"
         }{% if not loop.last %},{% endif %}
         {% endfor %}
     ]
-    "audienceId": "{{input.aggregationKey.segmentId}}"
 }
 ```
 
@@ -912,49 +915,53 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 
 ```json
 {
-    "profiles": [
-        {
-            "firstName": "Hermione",
-            "birthDate": null
-        },
-        {
-            "firstName": "Harry",
-            "birthDate": "1980/07/31"
-        }
-    ],
-    "audienceId": "788d8874-8007-4253-92b7-ee6b6c20c6f3"
+   "audienceId":"788d8874-8007-4253-92b7-ee6b6c20c6f3",
+   "profiles":[
+      {
+         "firstName":"Hermione",
+         "birthDate":null
+      },
+      {
+         "firstName":"Harry",
+         "birthDate":"1980/07/31"
+      },
+      {
+         "firstName":"Jerry",
+         "birthDate":"1940/01/01"
+      }
+   ]
 }
 ```
 
 ```json
 {
-    "profiles": [
-        {
-            "firstName": "Tom",
-            "birthDate": null
-        },
-        {
-            "firstName": "Jerry",
-            "birthDate": "1940/01/01"
-        }
-    ],
-    "audienceId": "8f812592-3f06-416b-bd50-e7831848a31a"
+   "audienceId":"8f812592-3f06-416b-bd50-e7831848a31a",
+   "profiles":[
+      {
+         "firstName":"Tom",
+         "birthDate":null
+      },
+      {
+         "firstName":"Jerry",
+         "birthDate":"1940/01/01"
+      }
+   ]
 }
 ```
 
 #### 在模板中使用区段别名聚合键 {#aggregation-key-segment-alias}
 
-如果您使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`设置为true，则可以使用模板中的区段别名在导出到目标的HTTP消息中对配置文件进行分组。
+如果使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`设置为true，则还可以访问模板中的区段别名。
 
-将下面的行添加到模板中，以根据区段别名对导出的用户档案进行分组。
+将下面的行添加到模板中，以访问按区段别名分组的导出配置文件。
 
 ```python
-"customerList={{input.aggregationKey.segmentAlias}}"
+customerList={{input.aggregationKey.segmentAlias}}
 ```
 
 #### 在模板中使用区段状态聚合键 {#aggregation-key-segment-status}
 
-如果您使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`和`includeSegmentStatus`设置为true，则可以使用模板中的区段状态在导出到目标的HTTP消息中对配置文件进行分组，具体取决于应添加配置文件还是从区段中删除配置文件。
+如果您使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`和`includeSegmentStatus`设置为true，则可以访问模板中的区段状态，以在导出到目标的HTTP消息中根据应添加配置文件还是从区段中删除配置文件来对配置文件进行分组。
 
 可能的值包括：
 
@@ -962,10 +969,10 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 * 现有
 * 退出
 
-将下面的行添加到模板，以根据上述值在区段中添加或删除用户档案。：
+将下面的行添加到模板，以根据以上值在区段中添加或删除用户档案：
 
 ```python
-"action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}ADD{% endif%}"
+action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}ADD{% endif%}
 ```
 
 #### 在模板中使用身份命名空间聚合键 {#aggregation-key-identity}
@@ -1024,6 +1031,8 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 >
 >对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)中的第9章。
 
+请注意，以下模板中使用了`input.aggregationKey.identityNamespaces`
+
 ```python
 {
             "profiles": [
@@ -1071,7 +1080,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 }
 ```
 
-#### 在URL模板中使用聚合键
+#### 在URL模板中使用聚合键 {#aggregation-key-url-template}
 
 请注意，根据您的用例，您还可以在URL中使用此处描述的聚合键，如下所示：
 
