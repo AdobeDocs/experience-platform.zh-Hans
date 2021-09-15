@@ -3,10 +3,11 @@ description: 将本页面上的内容与合作伙伴目标的其余配置选项�
 seo-description: Use the content on this page together with the rest of the configuration options for partner destinations. This page addresses the messaging format of data exported from Adobe Experience Platform to destinations, while the other page addresses specifics about connecting and authenticating to your destination.
 seo-title: Message format
 title: 消息格式
-source-git-commit: d60933d2083b7befcfa8beba4b1630f372c08cfa
+exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
+source-git-commit: 63fe3b7cc429a1c18cebe998bc82fdea99a6679b
 workflow-type: tm+mt
-source-wordcount: '1505'
-ht-degree: 3%
+source-wordcount: '1982'
+ht-degree: 2%
 
 ---
 
@@ -93,17 +94,15 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 
 1. 简单的转换示例。 了解模板如何与[配置文件属性](./message-format.md#attributes)、[区段成员资格](./message-format.md#segment-membership)和[Identity](./message-format.md#identities)字段的简单转换一起使用。
 2. 组合上述字段的模板的复杂性增加了示例：[创建用于发送区段和标识的模板](./message-format.md#segments-and-identities)和[创建用于发送区段、标识和配置文件属性的模板](./message-format.md#segments-identities-attributes)。
-3. 深入研究，展示两个行业合作伙伴的模板示例。
+3. 模板包括聚合键。 在目标配置中使用[可配置聚合](./destination-configuration.md#configurable-aggregation)时，Experience Platform会根据区段ID、区段状态或身份命名空间等条件对导出到目标的配置文件进行分组。
 
 ### 配置文件属性 {#attributes}
 
 要转换导出到目标的配置文件属性，请参阅下面的JSON和代码示例。
 
-
 >[!IMPORTANT]
 >
 >有关Adobe Experience Platform中所有可用配置文件属性的列表，请参阅[XDM字段词典](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en)。
-
 
 
 **输入**
@@ -776,7 +775,311 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 }
 ```
 
-### 引用：转换模板中使用的上下文和函数
+### 在模板中包含聚合键值，以按各种条件对导出的用户档案进行分组 {#template-aggregation-key}
+
+在目标配置中使用[可配置聚合](./destination-configuration.md#configurable-aggregation)时，可以编辑消息转换模板，以根据区段ID、区段别名、区段成员资格或身份命名空间等条件对导出到目标的用户档案进行分组，如以下示例所示。
+
+#### 在模板中使用区段ID聚合键值的示例 {#aggregation-key-segment-id}
+
+如果您使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`设置为true，则可以在模板中使用`segmentId`将导出到目标的HTTP消息中的用户档案分组：
+
+**输入**
+
+请考虑以下四个配置文件，其中前两个配置文件是区段ID为`788d8874-8007-4253-92b7-ee6b6c20c6f3`的区段的一部分，而另外两个配置文件是区段ID为`8f812592-3f06-416b-bd50-e7831848a31a`的区段的一部分。
+
+用户档案1:
+
+```json
+{
+   "attributes":{
+      "firstName":{
+         "value":"Hermione"
+      },
+      "birthDate":{
+         
+      }
+   },
+   "segmentMembership":{
+      "ups":{
+         "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
+            "lastQualificationTime":"2020-11-20T13:15:49Z",
+            "status":"existing"
+         }
+      }
+   }
+}
+```
+
+用户档案2:
+
+```json
+{
+   "attributes":{
+      "firstName":{
+         "value":"Harry"
+      },
+      "birthDate":{
+         "value":"1980/07/31"
+      }
+   },
+   "segmentMembership":{
+      "ups":{
+         "788d8874-8007-4253-92b7-ee6b6c20c6f3":{
+            "lastQualificationTime":"2020-11-20T13:15:49Z",
+            "status":"existing"
+         }
+      }
+   }
+}
+```
+
+资料3:
+
+```json
+{
+   "attributes":{
+      "firstName":{
+         "value":"Tom"
+      },
+      "birthDate":{
+         
+      }
+   },
+   "segmentMembership":{
+      "ups":{
+         "8f812592-3f06-416b-bd50-e7831848a31a":{
+            "lastQualificationTime":"2021-02-20T12:00:00Z",
+            "status":"existing"
+         }
+      }
+   }
+}
+```
+
+资料4:
+
+```json
+{
+   "attributes":{
+      "firstName":{
+         "value":"Jerry"
+      },
+      "birthDate":{
+         "value":"1940/01/01"
+      }
+   },
+   "segmentMembership":{
+      "ups":{
+         "8f812592-3f06-416b-bd50-e7831848a31a":{
+            "lastQualificationTime":"2021-02-20T12:00:00Z",
+            "status":"existing"
+         }
+      }
+   }
+}
+```
+
+**模板**
+
+>[!IMPORTANT]
+>
+>对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)中的第9章。
+
+```python
+{
+    "profiles": [
+        {% for profile in input.profiles %}
+        {
+            {% for attribute in profile.attributes %}
+            "{{ attribute.key }}":
+                {% if attribute.value is empty %}
+                    null
+                {% else %}
+                    "{{ attribute.value.value }}"
+                {% endif %}
+            {% if not loop.last %},{% endif %}
+            {% endfor %}
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]
+    "audienceId": "{{input.aggregationKey.segmentId}}"
+}
+```
+
+**结果**
+
+导出到目标后，用户档案会根据其区段ID分为两组。
+
+```json
+{
+    "profiles": [
+        {
+            "firstName": "Hermione",
+            "birthDate": null
+        },
+        {
+            "firstName": "Harry",
+            "birthDate": "1980/07/31"
+        }
+    ],
+    "audienceId": "788d8874-8007-4253-92b7-ee6b6c20c6f3"
+}
+```
+
+```json
+{
+    "profiles": [
+        {
+            "firstName": "Tom",
+            "birthDate": null
+        },
+        {
+            "firstName": "Jerry",
+            "birthDate": "1940/01/01"
+        }
+    ],
+    "audienceId": "8f812592-3f06-416b-bd50-e7831848a31a"
+}
+```
+
+#### 在模板中使用区段别名聚合键的示例 {#aggregation-key-segment-alias}
+
+如果您使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`设置为true，则可以使用模板中的区段别名在导出到目标的HTTP消息中对配置文件进行分组。
+
+将下面的行添加到模板中，以根据区段别名对导出的用户档案进行分组。
+
+```python
+"customerList={{input.aggregationKey.segmentAlias}}"
+```
+
+#### 在模板中使用区段状态聚合键值的示例 {#aggregation-key-segment-status}
+
+如果您使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`和`includeSegmentStatus`设置为true，则可以使用模板中的区段状态在导出到目标的HTTP消息中对配置文件进行分组，具体取决于应添加配置文件还是从区段中删除配置文件。
+
+可能的值包括：
+
+* 实现
+* 现有
+* 退出
+
+将下面的行添加到模板，以根据上述值在区段中添加或删除用户档案。：
+
+```python
+"action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}ADD{% endif%}"
+```
+
+#### 在模板中使用身份命名空间聚合键的示例 {#aggregation-key-identity}
+
+以下示例将目标配置中的[可配置聚合](./destination-configuration.md#configurable-aggregation)设置为按身份命名空间（格式为`"identityNamespaces": ["email", "phone"]`）聚合导出的配置文件
+
+**输入**
+
+用户档案1:
+
+```json
+{
+   "identityMap":{
+      "email":[
+         {
+            "id":"e1@example.com"
+         },
+         {
+            "id":"e2@example.com"
+         }
+      ],
+      "phone":[
+         {
+            "id":"+40744111222"
+         }
+      ]
+   }
+}
+```
+
+用户档案2:
+
+```json
+{
+   "identityMap":{
+      "email":[
+         {
+            "id":"e3@example.com"
+         }
+      ],
+      "phone":[
+         {
+            "id":"+40744333444"
+         },
+         {
+            "id":"+40744555666"
+         }
+      ]
+   }
+}
+```
+
+**模板**
+
+>[!IMPORTANT]
+>
+>对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)中的第9章。
+
+```python
+{
+            "profiles": [
+            {% for profile in input.profiles %}
+            {
+                {% for ns in input.aggregationKey.identityNamespaces %}
+                "{{ns}}": [
+                    {% for id in profile.identityMap[ns] %}
+                    "{{id.id}}"{% if not loop.last %},{% endif %}
+                    {% endfor %}
+                ]{% if not loop.last %},{% endif %}
+                {% endfor %}
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+        ]
+}
+```
+
+**结果**
+
+下面的`json`表示从Adobe Experience Platform中导出的数据。
+
+```json
+{
+   "profiles":[
+      {
+         "email":[
+            "e1@example.com",
+            "e2@example.com"
+         ],
+         "phone":[
+            "+40744111222"
+         ]
+      },
+      {
+         "email":[
+            "e3@example.com"
+         ],
+         "phone":[
+            "+40744333444",
+            "+40744555666"
+         ]
+      }
+   ]
+}
+```
+
+#### 在URL模板中使用聚合键的示例
+
+请注意，根据您的用例，您还可以在URL中使用此处描述的聚合键，如下所示：
+
+```python
+https://api.example.com/audience/{{input.aggregationKey.segmentId}}
+```
+
+### 引用：转换模板中使用的上下文和函数 {#reference}
 
 向模板提供的上下文包含`input`（此调用中导出的配置文件/数据）和`destination`(有关Adobe向其发送数据的目标的数据，对所有配置文件均有效)。
 

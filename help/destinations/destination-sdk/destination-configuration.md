@@ -2,9 +2,9 @@
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 目标SDK的目标配置选项
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
+source-git-commit: 63fe3b7cc429a1c18cebe998bc82fdea99a6679b
 workflow-type: tm+mt
-source-wordcount: '1527'
+source-wordcount: '1557'
 ht-degree: 5%
 
 ---
@@ -247,6 +247,8 @@ Adobe需要知道哪些[!DNL Platform]标识客户能够导出到您的目标。
 聚合策略可确定导出的用户档案如何在数据导出中合并在一起。 可用选项包括：
 * 尽力汇总
 * 可配置聚合（如上面的配置中所示）
+
+请阅读[中关于使用模板](./message-format.md#using-templating)和[聚合键示例](./message-format.md#template-aggregation-key)的章节，以了解如何根据您选择的聚合策略将聚合策略包含在消息转换模板中。
 
 ### 尽力汇总 {#best-effort-aggregation}
 
