@@ -2,10 +2,10 @@
 title: 核心扩展概述
 description: 了解Adobe Experience Platform中的核心标记扩展。
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: 9624b42f58384c1b54a6ee55e272a97d6fff5fde
+source-git-commit: 3b023dde8189d3ca6f8525d1e3366874e4ea2c67
 workflow-type: tm+mt
-source-wordcount: '5130'
-ht-degree: 68%
+source-wordcount: '5257'
+ht-degree: 66%
 
 ---
 
@@ -708,6 +708,61 @@ CSS 选择器链：
 本地存储允许浏览器将信息从一个页面存储到另一个页面 ([https://www.w3schools.com/html/html5\_webstorage.asp](https://www.w3schools.com/html/html5_webstorage.asp))。本地存储的工作方式与 Cookie 非常类似，只是其存储空间更大，存储方式更灵活。
 
 使用提供的字段指定您为本地存储项目创建的值，例如 `lastProductViewed.`
+
+### 合并对象
+
+选择多个数据元素，每个数据元素都将提供一个对象。 这些对象将深度（递归）合并在一起，以生成新对象。 不会修改源对象。 如果在多个源对象上的同一位置找到一个属性，则将使用后一个对象的值。 如果源属性值为`undefined`，则不会覆盖先前源对象中的值。 如果在多个源对象上的同一位置找到数组，则将连接数组。
+
+例如，假定您选择了一个提供以下对象的数据元素：
+
+```
+{
+  "sport": {
+    "name": "tennis"
+  },
+  "dessert": "ice cream",
+  "fruits": [
+    "apple",
+    "banana"
+  ]
+}
+```
+
+假设您还选择了另一个数据元素，该数据元素提供了以下对象：
+
+```
+{
+  "sport": {
+    "name": "volleyball"
+  },
+  "dessert": undefined,
+  "pet": "dog",
+  "instrument": undefined,
+  "fruits": [
+    "cherry",
+    "duku"
+  ]
+}
+```
+
+“合并的对象”数据元素的结果将为以下对象：
+
+```
+{
+  "sport": {
+    "name": "volleyball"
+  },
+  "dessert": "ice cream",
+  "pet": "dog",
+  "instrument": undefined,
+  "fruits": [
+    "apple",
+    "banana",
+    "cherry",
+    "duku"
+  ]
+}
+```
 
 ### 页面信息
 
