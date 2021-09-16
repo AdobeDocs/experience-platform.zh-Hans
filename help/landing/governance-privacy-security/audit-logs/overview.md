@@ -2,10 +2,10 @@
 title: 审核日志概述
 description: 了解审核日志如何让您了解谁在Adobe Experience Platform中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: df269a30251cb17e337ec25787d6a1eed41e9c0b
+source-git-commit: 4dc49c7219ebb613c74e5960f1f8d477dc1b7605
 workflow-type: tm+mt
-source-wordcount: '469'
-ht-degree: 4%
+source-wordcount: '598'
+ht-degree: 5%
 
 ---
 
@@ -21,16 +21,18 @@ ht-degree: 4%
 
 本文档介绍Platform中的审核日志，包括如何在UI或API中查看和管理这些日志。
 
-## 由审核日志捕获的事件类型
+## 由审核日志捕获的事件类型 {#category}
 
 下表概述了审计日志记录哪些资源的操作：
 
 | 资源 | 操作 |
 | --- | --- |
-| [沙盒](../../../sandboxes/home.md) | <ul><li>创建</li><li>更新</li><li>重置</li><li>Delete</li></ul> |
-| [数据集](../../../catalog/datasets/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>为[实时客户资料](../../../profile/home.md)启用</li></ul> |
+| [数据集](../../../catalog/datasets/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>为[实时客户资料](../../../profile/home.md)启用</li></ul> |
 | [架构](../../../xdm/schema/composition.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [类](../../../xdm/schema/composition.md#class) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
 | [字段组](../../../xdm/schema/composition.md#field-group) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [数据类型](../../../xdm/schema/composition.md#data-type) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [沙盒](../../../sandboxes/home.md) | <ul><li>创建</li><li>更新</li><li>重置</li><li>删除</li></ul> |
 | [目标](../../../destinations/home.md) | <ul><li>激活</li></ul> |
 
 ## 访问审核日志
@@ -50,6 +52,23 @@ ht-degree: 4%
 从列表中选择事件，以在右边栏中查看其详细信息。
 
 ![事件详细信息](../../images/audit-logs/select-event.png)
+
+选择漏斗图标（![过滤器图标](../../images/audit-logs/icon.png)）可显示过滤器控件列表，以帮助缩小结果范围。
+
+![筛选器](../../images/audit-logs/filters.png)
+
+以下过滤器可用于UI中的审核事件：
+
+| 过滤器 | 描述 |
+| --- | --- |
+| [!UICONTROL 类别] | 使用下拉菜单按[category](#category)筛选显示的结果。 |
+| [!UICONTROL 操作] | 按操作过滤。 当前只能过滤[!UICONTROL Create]和[!UICONTROL Delete]操作。 |
+| [!UICONTROL 访问控制状态] | 按以下方式进行筛选：由于缺少[访问控制](../../../access-control/home.md)权限，是允许（已完成）还是拒绝该操作。 |
+| [!UICONTROL 日期] | 选择开始日期和/或结束日期，以定义日期范围以按过滤结果。 |
+
+要删除过滤器，请在相关过滤器的“药丸”图标上选择“X”，或选择&#x200B;**[!UICONTROL 全部清除]**&#x200B;以删除所有过滤器。
+
+![清除过滤器](../../images/audit-logs/clear-filters.png)
 
 <!-- (Planned for post-beta release)
 ### Export an audit log
