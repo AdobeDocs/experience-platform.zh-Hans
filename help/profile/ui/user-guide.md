@@ -4,9 +4,9 @@ title: Real-time Customer Profile UI指南
 topic-legacy: guide
 description: 实时客户资料可整合来自多个渠道的数据（包括在线、离线、CRM和第三方数据），从而创建每个客户的整体视图。 本文档是在Adobe Experience Platform用户界面中与实时客户资料进行交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: ad5690997b079dbc064775ef1c4fdbe3770ff424
+source-git-commit: b5e6376b54fe8b53fbabf85a2909293cebd93ccc
 workflow-type: tm+mt
-source-wordcount: '1553'
+source-wordcount: '1568'
 ht-degree: 0%
 
 ---
@@ -75,15 +75,21 @@ ht-degree: 0%
 
 在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡上，您可以使用合并策略查看示例配置文件，或使用身份命名空间和值查找特定配置文件。
 
-![](../images/user-guide/browse-by-dropdown.png)
+![](../images/user-guide/browse-by-none-selected.png)
 
 ### 按[!UICONTROL 合并策略]浏览
 
-默认情况下，**[!UICONTROL Browse by]**&#x200B;选择器设置为[!UICONTROL Merge policy]，所选&#x200B;**[!UICONTROL Merge policy]**&#x200B;是贵组织的默认合并策略。
+默认情况下， **[!UICONTROL Browse]**&#x200B;选项卡将设置为贵组织的默认合并策略。 要选择其他合并策略，请选择合并策略名称旁边的`X`，然后使用选择器打开&#x200B;**[!UICONTROL 选择合并策略]**&#x200B;对话框。
 
-要详细了解合并策略及其在Platform中的角色，请参阅[合并策略概述](../merge-policies/overview.md)。
+>[!NOTE]
+>
+>如果未选择合并策略，请使用&#x200B;**[!UICONTROL Merge policy]**&#x200B;字段旁边的选择器按钮打开选择对话框。
 
 ![](../images/user-guide/browse-by-merge-policy.png)
+
+要从&#x200B;**[!UICONTROL 选择合并策略]**&#x200B;对话框中选择合并策略，请选择策略名称旁边的单选按钮，然后使用&#x200B;**[!UICONTROL 选择]**&#x200B;返回到[!UICONTROL 浏览]选项卡。 然后，您可以选择&#x200B;**[!UICONTROL View]**&#x200B;以刷新示例配置文件，并查看应用了新合并策略的配置文件采样。
+
+![](../images/user-guide/select-merge-policy-dialog.png)
 
 显示的用户档案表示在应用所选合并策略后，您组织的用户档案存储中最多有20个用户档案的样例。 将新数据添加到贵组织的配置文件存储区后，将刷新选定合并策略的示例配置文件。
 
@@ -91,21 +97,16 @@ ht-degree: 0%
 
 ![](../images/user-guide/sample-profiles.png)
 
-要选择其他合并策略，请选择合并策略名称旁边的`X`，然后使用选择器打开&#x200B;**[!UICONTROL 选择合并策略]**&#x200B;对话框。
+要详细了解合并策略及其在Platform中的角色，请参阅[合并策略概述](../merge-policies/overview.md)。
 
-![](../images/user-guide/merge-policy-select.png)
-
-要从&#x200B;**[!UICONTROL 选择合并策略]**&#x200B;对话框中选择合并策略，请选择策略名称旁边的单选按钮，然后使用&#x200B;**[!UICONTROL 选择]**&#x200B;返回到[!UICONTROL 浏览]选项卡。 然后，您可以选择&#x200B;**[!UICONTROL View]**&#x200B;以刷新示例配置文件，并查看应用了新合并策略的配置文件采样。
-
-![](../images/user-guide/select-merge-policy-dialog.png)
 
 ### 按[!UICONTROL Identity]浏览
 
-使用&#x200B;**[!UICONTROL Browse by]**&#x200B;选择器，可以选择[!UICONTROL Identity] ，以便按标识值查找特定的配置文件。 通过身份浏览还要求您提供合并策略、身份命名空间和身份值。
+在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡上，您可以使用身份命名空间来按身份值查找特定配置文件。 按身份浏览需要您提供合并策略、身份命名空间和身份值。
 
 ![](../images/user-guide/browse-by-identity.png)
 
-使用&#x200B;**[!UICONTROL Merge policy]**&#x200B;选择器打开&#x200B;**[!UICONTROL Select merge policy]**&#x200B;对话框，然后选择要使用的合并策略。
+如有必要，请使用&#x200B;**[!UICONTROL 合并策略]**&#x200B;选择器打开&#x200B;**[!UICONTROL 选择合并策略]**&#x200B;对话框，然后选择要使用的合并策略。
 
 ![](../images/user-guide/select-merge-policy-dialog.png)
 
