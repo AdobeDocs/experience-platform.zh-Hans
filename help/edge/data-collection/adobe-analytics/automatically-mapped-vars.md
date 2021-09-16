@@ -4,9 +4,9 @@ description: 了解哪些变量在Adobe Analytics中通过Experience PlatformWeb
 seo-description: Learn which variables are automatically mapped in Adobe Analytics with the Adobe Experience Platform Web SDK
 keywords: adobe analytics；变量；analytics；自动映射；自动映射；
 exl-id: 856fada7-b62c-4fd2-9372-a19ae1cdec33
-source-git-commit: b2d949232674bb4c4ebcb7754726730b966a0e02
+source-git-commit: f5cd00c9639bde3b36b8ef9825148725ff9f89c1
 workflow-type: tm+mt
-source-wordcount: '920'
+source-wordcount: '907'
 ht-degree: 5%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 5%
 | ---------- | ------------------------- | ----------------------------------------- |
 | application.id | c.a.appid | AppMeasurement上下文数据`c.a.appid`映射。 |
 | application.launches.value | c.a.launches | AppMeasurement上下文数据`c.a.launches`映射。 |
-| commerce.checkouts.id | events | `scCheckout` 事件序列化。如果排除此字段（即，对于未序列化事件），则系统会生成它自己的ID值，并将其分配给实体。 |
+| commerce.checkouts.id | 事件 | `scCheckout` 事件序列化。如果排除此字段（即，对于未序列化事件），则系统会生成它自己的ID值，并将其分配给实体。 |
 | commerce.checkouts.value | 事件 | 使用分隔符`,`的AppMeasurement查询参数EVENT_LIST_FULL与转化COMMERCE_SC_CHECKOUT的映射。 |
 | commerce.order.currencyCode | cc | AppMeasurement查询参数CURRENCY映射。 |
 | commerce.order.purchaseID | pi | AppMeasurement查询参数PURCHASEID映射。 |
@@ -88,9 +88,8 @@ ht-degree: 5%
 | placeContext.geo.longitude | lon | AppMeasurement查询参数LONGITUDE映射。 |
 | placeContext.geo.postalCode | zip | AppMeasurement查询参数ZIP映射。 |
 | placeContext.geo.stateProvince | state | AppMeasurement查询参数STATE映射。 |
-| productlistitems。[N]._[NAME_SPACE].* | products | AppMeasurement查询参数产品促销事件/Evar映射。 |
-| productListItems[N].lineItemId | 产品 | AppMeasurement查询参数产品名称映射。 |
-| productlistitems。[N].name | 产品 | AppMeasurement查询参数产品类别映射。 |
+| productListItems[N].lineItemId | products | AppMeasurement查询参数产品类别映射。 |
+| productlistitems。[N].name | 产品 | AppMeasurement查询参数产品名称映射。 |
 | productlistitems。[N].priceTotal | 产品 | AppMeasurement查询参数产品价格映射。 |
 | productlistitems。[N].quantity | 产品 | AppMeasurement查询参数产品数量映射。 |
 | web.webInteraction.URL | pev1 | AppMeasurement查询参数PAGE_EVENT_VAR1映射。 |
