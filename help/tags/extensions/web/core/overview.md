@@ -1,10 +1,11 @@
 ---
 title: 核心扩展概述
 description: 了解Adobe Experience Platform中的核心标记扩展。
-source-git-commit: 41a394974153883dc300bdd8a00fc3106c4f0ac6
+exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
+source-git-commit: 9624b42f58384c1b54a6ee55e272a97d6fff5fde
 workflow-type: tm+mt
-source-wordcount: '4905'
-ht-degree: 70%
+source-wordcount: '5130'
+ht-degree: 68%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 70%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 核心标记扩展是随Adobe Experience Platform一起发布的默认扩展。
 
@@ -222,7 +223,7 @@ ht-degree: 70%
 
 1. 选择&#x200B;**[!UICONTROL Open Editor]**。
 1. 键入自定义代码。
-1. 选择 **[!UICONTROL Save]**。
+1. 选择&#x200B;**[!UICONTROL 保存]**。
 
 将自动提供一个名为 `event` 的变量，您可以从自定义代码中引用该变量。`event` 对象将包含有关触发规则的事件的有用信息。确定哪些事件数据可用的最简单方法是从自定义代码中将 `event` 记录到控制台：
 
@@ -774,3 +775,36 @@ CSS 选择器链：
 * 如果访问的是登陆页面，则填充 Analytics 量度
 * 在 X 个会话计数后向访客显示新选件
 * 如果访客是首次来访访客，则显示新闻稿注册页面
+
+### 条件值
+
+[值比较](#value-comparison-value-comparison)条件的包装器。 根据比较结果，将返回表单中两个可用值之一。 因此可以处理“如果……那……否则……” 不需要额外规则的情况。
+
+### 运行时环境
+
+允许您选择以下变量之一：
+
+* 环境阶段 — 返回`_satellite.environment.stage`以区分开发/暂存/生产环境。
+* 库生成日期 — 返回包含相同值（如`_satellite.buildInfo.buildDate`）的`turbine.buildInfo.buildDate`。
+* 属性名称 — 返回`_satellite.property.name`以获取Launch属性的名称。
+* 属性ID — 返回`_satellite.property.id`以获取Launch属性的ID
+* 规则名称 — 返回包含已执行规则名称的`event.$rule.name`。
+* 规则ID — 返回包含已执行规则ID的`event.$rule.id`。
+* 事件类型 — 返回`event.$type`，其中包含触发规则的事件类型。
+* 事件详细信息有效负载 — 返回包含自定义事件或直接调用规则有效负载的`event.detail`。
+* 直接调用标识符 — 返回包含直接调用规则标识符的`event.identifier`。
+
+### 设备属性
+
+返回以下访客设备属性之一：
+
+* 浏览器窗口大小
+* 屏幕大小
+
+### JavaScript工具
+
+它是常用JavaScript操作的包装器。 它接收数据元素作为输入。 它返回数据元素值的以下转换之一的结果：
+
+* 基本字符串处理（替换、子字符串、正则表达式匹配、第一个和最后一个索引、拆分、切片）
+* 基本阵列操作（切片、连接、弹出、移位）
+* 基本通用运算（切片、长度）

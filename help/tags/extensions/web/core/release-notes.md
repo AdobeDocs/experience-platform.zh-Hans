@@ -1,10 +1,11 @@
 ---
 title: 核心扩展的发行说明
 description: Adobe Experience Platform中核心扩展的最新发行说明。
-source-git-commit: cef9f9e403328418d26935bf3ee45e9068b7177e
+exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
+source-git-commit: 9624b42f58384c1b54a6ee55e272a97d6fff5fde
 workflow-type: tm+mt
-source-wordcount: '1293'
-ht-degree: 67%
+source-wordcount: '1417'
+ht-degree: 63%
 
 ---
 
@@ -12,7 +13,19 @@ ht-degree: 67%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## 2021 年 9 月 16 日
+
+v3.1.0
+
+添加了新数据元素：
+
+* 合并对象 — 选择多个数据元素，每个数据元素将提供一个对象。 这些对象将深度（递归）合并在一起，以生成新对象。
+* 条件值 — 根据比较结果返回两个值（conditionalValue或fallbackValue）中的一个。
+* 运行时环境 — 返回以下Launch环境变量之一：环境阶段，库生成日期，属性名称，属性ID，规则名称，规则ID，事件类型，事件详细信息有效负荷，直接调用标识符。
+* JavaScript工具 — 常用JavaScript操作的包装器：基本字符串操作（替换、子字符串、正则表达式匹配、第一个和最后一个索引、拆分、切片）、基本数组操作（切片、连接、弹出、移位）和基本通用操作（切片、长度）。
+* 设备属性 — 返回设备属性，如窗口大小或屏幕大小。
 
 ## 2021 年 8 月 11 日
 
@@ -31,7 +44,7 @@ v2.0.7
 * 修复了文本输入上的鼠标交互无法继续正常工作的问题。
 * 弃用浏览器和操作系统条件的使用。
 
-## 2021 年 5 月 4 日
+## 2021年5月4日
 
 v2.0.6
 
