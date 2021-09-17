@@ -4,10 +4,10 @@ seo-description: Use the content on this page together with the rest of the conf
 seo-title: Message format
 title: 消息格式
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: add6c7c4f3a60bd9ee2c2b77a8a242c4df03377b
+source-git-commit: a1e77520ba5555db42578eac261e01e77130aea2
 workflow-type: tm+mt
-source-wordcount: '2056'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -799,9 +799,6 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
    "attributes":{
       "firstName":{
          "value":"Hermione"
-      },
-      "birthDate":{
-         
       }
    },
    "segmentMembership":{
@@ -822,9 +819,6 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
    "attributes":{
       "firstName":{
          "value":"Harry"
-      },
-      "birthDate":{
-         "value":"1980/07/31"
       }
    },
    "segmentMembership":{
@@ -845,9 +839,6 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
    "attributes":{
       "firstName":{
          "value":"Tom"
-      },
-      "birthDate":{
-         
       }
    },
    "segmentMembership":{
@@ -868,9 +859,6 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
    "attributes":{
       "firstName":{
          "value":"Jerry"
-      },
-      "birthDate":{
-         "value":"1940/01/01"
       }
    },
    "segmentMembership":{
@@ -918,16 +906,13 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
    "audienceId":"788d8874-8007-4253-92b7-ee6b6c20c6f3",
    "profiles":[
       {
-         "firstName":"Hermione",
-         "birthDate":null
+         "firstName":"Hermione"
       },
       {
-         "firstName":"Harry",
-         "birthDate":"1980/07/31"
+         "firstName":"Harry"
       },
       {
-         "firstName":"Jerry",
-         "birthDate":"1940/01/01"
+         "firstName":"Jerry"
       }
    ]
 }
@@ -938,12 +923,10 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
    "audienceId":"8f812592-3f06-416b-bd50-e7831848a31a",
    "profiles":[
       {
-         "firstName":"Tom",
-         "birthDate":null
+         "firstName":"Tom"
       },
       {
-         "firstName":"Jerry",
-         "birthDate":"1940/01/01"
+         "firstName":"Jerry"
       }
    ]
 }
@@ -977,7 +960,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 #### 在模板中使用身份命名空间聚合键 {#aggregation-key-identity}
 
-以下示例将目标配置中的[可配置聚合](./destination-configuration.md#configurable-aggregation)设置为按身份命名空间（格式为`"identityNamespaces": ["email", "phone"]`）聚合导出的配置文件
+以下示例将目标配置中的[可配置聚合](./destination-configuration.md#configurable-aggregation)设置为按身份命名空间（格式为`"namespaces": ["email", "phone"]`和`"namespaces": ["GAID", "IDFA"]`）聚合导出的配置文件。 请参阅[目标配置API引用](./destination-configuration-api.md)中的`groups`参数，以了解如何执行此操作。
 
 **输入**
 
@@ -997,6 +980,16 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
       "phone":[
          {
             "id":"+40744111222"
+         }
+      ],
+      "IDFA":[
+         {
+            "id":"AEBE52E7-03EE-455A-B3C4-E57283966239"
+         }
+      ],
+      "GAID":[
+         {
+            "id":"e4fe9bde-caa0-47b6-908d-ffba3fa184f2"
          }
       ]
    }
@@ -1019,6 +1012,16 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
          },
          {
             "id":"+40744555666"
+         }
+      ],
+      "IDFA":[
+         {
+            "id":"134GHU45-34HH-GHJ7-K0H8-LHN665998NN0"
+         }
+      ],
+      "GAID":[
+         {
+            "id":"47bh00i9-8jv6-334n-lll8-nb7f24sghg76"
          }
       ]
    }
@@ -1053,7 +1056,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 **结果**
 
-下面的`json`表示从Adobe Experience Platform中导出的数据。
+将用户档案导出到目标后，将根据其身份命名空间（一组中的电子邮件和电话，另一组中的GAID和IDFA），将用户档案拆分为两组。
 
 ```json
 {
@@ -1074,6 +1077,29 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
          "phone":[
             "+40744333444",
             "+40744555666"
+         ]
+      }
+   ]
+}
+```
+
+```json
+{
+   "profiles":[
+      {
+         "IDFA":[
+            "AEBE52E7-03EE-455A-B3C4-E57283966239"
+         ],
+         "GAID":[
+            "e4fe9bde-caa0-47b6-908d-ffba3fa184f2"
+         ]
+      },
+      {
+         "IDFA":[
+            "134GHU45-34HH-GHJ7-K0H8-LHN665998NN0"
+         ],
+         "GAID":[
+            "47bh00i9-8jv6-334n-lll8-nb7f24sghg76"
          ]
       }
    ]
