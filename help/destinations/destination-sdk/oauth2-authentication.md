@@ -2,9 +2,9 @@
 description: 本页介绍了目标SDK支持的各种OAuth 2身份验证流，并提供了为目标设置OAuth 2身份验证的说明。
 title: OAuth 2身份验证
 exl-id: 280ecb63-5739-491c-b539-3c62bd74e433
-source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
+source-git-commit: e8625d6de7707b3a159f95d4471a73cbbed25d21
 workflow-type: tm+mt
-source-wordcount: '2119'
+source-wordcount: '2110'
 ht-degree: 5%
 
 ---
@@ -21,18 +21,15 @@ ht-degree: 5%
 
 ### 系统中的先决条件 {#prerequisites}
 
-第一步，您必须在系统中为Adobe Experience Platform创建应用程序，或在系统中注册Experience Platform。 目标是生成客户端ID和客户端密钥，验证目标Experience Platform所需的客户端ID和客户端密钥。 作为系统中此配置的一部分，您需要Adobe Experience Platform OAuth 2重定向/回调URL，您可以从下表中获取该URL。
+第一步，您必须在系统中为Adobe Experience Platform创建应用程序，或在系统中注册Experience Platform。 目标是生成客户端ID和客户端密钥，验证目标Experience Platform所需的客户端ID和客户端密钥。 作为系统中此配置的一部分，您需要Adobe Experience Platform OAuth 2重定向/回调URL，您可以从以下列表中获取该URL。
+
+* `https://platform-va7.adobe.io/data/core/activation/oauth/api/v1/callback`
+* `https://platform-nld2.adobe.io/data/core/activation/oauth/api/v1/callback`
+* `https://platform-aus5.adobe.io/data/core/activation/oauth/api/v1/callback`
 
 >[!IMPORTANT]
 >
 >只有具有授权代码](./oauth2-authentication.md#authorization-code)授予类型的[OAuth 2的OAuth才需要在系统中为Adobe Experience Platform注册重定向/回调URL的步骤。 对于其他两种受支持的授权类型（密码和客户端凭据），您可以跳过此步骤。
-
-| 重定向/回调URL | 环境 |
-|---------|----------|
-| `https://platform.adobe.io/data/core/activation/oauth/api/v1/callback` | 生产 |
-| `https://platform-stage.adobe.io/data/core/activation/oauth/api/v1/callback` | 暂存 |
-
-{style=&quot;table-layout:auto&quot;}
 
 在此步骤结束时，您应该：
 * 客户ID;
@@ -466,7 +463,7 @@ Adobe设计了一个系统，该系统可刷新过期的访问令牌，而无需
 | response.body | HTTP响应主体 | ``{{ response.body.access_token }}`` |
 | response.status | HTTP响应状态 | ``{{ response.status }}`` |
 | response.headers | HTTP响应头 | ``{{ response.headers.server[0] }}`` |
-| authContext | 访问有关当前身份验证尝试的信息 | <ul><li>`{{ authContext.sandboxName }} `</li><li>`{{ authContext.sandboxId }} `</li><li>`{{ authContext.imsOrgId }} `</li><li>`{{ authContext.client }} // the client executing the authentication attempt `</li></ul> |
+| userContext | 访问有关当前身份验证尝试的信息 | <ul><li>`{{ userContext.sandboxName }} `</li><li>`{{ userContext.sandboxId }} `</li><li>`{{ userContext.imsOrgId }} `</li><li>`{{ userContext.client }} // the client executing the authentication attempt `</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
