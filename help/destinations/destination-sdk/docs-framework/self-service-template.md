@@ -2,7 +2,7 @@
 title: 文档自助服务模板//将替换为您的目标名称
 description: 使用此模板可在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为“概述”部分中的段落
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: d2452bf0e59866d3deca57090001c4c5a0935525
+source-git-commit: 396b9a9ec1509abedba96797f68ad3e5aa2e5988
 workflow-type: tm+mt
 source-wordcount: '904'
 ht-degree: 1%
@@ -58,7 +58,6 @@ ht-degree: 1%
 ## 用例
 
 为了帮助您更好地了解您应如何以及何时使用&#x200B;*YOURDESTINATION*&#x200B;目标，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
-
 
 ### 用例#1
 
