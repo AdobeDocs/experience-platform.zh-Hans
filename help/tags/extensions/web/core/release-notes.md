@@ -2,10 +2,10 @@
 title: 核心扩展的发行说明
 description: Adobe Experience Platform中核心扩展的最新发行说明。
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 9624b42f58384c1b54a6ee55e272a97d6fff5fde
+source-git-commit: 29a238c517b6bd5a95284b4d6954fd14a1668f0e
 workflow-type: tm+mt
-source-wordcount: '1417'
-ht-degree: 63%
+source-wordcount: '1434'
+ht-degree: 62%
 
 ---
 
@@ -14,6 +14,12 @@ ht-degree: 63%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## 2021 年 9 月 17 日
+
+v3.1.1
+
+* 修复了阻止加载日期范围条件视图的JS错误。
 
 ## 2021 年 9 月 16 日
 
