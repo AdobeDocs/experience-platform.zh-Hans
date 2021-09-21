@@ -5,9 +5,9 @@ title: 源连接器概述
 topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 5f5e4f91862fe4ec8840224a9bdb5dc6d7338288
+source-git-commit: 048b3bbbe170a892eedc9f8ee0e130fcbfad6b86
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1008'
 ht-degree: 0%
 
 ---
@@ -97,6 +97,7 @@ Experience Platform支持从第三方数据库摄取数据。 有关特定源连
 - [[!DNL Oracle] 连接器](connectors/databases/oracle.md)
 - [[!DNL Phoenix] 连接器](connectors/databases/phoenix.md)
 - [[!DNL PostgreSQL] 连接器](connectors/databases/postgres.md)
+- [[!DNL Snowflake] 连接器](connectors/databases/snowflake.md)
 
 ### 电子商务
 

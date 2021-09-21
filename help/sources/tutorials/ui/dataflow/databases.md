@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了使用数据库帐户配置新数据流的步骤。
 exl-id: 9fd8a7ec-bbd8-4890-9860-e6defc6cade3
-source-git-commit: 46fb08a10bc05dc758bdcb025693f819b980b41a
+source-git-commit: b0b993842b1015f5503fe2ae5a23d9188eeaad48
 workflow-type: tm+mt
-source-wordcount: '1450'
+source-wordcount: '1451'
 ht-degree: 0%
 
 ---
@@ -28,11 +28,11 @@ ht-degree: 0%
 
 此外，本教程还要求您已创建数据库帐户。 有关在UI中创建不同数据库连接器的教程列表，请参阅[源连接器概述](../../../home.md)。
 
-## 选择数据
+## 添加数据
 
-创建数据库帐户后，将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，为您提供一个交互界面来浏览数据库层次结构。
+创建数据库帐户后，将显示&#x200B;**[!UICONTROL 添加数据]**&#x200B;步骤，为您提供一个交互界面来浏览数据库层次结构。
 
-- 界面的左半部分是浏览器，显示您帐户的数据库列表。
+- 界面的左半部分是浏览器，显示您帐户的数据表列表。
 - 在界面的右半部分，您最多可以预览100行数据。
 
 您可以使用页面顶部的&#x200B;**[!UICONTROL Search]**&#x200B;选项快速识别要使用的源数据。
@@ -41,7 +41,7 @@ ht-degree: 0%
 >
 >搜索源数据选项适用于所有基于表格的源连接器，不包括Analytics、分类、事件中心和Kinesis连接器。
 
-找到源数据后，选择目录，然后单击&#x200B;**[!UICONTROL Next]**。
+找到源数据后，选择表，然后选择&#x200B;**[!UICONTROL Next]**。
 
 ![select-data](../../../images/tutorials/dataflow/databases/select-data.png)
 
