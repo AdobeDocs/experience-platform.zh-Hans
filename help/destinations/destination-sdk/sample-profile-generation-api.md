@@ -2,9 +2,9 @@
 description: 本页列出并介绍了可使用“/authoring/sample-profiles” API端点执行的所有API操作，以生成要在目标测试中使用的示例配置文件。
 title: 配置文件生成API操作示例
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
+source-git-commit: 2ed132cd16db64b5921c5632445956f750fead56
 workflow-type: tm+mt
-source-wordcount: '805'
+source-wordcount: '833'
 ht-degree: 2%
 
 ---
@@ -28,6 +28,10 @@ ht-degree: 2%
 在继续操作之前，请查看[快速入门指南](./getting-started.md) ，了解成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
 
 ## 根据源架构生成示例用户档案 {#generate-sample-profiles-source-schema}
+
+>[!IMPORTANT]
+>
+>在[测试目标](./test-destination.md)时，将此处生成的示例配置文件添加到HTTP调用中。
 
 您可以根据源架构生成示例配置文件，方法是向`authoring/sample-profiles/`端点发出GET请求，并提供您根据要测试的目标配置创建的目标实例的ID。
 
@@ -176,6 +180,10 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 {style=&quot;table-layout:auto&quot;}
 
 ## 根据目标架构生成示例用户档案 {#generate-sample-profiles-target-schema}
+
+>[!IMPORTANT]
+>
+>使用在创建模板时在此处生成的示例配置文件，该示例位于[渲染模板步骤](./render-template-api.md#multiple-profiles-with-body)中。
 
 您可以根据向`authoring/sample-profiles/`端点发出GET请求的目标架构生成示例配置文件，并根据您创建模板的目标配置提供目标ID。
 

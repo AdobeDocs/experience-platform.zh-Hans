@@ -2,10 +2,10 @@
 description: 本页列出并介绍了可使用“/authoring/destination-servers” API端点执行的所有API操作。 可以在Adobe Experience Platform目标SDK中通过公共端点“/authoring/destination-servers”配置目标的服务器和模板规范。
 title: 目标服务器端点API操作
 exl-id: a144b0fb-d34f-42d1-912b-8576296e59d2
-source-git-commit: 3ab19995d9520c35701912087158bf63755c55c8
+source-git-commit: 2ed132cd16db64b5921c5632445956f750fead56
 workflow-type: tm+mt
-source-wordcount: '837'
-ht-degree: 4%
+source-wordcount: '845'
+ht-degree: 5%
 
 ---
 
@@ -66,14 +66,14 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 | 参数 | 类型 | 描述 |
 | -------- | ----------- | ----------- |
-| `name` | 字符串 | 表示服务器的友好名称，仅对Adobe可见。 合作伙伴或客户看不到此名称。 示例 `Moviestar destination server`. |
-| `destinationServerType` | 字符串 | `URL_BASED` 是当前唯一可用的选项。 |
-| `urlBasedDestination.url.templatingStrategy` | 字符串 | <ul><li>如果Adobe需要转换下面`value`字段中的URL，请使用`PEBBLE_V1`。 如果您具有如下端点，请使用此选项：`https://api.moviestar.com/data/{{customerData.region}}/items`。 </li><li> 如果Adobe端不需要转换，例如，如果您具有如下端点，则使用`NONE`:`https://api.moviestar.com/data/items`。</li></ul> |
-| `urlBasedDestination.url.value` | 字符串 | 填写Experience Platform应连接到的API端点的地址。 |
-| `httpTemplate.httpMethod` | 字符串 | Adobe在对服务器的调用中将使用的方法。 选项包括`GET`、`PUT`、`POST`、`DELETE`、`PATCH`。 |
-| `httpTemplate.requestBody.templatingStrategy` | 字符串 | 使用 `PEBBLE_V1`. |
-| `httpTemplate.requestBody.value` | 字符串 | 此字符串是字符转义版本，可将Platform客户的数据转换为您的服务所需的格式。<br> <ul><li> 有关如何编写模板的信息，请阅读[使用模板部分](./message-format.md#using-templating)。 </li><li> 有关字符转义的更多信息，请参阅[RFC JSON标准第七节](https://tools.ietf.org/html/rfc8259#section-7)。 </li><li> 有关简单转换的示例，请参阅[配置文件属性](./message-format.md#attributes)转换。 </li></ul> |
-| `httpTemplate.contentType` | 字符串 | 服务器接受的内容类型。 该值很可能为`application/json`。 |
+| `name` | 字符串 | *必需。* 表示服务器的友好名称，仅对Adobe可见。合作伙伴或客户看不到此名称。 示例 `Moviestar destination server`. |
+| `destinationServerType` | 字符串 | *必需。* `URL_BASED` 是当前唯一可用的选项。 |
+| `urlBasedDestination.url.templatingStrategy` | 字符串 | *必需.* <ul><li>如果Adobe需要转换下面`value`字段中的URL，请使用`PEBBLE_V1`。 如果您具有如下端点，请使用此选项：`https://api.moviestar.com/data/{{customerData.region}}/items`。 </li><li> 如果Adobe端不需要转换，例如，如果您具有如下端点，则使用`NONE`:`https://api.moviestar.com/data/items`。</li></ul> |
+| `urlBasedDestination.url.value` | 字符串 | *必需。* 填写Experience Platform应连接到的API端点的地址。 |
+| `httpTemplate.httpMethod` | 字符串 | *必需。* Adobe在对服务器的调用中将使用的方法。选项包括`GET`、`PUT`、`POST`、`DELETE`、`PATCH`。 |
+| `httpTemplate.requestBody.templatingStrategy` | 字符串 | *必需。* 使用 `PEBBLE_V1`. |
+| `httpTemplate.requestBody.value` | 字符串 | *必需。* 此字符串是字符转义版本，可将Platform客户的数据转换为您的服务所需的格式。  <br> <ul><li> 有关如何编写模板的信息，请阅读[使用模板部分](./message-format.md#using-templating)。 </li><li> 有关字符转义的更多信息，请参阅[RFC JSON标准第七节](https://tools.ietf.org/html/rfc8259#section-7)。 </li><li> 有关简单转换的示例，请参阅[配置文件属性](./message-format.md#attributes)转换。 </li></ul> |
+| `httpTemplate.contentType` | 字符串 | *必需。* 服务器接受的内容类型。该值很可能为`application/json`。 |
 
 {style=&quot;table-layout:auto&quot;}
 

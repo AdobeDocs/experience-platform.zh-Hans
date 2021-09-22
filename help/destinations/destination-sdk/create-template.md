@@ -1,9 +1,10 @@
 ---
 description: 作为目标SDK的一部分，Adobe提供了开发人员工具，可帮助您配置和测试目标。 本页介绍如何创建和测试消息转换模板。
 title: 创建和测试消息转换模板
-source-git-commit: cf6c6adf128ec867cd67af609a40b04d2c632bf9
+exl-id: 15e7f436-4d33-4172-bd14-ad8dfbd5e4a8
+source-git-commit: 2ed132cd16db64b5921c5632445956f750fead56
 workflow-type: tm+mt
-source-wordcount: '895'
+source-wordcount: '909'
 ht-degree: 0%
 
 ---
@@ -68,7 +69,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
-如果您提供的目标ID与具有`maxUsersPerRequest=1`的目标服务器模板相对应，则请求会返回与以下模板类似的示例模板：
+如果您提供的目标ID与聚合策略中具有[尽力聚合](./destination-configuration.md#best-effort-aggregation)和`maxUsersPerRequest=1`的目标配置相对应，则请求会返回与以下模板类似的示例模板：
 
 ```python
 {#- THIS is an example template for a single profile -#}
@@ -101,7 +102,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 }
 ```
 
-如果您提供的目标ID与`maxUsersPerRequest`大于1的目标服务器模板相对应，则请求会返回与以下模板类似的示例模板：
+如果您提供的目标ID对应于具有[可配置聚合](./destination-configuration.md#configurable-aggregation)或[大于1的最佳工作聚合](./destination-configuration.md#best-effort-aggregation)的目标服务器模板，则请求会返回与以下模板类似的示例模板：`maxUsersPerRequest`
 
 ```python
 {#- THIS is an example template for multiple profiles -#}

@@ -2,10 +2,10 @@
 description: 可以在Adobe Experience Platform目标SDK中通过公共端点“/authoring/destination-servers”配置服务器和模板规范。
 title: 目标SDK中服务器和模板规范的配置选项
 exl-id: cf493ed5-0bdb-4b90-b84d-73926a566a2a
-source-git-commit: bd65cfa557fb42d23022578b98bc5482e8bd50b1
+source-git-commit: 2ed132cd16db64b5921c5632445956f750fead56
 workflow-type: tm+mt
-source-wordcount: '411'
-ht-degree: 7%
+source-wordcount: '419'
+ht-degree: 9%
 
 ---
 
@@ -48,10 +48,10 @@ ht-degree: 7%
 
 | 参数 | 类型 | 描述 |
 |---|---|---|
-| `name` | 字符串 | 表示服务器的友好名称，仅对Adobe可见。 合作伙伴或客户看不到此名称。 示例 `Moviestar destination server`. |
-| `destinationServerType` | 字符串 | `URL_BASED` 是当前唯一可用的选项。 |
-| `templatingStrategy` | 字符串 | <ul><li>如果Adobe需要转换下面`value`字段中的URL，请使用`PEBBLE_V1`。 如果您具有如下端点，请使用此选项：`https://api.moviestar.com/data/{{customerData.region}}/items` </li><li> 如果Adobe端不需要转换，例如，如果您具有如下端点，则使用`NONE`:`https://api.moviestar.com/data/items` </li></ul> |
-| `value` | 字符串 | 填写Experience Platform应连接到的API端点的地址。 |
+| `name` | 字符串 | *必需。* 表示服务器的友好名称，仅对Adobe可见。合作伙伴或客户看不到此名称。 示例 `Moviestar destination server`. |
+| `destinationServerType` | 字符串 | *必需。* `URL_BASED` 是当前唯一可用的选项。 |
+| `templatingStrategy` | 字符串 | *必需.* <ul><li>如果Adobe需要转换下面`value`字段中的URL，请使用`PEBBLE_V1`。 如果您具有如下端点，请使用此选项：`https://api.moviestar.com/data/{{customerData.region}}/items` </li><li> 如果Adobe端不需要转换，例如，如果您具有如下端点，则使用`NONE`:`https://api.moviestar.com/data/items` </li></ul> |
+| `value` | 字符串 | *必需。* 填写Experience Platform应连接到的API端点的地址。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -83,10 +83,10 @@ ht-degree: 7%
 
 | 参数 | 类型 | 描述 |
 |---|---|---|
-| `httpMethod` | 字符串 | Adobe在对服务器的调用中将使用的方法。 选项包括`GET`、`PUT`、`POST`、`DELETE`、`PATCH`。 |
-| `templatingStrategy` | 字符串 | 使用 `PEBBLE_V1`. |
-| `value` | 字符串 | 此字符串是字符转义版本，可将Platform客户的数据转换为您的服务预期的格式。 <br> 有关如何编写模板的信息，请阅读使用 [模板一节](./message-format.md#using-templating)。<br> 有关字符转义的更多信息，请参 [阅RFC JSON标准第七节](https://tools.ietf.org/html/rfc8259#section-7)。<br> 有关简单转换的示例，请参阅配置文件属 [性](./message-format.md#attributes) 信息。 |
-| `contentType` | 字符串 | 服务器接受的内容类型。 该值很可能为`application/json`。 |
+| `httpMethod` | 字符串 | *必需。* Adobe在对服务器的调用中将使用的方法。选项包括`GET`、`PUT`、`POST`、`DELETE`、`PATCH`。 |
+| `templatingStrategy` | 字符串 | *必需。* 使用 `PEBBLE_V1`. |
+| `value` | 字符串 | *必需。* 此字符串是字符转义版本，可将Platform客户的数据转换为您的服务预期的格式。<br> 有关如何编写模板的信息，请阅读使用 [模板一节](./message-format.md#using-templating)。<br> 有关字符转义的更多信息，请参 [阅RFC JSON标准第七节](https://tools.ietf.org/html/rfc8259#section-7)。<br> 有关简单转换的示例，请参阅配置文件属 [性](./message-format.md#attributes) 信息。 |
+| `contentType` | 字符串 | *必需。* 服务器接受的内容类型。该值很可能为`application/json`。 |
 
 {style=&quot;table-layout:auto&quot;}
 
