@@ -4,7 +4,7 @@ description: 了解哪些变量在Adobe Analytics中通过Experience PlatformWeb
 seo-description: Learn which variables are automatically mapped in Adobe Analytics with the Adobe Experience Platform Web SDK
 keywords: adobe analytics；变量；analytics；自动映射；自动映射；
 exl-id: 856fada7-b62c-4fd2-9372-a19ae1cdec33
-source-git-commit: f5cd00c9639bde3b36b8ef9825148725ff9f89c1
+source-git-commit: 7809e64abab80f72af979e685f268c0799e74eca
 workflow-type: tm+mt
 source-wordcount: '907'
 ht-degree: 5%
@@ -46,7 +46,7 @@ ht-degree: 5%
 | environment.browserDetails.viewportWidth | bw | AppMeasurement查询参数BROWSER_WIDTH映射。 |
 | environment.connectionType | ct | AppMeasurement查询参数CT_CONNECT_TYPE映射。 |
 | environment.ipV4 | X-Forwarded-For | 这是HTTP标头映射，X-FORWARDED-FOR。 |
-| identityMap.ECID.[0].id | mid | AppMeasurement查询参数MID映射。 |
+| identityMap.ECID[0].id | mid | AppMeasurement查询参数MID映射。 |
 | marketing.trackingCode | v0 | AppMeasurement查询参数CAMPAIGN映射。 |
 | media.mediaTimed.completes.value | c.a.media.complete | AppMeasurement上下文数据。 |
 | media.mediaTimed.dropBeforeStart.value | c.a.media.view， c.a.media.timePlayed， c.a.media.play | AppMeasurement上下文数据。 |
@@ -58,10 +58,10 @@ ht-degree: 5%
 | media.mediaTimed.pauses.value | c.a.media.pauseCount | AppMeasurement上下文数据`c.a.media.pauseCount`映射。 |
 | media.mediaTimed.primaryAssetReference.@id | c.a.media.asset | AppMeasurement上下文数据。 |
 | media.mediaTimed.primaryAssetReference.dc:title | c.a.media.friendlyName | AppMeasurement上下文数据`c.a.media.friendlyName`映射。 |
-| media.mediaTimed.primaryAssetReference.iptc4xmpExt:Creator.[N].iptc4xmpExt:Name | c.a.media.originator | AppMeasurement上下文数据。 |
+| media.mediaTimed.primaryAssetReference.iptc4xmpExt:Creator[N].iptc4xmpExt:Name | c.a.media.originator | AppMeasurement上下文数据。 |
 | media.mediaTimed.primaryAssetReference.iptc4xmpExt:Episode.iptc4xmpExt:Number | c.a.media.episode | AppMeasurement上下文数据`c.a.media.episode`映射。 |
 | media.mediaTimed.primaryAssetReference.iptc4xmpExt:Genre | c.a.media.genre | AppMeasurement上下文数据。 |
-| media.mediaTimed.primaryAssetReference.iptc4xmpExt:Rating.[N].iptc4xmpExt:RatingValue | c.a.media.rating | AppMeasurement上下文数据。 |
+| media.mediaTimed.primaryAssetReference.iptc4xmpExt:Rating[N].iptc4xmpExt:RatingValue | c.a.media.rating | AppMeasurement上下文数据。 |
 | media.mediaTimed.primaryAssetReference.iptc4xmpExt:Season.iptc4xmpExt:Number | c.a.media.season | AppMeasurement上下文数据`c.a.media.season`映射。 |
 | media.mediaTimed.primaryAssetReference.iptc4xmpExt:Series.iptc4xmpExt:Identifier | a.media.name | AppMeasurement上下文数据`a.media.name`映射。 |
 | media.mediaTimed.primaryAssetReference.iptc4xmpExt:Series.iptc4xmpExt:Name | c.a.media.show | AppMeasurement上下文数据`c.a.media.show`映射。 |
@@ -89,9 +89,9 @@ ht-degree: 5%
 | placeContext.geo.postalCode | zip | AppMeasurement查询参数ZIP映射。 |
 | placeContext.geo.stateProvince | state | AppMeasurement查询参数STATE映射。 |
 | productListItems[N].lineItemId | products | AppMeasurement查询参数产品类别映射。 |
-| productlistitems。[N].name | 产品 | AppMeasurement查询参数产品名称映射。 |
-| productlistitems。[N].priceTotal | 产品 | AppMeasurement查询参数产品价格映射。 |
-| productlistitems。[N].quantity | 产品 | AppMeasurement查询参数产品数量映射。 |
+| productlistitems[N].name | 产品 | AppMeasurement查询参数产品名称映射。 |
+| productlistitems[N].priceTotal | 产品 | AppMeasurement查询参数产品价格映射。 |
+| productlistitems[N].quantity | 产品 | AppMeasurement查询参数产品数量映射。 |
 | web.webInteraction.URL | pev1 | AppMeasurement查询参数PAGE_EVENT_VAR1映射。 |
 | web.webInteraction.name | pev2 | AppMeasurement查询参数PAGE_EVENT_VAR2映射。 |
 | web.webInteraction.type | pe | `web.webInteraction.type=other` 至 `pe=lnk_o`; `web.webInteraction.type=download` 至 `pe=lnk_d`; `web.webInteraction.type=exit` to  `pe=lnk_e` |
