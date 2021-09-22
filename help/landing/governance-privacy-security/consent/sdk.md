@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK处理客户同意数据
 topic-legacy: getting started
 description: 了解如何集成Adobe Experience Platform Web SDK以在Adobe Experience Platform中处理客户同意数据。
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 1780e08a9e45fd87891bbb1727c464aadb0e9b31
+source-git-commit: 69e510c9a0f477ad7cab530128c6728f68dfdab1
 workflow-type: tm+mt
-source-wordcount: '1270'
+source-wordcount: '1330'
 ht-degree: 0%
 
 ---
@@ -97,6 +97,10 @@ ht-degree: 0%
 ## 发出同意更改命令 {#commands}
 
 将SDK扩展集成到网站后，您可以开始使用Platform Web SDK `setConsent`命令将同意数据发送到Platform。
+
+>[!IMPORTANT]
+>
+>`setConsent`命令仅直接更新Profile存储区中的数据，而不会向数据湖发送任何数据。
 
 在以下两种情况下，应在您的网站上调用`setConsent`:
 
@@ -194,6 +198,8 @@ var setConsent = function () {
 ## 处理SDK响应
 
 所有[!DNL Platform SDK]命令都返回指示调用是成功还是失败的承诺。 然后，您可以将这些响应用于其他逻辑，如向客户显示确认消息。 有关特定示例，请参阅执行SDK命令指南中[处理成功或失败](../../../edge/fundamentals/executing-commands.md#handling-success-or-failure)的部分。
+
+使用SDK成功执行`setConsent`调用后，可以使用平台UI中的配置文件查看器来验证数据是否已登录到配置文件存储区。 有关更多信息，请参阅[按标识浏览用户档案](../../../profile/ui/user-guide.md#browse-identity)部分。
 
 ## 后续步骤
 

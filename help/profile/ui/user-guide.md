@@ -4,7 +4,7 @@ title: Real-time Customer Profile UI指南
 topic-legacy: guide
 description: 实时客户资料可整合来自多个渠道的数据（包括在线、离线、CRM和第三方数据），从而创建每个客户的整体视图。 本文档是在Adobe Experience Platform用户界面中与实时客户资料进行交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: b5e6376b54fe8b53fbabf85a2909293cebd93ccc
+source-git-commit: 69e510c9a0f477ad7cab530128c6728f68dfdab1
 workflow-type: tm+mt
 source-wordcount: '1568'
 ht-degree: 0%
@@ -100,7 +100,7 @@ ht-degree: 0%
 要详细了解合并策略及其在Platform中的角色，请参阅[合并策略概述](../merge-policies/overview.md)。
 
 
-### 按[!UICONTROL Identity]浏览
+### 按[!UICONTROL Identity]浏览 {#browse-identity}
 
 在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡上，您可以使用身份命名空间来按身份值查找特定配置文件。 按身份浏览需要您提供合并策略、身份命名空间和身份值。
 
