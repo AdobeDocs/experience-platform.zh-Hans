@@ -5,9 +5,9 @@ title: 架构注册API指南附录
 description: 本文档提供了与使用架构注册表API相关的补充信息。
 topic-legacy: developer guide
 exl-id: 2ddc7fe8-dd0b-4cf9-8561-e89fcdadbfce
-source-git-commit: d70f297130ec04dd799d60c70b95777ee79bbfef
+source-git-commit: 403dcb75e43b5c7aa462495086e5a9e403ef6f5b
 workflow-type: tm+mt
-source-wordcount: '781'
+source-wordcount: '984'
 ht-degree: 1%
 
 ---
@@ -30,9 +30,9 @@ ht-degree: 1%
 
 | 参数 | 描述 |
 | --- | --- |
-| `start` | 指定列出的结果的开始位置。 此值可从列表响应的`_page.next`属性中获取，并用于访问下一页结果。 如果`_page.next`值为null，则没有其他页面可用。 |
-| `limit` | 限制返回的资源数。 示例：`limit=5`将返回五个资源的列表。 |
 | `orderby` | 按特定属性对结果排序。 示例：`orderby=title`将按标题以升序(A-Z)对结果排序。 在参数值(`orderby=-title`)之前添加`-`将按标题以降序(Z-A)对项目进行排序。 |
+| `limit` | 与`orderby`参数结合使用时，`limit`会限制为给定请求返回的最大项目数。 如果没有`orderby`参数，则无法使用此参数。<br><br>参 `limit` 数指定一个正整数(介于 `0` 和 `500`之间)作为 ** 应返回项目最大数的提示。例如，`limit=5`只返回列表中的5个资源。 但是，此值并不严格遵循。 如果提供了一个参数，则实际响应大小可以小于或大于由于需要提供`start`参数的可靠操作而受到的约束。 |
+| `start` | 与`orderby`参数一起使用时，`start`指定项目子集列表的开始位置。 如果没有`orderby`参数，则无法使用此参数。 此值可从列表响应的`_page.next`属性中获取，并用于访问下一页结果。 如果`_page.next`值为null，则没有其他页面可用。<br><br>通常，为获取结果的第一页，会忽略此参数。之后，应将`start`设置为在上一页中收到的`orderby`字段的主排序属性的最大值。 然后，API响应会返回以以下条目开头的条目：具有`orderby`中严格大于（升序）或严格小于（降序）指定值的主排序属性的条目。<br><br>例如，如果将参 `orderby` 数设置为，则 `orderby=name,firstname`参数 `start` 将包含属性的 `name` 值。在这种情况下，如果您希望在名称“Miller”后立即显示资源的后20个条目，则可以使用：`?orderby=name,firstname&start=Miller&limit=20`。 |
 
 {style=&quot;table-layout:auto&quot;}
 
