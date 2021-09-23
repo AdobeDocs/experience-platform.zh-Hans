@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK渲染个性化内容
 description: 了解如何使用Adobe Experience Platform Web SDK呈现个性化内容。
 keywords: 个性化；renderDecisions;sendEvent;decisionScopes；建议；
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: 5ae7488e715ff97d2b667c40505b79433eb74f49
+source-git-commit: 0246de5810c632134288347ac7b35abddf2d4308
 workflow-type: tm+mt
-source-wordcount: '693'
+source-wordcount: '701'
 ht-degree: 1%
 
 ---
@@ -45,7 +45,7 @@ alloy("sendEvent", {
     xdm: {}
   }).then(function(result) {
     if (result.propositions) {
-      // Manually render propositions
+      // Manually render propositions and send "display" event
     }
   });
 ```
@@ -71,6 +71,9 @@ alloy("sendEvent", {
         "meta": {}
       }
     ],
+    "scopeDetails": {
+      ...
+    },
     "renderAttempted": false
   },
   {
@@ -88,6 +91,9 @@ alloy("sendEvent", {
         "meta": {}
       }
     ],
+    "scopeDetails": {
+      ...
+    },
     "renderAttempted": false
   }
 ]
@@ -107,7 +113,7 @@ alloy("sendEvent", {
     decisionScopes: ['salutation', 'discount']
   }).then(function(result) {
     if (result.propositions) {
-      // Manually render propositions
+      // Manually render propositions and send "display" event
     }
   });
 ```
@@ -131,6 +137,12 @@ alloy("sendEvent", {
         "meta": {}
       }
     ],
+    "scopeDetails": {
+      "id": "AT:cZJhY3Rpdml0eUlkIjoiMTI3MDE5IiwiZXhwZXJpZW5jZUlkIjoiMCJ2",
+      "activity": {
+        "id": "384456"
+      }
+    },  
     "renderAttempted": false
   },
   {
@@ -147,6 +159,12 @@ alloy("sendEvent", {
         "meta": {}
       }
     ],
+    "scopeDetails": {
+      "id": "AT:FZJhY3Rpdml0eUlkIjoiMTI3MDE5IiwiZXhwZXJpZW5jZUlkIjoiMCJ0",
+      "activity": {
+        "id": "384457"
+      }
+    },
     "renderAttempted": false
   },
   {
@@ -164,6 +182,12 @@ alloy("sendEvent", {
         "meta": {}
       }
     ],
+    "scopeDetails": {
+      "id": "AT:PyJhY3Rpdml0eUlkIjoiMTI3MDE5IiwiZXhwZXJpZW5jZUlkIjoiMCJ8",
+      "activity": {
+        "id": "384459"
+      }
+    },
     "renderAttempted": false
   },
   {
@@ -181,6 +205,12 @@ alloy("sendEvent", {
         "meta": {}
       }
     ],
+    "scopeDetails": {
+      "id": "AT:PyJhY3Rpdml0eUlkIjoiMTI3MDE5IiwiZXhwZXJpZW5jZUlkIjoiMCJ8",
+      "activity": {
+        "id": "384459"
+      }
+    },
     "renderAttempted": false
   }
 ]
@@ -192,6 +222,7 @@ alloy("sendEvent", {
 1. 回顾每个命题，寻找范围`discount`的命题。
 1. 如果您找到一个建议，请循环查看建议中的每个项目，并查找HTML内容的项目。 （检查好过假设。）
 1. 如果找到包含HTML内容的项目，请在页面上找到`daily-special`元素，并将其HTML替换为个性化内容。
+1. 内容呈现后，发送`display`事件。
 
 您的代码如下所示：
 
@@ -224,15 +255,31 @@ alloy("sendEvent", {
       var discountPropositionItem = discountProposition.items[i];
       if (discountPropositionItem.schema === "https://ns.adobe.com/personalization/html-content-item") {
         discountHtml = discountPropositionItem.data.content;
-        break;
+        // Render the content
+        var dailySpecialElement = document.getElementById("daily-special");
+        dailySpecialElement.innerHTML = discountHtml;
+        
+        // For this example, we assume there is only a signle place to update in the HTML.
+        break;  
       }
     }
-  }
-
-  if (discountHtml) {
-    // Discount HTML exists. Time to render it.
-    var dailySpecialElement = document.getElementById("daily-special");
-    dailySpecialElement.innerHTML = discountHtml;
+      // Send a "display" event 
+    alloy("sendEvent", {
+      xdm: {
+        eventType: "display",
+        _experience: {
+          decisioning: {
+            propositions: [
+              {
+                id: discountProposition.id,
+                scope: discountProposition.scope,
+                scopeDetails: discountProposition.scopeDetails
+              }
+            ]
+          }
+        }
+      }
+    });
   }
 });
 ```
