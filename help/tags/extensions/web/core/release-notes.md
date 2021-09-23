@@ -2,10 +2,10 @@
 title: 核心扩展的发行说明
 description: Adobe Experience Platform中核心扩展的最新发行说明。
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 29a238c517b6bd5a95284b4d6954fd14a1668f0e
+source-git-commit: 693da9aa012baa26dcff93f085dd6e763816e247
 workflow-type: tm+mt
-source-wordcount: '1434'
-ht-degree: 62%
+source-wordcount: '1522'
+ht-degree: 59%
 
 ---
 
@@ -14,6 +14,22 @@ ht-degree: 62%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## 2021 年 9 月 23 日
+
+v3.2.1
+
+* 修复了条件值数据元素视图初始化在字段值为0时无法正常工作的错误。
+
+## 2021 年 9 月 23 日
+
+v3.2.0
+
+条件值数据元素中引入了以下更改：
+
+* 为条件值和回退值添加复选框，允许用户选择是否希望未定义为返回值。
+* 数字值将作为数字在设置对象中显示。
+* 不再需要条件值，它的行为方式与回退值相同。
 
 ## 2021 年 9 月 17 日
 
@@ -50,7 +66,7 @@ v2.0.7
 * 修复了文本输入上的鼠标交互无法继续正常工作的问题。
 * 弃用浏览器和操作系统条件的使用。
 
-## 2021年5月4日
+## 2021 年 5 月 4 日
 
 v2.0.6
 
