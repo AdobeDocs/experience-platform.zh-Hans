@@ -4,10 +4,10 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用体验数据模型(XDM)类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: 295dc040f3af7342226e3d78d0ae21e73db58d57
+source-git-commit: cf0f0a46cc337d21c47a9b3a2fc12f8a7a6cb828
 workflow-type: tm+mt
-source-wordcount: '324'
-ht-degree: 16%
+source-wordcount: '375'
+ht-degree: 13%
 
 ---
 
@@ -31,6 +31,15 @@ ht-degree: 16%
    * [XDM个人配置文件](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
    * [区段定义](./classes/segment-definition.md)
+   * B2B类{#b2b}
+      * [XDM业务帐户](./classes/b2b/business-account.md)
+      * [XDM业务帐户人员关系](./classes/b2b/business-account-person-relation.md)
+      * [XDM Business Campaign](./classes/b2b/business-campaign.md)
+      * [XDM Business Campaign成员](./classes/b2b/business-campaign-members.md)
+      * [XDM业务机会](./classes/b2b/business-opportunity.md)
+      * [XDM业务机会人员关系](./classes/b2b/business-opportunity-person-relation.md)
+      * [XDM业务营销列表](./classes/b2b/business-marketing-list.md)
+      * [XDM业务营销列表成员](./classes/b2b/business-marketing-list-members.md)
 * 架构字段组{#field-groups}
    * 配置文件字段组{#profile}
       * [人口统计详细信息](./field-groups/profile/demographic-details.md)
@@ -42,6 +51,8 @@ ht-degree: 16%
       * [区段成员资格详细信息](./field-groups/profile/segmentation.md)
       * [电信订购](./field-groups/profile/telecom-subscription.md)
       * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
+      * [XDM业务人员组件](./field-groups/profile/business-person-components.md)
+      * [XDM业务人员详细信息](./field-groups/profile/business-person-details.md)
    * 事件字段组{#event}
       * [促销活动营销详细信息](./field-groups/event/campaign-marketing-details.md)
       * [渠道详细信息](./field-groups/event/channel-details.md)
@@ -60,6 +71,7 @@ ht-degree: 16%
    * [应用程序](./data-types/application.md)
    * [信标](./data-types/beacon.md)
    * [浏览器详细信息](./data-types/browser-details.md)
+   * [B2B源](./data-types/b2b-source.md)
    * [商务](./data-types/commerce.md)
    * [同意字符串](./data-types/consent-string.md)
    * [同意和首选项](./data-types/consents.md)
@@ -68,6 +80,7 @@ ht-degree: 16%
    * [电子邮件地址](./data-types/email-address.md)
    * [环境](./data-types/environment.md)
    * [体验渠道](./data-types/experience-channel.md)
+   * [外部源系统审核属性](./data-types/external-source-system-audit-attributes.md)
    * [一般同意字段](./data-types/consent-field.md)
    * [一般营销首选项字段](./data-types/marketing-field.md)
    * [包含订阅的通用营销首选项字段](./data-types/marketing-field-subscriptions.md)

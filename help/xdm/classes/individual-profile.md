@@ -5,9 +5,9 @@ title: XDM个人配置文件类
 topic-legacy: overview
 description: 本文档概述了XDM Individual Profile类。
 exl-id: 83b22462-79ce-4024-aa50-a9bd800c0f81
-source-git-commit: bd312024a1a3fb6da840a38d6e9d19fcbd6eab5a
+source-git-commit: 319d508925d22e76a3d75ae473f6ea000b5c655b
 workflow-type: tm+mt
-source-wordcount: '567'
+source-wordcount: '597'
 ht-degree: 1%
 
 ---
@@ -42,12 +42,17 @@ ht-degree: 1%
 
 Adobe提供了多个用于[!DNL XDM Individual Profile]类的标准字段组。 以下是类的一些常用字段组的列表：
 
+* [[!UICONTROL 同意和首选项]](../field-groups/profile/consents.md)
 * [[!UICONTROL 人口统计详细信息]](../field-groups/profile/demographic-details.md)
 * [[!UICONTROL IdentityMap]](../field-groups/profile/identitymap.md)
 * [[!UICONTROL 忠诚度详细信息]](../field-groups/profile/loyalty-details.md)
 * [[!UICONTROL 个人联系详细信息]](../field-groups/profile/personal-contact-details.md)
-* [[!UICONTROL 同意和首选项]](../field-groups/profile/consents.md)
 * [[!UICONTROL 区段成员资格详细信息]](../field-groups/profile/segmentation.md)
+* [[!UICONTROL 电信订购]](../field-groups/profile/telecom-subscription.md)
 * [[!UICONTROL 工作联系人详细信息]](../field-groups/profile/work-contact-details.md)
+* [[!UICONTROL XDM业务人员组件]](../field-groups/profile/business-person-components.md)\*
+* [[!UICONTROL XDM业务人员详细信息]](../field-groups/profile/business-person-details.md)\*
+
+*\*此字段组仅适用于有权访问B2B版实时客户数据平台的组织。*
 
 有关[!DNL XDM Individual Profile]的所有兼容字段组的完整列表，请参阅[XDM GitHub存储库](https://github.com/adobe/xdm/tree/master/components/fieldgroups/profile)。
