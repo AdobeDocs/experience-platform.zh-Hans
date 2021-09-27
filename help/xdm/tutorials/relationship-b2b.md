@@ -1,14 +1,18 @@
 ---
 title: 定义实时客户数据平台B2B版中两种模式的关系
 description: 了解如何在实时客户数据平台B2B版中定义两个架构之间的多对一关系。
-source-git-commit: 5fd82b02eb25f3d575de695c2f2b14a5e5b18400
+source-git-commit: d83ad2870b6099d3c6359dcc7cd000ecad8a238f
 workflow-type: tm+mt
-source-wordcount: '1201'
+source-wordcount: '1220'
 ht-degree: 0%
 
 ---
 
 # 在实时客户数据平台B2B版中定义两个架构之间的关系
+
+>[!IMPORTANT]
+>
+>实时客户数据平台B2B版目前处于测试阶段。 文档和功能可能会发生更改。
 
 >[!NOTE]
 >

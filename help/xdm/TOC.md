@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用体验数据模型(XDM)类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: 50ca41ac5adba60e4abb484c8689372d0de77571
+source-git-commit: d83ad2870b6099d3c6359dcc7cd000ecad8a238f
 workflow-type: tm+mt
-source-wordcount: '383'
+source-wordcount: '391'
 ht-degree: 13%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 13%
    * [XDM个人配置文件](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
    * [区段定义](./classes/segment-definition.md)
-   * B2B类{#b2b}
+   * B2B类（测试版）{#b2b}
       * [XDM业务帐户](./classes/b2b/business-account.md)
       * [XDM业务帐户人员关系](./classes/b2b/business-account-person-relation.md)
       * [XDM Business Campaign](./classes/b2b/business-campaign.md)
@@ -145,11 +145,11 @@ ht-degree: 13%
    * [Mixin（已弃用）](api/mixins.md)
    * [附录](api/appendix.md)
 * 教程 {#tutorials}
-   * [创建架构(UI)](tutorials/create-schema-ui.md)
-   * [创建模式(API)](tutorials/create-schema-api.md)
-   * [定义两个架构(UI)之间的关系](tutorials/relationship-ui.md)
-   * [定义两个架构(API)之间的关系](tutorials/relationship-api.md)
-   * [定义两个架构之间的关系(B2B)](tutorials/relationship-b2b.md)
+   * [在UI中创建架构](tutorials/create-schema-ui.md)
+   * [在API中创建架构](tutorials/create-schema-api.md)
+   * [在UI中定义架构关系](tutorials/relationship-ui.md)
+   * [在API中定义架构关系](tutorials/relationship-api.md)
+   * [在Real-time CDP B2B Edition（测试版）中定义模式关系](tutorials/relationship-b2b.md)
    * [创建临时架构(API)](tutorials/ad-hoc.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/experience-platform-apis/references/schema-registry/)

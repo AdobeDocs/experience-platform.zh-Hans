@@ -1,18 +1,18 @@
 ---
 title: XDM业务帐户类
 description: 本文档概述了Experience Data Model(XDM)中的XDM业务帐户类。
-source-git-commit: 5fd82b02eb25f3d575de695c2f2b14a5e5b18400
+source-git-commit: d83ad2870b6099d3c6359dcc7cd000ecad8a238f
 workflow-type: tm+mt
-source-wordcount: '162'
+source-wordcount: '172'
 ht-degree: 2%
 
 ---
 
-# [!UICONTROL XDM业务帐] 户类
+# [!UICONTROL XDM业务] 帐户类（测试版）
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此类仅适用于有权访问实时客户数据平台B2B版的组织。
+>此课程作为Real-time Customer Data Platform B2B Edition的一部分提供，该B2B Edition目前处于测试阶段。 文档和功能可能会发生更改。
 
 [!UICONTROL XDM业务] 帐户是一种标准的体验数据模型(XDM)类，可捕获业务帐户所需的最低属性。
 
