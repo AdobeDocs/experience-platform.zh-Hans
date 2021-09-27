@@ -1,9 +1,9 @@
 ---
 title: XDM业务营销列表类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Marketing List类。
-source-git-commit: 19bb39b66f3a3eb93fd0138ac021568021d77b0f
+source-git-commit: 5fd82b02eb25f3d575de695c2f2b14a5e5b18400
 workflow-type: tm+mt
-source-wordcount: '164'
+source-wordcount: '200'
 ht-degree: 3%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->此类仅适用于有权访问B2B版实时客户数据平台的组织。
+>此类仅适用于有权访问实时客户数据平台B2B版的组织。
 
 [!UICONTROL XDM Business Marketing List] 是一个标准的体验数据模型(XDM)类，可捕获营销列表所需的最低属性。市场营销列表允许您优先考虑最有可能购买您产品的潜在客户。
 
@@ -26,3 +26,5 @@ ht-degree: 3%
 | `marketingListDescription` | 字符串 | 营销列表的描述。 |
 | `marketingListID` | 字符串 | 营销列表实体的唯一ID。 |
 | `marketingListName` | 字符串 | 营销列表的名称。 |
+
+请参阅Real-time CDP B2B Edition](../../tutorials/relationship-b2b.md)中[模式关系指南，了解此类在概念上如何与其他B2B类相关联，以及如何在Adobe Experience Platform UI中建立这些关系。

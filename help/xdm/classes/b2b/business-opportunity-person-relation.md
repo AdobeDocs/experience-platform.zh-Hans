@@ -1,9 +1,9 @@
 ---
 title: XDM业务机会人员关系类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Opportunity Person Relation类。
-source-git-commit: 19bb39b66f3a3eb93fd0138ac021568021d77b0f
+source-git-commit: 5fd82b02eb25f3d575de695c2f2b14a5e5b18400
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '257'
 ht-degree: 3%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->此类仅适用于有权访问B2B版实时客户数据平台的组织。
+>此类仅适用于有权访问实时客户数据平台B2B版的组织。
 
 [!UICONTROL XDM Business Opportunity Person Relations是一] 个标准的体验数据模型(XDM)类，可捕获与业务机会关联的人员的最低要求属性。
 
@@ -30,3 +30,5 @@ ht-degree: 3%
 | `isPrimary` | 布尔型 | 指示人员是否是此机会的主要联系人。 |
 | `personID` | 字符串 | 机会 — 人员关系中人员的唯一标识符。 |
 | `personRole` | 字符串 | 人员在机会 — 人员关系中的角色。 |
+
+请参阅Real-time CDP B2B Edition](../../tutorials/relationship-b2b.md)中[模式关系指南，了解此类在概念上如何与其他B2B类相关联，以及如何在Adobe Experience Platform UI中建立这些关系。

@@ -1,9 +1,9 @@
 ---
 title: XDM业务帐户人员关系分类
 description: 本文档概述了Experience Data Model(XDM)中的XDM业务帐户人员关系类。
-source-git-commit: 19bb39b66f3a3eb93fd0138ac021568021d77b0f
+source-git-commit: 5fd82b02eb25f3d575de695c2f2b14a5e5b18400
 workflow-type: tm+mt
-source-wordcount: '288'
+source-wordcount: '324'
 ht-degree: 3%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->此类仅适用于有权访问B2B版实时客户数据平台的组织。
+>此类仅适用于有权访问实时客户数据平台B2B版的组织。
 
 [!UICONTROL XDM业务帐户人] 员关系是一种标准的体验数据模型(XDM)类，可捕获与业务帐户关联的人员的最低要求属性。
 
@@ -35,3 +35,5 @@ ht-degree: 3%
 | `personRole` | 字符串 | 人员在帐户与人员关系中的角色。 |
 | `relationEndDate` | DateTime | 帐户与人员之间的关系结束的日期。 |
 | `relationStartDate` | DateTime | 帐户与人员之间的关系开始的日期。 |
+
+请参阅Real-time CDP B2B Edition](../../tutorials/relationship-b2b.md)中[模式关系指南，了解此类在概念上如何与其他B2B类相关联，以及如何在Adobe Experience Platform UI中建立这些关系。

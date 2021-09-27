@@ -1,10 +1,10 @@
 ---
 title: XDM业务机会类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Opportunity类。
-source-git-commit: 19bb39b66f3a3eb93fd0138ac021568021d77b0f
+source-git-commit: 5fd82b02eb25f3d575de695c2f2b14a5e5b18400
 workflow-type: tm+mt
-source-wordcount: '176'
-ht-degree: 5%
+source-wordcount: '212'
+ht-degree: 4%
 
 ---
 
@@ -12,7 +12,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->此类仅适用于有权访问B2B版实时客户数据平台的组织。
+>此类仅适用于有权访问实时客户数据平台B2B版的组织。
 
 [!UICONTROL XDM业务机] 会是一种标准的体验数据模型(XDM)类，可捕获业务机会所需的最低属性。
 
@@ -30,3 +30,5 @@ ht-degree: 5%
 | `opportunityName` | 字符串 | 机会的名称。 |
 | `opportunityStage` | 字符串 | 销售机会的销售阶段。 |
 | `opportunityType` | 字符串 | 机会类型。 |
+
+请参阅Real-time CDP B2B Edition](../../tutorials/relationship-b2b.md)中[模式关系指南，了解此类在概念上如何与其他B2B类相关联，以及如何在Adobe Experience Platform UI中建立这些关系。
