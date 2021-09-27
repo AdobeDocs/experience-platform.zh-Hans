@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到SFTP（安全文件传输协议）服务器。
 exl-id: b965b4bf-0b55-43df-bb79-c89609a9a488
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 9ad09fba3119b631576f22574a2151c74f91e07b
 workflow-type: tm+mt
-source-wordcount: '794'
+source-wordcount: '809'
 ht-degree: 1%
 
 ---
@@ -39,6 +39,7 @@ ht-degree: 1%
 | 凭据 | 描述 |
 | ---------- | ----------- |
 | `host` | 与[!DNL SFTP]服务器关联的名称或IP地址。 |
+| `port` | 您连接到的SFTP服务器端口。 如果未提供，则该值默认为`22`。 |
 | `username` | 具有[!DNL SFTP]服务器访问权限的用户名。 |
 | `password` | [!DNL SFTP]服务器的密码。 |
 | `privateKeyContent` | Base64编码的SSH私钥内容。 OpenSSH密钥的类型必须分类为RSA或DSA。 |
@@ -55,7 +56,7 @@ ht-degree: 1%
 
 要创建基本连接ID，请在请求参数中提供[!DNL SFTP]身份验证凭据时，向`/connections`端点发出POST请求。
 
-### 使用基本身份验证创建[!DNL SFTP]连接
+### 使用基本身份验证创建[!DNL SFTP]基本连接
 
 要使用基本身份验证创建[!DNL SFTP]基本连接，请向[!DNL Flow Service] API发出POST请求，同时为连接的`host`、`userName`和`password`提供值。
 
@@ -113,7 +114,7 @@ curl -X POST \
 }
 ```
 
-### 使用SSH公钥身份验证创建[!DNL SFTP]连接
+### 使用SSH公钥身份验证创建[!DNL SFTP]基本连接
 
 要使用SSH公钥身份验证创建[!DNL SFTP]基本连接，请向[!DNL Flow Service] API发出POST请求，同时为连接的`host`、`userName`、`privateKeyContent`和`passPhrase`提供值。
 
