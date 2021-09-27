@@ -1,7 +1,8 @@
 ---
 description: 使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 定义、测试和提交模板后，Adobe会使用该模板来构建到您目标的API调用。
 title: 受众元数据管理
-source-git-commit: d2452bf0e59866d3deca57090001c4c5a0935525
+exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
+source-git-commit: 397c49284c30c648695a7a186d3f3e76a2675807
 workflow-type: tm+mt
 source-wordcount: '1012'
 ht-degree: 0%
@@ -54,7 +55,7 @@ ht-degree: 0%
 
 如果您的用例需要，Adobe工程团队可以与您合作，扩展带有自定义字段的通用模板。
 
-## 模板示例 {#template-examples}
+## 配置示例 {#configuration-examples}
 
 本节包含三个供您参考的通用受众元数据配置示例，以及配置主要部分的描述。 请注意三个示例配置中的url、标头、请求和响应正文有何不同。 这是由于三个示例平台营销API的不同规范所致。
 
