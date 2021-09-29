@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: b616a0c0d49d980644f82bc3af5995b3b17b4c80
+source-git-commit: 4959b5227f777a2c8cab1317d67795678d1a6eea
 workflow-type: tm+mt
-source-wordcount: '290'
-ht-degree: 10%
+source-wordcount: '381'
+ht-degree: 9%
 
 ---
 
@@ -15,8 +15,21 @@ ht-degree: 10%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [数据引入](#ingestion)
 - [[!DNL Data Prep]](#data-prep)
 - [源](#sources)
+
+## 数据引入 {#ingestion}
+
+Adobe Experience Platform数据摄取表示Platform通过多种方法从各种源摄取数据，以及该数据如何在数据湖中持久保留以供下游Platform服务使用。
+
+**新增功能**
+
+| 功能 | 描述 |
+|------- | -----------|
+| 使用批量摄取功能更新或修补配置文件记录 | 实时客户配置文件现在允许通过批量摄取来更新单个配置文件记录数据中的配置文件属性。 要了解更多信息，请参阅[批量摄取开发人员指南](../../ingestion/batch-ingestion/api-overview.md)。 |
+
+要了解有关将数据摄取到平台的更多信息，请访问[数据摄取文档](../../ingestion/home.md)。
 
 ## [!DNL Data Prep] {#data-prep}
 
