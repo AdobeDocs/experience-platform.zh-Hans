@@ -2,9 +2,9 @@
 title: Marketo Engage目标
 description: Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户体验管理(CXM)解决方案。 它让您能够自动执行和管理活动，从CRM潜在客户管理和客户参与到基于帐户的营销和收入归因中。
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: 1f18e07af7ef0d90f882fa668c5659330bce5960
+source-git-commit: 6ea82e0589843f15b1486e1242aa68ef8e2fe9d3
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '303'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户体验管理(CXM)解决方案。 它让您能够自动执行和管理活动，从CRM潜在客户管理和客户参与到基于帐户的营销和收入归因中。
 
-区段连接器允许营销人员将在Adobe Experience Platform中创建的区段推送到Marketo，在那里，这些区段将显示为静态列表。
+通过目标，营销人员可以将在Adobe Experience Platform中创建的区段推送到Marketo，以便这些区段显示为静态列表。
 
 ## 支持的身份 {#supported-identities}
 
@@ -30,7 +30,7 @@ Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户
 
 ## 导出类型 {#export-type}
 
-区段导出 — 您要导出区段（受众）的所有成员，以及Marketo Engage目标中使用的标识符（名称、电话号码或其他）。
+区段导出 — 您正在导出区段（受众）的所有成员，以及Marketo Engage目标中使用的标识符（电子邮件、ECID）。
 
 ## 设置目标并激活区段 {#set-up}
 
