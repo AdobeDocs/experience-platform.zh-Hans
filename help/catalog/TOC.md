@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Catalog and Datasets 指南
 user-guide-description: 浏览数据湖中的数据谱系、元数据、文件描述、目录和数据集。
 feature: Data Management
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 3eea0a1ecbe7db202f56f326e7b9b1300b37d236
 workflow-type: tm+mt
-source-wordcount: '102'
-ht-degree: 20%
+source-wordcount: '116'
+ht-degree: 18%
 
 ---
 
@@ -31,6 +31,8 @@ ht-degree: 20%
    * [数据集概述](datasets/overview.md)
    * [Datasets用户指南](datasets/user-guide.md)
    * [使用API创建和填充数据集](datasets/create.md)
+   * [为配置文件和标识启用数据集](datasets/enable-for-profile.md)
+   * [为配置文件更新启用数据集（重新插入）](datasets/enable-upsert.md)
 * [数据湖中的隐私请求处理](privacy.md)
 * [Experience Platform中的数据保护](data-protection.md)
 * [API参考](https://www.adobe.io/experience-platform-apis/references/catalog/)

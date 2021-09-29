@@ -4,9 +4,9 @@ title: 实时客户资料概述
 topic-legacy: guide
 description: 实时客户资料可合并各种来源的数据，并以单个客户资料和相关时间系列事件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 93a4cd5c86a715cd04cd2a553866bbb4e19f951a
+source-git-commit: 2eac45cd4b053753f954bbaae999fc321c75bd9b
 workflow-type: tm+mt
-source-wordcount: '1810'
+source-wordcount: '1884'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Experience PlatformUI提供了一个功能板，您可以通过该功能板查�
 
 ### 记录数据 {#record-data}
 
-用户档案是主体、组织或个人的表示形式，由许多属性（也称为记录数据）组成。 例如，产品的配置文件可能包含SKU和描述，而人员的配置文件包含名字、姓氏和电子邮件地址等信息。 使用[!DNL Experience Platform]，您可以自定义用户档案以使用与您的业务相关的特定数据。 标准[!DNL Experience Data Model](XDM)类[!DNL XDM Individual Profile]是在描述客户记录数据时构建架构的首选类，并为Platform服务之间的许多交互提供数据整体。 有关在[!DNL Experience Platform]中使用架构的更多信息，请首先阅读[XDM系统概述](../xdm/home.md)。
+用户档案是主体、组织或个人的表示形式，由许多属性（也称为记录数据）组成。 例如，产品的配置文件可能包含SKU和描述，而人员的配置文件包含名字、姓氏和电子邮件地址等信息。 使用[!DNL Experience Platform]，您可以自定义用户档案以使用与您的业务相关的特定数据。 标准[!DNL Experience Data Model](XDM)类[!DNL XDM Individual Profile]是在描述客户记录数据时构建架构的首选类，它为平台服务之间的许多交互提供数据集成。 有关在[!DNL Experience Platform]中使用架构的更多信息，请首先阅读[XDM系统概述](../xdm/home.md)。
 
 ### 时间系列事件 {#time-series-events}
 
@@ -87,7 +87,7 @@ Adobe Experience Platform [!DNL Segmentation Service]会生成为各个客户提
 
 ### 流式摄取和流式分段
 
-通过称为流摄取的过程实现实时输入。 在摄取用户档案和时间序列数据时，[!DNL Real-time Customer Profile]会自动决定通过称为流分段的持续过程从区段中包含或排除该数据，然后再将其与现有数据合并并更新并集视图。 因此，您可以即时执行计算并做出决策，在客户与您的品牌进行交互时为客户提供增强的个性化体验。 在摄取数据时，还会进行验证以确保正确摄取数据，并符合数据集所基于的架构。 有关在摄取期间执行的验证的更多信息，请首先阅读[数据摄取质量概述](../ingestion/quality/overview.md)。
+通过称为流摄取的过程实现实时输入。 在摄取用户档案和时间序列数据时，[!DNL Real-time Customer Profile]会自动决定通过称为流分段的持续过程，在将数据与现有数据合并并更新并集视图之前，将该数据包含或排除在区段中。 因此，您可以即时执行计算并做出决策，在客户与您的品牌进行交互时为客户提供增强的个性化体验。 在摄取数据时，还会进行验证以确保正确摄取数据，并符合数据集所基于的架构。 有关在摄取期间执行的验证的更多信息，请首先阅读[数据摄取质量概述](../ingestion/quality/overview.md)。
 
 ## 边缘投影
 
@@ -104,6 +104,10 @@ Adobe Experience Platform [!DNL Segmentation Service]会生成为各个客户提
 ### 配置文件摄取量度
 
 可观察性分析允许您在Adobe Experience Platform中显示关键量度。 除了[!DNL Experience Platform]各种[!DNL Platform]功能的使用情况统计信息和性能指标之外，还有一些特定的与用户档案相关的量度，可让您深入了解传入请求率、成功摄取率、摄取的记录大小等。 要了解更多信息，请首先阅读[可观察性分析API概述](../observability/api/overview.md)，并获取实时客户资料量度的完整列表，请参阅[可用量度](../observability/api/metrics.md#available-metrics)相关文档。
+
+## 更新配置文件存储数据
+
+有时可能需要更新贵组织的用户档案存储区中的数据。 例如，您可能需要更正记录或更改属性值。 这可以通过批量摄取或流式摄取完成，并且需要一个启用了配置文件的数据集，该数据集配置了一个更新标记。 有关如何配置数据集以进行属性更新的更多信息，请参阅[启用数据集以进行配置文件和Upsert](../catalog/datasets/enable-upsert.md)的教程。
 
 ## [!DNL Data governance] 和 [!DNL Privacy]
 

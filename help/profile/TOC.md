@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Real-time Customer Profile 指南
 user-guide-description: 合并客户视图，跨渠道创建统一的客户互动视图。
 feature: Profiles
-source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
+source-git-commit: 3eea0a1ecbe7db202f56f326e7b9b1300b37d236
 workflow-type: tm+mt
-source-wordcount: '133'
+source-wordcount: '136'
 ht-degree: 18%
 
 ---
@@ -43,8 +43,8 @@ ht-degree: 18%
    * [并集架构UI指南](ui/union-schema.md)
    * [并集架构概述（视频）](video/union-schemas-overview.md)
 * 教程 {#tutorials}
-   * [将数据添加到 [!DNL Profile]](tutorials/add-profile-data.md)
-   * [为 [!DNL Profile] & [!DNL Identity] 服务配置数据集](tutorials/dataset-configuration.md)
+   * [将数据添加到实时客户资料](tutorials/add-profile-data.md)
+   * [为配置文件配置数据集](tutorials/dataset-configuration.md)
    * [生成数据集重叠报表](tutorials/dataset-overlap-report.md)
    * [更多教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
 * [隐私请求处理](privacy.md)

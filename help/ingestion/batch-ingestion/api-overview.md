@@ -2,90 +2,26 @@
 keywords: Experience Platform；主页；热门主题；批量摄取；批量摄取；开发人员指南；API指南；上传；摄取Parquet；摄取json;
 solution: Experience Platform
 title: 批量摄取API指南
-topic-legacy: developer guide
-description: 本文档全面概述了使用批量摄取API。
+description: 本文档为使用适用于Adobe Experience Platform的批量摄取API的开发人员提供了全面的指南。
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 087a714c579c4c3b95feac3d587ed13589b6a752
 workflow-type: tm+mt
-source-wordcount: '2552'
-ht-degree: 6%
+source-wordcount: '2373'
+ht-degree: 4%
 
 ---
 
-# 批量摄取API指南
+# 批量摄取开发人员指南
 
-本文档全面概述了如何使用[批量摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)。
+本文档提供了在Adobe Experience Platform中使用[批量摄取API端点](https://www.adobe.io/experience-platform-apis/references/data-ingestion/#tag/Batch-Ingestion)的全面指南。 有关批量摄取API的概述（包括先决条件和最佳实践），请首先阅读[批量摄取API概述](overview.md)。
 
 本文档的附录提供了用于摄取](#data-transformation-for-batch-ingestion)的[格式化数据的信息，包括示例CSV和JSON数据文件。
 
 ## 快速入门
 
-数据摄取提供了一个RESTful API，通过该API，您可以对支持的对象类型执行基本的CRUD操作。
+本指南中使用的API端点是[数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)的一部分。 数据摄取提供了一个RESTful API，通过该API，您可以对支持的对象类型执行基本的CRUD操作。
 
-以下部分提供了为成功调用批量摄取API而需要了解或掌握的其他信息。
-
-本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
-
-- [批量摄取](./overview.md):允许您将数据作为批处理文件导入到Adobe Experience Platform中。
-- [[!DNL Experience Data Model (XDM)] 系统](../../xdm/home.md):用于组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
-
-### 读取示例API调用
-
-本指南提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅[!DNL Experience Platform]疑难解答指南中[如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
-
-### 收集所需标题的值
-
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程可为所有[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
-
-- `Authorization: Bearer {ACCESS_TOKEN}`
-- `x-api-key: {API_KEY}`
-- `x-gw-ims-org-id: {IMS_ORG}`
-
-[!DNL Experience Platform]中的所有资源均与特定虚拟沙箱隔离。 对[!DNL Platform] API的所有请求都需要一个标头来指定操作将在其中进行的沙盒的名称：
-
-- `x-sandbox-name: {SANDBOX_NAME}`
-
->[!NOTE]
->
->有关[!DNL Platform]中沙箱的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
-
-包含有效负载(POST、PUT、PATCH)的请求可能需要额外的`Content-Type`标头。 每个调用的接受值都在调用参数中提供。
-
-## 类型
-
-在摄取数据时，务必要了解[!DNL Experience Data Model](XDM)模式的工作方式。 有关XDM字段类型如何映射到不同格式的更多信息，请阅读[架构注册开发人员指南](../../xdm/api/getting-started.md)。
-
-在摄取数据时具有一定的灵活性 — 如果类型与目标架构中的内容不匹配，则数据将转换为表示的目标类型。 如果不能，则使用`TypeCompatibilityException`的批处理将失败。
-
-例如，JSON和CSV都没有日期或日期时间类型。 因此，这些值使用[ISO 8061格式化字符串](https://www.iso.org/iso-8601-date-and-time-format.html)(&quot;2018-07-10T15:05:59.000-08:00&quot;)或Unix时间（以毫秒为单位）格式化，并在摄取时转换为目标XDM类型。
-
-下表显示了摄取数据时支持的转化。
-
-| 入站（行）与目标（列） | 字符串 | 字节 | 短 | 整数 | 长 | 双精度 | 日期 | Date-Time | 对象 | 地图 |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 字符串 | X | X | X | X | X | X | X | X |  |  |
-| 字节 | X | X | X | X | X | X |  |  |  |  |
-| 短 | X | X | X | X | X | X |  |  |  |  |
-| 整数 | X | X | X | X | X | X |  |  |  |  |
-| 长 | X | X | X | X | X | X | X | X |  |  |
-| 双精度 | X | X | X | X | X | X |  |  |  |  |
-| 日期 |  |  |  |  |  |  | X |  |  |  |
-| Date-Time |  |  |  |  |  |  |  | X |  |  |
-| 对象 |  |  |  |  |  |  |  |  | X | X |
-| 地图 |  |  |  |  |  |  |  |  | X | X |
-
->[!NOTE]
->
->布尔值和数组无法转换为其他类型。
-
-## 摄取约束
-
-批量数据摄取具有一些限制：
-- 每批文件的最大数量：1500
-- 最大批次大小：100 GB
-- 每行属性或字段的最大数量：10000
-- 每个用户每分钟的最大批数：138
+在继续操作之前，请查看[批量摄取API概述](overview.md)和[入门指南](getting-started.md)。
 
 ## 摄取JSON文件
 
@@ -157,7 +93,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### 上传文件
 
-现在，您已创建批处理，接下来可以使用之前的`batchId`将文件上传到该批处理。 您可以将多个文件上传到批。
+现在，您已创建批处理，接下来可以使用批处理创建响应中的批处理ID将文件上传到批处理。 您可以将多个文件上传到批。
 
 >[!NOTE]
 >
@@ -231,7 +167,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 200 OK
 ```
 
-## 摄取Parquet文件
+## 摄取Parquet文件 {#ingest-parquet-files}
 
 >[!NOTE]
 >
@@ -812,6 +748,21 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 200 OK
 ```
 
+## 修补批处理
+
+有时可能需要更新贵组织的用户档案存储区中的数据。 例如，您可能需要更正记录或更改属性值。 Adobe Experience Platform支持通过upsert操作或“修补批处理”来更新或修补配置文件存储数据。
+
+>[!NOTE]
+>
+>这些更新仅允许在用户档案记录中进行，不允许在体验事件中进行。
+
+要对批处理进行修补，需要满足以下条件：
+
+- **为配置文件和属性更新启用的数据集。** 这可通过数据集标记完成，并要求将 `isUpsert:true` 特定标记添加到数 `unifiedProfile` 组。有关如何创建数据集或配置现有数据集以进行升级的详细信息步骤，请按照[启用数据集以进行配置文件更新](../../catalog/datasets/enable-upsert.md)的教程进行操作。
+- **Parquet文件，其中包含要修补的字段和配置文件的标识字段。** 为批处理打补丁的数据格式与常规的批处理摄取过程类似。所需的输入是Parquet文件，除了要更新的字段外，上传的数据还必须包含标识字段，才能匹配用户档案存储中的数据。
+
+在为Profile和upsert启用了数据集，并且Parquet文件包含要补丁的字段和必需的标识字段后，您可以按照[摄取Parquet文件](#ingest-parquet-files)的步骤操作，以通过批量摄取完成补丁。
+
 ## 重播批处理
 
 如果要替换已摄取的批处理，可以通过“批重播”执行此操作 — 此操作等同于删除旧批处理并摄取新批处理。
@@ -963,6 +914,8 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 ```
 
 ## 附录
+
+以下部分包含有关使用批量摄取在Experience Platform中摄取数据的其他信息。
 
 ### 用于批量摄取的数据转换
 

@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 实时客户资料API指南
 description: 实时客户配置文件API允许开发人员探索和使用配置文件数据，包括查看配置文件、创建和更新合并策略、导出或采样配置文件数据，以及删除不再需要或错误添加的配置文件数据。 请阅读本指南，了解如何使用API执行关键操作。
 exl-id: ce39b95b-cff7-46cf-a14c-8203017c8826
-source-git-commit: b2ae2b4ca2efe606aa148e06ca988a6285bedfee
+source-git-commit: 3b34cf37182ae98545651a7b54f586df7d811f34
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '963'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,10 @@ Adobe Experience Platform通过使数据能够在战略位置称为“边缘”�
 ## 配置文件系统作业 {#profile-system-jobs}
 
 被摄取到[!DNL Platform]的启用了配置文件的数据会存储在[!DNL Data Lake]和[!DNL Real-time Customer Profile]数据存储中。 有时可能需要从[!DNL Profile]存储中删除数据集或批处理，以删除您不再需要或错误添加的数据。 这需要使用API创建[!DNL Profile System Job]（也称为“[!DNL delete request]”），如果需要，可以修改、监视或删除该API。 要了解如何使用[!DNL Real-time Customer Profile] API中的`/system/jobs`端点处理删除请求，请按照[配置文件系统作业端点指南](profile-system-jobs.md)中所述的步骤操作。
+
+## 更新配置文件属性 {#update-profile}
+
+有时可能需要更新贵组织的用户档案存储区中的数据。 例如，您可能需要更正记录或更改属性值。 这可以通过批量摄取或流式摄取完成，并且需要一个启用了配置文件的数据集，该数据集配置了一个更新标记。 有关如何配置数据集以进行属性更新的更多信息，请参阅[启用数据集以进行配置文件和Upsert](../../catalog/datasets/enable-upsert.md)的教程。
 
 ## 后续步骤 {#next-steps}
 
