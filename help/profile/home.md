@@ -4,9 +4,9 @@ title: 实时客户资料概述
 topic-legacy: guide
 description: 实时客户资料可合并各种来源的数据，并以单个客户资料和相关时间系列事件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 7ebd84f31161b45c2904545a2310c8b1f7831593
+source-git-commit: 93a4cd5c86a715cd04cd2a553866bbb4e19f951a
 workflow-type: tm+mt
-source-wordcount: '1779'
+source-wordcount: '1810'
 ht-degree: 0%
 
 ---
@@ -43,13 +43,15 @@ Experience PlatformUI提供了一个功能板，您可以通过该功能板查�
 
 每个客户配置文件都由多个配置文件片段组成，这些片段已合并，以形成该客户的单一视图。 例如，如果客户跨多个渠道与您的品牌进行交互，则您的组织将在多个数据集中显示与该单个客户相关的多个配置文件片段。 将这些片段摄取到Platform后，它们会合并在一起，以便为该客户创建单个配置文件。
 
-当来自多个源的数据发生冲突（例如，一个片段将客户列为“单一”，而另一个片段将客户列为“已婚”）时，[合并策略](#merge-policies)会确定要优先排序并包含在个人配置文件中的信息。 因此，Platform中的配置文件片段总数可能始终大于合并的配置文件总数，因为每个配置文件都由多个片段组成。
+换言之，配置文件片段表示唯一的主标识以及给定数据集内该ID对应的[记录](#record-data)或[事件](#time-series-events)数据。
 
-### 记录数据
+当来自多个数据集的数据发生冲突（例如，一个片段将客户列为“单个”，而另一个片段将客户列为“已婚”）时，[合并策略](#merge-policies)会确定要优先排序并包含在个人配置文件中的信息。 因此，Platform中的配置文件片段总数可能始终高于合并的配置文件总数，因为每个配置文件通常由多个数据集中的多个片段组成。
 
-用户档案是主体、组织或个人的表示形式，由许多属性（也称为记录数据）组成。 例如，产品的配置文件可能包含SKU和描述，而人员的配置文件包含名字、姓氏和电子邮件地址等信息。 使用[!DNL Experience Platform]，您可以自定义用户档案以使用与您的业务相关的特定数据。 标准[!DNL Experience Data Model](XDM)类[!DNL XDM Individual Profile]是在描述客户记录数据时构建架构的首选类，它为平台服务之间的许多交互提供数据集成。 有关在[!DNL Experience Platform]中使用架构的更多信息，请首先阅读[XDM系统概述](../xdm/home.md)。
+### 记录数据 {#record-data}
 
-### 时间系列事件
+用户档案是主体、组织或个人的表示形式，由许多属性（也称为记录数据）组成。 例如，产品的配置文件可能包含SKU和描述，而人员的配置文件包含名字、姓氏和电子邮件地址等信息。 使用[!DNL Experience Platform]，您可以自定义用户档案以使用与您的业务相关的特定数据。 标准[!DNL Experience Data Model](XDM)类[!DNL XDM Individual Profile]是在描述客户记录数据时构建架构的首选类，并为Platform服务之间的许多交互提供数据整体。 有关在[!DNL Experience Platform]中使用架构的更多信息，请首先阅读[XDM系统概述](../xdm/home.md)。
+
+### 时间系列事件 {#time-series-events}
 
 时间序列数据提供了在主体直接或间接采取某项操作时系统的快照，以及详细描述事件本身的数据。 时间系列数据由标准架构类XDM ExperienceEvent表示，它可描述各种事件，如添加到购物车的项目、被点击的链接以及查看的视频。 时间系列数据可用于根据分段规则，并且可以在用户档案的上下文中单独访问事件。
 
@@ -108,6 +110,7 @@ Adobe Experience Platform [!DNL Segmentation Service]会生成为各个客户提
 [!DNL Data governance] 是用于管理客户数据并确保符合适用于数据使用的法规、限制和策略的一系列策略和技术。
 
 由于数据管理与访问数据有关，因此在[!DNL Experience Platform]的各个级别中，数据管理起着关键作用：
+
 * 数据使用标签设置
 * 数据访问策略
 * 对营销操作数据的访问控制
@@ -120,4 +123,4 @@ Adobe Experience Platform [!DNL Segmentation Service]会生成为各个客户提
 
 ## 后续步骤和其他资源
 
-要了解有关使用Experience PlatformUI或配置文件API处理[!DNL Real-time Customer Profile]数据的更多信息，请首先分别阅读[配置文件UI指南](ui/user-guide.md)或[API开发人员指南](api/overview.md)。
+要了解有关使用Experience PlatformUI或配置文件API处理实时客户配置文件数据的更多信息，请首先分别阅读[配置文件UI指南](ui/user-guide.md)或[API开发人员指南](api/overview.md)。

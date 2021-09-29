@@ -1,18 +1,19 @@
 ---
 title: B2B源数据类型
 description: 本文档概述了B2B源体验数据模型(XDM)数据类型。
-source-git-commit: 19bb39b66f3a3eb93fd0138ac021568021d77b0f
+exl-id: 01b7d41c-1ab6-4cbc-b9b3-77b6af69faf3
+source-git-commit: b5cdd72238f7b4519de1c789f4294b9698415327
 workflow-type: tm+mt
-source-wordcount: '294'
-ht-degree: 3%
+source-wordcount: '302'
+ht-degree: 2%
 
 ---
 
-# [!UICONTROL B2B源数] 据类型
+# [!UICONTROL B2B Sourcedata] 类型（测试版）
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此数据类型仅适用于有权访问B2B版实时客户数据平台的组织。
+>此数据类型作为Real-time Customer Data Platform B2B Edition的一部分提供，该B2B Edition目前处于测试阶段。 文档和功能可能会发生更改。
 
 [!UICONTROL B2B源] 是标准的体验数据模型(XDM)数据类型，它表示B2B实体(如帐户 [、](../classes/b2b/business-account.md)机会 [或营销活动](../classes/b2b/business-opportunity.md) [](../classes/b2b/business-campaign.md))的组合标识符。
 

@@ -3,9 +3,9 @@ audience: user
 user-guide-title: Adobe Experience Platform 发行说明
 breadcrumb-title: Platform 发行说明
 user-guide-description: Adobe Experience Platform 的月度发行说明。
-source-git-commit: 3d6402a35e1813b94af866d7aaea975d4f103906
+source-git-commit: cb48952cb8aa0b8ca748a29559ca0daedb6fe7d2
 workflow-type: tm+mt
-source-wordcount: '53'
+source-wordcount: '54'
 ht-degree: 92%
 
 ---
@@ -15,6 +15,7 @@ ht-degree: 92%
 
 * [当前平台发行说明](latest/latest.md)
 * 2021 年{#2021}
+   * [2021 年 9 月](2021/september-2021.md)
    * [2021 年 8 月](2021/august-2021.md)
    * [2021 年 7 月](2021/july-2021.md)
    * [2021 年 6 月](2021/june-2021.md)

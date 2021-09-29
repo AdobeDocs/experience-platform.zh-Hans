@@ -1,10 +1,11 @@
 ---
 title: XDM业务帐户人员关系分类
 description: 本文档概述了Experience Data Model(XDM)中的XDM业务帐户人员关系类。
-source-git-commit: d83ad2870b6099d3c6359dcc7cd000ecad8a238f
+exl-id: d51abe9b-d936-4c84-96e2-35a81ca6b67f
+source-git-commit: b5cdd72238f7b4519de1c789f4294b9698415327
 workflow-type: tm+mt
-source-wordcount: '334'
-ht-degree: 3%
+source-wordcount: '337'
+ht-degree: 4%
 
 ---
 
@@ -35,5 +36,7 @@ ht-degree: 3%
 | `personRole` | 字符串 | 人员在帐户与人员关系中的角色。 |
 | `relationEndDate` | DateTime | 帐户与人员之间的关系结束的日期。 |
 | `relationStartDate` | DateTime | 帐户与人员之间的关系开始的日期。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 请参阅Real-time CDP B2B Edition](../../tutorials/relationship-b2b.md)中[模式关系指南，了解此类在概念上如何与其他B2B类相关联，以及如何在Adobe Experience Platform UI中建立这些关系。

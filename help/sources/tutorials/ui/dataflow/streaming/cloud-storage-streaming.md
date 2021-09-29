@@ -1,108 +1,142 @@
 ---
-keywords: Experience Platform；主页；热门主题；云存储连接器；云存储
+keywords: Experience Platform；主页；热门主题；流；云存储连接器；云存储
 solution: Experience Platform
-title: 在UI中为云存储流连接器配置数据流
+title: 在UI中为云存储源创建流数据流
 topic-legacy: overview
 type: Tutorial
-description: 数据流是从源中检索数据并将其引入平台数据集的计划任务。 本教程提供了使用云存储库连接器配置新数据流的步骤。
+description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了使用云存储基础连接器配置新数据流的步骤。
 exl-id: 75deead6-ef3c-48be-aed2-c43d1f432178
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 4a2d82fd6aec25f2570082ebc54f826251bc0a51
 workflow-type: tm+mt
-source-wordcount: '680'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
-# 在UI中为云存储流连接配置数据流
+# 在UI中为云存储源创建流数据流
 
-数据流是从源中检索数据并将其引入[!DNL Platform]数据集的计划任务。 本教程提供了使用云存储库连接器配置新数据流的步骤。
+数据流是一项计划任务，用于从源中检索数据并将其摄取到Adobe Experience Platform数据集。 本教程提供了在UI中为云存储源创建流数据流的步骤。
 
-## 入门指南
+在尝试使用本教程之前，您必须先在云存储帐户与平台之间建立一个经过身份验证的有效连接。 如果您还没有经过身份验证的连接，请参阅以下教程之一，以了解有关验证流云存储帐户的信息：
 
-本教程需要对Adobe Experience Platform的以下组件有充分的了解：
+- [[!DNL Amazon Kinesis]](../../../ui/create/cloud-storage/kinesis.md)
+- [[!DNL Azure Event Hubs]](../../../ui/create/cloud-storage/eventhub.md)
+- [[!DNL Google PubSub]](../../../ui/create/cloud-storage/google-pubsub.md)
 
-- [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-   - [模式合成的基础](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建基块，包括模式构成的主要原则和最佳做法。
+## 快速入门
+
+本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+
+- [数据流](../../../../../dataflows/home.md):数据流是跨平台移动数据的数据作业的表示形式。数据流在不同的服务之间进行配置，从源到[!DNL Identity Service]、到[!DNL Profile]和[!DNL Destinations]。
+- [数据准备](../../../../../data-prep/home.md):数据准备允许数据工程师映射、转换和验证来自体验数据模型(XDM)的数据。数据准备在数据摄取流程（包括CSV摄取工作流）中显示为“映射”步骤。
+- [[!DNL Experience Data Model (XDM)] 系统](../../../../../xdm/home.md):用于组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+   - [架构组合的基础知识](../../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    - [模式编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
-- [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
+- [[!DNL Real-time Customer Profile]](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 
-此外，本教程要求您已经创建了云存储连接器。 在[源连接器概述](../../../../home.md)中，可以找到有关在UI中创建不同云存储连接器的列表教程。
+## 添加数据
 
-## 选择数据
+在创建对流云存储帐户进行身份验证后，将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，为您提供一个界面以选择要将哪个数据流引入平台。
 
-在创建云存储连接器后，将显示&#x200B;*选择数据*&#x200B;步骤，为您提供一个接口，供您选择要从中流化数据的流。
+- 界面的左侧是一个浏览器，用于查看您帐户中的可用数据流；
+- 界面的右侧部分允许您从JSON文件预览多达100行数据。
 
-![](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-data.png)
+![界面](../../../../images/tutorials/dataflow/cloud-storage/streaming/interface.png)
 
-## 将数据字段映射到XDM模式
+选择要使用的数据流，然后选择&#x200B;**[!UICONTROL 选择文件]**&#x200B;以上传示例架构。
 
-将出现&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤，提供一个交互式界面，将源数据映射到[!DNL Platform]数据集。
+>[!TIP]
+>
+>如果您的数据符合XDM标准，则可以跳过上传示例架构，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
-为要摄取的入站数据选择数据集。 您可以使用现有数据集或创建新数据集。
+![选择流](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-stream.png)
 
-**使用现有数据集**
+上传架构后，预览界面会进行更新，以显示您上传的架构的预览。 预览界面允许您检查文件的内容和结构。 您还可以使用[!UICONTROL 搜索字段]实用程序从架构中访问特定项目。
 
-要将数据收录到现有数据集中，请选择&#x200B;**[!UICONTROL Use existing dataset]**，然后单击数据集图标。
+完成后，选择&#x200B;**[!UICONTROL Next]**。
 
-![](../../../../images/tutorials/dataflow/cloud-storage/streaming/use-existing-data.png)
+![模式预览](../../../../images/tutorials/dataflow/cloud-storage/streaming/schema-preview.png)
 
-出现&#x200B;**[!UICONTROL Select dataset]**&#x200B;对话框。 找到您要使用的数据集，选择它，然后单击&#x200B;**[!UICONTROL Continue]**。
+## 映射
 
-![](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-existing-data.png)
+将显示&#x200B;**[!UICONTROL 映射]**&#x200B;步骤，提供一个接口，用于将源数据映射到Platform数据集。
 
-**使用新数据集**
+为要摄取到的入站数据选择数据集。 您可以使用现有数据集，也可以创建新数据集。
 
-要将数据收录到新数据集中，请选择&#x200B;**[!UICONTROL Create new dataset]**，并在提供的字段中输入数据集的名称和说明。 然后，在下拉列表中选择要使用的模式。
+### 新数据集
 
-![](../../../../images/tutorials/dataflow/cloud-storage/streaming/use-new-dataset.png)
+要将数据摄取到新数据集，请选择&#x200B;**[!UICONTROL New dataset]** ，然后在提供的字段中输入数据集的名称和说明。 要添加架构，您可以在&#x200B;**[!UICONTROL 选择架构]**&#x200B;对话框中输入现有架构名称。 或者，您也可以选择&#x200B;**[!UICONTROL 架构高级搜索]**&#x200B;以搜索相应的架构。
 
-## 命名数据流
+![新数据集](../../../../images/tutorials/dataflow/cloud-storage/streaming/new-dataset.png)
 
-将出现&#x200B;**[!UICONTROL Dataflow detail]**&#x200B;步骤，允许您命名新数据流并提供有关新数据流的简短说明。
+此时会出现[!UICONTROL 选择架构]窗口，为您提供可供选择的可用架构列表。 从列表中选择一个架构以更新右边栏，以显示特定于您选择的架构的详细信息，包括有关是否为[!DNL Profile]启用该架构的信息。
 
-为数据流提供值，然后单击&#x200B;**[!UICONTROL Next]**。
+确定并选择要使用的架构后，选择&#x200B;**[!UICONTROL Done]**。
 
-![](../../../../images/tutorials/dataflow/cloud-storage/streaming/name-your-dataflow.png)
+![选择模式](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-schema.png)
 
-### 查看数据流
+[!UICONTROL Target数据集]页面会更新，并显示您选定的架构，该架构将作为数据集的一部分显示。 在此步骤中，您可以为[!DNL Profile]启用数据集，并创建实体属性和行为的整体视图。 所有已启用数据集的数据都将包含在[!DNL Profile]中，并在保存数据流时应用更改。
 
-将显示&#x200B;**[!UICONTROL Review]**&#x200B;步骤，允许您在创建新数据流之前查看新数据流。 详细信息按以下类别分组：
+切换&#x200B;**[!UICONTROL 配置文件数据集]**&#x200B;按钮，为[!DNL Profile]启用目标数据集。
 
-- **[!UICONTROL Source details]**:显示源类型和有关源的其他相关详细信息。
-- **[!UICONTROL Target details]**:显示接收源数据的模式集，包括数据集附带的数据集。
+![新配置文件](../../../../images/tutorials/dataflow/cloud-storage/streaming/new-profile.png)
 
-查看数据流后，单击&#x200B;**[!UICONTROL Finish]**&#x200B;并允许一段时间创建数据流。
+### 现有数据集
 
-![](../../../../images/tutorials/dataflow/cloud-storage/streaming/review.png)
+要将数据摄取到现有数据集，请选择&#x200B;**[!UICONTROL 现有数据集]**，然后选择数据集图标。
 
-## 监视和删除数据流
+![现有数据集](../../../../images/tutorials/dataflow/cloud-storage/streaming/existing-dataset.png)
 
-创建云存储数据流后，您可以监视通过它摄取的数据。 有关监视和删除数据流的详细信息，请参阅有关[监视数据流](../../../../../ingestion/quality/monitor-data-ingestion.md)的教程。
+此时会出现&#x200B;**[!UICONTROL 选择数据集]**&#x200B;对话框，为您提供可供选择的可用数据集列表。 从列表中选择一个数据集以更新右边栏，以显示特定于您选择的数据集的详细信息，包括是否可以为[!DNL Profile]启用该数据集的信息。
+
+识别并选择要使用的数据集后，选择&#x200B;**[!UICONTROL Done]**。
+
+![select-dataset](../../../../images/tutorials/dataflow/cloud-storage/streaming/select-dataset.png)
+
+选择数据集后，选择[!DNL Profile]切换开关以为[!DNL Profile]启用数据集。
+
+![现有配置文件](../../../../images/tutorials/dataflow/cloud-storage/streaming/existing-profile.png)
+
+### 映射标准字段
+
+建立数据集和架构后，将显示&#x200B;**[!UICONTROL 映射标准字段]**&#x200B;界面，允许您为数据手动配置映射字段。
+
+>[!TIP]
+>
+>Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。
+
+根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关映射器函数和计算字段的详细信息，请参阅[数据准备函数指南](../../../../../data-prep/functions.md)或[计算字段指南](../../../../../data-prep/calculated-fields.md)。
+
+映射源数据后，选择&#x200B;**[!UICONTROL Next]**。
+
+![映射](../../../../images/tutorials/dataflow/cloud-storage/streaming/mapping.png)
+
+## 数据流详细信息
+
+出现&#x200B;**[!UICONTROL 数据流详细信息]**&#x200B;步骤，允许您命名并简要描述新数据流。
+
+为数据流提供值，然后选择&#x200B;**[!UICONTROL Next]**。
+
+![数据流详细信息](../../../../images/tutorials/dataflow/cloud-storage/streaming/dataflow-detail.png)
+
+### 审阅
+
+此时会出现&#x200B;**[!UICONTROL Review]**&#x200B;步骤，允许您在创建新数据流之前查看新数据流。 详细信息按以下类别分组：
+
+- **[!UICONTROL 连接]**:显示您的帐户名称、源类型以及特定于您所使用的流云存储源的其他信息。
+- **[!UICONTROL 分配数据集和映射字段]**:显示用于数据流的目标数据集和架构。
+
+审核数据流后，选择&#x200B;**[!UICONTROL 完成]**&#x200B;并为创建数据流留出一些时间。
+
+![审查](../../../../images/tutorials/dataflow/cloud-storage/streaming/review.png)
+
+## 监控和删除数据流
+
+创建流云存储数据流后，您可以监控通过它摄取的数据。 有关监控和删除流数据流的更多信息，请参阅[监控流数据流](../../monitor-streaming.md)的教程。
 
 ## 后续步骤
 
-通过本教程，您成功创建了一个数据流以从外部云存储导入数据，并获得了有关监视数据集的洞察。 现在，下游[!DNL Platform]服务（如[!DNL Real-time Customer Profile]和[!DNL Data Science Workspace]）可以使用传入数据。 有关更多详细信息，请参阅以下文档:
+在本教程中，您已成功创建了数据流以从云存储源流化数据。 现在，下游Platform服务（如[!DNL Real-time Customer Profile]和[!DNL Data Science Workspace]）可以使用传入数据。 有关更多详细信息，请参阅以下文档：
 
 - [[!DNL Real-time Customer Profile] 概述](../../../../../profile/home.md)
 - [[!DNL Data Science Workspace] 概述](../../../../../data-science-workspace/home.md)
-
-## 附录
-
-以下部分提供了有关使用源连接器的其他信息。
-
-### 禁用数据流
-
-创建数据流后，它会立即变为活动状态，并根据给出的计划收集数据。 您可以按照以下说明随时禁用活动数据流。
-
-在&#x200B;**[!UICONTROL Sources]**&#x200B;工作区中，单击&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡。 接下来，单击与要禁用的活动数据流关联的连接名称。
-
-![](../../../../images/tutorials/dataflow/cloud-storage/streaming/browse.png)
-
-将显示&#x200B;**[!UICONTROL Source activity]**&#x200B;页。 从列表中选择活动数据流，以在屏幕右侧打开其&#x200B;**[!UICONTROL Properties]**&#x200B;列，该列包含一个&#x200B;**[!UICONTROL Enabled]**&#x200B;切换按钮。 单击切换可禁用数据流。 在禁用数据流后，可以使用相同的切换来重新启用数据流。
-
-![](../../../../images/tutorials/dataflow/cloud-storage/streaming/disable-source.png)
-
-### 激活[!DNL Profile]人口的入站数据
-
-来自源连接器的入站数据可用于丰富和填充[!DNL Real-time Customer Profile]数据。 有关填充[!DNL Real-time Customer Profile]数据的详细信息，请参阅关于[用户档案填充](../../profile.md)的教程。

@@ -5,9 +5,9 @@ title: 身份命名空间概述
 topic-legacy: overview
 description: 身份命名空间是 Identity Service 的组件，充当与身份相关的上下文指示器。例如，它们将值“name@email.com”区分为电子邮件地址或“443522”作为数字CRM ID。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 700012988fd46e835dcbc441c39f08e4c172ef0f
+source-git-commit: 5373b8fcd84cee749a85bdb755a23eb7292cf352
 workflow-type: tm+mt
-source-wordcount: '1638'
+source-wordcount: '1598'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 身份命名空间是[[!DNL Identity Service]](./home.md)的组件，用作与身份相关的上下文的指示器。 例如，它们将“name<span>@email.com”值区分为电子邮件地址，或将“443522”区分为数字CRM ID。
 
-## 入门指南
+## 快速入门
 
 使用身份命名空间需要了解所涉及的各种Adobe Experience Platform服务。 开始使用命名空间之前，请查阅以下服务的文档：
 
@@ -79,7 +79,7 @@ Experience Platform提供了多个适用于所有组织的身份命名空间。 
 
 ![浏览](./images/browse.png)
 
-身份命名空间列表会显示在页面的主界面中，其中显示了有关其名称、身份符号、上次更新日期以及它们是标准命名空间还是自定义命名空间的信息。 右边栏包含有关[!UICONTROL 唯一标识]和[!UICONTROL 标识图强度]的信息。 [!UICONTROL 唯] 一标识是指您所使用的特定沙盒中存在的标识数，而标识图 [!UICONTROL 强度] 则显示有关沙盒中Cookie ID和非Cookie ID数量的信息。
+身份命名空间列表会显示在页面的主界面中，其中显示了有关其名称、身份符号、上次更新日期以及它们是标准命名空间还是自定义命名空间的信息。 右边栏包含有关[!UICONTROL 标识图强度]的信息。
 
 ![标识](./images/identities.png)
 
@@ -91,7 +91,7 @@ Experience Platform提供了多个适用于所有组织的身份命名空间。 
 
 ![select-namespace](./images/select-namespace.png)
 
-## 管理自定义命名空间{#manage-namespaces}
+## 管理自定义命名空间 {#manage-namespaces}
 
 根据您的组织数据和用例，您可能需要自定义命名空间。 可以使用[[!DNL Identity Service]](./api/create-custom-namespace.md) API或通过UI创建自定义命名空间。
 

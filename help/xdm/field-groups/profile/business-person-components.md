@@ -1,19 +1,19 @@
 ---
 title: XDM业务人员组件架构字段组
 description: 本文档概述了XDM业务人员组件架构字段组。
-source-git-commit: 319d508925d22e76a3d75ae473f6ea000b5c655b
+exl-id: 965b89f4-59f5-43f4-8778-3549e15b44d4
+source-git-commit: b5cdd72238f7b4519de1c789f4294b9698415327
 workflow-type: tm+mt
-source-wordcount: '435'
+source-wordcount: '441'
 ht-degree: 3%
 
 ---
 
+# [!UICONTROL XDM业务人员组] 件架构字段组（测试版）
 
-# [!UICONTROL XDM业务人员组] 件架构字段组
-
->[!NOTE]
+>[!IMPORTANT]
 >
->此字段组仅适用于有权访问B2B版实时客户数据平台(Real-time CDP)的组织。
+>此字段组作为Real-time Customer Data Platform B2B Edition的一部分提供，该B2B Edition目前处于测试阶段。 文档和功能可能会发生更改。
 
 [!UICONTROL XDM业务人员] 组件是类的标准架构字段组，可 [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md) 以捕获人员的多个源记录以及人员分段所需的其他属性。
 

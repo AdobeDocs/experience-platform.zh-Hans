@@ -1,10 +1,11 @@
 ---
 title: XDM Business Campaign成员类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Campaign成员类。
-source-git-commit: d83ad2870b6099d3c6359dcc7cd000ecad8a238f
+exl-id: a39eac7d-46ee-4e9c-a1c0-4dbb63f2c813
+source-git-commit: b5cdd72238f7b4519de1c789f4294b9698415327
 workflow-type: tm+mt
-source-wordcount: '230'
-ht-degree: 2%
+source-wordcount: '233'
+ht-degree: 3%
 
 ---
 
@@ -28,5 +29,7 @@ ht-degree: 2%
 | `campaignID` | 字符串 | 关联营销活动的唯一ID。 |
 | `campaignMemberID` | 字符串 | 促销活动成员资格实体的唯一ID。 |
 | `personId` | 字符串 | 关联营销活动成员的人员的唯一ID。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 请参阅Real-time CDP B2B Edition](../../tutorials/relationship-b2b.md)中[模式关系指南，了解此类在概念上如何与其他B2B类相关联，以及如何在Adobe Experience Platform UI中建立这些关系。

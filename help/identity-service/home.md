@@ -5,9 +5,9 @@ title: Identity Service概述
 topic-legacy: overview
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，使您能够实时提供有影响的个人数字体验，从而帮助您更好地了解客户及其行为。
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: 947d8803416cee584b35a8d480929e2684d0057f
+source-git-commit: 5373b8fcd84cee749a85bdb755a23eb7292cf352
 workflow-type: tm+mt
-source-wordcount: '1807'
+source-wordcount: '1792'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,6 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 | 身份命名空间 | 身份命名空间用于区分身份的上下文或类型。 例如，标识将“name<span>@email.com”区分为电子邮件地址或“443522”区分为数字CRM ID。 身份命名空间用于查找个人身份并提供身份值的上下文。 这允许您确定两个[!DNL Profile]片段（包含不同的主ID，但共享`email`标识命名空间的相同值）实际上是同一个片段。 有关更多信息，请参阅[标识命名空间概述](./namespaces.md)。 |
 | 身份图 | 身份图是不同身份之间关系的映射，使您能够可视化并更好地了解哪些客户身份被拼合在一起，以及如何拼合。 有关更多信息，请参阅关于[使用身份图查看器](./ui/identity-graph-viewer.md)的教程。 |
 | 个人身份信息(PII) | PII是可以直接识别客户的信息，如电子邮件地址或电话号码。 PII值通常用于匹配。 客户在不同系统中的多个身份。 |
-| 唯一标识 | 唯一标识是仅存在于特定沙盒中的标识。 |
 | 未知或匿名身份 | 未知或匿名身份是指在不识别使用设备的实际人员的情况下隔离设备的指示器。 未知和匿名身份包括访客的IP地址和Cookie ID等信息。 尽管未知和匿名身份可以提供行为数据，但在客户提供其PII之前，这些身份数据会受到限制。 |
 
 ## 什么是 [!DNL Identity Service]？

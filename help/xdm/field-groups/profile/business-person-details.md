@@ -1,19 +1,19 @@
 ---
 title: XDM业务人员详细信息架构字段组
 description: 本文档概述了XDM业务人员详细信息架构字段组。
-source-git-commit: 319d508925d22e76a3d75ae473f6ea000b5c655b
+exl-id: e9da5c1c-5a30-4cbc-beb2-cc5efe57cab0
+source-git-commit: 57370e4ed0807bcebf30c73af629671b5390d90d
 workflow-type: tm+mt
-source-wordcount: '554'
-ht-degree: 7%
+source-wordcount: '562'
+ht-degree: 6%
 
 ---
 
+# [!UICONTROL XDM业务人员详] 细信息架构字段组（测试版）
 
-# [!UICONTROL XDM业务人员详细] 信息架构字段组
-
->[!NOTE]
+>[!IMPORTANT]
 >
->此字段组仅适用于有权访问B2B版实时客户数据平台的组织。
+>此字段组作为Real-time Customer Data Platform B2B Edition的一部分提供，该B2B Edition目前处于测试阶段。 文档和功能可能会发生更改。
 
 [!UICONTROL XDM业务人员] 详细信息是类的标准架构字 [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md) 段组，用于捕获个人在企业对企业(B2B)企业环境中的信息。
 
