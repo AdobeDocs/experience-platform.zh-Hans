@@ -4,9 +4,9 @@ title: 用户档案仪表板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: a63969075215a8f9884d2f41485194bd732694f1
+source-git-commit: d5c69972426008809c3fd0ac03be995efcc2f541
 workflow-type: tm+mt
-source-wordcount: '1496'
+source-wordcount: '1513'
 ht-degree: 0%
 
 ---
@@ -95,7 +95,9 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 >[!NOTE]
 >
->添加的[!UICONTROL 配置文件]小组件反映在贵组织进行初始配置后添加到系统的配置文件数量。 例如，如果在配置期间添加了400万个配置文件，并且您在过去30天内又添加了100万个配置文件，则[!UICONTROL 添加的配置文件]小组件将显示“1,000,000”，而[!UICONTROL 配置文件计数]小组件将显示“5,000,000”。
+>添加的[!UICONTROL 配置文件]小组件反映在贵组织进行初始配置后添加到系统的配置文件数量。 要了解有关将用户档案添加到用户档案存储的更多信息，请参阅[Real-time Customer Profile文档](../../profile/home.md)。
+>
+>例如，如果在配置期间添加了400万个配置文件，并且您在过去30天内又添加了100万个配置文件，则[!UICONTROL 添加的配置文件]小组件将显示“1,000,000”，而[!UICONTROL 配置文件计数]小组件将显示“5,000,000”。
 
 ![](../images/profiles/profiles-added.png)
 
