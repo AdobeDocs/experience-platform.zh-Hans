@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Data Ingestion, Sources
-source-git-commit: bc94d85ecd2ae33d8ef18dd1dfa7fca39ccaefea
+source-git-commit: 8a2cca1fa10b145757c582237a5f9ab64105b6b5
 workflow-type: tm+mt
-source-wordcount: '656'
+source-wordcount: '654'
 ht-degree: 12%
 
 ---
@@ -21,15 +21,15 @@ ht-degree: 12%
       - [Analytics源连接器](connectors/adobe-applications/analytics.md)
       - [Audience Manager源连接器](connectors/adobe-applications/audience-manager.md)
       - [客户属性来源连接器](connectors/adobe-applications/customer-attributes.md)
-      - Adobe应用程序字段映射{#mapping}
+      - 字段映射{#mapping}
          - [Analytics字段映射](connectors/adobe-applications/mapping/analytics.md)
          - [Audience Manager字段映射](connectors/adobe-applications/mapping/audience-manager.md)
          - [目标字段映射](connectors/adobe-applications/mapping/target.md)
          - [Marketo Engage字段映射](connectors/adobe-applications/mapping/marketo.md)
-      - Marketo Engage {#marketo}
+      - B2B {#b2b}
          - [Marketo Engage连接器](connectors/adobe-applications/marketo/marketo.md)
          - [Marketo Engage身份验证指南](connectors/adobe-applications/marketo/marketo-auth.md)
-         - [Marketo Engage命名空间和模式](connectors/adobe-applications/marketo/marketo-namespaces.md)
+         - [B2B命名空间和架构](connectors/adobe-applications/marketo/marketo-namespaces.md)
    - 广告 {#advertising}
       - [Google AdWords连接器](connectors/advertising/ads.md)
    - 云存储{#cloud-storage}

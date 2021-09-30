@@ -6,20 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程提供了在UI中创建Marketo Engage源连接器以将B2B数据导入Adobe Experience Platform的步骤。
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: b90428845412613d59f3c5091ad7c1398ead9f6a
+source-git-commit: 9c8b63bf577a4258a7ef87c11bc8f87c1a01cc20
 workflow-type: tm+mt
-source-wordcount: '1388'
+source-wordcount: '1336'
 ht-degree: 0%
 
 ---
 
-# （测试版）在UI中创建[!DNL Marketo Engage]源连接器
+# 在UI中创建[!DNL Marketo Engage]源连接器
 
->[!IMPORTANT]
->
->[!DNL Marketo Engage]源当前处于测试阶段。 功能和文档属于主题更改。 此外，在测试版计划期间使用连接器时，还必须确保使用非生产沙盒。 有关沙箱的更多信息，请参阅[沙箱文档](https://experienceleague.adobe.com/docs/experience-platform/sandbox/home.html?lang=en#understanding-sandboxes)。
-
-本教程提供了在UI中创建[!DNL Marketo Engage]（以下称“[!DNL Marketo]”）源连接器以将消费者数据导入Adobe Experience Platform的步骤。
+本教程提供了在UI中创建[!DNL Marketo Engage]（以下称“[!DNL Marketo]”）源连接器以将B2B数据导入Adobe Experience Platform的步骤。
 
 ## 快速入门
 

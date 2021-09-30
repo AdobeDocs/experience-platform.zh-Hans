@@ -6,16 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了使用CRM帐户配置新数据流的步骤。
 exl-id: e14eafa7-6594-48e6-ab7a-f6c928d1e5fb
-source-git-commit: 46fb08a10bc05dc758bdcb025693f819b980b41a
+source-git-commit: cd9b28c66f6cc841e46e797b39db838a83e727e3
 workflow-type: tm+mt
-source-wordcount: '1524'
+source-wordcount: '1387'
 ht-degree: 0%
 
 ---
 
 # 在UI中为CRM连接配置数据流
 
-数据流是一项计划任务，用于从源中检索数据并将其摄取到[!DNL Platform]数据集。 本教程提供了使用CRM帐户配置新数据流的步骤。
+数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了使用CRM帐户配置新数据流的步骤。
 
 ## 快速入门
 
@@ -30,9 +30,9 @@ ht-degree: 0%
 
 ## 选择数据
 
-创建CRM帐户后，将显示&#x200B;*选择数据*&#x200B;步骤，该步骤提供了一个交互式界面供您浏览文件层次结构。
+创建CRM帐户后，将显示[!UICONTROL 选择数据]步骤，为您提供一个界面以浏览文件层次结构。
 
-* 界面的左半部分是目录浏览器，用于显示服务器的文件和目录。
+* 界面的左半部分是目录浏览器，用于显示CRM的文件和目录。
 * 界面的右半部分允许您从兼容的文件中预览多达100行数据。
 
 您可以使用页面顶部的&#x200B;**[!UICONTROL Search]**&#x200B;选项快速识别要使用的源数据。
@@ -41,29 +41,29 @@ ht-degree: 0%
 >
 >搜索源数据选项适用于所有基于表格的源连接器，不包括Analytics、分类、事件中心和Kinesis连接器。
 
-找到源数据后，选择目录，然后单击&#x200B;**[!UICONTROL Next]**。
+找到源数据后，选择目录，然后选择&#x200B;**[!UICONTROL Next]**。
 
 ![select-data](../../../images/tutorials/dataflow/all-tabular/select-data.png)
 
 ## 将数据字段映射到XDM架构
 
-此时将显示&#x200B;**[!UICONTROL 映射]**&#x200B;步骤，提供一个交互式界面，用于将源数据映射到[!DNL Platform]数据集。
+将显示&#x200B;**[!UICONTROL 映射]**&#x200B;步骤，提供一个接口，用于将源数据映射到Platform数据集。
 
 为要摄取到的入站数据选择数据集。 您可以使用现有数据集或创建新数据集。
 
 ### 使用现有数据集
 
-要将数据摄取到现有数据集，请选择&#x200B;**[!UICONTROL 使用现有数据集]**，然后单击数据集图标。
+要将数据摄取到现有数据集，请选择&#x200B;**[!UICONTROL 现有数据集]**，然后选择输入栏旁边的数据图标![data](../../../images/tutorials/dataflow/crm/data.png)。
 
-![use-existing-dataset](../../../images/tutorials/dataflow/crm/use-existing-dataset.png)
+![现有数据集](../../../images/tutorials/dataflow/crm/existing-dataset.png)
 
-出现&#x200B;**[!UICONTROL 选择数据集]**&#x200B;对话框。 找到您要使用的数据集，将其选中，然后单击&#x200B;**[!UICONTROL 继续]**。
+出现&#x200B;**[!UICONTROL 选择数据集]**&#x200B;对话框。 找到要使用的数据集，将其选中，然后单击&#x200B;**[!UICONTROL 继续]**。
 
-![select-existing-dataset](../../../images/tutorials/dataflow/crm/select-existing-dataset.png)
+![select-dataset](../../../images/tutorials/dataflow/crm/select-dataset.png)
 
 ### 使用新数据集
 
-要将数据摄取到新数据集，请选择&#x200B;**[!UICONTROL 创建新数据集]** ，然后在提供的字段中输入数据集的名称和说明。
+要将数据摄取到新数据集，请选择&#x200B;**[!UICONTROL New dataset]** ，然后在提供的字段中输入数据集的名称和说明。
 
 通过在&#x200B;**[!UICONTROL 选择架构]**&#x200B;搜索栏中输入架构名称，可以附加架构字段。 您还可以选择下拉图标以查看现有架构的列表。 或者，您也可以选择&#x200B;**[!UICONTROL 高级搜索]**&#x200B;以访问现有架构的屏幕，包括其各自的详细信息。
 
@@ -79,19 +79,27 @@ ht-degree: 0%
 
 根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关映射器函数和计算字段的详细信息，请参阅[数据准备函数指南](../../../../data-prep/functions.md)或[计算字段指南](../../../../data-prep/calculated-fields.md)。
 
+<!--
 >[!TIP]
 >
->[!DNL Platform] 根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。您可以手动调整映射规则以适合您的用例。
+>If you are using the [!DNL Salesforce] source as part of B2B CDP, refer to the [[!DNL Salesforce] field mapping tables](../../../connectors/adobe-applications/mapping/salesforce.md) for a guide on the appropriate mapping sets between [!DNL Salesforce] source fields and XDM target fields.
+-->
 
-![](../../../images/tutorials/dataflow/all-tabular/mapping.png)
+Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。
 
 选择&#x200B;**[!UICONTROL 预览数据]**&#x200B;可查看选定数据集中最多100行示例数据的映射结果。
 
+![](../../../images/tutorials/dataflow/crm/preview-data.png)
+
 在预览期间，标识列将作为第一个字段按优先级排列，因为它是验证映射结果时必需的关键信息。
 
-![](../../../images/tutorials/dataflow/all-tabular/mapping-preview.png)
-
 映射源数据后，选择&#x200B;**[!UICONTROL 关闭]**。
+
+![](../../../images/tutorials/dataflow/crm/preview.png)
+
+接下来，从[!UICONTROL Mapping]屏幕中，选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
+
+![](../../../images/tutorials/dataflow/crm/mapping.png)
 
 ## 计划摄取运行
 
@@ -111,7 +119,7 @@ ht-degree: 0%
 
 选择&#x200B;**[!UICONTROL 按]**&#x200B;加载增量数据以分配增量列。 此字段区分新数据和现有数据。
 
-![](../../../images/tutorials/dataflow/databases/schedule-interval-on.png)
+![](../../../images/tutorials/dataflow/crm/scheduling.png)
 
 ### 设置一次性摄取数据流
 
@@ -123,7 +131,7 @@ ht-degree: 0%
 
 向计划提供适当值后，请选择&#x200B;**[!UICONTROL Next]**。
 
-![计划一次](../../../images/tutorials/dataflow/databases/schedule-once.png)
+![计划一次](../../../images/tutorials/dataflow/crm/one-time-ingestion.png)
 
 ## 提供数据流详细信息
 
@@ -133,15 +141,15 @@ ht-degree: 0%
 
 为数据流提供值，然后选择&#x200B;**[!UICONTROL Next]**。
 
-![数据流详细信息](../../../images/tutorials/dataflow/all-tabular/dataflow-detail.png)
+![数据流详细信息](../../../images/tutorials/dataflow/crm/dataflow-detail.png)
 
 ## 查看数据流
 
 此时会出现&#x200B;*Review*&#x200B;步骤，允许您在创建新数据流之前查看新数据流。 详细信息按以下类别分组：
 
-* **[!UICONTROL 连接详细信息]**:显示源类型、所选源文件的相关路径以及该源文件中的列数。
-* **[!UICONTROL 映射详细信息]**:显示源数据被摄取到的数据集，包括该数据集附加的架构。
-* **[!UICONTROL 计划详细信息]**:显示摄取计划的活动期、频率和间隔。
+* **[!UICONTROL 连接]**:显示源帐户名称、源平台、所选源文件的相关路径以及该源文件中的列数。
+* **[!UICONTROL 分配数据集和映射字段]**:显示源数据被摄取到的目标数据集，包括该数据集所遵守的架构。
+* **[!UICONTROL 计划]**:显示数据流的开始时间和频率率。
 
 审核数据流后，单击&#x200B;**[!UICONTROL 完成]**，并为创建数据流留出一些时间。
 
@@ -157,33 +165,13 @@ ht-degree: 0%
 
 ## 后续步骤
 
-通过阅读本教程，您成功创建了一个数据流，以从CRM中导入数据，并获得了有关监控数据集的洞察信息。 要了解有关创建数据流的更多信息，您可以通过观看以下视频来补充您的学习。 此外，现在下游[!DNL Platform]服务（如[!DNL Real-time Customer Profile]和[!DNL Data Science Workspace]）可以使用传入数据。 有关更多详细信息，请参阅以下文档：
+通过阅读本教程，您成功创建了一个数据流，以从CRM中导入数据，并获得了有关监控数据集的洞察信息。 要了解有关创建数据流的更多信息，您可以通过观看以下视频来补充您的学习。 此外，现在下游Platform服务（如[!DNL Real-time Customer Profile]和[!DNL Data Science Workspace]）可以使用传入数据。 有关更多详细信息，请参阅以下文档：
 
 * [实时客户资料概述](../../../../profile/home.md)
 * [数据科学工作区概述](../../../../data-science-workspace/home.md)
 
 >[!WARNING]
 >
-> 以下视频中显示的[!DNL Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
-
+> 以下视频中显示的平台UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
+>
 >[!VIDEO](https://video.tv.adobe.com/v/29711?quality=12&learn=on)
-
-## 附录
-
-以下部分提供了有关使用源连接器的其他信息。
-
-### 禁用数据流
-
-创建数据流后，该数据流会立即变为活动状态，并根据给定的计划摄取数据。 您可以随时按照以下说明禁用活动数据流。
-
-在&#x200B;**[!UICONTROL authentication]**&#x200B;屏幕中，选择与要禁用的数据流关联的连接名称。
-
-![](../../../images/tutorials/dataflow/crm/monitor.png)
-
-此时会显示&#x200B;**源活动**&#x200B;页面。 从列表中选择活动数据流，以在屏幕右侧打开其&#x200B;**[!UICONTROL 属性]**&#x200B;列，该列包含&#x200B;**[!UICONTROL Enabled]**&#x200B;切换按钮。 单击切换以禁用数据流。 在禁用数据流后，可以使用相同的切换开关重新启用数据流。
-
-![disable](../../../images/tutorials/dataflow/crm/disable.png)
-
-### 激活[!DNL Profile]群体的入站数据
-
-源连接器的入站数据可用于扩充和填充[!DNL Real-time Customer Profile]数据。 有关填充[!DNL Real-time Customer Profile]数据的更多信息，请参阅[配置文件群体](../profile.md)教程。
