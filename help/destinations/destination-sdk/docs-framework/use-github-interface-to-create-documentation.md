@@ -1,13 +1,11 @@
 ---
 title: '使用GitHub Web界面创建目标文档页面 '
-seo-title: Use the GitHub web interface to create a destination documentation page
-description: 本页面上的说明向您展示了如何使用GitHub Web界面创作文档和提交拉取请求。
-seo-description: The instructions on this page show you how to use the GitHub web interface to author documentation and submit a pull request.
+description: 本页中的说明向您展示了如何使用GitHub Web界面为您的Experience Platform目标创作文档页面，并提交该页面以供审阅。
 exl-id: 4780e05e-3d1d-4f1b-8441-df28d09c1a88
-source-git-commit: d2452bf0e59866d3deca57090001c4c5a0935525
+source-git-commit: 83539a9aa2fddcae0c9a44302d8bfa9d9f56de0c
 workflow-type: tm+mt
-source-wordcount: '694'
-ht-degree: 2%
+source-wordcount: '768'
+ht-degree: 1%
 
 ---
 
@@ -28,7 +26,7 @@ ht-degree: 2%
 1. 在浏览器中，导航到`https://github.com/AdobeDocs/experience-platform.en`。
 2. 要分支[存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository)，请单击&#x200B;**分支**，如下图所示。
 
-   ![分支Adobe文档存储库](./assets/ssd-fork-repo.png)
+   ![分支Adobe文档存储库](./assets/ssd-fork-repository.gif)
 
 3. 在存储库的分支中，为项目创建新分支，如下所示。 将这个新分支用于您的工作。
 
@@ -44,6 +42,10 @@ ht-degree: 2%
 
 1. 您将根据[文档自助模板](./self-service-template.md)创建目标页面的内容。 **[](assets/yourdestination-template.zip)** 下载模板并解压缩以提取文 `.md` 件模板。
 2. 在在线Markdown编辑器中粘贴和编辑模板的内容以及目标的相关信息，如[dillinger.io](https://dillinger.io/)。 有关应填写哪些内容以及可以删除哪些段落的详细信息，请按照模板中的说明进行操作。
+
+   >[!TIP]
+   >
+   >您可以随时关闭浏览器窗口，稍后重新打开。 您的工作会自动保存，在您重新打开浏览器时，将等待您完成。
 3. 将内容从Markdown编辑器复制到GitHub中的新文件中。
 4. 对于您计划使用的任何屏幕截图或图像，请使用GitHub界面将文件上传到`experience-platform.en/help/destinations/assets/catalog/[...]`，其中`[...]`是目标的所需类别。 例如，如果要将个性化目标添加到Experience Platform，请选择`personalization`类别。 您需要从要创作的页面链接到图像。 请参阅[说明如何链接到图像](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en#link-to-images)。
 
@@ -55,9 +57,13 @@ ht-degree: 2%
 
 ## 提交文档以供审核 {#submit-review}
 
-1. 保存文件并上传所需的图像后，您可以打开拉取请求(PR)，以将工作分支合并到Adobe文档存储库的主控分支中。 确保已选择您处理的分支，并选择&#x200B;**拉取请求**。
+>[!TIP]
+>
+>请注意，这里没有什么可以打破的。 按照此部分中的说明，您只是建议进行文档更新。 您建议的更新将由Adobe Experience Platform文档团队批准或编辑。
 
-![创建拉取请求](./assets/ssd-create-pull-request-1.png)
+1. 保存文件并上传所需的图像后，您可以打开拉取请求(PR)，以将工作分支合并到Adobe文档存储库的主控分支中。 确保已选择您处理的分支，然后选择&#x200B;**Contribute > Pull request**。
+
+![创建拉取请求](./assets/ssd-create-pull-request-1.gif)
 
 1. 确保基分支和比较分支正确无误。 在PR中添加注释以描述您的更新，然后选择&#x200B;**创建拉取请求**。 此操作将打开一个PR，将分支的工作分支合并到Adobe存储库的主控分支中。
 

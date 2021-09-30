@@ -1,13 +1,11 @@
 ---
 title: 在本地环境中使用文本编辑器创建目标文档页面
-seo-title: Use a text editor in your local environment to create a destination documentation page
-description: 本页面上的说明向您展示了如何使用文本编辑器在本地环境中工作，以创作文档并提交拉取请求。
-seo-description: The instructions on this page show you how to use a text editor to work in your local environment to author documentation and submit a pull request.
+description: 本页面上的说明向您展示了如何使用文本编辑器在本地环境中工作，以创作Experience Platform目标的文档页面并提交该页面以供审阅。
 exl-id: 125f2d10-0190-4255-909c-5bd5bb59fcba
-source-git-commit: e1e7d2f70c032d02f96b3999e4fca736070c6ca9
+source-git-commit: 83539a9aa2fddcae0c9a44302d8bfa9d9f56de0c
 workflow-type: tm+mt
-source-wordcount: '826'
-ht-degree: 3%
+source-wordcount: '871'
+ht-degree: 2%
 
 ---
 
@@ -28,7 +26,7 @@ ht-degree: 3%
 1. 在浏览器中，导航到`https://github.com/AdobeDocs/experience-platform.en`
 2. 要分支[存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository)，请单击&#x200B;**分支**，如屏幕截图所示。
 
-   ![分支Adobe文档存储库](./assets/ssd-fork-repo.png)
+   ![分支Adobe文档存储库](./assets/ssd-fork-repository.gif)
 
 3. 将存储库克隆到您的本地计算机. 选择&#x200B;**代码> HTTPS >使用GitHub Desktop**&#x200B;打开，如下所示。 确保已安装[GitHub Desktop](https://desktop.github.com/)。 有关进一步的参考，请阅读Adobe参与者指南中的[创建存储库的本地克隆](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#create-a-local-clone-of-the-repository) 。
 
@@ -47,6 +45,10 @@ ht-degree: 3%
 
 ## 提交文档以供审核 {#submit-review}
 
+>[!TIP]
+>
+>请注意，这里没有什么可以打破的。 按照此部分中的说明，您只是建议进行文档更新。 您建议的更新将由Adobe Experience Platform文档团队批准或编辑。
+
 1. 在GitHub Desktop中，为您的更新创建一个工作分支，然后选择&#x200B;**发布分支**&#x200B;以将该分支发布到GitHub。
 
 ![本地新分支](./assets/new-branch-local.gif)
@@ -61,7 +63,7 @@ ht-degree: 3%
 
 1. 在GitHub Web界面中，打开拉取请求(PR)，将您的工作分支合并到Adobe文档存储库的主控分支中。 确保已选择您处理的分支，并选择&#x200B;**拉取请求**。
 
-   ![创建拉取请求](./assets/ssd-create-pull-request-1.png)
+   ![创建拉取请求](./assets/ssd-create-pull-request-1.gif)
 
 1. 确保基分支和比较分支正确无误。 在PR中添加注释以描述您的更新，然后选择&#x200B;**创建拉取请求**。 此操作将打开一个PR，将分支的工作分支合并到Adobe存储库的主控分支中。
    >[!TIP]

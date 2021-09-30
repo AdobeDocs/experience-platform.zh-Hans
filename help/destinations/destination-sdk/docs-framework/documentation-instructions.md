@@ -1,12 +1,10 @@
 ---
 title: 在Adobe Experience Platform中记录您的目标
-seo-title: Document your destination in Adobe Experience Platform
-description: 分步说明如何在Adobe Experience Platform中为您的目标创建文档
-seo-description: Step-by-step instructions how to create documentation for your destination in Adobe Experience Platform
+description: 分步说明，以便您在Adobe Experience Platform中为目标创建文档页面
 exl-id: 6cc9c758-44bb-463b-941a-06b1a22ee8f3
-source-git-commit: cf6c6adf128ec867cd67af609a40b04d2c632bf9
+source-git-commit: 83539a9aa2fddcae0c9a44302d8bfa9d9f56de0c
 workflow-type: tm+mt
-source-wordcount: '455'
+source-wordcount: '458'
 ht-degree: 0%
 
 ---
@@ -108,7 +106,7 @@ The instructions below show you how to use the GitHub web interface to author do
 1. In your browser, navigate to `https://github.com/AdobeDocs/experience-platform.en`.
 1. To [fork](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) the repository, click **Fork** as shown in the image below.
 
-   ![fork repo](./assets/ssd-fork-repo.png)
+   ![fork repo](./assets/ssd-fork-repository.gif)
 
 1. In your fork of the repository, create a new branch for your project, as shown below. You will use this branch for the work in this tutorial.
 
@@ -139,7 +137,7 @@ The instructions below show you how to use the GitHub web interface to author do
 
 1. After you saved the file and uploaded your desired images, you can open a pull request (PR) to merge your working branch into the master branch of the Adobe documentation repository. Make sure the branch that you worked on is selected and select **Pull request**.
 
-   ![create pull request](./assets/ssd-create-pull-request-1.png)
+   ![create pull request](./assets/ssd-create-pull-request-1.gif)
 
 1. Make sure that the base and compare branches are correct. Add a note to the PR, describing your update, and select **Create pull request**. This opens a PR to merge the working branch of your fork into the master branch of the Adobe repository. 
    >[!TIP]
@@ -173,7 +171,7 @@ Please see [Install Git and Markdown Authoring tools](https://docs.adobe.com/con
 1. In your browser, navigate to `https://github.com/AdobeDocs/experience-platform.en`
 1. To [fork](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) the repository, click **Fork** as shown in the screenshot.
 
-   ![fork repo](./assets/ssd-fork-repo.png)
+   ![fork repo](./assets/ssd-fork-repository.gif)
 
 1. Clone the repository to your local machine. Select **Code > HTTPS > Open with GitHub Desktop**, as shown below. Make sure you have [GitHub Desktop](https://desktop.github.com/) installed. For further reference, read [Create a local clone of the repository](https://docs.adobe.com/content/help/en/contributor/contributor-guide/setup/local-repo.html#create-a-local-clone-of-the-repository) in the Adobe contributor guide.
 
@@ -211,7 +209,7 @@ Please see [Install Git and Markdown Authoring tools](https://docs.adobe.com/con
 
 1. In the GitHub web interface, open a pull request (PR) to merge your working branch into the master branch of the Adobe documentation repository. Make sure the branch you worked on is selected and select **Pull request**.
 
-   ![create pull request](./assets/ssd-create-pull-request-1.png)
+   ![create pull request](./assets/ssd-create-pull-request-1.gif)
 
 1.  Make sure that the base and compare branches are correct. Add a note to the PR, describing your update, and select **Create pull request**. This opens a PR to merge the working branch of your fork into the master branch of the Adobe repository. 
    >[!TIP]
