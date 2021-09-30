@@ -2,9 +2,9 @@
 title: '使用GitHub Web界面创建目标文档页面 '
 description: 本页中的说明向您展示了如何使用GitHub Web界面为您的Experience Platform目标创作文档页面，并提交该页面以供审阅。
 exl-id: 4780e05e-3d1d-4f1b-8441-df28d09c1a88
-source-git-commit: 83539a9aa2fddcae0c9a44302d8bfa9d9f56de0c
+source-git-commit: 1bbff0fa54f1b7ef1ee70efd2a85cd43b34b2f5a
 workflow-type: tm+mt
-source-wordcount: '768'
+source-wordcount: '780'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 1%
 ## 设置GitHub创作环境 {#set-up-environment}
 
 1. 在浏览器中，导航到`https://github.com/AdobeDocs/experience-platform.en`。
-2. 要分支[存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository)，请单击&#x200B;**分支**，如下图所示。
+2. 要创建[分支](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository)存储库，请单击&#x200B;**分支**，如下所示。 这会在您自己的GitHub帐户中创建Experience Platform存储库的副本。
 
    ![分支Adobe文档存储库](./assets/ssd-fork-repository.gif)
 
@@ -61,7 +61,7 @@ ht-degree: 1%
 >
 >请注意，这里没有什么可以打破的。 按照此部分中的说明，您只是建议进行文档更新。 您建议的更新将由Adobe Experience Platform文档团队批准或编辑。
 
-1. 保存文件并上传所需的图像后，您可以打开拉取请求(PR)，以将工作分支合并到Adobe文档存储库的主控分支中。 确保已选择您处理的分支，然后选择&#x200B;**Contribute > Pull request**。
+1. 保存文件并上传所需的图像后，您可以打开拉取请求(PR)，以将工作分支合并到Adobe文档存储库的主控分支中。 确保已选择您处理的分支，然后选择&#x200B;**Contribute > Open pull request**。
 
 ![创建拉取请求](./assets/ssd-create-pull-request-1.gif)
 

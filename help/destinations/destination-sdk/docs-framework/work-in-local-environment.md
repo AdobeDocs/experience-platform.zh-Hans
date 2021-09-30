@@ -2,9 +2,9 @@
 title: 在本地环境中使用文本编辑器创建目标文档页面
 description: 本页面上的说明向您展示了如何使用文本编辑器在本地环境中工作，以创作Experience Platform目标的文档页面并提交该页面以供审阅。
 exl-id: 125f2d10-0190-4255-909c-5bd5bb59fcba
-source-git-commit: 83539a9aa2fddcae0c9a44302d8bfa9d9f56de0c
+source-git-commit: 1bbff0fa54f1b7ef1ee70efd2a85cd43b34b2f5a
 workflow-type: tm+mt
-source-wordcount: '871'
+source-wordcount: '885'
 ht-degree: 2%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 2%
 ## 连接到GitHub并设置本地创作环境 {#set-up-environment}
 
 1. 在浏览器中，导航到`https://github.com/AdobeDocs/experience-platform.en`
-2. 要分支[存储库](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository)，请单击&#x200B;**分支**，如屏幕截图所示。
+2. 要创建[分支](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository)存储库，请单击&#x200B;**分支**，如下所示。 这会在您自己的GitHub帐户中创建Experience Platform存储库的副本。
 
    ![分支Adobe文档存储库](./assets/ssd-fork-repository.gif)
 
@@ -61,7 +61,7 @@ ht-degree: 2%
 
    ![推送您的提交](./assets/push-local-to-remote.png)
 
-1. 在GitHub Web界面中，打开拉取请求(PR)，将您的工作分支合并到Adobe文档存储库的主控分支中。 确保已选择您处理的分支，并选择&#x200B;**拉取请求**。
+1. 在GitHub Web界面中，打开拉取请求(PR)，将您的工作分支合并到Adobe文档存储库的主控分支中。 确保已选择您处理的分支，然后选择&#x200B;**Contribute > Open pull request**。
 
    ![创建拉取请求](./assets/ssd-create-pull-request-1.gif)
 
