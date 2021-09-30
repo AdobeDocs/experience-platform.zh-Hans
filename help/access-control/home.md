@@ -5,7 +5,7 @@ topic-legacy: overview
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 88593d921d6ad97fc4dfb059f0272817caee06c7
+source-git-commit: 584461d3da5c5c39b9702b5d1dc1d1319568f695
 workflow-type: tm+mt
 source-wordcount: '1375'
 ht-degree: 2%
@@ -72,7 +72,7 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 
 产品配置文件中的权限选项卡会显示该配置文件处于活动状态的沙箱和权限：
 
-![permissions-overview](./images/permissions-overview.png)
+![permissions-overview](./images/permissions.png)
 
 通过[!DNL Admin Console]授予的权限按类别排序，其中有些权限授予对若干低级功能的访问权限。
 
