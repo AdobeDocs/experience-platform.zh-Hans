@@ -1,10 +1,10 @@
 ---
 keywords: 目标个性化；目的地；experience platform target目标；adobe target目标；
-title: Adobe Target连接
+title: Adobe Target连接（测试版）
 description: Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI技术的实时个性化和实验。
-source-git-commit: caccd096c9165139d9b966bbfcb311456276192a
+source-git-commit: 0635828cf3f637e67d2cabda860ca452e61892d4
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '392'
 ht-degree: 1%
 
 ---

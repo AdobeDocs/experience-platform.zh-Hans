@@ -1,13 +1,13 @@
 ---
 keywords: 激活用户档案请求目标；激活数据；用户档案请求目标
-title: 将受众数据激活到用户档案请求目标
+title: 将受众数据激活到用户档案请求目标（测试版）
 type: Tutorial
 seo-title: Activate audience data to profile request destinations
 description: 了解如何通过将区段映射到配置文件请求目标，来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by mapping segments to profile request destinations.
-source-git-commit: caccd096c9165139d9b966bbfcb311456276192a
+source-git-commit: 0635828cf3f637e67d2cabda860ca452e61892d4
 workflow-type: tm+mt
-source-wordcount: '490'
+source-wordcount: '474'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 ### 区段合并策略 {#merge-policy}
 
-配置文件请求目标当前仅支持激活使用默认合并策略的区段。 尝试激活具有不同合并策略的区段时，会在[[!UICONTROL Review]](#review)页面中导致错误。
+目前，配置文件请求目标仅支持激活使用[默认合并策略](../../segmentation/ui/segment-builder.md#merge-policies)的区段。
 
 ## 选择您的目标 {#select-destination}
 
