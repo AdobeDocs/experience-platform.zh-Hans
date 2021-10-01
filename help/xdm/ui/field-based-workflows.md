@@ -1,16 +1,20 @@
 ---
-title: 架构编辑器中基于字段的工作流
-description: 了解如何将Adobe定义的字段组中的标准字段单独添加到体验数据模型(XDM)架构中。
+title: 架构编辑器（测试版）中基于字段的工作流
+description: 了解如何将现有字段组中的字段单独添加到体验数据模型(XDM)架构。
 hide: true
 hidefromtoc: true
-source-git-commit: 8947fbb815f3eda97fb218be6791cb67e6e66719
+source-git-commit: 139d453c3758f4f137cd1b31307b61dc777fc1c1
 workflow-type: tm+mt
-source-wordcount: '848'
+source-wordcount: '867'
 ht-degree: 0%
 
 ---
 
-# 架构编辑器中基于字段的工作流
+# 架构编辑器（测试版）中基于字段的工作流
+
+>[!IMPORTANT]
+>
+>本文档中描述的工作流目前处于测试阶段。 功能和文档可能会发生更改。
 
 Adobe Experience Platform提供了一组功能强大的标准化[字段组](../schema/composition.md#field-group)，以用于体验数据模型(XDM)架构。 这些字段组背后的结构和语义经过精心定制，以满足平台中各种分段用例和其他下游应用程序的需求。 您还可以定义自己的自定义字段组以满足独特的业务需求。
 
