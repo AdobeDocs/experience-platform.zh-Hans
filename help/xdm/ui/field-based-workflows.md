@@ -3,9 +3,10 @@ title: 架构编辑器（测试版）中基于字段的工作流
 description: 了解如何将现有字段组中的字段单独添加到体验数据模型(XDM)架构。
 hide: true
 hidefromtoc: true
-source-git-commit: 139d453c3758f4f137cd1b31307b61dc777fc1c1
+exl-id: 0499ff30-a602-419b-b9d3-2defdd4354a7
+source-git-commit: b7c6f37d3e6d824465713647b624473cff188378
 workflow-type: tm+mt
-source-wordcount: '867'
+source-wordcount: '1175'
 ht-degree: 0%
 
 ---
@@ -50,6 +51,26 @@ Adobe Experience Platform提供了一组功能强大的标准化[字段组](../s
 
 ![添加的字段](../images/ui/field-based-workflows/fields-added.png)
 
+## 将标准字段直接添加到架构
+
+您可以将标准字段组中的字段直接添加到架构，而无需事先知道其相应的字段组。 要向架构添加标准字段，请在画布中选择架构名称旁边的加号(**+**)图标。 架构结构中会显示一个&#x200B;**[!UICONTROL 无标题字段]**&#x200B;占位符，右边栏会更新以显示用于配置字段的控件。
+
+![字段占位符](../images/ui/field-based-workflows/root-custom-field.png)
+
+在&#x200B;**[!UICONTROL 字段名称]**&#x200B;下，开始键入要添加的字段名称。 系统会自动搜索与查询匹配的标准字段，并在&#x200B;**[!UICONTROL 推荐标准字段]**&#x200B;下列出它们，包括它们所属的字段组。
+
+![推荐的标准字段](../images/ui/field-based-workflows/standard-field-search.png)
+
+虽然某些标准字段具有相同的名称，但其结构可能会因其来源的字段组而异。 如果标准字段嵌套在字段组结构的父对象中，则如果添加了子字段，则父字段也将包含在架构中。
+
+选择标准字段旁边的预览图标（![预览图标](../images/ui/field-based-workflows/preview-icon.png)），可查看其字段组的结构，并更好地了解其嵌套方式。 要向架构中添加标准字段，请选择加号图标（![加号图标](../images/ui/field-based-workflows/add-icon.png)）。
+
+![添加标准字段](../images/ui/field-based-workflows/add-standard-field.png)
+
+画布会更新，以显示已添加到架构的标准字段，包括该架构嵌套在字段组结构下的任何父字段。 字段组的名称也列在左边栏的&#x200B;**[!UICONTROL 字段组]**&#x200B;下。 如果要从同一字段组添加更多字段，请选择右边栏中的&#x200B;**[!UICONTROL 管理相关字段]**。
+
+![添加了标准字段](../images/ui/field-based-workflows/standard-field-added.png)
+
 ## 将自定义字段直接添加到架构
 
 如果您之前已[创建自定义字段组](./resources/field-groups.md#create)，则可以直接将自定义字段添加到架构中，而无需预先将它们单独添加到自定义字段组。
@@ -62,7 +83,11 @@ Adobe Experience Platform提供了一组功能强大的标准化[字段组](../s
 
 ![根自定义字段](../images/ui/field-based-workflows/root-custom-field.png)
 
-使用右边栏中的控件为字段提供名称、显示名称和数据类型。 在&#x200B;**[!UICONTROL 分配字段组]**&#x200B;下，选择要与新字段关联的自定义字段组。
+开始键入您要添加的自定义字段的名称，系统将自动开始搜索匹配的标准字段。 要改为创建新的自定义字段，请选择附加了&#x200B;**([!UICONTROL New Field])**&#x200B;的顶部选项。
+
+![新建字段](../images/ui/field-based-workflows/custom-field-search.png)
+
+从此处，提供字段的显示名称和数据类型。 在&#x200B;**[!UICONTROL 分配字段组]**&#x200B;下，选择要与新字段关联的自定义字段组。
 
 ![选择字段组](../images/ui/field-based-workflows/select-field-group.png)
 
@@ -78,7 +103,7 @@ Adobe Experience Platform提供了一组功能强大的标准化[字段组](../s
 >
 >默认情况下，所选自定义字段组提供的其余字段将从架构中删除。 如果要向架构中添加其中一些字段，请选择属于该组的字段，然后选择右边栏中的&#x200B;**[!UICONTROL 管理相关字段]**。
 
-### 向标准字段组的结构中添加字段
+### 将自定义字段添加到标准字段组的结构
 
 如果您正在处理的架构具有由标准字段组提供的对象类型字段，则可以向该标准对象添加您自己的自定义字段。 选择对象根旁边的加号(**+**)图标，并在右边栏中提供自定义字段的详细信息。
 
