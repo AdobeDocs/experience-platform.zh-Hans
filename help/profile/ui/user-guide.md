@@ -4,9 +4,9 @@ title: Real-time Customer Profile UI指南
 topic-legacy: guide
 description: 实时客户资料可整合来自多个渠道的数据（包括在线、离线、CRM和第三方数据），从而创建每个客户的整体视图。 本文档是在Adobe Experience Platform用户界面中与实时客户资料进行交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 69e510c9a0f477ad7cab530128c6728f68dfdab1
+source-git-commit: 771be1f5939066295c01eb573a13dbb740e8c776
 workflow-type: tm+mt
-source-wordcount: '1568'
+source-wordcount: '1774'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 ## [!UICONTROL 概述]
 
-在Experience PlatformUI中，选择左侧导航中的&#x200B;**[!UICONTROL Profiles]** ，以打开显示配置文件仪表板的&#x200B;**[!UICONTROL Overview]**&#x200B;选项卡。
+在Experience PlatformUI中，选择左侧导航中的&#x200B;**[!UICONTROL Profiles]** ，以打开显示用户档案仪表板的&#x200B;**[!UICONTROL Overview]**&#x200B;选项卡。
 
 >[!NOTE]
 >
@@ -136,9 +136,33 @@ ht-degree: 0%
 
 ![](../images/user-guide/profiles-profile-detail.png)
 
-您可以通过选择其他可用选项卡来查看与单个配置文件相关的其他信息。 这些选项卡包括属性、事件和区段成员资格选项卡，用于显示配置文件当前符合条件的区段。
+您可以通过选择其他可用选项卡，查看与单个客户用户档案相关的其他信息。 这些选项卡包括属性、事件和区段成员资格选项卡，用于显示配置文件当前符合条件的区段。
 
 ![](../images/user-guide/profiles-attributes-events-segments.png)
+
+### “属性”选项卡
+
+**[!UICONTROL Attributes]**&#x200B;选项卡提供一个列表视图，在应用指定的合并策略后，该视图将汇总与单个配置文件相关的所有属性。
+
+通过选择&#x200B;**[!UICONTROL 查看JSON]**，还可以将这些属性视为JSON对象。 对于希望更好地了解如何将配置文件属性摄取到平台的任何用户而言，此功能非常有用。
+
+![](../images/user-guide/profiles-attributes.png)
+
+### “事件”选项卡
+
+**[!UICONTROL 事件]**&#x200B;选项卡包含与客户关联的ExperienceEvents相关的数据。 这可能包括电子邮件打开次数、购物车活动、页面查看次数等。 选择&#x200B;**[!UICONTROL 查看任何单个事件的所有]**&#x200B;会提供附加字段和值捕获作为事件的一部分。
+
+事件也可以作为JSON对象查看，方法是选择&#x200B;**[!UICONTROL 查看JSON]**。 这有助于了解如何在平台中捕获事件。
+
+![](../images/user-guide/profiles-events.png)
+
+### “区段成员资格”选项卡
+
+**[!UICONTROL 区段成员资格]**&#x200B;选项卡显示一个列表，其中包含单个客户配置文件当前所属的区段的名称和说明。 当配置文件符合区段条件或过期时，此列表会自动更新。 用户档案当前符合条件的区段总数会显示在选项卡的右侧。
+
+有关Experience Platform中分段的更多信息，请参阅[AdobeExperience Platform分段服务文档](../../segmentation/home.md)。
+
+![](../images/user-guide/profiles-segment-membership.png)
 
 ## 合并策略
 
