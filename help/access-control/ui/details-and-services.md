@@ -5,9 +5,9 @@ title: 管理产品配置文件的详细信息和其他服务
 topic-legacy: user guide
 description: 本文档介绍了在Adobe Admin Console中管理产品配置文件的详细信息和其他服务所需的必要步骤。 您可以通过“配置文件设置”菜单配置配置文件的详细信息并访问其他服务。
 exl-id: ac9c2213-f2fb-44be-9334-87fada8a4717
-source-git-commit: 6228f499a42e61583abd1f7ff1e1af1fb90640c6
+source-git-commit: 2844ffd7270ffcc2fba4da08dda1aea238cf6c9f
 workflow-type: tm+mt
-source-wordcount: '296'
+source-wordcount: '303'
 ht-degree: 0%
 
 ---
@@ -39,6 +39,6 @@ ht-degree: 0%
 
 有权使用B2B或B2P Edition的客户有权访问B2B UI。 可通过[!UICONTROL 启用服务菜单]为用户配置B2B UI。 选择[!UICONTROL B2B UI]旁边的切换开关以启用特定产品配置文件的服务，然后选择&#x200B;**[!UICONTROL 保存]**。
 
-B2B UI切换开关使用户能够查看与管理帐户和机会相关的B2B工作流，并创建与B2B相关的区段。
+B2B UI切换开关使用户能够查看与管理帐户和机会相关的B2B工作流，并创建与B2B相关的区段。 有关更多信息，请参阅[[!DNL Real-time Customer Data Platform B2B Edition]](../../rtcdp/b2b-overview.md)上的文档。
 
 ![enable-b2b](../images/enable-b2b.png)

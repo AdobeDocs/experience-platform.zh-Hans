@@ -5,9 +5,9 @@ title: Marketo Engage连接器
 topic-legacy: overview
 description: 本文档概述了Marketo Engage源连接器，包括有关其身份验证、映射和数据延迟的信息。
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 50e92ac8c1eccc9ccfb6b078ad8b996817a6d693
+source-git-commit: 2844ffd7270ffcc2fba4da08dda1aea238cf6c9f
 workflow-type: tm+mt
-source-wordcount: '463'
+source-wordcount: '474'
 ht-degree: 1%
 
 ---
@@ -70,3 +70,4 @@ XDM是一项公开记录的规范，它提供了常用结构和定义，允许�
 * 有关与[!DNL Marketo]一起使用的B2B命名空间和架构的基础设置的信息，请参阅[B2B命名空间和架构](./marketo-namespaces.md)的文档。
 * 有关查找[!DNL Marketo] munchkin ID并生成凭据的信息，请参阅[[!DNL Marketo] authentication guide](./marketo-auth.md)。
 * 有关应用于[!DNL Marketo]数据集的特定映射规则的信息，请参阅关于[[!DNL Marketo] 字段映射](../mapping/marketo.md)的文档。
+* 有关[!DNL Real-time Customer Data Platform B2B Edition]及其功能的常规信息，请参阅[[!DNL Real-time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md)上的文档。
