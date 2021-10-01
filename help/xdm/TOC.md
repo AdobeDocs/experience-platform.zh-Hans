@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用体验数据模型(XDM)类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: d83ad2870b6099d3c6359dcc7cd000ecad8a238f
+source-git-commit: 05d5a599b3ed101fab7ab96e4f218592f7e923ef
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '393'
 ht-degree: 13%
 
 ---
@@ -126,6 +126,7 @@ ht-degree: 13%
       * [枚举字段](./ui/fields/enum.md)
       * [标识字段](./ui/fields/identity.md)
       * [关系字段](./ui/fields/relationship.md)
+   * [基于字段的工作流](./ui/field-based-workflows.md)
    * [生成示例XDM数据](./ui/sample.md)
    * [导出XDM模式](./ui/export.md)
 * 架构注册表API {#api}
