@@ -2,9 +2,9 @@
 title: 审核日志概述
 description: 了解审核日志如何让您了解谁在Adobe Experience Platform中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 4dc49c7219ebb613c74e5960f1f8d477dc1b7605
+source-git-commit: d4beb7691c8fb38359425509a40572ea9b09fd26
 workflow-type: tm+mt
-source-wordcount: '598'
+source-wordcount: '608'
 ht-degree: 5%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 5%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的审核日志功能目前处于测试阶段。 本文档中描述的功能可能会发生更改。
+>Adobe Experience Platform中的审核日志功能目前处于测试阶段，您的组织可能还无法访问该功能。 本文档中描述的功能可能会发生更改。
 
 为了提高系统中所执行活动的透明度和可见性，Adobe Experience Platform允许您以“审核日志”的形式审核各种服务和功能的用户活动。 这些日志形成了一个审核跟踪，可帮助解决平台上的问题，并帮助您的企业有效地遵守公司数据管理策略和法规要求。
 
