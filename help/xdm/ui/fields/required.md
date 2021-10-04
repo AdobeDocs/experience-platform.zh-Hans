@@ -1,30 +1,37 @@
 ---
-keywords: Experience Platform；主页；热门主题；api;API;XDM;XDM系统；体验数据模型；数据模型；ui；工作区；必填；字段；
-solution: Experience Platform
+keywords: Experience Platform；主页；热门主题；API;API;XDM;XDM系统；体验数据模型；数据模型；UI；工作区；必填；字段；
 title: 在UI中定义必填字段
-description: 了解如何在Experience Platform用户界面中定义所需的XDM字段。
-topic-legacy: user guide
+description: 了解如何在Experience Platform用户界面中定义必需的XDM字段。
 exl-id: 3a5885a0-6f07-42f3-b521-053083d5b556
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 1d04bf56c51506f84c5156e6d2ed6c9f58f15235
 workflow-type: tm+mt
-source-wordcount: '187'
-ht-degree: 1%
+source-wordcount: '316'
+ht-degree: 0%
 
 ---
 
 # 在UI中定义必填字段
 
-在体验事件模型(XDM)中，必填字段指示必须提供一个有效值，才能在数据获取过程中接受特定记录或时间序列数据。 必填字段的常见用例包括用户身份信息和时间戳。
+在体验数据模型(XDM)中，必填字段指示必须为其提供有效值，以便在数据摄取期间接受特定记录或时间系列事件。 必填字段的常见用例包括用户身份信息和时间戳。
 
-当[在Adobe Experience Platform用户界面中定义新字段](./overview.md#define)时，可以通过选中右边栏中的&#x200B;**[!UICONTROL Required]**&#x200B;复选框将其设置为必填字段。 选择&#x200B;**[!UICONTROL Apply]**&#x200B;以将更改应用到模式。
+在Adobe Experience Platform用户界面中定义新字段](./overview.md#define)时，您可以通过选中右边栏中的&#x200B;**[!UICONTROL 必填]**&#x200B;复选框，将其设置为必填字段。 [选择&#x200B;**[!UICONTROL Apply]**&#x200B;以将更改应用到架构。
 
-![](../../images/ui/fields/special/required.png)
+![“必需”复选框](../../images/ui/fields/required/root.png)
 
-应用字段后，其路径将显示在左边栏的&#x200B;**[!UICONTROL Required fields]**&#x200B;下。 如果该字段是嵌套的，则任何父字段也都将按要求显示。
+如果字段是租户ID对象下的根级别属性，则其路径会立即显示在左边栏的&#x200B;**[!UICONTROL 必填字段]**&#x200B;下。
 
-![](../../images/ui/fields/special/required-applied.png)
+![根级别必填字段](../../images/ui/fields/required/applied.png)
+
+但是，如果必填字段嵌套在未标记为必填字段的对象中，则嵌套的字段不会显示在左边栏的&#x200B;**[!UICONTROL 必填字段]**&#x200B;下。
+
+在以下示例中，`loyaltyId`字段设置为必需字段，但其父对象`loyalty`不是。 在这种情况下，如果在摄取数据时排除`loyalty`，即使子字段`loyaltyId`被标记为必需，也不会发生验证错误。 换言之，虽然`loyalty`是可选的，但它必须在包含的事件中包含`loyaltyId`字段。
+
+![嵌套的必填字段](../../images/ui/fields/required/nested.png)
+
+如果您希望架构中始终需要嵌套字段，则还必须根据需要设置所有父字段（租户ID对象除外）。
+
+![父和子必填字段](../../images/ui/fields/required/parent-and-child.png)
 
 ## 后续步骤
 
-本指南介绍如何在用户界面中定义必填字段。 有关在UI](./overview.md#special)中定义字段的概述，请参阅[，以了解如何在[!DNL Schema Editor]中定义其他XDM字段类型。
+本指南介绍了如何在UI中定义必填字段。 请参阅[在UI](./overview.md#special)中定义字段的概述，了解如何在[!DNL Schema Editor]中定义其他XDM字段类型。
