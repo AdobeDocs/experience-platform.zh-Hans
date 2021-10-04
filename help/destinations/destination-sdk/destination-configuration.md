@@ -2,9 +2,9 @@
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 目标SDK的目标配置选项
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 63fe3b7cc429a1c18cebe998bc82fdea99a6679b
+source-git-commit: 0d5cb5e47b3507cbbd5c34d1ae1fe99d81c67ffc
 workflow-type: tm+mt
-source-wordcount: '1557'
+source-wordcount: '1552'
 ht-degree: 5%
 
 ---
@@ -63,7 +63,12 @@ ht-degree: 5%
    "identityNamespaces":{
       "external_id":{
          "acceptsAttributes":true,
-         "acceptsCustomNamespaces":true
+         "acceptsCustomNamespaces":true,
+         "acceptedGlobalNamespaces":{
+            "Email":{
+               
+            }
+         }
       },
       "another_id":{
          "acceptsAttributes":true,
@@ -214,7 +219,7 @@ Adobe需要知道哪些[!DNL Platform]标识客户能够导出到您的目标。
 | `acceptsAttributes` | 布尔型 | 指示您的目标是否接受标准配置文件属性。 通常，这些属性会在我们的合作伙伴文档中突出显示。 |
 | `acceptsCustomNamespaces` | 布尔型 | 指示客户是否可以在您的目标中设置自定义命名空间。 |
 | `allowedAttributesTransformation` | 字符串 | *示例配置中未显示*。例如，当[!DNL Platform]客户将纯电子邮件地址作为属性，且您的平台仅接受经过哈希处理的电子邮件时，便会使用。 在这里，您将提供需要应用的转换（例如，将电子邮件转换为小写，然后再转换为哈希）。 |
-| `acceptedGlobalNamespaces` | - | *示例配置中未显示*。用于平台接受[标准身份命名空间](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces)（例如IDFA）时的情况，因此您可以限制Platform用户仅选择这些身份命名空间。 |
+| `acceptedGlobalNamespaces` | - | 用于平台接受[标准身份命名空间](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces)（例如IDFA）时的情况，因此您可以限制Platform用户仅选择这些身份命名空间。 |
 
 {style=&quot;table-layout:auto&quot;}
 

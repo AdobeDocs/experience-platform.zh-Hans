@@ -2,9 +2,9 @@
 description: 本页列出并描述了您可以使用“/authoring/testing/destinationInstance/” API端点执行的所有API操作，以测试目标是否配置正确，以及验证数据流到您配置的目标的完整性。
 title: 目标测试API操作
 exl-id: 2b54250d-ec30-4ad7-a8be-b86b14e4f074
-source-git-commit: 9be8636b02a15c8f16499172289413bc8fb5b6f0
+source-git-commit: 45cff6f0c4d4fd63a17108087edec0184cbf9703
 workflow-type: tm+mt
-source-wordcount: '657'
+source-wordcount: '664'
 ht-degree: 1%
 
 ---
@@ -20,6 +20,8 @@ ht-degree: 1%
 无论是否向调用添加用户档案，您都可以向测试端点发出请求。 如果您未在请求中发送任何用户档案，则Adobe将在内部为您生成这些用户档案，并将其添加到请求中。
 
 您可以使用[示例配置文件生成API](./sample-profile-generation-api.md)创建要在对目标测试API的请求中使用的配置文件。
+
+## 如何获取目标实例ID {#get-destination-instance-id}
 
 >[!IMPORTANT]
 >
