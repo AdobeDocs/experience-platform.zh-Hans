@@ -2,9 +2,9 @@
 description: 本页列出并介绍了您可以使用“/authoring/destinations” API端点执行的所有API操作。
 title: 目标API端点操作
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: 32b61276f3fe81ffa82fec1debf335ea51020ccd
+source-git-commit: c334a11ff6a03b38883a5319bc41cbe3f93c0289
 workflow-type: tm+mt
-source-wordcount: '2340'
+source-wordcount: '2407'
 ht-degree: 4%
 
 ---
@@ -125,33 +125,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
          "splitUserById":false
       }
    },
-   "aggregation":{
-      "aggregationType":"CONFIGURABLE_AGGREGATION",
-      "configurableAggregation":{
-         "splitUserById":true,
-         "maxBatchAgeInSecs":0,
-         "maxNumEventsInBatch":0,
-         "aggregationKey":{
-            "includeSegmentId":true,
-            "includeSegmentStatus":true,
-            "includeIdentity":true,
-            "oneIdentityPerGroup":false,
-            "groups":[
-               {
-                  "namespaces":[
-                     "IDFA",
-                     "GAID"
-                  ]
-               },
-               {
-                  "namespaces":[
-                     "EMAIL"
-                  ]
-               }
-            ]
-         }
-      }
-   },
    "destinationDelivery":[
       {
          "authenticationRule":"CUSTOMER_AUTHENTICATION",
@@ -195,18 +168,18 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `schemaConfig.profileRequired` | 布尔型 | 如果用户应该能够将配置文件属性从Experience Platform映射到目标侧的自定义属性，请使用`true` ，如上面的示例配置中所示。 |
 | `schemaConfig.segmentRequired` | 布尔型 | 始终使用`segmentRequired:true`。 |
 | `schemaConfig.identityRequired` | 布尔型 | 如果用户应能够将身份命名空间从Experience Platform映射到所需的架构，请使用`true`。 |
-| `aggregation.aggregationType` | - | 选择 `BEST_EFFORT` 或 `CONFIGURABLE_AGGREGATION`。虽然上述示例配置包括这两种聚合类型，但您只需为目标选择其中一种聚合类型。 |
+| `aggregation.aggregationType` | - | 选择 `BEST_EFFORT` 或 `CONFIGURABLE_AGGREGATION`。上述示例配置包括`BEST_EFFORT`聚合。 有关`CONFIGURABLE_AGGREGATION`的示例，请参阅[目标配置](./destination-configuration.md#example-configuration)文档中的示例配置。 请注意，与可配置聚合相关的参数在下表中进行了说明。 |
 | `aggregation.bestEffortAggregation.maxUsersPerRequest` | 整数 | Experience Platform可以在一个HTTP调用中聚合多个导出的配置文件。 指定您的端点在单个HTTP调用中应接收的最大配置文件数。 请注意，这是一种尽力的聚合。 例如，如果您指定值100,Platform可能会在一次调用中发送任意数量小于100的用户档案。 <br> 如果您的服务器不接受每个请求的多个用户，请将此值设置为1。 |
 | `aggregation.bestEffortAggregation.splitUserById` | 布尔型 | 如果目标的调用应按身份进行拆分，则使用此标记。 如果服务器在给定的命名空间中每次调用仅接受一个标识，则将此标记设置为`true`。 |
-| `aggregation.configurableAggregation.splitUserById` | 布尔型 | 如果目标的调用应按身份进行拆分，则使用此标记。 如果服务器在给定的命名空间中每次调用仅接受一个标识，则将此标记设置为`true`。 |
-| `aggregation.configurableAggregation.maxBatchAgeInSecs` | 整数 | *最大值：3600*。这与`maxNumEventsInBatch`一起确定Experience Platform在向端点发送API调用之前应等待多长时间。 <br> 例如，如果您对两个参数使用最大值，则Experience Platform将等待3600秒或直到有10.000个符合条件的配置文件才进行API调用，以先发生的为准。 |
-| `aggregation.configurableAggregation.maxNumEventsInBatch` | 整数 | *最大值：1000*。请参阅上方的`maxBatchAgeInSecs`。 |
-| `aggregation.configurableAggregation.aggregationKey` | 布尔型 | 允许您根据以下参数聚合映射到目标的导出配置文件：<br> <ul><li>区段ID</li><li> 区段状态 </li><li> 标识命名空间 </li></ul> |
-| `aggregation.configurableAggregation.aggregationKey.includeSegmentId` | 布尔型 | 如果要按区段ID对导出到目标的配置文件进行分组，请将此参数设置为`true`。 |
-| `aggregation.configurableAggregation.aggregationKey.includeSegmentStatus` | 布尔型 | 如果要按区段ID和区段状态对导出到目标的配置文件进行分组，则必须同时设置`includeSegmentId:true`和`includeSegmentStatus:true`。 |
-| `aggregation.configurableAggregation.aggregationKey.includeIdentity` | 布尔型 | 如果要按身份命名空间对导出到目标的用户档案进行分组，请将此参数设置为`true`。 |
-| `aggregation.configurableAggregation.aggregationKey.oneIdentityPerGroup` | 布尔型 | 使用此参数可指定是否要将导出的用户档案聚合到单个身份（GAID、IDFA、电话号码、电子邮件等）的组中。 |
-| `aggregation.configurableAggregation.aggregationKey.groups` | 字符串 | 如果要按身份命名空间的组对导出到目标的配置文件进行分组，请创建身份组列表。 例如，您可以使用示例中的配置，将包含IDFA和GAID移动标识符的用户档案合并到对目标的一次调用中，以及将电子邮件合并到另一个调用中。 |
+| `aggregation.configurableAggregation.splitUserById` | 布尔型 | 请参阅示例配置[中的参数](./destination-configuration.md#example-configuration)。 如果目标的调用应按身份进行拆分，则使用此标记。 如果服务器在给定的命名空间中每次调用仅接受一个标识，则将此标记设置为`true`。 |
+| `aggregation.configurableAggregation.maxBatchAgeInSecs` | 整数 | *最大值：3600*。请参阅示例配置[中的参数](./destination-configuration.md#example-configuration)。 这与`maxNumEventsInBatch`一起确定Experience Platform在向端点发送API调用之前应等待多长时间。 <br> 例如，如果您对两个参数使用最大值，则Experience Platform将等待3600秒或直到有10.000个符合条件的配置文件才进行API调用，以先发生的为准。 |
+| `aggregation.configurableAggregation.maxNumEventsInBatch` | 整数 | *最大值：1000*。请参阅示例配置[中的参数](./destination-configuration.md#example-configuration)。 请参阅上方的`maxBatchAgeInSecs`。 |
+| `aggregation.configurableAggregation.aggregationKey` | 布尔型 | 请参阅示例配置[中的参数](./destination-configuration.md#example-configuration)。 允许您根据以下参数聚合映射到目标的导出配置文件：<br> <ul><li>区段ID</li><li> 区段状态 </li><li> 标识命名空间 </li></ul> |
+| `aggregation.configurableAggregation.aggregationKey.includeSegmentId` | 布尔型 | 请参阅示例配置[中的参数](./destination-configuration.md#example-configuration)。 如果要按区段ID对导出到目标的配置文件进行分组，请将此参数设置为`true`。 |
+| `aggregation.configurableAggregation.aggregationKey.includeSegmentStatus` | 布尔型 | 请参阅示例配置[中的参数](./destination-configuration.md#example-configuration)。 如果要按区段ID和区段状态对导出到目标的配置文件进行分组，则必须同时设置`includeSegmentId:true`和`includeSegmentStatus:true`。 |
+| `aggregation.configurableAggregation.aggregationKey.includeIdentity` | 布尔型 | 请参阅示例配置[中的参数](./destination-configuration.md#example-configuration)。 如果要按身份命名空间对导出到目标的用户档案进行分组，请将此参数设置为`true`。 |
+| `aggregation.configurableAggregation.aggregationKey.oneIdentityPerGroup` | 布尔型 | 请参阅示例配置[中的参数](./destination-configuration.md#example-configuration)。 使用此参数可指定是否要将导出的用户档案聚合到单个身份（GAID、IDFA、电话号码、电子邮件等）的组中。 |
+| `aggregation.configurableAggregation.aggregationKey.groups` | 字符串 | 请参阅示例配置[中的参数](./destination-configuration.md#example-configuration)。 如果要按身份命名空间的组对导出到目标的配置文件进行分组，请创建身份组列表。 例如，您可以使用示例中的配置，将包含IDFA和GAID移动标识符的用户档案合并到对目标的一次调用中，以及将电子邮件合并到另一个调用中。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -330,33 +303,6 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
             "bestEffortAggregation":{
                "maxUsersPerRequest":10,
                "splitUserById":false
-            }
-         },
-         "aggregation":{
-            "aggregationType":"CONFIGURABLE_AGGREGATION",
-            "configurableAggregation":{
-               "splitUserById":true,
-               "maxBatchAgeInSecs":0,
-               "maxNumEventsInBatch":0,
-               "aggregationKey":{
-                  "includeSegmentId":true,
-                  "includeSegmentStatus":true,
-                  "includeIdentity":true,
-                  "oneIdentityPerGroup":false,
-                  "groups":[
-                     {
-                        "namespaces":[
-                           "IDFA",
-                           "GAID"
-                        ]
-                     },
-                     {
-                        "namespaces":[
-                           "EMAIL"
-                        ]
-                     }
-                  ]
-               }
             }
          },
          "destinationDelivery":[
@@ -551,33 +497,6 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
          "splitUserById":false
       }
    },
-   "aggregation":{
-      "aggregationType":"CONFIGURABLE_AGGREGATION",
-      "configurableAggregation":{
-         "splitUserById":true,
-         "maxBatchAgeInSecs":0,
-         "maxNumEventsInBatch":0,
-         "aggregationKey":{
-            "includeSegmentId":true,
-            "includeSegmentStatus":true,
-            "includeIdentity":true,
-            "oneIdentityPerGroup":false,
-            "groups":[
-               {
-                  "namespaces":[
-                     "IDFA",
-                     "GAID"
-                  ]
-               },
-               {
-                  "namespaces":[
-                     "EMAIL"
-                  ]
-               }
-            ]
-         }
-      }
-   },
    "destinationDelivery":[
       {
          "authenticationRule":"CUSTOMER_AUTHENTICATION",
@@ -735,33 +654,6 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
       "bestEffortAggregation":{
          "maxUsersPerRequest":10,
          "splitUserById":false
-      }
-   },
-   "aggregation":{
-      "aggregationType":"CONFIGURABLE_AGGREGATION",
-      "configurableAggregation":{
-         "splitUserById":true,
-         "maxBatchAgeInSecs":0,
-         "maxNumEventsInBatch":0,
-         "aggregationKey":{
-            "includeSegmentId":true,
-            "includeSegmentStatus":true,
-            "includeIdentity":true,
-            "oneIdentityPerGroup":false,
-            "groups":[
-               {
-                  "namespaces":[
-                     "IDFA",
-                     "GAID"
-                  ]
-               },
-               {
-                  "namespaces":[
-                     "EMAIL"
-                  ]
-               }
-            ]
-         }
       }
    },
    "destinationDelivery":[
