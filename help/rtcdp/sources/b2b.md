@@ -2,14 +2,18 @@
 title: 实时客户数据平台B2B版中的源
 description: 有关源在实时客户数据平台B2B版中的角色的概述。
 exl-id: eeea4b2e-67c5-4491-9b8e-4b8987e44777
-source-git-commit: b8c14fc2e32a6a8f92309f4956cc5415d833a73f
+source-git-commit: 0661d124ffe520697a1fc8e2cae7b0b61ef4edfc
 workflow-type: tm+mt
-source-wordcount: '160'
+source-wordcount: '179'
 ht-degree: 0%
 
 ---
 
 # 实时客户数据平台B2B版中的源
+
+>[!IMPORTANT]
+>
+>实时客户数据平台B2B版目前处于测试阶段。 文档和功能可能会发生更改。
 
 实时客户数据平台B2B Edition允许您通过[[!DNL Marketo Engage]](../../sources/connectors/adobe-applications/marketo/marketo.md)源连接器引入B2B数据，同时让您能够使用服务来构建、标记和增强传入数据。
 

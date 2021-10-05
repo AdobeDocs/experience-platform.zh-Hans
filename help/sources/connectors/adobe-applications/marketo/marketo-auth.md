@@ -5,14 +5,18 @@ title: 验证Marketo源连接器
 topic-legacy: overview
 description: 本文档提供了有关如何生成Marketo身份验证凭据的信息。
 exl-id: 594dc8b6-cd6e-49ec-9084-b88b1fe8167a
-source-git-commit: 50e92ac8c1eccc9ccfb6b078ad8b996817a6d693
+source-git-commit: 0661d124ffe520697a1fc8e2cae7b0b61ef4edfc
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '622'
 ht-degree: 0%
 
 ---
 
-# 验证[!DNL Marketo Engage]源连接器
+# （测试版）验证[!DNL Marketo Engage]源连接器
+
+>[!IMPORTANT]
+>
+>Adobe Experience Platform中的[!DNL Marketo Engage]源当前为测试版。 文档和功能可能会发生更改。
 
 在创建[!DNL Marketo Engage]（下称“[!DNL Marketo]”）源连接器之前，必须首先通过[!DNL Marketo]接口设置自定义服务，并检索Munchkin ID、客户端ID和客户端密钥的值。
 
