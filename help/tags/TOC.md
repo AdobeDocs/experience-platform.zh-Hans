@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: 标记帮助
 breadcrumb-title: 标记
-user-guide-description: 了解如何部署和管理分析、营销和广告标签以提升客户体验。
-feature: 数据收集
-source-git-commit: d2df8ac5edca32ac9228cb7db1810763c57de0b3
+user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
+feature: Data Collection
+source-git-commit: 549124c4c10677cc3691706c804894956c7ef592
 workflow-type: tm+mt
-source-wordcount: '380'
-ht-degree: 67%
+source-wordcount: '378'
+ht-degree: 69%
 
 ---
 
@@ -32,7 +32,7 @@ ht-degree: 67%
    * [从库中移除资源](./ui/managing-resources/remove-resources-from-library.md)
 * 发布 {#publish}
    * [概述](./ui/publishing/overview.md)
-   * [发布流程](./ui/publishing/publishing-flow.md)
+   * [发布流](./ui/publishing/publishing-flow.md)
    * 主机 {#hosts}
       * [概述](./ui/publishing/hosts/hosts-overview.md)
       * [Adobe管理的主机](./ui/publishing/hosts/managed-by-adobe-host.md)
@@ -72,7 +72,7 @@ ht-degree: 67%
          * [发行说明](./extensions/web/product-string/release-notes.md)
       * Adobe Audience Manager {#audience-manager}
          * [概述](./extensions/web/audience-manager/overview.md)
-      * Adobe客户端数据层{#client-data-layer}
+      * Adobe Client Data Layer {#client-data-layer}
          * [概述](./extensions/web/client-data-layer/overview.md)
          * [发行说明](./extensions/web/client-data-layer/release-notes.md)
       * AdobeContextHub {#contexthub}
@@ -168,7 +168,7 @@ ht-degree: 67%
       * [库](./api/endpoints/libraries.md)
       * [内部版本](./api/endpoints/builds.md)
       * [环境](./api/endpoints/environments.md)
-      * [主机](./api/endpoints/hosts.md)
+      * [托管](./api/endpoints/hosts.md)
       * [应用程序配置](./api/endpoints/app-configurations.md)
       * [审核事件](./api/endpoints/audit-events.md)
       * [回调](./api/endpoints/callbacks.md)
