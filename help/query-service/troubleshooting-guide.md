@@ -5,10 +5,10 @@ title: 查询服务疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档包含有关您遇到的常见错误代码以及可能原因的信息。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 2b118228473a5f07ab7e2c744b799f33a4c44c98
+source-git-commit: 42288ae7db6fb19bc0a0ee8e4ecfa50b7d63d017
 workflow-type: tm+mt
-source-wordcount: '525'
-ht-degree: 6%
+source-wordcount: '699'
+ht-degree: 4%
 
 ---
 
@@ -60,6 +60,10 @@ LIMIT 100;
 
 使用时间序列数据进行查询时，应尽可能使用时间戳筛选器以进行更准确的分析。
 
+>[!NOTE]
+>
+> 日期字符串&#x200B;**必须**&#x200B;的格式为`yyyy-mm-ddTHH24:MM:SS`。
+
 使用时间戳过滤器的示例如下所示：
 
 ```sql
@@ -74,6 +78,60 @@ WHERE  timestamp >= To_timestamp('2021-01-21 12:00:00')
 ### 我是否应使用通配符（如*）从数据集获取所有行？
 
 不能使用通配符从行中获取所有数据，因为查询服务应当被视为&#x200B;**colum-store**，而不是传统的基于行的存储系统。
+
+### 我应该在SQL查询中使用`NOT IN`吗？
+
+`NOT IN`运算符通常用于检索未在其他表或SQL语句中找到的行。 此运算符可能会降低性能，如果正在比较的列接受`NOT NULL`，或者您有大量记录，则可能会返回意外结果。
+
+您可以使用`NOT EXISTS`或`LEFT OUTER JOIN`，而不是使用`NOT IN`。
+
+例如，如果您创建了以下表：
+
+```sql
+CREATE TABLE T1 (ID INT)
+CREATE TABLE T2 (ID INT)
+INSERT INTO T1 VALUES (1)
+INSERT INTO T1 VALUES (2)
+INSERT INTO T1 VALUES (3)
+INSERT INTO T2 VALUES (1)
+INSERT INTO T2 VALUES (2)
+```
+
+如果您使用`NOT EXISTS`运算符，则可以使用以下查询来复制使用`NOT IN`运算符：
+
+```sql
+SELECT ID FROM T1
+WHERE NOT EXISTS
+(SELECT ID FROM T2 WHERE T1.ID = T2.ID)
+```
+
+或者，如果您使用`LEFT OUTER JOIN`运算符，则可以使用`NOT IN`运算符通过以下查询进行复制：
+
+```sql
+SELECT T1.ID FROM T1
+LEFT OUTER JOIN T2 ON T1.ID = T2.ID
+WHERE T2.ID IS NULL
+```
+
+### `OR`和`UNION`运算符的正确用法是什么？
+
+### 如何正确使用`CAST`运算符来转换SQL查询中的时间戳？
+
+使用`CAST`运算符转换时间戳时，需要同时包含日期&#x200B;**和**&#x200B;时间。
+
+例如，如下所示，缺少时间组件将导致错误：
+
+```sql
+SELECT * FROM ABC
+WHERE timestamp = CAST('07-29-2021' AS timestamp)
+```
+
+`CAST`运算符的正确用法如下所示：
+
+```sql
+SELECT * FROM ABC
+WHERE timestamp = CAST('07-29-2021 00:00:00' AS timestamp)
+```
 
 ## REST API错误
 
