@@ -4,15 +4,15 @@ solution: Experience Platform, Real-time Customer Data Platform
 audience: user
 user-guide-title: 实时客户数据平台指南
 user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
-source-git-commit: 30a4d2b27092f4706bb4f3f986a190502b184034
+source-git-commit: 8e7ceaa5f62ee7647b5a53c494c9b3acb43c14c7
 workflow-type: tm+mt
-source-wordcount: '147'
-ht-degree: 37%
+source-wordcount: '160'
+ht-degree: 34%
 
 ---
 
 
-# 实时客户数据平台帮助 {#rtcdp}
+# Real-time Customer Data Platform帮助 {#rtcdp}
 
 * [Real-time CDP概述](overview.md)
 * [Real-time CDP B2B Edition概述](b2b-overview.md)
@@ -24,19 +24,24 @@ ht-degree: 37%
       * [Real-time CDP B2B Edition快速入门](./b2b-use-case.md)
 * 管理 {#admin}
    * [管理概述](administration/admin-overview.md)
+* 帐户配置文件{#account}
+   * [帐户配置文件概述](accounts/account-profile-overview.md)
+   * [帐户配置文件UI指南](accounts/account-profile-ui-guide.md)
 * 数据集 {#datasets}
    * [数据集](datasets/dataset.md)
    * [平台上的数据质量](datasets/data-quality.md)
 * 目标 {#destinations}
    * [目标概述](destinations/overview.md)
+* 标识{#identity}
+   * [身份和身份命名空间](profile/identities-overview.md)
 * 隐私和数据管理{#privacy}
    * [隐私概述](privacy/privacy-overview.md)
    * [数据管理概述](privacy/data-governance-overview.md)
+* 合并策略{#merge-policies}
+   * [合并策略概述](profile/merge-policies.md)
 * 配置文件 {#profile}
    * [配置文件概述](profile/profile-overview.md)
-   * [身份和身份命名空间](profile/identities-overview.md)
-   * [合并策略](profile/merge-policies.md)
-   * [配置文件查看器](profile/profile-viewer.md)
+   * [配置文件浏览](profile/profile-browse.md)
 * 区段 {#segmentation}
    * [分段概述](segmentation/segmentation-overview.md)
    * [区段生成器指南](segmentation/segment-builder-guide.md)
