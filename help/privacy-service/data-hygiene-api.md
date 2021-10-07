@@ -3,9 +3,9 @@ title: 数据卫生API(Alpha)
 description: 了解如何以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 hide: true
 hidefromtoc: true
-source-git-commit: dfe9c1ef826bc769a82938223029cd41c066c221
+source-git-commit: dd8978566730975f0bde36f3af490cd33362b3ba
 workflow-type: tm+mt
-source-wordcount: '522'
+source-wordcount: '525'
 ht-degree: 1%
 
 ---
@@ -106,6 +106,8 @@ curl -X POST \
 | --- | --- |
 | `companyContexts` | 包含贵组织的身份验证信息的数组。 它必须包含具有以下属性的单个对象： <ul><li>`namespace`:必须设置为 `imsOrgID`。</li><li>`value`:您的IMS组织ID。该值与`x-gw-ims-org-id`标头中提供的值相同。</li></ul> |
 | `users` | 一个数组，其中包含至少一个用户的集合，您要删除其信息。 每个用户对象包含以下信息： <ul><li>`key`:用户的标识符，用于限定响应数据中单独的作业ID。最好为此值选择一个唯一且易于识别的字符串，以便以后可以引用或查找该字符串。</li><li>`action`:一个数组，其中列出了对用户数据执行的所需操作。必须包含单个字符串值：`delete`。</li><li>`userIDs`:用户的标识集合。单个用户可以拥有的身份数量最多为9个。 每个标识都包含以下属性： <ul><li>`namespace`:与 [ID](../identity-service/namespaces.md) 关联的身份名称包。这可以是平台可识别的[标准命名空间](./api/appendix.md#standard-namespaces)，也可以是您的组织定义的自定义命名空间。 使用的命名空间类型必须反映在`type`属性中。</li><li>`value`:标识值。</li><li>`type`:如果使用全局识 `standard` 别的命名空间，或者您使 `custom` 用的是由您的组织定义的命名空间，则必须将设置为。</li></ul></li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
 
 **响应**
 
