@@ -5,9 +5,9 @@ title: SQL Server源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Microsoft SQL Server连接到Adobe Experience Platform。
 exl-id: 8a77f108-7e82-4e14-a470-a4ea97def89d
-source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
+source-git-commit: 446436346e3368d98eb990dba1000ac0974b84dc
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '254'
 ht-degree: 0%
 
 ---
@@ -21,10 +21,6 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 ## IP地址允许列表
 
 在使用源连接器之前，必须将IP地址列表添加到允许列表。 无法将特定于区域的IP地址添加到允许列表，在使用源时可能会导致错误或性能不佳。 有关更多信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页面。
-
->[!IMPORTANT]
->
->[!DNL Microsoft] SQL Server源连接器当前不支持与平台的同区域连接。 这意味着如果您的Azure实例使用与Platform相同的网络区域，则无法建立与Platform源的连接。 目前，仅支持跨区域连接。 有关更多信息，请联系您的Adobe客户经理。
 
 以下文档提供了有关如何使用API或用户界面将[!DNL Microsoft] SQL Server连接到[!DNL Platform]的信息：
 
