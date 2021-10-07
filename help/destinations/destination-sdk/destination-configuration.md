@@ -2,9 +2,9 @@
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 目标SDK的目标配置选项
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 32b61276f3fe81ffa82fec1debf335ea51020ccd
+source-git-commit: 76a596166edcdbf141b5ce5dc01557d2a0b4caf3
 workflow-type: tm+mt
-source-wordcount: '1552'
+source-wordcount: '1727'
 ht-degree: 5%
 
 ---
@@ -15,11 +15,13 @@ ht-degree: 5%
 
 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 
+此配置还会将目标工作所需的其他配置（目标服务器和受众元数据）连接到此配置。 阅读如何在](./destination-configuration.md#connecting-all-configurations)下方的[部分中引用这两个配置。
+
 您可以使用`/authoring/destinations` API端点配置本文档中描述的功能。 请阅读[目标API端点操作](./destination-configuration-api.md) ，以获取可对端点执行的操作的完整列表。
 
 ## 示例配置 {#example-configuration}
 
-以下是虚构目标Moviestar的示例配置，该目标在全球四个位置具有端点。 目标属于移动设备目标类别。 以下各节将进一步划分此配置的构建方式。
+以下是虚构目标Moviestar的示例配置，该目标在全球四个位置的端点。 目标属于移动设备目标类别。 以下各节将进一步划分此配置的构建方式。
 
 ```json
 {
@@ -118,14 +120,15 @@ ht-degree: 5%
             ]
          }
       }
-   }
+   },
+   "backfillHistoricalProfileData":true
 }
 ```
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `name` | 字符串 | 指示Experience Platform目录中目标的标题。 |
-| `description` | 字符串 | 提供Adobe将在目标卡的Experience Platform目标目录中使用的描述。 目标不超过4-5句。 |
+| `description` | 字符串 | 在Experience Platform目标目录中，提供目标卡的描述。 目标不超过4-5句。 |
 | `status` | 字符串 | 指示目标卡的生命周期状态。 接受的值包括 `TEST`、`PUBLISHED` 和 `DELETED`。首次配置目标时，请使用`TEST`。 |
 
 {style=&quot;table-layout:auto&quot;}
@@ -193,7 +196,7 @@ ht-degree: 5%
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `profileFields` | 数组 | *上述示例配置中未显示。* 添加预定义 `profileFields`属性时，用户将可以选择将Experience Platform属性映射到目标侧的预定义属性。 |
+| `profileFields` | 数组 | *上述示例配置中未显示。* 添加预定义 `profileFields`属性时，Experience Platform用户可以选择将平台属性映射到目标侧的预定义属性。 |
 | `profileRequired` | 布尔型 | 如果用户应该能够将配置文件属性从Experience Platform映射到目标侧的自定义属性，请使用`true` ，如上面的示例配置中所示。 |
 | `segmentRequired` | 布尔型 | 始终使用`segmentRequired:true`。 |
 | `identityRequired` | 布尔型 | 如果用户应能够将身份命名空间从Experience Platform映射到所需的架构，请使用`true`。 |
@@ -204,7 +207,7 @@ ht-degree: 5%
 
 此部分中的参数可确定如何在Experience Platform用户界面的映射步骤中填充目标标识和属性，用户可在该步骤中将其XDM架构映射到您目标中的架构。
 
-Adobe需要知道哪些[!DNL Platform]标识客户能够导出到您的目标。 一些示例包括[!DNL Experience Cloud ID]、经过哈希处理的电子邮件、设备ID([!DNL IDFA]、[!DNL GAID])。 这些值是[!DNL Platform]身份命名空间，客户可以将其映射到来自您目标的身份命名空间。
+您必须指示哪些[!DNL Platform]标识客户能够导出到您的目标。 一些示例包括[!DNL Experience Cloud ID]、经过哈希处理的电子邮件、设备ID([!DNL IDFA]、[!DNL GAID])。 这些值是[!DNL Platform]身份命名空间，客户可以将其映射到来自您目标的身份命名空间。
 
 身份命名空间不要求[!DNL Platform]与目标之间进行一对一的通信。
 例如，客户可以将[!DNL Platform] [!DNL IDFA]命名空间映射到您目标中的[!DNL IDFA]命名空间，或者，他们可以将相同的[!DNL Platform] [!DNL IDFA]命名空间映射到您目标中的[!DNL Customer ID]命名空间。
@@ -215,9 +218,9 @@ Adobe需要知道哪些[!DNL Platform]标识客户能够导出到您的目标。
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `acceptsAttributes` | 布尔型 | 指示您的目标是否接受标准配置文件属性。 通常，这些属性会在我们的合作伙伴文档中突出显示。 |
+| `acceptsAttributes` | 布尔型 | 指示您的目标是否接受标准配置文件属性。 通常，合作伙伴文档中会突出显示这些属性。 |
 | `acceptsCustomNamespaces` | 布尔型 | 指示客户是否可以在您的目标中设置自定义命名空间。 |
-| `allowedAttributesTransformation` | 字符串 | *示例配置中未显示*。例如，当[!DNL Platform]客户将纯电子邮件地址作为属性，且您的平台仅接受经过哈希处理的电子邮件时，便会使用。 在这里，您将提供需要应用的转换（例如，将电子邮件转换为小写，然后再转换为哈希）。 |
+| `allowedAttributesTransformation` | 字符串 | *示例配置中未显示*。例如，当[!DNL Platform]客户将纯电子邮件地址作为属性，且您的平台仅接受经过哈希处理的电子邮件时，便会使用。 在此对象中，您可以应用需要的转换（例如，将电子邮件转换为小写，然后进行哈希转换）。 有关示例，请参阅[目标配置API引用](./destination-configuration-api.md#update)中的`requiredTransformation`。 |
 | `acceptedGlobalNamespaces` | - | 用于平台接受[标准身份命名空间](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces)（例如IDFA）时的情况，因此您可以限制Platform用户仅选择这些身份命名空间。 |
 
 {style=&quot;table-layout:auto&quot;}
@@ -242,13 +245,21 @@ Adobe需要知道哪些[!DNL Platform]标识客户能够导出到您的目标。
 
 上述配置中显示的参数在[目标端点API引用](./destination-configuration-api.md)中进行了描述。
 
+## 此配置如何连接目标的所有必需信息 {#connecting-all-configurations}
+
+可以通过目标服务器或受众元数据端点配置目标的某些设置。 目标配置端点通过引用以下配置来连接所有这些设置：
+
+* 使用`destinationServerId`引用为目标设置的目标服务器和模板配置。
+* 使用`audienceMetadataId`引用为目标设置的受众元数据配置。
+
+
 ## 聚合策略 {#aggregation}
 
 ![配置模板中的聚合策略](./assets/aggregation-configuration.png)
 
-利用此部分，可设置Experience Platform在将数据导出到目标时将使用的聚合策略。
+利用此部分，可设置Experience Platform在将数据导出到目标时应使用的聚合策略。
 
-聚合策略可确定导出的用户档案如何在数据导出中合并在一起。 可用选项包括：
+聚合策略确定导出的用户档案在数据导出中的合并方式。 可用选项包括：
 * 尽力汇总
 * 可配置聚合（如上面的配置中所示）
 
@@ -260,7 +271,7 @@ Adobe需要知道哪些[!DNL Platform]标识客户能够导出到您的目标。
 >
 >如果您的API端点每个API调用接受的配置文件少于100个，则使用此选项。
 
-此选项最适用于那些希望每个请求获得较少用户档案的目标，它们更愿意接收具有较少数据的请求，而不是具有较多数据的请求。
+此选项最适用于那些希望每个请求少使用用户档案的目标，它们更愿意接收数据较少的请求，而不是数据较多的请求。
 
 使用`maxUsersPerRequest`参数指定目标在请求中可接收的配置文件的最大数量。
 
@@ -277,10 +288,10 @@ Adobe需要知道哪些[!DNL Platform]标识客户能够导出到您的目标。
 
 有关聚合参数的详细说明，请参阅[目标API端点操作](./destination-configuration-api.md)参考页，其中描述了每个参数。
 
-<!--
+## 历史用户档案资格
 
-commenting out the `backfillHistoricalProfileData` parameter, which will only be used after an April release
+您可以使用目标配置中的`backfillHistoricalProfileData`参数来确定是否应将历史配置文件资格导出到您的目标。
 
-|`backfillHistoricalProfileData` | Boolean | Controls whether historical profile data is exported when segments are activated to the destination. <br> <ul><li> `true`: [!DNL Platform] sends the historical user profiles that qualified for the segment before the segment is activated. </li><li> `false`: [!DNL Platform] only includes user profiles that qualify for the segment after the segment is activated. </li></ul> |
-
--->
+| 参数 | 类型 | 描述 |
+|---------|----------|------|
+| `backfillHistoricalProfileData` | 布尔型 | 控制在将区段激活到目标时是否导出历史配置文件数据。<br> <ul><li> `true`: [!DNL Platform] 发送在激活区段之前符合区段资格条件的历史用户配置文件。 </li><li> `false`: [!DNL Platform] 仅包括激活区段后符合区段资格的用户配置文件。 </li></ul> |

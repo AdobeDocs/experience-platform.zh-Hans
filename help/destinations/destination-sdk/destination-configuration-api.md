@@ -2,9 +2,9 @@
 description: 本页列出并介绍了您可以使用“/authoring/destinations” API端点执行的所有API操作。
 title: 目标API端点操作
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: c334a11ff6a03b38883a5319bc41cbe3f93c0289
+source-git-commit: 76a596166edcdbf141b5ce5dc01557d2a0b4caf3
 workflow-type: tm+mt
-source-wordcount: '2407'
+source-wordcount: '2405'
 ht-degree: 4%
 
 ---
@@ -168,7 +168,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `schemaConfig.profileRequired` | 布尔型 | 如果用户应该能够将配置文件属性从Experience Platform映射到目标侧的自定义属性，请使用`true` ，如上面的示例配置中所示。 |
 | `schemaConfig.segmentRequired` | 布尔型 | 始终使用`segmentRequired:true`。 |
 | `schemaConfig.identityRequired` | 布尔型 | 如果用户应能够将身份命名空间从Experience Platform映射到所需的架构，请使用`true`。 |
-| `aggregation.aggregationType` | - | 选择 `BEST_EFFORT` 或 `CONFIGURABLE_AGGREGATION`。上述示例配置包括`BEST_EFFORT`聚合。 有关`CONFIGURABLE_AGGREGATION`的示例，请参阅[目标配置](./destination-configuration.md#example-configuration)文档中的示例配置。 请注意，与可配置聚合相关的参数在下表中进行了说明。 |
+| `aggregation.aggregationType` | - | 选择 `BEST_EFFORT` 或 `CONFIGURABLE_AGGREGATION`。上述示例配置包括`BEST_EFFORT`聚合。 有关`CONFIGURABLE_AGGREGATION`的示例，请参阅[目标配置](./destination-configuration.md#example-configuration)文档中的示例配置。 与可配置聚合相关的参数在下表中进行了说明。 |
 | `aggregation.bestEffortAggregation.maxUsersPerRequest` | 整数 | Experience Platform可以在一个HTTP调用中聚合多个导出的配置文件。 指定您的端点在单个HTTP调用中应接收的最大配置文件数。 请注意，这是一种尽力的聚合。 例如，如果您指定值100,Platform可能会在一次调用中发送任意数量小于100的用户档案。 <br> 如果您的服务器不接受每个请求的多个用户，请将此值设置为1。 |
 | `aggregation.bestEffortAggregation.splitUserById` | 布尔型 | 如果目标的调用应按身份进行拆分，则使用此标记。 如果服务器在给定的命名空间中每次调用仅接受一个标识，则将此标记设置为`true`。 |
 | `aggregation.configurableAggregation.splitUserById` | 布尔型 | 请参阅示例配置[中的参数](./destination-configuration.md#example-configuration)。 如果目标的调用应按身份进行拆分，则使用此标记。 如果服务器在给定的命名空间中每次调用仅接受一个标识，则将此标记设置为`true`。 |

@@ -4,9 +4,9 @@ seo-description: This page describes how to use the reference information in Con
 seo-title: How to use Destination SDK to configure your destination
 title: 如何使用Destination SDK配置目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 32b61276f3fe81ffa82fec1debf335ea51020ccd
+source-git-commit: 15626393bd69173195dd924c8817073b75df5a1e
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '655'
 ht-degree: 0%
 
 ---
@@ -57,6 +57,8 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 ## 步骤2:创建目标配置 {#create-destination-configuration}
 
 下面显示了使用`/destinations` API端点创建的目标模板配置示例。 有关此模板的更多信息，请参阅[目标配置](./destination-configuration.md)。
+
+要将步骤1中的服务器和模板配置连接到此目标配置，请将服务器和模板配置的实例ID添加为`destinationServerId`此处。
 
 ```json
 POST platform.adobe.io/data/core/activation/authoring/destinations
@@ -109,6 +111,12 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
          "acceptsCustomNamespaces":true
       }
    },
+   "segmentMappingConfig":{
+      "mapExperiencePlatformSegmentName":false,
+      "mapExperiencePlatformSegmentId":false,
+      "mapUserInput":false,
+      "audienceTemplateId":"cbf90a70-96b4-437b-86be-522fbdaabe9c"
+   },   
    "aggregation":{
       "aggregationType":"CONFIGURABLE_AGGREGATION",
       "configurableAggregation":{
@@ -138,20 +146,24 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 您必须根据目标支持的负载创建一个模板，以将导出数据的格式从AdobeXDM格式转换为目标支持的格式。 请参阅[使用模板语言进行身份、属性和区段成员转换](./message-format.md#using-templating)部分中的模板示例，并使用Adobe提供的[模板创作工具](./create-template.md)。
 
+构建适合您的消息转换模板后，将其添加到在步骤1中创建的服务器和模板配置中。
+
 ## 步骤4:创建受众元数据配置 {#create-audience-metadata-configuration}
 
-对于某些目标，目标SDK要求您配置受众元数据模板，以编程方式创建、更新或删除目标中的受众。 有关何时需要设置此配置以及如何设置此配置的信息，请参阅[受众元数据管理](./audience-metadata-management.md)。
+对于某些目标，目标SDK要求您配置受众元数据配置，以编程方式创建、更新或删除目标中的受众。 有关何时需要设置此配置以及如何设置此配置的信息，请参阅[受众元数据管理](./audience-metadata-management.md)。
+
+如果您使用受众元数据配置，则必须将其连接到在步骤2中创建的目标配置。 将受众元数据配置的实例ID添加到目标配置中，作为`audienceTemplateId`。
 
 ## 步骤5:创建凭据配置/设置身份验证 {#set-up-authentication}
 
 根据您在上述目标配置中指定的是`"authenticationRule": "CUSTOMER_AUTHENTICATION"`还是`"authenticationRule": "PLATFORM_AUTHENTICATION"`，可以使用`/destination`或`/credentials`端点设置目标的身份验证。
 
-* **最常见的情况**:如果您已选 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 择并且目标支持OAuth 2身份验证方法，请读取 [OAuth 2身份验证](./oauth2-authentication.md)。
+* **最常见的情况**:如果您在目 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 标配置中选择，并且目标支持OAuth 2身份验证方法，请读 [取OAuth 2身份验证](./oauth2-authentication.md)。
 * 如果您选择了`"authenticationRule": "PLATFORM_AUTHENTICATION"`，请参阅参考文档中的[凭据配置](./credentials-configuration.md) 。
 
 ## 步骤6:测试目标 {#test-destination}
 
-使用上面步骤中的模板设置目标后，可以使用[目标测试工具](./create-template.md)测试Adobe Experience Platform与目标之间的集成。
+使用上述步骤中的配置端点设置目标后，可以使用[目标测试工具](./create-template.md)测试Adobe Experience Platform与目标之间的集成。
 
 在测试目标的过程中，您必须使用Experience PlatformUI创建区段，然后才能将区段激活到目标。 有关如何在Experience Platform中创建区段的说明，请参阅以下两个资源：
 
