@@ -4,10 +4,10 @@ seo-description: Use the content on this page together with the rest of the conf
 seo-title: Message format
 title: 消息格式
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: a1e77520ba5555db42578eac261e01e77130aea2
+source-git-commit: c328293cf710ad8a2ddd2e52cb01c86d29c0b569
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1995'
+ht-degree: 1%
 
 ---
 
@@ -19,7 +19,6 @@ ht-degree: 0%
 
 * **体验数据模型(XDM)**。[XDM概](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans) 述和  [如何在Adobe Experience Platform中创建XDM架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en)。
 * **类**。[在UI中创建和编辑类](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/classes.html?lang=en)。
-* **字段组**。[字段组定](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#field-group) 义以及 [有关字段组的更多信息](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en#field-group)。
 * **IdentityMap**。标识映射表示Adobe Experience Platform中所有最终用户标识的映射。 请参阅[XDM字段词典](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en)中的`xdm:identityMap`。
 * **区段成员资格**。[segmentMembership](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/field-dictionary.html?lang=en) XDM属性会通知配置文件是其成员的区段。 有关`status`字段中的三个不同值，请阅读[区段成员资格详细信息架构字段组](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html)中的文档。
 
@@ -31,22 +30,26 @@ Adobe Experience Platform以各种数据格式将数据导出到大量目标。 
 
 Experience Platform可以调整导出的消息格式，使其与一侧的预期格式匹配。 要了解此自定义设置，以下概念非常重要：
 * Adobe Experience Platform中的源(1)和目标(2)XDM模式
-* 合作伙伴端(3)上的消息格式，以及
-* 两个之间的转换层，可通过创建[消息转换模板](./message-format.md#using-templating)来定义。
+* 合作伙伴端(3)上的预期消息格式，以及
+* XDM架构与预期消息格式之间的转换层，您可以通过创建[消息转换模板](./message-format.md#using-templating)来定义该层。
 
 ![架构到JSON转换](./assets/transformations-3-steps.png)
 
-Experience Platform 会使用架构，以便以可重用的一致方式描述数据结构。
+Experience Platform使用XDM模式以可重用的一致方式描述数据结构。
 
-要将数据激活到目标的用户需要将其Experience Platform中数据集所使用的字段映射到将转换为目标预期格式的架构。 Adobe将为您的公司创建一个自定义字段组，以将其添加到目标架构。 字段组中的字段取决于您能够收到的配置文件属性字段。
+<!--
 
-**源XDM架构(1)**:这是指客户在Experience Platform中使用的架构。在Experience Platform中，在激活目标工作流的[映射步骤](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en#mapping)中，客户会将其源架构中的字段映射到目标架构(2)。
+Users who want to activate data to your destination need to map the fields in their Experience Platform datasets to a schema that translates to your destination's expected format. Adobe will create a custom field group for your company to add to the target schema. The fields in the field group depend on the profile attribute fields that you can receive.
 
-**目标XDM架构(2)**:根据您与Adobe共享的JSON标准架构(3),Adobe的团队将为您的目标创建自定义架构。请注意，在项目](./overview.md#phased-approach)的未来阶段，您将能够自行为目标创建自定义架构。[
+-->
 
-**目标配置文件属性的JSON标准架构(3)**:请与我们共享一个 [JSON](https://json-schema.org/learn/miscellaneous-examples.html) 架构，其中包含您的平台支持的所有配置文件属性及其类型(例如：对象、字符串、数组)。目标可支持的示例字段可能为`firstName`、`lastName`、`gender`、`email`、`phone`、`productId`、`productName`等。
+**源XDM架构(1)**:此项目是指客户在Experience Platform中使用的架构。在Experience Platform中，在激活目标工作流的[映射步骤](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en#mapping)中，客户会将其源架构中的字段映射到目标架构(2)。
 
-根据上述架构转换，以下是源XDM架构与合作伙伴端示例架构之间消息结构的更改方式：
+**目标XDM架构(2)**:根据目标预期格式的JSON标准架构(3)，您可以在目标XDM架构中定义配置文件属性和标识。您可以在目标配置的[schemaConfig](./destination-configuration.md#schema-configuration)和[identityNamespaces](./destination-configuration.md#identities-and-attributes)对象中执行此操作。
+
+**目标配置文件属性的JSON标准架构(3)**:此项目表示平台支 [持](https://json-schema.org/learn/miscellaneous-examples.html) 的所有配置文件属性及其类型的JSON架构(例如：对象、字符串、数组)。目标可支持的示例字段可能为`firstName`、`lastName`、`gender`、`email`、`phone`、`productId`、`productName`等。 您需要[消息转换模板](./message-format.md#using-templating)来将导出的Experience Platform外的数据调整为预期格式。
+
+根据上述架构转换，以下是源XDM架构与合作伙伴端示例架构之间消息的结构如何更改：
 
 ![转换消息示例](./assets/transformations-with-examples.png)
 
@@ -59,7 +62,7 @@ Experience Platform 会使用架构，以便以可重用的一致方式描述数
 
 >[!NOTE]
 >
->客户将源XDM架构的属性映射到Adobe Experience Platform UI中合作伙伴XDM架构的&#x200B;**激活目标工作流](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate-destinations.html#mapping)的[映射**&#x200B;步骤中的。
+>客户将源XDM架构的属性映射到Adobe Experience Platform UI中合作伙伴XDM架构的&#x200B;**激活目标工作流](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping)的[映射**&#x200B;步骤中的。
 
 假设您的平台可以接收如下消息格式：
 
@@ -94,7 +97,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 
 1. 简单的转换示例。 了解模板如何与[配置文件属性](./message-format.md#attributes)、[区段成员资格](./message-format.md#segment-membership)和[Identity](./message-format.md#identities)字段的简单转换一起使用。
 2. 组合上述字段的模板的复杂性增加了示例：[创建用于发送区段和标识的模板](./message-format.md#segments-and-identities)和[创建用于发送区段、标识和配置文件属性的模板](./message-format.md#segments-identities-attributes)。
-3. 模板包括聚合键。 在目标配置中使用[可配置聚合](./destination-configuration.md#configurable-aggregation)时，Experience Platform会根据区段ID、区段状态或身份命名空间等条件对导出到目标的配置文件进行分组。
+3. 包含聚合键的模板。 在目标配置中使用[可配置聚合](./destination-configuration.md#configurable-aggregation)时，Experience Platform会根据区段ID、区段状态或身份命名空间等条件对导出到目标的配置文件进行分组。
 
 ### 配置文件属性 {#attributes}
 
@@ -139,7 +142,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)中的第9章。
+>对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 ```python
 {
@@ -237,7 +240,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)中的第9章。
+>对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 ```python
 {
@@ -341,7 +344,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)中的第9章。
+>对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 ```python
 {
@@ -479,7 +482,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)中的第9章。
+>对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 ```python
 {
@@ -661,7 +664,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)中的第9章。
+>对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 ```python
 {
@@ -779,7 +782,7 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 
 在目标配置中使用[可配置聚合](./destination-configuration.md#configurable-aggregation)时，可以根据区段ID、区段别名、区段成员资格或身份命名空间等条件对导出到目标的配置文件进行分组。
 
-在消息转换模板中，您可以访问上述聚合键，如以下各节的示例中所示。 这有助于您将导出的HTTP消息格式化为非Experience Platform格式，以匹配目标所需的格式。
+在消息转换模板中，您可以访问上述聚合键，如以下各节的示例中所示。 使用聚合键来构造导出为非Experience Platform的HTTP消息，以匹配目标所预期的格式和速率限制。
 
 #### 在模板中使用区段ID聚合键 {#aggregation-key-segment-id}
 
@@ -880,9 +883,9 @@ Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模�
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)中的第9章。
+>对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
-请注意模板中如何使用`audienceId`访问区段ID。 这假定您在目标分类中使用`audienceId`作为区段成员。 您可以改用任何其他字段名称，具体取决于您自己的分类。
+请注意模板中如何使用`audienceId`访问区段ID。 此示例假定您在目标分类中使用`audienceId`作为区段成员。 您可以改用任何其他字段名称，具体取决于您自己的分类。
 
 ```python
 {
@@ -944,7 +947,7 @@ customerList={{input.aggregationKey.segmentAlias}}
 
 #### 在模板中使用区段状态聚合键 {#aggregation-key-segment-status}
 
-如果您使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`和`includeSegmentStatus`设置为true，则可以访问模板中的区段状态，以在导出到目标的HTTP消息中根据应添加配置文件还是从区段中删除配置文件来对配置文件进行分组。
+如果使用[可配置聚合](./destination-configuration.md#configurable-aggregation)并将`includeSegmentId`和`includeSegmentStatus`设置为true，则可以访问模板中的区段状态。 这样，您就可以在导出到目标的HTTP消息中，根据应添加还是从区段删除配置文件来对配置文件进行分组。
 
 可能的值包括：
 
@@ -960,7 +963,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 #### 在模板中使用身份命名空间聚合键 {#aggregation-key-identity}
 
-以下示例将目标配置中的[可配置聚合](./destination-configuration.md#configurable-aggregation)设置为按身份命名空间（格式为`"namespaces": ["email", "phone"]`和`"namespaces": ["GAID", "IDFA"]`）聚合导出的配置文件。 请参阅[目标配置API引用](./destination-configuration-api.md)中的`groups`参数，以了解如何执行此操作。
+以下示例将目标配置中的[可配置聚合](./destination-configuration.md#configurable-aggregation)设置为按身份命名空间（格式为`"namespaces": ["email", "phone"]`和`"namespaces": ["GAID", "IDFA"]`）聚合导出的配置文件。 有关此分组的详细信息，请参阅[目标配置API引用](./destination-configuration-api.md)中的`groups`参数。
 
 **输入**
 
@@ -1032,7 +1035,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 >[!IMPORTANT]
 >
->对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)中的第9章。
+>对于您使用的所有模板，在[目标服务器配置](./server-and-template-configuration.md#template-specs)中插入模板之前，必须对非法字符进行转义，如双引号`""`。 有关转义双引号的更多信息，请参阅[JSON standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-404/)中的第9章。
 
 请注意，以下模板中使用了`input.aggregationKey.identityNamespaces`
 
@@ -1056,7 +1059,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 **结果**
 
-将用户档案导出到目标后，将根据其身份命名空间（一组中的电子邮件和电话，另一组中的GAID和IDFA），将用户档案拆分为两组。
+导出到目标后，配置文件会根据其身份命名空间分为两个组。 电子邮件和电话位于一个组中，而GAID和IDFA位于另一个组中。
 
 ```json
 {
@@ -1108,7 +1111,7 @@ action={% if input.aggregationKey.segmentStatus == "exited" %}REMOVE{% else %}AD
 
 #### 在URL模板中使用聚合键 {#aggregation-key-url-template}
 
-请注意，根据您的用例，您还可以在URL中使用此处描述的聚合键，如下所示：
+根据您的用例，您还可以在URL中使用此处描述的聚合键，如下所示：
 
 ```python
 https://api.example.com/audience/{{input.aggregationKey.segmentId}}
