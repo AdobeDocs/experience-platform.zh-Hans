@@ -2,9 +2,10 @@
 keywords: 自定义个性化；目的地；experience platform自定义目标；
 title: 自定义个性化连接（测试版）
 description: 此目标可提供外部个性化、内容管理系统、广告服务器以及网站上运行的其他应用程序，以便从Adobe Experience Platform中检索区段信息。 此目标根据用户配置文件的区段成员资格提供实时1:1和个性化。
-source-git-commit: 0635828cf3f637e67d2cabda860ca452e61892d4
+exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
+source-git-commit: 398d591d66f4b579f75ef2b5eb0c10da9d7a83f3
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '586'
 ht-degree: 0%
 
 ---
@@ -61,6 +62,28 @@ ht-degree: 0%
 ## 导出的数据 {#exported-data}
 
 如果您使用[Adobe标记](../../../tags/home.md)来部署Experience PlatformWeb SDK，请使用[发送事件结束](../../../edge/extension/event-types.md)功能，并且您的自定义代码操作将具有一个`event.destinations`变量，您可以使用该变量查看导出的数据。
+
+以下是`event.destinations`变量的示例值：
+
+```
+[
+   {
+      "type":"profileLookup",
+      "destinationId":"7bb4cb8d-8c2e-4450-871d-b7824f547111",
+      "alias":"personalizationAlias",
+      "segments":[
+         {
+            "id":"399eb3e7-3d50-47d3-ad30-a5ad99e8ab77",
+            "mergePolicyId":"69638c01-2099-4032-8b41-84bee8ebcfa4"
+         },
+         {
+            "id":"499eb3e7-3d50-47d3-ad30-a5ad99e8ab77",
+            "mergePolicyId":"69638c01-2099-4032-8b41-84bee8ebcfa4"
+         }
+      ]
+   }
+]
+```
 
 如果您没有使用[Adobe标记](../../../tags/home.md)来部署Experience PlatformWeb SDK，请使用[处理事件](../../../edge/fundamentals/tracking-events.md#handling-responses-from-events)响应功能来查看导出的数据。
 
