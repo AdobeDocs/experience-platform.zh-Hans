@@ -3,9 +3,10 @@ title: 数据卫生API(Alpha)
 description: 了解如何以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 hide: true
 hidefromtoc: true
-source-git-commit: dd8978566730975f0bde36f3af490cd33362b3ba
+exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
+source-git-commit: f956a8191614cc8e0eeaadaa55277abfbc5be106
 workflow-type: tm+mt
-source-wordcount: '525'
+source-wordcount: '535'
 ht-degree: 1%
 
 ---
@@ -17,6 +18,8 @@ ht-degree: 1%
 >数据卫生API当前位于alpha中，且您的组织可能尚未访问该API。 本文档中描述的功能可能会发生更改。
 
 数据卫生API允许您以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。 与Privacy ServiceAPI不同，这些操作不需要与法律隐私法规关联，并且只能用于保持数据干净准确。
+
+您可以通过以下根路径访问API:`https://platform.adobe.io/data/core/hygiene/`
 
 ## 快速入门
 
