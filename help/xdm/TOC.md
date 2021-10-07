@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用体验数据模型(XDM)类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: 05d5a599b3ed101fab7ab96e4f218592f7e923ef
+source-git-commit: 4a74faad811d9b13f93799686df44f04a8d1b784
 workflow-type: tm+mt
-source-wordcount: '393'
+source-wordcount: '398'
 ht-degree: 13%
 
 ---
@@ -65,6 +65,8 @@ ht-degree: 13%
       * [IAB TCF 2.0同意](./field-groups/event/iab.md)
       * [住宿预订](./field-groups/event/lodging-reservation.md)
       * [保留详细信息](./field-groups/event/reservation-details.md)
+      * [升级详细信息](./field-groups/event/upgrade-details.md)
+      * [追加销售详细信息](./field-groups/event/upsell-details.md)
       * [Web详细信息](./field-groups/event/web-details.md)
    * [字段组名称更新](./field-groups/name-updates.md)
 * 数据类型 {#data-types}
@@ -91,6 +93,7 @@ ht-degree: 13%
    * [地域交互详细信息](./data-types/geo-interaction-details.md)
    * [地理形状](./data-types/geo-shape.md)
    * [身份](./data-types/identity.md)
+   * [展示次数](./data-types/impressions.md)
    * [营销](./data-types/marketing.md)
    * [测量](./data-types/measure.md)
    * [订购](./data-types/order.md)
