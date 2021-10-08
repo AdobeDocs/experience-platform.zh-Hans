@@ -6,7 +6,7 @@ topic-legacy: queries
 type: Tutorial
 description: 本文档详细介绍了在Adobe Experience Platform查询服务中编写查询时要了解的重要详细信息。
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: c720b9e6f81ed4ad8bd3360a9b1a19bfcd21a0ef
+source-git-commit: b8306317bbbed58ab947753058129a75dfe64f19
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 3%
@@ -53,6 +53,7 @@ Adobe Experience Platform [!DNL Query Service]有两种查询执行模型：交�
 SELECT endUserIds._experience.mcid
 FROM {ANALYTICS_TABLE_NAME}
 WHERE endUserIds._experience.mcid IS NOT NULL
+AND TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 1
 ```
 
@@ -66,6 +67,7 @@ LIMIT 1
 SELECT endUserIds['_experience']['mcid']
 FROM {ANALYTICS_TABLE_NAME}
 WHERE endUserIds._experience.mcid IS NOT NULL
+AND TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 1
 ```
 
@@ -98,6 +100,7 @@ LIMIT 1
 SELECT endUserIds._experience.mcid.id
 FROM {ANALYTICS_TABLE_NAME}
 WHERE endUserIds._experience.mcid IS NOT NULL
+AND TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 1
 ```
 
@@ -124,6 +127,7 @@ SELECT
   timestamp,
   web.webPageDetails.name
 FROM {ANALYTICS_TABLE_NAME}
+WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 10
 ```
 
@@ -135,6 +139,7 @@ SELECT
   endUserIds._experience.mcid.id
 FROM {ANALYTICS_TABLE_NAME}
 WHERE web.webPageDetails.name = 'homepage'
+AND TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 10
 ```
 
@@ -153,6 +158,7 @@ FROM
     'column1' as no_space_column,
     'column2' as "space column"
 )
+WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 ```
 
 >[!NOTE]
@@ -167,6 +173,7 @@ FROM
 SELECT 
   commerce.`order`
 FROM {ANALYTICS_TABLE_NAME}
+WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 10
 ```
 
@@ -176,6 +183,7 @@ LIMIT 10
 SELECT
     commerce.`30_day_value`
 FROM {ANALYTICS_TABLE_NAME}
+WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 10
 ```
 
@@ -185,6 +193,7 @@ LIMIT 10
  SELECT
   commerce['order']
  FROM {ANALYTICS_TABLE_NAME}
+ WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
  LIMIT 10
 ```
 
@@ -221,7 +230,7 @@ LIMIT 10
 
 要查看表中架构的更多详细信息，可以使用`\d {TABLE_NAME}`命令，其中`{TABLE_NAME}`是要查看其架构信息的表的名称。
 
-以下示例显示了`luma_midvalues`表的架构信息，可通过使用`\d luma_midvalues`查看该信息：
+以下示例显示了`luma_midvalues`表的架构信息，可使用`\d luma_midvalues`查看该信息：
 
 ```sql
                          Table "public.luma_midvalues"
