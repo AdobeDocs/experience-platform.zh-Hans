@@ -1,25 +1,25 @@
 ---
-keywords: RTCDP;CDP；实时客户数据平台；实时客户数据平台；实时CDP;RTCDP
-title: 实时客户数据平台B2B版本的用例示例
-description: 此示例情景提供了一个用于配置实时客户数据平台B2B版实施的示例。
-source-git-commit: 30a4d2b27092f4706bb4f3f986a190502b184034
+keywords: RTCDP;CDP;Real-time Customer Data Platform；实时客户数据平台；实时CDP;RTCDP
+title: Real-time Customer Data Platform B2B Edition的示例用例
+description: 此示例情景提供了配置Real-time Customer Data Platform B2B Edition实施的示例。
+exl-id: 15505980-ac33-44b2-8989-c08cbabd212b
+source-git-commit: 4ebc3ef813c3c44aa2b8a7aab5ccabbcc3c332b2
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1144'
 ht-degree: 1%
 
 ---
 
-# 实时客户数据平台B2B版本的用例示例
+# Real-time Customer Data Platform B2B Edition的示例用例
 
 >[!IMPORTANT]
 >
 >Real-time CDP Business to Business Edition目前处于测试阶段。 文档和功能可能会发生变化。
 
-Real-time Customer Data Platform B2B Edition扩展了现有的Real-time CDP和Adobe Experience Platform产品，以支持B2B数据和工作流。 本文档提供了一个示例用例，用于演示B2B Edition提供的其他优势。 其中包括：
+Real-time Customer Data Platform B2B Edition扩展了现有的实时CDP和Adobe Experience Platform产品，以支持B2B数据和工作流。 本文档提供了一个示例用例，用于演示B2B Edition提供的其他优势。 其中包括：
 
 - 将来自不同孤立数据源的人员和帐户数据组合在一起，以生成一个全面的视图，从而更好地了解客户并更准确地细分客户。 有关更多信息，请参阅有关[创建XDM架构关系](./schemas/b2b.md)的文档，以便与各种B2B源一起使用。
-- 根据相关实体的属性对受众进行分段。 这包括“帐户”、“机会”、“营销活动”和“营销列表”。 区段不再仅限于人员属性和体验事件。 有关创建特定于B2B的受众的更多示例，请参阅B2B分段文档。
-   <!-- PLACEHOLDER [B2B segmentation documentation]()  -->
+- 根据相关实体的属性对受众进行分段。 这包括“帐户”、“机会”、“营销活动”和“营销列表”。 区段不再仅限于人员属性和体验事件。 有关创建特定于B2B的受众的更多示例，请参阅[B2B分段文档](./segmentation/b2b.md)。
 - 本地支持一个人与多个帐户相关的用例。
 
 ## 用例
@@ -97,12 +97,10 @@ CRM1中的B2B数据（人员、帐户、机会和活动）会同步到Marketo 1�
 
 为了提高您对B2B特定功能的了解，建议使用以下文档：
 
-<!-- - [Marketo connector]() -->
-- [实时客户数据平台B2B版中的模式](./schemas/b2b.md)
-- [Marketo Engage目标文档](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/adobe/marketo-engage.html)
-- [配置LinkedIn匹配的受众目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/social/linkedin.html#connect)
-
-<!-- PLACEHOLDER -->
-<!-- - [Account Profiles]() -->
-<!-- - [B2B Segmentation examples]() -->
-<!-- PLACEHOLDERS to tutorial / account profiles / B2B connectors / segmentation examples -->
+<!-- PLACEHOLDER Link to B2B tutorial required  -->
+- [Real-time Customer Data Platform B2B版中的源](./sources/b2b.md)
+- [Real-time Customer Data Platform B2B版中的模式](./schemas/b2b.md)
+- [B2B分段示例](./segmentation/b2b.md)
+- [帐户配置文件概述](./accounts/account-profile-overview.md)
+- [Real-time Customer Data Platform B2B版中的目标](./destinations/b2b.md)
+- [配置LinkedIn匹配的受众目标](../destinations/catalog/social/linkedin.md)

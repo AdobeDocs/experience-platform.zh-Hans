@@ -1,18 +1,18 @@
 ---
-keywords: RTCDP;CDP;B2B Edition；实时客户数据平台；实时客户数据平台；实时CDP;b2b;CDP；客户AI
+keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform；实时客户数据平台；实时CDP;b2b;CDP；客户AI
 title: Real-time CDP B2B Edition概述
 seo-title: Real-time Customer Data Platform B2B Edition overview
-description: 实时客户数据平台B2B版帐户概述
+description: Real-time Customer Data Platform B2B版帐户概述
 seo-description: Overview of Real-time Customer Data Platform B2B Edition Account
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
-source-git-commit: e54bd747a332e37920e24ce07602470f8ad74231
+source-git-commit: 6b582683483046efaf880e46e33d7f30a44a61bf
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1057'
 ht-degree: 1%
 
 ---
 
-# Real-time Customer Data Platform B2B Edition概述
+# Real-time Customer Data Platform B2B版概述
 
 >[!IMPORTANT]
 >
@@ -69,22 +69,16 @@ Platform允许从外部源摄取数据，同时让您能够使用Platform服务�
 >
 >[!DNL Marketo]源是使用实时CDP B2B Edition所需的&#x200B;**不**。
 
-有关Marketo和将B2B数据引入平台的更多信息，请参阅Real-time CDP B2B Edition文档中的源。
-
-<!-- PLACEHOLDER [sources in Real-time CDP B2B Edition](./sources/b2b) -->
+有关Marketo和将B2B数据引入平台的更多信息，请参阅Real-time CDP B2B Edition](./sources/b2b.md)中的[源文档。
 
 ## B2B目标
 
-所有Experience Platform目标（如[!DNL Google]、[!DNL Linkedin]或[!DNL Facebook]）均可用，并且Real-time CDP B2B Edition完全支持这些目标。 还有一个[!DNL Marketo Engage]目标，用于将数据流从[!DNL Marketo]流出或从平台流出并作为受众提供。
+Experience Platform目标(如Google、Linkedin和Facebook)可用，并且完全受实时CDP B2B Edition支持。 还有一个Marketo Engage目标，用于从平台中流式传输区段成员资格数据，并将其作为列表在Marketo中提供。
 
-[!DNL Marketo]目标提供了一种无缝、快速的方式，可将信息从Experience Platform拉入[!DNL Marketo]。 目标允许营销人员将在Adobe Experience Platform中创建的区段推送到[!DNL Marketo]。 然后，在[!DNL Marketo]中，这些受众可用作静态列表。
-
-对于具有多个CRM的公司，Real-time CDP B2B Edition提供了配置目标连接器以分隔[!DNL Marketo]或CRM实例的选项。 如果需要，您可以将目标连接器配置到每个实例，并单独将受众发送到每个CRM实例。
+对于具有多个CRM的公司，Real-time CDP B2B Edition提供了配置目标连接器以分隔Marketo或CRM实例的选项。 如果需要，您可以将目标连接器配置到每个实例，并单独将受众发送到每个CRM实例。
 
 ## 后续步骤
 
 现在，您可以更好地了解Real-time CDP B2B Edition为营销人员带来的好处，以及它与Real-time CDP之间的差异，接下来就可以了解如何将这些功能应用于您自己的IMS组织。
 
-<!-- PLACEHOLDER [example use case for Real-time CDP B2B Edition]() -->
-
-要了解Real-time CDP B2B Edition如何使您的业务对业务服务模型受益，请参阅Real-time CDP B2B Edition的示例用例。 或者，您也可以参阅实时客户数据平台B2B版本中的[架构](./schemas/b2b.md)文档，以获取有关创建架构和定义基本B2B数据实体关系的更多具体指导。
+要了解Real-time CDP B2B Edition如何使您的业务对业务服务模型受益，请参阅[Real-time CDP B2B Edition](./b2b-use-case.md)的示例用例。 或者，您也可以参阅Real-time Customer Data Platform B2B Edition](./schemas/b2b.md)中的[架构文档，以获取有关创建架构和定义基本B2B数据实体关系的更多具体指导。

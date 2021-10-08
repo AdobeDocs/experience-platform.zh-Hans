@@ -1,14 +1,15 @@
 ---
 title: Real-time CDP B2B Edition的分段用例概述。
 description: 概述各种可用的实时CDP B2B Edition用例。
-source-git-commit: e85d4b108e2d4a6a88772c071d9281603b695ada
+exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
+source-git-commit: cc4bd6f3b70a90b53aaaf6a4c31d23fddd8a3f44
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1122'
+ht-degree: 1%
 
 ---
 
-# 实时客户数据平台B2B版（测试版）分段用例概述
+# Real-time Customer Data Platform B2B Edition（测试版）的分段用例概述
 
 <!-- This document relates to this [ticket](https://jira.corp.adobe.com/browse/PLAT-100468) -->
 
@@ -20,7 +21,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->这些分段用例所需的属性仅适用于实时客户数据平台B2B版客户。 要进一步了解Real-time CDP ，包括每种许可证类型可用的特性和功能，请首先阅读[Real-time CDP overview](../overview.md)。
+>这些分段用例所需的属性仅适用于Real-time Customer Data Platform B2B Edition客户。 要进一步了解Real-time CDP ，包括每种许可证类型可用的特性和功能，请首先阅读[Real-time CDP overview](../overview.md)。
 
 ## 先决条件
 
@@ -37,7 +38,7 @@ ht-degree: 0%
 
 在B2B类的并集架构建立关系并用于摄取数据后，区段生成器的左边栏中便会提供其属性。
 
-B2B类及其属性会在分段工作区中附加一个`B2B`标签，以区分它们与实时客户数据平台中作为标准提供的类别。
+B2B类及其属性会在分段工作区中附加一个`B2B`标签，以区分它们与Real-time Customer Data Platform中标准类别。
 
 为了有效地为B2B用例创建区段，必须深入了解模式并了解数据模型的外观。 此外，了解数据从一个数据对象获取到另一个数据对象的路径也非常有用。
 
@@ -55,7 +56,7 @@ B2B类及其属性会在分段工作区中附加一个`B2B`标签，以区分它
 
 ![使用分段工作区中的区段生成器的源键示例](../assets/segmentation/source-key-segmentation-example.png)
 
-有关可用B2B类的更多信息，请参阅实时客户数据平台B2B版本中的[架构文档](../schemas/b2b.md)。
+有关可用B2B类的更多信息，请参阅Real-time Customer Data Platform B2B Edition中的[模式文档](../schemas/b2b.md)。
 
 下面的用例提供了有关哪些类用于在不同模式之间建立关系以实现这些结果的信息。 这些示例可帮助您创建自己的区段。
 
