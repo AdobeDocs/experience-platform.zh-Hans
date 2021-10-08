@@ -1,10 +1,11 @@
 ---
 title: 事件转发入门
 description: 请按照此分步教程，开始使用Adobe Experience Platform中的事件转发。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: f82bfac9-dc2d-44de-a308-651300f107df
+source-git-commit: 406c7e90c315c1807f5f3dd2b32462868b312197
 workflow-type: tm+mt
 source-wordcount: '907'
-ht-degree: 27%
+ht-degree: 30%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 27%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 要在Adobe Experience Platform中使用事件转发，必须使用以下三个选项中的一个或多个选项将数据发送到Adobe Experience Platform边缘网络：
 
@@ -60,7 +61,7 @@ ht-degree: 27%
 
 1. 选择“Edge”平台类型。
 
-1. 选择 **[!UICONTROL Save]**。
+1. 选择&#x200B;**[!UICONTROL 保存]**。
 
 创建资产后，转到新资产的&#x200B;**[!UICONTROL Environments]**选项卡，然后
 环境ID的注释。 如果数据流中使用的Adobe组织与事件转发中使用的Adobe组织不同，您可以在创建数据流时从**[!UICONTROL Environments]**&#x200B;选项卡复制环境ID并粘贴它。 您也可以从下拉菜单中选择环境。
@@ -76,7 +77,7 @@ ht-degree: 27%
 1. 对配置进行命名并提供描述（可选）。
 该描述有助于在包含多个配置的列表中识别配置。
 
-1. 选择 **[!UICONTROL Save]**。
+1. 选择&#x200B;**[!UICONTROL 保存]**。
 
 
 
@@ -98,7 +99,7 @@ ht-degree: 27%
 
 配置后，记下新资产的环境 ID。
 
-## 配置标记Web SDK扩展，以将数据发送到之前创建的数据流
+## 配置Platform Web SDK扩展，以将数据发送到之前创建的数据流
 
 在数据收集UI中创建您的资产，然后使用Adobe Experience Platform Web SDK扩展对其进行配置。
 
