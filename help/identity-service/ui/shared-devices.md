@@ -6,9 +6,9 @@ topic-legacy: tutorial
 description: “共享设备检测”可识别同一设备的经过身份验证的不同用户，从而允许在身份图中更准确地表示客户数据
 hide: true
 hidefromtoc: true
-source-git-commit: 205d9a8d0d5759e978604bef2b05664b1376d835
+source-git-commit: 9c0d360b39bf69a44ac6298724dbab0f8456dc90
 workflow-type: tm+mt
-source-wordcount: '655'
+source-wordcount: '656'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接身份，使您能够实时提供有影响的个人数字体验，从而帮助您更好地了解客户及其行为。
 
-[!DNL Shared Device Detection] 是指由多个个人使用的设备。共享设备的示例包括平板电脑、库计算机和网亭。 通过[!DNL Shared Device Detection]，可以阻止同一设备的不同用户合并到单个身份中，从而可以更准确地表示。
+[!DNL Shared Device] 是指由多个个人使用的设备。共享设备的示例包括平板电脑、库计算机和网亭。 通过[!DNL Shared Device Detection]功能，可以阻止同一设备的不同用户合并到单个身份中，从而实现更准确的表示。
 
 通过[!DNL Shared Device Detection]，您可以：
 
@@ -31,7 +31,7 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 
 >[!TIP]
 >
->在为数据集启用[!DNL Profile]之前，必须完成[!DNL Shared Device Detection]的配置，因为一旦数据开始流入[!DNL Identity Service]，您将不再修订设置。
+>在为数据集启用[!DNL Profile]之前，必须完成[!DNL Shared Device Detection]的配置，因为在[!DNL Identity Service]中生成图形后，您将不再修订设置。
 
 ## 快速入门
 
