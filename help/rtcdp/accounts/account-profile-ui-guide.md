@@ -2,13 +2,13 @@
 keywords: rtcdp配置文件；配置文件rtcdp;rtcdp身份；rtcdp合并策略；实时客户配置文件
 title: 帐户配置文件UI指南
 description: 通过使用帐户配置文件，Real-time Customer Data Platform B2B Edition使您能够统一来自多个来源的帐户信息。 本指南提供了有关在Adobe Experience Platform用户界面中与帐户配置文件进行交互的详细信息。
-source-git-commit: 5301cf870052f537a34913beb0b814212bdaadaa
+exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
+source-git-commit: 5bd2afcc594d96878ee51af2e9e99d74b764009e
 workflow-type: tm+mt
-source-wordcount: '1153'
+source-wordcount: '1191'
 ht-degree: 0%
 
 ---
-
 
 # 帐户配置文件UI指南
 
@@ -24,17 +24,17 @@ ht-degree: 0%
 
 ## 浏览帐户配置文件
 
-要浏览帐户配置文件，请首先在左侧导航的“帐户”下选择&#x200B;**[!UICONTROL Profiles]**。
+要浏览帐户配置文件，请首先在左侧导航中选择[!UICONTROL Accounts]下的&#x200B;**[!UICONTROL Profiles]**。
 
 ![](images/b2b-account-browse.png)
 
-在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡上，您可以使用连接的企业源中的帐户id或直接输入源详细信息来浏览帐户配置文件。
+在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡上，您可以使用连接的企业源中的帐户ID或直接输入源详细信息来浏览帐户配置文件。
 
 ![](images/b2b-account-browse-by.png)
 
 ### 按[!UICONTROL 连接的企业源]浏览
 
-要按连接的企业源浏览帐户配置文件，必须首先使用&#x200B;**[!UICONTROL Source]**&#x200B;字段旁边的选择器按钮选择连接的源。
+要按连接的企业源浏览帐户配置文件，请从&#x200B;**[!UICONTROL 浏览方式]**&#x200B;下拉菜单中选择&#x200B;**[!UICONTROL 连接的企业源]**，然后使用&#x200B;**[!UICONTROL 源]**&#x200B;字段旁边的选择器按钮选择连接的源。
 
 ![](images/b2b-account-browse.png)
 
@@ -50,7 +50,7 @@ ht-degree: 0%
 
 您可以通过选择连接名称旁边的单选按钮来选择源，然后使用&#x200B;**[!UICONTROL Select]**&#x200B;返回到[!UICONTROL Browse]选项卡。
 
-选择源后，您现在必须输入与源相关的&#x200B;**[!UICONTROL 帐户id]**。 例如，选择Salesforce来源将要求您从Salesforce实例中输入帐户ID，以查看与该ID绑定的帐户配置文件。
+选择源后，您现在必须输入与源相关的&#x200B;**[!UICONTROL 帐户ID]**。 例如，选择Salesforce来源将要求您从Salesforce实例中输入帐户ID，以查看与该ID绑定的帐户配置文件。
 
 >[!NOTE]
 >
@@ -62,11 +62,13 @@ ht-degree: 0%
 
 ### 按[!UICONTROL 其他]浏览
 
-Real-time CDP， B2B Edition支持执行直接查找的功能，它允许您为要查看的帐户输入&#x200B;**[!UICONTROL 源名称]**、**[!UICONTROL 源实例]**&#x200B;和&#x200B;**[!UICONTROL 帐户ID]**。 通过直接输入源名称和实例，您可以提供Experience Platform搜索和显示正确的帐户配置文件数据所需的上下文。
+实时CDP B2B Edition支持执行直接查找的功能，它允许您为要查看的帐户输入&#x200B;**[!UICONTROL 源名称]**、**[!UICONTROL 源实例]**&#x200B;和&#x200B;**[!UICONTROL 帐户ID]**。 通过直接输入源名称和实例，您可以提供Experience Platform搜索和显示正确的帐户配置文件数据所需的上下文。
 
 在无法直接与数据建立源连接的情况下，执行直接查找的功能非常有用。 例如，如果贵组织已制定数据管理策略，阻止直接连接到CRM，则可以将该数据导出到云存储系统，然后将其引入Experience Platform。
 
 另一个示例可能是，您正在从离开系统并进入平台之间对数据执行转换。 您可以使用直接查找功能为数据提供上下文(例如，指定它是Marketo数据，尽管它来自Amazon S3存储段)，以便系统知道要查找的位置以及如何正确渲染数据。
+
+要开始直接查找，请从&#x200B;**[!UICONTROL 浏览方式]**&#x200B;下拉菜单中选择&#x200B;**[!UICONTROL 其他]**，然后为要查看的帐户输入&#x200B;**[!UICONTROL 源名称]**、**[!UICONTROL 源实例]**&#x200B;和&#x200B;**[!UICONTROL 帐户ID]**。
 
 ![](images/b2b-account-browse-adhoc.png)
 
