@@ -3,16 +3,17 @@ title: Adobe Experience Platform Web SDK扩展中的事件类型
 description: 了解如何使用Adobe Experience Platform Launch中Adobe Experience Platform Web SDK扩展提供的事件类型。
 solution: Experience Platform
 feature: Web SDK
-source-git-commit: 4bddd9f23ae885468148d1592af219290d6fafd9
+exl-id: b3162406-c5ce-42ec-ab01-af8ac8c63560
+source-git-commit: 8f714933e23e281772cd8633d27096021de14c56
 workflow-type: tm+mt
-source-wordcount: '1026'
+source-wordcount: '1024'
 ht-degree: 1%
 
 ---
 
 # 事件类型
 
-本页介绍Adobe Experience Platform Web SDK标记扩展提供的Adobe Experience Platform事件类型。 这些规则用于[生成规则](https://experienceleague.adobe.com/docs/launch-learn/tutorials/fundamentals/building-rules-in-launch.html)，不应与XDM](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=zh-Hans)中的[`eventType`字段混淆。
+本页介绍Adobe Experience Platform Web SDK标记扩展提供的Adobe Experience Platform事件类型。 这些规则用于[生成规则](https://experienceleague.adobe.com/docs/platform-learn/data-collection/tags/build-rules.html)，不应与XDM](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=zh-Hans)中的[`eventType`字段混淆。
 
 ## [!UICONTROL 发送事件结束]
 
@@ -169,7 +170,7 @@ var propositions = event.propositions;
 ]
 ```
 
-此时，您可以根据自己的需求渲染建议内容。 在此示例中，与`discount`范围匹配的命题是使用Adobe Target基于表单的体验编辑器构建的HTML命题。 假设您的页面上有一个ID为`daily-special`的元素，并希望将`discount`命题中的内容渲染到`daily-special`元素中。 执行以下操作：
+此时，您可以根据自己的需求渲染建议内容。 在此示例中，与`discount`范围匹配的建议是使用Adobe Target基于表单的体验编辑器构建的HTML建议。 假设您的页面上有一个ID为`daily-special`的元素，并希望将`discount`命题中的内容渲染到`daily-special`元素中。 执行以下操作：
 
 1. 从`event`对象中提取命题。
 1. 回顾每个命题，寻找范围`discount`的命题。
@@ -260,8 +261,3 @@ if (propositions) {
   // them in some other way.
 }
 ```
-
-
-
-
-

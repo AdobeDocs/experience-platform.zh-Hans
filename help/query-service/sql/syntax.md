@@ -5,7 +5,7 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 8dceab8cdba1ac6b4a649f0e01b2bbda5f025bef
+source-git-commit: 6f697bb249c50e58f9e8a5821fa71f2d4c9a7aac
 workflow-type: tm+mt
 source-wordcount: '2154'
 ht-degree: 1%

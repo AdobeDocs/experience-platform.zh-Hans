@@ -3,7 +3,7 @@ keywords: Analytics扩展；Analytics扩展；目标分析
 title: Adobe Analytics 扩展
 description: Adobe Analytics扩展是Adobe Experience Platform中的一个分析目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 95b6e079-09a6-4262-bd01-11f155286aa9
-source-git-commit: c8d6c156b3351324fe1be11144afeae91f7a2a59
+source-git-commit: 8f714933e23e281772cd8633d27096021de14c56
 workflow-type: tm+mt
 source-wordcount: '474'
 ht-degree: 10%
@@ -42,7 +42,7 @@ Adobe Analytics是Adobe Experience Platform中的一项analytics扩展。 有关
 
 利用工作流，可转到数据收集UI以完成安装。
 
-有关扩展配置选项的信息，请参阅标记文档中的[Adobe Analytics扩展页面](https://experienceleague.adobe.com/docs/launch-learn/implementing-in-websites-with-launch/implement-solutions/analytics.html)。
+有关扩展配置选项的信息，请参阅标记文档中的[Adobe Analytics扩展页面](https://experienceleague.adobe.com/docs/platform-learn/implement-in-websites/implement-solutions/analytics.html)。
 
 您还可以直接在[数据收集UI](https://experience.adobe.com/#/data-collection/)中安装扩展。 有关更多信息，请参阅[添加新扩展](../../../tags/ui/managing-resources/extensions/overview.md#add-a-new-extension)的指南。
 
