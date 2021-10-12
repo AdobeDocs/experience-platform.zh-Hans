@@ -1,14 +1,14 @@
 ---
 keywords: Experience Platform；主页；热门主题；Identity Service;Identity Service；共享设备；共享设备
 solution: Experience Platform
-title: 共享设备概述（测试版）
+title: Shared Devices Overview (Beta)
 topic-legacy: tutorial
 description: “共享设备检测”可识别同一设备的经过身份验证的不同用户，从而允许在身份图中更准确地表示客户数据
 hide: true
 hidefromtoc: true
-source-git-commit: 9c0d360b39bf69a44ac6298724dbab0f8456dc90
+source-git-commit: 1cdab6ce71c748ae174700ce50f50b143e46b40f
 workflow-type: tm+mt
-source-wordcount: '656'
+source-wordcount: '660'
 ht-degree: 0%
 
 ---
@@ -17,21 +17,21 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->[!DNL Shared Device Detection]功能处于测试阶段。 其功能和文档可能会发生更改。
+>The [!DNL Shared Device Detection] feature is in beta. Its features and documentation are subject to change.
 
 Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接身份，使您能够实时提供有影响的个人数字体验，从而帮助您更好地了解客户及其行为。
 
-[!DNL Shared Device] 是指由多个个人使用的设备。共享设备的示例包括平板电脑、库计算机和网亭。 通过[!DNL Shared Device Detection]功能，可以阻止同一设备的不同用户合并到单个身份中，从而实现更准确的表示。
+[!DNL Shared Device] refers to devices that are used by more than one individual. 共享设备的示例包括平板电脑、库计算机和网亭。 通过[!DNL Shared Device Detection]功能，可以阻止同一设备的不同用户合并到单个标识中，从而更准确地表示个人。
 
-通过[!DNL Shared Device Detection]，您可以：
+With [!DNL Shared Device Detection] you can:
 
-* 为同一设备的不同用户创建单独的身份图；
+* Create separate identity graphs for different users of the same device;
 * 防止使用同一设备的不同个人混合数据；
-* 更清晰、更准确地查看客户。
+* Generate a cleaner and more accurate view of your customers.
 
 >[!TIP]
 >
->在为数据集启用[!DNL Profile]之前，必须完成[!DNL Shared Device Detection]的配置，因为在[!DNL Identity Service]中生成图形后，您将不再修订设置。
+>必须在启用数据集的“配置文件”之前完成[!DNL Shared Device Detection]的配置，因为在[!DNL Identity Service]中生成图形后，您将无法再修订设置。
 
 ## 快速入门
 
@@ -39,7 +39,7 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 
 * [[!DNL Identity Service]](../home.md):通过跨设备和系统桥接身份，更好地了解各个客户及其行为。
    * [身份图查看器](./identity-graph-viewer.md):可视化身份图形查看器并与之进行交互，以便更好地了解客户身份如何拼合在一起，以及以何种方式拼合在一起。
-   * [身份命名空间](../namespaces.md):请参阅完全限定身份的组件，以及身份命名空间如何让您区分身份的上下文和类型。
+   * [Identity namespaces](../namespaces.md): See the components of a fully qualified identity, and how identity namespaces allows you to distinguish the context and type of an identity.
 
 ### 术语
 
@@ -48,8 +48,8 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 | 术语 | 定义 |
 | --- | --- |
 | 共享设备 | 共享设备是指多个个人使用的任何设备。 共享设备的示例包括平板电脑、库计算机和网亭。 |
-| [!DNL Shared Device Detection] | [!DNL Shared Device Detection] 是指一种配置设置，允许将来自同一设备的不同用户的数据彼此分离。 |
-| [!UICONTROL 共享身份命名空间] | [!UICONTROL 共享身份命名空间]用于表示由多个不同用户共享的单个设备。 |
+| [!DNL Shared Device Detection] | [!DNL Shared Device Detection] refers to a configuration setting that allows for data from different users of the same device to be separated from one another. |
+| [!UICONTROL 共享身份命名空间] | A [!UICONTROL Shared Identity Namespace] is used to represent a single device that is shared by multiple different users. |
 | [!UICONTROL 用户身份命名空间] | [!UICONTROL 用户身份命名空间]用于表示已验证或已登录的共享设备用户。 |
 
 ## 共享设备UI
@@ -58,7 +58,7 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 
 ![identity-dashboard](../images/shared-device/identity-dashboard.png)
 
-出现[!UICONTROL 共享设备设置]页面，为您提供一个界面来配置数据的共享设备设置。 默认情况下，共享设备设置处于禁用状态。
+The [!UICONTROL Shared device settings] page appears, providing you with an interface to configure shared device settings for your data. 默认情况下，共享设备设置处于禁用状态。
 
 启用共享设备设置后，共享设备设置允许将来自同一设备不同用户的数据彼此分离。 此配置设置允许更简洁、更准确地表示身份图，其中同一设备的用户身份不会合并在一起。
 
@@ -70,7 +70,7 @@ Adobe Experience Platform [!DNL Identity Service]通过跨设备和系统桥接�
 
 ![set-namespaces](../images/shared-device/set-namespaces.png)
 
-[!UICONTROL 共享身份] 名称包表示由多个不同用户使用的单个设备。此命名空间始终设置为&#x200B;**[!UICONTROL ECID]**，因为所有Platform用户都使用&#x200B;**[!UICONTROL ECID]**&#x200B;作为Web浏览器标识符。
+[!UICONTROL Shared Identity Namespace] represents a single device that is used by multiple different users. 此命名空间始终设置为&#x200B;**[!UICONTROL ECID]**，因为所有Platform用户都使用&#x200B;**[!UICONTROL ECID]**&#x200B;作为Web浏览器标识符。
 
 ![shared-identity-namespace](../images/shared-device/shared-identity-namespace.png)
 
