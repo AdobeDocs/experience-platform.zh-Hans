@@ -2,10 +2,10 @@
 title: 核心扩展的发行说明
 description: Adobe Experience Platform中核心扩展的最新发行说明。
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 693da9aa012baa26dcff93f085dd6e763816e247
+source-git-commit: 317f134420666de23f0ee9c14938fffeda09d3de
 workflow-type: tm+mt
-source-wordcount: '1522'
-ht-degree: 59%
+source-wordcount: '1543'
+ht-degree: 58%
 
 ---
 
@@ -14,6 +14,13 @@ ht-degree: 59%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## 2021 年 10 月 8 日
+
+v3.2.2
+
+* 修复了所有可用运算符的条件值数据元素JSON模式。
+* 修复https://github.com/adobe/reactor-extension-core/issues/64。
 
 ## 2021 年 9 月 23 日
 
