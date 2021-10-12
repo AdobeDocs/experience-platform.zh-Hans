@@ -5,9 +5,9 @@ title: 数据准备映射函数
 topic-legacy: overview
 description: 本文档介绍了数据准备中使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 1133580d6d4d8df352ab901d5106f0bb6c1f2a08
+source-git-commit: ed14e0745ef105a35477f933b2ec435162f847de
 workflow-type: tm+mt
-source-wordcount: '3935'
+source-wordcount: '3933'
 ht-degree: 4%
 
 ---
@@ -104,7 +104,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 {style=&quot;table-layout:auto&quot;}
 
-### 日期和时间函数{#date-and-time}
+### 日期和时间函数 {#date-and-time}
 
 >[!NOTE]
 >
@@ -141,7 +141,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | arrays_to_object | 创建对象列表。 | <ul><li>输入：**必需**&#x200B;键对和数组对的分组。</li></ul> | arrays_to_object(INPUT) | 需要示例 | 需要示例 |
 | to_object | 根据给定的平面键/值对创建对象。 | <ul><li>输入：**必需**&#x200B;键/值对的平面列表。</li></ul> | to_object(INPUT) | to_object(&#x200B;&quot;firstName&quot;, &quot;John&quot;, &quot;lastName&quot;, &quot;Doe&quot;) | `{"firstName": "John", "lastName": "Doe"}` |
 | str_to_object | 从输入字符串创建对象。 | <ul><li>字符串：**必需**&#x200B;正在解析以创建对象的字符串。</li><li>VALUE_DELIMITER:*可选*&#x200B;用于将字段与值分隔开的分隔符。 默认分隔符为`:`。</li><li>FIELD_DELIMITER:*可选*&#x200B;用于分隔字段值对的分隔符。 默认分隔符为`,`。</li></ul> | str_to_object(&#x200B;STRING， VALUE_DELIMITER， FIELD_DELIMITER) | str_to_object(&quot;firstName - John | lastName - | 电话 — 123 456 7890&quot;, &quot;-&quot;, &quot; | &quot;) | `{"firstName": "John", "lastName": "Doe", "phone": "123 456 7890"}` |
-| is_set | 检查对象是否存在于源数据中。 | <ul><li>输入：**必需**&#x200B;要检查的路径（如果它存在于源数据中）。</li></ul> | is_set(INPUT) | is_set&#x200B;(&quot;evars.evar.field1&quot;) | true |
+| contains_key | 检查对象是否存在于源数据中。 | <ul><li>输入：**必需**&#x200B;要检查的路径（如果它存在于源数据中）。</li></ul> | contains_key(INPUT) | contains_key(&quot;evars.evar.field1&quot;) | true |
 | 无效 | 将属性的值设置为`null`。 当您不希望将字段复制到目标架构时，应使用此选项。 |  | nullify() | nullify() | `null` |
 | get_keys | 解析键/值对并返回所有键。 | <ul><li>对象：**必需**&#x200B;将从中提取键值的对象。</li></ul> | get_keys(OBJECT) | get_keys({&quot;book1&quot;):《傲慢与偏见》、《书2》：《1984年》}) | `["book1", "book2"]` |
 | get_values | 解析键/值对，并根据给定的键返回字符串的值。 | <ul><li>字符串：**必需**&#x200B;要解析的字符串。</li><li>键：**必需**&#x200B;必须提取值的键。</li><li>VALUE_DELIMITER:**必需**&#x200B;用于分隔字段和值的分隔符。 如果提供了`null`或空字符串，则此值为`:`。</li><li>FIELD_DELIMITER:*可选*&#x200B;用于分隔字段和值对的分隔符。 如果提供了`null`或空字符串，则此值为`,`。</li></ul> | get_values(STRING， KEY， VALUE_DELIMITER， FIELD_DELIMITER) | get_values(\&quot;firstName - John , lastName - Cena , phone - 555 420 8692\&quot;, \&quot;firstName\&quot;, \&quot;-\&quot;, \&quot;,\&quot;) | 约翰 |
@@ -165,7 +165,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 {style=&quot;table-layout:auto&quot;}
 
-### 逻辑运算符{#logical-operators}
+### 逻辑运算符 {#logical-operators}
 
 >[!NOTE]
 >
@@ -191,7 +191,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 {style=&quot;table-layout:auto&quot;}
 
-### 键入转化{#type-conversions}
+### 类型转化 {#type-conversions}
 
 >[!NOTE]
 >
@@ -218,7 +218,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 {style=&quot;table-layout:auto&quot;}
 
-### 特殊操作{#special-operations}
+### 特别行动 {#special-operations}
 
 >[!NOTE]
 >
@@ -230,7 +230,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 {style=&quot;table-layout:auto&quot;}
 
-### 用户代理函数{#user-agent}
+### 用户代理函数 {#user-agent}
 
 >[!NOTE]
 >
@@ -238,13 +238,13 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| ua_os_name | 从用户代理字符串中提取操作系统名称。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_os_name(&#x200B;USER_AGENT) | ua_os_name(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（与Mac OS X类似）AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS |
-| ua_os_version_major | 从用户代理字符串中提取操作系统的主要版本。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version_major(&#x200B;USER_AGENT) | ua_os_version_major &#x200B;s(&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（与Mac OS X类似）AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5 |
-| ua_os_version | 从用户代理字符串中提取操作系统的版本。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version(&#x200B;USER_AGENT) | ua_os_version(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（与Mac OS X类似）AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1.1 |
-| ua_os_name_version | 从用户代理字符串中提取操作系统的名称和版本。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_os_name_version(&#x200B;USER_AGENT) | ua_os_name_version(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（与Mac OS X类似）AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | iOS 5.1.1 |
-| ua_agent_version | 从用户代理字符串中提取代理版本。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_version&#x200B;(USER_AGENT) | ua_agent_version&#x200B;(&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（与Mac OS X类似）AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | 5.1 |
-| ua_agent_version_major | 从用户代理字符串中提取代理名称和主要版本。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_version_major(&#x200B;USER_AGENT) | ua_agent_version_major(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（与Mac OS X类似）AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari 5 |
-| ua_agent_name | 从用户代理字符串中提取代理名称。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_name(&#x200B;USER_AGENT) | ua_agent_name(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（与Mac OS X类似）AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Safari |
-| ua_device_class | 从用户代理字符串中提取设备类。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_device_class(&#x200B;USER_AGENT) | ua_device_class(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1（与Mac OS X类似）AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3&quot;) | Phone |
+| ua_os_name | 从用户代理字符串中提取操作系统名称。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_os_name(&#x200B;USER_AGENT) | ua_os_name(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1(与Mac OS X类似)AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3”) | iOS |
+| ua_os_version_major | 从用户代理字符串中提取操作系统的主要版本。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version_major(&#x200B;USER_AGENT) | ua_os_version_major s(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1(与Mac OS X类似)AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3”) | iOS 5 |
+| ua_os_version | 从用户代理字符串中提取操作系统的版本。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_os_version(&#x200B;USER_AGENT) | ua_os_version(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1(与Mac OS X类似)AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3”) | 5.1.1 |
+| ua_os_name_version | 从用户代理字符串中提取操作系统的名称和版本。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_os_name_version(&#x200B;USER_AGENT) | ua_os_name_version(&quot;&#x200B;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1(与Mac OS X类似)AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3”) | iOS 5.1.1 |
+| ua_agent_version | 从用户代理字符串中提取代理版本。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_version&#x200B;(USER_AGENT) | ua_agent_version(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1(与Mac OS X类似)AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3”) | 5.1 |
+| ua_agent_version_major | 从用户代理字符串中提取代理名称和主要版本。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_version_major(&#x200B;USER_AGENT) | ua_agent_version_major(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1(与Mac OS X类似)AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3”) | Safari 5 |
+| ua_agent_name | 从用户代理字符串中提取代理名称。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_agent_name(&#x200B;USER_AGENT) | ua_agent_name(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1(与Mac OS X类似)AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3”) | Safari |
+| ua_device_class | 从用户代理字符串中提取设备类。 | <ul><li>USER_AGENT:**必需**&#x200B;用户代理字符串。</li></ul> | ua_device_class(&#x200B;USER_AGENT) | ua_device_class(&#x200B;&quot;Mozilla/5.0(iPhone;CPU iPhone OS 5_1_1(与Mac OS X类似)AppleWebKit/534.46（与Gecko类似的KHTML）版本/5.1 Mobile/9B206 Safari/7534.48.3”) | Phone |
 
 {style=&quot;table-layout:auto&quot;}
