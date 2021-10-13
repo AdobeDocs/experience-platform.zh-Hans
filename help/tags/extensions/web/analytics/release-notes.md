@@ -2,9 +2,9 @@
 title: Adobe Analytics扩展的发行说明
 description: Adobe Experience Platform中Adobe Analytics标记扩展的最新发行说明。
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: cf0f8022e0a9ea115b1312d9988b3abb804d9b80
+source-git-commit: 83e9ebf65e904c6343fe44932a2b7b1a72039187
 workflow-type: tm+mt
-source-wordcount: '1249'
+source-wordcount: '1262'
 ht-degree: 89%
 
 ---
@@ -14,6 +14,15 @@ ht-degree: 89%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## 2021 年 9 月 16 日
+
+### Adobe Analytics 扩展 1.8.7
+
+#### 错误修复
+
+* 已将AppMeasurement升级到v2.22.2。
+* 已删除已弃用的buildInfo.environment
 
 ## 2021 年 8 月 24 日
 
