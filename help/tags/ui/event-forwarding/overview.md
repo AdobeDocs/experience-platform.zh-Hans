@@ -1,10 +1,12 @@
 ---
 title: 事件转发概述
 description: 了解Adobe Experience Platform中的事件转发，该功能允许您使用平台边缘网络执行任务，而无需更改标签实施。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+feature: Event Forwarding
+exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
+source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
 workflow-type: tm+mt
 source-wordcount: '547'
-ht-degree: 37%
+ht-degree: 42%
 
 ---
 
@@ -12,7 +14,7 @@ ht-degree: 37%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 Adobe Experience Platform中的事件转发使用Adobe Experience Platform边缘网络执行在客户端上正常完成的任务，从而减少网页和应用程序重量。 事件转发规则可以转换数据并将其发送到新目标，而无需更改客户端实施。
 

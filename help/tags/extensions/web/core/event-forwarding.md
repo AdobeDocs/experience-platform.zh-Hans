@@ -1,10 +1,12 @@
 ---
 title: 核心事件转发扩展概述
 description: 了解Adobe Experience Platform中的核心事件转发扩展。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+feature: Event Forwarding
+exl-id: b5ee4ccf-6fa5-4472-be04-782930f07e20
+source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
 workflow-type: tm+mt
 source-wordcount: '1724'
-ht-degree: 90%
+ht-degree: 91%
 
 ---
 
@@ -12,7 +14,7 @@ ht-degree: 90%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 核心事件转发扩展提供了在Adobe Experience Platform中进行事件转发的默认事件、条件和数据类型。
 
@@ -28,7 +30,7 @@ ht-degree: 90%
 
 1. 选择&#x200B;**[!UICONTROL Open Editor]**。
 1. 键入自定义代码。
-1. 选择 **[!UICONTROL Save]**。
+1. 选择&#x200B;**[!UICONTROL 保存]**。
 
 要访问自定义代码中数据元素的值，请使用 `getDataElementValue` 方法。例如，要检索名为 `productName` 的数据元素的值，请编写以下代码： 
 

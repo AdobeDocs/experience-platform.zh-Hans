@@ -2,8 +2,8 @@
 audience: user
 user-guide-title: Observability Insights 指南
 user-guide-description: 通过使用统计指标和活动通知监控平台事件。
-feature: Data Management
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+feature: Observability
+source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
 workflow-type: tm+mt
 source-wordcount: '54'
 ht-degree: 42%

@@ -3,11 +3,11 @@ audience: user
 user-guide-title: Adobe Experience Platform 仪表板帮助
 breadcrumb-title: 仪表板指南
 user-guide-description: 通过可自定义的仪表板实现 Experience Platform 数据可视化。
-feature: 数据管理
-source-git-commit: 168960692605b96324533ca295544c2f855481b1
+feature: Dashboards
+source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
 workflow-type: tm+mt
-source-wordcount: '60'
-ht-degree: 35%
+source-wordcount: '58'
+ht-degree: 32%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 35%
 
 * [功能板概述](home.md)
 * [功能板访问权限](permissions.md)
-* [将功能板下载为PDF](download.md)
+* [将功能板下载到PDF](download.md)
 * 可用功能板{#guides}
    * [配置文件](guides/profiles.md)
    * [区段](guides/segments.md)

@@ -3,8 +3,8 @@ audience: user
 user-guide-title: 标记帮助
 breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
-feature: Data Collection
-source-git-commit: 549124c4c10677cc3691706c804894956c7ef592
+feature: Tags
+source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
 workflow-type: tm+mt
 source-wordcount: '378'
 ht-degree: 69%

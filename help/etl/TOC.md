@@ -3,19 +3,18 @@ audience: user
 user-guide-title: Adobe Experience Platform ETL 指南
 breadcrumb-title: ETL 指南
 user-guide-description: 了解创建安全、高性能连接器以将数据引入平台的一般步骤。
-feature: 数据管理，数据摄取
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+feature: Data Ingestion
+source-git-commit: d1f50cc228cc6bc31a94981edb3109d07378911f
 workflow-type: tm+mt
-source-wordcount: '47'
-ht-degree: 44%
+source-wordcount: '43'
+ht-degree: 48%
 
 ---
 
 
-# 在Experience Platform {#etl}中提取、转换和加载过程
+# 在Experience Platform中提取、转换和加载过程 {#etl}
 
 - [开发ETL集成](home.md)
 - [ETL转换](transformations.md)
-- [ETL工作流](workflow.md)
+- [ETL工作流程](workflow.md)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
