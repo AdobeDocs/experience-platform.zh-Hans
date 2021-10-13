@@ -5,10 +5,10 @@ title: 沙盒UI指南
 topic-legacy: user guide
 description: 本文档提供了有关如何在Adobe Experience Platform用户界面中执行与沙箱相关的各种操作的步骤。
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: 3b0f156d3d6a13fbad45a153749b81a0d6244283
+source-git-commit: a43dd851a5c7ec722e792a0f43d1bb42777f0c15
 workflow-type: tm+mt
-source-wordcount: '779'
-ht-degree: 0%
+source-wordcount: '832'
+ht-degree: 1%
 
 ---
 
@@ -43,6 +43,10 @@ ht-degree: 0%
 ![](../images/ui/sandbox-search.png)
 
 ## 创建新沙盒
+
+>[!NOTE]
+>
+>创建新沙盒后，必须先将该新沙盒添加到[Adobe Admin Console](https://adminconsole.adobe.com/)的产品用户档案中，然后才能开始使用新沙盒。 有关如何将沙盒配置到产品用户档案的信息，请参阅关于[管理产品用户档案的权限的文档](../../access-control/ui/permissions.md)。
 
 请使用以下视频快速了解如何在Experience Platform中使用沙箱。
 

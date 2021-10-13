@@ -4,10 +4,11 @@ solution: Experience Platform
 title: 沙盒管理API端点
 topic-legacy: developer guide
 description: 沙盒API中的/沙盒端点允许您以编程方式管理Adobe Experience Platform中的沙盒。
-source-git-commit: f5ce7b7f09c624c53065757bb8a9b09f989dce0a
+exl-id: 0ff653b4-3e31-4ea5-a22e-07e18795f73e
+source-git-commit: a43dd851a5c7ec722e792a0f43d1bb42777f0c15
 workflow-type: tm+mt
-source-wordcount: '1436'
-ht-degree: 2%
+source-wordcount: '1489'
+ht-degree: 3%
 
 ---
 
@@ -190,6 +191,10 @@ curl -X GET \
 | `eTag` | 沙盒特定版本的标识符。 对于版本控制和缓存效率，每当对沙盒进行更改时，都会更新此值。 |
 
 ## 创建沙盒 {#create}
+
+>[!NOTE]
+>
+>创建新沙盒后，必须先将该新沙盒添加到[Adobe Admin Console](https://adminconsole.adobe.com/)的产品用户档案中，然后才能开始使用新沙盒。 有关如何将沙盒配置到产品用户档案的信息，请参阅关于[管理产品用户档案的权限的文档](../../access-control/ui/permissions.md)。
 
 您可以通过向`/sandboxes`端点发出POST请求，来创建新的开发或生产沙盒。
 
