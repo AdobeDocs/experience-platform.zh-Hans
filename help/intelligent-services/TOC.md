@@ -4,19 +4,18 @@ audience: user
 user-guide-title: 智能服务帮助
 breadcrumb-title: Intelligent Services 指南
 user-guide-description: 利用智能 AI 服务，根据营销事件数据生成分数、发掘洞见和创建区段。
-feature: 数据科学工作区
-source-git-commit: 31b584d3e28a6f15254cf60fa673cd0c5c16ea73
+source-git-commit: c3320f040383980448135371ad9fae583cfca344
 workflow-type: tm+mt
-source-wordcount: '124'
-ht-degree: 25%
+source-wordcount: '121'
+ht-degree: 23%
 
 ---
 
 
-# Adobe智能服务{#intelligent-services}
+# Adobe智能服务 {#intelligent-services}
 
 - [智能服务概述](home.md)
-- [准备要在Intelligent Services中使用的数据](data-preparation.md)
+- [准备数据以在智能服务中使用](data-preparation.md)
 - Attribution AI{#attribution-ai}
    - [概述](attribution-ai/overview.md)
    - [Attribution AI入门](attribution-ai/getting-started.md)
@@ -27,21 +26,21 @@ ht-degree: 25%
    - [使用查询服务分析得分](attribution-ai/aai-query-service.md)
 - Content and Commerce AI(beta){#content-commerce-ai}
    - [概述](content-commerce-ai/overview.md)
-   - [入门指南](content-commerce-ai/getting-started.md)
+   - [快速入门](content-commerce-ai/getting-started.md)
    - 内容和商务AI API{#api}
       - [颜色提取](content-commerce-ai/api/color-extraction.md)
-      - [关键字提取](content-commerce-ai/api/keyword-extraction.md)
+      - [关键词提取](content-commerce-ai/api/keyword-extraction.md)
       - [文本分类](content-commerce-ai/api/text-classification.md)
-      - [视觉相似性](content-commerce-ai/api/visual-similarity.md)
+      - [视觉相似度](content-commerce-ai/api/visual-similarity.md)
       - [文本存在和光学字符识别](content-commerce-ai/api/optical-character-recognition.md)
-- 客户AI {#customer-ai}
+- 客户人工智能{#customer-ai}
    - [概述](customer-ai/overview.md)
-   - [客户人工智能入门](customer-ai/getting-started.md)
+   - [Customer AI快速入门](customer-ai/getting-started.md)
    - [输入和输出](customer-ai/input-output.md)
    - UI指南{#user-guide}
       - [配置实例](customer-ai/user-guide/configure.md)
       - [发现洞察](customer-ai/user-guide/discover-insights.md)
-      - [使用客户人工智能分数创建细分](customer-ai/user-guide/create-segment.md)
+      - [使用Customer AI分数创建区段](customer-ai/user-guide/create-segment.md)
       - [下载分数](customer-ai/user-guide/download-scores.md)
    - [错误疑难解答](customer-ai/troubleshooting.md)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)

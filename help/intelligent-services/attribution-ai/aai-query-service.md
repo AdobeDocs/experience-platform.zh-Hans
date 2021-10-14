@@ -1,65 +1,64 @@
 ---
-keywords: 洞察；归因ai；归因ai洞察；AAI查询服务；归因查询；归因得分
-solution: Intelligent Services, Experience Platform
-title: 使用查询服务分析归因分数
+keywords: 分析；归因ai；归因ai分析；AAI查询服务；归因查询；归因得分
+feature: Attribution AI
+title: 使用查询服务分析归因得分
 topic-legacy: Attribution AI queries
-description: 了解如何使用Adobe Experience Platform 查询 Service分析Attribution AI分数。
+description: 了解如何使用Adobe Experience Platform查询服务分析Attribution AI得分。
 exl-id: 35d7f6f2-a118-4093-8dbc-cb020ec35e90
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: c3320f040383980448135371ad9fae583cfca344
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '589'
 ht-degree: 0%
 
 ---
 
 # 使用查询服务分析归因得分
 
-数据中的每一行都表示一个转换，其中相关触点的信息作为`touchpointsDetail`列下的结构数组存储。
+数据中的每一行都表示一个转化，在该转化中，相关接触点的信息将存储为`touchpointsDetail`列下的结构数组。
 
-| 触点信息 | 栏目 |
+| 接触点信息 | 栏目 |
 | ---------------------- | ------ |
-| 触点名称 | `touchpointsDetail. touchpointName` |
-| 触点渠道 | `touchpointsDetail.touchPoint.mediaChannel` |
-| 触点Attribution AI算法得分 | <li>`touchpointsDetail.scores.algorithmicSourced`</li> <li> `touchpointsDetail.scores.algorithmicInfluenced` </li> |
+| 接触点名称 | `touchpointsDetail. touchpointName` |
+| 接触点渠道 | `touchpointsDetail.touchPoint.mediaChannel` |
+| 接触点Attribution AI算法得分 | <li>`touchpointsDetail.scores.algorithmicSourced`</li> <li> `touchpointsDetail.scores.algorithmicInfluenced` </li> |
 
 ## 查找数据路径
 
-在Adobe Experience Platform UI中，选择左侧导航中的&#x200B;**[!UICONTROL Datasets]**。 将显示&#x200B;**[!UICONTROL Datasets]**&#x200B;页。 接下来，选择&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡并查找Attribution AI分数的输出数据集。
+在Adobe Experience Platform UI的左侧导航中，选择&#x200B;**[!UICONTROL Datasets]**。 此时会显示&#x200B;**[!UICONTROL Datasets]**&#x200B;页面。 接下来，选择&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡，并查找您的Attribution AI得分的输出数据集。
 
 ![访问您的实例](./images/aai-query/datasets_browse.png)
 
-选择输出数据集。 此时将显示数据集活动页。
+选择输出数据集。 此时会显示数据集活动页面。
 
-![数据集活动页](./images/aai-query/select_preview.png)
+![数据集活动页面](./images/aai-query/select_preview.png)
 
-在数据集活动页面中，选择右上角的&#x200B;**[!UICONTROL Preview dataset]**&#x200B;以预览您的数据，并确保按预期方式摄取数据。
+在数据集活动页面中，选择右上角的&#x200B;**[!UICONTROL 预览数据集]** ，以预览数据并确保按预期摄取数据。
 
 ![预览数据集](./images/aai-query/preview_dataset.JPG)
 
-预览模式后，选择右边栏中的数据。 将出现一个带模式名称和说明的快显窗口。 选择模式名称超链接以重定向到评分模式。
+预览数据后，选择右边栏中的架构。 此时会出现一个弹出窗口，其中包含架构名称和描述。 选择架构名称超链接可重定向到评分架构。
 
-![选择模式](./images/aai-query/select_schema.png)
+![选择架构](./images/aai-query/select_schema.png)
 
-使用评分模式，您可以选择或搜索值。 选择后，将打开&#x200B;**[!UICONTROL Field properties]**&#x200B;侧边栏，以便复制路径以用于创建查询。
+使用评分架构，您可以选择或搜索值。 选择&#x200B;**[!UICONTROL 字段属性]**&#x200B;侧边栏后，将打开该边栏，以便复制路径以用于创建查询。
 
 ![复制路径](./images/aai-query/copy_path.png)
 
 ## 访问查询服务
 
-要从平台UI中访问查询服务，请在左侧导航中选择&#x200B;**[!UICONTROL Queries]**，然后选择&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡进行开始。 将加载先前保存的查询的列表。
+要从Platform UI中访问查询服务，请首先在左侧导航中选择&#x200B;**[!UICONTROL Querys]** ，然后选择&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡。 将加载之前保存的查询列表。
 
 ![查询服务浏览](./images/aai-query/query_tab.png)
 
-接下来，选择右上角的&#x200B;**[!UICONTROL Create query]**。 加载查询编辑器。 使用查询编辑器，您可以开始使用评分数据创建查询。
+接下来，选择右上角的&#x200B;**[!UICONTROL 创建查询]**。 加载查询编辑器。 使用查询编辑器，您可以开始使用评分数据创建查询。
 
 ![查询编辑器](./images/aai-query/query_example.png)
 
 有关查询编辑器的详细信息，请访问[查询编辑器用户指南](../../query-service/ui/user-guide.md)。
 
-## 查询模板，用于归因得分分析
+## 用于归因分析的查询模板
 
-以下查询可用作不同得分分析方案的模板。 您需要将`_tenantId`和`your_score_output_dataset`替换为在评分输出模式中找到的正确值。
+以下查询可用作不同分数分析方案的模板。 您需要将`_tenantId`和`your_score_output_dataset`替换为在评分输出架构中找到的正确值。
 
 >[!NOTE]
 >
@@ -67,7 +66,7 @@ ht-degree: 0%
 
 ### 验证示例
 
-**按转换事件（在转换窗口中）划分的转换总数**
+**按转化事件（在转化窗口内）划分的转化总数**
 
 ```sql
     SELECT conversionName,
@@ -90,7 +89,7 @@ ht-degree: 0%
         conversionName
 ```
 
-**仅转换事件的总数（在转换窗口中）**
+**仅转化事件的总数（在转化窗口内）**
 
 ```sql
     SELECT
@@ -108,7 +107,7 @@ ht-degree: 0%
 
 ### 趋势分析示例
 
-**每天转换次数**
+**每日转化数**
 
 ```sql
     SELECT conversionName,
@@ -129,9 +128,9 @@ ht-degree: 0%
     LIMIT 20
 ```
 
-### 分发分析示例
+### 分布分析示例
 
-**按定义类型（在转换窗口中）划分的转换路径上的接触点数量**
+**按定义类型（在转化窗口内）划分的转化路径上的接触点数量**
 
 ```sql
     SELECT conversionName,
@@ -155,9 +154,9 @@ ht-degree: 0%
         conversionName, tp_count DESC
 ```
 
-### Insight生成示例
+### 分析生成示例
 
-**按接触点和转换日期（在转换窗口中）划分的增量单位**
+**按接触点和转化日期划分的增量单位（在转化窗口内）**
 
 ```sql
     SELECT conversionName,
@@ -182,7 +181,7 @@ ht-degree: 0%
         conversionName, touchpointName, DATE(conversion_timestamp)
 ```
 
-**按接触点和接触点日期（在转换窗口中）划分的增量单位**
+**按接触点和接触点日期划分的增量单位（在转化窗口内）**
 
 ```sql
     SELECT conversionName,
@@ -208,7 +207,7 @@ ht-degree: 0%
     LIMIT 20
 ```
 
-**所有评分模型的特定接触点类型的汇总得分（在转换窗口中）**
+**所有评分模型的特定接触点类型的汇总得分（在转化窗口内）**
 
 ```sql
     SELECT
@@ -241,7 +240,7 @@ ht-degree: 0%
 
 **高级 — 路径长度分析**
 
-获取每个转换事件类型的路径长度分布：
+获取每个转化事件类型的路径长度分布：
 
 ```sql
     WITH agg_path AS (
@@ -270,9 +269,9 @@ ht-degree: 0%
         conversionName, path_length
 ```
 
-**高级 — 转换路径上的不同接触点数分析**
+**高级 — 转化路径分析中的接触点数量不同**
 
-获取每个转化事件类型在转化路径上的不同接触点数的分布：
+获取每个转化事件类型的转化路径上不同接触点数量的分布：
 
 ```sql
     WITH agg_path AS (
@@ -301,13 +300,13 @@ ht-degree: 0%
         conversionName, num_dist_tp
 ```
 
-### 模式拼合和爆炸示例
+### 架构扁平化和展开示例
 
-此查询将结构列拼合为多个奇数列，并将数组分解为多个行。 这有助于将归因分数转换为CSV格式。 此查询的输出具有一个转换，并且每个行中对应于该转换的触点之一。
+此查询会将struct列拼合为多个单数列，并将数组分解为多行。 这有助于将归因得分转换为CSV格式。 此查询的输出具有一行中的一个转化，以及与该转化对应的接触点之一。
 
 >[!TIP]
 >
-> 在此示例中，除了`_tenantId`和`your_score_output_dataset`之外，还需要替换`{COLUMN_NAME}`。 `COLUMN_NAME`变量可以采用配置Attribution AI实例期间添加的可选传递列名(报告列)的值。 请查看您的评分输出模式，以找到完成此查询所需的`{COLUMN_NAME}`值。
+> 在此示例中，除了`_tenantId`和`your_score_output_dataset`之外，还需要替换`{COLUMN_NAME}`。 `COLUMN_NAME`变量可采用配置Attribution AI实例期间添加的可选传递列名称（报表列）的值。 请查看您的评分输出架构，以查找完成此查询所需的`{COLUMN_NAME}`值。
 
 ```sql
 SELECT 

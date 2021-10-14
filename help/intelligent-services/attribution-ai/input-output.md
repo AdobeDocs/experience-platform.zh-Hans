@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；快速入门；归因ai；热门主题；归因ai输入；归因ai输出；
-solution: Experience Platform, Intelligent Services
+feature: Attribution AI
 title: 输入和输出Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: 以下文档概述了Attribution AI中使用的不同输入和输出。
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: a49218103669758404a4ddf3f9833b8b2d9b7fc6
+source-git-commit: c3320f040383980448135371ad9fae583cfca344
 workflow-type: tm+mt
 source-wordcount: '2230'
 ht-degree: 3%
@@ -45,7 +45,7 @@ Attribution AI通过分析以下任一数据集来计算算法得分：
 | Marketing.trackingCode | 接触点 |
 | Marketing.campaignname | 接触点 |
 | Marketing.campaigngroup | 接触点 |
-| 商务 | 转化 |
+| Commerce | 转化 |
 
 通常，归因会在“商务”下的转化列（如订单、购买和结账）上运行。 “channel”和“marketing”的列用于定义Attribution AI的接触点（例如，`channel._type = 'https://ns.adobe.com/xdm/channel-types/email'`）。 为获得最佳结果和分析，强烈建议您包含尽可能多的转化和接触点列。 此外，您也不限于上述列。 您可以包含任何其他推荐或自定义列作为转化或接触点定义。
 
@@ -135,7 +135,7 @@ Attribution AI会以尽可能最精细的粒度级别输出归因得分，以便
 | receivedTimestamp(DateTime) | True | 收到转化的时间戳。<br> **示例：** 2020-06-09T00:01:51.000Z |
 | skuId（字符串） | True | 库存单位(SKU)，由供应商定义的产品的唯一标识符。<br> **示例：** MJ-03-XS-Black |
 | timestamp(DateTime) | True | 转换的时间戳。<br> **示例：** 2020-06-09T00:01:51.000Z |
-| passThrough（对象） | True | 配置模型时由用户指定的其他得分数据集列。 |
+| passThrough（对象） | True | 配置模型时用户指定的其他得分数据集列。 |
 | commerce_order_purchaseCity（字符串） | True | “其他得分”数据集列。<br> **示例：** 城市：圣何塞 |
 | customerProfile（对象） | False | 用于构建模型的用户的身份详细信息。 |
 | 标识（对象） | False | 包含用于构建模型的用户的详细信息，如`id`和`namespace`。 |
@@ -232,7 +232,7 @@ Attribution AI会生成两种不同类型的算法得分：增量分数和受影
 | 地域 | _tenantID.your_schema_name.conversion.geo |
 | event_type | eventType |
 | media_type | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.mediaType |
-| 渠道 | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.mediaChannel |
+| channel | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.mediaChannel |
 | 操作 | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.mediaAction |
 | campaign_group | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.campaignGroup |
 | campaign_name | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.campaignName |
