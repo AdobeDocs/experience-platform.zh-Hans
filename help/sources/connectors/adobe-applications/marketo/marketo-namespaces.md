@@ -5,9 +5,9 @@ title: B2B命名空间和架构
 topic-legacy: overview
 description: 本文档概述创建B2B源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 0661d124ffe520697a1fc8e2cae7b0b61ef4edfc
+source-git-commit: 15fd870565d50bd4e320a1acf61413f45c1f537c
 workflow-type: tm+mt
-source-wordcount: '1588'
+source-wordcount: '1679'
 ht-degree: 4%
 
 ---
@@ -87,6 +87,7 @@ B2B命名空间用于实体的主标识。
 | B2B营销活动成员 | `b2b_campaign_member` | `B2B_CAMPAIGN_MEMBER` |
 | B2B营销列表 | `b2b_marketing_list` | `B2B_MARKETING_LIST` |
 | B2B营销列表成员 | `b2b_marketing_list_member` | `B2B_MARKETING_LIST_MEMBER` |
+| B2B帐户人员关系 | `b2b_account_person_relation` | `B2B_ACCOUNT_PERSON` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -115,6 +116,7 @@ Experience Platform 会使用架构，以便以可重用的一致方式描述数
 | B2B营销列表 | XDM业务营销列表 | 无 | 已启用 | `marketingListKey.sourceKey` 在基类中 | B2B营销列表 | 无 | 无 | 无 | 静态列表未从[!DNL Salesforce]同步，因此没有辅助标识。 |
 | B2B营销列表成员 | XDM业务营销列表成员 | 无 | 已启用 | `marketingListMemberKey.sourceKey` 在基类中 | B2B营销列表成员 | 无 | 无 | **第一关系**<ul><li>`PersonKey.sourceKey` 在基类中</li><li>类型：多对一</li><li>引用架构：B2B人员</li><li>命名空间：B2B人员</li><li>目标属性：`b2b.personKey.sourceKey`</li><li>当前架构中的关系名称：人员</li><li>引用架构中的关系名称：营销列表</li></ul>**第二关系**<ul><li>`marketingListKey.sourceKey` 在基类中</li><li>类型：多对一</li><li>引用架构：B2B营销列表</li><li>命名空间：B2B营销列表</li><li>目标属性：`marketingListKey.sourceKey`</li><li>当前架构中的关系名称：营销列表</li><li>引用架构中的关系名称：人员</li></ul> | 静态列表成员未从[!DNL Salesforce]同步，因此没有辅助标识。 |
 | B2B活动 | XDM ExperienceEvent | <ul><li>访问网页</li><li>新潜在客户</li><li>转化潜在客户</li><li>添加到列表</li><li>从列表中删除</li><li>Add To Opportunity</li><li>从机会中删除</li><li>已填写的表单</li><li>链接点击量</li><li>电子邮件发送</li><li>已打开电子邮件</li><li>已点击电子邮件</li><li>电子邮件退回</li><li>Email Robjected Soft</li><li>取消订阅的电子邮件</li><li>分数已更改</li><li>Opportunity Updated</li><li>促销活动进度中的状态已更改</li><li>人员标识符</li><li>Marketo Web URL</li><li>有趣的时刻</li></ul> | 已启用 | `personKey.sourceKey` 人员标识符字段组 | B2B人员 | 无 | 无 | **第一关系**<ul><li>`listOperations.listKey.sourceKey` 字段</li><li>类型：一对一</li><li>引用架构：B2B营销列表</li><li>命名空间：B2B营销列表</li></ul>**第二关系**<ul><li>`opportunityEvent.opportunityKey.sourceKey` 字段</li><li>类型：一对一</li><li>引用架构：B2B机会</li><li>命名空间：B2B机会</li></ul>**第三种关系**<ul><li>`leadOperation.campaignProgression.campaignKey.sourceKey` 字段</li><li>类型：一对一</li><li>引用架构：B2B营销活动</li><li>命名空间：B2B营销活动</li></ul> | `ExperienceEvent` 与实体不同。体验事件的标识是执行活动的人员。 |
+| B2B帐户人员关系 | XDM业务帐户人员关系 | 标识映射 | 已启用 | `accountPersonKey.sourceKey` 在基类中 | B2B帐户人员关系 | 无 | 无 | **第一关系**<ul><li>`personKey.sourceKey` 在基类中</li><li>类型：多对一</li><li>引用架构：B2B人员</li><li>命名空间：B2B人员</li><li>目标属性：`b2b.personKey.SourceKey`</li><li>当前架构中的关系名称：人员</li><li>引用架构中的关系名称：帐户</li></ul>**第二关系**<ul><li>`accountKey.sourceKey` 在基类中</li><li>类型：多对一</li><li>引用架构：B2B帐户</li><li>命名空间：B2B帐户</li><li>目标属性：`accountKey.sourceKey`</li><li>当前架构中的关系名称：帐户</li><li>引用架构中的关系名称：人员</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
