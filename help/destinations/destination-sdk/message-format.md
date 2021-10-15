@@ -1,12 +1,10 @@
 ---
-description: 将本页面上的内容与合作伙伴目标的其余配置选项结合使用。 本页介绍从Adobe Experience Platform导出到目标的数据的消息传送格式，而其他页面则介绍有关连接到您的目标并进行身份验证的特定信息。
-seo-description: Use the content on this page together with the rest of the configuration options for partner destinations. This page addresses the messaging format of data exported from Adobe Experience Platform to destinations, while the other page addresses specifics about connecting and authenticating to your destination.
-seo-title: Message format
+description: 本页介绍从Adobe Experience Platform导出到目标的数据中的消息格式和配置文件转换。
 title: 消息格式
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: c328293cf710ad8a2ddd2e52cb01c86d29c0b569
+source-git-commit: 485c1359f8ef5fef0c5aa324cd08de00b0b4bb2f
 workflow-type: tm+mt
-source-wordcount: '1995'
+source-wordcount: '1981'
 ht-degree: 1%
 
 ---
@@ -15,7 +13,7 @@ ht-degree: 1%
 
 ## 先决条件 — Adobe Experience Platform概念 {#prerequisites}
 
-要了解Adobe方面的流程，请熟悉以下Experience Platform概念：
+要了解Adobe端的消息格式以及配置文件配置和转换过程，请熟悉以下Experience Platform概念：
 
 * **体验数据模型(XDM)**。[XDM概](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=zh-Hans) 述和  [如何在Adobe Experience Platform中创建XDM架构](https://experienceleague.adobe.com/docs/experience-platform/xdm/tutorials/create-schema-ui.html?lang=en)。
 * **类**。[在UI中创建和编辑类](https://experienceleague.adobe.com/docs/experience-platform/xdm/ui/resources/classes.html?lang=en)。
@@ -24,11 +22,11 @@ ht-degree: 1%
 
 ## 概述 {#overview}
 
-将本页中的内容与合作伙伴目标](./configuration-options.md)的其余[配置选项一起使用。 本页介绍从Adobe Experience Platform导出到目标的数据的消息传送格式，而其他页面则介绍有关连接到您的目标并进行身份验证的特定信息。
+将本页中的内容与合作伙伴目标](./configuration-options.md)的其余[配置选项一起使用。 本页介绍从Adobe Experience Platform导出到目标的数据中的消息格式和配置文件转换。 其他页面将介绍有关连接到目标并进行身份验证的详情。
 
-Adobe Experience Platform以各种数据格式将数据导出到大量目标。 目标类型的一些示例包括广告平台(Google)、社交网络(Facebook)、云存储位置(Amazon S3、Azure事件中心)。
+Adobe Experience Platform以各种数据格式将数据导出到大量目标。 目标类型的一些示例包括广告平台(Google)、社交网络(Facebook)和云存储位置(Amazon S3、Azure事件中心)。
 
-Experience Platform可以调整导出的消息格式，使其与一侧的预期格式匹配。 要了解此自定义设置，以下概念非常重要：
+Experience Platform可以调整导出用户档案的消息格式，以匹配您方的预期格式。 要了解此自定义设置，以下概念非常重要：
 * Adobe Experience Platform中的源(1)和目标(2)XDM模式
 * 合作伙伴端(3)上的预期消息格式，以及
 * XDM架构与预期消息格式之间的转换层，您可以通过创建[消息转换模板](./message-format.md#using-templating)来定义该层。
@@ -49,7 +47,7 @@ Users who want to activate data to your destination need to map the fields in th
 
 **目标配置文件属性的JSON标准架构(3)**:此项目表示平台支 [持](https://json-schema.org/learn/miscellaneous-examples.html) 的所有配置文件属性及其类型的JSON架构(例如：对象、字符串、数组)。目标可支持的示例字段可能为`firstName`、`lastName`、`gender`、`email`、`phone`、`productId`、`productName`等。 您需要[消息转换模板](./message-format.md#using-templating)来将导出的Experience Platform外的数据调整为预期格式。
 
-根据上述架构转换，以下是源XDM架构与合作伙伴端示例架构之间消息的结构如何更改：
+根据上述架构转换，以下是源XDM架构与合作伙伴端示例架构之间的配置文件配置如何更改：
 
 ![转换消息示例](./assets/transformations-with-examples.png)
 
@@ -58,7 +56,7 @@ Users who want to activate data to your destination need to map the fields in th
 
 ## 入门 — 转换三个基本属性 {#getting-started}
 
-为了演示转换过程，以下示例使用了Adobe Experience Platform中的三个常用配置文件属性：**名字**、**姓氏**&#x200B;和&#x200B;**电子邮件地址**。
+为了演示配置文件转换过程，以下示例使用了Adobe Experience Platform中的三个常用配置文件属性：**名字**、**姓氏**&#x200B;和&#x200B;**电子邮件地址**。
 
 >[!NOTE]
 >
@@ -93,7 +91,7 @@ Authorization: Bearer YOUR_REST_API_KEY
 
 Adobe使用类似于[Jinja](https://jinja.palletsprojects.com/en/2.11.x/)的模板语言将XDM架构中的字段转换为目标支持的格式。
 
-本节提供了一些示例，说明如何从输入XDM架构、模板，以及如何将这些转换输出为目标接受的有效负载格式。 以下示例按日益复杂的情况排序，如下所示：
+本节提供了如何进行这些转换的几个示例 — 从输入XDM架构、模板，以及将输出为目标接受的有效负载格式。 以下示例以日益复杂的方式呈现，如下所示：
 
 1. 简单的转换示例。 了解模板如何与[配置文件属性](./message-format.md#attributes)、[区段成员资格](./message-format.md#segment-membership)和[Identity](./message-format.md#identities)字段的简单转换一起使用。
 2. 组合上述字段的模板的复杂性增加了示例：[创建用于发送区段和标识的模板](./message-format.md#segments-and-identities)和[创建用于发送区段、标识和配置文件属性的模板](./message-format.md#segments-identities-attributes)。

@@ -1,9 +1,10 @@
 ---
-description: 此配置确定Adobe Experience Platform用户如何对您的目标端点进行身份验证以激活数据。
-title: 目标SDK中凭据的配置选项
-source-git-commit: 11f6421665acc2041aa9483b1e0efb6fe48b6dfb
+description: 使用Adobe Experience Platform目标SDK中支持的身份验证配置来验证用户并激活到您的目标端点的数据。
+title: 身份验证配置
+exl-id: 33eaab24-f867-4744-b424-4ba71727373c
+source-git-commit: 485c1359f8ef5fef0c5aa324cd08de00b0b4bb2f
 workflow-type: tm+mt
-source-wordcount: '200'
+source-wordcount: '202'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 ## 支持的身份验证类型 {#supported-authentication-types}
 
-Adobe Experience Platform支持多种身份验证类型：
+Adobe Experience Platform目标SDK支持多种身份验证类型：
 
 * 承载验证
 * 具有授权代码的OAuth 2
