@@ -6,16 +6,16 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用平台用户界面创建数据登陆区源连接器。
 exl-id: 653c9958-5d89-4b0c-af3d-a3e74aa47a08
-source-git-commit: ca7197036283ee15dbf60c113d361a5ea34d65c1
+source-git-commit: 57089cc9aa9c586f5fae70e2a7154d48ebd62447
 workflow-type: tm+mt
-source-wordcount: '434'
+source-wordcount: '418'
 ht-degree: 0%
 
 ---
 
 # 使用UI将[!DNL Data Landing Zone]连接到平台
 
-[!DNL Data Landing Zone] 是一个基于云的数据存储设施，可用于配置有Adobe Experience Platform的临时文件存储。[!DNL Data Landing Zone] 仅用于数据进出平台的情况。7天后，数据将自动从[!DNL Data Landing Zone]中删除。
+[!DNL Data Landing Zone] 是一个基于云的数据存储设施，可用于配置有Adobe Experience Platform的临时文件存储。7天后，数据将自动从[!DNL Data Landing Zone]中删除。
 
 本教程提供了使用Platform用户界面创建[!DNL Data Landing Zone]源连接的步骤。
 

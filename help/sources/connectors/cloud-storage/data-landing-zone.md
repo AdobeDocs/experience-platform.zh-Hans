@@ -5,16 +5,16 @@ title: 数据登陆区源
 topic-legacy: overview
 description: 了解如何将数据登陆区连接到Adobe Experience Platform
 exl-id: bdc10095-7de4-4183-bfad-a7b5c89197e3
-source-git-commit: ca7197036283ee15dbf60c113d361a5ea34d65c1
+source-git-commit: 57089cc9aa9c586f5fae70e2a7154d48ebd62447
 workflow-type: tm+mt
-source-wordcount: '432'
+source-wordcount: '423'
 ht-degree: 0%
 
 ---
 
 # [!DNL Data Landing Zone]
 
-[!DNL Data Landing Zone] 是Adobe Experience Platform [!DNL Azure Blob] 配置的一个存储界面，它允许您访问安全的基于云的文件存储设施，以通过源和目标在平台内外摄取和输出文件。您可以在每个沙盒上访问一个[!DNL Data Landing Zone]容器，并且所有容器中的总数据量仅限于随Platform Produces and Services许可证提供的总数据量。 Platform及其应用程序服务（如[!DNL Customer Journey Analytics]、[!DNL Journey Orchestration]、[!DNL Intelligent Services]和[!DNL Real-time Customer Data Platform]）的所有客户都为每个沙盒配置一个[!DNL Data Landing Zone]容器。 您可以通过[!DNL Azure Storage Explorer]或命令行界面将文件读取和写入容器。
+[!DNL Data Landing Zone] 是Adobe Experience Platform [!DNL Azure Blob] 配置的一个存储界面，它允许您访问安全的、基于云的文件存储工具，以将文件导入平台。您可以在每个沙盒上访问一个[!DNL Data Landing Zone]容器，并且所有容器中的总数据量仅限于随Platform Produces and Services许可证提供的总数据量。 Platform及其应用程序服务（如[!DNL Customer Journey Analytics]、[!DNL Journey Orchestration]、[!DNL Intelligent Services]和[!DNL Real-time Customer Data Platform]）的所有客户都为每个沙盒配置一个[!DNL Data Landing Zone]容器。 您可以通过[!DNL Azure Storage Explorer]或命令行界面将文件读取和写入容器。
 
 [!DNL Data Landing Zone] 支持基于SAS的身份验证，其数据在存放和传输 [!DNL Azure Blob] 时均使用标准存储安全机制进行保护。基于SAS的身份验证允许您通过公共Internet连接安全地访问[!DNL Data Landing Zone]容器。 访问[!DNL Data Landing Zone]容器不需要任何网络更改，这意味着您无需为网络配置任何允许列表或跨区域设置。 平台对上载到[!DNL Data Landing Zone]容器的所有文件强制实施严格的7天生存时间(TTL)。 七天后会删除所有文件。
 
