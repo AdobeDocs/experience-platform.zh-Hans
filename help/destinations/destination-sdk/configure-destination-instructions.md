@@ -1,25 +1,27 @@
 ---
-description: 本页介绍如何使用目标SDK配置选项中的参考信息，使用目标SDK配置您的目标。
-seo-description: This page describes how to use the reference information in Configuration options for the Destinations SDK to configure your destination using Destination SDK.
-seo-title: How to use Destination SDK to configure your destination
-title: 如何使用Destination SDK配置目标
+description: 本页列出并介绍了使用目标SDK配置流目标的步骤。
+title: 如何使用目标SDK配置流目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 15626393bd69173195dd924c8817073b75df5a1e
+source-git-commit: a7c36f1a157b6020fede53e5c1074d966f26cf3d
 workflow-type: tm+mt
-source-wordcount: '655'
+source-wordcount: '670'
 ht-degree: 0%
 
 ---
 
-# 如何使用Destination SDK配置目标
+# 如何使用目标SDK配置流目标
 
 ## 概述 {#overview}
 
-本页介绍如何使用[目标SDK](./configuration-options.md)中的配置选项中的参考信息配置目标。 这些步骤按如下顺序排列。
+本页介绍如何使用 [目标SDK中的配置选项](./configuration-options.md) 和其他目标SDK功能和API参考文档中的 [流目标](/help/destinations/destination-types.md#streaming-destinations). 这些步骤按如下顺序排列。
+
+>[!NOTE]
+>
+>当前不支持通过目标SDK配置批量目标。
 
 ## 先决条件 {#prerequisites}
 
-在前进到下述步骤之前，请阅读[目标SDK快速入门](./getting-started.md)页面，以了解有关获取使用目标SDK API所需的Adobe I/O身份验证凭据和其他先决条件的信息。
+在前进到下述步骤之前，请阅读 [目标SDK快速入门](./getting-started.md) 页面，以了解有关获取使用目标SDK API所需的Adobe I/O身份验证凭据以及其他先决条件的信息。
 
 ## 使用目标SDK中的配置选项设置目标的步骤 {#steps}
 
@@ -27,9 +29,9 @@ ht-degree: 0%
 
 ## 步骤1:创建服务器和模板配置 {#create-server-template-configuration}
 
-首先，使用`/destinations-server`端点创建服务器和模板配置（读取[API引用](./destination-server-api.md)）。 有关服务器和模板配置的详细信息，请参阅参考部分中的[服务器和模板规范](./configuration-options.md#server-and-template)。
+首先，使用 `/destinations-server` 端点（读取） [API参考](./destination-server-api.md))。 有关服务器和模板配置的详细信息，请参阅 [服务器和模板规范](./configuration-options.md#server-and-template) 在参考部分中。
 
-下面显示了一个配置示例。 请注意，`requestBody.value`参数中的消息转换模板在步骤3 [创建转换模板](./configure-destination-instructions.md#create-transformation-template)中已处理。
+下面显示了一个配置示例。 请注意， `requestBody.value` 参数在步骤3中进行说明， [创建转换模板](./configure-destination-instructions.md#create-transformation-template).
 
 ```json
 POST platform.adobe.io/data/core/activation/authoring/destination-servers
@@ -56,9 +58,9 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 
 ## 步骤2:创建目标配置 {#create-destination-configuration}
 
-下面显示了使用`/destinations` API端点创建的目标模板配置示例。 有关此模板的更多信息，请参阅[目标配置](./destination-configuration.md)。
+下面显示了目标模板的配置示例，该配置是使用 `/destinations` API端点。 有关此模板的更多信息，请参阅 [目标配置](./destination-configuration.md).
 
-要将步骤1中的服务器和模板配置连接到此目标配置，请将服务器和模板配置的实例ID添加为`destinationServerId`此处。
+要将步骤1中的服务器和模板配置连接到此目标配置，请将服务器和模板配置的实例ID添加为 `destinationServerId` 这里。
 
 ```json
 POST platform.adobe.io/data/core/activation/authoring/destinations
@@ -144,37 +146,36 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 ## 步骤3:创建消息转换模板 — 使用模板语言指定消息输出格式 {#create-transformation-template}
 
-您必须根据目标支持的负载创建一个模板，以将导出数据的格式从AdobeXDM格式转换为目标支持的格式。 请参阅[使用模板语言进行身份、属性和区段成员转换](./message-format.md#using-templating)部分中的模板示例，并使用Adobe提供的[模板创作工具](./create-template.md)。
+您必须根据目标支持的负载创建一个模板，以将导出数据的格式从AdobeXDM格式转换为目标支持的格式。 请参阅部分中的模板示例 [对身份、属性和区段成员资格转换使用模板语言](./message-format.md#using-templating) 并使用 [模板创作工具](./create-template.md) 由Adobe提供。
 
 构建适合您的消息转换模板后，将其添加到在步骤1中创建的服务器和模板配置中。
 
 ## 步骤4:创建受众元数据配置 {#create-audience-metadata-configuration}
 
-对于某些目标，目标SDK要求您配置受众元数据配置，以编程方式创建、更新或删除目标中的受众。 有关何时需要设置此配置以及如何设置此配置的信息，请参阅[受众元数据管理](./audience-metadata-management.md)。
+对于某些目标，目标SDK要求您配置受众元数据配置，以编程方式创建、更新或删除目标中的受众。 请参阅 [受众元数据管理](./audience-metadata-management.md) 有关何时需要设置此配置以及如何进行此配置的信息。
 
-如果您使用受众元数据配置，则必须将其连接到在步骤2中创建的目标配置。 将受众元数据配置的实例ID添加到目标配置中，作为`audienceTemplateId`。
+如果您使用受众元数据配置，则必须将其连接到在步骤2中创建的目标配置。 将受众元数据配置的实例ID添加到目标配置中，如 `audienceTemplateId`.
 
 ## 步骤5:创建凭据配置/设置身份验证 {#set-up-authentication}
 
-根据您在上述目标配置中指定的是`"authenticationRule": "CUSTOMER_AUTHENTICATION"`还是`"authenticationRule": "PLATFORM_AUTHENTICATION"`，可以使用`/destination`或`/credentials`端点设置目标的身份验证。
+取决于您是否指定 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 或 `"authenticationRule": "PLATFORM_AUTHENTICATION"` 在上述目标配置中，您可以使用 `/destination` 或 `/credentials` 端点。
 
-* **最常见的情况**:如果您在目 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 标配置中选择，并且目标支持OAuth 2身份验证方法，请读 [取OAuth 2身份验证](./oauth2-authentication.md)。
-* 如果您选择了`"authenticationRule": "PLATFORM_AUTHENTICATION"`，请参阅参考文档中的[凭据配置](./credentials-configuration.md) 。
+* **最常见案例**:如果已选择 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 在目标配置中，您的目标支持OAuth 2身份验证方法，请阅读 [OAuth 2身份验证](./oauth2-authentication.md).
+* 如果已选择 `"authenticationRule": "PLATFORM_AUTHENTICATION"`，请参阅 [凭据配置](./credentials-configuration.md) （在参考文档中）。
 
 ## 步骤6:测试目标 {#test-destination}
 
-使用上述步骤中的配置端点设置目标后，可以使用[目标测试工具](./create-template.md)测试Adobe Experience Platform与目标之间的集成。
+使用上一步中的配置端点设置目标后，您可以使用 [目标测试工具](./create-template.md) 以测试Adobe Experience Platform与您的目标之间的集成。
 
 在测试目标的过程中，您必须使用Experience PlatformUI创建区段，然后才能将区段激活到目标。 有关如何在Experience Platform中创建区段的说明，请参阅以下两个资源：
 
 * [创建区段文档页面](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html?lang=en#create-segment)
 * [创建区段视频演练](https://experienceleague.adobe.com/docs/platform-learn/tutorials/segments/create-segments.html?lang=en)
 
-
 ## 步骤7:发布目标 {#publish-destination}
 
-配置并测试目标后，使用[目标发布API](./destination-publish-api.md)将配置提交给Adobe以供审核。
+配置和测试目标后，请使用 [目标发布API](./destination-publish-api.md) 将配置提交到Adobe以供审核。
 
 ## 步骤8:记录目标 {#document-destination}
 
-如果您是创建[产品化集成](./overview.md#productized-custom-integrations)的独立软件供应商(ISV)或系统集成商(SI)，请使用[自助服务文档流程](./docs-framework/documentation-instructions.md)为[Experience League目标目录](/help/destinations/catalog/overview.md)中的目标创建产品文档页面。
+如果您是独立软件供应商(ISV)或系统集成商(SI)，创建 [产品化集成](./overview.md#productized-custom-integrations)，则使用 [自助文档流程](./docs-framework/documentation-instructions.md) 要在 [Experience League目标目录](/help/destinations/catalog/overview.md).
