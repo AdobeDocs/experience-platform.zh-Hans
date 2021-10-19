@@ -5,10 +5,10 @@ title: '使用API进行边缘分段 '
 topic-legacy: developer guide
 description: 本文档包含有关如何将边缘分段与Adobe Experience Platform Segmentation Service API结合使用的示例。
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: c1dc75d94774eff8ad9a7374b1fa158f737dd5a4
+source-git-commit: c89971668839555347e9b84c7c0a4ff54a394c1a
 workflow-type: tm+mt
-source-wordcount: '636'
-ht-degree: 3%
+source-wordcount: '917'
+ht-degree: 2%
 
 ---
 
@@ -16,50 +16,47 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->以下文档说明了如何使用API执行边缘分段。 有关使用UI执行边缘分段的信息，请阅读[边缘分段UI指南](../ui/edge-segmentation.md)。 此外，边缘分段当前为测试版。 文档和功能可能会发生变化。
+>以下文档说明了如何使用API执行边缘分段。 有关使用UI执行边缘分段的信息，请阅读 [边缘分段UI指南](../ui/edge-segmentation.md). 此外，边缘分段当前为测试版。 文档和功能可能会发生变化。
 
 边缘分段功能可以即时在边缘上评估Adobe Experience Platform中的区段，从而实现同一页面和下一页面的个性化用例。
 
 ## 快速入门
 
-本开发人员指南要求您对与边缘分割相关的各种[!DNL Adobe Experience Platform]服务有一定的了解。 在开始本教程之前，请查阅以下服务的文档：
+本开发人员指南需要对 [!DNL Adobe Experience Platform] 与边缘分段相关的服务。 在开始本教程之前，请查阅以下服务的文档：
 
 - [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的消费者用户档案。
-- [[!DNL Segmentation]](../home.md):提供根据数据创建区段和受众的 [!DNL Real-time Customer Profile] 功能。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):用于组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [[!DNL Segmentation]](../home.md):提供从 [!DNL Real-time Customer Profile] 数据。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
 
-要成功调用任何Experience PlatformAPI端点，请阅读[Platform API入门](../../landing/api-guide.md)中的指南，了解所需的标头以及如何读取示例API调用。
+要成功调用任何Experience PlatformAPI端点，请阅读 [Platform API快速入门](../../landing/api-guide.md) 以了解所需的标头以及如何读取示例API调用。
 
 ## 边缘分段查询类型 {#query-types}
 
 要使用边缘分段来评估区段，查询必须符合以下准则：
 
-| 查询类型 | 详细信息 |
-| ---------- | ------- |
-| 传入点击 | 任何引用无时间限制的单个传入事件的区段定义。 |
-| 引用用户档案的传入点击 | 任何引用单个传入事件（无时间限制）和一个或多个用户档案属性的区段定义。 |
-| 时间窗口为24小时的传入点击 | 在24小时内引用单个传入事件的任何区段定义 |
-| 引用时间窗口为24小时的用户档案的传入点击 | 在24小时内引用单个传入事件以及一个或多个用户档案属性的任何区段定义 |
-
-{style=&quot;table-layout:auto&quot;}
-
-以下查询类型是&#x200B;**not**，当前受边缘分段支持：
-
-| 查询类型 | 详细信息 |
-| ---------- | ------- |
-| 多个事件 | 如果查询包含多个事件，则无法使用边缘分段来评估该查询。 |
-| 频度查询 | 任何区段定义，指发生至少特定次数的事件。 |
-| 引用用户档案的频率查询 | 任何区段定义，指发生至少特定次数且具有一个或多个用户档案属性的事件。 |
+| 查询类型 | 详细信息 | 示例 |
+| ---------- | ------- | ------- |
+| 单个事件 | 任何引用无时间限制的单个传入事件的区段定义。 | 向购物车中添加了商品的用户。 |
+| 引用用户档案的单个事件 | 引用一个或多个用户档案属性以及无时间限制的单个传入事件的任何区段定义。 | 访问主页的美国人。 |
+| 使用配置文件属性否定单个事件 | 任何引用否定的单个传入事件和一个或多个用户档案属性的区段定义 | 在美国生活并拥有 **not** 访问主页。 |
+| 在24小时时间范围内单个事件 | 在24小时内引用单个传入事件的任何区段定义。 | 过去24小时内访问主页的人员。 |
+| 在24小时的时间范围内具有配置文件属性的单个事件 | 在24小时内引用一个或多个用户档案属性以及否定的单个传入事件的任何区段定义。 | 过去24小时内访问主页的美国人。 |
+| 在24小时时间范围内使用配置文件属性否定单个事件 | 在24小时内引用一个或多个用户档案属性以及否定的单个传入事件的任何区段定义。 | 在美国生活并拥有 **not** 在过去24小时内访问了主页。 |
+| 24小时时间范围内的频度事件 | 任何区段定义，指在24小时内发生一定次数的事件。 | 访问主页的人员 **至少** 过去24小时里五次。 |
+| 在24小时时间范围内具有用户档案属性的频率事件 | 任何区段定义，指一个或多个用户档案属性以及在24小时内发生一定次数的事件。 | 访问主页的美国人 **至少** 过去24小时里五次。 |
+| 在24小时的时间范围内使用用户档案否定频率事件 | 任何区段定义，指一个或多个用户档案属性以及在24小时的时间范围内发生一定次数的否定事件。 | 未访问主页的人员 **更多** 超过5次。 |
+| 在24小时的时间配置文件内多次传入的点击 | 指在24小时内发生的多个事件的任何区段定义。 | 访问主页的人员 **或** 在过去24小时内访问了结帐页面。 |
+| 在24小时内使用用户档案发生多个事件 | 任何区段定义，指在24小时内发生的一个或多个用户档案属性和多个事件。 | 访问主页的美国人 **和** 在过去24小时内访问了结帐页面。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 ## 检索为边缘分段启用的所有区段
 
-您可以通过向`/segment/definitions`端点发出GET请求，来检索IMS组织内为边缘分段启用的所有区段的列表。
+您可以通过向 `/segment/definitions` 端点。
 
 **API格式**
 
-要检索为边缘分段启用的区段，必须在请求路径中包含查询参数`evaluationInfo.synchronous.enabled=true`。
+要检索为边缘分段启用的区段，必须包含查询参数 `evaluationInfo.synchronous.enabled=true` 在请求路径中。
 
 ```http
 GET /segment/definitions?evaluationInfo.synchronous.enabled=true
@@ -78,7 +75,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回IMS组织中为边缘分段启用的区段数组。 有关返回的区段定义的详细信息，请参阅[区段定义端点指南](./segment-definitions.md)。
+成功的响应会返回IMS组织中为边缘分段启用的区段数组。 有关返回的区段定义的更多详细信息，请参阅 [segment definitions endpoint buide](./segment-definitions.md).
 
 ```json
 {
@@ -167,7 +164,7 @@ curl -X GET \
 
 ## 创建已启用边缘分段的区段
 
-通过向`/segment/definitions`端点发出与上面列出的[边缘分段查询类型之一匹配的POST请求，可以创建为边缘分段启用的区段。](#query-types)
+您可以通过向 `/segment/definitions` 与其中一个 [上面列出的边缘分段查询类型](#query-types).
 
 **API格式**
 
@@ -179,7 +176,7 @@ POST /segment/definitions
 
 >[!NOTE]
 >
->以下示例是创建区段的标准请求。 有关创建区段定义的更多信息，请阅读[创建区段](../tutorials/create-a-segment.md)的教程。
+>以下示例是创建区段的标准请求。 有关创建区段定义的更多信息，请阅读 [创建区段](../tutorials/create-a-segment.md).
 
 ```shell
 curl -X POST \
@@ -250,4 +247,4 @@ curl -X POST \
 
 现在，您已了解如何创建启用了边缘分段的区段，接下来可以使用这些区段来启用同页和下一页个性化用例。
 
-要了解如何使用Adobe Experience Platform用户界面执行类似操作和处理区段，请访问[区段生成器用户指南](../ui/segment-builder.md)。
+要了解如何使用Adobe Experience Platform用户界面执行类似操作和处理区段，请访问 [区段生成器用户指南](../ui/segment-builder.md).
