@@ -2,100 +2,100 @@
 keywords: Experience Platform；主页；热门主题
 solution: Experience Platform
 title: 导入和使用外部受众
-description: 请阅读本教程，了解如何将外部受众与Adobe Experience Platform一起使用。
+description: 请阅读本教程，了解如何将外部受众与Adobe Experience Platform结合使用。
 topic-legacy: tutorial
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 82aa38c7bce05faeea5a9f42d0d86776737e04be
+source-git-commit: 8325ae6fd7d0013979e80d56eccd05b6ed6f5108
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '809'
 ht-degree: 0%
 
 ---
 
 # 导入和使用外部受众
 
-Adobe Experience Platform支持导入外部受众的功能，该功能随后可用作新区段定义的组件。 本文档提供了设置Experience Platform以导入和使用外部受众的教程。
+Adobe Experience Platform支持导入外部受众的功能，该功能随后可用作新区段定义的组件。 本文档提供了设置导入和使用外部受众的Experience Platform的教程。
 
-## 入门指南
+## 快速入门
 
-本教程要求对创建受众段时涉及的各种[!DNL Adobe Experience Platform]服务有一定的了解。 在开始本教程之前，请查阅以下服务的文档：
+本教程需要对 [!DNL Adobe Experience Platform] 创建受众区段时涉及的服务。 在开始本教程之前，请查阅以下服务的文档：
 
-- [分段服务](../home.md):允许您根据实时受众用户档案数据构建客户细分。
-- [实时客户用户档案](../../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
-- [体验数据模型(XDM)](../../xdm/home.md):平台通过该标准化框架组织客户体验数据。
-- [数据集](../../catalog/datasets/overview.md):存储和管理结构，用于Experience Platform中的数据持久性。
-- [流摄取](../../ingestion/streaming-ingestion/overview.md):Experience Platform如何从客户端和服务器端设备实时摄取和存储数据。
+- [Segmentation Service](../home.md):允许您根据实时客户资料数据构建受众区段。
+- [实时客户资料](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+- [体验数据模型(XDM)](../../xdm/home.md):Platform用来组织客户体验数据的标准化框架。 为了最好地利用分段，请确保根据 [数据建模最佳实践](../../xdm/schema/best-practices.md).
+- [数据集](../../catalog/datasets/overview.md):Experience Platform中数据持久性的存储和管理结构。
+- [流式摄取](../../ingestion/streaming-ingestion/overview.md):Experience Platform如何实时从客户端和服务器端设备摄取和存储数据。
 
-### 细分数据与细分元数据
+### 区段数据与区段元数据
 
-在开始导入和使用外部受众之前，请务必了解区段数据和区段元数据之间的差异。
+在开始导入和使用外部受众之前，请务必了解区段数据与区段元数据之间的差异。
 
-区段用户档案是指符合区段资格标准的受众，因此是该区段的一部分。
+区段数据是指符合区段资格标准的用户档案，因此属于受众。
 
-区段元数据是有关区段本身的信息，包括名称、描述、表达式（如果适用）、创建日期、上次修改日期和ID。 该ID将区段元数据链接到符合区段资格且是所生成用户档案的一部分的各个受众。
+区段元数据是有关区段本身的信息，包括名称、描述、表达式（如果适用）、创建日期、上次修改日期和ID。 该ID可将区段元数据链接到符合区段资格条件且属于所生成受众一部分的个人用户档案。
 
-| 细分数据 | 区段元数据 |
+| 区段数据 | 区段元数据 |
 | ------------ | ---------------- |
-| 满足细分资格的用户档案 | 有关区段本身的信息 |
+| 符合区段资格条件的用户档案 | 有关区段本身的信息 |
 
-## 为外部命名空间创建标识受众
+## 为外部受众创建标识命名空间
 
-使用外部受众的第一步是创建身份命名空间。 身份命名空间允许平台关联区段的来源。
+使用外部受众的第一步是创建身份命名空间。 身份命名空间允许平台关联区段源自的位置。
 
-要创建身份命名空间，请按照[身份命名空间指南](../../identity-service/namespaces.md#manage-namespaces)中的说明操作。 创建身份命名空间时，将源详细信息添加到身份命名空间，并将其[!UICONTROL Type]标记为&#x200B;**[!UICONTROL 非人员标识符]**。
+要创建身份命名空间，请按照 [identity namespace指南](../../identity-service/namespaces.md#manage-namespaces). 创建身份命名空间时，将源详细信息添加到身份命名空间，并标记其 [!UICONTROL 类型] as a **[!UICONTROL 非人员标识符]**.
 
 ![](../images/tutorials/external-audiences/identity-namespace-info.png)
 
-## 为区段元数据创建模式
+## 为区段元数据创建架构
 
-创建身份命名空间后，您需要为要创建的区段创建新模式。
+创建身份命名空间后，您需要为要创建的区段创建新架构。
 
-要开始合成模式，请首先在左侧导航栏上选择&#x200B;**[!UICONTROL 模式]**，然后在模式工作区右上角选择&#x200B;**[!UICONTROL 创建模式]**。 从此处，选择&#x200B;**[!UICONTROL 浏览]**&#x200B;以查看可用模式类型的完整选择。
+要开始构建架构，请首先选择 **[!UICONTROL 模式]** 在左侧导航栏上，然后是 **[!UICONTROL 创建架构]** 模式工作区的右上角。 从此处选择 **[!UICONTROL 浏览]** 以查看可用架构类型的完整选择。
 
 ![](../images/tutorials/external-audiences/create-schema-browse.png)
 
-由于您正在创建区段定义（它是预定义的类），因此请选择&#x200B;**[!UICONTROL 使用现有类]**。 现在，选择&#x200B;**[!UICONTROL 区段定义]**&#x200B;类，然后选择&#x200B;**[!UICONTROL 分配类]**。
+由于您创建的区段定义是预定义的类，因此请选择 **[!UICONTROL 使用现有类]**. 现在，选择 **[!UICONTROL 区段定义]** 类，后跟 **[!UICONTROL 分配类]**.
 
 ![](../images/tutorials/external-audiences/assign-class.png)
 
-创建模式后，您需要指定将包含区段ID的字段。 此字段应标记为主标识并分配给您之前创建的命名空间。
+现在，您的架构已创建，接下来将需要指定包含区段ID的字段。 此字段应标记为主标识，并分配给您之前创建的命名空间。
 
 ![](../images/tutorials/external-audiences/mark-primary-identifier.png)
 
-在将`_id`字段标记为主标识后，选择模式的标题，然后选择标记为&#x200B;**[!UICONTROL 用户档案]**&#x200B;的切换键。 选择&#x200B;**[!UICONTROL 启用]**&#x200B;以启用[!DNL Real-time Customer Profile]的模式。
+在将 `_id` 字段作为主标识，选择架构的标题，然后选择标记为的切换开关 **[!UICONTROL 用户档案]**. 选择 **[!UICONTROL 启用]** 为 [!DNL Real-time Customer Profile].
 
 ![](../images/tutorials/external-audiences/schema-profile.png)
 
-现在，此模式已启用用户档案，主标识已分配给您创建的非人身标识命名空间。 因此，这意味着使用此模式导入到平台中的细分元数据将被引入用户档案中，而不会与其他与人相关的用户档案数据合并。
+现在，已为用户档案启用此架构，并将主标识分配给您创建的非人员标识命名空间。 因此，这意味着使用此架构导入到平台的区段元数据将被摄取到用户档案，而不会与其他与人员相关的用户档案数据合并。
 
-## 为模式创建数据集
+## 为架构创建数据集
 
-配置模式后，您需要为区段元数据创建数据集。
+配置架构后，您将需要为区段元数据创建数据集。
 
-要创建数据集，请按照[数据集用户指南](../../catalog/datasets/user-guide.md#create)中的说明操作。 您将希望使用之前创建的模式，按照&#x200B;**[!UICONTROL 从模式]**&#x200B;创建数据集选项进行操作。
+要创建数据集，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#create). 您将希望跟踪 **[!UICONTROL 从架构创建数据集]** 选项。
 
 ![](../images/tutorials/external-audiences/select-schema.png)
 
-创建数据集后，请继续按照[数据集用户指南](../../catalog/datasets/user-guide.md#enable-profile)中的说明，启用此数据集以进行实时客户用户档案。
+创建数据集后，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#enable-profile) 为“实时客户资料”启用此数据集。
 
 ![](../images/tutorials/external-audiences/dataset-profile.png)
 
 ## 设置和导入受众数据
 
-启用数据集后，现在可以通过UI或使用Experience PlatformAPI将数据发送到平台。 要将此数据引入平台，您需要创建流连接。
+启用数据集后，现在可以通过用户界面或使用Experience PlatformAPI将数据发送到平台。 要将此数据摄取到平台，您需要创建流连接。
 
-要创建流连接，您可以按照[API教程](../../sources/tutorials/api/create/streaming/http.md)或[UI教程](../../sources/tutorials/ui/create/streaming/http.md)中的说明进行操作。
+要创建流连接，您可以按照 [API教程](../../sources/tutorials/api/create/streaming/http.md) 或 [UI教程](../../sources/tutorials/ui/create/streaming/http.md).
 
-创建流连接后，您将有权访问可将数据发送到的唯一流端点。 要了解如何将数据发送到这些端点，请阅读有关流记录数据](../../ingestion/tutorials/streaming-record-data.md#ingest-data)的[教程。
+创建流连接后，您将有权访问唯一的流端点，您可以将数据发送到该端点。 要了解如何向这些端点发送数据，请阅读 [流记录数据教程](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
 
 ![](../images/tutorials/external-audiences/get-streaming-endpoint.png)
 
-## 使用导入的受众构建区段
+## 使用导入的受众生成区段
 
-设置导入的受众后，即可将其用作分段过程的一部分。 要查找外部受众，请转至“区段生成器”，然后在&#x200B;**[!UICONTROL 字段]**&#x200B;部分选择&#x200B;**[!UICONTROL 受众]**&#x200B;选项卡。
+设置导入的受众后，即可将其用作分段流程的一部分。 要查找外部受众，请转到区段生成器，然后选择 **[!UICONTROL 受众]** 选项卡 **[!UICONTROL 字段]** 中。
 
 ![](../images/tutorials/external-audiences/external-audiences.png)
 
 ## 后续步骤
 
-现在，您可以在区段中使用外部受众，因此可以使用区段生成器创建区段。 要了解如何创建区段，请阅读[有关创建区段的教程](./create-a-segment.md)。
+现在，您可以在区段中使用外部受众，接下来可以使用区段生成器创建区段。 要了解如何创建区段，请阅读 [创建区段的教程](./create-a-segment.md).

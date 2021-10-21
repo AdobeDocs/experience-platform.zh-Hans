@@ -5,9 +5,9 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: d65bcf62f0de29dc293a1a1313178a408613a024
+source-git-commit: 8325ae6fd7d0013979e80d56eccd05b6ed6f5108
 workflow-type: tm+mt
-source-wordcount: '1667'
+source-wordcount: '1691'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 - [[!DNL Segmentation Service]](../home.md): [!DNL Segmentation Service] 允许您将存储在 [!DNL Experience Platform] 与属于较小群组的个人（例如客户、潜在客户、用户或组织）相关。
 - [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 - [[!DNL Adobe Experience Platform Identity Service]](../../identity-service/home.md):通过将来自被摄取到的不同数据源的身份桥接到 [!DNL Platform].
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。 为了最好地利用分段，请确保根据 [数据建模最佳实践](../../xdm/schema/best-practices.md).
 
 另外，还必须了解本文档中使用的两个关键术语，并了解它们之间的区别：
 - **区段定义**:用于描述目标受众的关键特征或行为的规则集。
