@@ -1,9 +1,10 @@
 ---
 title: Reactor API中的关系
 description: 了解如何在Reactor API中建立资源关系，包括每个资源的关系要求。
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+exl-id: 23976978-a639-4eef-91b6-380a29ec1c14
+source-git-commit: 7e4bc716e61b33563e0cb8059cb9f1332af7fd36
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '807'
 ht-degree: 10%
 
 ---
@@ -17,16 +18,16 @@ Reactor API中的资源通常彼此相关。 本文档概述了如何在API中�
 无论是必需关系还是可选关系，在创建相关资源时，系统都会自动建立关系，或者必须手动创建关系。 在手动创建关系时，根据相关资源，可以使用两种方法：
 
 * [按负载创建](#payload)
-* [按URL创建](#url) （仅适用于库）
+* [按URL创建](#url) （仅限库）
 
-有关每种资源类型的兼容关系列表以及在适用时建立这些关系所需的方法，请参阅[关系要求](#requirements)中的部分。
+请参阅 [关系要求](#requirements) 以获取每种资源类型的兼容关系列表，以及在适用时建立这些关系所需的方法。
 
 ## 按负载创建关系 {#payload}
 
-在最初创建资源时，必须手动建立某些关系。 要实现此目的，您必须在首次创建父资源时在请求有效负载中提供一个`relationship`对象。 这些关系的示例包括：
+在最初创建资源时，必须手动建立某些关系。 要实现此目的，您必须提供 `relationship` 对象。 这些关系的示例包括：
 
-* [创建具有所](../endpoints/data-elements.md#create) 需扩展的数据元素
-* [创建具](../endpoints/environments.md#create) 有所需主机关系的环境
+* [创建数据元素](../endpoints/data-elements.md#create) 和所需的扩展
+* [创建环境](../endpoints/environments.md#create) 与所需的主机关系
 
 **API格式**
 
@@ -43,7 +44,7 @@ POST /properties/{PROPERTY_ID}/{RESOURCE_TYPE}
 
 **请求**
 
-以下请求将创建一个新的`rule_component`，与`rules`和`extension`建立关系。
+以下请求会创建新 `rule_component`，与 `rules` 和 `extension`.
 
 ```shell
 curl -X POST \
@@ -83,16 +84,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `relationships` | 按有效负载创建关系时必须提供的对象。 此对象中的每个键都表示特定的关系类型。 在上例中，建立了`extension`和`rules`关系，这些关系对`rule_components`是特定的。 有关不同资源的兼容关系类型的更多信息，请参阅[按资源划分的关系要求部分](#relationship-requirements-by-resource)。 |
-| `data` | `relationship`对象下提供的每个关系类型都必须包含`data`属性，该属性引用正在与之建立关系的资源的`id`和`type`。 您可以通过将`data`属性格式化为对象数组来创建与同一类型的多个资源的关系，每个对象都包含适用资源的`id`和`type`。 |
-| `id` | 资源的唯一ID。 每个`id`都必须附带一个同级`type`属性，以指示相关资源的类型。 |
-| `type` | 同级`id`字段引用的资源类型。 接受的值包括`data_elements`、`rules`、`extensions`和`environments`。 |
+| `relationships` | 按有效负载创建关系时必须提供的对象。 此对象中的每个键都表示特定的关系类型。 在上述示例中， `extension` 和 `rules` 建立关系，其中 `rule_components`. 有关不同资源的兼容关系类型的更多信息，请参阅 [按资源划分的关系需求](#relationship-requirements-by-resource). |
+| `data` | 在 `relationship` 对象必须包含 `data` 属性，引用 `id` 和 `type` 与之建立关系的资源。 您可以通过格式设置 `data` 属性作为对象数组，其中每个对象都包含 `id` 和 `type` 资源。 |
+| `id` | 资源的唯一ID。 每个 `id` 必须和兄弟姐妹一起 `type` 属性，指示相关资源的类型。 |
+| `type` | 同级引用的资源类型 `id` 字段。 接受的值包括 `data_elements`, `rules`, `extensions`和 `environments`. |
 
 {style=&quot;table-layout:auto&quot;}
 
 ## 通过URL创建关系 {#url}
 
-与其他资源不同，库通过其自己的专用`/relationship`端点建立关系。 示例包括：
+与其他资源不同，图书馆通过自己的专门工作建立关系 `/relationship` 端点。 示例包括：
 
 * [将扩展、数据元素和规则添加到库](../endpoints/libraries.md#add-resources)
 * [将库分配到环境](../endpoints/libraries.md#environment)
@@ -107,11 +108,11 @@ POST /properties/{PROPERTY_ID}/libraries/{LIBRARY_ID}/relationships/{RESOURCE_TY
 | --- | --- |
 | `{PROPERTY_ID}` | 库所属的属性的ID。 |
 | `{LIBRARY_ID}` | 要为其创建关系的库的ID。 |
-| `{RESOURCE_TYPE}` | 关系所定向的资源类型。 可用值包括`environment`、`data_elements`、`extensions`和`rules`。 |
+| `{RESOURCE_TYPE}` | 关系所定向的资源类型。 可用值包括 `environment`, `data_elements`, `extensions`和 `rules`. |
 
 **请求**
 
-以下请求使用库的`/relationships/environment`端点创建与环境的关系。
+以下请求使用 `/relationships/environment` 用于库创建与环境关系的端点。
 
 ```shell
 curl -X POST \
@@ -131,9 +132,9 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `data` | 引用关系目标资源`id`和`type`的对象。 如果要与同一类型的多个资源（如`extensions`和`rules`）创建关系，则`data`属性必须格式化为对象数组，每个对象都包含适用资源的`id`和`type`。 |
-| `id` | 资源的唯一ID。 每个`id`都必须附带一个同级`type`属性，以指示相关资源的类型。 |
-| `type` | 同级`id`字段引用的资源类型。 接受的值包括`data_elements`、`rules`、`extensions`和`environments`。 |
+| `data` | 引用 `id` 和 `type` 关系的目标资源。 如果您创建的关系涉及多个同一类型的资源(例如 `extensions` 和 `rules`)、 `data` 属性必须格式化为对象数组，每个对象都包含 `id` 和 `type` 资源。 |
+| `id` | 资源的唯一ID。 每个 `id` 必须和兄弟姐妹一起 `type` 属性，指示相关资源的类型。 |
+| `type` | 同级引用的资源类型 `id` 字段。 接受的值包括 `data_elements`, `rules`, `extensions`和 `environments`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -223,7 +224,7 @@ curl -X POST \
 
 {style=&quot;table-layout:auto&quot;}
 
-### 主机
+### 托管
 
 | 关系 | 必需 | 按负载创建 | 按URL创建 |
 | :--- | :---: | :---: | :---: |
@@ -294,3 +295,11 @@ curl -X POST \
 | `property` | ✓ |  |  |
 | `origin` | ✓ |  |  |
 | `rule_components` |  |  |  |
+
+### 秘密
+
+| 关系 | 必需 | 按负载创建 | 按URL创建 |
+| :--- | :---: | :---: | :---: |
+| `property` | ✓ |  | ✓ |
+| `environment` | ✓ | ✓ |  |
+

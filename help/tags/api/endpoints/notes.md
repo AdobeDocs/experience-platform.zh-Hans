@@ -1,9 +1,10 @@
 ---
 title: Notes端点
 description: 了解如何在Reactor API中调用/notes端点。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: fa3bebc0-215e-4515-87b9-d195c9ab76c1
+source-git-commit: 7e4bc716e61b33563e0cb8059cb9f1332af7fd36
 workflow-type: tm+mt
-source-wordcount: '526'
+source-wordcount: '527'
 ht-degree: 7%
 
 ---
@@ -18,7 +19,7 @@ ht-degree: 7%
 * 向其他团队成员提供说明
 * 记录历史上下文
 
-Reactor API中的`/notes`端点允许您以编程方式管理这些注释。
+的 `/notes` reactor API中的端点允许您以编程方式管理这些注释。
 
 注释可应用以下资源：
 
@@ -28,6 +29,7 @@ Reactor API中的`/notes`端点允许您以编程方式管理这些注释。
 * [属性](./properties.md)
 * [规则组件](./rule-components.md)
 * [规则](./rules.md)
+* [秘密](./secrets.md)
 
 这六种类型统称为“显着”资源。 删除显着资源时，也会删除其关联的注释。
 
@@ -39,11 +41,11 @@ Reactor API中的`/notes`端点允许您以编程方式管理这些注释。
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索注释列表 {#list}
 
-您可以通过将`/notes`附加到相关资源的GET请求路径，来检索资源的注释列表。
+您可以通过附加来检索资源的注释列表 `/notes` 到相关资源的GET请求的路径。
 
 **API格式**
 
@@ -54,7 +56,7 @@ GET /{RESOURCE_TYPE}/{RESOURCE_ID}/notes
 | 参数 | 描述 |
 | --- | --- |
 | `RESOURCE_TYPE` | 您为获取注释的资源类型。 必须是以下值之一： <ul><li>`data_elements`</li><li>`extensions`</li><li>`libraries`</li><li>`properties`</li><li>`rule_components`</li><li>`rules`</li></ul> |
-| `RESOURCE_ID` | 要列出其注释的特定资源的`id`。 |
+| `RESOURCE_ID` | 的 `id` 要列出其注释的特定资源。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -129,7 +131,7 @@ GET /notes/{NOTE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `NOTE_ID` | 要查找的注释的`id`。 |
+| `NOTE_ID` | 的 `id` 你想查的便笺。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -185,7 +187,7 @@ curl -X GET \
 >
 >在创建新注释之前，请记住，注释不可编辑，删除注释的唯一方法是删除其相应的资源。
 
-您可以通过将`/notes`附加到相关资源的POST请求路径来创建新注释。
+您可以通过附加 `/notes` 到相关资源的POST请求的路径。
 
 **API格式**
 
@@ -196,7 +198,7 @@ POST /{RESOURCE_TYPE}/{RESOURCE_ID}/notes
 | 参数 | 描述 |
 | --- | --- |
 | `RESOURCE_TYPE` | 要为其创建注释的资源类型。 必须是以下值之一： <ul><li>`data_elements`</li><li>`extensions`</li><li>`libraries`</li><li>`properties`</li><li>`rule_components`</li><li>`rules`</li></ul> |
-| `RESOURCE_ID` | 要为其创建注释的特定资源的`id`。 |
+| `RESOURCE_ID` | 的 `id` 要为其创建注释的特定资源。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -223,8 +225,8 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `type` | **（必需）** 要更新的资源类型。对于此端点，值必须为`notes`。 |
-| `attributes.text` | **（必需）** 包含注释的文本。每个注释限制为512个Unicode字符。 |
+| `type` | **（必需）** 要更新的资源类型。 对于此端点，值必须为 `notes`. |
+| `attributes.text` | **（必需）** 包含注释的文本。 每个注释限制为512个Unicode字符。 |
 
 {style=&quot;table-layout:auto&quot;}
 

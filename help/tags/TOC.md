@@ -4,10 +4,10 @@ user-guide-title: 标记帮助
 breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
-source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
+source-git-commit: 7e4bc716e61b33563e0cb8059cb9f1332af7fd36
 workflow-type: tm+mt
-source-wordcount: '378'
-ht-degree: 69%
+source-wordcount: '380'
+ht-degree: 68%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 69%
 # 标记 {#tags}
 
 * [标记概述](./home.md)
-* 入门指南 {#get-started}
+* 快速入门{#get-started}
    * [快速入门指南](./quick-start/quick-start.md)
    * [实施指南](./quick-start/implementation-guides.md)
 * 数据收集UI {#ui}
@@ -51,7 +51,7 @@ ht-degree: 69%
    * [部署JavaScript标记以管理客户同意](./ui/client-side/consent.md)
    * [内容安全策略(CSP)支持](./ui/client-side/content-security-policy.md)
    * [子资源完整性(SRI)支持](./ui/client-side/sri.md)
-* 事件转发{#event-forwarding}
+* 事件转发 {#event-forwarding}
    * [概述](./ui/event-forwarding/overview.md)
    * [快速入门](./ui/event-forwarding/getting-started.md)
 * 管理 {#admin}
@@ -67,7 +67,7 @@ ht-degree: 69%
          * [概述](./extensions/web/analytics/overview.md)
          * [共享模块](./extensions/web/analytics/shared-modules.md)
          * [发行说明](./extensions/web/analytics/release-notes.md)
-      * Adobe Analytics产品字符串{#product-string}
+      * Adobe Analytics Product String {#product-string}
          * [概述](./extensions/web/product-string/overview.md)
          * [发行说明](./extensions/web/product-string/release-notes.md)
       * Adobe Audience Manager {#audience-manager}
@@ -80,22 +80,22 @@ ht-degree: 69%
       * Adobe Experience Cloud ID 服务 {#id-service}
          * [概述](./extensions/web/id-service/overview.md)
          * [发行说明](./extensions/web/id-service/release-notes.md)
-      * Adobe Experience Platform演示{#platform-demo}
+      * Adobe Experience Platform演示 {#platform-demo}
          * [概述](./extensions/web/platform-demo/overview.md)
       * Adobe Experience Platform Web SDK {#sdk}
          * [概述](./extensions/web/sdk/overview.md)
       * Adobe Experience Platform Cloud Connector {#cloud-connector}
          * [概述](./extensions/web/cloud-connector/overview.md)
-      * Adobe Experience Manager资产分析{#asset-insights}
+      * Adobe Experience Manager资产分析 {#asset-insights}
          * [概述](./extensions/web/asset-insights/overview.md)
          * [发行说明](./extensions/web/asset-insights/release-notes.md)
-      * Adobe Medium音频和视频分析{#media-analytics}
+      * Adobe Medium用于音频和视频的Analytics {#media-analytics}
          * [概述](./extensions/web/media-analytics/overview.md)
          * [发行说明](./extensions/web/media-analytics/release-notes.md)
-      * Adobe MediumAnalytics(3.x SDK){#media-analytics-3x}
+      * Adobe Medium分析(3.x SDK) {#media-analytics-3x}
          * [概述](./extensions/web/media-analytics-3x/overview.md)
          * [发行说明](./extensions/web/media-analytics-3x/release-notes.md)
-      * Adobe隐私{#privacy}
+      * Adobe隐私 {#privacy}
          * [概述](./extensions/web/privacy/overview.md)
       * Adobe Target {#target}
          * [概述](./extensions/web/target/overview.md)
@@ -103,7 +103,7 @@ ht-degree: 69%
       * Adobe Target v2 {#target-v2}
          * [概述](./extensions/web/target-v2/overview.md)
          * [发行说明](./extensions/web/target-v2/release-notes.md)
-      * 常用Analytics插件{#plugins}
+      * “常用Analytics插件” {#plugins}
          * [概述](./extensions/web/plugins/overview.md)
          * [发行说明](./extensions/web/plugins/release-notes.md)
       * 核心 {#core}
@@ -113,10 +113,10 @@ ht-degree: 69%
       * [!DNL Marketo Munchkin] {#marketo}
          * [概述](./extensions/web/marketo/overview.md)
          * [发行说明](./extensions/web/marketo/release-notes.md)
-      * [!DNL BrightCove] 视频跟踪  {#brightcove}
+      * [!DNL BrightCove] 视频跟踪 {#brightcove}
          * [概述](./extensions/web/brightcove/overview.md)
          * [发行说明](./extensions/web/brightcove/release-notes.md)
-      * [!DNL YouTube] 视频跟踪扩展  {#youtube}
+      * [!DNL YouTube] 视频跟踪扩展 {#youtube}
          * [概述](./extensions/web/youtube/overview.md)
          * [发行说明](./extensions/web/youtube/release-notes.md)
    * [第三方扩展](./extensions/3rd-party-extensions.md)
@@ -134,7 +134,7 @@ ht-degree: 69%
       * [发布扩展](./extension-dev/submit/release.md)
    * [扩展配置](./extension-dev/configuration.md)
    * [扩展清单](./extension-dev/manifest.md)
-   * Web扩展{#web}
+   * Web扩展 {#web}
       * [扩展流程](./extension-dev/web/flow.md)
       * [库模块格式](./extension-dev/web/format.md)
       * [视图](./extension-dev/web/views.md)
@@ -144,7 +144,7 @@ ht-degree: 69%
       * [数据元素类型](./extension-dev/web/data-element-types.md)
       * [核心模块](./extension-dev/web/core.md)
       * [共享模块](./extension-dev/web/shared.md)
-   * 边缘扩展{#edge}
+   * 边缘扩展 {#edge}
       * [扩展流程](./extension-dev/edge/flow.md)
       * [库模块格式](./extension-dev/edge/format.md)
       * [条件类型](./extension-dev/edge/condition-types.md)
@@ -175,6 +175,7 @@ ht-degree: 69%
       * [注释](./api/endpoints/notes.md)
       * [配置文件](./api/endpoints/profile.md)
       * [搜索](./api/endpoints/search.md)
+      * [秘密](./api/endpoints/secrets.md)
    * 指南 {#guides}
       * [委托描述符ID](./api/guides/delegate-descriptor-ids.md)
       * [加密值](./api/guides/encrypting-values.md)
@@ -184,6 +185,7 @@ ht-degree: 69%
       * [对响应进行排序](./api/guides/sorting.md)
       * [关系](./api/guides/relationships.md)
       * [搜索资源](./api/guides/search.md)
+      * [秘密](./api/guides/secrets.md)
 * [常见问题解答](./faq.md)
 * [术语更新](./term-updates.md)
 * 发行说明 {#release-notes}
