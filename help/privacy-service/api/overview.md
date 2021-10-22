@@ -1,7 +1,7 @@
 ---
 title: Privacy ServiceAPI指南
 description: 了解如何使用Privacy ServiceAPI以编程方式管理受支持Adobe Experience Cloud应用程序的隐私作业。
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 196147e7691010707953561c110a3934fec8ba1b
 workflow-type: tm+mt
 source-wordcount: '265'
 ht-degree: 0%
@@ -30,4 +30,4 @@ Privacy ServiceAPI提供了多个端点，允许您以编程方式管理贵组�
 
 ## 后续步骤
 
-要开始使用架构注册表API进行调用，请阅读 [入门指南](./getting-started.md) 然后，选择一个端点指南以了解如何使用特定端点。
+要开始使用Privacy ServiceAPI进行调用，请阅读 [入门指南](./getting-started.md) 然后，选择一个端点指南以了解如何使用特定端点。
