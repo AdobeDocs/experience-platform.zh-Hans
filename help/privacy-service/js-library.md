@@ -5,7 +5,7 @@ title: Adobe隐私JavaScript库概述
 topic-legacy: overview
 description: Adobe隐私JavaScript库允许您检索数据主体身份以在Privacy Service中使用。
 exl-id: 757bf69e-25bf-4ef9-9787-3e74b213908a
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
 workflow-type: tm+mt
 source-wordcount: '944'
 ht-degree: 6%
@@ -14,44 +14,44 @@ ht-degree: 6%
 
 # Adobe隐私JavaScript库概述
 
-作为数据处理者，Adobe会根据贵公司授予的权限和指示处理个人数据。 作为“数据控制者”，您可以决定 Adobe 代表您处理和存储的个人数据。根据您选择通过Adobe Experience Cloud解决方案发送的信息，Adobe可以存储适用于隐私法规(如[!DNL General Data Protection Regulation](GDPR)和[!DNL California Consumer Privacy Act](CCPA))的隐私信息。 有关Experience Cloud解决方案如何收集私有数据的更多信息，请参阅Adobe Experience Cloud](https://www.adobe.com/cn/privacy/marketing-cloud.html)中的[隐私文档。
+作为数据处理者，Adobe会根据贵公司授予的权限和指示处理个人数据。 作为“数据控制者”，您可以决定 Adobe 代表您处理和存储的个人数据。根据您选择通过Adobe Experience Cloud解决方案发送的信息，Adobe可以存储适用于隐私法规(例如 [!DNL General Data Protection Regulation] (GDPR)和 [!DNL California Consumer Privacy Act] (CCPA)。 请参阅 [Adobe Experience Cloud中的隐私](https://www.adobe.com/cn/privacy/marketing-cloud.html) 有关Experience Cloud解决方案如何收集私有数据的更多信息。
 
-**Adobe隐私JavaScript库**&#x200B;允许数据控制者自动检索由[!DNL Experience Cloud]解决方案为特定域生成的所有数据主体身份。 然后，使用[Adobe Experience Platform Privacy Service](home.md)提供的API，可以使用这些身份为属于这些数据主体的私有数据创建访问和删除请求。
+的 **Adobe隐私JavaScript库** 允许数据控制者自动检索由 [!DNL Experience Cloud] 特定域的解决方案。 使用由提供的API [Adobe Experience Platform Privacy Service](home.md)，则可以使用这些标识为属于这些数据主体的私有数据创建访问和删除请求。
 
 >[!NOTE]
 >
->[!DNL Privacy JS Library]通常只需要在与隐私相关的页面上安装，而不需要安装在网站或域的所有页面上。
+>的 [!DNL Privacy JS Library] 通常只需要在与隐私相关的页面上安装，也不需要在网站或域的所有页面上安装。
 
 ## 函数
 
-[!DNL Privacy JS Library]提供了一些用于管理[!DNL Privacy Service]中身份的函数。 这些函数只能用于管理存储在浏览器中的特定访客身份。 它们不能用于直接向[!DNL Experience Cloud Central Service]提交信息。
+的 [!DNL Privacy JS Library] 提供了在 [!DNL Privacy Service]. 这些函数只能用于管理存储在浏览器中的特定访客身份。 它们不能用于向 [!DNL Experience Cloud Central Service] 直接。
 
 下表概述了库提供的不同功能：
 
 | 函数 | 描述 |
 | --- | --- |
-| `retrieveIdentities` | 返回从[!DNL Privacy Service]中检索的匹配标识数组(`validIds`)，以及未找到的标识数组(`failedIds`)。 |
-| `removeIdentities` | 从浏览器中删除每个匹配（有效）的标识。 返回匹配标识(`validIds`)的数组，每个标识都包含一个`isDeletedClientSide`布尔值，指示此ID是否已删除。 |
-| `retrieveThenRemoveIdentities` | 检索匹配标识的数组(`validIds`)，然后从浏览器中删除这些标识。 虽然此函数与`removeIdentities`类似，但最好在您使用的Adobe解决方案需要访问请求才能删除（例如，在删除请求中提供唯一标识符之前必须检索到唯一标识符）时使用此函数。 |
+| `retrieveIdentities` | 返回匹配标识的数组(`validIds`)，检索自 [!DNL Privacy Service]，以及一组未找到的身份(`failedIds`)。 |
+| `removeIdentities` | 从浏览器中删除每个匹配（有效）的标识。 返回匹配标识的数组(`validIds`)，其中每个标识包含 `isDeletedClientSide` 布尔值，指示此ID是否已删除。 |
+| `retrieveThenRemoveIdentities` | 检索匹配身份的数组(`validIds`)，然后从浏览器中删除这些身份。 此函数类似于 `removeIdentities`，当您使用的Adobe解决方案在可能删除之前需要访问请求时（例如，在删除请求中提供唯一标识符之前必须检索到该唯一标识符），最好使用该标识符。 |
 
 >[!NOTE]
 >
->`removeIdentities` 并且 `retrieveThenRemoveIdentities` 只会从浏览器中删除支持特定Adobe解决方案的身份。例如，Adobe Audience Manager不会删除存储在第三方Cookie中的Demdex ID，而Adobe Target会删除存储其ID的所有Cookie。
+>`removeIdentities` 和 `retrieveThenRemoveIdentities` 仅从浏览器中删除支持特定Adobe解决方案的身份。 例如，Adobe Audience Manager不会删除存储在第三方Cookie中的Demdex ID，而Adobe Target会删除存储其ID的所有Cookie。
 
 由于所有三个函数都表示异步进程，因此任何检索到的身份都必须使用回调或承诺进行处理。
 
 
 ## 安装
 
-要开始使用[!DNL Privacy JS Library]，必须使用以下方法之一将其安装到计算机上：
+开始使用 [!DNL Privacy JS Library]，则必须使用以下方法之一将其安装到计算机上：
 
-* 通过运行以下命令使用npm进行安装：`npm install @adobe/adobe-privacy`
-* 在名称`AdobePrivacy`下安装[Adobe隐私标签扩展](../tags/extensions/web/privacy/overview.md)
-* 从[Experience CloudGitHub存储库](https://github.com/Adobe-Marketing-Cloud/adobe-privacy)下载
+* 通过运行以下命令使用npm进行安装： `npm install @adobe/adobe-privacy`
+* 安装 [Adobe隐私标记扩展](../tags/extensions/web/privacy/overview.md) 名称下 `AdobePrivacy`
+* 从下载 [Experience CloudGitHub存储库](https://github.com/Adobe-Marketing-Cloud/adobe-privacy)
 
-## 实例化[!DNL Privacy JS Library]
+## 实例化 [!DNL Privacy JS Library]
 
-所有使用[!DNL Privacy JS Library]的应用程序都必须实例化新的`AdobePrivacy`对象，该对象必须配置为特定的Adobe解决方案。 例如，Adobe Analytics的实例化如下所示：
+所有利用 [!DNL Privacy JS Library] 必须实例化新 `AdobePrivacy` 对象，必须将其配置为特定的Adobe解决方案。 例如，Adobe Analytics的实例化如下所示：
 
 ```js
 var adobePrivacy = new AdobePrivacy({
@@ -62,19 +62,19 @@ var adobePrivacy = new AdobePrivacy({
 });
 ```
 
-有关不同Adobe解决方案支持的参数的完整列表，请参阅附录中[Adobe解决方案配置参数](#adobe-solution-configuration-parameters)的部分。
+有关不同Adobe解决方案支持的参数的完整列表，请参阅附录中的“受支持”部分 [Adobe解决方案配置参数](#adobe-solution-configuration-parameters).
 
 ## 代码示例
 
-以下代码示例演示了如何在未使用标记的情况下，将[!DNL Privacy JS Library]用于多种常见情况。
+以下代码示例演示了如何使用 [!DNL Privacy JS Library] 对于一些常见情况，前提是您未使用标记。
 
 ### Retrieve identities
 
-此示例演示了如何从[!DNL Experience Cloud]检索标识列表。
+此示例演示如何从中检索标识列表 [!DNL Experience Cloud].
 
 #### JavaScript
 
-以下代码定义了一个函数`handleRetrievedIDs`，用作回调或promise处理`retrieveIdentities`检索到的身份。
+以下代码定义一个函数， `handleRetrievedIDs`，用作回调或承诺处理 `retrieveIdentities`.
 
 ```javascript
 function handleRetrievedIDs(ids) {
@@ -92,11 +92,11 @@ adobePrivacy.retrieveIdentities().then(handleRetrievedIDs);
 | Variable | 描述 |
 | --- | --- |
 | `validIds` | 一个JSON对象，其中包含已成功检索的所有ID。 |
-| `failedIDs` | 包含所有ID的JSON对象，这些ID不是从[!DNL Privacy Service]中检索，或者是无法找到的。 |
+| `failedIDs` | 一个JSON对象，其中包含未从中检索的所有ID [!DNL Privacy Service]，或找不到其他内容。 |
 
 #### 结果
 
-如果代码成功执行，则`validIDs`将填充检索到的标识列表。
+如果代码成功执行， `validIDs` 中填充了已检索身份的列表。
 
 ```json
 {
@@ -123,7 +123,7 @@ adobePrivacy.retrieveIdentities().then(handleRetrievedIDs);
 
 #### JavaScript
 
-以下代码定义了一个函数`handleRemovedIDs`，用作回调或承诺，在`removeIdentities`从浏览器中删除标识后，该函数将处理由检索到的身份。
+以下代码定义一个函数， `handleRemovedIDs`，用作回调或承诺处理 `removeIdentities` 从浏览器中删除后，才会删除这些区段。
 
 ```javascript
 function handleRemovedIDs(ids) {
@@ -141,11 +141,11 @@ adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 | 变量 | 描述 |
 | --- | --- |
 | `validIds` | 一个JSON对象，其中包含已成功检索的所有ID。 |
-| `failedIDs` | 包含所有ID的JSON对象，这些ID不是从[!DNL Privacy Service]中检索，或者是无法找到的。 |
+| `failedIDs` | 一个JSON对象，其中包含未从中检索的所有ID [!DNL Privacy Service]，或找不到其他内容。 |
 
 #### 结果
 
-如果代码成功执行，则`validIDs`将填充检索到的标识列表。
+如果代码成功执行， `validIDs` 中填充了已检索身份的列表。
 
 ```json
 {
@@ -170,15 +170,15 @@ adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 
 ## 后续步骤
 
-阅读本文档后，您将了解[!DNL Privacy JS Library]的核心功能。 使用库检索标识列表后，您可以使用这些标识创建对[!DNL Privacy Service] API的数据访问和删除请求。 有关详细信息，请参阅[Privacy Service开发人员指南](api/getting-started.md)。
+通过阅读本文档，您了解了 [!DNL Privacy JS Library]. 使用库检索标识列表后，您可以使用这些标识创建数据访问和删除 [!DNL Privacy Service] API。 请参阅 [Privacy ServiceAPI指南](api/overview.md) 以了解更多信息。
 
 ## 附录
 
-本节包含有关使用[!DNL Privacy JS Library]的补充信息。
+本节包含有关使用 [!DNL Privacy JS Library].
 
 ### Adobe解决方案配置参数
 
-以下是受支持Adobe解决方案的已接受配置参数列表，在[实例化AdobePrivacy对象](#instantiate-the-privacy-js-library)时使用。
+以下是受支持Adobe解决方案的已接受配置参数列表，在 [实例化AdobePrivacy对象](#instantiate-the-privacy-js-library).
 
 **Adobe Analytics**
 
