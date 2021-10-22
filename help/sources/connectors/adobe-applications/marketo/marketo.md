@@ -5,32 +5,36 @@ title: Marketo Engage连接器
 topic-legacy: overview
 description: 本文档概述了Marketo Engage源连接器，包括有关其身份验证、映射和数据延迟的信息。
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 0661d124ffe520697a1fc8e2cae7b0b61ef4edfc
+source-git-commit: a36a4775c14e97df51f218cea3a083d29c7b69dc
 workflow-type: tm+mt
-source-wordcount: '493'
-ht-degree: 1%
+source-wordcount: '548'
+ht-degree: 0%
 
 ---
 
-# （测试版）[!DNL Marketo Engage]连接器
+# （测试版） [!DNL Marketo Engage] 连接器
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的[!DNL Marketo Engage]源当前为测试版。 文档和功能可能会发生更改。
+>的 [!DNL Marketo Engage] 来源于Adobe Experience Platform，目前为测试版。 文档和功能可能会发生更改。
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 
-[[!DNL Marketo Engage]](https://www.marketo.com/software/) (以下简称“[!DNL Marketo]”)是一个完整的解决方案，面向希望通过参与复杂购买历程的每个阶段来转变客户体验的潜在客户管理和B2B营销人员。
+[[!DNL Marketo Engage]](https://www.marketo.com/software/) (以下简称“[!DNL Marketo]“)是一个完整的解决方案，面向希望通过参与复杂购买历程的每个阶段来转变客户体验的潜在客户管理人员和B2B营销人员。
 
-借助[!DNL Marketo]源连接器，您可以将[!DNL Marketo]中的B2B数据引入平台，并使用与平台连接的应用程序保持此数据的最新。
+使用 [!DNL Marketo] 源连接器中，您可以从 [!DNL Marketo] 到平台，并使用与平台连接的应用程序保持此数据最新。
 
-本文档概述[!DNL Marketo]源连接器，包括有关如何验证连接器、如何将[!DNL Marketo]字段映射到体验数据模型(XDM)以及连接器的数据延迟的信息。
+本文档概述 [!DNL Marketo] 源连接器，包括如何验证连接器、如何映射 [!DNL Marketo] 字段，以及连接器的数据延迟。
 
-## 验证[!DNL Marketo]连接器
+## 验证 [!DNL Marketo] 连接器
 
-要将[!DNL Marketo]连接到Platform，必须先检索`munchkinId`、`clientId`和`clientSecret`的值。
+为了连接 [!DNL Marketo] 对于Platform，您必须先检索 `munchkinId`, `clientId`和 `clientSecret`.
 
-请参阅[验证Marketo源连接器](./marketo-auth.md)文档中列出的步骤，以检索您的凭据。
+请参阅 [验证Marketo源连接器](./marketo-auth.md) 文档以检索您的凭据。
+
+## 设置Adobe Experience Cloud受众共享
+
+在为 [!DNL Marketo]，则必须先设置Adobe Experience Cloud受众共享。 有关如何完成此操作的详细步骤，请参阅 [为设置Adobe Experience Cloud受众共享 [!DNL Marketo]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-experience-cloud-audience-sharing.html?lang=en).
 
 ## 体验数据模型(XDM)
 
@@ -38,13 +42,13 @@ XDM是一项公开记录的规范，它提供了常用结构和定义，允许�
 
 遵循XDM标准，可将数据统一纳入平台生态系统，从而更便于交付数据和收集信息。
 
-要进一步了解XDM及其在Platform中的角色，请参阅[XDM系统概述](../../../../xdm/home.md)。
+要进一步了解XDM及其在Platform中的角色，请参阅 [XDM系统概述](../../../../xdm/home.md).
 
-## 从[!DNL Marketo]到XDM的字段映射
+## 字段映射来源 [!DNL Marketo] 到XDM
 
-要在[!DNL Marketo]和Platform之间建立源连接，在将Marketo源数据字段摄取到Platform之前，必须将其映射到相应的目标XDM字段。
+在 [!DNL Marketo] 和Platform中，Marketo源数据字段在摄取到Platform之前必须映射到相应的目标XDM字段。
 
-有关[!DNL Marketo]数据集与Platform之间的字段映射规则的详细信息，请参阅以下内容：
+请参阅以下内容，以详细了解 [!DNL Marketo] 数据集和平台：
 
 * [活动](../mapping/marketo.md#activities)
 * [程序](../mapping/marketo.md#programs)
@@ -57,21 +61,21 @@ XDM是一项公开记录的规范，它提供了常用结构和定义，允许�
 * [机会联系角色](../mapping/marketo.md#opportunity-contact-roles)
 * [人员](../mapping/marketo.md#persons)
 
-## 平台上[!DNL Marketo]数据的预期滞后
+## 预期延迟 [!DNL Marketo] 平台上的数据
 
-下表根据摄取的性质和所需目标概述了将[!DNL Marketo]数据导入平台的预期延迟：
+下表概述了为 [!DNL Marketo] 根据摄取的性质和所需的目标将数据导入平台：
 
 | 目标 | 预期滞后 |
 | ----------- | ---------------- |
-| [!DNL Real-time Customer Profile] | &lt; 1=&quot;&quot; minute=&quot;&quot;> |
+| [!DNL Real-time Customer Profile] | &lt; 1分钟 |
 | 数据湖 | &lt; 60 分钟 |
 
 ## 后续步骤和其他资源
 
-以下文档提供了有关创建[!DNL Marketo]源连接的更多信息：
+以下文档提供了有关创建 [!DNL Marketo] 源连接：
 
-* 有关如何将[!DNL Marketo]数据连接到平台的信息，请参阅[在UI](../../../tutorials/ui/create/adobe-applications/marketo.md)中创建Marketo源连接器的教程。
-* 有关与[!DNL Marketo]一起使用的B2B命名空间和架构的基础设置的信息，请参阅[B2B命名空间和架构](./marketo-namespaces.md)的文档。
-* 有关查找[!DNL Marketo] munchkin ID并生成凭据的信息，请参阅[[!DNL Marketo] authentication guide](./marketo-auth.md)。
-* 有关应用于[!DNL Marketo]数据集的特定映射规则的信息，请参阅关于[[!DNL Marketo] 字段映射](../mapping/marketo.md)的文档。
-* 有关[!DNL Real-time Customer Data Platform B2B Edition]及其功能的常规信息，请参阅[[!DNL Real-time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md)上的文档。
+* 有关如何连接 [!DNL Marketo] 数据到平台，请参阅 [在UI中创建Marketo源连接器](../../../tutorials/ui/create/adobe-applications/marketo.md).
+* 有关B2B命名空间和与 [!DNL Marketo]，请参阅 [B2B命名空间和架构](./marketo-namespaces.md).
+* 有关查找 [!DNL Marketo] munchkin ID和生成您的凭据，请参阅 [[!DNL Marketo] 身份验证指南](./marketo-auth.md).
+* 有关适用于的特定映射规则的信息 [!DNL Marketo] 数据集，请参阅 [[!DNL Marketo] 字段映射](../mapping/marketo.md).
+* 有关 [!DNL Real-time Customer Data Platform B2B Edition] 及其功能，请参阅 [[!DNL Real-time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md).
