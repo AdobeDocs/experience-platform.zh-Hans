@@ -3,52 +3,52 @@ keywords: Amazon Kinesis;Kinesis目标；Kinesis
 title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: 2b1cde9fc913be4d3bea71e7d56e0e5fe265a6be
 workflow-type: tm+mt
 source-wordcount: '552'
 ht-degree: 2%
 
 ---
 
-# （测试版）[!DNL Amazon Kinesis]连接
+# （测试版） [!DNL Amazon Kinesis] 连接
 
 ## 概述 {#overview}
 
 >[!IMPORTANT]
 >
->平台中的[!DNL Amazon Kinesis]目标当前处于测试阶段。 文档和功能可能会发生变化。
+>的 [!DNL Amazon Kinesis] 平台中的目标当前为测试版。 文档和功能可能会发生变化。
 
-通过[!DNL Amazon Web Services]提供的[!DNL Kinesis Data Streams]服务，您可以实时收集和处理大量数据记录流。
+的 [!DNL Kinesis Data Streams] 服务依据 [!DNL Amazon Web Services] 允许您实时收集和处理大量数据记录流。
 
-您可以创建到[!DNL Amazon Kinesis]存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
+您可以创建与的实时出站连接 [!DNL Amazon Kinesis] 存储以从Adobe Experience Platform流数据。
 
-* 有关[!DNL Amazon Kinesis]的更多信息，请参阅[Amazon文档](https://docs.aws.amazon.com/streams/latest/dev/introduction.html)。
-* 要以编程方式连接到[!DNL Amazon Kinesis]，请参阅[流目标API教程](../../api/streaming-destinations.md)。
-* 要使用Platform用户界面连接到[!DNL Amazon Kinesis]，请参阅以下部分。
+* 有关 [!DNL Amazon Kinesis]，请参阅 [Amazon文档](https://docs.aws.amazon.com/streams/latest/dev/introduction.html).
+* 连接到 [!DNL Amazon Kinesis] 以编程方式，请参阅 [流目标API教程](../../api/streaming-destinations.md).
+* 连接到 [!DNL Amazon Kinesis] 使用Platform用户界面，请参阅以下部分。
 
 ![Amazon Kinesis在UI中](../../assets/catalog/cloud-storage/amazon-kinesis/catalog.png)
 
 ## 用例 {#use-cases}
 
-通过使用[!DNL Amazon Kinesis]等流目标，您可以轻松地将高价值分段事件和关联的配置文件属性馈送到您选择的系统中。
+通过使用流目标，例如 [!DNL Amazon Kinesis]，则您可以轻松地将高价值分段事件和关联的配置文件属性馈送到所选系统中。
 
-例如，潜在客户下载了一份白皮书，使其符合“高倾向转化”区段的条件。 通过将潜在客户所在的区段映射到[!DNL Amazon Kinesis]目标，您将在[!DNL Amazon Kinesis]中收到此事件。 在这里，您可以采用DIY（自己动手）方法，并在活动之上描述业务逻辑，因为您认为最适合企业IT系统。
+例如，潜在客户下载了一份白皮书，使其符合“高倾向转化”区段的条件。 通过映射潜在客户所在的区段 [!DNL Amazon Kinesis] 目标，您将在 [!DNL Amazon Kinesis]. 在这里，您可以采用DIY（自己动手）方法，并在活动之上描述业务逻辑，因为您认为最适合企业IT系统。
 
 ## 导出类型 {#export-type}
 
-**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从受众激活工作流的“选择属性”屏幕 [中选择](../../ui/activate-streaming-profile-destinations.md#select-attributes)。
+**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从 [受众激活工作流](../../ui/activate-streaming-profile-destinations.md#select-attributes).
 
-## 所需的[!DNL Amazon Kinesis]权限 {#required-kinesis-permission}
+## 必需 [!DNL Amazon Kinesis] 权限 {#required-kinesis-permission}
 
-要成功连接数据并将数据导出到[!DNL Amazon Kinesis]流，Experience Platform需要拥有以下操作的权限：
+要成功将数据连接并导出到 [!DNL Amazon Kinesis] 流中，Experience Platform需要具有以下操作的权限：
 
 * `kinesis:ListStreams`
 * `kinesis:PutRecord`
 * `kinesis:PutRecords`
 
-这些权限通过[!DNL Kinesis]控制台进行排列，在Platform用户界面中配置Kinesis目标后，Platform会检查这些权限。
+这些权限通过 [!DNL Kinesis] 在Platform用户界面中配置Kinesis目标后，控制台和会被Platform选中。
 
-以下示例显示成功将数据导出到[!DNL Kinesis]目标所需的最低访问权限。
+以下示例显示成功将数据导出到 [!DNL Kinesis] 目标。
 
 ```json
 {
@@ -75,21 +75,21 @@ ht-degree: 2%
 | `kinesis:PutRecord` | 将单个数据记录写入Kinesis数据流的操作。 |
 | `kinesis:PutRecords` | 在单次调用中将多个数据记录写入Kinesis数据流的操作。 |
 
-有关控制[!DNL Kinesis]数据流访问的更多信息，请阅读以下[[!DNL Kinesis] 文档](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html)。
+有关控制访问的详细信息 [!DNL Kinesis] 数据流，请读取以下内容 [[!DNL Kinesis] 文档](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html).
 
 ## 连接到目标 {#connect}
 
-要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 ### 连接参数 {#parameters}
 
-在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
+While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
 
-* **[!DNL Amazon Web Services]访问密钥和密钥**:在中 [!DNL Amazon Web Services]，生成一 `access key - secret access key` 对以授予Platform对您帐户的访 [!DNL Amazon Kinesis] 问权限。请参阅[Amazon Web服务文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)，以了解更多信息。
-* **区域**:指示要 [!DNL Amazon Web Services] 将数据流到的区域。
-* **名称**:提供连接的名称  [!DNL Amazon Kinesis]
-* **描述**:提供与的连接描 [!DNL Amazon Kinesis]述。
-* **流**:提供帐户中现有数据流的名 [!DNL Amazon Kinesis] 称。平台会将数据导出到此流。
+* **[!DNL Amazon Web Services]访问密钥和密钥**:在 [!DNL Amazon Web Services]，生成 `access key - secret access key` 对，以授予对 [!DNL Amazon Kinesis] 帐户。 在 [Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+* **地区**:指明 [!DNL Amazon Web Services] 要将数据流到的区域。
+* **名称**:提供连接的名称 [!DNL Amazon Kinesis]
+* **描述**:提供与 [!DNL Amazon Kinesis].
+* **流**:在 [!DNL Amazon Kinesis] 帐户。 平台会将数据导出到此流。
 
 <!--
 
@@ -101,16 +101,16 @@ ht-degree: 2%
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到流配置文件导出目标](../../ui/activate-streaming-profile-destinations.md)。
+请参阅 [将受众数据激活到流配置文件导出目标](../../ui/activate-streaming-profile-destinations.md) 有关将受众区段激活到此目标的说明。
 
 ## 导出的数据 {#exported-data}
 
-导出的[!DNL Experience Platform]数据以JSON格式登陆[!DNL Amazon Kinesis]。 例如，以下事件包含符合特定区段资格并退出另一个区段的受众的电子邮件地址配置文件属性。 此潜在客户的标识为ECID和电子邮件。
+导出的 [!DNL Experience Platform] 数据登陆 [!DNL Amazon Kinesis] 格式。 例如，以下事件包含符合特定区段资格并退出另一个区段的受众的电子邮件地址配置文件属性。 此潜在客户的标识为ECID和电子邮件。
 
 ```json
 {
   "person": {
-    "email": "yourstruly@adobe.con"
+    "email": "yourstruly@adobe.com"
   },
   "segmentMembership": {
     "ups": {
@@ -150,6 +150,6 @@ ht-degree: 2%
 >[!MORELIKETHIS]
 >
 >* [连接到Amazon Kinesis并使用流量服务API激活数据](../../api/streaming-destinations.md)
-* [Azure事件中心目标](./azure-event-hubs.md)
-* [目标类型和类别](../../destination-types.md)
+>* [Azure事件中心目标](./azure-event-hubs.md)
+>* [目标类型和类别](../../destination-types.md)
 
