@@ -5,7 +5,7 @@ title: 源连接器概述
 topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 333cca4ac451745ac457c8d66fa8b5fe14531c9e
+source-git-commit: f8cecdaaab3d98c7f6542b51dc764a019b04b0b1
 workflow-type: tm+mt
 source-wordcount: '1008'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 
-[!DNL Flow Service] 用于从平台内各种不同来源收集客户数据并将其集中在一起。该服务提供了用户界面和RESTful API，可让您轻松设置与各种数据提供商的源连接。 通过这些源连接，您可以验证第三方系统、设置摄取运行的时间，以及管理数据摄取吞吐量。
+[!DNL Flow Service] 用于从平台内各种不同来源收集客户数据并将其集中在一起。 该服务提供了用户界面和RESTful API，可让您轻松设置与各种数据提供商的源连接。 通过这些源连接，您可以验证第三方系统、设置摄取运行的时间，以及管理数据摄取吞吐量。
 
 通过Experience Platform，您可以集中从不同来源收集的数据，并利用从中获得的分析完成更多工作。
 
@@ -36,7 +36,7 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adob
 - [在UI中创建Adobe Analytics源连接](./tutorials/ui/create/adobe-applications/analytics.md)
 - [在UI中创建客户属性源连接](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 - [[!DNL Marketo Engage] 连接器概述](connectors/adobe-applications/marketo/marketo.md)
-- [在UI中创建 [!DNL Marketo Engage] 源连接](./tutorials/ui/create/adobe-applications/marketo.md)
+- [创建 [!DNL Marketo Engage] UI中的源连接](./tutorials/ui/create/adobe-applications/marketo.md)
 
 ### 广告
 
@@ -64,11 +64,12 @@ Experience Platform支持从第三方广告系统摄取数据。 有关特定源
 
 ### 客户关系管理(CRM)
 
-CRM系统提供的数据有助于建立客户关系，这反过来又可以创造忠诚度并促进客户维系。 Experience Platform支持从[!DNL Microsoft Dynamics 365]和[!DNL Salesforce]摄取CRM数据。 有关更多信息，请参阅以下相关文档：
+CRM系统提供的数据有助于建立客户关系，这反过来又可以创造忠诚度并促进客户维系。 Experience Platform支持从 [!DNL Microsoft Dynamics 365] 和 [!DNL Salesforce]. 有关更多信息，请参阅以下相关文档：
 
 - [[!DNL Microsoft Dynamics] 连接器](connectors/crm/ms-dynamics.md)
 - [[!DNL Salesforce] 连接器](connectors/crm/salesforce.md)
 - [[!DNL Veeva CRM]](connectors/crm/veeva.md)
+- [[!DNL Zoho CRM]](connectors/crm/zoho.md)
 
 ### 客户成功
 
@@ -141,21 +142,21 @@ Experience Platform支持从第三方协议系统摄取数据。 有关特定源
 
 ## 数据摄取中源的访问控制
 
-可以在Adobe Admin Console中管理数据摄取中源的权限。 您可以通过特定产品配置文件中的&#x200B;**[!UICONTROL Permissions]**&#x200B;选项卡访问权限。 从&#x200B;**[!UICONTROL 编辑权限]**&#x200B;面板中，可以通过&#x200B;**[!UICONTROL 数据摄取]**&#x200B;菜单条目访问与源相关的权限。 **[!UICONTROL 查看源]**&#x200B;权限授予对&#x200B;**[!UICONTROL 目录]**&#x200B;选项卡中可用源和&#x200B;**[!UICONTROL 浏览]**&#x200B;选项卡中已验证源的只读访问权限，而&#x200B;**[!UICONTROL 管理源]**&#x200B;权限授予对读取、创建、编辑和禁用源的完全访问权限。
+可以在Adobe Admin Console中管理数据摄取中源的权限。 您可以通过 **[!UICONTROL 权限]** 选项卡。 从 **[!UICONTROL 编辑权限]** 面板中，您可以通过 **[!UICONTROL 数据摄取]** 菜单目录访问Advertising Cloud帮助。 的 **[!UICONTROL 查看源]** 权限授予对 **[!UICONTROL 目录]** 选项卡和已验证的源 **[!UICONTROL 浏览]** ，而 **[!UICONTROL 管理源]** 权限授予对读取、创建、编辑和禁用源的完全访问权限。
 
 下表概述了基于这些权限的不同组合，UI的行为方式：
 
 | 权限级别 | 描述 |
 | ---- | ----|
-| **[!UICONTROL 查看源]** On | 授予对“目录”选项卡中每种源类型以及“浏览”、“帐户”和“数据流”选项卡中源的只读访问权限。 |
-| **[!UICONTROL 管理]** 源 | 除了&#x200B;**[!UICONTROL 查看源]**&#x200B;中包含的函数外，还授予对&#x200B;**[!UICONTROL 目录]**&#x200B;中&#x200B;**[!UICONTROL 连接源]**&#x200B;选项和&#x200B;**[!UICONTROL 在**[!UICONTROL  Browse ]**中选择数据]**&#x200B;选项的访问权限。 **[!UICONTROL 管理]** 源还允许您启用或禁用 **** 数据流并编辑其计划。 |
-| **[!UICONTROL 查看]** 关闭源并 **[!UICONTROL 管理]** 关闭源 | 撤消对源的所有访问权限。 |
+| **[!UICONTROL 查看源]** 开 | 授予对“目录”选项卡中每种源类型以及“浏览”、“帐户”和“数据流”选项卡中源的只读访问权限。 |
+| **[!UICONTROL 管理源]** 开 | 除了 **[!UICONTROL 查看源]**，授予访问权限 **[!UICONTROL 连接源]** 选项 **[!UICONTROL 目录]** 和 **[!UICONTROL 选择数据]** 选项 **[!UICONTROL 浏览]**. **[!UICONTROL 管理源]** 还允许您启用或禁用 **[!UICONTROL 数据流]** 并编辑其计划。 |
+| **[!UICONTROL 查看源]** 关闭和 **[!UICONTROL 管理源]** 关闭 | 撤消对源的所有访问权限。 |
 
-有关通过Admin Console授予的可用权限（包括这四个源）的更多信息，请参阅[访问控制概述](../access-control/home.md)。
+有关通过Admin Console授予的可用权限（包括这四个来源）的更多信息，请参阅 [访问控制概述](../access-control/home.md).
 
 ## 条款和条件 {#terms-and-conditions}
 
-通过使用任何标为测试版（“测试版”）的源，您特此确认测试版按“原样”提供，且不提供任何类型的担保&#x200B;***。***
+通过使用任何标记为测试版（“测试版”）的源，您特此确认已提供测试版 ***“按原样”，不提供任何担保***.
 
 Adobe没有义务维护、更正、更新、更改、修改或以其他方式支持测试版。 建议您谨慎使用，切勿以任何方式依赖此类测试版和/或随附材料的正确功能或性能。 测试版被视为Adobe的机密信息。
 
