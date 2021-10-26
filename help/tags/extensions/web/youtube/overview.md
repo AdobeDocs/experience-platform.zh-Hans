@@ -1,10 +1,11 @@
 ---
 title: YouTube视频跟踪扩展概述
 description: 了解Adobe Experience Platform中的YouTube视频跟踪标记扩展。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 703f7b04-f72f-415f-80d6-45583fa661bc
+source-git-commit: bbaf272313d5a8afe33178598063164792f4d8c0
 workflow-type: tm+mt
 source-wordcount: '891'
-ht-degree: 37%
+ht-degree: 40%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 37%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 **先决条件**
 
@@ -22,13 +23,13 @@ Adobe Experience Platform中的每个标记属性都需要从“扩展”屏幕�
 * Experience Cloud 访客 ID 服务
 * 核心扩展
 
-在要呈现视频播放器的每个网页的HTML中，使用Google开发人员文档中的[&quot;使用\&lt;iframe\>标记&quot;](https://developers.google.com/youtube/player_parameters#Manual_IFrame_Embeds)代码片段嵌入播放器。
+使用 [&quot;使用\嵌入播放器&lt;iframe> 标记”](https://developers.google.com/youtube/player_parameters#Manual_IFrame_Embeds) 在要呈现视频播放器的每个网页的HTML中，从Google开发人员文档中提供的代码片段。
 
-此扩展版本2.0.1支持在单个Web页面上嵌入一个或多个YouTube视频，方法是在iframe脚本标记中插入具有唯一值的`id`属性，并将`enablejsapi=1`和`rel=0`附加到`src`属性值的末尾（如果尚未包含）。 例如：
+此扩展版本2.0.1，支持通过插入 `id` 属性，并在iframe脚本标记中附加唯一值 `enablejsapi=1` 和 `rel=0` 到 `src` 属性值（如果尚未包含）。 例如：
 
 `<iframe id="player1" width="560" height="315" src="https://www.youtube.com/embed/xpatB77BzYE?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
 
-此扩展还设计为动态检查唯一ID属性值，如`player1`，无论`enablejsapi`和`rel`查询字符串参数是否存在以及它们的预期值是否正确。 因此，可以将YouTube脚本标记添加到具有或不具有`id`属性的网页，以及是否包含`enablejsapi`和`rel`查询字符串参数。
+此扩展还设计为动态检查唯一ID属性值，例如 `player1`，无论 `enablejsapi` 和 `rel` 查询字符串参数存在，且其预期值正确时。 因此，可以将YouTube脚本标记添加到包含或不包含 `id` 属性和 `enablejsapi` 和 `rel` 是否包含查询字符串参数。
 
 >[!NOTE]
 >
@@ -85,7 +86,7 @@ document.onreadystatechange = function () {
 
 * **条件**：无
 
-* **操作**： 使用&#x200B;**Analytics扩展**&#x200B;到“Set Variables”操作来映射：
+* **操作**： 使用 **Analytics扩展** 要“设置变量”操作，请映射：
 
    * 视频开始事件、
    * 视频持续时间数据元素的 prop/eVar
@@ -93,16 +94,16 @@ document.onreadystatechange = function () {
    * 视频名称数据元素的 prop/eVar
    * 视频 URL 数据元素的 prop/eVar
 
-   然后，包括链接名称为“视频开始”的“发送信标”操作(`s.tl`)，后跟“清除变量”操作。
+   然后，包括“发送信标”操作(`s.tl`)，其链接名称为“视频开始”，后跟“清除变量”操作。
 
 >[!TIP]
 > 
->对于无法为每个视频元素使用多个eVar或prop的实施，可以在Platform中连接数据元素值，使用分类规则生成器工具将其解析为分类报表(如[https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html)中所述)，然后作为区段在Analysis Workspace中应用。
+>对于无法为每个视频元素使用多个eVar或prop的实施，可以在Platform中连接数据元素值，使用分类规则生成器工具将其解析为分类报表，如 [https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html)，然后作为区段在Analysis Workspace中应用。
 
 要连接视频信息值，请创建一个名为“视频元数据”的新数据元素，然后对其进行编程，以拉入以上列出的所有视频数据元素并将它们组合在一起。例如：
 
 ```javascript
-var r = ””;
+var r = [];
 
 r.push('YouTube'); //Player Name
 r.push(_satellite.getVar('Video ID'));

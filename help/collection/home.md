@@ -5,10 +5,10 @@ title: 数据收集概述
 topic-legacy: overview
 description: 了解与收集Adobe Experience Platform中客户体验数据相关的各种技术。
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: f61a845b915df3d803085fbf528e014c8acd9dbd
+source-git-commit: bbaf272313d5a8afe33178598063164792f4d8c0
 workflow-type: tm+mt
-source-wordcount: '332'
-ht-degree: 2%
+source-wordcount: '357'
+ht-degree: 4%
 
 ---
 
@@ -28,9 +28,14 @@ Experience Platform提供的数据收集技术重点关注所摄取数据集的�
 * [标记](../tags/home.md)
 * [事件转发](../tags/ui/event-forwarding/overview.md)
 * [Adobe Experience Platform Web SDK](../edge/home.md)
+* [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/)
+* [Adobe Experience Platform Debugger](https://chrome.google.com/webstore/detail/adobe-experience-platform/bfnnokhpnncpkdmbokanobigaccjkpob?hl=en)
 * [体验数据模型(XDM)](../xdm/home.md)
+* [Adobe Experience Platform Identity Service](../identity-service/home.md)
 
+<!-- (Outdated terminology)
 ![](./images/Collection.png)
+-->
 
 ## 更简单的实施，更快的客户端性能
 
@@ -38,16 +43,20 @@ Adobe Experience Platform Web和Mobile SDK会折叠所有Adobe产品库，并将
 
 ## 切换过程以部署Adobe技术 {#edge}
 
-Platform Edge Network是一个全球分布式、快速、可靠的服务器网络，能够大规模接收和处理数据。 使用标记，您可以为Adobe Target、Adobe Audience Manager和Adobe Analytics等产品设置[数据流](../edge/fundamentals/datastreams.md)，这样您就可以在服务器端激活这些产品，而无需更改客户端代码。
+Platform Edge Network是一个全球分布式、快速、可靠的服务器网络，能够大规模接收和处理数据。 使用标记，您可以设置 [数据流](../edge/fundamentals/datastreams.md) 适用于Adobe Target、Adobe Audience Manager和Adobe Analytics等产品，它们允许您在服务器端激活这些产品，而无需更改客户端代码。
 
+<!-- (Outdated terminology)
 ![](./images/deploy.png)
+-->
 
 >[!NOTE]
 >
->有关Platform Edge Network的高级介绍，请参阅以下[交互式产品导览](https://adobe-ideacloud.forgedx.com/adobe-adobe-edge-collection/adobe-experience-edge/public/mx?SUID=hgb1a48ICSCpbM6MzBYHbxnsh9DgjUy1)。
+>有关平台边缘网络的高级介绍，请参阅以下内容 [交互式产品导览](https://adobe-ideacloud.forgedx.com/adobe-adobe-edge-collection/adobe-experience-edge/public/mx?SUID=hgb1a48ICSCpbM6MzBYHbxnsh9DgjUy1).
 
 ## 快速安全地转换、扩充和发送数据
 
-[Adobe Experience Platform中的事件转](../tags/ui/event-forwarding/overview.md) 发可以点按任何Platform数据流。您可以以极低的延迟转换、扩充数据，并将数据发送到任何非Adobe目的地，而无需向客户端设备添加任何第三方代码，从而提供更快、更安全的数据收集和分发。
+[Adobe Experience Platform中的事件转发](../tags/ui/event-forwarding/overview.md) 可以点按任何平台数据流。 您可以以极低的延迟转换、扩充数据，并将数据发送到任何非Adobe目的地，而无需向客户端设备添加任何第三方代码，从而提供更快、更安全的数据收集和分发。
 
+<!-- (Outdated terminology)
 ![](./images/launch.png)
+-->

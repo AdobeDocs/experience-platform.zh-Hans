@@ -5,9 +5,9 @@ title: XDM系统概述
 topic-legacy: overview
 description: 标准化和互操作性是Adobe Experience Platform背后的关键概念。 由Adobe驱动的体验数据模型(XDM)旨在标准化客户体验数据并定义客户体验管理架构。
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: 196147e7691010707953561c110a3934fec8ba1b
+source-git-commit: 18d245574ba771aa42776d8755a2c6681c8c8532
 workflow-type: tm+mt
-source-wordcount: '1947'
+source-wordcount: '2015'
 ht-degree: 2%
 
 ---
@@ -51,14 +51,19 @@ Experience Platform提供了用户界面和RESTful API，您可以从中查看�
 
 ## XDM系统中的数据行为 {#data-behaviors}
 
-用于Experience Platform的数据分为两种行为类型：
+用于Experience Platform的数据分为三种行为类型：
 
-* **记录数据**:提供有关主题属性的信息。 主题可以是组织或个人。
-* **时间序列数据**:提供记录主体直接或间接执行某项操作时系统的快照。
+* **记录**:提供有关主题属性的信息。 主题可以是组织或个人。
+* **时间系列**:提供记录主体直接或间接执行某项操作时系统的快照。
+* **临时**:捕获仅由单个数据集使用的与名称命名的字段。 临时架构用于各种Experience Platform数据摄取工作流，包括摄取CSV文件和创建特定类型的源连接。
 
 所有XDM架构都描述了可以分类为记录或时间序列的数据。 架构的数据行为由架构的类定义，该类在首次创建架构时分配给架构。 XDM类描述架构必须包含的最小属性数，以表示特定数据行为。
 
-尽管您能够在 [!DNL Schema Registry]，建议您使用首选类 **[!UICONTROL XDM个人配置文件]** 和 **[!UICONTROL XDM ExperienceEvent]** ，用于记录数据和时序数据。 下文将详细介绍这些类。
+尽管您能够在 [!DNL Schema Registry]，建议您使用标准类 **[!UICONTROL XDM个人配置文件]** 和 **[!UICONTROL XDM ExperienceEvent]** ，用于记录数据和时序数据。 下文将详细介绍这些类。
+
+>[!NOTE]
+>
+>没有基于临时行为的标准类。 临时架构由利用这些架构的平台进程自动生成，但也可以 [使用架构注册表API手动创建](./tutorials/ad-hoc.md).
 
 ### [!UICONTROL XDM个人配置文件] {#xdm-individual-profile}
 
