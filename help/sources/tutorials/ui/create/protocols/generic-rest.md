@@ -4,8 +4,7 @@ title: 在UI中创建通用REST API源连接
 topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建通用REST API源连接。
-exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: 1a9c4d5ba3ba9201378e78c0e92dea5101668a24
+source-git-commit: 94809a8e98c8de7a9a474fb5543b590fc51cb075
 workflow-type: tm+mt
 source-wordcount: '637'
 ht-degree: 1%
