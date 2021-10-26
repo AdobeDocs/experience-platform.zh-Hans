@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: f8cecdaaab3d98c7f6542b51dc764a019b04b0b1
+source-git-commit: 030789af0a049b54d6e271410836c08456a83441
 workflow-type: tm+mt
-source-wordcount: '651'
+source-wordcount: '661'
 ht-degree: 13%
 
 ---
@@ -85,6 +85,7 @@ ht-degree: 13%
       - [PayPal连接器](connectors/payments/paypal.md)
    - 协议 {#protocols}
       - [通用OData连接器](connectors/protocols/odata.md)
+      - [通用REST API连接器](connectors/protocols/generic-rest.md)
    - 流 {#streaming}
       - [HTTP API连接器](connectors/streaming/http.md)
 - API教程 {#api-tutorials}
@@ -143,6 +144,7 @@ ht-degree: 13%
          - [PayPal](tutorials/api/create/payments/paypal.md)
       - 协议 {#protocols}
          - [通用OData](tutorials/api/create/protocols/odata.md)
+         - [通用REST API](tutorials/api/create/protocols/generic-rest.md)
       - 流 {#streaming}
          - [HTTP API](tutorials/api/create/streaming/http.md)
    - 浏览数据 {#explore}
@@ -234,6 +236,7 @@ ht-degree: 13%
          - [PayPal](tutorials/ui/create/payments/paypal.md)
       - 协议 {#protocols}
          - [通用OData](tutorials/ui/create/protocols/odata.md)
+         - [通用REST API](tutorials/ui/create/protocols/generic-rest.md)
       - 流 {#streaming}
          - [HTTP API](tutorials/ui/create/streaming/http.md)
    - 配置数据流 {#dataflow}
