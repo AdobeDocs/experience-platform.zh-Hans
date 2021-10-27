@@ -1,25 +1,28 @@
 ---
-keywords: Experience Platform；主页；热门话题；kafka;kafka连接器；
+keywords: Experience Platform；主页；热门主题；kafka;kafka连接器；Kafka;
 solution: Experience Platform
-title: 卡夫卡连接器
+title: Kafka Connector
 topic-legacy: overview
-description: Adobe Experience Platform的流连接器基于Apache Kafka Connect。 此库可用于将JSON事件从数据中心的Kafka主题直接流化到Experience Platform。
+description: Adobe Experience Platform的流连接器基于Apache Kafka Connect。 此库可用于直接在您的数据中心中将JSON事件从Kafka主题流式传输到实时Experience Platform。
 exl-id: 062963e5-c727-4c2c-97db-8a9a5a7d903c
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 5a3aa74ca7319235c10902422abc0e897ad823b8
 workflow-type: tm+mt
-source-wordcount: '188'
+source-wordcount: '216'
 ht-degree: 0%
 
 ---
 
-# [!DNL Kafka] Adobe Experience Platform
+# [!DNL Kafka] Adobe Experience Platform连接器（已弃用）
 
-Adobe Experience Platform的流连接器基于[!DNL Apache Kafka Connect]。 此库可用于将JSON事件从数据中心的[!DNL Kafka]主题直接实时流化到[!DNL Experience Platform]。
+>[!IMPORTANT]
+>
+>Kafka连接器已弃用。 要创建流连接并将数据导入Adobe Experience Platform，请参阅 [创建HTTP API流连接](../../sources/connectors/streaming/http.md)
 
-流连接器是接收器（单向）连接器，将数据从[!DNL Kafka]主题传送到[!DNL Experience Platform]上的已注册端点。 要使用此连接器，您必须下载库，将其添加到现有的[!DNL Kafka]部署，然后将[!DNL Kafka]主题配置到Adobe流HTTP URL。 其他代码为&#x200B;**不**。 连接器支持以下功能：
+Adobe Experience Platform的流连接器基于 [!DNL Apache Kafka Connect]. 此库可用于从流式传输JSON事件 [!DNL Kafka] 数据中心中的主题直接 [!DNL Experience Platform] 实时。
 
-- 已验证的数据集合
+流连接器是接收器（单向）连接器，用于从 [!DNL Kafka] 上已注册端点的主题 [!DNL Experience Platform]. 要使用此连接器，您必须下载库，并将其添加到现有 [!DNL Kafka] 部署和配置 [!DNL Kafka] 主题到Adobe流HTTP URL。 其他代码为 **not** 必需。 连接器支持以下功能：
+
+- 经过验证的数据集合
 - 对消息进行批处理以减少网络调用并提高吞吐量
 
-有关[!DNL Kafka]连接器的详细信息（包括如何设置连接器的说明），请阅读[快速入门指南](https://github.com/adobe/experience-platform-streaming-connect)。 有关更详细的工作流程，请阅读[开发人员指南](https://www.adobe.com/go/kafka-connector-developer-guide)。
+有关 [!DNL Kafka] 连接器，包括有关如何设置连接器的说明，请阅读 [入门指南](https://github.com/adobe/experience-platform-streaming-connect). 有关更详细的工作流，请阅读 [开发人员指南](https://www.adobe.com/go/kafka-connector-developer-guide).
