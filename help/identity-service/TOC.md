@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform Identity Service
 breadcrumb-title: Platform Identity Service 指南
 user-guide-description: 跨设备和系统建立客户身份桥梁，以提供个性化的数字体验。
 feature: Identities
-source-git-commit: 205d9a8d0d5759e978604bef2b05664b1376d835
+source-git-commit: 81b325fe0994eef73111f9fc474984a4550dd256
 workflow-type: tm+mt
-source-wordcount: '95'
-ht-degree: 29%
+source-wordcount: '98'
+ht-degree: 28%
 
 ---
 
@@ -29,6 +29,7 @@ ht-degree: 29%
    - [身份图查看器](ui/identity-graph-viewer.md)
    - [共享设备检测](ui/shared-devices.md)
 - [ECID概述](ecid.md)
+- [隐私请求处理](privacy.md)
 - [疑难解答指南](troubleshooting-guide.md)
 - [API参考](https://www.adobe.io/experience-platform-apis/references/identity-service)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
