@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
-source-git-commit: f4e9750685d641c83b4ceed79af739de43343aef
+source-git-commit: 45c4486dc9860da13daa6984b23ef80038ea2f8d
 workflow-type: tm+mt
-source-wordcount: '315'
-ht-degree: 9%
+source-wordcount: '458'
+ht-degree: 7%
 
 ---
 
@@ -12,12 +12,30 @@ ht-degree: 9%
 
 **发行日期：2021 年 10 月 27 日**
 
+## Experience Platform更新
+
+更新了Experience Platform。
+
+### [用户界面] {#ui}
+
+用户界面已更新，更改如下：
+
+| 功能 | 描述 |
+| --- | --- |
+| 深色主题 | 使用深色主题开关可在平台界面中的浅色主题和深色主题之间进行切换。 交换机位于用户名和电子邮件下方的用户配置文件中。 |
+| 切换左侧导航 | 使用应用程序标题顶部的改进导航切换开关，可显示或隐藏显示Experience Platform功能的菜单。 系统会记住您的上次选择，并仅显示您有权访问的功能。 |
+| 访问可见性 | 左侧导航栏仅显示您能够访问的功能。 在Adobe Experience Platform的早期版本中，即使您无法访问不可用项目，它们也是可见的。 |
+
+请参阅 [平台UI指南](../../landing/ui-guide.md) 以了解更多。
+
+## 现有功能的更新
+
 Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Data Prep]](#data-prep)
 - [源](#sources)
 
-## [!DNL Data Prep] {#data-prep}
+### [!DNL Data Prep] {#data-prep}
 
 [!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
 
@@ -30,7 +48,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md) 了解有关此服务的更多信息。
 
-## 源 {#sources}
+### 源 {#sources}
 
 Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强该数据。 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
 
