@@ -2,13 +2,13 @@
 keywords: 目标个性化；目的地；experience platform target目标；adobe target目标；
 title: Adobe Target连接（测试版）
 description: Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI技术的实时个性化和实验。
-source-git-commit: 0635828cf3f637e67d2cabda860ca452e61892d4
+exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
+source-git-commit: fae3d9a5aff3e84354831026e9724e1c85d32b5c
 workflow-type: tm+mt
-source-wordcount: '392'
-ht-degree: 1%
+source-wordcount: '453'
+ht-degree: 0%
 
 ---
-
 
 # Adobe Target连接（测试版） {#adobe-target-connection}
 
@@ -24,11 +24,11 @@ Adobe Target是Adobe Experience Platform中的一个个性化连接。
 
 ## 先决条件 {#prerequisites}
 
-此集成由[Adobe Experience Platform Web SDK](../../../edge/home.md)提供支持。 您必须使用此SDK才能使用此目标。
+此集成由 [Adobe Experience Platform Web SDK](../../../edge/home.md). 您必须使用此SDK才能使用此目标。
 
 ## 导出类型 {#export-type}
 
-**配置文件请求**  — 您正在为单个配置文件请求在Adobe Target目标中映射的所有区段。
+**用户档案请求**  — 您正在为单个配置文件请求在Adobe Target目标中映射的所有区段。
 
 ## 用例 {#use-cases}
 
@@ -38,21 +38,27 @@ Adobe Target是Adobe Experience Platform中的一个个性化连接。
 
 ## 连接到目标 {#connect}
 
-要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
+>[!CONTEXTUALHELP]
+>id="platform_destinations_target_datastream"
+>title="关于数据流ID"
+>abstract="此选项确定区段在响应页面时将包含在哪些数据收集数据流中。 下拉菜单仅显示已启用目标配置的数据流。 必须先配置数据流，然后才能配置目标。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html?lang=en" text="了解如何配置数据流。"
+
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 Adobe Experience Platform会自动连接到您公司的Adobe Target实例。 无需进行身份验证。
 
 ### 连接参数 {#parameters}
 
-在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
+While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
 
 * **名称**:填写此目标的首选名称。
-* **描述**:输入目标的描述。例如，您可以提及您使用此目标的促销活动。 此字段为可选字段。
-* **数据流ID**:这可确定区段将包含在页面响应中的数据收集数据流。下拉菜单仅显示已启用目标配置的数据流。 有关更多详细信息，请参阅[配置数据流](../../../edge/fundamentals/datastreams.md)。
+* **描述**:输入目标的描述。 例如，您可以提及您使用此目标的促销活动。 此字段为可选字段。
+* **数据流ID**:这可确定区段将包含在页面响应中的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。 请参阅 [配置数据流](../../../edge/fundamentals/datastreams.md) 以了解更多详细信息。
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到此目标的说明，请阅读[将配置文件和区段激活到配置文件请求目标](../../ui/activate-profile-request-destinations.md)。
+读取 [将用户档案和区段激活到用户档案请求目标](../../ui/activate-profile-request-destinations.md) 有关将受众区段激活到此目标的说明。
 
 ## 导出的数据 {#exported-data}
 
@@ -60,4 +66,4 @@ Adobe Target从Adobe Experience Platform边缘网络中读取用户档案数据�
 
 ## 数据使用和管理 {#data-usage-governance}
 
-处理数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据管理的详细信息，请阅读[数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html)。
+全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，读取 [数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
