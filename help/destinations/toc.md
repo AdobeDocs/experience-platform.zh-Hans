@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: a7c36f1a157b6020fede53e5c1074d966f26cf3d
+source-git-commit: e6d922800c17312df8529061c56d8a2deac46662
 workflow-type: tm+mt
-source-wordcount: '645'
+source-wordcount: '657'
 ht-degree: 9%
 
 ---
@@ -143,7 +143,7 @@ ht-degree: 9%
       * [Invoca标记扩展](./catalog/voice/invoca.md)
       * [Medallia扩展](./catalog/voice/medallia.md)
       * [Talk URL Inbox扩展](./catalog/voice/talkurl.md)
-* 目标SDK {#destination-sdk}
+* 目标 SDK {#destination-sdk}
    * [概述](./destination-sdk/overview.md)
    * [集成先决条件](./destination-sdk/integration-prerequisites.md)
    * [快速入门](./destination-sdk/getting-started.md)
@@ -153,12 +153,14 @@ ht-degree: 9%
       * [服务器和模板规范](./destination-sdk/server-and-template-configuration.md)
       * [消息格式](./destination-sdk/message-format.md)
       * [受众元数据管理](./destination-sdk/audience-metadata-management.md)
-      * [身份验证配置](./destination-sdk/credentials-configuration.md)
-      * [OAuth 2身份验证](./destination-sdk/oauth2-authentication.md)
+      * 身份验证 {#authentication}
+         * [身份验证配置](./destination-sdk/authentication-configuration.md)
+         * [OAuth 2身份验证](./destination-sdk/oauth2-authentication.md)
       * 开发人员工具 {#developer-tools}
          * [创建和测试消息转换模板](./destination-sdk/create-template.md)
          * [测试目标配置](./destination-sdk/test-destination.md)
-   * API参考 {#api-reference}
+   * API操作 {#api}
+      * [目标SDK（目标创作）API引用](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
       * [目标端点API操作](./destination-sdk/destination-configuration-api.md)
       * [目标服务器端点API操作](./destination-sdk/destination-server-api.md)
       * [受众元数据端点API操作](./destination-sdk/audience-metadata-api.md)

@@ -1,9 +1,10 @@
 ---
 description: 本页介绍如何验证和开始使用Adobe Experience Platform目标SDK。 其中包含有关如何获取Adobe I/O身份验证凭据、沙盒名称和目标创作访问控制权限的说明。
 title: 目标SDK快速入门
-source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
+source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
 workflow-type: tm+mt
-source-wordcount: '525'
+source-wordcount: '540'
 ht-degree: 2%
 
 ---
@@ -16,13 +17,13 @@ ht-degree: 2%
 
 ## 术语 {#terminology}
 
-本指南使用特定于平台的概念，如IMS组织和沙箱。 请查阅[Experience Platform术语表](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html)，了解这些术语和其他术语的定义。
+本指南使用特定于平台的概念，如IMS组织和沙箱。 请查阅 [Experience Platform术语表](https://experienceleague.adobe.com/docs/experience-platform/landing/glossary.html) 的定义。
 
 ## 获取所需的身份验证凭据 {#obtain-authentication-credentials}
 
-目标SDK使用[Adobe I/O](https://www.adobe.io/)网关进行身份验证。 要对目标SDK端点进行API调用，您必须在API调用中提供特定标头。 与AdobeExchange团队合作，为您设置[Adobe开发人员控制台](http://console.adobe.io/)的身份验证。
+目标SDK使用 [Adobe I/O](https://www.adobe.io/) 用于身份验证的网关。 要对目标SDK端点进行API调用，您必须在API调用中提供特定标头。 与AdobeExchange团队合作，为您设置 [Adobe开发人员控制台](http://console.adobe.io/).
 
-要成功调用目标SDK API端点，请遵循[Experience Platform身份验证教程](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html)。 从“[生成API密钥、IMS组织ID和客户端密钥](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)”步骤开始教程。 Adobe交换团队将为您处理前面的步骤。 完成身份验证教程将提供目标SDK API调用中每个所需标头的值，如下所示：
+要成功调用目标SDK API端点，请按照 [Experience Platform身份验证教程](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). 从“[生成API密钥、IMS组织ID和客户端密钥](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)“ ”步骤。 Adobe交换团队将为您处理前面的步骤。 完成身份验证教程将提供目标SDK API调用中每个所需标头的值，如下所示：
 
 * `x-api-key: {API_KEY}`，也称为客户端ID
 * `x-gw-ims-org-id: {IMS_ORG}`，也称为组织ID
@@ -55,7 +56,7 @@ AdobeExchange团队为您提供沙盒名称，您需要在目标SDK API端点的
 
 ## 基于角色的访问控制(RBAC) {#rbac}
 
-要使用[引用文档](./configuration-options.md)中描述的目标SDK API端点，您需要&#x200B;**[!UICONTROL 目标创作]**&#x200B;访问控制权限。 与AdobeExchange团队合作，在[Adobe Admin Console](https://adminconsole.adobe.com/)中获取此权限。
+使用 [参考文档](./configuration-options.md)，您需要 **[!UICONTROL 目标创作]** 访问控制权限。 与AdobeExchange团队合作，在 [Adobe Admin Console](https://adminconsole.adobe.com/).
 
 ![目标创作权限](./assets/destination-authoring-permission.png)
 
@@ -72,4 +73,6 @@ AdobeExchange团队为您提供沙盒名称，您需要在目标SDK API端点的
 
 ## 后续步骤 {#next-steps}
 
-按照本文中的步骤，您将获得Adobe I/O的身份验证凭据、沙盒名称和目标创作访问控制权限。 接下来，您可以使用目标SDK设置目标。 阅读[使用目标SDK配置目标](./configure-destination-instructions.md)以执行后续步骤。
+按照本文中的步骤，您将获得Adobe I/O的身份验证凭据、沙盒名称和目标创作访问控制权限。 接下来，您可以使用目标SDK设置目标。
+* 读取 [使用目标SDK配置目标](./configure-destination-instructions.md) 以了解后续步骤。
+* 有关所有操作，请参阅 [目标创作API文档](https://www.adobe.io/experience-platform-apis/references/destination-authoring/).

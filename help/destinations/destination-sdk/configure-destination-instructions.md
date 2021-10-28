@@ -2,9 +2,9 @@
 description: 本页列出并介绍了使用目标SDK配置流目标的步骤。
 title: 如何使用目标SDK配置流目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 2b1cde9fc913be4d3bea71e7d56e0e5fe265a6be
+source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
 workflow-type: tm+mt
-source-wordcount: '670'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
@@ -161,7 +161,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 取决于您是否指定 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 或 `"authenticationRule": "PLATFORM_AUTHENTICATION"` 在上述目标配置中，您可以使用 `/destination` 或 `/credentials` 端点。
 
 * **最常见案例**:如果已选择 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 在目标配置中，您的目标支持OAuth 2身份验证方法，请阅读 [OAuth 2身份验证](./oauth2-authentication.md).
-* 如果已选择 `"authenticationRule": "PLATFORM_AUTHENTICATION"`，请参阅 [凭据配置](./credentials-configuration.md) （在参考文档中）。
+* 如果已选择 `"authenticationRule": "PLATFORM_AUTHENTICATION"`，请参阅 [身份验证配置](./authentication-configuration.md#when-to-use).
 
 ## 步骤6:测试目标 {#test-destination}
 

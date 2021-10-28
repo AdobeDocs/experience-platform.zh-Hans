@@ -1,7 +1,8 @@
 ---
 description: 本页介绍了可使用“/authoring/credentials” API端点执行的所有API操作。
 title: 凭据端点API操作
-source-git-commit: 19307fba8f722babe5b6d57e80735ffde00fc851
+exl-id: 89957f38-e7f4-452d-abc0-0940472103fe
+source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
 workflow-type: tm+mt
 source-wordcount: '730'
 ht-degree: 4%
@@ -12,17 +13,17 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->**API端点**:  `platform.adobe.io/data/core/activation/authoring/credentials`
+>**API端点**: `platform.adobe.io/data/core/activation/authoring/credentials`
 
-本页列出并描述了可使用`/authoring/credentials` API端点执行的所有API操作。
+本页列出并介绍了您可以使用 `/authoring/credentials` API端点。
 
-## 何时使用`/credentials` API端点 {#when-to-use}
+## 何时使用 `/credentials` API端点 {#when-to-use}
 
 >[!IMPORTANT]
 >
->在大多数情况下，您&#x200B;*不*&#x200B;需要使用`/credentials` API端点。 相反，您可以通过`/destinations`端点的`customerAuthenticationConfigurations`参数配置目标的身份验证信息。 有关详细信息，请阅读[凭据配置](./credentials-configuration.md)。
+>在大多数情况下，您 *不* 需要使用 `/credentials` API端点。 您而是可以通过 `customerAuthenticationConfigurations` 参数 `/destinations` 端点。 读取 [身份验证配置](./authentication-configuration.md#when-to-use) 以了解更多信息。
 
-如果Adobe与目标之间存在全局身份验证系统，且[!DNL Platform]客户不需要提供任何身份验证凭据即可连接到您的目标，则使用此API端点并在[目标配置](./destination-configuration.md#destination-delivery)中选择`PLATFORM_AUTHENTICATION`。 在这种情况下，必须使用`/credentials` API端点创建凭据对象。
+使用此API端点并选择 `PLATFORM_AUTHENTICATION` 在 [目标配置](./destination-configuration.md#destination-delivery) 如果Adobe与目标之间存在全局身份验证系统，并且 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，必须使用 `/credentials` API端点。
 
 <!--
 
@@ -145,11 +146,11 @@ The sections below list out the necessary parameters for each authentication typ
 
 ## 凭据配置API操作快速入门 {#get-started}
 
-在继续操作之前，请查看[快速入门指南](./getting-started.md) ，了解成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
+在继续之前，请查看 [入门指南](./getting-started.md) 有关成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
 
 ## 创建凭据配置 {#create}
 
-您可以通过向`/authoring/credentials`端点发出POST请求来创建新的凭据配置。
+您可以通过向 `/authoring/credentials` 端点。
 
 **API格式**
 
@@ -160,7 +161,7 @@ POST /authoring/credentials
 
 **请求**
 
-以下请求会创建一个新的凭据配置，该配置由有效负载中提供的参数进行配置。 以下负载包括`/authoring/credentials`端点接受的所有参数。 请注意，您不必在调用中添加所有参数，并且该模板可根据您的API要求进行自定义。
+以下请求会创建一个新的凭据配置，该配置由有效负载中提供的参数进行配置。 以下负载包括接受的所有参数 `/authoring/credentials` 端点。 请注意，您不必在调用中添加所有参数，并且该模板可根据您的API要求进行自定义。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/credentials \
@@ -225,7 +226,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/credential
 
 ## 列出凭据配置 {#retrieve-list}
 
-您可以通过向`/authoring/credentials`端点发出GET请求，来检索IMS组织的所有凭据配置列表。
+您可以通过向 `/authoring/credentials` 端点。
 
 **API格式**
 
@@ -248,7 +249,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/credentials
 
 **响应**
 
-以下响应会根据您使用的IMS组织ID和沙盒名称，返回HTTP状态200，其中包含您有权访问的凭据配置列表。 一个`instanceId`对应于一个凭据配置的模板。 响应因简短而被截断。
+以下响应会根据您使用的IMS组织ID和沙盒名称，返回HTTP状态200，其中包含您有权访问的凭据配置列表。 一个 `instanceId` 对应于一个凭据配置的模板。 响应因简短而被截断。
 
 ```json
 {
@@ -275,7 +276,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/credentials
 
 ## 更新现有凭据配置 {#update}
 
-您可以通过向`/authoring/credentials`端点发出PUT请求并提供要更新的凭据配置的实例ID来更新现有凭据配置。 在调用正文中，提供更新的凭据配置。
+您可以通过向 `/authoring/credentials` 端点并提供要更新的凭据配置的实例ID。 在调用正文中，提供更新的凭据配置。
 
 **API格式**
 
@@ -323,7 +324,7 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/credentials
 
 ## 检索特定凭据配置 {#get}
 
-您可以通过向`/authoring/credentials`端点发出GET请求并提供要更新的凭据配置的实例ID来检索有关特定凭据配置的详细信息。
+您可以通过向 `/authoring/credentials` 端点并提供要更新的凭据配置的实例ID。
 
 **API格式**
 
@@ -371,7 +372,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/credentials
 
 ## 删除特定凭据配置 {#delete}
 
-您可以通过向`/authoring/credentials`端点发出DELETE请求并提供您希望在请求路径中删除的凭据配置的ID来删除指定的凭据配置。
+您可以通过向 `/authoring/credentials` 端点和提供您希望在请求路径中删除的凭据配置的ID。
 
 **API格式**
 
@@ -381,7 +382,7 @@ DELETE /authoring/credentials/{INSTANCE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{INSTANCE_ID}` | 要删除的凭据配置的`id`。 |
+| `{INSTANCE_ID}` | 的 `id` 要删除的凭据配置。 |
 
 **请求**
 
@@ -399,8 +400,8 @@ curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/credenti
 
 ## API错误处理
 
-目标SDK API端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes)和[请求标头错误](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors)。
+目标SDK API端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) 和 [请求标头错误](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) 平台疑难解答指南中。
 
 ## 后续步骤
 
-阅读本文档后，您现在知道何时使用凭据端点以及如何使用`/authoring/credentials` API端点或`/authoring/destinations`端点设置凭据配置。 请阅读[如何使用目标SDK配置目标](./configure-destination-instructions.md) ，以了解此步骤在配置目标过程中的适用位置。
+阅读本文档后，您现在知道何时使用凭据端点以及如何使用 `/authoring/credentials` API端点或 `/authoring/destinations` 端点。 读取 [如何使用Destination SDK配置目标](./configure-destination-instructions.md) 以了解此步骤在配置目标过程中的适用位置。
