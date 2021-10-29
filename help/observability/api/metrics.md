@@ -5,9 +5,9 @@ title: 量度API端点
 topic-legacy: developer guide
 description: 了解如何使用可观测性分析API在Experience Platform中检索可观测性量度。
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: 7dfc5115110ebdfa503e582b595191b17b0e46ed
+source-git-commit: 6c10413adf033d09a49088951c127fc6e6c5552f
 workflow-type: tm+mt
-source-wordcount: '1865'
+source-wordcount: '1864'
 ht-degree: 5%
 
 ---
@@ -80,10 +80,10 @@ curl -X POST \
 | --- | --- |
 | `start` | 从中检索量度数据的最早日期/时间。 |
 | `end` | 从中检索量度数据的最新日期/时间。 |
-| `granularity` | 一个可选字段，用于指示用量度数据除以的时间间隔。 例如，值为 `DAY` 返回之间每天的量度 `start` 和 `end` 日期，而值为 `MONTH` 会按月对量度结果进行分组。 使用此字段时， `downsample` 还必须提供属性以指示数据分组所依据的聚合函数。 |
+| `granularity` | 一个可选字段，指示用量度数据除以的时间间隔。 例如，值为 `DAY` 返回之间每天的量度 `start` 和 `end` 日期，而值为 `MONTH` 会按月对量度结果进行分组。 使用此字段时， `downsample` 还必须提供属性以指示数据分组所依据的聚合函数。 |
 | `metrics` | 对象数组，每个要检索的量度对应一个对象。 |
 | `name` | 可观测性分析所识别的量度的名称。 请参阅 [附录](#available-metrics) ，以获取已接受量度名称的完整列表。 |
-| `filters` | 允许您按特定数据集过滤量度的可选字段。 该字段是一个对象数组（每个过滤器对应一个对象），每个对象都包含以下属性： <ul><li>`name`:要过滤量度的实体类型。 目前，仅 `dataSets` 支持。</li><li>`value`:一个或多个数据集的ID。 多个数据集ID可以作为单个字符串提供，每个ID由垂直条字符(`|`)。</li><li>`groupBy`:当设置为true时，表示对应的 `value` 表示应单独返回其量度结果的多个数据集。 如果设置为false，则这些数据集的量度结果会分组在一起。</li></ul> |
+| `filters` | 允许您按特定数据集过滤量度的可选字段。 该字段是一个对象数组（每个过滤器对应一个对象），每个对象都包含以下属性： <ul><li>`name`:要过滤量度的实体类型。 目前，仅 `dataSets` 支持。</li><li>`value`:一个或多个数据集的ID。 多个数据集ID可以作为单个字符串提供，每个ID由垂直条字符(`\|`)。</li><li>`groupBy`:当设置为true时，表示对应的 `value` 表示应单独返回其量度结果的多个数据集。 如果设置为false，则这些数据集的量度结果会分组在一起。</li></ul> |
 | `aggregator` | 指定聚合函数，该函数应用于将多次序列记录分组为单个结果。 有关可用聚合器的详细信息，请参阅 [OpenTSDB文档](http://opentsdb.net/docs/build/html/user_guide/query/aggregators.html). |
 | `downsample` | 可选字段，用于指定聚合函数，以通过将字段分类为间隔（或“分段”）来降低量度数据的采样率。 缩减采样的间隔由 `granularity` 属性。 有关缩减采样的详细信息，请参阅 [OpenTSDB文档](http://opentsdb.net/docs/build/html/user_guide/query/downsampling.html). |
 
