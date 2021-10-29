@@ -1,15 +1,23 @@
 ---
-title: Real-time Customer Data Platform B2B版中的目标
+title: Real-time Customer Data Platform B2B版（测试版）的目标
 description: 有关目标在Real-time Customer Data Platform B2B Edition中角色的概述。
 exl-id: 81b502dd-d1b2-409e-972c-652c0a01526c
-source-git-commit: 44d5abbc9644c4fc138aad3b3ad8eb106de159e9
+source-git-commit: fef18389f8e64bdf11fe93d4077eb0474abc4981
 workflow-type: tm+mt
-source-wordcount: '208'
+source-wordcount: '244'
 ht-degree: 0%
 
 ---
 
-# Real-time Customer Data Platform B2B版本中的目标概述
+# Real-time Customer Data Platform B2B版（测试版）的目标
+
+>[!IMPORTANT]
+>
+>Real-time Customer Data Platform B2B Edition目前为测试版。 文档和功能可能会发生更改。
+
+>[!NOTE]
+>
+>如果您没有使用Real-time Customer Data Platform B2B Edition，请参阅 [目标概述](../../destinations/home.md) 中。
 
 Experience Platform目标完全受实时CDP B2B Edition支持，这些目标包括Google客户匹配、Facebook、LinkedIn、Marketo Engage、Amazon S3、Google Display &amp; Video 360、Google Ads和Google Ad Manager。
 

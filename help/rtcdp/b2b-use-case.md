@@ -1,16 +1,16 @@
 ---
 keywords: RTCDP;CDP;Real-time Customer Data Platform；实时客户数据平台；实时CDP;RTCDP
-title: Real-time Customer Data Platform B2B Edition的示例用例
+title: Real-time Customer Data Platform B2B Edition（测试版）的示例用例
 description: 此示例情景提供了配置Real-time Customer Data Platform B2B Edition实施的示例。
 exl-id: 15505980-ac33-44b2-8989-c08cbabd212b
-source-git-commit: 4ebc3ef813c3c44aa2b8a7aab5ccabbcc3c332b2
+source-git-commit: 6f421a8ae77318ca2598d640cf7e27ea485ec9db
 workflow-type: tm+mt
-source-wordcount: '1144'
+source-wordcount: '1146'
 ht-degree: 1%
 
 ---
 
-# Real-time Customer Data Platform B2B Edition的示例用例
+# Real-time Customer Data Platform B2B Edition（测试版）的示例用例
 
 >[!IMPORTANT]
 >
@@ -18,8 +18,8 @@ ht-degree: 1%
 
 Real-time Customer Data Platform B2B Edition扩展了现有的实时CDP和Adobe Experience Platform产品，以支持B2B数据和工作流。 本文档提供了一个示例用例，用于演示B2B Edition提供的其他优势。 其中包括：
 
-- 将来自不同孤立数据源的人员和帐户数据组合在一起，以生成一个全面的视图，从而更好地了解客户并更准确地细分客户。 有关更多信息，请参阅有关[创建XDM架构关系](./schemas/b2b.md)的文档，以便与各种B2B源一起使用。
-- 根据相关实体的属性对受众进行分段。 这包括“帐户”、“机会”、“营销活动”和“营销列表”。 区段不再仅限于人员属性和体验事件。 有关创建特定于B2B的受众的更多示例，请参阅[B2B分段文档](./segmentation/b2b.md)。
+- 将来自不同孤立数据源的人员和帐户数据组合在一起，以生成一个全面的视图，从而更好地了解客户并更准确地细分客户。 请参阅 [创建XDM模式关系](./schemas/b2b.md) 用于不同的B2B源，以获取更多信息。
+- 根据相关实体的属性对受众进行分段。 这包括“帐户”、“机会”、“营销活动”和“营销列表”。 区段不再仅限于人员属性和体验事件。 请参阅 [B2B分段文档](./segmentation/b2b.md) 有关创建特定于B2B的受众的更多示例。
 - 本地支持一个人与多个帐户相关的用例。
 
 ## 用例
@@ -42,7 +42,7 @@ Real-time Customer Data Platform B2B Edition扩展了现有的实时CDP和Adobe 
 
 为了进行集成和进行其他公司控制，Bodea还拥有主控数据管理(MDM)系统，其中保留了记录，表明Marketo 1中的帐户1（和CRM 1）和Marketo 2中的帐户2（和CRM 2）是同一公司。
 
-在上个月，`p2@townsend.com`访问了新产品页面，并且Web访问被Marketo 1记录。
+上个月， `p2@townsend.com` 访问了新产品页面，Marketo 1记录了网站访问。
 
 ![帐户信息图](./assets/account-info.png)
 
@@ -64,7 +64,7 @@ Real-time Customer Data Platform B2B Edition扩展了现有的实时CDP和Adobe 
 
 - 将来自所有不同来源(多个Marketo和CRM实例，以及主控数据管理)的数据合并到Real-time CDP B2B Edition中。
 
-借助RT-CDP B2B Edition，Bodea可以使用Marketo Engage源连接器将Marketo 1和Marketo 2中的B2B数据引入Experience Platform，并使用与平台连接的应用程序保持此数据的最新状态。 有关更多信息，请参阅[Marketo源连接器](../sources/connectors/adobe-applications/marketo/marketo.md)文档。
+借助RT-CDP B2B Edition，Bodea可以使用Marketo Engage源连接器将Marketo 1和Marketo 2中的B2B数据引入Experience Platform，并使用与平台连接的应用程序保持此数据的最新状态。 请参阅 [Marketo源连接器](../sources/connectors/adobe-applications/marketo/marketo.md) 文档以了解更多信息。
 
 CRM1中的B2B数据（人员、帐户、机会和活动）会同步到Marketo 1。 同样，来自CRM 2的所有B2B数据也会同步到Marketo 2。 它们通过Marketo源连接器同步到Adobe Experience Platform。 但是，如果Bodea希望将CRM中的其他数据导入Experience Platform，则他们可以使用现有的CRM连接器。
 
@@ -87,7 +87,7 @@ CRM1中的B2B数据（人员、帐户、机会和活动）会同步到Marketo 1�
    - AND
    - 在上个月访问过产品页面
 
-- 创建受众，使其成为Bodea新营销活动的最高效收件人。 在此示例中，RT-CDP B2B Edition将帮助营销人员确定`p2@townsend.com`为此营销活动的正确目标。
+- 创建受众，使其成为Bodea新营销活动的最高效收件人。 在此示例中，RT-CDP B2B Edition将帮助营销人员识别 `p2@townsend.com` 作为此营销活动的正确目标。
 
 通过使用Marketo Engage和LinkedIn目标，Bodea为其营销团队提供了端到端客户体验管理(CXM)解决方案。 在Experience Platform中创建的受众会推送到Marketo目标，该目标将显示为静态列表。 然后，此受众会自动添加到Marketo营销活动中。 同时，受众也可以通过RT-CDP B2B Edition发送到LinkedIn营销活动。
 
