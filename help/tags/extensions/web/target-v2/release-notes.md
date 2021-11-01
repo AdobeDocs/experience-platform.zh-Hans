@@ -1,10 +1,11 @@
 ---
 title: Adobe Target v2扩展的发行说明
 description: Adobe Experience Platform中Adobe Target v2标记扩展的最新发行说明。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
+source-git-commit: 42a1ceac3de2244bef858bf03eabe4910ae597f8
 workflow-type: tm+mt
-source-wordcount: '572'
-ht-degree: 44%
+source-wordcount: '589'
+ht-degree: 48%
 
 ---
 
@@ -12,25 +13,31 @@ ht-degree: 44%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## 2021 年 10 月 28 日
+
+### Adobe Target v2 扩展 0.16.0
+
+- 更新了以支持at.js v2.7.0，现在可从Adobe Target下载。
 
 ## 2021 年 7 月 20 日
 
 ### Adobe Target v2 扩展 0.15.1
 
-- 修复了`stringify`函数名称冲突的问题，该问题会导致为`sessionId`、`requestId`等生成不正确的UUID值。
+- 修复了 `stringify` 函数名称冲突，这会导致为 `sessionId`, `requestId`，等等。
 
 ## 2021 年 7 月 16 日
 
 ### Adobe Target v2 扩展 0.15.0
 
 - 每当at.js设置secureOnly设置为true时，向Cookie添加安全属性
-- 现在，使用`triggerView()`时，可使用响应令牌
-- 修复了与`CONTENT_RENDERING_NO_OFFERS`事件相关的错误。 现在，当没有从Target返回内容时，可以正确触发该事件
+- 现在，使用 `triggerView()`
+- 修复了与 `CONTENT_RENDERING_NO_OFFERS` 事件。 现在，当没有从Target返回内容时，可以正确触发该事件
 - 使用预取请求时，可正确返回A4T点击量度详细信息
-- UUID生成不再使用`Math.random()`，而是依赖于`window.crypto`
+- UUID生成不再使用 `Math.random()`，但依赖于 `window.crypto`
 - `sessionId` 每次网络调用时，Cookie到期正确延长
-- SPA视图缓存初始化现已得到正确处理，并遵循`viewsEnable`设置
+- SPA视图缓存初始化现已得到正确处理，并遵循 `viewsEnable` 设置
 
 ## 2021 年 6 月 2 日
 
@@ -48,7 +55,7 @@ ht-degree: 44%
 
 ### Adobe Target v2 扩展 0.14
 
-- 添加了新的操作Load Target with [On-Device Decisioning](./overview.md#load-target-with-on-device-decisioning)，该工具加载了at.js 2.5，且具备设备决策功能
+- 添加了新操作Load Target（加载目标） [设备内决策](./overview.md#load-target-with-on-device-decisioning)，它加载了具有设备决策功能的at.js 2.5
 - 已将at.js更新到2.5
 
 
@@ -56,7 +63,7 @@ ht-degree: 44%
 
 ### Adobe Target v2 扩展 0.13.7
 
-- 修复了 mbox 请求中包含的 `targetPageParams` 存在的问题。`targetPageParams` 只应包含在请 `pageLoad` 求中。
+- 修复了 mbox 请求中包含的 `targetPageParams` 存在的问题。`targetPageParams` 只应包含在 `pageLoad` 请求。
 - 修复了标记扩展中的文档和窗口全局对象的问题，方法是将全局对象依赖项替换为对它们的直接引用。
 - 已将at.js更新到2.4.1。
 
