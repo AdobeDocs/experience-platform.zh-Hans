@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；orac
 title: OracleResponsys连接
 description: Responsys是一种企业电子邮件营销工具，用于由Oracle提供的跨渠道营销活动，用于个性化电子邮件、移动设备、显示和社交之间的交互。
 exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
-source-git-commit: 3aac1e7c7fe838201368379da8504efc8e316e1c
+source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '475'
 ht-degree: 0%
 
 ---
@@ -14,23 +14,23 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-[](https://www.oracle.com/cx/marketing/campaign-management/) Responsys是一种企业电子邮件营销工具，用于提供的跨渠道营销活动， [!DNL Oracle] 用于个性化电子邮件、移动设备、显示和社交之间的交互。
+[Responsys](https://www.oracle.com/cx/marketing/campaign-management/) 是用于提供的跨渠道营销活动的企业电子邮件营销工具 [!DNL Oracle] 以个性化电子邮件、移动设备、显示和社交媒体之间的交互。
 
-要将区段数据发送到[!DNL Oracle Responsys]，您必须先在Adobe Experience Platform中连接到目标](#connect-destination)，然后[设置从存储位置将数据导入](#import-data-into-responsys)到[!DNL Oracle Responsys]。[
+将区段数据发送到 [!DNL Oracle Responsys]，则必须先 [连接到目标](#connect-destination) 在Adobe Experience Platform [设置数据导入](#import-data-into-responsys) 从您的存储位置到 [!DNL Oracle Responsys].
 
 ## 导出类型 {#export-type}
 
-**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从受众激活工作流的“选择属性”屏幕 [中选择](../../ui/activate-batch-profile-destinations.md#select-attributes)。
+**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从 [受众激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes).
 
 ## IP地址允许列表 {#allow-list}
 
 通过SFTP存储设置电子邮件营销目标时，Adobe建议您向允许列表添加某些IP范围。
 
-如果需要向允许列表添加AdobeIP，请参阅云存储目标的[IP地址允许列表](../cloud-storage/ip-address-allow-list.md) 。
+请参阅 [云存储目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) 如果您需要将AdobeIP添加到允许列表。
 
 ## 连接到目标 {#connect}
 
-要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 此目标支持以下连接类型：
 
@@ -39,23 +39,23 @@ ht-degree: 0%
 
 ### 连接参数 {#parameters}
 
-在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
+While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
 
-* 对于&#x200B;**[!UICONTROL 带密码的SFTP]**&#x200B;连接，必须提供：
+* 对于 **[!UICONTROL 带密码的SFTP]** 连接，您必须提供：
    * [!UICONTROL 域]
    * [!UICONTROL 端口]
    * [!UICONTROL 用户名]
    * [!UICONTROL 密码]
-* 对于&#x200B;**[!UICONTROL 具有SSH密钥的SFTP]**&#x200B;连接，必须提供：
+* 对于 **[!UICONTROL 具有SSH密钥的SFTP]** 连接，您必须提供：
    * [!UICONTROL 域]
    * [!UICONTROL 端口]
    * [!UICONTROL 用户名]
    * [!UICONTROL SSH密钥]
-* 或者，您也可以附加RSA格式的公钥，以在&#x200B;**[!UICONTROL Key]**&#x200B;部分下将PGP/GPG加密添加到导出的文件中。 您的公钥必须写为[!DNL Base64]编码字符串。
+* 或者，您也可以将RSA格式的公钥附加到 **[!UICONTROL 键]** 中。 您的公钥必须写为 [!DNL Base64] 编码字符串。
 * **[!UICONTROL 名称]**:为您的目标选择相关名称。
 * **[!UICONTROL 描述]**:输入目标的描述。
-* **[!UICONTROL 文件夹路径]**:在存储位置中提供路径，Platform会将导出数据存储为CSV或制表符分隔的文件。
-* **[!UICONTROL 文件格式]**: **** CSV或 **TAB_DELIMITED**。选择要导出到存储位置的文件格式。
+* **[!UICONTROL 文件夹路径]**:在存储位置中提供路径，Platform会将导出数据存储为CSV文件。
+* **[!UICONTROL 文件格式]**: **CSV** 或 **制表符分隔**. 选择要导出到存储位置的文件格式。
 
 <!--
 
@@ -67,16 +67,16 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 
 ## 将区段激活到此目标 {#activate}
 
-有关将受众区段激活到此目标的说明，请参阅[将受众数据激活到批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md)。
+请参阅 [激活受众数据以批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
 
 ### 目标属性 {#destination-attributes}
 
-在将区段激活到此目标时，Adobe建议您从[并集架构](../../../profile/home.md#profile-fragments-and-union-schemas)中选择唯一标识符。 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关更多信息，请参阅[将受众激活到电子邮件营销目标的最佳实践](overview.md#best-practices)。
+在将区段激活到此目标时，Adobe建议您从 [合并模式](../../../profile/home.md#profile-fragments-and-union-schemas). 选择唯一标识符以及要导出到目标的任何其他XDM字段。 有关更多信息，请参阅 [将受众激活到电子邮件营销目标时的最佳实践](overview.md#best-practices).
 
 ## 导出的数据 {#exported-data}
 
-对于[!DNL Oracle Responsys]目标，Platform会在您提供的存储位置中创建一个以制表符分隔的`.csv`文件。 有关这些文件的更多信息，请参阅区段激活教程中的[验证区段激活](../../ui/activate-batch-profile-destinations.md#verify) 。
+对于 [!DNL Oracle Responsys] 目标，平台会创建 `.csv` 文件。 有关文件的更多信息，请参阅 [验证区段激活](../../ui/activate-batch-profile-destinations.md#verify) 区段激活教程中的。
 
-## 设置数据导入到[!DNL Oracle Responsys] {#import-data-into-responsys}
+## 设置数据导入到 [!DNL Oracle Responsys] {#import-data-into-responsys}
 
-将[!DNL Platform]连接到[!DNL SFTP]存储后，必须将数据从存储位置导入[!DNL Oracle Responsys]。 要了解如何完成此操作，请参阅[!DNL Oracle Responsys Help Center]中的[导入联系人或帐户](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCEA/Connect_WizardUpload.htm)。
+连接后 [!DNL Platform] 至 [!DNL SFTP] 存储中，您必须将数据从存储位置导入到 [!DNL Oracle Responsys]. 要了解如何完成此操作，请参阅 [导入联系人或帐户](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCEA/Connect_WizardUpload.htm) 在 [!DNL Oracle Responsys Help Center].
