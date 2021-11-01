@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；orac
 title: OracleResponsys连接
 description: Responsys是一种企业电子邮件营销工具，用于由Oracle提供的跨渠道营销活动，用于个性化电子邮件、移动设备、显示和社交之间的交互。
 exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: b0d6e02c67f2a62971332acb224c7422ea467e6c
 workflow-type: tm+mt
-source-wordcount: '475'
+source-wordcount: '471'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 * **[!UICONTROL 名称]**:为您的目标选择相关名称。
 * **[!UICONTROL 描述]**:输入目标的描述。
 * **[!UICONTROL 文件夹路径]**:在存储位置中提供路径，Platform会将导出数据存储为CSV文件。
-* **[!UICONTROL 文件格式]**: **CSV** 或 **制表符分隔**. 选择要导出到存储位置的文件格式。
+* **[!UICONTROL 文件格式]**:选择 **CSV** 将CSV文件导出到存储位置。
 
 <!--
 

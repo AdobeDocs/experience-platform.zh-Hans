@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；orac
 title: OracleEloqua连接
 description: OracleEloqua是由Oracle提供的软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索的生成。
 exl-id: 6eaa79ff-8874-423b-bdff-aa04f6101a53
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: b0d6e02c67f2a62971332acb224c7422ea467e6c
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '487'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 * **[!UICONTROL 名称]**:为您的目标选择相关名称。
 * **[!UICONTROL 描述]**:输入目标的描述。
 * **[!UICONTROL 文件夹路径]**:在存储位置中提供路径，Platform会将导出数据存储为CSV文件。
-* **[!UICONTROL 文件格式]**: **CSV** 或 **制表符分隔**. 选择要导出到存储位置的文件格式。
+* **[!UICONTROL 文件格式]**:选择 **CSV** 将CSV文件导出到存储位置。
 
 <!--
 

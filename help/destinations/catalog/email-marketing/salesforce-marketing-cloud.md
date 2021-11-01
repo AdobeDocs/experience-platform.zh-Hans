@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Sale
 title: SalesforceMarketing Cloud连接
 seo-description: Salesforce Marketing Cloud is a digital marketing suite formerly known as ExactTarget that allows you to build and customize journeys for visitors and customers to personalize their experience.
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: b0d6e02c67f2a62971332acb224c7422ea467e6c
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '455'
 ht-degree: 0%
 
 ---
@@ -56,7 +56,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 * **[!UICONTROL 名称]**:为您的目标选择相关名称。
 * **[!UICONTROL 描述]**:输入目标的描述。
 * **[!UICONTROL 文件夹路径]**:在存储位置中提供路径，Platform会将导出数据存储为CSV文件。
-* **[!UICONTROL 文件格式]**: **CSV** 或 **制表符分隔**. 选择要导出到存储位置的文件格式。
+* **[!UICONTROL 文件格式]**:选择 **CSV** 将CSV文件导出到存储位置。
 
 <!--
 

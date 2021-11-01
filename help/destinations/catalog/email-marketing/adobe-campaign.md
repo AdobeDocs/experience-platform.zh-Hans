@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Adob
 title: Adobe Campaign连接
 description: Adobe Campaign是一套解决方案，可帮助您在所有在线渠道和离线渠道之间个性化并交付促销活动。
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: b0d6e02c67f2a62971332acb224c7422ea467e6c
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '713'
 ht-degree: 2%
 
 ---
@@ -55,7 +55,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 * **[!UICONTROL 存储段名称]**: *对于S3连接*. 输入S3存储段的位置，其中 [!DNL Platform] 会将导出数据存储为CSV文件。
 * **[!UICONTROL 文件夹路径]**:在存储位置中提供路径，其中 [!DNL Platform] 会将导出数据存储为CSV文件。
 * **[!UICONTROL 容器]**: *对于Blob连接*. 包含文件夹路径中的Blob的容器。
-* **[!UICONTROL 文件格式]**: **CSV** 或 **制表符分隔**. 选择要导出到存储位置的文件格式。
+* **[!UICONTROL 文件格式]**:选择 **CSV** 将CSV文件导出到存储位置。
 
 ## 将区段激活到此目标 {#activate}
 
