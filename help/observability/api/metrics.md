@@ -5,9 +5,9 @@ title: 量度API端点
 topic-legacy: developer guide
 description: 了解如何使用可观测性分析API在Experience Platform中检索可观测性量度。
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: 6c10413adf033d09a49088951c127fc6e6c5552f
+source-git-commit: 5c893d7c8c455c86c94cd311a20ce774abcf65e0
 workflow-type: tm+mt
-source-wordcount: '1864'
+source-wordcount: '1866'
 ht-degree: 5%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 5%
 
 >[!NOTE]
 >
->以前版本的量度端点(V1)已被弃用。 本文档专门介绍当前版本(V2)。 有关旧版实施的V1端点的详细信息，请参阅 [API参考](https://www.adobe.io/experience-platform-apis/references/observability-insights/#operation/retrieveMetricsV1).
+>已弃用量度端点的先前版本(V1)。 本文档专门介绍当前版本(V2)。 有关旧版实施的V1端点的详细信息，请参阅 [API参考](https://www.adobe.io/experience-platform-apis/references/observability-insights/#operation/retrieveMetricsV1).
 
 ## 快速入门
 
