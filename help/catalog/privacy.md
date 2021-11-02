@@ -5,55 +5,55 @@ title: 数据湖中的隐私请求处理
 topic-legacy: overview
 description: Adobe Experience Platform Privacy Service会根据法律和组织隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-source-git-commit: e94482532e0c5698cfe5e51ba260f89c67fa64f0
+source-git-commit: d8665a349c6f453d83b64317982f3544bbcde0f7
 workflow-type: tm+mt
-source-wordcount: '1351'
+source-wordcount: '1380'
 ht-degree: 1%
 
 ---
 
-# [!DNL Data Lake]中的隐私请求处理
+# 中的隐私请求处理 [!DNL Data Lake]
 
-Adobe Experience Platform [!DNL Privacy Service]处理客户访问、选择退出销售或删除其个人数据的请求，这些请求符合法律和组织隐私法规的规定。
+Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退出销售或删除其个人数据的请求，这些请求符合法律和组织隐私法规的规定。
 
-本文档介绍与处理存储在[!DNL Data Lake]中的客户数据的隐私请求相关的基本概念。
+本文档介绍与处理存储在 [!DNL Data Lake].
 
 >[!NOTE]
 >
->本指南仅介绍如何在Experience Platform中对数据湖发出隐私请求。 如果您还计划为实时客户资料数据存储发起隐私请求，除本教程外，请参阅关于[配置文件隐私请求处理指南。](../profile/privacy.md)
+>本指南仅介绍如何在Experience Platform中对数据湖发出隐私请求。 如果您还计划为实时客户资料数据存储提出隐私请求，请参阅 [配置文件的隐私请求处理](../profile/privacy.md) 除了本教程之外，
 >
->有关如何为其他Adobe Experience Cloud应用程序发出隐私请求的步骤，请参阅[Privacy Service文档](../privacy-service/experience-cloud-apps.md)。
+>有关如何为其他Adobe Experience Cloud应用程序发出隐私请求的步骤，请参阅 [Privacy Service文档](../privacy-service/experience-cloud-apps.md).
 
-## 入门指南
+## 快速入门
 
-在阅读本指南之前，建议您对以下[!DNL Experience Platform]服务有一定的了解：
+建议您对以下方面有一定的了解 [!DNL Experience Platform] 服务：
 
 * [[!DNL Privacy Service]](../privacy-service/home.md):管理客户在Adobe Experience Cloud应用程序中访问、选择退出销售或删除其个人数据的请求。
-* [[!DNL Catalog Service]](home.md):内数据位置和谱系的记录系 [!DNL Experience Platform]统。提供可用于更新数据集元数据的API。
-* [[!DNL Experience Data Model (XDM) System]](../xdm/home.md):用于组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL Catalog Service]](home.md):数据位置和谱系的记录系统 [!DNL Experience Platform]. 提供可用于更新数据集元数据的API。
+* [[!DNL Experience Data Model (XDM) System]](../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
 * [[!DNL Identity Service]](../identity-service/home.md):通过跨设备和系统桥接身份，解决客户体验数据碎片化所带来的根本难题。
 
 ## 了解身份命名空间 {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service]跨系统和设备桥接客户身份数据。 [!DNL Identity Service] 使用身份命名空间，通过将身份值与其源系统相关联来提供与身份值相关的上下文。命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising Cloud ID(“AdCloud”)或Adobe Target ID(“TNTID”))相关联。
+Adobe Experience Platform [!DNL Identity Service] 跨系统和设备连接客户身份数据。 [!DNL Identity Service] 使用身份命名空间，通过将身份值与其源系统相关联来提供与身份值相关的上下文。 命名空间可以表示一个通用概念，如电子邮件地址（“电子邮件”），或将标识与特定应用程序(如Adobe Advertising Cloud ID(“AdCloud”)或Adobe Target ID(“TNTID”))相关联。
 
-[!DNL Identity Service] 维护全局定义（标准）和用户定义（自定义）身份命名空间的存储。标准命名空间适用于所有组织（例如，“电子邮件”和“ECID”），而您的组织也可以创建自定义命名空间以满足其特定需求。
+[!DNL Identity Service] 维护全局定义（标准）和用户定义（自定义）身份命名空间的存储。 标准命名空间适用于所有组织（例如，“电子邮件”和“ECID”），而您的组织也可以创建自定义命名空间以满足其特定需求。
 
-有关[!DNL Experience Platform]中身份命名空间的更多信息，请参阅[身份命名空间概述](../identity-service/namespaces.md)。
+有关 [!DNL Experience Platform]，请参阅 [身份命名空间概述](../identity-service/namespaces.md).
 
 ## 向数据集添加身份数据
 
-在为[!DNL Data Lake]创建隐私请求时，必须为每个客户提供有效的身份值（及其关联的命名空间），以便找到其数据并进行相应的处理。 因此，所有遵循隐私请求的数据集都必须在其关联的XDM架构中包含标识描述符。
+在为 [!DNL Data Lake]，必须为每个客户提供有效的标识值（及其关联的命名空间），以便找到其数据并进行相应处理。 因此，所有遵循隐私请求的数据集都必须在其关联的XDM架构中包含标识描述符。
 
 >[!NOTE]
 >
 >当前不支持身份描述符元数据的任何基于架构的数据集（例如临时数据集）在隐私请求中无法处理。
 
-本节将介绍如何向现有数据集的XDM架构添加身份描述符。 如果您已经有一个包含身份描述符的数据集，则可以跳到[下一节](#nested-maps)。
+本节将介绍如何向现有数据集的XDM架构添加身份描述符。 如果您已经有一个包含身份描述符的数据集，则可以跳到 [下一部分](#nested-maps).
 
 >[!IMPORTANT]
 >
->在确定要设置为标识的架构字段时，请记住使用嵌套映射类型字段](#nested-maps)的限制。[
+>在决定要设置为标识的架构字段时，请记住 [使用嵌套映射类型字段的限制](#nested-maps).
 
 向数据集架构添加标识描述符的方法有两种：
 
@@ -62,19 +62,19 @@ Adobe Experience Platform [!DNL Identity Service]跨系统和设备桥接客户�
 
 ### 使用UI {#identity-ui}
 
-在[!DNL Experience Platform ]用户界面中， **[!UICONTROL 架构]**&#x200B;工作区允许您编辑现有的XDM架构。 要向架构添加标识描述符，请从列表中选择架构，然后按照[教程中[!DNL Schema Editor]将架构字段设置为标识字段](../xdm/tutorials/create-schema-ui.md#identity-field)的步骤操作。
+在 [!DNL Experience Platform ]用户界面， **[!UICONTROL 模式]** 工作区允许您编辑现有的XDM模式。 要向架构添加标识描述符，请从列表中选择架构，然后按照 [将架构字段设置为标识字段](../xdm/tutorials/create-schema-ui.md#identity-field) 在 [!DNL Schema Editor] 教程。
 
-将架构中的相应字段设置为标识字段后，您可以转到下一节，内容涉及[submitting privacy requests](#submit)。
+在架构中将相应字段设置为标识字段后，您可以转到 [提交隐私请求](#submit).
 
 ### 使用 API {#identity-api}
 
 >[!NOTE]
 >
->本节假定您知道数据集XDM架构的唯一URI ID值。 如果您不知道此值，可以使用[!DNL Catalog Service] API进行检索。 在阅读开发人员指南的[入门](./api/getting-started.md)部分后，按照[列出](./api/list-objects.md)或[查找](./api/look-up-object.md) [!DNL Catalog]对象中列出的步骤查找您的数据集。 架构ID可在`schemaRef.id`下找到
+>本节假定您知道数据集XDM架构的唯一URI ID值。 如果您不知道此值，可以使用 [!DNL Catalog Service] API。 阅读 [入门](./api/getting-started.md) ，请按照 [列表](./api/list-objects.md) 或 [查找](./api/look-up-object.md) [!DNL Catalog] 查找数据集的对象。 架构ID可在 `schemaRef.id`
 >
-> 本节包括对架构注册表API的调用。 有关使用API的重要信息，包括了解`{TENANT_ID}`和容器概念，请参阅开发人员指南的[入门](../xdm/api/getting-started.md)部分。
+>本节还假定您知道如何调用架构注册表API。 有关使用API的重要信息，包括了解您的 `{TENANT_ID}` 容器的概念，请参阅 [入门](../xdm/api/getting-started.md) 部分。
 
-您可以通过向[!DNL Schema Registry] API的`/descriptors`端点发出POST请求，将身份描述符添加到数据集的XDM架构中。
+您可以通过向 `/descriptors` 的端点 [!DNL Schema Registry] API。
 
 **API格式**
 
@@ -90,10 +90,10 @@ POST /descriptors
 curl -X POST \
   https://platform.adobe.io/data/foundation/schemaregistry/tenant/descriptors \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
   -d '
       {
         "@type": "xdm:descriptorIdentity",
@@ -110,10 +110,10 @@ curl -X POST \
 | --- | --- |
 | `@type` | 正在创建的描述符的类型。 对于身份描述符，值必须为“xdm:descriptorIdentity”。 |
 | `xdm:sourceSchema` | 数据集XDM架构的唯一URI ID。 |
-| `xdm:sourceVersion` | 在`xdm:sourceSchema`中指定的XDM架构版本。 |
+| `xdm:sourceVersion` | 中指定的XDM架构版本 `xdm:sourceSchema`. |
 | `xdm:sourceProperty` | 描述符所应用的架构字段的路径。 |
-| `xdm:namespace` | 由[!DNL Privacy Service]识别的[标准身份命名空间](../privacy-service/api/appendix.md#standard-namespaces)之一，或由您的组织定义的自定义命名空间。 |
-| `xdm:property` | “xdm:id”或“xdm:code”，具体取决于`xdm:namespace`下使用的命名空间。 |
+| `xdm:namespace` | 其中一个 [标准身份命名空间](../privacy-service/api/appendix.md#standard-namespaces) 确认 [!DNL Privacy Service]，或由您的组织定义的自定义命名空间。 |
+| `xdm:property` | “xdm:id”或“xdm:code”，具体取决于 `xdm:namespace`. |
 | `xdm:isPrimary` | 可选布尔值。 如果为true，则表示字段是主标识。 架构只能包含一个主标识。 如果未包含，则默认为false。 |
 
 **响应**
@@ -138,9 +138,9 @@ curl -X POST \
 
 >[!NOTE]
 >
->本节介绍如何设置[!DNL Data Lake]隐私请求的格式。 强烈建议您查看[[!DNL Privacy Service] UI](../privacy-service/ui/overview.md)或[[!DNL Privacy Service] API](../privacy-service/api/getting-started.md)文档，以了解有关如何提交隐私作业的完整步骤，包括如何在请求负载中正确设置已提交的用户身份数据的格式。
+>本节介绍如何设置隐私请求的格式 [!DNL Data Lake]. 强烈建议您查看 [[!DNL Privacy Service] UI](../privacy-service/ui/overview.md) 或 [[!DNL Privacy Service] API](../privacy-service/api/getting-started.md) 有关如何提交隐私作业的完整步骤文档，包括如何以请求负载正确设置已提交的用户身份数据的格式。
 
-以下部分概述了如何使用[!DNL Privacy Service] UI或API向[!DNL Data Lake]发出隐私请求。
+以下部分概述如何为 [!DNL Data Lake] 使用 [!DNL Privacy Service] UI或API。
 
 >[!IMPORTANT]
 >
@@ -148,25 +148,25 @@ curl -X POST \
 
 ### 使用UI
 
-在UI中创建作业请求时，请务必在&#x200B;**[!UICONTROL 产品]**&#x200B;下选择&#x200B;**[!UICONTROL AEP Data Lake]**&#x200B;和/或&#x200B;**[!UICONTROL 配置文件]**，以便分别处理存储在[!DNL Data Lake]或[!DNL Real-time Customer Profile]中的数据的作业。
+在UI中创建作业请求时，请务必选择 **[!UICONTROL AEP Data Lake]** 和/或 **[!UICONTROL 用户档案]** 在 **[!UICONTROL 产品]** 以便处理存储在 [!DNL Data Lake] 或 [!DNL Real-time Customer Profile]，分别为。
 
 <img src="images/privacy/product-value.png" width="450"><br>
 
 ### 使用 API
 
-在API中创建作业请求时，提供的任何`userIDs`都必须使用特定的`namespace`和`type`，具体取决于它们所应用的数据存储。 [!DNL Data Lake]的ID必须对其`type`值使用“unexign”，并且`namespace`值必须与已添加到适用数据集的[隐私标签](#privacy-labels)中的一个值匹配。
+在API中创建作业请求时，任何 `userIDs` 必须使用 `namespace` 和 `type` 具体取决于应用到的数据存储。 的ID [!DNL Data Lake] 必须使用 `unregistered` 为 `type` 值和 `namespace` 与其中一个匹配的值 [隐私标签](#privacy-labels) 已添加到适用数据集的数据集。
 
-此外，请求有效负载的`include`数组必须包含请求所针对的不同数据存储的产品值。 向[!DNL Data Lake]发出请求时，数组必须包含值`aepDataLake`。
+此外， `include` 请求有效负载的数组必须包含对请求进行的不同数据存储的产品值。 向 [!DNL Data Lake]，则数组必须包含值 `aepDataLake`.
 
-以下请求使用未注册的“email_label”命名空间为[!DNL Data Lake]创建新的隐私作业。 它还包括`include`数组中[!DNL Data Lake]的产品值：
+以下请求会为 [!DNL Data Lake]，使用未注册的 `email_label` 命名空间。 它还包括 [!DNL Data Lake] 在 `include` 数组：
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/core/privacy/jobs \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'Content-Type: application/json' \
   -d '{
     "companyContexts": [
       {
@@ -199,27 +199,31 @@ curl -X POST \
 }'
 ```
 
+>[!IMPORTANT]
+>
+>平台处理所有 [沙箱](../sandboxes/home.md) 属于您的组织。 因此， `x-sandbox-name` 系统将忽略请求中包含的标头。
+
 ## 删除请求处理
 
-当[!DNL Experience Platform]收到来自[!DNL Privacy Service]的删除请求时，[!DNL Platform]向[!DNL Privacy Service]发送确认，确认该请求已被接收，且受影响的数据已被标记为删除。 然后，在七天内从[!DNL Data Lake]中删除记录。 在这七天的时间范围内，数据会被软删除，因此任何[!DNL Platform]服务都无法访问。
+When [!DNL Experience Platform] 从接收删除请求 [!DNL Privacy Service], [!DNL Platform] 向发送确认 [!DNL Privacy Service] 请求已收到且受影响的数据已标记为删除。 然后，将从 [!DNL Data Lake] 七天之内。 在这七天的时间范围内，数据会被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。
 
-在将来的版本中， [!DNL Platform]将在数据被实际删除后向[!DNL Privacy Service]发送确认。
+在未来版本中， [!DNL Platform] 将向发送确认函 [!DNL Privacy Service] 数据被物理删除后。
 
 ## 后续步骤
 
-通过阅读本文档，您了解了处理[!DNL Data Lake]的隐私请求所涉及的重要概念。 建议您继续阅读本指南中提供的文档，以加深对如何管理身份数据和创建隐私作业的了解。
+通过阅读本文档，您了解了处理 [!DNL Data Lake]. 建议您继续阅读本指南中提供的文档，以加深对如何管理身份数据和创建隐私作业的了解。
 
-有关处理[!DNL Profile]存储的隐私请求的步骤，请参阅[实时客户配置文件隐私请求处理文档](../profile/privacy.md)。
+请参阅 [实时客户资料的隐私请求处理](../profile/privacy.md) 有关处理隐私请求的步骤，请参阅 [!DNL Profile] 存储。
 
 ## 附录
 
-以下部分包含有关[!DNL Data Lake]中处理隐私请求的其他信息。
+以下部分包含有关在 [!DNL Data Lake].
 
-### 标记嵌套的映射类型字段{#nested-maps}
+### 标记嵌套的映射类型字段 {#nested-maps}
 
 请务必注意，有两种嵌套的映射类型字段不支持隐私标签设置：
 
 * 数组类型字段中的映射类型字段
 * 另一个映射类型字段中的映射类型字段
 
-以上两个示例中任何一个的隐私作业处理最终都将失败。 因此，建议您避免使用嵌套的映射类型字段存储专用客户数据。 对于基于记录的数据集，相关消费者ID应作为非映射数据类型存储在`identityMap`字段（本身为映射类型字段）中，或者对于基于时间序列的数据集，应作为`endUserID`字段。
+以上两个示例中任何一个的隐私作业处理最终都将失败。 因此，建议您避免使用嵌套的映射类型字段存储专用客户数据。 相关消费者ID应作为非映射数据类型存储在 `identityMap` 字段（本身是映射类型字段），用于基于记录的数据集，或 `endUserID` 字段。
