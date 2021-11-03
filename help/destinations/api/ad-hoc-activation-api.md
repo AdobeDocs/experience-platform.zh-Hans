@@ -5,7 +5,7 @@ title: （测试版）通过临时激活API将受众区段激活到批量目标
 description: 本文说明了通过临时激活API激活受众区段的端到端工作流程，包括激活前进行的分段作业。
 topic-legacy: tutorial
 type: Tutorial
-source-git-commit: 8cac961e1566c48bacc0ec2ab3414132f81232e2
+source-git-commit: 96b0a2445eb2fd64ac8291cea6879f88d9f690ec
 workflow-type: tm+mt
 source-wordcount: '1054'
 ht-degree: 2%
@@ -148,7 +148,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
          "segmentId3"
       ]
    },
-   "exportId":[
+   "exportIds":[
       "exportId1"
    ]
 }
