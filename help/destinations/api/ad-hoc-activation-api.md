@@ -5,7 +5,7 @@ title: （测试版）通过Experience Platform临时激活API激活受众区段
 description: 本文说明了通过临时激活API激活区段的端到端工作流，包括激活之前进行的分段作业。
 topic-legacy: tutorial
 type: Tutorial
-source-git-commit: d5b383ec4e9f6e2f05a0e5834e3998789a67ce32
+source-git-commit: 0c8fbaec9a592c9d5c20c077f31279f732ec2a0d
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 2%
@@ -124,9 +124,9 @@ Adobe Experience Platform每24小时运行一次计划分段作业。 临时激�
 
 区段导出作业完成后，您可以触发激活。
 
->[!WARNING]
+>[!NOTE]
 >
->每个临时激活作业最多可激活50个区段。 尝试激活更多区段将导致作业失败。
+>每个临时激活作业最多可激活20个区段。 尝试激活更多区段将导致作业失败。
 
 ### 请求
 
