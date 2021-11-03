@@ -5,18 +5,14 @@ title: Kafka Connector
 topic-legacy: overview
 description: Adobe Experience Platform的流连接器基于Apache Kafka Connect。 此库可用于直接在您的数据中心中将JSON事件从Kafka主题流式传输到实时Experience Platform。
 exl-id: 062963e5-c727-4c2c-97db-8a9a5a7d903c
-source-git-commit: 5a3aa74ca7319235c10902422abc0e897ad823b8
+source-git-commit: 04a43df2da34c563b3c919115e271843a279ac56
 workflow-type: tm+mt
-source-wordcount: '216'
+source-wordcount: '188'
 ht-degree: 0%
 
 ---
 
-# [!DNL Kafka] Adobe Experience Platform连接器（已弃用）
-
->[!IMPORTANT]
->
->Kafka连接器已弃用。 要创建流连接并将数据导入Adobe Experience Platform，请参阅 [创建HTTP API流连接](../../sources/connectors/streaming/http.md)
+# [!DNL Kafka] Adobe Experience Platform连接器
 
 Adobe Experience Platform的流连接器基于 [!DNL Apache Kafka Connect]. 此库可用于从流式传输JSON事件 [!DNL Kafka] 数据中心中的主题直接 [!DNL Experience Platform] 实时。
 
