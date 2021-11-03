@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；目标API；临时激活；激活区段临时
 solution: Experience Platform
-title: （测试版）通过Experience Platform临时激活API激活受众区段
-description: 本文说明了通过临时激活API激活区段的端到端工作流，包括激活之前进行的分段作业。
+title: （测试版）通过临时激活API将受众区段激活到批量目标
+description: 本文说明了通过临时激活API激活受众区段的端到端工作流程，包括激活前进行的分段作业。
 topic-legacy: tutorial
 type: Tutorial
-source-git-commit: 0c8fbaec9a592c9d5c20c077f31279f732ec2a0d
+source-git-commit: 8cac961e1566c48bacc0ec2ab3414132f81232e2
 workflow-type: tm+mt
-source-wordcount: '1056'
+source-wordcount: '1054'
 ht-degree: 2%
 
 ---
 
 
-# （测试版）通过Experience Platform临时激活API激活受众区段
+# （测试版）通过临时激活API将受众区段激活到批量目标
 
 >[!IMPORTANT]
 >
@@ -35,16 +35,16 @@ ht-degree: 2%
 
 ### Flash销售或促销
 
-一家在线零售商准备进行有限的闪购，希望在短时间通知客户。 通过Experience Platform临时激活API，营销团队可以根据需要导出受众区段，并快速向客户群发送促销电子邮件。
+一家在线零售商准备进行有限的闪购，希望在短时间通知客户。 通过Experience Platform临时激活API，营销团队可以按需导出区段，并快速向客户群发送促销电子邮件。
 
 
 ### 最新事件或突发新闻
 
-酒店预计接下来几天天气会很恶劣，团队想要迅速通知到达的客人，以便他们可以据此进行规划。 营销团队可以使用Experience Platform临时激活API根据需要导出受众区段，并通知客人。
+酒店预计接下来几天天气会很恶劣，团队想要迅速通知到达的客人，以便他们可以据此进行规划。 营销团队可以使用Experience Platform临时激活API根据需要导出区段，并通知客人。
 
 ### 集成测试
 
-IT经理可以使用Experience Platform临时激活API按需导出受众区段，因此他们可以测试与Adobe Experience Platform的自定义集成，并确保一切正常工作。
+IT经理可以使用Experience Platform临时激活API按需导出区段，因此他们可以测试与Adobe Experience Platform的自定义集成，并确保一切正常工作。
 
 
 ## 护栏 {#guardrails}
@@ -156,8 +156,8 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | 要激活受众区段的目标实例的ID。 |
-| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | 要激活到选定目标的受众区段的ID。 |
+| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | 要激活区段的目标实例的ID。 |
+| <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | 要激活到选定目标的区段的ID。 |
 | <ul><li>`exportId1`</li></ul> | 在响应 [区段导出](../../segmentation/api/export-jobs.md#retrieve-list) 工作。 请参阅 [步骤4:获取最新的区段导出作业ID](#segment-export-id) 以了解有关如何查找此ID的说明。 |
 
 ### 响应
