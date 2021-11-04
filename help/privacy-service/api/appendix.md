@@ -5,9 +5,9 @@ title: Privacy ServiceAPI指南附录
 topic-legacy: developer guide
 description: 本文档包含有关使用Privacy ServiceAPI的其他信息。
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
-source-git-commit: 49f5de6c4711120306bfc3e6759ed4e83e8a19c2
+source-git-commit: 0d20da1264c20a5684c241a725041dd009f77b58
 workflow-type: tm+mt
-source-wordcount: '480'
+source-wordcount: '482'
 ht-degree: 8%
 
 ---
@@ -75,5 +75,6 @@ ht-degree: 8%
 | 客户属性(CRS) | `CRS` |
 | 身份服务 | `Identity` |
 | Real-time Customer Profile | `profileService` |
+| Marketo Engage | `marketo` |
 
 {style=&quot;table-layout:auto&quot;}

@@ -5,9 +5,9 @@ title: Privacy Service和Experience Cloud应用程序
 topic-legacy: overview
 description: 本文档提供了有关如何为隐私相关操作配置不同Experience Cloud应用程序的参考。
 exl-id: da21c15f-0b99-4eb7-ac9a-f0fe5e3ba842
-source-git-commit: f0dc33dcd4803f157e411d8baf3b2d2f96cea5e1
+source-git-commit: 0d20da1264c20a5684c241a725041dd009f77b58
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '617'
 ht-degree: 15%
 
 ---
@@ -37,6 +37,7 @@ Adobe Experience Platform [!DNL Privacy Service] 旨在支持多个Adobe Experie
 | Adobe Experience Platform | ✓ | ✓ | <ul><li>[数据湖的访问/删除文档](../catalog/privacy.md)</li><li>[Identity Service的访问/删除文档](../identity-service/privacy.md)</li><li>[实时客户资料的访问/删除文档](../profile/privacy.md)</li><li>[!DNL Experience Platform] 荣誉 [受众区段的选择退出请求](../segmentation/consents.md).</li></ul> |
 | Adobe Primetime身份验证 | ✓ | 不适用 | <ul><li>[访问/删除文档](http://tve.helpdocsonline.com/how-to-make-a-privacy-request)</li><li>[!DNL Primetime] 无法传输数据，因此选择退出销售请求不适用。</li></ul> |
 | Adobe Target | ✓ | 不适用 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/target/using/implement-target/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.html)</li><li>[!DNL Target] 无法传输数据，因此选择退出销售请求不适用。</li></ul> |
+| Marketo Engage | ✓ | 不适用 | <ul><li>[访问/删除文档](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/privacy-requests.html)</li><li>[!DNL Marketo] 无法传输数据，因此选择退出销售请求不适用。</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -50,7 +51,6 @@ Adobe Experience Platform [!DNL Privacy Service] 旨在支持多个Adobe Experie
 | [Adobe Experience Manager](https://experienceleague.adobe.com/docs/experience-manager-64/managing/data-protection/data-protection-and-privacy.html) | 概述客户隐私管理员或AEM管理员如何处理GDPR请求。 |
 | [Adobe Experience Manager Livefyre](https://experienceleague.adobe.com/docs/livefyre/using/settings-other/privacy-requests/c-gdpr-compliance.html) | 使用Livefyre发出GDPR访问和删除请求的步骤。 |
 | [Magento](https://devdocs.magento.com/compliance/industry-compliance.html) | 确保您的Magento Commerce安装符合特定隐私法规的要求。 |
-| [Marketo](https://www.marketo.com/company/trust/gdpr/) | 了解隐私法规如何应用于Marketo。 |
 | [Adobe Experience Platform 中的标记](../tags/ui/client-side/consent.md) | 介绍开发人员如何使用扩展功能和规则生成器，来定义“选择加入”和“选择退出”解决方案。 |
 | [Workfront](https://www.workfront.com/privacy-notice) | 了解Workfront如何收集个人数据，以及数据主体如何通过表单提交隐私请求。 |
 
