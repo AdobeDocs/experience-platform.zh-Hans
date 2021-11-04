@@ -6,49 +6,49 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Azure事件中心帐户。
 exl-id: a4d0662d-06e3-44f3-8cb7-4a829c44f4d9
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 855b6414981c6d7ee79bc674e5a4087dd79dde5b
 workflow-type: tm+mt
-source-wordcount: '719'
+source-wordcount: '737'
 ht-degree: 1%
 
 ---
 
 
-# 使用[!DNL Flow Service] API创建[!DNL Azure Event Hubs]源连接
+# 创建 [!DNL Azure Event Hubs] 源连接使用 [!DNL Flow Service] API
 
-本教程将指导您完成使用[[!DNL Flow Service]  API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将[!DNL Azure Event Hubs]（以下称“[!DNL Event Hubs]”）连接到Experience Platform的步骤。
+本教程将指导您完成连接的步骤 [!DNL Azure Event Hubs] (以下简称“[!DNL Event Hubs]&quot;)Experience Platform，使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-- [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
-- [沙盒](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [源](../../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
+- [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下各节提供了您需要了解的其他信息，以便您能够使用[!DNL Flow Service] API成功将[!DNL Event Hubs]连接到平台。
+以下部分提供了成功连接所需了解的其他信息 [!DNL Event Hubs] 使用 [!DNL Flow Service] API。
 
 ### 收集所需的凭据
 
-要使[!DNL Flow Service]与[!DNL Event Hubs]帐户连接，必须为以下连接属性提供值：
+为 [!DNL Flow Service] 与 [!DNL Event Hubs] 帐户，则必须为以下连接属性提供值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
 | `sasKeyName` | 授权规则的名称，也称为SAS密钥名称。 |
-| `sasKey` | 生成的共享访问签名。 |
-| `namespace` | 您正在访问的[!DNL Event Hubs]的命名空间。 [!DNL Event Hubs]命名空间提供了一个唯一的范围界定容器，您可以在其中创建一个或多个[!DNL Event Hubs]。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 [!DNL Event Hubs]连接规范ID为：`bf9f5905-92b7-48bf-bf20-455bc6b60a4e`。 |
+| `sasKey` | 的主键 [!DNL Event Hubs] 命名空间。 的 `sasPolicy` 该 `sasKey` 对应于必须拥有 `manage` 为 [!DNL Event Hubs] 列表。 |
+| `namespace` | 的命名空间 [!DNL Event Hubs] 您正在访问。 安 [!DNL Event Hubs] 命名空间提供了唯一的作用域容器，您可以在其中创建一个或多个 [!DNL Event Hubs]. |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 的 [!DNL Event Hubs] 连接规范ID是： `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
 
-有关这些值的详细信息，请参阅[此事件中心文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature)。
+有关这些值的更多信息，请参阅 [此事件中心文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 
 ### 使用Platform API
 
-有关如何成功调用Platform API的信息，请参阅[Platform API入门指南](../../../../../landing/api-guide.md)。
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
 ## 创建基本连接
 
-创建源连接的第一步是验证[!DNL Event Hubs]源并生成基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
+创建源连接的第一步是验证您的 [!DNL Event Hubs] 源并生成基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在请求参数中提供[!DNL Event Hubs]身份验证凭据时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请向 `/connections` 提供 [!DNL Event Hubs] 身份验证凭据作为请求参数的一部分。
 
 **API格式**
 
@@ -88,12 +88,12 @@ curl -X POST \
 | -------- | ----------- |
 | `auth.params.sasKeyName` | 授权规则的名称，也称为SAS密钥名称。 |
 | `auth.params.sasKey` | 生成的共享访问签名。 |
-| `auth.params.namespace` | 您正在访问的[!DNL Event Hubs]的命名空间。 |
-| `connectionSpec.id` | [!DNL Event Hubs]连接规范ID为：`bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
+| `auth.params.namespace` | 的命名空间 [!DNL Event Hubs] 您正在访问。 |
+| `connectionSpec.id` | 的 [!DNL Event Hubs] 连接规范ID是： `bf9f5905-92b7-48bf-bf20-455bc6b60a4e` |
 
 **响应**
 
-成功的响应返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 要创建源连接，需要在下一步中使用此连接ID。
+成功的响应会返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 要创建源连接，需要在下一步中使用此连接ID。
 
 ```json
 {
@@ -106,7 +106,7 @@ curl -X POST \
 
 源连接创建并管理从中摄取数据的外部源的连接。 源连接由创建数据流所需的数据源、数据格式和源连接ID等信息组成。 源连接实例特定于租户和IMS组织。
 
-要创建源连接，请向[!DNL Flow Service] API的`/sourceConnections`端点发出POST请求。
+要创建源连接，请向 `/sourceConnections` 的端点 [!DNL Flow Service] API。
 
 **API格式**
 
@@ -148,14 +148,14 @@ curl -X POST \
 | --- | --- |
 | `name` | 源连接的名称。 确保源连接的名称具有描述性，因为您可以使用该名称查找有关源连接的信息。 |
 | `description` | 可提供的可选值，用于包含有关源连接的更多信息。 |
-| `baseConnectionId` | 在上一步中生成的[!DNL Event Hubs]源的连接ID。 |
-| `connectionSpec.id` | [!DNL Event Hubs]的固定连接规范ID。 此ID为：`bf9f5905-92b7-48bf-bf20-455bc6b60a4e`。 |
-| `data.format` | 要摄取的[!DNL Event Hubs]数据的格式。 目前，唯一支持的数据格式是`json`。 |
-| `params.eventHubName` | [!DNL Event Hubs]源的名称。 |
-| `params.dataType` | 此参数定义正在摄取的数据的类型。 支持的数据类型包括：`raw`和`xdm`。 |
-| `params.reset` | 此参数定义数据的读取方式。 使用`latest`开始从最新数据中读取数据，使用`earliest`开始从流中的第一个可用数据中读取数据。 此参数是可选的，如果未提供，则默认为`earliest`。 |
-| `params.consumerGroup` | 用于[!DNL Event Hubs]的发布或订阅机制。 此参数是可选的，如果未提供，则默认为`$Default`。 有关更多信息，请参阅本[[!DNL Event Hubs] 事件用户指南](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#event-consumers)。 |
+| `baseConnectionId` | 您的 [!DNL Event Hubs] 上一步中生成的源。 |
+| `connectionSpec.id` | 的固定连接规范ID [!DNL Event Hubs]. 此ID为： `bf9f5905-92b7-48bf-bf20-455bc6b60a4e`. |
+| `data.format` | 的格式 [!DNL Event Hubs] 要摄取的数据。 目前，唯一支持的数据格式是 `json`. |
+| `params.eventHubName` | 您的 [!DNL Event Hubs] 来源。 |
+| `params.dataType` | 此参数定义正在摄取的数据的类型。 支持的数据类型包括： `raw` 和 `xdm`. |
+| `params.reset` | 此参数定义数据的读取方式。 使用 `latest` 以开始从最新数据中读取，并使用 `earliest` 从流中的第一个可用数据开始读取。 此参数为可选参数，默认为 `earliest` 如果未提供。 |
+| `params.consumerGroup` | 要用于的发布或订阅机制 [!DNL Event Hubs]. 此参数为可选参数，默认为 `$Default` 如果未提供。 请参阅 [[!DNL Event Hubs] 事件消费者指南](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#event-consumers) 以了解更多信息。 |
 
 ## 后续步骤
 
-在本教程中，您已使用[!DNL Flow Service] API创建了[!DNL Event Hubs]源连接。 在下一个教程中，您可以使用此源连接ID来使用 [!DNL Flow Service] API](../../collect/streaming.md)创建流数据流。[
+通过阅读本教程，您已创建 [!DNL Event Hubs] 源连接使用 [!DNL Flow Service] API。 在下一个教程中，您可以使用此源连接ID [使用创建流数据流 [!DNL Flow Service] API](../../collect/streaming.md).
