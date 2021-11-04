@@ -4,9 +4,9 @@ title: 合并策略UI指南
 type: Documentation
 description: 在Experience Platform中将来自多个源的数据汇集在一起时，合并策略是Platform用来确定数据优先级和合并哪些数据以创建统一视图的规则。 本指南提供了使用Adobe Experience Platform用户界面使用合并策略的分步说明。
 exl-id: 0489217a-6a53-428c-a531-fd0a0e5bb71f
-source-git-commit: e0a75a75e5dbb0318ec8785d887d7a156d28f5bd
+source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
 workflow-type: tm+mt
-source-wordcount: '2317'
+source-wordcount: '2319'
 ht-degree: 0%
 
 ---
@@ -193,7 +193,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
 
 ## 违反数据管理策略
 
-创建或更新合并策略时，会执行一项检查，以确定合并策略是否违反了您的组织定义的任何数据使用策略。 数据使用策略是Adobe Experience Platform的一部分 [!DNL Data Governance] 和是描述您允许或限制在特定环境下执行的营销操作类型的规则 [!DNL Platform] 数据。 例如，如果使用合并策略创建一个激活到第三方目标的区段，并且您的组织有一个数据使用策略阻止将特定数据导出到第三方，则您将收到 **[!UICONTROL 检测到数据管理策略违规]** 通知。
+创建或更新合并策略时，会执行一项检查，以确定合并策略是否违反了您的组织定义的任何数据使用策略。 数据使用策略是Adobe Experience Platform数据管理的一部分，它是描述您允许在特定环境中执行或限制执行的营销操作类型的规则 [!DNL Platform] 数据。 例如，如果使用合并策略创建一个激活到第三方目标的区段，并且您的组织有一个数据使用策略阻止将特定数据导出到第三方，则您将收到 **[!UICONTROL 检测到数据管理策略违规]** 通知。
 
 此通知包含违反的数据使用策略列表，允许您通过从列表中选择策略来查看违规的详细信息。 选择违反的策略后， **[!UICONTROL 数据谱系]** 选项卡提供了违规原因和受影响的激活，每个选项卡都提供了有关如何违反数据使用策略的详细信息。
 

@@ -1,61 +1,60 @@
 ---
-keywords: Experience Platform；主页；热门主题；DULE；模块
+keywords: Experience Platform；主页；热门主题；DULE;DULE
 solution: Experience Platform
 title: 策略服务API快速入门
 topic-legacy: developer guide
-description: 策略服务API允许您创建和管理与Adobe Experience Platform Data Governance相关的各种资源。 本文档介绍了在尝试调用策略服务API之前需要了解的核心概念。
+description: 策略服务API允许您创建和管理与Adobe Experience Platform数据管理相关的各种资源。 本文档简要介绍在尝试调用策略服务API之前需要了解的核心概念。
 exl-id: 5539976c-8433-45af-a147-2ab82ae308b2
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '444'
 ht-degree: 0%
 
 ---
 
-# [!DNL Policy Service] API入门
+# 入门 [!DNL Policy Service] API
 
-[!DNL Policy Service] API允许您创建和管理与Adobe Experience Platform [!DNL Data Governance]相关的各种资源。 本文档介绍了在尝试调用[!DNL Policy Service] API之前需要了解的核心概念。
+的 [!DNL Policy Service] API允许您创建和管理与Adobe Experience Platform数据管理相关的各种资源。 本文档简要介绍在尝试调用 [!DNL Policy Service] API。
 
 ## 先决条件
 
-使用开发人员指南需要了解使用数据管理功能时涉及的各种[!DNL Experience Platform]服务。 在开始使用[!DNL Policy Service API]之前，请查看以下服务的文档：
+使用开发人员指南需要对 [!DNL Experience Platform] 使用“数据管理”功能时涉及的服务。 开始使用之前 [!DNL Policy Service API]，请查阅以下服务的文档：
 
-* [[!DNL Data Governance]](../home.md):强制执行数据使 [!DNL Experience Platform] 用合规性的框架。
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-* [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
-* [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单 [!DNL Platform] 独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [数据管理](../home.md):框架 [!DNL Experience Platform] 强制实施数据使用合规性。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
+* [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
+* [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 ## 读取示例API调用
 
-[!DNL Policy Service] API文档提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
+的 [!DNL Policy Service] API文档提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
-## 所需的标题
+## 必需标题
 
-API文档还要求您已完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)，以便成功调用[!DNL Platform]端点。 完成身份验证教程后，将为[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+API文档还要求您完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en) 以便成功调用 [!DNL Platform] 端点。 完成身份验证教程将提供 [!DNL Experience Platform] API调用，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Data Governance]的资源）都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
+中的所有资源 [!DNL Experience Platform]，包括属于“数据管理”的沙箱，则与特定的虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
 
 * `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关[!DNL Platform]中沙箱的详细信息，请参阅[沙箱概述文档](../../sandboxes/home.md)。
+>有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
 
-所有包含有效负荷(POST、PUT、PATCH)的请求都需要额外的标头：
+所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的标头：
 
 * `Content-Type: application/json`
 
-## 核心与自定义资源
+## 核心资源与自定义资源
 
-在[!DNL Policy Service] API中，所有策略和营销操作称为`core`或`custom`资源。
+在 [!DNL Policy Service] API中，所有策略和营销操作都称为 `core` 或 `custom` 资源。
 
-`core` 资源是由Adobe定义和维护的资 `custom` 源，而资源是由您的组织创建和维护的资源，因此仅对您的IMS组织是独特和可见的。因此，列表和查找操作(`GET`)是允许对`core`资源执行的唯一操作，而列表、查找和更新操作（`POST`、`PUT`、`PATCH`和`DELETE`）可用于`custom`资源。
+`core` 资源是指由Adobe定义和维护的资源，而 `custom` 资源是由您的组织创建和维护的资源，因此仅对您的IMS组织是唯一可见的。 因此，列出和查找操作(`GET`)是 `core` 资源，而则列出、查找和更新操作(`POST`, `PUT`, `PATCH`和 `DELETE`)可用于 `custom` 资源。
 
 ## 后续步骤
 
-要开始使用策略服务API进行调用，请选择可用的终结点指南之一。
+要开始使用策略服务API进行调用，请选择一个可用的端点指南。

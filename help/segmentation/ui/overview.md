@@ -5,9 +5,9 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 8325ae6fd7d0013979e80d56eccd05b6ed6f5108
+source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
 workflow-type: tm+mt
-source-wordcount: '1691'
+source-wordcount: '1693'
 ht-degree: 0%
 
 ---
@@ -199,7 +199,7 @@ ht-degree: 0%
 >
 >仅当您创建的区段已分配给目标时，才会应用策略违规。
 
-创建完区段后，Adobe Experience Platform数据管理将对该区段进行分析，以确保该区段内没有违反策略的情况。 请参阅 [[!DNL Data Governance] 概述](../../data-governance/home.md) 以了解更多信息。
+创建完区段后，Adobe Experience Platform数据管理将对该区段进行分析，以确保该区段内没有违反策略的情况。 请参阅 [数据管理概述](../../data-governance/home.md) 以了解更多信息。
 
 ![](../images/ui/overview/segment-dule-policy-violations.png)
 
