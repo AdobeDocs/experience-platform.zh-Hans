@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: Query Service 指南
 user-guide-description: 使用标准 SQL 在 Platform Data Lake 中查询数据。
 feature: Queries
-source-git-commit: 6d1ece1e7920e8c182c84bf8b57bdb6c3f853a60
+source-git-commit: a41efa075d0fff5537eaf055635e346ac5ce677b
 workflow-type: tm+mt
-source-wordcount: '139'
-ht-degree: 16%
+source-wordcount: '141'
+ht-degree: 17%
 
 ---
 
@@ -35,14 +35,15 @@ ht-degree: 16%
    - [示例Adobe Analytics查询](best-practices/adobe-analytics.md)
    - [示例Adobe Target查询](best-practices/adobe-target.md)
    - [匿名块查询示例](best-practices/anonymous-block.md)
-- SQL引用{#sql}
+   - [增量加载](best-practices/incremental-load.md)
+- SQL引用 {#sql}
    - [SQL概述](sql/overview.md)
    - [SQL语法](sql/syntax.md)
    - [Adobe定义的函数](sql/adobe-defined-functions.md)
    - [Spark SQL函数](sql/spark-sql-functions.md)
    - [元数据命令](sql/metadata.md)
    - [准备的陈述](sql/prepared-statements.md)
-- 将客户端连接到查询服务{#clients}
+- 将客户端连接到查询服务 {#clients}
    - [客户端连接概述](clients/overview.md)
    - [Aqua Data Studio](clients/aqua-data-studio.md)
    - [Looker](clients/looker.md)
