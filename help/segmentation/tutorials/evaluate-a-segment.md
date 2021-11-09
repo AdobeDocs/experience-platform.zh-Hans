@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 请阅读本教程，了解如何使用Adobe Experience Platform Segmentation Service API评估区段并访问区段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 8325ae6fd7d0013979e80d56eccd05b6ed6f5108
+source-git-commit: 44644d786842564c76234bacb1f19815741b92ae
 workflow-type: tm+mt
 source-wordcount: '1572'
 ht-degree: 0%
@@ -150,7 +150,7 @@ ht-degree: 0%
 导出受众时需要执行以下步骤：
 
 - [创建目标数据集](#create-a-target-dataset)  — 创建数据集以保存受众成员。
-- [在数据集中生成受众配置文件](#generate-profiles-for-audience-members)  — 根据区段作业的结果，使用XDM个人用户档案填充数据集。
+- [在数据集中生成受众配置文件](#generate-profiles)  — 根据区段作业的结果，使用XDM个人用户档案填充数据集。
 - [监视导出进度](#monitor-export-progress)  — 检查导出过程的当前进度。
 - [读取受众数据](#next-steps)  — 检索表示受众成员的生成的XDM个人用户档案。
 
@@ -163,9 +163,9 @@ ht-degree: 0%
 有两种方法可创建必要的数据集：
 
 - **使用API:** 本教程中遵循的步骤将简要介绍如何创建引用 [!DNL XDM Individual Profile Union Schema] 使用 [!DNL Catalog] API。
-- **使用UI:** 使用 [!DNL Adobe Experience Platform] 用户界面以创建引用并集模式的数据集，请按照 [UI教程](../ui/overview.md) ，然后返回到本教程以继续执行 [生成受众用户档案](#generate-xdm-profiles-for-audience-members).
+- **使用UI:** 使用 [!DNL Adobe Experience Platform] 用户界面以创建引用并集模式的数据集，请按照 [UI教程](../ui/overview.md) ，然后返回到本教程以继续执行 [生成受众用户档案](#generate-profiles).
 
-如果您已经有一个兼容的数据集并且知道其ID，则可以直接继续执行的步骤 [生成受众用户档案](#generate-xdm-profiles-for-audience-members).
+如果您已经有一个兼容的数据集并且知道其ID，则可以直接继续执行的步骤 [生成受众用户档案](#generate-profiles).
 
 **API格式**
 
