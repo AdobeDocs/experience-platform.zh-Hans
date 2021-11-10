@@ -5,9 +5,9 @@ title: Adobe隐私JavaScript库概述
 topic-legacy: overview
 description: Adobe隐私JavaScript库允许您检索数据主体身份以在Privacy Service中使用。
 exl-id: 757bf69e-25bf-4ef9-9787-3e74b213908a
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 7f3a0594147a8cea292263f60aa45dc5ebb8484e
 workflow-type: tm+mt
-source-wordcount: '944'
+source-wordcount: '1012'
 ht-degree: 6%
 
 ---
@@ -46,8 +46,9 @@ ht-degree: 6%
 开始使用 [!DNL Privacy JS Library]，则必须使用以下方法之一将其安装到计算机上：
 
 * 通过运行以下命令使用npm进行安装： `npm install @adobe/adobe-privacy`
-* 安装 [Adobe隐私标记扩展](../tags/extensions/web/privacy/overview.md) 名称下 `AdobePrivacy`
 * 从下载 [Experience CloudGitHub存储库](https://github.com/Adobe-Marketing-Cloud/adobe-privacy)
+
+您还可以通过数据收集UI中的标记扩展来安装库。 请参阅 [Adobe隐私标记扩展](../tags/extensions/web/privacy/overview.md) 以了解更多信息。
 
 ## 实例化 [!DNL Privacy JS Library]
 
@@ -64,7 +65,7 @@ var adobePrivacy = new AdobePrivacy({
 
 有关不同Adobe解决方案支持的参数的完整列表，请参阅附录中的“受支持”部分 [Adobe解决方案配置参数](#adobe-solution-configuration-parameters).
 
-## 代码示例
+## 代码示例 {#samples}
 
 以下代码示例演示了如何使用 [!DNL Privacy JS Library] 对于一些常见情况，前提是您未使用标记。
 
@@ -176,26 +177,26 @@ adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 
 本节包含有关使用 [!DNL Privacy JS Library].
 
-### Adobe解决方案配置参数
+### Adobe解决方案配置参数 {#config-params}
 
 以下是受支持Adobe解决方案的已接受配置参数列表，在 [实例化AdobePrivacy对象](#instantiate-the-privacy-js-library).
+
+**所有解决方案**
+
+| 参数 | 描述 |
+| --- | --- |
+| `key` | 标识用户或数据主体的唯一ID。 此属性专门用于您自己的内部跟踪目的，不供Adobe使用。 |
 
 **Adobe Analytics**
 
 | 参数 | 描述 |
 | --- | --- |
-| `cookieDomainPeriods` | 域中用于Cookie跟踪的句点数（默认为2）。 |
-| `dataCenter` | Adobe数据收集数据中心。 仅当在JavaScript网站信标中指定时，才应包含此内容。 潜在值包括： <ul><li>&quot;d1&quot;:圣何塞数据中心。</li><li>&quot;d2&quot;:达拉斯数据中心。</li></ul> |
-| `reportSuite` | 报表包ID，在您的JavaScript网站信标中指定（例如“s_code.js”或“dtm”）。 |
-| `trackingServer` | 数据收集域（非SSL）。 仅当在JavaScript网站信标中指定时，才应包含此内容。 |
-| `trackingServerSecure` | 数据收集域(SSL)。 仅当在JavaScript网站信标中指定时，才应包含此内容。 |
+| `cookieDomainPeriods` | 域中用于Cookie跟踪的句点数(默认为 `2`，例如 `.domain.com`)。 除非在JavaScript网站信标中指定，否则请勿在此处定义它。 |
+| `dataCenter` | Adobe数据收集数据中心。 仅当在JavaScript网站信标中指定时，才应包含此内容。 潜在值包括： <ul><li>`d1`:圣何塞数据中心</li><li>`d2`:达拉斯数据中心</li></ul> |
+| `reportSuite` | 在JavaScript网站信标中指定的报表包ID(例如， `s_code.js` 或 `dtm`)。 |
+| `trackingServer` | 非SSL数据收集域。 仅当在JavaScript网站信标中指定时，才应包含此内容。 |
+| `trackingServerSecure` | SSL数据收集域。 仅当在JavaScript网站信标中指定时，才应包含此内容。 |
 | `visitorNamespace` | 用于对访客进行分组的命名空间。 仅当在JavaScript网站信标中指定时，才应包含此内容。 |
-
-**Adobe Target**
-
-| 参数 | 描述 |
-| --- | --- |
-| `clientCode` | 在Adobe Target系统中标识客户端的客户端代码。 |
 
 **Adobe Audience Manager**
 
@@ -203,8 +204,14 @@ adobePrivacy.removeIdentities().then(handleRemovedIDs)…
 | --- | --- |
 | `aamUUIDCookieName` | 包含从Adobe Audience Manager返回的唯一用户ID的第一方Cookie的名称。 |
 
-**Adobe ID Service(ECID)**
+**Adobe Experience Cloud Identity Service(ECID)**
 
 | 参数 | 描述 |
 | --- | --- |
 | `imsOrgID` | 您的IMS组织ID。 |
+
+**Adobe Target**
+
+| 参数 | 描述 |
+| --- | --- |
+| `clientCode` | 在Adobe Target系统中标识客户端的客户端代码。 |

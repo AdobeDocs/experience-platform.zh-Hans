@@ -1,10 +1,11 @@
 ---
 title: Adobe隐私扩展概述
 description: 了解Adobe Experience Platform中的Adobe隐私标记扩展。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 8401861e-93ad-48eb-8796-b26ed8963c32
+source-git-commit: 285e7ff1a1cd6c9790c526ca27ffafc60e94218d
 workflow-type: tm+mt
-source-wordcount: '534'
-ht-degree: 75%
+source-wordcount: '909'
+ht-degree: 5%
 
 ---
 
@@ -12,98 +13,102 @@ ht-degree: 75%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-Adobe Privacy 扩展提供了用于收集和移除由 Adobe 解决方案分配给最终用户的用户 ID 的功能。
+Adobe隐私标签扩展允许您收集和删除通过客户端设备上的Adobe解决方案分配给最终用户的用户ID。 然后，收集的ID可以发送到 [Adobe Experience Platform Privacy Service](../../../../privacy-service/home.md) 访问或删除受支持的Adobe Experience Cloud应用程序中相关个人的个人数据。
 
-## 在安装期间配置解决方案
+本指南介绍如何在数据收集UI中安装和配置Adobe隐私扩展。
 
-从扩展目录安装 Adobe Privacy 扩展时，系统会提示您选择要更新的解决方案。目前，您可以更新以下解决方案：
+>[!NOTE]
+>
+>如果您希望在不使用标记的情况下安装这些功能，请参阅 [隐私JavaScript库概述](../../../../privacy-service/js-library.md) 以了解有关如何使用原始代码实施的步骤。
 
-* Analytics (AA)
-* Audience Manager (AAM)
-* Target
-* 访客服务
-* AdCloud
-* 选择一个或多个解决方案，然后选择“Update”。
-* 选择并配置解决方案后，选择“Save”。Adobe Privacy 扩展将会添加到已安装的扩展列表中。
+## 安装和配置 扩展
 
-   每个解决方案的选项如下所述。
+在数据收集UI中，选择 **[!UICONTROL 扩展]** 在左侧导航中，接下来是 **[!UICONTROL 目录]** 选项卡。 使用搜索栏可缩小可用扩展的列表，直到您找到Adobe隐私。 选择 **[!UICONTROL 安装]** 继续。
 
-### Analytics
+![安装扩展](../../../images/extensions/privacy/install.png)
 
-![](../../../images/ext-privacy-aa.jpg)
+在下一个屏幕中，您可以配置您希望扩展从中收集ID的源和解决方案。 扩展支持以下解决方案：
 
-默认情况下，您必须通过输入字符串或选择数据元素来提供报表包。
+* Adobe Analytics(AA)
+* Adobe Audience Manager(AAM)
+* Adobe Target
+* Adobe Experience Cloud Identity Service（访客或ECID）
+* Adobe Advertising Cloud(AdCloud)
 
-要配置其他项目，请选择&#x200B;**[!UICONTROL 选择项目]**，选择要配置的项目，然后选择&#x200B;**[!UICONTROL 添加]**&#x200B;并输入请求的参数或数据元素。
+选择一个或多个解决方案，然后选择 **[!UICONTROL 更新]**.
 
-### Audience Manager
+![选择解决方案](../../../images/extensions/privacy/select-solutions.png)
 
-![](../../../images/ext-privacy-aam.jpg)
+屏幕会更新，以根据您选择的解决方案显示所需配置参数的输入。
 
-选择&#x200B;**[!UICONTROL 选择项目]**，选择要配置的项目，然后选择&#x200B;**[!UICONTROL 添加]**&#x200B;并输入请求的参数或数据元素。 目前，您只能配置 `aamUUIDCookieName`。
+![必需属性](../../../images/extensions/privacy/required-properties.png)
 
-### Target
+使用下面的下拉菜单，您还可以向配置添加其他特定于解决方案的参数。
 
-![](../../../images/ext-privacy-target.jpg)
+![可选属性](../../../images/extensions/privacy/optional-properties.png)
 
-输入 Target 客户端代码。
+>[!NOTE]
+>
+>请参阅 [配置参数](../../../../privacy-service/js-library.md#config-params) 隐私JavaScript库概述中，了解有关每个受支持解决方案已接受配置值的详细信息。
 
-### 访客服务
+完成为所选解决方案添加参数后，请选择 **[!UICONTROL 保存]** 以保存配置。
 
-![](../../../images/ext-privacy-visitor.jpg)
+![可选属性](../../../images/extensions/privacy/save-config.png)
 
-输入您的 IMS 组织 ID。
+## 使用扩展 {#using}
 
-### AdCloud
+Adobe隐私扩展提供了三种可在 [规则](../../../ui/managing-resources/rules.md) 当发生特定事件并满足条件时：
 
-![](../../../images/ext-privacy-adcloud.jpg)
+* **[!UICONTROL Retrieve Identities]**:检索用户存储的身份信息。
+* **[!UICONTROL 删除标识]**:删除用户存储的身份信息。
+* **[!UICONTROL 检索，然后删除标识]**:检索用户存储的身份信息，然后删除。
 
-没有要为 AdCloud 配置的特定参数。
+对于上述每个操作，您必须提供一个回调JavaScript函数，该函数将接受检索到的身份数据并将其作为对象参数进行处理。 从此处，您可以存储、显示这些身份，或将它们发送到 [Privacy ServiceAPI](../../../../privacy-service/api/overview.md) 根据需要。
 
-## 配置 Adobe Privacy 扩展
+使用Adobe隐私标记扩展时，必须以数据元素的形式提供所需的回调函数。 有关如何配置此数据元素的步骤，请参阅下一节。
 
-安装该扩展后，您可以禁用或删除它。在已安装扩展的Adobe隐私卡上选择&#x200B;**[!UICONTROL 配置]**，然后选择&#x200B;**[!UICONTROL 禁用]**&#x200B;或&#x200B;**[!UICONTROL 卸载]**。
+### 定义用于处理身份的数据元素
 
-## 操作
+在数据收集UI中，通过选择 **[!UICONTROL 数据元素]** 在左侧导航中，然后是 **[!UICONTROL 添加数据元素]**. 进入配置屏幕后，选择 **[!UICONTROL 核心]** 对于扩展和 **[!UICONTROL 自定义代码]** （对于数据元素类型）。 从此处选择 **[!UICONTROL Open Editor]** 中。
 
-使用 Adobe Privacy 扩展配置规则时，可以使用以下操作。
+![选择数据元素类型](../../../images/extensions/privacy/data-element-type.png)
 
-### Retrieve Identities
+在出现的对话框中，定义一个JavaScript函数，该函数将处理检索到的标识。 回调必须接受单个对象类型参数(`ids` )。 随后，函数可以随意处理ID，还可以调用网站上全局可用的任何变量和函数以进一步处理。
 
-满足事件和条件后，检索为访客存储的身份信息。
+>[!NOTE]
+>
+>有关 `ids` 回调函数应处理的对象，请参阅 [代码示例](../../../../privacy-service/js-library.md#samples) 在隐私JavaScript库概述中提供。
 
-输入要将数据传递到的 JavaScript 函数的名称。此函数或方法将处理检索到的身份信息。是存储、显示身份信息，还是将这些信息发送到 Adobe GDPR API，这将由您掌控。
+完成后，选择 **[!UICONTROL 保存]**.
 
-### Remove Identities
+![定义回调函数](../../../images/extensions/privacy/define-custom-code.png)
 
-满足事件和条件后，移除为访客存储的身份信息。
+如果您需要对不同事件进行不同的回调，则可以继续创建其他自定义代码数据元素。
 
-输入要将数据传递到的 JavaScript 函数的名称。此函数或方法将处理检索到的身份信息。是存储、显示身份信息，还是将这些信息发送到 Adobe GDPR API，这将由您掌控。
+### 创建具有隐私操作的规则
 
-### Retrieve Then Remove Identies
+在配置一个回调数据元素以处理检索到的ID之后，您可以创建一个规则，当您的网站上发生特定事件以及您所需的任何其他条件时，该规则将调用Adobe隐私扩展。
 
-满足事件和条件后，检索为访客存储的身份信息，然后移除该信息。
+为规则配置操作时，选择 **[!UICONTROL Adobe隐私]** 的子项。 对于操作类型，选择 [三个函数](#using) 由扩展提供。
 
-## 教程：配置 Privacy 扩展
+![选择操作类型](../../../images/extensions/privacy/action-type.png)
 
-下面显示了一个展示如何设置数据元素并将其用于 Privacy 扩展的简短示例。
+右侧面板会提示您选择将用作操作回调的数据元素。 选择数据库图标(![数据库图标](../../../images/extensions/privacy/database.png))，然后从列表中选择之前创建的数据元素。 选择 **[!UICONTROL 保留更改]** 继续。
 
-1. 创建一个名为 `privacyFunc` 的数据元素。
+![选择数据元素](../../../images/extensions/privacy/add-data-element.png)
 
-   ```JavaScript
-   window.privacyFunc = function(a,b){
-       console.log(a,b);
-   }
-   return window.privacyFunc
-   ```
+从此处，您可以继续配置规则，以便Adobe隐私操作根据所需的事件和条件触发。 当您满意时，选择 **[!UICONTROL 保存]**.
 
-1. 创建一个规则以在库加载（页面顶部）时运行，并通过 Adobe Privacy 扩展执行操作。选择 `privacyFunc` 作为数据元素。
+![保存规则](../../../images/extensions/privacy/save-rule.png)
 
-   * **扩展：** Adobe Privacy
-   * **操作类型：**检索标识
-此操作类型显示已创建、删除或未删除的标识。
-   * **名称：**&#x200B;检索标识
+您现在可以将规则添加到库中，以在网站上部署为内部版本以进行测试。 请参阅 [标记发布流程](../../../ui/publishing/overview.md) 以了解更多信息。
 
-1. 更新开发库，然后发布并进行测试。
+## 禁用或卸载扩展
+
+安装该扩展后，您可以禁用或删除它。选择 **[!UICONTROL 配置]** 在已安装扩展的Adobe隐私卡上，选择 **[!UICONTROL 禁用]** 或 **[!UICONTROL 卸载]**.
+
+## 后续步骤
+
+本指南介绍了数据收集UI中Adobe隐私标记扩展的使用。 有关扩展提供的功能（包括如何使用原始代码使用扩展的示例）的更多信息，请参阅 [隐私JavaScript库概述](../../../../privacy-service/js-library.md) (在Privacy Service文档中)。
