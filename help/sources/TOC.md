@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: 030789af0a049b54d6e271410836c08456a83441
+source-git-commit: 0c7bb3d6f0a1bc4154bff0e4d79cc4c3c0b0ab71
 workflow-type: tm+mt
-source-wordcount: '661'
+source-wordcount: '658'
 ht-degree: 13%
 
 ---
@@ -236,7 +236,6 @@ ht-degree: 13%
          - [PayPal](tutorials/ui/create/payments/paypal.md)
       - 协议 {#protocols}
          - [通用OData](tutorials/ui/create/protocols/odata.md)
-         - [通用REST API](tutorials/ui/create/protocols/generic-rest.md)
       - 流 {#streaming}
          - [HTTP API](tutorials/ui/create/streaming/http.md)
    - 配置数据流 {#dataflow}
