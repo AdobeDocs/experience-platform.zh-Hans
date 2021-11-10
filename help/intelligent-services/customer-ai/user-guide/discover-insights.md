@@ -6,9 +6,9 @@ title: 通过客户人工智能发现洞察
 topic-legacy: Discovering insights
 description: 本文档是与Intelligent Services Customer AI用户界面中的服务实例分析交互的指南。
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: 63d6ec7d72b448e9d1bf1da96a1f148838d99cec
 workflow-type: tm+mt
-source-wordcount: '1632'
+source-wordcount: '1716'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,11 @@ Customer AI作为Intelligent Services的一部分，为营销人员提供了利�
 
 ## 快速入门
 
-为了利用Customer AI的分析，您需要有一个运行状态成功的服务实例。 要创建新的服务实例，请访问[配置Customer AI实例](./configure.md)。 如果您最近创建了一个服务实例，但该实例仍在培训和评分，请允许24小时才能完成运行。
+为了利用Customer AI的分析，您需要有一个运行状态成功的服务实例。 要创建新的服务实例访问 [配置Customer AI实例](./configure.md). 如果您最近创建了一个服务实例，但该实例仍在培训和评分，请允许24小时才能完成运行。
 
 ## 服务实例概述
 
-在[!DNL Adobe Experience Platform] UI的左侧导航中，单击&#x200B;**[!UICONTROL Services]**。 出现&#x200B;*Services*&#x200B;浏览器，并显示可用的Intelligent Services。 在Customer AI的容器中，单击&#x200B;**[!UICONTROL Open]**。
+在 [!DNL Adobe Experience Platform] UI，选择 **[!UICONTROL 服务]** 中。 的 *服务* 浏览器会显示并显示可用的智能服务。 在Customer AI的容器中，选择 **[!UICONTROL 打开]**.
 
 ![访问您的实例](../images/insights/navigate-to-service.png)
 
@@ -41,20 +41,22 @@ Customer AI作为Intelligent Services的一部分，为营销人员提供了利�
 
 ![创建实例](../images/insights/click-the-name.png)
 
-接下来，将显示该服务实例的分析页面，其中包含选项，用于选择&#x200B;**[!UICONTROL Latest scores]**&#x200B;或&#x200B;**[!UICONTROL Performance summary]**。 默认选项卡&#x200B;**[!UICONTROL 最新得分]**&#x200B;提供数据的可视化。 在本指南中，将更详细地说明可视化图表以及您可以使用数据执行的操作。
+接下来，将显示该服务实例的分析页面，并提供用于选择 **[!UICONTROL 最新得分]** 或 **[!UICONTROL 性能摘要]**. 默认选项卡 **[!UICONTROL 最新得分]** 提供数据的可视化。 在本指南中，将更详细地说明可视化图表以及您可以使用数据执行的操作。
 
-**[!UICONTROL 性能摘要]**&#x200B;选项卡显示每个倾向存储段的实际流失率或转化率。 要了解更多信息，请参阅[性能摘要量度](#performance-metrics)一节。
+的 **[!UICONTROL 性能摘要]** 选项卡显示每个倾向存储段的实际流失率或转化率。 要了解更多信息，请参阅 [性能概要量度](#performance-metrics).
 
 ![设置页面](../images/insights/landing_page_insights.png)
 
-### 服务实例详细信息
+## 服务实例详细信息
 
 有两种方法可查看服务实例详细信息：从功能板或服务实例中。
 
-要在功能板中查看服务实例详细信息的概述，请选择服务实例容器，以避免附加到名称的超链接。 此时会打开一个右边栏，其中提供了更多详细信息。 这些控件包含以下内容：
+### 服务实例仪表板
 
-- **[!UICONTROL 编辑]**:选择 **** 编辑允许您修改现有服务实例。您可以编辑实例的名称、描述和评分频率。
-- **[!UICONTROL 克隆]**:选择 **** 克隆操作会复制当前选定的服务实例设置。然后，您可以修改工作流以进行细微调整，并将其重命名为新实例。
+要查看功能板中服务实例详细信息的概述，请选择服务实例容器，以避免附加到名称的超链接。 此时会打开一个右边栏，其中提供了更多详细信息。 这些控件包含以下内容：
+
+- **[!UICONTROL 编辑]**:选择 **[!UICONTROL 编辑]** 用于修改现有服务实例。 您可以编辑实例的名称、描述和评分频率。
+- **[!UICONTROL 克隆]**:选择 **[!UICONTROL 克隆]** 复制当前选定的服务实例设置。 然后，您可以修改工作流以进行细微调整，并将其重命名为新实例。
 - **[!UICONTROL 删除]**:您可以删除服务实例，包括任何历史运行。
 - **[!UICONTROL 数据源]**:指向此实例使用的数据集的链接。
 - **[!UICONTROL 运行频率]**:打分运行的频率和时间。
@@ -64,33 +66,43 @@ Customer AI作为Intelligent Services的一部分，为营销人员提供了利�
 
 >[!NOTE]
 >
->如果评分运行失败，则会提供错误消息。 错误消息列在右边栏的&#x200B;**上次运行详细信息**&#x200B;下，该边栏仅对失败运行可见。
+>如果评分运行失败，则会提供错误消息。 错误消息列在 **上次运行详细信息** 在右边栏中，仅对失败运行可见。
 
 ![失败运行消息](../images/insights/failed-run.png)
 
-查看服务实例的其他详细信息的第二种方法位于分析页面中。 您可以单击右上方的&#x200B;**[!UICONTROL 显示更多]**&#x200B;以填充下拉菜单。 详细信息列出，如得分定义、创建时间和倾向类型。 有关所列任何属性的更多信息，请访问[配置Customer AI实例](./configure.md)。
+### 显示更多分析下拉列表
+
+查看服务实例的其他详细信息的第二种方法位于分析页面中。 选择 **[!UICONTROL 显示更多]** 来填充下拉菜单。 其中列出了详细信息，如得分定义、创建时间、倾向类型和使用的数据集。 有关所列任何属性的更多信息，请访问 [配置Customer AI实例](./configure.md).
 
 ![显示更多](../images/insights/landing-show-more.png)
 
-![显示更多](../images/insights/show-more.png)
+### Customer AI数据集预览弹出窗口
+
+如果Customer AI使用了多个数据集，则会显示一个标有 **[!UICONTROL 多个]** 后跟括号中数据集的数量 `()` 中的“隐藏主体”。
+
+![多个数据集](../images/insights/insights-multi-datasets.png)
+
+选择多个数据集链接会打开Customer AI数据集预览弹出窗口。 预览中的每种颜色都表示一个数据集，如数据集列左侧的颜色键所示。 在此示例中，您只能看到 **数据集1** 包含 `PROP1` 列。
+
+![显示更多](../images/insights/dataset-preview.png)
 
 ### 编辑实例
 
-要编辑实例，请单击右上方导航中的&#x200B;**[!UICONTROL 编辑]**。
+要编辑实例，请选择 **[!UICONTROL 编辑]** 中的“隐藏主体”。
 
 ![单击编辑按钮](../images/insights/edit-button.png)
 
-此时会出现编辑对话框，允许您编辑实例的名称、描述、状态和评分频率。 要确认更改并关闭对话框，请选择右下角的&#x200B;**[!UICONTROL Save]**。
+此时会出现编辑对话框，允许您编辑实例的名称、描述、状态和评分频率。 要确认更改并关闭对话框，请选择 **[!UICONTROL 保存]** 在右下角。
 
 ![编辑弹出窗口](../images/insights/edit-instance.png)
 
 ### 更多操作
 
-**[!UICONTROL More actions]**&#x200B;按钮位于&#x200B;**[!UICONTROL Edit]**&#x200B;旁边的右上导航中。 单击&#x200B;**[!UICONTROL 更多操作]**&#x200B;会打开一个下拉列表，允许您选择以下操作之一：
+的 **[!UICONTROL 更多操作]** 按钮位于右上方的导航中，位于 **[!UICONTROL 编辑]**. 选择 **[!UICONTROL 更多操作]** 打开一个下拉列表，用于选择以下操作之一：
 
-- **[!UICONTROL 克隆]**:选择 **** 克隆操作会复制服务实例设置。然后，您可以修改工作流以进行细微调整，并将其重命名为新实例。
+- **[!UICONTROL 克隆]**:选择 **[!UICONTROL 克隆]** 复制服务实例设置。 然后，您可以修改工作流以进行细微调整，并将其重命名为新实例。
 - **[!UICONTROL 删除]**:删除实例。
-- **[!UICONTROL 访问得分]**:选择 **[!UICONTROL 访问]** 分数会打开一个对话框，其中提供了Customer AI教程 [的下载分数](./download-scores.md) 的链接，该对话框还提供进行API调用所需的数据集ID。
+- **[!UICONTROL 访问分数]**:选择 **[!UICONTROL 访问分数]** 打开一个对话框，其中提供指向的链接 [下载客户AI的分数](./download-scores.md) 教程中，该对话框还提供了进行API调用所需的数据集id。
 - **[!UICONTROL 查看运行历史记录]**:此时将显示一个对话框，其中包含与服务实例关联的所有评分运行的列表。
 
 ![更多操作](../images/insights/more-actions.png)
@@ -111,7 +123,7 @@ Customer AI作为Intelligent Services的一部分，为营销人员提供了利�
 
 ## 分数分布
 
-**[!UICONTROL 分数分布]**&#x200B;卡片会根据分数直观地显示人群的摘要。 您在[!UICONTROL Distribution of Scores]卡片中看到的颜色表示生成的倾向得分类型。 将鼠标悬停在任何评分分配上可提供属于该分配的确切计数。
+的 **[!UICONTROL 分数分布]** 卡片会根据得分直观地汇总群体。 您在 [!UICONTROL 分数分布] 卡片表示生成的倾向得分类型。 将鼠标悬停在任何评分分配上可提供属于该分配的确切计数。
 
 ![分数分布](../images/insights/distribution-of-scores.png)
 
@@ -135,17 +147,17 @@ Customer AI作为Intelligent Services的一部分，为营销人员提供了利�
 
 ### 创建区段
 
-选择任何存储段中的&#x200B;**[!UICONTROL 创建区段]**&#x200B;按钮，以便实现低、中、高倾向重定向到区段生成器。
+选择 **[!UICONTROL 创建区段]** 中、高倾向的任何存储段中的按钮，可将您重定向到区段生成器。
 
 >[!NOTE]
 >
->**[!UICONTROL 创建区段]**&#x200B;按钮仅在为数据集启用“实时客户配置文件”时可用。 有关如何启用实时客户资料的更多信息，请访问[实时客户资料概述](../../../rtcdp/overview.md)。
+>的 **[!UICONTROL 创建区段]** 按钮仅在为数据集启用“实时客户配置文件”时可用。 有关如何启用实时客户资料的更多信息，请访问 [实时客户资料概述](../../../rtcdp/overview.md).
 
 ![单击创建区段](../images/insights/influential-factors-create-segment.png)
 
 ![创建区段](../images/insights/create-segment.png)
 
-区段生成器用于定义区段。 从分析页面中选择&#x200B;**[!UICONTROL 创建区段]**&#x200B;时， Customer AI会自动将选定的存储段信息添加到区段。 要完成区段的创建，只需填写位于区段生成器用户界面右边栏中的&#x200B;*名称*&#x200B;和&#x200B;*描述*&#x200B;容器即可。 在为区段提供了名称和描述后，单击右上方的&#x200B;**[!UICONTROL 保存]**。
+区段生成器用于定义区段。 选择 **[!UICONTROL 创建区段]** 从分析页面中， Customer AI会自动将选定的分段信息添加到区段。 要完成区段的创建，只需在 **名称** 和 **描述** 容器。 在为区段提供名称和描述后，选择 **[!UICONTROL 保存]** 在右上方。
 
 >[!NOTE]
 >
@@ -153,13 +165,13 @@ Customer AI作为Intelligent Services的一部分，为营销人员提供了利�
 
 ![区段填写](../images/insights/segment-saving.png)
 
-要在Platform UI中查看新区段，请单击左侧导航中的&#x200B;**[!UICONTROL 区段]**。 出现&#x200B;**[!UICONTROL Browse]**&#x200B;页面，并显示所有可用区段。
+要在Platform UI中查看新区段，请选择 **[!UICONTROL 区段]** 中。 的 **[!UICONTROL 浏览]** 页面，并显示所有可用的区段。
 
 ![所有区段](../images/insights/Segments-dashboard.png)
 
 ## 性能摘要量度 {#performance-metrics}
 
-**[!UICONTROL 性能摘要]**&#x200B;选项卡显示实际流失率或转化率，并分为客户AI评分的每个倾向分段。
+的 **[!UICONTROL 性能摘要]** 选项卡显示实际流失率或转化率，并按客户AI评分的每个倾向分段进行划分。
 
 ![“性能摘要”选项卡](../images/insights/summary_tab.png)
 
@@ -169,21 +181,21 @@ Customer AI作为Intelligent Services的一部分，为营销人员提供了利�
 
 ![存储段示例](../images/insights/churn_tab.png)
 
-您可以过滤显示的预期费率和实际费率的时间范围。 选择&#x200B;**日历图标** ![图标](../images/insights/calendar_icon.png)，然后选择新的日期范围。 每个时段中的结果都会更新，以在新日期范围内显示。
+您可以过滤显示的预期费率和实际费率的时间范围。 选择 **日历图标** ![图标](../images/insights/calendar_icon.png)然后，选择新的日期范围。 每个时段中的结果都会更新，以在新日期范围内显示。
 
 ![日期选择器](../images/insights/date_selector.png)
 
 ### 个人评分运行率
 
-**[!UICONTROL 性能摘要]**&#x200B;选项卡的下半部分显示每个评分运行的结果。 选择右上角的下拉日期以显示其他评分运行的结果。
+下半部分 **[!UICONTROL 性能摘要]** 选项卡显示每个评分运行的结果。 选择右上角的下拉日期以显示其他评分运行的结果。
 
-根据您是否预测流失率或转化率，[!UICONTROL 分数分布]图表会显示在每次增量中已更改/转换且未更改/未转换的用户档案分布。
+根据您是预测客户流失率还是转化， [!UICONTROL 分数分布] 图表显示在每次增量中更改/转换和未更改/未转换的配置文件的分布。
 
 ![个人评分](../images/insights/scoring_tab.png)
 
 ## 后续步骤
 
-本文档概述了Customer AI服务实例提供的分析。 您现在可以继续阅读关于[下载Customer AI](./download-scores.md)分数的教程，或浏览提供的其他[Adobe智能服务](../../home.md)指南。
+本文档概述了Customer AI服务实例提供的分析。 您现在可以继续阅读 [在Customer AI中下载分数](./download-scores.md) 或浏览另一个 [Adobe智能服务](../../home.md) 提供的指南。
 
 ## 其他资源
 
