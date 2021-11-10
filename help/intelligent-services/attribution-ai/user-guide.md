@@ -5,9 +5,9 @@ title: Attribution AIUI指南
 topic-legacy: User guide
 description: 本文档是与Intelligent Services用户界面中的Attribution AI交互的指南。
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: ca390f8cba05148ba39a57734c5172265dcfa5ce
 workflow-type: tm+mt
-source-wordcount: '1765'
+source-wordcount: '2281'
 ht-degree: 1%
 
 ---
@@ -20,25 +20,25 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 ## 创建实例
 
-在[!DNL Adobe Experience Platform] UI的左侧导航中，单击&#x200B;**[!UICONTROL Services]**。 出现&#x200B;**[!UICONTROL Services]**&#x200B;浏览器，并显示可用的Adobe智能服务。 在Attribution AI容器中，单击&#x200B;**[!UICONTROL 打开]**。
+在 [!DNL Adobe Experience Platform] UI，选择 **[!UICONTROL 服务]** 中。 的 **[!UICONTROL 服务]** 浏览器会显示并显示可用的Adobe智能服务。 在Attribution AI容器中，选择 **[!UICONTROL 打开]**.
 
 ![访问您的实例](./images/user-guide/open_Attribution_ai.png)
 
 此时将显示Attribution AI服务页面。 本页列出了Attribution AI的服务实例并显示了有关这些实例的信息，包括实例名称、转化事件、实例运行频率以及上次更新的状态。
 
-您可以在&#x200B;**[!UICONTROL 创建实例]**&#x200B;容器右下方找到打分的&#x200B;]**转化事件总数量度。**[!UICONTROL &#x200B;此量度跟踪当前日历年中由Attribution AI评分的转化事件总数，包括所有沙盒环境和任何已删除的服务实例。
+您可以在 **[!UICONTROL 得分的转化事件总数]** 位于 **[!UICONTROL 创建实例]** 容器。 此量度跟踪当前日历年中由Attribution AI评分的转化事件总数，包括所有沙盒环境和任何已删除的服务实例。
 
-![](./images/user-guide/total_conversions.png)
+![总转化](./images/user-guide/total_conversions.png)
 
-可以使用UI右侧的控件来编辑、克隆和删除服务实例。 要显示这些控件，请从现有的&#x200B;**[!UICONTROL Service实例]**&#x200B;中选择一个实例。 控件包含以下信息：
+可以使用UI右侧的控件来编辑、克隆和删除服务实例。 要显示这些控件，请从现有的 **[!UICONTROL 服务实例]**. 控件包含以下信息：
 
-- **[!UICONTROL 编辑]**:选择 **** 编辑允许您修改现有服务实例。您可以编辑实例的名称、描述、状态和评分频率。
-- **[!UICONTROL 克隆]**:选择 **** 克隆选定的服务实例。然后，您可以修改工作流以进行细微调整，并将其重命名为新实例。
+- **[!UICONTROL 编辑]**:选择 **[!UICONTROL 编辑]** 用于修改现有服务实例。 您可以编辑实例的名称、描述、状态和评分频率。
+- **[!UICONTROL 克隆]**:选择 **[!UICONTROL 克隆]** 复制所选服务实例。 然后，您可以修改工作流以进行细微调整，并将其重命名为新实例。
 - **[!UICONTROL 删除]**:您可以删除包含任何历史运行的服务实例。
-- **[!UICONTROL 数据源]**:指向此实例所使用的数据集的链接。
-- **[!UICONTROL 上次运行详细信息]**:仅当运行失败时，才会显示该设置。此处显示了有关运行失败原因（如错误代码）的信息。
+- **[!UICONTROL 数据源]**:指向所用数据集的链接。 如果Attribution AI使用多个数据集，则会显示“多个”，然后显示数据集的数量。 选择超链接后，将显示数据集预览弹出窗口。
+- **[!UICONTROL 上次运行详细信息]**:仅当运行失败时，才会显示该设置。 此处显示了有关运行失败原因（如错误代码）的信息。
 
-![](./images/user-guide/side_panel.png)
+![侧窗格](./images/user-guide/multiple-datasets-pane.png)
 
 - **[!UICONTROL 转化事件]**:为此实例配置的转化事件的快速概述。
 - **[!UICONTROL 回顾窗口]**:您定义的时间范围，用于指示转化事件接触点之前包含的天数。
@@ -46,85 +46,127 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 ![](./images/user-guide/side_panel_2.png)
 
-选择&#x200B;**[!UICONTROL 创建实例]**&#x200B;以开始。
+选择 **[!UICONTROL 创建实例]** 开始。
 
 ![创建实例](./images/user-guide/landing_page.png)
 
-接下来，将显示Attribution AI的设置页面，您可以在该页面中提供基本信息，并为实例指定数据集。
-
-![设置页面](./images/user-guide/setup_attribution.png)
-
-### 命名实例
-
-在&#x200B;**[!UICONTROL 基本信息]**&#x200B;下，为服务实例提供名称和可选描述。
+接下来，将显示Attribution AI的设置页面，您可以在该页面中为服务实例提供名称和可选描述。
 
 ![命名实例](./images/user-guide/naming_instance.png)
 
-### 选择数据集
+## 选择数据 {#select-data}
 
-填写基本信息后，单击标有&#x200B;**选择数据集**&#x200B;的下拉列表以选择您的数据集。 数据集用于培训模型并对其生成的后续数据进行评分。 从下拉选择器中选择Attribution AI集时，只会列出与数据兼容并符合体验数据模型(XDM)架构的数据集。 选择数据集后，单击右上角的&#x200B;**Next**&#x200B;以继续进入定义事件页面。
+<!-- https://www.adobe.com/go/aai-select-data -->
 
->[!TIP]
->
->Adobe Analytics数据集通过Analytics源连接器受支持。
+根据设计，Attribution AI可以使用Adobe Analytics、体验事件和消费者体验事件数据来计算归因得分。 在选择数据集时，只会列出与Attribution AI兼容的数据集。 要选择数据集，请选择&#x200B;**+**)符号或选中复选框以一次添加多个数据集。 您还可以使用搜索选项快速查找您感兴趣的数据集。
 
-![设置页面](./images/user-guide/dataset_selector.png)
+选择要使用的数据集后，选择 **[!UICONTROL 添加]** 按钮将数据集添加到数据集预览窗格。
 
-## 定义事件
+![选择数据集](./images/user-guide/select-datasets.png)
 
-有三种不同类型的输入数据用于定义事件：
+选择信息图标 ![信息图标](./images/user-guide/info-icon.png) 数据集旁边会打开数据集预览弹出窗口。
 
-- **转化事件：** 可确定营销活动（如电子商务订单、店内购买和网站访问）影响的业务目标。
-- **回顾窗口：** 提供一个时间范围，指示应包含转化事件接触点之前的天数。
-- **接触点：** 收件人、个人或Cookie级别的营销事件，用于评估转化的数字或基于收入的影响。
+![选择和搜索数据集](./images/user-guide/dataset-preview.png)
 
-### 定义转化事件 {#define-conversion-events}
+数据集预览包含数据，如上次更新时间、源架构以及前十列的预览。
 
-要定义转化事件，您需要为事件指定名称，并通过单击&#x200B;**Enter Field Name**&#x200B;下拉菜单选择事件类型。
+### 数据集完整性 {#dataset-completeness}
 
-![是下拉列表](./images/user-guide/conversion_event_2.png)
+<!-- https://www.adobe.com/go/aai-dataset-completeness -->
 
-选择事件后，其右侧会显示一个新的下拉菜单。 第二个下拉列表用于通过使用操作为事件提供更多上下文。 对于此转化事件，使用默认操作&#x200B;*exists*。
+在数据集预览中，是一个数据集完整性百分比值。 此值提供数据集中有多少列为空/空的快照。 如果一个数据集包含大量缺失值，并且这些值在其他位置被捕获，则强烈建议您包含包含缺失值的数据集。
 
 >[!NOTE]
 >
->在定义事件时， *转化名称*&#x200B;下的字符串会更新。
+>使用Attribution AI的最大培训窗口（一年）计算数据集完整性。 这意味着在显示数据集完整性值时，不会考虑一年以上的数据。
+
+![数据集完整性](./images/user-guide/dataset-completeness.png)
+
+### 选择标识 {#identity}
+
+为了使多个数据集彼此连接，您必须选择标识类型（也称为“标识命名空间”）以及该命名空间中的标识值。 如果您在同一命名空间下为架构内的多个字段分配了身份，则所有分配的身份值都会显示在由命名空间前面的身份下拉菜单中，例如 `EMAIL (personalEmail.address)` 或 `EMAIL (workEmail.address)`.
+
+>[!IMPORTANT]
+>
+>必须为您选择的每个数据集使用相同的身份类型（命名空间）。 标识列中的标识类型旁边会显示一个绿色复选标记，指示数据集兼容。 例如，使用电话命名空间和 `mobilePhone.number` 作为标识符，其余数据集的所有标识符必须包含并使用Phone命名空间。
+
+要选择身份，请选择位于身份列中的带下划线的值。 此时会出现选择标识弹出窗口。
+
+![选择相同的命名空间](./images/user-guide/identity-type.png)
+
+如果命名空间中有多个标识可用，请确保为用例选择正确的标识字段。 例如，电子邮件命名空间中提供了两个电子邮件标识，即工作电子邮件和个人电子邮件。 根据用例的不同，个人电子邮件更有可能被填写，并且在单个预测中更有用。 这意味着您将选择 `EMAIL (personalEmail.address)` 作为您的身份。
+
+![未选择数据集键值](./images/user-guide/select-identity.png)
+
+>[!NOTE]
+>
+> 如果数据集不存在有效的标识类型（命名空间），则必须设置主标识，并使用 [架构编辑器](../../xdm/schema/composition.md#identity). 要了解有关命名空间和身份的更多信息，请访问 [身份服务命名空间](../../identity-service/namespaces.md) 文档。
+
+## 映射媒体渠道和营销活动字段 {#aai-mapping}
+
+<!-- https://www.adobe.com/go/aai-mapping -->
+
+选择和添加数据集后， **地图** 配置步骤。 Attribution AI要求您为上一步中选择的每个数据集映射“媒体渠道”字段。 这是因为如果没有Attribution AI集之间的媒体渠道映射，则从数据派生的分析可能无法正确显示，从而导致分析页面难以解释。 尽管只需要媒体渠道，但强烈建议您映射一些可选字段，如媒体操作、促销活动名称、促销活动组和促销活动标记。 这样可让Attribution AI提供更清晰的洞察和最佳结果。
+
+![映射](./images/user-guide/mapping.png)
+
+## 定义事件 {#define-events}
+
+<!-- https://www.adobe.com/go/aai-define-events -->
+
+有三种不同类型的输入数据用于定义事件：
+
+- **转化事件：** 确定营销活动影响的业务目标，例如电子商务订单、店内购买和网站访问。
+- **回顾窗口：** 提供一个时间范围，指示在转化事件接触点之前应包含的天数。
+- **接触点：** 收件人、个人或cookie级别的营销事件，用于评估转化的数值或基于收入的影响。
+
+### 定义转化事件 {#define-conversion-events}
+
+要定义转化事件，您需要为事件提供一个名称，并通过选择 **输入字段名称** 下拉菜单。
+
+![是下拉列表](./images/user-guide/conversion_event_2.png)
+
+选择事件后，其右侧会显示一个新的下拉菜单。 第二个下拉列表用于通过使用操作为事件提供更多上下文。 对于此转化事件，默认操作 *存在* 中，将使用。
+
+>[!NOTE]
+>
+>下面的字符串 *转化名称* 将在您定义事件时更新。
 
 ![无下拉列表](./images/user-guide/conversion_event_1.png)
 
-使用&#x200B;**[!UICONTROL Add event]**&#x200B;和&#x200B;**[!UICONTROL Add Group]**&#x200B;按钮可进一步定义您的转化。 根据您定义的转化，您可能需要使用&#x200B;**[!UICONTROL Add event]**&#x200B;和&#x200B;**[!UICONTROL Add group]**&#x200B;按钮来提供更多上下文。
+的 **[!UICONTROL 添加事件]** 和 **[!UICONTROL 添加组]** 按钮用于进一步定义转化。 根据您定义的转化，您可能需要使用 **[!UICONTROL 添加事件]** 和 **[!UICONTROL 添加群组]** 按钮以提供更多上下文。
 
 ![添加事件](./images/user-guide/add_event.png)
 
-单击&#x200B;**[!UICONTROL Add event]**&#x200B;会创建其他字段，这些字段可以使用与上面所述相同的方法填写。 这样做会在转换名称下方的字符串定义中添加AND语句。 单击&#x200B;**x**&#x200B;可删除已添加的事件。
+选择 **[!UICONTROL 添加事件]** 创建可使用与上面所述相同的方法填充的其他字段。 这样做会在转换名称下方的字符串定义中添加AND语句。 选择 **x** 删除已添加的事件。
 
 ![添加事件菜单](./images/user-guide/add_event_result.png)
 
-单击&#x200B;**[!UICONTROL 添加组]**&#x200B;可选择创建与原始字段不同的其他字段。 添加组后，将显示蓝色的&#x200B;*And*&#x200B;按钮。 单击&#x200B;**And**&#x200B;会提供一个选项，可将参数更改为包含“Or”。 “或”用于定义多个成功的转化路径。 “和”扩展了转化路径以包含其他条件。
+选择 **[!UICONTROL 添加组]** 提供了用于创建与原始字段不同的其他字段的选项。 加入组后，蓝色 *和* 按钮。 选择 **和** 提供了一个选项，可将参数更改为包含“Or”。 “或”用于定义多个成功的转化路径。 “和”扩展了转化路径以包含其他条件。
 
 ![使用或](./images/user-guide/and_or.png)
 
-如果需要多次转化，请单击&#x200B;**添加转化**&#x200B;以创建新的转化卡。 您可以重复上述过程以定义多个转化。
+如果需要多次转化，请选择 **添加转化** 创建新的转化卡。 您可以重复上述过程以定义多个转化。
 
 ![添加转化](./images/user-guide/add_conversion.png)
 
 ### 定义回顾窗口 {#lookback-window}
 
-定义完转化后，需要确认回顾窗口。 使用箭头键或单击默认值(56)，指定您希望在转化事件发生前的多少天加入接触点。 接触点在下一步中定义。
+定义完转化后，需要确认回顾窗口。 使用箭头键或选择默认值(56)，指定您希望在转化事件发生前的多少天加入接触点。 接触点在下一步中定义。
 
 ![回顾](./images/user-guide/lookback_window.png)
 
 ### 定义接触点
 
-定义接触点的工作流程与定义转化](#define-conversion-events)类似。 [最初，您需要命名接触点，并从&#x200B;*输入字段名称*&#x200B;下拉菜单中选择一个接触点值。 选择后，将显示运算符下拉列表，其默认值为“存在”。 单击下拉菜单以显示运算符列表。
+在定义接触点之前，会执行类似的工作流 [定义转化](#define-conversion-events). 最初，您需要命名接触点，并从 *输入字段名称* 下拉菜单。 选择后，将显示运算符下拉列表，其默认值为“存在”。 选择下拉菜单以显示运算符列表。
 
 ![运算符](./images/user-guide/operators.png)
 
-为此接触点的目的，请选择&#x200B;**等于**。
+为此接触点的目的，请选择 **等于**.
 
 ![步骤1](./images/user-guide/touchpoint_step1.png)
 
-选择接触点的运算符后，将提供&#x200B;*输入字段值*。 根据您之前选择的运算符和接触点值填充&#x200B;*输入字段值*&#x200B;的下拉值。 如果某个值未在下拉菜单中填充，则您可以在中手动键入该值。 单击下拉菜单并选择&#x200B;**CLICK**。
+选择接触点的运算符后， *输入字段值* 中的“隐藏主体”。 的下拉值 *输入字段值* 根据您之前选择的运算符和接触点值进行填充。 如果某个值未在下拉菜单中填充，则您可以在中手动键入该值。 选择下拉菜单并选择 **单击**.
 
 >[!NOTE]
 >
@@ -132,45 +174,45 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 ![接触点下拉列表](./images/user-guide/touchpoint_dropdown.png)
 
-使用&#x200B;*Add event*&#x200B;和&#x200B;*Add Group*&#x200B;按钮可进一步定义您的接触点。 由于接触点周围是复杂的，因此在单个接触点中有多个事件和组并不罕见。
+的 **添加事件** 和 **添加组** 按钮用于进一步定义接触点。 由于接触点周围是复杂的，因此在单个接触点中有多个事件和组的情况并不罕见。
 
-单击&#x200B;**Add event**&#x200B;后，可添加其他字段。 单击&#x200B;**x**&#x200B;可删除已添加的事件。
+选择后， **添加事件** 允许添加其他字段。 选择 **x** 删除已添加的事件。
 
 ![添加事件](./images/user-guide/touchpoint_add_event.png)
 
-单击&#x200B;**添加组**&#x200B;可选择创建与原始字段不同的其他字段。 添加组后，将显示蓝色的&#x200B;*And*&#x200B;按钮。 单击&#x200B;**And**&#x200B;以更改参数，新参数“Or”用于定义多个成功路径。 此特定接触点仅具有一个成功路径，因此不需要“或”。
+选择 **添加群组** 允许您选择创建与原始字段不同的其他字段。 加入组后，蓝色 *和* 按钮。 选择 **和** 要更改参数，可使用新参数“Or”定义多个成功路径。 此特定接触点仅具有一个成功路径，因此不需要“或”。
 
 ![接触点概述](./images/user-guide/add_group_touchpoint.png)
 
 >[!NOTE]
 >
->使用&#x200B;*接触点名称*&#x200B;下的字符串可快速查看您的接触点。 请注意，字符串与接触点的名称匹配。
+>在下使用字符串 *接触点名称* 以快速了解您的接触点。 请注意，字符串与接触点的名称匹配。
 
 ![](./images/user-guide/touchpoint_string.png)
 
-您可以通过单击&#x200B;**添加接触点**&#x200B;并重复上述过程来添加其他接触点。
+您可以通过选择 **添加接触点** 重复上述过程。
 
 ![添加接触点](./images/user-guide/add_touchpoint.png)
 
-定义完所有必要的接触点后，向上滚动并单击右上角的&#x200B;**Next**&#x200B;以继续执行最后一步。
+定义完所有必要的接触点后，向上滚动并选择 **下一个** ，以继续执行最终步骤。
 
 ![完成定义](./images/user-guide/define_event_next.png)
 
 ## 高级培训和评分设置
 
-Attribution AI中的最后一页是用于设置培训和评分的&#x200B;**[!UICONTROL Advanced]**&#x200B;页面。
+Attribution AI的最终页面是 **[!UICONTROL 高级]** 用于设置培训和评分的页面。
 
 ![新页面高级](./images/user-guide/advanced_settings.png)
 
 ### 安排培训
 
-使用&#x200B;*计划*，您可以选择要进行评分的一周中的日期和时间。
+使用 *计划*，您可以选择要进行评分的一周中的日期和时间。
 
-单击&#x200B;*评分频度*&#x200B;下的下拉菜单，在每日、每周和每月评分之间进行选择。 接下来，选择您希望在一周中的哪几天进行评分。 可以选择多天。 再次单击一天可取消选择它。
+在下选择下拉菜单 *评分频度* 选择每日、每周和每月评分。 接下来，选择您希望在一周中的哪几天进行评分。 可以选择多天。 再次选择同一天会取消选择该日期。
 
 ![安排培训](./images/user-guide/schedule_training.png)
 
-要更改希望打分的一天时间，请单击时钟图标。 在显示的新叠加图中，输入您希望进行评分的时间。 单击叠加外部以将其关闭。
+要更改希望打分的一天时间，请选择时钟图标。 在显示的新叠加图中，输入您希望进行评分的时间。 选择叠加外部以将其关闭。
 
 >[!NOTE]
 >
@@ -180,7 +222,7 @@ Attribution AI中的最后一页是用于设置培训和评分的&#x200B;**[!UIC
 
 ### 其他分数数据集列（可选）
 
-默认情况下，会为标准架构中的每个服务实例创建一个分数数据集。 您可以选择根据转化事件和接触点配置向得分数据集输出添加其他列。 首先，从输入数据集中选择列，然后拖放列以更改顺序，方法是将鼠标左键按在汉堡包图标上。
+默认情况下，会为标准架构中的每个服务实例创建一个分数数据集。 您可以选择根据转化事件和接触点配置向评分数据集输出添加其他列。 首先，从输入数据集中选择列，然后拖放列以更改顺序，方法是将鼠标左键按在汉堡包图标上。
 
 ![得分数据集列添加](./images/user-guide/Add-score-dataset.png)
 
@@ -188,7 +230,7 @@ Attribution AI中的最后一页是用于设置培训和评分的&#x200B;**[!UIC
 
 客户的行为可能因国家/地区和地理区域而有显着差异。 对于全球企业，使用基于国家/地区或基于区域的模型可以提高归因准确性。 添加的每个区域都使用该区域的数据创建一个新模型。
 
-要定义新区域，请首先单击&#x200B;**[!UICONTROL Add region]**。 在显示的容器中，提供区域的名称。 从&#x200B;**[!UICONTROL 输入字段名称]**&#x200B;下拉列表中只填充一个值(&quot;placeContext.geo.countryCode&quot;)。 选择此值。
+要定义新区域，请首先选择 **[!UICONTROL 添加区域]**. 在显示的容器中，提供区域的名称。 在 **[!UICONTROL 输入字段名称]** 下拉列表。 选择此值。
 
 ![选择区域](./images/user-guide/select_region_att.png)
 
@@ -196,11 +238,11 @@ Attribution AI中的最后一页是用于设置培训和评分的&#x200B;**[!UIC
 
 ![区域运算符](./images/user-guide/region_operators.png)
 
-最后，在&#x200B;**[!UICONTROL Enter Field Value]**&#x200B;下拉列表中键入国家/地区代码。
+最后，在 **[!UICONTROL 输入字段值]** 下拉列表。
 
 >[!NOTE]
 >
->国家/地区代码有两个字符长。 可在此处[ISO 3166-1 alpha-2](https://datahub.io/core/country-list)找到完整列表。
+>国家/地区代码有两个字符长。 可在此处找到完整列表 [ISO 3166-1 alpha-2](https://datahub.io/core/country-list).
 
 ![地区](./images/user-guide/region-based.png)
 
@@ -214,13 +256,13 @@ Attribution AI中的最后一页是用于设置培训和评分的&#x200B;**[!UIC
 
 ![培训窗口](./images/user-guide/training_window.png)
 
-选择培训窗口后，单击右上角的&#x200B;**[!UICONTROL 完成]**。 允许一些时间处理数据。 完成后，会显示一个弹出对话框，确认实例设置已完成。 单击&#x200B;**[!UICONTROL Ok]**&#x200B;以重定向到&#x200B;**[!UICONTROL Service instances]**&#x200B;页面，您可以在该页面中看到服务实例。
+选择培训窗口后，选择 **[!UICONTROL 完成]** 中。 允许一些时间处理数据。 完成后，会显示一个弹出对话框，确认实例设置已完成。 选择 **[!UICONTROL 确定]** 被重定向到 **[!UICONTROL 服务实例]** 页面，您可以在其中查看服务实例。
 
 ![设置完成](./images/user-guide/instance_setup_complete.png)
 
 ## 后续步骤
 
-在本教程之后，您已成功地在Attribution AI中创建了服务实例。 实例完成评分（最多24小时）后，您便可以[发现Attribution AI分析](./discover-insights.md)。 此外，如果您希望下载评分结果，请访问[下载评分](./download-scores.md)文档。
+在本教程之后，您已成功地在Attribution AI中创建了服务实例。 实例完成评分（最多允许24小时）后，您就可以 [探索Attribution AI洞察](./discover-insights.md). 此外，如果您希望下载评分结果，请访问 [下载分数](./download-scores.md) 文档。
 
 ## 其他资源
 
