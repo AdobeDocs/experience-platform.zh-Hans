@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 8cac961e1566c48bacc0ec2ab3414132f81232e2
+source-git-commit: 3e2382cf4b02ea4fd40e3638b52b4719938a2ea2
 workflow-type: tm+mt
-source-wordcount: '669'
+source-wordcount: '668'
 ht-degree: 9%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 9%
    * [ (Alpha)HTTP连接](./catalog/http-destination.md)
    * Adobe目标{#adobe}
       * [Adobe目标概述](./catalog/adobe/overview.md)
-      * [（测试版）Marketo Engage连接](./catalog/adobe/marketo-engage.md)
+      * [Marketo Engage连接](./catalog/adobe/marketo-engage.md)
       * [Experience Platform区段共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
    * 广告目标{#advertising}
       * [广告目标概述](./catalog/advertising/overview.md)
@@ -148,7 +148,7 @@ ht-degree: 9%
    * [概述](./destination-sdk/overview.md)
    * [集成先决条件](./destination-sdk/integration-prerequisites.md)
    * [快速入门](./destination-sdk/getting-started.md)
-   * 目标SDK功能 {#functionality}
+   * Destination SDK功能 {#functionality}
       * [配置选项](./destination-sdk/configuration-options.md)
       * [目标配置](./destination-sdk/destination-configuration.md)
       * [服务器和模板规范](./destination-sdk/server-and-template-configuration.md)
@@ -161,7 +161,7 @@ ht-degree: 9%
          * [创建和测试消息转换模板](./destination-sdk/create-template.md)
          * [测试目标配置](./destination-sdk/test-destination.md)
    * API操作 {#api}
-      * [目标SDK（目标创作）API引用](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
+      * [Destination SDK（目标创作）API引用](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
       * [目标端点API操作](./destination-sdk/destination-configuration-api.md)
       * [目标服务器端点API操作](./destination-sdk/destination-server-api.md)
       * [受众元数据端点API操作](./destination-sdk/audience-metadata-api.md)
@@ -173,7 +173,7 @@ ht-degree: 9%
          * [目标测试API操作](./destination-sdk/destination-testing-api.md)
          * [配置文件生成API操作示例](./destination-sdk/sample-profile-generation-api.md)
    * 指南 {#guides}
-      * [使用目标SDK配置流目标](./destination-sdk/configure-destination-instructions.md)
+      * [使用Destination SDK配置流目标](./destination-sdk/configure-destination-instructions.md)
    * 记录目标 {#document-destination}
       * [在Adobe Experience Platform中记录您的目标](./destination-sdk/docs-framework/documentation-instructions.md)
       * [使用GitHub Web界面创建目标文档页面](./destination-sdk/docs-framework/use-github-interface-to-create-documentation.md)
