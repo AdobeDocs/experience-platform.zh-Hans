@@ -4,10 +4,10 @@ solution: Experience Platform, Real-time Customer Data Platform
 audience: user
 user-guide-title: 实时客户数据平台指南
 user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
-source-git-commit: d83e51a5d45c92c9999c0f9ef469f83ffcf35d6e
+source-git-commit: 63d437db19c924bec05e7df99559b6bf2193ae5c
 workflow-type: tm+mt
-source-wordcount: '184'
-ht-degree: 29%
+source-wordcount: '192'
+ht-degree: 28%
 
 ---
 
@@ -21,7 +21,8 @@ ht-degree: 29%
       * [Real-time CDP快速入门](get-started.md)
       * [量度概述](home-page-dashboards.md)
    * Real-time CDP B2B Edition {#rtcdpb2b-intro}
-      * [Real-time CDP B2B Edition（测试版）快速入门](./b2b-use-case.md)
+      * [Real-time CDP B2B Edition示例用例（测试版）](./b2b-use-case.md)
+      * [Real-time CDP B2B Edition端到端教程（测试版）](./b2b-tutorial.md)
       * [Real-time CDP B2B Edition护栏](b2b-guardrails.md)
 * 帐户配置文件（测试版） {#account}
    * [帐户配置文件概述](accounts/account-profile-overview.md)
