@@ -1,38 +1,43 @@
 ---
 keywords: Experience Platform；主页；热门主题；Salesforce;Salesforce；字段映射；字段映射；映射；Marketo;B2B;b2b
-solution: Experience Platform
 title: Salesforce映射字段
-topic-legacy: overview
 description: 下表包含Salesforce源字段与其对应XDM字段之间的映射。
-source-git-commit: 00207ae10979b48d190cbda63aecf55e0f6d0f9c
+source-git-commit: d0efc8ffab33029c9c3ff69456b634b4ef737b1a
 workflow-type: tm+mt
-source-wordcount: '221'
-ht-degree: 11%
+source-wordcount: '279'
+ht-degree: 8%
 
 ---
 
 # [!DNL Salesforce] 字段映射
 
-下表包含[!DNL Salesforce]源字段与其相应的体验数据模型(XDM)字段之间的映射。
+下表包含 [!DNL Salesforce] 源字段及其对应的体验数据模型(XDM)字段。
 
 ## 联系人 {#contact}
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
-| `AccountId` | `b2b.accountID` |
-| `AccountId` | `personComponents.sourceAccountID` |
+| `AccountId` | `b2b.accountKey.sourceID` |
+| `iif(AccountId != null && AccountId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}", "sourceKey", concat(AccountId,"@${CRM_ORG_ID}.Salesforce")), null)` | `b2b.accountKey` |
+| `iif(AccountId != null && AccountId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}","sourceID", AccountId, "sourceKey", concat(AccountId,"@${CRM_ORG_ID}.Salesforce")), null)` | `personComponents.sourceAccountKey` |
+| `"Salesforce"` | `b2b.personKey.sourceType` |
+| `"${CRM_ORG_ID}"` | `b2b.personKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `b2b.personKey.sourceKey` | 主标识。 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
 | `AssistantName` | `extendedWorkDetails.assistantDetails.name.fullName` |
 | `AssistantPhone` | `extendedWorkDetails.assistantDetails.phone.number` |
 | `Birthdate` | `person.birthDate` |
 | `CreatedDate` | `extSourceSystemAudit.createdDate` |
 | `Department` | `extendedWorkDetails.departments` |
-| `Email` | `workEmail.address` | 这是次标识。 |
+| `Email` | `workEmail.address` | 次标识。 |
 | `Email` | `personComponents.workEmail.address` |
 | `Fax` | `faxPhone.number` |
 | `FirstName` | `person.name.firstName` |
 | `HomePhone` | `homePhone.number` |
-| `Id` | `personID` | 这是主标识 |
-| `Id` | `personComponents.sourcePersonID` |
+| `Id` | `b2b.personKey.sourceID` |
+| `"Salesforce"` | `personComponents.sourcePersonKey.sourceType` |
+| `"${CRM_ORG_ID}"` | `personComponents.sourcePersonKey.sourceInstanceID` |
+| `Id` | `personComponents.sourcePersonKey.sourceID` |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `personComponents.sourcePersonKey.sourceKey` |
 | `LastActivityDate` | `extSourceSystemAudit.lastActivityDate` |
 | `LastModifiedDate` | `extSourceSystemAudit.lastUpdatedDate` |
 | `LastName` | `person.name.lastName` |
@@ -73,13 +78,19 @@ ht-degree: 11%
 | `ConvertedContactId` | `personComponents.sourceConvertedContactID` |
 | `ConvertedDate` | `b2b.convertedDate` |
 | `Country` | `workAddress.country` |
-| `Email` | `workEmail.address` | 这是次标识 |
+| `Email` | `workEmail.address` | 次标识。 |
 | `Email` | `personComponents.workEmail.address` |
 | `Fax` | `faxPhone.number` |
 | `FirstName` | `person.name.firstName` |
 | `IsConverted` | `b2b.isConverted` |
-| `Id` | `personID` | 这是主标识 |
-| `Id` | `personComponents.sourcePersonID` |
+| `"Salesforce"` | `b2b.personKey.sourceType` |
+| `"${CRM_ORG_ID}"` | `b2b.personKey.sourceInstanceID` |
+| `Id` | `b2b.personKey.sourceID` |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `b2b.personKey.sourceKey` | 主标识。 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"Salesforce"` | `personComponents.sourcePersonKey.sourceType` |
+| `"${CRM_ORG_ID}"` | `personComponents.sourcePersonKey.sourceInstanceID` |
+| `Id` | `personComponents.sourcePersonKey.sourceID` |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `personComponents.sourcePersonKey.sourceKey` |
 | `LastActivityDate` | `extSourceSystemAudit.lastActivityDate` |
 | `LastModifiedDate` | `extSourceSystemAudit.lastUpdatedDate` |
 | `LastName` | `person.name.lastName` |
@@ -99,6 +110,8 @@ ht-degree: 11%
 | `Street` | `workAddress.street1` |
 | `Title` | `extendedWorkDetails.jobTitle` |
 | `Suffix` | `person.name.suffix` |
+| `Company` | `b2b.companyName` |
+| `Website` | `b2b.companyWebsite` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -106,10 +119,12 @@ ht-degree: 11%
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
+| `"Salesforce"` | `accountKey.sourceType` |
+| `"${CRM_ORG_ID}"` | `accountKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
 | `AccountNumber` | `accountNumber` |
 | `AccountSource` | `accountSourceType` |
 | `AnnualRevenue` | `accountOrganization.annualRevenue.amount` |
-| `BillingCity` | 地址 | `accountBillingAddress.city` |
+| `BillingCity` | `accountBillingAddress.city` |
 | `BillingCountry` | `accountBillingAddress.country` |
 | `BillingLatitude` | `accountBillingAddress._schema.latitude` |
 | `BillingLongitude` | `accountBillingAddress._schema.longitude` |
@@ -120,7 +135,8 @@ ht-degree: 11%
 | `Description` | `accountDescription` |
 | `DunsNumber` | `accountOrganization.DUNSNumber` | data.com功能 |
 | `Fax` | `accountFax.number` |
-| `Id` | `accountID` | 这是主标识 |
+| `Id` | `accountKey.sourceID` |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `accountKey.sourceKey` | 主标识。 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
 | `Industry` | `accountOrganization.industry` |
 | `Jigsaw` | `accountOrganization.jigsaw` |
 | `LastActivityDate` | `extSourceSystemAudit.lastActivityDate` |
@@ -132,7 +148,8 @@ ht-degree: 11%
 | `Name` | `accountName` |
 | `NumberOfEmployees` | `accountOrganization.numberOfEmployees` |
 | `Ownership` | `accountOwnership` |
-| `ParentId` | `accountParentID` |
+| `ParentId` | `accountParentKey.sourceID` |
+| `iif(ParentId != null && ParentId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}", "sourceKey", concat(ParentId,"@${CRM_ORG_ID}.Salesforce")), null)` | `accountParentKey` |
 | `Phone` | `accountPhone.number` |
 | `Rating` | `accountOrganization.rating` |
 | `ShippingCity` | `accountShippingAddress.city` |
@@ -155,9 +172,14 @@ ht-degree: 11%
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
-| `AccountId` | `accountID` | 关系 |
+| `"Salesforce"` | `opportunityKey.sourceType` |
+| `"${CRM_ORG_ID}"` | `opportunityKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `opportunityKey.sourceKey` | 主标识。 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `AccountId` | `accountKey.sourceID` |
+| `iif(AccountId != null && AccountId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}", "sourceKey", concat(AccountId,"@${CRM_ORG_ID}.Salesforce")), null)` | `accountKey` | 关系。 |
 | `Amount` | `opportunityAmount.amount` |
-| `CampaignId` | `campaignID` |
+| `CampaignId` | `campaignKey.sourceID` |
+| `iif(CampaignId != null && CampaignId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}", "sourceKey", concat(CampaignId,"@${CRM_ORG_ID}.Salesforce")), null)` | `campaignKey` |
 | `CloseDate` | `actualCloseDate` / `expectedCloseDate` |
 | `CreatedDate` | `extSourceSystemAudit.createdDate` |
 | `Description` | `opportunityDescription` |
@@ -166,7 +188,7 @@ ht-degree: 11%
 | `FiscalYear` | `fiscalYear` |
 | `ForecastCategory` | `forecastCategory` |
 | `ForecastCategoryName` | `forecastCategoryName` |
-| `Id` | `opportunityID` | 这是主标识 |
+| `Id` | `opportunityKey.sourceID` |
 | `IsClosed` | `isClosed` |
 | `IsWon` | `isWon` |
 | `LastActivityDate` | `extSourceSystemAudit.lastActivityDate` |
@@ -187,12 +209,21 @@ ht-degree: 11%
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
-| `ContactId` | `personID` | 关系 |
+| `"Salesforce"` | `opportunityPersonKey.sourceType` |
+| `"${CRM_ORG_ID}"` | `opportunityPersonKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"Salesforce"` | `personKey.sourceType` |
+| `"${CRM_ORG_ID}"` | `personKey.sourceInstanceID` |
+| `ContactId` | `personKey.sourceID` |
+| `concat(ContactId,"@${CRM_ORG_ID}.Salesforce")` | `personKey.sourceKey` |
 | `CreatedDate` | `extSourceSystemAudit.createdDate` |
-| `Id` | `opportunityPersonID` | 这是主标识 |
+| `Id` | `opportunityPersonKey.sourceID` |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `opportunityPersonKey.sourceKey` | 主标识。 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
 | `IsPrimary` | `isPrimary` |
 | `LastModifiedDate` | `extSourceSystemAudit.lastUpdatedDate` |
-| `OpportunityId` | `opportunityID` | 关系 |
+| `"Salesforce"` | `opportunityKey.sourceType` |
+| `"${CRM_ORG_ID}"` | `opportunityKey.sourceInstanceID` |
+| `OpportunityId` | `opportunityKey.sourceID` |
+| `concat(OpportunityId,"@${CRM_ORG_ID}.Salesforce")` | `opportunityKey.sourceKey` |
 | `Role` | `personRole` |
 
 {style=&quot;table-layout:auto&quot;}
@@ -201,32 +232,45 @@ ht-degree: 11%
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
-| `Id` | `xdm: campaignID` | 这是主标识 |
-| `Name` | `xdm: campaignName` |
-| `ParentId` | `xdm: parentCampaignID` |
-| `Type` | `xdm: campaignType` |
-| `Status` | `xdm: campaignStatus` |
-| `StartDate` | `xdm: campaignStartDate` |
-| `EndDate` | `xdm: campaignEndDate` |
-| `ExpectedRevenue` | `xdm: expectedRevenue.amount` |
-| `BudgetedCost` | `xdm: budgetedCost.amount` |
-| `ActualCost` | `xdm: actualCost.amount` |
-| `ExpectedResponse` | `xdm: expectedResponse` |
-| `IsActive` | `xdm: isActive` |
-| `Description` | `xdm: campaignDescription` |
-| `CreatedDate` | `xdm: extSourceSystemAudit.createdDate` |
-| `LastModifiedDate` | `xdm: extSourceSystemAudit.lastUpdatedDate` |
-| `LastActivityDate` | `xdm: extSourceSystemAudit.lastActivityDate` |
-| `LastViewedDate` | `xdm: extSourceSystemAudit.lastViewedDate` |
-| `LastReferencedDate` | `xdm: extSourceSystemAudit.lastReferencedDate` |
+| `"Salesforce"` | `campaignKey.sourceType` |
+| `"${CRM_ORG_ID}"` | `campaignKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `Id` | `campaignKey.sourceID` |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `campaignKey.sourceKey` | 主标识。 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `Name` | `campaignName` |
+| `ParentId` | `parentCampaignKey.sourceID` |
+| `iif(ParentId != null && ParentId != "", to_object("sourceType", "Salesforce", "sourceInstanceID", "${CRM_ORG_ID}", "sourceKey", concat(ParentId,"@${CRM_ORG_ID}.Salesforce")), null)` | `parentCampaignKey` |
+| `Type` | `campaignType` |
+| `Status` | `campaignStatus` |
+| `StartDate` | `campaignStartDate` |
+| `EndDate` | `campaignEndDate` |
+| `ExpectedRevenue` | `expectedRevenue.amount` |
+| `BudgetedCost` | `budgetedCost.amount` |
+| `ActualCost` | `actualCost.amount` |
+| `ExpectedResponse` | `expectedResponse` |
+| `IsActive` | `isActive` |
+| `Description` | `campaignDescription` |
+| `CreatedDate` | `extSourceSystemAudit.createdDate` |
+| `LastModifiedDate` | `extSourceSystemAudit.lastUpdatedDate` |
+| `LastActivityDate` | `extSourceSystemAudit.lastActivityDate` |
+| `LastViewedDate` | `extSourceSystemAudit.lastViewedDate` |
+| `LastReferencedDate` | `extSourceSystemAudit.lastReferencedDate` |
 
 ## 营销活动成员 {#campaign-member}
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
-| `Id` | `campaignMemberID` | 这是主标识 |
-| `CampaignId` | `campaignID` | 关系 |
-| `LeadOrContactId` | `personID` | 关系 |
+| `"Salesforce"` | `campaignMemberKey.sourceType` |
+| `"${CRM_ORG_ID}"` | `campaignMemberKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `Id` | `campaignMemberKey.sourceID` |
+| `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `campaignMemberKey.sourceKey` | 主标识。 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `"Salesforce"` | `campaignKey.sourceType` |
+| `${CRM_ORG_ID}` | `campaignKey.sourceInstanceID` |
+| `CampaignId` | `campaignKey.sourceID` |
+| `concat(CampaignId,"@${CRM_ORG_ID}.Salesforce")` | `campaignKey.sourceKey` |
+| `"Salesforce"` | `personKey.sourceType` |
+| `${CRM_ORG_ID}` | `personKey.sourceInstanceID` |
+| `LeadOrContactId` | `personKey.sourceID` |
+| `concat(LeadOrContactId,"@${CRM_ORG_ID}.Salesforce")` | `personKey.sourceKey` |
 | `Status` | `memberStatus` |
 | `HasResponded` | `hasResponded` |
 | `CreatedDate` | `extSourceSystemAudit.createdDate` |
@@ -235,4 +279,4 @@ ht-degree: 11%
 
 ## 后续步骤
 
-通过阅读本文档，您对[!DNL Salesforce]源字段与其对应XDM字段之间的映射关系有了深入的了解。 请参阅有关创建 [!DNL Salesforce] 源连接](../../../tutorials/ui/create/crm/salesforce.md)以启动[!DNL Salesforce]数据流的教程。[
+通过阅读本文档，您深入了解了 [!DNL Salesforce] 源字段及其对应的XDM字段。 请参阅 [创建 [!DNL Salesforce] 源连接](../../../connectors/crm/salesforce.md) 以了解更多信息。

@@ -5,18 +5,14 @@ title: B2B命名空间和架构
 topic-legacy: overview
 description: 本文档概述创建B2B源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 0b9f8e9ca680e8e8e264276ac1254f3f1bb30073
+source-git-commit: 21617c6ec364fc05d7b8b6d00daa68608d1ed318
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1664'
+ht-degree: 4%
 
 ---
 
-# （测试版）B2B命名空间和模式
-
->[!IMPORTANT]
->
->此功能目前处于测试阶段。 文档和功能可能会发生更改。
+# B2B命名空间和架构
 
 本文档提供了有关命名空间和架构的基础设置信息，这些命名空间和架构将与B2B源一起使用。 本文档还提供有关设置生成B2B命名空间和架构所需的Postman自动化实用程序的详细信息。
 

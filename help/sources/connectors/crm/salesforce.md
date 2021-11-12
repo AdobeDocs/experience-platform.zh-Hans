@@ -5,9 +5,9 @@ title: Salesforce源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Salesforce连接到Adobe Experience Platform。
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: 759f38bac9b59fe32594dff771617ba8eaabae41
+source-git-commit: bd3d3a83c030baaecccba2b1793b49ad8a6caa08
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -16,88 +16,84 @@ ht-degree: 0%
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 
-Experience Platform支持从第三方CRM系统摄取数据。 对CRM提供程序的支持包括[!DNL Salesforce]。
+Experience Platform支持从第三方CRM系统摄取数据。 对CRM提供商的支持包括 [!DNL Salesforce].
 
 ## IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表。 无法将特定于区域的IP地址添加到允许列表，在使用源时可能会导致错误或性能不佳。 有关更多信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页面。
+在使用源连接器之前，必须将IP地址列表添加到允许列表。 无法将特定于区域的IP地址添加到允许列表，在使用源时可能会导致错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
 
-<!--
-## Field mapping from [!DNL Salesforce] to XDM
+## 字段映射来源 [!DNL Salesforce] 到XDM
 
-To establish a source connection between [!DNL Salesforce] and Platform, the [!DNL Salesforce] source data fields must be mapped to their appropriate target XDM fields prior to being ingested into Platform.
+在 [!DNL Salesforce] 平台， [!DNL Salesforce] 在将源数据字段摄取到Platform之前，必须将其映射到相应的目标XDM字段。
 
-See the following for detailed information on the field mapping rules between [!DNL Salesforce] datasets and Platform:
+请参阅以下内容，以详细了解 [!DNL Salesforce] 数据集和平台：
 
-- [Contacts](../adobe-applications/mapping/salesforce.md#contact)
-- [Leads](../adobe-applications/mapping/salesforce.md#lead)
-- [Accounts](../adobe-applications/mapping/salesforce.md#account)
-- [Opportunities](../adobe-applications/mapping/salesforce.md#opportunity)
-- [Opportunity contact roles](../adobe-applications/mapping/salesforce.md#opportunity-contact-role)
-- [Campaigns](../adobe-applications/mapping/salesforce.md#campaign)
-- [Campaign members](../adobe-applications/mapping/salesforce.md#campaign-member)
+- [联系人](../adobe-applications/mapping/salesforce.md#contact)
+- [潜在客户](../adobe-applications/mapping/salesforce.md#lead)
+- [帐户](../adobe-applications/mapping/salesforce.md#account)
+- [机会](../adobe-applications/mapping/salesforce.md#opportunity)
+- [机会联系角色](../adobe-applications/mapping/salesforce.md#opportunity-contact-role)
+- [营销活动](../adobe-applications/mapping/salesforce.md#campaign)
+- [营销活动成员](../adobe-applications/mapping/salesforce.md#campaign-member)
 
-## Set up the [!DNL Salesforce] namespace and schema auto-generation utility
+## 设置 [!DNL Salesforce] 命名空间和模式自动生成实用程序
 
-To use the [!DNL Salesforce] source as part of [!DNL B2B-CDP], you must first set up a [!DNL Postman] utility to auto-generate your [!DNL Salesforce] namespaces and schemas. The following documentation provides additonal information on setting up the [!DNL Postman] utility:
+使用 [!DNL Salesforce] 作为 [!DNL B2B-CDP]，则必须先设置 [!DNL Postman] 用于自动生成 [!DNL Salesforce] 命名空间和模式。 以下文档提供了有关设置 [!DNL Postman] 实用程序：
 
-- You can download the namespace and schema auto-generation utility collection and environment from this [GitHub repository](https://git.corp.adobe.com/marketo-engineering/namespace_schema_utility).
-- For information on using Platform APIs including details on how to gather values for required headers and read sample API calls, see the guide on [getting started with Platform APIs](../../../landing/api-guide.md).
-- For information on how to generate your credentials for Platform APIs, see the tutorial on [authenticating and accessing Experience Platform APIs](../../../landing/api-authentication.md).
-- For information on how to set up [!DNL Postman] for Platform APIs, see the tutorial on [setting up developer console and [!DNL Postman]](../../../landing/postman.md).
+- 您可以从此处下载命名空间和模式自动生成实用程序集合和环境 [GitHub存储库](https://github.com/adobe/experience-platform-postman-samples/tree/master/Postman%20Collections/CDP%20Namespaces%20and%20Schemas%20Utility).
+- 有关使用Platform API的信息，包括有关如何收集所需标头值和读取示例API调用的详细信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
+- 有关如何为Platform API生成凭据的信息，请参阅 [验证和访问Experience PlatformAPI](../../../landing/api-authentication.md).
+- 有关如何设置 [!DNL Postman] 对于Platform API，请参阅 [设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md).
 
-With a Platform developer console and [!DNL Postman] set up, you can now start applying the appropriate environment values to your [!DNL Postman] environment.
+使用平台开发人员控制台和 [!DNL Postman] 设置后，您现在可以开始将相应的环境值应用到 [!DNL Postman] 环境。
 
-The following table contains example values as well as additional information on populating your [!DNL Postman] environment:
+下表包含示例值以及有关填充您的 [!DNL Postman] 环境：
 
-| Variable | Description | Example |
+| Variable | 描述 | 示例 |
 | --- | --- | --- |
-| `CLIENT_SECRET` | A unique identifier used to generate your `{ACCESS_TOKEN}`. See the tutorial on [authenticating and accessing Experience Platform APIs](../../../landing/api-authentication.md) for information on how to retrieve your `{CLIENT_SECRET}`. | `{CLIENT_SECRET}` |
-| `JWT_TOKEN` | The JSON Web Token (JWT) is an authentication credential used to generate your {ACCESS_TOKEN}. See the tutorial on [authenticating and accessing Experience Platform APIs](../../../landing/api-authentication.md) for information on how to generate your `{JWT_TOKEN}`. | `{JWT_TOKEN}` |
-| `API_KEY` | A unique identifier used to authenticate calls to Experience Platform APIs. See the tutorial on [authenticating and accessing Experience Platform APIs](../../../landing/api-authentication.md) for information on how to retrieve your `{API_KEY}`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
-| `ACCESS_TOKEN` | The authorization token required to complete calls to Experience Platform APIs. See the tutorial on [authenticating and accessing Experience Platform APIs](../../../landing/api-authentication.md) for information on how to retrieve your `{ACCESS_TOKEN}`. | `Bearer {ACCESS_TOKEN}` |
-| `META_SCOPE` | With regards to [!DNL Marketo], this value is fixed and is alway set to: `ent_dataservices_sdk`. | `ent_dataservices_sdk` |
-| `CONTAINER_ID` | The `global` container holds all standard Adobe and Experience Platform partner provided classes, schema field groups, data types, and schemas. With regards to [!DNL Marketo], this value is fixed and is always set to `global`. | `global` |
-| `PRIVATE_KEY` | A credential used to authenticate your [!DNL Postman] instance to Experience Platform APIs. See the tutorial on setting up developer console and [setting up developer console and [!DNL Postman]](../../../landing/postman.md) for instructions on how to retrieve your {PRIVATE_KEY}. | `{PRIVATE_KEY}` |
-| `TECHNICAL_ACCOUNT_ID` | A credential used to integrate to Adobe I/O. | `D42AEVJZTTJC6LZADUBVPA15@techacct.adobe.com` |
-| `IMS` | The Identity Management System (IMS) provides the framework for authentication to Adobe services. With regards to [!DNL Marketo], this value is fixed and is always set to: `ims-na1.adobelogin.com`. | `ims-na1.adobelogin.com` |
-| `IMS_ORG` | A corporate entity that can own or license products and services and allow access to its members. See the tutorial on [setting up developer console and [!DNL Postman]](../../../landing/postman.md) for instructions on how to retrieve your `{IMS_ORG}` information. | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
-| `SANDBOX_NAME` | The name of the virtual sandbox partition that you are using. | `prod` |
-| `TENANT_ID` | An ID used to ensure that the resources you create are namespaced properly and are contained within your IMS Organization. | `b2bcdpproductiontest` |
-| `PLATFORM_URL` | The URL endpoint that you are making API calls to. This value is fixed and is always set to: `http://platform.adobe.io/`. | `http://platform.adobe.io/` |
-| `munchkinId` | The unique ID for your [!DNL Marketo] account. See the tutorial on [authenticating your [!DNL Marketo] instance](../adobe-applications/marketo/marketo-auth.md) for information on how to retrieve your `munchkinId`. | `123-ABC-456` |
-| `sfdc_org_id` | The organization ID for your [!DNL Salesforce] account. See the following [[!DNL Salesforce] guide](https://help.salesforce.com/articleView?id=000325251&type=1&mode=1) for more information on acquiring your [!DNL Salesforce] organization ID. | `00D4W000000FgYJUA0` |
-`f6438fab-67e8-4814-a6b5-8c8dcdf7a98f` |
-| `has_abm` | A boolean value that indicates if you are subscribed to [!DNL Marketo Account-Based Marketing]. | `false` |
-| `has_msi` | A boolean value that indicates if you are subcscribed to [!DNL Marketo Sales Insight]. | `false` |
+| `CLIENT_SECRET` | 用于生成 `{ACCESS_TOKEN}`. 请参阅 [验证和访问Experience PlatformAPI](../../../landing/api-authentication.md) 有关如何检索 `{CLIENT_SECRET}`. | `{CLIENT_SECRET}` |
+| `JWT_TOKEN` | JSON Web令牌(JWT)是用于生成{ACCESS_TOKEN}的身份验证凭据。 请参阅 [验证和访问Experience PlatformAPI](../../../landing/api-authentication.md) 以了解有关如何生成 `{JWT_TOKEN}`. | `{JWT_TOKEN}` |
+| `API_KEY` | 用于验证对Experience PlatformAPI的调用的唯一标识符。 请参阅 [验证和访问Experience PlatformAPI](../../../landing/api-authentication.md) 有关如何检索 `{API_KEY}`. | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
+| `ACCESS_TOKEN` | 完成对Experience PlatformAPI的调用所需的授权令牌。 请参阅 [验证和访问Experience PlatformAPI](../../../landing/api-authentication.md) 有关如何检索 `{ACCESS_TOKEN}`. | `Bearer {ACCESS_TOKEN}` |
+| `META_SCOPE` | 关于 [!DNL Marketo]，此值已修复，并且始终设置为： `ent_dataservices_sdk`. | `ent_dataservices_sdk` |
+| `CONTAINER_ID` | 的 `global` 容器包含所有标准Adobe和Experience Platform合作伙伴提供的类、架构字段组、数据类型和架构。 关于 [!DNL Marketo]，此值是固定的，且始终设置为 `global`. | `global` |
+| `PRIVATE_KEY` | 用于验证您的 [!DNL Postman] 实例Experience PlatformAPI。 请参阅有关设置开发人员控制台的教程和 [设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md) 有关如何检索{PRIVATE_KEY}的说明。 | `{PRIVATE_KEY}` |
+| `TECHNICAL_ACCOUNT_ID` | 用于集成以Adobe I/O的凭据。 | `D42AEVJZTTJC6LZADUBVPA15@techacct.adobe.com` |
+| `IMS` | Identity Management系统(IMS)为Adobe服务提供了身份验证框架。 关于 [!DNL Marketo]，此值已修复，且始终设置为： `ims-na1.adobelogin.com`. | `ims-na1.adobelogin.com` |
+| `IMS_ORG` | 拥有或许可产品和服务并允许其成员访问的公司实体。 请参阅 [设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md) 有关如何检索 `{IMS_ORG}` 信息。 | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
+| `SANDBOX_NAME` | 您使用的虚拟沙盒分区的名称。 | `prod` |
+| `TENANT_ID` | 用于确保您创建的资源命名正确且包含在IMS组织中的ID。 | `b2bcdpproductiontest` |
+| `PLATFORM_URL` | 您对进行API调用的URL端点。 此值是固定的，始终设置为： `http://platform.adobe.io/`. | `http://platform.adobe.io/` |
+| `munchkinId` | 您的 [!DNL Marketo] 帐户。 请参阅 [验证 [!DNL Marketo] 实例](../adobe-applications/marketo/marketo-auth.md) 有关如何检索 `munchkinId`. | `123-ABC-456` |
+| `sfdc_org_id` | 您的组织ID [!DNL Salesforce] 帐户。 请参阅以下内容 [[!DNL Salesforce] 指南](https://help.salesforce.com/articleView?id=000325251&amp;type=1&amp;mode=1) 有关获取 [!DNL Salesforce] 组织ID。 | `00D4W000000FgYJUA0` |
+| `has_abm` | 一个布尔值，指示您是否订阅了 [!DNL Marketo Account-Based Marketing]. | `false` |
+| `has_msi` | 一个布尔值，指示您是否被划分为 [!DNL Marketo Sales Insight]. | `false` |
 
-{style="table-layout:auto"}
+{style=&quot;table-layout:auto&quot;}
 
-### Running the scripts
+### 运行脚本
 
-With your [!DNL Postman] collection and environment set up, you can now run the script through the [!DNL Postman] interface.
+使用 [!DNL Postman] 收集和环境设置之后，您现在可以通过 [!DNL Postman] 界面。
 
-In the [!DNL Postman] interface, select the root folder of the auto-generator utility and then select **[!DNL Run]** from the top header.
+在 [!DNL Postman] 界面中，选择自动生成器实用程序的根文件夹，然后选择 **[!DNL Run]** 中。
 
-![root-folder](../../images/tutorials/create/salesforce/root-folder.png)
+![根文件夹](../../images/tutorials/create/salesforce/root-folder.png)
 
-The [!DNL Runner] interface appears. From here, ensure that all the checkboxes are selected and then select **[!DNL Run Namespaces and Schemas Autogeneration Utility]**.
+的 [!DNL Runner] 界面。 从此处，确保选中所有复选框，然后选择 **[!DNL Run Namespaces and Schemas Autogeneration Utility]**.
 
-![run-generator](../../images/tutorials/create/salesforce/run-generator.png)
+![运行发生器](../../images/tutorials/create/salesforce/run-generator.png)
 
-A successful request creates the B2B namespaces and schemas according to beta specifications.
+成功的请求根据测试版规范创建B2B命名空间和架构。
 
--->
+## 连接 [!DNL Salesforce] 到使用API的平台
 
-## 使用API将[!DNL Salesforce]连接到平台
-
-以下文档提供了有关如何使用API或用户界面将[!DNL Salesforce]连接到平台的信息：
+以下文档提供了有关如何连接的信息 [!DNL Salesforce] 要使用API或用户界面实现平台，请执行以下操作：
 
 - [使用流服务API创建Salesforce基连接](../../tutorials/api/create/crm/salesforce.md)
 - [使用流服务API探索CRM源的数据结构和内容](../../tutorials/api/explore/crm.md)
 - [使用流服务API为CRM源创建数据流](../../tutorials/api/collect/crm.md)
 
-## 使用UI将[!DNL Salesforce]连接到平台
+## 连接 [!DNL Salesforce] 到使用UI的平台
 
 - [在UI中创建Salesforce源连接](../../tutorials/ui/create/crm/salesforce.md)
 - [在UI中为CRM连接创建数据流](../../tutorials/ui/dataflow/crm.md)
