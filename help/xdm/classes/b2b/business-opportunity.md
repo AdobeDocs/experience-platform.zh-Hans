@@ -2,20 +2,16 @@
 title: XDM业务机会类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Opportunity类。
 exl-id: d816b0f9-fd37-45da-aa55-247f7f662da0
-source-git-commit: b5cdd72238f7b4519de1c789f4294b9698415327
+source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
 workflow-type: tm+mt
-source-wordcount: '225'
-ht-degree: 5%
+source-wordcount: '197'
+ht-degree: 6%
 
 ---
 
-# [!UICONTROL XDM业务机] 会类（测试版）
+# [!UICONTROL XDM业务机会] 类
 
->[!IMPORTANT]
->
->此课程作为Real-time Customer Data Platform B2B Edition的一部分提供，该B2B Edition目前处于测试阶段。 文档和功能可能会发生更改。
-
-[!UICONTROL XDM业务机] 会是一种标准的体验数据模型(XDM)类，可捕获业务机会所需的最低属性。
+[!UICONTROL XDM业务机会] 是一个标准的体验数据模型(XDM)类，可捕获业务机会的最低要求属性。
 
 ![](../../images/classes/b2b/business-opportunity.png)
 
@@ -24,7 +20,7 @@ ht-degree: 5%
 | `accountKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 此机会所关联的帐户的组合标识符。 |
 | `extSourceSystemAudit` | [[!UICONTROL 外部源系统审核属性]](../../data-types/external-source-system-audit-attributes.md) | 如果商机来自外部源系统，则此对象将捕获该系统的审核属性。 |
 | `opportunityKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 机会实体的组合标识符。 |
-| `_id` | 字符串 | 记录的唯一标识符。 这是系统生成的值，与`opportunityID`分开。 |
+| `_id` | 字符串 | 记录的唯一标识符。 这是系统生成的值，它与 `opportunityID`. |
 | `accountID` | 字符串 | 此机会所关联的帐户的唯一ID。 |
 | `opportunityDescription` | 字符串 | 机会的描述。 |
 | `opportunityID` | 字符串 | 机会实体的唯一ID。 |
@@ -34,4 +30,4 @@ ht-degree: 5%
 
 {style=&quot;table-layout:auto&quot;}
 
-请参阅Real-time CDP B2B Edition](../../tutorials/relationship-b2b.md)中[模式关系指南，了解此类在概念上如何与其他B2B类相关联，以及如何在Adobe Experience Platform UI中建立这些关系。
+请参阅 [Real-time CDP B2B Edition中的模式关系](../../tutorials/relationship-b2b.md) 了解此类在概念上如何与其他B2B类相关，以及如何在Adobe Experience Platform UI中建立这些关系。

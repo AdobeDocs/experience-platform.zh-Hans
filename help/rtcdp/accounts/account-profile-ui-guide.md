@@ -1,20 +1,16 @@
 ---
 keywords: rtcdp配置文件；配置文件rtcdp;rtcdp身份；rtcdp合并策略；实时客户配置文件
-title: 帐户配置文件UI指南（测试版）
+title: 帐户配置文件UI指南
 description: 通过使用帐户配置文件，Real-time Customer Data Platform B2B Edition使您能够统一来自多个来源的帐户信息。 本指南提供了有关在Adobe Experience Platform用户界面中与帐户配置文件进行交互的详细信息。
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 6f421a8ae77318ca2598d640cf7e27ea485ec9db
+source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
 workflow-type: tm+mt
-source-wordcount: '1193'
+source-wordcount: '1172'
 ht-degree: 0%
 
 ---
 
-# 帐户配置文件UI指南（测试版）
-
->[!IMPORTANT]
->
->Real-time Customer Data Platform B2B Edition目前为测试版。 文档和功能可能会发生更改。
+# 帐户配置文件UI指南
 
 >[!NOTE]
 >
@@ -90,7 +86,7 @@ Real-time CDP， B2B Edition支持通过允许您输入 **[!UICONTROL 源名称]
 
 的 **[!UICONTROL 属性]** 选项卡列出了与帐户相关的所有记录信息。 这包括来自多个来源的属性数据，这些来源已合并在一起以构成帐户的单个视图。
 
-除了能够在列表中查看数据外，您还可以使用搜索栏搜索特定属性或以JSON形式查看记录数据。
+除了能够在列表中查看数据外，您还可以使用搜索栏搜索特定属性或查看JSON格式的记录数据。
 
 ![](images/b2b-account-attributes.png)
 

@@ -2,20 +2,16 @@
 title: XDM业务人员详细信息架构字段组
 description: 本文档概述了XDM业务人员详细信息架构字段组。
 exl-id: e9da5c1c-5a30-4cbc-beb2-cc5efe57cab0
-source-git-commit: 57370e4ed0807bcebf30c73af629671b5390d90d
+source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
 workflow-type: tm+mt
-source-wordcount: '562'
-ht-degree: 6%
+source-wordcount: '533'
+ht-degree: 7%
 
 ---
 
-# [!UICONTROL XDM业务人员详] 细信息架构字段组（测试版）
+# [!UICONTROL XDM业务人员详细信息] 架构字段组
 
->[!IMPORTANT]
->
->此字段组作为Real-time Customer Data Platform B2B Edition的一部分提供，该B2B Edition目前处于测试阶段。 文档和功能可能会发生更改。
-
-[!UICONTROL XDM业务人员] 详细信息是类的标准架构字 [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md) 段组，用于捕获个人在企业对企业(B2B)企业环境中的信息。
+[!UICONTROL XDM业务人员详细信息] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md) 在企业对企业(B2B)企业中捕获有关个人的信息。
 
 ![](../../images/field-groups/business-person-details.png)
 
@@ -56,7 +52,7 @@ ht-degree: 6%
 | `workAddress` | [邮政地址](../../data-types/postal-address.md) | 人员的工作地址。 |
 | `workEmail` | [电子邮件地址](../../data-types/email-address.md) | 人员的工作电子邮件地址。 |
 | `workPhone` | [电话号码](../../data-types/phone-number.md) | 此人的工作电话号码。 |
-| `identityMap` | 地图 | 一个映射字段，其中包含人员的一组命名进度标识。 在摄取身份数据时，系统会自动更新此字段。 为了正确使用[实时客户资料](../../../profile/home.md)的此字段，请不要尝试在数据操作中手动更新字段的内容。<br /><br />有关架构组合基础知识的用例的更 [多信息，请](../../schema/composition.md#identityMap) 参阅标识映射一节。 |
+| `identityMap` | 地图 | 一个映射字段，其中包含人员的一组命名进度标识。 在摄取身份数据时，系统会自动更新此字段。 为了正确利用此字段 [实时客户资料](../../../profile/home.md)，请勿尝试手动更新数据操作中字段的内容。<br /><br />请参阅 [架构组合基础知识](../../schema/composition.md#identityMap) ，以了解其用例的详细信息。 |
 | `organizations` | 字符串数组 | 人员工作所在的组织名称列表。 |
 
 {style=&quot;table-layout:auto&quot;}

@@ -3,9 +3,9 @@ keywords: 查看配置文件rtcdp;rtcdp配置文件视图；rtcdp配置文件
 title: 浏览Real-time Customer Data Platform中的用户档案
 description: Real-time Customer Data Platform允许您使用Adobe Experience Platform用户界面浏览实时客户资料数据。
 exl-id: 8481e286-2ff0-484f-85d2-a8db9b08d8d3
-source-git-commit: c15f59de49c60f55b432a39f30fb5f1865fd4671
+source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '533'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,7 @@ ht-degree: 0%
 
 Real-time Customer Data Platform构建于Adobe Experience Platform之上，因此能够利用Experience PlatformUI中的用户档案查看功能。 有关在Platform用户界面中查看客户配置文件的详细指南，请参阅 [Real-time Customer Profile用户指南](../../profile/ui/user-guide.md).
 
-## Real-time CDP B2B Edition（测试版）的配置文件增强功能
-
->[!IMPORTANT]
->
->Real-time Customer Data Platform B2B Edition目前为测试版。 文档和功能可能会发生更改。
+## Real-time CDP B2B Edition的配置文件增强功能
 
 除了Adobe Experience Platform支持的配置文件浏览功能外，Real-time CDP B2B Edition用户还可以在 [!UICONTROL 属性] 和 [!UICONTROL 事件] 选项卡。 B2B数据还可用于执行分段，这些区段显示在客户的 [!UICONTROL 区段成员资格] 选项卡上的任意位置。
 
@@ -55,6 +51,6 @@ Real-time CDP 、 B2B Edition还使您能够浏览 [!UICONTROL 帐户], [!UICONT
 
 ### “源记录”选项卡
 
-的 **[!UICONTROL 源记录]** 选项卡，您可以轻松地查看来自企业源的多个源记录，这些源记录对单个客户配置文件做出了贡献。 除 [!UICONTROL 人员来源键] 和电子邮件地址，每个源记录还提供记录类型（例如，“联系人”或“潜在客户”记录）以及源。
+的 **[!UICONTROL 源记录]** 选项卡，您可以轻松查看来自企业源的对单个客户配置文件做出贡献的多个源记录。 除 [!UICONTROL 人员来源键] 和电子邮件地址，每个源记录还提供记录类型（例如，“联系人”或“潜在客户”记录）以及源。
 
 ![](images/b2b-profile-source-records.png)

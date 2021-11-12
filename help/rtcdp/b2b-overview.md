@@ -1,22 +1,18 @@
 ---
 keywords: RTCDP;CDP;B2B Edition;Real-time Customer Data Platform；实时客户数据平台；实时CDP;b2b;CDP；客户AI
-title: Real-time CDP B2B Edition概述（测试版）
+title: Real-time CDP B2B Edition概述
 seo-title: Real-time Customer Data Platform B2B Edition overview
 description: Real-time Customer Data Platform B2B版帐户概述
 seo-description: Overview of Real-time Customer Data Platform B2B Edition Account
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
-source-git-commit: fef18389f8e64bdf11fe93d4077eb0474abc4981
+source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
 workflow-type: tm+mt
-source-wordcount: '1092'
-ht-degree: 1%
+source-wordcount: '1072'
+ht-degree: 0%
 
 ---
 
-# Real-time Customer Data Platform B2B版概述（测试版）
-
->[!IMPORTANT]
->
->Real-time CDP B2B Edition目前处于测试阶段。 文档和功能可能会发生变化。
+# Real-time Customer Data Platform B2B版概述
 
 Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP)之上，专为在业务到业务服务模型中运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
 
@@ -73,7 +69,7 @@ Platform允许从外部源摄取数据，同时让您能够使用Platform服务�
 
 ## B2B目标
 
-Experience Platform目标(如Google客户匹配、Facebook、LinkedIn、Marketo Engage、Amazon S3、Google Display &amp; Video 360、Google Ads和Google Ad Manager)均提供，并完全受实时CDP B2B版支持。 Marketo Engage目标还会将区段成员资格数据流式传输到平台之外，并在Marketo中作为列表提供。
+Experience Platform目标(如Google客户匹配、Facebook、LinkedIn、Marketo Engage、Amazon S3、Google Display &amp; Video 360、Google Ads和Google Ad Manager)均可用，并完全受实时CDP B2B版支持。 Marketo Engage目标还会将区段成员资格数据流式传输到平台之外，并在Marketo中作为列表提供。
 
 请参阅 [Marketo Engage目标](../destinations/catalog/adobe/marketo-engage.md) 以了解更多信息。
 

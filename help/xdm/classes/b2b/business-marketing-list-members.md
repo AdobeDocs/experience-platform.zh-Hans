@@ -2,20 +2,16 @@
 title: XDM业务营销列表成员类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Marketing List Members类。
 exl-id: 069002c2-5583-4c59-84ee-c071e2acaaec
-source-git-commit: b5cdd72238f7b4519de1c789f4294b9698415327
+source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
 workflow-type: tm+mt
-source-wordcount: '239'
-ht-degree: 3%
+source-wordcount: '211'
+ht-degree: 4%
 
 ---
 
-# [!UICONTROL XDM业务营销列] 表会员类（测试版）
+# [!UICONTROL XDM业务营销列表成员] 类
 
->[!IMPORTANT]
->
->此课程作为Real-time Customer Data Platform B2B Edition的一部分提供，该B2B Edition目前处于测试阶段。 文档和功能可能会发生更改。
-
-[!UICONTROL XDM业务营销列] 表会员资格是标准的体验数据模型(XDM)类，用于描述与营销列表关联的成员、人员或联系人。
+[!UICONTROL XDM业务营销列表成员] 是一个标准的体验数据模型(XDM)类，用于描述与营销列表关联的成员、人员或联系人。
 
 ![](../../images/classes/b2b/business-marketing-list-members.png)
 
@@ -25,11 +21,11 @@ ht-degree: 3%
 | `marketingListKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 人员所属的营销列表的复合标识符。 |
 | `marketingListMemberKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 营销列表成员资格实体的组合标识符。 |
 | `personKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 作为营销列表成员的人员的组合标识符。 |
-| `_id` | 字符串 | 记录的唯一标识符。 这是系统生成的值，与`marketingListMemberID`分开。 |
+| `_id` | 字符串 | 记录的唯一标识符。 这是系统生成的值，它与 `marketingListMemberID`. |
 | `marketingListID` | 字符串 | 营销列表的唯一ID。 |
 | `marketingListMemberID` | 字符串 | 营销列表成员资格实体的唯一ID。 |
 | `personId` | 字符串 | 人员的唯一ID。 |
 
 {style=&quot;table-layout:auto&quot;}
 
-请参阅Real-time CDP B2B Edition](../../tutorials/relationship-b2b.md)中[模式关系指南，了解此类在概念上如何与其他B2B类相关联，以及如何在Adobe Experience Platform UI中建立这些关系。
+请参阅 [Real-time CDP B2B Edition中的模式关系](../../tutorials/relationship-b2b.md) 了解此类在概念上如何与其他B2B类相关，以及如何在Adobe Experience Platform UI中建立这些关系。

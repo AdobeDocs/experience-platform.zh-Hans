@@ -3,9 +3,9 @@ keywords: rtcdp配置文件；配置文件rtcdp;rtcdp身份；rtcdp合并策略�
 title: 了解Real-time CDP中的实时客户资料
 description: 了解Real-time Customer Data Platform如何让您使用实时客户资料为客户提供协调一致的相关体验。
 exl-id: de70948c-ffc1-49d3-a57c-25ad415752ff
-source-git-commit: c15f59de49c60f55b432a39f30fb5f1865fd4671
+source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '456'
 ht-degree: 0%
 
 ---
@@ -20,11 +20,7 @@ ht-degree: 0%
 
 Real-time CDP是以Experience Platform为基础构建的，它利用了许多核心Experience Platform特性和功能，包括创建用户档案。 单个客户的这些汇总视图将来自多个营销渠道的数据以及您的组织当前用于存储客户数据的各种系统中的数据汇集在一起。
 
-## Real-time CDP B2B Edition（测试版）的配置文件增强功能
-
->[!IMPORTANT]
->
->Real-time Customer Data Platform B2B Edition目前为测试版。 文档和功能可能会发生更改。
+## Real-time CDP B2B Edition的配置文件增强功能
 
 除了Real-time CDP支持的配置文件功能外，您还可以使用Real-time CDP B2B Edition浏览与个人相关的重要信息，如帐户和销售机会。 要进一步了解Real-time CDP B2B Edition的配置文件增强功能，请首先阅读 [配置文件浏览指南](profile-browse.md).
 

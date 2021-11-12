@@ -2,24 +2,20 @@
 title: XDM业务人员组件架构字段组
 description: 本文档概述了XDM业务人员组件架构字段组。
 exl-id: 965b89f4-59f5-43f4-8778-3549e15b44d4
-source-git-commit: b5cdd72238f7b4519de1c789f4294b9698415327
+source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
 workflow-type: tm+mt
-source-wordcount: '441'
+source-wordcount: '412'
 ht-degree: 3%
 
 ---
 
-# [!UICONTROL XDM业务人员组] 件架构字段组（测试版）
+# [!UICONTROL XDM业务人员组件] 架构字段组
 
->[!IMPORTANT]
->
->此字段组作为Real-time Customer Data Platform B2B Edition的一部分提供，该B2B Edition目前处于测试阶段。 文档和功能可能会发生更改。
+[!UICONTROL XDM业务人员组件] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md) 用于为人员捕获多个源记录以及人员分段所需的其他属性。
 
-[!UICONTROL XDM业务人员] 组件是类的标准架构字段组，可 [[!DNL XDM Individual Profile] ](../../classes/individual-profile.md) 以捕获人员的多个源记录以及人员分段所需的其他属性。
+通过为人员创建用户档案时 [实时客户资料](../../../profile/home.md) 在B2B版本的Real-time CDP中，用于创建该用户档案的信息可能来自许多源记录。 例如，如果一个人为两个不同的公司工作，则许多CRM系统会创建该人的特意副本，以便一个副本链接到公司A，而另一个副本链接到公司B。将该数据导入Adobe Experience Platform时，此字段组用于将这些不同的源记录合并到单个表示中。
 
-在B2B版本的实时CDP中，通过[Real-time Customer Profile](../../../profile/home.md)为人员创建用户档案时，用于创建该用户档案的信息可能来自许多源记录。 例如，如果一个人为两个不同的公司工作，则许多CRM系统会创建该人的特意副本，以便一个副本链接到公司A，而另一个副本链接到公司B。将该数据导入Adobe Experience Platform时，此字段组用于将这些不同的源记录合并到单个表示中。
-
-字段组提供根级别`personComponents`字段，该字段是对象数组。 数组中的每个对象表示不同的源记录。
+字段组提供根级别 `personComponents` 字段，对象数组。 数组中的每个对象表示不同的源记录。
 
 ![](../../images/field-groups/business-person-components.png)
 

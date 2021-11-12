@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用体验数据模型(XDM)类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: 4a74faad811d9b13f93799686df44f04a8d1b784
+source-git-commit: eea5cfe6111d25da4a7978d3924861250059cc7e
 workflow-type: tm+mt
-source-wordcount: '398'
+source-wordcount: '396'
 ht-degree: 13%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 13%
    * [XDM字段类型约束](schema/field-constraints.md)
    * [XDM中的名称步调](./schema/namespaces.md)
    * [XDM字段字典](schema/field-dictionary.md)
-   * 行业数据模型{#industries}
+   * 行业数据模型 {#industries}
       * [概述](./schema/industries/overview.md)
       * [零售](./schema/industries/retail.md)
       * [金融服务](./schema/industries/financial.md)
@@ -31,7 +31,7 @@ ht-degree: 13%
    * [XDM个人配置文件](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
    * [区段定义](./classes/segment-definition.md)
-   * B2B类（测试版）{#b2b}
+   * B2B类 {#b2b}
       * [XDM业务帐户](./classes/b2b/business-account.md)
       * [XDM业务帐户人员关系](./classes/b2b/business-account-person-relation.md)
       * [XDM Business Campaign](./classes/b2b/business-campaign.md)
@@ -40,8 +40,8 @@ ht-degree: 13%
       * [XDM业务机会人员关系](./classes/b2b/business-opportunity-person-relation.md)
       * [XDM业务营销列表](./classes/b2b/business-marketing-list.md)
       * [XDM业务营销列表成员](./classes/b2b/business-marketing-list-members.md)
-* 架构字段组{#field-groups}
-   * 配置文件字段组{#profile}
+* 架构字段组 {#field-groups}
+   * 用户档案字段组 {#profile}
       * [人口统计详细信息](./field-groups/profile/demographic-details.md)
       * [IAB TCF 2.0同意](./field-groups/profile/iab.md)
       * [IdentityMap](./field-groups/profile/identitymap.md)
@@ -53,7 +53,7 @@ ht-degree: 13%
       * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
       * [XDM业务人员组件](./field-groups/profile/business-person-components.md)
       * [XDM业务人员详细信息](./field-groups/profile/business-person-details.md)
-   * 事件字段组{#event}
+   * 事件字段组 {#event}
       * [促销活动营销详细信息](./field-groups/event/campaign-marketing-details.md)
       * [渠道详细信息](./field-groups/event/channel-details.md)
       * [商务详细信息](./field-groups/event/commerce-details.md)
@@ -74,7 +74,7 @@ ht-degree: 13%
    * [信标](./data-types/beacon.md)
    * [浏览器详细信息](./data-types/browser-details.md)
    * [B2B源](./data-types/b2b-source.md)
-   * [商务](./data-types/commerce.md)
+   * [Commerce](./data-types/commerce.md)
    * [同意字符串](./data-types/consent-string.md)
    * [同意和首选项](./data-types/consents.md)
    * [货币](./data-types/currency.md)
@@ -113,15 +113,15 @@ ht-degree: 13%
    * [Web信息](./data-types/web-information.md)
    * [Web交互](./data-types/web-interaction.md)
    * [网页详细信息](./data-types/webpage-details.md)
-*  模式UI  {#ui}
+* [!UICONTROL 模式] UI {#ui}
    * [概述](./ui/overview.md)
    * [浏览 XDM 资源](./ui/explore.md)
-   * 创建和编辑资源{#resources}
+   * 创建和编辑资源 {#resources}
       * [架构](./ui/resources/schemas.md)
       * [类](./ui/resources/classes.md)
       * [字段组](./ui/resources/field-groups.md)
       * [数据类型](./ui/resources/data-types.md)
-   * 定义字段{#fields}
+   * 定义字段 {#fields}
       * [概述](./ui/fields/overview.md)
       * [必填字段](./ui/fields/required.md)
       * [对象字段](./ui/fields/object.md)
@@ -153,7 +153,7 @@ ht-degree: 13%
    * [在API中创建架构](tutorials/create-schema-api.md)
    * [在UI中定义架构关系](tutorials/relationship-ui.md)
    * [在API中定义架构关系](tutorials/relationship-api.md)
-   * [在Real-time CDP B2B Edition（测试版）中定义模式关系](tutorials/relationship-b2b.md)
+   * [在Real-time CDP B2B Edition中定义模式关系](tutorials/relationship-b2b.md)
    * [创建临时架构(API)](tutorials/ad-hoc.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/experience-platform-apis/references/schema-registry/)

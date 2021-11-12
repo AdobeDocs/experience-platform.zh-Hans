@@ -1,19 +1,15 @@
 ---
-title: Real-time Customer Data Platform B2B版（测试版）的目标
+title: Real-time Customer Data Platform B2B版中的目标
 description: 有关目标在Real-time Customer Data Platform B2B Edition中角色的概述。
 exl-id: 81b502dd-d1b2-409e-972c-652c0a01526c
-source-git-commit: fef18389f8e64bdf11fe93d4077eb0474abc4981
+source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
 workflow-type: tm+mt
-source-wordcount: '244'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
 
-# Real-time Customer Data Platform B2B版（测试版）的目标
-
->[!IMPORTANT]
->
->Real-time Customer Data Platform B2B Edition目前为测试版。 文档和功能可能会发生更改。
+# Real-time Customer Data Platform B2B版中的目标
 
 >[!NOTE]
 >
