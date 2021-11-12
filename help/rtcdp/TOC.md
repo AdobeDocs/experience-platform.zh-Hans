@@ -4,10 +4,10 @@ solution: Experience Platform, Real-time Customer Data Platform
 audience: user
 user-guide-title: 实时客户数据平台指南
 user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
-source-git-commit: d5c05d4ada15a9c6a2d8afbaa6cd5675a8271e25
+source-git-commit: dfdcfe8d9110195c7e88fbb5a644321c9c3dbee4
 workflow-type: tm+mt
-source-wordcount: '174'
-ht-degree: 31%
+source-wordcount: '182'
+ht-degree: 30%
 
 ---
 
@@ -57,4 +57,5 @@ ht-degree: 31%
    * [源概述](sources/sources-overview.md)
    * [实时CDP B2B版本中的源](sources/b2b.md)
 * [Experience Platform发行说明](https://www.adobe.com/go/platform-release-notes-en)
+* [Real-time CDP B2B Edition概述发行说明](./b2b-release-notes.md)
 * [Experience Platform 术语表](https://www.adobe.com/go/platform-glossary-en)
