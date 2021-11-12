@@ -5,9 +5,9 @@ seo-title: Real-time Customer Data Platform B2B Edition overview
 description: Real-time Customer Data Platform B2B版帐户概述
 seo-description: Overview of Real-time Customer Data Platform B2B Edition Account
 exl-id: 9b45bba4-fc46-4d69-b36a-5cb91f316612
-source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
+source-git-commit: e6f71954d52e0a998955c3420307417cc011c24d
 workflow-type: tm+mt
-source-wordcount: '1072'
+source-wordcount: '1083'
 ht-degree: 0%
 
 ---
@@ -82,12 +82,10 @@ Experience Platform目标(如Google客户匹配、Facebook、LinkedIn、Marketo 
 要了解Real-time CDP B2B Edition如何使您的业务到业务服务模式受益，请参阅以下文档以帮助您快速入门：
 
 * [Real-time CDP B2B Edition的示例用例](./b2b-use-case.md)
+* [Real-time Customer Data Platform B2B版的端到端教程](./b2b-tutorial.md)
 * [如何摄取数据](./sources/b2b.md)
 * [如何访问用户档案](./profile/profile-overview.md)
 * [Real-time Customer Data Platform B2B版中的模式](./schemas/b2b.md)
 * [如何构建区段](./segmentation/b2b.md)
 * [如何将区段激活到目标](./destinations/b2b.md)
 * [如何定义和实施数据管理策略](./privacy/data-governance-overview.md)
-
-<!-- PLACEHOLDER - page under construction -->
-<!-- * [Privacy in Real-time Customer Data Platform B2B Edition](./privacy/b2b.md) -->

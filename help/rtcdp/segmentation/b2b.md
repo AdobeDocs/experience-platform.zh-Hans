@@ -1,21 +1,15 @@
 ---
-title: Real-time CDP B2B Edition（测试版）的分段用例概述
+title: 实时CDP B2B Edition的分段用例概述
 description: 概述各种可用的实时CDP B2B Edition用例。
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: b77380b661f59363daeeefb186a94e3d62b47e27
+source-git-commit: e6f71954d52e0a998955c3420307417cc011c24d
 workflow-type: tm+mt
-source-wordcount: '1116'
-ht-degree: 1%
+source-wordcount: '1096'
+ht-degree: 0%
 
 ---
 
-# Real-time Customer Data Platform B2B Edition（测试版）的分段用例概述
-
-<!-- This document relates to this [ticket](https://jira.corp.adobe.com/browse/PLAT-100468) -->
-
->[!IMPORTANT]
->
->Real-time CDP B2B Edition目前处于测试阶段。 文档和功能可能会发生变化。
+# Real-time Customer Data Platform B2B版分段用例概述
 
 本文档提供了有关Real-time CDP B2B Edition可用的分段示例，以及如何针对常见的B2B用例组合不同类型的属性。
 

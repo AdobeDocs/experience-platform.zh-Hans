@@ -5,10 +5,10 @@ seo-title: Real-time Customer Data Platform Overview
 description: Real-time Customer Data Platform概述
 seo-description: Overview of Real-time Customer Data Platform
 exl-id: 8be51bf0-b372-4a81-ba45-f4fe4b7e1718
-source-git-commit: b77380b661f59363daeeefb186a94e3d62b47e27
+source-git-commit: e6f71954d52e0a998955c3420307417cc011c24d
 workflow-type: tm+mt
-source-wordcount: '421'
-ht-degree: 0%
+source-wordcount: '420'
+ht-degree: 2%
 
 ---
 
@@ -27,9 +27,9 @@ Real-time Customer Data Platform可连接到大型合作伙伴生态系统，更
 * 借助由Adobe Sensei提供支持并为营销人员构建的AI和机器学习功能，生成可操作的洞察并扩展受众。
 * 跨所有渠道和目标实时提供个性化体验。
 
-## Real-time Customer Data Platform B2B版（测试版）
+## Real-time Customer Data Platform B2B 版本
 
-还提供了不同版本的Real-time CDP ，可满足企业对企业的组织需求。 Real-time CDP B2B Edition是专门构建的，旨在为营销人员扩展Real-time CDP的功能。 它在Adobe Experience Platform生态系统中启用了不同功能，以更好地适合在业务对业务服务模型中运行。
+还提供了不同版本的Real-time CDP ，可满足企业对企业的组织需求。 Real-time CDP B2B Edition是专门构建的，旨在为营销人员扩展Real-time CDP的功能。 它在Adobe Experience Platform生态系统中启用了不同的功能，以便更好地适合在业务对业务服务模型中运行。
 
 Real-time CDP B2B Edition允许营销人员为人员和帐户创建整体用户档案。 具体而言，您可以从统一帐户配置文件的集中存储中扩充、划分和导出所有跨源数据。 此数据可以使用在集中化流程的每个步骤中都可用的数据管理工具进行管理。
 
