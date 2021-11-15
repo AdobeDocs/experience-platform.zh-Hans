@@ -1,31 +1,31 @@
 ---
-description: 本页列出并介绍了使用目标SDK配置流目标的步骤。
-title: 如何使用目标SDK配置流目标
+description: 本页列出并介绍了使用Destination SDK配置流目标的步骤。
+title: 使用Destination SDK配置流目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
+source-git-commit: bc77614eee6cc50d2ce6b14c1b228ed87f88f340
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '663'
 ht-degree: 0%
 
 ---
 
-# 如何使用目标SDK配置流目标
+# 使用Destination SDK配置流目标
 
 ## 概述 {#overview}
 
-本页介绍如何使用 [目标SDK中的配置选项](./configuration-options.md) 和其他目标SDK功能和API参考文档中的 [流目标](/help/destinations/destination-types.md#streaming-destinations). 这些步骤按如下顺序排列。
+本页介绍如何使用 [目标SDK中的配置选项](./configuration-options.md) 和其他Destination SDK功能和API参考文档中的 [流目标](/help/destinations/destination-types.md#streaming-destinations). 这些步骤按如下顺序排列。
 
 >[!NOTE]
 >
->当前不支持通过目标SDK配置批量目标。
+>当前不支持通过Destination SDK配置批处理目标。
 
 ## 先决条件 {#prerequisites}
 
-在前进到下述步骤之前，请阅读 [目标SDK快速入门](./getting-started.md) 页面，以了解有关获取使用目标SDK API所需的Adobe I/O身份验证凭据以及其他先决条件的信息。
+在前进到下述步骤之前，请阅读 [Destination SDK快速入门](./getting-started.md) 页面，以了解有关获取使用Destination SDK API所需的Adobe I/O身份验证凭据以及其他先决条件的信息。
 
-## 使用目标SDK中的配置选项设置目标的步骤 {#steps}
+## 使用Destination SDK中的配置选项设置目标的步骤 {#steps}
 
-![使用目标SDK端点的图示步骤](./assets/destination-sdk-steps.png)
+![使用Destination SDK端点的图示步骤](./assets/destination-sdk-steps.png)
 
 ## 步骤1:创建服务器和模板配置 {#create-server-template-configuration}
 
@@ -152,7 +152,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 ## 步骤4:创建受众元数据配置 {#create-audience-metadata-configuration}
 
-对于某些目标，目标SDK要求您配置受众元数据配置，以编程方式创建、更新或删除目标中的受众。 请参阅 [受众元数据管理](./audience-metadata-management.md) 有关何时需要设置此配置以及如何进行此配置的信息。
+对于某些目标，Destination SDK要求您配置受众元数据配置，以编程方式创建、更新或删除目标中的受众。 请参阅 [受众元数据管理](./audience-metadata-management.md) 有关何时需要设置此配置以及如何进行此配置的信息。
 
 如果您使用受众元数据配置，则必须将其连接到在步骤2中创建的目标配置。 将受众元数据配置的实例ID添加到目标配置中，如 `audienceTemplateId`.
 
