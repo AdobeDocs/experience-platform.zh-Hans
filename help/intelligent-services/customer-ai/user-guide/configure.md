@@ -6,7 +6,7 @@ title: 配置Customer AI实例
 topic-legacy: Instance creation
 description: Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: 52ab1527d3021500d934afe56cfc751116f784a4
+source-git-commit: 899ea8502c80fa520df55ce63255e95cb5ad436d
 workflow-type: tm+mt
 source-wordcount: '2299'
 ht-degree: 0%
@@ -74,7 +74,7 @@ Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务�
 
 选择信息图标 ![信息图标](../images/user-guide/info-icon.png) 数据集旁边会打开数据集预览弹出窗口。
 
-![选择和搜索数据集](../images/user-guide/dataset-info-2.png)
+![选择和搜索数据集](../images/user-guide/dataset-info.png)
 
 数据集预览包含数据，如上次更新时间、源架构以及前十列的预览。
 
@@ -85,8 +85,8 @@ Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务�
 >[!NOTE]
 >
 >使用Customer AI的最大培训窗口（一年）计算数据集完整性。 这意味着在显示数据集完整性值时，不会考虑一年以上的数据。
-<!-- training dataset completness needs to change -->
-![数据集完整性](../images/user-guide/dataset-info.png)
+
+![数据集完整性](../images/user-guide/dataset-info-2.png)
 
 ### 选择标识 {#identity}
 
