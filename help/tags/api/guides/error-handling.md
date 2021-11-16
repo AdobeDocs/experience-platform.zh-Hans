@@ -1,9 +1,10 @@
 ---
 title: 错误处理
 description: 了解如何在Reactor API中处理错误。
-source-git-commit: 6a1728bd995137a7cd6dc79313762ae6e665d416
+exl-id: 336c0ced-1067-4519-94e1-85aea700fce6
+source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
 workflow-type: tm+mt
-source-wordcount: '1071'
+source-wordcount: '1068'
 ht-degree: 0%
 
 ---
@@ -13,11 +14,11 @@ ht-degree: 0%
 当调用Reactor API时出现问题时，可能会通过以下方式之一返回错误：
 
 * **立即错误**:执行导致立即错误的请求时，API会返回错误响应，HTTP状态反映所发生错误的一般类型。
-* **延迟错误**:执行导致延迟错误（如异步活动）的API请求时，API可能会在相关资源中返 `meta.status_details` 回错误。
+* **延迟错误**:执行导致延迟错误（如异步活动）的API请求时，API可能会在 `meta.status_details` 相关资源。
 
 ## 错误格式
 
-错误响应旨在符合[JSON:API错误规范](http://jsonapi.org/format/#errors)，并且通常遵循以下结构：
+错误响应旨在符合 [JSON:API错误规范](http://jsonapi.org/format/#errors)，并且通常遵循以下结构：
 
 ```json
 {
@@ -43,9 +44,9 @@ ht-degree: 0%
 | `id` | 此问题特定发生情况的唯一标识符。 |
 | `status` | 适用于此问题的HTTP状态代码，以字符串值表示。 |
 | `code` | 特定于应用程序的错误代码，以字符串值表示。 |
-| `title` | 关于&#x200B;**不应将**&#x200B;从发生变为发生的问题的简短、人类可读的摘要，但出于本地化目的除外。 |
-| `detail` | 特定于此问题发生的人类可读解释。 与`title`类似，此字段的值也可以本地化。 |
-| `source` | 包含对错误源的引用的对象，可选包括以下任一成员：<ul><li>`pointer`:引用请求文档中关联实体（例如，主数据对象或特定属性）的 [JSON指针(](https://datatracker.ietf.org/doc/html/rfc6901) RFC6901) `/data`  `/data/attributes/title` 字符串。</li></ul> |
+| `title` | 对以下问题的简短、人类可读的摘要 **不应更改** 从发生到发生，本地化除外。 |
+| `detail` | 特定于此问题发生的人类可读解释。 赞 `title`，则可以对此字段的值进行本地化。 |
+| `source` | 包含对错误源的引用的对象，可选包括以下任一成员：<ul><li>`pointer`:a [JSON指针(RFC6901)](https://datatracker.ietf.org/doc/html/rfc6901) 引用请求文档中关联实体的字符串(例如 `/data` 对于主数据对象，或 `/data/attributes/title` )。</li></ul> |
 | `meta` | 包含有关错误的非标准元数据的对象。 |
 
 {style=&quot;table-layout:auto&quot;}
@@ -85,13 +86,13 @@ ht-degree: 0%
 | `invalid-rule` | 无法将无效规则添加到库。 |
 | `invalid-settings-syntax` | 解析设置JSON时遇到语法错误。 |
 | `library-file-not-found` | 在zip包中找不到extension.json中定义的必需文件。 |
-| `minification-error` | 由于代码或ES6代码无效，无法编译代码。 |
+| `minification-error` | 由于代码无效，无法编译代码。 |
 | `multiple-revisions` | 库中只能包含每个资源的一个修订版本。 |
 | `no-available-orgs` | 此用户帐户不属于有权访问标记的产品配置文件。 使用Admin Console将此用户添加到具有标记权限的产品配置文件中。 |
 | `not-authorized` | 此用户帐户没有执行此操作所需的权限。 |
 | `not-found` | 找不到记录。 验证您尝试检索的对象的id。 |
 | `not-unique` | 您尝试使用的名称已在使用中。 对于此资源，“name”属性必须唯一。 |
-| `public-release-not-authorized` | 扩展的公开发布由`launch-ext-dev@adobe.com`协调。 有关详细信息，请参阅[发行扩展](../../extension-dev/submit/release.md)的文档。 |
+| `public-release-not-authorized` | 扩展的公开发布由 `launch-ext-dev@adobe.com`. 请参阅 [释放扩展](../../extension-dev/submit/release.md) 以了解更多信息。 |
 | `read-only` | 此资源为只读，无法修改。 |
 | `session-timeout` | 用户会话已过期。 请注销并重新登录。 |
 | `sftp-authentication-failed` | SFTP连接的身份验证失败。 |

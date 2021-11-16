@@ -2,10 +2,10 @@
 title: 核心扩展概述
 description: 了解Adobe Experience Platform中的核心标记扩展。
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: 868239c84571ed4a274db6b2b49694489a17073e
+source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
 workflow-type: tm+mt
-source-wordcount: '5292'
-ht-degree: 66%
+source-wordcount: '5362'
+ht-degree: 65%
 
 ---
 
@@ -542,6 +542,10 @@ return new Promise(function(resolve, reject) {
 
 ### 自定义代码
 
+>[!NOTE]
+>
+>自定义代码现在支持ES6+ JavaScript。 请注意，某些旧版浏览器不支持ES6+。 要了解使用ES6+函数的影响，请针对所有应支持的Web浏览器进行测试。
+
 提供在触发事件并评估条件后运行的代码。
 
 1. 命名操作代码。
@@ -645,6 +649,10 @@ setTimeout(function() {
 `string`
 
 ### 自定义代码
+
+>[!NOTE]
+>
+>自定义代码现在支持ES6+ JavaScript。 请注意，某些旧版浏览器不支持ES6+。 要了解使用ES6+函数的影响，请针对所有应支持的Web浏览器进行测试。
 
 通过选择“打开编辑器”并将代码插入编辑器窗口，可以将自定义 JavaScript 输入到用户界面中。
 

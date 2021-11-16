@@ -1,10 +1,11 @@
 ---
 title: 规则
 description: 了解标记扩展在Adobe Experience Platform中的工作方式。
-source-git-commit: 272cf2906b44ccfeca041d9620ac0780e24ad1ae
+exl-id: 2beca2c9-72b7-4ea0-a166-50a3b8edb9cd
+source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
 workflow-type: tm+mt
-source-wordcount: '1977'
-ht-degree: 77%
+source-wordcount: '1969'
+ht-degree: 79%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 77%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 Adobe Experience Platform中的标记遵循基于规则的系统。 他们查找用户交互和关联的数据。 如果满足您的规则中所列的标准，则规则会触发您已识别的扩展、脚本或客户端代码。
 
@@ -36,9 +37,9 @@ Adobe Experience Platform中的标记遵循基于规则的系统。 他们查找
 
 如果发生指定的事件，则会评估条件，然后在需要时执行指定的操作。
 
-* **事件**:指定触发规则所必须发生的一个或多个事件。多个事件使用 OR 进行连接。任何指定的事件都将触发规则。
+* **事件**:指定触发规则所必须发生的一个或多个事件。 多个事件使用 OR 进行连接。任何指定的事件都将触发规则。
 
-* **条件**:通过配置要使事件触发规则而必须为true的任何条件来缩小事件范围。例外被定义为 NOT 条件。多个条件使用 AND 进行连接。
+* **条件**:通过配置要使事件触发规则而必须为true的任何条件来缩小事件范围。 例外被定义为 NOT 条件。多个条件使用 AND 进行连接。
 
 可用的事件取决于已安装的扩展。有关核心扩展中的事件的信息，请参阅[核心扩展事件类型](../../extensions/web/core/overview.md#core-extension-event-types)。
 
@@ -50,12 +51,12 @@ Adobe Experience Platform中的标记遵循基于规则的系统。 他们查找
 
 通过指定满足条件时执行的操作来创建规则。
 
-1. 打开[!UICONTROL Rules]选项卡，然后选择&#x200B;**[!UICONTROL Create New Rule]**。
+1. 打开 [!UICONTROL 规则] 选项卡，然后选择 **[!UICONTROL 创建新规则]**.
 
    ![](../../images/launch-rule-builder.jpg)
 
 1. 命名规则。
-1. 选择事件&#x200B;**[!UICONTROL 添加]**&#x200B;图标。
+1. 选择事件 **[!UICONTROL 添加]** 图标。
 1. 选择您的扩展以及该扩展可用的事件类型之一，然后配置该事件的设置。
 
    ![](../../images/rule-event-config.png)
@@ -64,7 +65,7 @@ Adobe Experience Platform中的标记遵循基于规则的系统。 他们查找
 
    >[!IMPORTANT]
    >
-   >在客户端规则中，数据元素使用 `%` 对其名称的开头和结尾进行标记。例如：`%viewportHeight%`。在事件转发规则中，数据元素的标记为：数据元素名称的开头为`{{`，结尾为`}}`。 例如：`{{viewportHeight}}`。
+   >在客户端规则中，数据元素使用 `%` 对其名称的开头和结尾进行标记。例如：`%viewportHeight%`。在事件转发规则中，数据元素使用进行标记 `{{` 开始时和 `}}` 数据元素名称的末尾。 例如：`{{viewportHeight}}`。
 
    要引用来自 Edge Network 的数据，数据元素路径必须为 `arc.event._<element>_`。
 
@@ -76,7 +77,7 @@ Adobe Experience Platform中的标记遵循基于规则的系统。 他们查找
    >
    >如果指定的路径不正确，将无法收集数据。
 
-1. 设置Order参数，然后选择&#x200B;**[!UICONTROL Keep Changes]**。
+1. 设置Order参数，然后选择 **[!UICONTROL 保留更改]**.
 
    所有规则组件的默认顺序为 50。如果您希望某个规则先运行，则可为其指定一个小于 50 的数字。
 
@@ -86,7 +87,7 @@ Adobe Experience Platform中的标记遵循基于规则的系统。 他们查找
 
       如果您希望某个规则后运行，则可为其指定一个大于 50 的数字。有关排序的更多信息，请参阅[规则排序](rules.md#rule-ordering)。
 
-1. 选择条件&#x200B;**[!UICONTROL 添加]**&#x200B;图标，然后选择逻辑类型、扩展、条件类型并配置条件的设置。 接下来，选择&#x200B;**[!UICONTROL Keep Changes]**。
+1. 选择条件 **[!UICONTROL 添加]** 图标，然后选择逻辑类型、扩展、条件类型并配置条件的设置。 接下来，选择 **[!UICONTROL 保留更改]**.
 
    ![](../../images/condition-settings.png)
 
@@ -101,18 +102,18 @@ Adobe Experience Platform中的标记遵循基于规则的系统。 他们查找
 
    您可以根据需要添加任意数量的条件。同一规则内的多个条件使用 AND 进行连接。
 
-1. 选择操作&#x200B;**[!UICONTROL 添加]**&#x200B;图标，选择您的扩展以及该扩展可用的操作类型之一，配置操作的设置，然后选择&#x200B;**[!UICONTROL 保留更改]**。
+1. 选择操作 **[!UICONTROL 添加]** 图标，然后选择您的扩展以及该扩展可用的操作类型之一，配置操作的设置，然后选择 **[!UICONTROL 保留更改]**.
 
    ![](../../images/action-settings.png)
 
    可用操作类型取决于您选择的扩展。操作设置将因操作类型而异。
 
-   （高级）Wait to run next action：在资产上启用规则组件排序后，此选项将可用。选中此选项后，标记将在完成此操作之前调用下一个操作。 如果不选中此选项，将立即开始执行下一个操作。默认值为&#x200B;**[!UICONTROL Checked]**。
+   （高级）Wait to run next action：在资产上启用规则组件排序后，此选项将可用。选中此选项后，标记将在完成此操作之前调用下一个操作。 如果不选中此选项，将立即开始执行下一个操作。默认值为 **[!UICONTROL 已选中]**.
 
    （高级）Timeout：在资产上启用规则组件排序后，此选项将可用。此属性定义允许操作完成的最长时间。如果达到超时，则该操作将失败，并将从处理队列中删除此规则的所有后续操作。默认值为 2000 毫秒。
 
 
-1. 查看您的规则，然后选择&#x200B;**[!UICONTROL 保存规则]**。
+1. 查看规则，然后选择 **[!UICONTROL 保存规则]**.
 
    稍后，当您[发布](../publishing/overview.md)时，您会将此规则添加到库中并对其进行部署。
 
@@ -153,13 +154,9 @@ Adobe强烈建议您使用1到100之间的正数来对规则排序（默认值�
 
 由于几乎总是需要执行这些事件（除非条件评估为 false），因此，为了提高效率，这些事件将捆绑到主库（即，您的嵌入代码所引用的文件）中。
 
-* **Javascript:** JavaScript将嵌入到主标记库中。自定义脚本将封装在脚本标记中，并使用 `document.write` 写入文档。如果规则具有多个自定义脚本，则系统会按顺序写入它们。
+* **Javascript:** JavaScript将嵌入到主标记库中。 自定义脚本将封装在脚本标记中，并使用 `document.write` 写入文档。如果规则具有多个自定义脚本，则系统会按顺序写入它们。
 
-   >[!NOTE]
-   >
-   >标记使用ES5 JavaScript。 事件转发使用ES6。
-
-* **HTML:** HTML将嵌入到主标记库中。使用 `document.write` 将 HTML 写入文档。如果规则具有多个自定义脚本，则系统会按顺序写入它们。
+* **HTML:** HTML会嵌入到主标记库中。 使用 `document.write` 将 HTML 写入文档。如果规则具有多个自定义脚本，则系统会按顺序写入它们。
 
 ### 包含任何其他事件的规则
 
@@ -170,7 +167,7 @@ Adobe 无法保证会实际触发任何其他规则，并且会需要其操作�
 
 ## 规则组件排序 {#sequencing}
 
-标记运行时环境的行为取决于&#x200B;**[!UICONTROL 按顺序]**&#x200B;运行规则组件是否针对您的资产启用或关闭。
+标记运行时环境的行为取决于 **[!UICONTROL 按顺序运行规则组件]** 是否为您的资产打开。
 
 ### 已启用
 

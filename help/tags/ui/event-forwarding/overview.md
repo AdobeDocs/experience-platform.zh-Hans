@@ -3,9 +3,9 @@ title: 事件转发概述
 description: 了解Adobe Experience Platform中的事件转发，该功能允许您使用平台边缘网络执行任务，而无需更改标签实施。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
+source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
 workflow-type: tm+mt
-source-wordcount: '547'
+source-wordcount: '533'
 ht-degree: 42%
 
 ---
@@ -41,9 +41,9 @@ Adobe Experience Platform中的事件转发使用Adobe Experience Platform边缘
 
 * 数据元素标记化
 
-   * 标记：在规则中，数据元素在数据元素名称的开头和结尾使用`%`进行标记。 例如：`%viewportHeight%`。
+   * 标记：在规则中，数据元素使用 `%` 数据元素名称的开头和结尾。 例如：`%viewportHeight%`。
 
-   * 事件转发：在规则中，数据元素的标记为：数据元素名称的开头为`{{`，末尾为`}}`。 例如，`{{viewportHeight}}`。
+   * 事件转发：在规则中，数据元素使用进行标记 `{{` 开始时和 `}}` 数据元素名称的末尾。 例如，`{{viewportHeight}}`。
 
 * 数据引用方式
 
@@ -61,9 +61,5 @@ Adobe Experience Platform中的事件转发使用Adobe Experience Platform边缘
 * 规则的操作顺序
 
    在规则的“操作”部分中，事件转发规则始终按顺序执行。 您在保存规则时，应确保操作顺序正确。无法像使用标记一样选择此执行序列。
-
-* 自定义代码 JavaScript 版本
-
-   标记使用JavaScript版本es5。 事件转发使用的是版本es6。
 
 <!--doc Adobe Cloud Connector extension, get from Jon-->
