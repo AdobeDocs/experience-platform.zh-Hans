@@ -4,7 +4,7 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: c178bf54bfdda54293cb4e06d452f82111690895
+source-git-commit: 83aefe6a0880b201e376f458279461888e531741
 workflow-type: tm+mt
 source-wordcount: '741'
 ht-degree: 12%
@@ -257,14 +257,14 @@ ht-degree: 12%
    - [更新数据流](tutorials/ui/update-dataflows.md)
    - [删除帐户](tutorials/ui/delete-accounts.md)
    - [删除数据流](tutorials/ui/delete.md)
-- [源SDK] {#sources-sdk}
+- [源SDK] {#sdk}
    - [概述](sources-sdk/overview.md)
-   - [源SDK功能] {#functionality}
+   - [源SDK配置] {#config}
       - [配置选项](sources-sdk/config/config.md)
       - [配置身份验证规范](sources-sdk/config/authspec.md)
       - [配置源规范](sources-sdk/config/sourcespec.md)
       - [配置浏览规范](sources-sdk/config/explorespec.md)
-   - [源SDK API教程] {#sdk-tutorials}
+   - [源SDK API教程] {#sdk-api}
       - [源SDK API概述](sources-sdk/api/overview.md)
       - [快速入门](sources-sdk/api/getting-started.md)
       - [创建连接规范](sources-sdk/api/create.md)
