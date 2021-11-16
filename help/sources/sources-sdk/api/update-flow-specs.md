@@ -5,7 +5,7 @@ topic-legacy: developer guide
 description: 以下文档提供了有关如何使用源SDK的流程服务API检索和更新流程规范的步骤。
 hide: true
 hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+source-git-commit: d98cf404fd1a4d150f202154aba87b0089418957
 workflow-type: tm+mt
 source-wordcount: '432'
 ht-degree: 1%
@@ -616,4 +616,4 @@ PUT -X GET \
 
 ## 后续步骤
 
-在相应的流程规范中添加新的连接规范后，您现在可以继续测试和提交新源。 请参阅 [测试和提交新源](./overview.md#submit) 以了解更多信息。
+在相应的流程规范中添加新的连接规范后，您现在可以继续测试和提交新源。 请参阅 [测试和提交新源](./submit.md) 以了解更多信息。
