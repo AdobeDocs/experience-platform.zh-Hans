@@ -2,7 +2,7 @@
 description: 使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 定义、测试和提交模板后，Adobe会使用该模板来构建到您目标的API调用。
 title: 受众元数据管理
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: 397c49284c30c648695a7a186d3f3e76a2675807
+source-git-commit: cb4e399798a9521e6f3da89cbd88d19476ab070d
 workflow-type: tm+mt
 source-wordcount: '1012'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 定义、测试和提交配置后，Adobe将使用该配置来构建到目标的API调用。
 
-您可以使用`/authoring/audience-templates` API端点配置本文档中描述的功能。 请阅读[受众元数据端点API操作](./audience-metadata-api.md) ，以获取可对端点执行的操作的完整列表。
+您可以使用 `/authoring/audience-templates` API端点。 读取 [受众元数据端点API操作](./audience-metadata-api.md) 有关可对端点执行的操作的完整列表。
 
 ## 何时使用受众元数据管理端点 {#when-to-use}
 
@@ -25,11 +25,11 @@ ht-degree: 0%
 
 ## 受众元数据管理支持的用例 {#use-cases}
 
-借助目标SDK中的受众元数据支持，当您配置Experience Platform目标时，您可以在Platform用户将区段映射并激活到您的目标时，为他们提供以下几个选项之一。 您可以通过[目标配置](./destination-configuration.md#segment-mapping)的区段映射部分中的参数来控制用户可用的选项。
+借助Destination SDK中的受众元数据支持，在配置Experience Platform目标时，您可以在Platform用户映射区段并将其激活到您的目标时，为其提供多个选项之一。 您可以通过 [目标配置](./destination-configuration.md#segment-mapping).
 
 ### 用例1 — 您具有第三方API，用户无需输入映射ID
 
-如果您有用于创建/更新/删除区段或受众的API端点，则可以使用受众元数据模板来配置目标SDK，以匹配区段创建/更新/删除端点的规范。 Experience Platform可以以编程方式创建/更新/删除区段，并将元数据同步回Experience Platform。
+如果您有用于创建/更新/删除区段或受众的API端点，则可以使用受众元数据模板配置Destination SDK以匹配区段创建/更新/删除端点的规范。 Experience Platform可以以编程方式创建/更新/删除区段，并将元数据同步回Experience Platform。
 
 在Experience Platform用户界面(UI)中将区段激活到目标时，用户无需在激活工作流中手动填写区段映射ID字段。
 
@@ -47,7 +47,7 @@ ht-degree: 0%
 
 为了支持上面列出的用例，Adobe为您提供了一个通用模板，可通过自定义来调整API规范。
 
-如果您的API支持，则可以使用通用模板来[创建新受众模板](./audience-metadata-api.md#create):
+您可以使用通用模板 [创建新受众模板](./audience-metadata-api.md#create) 如果您的API支持：
 
 * HTTP方法：POST、GET、PUT、DELETE、PATCH
 * 身份验证类型：OAuth 1、具有刷新令牌的OAuth 2、具有载体令牌的OAuth 2
@@ -59,14 +59,14 @@ ht-degree: 0%
 
 本节包含三个供您参考的通用受众元数据配置示例，以及配置主要部分的描述。 请注意三个示例配置中的url、标头、请求和响应正文有何不同。 这是由于三个示例平台营销API的不同规范所致。
 
-请注意，在某些示例中，URL中使用了诸如`{{authData.accessToken}}`或`{{segment.name}}`之类的宏字段，而在其他示例中，这些字段用在标头或请求正文中。 这真的取决于您的营销API规范。
+请注意，在某些示例中，宏字段如 `{{authData.accessToken}}` 或 `{{segment.name}}` 在URL中使用，在其他示例中，在标头或请求正文中使用。 这真的取决于您的营销API规范。
 
 | 模板部分 | 描述 |
 |--- |--- |
 | `create` | 包括对您的API进行HTTP调用、以编程方式在您的平台中创建区段/受众，并将信息同步回Adobe Experience Platform的所有必需组件（URL、HTTP方法、标头、请求和响应正文）。 |
 | `update` | 包括对您的API进行HTTP调用、以编程方式更新平台中的区段/受众，以及将信息同步回Adobe Experience Platform的所有必需组件（URL、HTTP方法、标头、请求和响应正文）。 |
 | `delete` | 包括对您的API进行HTTP调用以编程方式删除平台中的区段/受众的所有必需组件（URL、HTTP方法、标头、请求和响应正文）。 |
-| `validations` | 在调用合作伙伴API之前，对模板配置中的任何字段运行验证。 例如，您可以验证是否正确输入了用户的帐户ID。 |
+| `validate` | 在调用合作伙伴API之前，对模板配置中的任何字段运行验证。 例如，您可以验证是否正确输入了用户的帐户ID。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -79,7 +79,7 @@ ht-degree: 0%
    "lastModifiedDate":"2021-07-27T21:25:42.763478Z",
    "metadataTemplate":{
       "create":{
-         "url":"https://api.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments",
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments",
          "httpMethod":"POST",
          "headers":[
             {
@@ -118,7 +118,7 @@ ht-degree: 0%
          ]
       },
       "update":{
-         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments",
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments/{{segment.alias}}",
          "httpMethod":"PUT",
          "headers":[
             {
@@ -155,7 +155,7 @@ ht-degree: 0%
          ]
       },
       "delete":{
-         "url":"https://adsapi.moviestar.com/v1/segments/{{segment.alias}}",
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments/{{segment.alias}}",
          "httpMethod":"DELETE",
          "headers":[
             {
@@ -375,7 +375,7 @@ ht-degree: 0%
 }
 ```
 
-在参考文档[受众元数据端点API操作](./audience-metadata-api.md)中，查找模板中所有参数的描述。
+在参考文档中查找模板中所有参数的描述 [受众元数据端点API操作](./audience-metadata-api.md).
 
 ## 受众元数据模板中使用的宏
 
@@ -388,8 +388,8 @@ ht-degree: 0%
 | `{{segment.id}}` | 允许您在Experience Platform中访问区段ID。 |
 | `{{customerData.accountId}}` | 允许您访问在目标配置中设置的帐户ID字段。 |
 | `{{oauth2ServiceAccessToken}}` | 允许您根据OAuth 2配置动态生成访问令牌。 |
-| `{{authData.accessToken}}` | 允许您将访问令牌传递到API端点。 如果Experience Platform应使用未过期的令牌连接到您的目标，则使用`{{authData.accessToken}}`，否则使用`{{oauth2ServiceAccessToken}}`生成访问令牌。 |
-| `{{body.segments[0].segment.id}}` | 返回已创建受众的唯一标识符，作为键`externalAudienceId`的值。 |
+| `{{authData.accessToken}}` | 允许您将访问令牌传递到API端点。 使用 `{{authData.accessToken}}` 如果Experience Platform应使用未过期的令牌连接到您的目标，请使用 `{{oauth2ServiceAccessToken}}` 以生成访问令牌。 |
+| `{{body.segments[0].segment.id}}` | 返回已创建受众的唯一标识符，作为键的值 `externalAudienceId`. |
 | `{{error.message}}` | 返回将在Experience PlatformUI中向用户显示的错误消息。 |
 
 {style=&quot;table-layout:auto&quot;}
