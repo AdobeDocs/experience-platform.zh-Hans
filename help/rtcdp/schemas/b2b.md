@@ -2,9 +2,9 @@
 title: Real-time Customer Data Platform B2B版中的模式
 description: 概述Real-time Customer Data Platform B2B Edition中体验数据模型(XDM)模式的角色。
 exl-id: 3b18d377-108f-443f-86ae-dc7537cf9013
-source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
+source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
 workflow-type: tm+mt
-source-wordcount: '198'
+source-wordcount: '220'
 ht-degree: 0%
 
 ---
@@ -12,6 +12,10 @@ ht-degree: 0%
 # Real-time Customer Data Platform B2B版中的模式
 
 Real-time Customer Data Platform B2B Edition提供多个标准 [体验数据模型(XDM)类](../../xdm/schema/composition.md#class) 可捕获关于基本B2B数据实体（如帐户、机会、营销活动等）的详细信息。 此外，实时CDP B2B Edition还允许您定义这些模式之间的多对一关系，以便它们能够参与高级分段用例。
+
+>[!IMPORTANT]
+>
+>您必须拥有Real-time CDP B2B Edition的访问权限，才能使B2B模式参与 [实时客户资料](../../profile/home.md).
 
 Real-time CDP B2B Edition中提供了以下标准类：
 

@@ -2,14 +2,18 @@
 title: XDM Business Campaign类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Campaign类。
 exl-id: 4e3228a1-74be-43af-b355-45d84afb1611
-source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
+source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
 workflow-type: tm+mt
-source-wordcount: '166'
-ht-degree: 6%
+source-wordcount: '206'
+ht-degree: 4%
 
 ---
 
 # [!UICONTROL XDM Business Campaign] 类
+
+>[!IMPORTANT]
+>
+>此类旨在供具有访问权限的组织使用 [Real-time Customer Data Platform B2B版](../../../rtcdp/b2b-overview.md). 您必须拥有Real-time CDP B2B Edition的访问权限，才能让此类参与 [实时客户资料](../../../profile/home.md).
 
 [!UICONTROL XDM Business Campaign] 是一个标准的体验数据模型(XDM)类，可捕获业务活动所需的最低属性。
 

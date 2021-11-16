@@ -2,14 +2,18 @@
 title: XDM业务帐户人员关系分类
 description: 本文档概述了Experience Data Model(XDM)中的XDM业务帐户人员关系类。
 exl-id: d51abe9b-d936-4c84-96e2-35a81ca6b67f
-source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
+source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
 workflow-type: tm+mt
-source-wordcount: '309'
+source-wordcount: '349'
 ht-degree: 4%
 
 ---
 
 # [!UICONTROL XDM业务帐户人员关系] 类
+
+>[!IMPORTANT]
+>
+>此类旨在供具有访问权限的组织使用 [Real-time Customer Data Platform B2B版](../../../rtcdp/b2b-overview.md). 您必须拥有Real-time CDP B2B Edition的访问权限，才能让此类参与 [实时客户资料](../../../profile/home.md).
 
 [!UICONTROL XDM业务帐户人员关系] 是一个标准的体验数据模型(XDM)类，可捕获与业务帐户关联的人员所需的最低属性。
 
