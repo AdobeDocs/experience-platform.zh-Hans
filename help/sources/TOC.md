@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: b8793a4346e3f6017bdac07a1dd8df75a7341066
+source-git-commit: 4ce9eac605fb7c801852cd0e109448d314092603
 workflow-type: tm+mt
-source-wordcount: '731'
+source-wordcount: '741'
 ht-degree: 12%
 
 ---
@@ -257,22 +257,25 @@ ht-degree: 12%
    - [更新数据流](tutorials/ui/update-dataflows.md)
    - [删除帐户](tutorials/ui/delete-accounts.md)
    - [删除数据流](tutorials/ui/delete.md)
-- [源SDK] {#sdk}
+- 源SDK {#sdk}
    - [概述](sources-sdk/overview.md)
-   - [配置选项](sources-sdk/config/config.md)
-   - [配置身份验证规范](sources-sdk/config/authspec.md)
-   - [配置源规范](sources-sdk/config/sourcespec.md)
-   - [配置浏览规范](sources-sdk/config/explorespec.md)
-   - [源SDK API概述](sources-sdk/api/api-overview.md)
-   - [快速入门](sources-sdk/api/getting-started.md)
-   - [创建连接规范](sources-sdk/api/create.md)
-   - [更新连接规范](sources-sdk/api/update-connection-specs.md)
-   - [更新流量规范](sources-sdk/api/update-flow-specs.md)
-   - [提交源](sources-sdk/api/submit.md)
-   - [在Adobe Experience Platform中记录您的源](sources-sdk/documentation/doc-overview.md)
-   - [使用GitHub Web界面创建源文档页面](sources-sdk/documentation/github.md)
-   - [在本地环境中使用文本编辑器创建源文档页面](sources-sdk/documentation/text-editor.md)
-   - [文档自助模板](sources-sdk/documentation/template.md)
+   - 源SDK配置 {#config}
+      - [配置选项](sources-sdk/config/config.md)
+      - [配置身份验证规范](sources-sdk/config/authspec.md)
+      - [配置源规范](sources-sdk/config/sourcespec.md)
+      - [配置浏览规范](sources-sdk/config/explorespec.md)
+   - 源SDK API教程 {#sdk-api}
+      - [源SDK API概述](sources-sdk/api/overview.md)
+      - [快速入门](sources-sdk/api/getting-started.md)
+      - [创建连接规范](sources-sdk/api/create.md)
+      - [更新连接规范](sources-sdk/api/update-connection-specs.md)
+      - [更新流量规范](sources-sdk/api/update-flow-specs.md)
+      - [提交源](sources-sdk/api/submit.md)
+   - 记录源 {#document}
+      - [在Adobe Experience Platform中记录您的源](sources-sdk/documentation/overview.md)
+      - [使用GitHub Web界面创建源文档页面](sources-sdk/documentation/github.md)
+      - [在本地环境中使用文本编辑器创建源文档页面](sources-sdk/documentation/text-editor.md)
+      - [文档自助模板](sources-sdk/documentation/template.md)
 - [流运行通知](notifications.md)
 - [IP地址允许列表](ip-address-allow-list.md)
 - [常见问题](./troubleshooting.md)

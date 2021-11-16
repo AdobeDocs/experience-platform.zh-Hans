@@ -5,7 +5,7 @@ topic-legacy: overview
 description: 本文档概述了使用源SDK需要准备的配置。
 hide: true
 hidefromtoc: true
-source-git-commit: d98cf404fd1a4d150f202154aba87b0089418957
+source-git-commit: 4ce9eac605fb7c801852cd0e109448d314092603
 workflow-type: tm+mt
 source-wordcount: '248'
 ht-degree: 2%
@@ -87,4 +87,4 @@ ht-degree: 2%
 
 ## 后续步骤
 
-填充了浏览规范后，您可以使用 [!DNL Flow Service] API。 请参阅 [[!DNL Sources SDK] API指南](../api/api-overview.md) 以了解更多信息。
+填充了浏览规范后，您可以使用 [!DNL Flow Service] API。 请参阅 [[!DNL Sources SDK] API指南](../api/overview.md) 以了解更多信息。
