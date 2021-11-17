@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: 2021年11月版Adobe Experience Platform发行说明。
-source-git-commit: 4618d8d73beeb7e525b5681aaa119125adaf7883
+source-git-commit: 90e2bb00575cc0b38367d792c75e2b656491c49f
 workflow-type: tm+mt
-source-wordcount: '323'
+source-wordcount: '325'
 ht-degree: 24%
 
 ---
@@ -26,7 +26,7 @@ Attribution AI 用于将点数归因于导致转化事件的接触点。营销�
 | 功能 | 描述 |
 | ------- | ----------- |
 | 支持多个数据集 | Attribution AI现在可以轻松地直接在UI中摄取多个数据集，而无需映射和拼合每个数据集。 这一新的时间节省功能通过来自多个数据集的更丰富数据，提供更强大、更准确的分数。 |
-| 媒体渠道和促销活动字段映射 | Attribution AI现在支持映射媒体渠道和营销活动字段。 数据集之间的媒体渠道映射可改进从Attribution AI派生的分析，并有助于提供更清晰、易于解读的结果。 |
+| 媒体渠道和促销活动字段映射 | Attribution AI现在支持媒体渠道和营销活动字段的映射。 数据集之间的媒体渠道映射可改进从Attribution AI派生的分析，并有助于提供更清晰、易于解读的结果。 |
 
 有关Attribution AI的更多信息，请参阅 [Attribution AI文档](../../intelligent-services/attribution-ai/overview.md).
 
