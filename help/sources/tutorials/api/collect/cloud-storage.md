@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方云存储检索数据，以及使用源连接器和API将数据导入平台的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: f0bb779961e9387eab6a424461e35eba9ab48fe2
+source-git-commit: 10f04044e970158131677e0c630edf761d4577bd
 workflow-type: tm+mt
-source-wordcount: '1792'
+source-wordcount: '1835'
 ht-degree: 1%
 
 ---
@@ -638,6 +638,10 @@ curl -X GET \
 - [数据流规范ID](#specs)
 
 数据流负责从源中调度和收集数据。 通过在有效负载中提供先前提到的值时执行POST请求，可以创建数据流。
+
+>[!NOTE]
+>
+>对于批量摄取，每个后续数据流都会根据文件的源文件选择要摄取的文件 **上次修改时间** 时间戳。 这意味着批处理数据流从源中选择新文件或自上次数据流运行以来已修改的文件。
 
 要计划摄取，您必须首先将开始时间值设置为以秒为单位的新纪元时间。 然后，您必须将频率值设置为以下五个选项之一： `once`, `minute`, `hour`, `day`或 `week`. 间隔值可指定两个连续摄取和创建一次性摄取之间的周期，而无需设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`.
 
