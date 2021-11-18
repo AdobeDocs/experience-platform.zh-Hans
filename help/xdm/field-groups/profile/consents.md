@@ -4,9 +4,9 @@ title: 同意和首选项架构字段组
 topic-legacy: overview
 description: 本文档概述了同意和首选项架构字段组。
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: d2c71423165776bf7c106a7503514c5acc284f8e
+source-git-commit: 6caece867afe3e6f3fd323843b753cce2319623c
 workflow-type: tm+mt
-source-wordcount: '958'
+source-wordcount: '941'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 0%
 >
 >请参阅 [浏览XDM资源](../../ui/explore.md) 要了解如何查找任何XDM资源并在Platform UI中检查其结构的步骤，请访问。
 
-以下JSON显示了 [!UICONTROL 同意和首选项] 字段组可以处理。 以下各节提供了有关每个字段具体用途的信息。
+以下JSON显示了 [!UICONTROL 同意和首选项] 字段组可以处理。 有关如何使用字段组提供的大多数字段的信息，请参阅 [同意和首选项数据类型](../../data-types/consents.md). 以下子部分重点介绍字段组添加到数据类型的唯一属性。
 
 ```json
 {
@@ -96,8 +96,6 @@ ht-degree: 0%
 >* [在UI中生成示例数据](../../ui/sample.md)
 >* [在API中生成示例数据](../../api/sample-data.md)
 
-
-有关如何使用字段组提供的大多数字段的信息，请参阅 [同意和首选项数据类型](../../data-types/consents.md). 以下子部分重点介绍字段组添加到数据类型的唯一属性。
 
 ### `idSpecific`
 
