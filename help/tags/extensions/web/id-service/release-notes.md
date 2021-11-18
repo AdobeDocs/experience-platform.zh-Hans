@@ -1,10 +1,11 @@
 ---
 title: Adobe Experience Cloud Identity Service扩展的发行说明
 description: Adobe Experience Platform中Adobe Experience Cloud Identity Service标记扩展的最新发行说明。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: f9bfbed7-1eec-4916-9235-a75b5e2efcf8
+source-git-commit: 1d3abede47c97c9a4f3b18ae25c890c309e942fd
 workflow-type: tm+mt
 source-wordcount: '521'
-ht-degree: 73%
+ht-degree: 78%
 
 ---
 
@@ -12,11 +13,11 @@ ht-degree: 73%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-有关Experience CloudIdentity Service本身，而不只是Adobe Experience Platform标记扩展的发行说明，请参阅：[https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html)
+有关Experience CloudIdentity Service本身，而不只是Adobe Experience Platform标记扩展的发行说明，请参阅： [https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html)
 
-## 2020 年 11 月 3 日
+## 2021 年 11 月 3 日
 
 ### Experience Cloud ID 扩展 5.2.1
 
@@ -24,7 +25,7 @@ ht-degree: 73%
 
 * 该修补程序修复了在 Google Chrome 浏览器中，从带有 `SameSite=None` 属性的 iFrame 写入 Cookie 的问题。
 
-## 2021年1月12日
+## 2021 年 1 月 12 日
 
 ### Experience Cloud ID 扩展 5.2.0
 
