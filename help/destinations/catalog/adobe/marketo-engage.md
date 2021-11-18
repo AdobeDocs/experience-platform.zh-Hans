@@ -2,9 +2,9 @@
 title: Marketo Engage目标
 description: Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户体验管理(CXM)解决方案。 它让您能够自动执行和管理活动，从CRM潜在客户管理和客户参与到基于帐户的营销和收入归因中。
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: 9c5a5a49385baa7377ebdc806fd22918c39ad0b2
+source-git-commit: 05b97e8bdeb4ffb81a4a671d282d0d8ebc7e870a
 workflow-type: tm+mt
-source-wordcount: '334'
+source-wordcount: '379'
 ht-degree: 1%
 
 ---
@@ -35,6 +35,14 @@ Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户
 ## 设置目标并激活区段 {#set-up}
 
 有关如何设置目标和激活区段的详细说明，请阅读 [将Adobe Experience Platform区段推送到Marketo静态列表](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-cloud-segment-to-a-marketo-static-list.html?lang=en) (在Marketo文档中)。
+
+以下视频还演示了配置Marketo目标和激活区段的步骤。
+
+>[!NOTE]
+>
+>Experience Platform用户界面经常更新，自此视频录制以来可能已发生更改。 有关最新信息，请参阅上面链接的指南。
+
+>[!VIDEO](https://video.tv.adobe.com/v/338248?quality=12)
 
 <!--
 
