@@ -5,9 +5,9 @@ seo-title: Frequently asked questions
 description: 有关Adobe Experience Platform目标的最常见问题解答
 seo-description: Answers to the most frequently asked questions about Adobe Experience Platform destinations
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: 8f9a601a833149c83d465f68d16ca362ed730b8a
+source-git-commit: 69fc8e8ec3211495056be73c2e49c6aecfc569ea
 workflow-type: tm+mt
-source-wordcount: '781'
+source-wordcount: '798'
 ht-degree: 4%
 
 ---
@@ -77,7 +77,7 @@ ht-degree: 4%
 
 **我能否在Platform UI中为单独的Facebook帐户创建多个Facebook目标？**
 
-Experience Platform中的Facebook目标为Facebook中某个广告帐户的1:1。 您可以为公司中的每个Facebook广告帐户创建一个单独的Facebook目标。 关注 [目标连接教程](/help/destinations/ui/connect-destination.md) 并在Platform UI中为每个新的Facebook目标连接单独的Facebook帐户。
+可以。Experience Platform中的Facebook目标为Facebook中某个广告帐户的1:1。 您可以为公司中的每个Facebook广告帐户创建一个单独的Facebook目标。 关注 [目标连接教程](/help/destinations/ui/connect-destination.md) 并在Platform UI中为每个新的Facebook目标连接单独的Facebook帐户。 您可以连接的Facebook广告帐户数量没有限制。
 
 ## linkedIn匹配的受众 {#linkedin}
 
