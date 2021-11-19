@@ -5,13 +5,13 @@ topic-legacy: overview
 description: 本文档概述了使用源SDK需要准备的配置。
 hide: true
 hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
+source-git-commit: a3bfd3b87343ca1dd2d122f4f82926082965578c
 workflow-type: tm+mt
 source-wordcount: '526'
 ht-degree: 2%
 
 ---
-
 
 # 为源SDK配置身份验证规范
 
@@ -180,7 +180,7 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 | 属性 | 描述 | 示例 |
 | --- | --- | --- |
 | `authSpec.name` | 显示支持的身份验证类型的名称。 | `Basic Authentication` |
-| `authSpec.type` | 定义源支持的身份验证类型。 | `oAuth2-refresh-code` |
+| `authSpec.type` | 定义源支持的身份验证类型。 | `BasicAuthentication` |
 | `authSpec.spec` | 包含有关身份验证的架构、数据类型和属性的信息。 |
 | `authSpec.spec.$schema` | 定义用于身份验证的架构。 | `http://json-schema.org/draft-07/schema#` |
 | `authSpec.spec.type` | 定义架构的数据类型。 | `object` |
