@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: a01730fce4f7746389fc48e700c259567492d0ee
+source-git-commit: 320c95f894c75a7f52808730b0cac4bc1e4411e1
 workflow-type: tm+mt
-source-wordcount: '677'
+source-wordcount: '680'
 ht-degree: 9%
 
 ---
@@ -36,7 +36,6 @@ ht-degree: 9%
    * [监视数据流](./ui/monitor-dataflows.md)
 * 目标目录 {#catalog}
    * [目标目录概述](./catalog/overview.md)
-   * [ (Alpha)HTTP连接](./catalog/http-destination.md)
    * Adobe目标{#adobe}
       * [Adobe目标概述](./catalog/adobe/overview.md)
       * [Marketo Engage连接](./catalog/adobe/marketo-engage.md)
@@ -132,6 +131,8 @@ ht-degree: 9%
       * [Facebook连接](./catalog/social/facebook.md)
       * [linkedIn匹配的受众连接](./catalog/social/linkedin.md)
       * [[!DNL Twitter Custom Audiences] 连接](./catalog/social/twitter.md)
+   * 流目标 {#streaming}
+      * [ （测试版）HTTP API连接](./catalog/streaming/http-destination.md)
    * 调查目标 {#survey}
       * [Survey目标概述](./catalog/survey/overview.md)
       * [Foresee扩展目标](./catalog/survey/foresee.md)

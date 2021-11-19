@@ -1,13 +1,13 @@
 ---
 keywords: 目录；目录
 title: 目标目录概述
-seo-title: 目标目录概述
-description: 目标目录提供了可用于接收数据的可用目标列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
-seo-description: 目标目录提供了可用于接收数据的可用目标列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
+seo-title: Destinations catalog overview
+description: 目标目录提供了可接收数据的可用目标列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
+seo-description: The Destinations catalog provides a list of available destinations that are ready to receive data. These destinations include Adobe solutions, advertising platforms, survey platforms, email marketing platforms, and more.
 exl-id: c490f6f0-f673-4a56-b87a-22884f8be92d
-source-git-commit: 15ea3ab9370541c35b874414a8753e8812eea9c6
+source-git-commit: 320c95f894c75a7f52808730b0cac4bc1e4411e1
 workflow-type: tm+mt
-source-wordcount: '197'
+source-wordcount: '171'
 ht-degree: 0%
 
 ---
@@ -22,14 +22,15 @@ ht-degree: 0%
 
 您可以在Adobe Experience Platform中将数据激活到不同的目标类别。 以下链接提供了有关每个目标类别的更多信息：
 
-- [Adobe目标概述](adobe/overview.md)
-- [广告目标概述](advertising/overview.md)
-- [Analytics目标概述](analytics/overview.md)
-- [云存储目标概述](cloud-storage/overview.md)
-- [数据管理平台(DMP)目标概述](data-management/overview.md)
-- [电子邮件营销目标概述](email-marketing/overview.md)
-- [移动设备参与目标概述](mobile-engagement/overview.md)
-- [个性化目标概述](personalization/overview.md)
-- [社交目标概述](social/overview.md)
-- [Survey目标概述](survey/overview.md)
-- [客户目标之声概述](voice/overview.md)
+- [Adobe [!UICONTROL 目标] 概述](adobe/overview.md)
+- [[!UICONTROL 广告] [!UICONTROL 目标] 概述](advertising/overview.md)
+- [[!UICONTROL Analytics] [!UICONTROL 目标] 概述](analytics/overview.md)
+- [[!UICONTROL 云存储] [!UICONTROL 目标] 概述](cloud-storage/overview.md)
+- [[!UICONTROL 数据管理平台] (DMP) [!UICONTROL 目标] 概述](data-management/overview.md)
+- [[!UICONTROL 电子邮件营销] [!UICONTROL 目标] 概述](email-marketing/overview.md)
+- [[!UICONTROL 移动参与度] [!UICONTROL 目标] 概述](mobile-engagement/overview.md)
+- [[!UICONTROL 个性化] [!UICONTROL 目标] 概述](personalization/overview.md)
+- [[!UICONTROL 社交] [!UICONTROL 目标] 概述](social/overview.md)
+- [[!UICONTROL 流] [!UICONTROL 目标] （指向HTTP目标的链接）](streaming/http-destination.md)
+- [[!UICONTROL 调查] [!UICONTROL 目标] 概述](survey/overview.md)
+- [[!UICONTROL 客户之声] [!UICONTROL 目标] 概述](voice/overview.md)
