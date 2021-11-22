@@ -1,10 +1,11 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
-source-git-commit: aa8cafc9a40748eda3098b2af732a828d39204b2
+exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
+source-git-commit: 2c4b0d6dd0884fe81565356c31b18c0555bf973f
 workflow-type: tm+mt
-source-wordcount: '724'
-ht-degree: 14%
+source-wordcount: '798'
+ht-degree: 12%
 
 ---
 
@@ -17,6 +18,7 @@ ht-degree: 14%
 Adobe Experience Platform的新增功能：
 
 - [Real-time Customer Data Platform B2B 版本](#B2B)
+- [（测试版）通过临时激活API将受众区段激活到批量目标](#ad-hoc-activation)
 
 ## 现有功能的更新
 
@@ -62,6 +64,10 @@ Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP
 
 请参阅 [Real-time Customer Data Platform B2B版中的模式](../../rtcdp/schemas/b2b.md) 文档，了解有关捕获B2B数据实体的更多信息。
 
+### （测试版）通过临时激活API将受众区段激活到批量目标 {#ad-hoc-activation}
+
+临时激活API允许营销人员以编程方式快速高效地将受众区段激活到目标，以应对需要立即激活的情况。 Ad-hoc audience激活仅受 [批量基于文件的目标](../../destinations/destination-types.md#file-based) 和目前处于测试阶段。 有关更多信息，请参阅 [临时激活API文档](../../destinations/api/ad-hoc-activation-api.md).
+
 ### Attribution AI {#attribution-ai}
 
 Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
@@ -85,3 +91,4 @@ Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾�
 | 自定义配置文件属性 | 除标准事件字段外，Customer AI现在还支持在您的数据中定义自定义用户档案数据集字段（带有时间戳）。 通过使用此选项，您可以添加其他您认为具有影响力的配置文件属性，这些属性可能会提高模型质量并提供更准确的结果。 |
 
 有关Customer AI的更多信息，请参阅 [客户AI文档](../../intelligent-services/customer-ai/overview.md).
+

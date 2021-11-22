@@ -1,10 +1,11 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: 2021年11月版Adobe Experience Platform发行说明。
-source-git-commit: aa8cafc9a40748eda3098b2af732a828d39204b2
+exl-id: f649b516-8ef8-49af-bb3e-0392337d0d86
+source-git-commit: 2c4b0d6dd0884fe81565356c31b18c0555bf973f
 workflow-type: tm+mt
-source-wordcount: '724'
-ht-degree: 14%
+source-wordcount: '798'
+ht-degree: 12%
 
 ---
 
@@ -17,6 +18,7 @@ ht-degree: 14%
 Adobe Experience Platform的新增功能：
 
 - [Real-time Customer Data Platform B2B 版本](#B2B)
+- [（测试版）通过临时激活API将受众区段激活到批量目标](#ad-hoc-activation)
 
 ## 现有功能的更新
 
@@ -61,6 +63,10 @@ Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP
 | 标准B2B XDM类 | Real-time Customer Data Platform B2B Edition提供了多个标准XDM，用于捕获有关基本B2B数据实体（如帐户、机会、营销活动等）的详细信息。 |
 
 请参阅 [Real-time Customer Data Platform B2B版中的模式](../../rtcdp/schemas/b2b.md) 文档，了解有关捕获B2B数据实体的更多信息。
+
+### （测试版）通过临时激活API将受众区段激活到批量目标 {#ad-hoc-activation}
+
+临时激活API允许营销人员以编程方式快速高效地将受众区段激活到目标，以应对需要立即激活的情况。 Ad-hoc audience激活仅受 [批量基于文件的目标](../../destinations/destination-types.md#file-based) 和目前处于测试阶段。 有关更多信息，请参阅 [临时激活API文档](../../destinations/api/ad-hoc-activation-api.md).
 
 ### Attribution AI {#attribution-ai}
 
