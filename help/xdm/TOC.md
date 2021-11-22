@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用体验数据模型(XDM)类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: eea5cfe6111d25da4a7978d3924861250059cc7e
+source-git-commit: a7f95dd5b0b84a8ca5c7a69b5a30e5c3dba16007
 workflow-type: tm+mt
-source-wordcount: '396'
+source-wordcount: '402'
 ht-degree: 13%
 
 ---
@@ -155,6 +155,7 @@ ht-degree: 13%
    * [在API中定义架构关系](tutorials/relationship-api.md)
    * [在Real-time CDP B2B Edition中定义模式关系](tutorials/relationship-b2b.md)
    * [创建临时架构(API)](tutorials/ad-hoc.md)
+   * [扩展软枚举字段(API)](tutorials/extend-soft-enum.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
