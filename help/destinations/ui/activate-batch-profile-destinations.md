@@ -6,9 +6,9 @@ seo-title: Activate audience data to batch profile export destinations
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: 822276890b6ebed922d359f8dece58d8c90dea24
 workflow-type: tm+mt
-source-wordcount: '1958'
+source-wordcount: '2114'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-本文介绍了在Adobe Experience Platform基于批量配置文件的目标（如云存储和电子邮件营销目标）中激活受众数据所需的工作流。
+本文介绍了在Adobe Experience Platform基于批量配置文件的目标（如云存储和电子邮件营销目标）中激活受众数据所需的工作流程。
 
 ## 先决条件 {#prerequisites}
 
@@ -48,6 +48,12 @@ ht-degree: 0%
 
 ## 计划区段导出 {#scheduling}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_schedule"
+>title="计划"
+>abstract="保存区段后，文件导出类型（完整文件或增量文件）和计划便无法更改。"
+>additional-url="https://www.adobe.com/go/destinations-profile-batch-en" text="在文档中了解更多信息"
+
 [!DNL Adobe Experience Platform] 以 [!DNL CSV] 文件。 在 **[!UICONTROL 计划]** 页面，您可以配置要导出的每个区段的计划和文件名。 必须配置计划，但配置文件名是可选的。
 
 >[!IMPORTANT]
@@ -61,6 +67,12 @@ ht-degree: 0%
 ![“创建计划”按钮](../assets/ui/activate-batch-profile-destinations/create-schedule-button.png)
 
 ### 导出完整文件 {#export-full-files}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_exportoptions"
+>title="文件导出选项"
+>abstract="选择 **导出完整文件** 导出符合区段资格的所有配置文件的完整快照。 <br> 选择 **导出增量文件** 仅导出自上次导出以来符合区段资格条件的用户档案。 第一个增量文件导出包含符合该区段资格的所有配置文件，用作回填。 将来的增量文件仅包括自首次增量文件导出以来符合区段资格条件的配置文件。"
+>additional-url="https://www.adobe.com/go/destinations-profile-batch-en" text="在文档中了解更多信息"
 
 选择 **[!UICONTROL 导出完整文件]** 触发导出文件，该文件包含选定区段的所有配置文件资格的完整快照。
 
@@ -112,6 +124,12 @@ ht-degree: 0%
 1. 选择 **[!UICONTROL 创建]** 以保存计划。
 
 ### 配置文件名 {#file-names}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_filename"
+>title="配置文件名"
+>abstract="对于基于文件的目标，每个区段会生成唯一的文件名。 使用文件名编辑器创建和编辑唯一的文件名或保留默认名称。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#file-names" text="在文档中了解更多信息"
 
 默认文件名由目标名称、区段ID以及日期和时间指示器组成。 例如，您可以编辑导出的文件名以区分不同的营销活动，或将数据导出时间附加到文件中。
 
