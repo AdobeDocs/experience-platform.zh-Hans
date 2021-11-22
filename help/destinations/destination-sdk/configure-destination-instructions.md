@@ -2,7 +2,7 @@
 description: 本页列出并介绍了使用Destination SDK配置流目标的步骤。
 title: 使用Destination SDK配置流目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: bc77614eee6cc50d2ce6b14c1b228ed87f88f340
+source-git-commit: 3b320f253516f2c169330e1eed6ad870a583891a
 workflow-type: tm+mt
 source-wordcount: '663'
 ht-degree: 0%
@@ -165,7 +165,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 ## 步骤6:测试目标 {#test-destination}
 
-使用上一步中的配置端点设置目标后，您可以使用 [目标测试工具](./create-template.md) 以测试Adobe Experience Platform与您的目标之间的集成。
+使用上一步中的配置端点设置目标后，您可以使用 [目标测试工具](./test-destination.md) 以测试Adobe Experience Platform与您的目标之间的集成。
 
 在测试目标的过程中，您必须使用Experience PlatformUI创建区段，然后才能将区段激活到目标。 有关如何在Experience Platform中创建区段的说明，请参阅以下两个资源：
 
