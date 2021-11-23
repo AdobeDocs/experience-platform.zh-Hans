@@ -1,130 +1,129 @@
 ---
-keywords: Experience Platform；主题；热门主题；批摄取；批摄取；部分摄取；部分摄取；检索错误；检索错误；部分批摄取；部分批摄取；部分摄取；部分摄取；部分摄取；
+keywords: Experience Platform；主页；热门主题；批量摄取；批量摄取；部分摄取；部分摄取；检索错误；检索错误；部分批量摄取；部分；摄取；
 solution: Experience Platform
-title: 部分批摄取概述
+title: 部分批量摄取概述
 topic-legacy: overview
-description: 本文档提供了有关管理部分批摄取的教程。
+description: 本文档提供了有关管理部分批量摄取的教程。
 exl-id: 25a34da6-5b7c-4747-8ebd-52ba516b9dc3
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 636d6dcbe8eb73b7898fc3794f6b4567956e5618
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '945'
 ht-degree: 0%
 
 ---
 
-# 部分批摄取
+# 部分批量摄取
 
-部分批摄取是指能够摄取包含错误的数据，最高可达到某个阈值。 借助此功能，用户可以成功将其所有正确数据收录到Adobe Experience Platform，同时将其所有错误数据分别进行批量处理，并详细说明其无效的原因。
+部分批量摄取是指摄取包含错误的数据（最高可达特定阈值）的功能。 借助此功能，用户可以成功将其所有正确数据摄取到Adobe Experience Platform中，同时将其所有错误数据分别进行批量处理，并提供有关其无效原因的详细信息。
 
-本文档提供了有关管理部分批摄取的教程。
+本文档提供了有关管理部分批量摄取的教程。
 
-## 入门指南
+## 快速入门
 
-本教程需要对与部分批摄取相关的各种Adobe Experience Platform服务有一定的工作知识。 在开始本教程之前，请查阅以下服务的文档：
+本教程需要了解与部分批量摄取相关的各种Adobe Experience Platform服务的相关知识。 在开始本教程之前，请查阅以下服务的文档：
 
-- [批量摄取](./overview.md):从数据文 [!DNL Platform] 件（如CSV和Parke）中摄取和存储数据的方法。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [批量摄取](./overview.md):方法 [!DNL Platform] 从数据文件（如CSV和Parquet）中摄取和存储数据。
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
 
-以下各节提供了成功调用[!DNL Platform] API所需了解的其他信息。
+以下部分提供了成功调用所需了解的其他信息 [!DNL Platform] API。
 
 ### 读取示例API调用
 
-本指南提供示例API调用，以演示如何设置请求的格式。 这包括路径、必需的标头和格式正确的请求负载。 还提供API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅[!DNL Experience Platform]疑难解答指南中关于如何读取示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)的部分。[
+本指南提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须首先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
 
-- 授权：承载`{ACCESS_TOKEN}`
-- x-api-key:`{API_KEY}`
-- x-gw-ims-org-id:`{IMS_ORG}`
+- 授权：持有者 `{ACCESS_TOKEN}`
+- x-api-key: `{API_KEY}`
+- x-gw-ims-org-id: `{IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源都隔离到特定虚拟沙箱。 对[!DNL Platform] API的所有请求都需要一个头，该头指定操作将在中执行的沙箱的名称：
+中的所有资源 [!DNL Experience Platform] 与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
 
-- x-sandbox-name:`{SANDBOX_NAME}`
-
->[!NOTE]
->
->有关[!DNL Platform]中沙箱的详细信息，请参阅[沙箱概述文档](../../sandboxes/home.md)。
-
-## 在API {#enable-api}中启用批处理以进行部分批摄取
+- x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->本节介绍如何使用API为部分批摄取启用批处理。 有关使用UI的说明，请阅读[在UI](#enable-ui)步骤中启用批以进行部分批摄取。
+>有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
+
+## 在API中为部分批量摄取启用批处理 {#enable-api}
+
+>[!NOTE]
+>
+>此部分介绍如何使用API启用批量获取部分批量。 有关使用UI的说明，请阅读 [在UI中为部分批量摄取启用批处理](#enable-ui) 中。
 
 您可以创建启用了部分摄取的新批。
 
-要创建新批，请按照[批摄取开发人员指南](./api-overview.md)中的步骤操作。 到达&#x200B;**[!UICONTROL Create batch]**&#x200B;步骤后，在请求正文中添加以下字段：
+要创建新批，请按照 [批量获取开发人员指南](./api-overview.md). 一旦您到达 **[!UICONTROL 创建批处理]** 步骤，在请求正文中添加以下字段：
 
 ```json
 {
     "enableErrorDiagnostics": true,
-    "partialIngestionPercentage": 5
+    "partialIngestionPercent": 5
 }
 ```
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `enableErrorDiagnostics` | 允许[!DNL Platform]生成有关批的详细错误消息的标志。 |
-| `partialIngestionPercentage` | 在整个批处理失败之前可接受错误的百分比。 因此，在此示例中，最多5%的批可能是错误，然后才会失败。 |
+| `enableErrorDiagnostics` | 允许 [!DNL Platform] 以生成有关批处理的详细错误消息。 |
+| `partialIngestionPercent` | 在整个批处理失败之前可接受的错误的百分比。 因此，在本例中，在批处理失败之前，最多5%的批可能是错误。 |
 
 
-## 在UI {#enable-ui}中启用批以进行部分批摄取
+## 在UI中为部分批量摄取启用批处理 {#enable-ui}
 
 >[!NOTE]
 >
->本节介绍如何使用UI启用批以进行部分批摄取。 如果您已使用API启用了批以进行部分批摄取，则可以跳到下一节。
+>本节介绍如何使用UI启用批量获取部分批量。 如果您已使用API为部分批量摄取启用了批处理，则可以跳到下一节。
 
-要通过[!DNL Platform] UI启用批处理以进行部分摄取，您可以通过源连接创建新批处理，在现有数据集中创建新批处理，或通过“[!UICONTROL Map CSV to XDM flow]”创建新批处理。
+要通过 [!DNL Platform] UI中，您可以通过源连接创建新批次，在现有数据集中创建新批次，或通过“[!UICONTROL 将CSV映射到XDM流程]&quot;
 
-### 新建源连接{#new-source}
+### 创建新源连接 {#new-source}
 
-要创建新的源连接，请按照[源概述](../../sources/home.md)中列出的步骤操作。 到达&#x200B;**[!UICONTROL Dataflow detail]**&#x200B;步骤后，请注意&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;和&#x200B;**[!UICONTROL Error diagnostics]**&#x200B;字段。
+要创建新的源连接，请按照 [源概述](../../sources/home.md). 一旦您到达 **[!UICONTROL 数据流详细信息]** 步骤，请注意 **[!UICONTROL 部分摄取]** 和 **[!UICONTROL 错误诊断]** 字段。
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch.png)
 
-通过&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换，可启用或禁用部分批摄取。
+的 **[!UICONTROL 部分摄取]** 切换允许您启用或禁用对部分批量摄取的使用。
 
-**[!UICONTROL Error diagnostics]**&#x200B;切换仅在&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换关闭时才显示。 此功能允许[!DNL Platform]生成有关所摄取批次的详细错误消息。 如果&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换打开，将自动实施增强的错误诊断。
+的 **[!UICONTROL 错误诊断]** 仅当 **[!UICONTROL 部分摄取]** 关闭。 此功能允许 [!DNL Platform] 生成有关所摄取批次的详细错误消息。 如果 **[!UICONTROL 部分摄取]** 打开切换开关，将自动强制执行增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/configure-batch-partial-ingestion-focus.png)
 
-**[!UICONTROL Error threshold]**&#x200B;允许您在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+的 **[!UICONTROL 错误阈值]** 用于在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
 
-### 使用现有数据集{#existing-dataset}
+### 使用现有数据集 {#existing-dataset}
 
-要使用现有数据集，请通过选择开始集进行数据集。 右侧的提要栏会填充有关数据集的信息。
+要使用现有数据集，请首先选择一个数据集。 右侧的侧栏会填充有关数据集的信息。
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset.png)
 
-通过&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换，可启用或禁用部分批摄取。
+的 **[!UICONTROL 部分摄取]** 切换允许您启用或禁用对部分批量摄取的使用。
 
-**[!UICONTROL Error diagnostics]**&#x200B;切换仅在&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换关闭时才显示。 此功能允许[!DNL Platform]生成有关所摄取批次的详细错误消息。 如果&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换打开，将自动实施增强的错误诊断。
+的 **[!UICONTROL 错误诊断]** 仅当 **[!UICONTROL 部分摄取]** 关闭。 此功能允许 [!DNL Platform] 生成有关所摄取批次的详细错误消息。 如果 **[!UICONTROL 部分摄取]** 打开切换开关，将自动强制执行增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/monitor-dataset-partial-ingestion-focus.png)
 
-**[!UICONTROL Error threshold]**&#x200B;允许您在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
+的 **[!UICONTROL 错误阈值]** 用于在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
 
-现在，您可以使用&#x200B;**添加数据**&#x200B;按钮上传数据，并且将使用部分摄取来摄取数据。
+现在，您可以使用 **添加数据** 按钮，并且将使用部分摄取来摄取。
 
-### 使用“[!UICONTROL Map CSV to XDM schema]”流{#map-flow}
+### 使用“[!UICONTROL 将CSV映射到XDM架构]“流量” {#map-flow}
 
-要使用“[!UICONTROL Map CSV to XDM schema]”流，请按照[映射CSV文件教程](../tutorials/map-a-csv-file.md)中列出的步骤操作。 到达&#x200B;**[!UICONTROL Add data]**&#x200B;步骤后，请注意&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;和&#x200B;**[!UICONTROL Error diagnostics]**&#x200B;字段。
+使用“[!UICONTROL 将CSV映射到XDM架构]“流”，请按照 [映射CSV文件教程](../tutorials/map-a-csv-file.md). 一旦您到达 **[!UICONTROL 添加数据]** 步骤，请注意 **[!UICONTROL 部分摄取]** 和 **[!UICONTROL 错误诊断]** 字段。
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow.png)
 
-通过&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换，可启用或禁用部分批摄取。
+的 **[!UICONTROL 部分摄取]** 切换允许您启用或禁用对部分批量摄取的使用。
 
-**[!UICONTROL Error diagnostics]**&#x200B;切换仅在&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换关闭时才显示。 此功能允许[!DNL Platform]生成有关所摄取批次的详细错误消息。 如果&#x200B;**[!UICONTROL Partial ingestion]**&#x200B;切换打开，将自动实施增强的错误诊断。
+的 **[!UICONTROL 错误诊断]** 仅当 **[!UICONTROL 部分摄取]** 关闭。 此功能允许 [!DNL Platform] 生成有关所摄取批次的详细错误消息。 如果 **[!UICONTROL 部分摄取]** 打开切换开关，将自动强制执行增强的错误诊断。
 
 ![](../images/batch-ingestion/partial-ingestion/xdm-csv-workflow-partial-ingestion-focus.png)
 
-**[!UICONTROL Error threshold]** 允许您在整个批处理失败之前设置可接受错误的百分比。默认情况下，此值设置为5%。
+**[!UICONTROL 错误阈值]** 用于在整个批处理失败之前设置可接受错误的百分比。 默认情况下，此值设置为5%。
 
 ## 后续步骤 {#next-steps}
 
-本教程介绍了如何创建或修改数据集以启用部分批摄取。 有关批摄取的详细信息，请阅读[批摄取开发人员指南](./api-overview.md)。
+本教程介绍了如何创建或修改数据集以启用部分批量摄取。 有关批量摄取的更多信息，请阅读 [批量获取开发人员指南](./api-overview.md).
 
-有关监视部分摄取错误的信息，请阅读[批摄取错误诊断指南](../quality/error-diagnostics.md)。
+有关监控部分摄取错误的信息，请阅读 [批量摄取错误诊断指南](../quality/error-diagnostics.md).
