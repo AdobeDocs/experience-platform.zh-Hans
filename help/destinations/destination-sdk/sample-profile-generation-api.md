@@ -2,9 +2,9 @@
 description: 本页列出并介绍了可使用“/authoring/sample-profiles” API端点执行的所有API操作，以生成要在目标测试中使用的示例配置文件。
 title: 配置文件生成API操作示例
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: 2ed132cd16db64b5921c5632445956f750fead56
+source-git-commit: 7f0dcc916b72145705ecd09b45aadd40eac99b23
 workflow-type: tm+mt
-source-wordcount: '833'
+source-wordcount: '989'
 ht-degree: 2%
 
 ---
@@ -13,27 +13,36 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->**API端点**:  `https://platform.adobe.io/data/core/activation/authoring/sample-profiles`
+>**API端点**: `https://platform.adobe.io/data/core/activation/authoring/sample-profiles`
 
-本页列出并描述了可使用`/authoring/sample-profiles` API端点执行的所有API操作。
+本页列出并介绍了您可以使用 `/authoring/sample-profiles` API端点。
 
-此API端点允许您生成要使用的示例配置文件：
-* 测试消息转换模板时。 有关更多信息，请参阅[创建和测试消息转换模板](./create-template.md)。
-* 测试目标配置是否正确时。 有关更多信息，请参阅[测试目标配置](./test-destination.md)。
-
-您可以根据AdobeXDM源架构或目标支持的目标架构生成示例配置文件。 要了解AdobeXDM源架构和目标架构之间的差异，请阅读[消息格式](./message-format.md)一文。
-
-## 配置文件生成API操作示例快速入门 {#get-started}
-
-在继续操作之前，请查看[快速入门指南](./getting-started.md) ，了解成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
-
-## 根据源架构生成示例用户档案 {#generate-sample-profiles-source-schema}
+## 为不同的API生成不同的配置文件类型 {#different-profiles-different-apis}
 
 >[!IMPORTANT]
 >
->在[测试目标](./test-destination.md)时，将此处生成的示例配置文件添加到HTTP调用中。
+>使用此API端点可为两个不同的用例生成示例配置文件。 您可以：
+>* 生成用于 [构建和测试报文转换模板](./create-template.md)  — 使用 *目标ID* 作为查询参数。
+>* 生成要在进行调用时使用的用户档案 [测试目标是否配置正确](./test-destination.md)  — 使用 *目标实例ID* 作为查询参数。
 
-您可以根据源架构生成示例配置文件，方法是向`authoring/sample-profiles/`端点发出GET请求，并提供您根据要测试的目标配置创建的目标实例的ID。
+
+您可以根据AdobeXDM源架构（在测试目标时使用）或目标支持的目标架构（在制作模板时使用）生成示例用户档案。 要了解AdobeXDM源架构与目标架构之间的差异，请阅读 [消息格式](./message-format.md) 文章。
+
+请注意，可用于使用示例用户档案的目的不可互换。 根据 *目标ID* 只能用于编写基于生成的消息转换模板和用户档案 *目标实例ID* 只能用于测试目标端点。
+
+## 配置文件生成API操作示例快速入门 {#get-started}
+
+在继续之前，请查看 [入门指南](./getting-started.md) 有关成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
+
+## 根据测试目标时使用的源架构生成示例用户档案 {#generate-sample-profiles-source-schema}
+
+>[!IMPORTANT]
+>
+>将此处生成的示例配置文件添加到HTTP调用(当 [测试目标](./test-destination.md).
+
+您可以通过向 `authoring/sample-profiles/` 端点，并提供您根据要测试的目标配置创建的目标实例的ID。
+
+要获取目标实例的ID，您必须先在Experience PlatformUI中创建与目标的连接，然后才能尝试测试目标。 阅读 [激活目标教程](/help/destinations/ui/activation-overview.md) 并查看下面的提示，了解如何获取要用于此API的目标实例ID。
 
 >[!TIP]
 >
@@ -51,14 +60,14 @@ GET authoring/sample-profiles?destinationInstanceId={DESTINATION_INSTANCE_ID}&co
 | 查询参数 | 描述 |
 | -------- | ----------- |
 | `{DESTINATION_INSTANCE_ID}` | 您生成示例用户档案所依据的目标实例的ID。 |
-| `{COUNT}` | *可选*. 要生成的示例用户档案数。 参数可采用`1 - 1000`之间的值。 <br> 如果未指定count参数，则生成的配置文件的默认数量由目标服务 `maxUsersPerRequest` 器配置中 [的值确定](./destination-server-api.md#create)。如果未定义此属性，则Adobe将生成一个示例配置文件。 |
+| `{COUNT}` | *可选*. 要生成的示例用户档案数。 参数可以采用 `1 - 1000`. <br> 如果未指定count参数，则生成的配置文件的默认数量由 `maxUsersPerRequest` 值 [目标服务器配置](./destination-server-api.md#create). 如果未定义此属性，则Adobe将生成一个示例配置文件。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 
 **请求**
 
-以下请求生成由`{DESTINATION_INSTANCE_ID}`和`{COUNT}`查询参数配置的示例配置文件。
+以下请求会生成由 `{DESTINATION_INSTANCE_ID}` 和 `{COUNT}` 查询参数。
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/core/activation/authoring/sample-profiles?destinationInstanceId=49966037-32cd-4457-a105-2cbf9c01826a&count=3' \
@@ -172,24 +181,24 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `segmentMembership` | 描述个人区段成员资格的映射对象。 有关`segmentMembership`的更多信息，请阅读[区段成员资格详细信息](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html)。 |
+| `segmentMembership` | 描述个人区段成员资格的映射对象。 有关 `segmentMembership`，读取 [区段成员资格详细信息](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html). |
 | `lastQualificationTime` | 此用户档案上次符合区段资格条件的时间戳。 |
 | `xdm:status` | 指示区段成员资格是否已作为当前请求的一部分实现。 接受以下值： <ul><li>`existing`:在请求之前，用户档案已经是区段的一部分，并将继续保持其会员资格。</li><li>`realized`:用户档案将在当前请求中输入区段。</li><li>`exited`:该用户档案将作为当前请求的一部分退出该区段。</li></ul> |
-| `identityMap` | 映射类型字段，用于描述个人的各种身份值及其关联的命名空间。 有关`identityMap`的更多信息，请阅读[架构组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#identityMap)。 |
+| `identityMap` | 映射类型字段，用于描述个人的各种身份值及其关联的命名空间。 有关 `identityMap`，读取 [模式组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#identityMap). |
 
 {style=&quot;table-layout:auto&quot;}
 
-## 根据目标架构生成示例用户档案 {#generate-sample-profiles-target-schema}
+## 根据构建消息转换模板时要使用的目标模式生成示例用户档案 {#generate-sample-profiles-target-schema}
 
 >[!IMPORTANT]
 >
->使用在创建模板时在此处生成的示例配置文件，该示例位于[渲染模板步骤](./render-template-api.md#multiple-profiles-with-body)中。
+>使用在构建模板时在此处生成的示例用户档案，位于 [渲染模板步骤](./render-template-api.md#multiple-profiles-with-body).
 
-您可以根据向`authoring/sample-profiles/`端点发出GET请求的目标架构生成示例配置文件，并根据您创建模板的目标配置提供目标ID。
+您可以根据向发送GET请求的目标架构生成示例用户档案 `authoring/sample-profiles/` 端点，并提供基于您创建模板的目标配置的目标ID。
 
 >[!TIP]
 >
->* 您在此应使用的目标ID是与使用`/destinations`端点创建的目标配置对应的`instanceId`。 请参阅[目标配置API引用](./destination-configuration-api.md#retrieve-list)。
+>* 您在此应使用的目标ID是 `instanceId` 对应于目标配置的 `/destinations` 端点。 请参阅 [目标配置API引用](./destination-configuration-api.md#retrieve-list).
 
 
 **API格式**
@@ -202,13 +211,13 @@ GET authoring/sample-profiles?destinationId={DESTINATION_ID}&count={COUNT}
 | 查询参数 | 描述 |
 | -------- | ----------- |
 | `{DESTINATION_ID}` | 基于生成示例用户档案的目标配置的ID。 |
-| `{COUNT}` | *可选*. 要生成的示例用户档案数。 参数可采用`1 - 1000`之间的值。 <br> 如果未指定count参数，则生成的配置文件的默认数量由目标服务 `maxUsersPerRequest` 器配置中 [的值确定](./destination-server-api.md#create)。如果未定义此属性，则Adobe将生成一个示例配置文件。 |
+| `{COUNT}` | *可选*. 要生成的示例用户档案数。 参数可以采用 `1 - 1000`. <br> 如果未指定count参数，则生成的配置文件的默认数量由 `maxUsersPerRequest` 值 [目标服务器配置](./destination-server-api.md#create). 如果未定义此属性，则Adobe将生成一个示例配置文件。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求生成由`{DESTINATION_ID}`和`{COUNT}`查询参数配置的示例配置文件。
+以下请求会生成由 `{DESTINATION_ID}` 和 `{COUNT}` 查询参数。
 
 ```shell
 curl --location --request GET 'https://platform.adobe.io/data/core/activation/authoring/sample-profiles?destinationId=49966037-32cd-4457-a105-2cbf9c01826a&count=3' \
@@ -366,8 +375,8 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 
 ## API错误处理 {#api-error-handling}
 
-目标SDK API端点遵循常规Experience PlatformAPI错误消息原则。 请参阅平台疑难解答指南中的[API状态代码](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes)和[请求标头错误](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors)。
+Destination SDK API端点遵循常规的Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) 和 [请求标头错误](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) 平台疑难解答指南中。
 
 ## 后续步骤
 
-在阅读本文档后，您现在知道如何生成示例用户档案，以在[测试消息转换模板](./create-template.md)时或在[测试目标是否正确配置](./test-destination.md)时使用。
+阅读本文档后，您现在知道如何生成要在 [测试消息转换模板](./create-template.md) 或 [测试目标是否配置正确](./test-destination.md).
