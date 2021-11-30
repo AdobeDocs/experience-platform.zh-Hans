@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: 请阅读本教程，了解如何使用Adobe Experience Platform Segmentation Service API评估区段并访问区段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 44644d786842564c76234bacb1f19815741b92ae
+source-git-commit: 9e73925b0842c3b67db8bfda4b984bfa3e98a2fe
 workflow-type: tm+mt
-source-wordcount: '1572'
+source-wordcount: '1595'
 ht-degree: 0%
 
 ---
@@ -86,12 +86,11 @@ ht-degree: 0%
 
 ### 创建区段作业
 
-区段作业是创建新受众区段的异步过程。 它引用区段定义，以及控制如何 [!DNL Real-time Customer Profile] 合并配置文件片段中的重叠属性。 成功完成区段作业后，您可以收集有关该区段的各种信息，例如处理过程中可能发生的任何错误以及受众的最终大小。
+区段作业是一种异步流程，可根据需要创建受众区段。 它引用区段定义，以及控制如何 [!DNL Real-time Customer Profile] 合并配置文件片段中的重叠属性。 成功完成区段作业后，您可以收集有关该区段的各种信息，例如处理过程中可能发生的任何错误以及受众的最终大小。 每次要刷新当前符合区段定义条件的受众时，都需要运行区段作业。
 
 您可以通过向 `/segment/jobs` 的端点 [!DNL Real-time Customer Profile] API。
 
 有关使用此端点的更多详细信息，请参阅 [segment jobs endpoint wide](../api/segment-jobs.md#create)
-
 
 ### 查找区段作业状态
 
