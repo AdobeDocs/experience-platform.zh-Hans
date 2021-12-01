@@ -3,9 +3,9 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据经过哈希处理的电子邮件，激活Facebook营销活动的用户档案以进行受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 822276890b6ebed922d359f8dece58d8c90dea24
+source-git-commit: 357916aa925c7b3ada4abe64a2bc6ad090d70cc0
 workflow-type: tm+mt
-source-wordcount: '1558'
+source-wordcount: '1589'
 ht-degree: 1%
 
 ---
@@ -138,6 +138,21 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 >title="受众来源"
 >abstract="选择区段中客户数据的最初收集方式。 当区段定向用户时，数据将显示在Facebook中"
 >additional-url="http://www.adobe.com/go/destinations-facebook-activate-section-en" text="在文档中了解更多信息"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_facebook_originofaudience_customers"
+>title="受众来源"
+>abstract="广告商直接从客户那里收集数据。"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_facebook_originofaudience_partners"
+>title="受众来源"
+>abstract="广告商直接从其合作伙伴那里收集数据。"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_facebook_originofaudience_customersandpartners"
+>title="受众来源"
+>abstract="广告商直接从其客户和合作伙伴那里收集数据。"
 
 请参阅 [将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
