@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了使用云存储帐户配置新数据流的步骤。
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: 82f02064477cc5336bf528a34284c9f4f7669c3d
+source-git-commit: db0c295777a98cc945d7c88f3e49eda3d2581f7b
 workflow-type: tm+mt
-source-wordcount: '2067'
+source-wordcount: '2045'
 ht-degree: 0%
 
 ---
@@ -187,13 +187,7 @@ ht-degree: 0%
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/scheduling-once.png)
 
-## 提供数据流详细信息 {#provide-dataflow-details}
-
->[!CONTEXTUALHELP]
->id="platform_sources_alerts_subscribe"
->title="订阅源警报"
->abstract="选择要订阅和接收源数据流通知警报的选项。"
->text="Learn more in documentation"
+## 提供数据流详细信息
 
 的 **[!UICONTROL 数据流详细信息]** 步骤，允许您命名并简要描述新数据流。
 
