@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了使用云存储帐户配置新数据流的步骤。
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: 65007d1ee7934e2b3c98601b0a51542ce24bafd0
+source-git-commit: 82f02064477cc5336bf528a34284c9f4f7669c3d
 workflow-type: tm+mt
-source-wordcount: '2082'
+source-wordcount: '2067'
 ht-degree: 0%
 
 ---
@@ -193,7 +193,7 @@ ht-degree: 0%
 >id="platform_sources_alerts_subscribe"
 >title="订阅源警报"
 >abstract="选择要订阅和接收源数据流通知警报的选项。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/dataflow/cloud-storage.html?lang=en#provide-dataflow-details" text="在文档中了解更多信息"
+>text="Learn more in documentation"
 
 的 **[!UICONTROL 数据流详细信息]** 步骤，允许您命名并简要描述新数据流。
 
