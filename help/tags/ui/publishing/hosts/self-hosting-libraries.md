@@ -1,10 +1,11 @@
 ---
 title: 自托管库
 description: 了解如何为Adobe Experience Platform中的标记库内部版本实施自托管。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 8c3bf202-de7a-46e0-801f-0cede24865fd
+source-git-commit: 91b28fc284344b42020b0e49b64ac023e492d572
 workflow-type: tm+mt
-source-wordcount: '495'
-ht-degree: 67%
+source-wordcount: '489'
+ht-degree: 74%
 
 ---
 
@@ -12,9 +13,9 @@ ht-degree: 67%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-Adobe Experience Platform中的标记允许生成一组名为[build](../builds.md)的文件。 这组文件控制应用程序在运行时的行为。
+Adobe Experience Platform中的标记允许生成一组称为 [构建](../builds.md). 这组文件控制应用程序在运行时的行为。
 
 内部版本需要托管在某个位置，这样客户端设备才能在运行时根据需要对其进行检索。
 
@@ -40,7 +41,6 @@ Adobe 没有 Web 托管业务。如果您选择由 Adobe 管理您的托管文�
 
 * 一些浏览器会根据最终用户配置的隐私设置阻止 assets.adobedtm.com 域
 * 自托管可减少所需的 DNS 查找次数
-* 您需要使用HTTP/2
 * 出于安全原因，您需要设置特定的标头
 * 您的缓存控制要求与Adobe默认设置不同
 * 您希望更好地控制边缘节点的位置
