@@ -1,27 +1,27 @@
 ---
-title: Adobe Experience Platform Web SDK配置
-description: 了解Adobe Experience Platform Web SDK标记扩展。
+title: 配置Adobe Experience Platform Web SDK扩展
+description: 如何在数据收集UI中配置Adobe Experience Platform Web SDK标记扩展。
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+source-git-commit: 92344ca9c2daf603d866c8a3cc4e92b72a382fb1
 workflow-type: tm+mt
-source-wordcount: '1034'
+source-wordcount: '1049'
 ht-degree: 7%
 
 ---
 
-# 概述
+# 配置Adobe Experience Platform Web SDK扩展
 
-Adobe Experience Platform Web SDK扩展通过Adobe Experience Platform Edge Network从Web属性向Adobe Experience Cloud发送数据。 该扩展允许您将数据流式传输到平台、同步身份、处理客户同意信号并自动收集上下文数据。
+Adobe Experience Platform Web SDK标记扩展通过Adobe Experience Platform Edge Network从Web属性向Adobe Experience Cloud发送数据。 该扩展允许您将数据流式传输到平台、同步身份、处理客户同意信号并自动收集上下文数据。
 
 本文档介绍如何在数据收集UI中配置扩展。
 
-## 配置扩展
+## 快速入门
 
-如果已经为资产安装了Platform Web SDK扩展，请在数据收集UI中打开该资产，然后选择&#x200B;**[!UICONTROL Extensions]**&#x200B;选项卡。 在Platform Web SDK下，选择&#x200B;**[!UICONTROL 配置]**。
+如果已为资产安装Platform Web SDK扩展，请在数据收集UI中打开该资产，然后选择 **[!UICONTROL 扩展]** 选项卡。 在Platform Web SDK下，选择 **[!UICONTROL 配置]**.
 
 ![](../images/extension/overview/configure.png)
 
-如果尚未安装该扩展，请选择&#x200B;**[!UICONTROL Catalog]**&#x200B;选项卡。 从可用扩展列表中，找到Platform Web SDK扩展，然后选择&#x200B;**[!UICONTROL Install]**。
+如果尚未安装该扩展，请选择 **[!UICONTROL 目录]** 选项卡。 从可用扩展的列表中，找到Platform Web SDK扩展，然后选择 **[!UICONTROL 安装]**.
 
 ![](../images/extension/overview/install.png)
 
@@ -37,28 +37,28 @@ Adobe Experience Platform Web SDK扩展通过Adobe Experience Platform Edge Netw
 
 Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名称用于通过标记配置向多个组织发送数据。
 
-扩展的名称默认为“[!DNL alloy]”。 但是，您可以将实例名称更改为任何有效的 JavaScript 对象名称。
+扩展的名称默认为“[!DNL alloy]&quot; 但是，您可以将实例名称更改为任何有效的 JavaScript 对象名称。
 
 ### **[!UICONTROL IMS 组织 ID]**
 
-[!UICONTROL IMS组织ID]是您希望在Adobe时将数据发送到的组织。 大多数情况下，会使用自动填充的默认值。 当页面上有多个实例时，使用要向其发送数据的第二个组织的值填充此字段。
+的 [!UICONTROL IMS组织ID] 是您希望在Adobe时将数据发送到的组织。 大多数情况下，会使用自动填充的默认值。 当页面上有多个实例时，使用要向其发送数据的第二个组织的值填充此字段。
 
 ### **[!UICONTROL 边缘域]**
 
-[!UICONTROL Edge Domain]是Adobe Experience Platform扩展发送和接收数据的域。 该扩展要求您对生产流量使用第一方 CNAME。默认的第三方域适用于开发环境，但不适合生产环境。[此处](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)列出了有关如何设置第一方 CNAME 的说明。
+的 [!UICONTROL 边缘域] 是Adobe Experience Platform扩展发送和接收数据的域。 该扩展要求您对生产流量使用第一方 CNAME。默认的第三方域适用于开发环境，但不适合生产环境。[此处](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)列出了有关如何设置第一方 CNAME 的说明。
 
 ## [!UICONTROL 数据流]
 
 将请求发送到Adobe Experience Platform边缘网络时，会使用数据流ID引用服务器端配置。 您无需在网站上进行代码更改即可更新配置。
 
-有关更多信息，请参阅[datastreams](../fundamentals/datastreams.md)指南。
+请参阅 [数据流](../fundamentals/datastreams.md) 以了解更多信息。
 
 
 ## [!UICONTROL 隐私]
 
 ![](../images/extension/overview/privacy.png)
 
-[!UICONTROL Privacy]部分允许您配置SDK如何处理来自您网站的用户同意信号。 具体而言，如果未提供其他明确的同意首选项，则允许您选择用户假定的默认同意级别。 默认同意级别不会保存到用户的配置文件中。 下表分析了每个选项的要求：
+的 [!UICONTROL 隐私] 部分，用于配置SDK如何处理来自您网站的用户同意信号。 具体而言，如果未提供其他明确的同意首选项，则允许您选择用户假定的默认同意级别。 默认同意级别不会保存到用户的配置文件中。 下表分析了每个选项的要求：
 
 | [!UICONTROL 默认同意级别] | 描述 |
 | --- | --- |
@@ -85,7 +85,7 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 ![](../images/extension/overview/personalization.png)
 
-如果要在加载个性化内容时隐藏网站的某些部分，则可以在预隐藏样式编辑器中指定要隐藏的元素。 然后，您可以复制为您提供的默认预隐藏代码片段，并将其粘贴到HTML站点的`<head>`元素中。
+如果要在加载个性化内容时隐藏网站的某些部分，则可以在预隐藏样式编辑器中指定要隐藏的元素。 然后，您可以复制为您提供的默认预隐藏代码片段，并将其粘贴到 `<head>`元素。
 
 ## [!UICONTROL 数据收集]
 
@@ -93,15 +93,15 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 ### [!UICONTROL 回调函数]
 
-扩展中提供的回调函数也称为库中的[`onBeforeEventSend`函数](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en)。 利用此函数，可在将事件发送到Adobe Edge网络之前全局修改事件。 有关如何使用此函数的详细信息，请在[此处](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#modifying-events-globally)找到。
+扩展中提供的回调函数也称为 [`onBeforeEventSend` 函数](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en) 中。 利用此函数，可在将事件发送到Adobe Edge网络之前全局修改事件。 有关如何使用此函数的更多详细信息，请参阅 [此处](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/tracking-events.html?lang=en#modifying-events-globally).
 
 ### [!UICONTROL 单击数据收集]
 
-SDK可以自动收集您的链接点击信息。 默认情况下，此功能处于启用状态，但可以使用此选项将其禁用。 如果链接包含[!UICONTROL Download Link Qualifier]文本框中列出的下载表达式之一，则也会将其标记为下载链接。 Adobe为您提供一些默认的下载链接限定符，但这些限定符可以随时进行编辑。
+SDK可以自动收集您的链接点击信息。 默认情况下，此功能处于启用状态，但可以使用此选项将其禁用。 如果链接包含 [!UICONTROL 下载链接限定符] 文本框。 Adobe为您提供一些默认的下载链接限定符，但这些限定符可以随时进行编辑。
 
 ### [!UICONTROL 自动收集的上下文数据]
 
-默认情况下，SDK会收集与设备、Web、环境和放置上下文有关的特定上下文数据。 如果要查看Adobe收集的信息列表，可在[此处](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/automatic-information.html?lang=en)找到该列表。 如果您不希望收集此数据，或者您只想收集某些类别的数据，则可以更改这些选项。
+默认情况下，SDK会收集与设备、Web、环境和放置上下文有关的特定上下文数据。 如果要查看Adobe收集的信息列表，可以找到 [此处](https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/automatic-information.html?lang=en). 如果您不希望收集此数据，或者您只想收集某些类别的数据，则可以更改这些选项。
 
 ## [!UICONTROL 高级设置]
 
