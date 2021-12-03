@@ -2,9 +2,9 @@
 title: 发行说明
 description: Adobe Experience Platform中标记的最新发行说明。
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: cda34c08a53d084a92a07caa9a2b166e27d9e28c
+source-git-commit: 2056f7f6e7372fa1dee2e975a75e7ba3b8dfe518
 workflow-type: tm+mt
-source-wordcount: '578'
+source-wordcount: '658'
 ht-degree: 6%
 
 ---
@@ -14,6 +14,12 @@ ht-degree: 6%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch正在Experience Platform中被重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
+
+## 2021 年 11 月 15 日
+
+**在标记中接受ES6代码**  — 现在，可在标记中使用包含ES6代码的扩展和自定义代码。 在扩展目录中，您将在每个包含ES6代码的扩展的卡片中看到一个ES6+标签。 IE10和IE11不支持ES6代码。 在标记库中使用ES6代码之前，请尽量缩短。
+
+**将Terser用作JavaScript压缩程序** - Uglifier已被替换为Terser。 从此版本开始，所有标记库都将由Terser缩小。
 
 ## 2021 年 10 月 21 日
 
@@ -43,7 +49,7 @@ ht-degree: 6%
 
 ## 2021年4月22日
 
-**在Adobe Experience Platform中收集数据**  — 向Adobe发送数据不仅仅是将标记部署到网站或将配置部署到应用程序。  使用Experience PlatformSDK和边缘网络需要访问其他平台功能。  过去，这需要登录到几个不同的工具，但现在它们在一起。
+**在Adobe Experience Platform中收集数据**  — 向Adobe发送数据不仅仅是将标记部署到您的网站或将配置部署到应用程序。  使用Experience PlatformSDK和边缘网络需要访问其他平台功能。  过去，这需要登录到几个不同的工具，但现在它们在一起。
 
 Platform中的数据收集包含六项功能，您新近简化的导航将只包含您的公司和用户帐户有权访问的项目。  某些功能名称也已更新，以匹配Experience Platform的命名模式。
 
