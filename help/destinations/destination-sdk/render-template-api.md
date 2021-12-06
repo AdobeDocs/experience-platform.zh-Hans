@@ -2,9 +2,9 @@
 description: 本页列出并描述了您可以使用“/authoring/testing/template/render” API端点执行的所有API操作，以根据消息转换模板为目标渲染导出的数据。
 title: 渲染模板API操作
 exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
-source-git-commit: 5ecfd6e7f2f783d31642b7d81cc34b51eb0d6307
+source-git-commit: aa5898369d41ba48a1416a0b4ea82f6345333d18
 workflow-type: tm+mt
-source-wordcount: '786'
+source-wordcount: '824'
 ht-degree: 1%
 
 ---
@@ -17,13 +17,15 @@ ht-degree: 1%
 
 本页列出并介绍了您可以使用 `/authoring/testing/template/render` API端点，用于根据您的 [消息转换模板](./message-format.md#using-templating). 有关此端点支持的功能的描述，请阅读 [创建模板](./create-template.md).
 
-## 呈现模板API操作快速入门 {#get-started}
+## 渲染模板API操作入门 {#get-started}
 
 在继续之前，请查看 [入门指南](./getting-started.md) 有关成功调用API所需的重要信息，包括如何获取所需的目标创作权限和所需标头。
 
 ## 根据消息转换模板渲染导出的用户档案 {#render-exported-data}
 
 您可以通过向 `authoring/testing/template/render` 端点，并提供目标配置的目标ID以及您使用创建的模板 [模板API端点示例](./sample-template-api.md).
+
+您可以首先使用一个简单的模板来导出原始配置文件，而不应用任何转换，然后转到一个更复杂的模板，该模板将转换应用于配置文件。 简单模板的语法为： <br> `"template": "{% for profile in input.profiles %}{{profile|raw}}{% endfor %}}"`
 
 >[!TIP]
 >
