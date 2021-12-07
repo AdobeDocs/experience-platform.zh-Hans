@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK收集商务和产品信息
 description: 了解如何使用Adobe Experience Platform Web SDK添加与产品或购物车相关的数据。
 keywords: 产品；商务；度量；度量；订单；购物车放弃；结账；productListAdds;productListOpens;productListRepons;productListViews;productViews；购买；saveForLaters;currencyCode;paymentAmount;paymentType;transactionID;priceTotal;purchaseID;purchaseOrderNumber;
 exl-id: 3c79e776-89ef-494b-a2ea-3c23efce09ae
-source-git-commit: 22d15dde62f3113167684c7a76a2265e6f0e7bab
+source-git-commit: 51a18ca3a9d0817eafeecea328900eb2f4d1d9a4
 workflow-type: tm+mt
-source-wordcount: '1324'
+source-wordcount: '1326'
 ht-degree: 6%
 
 ---
@@ -114,7 +114,7 @@ alloy("sendEvent",{
 | **字段** | **推荐** | **描述** |
 |---|---|---|
 | [currencyCode](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmcurrencycode) | 可选 | 的 [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 产品的货币。 仅当您可以拥有具有不同货币代码的产品且产品适用时，此功能才有用。 例如，当购物车或添加到购物车时。 |
-| [priceTotal](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmpricetotal) | 强烈建议 | 仅应在适用时进行设置。 例如，可能无法在 `productView` 因为不同产品的不同价格可能不同，但 `productListAdds`. |
+| [priceTotal](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmpricetotal) | 强烈建议 | 仅应在适用时进行设置。 例如，可能无法在 `productView` 事件，因为产品的不同变体可能具有不同的价格，但 `productListAdds` 事件。 |
 | [产品](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproduct) | 强烈建议 | 产品的XDM ID。 |
 | [productAddMethod](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmproductaddmethod) | 强烈建议 | 访客用于将产品项目添加到列表的方法。 设置为 `productListAdds` 度量，且仅当产品添加到列表时才应使用。 示例包括 `add to cart button`、`quick add` 和 `upsell`。 |
 | [productName](https://github.com/adobe/xdm/blob/1c22180490558e3c13352fe3e0540cb7e93c69ca/docs/reference/content/productlistitem.schema.md#xdmname) | 强烈建议 | 此名称设置为产品的显示名称或人类可读名称。 |
