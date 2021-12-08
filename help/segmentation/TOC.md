@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform Segmentation Service
 breadcrumb-title: Segmentation Service 指南
 user-guide-description: 根据实时客户档案数据构建区段并生成受众。
 feature: Segments
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 0f20b5cfb3301bc7f7f336e14e9faa0234c05c51
 workflow-type: tm+mt
-source-wordcount: '159'
+source-wordcount: '163'
 ht-degree: 26%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 26%
    - [边缘分割](api/edge-segmentation.md)
    - [导出作业](api/export-jobs.md)
    - [预览和估计](api/previews-and-estimates.md)
-   - [调度程序](api/schedules.md)
+   - [计划](api/schedules.md)
    - [区段定义](api/segment-definitions.md)
    - [区段作业](api/segment-jobs.md)
    - [区段搜索](api/segment-search.md)
@@ -31,14 +31,16 @@ ht-degree: 26%
    - [概述](ui/overview.md)
    - [区段功能板](ui/segment-dashboard.md)
    - [区段生成器](ui/segment-builder.md)
-   - [区段匹配](ui/segment-match.md)
    - [边缘分割](ui/edge-segmentation.md)
    - [流分段](ui/streaming-segmentation.md)
    - [流分段（视频）](video/streaming-segmentation-overview.md)
    - [时间约束重构](ui/segment-refactoring.md)
+   - 区段匹配 {#segment-match}
+      - [区段匹配概述](ui/segment-match/overview.md)
+      - [故障排除](ui/segment-match/troubleshooting.md)
 - [尊重同意](consents.md)
 - [多实体分段](multi-entity-segmentation.md)
-- 用户档案查询语言{#pql}
+- 用户档案查询语言 {#pql}
    - [概述](pql/overview.md)
    - [布尔函数](pql/boolean-functions.md)
    - [比较函数](pql/comparison-functions.md)
