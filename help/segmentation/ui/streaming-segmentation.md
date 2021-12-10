@@ -5,9 +5,9 @@ title: 流分段UI指南
 topic-legacy: ui guide
 description: 通过Adobe Experience Platform上的流式分段，您可以近乎实时地进行分段，同时重点关注数据的丰富性。 使用流式分段，区段鉴别现在会在数据登陆平台时进行，从而缓解了计划和运行分段作业的需求。 借助此功能，大多数区段规则现在都可以在数据传递到平台时进行评估，这意味着区段成员资格将保持为最新状态，而无需运行计划的分段作业。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 6db0aef66abe11b8ed9f4b8da56875aa296b1a10
+source-git-commit: 1fa7663cc8bebca98f284593e98163315acda478
 workflow-type: tm+mt
-source-wordcount: '1190'
+source-wordcount: '1245'
 ht-degree: 0%
 
 ---
@@ -69,6 +69,12 @@ ht-degree: 0%
 具体而言， **[!UICONTROL 合格受众总大小]** 中。 的 **[!UICONTROL 合格受众总数]** 显示上次完成区段作业运行中符合条件的受众的总数。 如果区段作业在过去24小时内未完成，则将从估计中获取受众数量。
 
 下面是一个折线图，显示过去24小时内符合条件且被取消资格的区段数量。 可以调整下拉菜单以显示最近24小时、上周或最近30天。
+
+>[!NOTE]
+>
+>如果某个区段从无状态变为已实现，或从退出变为已实现，则该区段会被视为符合条件。 如果区段从已实现到退出或从现有到退出，则该区段被视为不合格。
+>
+>有关这些状态的更多信息，请参阅 [分段概述](./overview.md#browse).
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment-graph.png)
 

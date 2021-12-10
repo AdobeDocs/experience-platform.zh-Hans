@@ -5,7 +5,7 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: ce3d5e3db28d39b8d7d5a984700dd681c650ac94
 workflow-type: tm+mt
 source-wordcount: '1693'
 ht-degree: 0%
@@ -45,7 +45,7 @@ ht-degree: 0%
 
 ![](../../dashboards/images/segments/dashboard-overview.png)
 
-## 浏览
+## 浏览 {#browse}
 
 选择 **[!UICONTROL 浏览]** 选项卡，以查看IMS组织的所有区段定义列表。
 
