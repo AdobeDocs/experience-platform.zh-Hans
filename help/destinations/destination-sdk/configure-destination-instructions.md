@@ -2,9 +2,9 @@
 description: 本页列出并介绍了使用Destination SDK配置流目标的步骤。
 title: 使用Destination SDK配置流目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 3b320f253516f2c169330e1eed6ad870a583891a
+source-git-commit: b3d0f0c43b60895961cee2ee54518c0450e2e2f7
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
@@ -61,6 +61,10 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 下面显示了目标模板的配置示例，该配置是使用 `/destinations` API端点。 有关此模板的更多信息，请参阅 [目标配置](./destination-configuration.md).
 
 要将步骤1中的服务器和模板配置连接到此目标配置，请将服务器和模板配置的实例ID添加为 `destinationServerId` 这里。
+
+>[!IMPORTANT]
+>
+>要创建正确配置的目标，您需要 *必须* 在 `identityNamespaces`，如下所示。 如果未配置目标标识，则用户将无法继续通过 [映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) 激活工作流的URL。
 
 ```json
 POST platform.adobe.io/data/core/activation/authoring/destinations
