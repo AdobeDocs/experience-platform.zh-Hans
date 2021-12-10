@@ -2,9 +2,9 @@
 title: Real-time Customer Data Platform B2B版中的模式
 description: 概述Real-time Customer Data Platform B2B Edition中体验数据模型(XDM)模式的角色。
 exl-id: 3b18d377-108f-443f-86ae-dc7537cf9013
-source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
+source-git-commit: 1a104d26b920082ee73178dd0ad7234ad43dec1a
 workflow-type: tm+mt
-source-wordcount: '220'
+source-wordcount: '235'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,8 @@ Real-time CDP B2B Edition中提供了以下标准类：
 * [XDM业务机会人员关系](../../xdm/classes/b2b/business-opportunity-person-relation.md)
 * [XDM业务营销列表](../../xdm/classes/b2b/business-marketing-list.md)
 * [XDM业务营销列表成员](../../xdm/classes/b2b/business-marketing-list-members.md)
+
+要了解架构如何适合您的B2B工作流，请参阅 [端到端教程](../b2b-tutorial.md).
 
 有关如何在两个模式之间创建多对一关系的步骤，请参阅 [定义B2B模式关系](../../xdm/tutorials/relationship-b2b.md).
 

@@ -1,17 +1,17 @@
 ---
-title: 实时CDP B2B Edition的分段用例概述
+title: 实时CDP B2B版的分段用例
 description: 概述各种可用的实时CDP B2B Edition用例。
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: e6f71954d52e0a998955c3420307417cc011c24d
+source-git-commit: 9bd7434f2b224d76decac1e04d8491a6b3149a3a
 workflow-type: tm+mt
-source-wordcount: '1096'
-ht-degree: 0%
+source-wordcount: '1105'
+ht-degree: 1%
 
 ---
 
-# Real-time Customer Data Platform B2B版分段用例概述
+# Real-time Customer Data Platform B2B版的分段用例
 
-本文档提供了有关Real-time CDP B2B Edition可用的分段示例，以及如何针对常见的B2B用例组合不同类型的属性。
+本文档提供了Real-time CDP B2B Edition中的区段定义示例，以及如何针对常见的B2B用例组合不同类型的属性。 要了解目标如何融入您的B2B工作流，请参阅 [端到端教程](../b2b-tutorial.md#create-a-segment-to-evaluate-your-data).
 
 >[!NOTE]
 >
@@ -70,31 +70,31 @@ B2B类及其属性会附加一个 `B2B` 标签，以区分区段工作区中的�
 
 ![显示示例2设置的UI](../assets/segmentation/example-2.png)
 
-### 示例3
+### 示例 3
 
 查找直接分配到帐户位于给定位置的任何业务机会的所有人员（加拿大）。 此区段需要在 [!UICONTROL XDM个人配置文件] 类， [!UICONTROL XDM业务机会人员关系] 类， [!UICONTROL XDM业务机会] 类和 [!UICONTROL XDM业务帐户] 类。
 
 ![显示示例3设置的UI](../assets/segmentation/example-3.png)
 
-### 示例4
+### 示例 4
 
 查找帐户位于“金融”行业的任意机会的“决策者”，并在最近三天访问定价页面的所有人员。 此区段需要在 [!UICONTROL XDM个人配置文件] 类， [!UICONTROL XDM业务机会人员关系] 类， [!UICONTROL XDM业务机会] 类和 [!UICONTROL XDM业务帐户] 类和 [!UICONTROL XDM ExperienceEvent] 类。
 
 ![显示示例4设置的UI](../assets/segmentation/example-4.png)
 
-### 示例5
+### 示例 5
 
 查找在人力资源部（人力资源部）工作并且与任何具有至少一个机会（价值100万美元）或更高金额的帐户相关的所有人员。 此区段需要在 [!UICONTROL XDM个人配置文件] 类， [!UICONTROL XDM业务帐户] 类和 [!UICONTROL XDM业务机会] 类。
 
 ![显示示例5设置的UI](../assets/segmentation/example-5.png)
 
-### 示例6
+### 示例 6
 
 查找所有职位为副总裁且与任何年收入达到指定金额（1亿美元）或更高的帐户相关的人员，并在上个月至少访问了定价页面3次。 此区段需要在 [!UICONTROL XDM个人配置文件] 类， [!UICONTROL XDM业务帐户] 类和 [!UICONTROL XDM ExperienceEvent] 类。
 
 ![显示示例6设置的UI](../assets/segmentation/example-6.png)
 
-### 示例7
+### 示例 7
 
 查找所有属于任何已关闭的销售机会的“决策者”，并在上周访问定价页面。 此区段需要在 [!UICONTROL XDM个人配置文件] 类， [!UICONTROL XDM业务机会人员关系] 类， [!UICONTROL XDM业务机会] 类和 [!UICONTROL XDM ExperienceEvent] 类。
 
