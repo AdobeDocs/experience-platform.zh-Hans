@@ -1,7 +1,8 @@
 ---
 title: Adobe客户端数据层扩展
 description: 了解Adobe Experience Platform中的Adobe客户端数据层标记扩展。
-source-git-commit: 8dfb7bdc16d0654ee1d76dc5f5af50938b122d33
+exl-id: c4d1b4d3-4b51-4701-be2e-31b08e109bf6
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '643'
 ht-degree: 0%
@@ -30,11 +31,11 @@ This installation will not be supported on our end.<br>
 
 ## 扩展视图
 
-默认情况下，ACDL脚本会创建一个名为`adobeDataLayer`的新数据层。 扩展视图可让您根据需要更改此名称。 加载标记后，您设置的名称将被实例化。
+默认情况下，ACDL脚本会使用变量名称创建新数据层 `adobeDataLayer`. 扩展视图可让您根据需要更改此名称。 加载标记后，您设置的名称将被实例化。
 
 >[!NOTE]
 >
->更改对象名称时，仍会实例化原始`adobeDataLayer`对象，然后将其复制到您选择的新变量名称。
+>更改对象名称时，原始 `adobeDataLayer` 对象仍在实例化中，然后被复制到您选择的新变量名称中。
 
 ## 事件
 
@@ -74,15 +75,15 @@ This installation will not be supported on our end.<br>
 
 在指定事件的情况下，事件侦听器会跟踪与特定字符串匹配的任何事件。
 
-例如，使用此配置时设置`myEvent`会导致监听程序仅跟踪以下推送事件：
+例如，设置 `myEvent` 使用此配置时，侦听器将只跟踪以下推送事件：
 
 * `adobeDataLayer.push({"event":"myEvent"})`
 
 您还可以更改事件侦听器的范围。 不同选项概述如下：
 
-* `all`:这是默认选项，在过去满足您选择的上述条件或将来推送该条件时，都会触发规则。如果您使用异步实施，则最安全的选项是。
+* `all`:这是默认选项，在过去满足您选择的上述条件或将来推送该条件时，都会触发规则。 如果您使用异步实施，则最安全的选项是。
 * `future`:仅当将与您的条件匹配的新推送事件发送到数据层时，此选项才会触发规则。
-* `past`:此选项仅针对与您的条件匹配的旧推送事件触发规则。将忽略与您的条件匹配的新推送，并且不再触发规则。
+* `past`:此选项仅针对与您的条件匹配的旧推送事件触发规则。 将忽略与您的条件匹配的新推送，并且不再触发规则。
 
 ## 操作
 
@@ -94,11 +95,11 @@ This installation will not be supported on our end.<br>
 
 但是，当前不可能在推送方法期间完全删除以前设置的信息。
 
-**Reset &amp; Set Computed State**&#x200B;操作复制最后一个计算状态，清空数据层对象，并重新推送最后一个状态。
+的 **重置和设置计算状态** 操作会复制最后一个计算状态，清空数据层对象，并重新推送最后一个状态。
 
 ### 推送到数据层
 
-该扩展为您提供了一项操作，可将JSON内容推送到数据层本身。此操作可让您直接在JSON中使用数据元素。 在JSON编辑器中，数据元素应使用百分比表示法（例如，`%dataElementName%`）引用。
+该扩展为您提供了一项操作，可将JSON内容推送到数据层本身。此操作可让您直接在JSON中使用数据元素。 在JSON编辑器中，数据元素应使用百分比表示法引用(例如， `%dataElementName%`)。
 
 ```json
 {
@@ -119,13 +120,13 @@ This installation will not be supported on our end.<br>
 数据层计算状态数据元素可返回以下两项之一，具体取决于您配置它的方式：
 
 * 完整的数据层状态：默认情况下，会返回完整的数据层计算状态。
-* 特定路径：您可以指定要在数据层中返回的路径。 使用点表示法（例如`data.foo`）指定路径。
+* 特定路径：您可以指定要在数据层中返回的路径。 使用点表示法指定路径(例如， `data.foo`)。
 
 ### 数据层大小
 
 此数据元素返回数据层的大小。 数据层的大小由已推送到此对象的元素数量表示。
 
-根据以下推送事件列表，此数据元素将返回整数`2`:
+根据以下推送事件列表，此数据元素将返回整数 `2`:
 
 ```js
 adobeDataLayer.push({"event":"myEvent"})

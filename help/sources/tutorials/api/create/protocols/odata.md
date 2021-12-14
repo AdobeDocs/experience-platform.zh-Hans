@@ -6,52 +6,52 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将通用OData连接到Adobe Experience Platform。
 exl-id: 45b302cb-1a43-4fab-a8a2-cb4e1ee129f9
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '443'
 ht-degree: 2%
 
 ---
 
-# 使用[!DNL Flow Service] API创建[!DNL Generic OData]基本连接
+# 创建 [!DNL Generic OData] 基本连接使用 [!DNL Flow Service] API
 
 >[!NOTE]
 >
->[!DNL Generic OData]连接器处于测试阶段。 有关使用测试版标记的连接器的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
+>的 [!DNL Generic OData] 连接器处于测试阶段。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标签的连接器的更多信息。
 
 基本连接表示源与Adobe Experience Platform之间经过验证的连接。
 
-本教程将指导您完成使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)为[!DNL Generic OData]创建基本连接的步骤。
+本教程将指导您完成为 [!DNL Generic OData] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
-* [沙盒](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
+* [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了您需要了解的其他信息，以便您能够使用[!DNL Flow Service] API成功连接到[!DNL Generic OData]。
+以下部分提供了成功连接到所需了解的其他信息 [!DNL Generic OData] 使用 [!DNL Flow Service] API。
 
 ### 收集所需的凭据
 
-要使[!DNL Flow Service]与[!DNL Generic OData]连接，必须为以下连接属性提供值：
+为 [!DNL Flow Service] 连接 [!DNL Generic OData]，则必须为以下连接属性提供值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `url` | [!DNL Generic OData]服务的根URL。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 [!DNL Generic Generic OData]的连接规范ID是：`8e6b41a8-d998-4545-ad7d-c6a9fff406c3`。 |
+| `url` | 的根URL [!DNL Generic OData] 服务。 |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 的连接规范ID [!DNL Generic Generic OData] 为： `8e6b41a8-d998-4545-ad7d-c6a9fff406c3`. |
 
-有关入门的详细信息，请参阅[this [!DNL Generic OData] document](https://www.odata.org/getting-started/basic-tutorial/)。
+有关入门的更多信息，请参阅 [此 [!DNL Generic OData] 文档](https://www.odata.org/getting-started/basic-tutorial/).
 
 ### 使用Platform API
 
-有关如何成功调用Platform API的信息，请参阅[Platform API入门指南](../../../../../landing/api-guide.md)。
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
 ## 创建基本连接
 
 基本连接保留了源和平台之间的信息，包括源的身份验证凭据、连接的当前状态和唯一基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在请求参数中提供[!DNL Generic OData]身份验证凭据时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请向 `/connections` 提供 [!DNL Generic OData] 身份验证凭据作为请求参数的一部分。
 
 **API格式**
 
@@ -61,7 +61,7 @@ POST /connections
 
 **请求**
 
-以下请求为[!DNL Generic OData]创建基本连接：
+以下请求会为 [!DNL Generic OData]:
 
 ```shell
 curl -X POST \
@@ -77,7 +77,7 @@ curl -X POST \
         "auth": {
             "specName": "Anonymous Authentication",
         "params": {
-            "url" :  "{URL}"
+            "url":  "{URL}"
             }
         },
         "connectionSpec": {
@@ -89,8 +89,8 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `auth.params.url` | [!DNL Generic OData]服务器的主机。 |
-| `connectionSpec.id` | [!DNL Generic OData]连接规范ID:`8e6b41a8-d998-4545-ad7d-c6a9fff406c3`。 |
+| `auth.params.url` | 的主机 [!DNL Generic OData] 服务器。 |
+| `connectionSpec.id` | 的 [!DNL Generic OData] 连接规范ID: `8e6b41a8-d998-4545-ad7d-c6a9fff406c3`. |
 
 **响应**
 
@@ -105,4 +105,4 @@ curl -X POST \
 
 ## 后续步骤
 
-在本教程中，您已使用[!DNL Flow Service] API创建了[!DNL OData]连接，并获取了该连接的唯一ID值。 在下一个教程中，您可以使用此ID，因为您正在学习如何[使用流服务API](../../explore/protocols.md)浏览协议应用程序。
+通过阅读本教程，您已创建 [!DNL OData] 使用 [!DNL Flow Service] API，并已获取连接的唯一ID值。 在下一个教程中，您可以使用此ID来了解如何 [使用流量服务API浏览协议应用程序](../../explore/protocols.md).

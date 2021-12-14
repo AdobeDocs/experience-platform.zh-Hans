@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；查询服务；查询模板；api指南；模板；查询服务；
+keywords: Experience Platform；主页；热门主题；查询服务；查询模板；API指南；模板；查询服务；
 solution: Experience Platform
 title: 查询模板API端点
 topic-legacy: query templates
-description: 以下文档将介绍您可以使用查询模板为查询 Service API进行的各种API调用。
+description: 以下文档将介绍您可以使用查询模板对查询服务API进行的各种API调用。
 exl-id: 14cd7907-73d2-478f-8992-da3bdf08eacc
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '674'
 ht-degree: 3%
@@ -15,13 +14,13 @@ ht-degree: 3%
 
 # 查询模板端点
 
-## 示例API调用
+## API调用示例
 
-既然您了解了要使用哪些标头，就可以开始调用[!DNL Query Service] API。 以下部分将介绍您可以使用[!DNL Query Service] API进行的各种API调用。 每个调用都包括常规API格式、显示所需标头的示例请求和示例响应。
+既然您了解了要使用的标头，接下来便可以开始调用 [!DNL Query Service] API。 以下部分将介绍您可以使用 [!DNL Query Service] API。 每个调用都包含常规API格式、显示所需标头的示例请求以及示例响应。
 
-### 检索列表查询模板
+### 检索查询模板列表
 
-您可以通过向`/query-templates`端点发出列表请求，检索IMS组织的所有查询模板的GET。
+您可以通过向 `/query-templates` 端点。
 
 **API格式**
 
@@ -32,22 +31,22 @@ GET /query-templates?{QUERY_PARAMETERS}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{QUERY_PARAMETERS}` | （*可选*）添加到请求路径的参数，用于配置在响应中返回的结果。 可以包含多个参数，用&amp;符号(`&`)分隔。 以下列出了可用参数。 |
+| `{QUERY_PARAMETERS}` | (*可选*)参数已添加到请求路径，用于配置响应中返回的结果。 可以包含多个参数，这些参数之间用与号(`&`)。 以下列出了可用参数。 |
 
 **查询参数**
 
-以下是列出列表模板的可用查询参数的查询。 所有这些参数都是可选的。 调用此端点时不使用参数将检索组织可用的所有查询模板。
+以下是用于列出查询模板的可用查询参数列表。 所有这些参数都是可选的。 调用此端点时不使用任何参数，将检索适用于贵组织的所有查询模板。
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定对结果排序所依据的字段。 支持的字段为`created`和`updated`。 例如，`orderby=created`将按升序创建结果排序。 在创建前添加`-`(`orderby=-created`)将按降序对创建的项目进行排序。 |
+| `orderby` | 指定对结果排序所依据的字段。 支持的字段包括 `created` 和 `updated`. 例如， `orderby=created` 将按创建的结果进行升序排序。 添加 `-` 创建之前(`orderby=-created`)将按创建的项目进行降序排序。 |
 | `limit` | 指定页面大小限制以控制页面中包含的结果数。 (*默认值：20*) |
-| `start` | 使用从零开始的编号来偏移响应列表。 例如，`start=2`将返回从第三个列出的列表开始的查询。 (*默认值：0*) |
-| `property` | 根据字段筛选结果。 过滤器&#x200B;**必须**&#x200B;为HTML转义。 多组过滤器用逗号分隔。 支持的字段为`name`和`userId`。 唯一支持的运算符是`==`（等于）。 例如，`name==my_template`将返回名为`my_template`的所有查询模板。 |
+| `start` | 使用从零开始的编号来偏移响应列表。 例如， `start=2` 将返回从第三个列出的查询开始的列表。 (*默认值：0*) |
+| `property` | 根据字段筛选结果。 过滤器 **必须** HTML转义。 可使用逗号组合多组过滤器。 支持的字段包括 `name` 和 `userId`. 唯一支持的运算符是 `==` （等于）。 例如， `name==my_template` 将返回名为的所有查询模板 `my_template`. |
 
 **请求**
 
-以下请求将检索为您的IMS组织创建的最新查询模板。
+以下请求可检索为IMS组织创建的最新查询模板。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/query-templates?limit=1
@@ -59,7 +58,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/query-templates?limi
 
 **响应**
 
-成功的响应返回HTTP状态200,列表指定IMS组织的查询模板。 以下响应返回为您的IMS组织创建的最新查询模板。
+成功响应会返回HTTP状态200，其中包含指定IMS组织的查询模板列表。 以下响应会返回为IMS组织创建的最新查询模板。
 
 ```json
 {
@@ -83,7 +82,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/query-templates?limi
                 "update": {
                     "href": "https://platform.adobe.io/data/foundation/query/query-templates/f7cb5155-29da-4b95-8131-8c5deadfbe7f",
                     "method": "PUT",
-                    "body": "{\"sql\" : \"new sql \", \"name\" : \"new name\"}"
+                    "body": "{\"sql\": \"new sql \", \"name\": \"new name\"}"
                 }
             }
         }
@@ -108,11 +107,11 @@ curl -X GET https://platform.adobe.io/data/foundation/query/query-templates?limi
 
 >[!NOTE]
 >
->可以使用`_links.delete`的值[删除您的查询模板](#delete-a-specified-query-template)。
+>您可以使用 `_links.delete` to [删除查询模板](#delete-a-specified-query-template).
 
 ### 创建查询模板
 
-可以通过向`/query-templates`端点发出POST请求来创建查询模板。
+您可以通过向 `/query-templates` 端点。
 
 **API格式**
 
@@ -141,7 +140,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/query-templates
 
 **响应**
 
-成功的响应会返回HTTP状态202（已接受），其中包含您新创建的查询模板的详细信息。
+成功响应会返回HTTP状态202（已接受），其中包含新创建查询模板的详细信息。
 
 ```json
 {
@@ -163,7 +162,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/query-templates
         "update": {
             "href": "https://platform.adobe.io/data/foundation/query/query-templates/0094d000-9062-4e6a-8fdb-05606805f08f",
             "method": "PUT",
-            "body": "{\"sql\" : \"new sql \", \"name\" : \"new name\"}"
+            "body": "{\"sql\": \"new sql \", \"name\": \"new name\"}"
         }
     }
 }
@@ -171,11 +170,11 @@ curl -X POST https://platform.adobe.io/data/foundation/query/query-templates
 
 >[!NOTE]
 >
->可以使用`_links.delete`的值[删除您的查询模板](#delete-a-specified-query-template)。
+>您可以使用 `_links.delete` to [删除查询模板](#delete-a-specified-query-template).
 
 ### 检索指定的查询模板
 
-您可以通过向`/query-templates/{TEMPLATE_ID}`端点发出GET请求并在请求路径中提供查询模板的ID来检索特定查询模板。
+您可以通过向 `/query-templates/{TEMPLATE_ID}` 端点和在请求路径中提供查询模板的ID。
 
 **API格式**
 
@@ -185,7 +184,7 @@ GET /query-templates/{TEMPLATE_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- | 
-| `{TEMPLATE_ID}` | 要检索的查询模板的`id`值。 |
+| `{TEMPLATE_ID}` | 的 `id` 要检索的查询模板的值。 |
 
 **请求**
 
@@ -199,7 +198,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/query-templates/0094
 
 **响应**
 
-成功的响应会返回HTTP状态200，其中包含指定查询模板的详细信息。
+成功响应会返回HTTP状态200，其中包含您指定查询模板的详细信息。
 
 ```json
 {
@@ -221,7 +220,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/query-templates/0094
         "update": {
             "href": "https://platform.adobe.io/data/foundation/query/query-templates/0094d000-9062-4e6a-8fdb-05606805f08f",
             "method": "PUT",
-            "body": "{\"sql\" : \"new sql \", \"name\" : \"new name\"}"
+            "body": "{\"sql\": \"new sql \", \"name\": \"new name\"}"
         }
     }
 }
@@ -229,11 +228,11 @@ curl -X GET https://platform.adobe.io/data/foundation/query/query-templates/0094
 
 >[!NOTE]
 >
->可以使用`_links.delete`的值[删除您的查询模板](#delete-a-specified-query-template)。
+>您可以使用 `_links.delete` to [删除查询模板](#delete-a-specified-query-template).
 
 ### 更新指定的查询模板
 
-您可以通过向`/query-templates/{TEMPLATE_ID}`端点发出PUT请求并在请求路径中提供查询模板的ID来更新特定查询模板。
+您可以通过向 `/query-templates/{TEMPLATE_ID}` 端点和在请求路径中提供查询模板的ID。
 
 **API格式**
 
@@ -243,13 +242,13 @@ PUT /query-templates/{TEMPLATE_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{TEMPLATE_ID}` | 要检索的查询模板的`id`值。 |
+| `{TEMPLATE_ID}` | 的 `id` 要检索的查询模板的值。 |
 
 **请求**
 
 >[!NOTE]
 >
->PUT请求要求填写sql和name字段，并将&#x200B;**覆盖该查询模板的当前内容。**
+>PUT请求需要填写sql和name字段，并将 **覆盖** 查询模板的当前内容。
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/query/query-templates/0094d000-9062-4e6a-8fdb-05606805f08f
@@ -270,7 +269,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/query/query-templates/0094
 
 **响应**
 
-成功的响应会返回HTTP状态202（已接受），其中包含指定查询模板的更新信息。
+成功响应会返回HTTP状态202（已接受），其中包含您指定查询模板的更新信息。
 
 ```json
 {
@@ -293,7 +292,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/query/query-templates/0094
         "update": {
             "href": "https://platform.adobe.io/data/foundation/query/query_templates/0094d000-9062-4e6a-8fdb-05606805f08f",
             "method": "PUT",
-            "body": "{\"sql\" : \"new sql \", \"name\" : \"new name\"}"
+            "body": "{\"sql\": \"new sql \", \"name\": \"new name\"}"
         }
     }
 }
@@ -301,11 +300,11 @@ curl -X PUT https://platform.adobe.io/data/foundation/query/query-templates/0094
 
 >[!NOTE]
 >
->可以使用`_links.delete`的值[删除您的查询模板](#delete-a-specified-query-template)。
+>您可以使用 `_links.delete` to [删除查询模板](#delete-a-specified-query-template).
 
 ### 删除指定的查询模板
 
-您可以通过向`/query-templates/{TEMPLATE_ID}`发出查询请求并在请求路径中提供查询模板的ID来删除特定的DELETE模板。
+您可以通过向 `/query-templates/{TEMPLATE_ID}` 和在请求路径中提供查询模板的ID。
 
 **API格式**
 
@@ -315,7 +314,7 @@ DELETE /query-templates/{TEMPLATE_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{TEMPLATE_ID}` | 要检索的查询模板的`id`值。 |
+| `{TEMPLATE_ID}` | 的 `id` 要检索的查询模板的值。 |
 
 **请求**
 
@@ -329,7 +328,7 @@ curl -X DELETE https://platform.adobe.io/data/foundation/query/query-templates/0
 
 **响应**
 
-成功的响应会返回HTTP状态202（已接受），并显示以下消息。
+成功响应会通过以下消息返回HTTP状态202（已接受）。
 
 ```json
 {

@@ -6,7 +6,8 @@ topic-legacy: tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到YOURSOURCE。
 hide: true
 hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+exl-id: c6927a71-3721-461e-9752-8ebc0b7b1cca
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '2300'
 ht-degree: 2%
@@ -54,7 +55,7 @@ POST /connections
 
 **请求**
 
-以下请求会为 *您的来源* :
+以下请求会为 *您的来源*:
 
 ```shell
 curl -X POST \
@@ -237,7 +238,7 @@ POST /sourceConnections
 
 **请求**
 
-以下请求会为 *您的来源* :
+以下请求会为 *您的来源*:
 
 ```shell
 curl -X POST \
@@ -312,7 +313,7 @@ POST /targetConnections
 
 **请求**
 
-以下请求会为 *您的来源* :
+以下请求会为 *您的来源*:
 
 ```shell
 curl -X POST \

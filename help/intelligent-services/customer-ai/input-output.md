@@ -6,7 +6,7 @@ title: 客户人工智能中的输入与输出
 topic-legacy: Getting started
 description: 进一步了解Customer AI使用的必需事件、输入和输出。
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 6da41552811a458fc6cf66b54fc2e9ed448a859d
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '3054'
 ht-degree: 1%
@@ -114,7 +114,7 @@ Customer AI要求提供模型培训的历史数据，但所需数据量基于两
 >
 > 30是合格人口所需的最低天数。 如果未提供，则默认值为120天。
 
-示例 :
+示例：
 
 - 您希望预测客户是否可能在未来30天内购买手表。 您还希望对过去60天内有某些Web活动的用户进行评分。 在这种情况下，所需数据的最小长度为60天+30天。 合格人口为60天，结果期为30天，总共90天。
 

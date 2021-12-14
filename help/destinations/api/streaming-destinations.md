@@ -6,7 +6,7 @@ description: 本文档介绍了如何使用Adobe Experience Platform API创建�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 2b1cde9fc913be4d3bea71e7d56e0e5fe265a6be
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '2021'
 ht-degree: 2%
@@ -39,7 +39,7 @@ ht-degree: 2%
 
 ### 收集所需的凭据
 
-要完成本教程中的步骤，您应该准备好以下凭据，具体取决于您连接和激活区段的目标类型。
+要完成本教程中的步骤，您应准备好以下凭据，具体取决于您连接和激活区段的目标类型。
 
 * 对于 [!DNL Amazon Kinesis] 连接： `accessKeyId`, `secretKey`, `region` 或 `connectionUrl`
 * 对于 [!DNL Azure Event Hubs] 连接： `sasKeyName`, `sasKey`, `namespace`
@@ -194,7 +194,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
             "data": {
                 "format": "json"
             },
-            "params" : {}
+            "params": {}
 }'
 ```
 

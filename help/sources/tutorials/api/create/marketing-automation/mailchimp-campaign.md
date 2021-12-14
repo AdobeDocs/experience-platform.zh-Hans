@@ -4,32 +4,33 @@ solution: Experience Platform
 title: 使用流服务API为MailChimp营销活动创建数据流
 topic-legacy: tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform与MailChimp Campaign连接。
-source-git-commit: c8d94af6185785a0e4bfce9889c04405ed223b1f
+exl-id: fd4821c7-6fe1-4cad-8e13-3549dbe0ce98
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '2319'
 ht-degree: 2%
 
 ---
 
-# 使用流服务API为[!DNL MailChimp Campaign]创建数据流
+# 为创建数据流 [!DNL MailChimp Campaign] 使用流量服务API
 
-以下教程将指导您完成创建源连接和数据流以使用[[!DNL Flow Service]  API](https://www.adobe.io/experience-platform-apis/references/flow-service/)将[!DNL MailChimp Campaign]数据导入平台的步骤。
+以下教程将指导您完成创建源连接和要引入的数据流的步骤 [!DNL MailChimp Campaign] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 先决条件
 
-在使用OAuth 2刷新代码将[!DNL MailChimp]连接到Adobe Experience Platform之前，必须先检索[!DNL MailChimp.]的访问令牌。有关查找访问令牌的详细说明，请参阅[[!DNL MailChimp] OAuth 2指南](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/)。
+连接之前 [!DNL MailChimp] 要使用OAuth 2刷新代码的Adobe Experience Platform，您必须先检索 [!DNL MailChimp.] 请参阅 [[!DNL MailChimp] OAuth 2指南](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/) 有关查找访问令牌的详细说明。
 
 ## 创建基本连接 {#base-connection}
 
-在检索到[!DNL MailChimp]身份验证凭据后，您现在可以开始创建数据流以将[!DNL MailChimp Campaign]数据导入平台的过程。 创建数据流的第一步是创建基本连接。
+检索到 [!DNL MailChimp] 身份验证凭据，您现在可以启动创建数据流的过程，以便 [!DNL MailChimp Campaign] 数据到平台。 创建数据流的第一步是创建基本连接。
 
 基本连接保留了源和平台之间的信息，包括源的身份验证凭据、连接的当前状态和唯一基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-[!DNL MailChimp] 支持基本身份验证和OAuth 2刷新代码。有关如何使用这两种身份验证类型进行身份验证的指导，请参阅以下示例。
+[!DNL MailChimp] 支持基本身份验证和OAuth 2刷新代码。 有关如何使用这两种身份验证类型进行身份验证的指导，请参阅以下示例。
 
-### 使用基本身份验证创建[!DNL MailChimp]基本连接
+### 创建 [!DNL MailChimp] 基本连接使用基本身份验证
 
-要使用基本身份验证创建[!DNL MailChimp]基本连接，请向[!DNL Flow Service] API的`/connections`端点发出POST请求，同时为`host`、`authorizationTestUrl`、`username`和`password`提供凭据。
+创建 [!DNL MailChimp] 基本连接使用基本身份验证，向POST请求 `/connections` 端点 [!DNL Flow Service] API，同时为您的 `host`, `authorizationTestUrl`, `username`和 `password`.
 
 **API格式**
 
@@ -39,7 +40,7 @@ POST /connections
 
 **请求**
 
-以下请求为[!DNL MailChimp]创建基本连接：
+以下请求会为 [!DNL MailChimp]:
 
 ```shell
 curl -X POST \
@@ -72,16 +73,16 @@ curl -X POST \
 | --- | --- |
 | `name` | 基本连接的名称。 确保基本连接的名称具有描述性，因为您可以使用此名称查找有关基本连接的信息。 |
 | `description` | （可选）可包含的属性，用于提供有关基本连接的更多信息。 |
-| `connectionSpec.id` | 源的连接规范ID。 在通过[!DNL Flow Service] API注册并批准源后，即可检索此ID。 |
+| `connectionSpec.id` | 源的连接规范ID。 此ID可在您的源通过注册和批准之后进行检索 [!DNL Flow Service] API。 |
 | `auth.specName` | 用于将源连接到平台的身份验证类型。 |
-| `auth.params.host` | 用于连接到[!DNL MailChimp] API的根URL。 根URL的格式为`https://{DC}.api.mailchimp.com`，其中`{DC}`表示与您的帐户对应的数据中心。 |
+| `auth.params.host` | 用于连接到的根URL [!DNL MailChimp] API。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
 | `auth.params.authorizationTestUrl` | （可选）创建基本连接时，授权测试URL用于验证凭据。 如果未提供，则在创建源连接步骤期间会自动检查凭据。 |
-| `auth.params.username` | 与您的[!DNL MailChimp]帐户对应的用户名。 基本身份验证需要此功能。 |
-| `auth.params.password` | 与您的[!DNL MailChimp]帐户对应的密码。 基本身份验证需要此功能。 |
+| `auth.params.username` | 与您的 [!DNL MailChimp] 帐户。 基本身份验证需要此功能。 |
+| `auth.params.password` | 与您的 [!DNL MailChimp] 帐户。 基本身份验证需要此功能。 |
 
 **响应**
 
-成功的响应返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中，需要此ID才能浏览源的文件结构和内容。
+成功的响应会返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中，需要此ID才能浏览源的文件结构和内容。
 
 ```json
 {
@@ -90,9 +91,9 @@ curl -X POST \
 }
 ```
 
-### 使用OAuth 2刷新代码创建[!DNL MailChimp]基本连接
+### 创建 [!DNL MailChimp] 使用OAuth 2刷新代码的基本连接
 
-要使用OAuth 2刷新代码创建[!DNL MailChimp]基本连接，请在提供`host`、`authorizationTestUrl`和`accessToken`的凭据时向`/connections`端点发出POST请求。
+创建 [!DNL MailChimp] 使用OAuth 2刷新代码进行基本连接，然后向 `/connections` 端点，同时为您的 `host`, `authorizationTestUrl`和 `accessToken`.
 
 **API格式**
 
@@ -102,7 +103,7 @@ POST /connections
 
 **请求**
 
-以下请求为[!DNL MailChimp]创建基本连接：
+以下请求会为 [!DNL MailChimp]:
 
 ```shell
 curl -X POST \
@@ -134,15 +135,15 @@ curl -X POST \
 | --- | --- |
 | `name` | 基本连接的名称。 确保基本连接的名称具有描述性，因为您可以使用此名称查找有关基本连接的信息。 |
 | `description` | （可选）可包含的属性，用于提供有关基本连接的更多信息。 |
-| `connectionSpec.id` | 源的连接规范ID。 使用[!DNL Flow Service] API注册源后，可以检索此ID。 |
+| `connectionSpec.id` | 源的连接规范ID。 在使用注册您的源后，可以检索此ID [!DNL Flow Service] API。 |
 | `auth.specName` | 用于向平台验证源的验证类型。 |
-| `auth.params.host` | 用于连接到[!DNL MailChimp] API的根URL。 根URL的格式为`https://{DC}.api.mailchimp.com`，其中`{DC}`表示与您的帐户对应的数据中心。 |
+| `auth.params.host` | 用于连接到的根URL [!DNL MailChimp] API。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
 | `auth.params.authorizationTestUrl` | （可选）创建基本连接时，授权测试URL用于验证凭据。 如果未提供，则在创建源连接步骤期间会自动检查凭据。 |
 | `auth.params.accessToken` | 用于验证源的相应访问令牌。 基于OAuth的身份验证需要此设置。 |
 
 **响应**
 
-成功的响应返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中，需要此ID才能浏览源的文件结构和内容。
+成功的响应会返回新创建的基本连接，包括其唯一连接标识符(`id`)。 在下一步中，需要此ID才能浏览源的文件结构和内容。
 
 ```json
 {
@@ -158,15 +159,15 @@ curl -X POST \
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{BASE_CONNECTION_ID}` | 上一步中生成的基本连接ID。 |
-| `{OBJECT_TYPE}` | 要浏览的对象的类型。 对于REST源，此值默认为`rest`。 |
+| `{OBJECT_TYPE}` | 要浏览的对象的类型。 对于REST源，此值默认为 `rest`. |
 | `{OBJECT}` | 要浏览的对象。 |
 | `{FILE_TYPE}` | 仅当查看特定目录时，才需要此参数。 其值表示要浏览的目录的路径。 |
 | `{PREVIEW}` | 一个布尔值，用于定义连接的内容是否支持预览。 |
-| `{SOURCE_PARAMS}` | `campaign_id`的base64编码字符串。 |
+| `{SOURCE_PARAMS}` | 您的 `campaign_id`. |
 
 >[!TIP]
 >
->要检索`{SOURCE_PARAMS}`的已接受的format-type，必须在base64中对整个`campaignId`字符串进行编码。 例如，在base64中编码的`{"campaignId": "c66a200cda"}`等于`eyJjYW1wYWlnbklkIjoiYzY2YTIwMGNkYSJ9`。
+>检索已接受的格式类型 `{SOURCE_PARAMS}`，则必须对整个进行编码 `campaignId` 字符串。 例如， `{"campaignId": "c66a200cda"}` 在base64中编码等于 `eyJjYW1wYWlnbklkIjoiYzY2YTIwMGNkYSJ9`.
 
 **API格式**
 
@@ -256,7 +257,7 @@ curl -X GET \
 
 ## 创建源连接 {#source-connection}
 
-您可以通过向[!DNL Flow Service] API发出POST请求来创建源连接。 源连接由连接ID、源数据文件的路径和连接规范ID组成。
+您可以通过向 [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径和连接规范ID组成。
 
 要创建源连接，还必须为数据格式属性定义枚举值。
 
@@ -268,7 +269,7 @@ curl -X GET \
 | JSON | `json` |
 | 镶木 | `parquet` |
 
-对于所有基于表的源，将值设置为`tabular`。
+对于所有基于表的源，将值设置为 `tabular`.
 
 **API格式**
 
@@ -278,7 +279,7 @@ POST /sourceConnections
 
 **请求**
 
-以下请求为[!DNL MailChimp]创建源连接：
+以下请求会为 [!DNL MailChimp]:
 
 ```shell
 curl -X POST \
@@ -309,14 +310,14 @@ curl -X POST \
 | --- | --- |
 | `name` | 源连接的名称。 确保源连接的名称具有描述性，因为您可以使用该名称查找有关源连接的信息。 |
 | `description` | 可包含的可选值，用于提供有关源连接的更多信息。 |
-| `baseConnectionId` | [!DNL MailChimp]的基本连接ID。 此ID是在前面的步骤中生成的。 |
+| `baseConnectionId` | 基本连接ID为 [!DNL MailChimp]. 此ID是在前面的步骤中生成的。 |
 | `connectionSpec.id` | 与源对应的连接规范ID。 |
-| `data.format` | 要摄取的[!DNL MailChimp]数据的格式。 |
-| `params.campaignId` | [!DNL MailChimp]营销活动ID标识特定的[!DNL MailChimp]营销活动，然后允许您向列表/受众发送电子邮件。 |
+| `data.format` | 的格式 [!DNL MailChimp] 要摄取的数据。 |
+| `params.campaignId` | 的 [!DNL MailChimp] 营销活动ID标识特定 [!DNL MailChimp] campaign，随后允许您向列表/受众发送电子邮件。 |
 
 **响应**
 
-成功的响应会返回新创建源连接的唯一标识符(`id`)。 在后续步骤中需要此ID才能创建数据流。
+成功的响应会返回唯一标识符(`id`)。 在后续步骤中需要此ID才能创建数据流。
 
 ```json
 {
@@ -329,21 +330,21 @@ curl -X POST \
 
 要在Platform中使用源数据，必须创建目标架构以根据您的需求构建源数据。 然后，目标架构用于创建包含源数据的Platform数据集。
 
-通过对[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)执行POST请求，可以创建目标XDM架构。
+通过对 [架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
-有关如何创建目标XDM架构的详细步骤，请参阅关于[使用API](../../../../../xdm/api/schemas.md)创建架构的教程。
+有关如何创建目标XDM架构的详细步骤，请参阅 [使用API创建模式](../../../../../xdm/api/schemas.md).
 
 ### 创建目标数据集 {#target-dataset}
 
-通过向[Catalog Service API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)执行POST请求，并提供有效负载中目标架构的ID，可以创建目标数据集。
+通过对 [目录服务API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/catalog.yaml)，在有效负载中提供目标架构的ID。
 
-有关如何创建目标数据集的详细步骤，请参阅关于[使用API](../../../../../catalog/api/create-dataset.md)创建数据集的教程。
+有关如何创建目标数据集的详细步骤，请参阅 [使用API创建数据集](../../../../../catalog/api/create-dataset.md).
 
 ## 创建目标连接 {#target-connection}
 
-目标连接表示所摄取数据所登陆目标的连接。 要创建目标连接，必须提供与[!DNL Data Lake]对应的固定连接规范ID。 此ID为：`c604ff05-7f1a-43c0-8e18-33bf874cb11c`。
+目标连接表示所摄取数据所登陆目标的连接。 要创建目标连接，必须提供与 [!DNL Data Lake]. 此ID为： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`.
 
-现在，您拥有目标架构（目标数据集）的唯一标识符，以及与[!DNL Data Lake]的连接规范ID。 使用这些标识符，您可以使用[!DNL Flow Service] API创建目标连接，以指定将包含集客源数据的数据集。
+现在，您的唯一标识符是目标架构（目标数据集）和与 [!DNL Data Lake]. 使用这些标识符，您可以使用 [!DNL Flow Service] 用于指定将包含集客源数据的数据集的API。
 
 **API格式**
 
@@ -353,7 +354,7 @@ POST /targetConnections
 
 **请求**
 
-以下请求为[!DNL MailChimp]创建目标连接：
+以下请求会为 [!DNL MailChimp]:
 
 ```shell
 curl -X POST \
@@ -387,8 +388,8 @@ curl -X POST \
 | -------- | ----------- |
 | `name` | 目标连接的名称。 确保目标连接的名称具有描述性，因为您可以使用此名称查找有关目标连接的信息。 |
 | `description` | 可包含的可选值，用于提供有关目标连接的更多信息。 |
-| `connectionSpec.id` | 与[!DNL Data Lake]对应的连接规范ID。 此固定ID是：`c604ff05-7f1a-43c0-8e18-33bf874cb11c`。 |
-| `data.format` | 要引入平台的[!DNL MailChimp]数据的格式。 |
+| `connectionSpec.id` | 与 [!DNL Data Lake]. 此固定ID是： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
+| `data.format` | 的格式 [!DNL MailChimp] 要引入平台的数据。 |
 | `params.dataSetId` | 在上一步中检索到的目标数据集ID。 |
 
 
@@ -405,7 +406,7 @@ curl -X POST \
 
 >[!IMPORTANT]
 >
->[!DNL MailChimp Campaign]当前不支持数据准备函数。
+>当前不支持数据准备函数 [!DNL MailChimp Campaign].
 
 <!--
 ## Create a mapping {#mapping}
@@ -475,14 +476,14 @@ A successful response returns details of the newly created mapping including its
 
 ## 创建流 {#flow}
 
-将[!DNL MailChimp]数据引入平台的最后一个步骤是创建数据流。 现在，您已准备以下必需值：
+最后一步 [!DNL MailChimp] 数据到平台即是创建数据流。 现在，您已准备以下必需值：
 
 * [源连接ID](#source-connection)
 * [Target连接ID](#target-connection)
 
 数据流负责从源中调度和收集数据。 通过在有效负载中提供先前提到的值时执行POST请求，可以创建数据流。
 
-要计划摄取，您必须首先将开始时间值设置为以秒为单位的新纪元时间。 然后，您必须将频率值设置为以下五个选项之一：`once`、`minute`、`hour`、`day`或`week`。 间隔值指定两个连续摄取与创建一次性摄取(`once`)之间的周期，不需要设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于`15`。
+要计划摄取，您必须首先将开始时间值设置为以秒为单位的新纪元时间。 然后，您必须将频率值设置为以下五个选项之一： `once`, `minute`, `hour`, `day`或 `week`. 间隔值指定两个连续摄取与创建一次性摄取(`once`)不要求设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`.
 
 
 **API格式**
@@ -526,17 +527,17 @@ curl -X POST \
 | --- | --- |
 | `name` | 数据流的名称。 确保数据流的名称具有描述性，因为您可以使用该名称查找有关数据流的信息。 |
 | `description` | （可选）可包含的属性，用于提供有关数据流的更多信息。 |
-| `flowSpec.id` | 创建数据流所需的流规范ID。 此固定ID是：`6499120c-0b15-42dc-936e-847ea3c24d72`。 |
-| `flowSpec.version` | 流量规范ID的相应版本。 此值默认为`1.0`。 |
-| `sourceConnectionIds` | 在前面的步骤中生成的[源连接ID](#source-connection)。 |
-| `targetConnectionIds` | 在前面的步骤中生成的[目标连接ID](#target-connection)。 |
+| `flowSpec.id` | 创建数据流所需的流规范ID。 此固定ID是： `6499120c-0b15-42dc-936e-847ea3c24d72`. |
+| `flowSpec.version` | 流量规范ID的相应版本。 此值默认为 `1.0`. |
+| `sourceConnectionIds` | 的 [源连接ID](#source-connection) 生成。 |
+| `targetConnectionIds` | 的 [目标连接ID](#target-connection) 生成。 |
 | `scheduleParams.startTime` | 首次摄取数据开始时的指定开始时间。 |
-| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括：`once`、`minute`、`hour`、`day`或`week`。 |
-| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 当频率设置为`once`时，不需要间隔，对于其他频率值，间隔应大于或等于`15`。 |
+| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`, `minute`, `hour`, `day`或 `week`. |
+| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 将频率设置为时，不需要间隔 `once` 且应大于或等于 `15` 的其他频率值。 |
 
 **响应**
 
-成功的响应会返回新创建数据流的ID(`id`)。 您可以使用此ID来监视、更新或删除您的数据流。
+成功的响应会返回ID(`id`)。 您可以使用此ID来监视、更新或删除您的数据流。
 
 ```json
 {
@@ -570,7 +571,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应会返回有关流运行的详细信息，包括有关其创建日期、源连接和目标连接以及流运行的唯一标识符(`id`)的信息。
+成功的响应会返回有关流运行的详细信息，包括有关其创建日期、源连接和目标连接以及流运行的唯一标识符(`id`)。
 
 ```json
 {
@@ -662,11 +663,11 @@ curl -X GET \
 
 ## 更新数据流
 
-要更新数据流的运行计划、名称和描述，请在提供您要使用的流ID、版本和新计划的同时，向[!DNL Flow Service] API执行PATCH请求。
+要更新数据流的运行计划、名称和描述，请向 [!DNL Flow Service] API，同时提供您要使用的流量ID、版本和新计划。
 
 >[!IMPORTANT]
 >
->发出PATCH请求时需要`If-Match`标头。 此标头的值是要更新的连接的唯一版本。
+>的 `If-Match` 发出PATCH请求时需要标头。 此标头的值是要更新的连接的唯一版本。
 
 **API格式**
 
@@ -707,13 +708,13 @@ curl -X PATCH \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括：`add`、`replace`和`remove`。 |
+| `op` | 用于定义更新数据流所需的操作的操作调用。 操作包括： `add`, `replace`和 `remove`. |
 | `path` | 要更新的参数的路径。 |
 | `value` | 要使用更新参数的新值。 |
 
 **响应**
 
-成功的响应会返回您的流量ID和更新的标记。 在提供流ID的同时，您可以通过向[!DNL Flow Service] API发出GET请求来验证更新。
+成功的响应会返回您的流量ID和更新的标记。 您可以通过向 [!DNL Flow Service] API，同时提供流量ID。
 
 ```json
 {
@@ -724,7 +725,7 @@ curl -X PATCH \
 
 ## 删除数据流
 
-使用现有的流ID，可以通过向[!DNL Flow Service] API执行DELETE请求来删除数据流。
+使用现有的流ID，您可以通过对执行DELETE请求来删除数据流 [!DNL Flow Service] API。
 
 **API格式**
 
@@ -734,7 +735,7 @@ DELETE /flows/{FLOW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FLOW_ID}` | 要删除的数据流的唯一`id`值。 |
+| `{FLOW_ID}` | 独特 `id` 值。 |
 
 **请求**
 
@@ -753,11 +754,11 @@ curl -X DELETE \
 
 ## 更新连接
 
-要更新连接的名称、说明和凭据，请在提供基本连接ID、版本和要使用的新信息时，向[!DNL Flow Service] API执行PATCH请求。
+要更新连接的名称、说明和凭据，请向执行PATCH请求 [!DNL Flow Service] API，同时提供您要使用的基本连接ID、版本和新信息。
 
 >[!IMPORTANT]
 >
->发出PATCH请求时需要`If-Match`标头。 此标头的值是要更新的连接的唯一版本。
+>的 `If-Match` 发出PATCH请求时需要标头。 此标头的值是要更新的连接的唯一版本。
 
 **API格式**
 
@@ -767,7 +768,7 @@ PATCH /connections/{BASE_CONNECTION_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BASE_CONNECTION_ID}` | 要更新的连接的唯一`id`值。 |
+| `{BASE_CONNECTION_ID}` | 独特 `id` 值。 |
 
 **请求**
 
@@ -805,13 +806,13 @@ curl -X PATCH \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `op` | 操作调用，用于定义更新连接所需的操作。 操作包括：`add`、`replace`和`remove`。 |
+| `op` | 操作调用，用于定义更新连接所需的操作。 操作包括： `add`, `replace`和 `remove`. |
 | `path` | 要更新的参数的路径。 |
 | `value` | 要使用更新参数的新值。 |
 
 **响应**
 
-成功的响应会返回您的基本连接ID和更新的标记。 在提供连接ID的同时，您可以通过向[!DNL Flow Service] API发出GET请求来验证更新。
+成功的响应会返回您的基本连接ID和更新的标记。 您可以通过向 [!DNL Flow Service] API，同时提供连接ID。
 
 ```json
 {
@@ -822,7 +823,7 @@ curl -X PATCH \
 
 ## 删除连接
 
-现有基本连接ID后，对[!DNL Flow Service] API执行DELETE请求。
+现有基本连接ID后，请对 [!DNL Flow Service] API。
 
 **API格式**
 
@@ -832,7 +833,7 @@ DELETE /connections/{CONNECTION_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BASE_CONNECTION_ID}` | 要删除的基本连接的唯一`id`值。 |
+| `{BASE_CONNECTION_ID}` | 独特 `id` 值。 |
 
 **请求**
 

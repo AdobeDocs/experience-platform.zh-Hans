@@ -3,7 +3,7 @@ title: 使用Adobe Experience Platform Web SDK跟踪事件
 description: 了解如何跟踪Adobe Experience Platform Web SDK事件。
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon；发送信标；documentUnloading；文档卸载；onBeforeEventSend;
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: ac167a205d2bc7e18d320bc1270da7e99bd05975
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '1209'
 ht-degree: 1%
@@ -41,7 +41,7 @@ alloy("sendEvent", {
 });
 ```
 
-在 `sendEvent` 命令，并且数据被发送到服务器时（例如，如果Web SDK库尚未完全加载或尚未收到同意）。 如果您打算修改 `xdm` 对象 `sendEvent` 命令，强烈建议您克隆 `xdm` 对象 _之前_ 执行 `sendEvent` 命令。 例如：
+在 `sendEvent` 命令，并且数据被发送到服务器时（例如，如果Web SDK库尚未完全加载或尚未收到同意），将执行该命令。 如果您打算修改 `xdm` 对象 `sendEvent` 命令，强烈建议您克隆 `xdm` 对象 _之前_ 执行 `sendEvent` 命令。 例如：
 
 ```javascript
 var clone = function(value) {
@@ -92,8 +92,8 @@ alloy("sendEvent", {
       target: {
         "profile.gender": "female",
         "profile.age": 30,
-        "entity.id" : "123",
-        "entity.genre" : "Drama"
+        "entity.id": "123",
+        "entity.genre": "Drama"
       }
     }
   }

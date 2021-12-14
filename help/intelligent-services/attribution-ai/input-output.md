@@ -5,7 +5,7 @@ title: 输入和输出Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: 以下文档概述了Attribution AI中使用的不同输入和输出。
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: 9023019ed8a781f9ae3965adab875cf2244f55a9
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '2268'
 ht-degree: 3%
@@ -87,7 +87,7 @@ Attribution AI需要历史数据作为模型培训的输入。 所需数据持�
 >
 > 具有默认配置的应用程序所需的最小数据长度为：2个季度（180天）+ 56天= 236天。
 
-示例 :
+示例：
 
 - 您希望对过去90天（3个月）内发生的转化事件进行归因，并跟踪转化事件发生前4周内发生的所有接触点。 输入数据的持续时间应该会持续过去90天+ 28天（4周）。 培训时间范围为90天，回顾时间范围为28天，总计为118天。
 
@@ -135,8 +135,8 @@ Attribution AI会以尽可能最精细的粒度级别输出归因得分，以便
 | product（字符串） | True | 产品本身的XDM标识符。 <br> **示例：** RX 1080 ti |
 | productType（字符串） | True | 产品的显示名称，显示给此产品视图的用户。 <br> **示例：** 戈普斯 |
 | 数量（整数） | True | 转化期间的购买数量。 <br> **示例：** 1 1080立 |
-| receivedTimestamp(DateTime) | True | 收到转化的时间戳。 <br> **示例：** 2020-06-09T00:01:51.000Z |
-| skuId（字符串） | True | 库存单位(SKU)，由供应商定义的产品的唯一标识符。 <br> **示例：** MJ-03-XS-Black |
+| receivedTimestamp (DateTime) | True | 收到转化的时间戳。 <br> **示例：** 2020-06-09T00:01:51.000Z |
+| skuId（字符串） | True | 库存单位(SKU)，由供应商定义的产品的唯一标识符。 <br> **Example:** MJ-03-XS-Black |
 | timestamp(DateTime) | True | 转换的时间戳。 <br> **示例：** 2020-06-09T00:01:51.000Z |
 | passThrough（对象） | True | 配置模型时由用户指定的其他得分数据集列。 |
 | commerce_order_purchaseCity（字符串） | True | “其他得分”数据集列。 <br> **示例：** 城市：圣何塞 |
@@ -151,13 +151,13 @@ Attribution AI会以尽可能最精细的粒度级别输出归因得分，以便
 
 ### 查看原始分数路径(UI) {#raw-score-path}
 
-您可以在UI中查看原始分数的路径。 首先选择 **[!UICONTROL 模式]** 然后，在Platform UI中，从 **[!UICONTROL 浏览]** 选项卡。
+You can view the path to your raw scores in the UI. Start by selecting **[!UICONTROL Schemas]** in the Platform UI then search for and select your attribution AI scores schema from within the **[!UICONTROL Browse]** tab.
 
-![选择您的架构](./images/input-output/schemas_browse.png)
+![Pick your schema](./images/input-output/schemas_browse.png)
 
 接下来，在 **[!UICONTROL 结构]** 窗口， **[!UICONTROL 字段属性]** 选项卡。 在 **[!UICONTROL 字段属性]** 是映射到原始分数的路径字段。
 
-![选择架构](./images/input-output/field_properties.png)
+![Pick a Schema](./images/input-output/field_properties.png)
 
 
 ### 汇总归因得分 {#aggregated-attribution-scores}
@@ -166,9 +166,9 @@ Attribution AI会以尽可能最精细的粒度级别输出归因得分，以便
 
 Attribution AI支持两类归因得分：算法得分和基于规则的得分。
 
-Attribution AI会生成两种不同类型的算法得分：增量分数和受影响分数。 受影响的得分是每个营销接触点所负责的转化部分。 增量得分是营销接触点直接导致的边际影响量。 增量分数与受影响分数之间的主要区别在于，增量分数考虑了基线效果。 它不认为转化完全由之前的营销接触点引起。
+Attribution AI produces two different types of algorithmic scores, incremental and influenced. 受影响的得分是每个营销接触点所负责的转化部分。 An incremental score is the amount of marginal impact directly caused by the marketing touchpoint. The main difference between the incremental score and the influenced score is that the incremental score takes the baseline effect into account. 它不认为转化完全由之前的营销接触点引起。
 
-以下是Adobe Experience Platform UI中的Attribution AI架构输出示例：
+Here is a quick look at an Attribution AI schema output example from the Adobe Experience Platform UI:
 
 ![](./images/input-output/schema_screenshot.png)
 
@@ -176,8 +176,8 @@ Attribution AI会生成两种不同类型的算法得分：增量分数和受影
 
 | 归因得分 | 描述 |
 | ----- | ----------- |
-| 受影响（算法） | 影响得分是每个营销接触点负责的转化部分。 |
-| 增量（算法） | 增量得分是营销接触点直接导致的边际影响量。 |
+| Influenced (algorithmic) | 影响得分是每个营销接触点负责的转化部分。 |
+| 增量（算法） | Incremental score is the amount of marginal impact directly caused by a marketing touchpoint. |
 | 首次接触 | 基于规则的归因得分，用于向转化路径上的初始接触点分配所有点数。 |
 | 最后接触 | 基于规则的归因得分，可将所有点数分配到最接近转化的接触点。 |
 | 线性 | 基于规则的归因得分，为转化路径上的每个接触点分配同等点数。 |
@@ -206,9 +206,9 @@ Attribution AI会生成两种不同类型的算法得分：增量分数和受影
 | --- | --- | --- | --- |
 | customrevents_date(DateTime) | 用户定义和固定格式 | False | 客户事件日期（YYYY-MM-DD格式）。 <br> **示例**:2016-05-02 |
 | mediatouchpoints_date(DateTime) | 用户定义和固定格式 | True | YYYY-MM-DD格式的媒体接触点日期 <br> **示例**:2017-04-21 |
-| 区段（字符串） | 已计算 | False | 转化区段，如构建模型所依据的地域划分。 如果没有区段，则区段与conversion_scope相同。 <br> **示例**:ORDER_AMER |
-| conversion_scope（字符串） | 用户定义的 | False | 由用户配置的转化名称。 <br> **示例**:订单 |
-| touchpoint_scope（字符串） | 用户定义的 | True | 由用户配置的接触点名称 <br> **示例**:PAID_SEARCH_CLICK |
+| 区段（字符串） | 已计算 | False | 转化区段，如构建模型所依据的地域划分。 In case of absence of segments, segment is same as conversion_scope. <br> **Example**: ORDER_AMER |
+| conversion_scope（字符串） | User defined | False | 由用户配置的转化名称。 <br> **示例**:订单 |
+| touchpoint_scope（字符串） | User defined | True | 由用户配置的接触点名称 <br> **Example**: PAID_SEARCH_CLICK |
 | product（字符串） | 用户定义的 | True | 产品的XDM标识符。 <br> **示例**:CC |
 | product_type（字符串） | 用户定义的 | True | 产品的显示名称，显示给此产品视图的用户。 <br> **示例**:gpu、笔记本电脑 |
 | 地域（字符串） | 用户定义的 | True | 交付转化的地理位置(placeContext.geo.countryCode) <br> **示例**:美国 |
@@ -217,7 +217,7 @@ Attribution AI会生成两种不同类型的算法得分：增量分数和受影
 | 渠道（字符串） | 枚举 | False | 的 `channel._type` 属性，用于对 [!DNL Consumer Experience Event] XDM。 <br> **示例**:搜索 |
 | 操作（字符串） | 枚举 | False | 的 `mediaAction` 属性用于提供体验事件媒体操作类型。 <br> **示例**:单击 |
 | campaign_group（字符串） | 用户定义的 | True | 将多个营销活动分组在一起的营销活动组的名称，如“50%_DISCOUNT”。 <br> **示例**:商业 |
-| campaign_name（字符串） | 用户定义的 | True | 用于识别营销活动（如“50%_DISCOUNT_USA”或“50%_DISCOUNT_ASIA”）的营销活动的名称。 <br> **示例**:感恩节大甩卖 |
+| campaign_name（字符串） | 用户定义的 | True | 用于识别营销活动（如“50%_DISCOUNT_USA”或“50%_DISCOUNT_ASIA”）的营销活动的名称。 <br> **Example**: Thanksgiving Sale |
 
 **原始分数引用（汇总）**
 
@@ -225,12 +225,12 @@ Attribution AI会生成两种不同类型的算法得分：增量分数和受影
 
 | 列名称 | 原始分数引用列 |
 | --- | --- |
-| customrevents_date | timestamp |
+| customerevents_date | timestamp |
 | mediatouchpoints_date | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.timestamp |
 | segment（区段） | _tenantID.your_schema_name.segmentation |
 | conversion_scope | _tenantID.your_schema_name.conversion.conversionName |
 | touchpoint_scope | _tenantID.your_schema_name.touchpointsDetail.element.touchpointName |
-| 产品 | _tenantID.your_schema_name.conversion.product |
+| product | _tenantID.your_schema_name.conversion.product |
 | product_type | _tenantID.your_schema_name.conversion.product_type |
 | 地域 | _tenantID.your_schema_name.conversion.geo |
 | event_type | eventType |

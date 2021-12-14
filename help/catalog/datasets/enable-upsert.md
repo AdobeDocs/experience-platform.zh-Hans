@@ -3,13 +3,13 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 使用API为配置文件更新启用数据集
 type: Tutorial
 description: 本教程将向您演示如何使用Adobe Experience Platform API启用具有“插入”功能的数据集，以便更新实时客户资料数据。
-source-git-commit: 3b34cf37182ae98545651a7b54f586df7d811f34
+exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '967'
 ht-degree: 2%
 
 ---
-
 
 # 使用API为配置文件更新启用数据集
 
@@ -20,27 +20,27 @@ ht-degree: 2%
 本教程需要对管理启用了用户档案的数据集时涉及的多项Adobe Experience Platform服务有一定的了解。 在开始本教程之前，请查阅以下相关DNL Platform服务的文档：
 
 - [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-- [[!DNL Catalog Service]](../../catalog/home.md):一个RESTful API，允许您创建数据集并为和配置 [!DNL Real-time Customer Profile] 数据集 [!DNL Identity Service]。
-- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):用于组织客户体验数 [!DNL Platform] 据的标准化框架。
+- [[!DNL Catalog Service]](../../catalog/home.md):一个RESTful API，允许您创建数据集并为 [!DNL Real-time Customer Profile] 和 [!DNL Identity Service].
+- [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
 - [批量摄取](../../ingestion/batch-ingestion/overview.md)
 
 以下部分提供了成功调用平台API所需了解的其他信息。
 
 ### 读取示例API调用
 
-本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅[!DNL Experience Platform]疑难解答指南中[如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
+本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程可为所有[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
 - `x-gw-ims-org-id: {IMS_ORG}`
 
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的`Content-Type`标头。 如有必要，此标头的正确值会显示在示例请求中。
+所有包含有效负载(POST、PUT、PATCH)的请求都需要附加 `Content-Type` 标题。 如有必要，此标头的正确值会显示在示例请求中。
 
-[!DNL Experience Platform]中的所有资源均与特定虚拟沙箱隔离。 对[!DNL Platform] API的所有请求都需要一个`x-sandbox-name`标头，以指定操作将在其中进行的沙盒的名称。 有关[!DNL Platform]中沙箱的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+中的所有资源 [!DNL Experience Platform] 与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要 `x-sandbox-name` 用于指定操作将在其中进行的沙盒名称的标头。 有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
 
 ## 创建为配置文件更新启用的数据集
 
@@ -48,9 +48,9 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->要创建新的启用了“配置文件”的数据集，您必须知道已为“配置文件”启用的现有XDM架构的ID。 有关如何查找或创建启用了配置文件的架构的信息，请参阅关于[使用架构注册表API](../../xdm/tutorials/create-schema-api.md)创建架构的教程。
+>要创建新的启用了“配置文件”的数据集，您必须知道已为“配置文件”启用的现有XDM架构的ID。 有关如何查找或创建启用了用户档案的架构的信息，请参阅 [使用模式注册表API创建模式](../../xdm/tutorials/create-schema-api.md).
 
-要创建为配置文件和更新启用的POST集，请使用`/dataSets`端点的数据集请求。
+要创建为配置文件和更新启用的POST集，请使用 `/dataSets` 端点。
 
 **API格式**
 
@@ -60,7 +60,7 @@ POST /dataSets
 
 **请求**
 
-通过在请求正文的`tags`下包含`unifiedProfile`，将在创建时为[!DNL Profile]启用数据集。 在`unifiedProfile`数组中，添加`isUpsert:true`将添加支持更新的数据集的功能。
+包括 `unifiedProfile` 在 `tags` 在请求正文中，将为 [!DNL Profile] 创建时。 在 `unifiedProfile` 数组，添加 `isUpsert:true` 将添加数据集支持更新的功能。
 
 ```shell
 curl -X POST \
@@ -72,11 +72,11 @@ curl -X POST \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
         "fields":[],
-        "schemaRef" : {
+        "schemaRef": {
           "id": "https://ns.adobe.com/{TENANT_ID}/schemas/31670881463308a46f7d2cb09762715",
           "contentType": "application/vnd.adobe.xed-full-notext+json; version=1"
         },
-        "tags" : {
+        "tags": {
           "unifiedProfile": [
             "enabled:true",
             "isUpsert:true"
@@ -87,12 +87,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 |---|---|
-| `schemaRef.id` | 启用了[!DNL Profile]的架构的ID，数据集将基于该架构。 |
-| `{TENANT_ID}` | [!DNL Schema Registry]中的命名空间，其中包含属于您的IMS组织的资源。 有关详细信息，请参阅[!DNL Schema Registry]开发人员指南的[TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id)部分。 |
+| `schemaRef.id` | 的ID [!DNL Profile]启用了数据集所基于的架构。 |
+| `{TENANT_ID}` | 中的命名空间 [!DNL Schema Registry] 其中包含属于您的IMS组织的资源。 请参阅 [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) 部分 [!DNL Schema Registry] 开发人员指南以了解更多信息。 |
 
 **响应**
 
-成功响应会显示一个数组，其中包含以`"@/dataSets/{DATASET_ID}"`形式新创建的数据集的ID。
+成功响应会显示一个数组，其中包含以下形式新创建数据集的ID: `"@/dataSets/{DATASET_ID}"`.
 
 ```json
 [
@@ -106,11 +106,11 @@ curl -X POST \
 
 >[!NOTE]
 >
->要为“upsert”配置现有启用了“配置文件”的数据集，必须先为“配置文件”禁用该数据集，然后在`isUpsert`标记旁边重新启用该数据集。 如果未为“配置文件”启用现有数据集，则可以直接继续执行[为“配置文件”启用数据集和](#enable-the-dataset)的步骤。 如果不确定，以下步骤将向您显示如何检查数据集是否已启用。
+>要为“upsert”配置现有启用了“配置文件”的数据集，您必须先为“配置文件”禁用该数据集，然后在 `isUpsert` 标记。 如果未为“配置文件”启用现有数据集，则可以直接继续执行 [启用“配置文件”数据集并重新插入](#enable-the-dataset). 如果不确定，以下步骤将向您显示如何检查数据集是否已启用。
 
 ### 检查数据集是否已为“配置文件”启用
 
-使用[!DNL Catalog] API，您可以检查现有数据集以确定它是否已启用以供在[!DNL Real-time Customer Profile]中使用。 以下调用按ID检索数据集的详细信息。
+使用 [!DNL Catalog] API中，您可以检查现有数据集以确定它是否已启用以供在中使用 [!DNL Real-time Customer Profile]. 以下调用按ID检索数据集的详细信息。
 
 **API格式**
 
@@ -182,11 +182,11 @@ curl -X GET \
 }
 ```
 
-在`tags`属性下，您可以看到`unifiedProfile`与值`enabled:true`一起存在。 因此，已为此数据集启用[!DNL Real-time Customer Profile]。
+在 `tags` 属性，您可以看到 `unifiedProfile` 值存在 `enabled:true`. 因此， [!DNL Real-time Customer Profile] 已为此数据集启用。
 
 ### 禁用配置文件的数据集
 
-要配置启用了配置文件的数据集以进行更新，您必须先禁用`unifiedProfile`标记，然后在`isUpsert`标记旁边重新启用该标记。 可使用两个PATCH请求完成此操作，一个用于禁用，另一个用于重新启用。
+要配置启用了“配置文件”的数据集进行更新，您必须首先禁用 `unifiedProfile` 标记，然后在 `isUpsert` 标记。 可使用两个PATCH请求完成此操作，一个用于禁用，另一个用于重新启用。
 
 >[!WARNING]
 >
@@ -204,7 +204,7 @@ PATCH /dataSets/{DATASET_ID}
 
 **请求**
 
-第一个PATCH请求正文包括`path`到`unifiedProfile` ，以将`value`设置为`enabled:false` ，以禁用标记。
+第一PATCH请求正文包括 `path` to `unifiedProfile` 设置 `value` to `enabled:false` 以禁用标记。
 
 ```shell
 curl -X PATCH \
@@ -219,8 +219,8 @@ curl -X PATCH \
       ]'
 ```
 
-****
-响应成功的PATCH请求会返回“HTTP状态200（确定）”和一个包含已更新数据集ID的数组。此ID应与在PATCH请求中发送的ID匹配。 `unifiedProfile`标记现已禁用。
+**响应**
+成功的PATCH请求会返回HTTP状态200（确定）和一个包含已更新数据集ID的数组。 此ID应与在PATCH请求中发送的ID匹配。 的 `unifiedProfile` 标记现已禁用。
 
 ```json
 [
@@ -244,7 +244,7 @@ PATCH /dataSets/{DATASET_ID}
 
 **请求**
 
-请求正文包括`path`到`unifiedProfile`的`value`设置，以包含`enabled`和`isUpsert`标记，这两个标记均设置为`true`。
+请求正文包括 `path` to `unifiedProfile` 设置 `value` 包含 `enabled` 和 `isUpsert` 标记，均设置为 `true`.
 
 ```shell
 curl -X PATCH \
@@ -259,8 +259,8 @@ curl -X PATCH \
       ]'
 ```
 
-****
-响应成功的PATCH请求会返回“HTTP状态200（确定）”和一个包含已更新数据集ID的数组。此ID应与在PATCH请求中发送的ID匹配。 `unifiedProfile`标记现已启用并配置，用于属性更新。
+**响应**
+成功的PATCH请求会返回HTTP状态200（确定）和一个包含已更新数据集ID的数组。 此ID应与在PATCH请求中发送的ID匹配。 的 `unifiedProfile` 标记现已启用并配置，用于属性更新。
 
 ```json
 [
@@ -270,4 +270,4 @@ curl -X PATCH \
 
 ## 后续步骤
 
-现在，批量和流式引入工作流可以使用您的配置文件和启用了更新的数据集来更新配置文件数据。 要了解有关将数据摄取到Adobe Experience Platform的更多信息，请首先阅读[数据摄取概述](../../ingestion/home.md)。
+现在，批量和流式引入工作流可以使用您的配置文件和启用了更新的数据集来更新配置文件数据。 要了解有关将数据摄取到Adobe Experience Platform的更多信息，请首先阅读 [数据摄取概述](../../ingestion/home.md).

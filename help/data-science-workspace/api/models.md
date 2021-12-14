@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；数据科学工作区；热门主题；模型；sensei机器学习api
+keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；模型；Sensei机器学习API
 solution: Experience Platform
 title: 模型API端点
 topic-legacy: Developer guide
-description: 模型是机器学习方法的实例，该方法使用历史数据和配置进行培训，以便为业务用例解决问题。
+description: 模型是机器学习方法的一个实例，该方法使用历史数据和配置进行培训，以针对业务用例进行求解。
 exl-id: e66119a9-9552-497c-9b3a-b64eb3b51fcf
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '864'
 ht-degree: 4%
@@ -15,11 +14,11 @@ ht-degree: 4%
 
 # 模型端点
 
-模型是机器学习方法的实例，该方法使用历史数据和配置进行培训，以便为业务用例解决问题。
+模型是机器学习方法的一个实例，该方法使用历史数据和配置进行培训，以针对业务用例进行求解。
 
 ## 检索模型列表
 
-通过对/models执行单个GET请求，可以检索属于所有模型的模型详细信息列表。 默认情况下，此列表将自行从最早创建的模型中排序，并将结果限制为25。 可以通过指定一些查询参数来筛选结果。 有关可用查询的列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
+通过对/models执行单个GET请求，可检索属于所有模型的模型详细信息列表。 默认情况下，此列表将自行从最早创建的模型中排序，并将结果限制为25。 您可以选择通过指定一些查询参数来筛选结果。 有关可用查询的列表，请参阅 [资产检索查询参数](./appendix.md#query).
 
 **API格式**
 
@@ -40,7 +39,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回一个有效负荷，其中包含包括每个模型唯一标识符的模型的详细信息(`id`)。
+成功的响应会返回一个有效负载，其中包含模型的详细信息，包括每个模型的唯一标识符(`id`)。
 
 ```json
 {
@@ -94,14 +93,14 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 与“模型”(Model)对应的ID。 |
-| `modelArtifactUri` | 一个URI，指示模型的存储位置。 URI以模型的`name`值结尾。 |
+| `id` | 与模型对应的ID。 |
+| `modelArtifactUri` | 一个URI，用于指示模型的存储位置。 URI以 `name` 值。 |
 | `experimentId` | 有效的实验ID。 |
 | `experimentRunId` | 有效的实验运行ID。 |
 
 ## 检索特定模型
 
-通过执行单个GET请求并在请求路径中提供有效的模型ID，可以检索属于特定模型的模型详细信息列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
+通过执行单个GET请求并在请求路径中提供有效的模型ID，可以检索属于特定模型的模型详细信息列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅 [资产检索查询参数](./appendix.md#query).
 
 **API格式**
 
@@ -112,12 +111,12 @@ GET /models/?property=experimentRunID=={EXPERIMENT_RUN_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MODEL_ID}` | 已培训或已发布模型的标识符。 |
-| `{EXPERIMENT_RUN_ID}` | 实验运行的标识符。 |
+| `{MODEL_ID}` | 已培训或已发布的模型的标识符。 |
+| `{EXPERIMENT_RUN_ID}` | 运行实验的标识符。 |
 
 **请求**
 
-以下请求包含一个查询，并检索共享相同emperityRunID({EXPERICE_RUN_ID})的受训模型的列表。
+以下请求包含一个查询，并检索共享相同experienceRunID({EXPERIENCE_RUN_ID})的受训模型列表。
 
 ```shell
 curl -X GET \
@@ -130,7 +129,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回一个包含模型详细信息（包括模型唯一标识符）的有效负荷。`id`
+成功的响应会返回包含模型详细信息(包括模型唯一标识符(`id`)。
 
 ```json
 {
@@ -158,14 +157,14 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 与“模型”(Model)对应的ID。 |
-| `modelArtifactUri` | 一个URI，指示模型的存储位置。 URI以模型的`name`值结尾。 |
+| `id` | 与模型对应的ID。 |
+| `modelArtifactUri` | 一个URI，用于指示模型的存储位置。 URI以 `name` 值。 |
 | `experimentId` | 有效的实验ID。 |
 | `experimentRunId` | 有效的实验运行ID。 |
 
-## 注册预生成的模型{#register-a-model}
+## 注册预生成的模型 {#register-a-model}
 
-可以通过向`/models`端点发出POST请求来注册预生成的模型。 为了注册您的模型，`modelArtifact`文件和`model`属性值需要包含在请求正文中。
+您可以通过向 `/models` 端点。 为注册模型， `modelArtifact` 文件和 `model` 属性值需要包含在请求正文中。
 
 **API格式**
 
@@ -175,7 +174,7 @@ POST /models
 
 **请求**
 
-以下POST包含所需的`modelArtifact`文件和`model`属性值。 有关这些值的详细信息，请参阅下表。
+以下POST包含 `modelArtifact` 文件和 `model` 所需的属性值。 有关这些值的更多信息，请参阅下表。
 
 ```shell
 curl -X POST \
@@ -194,11 +193,11 @@ curl -X POST \
 | 参数 | 描述 |
 | --- | --- |
 | `modelArtifact` | 要包括的完整模型对象的位置。 |
-| `model` | 需要创建的Model对象的表单数据。 |
+| `model` | 需要创建的模型对象的表单数据。 |
 
 **响应**
 
-成功的响应返回一个包含模型详细信息（包括模型唯一标识符）的有效负荷。`id`
+成功的响应会返回包含模型详细信息(包括模型唯一标识符(`id`)。
 
 ```json
 {
@@ -214,16 +213,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 与“模型”(Model)对应的ID。 |
-| `modelArtifactUri` | 一个URI，指示模型的存储位置。 URI以模型的`id`值结尾。 |
+| `id` | 与模型对应的ID。 |
+| `modelArtifactUri` | 一个URI，用于指示模型的存储位置。 URI以 `id` 值。 |
 
 ## 按ID更新模型
 
-您可以通过以下方式更新现有模型：通过在请求路径中包含目标模型ID的PUT请求覆盖其属性，并提供包含已更新属性的JSON有效负荷。
+您可以通过覆盖现有模型的属性来更新现有模型，方法是：通过PUT请求覆盖其属性，该请求在请求路径中包含目标模型的ID，并提供包含已更新属性的JSON有效负载。
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议您首先执行GET请求以按ID检索模型。 然后，修改并更新返回的JSON对象，并应用修改后的JSON对象的整个作为PUT请求的有效负荷。
+>为确保此PUT请求成功，建议您首先执行GET请求以按ID检索模型。 然后，修改并更新返回的JSON对象，并将修改的JSON对象的整个作为PUT请求的有效负载应用。
 
 **API格式**
 
@@ -233,7 +232,7 @@ PUT /models/{MODEL_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MODEL_ID}` | 已培训或已发布模型的标识符。 |
+| `{MODEL_ID}` | 已培训或已发布的模型的标识符。 |
 
 **请求**
 
@@ -262,7 +261,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应返回包含实验的更新详细信息的有效负荷。
+成功的响应会返回包含实验更新详细信息的有效负载。
 
 ```json
 {
@@ -282,7 +281,7 @@ curl -X PUT \
 
 ## 按ID删除模型
 
-您可以通过执行在请求路径中包含DELETE模型ID的目标请求来删除单个模型。
+您可以通过执行DELETE请求来删除单个模型，该请求在请求路径中包含目标模型的ID。
 
 **API格式**
 
@@ -292,7 +291,7 @@ DELETE /models/{MODEL_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MODEL_ID}` | 已培训或已发布模型的标识符。 |
+| `{MODEL_ID}` | 已培训或已发布的模型的标识符。 |
 
 **请求**
 
@@ -307,7 +306,7 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应返回包含确认删除模型的200状态的有效负荷。
+成功响应会返回包含200状态的有效负载，该状态确认删除模型。
 
 ```json
 {
@@ -317,9 +316,9 @@ curl -X DELETE \
 }
 ```
 
-## 为型号{#create-transcoded-model}创建新转码
+## 为模型创建新转码 {#create-transcoded-model}
 
-转码是指将一种编码直接数字到另一种编码转换。 通过提供希望新输出包含的`{MODEL_ID}`和`targetFormat`，可为模型创建新转码。
+转码是指将一种编码直接进行数字到数字的转换。 通过提供 `{MODEL_ID}` 和 `targetFormat` 您希望新输出包含在中。
 
 **API格式**
 
@@ -329,7 +328,7 @@ POST /models/{MODEL_ID}/transcodings
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MODEL_ID}` | 已培训或已发布模型的标识符。 |
+| `{MODEL_ID}` | 已培训或已发布的模型的标识符。 |
 
 **请求**
 
@@ -343,7 +342,7 @@ curl -X POST \
     -H 'Content-Type: text/plain' \
     -D '{
  "id": "491a3be5-1d32-4541-94d5-cd1cd07affb5",
- "modelId" : "15c53796-bd6b-4e09-b51d-7296aa20af71",
+ "modelId": "15c53796-bd6b-4e09-b51d-7296aa20af71",
  "targetFormat": "CoreML",
  "created": "2019-12-16T19:59:08.360Z",
  "createdBy": {
@@ -356,7 +355,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应返回包含JSON对象的有效负荷，其中包含转码信息。 这包括在检索特定转码Model](#retrieve-transcoded-model)时使用的转码唯一标识符(`id`)。[
+成功响应会返回一个有效负载，该负载包含包含转码信息的JSON对象。 这包括转码的唯一标识符(`id`)在 [检索特定转码模型](#retrieve-transcoded-model).
 
 ```json
 {
@@ -372,9 +371,9 @@ curl -X POST \
 }
 ```
 
-## 检索模型{#retrieve-transcoded-model-list}的转码列表
+## 检索模型的转码列表 {#retrieve-transcoded-model-list}
 
-通过使用`{MODEL_ID}`执行GET请求，可以检索已在模型上执行的转码列表。
+您可以通过使用 `{MODEL_ID}`.
 
 **API格式**
 
@@ -384,7 +383,7 @@ GET /models/{MODEL_ID}/transcodings
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MODEL_ID}` | 已培训或已发布模型的标识符。 |
+| `{MODEL_ID}` | 已培训或已发布的模型的标识符。 |
 
 **请求**
 
@@ -399,7 +398,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回一个包含json对象的有效负荷，其中列表了在模型上执行的每个转码。 每个转码模型都接收唯一标识符(`id`)。
+成功响应会返回一个包含json对象的有效负载，其中包含对模型执行的每个转码的列表。 每个转码模型接收唯一标识符(`id`)。
 
 ```json
 {
@@ -432,9 +431,9 @@ curl -X GET \
 }
 ```
 
-## 检索特定转码模型{#retrieve-transcoded-model}
+## 检索特定的转码模型 {#retrieve-transcoded-model}
 
-通过使用`{MODEL_ID}`和转码模型的id执行GET请求，可以检索特定的转码模型。
+您可以通过执行GET请求来检索特定的转码模型 `{MODEL_ID}` 和转码模型的id。
 
 **API格式**
 
@@ -444,7 +443,7 @@ GET /models/{MODEL_ID}/transcodings/{TRANSCODING_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{MODEL_ID}` | 已培训或已发布模型的唯一标识符。 |
+| `{MODEL_ID}` | 已培训或已发布的模型的唯一标识符。 |
 | `{TRANSCODING_ID}` | 转码模型的唯一标识符。 |
 
 **请求**
@@ -460,7 +459,7 @@ curl -X GET \
 
 **响应**
 
-成功的响应返回一个包含JSON对象的有效负荷，该JSON对象包含转码模型的数据。
+成功的响应会返回一个有效负载，该有效负载中包含具有转码模型数据的JSON对象。
 
 ```json
 {

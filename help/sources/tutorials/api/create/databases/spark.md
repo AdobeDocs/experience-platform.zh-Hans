@@ -6,54 +6,54 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Azure HDInsights上的Apache Spark连接到Adobe Experience Platform。
 exl-id: 1f7ca86e-32f4-45f7-92c2-f87c5c0c4ea4
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '493'
 ht-degree: 1%
 
 ---
 
-# 使用[!DNL Flow Service] API在[!DNL Azure] HDInsights基连接上创建[!DNL Apache Spark]
+# 创建 [!DNL Apache Spark] on [!DNL Azure] HDInsights基本连接使用 [!DNL Flow Service] API
 
 >[!NOTE]
 >
->[!DNL Azure HDInsights]连接器上的[!DNL Apache Spark]处于测试阶段。 有关使用测试版标记的连接器的更多信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
+>的 [!DNL Apache Spark] on [!DNL Azure HDInsights] 连接器处于测试阶段。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标签的连接器的更多信息。
 
 基本连接表示源与Adobe Experience Platform之间经过验证的连接。
 
-本教程将指导您完成使用[[!DNL Flow Service]  API](https://www.adobe.io/experience-platform-apis/references/flow-service/)在[!DNL Azure HDInsights]（以下称为“[!DNL Spark]”）上为[!DNL Apache Spark]创建基本连接的步骤。
+本教程将指导您完成为 [!DNL Apache Spark] on [!DNL Azure HDInsights] (以下简称“[!DNL Spark]“)使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
-* [沙盒](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
+* [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了您需要了解的其他信息，以便您能够使用[!DNL Flow Service] API成功连接到[!DNL Spark]。
+以下部分提供了成功连接到所需了解的其他信息 [!DNL Spark] 使用 [!DNL Flow Service] API。
 
 ### 收集所需的凭据
 
-要使[!DNL Flow Service]与[!DNL Spark]连接，必须为以下连接属性提供值：
+为 [!DNL Flow Service] 连接 [!DNL Spark]，则必须为以下连接属性提供值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `host` | [!DNL Spark]服务器的IP地址或主机名。 |
-| `username` | 用于访问[!DNL Spark]服务器的用户名。 |
+| `host` | 的IP地址或主机名 [!DNL Spark] 服务器。 |
+| `username` | 用于访问的用户名 [!DNL Spark] 服务器。 |
 | `password` | 与用户对应的密码。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 [!DNL Spark]的连接规范ID是：`6a8d82bc-1caf-45d1-908d-cadabc9d63a6` |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 的连接规范ID [!DNL Spark] 为： `6a8d82bc-1caf-45d1-908d-cadabc9d63a6` |
 
-有关入门的详细信息，请参阅[此Spark文档](https://docs.microsoft.com/en-us/azure/hdinsight/spark/apache-spark-overview)。
+有关入门的更多信息，请参阅 [这个Spark文档](https://docs.microsoft.com/en-us/azure/hdinsight/spark/apache-spark-overview).
 
 ### 使用Platform API
 
-有关如何成功调用Platform API的信息，请参阅[Platform API入门指南](../../../../../landing/api-guide.md)。
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
 ## 创建基本连接
 
 基本连接保留了源和平台之间的信息，包括源的身份验证凭据、连接的当前状态和唯一基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在请求参数中提供[!DNL Spark]身份验证凭据时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请向 `/connections` 提供 [!DNL Spark] 身份验证凭据作为请求参数的一部分。
 
 **API格式**
 
@@ -63,7 +63,7 @@ POST /connections
 
 **请求**
 
-以下请求为[!DNL Spark]创建基本连接：
+以下请求会为 [!DNL Spark]:
 
 
 ```shell
@@ -80,9 +80,9 @@ curl -X POST \
         "auth": {
             "specName": "HDInsights Basic Authentication",
         "params": {
-            "host" :  "{HOST}",
-            "username" : "{USERNAME}",
-            "password" :"{PASSWORD}"
+            "host":  "{HOST}",
+            "username": "{USERNAME}",
+            "password":"{PASSWORD}"
             }
         },
         "connectionSpec": {
@@ -94,14 +94,14 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `auth.params.host` | [!DNL Spark]服务器的主机。 |
-| `auth.params.username` | 与[!DNL Spark]连接关联的用户名。 |
-| `auth.params.password` | 与[!DNL Spark]连接关联的密码。 |
-| `connectionSpec.id` | [!DNL Spark]连接规范ID:`6a8d82bc-1caf-45d1-908d-cadabc9d63a6`。 |
+| `auth.params.host` | 的主机 [!DNL Spark] 服务器。 |
+| `auth.params.username` | 与您的 [!DNL Spark] 连接。 |
+| `auth.params.password` | 与 [!DNL Spark] 连接。 |
+| `connectionSpec.id` | 的 [!DNL Spark] 连接规范ID: `6a8d82bc-1caf-45d1-908d-cadabc9d63a6`. |
 
 **响应**
 
-成功的响应返回新创建连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中探索数据时需要此ID。
+成功的响应会返回新创建连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中探索数据时需要此ID。
 
 ```json
 {
@@ -112,4 +112,4 @@ curl -X POST \
 
 ## 后续步骤
 
-在本教程中，您已使用[!DNL Flow Service] API创建了[!DNL Spark]连接，并获取了该连接的唯一ID值。 在下一个教程中，您可以使用此ID，因为您正在学习如何[使用流服务API](../../explore/database-nosql.md)浏览数据库。
+通过阅读本教程，您已创建 [!DNL Spark] 使用 [!DNL Flow Service] API，并已获取连接的唯一ID值。 在下一个教程中，您可以使用此ID来了解如何 [使用流服务API浏览数据库](../../explore/database-nosql.md).

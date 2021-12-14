@@ -1,7 +1,8 @@
 ---
 title: 搜索端点
 description: 了解如何在Reactor API中调用/search端点。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 14eb8d8a-3b42-42f3-be87-f39e16d616f4
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '658'
 ht-degree: 1%
@@ -10,7 +11,7 @@ ht-degree: 1%
 
 # 搜索端点
 
-Reactor API中的`/search`端点提供了一种查找符合所需条件的资源的方法，以查询形式表示。
+的 `/search` Reactor API中的端点提供了一种查找符合所需标准的资源的方法，以查询形式表示。
 
 可以搜索以下API资源类型，利用与在API中返回的基于资源的文档相同的数据结构：
 
@@ -37,11 +38,11 @@ Reactor API中的`/search`端点提供了一种查找符合所需条件的资源
 >* 范围查询当前仅支持整数。
 
 
-有关如何使用此功能的详细信息，请参阅[搜索指南](../guides/search.md)。
+有关如何使用此功能的详细信息，请参阅 [搜索指南](../guides/search.md).
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 执行搜索 {#perform}
 
@@ -64,7 +65,7 @@ curl -X POST \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -d '{
-        "data" : {
+        "data": {
           "from": 0,
           "size": 25,
           "query": {
@@ -95,15 +96,15 @@ curl -X POST \
 | --- | --- |
 | `from` | 要将响应偏移的结果数。 |
 | `size` | 要返回的最大结果量。 结果不能超过100项。 |
-| `query` | 表示搜索查询的对象。 对于此对象中的每个属性，键必须表示要查询的字段路径，并且值必须是其子属性确定要查询内容的对象。<br><br>对于每个字段路径，您可以使用以下子属性：<ul><li>`exists`:如果资源中存在字段，则返回true。</li><li>`value`:如果字段的值与此属性的值匹配，则返回true。</li><li>`value_operator`:用于确定查询处理方式 `value` 的布尔逻辑。允许的值为`AND`和`OR`。 排除时，假定使用`AND`逻辑。 有关更多信息，请参阅[value运算符逻辑](#value-operator)中的部分。</li><li>`range` 如果字段的值在特定的数字范围内，则返回true。范围本身由以下子属性决定：<ul><li>`gt`:大于提供的值，不包括。</li><li>`gte`:大于或等于提供的值。</li><li>`lt`:小于提供的值，不包括。</li><li>`lte`:小于或等于提供的值。</li></ul></li></ul> |
-| `sort` | 对象数组，指示对结果排序的顺序。 每个对象必须包含单个属性：键表示要按排序的字段路径，值表示排序顺序（`asc`表示升序，`desc`表示降序）。 |
+| `query` | 表示搜索查询的对象。 对于此对象中的每个属性，键必须表示要查询的字段路径，并且值必须是其子属性确定要查询内容的对象。<br><br>对于每个字段路径，您可以使用以下子属性：<ul><li>`exists`:如果资源中存在字段，则返回true。</li><li>`value`:如果字段的值与此属性的值匹配，则返回true。</li><li>`value_operator`:用于确定 `value` 应处理查询。 允许的值为 `AND` 和 `OR`. 排除后， `AND` 逻辑。 请参阅 [值运算符逻辑](#value-operator) 以了解更多信息。</li><li>`range` 如果字段的值在特定的数字范围内，则返回true。 范围本身由以下子属性决定：<ul><li>`gt`:大于提供的值，不包括。</li><li>`gte`:大于或等于提供的值。</li><li>`lt`:小于提供的值，不包括。</li><li>`lte`:小于或等于提供的值。</li></ul></li></ul> |
+| `sort` | 对象数组，指示对结果排序的顺序。 每个对象必须包含单个属性：键表示要排序的字段路径，值表示排序顺序(`asc` 升序， `desc` )。 |
 | `resource_types` | 字符串数组，用于指示要搜索的特定资源类型。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-成功的响应会返回查询的匹配资源列表。 有关API如何确定特定值匹配的详细信息，请参阅[匹配约定](#conventions)上的附录部分。
+成功的响应会返回查询的匹配资源列表。 有关API如何确定特定值匹配情况的详细信息，请参阅附录部分 [匹配约定](#conventions).
 
 ```json
 {
@@ -210,15 +211,15 @@ curl -X POST \
 
 ## 附录
 
-以下部分包含有关使用`/search`端点的其他信息。
+以下部分包含有关使用 `/search` 端点。
 
 ### 值运算符逻辑 {#value-operator}
 
-搜索查询值被拆分为术语以与索引文档匹配。 在每个术语之间，假定`AND`关系。
+搜索查询值被拆分为术语以与索引文档匹配。 每个术语之间 `AND` 关系。
 
-当使用`AND`作为`value_operator`时，查询值`My Rule Holiday Sale`被解释为文档，其中字段包含`My AND Rule AND Holiday AND Sale`。
+使用 `AND` 作为 `value_operator`，的查询值 `My Rule Holiday Sale` 解释为包含 `My AND Rule AND Holiday AND Sale`.
 
-当使用`OR`作为`value_operator`时，查询值`My Rule Holiday Sale`被解释为文档，其中字段包含`My OR Rule OR Holiday OR Sale`。 匹配的术语越多，`match_score`越高。 由于部分术语匹配的性质，当没有与所需值紧密匹配的内容时，您可以获得一个结果集，其中该值仅在非常基本的级别上进行匹配，例如一些文本字符。
+使用 `OR` 作为 `value_operator`，的查询值 `My Rule Holiday Sale` 解释为包含 `My OR Rule OR Holiday OR Sale`. 匹配的术语越多，越高 `match_score`. 由于部分术语匹配的性质，当没有与所需值紧密匹配的内容时，您可以获得一个结果集，其中该值仅在非常基本的级别上进行匹配，例如一些文本字符。
 
 ### 匹配约定 {#conventions}
 
@@ -240,7 +241,7 @@ API中显示了其他有关特定字段的约定：
 | 字段 | 匹配约定 |
 | --- | --- |
 | `id` | 完全匹配，区分大小写 |
-| `delegate_descriptor_id` | 精确匹配，区分大小写，术语拆分在`::`上 |
+| `delegate_descriptor_id` | 精确匹配，区分大小写，且术语拆分为 `::` |
 | `name` | 完全匹配，区分大小写 |
 | `settings` | 包含部分术语分析的文本，不区分大小写 |
 | `type` | 完全匹配，区分大小写 |

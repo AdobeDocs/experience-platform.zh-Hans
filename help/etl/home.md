@@ -5,7 +5,7 @@ title: 为Adobe Experience Platform开发ETL集成
 topic-legacy: overview
 description: ETL集成指南概述了创建高性能、安全的连接器以Experience Platform数据并将数据引入平台的一般步骤。
 exl-id: 7d29b61c-a061-46f8-a31f-f20e4d725655
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '4075'
 ht-degree: 1%
@@ -14,7 +14,7 @@ ht-degree: 1%
 
 # 为Adobe Experience Platform开发ETL集成
 
-ETL集成指南概述了为[!DNL Experience Platform]创建高性能、安全的连接器以及将数据摄取到[!DNL Platform]的一般步骤。
+ETL集成指南概述了为创建高性能、安全的连接器而需执行的一般步骤 [!DNL Experience Platform] 并将数据摄取到 [!DNL Platform].
 
 
 - [[!DNL Catalog]](https://www.adobe.io/experience-platform-apis/references/catalog/)
@@ -23,9 +23,9 @@ ETL集成指南概述了为[!DNL Experience Platform]创建高性能、安全的
 - [Experience PlatformAPI的身份验证和授权](https://www.adobe.com/go/platform-api-authentication-en)
 - [[!DNL Schema Registry]](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
 
-本指南还包含设计ETL连接器时要使用的示例API调用，其中包含概述每项[!DNL Experience Platform]服务的文档链接以及其API的使用，这些链接将提供更多详细信息。
+本指南还包括在设计ETL连接器时要使用的示例API调用，其中包含指向文档的链接，其中概述了每个文档 [!DNL Experience Platform] ，以及其API的使用。
 
-在[!DNL GitHub]上，可通过[!DNL Apache]许可证版本2.0下的[ETL生态系统集成参考代码](https://github.com/adobe/acp-data-services-etl-reference)获取集成示例。
+集成示例位于 [!DNL GitHub] 通过 [ETL生态系统集成参考代码](https://github.com/adobe/acp-data-services-etl-reference) 下 [!DNL Apache] 许可证版本2.0。
 
 ## 工作流
 
@@ -37,38 +37,38 @@ ETL集成指南概述了为[!DNL Experience Platform]创建高性能、安全的
 
 ETL连接器集成涉及多个Experience Platform组件。 以下列表概述了几个关键组件和功能：
 
-- **AdobeIdentity Management系统(IMS)**  — 为Adobe服务的身份验证提供框架。
-- **IMS组织**  — 一个公司实体，可以拥有或许可产品和服务并允许其成员访问。
-- **IMS用户** - IMS组织的成员。组织与用户的关系是多对多的关系。
-- **[!DNL Sandbox]**  — 将一个实例虚拟分区， [!DNL Platform] 以帮助开发和改进数字体验应用程序。
-- **数据发现**  — 在中记录摄取和转换数据的元数 [!DNL Experience Platform]据。
-- **[!DNL Data Access]**  — 为用户提供一个界面，用于访问其中的数 [!DNL Experience Platform]据。
-- **[!DNL Data Ingestion]**  — 使用API将数据 [!DNL Experience Platform] 推送 [!DNL Data Ingestion] 到。
-- **[!DNL Schema Registry]**  — 定义并存储描述中要使用的数据结构的架 [!DNL Experience Platform]构。
+- **AdobeIdentity Management系统(IMS)**  — 为Adobe服务提供身份验证框架。
+- **IMS组织**  — 拥有或许可产品和服务并允许其成员访问的公司实体。
+- **IMS用户** - IMS组织的成员。 组织与用户的关系是多对多的关系。
+- **[!DNL Sandbox]**  — 一个虚拟分区 [!DNL Platform] 实例，以帮助开发和改进数字体验应用程序。
+- **数据发现**  — 将摄取和转换数据的元数据记录在 [!DNL Experience Platform].
+- **[!DNL Data Access]**  — 为用户提供一个界面，以访问 [!DNL Experience Platform].
+- **[!DNL Data Ingestion]**  — 将数据推送到 [!DNL Experience Platform] with [!DNL Data Ingestion] API。
+- **[!DNL Schema Registry]**  — 定义并存储描述要在 [!DNL Experience Platform].
 
-## [!DNL Experience Platform] API快速入门
+## 入门 [!DNL Experience Platform] API
 
-以下各节提供了为成功调用[!DNL Experience Platform] API而需要了解或掌握的其他信息。
+以下各节提供了为成功调用而需要了解或掌握的其他信息 [!DNL Experience Platform] API。
 
 ### 读取示例API调用
 
-本指南提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅[!DNL Experience Platform]疑难解答指南中[如何阅读示例API调用](../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
+本指南提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程可为所有[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
 
-- 授权：载体`{ACCESS_TOKEN}`
+- 授权：持有者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
 - x-gw-ims-org-id: `{IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源均与特定虚拟沙箱隔离。 对[!DNL Platform] API的所有请求都需要一个标头来指定操作将在其中进行的沙盒的名称：
+中的所有资源 [!DNL Experience Platform] 与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关[!DNL Platform]中沙箱的更多信息，请参阅[沙盒概述文档](../sandboxes/home.md)。
+>有关 [!DNL Platform]，请参阅 [沙盒概述文档](../sandboxes/home.md).
 
 所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -76,13 +76,13 @@ ETL连接器集成涉及多个Experience Platform组件。 以下列表概述了
 
 ## 一般用户流量
 
-首先，ETL用户登录到[!DNL Experience Platform]用户界面(UI)，并使用标准连接器或推送服务连接器创建用于摄取的数据集。
+首先，ETL用户登录到 [!DNL Experience Platform] 用户界面(UI)，并使用标准连接器或推送服务连接器创建用于摄取的数据集。
 
-在UI中，用户通过选择数据集架构来创建输出数据集。 架构的选择取决于被摄取到[!DNL Platform]中的数据类型（记录或时间序列）。 通过单击UI中的架构选项卡，用户将能够查看所有可用的架构，包括架构支持的行为类型。
+在UI中，用户通过选择数据集架构来创建输出数据集。 架构的选择取决于被摄取到的数据类型（记录或时间系列） [!DNL Platform]. 通过单击UI中的架构选项卡，用户将能够查看所有可用的架构，包括架构支持的行为类型。
 
-在ETL工具中，用户将在配置相应的连接（使用其凭据）后开始设计其映射转换。 假定ETL工具已安装[!DNL Experience Platform]连接器（此集成指南中未定义流程）。
+在ETL工具中，用户将在配置相应的连接（使用其凭据）后开始设计其映射转换。 假定ETL工具已具有 [!DNL Experience Platform] 已安装连接器（此集成指南中未定义的进程）。
 
-[ETL工作流](./workflow.md)中提供了示例ETL工具和工作流的模型。 虽然ETL工具的格式可能有所不同，但大多数工具都会提供类似的功能。
+中提供了ETL工具和工作流示例的模型 [ETL工作流程](./workflow.md). 虽然ETL工具的格式可能有所不同，但大多数工具都会提供类似的功能。
 
 >[!NOTE]
 >
@@ -90,25 +90,25 @@ ETL连接器集成涉及多个Experience Platform组件。 以下列表概述了
 
 ### 查看数据集列表
 
-使用数据源进行映射，可以使用[[!DNL Catalog API]](https://www.adobe.io/experience-platform-apis/references/catalog/)获取所有可用数据集的列表。
+使用数据源进行映射，可以使用 [[!DNL Catalog API]](https://www.adobe.io/experience-platform-apis/references/catalog/).
 
-您可以发出单个API请求以查看所有可用数据集(例如，`GET /dataSets`)，最佳做法是包含可限制响应大小的查询参数。
+您可以发出单个API请求以查看所有可用数据集(例如， `GET /dataSets`)，最佳实践是包含可限制响应大小的查询参数。
 
-在请求完整数据集信息时，响应有效负载的大小可能超过3GB，这可能会降低整体性能。 因此，使用查询参数仅筛选所需信息将提高[!DNL Catalog]查询的效率。
+在请求完整数据集信息时，响应有效负载的大小可能超过3GB，这可能会降低整体性能。 因此，使用查询参数仅过滤所需信息将会做出 [!DNL Catalog] 查询更高效。
 
 #### 列表筛选
 
-在过滤响应时，您可以在单个调用中使用多个过滤器，方法是使用与号(`&`)分隔参数。 某些查询参数接受以逗号分隔的值列表，例如以下示例请求中的“properties”过滤器。
+在过滤响应时，您可以在单个调用中使用多个过滤器，方法是使用与号(`&`)。 某些查询参数接受以逗号分隔的值列表，例如以下示例请求中的“properties”过滤器。
 
-[!DNL Catalog] 响应将根据配置的限制自动进行计量，但“limit”查询参数可用于自定义约束并限制返回的对象数量。预配置的[!DNL Catalog]响应限制包括：
+[!DNL Catalog] 响应将根据配置的限制自动进行计量，但“limit”查询参数可用于自定义约束并限制返回的对象数量。 预配置 [!DNL Catalog] 响应限制为：
 
 - 如果未指定限制参数，则每个响应有效负载的最大对象数为20。
-- 所有其他[!DNL Catalog]查询的全局限制为100个对象。
+- 所有其他 [!DNL Catalog] 查询是100个对象。
 - 对于数据集查询，如果使用属性查询参数请求可观察模式，则返回的最大数据集数为20。
-- 遇到无效的限制参数（包括`limit=0`）时，会出现HTTP 400错误，该错误会列出正确的范围。
+- 限制参数无效(包括 `limit=0`)会遇到HTTP 400错误，该错误会列出正确的范围。
 - 如果限制或偏移作为查询参数进行传递，则优先于作为标题传递的限制或偏移。
 
-[目录服务概述](../catalog/home.md)中更详细地介绍了查询参数。
+有关查询参数的详细信息，请参阅 [目录服务概述](../catalog/home.md).
 
 **API格式**
 
@@ -127,11 +127,11 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets?limit=3&
   -H "x-sandbox-name: {SANDBOX_NAME}"
 ```
 
-有关如何调用[[!DNL Catalog API]](https://www.adobe.io/experience-platform-apis/references/catalog/)的详细示例，请参阅[目录服务概述](../catalog/home.md)。
+请参阅 [目录服务概述](../catalog/home.md) 以详细了解如何调用 [[!DNL Catalog API]](https://www.adobe.io/experience-platform-apis/references/catalog/).
 
 **响应**
 
-响应包含三个(`limit=3`)数据集，其中显示了`properties`查询参数所指示的“name”、“description”和“schemaRef”。
+响应包括三个(`limit=3`)数据集，其中显示了 `properties` 查询参数。
 
 ```json
 {
@@ -168,11 +168,11 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets?limit=3&
 
 XDM架构是您在需要向用户显示所有可写入的可用字段的列表时所使用的架构。
 
-上一个响应对象(`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`)中的第一个“schemaRef.id”值是指向[!DNL Schema Registry]中特定XDM模式的URI。 可通过对[!DNL Schema Registry] API发出查找(GET)请求来检索架构。
+上一个响应对象(`https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18`)是指向 [!DNL Schema Registry]. 可通过对 [!DNL Schema Registry] API。
 
 >[!NOTE]
 >
->“schemaRef”属性取代了现已弃用的“schema”属性。 如果数据集中缺少“schemaRef”或不包含值，则需要检查是否存在“schema”属性。 可以通过在上一次调用的`properties`查询参数中将“schemaRef”替换为“schema”来完成此操作。 有关“schema”属性的更多详细信息，请参阅下面的[数据集“schema”属性](#dataset-schema-property-deprecated---eol-2019-05-30)部分。
+>“schemaRef”属性取代了现已弃用的“schema”属性。 如果数据集中缺少“schemaRef”或不包含值，则需要检查是否存在“schema”属性。 可通过在 `properties` 查询参数。 有关“schema”属性的更多详细信息，请参阅 [数据集“架构”属性](#dataset-schema-property-deprecated---eol-2019-05-30) 部分。
 
 **API格式**
 
@@ -182,7 +182,7 @@ GET /schemaregistry/tenant/schemas/{url encoded schemaRef.id}
 
 **请求**
 
-该请求使用架构的URL编码的`id` URI（“schemaRef.id”属性的值），并需要Accept标头。
+请求使用经过编码的URL `id` 架构的URI（“schemaRef.id”属性的值），需要Accept标头。
 
 ```shell
 curl -X GET \
@@ -194,7 +194,7 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed-full+json; version=1' \
 ```
 
-响应格式取决于请求中发送的Accept标头类型。 查找请求还要求在Accept标头中包含`version`。 下表概述了可用于查找的Accept标头：
+响应格式取决于请求中发送的Accept标头类型。 查找请求还需要 `version` 包含在接受标头中。 下表概述了可用于查找的Accept标头：
 
 | Accept | 描述 |
 | ------ | ----------- |
@@ -207,17 +207,17 @@ curl -X GET \
 
 >[!NOTE]
 >
->`application/vnd.adobe.xed-id+json` 和是 `application/vnd.adobe.xed-full+json; version={major version}` 最常用的接受标头。`application/vnd.adobe.xed-id+json` 首选在中列出资源， [!DNL Schema Registry] 因为它仅返回“title”、“id”和“version”。`application/vnd.adobe.xed-full+json; version={major version}` 查看特定资源（按其“id”）时，首选使用，因为它会返回所有字段（嵌套在“properties”下）以及标题和描述。
+>`application/vnd.adobe.xed-id+json` 和 `application/vnd.adobe.xed-full+json; version={major version}` 是最常用的接受标头。 `application/vnd.adobe.xed-id+json` 首选在 [!DNL Schema Registry] 因为它只返回“title”、“id”和“version”。 `application/vnd.adobe.xed-full+json; version={major version}` 查看特定资源（按其“id”）时，首选使用，因为它会返回所有字段（嵌套在“properties”下）以及标题和描述。
 
 **响应**
 
-返回的JSON架构描述了结构和字段级信息（“type”、“format”、“minimum”、“maximum”等） ，序列化为JSON。 如果使用JSON以外的序列化格式进行摄取（如Parquet或Scala），则[架构注册指南](../xdm/tutorials/create-schema-api.md)包含一个表，其中显示了所需的JSON类型(&quot;meta:xdmType&quot;)及其以其他格式表示的相应形式。
+返回的JSON架构描述了结构和字段级信息（“type”、“format”、“minimum”、“maximum”等） ，序列化为JSON。 如果使用JSON以外的序列化格式进行摄取（例如，Parquet或Scala），则 [架构注册指南](../xdm/tutorials/create-schema-api.md) 包含一个表，其中显示了所需的JSON类型(&quot;meta:xdmType&quot;)及其其他格式的相应表示形式。
 
-除了此表外，[!DNL Schema Registry]开发人员指南还包含使用[!DNL Schema Registry] API可以发起的所有可能调用的深入示例。
+除了这张桌子， [!DNL Schema Registry] 开发人员指南包含所有可能使用 [!DNL Schema Registry] API。
 
 ### 数据集“架构”属性(已弃用 — EOL 2019-05-30)
 
-数据集可能包含“架构”属性，该属性现已弃用，但暂时仍可用于向后兼容性。 例如，与先前发出的列表(GET)请求类似，其中`properties`查询参数中的“schema”被替换为“schemaRef”，该请求可能会返回以下内容：
+数据集可能包含“架构”属性，该属性现已弃用，但暂时仍可用于向后兼容性。 例如，列表(GET)请求与先前发出的请求类似，其中“schema”在 `properties` 查询参数，可能会返回以下内容：
 
 ```json
 {
@@ -229,7 +229,7 @@ curl -X GET \
 }
 ```
 
-如果填充了数据集的“schema”属性，则表示该架构是已弃用的`/xdms`架构，如果支持，ETL连接器应使用“schema”属性中的值与`/xdms`端点（[[!DNL Catalog API]](https://www.adobe.io/experience-platform-apis/references/catalog/)中已弃用的端点）来检索旧版架构。
+如果填充了数据集的“schema”属性，则表示该架构已弃用 `/xdms` 架构中，如果支持，则ETL连接器应将“schema”属性中的值与 `/xdms` 端点( [[!DNL Catalog API]](https://www.adobe.io/experience-platform-apis/references/catalog/))以检索旧版架构。
 
 **API格式**
 
@@ -249,19 +249,19 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/xdms/context/pers
 
 >[!NOTE]
 >
->可选的查询参数`expansion=xdm`告知API完全展开任何引用的架构并将其串联起来。 当向用户显示所有潜在字段的列表时，您可能希望执行此操作。
+>可选查询参数， `expansion=xdm`，告知API完全展开任何引用的架构并将其串联起来。 当向用户显示所有潜在字段的列表时，您可能希望执行此操作。
 
 **响应**
 
-与[查看数据集架构](#view-dataset-schema)的步骤类似，响应包含描述数据的结构和字段级信息的JSON架构，该架构将序列化为JSON。
+与 [查看数据集架构](#view-dataset-schema)，则响应包含一个JSON架构，该架构描述数据的结构和字段级别信息，并序列化为JSON。
 
 >[!NOTE]
 >
->当“schema”字段为空或完全不存在时，连接器应读取“schemaRef”字段，并使用[架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)，如前面步骤[查看数据集架构](#view-dataset-schema)中所示。
+>当“schema”字段为空或完全不存在时，连接器应读取“schemaRef”字段并使用 [架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/) 如 [查看数据集架构](#view-dataset-schema).
 
 ### “ovearableSchema”属性
 
-数据集的“ovebaibleSchema”属性的JSON结构与XDM架构JSON的JSON结构相匹配。 “ovearableSchema”包含传入输入文件中存在的字段。 将数据写入[!DNL Experience Platform]时，用户无需使用目标架构中的每个字段。 相反，它们应仅提供正在使用的字段。
+数据集的“ovebaibleSchema”属性的JSON结构与XDM架构JSON的JSON结构相匹配。 “ovearableSchema”包含传入输入文件中存在的字段。 将数据写入时 [!DNL Experience Platform]，则用户无需使用目标架构中的每个字段。 相反，它们应仅提供正在使用的字段。
 
 可观察的架构是您在读取数据或显示可从中读取/映射的字段列表时使用的架构。
 
@@ -286,15 +286,15 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/xdms/context/pers
 
 ### 预览数据
 
-ETL应用程序可以提供预览数据的功能（ETL工作流](./workflow.md)中的[&quot;图8&quot;）。 数据访问API提供了多个用于预览数据的选项。
+ETL应用可提供预览数据([ETL工作流中的“图8”](./workflow.md))。 数据访问API提供了多个用于预览数据的选项。
 
-有关其他信息，包括有关使用数据访问API预览数据的分步指南，请参阅[数据访问教程](../data-access/tutorials/dataset-data.md)。
+其他信息（包括使用数据访问API预览数据的分步指南）可在 [数据访问教程](../data-access/tutorials/dataset-data.md).
 
 ### 使用“properties”查询参数获取数据集详细信息
 
-如上面[查看数据集列表](#view-list-of-datasets)的步骤中所示，您可以使用“properties”查询参数请求“files”。
+如上面的步骤所示， [查看数据集列表](#view-list-of-datasets)，则可以使用“properties”查询参数请求“文件”。
 
-有关查询数据集和可用响应过滤器的详细信息，请参阅[目录服务概述](../catalog/home.md)。
+您可以将 [目录服务概述](../catalog/home.md) 有关查询数据集和可用响应过滤器的详细信息。
 
 **API格式**
 
@@ -314,7 +314,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets?limit=1&
 
 **响应**
 
-响应将包含一个显示“files”属性的数据集(`limit=1`)。
+响应将包含一个数据集(`limit=1`)显示“files”属性。
 
 ```json
 {
@@ -342,7 +342,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/5bf479a6
   -H "x-gw-ims-org-id: {IMS_ORG}" \
   -H "x-sandbox-name: {SANDBOX_NAME}" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
-  -H "x-api-key : {API_KEY}"
+  -H "x-api-key: {API_KEY}"
 ```
 
 **响应**
@@ -392,9 +392,9 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/5bf479a6
 
 ### 获取文件详细信息
 
-在上一个响应中返回的GET集文件ID可用于数据请求中，以通过[!DNL Data Access] API获取更多文件详细信息。
+在上一个响应中返回的GET集文件ID可用于数据请求，以通过 [!DNL Data Access] API。
 
-[数据访问概述](../data-access/home.md)包含有关如何使用[!DNL Data Access] API的详细信息。
+的 [数据访问概述](../data-access/home.md) 包含有关如何使用的详细信息 [!DNL Data Access] API。
 
 **API格式**
 
@@ -409,7 +409,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/ea40946ac031
   -H "x-gw-ims-org-id: {IMS_ORG}" \
   -H "x-sandbox-name: {SANDBOX_NAME}" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
-  -H "x-api-key : {API_KEY}"
+  -H "x-api-key: {API_KEY}"
 ```
 
 **响应**
@@ -430,7 +430,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/ea40946ac031
 
 ### 预览文件数据
 
-“href”属性可用于通过[[!DNL Data Access API]](../data-access/home.md)获取预览数据。
+“href”属性可用于通过 [[!DNL Data Access API]](../data-access/home.md).
 
 **API格式**
 
@@ -445,16 +445,16 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/ea40946ac031
   -H "x-gw-ims-org-id: {IMS_ORG}" \
   -H "x-sandbox-name: {SANDBOX_NAME}" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
-  -H "x-api-key : {API_KEY}"
+  -H "x-api-key: {API_KEY}"
 ```
 
 对上述请求的响应将包含文件内容的预览。
 
-有关[!DNL Data Access] API的更多信息（包括详细的请求和响应），请参阅[数据访问概述](../data-access/home.md)。
+有关 [!DNL Data Access] API（包括详细的请求和响应）可在 [数据访问概述](../data-access/home.md).
 
 ### 从数据集获取“fileDescription”
 
-作为转换数据的输出目标组件，数据工程师将选择一个输出数据集（在ETL工作流](workflow.md)中为[&quot;Figure 12&quot;）。 XDM架构与输出数据集关联。 要写入的数据将由Data Discovery API中数据集实体的“fileDescription”属性标识。 可以使用数据集ID(`{DATASET_ID}`)获取此信息。 JSON响应中的“fileDescription”属性将提供所请求的信息。
+作为转换数据输出的目标组件，数据工程师将选择一个输出数据集([ETL工作流中的“图12”](workflow.md))。 XDM架构与输出数据集关联。 要写入的数据将由Data Discovery API中数据集实体的“fileDescription”属性标识。 可以使用数据集ID(`{DATASET_ID}`)。 JSON响应中的“fileDescription”属性将提供所请求的信息。
 
 **API格式**
 
@@ -464,7 +464,7 @@ GET /catalog/dataSets/{DATASET_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{DATASET_ID}` | 您尝试访问的数据集的`id`值。 |
+| `{DATASET_ID}` | 的 `id` 您尝试访问的数据集的值。 |
 
 **请求**
 
@@ -474,7 +474,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/59c93f3d
 -H "x-gw-ims-org-id: {IMS_ORG}" \
 -H "x-sandbox-name: {SANDBOX_NAME}" \
 -H "Authorization: Bearer {ACCESS_TOKEN}" \
--H "x-api-key : {API_KEY}"
+-H "x-api-key: {API_KEY}"
 ```
 
 **响应**
@@ -491,21 +491,21 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/59c93f3d
 }
 ```
 
-数据将使用[数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)写入[!DNL Experience Platform]。  数据写入是一个异步过程。 将数据写入Adobe Experience Platform时，只有在数据完全写入后，才会创建批处理并将其标记为成功。
+数据将写入 [!DNL Experience Platform] 使用 [数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/).  数据写入是一个异步过程。 将数据写入Adobe Experience Platform时，只有在数据完全写入后，才会创建批处理并将其标记为成功。
 
-[!DNL Experience Platform]中的数据应以Parquet文件的形式写入。
+数据输入 [!DNL Experience Platform] 应以Parquet文件的形式写入。
 
 ## 执行阶段
 
-执行开始时，连接器（如源组件中定义）将使用[[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/)从[!DNL Experience Platform]读取数据。 转换过程将读取某个时间范围内的数据。 在内部，它将查询批量源数据集。 在查询时，它将使用参数化（对时间系列数据或增量数据进行滚动）的开始日期和列出这些批次的数据集文件，并开始对这些数据集文件发出数据请求。
+执行开始时，连接器（如源组件中定义）将从中读取数据 [!DNL Experience Platform] 使用 [[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/). 转换过程将读取某个时间范围内的数据。 在内部，它将查询批量源数据集。 在查询时，它将使用参数化（对时间系列数据或增量数据进行滚动）的开始日期和列出这些批次的数据集文件，并开始对这些数据集文件发出数据请求。
 
 ### 示例转换
 
-[示例ETL转换](./transformations.md)文档包含许多示例转换，包括身份处理和数据类型映射。 请使用这些转换作参考。
+的 [ETL转换示例](./transformations.md) 文档包含许多示例转换，包括身份处理和数据类型映射。 请使用这些转换作参考。
 
-### 从[!DNL Experience Platform]读取数据
+### 从读取数据 [!DNL Experience Platform]
 
-使用[[!DNL Catalog API]](https://www.adobe.io/experience-platform-apis/references/catalog/)，您可以获取指定开始时间和结束时间之间的所有批次，并按它们的创建顺序对它们进行排序。
+使用 [[!DNL Catalog API]](https://www.adobe.io/experience-platform-apis/references/catalog/)，则可以获取指定开始时间和结束时间之间的所有批次，并按创建顺序对它们进行排序。
 
 **请求**
 
@@ -513,16 +513,16 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/dataSets/59c93f3d
 curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches?dataSet=DATASETID&createdAfter=START_TIMESTAMP&createdBefore=END_TIMESTAMP&sort=desc:created" \
   -H "Accept: application/json" \
   -H "Authorization:Bearer {ACCESS_TOKEN}" \
-  -H "x-api-key : {API_KEY}" \
+  -H "x-api-key: {API_KEY}" \
   -H "x-gw-ims-org-id: {IMS_ORG}" \
   -H "x-sandbox-name: {SANDBOX_NAME}"
 ```
 
-有关过滤批的详细信息，请参阅[数据访问教程](../data-access/tutorials/dataset-data.md)。
+有关过滤批的详细信息，请参阅 [数据访问教程](../data-access/tutorials/dataset-data.md).
 
 ### 从批中获取文件
 
-获得要查找的批次的ID(`{BATCH_ID}`)后，便可以通过[[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/)检索属于特定批次的文件列表。  有关执行此操作的详细信息，请参阅[[!DNL Data Access] tutorial](../data-access/tutorials/dataset-data.md)。
+获得要查找的批次的ID后(`{BATCH_ID}`)，则可以通过 [[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/).  有关执行此操作的详细信息，请参阅 [[!DNL Data Access] 教程](../data-access/tutorials/dataset-data.md).
 
 **请求**
 
@@ -531,12 +531,12 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}
   -H "x-gw-ims-org-id: {IMS_ORG}" \
   -H "x-sandbox-name: {SANDBOX_NAME}" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
-  -H "x-api-key : {API_KEY}"
+  -H "x-api-key: {API_KEY}"
 ```
 
 ### 使用文件ID访问文件
 
-使用文件(`{FILE_ID`)的唯一ID，[[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/)可用于访问该文件的特定详细信息，包括其名称、大小（以字节为单位）以及用于下载该文件的链接。
+使用文件的唯一ID(`{FILE_ID`)、 [[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/) 可用于访问文件的特定详细信息，包括其名称、大小（以字节为单位）以及用于下载该文件的链接。
 
 **请求**
 
@@ -545,14 +545,14 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{FILE_ID}" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
   -H "x-gw-ims-org-id: {IMS_ORG}" \
   -H "x-sandbox-name: {SANDBOX_NAME}" \
-  -H "x-api-key : {API_KEY}"
+  -H "x-api-key: {API_KEY}"
 ```
 
-响应可以指向单个文件或目录。 有关每个报表的详细信息，请参阅[[!DNL Data Access] tutorial](../data-access/tutorials/dataset-data.md)。
+响应可以指向单个文件或目录。 有关每个报表包的详细信息，请参阅 [[!DNL Data Access] 教程](../data-access/tutorials/dataset-data.md).
 
 ### 访问文件内容
 
-[[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/)可用于访问特定文件的内容。 要获取内容，在使用文件ID访问文件时，会使用`_links.self.href`返回的值发出GET请求。
+的 [[!DNL Data Access API]](https://www.adobe.io/experience-platform-apis/references/data-access/) 可用于访问特定文件的内容。 要获取内容，会使用为 `_links.self.href` 使用文件ID访问文件时。
 
 **请求**
 
@@ -564,23 +564,23 @@ curl -X GET "https://platform.adobe.io/data/foundation/export/files/{DATASET_FIL
   -H "x-api-key: {API_KEY}"
 ```
 
-对此请求的响应包含文件的内容。 有关更多信息（包括有关响应分页的详细信息），请参阅[如何通过数据访问API](../data-access/tutorials/dataset-data.md)教程查询数据。
+对此请求的响应包含文件的内容。 有关更多信息（包括有关响应分页的详细信息），请参阅 [如何通过数据访问API查询数据](../data-access/tutorials/dataset-data.md) 教程。
 
 ### 验证架构合规性记录
 
-写入数据时，用户可以根据XDM架构中定义的验证规则选择验证数据。 有关架构验证的更多信息，请参阅 [!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md#validation)上的[ETL生态系统集成参考代码。
+写入数据时，用户可以根据XDM架构中定义的验证规则选择验证数据。 有关架构验证的更多信息，请参阅 [ETL生态系统集成参考代码 [!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md#validation).
 
-如果您使用的是[[!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md)上的引用实现，则可以在此实施中使用系统属性`-DenableSchemaValidation=true`打开模式验证。
+如果您使用的是 [[!DNL GitHub]](https://github.com/adobe/experience-platform-etl-reference/blob/fd08dd9f74ae45b849d5482f645f859f330c1951/README.md)，您可以在此实施中使用系统属性打开模式验证 `-DenableSchemaValidation=true`.
 
-可以对逻辑XDM类型执行验证，对字符串使用`minLength`和`maxlength`等属性，对整数使用`minimum`和`maximum`等属性。 [架构注册API开发人员指南](../xdm/api/getting-started.md)包含一个表，其中概述了XDM类型和可用于验证的属性。
+可以使用属性(如 `minLength` 和 `maxlength` 对于字符串， `minimum` 和 `maximum` 对于整数等。 的 [架构注册API开发人员指南](../xdm/api/getting-started.md) 包含一个表，其中概述了XDM类型和可用于验证的属性。
 
 >[!NOTE]
 >
->为各种`integer`类型提供的最小值和最大值是类型可支持的最小值和最大值，但这些值可进一步限制为您选择的最小值和最大值。
+>为各种 `integer` 类型是类型可支持的MIN和MAX值，但这些值可进一步限制为您选择的最小值和最大值。
 
 ### 创建批处理
 
-处理数据后，ETL工具将使用[批量摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)将数据写回[!DNL Experience Platform]。 在将数据添加到数据集之前，必须先将其链接到批次，该批次稍后会上传到特定数据集。
+一旦处理了数据，ETL工具会将数据写回 [!DNL Experience Platform] 使用 [批量摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). 在将数据添加到数据集之前，必须先将其链接到批次，该批次稍后会上传到特定数据集。
 
 **请求**
 
@@ -596,15 +596,15 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
       }'
 ```
 
-有关创建批的详细信息（包括示例请求和响应），请参阅[批量摄取概述](../ingestion/batch-ingestion/overview.md)。
+有关创建批的详细信息（包括示例请求和响应），请参阅 [批量摄取概述](../ingestion/batch-ingestion/overview.md).
 
 ### 写入数据集
 
-成功创建新批量后，可以将文件上传到特定数据集。 多个文件可以批量发布，直到提升为止。 可使用小文件上传API上传文件；但是，如果文件过大，并且超出了网关限制，则可以使用大文件上传API。 有关同时使用大文件和小文件上传的详细信息，请参阅[批量摄取概述](../ingestion/batch-ingestion/overview.md)。
+成功创建新批量后，可以将文件上传到特定数据集。 多个文件可以批量发布，直到提升为止。 可使用小文件上传API上传文件；但是，如果文件过大，并且超出了网关限制，则可以使用大文件上传API。 有关同时使用大文件和小文件上传的详细信息，请参阅 [批量摄取概述](../ingestion/batch-ingestion/overview.md).
 
 **请求**
 
-[!DNL Experience Platform]中的数据应以Parquet文件的形式写入。
+数据输入 [!DNL Experience Platform] 应以Parquet文件的形式写入。
 
 ```shell
 curl -X PUT "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/dataSets/{DATASET_ID}/files/{FILE_NAME}.parquet" \
@@ -618,7 +618,7 @@ curl -X PUT "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ### 标记批量上传完成
 
-将所有文件上传到批处理后，可以发出批处理完成的信号。 这样，[!DNL Catalog] &quot;DataSetFile&quot;条目将为已完成的文件创建，并与生成批处理关联。 然后，将[!DNL Catalog]批标记为成功，这会触发下游流以摄取可用数据。
+将所有文件上传到批处理后，可以发出批处理完成的信号。 通过执行此操作， [!DNL Catalog] 为已完成的文件创建“DataSetFile”条目，并与生成批处理关联。 的 [!DNL Catalog] 然后，批次会标记为成功，这会触发下游流以摄取可用数据。
 
 数据将首先登陆Adobe Experience Platform的暂存位置，然后在编目和验证后移至最终位置。 将所有数据移动到永久位置后，批次将标记为成功。
 
@@ -629,7 +629,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
   -H "x-gw-ims-org-id: {IMS_ORG}" \
   -H "x-sandbox-name: {SANDBOX_NAME}" \
   -H "Authorization:Bearer {ACCESS_TOKEN}" \
-  -H "x-api-key : {API_KEY}"
+  -H "x-api-key: {API_KEY}"
 ```
 
 如果响应成功，则将返回HTTP状态200 OK，并且响应正文将为空。
@@ -640,7 +640,7 @@ ETL工具将确保在读取数据时记录源数据集的时间戳。
 
 ### 获取上次批处理状态
 
-在ETL工具中运行新任务之前，必须确保成功完成最后一批任务。 [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/)提供了特定于批次的选项，其中提供了相关批次的详细信息。
+在ETL工具中运行新任务之前，必须确保成功完成最后一批任务。 的 [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) 提供特定于批的选项，其中提供了相关批的详细信息。
 
 **请求**
 
@@ -674,7 +674,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches?limit=1&s
 
 ### 按ID获取上次批处理状态
 
-单个批状态可通过[[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/)通过使用`{BATCH_ID}`发出GET请求来检索。 使用的`{BATCH_ID}`与创建批处理时返回的ID相同。
+单个批状态可以通过 [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) 通过使用 `{BATCH_ID}`. 的 `{BATCH_ID}` 使用与创建批处理时返回的ID相同。
 
 **请求**
 
@@ -759,9 +759,9 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID
 
 如果客户发现过去“n”天内，正在进行ETL处理的数据未按预期发生，或源数据本身可能不正确，则可能需要批量重播和数据重新处理。
 
-为此，客户端的数据管理员将使用[!DNL Platform] UI删除包含损坏数据的批次。 然后，可能需要重新运行ETL，以便使用正确的数据重新填充。 如果源本身存在损坏的数据，则数据工程师/管理员将需要更正源批次并重新摄取数据(通过Adobe Experience Platform或ETL连接器)。
+为此，客户端的数据管理员将使用 [!DNL Platform] 用于删除包含损坏数据的批次的UI。 然后，可能需要重新运行ETL，从而使用正确的数据重新填充。 如果源本身存在损坏的数据，则数据工程师/管理员将需要更正源批次并重新摄取数据(通过Adobe Experience Platform或ETL连接器)。
 
-根据所生成的数据类型，数据工程师可以选择从某些数据集中删除单个批次或所有批次。 数据将按照[!DNL Experience Platform]准则删除/存档。
+根据所生成的数据类型，数据工程师可以选择从某些数据集中删除单个批次或所有批次。 数据将根据 [!DNL Experience Platform] 准则。
 
 很可能的情况是，清除数据的ETL功能将非常重要。
 
@@ -781,7 +781,7 @@ curl -X GET "https://platform.adobe.io/data/foundation/catalog/batches/{BATCH_ID
 
 延迟是指输入数据尚未足够完整地发送到下游进程，但将来可能可用的流程。 客户将确定他们针对数据窗口的容差与处理成本，以告知他们决定在下次转换执行中保留数据并重新处理数据，希望在保留窗口内的将来某个时间对其进行扩充和协调/拼合。 此周期一直持续，直到行得到充分处理或认为过于陈旧，无法继续投资。 每个迭代都将生成延迟数据，该数据是先前迭代中所有延迟数据的超集。
 
-Adobe Experience Platform当前不识别延迟数据，因此客户端实施必须依赖ETL和数据集手动配置在[!DNL Platform]中创建另一个数据集，以镜像可用于保留延迟数据的源数据集。 在这种情况下，延期数据将与快照数据类似。 在每次执行ETL转换时，源数据都将与延迟数据合并，并发送以进行处理。
+Adobe Experience Platform当前不识别延迟数据，因此客户端实施必须依赖ETL和数据集手动配置在中创建另一个数据集 [!DNL Platform] 镜像可用于保留延迟数据的源数据集。 在这种情况下，延期数据将与快照数据类似。 在每次执行ETL转换时，源数据都将与延迟数据合并，并发送以进行处理。
 
 ## Changelog
 
@@ -789,5 +789,5 @@ Adobe Experience Platform当前不识别延迟数据，因此客户端实施必�
 | ---- | ------ | ----------- |
 | 2019-01-19 | 从数据集中删除了“fields”属性 | 数据集之前包含“字段”属性，该属性包含架构的副本。 不应再使用此功能。 如果找到“fields”属性，则应忽略该属性，并改用“observedSchema”或“schemaRef”。 |
 | 2019-03-15 | 向数据集添加了“schemaRef”属性 | 数据集的“schemaRef”属性包含一个URI，该URI引用数据集所基于的XDM架构，并表示数据集可以使用的所有潜在字段。 |
-| 2019-03-15 | 所有最终用户标识符都映射到“identityMap”属性 | “identityMap”是对主体所有唯一标识符（如CRM ID、ECID或忠诚度计划ID）的封装。 [[!DNL Identity Service]](../identity-service/home.md)使用此映射来解析主体的所有已知身份和匿名身份，从而为每个最终用户形成一个身份图。 |
-| 2019-05-30 | EOL和从数据集中删除“架构”属性 | 数据集“schema”属性使用[!DNL Catalog] API中已弃用的`/xdms`端点提供了指向架构的引用链接。 此名称已被“schemaRef”替换，该“schemaRef”提供新[!DNL Schema Registry] API中引用的架构的“id”、“version”和“contentType”。 |
+| 2019-03-15 | 所有最终用户标识符都映射到“identityMap”属性 | “identityMap”是对主体所有唯一标识符（如CRM ID、ECID或忠诚度计划ID）的封装。 此地图由 [[!DNL Identity Service]](../identity-service/home.md) 要解析主题的所有已知身份和匿名身份，请为每个最终用户形成单个身份图。 |
+| 2019-05-30 | EOL和从数据集中删除“架构”属性 | 数据集“schema”属性提供了指向使用已弃用架构的引用链接 `/xdms` 的端点 [!DNL Catalog] API。 此名称已被“schemaRef”替换，该“schemaRef”提供了新架构中引用的架构的“id”、“version”和“contentType” [!DNL Schema Registry] API。 |

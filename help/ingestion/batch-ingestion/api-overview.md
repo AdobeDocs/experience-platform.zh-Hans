@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 批量摄取API指南
 description: 本文档为使用适用于Adobe Experience Platform的批量摄取API的开发人员提供了全面的指南。
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 087a714c579c4c3b95feac3d587ed13589b6a752
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '2373'
 ht-degree: 4%
@@ -13,15 +13,15 @@ ht-degree: 4%
 
 # 批量摄取开发人员指南
 
-本文档提供了在Adobe Experience Platform中使用[批量摄取API端点](https://www.adobe.io/experience-platform-apis/references/data-ingestion/#tag/Batch-Ingestion)的全面指南。 有关批量摄取API的概述（包括先决条件和最佳实践），请首先阅读[批量摄取API概述](overview.md)。
+本文档提供了使用 [批量摄取API端点](https://www.adobe.io/experience-platform-apis/references/data-ingestion/#tag/Batch-Ingestion) 在Adobe Experience Platform。 有关批量摄取API的概述（包括先决条件和最佳实践），请首先阅读 [批量摄取API概述](overview.md).
 
-本文档的附录提供了用于摄取](#data-transformation-for-batch-ingestion)的[格式化数据的信息，包括示例CSV和JSON数据文件。
+本文档的附录提供了 [格式化要用于摄取的数据](#data-transformation-for-batch-ingestion)，包括示例CSV和JSON数据文件。
 
 ## 快速入门
 
-本指南中使用的API端点是[数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)的一部分。 数据摄取提供了一个RESTful API，通过该API，您可以对支持的对象类型执行基本的CRUD操作。
+本指南中使用的API端点是 [数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). 数据摄取提供了一个RESTful API，通过该API，您可以对支持的对象类型执行基本的CRUD操作。
 
-在继续操作之前，请查看[批量摄取API概述](overview.md)和[入门指南](getting-started.md)。
+在继续之前，请查看 [批量摄取API概述](overview.md) 和 [入门指南](getting-started.md).
 
 ## 摄取JSON文件
 
@@ -35,7 +35,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->以下示例适用于单行JSON。 要摄取多行JSON，需要设置`isMultiLineJson`标记。 有关更多信息，请阅读[批量摄取疑难解答指南](./troubleshooting.md)。
+>以下示例适用于单行JSON。 要摄取多行JSON，请 `isMultiLineJson` 需要设置标记。 欲知更多信息，请阅读 [批量摄取疑难解答指南](./troubleshooting.md).
 
 **API格式**
 
@@ -50,7 +50,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
           "datasetId": "{DATASET_ID}",
@@ -97,7 +97,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 >[!NOTE]
 >
->有关格式正确的JSON数据文件](#data-transformation-for-batch-ingestion)的示例，请参阅附录部分。[
+>请参阅附录部分 [格式正确的JSON数据文件的示例](#data-transformation-for-batch-ingestion).
 
 **API格式**
 
@@ -122,14 +122,14 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'content-type: application/octet-stream' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   --data-binary "@{FILE_PATH_AND_NAME}.json"
 ```
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如`Users/sample-user/Downloads/sample.json`。 |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`. |
 
 **响应**
 
@@ -157,7 +157,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=COMPLETE" \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -184,7 +184,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
   -H "Content-Type: application/json" \
   -H "x-gw-ims-org-id: {IMS_ORG}" \
-  -H "x-api-key : {API_KEY}" \
+  -H "x-api-key: {API_KEY}" \
   -H "x-sandbox-name: {SANDBOX_NAME}" 
   -d '{
           "datasetId": "{DATASET_ID}",
@@ -232,7 +232,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 ### 上传文件
 
-现在，您已创建批处理，接下来可以使用之前的`batchId`将文件上传到该批处理。 您可以将多个文件上传到批。
+现在，您已创建批处理，接下来可以使用 `batchId` 从之前将文件上传到批处理。 您可以将多个文件上传到批。
 
 **API格式**
 
@@ -257,14 +257,14 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/octet-stream' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   --data-binary "@{FILE_PATH_AND_NAME}.parquet"
 ```
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如`Users/sample-user/Downloads/sample.json`。 |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`. |
 
 **响应**
 
@@ -292,7 +292,7 @@ POST /batches/{BATCH_ID}?action=complete
 curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=COMPLETE \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' 
 ```
 
@@ -325,7 +325,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
           "datasetId": "{DATASET_ID}",
@@ -439,7 +439,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{CONTENT_RANGE}` | 在整数中，请求范围的开头和结尾。 |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如`Users/sample-user/Downloads/sample.json`。 |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`. |
 
 
 **响应**
@@ -450,7 +450,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 
 ### 完整大文件
 
-现在，您已创建批处理，接下来可以使用之前的`batchId`将文件上传到该批处理。 您可以将多个文件上传到批。
+现在，您已创建批处理，接下来可以使用 `batchId` 从之前将文件上传到批处理。 您可以将多个文件上传到批。
 
 **API格式**
 
@@ -501,7 +501,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=COMPLETE \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' 
 ```
 
@@ -513,7 +513,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## 摄取CSV文件
 
-要摄取CSV文件，您需要创建一个支持CSV的类、架构和数据集。 有关如何创建必需类和模式的详细信息，请按照[ad-hoc模式创建教程](../../xdm/api/ad-hoc.md)中提供的说明进行操作。
+要摄取CSV文件，您需要创建一个支持CSV的类、架构和数据集。 有关如何创建必需类和架构的详细信息，请按照 [临时模式创建教程](../../xdm/api/ad-hoc.md).
 
 >[!NOTE]
 >
@@ -569,7 +569,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
             "datasetId": "{DATASET_ID}",
@@ -617,11 +617,11 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### 上传文件
 
-现在，您已创建批处理，接下来可以使用之前的`batchId`将文件上传到该批处理。 您可以将多个文件上传到批。
+现在，您已创建批处理，接下来可以使用 `batchId` 从之前将文件上传到批处理。 您可以将多个文件上传到批。
 
 >[!NOTE]
 >
->有关格式正确的CSV数据文件](#data-transformation-for-batch-ingestion)的示例，请参阅附录部分。[
+>请参阅附录部分 [格式正确的CSV数据文件示例](#data-transformation-for-batch-ingestion).
 
 **API格式**
 
@@ -646,14 +646,14 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/octet-stream' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   --data-binary "@{FILE_PATH_AND_NAME}.csv"
 ```
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如`Users/sample-user/Downloads/sample.json`。 |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`. |
 
 
 **响应**
@@ -678,7 +678,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=COMPLETE \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -708,7 +708,7 @@ POST /batches/{BATCH_ID}?action=ABORT
 curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=ABORT \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' 
 ```
 
@@ -720,7 +720,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ## 删除批处理 {#delete-a-batch}
 
-可以通过对要删除的批的ID执行以下POST请求（使用`action=REVERT`查询参数）来删除批。 该批标记为“不活动”，以便符合垃圾收集的条件。 将异步收集该批次，届时该批次将标记为“已删除”。
+通过使用 `action=REVERT` 查询参数到要删除的批的ID。 该批标记为“不活动”，以便符合垃圾收集的条件。 将异步收集该批次，届时该批次将标记为“已删除”。
 
 **API格式**
 
@@ -738,7 +738,7 @@ POST /batches/{BATCH_ID}?action=REVERT
 curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=REVERT \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' 
 ```
 
@@ -758,10 +758,10 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 要对批处理进行修补，需要满足以下条件：
 
-- **为配置文件和属性更新启用的数据集。** 这可通过数据集标记完成，并要求将 `isUpsert:true` 特定标记添加到数 `unifiedProfile` 组。有关如何创建数据集或配置现有数据集以进行升级的详细信息步骤，请按照[启用数据集以进行配置文件更新](../../catalog/datasets/enable-upsert.md)的教程进行操作。
-- **Parquet文件，其中包含要修补的字段和配置文件的标识字段。** 为批处理打补丁的数据格式与常规的批处理摄取过程类似。所需的输入是Parquet文件，除了要更新的字段外，上传的数据还必须包含标识字段，才能匹配用户档案存储中的数据。
+- **为配置文件和属性更新启用的数据集。** 这可通过数据集标记完成，并且需要 `isUpsert:true` 标记 `unifiedProfile` 数组。 有关如何创建数据集或配置现有数据集以进行升级的详细信息步骤，请按照 [启用数据集以进行配置文件更新](../../catalog/datasets/enable-upsert.md).
+- **Parquet文件，其中包含要修补的字段和配置文件的标识字段。** 为批处理打补丁的数据格式与常规的批处理摄取过程类似。 所需的输入是Parquet文件，除了要更新的字段外，上传的数据还必须包含标识字段，才能匹配用户档案存储中的数据。
 
-在为Profile和upsert启用了数据集，并且Parquet文件包含要补丁的字段和必需的标识字段后，您可以按照[摄取Parquet文件](#ingest-parquet-files)的步骤操作，以通过批量摄取完成补丁。
+在为Profile和Upsert启用了数据集，并且添加了Parquet文件（其中包含您要修补的字段以及必要的标识字段）后，您可以按照 [摄取Parquet文件](#ingest-parquet-files) 以便通过批量摄取完成修补程序。
 
 ## 重播批处理
 
@@ -769,7 +769,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ### 创建批处理
 
-首先，您需要创建一个以JSON作为输入格式的批处理。 创建批处理时，您需要提供数据集ID。 您还需要确保作为批处理的一部分上传的所有文件都符合链接到提供数据集的XDM架构。 此外，您还需要在重播部分中提供旧批次作为引用。 在以下示例中，您正在重播ID为`batchIdA`和`batchIdB`的批次。
+首先，您需要创建一个以JSON作为输入格式的批处理。 创建批处理时，您需要提供数据集ID。 您还需要确保作为批处理的一部分上传的所有文件都符合链接到提供数据集的XDM架构。 此外，您还需要在重播部分中提供旧批次作为引用。 在以下示例中，您正在重播具有ID的批次 `batchIdA` 和 `batchIdB`.
 
 **API格式**
 
@@ -784,7 +784,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' 
   -d '{
           "datasetId": "{DATASET_ID}",
@@ -843,7 +843,7 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches \
 
 ### 上传文件
 
-现在，您已创建批处理，接下来可以使用之前的`batchId`将文件上传到该批处理。 您可以将多个文件上传到批。
+现在，您已创建批处理，接下来可以使用 `batchId` 从之前将文件上传到批处理。 您可以将多个文件上传到批。
 
 **API格式**
 
@@ -868,14 +868,14 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/octet-stream' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   --data-binary "@{FILE_PATH_AND_NAME}.json"
 ```
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如`Users/sample-user/Downloads/sample.json`。 |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`. |
 
 **响应**
 
@@ -903,7 +903,7 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}?action=COMPLETE \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -919,9 +919,9 @@ curl -X POST https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
 
 ### 用于批量摄取的数据转换
 
-要将数据文件摄取到[!DNL Experience Platform]中，文件的层次结构必须符合与上传到的数据集关联的[体验数据模型(XDM)](../../xdm/home.md)架构。
+要将数据文件摄取到 [!DNL Experience Platform]，文件的层次结构必须符合 [体验数据模型(XDM)](../../xdm/home.md) 与上传到的数据集关联的架构。
 
-有关如何映射CSV文件以符合XDM架构的信息，请参阅[示例转换](../../etl/transformations.md)文档，以及格式正确的JSON数据文件的示例。 文档中提供的示例文件可在此处找到：
+有关如何映射CSV文件以符合XDM架构的信息，请参阅 [示例转换](../../etl/transformations.md) 文档，以及格式正确的JSON数据文件的示例。 文档中提供的示例文件可在此处找到：
 
 - [CRM_profiles.csv](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.csv)
 - [CRM_profiles.json](https://github.com/adobe/experience-platform-etl-reference/blob/master/example_files/CRM_profiles.json)

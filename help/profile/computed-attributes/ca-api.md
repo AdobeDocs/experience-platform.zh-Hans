@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: 在Adobe Experience Platform中，计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 这些函数会自动计算，以便在分段、激活和个性化期间使用。 本指南演示了如何使用实时客户配置文件API创建、查看、更新和删除计算属性。
 exl-id: 6b35ff63-590b-4ef5-ab39-c36c39ab1d58
-source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '2272'
 ht-degree: 2%
@@ -18,21 +18,21 @@ ht-degree: 2%
 >
 >本文档中概述的计算属性功能当前位于alpha中，并非所有用户都可用。 文档和功能可能会发生变化。
 
-计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 这些函数会自动计算，以便在分段、激活和个性化期间使用。 本指南包含使用`/computedAttributes`端点执行基本CRUD操作的示例API调用。
+计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 这些函数会自动计算，以便在分段、激活和个性化期间使用。 本指南包含使用执行基本CRUD操作的示例API调用 `/computedAttributes` 端点。
 
-要了解有关计算属性的更多信息，请首先阅读[计算属性概述](overview.md)。
+要了解有关计算属性的更多信息，请首先阅读 [计算属性概述](overview.md).
 
 ## 快速入门
 
-本指南中使用的API端点是[实时客户配置文件API](https://www.adobe.com/go/profile-apis-en)的一部分。
+本指南中使用的API端点是 [实时客户资料API](https://www.adobe.com/go/profile-apis-en).
 
-在继续操作之前，请查阅[配置文件API快速入门指南](../api/getting-started.md) ，以获取建议文档的链接、本文档中显示的示例API调用指南，以及成功调用任何Experience PlatformAPI所需标头的重要信息。
+在继续之前，请查看 [配置文件API快速入门指南](../api/getting-started.md) 有关推荐文档的链接，请参阅本文档中显示的示例API调用指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
 
 ## 配置计算属性字段
 
 要创建计算属性，您首先需要在架构中标识将包含计算属性值的字段。
 
-有关在架构中创建计算属性字段的完整端到端指南，请参阅关于[配置计算属性](configure-api.md)的文档。
+请参阅 [配置计算属性](configure-api.md) 有关在架构中创建计算属性字段的完整端到端指南。
 
 >[!WARNING]
 >
@@ -40,9 +40,9 @@ ht-degree: 2%
 
 ## 创建计算属性 {#create-a-computed-attribute}
 
-现在，通过在启用配置文件的架构中定义计算属性字段，可以配置计算属性。 如果您尚未执行此操作，请按照[配置计算属性](configure-api.md)文档中所述的工作流。
+现在，通过在启用配置文件的架构中定义计算属性字段，可以配置计算属性。 如果您尚未执行此操作，请按照 [配置计算属性](configure-api.md) 文档。
 
-要创建计算属性，请首先向`/config/computedAttributes`端点发出POST请求，请求正文包含要创建的计算属性的详细信息。
+要创建计算属性，请首先向 `/config/computedAttributes` 终结点，其请求正文包含您要创建的计算属性的详细信息。
 
 **API格式**
 
@@ -61,13 +61,13 @@ curl -X POST \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
-        "name" : "birthdayCurrentMonth",
-        "path" : "_{TENANT_ID}",
-        "description" : "Computed attribute to capture if the customer birthday is in the current month.",
-        "expression" : {
-            "type" : "PQL", 
-            "format" : "pql/text", 
-            "value":  "person.birthDate.getMonth() = currentMonth()"
+        "name": "birthdayCurrentMonth",
+        "path": "_{TENANT_ID}",
+        "description": "Computed attribute to capture if the customer birthday is in the current month.",
+        "expression": {
+            "type": "PQL", 
+            "format": "pql/text", 
+            "value": "person.birthDate.getMonth() = currentMonth()"
         },
         "schema": 
           {
@@ -80,15 +80,15 @@ curl -X POST \
 | 属性 | 描述 |
 |---|---|
 | `name` | 作为字符串的计算属性字段的名称。 |
-| `path` | 包含计算属性的字段的路径。 此路径位于架构的`properties`属性中，不应在路径中包含字段名称。 写入路径时，请忽略`properties`属性的多个级别。 |
-| `{TENANT_ID}` | 如果您不熟悉租户ID，请参阅[架构注册开发人员指南](../../xdm/api/getting-started.md#know-your-tenant_id)中查找租户ID的步骤。 |
+| `path` | 包含计算属性的字段的路径。 此路径可在 `properties` 属性，且不应在路径中包含字段名称。 写入路径时，请忽略 `properties` 属性。 |
+| `{TENANT_ID}` | 如果您不熟悉租户ID，请参阅 [架构注册开发人员指南](../../xdm/api/getting-started.md#know-your-tenant_id). |
 | `description` | 计算属性的描述。 在定义了多个计算属性后，此功能特别有用，因为它将帮助IMS组织内的其他人确定要使用的正确计算属性。 |
-| `expression.value` | 有效的[!DNL Profile Query Language](PQL)表达式。 计算属性当前支持以下函数：sum、count、min、max和boolean。 有关示例表达式的列表，请参阅[示例PQL表达式](expressions.md)文档。 |
-| `schema.name` | 包含计算属性字段的架构所基于的类。 示例：`_xdm.context.experienceevent` ，用于基于XDM ExperienceEvent类的架构。 |
+| `expression.value` | 有效 [!DNL Profile Query Language] (PQL)表达式。 计算属性当前支持以下函数：sum、count、min、max和boolean。 有关示例表达式的列表，请参阅 [示例PQL表达式](expressions.md) 文档。 |
+| `schema.name` | 包含计算属性字段的架构所基于的类。 示例： `_xdm.context.experienceevent` ，用于基于XDM ExperienceEvent类的架构。 |
 
 **响应**
 
-成功创建的计算属性会返回HTTP状态200（确定）和包含新创建计算属性详细信息的响应主体。 这些详细信息包括系统生成的唯一只读`id`，可用于在其他API操作期间引用计算的属性。
+成功创建的计算属性会返回HTTP状态200（确定）和包含新创建计算属性详细信息的响应主体。 这些详细信息包括系统生成的唯一只读 `id` ，可用于在其他API操作期间引用计算属性。
 
 ```json
 {
@@ -138,17 +138,17 @@ curl -X POST \
 |---|---|
 | `id` | 唯一的只读系统生成的ID，可用于在其他API操作期间引用计算的属性。 |
 | `imsOrgId` | 与计算属性相关的IMS组织应与请求中发送的值匹配。 |
-| `sandbox` | 沙盒对象包含在其中配置计算属性的沙盒的详细信息。 此信息来自请求中发送的沙盒标头。 有关详细信息，请参阅[沙箱概述](../../sandboxes/home.md)。 |
-| `positionPath` | 一个数组，其中包含已解构的`path`到请求中发送的字段。 |
+| `sandbox` | 沙盒对象包含在其中配置计算属性的沙盒的详细信息。 此信息来自请求中发送的沙盒标头。 有关详细信息，请参阅 [沙箱概述](../../sandboxes/home.md). |
+| `positionPath` | 包含被解构的数组 `path` 到请求中发送的字段。 |
 | `returnSchema.meta:xdmType` | 存储计算属性的字段类型。 |
 | `definedOn` | 一个数组，用于显示已定义计算属性的并集架构。 每个并集架构包含一个对象，这意味着如果计算的属性已基于不同类添加到多个架构，则数组中可能有多个对象。 |
-| `active` | 一个布尔值，用于显示计算的属性当前是否处于活动状态。 默认情况下，值为`true`。 |
+| `active` | 一个布尔值，用于显示计算的属性当前是否处于活动状态。 默认情况下，值为 `true`. |
 | `type` | 创建的资源类型，在此例中，“ComputedAttribute”是默认值。 |
 | `createEpoch` 和 `updateEpoch` | 分别创建和上次更新计算属性的时间。 |
 
 ## 创建引用现有计算属性的计算属性
 
-也可以创建引用现有计算属性的计算属性。 为此，首先向`/config/computedAttributes`端点发出POST请求。 请求正文将在`expression.value`字段中包含对计算属性的引用，如以下示例中所示。
+也可以创建引用现有计算属性的计算属性。 为此，请首先向 `/config/computedAttributes` 端点。 请求正文将包含对 `expression.value` 字段，如以下示例中所示。
 
 **API格式**
 
@@ -163,7 +163,7 @@ POST /config/computedAttributes
 * **`totalSpend`:** 捕获客户已花费的总美元金额。
 * **`countPurchases`:** 计算客户的购买次数。
 
-以下请求引用两个现有的计算属性，使用有效的PQL进行划分以计算新的`averageSpend`计算属性。
+以下请求引用两个现有的计算属性，使用有效的PQL进行除以计算新属性 `averageSpend` 计算属性。
 
 ```shell
 curl -X POST \
@@ -174,13 +174,13 @@ curl -X POST \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
-        "name" : "averageSpend",
-        "path" : "_{TENANT_ID}.purchaseSummary",
-        "description" : "Computed attribute to capture the average dollar amount that a customer spends on each purchase.",
-        "expression" : {
-            "type" : "PQL", 
-            "format" : "pql/text", 
-            "value":  "_{TENANT_ID}.purchaseSummary.totalSpend/_{TENANT_ID}.purchaseSummary.countPurchases"
+        "name": "averageSpend",
+        "path": "_{TENANT_ID}.purchaseSummary",
+        "description": "Computed attribute to capture the average dollar amount that a customer spends on each purchase.",
+        "expression": {
+            "type": "PQL", 
+            "format": "pql/text", 
+            "value": "_{TENANT_ID}.purchaseSummary.totalSpend/_{TENANT_ID}.purchaseSummary.countPurchases"
         },
         "schema": 
           {
@@ -193,15 +193,15 @@ curl -X POST \
 | 属性 | 描述 |
 |---|---|
 | `name` | 作为字符串的计算属性字段的名称。 |
-| `path` | 包含计算属性的字段的路径。 此路径位于架构的`properties`属性中，不应在路径中包含字段名称。 写入路径时，请忽略`properties`属性的多个级别。 |
-| `{TENANT_ID}` | 如果您不熟悉租户ID，请参阅[架构注册开发人员指南](../../xdm/api/getting-started.md#know-your-tenant_id)中查找租户ID的步骤。 |
+| `path` | 包含计算属性的字段的路径。 此路径可在 `properties` 属性，且不应在路径中包含字段名称。 写入路径时，请忽略 `properties` 属性。 |
+| `{TENANT_ID}` | 如果您不熟悉租户ID，请参阅 [架构注册开发人员指南](../../xdm/api/getting-started.md#know-your-tenant_id). |
 | `description` | 计算属性的描述。 在定义了多个计算属性后，此功能特别有用，因为它将帮助IMS组织内的其他人确定要使用的正确计算属性。 |
-| `expression.value` | 有效的PQL表达式。 计算属性当前支持以下函数：sum、count、min、max和boolean。 有关示例表达式的列表，请参阅[示例PQL表达式](expressions.md)文档。<br/><br/>在此示例中，表达式引用了两个现有的计算属性。属性使用计算属性的`path`和`name`引用，它们显示在定义计算属性的架构中。 例如，第一个引用的计算属性的`path`为`_{TENANT_ID}.purchaseSummary`，而`name`为`totalSpend`。 |
-| `schema.name` | 包含计算属性字段的架构所基于的类。 示例：`_xdm.context.experienceevent` ，用于基于XDM ExperienceEvent类的架构。 |
+| `expression.value` | 有效的PQL表达式。 计算属性当前支持以下函数：sum、count、min、max和boolean。 有关示例表达式的列表，请参阅 [示例PQL表达式](expressions.md) 文档。<br/><br/>在此示例中，表达式引用了两个现有的计算属性。 属性使用 `path` 和 `name` 中显示的计算属性，在其中定义了计算属性的架构中。 例如， `path` 第一个引用的计算属性的 `_{TENANT_ID}.purchaseSummary` 和 `name` is `totalSpend`. |
+| `schema.name` | 包含计算属性字段的架构所基于的类。 示例： `_xdm.context.experienceevent` ，用于基于XDM ExperienceEvent类的架构。 |
 
 **响应**
 
-成功创建的计算属性会返回HTTP状态200（确定）和包含新创建计算属性详细信息的响应主体。 这些详细信息包括系统生成的唯一只读`id`，可用于在其他API操作期间引用计算的属性。
+成功创建的计算属性会返回HTTP状态200（确定）和包含新创建计算属性详细信息的响应主体。 这些详细信息包括系统生成的唯一只读 `id` ，可用于在其他API操作期间引用计算属性。
 
 ```json
 {
@@ -220,9 +220,9 @@ curl -X POST \
         "purchaseSummary"
     ],
     "description": "Computed attribute to capture the average dollar amount that a customer spends on each purchase.",
-    "expression" : {
-            "type" : "PQL", 
-            "format" : "pql/text", 
+    "expression": {
+            "type": "PQL", 
+            "format": "pql/text", 
             "value":  "_{TENANT_ID}.purchaseSummary.totalSpend/_{TENANT_ID}.purchaseSummary.countPurchases"
     },
     "schema": {
@@ -266,26 +266,26 @@ curl -X POST \
 |---|---|
 | `id` | 唯一的只读系统生成的ID，可用于在其他API操作期间引用计算的属性。 |
 | `imsOrgId` | 与计算属性相关的IMS组织应与请求中发送的值匹配。 |
-| `sandbox` | 沙盒对象包含在其中配置计算属性的沙盒的详细信息。 此信息来自请求中发送的沙盒标头。 有关详细信息，请参阅[沙箱概述](../../sandboxes/home.md)。 |
-| `positionPath` | 一个数组，其中包含已解构的`path`到请求中发送的字段。 |
+| `sandbox` | 沙盒对象包含在其中配置计算属性的沙盒的详细信息。 此信息来自请求中发送的沙盒标头。 有关详细信息，请参阅 [沙箱概述](../../sandboxes/home.md). |
+| `positionPath` | 包含被解构的数组 `path` 到请求中发送的字段。 |
 | `returnSchema.meta:xdmType` | 存储计算属性的字段类型。 |
 | `definedOn` | 一个数组，用于显示已定义计算属性的并集架构。 每个并集架构包含一个对象，这意味着如果计算的属性已基于不同类添加到多个架构，则数组中可能有多个对象。 |
-| `active` | 一个布尔值，用于显示计算的属性当前是否处于活动状态。 默认情况下，值为`true`。 |
+| `active` | 一个布尔值，用于显示计算的属性当前是否处于活动状态。 默认情况下，值为 `true`. |
 | `type` | 创建的资源类型，在此例中，“ComputedAttribute”是默认值。 |
 | `createEpoch` 和 `updateEpoch` | 分别创建和上次更新计算属性的时间。 |
 
 ## 访问计算属性
 
-使用API处理计算属性时，有两个选项可用于访问您的组织已定义的计算属性。 第一个是列出所有计算属性，第二个是通过其唯一`id`查看特定计算属性。
+使用API处理计算属性时，有两个选项可用于访问您的组织已定义的计算属性。 第一个是列出所有计算属性，第二个是通过其唯一性查看特定计算属性 `id`.
 
 本文档概述了两种访问模式的步骤。 选择以下选项之一开始：
 
 * **[列出所有现有的计算属性](#list-all-computed-attributes):** 返回您的组织已创建的所有现有计算属性的列表。
-* **[查看特定计算属性](#view-a-computed-attribute):** 在请求期间通过指定单个计算属性的ID来返回该属性的详细信息。
+* **[查看特定的计算属性](#view-a-computed-attribute):** 在请求期间通过指定单个计算属性的ID来返回其详细信息。
 
 ### 列出所有计算属性 {#list-all-computed-attributes}
 
-您的IMS组织可以创建多个计算属性，并且通过向`/config/computedAttributes`端点执行GET请求，可以列出组织的所有现有计算属性。
+您的IMS组织可以创建多个计算属性，并对 `/config/computedAttributes` 端点允许您列出组织的所有现有计算属性。
 
 **API格式**
 
@@ -306,9 +306,9 @@ curl -X GET \
 
 **响应**
 
-成功响应包括`_page`属性，该属性提供计算属性(`totalCount`)的总数和页面(`pageSize`)上计算属性的数量。
+成功的响应包括 `_page` 提供计算属性总数的属性(`totalCount`)以及页面上计算属性的数量(`pageSize`)。
 
-响应还包括由一个或多个对象组成的`children`数组，每个对象包含一个计算属性的详细信息。 如果贵组织没有任何计算属性，则`totalCount`和`pageSize`将为0（零），而`children`数组将为空。
+响应还包括 `children` 由一个或多个对象组成的数组，每个对象包含一个计算属性的详细信息。 如果贵组织没有任何计算属性，则 `totalCount` 和 `pageSize` 将为0（零），并且 `children` 数组将为空。
 
 ```json
 {
@@ -375,8 +375,8 @@ curl -X GET \
             ],
             "description": "Calculate total product downloads.",
             "expression": {
-                "type" : "PQL", 
-                "format" : "pql/text", 
+                "type": "PQL", 
+                "format": "pql/text", 
                 "value":  "let Y = xEvent[_coresvc.event.subType = \"DOWNLOAD\"].groupBy(_coresvc.attributes[name = \"product\"].value).map({
                   \"downloaded\": this.head()._coresvc.attributes[name = \"product\"].head().value,
                   \"downloadsSum\": this.count(),
@@ -416,14 +416,14 @@ curl -X GET \
 | 属性 | 描述 |
 |---|---|
 | `_page.totalCount` | 由IMS组织定义的计算属性总数。 |
-| `_page.pageSize` | 在此结果页面上返回的计算属性数。 如果`pageSize`等于`totalCount`，则表示只返回一页结果和所有计算属性。 如果不等于，则可以访问其他的结果页面。 有关详细信息，请参见`_links.next`。 |
-| `children` | 由一个或多个对象组成的数组，每个对象包含单个计算属性的详细信息。 如果未定义计算属性，则`children`数组为空。 |
-| `id` | 创建时自动分配给计算属性的唯一只读系统生成值。 有关计算属性对象组件的更多信息，请参阅本教程前面关于[创建计算属性](#create-a-computed-attribute)的部分。 |
-| `_links.next` | 如果返回计算属性的单页，则`_links.next`是空对象，如上面的示例响应所示。 如果贵组织具有许多计算属性，则会在多个页面上返回这些属性，您可以通过向`_links.next`值发出GET请求来访问这些属性。 |
+| `_page.pageSize` | 在此结果页面上返回的计算属性数。 如果 `pageSize` 等于 `totalCount`，这意味着只有一个结果页且返回了所有计算属性。 如果不等于，则可以访问其他的结果页面。 请参阅 `_links.next` 以了解详细信息。 |
+| `children` | 由一个或多个对象组成的数组，每个对象包含单个计算属性的详细信息。 如果尚未定义计算属性，则 `children` 数组为空。 |
+| `id` | 创建时自动分配给计算属性的唯一只读系统生成值。 有关计算属性对象的组件的更多信息，请参阅 [创建计算属性](#create-a-computed-attribute) 在本教程的前面部分。 |
+| `_links.next` | 如果返回单页计算属性， `_links.next` 是空对象，如上面的示例响应中所示。 如果贵组织具有许多计算属性，则会在多个页面上返回这些属性，您可以通过向发出GET请求来访问这些属性 `_links.next` 值。 |
 
 ### 查看计算属性 {#view-a-computed-attribute}
 
-您可以通过向`/config/computedAttributes`端点发出GET请求并在请求路径中包含计算属性ID来查看特定的计算属性。
+您可以通过向 `/config/computedAttributes` 端点，并在请求路径中包含计算的属性ID。
 
 **API格式**
 
@@ -494,7 +494,7 @@ curl -X GET \
 
 ## 更新计算属性
 
-如果您发现需要更新现有的计算属性，则可以通过向`/config/computedAttributes`端点发出PATCH请求并在请求路径中包含要更新的计算属性的ID来完成此操作。
+如果您发现需要更新现有的计算属性，可以通过向 `/config/computedAttributes` 端点，并包括您希望在请求路径中更新的计算归因的ID。
 
 **API格式**
 
@@ -508,7 +508,7 @@ PATCH /config/computedAttributes/{ATTRIBUTE_ID}
 
 **请求**
 
-此请求使用[JSON修补程序格式](http://jsonpatch.com/)来更新“expression”字段的“value”。
+此请求使用 [JSON修补程序格式](http://jsonpatch.com/) 更新“expression”字段的“value”。
 
 ```shell
 curl -X PATCH \
@@ -524,8 +524,8 @@ curl -X PATCH \
           "path": "/expression",
           "value": 
           {
-            "type" : "PQL", 
-            "format" : "pql/text", 
+            "type": "PQL", 
+            "format": "pql/text", 
             "value":  "{NEW_EXPRESSION_VALUE}"
           }
         }
@@ -534,7 +534,7 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 |---|---|
-| `{NEW_EXPRESSION_VALUE}` | 有效的[!DNL Profile Query Language](PQL)表达式。 计算属性当前支持以下函数：sum、count、min、max和boolean。 有关示例表达式的列表，请参阅[示例PQL表达式](expressions.md)文档。 |
+| `{NEW_EXPRESSION_VALUE}` | 有效 [!DNL Profile Query Language] (PQL)表达式。 计算属性当前支持以下函数：sum、count、min、max和boolean。 有关示例表达式的列表，请参阅 [示例PQL表达式](expressions.md) 文档。 |
 
 **响应**
 
@@ -542,7 +542,7 @@ curl -X PATCH \
 
 ## 删除计算属性
 
-也可以使用API删除计算的属性。 这是通过向`/config/computedAttributes`端点发出DELETE请求并在请求路径中包含要删除的计算属性的ID来完成的。
+也可以使用API删除计算的属性。 这是通过向 `/config/computedAttributes` 端点，包括您希望在请求路径中删除的计算属性的ID。
 
 >[!NOTE]
 >
@@ -577,9 +577,9 @@ curl -X DELETE \
 
 Adobe Experience Platform允许您从一组用户档案创建用于定义一组特定属性或行为的区段。 区段定义包括封装在PQL中写入的查询的表达式。 这些表达式还可以引用计算属性。
 
-以下示例创建引用现有计算属性的区段定义。 要详细了解区段定义以及如何在Segmentation Service API中使用它们，请参阅[区段定义API端点指南](../../segmentation/api/segment-definitions.md)。
+以下示例创建引用现有计算属性的区段定义。 要详细了解区段定义以及如何在分段服务API中使用这些定义，请参阅 [区段定义API端点指南](../../segmentation/api/segment-definitions.md).
 
-要开始，请向`/segment/definitions`端点发出POST请求，并在请求正文中提供计算的属性。
+要开始，请向 `/segment/definitions` 端点，在请求正文中提供计算属性。
 
 **API格式**
 
@@ -619,17 +619,17 @@ curl -X POST https://platform.adobe.io/data/core/ups/segment/definitions
 | -------- | ----------- |
 | `name` | 区段的唯一名称，以字符串形式表示。 |
 | `description` | 定义的人类可读描述。 |
-| `schema.name` | 与区段中的实体关联的架构。 由`id`或`name`字段组成。 |
+| `schema.name` | 与区段中的实体关联的架构。 由 `id` 或 `name` 字段。 |
 | `expression` | 包含字段的对象，其中包含有关区段定义的信息。 |
 | `expression.type` | 指定表达式类型。 目前仅支持“PQL”。 |
-| `expression.format` | 指示值中表达式的结构。 目前仅支持`pql/text`。 |
+| `expression.format` | 指示值中表达式的结构。 目前，仅 `pql/text` 支持。 |
 | `expression.value` | 有效的PQL表达式，在此示例中，它包括对现有计算属性的引用。 |
 
-有关架构定义属性的更多信息，请参阅[区段定义API端点指南](../../segmentation/api/segment-definitions.md)中提供的示例。
+有关架构定义属性的更多信息，请参阅 [区段定义API端点指南](../../segmentation/api/segment-definitions.md).
 
 **响应**
 
-成功响应会返回HTTP状态200，其中包含新创建的区段定义的详细信息。 要了解有关区段定义响应对象的更多信息，请参阅[区段定义API端点指南](../../segmentation/api/segment-definitions.md)。
+成功响应会返回HTTP状态200，其中包含新创建的区段定义的详细信息。 要了解有关区段定义响应对象的更多信息，请参阅 [区段定义API端点指南](../../segmentation/api/segment-definitions.md).
 
 ```json
 {

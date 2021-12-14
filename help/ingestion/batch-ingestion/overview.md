@@ -5,7 +5,7 @@ title: 批量摄取API概述
 topic-legacy: overview
 description: Adobe Experience Platform数据摄取API允许您将数据作为批处理文件导入到平台中。 摄取的数据可以是CRM系统中平面文件（如Parquet文件）中的配置文件数据，也可以是符合体验数据模型(XDM)注册表中已知架构的数据。
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: 3eea0a1ecbe7db202f56f326e7b9b1300b37d236
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '1388'
 ht-degree: 6%
@@ -14,9 +14,9 @@ ht-degree: 6%
 
 # 批量摄取API概述
 
-Adobe Experience Platform数据摄取API允许您将数据作为批处理文件导入到平台中。 摄取的数据可以是来自平面文件（如Parquet文件）的配置文件数据，也可以是符合[!DNL Experience Data Model](XDM)注册表中已知模式的数据。
+Adobe Experience Platform数据摄取API允许您将数据作为批处理文件导入到平台中。 摄取的数据可以是来自平面文件（如Parquet文件）的配置文件数据，也可以是符合 [!DNL Experience Data Model] (XDM)注册表。
 
-[数据摄取API引用](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)提供有关这些API调用的其他信息。
+的 [数据摄取API参考](https://www.adobe.io/experience-platform-apis/references/data-ingestion/) 提供了有关这些API调用的其他信息。
 
 下图概述了批量摄取流程：
 
@@ -24,12 +24,12 @@ Adobe Experience Platform数据摄取API允许您将数据作为批处理文件�
 
 ## 快速入门
 
-本指南中使用的API端点是[数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/)的一部分。 在继续操作之前，请查阅[快速入门指南](getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及成功调用任何Experience PlatformAPI所需的标头的重要信息。
+本指南中使用的API端点是 [数据摄取API](https://www.adobe.io/experience-platform-apis/references/data-ingestion/). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
 
 ### [!DNL Data Ingestion] 先决条件
 
 - 要上传的数据必须采用Parquet或JSON格式。
-- 在[[!DNL Catalog services]](../../catalog/home.md)中创建的数据集。
+- 在 [[!DNL Catalog services]](../../catalog/home.md).
 - Parquet文件的内容必须与要上传到的数据集架构的子集相匹配。
 - 验证后拥有您的唯一访问令牌。
 
@@ -49,15 +49,15 @@ Adobe Experience Platform数据摄取API允许您将数据作为批处理文件�
 
 >[!NOTE]
 >
->要上传大于512MB的文件，需要将文件分为较小的块。 有关上载大文件的说明，请参阅本文档](#large-file-upload---create-file)的[大文件上载部分。
+>要上传大于512MB的文件，需要将文件分为较小的块。 有关上传大文件的说明，请参阅 [本文档的大文件上传部分](#large-file-upload---create-file).
 
 ### 类型
 
-在摄取数据时，务必要了解[!DNL Experience Data Model](XDM)模式的工作方式。 有关XDM字段类型如何映射到不同格式的更多信息，请阅读[架构注册开发人员指南](../../xdm/api/getting-started.md)。
+在摄取数据时，了解如何 [!DNL Experience Data Model] (XDM)模式有效。 有关XDM字段类型如何映射到不同格式的更多信息，请阅读 [架构注册开发人员指南](../../xdm/api/getting-started.md).
 
-在摄取数据时具有一定的灵活性 — 如果类型与目标架构中的内容不匹配，则数据将转换为表示的目标类型。 如果不能，则使用`TypeCompatibilityException`的批处理将失败。
+在摄取数据时具有一定的灵活性 — 如果类型与目标架构中的内容不匹配，则数据将转换为表示的目标类型。 如果不能，则会通过 `TypeCompatibilityException`.
 
-例如，JSON和CSV均不具有`date`或`date-time`类型。 因此，这些值使用[ISO 8061格式化字符串](https://www.iso.org/iso-8601-date-and-time-format.html)(&quot;2018-07-10T15:05:59.000-08:00&quot;)或Unix时间（以毫秒为单位）格式化，并在摄取时转换为目标XDM类型。
+例如，JSON和CSV均没有 `date` 或 `date-time` 类型。 因此，这些值使用 [ISO 8061格式化字符串](https://www.iso.org/iso-8601-date-and-time-format.html) (&quot;2018-07-10T15&quot;:05:59.000-08:00&quot;)或Unix时间（以毫秒为格式）(1531263959000)，在摄取时将转换为目标XDM类型。
 
 下表显示了摄取数据时支持的转化。
 
@@ -80,7 +80,7 @@ Adobe Experience Platform数据摄取API允许您将数据作为批处理文件�
 
 ## 使用 API
 
-[!DNL Data Ingestion] API允许您通过三个基本步骤将数据作为批量（由一个或多个要作为单个单位摄取的文件组成的数据单元）摄取到[!DNL Experience Platform]中：
+的 [!DNL Data Ingestion] API允许您将数据作为批量（由一个或多个要作为单个单位摄取的文件组成的数据单元）摄取到中 [!DNL Experience Platform] 三个基本步骤：
 
 1. 创建新批。
 2. 将文件上传到与数据的XDM架构匹配的指定数据集。
@@ -102,7 +102,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
   -H "x-gw-ims-org-id: {IMS_ORG}" \
   -H "x-sandbox-name: {SANDBOX_NAME}" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
-  -H "x-api-key : {API_KEY}"
+  -H "x-api-key: {API_KEY}"
   -d '{ 
           "datasetId": "{DATASET_ID}" 
       }'
@@ -147,11 +147,11 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 >[!NOTE]
 >
->批量摄取可用于以递增方式更新配置文件存储中的数据。 有关更多信息，请参阅[批量摄取开发人员指南](api-overview.md)中关于[更新批](#patch-a-batch)的部分。
+>批量摄取可用于以递增方式更新配置文件存储中的数据。 有关更多信息，请参阅 [更新批](#patch-a-batch) 在 [批量获取开发人员指南](api-overview.md).
 
 >[!INFO]
 >
->以下示例使用[Apache Parquet](https://parquet.apache.org/documentation/latest/)文件格式。 [批量摄取开发人员指南](api-overview.md)中提供了使用JSON文件格式的示例。
+>以下示例使用 [Apache Parquet](https://parquet.apache.org/documentation/latest/) 文件格式。 在 [批量获取开发人员指南](api-overview.md).
 
 ### 小文件上传
 
@@ -175,7 +175,7 @@ curl -X PUT "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}
   -H "x-gw-ims-org-id: {IMS_ORG}" \
   -H "x-sandbox-name: {SANDBOX_NAME}" \
   -H "Authorization: Bearer {ACCESS_TOKEN}" \
-  -H "x-api-key : {API_KEY}" \
+  -H "x-api-key: {API_KEY}" \
   --data-binary "@{FILE_PATH_AND_NAME}.parquet"
 ```
 
@@ -258,7 +258,7 @@ curl -X PATCH "https://platform.adobe.io/data/foundation/import/batches/{BATCH_I
 
 ## 信号批处理完成
 
-将所有文件上传到批处理后，可以发出批处理完成的信号。 这样，[!DNL Catalog] DataSetFile条目就会为已完成的文件创建，并与上面生成的批处理关联。 然后，将[!DNL Catalog]批标记为成功，这会触发下游流以摄取可用数据。
+将所有文件上传到批处理后，可以发出批处理完成的信号。 通过执行此操作， [!DNL Catalog] 为已完成的文件创建DataSetFile条目，并与上面生成的批处理关联。 的 [!DNL Catalog] 然后，批次会标记为成功，这会触发下游流以摄取可用数据。
 
 **请求**
 
@@ -275,7 +275,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 -H "x-gw-ims-org-id: {IMS_ORG}" \
 -H "x-sandbox-name: {SANDBOX_NAME}" \
 -H "Authorization: Bearer {ACCESS_TOKEN}" \
--H "x-api-key : {API_KEY}"
+-H "x-api-key: {API_KEY}"
 ```
 
 **响应**
@@ -402,20 +402,20 @@ curl GET "https://platform.adobe.io/data/foundation/catalog/batch/{BATCH_ID}" \
 | -------- | ----------- |
 | `{USER_ID}` | 创建或更新批处理的用户ID。 |
 
-`"status"`字段显示所请求批的当前状态。 批可以具有以下状态之一：
+的 `"status"` 字段，显示所请求批的当前状态。 批可以具有以下状态之一：
 
 ## 批量摄取状态
 
 | 状态 | 描述 |
 | ------ | ----------- |
 | 已放弃 | 批次未在预期时间范围内完成。 |
-| 已中止 | 已为指定的批次（通过批量摄取API）明确调用了&#x200B;****&#x200B;中止操作。 批处理处于“已加载”状态后，将无法中止该批处理。 |
+| 已中止 | 中止操作已 **显式** 已调用（通过批量摄取API）。 批处理处于“已加载”状态后，将无法中止该批处理。 |
 | 活动 | 批已成功提升，可用于下游冲减。 此状态可与“成功”交替使用。 |
 | 已删除 | 批次的数据已完全删除。 |
-| 失败 | 由配置错误和/或数据错误导致的终端状态。 失败批处理的数据将&#x200B;**不**&#x200B;显示。 此状态可与“失败”交替使用。 |
+| 失败 | 由配置错误和/或数据错误导致的终端状态。 失败批处理的数据将 **not** 出现。 此状态可与“失败”交替使用。 |
 | 不活动 | 批已成功提升，但已还原或已过期。 批次不再可用于下游冲减。 |
 | 已加载 | 批处理的数据已完成，并且批处理已准备好进行升级。 |
-| 正在加载 | 正在上载此批的数据，该批当前&#x200B;**尚未**&#x200B;准备提升。 |
+| 正在加载 | 正在上载此批次的数据，并且该批次当前为 **not** 准备升职。 |
 | 正在重试 | 正在处理此批的数据。 但是，由于系统或临时错误，批处理失败 — 因此，将重试此批处理。 |
 | 暂存 | 批处理提升流程的暂存阶段已完成，并且已运行摄取作业。 |
 | 暂存 | 正在处理批处理的数据。 |

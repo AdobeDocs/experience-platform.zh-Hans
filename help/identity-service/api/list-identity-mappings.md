@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform；主页；热门主题；标识；标识
+keywords: Experience Platform；主页；热门主题；身份；身份
 solution: Experience Platform
 title: 列表标识映射
 topic-legacy: API guide
-description: 映射是群集中所有标识的集合，用于指定命名空间。
+description: 映射是群集中指定命名空间的所有标识的集合。
 exl-id: db80c783-620b-4ba3-b55c-75c1fd6e90b1
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '270'
 ht-degree: 1%
@@ -15,11 +14,11 @@ ht-degree: 1%
 
 # 列表标识映射
 
-映射是群集中所有标识的集合，用于指定命名空间。
+映射是群集中指定命名空间的所有标识的集合。
 
 ## 获取单个标识的标识映射
 
-给定一个身份，从请求中由该身份表示的同一命名空间检索所有相关身份。
+给定身份，从请求中由身份表示的相同命名空间中检索所有相关身份。
 
 **API格式**
 
@@ -29,7 +28,7 @@ GET https://platform-{REGION}.adobe.io/data/core/identity/mapping
 
 **请求**
 
-选项1:将标识作为命名空间（`nsId`，按ID）和ID值(`id`)提供。
+选项1:将标识作为命名空间(`nsId`，按ID)和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -40,7 +39,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项2:将标识作为命名空间（`ns`，按名称）和ID值(`id`)提供。
+选项2:将标识作为命名空间(`ns`，按名称)和ID值(`id`)。
 
 ```shell
 curl -X GET \
@@ -51,7 +50,7 @@ curl -X GET \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
-选项3:提供XID身份(`xid`)。 有关如何获得身份的XID的详细信息，请参阅此文档的部分，其中涵盖[获取身份的XID](./list-native-id.md)。
+选项3:将身份提供为XID(`xid`)。 有关如何获取身份XID的更多信息，请参阅本文档中涵盖的部分 [获取XID以获取身份](./list-native-id.md).
 
 ```shell
 curl -X GET \
@@ -64,11 +63,11 @@ curl -X GET \
 
 ### 获取多个身份的身份映射
 
-将`POST`方法用作上述`GET`方法的批处理等效项，以检索多个身份的映射。
+使用 `POST` 方法作为批次等效项 `GET` 方法检索多个标识的映射。
 
 >[!NOTE]
 >
->请求应最多指示1000个身份。 超过1000个身份的请求将生成400个状态代码。
+>请求应指示最多1000个身份。 超过1000个身份的请求将生成400个状态代码。
 
 **API格式**
 
@@ -87,7 +86,7 @@ POST https://platform.adobe.io/data/core/identity/mappings
 }
 ```
 
-选项2:提供身份列表作为复合ID，其中每个ID都按命名空间ID命名ID值和命名空间。 此示例演示了在覆盖“专用图”的默认`graph-type`时使用此方法。
+选项2:提供身份列表作为复合ID，其中每个标识按命名空间ID命名ID值和命名空间。 此示例演示了如何在覆盖默认值时使用此方法 `graph-type` “专用图”的名称。
 
 ```shell
 {
@@ -116,7 +115,7 @@ curl -X POST \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: 111111@AdobeOrg' \
   -d '{
-        "xids" : ["GesCQXX0CAESEE8wHpswUoLXXmrYy8KBTVgA"],
+        "xids": ["GesCQXX0CAESEE8wHpswUoLXXmrYy8KBTVgA"],
         "targetNs": "0",
         "graph-type": "Private Graph"
       }' | json_pp
@@ -146,7 +145,7 @@ curl -X POST \
       }' | json_pp
 ```
 
-如果没有找到与提供的输入相关的标识，则返回没有内容的`HTTP 204`响应代码。
+如果未找到与提供的输入相关的身份，则 `HTTP 204` 返回的响应代码中没有内容。
 
 **响应**
 
@@ -184,9 +183,9 @@ curl -X POST \
 }
 ```
 
-- `lastAssociationTime`:上次与此标识关联的输入标识的时间戳。
-- `regions`:提供 `regionId` 身 `lastAssociationTime` 份的显示位置和位置。
+- `lastAssociationTime`:输入标识上次与此标识关联的时间戳。
+- `regions`:提供 `regionId` 和 `lastAssociationTime` 在哪里看到了身份。
 
 ## 后续步骤
 
-转到下一个教程[列表可用命名空间](./list-namespaces.md)。
+继续下一个教程以 [列表可用命名空间](./list-namespaces.md).

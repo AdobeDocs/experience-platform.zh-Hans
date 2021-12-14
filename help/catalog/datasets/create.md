@@ -5,7 +5,7 @@ title: 使用API创建数据集
 topic-legacy: datasets
 description: 本文档提供了使用Adobe Experience Platform API创建数据集以及使用文件填充数据集的一般步骤。
 exl-id: 3a5f48cf-ad05-4b9e-be1d-ff213a26a477
-source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '1305'
 ht-degree: 1%
@@ -21,30 +21,30 @@ ht-degree: 1%
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
 * [批量摄取](../../ingestion/batch-ingestion/overview.md): [!DNL Experience Platform] 允许您将数据作为批处理文件进行摄取。
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):用于组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了成功调用[!DNL Platform] API所需了解的其他信息。
+以下部分提供了成功调用所需了解的其他信息 [!DNL Platform] API。
 
 ### 读取示例API调用
 
-本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅[!DNL Experience Platform]疑难解答指南中[如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
+本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程可为所有[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
 * `x-gw-ims-org-id: {IMS_ORG}`
 
-[!DNL Experience Platform]中的所有资源均与特定虚拟沙箱隔离。 对[!DNL Platform] API的所有请求都需要一个标头来指定操作将在其中进行的沙盒的名称：
+中的所有资源 [!DNL Experience Platform] 与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
 
 * x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关[!DNL Platform]中沙箱的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+>有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
 
 所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -54,15 +54,15 @@ ht-degree: 1%
 
 要创建数据集，必须首先定义架构。 架构是一组用于帮助表示数据的规则。 除了描述数据结构之外，架构还提供了约束和期望，当数据在系统之间移动时，这些约束和期望可应用并用于验证数据。
 
-这些标准定义允许对数据进行一致的解释（无论其来源如何），并且无需跨应用程序进行翻译。 有关合成架构的更多信息，请参阅[架构合成基础知识](../../xdm/schema/composition.md)指南
+这些标准定义允许对数据进行一致的解释（无论其来源如何），并且无需跨应用程序进行翻译。 有关合成架构的更多信息，请参阅 [架构组合基础知识](../../xdm/schema/composition.md)
 
 ## 查找数据集架构
 
-本教程从[架构注册表API教程](../../xdm/tutorials/create-schema-api.md)结束的位置开始，该教程将利用在本教程中创建的会员架构。
+本教程将从 [模式注册表API教程](../../xdm/tutorials/create-schema-api.md) 结束，以利用在本教程中创建的会员架构。
 
-如果您尚未完成[!DNL Schema Registry]教程，请从此处开始，并仅在您撰写了必需的架构后继续使用此数据集教程。
+如果您尚未完成 [!DNL Schema Registry] 教程中，请从此处开始，并仅在您撰写了必需的架构后，才继续使用此数据集教程。
 
-以下调用可用于查看您在[!DNL Schema Registry] API教程中创建的会员架构：
+以下调用可用于查看您在 [!DNL Schema Registry] API教程：
 
 **API格式**
 
@@ -209,16 +209,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `schemaRef.id` | 数据集将基于的XDM架构的URI `$id`值。 |
-| `schemaRef.contentType` | 指示架构的格式和版本。 有关更多信息，请参阅XDM API指南中关于[模式版本控制](../../xdm/api/getting-started.md#versioning)的部分。 |
+| `schemaRef.id` | URI `$id` 数据集将基于的XDM架构的值。 |
+| `schemaRef.contentType` | 指示架构的格式和版本。 请参阅 [模式版本控制](../../xdm/api/getting-started.md#versioning) ，以了解更多信息。 |
 
 >[!NOTE]
 >
->本教程对其所有示例都使用[Apache Parquet](https://parquet.apache.org/documentation/latest/)文件格式。 [批量摄取开发人员指南](../../ingestion/batch-ingestion/api-overview.md)中提供了使用JSON文件格式的示例
+>本教程使用 [Apache Parquet](https://parquet.apache.org/documentation/latest/) 文件格式。 在 [批量获取开发人员指南](../../ingestion/batch-ingestion/api-overview.md)
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建）和一个响应对象，该对象由一个数组组成，该数组包含格式为`"@/datasets/{DATASET_ID}"`的新创建数据集的ID。 数据集ID是由系统生成的只读字符串，用于在API调用中引用数据集。
+成功的响应会返回HTTP状态201（已创建）和一个响应对象，该对象包含一个数组，其中包含以格式新创建数据集的ID `"@/datasets/{DATASET_ID}"`. 数据集ID是由系统生成的只读字符串，用于在API调用中引用数据集。
 
 ```JSON
 [
@@ -238,7 +238,7 @@ POST /batches
 
 **请求**
 
-请求正文包含一个“datasetId”字段，其值是在上一步中生成的`{DATASET_ID}`。
+请求正文包含一个“datasetId”字段，其值为 `{DATASET_ID}` 在上一步中生成。
 
 ```SHELL
 curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
@@ -246,7 +246,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'content-type: application/json' \
   -d '{
         "datasetId":"5c8c3c555033b814b69f947f"
@@ -255,7 +255,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/import/batches' \
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建）和一个包含新创建批处理详细信息（包括其`id`，只读的系统生成字符串）的响应对象。
+成功的响应会返回HTTP状态201（已创建）以及包含新创建批处理详细信息(包括其 `id`，系统生成的只读字符串。
 
 ```JSON
 {
@@ -308,8 +308,8 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BATCH_ID}` | 您要上传到的批次的`id`。 |
-| `{DATASET_ID}` | 将保留该批处理的数据集的`id`。 |
+| `{BATCH_ID}` | 的 `id` 上传到的批次。 |
+| `{DATASET_ID}` | 的 `id` 在数据集中，将保留该批次。 |
 | `{FILE_NAME}` | 您上传的文件的名称。 |
 
 **请求**
@@ -317,7 +317,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 ```SHELL
 curl -X PUT 'https://platform.adobe.io/data/foundation/import/batches/5d01230fc78a4e4f8c0c6b387b4b8d1c/datasets/5c8c3c555033b814b69f947f/files/loyaltyData.parquet' \
   -H 'content-type: application/octet-stream' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMG_ORG}' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   --data-binary '@{FILE_PATH_AND_NAME}.parquet'
@@ -329,7 +329,7 @@ curl -X PUT 'https://platform.adobe.io/data/foundation/import/batches/5d01230fc7
 
 ## 信号批处理完成
 
-将所有数据文件上传到批后，您可以发出该批完成的信号。 信令完成导致服务为上传的文件创建[!DNL Catalog] `DataSetFile`条目，并将这些条目与之前生成的批处理相关联。 [!DNL Catalog]批次标记为成功，这会触发任何下游流，这些流随后可以处理当前可用的数据。
+将所有数据文件上传到批后，您可以发出该批完成的信号。 信令完成导致服务创建 [!DNL Catalog] `DataSetFile` 上传文件的条目，并将它们与之前生成的批处理相关联。 的 [!DNL Catalog] 批次标记为成功，这会触发任何可随后处理当前可用数据的下游流。
 
 **API格式**
 
@@ -339,13 +339,13 @@ POST /batches/{BATCH_ID}?action=COMPLETE
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BATCH_ID}` | 您标记为完成的批次的`id`。 |
+| `{BATCH_ID}` | 的 `id` 标记为完成的批次。 |
 
 **请求**
 
 ```SHELL
 curl -X POST "https://platform.adobe.io/data/foundation/import/batches/5d01230fc78a4e4f8c0c6b387b4b8d1c?action=COMPLETE" \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMG_ORG}' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}'
 ```
@@ -356,7 +356,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches/5d01230fc
 
 ## 监控摄取
 
-批次的摄取时间会因数据的大小而异。 您可以通过将包含批处理ID的`batch`请求参数附加到`GET /batches`请求来监视批处理的状态。 API会从摄取开始轮询数据集的批处理状态，直到响应中的`status`指示完成（“success”或“failure”）。
+批次的摄取时间会因数据的大小而异。 您可以通过附加 `batch` 包含批次ID的请求参数 `GET /batches` 请求。 API会从摄取开始对数据集轮询批处理状态，直到 `status` 响应中指示完成（“success”或“failure”）。
 
 **API格式**
 
@@ -366,14 +366,14 @@ GET /batches?batch={BATCH_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BATCH_ID}` | 要监视的批处理的`id`。 |
+| `{BATCH_ID}` | 的 `id` 要监视的批次的数量。 |
 
 **请求**
 
 ```SHELL
 curl -X GET \
   'https://platform.adobe.io/data/foundation/catalog/batches?batch=5d01230fc78a4e4f8c0c6b387b4b8d1c' \
-  -H 'x-api-key : {API_KEY}' \
+  -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {IMG_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}'
@@ -381,7 +381,7 @@ curl -X GET \
 
 **响应**
 
-正向响应会返回一个对象，其`status`属性包含`success`的值：
+正向响应会返回带有其 `status` 包含值的属性 `success`:
 
 ```JSON
 {
@@ -413,7 +413,7 @@ curl -X GET \
 }
 ```
 
-负响应返回其`"status"`属性中值为`"failed"`的对象，并包含任何相关的错误消息：
+负响应返回值为 `"failed"` 在 `"status"` ，并包含任何相关错误消息：
 
 ```JSON
 {
@@ -465,14 +465,14 @@ curl -X GET \
 
 您还可以使用数据访问API返回名称、大小（以字节为单位）以及用于下载文件或文件夹的链接。
 
-有关使用数据访问API的详细步骤，请参阅[Data Access开发人员指南](../../data-access/home.md)。
+有关使用数据访问API的详细步骤，请参阅 [Data Access开发人员指南](../../data-access/home.md).
 
 ## 更新数据集架构
 
 您可以添加字段并将其他数据摄取到已创建的数据集。 为此，您首先需要通过添加定义新数据的其他属性来更新架构。 可以使用PATCH和/或PUT操作来更新现有架构，以完成此操作。
 
-有关更新架构的更多信息，请参阅[架构注册API开发人员指南](../../xdm/api/getting-started.md)。
+有关更新架构的更多信息，请参阅 [架构注册API开发人员指南](../../xdm/api/getting-started.md).
 
 更新架构后，您可以重新按照本教程中的步骤操作，以摄取符合修订的架构的新数据。
 
-请务必记住，架构演变纯粹是可添加的，这意味着一旦架构保存到注册表并用于数据摄取，就无法对其进行突破性更改。 要了解有关合成架构以与Adobe Experience Platform一起使用的最佳实践的更多信息，请参阅[架构合成基础知识](../../xdm/schema/composition.md)指南。
+请务必记住，架构演变纯粹是可添加的，这意味着一旦架构保存到注册表并用于数据摄取，就无法对其进行突破性更改。 要了解有关构建架构以与Adobe Experience Platform一起使用的最佳实践的更多信息，请参阅 [架构组合基础知识](../../xdm/schema/composition.md).

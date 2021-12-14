@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程为您提供所有其他Adobe Experience Platform Data Science Workspace教程所需的先决条件和资产。 完成后，您和IMS组织成员将可以使用零售销售架构和数据集进行Experience Platform。
 exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
-source-git-commit: b30700fde3ce75cc4f66343c8d37d3e731775627
+source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 1%
@@ -67,11 +67,11 @@ ht-degree: 1%
        kernel_type: Python
    ```
 
-   - `platform_gateway` :API调用的基本路径。 请勿修改此值。
-   - `ims_token` :您的 `{ACCESS_TOKEN}` 到这里。
-   - `ingest_data` :在本教程中，请将此值设置为 `"True"` 以创建零售销售架构和数据集。 值 `"False"` 将仅创建架构。
-   - `build_recipe_artifacts` :在本教程中，请将此值设置为 `"False"` 以防止脚本生成方法项目。
-   - `kernel_type` :方法对象的执行类型。 将此值保留为 `Python` if `build_recipe_artifacts` 设置为 `"False"`，否则请指定正确的执行类型。
+   - `platform_gateway`:API调用的基本路径。 请勿修改此值。
+   - `ims_token`:您的 `{ACCESS_TOKEN}` 到这里。
+   - `ingest_data`:在本教程中，请将此值设置为 `"True"` 以创建零售销售架构和数据集。 值 `"False"` 将仅创建架构。
+   - `build_recipe_artifacts`:在本教程中，请将此值设置为 `"False"` 以防止脚本生成方法项目。
+   - `kernel_type`:方法对象的执行类型。 将此值保留为 `Python` if `build_recipe_artifacts` 设置为 `"False"`，否则请指定正确的执行类型。
 
 4. 在 `Titles` 部分，为零售销售示例数据正确提供以下信息，并在进行编辑后保存并关闭文件。 示例如下所示：
 
