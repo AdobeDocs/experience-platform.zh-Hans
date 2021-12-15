@@ -1,48 +1,49 @@
 ---
-keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
+keywords: Experience Platform;home;popular topics;sources;connectors;source connectors;sources sdk;sdk;SDK
 solution: Experience Platform
-title: 使用流量服务API（测试版）创建新的连接规范
+title: Create a new connection specification using the Flow Service API (Beta)
 topic-legacy: tutorial
-description: 以下文档提供了有关如何使用流服务API创建连接规范并通过源SDK集成新源的步骤。
+description: The following document provides steps on how to create a connection specification using the Flow Service API and integrate a new source through Sources SDK.
 hide: true
 hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+exl-id: 0b0278f5-c64d-4802-a6b4-37557f714a97
+source-git-commit: baa5f95fc8155c6a3f6c2faab99182046f33f49a
 workflow-type: tm+mt
 source-wordcount: '524'
 ht-degree: 2%
 
 ---
 
-# 使用 [!DNL Flow Service] API（测试版）
+# [!DNL Flow Service]
 
 >[!IMPORTANT]
 >
->Sources SDK当前处于测试阶段，您的组织可能尚未访问该SDK。 本文档中描述的功能可能会发生更改。
+>Sources SDK is currently in beta and your organization may not have access to it yet. The functionality described in this documentation is subject to change.
 
-连接规范表示源的结构。 它包含有关源的身份验证要求的信息，定义如何探索和检查源数据，并提供有关给定源的属性的信息。 的 `/connectionSpecs` 的端点 [!DNL Flow Service] API允许您以编程方式管理组织内的连接规范。
+A connection specification represents the structure of a source. It contains information on a source&#39;s authentication requirements, defines how source data can be explored and inspected, and provides information on the attributes of a given source. `/connectionSpecs`[!DNL Flow Service]
 
-以下文档提供了如何使用 [!DNL Flow Service] API，并通过源SDK集成新源。
+[!DNL Flow Service]
 
 ## 快速入门
 
-在继续之前，请查看 [入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
+[](./getting-started.md)
 
-## 收集工件
+## Collect artifacts
 
-通过创建新源的第一步 [!DNL Sources SDK] 是与您的Adobe代表协调，并识别源的相应值 **图标**, **描述**, **标签**&#x200B;和 **类别**.
+[!DNL Sources SDK]****************
 
-| 工件 | 描述 | 示例 |
+| Artifacts | 描述 | 示例 |
 | --- | --- | --- |
-| 标签 | 源的名称。 | [!DNL MailChimp Members] |
-| 描述 | 您的来源的简要描述。 | 创建到的实时入站连接 [!DNL Mailchimp Members] 实例，以将历史数据和计划数据都摄取到Experience Platform。 |
-| 图标 | 表示源的图像或徽标。 该图标显示在源的Platform UI渲染中。 | `mailchimp-members-icon.svg` |
-| 类别 | 来源的类别。 | <ul><li>`advertising`</li><li>`cloud storage`</li><li>`crm`</li><li>`customer success`</li><li>`database`</li><li>`ecommerce`</li><li>`marketing automation`</li><li>`payments`</li><li>`protocols`</li><li>`streaming`</li></ul> |
+| 标签 | The name of your source. | [!DNL MailChimp Members] |
+| 描述 | A brief description of your source. | [!DNL Mailchimp Members] |
+| 图标 | The image or logo that represents your source. The icon is displayed in the Platform UI rendering of your source. | `mailchimp-members-icon.svg` |
+| 类别 | The category of your source. | <ul><li>`advertising`</li><li>`cloud storage`</li><li>`crm`</li><li>`customer success`</li><li>`database`</li><li>`ecommerce`</li><li>`marketing automation`</li><li>`payments`</li><li>`protocols`</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
-## 复制连接规范模板
+## Copy connection specification template
 
-收集所需工件后，将下面的连接规范模板复制并粘贴到所选的文本编辑器中，然后更新方括号中的属性 `{}` 包含与您的特定来源相关的信息。
+`{}`
 
 ```json
 {
@@ -284,21 +285,21 @@ ht-degree: 2%
 }
 ```
 
-## 创建连接规范 {#create}
+## Create a connection specification {#create}
 
-获得连接规范模板后，您现在可以通过填写与源对应的相应值来开始创作新的连接规范。
+Once you have acquired the connection specification template, you can now start authoring a new connection specification by filling in the appropriate values that corresponds to your source.
 
-连接规范可分为三个不同的部分：验证规范、源规范和浏览规范。
+A connection specification can be divided into three distinct parts: the authentication specifications, the source specifications, and the explore specifications.
 
-有关如何填充连接规范每个部分的值的说明，请参阅以下文档：
+See the following documents for instructions on how to populate the values of each part of a connection specification:
 
-* [配置身份验证规范](../config/authspec.md)
-* [配置源规范](../config/sourcespec.md)
-* [配置浏览规范](../config/explorespec.md)
+* [Configure your authentication specification](../config/authspec.md)
+* [Configure your source specification](../config/sourcespec.md)
+* [Configure your explore specification](../config/explorespec.md)
 
-更新规范信息后，您可以通过向 `/connectionSpecs` 的端点 [!DNL Flow Service] API。
+`/connectionSpecs`[!DNL Flow Service]
 
-**API格式**
+****
 
 ```http
 POST /connectionSpecs
@@ -306,7 +307,7 @@ POST /connectionSpecs
 
 **请求**
 
-以下请求是完全创作的 [!DNL MailChimp] 来源：
+[!DNL MailChimp]
 
 ```shell
 curl -X POST \
@@ -481,7 +482,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回新创建的连接规范，包括其唯一 `id`.
+`id`
 
 ```json
 {
@@ -666,6 +667,6 @@ curl -X POST \
 
 ## 后续步骤
 
-现在，您已创建了新的连接规范，必须将其相应的连接规范ID添加到现有的流规范中。 请参阅 [更新流程规范](./update-flow-specs.md) 以了解更多信息。
+Now that you have created a new connection specification, you must add its corresponding connection specification ID to an existing flow specification. [](./update-flow-specs.md)
 
-要修改您创建的连接规范，请参阅 [更新连接规范](./update-connection-specs.md).
+[](./update-connection-specs.md)
