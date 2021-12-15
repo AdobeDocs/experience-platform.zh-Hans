@@ -1,9 +1,10 @@
 ---
 description: 本页提供了您需要提交的所有信息，以便查看使用Destination SDK创作的目标。
 title: 提交以供审阅在Destination SDK中创作的目标
-source-git-commit: bc77614eee6cc50d2ce6b14c1b228ed87f88f340
+exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
+source-git-commit: 468b9309c5184684c0b25c2656a9eef37715af53
 workflow-type: tm+mt
-source-wordcount: '593'
+source-wordcount: '568'
 ht-degree: 1%
 
 ---
@@ -211,10 +212,6 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 ## 面向按产品化集成的目标文档PR（拉取请求）
 
 如果您是独立软件供应商(ISV)或系统集成商(SI)，创建 [产品化集成](./overview.md#productized-custom-integrations)，则使用 [自助文档流程](./docs-framework/documentation-instructions.md) 为您的目标创建产品文档页面。 在提交流程中，为目标文档提供拉取请求(PR)。
-
-来自现有集成合作伙伴的示例PR包括：
-* [Yahoo目标文档PR](https://github.com/AdobeDocs/experience-platform.en/pull/110);
-* [Airship目的地文档PR](https://github.com/AdobeDocs/experience-platform.en/pull/54).
 
 ## 目标的徽标
 
