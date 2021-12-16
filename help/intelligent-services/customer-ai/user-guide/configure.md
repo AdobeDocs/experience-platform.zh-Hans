@@ -6,9 +6,9 @@ title: 配置Customer AI实例
 topic-legacy: Instance creation
 description: Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: 899ea8502c80fa520df55ce63255e95cb5ad436d
+source-git-commit: f7fde9ed299e6bdb6e63279be1126b91fc90d3f3
 workflow-type: tm+mt
-source-wordcount: '2299'
+source-wordcount: '2608'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Customer AI作为Intelligent Services的一部分，使您能够生成自定义�
 
 Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 
-## 设置实例 {#set-up-your-instance}
+## 创建实例 {#set-up-your-instance}
 
 在平台UI中，选择 **[!UICONTROL 服务]** 中。 的 **[!UICONTROL 服务]** 浏览器会显示并显示您可使用的所有可用服务。 在Customer AI的容器中，选择 **[!UICONTROL 打开]**.
 
@@ -156,9 +156,13 @@ Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务�
 
 除 [标准事件字段](../input-output.md#standard-events) Customer AI用于生成倾向得分，提供了自定义事件选项。 使用此选项可添加您认为具有影响力的其他事件，这可能会提高模型的质量并有助于提供更准确的结果。 如果您选择的数据集包含在架构中定义的自定义事件，则可以将它们添加到实例中。
 
+>[!NOTE]
+>
+> 有关自定义事件如何影响Customer AI评分结果的深入说明，请访问 [自定义事件示例](#custom-event) 中。
+
 ![事件功能](../images/user-guide/event-feature.png)
 
-要添加自定义事件，请选择 **[!UICONTROL 添加自定义事件]**. 接下来，输入自定义事件名称，然后将其映射到架构中的事件字段。 在查看影响因素和其他分析时，会显示自定义事件名称来代替字段值。 这表示用户ID、保留ID、设备信息和其他自定义值将以自定义事件名称列出，而不是以事件的ID/值列出。 Customer AI使用这些其他自定义事件来提高模型质量并提供更准确的结果。
+要添加自定义事件，请选择 **[!UICONTROL 添加自定义事件]**. 接下来，输入自定义事件名称，然后将其映射到架构中的事件字段。 在查看影响因素和其他分析时，会显示自定义事件名称来代替字段值。 这表示将使用自定义事件名称，而不是事件的ID/值。 有关如何显示自定义事件的更多信息，请参阅 [自定义事件示例部分](#custom-event). Customer AI使用这些其他自定义事件来提高模型质量并提供更准确的结果。
 
 ![“自定义事件”字段](../images/user-guide/custom-event.png)
 
@@ -178,21 +182,31 @@ Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务�
 
 >[!NOTE]
 >
->添加自定义配置文件属性的工作流程与添加自定义事件的工作流程相同。
+>添加自定义配置文件属性的工作流程与添加自定义事件的工作流程相同。 与自定义事件类似，自定义用户档案属性也会以相同方式影响模型评分。 有关深入的说明，请访问 [自定义事件示例](#custom-event) 中。
 
 ![添加自定义配置文件属性](../images/user-guide/profile-attributes.png)
 
+### 添加自定义事件示例 {#custom-event}
+
+在以下示例中，将自定义事件和配置文件属性添加到Customer AI实例。 Customer AI实例的目标是预测客户在未来60天内购买其他Luma产品的可能性。 通常，产品数据会关联到产品SKU。 在这种情况下，SKU为 `prd1013`. 在培训/打分客户AI模型后，此SKU可以关联到事件，并显示为倾向存储段的一个影响因素。
+
+Customer AI会自动对自定义事件（例如，）应用功能生成，如“天数”或“计数” **观看购买**. 如果将此事件视为影响客户为何倾向高、中或低的因素，则Customer AI会将其显示为 `Days since prd1013 purchase` 或 `Count of prd1013 purchase`. 通过将此创建为自定义事件，可以为事件提供一个新名称，从而更便于阅读结果。 例如：`Days since Watch purchase`。此外，即使该事件不是标准事件，Customer AI仍会在其培训和评分中使用此事件。 这意味着您可以添加多个您认为可能具有影响力的事件，并通过包含保留、访客日志和其他事件等数据进一步自定义模型。 添加这些数据点会进一步提高Customer AI模型的准确性和精度。
+
+![自定义事件示例](../images/user-guide/custom-event-name.png)
+
+## 设置选项
+
+设置选项步骤允许您配置计划以自动执行预测运行、定义预测排除以过滤某些事件以及切换 **[!UICONTROL 用户档案]** 开/关。
+
 ### 配置计划 *（可选）* {#configure-a-schedule}
 
-的 **[!UICONTROL 高级]** 中。 此可选步骤允许您配置计划以自动执行预测运行、定义预测排除以过滤某些事件或选择 **[!UICONTROL 完成]** 无需执行任何操作。
-
-通过配置 **[!UICONTROL 评分频度]**. 可以计划每周或每月运行自动预测运行。
+要设置评分计划，请首先配置 **[!UICONTROL 评分频度]**. 可以计划每周或每月运行自动预测运行。
 
 ![](../images/user-guide/schedule.png)
 
-### 预测排除
+### 预测排除 *（可选）*
 
-如果您的数据集包含作为测试数据添加的任何列，则可以通过选择 **添加排除项** 然后输入要排除的字段。 这样可防止在生成得分时评估满足特定条件的事件。 此功能可用于过滤掉不相关的数据输入或某些促销活动。
+如果您的数据集包含作为测试数据添加的任何列，则可以通过选择 **[!UICONTROL 添加排除项]** 然后输入要排除的字段。 这样可防止在生成得分时评估满足特定条件的事件。 此功能可用于过滤掉不相关的数据输入或促销活动。
 
 要排除事件，请选择 **[!UICONTROL 添加排除项]** 并定义事件。 要删除排除项，请选择省略号(**[!UICONTROL ...]**)，然后选择 **[!UICONTROL 删除容器]**.
 
@@ -202,7 +216,7 @@ Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务�
 
 “用户档案”切换开关允许Customer AI将评分结果导出到“实时客户资料”。 禁用此切换开关会阻止将模型评分结果添加到用户档案。 禁用此功能后，仍可使用客户AI评分结果。
 
-首次使用Customer AI时，应关闭此功能，直到您对模型输出结果感到满意。 这样可防止在微调模型时将多个评分数据集上传到实时客户资料。
+首次使用Customer AI时，您可以关闭此功能，直到您对模型输出结果满意为止。 这样可防止在微调模型时将多个评分数据集上传到客户用户档案。 标定完模型后，可以使用 [克隆选项](#set-up-your-instance) 从 **服务实例** 页面。 这允许您创建模型副本并打开配置文件。
 
 ![配置文件切换](../images/user-guide/advanced-workflow.png)
 
