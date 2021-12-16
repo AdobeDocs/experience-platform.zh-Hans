@@ -1,14 +1,15 @@
 ---
-title: 事件转发密钥
+title: 在事件转发中配置密钥
 description: 了解如何在数据收集UI中配置密钥，以对事件转发属性中使用的端点进行身份验证。
-source-git-commit: 43d593cd8adf5a29c3283a328c24b0994009222b
+exl-id: eefd87d7-457f-422a-b159-5b428da54189
+source-git-commit: 7cbf8cfa4ac7aeff9f1ed56777212f5203df2ce9
 workflow-type: tm+mt
-source-wordcount: '1445'
+source-wordcount: '1449'
 ht-degree: 1%
 
 ---
 
-# 事件转发密钥
+# 在事件转发中配置密钥
 
 在事件转发中，密钥是表示其他系统的身份验证凭据的资源，允许安全地交换数据。 只能在事件转发属性中创建密钥。
 
@@ -74,7 +75,7 @@ ht-degree: 1%
 
 ### [!UICONTROL HTTP] {#http}
 
-要创建HTTP密钥，请选择 **[!UICONTROL 简单HTTP]** 从 **[!UICONTROL 类型]** 下拉列表。 在下面显示的字段中，提供凭据的用户名和密码，然后选择 **[!UICONTROL 创建密钥]** 来保存秘密。
+要创建HTTP密钥，请选择 **[!UICONTROL 简单HTTP]** 从 **[!UICONTROL 类型]** 下拉列表。 在下面显示的字段中，提供凭据的用户名和密码，然后再选择 **[!UICONTROL 创建密钥]** 来保存秘密。
 
 >[!NOTE]
 >
@@ -128,7 +129,7 @@ ht-degree: 1%
 
 | 密钥类型 | 重试协议 |
 | --- | --- |
-| [!UICONTROL 令牌] | 选择 **[!UICONTROL 交换密钥]** 重试密钥交换。 仅当存在附加到密钥的环境时，此控件才可用。 |
+| [!UICONTROL 令牌] | 选择 **[!UICONTROL 交换密钥]** 重试密钥交换。 此控件仅在有附加到该密钥的环境时可用。 |
 | [!UICONTROL HTTP] | 如果没有附加到该密钥的环境，请选择 **[!UICONTROL 交换密钥]** 将凭据交换到base64。 如果附加了环境，请选择“选择” **[!UICONTROL 交换和部署密钥]** 交换基地64并将密码部署到Cloudfare。 |
 | [!UICONTROL OAuth2] | 选择 **[!UICONTROL 生成令牌]** 用于交换凭据并返回来自身份验证提供程序的访问令牌。 |
 

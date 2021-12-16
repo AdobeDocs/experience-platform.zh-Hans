@@ -4,9 +4,9 @@ user-guide-title: 标记帮助
 breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
-source-git-commit: 7368b6e69522cce9343df78c31a712bfdbfedfe3
+source-git-commit: 7cbf8cfa4ac7aeff9f1ed56777212f5203df2ce9
 workflow-type: tm+mt
-source-wordcount: '381'
+source-wordcount: '382'
 ht-degree: 68%
 
 ---
@@ -54,7 +54,7 @@ ht-degree: 68%
 * 事件转发 {#event-forwarding}
    * [概述](./ui/event-forwarding/overview.md)
    * [快速入门](./ui/event-forwarding/getting-started.md)
-   * [秘密](./ui/event-forwarding/secrets.md)
+   * [配置密钥](./ui/event-forwarding/secrets.md)
 * 管理 {#admin}
    * [概述](./ui/administration/overview.md)
    * [公司和资产](./ui/administration/companies-and-properties.md)
