@@ -5,9 +5,9 @@ title: Segmentation Service概述
 topic-legacy: overview
 description: 了解Adobe Experience Platform Segmentation Service及其在平台生态系统中的作用。
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 9e73925b0842c3b67db8bfda4b984bfa3e98a2fe
+source-git-commit: 3130d9731a53c01fb7bc15265e044191ceae47f6
 workflow-type: tm+mt
-source-wordcount: '1651'
+source-wordcount: '1507'
 ht-degree: 0%
 
 ---
@@ -61,18 +61,6 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供了用户界面和RE
 作为持续数据选择流程的替代方法，批量分段会通过区段定义一次移动所有配置文件数据以生成相应的受众。 创建后，将保存并存储此区段，以便您导出该区段以供使用。
 
 每24小时自动评估一次批量区段。 如果要按需评估批区段，您可以使用区段任务。 要了解有关区段作业的更多信息，请阅读 [区段作业文档](./api/segment-jobs.md).
-
-**增量分段（测试版）**
-
-每24小时对批量区段进行一次评估。 但是，对于现有区段，增量分段会使区段保持最多一小时的新鲜度。
-
-进入配置文件存储的新数据会运行增量分段。 但是，以下注意事项适用于增量分段：
-
-- 对于任何新区段或最近修改的区段，具有新数据的配置文件将在下次增量运行中开始获得资格。 但是，没有更改的用户档案将在下一个完整批量分段作业中赶上。
-- 多实体区段将在增量分段中刷新。 如果存在实体更新，则任何具有新数据的用户档案都将在下一次增量运行中开始使用它们。 但是，没有更改的用户档案将在下一个完整批量分段作业中赶上。
-- 事件从区段的时间窗口中删除将在下一个完整批量分段作业中协调。
-
-要了解如何评估区段，请参阅 [区段评估教程](./tutorials/evaluate-a-segment.md).
 
 ### 边缘分割
 
