@@ -5,7 +5,7 @@ title: 源连接器概述
 topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 030789af0a049b54d6e271410836c08456a83441
+source-git-commit: bdc9b78666c3f67cd8794d132515fda5698c81ac
 workflow-type: tm+mt
 source-wordcount: '1007'
 ht-degree: 0%
@@ -139,7 +139,7 @@ Experience Platform支持从流源摄取数据。 有关特定源连接器的更
 Experience Platform支持从第三方协议系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [[!DNL Generic OData]](connectors/protocols/odata.md)
-- [[!DNL Genereic REST API]](connectors/protocols/generic-rest.md)
+- [[!DNL Generic REST API]](connectors/protocols/generic-rest.md)
 
 ## 数据摄取中源的访问控制
 
