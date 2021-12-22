@@ -1,37 +1,36 @@
 ---
-keywords: Experience Platform；主页；热门主题；模式;模式;xdm；体验数据模型；命名空间;命名空间；兼容模式；固定；
+keywords: Experience Platform；主页；热门主题；架构；架构；xdm；体验数据模型；命名空间；命名空间；兼容性模式；已修复；
 solution: Experience Platform
-title: 体验数据模型(XDM)中的命名空间
+title: Experience Data Model(XDM)中的名称步调
 topic-legacy: overviews
-description: 了解体验模式模型(XDM)中命名空间如何让您在将不同模式组件整合在一起时扩展并防止字段冲突。
-source-git-commit: b4c4f8f7e428d27f389bff5591a03925b6afa6d8
+description: 了解体验数据模型(XDM)中的名称步调如何允许您在将不同架构组件汇集在一起时扩展架构并防止字段冲突。
+exl-id: b351dfaf-5219-4750-a7a9-cf4689a5b736
+source-git-commit: bcffd3d38cecba38e1e57a44ce0febfd2cf0f8fb
 workflow-type: tm+mt
 source-wordcount: '630'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
+# Experience Data Model(XDM)中的名称步调
 
-# 体验数据模型(XDM)中的命名空间
+体验数据模型(XDM)架构中的所有字段都具有关联的命名空间。 这些命名空间允许您扩展架构，并在不同架构组件汇集在一起时防止字段冲突。 本文档概述了XDM中的命名空间以及它们在 [架构注册表API](../api/overview.md).
 
-体验数据模型(XDM)模式中的所有字段都有关联的命名空间。 这些命名空间允许您扩展模式并防止字段冲突，因为不同的模式组件将在一起。 此文档概述了
-XDM及其在[模式注册表API](../api/overview.md)中的表示方式。
+命名空间允许您在一个命名空间中定义一个字段，作为表示不同命名空间中不同于同一字段的内容。 实际上，字段的命名空间会指示字段的创建者(例如标准XDM(Adobe)、供应商或您的组织)。
 
-命名空间允许您在一个命名空间中定义一个字段，表示不同命名空间中的同一字段不同的内容。 实际上，字段的命名空间会指示字段的创建者(如标准XDM(Adobe)、供应商或您的组织)。
+例如，假定XDM架构使用 [[!UICONTROL 个人联系详细信息] 字段组](../field-groups/profile/demographic-details.md)，它具有标准 `mobilePhone` 中存在的字段 `xdm` 命名空间。 在同一架构中，您还可以自由创建单独的 `mobilePhone` 字段(您的 [租户ID](../api/getting-started.md#know-your-tenant_id))。 这两个字段可以共存，同时具有不同的基本含义或限制。
 
-例如，考虑使用[[!UICONTROL 个人联系详细信息]字段组](../field-groups/profile/demographic-details.md)的XDM模式，该字段具有存在于`xdm`命名空间中的标准`mobilePhone`字段。 在同一模式下，您还可以在其他命名空间（您的[租户ID](../api/getting-started.md#know-your-tenant_id)）下自由创建单独的`mobilePhone`字段。 这两个字段可以共存，同时具有不同的基本含义或约束。
+## 名称步调语法
 
-## 命名空间语法
-
-以下几节说明如何以XDM语法分配命名空间。
+以下各节演示了如何使用XDM语法分配命名空间。
 
 ### 标准XDM {#standard}
 
-标准XDM语法提供了有关命名空间在模式中如何表示的洞察(包括在Adobe Experience Platform](#compatibility)中如何翻译它们)。[
+标准XDM语法可深入分析命名空间在架构中的表示方式(包括 [如何在Adobe Experience Platform翻译](#compatibility))。
 
-标准XDM使用[JSON-LD](https://json-ld.org/)语法将命名空间分配给字段。 此命名空间以URI(如`xdm`命名空间的`https://ns.adobe.com/xdm`)或在模式的`@context`属性中配置的速记前缀的形式提供。
+标准XDM使用 [JSON-LD](https://json-ld.org/) 用于将命名空间分配给字段的语法。 此命名空间以URI的形式提供(例如 `https://ns.adobe.com/xdm` 对于 `xdm` 命名空间)，或作为在 `@context` 架构的属性。
 
-以下是标准XDM语法中产品的示例模式。 除`@id`（JSON-LD规范定义的唯一标识符）外，`properties`开始下的每个字段均带有命名空间，以字段名称结尾。 如果使用在`@context`下定义的速记前缀，则命名空间和字段名称以冒号(`:`)分隔。 如果不使用前缀，则命名空间和字段名称以斜杠(`/`)分隔。
+以下是标准XDM语法中产品的示例架构。 除 `@id` （由JSON-LD规范定义的唯一标识符）， `properties` 以命名空间开头，以字段名称结尾。 如果使用 `@context`，命名空间和字段名称之间用冒号(`:`)。 如果不使用前缀，则命名空间和字段名称将以斜杠(`/`)。
 
 ```json
 {
@@ -76,20 +75,20 @@ XDM及其在[模式注册表API](../api/overview.md)中的表示方式。
 
 | 属性 | 描述 |
 | --- | --- |
-| `@context` | 一个对象，它定义可以用来代替`properties`下的完整命名空间URI的短记前缀。 |
-| `@id` | 由[JSON-LD规范](https://json-ld.org/spec/latest/json-ld/#node-identifiers)定义的记录的唯一标识符。 |
-| `xdm:sku` | 使用短前缀表示命名空间的字段示例。 在这种情况下，`xdm`是命名空间(`https://ns.adobe.com/xdm`),`sku`是字段名。 |
-| `https://ns.adobe.com/xdm/channels/application` | 使用完整命名空间URI的字段示例。 在这种情况下，`https://ns.adobe.com/xdm/channels`是命名空间,`application`是字段名称。 |
-| `https://ns.adobe.com/vendorA/product/stockNumber` | 供应商资源提供的字段使用其自己的唯一命名空间。 在此示例中，`https://ns.adobe.com/vendorA/product`是供应商命名空间,`stockNumber`是字段名。 |
-| `tenantId:internalSku` | 您的组织定义的字段使用您的唯一租户ID作为其命名空间。 在此示例中，`tenantId`是租户命名空间(`https://ns.adobe.com/tenantId`),`internalSku`是字段名。 |
+| `@context` | 一个对象，它定义了可用的简写前缀，而不是下面的完整命名空间URI `properties`. |
+| `@id` | 记录的唯一标识符，由 [JSON-LD规范](https://json-ld.org/spec/latest/json-ld/#node-identifiers). |
+| `xdm:sku` | 使用短前缀表示命名空间的字段示例。 在这种情况下， `xdm` 是命名空间(`https://ns.adobe.com/xdm`)和 `sku` 是字段名称。 |
+| `https://ns.adobe.com/xdm/channels/application` | 使用完整命名空间URI的字段示例。 在这种情况下， `https://ns.adobe.com/xdm/channels` 是命名空间，和 `application` 是字段名称。 |
+| `https://ns.adobe.com/vendorA/product/stockNumber` | 供应商资源提供的字段使用它们自己的唯一命名空间。 在本例中， `https://ns.adobe.com/vendorA/product` 是供应商命名空间，并且 `stockNumber` 是字段名称。 |
+| `tenantId:internalSku` | 贵组织定义的字段会使用您的唯一租户ID作为其命名空间。 在本例中， `tenantId` 是租户命名空间(`https://ns.adobe.com/tenantId`)和 `internalSku` 是字段名称。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 ### 兼容性模式 {#compatibility}
 
-在Adobe Experience Platform中，XDM模式以[兼容模式](../api/appendix.md#compatibility)语法表示，该语法不使用JSON-LD语法来表示命名空间。 而是，平台将命名空间转换为父字段（以下划线开头）并嵌套其下的字段。
+在Adobe Experience Platform中，XDM模式在 [兼容性模式](../api/appendix.md#compatibility) 语法，该语法不使用JSON-LD语法来表示命名空间。 Platform而是将命名空间转换为父字段（以下划线开头），并将字段嵌套到其下。
 
-例如，标准XDM `repo:createdDate`将转换为`_repo.createdDate`，并将显示在兼容模式下的以下结构下：
+例如，标准XDM `repo:createdDate` 转换为 `_repo.createdDate` 和将显示在兼容模式下的以下结构下：
 
 ```json
 "_repo": {
@@ -103,9 +102,9 @@ XDM及其在[模式注册表API](../api/overview.md)中的表示方式。
 }
 ```
 
-使用`xdm`命名空间的字段在`properties`下显示为根字段，并删除[标准XDM语法](#standard)中将显示的`xdm:`前缀。 例如，`xdm:sku`仅作为`sku`列出。
+使用 `xdm` 命名空间显示为根字段， `properties` 然后放下 `xdm:` 显示在 [标准XDM语法](#standard). 例如， `xdm:sku` 只是列为 `sku` 中。
 
-以下JSON表示如何将上面显示的标准XDM语法示例转换为兼容模式。
+以下JSON表示如何将上面显示的标准XDM语法示例转换为兼容性模式。
 
 ```json
 {
@@ -174,4 +173,4 @@ XDM及其在[模式注册表API](../api/overview.md)中的表示方式。
 
 ## 后续步骤
 
-本指南概述了XDM命名空间以及它们在JSON中的表示方式。 有关如何使用API配置XDM模式的详细信息，请参阅[模式注册表API指南](../api/overview.md)。
+本指南概述了XDM命名空间以及它们在JSON中的显示方式。 有关如何使用API配置XDM模式的更多信息，请参阅 [架构注册API指南](../api/overview.md).
