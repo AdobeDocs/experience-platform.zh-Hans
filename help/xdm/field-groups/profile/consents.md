@@ -4,7 +4,7 @@ title: 同意和首选项架构字段组
 topic-legacy: overview
 description: 本文档概述了同意和首选项架构字段组。
 exl-id: ec592102-a9d3-4cac-8b94-58296a138573
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 04e778d3318d60733772c2042c8bb272f0c87d5c
 workflow-type: tm+mt
 source-wordcount: '941'
 ht-degree: 0%
@@ -178,7 +178,7 @@ ht-degree: 0%
 
 为了使用 [!UICONTROL 同意和首选项] 字段组以从客户那里摄取同意数据，则必须基于包含该字段组的架构创建数据集。
 
-请参阅 [在UI中创建架构](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) 有关如何将字段组分配给字段的步骤。 创建包含字段的架构后，便可使用 [!UICONTROL 同意和首选项] 字段组，请参阅 [创建数据集](../../../catalog/datasets/user-guide.md#create) 在数据集用户指南中，按照使用现有架构创建数据集的步骤操作。
+请参阅 [在UI中创建架构](https://www.adobe.com/go/xdm-schema-editor-tutorial-en) 有关如何将字段组分配给字段的步骤。 创建包含字段的架构后，便可使用 [!UICONTROL 同意和首选项] 字段组，请参阅 [创建数据集](../../../catalog/datasets/user-guide.md#create) 在数据集用户指南中，按照使用现有架构创建数据集的步骤操作。
 
 >[!IMPORTANT]
 >

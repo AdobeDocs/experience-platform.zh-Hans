@@ -4,7 +4,7 @@ title: 同意和首选项数据类型
 description: “隐私、个性化和营销首选项的同意”数据类型旨在支持收集由同意管理平台(CMP)和其他来自您数据操作来源的客户权限和首选项。
 topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 04e778d3318d60733772c2042c8bb272f0c87d5c
 workflow-type: tm+mt
 source-wordcount: '2039'
 ht-degree: 2%
@@ -21,8 +21,8 @@ ht-degree: 2%
 
 本文档需要对XDM以及在 [!DNL Experience Platform]. 在继续操作之前，请查看以下文档：
 
-* [XDM系统概述](http://www.adobe.com/go/xdm-home-en)
-* [架构组合的基础知识](http://www.adobe.com/go/xdm-schema-best-practices-en)
+* [XDM系统概述](https://www.adobe.com/go/xdm-home-en)
+* [架构组合的基础知识](https://www.adobe.com/go/xdm-schema-best-practices-en)
 
 ## 数据类型结构 {#structure}
 
@@ -255,7 +255,7 @@ ht-degree: 2%
 
 为了使用 [!UICONTROL 同意和首选项] 数据类型以从客户那里摄取同意数据，您必须根据包含该数据类型的架构创建数据集。
 
-请参阅 [在UI中创建架构](http://www.adobe.com/go/xdm-schema-editor-tutorial-en) 有关如何将数据类型分配给字段的步骤。 创建包含字段的架构后，便可使用 [!UICONTROL 同意和首选项] 数据类型，请参阅 [创建数据集](../../catalog/datasets/user-guide.md#create) 在数据集用户指南中，按照使用现有架构创建数据集的步骤操作。
+请参阅 [在UI中创建架构](https://www.adobe.com/go/xdm-schema-editor-tutorial-en) 有关如何将数据类型分配给字段的步骤。 创建包含字段的架构后，便可使用 [!UICONTROL 同意和首选项] 数据类型，请参阅 [创建数据集](../../catalog/datasets/user-guide.md#create) 在数据集用户指南中，按照使用现有架构创建数据集的步骤操作。
 
 >[!IMPORTANT]
 >
