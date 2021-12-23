@@ -3,7 +3,7 @@ title: 事件转发概述
 description: 了解 Adobe Experience Platform 中的事件转发功能，此功能可让您使用 Platform Edge Network 执行任务，而无需更改您的标记实施。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 82ce288d55e57f05910fd8290c38f44b1846f48e
+source-git-commit: 64e76c456ac5f59a2a1996e58eda405f1b27efa8
 workflow-type: tm+mt
 source-wordcount: '955'
 ht-degree: 8%
@@ -38,7 +38,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 * 提高透明度并控制在所有属性中发送哪些数据。
 
-## 事件转发和标记之间的差异
+## 事件转发和标记之间的差异 {#differences-from-tags}
 
 在配置方面，事件转发使用与标记相同的许多概念，例如 [规则](../managing-resources/rules.md), [数据元素](../managing-resources/data-elements.md)和 [扩展](../managing-resources/extensions/overview.md). 二者之间的主要区别可概括如下：
 
@@ -47,7 +47,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 当标记使用Platform Web和Mobile SDK直接从您的网站或本机移动应用程序收集事件数据时，事件转发要求事件数据已通过Platform Edge Network发送，以将其转发到目标。 换言之，您必须在数字资产（通过标记或使用原始代码）上实施Platform Web或Mobile SDK，才能使用事件转发。
 
-### 属性
+### 属性 {#properties}
 
 事件转发会维护其自身的属性存储，这些属性与标记分开，您可以通过选择 **[!UICONTROL 事件转发]** 中。
 
@@ -61,13 +61,13 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 ![数据收集UI中的事件转发扩展](../../images/ui/event-forwarding/overview/extensions.png)
 
-### 数据元素
+### 数据元素 {#data-elements}
 
 事件转发中可用的数据元素类型仅限于兼容的目录 [扩展](#extensions) 提供它们。
 
 虽然数据元素本身在事件转发中的创建和配置方式与标记相同，但在涉及如何引用来自Platform Edge Network的数据时，仍存在一些重要的语法差异。
 
-#### 从Platform Edge Network引用数据
+#### 从Platform Edge Network引用数据 {#edge}
 
 要引用来自Platform Edge Network的数据，必须创建一个数据元素，以提供该数据的有效路径。 在UI中创建数据元素时，选择 **[!UICONTROL 核心]** 对于扩展和 **[!UICONTROL 路径]** 的子项。
 
@@ -75,23 +75,23 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 ![用于事件转发的路径类型数据元素示例](../../images/ui/event-forwarding/overview/data-reference.png)
 
-### 规则
+### 规则 {#rules}
 
 在事件转发属性中创建规则的方式与标记类似，主要区别在于您无法选择事件作为规则组件。 事件转发规则而是会处理它从 [数据流](../../../edge/fundamentals/datastreams.md) 并在满足某些条件时将这些事件转发到目标。
 
 ![数据收集UI中的事件转发规则](../../images/ui/event-forwarding/overview/rules.png)
 
-#### 数据元素标记化
+#### 数据元素标记化 {#tokenization}
 
 在标记规则中，数据元素使用 `%` 数据元素名称的开头和结尾(例如： `%viewportHeight%`)。 在事件转发规则中，数据元素使用进行标记 `{{` 开始时和 `}}` 数据元素名称的末尾(例如： `{{viewportHeight}}`)。
 
 ![用于事件转发的路径类型数据元素示例](../../images/ui/event-forwarding/overview/tokenization.png)
 
-#### 规则的操作顺序
+#### 规则的操作顺序 {#action-sequencing}
 
 的 [!UICONTROL 操作] 事件转发规则的部分始终按顺序执行。 您在保存规则时，应确保操作顺序正确。无法像使用标记一样异步执行此执行序列。
 
-## 秘密
+## 秘密 {#secrets}
 
 事件转发允许您创建、管理和存储可用于对要向其发送数据的服务器进行身份验证的密钥。 请参阅 [秘密](./secrets.md) 不同类型的可用密钥类型及其在UI中的实施方式。
 

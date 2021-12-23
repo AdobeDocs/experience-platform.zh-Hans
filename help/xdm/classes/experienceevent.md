@@ -5,9 +5,9 @@ title: XDM ExperienceEvent类
 topic-legacy: overview
 description: 本文档概述了XDM ExperienceEvent类以及事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 5405a2e2312e81db210a97a759681f66faa8b1fa
+source-git-commit: 64e76c456ac5f59a2a1996e58eda405f1b27efa8
 workflow-type: tm+mt
-source-wordcount: '1759'
+source-wordcount: '1758'
 ht-degree: 1%
 
 ---
@@ -16,20 +16,20 @@ ht-degree: 1%
 
 [!DNL XDM ExperienceEvent] 是一个标准的体验数据模型(XDM)类，它允许您在发生特定事件或达到一组特定条件时，为系统创建带有时间戳的快照。
 
-体验事件是所发生事件的事实记录，包括所涉个人的时间点和身份。 事件可以是显式（直接可观察的人为行为）或隐式（不直接人为行为而引起），并且记录时没有汇总或解释。 有关在平台生态系统中使用此类的更多高级信息，请参阅[XDM概述](../home.md#data-behaviors)。
+体验事件是所发生事件的事实记录，包括所涉个人的时间点和身份。 事件可以是显式（直接可观察的人为行为）或隐式（不直接人为行为而引起），并且记录时没有汇总或解释。 有关在平台生态系统中使用此类的更多高级信息，请参阅 [XDM概述](../home.md#data-behaviors).
 
-[!DNL XDM ExperienceEvent]类本身为架构提供了多个与时间序列相关的字段。 摄取数据时，会自动填充其中某些字段的值：
+的 [!DNL XDM ExperienceEvent] 类本身为架构提供了多个与时间序列相关的字段。 摄取数据时，会自动填充其中某些字段的值：
 
 ![](../images/classes/experienceevent/structure.png)
 
 | 属性 | 描述 |
 | --- | --- |
-| `_id` | 事件的唯一字符串标识符。 此字段用于跟踪单个事件的唯一性，防止重复数据，并在下游服务中查找该事件。 在某些情况下，`_id`可以是[通用唯一标识符(UUID)](https://tools.ietf.org/html/rfc4122)或[全局唯一标识符(GUID)](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0)。<br><br>如果从源连接流式传输数据或直接从Parquet文件摄取数据，则应通过关联使事件具有唯一性的特定字段组合（如主ID、时间戳、事件类型等）来生成此值。连接值必须是带有`uri-reference`格式的字符串，这意味着必须删除任何冒号字符。 之后，连接值应使用SHA-256或您选择的其他算法进行哈希处理。<br><br>务必要区分的是， **此字段不表示与个人相关的身份**，而是表示数据本身的记录。与人员相关的身份数据应被降级到由兼容字段组提供的[身份字段](../schema/composition.md#identity)中。 |
-| `eventMergeId` | 如果使用[Adobe Experience Platform Web SDK](../../edge/home.md)来摄取数据，则表示被摄取的批处理的ID，该ID会导致创建记录。 在摄取数据时，系统会自动填充此字段。 不支持在Web SDK实施的上下文之外使用此字段。 |
-| `eventType` | 表示事件类型或类别的字符串。 如果要区分同一架构和数据集中的不同事件类型，例如区分某个产品查看事件与某个零售公司的添加到购物车事件，则可以使用此字段。<br><br>此属性的标准值在附录 [部分](#eventType)中提供，包括其预期用例的描述。此字段是一个可扩展枚举，这意味着您还可以使用自己的事件类型字符串对您跟踪的事件进行分类。<br><br>`eventType` 限制您在应用程序上每次点击只使用一个事件，因此您必须使用计算字段告知系统最重要的事件。有关更多信息，请参阅[计算字段的最佳实践](#calculated)部分。 |
-| `producedBy` | 描述事件的制作者或来源的字符串值。 如果出于分段目的需要，可使用此字段过滤掉某些事件生成器。<br><br>此属性的一些建议值在附录 [部分](#producedBy)中提供。此字段是一个可扩展枚举，这意味着您还可以使用自己的字符串来表示不同的事件生成器。 |
-| `identityMap` | 映射字段，其中包含事件所应用的个人的一组命名空间标识。 在摄取身份数据时，系统会自动更新此字段。 为了正确使用[实时客户资料](../../profile/home.md)的此字段，请不要尝试在数据操作中手动更新字段的内容。<br /><br />有关架构组合基础知识的用例的更 [多信息，请](../schema/composition.md#identityMap) 参阅标识映射一节。 |
-| `timestamp` | 事件发生时的ISO 8601时间戳，按照[RFC 3339第5.6节](https://tools.ietf.org/html/rfc3339#section-5.6)进行格式设置。 此时间戳必须在过去发生。 请参阅[时间戳](#timestamps)上的以下部分，以了解有关使用此字段的最佳实践。 |
+| `_id` | 事件的唯一字符串标识符。 此字段用于跟踪单个事件的唯一性，防止重复数据，并在下游服务中查找该事件。 在某些情况下， `_id` 可以 [通用唯一标识符(UUID)](https://tools.ietf.org/html/rfc4122) 或 [全局唯一标识符(GUID)](https://docs.microsoft.com/en-us/dotnet/api/system.guid?view=net-5.0).<br><br>如果从源连接流式传输数据或直接从Parquet文件摄取数据，则应通过关联使事件具有唯一性的特定字段组合（如主ID、时间戳、事件类型等）来生成此值。 拼接值必须是 `uri-reference` 格式化的字符串，这意味着必须删除任何冒号字符。 之后，连接值应使用SHA-256或您选择的其他算法进行哈希处理。<br><br>要区分这一点很重要 **此字段不表示与个人相关的身份**，而是数据本身的记录。 与个人有关的身份数据应降级为 [身份字段](../schema/composition.md#identity) 由兼容的字段组提供。 |
+| `eventMergeId` | 如果使用 [Adobe Experience Platform Web SDK](../../edge/home.md) 要摄取数据，此值表示被摄取的批次创建记录的ID。 在摄取数据时，系统会自动填充此字段。 不支持在Web SDK实施的上下文之外使用此字段。 |
+| `eventType` | 表示事件类型或类别的字符串。 如果要区分同一架构和数据集中的不同事件类型，例如区分某个产品查看事件与某个零售公司的添加到购物车事件，则可以使用此字段。<br><br>此属性的标准值在 [附录节](#eventType)，包括其预期用例的描述。 此字段是一个可扩展枚举，这意味着您还可以使用自己的事件类型字符串对您跟踪的事件进行分类。<br><br>`eventType` 限制您在应用程序上每次点击只使用一个事件，因此您必须使用计算字段告知系统最重要的事件。 有关更多信息，请参阅 [计算字段的最佳实践](#calculated). |
+| `producedBy` | 描述事件的制作者或来源的字符串值。 如果出于分段目的需要，可使用此字段过滤掉某些事件生成器。<br><br>此属性的一些建议值在 [附录节](#producedBy). 此字段是一个可扩展枚举，这意味着您还可以使用自己的字符串来表示不同的事件生成器。 |
+| `identityMap` | 映射字段，其中包含事件所应用的个人的一组命名空间标识。 在摄取身份数据时，系统会自动更新此字段。 为了正确利用此字段 [实时客户资料](../../profile/home.md)，请勿尝试手动更新数据操作中字段的内容。<br /><br />请参阅 [架构组合基础知识](../schema/composition.md#identityMap) ，以了解其用例的详细信息。 |
+| `timestamp` | 事件发生时的ISO 8601时间戳，格式如下 [RFC 3339第5.6节](https://tools.ietf.org/html/rfc3339#section-5.6). 此时间戳必须在过去发生。 请参阅下面的章节 [时间戳](#timestamps) 以了解有关使用此字段的最佳实践。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -39,9 +39,9 @@ ht-degree: 1%
 
 ### 时间戳 {#timestamps}
 
-事件架构的根`timestamp`字段只能&#x200B;****&#x200B;表示事件本身的观察，且必须在过去发生。 如果您的分段用例需要使用将来可能发生的时间戳，则这些值必须在体验事件架构的其他位置受到限制。
+根 `timestamp` 事件架构的字段可以 **仅** 表示事件本身的观察，且必须在过去发生。 如果您的分段用例需要使用将来可能发生的时间戳，则这些值必须在体验事件架构的其他位置受到限制。
 
-例如，如果旅游和酒店业的企业正在为航班预订事件建模，则类级别`timestamp`字段表示预订事件被观察到的时间。 与事件相关的其他时间戳（如旅行预订的开始日期）应在标准字段组或自定义字段组提供的单独字段中捕获。
+例如，如果旅游和酒店业的企业正在为航班预订事件建模，则为类级别 `timestamp` 字段表示观察到预订事件的时间。 与事件相关的其他时间戳（如旅行预订的开始日期）应在标准字段组或自定义字段组提供的单独字段中捕获。
 
 ![](../images/classes/experienceevent/timestamps.png)
 
@@ -49,21 +49,21 @@ ht-degree: 1%
 
 ### 使用计算字段 {#calculated}
 
-您的体验应用程序中的某些交互可能会导致多个相关事件，这些事件在技术上共享相同的事件时间戳，因此可以表示为单个事件记录。 例如，如果客户查看了您网站上的产品，则可能会生成一个事件记录，该事件记录具有两个潜在的`eventType`值：“产品查看”事件(`commerce.productViews`)或通用“页面查看”事件(`web.webpagedetails.pageViews`)。 在这些情况下，当在一次点击中捕获多个事件时，您可以使用计算字段捕获最重要的属性。
+您的体验应用程序中的某些交互可能会导致多个相关事件，这些事件在技术上共享相同的事件时间戳，因此可以表示为单个事件记录。 例如，如果客户查看了您网站上的产品，则可能会生成具有两个潜在可能性的事件记录 `eventType` 值：“产品查看”事件(`commerce.productViews`)或通用的“页面查看”事件(`web.webpagedetails.pageViews`)。 在这些情况下，当在一次点击中捕获多个事件时，您可以使用计算字段捕获最重要的属性。
 
-[Adobe Experience Platform Data ](../../data-prep/home.md) Prepack允许您在XDM中映射、转换和验证数据。使用服务提供的可用[映射函数](../../data-prep/functions.md) ，在摄取到Experience Platform时，可以调用逻辑运算符以优先排序、转换和/或整合来自多事件记录的数据。 在以上示例中，您可以指定`eventType`作为计算字段，当“产品查看”与“页面查看”同时发生时，该字段会优先处理这两个事件。
+[Adobe Experience Platform数据准备](../../data-prep/home.md) 允许您在XDM中映射、转换和验证数据。 使用可用的 [映射函数](../../data-prep/functions.md) 由服务提供，在摄取到Experience Platform时，您可以调用逻辑运算符以对来自多事件记录的数据进行优先级排序、转换和/或整合。 在上例中，您可以指定 `eventType` 作为计算字段，当“产品查看”优先于“页面查看”时，它们会优先处理。
 
-如果要通过UI手动将数据摄取到平台，请参阅[计算字段指南](../../data-prep/calculated-fields.md)中的指南，以了解有关如何创建计算字段的特定步骤。
+如果要通过UI手动将数据摄取到平台，请参阅 [计算字段](../../data-prep/calculated-fields.md) 以了解有关如何创建计算字段的特定步骤。
 
-如果您使用源连接将数据流式传输到平台，则可以将源配置为改用计算字段。 有关如何在配置连接时实施计算字段的说明，请参阅特定源](../../sources/home.md)的[文档。
+如果您使用源连接将数据流式传输到平台，则可以将源配置为改用计算字段。 请参阅 [特定源的文档](../../sources/home.md) 有关如何在配置连接时实施计算字段的说明。
 
 ## 兼容的架构字段组 {#field-groups}
 
 >[!NOTE]
 >
->多个字段组的名称已更改。 有关详细信息，请参阅[字段组名称更新](../field-groups/name-updates.md)上的文档。
+>多个字段组的名称已更改。 请参阅 [字段组名称更新](../field-groups/name-updates.md) 以了解更多信息。
 
-Adobe提供了多个用于[!DNL XDM ExperienceEvent]类的标准字段组。 以下是类的一些常用字段组的列表：
+Adobe提供了多个与 [!DNL XDM ExperienceEvent] 类。 以下是类的一些常用字段组的列表：
 
 * [[!UICONTROL 促销活动营销详细信息]](../field-groups/event/campaign-marketing-details.md)
 * [[!UICONTROL 渠道详细信息]](../field-groups/event/channel-details.md)
@@ -80,11 +80,11 @@ Adobe提供了多个用于[!DNL XDM ExperienceEvent]类的标准字段组。 以
 
 ## 附录
 
-以下部分包含有关[!UICONTROL XDM ExperienceEvent]类的其他信息。
+以下部分包含有关 [!UICONTROL XDM ExperienceEvent] 类。
 
-### `eventType`的已接受值 {#eventType}
+### 的接受值 `eventType` {#eventType}
 
-下表概述了`eventType`的已接受值及其定义：
+下表概述了 `eventType`，及其定义：
 
 | 值 | 定义 |
 | --- | --- |
@@ -131,16 +131,16 @@ Adobe提供了多个用于[!DNL XDM ExperienceEvent]类的标准字段组。 以
 | `opportunityEvent.opportunityUpdated` | 更新了机会。 |
 | `opportunityEvent.removeFromOpportunity` | 人员被从机会中移走。 |
 | `pushTracking.applicationOpened` | 人员从推送通知中打开了应用程序。 |
-| `pushTracking.customAction` | 人员在推送通知中单击了自定义操作。 |
+| `pushTracking.customAction` | 用户在推送通知中单击了自定义操作。 |
 | `web.formFilledOut` | 某人在wep页上填写了表格。 |
 | `web.webinteraction.linkClicks` | 已选择链接一次或多次。 |
 | `web.webpagedetails.pageViews` | 网页已收到一个或多个查看。 |
 
 {style=&quot;table-layout:auto&quot;}
 
-### `producedBy`的建议值 {#producedBy}
+### 的建议值 `producedBy` {#producedBy}
 
-下表概述了`producedBy`的一些已接受值：
+下表概述了 `producedBy`:
 
 | 值 | 定义 |
 | --- | --- |
