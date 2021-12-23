@@ -6,9 +6,9 @@ seo-title: Activate audience data to batch profile export destinations
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 822276890b6ebed922d359f8dece58d8c90dea24
+source-git-commit: c0e6477907fa616aecebf57b0465d9f8d82c740a
 workflow-type: tm+mt
-source-wordcount: '2114'
+source-wordcount: '2187'
 ht-degree: 0%
 
 ---
@@ -89,10 +89,12 @@ ht-degree: 0%
    >
    >由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。 <br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。 未来版本将解决此限制。
 
-1. 使用 **[!UICONTROL 日期]** 选择器以选择应进行导出的日期或间隔。
-   >[!TIP]
+1. 使用 **[!UICONTROL 日期]** 选择器以选择应进行导出的日期或间隔。 对于每日导出，最佳做法是将开始和结束日期设置为与下游平台中的促销活动持续时间保持一致。
+
+   >[!IMPORTANT]
    >
-   > 对于每日导出，请将开始和结束日期设置为与下游平台中促销活动的持续时间保持一致。
+   > 选择导出间隔时，该间隔的最后一天不会包含在导出中。 例如，如果选择的间隔为1月4日至11日，则最后一次文件导出将在1月10日进行。
+
 1. 选择 **[!UICONTROL 创建]** 以保存计划。
 
 
@@ -117,10 +119,12 @@ ht-degree: 0%
    >
    >由于内部Experience Platform进程的配置方式，第一次增量文件或完整文件导出可能不包含所有回填数据。 <br> <br> 为确保完整文件和增量文件的回填数据导出完整且最新，Adobe建议在次日的中午12点（格林威治标准时间）之后设置第一个文件导出时间。 未来版本将解决此限制。
 
-1. 使用 **[!UICONTROL 日期]** 选择器以选择应进行导出的日期或间隔。
-   >[!TIP]
+1. 使用 **[!UICONTROL 日期]** 选择器以选择应执行导出的间隔。 最佳做法是设置开始和结束日期，以与下游平台中促销活动的持续时间保持一致。
+
+   >[!IMPORTANT]
    >
-   >将开始和结束日期设置为与下游平台中的促销活动持续时间保持一致。
+   >导出中不包括间隔的最后一天。 例如，如果选择的间隔为1月4日至11日，则最后一次文件导出将在1月10日进行。
+
 1. 选择 **[!UICONTROL 创建]** 以保存计划。
 
 ### 配置文件名 {#file-names}
