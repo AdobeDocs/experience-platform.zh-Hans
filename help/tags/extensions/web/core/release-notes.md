@@ -2,9 +2,9 @@
 title: 核心扩展的发行说明
 description: Adobe Experience Platform中核心扩展的最新发行说明。
 exl-id: a049b2d5-7a00-435d-bcc7-112658a53a1e
-source-git-commit: 317f134420666de23f0ee9c14938fffeda09d3de
+source-git-commit: 5441c6ca0c15996ee06afa2c795ec5ae6e030f35
 workflow-type: tm+mt
-source-wordcount: '1543'
+source-wordcount: '1565'
 ht-degree: 58%
 
 ---
@@ -14,6 +14,12 @@ ht-degree: 58%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## 2022 年 1 月 4 日
+
+v3.3.0
+
+* 更改 [触发直接调用操作](./overview.md#direct-call-action) 以便提供要发送到直接调用规则的自定义事件信息。
 
 ## 2021 年 10 月 8 日
 
@@ -62,7 +68,7 @@ v3.0.0
 
 * PDCL-6153:添加了对为缓存的自定义代码操作可靠地提取完全限定URL的支持。
 
-核心扩展的v3.0.0与Turbine web运行时](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0) v27.2.0中的更改相耦合，当用户的公司支持Premium CDN时，该版本允许用户在许多Adobe管理的托管区域中加载其库。[
+核心扩展的v3.0.0与 [Turbine Web运行时的v27.2.0](https://github.com/adobe/reactor-turbine/releases/tag/v27.2.0)，如果用户的公司支持Premium CDN，则允许用户在许多Adobe管理的托管区域中加载其库。
 
 对于没有Premium CDN的用户，此升级是可选的，并且向后兼容，对于在其公司中启用了Premium CDN的客户，此升级是必选的。
 
@@ -91,7 +97,7 @@ v2.0.4
 
 * 为各个字段添加了数据元素支持 — 向以下事件添加了数据元素支持：“页面逗留时间”、“Enters Viewport”、“悬停”和“媒体播放时间”。 以及以下条件：“网站逗留时间”和“值比较”
 * 使用“链接延迟”时，为Ctrl/cmd +单击和鼠标中键单击添加了对默认行为的支持
-* **将点击事件的链接延迟标记为“不再支持”。**  — 有关更多信息，请参阅 [Adobe Experience Platform的](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/explainer-link-delay/ba-p/398403) 数据收集博客
+* **将点击事件的链接延迟标记为“不再支持”。**  — 有关更多信息，请参阅 [数据收集博客](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-launch/explainer-link-delay/ba-p/398403) 对于Adobe Experience Platform
 
 ## 2021 年 1 月 6 日
 
@@ -155,7 +161,7 @@ v1.6.2
 
 v1.6.1
 
-* **支持 CSP Nonce** - 现在，核心扩展有一个可选配置参数。您可以添加引用 nonce 的数据元素。如果已配置，则标记添加到页面的所有内联脚本都将使用您配置的nonce。 此更改支持使用包含nonce的内容安全策略，以便仍然可以在CSP环境中加载标记脚本。 有关将标记与CSP [一起使用的更多信息，请参阅此处](../../../ui/client-side/content-security-policy.md)。
+* **支持 CSP Nonce** - 现在，核心扩展有一个可选配置参数。您可以添加引用 nonce 的数据元素。如果已配置，则标记添加到页面的所有内联脚本都将使用您配置的nonce。 此更改支持使用包含nonce的内容安全策略，以便仍然可以在CSP环境中加载标记脚本。 您可以阅读有关将标记与CSP结合使用的更多信息 [此处](../../../ui/client-side/content-security-policy.md).
 
 ## 2019 年 6 月 18 日
 
@@ -183,7 +189,7 @@ v1.4.2
 ## 2018 年 11 月 8 日
 
 * **Persist Cohort 选项** - 在 Sampling 条件中添加了用于持久保留同类群组的选项。这样可以使用户在不同的会话中保留处于样本同类群组之内或之外。例如，如果选中“persist cohort”复选框并且在第一次为给定访客运行条件时返回 true，则以后每次为同一访客运行该条件都将返回 true。同样，如果选中“persist cohort”复选框并且在第一次为给定访客运行条件时返回 false，则以后每次为同一访客运行该条件都将返回 false。
-* **错误修复**  — 修复了以下问题：在标记同步加载但安装有误（没有调用）的页面上，使用Page Bottom事件和Custom Code操作的规则将清除网站内 `_satellite.pageBottom()`容。
+* **错误修复**  — 修复了以下问题：在标记同步加载但安装有误(无调用 `_satellite.pageBottom()`)将清除网站内容。
 * **错误修复**  — 修复了以下问题：如果标记库异步加载并在浏览器DOMContentLoaded事件触发后完成加载，则Enters Viewport将无法正常运行。
 
 ## 2018 年 5 月 24 日

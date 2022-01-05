@@ -2,10 +2,10 @@
 title: 核心扩展概述
 description: 了解Adobe Experience Platform中的核心标记扩展。
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: f3c23665229a83d6c63c7d6026ebf463069d8ad9
+source-git-commit: 04404ff9ab8d623214b96ec65342d2e8d11e85a6
 workflow-type: tm+mt
-source-wordcount: '5362'
-ht-degree: 65%
+source-wordcount: '5492'
+ht-degree: 63%
 
 ---
 
@@ -128,9 +128,13 @@ ht-degree: 65%
 
 如果指定的数据元素发生更改，则会触发该事件。 您必须为数据元素提供名称。 您可以选择数据元素，方法是：在文本字段中键入其名称，或选择文本字段右侧的数据元素图标，然后从显示的对话框中提供的列表中进行选择。
 
-#### Direct Call
+#### Direct Call {#direct-call-event}
 
-直接调用事件绕过事件检测和查找系统。 直接调用规则最适合您希望准确告知平台当前发生事件的情况。 此外，它们还适用于 Platform 在 DOM 中检测不到事件的情况，例如与 Adobe Flash 有关的事件。指定 `_satellite.track` 字符串。
+直接调用事件绕过事件检测和查找系统。 直接调用规则最适合您希望准确告知系统当前发生事件的情况。 此外，它们还适用于系统无法检测DOM中的事件的情况。
+
+定义直接调用事件时，必须指定一个字符串作为此事件的标识符。 如果 [触发直接调用操作](#direct-call-action) 将触发包含相同标识符的事件，然后将运行监听该标识符的任何直接调用事件规则。
+
+![数据收集UI中直接调用事件的屏幕截图](../../../images/extensions/core/direct-call-event.png)
 
 #### Element Exists
 
@@ -625,6 +629,14 @@ setTimeout(function() {
 }, 1000);
 </script>
 ```
+
+### 触发直接调用 {#direct-call-action}
+
+此操作会触发使用特定 [直接调用事件](#direct-call-event). 配置操作时，必须为要触发的直接调用事件提供标识符字符串。 或者，您也可以选择通过 `detail` 对象，可包含一组自定义键值对。
+
+![数据收集UI中“触发直接调用”操作的屏幕截图](../../../images/extensions/core/direct-call-action.png)
+
+操作会直接映射到 [`track` 方法](../../../ui/client-side/satellite-object.md?lang=en#track) 在 `satellite` 对象，客户端代码可访问该对象。
 
 ## 核心扩展数据元素类型
 
