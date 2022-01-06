@@ -5,10 +5,10 @@ title: 查询服务中的Spark SQL函数
 topic-legacy: spark sql functions
 description: 本文档包含有关扩展SQL功能的Spark SQL函数的信息。
 exl-id: 59e6d82b-3317-456d-8c56-3efd5978433a
-source-git-commit: 07b3483a3e8c666e769a0d00d08fa4784d10813d
+source-git-commit: f291c0db5b751227e979e70ea8f91a0c133ecf34
 workflow-type: tm+mt
-source-wordcount: '3909'
-ht-degree: 1%
+source-wordcount: '3866'
+ht-degree: 0%
 
 ---
 
@@ -16,33 +16,21 @@ ht-degree: 1%
 
 Adobe Experience Platform查询服务提供了多个内置的Spark SQL函数来扩展SQL功能。 本文档列出了查询服务支持的Spark SQL函数。
 
-有关函数（包括其语法、用法和示例）的更多详细信息，请阅读[Spark SQL函数文档](https://spark.apache.org/docs/latest/api/sql/index.html)。
+有关函数（包括其语法、用法和示例）的更多详细信息，请阅读 [Spark SQL函数文档](https://spark.apache.org/docs/latest/api/sql/index.html).
 
 >[!NOTE]
 >
 >外部文档中并非所有函数都受支持。
 
-## 类别
-
-- [数学和统计运算符及函数](#math)
-- [逻辑运算符](#logical-operators)
-- [日期/时间函数](#datetime-functions)
-- [数组](#arrays)
-- [数据类型转换函数](#datatype-casting)
-- [转换和格式化功能](#conversion)
-- [数据评估](#data-evaluation)
-- [当前信息](#current-information)
-- [高阶函数](#higher-order)
-
 ## 数学和统计运算符及函数 {#math}
 
 | 运算符/函数 | 描述 |
 | ----------------- | ----------- |
-| [`%`](https://spark.apache.org/docs/latest/api/sql/index.html#_2) | 返回两个数字的余数 |
-| [`*`](https://spark.apache.org/docs/latest/api/sql/index.html#_4) | 将两个数字乘以 |
-| [`+`](https://spark.apache.org/docs/latest/api/sql/index.html#_5) | 将两个数字相加 |
-| [`-`](https://spark.apache.org/docs/latest/api/sql/index.html#_6) | 减去两个数字 |
-| [`/`](https://spark.apache.org/docs/latest/api/sql/index.html#_7) | 将两个数字相除 |
+| [`%`](https://spark.apache.org/docs/latest/api/sql/index.html#_3) | 返回两个数字的余数 |
+| [`*`](https://spark.apache.org/docs/latest/api/sql/index.html#_5) | 将两个数字乘以 |
+| [`+`](https://spark.apache.org/docs/latest/api/sql/index.html#_6) | 将两个数字相加 |
+| [`-`](https://spark.apache.org/docs/latest/api/sql/index.html#_7) | 减去两个数字 |
+| [`/`](https://spark.apache.org/docs/latest/api/sql/index.html#_8) | 将两个数字相除 |
 | [`abs`](https://spark.apache.org/docs/latest/api/sql/index.html#abs) | 返回输入的绝对值 |
 | [`acos`](https://spark.apache.org/docs/latest/api/sql/index.html#acos) | 返回反余弦值 |
 | [`approx_count_distinct`](https://spark.apache.org/docs/latest/api/sql/index.html#approx_count_distinct) | 返回HyperLogLog++的估计基数 |
@@ -84,13 +72,13 @@ Adobe Experience Platform查询服务提供了多个内置的Spark SQL函数来�
 | [`pi`](https://spark.apache.org/docs/latest/api/sql/index.html#pi) | 返回pi |
 | [`pmod`](https://spark.apache.org/docs/latest/api/sql/index.html#pmod) | 返回两个值之间的正模 |
 | [`positive`](https://spark.apache.org/docs/latest/api/sql/index.html#positive) | 返回正值 |
-| [`pow`](https://spark.apache.org/docs/latest/api/sql/index.html#pow),  [`power`](https://spark.apache.org/docs/latest/api/sql/index.html#power) | 将第一个值返回为第二个值的幂 |
+| [`pow`](https://spark.apache.org/docs/latest/api/sql/index.html#pow), [`power`](https://spark.apache.org/docs/latest/api/sql/index.html#power) | 将第一个值返回为第二个值的幂 |
 | [`radians`](https://spark.apache.org/docs/latest/api/sql/index.html#radians) | 将值转换为弧度 |
 | [`rand`](https://spark.apache.org/docs/latest/api/sql/index.html#rand) | 返回介于0和1之间的随机数 |
 | [`randn`](https://spark.apache.org/docs/latest/api/sql/index.html#randn) | 返回随机值 |
 | [`rint`](https://spark.apache.org/docs/latest/api/sql/index.html#rint) | 返回最接近的双值 |
 | [`round`](https://spark.apache.org/docs/latest/api/sql/index.html#round) | 返回最接近的四舍五入值 |
-| [`sign`](https://spark.apache.org/docs/latest/api/sql/index.html#sign),  [`signum`](https://spark.apache.org/docs/latest/api/sql/index.html#signum) | 返回数字的符号 |
+| [`sign`](https://spark.apache.org/docs/latest/api/sql/index.html#sign), [`signum`](https://spark.apache.org/docs/latest/api/sql/index.html#signum) | 返回数字的符号 |
 | [`sin`](https://spark.apache.org/docs/latest/api/sql/index.html#sin) | 返回值的正弦 |
 | [`sinh`](https://spark.apache.org/docs/latest/api/sql/index.html#sinh) | 返回值的双曲正弦 |
 | [`sqrt`](https://spark.apache.org/docs/latest/api/sql/index.html#sqrt) | 返回值的平方根 |
@@ -101,22 +89,21 @@ Adobe Experience Platform查询服务提供了多个内置的Spark SQL函数来�
 | [`tan`](https://spark.apache.org/docs/latest/api/sql/index.html#tan) | 返回值的正切 |
 | [`tanh`](https://spark.apache.org/docs/latest/api/sql/index.html#tanh) | 返回值的双曲正切 |
 | [`var_pop`](https://spark.apache.org/docs/latest/api/sql/index.html#var_pop) | 返回计算的群体差异 |
-| [`var_samp`](https://spark.apache.org/docs/latest/api/sql/index.html#var_samp),  [`variance`](https://spark.apache.org/docs/latest/api/sql/index.html#variance) | 返回计算的示例方差 |
+| [`var_samp`](https://spark.apache.org/docs/latest/api/sql/index.html#var_samp), [`variance`](https://spark.apache.org/docs/latest/api/sql/index.html#variance) | 返回计算的示例方差 |
 
 ### 逻辑运算符和函数 {#logical-operators}
 
 | 运算符/函数 | 描述 |
 | ----------------- | ----------- |
 | [`!`](https://spark.apache.org/docs/latest/api/sql/index.html#_1) 或 [`not`](https://spark.apache.org/docs/latest/api/sql/index.html#not) | 逻辑不 |
-| [`<`](https://spark.apache.org/docs/latest/api/sql/index.html#_7) | 小于 |
-| [`<=`](https://spark.apache.org/docs/latest/api/sql/index.html#_8) | 小于或等于 |
-| [`=`](https://spark.apache.org/docs/latest/api/sql/index.html#_10) | 等于 |
-| [`>`](https://spark.apache.org/docs/latest/api/sql/index.html#_12) | 大于 |
-| [`>=`](https://spark.apache.org/docs/latest/api/sql/index.html#_13) | 大于或等于 |
-| [`^`](https://spark.apache.org/docs/latest/api/sql/index.html#_14) | Bitwise独占或 |
-| [`>=`](https://spark.apache.org/docs/latest/api/sql/index.html#_13) | 大于或等于 |
-| [`|`](https://spark.apache.org/docs/latest/api/sql/index.html#_15) | 按位或 |
-| [`~`](https://spark.apache.org/docs/latest/api/sql/index.html#_16) | Bitwise不会 |
+| [`<`](https://spark.apache.org/docs/latest/api/sql/index.html#_8) | 小于 |
+| [`<=`](https://spark.apache.org/docs/latest/api/sql/index.html#_9) | 小于或等于 |
+| [`=`](https://spark.apache.org/docs/latest/api/sql/index.html#_12) | 等于 |
+| [`>`](https://spark.apache.org/docs/latest/api/sql/index.html#_14) | 大于 |
+| [`>=`](https://spark.apache.org/docs/latest/api/sql/index.html#_15) | 大于或等于 |
+| [`^`](https://spark.apache.org/docs/latest/api/sql/index.html#_16) | Bitwise独占或 |
+| [`\|`](https://spark.apache.org/docs/latest/api/sql/index.html#_17) | 按位或 |
+| [`~`](https://spark.apache.org/docs/latest/api/sql/index.html#_19) | Bitwise不会 |
 | [`arrays_overlap`](https://spark.apache.org/docs/latest/api/sql/index.html#arrays_overlap) | 返回常用元素 |
 | [`assert_true`](https://spark.apache.org/docs/latest/api/sql/index.html#assert_true) | 声明表达式为true时 |
 | [`if`](https://spark.apache.org/docs/latest/api/sql/index.html#if) | 如果表达式的计算结果为true，则返回第二个表达式。 否则，返回第三个表达式。 |
@@ -140,7 +127,7 @@ Adobe Experience Platform查询服务提供了多个内置的Spark SQL函数来�
 | [`date_sub`](https://spark.apache.org/docs/latest/api/sql/index.html#date_sub) | 从日期减去天数 |
 | [`date_trunc`](https://spark.apache.org/docs/latest/api/sql/index.html#date_trunc) | 返回截断到指定单位的日期 |
 | [`datediff`](https://spark.apache.org/docs/latest/api/sql/index.html#datediff) | 返回日期之间的差值（以天为单位） |
-| [`day`](https://spark.apache.org/docs/latest/api/sql/index.html#day),  [`dayofmonth`](https://spark.apache.org/docs/latest/api/sql/index.html#dayofmonth) | 返回一个月中的某天 |
+| [`day`](https://spark.apache.org/docs/latest/api/sql/index.html#day), [`dayofmonth`](https://spark.apache.org/docs/latest/api/sql/index.html#dayofmonth) | 返回一个月中的某天 |
 | [`dayofweek`](https://spark.apache.org/docs/latest/api/sql/index.html#dayofweek) | 返回每周时间(1-7) |
 | [`dayofyear`](https://spark.apache.org/docs/latest/api/sql/index.html#dayofyear) | 返回每年的某一天 |
 | [`from_unixtime`](https://spark.apache.org/docs/latest/api/sql/index.html#from_unixtime) | 以Unix时间返回日期 |
@@ -153,8 +140,8 @@ Adobe Experience Platform查询服务提供了多个内置的Spark SQL函数来�
 | [`next_day`](https://spark.apache.org/docs/latest/api/sql/index.html#next_day) | 返回迟于输入的第一天 |
 | [`quarter`](https://spark.apache.org/docs/latest/api/sql/index.html#quarter) | 返回输入的季度 |
 | [`second`](https://spark.apache.org/docs/latest/api/sql/index.html#second) | 返回字符串的秒数 |
-| [`to_date`](https://spark.apache.org/docs/latest/api/sql/index.html#to_date) | 将字符串转换为日期。 **注意：** 字符串 **** 必须采用格 `yyyy-mm-ddTHH24:MM:SS`式。 |
-| [`to_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_timestamp) | 将字符串转换为时间戳。 **注意：** 字符串 **** 必须采用格 `yyyy-mm-ddTHH24:MM:SS`式。 |
+| [`to_date`](https://spark.apache.org/docs/latest/api/sql/index.html#to_date) | 将字符串转换为日期。 **注意：** 字符串 **必须** 格式 `yyyy-mm-ddTHH24:MM:SS`. |
+| [`to_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_timestamp) | 将字符串转换为时间戳。 **注意：** 字符串 **必须** 格式 `yyyy-mm-ddTHH24:MM:SS`. |
 | [`to_unix_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_unix_timestamp) | 将字符串转换为Unix时间戳 |
 | [`to_utc_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#to_utc_timestamp) | 将字符串转换为UTC时间戳 |
 | [`trunc`](https://spark.apache.org/docs/latest/api/sql/index.html#trunc) | 截断日期 |
@@ -180,7 +167,7 @@ Adobe Experience Platform查询服务提供了多个内置的Spark SQL函数来�
 | [`array_repeat`](https://spark.apache.org/docs/latest/api/sql/index.html#array_repeat) | 创建一个包含计数次数值的数组 |
 | [`array_sort`](https://spark.apache.org/docs/latest/api/sql/index.html#array_sort) | 对数组进行排序 |
 | [`array_union`](https://spark.apache.org/docs/latest/api/sql/index.html#array_union) | 将数组连接在一起，不存在任何重复项 |
-| [`array_zip`](https://spark.apache.org/docs/latest/api/sql/index.html#array_zip) | Zip |
+| [`arrays_zip`](https://spark.apache.org/docs/latest/api/sql/index.html#array_zip) | 将给定数组的值与给定索引处原始集合的值组合在一起 |
 | [`cardinality`](https://spark.apache.org/docs/latest/api/sql/index.html#cardinality) | 返回数组的大小 |
 | [`element_at`](https://spark.apache.org/docs/latest/api/sql/index.html#element_at) | 在位置返回元素 |
 | [`explode`](https://spark.apache.org/docs/latest/api/sql/index.html#explode) | 将数组的元素分离为多行，不包括null |
@@ -189,8 +176,7 @@ Adobe Experience Platform查询服务提供了多个内置的Spark SQL函数来�
 | [`flatten`](https://spark.apache.org/docs/latest/api/sql/index.html#flatten) | 拼合数组 |
 | [`inline`](https://spark.apache.org/docs/latest/api/sql/index.html#inline) | 将结构数组分离到表中，不包括null |
 | [`inline_outer`](https://spark.apache.org/docs/latest/api/sql/index.html#inline_outer) | 将结构数组分离到表中，包括null |
-| [`posexplod`](https://spark.apache.org/docs/latest/api/sql/index.html#posexplod) | 将数组的元素分离为多个具有位置的行，不包括null |
-| [`posexplod`](https://spark.apache.org/docs/latest/api/sql/index.html#posexplod) | 将数组的元素分离为多个具有位置（包括null）的行 |
+| [`posexplode`](https://spark.apache.org/docs/latest/api/sql/index.html#posexplode) | 将数组的元素分离为多个具有位置的行，不包括null |
 | [`reverse`](https://spark.apache.org/docs/latest/api/sql/index.html#reverse) | 反向数组的元素 |
 | [`shuffle`](https://spark.apache.org/docs/latest/api/sql/index.html#shuffle) | 返回数组的随机排列 |
 | [`slice`](https://spark.apache.org/docs/latest/api/sql/index.html#slice) | 对数组进行子集 |
@@ -224,16 +210,16 @@ Adobe Experience Platform查询服务提供了多个内置的Spark SQL函数来�
 | [`base64`](https://spark.apache.org/docs/latest/api/sql/index.html#base64) | 将参数更改为base64字符串 |
 | [`bin`](https://spark.apache.org/docs/latest/api/sql/index.html#bin) | 将参数更改为二进制值 |
 | [`bit_length`](https://spark.apache.org/docs/latest/api/sql/index.html#bit_length) | 返回位长度 |
-| [`char`](https://spark.apache.org/docs/latest/api/sql/index.html#char),  [`chr`](https://spark.apache.org/docs/latest/api/sql/index.html#chr) | 返回ASCII字符 |
-| [`char_length`](https://spark.apache.org/docs/latest/api/sql/index.html#char_length),  [`character_length`](https://spark.apache.org/docs/latest/api/sql/index.html#character_length) | 返回字符串长度 |
+| [`char`](https://spark.apache.org/docs/latest/api/sql/index.html#char), [`chr`](https://spark.apache.org/docs/latest/api/sql/index.html#chr) | 返回ASCII字符 |
+| [`char_length`](https://spark.apache.org/docs/latest/api/sql/index.html#char_length), [`character_length`](https://spark.apache.org/docs/latest/api/sql/index.html#character_length) | 返回字符串长度 |
 | [`crc32`](https://spark.apache.org/docs/latest/api/sql/index.html#crc32) | 返回循环冗余校验值 |
 | [`degrees`](https://spark.apache.org/docs/latest/api/sql/index.html#degrees) | 将弧度转换为度 |
 | [`format_number`](https://spark.apache.org/docs/latest/api/sql/index.html#format_number) | 更改数字的格式 |
-| [`from_json`](https://spark.apache.org/docs/latest/api/sql/index.html#from_json),  [`get_json_object`](https://spark.apache.org/docs/latest/api/sql/index.html#get_json_object) | 从JSON获取数据 |
+| [`from_json`](https://spark.apache.org/docs/latest/api/sql/index.html#from_json), [`get_json_object`](https://spark.apache.org/docs/latest/api/sql/index.html#get_json_object) | 从JSON获取数据 |
 | [`hash`](https://spark.apache.org/docs/latest/api/sql/index.html#hash) | 返回哈希值 |
 | [`hex`](https://spark.apache.org/docs/latest/api/sql/index.html#hex) | 将参数转换为十六进制值 |
 | [`initcap`](https://spark.apache.org/docs/latest/api/sql/index.html#initcap) | 将字符串更改为小写标题 |
-| [`lcase`](https://spark.apache.org/docs/latest/api/sql/index.html#lcase),  [`lower`](https://spark.apache.org/docs/latest/api/sql/index.html#lower) | 将字符串更改为全小写 |
+| [`lcase`](https://spark.apache.org/docs/latest/api/sql/index.html#lcase), [`lower`](https://spark.apache.org/docs/latest/api/sql/index.html#lower) | 将字符串更改为全小写 |
 | [`lpad`](https://spark.apache.org/docs/latest/api/sql/index.html#lpad) | 将字符串的左侧粘贴 |
 | [`map`](https://spark.apache.org/docs/latest/api/sql/index.html#map) | 创建映射 |
 | [`map_from_arrays`](https://spark.apache.org/docs/latest/api/sql/index.html#map_from_arrays) | 从数组创建映射 |
@@ -241,15 +227,15 @@ Adobe Experience Platform查询服务提供了多个内置的Spark SQL函数来�
 | [`md5`](https://spark.apache.org/docs/latest/api/sql/index.html#md5) | 返回md5值 |
 | [`rpad`](https://spark.apache.org/docs/latest/api/sql/index.html#rpad) | 将字符串的右侧粘贴 |
 | [`rtrim`](https://spark.apache.org/docs/latest/api/sql/index.html#rtrim) | 删除尾随空格 |
-| [`sha`](https://spark.apache.org/docs/latest/api/sql/index.html#sha),  [`sha1`](https://spark.apache.org/docs/latest/api/sql/index.html#sha1) | 返回SHA1值 |
+| [`sha`](https://spark.apache.org/docs/latest/api/sql/index.html#sha), [`sha1`](https://spark.apache.org/docs/latest/api/sql/index.html#sha1) | 返回SHA1值 |
 | [`sha2`](https://spark.apache.org/docs/latest/api/sql/index.html#sha2) | 返回SHA2值 |
 | [`soundex`](https://spark.apache.org/docs/latest/api/sql/index.html#soundex) | 返回soundex代码 |
 | [`stack`](https://spark.apache.org/docs/latest/api/sql/index.html#stack) | 将值分隔为行 |
-| [`substr`](https://spark.apache.org/docs/latest/api/sql/index.html#substr),  [`substring`](https://spark.apache.org/docs/latest/api/sql/index.html#substring) | 返回子字符串 |
+| [`substr`](https://spark.apache.org/docs/latest/api/sql/index.html#substr), [`substring`](https://spark.apache.org/docs/latest/api/sql/index.html#substring) | 返回子字符串 |
 | [`to_json`](https://spark.apache.org/docs/latest/api/sql/index.html#to_json) | 返回JSON字符串 |
 | [`translate`](https://spark.apache.org/docs/latest/api/sql/index.html#translate) | 替换字符串中的值 |
 | [`trim`](https://spark.apache.org/docs/latest/api/sql/index.html#trim) | 删除前导和尾随字符 |
-| [`ucase`](https://spark.apache.org/docs/latest/api/sql/index.html#ucase),  [`upper`](https://spark.apache.org/docs/latest/api/sql/index.html#upper) | 将字符串更改为全部大写 |
+| [`ucase`](https://spark.apache.org/docs/latest/api/sql/index.html#ucase), [`upper`](https://spark.apache.org/docs/latest/api/sql/index.html#upper) | 将字符串更改为全部大写 |
 | [`unbase64`](https://spark.apache.org/docs/latest/api/sql/index.html#unbase64) | 将base64字符串转换为二进制 |
 | [`unhex`](https://spark.apache.org/docs/latest/api/sql/index.html#unhex) | 将十六进制转换为二进制 |
 | [`uuid`](https://spark.apache.org/docs/latest/api/sql/index.html#uuid) | 返回UUID |
@@ -265,19 +251,19 @@ Adobe Experience Platform查询服务提供了多个内置的Spark SQL函数来�
 | [`concat_ws`](https://spark.apache.org/docs/latest/api/sql/index.html#concat_ws) | 带分隔符的串联 |
 | [`count`](https://spark.apache.org/docs/latest/api/sql/index.html#count) | 返回行的总计数 |
 | [`decode`](https://spark.apache.org/docs/latest/api/sql/index.html#decode) | 使用字符集进行解码 |
-| [`elt`](https://spark.apache.org/docs/latest/api/sql/index.html#elt) | 返回[`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n)输入 |
+| [`elt`](https://spark.apache.org/docs/latest/api/sql/index.html#elt) | 返回 [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n)th输入 |
 | [`encode`](https://spark.apache.org/docs/latest/api/sql/index.html#encode) | 使用字符集进行编码 |
-| [`first`](https://spark.apache.org/docs/latest/api/sql/index.html#first),  [`first_value`](https://spark.apache.org/docs/latest/api/sql/index.html#first_value) | 返回第一个值 |
+| [`first`](https://spark.apache.org/docs/latest/api/sql/index.html#first), [`first_value`](https://spark.apache.org/docs/latest/api/sql/index.html#first_value) | 返回第一个值 |
 | [`grouping`](https://spark.apache.org/docs/latest/api/sql/index.html#grouping) | 指示列是否已分组 |
 | [`grouping_id`](https://spark.apache.org/docs/latest/api/sql/index.html#grouping_id) | 返回分组级别 |
 | [`instr`](https://spark.apache.org/docs/latest/api/sql/index.html#instr) | 返回基于1的字符出现索引 |
 | [`json_tuple`](https://spark.apache.org/docs/latest/api/sql/index.html#json_tuple) | 从JSON输入返回元组 |
-| [`lag`](https://spark.apache.org/docs/latest/api/sql/index.html#lag),  [`lead`](https://spark.apache.org/docs/latest/api/sql/index.html#lead) | 返回偏移之前的值 |
-| [`last`](https://spark.apache.org/docs/latest/api/sql/index.html#last),  [`last_value`](https://spark.apache.org/docs/latest/api/sql/index.html#last_value) | 返回最后一个值 |
-| [`left`](https://spark.apache.org/docs/latest/api/sql/index.html#left) | 返回前一个[`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n)字符 |
+| [`lag`](https://spark.apache.org/docs/latest/api/sql/index.html#lag), [`lead`](https://spark.apache.org/docs/latest/api/sql/index.html#lead) | 返回偏移之前的值 |
+| [`last`](https://spark.apache.org/docs/latest/api/sql/index.html#last), [`last_value`](https://spark.apache.org/docs/latest/api/sql/index.html#last_value) | 返回最后一个值 |
+| [`left`](https://spark.apache.org/docs/latest/api/sql/index.html#left) | 返回第一个 [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n) 字符 |
 | [`length`](https://spark.apache.org/docs/latest/api/sql/index.html#length) | 返回字符串的长度 |
 | [`levenshtein`](https://spark.apache.org/docs/latest/api/sql/index.html#levenshtein) | 返回字符串之间的列文施泰因距离 |
-| [`locate`](https://spark.apache.org/docs/latest/api/sql/index.html#locate),  [`position`](https://spark.apache.org/docs/latest/api/sql/index.html#position) | 返回子字符串首次出现的位置 |
+| [`locate`](https://spark.apache.org/docs/latest/api/sql/index.html#locate), [`position`](https://spark.apache.org/docs/latest/api/sql/index.html#position) | 返回子字符串首次出现的位置 |
 | [`map_concat`](https://spark.apache.org/docs/latest/api/sql/index.html#map_concat) | 连接映射 |
 | [`map_keys`](https://spark.apache.org/docs/latest/api/sql/index.html#map_keys) | 返回地图的键 |
 | [`map_values`](https://spark.apache.org/docs/latest/api/sql/index.html#map_values) | 返回映射的值 |
@@ -300,12 +286,12 @@ Adobe Experience Platform查询服务提供了多个内置的Spark SQL函数来�
 | [`shiftright`](https://spark.apache.org/docs/latest/api/sql/index.html#shiftright) | 右带符号的位移 |
 | [`shiftrightunsigned`](https://spark.apache.org/docs/latest/api/sql/index.html#shiftrightunsigned) | 无符号位向右移动 |
 | [`size`](https://spark.apache.org/docs/latest/api/sql/index.html#size) | 返回数组的大小 |
-| [`space`](https://spark.apache.org/docs/latest/api/sql/index.html#space) | 返回带有[`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n)空格的字符串 |
+| [`space`](https://spark.apache.org/docs/latest/api/sql/index.html#space) | 返回字符串 [`n`](https://spark.apache.org/docs/latest/api/sql/index.html#n) 空格 |
 | [`split`](https://spark.apache.org/docs/latest/api/sql/index.html#split) | 拆分字符串 |
 | [`substring_index`](https://spark.apache.org/docs/latest/api/sql/index.html#substring_index) | 子字符串的返回索引 |
 | [`window`](https://spark.apache.org/docs/latest/api/sql/index.html#window) | 窗口 |
 | [`xpath`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath) | 解析XML节点 |
-| [`xpath_double`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_double),  [`xpath_number`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_number) | 解析XML节点以进行双精度分析 |
+| [`xpath_double`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_double), [`xpath_number`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_number) | 解析XML节点以进行双精度分析 |
 | [`xpath_float`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_float) | 解析浮点的XML节点 |
 | [`xpath_int`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_int) | 解析整数的XML节点 |
 | [`xpath_long`](https://spark.apache.org/docs/latest/api/sql/index.html#xpath_long) | 解析XML节点很长 |
@@ -318,7 +304,7 @@ Adobe Experience Platform查询服务提供了多个内置的Spark SQL函数来�
 | -------- | ----------- |
 | [`current_database`](https://spark.apache.org/docs/latest/api/sql/index.html#current_database) | 返回当前数据库 |
 | [`current_date`](https://spark.apache.org/docs/latest/api/sql/index.html#current_date) | 返回当前日期 |
-| [`current_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#current_timestamp),  [`now`](https://spark.apache.org/docs/latest/api/sql/index.html#now) | 返回当前时间戳 |
+| [`current_timestamp`](https://spark.apache.org/docs/latest/api/sql/index.html#current_timestamp), [`now`](https://spark.apache.org/docs/latest/api/sql/index.html#now) | 返回当前时间戳 |
 
 ### 高阶函数 {#higher-order}
 
