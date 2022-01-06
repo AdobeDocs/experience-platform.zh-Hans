@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
-user-guide-description: 使用体验数据模型(XDM)类和架构字段组来标准化体验数据。
+user-guide-description: 使用 Experience Data Model (XDM) 类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: db7e8de8e2669fae7fdf21d10042b7a71c63a8f6
+source-git-commit: 065f5ef9d3d3be0fcab84d7518d8a00e4cd551cf
 workflow-type: tm+mt
-source-wordcount: '401'
-ht-degree: 13%
+source-wordcount: '405'
+ht-degree: 17%
 
 ---
 
@@ -18,15 +18,16 @@ ht-degree: 13%
 * 架构 {#schema}
    * [架构组合的基础知识](schema/composition.md)
    * [数据建模最佳实践](schema/best-practices.md)
+   * [敏感和个人数据](./schema/sensitive-and-personal-data.md)
    * [XDM字段类型约束](schema/field-constraints.md)
    * [XDM中的名称步调](./schema/namespaces.md)
-   * [XDM字段字典](schema/field-dictionary.md)
    * 行业数据模型 {#industries}
       * [概述](./schema/industries/overview.md)
       * [零售](./schema/industries/retail.md)
       * [金融服务](./schema/industries/financial.md)
       * [电信](./schema/industries/telecom.md)
       * [旅游和酒店业](./schema/industries/travel-hospitality.md)
+   * [XDM字段字典](schema/field-dictionary.md)
 * 类 {#classes}
    * [XDM个人配置文件](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
@@ -92,7 +93,7 @@ ht-degree: 13%
    * [地理坐标](./data-types/geo-coordinates.md)
    * [地域交互详细信息](./data-types/geo-interaction-details.md)
    * [地理形状](./data-types/geo-shape.md)
-   * [身份](./data-types/identity.md)
+   * [标识](./data-types/identity.md)
    * [展示次数](./data-types/impressions.md)
    * [营销](./data-types/marketing.md)
    * [测量](./data-types/measure.md)
