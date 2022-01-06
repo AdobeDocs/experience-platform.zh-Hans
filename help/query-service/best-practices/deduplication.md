@@ -6,9 +6,9 @@ topic-legacy: queries
 type: Tutorial
 description: 本文档概述了用于删除重复的三个常见用例（体验事件、购买和量度）的子选择和完整示例查询示例。
 exl-id: 46ba6bb6-67d4-418b-8420-f2294e633070
-source-git-commit: 3d56f0c50625cb8fcad149548d9c3f94324f9f7e
+source-git-commit: b140037ed5f055a8e7c583540910cc6b18bbf0bd
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '624'
 ht-degree: 0%
 
 ---
@@ -67,7 +67,9 @@ SELECT COUNT(*) AS num_events FROM (
 
 ## 购买 {#purchases}
 
-如果购买重复，您可能希望保留大部分“体验事件”行，但忽略与购买关联的字段(例如 `commerce.orders` 量度)。 购买包含购买ID的特殊字段，即 `commerce.order.purchaseID`.
+如果您购买了重复的产品，则可能希望保留 [!DNL Experience Event] 行，但忽略与购买关联的字段(例如 `commerce.orders` 量度)。 购买包含购买ID的特殊字段，即 `commerce.order.purchaseID`.
+
+建议使用 `purchaseID` 在访客范围内，因为它是XDM内用于购买ID的标准语义字段。 建议使用访客范围来删除重复的购买数据，因为查询比使用全局范围更快，并且购买ID不太可能在多个访客ID中重复。
 
 **范围：** 访客
 
@@ -86,7 +88,13 @@ SELECT *,
 FROM experience_events
 ```
 
+>[!NOTE]
+>
+>在某些情况下，原始Analytics数据具有跨访客ID的重复购买ID时，您 **5月** 需要在所有访客中运行购买ID重复计数。 当购买ID不存在时，此方法要求您包含一个条件，以改为使用事件ID来尽可能快地保持查询。
+
 ### 完整示例
+
+以下示例在购买ID不存在的情况下使用条件子句来使用事件ID。
 
 ```sql
 SELECT SUM(commerce.purchases.value) AS num_purchases FROM (

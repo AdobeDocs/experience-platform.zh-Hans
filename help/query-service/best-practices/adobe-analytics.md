@@ -5,9 +5,9 @@ title: Adobe Analytics数据的查询示例
 topic-legacy: queries
 description: 来自选定Adobe Analytics报表包的数据将转换为XDM ExperienceEvents，并作为数据集摄取到Adobe Experience Platform。 本文档概述了Adobe Experience Platform查询服务利用此数据的许多用例，其中包含的示例查询应与您的Adobe Analytics数据集一起使用。
 exl-id: 96da3713-c7ab-41b3-9a9d-397756d9dd07
-source-git-commit: 3d56f0c50625cb8fcad149548d9c3f94324f9f7e
+source-git-commit: b140037ed5f055a8e7c583540910cc6b18bbf0bd
 workflow-type: tm+mt
-source-wordcount: '1021'
+source-wordcount: '1052'
 ht-degree: 1%
 
 ---
@@ -117,6 +117,10 @@ WHERE  _experience.analytics.event1to100.{TARGET_EVENT}.value IS NOT NULL
 GROUP BY Day, Hour
 ORDER BY Hour;
 ```
+
+## 重复数据删除
+
+Adobe Experience Platform查询服务支持重复数据删除。 请参阅 [查询服务文档中的重复数据删除](./deduplication.md) 有关在查询时如何生成新值的信息 [!DNL Experience Event] 数据集。
 
 ## 促销变量（产品语法）
 
