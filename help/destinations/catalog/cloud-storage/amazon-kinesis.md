@@ -3,10 +3,10 @@ keywords: Amazon Kinesis;Kinesis目标；Kinesis
 title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: 2b1cde9fc913be4d3bea71e7d56e0e5fe265a6be
+source-git-commit: 8d2c5ef477d4707be4c0da43ba1f672fac797604
 workflow-type: tm+mt
-source-wordcount: '552'
-ht-degree: 2%
+source-wordcount: '824'
+ht-degree: 1%
 
 ---
 
@@ -102,6 +102,18 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 ## 将区段激活到此目标 {#activate}
 
 请参阅 [将受众数据激活到流配置文件导出目标](../../ui/activate-streaming-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+
+## 配置文件导出行为 {#profile-export-behavior}
+
+Experience Platform会优化将配置文件导出到Amazon Kinesis目标的行为，以便仅在区段鉴别或其他重大事件后对配置文件进行相关更新时，才将数据导出到您的目标。 在以下情况下，用户档案会导出到您的目标：
+
+* 配置文件更新是由至少一个映射到目标的区段的区段成员资格发生更改而触发的。 例如，配置文件已符合映射到目标的其中一个区段的条件，或者已退出映射到目标的其中一个区段。
+* 配置文件更新由 [身份映射](/help/xdm/field-groups/profile/identitymap.md). 例如，已符合映射到目标的某个区段资格条件的用户档案，已在身份映射属性中添加了新身份。
+* 配置文件更新是由至少一个映射到目标的属性的属性发生更改而触发的。 例如，映射步骤中映射到目标的某个属性会添加到配置文件中。
+
+在上述所有情况下，只会将发生相关更新的用户档案导出到您的目标。 例如，如果映射到目标流的区段有一百个成员，并且有五个新的配置文件符合该区段的资格条件，则导出到目标的过程将是递增的，并且仅包含五个新配置文件。
+
+请注意，无论更改位于何处，都会导出配置文件的所有映射属性。 因此，在上例中，即使属性本身未发生更改，也会导出这五个新配置文件的所有映射属性。
 
 ## 导出的数据 {#exported-data}
 
