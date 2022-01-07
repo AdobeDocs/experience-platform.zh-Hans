@@ -2,9 +2,9 @@
 description: 本页介绍了可使用“/authoring/credentials” API端点执行的所有API操作。
 title: 凭据端点API操作
 exl-id: 89957f38-e7f4-452d-abc0-0940472103fe
-source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
+source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
 workflow-type: tm+mt
-source-wordcount: '730'
+source-wordcount: '712'
 ht-degree: 4%
 
 ---
@@ -400,7 +400,7 @@ curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/credenti
 
 ## API错误处理
 
-目标SDK API端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) 和 [请求标头错误](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) 平台疑难解答指南中。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中。
 
 ## 后续步骤
 

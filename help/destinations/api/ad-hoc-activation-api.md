@@ -5,13 +5,13 @@ title: （测试版）通过临时激活API将受众区段激活到批量目标
 description: 本文说明了通过临时激活API激活受众区段的端到端工作流程，包括激活前进行的分段作业。
 topic-legacy: tutorial
 type: Tutorial
-source-git-commit: 749fa5dc1e8291382408d9b1a0391c4c7f2b2a46
+exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
+source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
 workflow-type: tm+mt
-source-wordcount: '1065'
+source-wordcount: '1047'
 ht-degree: 2%
 
 ---
-
 
 # （测试版）通过临时激活API将受众区段激活到批量目标
 
@@ -185,4 +185,4 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 
 ## API错误处理
 
-目标SDK API端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#api-status-codes) 和 [请求标头错误](https://experienceleague.adobe.com/docs/experience-platform/landing/troubleshooting.html?lang=en#request-header-errors) 平台疑难解答指南中。
+Destination SDKAPI端点遵循常规Experience PlatformAPI错误消息原则。 请参阅 [API状态代码](../../landing/troubleshooting.md#api-status-codes) 和 [请求标头错误](../../landing/troubleshooting.md#request-header-errors) 平台疑难解答指南中。
