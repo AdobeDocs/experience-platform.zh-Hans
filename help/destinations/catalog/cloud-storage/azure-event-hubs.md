@@ -1,11 +1,11 @@
 ---
 keywords: Azure事件中心目标；Azure事件中心；Azure事件Hub
-title: （测试版）！DNL Azure Event Hubs]连接
-description: 创建到！DNL Azure Event Hubs]存储的实时出站连接，以从Experience Platform流数据。
+title: （测试版） [!DNL Azure Event Hubs] 连接
+description: 创建与的实时出站连接 [!DNL Azure Event Hubs] 存储以从Experience Platform流数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 8d2c5ef477d4707be4c0da43ba1f672fac797604
+source-git-commit: c93a054174bc68ecedf67599ef61ad0b41a56ada
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '741'
 ht-degree: 1%
 
 ---

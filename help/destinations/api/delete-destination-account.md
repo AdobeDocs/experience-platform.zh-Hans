@@ -4,9 +4,10 @@ solution: Experience Platform
 title: 使用流量服务API删除目标帐户
 type: Tutorial
 description: 了解如何使用流量服务API删除目标帐户。
-source-git-commit: df89f8ce8050b26068e0ab7aa01f1c964f5d2422
+exl-id: a963073c-ecba-486b-a5c2-b85bdd426e72
+source-git-commit: c93a054174bc68ecedf67599ef61ad0b41a56ada
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '769'
 ht-degree: 1%
 
 ---
@@ -184,4 +185,4 @@ curl -X DELETE \
 
 ## 后续步骤
 
-通过阅读本教程，您已成功使用 [!DNL Flow Service] 用于删除现有目标帐户的API。
+通过阅读本教程，您已成功使用 [!DNL Flow Service] 用于删除现有目标帐户的API。 有关使用目标的更多信息，请参阅 [目标概述](/help/destinations/home.md).

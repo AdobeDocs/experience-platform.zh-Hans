@@ -4,9 +4,10 @@ solution: Experience Platform
 title: 使用流服务API删除目标数据流
 type: Tutorial
 description: 了解如何使用流服务API将数据流删除到批处理目标和流目标。
-source-git-commit: df89f8ce8050b26068e0ab7aa01f1c964f5d2422
+exl-id: fa40cf97-46c6-4a10-b53c-30bed2dd1b2d
+source-git-commit: c93a054174bc68ecedf67599ef61ad0b41a56ada
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '565'
 ht-degree: 1%
 
 ---
@@ -90,3 +91,5 @@ curl -X DELETE \
 通过阅读本教程，您已成功使用 [!DNL Flow Service] 用于将现有数据流删除到目标的API。
 
 有关如何使用用户界面执行这些操作的步骤，请参阅 [删除UI中的数据流](../ui/delete-destinations.md).
+
+你现在可以继续 [删除目标帐户](/help/destinations/api/delete-destination-account.md) 使用 [!DNL Flow Service] API。
