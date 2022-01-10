@@ -3,7 +3,7 @@ keywords: Azure事件中心目标；Azure事件中心；Azure事件Hub
 title: （测试版） [!DNL Azure Event Hubs] 连接
 description: 创建与的实时出站连接 [!DNL Azure Event Hubs] 存储以从Experience Platform流数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: c93a054174bc68ecedf67599ef61ad0b41a56ada
+source-git-commit: b0c2c8313e05d1316f23dc15d99893e1887f8dcf
 workflow-type: tm+mt
 source-wordcount: '741'
 ht-degree: 1%
@@ -75,7 +75,14 @@ Experience Platform会优化配置文件导出行为，以将数据导出到您�
 ```json
 {
   "person": {
-    "email": "yourstruly@adobe.com"
+    "birthDate": "YYYY-MM-DD",
+    "name": {
+      "firstName": "John",
+      "lastName": "Doe"
+    }
+  },
+  "personalEmail": {
+    "address": "john.doe@acme.com"
   },
   "segmentMembership": {
     "ups": {
