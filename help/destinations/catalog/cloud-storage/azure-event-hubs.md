@@ -3,9 +3,9 @@ keywords: Azure事件中心目标；Azure事件中心；Azure事件Hub
 title: （测试版） [!DNL Azure Event Hubs] 连接
 description: 创建与的实时出站连接 [!DNL Azure Event Hubs] 存储以从Experience Platform流数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: b0c2c8313e05d1316f23dc15d99893e1887f8dcf
+source-git-commit: 0a45cb49f3eb2bbd6ac1b39962df88b2352eb121
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '752'
 ht-degree: 1%
 
 ---
@@ -70,7 +70,7 @@ Experience Platform会优化配置文件导出行为，以将数据导出到您�
 
 ## 导出的数据 {#exported-data}
 
-导出的 [!DNL Experience Platform] 数据登陆 [!DNL Azure Event Hubs] 格式。 例如，以下事件包含符合特定区段资格并退出另一个区段的受众的电子邮件地址配置文件属性。 此潜在客户的标识为ECID和电子邮件。
+导出的 [!DNL Experience Platform] 数据登陆 [!DNL Azure Event Hubs] 格式。 例如，下面的导出包含符合特定区段资格并退出另一个区段的配置文件，并且包含配置文件属性名、姓氏、出生日期和个人电子邮件地址。 此配置文件的标识为ECID和电子邮件。
 
 ```json
 {

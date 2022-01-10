@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;Kinesis目标；Kinesis
 title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: f7f3bc229ddad046dca5ea8d2889942fc9cb2cab
+source-git-commit: ba338972be13c7afa6720bba3f0fc96d244b8f9f
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '835'
 ht-degree: 1%
 
 ---
@@ -117,7 +117,7 @@ Experience Platform会优化将配置文件导出到Amazon Kinesis目标的行�
 
 ## 导出的数据 {#exported-data}
 
-导出的 [!DNL Experience Platform] 数据登陆 [!DNL Amazon Kinesis] 格式。 例如，以下事件包含符合特定区段资格并退出另一个区段的受众的电子邮件地址配置文件属性。 此潜在客户的标识为ECID和电子邮件。
+导出的 [!DNL Experience Platform] 数据登陆 [!DNL Amazon Kinesis] 格式。 例如，下面的导出包含符合特定区段资格并退出另一个区段的配置文件，并且包含配置文件属性名、姓氏、出生日期和个人电子邮件地址。 此配置文件的标识为ECID和电子邮件。
 
 ```json
 {

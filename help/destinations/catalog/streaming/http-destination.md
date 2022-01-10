@@ -3,9 +3,9 @@ keywords: 流；
 title: HTTP API连接
 description: 利用Adobe Experience Platform中的HTTP API目标，可将配置文件数据发送到第三方HTTP端点。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: b0c2c8313e05d1316f23dc15d99893e1887f8dcf
+source-git-commit: ba338972be13c7afa6720bba3f0fc96d244b8f9f
 workflow-type: tm+mt
-source-wordcount: '634'
+source-wordcount: '646'
 ht-degree: 1%
 
 ---
@@ -76,7 +76,7 @@ Experience Platform会优化配置文件导出行为以导出到您的HTTP API�
 
 ## 导出的数据 {#exported-data}
 
-导出的 [!DNL Experience Platform] 数据登陆您的 [!DNL HTTP] 目标。 例如，以下事件包含符合特定区段资格并退出另一个区段的受众的电子邮件地址配置文件属性。 此潜在客户的标识为 [!DNL ECID] 和电子邮件。
+导出的 [!DNL Experience Platform] 数据登陆您的 [!DNL HTTP] 目标。 例如，下面的导出包含符合特定区段资格并退出另一个区段的配置文件，并且包含配置文件属性名、姓氏、出生日期和个人电子邮件地址。 此配置文件的标识为ECID和电子邮件。
 
 ```json
 {
