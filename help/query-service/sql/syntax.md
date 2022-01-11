@@ -5,7 +5,7 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: b0cd372589be1db3d7ae571edaac68df9a3c493f
+source-git-commit: c2c543e64a4f2aef0064abf5e4fb9d7f2738159b
 workflow-type: tm+mt
 source-wordcount: '2207'
 ht-degree: 1%
@@ -330,7 +330,6 @@ statementList:
 以下示例使用匿名块。
 
 ```sql
-$$
 BEGIN
    SET @v_snapshot_from = select parent_id  from (select history_meta('email_tracking_experience_event_dataset') ) tab where is_current;
    SET @v_snapshot_to = select snapshot_id from (select history_meta('email_tracking_experience_event_dataset') ) tab where is_current;
@@ -342,7 +341,7 @@ EXCEPTION
   WHEN OTHER THEN
     DROP TABLE IF EXISTS tracking_email_id_incrementally;
     SELECT 'ERROR';
-END$$;
+END;
 ```
 
 ## [!DNL Spark] SQL命令
@@ -581,7 +580,7 @@ SHOW DateStyle;
 
 ### 复制
 
-的 `COPY` 命令转储任何 `SELECT` 查询到指定位置。 用户必须有权访问此位置，此命令才能成功。
+的 `COPY` 命令复制任何 `SELECT` 查询到指定位置。 用户必须有权访问此位置，此命令才能成功。
 
 ```sql
 COPY query

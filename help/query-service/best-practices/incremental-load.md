@@ -1,9 +1,10 @@
 ---
 title: 增量加载查询示例
-description: 增量加载功能使用匿名块和快照功能，为将数据从数据湖移动到data warehouse提供近乎实时的解决方案，同时忽略匹配数据。
-source-git-commit: fb464c6e6b1972f5a2653872385517749936691a
+description: 增量加载功能使用匿名块和快照功能，为将数据从数据湖移动到data warehouse提供近乎实时的解决方案，同时忽略匹配的数据。
+exl-id: 1418d041-29ce-4153-90bf-06bd8da8fb78
+source-git-commit: 943886078fe31a12542c297133ac6a0a0d551e08
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '687'
 ht-degree: 0%
 
 ---
@@ -22,11 +23,11 @@ ht-degree: 0%
 
 有关本指南中使用的任何术语的指导，请参阅 [SQL语法指南](../sql/syntax.md).
 
-## 步骤
+## 增量加载数据
 
 以下步骤演示如何使用快照和匿名块功能创建和以增量方式加载数据。 设计模式可用作您自己的查询序列的模板。
 
-1. 创建 `checkpoint_log` 表来跟踪用于成功处理数据的最新快照。 跟踪表(`checkpoint_log` 在本例中)必须首先初始化为 `null` 以逐步处理数据集。
+1创建 `checkpoint_log` 表来跟踪用于成功处理数据的最新快照。 跟踪表(`checkpoint_log` 在本例中)必须首先初始化为 `null` 以逐步处理数据集。
 
 ```SQL
 DROP TABLE IF EXISTS checkpoint_log;
@@ -39,7 +40,7 @@ SELECT
    WHERE false;
 ```
 
-1. 填充 `checkpoint_log` 表格，其中包含需要增量处理的数据集的一个空记录。 `DIM_TABLE_ABC` 是以下示例中要处理的数据集。 在第一次加工时 `DIM_TABLE_ABC`, `last_snapshot_id` 初始化为 `null`. 这样，您就可以在第一次处理整个数据集，之后以递增方式处理。
+2在 `checkpoint_log` 表格，其中包含需要增量处理的数据集的一个空记录。 `DIM_TABLE_ABC` 是以下示例中要处理的数据集。 在第一次加工时 `DIM_TABLE_ABC`, `last_snapshot_id` 初始化为 `null`. 这样，您就可以在第一次处理整个数据集，之后以递增方式处理。
 
 ```SQL
 INSERT INTO
@@ -51,20 +52,19 @@ INSERT INTO
        CURRENT_TIMESTAMP process_timestamp;
 ```
 
-1. 接下来，初始化 `DIM_TABLE_ABC_Incremental` 包含处理输出 `DIM_TABLE_ABC`. 在 **必需** 如步骤1至4中所述，下面SQL示例的执行部分按顺序执行，以逐步处理数据。
+3接下来，初始化 `DIM_TABLE_ABC_Incremental` 包含处理输出 `DIM_TABLE_ABC`. 在 **必需** 如步骤1至4中所述，下面SQL示例的执行部分按顺序执行，以逐步处理数据。
 
-   1. 设置 `from_snapshot_id` 指示处理从何处开始。 的 `from_snapshot_id` 中，从 `checkpoint_log` 表 `DIM_TABLE_ABC`. 在初始运行时，快照ID将为 `null` 这意味着将处理整个数据集。
-   2. 设置 `to_snapshot_id` 作为源表(`DIM_TABLE_ABC`)。 在此示例中，从源表的元数据表中查询此数据。
-   3. 使用 `CREATE` 关键词创建 `DIM_TABLE_ABC_Incremenal` 作为目标表。 目标表保留源数据集(`DIM_TABLE_ABC`)。 这允许从源表处理的数据介于 `from_snapshot_id` 和 `to_snapshot_id`，以逐步附加到目标表。
-   4. 更新 `checkpoint_log` 表格 `to_snapshot_id` 对于 `DIM_TABLE_ABC` 已成功处理。
-   5. 如果对匿名块的任何按顺序执行的查询失败，则 **可选** 执行异常部分。 这会返回错误并结束该过程。
+1. 设置 `from_snapshot_id` 指示处理从何处开始。 的 `from_snapshot_id` 中，从 `checkpoint_log` 表 `DIM_TABLE_ABC`. 在初始运行时，快照ID将为 `null` 这意味着将处理整个数据集。
+2. 设置 `to_snapshot_id` 作为源表(`DIM_TABLE_ABC`)。 在此示例中，从源表的元数据表中查询此数据。
+3. 使用 `CREATE` 关键词创建 `DIM_TABLE_ABC_Incremenal` 作为目标表。 目标表保留源数据集(`DIM_TABLE_ABC`)。 这允许从源表处理的数据介于 `from_snapshot_id` 和 `to_snapshot_id`，以逐步附加到目标表。
+4. 更新 `checkpoint_log` 表格 `to_snapshot_id` 对于 `DIM_TABLE_ABC` 已成功处理。
+5. 如果对匿名块的任何按顺序执行的查询失败，则 **可选** 执行异常部分。 这会返回错误并结束该过程。
 
 >[!NOTE]
 >
 >的 `history_meta('source table name')` 是一种用于获取数据集中可用快照的访问权限的简便方法。
 
 ```SQL
-$$
 BEGIN
     SET @from_snapshot_id = SELECT coalesce(last_snapshot_id, 'HEAD') FROM checkpoint_log a JOIN
                             (SELECT MAX(process_timestamp)process_timestamp FROM checkpoint_log
@@ -86,17 +86,16 @@ INSERT INTO
 EXCEPTION
   WHEN OTHER THEN
     SELECT 'ERROR';
- END$$;
+ END;
 ```
 
-1. 使用以下匿名块示例中的增量数据加载逻辑，允许处理来自源数据集（自最新时间戳以来）的任何新数据，并以常规频率将其附加到目标表。 在本例中，数据更改为 `DIM_TABLE_ABC` 将进行处理并附加到 `DIM_TABLE_ABC_incremental`.
+4使用下面匿名块示例中的增量数据加载逻辑，以允许以常规频率处理来自源数据集（自最新时间戳以来）的任何新数据并将其附加到目标表。 在本例中，数据更改为 `DIM_TABLE_ABC` 将进行处理并附加到 `DIM_TABLE_ABC_incremental`.
 
 >[!NOTE]
 >
 > `_ID` 是 `DIM_TABLE_ABC_Incremental` 和 `SELECT history_meta('DIM_TABLE_ABC')`.
 
 ```SQL
-$$
 BEGIN
     SET @from_snapshot_id = SELECT coalesce(last_snapshot_id, 'HEAD') FROM checkpoint_log a join
                             (SELECT MAX(process_timestamp)process_timestamp FROM checkpoint_log
@@ -118,7 +117,7 @@ INSERT INTO
 EXCEPTION
   WHEN OTHER THEN
     SELECT 'ERROR';
- END$$;
+ END;
 ```
 
 此逻辑可应用于任何表以执行增量加载。
@@ -138,7 +137,6 @@ SET resolve_fallback_snapshot_on_failure=true;
 整个代码块如下所示：
 
 ```SQL
-$$
 BEGIN
     SET resolve_fallback_snapshot_on_failure=true;
     SET @from_snapshot_id = SELECT coalesce(last_snapshot_id, 'HEAD') FROM checkpoint_log a JOIN
@@ -160,7 +158,7 @@ Insert Into
 EXCEPTION
   WHEN OTHER THEN
     SELECT 'ERROR';
- END$$;
+ END;
 ```
 
 ## 后续步骤
