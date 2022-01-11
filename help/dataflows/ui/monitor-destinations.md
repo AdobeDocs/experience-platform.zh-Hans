@@ -6,9 +6,9 @@ title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 055338228608685a65bc79d9d9d0c07e3ddddfb2
+source-git-commit: 86981f2bf97c9f504c17d9531cd51a58ab994dd2
 workflow-type: tm+mt
-source-wordcount: '1785'
+source-wordcount: '1797'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 - [目标](../../destinations/home.md):目标是与常用应用程序的预建集成，允许从平台无缝激活数据以用于跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例。
 - [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-## 在目标工作区中监控数据流
+## 在目标工作区中监控数据流 {#monitor-dataflows-in-the-destinations-workspace}
 
 在 **[!UICONTROL 目标]** 工作区中，导航到 **[!UICONTROL 浏览]** 选项卡，然后选择要查看的目标名称。
 
@@ -45,18 +45,24 @@ ht-degree: 0%
 | 处理时间 | 的 `Processing` 状态表示数据流尚未处于活动状态。 此状态通常会在创建新数据流后立即出现。 |
 | 错误 | 的 `Error` 状态表示数据流的激活过程已中断。 |
 
-### 为流目标运行数据流
+### 为流目标运行数据流 {#dataflow-runs-for-streaming-destinations}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated"
 >title="已激活身份"
 >abstract="成功激活到选定目标的单个配置文件标识的计数。"
->additional-url="https://adobe.com/go/destinations-monitor-dataflows-batch-en" text="在文档中了解更多信息"
+>text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesexcluded"
 >title="排除的身份"
 >abstract="根据缺少属性和同意违规，从选定目标的激活中排除的单个配置文件记录计数。"
+>text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_dataflow_identitiesfailed"
+>title="身份失败"
+>abstract="所选目标的单个配置文件标识的计数失败。 有关详细信息，请检查错误诊断。"
 >additional-url="https://adobe.com/go/destinations-monitor-dataflows-batch-en" text="在文档中了解更多信息"
 
 对于流目标， [!UICONTROL 数据流运行] 选项卡会每小时更新数据流运行中的量度数据。 标有的最显着的统计数据是关于身份的。
@@ -93,7 +99,7 @@ ht-degree: 0%
 
 ![](../assets/ui/monitor-destinations/dataflow-records-stream.png)
 
-### 为批处理目标运行数据流
+### 为批处理目标运行数据流 {#dataflow-runs-for-batch-destinations}
 
 对于批处理目标， [!UICONTROL 数据流运行] 选项卡提供有关数据流运行的量度数据。 将显示单个运行及其特定量度的列表，以及以下身份总数：
 

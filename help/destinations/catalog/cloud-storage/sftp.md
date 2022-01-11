@@ -3,9 +3,9 @@ keywords: SFTP;SFTP
 title: SFTP连接
 description: 创建与SFTP服务器的实时出站连接，以定期从Adobe Experience Platform导出分隔数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: bf46f4e6549fcbd975a9f0a6034040ed2e9b34e6
 workflow-type: tm+mt
-source-wordcount: '281'
+source-wordcount: '310'
 ht-degree: 0%
 
 ---
@@ -31,6 +31,12 @@ ht-degree: 0%
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 ### 连接参数 {#parameters}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_sftp_rsa"
+>title="RSA公钥"
+>abstract="或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须编写为Base64编码字符串。"
+>text="Learn more in documentation"
 
 While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
 

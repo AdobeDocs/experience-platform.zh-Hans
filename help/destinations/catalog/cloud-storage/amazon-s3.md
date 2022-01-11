@@ -3,9 +3,9 @@ keywords: Amazon S3;S3目标；s3;Amazon s3
 title: Amazon S3连接
 description: 创建到Amazon Web Services(AWS)S3存储的实时出站连接，以定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储段中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: bf46f4e6549fcbd975a9f0a6034040ed2e9b34e6
 workflow-type: tm+mt
-source-wordcount: '361'
+source-wordcount: '390'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,12 @@ ht-degree: 0%
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 ### 连接参数 {#parameters}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_s3_rsa"
+>title="RSA公钥"
+>abstract="或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须编写为Base64编码字符串。"
+>text="Learn more in documentation"
 
 While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
 
