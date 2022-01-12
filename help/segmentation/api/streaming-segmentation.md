@@ -5,9 +5,9 @@ title: '利用流分段快速实时评估事件 '
 topic-legacy: developer guide
 description: 本文档包含有关如何通过Adobe Experience Platform Segmentation Service API使用流分段的示例。
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 65ff1c34e12cc93f614c3c93c4e40e53f2bf51ff
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
-source-wordcount: '1828'
+source-wordcount: '1831'
 ht-degree: 1%
 
 ---
@@ -338,7 +338,7 @@ curl -X POST \
 | `type` | **（必需）** 字符串格式的作业类型。 支持的类型包括 `batch_segmentation` 和 `export`. |
 | `properties` | **（必需）** 包含与计划相关的其他属性的对象。 |
 | `properties.segments` | **(在 `type` 等于 `batch_segmentation`)** 使用 `["*"]` 确保包含所有区段。 |
-| `schedule` | **（必需）** 包含作业计划的字符串。 作业只能计划每天运行一次，这意味着您不能计划在24小时内运行多次作业。 显示的示例(`0 0 1 * * ?`)表示作业在每天1时触发:00:00 UTC。 欲知更多信息，请查看 [cron表达式格式](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) 文档。 |
+| `schedule` | **（必需）** 包含作业计划的字符串。 作业只能计划每天运行一次，这意味着您不能计划在24小时内运行多次作业。 显示的示例(`0 0 1 * * ?`)表示作业在每天1时触发:00:00 UTC。 欲知更多信息，请查看 [cron表达式格式](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) 文档。 |
 | `state` | *（可选）* 包含计划状态的字符串。 可用值： `active` 和 `inactive`. 默认值为 `inactive`。IMS组织只能创建一个计划。 本教程的后面部分提供了更新计划的步骤。 |
 
 **响应**
@@ -381,7 +381,7 @@ POST /config/schedules/{SCHEDULE_ID}
 
 **请求**
 
-以下请求使用 [JSON修补程序格式](http://jsonpatch.com/) 以便更新 `state` 到 `active`.
+以下请求使用 [JSON修补程序格式](https://datatracker.ietf.org/doc/html/rfc6902) 以便更新 `state` 到 `active`.
 
 ```shell
 curl -X POST \

@@ -5,9 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: Adobe Experience Platform允许您从多个来源将数据片段合并在一起，以便查看各个客户的完整视图。 合并策略是Platform用来确定数据优先级以及合并哪些数据以创建统一视图的规则，将这些数据整合在一起。
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
-source-wordcount: '2469'
+source-wordcount: '2472'
 ht-degree: 1%
 
 ---
@@ -588,7 +588,7 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 |---|---|
-| `op` | 指定要执行的操作。 其他PATCH操作的示例可在 [JSON修补程序文档](http://jsonpatch.com) |
+| `op` | 指定要执行的操作。 其他PATCH操作的示例可在 [JSON修补程序文档](https://datatracker.ietf.org/doc/html/rfc6902) |
 | `path` | 要更新的字段路径。 接受的值包括：&quot;/name&quot;、&quot;/identityGraph.type&quot;、&quot;/attributeMerge.type&quot;、&quot;/schema.name&quot;、&quot;/version&quot;、&quot;/default&quot;、&quot;/isActiveOnEdge&quot; |
 | `value` | 将指定字段设置为的值。 |
 

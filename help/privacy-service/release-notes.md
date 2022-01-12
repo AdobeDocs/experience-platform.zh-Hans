@@ -5,7 +5,7 @@ title: Privacy Service发行说明
 topic-legacy: release notes
 description: Adobe Experience Platform Privacy Service的最新发行说明。
 exl-id: 66ee38f1-f0d5-44ff-823d-d1b8a9765c6d
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
 source-wordcount: '553'
 ht-degree: 6%
@@ -47,7 +47,7 @@ ht-degree: 6%
 | [!DNL Privacy Service] 重新品牌化 | 以前称为“GDPR服务”的更名为 [!DNL Privacy Service] 随着该服务的发展，除了GDPR之外，还支持其他法规。 |
 | 新的API端点 | 的基本路径 [!DNL Privacy Service] API已从 `/data/privacy/gdpr` to `/data/core/privacy/jobs` |
 | 新增必需 `regulation` 属性 | 在 [!DNL Privacy Service] API， a `regulation` 必须在请求有效负载中提供属性，以指示要跟踪作业的法规。 接受的值为 `gdpr` 和 `ccpa`. 请参阅 [隐私作业](api/privacy-jobs.md) 在 [!DNL Privacy Service] API指南以了解更多信息。 |
-| 支持Adobe Primetime身份验证 | [!DNL Privacy Service] 现在接受来自Adobe Primetime身份验证的访问/删除请求，使用 `primetimeAuthentication` 作为其产品价值。 请参阅 [Primetime身份验证文档](http://tve.helpdocsonline.com/how-to-make-a-privacy-request) 以了解更多信息。 |
+| 支持Adobe Primetime身份验证 | [!DNL Privacy Service] 现在接受来自Adobe Primetime身份验证的访问/删除请求，使用 `primetimeAuthentication` 作为其产品价值。 请参阅 [Primetime身份验证文档](https://tve.helpdocsonline.com/how-to-make-a-privacy-request) 以了解更多信息。 |
 
 ### 增强功能
 

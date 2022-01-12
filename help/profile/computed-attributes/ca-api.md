@@ -5,9 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: 在Adobe Experience Platform中，计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 这些函数会自动计算，以便在分段、激活和个性化期间使用。 本指南演示了如何使用实时客户配置文件API创建、查看、更新和删除计算属性。
 exl-id: 6b35ff63-590b-4ef5-ab39-c36c39ab1d58
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
-source-wordcount: '2272'
+source-wordcount: '2275'
 ht-degree: 2%
 
 ---
@@ -508,7 +508,7 @@ PATCH /config/computedAttributes/{ATTRIBUTE_ID}
 
 **请求**
 
-此请求使用 [JSON修补程序格式](http://jsonpatch.com/) 更新“expression”字段的“value”。
+此请求使用 [JSON修补程序格式](https://datatracker.ietf.org/doc/html/rfc6902) 更新“expression”字段的“value”。
 
 ```shell
 curl -X PATCH \

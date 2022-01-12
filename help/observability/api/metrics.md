@@ -5,9 +5,9 @@ title: 量度API端点
 topic-legacy: developer guide
 description: 了解如何使用可观测性分析API在Experience Platform中检索可观测性量度。
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: 5c893d7c8c455c86c94cd311a20ce774abcf65e0
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
-source-wordcount: '1866'
+source-wordcount: '1864'
 ht-degree: 5%
 
 ---
@@ -84,8 +84,8 @@ curl -X POST \
 | `metrics` | 对象数组，每个要检索的量度对应一个对象。 |
 | `name` | 可观测性分析所识别的量度的名称。 请参阅 [附录](#available-metrics) ，以获取已接受量度名称的完整列表。 |
 | `filters` | 允许您按特定数据集过滤量度的可选字段。 该字段是一个对象数组（每个过滤器对应一个对象），每个对象都包含以下属性： <ul><li>`name`:要过滤量度的实体类型。 目前，仅 `dataSets` 支持。</li><li>`value`:一个或多个数据集的ID。 多个数据集ID可以作为单个字符串提供，每个ID由垂直条字符(`\|`)。</li><li>`groupBy`:当设置为true时，表示对应的 `value` 表示应单独返回其量度结果的多个数据集。 如果设置为false，则这些数据集的量度结果会分组在一起。</li></ul> |
-| `aggregator` | 指定聚合函数，该函数应用于将多次序列记录分组为单个结果。 有关可用聚合器的详细信息，请参阅 [OpenTSDB文档](http://opentsdb.net/docs/build/html/user_guide/query/aggregators.html). |
-| `downsample` | 可选字段，用于指定聚合函数，以通过将字段分类为间隔（或“分段”）来降低量度数据的采样率。 缩减采样的间隔由 `granularity` 属性。 有关缩减采样的详细信息，请参阅 [OpenTSDB文档](http://opentsdb.net/docs/build/html/user_guide/query/downsampling.html). |
+| `aggregator` | 指定聚合函数，该函数应用于将多次序列记录分组为单个结果。 有关可用聚合器的详细信息，请参阅 [OpenTSDB文档](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
+| `downsample` | 可选字段，用于指定聚合函数，以通过将字段分类为间隔（或“分段”）来降低量度数据的采样率。 缩减采样的间隔由 `granularity` 属性。 有关缩减采样的详细信息，请参阅 [OpenTSDB文档](https://docs.w3cub.com/opentsdb/user_guide/query/aggregators). |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -178,7 +178,7 @@ curl -X POST \
 | `metric` | 请求中提供的其中一个量度的名称。 |
 | `filters` | 指定量度的过滤器配置。 |
 | `datapoints` | 一个数组，其对象表示指定量度和过滤器的结果。 数组中的对象数取决于请求中提供的筛选器选项。 如果未提供过滤器，则数组将只包含表示所有数据集的单个对象。 |
-| `groupBy` | 如果在 `filter` 属性， `groupBy` 选项在请求中设置为true，则此对象将包含对应 `dps` 属性。<br><br>如果此对象在响应中显示为空，则对应 `dps` 属性适用于中提供的所有数据集 `filters` 数组(或 [!DNL Platform] （如果未提供过滤器）。 |
+| `groupBy` | 如果在 `filter` 属性， `groupBy` 选项在请求中设置为true，则此对象将包含对应 `dps` 属性。<br><br>如果此对象在响应中显示为空，则对应 `dps` 属性适用于中提供的所有数据集 `filters` 数组(或 [!DNL Platform] 如果未提供过滤器)。 |
 | `dps` | 给定量度、过滤器和时间范围的返回数据。 此对象中的每个键都表示一个时间戳，其中包含指定量度的相应值。 每个数据点之间的时间段取决于 `granularity` 值。 |
 
 {style=&quot;table-layout:auto&quot;}

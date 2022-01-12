@@ -1,10 +1,11 @@
 ---
 title: 视图 Web扩展中
 description: 了解如何在Adobe Experience Platform Web扩展中为库模块定义视图。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 4471df3e-75e2-4257-84c0-dd7b708be417
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
 source-wordcount: '2063'
-ht-degree: 74%
+ht-degree: 76%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 74%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 每个事件、条件、操作或数据元素类型可以提供允许用户提供设置的视图。扩展还可以具有顶级[扩展配置视图](../configuration.md)，通过该视图，用户可以为整个扩展提供全局设置。在所有类型的视图中，视图的构建过程都是相同的。
 
@@ -32,7 +33,7 @@ ht-degree: 74%
 <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
 ```
 
-此脚本提供了一个通信API，用于允许视图与标记应用程序通信。
+此脚本提供了一个通信API，以允许视图与标记应用程序通信。
 
 ## 在扩展桥接通信 API 中注册
 
@@ -64,22 +65,22 @@ window.extensionBridge.register({
 
 ### [!DNL init]
 
-将视图加载到iframe后，标记会立即调用`init`方法。 它将传递一个参数 (`info`)，该参数必须是包含以下属性的对象：
+的 `init` 将视图加载到iframe后，标记会立即调用方法。 它将传递一个参数 (`info`)，该参数必须是包含以下属性的对象：
 
 | 属性 | 描述 |
 | --- | --- |
 | `settings` | 包含先前从此视图保存的设置的对象。如果 `settings` 为 `null`，则表示用户正在创建初始设置，而不是加载已保存的版本。如果 `settings` 是一个对象，则应该使用它来填充视图，因为用户正在选择编辑以前保留的设置。 |
-| `extensionSettings` | 从扩展配置视图保存的设置。在非扩展配置视图中访问扩展设置时，这可能很有用。如果当前视图是扩展配置视图，则使用`settings`。 |
+| `extensionSettings` | 从扩展配置视图保存的设置。在非扩展配置视图中访问扩展设置时，这可能很有用。如果当前视图是扩展配置视图，则使用 `settings`. |
 | `propertySettings` | 包含属性设置的对象。有关此对象中所包含内容的详细信息，请参阅 [turbine 对象指南](../turbine.md#property-settings)。 |
-| `tokens` | 包含 API 令牌的对象。要从视图内访问 Adobe API，您通常需要使用 `tokens.imsAccess` 下的 IMS 令牌。此令牌将仅可用于由Adobe开发的扩展。 如果您是代表Adobe创作的扩展的Adobe员工，请[向数据收集工程团队](mailto:reactor@adobe.com)发送电子邮件，并提供扩展的名称，以便我们可以将其添加到允许列表。 |
+| `tokens` | 包含 API 令牌的对象。要从视图内访问 Adobe API，您通常需要使用 `tokens.imsAccess` 下的 IMS 令牌。此令牌将仅可用于由Adobe开发的扩展。 如果您是Adobe员工，代表由Adobe创作的扩展，请 [向数据收集工程团队发送电子邮件](mailto:reactor@adobe.com) 并提供扩展的名称，以便我们可以将其添加到允许列表。 |
 | `company` | 包含单个属性 (`orgId`) 的对象，该属性本身表示您的 Adobe Experience Cloud ID（一个由 24 个字符组成的字母数字字符串）。 |
-| `schema` | [JSON 模式](http://json-schema.org/)格式中的对象。此对象将来自[扩展清单](../manifest.md)，并且可能有助于验证您的表单。 |
+| `schema` | [JSON 模式](https://json-schema.org/)格式中的对象。此对象将来自[扩展清单](../manifest.md)，并且可能有助于验证您的表单。 |
 
 您的视图应使用此信息来呈现和管理其表单。您可能只需要处理 `info.settings`，但其他信息会在必要时提供。
 
 ### [!DNL validate]
 
-用户点击“保存”按钮后，将调用`validate`方法。 它应返回以下任一值：
+的 `validate` 用户点击“保存”按钮后，将调用方法。 它应返回以下任一值：
 
 * 一个布尔值，指示用户的输入是否有效。
 * 一个稍后使用布尔值（指示用户的输入是否有效）解析的 promise。
@@ -90,7 +91,7 @@ window.extensionBridge.register({
 
 ### [!DNL getSettings]
 
-用户点击“保存”按钮并验证视图后，将调用`getSettings`方法。 该函数应返回以下任一值：
+的 `getSettings` 用户点击“保存”按钮并验证视图后，将调用方法。 该函数应返回以下任一值：
 
 * 一个对象，包含基于用户输入的设置。
 * 一个稍后使用包含基于用户输入的设置的对象解析的 promise。
@@ -99,7 +100,7 @@ window.extensionBridge.register({
 
 ## 利用共享视图
 
-`window.extensionBridge`对象有多种方法可让您利用通过标记提供的现有视图，这样您就不必在自己的视图中重现它们。 可用的方法如下：
+的 `window.extensionBridge` 对象有多种方法允许您利用通过标记提供的现有视图，这样您就不必在自己的视图中重现它们。 可用的方法如下：
 
 ### [!DNL openCodeEditor]
 
@@ -129,7 +130,7 @@ window.extensionBridge.openRegexTester().then(function(pattern) {
 | 属性 | 描述 |
 | --- | --- |
 | `pattern` | 应该用作测试器中模式字段初始值的正则表达式模式。通常在用户编辑现有正则表达式时提供。如果未提供，则模式字段最初将为空。 |
-| `flags` | 测试器应使用的正则表达式标志。例如，`gi` 将指示全局匹配标志和忽略大小写标志。用户不能在测试器中修改这些标志，但这些标志可用于演示扩展在执行正则表达式时将使用的特定标志。如果未提供，测试器将不使用任何标记。有关正则表达式标志的更多信息，请参阅 [MDN 的正则表达式文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)。<br><br>一种常见的情况是，扩展允许用户切换正则表达式的“区分大小写”选项。为了支持此功能，扩展通常会在其扩展视图中提供一个复选框，如果选中此复选框，则将启用不区分大小写（由`i`标记表示）。 该视图保存的设置对象将需要表示该复选框是否已选中，这样执行正则表达式的库模块就可以知道是否使用 `i` 标志。此外，当扩展视图希望打开正则表达式测试器时，如果选中了“不区分大小写”复选框，则需要传递`i`标记。 这允许用户在启用不区分大小写的情况下正确测试正则表达式。 |
+| `flags` | 测试器应使用的正则表达式标志。例如，`gi` 将指示全局匹配标志和忽略大小写标志。用户不能在测试器中修改这些标志，但这些标志可用于演示扩展在执行正则表达式时将使用的特定标志。如果未提供，测试器将不使用任何标记。有关正则表达式标志的更多信息，请参阅 [MDN 的正则表达式文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)。<br><br>一种常见的情况是，扩展允许用户切换正则表达式的“区分大小写”选项。为了支持此功能，扩展通常会在其扩展视图中提供一个复选框，如果选中此复选框，则将启用不区分大小写(由 `i` 标记)。 该视图保存的设置对象将需要表示该复选框是否已选中，这样执行正则表达式的库模块就可以知道是否使用 `i` 标志。此外，当扩展视图希望打开正则表达式测试器时，需要传递 `i` 标记是否选中了“不区分大小写”复选框。 这允许用户在启用不区分大小写的情况下正确测试正则表达式。 |
 
 ### [!DNL openDataElementSelector] {#open-data-element}
 
@@ -141,7 +142,7 @@ window.extensionBridge.openDataElementSelector().then(function(dataElement) {
 
 调用此方法将显示允许用户选择数据元素的模态。当用户选择完数据元素后，将使用选定数据元素的名称解析 promise（默认情况下，该名称将用百分比符号括起来）。如果用户在没有选择保存更改的情况下关闭元素选择器，则 promise 将永远不会得到解析。
 
-`options`对象应包含单个布尔属性`tokenize`。 此属性指示在解析 promise 之前是否应将选定数据元素的名称用百分比符号括起来。请参阅[支持数据元素](#supporting-data-elements)一节，了解这种属性有用的原因。此选项默认为 `true`。
+的 `options` 对象应包含单个布尔属性， `tokenize`. 此属性指示在解析 promise 之前是否应将选定数据元素的名称用百分比符号括起来。请参阅[支持数据元素](#supporting-data-elements)一节，了解这种属性有用的原因。此选项默认为 `true`。
 
 ## 支持数据元素 {#supporting-data-elements}
 
@@ -157,7 +158,7 @@ window.extensionBridge.openDataElementSelector().then(function(dataElement) {
 }
 ```
 
-在运行时，在将设置对象传递到库模块之前，会扫描设置对象，并将任何数据元素令牌替换为其各自的值。 如果在运行时，`productname`数据元素的值为`Ceiling Medallion Pro 2000`，则将传递到库模块的设置对象可能如下所示：
+在运行时，在将设置对象传递到库模块之前，会扫描设置对象，并将任何数据元素令牌替换为其各自的值。 如果在运行时， `productname` 数据元素 `Ceiling Medallion Pro 2000`，则将传递到库模块的设置对象可能如下所示：
 
 ```js
 {
@@ -215,7 +216,7 @@ window.extensionBridge.openDataElementSelector().then(function(dataElement) {
 }
 ```
 
-在这种情况下，由于 `productName` 的值不只是一个数据元素令牌，因此结果将始终为字符串。每个数据元素令牌在转换为字符串后将替换为其各自的值。如果在运行时，`productname`的值为`Ceiling Medallion Pro`（字符串），`modelnumber`为`2000`（数字），则传递到库模块的生成设置对象将为：
+在这种情况下，由于 `productName` 的值不只是一个数据元素令牌，因此结果将始终为字符串。每个数据元素令牌在转换为字符串后将替换为其各自的值。如果在运行时， `productname` wher `Ceiling Medallion Pro` （字符串）和 `modelnumber` wher `2000` （一个数字），传递给库模块的生成设置对象将为：
 
 ```js
 {

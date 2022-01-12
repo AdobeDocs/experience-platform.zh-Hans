@@ -6,41 +6,41 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程使用架构注册表API来指导您完成使用标准类编写架构的步骤。
 exl-id: fa487a5f-d914-48f6-8d1b-001a60303f3d
-source-git-commit: f269a7b1584a6e4a0e1820a0c587a647c0c8f7b5
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
 source-wordcount: '2422'
 ht-degree: 1%
 
 ---
 
-# 使用[!DNL Schema Registry] API创建架构
+# 使用创建架构 [!DNL Schema Registry] API
 
-[!DNL Schema Registry]用于访问Adobe Experience Platform中的[!DNL Schema Library]。 [!DNL Schema Library]包含由Adobe、[!DNL Experience Platform]合作伙伴以及您使用应用程序的供应商为您提供的资源。 注册表提供了用户界面和RESTful API，所有可用库资源均可从中访问。
+的 [!DNL Schema Registry] 用于访问 [!DNL Schema Library] 在Adobe Experience Platform。 的 [!DNL Schema Library] 包含按Adobe提供给您的资源， [!DNL Experience Platform] 合作伙伴以及您使用其应用程序的供应商。 注册表提供了用户界面和RESTful API，所有可用库资源均可从中访问。
 
-本教程使用[!DNL Schema Registry] API指导您完成使用标准类构建架构的步骤。 如果您希望使用[!DNL Experience Platform]中的用户界面，[架构编辑器教程](create-schema-ui.md)将提供在架构编辑器中执行类似操作的分步说明。
+本教程使用 [!DNL Schema Registry] 用于指导您完成使用标准类构建架构的步骤的API。 如果您希望在 [!DNL Experience Platform], [模式编辑器教程](create-schema-ui.md) 提供了在架构编辑器中执行类似操作的分步说明。
 
 ## 快速入门
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM) System]](../home.md):用于组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+* [[!DNL Experience Data Model (XDM) System]](../home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
    * [架构组合的基础知识](../schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
 * [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [[!DNL Sandboxes]](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-在开始本教程之前，请查看[开发人员指南](../api/getting-started.md) ，以了解成功调用[!DNL Schema Registry] API所需了解的重要信息。 这包括您的`{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意“接受”标头及其可能值）。
+在启动本教程之前，请查看 [开发人员指南](../api/getting-started.md) 以了解成功调用 [!DNL Schema Registry] API。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意接受标头及其可能值）。
 
-本教程将指导您完成构建忠诚度会员架构的步骤，该架构描述与零售忠诚度计划成员相关的数据。 开始之前，您可能希望预览附录中的[完整忠诚会员架构](#complete-schema)。
+本教程将指导您完成构建忠诚度会员架构的步骤，该架构描述与零售忠诚度计划成员相关的数据。 开始之前，您可能希望预览 [完整的会员架构](#complete-schema) 中。
 
 ## 使用标准类撰写架构
 
-可以将架构视为要摄取到[!DNL Experience Platform]中的数据的蓝图。 每个架构都由一个类和一个或多个架构字段组组成。 换言之，您无需添加字段组即可定义架构，但在大多数情况下，至少需要使用一个字段组。
+可以将架构视为要摄取到中的数据的蓝图 [!DNL Experience Platform]. 每个架构都由一个类和一个或多个架构字段组组成。 换言之，您无需添加字段组即可定义架构，但在大多数情况下，至少需要使用一个字段组。
 
 ### 分配类
 
 架构组合过程从选择类开始。 该类定义数据的关键行为方面（记录与时间系列），以及描述将要摄取的数据所需的最小字段。
 
-您在本教程中创建的架构使用[!DNL XDM Individual Profile]类。 [!DNL XDM Individual Profile] 是由Adobe提供的用于定义记录行为的标准类。有关行为的详细信息，请参阅[架构组合基础知识](../schema/composition.md)。
+您在本教程中创建的架构使用 [!DNL XDM Individual Profile] 类。 [!DNL XDM Individual Profile] 是由Adobe提供的用于定义记录行为的标准类。 有关行为的详细信息，请参阅 [架构组合基础知识](../schema/composition.md).
 
 要分配类，需要进行API调用，以在租户容器中创建(POST)新架构。 此调用包括架构将实现的类。 每个架构只能实现一个类。
 
@@ -52,7 +52,7 @@ POST /tenant/schemas
 
 **请求**
 
-请求必须包含引用类`$id`的`allOf`属性。 此属性定义架构将实现的“基类”。 在本例中，基类是[!DNL XDM Individual Profile]类。 [!DNL XDM Individual Profile]类的`$id`用作下`allOf`数组中`$ref`字段的值。
+请求必须包含 `allOf` 引用 `$id` 班上的。 此属性定义架构将实现的“基类”。 在本例中，基类是 [!DNL XDM Individual Profile] 类。 的 `$id` 的 [!DNL XDM Individual Profile] 类用作 `$ref` 字段 `allOf` 数组。
 
 ```SHELL
 curl -X POST \
@@ -76,7 +76,7 @@ curl -X POST \
 
 **响应**
 
-成功的请求会返回HTTP响应状态201（已创建），其中包含包含新创建架构详细信息（包括`$id`、`meta:altIt`和`version`）的响应主体。 这些值是只读的，由[!DNL Schema Registry]分配。
+成功的请求会返回HTTP响应状态201（已创建），其中包含包含新创建架构详细信息(包括 `$id`, `meta:altIt`和 `version`. 这些值是只读的，由 [!DNL Schema Registry].
 
 ```JSON
 {
@@ -116,7 +116,7 @@ curl -X POST \
 
 ### 查找架构
 
-要查看新创建的架构，请使用架构的`meta:altId`或编码为`$id`的URL URI执行查找(GET)请求。
+要查看新创建的架构，请使用 `meta:altId` 或URL编码 `$id` 架构的URI。
 
 **API格式**
 
@@ -180,7 +180,7 @@ curl -X GET \
 
 现在，已创建并确认忠诚度会员架构，接下来可以向其添加字段组。
 
-根据所选架构的类别，有不同的标准字段组可供使用。 每个字段组都包含一个`intendedToExtend`字段，该字段定义与该字段组兼容的类。
+根据所选架构的类别，有不同的标准字段组可供使用。 每个字段组都包含 `intendedToExtend` 字段定义与该字段组兼容的类。
 
 字段组定义了概念，如“name”或“address”，这些概念可在需要捕获相同信息的任何架构中重复使用。
 
@@ -211,7 +211,7 @@ curl -X PATCH \
 
 **响应**
 
-响应显示`meta:extends`数组中新添加的字段组，并包含`allOf`属性中字段组的`$ref`。
+响应将显示 `meta:extends` 数组并包含 `$ref` 到 `allOf` 属性。
 
 ```JSON
 {
@@ -259,7 +259,7 @@ curl -X PATCH \
 
 >[!TIP]
 >
->值得查看所有可用的字段组，以熟悉每个字段中包含的字段。 您可以列出(GET)所有可与特定类一起使用的字段组，方法是对“global”和“tenant”容器中的每个容器执行请求，并仅返回那些“meta:interedToExtend”字段与您使用的类匹配的字段组。 在这种情况下，它是[!DNL XDM Individual Profile]类，因此使用[!DNL XDM Individual Profile] `$id`:
+>值得查看所有可用的字段组，以熟悉每个字段中包含的字段。 您可以列出(GET)所有可与特定类一起使用的字段组，方法是对“global”和“tenant”容器中的每个容器执行请求，并仅返回那些“meta:interedToExtend”字段与您使用的类匹配的字段组。 在这种情况下， [!DNL XDM Individual Profile] 类，所以 [!DNL XDM Individual Profile] `$id` 使用：
 
 ```http
 GET /global/fieldgroups?property=meta:intendedToExtend==https://ns.adobe.com/xdm/context/profile
@@ -291,9 +291,9 @@ curl -X PATCH \
 
 **响应**
 
-响应显示`meta:extends`数组中新添加的字段组，并包含`allOf`属性中字段组的`$ref`。
+响应将显示 `meta:extends` 数组并包含 `$ref` 到 `allOf` 属性。
 
-忠诚度会员架构现在应在`allOf`数组中包含三个`$ref`值：“profile”、“profile-person-details”和“profile-personal-details”，如下所示。
+忠诚度会员架构现在应包含三个 `$ref` 值 `allOf` 数组：“profile”、“profile-person-details”和“profile-personal-details”，如下所示。
 
 ```JSON
 {
@@ -343,11 +343,11 @@ curl -X PATCH \
 
 忠诚度会员架构需要捕获忠诚度计划特有的信息。 此信息未包含在任何标准字段组中。
 
-[!DNL Schema Registry]允许您在租户容器中定义自己的字段组，以此来解决此问题。 这些字段组对您的组织是唯一的，IMS组织外的任何人都不可见或编辑。
+的 [!DNL Schema Registry] 通过允许您在租户容器中定义自己的字段组，可以解决此问题。 这些字段组对您的组织是唯一的，IMS组织外的任何人都不可见或编辑。
 
-要创建(POST)新字段组，您的请求必须包含`meta:intendedToExtend`字段，其中包含与字段组兼容的基类的`$id`，以及字段组将包含的属性。
+要创建(POST)新字段组，您的请求必须包含 `meta:intendedToExtend` 包含 `$id` 对于与字段组兼容的基类，以及字段组将包含的属性。
 
-任何自定义属性都必须嵌套在`TENANT_ID`下，以避免与其他字段组或字段发生冲突。
+任何自定义属性都必须嵌套在 `TENANT_ID` 以避免与其他字段组或字段发生冲突。
 
 **API格式**
 
@@ -418,7 +418,7 @@ curl -X POST\
 
 **响应**
 
-成功的请求会返回HTTP响应状态201（已创建），其中包含新创建字段组的详细信息（包括`$id`、`meta:altIt`和`version`）的响应主体。 这些值是只读的，由[!DNL Schema Registry]分配。
+成功的请求会返回HTTP响应状态201（已创建），其中包含新创建字段组的详细信息(包括 `$id`, `meta:altIt`和 `version`. 这些值是只读的，由 [!DNL Schema Registry].
 
 ```JSON
 {
@@ -497,7 +497,7 @@ curl -X POST\
 
 ### 将自定义字段组添加到架构
 
-现在，您可以按照与[添加标准字段组](#add-a-field-group)相同的步骤，将新创建的字段组添加到架构中。
+您现在可以按照 [添加标准字段组](#add-a-field-group) 将新创建的字段组添加到架构。
 
 **API格式**
 
@@ -524,7 +524,7 @@ curl -X PATCH \
 
 **响应**
 
-您可以看到字段组已成功添加，因为响应现在显示`meta:extends`数组中新添加的字段组，并包含`$ref`到`allOf`属性中的字段组。
+您可以看到字段组已成功添加，因为响应现在会在 `meta:extends` 数组并包含 `$ref` 到 `allOf` 属性。
 
 ```JSON
 {
@@ -598,9 +598,9 @@ curl -X GET \
 
 **响应**
 
-通过使用`application/vnd.adobe.xed-full+json; version=1` Accept标头，您可以看到显示所有属性的完整架构。 这些属性是类和字段组贡献的字段，这些字段组已用于组成架构。 在此示例响应中，单个属性属性已在空间上最小化。 您可以在本文档末尾的[附录](#appendix)中查看完整架构，包括所有属性及其属性。
+通过使用 `application/vnd.adobe.xed-full+json; version=1` 接受标头后，您可以看到显示所有属性的完整架构。 这些属性是类和字段组贡献的字段，这些字段组已用于组成架构。 在此示例响应中，单个属性属性已在空间上最小化。 您可以在 [附录](#appendix) 在本文档末尾。
 
-在`"properties"`下，您可以看到在添加自定义字段组时创建的`_{TENANT_ID}`命名空间。 在该命名空间中是“忠诚度”对象以及创建字段组时定义的字段。
+在 `"properties"`，您可以看到 `_{TENANT_ID}` 添加自定义字段组时创建的命名空间。 在该命名空间中是“忠诚度”对象以及创建字段组时定义的字段。
 
 ```JSON
 {
@@ -704,7 +704,7 @@ POST /tenant/datatypes
 
 **请求**
 
-定义数据类型不需要`meta:extends`或`meta:intendedToExtend`字段，也不需要嵌套字段以避免冲突。
+定义数据类型不需要 `meta:extends` 或 `meta:intendedToExtend` 字段，也无需嵌套字段以避免冲突。
 
 ```SHELL
 curl -X POST \
@@ -755,7 +755,7 @@ curl -X POST \
 
 **响应**
 
-成功的请求会返回HTTP响应状态201（已创建），其中包含新创建数据类型的详细信息（包括`$id`、`meta:altIt`和`version`）的响应主体。 这些值是只读的，由[!DNL Schema Registry]分配。
+成功的请求会返回HTTP响应状态201（已创建），其中包含新创建数据类型的详细信息(包括 `$id`, `meta:altIt`和 `version`. 这些值是只读的，由 [!DNL Schema Registry].
 
 ```JSON
 {
@@ -817,7 +817,7 @@ curl -X POST \
 }
 ```
 
-您可以使用编码为`$id` URI的URL执行查找(GET)请求，以直接查看新的数据类型。 请确保在查询请求的Accept标头中包含`version`。
+您可以使用已编码的URL执行查找(GET)请求 `$id` 用于直接查看新数据类型的URI。 请务必将 `version` 在您的接受标头中查找请求。
 
 ### 在架构中使用数据类型
 
@@ -857,7 +857,7 @@ curl -X PATCH \
 
 **响应**
 
-响应现在包括对“loyaty”对象中数据类型的引用(`$ref`)，而不是之前定义的字段。
+响应现在包含引用(`$ref`)，而不是之前定义的字段。
 
 ```JSON
 {
@@ -955,15 +955,15 @@ curl -X PATCH \
 
 ### 定义标识描述符
 
-架构用于将数据摄取到[!DNL Experience Platform]中。 此数据最终可跨多项服务使用，以创建单个统一视图。 为了帮助完成此过程，可将关键字段标记为“身份”，并且在摄取数据时，这些字段中的数据会插入该个人的“身份图”中。 然后，[[!DNL Real-time Customer Profile]](../../profile/home.md)和其他[!DNL Experience Platform]服务可以访问图形数据，以提供每个客户的拼合视图。
+架构用于将数据摄取到 [!DNL Experience Platform]. 此数据最终可跨多项服务使用，以创建单个统一视图。 为了帮助完成此过程，可将关键字段标记为“身份”，并且在摄取数据时，这些字段中的数据会插入该个人的“身份图”中。 然后，可以访问图形数据 [[!DNL Real-time Customer Profile]](../../profile/home.md) 其他 [!DNL Experience Platform] 提供拼合的每个客户视图的服务。
 
-通常标记为“身份”的字段包括：电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。
+通常标记为“身份”的字段包括：电子邮件地址，电话号码， [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID或其他唯一ID字段。
 
 考虑特定于贵组织的任何唯一标识符，因为它们也可能是良好的标识字段。
 
 标识描述符表示“sourceSchema”的“sourceProperty”是应视为“Identity”的唯一标识符。
 
-有关使用描述符的更多信息，请参阅[架构注册开发人员指南](../api/getting-started.md)。
+有关使用描述符的更多信息，请参阅 [架构注册开发人员指南](../api/getting-started.md).
 
 **API格式**
 
@@ -973,7 +973,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求在“loyatyId”字段中定义标识描述符。 这告知[!DNL Experience Platform]使用唯一忠诚度计划成员标识符（在本例中为成员的电子邮件地址）来帮助拼合有关个人的信息。
+以下请求在“loyatyId”字段中定义标识描述符。 这说明 [!DNL Experience Platform] 要使用唯一忠诚度计划成员标识符（在本例中为成员的电子邮件地址）来帮助拼合有关个人的信息。
 
 ```SHELL
 curl -X POST \
@@ -996,11 +996,11 @@ curl -X POST \
 
 >[!NOTE]
 >
->您可以列出可用的“xdm:namespace”值，或使用[[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service)创建新值。 “xdm:property”的值可以是“xdm:code”或“xdm:id”，具体取决于使用的“xdm:namespace”。
+>您可以列出可用的“xdm:namespace”值，或使用 [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service). “xdm:property”的值可以是“xdm:code”或“xdm:id”，具体取决于使用的“xdm:namespace”。
 
 **响应**
 
-成功的响应会返回HTTP状态201（已创建），其中包含新创建描述符的详细信息（包括其`@id`）的响应主体。 `@id`是由[!DNL Schema Registry]分配的只读字段，用于引用API中的描述符。
+成功的响应会返回HTTP状态201（已创建），其中包含新创建描述符的详细信息(包括其 `@id`. 的 `@id` 是由 [!DNL Schema Registry] 和用于在API中引用描述符。
 
 ```JSON
 {
@@ -1016,15 +1016,15 @@ curl -X POST \
 }
 ```
 
-## 启用架构以在[!DNL Real-time Customer Profile]中使用 {#profile}
+## 启用在中使用的架构 [!DNL Real-time Customer Profile] {#profile}
 
-通过将“union”标记添加到`meta:immutableTags`属性，可以启用会员架构以供[!DNL Real-time Customer Profile]使用。
+通过将“union”标记添加到 `meta:immutableTags` 属性时，您可以启用会员架构以供使用 [!DNL Real-time Customer Profile].
 
-有关使用并集视图的更多信息，请参阅[!DNL Schema Registry]开发人员指南中[unions](../api/unions.md)的部分。
+有关使用并集视图的更多信息，请参阅 [工会](../api/unions.md) 在 [!DNL Schema Registry] 开发人员指南。
 
 ### 添加“union”标记
 
-要将架构包含在合并的并集视图中，必须将“并集”标记添加到架构的`meta:immutableTags`属性中。 这可通过PATCH请求来更新架构并添加值为“union”的`meta:immutableTags`数组来完成。
+要将架构包含在合并的并集视图中，必须将“并集”标记添加到 `meta:immutableTags` 架构的属性。 这可通过PATCH请求来更新架构并添加 `meta:immutableTags` 值为“union”的数组。
 
 **API格式**
 
@@ -1049,7 +1049,7 @@ curl -X PATCH \
 
 **响应**
 
-响应显示操作已成功执行，并且架构现在包含顶级属性`meta:immutableTags`，该属性是一个包含值“union”的数组。
+响应显示操作已成功执行，并且架构现在包含顶级属性， `meta:immutableTags`，这是一个包含值“union”的数组。
 
 ```JSON
 {
@@ -1104,9 +1104,9 @@ curl -X PATCH \
 
 ### 在并集中列出架构
 
-现在，您已成功将架构添加到[!DNL XDM Individual Profile]并集。 要查看属于同一并集的所有架构的列表，您可以使用查询参数执行GET请求以过滤响应。
+现在，您已成功将架构添加到 [!DNL XDM Individual Profile] 并集。 要查看属于同一并集的所有架构的列表，您可以使用查询参数执行GET请求以过滤响应。
 
-使用`property`查询参数，您可以指定仅返回包含`meta:immutableTags`字段且`meta:class`等于[!DNL XDM Individual Profile]类的`$id`的架构。
+使用 `property` 查询参数，您可以指定仅包含 `meta:immutableTags` 具有 `meta:class` 等于 `$id` 的 [!DNL XDM Individual Profile] 类。
 
 **API格式**
 
@@ -1116,7 +1116,7 @@ GET /tenant/schemas?property=meta:immutableTags==union&property=meta:class=={CLA
 
 **请求**
 
-以下示例请求返回属于[!DNL XDM Individual Profile]并集的所有架构。
+以下示例请求返回属于 [!DNL XDM Individual Profile] 并集。
 
 ```SHELL
 curl -X GET \
@@ -1170,11 +1170,11 @@ curl -X GET \
 
 ## 后续步骤
 
-通过阅读本教程，您已使用标准字段组和您定义的字段组成功构建了一个架构。 您现在可以使用此架构创建数据集并将记录数据摄取到Adobe Experience Platform。
+通过阅读本教程，您已使用标准字段组和您定义的字段组成功构建了架构。 您现在可以使用此架构创建数据集并将记录数据摄取到Adobe Experience Platform。
 
 在本教程中创建的完整忠诚会员架构，位于以下附录中。 在查看架构时，您可以看到字段组对整体结构的贡献情况，以及哪些字段可用于数据摄取。
 
-创建多个架构后，您可以使用关系描述符定义它们之间的关系。 有关更多信息，请参阅[定义两个架构之间的关系的教程](relationship-api.md)。 有关如何在注册表中执行所有操作(GET、POST、PUT、PATCH和DELETE)的详细示例，请在使用API时参阅[架构注册开发人员指南](../api/getting-started.md)。
+创建多个架构后，您可以使用关系描述符定义它们之间的关系。 请参阅教程 [定义两个架构之间的关系](relationship-api.md) 以了解更多信息。 有关如何在注册表中执行所有操作(GET、POST、PUT、PATCH和DELETE)的详细示例，请参阅 [架构注册开发人员指南](../api/getting-started.md) 使用API时。
 
 ## 附录 {#appendix}
 
@@ -1184,7 +1184,7 @@ curl -X GET \
 
 在本教程中，我们构建了一个架构来描述零售忠诚度计划的成员。
 
-该模式实现[!DNL XDM Individual Profile]类并组合多个字段组；使用标准“人员详细信息”和“个人详细信息”字段组，以及通过教程中定义的“忠诚度详细信息”字段组，引入有关忠诚度会员的信息。
+架构实现 [!DNL XDM Individual Profile] 类和组合多个字段组；使用标准“人员详细信息”和“个人详细信息”字段组，以及通过教程中定义的“忠诚度详细信息”字段组，引入有关忠诚度会员的信息。
 
 以下显示了JSON格式的已完成会员架构：
 
@@ -1596,7 +1596,7 @@ curl -X GET \
                         "elevation": {
                             "title": "Elevation",
                             "type": "number",
-                            "description": "The specific elevation of the defined coordinate. The value conforms to the [WGS84](http://gisgeography.com/wgs84-world-geodetic-system/) datum and is measured in meters.",
+                            "description": "The specific elevation of the defined coordinate. The value conforms to the [WGS84](https://gisgeography.com/wgs84-world-geodetic-system/) datum and is measured in meters.",
                             "meta:xdmField": "schema:elevation",
                             "meta:xdmType": "number"
                         }

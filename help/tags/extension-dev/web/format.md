@@ -1,10 +1,11 @@
 ---
 title: Web扩展中的库模块
 description: 了解如何在Adobe Experience Platform中设置用于Web扩展的库模块的格式。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 08f2bb01-9071-49c5-a0ff-47d592cc34a5
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
-source-wordcount: '377'
-ht-degree: 64%
+source-wordcount: '378'
+ht-degree: 70%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 64%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 >[!IMPORTANT]
 >
@@ -20,7 +21,7 @@ ht-degree: 64%
 
 库模块是由扩展提供的一段可重用代码，在Adobe Experience Platform的标记运行时库中发出该扩展。 然后，此库在客户端的网站上运行。 例如，`gesture` 事件类型具有将在客户端网站上运行的库模块，并且可检测用户手势。
 
-库模块的结构为 [CommonJS 模块](http://wiki.commonjs.org/wiki/Modules/1.1.1)。在 CommonJS 模块中，可使用以下变量：
+库模块的结构为 [CommonJS 模块](https://nodejs.org/api/modules.html#modules-commonjs-modules)。在 CommonJS 模块中，可使用以下变量：
 
 ## [!DNL require]
 
@@ -70,4 +71,4 @@ module.exports = function(settings) {
 }
 ```
 
-`runs on startup` 将被立即记录，而 `runs when necessary` 则仅在标记引擎调用导出函数后才会被记录。虽然这对于特定模块而言可能是不必要的，但您可以通过在导出函数之前执行任何必要的设置来利用此功能。
+`runs on startup` 将立即记录，而 `runs when necessary` 只有在标记引擎调用导出函数后，才会记录该事件。 虽然这对于特定模块而言可能是不必要的，但您可以通过在导出函数之前执行任何必要的设置来利用此功能。

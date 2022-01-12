@@ -1,10 +1,11 @@
 ---
 title: 扩展清单
 description: 了解如何配置JSON清单文件，以告知Adobe Experience Platform如何正确使用您的扩展。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 7cac020b-3cfd-4a0a-a2d1-edee1be125d0
+source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
 workflow-type: tm+mt
 source-wordcount: '2647'
-ht-degree: 75%
+ht-degree: 76%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 75%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
 在扩展的基目录中，必须创建一个名为 `extension.json` 的文件。该文件包含有关扩展的重要详细信息，借助该信息，Adobe Experience Platform 可以正确使用扩展。其中的部分内容采用 [npm 的 `package.json`](https://docs.npmjs.com/files/package.json) 方式构成。
 
@@ -24,7 +25,7 @@ ht-degree: 75%
 | --- | --- |
 | `name` | 扩展的名称。此名称必须唯一，不同于所有其他 扩展，且必须符合[命名规则](#naming-rules)。**标记将用作标识符，在发布扩展后不应更改此设置。** |
 | `platform` | 用于此扩展的平台。目前唯一接受的值是 `web`。 |
-| `version` | 此扩展的版本。必须遵循 [semver](http://semver.org/) 版本控制格式。与 [npm 版本字段](https://docs.npmjs.com/files/package.json#version)规则相一致。 |
+| `version` | 此扩展的版本。必须遵循 [semver](https://semver.org/) 版本控制格式。与 [npm 版本字段](https://docs.npmjs.com/files/package.json#version)规则相一致。 |
 | `displayName` | 用户可读的扩展名称。这将向Platform用户显示。 无需提及“标记”或“扩展”；用户已经知道他们正在查看标记扩展。 |
 | `description` | 有关扩展的描述。这将向Platform用户显示。 如果您的扩展使用户能够在其网站上实施您的产品，请说明产品的功能。无需提及“标记”或“扩展”；用户已经知道他们正在查看标记扩展。 |
 | `iconPath`*（可选）* | 将为扩展显示的图标的相对路径。 不应以斜杠开头。必须引用一个扩展名为 `.svg` 的 SVG 文件。SVG应为正方形，并可以由Platform缩放。 |
@@ -71,7 +72,7 @@ ht-degree: 75%
     </tr>
     <tr>
       <td><code>schema</code></td>
-      <td><a href="http://json-schema.org/">JSON 模式</a>的对象，用来描述从扩展配置视图中保存的有效对象的格式。由于您是配置视图的开发者，因此您有责任确保所有保存的设置对象都与此模式匹配。当用户尝试使用 Platform 服务保存数据时，此模式还将用于执行验证。<br><br>模式对象的示例如下所示：
+      <td><a href="https://json-schema.org/">JSON 模式</a>的对象，用来描述从扩展配置视图中保存的有效对象的格式。由于您是配置视图的开发者，因此您有责任确保所有保存的设置对象都与此模式匹配。当用户尝试使用 Platform 服务保存数据时，此模式还将用于执行验证。<br><br>模式对象的示例如下所示：
 <pre class="JSON language-JSON hljs">
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
@@ -88,7 +89,7 @@ ht-degree: 75%
   "additionalProperties": false
 }
 </pre>
-      我们建议使用诸如 <a href="http://www.jsonschemavalidator.net/">JSON 模式验证器</a>之类的工具，手动测试您的模式。</td>
+      我们建议使用诸如 <a href="https://www.jsonschemavalidator.net/">JSON 模式验证器</a>之类的工具，手动测试您的模式。</td>
     </tr>
     <tr>
       <td><code>transforms</code> <em>（可选）</em></td>
@@ -119,7 +120,7 @@ ht-degree: 75%
     </tr>
     <tr>
       <td><code>categoryName</code> <em>（可选）</em></td>
-      <td>提供后，<code>displayName</code>将列在数据收集UI的<code>categoryName</code>下。 所有具有相同 <code>categoryName</code> 的类型都将列在同一类别下。例如，如果您的扩展提供了 <code>keyUp</code> 事件类型和 <code>keyDown</code> 事件类型，并且它们都具有 <code>categoryName</code> <code>Keyboard</code>，那么当用户在构建规则时从可用事件类型列表中进行选择时，这两个事件类型都会列在 Keyboard 类别下。<code>categoryName</code> 的值应当可供用户读取。</td>
+      <td>提供时， <code>displayName</code> 将列在 <code>categoryName</code> 在数据收集UI中。 所有具有相同 <code>categoryName</code> 的类型都将列在同一类别下。例如，如果您的扩展提供了 <code>keyUp</code> 事件类型和 <code>keyDown</code> 事件类型，并且它们都具有 <code>categoryName</code> <code>Keyboard</code>，那么当用户在构建规则时从可用事件类型列表中进行选择时，这两个事件类型都会列在 Keyboard 类别下。<code>categoryName</code> 的值应当可供用户读取。</td>
     </tr>
     <tr>
       <td><code>libPath</code></td>
@@ -131,24 +132,11 @@ ht-degree: 75%
     </tr>
     <tr>
       <td><code>schema</code></td>
-      <td><a href="http://json-schema.org/">JSON 模式</a>的对象，用来描述用户可保存的有效设置对象的格式。设置通常由用户使用数据收集用户界面来配置和保存。 在这些用例中，扩展的视图可采取必要步骤来验证用户提供的设置。另一方面，某些用户选择直接使用标记API，而无需任何用户界面的帮助。 此模式用于允许 Platform 正确验证用户保存的设置对象（不管是否使用了用户界面）是否采用了与运行时基于该设置对象执行操作的库模块相兼容的格式。<br><br>模式对象的示例如下所示：<br>
+      <td><a href="https://json-schema.org/">JSON 模式</a>的对象，用来描述用户可保存的有效设置对象的格式。设置通常由用户使用数据收集用户界面来配置和保存。 在这些用例中，扩展的视图可采取必要步骤来验证用户提供的设置。另一方面，某些用户选择直接使用标记API，而无需任何用户界面的帮助。 此模式用于允许 Platform 正确验证用户保存的设置对象（不管是否使用了用户界面）是否采用了与运行时基于该设置对象执行操作的库模块相兼容的格式。<br><br>模式对象的示例如下所示：<br>
 <pre class="JSON language-JSON hljs">
-{
-  "$schema":"http://json-schema.org/draft-04/schema#"
-  "type":"object",
-  "properties":{
-    "delay":{
-      "type":"number",
-      "minimum":1
-    }
-  },
-  “必需”：[
-    "delay"
-  ],
-  "additionalProperties":false
-}
+{ "$schema":"http://json-schema.org/draft-04/schema#", "type":"object"、"properties":{ "delay":{ "type":"number"、"minimum":1 } }, "required":[ "delay" ]、"additionalProperties":false }
 </pre>
-      我们建议使用诸如 <a href="http://www.jsonschemavalidator.net/">JSON 模式验证器</a>之类的工具，手动测试您的模式。</td>
+      我们建议使用诸如 <a href="https://www.jsonschemavalidator.net/">JSON 模式验证器</a>之类的工具，手动测试您的模式。</td>
     </tr>
     <tr>
       <td><code>transforms</code> <em>（可选）</em></td>
@@ -161,7 +149,7 @@ ht-degree: 75%
 
 对于某些特定用例，扩展需要先由Platform转换从视图保存的设置对象，然后再将这些设置对象发出到标记运行时库。 您可以通过在 `extension.json` 中定义类型定义时设置 `transforms` 属性，来要求执行一个或多个此类转换。`transforms` 属性是一个对象数组，其中的每个对象表示应当执行的转换。
 
-所有转换都需要一个 `type` 和 `propertyPath`。`type` 必须是 `function`、`remove` 和 `file` 之一，用于说明 Platform 应当对设置对象执行的转换。`propertyPath`是一个以句点分隔的字符串，用于告知标记在何处查找设置对象中需要修改的属性。 下面是一个设置对象及部分 `propertyPath` 的示例：
+所有转换都需要一个 `type` 和 `propertyPath`。`type` 必须是 `function`、`remove` 和 `file` 之一，用于说明 Platform 应当对设置对象执行的转换。的 `propertyPath` 是一个以句点分隔的字符串，用于告知标记在何处查找设置对象中需要修改的属性。 下面是一个设置对象及部分 `propertyPath` 的示例：
 
 ```js
 {
@@ -306,7 +294,7 @@ ht-degree: 75%
 }
 ```
 
-我们不希望在标记运行时库中包含属性`bar`。 为了解决我们的示例问题，我们将在 `extension.json` 的操作类型定义中定义转换，如下所示：
+我们不希望包含该资产 `bar` 在标记运行时库中。 为了解决我们的示例问题，我们将在 `extension.json` 的操作类型定义中定义转换，如下所示：
 
 ```json
 {
