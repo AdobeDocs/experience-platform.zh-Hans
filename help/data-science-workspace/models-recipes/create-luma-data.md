@@ -5,13 +5,13 @@ title: 创建Luma Web模式和数据集
 topic-legacy: tutorial
 type: Tutorial
 description: 本教程将为您提供Luma演示倾向模型所需的先决条件和资产。
-source-git-commit: fd0f6aa2ac73bdc0a5413c437d091df6bb5d38a6
+exl-id: a791e532-1116-4407-b745-fd6c2ac0d8f7
+source-git-commit: f57ca64c34f569f4402cb998af72e1e9022510ca
 workflow-type: tm+mt
 source-wordcount: '466'
 ht-degree: 1%
 
 ---
-
 
 # 创建Luma倾向模型架构和数据集
 
