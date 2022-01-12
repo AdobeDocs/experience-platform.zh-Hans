@@ -6,9 +6,9 @@ title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 86981f2bf97c9f504c17d9531cd51a58ab994dd2
+source-git-commit: dc7de355284e2f1f52939ca7a80344345ce92c43
 workflow-type: tm+mt
-source-wordcount: '1797'
+source-wordcount: '1879'
 ht-degree: 0%
 
 ---
@@ -83,7 +83,7 @@ ht-degree: 0%
 - **[!UICONTROL 处理时间]**:数据流处理所花费的时间。
 - **[!UICONTROL 收到的用户档案]**:数据流中接收的用户档案总数。
 - **[!UICONTROL 已激活身份]**:成功激活到选定目标的用户档案标识总数。
-- **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规而排除进行激活的配置文件标识总数。
+- **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规从激活中排除的配置文件标识总数。
 - **[!UICONTROL 身份失败]** 由于错误而未激活到目标的配置文件标识的总数。
 - **[!UICONTROL 激活率]**:已成功激活或跳过的已接收身份的百分比。 以下公式演示了如何计算此值：
    ![](../assets/ui/monitor-destinations/activation-rate-formula.png)
@@ -101,10 +101,21 @@ ht-degree: 0%
 
 ### 为批处理目标运行数据流 {#dataflow-runs-for-batch-destinations}
 
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_dataflow_run_details_activation"
+>title="数据流运行详细信息"
+>abstract="目标数据流运行详细信息包含有关区段激活状态的信息以及从实时客户配置文件获取的用于生成唯一标识的量度。 要了解更多信息，请查阅量度定义指南。"
+
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_profiles_received"
+>title="收到的用户档案"
+>abstract="数据流中接收的用户档案总数。 此值每60分钟更新一次。"
+>additional-url="https://adobe.com/go/destinations-monitor-dataflows-batch-en" text="在文档中了解更多信息"
+
 对于批处理目标， [!UICONTROL 数据流运行] 选项卡提供有关数据流运行的量度数据。 将显示单个运行及其特定量度的列表，以及以下身份总数：
 
 - **[!UICONTROL 已激活身份]**:成功激活到选定目标的单个配置文件标识的计数。
-- **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规，为选定目标排除用于激活的个人配置文件标识的计数。
+- **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规，从选定目标的激活中排除的单个配置文件标识计数。
 
 ![](../assets/ui/monitor-destinations/dataflow-runs-batch.png)
 
@@ -114,7 +125,7 @@ ht-degree: 0%
 - **[!UICONTROL 处理时间]**:处理数据流运行所花费的时间。
 - **[!UICONTROL 收到的用户档案]**:数据流中接收的用户档案总数。 此值每60分钟更新一次。
 - **[!UICONTROL 已激活身份]**:成功激活到选定目标的用户档案标识总数。
-- **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规而排除进行激活的配置文件标识总数。
+- **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规从激活中排除的配置文件标识总数。
 - **[!UICONTROL 状态]**:表示数据流处于的状态。 这可以是三种状态之一： [!UICONTROL 成功], [!UICONTROL 失败]和 [!UICONTROL 处理]. [!UICONTROL 成功] 表示数据流处于活动状态，并正在根据其提供的时间表导出数据。 [!UICONTROL 失败] 表示由于错误，数据激活已挂起。 [!UICONTROL 处理] 表示数据流尚未处于活动状态，通常在创建新数据流时会遇到该数据流。
 
 要查看特定数据流运行的详细信息，请从列表中选择运行的开始时间。
@@ -136,6 +147,11 @@ ht-degree: 0%
 ![](../assets/ui/monitor-destinations/dataflow-records-batch.png)
 
 ## 监控目标功能板 {#monitoring-destinations-dashboard}
+
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_activation"
+>title="激活"
+>abstract="目标激活包含有关区段激活状态的信息以及从实时客户资料获取的用于生成唯一标识的量度。"
 
 访问 [!UICONTROL 监控] 功能板，选择 **[!UICONTROL 监控]** (![监控图标](../assets/ui/monitor-destinations/monitoring-icon.png))。 在 [!UICONTROL 监控] 页面，选择 [!UICONTROL 目标]. 的 [!UICONTROL 监控] 功能板包含有关目标运行作业的量度和信息。
 
