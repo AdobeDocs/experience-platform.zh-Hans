@@ -4,9 +4,9 @@ title: 区段功能板
 description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 41ef7a6e6d3b0ee9afe762b19c8c286ceb361dbb
+source-git-commit: 2842344f4b17d76bf1c3313500e691357df31ebc
 workflow-type: tm+mt
-source-wordcount: '982'
+source-wordcount: '1047'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关区段的重要信息，这些信息是在每日快照期间捕获的。 本指南概述了如何在UI中访问和使用区段功能板，并提供了有关功能板中显示的可视化的更多信息。
 
-有关Platform用户界面中所有Adobe Experience Platform Segmentation Service功能的概述，请访问[Segmentation Service UI指南](../../segmentation/ui/overview.md)。
+要概述Platform用户界面中的所有Adobe Experience Platform分段服务功能，请访问 [Segmentation Service UI指南](../../segmentation/ui/overview.md).
 
 ## 区段功能板数据
 
@@ -29,19 +29,19 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 ## 浏览区段功能板
 
-要导航到Platform UI中的[!UICONTROL 区段]功能板，请选择左边栏中的&#x200B;**[!UICONTROL 区段]**，然后选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡以显示功能板。
+导航到 [!UICONTROL 区段] 功能板中，选择 **[!UICONTROL 区段]** 在左边栏中，选择 **[!UICONTROL 概述]** 选项卡来显示功能板。
 
 >[!NOTE]
 >
->如果贵组织是Platform的新用户，但尚未创建活动的配置文件数据集或合并策略，则[!UICONTROL 区段]功能板将不可见。 相反， [!UICONTROL 概述]选项卡会显示可帮助您开始分段的链接和文档。
+>如果贵组织是Platform的新用户，并且尚未创建活动的配置文件数据集或合并策略，则 [!UICONTROL 区段] 功能板不可见。 相反， [!UICONTROL 概述] 选项卡会显示可帮助您开始使用分段的链接和文档。
 
 ![](../images/segments/dashboard-overview.png)
 
-### 修改[!UICONTROL 区段]功能板
+### 修改 [!UICONTROL 区段] 仪表板
 
-通过选择&#x200B;**[!UICONTROL 修改功能板]**，可以修改[!UICONTROL 区段]功能板的外观。 这样，您就可以在功能板中移动、添加和删除小组件，以及访问&#x200B;**[!UICONTROL 小组件库]**，以探索可用的小组件并为贵组织创建自定义小组件。
+您可以修改 [!UICONTROL 区段] 通过选择 **[!UICONTROL 修改功能板]**. 这样，您就可以在功能板中移动、添加和删除小组件，以及访问 **[!UICONTROL 构件库]** 以浏览可用小组件并为贵组织创建自定义小组件。
 
-有关更多信息，请参阅[修改功能板](../customize/modify.md)和[小组件库概述](../customize/widget-library.md)文档。
+请参阅 [修改功能板](../customize/modify.md) 和 [构件库概述](../customize/widget-library.md) 文档以了解更多信息。
 
 ## 选择区段
 
@@ -63,7 +63,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 ## 标准小组件
 
-Adobe提供了多个标准小组件，您可以使用这些小组件来可视化与区段相关的不同量度。 您还可以使用[!UICONTROL Widget库]创建要与贵组织共享的自定义小组件。 要了解有关创建自定义小组件的更多信息，请首先阅读[小组件库概述](../customize/widget-library.md)。
+Adobe提供了多个标准小组件，您可以使用这些小组件来可视化与区段相关的不同量度。 您还可以使用 [!UICONTROL 构件库]. 要了解有关创建自定义小组件的更多信息，请首先阅读 [构件库概述](../customize/widget-library.md).
 
 要进一步了解每个可用的标准小组件，请从以下列表中选择小组件的名称：
 
@@ -74,40 +74,44 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 受众大小] {#audience-size}
 
-**[!UICONTROL 受众大小]**&#x200B;小组件显示拍摄快照时选定区段内合并的配置文件总数。 此数字是将区段合并策略应用于配置文件数据的结果，以便将配置文件片段合并在一起，为区段中的每个人形成一个配置文件。
+的 **[!UICONTROL 受众大小]** 小组件显示拍摄快照时选定区段内合并的配置文件总数。 此数字是将区段合并策略应用于配置文件数据的结果，以便将配置文件片段合并在一起，为区段中的每个人形成一个配置文件。
 
-有关片段和合并配置文件的更多信息，请首先阅读[实时客户配置文件概述](../../profile/home.md)。
+有关片段和合并的用户档案的更多信息，请首先阅读 [实时客户资料概述](../../profile/home.md).
 
 ![](../images/segments/audience-size.png)
 
 ### [!UICONTROL 受众大小趋势] {#audience-size-trend}
 
-**[!UICONTROL 受众大小趋势]**&#x200B;小组件提供有关在每日快照期间、最近30天、90天或12个月捕获的区段中配置文件总数的信息。 此小组件显示随着新用户档案符合区段资格或退出区段，区段大小可能随时间而发生的变化。
+的 **[!UICONTROL 受众大小趋势]** 小组件提供有关在每日快照期间、过去30天、90天或12个月内捕获的区段内配置文件总数的信息。 此小组件显示随着新用户档案符合区段资格或退出区段，区段大小可能随时间而发生的变化。
 
-要了解有关区段评估以及用户档案如何确定和退出区段的更多信息，请参阅[Segmentation Service文档](../../segmentation/home.md)。
+要了解有关区段评估以及用户档案如何确定并退出区段的更多信息，请参阅 [Segmentation Service文档](../../segmentation/home.md).
 
-![](../images/segments/audience-size-trend.png)
+![区段概述会显示受众大小趋势小组件。](../images/segments/audience-size-trend-captions.png)
+
+的 **[!UICONTROL 受众大小趋势]** 小组件提供 [!UICONTROL 字幕] 按钮。 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。 机器学习模型通过分析图表和区段数据自动生成字幕以描述关键趋势和重要事件。
+
+![受众大小趋势小组件的自动字幕对话框。](../images/segments/audience-size-trend-automatic-captions-dialog.png)
 
 ### [!UICONTROL 身份重叠] {#identity-overlap}
 
-**[!UICONTROL 身份重叠]**&#x200B;小组件会显示维恩图或设置图，其中显示了包含多个身份的区段中配置文件的重叠。
+的 **[!UICONTROL 身份重叠]** 小组件会显示维恩图或设置图，以显示包含多个身份的区段中配置文件的重叠。
 
 使用小组件上的下拉菜单选择要比较的身份后，圆圈会显示每个身份的相对大小，其中包含两个命名空间的用户档案数量由圈子之间重叠的大小表示。
 
 如果客户在多个渠道上与您的品牌进行交互，则多个身份将与该个别客户关联，因此，您的组织可能具有多个包含多个身份片段的用户档案。
 
-要了解有关身份的更多信息，请访问[Adobe Experience Platform Identity Service文档](../../identity-service/home.md)。
+要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
 
 ![](../images/segments/identity-overlap.png)
 
 ### [!UICONTROL 按身份划分的用户档案] {#profiles-by-identity}
 
-**[!UICONTROL 按身份划分的配置文件]**&#x200B;小组件可显示选定区段中所有合并配置文件的身份划分。 按身份划分的用户档案总数可能大于区段中的用户档案总数，因为一个用户档案可能具有多个与其关联的身份。 换言之，将每个身份显示的值相加，可能总计会大于区段中的受众总大小，因为如果客户在多个渠道上与您的品牌进行交互，则多个身份可能会与该个别客户关联。
+的 **[!UICONTROL 按身份划分的用户档案]** 小组件显示选定区段中所有合并配置文件的身份划分。 按身份划分的用户档案总数可能大于区段中的用户档案总数，因为一个用户档案可能具有多个与其关联的身份。 换言之，将每个身份显示的值相加，可能总计会大于区段中的受众总大小，因为如果客户在多个渠道上与您的品牌进行交互，则多个身份可能会与该个别客户关联。
 
-要了解有关身份的更多信息，请访问[Adobe Experience Platform Identity Service文档](../../identity-service/home.md)。
+要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
 
 ![](../images/segments/profiles-by-identity.png)
 
 ## 后续步骤
 
-通过遵循本文档，您现在应该能够找到区段仪表板，并选择要查看的区段。 您还应了解可用小组件中显示的量度。 要了解有关在Experience PlatformUI中使用区段的更多信息，请参阅[Segmentation Service UI指南](../../segmentation/ui/overview.md)。
+通过遵循本文档，您现在应该能够找到区段仪表板，并选择要查看的区段。 您还应了解可用小组件中显示的量度。 要了解有关在Experience PlatformUI中使用区段的更多信息，请参阅 [Segmentation Service UI指南](../../segmentation/ui/overview.md).
