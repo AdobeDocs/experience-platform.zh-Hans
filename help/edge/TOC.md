@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
-source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
+source-git-commit: ccda6d3e16fd6b9966c2f30491feed5fafec47f2
 workflow-type: tm+mt
-source-wordcount: '142'
-ht-degree: 35%
+source-wordcount: '141'
+ht-degree: 37%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 35%
 # Adobe Experience Platform Web SDK {#edge}
 
 * [平台Web SDK概述](home.md)
-* 基础知识{#fundamentals}
+* 基础 {#fundamentals}
    * [先决条件](fundamentals/prerequisite.md)
    * [配置数据流](fundamentals/datastreams.md)
    * [安装SDK](fundamentals/installing-the-sdk.md)
@@ -27,7 +27,7 @@ ht-degree: 35%
    * [配置CSP](fundamentals/configuring-a-csp.md)
    * [与多个属性交互](fundamentals/interacting-with-multiple-properties.md)
    * [支持的用例](fundamentals/supported-use-cases.md)
-* 标识{#identity}
+* 标识 {#identity}
    * [概述](identity/overview.md)
 * 数据收集 {#data-collection}
    * [自动收集的信息](data-collection/automatic-information.md)
@@ -47,13 +47,13 @@ ht-degree: 35%
       * [访问响应令牌](personalization/adobe-target/accessing-response-tokens.md)
    * Offer Decisioning {#offer-decisioning}
       * [概述](personalization/offer-decisioning/offer-decisioning-overview.md)
-* 同意{#consent}
+* 同意 {#consent}
    * [支持同意](consent/supporting-consent.md)
    * IAB透明度和同意框架2.0 {#iab-tcf}
       * [概述](consent/iab-tcf/overview.md)
       * [与标记集成](consent/iab-tcf/with-launch.md)
       * [无标记集成](consent/iab-tcf/without-launch.md)
-* Web SDK标记扩展{#extension}
+* Web SDK标记扩展 {#extension}
    * [Web SDK扩展](extension/web-sdk-extension-configuration.md)
    * [事件类型](extension/event-types.md)
    * [操作类型](extension/action-types.md)
@@ -62,4 +62,4 @@ ht-degree: 35%
    * [Web SDK扩展发行说明](extension/web-sdk-ext-release-notes.md)
 * [发行说明](release-notes.md)
 * [常见问题](web-sdk-faq.md)
-* [博客帖子](blog-posts.md)
+* [资源](resources.md)
