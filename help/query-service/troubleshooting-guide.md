@@ -5,16 +5,16 @@ title: 查询服务疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档包含有关您遇到的常见错误代码以及可能原因的信息。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 42288ae7db6fb19bc0a0ee8e4ecfa50b7d63d017
+source-git-commit: ac313e2a23037507c95d6713a83ad5ca07e1cd85
 workflow-type: tm+mt
-source-wordcount: '699'
+source-wordcount: '769'
 ht-degree: 4%
 
 ---
 
 # [!DNL Query Service] 疑难解答指南
 
-本文档提供了有关查询服务的常见问题解答，并提供了使用查询服务时常见错误代码的列表。 有关Adobe Experience Platform中与其他服务相关的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
+本文档提供了有关查询服务的常见问题解答，并提供了使用查询服务时常见错误代码的列表。 有关Adobe Experience Platform中其他服务的相关问题和疑难解答，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md).
 
 ## 常见问题
 
@@ -62,7 +62,7 @@ LIMIT 100;
 
 >[!NOTE]
 >
-> 日期字符串&#x200B;**必须**&#x200B;的格式为`yyyy-mm-ddTHH24:MM:SS`。
+> 日期字符串 **必须** 格式 `yyyy-mm-ddTHH24:MM:SS`.
 
 使用时间戳过滤器的示例如下所示：
 
@@ -77,13 +77,13 @@ WHERE  timestamp >= To_timestamp('2021-01-21 12:00:00')
 
 ### 我是否应使用通配符（如*）从数据集获取所有行？
 
-不能使用通配符从行中获取所有数据，因为查询服务应当被视为&#x200B;**colum-store**，而不是传统的基于行的存储系统。
+不能使用通配符从行中获取所有数据，因为查询服务应当被视为 **柱状存储** 而不是传统的基于行的存储系统。
 
-### 我应该在SQL查询中使用`NOT IN`吗？
+### 我应该使用 `NOT IN` ?
 
-`NOT IN`运算符通常用于检索未在其他表或SQL语句中找到的行。 此运算符可能会降低性能，如果正在比较的列接受`NOT NULL`，或者您有大量记录，则可能会返回意外结果。
+的 `NOT IN` 运算符通常用于检索未在其他表或SQL语句中找到的行。 此运算符可能会降低性能，如果正在比较的列接受，则可能会返回意外结果 `NOT NULL`，或者您有大量记录。
 
-您可以使用`NOT EXISTS`或`LEFT OUTER JOIN`，而不是使用`NOT IN`。
+而不是使用 `NOT IN`，则可以使用 `NOT EXISTS` 或 `LEFT OUTER JOIN`.
 
 例如，如果您创建了以下表：
 
@@ -97,7 +97,7 @@ INSERT INTO T2 VALUES (1)
 INSERT INTO T2 VALUES (2)
 ```
 
-如果您使用`NOT EXISTS`运算符，则可以使用以下查询来复制使用`NOT IN`运算符：
+如果您使用 `NOT EXISTS` 运算符，您可以使用 `NOT IN` 运算符：
 
 ```sql
 SELECT ID FROM T1
@@ -105,7 +105,7 @@ WHERE NOT EXISTS
 (SELECT ID FROM T2 WHERE T1.ID = T2.ID)
 ```
 
-或者，如果您使用`LEFT OUTER JOIN`运算符，则可以使用`NOT IN`运算符通过以下查询进行复制：
+或者，如果您使用 `LEFT OUTER JOIN` 运算符，您可以使用 `NOT IN` 运算符：
 
 ```sql
 SELECT T1.ID FROM T1
@@ -113,11 +113,11 @@ LEFT OUTER JOIN T2 ON T1.ID = T2.ID
 WHERE T2.ID IS NULL
 ```
 
-### `OR`和`UNION`运算符的正确用法是什么？
+### 正确使用的 `OR` 和 `UNION` 运算符？
 
-### 如何正确使用`CAST`运算符来转换SQL查询中的时间戳？
+### 如何正确使用 `CAST` 运算符来转换SQL查询中的时间戳？
 
-使用`CAST`运算符转换时间戳时，需要同时包含日期&#x200B;**和**&#x200B;时间。
+使用 `CAST` 运算符来转换时间戳，您需要同时包含这两个日期 **和** 时间。
 
 例如，如下所示，缺少时间组件将导致错误：
 
@@ -126,12 +126,16 @@ SELECT * FROM ABC
 WHERE timestamp = CAST('07-29-2021' AS timestamp)
 ```
 
-`CAST`运算符的正确用法如下所示：
+正确使用 `CAST` 运算符如下所示：
 
 ```sql
 SELECT * FROM ABC
 WHERE timestamp = CAST('07-29-2021 00:00:00' AS timestamp)
 ```
+
+### 如何将查询结果下载为CSV文件？
+
+查询服务不直接提供此功能。 但是，如果 [!DNL PostgreSQL] 用于连接到数据库服务器的客户端具有该功能，可以将SELECT查询的响应写入并下载为CSV文件。 有关此过程的说明，请参阅您所使用的实用工具或第三方工具的文档。
 
 ## REST API错误
 
@@ -147,7 +151,7 @@ WHERE timestamp = CAST('07-29-2021 00:00:00' AS timestamp)
 | ---------- | ---------------- | ----------- | -------------- |
 | **08P01** | 不适用 | 不支持的消息类型 | 不支持的消息类型 |
 | **2001年2月28日** | 启动 — 身份验证 | 密码无效 | 身份验证令牌无效 |
-| **28000** | 启动 — 身份验证 | 授权类型无效 | 授权类型无效。 必须为`AuthenticationCleartextPassword`。 |
+| **28000** | 启动 — 身份验证 | 授权类型无效 | 授权类型无效。 必须为 `AuthenticationCleartextPassword`. |
 | **42P12** | 启动 — 身份验证 | 未找到表 | 未找到要使用的表 |
 | **42601** | 查询 | 语法错误 | 命令或语法错误无效 |
 | **42P01** | 查询 | 未找到表 | 在查询中指定的表未找到 |
@@ -156,7 +160,7 @@ WHERE timestamp = CAST('07-29-2021 00:00:00' AS timestamp)
 | **53400** | 查询 | 语句超时 | 提交的实时声明最多需要10分钟 |
 | **58000** | 查询 | 系统错误 | 内部系统故障 |
 | **0A000** | 查询/命令 | 不受支持 | 查询/命令中的特性/功能不受支持 |
-| **42501** | 拖放表查询 | 删除查询服务未创建的表 | 正在删除的表不是由查询服务使用`CREATE TABLE`语句创建的 |
+| **42501** | 拖放表查询 | 删除查询服务未创建的表 | 正在删除的表不是由查询服务使用 `CREATE TABLE` 语句 |
 | **42501** | 拖放表查询 | 表未由经过身份验证的用户创建 | 正在删除的表不是由当前已登录的用户创建的 |
 | **42P01** | 拖放表查询 | 未找到表 | 未找到查询中指定的表 |
-| **42P12** | 拖放表查询 | 未找到`dbName`的表：请检查`dbName` | 在当前数据库中未找到表 |
+| **42P12** | 拖放表查询 | 找不到的表 `dbName`:请检查 `dbName` | 在当前数据库中未找到表 |
