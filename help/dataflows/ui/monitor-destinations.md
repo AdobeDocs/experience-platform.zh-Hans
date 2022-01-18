@@ -6,9 +6,9 @@ title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: dc7de355284e2f1f52939ca7a80344345ce92c43
+source-git-commit: 567cfd5ecec23d35317a46a3126a608cc4792a73
 workflow-type: tm+mt
-source-wordcount: '1879'
+source-wordcount: '1897'
 ht-degree: 0%
 
 ---
@@ -152,6 +152,11 @@ ht-degree: 0%
 >id="platform_monitoring_activation"
 >title="激活"
 >abstract="目标激活包含有关区段激活状态的信息以及从实时客户资料获取的用于生成唯一标识的量度。"
+
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_segment_jobs"
+>title="区段作业"
+>abstract="区段作业仪表板包含有关所有区段的评估和导出作业的信息。"
 
 访问 [!UICONTROL 监控] 功能板，选择 **[!UICONTROL 监控]** (![监控图标](../assets/ui/monitor-destinations/monitoring-icon.png))。 在 [!UICONTROL 监控] 页面，选择 [!UICONTROL 目标]. 的 [!UICONTROL 监控] 功能板包含有关目标运行作业的量度和信息。
 
