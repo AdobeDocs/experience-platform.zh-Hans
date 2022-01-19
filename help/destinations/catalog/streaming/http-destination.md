@@ -3,32 +3,57 @@ keywords: 流；
 title: HTTP API连接
 description: 利用Adobe Experience Platform中的HTTP API目标，可将配置文件数据发送到第三方HTTP端点。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: ba338972be13c7afa6720bba3f0fc96d244b8f9f
+source-git-commit: f098df9df2baa971db44a6746949f021e212ae3e
 workflow-type: tm+mt
-source-wordcount: '646'
+source-wordcount: '833'
 ht-degree: 1%
 
 ---
 
-# （测试版） [!DNL HTTP] API连接
+# （测试版）HTTP API连接
 
 >[!IMPORTANT]
 >
->的 [!DNL HTTP] 平台中的目标当前为测试版。 文档和功能可能会发生变化。
+>Platform中的HTTP API目标当前处于测试阶段。 文档和功能可能会发生变化。
 
 ## 概述 {#overview}
 
-的 [!DNL HTTP] API目标是 [!DNL Adobe Experience Platform] 可帮助您将用户档案数据发送到第三方的流目标 [!DNL HTTP] 端点。
+HTTP API目标是 [!DNL Adobe Experience Platform] 流目标，帮助您将用户档案数据发送到第三方HTTP端点。
 
-将用户档案数据发送到 [!DNL HTTP] 端点，您必须首先在 [[!DNL Adobe Experience Platform]](#connect-destination).
+要将用户档案数据发送到HTTP端点，您必须先 [连接到目标](#connect-destination) in [!DNL Adobe Experience Platform].
 
 ## 用例 {#use-cases}
 
-的 [!DNL HTTP] 目标针对需要将XDM配置文件数据和受众区段导出到通用 [!DNL HTTP] 端点。
+HTTP目标面向需要将XDM配置文件数据和受众区段导出到通用HTTP端点的客户。
 
-[!DNL HTTP] 端点可以是客户自己的系统或第三方解决方案。
+HTTP端点可以是客户自己的系统或第三方解决方案。
 
-## 连接到目标 {#connect}
+## 先决条件 {#prerequisites}
+
+>[!IMPORTANT]
+>
+>如果您希望为公司启用HTTP API目标测试版功能，请联系您的Adobe代表或Adobe客户关怀团队。
+
+要使用HTTP API目标导出Experience Platform外的数据，您必须满足以下先决条件：
+
+* 您必须具有支持REST API的HTTP端点。
+* 您的HTTP端点必须支持Experience Platform配置文件架构。 HTTP API目标不支持转换为第三方有效负载架构。 请参阅 [导出的数据](#exported-data) 部分，以了解Experience Platform输出模式的示例。
+* 您的HTTP端点必须支持标头。
+* 您的HTTP端点必须支持 [OAuth 2.0客户端凭据](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) 身份验证。 当HTTP API目标处于测试阶段时，此要求有效。
+* 客户端凭据需要包含在对您端点的POST请求正文中，如以下示例所示。
+
+```shell
+curl --location --request POST '<YOUR_API_ENDPOINT>' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'grant_type=client_credentials' \
+--data-urlencode 'client_id=<CLIENT_ID>' \
+--data-urlencode 'client_secret=<CLIENT_SECRET>'
+```
+
+
+您还可以使用 [Adobe Experience Platform Destination SDK](/help/destinations/destination-sdk/overview.md) 以设置集成并将Experience Platform配置文件数据发送到HTTP端点。
+
+## 连接到目标 {#connect-destination}
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
