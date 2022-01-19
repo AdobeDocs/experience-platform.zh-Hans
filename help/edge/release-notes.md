@@ -3,14 +3,20 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK;Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 7d7a9357f17b941a8f7800be86f211bb1276698d
+source-git-commit: a768cde86215ed9aad19e45362c6185276456703
 workflow-type: tm+mt
-source-wordcount: '811'
+source-wordcount: '852'
 ht-degree: 4%
 
 ---
 
 # 发行说明
+
+## 2.8.0版 — 2022年1月19日
+
+* 支持用于个性化的卷影DOM选择器。
+* 重命名了个性化事件类型。 (`display` 和 `click` 变成 `decisioning.propositionDisplay` 和 `decisioning.propositionInteract`)
+* 修复了即使脚本只运行一次，带有内联脚本标记的HTML选件仍会将脚本标记添加两次到页面的问题。
 
 ## 2.7.0版 — 2021年10月26日
 
