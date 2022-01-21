@@ -6,7 +6,7 @@ title: 在UI中监视源的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: 507fa2981f99cad26b117eb576c9dc18080886c8
+source-git-commit: 241deb93b3500139b79425a4da79258670e044a8
 workflow-type: tm+mt
 source-wordcount: '1806'
 ht-degree: 0%
@@ -41,13 +41,13 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_source_ingestion"
 >title="源摄取"
->abstract="源处理包含有关数据湖服务中数据活动状态和量度的信息，包括摄取的记录和失败的记录。 <br> 查看量度定义指南，了解有关量度和图形的更多信息。"
+>abstract="源处理包含有关数据湖服务中数据活动状态和量度的信息，包括摄取的记录和失败的记录。 查看量度定义指南，了解有关量度和图形的更多信息。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_ingestion"
 >title="数据流运行详细信息"
->abstract="源处理包含有关数据湖服务中数据活动状态和量度的信息，包括摄取的记录和失败的记录。 <br> 查看量度定义指南，了解有关量度和图形的更多信息。"
+>abstract="源处理包含有关数据湖服务中数据活动状态和量度的信息，包括摄取的记录和失败的记录。 查看量度定义指南，了解有关量度和图形的更多信息。"
 >text="Learn more in documentation"
 
 在 [平台UI](https://platform.adobe.com)，选择 **[!UICONTROL 监控]** 从左侧导航访问 [!UICONTROL 监控] 功能板。 的 [!UICONTROL 监控] 功能板包含有关所有源数据流的量度和信息，包括对从源到的数据流量运行状况的分析 [!DNL Identity Service]和 [!DNL Profile].
@@ -151,7 +151,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_identity_processing"
 >title="身份处理"
->abstract="身份处理包含有关摄取到Identity服务的记录的信息，包括添加的身份数、创建的图形和更新的图形。 <br> 查看量度定义指南，了解有关量度和图形的更多信息。"
+>abstract="身份处理包含有关摄取到Identity服务的记录的信息，包括添加的身份数、创建的图形和更新的图形。 查看量度定义指南，了解有关量度和图形的更多信息。"
 >text="Learn more in documentation"
 
 的 [!UICONTROL 身份处理] 页面包含有关摄取到的记录的信息 [!DNL Identity Service]，包括添加的标识数、创建的图表和更新的图表。
