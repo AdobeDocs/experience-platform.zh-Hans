@@ -6,9 +6,9 @@ title: 在UI中监视源的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: 241deb93b3500139b79425a4da79258670e044a8
+source-git-commit: 38e56beacd8857648abbbf20f4a5c4941ff779ee
 workflow-type: tm+mt
-source-wordcount: '1806'
+source-wordcount: '1856'
 ht-degree: 0%
 
 ---
@@ -154,6 +154,11 @@ ht-degree: 0%
 >abstract="身份处理包含有关摄取到Identity服务的记录的信息，包括添加的身份数、创建的图形和更新的图形。 查看量度定义指南，了解有关量度和图形的更多信息。"
 >text="Learn more in documentation"
 
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_dataflow_run_details_identity"
+>title="数据流运行详细信息"
+>abstract="“数据流运行详细信息”页显示有关身份数据流运行的更多信息，包括其IMS组织ID和数据流运行ID。"
+
 的 [!UICONTROL 身份处理] 页面包含有关摄取到的记录的信息 [!DNL Identity Service]，包括添加的标识数、创建的图表和更新的图表。
 
 选择过滤器图标 ![过滤器](../assets/ui/monitor-sources/filter.png) 数据流运行开始时间旁边，查看 [!DNL Identity] 数据流运行。
@@ -191,6 +196,11 @@ ht-degree: 0%
 >title="配置文件处理"
 >abstract="配置文件处理包含有关摄取到配置文件服务的记录的信息，包括创建的配置文件片段数、更新的配置文件片段以及配置文件片段总数。"
 >text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_dataflow_run_details_profile"
+>title="数据流运行详细信息"
+>abstract="“数据流运行详细信息”页显示有关配置文件数据流运行的更多信息，包括其IMS组织ID和数据流运行ID。"
 
 的 [!UICONTROL 配置文件处理] 页面包含有关摄取到的记录的信息 [!DNL Profile]，包括创建的配置文件片段数、更新的配置文件片段数，以及配置文件片段总数。
 
