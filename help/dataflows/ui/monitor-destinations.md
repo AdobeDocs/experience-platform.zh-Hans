@@ -6,9 +6,9 @@ title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: b9f9e709fe51000a32eaea7a1a7c76488a36dd9b
+source-git-commit: b66c39016b2ccd4a4e24899f9e59f9a80cdc531b
 workflow-type: tm+mt
-source-wordcount: '2050'
+source-wordcount: '2085'
 ht-degree: 0%
 
 ---
@@ -135,6 +135,11 @@ ht-degree: 0%
 >title="收到的用户档案"
 >abstract="数据流中接收的用户档案总数。 此值每60分钟更新一次。"
 >text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_monitoring_dataflow_run_details_activation"
+>title="数据流运行详细信息"
+>abstract="目标数据流运行详细信息包含有关区段激活状态的信息以及从实时客户配置文件获取的用于生成唯一标识的量度。 要了解更多信息，请查阅量度定义指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation_batch"
