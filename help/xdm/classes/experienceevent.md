@@ -5,7 +5,7 @@ title: XDM ExperienceEvent类
 topic-legacy: overview
 description: 本文档概述了XDM ExperienceEvent类以及事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 64e76c456ac5f59a2a1996e58eda405f1b27efa8
+source-git-commit: f5d341daffd7d4d77ee816cc7537b0d0c52ca636
 workflow-type: tm+mt
 source-wordcount: '1758'
 ht-degree: 1%
@@ -53,7 +53,7 @@ ht-degree: 1%
 
 [Adobe Experience Platform数据准备](../../data-prep/home.md) 允许您在XDM中映射、转换和验证数据。 使用可用的 [映射函数](../../data-prep/functions.md) 由服务提供，在摄取到Experience Platform时，您可以调用逻辑运算符以对来自多事件记录的数据进行优先级排序、转换和/或整合。 在上例中，您可以指定 `eventType` 作为计算字段，当“产品查看”优先于“页面查看”时，它们会优先处理。
 
-如果要通过UI手动将数据摄取到平台，请参阅 [计算字段](../../data-prep/calculated-fields.md) 以了解有关如何创建计算字段的特定步骤。
+如果要通过UI手动将数据摄取到平台，请参阅 [计算字段](../../data-prep/ui/mapping.md#calculated-fields) 以了解有关如何创建计算字段的特定步骤。
 
 如果您使用源连接将数据流式传输到平台，则可以将源配置为改用计算字段。 请参阅 [特定源的文档](../../sources/home.md) 有关如何在配置连接时实施计算字段的说明。
 

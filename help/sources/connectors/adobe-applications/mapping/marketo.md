@@ -5,7 +5,7 @@ title: Marketo Engage源的映射字段
 topic-legacy: overview
 description: 下表包含Marketo数据集中的字段与其相应XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 40e70903cd1a67f5012f6e7c8f09b6e91b3ae0ef
+source-git-commit: f5d341daffd7d4d77ee816cc7537b0d0c52ca636
 workflow-type: tm+mt
 source-wordcount: '532'
 ht-degree: 8%
@@ -343,7 +343,7 @@ ht-degree: 8%
 
 >[!NOTE]
 >
->的 `to_object('ECID',arrays_to_objects('id',explode(ecids)))` 源字段是一个必须使用 [!UICONTROL 添加计算字段] 选项。 请参阅 [添加计算字段](../../../../data-prep/calculated-fields.md) 以了解更多信息。
+>的 `to_object('ECID',arrays_to_objects('id',explode(ecids)))` 源字段是一个必须使用 [!UICONTROL 添加计算字段] 选项。 请参阅 [添加计算字段](../../../../data-prep/ui/mapping.md#calculated-fields) 以了解更多信息。
 
 ## 后续步骤
 

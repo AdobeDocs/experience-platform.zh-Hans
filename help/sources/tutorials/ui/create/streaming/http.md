@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本UI指南将帮助您使用Adobe Experience Platform创建流连接。
 exl-id: 7932471c-a9ce-4dd3-8189-8bc760ced5d6
-source-git-commit: d39cdeaa57a221f10c975353a54d3ff7c88239d6
+source-git-commit: f5d341daffd7d4d77ee816cc7537b0d0c52ca636
 workflow-type: tm+mt
-source-wordcount: '1063'
+source-wordcount: '1058'
 ht-degree: 0%
 
 ---
@@ -90,7 +90,8 @@ Parquet文件必须符合XDM标准，并且不需要您手动配置映射，而C
 
 ### 映射标准字段
 
-根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关映射器函数和计算字段的详细信息，请参阅 [数据准备功能指南](../../../../../data-prep/functions.md) 或 [计算字段指南](../../../../../data-prep/calculated-fields.md).
+
+根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关使用映射器界面和计算字段的完整步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
 
 要添加新源字段，请选择 **[!UICONTROL 添加新映射]**.
 

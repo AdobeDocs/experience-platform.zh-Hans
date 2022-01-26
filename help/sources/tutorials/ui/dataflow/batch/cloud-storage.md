@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了使用云存储帐户配置新数据流的步骤。
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: db0c295777a98cc945d7c88f3e49eda3d2581f7b
+source-git-commit: 38f64f2ba0b40a20528aac6efff0e2fd6bc12ed2
 workflow-type: tm+mt
-source-wordcount: '2045'
+source-wordcount: '2040'
 ht-degree: 0%
 
 ---
@@ -128,7 +128,7 @@ ht-degree: 0%
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/select-schema.png)
 
-根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关映射器函数和计算字段的详细信息，请参阅 [数据准备功能指南](../../../../../data-prep/functions.md) 或 [计算字段指南](../../../../../data-prep/calculated-fields.md).
+根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关使用映射器界面和计算字段的完整步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/mapping.png)
 

@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到Adobe Experience Platform数据集。 本教程提供了使用您的广告帐户配置新数据流的步骤。
 exl-id: 8dd1d809-e812-4a13-8831-189726b2430e
-source-git-commit: 46fb08a10bc05dc758bdcb025693f819b980b41a
+source-git-commit: 38f64f2ba0b40a20528aac6efff0e2fd6bc12ed2
 workflow-type: tm+mt
-source-wordcount: '1474'
+source-wordcount: '1470'
 ht-degree: 0%
 
 ---
@@ -21,143 +21,143 @@ ht-degree: 0%
 
 本教程需要对Adobe Experience Platform的以下组件有一定的了解：
 
-- [[!DNL Experience Data Model (XDM)] 系统](../../../../xdm/home.md):用于组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
+- [[!DNL Experience Data Model (XDM)] 系统](../../../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
    - [架构组合的基础知识](../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    - [模式编辑器教程](../../../../xdm/tutorials/create-schema-ui.md):了解如何使用模式编辑器UI创建自定义模式。
 - [[!DNL Real-time Customer Profile]](../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 
-此外，本教程还要求您已创建广告帐户。 有关在UI中创建不同付款连接器的教程列表，请参阅[源连接器概述](../../../home.md)。
+此外，本教程还要求您已创建广告帐户。 有关在UI中创建不同付款连接器的教程列表，请参阅 [源连接器概述](../../../home.md).
 
 ## 选择数据
 
-创建广告帐户后，将显示&#x200B;**[!UICONTROL 选择数据]**&#x200B;步骤，为您提供一个交互式界面来浏览文件层次结构。
+创建广告帐户后， **[!UICONTROL 选择数据]** 中，提供了一个交互式界面来浏览文件层次结构。
 
 - 界面的左半部分是目录浏览器，用于显示服务器的文件和目录。
 - 界面的右半部分允许您从兼容的文件中预览多达100行数据。
 
-您可以使用页面顶部的&#x200B;**[!UICONTROL Search]**&#x200B;选项快速识别要使用的源数据。
+您可以使用 **[!UICONTROL 搜索]** 选项来快速识别您要使用的源数据。
 
 >[!NOTE]
 >
 >搜索源数据选项适用于所有基于表格的源连接器，不包括Analytics、分类、事件中心和Kinesis连接器。
 
-找到源数据后，选择目录，然后单击&#x200B;**[!UICONTROL Next]**。
+找到源数据后，选择目录，然后单击 **[!UICONTROL 下一个]**.
 
 ![select-data](../../../images/tutorials/dataflow/all-tabular/select-data.png)
 
 
 ## 将数据字段映射到XDM架构
 
-此时将显示&#x200B;**[!UICONTROL 映射]**&#x200B;步骤，提供一个交互式界面，用于将源数据映射到[!DNL Platform]数据集。
+的 **[!UICONTROL 映射]** 提供交互界面以将源数据映射到 [!DNL Platform] 数据集。
 
 为要摄取到的入站数据选择数据集。 您可以使用现有数据集或创建新数据集。
 
 ### 使用现有数据集
 
-要将数据摄取到现有数据集，请选择&#x200B;**[!UICONTROL 使用现有数据集]**，然后单击数据集图标。
+要将数据摄取到现有数据集，请选择 **[!UICONTROL 使用现有数据集]**，然后单击数据集图标。
 
 ![use-existing-dataset](../../../images/tutorials/dataflow/advertising/use-existing-target-dataset.png)
 
-出现&#x200B;**[!UICONTROL 选择数据集]**&#x200B;对话框。 找到您要使用的数据集，将其选中，然后单击&#x200B;**[!UICONTROL 继续]**。
+的 **[!UICONTROL 选择数据集]** 对话框。 找到您要使用的数据集，将其选中，然后单击 **[!UICONTROL 继续]**.
 
 ![select-existing-dataset](../../../images/tutorials/dataflow/advertising/select-existing-dataset.png)
 
 ### 使用新数据集
 
-要将数据摄取到新数据集，请选择&#x200B;**[!UICONTROL 创建新数据集]** ，然后在提供的字段中输入数据集的名称和说明。
+要将数据引入新数据集，请选择 **[!UICONTROL 创建新数据集]** 并在提供的字段中输入数据集的名称和描述。
 
-通过在&#x200B;**[!UICONTROL 选择架构]**&#x200B;搜索栏中输入架构名称，可以附加架构字段。 您还可以选择下拉图标以查看现有架构的列表。 或者，您也可以选择&#x200B;**[!UICONTROL 高级搜索]**&#x200B;以访问现有架构的屏幕，包括其各自的详细信息。
+您可以通过在 **[!UICONTROL 选择架构]** 搜索栏。 您还可以选择下拉图标以查看现有架构的列表。 或者，您也可以选择 **[!UICONTROL 高级搜索]** 访问现有架构的屏幕，包括其各自的详细信息。
 
-在此步骤中，您可以为[!DNL Real-time Customer Profile]启用数据集，并创建实体属性和行为的整体视图。 所有已启用数据集的数据都将包含在[!DNL Profile]中，并在保存数据流时应用更改。
+在此步骤中，您可以为 [!DNL Real-time Customer Profile] 并创建实体属性和行为的整体视图。 所有已启用数据集的数据都将包含在 [!DNL Profile] 和更改将在您保存数据流时应用。
 
-切换&#x200B;**[!UICONTROL 配置文件数据集]**&#x200B;按钮，为[!DNL Profile]启用目标数据集。
+切换 **[!UICONTROL 配置文件数据集]** 按钮为 [!DNL Profile].
 
 ![create-new-dataset](../../../images/tutorials/dataflow/advertising/target-dataset.png)
 
-出现&#x200B;**[!UICONTROL 选择架构]**&#x200B;对话框。 选择要应用于新数据集的架构，然后单击&#x200B;**[!DNL Done]**。
+的 **[!UICONTROL 选择架构]** 对话框。 选择要应用于新数据集的架构，然后单击 **[!DNL Done]**.
 
 ![选择模式](../../../images/tutorials/dataflow/advertising/select-existing-schema.png)
 
-根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关映射器函数和计算字段的详细信息，请参阅[数据准备函数指南](../../../../data-prep/functions.md)或[计算字段指南](../../../../data-prep/calculated-fields.md)。
+根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关使用映射器界面和计算字段的完整步骤，请参阅 [数据准备UI指南](../../../../data-prep/ui/mapping.md).
 
 >[!TIP]
 >
->[!DNL Platform] 根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。您可以手动调整映射规则以适合您的用例。
+>Platform根据您选择的目标架构或数据集，为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例。
 
 ![](../../../images/tutorials/dataflow/all-tabular/mapping.png)
 
-选择&#x200B;**[!UICONTROL 预览数据]**&#x200B;可查看选定数据集中最多100行示例数据的映射结果。
+选择 **[!UICONTROL 预览数据]** 查看从选定数据集映射最多100行示例数据的结果。
 
 在预览期间，标识列将作为第一个字段按优先级排列，因为它是验证映射结果时必需的关键信息。
 
 ![](../../../images/tutorials/dataflow/all-tabular/mapping-preview.png)
 
-映射源数据后，选择&#x200B;**[!UICONTROL 关闭]**。
+映射源数据后，选择 **[!UICONTROL 关闭]**.
 
 ## 计划摄取运行
 
-此时将显示&#x200B;**[!UICONTROL 计划]**&#x200B;步骤，允许您配置摄取计划以使用配置的映射自动摄取所选源数据。 下表概述了计划的不同可配置字段：
+的 **[!UICONTROL 计划]** 步骤，允许您配置摄取计划以使用配置的映射自动摄取选定的源数据。 下表概述了计划的不同可配置字段：
 
 | 字段 | 描述 |
 | --- | --- |
-| 频度 | 可选频率包括`Once`、`Minute`、`Hour`、`Day`和`Week`。 |
+| 频度 | 可选频率包括 `Once`, `Minute`, `Hour`, `Day`和 `Week`. |
 | 间隔 | 一个整数，用于设置所选频率的间隔。 |
 | 开始时间 | UTC时间戳，指示何时设置进行第一次摄取。 |
-| 回填 | 一个布尔值，用于确定最初摄取的数据。 如果启用了&#x200B;**[!UICONTROL 回填]**，则指定路径中的所有当前文件都将在首次计划摄取期间被摄取。 如果禁用了&#x200B;**[!UICONTROL Backfill]**，则只会摄取在首次摄取运行到开始时间之间加载的文件。 不会摄取在开始时间之前加载的文件。 |
+| 回填 | 一个布尔值，用于确定最初摄取的数据。 如果 **[!UICONTROL 回填]** 启用后，指定路径中的所有当前文件都将在首次计划摄取期间被摄取。 如果 **[!UICONTROL 回填]** 禁用，则只会摄取在首次摄取运行到开始时间之间加载的文件。 不会摄取在开始时间之前加载的文件。 |
 | 增量列 | 一个选项，其中包含一组类型、日期或时间的筛选源架构字段。 此字段用于区分新数据和现有数据。 将根据选定列的时间戳摄取增量数据。 |
 
 数据流旨在按计划自动摄取数据。 首先选择摄取频率。 接下来，设置间隔以指定两个流运行之间的周期。 间隔的值应为非零整数，并应设置为大于或等于15。
 
 要设置摄取的开始时间，请调整开始时间框中显示的日期和时间。 或者，您也可以选择日历图标以编辑开始时间值。 开始时间必须大于或等于当前UTC时间。
 
-选择&#x200B;**[!UICONTROL 按]**&#x200B;加载增量数据以分配增量列。 此字段区分新数据和现有数据。
+选择 **[!UICONTROL 加载增量数据的方式]** 来分配增量列。 此字段区分新数据和现有数据。
 
 ![调度间隔](../../../images/tutorials/dataflow/databases/schedule-interval-on.png)
 
 ### 设置一次性摄取数据流
 
-要设置一次性摄取，请选择频度下拉箭头，然后选择&#x200B;**[!UICONTROL Once]**。
+要设置一次性摄取，请选择频度下拉箭头，然后选择 **[!UICONTROL 一次]**.
 
 >[!TIP]
 >
->**** 一次性 **** 摄取期间，无法看到间隔回填。
+>**[!UICONTROL 间隔]** 和 **[!UICONTROL 回填]** 在一次性摄取期间不可见。
 
-向计划提供适当值后，请选择&#x200B;**[!UICONTROL Next]**。
+向计划提供适当值后，请选择 **[!UICONTROL 下一个]**.
 
 ![计划一次](../../../images/tutorials/dataflow/databases/schedule-once.png)
 
 ## 提供数据流详细信息
 
-出现&#x200B;**[!UICONTROL 数据流详细信息]**&#x200B;步骤，允许您命名并简要描述新数据流。
+的 **[!UICONTROL 数据流详细信息]** 步骤，允许您命名并简要描述新数据流。
 
-在此过程中，您还可以启用&#x200B;**[!UICONTROL 部分摄取]**&#x200B;和&#x200B;**[!UICONTROL 错误诊断]**。 启用&#x200B;**[!UICONTROL 部分摄取]**&#x200B;提供了摄取包含错误且达到特定阈值的数据的功能。 启用&#x200B;**[!UICONTROL 部分摄取]**&#x200B;后，拖动&#x200B;**[!UICONTROL 错误阈值%]**&#x200B;拨号以调整批次的错误阈值。 或者，您也可以通过选择输入框手动调整阈值。 有关更多信息，请参阅[部分批量摄取概述](../../../../ingestion/batch-ingestion/partial.md)。
-为数据流提供值，然后选择**[!UICONTROL Next]**。
+在此过程中，您还可以启用 **[!UICONTROL 部分摄取]** 和 **[!UICONTROL 错误诊断]**. 启用 **[!UICONTROL 部分摄取]** 能够摄取包含错误且最高达特定阈值的数据。 一次 **[!UICONTROL 部分摄取]** ，请将 **[!UICONTROL 错误阈值%]** 拨号以调整批次的错误阈值。 或者，您也可以通过选择输入框手动调整阈值。 有关更多信息，请参阅 [部分批量摄取概述](../../../../ingestion/batch-ingestion/partial.md).
+为数据流提供值并选择 **[!UICONTROL 下一个]**.
 
 ![数据流详细信息](../../../images/tutorials/dataflow/all-tabular/dataflow-detail.png)
 
 ## 查看数据流
 
-此时会出现&#x200B;**[!UICONTROL Review]**&#x200B;步骤，允许您在创建新数据流之前查看新数据流。 详细信息按以下类别分组：
+的 **[!UICONTROL 审阅]** 步骤，允许您在创建新数据流之前查看新数据流。 详细信息按以下类别分组：
 
 - **[!UICONTROL 连接]**:显示源类型、所选源文件的相关路径以及该源文件中的列数。
 - **[!UICONTROL 分配数据集和映射字段]**:显示源数据被摄取到的数据集，包括该数据集附加的架构。
 - **[!UICONTROL 计划]**:显示摄取计划的活动期、频率和间隔。
 
-审核数据流后，单击&#x200B;**[!UICONTROL 完成]**，并为创建数据流留出一些时间。
+审核数据流后，单击 **[!UICONTROL 完成]** 并为创建数据流留出一些时间。
 
 ![审查](../../../images/tutorials/dataflow/advertising/review.png)
 
 ## 监控数据流
 
-创建数据流后，您可以监控通过其摄取的数据，以查看有关摄取率、成功和错误的信息。 有关如何监控数据流的更多信息，请参阅关于[在UI](../monitor.md)中监控帐户和数据流的教程。
+创建数据流后，您可以监控通过其摄取的数据，以查看有关摄取率、成功和错误的信息。 有关如何监控数据流的更多信息，请参阅 [监控UI中的帐户和数据流](../monitor.md).
 
 ## 删除数据流
 
-您可以删除不再需要或使用&#x200B;**[!UICONTROL 数据流]**&#x200B;工作区中提供的&#x200B;**[!UICONTROL Delete]**&#x200B;函数错误地创建的数据流。 有关如何删除数据流的更多信息，请参阅有关[在UI](../delete.md)中删除数据流的教程。
+您可以删除不再需要或使用错误创建的数据流 **[!UICONTROL 删除]** 函数 **[!UICONTROL 数据流]** 工作区。 有关如何删除数据流的更多信息，请参阅 [删除UI中的数据流](../delete.md).
 
 ## 后续步骤
 
-通过阅读本教程，您成功创建了一个数据流，以从营销自动化系统中导入数据，并深入了解了监控数据集。 现在，下游[!DNL Platform]服务（如[!DNL Real-time Customer Profile]和[!DNL Data Science Workspace]）可使用传入数据。 有关更多详细信息，请参阅以下文档：
+通过阅读本教程，您成功创建了一个数据流，以从营销自动化系统中导入数据，并深入了解了监控数据集。 现在，下游可以使用传入数据 [!DNL Platform] 诸如 [!DNL Real-time Customer Profile] 和 [!DNL Data Science Workspace]. 有关更多详细信息，请参阅以下文档：
 
 - [实时客户资料概述](../../../../profile/home.md)
 - [数据科学工作区概述](../../../../data-science-workspace/home.md)
@@ -170,14 +170,14 @@ ht-degree: 0%
 
 创建数据流后，该数据流会立即变为活动状态，并根据给定的计划摄取数据。 您可以随时按照以下说明禁用活动数据流。
 
-在&#x200B;**[!UICONTROL 数据流]**&#x200B;屏幕中，选择要禁用的数据流的名称。
+在 **[!UICONTROL 数据流]** 屏幕中，选择要禁用的数据流的名称。
 
 ![browse-dataset-flow](../../../images/tutorials/dataflow/advertising/view-dataset-flows.png)
 
-**[!UICONTROL Properties]**&#x200B;列显示在屏幕的右侧。 此面板包含&#x200B;**[!UICONTROL Enabled]**&#x200B;切换按钮。 单击切换以禁用数据流。 在禁用数据流后，可以使用相同的切换开关重新启用数据流。
+的 **[!UICONTROL 属性]** 列。 此面板包含 **[!UICONTROL 已启用]** 切换按钮。 单击切换以禁用数据流。 在禁用数据流后，可以使用相同的切换开关重新启用数据流。
 
 ![disable](../../../images/tutorials/dataflow/advertising/disable.png)
 
-### 激活[!DNL Profile]群体的入站数据
+### 激活的入站数据 [!DNL Profile] 人口
 
-源连接器的入站数据可用于扩充和填充[!DNL Real-time Customer Profile]数据。 有关填充[!DNL Real-time Customer Profile]数据的更多信息，请参阅[配置文件群体](../profile.md)教程。
+来自源连接器的入站数据可用于丰富和填充您的 [!DNL Real-time Customer Profile] 数据。 有关填充 [!DNL Real-time Customer Profile] 数据，请参阅 [用户档案人口](../profile.md).
