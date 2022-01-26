@@ -5,9 +5,9 @@ topic-legacy: overview
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 2effccfa9b1975292f350369201269099dc1b2a1
+source-git-commit: 2677d5f0c4369ab692f9e4b16710098a359402d7
 workflow-type: tm+mt
-source-wordcount: '1383'
+source-wordcount: '1384'
 ht-degree: 3%
 
 ---
@@ -103,7 +103,7 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 | [!DNL Destinations] | [!UICONTROL 管理目标] | 访问读取、创建、编辑和禁用目标。 |
 | [!DNL Destinations] | [!UICONTROL 查看目标] | 对 **[!UICONTROL 目录]** 选项卡和已验证的目标 **[!UICONTROL 浏览]** 选项卡。 |
 | [!DNL Destinations] | [!UICONTROL 激活目标] | 能够将数据激活到已创建的活动目标。 此权限需要“查看目标”或“管理” [!UICONTROL 目标”] 授予将激活目标的用户。 |
-| [!DNL Destinations] | [!UICONTROL 目标创作] | 能够使用 [Adobe Experience Platform目标SDK](../destinations/destination-sdk/overview.md). |
+| [!DNL Destinations] | [!UICONTROL 目标创作] | 能够使用 [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
 | [!DNL Data Ingestion] | [!UICONTROL 管理源] | 对读取、创建、编辑和禁用源的访问权限。 |
 | [!DNL Data Ingestion] | [!UICONTROL 查看源] | 对 **[!UICONTROL 目录]** 选项卡和已验证的源 **[!UICONTROL 浏览]** 选项卡。 |
 | [!DNL Data Ingestion] | [!DNL Manage Audience Share Connections] | 访问创建、接受和拒绝合作伙伴握手，以连接两个IMS组织并启用 [!DNL Segment Match] 流量。 |
@@ -112,7 +112,7 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 | 数据管理 | [!UICONTROL 应用数据使用情况标签] | 访问读取、创建和删除使用情况标签。 |
 | 数据管理 | [!UICONTROL 管理数据使用策略] | 访问读取、创建、编辑和删除数据使用策略。 |
 | 数据管理 | [!UICONTROL 查看数据使用策略] | 对属于贵组织的数据使用策略的只读访问权限。 |
-| 数据管理 | [!UICONTROL 查看审核日志] | 对记录的查看的只读访问权限 [审核日志](../landing/governance-privacy-security/audit-logs/overview.md) 平台活动。 |
+| 数据管理 | [!UICONTROL 查看用户活动日志] | 对记录的查看的只读访问权限 [审核日志](../landing/governance-privacy-security/audit-logs/overview.md) 平台活动。 |
 | [!DNL Dashboards] | [!UICONTROL 查看许可证使用情况功能板] | 以只读方式访问许可证使用功能板。 |
 | [!DNL Dashboards] | [!UICONTROL 管理标准功能板] | 添加data warehouse中尚未包含的自定义属性。 |
 | [!DNL Query Service] | [!UICONTROL 管理查询] | 访问读取、创建、编辑和删除Platform数据的结构化SQL查询。 |
