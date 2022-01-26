@@ -1,94 +1,109 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
-exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: 2c4b0d6dd0884fe81565356c31b18c0555bf973f
+source-git-commit: 74e2ebd324265744702a385dbaca2ac4a10ea1f7
 workflow-type: tm+mt
-source-wordcount: '798'
-ht-degree: 12%
+source-wordcount: '959'
+ht-degree: 5%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发行日期：2021 年 11 月 17 日**
-
-## 新增功能
-
-Adobe Experience Platform的新增功能：
-
-- [Real-time Customer Data Platform B2B 版本](#B2B)
-- [（测试版）通过临时激活API将受众区段激活到批量目标](#ad-hoc-activation)
-
-## 现有功能的更新
+**发行日期：2022 年 1 月 26 日**
 
 Adobe Experience Platform 现有功能的更新包括：
 
-- [Attribution AI](#attribution-ai)
-- [客户人工智能](#customer-ai)
+- [警报](#alerts)
+- [[!DNL Data Prep]](#data-prep)
+- [[!DNL Dashboards]](#dashboards)
+- [查询服务](#query-service)
+- [沙盒](#sandboxes)
+- [分段服务](#segmentation)
+- [源](#sources)
 
-### Real-time Customer Data Platform B2B 版本 {#B2B}
+## 警报 {#alerts}
 
-**发行日期：2021 年 11 月 12 日**
-
-Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP)之上，专为在业务到业务服务模型中运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
-
-对各种Adobe Experience Platform功能进行了改进，这些功能区分了Real-time CDP B2B Edition与B2C Edition。 这些功能包括对B2B用例的体验数据模型(XDM)进行了改进、对身份分辨率和配置文件分段进行了升级，以及自定义的连接器和Marketo Engage目标。 Marketo连接器允许B2B品牌将其行业领先的B2B参与数据与行为信息连接起来，以培养潜在客户并增强基于帐户的营销操作。
-
--[新的B2B和B2P版本](#editions)
--[新的Marketo数据源和目标连接器](#marketo)
--[标准B2B XDM](#XDM)
-
-### 新的B2B和B2P版本 {#editions}
-
-现已推出新的B2B和B2P版本，这些版本为实时CDP和平台激活产品引入了B2B数据和功能。
-
-要进一步了解Real-time CDP B2B Edition，请参阅 [概述](../../rtcdp/overview.md).
-
-### 新的Marketo数据源和目标连接器 {#marketo}
-
-新的Marketo数据源和目标连接器将Marketo数据流式传输到平台受众和平台受众，并返回到Marketo。 适用于所有平台用户。
-
-| 功能 | 描述 |
-|----------|-------------|
-| Marketo Engage源连接器 | 的 [Marketo Engage源连接器](../../sources/connectors/adobe-applications/marketo/marketo.md) 允许营销人员将一个或多个Marketo实例的数据无缝摄取到其Adobe Experience Platform实例中，并为潜在客户管理和B2B营销人员提供完整的解决方案。 |
-| Marketo Engage目标 | 的 [Marketo目标](../../destinations/catalog/adobe/marketo-engage.md) 允许营销人员将在Adobe Experience Platform中创建的区段推送到Marketo，以将其显示为静态列表。 |
-
-### 标准B2B XDM {#XDM}
-
-标准B2B XDM类、字段组和数据类型可供所有Platform用户使用。
-
-| 功能 | 描述 |
-|-----------|--------------|
-| 标准B2B XDM类 | Real-time Customer Data Platform B2B Edition提供了多个标准XDM，用于捕获有关基本B2B数据实体（如帐户、机会、营销活动等）的详细信息。 |
-
-请参阅 [Real-time Customer Data Platform B2B版中的模式](../../rtcdp/schemas/b2b.md) 文档，了解有关捕获B2B数据实体的更多信息。
-
-### （测试版）通过临时激活API将受众区段激活到批量目标 {#ad-hoc-activation}
-
-临时激活API允许营销人员以编程方式快速高效地将受众区段激活到目标，以应对需要立即激活的情况。 Ad-hoc audience激活仅受 [批量基于文件的目标](../../destinations/destination-types.md#file-based) 和目前处于测试阶段。 有关更多信息，请参阅 [临时激活API文档](../../destinations/api/ad-hoc-activation-api.md).
-
-### Attribution AI {#attribution-ai}
-
-Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
-
-| 功能 | 描述 |
-|-----------|---------------|
-| 支持多个数据集 | Attribution AI现在可以轻松地直接在UI中摄取多个数据集，而无需映射和拼合每个数据集。 这一新的省时功能通过来自多个数据集的更丰富数据，提供了更强大、更准确的分数。 |
-| 媒体渠道和促销活动字段映射 | Attribution AI现在支持媒体渠道和营销活动字段的映射。 数据集之间的媒体渠道映射可改进从Attribution AI派生的分析，并有助于提供更清晰、易于解读的结果。 |
-
-有关Attribution AI的更多信息，请参阅 [Attribution AI文档](../../intelligent-services/attribution-ai/overview.md).
-
-### 客户人工智能 {#customer-ai}
-
-Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾向得分，例如大规模单个用户档案的流失率和转化。 这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
+Experience Platform允许您订阅各种平台活动的基于事件的警报。 您可以通过 [!UICONTROL 警报] 选项卡，可以选择通过UI本身或电子邮件通知接收警报消息。
 
 **更新功能**
 
 | 功能 | 描述 |
-|-----------|-------------|
-| 支持多个数据集 | Customer AI现在可以轻松地直接在UI中摄取多个数据集，而无需映射和拼合每个数据集。 这一新的省时功能通过来自多个数据集的更丰富数据，提供了更强大、更准确的分数。 |
-| 自定义配置文件属性 | 除标准事件字段外，Customer AI现在还支持在您的数据中定义自定义用户档案数据集字段（带有时间戳）。 通过使用此选项，您可以添加其他您认为具有影响力的配置文件属性，这些属性可能会提高模型质量并提供更准确的结果。 |
+| --- | --- |
+| 新警报规则 | 现在，有几个新的警报规则可用于与数据获取、身份、用户档案、分段和激活相关的工作流。 请参阅 [警报规则](../../observability/alerts/rules.md) ，以了解更新的警报类型列表。 |
+| 源数据流的上下文关联警报 | 现在，您可以在摄取工作流期间订阅接收有关数据流状态的警报消息。 有关详细信息，请参阅 [在UI中订阅源警报](../../sources/tutorials/ui/alerts.md). |
 
-有关Customer AI的更多信息，请参阅 [客户AI文档](../../intelligent-services/customer-ai/overview.md).
+有关平台中警报的更多信息，请参阅 [警报概述](../../observability/alerts/overview.md).
 
+## [!DNL Dashboards] {#dashboards}
+
+Adobe Experience Platform提供了多个功能板，您可以通过这些功能板查看有关组织数据的重要分析（在每日快照中捕获）。
+
+| 功能 | 描述 |
+| --- | --- |
+| 智能字幕 | 机器学习算法可自动提供对用户档案和受众数据的分析，并展示30-90天或12个月期间的模式和趋势。 字幕包括 <ul><li>总体形状和统计</li><li>趋势和突变</li><li>季节性模式</li><li>意外异常</li></ul> 有关详细信息，请参阅 [配置文件功能板](../../dashboards/guides/profiles.md#profiles-count-trend) 和 [区段功能板](../../dashboards/guides/segments.md#audience-size-trend) 文档。 |
+| 功能板清单 | 在集中位置访问预配置的配置文件、区段和目标功能板报表，包括任何已安装的集成（如PowerBI）。 有关更多信息，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md). |
+| PowerBI报表模板 | 使用新的PowerBI图表从配置文件、区段和目标报表数据模型构建、自定义或扩展量度。 自动安装工作流允许您从PowerBI环境中在您的组织内共享营销分析。 有关更多信息，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md). |
+
+有关 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
+
+## [!DNL Data Prep] {#data-prep}
+
+[!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 整合的映射体验 | Platform UI中的新映射界面为您提供了一致的映射体验，以便利用智能映射推荐、手动配置映射规则以及调试映射集中发生的任何错误。 有关更多信息，请参阅 [[!DNL Data Prep] UI指南](../../data-prep/ui/mapping.md). |
+
+有关 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
+
+## 查询服务 {#query-service}
+
+[!DNL Query Service] 允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL Data Lake]. 您可以连接 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、Data Science Workspace或摄取到实时客户资料。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 匿名块 | 匿名块SQL结构允许您将查询服务中的大规模数据准备作业分解为较小的任务，然后为增量数据加载依次重复使用和执行这些任务。 有关更多信息，请参阅 [查询服务概述](../../query-service/home.md). |
+| 数据集组织 | 提供了一种连贯的逻辑数据结构，用于随着沙盒中数据资产数量的增加，组织数据资产以与查询服务一起使用。 有关更多信息，请参阅 [查询服务概述](../../query-service/home.md). |
+
+有关 [!DNL Query Service]，请参阅 [[!DNL Query Service] 概述](../../query-service/home.md).
+
+## 沙盒 {#sandboxes}
+
+Adobe Experience Platform旨在在全球范围内丰富数字体验应用程序。 公司通常并行运行多个数字体验应用程序，需要满足这些应用程序的开发、测试和部署的需要，同时确保操作合规性。 为了满足这一需求，Experience Platform提供了将单个Platform实例分区为单独虚拟环境的沙盒，以帮助开发和改进数字体验应用程序。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 沙盒UI增强 | 沙盒指示器现在集成在所有Platform UI应用程序的标头中。 沙盒指示器可显示沙盒名称、区域和类型，并允许您访问下拉菜单以在沙盒之间切换。 有关更多信息，请参阅 [sandbox UI指南](../../sandboxes/ui/user-guide.md). |
+
+有关沙箱的详细信息，请参阅 [沙箱概述](../../sandboxes/home.md).
+
+## 分段服务 {#segmentation}
+
+[!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准来定义特定的用户档案子集。 区段可以基于记录数据（如人口统计信息）或表示客户与您的品牌交互的时间序列事件。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 区段匹配 | 区段匹配是一项数据协作服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式，基于通用标识符交换数据。 区段匹配使用平台隐私标准和个人标识符（如经过哈希处理的电子邮件、经过哈希处理的电话号码），以及设备标识符（如IDFA和GAID）。 有关更多信息，请参阅 [区段匹配概述](../../segmentation/ui/segment-match/overview.md). |
+
+有关 [!DNL Segmentation Service]，请参阅 [分段概述](../../segmentation/home.md).
+
+## 源 {#sources}
+
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强该数据。 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+
+Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，以及管理数据摄取吞吐量。
+
+| 功能 | 描述 |
+| --- | --- |
+| 测试版源迁移至GA | 以下来源已从测试版提升为正式发布： <ul><li>[[!DNL Snowflake]](../../sources/connectors/databases/snowflake.md)</li><li>[[!DNL Veeva CRM]](../../sources/connectors/crm/veeva.md)</li></ul> |
+| [!DNL Event Hubs] 源增强功能 | 的 [!DNL Event Hubs] 源现在支持非根SAS密钥类型的身份验证，以连接和创建源连接。 有关更多信息，请参阅 [[!DNL Event Hubs] 概述](../../sources/connectors/cloud-storage/eventhub.md). |
+| [!DNL SFTP] 源增强功能 | 的 [!DNL SFTP] “源”现在允许您建立数据流可用于连接到SFTP服务器的最大并发连接数。 有关更多信息，请参阅 [[!DNL SFTP] 概述](../../sources/connectors/cloud-storage/sftp.md). |

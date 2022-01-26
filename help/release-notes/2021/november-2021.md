@@ -1,8 +1,8 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: 2021年11月版Adobe Experience Platform发行说明。
-exl-id: f649b516-8ef8-49af-bb3e-0392337d0d86
-source-git-commit: 2c4b0d6dd0884fe81565356c31b18c0555bf973f
+description: Adobe Experience Platform的最新发行说明。
+exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
+source-git-commit: a089ff9c053e46d32b98f94ddaf71d75d29fd4c7
 workflow-type: tm+mt
 source-wordcount: '798'
 ht-degree: 12%
@@ -50,7 +50,7 @@ Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP
 新的Marketo数据源和目标连接器将Marketo数据流式传输到平台受众和平台受众，并返回到Marketo。 适用于所有平台用户。
 
 | 功能 | 描述 |
-|-----------|--------------|
+|----------|-------------|
 | Marketo Engage源连接器 | 的 [Marketo Engage源连接器](../../sources/connectors/adobe-applications/marketo/marketo.md) 允许营销人员将一个或多个Marketo实例的数据无缝摄取到其Adobe Experience Platform实例中，并为潜在客户管理和B2B营销人员提供完整的解决方案。 |
 | Marketo Engage目标 | 的 [Marketo目标](../../destinations/catalog/adobe/marketo-engage.md) 允许营销人员将在Adobe Experience Platform中创建的区段推送到Marketo，以将其显示为静态列表。 |
 
@@ -59,7 +59,7 @@ Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP
 标准B2B XDM类、字段组和数据类型可供所有Platform用户使用。
 
 | 功能 | 描述 |
-|----------|-------------|
+|-----------|--------------|
 | 标准B2B XDM类 | Real-time Customer Data Platform B2B Edition提供了多个标准XDM，用于捕获有关基本B2B数据实体（如帐户、机会、营销活动等）的详细信息。 |
 
 请参阅 [Real-time Customer Data Platform B2B版中的模式](../../rtcdp/schemas/b2b.md) 文档，了解有关捕获B2B数据实体的更多信息。
@@ -73,7 +73,7 @@ Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP
 Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
 
 | 功能 | 描述 |
-| ------- | ----------- |
+|-----------|---------------|
 | 支持多个数据集 | Attribution AI现在可以轻松地直接在UI中摄取多个数据集，而无需映射和拼合每个数据集。 这一新的省时功能通过来自多个数据集的更丰富数据，提供了更强大、更准确的分数。 |
 | 媒体渠道和促销活动字段映射 | Attribution AI现在支持媒体渠道和营销活动字段的映射。 数据集之间的媒体渠道映射可改进从Attribution AI派生的分析，并有助于提供更清晰、易于解读的结果。 |
 
@@ -86,8 +86,9 @@ Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾�
 **更新功能**
 
 | 功能 | 描述 |
-| --- | --- |
+|-----------|-------------|
 | 支持多个数据集 | Customer AI现在可以轻松地直接在UI中摄取多个数据集，而无需映射和拼合每个数据集。 这一新的省时功能通过来自多个数据集的更丰富数据，提供了更强大、更准确的分数。 |
 | 自定义配置文件属性 | 除标准事件字段外，Customer AI现在还支持在您的数据中定义自定义用户档案数据集字段（带有时间戳）。 通过使用此选项，您可以添加其他您认为具有影响力的配置文件属性，这些属性可能会提高模型质量并提供更准确的结果。 |
 
 有关Customer AI的更多信息，请参阅 [客户AI文档](../../intelligent-services/customer-ai/overview.md).
+
