@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: c2c543e64a4f2aef0064abf5e4fb9d7f2738159b
+source-git-commit: 91fc4c50eb9a5ab64de3445b47465eec74a61736
 workflow-type: tm+mt
-source-wordcount: '2207'
+source-wordcount: '2301'
 ht-degree: 1%
 
 ---
@@ -343,6 +343,23 @@ EXCEPTION
     SELECT 'ERROR';
 END;
 ```
+
+## 数据资产组织
+
+在Adobe Experience Platform数据湖中按逻辑组织数据资产，这一点非常重要。 查询服务扩展了SQL结构，使您能够在沙盒中对数据资产进行逻辑分组。 这种组织方法允许在架构之间共享数据资产，而无需实际移动它们。
+
+支持以下使用标准SQL语法的SQL结构，以便对数据进行逻辑组织。
+
+```SQL
+CREATE DATABASE dg1;
+CREATE SCHEMA dg1.schema1;
+CREATE table t1 ...;
+CREATE view v1 ...;
+ALTER TABLE t1 ADD PRIMARY KEY (c1) NOT ENFORCED;
+ALTER TABLE t2 ADD FOREIGN KEY (c1) REFERENCES t1(c1) NOT ENFORCED;
+```
+
+请参阅 [数据资产的逻辑组织](../best-practices/organize-data-assets.md) 以详细说明查询服务最佳实践。
 
 ## [!DNL Spark] SQL命令
 
