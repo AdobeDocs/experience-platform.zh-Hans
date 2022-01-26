@@ -5,7 +5,7 @@ title: 沙盒UI指南
 topic-legacy: user guide
 description: 本文档提供了有关如何在Adobe Experience Platform用户界面中执行与沙箱相关的各种操作的步骤。
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: 59b608ba06028f7f345f6a59dab333a4fdf2d225
+source-git-commit: 2fb972b0ec8d1f679c6ce104a439265b5cc4d535
 workflow-type: tm+mt
 source-wordcount: '770'
 ht-degree: 1%
@@ -88,7 +88,7 @@ ht-degree: 1%
 
 >[!WARNING]
 >
->您无法删除默认的生产沙盒。 但是，用户创建的生产沙盒，用于与 [!DNL Audience Manager] 或 [!DNL Audience Core Service] 可在出现警告消息后删除。
+>您无法删除默认的生产沙盒。 但是，任何用户创建的生产沙盒，用于与 [!DNL Audience Manager] 或 [!DNL Audience Core Service] 可在出现警告消息后删除。
 
 删除生产或开发沙盒会永久删除与该沙盒关联的所有资源，包括权限。
 
