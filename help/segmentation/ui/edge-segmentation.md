@@ -5,20 +5,24 @@ title: 边缘分段UI指南
 topic-legacy: ui guide
 description: 边缘分段功能可以即时评估Platform中的边缘区段，从而实现同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: bb5a56557ce162395511ca9a3a2b98726ce6c190
+source-git-commit: f168566d03485176b16b6d3833c37930b38b0149
 workflow-type: tm+mt
-source-wordcount: '696'
-ht-degree: 1%
+source-wordcount: '744'
+ht-degree: 0%
 
 ---
 
-# 边缘分段UI指南（测试版）
+# 边缘分段UI指南
+
+>[!NOTE]
+>
+>现在，边缘分段通常可供所有Platform用户使用。 如果您在测试期间创建了边缘区段，则这些区段将继续可操作。
+
+边缘分段能够即时评估Adobe Experience Platform中的区段 [边缘](../../edge/home.md)，启用同一页面和下一页个性化用例。
 
 >[!IMPORTANT]
 >
->边缘分段当前为测试版。 文档和功能可能会发生变化。
-
-边缘分段能够即时评估Adobe Experience Platform中的区段 [边缘](../../edge/home.md)，启用同一页面和下一页个性化用例。
+> 边缘数据将存储在与收集位置最接近的边缘服务器位置，并且可能存储在指定为中心（或主体）Adobe Experience Platform数据中心的位置以外的位置。
 
 ## 边缘分段查询类型
 
