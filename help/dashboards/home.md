@@ -4,9 +4,9 @@ title: Experience Platform功能板简介
 type: Documentation
 description: 浏览Adobe Experience Platform中的多个功能板，以查看在每日快照中捕获的有关贵组织数据的重要信息。
 exl-id: d56cb139-392d-4bbc-97ec-202a0c8a2863
-source-git-commit: e927dbef8a3028155e907e0ca05c17c29fb74cf1
+source-git-commit: e7ff48d6aa7d7f70688081df45ae2d36da741eb4
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '309'
 ht-degree: 0%
 
 ---
@@ -22,13 +22,19 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 
 ## 功能板入门
 
-要访问功能板，请导航到Platform用户界面(UI)中的相应部分。 在部分中，选择&#x200B;**[!UICONTROL 概述]**&#x200B;选项卡（如果未自动选择）以查看功能板。
+要查看和管理功能板，请导航至 **[!UICONTROL 功能板]** 在Experience Platform用户界面(UI)中，选择 **[!UICONTROL 浏览]** 选项卡访问功能板库。
+
+您还可以通过导航到要查看的功能板的UI中的相应部分来访问功能板。 例如，要查看用户档案的功能板，请导航到 **[!UICONTROL 用户档案]** 工作区，然后选择 **[!UICONTROL 概述]** 选项卡。
 
 快照中的数据与拍摄快照时在特定时间点显示的数据完全一样。 换句话说，快照不是数据的近似值或样本，功能板不会实时更新。
 
 >[!NOTE]
 >
 >自拍摄快照以来对数据所做的任何更改或更新，在拍摄下一个快照之前不会反映在功能板中。
+
+## 功能板清单
+
+有关如何使用 **[!UICONTROL 功能板]** 要查看所有可用的功能板，请参阅 [仪表板清单指南](./inventory.md).
 
 ## 可用功能板
 
