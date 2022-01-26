@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
-source-git-commit: 641fcab89b849d91a075fa5058421950bc7fecd7
+source-git-commit: 9cd9307d54d0950d4f67d5d8cee9c6412a558275
 workflow-type: tm+mt
-source-wordcount: '431'
-ht-degree: 9%
+source-wordcount: '708'
+ht-degree: 6%
 
 ---
 
@@ -14,10 +14,12 @@ ht-degree: 9%
 
 Adobe Experience Platform 现有功能的更新包括：
 
-- [警报](#alerts)
-- [数据准备](#data-prep)
-- [沙盒](#sandboxes)
-- [分段服务](#segmentation)
+- [警报 {#alerts}](#alerts-alerts)
+- [[!DNL Data Prep] {#data-prep}](#dnl-data-prep-data-prep)
+- [[!DNL Dashboards] {#dashboards}](#dnl-dashboards-dashboards)
+- [查询服务 {#query-service}](#query-service-query-service)
+- [沙箱 {#sandboxes}](#sandboxes-sandboxes)
+- [分段服务 {#segmentation}](#segmentation-service-segmentation)
 
 ## 警报 {#alerts}
 
@@ -42,6 +44,29 @@ Experience Platform允许您订阅各种平台活动的基于事件的警报。 
 | 整合的映射体验 | Platform UI中的新映射界面为您提供了一致的映射体验，以便利用智能映射推荐、手动配置映射规则以及调试映射集中发生的任何错误。 有关更多信息，请参阅 [[!DNL Data Prep] UI指南](../../data-prep/home.md). |
 
 有关 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
+
+## [!DNL Dashboards] {#dashboards}
+
+[!DNL Dashboards] 做很漂亮的事。
+
+| 功能 | 描述 |
+|---------|-------------|
+| 智能字幕 | 机器学习算法可自动提供对用户档案和受众数据的分析，并展示30-90天或12个月期间的模式和趋势。 字幕包括 <ul><li>总体形状和统计</li><li>趋势和突变</li><li>季节性模式</li><li>意外异常</li></ul> 有关详细信息，请参阅 [配置文件功能板](../../dashboards/guides/profiles.md#profiles-count-trend) 和 [区段功能板](../../dashboards/guides/segments.md#audience-size-trend) 文档。 |
+| 功能板清单 | 在集中位置访问预配置的配置文件、区段和目标功能板报表，包括任何已安装的集成（如PowerBI）。 有关更多信息，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md). |
+| PowerBI报表模板 | 使用新的PowerBI图表从配置文件、区段和目标报表数据模型构建、自定义或扩展量度。 自动安装工作流允许您从PowerBI环境中在您的组织内共享营销分析。 有关更多信息，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md). |
+
+有关 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
+
+## 查询服务 {#query-service}
+
+[!DNL Query Service] 允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL Data Lake]. 您可以连接 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、Data Science Workspace或摄取到实时客户资料。
+
+| 功能 | 描述 |
+|----------------------|-----------------------|
+| 匿名块 | 匿名块SQL结构允许您将查询服务中的大规模数据准备作业分解为较小的任务，然后为增量数据加载依次重复使用和执行这些任务。 有关更多信息，请参阅 [查询服务概述](../../query-service/home.md). |
+| 数据集组织 | 提供了一种连贯的逻辑数据结构，用于随着沙盒中数据资产数量的增加，组织数据资产以与查询服务一起使用。 有关更多信息，请参阅 [查询服务概述](../../query-service/home.md). |
+
+有关 [!DNL Query Service]，请参阅 [[!DNL Query Service] 概述](../../query-service/home.md).
 
 ## 沙盒 {#sandboxes}
 
