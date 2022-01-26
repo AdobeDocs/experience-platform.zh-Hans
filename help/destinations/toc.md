@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: b41230c1280bf699e9a78d5fd15b43d51ab298f7
+source-git-commit: 628e7a993a3566322e0249a5a9864cf6b3fe4493
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '695'
 ht-degree: 9%
 
 ---
@@ -32,6 +32,7 @@ ht-degree: 9%
       * [将受众数据激活到流配置文件导出目标](./ui/activate-streaming-profile-destinations.md)
       * [激活受众数据以批量配置文件导出目标](./ui/activate-batch-profile-destinations.md)
       * [将受众数据激活到用户档案请求目标（测试版）](./ui/activate-profile-request-destinations.md)
+      * [为同一页面和下一页面个性化配置个性化目标](./ui/configure-personalization-destinations.md)
    * [查看目标详细信息](./ui/destination-details-page.md)
    * [更新目标帐户](./ui/update-accounts.md)
    * [编辑激活流](./ui/edit-activation.md)
@@ -118,11 +119,11 @@ ht-degree: 9%
       * [Braze连接](./catalog/mobile-engagement/braze.md)
    * 个性化目标 {#personalization}
       * [个性化目标概述](./catalog/personalization/overview.md)
-      * [Adobe Target连接（测试版）](./catalog/personalization/adobe-target-connection.md)
+      * [Adobe Target连接](./catalog/personalization/adobe-target-connection.md)
       * [Adobe Target 扩展](./catalog/personalization/adobe-target.md)
       * [Adobe Target v2 扩展](./catalog/personalization/adobe-target-v2.md)
       * [Beemray扩展](./catalog/personalization/beemray.md)
-      * [自定义个性化连接（测试版）](./catalog/personalization/custom-personalization.md)
+      * [自定义个性化连接](./catalog/personalization/custom-personalization.md)
       * [D&amp;B Visitor Intelligence扩展](./catalog/personalization/dnb.md)
       * [Experience Cloud ID 服务扩展](./catalog/personalization/adobe-ecid.md)
       * [Gainsight扩展](./catalog/personalization/gainsight.md)

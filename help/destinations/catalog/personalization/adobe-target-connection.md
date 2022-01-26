@@ -1,24 +1,20 @@
 ---
 keywords: 目标个性化；目的地；experience platform target目标；adobe target目标；
-title: Adobe Target连接（测试版）
-description: Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI技术的实时个性化和实验。
+title: Adobe Target连接
+description: Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: fae3d9a5aff3e84354831026e9724e1c85d32b5c
+source-git-commit: 8845bb42fe1a47f1bcd6521f7886c1582d209993
 workflow-type: tm+mt
-source-wordcount: '453'
+source-wordcount: '432'
 ht-degree: 0%
 
 ---
 
-# Adobe Target连接（测试版） {#adobe-target-connection}
+# Adobe Target连接 {#adobe-target-connection}
 
 ## 概述 {#overview}
 
->[!IMPORTANT]
->
->Adobe Experience Platform中的Adobe Target连接当前为测试版。 文档和功能可能会发生更改。
-
-Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中，提供基于AI的实时1:1个性化和实验。
+Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI的实时个性化和实验功能。
 
 Adobe Target是Adobe Experience Platform中的一个个性化连接。
 

@@ -1,28 +1,24 @@
 ---
 keywords: 自定义个性化；目的地；experience platform自定义目标；
 title: 自定义个性化连接（测试版）
-description: 此目标可提供外部个性化、内容管理系统、广告服务器以及网站上运行的其他应用程序，以便从Adobe Experience Platform中检索区段信息。 此目标根据用户配置文件的区段成员资格提供实时1:1和个性化。
+description: 此目标可提供外部个性化、内容管理系统、广告服务器以及网站上运行的其他应用程序，以便从Adobe Experience Platform中检索区段信息。 此目标可根据用户配置文件区段成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 50ab34cb9147cf880e199afad88e718875fb591f
+source-git-commit: 8845bb42fe1a47f1bcd6521f7886c1582d209993
 workflow-type: tm+mt
-source-wordcount: '586'
-ht-degree: 0%
+source-wordcount: '575'
+ht-degree: 1%
 
 ---
 
-# 自定义个性化连接（测试版） {#custom-personalization-connection}
+# 自定义个性化连接 {#custom-personalization-connection}
 
 ## 概述 {#overview}
-
->[!IMPORTANT]
->
->Adobe Experience Platform中的自定义个性化连接当前处于测试阶段。 文档和功能可能会发生更改。
 
 此目标提供了一种方法，可将区段信息从Adobe Experience Platform检索到外部个性化平台、内容管理系统、广告服务器以及在客户网站上运行的其他应用程序。
 
 ## 先决条件 {#prerequisites}
 
-此集成由 [Adobe Experience Platform Web SDK](../../../edge/home.md). 您必须使用此SDK才能使用此目标。
+此集成由 [Adobe Experience Platform Web SDK](../../../edge/home.md) 或 [Adobe Experience Platform Mobile SDK](https://aep-sdks.gitbook.io/docs/). 您必须使用其中一个SDK才能使用此目标。
 
 ## 导出类型 {#export-type}
 
@@ -73,12 +69,10 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
       "alias":"personalizationAlias",
       "segments":[
          {
-            "id":"399eb3e7-3d50-47d3-ad30-a5ad99e8ab77",
-            "mergePolicyId":"69638c01-2099-4032-8b41-84bee8ebcfa4"
+            "id":"399eb3e7-3d50-47d3-ad30-a5ad99e8ab77"
          },
          {
-            "id":"499eb3e7-3d50-47d3-ad30-a5ad99e8ab77",
-            "mergePolicyId":"69638c01-2099-4032-8b41-84bee8ebcfa4"
+            "id":"499eb3e7-3d50-47d3-ad30-a5ad99e8ab77"
          }
       ]
    }
