@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: bcd52989-ef62-4ab9-866e-1d9e57b76a0c
-source-git-commit: 78f9b8434d577909ccb1c62211a802e05c8291e1
+source-git-commit: 8a26a69e6a244fc8a0d347e2814f0406713b1c9b
 workflow-type: tm+mt
-source-wordcount: '959'
-ht-degree: 5%
+source-wordcount: '1253'
+ht-degree: 4%
 
 ---
 
@@ -18,6 +18,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [警报](#alerts)
 - [[!DNL Data Prep]](#data-prep)
 - [[!DNL Dashboards]](#dashboards)
+- [[!DNL Destinations]](#destinations)
 - [查询服务](#query-service)
 - [沙盒](#sandboxes)
 - [分段服务](#segmentation)
@@ -60,30 +61,34 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 
 有关 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
 
-<!--
-
 ## [!DNL Destinations] {#destinations}
 
-[!DNL Destinations] are pre-built integrations with destination platforms that allow for the seamless activation of data from Adobe Experience Platform. You can use destinations to activate your known and unknown data for cross-channel marketing campaigns, email campaigns, targeted advertising, and many other use cases.
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| 同页和下一页个性化 | 同页和下一页个性化功能为Experience Edge上的应用程序提供了共享的、可定位的用户视图，以保持营销渠道和客户渠道之间的一致性。 此个性化可通过 [Adobe Target连接](../../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化连接](../../destinations/catalog/personalization/custom-personalization.md). 要配置同页或下一页个性化促销活动，请参阅 [专用教程](../../destinations/ui/configure-personalization-destinations.md). |
+| Marketo目标增强功能 | 使用Marketo Engage的Experience Platform客户可以通过Marketo将新人员记录从Marketo Engage推送到Experience Platform，从而最大限度地提升其数据库 [Marketo目标连接器](/help/destinations/catalog/adobe/marketo-engage.md). 在将受众区段从Experience Platform发送到Marketo Engage时，可以自动将区段中Marketo Engage数据库中不存在的人添加到受众区段中。 有关更多信息，请阅读 [将Adobe Experience Platform区段推送到Marketo静态列表](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/static-lists/push-an-adobe-experience-platform-segment-to-a-marketo-static-list.html?lang=en) (本教程中的步骤9指示如何将新人员记录推送到Marketo)。 |
+
+<!--
 
 | Feature | Description |
 | ----------- | ----------- |
-| Placeholder for next-hit personalization | Description |
-| Placeholder for batch monitoring | Description |
-| Placeholder for re-introducing scheduling in the UI | Description |
-| Placeholder for Marketo destination update | Description |
-
-
-**New destinations**
-
-| Destination | Description |
-| ----------- | ----------- |
-| Placeholder for Target | Description |
-| Placeholder for Custom Personalization | Description |
-
-For more general information on destinations, refer to the [destinations overview](../../destinations/home.md).
+| Batch destination monitoring and segment-level metrics | The destination monitoring functionality is now expanded from streaming destinations to also include batch destinations and segment-level metrics for your activation dataflows. For more information, read monitoring destinations dashboard, monitoring segment jobs dashboard, and segment-level view. |
+| Schedule editing in the UI for existing batch activation dataflows | This release introduces the option to edit the schedule of your existing activation dataflows to batch destinations. For more information, read [activate profile data to batch profile destinations](/help/destinations/ui/activate-batch-profile-destinations.md).  |
 
 -->
+
+**新目标**
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [Adobe Target连接](../../destinations/catalog/personalization/adobe-target-connection.md) | Adobe Target是一款应用程序，可跨网站、移动设备应用程序等的所有入站客户交互提供基于AI的实时个性化和实验。 Adobe Target是Adobe Experience Platform中的一个个性化连接。 |
+| [自定义个性化连接](../../destinations/catalog/personalization/custom-personalization.md) | 此个性化连接提供了一种方法，用于从Adobe Experience Platform检索区段信息到外部个性化平台、内容管理系统、广告服务器以及在客户网站上运行的其他应用程序。 |
+
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 查询服务 {#query-service}
 
