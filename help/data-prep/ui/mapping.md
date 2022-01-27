@@ -2,7 +2,8 @@
 keywords: Experience Platform；主页；热门主题；映射CSV；映射CSV文件；将CSV文件映射到XDM；将CSV映射到XDM;UI指南；映射；数据准备；数据准备；准备数据；
 title: 数据准备UI指南
 description: 本文档提供了有关如何在Platform UI中使用数据准备函数将CSV文件映射到XDM架构的说明。
-source-git-commit: 4c2e3380881e6a032100ef00502b55112f3b103f
+exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
+source-git-commit: 4cce36ef21ad7490941eecff3933ff0459a0425c
 workflow-type: tm+mt
 source-wordcount: '1665'
 ht-degree: 1%
@@ -80,18 +81,18 @@ ht-degree: 1%
 
 ### 了解映射界面
 
-映射界面包括一个功能板，用于提供有关摄取工作流上下文中映射集运行状况的信息。 功能板显示有关映射集的以下详细信息：
+映射界面包括一个功能板，用于提供有关摄取工作流上下文中映射字段运行状况的信息。 功能板显示有关映射字段的以下详细信息：
 
 | 属性 | 描述 |
 | --- | --- |
 | [!UICONTROL 映射的字段] | 显示已映射到目标XDM字段的源字段总数，而不考虑错误。 |
 | [!UICONTROL 必填字段] | 显示必填映射字段的数量。 |
-| [!UICONTROL 标识字段] | 显示定义为标识的映射集总数。 这些映射集由指纹图标表示。 |
-| [!UICONTROL 错误] | 显示错误映射集的数量。 |
+| [!UICONTROL 标识字段] | 显示定义为标识的映射字段总数。 这些映射字段由指纹图标表示。 |
+| [!UICONTROL 错误] | 显示错误映射字段的数量。 |
 
 ![顶部面板](../images/ui/mapping/top-panel.png)
 
-映射界面还提供了一个选项面板，您可以从中进行选择，以便更好地进行交互或过滤映射集。
+映射界面还提供了一个选项面板，您可以从中进行选择，以便更好地进行交互或在映射字段中进行筛选。
 
 ![第二面板](../images/ui/mapping/second-panel.png)
 
@@ -112,11 +113,11 @@ ht-degree: 1%
 | [!UICONTROL 未映射的字段] | 此选项过滤源架构以仅显示尚未映射的字段。 |
 | [!UICONTROL 包含推荐的字段] | 此选项过滤源架构以仅显示包含映射推荐的字段。 |
 
-选择 **[!UICONTROL 有错误的字段]** 以查看所有有错误的映射集。
+选择 **[!UICONTROL 有错误的字段]** 以查看所有存在错误的映射字段。
 
 ![filter](../images/ui/mapping/filter.png)
 
-此时会出现错误映射集的孤立视图，允许您通过智能映射推荐或手动映射树来解决错误。
+此时会显示错误映射字段的孤立视图，允许您通过智能映射推荐或手动映射树来解决错误。
 
 ![带错误的字段](../images/ui/mapping/fields-with-errors.png)
 
@@ -176,13 +177,13 @@ ht-degree: 1%
 
 ![预览 — 屏幕](../images/ui/mapping/preview-screen.png)
 
-要删除所有映射集，请选择 **[!UICONTROL 清除所有映射]**.
+要删除所有映射字段，请选择 **[!UICONTROL 清除所有映射]**.
 
 ![全部清除](../images/ui/mapping/clear-all.png)
 
 ### 使用映射界面
 
-Platform会根据您选择的目标架构或数据集，自动为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例，或修复任何复制的映射集以清除任何错误。
+Platform会根据您选择的目标架构或数据集，自动为自动映射的字段提供智能推荐。 您可以手动调整映射规则以适合您的用例，或修复任何复制的映射字段以清除任何错误。
 
 ![映射接口](../images/ui/mapping/mapping-interface.png)
 
@@ -200,7 +201,7 @@ Platform会根据您选择的目标架构或数据集，自动为自动映射的
 
 ![recc-panel](../images/ui/mapping/recc-panel.png)
 
-目标架构映射界面显示在与映射集相同的视图中，允许您在同一屏幕中修改映射对。 选择适合您的用例或修复错误的目标字段。
+目标架构映射界面显示在与映射字段相同的视图中，允许您在同一屏幕中修改映射对。 选择适合您的用例或修复错误的目标字段。
 
 ![select-target-field](../images/ui/mapping/select-target-field.png)
 
