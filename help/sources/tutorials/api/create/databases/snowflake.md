@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Snowflake。
 exl-id: 0ef34d30-7b4c-43f5-8e2e-cde05da05aa5
-source-git-commit: 76b3e3e9bcb27eb2bd6981ae6eb109410ae16336
+source-git-commit: 0928da0ad15ce23d3677fec7b9866d079f3db407
 workflow-type: tm+mt
 source-wordcount: '526'
 ht-degree: 1%
@@ -30,7 +30,7 @@ ht-degree: 1%
 
 有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
-以下部分提供了成功连接到所需了解的其他信息 [!DNL Snowflake] 使用 [!DNL Flow Service] API。
+以下部分提供了成功连接到时需要了解的其他信息 [!DNL Snowflake] 使用 [!DNL Flow Service] API。
 
 ### 收集所需的凭据
 
@@ -43,7 +43,7 @@ ht-degree: 1%
 | `database` | 的 [!DNL Snowflake] 数据库包含要引入平台的数据。 |
 | `username` | 的用户名 [!DNL Snowflake] 帐户。 |
 | `password` | 的密码 [!DNL Snowflake] 用户帐户。 |
-| `connectionString` | 用于连接到的连接字符串 [!DNL Snowflake] 实例。 的连接字符串模式 [!DNL Snowflake] is `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}`. |
+| `connectionString` | 用于连接到的连接字符串 [!DNL Snowflake] 实例。 的连接字符串模式 [!DNL Snowflake] is `jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}` |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 的连接规范ID [!DNL Snowflake] is `b2e08744-4f1a-40ce-af30-7abac3e23cf3`. |
 
 有关入门的更多信息，请参阅此 [[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/oauth-custom.html).
