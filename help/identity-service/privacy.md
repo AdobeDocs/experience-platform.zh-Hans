@@ -2,13 +2,13 @@
 keywords: Experience Platform；主页；热门主题
 title: Identity Service中的隐私请求处理
 description: Adobe Experience Platform Privacy Service会按照许多隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍与处理Identity Service的隐私请求相关的基本概念。
-source-git-commit: 49f5de6c4711120306bfc3e6759ed4e83e8a19c2
+exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
+source-git-commit: f0fa8d77e6184314056f8e70205a9b42409d09d5
 workflow-type: tm+mt
-source-wordcount: '666'
-ht-degree: 1%
+source-wordcount: '722'
+ht-degree: 0%
 
 ---
-
 
 # 中的隐私请求处理 [!DNL Identity Service]
 
@@ -50,6 +50,10 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 
 以下请求会根据GDPR为 [!DNL Identity] 存储。 在 `userIDs` 数组；使用标准 `Email` 标识命名空间，而另一个使用 `ECID` 命名空间中，它还包含 [!DNL Identity] (`Identity`) `include` 数组：
 
+>[!TIP]
+>
+>使用API删除自定义命名空间时，必须将身份符号指定为命名空间，而不是显示名称。
+
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/core/privacy/jobs \
@@ -89,6 +93,10 @@ curl -X POST \
 ```
 
 ### 使用UI
+
+>[!TIP]
+>
+>使用UI删除自定义命名空间时，必须将身份符号指定为命名空间，而不是显示名称。 此外，您无法在非生产沙箱的UI中删除自定义命名空间。
 
 在UI中创建作业请求时，请务必选择 **[!UICONTROL 身份]** 在 **[!UICONTROL 产品]** 以便处理存储在 [!DNL Identity Service].
 
