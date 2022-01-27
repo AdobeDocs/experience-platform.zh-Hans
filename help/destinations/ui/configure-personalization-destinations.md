@@ -5,13 +5,13 @@ type: Tutorial
 seo-title: Configure personalization destinations for same-page and next-page personalization.
 description: 了解如何为同一页面和下一页面个性化配置个性化目标。
 seo-description: Configure personalization destinations for same-page and next-page personalization.
-source-git-commit: 24e8d088dd79304e0bf0335b7c3df2ef75baf81d
+exl-id: 7d7b6869-bd59-4766-a044-f449396f6524
+source-git-commit: dd9493077706b102467493e90b363ac202550eee
 workflow-type: tm+mt
 source-wordcount: '320'
 ht-degree: 1%
 
 ---
-
 
 # 为同一页面和下一页面个性化配置个性化目标
 
@@ -54,7 +54,7 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 ## 步骤5:将区段激活到您的目标
 
-配置过程的最后一步是将您在第4步中创建的区段激活到您在第2步中创建的目标。
+配置过程的最后一步是将您在步骤4中创建的区段激活到您在步骤2中创建的目标。
 
 要执行此操作，请遵循以下步骤 [激活教程](../ui/activate-profile-request-destinations.md).
 
