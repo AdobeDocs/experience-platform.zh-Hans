@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了使用云存储帐户配置新数据流的步骤。
 exl-id: b327bbea-039d-4c04-afd3-f1d6a5f902a6
-source-git-commit: 38f64f2ba0b40a20528aac6efff0e2fd6bc12ed2
+source-git-commit: 86d8313d7acea41e7b3bcea6554e91ea2190ae69
 workflow-type: tm+mt
-source-wordcount: '2040'
+source-wordcount: '2083'
 ht-degree: 0%
 
 ---
@@ -171,7 +171,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->对于批量摄取，每个后续数据流都会根据文件的源文件选择要摄取的文件 **上次修改时间** 时间戳。 这意味着批处理数据流从源中选择新文件或自上次数据流运行以来已修改的文件。
+>对于批量摄取，每个后续数据流都会根据文件的源文件选择要摄取的文件 **上次修改时间** 时间戳。 这意味着批处理数据流从源中选择新文件或自上次流程运行以来已修改的文件。 此外，您必须确保在文件上传和计划流运行之间有足够的时间跨度，因为在计划流运行时间之前未完全上传到云存储帐户的文件可能无法提取以用于摄取。
 
 ![](../../../../images/tutorials/dataflow/cloud-storage/batch/scheduling-interval-on.png)
 
