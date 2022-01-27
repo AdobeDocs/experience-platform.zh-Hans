@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
-source-git-commit: 7cd4a776ab07fcd123e798497b23edd41266f409
+source-git-commit: 7a0a9d61f5f51ba548b342a24e4fd9869c4abf18
 workflow-type: tm+mt
 source-wordcount: '1329'
 ht-degree: 4%
