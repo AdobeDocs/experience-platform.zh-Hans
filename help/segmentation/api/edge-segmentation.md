@@ -5,10 +5,10 @@ title: '使用API进行边缘分段 '
 topic-legacy: developer guide
 description: 本文档包含有关如何将边缘分段与Adobe Experience Platform Segmentation Service API结合使用的示例。
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: f168566d03485176b16b6d3833c37930b38b0149
+source-git-commit: e52aa55adde532d838d5417feba36913ed03ce29
 workflow-type: tm+mt
-source-wordcount: '989'
-ht-degree: 1%
+source-wordcount: '1015'
+ht-degree: 0%
 
 ---
 
@@ -25,6 +25,8 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > 边缘数据将存储在与收集位置最接近的边缘服务器位置，并且可能存储在指定为中心（或主体）Adobe Experience Platform数据中心的位置以外的位置。
+>
+> 此外，边缘分段引擎将仅执行存在的边缘上的请求 **one** 主标记标识，与非基于边缘的主标识一致。
 
 ## 快速入门
 
