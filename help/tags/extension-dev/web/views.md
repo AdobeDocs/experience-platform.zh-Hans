@@ -1,11 +1,11 @@
 ---
-title: 视图 Web扩展中
+title: Web扩展中的视图
 description: 了解如何在Adobe Experience Platform Web扩展中为库模块定义视图。
 exl-id: 4471df3e-75e2-4257-84c0-dd7b708be417
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 41efcb14df44524b58be2293d2b943bd890c1621
 workflow-type: tm+mt
-source-wordcount: '2063'
-ht-degree: 76%
+source-wordcount: '2083'
+ht-degree: 75%
 
 ---
 
@@ -169,6 +169,10 @@ window.extensionBridge.openDataElementSelector().then(function(dataElement) {
 为了指示用户在何处使用数据元素可能会有所帮助，并且方便用户输入数据元素，我们强烈建议在此类字段旁边添加图标按钮，如下所示：
 
 ![数据元素字段](../images/data-element-field.png)
+
+>[!NOTE]
+>
+>要下载相应的图标，请导航到 [Adobe频谱上的图标页面](https://spectrum.adobe.com/page/icons/) 并搜索“[!DNL Data]&quot;
 
 当用户选择文本字段旁边的按钮时，将调用 `window.extensionBridge.openDataElementSelector`，[如上所述](#open-data-element)。这会显示用户可以从中进行选择的数据元素列表，而不是强制用户记住数据元素名称并键入百分比符号。用户选择数据元素后，您将收到用百分比符号括起来的选定数据元素的名称（除非您已将 `tokenize` 选项设置为 `false`）。我们建议您随后使用该结果填充文本字段。
 
