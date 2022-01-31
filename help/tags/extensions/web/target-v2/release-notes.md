@@ -2,10 +2,10 @@
 title: Adobe Target v2扩展的发行说明
 description: Adobe Experience Platform中Adobe Target v2标记扩展的最新发行说明。
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: 644be95d9f90e20622c4f8ad68252ac57c09a288
+source-git-commit: 824fea41bc7e7082814648efd58184f5208e5e6f
 workflow-type: tm+mt
-source-wordcount: '623'
-ht-degree: 47%
+source-wordcount: '642'
+ht-degree: 36%
 
 ---
 
@@ -15,17 +15,26 @@ ht-degree: 47%
 >
 >Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
+## 2022 年 1 月 28 日
+
+### Adobe Target v2 扩展 0.17.1
+
+- 更新以支持 `at.js` v2.8.1
+- 已修复 `pageLoad` 未映射到 `target-global-mbox` 在ODD混合执行模式下
+- 修复了 `mbox` 请求
+- 升级了开发依赖项以修复安全漏洞
+
 ## 2022 年 1 月 7 日
 
 ### Adobe Target v2 扩展 0.17.0
 
-- 更新了以支持at.js v2.8.0，该版本现在正在收集功能使用情况和性能遥测数据。  不会收集个人数据。 要选择退出此功能，请设置 `telemetryEnabled` to `false` in `targetGlobalSettings`.
+- 更新以支持 `at.js` v2.8.0，现在正在收集功能使用情况和性能遥测数据。  不收集个人数据。要选择退出此功能，请设置 `telemetryEnabled` to `false` in `targetGlobalSettings`.
 
 ## 2021 年 10 月 28 日
 
 ### Adobe Target v2 扩展 0.16.0
 
-- 更新了以支持at.js v2.7.0，现在可从Adobe Target下载。
+- 更新以支持 `at.js` v2.7.0，现在可从Adobe Target下载。
 
 ## 2021 年 7 月 20 日
 
@@ -37,7 +46,7 @@ ht-degree: 47%
 
 ### Adobe Target v2 扩展 0.15.0
 
-- 每当at.js设置secureOnly设置为true时，向Cookie添加安全属性
+- 向Cookie添加安全属性，只要 `at.js` settings secureOnly设置为true
 - 现在，使用 `triggerView()`
 - 修复了与 `CONTENT_RENDERING_NO_OFFERS` 事件。 现在，当没有从Target返回内容时，可以正确触发该事件
 - 使用预取请求时，可正确返回A4T点击量度详细信息
@@ -49,7 +58,7 @@ ht-degree: 47%
 
 ### Adobe Target v2 扩展 0.14.2
 
-- 修复了最终包含两个at.js版本（一个包含设备决策版本，一个不包含设备决策版本）的错误。
+- 修复最终包中包含两个 `at.js` 版本中，一个具有On-Device Decisioning，一个不具有。
 
 ## 2021 年 5 月 19 日
 
@@ -61,8 +70,8 @@ ht-degree: 47%
 
 ### Adobe Target v2 扩展 0.14
 
-- 添加了新操作Load Target（加载目标） [设备内决策](./overview.md#load-target-with-on-device-decisioning)，它加载了具有设备决策功能的at.js 2.5
-- 已将at.js更新到2.5
+- 添加了新操作Load Target（加载目标） [设备内决策](./overview.md#load-target-with-on-device-decisioning)，加载 `at.js` 2.5，具有设备内决策功能
+- 已更新 `at.js` 到2.5
 
 
 ## 2021 年 3 月 25 日
@@ -71,7 +80,7 @@ ht-degree: 47%
 
 - 修复了 mbox 请求中包含的 `targetPageParams` 存在的问题。`targetPageParams` 只应包含在 `pageLoad` 请求。
 - 修复了标记扩展中的文档和窗口全局对象的问题，方法是将全局对象依赖项替换为对它们的直接引用。
-- 已将at.js更新到2.4.1。
+- 已更新 `at.js` 到2.4.1。
 
 ## 2021 年 1 月 25 日
 
@@ -88,7 +97,7 @@ ht-degree: 47%
 
 - 修复了 mbox 参数不显示在 UI 中的错误
 - 品牌更新
-- 已将 at.js 版本更新到 2.3.3
+- 更新了 `at.js` 版本到2.3.3
 
 ## 2020 年 7 月 24 日
 
@@ -101,7 +110,7 @@ ht-degree: 47%
 
 ### Adobe Target v2 扩展 0.13.2
 
-- 修复了以下问题：使用 CNAME 和 Edge 覆盖时，at.js 1.x 可能会错误地创建服务器域，从而导致 Target 请求失败
+- 修复了使用CNAME和Edge覆盖时， `at.js` 1.x可能会错误地创建服务器域，从而导致Target请求失败
 - 修复了以下问题：当使用适用于Target的v2标记扩展和Adobe Analytics标记扩展时，Target会延迟Analytics sendBeacon调用
 - 改进了 `deviceIdLifetime` 设置，使其可通过 `targetGlobalSettings` 覆盖
 
@@ -109,7 +118,7 @@ ht-degree: 47%
 
 ### Adobe Target v2 扩展 0.13.0
 
-- 已将 at.js 更新至 v2.3。
+- 已更新 `at.js` 到v2.3。
 - 在 adobe.target.getOffer API 中添加了 Target 全局 Mbox 支持
 - 修复了参数和页面加载参数无法正确处理的问题
 
@@ -117,9 +126,9 @@ ht-degree: 47%
 
 ### Adobe Target v2 扩展 0.12.0
 
-- 已将 at.js 更新至 v2.2。
-- 改进了 Experience Cloud ID 库 (ECID) v4.4 和 at.js 2.2 之间集成的性能。
-- 以前，ECID 库要发出两次阻止调用，at.js 才能获取体验。现已减少为一次调用，显著提高了性能。
+- 已更新 `at.js` 到v2.2。
+- 改进了Experience CloudID库(ECID)v4.4与 `at.js` 2.2。
+- 以前，ECID库会在之前发出两次阻止调用 `at.js` 可以获取体验。 现已减少为一次调用，显著提高了性能。
 
 >[!NOTE]
 >请将您的ECID标记扩展升级到v4.4.1以利用此性能增强功能。
@@ -128,11 +137,11 @@ ht-degree: 47%
 
 ### Adobe Target v2 扩展 0.11.1
 
-- 更新了扩展版本以使用 at.js 2.1.1
+- 更新了扩展版本以使用 `at.js` 2.1.1
 - 添加了处理参数的修复
 
 ## 2019 年 6 月 3 日
 
 ### Adobe Target v2 扩展 0.11.0
 
-- 新的标记扩展可支持at.js 2.1
+- 要支持的新标记扩展 `at.js` 2.1
