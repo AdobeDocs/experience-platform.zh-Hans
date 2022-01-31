@@ -1,17 +1,17 @@
 ---
 keywords: Experience Platform；主页；热门主题；分段；区段匹配；区段匹配
 solution: Experience Platform
-title: 区段匹配常见问题解答（测试版）
+title: 区段匹配常见问题解答
 description: 区段匹配是Adobe Experience Platform中的一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。
 exl-id: cfa9db16-0bc3-4d25-914d-0d923eccb5a3
-source-git-commit: 50795be308649052037be62153109eadab02c9a1
+source-git-commit: 823eb549e5514a3201ba68ed395c69e202cb747f
 workflow-type: tm+mt
-source-wordcount: '420'
+source-wordcount: '418'
 ht-degree: 0%
 
 ---
 
-# [!DNL Segment Match] 常见问题解答（测试版）
+# [!DNL Segment Match] 常见问题解答
 
 本指南提供了有关Adobe Experience Platform区段匹配的隐私和法律问题的解答。
 
