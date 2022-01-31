@@ -3,9 +3,9 @@ keywords: 自定义个性化；目的地；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标可提供外部个性化、内容管理系统、广告服务器以及网站上运行的其他应用程序，以便从Adobe Experience Platform中检索区段信息。 此目标基于用户配置文件区段成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: cfbf8fb29d15badd10bafe35c558d95e534d23e8
+source-git-commit: d0638ea80c03bf9d5ce76e27e3a4fc7358bfe83c
 workflow-type: tm+mt
-source-wordcount: '574'
+source-wordcount: '635'
 ht-degree: 1%
 
 ---
@@ -39,6 +39,12 @@ ht-degree: 1%
 为其广告服务器使用单独的自定义个性化目标，同一网站可以使用Adobe Experience Platform中的不同区段集作为定位标准来定位网站广告。
 
 ## 连接到目标 {#connect}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_custom_personalization_datastream"
+>title="关于数据流ID"
+>abstract="此选项确定区段在响应页面时将包含在哪些数据收集数据流中。 下拉菜单仅显示已启用目标配置的数据流。 必须先配置数据流，然后才能配置目标。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html?lang=en" text="了解如何配置数据流。"
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
