@@ -2,9 +2,9 @@
 title: 审核日志概述
 description: 了解审核日志如何让您了解谁在Adobe Experience Platform中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 2677d5f0c4369ab692f9e4b16710098a359402d7
+source-git-commit: 7e4853cee8a0fa937c82eb842cd73b675eb337a3
 workflow-type: tm+mt
-source-wordcount: '659'
+source-wordcount: '657'
 ht-degree: 5%
 
 ---
@@ -65,7 +65,7 @@ ht-degree: 5%
 | --- | --- |
 | [!UICONTROL 类别] | 使用下拉菜单按 [类别](#category). |
 | [!UICONTROL 操作] | 按操作过滤。 当前仅 [!UICONTROL 创建] 和 [!UICONTROL 删除] 可以过滤操作。 |
-| [!UICONTROL 访问控制状态] | 按是否允许（完成）或由于缺少而拒绝该操作进行过滤 [访问控制](../../../access-control/home.md) 权限。 |
+| [!UICONTROL 状态] | 按是否允许（完成）或由于缺少而拒绝该操作进行过滤 [访问控制](../../../access-control/home.md) 权限。 |
 | [!UICONTROL 日期] | 选择开始日期和/或结束日期，以定义日期范围以按过滤结果。 |
 
 要删除过滤器，请在相关过滤器的“药丸”图标上选择“X”，或选择 **[!UICONTROL 全部清除]** 删除所有过滤器。
