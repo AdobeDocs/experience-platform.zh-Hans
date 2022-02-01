@@ -5,18 +5,14 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Snowflake源连接。
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: 0928da0ad15ce23d3677fec7b9866d079f3db407
+source-git-commit: 25cc0c5a1e6dcf01b82956ea1022663445315a27
 workflow-type: tm+mt
-source-wordcount: '461'
-ht-degree: 1%
+source-wordcount: '445'
+ht-degree: 2%
 
 ---
 
 # 创建 [!DNL Snowflake] UI中的源连接
-
->[!NOTE]
->
-> 的 [!DNL Snowflake] 连接器处于测试阶段。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标签的连接器的更多信息。
 
 本教程提供了创建 [!DNL Snowflake] 源连接器。
 
