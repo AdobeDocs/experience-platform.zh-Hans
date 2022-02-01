@@ -6,10 +6,10 @@ topic-legacy: tutorial
 type: Tutorial
 description: 此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: f5f4230c85a16aba00d0071b388e8305ccc654d5
 workflow-type: tm+mt
-source-wordcount: '1207'
-ht-degree: 6%
+source-wordcount: '1272'
+ht-degree: 5%
 
 ---
 
@@ -49,7 +49,7 @@ ht-degree: 6%
 
 联系 [!DNL Admin Console] 组织中的管理员，可使用 [[!DNL Admin Console]](https://adminconsole.adobe.com/). 请参阅 [!DNL Admin Console] 有关如何操作的特定说明的文档 [管理产品配置文件的开发人员访问权限](https://helpx.adobe.com/enterprise/admin-guide.html/enterprise/using/manage-developers.ug.html).
 
-分配为开发人员后，您可以在 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui). 这些集成是从外部应用程序和服务到AdobeAPI的管道。
+将您分配为开发人员后，即可在 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui). 这些集成是从外部应用程序和服务到AdobeAPI的管道。
 
 ### 获取用户访问权限
 
@@ -83,7 +83,7 @@ ht-degree: 6%
 
 ### 收集凭据
 
-将API添加到项目后， **[!UICONTROL Experience PlatformAPI]** 项目的页面会显示所有对Experience PlatformAPI的调用中所需的以下凭据：
+将API添加到项目后， **[!UICONTROL Experience PlatformAPI]** 项目的页面显示了所有对Experience PlatformAPI的调用所需的以下凭据：
 
 * `{API_KEY}` ([!UICONTROL 客户端ID])
 * `{IMS_ORG}` ([!UICONTROL 组织 ID])
@@ -97,6 +97,12 @@ ht-degree: 6%
 ## 生成JSON Web令牌(JWT) {#jwt}
 
 下一步是根据您的帐户凭据生成JSON Web令牌(JWT)。 此值用于生成 `{ACCESS_TOKEN}` 用于Platform API调用的凭据，必须每24小时重新生成一次。
+
+>[!IMPORTANT]
+>
+>在本教程中，以下步骤将简要介绍如何在开发人员控制台中生成JWT。 但是，此生成方法只应用于测试和评估目的。
+>
+>为了正常使用，必须自动生成JWT。 有关如何以编程方式生成JWT的更多信息，请参阅 [服务帐户验证指南](https://www.adobe.io/developer-console/docs/guides/authentication/JWT/) Adobe开发人员。
 
 选择 **[!UICONTROL 服务帐户(JWT)]** 在左侧导航中，选择 **[!UICONTROL 生成JWT]**.
 

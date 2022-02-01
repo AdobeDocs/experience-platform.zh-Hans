@@ -4,9 +4,9 @@ title: 同意和首选项数据类型
 description: “隐私、个性化和营销首选项的同意”数据类型旨在支持收集由同意管理平台(CMP)和其他来自您数据操作来源的客户权限和首选项。
 topic-legacy: guide
 exl-id: cdcc7b04-eeb9-40d3-b0b5-f736a5472621
-source-git-commit: 04e778d3318d60733772c2042c8bb272f0c87d5c
+source-git-commit: 65ad76bb4a5318b03d79d68d3c7e030d7878cf30
 workflow-type: tm+mt
-source-wordcount: '2039'
+source-wordcount: '2058'
 ht-degree: 2%
 
 ---
@@ -53,10 +53,11 @@ ht-degree: 2%
 {
   "consents": {
     "collect": {
-      "val": "y",
+      "val": "VI",
     },
     "adID": {
-      "val": "VI"
+      "idType": "IDFA",
+      "val": "y"
     },
     "share": {
       "val": "y",
@@ -99,10 +100,11 @@ ht-degree: 2%
 ```json
 "consents": {
   "collect": {
-    "val": "y",
+    "val": "VI",
   },
   "adID": {
-    "val": "VI"
+    "idType": "IDFA",
+    "val": "y"
   },
   "share": {
     "val": "y",
@@ -144,16 +146,18 @@ ht-degree: 2%
 
 ### `adID`
 
-`adID` 表示客户同意是否可以使用广告商ID（IDFA或GAID）在此设备上的多个应用程序中链接客户。
+`adID` 表示客户同意是否可以使用广告商ID在此设备上的各个应用程序中链接客户。
 
 ```json
 "adID": {
+  "idType": "IDFA",
   "val": "y"
 }
 ```
 
 | 属性 | 描述 |
 | --- | --- |
+| `idType` | 广告ID类型， `IDFA` (适用于广告商或Apple `GAID` (对于Google的广告商ID，也称为Android广告商ID(AAID))。 |
 | `val` | 客户为此用例提供的同意选择。 请参阅 [附录](#choice-values) 以了解接受的值和定义。 |
 
 {style=&quot;table-layout:auto&quot;}
