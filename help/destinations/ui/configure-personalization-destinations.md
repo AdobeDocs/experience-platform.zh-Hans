@@ -6,16 +6,14 @@ seo-title: Configure personalization destinations for same-page and next-page pe
 description: 了解如何为同一页面和下一页面个性化配置个性化目标。
 seo-description: Configure personalization destinations for same-page and next-page personalization.
 exl-id: 7d7b6869-bd59-4766-a044-f449396f6524
-source-git-commit: dd9493077706b102467493e90b363ac202550eee
+source-git-commit: 851a9598523d26ba52a367f6c03e3c9612f6678b
 workflow-type: tm+mt
-source-wordcount: '320'
-ht-degree: 1%
+source-wordcount: '367'
+ht-degree: 0%
 
 ---
 
 # 为同一页面和下一页面个性化配置个性化目标
-
-## 概述 {#overview}
 
 Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmentation.md) 使客户能够实时、高规模地创建和定位受众区段。
 
@@ -23,11 +21,15 @@ Adobe Experience Platform使用 [边缘分割](../../segmentation/ui/edge-segmen
 
 本文提供了有关如何为这些用例配置Experience Platform和个性化目标的分步说明。
 
-## 步骤1:配置Experience PlatformWeb SDK数据流 {#configure-datastream}
+## 步骤1:在数据收集UI中配置数据流 {#configure-datastream}
 
-配置个性化用例的第一步是配置 [!DNL Web SDK datastream].
+设置个性化目标的第一步是为Experience PlatformWeb SDK配置数据流。 此操作可在数据收集UI中完成。
 
-按照 [数据流配置](../../edge/fundamentals/datastreams.md) 文档。
+配置数据流时，在 **[!UICONTROL Adobe Experience Platform]** 确保两者都 **[!UICONTROL 边缘分割]** 和 **[!UICONTROL 个性化目标]** 中。
+
+![数据流配置](../assets/ui/configure-personalization-destinations/datastream-config.png)
+
+有关如何设置数据流的更多详细信息，请按照 [平台Web SDK文档](../../edge/fundamentals/datastreams.md).
 
 ## 步骤2:配置个性化目标 {#configure-destination}
 
