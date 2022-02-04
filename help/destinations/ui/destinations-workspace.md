@@ -4,9 +4,9 @@ title: 目标工作区
 description: “目标”工作区包含四个部分：“目录”、“浏览”、“帐户”和“系统视图”。 下面各节对这些参数进行了描述。
 seo-description: In Adobe Experience Platform, select Destinations from the left navigation bar to access the destinations workspace.
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 60df79ce1d12bdce133bff54ffda1ed13307bfa4
+source-git-commit: 533f76891f47ba11e2a9de87aa8c249eb9249895
 workflow-type: tm+mt
-source-wordcount: '887'
+source-wordcount: '1084'
 ht-degree: 2%
 
 ---
@@ -64,11 +64,30 @@ ht-degree: 2%
 
 ## [!UICONTROL 帐户] {#accounts}
 
-的 **[!UICONTROL 帐户]** 选项卡显示有关您已与各种目标建立的连接的详细信息，并允许您更新现有的连接详细信息。 请参阅 [更新帐户](update-accounts.md) 以了解详细说明。
+的 **[!UICONTROL 帐户]** 选项卡显示有关您已与各种目标建立的连接的详细信息，并允许您更新或删除现有帐户详细信息。 有关每个目标帐户可获取的所有信息，请参阅下表。
+
+>[!TIP]
+>
+> * 选择 [!UICONTROL 平台] 列，并使用 ![“激活区段”按钮](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活区段&#x200B;]**按钮将区段发送到该目标。
+> * 选择 [!UICONTROL 平台] 列，并使用 ![“编辑详细信息”按钮](../assets/ui/workspace/pencil-icon.png)**[!UICONTROL 编辑详细信息&#x200B;]**按钮 [更新](update-accounts.md) 现有目标帐户的详细信息。
+> * 选择 [!UICONTROL 平台] 列，并使用 ![“删除”按钮](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL 删除&#x200B;]**按钮 [删除](delete-destination-account.md) 现有目标帐户。
+
+
+![“帐户”选项卡](../assets/ui/workspace/destination-account-options.png)
+
+| 元素 | 描述 |
+|---|---|
+| [!UICONTROL 平台] | 您为其设置连接的目标。 |
+| [!UICONTROL 连接类型] | 表示到存储段或目标的帐户连接类型。 身份验证选项取决于目标： <ul><li>对于电子邮件营销目标：可以是S3、FTP或Azure Blob。</li><li>对于实时广告目标：服务器到服务器</li><li>对于Amazon S3云存储目标：访问密钥 </li><li>对于SFTP云存储目标：SFTP的基本身份验证</li><li>OAuth 1或OAuth 2身份验证</li><li>承载令牌身份验证</li></ul> |
+| [!UICONTROL 用户名] | 您在 [连接目标向导](../catalog/email-marketing/overview.md#connect-destination). |
+| [!UICONTROL 目标] | 表示通过为目标创建的基本信息连接的唯一成功目标数据流的数量。 |
+| [!UICONTROL 已授权] | 授权与此目标的连接的日期。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## [!UICONTROL 浏览] {#browse}
 
-的 **[!UICONTROL 浏览]** 选项卡会显示您已建立连接的目标。 目标 **[!UICONTROL 已启用/已禁用]** 打开切换开关，分别将目标设置为活动或不活动。 您还可以通过选择 **[!UICONTROL 区段]** > **[!UICONTROL 浏览]** 并选择要检查的区段。 有关“浏览”选项卡中为每个目标提供的所有信息，请参阅下表：
+的 **[!UICONTROL 浏览]** 选项卡会显示您已建立连接的目标。 目标 **[!UICONTROL 已启用/已禁用]** 打开切换开关，分别将目标设置为活动或不活动。 您还可以通过选择 **[!UICONTROL 区段]** > **[!UICONTROL 浏览]** 并选择要检查的区段。 请参阅下表，以了解 [!UICONTROL 浏览] 选项卡：
 
 >[!TIP]
 >
