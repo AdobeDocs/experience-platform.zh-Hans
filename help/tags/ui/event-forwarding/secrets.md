@@ -2,9 +2,9 @@
 title: 在事件转发中配置密钥
 description: 了解如何在数据收集UI中配置密钥，以对事件转发属性中使用的端点进行身份验证。
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: 7cbf8cfa4ac7aeff9f1ed56777212f5203df2ce9
+source-git-commit: 737354ca3b286f6c39cb71bc09aa4d6141c4d9a4
 workflow-type: tm+mt
-source-wordcount: '1449'
+source-wordcount: '1447'
 ht-degree: 1%
 
 ---
@@ -130,7 +130,7 @@ ht-degree: 1%
 | 密钥类型 | 重试协议 |
 | --- | --- |
 | [!UICONTROL 令牌] | 选择 **[!UICONTROL 交换密钥]** 重试密钥交换。 此控件仅在有附加到该密钥的环境时可用。 |
-| [!UICONTROL HTTP] | 如果没有附加到该密钥的环境，请选择 **[!UICONTROL 交换密钥]** 将凭据交换到base64。 如果附加了环境，请选择“选择” **[!UICONTROL 交换和部署密钥]** 交换基地64并将密码部署到Cloudfare。 |
+| [!UICONTROL HTTP] | 如果没有附加到该密钥的环境，请选择 **[!UICONTROL 交换密钥]** 将凭据交换到base64。 如果附加了环境，请选择“选择” **[!UICONTROL 交换和部署密钥]** 交换基地64并部署秘密。 |
 | [!UICONTROL OAuth2] | 选择 **[!UICONTROL 生成令牌]** 用于交换凭据并返回来自身份验证提供程序的访问令牌。 |
 
 ## 删除密钥
