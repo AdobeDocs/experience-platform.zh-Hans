@@ -3,12 +3,12 @@ solution: Experience Platform, Data Collection
 audience: user
 user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
-user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
+user-guide-description: 通过边缘网络与Experience Cloud服务交互。
 feature: Web SDK
-source-git-commit: ccda6d3e16fd6b9966c2f30491feed5fafec47f2
+source-git-commit: 2b6a64bed3033cc5e4f97ed838050dab4400a282
 workflow-type: tm+mt
-source-wordcount: '141'
-ht-degree: 37%
+source-wordcount: '146'
+ht-degree: 30%
 
 ---
 
@@ -45,7 +45,8 @@ ht-degree: 37%
       * [概述](personalization/adobe-target/target-overview.md)
       * [单页应用程序实施](personalization/adobe-target/spa-implementation.md)
       * [访问响应令牌](personalization/adobe-target/accessing-response-tokens.md)
-   * Offer Decisioning {#offer-decisioning}
+      * [使用mbox第三方ID](personalization/adobe-target/using-mbox-3rdpartyid.md)
+   * 优惠决策 {#offer-decisioning}
       * [概述](personalization/offer-decisioning/offer-decisioning-overview.md)
 * 同意 {#consent}
    * [支持同意](consent/supporting-consent.md)
