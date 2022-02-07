@@ -5,18 +5,18 @@ solution: Experience Platform
 title: 流运行通知
 topic-legacy: overview
 exl-id: 0f1cde97-3030-4b8e-be08-21f64e78b794
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: a51c878bbfd3004cb597ce9244a9ed2f2318604b
 workflow-type: tm+mt
-source-wordcount: '782'
+source-wordcount: '786'
 ht-degree: 1%
 
 ---
 
 # 流运行通知
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用[!DNL Platform]服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用构建、标记和增强传入数据 [!DNL Platform] 服务。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 
-[[!DNL Flow Service] ](https://www.adobe.io/experience-platform-apis/references/flow-service/) API用于收集和集中来自内不同来源的客户数据 [!DNL Platform]。该服务提供了用户界面和RESTful API，所有受支持的源都可从中连接。
+[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/) 用于收集和集中来自内不同来源的客户数据 [!DNL Platform]. 该服务提供了用户界面和RESTful API，所有受支持的源都可从中连接。
 
 通过Adobe I/O事件，您可以订阅事件并使用Web挂接接收有关流运行状态的通知。 这些通知包含有关流运行成功或导致运行失败的错误的信息。
 
@@ -24,19 +24,19 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## 快速入门
 
-本教程假定您已创建至少一个源连接，其流运行要监视。 如果尚未配置源连接，请先访问[源概述](./home.md)以配置您选择的源，然后再返回本指南。
+本教程假定您已创建至少一个源连接，其流运行要监视。 如果尚未配置源连接，请首先访问 [源概述](./home.md) ，以在返回本指南之前配置您选择的源。
 
-本文档还要求您对webhook以及如何将webhook从一个应用程序连接到另一个应用程序有一定的了解。 有关Webhook的简介，请参阅[[!DNL I/O Events] 文档](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md)。
+本文档还要求您对webhook以及如何将webhook从一个应用程序连接到另一个应用程序有一定的了解。 请参阅 [[!DNL I/O Events] 文档](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/intro/webhook_docs_intro.md) 有关webhooks的简介。
 
 ## 为流运行通知注册Webhook
 
-要接收流程运行通知，您必须使用Adobe开发人员控制台为[!DNL Experience Platform]集成注册一个Webhook。
+要接收流程运行通知，您必须使用Adobe开发人员控制台向 [!DNL Experience Platform] 集成。
 
-有关如何完成此操作的详细步骤，请按照[订阅 [!DNL I/O Event] 通知](../observability/alerts/subscribe.md)的教程操作。
+请阅读本教程 [订阅[!DNL I/O Event]通知](../observability/alerts/subscribe.md) 以详细了解如何完成此操作。
 
 >[!IMPORTANT]
 >
->在订阅过程中，确保选择&#x200B;**[!UICONTROL Platform notifications]**&#x200B;作为事件提供程序，然后选择以下事件订阅：
+>在订阅过程中，请确保您选择 **[!UICONTROL 平台通知]** 作为事件提供程序，然后选择以下事件订阅：
 >
 >* **[!UICONTROL Experience Platform源的流运行成功]**
 >* **[!UICONTROL Experience Platform源的流运行失败]**
@@ -46,15 +46,15 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 连接Webhook并完成事件订阅后，您可以通过Webhook仪表板开始接收流程运行通知。
 
-通知会返回信息，如运行的摄取作业数量、文件大小和错误。 通知还会返回与以JSON格式运行的流程关联的有效负载。 响应有效负载可分类为`sources_flow_run_success`或`sources_flow_run_failure`。
+通知会返回信息，如运行的摄取作业数量、文件大小和错误。 通知还会返回与以JSON格式运行的流程关联的有效负载。 响应有效负载可以分类为 `sources_flow_run_success` 或 `sources_flow_run_failure`.
 
 >[!IMPORTANT]
 >
->如果在流创建过程中启用了部分摄取，则仅当错误数低于在流创建过程中设置的错误阈值百分比时，包含成功摄取和失败摄取的流才会标记为`sources_flow_run_success`。 如果成功的流运行包含错误，则这些错误仍将作为返回有效负载的一部分包含在内。
+>如果在流创建过程中启用了部分摄取，则包含成功摄取和失败摄取的流将标记为 `sources_flow_run_success` 仅当错误数低于在流创建过程中设置的错误阈值百分比时。 如果成功的流运行包含错误，则这些错误仍将作为返回有效负载的一部分包含在内。
 
 ### 成功
 
-成功的响应返回一组`metrics`，用于定义特定流运行的特性，以及`activities`，用于概述数据如何转换。
+成功的响应返回一组 `metrics` 定义特定流运行的特征，以及 `activities` 概述数据是如何转换的。
 
 ```json
 {
@@ -147,7 +147,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
           "outputFileCount": 10,
           "extensions": {
             "manifest": {
-              "fileInfo": "https://platform-int.adobe.io/data/foundation/export/batches/01E4TSJNM2H5M74J0XB8MFWDHK/meta?path=input_files"
+              "fileInfo": "https://platform.adobe.io/data/foundation/export/batches/01E4TSJNM2H5M74J0XB8MFWDHK/meta?path=input_files"
             }
           }
         },
@@ -313,11 +313,11 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 >[!NOTE]
 >
->有关错误消息的更多信息，请参阅[附录](#errors)。
+>请参阅 [附录](#errors) 以了解有关错误消息的详细信息。
 
 ## 后续步骤
 
-您现在可以订阅事件，以便接收有关流运行状态的实时通知。 有关流运行和源的更多信息，请参阅[源概述](./home.md)。
+您现在可以订阅事件，以便接收有关流运行状态的实时通知。 有关流运行和源的详细信息，请参阅 [源概述](./home.md).
 
 ## 附录
 
@@ -325,9 +325,9 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ### 了解错误消息 {#errors}
 
-从源复制数据或将复制的数据处理到[!DNL Platform]时，可能会发生摄取错误。 有关特定错误的详细信息，请参阅下表。
+从源复制数据或将复制的数据处理到 [!DNL Platform]. 有关特定错误的详细信息，请参阅下表。
 
 | 错误 | 描述 |
 | ---------- | ----------- |
 | `CONNECTOR-1001-500` | 从源复制数据时出错。 |
-| `CONNECTOR-2001-500` | 将复制的数据处理到[!DNL Platform]时出错。 此错误可能与解析、验证或转换有关。 |
+| `CONNECTOR-2001-500` | 将复制的数据处理到 [!DNL Platform]. 此错误可能与解析、验证或转换有关。 |
