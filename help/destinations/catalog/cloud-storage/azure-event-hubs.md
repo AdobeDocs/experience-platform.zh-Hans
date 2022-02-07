@@ -3,9 +3,9 @@ keywords: Azure事件中心目标；Azure事件中心；Azure事件Hub
 title: （测试版） [!DNL Azure Event Hubs] 连接
 description: 创建与的实时出站连接 [!DNL Azure Event Hubs] 存储以从Experience Platform流数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 0a45cb49f3eb2bbd6ac1b39962df88b2352eb121
+source-git-commit: 577b42eef9d4b44b5b556ee31d22276d72c609ea
 workflow-type: tm+mt
-source-wordcount: '752'
+source-wordcount: '1149'
 ht-degree: 1%
 
 ---
@@ -58,19 +58,37 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 ## 配置文件导出行为 {#profile-export-behavior}
 
-Experience Platform会优化配置文件导出行为，以将数据导出到您的Azure事件中心目标，以便在区段鉴别或其他重要事件之后对配置文件进行相关更新时，才会将数据导出到您的目标。 在以下情况下，用户档案会导出到您的目标：
+Experience Platform会优化将用户档案导出到 [!DNL Azure Event Hubs] 目标，以便仅在区段鉴别或其他重要事件后对配置文件进行相关更新时，才将数据导出到您的目标。 在以下情况下，用户档案会导出到您的目标：
 
-* 配置文件更新是由至少一个映射到目标的区段的区段成员资格发生更改而触发的。 例如，配置文件已符合映射到目标的其中一个区段的条件，或者已退出映射到目标的其中一个区段。
-* 配置文件更新由 [身份映射](/help/xdm/field-groups/profile/identitymap.md). 例如，已符合映射到目标的某个区段资格条件的用户档案，已在身份映射属性中添加了新身份。
-* 配置文件更新是由至少一个映射到目标的属性的属性发生更改而触发的。 例如，映射步骤中映射到目标的某个属性会添加到配置文件中。
+* 配置文件更新由至少一个映射到目标的区段的区段成员资格发生变化来确定。 例如，配置文件已符合映射到目标的其中一个区段的条件，或者已退出映射到目标的其中一个区段。
+* 用户档案更新由 [身份映射](/help/xdm/field-groups/profile/identitymap.md). 例如，已符合映射到目标的某个区段资格条件的用户档案，已在身份映射属性中添加了新身份。
+* 配置文件更新由至少一个映射到目标的属性的属性发生变化来确定。 例如，映射步骤中映射到目标的某个属性会添加到配置文件中。
 
 在上述所有情况下，只会将发生相关更新的用户档案导出到您的目标。 例如，如果映射到目标流的区段有一百个成员，并且有五个新的配置文件符合该区段的资格条件，则导出到目标的过程将是递增的，并且仅包含五个新配置文件。
 
 请注意，无论更改位于何处，都会导出配置文件的所有映射属性。 因此，在上例中，即使属性本身未发生更改，也会导出这五个新配置文件的所有映射属性。
 
+### 决定数据导出的因素以及导出中包含的内容 {#what-determines-export-what-is-included}
+
+对于为给定用户档案导出的数据，了解 *什么决定了要将数据导出到 [!DNL Azure Event Hubs] 目标* 和 *导出中包含哪些数据*.
+
+| 决定目标导出的因素 | 目标导出中包含的内容 |
+|---------|----------|
+| <ul><li>映射的属性和区段可用作目标导出的提示。 这意味着，如果任何映射的区段更改状态（从null更改为已实现或从已实现/现有更改为退出）或任何映射的属性已更新，则将开始目标导出。</li><li>由于身份当前无法映射到 [!DNL Azure Event Hubs] 目标中，给定配置文件中任何标识的更改也会决定目标导出。</li><li>属性的更改被定义为属性的任何更新，无论该更新是否与属性的值相同。 这意味着，即使值本身未发生更改，属性上的覆盖也会被视为更改。</li></ul> | <ul><li>所有区段（具有最新的成员资格状态），无论它们是否在数据流中映射，都会包含在 `segmentMembership` 对象。</li><li>中的所有标识 `identityMap` 对象(Experience Platform当前不支持在 [!DNL Azure Event Hubs] 目标)。</li><li>目标导出中只包含映射的属性。</li></ul> |
+
+{style=&quot;table-layout:fixed&quot;}
+
+例如，将此数据流视为 [!DNL Azure Event Hubs] 目标，其中在数据流中选择了三个区段，并有四个属性映射到目标。
+
+![Amazon Kinesis目标数据流](/help/destinations/assets/catalog/http/profile-export-example-dataflow.png)
+
+导出到目标的用户档案，可由符合或退出 *三个映射的区段*. 但是，在数据导出中， `segmentMembership` 对象(请参阅 [导出的数据](#exported-data) 部分)，则可能会显示其他未映射的区段，前提是该特定用户档案是其成员。 如果某个用户档案符合“使用德罗林汽车的客户”区段的资格条件，但同时也是“观看的‘回到未来’”电影和科幻片迷区段的成员，则另外两个区段也将出现在 `segmentMembership` 对象，即使这些对象未在数据流中映射。
+
+从配置文件属性的角度来看，对上述四个映射属性所做的任何更改都将决定目标导出，并且配置文件上存在的四个映射属性中的任何一个将出现在数据导出中。
+
 ## 导出的数据 {#exported-data}
 
-导出的 [!DNL Experience Platform] 数据登陆 [!DNL Azure Event Hubs] 格式。 例如，下面的导出包含符合特定区段资格并退出另一个区段的配置文件，并且包含配置文件属性名、姓氏、出生日期和个人电子邮件地址。 此配置文件的标识为ECID和电子邮件。
+导出的 [!DNL Experience Platform] 数据登陆您的 [!DNL Azure Event Hubs] 目标。 例如，下面的导出包含符合特定区段资格条件、是另两个区段的成员并退出另一个区段的配置文件。 导出还包含配置文件属性名字、姓氏、出生日期和个人电子邮件地址。 此配置文件的标识为ECID和电子邮件。
 
 ```json
 {
@@ -85,17 +103,25 @@ Experience Platform会优化配置文件导出行为，以将数据导出到您�
     "address": "john.doe@acme.com"
   },
   "segmentMembership": {
-    "ups": {
-      "7841ba61-23c1-4bb3-a495-00d3g5fe1e93": {
-        "lastQualificationTime": "2020-05-25T21:24:39Z",
-        "status": "exited"
+   "ups":{
+      "7841ba61-23c1-4bb3-a495-00d3g5fe1e93":{
+         "lastQualificationTime":"2022-01-11T21:24:39Z",
+         "status":"exited"
       },
-      "59bd2fkd-3c48-4b18-bf56-4f5c5e6967ae": {
-        "lastQualificationTime": "2020-05-25T23:37:33Z",
-        "status": "existing"
+      "59bd2fkd-3c48-4b18-bf56-4f5c5e6967ae":{
+         "lastQualificationTime":"2022-01-02T23:37:33Z",
+         "status":"existing"
+      },
+      "947c1c46-008d-40b0-92ec-3af86eaf41c1":{
+         "lastQualificationTime":"2021-08-25T23:37:33Z",
+         "status":"existing"
+      },
+      "5114d758-ce71-43ba-b53e-e2a91d67b67f":{
+         "lastQualificationTime":"2022-01-11T23:37:33Z",
+         "status":"realized"
       }
-    }
-  },
+   }
+},
   "identityMap": {
     "ecid": [
       {
