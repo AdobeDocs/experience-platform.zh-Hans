@@ -2,7 +2,7 @@
 title: 匿名块查询示例
 description: 匿名块是Adobe Experience Platform查询服务支持的SQL语法，它允许您高效执行一系列查询
 exl-id: ec497475-9d2b-43aa-bcf4-75a430590496
-source-git-commit: 9f4e34edc47a333aa88153529d0af6a10f189a15
+source-git-commit: 83b9aad78bcbf6e40d3059607a3779b6f1a2083f
 workflow-type: tm+mt
 source-wordcount: '499'
 ht-degree: 0%
@@ -33,18 +33,14 @@ Adobe Experience Platform查询服务支持匿名块。 匿名块功能允许您
 以下查询显示了链SQL语句的示例。 请参阅 [查询服务中的SQL语法](../sql/syntax.md) 文档，以了解有关所使用的任何SQL语法的详细信息。
 
 ```SQL
-BEGIN
-     
+$$ BEGIN
     CREATE TABLE ADLS_TABLE_A AS SELECT * FROM ADLS_TABLE_1....;
     ....
-    CREATE TABLE ADLS_TABLE_D AS SELECT * FROM ADLS_TABLE_C....;
-     
+    CREATE TABLE ADLS_TABLE_D AS SELECT * FROM ADLS_TABLE_C....; 
     EXCEPTION WHEN OTHER THEN SET @ret = SELECT 'ERROR';
-     
-END;
+END
+$$;
 ```
-
-<!-- The block below uses `SET` to persist the result of a select query with a variable. It is used in the anonymous block to store the response from a query as a local variable for use with the `SNAPSHOT` feature. -->
 
 在以下示例中， `SET` 会保留 `SELECT` 查询。 变量的范围为匿名块。
 
@@ -53,10 +49,11 @@ END;
 数据库快照是SQL Server数据库的只读静态视图。 更多 [关于快照子句的信息](../sql/syntax.md#SNAPSHOT-clause) 请参阅SQL语法文档。
 
 ```SQL
-BEGIN                                             
+$$ BEGIN                                             
   SET @current_sid = SELECT parent_id  FROM (SELECT history_meta('your_table_name')) WHERE  is_current = true;
-  CREATE temp table abcd_temp_table AS SELECT count(1) FROM your_table_name  SNAPSHOT SINCE @current_sid;                                                                                                     
-END;
+  CREATE temp table abcd_temp_table AS SELECT count(1) FROM your_table_name  SNAPSHOT SINCE @current_sid;                                                                                           
+END
+$$;
 ```
 
 ## 后续步骤

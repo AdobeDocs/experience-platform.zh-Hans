@@ -2,7 +2,7 @@
 title: 增量加载查询示例
 description: 增量加载功能使用匿名块和快照功能，为将数据从数据湖移动到data warehouse提供近乎实时的解决方案，同时忽略匹配的数据。
 exl-id: 1418d041-29ce-4153-90bf-06bd8da8fb78
-source-git-commit: 943886078fe31a12542c297133ac6a0a0d551e08
+source-git-commit: e5a79db157524d014c9a07d2bf5907a5544e7b77
 workflow-type: tm+mt
 source-wordcount: '687'
 ht-degree: 0%
@@ -65,7 +65,7 @@ INSERT INTO
 >的 `history_meta('source table name')` 是一种用于获取数据集中可用快照的访问权限的简便方法。
 
 ```SQL
-BEGIN
+$$ BEGIN
     SET @from_snapshot_id = SELECT coalesce(last_snapshot_id, 'HEAD') FROM checkpoint_log a JOIN
                             (SELECT MAX(process_timestamp)process_timestamp FROM checkpoint_log
                                 WHERE process_name = 'DIM_TABLE_ABC' AND process_status = 'SUCCESSFUL' )b
@@ -86,7 +86,8 @@ INSERT INTO
 EXCEPTION
   WHEN OTHER THEN
     SELECT 'ERROR';
- END;
+END 
+$$;
 ```
 
 4使用下面匿名块示例中的增量数据加载逻辑，以允许以常规频率处理来自源数据集（自最新时间戳以来）的任何新数据并将其附加到目标表。 在本例中，数据更改为 `DIM_TABLE_ABC` 将进行处理并附加到 `DIM_TABLE_ABC_incremental`.
@@ -96,7 +97,7 @@ EXCEPTION
 > `_ID` 是 `DIM_TABLE_ABC_Incremental` 和 `SELECT history_meta('DIM_TABLE_ABC')`.
 
 ```SQL
-BEGIN
+$$ BEGIN
     SET @from_snapshot_id = SELECT coalesce(last_snapshot_id, 'HEAD') FROM checkpoint_log a join
                             (SELECT MAX(process_timestamp)process_timestamp FROM checkpoint_log
                                 WHERE process_name = 'DIM_TABLE_ABC' AND process_status = 'SUCCESSFUL' )b
@@ -117,7 +118,8 @@ INSERT INTO
 EXCEPTION
   WHEN OTHER THEN
     SELECT 'ERROR';
- END;
+END
+$$;
 ```
 
 此逻辑可应用于任何表以执行增量加载。
@@ -137,7 +139,7 @@ SET resolve_fallback_snapshot_on_failure=true;
 整个代码块如下所示：
 
 ```SQL
-BEGIN
+$$ BEGIN
     SET resolve_fallback_snapshot_on_failure=true;
     SET @from_snapshot_id = SELECT coalesce(last_snapshot_id, 'HEAD') FROM checkpoint_log a JOIN
                             (SELECT MAX(process_timestamp)process_timestamp FROM checkpoint_log
@@ -158,7 +160,8 @@ Insert Into
 EXCEPTION
   WHEN OTHER THEN
     SELECT 'ERROR';
- END;
+END
+$$;
 ```
 
 ## 后续步骤
