@@ -2,8 +2,7 @@
 title: mbox3rdPartyId 的实时配置文件同步
 description: 了解如何在Adobe Experience Platform Web SDK中使用mbox3rdPartyId。
 keywords: 个性化；Target;Adobe Target;renderDecisions;sendEvent;mbox3rdPartyId;
-exl-id: null
-source-git-commit: b02a7a95be33b28ab79afc7418bb3a644c417fc9
+source-git-commit: 86acedc6813a14648848a25e08aa7e65f48d1a2a
 workflow-type: tm+mt
 source-wordcount: '163'
 ht-degree: 9%
