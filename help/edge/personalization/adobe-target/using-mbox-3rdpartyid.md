@@ -2,9 +2,9 @@
 title: mbox3rdPartyId 的实时配置文件同步
 description: 了解如何在Adobe Experience Platform Web SDK中使用mbox3rdPartyId。
 keywords: 个性化；Target;Adobe Target;renderDecisions;sendEvent;mbox3rdPartyId;
-source-git-commit: 86acedc6813a14648848a25e08aa7e65f48d1a2a
+source-git-commit: 439f26177837e985ef95e972c3102cc2db37d539
 workflow-type: tm+mt
-source-wordcount: '163'
+source-wordcount: '161'
 ht-degree: 9%
 
 ---
@@ -21,7 +21,7 @@ Adobe Target中的mbox3rdPartyId是您公司的访客ID，例如您公司忠诚�
 
 ### 步骤1:配置 `Target Third Party ID Namespace`
 
-配置 `Target Third Party ID Namespace` 在 [数据流](../../fundamentals/datastreams.md)，使用要用作mbox第三方ID的ID命名空间。
+配置 `Target Third Party ID Namespace` 在 [数据流](../../fundamentals/datastreams.md)，使用您要用作mbox第三方ID的ID命名空间。
 [进一步了解ID命名空间](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans)
 
 ![](assets/mbox3rdpartyid.png)
