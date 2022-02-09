@@ -3,9 +3,9 @@ keywords: Amazon S3;S3目标；s3;Amazon s3
 title: Amazon S3连接
 description: 创建到Amazon Web Services(AWS)S3存储的实时出站连接，以定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储段中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: bf46f4e6549fcbd975a9f0a6034040ed2e9b34e6
+source-git-commit: e6dc0fb136a6f5199153630a20e8809c2c040107
 workflow-type: tm+mt
-source-wordcount: '390'
+source-wordcount: '503'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,19 @@ ht-degree: 0%
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 ### 连接参数 {#parameters}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_s3_bucket"
+>title="存储段名称"
+>abstract="长度必须介于3到63个字符之间。 必须以字母或数字开头和结尾。 必须只包含小写字母、数字或连字符(-)。 不得格式化为IP地址（例如，192.100.1.1）。"
+>text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_s3_folderpath"
+>title="文件夹路径"
+>abstract="必须只包含字符A-Z、a-z、0-9，并且可以包含以下特殊字符： `/!-_.'()"^[]+$%.*"`. 要为每个区段文件创建文件夹，请将宏/%SEGMENT_NAME%或/%SEGMENT_ID%或/%SEGMENT_NAME%/%SEGMENT_ID%插入文本字段。 宏只能在文件夹路径的末尾插入。 查看文档中的宏示例。"
+>text="Learn more in documentation"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html?lang=en#use-macros" text="使用宏在存储位置中创建文件夹"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_rsa"

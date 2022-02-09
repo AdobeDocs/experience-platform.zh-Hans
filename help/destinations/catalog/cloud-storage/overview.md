@@ -3,7 +3,7 @@ keywords: 云存储目标；云存储
 title: 云存储目标概述
 description: Adobe Experience Platform可以将区段作为数据文件发送到Amazon S3、AWS Kinesis、Azure事件中心或SFTP云存储位置。
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: 818c9a6f5cd39db1405827b657872b99254ad1e5
 workflow-type: tm+mt
 source-wordcount: '295'
 ht-degree: 0%
