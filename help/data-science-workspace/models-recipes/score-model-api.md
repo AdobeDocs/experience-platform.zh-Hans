@@ -1,28 +1,27 @@
 ---
-keywords: Experience Platform；为模型得分；数据科学工作区；热门主题；sensei机器学习api
+keywords: Experience Platform；对模型进行评分；Data Science Workspace；热门主题；敏感的机器学习api
 solution: Experience Platform
 title: 使用Sensei机器学习API对模型进行评分
 topic-legacy: tutorial
 type: Tutorial
-description: 本教程将向您介绍如何利用Sensei机器学习API创建实验和实验运行。
+description: 本教程将向您展示如何利用Sensei机器学习API创建实验和实验运行。
 exl-id: 202c63b0-86d8-4a82-8ec8-d144a8911d08
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 6ae6bbb5af0f007e483145dca5d4d505c388cc2c
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '554'
 ht-degree: 1%
 
 ---
 
-# 使用[!DNL Sensei Machine Learning API]对模型进行评分
+# 使用 [!DNL Sensei Machine Learning API]
 
-本教程将向您介绍如何利用API创建实验和实验运行。 有关API文档的详细列表，请参阅[此文档](https://www.adobe.io/apis/cloudplatform/dataservices/api-reference.html)。
+本教程将向您展示如何利用API创建实验和实验运行。 有关Sensei机器学习API中所有端点的列表，请参阅 [本文档](https://developer.adobe.com/experience-platform-apis/references/sensei-machine-learning/).
 
 ## 为评分创建计划实验
 
-与培训的计划实验类似，还可以通过在身体参数中加入`template`部分来创建计划的得分实验。 此外，正文中`tasks`下的`name`字段设置为`score`。
+与培训的计划实验类似，还通过包含 `template` 部分。 此外， `name` 字段 `tasks` 在主体中设置为 `score`.
 
-以下是创建实验的示例，该实验从`startTime`开始每20分钟运行一次，运行到`endTime`。
+以下是创建一个实验的示例，该实验将从 `startTime` 将运行到 `endTime`.
 
 **请求**
 
@@ -36,10 +35,10 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{IMS_ORG}`:您的IMS组织凭据位于您独特的Adobe Experience Platform集成中。\
+`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。\
 `{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
-`{API_KEY}`:您独特的Adobe Experience Platform集成中可找到您的特定API密钥值。\
-`{JSON_PAYLOAD}`:要发送的Experice Run对象。我们在教程中使用的示例如下：
+`{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。\
+`{JSON_PAYLOAD}`:要发送的Experience Run对象。 下面显示了我们在教程中使用的示例：
 
 ```JSON
 {
@@ -70,7 +69,7 @@ curl -X POST \
 ```
 
 `{INSTANCE_ID}`:表示MLInstance的ID。\
-`{MODEL_ID}`:表示受训模型的ID。
+`{MODEL_ID}`:表示已培训模型的ID。
 
 以下是创建计划实验后的响应。
 
@@ -108,9 +107,9 @@ curl -X POST \
 `{INSTANCE_ID}`:表示MLInstance的ID。
 
 
-### 创建用于评分的实验运行
+### 为评分创建实验运行
 
-现在，利用经过培训的模型，我们可以创建一个用于评分的实验运行。 `modelId`参数的值是在上述GET模型请求中返回的`id`参数。
+现在，利用训练好的模型，我们可以创建一个“实验运行”来打分。 的值 `modelId` 参数是 `id` 在上述GET模型请求中返回的参数。
 
 **请求**
 
@@ -124,11 +123,11 @@ curl -X POST \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{IMS_ORG}`:您的IMS组织凭据位于您独特的Adobe Experience Platform集成中。\
+`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。\
 `{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
-`{API_KEY}`:您独特的Adobe Experience Platform集成中可找到您的特定API密钥值。\
-`{EXPERIMENT_ID}`:与要目标的实验对应的ID。这可以在创建实验时的响应中找到。\
-`{JSON_PAYLOAD}`:要发布的数据。我们在教程中使用的示例如下：
+`{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。\
+`{EXPERIMENT_ID}`:与要定位的实验对应的ID。 这可在创建实验时的响应中找到。\
+`{JSON_PAYLOAD}`:要发布的数据。 以下是我们在教程中使用的示例：
 
 ```JSON
 {
@@ -147,9 +146,9 @@ curl -X POST \
 }
 ```
 
-`{MODEL_ID}`:与“模型”(Model)对应的ID。
+`{MODEL_ID}`:与模型对应的ID。
 
-创建“实验运行”时的响应如下所示：
+“实验运行”创建的响应如下所示：
 
 **响应**
 
@@ -170,13 +169,13 @@ curl -X POST \
 }
 ```
 
-`{EXPERIMENT_ID}`:与“运行”所在的“实验”对应的ID。\
-`{EXPERIMENT_RUN_ID}`:与刚刚创建的Experience Run对应的ID。
+`{EXPERIMENT_ID}`:与运行所在实验对应的ID。\
+`{EXPERIMENT_RUN_ID}`:与您刚刚创建的“实验运行”对应的ID。
 
 
-### 检索计划实验运行的实验运行状态
+### 为计划的实验运行检索实验运行状态
 
-要获取计划实验的实验运行，查询如下所示：
+要为计划实验运行体验，查询如下所示：
 
 **请求**
 
@@ -187,11 +186,11 @@ curl -X GET \
   -H 'x-gw-ims-org-id: {IMS_ORG}'
 ```
 
-`{EXPERIMENT_ID}`:与“运行”所在的“实验”对应的ID。\
+`{EXPERIMENT_ID}`:与运行所在实验对应的ID。\
 `{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
-`{IMS_ORG}`:您的IMS组织凭据位于您独特的Adobe Experience Platform集成中。
+`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。
 
-由于特定实验有多个实验运行，因此返回的响应将具有一组运行ID。
+由于特定实验存在多个实验运行，因此返回的响应将具有一组运行ID。
 
 **响应**
 
@@ -214,12 +213,12 @@ curl -X GET \
 }
 ```
 
-`{EXPERIMENT_RUN_ID}`:与“Experience Run”对应的ID。\
-`{EXPERIMENT_ID}`:与“运行”所在的“实验”对应的ID。
+`{EXPERIMENT_RUN_ID}`:与“实验运行”对应的ID。\
+`{EXPERIMENT_ID}`:与运行所在实验对应的ID。
 
 ### 停止和删除计划的实验
 
-如果您希望在计划实验`endTime`之前停止执行该实验，则可以通过查询对`{EXPERIMENT_ID}`的DELETE请求来完成此操作
+如果要在计划实验之前停止执行该实验 `endTime`，可通过查询向 `{EXPERIMENT_ID}`
 
 **请求**
 
@@ -232,13 +231,13 @@ curl -X DELETE \
 
 `{EXPERIMENT_ID}`:与实验对应的ID。\
 `{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
-`{IMS_ORG}`:您的IMS组织凭据位于您独特的Adobe Experience Platform集成中。
+`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。
 
 >[!NOTE]
 >
->API调用将禁用创建新实验运行。 但是，它不会停止执行已在运行的Emperity Runs。
+>API调用将禁用创建新的实验运行。 但是，它不会停止执行已在运行的实验运行。
 
-以下是响应，通知已成功删除实验。
+以下是通知实验已成功删除的响应。
 
 **响应**
 
