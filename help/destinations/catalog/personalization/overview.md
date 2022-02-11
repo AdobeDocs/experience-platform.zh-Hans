@@ -3,10 +3,10 @@ keywords: 个性化；个性化
 title: 个性化目标概述
 description: 个性化平台从个人行为中收集数据和分析。 这些平台可帮助营销人员导航匿名数据，根据以往活动或作为具有相似习惯的受众区段的一部分向潜在客户提供优惠或广告。
 exl-id: 18a2b170-43d0-4d41-8afc-d2f0f9bfd7bb
-source-git-commit: 8f9a601a833149c83d465f68d16ca362ed730b8a
+source-git-commit: 7acb823b9cbfb4a7988235949c6d2fd0b9baa7c0
 workflow-type: tm+mt
-source-wordcount: '145'
-ht-degree: 10%
+source-wordcount: '143'
+ht-degree: 11%
 
 ---
 
@@ -22,8 +22,8 @@ ht-degree: 10%
 
 **连接**
 
-* [（测试版）Adobe Target](adobe-target-connection.md)
-* [（测试版）自定义个性化连接](custom-personalization.md)
+* [Adobe Target](adobe-target-connection.md)
+* [自定义个性化连接](custom-personalization.md)
 
 **扩展**
 
