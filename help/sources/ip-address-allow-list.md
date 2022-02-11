@@ -5,7 +5,7 @@ solution: Experience Platform
 title: 源连接的IP地址允许列表
 topic-legacy: overview
 exl-id: 40093c80-dbdb-4dc1-97bb-81a8200b731f
-source-git-commit: d6926fb32a5c14ef7c6eec4c7c28c2fd46d52f3a
+source-git-commit: a93b14c0e8390ba1a6c486851900a5933fb26a6d
 workflow-type: tm+mt
 source-wordcount: '111'
 ht-degree: 0%
@@ -47,5 +47,7 @@ ht-degree: 0%
 - `20.37.193.0/25`
 - `20.37.193.128/26`
 - `20.37.198.224/29`
+- `20.53.45.0/24`
+- `20.53.46.0/26`
 - `40.79.163.80/28`
 - `40.79.171.160/28`
