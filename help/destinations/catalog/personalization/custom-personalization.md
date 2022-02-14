@@ -3,9 +3,9 @@ keywords: 自定义个性化；目的地；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标可提供外部个性化、内容管理系统、广告服务器以及网站上运行的其他应用程序，以便从Adobe Experience Platform中检索区段信息。 此目标基于用户配置文件区段成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: acbee5c4f67dd576b5513c061a67ed4b5af2d254
+source-git-commit: fb79d0697244518cc713efeada7d017d64ce6214
 workflow-type: tm+mt
-source-wordcount: '637'
+source-wordcount: '682'
 ht-degree: 1%
 
 ---
@@ -39,6 +39,10 @@ ht-degree: 1%
 为其广告服务器使用单独的自定义个性化目标，同一网站可以使用Adobe Experience Platform中的不同区段集作为定位标准来定位网站广告。
 
 ## 连接到目标 {#connect}
+
+>[!IMPORTANT]
+>
+>在创建自定义个性化连接之前，我们建议您阅读我们的指南以了解 [为同一页面和下一页面个性化配置个性化目标](../../ui/configure-personalization-destinations.md). 本指南将引导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_custom_personalization_datastream"
