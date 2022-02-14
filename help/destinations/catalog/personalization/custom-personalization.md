@@ -3,9 +3,9 @@ keywords: 自定义个性化；目的地；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标可提供外部个性化、内容管理系统、广告服务器以及网站上运行的其他应用程序，以便从Adobe Experience Platform中检索区段信息。 此目标基于用户配置文件区段成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: d0638ea80c03bf9d5ce76e27e3a4fc7358bfe83c
+source-git-commit: acbee5c4f67dd576b5513c061a67ed4b5af2d254
 workflow-type: tm+mt
-source-wordcount: '635'
+source-wordcount: '637'
 ht-degree: 1%
 
 ---
@@ -63,7 +63,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 ## 导出的数据 {#exported-data}
 
-如果您使用 [Adobe标记](../../../tags/home.md) 要部署Experience PlatformWeb SDK，请使用 [发送事件结束](../../../edge/extension/event-types.md) 功能和您的自定义代码操作将具有 `event.destinations` 变量，以便您查看导出的数据。
+如果您使用 [Adobe Experience Platform中的标记](../../../tags/home.md) 要部署Experience PlatformWeb SDK，请使用 [发送事件结束](../../../edge/extension/event-types.md) 功能和您的自定义代码操作将具有 `event.destinations` 变量，以便您查看导出的数据。
 
 以下是 `event.destinations` 变量：
 
@@ -85,7 +85,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 ]
 ```
 
-如果您没有使用 [Adobe标记](../../../tags/home.md) 要部署Experience PlatformWeb SDK，请使用 [处理事件响应](../../../edge/fundamentals/tracking-events.md#handling-responses-from-events) 功能查看导出的数据。
+如果您没有使用 [标记](../../../tags/home.md) 要部署Experience PlatformWeb SDK，请使用 [处理事件响应](../../../edge/fundamentals/tracking-events.md#handling-responses-from-events) 功能查看导出的数据。
 
 可以解析来自Adobe Experience Platform的JSON响应，以查找您与Adobe Experience Platform集成的应用程序的相应集成别名。 区段ID可以作为定位参数传递到应用程序的代码中。 下面是一个特定于目标响应的示例。
 
