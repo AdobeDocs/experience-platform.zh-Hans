@@ -5,9 +5,9 @@ title: XDM ExperienceEvent类
 topic-legacy: overview
 description: 本文档概述了XDM ExperienceEvent类以及事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: f5d341daffd7d4d77ee816cc7537b0d0c52ca636
+source-git-commit: 07fdbf467f3dde16f9216db47099b92cbbfd18d2
 workflow-type: tm+mt
-source-wordcount: '1758'
+source-wordcount: '1783'
 ht-degree: 1%
 
 ---
@@ -118,6 +118,10 @@ Adobe提供了多个与 [!DNL XDM ExperienceEvent] 类。 以下是类的一些�
 | `directMarketing.emailDelivered` | 已成功将电子邮件发送给人员的电子邮件服务 |
 | `directMarketing.emailOpened` | 某人打开了营销电子邮件。 |
 | `directMarketing.emailUnsubscribed` | 从营销电子邮件取消订阅的用户。 |
+| `inappmessageTracking.dismiss` | 应用程序内消息被取消。 |
+| `inappmessageTracking.display` | 显示应用程序内消息。 |
+| `inappmessageTracking.interact` | 与应用程序内消息进行了交互。 |
+| `leadOperation.callWebhook` | 为响应某个线索，调用了网页挂接。 |
 | `leadOperation.convertLead` | 商机已转换。 |
 | `leadOperation.interestingMoment` | 为一个人录制了一个有趣的时刻。 |
 | `leadOperation.newLead` | 已创建潜在客户。 |
