@@ -1,10 +1,10 @@
 ---
-title: 将at.js与平台Web SDK进行比较
-description: 了解at.js功能与Web SDK的异同
+title: 比较at.js与Experience PlatformWeb SDK
+description: 了解at.js功能与Experience PlatformWeb SDK的异同
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；系统图；图
-source-git-commit: 95c6d0d20ee04affb4b67c3d9f90d80e655e2752
+source-git-commit: 6efb40e90cb8c29a0141bb0db6e20cec23f2be9a
 workflow-type: tm+mt
-source-wordcount: '2275'
+source-wordcount: '2277'
 ht-degree: 6%
 
 ---
@@ -129,7 +129,7 @@ alloy("sendEvent", {
 });
 ```
 
-AEP WEB SDK会自动发送包含WEB SDK执行的选件的通知，以下是通知请求有效负载的外观示例：
+Experience PlatformWeb SDK会自动发送包含WEB SDK执行的选件的通知，以下是通知请求有效负载的外观示例：
 
 ```json
 {
