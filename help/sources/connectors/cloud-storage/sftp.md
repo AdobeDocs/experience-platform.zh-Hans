@@ -5,7 +5,7 @@ title: SFTP源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将SFTP服务器连接到Adobe Experience Platform。
 exl-id: d5bced3d-cd33-40ea-bce0-32c76ecd2790
-source-git-commit: 1abbe74c1005e1358b5388f580d309f0aec5f124
+source-git-commit: 2db458fa335d65642549773a35ddefe602102f7f
 workflow-type: tm+mt
 source-wordcount: '721'
 ht-degree: 0%
@@ -58,7 +58,7 @@ Adobe Experience Platform为AWS等云提供商提供本机连接， [!DNL Google
 如果未安装，请选择 **安装** 然后打开 **[!DNL Powershell]** 并运行以下命令以生成私钥：
 
 ```shell
-PS C:\Users\lucy> ssh-keygen -t rsa
+PS C:\Users\lucy> ssh-keygen -t rsa -m pem
 Generating public/private rsa key pair.
 Enter file in which to save the key (C:\Users\lucy/.ssh/id_rsa):
 Enter passphrase (empty for no passphrase):
@@ -94,7 +94,7 @@ C:\Users\lucy> [convert]::ToBase64String((Get-Content -path "C:\Users\lucy\.ssh\
 如果您使用 [!DNL Mac]，打开 **终端** 并运行以下命令以生成私钥(在本例中，私钥将保存在 `/Documents/id_rsa`):
 
 ```shell
-ssh-keygen -t rsa -f ~/Documents/id_rsa
+ssh-keygen -t rsa -m pem -f ~/Documents/id_rsa
 Generating public/private rsa key pair.
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
