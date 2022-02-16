@@ -5,10 +5,10 @@ title: 查询服务疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档包含有关您遇到的常见错误代码以及可能原因的信息。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: ac313e2a23037507c95d6713a83ad5ca07e1cd85
+source-git-commit: 03cd013e35872bcc30c68508d9418cb888d9e260
 workflow-type: tm+mt
-source-wordcount: '769'
-ht-degree: 4%
+source-wordcount: '1106'
+ht-degree: 3%
 
 ---
 
@@ -54,6 +54,53 @@ FROM actual_dataset a
 WHERE timestamp >= TO_TIMESTAMP('2021-01-21 12:00:00')
 AND timestamp < TO_TIMESTAMP('2021-01-21 13:00:00')
 LIMIT 100;
+```
+
+### 如何将时区从UTC时间戳更改为时区？
+
+Adobe Experience Platform以UTC（协调通用时间）时间戳格式保留数据。 UTC格式的示例为 `2021-12-22T19:52:05Z`
+
+查询服务支持内置的SQL函数，以将给定时间戳转换为UTC格式和从UTC格式转换为SQL函数。 和 `to_utc_timestamp()` 和 `from_utc_timestamp()` 方法采用两个参数：时间戳和时区。
+
+| 参数 | 描述 |
+|---|---|
+| 时间戳 | 时间戳可以采用UTC格式或简单格式写入 `{year-month-day}` 格式。 如果未提供时间，则默认值为给定日期上午的午夜。 |
+| 时区 | 时区以 `{continent/city})` 格式。 它必须是 [公域TZ数据库](https://data.iana.org/time-zones/tz-link.html#tzdb). |
+
+#### 转换为UTC时间戳
+
+的 `to_utc_timestamp()` 方法解释给定参数并转换它 **到本地时区的时间戳** UTC格式。 例如，韩国首尔的时区是UTC/GMT +9小时。 通过提供仅限日期的时间戳，方法会使用上午的默认值“午夜”。 时间戳和时区将转换为UTC格式，从该区域的时间转换为本地区域的UTC时间戳。
+
+```SQL
+SELECT to_utc_timestamp('2021-08-31', 'Asia/Seoul');
+```
+
+查询在用户的本地时间中返回时间戳。 在这种情况下，首尔会提前9小时，前一天下午3点。
+
+```
+2021-08-30 15:00:00
+```
+
+再举一个示例，如果给定的时间戳是 `2021-07-14 12:40:00.0` 对于 `Asia/Seoul` 时区，返回的UTC时间戳为 `2021-07-14 03:40:00.0`
+
+查询服务UI中提供的控制台输出是一种更易读的格式：
+
+```
+8/30/2021, 3:00 PM
+```
+
+### 从UTC时间戳转换
+
+的 `from_utc_timestamp()` 方法解释给定参数 **从本地时区的时间戳** 和以UTC格式提供所需区域的等效时间戳。 在以下示例中，小时为用户本地时区中的下午2:40。 作为变量传递的首尔时区比本地时区提前九小时。
+
+```SQL
+SELECT from_utc_timestamp('2021-08-31 14:40:00.0', 'Asia/Seoul');
+```
+
+查询会为作为参数传递的时区返回UTC格式的时间戳。 结果会比运行查询的时区早九小时。
+
+```
+8/31/2021, 11:40 PM
 ```
 
 ### 如何过滤我的时间序列数据？

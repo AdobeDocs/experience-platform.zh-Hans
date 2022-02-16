@@ -6,48 +6,48 @@ topic-legacy: queries
 type: Tutorial
 description: 本文档详细介绍了在Adobe Experience Platform查询服务中编写查询时要了解的重要详细信息。
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: 3f3a8d100a38d60dc8e15a8c3589e5566492885f
+source-git-commit: c36ef1d5f5e5f7875da2b7a878c86b449d46c3c5
 workflow-type: tm+mt
-source-wordcount: '976'
+source-wordcount: '1031'
 ht-degree: 3%
 
 ---
 
-# [!DNL Query Service]中用于查询执行的常规指南
+# 在中执行查询的一般指导 [!DNL Query Service]
 
-本文档详细介绍了在Adobe Experience Platform [!DNL Query Service]中编写查询时要了解的重要详细信息。
+本文档详细介绍了在Adobe Experience Platform中编写查询时要了解的重要详细信息 [!DNL Query Service].
 
-有关[!DNL Query Service]中使用的SQL语法的详细信息，请阅读[SQL语法文档](../sql/syntax.md)。
+有关中使用的SQL语法的详细信息 [!DNL Query Service]，请阅读 [SQL语法文档](../sql/syntax.md).
 
 ## 查询执行模型
 
-Adobe Experience Platform [!DNL Query Service]有两种查询执行模型：交互式和非交互式。 交互式执行用于商业智能工具中的查询开发和报告生成，而非交互式执行用于作为数据处理工作流的一部分的较大作业和操作查询。
+Adobe Experience Platform [!DNL Query Service] 具有两种查询执行模型：交互式和非交互式。 交互式执行用于商业智能工具中的查询开发和报告生成，而非交互式执行用于作为数据处理工作流的一部分的较大作业和操作查询。
 
 ### 交互式查询执行
 
-通过[!DNL Query Service] UI或[通过连接的客户端](../clients/overview.md)提交查询，可以交互执行查询。 通过连接的客户端运行[!DNL Query Service]时，活动会话在客户端和[!DNL Query Service]之间运行，直到提交的查询返回或超时。
+通过 [!DNL Query Service] UI或 [通过连接的客户端](../clients/overview.md). 运行时 [!DNL Query Service] 通过连接的客户端，活动会话在客户端和 [!DNL Query Service] 直到提交的查询返回或超时。
 
 交互式查询执行具有以下限制：
 
 | 参数 | 限制 |
 | --------- | ---------- |
 | 查询超时 | 10 分钟 |
-| 返回的最大行数 | 五万 |
+| 返回的最大行数 | 50,000 |
 | 最大并发查询数 | 5 |
 
 >[!NOTE]
 >
->要覆盖最大行数限制，请在查询中包含`LIMIT 0`。 10分钟的查询超时仍适用。
+>要覆盖最大行数限制，请包括 `LIMIT 0` 中。 10分钟的查询超时仍适用。
 
-默认情况下，交互式查询的结果将返回给客户端，并且会保留&#x200B;**不**。 要在[!DNL Experience Platform]中将结果作为数据集保留，查询必须使用`CREATE TABLE AS SELECT`语法。
+默认情况下，交互式查询的结果将返回给客户端，并且 **not** 保留。 要将结果作为数据集保留在 [!DNL Experience Platform]，则查询必须使用 `CREATE TABLE AS SELECT` 语法。
 
 ### 非交互式查询执行
 
-通过[!DNL Query Service] API提交的查询将以非交互方式运行。 非交互式执行是指[!DNL Query Service]接收API调用，并按接收顺序执行查询。 非交互式查询始终会导致在[!DNL Experience Platform]中生成新数据集以接收结果，或将新行插入现有数据集。
+通过 [!DNL Query Service] API以非交互方式运行。 非交互式执行表示 [!DNL Query Service] 接收API调用，并按收到查询的顺序执行查询。 非交互式查询始终会导致在 [!DNL Experience Platform] 接收结果，或将新行插入现有数据集。
 
 ## 访问对象中的特定字段
 
-要访问查询中对象中的字段，可以使用点符号(`.`)或方括号符号(`[]`)。 以下SQL语句使用点符号将`endUserIds`对象向下遍历到`mcid`对象。
+要访问查询中对象中的字段，可以使用点表示法(`.`)或括号(`[]`)。 以下SQL语句使用点表示法遍历 `endUserIds` 对象 `mcid` 对象。
 
 ```sql
 SELECT endUserIds._experience.mcid
@@ -61,7 +61,7 @@ LIMIT 1
 | -------- | ----------- |
 | `{ANALYTICS_TABLE_NAME}` | 分析表的名称。 |
 
-以下SQL语句使用括号表示法将`endUserIds`对象向下遍历到`mcid`对象。
+以下SQL语句使用括号表示法遍历 `endUserIds` 对象 `mcid` 对象。
 
 ```sql
 SELECT endUserIds['_experience']['mcid']
@@ -88,7 +88,7 @@ LIMIT 1
 (1 row)
 ```
 
-返回的`endUserIds._experience.mcid`对象包含以下参数的相应值：
+返回的 `endUserIds._experience.mcid` 对象包含以下参数的相应值：
 
 - `id`
 - `namespace`
@@ -117,9 +117,9 @@ LIMIT 1
 
 ### 单引号
 
-单引号(`'`)用于创建文本字符串。 例如，它可用在`SELECT`语句中以返回结果中的静态文本值，用在`WHERE`子句中以评估列的内容。
+单引号(`'`)来创建文本字符串。 例如，它可用于 `SELECT` 语句返回结果中的静态文本值，以及 `WHERE` 用于评估列内容的子句。
 
-以下查询为列声明了静态文本值(`'datasetA'`):
+以下查询声明一个静态文本值(`'datasetA'`):
 
 ```sql
 SELECT 
@@ -131,7 +131,7 @@ WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 10
 ```
 
-以下查询在其WHERE子句中使用单引号字符串(`'homepage'`)来返回特定页面的事件。
+以下查询使用单引号字符串(`'homepage'`)来返回特定页面的事件。
 
 ```sql
 SELECT 
@@ -145,7 +145,7 @@ LIMIT 10
 
 ### 双引号
 
-双引号(`"`)用于声明带空格的标识符。
+双引号(`"`)用于声明带有空格的标识符。
 
 当某列的标识符中包含空格时，以下查询会使用双引号从指定的列返回值：
 
@@ -162,11 +162,11 @@ FROM
 
 >[!NOTE]
 >
->**双引号不能**&#x200B;用于点符号字段访问。
+>双引号 **无法** 用于点表示法字段访问。
 
 ### 反引号
 
-使用点符号语法时，后引号`` ` ``仅用于转义保留的列名称&#x200B;****。 例如，由于`order`是SQL中的保留字，因此必须使用反引号访问字段`commerce.order`:
+后引号 `` ` `` 用于转义保留的列名称 **仅** 使用点符号语法时。 例如，自 `order` 是SQL中的保留字，必须使用反引号来访问该字段 `commerce.order`:
 
 ```sql
 SELECT 
@@ -176,7 +176,7 @@ WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 10
 ```
 
-还使用前引号访问以数字开头的字段。 例如，要访问字段`30_day_value`，您需要使用反引号符号。
+还使用前引号访问以数字开头的字段。 例如，访问字段 `30_day_value`，则需要使用反引号符号。
 
 ```SQL
 SELECT
@@ -186,7 +186,7 @@ WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
 LIMIT 10
 ```
 
-如果使用括号符号，则后引号是&#x200B;**not**。
+后引号为 **not** 使用括号符号时需要此参数。
 
 ```sql
  SELECT
@@ -198,11 +198,11 @@ LIMIT 10
 
 ## 查看表信息
 
-连接到查询服务后，您可以使用`\d`或`SHOW TABLES`命令在Platform上查看所有可用表。
+连接到查询服务后，您可以使用 `\d` 或 `SHOW TABLES` 中。
 
 ### 标准表视图
 
-`\d`命令显示用于列表的标准PostgreSQL视图。 此命令的输出示例如下所示：
+的 `\d` 命令显示用于列表的标准PostgreSQL视图。 此命令的输出示例如下所示：
 
 ```sql
              List of relations
@@ -215,7 +215,7 @@ LIMIT 10
 
 ### 详细的表视图
 
-`SHOW TABLES` 命令是一个自定义命令，可提供有关表的更多详细信息。此命令的输出示例如下所示：
+`SHOW TABLES` 命令是一个自定义命令，可提供有关表的更多详细信息。 此命令的输出示例如下所示：
 
 ```sql
        name      |        dataSetId         |     dataSet    | description | resolved 
@@ -227,9 +227,9 @@ LIMIT 10
 
 ### 架构信息
 
-要查看表中架构的更多详细信息，可以使用`\d {TABLE_NAME}`命令，其中`{TABLE_NAME}`是要查看其架构信息的表的名称。
+要查看表中有关架构的更多详细信息，您可以使用 `\d {TABLE_NAME}` 命令，其中 `{TABLE_NAME}` 是要查看其架构信息的表的名称。
 
-以下示例显示了`luma_midvalues`表的架构信息，可使用`\d luma_midvalues`查看该信息：
+以下示例显示了 `luma_midvalues` 表格，使用 `\d luma_midvalues`:
 
 ```sql
                          Table "public.luma_midvalues"
@@ -252,9 +252,9 @@ LIMIT 10
  search            | search                      |           |          | 
 ```
 
-此外，您还可以通过将列的名称附加到表名称后，来获取有关特定列的更多信息。 将以`\d {TABLE_NAME}_{COLUMN}`格式写入。
+此外，您还可以通过将列的名称附加到表名称后，来获取有关特定列的更多信息。 将以格式写入 `\d {TABLE_NAME}_{COLUMN}`.
 
-以下示例显示了`web`列的其他信息，可通过以下命令调用该列：`\d luma_midvalues_web`:
+以下示例显示了 `web` 列中，并将使用以下命令调用： `\d luma_midvalues_web`:
 
 ```sql
                  Composite type "public.luma_midvalues_web"
@@ -268,7 +268,7 @@ LIMIT 10
 
 您可以将多个数据集合在一起，以将来自其他数据集的数据包含到查询中。
 
-以下示例将连接以下两个数据集（`your_analytics_table`和`custom_operating_system_lookup`），并按页面查看次数为前50个操作系统创建`SELECT`语句。
+以下示例将连接以下两个数据集(`your_analytics_table` 和 `custom_operating_system_lookup`)并创建 `SELECT` 按页面查看次数列出的前50个操作系统的语句。
 
 **查询**
 
@@ -308,10 +308,14 @@ LIMIT 50;
 
 ## 重复数据删除
 
-查询服务支持重复数据删除或从数据中删除重复行。 有关重复数据删除的更多信息，请阅读[查询服务重复数据删除指南](./deduplication.md)。
+查询服务支持重复数据删除或从数据中删除重复行。 有关重复数据删除的详细信息，请阅读 [查询服务重复数据删除指南](./deduplication.md).
+
+## 查询服务中的时区计算
+
+查询服务使用UTC时间戳格式对Adobe Experience Platform中持久数据进行标准化。 有关如何将时区要求转换为UTC时间戳和从UTC时间戳转换时区要求的详细信息，请参阅 [有关如何将时区更改为UTC时间戳和从UTC时间戳更改为常见问题解答部分](../troubleshooting-guide.md#How-do-I-change-the-time-zone-to-and-from-a-UTC-Timestamp?).
 
 ## 后续步骤
 
-通过阅读本文档，您在使用[!DNL Query Service]编写查询时注意到了一些重要事项。 有关如何使用SQL语法编写您自己的查询的详细信息，请阅读[SQL语法文档](../sql/syntax.md)。
+通过阅读本文档，您在使用 [!DNL Query Service]. 有关如何使用SQL语法编写您自己的查询的详细信息，请阅读 [SQL语法文档](../sql/syntax.md).
 
-有关可在查询服务中使用的查询示例，请阅读[Adobe Analytics示例查询](./adobe-analytics.md)、[Adobe Target示例查询](./adobe-target.md)或[ExperienceEvent示例查询](./experience-event-queries.md)中的指南。
+有关查询服务中可使用的查询示例，请阅读 [Adobe Analytics示例查询](./adobe-analytics.md), [Adobe Target示例查询](./adobe-target.md)或 [ExperienceEvent示例查询](./experience-event-queries.md).
