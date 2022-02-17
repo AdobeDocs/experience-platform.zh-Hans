@@ -6,7 +6,7 @@ seo-title: Activate audience data to batch profile export destinations
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 551b07eac95b560950fe2d70fd2a981ae3a29252
+source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
 workflow-type: tm+mt
 source-wordcount: '2188'
 ht-degree: 0%
@@ -71,7 +71,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
->abstract="选择导出完整文件，以导出符合该区段资格的所有配置文件的完整快照。 选择导出增量文件，以仅导出自上次导出以来符合区段资格条件的配置文件。 第一个增量文件导出包含符合该区段资格的所有配置文件，用作回填。 将来的增量文件仅包括自首次增量文件导出以来符合区段资格条件的配置文件。"
+>abstract="选择 **导出完整文件** 导出符合区段资格的所有配置文件的完整快照。 选择 **导出增量文件** 仅导出自上次导出以来符合区段资格条件的用户档案。 <br> 第一个增量文件导出包含符合该区段资格的所有配置文件，用作回填。 将来的增量文件仅包括自首次增量文件导出以来符合区段资格条件的配置文件。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#export-incremental-files" text="导出增量文件"
 
 选择 **[!UICONTROL 导出完整文件]** 触发导出文件，该文件包含选定区段的所有配置文件资格的完整快照。
@@ -348,7 +348,6 @@ Adobe建议选择身份命名空间，例如 [!DNL CRM ID] 或将电子邮件地
 >
 >* 区段定义中使用了这些字段。
 >* 这些字段配置为目标目标的投影属性。
-
 >
 > 例如，如果字段 `person.name.firstName` 具有与目标的营销操作冲突的某些数据使用标签，则在审核步骤中将显示数据使用策略违规。 有关更多信息，请参阅 [Adobe Experience Platform中的数据管理](../../rtcdp/privacy/data-governance-overview.md#destinations).
 

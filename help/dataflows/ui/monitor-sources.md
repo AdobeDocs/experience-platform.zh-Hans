@@ -6,9 +6,9 @@ title: 在UI中监视源的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: 38e56beacd8857648abbbf20f4a5c4941ff779ee
+source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
 workflow-type: tm+mt
-source-wordcount: '1856'
+source-wordcount: '1862'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_source_ingestion"
 >title="源摄取"
->abstract="源处理包含有关数据湖服务中数据活动状态和量度的信息，包括摄取的记录和失败的记录。 查看量度定义指南，了解有关量度和图形的更多信息。"
+>abstract="源摄取视图包含有关数据湖服务中数据活动状态和量度的信息，包括摄取的记录和失败的记录。 查看量度定义指南，了解有关量度和图形的更多信息。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
@@ -151,7 +151,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_identity_processing"
 >title="身份处理"
->abstract="身份处理包含有关摄取到Identity服务的记录的信息，包括添加的身份数、创建的图形和更新的图形。 查看量度定义指南，了解有关量度和图形的更多信息。"
+>abstract="“身份处理”视图包含有关摄取到Identity服务的记录的信息，包括添加的身份数、创建的图形和更新的图表。 查看量度定义指南，了解有关量度和图形的更多信息。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
@@ -194,7 +194,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profile_processing"
 >title="配置文件处理"
->abstract="配置文件处理包含有关摄取到配置文件服务的记录的信息，包括创建的配置文件片段数、更新的配置文件片段以及配置文件片段总数。"
+>abstract="配置文件处理视图包含有关摄取到配置文件服务的记录的信息，包括创建的配置文件片段数、更新的配置文件片段以及配置文件片段总数。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]

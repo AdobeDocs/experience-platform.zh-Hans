@@ -6,9 +6,9 @@ title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: e75dec7d71c301ea16cc5bfb6bad948964180c4d
+source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
 workflow-type: tm+mt
-source-wordcount: '3204'
+source-wordcount: '3205'
 ht-degree: 0%
 
 ---
@@ -203,7 +203,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_segment_jobs"
 >title="区段作业"
->abstract="区段作业仪表板包含有关所有区段的评估和导出作业的信息。"
+>abstract="区段作业视图包含有关所有区段的评估和导出作业的信息。"
 
 访问 [!UICONTROL 区段作业] 功能板，选择 **[!UICONTROL 监控]** (![监控图标](../assets/ui/monitor-destinations/monitoring-icon.png))。 在 [!UICONTROL 监控] 页面，选择 [!UICONTROL 区段作业]. 的 [!UICONTROL 监控] 功能板包含有关区段评估和导出作业的量度和信息。
 
@@ -226,7 +226,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_activation"
 >title="激活"
->abstract="目标激活包含有关区段激活状态的信息以及从实时客户资料获取的用于生成唯一标识的量度。"
+>abstract="目标激活视图包含有关区段激活状态的信息以及从实时客户配置文件获取的用于生成唯一标识的量度。"
 
 访问 [!UICONTROL 监控] 功能板，选择 **[!UICONTROL 监控]** (![监控图标](../assets/ui/monitor-destinations/monitoring-icon.png))。 在 [!UICONTROL 监控] 页面，选择 [!UICONTROL 目标]. 的 [!UICONTROL 监控] 功能板包含有关目标运行作业的量度和信息。
 
