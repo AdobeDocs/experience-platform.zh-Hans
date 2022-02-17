@@ -5,9 +5,9 @@ title: 实时客户资料中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会按照许多隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍了与处理实时客户资料的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: d8665a349c6f453d83b64317982f3544bbcde0f7
+source-git-commit: 6cb30dc9e7e76ff9ca060f83405196fa09ed0ebb
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1272'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 >
 >Privacy Service只能处理 [!DNL Profile] 使用不执行身份拼合的合并策略的数据。 如果您使用UI确认是否正在处理隐私请求，请确保您使用的策略包含“[!DNL None]&quot;作为 [!UICONTROL ID拼合] 类型。 换句话说，您不能使用合并策略， [!UICONTROL ID拼合] 设置为&quot;[!UICONTROL 专用图]&quot;
 >
->![](./images/privacy/no-id-stitch.png)
+>![合并策略的ID拼合设置为“无”](./images/privacy/no-id-stitch.png)
 >
 >另外，请务必注意，无法保证完成隐私请求所花费的时间。 如果 [!DNL Profile] 当请求仍在处理时，也无法保证是否处理了这些记录。
 
@@ -111,7 +111,7 @@ curl -X POST \
 
 在UI中创建作业请求时，请务必选择 **[!UICONTROL AEP Data Lake]** 和/或 **[!UICONTROL 用户档案]** 在 **[!UICONTROL 产品]** 以便处理存储在 [!DNL Data Lake] 或 [!DNL Real-time Customer Profile]，分别为。
 
-<img src="images/privacy/product-value.png" width="450"><br>
+![在UI中创建访问作业请求，并在产品下选择配置文件选项](./images/privacy/product-value.png)
 
 ## 隐私请求中的配置文件片段 {#fragments}
 
@@ -138,6 +138,10 @@ When [!DNL Experience Platform] 从接收删除请求 [!DNL Privacy Service], [!
 >成功的删除请求会删除客户（或一组客户）收集的属性数据，但请求不会删除在身份图中建立的关联。
 >
 >例如，使用客户 `email_id` 和 `customer_id` 删除存储在这些ID下的所有属性数据。 但是，之后在同一数据下摄取的任何数据 `customer_id` 仍将与相应的 `email_id`，因为关联仍然存在。
+>
+>此外，Privacy Service只能处理 [!DNL Profile] 使用不执行身份拼合的合并策略的数据。 如果您使用UI确认是否正在处理隐私请求，请确保您使用的策略包含“[!DNL None]&quot;作为 [!UICONTROL ID拼合] 类型。 换句话说，您不能使用合并策略， [!UICONTROL ID拼合] 设置为&quot;[!UICONTROL 专用图]&quot;
+>
+>![合并策略的ID拼合设置为“无”](./images/privacy/no-id-stitch.png)
 
 在未来版本中， [!DNL Platform] 将向发送确认函 [!DNL Privacy Service] 数据被物理删除后。
 
