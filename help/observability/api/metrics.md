@@ -5,7 +5,7 @@ title: 量度API端点
 topic-legacy: developer guide
 description: 了解如何使用可观测性分析API在Experience Platform中检索可观测性量度。
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 365fb476fa80f665ddd43bf85ec22533ee0c8ad8
 workflow-type: tm+mt
 source-wordcount: '1864'
 ht-degree: 5%
@@ -282,7 +282,7 @@ curl -X POST \
 | timeseries.profiles.dataset.batchsuccess.count | 数量 [!DNL Profile] 为数据集或所有数据集批量摄取。 | 数据集 ID |
 | timeseries.profiles.dataset.batchfailed.count | 数量 [!DNL Profile] 对于一个数据集或所有数据集，批量操作失败。 | 数据集 ID |
 | platform.ups.ingest.streaming.request.m1_rate | 传入请求速率。 | IMS组织(**必需**) |
-| platform.ups.ingest.streaming.access.put.success.m1_rate | 摄取成功率。 | IMS组织(**必需**) |
+| aep.core.unified-profile.psi.platform.ups.ingest.streaming.access.put.success.meter.m1_rate | 摄取成功率。 | IMS组织(**必需**) |
 | platform.ups.ingest.streaming.records.created.m15_rate | 为数据集摄取的新记录的速率。 | 数据集ID(**必需**) |
 | platform.ups.ingest.streaming.request.error.created.outOfOrder.m1_rate | 为数据集创建请求而加盖超时时间戳的记录的速率。 | 数据集ID(**必需**) |
 | platform.ups.profile-commons.ingest.streaming.dataSet.record.created.timestamp | 数据集的上次创建记录请求的时间戳。 | 数据集ID(**必需**) |
