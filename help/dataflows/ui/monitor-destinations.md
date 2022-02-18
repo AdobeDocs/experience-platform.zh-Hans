@@ -6,9 +6,9 @@ title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
+source-git-commit: 18a6a693f664211428d4c153fd9849cc3ac2ee47
 workflow-type: tm+mt
-source-wordcount: '3205'
+source-wordcount: '3124'
 ht-degree: 0%
 
 ---
@@ -46,24 +46,6 @@ ht-degree: 0%
 | 错误 | 的 `Error` 状态表示数据流的激活过程已中断。 |
 
 ### 为流目标运行数据流 {#dataflow-runs-for-streaming-destinations}
-
->[!CONTEXTUALHELP]
->id="platform_destinations_dataflow_identitiesactivated"
->title="已激活身份"
->abstract="成功激活到选定目标的单个配置文件标识的计数。"
->text="Learn more in documentation"
-
->[!CONTEXTUALHELP]
->id="platform_destinations_dataflow_identitiesexcluded"
->title="排除的身份"
->abstract="根据缺少属性和同意违规，从选定目标的激活中排除的单个配置文件记录计数。"
->text="Learn more in documentation"
-
->[!CONTEXTUALHELP]
->id="platform_destinations_dataflow_identitiesfailed"
->title="身份失败"
->abstract="所选目标的单个配置文件标识的计数失败。 有关详细信息，请检查错误诊断。"
->additional-url="https://adobe.com/go/destinations-monitor-dataflows-batch-en" text="在文档中了解更多信息"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation_streaming"
@@ -129,12 +111,6 @@ ht-degree: 0%
 ![流目标的数据流记录](../assets/ui/monitor-destinations/dataflow-records-stream.png)
 
 ### 为批处理目标运行数据流 {#dataflow-runs-for-batch-destinations}
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_profiles_received"
->title="收到的用户档案"
->abstract="数据流中接收的用户档案总数。 此值每60分钟更新一次。"
->text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation"
