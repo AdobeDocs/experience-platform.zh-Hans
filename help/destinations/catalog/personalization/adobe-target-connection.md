@@ -3,7 +3,7 @@ keywords: 目标个性化；目的地；experience platform target目标；adobe
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
+source-git-commit: 61a3a05466eca30ba08fcaf32a3f00e0ca49f325
 workflow-type: tm+mt
 source-wordcount: '474'
 ht-degree: 0%
@@ -34,15 +34,15 @@ Adobe Target是Adobe Experience Platform中的一个个性化连接。
 
 ## 连接到目标 {#connect}
 
->[!IMPORTANT]
->
->在创建 [!DNL Adobe Target] 连接时，我们建议您阅读我们的指南 [为同一页面和下一页面个性化配置个性化目标](../../ui/configure-personalization-destinations.md). 本指南将引导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。
-
 >[!CONTEXTUALHELP]
 >id="platform_destinations_target_datastream"
 >title="关于数据流ID"
 >abstract="此选项确定区段在响应页面时将包含在哪些数据收集数据流中。 下拉菜单仅显示已启用目标配置的数据流。 必须先配置数据流，然后才能配置目标。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html?lang=en" text="了解如何配置数据流。"
+
+>[!IMPORTANT]
+>
+>在创建 [!DNL Adobe Target] 连接时，我们建议您阅读我们的指南 [为同一页面和下一页面个性化配置个性化目标](../../ui/configure-personalization-destinations.md). 本指南将引导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
