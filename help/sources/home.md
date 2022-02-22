@@ -5,7 +5,7 @@ title: 源连接器概述
 topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 0154891cf2c68a38c08b9fe44251ec13325a7366
+source-git-commit: 7254c84f1a7f4f45a0098e27515a7a01cae395db
 workflow-type: tm+mt
 source-wordcount: '1006'
 ht-degree: 0%
@@ -118,7 +118,7 @@ Experience Platform支持从本地系统摄取数据。 有关特定源连接器
 Experience Platform支持从第三方营销自动化系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [[!DNL HubSpot]](connectors/marketing-automation/hubspot.md)
-- [[!DNL MailChimp]](connectors/marketing-automation/mailchimp.md)
+- [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md)
 - [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md)
 
 ### 支付

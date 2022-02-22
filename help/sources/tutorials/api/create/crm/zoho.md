@@ -5,18 +5,15 @@ title: 使用流服务API创建Zoho CRM基本连接
 topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Zoho CRM。
-source-git-commit: 7a15090d8ed2c1016d7dc4d7d3d0656640c4785c
+exl-id: 33995927-8f5e-44c5-b809-4db8706bbd34
+source-git-commit: 46b2fd6bc715bf1d8ccfeed576a2a2d193f92edd
 workflow-type: tm+mt
-source-wordcount: '666'
+source-wordcount: '649'
 ht-degree: 1%
 
 ---
 
-# （测试版）创建 [!DNL Zoho CRM] 基本连接使用 [!DNL Flow Service] API
-
->[!NOTE]
->
->的 [!DNL Zoho CRM] 来源为测试版。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标签的连接器的更多信息。
+# 创建 [!DNL Zoho CRM] 基本连接使用 [!DNL Flow Service] API
 
 基本连接表示源与Adobe Experience Platform之间经过验证的连接。
 

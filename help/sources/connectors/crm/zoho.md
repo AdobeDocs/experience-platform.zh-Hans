@@ -4,18 +4,15 @@ solution: Experience Platform
 title: Zoho CRM源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Zoho CRM连接到Adobe Experience Platform。
-source-git-commit: 030789af0a049b54d6e271410836c08456a83441
+exl-id: 4a010453-3d09-4a47-b04e-5789ae4af48c
+source-git-commit: 46b2fd6bc715bf1d8ccfeed576a2a2d193f92edd
 workflow-type: tm+mt
-source-wordcount: '549'
+source-wordcount: '532'
 ht-degree: 0%
 
 ---
 
-# （测试版） [!DNL Zoho CRM]
-
->[!NOTE]
->
->的 [!DNL Zoho CRM] 来源为测试版。 请参阅 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标签的连接器的更多信息。
+# [!DNL Zoho CRM]
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用构建、标记和增强传入数据 [!DNL Platform] 服务。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 
