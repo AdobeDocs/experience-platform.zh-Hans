@@ -5,9 +5,9 @@ topic-legacy: overview
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: 2677d5f0c4369ab692f9e4b16710098a359402d7
+source-git-commit: a3ee014656f135a0701b33f938384d3ab4316a99
 workflow-type: tm+mt
-source-wordcount: '1384'
+source-wordcount: '1392'
 ht-degree: 3%
 
 ---
@@ -97,6 +97,7 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 | [!DNL Profile Management] | [!UICONTROL 对受众评估区段] | 能够通过评估区段定义为受众生成用户档案。 |
 | [!DNL Identities] | [!UICONTROL 管理身份命名空间] | 有权读取、创建、编辑和删除身份命名空间。 |
 | [!DNL Identities] | [!UICONTROL 查看身份命名空间] | 身份命名空间的只读访问权限。 |
+| [!DNL Identities] | [!UICONTROL 查看身份图] | 身份图的只读访问权限。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 管理沙箱] | 有权读取、创建、编辑和删除沙箱。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 查看沙盒] | 对属于贵组织的沙箱的只读访问权限。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 重置沙盒] | 能够重置沙盒。 |
