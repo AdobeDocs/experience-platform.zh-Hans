@@ -6,10 +6,10 @@ description: 使用流程服务API在Experience Platform中创建批量云存储
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: ae9c43b3a3cd59b0c0bcfd5034f5edc5ebb818d8
+source-git-commit: a8a8b3b9e4fdae11be95d2fa80abc0f356eff345
 workflow-type: tm+mt
-source-wordcount: '3179'
-ht-degree: 1%
+source-wordcount: '3083'
+ht-degree: 2%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 本教程演示了如何使用流量服务API创建批处理 [云存储](../catalog/cloud-storage/overview.md) 或 [电子邮件营销目标](../catalog/email-marketing/overview.md)，创建数据流到新创建的目标，并通过CSV文件将数据导出到新创建的目标。
 
-本教程在所有示例中使用了Adobe Campaign目标，但所有批量云存储和电子邮件营销目标的步骤都相同。
+本教程使用 [!DNL Adobe Campaign] 目标，但所有批量云存储和电子邮件营销目标的步骤都相同。
 
 ![概述 — 创建目标和激活区段的步骤](../assets/api/email-marketing/overview.png)
 
@@ -37,14 +37,14 @@ ht-degree: 1%
 
 要完成本教程中的步骤，您应准备好以下凭据，具体取决于您连接和激活区段的目标类型。
 
-* 对于 [!DNL Amazon] S3连接： `accessId`, `secretKey`
-* 对于 [!DNL Amazon] 与的S3连接 [!DNL Adobe Campaign]: `accessId`, `secretKey`
+* 对于 [!DNL Amazon S3] 连接： `accessId`, `secretKey`
+* 对于 [!DNL Amazon S3] 连接 [!DNL Adobe Campaign]: `accessId`, `secretKey`
 * 对于SFTP连接： `domain`, `port`, `username`, `password` 或 `sshKey` （取决于与FTP位置的连接方法）
 * 对于 [!DNL Azure Blob] 连接： `connectionString`
 
 >[!NOTE]
 >
->凭据 `accessId`, `secretKey` (对于Amazon S3连接和 `accessId`, `secretKey` 对于Amazon，与Adobe Campaign的S3连接是相同的。
+>凭据 `accessId`, `secretKey` 表示 [!DNL Amazon S3] 连接和 `accessId`, `secretKey` 表示 [!DNL Amazon S3] 连接 [!DNL Adobe Campaign] 是相同的。
 
 ### 读取示例API调用 {#reading-sample-api-calls}
 
@@ -100,7 +100,7 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 **响应**
 
-成功的响应包含可用目标及其唯一标识符的列表(`id`)。 存储您计划使用的目标值，因为在后续步骤中需要该值。 例如，如果要连接区段并将区段交付到Adobe Campaign，请在响应中查找以下代码片段：
+成功的响应包含可用目标及其唯一标识符的列表(`id`)。 存储您计划使用的目标值，因为在后续步骤中需要该值。 例如，如果您要将区段连接并交付到 [!DNL Adobe Campaign]，在响应中查找以下代码片段：
 
 ```json
 {
@@ -115,13 +115,13 @@ curl --location --request GET 'https://platform.adobe.io/data/foundation/flowser
 
 | 目标 | 连接规范ID |
 ---------|----------|
-| [!DNL Adobe Campaign] | 0b23e41a-cb4a-4321-a78f-3b654f5d7d97 |
-| [!DNL Amazon S3] | 4890fc95-5a1f-4983-94bb-e060c08e3f81 |
-| [!DNL Azure Blob] | e258278b-a4cf-43ac-b158-4fa0ca0d948b |
-| [!DNL Oracle Eloqua] | c1e44b6b-e7c8-404b-9031-58f0ef760604 |
-| [!DNL Oracle Responsys] | a5e28ddf-e265-426e-83a1-9d03a3a6822b |
-| [!DNL Salesforce Marketing Cloud] | f599a5b3-60a7-4951-950a-cc4115c7ea27 |
-| SFTP | 64ef4b8b-a6e0-41b5-9677-3805d1ee5dd0 |
+| [!DNL Adobe Campaign] | `0b23e41a-cb4a-4321-a78f-3b654f5d7d97` |
+| [!DNL Amazon S3] | `4890fc95-5a1f-4983-94bb-e060c08e3f81` |
+| [!DNL Azure Blob] | `e258278b-a4cf-43ac-b158-4fa0ca0d948b` |
+| [!DNL Oracle Eloqua] | `c1e44b6b-e7c8-404b-9031-58f0ef760604` |
+| [!DNL Oracle Responsys] | `a5e28ddf-e265-426e-83a1-9d03a3a6822b` |
+| [!DNL Salesforce Marketing Cloud] | `f599a5b3-60a7-4951-950a-cc4115c7ea27` |
+| SFTP | `64ef4b8b-a6e0-41b5-9677-3805d1ee5dd0` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -163,9 +163,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `name` | 提供到Experience Platform配置文件存储的基本连接的名称。 |
+| `name` | 提供到Experience Platform的基本连接的名称 [!DNL Profile Store]. |
 | `description` | 或者，您也可以提供基本连接的说明。 |
 | `connectionSpec.id` | 将连接规范ID用于 [Experience Platform配置文件存储](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
+
+{style=&quot;table-layout:auto&quot;}
 
 **响应**
 
@@ -212,11 +214,13 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `name` | 提供到Experience Platform配置文件存储的源连接的名称。 |
+| `name` | 提供到Experience Platform的源连接的名称 [!DNL Profile Store]. |
 | `description` | 或者，您也可以提供源连接的描述。 |
 | `connectionSpec.id` | 将连接规范ID用于 [Experience Platform配置文件存储](/help/profile/home.md#profile-data-store) - `8a9c3494-9708-43d7-ae3f-cda01e5030e1`. |
 | `baseConnectionId` | 使用您在上一步中获得的基本连接ID。 |
 | `data.format` | `CSV` 是当前唯一支持的文件导出格式。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 **响应**
 
@@ -247,7 +251,7 @@ POST /connections
 
 **请求**
 
-以下请求可建立与Adobe Campaign目标的基本连接。 根据要将文件导出到的存储位置(Amazon S3、SFTP、Azure Blob)，保留相应的 `auth` 规范并删除其他内容。
+以下请求建立与 [!DNL Adobe Campaign] 目标。 根据要将文件导出到的存储位置([!DNL Amazon S3]、SFTP、 [!DNL Azure Blob])，请保留相应的 `auth` 规范并删除其他内容。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -297,9 +301,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-+++ 连接到Amazon S3目标的示例请求
+请参阅以下示例请求以连接到其他受支持的批量云存储和电子邮件营销目标。
 
-以下请求可建立与Amazon S3目标的基本连接。
++++ 连接到的请求示例 [!DNL Amazon S3] 目标
+
+以下请求建立与 [!DNL Amazon S3] 目标。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -327,9 +333,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 连接到Azure Blob目标的示例请求
++++ 连接到的请求示例 [!DNL Azure Blob] 目标
 
-以下请求建立到Azure Blob目标的基本连接。
+以下请求建立与 [!DNL Azure Blob] 目标。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -356,9 +362,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 连接到Eloqua目标的Oracle请求示例
++++ 连接到的请求示例 [!DNL Oracle Eloqua] 目标
 
-以下请求建立了与OracleEloqua目标的基本连接。 根据要将文件导出到的存储位置，保留相应的 `auth` 规范并删除其他内容。
+以下请求建立与 [!DNL Oracle Eloqua] 目标。 根据要将文件导出到的存储位置，保留相应的 `auth` 规范并删除其他内容。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -397,9 +403,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 连接到OracleResponsys目标的示例请求
++++ 连接到的请求示例 [!DNL Oracle Responsys] 目标
 
-以下请求可建立与OracleResponsys目标的基本连接。 根据要将文件导出到的存储位置，保留相应的 `auth` 规范并删除其他内容。
+以下请求建立与 [!DNL Oracle Responsys] 目标。 根据要将文件导出到的存储位置，保留相应的 `auth` 规范并删除其他内容。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -438,9 +444,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 连接到SalesforceMarketing Cloud目标的示例请求
++++ 连接到的请求示例 [!DNL Salesforce Marketing Cloud] 目标
 
-以下请求可建立与SalesforceMarketing Cloud目标的基本连接。 根据要将文件导出到的存储位置，保留相应的 `auth` 规范并删除其他内容。
+以下请求建立与 [!DNL Salesforce Marketing Cloud] 目标。 根据要将文件导出到的存储位置，保留相应的 `auth` 规范并删除其他内容。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/connections' \
@@ -518,6 +524,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `auth.specname` | 指示目标的身份验证格式。 要查找目标的specName，请执行 [GET对连接规范端点的调用](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)，提供所需目标的连接规范。 查找参数 `authSpec.name` 中。 <br> 例如，对于Adobe Campaign目标，您可以使用 `S3`, `SFTP with Password`或 `SFTP with SSH Key`. |
 | `params` | 根据您连接的目标，必须提供不同的必需身份验证参数。 对于Amazon S3连接，您必须提供到Amazon S3存储位置的访问ID和密钥。 <br> 要查找目标所需的参数，请执行 [GET对连接规范端点的调用](https://developer.adobe.com/experience-platform-apis/references/flow-service/#operation/retrieveConnectionSpec)，提供所需目标的连接规范。 查找参数 `authSpec.spec.required` 中。 |
 
+{style=&quot;table-layout:auto&quot;}
+
 **响应**
 
 成功的响应包含基本连接的唯一标识符(`id`)。 在创建目标连接的下一步中根据需要存储此值。
@@ -546,7 +554,7 @@ POST /targetConnections
 
 **请求**
 
-以下请求可建立到Adobe Campaign目标的目标连接，以确定导出的文件将在您的存储位置中放置的位置。 根据要将文件导出到的存储位置，保留相应的 `params` 规范并删除其他内容。
+以下请求可建立与 [!DNL Adobe Campaign] 目标，以确定导出文件将在您的存储位置中的放置位置。 根据要将文件导出到的存储位置，保留相应的 `params` 规范并删除其他内容。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -589,9 +597,11 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 }'
 ```
 
-+++ 为Amazon S3目标设置存储位置的示例请求
+请参阅以下示例请求，为其他受支持的批量云存储和电子邮件营销目标设置存储位置。
 
-以下请求可建立到Amazon S3目标的目标连接，以确定导出的文件将在您的存储位置中放置的位置。
++++ 设置存储位置的示例请求 [!DNL Amazon S3] 目标
+
+以下请求可建立与 [!DNL Amazon S3] 目标，以确定导出文件将在您的存储位置中的放置位置。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -625,9 +635,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 为Azure Blob目标设置存储位置的请求示例
++++ 设置存储位置的示例请求 [!DNL Azure Blob] 目标
 
-以下请求可建立到Azure Blob目标的目标连接，以确定导出的文件将登陆您的存储位置的位置。
+以下请求可建立与 [!DNL Azure Blob] 目标，以确定导出文件将在您的存储位置中的放置位置。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -661,9 +671,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 为OracleEloqua目标设置存储位置的示例请求
++++ 设置存储位置的示例请求 [!DNL Oracle Eloqua] 目标
 
-以下请求可建立与EloquaOracle目标的目标连接，以确定导出的文件将在您的存储位置中的位置。 根据要将文件导出到的存储位置，保留相应的 `params` 规范并删除其他内容。
+以下请求可建立与 [!DNL Oracle Eloqua] 目标，以确定导出文件将在您的存储位置中的放置位置。 根据要将文件导出到的存储位置，保留相应的 `params` 规范并删除其他内容。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -702,9 +712,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 为OracleResponsys目标设置存储位置的请求示例
++++ 设置存储位置的示例请求 [!DNL Oracle Responsys] 目标
 
-以下请求可建立与ResponsysOracle目标的目标连接，以确定导出的文件将登陆您的存储位置。 根据要将文件导出到的存储位置，保留相应的 `params` 规范并删除其他内容。
+以下请求可建立与 [!DNL Oracle Responsys] 目标，以确定导出文件将在您的存储位置中的放置位置。 根据要将文件导出到的存储位置，保留相应的 `params` 规范并删除其他内容。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -743,9 +753,9 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 
 +++
 
-+++ 为SalesforceMarketing Cloud目标设置存储位置的示例请求
++++ 设置存储位置的示例请求 [!DNL Salesforce Marketing Cloud] 目标
 
-以下请求可建立到SalesforceMarketing Cloud目标的目标连接，以确定导出的文件将在您的存储位置中放置的位置。 根据要将文件导出到的存储位置，保留相应的 `params` 规范并删除其他内容。
+以下请求可建立与 [!DNL Salesforce Marketing Cloud] 目标，以确定导出文件将在您的存储位置中的放置位置。 根据要将文件导出到的存储位置，保留相应的 `params` 规范并删除其他内容。
 
 ```shell
 curl --location --request POST 'https://platform.adobe.io/data/foundation/flowservice/targetConnections' \
@@ -831,6 +841,8 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
 | `params.path` | 对于S3连接，请在要导出文件的存储位置中提供文件路径。 |
 | `params.format` | `CSV` 是当前唯一支持的文件导出类型。 |
 
+{style=&quot;table-layout:auto&quot;}
+
 **响应**
 
 成功的响应会返回唯一标识符(`id`)来连接批处理目标。 按照后续步骤中的要求存储此值。
@@ -908,9 +920,9 @@ curl -X POST \
 
 | 目标 | 流量规范ID |
 ---------|----------|
-| 所有云存储目标(Amazon S3、SFTP、Azure Blob)和OracleEloqua | 71471eba-b620-49e4-90fd-23f1fa0174d8 |
-| OracleResponsys | 51d675ce-e270-408d-91fc-22717bdf2148 |
-| SalesforceMarketing Cloud | 493b2bd6-26e4-4167-ab3b-5e910bba44f0 |
+| 所有云存储目标([!DNL Amazon S3]、SFTP、 [!DNL Azure Blob])和 [!DNL Oracle Eloqua] | `71471eba-b620-49e4-90fd-23f1fa0174d8` |
+| [!DNL Oracle Responsys] | `51d675ce-e270-408d-91fc-22717bdf2148` |
+| [!DNL Salesforce Marketing Cloud] | `493b2bd6-26e4-4167-ab3b-5e910bba44f0` |
 
 **响应**
 
@@ -1019,6 +1031,8 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `frequency` | 必选。 <br> <ul><li>对于 `"DAILY_FULL_EXPORT"` 导出模式，您可以选择 `ONCE` 或 `DAILY`.</li><li>对于 `"FIRST_FULL_THEN_INCREMENTAL"` 导出模式，您可以选择 `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
 | `endDate` | 在选择 `"exportMode":"DAILY_FULL_EXPORT"` 和 `"frequency":"ONCE"`. <br> 设置区段成员停止导出到目标的日期。 |
 | `startTime` | 必选。 选择生成包含区段成员的文件并将其导出到目标的时间。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 **响应**
 
