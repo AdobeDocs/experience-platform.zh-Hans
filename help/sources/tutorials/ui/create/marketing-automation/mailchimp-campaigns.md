@@ -4,15 +4,17 @@ solution: Experience Platform
 title: 使用Platform UI创建MailChimp促销活动源连接
 topic-legacy: tutorial
 description: 了解如何使用Platform UI将Adobe Experience Platform与MailChimp营销活动连接。
-source-git-commit: a67f9589346a117eb6f51dc9f908680d661e5d5b
+hide: true
+hidefromtoc: true
+exl-id: e8e1ed32-4277-44c9-aafc-6bb9e0a1fe0d
+source-git-commit: f8951b5a0a0ca94679155bad9f4c4c2991740b1a
 workflow-type: tm+mt
 source-wordcount: '682'
 ht-degree: 1%
 
 ---
 
-
-# 创建 [!DNL MailChimp Campaigns] 源连接（使用Platform UI）
+# 创建 [!DNL Mailchimp Campaigns] 源连接（使用Platform UI）
 
 本教程提供了创建 [!DNL Mailchimp] 源连接器到引入 [!DNL Mailchimp Campaigns] 使用用户界面将数据发送到Adobe Experience Platform。
 
@@ -98,4 +100,3 @@ ht-degree: 1%
 ## 后续步骤
 
 使用 [!DNL Mailchimp] 已验证帐户，且您的 [!DNL Mailchimp Campaigns] 选定数据时，您现在可以开始创建数据流以将数据引入平台。 有关如何创建数据流的详细步骤，请参阅 [创建数据流以将营销自动化数据引入平台](../../dataflow/marketing-automation.md).
-

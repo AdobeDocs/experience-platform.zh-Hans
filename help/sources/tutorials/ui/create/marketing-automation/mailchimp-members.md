@@ -4,13 +4,15 @@ solution: Experience Platform
 title: 使用Platform UI创建MailChimp成员源连接
 topic-legacy: tutorial
 description: 了解如何使用Platform UI将Adobe Experience Platform与MailChimp成员连接。
-source-git-commit: a67f9589346a117eb6f51dc9f908680d661e5d5b
+hide: true
+hidefromtoc: true
+exl-id: dc620ef9-624d-4fc9-8475-bb475ea86eb7
+source-git-commit: f8951b5a0a0ca94679155bad9f4c4c2991740b1a
 workflow-type: tm+mt
 source-wordcount: '682'
 ht-degree: 1%
 
 ---
-
 
 # 创建 [!DNL Mailchimp Members] 源连接（使用Platform UI）
 
