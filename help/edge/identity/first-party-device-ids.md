@@ -1,7 +1,10 @@
 ---
 title: 平台Web SDK中的第一方设备ID
 description: 了解如何为Adobe Experience Platform Web SDK配置第一方设备ID(FPID)。
-source-git-commit: 7a3a89fe92d965a5f5796f7722d3bc2daf6ef178
+exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
+hide: true
+hidefromtoc: true
+source-git-commit: c094e72232f9ac44d10a1919a00024e5faa27b2b
 workflow-type: tm+mt
 source-wordcount: '1680'
 ht-degree: 0%
