@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
-source-git-commit: 07dc417cbeb5ac0a59d2405986e9bb771b0735f2
+source-git-commit: 6d360721a598ff3fa82169aea608263a09c1f05f
 workflow-type: tm+mt
-source-wordcount: '573'
-ht-degree: 6%
+source-wordcount: '575'
+ht-degree: 5%
 
 ---
 
@@ -33,7 +33,6 @@ Platform提供了一套技术，允许您收集客户端客户体验数据，并
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
 
-
 ## [!DNL Data Prep] {#data-prep}
 
 [!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
@@ -52,7 +51,7 @@ Platform提供了一套技术，允许您收集客户端客户体验数据，并
 
 Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接身份，使您能够实时提供有影响的个人数字体验，从而帮助您更好地了解客户及其行为。
 
-**新增功能**
+**更新功能**
 
 | 功能 | 描述 |
 | --- | --- |
@@ -65,6 +64,8 @@ Adobe Experience Platform [!DNL Identity Service] 通过跨设备和系统桥接
 Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强该数据。 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
 
 Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，以及管理数据摄取吞吐量。
+
+**更新功能**
 
 | 功能 | 描述 |
 | --- | --- |
