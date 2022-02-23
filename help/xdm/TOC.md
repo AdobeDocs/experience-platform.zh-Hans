@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用 Experience Data Model (XDM) 类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: 065f5ef9d3d3be0fcab84d7518d8a00e4cd551cf
+source-git-commit: fecea2040af6e6c666de8eb4f1b13b3beaa45486
 workflow-type: tm+mt
-source-wordcount: '405'
+source-wordcount: '412'
 ht-degree: 17%
 
 ---
@@ -55,6 +55,7 @@ ht-degree: 17%
       * [XDM业务人员组件](./field-groups/profile/business-person-components.md)
       * [XDM业务人员详细信息](./field-groups/profile/business-person-details.md)
    * 事件字段组 {#event}
+      * [Adobe Analytics完整扩展](./field-groups/event/analytics-full-extension.md)
       * [促销活动营销详细信息](./field-groups/event/campaign-marketing-details.md)
       * [渠道详细信息](./field-groups/event/channel-details.md)
       * [商务详细信息](./field-groups/event/commerce-details.md)
@@ -95,6 +96,7 @@ ht-degree: 17%
    * [地理形状](./data-types/geo-shape.md)
    * [标识](./data-types/identity.md)
    * [展示次数](./data-types/impressions.md)
+   * [键值对](./data-types/key-value-pair.md)
    * [营销](./data-types/marketing.md)
    * [测量](./data-types/measure.md)
    * [订购](./data-types/order.md)
