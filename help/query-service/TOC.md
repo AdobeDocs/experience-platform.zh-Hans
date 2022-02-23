@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: Query Service 指南
 user-guide-description: 使用标准 SQL 在 Platform Data Lake 中查询数据。
 feature: Queries
-source-git-commit: d939624d222839532f4601ceed8dfa6e291f37aa
+source-git-commit: 0247d43429bb3d4cbf43ba0a94d435d01fbaf7a8
 workflow-type: tm+mt
-source-wordcount: '146'
-ht-degree: 16%
+source-wordcount: '151'
+ht-degree: 15%
 
 ---
 
@@ -31,6 +31,7 @@ ht-degree: 16%
 - 最佳实践 {#best-practices}
    - [查询执行的一般指导](best-practices/writing-queries.md)
    - [数据资产组织指南](./best-practices/organize-data-assets.md)
+   - [使用嵌套数据结构](best-practices/nested-data-structures.md)
    - [重复数据删除](best-practices/deduplication.md)
    - [体验事件查询示例](best-practices/experience-event-queries.md)
    - [示例Adobe Analytics查询](best-practices/adobe-analytics.md)

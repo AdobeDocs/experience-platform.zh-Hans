@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 91fc4c50eb9a5ab64de3445b47465eec74a61736
+source-git-commit: b291bcf4e0ce068b071adde489653b006f4e7fb2
 workflow-type: tm+mt
-source-wordcount: '2301'
+source-wordcount: '2360'
 ht-degree: 1%
 
 ---
@@ -217,14 +217,37 @@ INSERT INTO table_name select_query
 
 **示例**
 
+>[!NOTE]
+>
+>下面是一个辅助示例，仅用于指导目的。
+
 ```sql
 INSERT INTO Customers SELECT SupplierName, City, Country FROM OnlineCustomers;
 
 INSERT INTO Customers AS (SELECT * from OnlineCustomers SNAPSHOT AS OF 345)
 ```
 
->[!NOTE]
+>[!INFO]
+> 
 > 的 `SELECT` 语句 **必须** 括在括号()中。 此外， `SELECT` 语句必须符合 `INSERT INTO` 语句。 您可以提供 `SNAPSHOT` 用于将增量增量增量读取到目标表中的子句。
+
+实际XDM架构中的大多数字段在根级别未找到，并且SQL不允许使用点表示法。 要使用嵌套字段获得真实的结果，必须映射 `INSERT INTO` 路径。
+
+至 `INSERT INTO` 嵌套路径，请使用以下语法：
+
+```sql
+INSERT INTO [dataset]
+SELECT struct([source field1] as [target field in schema],
+[source field2] as [target field in schema],
+[source field3] as [target field in schema]) [tenant name]
+FROM [dataset]
+```
+
+**示例**
+
+```sql
+INSERT INTO Customers SELECT struct(SupplierName as Supplier, City as SupplierCity, Country as SupplierCountry) _Adobe FROM OnlineCustomers;
+```
 
 ## 拖放表
 
