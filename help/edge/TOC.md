@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与Experience Cloud服务交互。
 feature: Web SDK
-source-git-commit: f237ee364cdf6048840dca797f7827b9b88dd73b
+source-git-commit: 6fb6d1579f888720b6af9617400d512a68d06264
 workflow-type: tm+mt
-source-wordcount: '154'
+source-wordcount: '157'
 ht-degree: 28%
 
 ---
@@ -29,6 +29,7 @@ ht-degree: 28%
    * [支持的用例](fundamentals/supported-use-cases.md)
 * 标识 {#identity}
    * [概述](identity/overview.md)
+   * [第一方设备ID](identity/first-party-device-ids.md)
 * 数据收集 {#data-collection}
    * [自动收集的信息](data-collection/automatic-information.md)
    * [跟踪链接](data-collection/track-links.md)

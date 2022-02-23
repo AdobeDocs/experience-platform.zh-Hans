@@ -1,59 +1,69 @@
 ---
-title: 使用Adobe Experience Platform Web SDK检索Experience CloudID
-description: 了解如何使用Adobe Experience Cloud Web SDK检索Adobe Experience Platform ID(ECID)。
-seo-description: 了解如何获取Adobe Experience Cloud Id。
+title: 平台Web SDK中的身份数据
+description: 了解如何使用Adobe Experience Cloud Web SDK检索和管理Adobe Experience Platform ID(ECID)。
 keywords: 身份；第一方身份；身份服务；第三方身份；ID迁移；访客ID；第三方身份；ThirdPartyCookiesEnabled;idMigrationEnabled;getIdentity；同步身份；sendEvent;identityMap；主；EID；身份命名空间；命名空间ID;authenticationState;hashEnabled;
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: d753cfca6f518dfe2cafa1cb30ad26bd0b591c54
+source-git-commit: 6fb6d1579f888720b6af9617400d512a68d06264
 workflow-type: tm+mt
-source-wordcount: '1217'
-ht-degree: 6%
+source-wordcount: '1327'
+ht-degree: 1%
 
 ---
 
-# Adobe Experience Cloud ID
+# 平台Web SDK中的身份数据
 
-Adobe Experience Platform Web SDK利用[AdobeIdentity服务](../../identity-service/ecid.md)。 这可确保每个设备都有一个唯一标识符，该标识符会保留在设备上，以便页面之间的活动可以绑定在一起。
+Adobe Experience Platform Web SDK利用 [Adobe Experience Cloud ID(ECID)](../../identity-service/ecid.md) 来跟踪访客行为。 使用ECID，您可以确保每个设备都具有一个唯一标识符，该标识符可以跨多个会话保留，从而将在Web会话期间和跨Web会话发生的所有点击与特定设备相关联。
 
-## 第一方身份
+本文档概述了如何使用平台Web SDK管理ECID。
 
-[!DNL Identity Service]将标识存储在第一方域的Cookie中。 [!DNL Identity Service]尝试使用域上的HTTP标头来设置Cookie。 如果操作失败， [!DNL Identity Service]将返回使用JavaScript设置Cookie。 建议您为[边缘域配置](../fundamentals/configuring-the-sdk.md#edgeConfigId)设置CNAME。
+## 使用SDK跟踪ECID
 
-来自Platform Web SDK的每次点击，都会由边缘网络上的Identity服务向其添加一个ECID。 对于首次访客，将生成ECID并将其添加到有效负载中。 对于重复访客，将从`kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` Cookie中检索ECID，并将其添加到有效负载中。
+Platform Web SDK通过使用Cookie分配和跟踪ECID，以及使用多种可用方法配置这些Cookie的生成方式。
 
-ECID将添加在`xdm`的`identityMap`字段下。 使用浏览器的开发工具，您可以在响应中的有效负荷下查看ECID，其类型为：`identity:result`，但您在请求中看不到ECID。
+当新用户到达您的网站时，Adobe Experience Cloud Identity服务会尝试为该用户设置设备标识Cookie。 对于首次访客，会在Adobe Experience Platform边缘网络的首次响应中生成并返回ECID。 对于重复访客，将从 `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` cookie和添加到有效负载中。
 
-通过 CNAME 实施，您可以自定义 Adobe 使用的收藏集域名，以便与您自己的域名匹配。这将允许 Adobe 在服务器端设置第一方 Cookie，而不是使用 JavaScript 在客户端进行设置。过去，这些服务器端第一方Cookie不受Apple对Safari浏览器的智能防跟踪(ITP)政策所施加的限制。 但是，2020年11月，Apple更新了其策略，以便这些限制也适用于通过CNAME设置的Cookie。 目前，根据ITP，在服务器端设置的Cookie（由CNAME设置）和在客户端设置的Cookie（由JavaScript设置）均受七天或24小时的到期限制。 有关ITP策略的更多信息，请参阅此Apple文档，其中介绍了[跟踪预防](https://webkit.org/tracking-prevention/#intelligent-tracking-prevention-itp)。
+设置包含ECID的Cookie后，Platform Web SDK生成的每个后续请求都将包含该ECID。
 
-虽然CNAME实施在Cookie生命周期方面不提供任何好处，但还有其他一些好处，例如广告拦截器和不太常见的浏览器会阻止数据发送到它们分类为跟踪器的域。 在这些情况下，使用CNAME可能会阻止使用这些工具的用户中断您的数据收集。
+使用Cookie进行设备标识时，您有两个选项可与边缘网络进行交互：
 
-## 第三方标识
+1. 将数据直接发送到边缘网络域 `adobedc.net`. 此方法称为 [第三方数据收集](#third-party).
+1. 在您自己的域上创建指向 `adobedc.net`. 此方法称为 [第一方数据收集](#first-party).
 
-[!DNL Identity Service]能够将ID与第三方域(demdex.net)同步，以启用跨站点的跟踪。 启用此功能后，将向demdex.net发出访客的第一个请求（例如，没有ECID的访客）。 此操作将仅在允许使用它的浏览器（如Chrome）上完成，并由配置中的`thirdPartyCookiesEnabled`参数控制。 如果要一起禁用此功能，请将`thirdPartyCookiesEnabled`设置为false。
+如以下各节所述，您选择使用的数据收集方法会直接影响各种浏览器的Cookie生命周期。
 
-## ID迁移
+### 第三方数据收集 {#third-party}
 
-使用访客API从迁移时，您还可以迁移现有的AMCV Cookie。 要启用ECID迁移，请在配置中设置`idMigrationEnabled`参数。 ID迁移可支持以下用例：
+第三方数据收集涉及将数据直接发送到边缘网络域 `adobedc.net`.
 
-* 当域的某些页面使用访客API，而其他页面使用此SDK时。 为支持这种情况，SDK会读取现有AMCV Cookie，并使用现有ECID写入新Cookie。 此外，SDK还会编写AMCV Cookie，以便如果首先在使用SDK分析的页面上获取ECID，则使用访客API分析的后续页面将具有相同的ECID。
-* 在同时具有访客API的页面上设置Adobe Experience Platform Web SDK时。 要支持这种情况，如果未设置AMCV Cookie，SDK将在页面上查找访客API，并调用该API以获取ECID。
-* 当整个网站使用Adobe Experience Platform Web SDK并且没有访客API时，迁移ECID以保留回访访客信息会非常有用。 将SDK与`idMigrationEnabled`一起部署一段时间以便迁移大多数访客Cookie后，可以关闭该设置。
+近年来，Web浏览器在处理第三方设置的Cookie时越来越受限。 默认情况下，某些浏览器会阻止第三方Cookie。 如果您使用第三方Cookie来识别网站访客，则这些Cookie的生命周期几乎总是比使用第一方Cookie时可能提供的生命周期短。 在某些情况下，第三方Cookie的过期时间最少为七天。
 
-## 更新迁移特征
+此外，当使用第三方数据收集时，某些广告拦截器会将流量限制为完全Adobe数据收集端点。
 
-当XDM格式化的数据被发送到Audience Manager时，迁移时需要将这些数据转换为信号。 您的特征需要更新以反映XDM提供的新键值。 使用Audience Manager创建的[BAAAM工具](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management)，可以更轻松地执行此过程。
+### 第一方数据收集 {#first-party}
 
-## 服务器端转发
+第一方数据收集涉及在您自己的域上通过CNAME设置Cookie，该CNAME指向 `adobedc.net`.
 
-如果您当前已启用服务器端转发并且正在使用`appmeasurement.js`。 和`visitor.js`您可以保持启用服务器端转发功能，这不会导致任何问题。 在后端，Adobe会获取任何AAM区段，并将其添加到对Analytics的调用中。 如果对Analytics的调用包含这些区段，则Analytics不会调用Audience Manager来转发任何数据，因此不会进行任何双重数据收集。 使用Web SDK时也不需要位置提示，因为后端会调用相同的分段端点。
+虽然浏览器长期以来处理由CNAME端点设置的Cookie的方式与由站点拥有的端点设置的方式类似，但浏览器实施的最新更改在处理CNAME Cookie的方式上有所区别。 虽然默认情况下没有阻止第一方CNAME Cookie的浏览器，但某些浏览器会将使用CNAME设置的Cookie的生命周期限制为仅7天。
 
-## 检索访客ID和区域ID
+### Cookie生命周期对Adobe Experience Cloud应用程序的影响 {#lifespans}
 
-如果要使用唯一访客ID，请使用`getIdentity`命令。 `getIdentity` 返回当前访客的现有ECID。对于首次没有ECID的访客，此命令会生成一个新的ECID。 `getIdentity` 也会返回访客的区域ID。有关更多信息，请参阅[Adobe Audience Manager用户指南](https://experienceleague.adobe.com/docs/audience-manager/user-guide/api-and-sdk-code/dcs/dcs-api-reference/dcs-regions.html)。
+无论您选择是第一方还是第三方数据收集，Cookie可持续的时长都会直接影响Adobe Analytics和Customer Journey Analytics中的访客计数。 此外，当在网站上使用Adobe Target或Offer decisioning时，最终用户可能会遇到不一致的个性化体验。
+
+例如，假设您创建了一个个性化体验，如果用户在过去七天中查看了任何项目三次，则该体验会将其提升到主页。
+
+如果最终用户一周内访问三次，但七天内没有返回网站，则当他们返回网站时，该用户可能会被视为新用户，因为浏览器策略可能已删除了其Cookie（具体取决于他们访问网站时使用的浏览器）。 如果出现这种情况，您的Analytics工具会将访客视为新用户，即使他们在七天多一点前访问了网站。 此外，将再次开始为用户个性化体验的任何工作。
+
+### 第一方设备ID
+
+要考虑如上所述Cookie生命周期的影响，您可以选择设置并管理您自己的设备标识符。 请参阅 [第一方设备ID](./first-party-device-ids.md) 以了解更多信息。
+
+## 检索当前用户的ECID和区域
+
+要检索当前访客的唯一ECID，请使用 `getIdentity` 命令。 对于首次没有ECID的访客，此命令会生成一个新的ECID。 `getIdentity` 也会返回访客的区域ID。
 
 >[!NOTE]
 >
->此方法通常与需要读取[!DNL Experience Cloud] ID或需要Adobe Audience Manager位置提示的自定义解决方案一起使用。 标准实施不使用该函数。
+>此方法通常与需要读取 [!DNL Experience Cloud] ID或需要Adobe Audience Manager的位置提示。 标准实施不使用该函数。
 
 ```javascript
 alloy("getIdentity")
@@ -68,19 +78,11 @@ alloy("getIdentity")
   });
 ```
 
-## 正在同步身份
+## 使用 `identityMap`
 
->[!NOTE]
->
->除哈希功能外，版本2.1.0中还删除了`syncIdentity`方法。 如果您使用的是版本2.1.0及更高版本，并且希望同步身份，则可以直接在`sendEvent`命令的`xdm`选项中`identityMap`字段下发送它们。
+使用XDM [`identityMap` 字段](../../xdm/schema/composition.md#identityMap)，您可以使用多个标识来识别设备/用户，设置其身份验证状态，并确定哪个标识符被视为主标识符。 如果未将标识符设置为 `primary`，则主要默认为 `ECID`.
 
-此外，[!DNL Identity Service]允许您使用`syncIdentity`命令将自己的标识符与ECID同步。
-
->[!NOTE]
->
->强烈建议在每个`sendEvent`命令中传递所有可用的标识。 这将解锁一系列用例，包括个性化。 现在，您可以在`sendEvent`命令中传递这些标识，现在可以直接将它们放置在数据层中。
-
-同步身份允许您使用多个身份来识别设备/用户，设置其身份验证状态并确定哪个标识符被视为主标识符。 如果未将标识符设置为`primary`，则主标识符默认为`ECID`。
+`identityMap` 字段将使用 `sentEvent` 命令。
 
 ```javascript
 alloy("sendEvent", {
@@ -98,30 +100,28 @@ alloy("sendEvent", {
 });
 ```
 
-`identityMap`中的每个属性表示属于特定[标识命名空间](../../identity-service/namespaces.md)的标识。 属性名称应该是标识命名空间符号，您可以在Adobe Experience Platform用户界面的“[!UICONTROL Identities]”下找到该符号。 属性值应该是与该标识命名空间相关的标识数组。
+中的每个属性 `identityMap` 表示属于特定 [标识命名空间](../../identity-service/namespaces.md). 属性名称应该是身份命名空间符号，您可以在Adobe Experience Platform用户界面的“ ”下找到该符号[!UICONTROL 标识]&quot; 属性值应该是与该标识命名空间相关的标识数组。
 
-标识数组中的每个标识对象的结构如下所示：
+标识数组中的每个标识对象都包含以下属性：
 
-### `id`
+| 属性 | 数据类型 | 描述 |
+| --- | --- | --- |
+| `id` | 字符串 | **（必需）** 要为给定命名空间设置的ID。 |
+| `authenticationState` | 字符串 | **（必需）** ID的身份验证状态。 可能的值为 `ambiguous`, `authenticated`和 `loggedOut`. |
+| `primary` | 布尔型 | 确定此标识是否应用作配置文件中的主片段。 默认情况下，ECID将设置为用户的主标识符。 如果忽略，则此值默认为 `false`. |
 
-| **类型** | **必需** | **默认值** |
-| -------- | ------------ | ----------------- |
-| 字符串 | 是 | 无 |
+## 从访客API迁移到ECID
 
-这是您要为给定命名空间同步的ID。
+使用访客API从迁移时，您还可以迁移现有的AMCV Cookie。 要启用ECID迁移，请将 `idMigrationEnabled` 参数。 ID迁移可支持以下用例：
 
-### `authenticationState`
+* 当域的某些页面使用访客API，而其他页面使用此SDK时。 为支持这种情况，SDK会读取现有AMCV Cookie，并使用现有ECID写入新Cookie。 此外，SDK还会编写AMCV Cookie，以便如果首先在使用SDK分析的页面上获取ECID，则使用访客API分析的后续页面将具有相同的ECID。
+* 在同时具有访客API的页面上设置Adobe Experience Platform Web SDK时。 要支持这种情况，如果未设置AMCV Cookie，SDK将在页面上查找访客API，并调用该API以获取ECID。
+* 当整个网站使用Adobe Experience Platform Web SDK并且没有访客API时，迁移ECID以保留回访访客信息会非常有用。 在将SDK部署为 `idMigrationEnabled` 一段时间后，该设置便可关闭，以便迁移大部分访客cookie。
 
-| **类型** | **必需** | **默认值** | **可能值** |
-| -------- | ------------ | ----------------- | ------------------------------------ |
-| 字符串 | 是 | 模糊 | 不明确、已验证并已注销 |
+### 更新迁移特征
 
-ID的身份验证状态。
+当XDM格式化的数据被发送到Audience Manager时，迁移时需要将这些数据转换为信号。 您的特征需要更新以反映XDM提供的新键值。 使用 [BAAAM工具](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management) Audience Manager创建的。
 
-### `primary`
+## 在事件转发中使用
 
-| **类型** | **必需** | **默认值** |
-| -------- | ------------ | ----------------- |
-| 布尔值 | 可选 | false |
-
-确定此标识是否应用作统一配置文件中的主片段。 默认情况下，ECID将设置为用户的主标识符。
+如果您当前 [事件转发](../../tags/ui/event-forwarding/overview.md) 已启用且正在使用 `appmeasurement.js` 和 `visitor.js`，则可以保持启用事件转发功能，这不会导致任何问题。 在后端，Adobe会获取任何AAM区段，并将其添加到对Analytics的调用中。 如果对Analytics的调用包含这些区段，则Analytics不会调用Audience Manager来转发任何数据，因此不会进行任何双重数据收集。 使用Web SDK时也不需要位置提示，因为后端会调用相同的分段端点。
