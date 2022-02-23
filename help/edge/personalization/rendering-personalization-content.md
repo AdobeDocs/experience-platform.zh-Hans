@@ -1,18 +1,22 @@
 ---
 title: 使用Adobe Experience Platform Web SDK渲染个性化内容
 description: 了解如何使用Adobe Experience Platform Web SDK呈现个性化内容。
-keywords: personalization;renderDecisions;sendEvent;decisionScopes;propositions;
+keywords: 个性化；renderDecisions;sendEvent;decisionScopes；建议；
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: 5d4214c1f9dc8476dd946559f602591c6e929cb1
+source-git-commit: 6ba563db7fd31084813426ffbb0c35be9d7fe4bb
 workflow-type: tm+mt
-source-wordcount: '701'
+source-wordcount: '741'
 ht-degree: 1%
 
 ---
 
 # 呈现个性化内容
 
-Adobe Experience Platform Web SDK supports retrieving personalized content from personalization solutions at Adobe, including [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) and [Offer Decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=zh-Hans). Content created within Adobe Target&#39;s [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) can be retrieved and rendered automatically by the SDK. 在Adobe Target中创建的内容 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) 或Offer decisioning无法由SDK自动呈现。 Instead, you must request this content using the SDK and then manually render the content yourself.
+Adobe Experience Platform Web SDK支持从Adobe个性化解决方案中检索个性化内容，包括 [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) 和 [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=zh-Hans).
+
+此外，Web SDK还通过Adobe Experience Platform个性化目标(例如 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化连接](../../destinations/catalog/personalization/custom-personalization.md). 要了解如何为同一页面和下一页面个性化配置Experience Platform，请参阅 [专用指南](../../destinations/ui/configure-personalization-destinations.md).
+
+在Adobe Target中创建的内容 [可视化体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) 可由SDK自动检索和渲染。 在Adobe Target中创建的内容 [基于表单的体验编辑器](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) 或Offer decisioning无法由SDK自动呈现。 您而是必须使用SDK请求此内容，然后自行手动渲染该内容。
 
 ## 自动渲染内容
 
@@ -38,7 +42,7 @@ alloy("sendEvent", {
 
 ## 手动渲染内容
 
-要访问任何个性化内容，您可以提供一个回调函数，该函数将在SDK收到来自服务器的成功响应后调用。 您的回调函数提供了 `result` 对象，可能包含 `propositions` 属性。 Below is an example of how you would provide a callback function when sending an event.
+要访问任何个性化内容，您可以提供一个回调函数，该函数将在SDK收到来自服务器的成功响应后调用。 您的回调函数提供了 `result` 对象，可能包含 `propositions` 属性。 以下示例用于说明在发送事件时如何提供回调函数。
 
 ```javascript
 alloy("sendEvent", {
@@ -50,7 +54,7 @@ alloy("sendEvent", {
   });
 ```
 
-在本例中， `result.propositions`，如果存在，则是一个数组，其中包含与事件相关的个性化建议。 By default, it only includes propositions that are eligible for automatic rendering.
+在本例中， `result.propositions`，如果存在，则是一个数组，其中包含与事件相关的个性化建议。 默认情况下，它仅包含符合自动渲染条件的建议。
 
 的 `propositions` 数组可能类似于以下示例：
 
@@ -99,7 +103,7 @@ alloy("sendEvent", {
 ]
 ```
 
-In the example, the `renderDecisions` option was not set to `true` when the `sendEvent` command was executed, so the SDK did not attempt to automatically render any content. 但是，SDK仍会自动检索符合自动渲染条件的内容，并将其提供给您以在您愿意的情况下手动渲染。 请注意，每个命题对象都有其 `renderAttempted` 属性设置为 `false`.
+在本例中， `renderDecisions` 选项未设置为 `true` 当 `sendEvent` 命令，因此SDK未尝试自动渲染任何内容。 但是，SDK仍会自动检索符合自动渲染条件的内容，并将其提供给您以在您愿意的情况下手动渲染。 请注意，每个命题对象都有其 `renderAttempted` 属性设置为 `false`.
 
 如果您改为 `renderDecisions` 选项 `true` 在发送事件时，SDK会尝试渲染任何符合自动渲染条件的主张（如之前所述）。 因此，每个提案对象都将拥有 `renderAttempted` 属性设置为 `true`. 在这种情况下，无需手动呈现这些建议。
 
@@ -219,7 +223,7 @@ alloy("sendEvent", {
 此时，您可以根据自己的需求渲染建议内容。 在本例中，建议与 `discount` 范围是使用Adobe Target的基于表单的体验编辑器构建的HTML建议。 假定您的页面上有一个ID为 `daily-special` 并希望从 `discount` 建议 `daily-special` 元素，请执行以下操作：
 
 1. 从 `result` 对象。
-1. Loop through each proposition, looking for the proposition with a scope of `discount`.
+1. 回顾每个命题，寻找包含范围的命题 `discount`.
 1. 如果您找到一个建议，请循环查看建议中的每个项目，并查找HTML内容的项目。 （检查好过假设。）
 1. 如果您找到包含HTML内容的项目，请找到 `daily-special` 元素，并将其HTML替换为个性化内容。
 1. 内容呈现后，发送 `display` 事件。
@@ -289,6 +293,6 @@ alloy("sendEvent", {
 >
 >如果您使用Adobe Target，则作用域与服务器上的mbox相对应，只是它们都是同时请求的，而不是单独请求。 将始终返回全局mbox。
 
-### Manage flicker
+### 管理闪烁
 
 SDK为 [管理闪烁](../personalization/manage-flicker.md) 在个性化过程中。
