@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform Identity Service
 breadcrumb-title: Platform Identity Service 指南
 user-guide-description: 跨设备和系统建立客户身份桥梁，以提供个性化的数字体验。
 feature: Identities
-source-git-commit: 81b325fe0994eef73111f9fc474984a4550dd256
+source-git-commit: 6ef978251c8b1ecaffa3a28cf2b89e24e2d725b6
 workflow-type: tm+mt
-source-wordcount: '98'
-ht-degree: 28%
+source-wordcount: '102'
+ht-degree: 27%
 
 ---
 
@@ -16,6 +16,7 @@ ht-degree: 28%
 
 - [Identity Service概述](home.md)
 - [身份命名空间概述](namespaces.md)
+- [身份数据的防护](guardrails.md)
 - Identity Service API {#api}
    - [快速入门](api/getting-started.md)
    - [为字段设置标签以作为标识](api/label-identities.md)
