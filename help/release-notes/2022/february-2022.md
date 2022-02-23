@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
-source-git-commit: 762a4b7336f1c26b79883db9484d8f5fc7bff53c
+source-git-commit: 07dc417cbeb5ac0a59d2405986e9bb771b0735f2
 workflow-type: tm+mt
-source-wordcount: '362'
-ht-degree: 8%
+source-wordcount: '573'
+ht-degree: 6%
 
 ---
 
@@ -14,9 +14,25 @@ ht-degree: 8%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [数据收集](#data-collection)
 - [[!DNL Data Prep]](#data-prep)
 - [[!DNL Identity Service]](#identity)
 - [源](#sources)
+
+## 数据收集 {#data-collection}
+
+Platform提供了一套技术，允许您收集客户端客户体验数据，并将其发送到Adobe Experience Platform边缘网络，以便对其进行扩充、转换和分发到Adobe或非Adobe目标。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 改进了数据流配置的UI工作流 | 更新了在数据收集UI中创建新数据流的工作流。 向数据流添加服务时，选项列表中将仅包含您有权访问的服务。 请参阅 [配置数据流](../../edge/fundamentals/datastreams.md) 以了解更多信息。 |
+| 为数据收集准备数据 | 如果您使用的是Adobe Experience Platform Web SDK，您现在可以利用数据准备功能将数据映射到服务器端的Experience Data Model(XDM)。 请参阅 [为数据收集准备数据](../../edge/fundamentals/datastreams.md#data-prep) （详细信息）。 |
+| 第一方设备ID | 现在，在使用Platform Web SDK收集客户数据时，您可以将自己的设备ID发送到Adobe Experience Platform Edge Network，这为最近对第三方Cookie生命周期的浏览器限制提供了解决方法。 请参阅 [第一方设备ID](../../edge/identity/first-party-device-ids.md) 以了解更多信息。 |
+
+有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
+
 
 ## [!DNL Data Prep] {#data-prep}
 
