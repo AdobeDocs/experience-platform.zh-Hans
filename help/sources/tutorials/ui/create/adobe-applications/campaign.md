@@ -4,10 +4,10 @@ title: 使用Platform UI创建Adobe Campaign Managed Services源连接
 description: 了解如何使用Platform UI将Adobe Experience Platform连接到Adobe Campaign Managed Services。
 hide: true
 hidefromtoc: true
-source-git-commit: 24d7a549e83245fc363bd76f26ba58130e980c6c
+source-git-commit: 1b1f25093db642b394c6e05f15f6d1071096eb36
 workflow-type: tm+mt
-source-wordcount: '314'
-ht-degree: 0%
+source-wordcount: '300'
+ht-degree: 1%
 
 ---
 
@@ -31,30 +31,24 @@ ht-degree: 0%
 
 在 **[!UICONTROL Adobe应用程序]** 类别，选择 **[!UICONTROL Adobe CampaignManaged Services]** 然后选择 **[!UICONTROL 添加数据]**.
 
-### 选择数据
+### 选择数据 {#select-data}
 
 的 [!UICONTROL 选择数据] 步骤，为您提供用于配置 [!UICONTROL Adobe Campaign实例], [!UICONTROL 目标映射]和 [!UICONTROL 架构名称].
 
-#### 选择营销活动实例 {#select-campaign-instance}
-
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_instance"
->title="选择营销活动实例"
+>title="ACC实例"
 >abstract="您要使用的Adobe Campaign Classic环境的名称。"
 >text="Learn more in documentation"
 
-#### 选择营销活动映射 {#select-campaign-mapping}
-
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_mapping"
->title="选择营销活动目标映射"
+>title="目标映射"
 >abstract="目标映射是Campaign用于投放消息的技术对象，包含发送投放所需的所有技术设置（地址、电话号码、选择加入指示符、其他标识符……）。"
 >text="Learn more in documentation"
 
-#### 选择营销活动模式 {#select-campaign-schema}
-
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_schema"
->title="选择营销活动架构名称"
+>title="架构名称"
 >abstract="在Adobe Campaign数据库中定义的实体的名称。"
 >text="Learn more in documentation"
