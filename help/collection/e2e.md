@@ -2,7 +2,7 @@
 title: 数据收集端到端概述
 description: 简要概述如何使用Adobe Experience Platform提供的数据收集技术将事件数据发送到Adobe Experience Cloud解决方案。
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 1125907e02c23b89ea672f424d1bbf9e9de0ba04
+source-git-commit: d326267cacf8d678937e8c959de8acbfbbb88c93
 workflow-type: tm+mt
 source-wordcount: '2618'
 ht-degree: 0%
@@ -103,7 +103,7 @@ ht-degree: 0%
 
 数据流的配置要求取决于您将数据发送到的产品和功能。 有关每个产品的配置选项的详细信息，请参阅 [数据流概述](../edge/fundamentals/datastreams.md).
 
-## 安装和配置Web SDK {#install}
+## 安装和配置Web SDK
 
 创建架构和数据流后，下一步是安装和配置Platform Web SDK以开始向边缘网络发送数据。
 
