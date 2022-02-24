@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: 0154891cf2c68a38c08b9fe44251ec13325a7366
+source-git-commit: da3d0399bae9953cd74bd0ac6d6e16b64796a578
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '745'
 ht-degree: 13%
 
 ---
@@ -181,6 +181,7 @@ ht-degree: 13%
          - [Adobe Analytics（报表包数据）](tutorials/ui/create/adobe-applications/analytics.md)
          - [Adobe Analytics（分类数据）](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Audience Manager](tutorials/ui/create/adobe-applications/audience-manager.md)
+         - [Adobe CampaignManaged Services](tutorials/ui/create/adobe-applications/campaign.md)
          - [客户属性](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
       - 广告 {#create}
