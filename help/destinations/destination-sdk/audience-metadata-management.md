@@ -2,9 +2,9 @@
 description: 使用受众元数据模板以编程方式创建、更新或删除目标中的受众。 Adobe提供了一个可扩展的受众元数据模板，您可以根据营销API的规范配置该模板。 定义、测试和提交模板后，Adobe会使用该模板来构建到您目标的API调用。
 title: 受众元数据管理
 exl-id: 795e8adb-c595-4ac5-8d1a-7940608d01cd
-source-git-commit: cb4e399798a9521e6f3da89cbd88d19476ab070d
+source-git-commit: 92bca3600d854540fd2badd925e453fba41601a7
 workflow-type: tm+mt
-source-wordcount: '1012'
+source-wordcount: '1046'
 ht-degree: 0%
 
 ---
@@ -25,11 +25,11 @@ ht-degree: 0%
 
 ## 受众元数据管理支持的用例 {#use-cases}
 
-借助Destination SDK中的受众元数据支持，在配置Experience Platform目标时，您可以在Platform用户映射区段并将其激活到您的目标时，为其提供多个选项之一。 您可以通过 [目标配置](./destination-configuration.md#segment-mapping).
+借助Destination SDK中的受众元数据支持，在配置Experience Platform目标时，您可以在Platform用户映射区段并激活区段到目标时，为其提供以下几个选项之一。 您可以通过 [目标配置](./destination-configuration.md#segment-mapping).
 
 ### 用例1 — 您具有第三方API，用户无需输入映射ID
 
-如果您有用于创建/更新/删除区段或受众的API端点，则可以使用受众元数据模板配置Destination SDK以匹配区段创建/更新/删除端点的规范。 Experience Platform可以以编程方式创建/更新/删除区段，并将元数据同步回Experience Platform。
+如果您有用于创建/更新/删除区段或受众的API端点，则可以使用受众元数据模板配置Destination SDK，以匹配区段创建/更新/删除端点的规范。 Experience Platform可以以编程方式创建/更新/删除区段，并将元数据同步回Experience Platform。
 
 在Experience Platform用户界面(UI)中将区段激活到目标时，用户无需在激活工作流中手动填写区段映射ID字段。
 
@@ -67,10 +67,11 @@ ht-degree: 0%
 | `update` | 包括对您的API进行HTTP调用、以编程方式更新平台中的区段/受众，以及将信息同步回Adobe Experience Platform的所有必需组件（URL、HTTP方法、标头、请求和响应正文）。 |
 | `delete` | 包括对您的API进行HTTP调用以编程方式删除平台中的区段/受众的所有必需组件（URL、HTTP方法、标头、请求和响应正文）。 |
 | `validate` | 在调用合作伙伴API之前，对模板配置中的任何字段运行验证。 例如，您可以验证是否正确输入了用户的帐户ID。 |
+| `notify` | 仅适用于基于文件的目标。 包括对您的API进行HTTP调用以通知文件导出成功的所有必需组件（URL、HTTP方法、标头、请求和响应正文）。 |
 
 {style=&quot;table-layout:auto&quot;}
 
-### 第一个示例 {#example-1}
+### 流示例1 {#example-1}
 
 ```json
 {
@@ -179,7 +180,7 @@ ht-degree: 0%
 }
 ```
 
-### 第二个示例 {#example-2}
+### 流示例2 {#example-2}
 
 ```json
 {
@@ -273,7 +274,7 @@ ht-degree: 0%
 }
 ```
 
-### 第三个示例 {#example-3}
+### 流示例3 {#example-3}
 
 ```json
 {
@@ -371,6 +372,153 @@ ht-degree: 0%
          ]
       },
       "name":"Moviestar audience template - Third example"
+   }
+}
+```
+
+
+### 基于文件的示例 {#example-file-based}
+
+```json
+{
+   "instanceId":"34ab9cc2-2536-44a5-9dc5-b2fea60b3bd6",
+   "createdDate":"2021-07-26T19:30:52.012490Z",
+   "lastModifiedDate":"2021-07-27T21:25:42.763478Z",
+   "metadataTemplate":{
+      "create":{
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments",
+         "httpMethod":"POST",
+         "headers":[
+            {
+               "value":"application/json",
+               "header":"Content-Type"
+            },
+            {
+               "value":"Bearer {{oauth2ServiceAccessToken}}",
+               "header":"Authorization"
+            }
+         ],
+         "requestBody":{
+            "json":{
+               "segments":[
+                  {
+                     "name":"{{segment.name}}",
+                     "description":"{{segment.description}}",
+                     "source_type":"FIRST_PARTY",
+                     "ad_account_id":"{{customerData.accountId}}",
+                     "retention_in_days":180
+                  }
+               ]
+            }
+         },
+         "responseFields":[
+            {
+               "value":"{{body.segments[0].segment.id}}",
+               "name":"externalAudienceId"
+            }
+         ],
+         "responseErrorFields":[
+            {
+               "value":"{{root}}",
+               "name":"message"
+            }
+         ]
+      },
+      "update":{
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments/{{segment.alias}}",
+         "httpMethod":"PUT",
+         "headers":[
+            {
+               "value":"application/json",
+               "header":"Content-Type"
+            },
+            {
+               "value":"Bearer {{oauth2ServiceAccessToken}}",
+               "header":"Authorization"
+            }
+         ],
+         "requestBody":{
+            "json":{
+               "segments":[
+                  {
+                     "id":"{{segment.alias}}",
+                     "name":"{{segment.name}}",
+                     "description":"{{segment.description}}"
+                  }
+               ]
+            }
+         },
+         "responseFields":[
+            {
+               "value":"{{body.segments[0].segment.id}}",
+               "name":"externalAudienceId"
+            }
+         ],
+         "responseErrorFields":[
+            {
+               "value":"{{root}}",
+               "name":"message"
+            }
+         ]
+      },
+      "notify":{
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments/{{segment.alias}}",
+         "httpMethod":"PUT",
+         "headers":[
+            {
+               "value":"application/json",
+               "header":"Content-Type"
+            },
+            {
+               "value":"Bearer {{oauth2ServiceAccessToken}}",
+               "header":"Authorization"
+            }
+         ],
+         "requestBody":{
+            "json":{
+               "segments":[
+                  {
+                     "id":"{{segment.alias}}",
+                     "name":"{{segment.name}}",
+                     "description":"{{segment.description}}"
+                  }
+               ]
+            }
+         },
+         "responseFields":[
+            {
+               "value":"{{body.segments[0].segment.id}}",
+               "name":"externalAudienceId"
+            }
+         ],
+         "responseErrorFields":[
+            {
+               "value":"{{root}}",
+               "name":"message"
+            }
+         ]
+      },
+      "delete":{
+         "url":"https://adsapi.moviestar.com/v1/adaccounts/{{customerData.accountId}}/segments/{{segment.alias}}",
+         "httpMethod":"DELETE",
+         "headers":[
+            {
+               "value":"application/json",
+               "header":"Content-Type"
+            },
+            {
+               "value":"Bearer {{oauth2ServiceAccessToken}}",
+               "header":"Authorization"
+            }
+         ],
+         "responseErrorFields":[
+            {
+               "value":"{{root}}",
+               "name":"message"
+            }
+         ]
+      },
+      "name":"Moviestar destination audience template - Example 1"
    }
 }
 ```

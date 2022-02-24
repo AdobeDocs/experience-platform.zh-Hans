@@ -2,7 +2,7 @@
 description: 本页介绍了可使用“/authoring/audience-templates” API端点执行的所有API操作。
 title: 受众元数据端点API操作
 exl-id: 3444da8c-b2be-4254-980a-8cce7560134d
-source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
+source-git-commit: afdabdebe9b82d828cb1941edb99ca2518a941a2
 workflow-type: tm+mt
 source-wordcount: '879'
 ht-degree: 4%
@@ -26,7 +26,6 @@ ht-degree: 4%
 您可以通过向 `/authoring/audience-templates` 端点。
 
 **API格式**
-
 
 ```http
 POST /authoring/audience-templates
@@ -146,6 +145,31 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
                "value":"string"
             }
          ]
+      },
+      "notify":{
+         "url":"string",
+         "httpMethod":"string",
+         "headers":[
+            {
+               "header":"string",
+               "value":"string"
+            }
+         ],
+         "requestBody":{
+            
+         },
+         "responseFields":[
+            {
+               "name":"string",
+               "value":"string"
+            }
+         ],
+         "responseErrorFields":[
+            {
+               "name":"string",
+               "value":"string"
+            }
+         ]
       }
    },
    "validations":[
@@ -183,7 +207,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 您可以通过向 `/authoring/audience-templates` 端点和提供要更新的受众模板的实例ID。 在调用的正文中，提供更新的模板。
 
 **API格式**
-
 
 ```http
 PUT /authoring/audience-templates/{INSTANCE_ID}
@@ -292,7 +315,6 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/audience-te
    }
 }
 ```
-
 
 ## 检索受众模板列表 {#retrieve-list}
 
@@ -430,7 +452,6 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/audience-te
 您可以通过向 `/authoring/audience-templates` 端点和提供要检索的受众模板的实例ID。
 
 **API格式**
-
 
 ```http
 GET /authoring/audience-templates/{INSTANCE_ID}

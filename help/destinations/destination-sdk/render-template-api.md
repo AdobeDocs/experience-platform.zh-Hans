@@ -2,7 +2,7 @@
 description: 本页列出并描述了您可以使用“/authoring/testing/template/render” API端点执行的所有API操作，以根据消息转换模板为目标渲染导出的数据。
 title: 渲染模板API操作
 exl-id: e64ea89e-6064-4a05-9730-e0f7d7a3e1db
-source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
+source-git-commit: b337d65bcdfbb65da1b751645ddc649d30440dc7
 workflow-type: tm+mt
 source-wordcount: '806'
 ht-degree: 1%
@@ -30,7 +30,6 @@ ht-degree: 1%
 >[!TIP]
 >
 >* 您在此应使用的目标ID是 `instanceId` 对应于目标配置的 `/destinations` 端点。 请参阅 [目标配置API操作](./destination-configuration-api.md#retrieve-list).
-
 
 
 **API格式**

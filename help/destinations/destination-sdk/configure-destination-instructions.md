@@ -1,10 +1,10 @@
 ---
-description: 本页列出并介绍了使用Destination SDK配置流目标的步骤。
+description: 本页列出并描述了使用Destination SDK配置流目标的步骤。
 title: 使用Destination SDK配置流目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: b3d0f0c43b60895961cee2ee54518c0450e2e2f7
+source-git-commit: 92bca3600d854540fd2badd925e453fba41601a7
 workflow-type: tm+mt
-source-wordcount: '702'
+source-wordcount: '688'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,9 @@ ht-degree: 0%
 
 本页介绍如何使用 [目标SDK中的配置选项](./configuration-options.md) 和其他Destination SDK功能和API参考文档中的 [流目标](/help/destinations/destination-types.md#streaming-destinations). 这些步骤按如下顺序排列。
 
->[!NOTE]
->
->当前不支持通过Destination SDK配置批处理目标。
-
 ## 先决条件 {#prerequisites}
 
-在前进到下述步骤之前，请阅读 [Destination SDK快速入门](./getting-started.md) 页面，以了解有关获取使用Destination SDK API所需的Adobe I/O身份验证凭据以及其他先决条件的信息。
+在前进到下述步骤之前，请阅读 [Destination SDK入门](./getting-started.md) 页面，以了解有关获取使用Adobe I/OAPI所需的Destination SDK身份验证凭据以及其他先决条件的信息。
 
 ## 使用Destination SDK中的配置选项设置目标的步骤 {#steps}
 
@@ -29,7 +25,7 @@ ht-degree: 0%
 
 ## 步骤1:创建服务器和模板配置 {#create-server-template-configuration}
 
-首先，使用 `/destinations-server` 端点（读取） [API参考](./destination-server-api.md))。 有关服务器和模板配置的详细信息，请参阅 [服务器和模板规范](./configuration-options.md#server-and-template) 在参考部分中。
+首先，使用 `/destinations-server` 端点（读取） [API参考](destination-server-api.md))。 有关服务器和模板配置的详细信息，请参阅 [服务器和模板规范](server-and-template-configuration.md) 在参考部分中。
 
 下面显示了一个配置示例。 请注意， `requestBody.value` 参数在步骤3中进行说明， [创建转换模板](./configure-destination-instructions.md#create-transformation-template).
 
@@ -58,7 +54,7 @@ POST platform.adobe.io/data/core/activation/authoring/destination-servers
 
 ## 步骤2:创建目标配置 {#create-destination-configuration}
 
-下面显示了目标模板的配置示例，该配置是使用 `/destinations` API端点。 有关此模板的更多信息，请参阅 [目标配置](./destination-configuration.md).
+下面显示了目标模板的配置示例，该配置是使用 `/destinations` API端点。 有关此配置的更多信息，请参阅 [目标配置](./destination-configuration.md).
 
 要将步骤1中的服务器和模板配置连接到此目标配置，请将服务器和模板配置的实例ID添加为 `destinationServerId` 这里。
 
@@ -160,7 +156,7 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 如果您使用受众元数据配置，则必须将其连接到在步骤2中创建的目标配置。 将受众元数据配置的实例ID添加到目标配置中，如 `audienceTemplateId`.
 
-## 步骤5:创建凭据配置/设置身份验证 {#set-up-authentication}
+## 步骤5:设置身份验证 {#set-up-authentication}
 
 取决于您是否指定 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 或 `"authenticationRule": "PLATFORM_AUTHENTICATION"` 在上述目标配置中，您可以使用 `/destination` 或 `/credentials` 端点。
 

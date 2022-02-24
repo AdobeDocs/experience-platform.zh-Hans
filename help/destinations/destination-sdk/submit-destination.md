@@ -1,15 +1,15 @@
 ---
-description: 本页提供了您需要提交的所有信息，以便查看使用Destination SDK创作的目标。
-title: 提交以供审阅在Destination SDK中创作的目标
+description: 本页提供您需要提交的所有信息，以便查看使用Destination SDK创作的目标。
+title: 提交以供审核在Destination SDK中创作的目标
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 468b9309c5184684c0b25c2656a9eef37715af53
+source-git-commit: 111da9ce3e38096d11a1910929ee892e5661722c
 workflow-type: tm+mt
 source-wordcount: '568'
 ht-degree: 1%
 
 ---
 
-# 提交以供审阅在Destination SDK中创作的目标
+# 提交以供审核在Destination SDK中创作的目标
 
 ## 概述 {#overview}
 
@@ -37,6 +37,7 @@ ht-degree: 1%
 ## 使用测试目标API后的测试结果
 
 使用 [测试目标API](./test-destination.md) 端点来对您的目标执行HTTP调用。 这包括：
+
 * 使用测试API，对目标端点发出的完整API请求（标头和正文）。
 * 从目标端点收到的API响应。
 

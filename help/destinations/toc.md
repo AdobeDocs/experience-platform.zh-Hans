@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 9d2e98c834eddcacf67de7caafef4717e38d80f8
+source-git-commit: 2f8e31321345a14c098f795b50d33c700ac0faa8
 workflow-type: tm+mt
-source-wordcount: '701'
+source-wordcount: '722'
 ht-degree: 9%
 
 ---
@@ -156,8 +156,10 @@ ht-degree: 9%
    * [快速入门](./destination-sdk/getting-started.md)
    * Destination SDK功能 {#functionality}
       * [配置选项](./destination-sdk/configuration-options.md)
-      * [目标配置](./destination-sdk/destination-configuration.md)
-      * [服务器和模板规范](./destination-sdk/server-and-template-configuration.md)
+      * [流目标配置](./destination-sdk/destination-configuration.md)
+      * [基于文件的目标配置](./destination-sdk/file-based-destination-configuration.md)
+      * [流目标服务器和模板规范](./destination-sdk/server-and-template-configuration.md)
+      * [基于文件的目标服务器和文件规范](./destination-sdk/server-and-file-configuration.md)
       * [消息格式](./destination-sdk/message-format.md)
       * [受众元数据管理](./destination-sdk/audience-metadata-management.md)
       * 身份验证 {#authentication}
@@ -180,6 +182,7 @@ ht-degree: 9%
          * [配置文件生成API操作示例](./destination-sdk/sample-profile-generation-api.md)
    * 指南 {#guides}
       * [使用Destination SDK配置流目标](./destination-sdk/configure-destination-instructions.md)
+      * [（测试版）使用Destination SDK配置基于文件的目标](./destination-sdk/configure-file-based-destination-instructions.md)
       * [提交以供审核在Destination SDK中创作的目标](./destination-sdk/submit-destination.md)
    * 记录目标 {#document-destination}
       * [在Adobe Experience Platform中记录您的目标](./destination-sdk/docs-framework/documentation-instructions.md)

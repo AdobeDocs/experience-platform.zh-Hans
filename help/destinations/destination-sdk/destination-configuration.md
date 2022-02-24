@@ -1,27 +1,27 @@
 ---
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
-title: 目标SDK的目标配置选项
+title: 用于Destination SDK的流目标配置选项
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
+source-git-commit: 92bca3600d854540fd2badd925e453fba41601a7
 workflow-type: tm+mt
-source-wordcount: '1757'
-ht-degree: 5%
+source-wordcount: '1756'
+ht-degree: 4%
 
 ---
 
-# 目标配置 {#destination-configuration}
+# 流目标配置 {#destination-configuration}
 
 ## 概述 {#overview}
 
-此配置允许您指示目标名称、类别、描述等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
+此配置允许您指示流目标的基本信息，如目标名称、类别、描述等。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 
 此配置还会将目标工作所需的其他配置（目标服务器和受众元数据）连接到此配置。 了解如何在 [下文](./destination-configuration.md#connecting-all-configurations).
 
 您可以使用 `/authoring/destinations` API端点。 读取 [目标API端点操作](./destination-configuration-api.md) 有关可对端点执行的操作的完整列表。
 
-## 示例配置 {#example-configuration}
+## 流配置示例 {#example-configuration}
 
-以下是虚构目标Moviestar的示例配置，该目标在全球四个位置的端点。 目标属于移动设备目标类别。 以下各节将进一步划分此配置的构建方式。
+这是虚构流目的地Moviestar的示例配置，该目的地在地球上的四个位置有端点。 目标属于移动设备目标类别。
 
 ```json
 {
@@ -137,29 +137,28 @@ ht-degree: 5%
 
 目标配置中的此部分将生成 [配置新目标](/help/destinations/ui/connect-destination.md) Experience Platform用户界面中的页面，用户可将Experience Platform连接到他们与您的目标拥有的帐户。 根据您在 `authType` 字段中，将为用户生成Experience Platform页面，如下所示：
 
-**承载验证**
+### 承载验证
 
 当您配置承载身份验证类型时，用户需要输入他们从您的目标获取的承载令牌。
 
-![具有承载身份验证的UI呈现](./assets/bearer-authentication-ui.png)
+![具有承载身份验证的UI呈现](assets/bearer-authentication-ui.png)
 
-**OAuth 2身份验证**
+### OAuth 2身份验证
 
-用户选择 **[!UICONTROL 连接到目标]** 触发到您目标的OAuth 2身份验证流，如以下Twitter Tailored Audiences目标示例所示。 有关将OAuth 2身份验证配置到目标端点的详细信息，请阅读专用 [目标SDK OAuth 2身份验证页面](./oauth2-authentication.md).
+用户选择 **[!UICONTROL 连接到目标]** 触发到您目标的OAuth 2身份验证流，如以下Twitter自定义受众目标示例所示。 有关将OAuth 2身份验证配置到目标端点的详细信息，请阅读专用 [Destination SDKOAuth 2身份验证页面](./oauth2-authentication.md).
 
-![使用OAuth 2身份验证渲染UI](./assets/oauth2-authentication-ui.png)
-
+![使用OAuth 2身份验证渲染UI](assets/oauth2-authentication-ui.png)
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `customerAuthenticationConfigurations` | 字符串 | 指示用于向服务器验证Experience Platform客户的配置。 请参阅 `authType` 下方的值。 |
-| `authType` | 字符串 | 接受的值为 `OAUTH2, BEARER`. <br><ul><li> 如果您的目标支持OAuth 2身份验证，请选择 `OAUTH2` 值并添加OAuth 2的必填字段，如 [目标SDK OAuth 2身份验证页面](./oauth2-authentication.md). 此外，您还应选择 `authenticationRule=CUSTOMER_AUTHENTICATION` 在 [目标投放部分](./destination-configuration.md). </li><li>对于承载身份验证，请选择 `BEARER` 选择 `authenticationRule=CUSTOMER_AUTHENTICATION` 在 [目标投放部分](./destination-configuration.md).</li></ul> |
+| `authType` | 字符串 | 流目标的接受值包括：<ul><li>`BEARER`的问题。如果您的目标支持载体身份验证，请设置 `"authType":"Bearer"` 和  `"authenticationRule":"CUSTOMER_AUTHENTICATION"` 在 [目标投放部分](./destination-configuration.md).</li><li>`OAUTH2`的问题。如果您的目标支持OAuth 2身份验证，请设置 `"authType":"OAUTH2"` 和，添加OAuth 2的必填字段，如 [Destination SDKOAuth 2身份验证页面](./oauth2-authentication.md). 此外，设置 `"authenticationRule":"CUSTOMER_AUTHENTICATION"` 在 [目标投放部分](./destination-configuration.md).</li> |
 
 {style=&quot;table-layout:auto&quot;}
 
 ## 客户数据字段 {#customer-data-fields}
 
-此部分允许合作伙伴引入自定义字段。 在上述示例配置中， `customerDataFields` 要求用户在身份验证流程中选择端点，并在目标中指示其客户ID。 配置会反映在身份验证流程中，如下所示：
+在Experience PlatformUI中连接到目标时，使用此部分要求用户填写特定于您目标的自定义字段。 配置会反映在身份验证流程中，如下所示：
 
 ![自定义字段身份验证流程](./assets/custom-field-authentication-flow.png)
 
@@ -184,7 +183,7 @@ ht-degree: 5%
 | `documentationLink` | 字符串 | 指 [目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) 你的目的地。 使用 `http://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中 `YOURDESTINATION` 是您的目标名称。 对于名为Moviestar的目标，您将使用 `http://www.adobe.com/go/destinations-moviestar-en` |
 | `category` | 字符串 | 是指分配给您在Adobe Experience Platform中的目标的类别。 有关更多信息，请阅读 [目标类别](https://experienceleague.adobe.com/docs/experience-platform/destinations/destination-types.html). 使用以下任一值： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. |
 | `connectionType` | 字符串 | `Server-to-server` 是当前唯一可用的选项。 |
-| `frequency` | 字符串 | `Streaming` 是当前唯一可用的选项。 |
+| `frequency` | 字符串 | 是指目标支持的数据导出类型。 支持的值： <ul><li>`Streaming`</li><li>`Batch`</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -202,6 +201,7 @@ ht-degree: 5%
 | `identityRequired` | 布尔型 | 使用 `true` 用户应能够将身份命名空间从Experience Platform映射到所需的架构。 |
 
 {style=&quot;table-layout:auto&quot;}
+
 
 ## 身份和属性 {#identities-and-attributes}
 

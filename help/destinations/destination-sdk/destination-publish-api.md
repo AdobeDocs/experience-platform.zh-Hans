@@ -2,7 +2,7 @@
 description: 本页列出并介绍了您可以使用“/authoring/destinations/publish” API端点执行的所有API操作。
 title: 发布目标API端点操作
 exl-id: 0564a132-42f4-478c-9197-9b051acf093c
-source-git-commit: 6dd8a94e46b9bee6d1407e7ec945a722d8d7ecdb
+source-git-commit: 6ad556e3b7bf15f1d6ff522307ff232b8fd947d3
 workflow-type: tm+mt
 source-wordcount: '757'
 ht-degree: 4%
@@ -20,6 +20,7 @@ ht-degree: 4%
 配置并测试目标后，您可以将其提交到Adobe以进行审核和发布。
 
 在以下情况下，使用发布目标API端点提交发布请求：
+
 * 作为Destination SDK合作伙伴，您希望在所有Experience Platform组织中提供产品化目标，以供所有Experience Platform客户使用；
 * 您希望在您自己的Experience Platform组织中，在所有沙箱中提供自定义目标。
 
@@ -32,7 +33,6 @@ ht-degree: 4%
 您可以通过向发布POST请求，提交要发布的目标配置 `/authoring/destinations/publish` 端点。
 
 **API格式**
-
 
 ```http
 POST /authoring/destinations/publish
@@ -78,7 +78,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 
 **API格式**
 
-
 ```http
 GET /authoring/destinations/publish
 ```
@@ -114,7 +113,6 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
       }
    ]
 }
-    
 ```
 
 | 参数 | 类型 | 描述 |
@@ -132,7 +130,6 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 您可以通过向发布请求的 `/authoring/destinations/publish` 端点和提供要更新所允许组织的目标ID。 在调用正文中，提供更新的允许组织。
 
 **API格式**
-
 
 ```http
 PUT /authoring/destinations/publish/{DESTINATION_ID}
@@ -169,7 +166,6 @@ curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destination
 您可以通过向 `/authoring/destinations/publish` 端点和提供要检索发布状态的目标ID。
 
 **API格式**
-
 
 ```http
 GET /authoring/destinations/publish/{DESTINATION_ID}
