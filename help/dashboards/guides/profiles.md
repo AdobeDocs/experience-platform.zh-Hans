@@ -4,10 +4,10 @@ title: 用户档案仪表板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: ab76292f569fa8c21dab736d6291891b717d026d
+source-git-commit: 8571d86e1ce9dc894e54fe72dea75b9f8fe84f0b
 workflow-type: tm+mt
-source-wordcount: '2324'
-ht-degree: 1%
+source-wordcount: '1618'
+ht-degree: 0%
 
 ---
 
@@ -43,26 +43,6 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 请参阅 [修改功能板](../customize/modify.md) 和 [构件库概述](../customize/widget-library.md) 文档以了解更多信息。
 
-## （测试版）用户档案效率分析 {#profile-efficiency-insights}
-
->[!IMPORTANT]
->
->配置文件效率分析功能目前处于测试阶段，并非所有用户都能使用。 文档和功能可能会发生变化。
-
-的 [!UICONTROL 功效] 选项卡通过使用用户档案功效小组件提供有关用户档案数据质量和完整性的量度。 这些小部件可概览用户档案的组成、随时间的完整性趋势以及对用户档案数据质量的评估。
-
-[用户档案功效仪表板。](../images/profiles/attributes-quality-assessment.png)
-
-请参阅 [用户档案功效小组件部分](#profile-efficacy-widgets) 有关当前可用的小组件的详细信息。
-
-此功能板的布局也可通过选择 [**[!UICONTROL 修改功能板]**](../customize/modify.md) 从 [!UICONTROL 概述] 选项卡。
-
-## 浏览配置文件 {#browse-profiles}
-
-的 [!UICONTROL 浏览] 选项卡，用于搜索和查看摄取到IMS组织中的只读用户档案。 从此处，您可以看到属于用户档案的有关其首选项、过去事件、交互和区段的重要信息
-
-要进一步了解Platform UI中提供的配置文件查看功能，请参阅 [在Real-time Customer Data Platform浏览用户档案](../../rtcdp/profile/profile-browse.md).
-
 ## 合并策略 {#merge-policies}
 
 在 [!UICONTROL 用户档案] 功能板基于应用于实时客户资料数据的合并策略。 当从多个来源收集数据以创建客户配置文件时，数据可能包含冲突值（例如，一个数据集可能将一个客户列为“单个”，而另一个数据集可能将该客户列为“已婚”）。 合并策略的作业是确定哪些数据要优先排序，并作为用户档案的一部分显示。
@@ -76,14 +56,6 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 >下拉菜单仅显示与XDM单个配置文件类相关的合并策略，但是，如果您的组织已创建多个合并策略，则可能意味着您需要滚动才能查看可用合并策略的完整列表。
 
 ![](../images/profiles/select-merge-policy.png)
-
-## 并集模式
-
-的 [!UICONTROL 并集架构] 功能板显示特定XDM类的并集架构。 通过选择 [!UICONTROL **类**] 下拉列表中，您可以查看不同XDM类的并集架构。
-
-并集架构由多个架构组成，这些架构共享同一类并已为用户档案启用。 它们使您能够在单个视图中查看同一类的每个架构中包含的每个字段的集合。
-
-请参阅并集模式UI指南，以了解有关 [在平台UI中查看并集模式](../../profile/ui/union-schema.md#view-union-schemas).
 
 ## 小组件和量度
 
@@ -162,59 +134,6 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
 
 ![](../images/profiles/identity-overlap.png)
-
-## （测试版）用户档案功效小组件 {#profile-efficacy-widgets}
-
->[!IMPORTANT]
->
->配置文件效率小组件当前处于测试阶段，并且并非所有用户都能使用。 文档和功能可能会发生变化。
-
-Adobe会提供多个小组件来评估可用于数据分析的摄取用户档案的完整性。 每个用户档案效能小组件都可以按合并策略进行过滤。 要更改合并策略筛选器，请选择[!UICONTROL 使用合并策略的用户档案] 下拉列表，然后从可用列表中选择相应的策略。
-
-要进一步了解每个用户档案功效小组件，请从以下列表中选择小组件的名称：
-
-* [[!UICONTROL 属性质量评估]](#attribute-quality-assessment)
-* [[!UICONTROL 用户档案完整性]](#profile-completeness)
-* [[!UICONTROL 用户档案完整性趋势]](#profile-completeness-trend)
-
-### （测试版） [!UICONTROL 属性质量评估] {#attribute-quality-assessment}
-
-此小组件显示自上次处理日期以来每个配置文件属性的完整性和基数。 此信息以表格形式呈现，表格中有四列，其中表格中的每一行代表单个属性。
-
-| 栏目 | 描述 |
-|---|---|
-| 属性 | 属性的名称。 |
-| 用户档案 | 具有此属性且填充了非空值的配置文件数。 |
-| 完整性 | 此百分比由具有此属性且填充了非空值的配置文件总数确定。 该数值是用用户档案总数除以该属性用户档案中非空值的总数计算得来的。 |
-| 基数 | 总数 **独特** 此属性的非空值。 它在所有用户档案中进行测量。 |
-
-![属性质量评估小组件](../images/profiles/attributes-quality-assessment.png)
-
-### （测试版） [!UICONTROL 按完整性划分的用户档案] {#profile-completeness}
-
-此小组件创建自上次处理日期以来配置文件完整性的圆图。 配置文件的完整性由所有观察到的属性中填充了非空值的属性的百分比来衡量。
-
-此小组件显示高完整性、中完整性或低完整性的用户档案比例。 默认情况下，配置了三个完整性级别：
-
-* 高度完整性：用户档案中已填充70%以上的属性。
-* 中等完整性：用户档案已填充的属性少于70%且超过30%。
-* 低完整性：用户档案已填充的属性少于30%。
-
-![按完整性小组件列出的用户档案](../images/profiles/profiles-by-completeness.png)
-
-### （测试版） [!UICONTROL 用户档案完整性趋势] {#profile-completeness-trend}
-
-此小组件创建一个堆叠式柱状图，用于描述配置文件随时间的完整性趋势。 完整性是通过在所有观察到的属性中填充非空值的属性百分比来衡量的。 它将配置文件完整性分类为自上次处理日期以来的高、中或低完整性。
-
-x轴表示时间，y轴表示用户档案的数量，颜色表示用户档案完整性的三个级别。
-
-完整性的三个级别是：
-
-* 高度完整性：用户档案中已填充70%以上的属性。
-* 中等完整性：用户档案已填充的属性少于70%且超过30%。
-* 低完整性：用户档案已填充的属性少于30%。
-
-![用户档案完整性趋势小组件](../images/profiles/profiles-completeness-trend.png)
 
 ## 后续步骤
 
