@@ -4,7 +4,7 @@ title: 使用Platform UI创建Adobe Campaign Managed Services源连接
 description: 了解如何使用Platform UI将Adobe Experience Platform连接到Adobe Campaign Managed Services。
 hide: true
 hidefromtoc: true
-source-git-commit: 1b1f25093db642b394c6e05f15f6d1071096eb36
+source-git-commit: 57a34b10e40dee80638392477d49c21e107c491f
 workflow-type: tm+mt
 source-wordcount: '300'
 ht-degree: 1%
@@ -33,8 +33,6 @@ ht-degree: 1%
 
 ### 选择数据 {#select-data}
 
-的 [!UICONTROL 选择数据] 步骤，为您提供用于配置 [!UICONTROL Adobe Campaign实例], [!UICONTROL 目标映射]和 [!UICONTROL 架构名称].
-
 >[!CONTEXTUALHELP]
 >id="platform_sources_campaign_instance"
 >title="ACC实例"
@@ -52,3 +50,5 @@ ht-degree: 1%
 >title="架构名称"
 >abstract="在Adobe Campaign数据库中定义的实体的名称。"
 >text="Learn more in documentation"
+
+的 [!UICONTROL 选择数据] 步骤，为您提供用于配置 [!UICONTROL Adobe Campaign实例], [!UICONTROL 目标映射]和 [!UICONTROL 架构名称].
