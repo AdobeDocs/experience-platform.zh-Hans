@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 2f8e31321345a14c098f795b50d33c700ac0faa8
+source-git-commit: e03f680bfa2ee4c1e79e7ee22724702ac3721a84
 workflow-type: tm+mt
-source-wordcount: '722'
+source-wordcount: '724'
 ht-degree: 9%
 
 ---
@@ -157,9 +157,9 @@ ht-degree: 9%
    * Destination SDK功能 {#functionality}
       * [配置选项](./destination-sdk/configuration-options.md)
       * [流目标配置](./destination-sdk/destination-configuration.md)
-      * [基于文件的目标配置](./destination-sdk/file-based-destination-configuration.md)
+      * [（测试版）基于文件的目标配置](./destination-sdk/file-based-destination-configuration.md)
       * [流目标服务器和模板规范](./destination-sdk/server-and-template-configuration.md)
-      * [基于文件的目标服务器和文件规范](./destination-sdk/server-and-file-configuration.md)
+      * [（测试版）基于文件的目标服务器和文件规范](./destination-sdk/server-and-file-configuration.md)
       * [消息格式](./destination-sdk/message-format.md)
       * [受众元数据管理](./destination-sdk/audience-metadata-management.md)
       * 身份验证 {#authentication}
