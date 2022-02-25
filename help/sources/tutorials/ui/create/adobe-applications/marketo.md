@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程提供了在UI中创建Marketo Engage源连接器以将B2B数据导入Adobe Experience Platform的步骤。
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: 21617c6ec364fc05d7b8b6d00daa68608d1ed318
+source-git-commit: cffa2edf5746f0412bf8366c32ea777ca1974334
 workflow-type: tm+mt
-source-wordcount: '1336'
+source-wordcount: '1369'
 ht-degree: 0%
 
 ---
@@ -52,19 +52,19 @@ ht-degree: 0%
 
 ![目录](../../../../images/tutorials/create/marketo/catalog.png)
 
-的 **[!UICONTROL 连接到Marketo Engage]** 页面。 在此页面上，您可以使用新帐户或访问现有帐户。
-
-### 新帐户
-
-如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**. 在显示的输入窗体中，提供帐户名称、可选描述和 [!DNL Marketo] 身份验证凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后，再留出一些时间建立新连接。
-
-![新帐户](../../../../images/tutorials/create/marketo/new.png)
+的 **[!UICONTROL 连接Marketo Engage帐户]** 页面。 在此页面上，您可以使用新帐户或访问现有帐户。
 
 ### 现有帐户
 
 要使用现有帐户创建数据流，请选择 **[!UICONTROL 现有帐户]** ，然后选择 [!DNL Marketo] 帐户。 选择 **[!UICONTROL 下一个]** 以继续。
 
 ![现有](../../../../images/tutorials/create/marketo/existing.png)
+
+### 新帐户
+
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**. 在显示的输入窗体中，提供帐户名称、可选描述和 [!DNL Marketo] 身份验证凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后，再留出一些时间建立新连接。
+
+![新建](../../../../images/tutorials/create/marketo/new.png)
 
 ## 选择数据集
 
@@ -74,41 +74,53 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->为简短起见，以下教程使用 [!UICONTROL 指定帐户] 例如，但下面列出的步骤适用于以下10个 [!DNL Marketo] 数据集。
+>为简短起见，以下教程使用 [!UICONTROL 机会] 例如，但下面列出的步骤适用于以下10个 [!DNL Marketo] 数据集。
 
 选择要先摄取的数据集，然后选择 **[!UICONTROL 下一个]**.
 
 ![select-data](../../../../images/tutorials/create/marketo/select-data.png)
 
-## 地图 [!DNL Marketo] 平台模式
+## 提供数据流详细信息
 
-的 [!UICONTROL 映射] 显示步骤，提供要映射的界面 [!DNL Marketo] 模式到平台。
+的 [!UICONTROL 数据流详细信息] 页面允许您选择是要使用现有数据集还是新数据集。 在此过程中，您还可以配置 [!UICONTROL 配置文件数据集], [!UICONTROL 错误诊断], [!UICONTROL 部分摄取]和 [!UICONTROL 警报].
 
-为要摄取到的入站数据选择数据集。 您可以使用现有数据集或创建新数据集。
+![数据流详细信息](../../../../images/tutorials/create/marketo/dataflow-details.png)
 
 ### 使用现有数据集
 
-要将数据摄取到现有数据集，请选择 **[!UICONTROL 现有数据集]**，然后选择数据集图标。
+要将数据摄取到现有数据集，请选择 **[!UICONTROL 现有数据集]**. 您可以使用 [!UICONTROL 高级搜索] 选项，或者通过在下拉菜单中滚动浏览现有数据集列表来配置。 选择数据集后，请为数据流提供名称和描述。
 
 ![现有数据集](../../../../images/tutorials/create/marketo/existing-dataset.png)
 
-的 **[!UICONTROL 选择数据集]** 对话框。 查找包含您要使用的相应架构的数据集，将其选中，然后选择 **[!UICONTROL 确认]**.
-
-![select-existing-dataset](../../../../images/tutorials/create/marketo/select-dataset.png)
-
 ### 使用新数据集
 
-要将数据引入新数据集，请选择 **[!UICONTROL 新数据集]** 并在提供的字段中输入数据集的名称和描述。
+要摄取到新数据集，请选择 **[!UICONTROL 新数据集]** 然后，提供输出数据集名称和可选描述。 接下来，使用 [!UICONTROL 高级搜索] 选项或通过滚动下拉菜单中的现有架构列表来迁移。 选择架构后，请为数据流提供名称和描述。
 
-您可以通过在 **[!UICONTROL 选择架构]** 搜索栏。 您还可以选择下拉图标以查看现有架构的列表。 或者，您也可以选择 **[!UICONTROL 高级搜索]** 访问现有架构的页面，包括其各自的详细信息。
+![新数据集](../../../../images/tutorials/create/marketo/new-dataset.png)
 
-切换 **[!UICONTROL 配置文件数据集]** 按钮为 [!DNL Profile]，使您能够创建实体属性和行为的整体视图。 所有数据 [!DNL Profile]-enabled数据集将包含在 [!DNL Profile] 和更改将在您保存数据流时应用。
+### 启用 [!DNL Profile] 和错误诊断
 
-![create-new-dataset](../../../../images/tutorials/create/marketo/new-dataset-schema.png)
+接下来，选择 **[!UICONTROL 配置文件数据集]** 切换为启用数据集 [!DNL Profile]. 这允许您创建实体属性和行为的整体视图。 所有数据 [!DNL Profile]-enabled数据集将包含在 [!DNL Profile] 和更改将在您保存数据流时应用。
 
-选择架构后，向下滚动以查看映射对话框以开始映射 [!DNL Marketo] 数据集字段映射到相应的目标XDM字段。
+[!UICONTROL 错误诊断] 为数据流中发生的任何错误记录启用详细的错误消息生成，而 [!UICONTROL 部分摄取] 允许您摄取包含错误的数据，最多可达您手动定义的特定阈值。 请参阅 [部分批量摄取概述](../../../../../ingestion/batch-ingestion/partial.md) 以了解更多信息。
 
-### 映射 [!DNL Marketo] 用于定位XDM字段的数据集源字段
+>[!IMPORTANT]
+>
+>的 [!DNL Marketo] 连接器使用批量摄取来摄取所有历史记录，并使用流式摄取来进行实时更新。 这允许连接器在摄取任何错误记录时继续流式传输。 启用 **[!UICONTROL 部分摄取]** 切换，然后设置 [!UICONTROL 错误阈值%] 以防止数据流失败。
+
+![配置文件和错误](../../../../images/tutorials/create/marketo/profile-and-errors.png)
+
+### 启用警报
+
+您可以启用警报以接收有关数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅源警报](../../alerts.md).
+
+完成向数据流提供详细信息后，选择 **[!UICONTROL 下一个]**.
+
+![警报](../../../../images/tutorials/create/marketo/alerts.png)
+
+## 映射 [!DNL Marketo] 用于定位XDM字段的数据集源字段
+
+的 [!UICONTROL 映射] 此时会显示步骤，为您提供一个界面，用于将源架构中的源字段映射到目标架构中相应的目标XDM字段。
 
 每个 [!DNL Marketo] 数据集有其自己的特定映射规则可遵循。 有关如何映射的更多信息，请参阅以下内容 [!DNL Marketo] 数据集到XDM:
 
@@ -123,33 +135,11 @@ ht-degree: 0%
 * [机会联系角色](../../../../connectors/adobe-applications/mapping/marketo.md#opportunity-contact-roles)
 * [人员](../../../../connectors/adobe-applications/mapping/marketo.md#persons)
 
-选择 **[!UICONTROL 预览数据]** 查看基于选定数据集的映射结果。
+根据您的需要，您可以选择直接映射字段，或使用数据准备函数转换源数据以导出计算值或计算值。 有关使用映射界面的完整步骤，请参阅 [数据准备UI指南](../../../../../data-prep/ui/mapping.md).
 
 ![映射](../../../../images/tutorials/create/marketo/mapping.png)
 
-的 [!UICONTROL 预览] 弹出窗口提供了一个界面，用于浏览选定数据集中最多100行示例数据的映射结果。
-
-![预览](../../../../images/tutorials/create/marketo/mapping-preview.png)
-
-将源字段映射到相应的目标字段后，请选择 **[!UICONTROL 关闭]**.
-
-## 提供数据流详细信息
-
-的 [!UICONTROL 数据流详细信息] 步骤，以便提供新数据流的名称和简要说明。
-
-![数据流详细信息](../../../../images/tutorials/create/marketo/dataflow-detail.png)
-
-启用 **[!UICONTROL 错误诊断]** 切换以允许为新摄取的批次生成详细错误消息，您可以使用API下载这些批次。 有关更多信息，请参阅 [检索数据摄取错误诊断](../../../../../ingestion/quality/error-diagnostics.md).
-
-![错误](../../../../images/tutorials/create/marketo/errors.png)
-
-的 [!DNL Marketo] 连接器使用批量摄取来摄取所有历史记录，并使用流式摄取来进行实时更新。 这允许连接器在摄取任何错误记录时继续流式传输。 启用 **[!UICONTROL 部分摄取]** 切换，然后设置 [!UICONTROL 错误阈值%] 以防止数据流失败。
-
-**[!UICONTROL 部分摄取]** 能够摄取包含错误且最高达特定阈值的数据。 有关更多信息，请参阅 [部分批量摄取概述](../../../../../ingestion/batch-ingestion/partial.md).
-
-提供数据流详细信息并将错误阈值设置为max后，请选择 **[!UICONTROL 下一个]**.
-
-![部分摄取](../../../../images/tutorials/create/marketo/partial-ingestion.png)
+映射集准备就绪后，选择 **[!UICONTROL 下一个]** 并且需要片刻时间才能创建新数据流。
 
 ## 查看数据流
 
@@ -158,7 +148,7 @@ ht-degree: 0%
 * **[!UICONTROL 连接]**:显示源类型、所选源实体的相关路径以及该源实体中的列数。
 * **[!UICONTROL 分配数据集和映射字段]**:显示源数据被摄取到的数据集，包括该数据集附加的架构。
 
-审核数据流后，选择 **[!UICONTROL 完成]** 并为创建数据流留出一些时间。
+审核数据流后，选择 **[!UICONTROL 保存并摄取]** 并为创建数据流留出一些时间。
 
 ![审查](../../../../images/tutorials/create/marketo/review.png)
 
