@@ -1,10 +1,11 @@
 ---
 title: Adobe Analytics扩展概述
 description: 了解Adobe Experience Platform中的Adobe Analytics标记扩展。
-source-git-commit: 90dece1054cf54d40a62093990a034ee5f3bccaf
+exl-id: 33ebdcb6-9bf0-44e6-b016-e93fe78af578
+source-git-commit: 4b0b4cf7c262940bd21965d928cc7d0cf12d15d1
 workflow-type: tm+mt
-source-wordcount: '2202'
-ht-degree: 84%
+source-wordcount: '2275'
+ht-degree: 81%
 
 ---
 
@@ -20,9 +21,9 @@ ht-degree: 84%
 
 此部分提供有关配置 Adobe Analytics 扩展时可用的选项的参考。
 
-如果尚未安装Adobe Analytics扩展，请打开您的资产，选择&#x200B;**[!UICONTROL Extensions > Catalog]**，将鼠标悬停在Adobe Analytics扩展上，然后选择&#x200B;**[!UICONTROL Install]**。
+如果尚未安装Adobe Analytics扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Adobe Analytics扩展上，然后选择 **[!UICONTROL 安装]**.
 
-要配置该扩展，请打开Extensions选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL Configure]**。
+要配置该扩展，请打开扩展选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
 
 ![](../../../images/ext-analytics-config.png)
 
@@ -84,7 +85,7 @@ Activity Map 作为单独的模块（与 AAM 模块类似）加载。默认情�
 
 #### Open Editor
 
-允许您插入核心[AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=zh-Hans)代码。 使用自动配置方法时会自动填充此代码。
+允许您插入核心 [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=zh-Hans) 代码。 使用自动配置方法时会自动填充此代码。
 
 >[!NOTE]
 >
@@ -110,7 +111,7 @@ Activity Map 作为单独的模块（与 AAM 模块类似）加载。默认情�
 
 基于 EU 隐私 Cookie，启用或禁用跟踪。
 
-选中EU Compliance复选框后，将显示[!UICONTROL Tracking Cookie Name]字段。 跟踪 Cookie 会覆盖默认的跟踪 Cookie 名称。您可以自定义标记用来跟踪您的选择退出状态的名称，以便接收其他Cookie。
+选中EU Compliance复选框时， [!UICONTROL 跟踪Cookie名称] 字段。 跟踪 Cookie 会覆盖默认的跟踪 Cookie 名称。您可以自定义标记用来跟踪您的选择退出状态的名称，以便接收其他Cookie。
 
 在加载页面时，系统会检查是否设置了名为 sat\_track 的 Cookie（或在 Edit Property 页面中指定的自定义 Cookie 名称）。请考虑以下信息：
 
@@ -159,7 +160,7 @@ _satellite.cookie.set("sat_track", "true");
 
 ## Global Variables
 
-可以使用此部分设置 [eVars 和 Props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html)，并创建层级。
+可以使用此部分设置 [eVars 和 Props](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html?lang=zh-Hans)，并创建层级。
 
 全局变量是在页面上初始化 Analytics 跟踪对象时在该对象上设置的变量。在每个页面上创建跟踪对象时，将设置您在此处设置的任何变量。设置这些变量后，它们就如同以任何其他方式设置的任何其他变量一样。具体而言，这意味着规则可以修改、更改或清除这些变量。
 
@@ -269,7 +270,7 @@ _satellite.cookie.set("sat_track", "true");
 
 Audience Manager 子域由 Adobe Audience Manager 分配。它有时称为“合作伙伴名称”或“合作伙伴子域”。如果您不知道自己的合作伙伴名称，请联系您的 Adobe 顾问或 Adobe 客户关怀团队。
 
-您可以通过选择&#x200B;**显示高级设置**&#x200B;并输入首选项来配置高级设置。
+您可以通过选择 **显示高级设置** 并输入您的首选项。
 
 ![](../../../images/an-ext-aam-adv.png)
 
@@ -297,7 +298,7 @@ Analytics 扩展提供了以下操作：
 1. 指定是要将 eVar 设置为值 (Set As) 还是复制 (Duplicate From) 其他 eVar。
 1. 提供 Set As 值，或选择要复制的 eVar。
 1. （可选）选择 Add eVar 以设置更多 eVar。
-1. 选择&#x200B;**[!UICONTROL Keep Changes]**。
+1. 选择 **[!UICONTROL 保留更改]**.
 
 #### Prop
 
@@ -306,8 +307,8 @@ Analytics 扩展提供了以下操作：
 1. 从下拉菜单中选择一个 prop。
 1. 指定是要将 prop 设置为值 (Set As) 还是复制 (Duplicate From) 其他 eVar。
 1. 提供 Set As 值，或选择要从中复制 prop 的 eVar。
-1. （可选）选择&#x200B;**[!UICONTROL 添加prop]**&#x200B;以设置更多prop。
-1. 选择&#x200B;**[!UICONTROL Keep Changes]**。
+1. （可选）选择 **[!UICONTROL 添加prop]** 来设置更多prop。
+1. 选择 **[!UICONTROL 保留更改]**.
 
 #### 事件
 
@@ -315,8 +316,8 @@ Analytics 扩展提供了以下操作：
 
 1. 从下拉菜单中选择一个事件。
 1. （可选）选择或指定用于[事件序列化](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/event-serialization.html)的数据元素。
-1. （可选）选择&#x200B;**[!UICONTROL Add event]**&#x200B;以设置更多事件。
-1. 选择&#x200B;**[!UICONTROL Keep Changes]**。
+1. （可选）选择 **[!UICONTROL 添加事件]** 来设置更多事件。
+1. 选择 **[!UICONTROL 保留更改]**.
 
 #### 层级
 
@@ -326,13 +327,22 @@ Analytics 扩展提供了以下操作：
 
 如果需要，请配置其他层级。
 
+#### 页面名称
+
+此值引用给定页面的名称，并对应于 [`pageName` 变量](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/pagename.html) 中。
+
+>[!IMPORTANT]
+>
+>在Adobe Experience Manager实施中，此变量告知AEM将获取的Analytics报表存储在何处。 要确保正确保留报表，页面名称字符串必须格式化为以冒号分隔的网站路径。
+>
+>例如， `content/we-retail/language-masters/en/men.html` 应该具有的页面名称值为 `content:we-retail:language-masters:en:men`.
+
 #### Other information
 
 指定页面使用的其他信息。
 
 这些设置包括：
 
-* Page Name
 * Page URL
 * Server
 * Channel
@@ -356,9 +366,9 @@ Analytics 扩展提供了以下操作：
 
 **Settings**
 
-1. 选择&#x200B;**[!UICONTROL Open Editor]**。
+1. 选择 **[!UICONTROL Open Editor]**.
 1. 键入自定义代码。
-1. 选择 **[!UICONTROL Save]**。
+1. 选择&#x200B;**[!UICONTROL 保存]**。
 
 ### 发送信标 {#send-beacon}
 
@@ -384,7 +394,7 @@ Analytics 扩展提供了以下操作：
    * Custom Link：指定链接名称。
    * Download Link：指定文件名。
    * Exit Link：指定目标 URL。
-1. 选择&#x200B;**[!UICONTROL Keep Changes]**。
+1. 选择 **[!UICONTROL 保留更改]**.
 
 ### 清除变量 {#clear-variables}
 
