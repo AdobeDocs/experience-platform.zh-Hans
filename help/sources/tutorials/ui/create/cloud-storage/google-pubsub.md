@@ -1,77 +1,72 @@
 ---
-keywords: Experience Platform；主页；热门主题；Google PubSub;google pubsub
+keywords: Experience Platform；主页；热门主题；Google PubSub;google Pubsub
 solution: Experience Platform
 title: 在UI中创建Google PubSub源连接
 topic-legacy: overview
 type: Tutorial
-description: 了解如何使用平台用户界面创建Google PubSub源连接器。
+description: 了解如何使用Platform用户界面创建Google PubSub源连接器。
 exl-id: fb8411f2-ccae-4bb5-b1bf-52b1144534ed
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: da7b6fe8f9d274b8e5f27138a1baf8caf63a0c01
 workflow-type: tm+mt
-source-wordcount: '490'
+source-wordcount: '493'
 ht-degree: 1%
 
 ---
 
-# 在UI中创建[!DNL Google PubSub]源连接
+# 创建 [!DNL Google PubSub] UI中的源连接
 
->[!NOTE]
->
-> [!DNL Google PubSub]连接器处于测试状态。 有关使用测试版标记的连接器的详细信息，请参阅[源概述](../../../../home.md#terms-and-conditions)。
+本教程提供了创建 [!DNL Google PubSub] (以下简称“[!DNL PubSub]“”)。
 
-本教程提供了使用平台用户界面创建[!DNL Google PubSub]（以下称“[!DNL PubSub]”）的步骤。
+## 快速入门
 
-## 入门指南
+本教程需要对Adobe Experience Platform的以下组件有一定的了解：
 
-本教程需要对Adobe Experience Platform的以下组件有充分的了解：
+* [源](../../../../home.md):Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
+* [沙箱](../../../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-* [来源](../../../../home.md):Experience Platform允许从各种来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。
-* [沙箱](../../../../../sandboxes/home.md):Experience Platform提供将单个平台实例分为单独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+如果您已经拥有 [!DNL PubSub] 连接时，您可以跳过本文档的其余部分，并继续阅读上的教程 [配置数据流](../../dataflow/batch/cloud-storage.md).
 
-如果您已有有效的[!DNL PubSub]连接，则可以跳过此文档的其余部分，继续学习有关[配置数据流](../../dataflow/batch/cloud-storage.md)的教程。
+### 收集所需的凭据
 
-### 收集所需凭据
-
-要将[!DNL PubSub]连接到平台，您必须为以下凭据提供有效值：
+为了连接 [!DNL PubSub] 对于Platform，必须为以下凭据提供有效值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `projectId` | 验证[!DNL PubSub]所需的项目ID。 |
-| `credentials` | 验证[!DNL PubSub]所需的凭据或私钥ID。 |
+| `projectId` | 验证所需的项目ID [!DNL PubSub]. |
+| `credentials` | 验证所需的凭据或私钥ID [!DNL PubSub]. |
 
-有关这些值的详细信息，请参阅以下[PubSub身份验证](https://cloud.google.com/pubsub/docs/authentication)文档。 如果您使用基于服务帐户的身份验证，请参阅以下[PubSub指南](https://cloud.google.com/docs/authentication/production#create_service_account)，了解有关如何生成凭据的步骤。
+有关这些值的更多信息，请参阅以下内容 [PubSub身份验证](https://cloud.google.com/pubsub/docs/authentication) 文档。 如果您使用基于服务帐户的身份验证，请参阅以下内容 [PubSub指南](https://cloud.google.com/docs/authentication/production#create_service_account) 以了解有关如何生成凭据的步骤。
 
 >[!TIP]
 >
->如果您使用基于服务帐户的身份验证，请确保您已授予对您的服务帐户的足够用户访问权限，并且在复制和粘贴凭据时，JSON中没有额外的空白。
+>如果您使用基于服务帐户的身份验证，请确保您已向您的服务帐户授予足够的用户访问权限，并且在复制和粘贴凭据时，JSON中没有额外的空格。
 
-收集所需凭据后，您可以按照以下步骤将您的[!DNL PubSub]帐户链接到平台。
+收集所需的凭据后，您可以按照以下步骤链接 [!DNL PubSub] 帐户到平台。
 
-## 连接您的[!DNL PubSub]帐户
+## 连接 [!DNL PubSub] 帐户
 
-在[平台UI](https://platform.adobe.com)中，从左侧导航栏中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 [!UICONTROL Catalog]屏幕显示了可为其创建帐户的各种源。
+在 [平台UI](https://platform.adobe.com)，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可为其创建帐户的各种源。
 
-您可以从屏幕左侧的目录中选择适当的类别。 或者，您也可以使用搜索栏找到要处理的特定源。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您也可以使用搜索栏找到要使用的特定源。
 
-在[!UICONTROL Cloud storage]类别下，选择&#x200B;**[!UICONTROL Google PubSub]**，然后选择&#x200B;**[!UICONTROL Add data]**。
+在 [!UICONTROL 云存储] 类别，选择 **[!UICONTROL Google PubSub]**，然后选择 **[!UICONTROL 添加数据]**.
 
 ![目录](../../../../images/tutorials/create/google-pubsub/catalog.png)
 
-将显示&#x200B;**[!UICONTROL Connect to Google PubSub]**&#x200B;页。 在此页上，您可以使用新凭据或现有凭据。
+的 **[!UICONTROL 连接到Google PubSub]** 页面。 在此页面上，您可以使用新凭据或现有凭据。
 
 ### 现有帐户
 
-要使用现有帐户，请选择要用来创建新数据流的[!DNL PubSub]帐户，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
+要使用现有帐户，请选择 [!DNL PubSub] 创建新数据流的帐户，然后选择 **[!UICONTROL 下一个]** 以继续。
 
 ![现有](../../../../images/tutorials/create/google-pubsub/existing.png)
 
 ### 新帐户
 
-如果要创建新帐户，请选择&#x200B;**[!UICONTROL New account]**，然后在输入表单上提供名称、可选说明和[!DNL PubSub]身份验证凭据。 完成后，选择&#x200B;**[!UICONTROL Connect to source]**，然后为新连接建立留出一些时间。
+如果要创建新帐户，请选择 **[!UICONTROL 新帐户]**，然后提供名称、可选描述以及 [!DNL PubSub] 输入窗体上的身份验证凭据。 完成后，选择 **[!UICONTROL 连接到源]** 然后，再留出一些时间建立新连接。
 
-![新](../../../../images/tutorials/create/google-pubsub/new.png)
+![新建](../../../../images/tutorials/create/google-pubsub/new.png)
 
 ## 后续步骤
 
-通过本教程，您已在[!DNL PubSub]帐户和平台之间创建了连接。 您现在可以继续下一个教程，并[配置一个数据流，以将来自您的云存储的流数据引入Platform](../../dataflow/streaming/cloud-storage-streaming.md)。
+通过阅读本教程，您可以在 [!DNL PubSub] 帐户和平台。 您现在可以继续下一个教程和 [配置数据流，以将云存储中的流数据引入平台](../../dataflow/streaming/cloud-storage-streaming.md).

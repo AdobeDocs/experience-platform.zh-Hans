@@ -6,18 +6,14 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Google PubSub帐户。
 exl-id: f5b8f9bf-8a6f-4222-8eb2-928503edb24f
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: da7b6fe8f9d274b8e5f27138a1baf8caf63a0c01
 workflow-type: tm+mt
-source-wordcount: '740'
+source-wordcount: '724'
 ht-degree: 1%
 
 ---
 
 # 创建 [!DNL Google PubSub] 使用流服务API的源连接
-
->[!NOTE]
->
->的 [!DNL Google PubSub] 连接器处于测试阶段。 请参阅 [源概述](../../../../home.md#terms-and-conditions) 有关使用测试版标签的连接器的更多信息。
 
 本教程将指导您完成连接的步骤 [!DNL Google PubSub] (以下简称“[!DNL PubSub]&quot;)Experience Platform，使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
