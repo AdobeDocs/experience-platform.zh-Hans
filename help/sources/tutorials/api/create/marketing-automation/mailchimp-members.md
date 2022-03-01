@@ -1,36 +1,36 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
 solution: Experience Platform
-title: 使用流服务API为MailChimp成员创建数据流
+title: 使用流服务API为Mailchimp成员创建数据流
 topic-legacy: tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform与MailChimp成员连接。
 exl-id: 900d4073-129c-47ba-b7df-5294d25a7219
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: fd851dea5623522e4706c6beb8bd086d466773b5
 workflow-type: tm+mt
 source-wordcount: '2500'
 ht-degree: 2%
 
 ---
 
-# 为创建数据流 [!DNL MailChimp Members] 使用流量服务API
+# 为创建数据流 [!DNL Mailchimp Members] 使用流量服务API
 
-以下教程将指导您完成创建源连接和要引入的数据流的步骤 [!DNL MailChimp Members] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
+以下教程将指导您完成创建源连接和要引入的数据流的步骤 [!DNL Mailchimp Members] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 先决条件
 
-连接之前 [!DNL MailChimp] 要使用OAuth 2刷新代码的Adobe Experience Platform，您必须先检索 [!DNL MailChimp.] 请参阅 [[!DNL MailChimp] OAuth 2指南](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/) 有关查找访问令牌的详细说明。
+连接之前 [!DNL Mailchimp] 要使用OAuth 2刷新代码的Adobe Experience Platform，您必须先检索 [!DNL MailChimp.] 请参阅 [[!DNL Mailchimp] OAuth 2指南](https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/) 有关查找访问令牌的详细说明。
 
 ## 创建基本连接 {#base-connection}
 
-检索到 [!DNL MailChimp] 身份验证凭据，您现在可以启动创建数据流的过程，以便 [!DNL MailChimp Members] 数据到平台。 创建数据流的第一步是创建基本连接。
+检索到 [!DNL Mailchimp] 身份验证凭据，您现在可以启动创建数据流的过程，以便 [!DNL Mailchimp Members] 数据到平台。 创建数据流的第一步是创建基本连接。
 
 基本连接保留了源和平台之间的信息，包括源的身份验证凭据、连接的当前状态和唯一基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-[!DNL MailChimp] 支持基本身份验证和OAuth 2刷新代码。 有关如何使用这两种身份验证类型进行身份验证的指导，请参阅以下示例。
+[!DNL Mailchimp] 支持基本身份验证和OAuth 2刷新代码。 有关如何使用这两种身份验证类型进行身份验证的指导，请参阅以下示例。
 
-### 创建 [!DNL MailChimp] 基本连接使用基本身份验证
+### 创建 [!DNL Mailchimp] 基本连接使用基本身份验证
 
-创建 [!DNL MailChimp] 基本连接使用基本身份验证，向POST请求 `/connections` 端点 [!DNL Flow Service] API，同时为您的 `host`, `authorizationTestUrl`, `username`和 `password`.
+创建 [!DNL Mailchimp] 基本连接使用基本身份验证，向POST请求 `/connections` 端点 [!DNL Flow Service] API，同时为您的 `host`, `authorizationTestUrl`, `username`和 `password`.
 
 **API格式**
 
@@ -40,7 +40,7 @@ POST /connections
 
 **请求**
 
-以下请求会为 [!DNL MailChimp]:
+以下请求会为 [!DNL Mailchimp]:
 
 ```shell
 curl -X POST \
@@ -51,8 +51,8 @@ curl -X POST \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
-      "name": "MailChimp base connection with basic authentication",
-      "description": "MailChimp Members base connection with basic authentication",
+      "name": "Mailchimp base connection with basic authentication",
+      "description": "Mailchimp Members base connection with basic authentication",
       "connectionSpec": {
           "id": "2e8580db-6489-4726-96de-e33f5f60295f",
           "version": "1.0"
@@ -75,10 +75,10 @@ curl -X POST \
 | `description` | （可选）可包含的属性，用于提供有关基本连接的更多信息。 |
 | `connectionSpec.id` | 源的连接规范ID。 此ID可在您的源通过注册和批准之后进行检索 [!DNL Flow Service] API。 |
 | `auth.specName` | 用于将源连接到平台的身份验证类型。 |
-| `auth.params.host` | 用于连接到的根URL [!DNL MailChimp] API。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
+| `auth.params.host` | 用于连接到的根URL [!DNL Mailchimp] API。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
 | `auth.params.authorizationTestUrl` | （可选）创建基本连接时，授权测试URL用于验证凭据。 如果未提供，则在创建源连接步骤期间会自动检查凭据。 |
-| `auth.params.username` | 与您的 [!DNL MailChimp] 帐户。 基本身份验证需要此功能。 |
-| `auth.params.password` | 与您的 [!DNL MailChimp] 帐户。 基本身份验证需要此功能。 |
+| `auth.params.username` | 与您的 [!DNL Mailchimp] 帐户。 基本身份验证需要此功能。 |
+| `auth.params.password` | 与您的 [!DNL Mailchimp] 帐户。 基本身份验证需要此功能。 |
 
 **响应**
 
@@ -91,9 +91,9 @@ curl -X POST \
 }
 ```
 
-### 创建 [!DNL MailChimp] 使用OAuth 2刷新代码的基本连接
+### 创建 [!DNL Mailchimp] 使用OAuth 2刷新代码的基本连接
 
-创建 [!DNL MailChimp] 使用OAuth 2刷新代码进行基本连接，然后向 `/connections` 端点，同时为您的 `host`, `authorizationTestUrl`和 `accessToken`.
+创建 [!DNL Mailchimp] 使用OAuth 2刷新代码进行基本连接，然后向 `/connections` 端点，同时为您的 `host`, `authorizationTestUrl`和 `accessToken`.
 
 **API格式**
 
@@ -103,7 +103,7 @@ POST /connections
 
 **请求**
 
-以下请求会为 [!DNL MailChimp]:
+以下请求会为 [!DNL Mailchimp]:
 
 ```shell
 curl -X POST \
@@ -137,7 +137,7 @@ curl -X POST \
 | `description` | （可选）可包含的属性，用于提供有关基本连接的更多信息。 |
 | `connectionSpec.id` | 源的连接规范ID。 在使用注册您的源后，可以检索此ID [!DNL Flow Service] API。 |
 | `auth.specName` | 用于向平台验证源的验证类型。 |
-| `auth.params.host` | 用于连接到的根URL [!DNL MailChimp] API。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
+| `auth.params.host` | 用于连接到的根URL [!DNL Mailchimp] API。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
 | `auth.params.authorizationTestUrl` | （可选）创建基本连接时，授权测试URL用于验证凭据。 如果未提供，则在创建源连接步骤期间会自动检查凭据。 |
 | `auth.params.accessToken` | 用于验证源的相应访问令牌。 基于OAuth的身份验证需要此设置。 |
 
@@ -349,7 +349,7 @@ POST /sourceConnections
 
 **请求**
 
-以下请求会为 [!DNL MailChimp]:
+以下请求会为 [!DNL Mailchimp]:
 
 ```shell
 curl -X POST \
@@ -380,10 +380,10 @@ curl -X POST \
 | --- | --- |
 | `name` | 源连接的名称。 确保源连接的名称具有描述性，因为您可以使用该名称查找有关源连接的信息。 |
 | `description` | （可选）可包含的属性，用于提供有关源连接的更多信息。 |
-| `baseConnectionId` | 基本连接ID为 [!DNL MailChimp]. 此ID是在前面的步骤中生成的。 |
+| `baseConnectionId` | 基本连接ID为 [!DNL Mailchimp]. 此ID是在前面的步骤中生成的。 |
 | `connectionSpec.id` | 与源对应的连接规范ID。 |
-| `data.format` | 的格式 [!DNL MailChimp] 要摄取的数据。 |
-| `params.listId` | 也称为受众ID， [!DNL MailChimp] 列表ID允许将受众数据传输到其他集成。 |
+| `data.format` | 的格式 [!DNL Mailchimp] 要摄取的数据。 |
+| `params.listId` | 也称为受众ID， [!DNL Mailchimp] 列表ID允许将受众数据传输到其他集成。 |
 
 **响应**
 
@@ -424,7 +424,7 @@ POST /targetConnections
 
 **请求**
 
-以下请求会为 [!DNL MailChimp]:
+以下请求会为 [!DNL Mailchimp]:
 
 ```shell
 curl -X POST \
@@ -459,7 +459,7 @@ curl -X POST \
 | `name` | 目标连接的名称。 确保目标连接的名称具有描述性，因为您可以使用此名称查找有关目标连接的信息。 |
 | `description` | （可选）可包含的属性，用于提供有关目标连接的更多信息。 |
 | `connectionSpec.id` | 与 [!DNL Data Lake]. 此固定ID是： `c604ff05-7f1a-43c0-8e18-33bf874cb11c`. |
-| `data.format` | 的格式 [!DNL MailChimp] 要引入平台的数据。 |
+| `data.format` | 的格式 [!DNL Mailchimp] 要引入平台的数据。 |
 | `params.dataSetId` | 在上一步中检索到的目标数据集ID。 |
 
 
@@ -539,7 +539,7 @@ curl -X POST \
 
 ## 创建流 {#flow}
 
-最后一步 [!DNL MailChimp] 数据到平台即是创建数据流。 现在，您已准备以下必需值：
+最后一步 [!DNL Mailchimp] 数据到平台即是创建数据流。 现在，您已准备以下必需值：
 
 * [源连接ID](#source-connection)
 * [Target连接ID](#target-connection)

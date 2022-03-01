@@ -6,55 +6,35 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用流服务API监控流程运行数据是否完整、错误和量度的步骤。
 exl-id: 5b7d1aa4-5e6d-48f4-82bd-5348dc0e890d
-source-git-commit: a51c878bbfd3004cb597ce9244a9ed2f2318604b
+source-git-commit: 95f455bd03b7baefe0133a9818c9d048f36f9d38
 workflow-type: tm+mt
-source-wordcount: '629'
-ht-degree: 1%
+source-wordcount: '410'
+ht-degree: 2%
 
 ---
 
 # 使用流服务API监控数据流
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用构建、标记和增强传入数据 [!DNL Platform] 服务。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
-
-[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供了用户界面和RESTful API，所有受支持的源都可从中连接。
-
 本教程介绍使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
-## 快速入门
+>[!NOTE]
+>
+>本教程要求您具有有效数据流的ID值。 如果您没有有效的数据流ID，请从 [源概述](../../home.md) 在尝试使用本教程之前，请按照列出的步骤创建数据流。
 
-本教程要求您具有有效数据流的ID值。 如果您没有有效的数据流ID，请从 [源概述](../../home.md) ，然后按照在尝试使用本教程之前列出的步骤操作。
+## 快速入门
 
 此外，本教程还要求您对Adobe Experience Platform的以下组件有一定的了解：
 
 * [源](../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
 * [沙箱](../../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下各节提供了您需要了解的其他信息，以便成功地使用 [!DNL Flow Service] API。
+### 使用Platform API
 
-### 读取示例API调用
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
 
-本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
+## 监视数据流
 
-### 收集所需标题的值
-
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
-
-* `Authorization: Bearer {ACCESS_TOKEN}`
-* `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
-
-中的所有资源 [!DNL Experience Platform]，包括属于 [!DNL Flow Service]，与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
-
-* `x-sandbox-name: {SANDBOX_NAME}`
-
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的媒体类型标头：
-
-* `Content-Type: application/json`
-
-## 监视器流运行
-
-发出GET流后，请向 [!DNL Flow Service] API。
+要查看数据流的状态，请向 [!DNL Flow Service] API，同时提供数据流的相应流ID。
 
 **API格式**
 
@@ -256,4 +236,4 @@ curl -X GET \
 
 ## 后续步骤
 
-通过阅读本教程，您可以使用 [!DNL Flow Service] API。 您现在可以根据您的摄取计划继续监控数据流，以跟踪其状态和摄取率。 有关如何使用用户界面执行相同任务的信息，请参阅 [使用用户界面监控数据流](../ui/monitor.md)
+通过阅读本教程，您可以使用 [!DNL Flow Service] API。 您现在可以根据您的摄取计划继续监控数据流，以跟踪其状态和摄取率。 For information on how to perform the same tasks using the user interface, see the tutorial on [monitoring dataflows using the user interface](../ui/monitor.md)
