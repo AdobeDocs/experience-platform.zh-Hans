@@ -2,9 +2,9 @@
 description: 本页列出并介绍了您可以使用“/authoring/destinations/publish” API端点执行的所有API操作。
 title: 发布目标API端点操作
 exl-id: 0564a132-42f4-478c-9197-9b051acf093c
-source-git-commit: 6ad556e3b7bf15f1d6ff522307ff232b8fd947d3
+source-git-commit: 702a5b7154724faa9f5e6847b462e0ae90475571
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '718'
 ht-degree: 4%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 4%
 
 本页列出并介绍了您可以使用 `/authoring/destinations/publish` API端点。
 
-配置并测试目标后，您可以将其提交到Adobe以进行审核和发布。
+配置并测试目标后，您可以将其提交到Adobe以进行审核和发布。 读取 [提交以供审核在Destination SDK中创作的目标](./submit-destination.md) 在目标提交流程中，您必须执行所有其他步骤。
 
 在以下情况下，使用发布目标API端点提交发布请求：
 
@@ -52,19 +52,14 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
  -d '
 {
    "destinationId":"1230e5e4-4ab8-4655-ae1e-a6296b30f2ec",
-   "destinationAccess":"LIMITED",
-   "allowedOrgs":[
-      "xyz@AdobeOrg",
-      "lmn@AdobeOrg"
-   ]
+   "destinationAccess":"ALL"
 }
 ```
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `destinationId` | 字符串 | 您要提交以进行发布的目标配置的目标ID。 使用 [目标配置API引用](./destination-configuration-api.md#retrieve-list). |
-| `destinationAccess` | 字符串 | `ALL` 或 `LIMITED`. 指定您希望所有Experience Platform客户或仅为特定组织在目录中显示目标。 <br> **注意**:如果您使用 `LIMITED`，则仅会为您的Experience Platform组织发布目标。 如果出于Experience Platform测试的目的要将目标发布到Adobe组织的子集，请联系客户支持。 |
-| `allowedOrgs` | 字符串 | 如果您使用 `"destinationAccess":"LIMITED"`，指定目标可用的Experience Platform组织。 |
+| `destinationAccess` | 字符串 | 使用 `ALL` ，以便您的目标显示在所有Experience Platform客户的目录中。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -84,7 +79,7 @@ GET /authoring/destinations/publish
 
 **请求**
 
-以下请求将根据IMS组织和沙盒配置，检索您有权访问的用于发布的已提交目标列表。
+以下请求会根据IMS组织和沙盒配置，检索您有权访问的用于发布的已提交目标列表。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/destinations/publish \
@@ -103,12 +98,12 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
    "destinationId":"1230e5e4-4ab8-4655-ae1e-a6296b30f2ec",
    "publishDetailsList":[
       {
-         "configId":"string",
-         "allowedOrgs":[
-            "xyz@AdobeOrg",
-            "lmn@AdobeOrg"
-         ],
-         "status":"TEST",
+         "configId":"123cs780-ce29-434f-921e-4ed6ec2a6c35",
+         "allowedOrgs": [
+            "*"
+         ],    
+         "status":"PUBLISHED",
+         "destinationType": "PUBLIC",
          "publishedDate":"1630617746"
       }
    ]
@@ -119,47 +114,12 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 |---------|----------|------|
 | `destinationId` | 字符串 | 您为发布而提交的目标配置的目标ID。 |
 | `publishDetailsList.configId` | 字符串 | 您提交的目标的目标发布请求的唯一ID。 |
-| `publishDetailsList.allowedOrgs` | 字符串 | 返回目标应可用的Experience Platform组织。 |
-| `publishDetailsList.status` | 字符串 | 目标发布请求的状态。 可能的值为 `TEST`, `REVIEW`, `APPROVED`, `PUBLISHED`, `DENIED`, `REVOKED`, `DEPRECATED`. |
+| `publishDetailsList.allowedOrgs` | 字符串 | 返回目标可用的Experience Platform组织。 <br> <ul><li> 对于 `"destinationType": "PUBLIC"`，此参数返回 `"*"`，这表示目标可用于所有Experience Platform组织。</li><li> 对于 `"destinationType": "DEV"`，此参数会返回用于创作和测试目标的组织的组织ID。</li></ul> |
+| `publishDetailsList.status` | 字符串 | 目标发布请求的状态。 可能的值为 `TEST`, `REVIEW`, `APPROVED`, `PUBLISHED`, `DENIED`, `REVOKED`, `DEPRECATED`. 具有值的目标 `PUBLISHED` 是实时的，可供Experience Platform客户使用。 |
+| `publishDetailsList.destinationType` | 字符串 | 目标的类型。 值可以是 `DEV` 和 `PUBLIC`. `DEV` 对应于您的Experience Platform组织中的目标。 `PUBLIC` 对应于您提交以进行发布的目标。 请用Git术语来考虑这两个选项，其中 `DEV` 版本表示您的本地创作分支，并且 `PUBLIC` 版本表示远程主分支。 |
 | `publishDetailsList.publishedDate` | 字符串 | 提交目标以进行发布的日期（以纪元时间表示）。 |
 
 {style=&quot;table-layout:auto&quot;}
-
-## 更新现有目标发布请求 {#update}
-
-您可以通过向发布请求的 `/authoring/destinations/publish` 端点和提供要更新所允许组织的目标ID。 在调用正文中，提供更新的允许组织。
-
-**API格式**
-
-```http
-PUT /authoring/destinations/publish/{DESTINATION_ID}
-```
-
-| 参数 | 描述 |
-| -------- | ----------- |
-| `{DESTINATION_ID}` | 要更新发布请求的目标ID。 |
-
-**请求**
-
-以下请求会更新现有的目标发布请求，该请求由有效负载中提供的参数进行配置。 在以下示例调用中，我们正在更新允许的组织。
-
-```shell
-curl -X PUT https://platform.adobe.io/data/core/activation/authoring/destinations/publish/1230e5e4-4ab8-4655-ae1e-a6296b30f2ec \
- -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
- -H 'x-api-key: {API_KEY}' \
- -H 'x-sandbox-name: {SANDBOX_NAME}' \
- -d '
-{
-   "destinationId":"1230e5e4-4ab8-4655-ae1e-a6296b30f2ec",
-   "destinationAccess":"LIMITED",
-   "allowedOrgs":[
-      "abc@AdobeOrg",
-      "def@AdobeOrg"
-   ]
-}
-```
 
 ## 获取特定目标发布请求的状态 {#get}
 
@@ -194,13 +154,30 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
    "destinationId":"1230e5e4-4ab8-4655-ae1e-a6296b30f2ec",
    "publishDetailsList":[
       {
-         "configId":"string",
+         "configId":"ab41387c0-4772-4709-a3ce-6d5fee654520",
          "allowedOrgs":[
-            "xyz@AdobeOrg",
-            "lmn@AdobeOrg"
+            "716543205DB85F7F0A495E5B@AdobeOrg"
          ],
          "status":"TEST",
-         "publishedDate":"string"
+         "destinationType":"DEV"
+      },
+      {
+         "configId":"cd568c67-f25e-47e4-b9a2-d79297a20b27",
+         "allowedOrgs":[
+            "*"
+         ],
+         "status":"DEPRECATED",
+         "destinationType":"PUBLIC",
+         "publishedDate":1630525501009
+      },
+      {
+         "configId":"ef6f07154-09bc-4bee-8baf-828ea9c92fba",
+         "allowedOrgs":[
+            "*"
+         ],
+         "status":"PUBLISHED",
+         "destinationType":"PUBLIC",
+         "publishedDate":1630531586002
       }
    ]
 }
