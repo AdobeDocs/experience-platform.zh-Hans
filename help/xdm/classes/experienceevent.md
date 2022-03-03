@@ -5,9 +5,9 @@ title: XDM ExperienceEvent类
 topic-legacy: overview
 description: 本文档概述了XDM ExperienceEvent类以及事件数据建模的最佳实践。
 exl-id: a8e59413-b52f-4ea5-867b-8d81088a3321
-source-git-commit: 07fdbf467f3dde16f9216db47099b92cbbfd18d2
+source-git-commit: 32d8798d426696d8fd4ace4c53a8bf9b4db26b61
 workflow-type: tm+mt
-source-wordcount: '1783'
+source-wordcount: '1797'
 ht-degree: 1%
 
 ---
@@ -65,9 +65,13 @@ ht-degree: 1%
 
 Adobe提供了多个与 [!DNL XDM ExperienceEvent] 类。 以下是类的一些常用字段组的列表：
 
+* [[!UICONTROL Adobe Analytics ExperienceEvent完整扩展]](../field-groups/event/analytics-full-extension.md)
+* [[!UICONTROL 余额转移]](../field-groups/event/balance-transfers.md)
 * [[!UICONTROL 促销活动营销详细信息]](../field-groups/event/campaign-marketing-details.md)
+* [[!UICONTROL 卡片操作]](../field-groups/event/card-actions.md)
 * [[!UICONTROL 渠道详细信息]](../field-groups/event/channel-details.md)
 * [[!UICONTROL 商务详细信息]](../field-groups/event/commerce-details.md)
+* [[!UICONTROL 存款详细信息]](../field-groups/event/deposit-details.md)
 * [[!UICONTROL 设备更换详细信息]](../field-groups/event/device-trade-in-details.md)
 * [[!UICONTROL 餐饮预订]](../field-groups/event/dining-reservation.md)
 * [[!UICONTROL 最终用户ID详细信息]](../field-groups/event/enduserids.md)
@@ -75,6 +79,7 @@ Adobe提供了多个与 [!DNL XDM ExperienceEvent] 类。 以下是类的一些�
 * [[!UICONTROL 航班预订]](../field-groups/event/flight-reservation.md)
 * [[!UICONTROL IAB TCF 2.0同意]](../field-groups/event/iab.md)
 * [[!UICONTROL 住宿预订]](../field-groups/event/lodging-reservation.md)
+* [[!UICONTROL 报价请求详细信息]](../field-groups/event/quote-request-details.md)
 * [[!UICONTROL 保留详细信息]](../field-groups/event/reservation-details.md)
 * [[!UICONTROL Web详细信息]](../field-groups/event/web-details.md)
 

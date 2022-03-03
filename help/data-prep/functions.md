@@ -5,9 +5,9 @@ title: 数据准备映射函数
 topic-legacy: overview
 description: 本文档介绍了数据准备中使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 080ff800c78263a29f855ae6fe0e6acdb73554d5
 workflow-type: tm+mt
-source-wordcount: '3964'
+source-wordcount: '3965'
 ht-degree: 4%
 
 ---
@@ -140,7 +140,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | is_empty | 检查对象是否为空。 | <ul><li>输入： **必需** 您尝试检查的对象为空。</li></ul> | is_empty(INPUT) | `is_empty([1, 2, 3])` | false |
 | arrays_to_object | 创建对象列表。 | <ul><li>输入： **必需** 键和数组对的组。</li></ul> | arrays_to_object(INPUT) | 需要示例 | 需要示例 |
 | to_object | 根据给定的平面键/值对创建对象。 | <ul><li>输入： **必需** 键/值对的平面列表。</li></ul> | to_object(INPUT) | to_object(&#x200B;&quot;firstName&quot;, &quot;John&quot;, &quot;lastName&quot;, &quot;Doe&quot;) | `{"firstName": "John", "lastName": "Doe"}` |
-| str_to_object | 从输入字符串创建对象。 | <ul><li>字符串： **必需** 正在解析以创建对象的字符串。</li><li>VALUE_DELIMITER: *可选* 用于将字段与值分隔开的分隔符。 默认分隔符为 `:`.</li><li>FIELD_DELIMITER: *可选* 用于分隔字段值对的分隔符。 默认分隔符为 `,`.</li></ul> | str_to_object(&#x200B;STRING， VALUE_DELIMITER， FIELD_DELIMITER) | str_to_object(&quot;firstName - John | lastName - | 电话 — 123 456 7890&quot;, &quot;-&quot;, &quot; | &quot;) | `{"firstName": "John", "lastName": "Doe", "phone": "123 456 7890"}` |
+| str_to_object | 从输入字符串创建对象。 | <ul><li>字符串： **必需** 正在解析以创建对象的字符串。</li><li>VALUE_DELIMITER: *可选* 用于将字段与值分隔开的分隔符。 默认分隔符为 `:`.</li><li>FIELD_DELIMITER: *可选* 用于分隔字段值对的分隔符。 默认分隔符为 `,`.</li></ul> | str_to_object(&#x200B;STRING， VALUE_DELIMITER， FIELD_DELIMITER) | str_to_object(&quot;firstName=John，lastName=Doe，phone=123 456 7890&quot;, &quot;=&quot;,&quot;,&quot;) | `{"firstName": "John", "lastName": "Doe", "phone": "123 456 7890"}` |
 | contains_key | 检查对象是否存在于源数据中。 **注意：** 此函数将替换已弃用的 `is_set()` 函数。 | <ul><li>输入： **必需** 要检查的路径（如果它存在于源数据中）。</li></ul> | contains_key(INPUT) | contains_key(&quot;evars.evar.field1&quot;) | true |
 | 无效 | 将属性的值设置为 `null`. 当您不希望将字段复制到目标架构时，应使用此选项。 |  | nullify() | nullify() | `null` |
 | get_keys | 解析键/值对并返回所有键。 | <ul><li>对象： **必需** 将从中提取键值的对象。</li></ul> | get_keys(OBJECT) | get_keys({&quot;book1&quot;):《傲慢与偏见》、《书2》：《1984年》}) | `["book1", "book2"]` |

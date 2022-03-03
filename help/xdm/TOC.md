@@ -4,9 +4,9 @@ user-guide-title: Experience Data Model (XDM) 系统帮助
 breadcrumb-title: Experience Data Model (XDM) 指南
 user-guide-description: 使用 Experience Data Model (XDM) 类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: fecea2040af6e6c666de8eb4f1b13b3beaa45486
+source-git-commit: 760b82c89730a74ca5f5dd331d543f43eec1e0d6
 workflow-type: tm+mt
-source-wordcount: '412'
+source-wordcount: '435'
 ht-degree: 17%
 
 ---
@@ -31,6 +31,8 @@ ht-degree: 17%
 * 类 {#classes}
    * [XDM个人配置文件](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
+   * [策略](./classes/policy.md)
+   * [产品](./classes/product.md)
    * [区段定义](./classes/segment-definition.md)
    * B2B类 {#b2b}
       * [XDM业务帐户](./classes/b2b/business-account.md)
@@ -42,7 +44,7 @@ ht-degree: 17%
       * [XDM业务营销列表](./classes/b2b/business-marketing-list.md)
       * [XDM业务营销列表成员](./classes/b2b/business-marketing-list-members.md)
 * 字段组 {#field-groups}
-   * 用户档案字段组 {#profile}
+   * XDM个人配置文件 {#profile}
       * [人口统计详细信息](./field-groups/profile/demographic-details.md)
       * [IAB TCF 2.0同意](./field-groups/profile/iab.md)
       * [IdentityMap](./field-groups/profile/identitymap.md)
@@ -54,11 +56,14 @@ ht-degree: 17%
       * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
       * [XDM业务人员组件](./field-groups/profile/business-person-components.md)
       * [XDM业务人员详细信息](./field-groups/profile/business-person-details.md)
-   * 事件字段组 {#event}
+   * XDM ExperienceEvent {#event}
       * [Adobe Analytics完整扩展](./field-groups/event/analytics-full-extension.md)
+      * [余额转移](./field-groups/event/balance-transfers.md)
       * [促销活动营销详细信息](./field-groups/event/campaign-marketing-details.md)
+      * [卡片操作](./field-groups/event/card-actions.md)
       * [渠道详细信息](./field-groups/event/channel-details.md)
       * [商务详细信息](./field-groups/event/commerce-details.md)
+      * [存款详细信息](./field-groups/event/deposit-details.md)
       * [设备更换详细信息](./field-groups/event/device-trade-in-details.md)
       * [餐饮预订](./field-groups/event/dining-reservation.md)
       * [最终用户ID详细信息](./field-groups/event/enduserids.md)
@@ -66,10 +71,15 @@ ht-degree: 17%
       * [航班预订](./field-groups/event/flight-reservation.md)
       * [IAB TCF 2.0同意](./field-groups/event/iab.md)
       * [住宿预订](./field-groups/event/lodging-reservation.md)
+      * [报价请求详细信息](./field-groups/event/quote-request-details.md)
       * [保留详细信息](./field-groups/event/reservation-details.md)
+      * [支持网站搜索](./field-groups/event/support-site-search.md)
       * [升级详细信息](./field-groups/event/upgrade-details.md)
       * [追加销售详细信息](./field-groups/event/upsell-details.md)
       * [Web详细信息](./field-groups/event/web-details.md)
+   * 产品 {#product}
+      * [产品目录](./field-groups/product/product-catalog.md)
+      * [产品类别](./field-groups/product/product-category.md)
    * [字段组名称更新](./field-groups/name-updates.md)
 * 数据类型 {#data-types}
    * [应用程序](./data-types/application.md)
@@ -85,6 +95,7 @@ ht-degree: 17%
    * [环境](./data-types/environment.md)
    * [体验渠道](./data-types/experience-channel.md)
    * [外部源系统审核属性](./data-types/external-source-system-audit-attributes.md)
+   * [财务帐户](./data-types/financial-account.md)
    * [一般同意字段](./data-types/consent-field.md)
    * [一般营销首选项字段](./data-types/marketing-field.md)
    * [包含订阅的通用营销首选项字段](./data-types/marketing-field-subscriptions.md)
@@ -96,6 +107,7 @@ ht-degree: 17%
    * [地理形状](./data-types/geo-shape.md)
    * [标识](./data-types/identity.md)
    * [展示次数](./data-types/impressions.md)
+   * [内部网站搜索](./data-types/internal-site-search.md)
    * [键值对](./data-types/key-value-pair.md)
    * [营销](./data-types/marketing.md)
    * [测量](./data-types/measure.md)

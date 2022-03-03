@@ -3,9 +3,9 @@ title: 将Offer decisioning与Platform Web SDK结合使用
 description: Adobe Experience Platform Web SDK可以提供和渲染在Offer decisioning中管理的个性化选件。 您可以使用Offer decisioningUI或API创建选件和其他相关对象。
 keywords: offer decisioning；决策；Web SDK;Platform Web SDK；个性化选件；提供选件；选件交付；选件个性化；
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 5a688fed26a8f641347ed1c625bfe448004f75b0
+source-git-commit: b0cc2343a502e180267d86bca4a699c02f2d6f3d
 workflow-type: tm+mt
-source-wordcount: '826'
+source-wordcount: '870'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 3%
 >
 >在Adobe Experience Platform Web SDK中使用Offer decisioning可供选择的用户抢先体验。 并非所有IMS组织都能使用此功能。
 
-Adobe Experience Platform [!DNL Web SDK]可以交付和渲染在Offer decisioning中管理的个性化选件。 您可以使用Offer decisioning用户界面(UI)或API创建选件和其他相关对象。
+Adobe Experience Platform [!DNL Web SDK] 可以提供和渲染在Offer decisioning中管理的个性化选件。 您可以使用Offer decisioning用户界面(UI)或API创建选件和其他相关对象。
 
 ## 先决条件
 
@@ -26,11 +26,11 @@ Adobe Experience Platform [!DNL Web SDK]可以交付和渲染在Offer decisionin
 
 ## 术语
 
-使用Offer decisioning时，请务必了解以下术语。 有关更多信息和查看其他术语，请访问[Offer decisioning术语表](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html)。
+使用Offer decisioning时，请务必了解以下术语。 欲知更多信息并查看其他术语，请访问 [offer decisioning术语表](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/glossary.html).
 
-* **容器：** 容器是一种隔离机制，可分开不同的关注点。容器ID是所有存储库API的第一个路径元素。 所有决策对象都驻留在容器中。
+* **容器：** 容器是一种隔离机制，可以分开不同的关注。 容器ID是所有存储库API的第一个路径元素。 所有决策对象都驻留在容器中。
 
-* **决策范围：** 对于Offer decisioning，决策范围是JSON的Base64编码字符串，其中包含您希望offer decisioning服务用于建议选件的活动和版面ID。
+* **决策范围：** 对于Offer decisioning，决策范围是JSON的Base64编码字符串，其中包含您希望offer decisioning服务用于建议选件的活动ID和版面ID。
 
    *决策范围JSON:*
 
@@ -49,28 +49,28 @@ Adobe Experience Platform [!DNL Web SDK]可以交付和渲染在Offer decisionin
 
    >[!TIP]
    >
-   >您可以从UI的&#x200B;**活动概述**&#x200B;页面复制决策范围值。
+   >您可以从 **活动概述** 页面。
 
    ![](assets/decision-scope-copy.png)
 
-* **数据流：** 有关更多信息，请阅读 [](../../fundamentals/datastreams.md) datastreams文档。
+* **数据流：** 欲知更多信息，请阅读 [数据流](../../fundamentals/datastreams.md) 文档。
 
-* **身份**:有关更多信息，请阅读此文档概述 [Platform Web SDK如何使用Identity Service](../../identity/overview.md)。
+* **身份**:有关更多信息，请阅读此文档，概述如何 [Platform Web SDK使用Identity服务](../../identity/overview.md).
 
 ## 启用Offer decisioning
 
 要启用Offer decisioning，请执行以下步骤：
 
-1. 在[datastream](../../fundamentals/datastreams.md)中启用Adobe Experience Platform，并选中“Offer decisioning”框
+1. 在 [数据流](../../fundamentals/datastreams.md) 并选中“Offer decisioning”框
 
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
 
-1. 按照[安装SDK](../../fundamentals/installing-the-sdk.md)的说明操作(SDK可以独立安装，也可以通过[数据收集UI](https://experience.adobe.com/#/data-collection/)安装。 有关更多信息，请参阅[标记快速入门指南](../../../tags/quick-start/quick-start.md))。
-1. [配置SDK](../../fundamentals/configuring-the-sdk.md) 以Offer decisioning。下面提供了其他Offer decisioning特定步骤。
+1. 按照 [安装SDK](../../fundamentals/installing-the-sdk.md) (SDK可以独立安装，也可以通过 [数据收集UI](https://experience.adobe.com/#/data-collection/). 请参阅 [标记快速入门指南](../../../tags/quick-start/quick-start.md))以了解更多信息。
+1. [配置SDK](../../fundamentals/configuring-the-sdk.md) offer decisioning。 下面提供了其他Offer decisioning特定步骤。
 
    * 安装独立SDK
 
-      1. 使用`decisionScopes`配置“sendEvent”操作
+      1. 使用配置“sendEvent”操作 `decisionScopes`
 
          ```javascript
           alloy("sendEvent", {
@@ -85,30 +85,30 @@ Adobe Experience Platform [!DNL Web SDK]可以交付和渲染在Offer decisionin
 
       1. [创建标记属性](../../../tags/ui/administration/companies-and-properties.md)
       1. [添加嵌入代码](https://experienceleague.adobe.com/docs/core-services-learn/implementing-in-websites-with-launch/configure-launch/launch-add-embed.html)
-      1. 使用您通过从“Datastream”下拉菜单中选择配置而创建的数据流，安装和配置Platform Web SDK扩展。 请参阅关于[extensions](../../../tags/ui/managing-resources/extensions/overview.md)的文档。
+      1. 使用您通过从“Datastream”下拉菜单中选择配置而创建的数据流，安装和配置Platform Web SDK扩展。 请参阅 [扩展](../../../tags/ui/managing-resources/extensions/overview.md).
 
          ![install-aep-web-sdk-extension](./assets/install-aep-web-sdk-extension.png)
 
          ![configure-aep-web-sdk-extension](./assets/configure-aep-web-sdk-extension.png)
 
-      1. 创建必要的[数据元素](../../../tags/ui/managing-resources/data-elements.md)。 您至少必须创建Platform Web SDK身份映射和Platform Web SDK XDM对象数据元素。
+      1. 创建必需的 [数据元素](../../../tags/ui/managing-resources/data-elements.md). 您至少必须创建Platform Web SDK身份映射和Platform Web SDK XDM对象数据元素。
 
          ![identity-map-data-element](./assets/identity-map-data-element.png)
 
          ![xdm-object-data-element](./assets/xdm-object-data-element.png)
 
-      1. 创建[Rules](../../../tags/ui/managing-resources/rules.md)。
+      1. 创建 [规则](../../../tags/ui/managing-resources/rules.md).
 
-         * 添加Platform Web SDK发送事件操作，并将相关的`decisionScopes`添加到该操作的配置中
+         * 添加平台Web SDK发送事件操作并添加相关 `decisionScopes` 到该操作的配置
 
             ![send-event-action-decisionScopes](./assets/send-event-action-decisionScopes.png)
-      1. [创建并发布包](../../../tags/ui/publishing/libraries.md) 含您配置的所有相关规则、数据元素和扩展的库
+      1. [创建和发布库](../../../tags/ui/publishing/libraries.md) 包含您配置的所有相关规则、数据元素和扩展
 
 
 
 ## 请求和响应示例
 
-### 一个`decisionScopes`值
+### 一个 `decisionScopes` 值
 
 **请求**
 
@@ -139,8 +139,8 @@ Adobe Experience Platform [!DNL Web SDK]可以交付和渲染在Offer decisionin
 
 | 属性 | 必需 | 描述 | 限制 | 示例 |
 |---|---|---|---|---|
-| `identityMap` | 是 | 请参阅此[Identity Service文档](../../identity/overview.md)。 | 每个请求一个标识。 | `{ "identityMap": { "ECID": [ { "id": "91133425615229052182584359620783097099" } ] } }` |
-| `decisionScopes` | 是 | 包含活动ID和位置ID的JSON的Base64编码字符串数组。 | 每个请求最多30个`decisionScopes`。 | `"decisionScopes": ["eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="]` |
+| `identityMap` | 是 | 请参阅 [Identity Service文档](../../identity/overview.md). | 每个请求一个标识。 | `{ "identityMap": { "ECID": [ { "id": "91133425615229052182584359620783097099" } ] } }`的问题。<br><br> 注意：用户无需包含 `ECID` 参数。 如果需要，此参数会自动添加到调用中。 |
+| `decisionScopes` | 是 | 包含活动ID和位置ID的JSON的Base64编码字符串数组。 | 最大30 `decisionScopes` 每个请求。 | `"decisionScopes": ["eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ=="]` |
 
 **响应**
 
@@ -203,7 +203,7 @@ Adobe Experience Platform [!DNL Web SDK]可以交付和渲染在Offer decisionin
 | `deliveryUrl` | 与建议的选件关联的图像内容采用URL格式。 | `"deliveryURL": "https://image.jpeg"` |
 | `characteristics` | 与JSON对象格式的建议选件关联的特性。 | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
 
-### 多个`decisionScopes`值
+### 多个 `decisionScopes` 值
 
 **请求**
 
@@ -236,8 +236,8 @@ Adobe Experience Platform [!DNL Web SDK]可以交付和渲染在Offer decisionin
 
 | 属性 | 必需 | 描述 | 限制 | 示例 |
 |---|---|---|---|---|
-| `identityMap` | 是 | 请参阅此[Identity Service文档](../../identity/overview.md)。 | 每个请求一个标识。 | `{ "identityMap": { "ECID": [ { "id": "91133425615229052182584359620783097099" } ] } }` |
-| `decisionScopes` | 是 | 包含活动ID和位置ID的JSON的Base64编码字符串数组。 | 每个请求最多30个`decisionScopes`。 | `"decisionScopes":["eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ==", "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTIyMjA4YjNhODc0MDU1OCIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjEyMjIwNDUyOTUxNGEyYzAifQ=="` |
+| `identityMap` | 是 | 请参阅 [Identity Service文档](../../identity/overview.md). | 每个请求一个标识。 | `{ "identityMap": { "ECID": [ { "id": "91133425615229052182584359620783097099" } ] } }`的问题。<br><br> 注意：用户无需包含 `ECID` 参数。 如果需要，此参数会自动添加到调用中。 |
+| `decisionScopes` | 是 | 包含活动ID和位置ID的JSON的Base64编码字符串数组。 | 最大30 `decisionScopes` 每个请求。 | `"decisionScopes":["eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTFjZmIxZmE5MzM4MWFjYSIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjExNzUwMDk2MTJiMDEwMGMifQ==", "eyJhY3Rpdml0eUlkIjoieGNvcmU6b2ZmZXItYWN0aXZpdHk6MTIyMjA4YjNhODc0MDU1OCIsInBsYWNlbWVudElkIjoieGNvcmU6b2ZmZXItcGxhY2VtZW50OjEyMjIwNDUyOTUxNGEyYzAifQ=="` |
 
 **响应**
 
@@ -332,4 +332,4 @@ Adobe Experience Platform [!DNL Web SDK]可以交付和渲染在Offer decisionin
 
 ## 限制
 
-移动设备体验边缘工作流程当前不支持某些选件约束，例如上限。 上限字段值指定选件在所有用户中可显示的次数。 有关更多详细信息，请参阅[选件资格规则和约束文档](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility)。
+移动设备体验边缘工作流程当前不支持某些选件约束，例如上限。 上限字段值指定选件在所有用户中可显示的次数。 有关更多详细信息，请参阅 [选件资格规则和限制文档](https://experienceleague.adobe.com/docs/offer-decisioning/using/managing-offers-in-the-offer-library/creating-personalized-offers.html#eligibility).
