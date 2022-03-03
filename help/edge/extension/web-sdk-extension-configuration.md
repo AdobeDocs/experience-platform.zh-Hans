@@ -2,10 +2,10 @@
 title: 配置Adobe Experience Platform Web SDK扩展
 description: 如何在数据收集UI中配置Adobe Experience Platform Web SDK标记扩展。
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 92344ca9c2daf603d866c8a3cc4e92b72a382fb1
+source-git-commit: 1f9454148ed4ee95f0d86f03c4bcf8c917d0aeea
 workflow-type: tm+mt
-source-wordcount: '1049'
-ht-degree: 7%
+source-wordcount: '1047'
+ht-degree: 6%
 
 ---
 
@@ -45,7 +45,7 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 ### **[!UICONTROL 边缘域]**
 
-的 [!UICONTROL 边缘域] 是Adobe Experience Platform扩展发送和接收数据的域。 该扩展要求您对生产流量使用第一方 CNAME。默认的第三方域适用于开发环境，但不适合生产环境。[此处](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)列出了有关如何设置第一方 CNAME 的说明。
+的 [!UICONTROL 边缘域] 是Adobe Experience Platform扩展发送和接收数据的域。 Adobe建议为此扩展使用第一方域(CNAME)。 默认的第三方域适用于开发环境，但不适合生产环境。[此处](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)列出了有关如何设置第一方 CNAME 的说明。
 
 ## [!UICONTROL 数据流]
 
@@ -69,7 +69,7 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 如果您需要明确的用户同意您的业务操作，请使用“禁用”或“待定”。
 
-## [!UICONTROL 身份]
+## [!UICONTROL 标识]
 
 ![](../images/extension/overview/identity.png)
 
