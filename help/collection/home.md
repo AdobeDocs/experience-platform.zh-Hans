@@ -5,10 +5,10 @@ title: 数据收集概述
 topic-legacy: overview
 description: 了解与收集Adobe Experience Platform中客户体验数据相关的各种技术。
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 0926f0a6dc005b1bf278e7a0fa0afe4296d8ad80
+source-git-commit: 1322ef78683e62130b56c5b6a22b8699e57a31cf
 workflow-type: tm+mt
-source-wordcount: '458'
-ht-degree: 4%
+source-wordcount: '478'
+ht-degree: 3%
 
 ---
 
@@ -59,6 +59,10 @@ Platform Edge Network是一个全球分布式、快速、可靠的服务器网�
 [事件转发](../tags/ui/event-forwarding/overview.md) 可以点按任何Experience Platform数据流，从而允许您以极低的延迟转换、扩充数据并将数据发送到任何非Adobe目标，而无需向客户端设备添加任何第三方代码。
 
 ![事件转发](./images/home/event-forwarding.png)
+
+>[!NOTE]
+>
+>事件转发是一项付费功能，仅作为Real-time Customer Data Platform连接产品的一部分提供。
 
 ## 后续步骤
 
