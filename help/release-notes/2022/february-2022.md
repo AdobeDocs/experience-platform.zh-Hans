@@ -2,16 +2,20 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: 534d87aed98359b979fe06d40f9b9a2daee5308c
+source-git-commit: b714a5cf0f4bdf2c0f010664bfef96c5b6641c22
 workflow-type: tm+mt
-source-wordcount: '720'
+source-wordcount: '732'
 ht-degree: 4%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发行日期：2022 年 2 月 23 日**
+**发布日期：2022 年 3 月 7 日**
+
+>[!NOTE]
+>
+>此版本已从2月23日的原始日期改为3月7日。
 
 Adobe Experience Platform 现有功能的更新包括：
 
