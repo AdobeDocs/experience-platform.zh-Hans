@@ -3,10 +3,10 @@ title: 为Experience PlatformWeb SDK配置数据流
 description: '了解如何配置数据流。 '
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；edgeConfigId；身份；启用ID同步的容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: d326267cacf8d678937e8c959de8acbfbbb88c93
+source-git-commit: 1ff52944be6e9475f57c62793b0e4c671ff8786b
 workflow-type: tm+mt
-source-wordcount: '1127'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 

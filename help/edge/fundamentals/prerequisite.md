@@ -3,10 +3,10 @@ title: 使用Adobe Experience Platform Web SDK的先决条件
 description: 了解使用Adobe Experience Platform Web SDK的先决条件。
 keywords: 第一方域；CNAME；架构；创建架构；启动；aep web sdk扩展；扩展；配置ID；配置工具；数据元素；创建数据元素；XDM对象；sendEvent；发送事件；
 exl-id: 98ae69db-bc87-4ea3-b101-664ac53e7ae0
-source-git-commit: a9b63d2ad2c1adbd647c0c3a43331cddffa8a04e
+source-git-commit: 1ff52944be6e9475f57c62793b0e4c671ff8786b
 workflow-type: tm+mt
-source-wordcount: '396'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
