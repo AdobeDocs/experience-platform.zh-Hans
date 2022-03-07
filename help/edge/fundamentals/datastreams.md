@@ -3,7 +3,7 @@ title: 为Experience PlatformWeb SDK配置数据流
 description: '了解如何配置数据流。 '
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；edgeConfigId；身份；启用ID同步的容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 0141f0a83ca7b444015d98d8ce11199b400f77a5
+source-git-commit: c2378c5da73c36e5889d2c83b18194ff239fce96
 workflow-type: tm+mt
 source-wordcount: '2045'
 ht-degree: 1%
@@ -70,7 +70,7 @@ ht-degree: 1%
 
 选择 **[!UICONTROL 保存并添加映射]** 完成 [基本配置步骤](#configure)和 **[!UICONTROL 选择数据]** 中。 在此，您必须提供一个JSON对象示例，该对象表示您计划发送到平台的数据的结构。 您可以选择将对象上传为文件的选项，或将原始对象粘贴到提供的文本框中。
 
->[!NOTE]
+>[!IMPORTANT]
 >
 >JSON对象必须具有单个根节点 `data` 以通过验证。
 
