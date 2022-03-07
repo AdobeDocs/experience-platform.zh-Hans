@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: d407d6bedbe0eb9b4dde229d990160c114fad472
+source-git-commit: 534d87aed98359b979fe06d40f9b9a2daee5308c
 workflow-type: tm+mt
-source-wordcount: '502'
-ht-degree: 6%
+source-wordcount: '720'
+ht-degree: 4%
 
 ---
 
@@ -15,9 +15,22 @@ ht-degree: 6%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [[!DNL Dashboards]](#dashboards)
 - [数据收集](#data-collection)
 - [[!DNL Identity Service]](#identity)
 - [源](#sources)
+
+## [!DNL Dashboards] {#dashboards}
+
+Adobe Experience Platform提供多个 [!DNL dashboards] 通过查看有关贵组织数据的重要分析（在每日快照中捕获）。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 新的标准目标小组件 | 通过以下标准小组件，您可以显示与目标相关的不同量度。<ul><li>最近按目标激活的区段。 此小组件会根据所选目标以降序方式显示前五个最近激活的区段。</li><li>受众大小趋势。 此小组件描述已映射到该目标帐户的区段在一段时间内的用户档案计数之间的关系。</li><li>按身份未映射的区段。 此小组件列出了前五个未映射区段，这些区段按给定目标和身份的降序身份计数排名。</li><li>按身份映射区段。 此小组件列出了前五个映射的区段。 区段会根据与从小组件下拉菜单中选择的目标ID匹配的源ID的相应计数，从高到低进行排序。</li><li>常见受众。 此小组件提供了在页面顶部选择的目标帐户中激活的前五个区段的列表，以及在小组件下拉菜单中选择的目标。</li></ul> 有关可用标准小组件的更多信息，请参阅 [目标仪表板文档。](https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html?lang=en#standard-widgets). |
+
+有关 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
 
 ## 数据收集 {#data-collection}
 
