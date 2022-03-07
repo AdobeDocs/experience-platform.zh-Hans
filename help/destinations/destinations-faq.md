@@ -5,9 +5,9 @@ seo-title: Frequently asked questions
 description: 有关Adobe Experience Platform目标的最常见问题解答
 seo-description: Answers to the most frequently asked questions about Adobe Experience Platform destinations
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: 69fc8e8ec3211495056be73c2e49c6aecfc569ea
+source-git-commit: b2636377eda6740dceb9bc07fbcc082b85ff3c94
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '864'
 ht-degree: 4%
 
 ---
@@ -45,7 +45,7 @@ ht-degree: 4%
 
 **是否需要向 [!DNL Facebook] 广告商帐户？**
 
-否。由于这不是基于像素的集成，因此无需向广告商帐户添加任何像素。
+不会。由于这不是基于像素的集成，因此无需向广告商帐户添加任何像素。
 
 **facebook需要多长时间才能处理来自Adobe Experience Platform的信息？**
 
@@ -61,11 +61,11 @@ ht-degree: 4%
 
 这两种集成是互补的，您可以同时使用这两种集成来确保更好的受众覆盖。例如，您可以使用 [!DNL Facebook Pixel] 扩展，用于寻找尚未创建帐户的网站访客，而 [!DNL Facebook Custom Audiences] 可帮助您定位现有客户，具体依据 [!DNL Platform] 身份。
 
-**Adobe Experience Platform与 [!DNL Facebook Custom Audiences] 支持在用户不再符合受众资格时取消其受众资格？**
+**Does the Adobe Experience Platform integration with [!DNL Facebook Custom Audiences] support disqualifying users from an audience when they no longer qualify for it?**
 
-是，该集成支持将用户从 [!DNL Facebook Custom Audiences] 当他们不再符合条件时。
+Yes, the integration supports removing users from [!DNL Facebook Custom Audiences] when they no longer qualify.
 
-**如何在将受众数据发送到之前对其进行哈希处理 [!DNL Facebook]?**
+**How should I hash the audience data before sending it to [!DNL Facebook]?**
 
 [!DNL Facebook] 要求不要发送任何个人身份信息(PII)。 因此，激活的受众 [!DNL Facebook] 可以锁上 *哈希* 标识符，如电子邮件地址或电话号码。
 
@@ -79,11 +79,17 @@ ht-degree: 4%
 
 可以。Experience Platform中的Facebook目标为Facebook中某个广告帐户的1:1。 您可以为公司中的每个Facebook广告帐户创建一个单独的Facebook目标。 关注 [目标连接教程](/help/destinations/ui/connect-destination.md) 并在Platform UI中为每个新的Facebook目标连接单独的Facebook帐户。 您可以连接的Facebook广告帐户数量没有限制。
 
+## Google 客户匹配 {#google-customer-match}
+
+**将区段导出到Google客户匹配时，为什么在Google界面中的区段名称末尾会附加额外的数字？**
+
+Google要求区段名称是唯一的。 你看到的数字 [UNIX时间戳](https://www.unixtimestamp.com/) 如果您将同一区段映射到多个Google目标，则会附加区段名称以保持区段名称唯一。
+
 ## linkedIn匹配的受众 {#linkedin}
 
 **是否需要向 [!DNL LinkedIn] 广告商帐户？**
 
-否。由于这不是基于像素的集成，因此无需向广告商帐户添加任何像素。
+不会。由于这不是基于像素的集成，因此无需向广告商帐户添加任何像素。
 
 **在中激活受众之前，我需要执行哪些操作 [!DNL LinkedIn Matched Audiences]?**
 
