@@ -4,10 +4,8 @@ solution: Experience Platform
 title: 使用Platform UI创建MailChimp促销活动源连接
 topic-legacy: tutorial
 description: 了解如何使用Platform UI将Adobe Experience Platform与MailChimp营销活动连接。
-hide: true
-hidefromtoc: true
 exl-id: e8e1ed32-4277-44c9-aafc-6bb9e0a1fe0d
-source-git-commit: f8951b5a0a0ca94679155bad9f4c4c2991740b1a
+source-git-commit: ed185d0957c3cd84c33a6ff60c5ded2b17fbfe74
 workflow-type: tm+mt
 source-wordcount: '682'
 ht-degree: 1%
