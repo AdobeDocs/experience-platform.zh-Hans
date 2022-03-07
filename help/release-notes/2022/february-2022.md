@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: 3ae4d0f0a92c96b15c605c6654693fd6d7e94ba8
+source-git-commit: d407d6bedbe0eb9b4dde229d990160c114fad472
 workflow-type: tm+mt
-source-wordcount: '575'
+source-wordcount: '502'
 ht-degree: 6%
 
 ---
@@ -16,7 +16,6 @@ ht-degree: 6%
 Adobe Experience Platform 现有功能的更新包括：
 
 - [数据收集](#data-collection)
-- [[!DNL Data Prep]](#data-prep)
 - [[!DNL Identity Service]](#identity)
 - [源](#sources)
 
@@ -33,18 +32,6 @@ Platform提供了一套技术，允许您收集客户端客户体验数据，并
 | 第一方设备ID | 现在，在使用Platform Web SDK收集客户数据时，您可以将自己的设备ID发送到Adobe Experience Platform Edge Network，这为最近对第三方Cookie生命周期的浏览器限制提供了解决方法。 请参阅 [第一方设备ID](../../edge/identity/first-party-device-ids.md) 以了解更多信息。 |
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
-
-## [!DNL Data Prep] {#data-prep}
-
-[!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
-
-**新增功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| [!DNL Data Prep] 支持Adobe Analytics源连接器 | Adobe Analytics源连接器现在支持数据准备功能，允许您在创建数据流时将Analytics报表包数据映射到目标XDM架构。 请参阅 [创建Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md) 以了解更多信息。 |
-
-有关 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
 
 ## [!DNL Identity Service] {#identity}
 
