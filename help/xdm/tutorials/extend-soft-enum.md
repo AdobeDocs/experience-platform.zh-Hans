@@ -1,9 +1,10 @@
 ---
 title: 扩展软枚举字段
 description: 了解如何扩展模式注册表API中的软枚举字段。
-source-git-commit: 2d85db789e6e6a28402bb68122a3b5cfe9d0c5dc
+exl-id: 96897a5d-e00a-410f-a20e-f77e223bd8c4
+source-git-commit: a26c8d43ff7874bcedd2adb3d6da995986198c96
 workflow-type: tm+mt
-source-wordcount: '532'
+source-wordcount: '531'
 ht-degree: 0%
 
 ---
@@ -197,4 +198,4 @@ curl -X PATCH \
 
 ## 后续步骤
 
-本指南介绍了如何扩展架构注册API中的软枚举。 有关如何在API中定义不同字段类型的更多信息，请参阅 [XDM字段类型约束](../schema/field-constraints.md#define-fields).
+本指南介绍了如何扩展架构注册API中的软枚举。 请参阅 [在API中定义自定义字段](./custom-fields-api.md) 以了解有关如何创建不同字段类型的详细信息。
