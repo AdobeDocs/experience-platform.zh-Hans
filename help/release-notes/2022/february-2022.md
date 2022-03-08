@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: b714a5cf0f4bdf2c0f010664bfef96c5b6641c22
+source-git-commit: 366656346c25cd5206b36c7ff2b9942c5027de17
 workflow-type: tm+mt
-source-wordcount: '732'
-ht-degree: 4%
+source-wordcount: '1018'
+ht-degree: 3%
 
 ---
 
@@ -20,9 +20,10 @@ ht-degree: 4%
 Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Dashboards]](#dashboards)
-- [数据收集](#data-collection)
+- [[!DNL Data collection]](#data-collection)
+- [[!DNL Destinations]](#destinations)
 - [[!DNL Identity Service]](#identity)
-- [源](#sources)
+- [[!DNL Sources]](#sources)
 
 ## [!DNL Dashboards] {#dashboards}
 
@@ -49,6 +50,16 @@ Platform提供了一套技术，允许您收集客户端客户体验数据，并
 | 第一方设备ID | 现在，在使用Platform Web SDK收集客户数据时，您可以将自己的设备ID发送到Adobe Experience Platform Edge Network，这为最近对第三方Cookie生命周期的浏览器限制提供了解决方法。 请参阅 [第一方设备ID](../../edge/identity/first-party-device-ids.md) 以了解更多信息。 |
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| （测试版）Destination SDK对基于文件的目标的支持 | [Destination SDK对基于文件的目标的支持](../../destinations/destination-sdk/file-based-destination-configuration.md) 目前为私有测试版，仅适用于数量有限的合作伙伴和客户。 在正式发布之前，功能和相关文档可能会发生更改。<br><br>请联系您的Adobe客户代表以了解如何访问该功能。 Adobe内部客户代表应联系Experience Platform目标产品和工程团队，讨论受支持的用例。 <br><br> 在Destination SDK对基于文件的目标的支持测试阶段，测试合作伙伴和客户可以使用 [Experience PlatformDestination SDK](/help/destinations/destination-sdk/overview.md) 要构建专用目标以从以下功能中受益，请执行以下操作： <ul><li>通过Amazon S3、SFTP服务器、Azure Blob、Azure数据湖存储、数据登陆区存储，创建基于文件的（批处理）目标。</li><li>配置和设置默认文件导出计划和频率选项。</li><li>配置和设置选项，以设置导出的CSV文件的格式（分隔符、转义字符和其他选项）。</li><li>能够设置和编辑自定义文件头。</li><li>能够接收有关文件和区段导出的事件通知。</li><li>能够导出其他文件类型，如CSV、TSV、JSON、Parquet。</li></ul>  <br>要开始使用新功能，请阅读 [（测试版）使用Destination SDK配置基于文件的目标](../../destinations/destination-sdk/file-based-destination-configuration.md). <br><br> 用于创建专用或产品化的功能 *流* 使用Destination SDK的目标已经可供所有Experience Platform客户和合作伙伴使用。 阅读有关如何 [使用Destination SDK配置流目标](/help/destinations/destination-sdk/configure-destination-instructions.md) 以了解详细信息。 |
 
 ## [!DNL Identity Service] {#identity}
 
