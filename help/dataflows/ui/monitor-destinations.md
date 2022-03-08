@@ -6,9 +6,9 @@ title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 042a739593b291cdd7193437906a16dc889a3b4b
+source-git-commit: 0a6813d5d614d86940b042e03d2ab4f083644600
 workflow-type: tm+mt
-source-wordcount: '3358'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -56,25 +56,21 @@ ht-degree: 0%
 >id="platform_monitoring_profiles_received_streaming"
 >title="收到的用户档案"
 >abstract="数据流中接收的用户档案总数。 此值每60分钟更新一次。"
->text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_streaming"
 >title="已激活身份"
 >abstract="成功激活到选定目标的单个配置文件标识的计数。 此量度包含从导出区段中创建、更新和删除的标识。"
->text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesexcluded_streaming"
 >title="排除的身份"
 >abstract="根据缺少属性和同意违规，从选定目标的激活中排除的单个配置文件记录计数。"
->text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesfailed_streaming"
 >title="身份失败"
 >abstract="所选目标的单个配置文件标识的计数失败。 有关详细信息，请检查错误诊断。"
->text="Learn more in documentation"
 
 对于流目标， [!UICONTROL 数据流运行] 选项卡会每小时更新数据流运行中的量度数据。 标有的最显着的统计数据是关于身份的。
 
@@ -118,29 +114,22 @@ ht-degree: 0%
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
 >abstract="目标数据流运行详细信息包含有关区段激活状态的信息以及从实时客户配置文件获取的用于生成唯一标识的量度。 要了解更多信息，请查阅量度定义指南。"
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_dataflow_run_details_activation_batch"
->title="数据流运行详细信息"
->abstract="目标数据流运行详细信息包含有关区段激活状态的信息以及从实时客户配置文件获取的用于生成唯一标识的量度。 要了解更多信息，请查阅量度定义指南。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=en#dataflow-runs-for-streaming-destinations" text="为流目标运行数据流"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
 >title="收到的用户档案"
 >abstract="数据流中接收的用户档案总数。 此值每60分钟更新一次。"
->text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_batch"
 >title="已激活身份"
 >abstract="成功激活到选定目标的单个配置文件标识的计数。 此量度包含从导出区段中创建、更新和删除的标识。"
->text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesexcluded_batch"
 >title="排除的身份"
 >abstract="根据缺少属性和同意违规，从选定目标的激活中排除的单个配置文件记录计数。"
->text="Learn more in documentation"
 
 对于批处理目标， [!UICONTROL 数据流运行] 选项卡提供有关数据流运行的量度数据。 将显示单个运行及其特定量度的列表，以及以下身份总数：
 

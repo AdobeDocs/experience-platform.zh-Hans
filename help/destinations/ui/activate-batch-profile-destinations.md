@@ -6,9 +6,9 @@ seo-title: Activate audience data to batch profile export destinations
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
+source-git-commit: 6c64e8400c85865aab4e8cfb9e86850562ba97aa
 workflow-type: tm+mt
-source-wordcount: '2188'
+source-wordcount: '2178'
 ht-degree: 0%
 
 ---
@@ -51,7 +51,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_schedule"
 >title="计划"
->abstract="设置文件导出类型（完整文件或增量文件）和导出频率。"
+>abstract="使用铅笔图标可设置文件导出类型（完整文件或增量文件）和导出频率。"
 >additional-url="https://www.adobe.com/go/destinations-profile-batch-en" text="在文档中了解更多信息"
 
 [!DNL Adobe Experience Platform] 以 [!DNL CSV] 文件。 在 **[!UICONTROL 计划]** 页面，您可以配置要导出的每个区段的计划和文件名。 必须配置计划，但配置文件名是可选的。
@@ -133,7 +133,6 @@ ht-degree: 0%
 >id="platform_destinations_activate_filename"
 >title="配置文件名"
 >abstract="对于基于文件的目标，每个区段会生成唯一的文件名。 使用文件名编辑器创建和编辑唯一的文件名或保留默认名称。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#file-names" text="在文档中了解更多信息"
 
 默认文件名由目标名称、区段ID以及日期和时间指示器组成。 例如，您可以编辑导出的文件名以区分不同的营销活动，或将数据导出时间附加到文件中。
 
