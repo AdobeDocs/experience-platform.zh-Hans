@@ -4,7 +4,7 @@ title: 用户档案仪表板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 7590c24baae669ebe3214985088a7135a69ff8bc
+source-git-commit: 77fb7efa90e03c42c036b267ee93547647dab41d
 workflow-type: tm+mt
 source-wordcount: '2324'
 ht-degree: 1%
@@ -51,7 +51,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 的 [!UICONTROL 功效] 选项卡通过使用用户档案功效小组件提供有关用户档案数据质量和完整性的量度。 这些小部件可概览用户档案的组成、随时间的完整性趋势以及对用户档案数据质量的评估。
 
-[用户档案功效仪表板。](../images/profiles/attributes-quality-assessment.png)
+![用户档案功效仪表板。](../images/profiles/attributes-quality-assessment.png)
 
 请参阅 [用户档案功效小组件部分](#profile-efficacy-widgets) 有关当前可用的小组件的详细信息。
 
