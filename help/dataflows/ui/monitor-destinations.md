@@ -1,21 +1,21 @@
 ---
 keywords: Experience Platform；主页；热门主题；监视帐户；监视数据流；数据流；目标
-description: Destinations allow you to activate your data from Adobe Experience Platform to countless external partners. 本教程提供了有关如何使用Experience Platform用户界面监控目标数据流的说明。
+description: 利用目标，可从Adobe Experience Platform向无数外部合作伙伴激活数据。 本教程提供了有关如何使用Experience Platform用户界面监控目标数据流的说明。
 solution: Experience Platform
 title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 387e10038f61a7444a16f4e6270a62082446c09d
+source-git-commit: 042a739593b291cdd7193437906a16dc889a3b4b
 workflow-type: tm+mt
-source-wordcount: '3269'
+source-wordcount: '3358'
 ht-degree: 0%
 
 ---
 
 # 在UI中监控目标的数据流
 
-利用目标，可从Adobe Experience Platform向无数外部合作伙伴激活数据。 Platform makes the process of tracking the flow of data to your destinations easier by providing transparency with dataflows.
+利用目标，可从Adobe Experience Platform向无数外部合作伙伴激活数据。 Platform通过提供数据流的透明度，使跟踪数据到目标的流程变得更加轻松。
 
 监控仪表板可直观地表示数据流的历程，包括数据被激活到的目标。 本教程提供了有关如何直接在目标工作区中监控数据流或使用监控功能板通过Experience Platform用户界面监控目标的数据流的说明。
 
@@ -42,7 +42,7 @@ ht-degree: 0%
 | ------ | ----------- |
 | 已启用 | 的 `Enabled` 状态表示数据流处于活动状态，并正在根据提供的计划导出数据。 |
 | 已禁用 | 的 `Disabled` 状态表示数据流处于非活动状态，且未导出任何数据。 |
-| 处理时间 | The `Processing` status indicates that a dataflow is not yet active. 此状态通常会在创建新数据流后立即出现。 |
+| 处理时间 | 的 `Processing` 状态表示数据流尚未处于活动状态。 此状态通常会在创建新数据流后立即出现。 |
 | 错误 | 的 `Error` 状态表示数据流的激活过程已中断。 |
 
 ### 为流目标运行数据流 {#dataflow-runs-for-streaming-destinations}
@@ -50,39 +50,39 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation_streaming"
 >title="数据流运行详细信息"
->abstract="目标数据流运行详细信息包含有关区段激活状态的信息以及从实时客户配置文件获取的用于生成唯一标识的量度。 To learn more, please review the metric definitions guide."
+>abstract="目标数据流运行详细信息包含有关区段激活状态的信息以及从实时客户配置文件获取的用于生成唯一标识的量度。 要了解更多信息，请查阅量度定义指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_streaming"
->title="Profiles received"
->abstract="数据流中接收的用户档案总数。 This value is updated every 60 minutes."
+>title="收到的用户档案"
+>abstract="数据流中接收的用户档案总数。 此值每60分钟更新一次。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_streaming"
->title="Identities activated"
->abstract="成功激活到选定目标的单个配置文件标识的计数。"
+>title="已激活身份"
+>abstract="成功激活到选定目标的单个配置文件标识的计数。 此量度包含从导出区段中创建、更新和删除的标识。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesexcluded_streaming"
->title="Identities excluded"
+>title="排除的身份"
 >abstract="根据缺少属性和同意违规，从选定目标的激活中排除的单个配置文件记录计数。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesfailed_streaming"
 >title="身份失败"
->abstract="所选目标的单个配置文件标识的计数失败。 Please check error diagnostics for details."
+>abstract="所选目标的单个配置文件标识的计数失败。 有关详细信息，请检查错误诊断。"
 >text="Learn more in documentation"
 
-For streaming destinations, the [!UICONTROL Dataflow runs] tab provides an hourly update for metric data on your dataflow runs. 标有的最显着的统计数据是关于身份的。
+对于流目标， [!UICONTROL 数据流运行] 选项卡会每小时更新数据流运行中的量度数据。 标有的最显着的统计数据是关于身份的。
 
 标识表示用户档案的不同方面。 例如，如果某个用户档案同时包含电话号码和电子邮件地址，则该用户档案将具有两个身份。
 
 将显示单个运行及其特定量度的列表，以及以下身份总数：
 
-- **[!UICONTROL 已激活身份]**:为激活而创建或更新的配置文件身份的总数。
+- **[!UICONTROL 已激活身份]**:成功激活到选定目标的用户档案标识总数。 此量度包含从导出区段中创建、更新和删除的标识。
 - **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规跳过以进行激活的配置文件标识的总数。
 - **[!UICONTROL 身份失败]**:由于错误而未激活到目标的配置文件标识的总数。
 
@@ -95,9 +95,9 @@ For streaming destinations, the [!UICONTROL Dataflow runs] tab provides an hourl
    - 对于 **[!UICONTROL 已完成]** 运行时，处理时间量度始终显示1小时。
    - 对于仍在 **[!UICONTROL 处理]** 状态下，用于捕获所有量度的窗口将保持打开状态超过一小时，用于处理与数据流运行对应的所有量度。 例如，从上午9:30开始的数据流运行可能会保持处理状态1小时30分钟，以捕获和处理所有量度。 然后，一旦处理窗口关闭，并且数据流运行的状态将更新为 **已完成**，则显示的处理时间会更改为1小时。
 - **[!UICONTROL 收到的用户档案]**:数据流中接收的用户档案总数。
-- **[!UICONTROL 已激活身份]**:成功激活到选定目标的用户档案标识总数。
+- **[!UICONTROL 已激活身份]**:在数据流运行中成功激活到选定目标的配置文件标识总数。 此量度包含从导出区段中创建、更新和删除的标识。
 - **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规从激活中排除的配置文件标识总数。
-- **[!UICONTROL Identities failed]** The total number of profile identities that are not activated to the destination due to errors.
+- **[!UICONTROL 身份失败]** 由于错误而未激活到目标的配置文件标识的总数。
 - **[!UICONTROL 激活率]**:已成功激活或跳过的已接收身份的百分比。 以下公式演示了如何计算此值：
    ![激活率公式](../assets/ui/monitor-destinations/activation-rate-formula.png)
 - **[!UICONTROL 状态]**:表示数据流处于的状态：e [!UICONTROL 已完成] 或 [!UICONTROL 处理]. [!UICONTROL 已完成] 表示在1小时内导出了相应数据流运行的所有标识。 [!UICONTROL 处理] 表示数据流运行尚未完成。
@@ -133,18 +133,18 @@ For streaming destinations, the [!UICONTROL Dataflow runs] tab provides an hourl
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_batch"
 >title="已激活身份"
->abstract="成功激活到选定目标的单个配置文件标识的计数。"
+>abstract="成功激活到选定目标的单个配置文件标识的计数。 此量度包含从导出区段中创建、更新和删除的标识。"
 >text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesexcluded_batch"
 >title="排除的身份"
->abstract="The count of individual profile records excluded from activation for the selected destination based on missing attributes and consent violation."
+>abstract="根据缺少属性和同意违规，从选定目标的激活中排除的单个配置文件记录计数。"
 >text="Learn more in documentation"
 
 对于批处理目标， [!UICONTROL 数据流运行] 选项卡提供有关数据流运行的量度数据。 将显示单个运行及其特定量度的列表，以及以下身份总数：
 
-- **[!UICONTROL 已激活身份]**:成功激活到选定目标的单个配置文件标识的计数。
+- **[!UICONTROL 已激活身份]**:成功激活到选定目标的用户档案标识总数。 此量度包含从导出区段中创建、更新和删除的标识。
 - **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规，从选定目标的激活中排除的单个配置文件标识计数。
 
 ![数据流运行批处理目标的视图](../assets/ui/monitor-destinations/dataflow-runs-batch.png)
@@ -154,9 +154,9 @@ For streaming destinations, the [!UICONTROL Dataflow runs] tab provides an hourl
 - **[!UICONTROL 数据流运行开始]**:数据流运行开始的时间。
 - **[!UICONTROL 处理时间]**:处理数据流运行所花费的时间。
 - **[!UICONTROL 收到的用户档案]**:数据流中接收的用户档案总数。 此值每60分钟更新一次。
-- **[!UICONTROL 已激活身份]**:成功激活到选定目标的用户档案标识总数。
+- **[!UICONTROL 已激活身份]**:在数据流运行中成功激活到选定目标的配置文件标识总数。 此量度包含从导出区段中创建、更新和删除的标识。
 - **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规从激活中排除的配置文件标识总数。
-- **[!UICONTROL 状态]**:表示数据流处于的状态。 这可以是三种状态之一： [!UICONTROL 成功], [!UICONTROL 失败]和 [!UICONTROL 处理]. [!UICONTROL Success] means that the dataflow is active and is exporting data according to its provided schedule. [!UICONTROL 失败] 表示由于错误，数据激活已挂起。 [!UICONTROL 处理] 表示数据流尚未处于活动状态，通常在创建新数据流时会遇到该数据流。
+- **[!UICONTROL 状态]**:表示数据流处于的状态。 这可以是三种状态之一： [!UICONTROL 成功], [!UICONTROL 失败]和 [!UICONTROL 处理]. [!UICONTROL 成功] 表示数据流处于活动状态，并正在根据其提供的时间表导出数据。 [!UICONTROL 失败] 表示由于错误，数据激活已挂起。 [!UICONTROL 处理] 表示数据流尚未处于活动状态，通常在创建新数据流时会遇到该数据流。
 
 要查看特定数据流运行的详细信息，请从列表中选择运行的开始时间。
 
@@ -194,7 +194,7 @@ For streaming destinations, the [!UICONTROL Dataflow runs] tab provides an hourl
 | 量度 | 描述 |
 ---------|----------|
 | **[!UICONTROL 区段作业]** | 指示区段作业的名称。 |
-| **[!UICONTROL 类型]** | 指示区段作业的类型 — 导出或评估。 Note that in both cases, the segment job evaluates or exports *all* segments belonging to an organization. |
+| **[!UICONTROL 类型]** | 指示区段作业的类型 — 导出或评估。 请注意，在这两种情况下，区段作业都会评估或导出 *全部* 属于组织的区段。 |
 | **[!UICONTROL 作业开始]** | 区段作业开始的日期和时间。 |
 | **[!UICONTROL 作业结束]** | 区段作业完成的日期和时间。 |
 | **[!UICONTROL 状态]** | 已完成作业的状态 — 成功或失败。 |
@@ -208,7 +208,7 @@ For streaming destinations, the [!UICONTROL Dataflow runs] tab provides an hourl
 
 访问 [!UICONTROL 监控] 功能板，选择 **[!UICONTROL 监控]** (![监控图标](../assets/ui/monitor-destinations/monitoring-icon.png))。 在 [!UICONTROL 监控] 页面，选择 [!UICONTROL 目标]. 的 [!UICONTROL 监控] 功能板包含有关目标运行作业的量度和信息。
 
-使用 [!UICONTROL 目标] 功能板，全面了解激活流的运行状况。 首先，深入了解所有批处理和流目标的汇总级别，然后深入了解数据流、数据流运行和激活区段的详细视图，以便深入查看激活数据。 The screens in the [!UICONTROL Monitoring] dashboard provide actionable insights through metrics and error descriptions to help you troubleshoot any problems that might arise in your activation scenarios.
+使用 [!UICONTROL 目标] 功能板，全面了解激活流的运行状况。 首先，深入了解所有批处理和流目标的汇总级别，然后深入了解数据流、数据流运行和激活区段的详细视图，以便深入查看激活数据。 屏幕 [!UICONTROL 监控] 功能板通过量度和错误描述提供可操作的洞察，以帮助您解决激活方案中可能出现的任何问题。
 
 功能板的中心是 [!UICONTROL 激活] 面板，其中包含量度和图表，用于显示导出到流目标的数据的激活率以及运行到批处理目标的失败批处理数据流的数据。
 
@@ -219,7 +219,7 @@ For streaming destinations, the [!UICONTROL Dataflow runs] tab provides an hourl
 
 >[!NOTE]
 >
->以下屏幕截图显示了过去30天（而不是过去24小时）内的激活率和批量数据流运行情况。 You can adjust the time frame by selecting **[!UICONTROL Last 30 days]**.
+>以下屏幕截图显示了过去30天（而不是过去24小时）内的激活率和批量数据流运行情况。 您可以通过选择 **[!UICONTROL 最近30天]**.
 
 ![更改激活目标的回顾日期范围](../assets/ui/monitor-destinations/dashboard-graph-change-date-range.png)
 
@@ -268,7 +268,7 @@ When **[!UICONTROL 数据流运行]** 选中后，您可以看到所选数据流
 
 >[!INFO]
 >
->For dataflows to streaming destinations, a dataflow run is broken down into hourly windows. Each hourly window generates a corresponding dataflow run ID.
+>对于流目标的数据流，数据流运行会按小时划分。 每个每小时窗口都会生成一个对应的数据流运行ID。
 >
 >对于到批处理目标的数据流，每个区段都会根据区段激活计划频率生成相应的数据流运行。 例如，如果为同一目标数据流中的五个区段设置每日计划激活，则每天将生成五个单独的数据流运行。
 
@@ -293,7 +293,7 @@ When **[!UICONTROL 区段]** ，则您会看到选定时间范围内已激活选
 
 ![数据流面板中的区段](../assets/ui/monitor-destinations/dashboard-segments-view.png)
 
-In the segment-level view, the metrics are aggregated across multiple dataflow runs within the selected time range. 如果有多个数据流运行，您可以从区段级别向下展开以查看按选定区段过滤的每个数据流运行的划分。
+在区段级别视图中，这些量度是在选定时间范围内跨多个数据流运行进行聚合。 如果有多个数据流运行，您可以从区段级别向下展开以查看按选定区段过滤的每个数据流运行的划分。
 使用过滤器按钮 ![过滤器](../assets/ui/monitor-destinations/filter-add.png) 要深入到数据流中每个区段的数据流运行视图，请执行以下操作：
 
 ### “数据流运行”页 {#dataflow-runs-page}
