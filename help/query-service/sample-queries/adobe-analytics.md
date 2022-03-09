@@ -1,0 +1,305 @@
+---
+keywords: Experience Platform；主页；热门主题；查询服务；查询服务；示例查询；示例查询；Adobe Analytics;
+solution: Experience Platform
+title: Adobe Analytics数据的查询示例
+topic-legacy: queries
+description: 来自选定Adobe Analytics报表包的数据将转换为XDM ExperienceEvents，并作为数据集摄取到Adobe Experience Platform。 本文档概述了Adobe Experience Platform查询服务利用此数据的许多用例，其中包含的示例查询应与您的Adobe Analytics数据集一起使用。
+exl-id: 96da3713-c7ab-41b3-9a9d-397756d9dd07
+source-git-commit: bb5ece5e48ca5e3bb97aa1367515f510ab03deee
+workflow-type: tm+mt
+source-wordcount: '1052'
+ht-degree: 1%
+
+---
+
+# Adobe Analytics数据查询示例
+
+来自选定Adobe Analytics报表包的数据将转换为符合 [!DNL XDM ExperienceEvent] 类并作为数据集摄取到Adobe Experience Platform中。
+
+本文档概述了Adobe Experience Platform [!DNL Query Service] 利用此数据（包括示例查询）时，应该可以使用Adobe Analytics数据集。 请参阅 [Analytics字段映射](../../sources/connectors/adobe-applications/mapping/analytics.md) 有关映射到的详细信息 [!DNL Experience Events].
+
+## 快速入门
+
+本文档中的SQL示例要求您编辑SQL，并根据您希望评估的数据集、eVar、事件或时间范围填写查询的预期参数。 无论您在何处看到，都提供参数 `{ }` 在下面的SQL示例中。
+
+## 常用SQL示例
+
+以下示例显示了用于分析Adobe Analytics数据的常用SQL查询。
+
+### 给定日的每小时访客计数
+
+```sql
+SELECT Substring(from_utc_timestamp(timestamp, 'America/New_York'), 1, 10) AS Day,
+       Substring(from_utc_timestamp(timestamp, 'America/New_York'), 12, 2) AS Hour, 
+       Count(DISTINCT enduserids._experience.aaid.id) AS Visitor_Count 
+FROM   {TARGET_TABLE}
+WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
+GROUP BY Day, Hour
+ORDER BY Hour;
+```
+
+### 给定日期内查看的前10个页面
+
+```sql
+SELECT web.webpagedetails.name AS Page_Name, 
+       Sum(web.webpagedetails.pageviews.value) AS Page_Views 
+FROM   {TARGET_TABLE}
+WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
+GROUP BY web.webpagedetails.name 
+ORDER BY page_views DESC 
+LIMIT  10;
+```
+
+### 前10位最活跃用户
+
+```sql
+SELECT enduserids._experience.aaid.id AS aaid, 
+       Count(timestamp) AS Count
+FROM   {TARGET_TABLE}
+WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
+GROUP BY enduserids._experience.aaid.id
+ORDER BY Count DESC
+LIMIT  10;
+```
+
+### 按用户活动划分的前10大城市
+
+```sql
+SELECT concat(placeContext.geo.stateProvince, ' - ', placeContext.geo.city) AS state_city, 
+       Count(timestamp) AS Count
+FROM   {TARGET_TABLE}
+WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
+GROUP BY state_city
+ORDER BY Count DESC
+LIMIT  10;
+```
+
+### 查看次数前10个产品
+
+```sql
+SELECT Product_SKU,
+       Sum(Product_Views) AS Total_Product_Views
+FROM  (SELECT Explode(productlistitems.sku) AS Product_SKU, 
+              commerce.productviews.value   AS Product_Views 
+       FROM   {TARGET_TABLE}
+            WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
+              AND commerce.productviews.value IS NOT NULL) 
+GROUP BY Product_SKU 
+ORDER BY Total_Product_Views DESC
+LIMIT  10;
+```
+
+### 前10大订单总收入
+
+```sql
+SELECT Purchase_ID, 
+       Round(Sum(Product_Items.priceTotal * Product_Items.quantity), 2) AS Total_Order_Revenue 
+FROM   (SELECT commerce.`order`.purchaseid AS Purchase_ID, 
+               Explode(productlistitems)   AS Product_Items 
+        FROM   {TARGET_TABLE} 
+        WHERE  commerce.`order`.purchaseid IS NOT NULL 
+                AND TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
+
+GROUP BY Purchase_ID 
+ORDER BY total_order_revenue DESC 
+LIMIT  10;
+```
+
+### 按日的事件计数
+
+```sql
+SELECT Substring(from_utc_timestamp(timestamp, 'America/New_York'), 1, 10) AS Day, 
+       Substring(from_utc_timestamp(timestamp, 'America/New_York'), 12, 2) AS Hour, 
+       Sum(_experience.analytics.event1to100.{TARGET_EVENT}.value) AS Event_Count
+FROM   {TARGET_TABLE}
+WHERE  _experience.analytics.event1to100.{TARGET_EVENT}.value IS NOT NULL 
+        AND TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
+GROUP BY Day, Hour
+ORDER BY Hour;
+```
+
+## 重复数据删除
+
+Adobe Experience Platform查询服务支持重复数据删除。 请参阅 [查询服务文档中的重复数据删除](../best-practices/deduplication.md) 有关在查询时如何生成新值的信息 [!DNL Experience Event] 数据集。
+
+## 促销变量（产品语法）
+
+
+### 产品语法
+
+在Adobe Analytics中，可通过专门配置的变量（称为促销变量）来收集自定义产品级数据。 这些事件基于eVar或自定义事件。 这些变量与其标准用法的区别在于，它们表示在点击中找到的每个产品的单独值，而不是仅表示点击的单个值。
+
+这些变量称为产品语法推销变量。 这允许收集信息，例如每个产品的“折扣金额”或客户搜索结果中有关产品“页面位置”的信息。
+
+要了解有关使用产品语法的更多信息，请阅读Adobe Analytics文档(位于 [使用产品语法实施eVar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en#implement-using-product-syntax).
+
+以下各节概述了访问 [!DNL Analytics] 数据集：
+
+#### eVar
+
+```console
+productListItems[#]._experience.analytics.customDimensions.evars.evar#
+```
+
+- `#`:要访问的数组的索引。
+- `evar#`:您正在访问的特定eVar变量。
+
+#### 自定义事件
+
+```console
+productListItems[#]._experience.analytics.event1to100.event#.value
+```
+
+- `#`:要访问的数组的索引。
+- `event#`:您正在访问的特定自定义事件变量。
+
+#### 示例查询
+
+以下是一个示例查询，用于返回在 `productListItems`.
+
+```sql
+SELECT
+  productListItems[0]._experience.analytics.customDimensions.evars.eVar1,
+  productListItems[0]._experience.analytics.event1to100.event1.value
+FROM adobe_analytics_midvalues
+WHERE timestamp = to_timestamp('2019-07-23')
+  AND productListItems[0].SKU IS NOT NULL
+  AND productListItems[0]._experience.analytics.customDimensions.evars.eVar1 IS NOT NULL
+  AND productListItems[0]._experience.analytics.event1to100.event1.value IS NOT NULL
+LIMIT 10
+```
+
+下一个查询将展开 `productListItems` 数组，并为每个产品返回每个促销eVar和事件。 的 `_id` 字段来显示与原始点击的关系。 的 `_id` 值是数据集的唯一主键。
+
+```sql
+SELECT
+  _id,
+  productItem._experience.analytics.customDimensions.evars.eVar1,
+  productItem._experience.analytics.event1to100.event1.value
+FROM (
+  SELECT
+    _id,
+    explode(productListItems) as productItem
+  FROM adobe_analytics_midvalues
+  WHERE TIMESTAMP = to_timestamp('2019-07-23')
+  AND productListItems[0].SKU IS NOT NULL
+  AND productListItems[0]._experience.analytics.customDimensions.evars.eVar1 IS NOT NULL
+  AND productListItems[0]._experience.analytics.event1to100.event1.value IS NOT NULL
+)
+LIMIT 20
+```
+
+>[!NOTE]
+>
+> 如果尝试检索当前数据集中不存在的字段，则会出现“无此类结构字段”错误。 评估错误消息中返回的原因以标识可用字段，然后更新查询并重新运行。
+>
+>
+```console
+>ERROR: ErrorCode: 08P01 sessionId: XXXX queryId: XXXX Unknown error encountered. Reason: [No such struct field evar1 in eVar10, eVar13, eVar62, eVar88, eVar2;]
+>```
+
+### 转化语法
+
+在Adobe Analytics中找到的另一种类型的推销变量是转化语法。 使用产品语法时，会在收集值的同时收集产品，但这要求数据显示在同一页面上。 在某些情况下，数据会在与产品相关的转化或关注事件之前发生在页面上。 例如，请考虑产品查找方法的用例。
+
+1. 用户执行和内部搜索“winter hat”，以将启用“转化语法”的促销eVar6设置为“内部搜索：winter hat”
+2. 用户单击“华夫饼”，然后登陆产品详细信息页面。\
+   a.这里着陆会 `Product View` 花12.99美元举办“华夫饼豆”活动。\
+   b.因为 `Product View` 将配置为捆绑事件，产品“华夫饼”现在绑定到“内部搜索：冬帽”的eVar6值。 无论何时收集“华夫饼豆”产品，都会将其与“内部搜索：冬天帽”关联，直到(1)达到过期设置或(2)设置了新eVar6值，并且该产品再次发生捆绑事件。
+3. 用户将产品添加到购物车，并触发 `Cart Add` 事件。
+4. 用户对“夏季衬衫”执行另一次内部搜索，该搜索会将启用“转化语法”的促销eVar6设置为“内部搜索：夏季衬衫”
+5. 用户单击“sporty t-shirt”，然后登陆产品详细信息页面。\
+   a.这里着陆会 `Product View` “sporty t-t-thirt”活动，售价19.99美元。\
+   b.的 `Product View` 事件仍是我们的捆绑事件，因此现在产品“sporty t-shirt”已绑定到“internal search:summer shirt”的eVar6值，而上一产品“华夫饼燕”仍绑定到“internal search:waffle beanie”的eVar6值。
+6. 用户将产品添加到购物车，并触发 `Cart Add` 事件。
+7. 用户签出了这两个产品。
+
+在报表中，订单、收入、产品查看和购物车加货将针对eVar6进行报告，并与绑定产品的活动保持一致。
+
+| eVar6（产品查找方法） | 收入 | 订购 | 产品查看 | 购物车加货 |
+| ------------------------------ | ------- | ------ | ------------- | ----- |
+| 内部搜索：夏季衬衫 | 19.99 | 1 | 1 | 1 |
+| 内部搜索：冬帽 | 12.99 | 1 | 1 | 1 |
+
+要了解有关使用转化语法的更多信息，请阅读Adobe Analytics文档(位于 [使用转化语法实施eVar](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en#implement-using-conversion-variable-syntax).
+
+以下是用于在 [!DNL Analytics] 数据集：
+
+#### eVar
+
+```console
+_experience.analytics.customDimensions.evars.evar#
+```
+
+- `evar#`:您正在访问的特定eVar变量。
+
+#### 产品
+
+```console
+productListItems[#].sku
+```
+
+- `#`:要访问的数组的索引。
+
+#### 示例查询
+
+以下是一个将值绑定到特定产品和事件对（在此例中为产品查看事件）的示例查询。
+
+```sql
+SELECT
+  endUserIds._experience.aaid.id AS AAID,
+  timestamp,
+  CASE WHEN commerce.productViews.value = 1 THEN ATTRIBUTION_LAST_TOUCH(timestamp, 'bindConversionSyntaxMerchVariable_eVar1', _experience.analytics.customDimensions.eVars.eVar1)
+  OVER(PARTITION BY endUserIds._experience.aaid.id
+       ORDER BY timestamp
+       ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW).value
+  END AS eVar1Bind,
+  EXPLODE(productListItems) AS Product_List,
+  commerce.productViews.value AS prodView,
+  commerce.purchases.value AS purchase
+FROM adobe_analytics_midvalues
+WHERE commerce.productViews.value = 1 OR commerce.purchases.value = 1 OR _experience.analytics.customDimensions.eVars.eVar1 IS NOT NULL
+LIMIT 100
+```
+
+以下是一个示例查询，用于将绑定值保留到相应产品的后续发生次数。 最低的子查询在声明的捆绑事件上与产品建立值关系。 下一个子查询在与相应产品的后续交互中执行该绑定值的归因。 而顶级选择会聚合结果以生成报表。
+
+```sql
+SELECT
+  Product_List.SKU,
+  eVar1101ConversionSyntax,
+  SUM(prodView) AS Product_Views,
+  SUM(purchase) AS Purchases
+FROM
+(
+  SELECT
+    Product_List,
+    ATTRIBUTION_LAST_TOUCH(timestamp, 'ConversionSyntax_eVar1', eVar1Bind)
+      OVER(PARTITION BY AAID, Product_List.SKU
+           ORDER BY timestamp
+           ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW).value
+    AS eVar1ConversionSyntax,
+    prodView,
+    purchase
+  FROM
+  (
+    SELECT
+      endUserIds._experience.aaid.id AS AAID,
+      timestamp,
+      CASE WHEN commerce.productViews.value = 1 THEN ATTRIBUTION_LAST_TOUCH(timestamp, 'bindConversionSyntaxMerchVariable_eVar1', _experience.analytics.customDimensions.eVars.eVar1)
+      OVER(PARTITION BY endUserIds._experience.aaid.id
+           ORDER BY timestamp
+           ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW).value
+      END AS eVar1Bind,
+      EXPLODE(productListItems) AS Product_List,
+      commerce.productViews.value AS prodView,
+      commerce.purchases.value AS purchase
+    FROM adobe_analytics_midvalues
+    WHERE commerce.productViews.value = 1 OR commerce.purchases.value = 1 OR _experience.analytics.customDimensions.eVars.eVar1 IS NOT NULL
+  )
+)
+WHERE eVar1ConversionSyntax IS NOT NULL
+GROUP BY 1, 2
+ORDER BY 3 DESC
+LIMIT 100
+```

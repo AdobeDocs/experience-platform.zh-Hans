@@ -1,15 +1,15 @@
 ---
-title: 增量加载查询示例
+title: 查询服务中的增量加载
 description: 增量加载功能使用匿名块和快照功能，为将数据从数据湖移动到data warehouse提供近乎实时的解决方案，同时忽略匹配的数据。
 exl-id: 1418d041-29ce-4153-90bf-06bd8da8fb78
-source-git-commit: e5a79db157524d014c9a07d2bf5907a5544e7b77
+source-git-commit: 7087991c7a3daad57c5acd92a20c7024a1152c7e
 workflow-type: tm+mt
-source-wordcount: '687'
+source-wordcount: '688'
 ht-degree: 0%
 
 ---
 
-# 增量数据加载查询示例
+# 查询服务中的增量加载
 
 增量加载设计模式是用于管理数据的解决方案。 该模式仅处理自上次加载执行以来创建或修改的数据集中的信息。
 

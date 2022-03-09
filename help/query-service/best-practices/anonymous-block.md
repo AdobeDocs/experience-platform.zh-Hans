@@ -1,15 +1,15 @@
 ---
-title: 匿名块查询示例
+title: 查询服务中的匿名块
 description: 匿名块是Adobe Experience Platform查询服务支持的SQL语法，它允许您高效执行一系列查询
 exl-id: ec497475-9d2b-43aa-bcf4-75a430590496
-source-git-commit: 83b9aad78bcbf6e40d3059607a3779b6f1a2083f
+source-git-commit: 7087991c7a3daad57c5acd92a20c7024a1152c7e
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '491'
 ht-degree: 0%
 
 ---
 
-# 匿名块的查询示例
+# 查询服务中的匿名块
 
 Adobe Experience Platform查询服务支持匿名块。 匿名块功能允许您链接一个或多个按顺序执行的SQL语句。 它们还允许使用例外处理选项。
 
@@ -60,4 +60,4 @@ $$;
 
 通过阅读本文档，您现在可以清楚地了解匿名块及其结构。 [有关查询执行的详细信息](./writing-queries.md)，请阅读有关查询服务中查询执行的指南。
 
-有关查询服务中可使用的查询示例，请阅读 [Adobe Analytics示例查询](./adobe-analytics.md), [Adobe Target示例查询](./adobe-target.md)或 [ExperienceEvent示例查询](./experience-event-queries.md).
+您还应该阅读 [如何将匿名块与增量加载设计模式一起使用](./incremental-load.md) 以提高查询效率。
