@@ -1,149 +1,165 @@
 ---
-keywords: Experience Platform；主页；智能服务；热门主题；智能服务；智能服务
+keywords: Experience Platform;home;Intelligent Services;popular topics;intelligent service;Intelligent service
 solution: Experience Platform, Intelligent Services
-title: 准备数据以在智能服务中使用
+title: Prepare Data for Use in Intelligent Services
 topic-legacy: Intelligent Services
-description: 为了使智能服务能够从营销事件数据中发现洞察，必须在语义上对数据进行扩充并以标准结构进行维护。 智能服务使用体验数据模型(XDM)架构来实现此目的。
+description: In order for Intelligent Services to discover insights from your marketing events data, the data must be semantically enriched and maintained in a standard structure. Intelligent Services use Experience Data Model (XDM) schemas in order to achieve this.
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-source-git-commit: aa73f8f4175793e82d6324b7c59bdd44bf8d20f9
+source-git-commit: 5555ee940a1ccef25a7ea6d0786f9e807b8382c7
 workflow-type: tm+mt
-source-wordcount: '2766'
+source-wordcount: '2919'
 ht-degree: 0%
 
 ---
 
-# 准备数据以在[!DNL Intelligent Services]中使用
+# [!DNL Intelligent Services]
 
-为了[!DNL Intelligent Services]从营销事件数据中发现洞察信息，必须在语义上对数据进行扩充并以标准结构进行维护。 [!DNL Intelligent Services] 利 [!DNL Experience Data Model] 用(XDM)模式来实现此目的。具体而言，[!DNL Intelligent Services]中使用的所有数据集都必须符合消费者体验事件(CEE)XDM架构或使用Adobe Analytics连接器。 此外， Customer AI还支持Adobe Audience Manager连接器。
+[!DNL Intelligent Services][!DNL Intelligent Services][!DNL Experience Data Model][!DNL Intelligent Services]Additionally, Customer AI supports the Adobe Audience Manager connector.
 
-本文档就将营销事件数据从多个渠道映射到CEE架构提供了一般指导，概述了架构内重要字段的信息，以帮助您确定如何将数据有效映射到其结构。 如果您计划使用Adobe Analytics数据，请查看[Adobe Analytics数据准备](#analytics-data)的部分。 如果您计划使用Adobe Audience Manager数据（仅限Customer AI），请查看[AdobeAudience Manger数据准备](#AAM-data)的部分。
+This document provides general guidance on mapping your marketing events data from multiple channels to the CEE schema, outlining information on important fields within the schema to help you determine how to effectively map your data to its structure. [](#analytics-data)[](#AAM-data)
 
-## 数据要求
+## Data Requirements
 
-[!DNL Intelligent Services] 根据您创建的目标，需要不同数量的历史数据。无论如何，您为&#x200B;**all** [!DNL Intelligent Services]准备的数据必须同时包含正面和负面的客户历程/事件。 同时具有负事件和正事件可提高模型精度和准确性。
+[!DNL Intelligent Services]****[!DNL Intelligent Services]Having both negative and positive events improves model precision and accuracy.
 
-例如，如果您使用Customer AI来预测购买产品的倾向，则Customer AI的模型需要成功购买路径的示例和失败路径的示例。 这是因为在模型培训期间， Customer AI会了解哪些事件和历程会导致购买。 此外，还包括未购买的客户执行的操作，例如在将项目添加到购物车时停止其历程的个人。 这些客户可能表现出类似的行为，但是， Customer AI可以提供洞察并深入分析导致倾向得分较高的主要差异和因素。 同样，Attribution AI需要同时使用事件类型和历程类型，才能按接触点位置显示接触点有效性、热门转化路径和划分等量度。
+For example, if you are using Customer AI to predict the propensity to buy a product, the model for Customer AI needs both examples of successful purchase paths and examples of unsuccessful paths. This is because during model training, Customer AI looks to understand what events and journeys lead to a purchase. This also includes the actions taken by customers who did not purchase, such as an individual who stopped their journey at adding an item to the cart. These customers may exhibit similar behaviors however, Customer AI can provide insights and drilldown the major differences and factors that lead to a higher propensity score. Similarly, Attribution AI requires both types of events and journeys in order to display metrics such as touchpoint effectiveness, top conversion paths, and breakdowns by touchpoint position.
 
-有关历史数据要求的更多示例和信息，请访问输入/输出文档中的[Customer AI](./customer-ai/input-output.md#data-requirements)或[Attribution AI](./attribution-ai/input-output.md#data-requirements)历史数据要求部分。
+[](./customer-ai/input-output.md#data-requirements)[](./attribution-ai/input-output.md#data-requirements)
 
-### 拼合数据的准则
+### Guidelines for stitching data
 
-建议您尽可能将用户的事件拼合到通用ID中。 例如，您可能有10个事件中的“id1”用户数据。 之后，同一用户删除了Cookie ID，并在接下来的20个事件中记录为“id2”。 如果您知道id1和id2对应于同一用户，则最佳实践是将所有30个事件与一个通用id拼合在一起。
+It is recommend that you stitch the events of a user across a common id when possible. For example, you may have user data with &quot;id1&quot; across 10 events. Later, the same user deleted the cookie id and is recorded as &quot;id2&quot; across next 20 events. If you know that id1 and id2 correspond to same user, the best practice is to stitch all 30 events with a common id.
 
-如果这不可能，则在创建模型输入数据时，应将每组事件视为不同的用户。 这可确保在模型培训和评分期间获得最佳结果。
+If this is not possible, you should treat each set of events as a different user when creating your model input data. This ensures the best results during model training and scoring.
 
-## 工作流摘要
+## Workflow summary
 
-准备过程会因数据是存储在Adobe Experience Platform中还是存储在外部而异。 此部分概述了在两种情况下需要采取的必要步骤。
+The preparation process varies depending on whether your data is stored in Adobe Experience Platform or externally. This section summarizes the necessary steps you need to take, given either scenario.
 
-### 外部数据准备
+### External data preparation
 
-如果您的数据存储在Experience Platform之外，则需要将数据映射到[消费者体验事件架构](#cee-schema)中的必需字段和相关字段。 可以使用自定义字段组扩展此模式，以更好地捕获客户数据。 映射后，您可以使用消费者ExperienceEvent架构创建数据集，并[将数据摄取到Platform](../ingestion/home.md)。 然后，在配置[!DNL Intelligent Service]时，可以选择CEE数据集。
+[](#cee-schema)This schema can be augmented with custom field groups to better capture your customer data. [](../ingestion/home.md)[!DNL Intelligent Service]
 
-根据您希望使用的[!DNL Intelligent Service]，可能需要不同的字段。 请注意，如果您有可用的数据，则最好将数据添加到字段。 要了解有关必填字段的更多信息，请访问[Attribution AI](./attribution-ai/input-output.md)或[Customer AI](./customer-ai/input-output.md)输入/输出指南。
+[!DNL Intelligent Service]Note that it is a best practice to add data to a field if you have the data available. [](./attribution-ai/input-output.md)[](./customer-ai/input-output.md)
 
-### Adobe Analytics数据准备 {#analytics-data}
+### Adobe Analytics data preparation {#analytics-data}
 
-Customer AI和Attribution AI本地支持Adobe Analytics数据。 要使用Adobe Analytics数据，请按照文档中所述的步骤设置[Analytics源连接器](../sources/tutorials/ui/create/adobe-applications/analytics.md)。
+Customer AI and Attribution AI natively support Adobe Analytics data. [](../sources/tutorials/ui/create/adobe-applications/analytics.md)
 
-在源连接器将您的数据流式传输到Experience Platform后，您便能够在实例配置期间选择Adobe Analytics作为数据源，后跟一个数据集。 连接设置期间，将自动创建所有必需架构字段组和单个字段。 您无需对数据集进行ETL（提取、转换、加载）操作，即可将其转换为CEE格式。
+Once the source connector is streaming your data into Experience Platform, you are able to select Adobe Analytics as a data source followed by a dataset during your instance configuration. All of the required schema field groups and individual fields are automatically created during the connection set up. You do not need to ETL (Extract, Transform, Load) the datasets into the CEE format.
+
+If you compare the data flown through the Adobe Analytics source connector onto Adobe Experience Platform with Adobe Analytics data, you may notice some discrepancies. The Analytics Source connector might drop rows during the transformation to an Experience Data Model (XDM) schema. There can be multiple reasons for the whole row to be unfit for transformation which include missing timestamps, missing personIDs, invalid or large person IDs, invalid analytic values, and more.
+
+[](https://www.adobe.com/go/compare-aa-data-to-cja-data)This article is designed to help you diagnose and solve for those differences so that you and your team can use Adobe Experience Platform data for Intelligent Services unimpeded by concerns about data integrity.
+
+In Adobe Experience Platform Query Services, run the following Total Records between start and end timestamp by channel.typeAtSource query to find the count by marketing channels.
+
+```SELECT channel.typeAtSource as typeAtSource,
+       Count(_id) AS Records 
+FROM  df_hotel
+WHERE timestamp>=from_utc_timestamp('2021-05-15','UTC')
+        AND timestamp<from_utc_timestamp('2022-01-10','UTC')
+        AND timestamp IS NOT NULL
+        AND enduserids._experience.aaid.id IS NOT NULL
+GROUP BY channel.typeAtSource
+```
 
 >[!IMPORTANT]
 >
->Adobe Analytics连接器最多需要四周时间才能回填数据。 如果您最近设置了连接，则应验证数据集是否具有客户或Attribution AI所需的最小数据长度。 请查看[Customer AI](./customer-ai/input-output.md#data-requirements)或[Attribution AI](./attribution-ai/input-output.md#data-requirements)中的历史数据部分，并验证您的预测目标有足够的数据。
+>The Adobe Analytics connector takes up to four weeks to backfill data. If you recently set up a connection you should verify that the dataset has the minimum length of data required for Customer or Attribution AI. [](./customer-ai/input-output.md#data-requirements)[](./attribution-ai/input-output.md#data-requirements)
 
-### Adobe Audience Manager数据准备（仅限Customer AI） {#AAM-data}
+### Adobe Audience Manager data preparation (Customer AI only) {#AAM-data}
 
-Customer AI本地支持Adobe Audience Manager数据。 要使用Audience Manager数据，请按照文档中所述的步骤设置[Audience Manager源连接器](../sources/tutorials/ui/create/adobe-applications/audience-manager.md)。
+Customer AI natively supports Adobe Audience Manager data. [](../sources/tutorials/ui/create/adobe-applications/audience-manager.md)
 
-在源连接器将您的数据流式传输到Experience Platform后，您便能够在Customer AI配置期间选择Adobe Audience Manager作为数据源，后跟一个数据集。 连接设置期间，将自动创建所有架构字段组和单个字段。 您无需对数据集进行ETL（提取、转换、加载）操作，即可将其转换为CEE格式。
+Once the source connector is streaming your data into Experience Platform, you are able to select Adobe Audience Manager as a data source followed by a dataset during your Customer AI configuration. All of the schema field groups and individual fields are automatically created during the connection set up. You do not need to ETL (Extract, Transform, Load) the datasets into the CEE format.
 
 >[!IMPORTANT]
 >
->如果您最近设置了一个连接器，则应验证数据集是否具有所需的最小数据长度。 请查看[输入/输出文档](./customer-ai/input-output.md)中有关Customer AI的历史数据部分，并验证您是否有足够的数据来实现预测目标。
+>If you recently set up a connector you should verify that the dataset has the minimum length of data required. [](./customer-ai/input-output.md)
 
-### [!DNL Experience Platform] 数据准备
+### [!DNL Experience Platform]
 
-如果您的数据已存储在[!DNL Platform]中，并且没有通过Adobe Analytics或Adobe Audience Manager（仅限Customer AI）源连接器进行流式传输，请执行以下步骤。 我们仍建议您了解CEE模式。
+[!DNL Platform]It is still recommended you understand the CEE schema.
 
-1. 查看[消费者体验事件架构](#cee-schema)的结构，并确定数据是否可以映射到其字段。
-2. 请联系Adobe咨询服务部门，以帮助将您的数据映射到架构并将其摄取到[!DNL Intelligent Services]中，或者，如果您希望自己映射数据，请按照本指南](#mapping)中的步骤操作。[
+1. [](#cee-schema)
+2. [!DNL Intelligent Services][](#mapping)
 
-## 了解CEE架构 {#cee-schema}
+## Understanding the CEE schema {#cee-schema}
 
-消费者体验事件架构描述个人的行为，因为它与数字营销事件（Web或移动设备）以及在线或离线商务活动相关。 [!DNL Intelligent Services]需要使用此架构，因为其语义上定义得很好的字段（列），从而避免出现任何未知名称，否则这些名称会使数据变得不那么清晰。
+The Consumer ExperienceEvent schema describes the behavior of an individual as it relates to digital marketing events (web or mobile) as well as online or offline commerce activity. [!DNL Intelligent Services]
 
-与所有XDM ExperienceEvent架构一样，CEE架构可在发生事件（或事件集）时捕获系统基于时间序列的状态，包括所涉及主题的时间点和身份。 体验事件是所发生事件的事实记录，因此它们不可更改，不经聚合或解释即表示所发生事件。
+The CEE schema, like all XDM ExperienceEvent schemas, captures the time-series-based state of the system when an event (or set of events) occurred, including the point in time and the identity of the subject involved. Experience Events are fact records of what occurred, and thus they are immutable and represent what happened without aggregation or interpretation.
 
-[!DNL Intelligent Services] 利用此架构中的几个关键字段从营销事件数据生成分析，所有这些数据均可在根级别找到并展开以显示其必需子字段。
+[!DNL Intelligent Services]
 
 ![](./images/data-preparation/schema-expansion.gif)
 
-与所有XDM架构一样，CEE架构字段组也是可扩展的。 换言之，可以将其他字段添加到CEE字段组，并且如有必要，可以将不同的变体包含在多个架构中。
+Like all XDM schemas, the CEE schema field group is extensible. In other words, additional fields can be added to the CEE field group, and different variations can be included in multiple schemas if necessary.
 
-可在[公共XDM存储库](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)中找到字段组的完整示例。 此外，您还可以查看和复制以下[JSON文件](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)的示例，以了解如何构建数据以符合CEE架构。 在了解下面章节中概述的关键字段时，请参阅这两个示例，以确定如何将您自己的数据映射到架构。
+[](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-consumer.schema.md)[](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)Refer to both of these examples as you learn about the key fields outlined in the section below, in order to determine how you can map your own data to the schema.
 
-## 关键字段
+## Key fields
 
-CEE字段组中有几个关键字段，应使用这些字段来生成有用的分析。 [!DNL Intelligent Services]此部分介绍这些字段的用例和预期数据，并提供指向参考文档的链接以获取更多示例。
+[!DNL Intelligent Services]This section describes the use case and expected data for these fields, and provides links to reference documentation for further examples.
 
-### 必填字段
+### Mandatory fields
 
-尽管强烈建议使用所有键字段，但有两个字段是&#x200B;**必填**，以便[!DNL Intelligent Services]正常工作：
+****[!DNL Intelligent Services]
 
-* [主标识字段](#identity)
+* [A primary identity field](#identity)
 * [xdm:timestamp](#timestamp)
-* [xdm:channel](#channel) (仅对Attribution AI必需)
+* [](#channel)
 
-#### 主标识 {#identity}
+#### Primary identity {#identity}
 
-架构中的其中一个字段必须设置为主标识字段，该字段允许[!DNL Intelligent Services]将时间序列数据的每个实例链接到个人。
+[!DNL Intelligent Services]
 
-您必须根据数据的来源和性质确定要用作主标识的最佳字段。 标识字段必须包含&#x200B;**标识命名空间**，以指示字段期望作为值的身份数据类型。 一些有效的命名空间值包括：
+You must determine the best field to use as a primary identity based on the source and nature of your data. **** Some valid namespace values include:
 
 * &quot;电子邮件&quot;
 * &quot;phone&quot;
-* &quot;mcid&quot;(用于Adobe Audience Manager ID)
-* &quot;aaid&quot;(用于Adobe Analytics ID)
+* &quot;mcid&quot; (for Adobe Audience Manager IDs)
+* &quot;aaid&quot; (for Adobe Analytics IDs)
 
-如果不确定应将哪个字段用作主标识，请联系Adobe咨询服务部门以确定最佳解决方案。 如果未设置主标识，则Intelligent Service应用程序会使用以下默认行为：
+If you are unsure which field you should use as a primary identity, contact Adobe Consulting Services to determine the best solution. If a primary identity is not set, the Intelligent Service application uses the following default behavior:
 
-| 默认 | Attribution AI | 客户人工智能 |
+| 默认 | Attribution AI | Customer AI |
 | --- | --- | --- |
-| 标识列 | `endUserIDs._experience.aaid.id` | `endUserIDs._experience.mcid.id` |
+| Identity column | `endUserIDs._experience.aaid.id` | `endUserIDs._experience.mcid.id` |
 | 命名空间 | AAID | ECID |
 
-要设置主标识，请从&#x200B;**[!UICONTROL 架构]**&#x200B;选项卡中导航到您的架构，然后选择架构名称超链接以打开&#x200B;**[!DNL Schema Editor]**。
+******[!DNL Schema Editor]**
 
-![导航到架构](./images/data-preparation/navigate_schema.png)
+![](./images/data-preparation/navigate_schema.png)
 
-接下来，导航到要作为主标识的字段，并将其选中。 将打开该字段的&#x200B;**[!UICONTROL 字段属性]**&#x200B;菜单。
+Next, navigate to the field you wish to as a primary identity and select it. ****
 
-![选择字段](./images/data-preparation/find_field.png)
+![](./images/data-preparation/find_field.png)
 
-在&#x200B;**[!UICONTROL 字段属性]**&#x200B;菜单中，向下滚动，直到找到&#x200B;**[!UICONTROL Identity]**&#x200B;复选框。 选中该框后，将显示将所选标识设置为&#x200B;**[!UICONTROL 主标识]**&#x200B;的选项。 也选中此框。
+************ Select this box as well.
 
-![选中复选框](./images/data-preparation/set_primary_identity.png)
+![](./images/data-preparation/set_primary_identity.png)
 
-接下来，您必须从下拉列表中预定义的命名空间列表中提供&#x200B;**[!UICONTROL Identity namespace]**。 在此示例中，选择ECID名称空间是因为正在使用Adobe Audience Manager ID `mcid.id`。 选择&#x200B;**[!UICONTROL Apply]**&#x200B;以确认更新，然后选择右上角的&#x200B;**[!UICONTROL Save]**&#x200B;以保存对架构所做的更改。
+****`mcid.id`********
 
-![保存更改](./images/data-preparation/select_namespace.png)
+![](./images/data-preparation/select_namespace.png)
 
 #### xdm:timestamp {#timestamp}
 
-此字段表示事件发生的日期时间。 此值必须作为字符串提供，符合ISO 8601标准。
+This field represents the datetime at which the event occurred. This value must be provided as a string, as per the ISO 8601 standard.
 
 #### xdm:channel {#channel}
 
 >[!NOTE]
 >
->只有在使用Attribution AI时，此字段才是必填字段。
+>This field is only mandatory when using Attribution AI.
 
-此字段表示与ExperienceEvent相关的营销渠道。 该字段包含有关渠道类型、媒体类型和位置类型的信息。
+This field represents the marketing channel related to the ExperienceEvent. The field includes information about the channel type, media type, and location type.
 
 ![](./images/data-preparation/channel.png)
 
-**示例架构**
+****
 
 ```json
 {
@@ -154,34 +170,34 @@ CEE字段组中有几个关键字段，应使用这些字段来生成有用的�
 }
 ```
 
-有关`xdm:channel`每个必需子字段的完整信息，请参阅[体验渠道架构](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/channels/channel.schema.md)规范。 有关某些示例映射，请参阅](#example-channels)下的[表。
+`xdm:channel`[](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/channels/channel.schema.md)[](#example-channels)
 
-#### 渠道映射示例 {#example-channels}
+#### Example channel mappings {#example-channels}
 
-下表提供了映射到`xdm:channel`架构的营销渠道的一些示例：
+`xdm:channel`
 
 | 渠道 | `@type` | `mediaType` | `mediaAction` |
 | --- | --- | --- | --- |
-| 付费搜索 | https:/<span>/ns.adobe/com/xdm/channel-types/search | 已付 | 点击 |
-| 社交 — 营销 | https:/<span>/ns.adobe/com/xdm/channel-types/social | 挣得 | 点击 |
-| 显示 | https:/<span>/ns.adobe/com/xdm/channel-types/display | 已付 | 点击 |
-| 电子邮件 | https:/<span>/ns.adobe/com/xdm/channel-types/email | 已付 | 点击 |
-| 内部反向链接 | https:/<span>/ns.adobe/com/xdm/channel-types/direct | 自有 | 点击 |
-| 显示显示显示到达 | https:/<span>/ns.adobe/com/xdm/channel-types/display | 已付 | 展示次数 |
-| QR代码重定向 | https:/<span>/ns.adobe/com/xdm/channel-types/direct | 自有 | 点击 |
-| 移动设备 | https:/<span>/ns.adobe/com/xdm/channel-types/mobile | 自有 | 点击 |
+| 付费搜索 | <span> | paid | clicks |
+| Social - Marketing | <span> | earned | clicks |
+| 显示 | <span> | paid | clicks |
+| 电子邮件 | <span> | paid | clicks |
+| Internal Referrer | <span> | owned | clicks |
+| Display ViewThrough | <span> | paid | impressions |
+| QR Code Redirect | <span> | owned | clicks |
+| 移动设备 | <span> | owned | clicks |
 
-### 推荐字段
+### Recommended fields
 
-本节概述了其余的关键字段。 虽然[!DNL Intelligent Services]不一定需要这些字段才能正常工作，但强烈建议您尽可能多地使用这些字段，以便获得更丰富的洞察信息。
+The remainder of the key fields are outlined in this section. [!DNL Intelligent Services]
 
 #### xdm:productListItems
 
-此字段是表示客户选择的产品的项目数组，包括产品SKU、名称、价格和数量。
+This field is an array of items which represent products selected by a customer, including the product SKU, name, price, and quantity.
 
 ![](./images/data-preparation/productListItems.png)
 
-**示例架构**
+****
 
 ```json
 [
@@ -202,15 +218,15 @@ CEE字段组中有几个关键字段，应使用这些字段来生成有用的�
 ]
 ```
 
-有关`xdm:productListItems`每个必需子字段的完整信息，请参阅[商务详细信息架构](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md)规范。
+`xdm:productListItems`[](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md)
 
 #### xdm:commerce
 
-此字段包含有关ExperienceEvent的特定于商务的信息，包括采购订单编号和付款信息。
+This field contains commerce-specific information about the ExperienceEvent, including the purchase order number and payment information.
 
 ![](./images/data-preparation/commerce.png)
 
-**示例架构**
+****
 
 ```json
 {
@@ -240,15 +256,15 @@ CEE字段组中有几个关键字段，应使用这些字段来生成有用的�
   }
 ```
 
-有关`xdm:commerce`每个必需子字段的完整信息，请参阅[商务详细信息架构](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md)规范。
+`xdm:commerce`[](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-commerce.schema.md)
 
 #### xdm:web
 
-此字段表示与ExperienceEvent相关的Web详细信息，如交互、页面详细信息和反向链接。
+This field represents web details relating to the ExperienceEvent, such as the interaction, page details, and referrer.
 
 ![](./images/data-preparation/web.png)
 
-**示例架构**
+****
 
 ```json
 {
@@ -270,15 +286,15 @@ CEE字段组中有几个关键字段，应使用这些字段来生成有用的�
 }
 ```
 
-有关`xdm:productListItems`的每个必需子字段的完整信息，请参阅[ExperienceEvent Web详细信息架构](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-web.schema.md)规范。
+`xdm:productListItems`[](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/experienceevent-web.schema.md)
 
 #### xdm:marketing
 
-此字段包含与接触点处于活动状态的营销活动相关的信息。
+This field contains information related to marketing activities that are active with the touchpoint.
 
 ![](./images/data-preparation/marketing.png)
 
-**示例架构**
+****
 
 ```json
 {
@@ -288,65 +304,65 @@ CEE字段组中有几个关键字段，应使用这些字段来生成有用的�
 }
 ```
 
-有关`xdm:productListItems`每个必需子字段的完整信息，请参阅[营销部门](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/marketing.schema.md)规范。
+`xdm:productListItems`[](https://github.com/adobe/xdm/blob/797cf4930d5a80799a095256302675b1362c9a15/docs/reference/context/marketing.schema.md)
 
-## 映射和摄取数据 {#mapping}
+## Mapping and ingesting data {#mapping}
 
-确定营销事件数据是否可以映射到CEE架构后，下一步是确定要将哪些数据引入[!DNL Intelligent Services]。 [!DNL Intelligent Services]中使用的所有历史数据都必须在四个月数据的最小时间范围内，另外还要加上预期作为回顾期的天数。
+[!DNL Intelligent Services][!DNL Intelligent Services]
 
-在确定要发送的数据范围后，请联系Adobe咨询服务部门，以帮助将您的数据映射到架构并将其摄取到服务中。
+After deciding the range of data you want to send, contact Adobe Consulting Services to help map your data to the schema and ingest it into the service.
 
-如果您拥有[!DNL Adobe Experience Platform]订阅，并且想要自行映射和摄取数据，请按照以下部分中所述的步骤操作。
+[!DNL Adobe Experience Platform]
 
-### 使用Adobe Experience Platform
+### Using Adobe Experience Platform
 
 >[!NOTE]
 >
->以下步骤需要订阅Experience Platform。 如果您无权访问平台，请跳到[后续步骤](#next-steps)部分。
+>The steps below require a subscription to Experience Platform. [](#next-steps)
 
-本节概述了将数据映射和摄取到Experience Platform中以在[!DNL Intelligent Services]中使用的工作流，包括指向教程的详细步骤链接。
+[!DNL Intelligent Services]
 
-#### 创建CEE架构和数据集
+#### Create a CEE schema and dataset
 
-当您准备好开始准备数据以进行摄取时，第一步是创建一个新的XDM架构，该架构将采用CEE字段组。 以下教程将指导在UI或API中创建新架构的过程：
+When you are ready to start preparing your data for ingestion, the first step is to create a new XDM schema that employs the CEE field group. The following tutorials walk through the process of creating a new schema in the UI or API:
 
-* [在UI中创建架构](../xdm/tutorials/create-schema-ui.md)
-* [在API中创建架构](../xdm/tutorials/create-schema-api.md)
+* [Create a schema in the UI](../xdm/tutorials/create-schema-ui.md)
+* [Create a schema in the API](../xdm/tutorials/create-schema-api.md)
 
 >[!IMPORTANT]
 >
->上述教程遵循创建模式的通用工作流。 为架构选择类时，必须使用&#x200B;**XDM ExperienceEvent类**。 选择此类后，您可以将CEE字段组添加到架构中。
+>The tutorials above follow a generic workflow for creating a schema. **** Once this class has been chosen, you can then add the CEE field group to the schema.
 
-将CEE字段组添加到架构后，您可以根据数据中其他字段的需要，添加其他字段组。
+After adding the CEE field group to the schema, you can add other field groups as required for additional fields within your data.
 
-创建并保存架构后，您便可以基于该架构创建新数据集。 以下教程将演示在UI或API中创建新数据集的过程：
+Once you have created and saved the schema, you can create a new dataset based on that schema. The following tutorials walk through the process of creating a new dataset in the UI or API:
 
-* [在UI中创建数据集](../catalog/datasets/user-guide.md#create) （按照工作流程使用现有架构）
-* [在API中创建数据集](../catalog/datasets/create.md)
+* [](../catalog/datasets/user-guide.md#create)
+* [Create a dataset in the API](../catalog/datasets/create.md)
 
-创建数据集后，您可以在&#x200B;**[!UICONTROL Datasets]**&#x200B;工作区的Platform UI中找到该数据集。
+****
 
 ![](images/data-preparation/dataset-location.png)
 
-#### 向数据集添加标识字段
+#### Add identity fields to the dataset
 
-如果从[!DNL Adobe Audience Manager]、[!DNL Adobe Analytics]或其他外部源导入数据，则可以选择将架构字段设置为标识字段。 要将架构字段设置为标识字段，请查看有关在[UI教程](../xdm/tutorials/create-schema-ui.md#identity-field)或[API教程](../xdm/tutorials/create-schema-api.md#define-an-identity-descriptor)中设置标识字段的部分，以创建架构。
+[!DNL Adobe Audience Manager][!DNL Adobe Analytics][](../xdm/tutorials/create-schema-ui.md#identity-field)[](../xdm/tutorials/create-schema-api.md#define-an-identity-descriptor)
 
-如果要从本地CSV文件摄取数据，则可以跳到[映射中的下一部分，然后摄取数据](#ingest)。
+[](#ingest)
 
-#### 映射和摄取数据 {#ingest}
+#### Map and ingest data {#ingest}
 
-创建CEE架构和数据集后，您可以开始将数据表映射到架构，并将该数据摄取到平台。 有关如何在UI中执行此操作的步骤，请参阅有关[将CSV文件映射到XDM架构](../ingestion/tutorials/map-a-csv-file.md)的教程。 在使用您自己的数据之前，您可以使用以下[示例JSON文件](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)来测试摄取流程。
+After creating a CEE schema and dataset, you can start mapping your data tables to the schema and ingest that data into Platform. [](../ingestion/tutorials/map-a-csv-file.md)[](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json)
 
-填充数据集后，可以使用同一数据集摄取其他数据文件。
+Once a dataset has been populated, the same dataset can be used to ingest additional data files.
 
-如果您的数据存储在受支持的第三方应用程序中，您还可以选择创建[源连接器](../sources/home.md)以将营销事件数据实时摄取到[!DNL Platform]中。
+[](../sources/home.md)[!DNL Platform]
 
 ## 后续步骤 {#next-steps}
 
-本文档就准备数据以在[!DNL Intelligent Services]中使用提供了一般指导。 如果您需要根据您的用例进行其他咨询，请联系Adobe咨询支持。
+[!DNL Intelligent Services]If you require additional consulting based on your use case, please contact Adobe Consulting Support.
 
-成功使用客户体验数据填充数据集后，可以使用[!DNL Intelligent Services]生成分析。 请参阅以下文档以开始操作：
+[!DNL Intelligent Services]Refer to the following documents to get started:
 
-* [Attribution AI 概述](./attribution-ai/overview.md)
-* [Customer AI 概述](./customer-ai/overview.md)
+* [归因人工智能概述](./attribution-ai/overview.md)
+* [客户人工智能概述](./customer-ai/overview.md)
