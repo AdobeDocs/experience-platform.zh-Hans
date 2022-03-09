@@ -5,9 +5,9 @@ title: 查询服务疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档包含有关您遇到的常见错误代码以及可能原因的信息。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 7087991c7a3daad57c5acd92a20c7024a1152c7e
+source-git-commit: 38d0c34e7af2466fa005c8adaf3bd9e1d9fd78e1
 workflow-type: tm+mt
-source-wordcount: '3293'
+source-wordcount: '3292'
 ht-degree: 1%
 
 ---
@@ -489,8 +489,7 @@ FROM <table_name>
 
 ## 第三方工具 {#third-party-tools}
 
-+++答案本节包含有关使用第三方工具(如PSQL和Power BI)的信息。
-+++
+本节包含有关使用第三方工具(如PSQL和Power BI)的信息。
 
 ### 是否可以将查询服务连接到第三方工具？
 
