@@ -4,10 +4,10 @@ user-guide-title: 标记帮助
 breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
-source-git-commit: 7cbf8cfa4ac7aeff9f1ed56777212f5203df2ce9
+source-git-commit: 66975d2352062e4abe1af35d7a7130a5c85188d0
 workflow-type: tm+mt
-source-wordcount: '382'
-ht-degree: 68%
+source-wordcount: '386'
+ht-degree: 69%
 
 ---
 
@@ -44,6 +44,7 @@ ht-degree: 68%
    * [库](./ui/publishing/libraries.md)
    * [自托管库](./ui/publishing/hosts/self-hosting-libraries.md)
    * [重新发布库](./ui/publishing/republish.md)
+   * [Premium CDN支持（测试版）](./ui/publishing/premium-cdn.md)
 * 客户端信息 {#client-side}
    * [概述](./ui/client-side/overview.md)
    * [异步部署](./ui/client-side/asynchronous-deployment.md)
@@ -191,6 +192,6 @@ ht-degree: 68%
 * [术语更新](./term-updates.md)
 * 发行说明 {#release-notes}
    * [最新](./release-notes/current.md)
-   * [2020版发行说明](./release-notes/2020.md)
-   * [2019版发行说明](./release-notes/2019.md)
+   * [2020 年发行说明](./release-notes/2020.md)
+   * [2019 年发行说明](./release-notes/2019.md)
    * [2018 版发行说明](./release-notes/2018.md)

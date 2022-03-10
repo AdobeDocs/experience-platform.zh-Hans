@@ -1,10 +1,11 @@
 ---
 title: 环境
 description: 了解标记环境的概念及其在Adobe Experience Platform中的工作方式。
-source-git-commit: 272cf2906b44ccfeca041d9620ac0780e24ad1ae
+exl-id: 0bf641c9-412e-4737-9b76-232d980385b2
+source-git-commit: 66975d2352062e4abe1af35d7a7130a5c85188d0
 workflow-type: tm+mt
 source-wordcount: '1468'
-ht-degree: 71%
+ht-degree: 73%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 71%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 标记环境定义您在网站或应用程序上部署的库内部版本的几个关键方面：
 
@@ -28,7 +29,7 @@ ht-degree: 71%
 
 ## 环境类型
 
-标记支持三种不同的环境类型，每种类型与[发布工作流](./publishing-flow.md)中的不同状态相对应：
+标记支持三种不同的环境类型，每种类型对应于 [发布工作流程](./publishing-flow.md):
 
 | 环境类型 | 描述 |
 | --- | --- |
@@ -42,7 +43,7 @@ ht-degree: 71%
 >
 >每个环境一次只能分配一个库内部版本。但是，预计随着时间的推移，单个环境将包含许多不同的内部版本，因为您将通过发布工作流程移动这些内部版本，并根据需要在各个环境之间重新分配内部版本。
 
-## 安装
+## 安装 {#installation}
 
 每个环境都有一组用于将其连接到应用程序的说明。对于 Web 资产，这些说明会提供嵌入代码。对于移动资产，这些说明会提供实例化您所使用的库以及在运行时检索配置所需的代码。
 
@@ -52,7 +53,7 @@ ht-degree: 71%
 >
 >例如，Web 资产的生产嵌入代码支持浏览器缓存，而开发嵌入代码和暂存嵌入代码则不支持。因此，您不应在高流量或生产环境中使用开发或暂存嵌入代码。
 
-要访问环境的安装说明，请导航到资产的&#x200B;**[!UICONTROL Environments]**&#x200B;选项卡，然后为该环境选择&#x200B;**[!UICONTROL Install]**&#x200B;图标。
+要访问环境的安装说明，请导航到 **[!UICONTROL 环境]** 选项卡，然后选择 **[!UICONTROL 安装]** 图标。
 
 ![](./images/environments/install-buttons.png)
 
@@ -80,23 +81,23 @@ ht-degree: 71%
 * **存档设置**：系统应输出一组可部署的文件，还是应将其压缩为存档格式。
 * **嵌入代码**：要嵌入到网站页面 HTML 中的 `<script>` 代码，用于在运行时部署库内部版本。
 
-在[!UICONTROL Environments]选项卡中，选择列出的环境以显示其配置控件。
+在 [!UICONTROL 环境] 选项卡上，选择列出的环境以显示其配置控件。
 
 ![](./images/environments/environment-config.png)
 
 ### Host {#host}
 
-选择&#x200B;**[!UICONTROL Host]** ，从下拉菜单中为环境选择预配置的主机。
+选择 **[!UICONTROL 主机]** 从下拉菜单中为环境选择预配置的主机。
 
 ![](./images/environments/select-host.png)
 
-创建内部版本后，该内部版本将传递到您为分配的主机指定的位置。 有关如何在数据收集UI中创建和配置主机的信息，请参阅[主机概述](./hosts/hosts-overview.md)。
+创建内部版本后，该内部版本将传递到您为分配的主机指定的位置。 有关如何在数据收集UI中创建和配置主机的信息，请参阅 [主机概述](./hosts/hosts-overview.md).
 
 ### 存档设置 {#archive}
 
 大多数内部版本由多个文件组成。多文件内部版本包含一个主库文件（已链接到嵌入代码中），该文件包含根据需要纳入的对其他文件的内部引用。
 
-使用&#x200B;**[!UICONTROL 创建存档]**&#x200B;按钮可切换环境的存档设置。 默认情况下，存档选项处于关闭状态，内部版本以按原样执行的格式交付（Web 资产采用 JavaScript 格式，移动资产则采用 JSON 格式）。
+的 **[!UICONTROL 创建存档]** 按钮可切换环境的存档设置。 默认情况下，存档选项处于关闭状态，内部版本以按原样执行的格式交付（Web 资产采用 JavaScript 格式，移动资产则采用 JSON 格式）。
 
 如果选择打开存档设置，则 UI 中会显示其他配置设置，这样一来，如果您使用的是自托管，则可以选择性地加密存档文件并定义库路径。
 
@@ -112,7 +113,7 @@ ht-degree: 71%
 
 ### 嵌入代码 {#embed-code}
 
-嵌入代码是`<script>`标记，必须将其放置在网站页面的`<head>`部分中，才能加载和执行您构建的代码。 每个环境配置都会自动生成自己的嵌入代码，因此您只需将其复制并粘贴到您希望运行标记的页面上即可。
+嵌入代码是 `<script>` 标记 `<head>` 网站页面的某些部分，以便加载和执行您构建的代码。 每个环境配置都会自动生成自己的嵌入代码，因此您只需将其复制并粘贴到您希望运行标记的页面上即可。
 
 查看安装说明时，您可以选择让脚本同步或异步加载库文件。此设置不是永久性的，且不会反映您在网站上实际实施标记的方式。 它而是仅用于显示安装环境的适当方式。
 
@@ -148,19 +149,19 @@ ht-degree: 71%
 
 首次创建资产时会为该资产自动分配三个环境：开发、暂存和生产。这些环境足以运行发布工作流程。但是，您可以根据需要添加其他开发环境，因为这对于同时有多个开发人员处理不同项目的较大团队而言非常有用。
 
-在属性的[!UICONTROL Environments]选项卡上，选择&#x200B;**[!UICONTROL Add Environment]**。
+在 [!UICONTROL 环境] 选项卡，选择 **[!UICONTROL 添加环境]**.
 
 ![](./images/environments/create-new.png)
 
-在下一个屏幕上，选择&#x200B;**[!UICONTROL Development]**&#x200B;选项。
+在下一个屏幕上，选择 **[!UICONTROL 开发]** 选项。
 
 ![](./images/environments/create-development.png)
 
-在下一个屏幕上，您可以命名新环境，选择主机，并选择存档设置。完成后，选择&#x200B;**[!UICONTROL Save]**&#x200B;以创建环境。
+在下一个屏幕上，您可以命名新环境，选择主机，并选择存档设置。完成后，选择 **[!UICONTROL 保存]** 创建环境。
 
 ![](./images/environments/create-config.png)
 
-此时会重新出现[!UICONTROL Environments]选项卡，并显示新环境的安装说明。
+的 [!UICONTROL 环境] 选项卡，并显示新环境的安装说明。
 
 ![](./images/environments/create-install.png)
 
