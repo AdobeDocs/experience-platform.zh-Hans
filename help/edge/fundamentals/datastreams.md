@@ -3,9 +3,9 @@ title: 为Experience PlatformWeb SDK配置数据流
 description: '了解如何配置数据流。 '
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；edgeConfigId；身份；启用ID同步的容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: c2378c5da73c36e5889d2c83b18194ff239fce96
+source-git-commit: 0d23576097b113fa3b24857467658bdf745be427
 workflow-type: tm+mt
-source-wordcount: '2045'
+source-wordcount: '1940'
 ht-degree: 1%
 
 ---
@@ -107,14 +107,6 @@ ht-degree: 1%
 配置新数据流或选择要查看的现有数据流后，将显示该数据流的详细信息页面。 在此，您可以找到有关数据流（包括其ID）的更多信息。
 
 ![已创建数据流的详细信息页面](../images/datastreams/view-details.png)
-
-创建数据流后，会使用相同的设置自动创建三个关联的环境。 这三个环境包括 `dev`, `stage`和 `prod`，对应于 [标记的默认环境](../../tags/ui/publishing/environments.md). 在将标记库构建到 `dev` 环境中，库会自动使用 `dev` 环境。 您可以根据自己的需求，在单个环境中自由编辑设置。
-
-在SDK实施中， `edgeConfigId` 是一个复合ID，用于指定该数据流中的数据流和特定环境。 例如，要指定 `stage` 具有ID的数据流的环境 `1c86778b-cdba-4684-9903-750e52912ad1`，则使用 `edgeConfigId` `1c86778b-cdba-4684-9903-750e52912ad1:stage`.
-
->[!IMPORTANT]
->
->如果复合ID中不存在环境，则生产环境(`prod`)。
 
 从数据流详细信息屏幕中，您可以 [添加服务](#add-services) 从您有权访问的Adobe Experience Cloud产品中启用各项功能。
 
