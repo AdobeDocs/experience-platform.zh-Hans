@@ -2,10 +2,10 @@
 title: Adobe Experience Cloud Identity Service扩展的发行说明
 description: Adobe Experience Platform中Adobe Experience Cloud Identity Service标记扩展的最新发行说明。
 exl-id: f9bfbed7-1eec-4916-9235-a75b5e2efcf8
-source-git-commit: 1d3abede47c97c9a4f3b18ae25c890c309e942fd
+source-git-commit: 04dfe55fec06d08a0caef7aee5bf8d85c6056149
 workflow-type: tm+mt
-source-wordcount: '521'
-ht-degree: 78%
+source-wordcount: '614'
+ht-degree: 68%
 
 ---
 
@@ -17,13 +17,28 @@ ht-degree: 78%
 
 有关Experience CloudIdentity Service本身，而不只是Adobe Experience Platform标记扩展的发行说明，请参阅： [https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html)
 
-## 2021 年 11 月 3 日
+## 2022年3月9日
 
-### Experience Cloud ID 扩展 5.2.1
+### Experience Cloud ID 扩展 5.4.0
 
 #### **功能**
 
-* 该修补程序修复了在 Google Chrome 浏览器中，从带有 `SameSite=None` 属性的 iFrame 写入 Cookie 的问题。
+* 此版本包含最新的访客5.4.0，该版本具有以下更新：
+
+   * 能够配置 `s_ecid` cookie（使用cookieLifetime配置）
+   * 在子iFrame中加载页面时发生的Firefox浏览器问题的更新
+
+## 2021年10月10日
+
+### Experience Cloud ID 扩展 5.3.1
+
+#### **功能**
+
+* 此版本包含最新的访客5.3.0，该版本具有以下新更新：
+
+   * 更新了生成本地ECID的算法
+   * 最新选择加入功能 `Secure` 和 `SameSite` 隐私cookie标记
+   * 修复了在子iFrame中加载页面时出现的Firefox浏览器问题
 
 ## 2021 年 1 月 12 日
 
@@ -32,6 +47,14 @@ ht-degree: 78%
 #### **功能**
 
 * 在收到同意后，无法更新到VisitorJS 5.2.0修补程序（该修补程序修复了ECID DataElement）。
+
+## 2020 年 11 月 3 日
+
+### Experience Cloud ID 扩展 5.2.1
+
+#### **功能**
+
+* 该修补程序修复了在 Google Chrome 浏览器中，从带有 `SameSite=None` 属性的 iFrame 写入 Cookie 的问题。
 
 ## 2020 年 10 月 27 日
 
