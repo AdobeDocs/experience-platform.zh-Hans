@@ -1,9 +1,10 @@
 ---
 title: 对标记的高级CDN支持
 description: 了解适用于标记的高级CDN功能，以及如何使用该功能在多个地理区域交付内容。
-source-git-commit: 530fc1ad3f389ffb5d77ddf6aa0b0b3208f1d532
+exl-id: 33e36d3b-9e21-44a8-8498-32a5fc20b46b
+source-git-commit: 3843b08a3a047200f02c1ceb17a64a196d4a0287
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '536'
 ht-degree: 0%
 
 ---
@@ -20,21 +21,13 @@ ht-degree: 0%
 
 高级CDN支持是一项付费功能，贵组织必须购买才能启用和使用该功能。 本指南介绍购买此功能后，如何在数据收集UI中配置和使用此功能。
 
-## 为公司启用高级CDN
+## 为贵组织启用高级CDN
 
-Premium CDN在公司级别启用，这意味着您必须拥有公司编辑权限才能启用该功能。
-
-在数据收集UI中，导航到 **[!UICONTROL 标记]** > **[!UICONTROL 公司]**. 从此处，选择要为其启用该功能的公司，然后选择 **[!UICONTROL 配置]** .
-
-![选择要配置的公司](../../images/ui/publishing/premium-cdn/configure-property.png)
-
-在显示的配置对话框中，选择 **[!UICONTROL 启用Premium CDN]** 选择 **[!UICONTROL 保存]** 确认更改。
-
-![启用高级CDN选项](../../images/ui/publishing/premium-cdn/enable-premium-cdn.png)
+Premium CDN在公司级别启用。 贵组织购买高级CDN功能后，Adobe管理员将在数据收集UI中为贵公司启用此功能。
 
 ## 使用更新的嵌入代码重建和安装标记库
 
-启用高级CDN功能并不意味着您的标记资产会立即复制并准备在新区域中使用。 这仅意味着您现在可以选择何时选择启用此功能。
+启用高级CDN后，并不意味着您的标记资产会立即复制并准备在新区域中使用。 这仅意味着您现在可以选择何时选择启用此功能。
 
 >[!IMPORTANT]
 >
