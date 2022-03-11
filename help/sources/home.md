@@ -5,7 +5,7 @@ title: 源连接器概述
 topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 7254c84f1a7f4f45a0098e27515a7a01cae395db
+source-git-commit: 5be496cec28ab99c057834005aa1f014cea7406c
 workflow-type: tm+mt
 source-wordcount: '1006'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 Experience Platform中的源分为以下类别：
 
-### Adobe应用程序
+### Adobe应用程序 {#adobe-applications}
 
 Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adobe Audience Manager)摄取数据。 有关更多信息，请参阅以下相关文档：
 
@@ -38,13 +38,13 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adob
 - [[!DNL Marketo Engage] 连接器概述](connectors/adobe-applications/marketo/marketo.md)
 - [创建 [!DNL Marketo Engage] UI中的源连接](./tutorials/ui/create/adobe-applications/marketo.md)
 
-### 广告
+### 广告 {#advertising}
 
 Experience Platform支持从第三方广告系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [[!DNL Google AdWords]](connectors/advertising/ads.md) 连接器
 
-### 云存储
+### 云存储 {#cloud-storage}
 
 云存储源可以将您自己的数据引入平台，而无需下载、设置或上传。 摄取的数据可以格式为XDM JSON、XDM Parquet或分隔。 流程的每个步骤均使用用户界面集成到源工作流中。 有关更多信息，请参阅以下相关文档：
 
@@ -62,7 +62,7 @@ Experience Platform支持从第三方广告系统摄取数据。 有关特定源
 - [[!DNL Oracle Object Storage] 连接器](connectors/cloud-storage/oracle-object-storage.md)
 - [[!DNL SFTP] 连接器](connectors/cloud-storage/sftp.md)
 
-### 客户关系管理(CRM)
+### 客户关系管理(CRM) {#crm}
 
 CRM系统提供的数据有助于建立客户关系，这反过来又可以创造忠诚度并促进客户维系。 Experience Platform支持从 [!DNL Microsoft Dynamics 365] 和 [!DNL Salesforce]. 有关更多信息，请参阅以下相关文档：
 
@@ -71,14 +71,14 @@ CRM系统提供的数据有助于建立客户关系，这反过来又可以创�
 - [[!DNL Veeva CRM]](connectors/crm/veeva.md)
 - [[!DNL Zoho CRM]](connectors/crm/zoho.md)
 
-### 客户成功
+### 客户成功 {#customer-success}
 
 Experience Platform支持从第三方客户成功应用程序摄取数据。 有关更多信息，请参阅以下相关文档：
 
 - [[!DNL Salesforce Service Cloud] 连接器](connectors/customer-success/salesforce-service-cloud.md)
 - [[!DNL ServiceNow] 连接器](connectors/customer-success/servicenow.md)
 
-### 数据库
+### 数据库 {#database}
 
 Experience Platform支持从第三方数据库摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
@@ -101,19 +101,19 @@ Experience Platform支持从第三方数据库摄取数据。 有关特定源连
 - [[!DNL PostgreSQL] 连接器](connectors/databases/postgres.md)
 - [[!DNL Snowflake] 连接器](connectors/databases/snowflake.md)
 
-### 电子商务
+### 电子商务 {#ecommerce}
 
 Experience Platform支持从第三方电子商务系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [[!DNL Shopify]](connectors/ecommerce/shopify.md)
 
-### 本地系统
+### 本地系统 {#local-system}
 
 Experience Platform支持从本地系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [本地文件上传](connectors/local-system/local-file-upload.md)
 
-### 营销自动化
+### 营销自动化 {#marketing-automation}
 
 Experience Platform支持从第三方营销自动化系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
@@ -121,19 +121,19 @@ Experience Platform支持从第三方营销自动化系统摄取数据。 有关
 - [[!DNL Mailchimp]](connectors/marketing-automation/mailchimp.md)
 - [[!DNL Salesforce Marketing Cloud]](connectors/marketing-automation/salesforce-marketing-cloud.md)
 
-### 支付
+### 支付 {#payments}
 
 Experience Platform支持从第三方支付系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [[!DNL PayPal] 连接器](connectors/payments/paypal.md)
 
-### 流
+### 流 {#streaming}
 
 Experience Platform支持从流源摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
 - [[!DNL HTTP API]](connectors/streaming/http.md)
 
-### 协议
+### 协议 {#protocols}
 
 Experience Platform支持从第三方协议系统摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
