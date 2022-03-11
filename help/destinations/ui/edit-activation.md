@@ -1,38 +1,45 @@
 ---
 keywords: 编辑激活，编辑目标，编辑目标
-title: 编辑激活流
+title: 编辑激活数据流
 type: Tutorial
-seo-title: 编辑激活流
-description: 按照本文中的步骤，编辑Adobe Experience Platform中的现有激活流程。
-seo-description: 按照本文中的步骤，编辑Adobe Experience Platform中的现有激活流程。
+seo-title: Edit activation dataflows
+description: 按照本文中的步骤，编辑Adobe Experience Platform中的现有激活数据流。
+seo-description: Follow the steps in this article to edit an existing activation dataflow in Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: a97b235e2d8834f6be002923be9cdbca5f08495b
+source-git-commit: 2d944c7bd237efbbd4a770b3a6dd03c4133bc901
 workflow-type: tm+mt
-source-wordcount: '204'
+source-wordcount: '313'
 ht-degree: 0%
 
 ---
 
-# 编辑激活流 {#edit-activation-flows}
+# 编辑激活数据流 {#edit-activation-flows}
 
-请按照以下步骤编辑Adobe Experience Platform中的现有激活流程：
+在Adobe Experience Platform中，您可以编辑目标的现有激活数据流的各种组件，如导出的区段和配置文件属性、导出频率、激活数据流是启用还是禁用等。
 
-1. 登录到[Experience PlatformUI](https://platform.adobe.com/)并从左侧导航栏中选择&#x200B;**[!UICONTROL 目标]**。 从顶部标题中选择&#x200B;**[!UICONTROL Browse]**&#x200B;以查看现有目标。
+请按照以下步骤编辑现有激活数据流：
+
+1. 登录到 [Experience PlatformUI](https://platform.adobe.com/) 选择 **[!UICONTROL 目标]** 中。 选择 **[!UICONTROL 浏览]** 来查看现有目标数据流。
 
    ![浏览目标](../assets/ui/edit-activation/browse-destinations.png)
 
-2. 选择左上角的过滤器图标![过滤器图标](../assets/ui/edit-activation/filter.png)以启动排序面板。 排序面板提供了所有目标的列表。 您可以从列表中选择多个目标，以查看与选定目标关联的已过滤数据流选项。
+2. 选择过滤器图标 ![过滤器图标](../assets/ui/edit-activation/filter.png) 来启动排序面板。 排序面板提供了所有目标的列表。 您可以从列表中选择多个目标，以查看与选定目标关联的已过滤数据流选项。
 
    ![筛选目标](../assets/ui/edit-activation/filter-destinations.png)
 
-3. 选择要编辑的目标名称。
+3. 选择要编辑的目标数据流的名称。
 
    ![选择目标](../assets/ui/edit-activation/destination-select.png)
 
-4. 出现目标的&#x200B;**[!UICONTROL 数据流运行]**&#x200B;页，显示其可用控件。 选择右边栏中的&#x200B;**[!UICONTROL 激活]**&#x200B;以更改要发送到目标的区段。
+4. 的 **[!UICONTROL 数据流运行]** 页面，显示其可用控件。 此时，您可以编辑目标数据流的多个组件：
 
-   此外，您还可以编辑目标名称和描述。
+   * 选择 **[!UICONTROL 激活区段]** 用于更改要发送到目标的区段或配置文件属性。 此操作会转到激活工作流，该工作流因目标类型而异。 有关更多信息，请参阅以下指南：
+      * [将受众数据激活为区段流目标](./activate-segment-streaming-destinations.md) (例如，Facebook或Twitter);
+      * [将受众数据激活到批量基于配置文件的目标](./activate-batch-profile-destinations.md) (例如，Amazon S3或OracleEloqua);
+      * [将受众数据激活到基于用户档案的流目标](./activate-streaming-profile-destinations.md) (例如，HTTP API或Amazon Kinesis)。
+   * 此外，您还可以编辑目标数据流名称和描述。
+   * 您可以使用 **[!UICONTROL 已启用]/[!UICONTROL 已禁用]** 切换以开始和暂停所有数据导出到目标。
 
    ![目标详细信息](../assets/ui/edit-activation/destination-details.png)
 
-5. 有关如何将新区段激活到您的目标的详细信息，请参阅[激活概述](activation-overview.md)。
+5. 请参阅 [激活概述](activation-overview.md) 以详细了解如何将新区段激活到您的目标。

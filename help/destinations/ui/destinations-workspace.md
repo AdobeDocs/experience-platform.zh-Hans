@@ -4,9 +4,9 @@ title: 目标工作区
 description: “目标”工作区包含四个部分：“目录”、“浏览”、“帐户”和“系统视图”。 下面各节对这些参数进行了描述。
 seo-description: In Adobe Experience Platform, select Destinations from the left navigation bar to access the destinations workspace.
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 533f76891f47ba11e2a9de87aa8c249eb9249895
+source-git-commit: 2d944c7bd237efbbd4a770b3a6dd03c4133bc901
 workflow-type: tm+mt
-source-wordcount: '1084'
+source-wordcount: '1101'
 ht-degree: 2%
 
 ---
@@ -107,8 +107,8 @@ ht-degree: 2%
 | [!UICONTROL 连接类型] | 表示与存储段或目标的连接类型。 <ul><li>对于电子邮件营销目标：可以是S3、FTP或 [!DNL Azure Blob].</li><li>对于实时广告目标：服务器到服务器。</li><li>对于流目标：可以 [!DNL Azure Event Hubs] 或 [!DNL Amazon Kinesis].</li></ul> |
 | [!UICONTROL 用户名] | 您为目标流程选择的帐户凭据。 |
 | [!UICONTROL 激活数据] | 指示正在激活到此目标的区段数。 选择此控件可了解有关已激活区段的更多信息。 请参阅 [激活数据](/help/destinations/ui/destination-details-page.md#activation-data) 在目标详细信息页面中，了解有关已激活区段的更多信息。 |
-| [!UICONTROL 已创建] | 创建到目标的激活流程的日期和UTC时间。 |
-| [!UICONTROL 状态] | `Active` 或 `Inactive`. 指示数据是否正在激活到此目标。 |
+| [!UICONTROL 已创建] | 创建到目标的激活流程的日期和UTC时间。 选择向上/向下箭头符号，按最新、最早或最早的优先顺序对激活流程进行排序。 |
+| [!UICONTROL 状态] | `Enabled` 或 `Disabled`. 指示数据是否正在激活到此目标。 |
 
 单击目标行可在右边栏中显示有关目标的更多信息。
 
