@@ -5,9 +5,9 @@ title: 区段生成器UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了用于构建和编辑规则的直观控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 6f4d250750d36c516a9a5730b5ced91e47d3bf05
+source-git-commit: 708103a52187ef17892de60ff8e562a05fc2f2db
 workflow-type: tm+mt
-source-wordcount: '2371'
+source-wordcount: '2457'
 ht-degree: 1%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 1%
 
 ![](../images/ui/segment-builder/attributes.png)
 
-### 事件
+### 活动
 
 的 **[!UICONTROL 事件]** 选项卡，用于根据使用 [!DNL XDM ExperienceEvent] 数据元素。 您还可以在 **[!UICONTROL 事件]** 选项卡，这是常用事件的集合，可让您更快地创建区段。
 
@@ -113,6 +113,14 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 >对Adobe Experience Platform的最新更改更新了 `OR` 和 `AND` 事件之间的逻辑运算符。 这些更新不会影响现有区段。 但是，对现有区段和新区段创建的所有后续更新都将受到这些更改的影响。 请阅读 [时间常量更新](./segment-refactoring.md) 以了解更多信息。
+
+选择属性的值时，您将看到属性可以包含的枚举值列表。
+
+![](../images/ui/segment-builder/enum-list.png)
+
+如果从此枚举列表中选择一个值，则该值将用实边框列出。 但是，对于使用 `meta:enum` （柔和）枚举，则还可以 **not** 从枚举列表。 如果您创建自己的值，则会用虚线边框列出该值，并出现一则警告，指出该值未在枚举列表中。
+
+![](../images/ui/segment-builder/enum-warning.png)
 
 ### 添加受众
 
