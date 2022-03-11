@@ -6,9 +6,9 @@ seo-title: Edit activation dataflows
 description: 按照本文中的步骤，编辑Adobe Experience Platform中的现有激活数据流。
 seo-description: Follow the steps in this article to edit an existing activation dataflow in Adobe Experience Platform.
 exl-id: 0d79fbff-bfde-4109-8353-c7530e9719fb
-source-git-commit: 2d944c7bd237efbbd4a770b3a6dd03c4133bc901
+source-git-commit: cf87db062f162f73a22c7085a25cc34e997597b1
 workflow-type: tm+mt
-source-wordcount: '313'
+source-wordcount: '328'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,8 @@ ht-degree: 0%
 # 编辑激活数据流 {#edit-activation-flows}
 
 在Adobe Experience Platform中，您可以编辑目标的现有激活数据流的各种组件，如导出的区段和配置文件属性、导出频率、激活数据流是启用还是禁用等。
+
+## 编辑数据流 {#edit-dataflows}
 
 请按照以下步骤编辑现有激活数据流：
 
@@ -42,4 +44,8 @@ ht-degree: 0%
 
    ![目标详细信息](../assets/ui/edit-activation/destination-details.png)
 
-5. 请参阅 [激活概述](activation-overview.md) 以详细了解如何将新区段激活到您的目标。
+## 后续步骤 {#next-steps}
+
+通过阅读本教程，您已成功使用 **[!UICONTROL 目标]** 工作区来更新现有的目标数据流。
+
+有关目标的更多信息，请参阅 [目标概述](../catalog/overview.md).
