@@ -3,14 +3,24 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK;Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: a768cde86215ed9aad19e45362c6185276456703
+source-git-commit: 3d8e21f76b23bac3ee88702c19cf6d6a6e25a3ae
 workflow-type: tm+mt
-source-wordcount: '852'
-ht-degree: 4%
+source-wordcount: '976'
+ht-degree: 3%
 
 ---
 
 # 发行说明
+
+## 2.9.0版 — 2022年3月10日
+
+* 添加了对跟踪的支持 [!DNL control (default)] Adobe Target体验。
+* 优化了单页应用程序的视图更改事件。 现在，在呈现个性化体验时，显示通知会包含在视图更改事件中。
+* 删除了控制台警告，当没有 `eventType` 存在。
+* 修复了 `propositions` 仅从 `sendEvent` 命令。 的 `propositions` 属性现在将始终定义为数组。
+* 修复了从Adobe Experience Edge返回错误时未显示隐藏容器的问题。
+* 修复了交互事件未计入Adobe Target的问题。 通过在XDM的web.webPageDetails.viewName中添加视图名称，修复了此问题。
+* 修复了控制台消息中文档链接损坏的问题。
 
 ## 2.8.0版 — 2022年1月19日
 
