@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 请阅读本教程，了解如何使用Adobe Experience Platform Segmentation Service API评估区段并访问区段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 9e73925b0842c3b67db8bfda4b984bfa3e98a2fe
+source-git-commit: 885ebbcae223229f4614acd5b50266ea11bcf906
 workflow-type: tm+mt
 source-wordcount: '1595'
 ht-degree: 0%
@@ -153,7 +153,7 @@ ht-degree: 0%
 - [监视导出进度](#monitor-export-progress)  — 检查导出过程的当前进度。
 - [读取受众数据](#next-steps)  — 检索表示受众成员的生成的XDM个人用户档案。
 
-### 创建目标数据集
+### 创建目标数据集 {#create-dataset}
 
 在导出受众时，必须首先创建目标数据集。 必须正确配置数据集，以确保成功导出。
 
