@@ -4,10 +4,10 @@ audience: user
 user-guide-title: 智能服务帮助
 breadcrumb-title: Intelligent Services 指南
 user-guide-description: 利用智能 AI 服务，根据营销事件数据生成分数、发掘洞见和创建区段。
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: 43405e50d0c418a8ee988f4d10b187cc4941c5ea
 workflow-type: tm+mt
-source-wordcount: '121'
-ht-degree: 23%
+source-wordcount: '123'
+ht-degree: 22%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 23%
 
 - [智能服务概述](home.md)
 - [准备数据以在智能服务中使用](data-preparation.md)
-- Attribution AI{#attribution-ai}
+- Attribution AI {#attribution-ai}
    - [概述](attribution-ai/overview.md)
    - [Attribution AI入门](attribution-ai/getting-started.md)
    - [输入和输出](attribution-ai/input-output.md)
@@ -24,7 +24,8 @@ ht-degree: 23%
    - [发现洞察](attribution-ai/discover-insights.md)
    - [下载分数](attribution-ai/download-scores.md)
    - [使用查询服务分析得分](attribution-ai/aai-query-service.md)
-- Content and Commerce AI(beta){#content-commerce-ai}
+   - [错误疑难解答](attribution-ai/troubleshooting.md)
+- Content and Commerce AI（测试版） {#content-commerce-ai}
    - [概述](content-commerce-ai/overview.md)
    - [快速入门](content-commerce-ai/getting-started.md)
    - 内容和商务AI API{#api}
@@ -33,7 +34,7 @@ ht-degree: 23%
       - [文本分类](content-commerce-ai/api/text-classification.md)
       - [视觉相似度](content-commerce-ai/api/visual-similarity.md)
       - [文本存在和光学字符识别](content-commerce-ai/api/optical-character-recognition.md)
-- 客户人工智能{#customer-ai}
+- 客户人工智能 {#customer-ai}
    - [概述](customer-ai/overview.md)
    - [Customer AI快速入门](customer-ai/getting-started.md)
    - [输入和输出](customer-ai/input-output.md)
