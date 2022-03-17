@@ -3,7 +3,7 @@ keywords: Amazon S3;S3目标；s3;Amazon s3
 title: Amazon S3连接
 description: 创建到Amazon Web Services(AWS)S3存储的实时出站连接，以定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储段中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
+source-git-commit: 691e3181e05a24b6bb0ebbe8e0f797a2b4c572d2
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 1%
@@ -39,20 +39,17 @@ ht-degree: 1%
 >id="platform_destinations_connect_s3_bucket"
 >title="存储段名称"
 >abstract="长度必须介于3到63个字符之间。 必须以字母或数字开头和结尾。 必须只包含小写字母、数字或连字符(-)。 不得格式化为IP地址（例如，192.100.1.1）。"
->text="Learn more in documentation"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_folderpath"
 >title="文件夹路径"
 >abstract="必须只包含字符A-Z、a-z、0-9，并且可以包含以下特殊字符： `/!-_.'()"^[]+$%.*"`. 要为每个区段文件创建文件夹，请将宏/%SEGMENT_NAME%或/%SEGMENT_ID%或/%SEGMENT_NAME%/%SEGMENT_ID%插入文本字段。 宏只能在文件夹路径的末尾插入。 查看文档中的宏示例。"
->text="Learn more in documentation"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html?lang=en#use-macros" text="使用宏在存储位置中创建文件夹"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_rsa"
 >title="RSA公钥"
 >abstract="或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须编写为Base64编码字符串。"
->text="Learn more in documentation"
 
 While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
 

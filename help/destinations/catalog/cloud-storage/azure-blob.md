@@ -3,9 +3,9 @@ keywords: Azure Blob;Blob目标；s3;Azure Blob目标
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，以定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
+source-git-commit: 691e3181e05a24b6bb0ebbe8e0f797a2b4c572d2
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '503'
 ht-degree: 2%
 
 ---
@@ -49,6 +49,11 @@ ht-degree: 2%
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 ### 连接参数 {#parameters}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_blob_rsa"
+>title="RSA公钥"
+>abstract="或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须编写为Base64编码字符串。"
 
 While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
 
