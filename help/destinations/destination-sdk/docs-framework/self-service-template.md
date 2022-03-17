@@ -2,10 +2,10 @@
 title: 文档自助服务模板//将替换为您的目标名称
 description: 使用此模板可在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为“概述”部分中的段落
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: 2b1cde9fc913be4d3bea71e7d56e0e5fe265a6be
+source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
 workflow-type: tm+mt
-source-wordcount: '904'
-ht-degree: 1%
+source-wordcount: '1066'
+ht-degree: 2%
 
 ---
 
@@ -25,7 +25,7 @@ ht-degree: 1%
 
 ## 先决条件 {#prerequisites}
 
-*在此部分中添加有关客户在开始在Adobe Experience Platform用户界面中设置目标之前需要了解的任何内容的信息。 这可以是关于：*
+*在此部分中添加有关客户在开始在Adobe Experience Platform用户界面中设置目标之前需要注意的任何内容的信息。 这可以是关于：*
 
 * *需要添加到允许列表*
 * *电子邮件哈希处理要求*
@@ -51,11 +51,22 @@ ht-degree: 1%
 
 {style=&quot;table-layout:auto&quot;}
 
-## 导出类型 {#export-type}
+## 导出类型和频度 {#export-type-frequency}
 
-**区段导出**  — 导出区段（受众）的所有成员，以及 *您的目标* 目标。
+*在表中，仅保留与目标对应的行。 您应该为“导出类型”设置一行，为“导出频率”设置一行。 删除不适用于您的目标的值。*
 
-## 用例
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 区段导出]** | 您要导出区段（受众）的所有成员，以及 *您的目标* 目标。 |
+| 导出类型 | **[!UICONTROL 基于用户档案]** | 您要导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 [目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
+| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+| 导出频度 | **[!UICONTROL 批次]** | 批量目标可将文件以3、6、8、12或24小时为增量导出到下游平台。 有关更多信息 [批量基于文件的目标](/help/destinations/destination-types.md#file-based). |
+
+{style=&quot;table-layout:auto&quot;}
+
+## 用例 {#use-cases}
 
 为了帮助您更好地了解应如何以及何时应使用 *您的目标* 目标中，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
@@ -79,7 +90,7 @@ ht-degree: 1%
 
 While [设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html) 此目标中，您必须提供以下信息：
 
-*添加客户在配置新目标时必须填写的字段。 这些字段特定于目标，取决于您在目标SDK中的配置。 目标的字段可能与下面列出的字段不同。*
+*添加客户在配置新目标时必须填写的字段。 这些字段特定于目标，取决于您在Destination SDK中的配置。 目标的字段可能与下面列出的字段不同。*
 
 * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。

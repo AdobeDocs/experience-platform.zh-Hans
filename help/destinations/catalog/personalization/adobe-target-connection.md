@@ -3,10 +3,10 @@ keywords: 目标个性化；目的地；experience platform target目标；adobe
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: a990e829c8ba034f31b883360495513f3f5b4cfc
+source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
 workflow-type: tm+mt
-source-wordcount: '469'
-ht-degree: 0%
+source-wordcount: '530'
+ht-degree: 1%
 
 ---
 
@@ -26,9 +26,16 @@ Adobe Target是Adobe Experience Platform中的一个个性化连接。
 >
 >在创建 [!DNL Adobe Target] 连接，请阅读有关如何 [为同一页面和下一页面个性化配置个性化目标](../../ui/configure-personalization-destinations.md). 本指南将引导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。
 
-## 导出类型 {#export-type}
+## 导出类型和频度 {#export-type-frequency}
 
-**用户档案请求**  — 您正在为单个配置文件请求在Adobe Target目标中映射的所有区段。
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!DNL Profile request]** | 您正在为单个配置文件请求在Adobe Target目标中映射的所有区段。 |
+| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 用例 {#use-cases}
 

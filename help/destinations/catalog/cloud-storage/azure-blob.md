@@ -3,10 +3,10 @@ keywords: Azure Blob;Blob目标；s3;Azure Blob目标
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，以定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: b4810dfef7b0d437744ca14a32bd4f5746e8d002
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '398'
-ht-degree: 1%
+source-wordcount: '474'
+ht-degree: 2%
 
 ---
 
@@ -27,11 +27,22 @@ ht-degree: 1%
 
 如果您已经拥有 [!DNL Blob] 目标位置，您可以跳过本文档的其余部分，并继续阅读上的教程 [将区段激活到您的目标](../../ui/activate-batch-profile-destinations.md).
 
+## 导出类型和频度 {#export-type-frequency}
+
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 基于用户档案]** | 您要导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 [目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| 导出频度 | **[!UICONTROL 批次]** | 批量目标可将文件以3、6、8、12或24小时为增量导出到下游平台。 有关更多信息 [批量基于文件的目标](/help/destinations/destination-types.md#file-based). |
+
+{style=&quot;table-layout:auto&quot;}
+
 ## 支持的文件格式 {#file-formats}
 
 [!DNL Experience Platform] 支持以下要导出到的文件格式 [!DNL Blob]:
 
-* 分隔符分隔值(DSV):目前，对DSV格式化数据文件的支持仅限于逗号分隔值。 将来将提供对一般DSV文件的支持。
+* 逗号分隔值(CSV):当前，对导出数据文件的支持仅限于以逗号分隔的值。
 
 ## 连接到目标 {#connect}
 

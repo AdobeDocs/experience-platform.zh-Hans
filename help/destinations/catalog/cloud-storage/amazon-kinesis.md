@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;Kinesis目标；Kinesis
 title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: 577b42eef9d4b44b5b556ee31d22276d72c609ea
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '1233'
+source-wordcount: '1297'
 ht-degree: 1%
 
 ---
@@ -34,9 +34,16 @@ ht-degree: 1%
 
 例如，潜在客户下载了一份白皮书，使其符合“高倾向转化”区段的条件。 通过映射潜在客户所在的区段 [!DNL Amazon Kinesis] 目标，您将在 [!DNL Amazon Kinesis]. 在这里，您可以采用DIY（自己动手）方法，并在活动之上描述业务逻辑，因为您认为最适合企业IT系统。
 
-## 导出类型 {#export-type}
+## 导出类型和频度 {#export-type-frequency}
 
-**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从 [受众激活工作流](../../ui/activate-streaming-profile-destinations.md#select-attributes).
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 基于用户档案]** | 您要导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 [目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 必需 [!DNL Amazon Kinesis] 权限 {#required-kinesis-permission}
 

@@ -2,10 +2,10 @@
 title: Verizon MediaYahoo DataX连接
 description: DataX是Verizon Media/Yahoo的聚合基础架构，它托管各种组件，使Verizon Media/Yahoo能够以安全、自动和可扩展的方式与其外部合作伙伴交换数据。
 exl-id: 7d02671d-8650-407d-9c9f-fad7da3156bc
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '586'
-ht-degree: 2%
+source-wordcount: '651'
+ht-degree: 3%
 
 ---
 
@@ -73,9 +73,16 @@ Verizon Media支持激活下表所述的身份。 详细了解 [标识](https://
 
 {style=&quot;table-layout:auto&quot;}
 
-## 导出类型 {#export-type}
+## 导出类型和频度 {#export-type-frequency}
 
-**区段导出**  — 您使用Verizon Media目标中使用的标识符（电子邮件）导出区段（受众）的所有成员。
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员，以及Verizon Media目标中使用的标识符（电子邮件、GAID、IDFA）。 |
+| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 用例 {#use-cases}
 

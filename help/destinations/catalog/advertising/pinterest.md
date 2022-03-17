@@ -2,10 +2,10 @@
 title: Pinterest客户列表连接
 description: 从客户列表创建受众、访问过您网站的人员或已在Pinterest上与您的内容进行交互的人员。
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: 90aa0d16851443255dd4828e9f28330a89a12692
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '515'
-ht-degree: 2%
+source-wordcount: '578'
+ht-degree: 3%
 
 ---
 
@@ -39,9 +39,16 @@ ht-degree: 2%
 
 {style=&quot;table-layout:auto&quot;}
 
-## 导出类型 {#export-type}
+## 导出类型和频度 {#export-type-frequency}
 
-**区段导出**  — 您要导出区段（受众）的所有成员，以及在Pinterest客户列表目标中使用的标识符（名称、电话号码或其他）。
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 区段导出]** | 您要导出区段（受众）的所有成员，以及在Pinterest客户列表目标中使用的标识符（名称、电话号码或其他）。 |
+| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 用例 {#use-cases}
 

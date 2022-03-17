@@ -3,9 +3,9 @@ keywords: Azure事件中心目标；Azure事件中心；Azure事件Hub
 title: （测试版） [!DNL Azure Event Hubs] 连接
 description: 创建与的实时出站连接 [!DNL Azure Event Hubs] 存储以从Experience Platform流数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: be09d794a4cbc3afc76df70d11f55b0cae6f2009
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '1183'
+source-wordcount: '1247'
 ht-degree: 1%
 
 ---
@@ -34,9 +34,16 @@ ht-degree: 1%
 
 例如，潜在客户下载了一份白皮书，使其符合“高倾向转化”区段的条件。 通过映射潜在客户所在的区段 [!DNL Azure Event Hubs] 目标，您将在 [!DNL Azure Event Hubs]. 在这里，您可以采用DIY（自己动手）方法，并在活动之上描述业务逻辑，因为您认为最适合企业IT系统。
 
-## 导出类型 {#export-type}
+## 导出类型和频度 {#export-type-frequency}
 
-**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从 [受众激活工作流](../../ui/activate-streaming-profile-destinations.md#select-attributes).
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 基于用户档案]** | 您要导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 [目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 连接到目标 {#connect}
 

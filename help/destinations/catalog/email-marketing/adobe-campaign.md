@@ -3,10 +3,10 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Adob
 title: Adobe Campaign连接
 description: Adobe Campaign是一套解决方案，可帮助您在所有在线渠道和离线渠道之间个性化并交付促销活动。
 exl-id: 0de91738-8f56-41f5-8745-9b14b15db76a
-source-git-commit: b0d6e02c67f2a62971332acb224c7422ea467e6c
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '713'
-ht-degree: 2%
+source-wordcount: '764'
+ht-degree: 3%
 
 ---
 
@@ -18,9 +18,16 @@ Adobe Campaign是一套解决方案，可帮助您在所有在线渠道和离线
 
 要将区段数据发送到Adobe Campaign，您必须先 [连接目标](#connect-destination) 在Adobe Experience Platform [设置数据导入](#import-data-into-campaign) 从您的存储位置迁移到Adobe Campaign。
 
-## 导出类型 {#export-type}
+## 导出类型和频度 {#export-type-frequency}
 
-**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 **[!UICONTROL 选择属性]** 步骤 [受众激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes).
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 基于用户档案]** | 您要导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 [目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| 导出频度 | **[!UICONTROL 批次]** | 批量目标可将文件以3、6、8、12或24小时为增量导出到下游平台。 有关更多信息 [批量基于文件的目标](/help/destinations/destination-types.md#file-based). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## IP地址允许列表 {#allow-list}
 

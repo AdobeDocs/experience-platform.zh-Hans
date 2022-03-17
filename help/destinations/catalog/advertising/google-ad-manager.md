@@ -3,10 +3,10 @@ keywords: Google Ad Manager;Google Ad;DoubleClick AdX;DoubleClick;Google Ad Mana
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告服务平台，它为出版商提供了通过视频和移动设备应用程序管理其网站上广告显示的方法。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '653'
-ht-degree: 2%
+source-wordcount: '718'
+ht-degree: 3%
 
 ---
 
@@ -37,15 +37,24 @@ ht-degree: 2%
 | 女佣 | Microsoft广告ID。 此ID唯一标识运行Windows 10的设备。 |  |
 | Amazon Fire TV ID | 此ID可唯一标识Amazon Fire TV。 |  |
 
-## 导出类型 {#export-type}
+{style=&quot;table-layout:auto&quot;}
 
-**区段导出**  — 将区段（受众）的所有成员导出到Google目标。
+## 导出类型和频度 {#export-type-frequency}
 
-## 先决条件
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 区段导出]** | 您将区段（受众）的所有成员导出到Google目标。 |
+| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
+
+## 先决条件 {#prerequisites}
 
 如果您希望通过 [!DNL Google Ad Manager] 尚未启用 [ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html) 在过去的Experience CloudID服务(使用Audience Manager或其他应用程序)中，请联系Adobe咨询或客户关怀团队以启用ID同步。 如果您之前已设置 [!DNL Google] 集成时，您设置的ID同步会传递到Platform。
 
-## 允许列表
+### 允许列表 {#allow-listing}
 
 >[!NOTE]
 >
@@ -82,6 +91,6 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 请参阅 [将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
-## 导出的数据
+## 导出的数据 {#exported-data}
 
 验证数据是否已成功导出到 [!DNL Google Ad Manager] 目标位置，检查 [!DNL Google Ad Manager] 帐户。 如果激活成功，则帐户中会填充受众。

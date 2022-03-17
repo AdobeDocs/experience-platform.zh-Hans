@@ -3,10 +3,10 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据经过哈希处理的电子邮件，激活Facebook营销活动的用户档案以进行受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: 357916aa925c7b3ada4abe64a2bc6ad090d70cc0
+source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
 workflow-type: tm+mt
-source-wordcount: '1589'
-ht-degree: 1%
+source-wordcount: '1652'
+ht-degree: 2%
 
 ---
 
@@ -48,9 +48,16 @@ ht-degree: 1%
 | email_lc_sha256 | 使用SHA256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按照 [ID匹配要求](#id-matching-requirements-id-matching-requirements) 部分和将相应的命名空间分别用于纯文本和经过哈希处理的电子邮件地址。 当源字段包含未哈希属性时，请检查 **[!UICONTROL 应用转换]** 选项， [!DNL Platform] 自动对激活时的数据进行哈希处理。 |
 | extern_id | 自定义用户ID | 如果源标识是自定义命名空间，请选择此目标标识。 |
 
-## 导出类型 {#export-type}
+## 导出类型和频度 {#export-type-frequency}
 
-**区段导出**  — 您要导出区段（受众）的所有成员，以及Facebook目标中使用的标识符（名称、电话号码或其他）。
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 区段导出]** | 您正在导出区段（受众）的所有成员，以及Facebook目标中使用的标识符（名称、电话号码或其他）。 |
+| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## Facebook帐户先决条件 {#facebook-account-prerequisites}
 

@@ -4,9 +4,9 @@ title: 目标类型和类别
 seo-title: Destination types and categories
 description: 了解Adobe Experience Platform中的不同目标类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: a7c36f1a157b6020fede53e5c1074d966f26cf3d
+source-git-commit: 08c6c2716b88180b1eb290663117e6da2d8641f0
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: '533'
 ht-degree: 0%
 
 ---
@@ -30,15 +30,15 @@ ht-degree: 0%
 配置文件导出目标会接收原始数据，通常以电子邮件地址作为主键。 Experience Platform当前支持两种类型的配置文件导出目标：
 
 * [流配置文件导出目标](#streaming-profile-export)
-* [基于文件的目标](#file-based)
+* [批量（基于文件）目标](#file-based)
 
 ### 流配置文件导出目标 {#streaming-profile-export}
 
 流配置文件导出目标将区段和配置文件数据作为Experience Platform数据流接收。 [AmazonKinesis](catalog/cloud-storage/amazon-kinesis.md) 和 [Azure事件中心](catalog/cloud-storage/azure-event-hubs.md) 是此类目标的示例。
 
-### 基于文件的目标 {#file-based}
+### 批量（基于文件）目标 {#file-based}
 
-基于文件的目标接收 `.csv` 包含配置文件和/或属性的文件。 [Amazon S3](catalog/cloud-storage/amazon-s3.md) 是一个可存放包含配置文件导出的文件的目标示例。
+基于文件的目标接收 `.csv` 包含配置文件和/或属性的文件。 [Amazon S3](catalog/cloud-storage/amazon-s3.md) 是一个可导出包含配置文件导出的文件的目标示例。
 
 ## 流区段导出目标 {#streaming-destinations}
 
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 ## 配置文件导出和区段导出目标 — 视频概述 {#video}
 
-以下视频将向您介绍两种目标类型的特殊性：
+以下视频将向您介绍两种目标类型的特性：
 
 >[!VIDEO](https://video.tv.adobe.com/v/29707?quality=12)
 

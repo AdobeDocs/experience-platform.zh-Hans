@@ -3,10 +3,10 @@ keywords: 广告；交易台；广告交易台
 title: 交易台连接
 description: 交易台是一个自助平台，可让广告购买者跨展示、视频和移动设备库存源执行重定位和受众定位的数字促销活动。
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: 169a7ad1adfa3282bd0503ce277373b654ec57cd
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '484'
-ht-degree: 2%
+source-wordcount: '552'
+ht-degree: 3%
 
 ---
 
@@ -34,9 +34,18 @@ ht-degree: 2%
 | IDFA | [!DNL Apple ID for Advertisers] |
 | 交易台ID | 交易台平台中的广告商ID |
 
-## 导出类型 {#export-type}
+{style=&quot;table-layout:auto&quot;}
 
-**[!DNL Segment export]**  — 将区段（受众）的所有成员导出到目标。
+## 导出类型和频度 {#export-type-frequency}
+
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 区段导出]** | 您将区段（受众）的所有成员导出到目标。 |
+| 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 先决条件 {#prerequisites}
 

@@ -3,10 +3,10 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；orac
 title: OracleResponsys连接
 description: Responsys是一种企业电子邮件营销工具，用于由Oracle提供的跨渠道营销活动，用于个性化电子邮件、移动设备、显示和社交之间的交互。
 exl-id: 70f2f601-afee-4315-bf7a-ed2c92397ebe
-source-git-commit: b0d6e02c67f2a62971332acb224c7422ea467e6c
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '471'
-ht-degree: 0%
+source-wordcount: '522'
+ht-degree: 2%
 
 ---
 
@@ -18,9 +18,16 @@ ht-degree: 0%
 
 将区段数据发送到 [!DNL Oracle Responsys]，则必须先 [连接到目标](#connect-destination) 在Adobe Experience Platform [设置数据导入](#import-data-into-responsys) 从您的存储位置到 [!DNL Oracle Responsys].
 
-## 导出类型 {#export-type}
+## 导出类型和频度 {#export-type-frequency}
 
-**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从 [受众激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes).
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 基于用户档案]** | 您要导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 [目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| 导出频度 | **[!UICONTROL 批次]** | 批量目标可将文件以3、6、8、12或24小时为增量导出到下游平台。 有关更多信息 [批量基于文件的目标](/help/destinations/destination-types.md#file-based). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## IP地址允许列表 {#allow-list}
 

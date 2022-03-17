@@ -1,14 +1,14 @@
 ---
 keywords: 激活用户档案请求目标；激活数据；用户档案请求目标
-title: 将受众数据激活到用户档案请求目标（测试版）
+title: 将受众数据激活到用户档案请求目标
 type: Tutorial
 seo-title: Activate audience data to profile request destinations
 description: 了解如何通过将区段映射到配置文件请求目标，来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by mapping segments to profile request destinations.
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: d0660f29df93659990d80353f86dcbf856afb733
+source-git-commit: 388a061c87cfe9acda177ed71ed9f6017c8c2f4c
 workflow-type: tm+mt
-source-wordcount: '457'
+source-wordcount: '434'
 ht-degree: 0%
 
 ---
@@ -79,6 +79,12 @@ ht-degree: 0%
 
 ![审阅](../assets/ui/activate-profile-request-destinations/review.png)
 
-## 验证区段激活 {#verify}
+<!--
 
-检查 [目标监控文档](../../dataflows/ui/monitor-destinations.md) 以详细了解如何监控到目标的数据流。
+Commenting out this part since destination monitoring is not available currently for the Adobe Target and Custom Personalization destinations.
+
+## Verify segment activation {#verify}
+
+Check the [destination monitoring documentation](../../dataflows/ui/monitor-destinations.md) for detailed information on how to monitor the flow of data to your destinations.
+
+-->

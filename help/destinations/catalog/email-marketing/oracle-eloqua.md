@@ -3,10 +3,10 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；orac
 title: OracleEloqua连接
 description: OracleEloqua是由Oracle提供的软件即服务(SaaS)平台，用于实现营销自动化，旨在帮助B2B营销人员和组织管理营销活动和销售线索的生成。
 exl-id: 6eaa79ff-8874-423b-bdff-aa04f6101a53
-source-git-commit: b0d6e02c67f2a62971332acb224c7422ea467e6c
+source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
 workflow-type: tm+mt
-source-wordcount: '487'
-ht-degree: 0%
+source-wordcount: '538'
+ht-degree: 2%
 
 ---
 
@@ -16,9 +16,16 @@ ht-degree: 0%
 
 将区段数据发送到 [!DNL Oracle Eloqua]，则必须先 [连接目标](#connect-destination) 在Adobe Experience Platform [设置数据导入](#import-data-into-eloqua) 从您的存储位置到 [!DNL Oracle Eloqua].
 
-## 导出类型 {#export-type}
+## 导出类型和频度 {#export-type-frequency}
 
-**基于用户档案**  — 您正在导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，从 [受众激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes).
+有关目标导出类型和频率的信息，请参阅下表。
+
+| 项目 | 类型 | 注释 |
+---------|----------|---------|
+| 导出类型 | **[!UICONTROL 基于用户档案]** | 您要导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 [目标激活工作流](../../ui/activate-batch-profile-destinations.md#select-attributes). |
+| 导出频度 | **[!UICONTROL 批次]** | 批量目标可将文件以3、6、8、12或24小时为增量导出到下游平台。 有关更多信息 [批量基于文件的目标](/help/destinations/destination-types.md#file-based). |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## IP地址允许列表 {#allow-list}
 

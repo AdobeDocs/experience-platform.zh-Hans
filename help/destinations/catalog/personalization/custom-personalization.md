@@ -3,9 +3,9 @@ keywords: 自定义个性化；目的地；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标可提供外部个性化、内容管理系统、广告服务器以及网站上运行的其他应用程序，以便从Adobe Experience Platform中检索区段信息。 此目标基于用户配置文件区段成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: a990e829c8ba034f31b883360495513f3f5b4cfc
+source-git-commit: 95d287f3eac08064da35aea7c4cb22ea901c7324
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '678'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 1%
 >
 >在创建自定义个性化连接之前，请阅读有关如何 [为同一页面和下一页面个性化配置个性化目标](../../ui/configure-personalization-destinations.md). 本指南将引导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。
 
-## 导出类型 {#export-type}
+## 导出类型和频度 {#export-type-frequency}
 
 **用户档案请求**  — 您正在为单个用户档案请求在自定义个性化目标中映射的所有区段。 可以为不同的自定义个性化目标设置不同的自定义个性化目标 [Adobe数据收集数据流](../../../edge/fundamentals/datastreams.md).
 
