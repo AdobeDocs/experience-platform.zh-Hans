@@ -3,10 +3,10 @@ title: 将Adobe Analytics与Platform Web SDK结合使用
 description: 了解如何使用Adobe Experience Platform Web SDK将数据发送到Adobe Analytics。
 keywords: adobe analytics;analytics；映射的数据；映射的变量；
 exl-id: b18d1163-9edf-4a9c-b247-cd1aa7dfca50
-source-git-commit: 45becec3b198821e38afbc21fe42a8901e352888
+source-git-commit: 921a3a32ee5f2daa04512a3f2c68935667ab3875
 workflow-type: tm+mt
-source-wordcount: '189'
-ht-degree: 7%
+source-wordcount: '233'
+ht-degree: 6%
 
 ---
 
@@ -17,6 +17,10 @@ Adobe Experience Platform [!DNL Web SDK] 可以将数据发送到Adobe Analytics
 ## 设置
 
 如果您在客户配置UI中映射了报表包，Adobe Analytics会自动选取您发送的数据。 在此，您可以将一个或多个报表映射到给定配置。 报表包映射后，数据将自动开始流动。
+
+## XDM字段组
+
+为了更便于捕获最常见的Adobe Analytics量度，我们提供了一个Analytics字段组，供您使用。 有关此架构的更多详细信息，请参阅 [Adobe Analytics ExperienceEvent完整扩展架构字段组](../../../xdm/field-groups/event/analytics-full-extension.md)
 
 ## 自动映射的数据
 

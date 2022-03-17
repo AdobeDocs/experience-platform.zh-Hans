@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK概述
 description: 了解如何使用Adobe Experience Platform Web SDK将平台功能集成到您的网站中。
 keywords: Adobe Experience Platform Web SDK;Platform Web SDK;Web SDK;Edge;Visitor.js;AppMeasurement.js;AT.js;Web.js;Web SDK;Web SDK;Launch；启动
 exl-id: 1348144a-7d25-4c27-bc40-3daee2f043a6
-source-git-commit: 1048f19e2395f63fac8c4218ed92a546b8071a93
+source-git-commit: 71857ffc5e671f4d9a0502fb95d89d30fdec1f15
 workflow-type: tm+mt
-source-wordcount: '703'
+source-wordcount: '622'
 ht-degree: 1%
 
 ---
@@ -62,9 +62,4 @@ Adobe Experience Platform Web SDK取代了以下SDK:
 
 >[!VIDEO](https://video.tv.adobe.com/v/34148?quality=12&learn=on)
 
-此产品不断发展壮大，以支持越来越多的用例。 要跟上最新的数据，请参阅 [“支持用例”页](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/supported-use-cases.html). 本页列出了我们当前支持的用例，并提供了指向更多信息（如果可用）的链接。
-
-* **尚不支持的用例：** 这些用例将列在我们的路线图中，以供将来支持。
-* **正在进行的用例：** 这些是团队当前正在努力完成以发行的用例。
-* **支持的用例：** 这些用例现在受支持并可用。
-* **我们不支持的用例：** 这些是我们决定不支持的用例。
+此产品不断发展壮大，以支持越来越多的用例。 要跟上最新版本并了解我们当前支持的功能，请参阅 [“支持用例”页](https://github.com/orgs/adobe/projects/18/views/1).
