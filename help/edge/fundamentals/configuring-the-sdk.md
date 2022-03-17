@@ -2,22 +2,22 @@
 title: 配置Adobe Experience Platform Web SDK
 description: 了解如何配置Adobe Experience Platform Web SDK。
 seo-description: Learn how to configure the Experience Platform Web SDK
-keywords: 配置；配置；SDK;Edge;Web SDK；配置；edgeConfigId；上下文；Web；设备；placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;Web SDK设置；prehidingStyle;ocookieDestinationsEnable;urlDestinationsEnabled;idMigCookiesEnabled；第三方Cookies
+keywords: 配置；配置；SDK；边缘；Web SDK；配置；edgeConfigId；上下文；Web；设备；placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;Web SDK设置；prehidingStyle;ocookieDestinationsEnable;urlDestinationsEnabled;idMigCookiesEnabled；第三方Cookies
 exl-id: d1e95afc-0b8a-49c0-a20e-e2ab3d657e45
-source-git-commit: c0e2d01bd21405f07f4857e1ccf45dd0e4d0f414
+source-git-commit: 4d0f1b3e064bd7b24e17ff0fafb50d930b128968
 workflow-type: tm+mt
-source-wordcount: '826'
+source-wordcount: '860'
 ht-degree: 15%
 
 ---
 
 # 配置平台Web SDK
 
-使用`configure`命令完成了SDK的配置。
+SDK的配置已通过 `configure` 命令。
 
 >[!IMPORTANT]
 >
->`configure` 始终 ** 是第一个调用的命令。
+>`configure` is *always* 第一个命令名为。
 
 ```javascript
 alloy("configure", {
@@ -34,7 +34,7 @@ alloy("configure", {
 
 >[!NOTE]
 >
->**边缘配置已重新命名为数据流。数据流ID与配置ID相同。**
+>**边缘配置已重新命名为数据流。 数据流ID与配置ID相同。**
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
@@ -42,7 +42,7 @@ alloy("configure", {
 
 {style=&quot;table-layout:auto&quot;}
 
-您分配的配置ID，用于将SDK关联到相应的帐户和配置。 在单个页面中配置多个实例时，必须为每个实例配置不同的`edgeConfigId`。
+您分配的配置ID，用于将SDK关联到相应的帐户和配置。 在单个页面中配置多个实例时，必须配置其他 `edgeConfigId` （对于每个实例）。
 
 ### `context`
 
@@ -52,7 +52,7 @@ alloy("configure", {
 
 {style=&quot;table-layout:auto&quot;}
 
-指示要自动收集的上下文类别，如[自动信息](../data-collection/automatic-information.md)中所述。 如果未指定此配置，则默认使用所有类别。
+指示要自动收集的上下文类别，如 [自动信息](../data-collection/automatic-information.md). 如果未指定此配置，则默认使用所有类别。
 
 ### `debugEnabled`
 
@@ -62,7 +62,7 @@ alloy("configure", {
 
 {style=&quot;table-layout:auto&quot;}
 
-指示是否启用调试。 将此配置设置为`true`可启用以下功能：
+指示是否启用调试。 将此配置设置为 `true` 启用以下功能：
 
 | **功能** | **函数** |
 | ---------------------- | ------------------ |
@@ -72,9 +72,19 @@ alloy("configure", {
 
 ### `edgeDomain` {#edge-domain}
 
-使用第一方域填充此字段。 有关更多详细信息，请参阅[文档](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans)。
+使用第一方域填充此字段。 有关更多详细信息，请参阅 [文档](https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html?lang=zh-Hans).
 
-该域与位于www的网站的`data.{customerdomain.com}`类似。{customerdomain.com}。
+域类似于 `data.{customerdomain.com}` 网站www.{customerdomain.com}。
+
+### `edgeBasePath` {#edge-base-path}
+
+用于与Adobe服务通信和交互的edgeDomain后面的路径。  通常，仅当不使用默认生产环境时，这种情况才会发生更改。
+
+| **类型** | **必需** | **默认值** |
+| -------- | ------------ | ----------------- |
+| 字符串 | 否 | ee |
+
+{style=&quot;table-layout:auto&quot;}
 
 ### `orgId`
 
@@ -84,7 +94,7 @@ alloy("configure", {
 
 {style=&quot;table-layout:auto&quot;}
 
-您分配的[!DNL Experience Cloud]组织ID。 在页面内配置多个实例时，必须为每个实例配置不同的`orgId`。
+您分配的 [!DNL Experience Cloud] 组织ID。 在一个页面中配置多个实例时，必须配置其他 `orgId` （对于每个实例）。
 
 ## 数据收集
 
@@ -96,7 +106,7 @@ alloy("configure", {
 
 {style=&quot;table-layout:auto&quot;}
 
-指示是否自动收集与链接点击量关联的数据。 有关更多信息，请参阅[自动链接跟踪](../data-collection/track-links.md#automaticLinkTracking)。 如果链接包含下载属性或链接以文件扩展名结尾，则也会将其标记为下载链接。 下载链接限定符可以配置正则表达式。 默认值为 `"\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"`
+指示是否自动收集与链接点击量关联的数据。 请参阅 [自动链接跟踪](../data-collection/track-links.md#automaticLinkTracking) 以了解更多信息。 如果链接包含下载属性或链接以文件扩展名结尾，则也会将其标记为下载链接。 下载链接限定符可以配置正则表达式。 默认值为 `"\\.(exe|zip|wav|mp3|mov|mpg|avi|wmv|pdf|doc|docx|xls|xlsx|ppt|pptx)$"`
 
 ### `onBeforeEventSend`
 
@@ -106,7 +116,7 @@ alloy("configure", {
 
 {style=&quot;table-layout:auto&quot;}
 
-在发送每个事件之前，配置为其调用的回调。 字段为`xdm`的对象将发送到回调中。 要更改所发送的内容，请修改`xdm`对象。 在回调中，`xdm`对象已经具有在event命令中传递的数据以及自动收集的信息。 有关此回调的时间和示例的更多信息，请参阅[全局修改事件](tracking-events.md#modifying-events-globally)。
+在发送每个事件之前，配置为其调用的回调。 具有字段的对象 `xdm` 将发送到回调。 要更改发送的内容，请修改 `xdm` 对象。 在回调函数中， `xdm` 对象已在event命令中传递了数据，并且自动收集了信息。 有关此回调的时间和示例的更多信息，请参阅 [全局修改事件](tracking-events.md#modifying-events-globally).
 
 ## 隐私选项
 
@@ -118,10 +128,11 @@ alloy("configure", {
 
 {style=&quot;table-layout:auto&quot;}
 
-设置用户的默认同意。 如果尚未为用户保存同意首选项，则使用此设置。 其他有效值为`"pending"`和`"out"`。 此默认值不会持久保留在用户的配置文件中。 仅当调用`setConsent`时，才会更新用户的配置文件。
+设置用户的默认同意。 如果尚未为用户保存同意首选项，则使用此设置。 其他有效值为 `"pending"` 和 `"out"`. 此默认值不会持久保留在用户的配置文件中。 用户的配置文件仅在 `setConsent` 调用。
 * `"in"`:如果设置此设置或未提供任何值，则在未使用用户同意首选项的情况下继续工作。
 * `"pending"`:设置此设置后，工作将排入队列，直到用户提供同意首选项为止。
-* `"out"`:设置此设置后，将丢弃工作，直到用户提供同意首选项为止。在提供用户的首选项后，根据用户的首选项继续或中止工作。 有关更多信息，请参阅[支持同意](../consent/supporting-consent.md)。
+* `"out"`:设置此设置后，将丢弃工作，直到用户提供同意首选项为止。
+在提供用户的首选项后，根据用户的首选项继续或中止工作。 请参阅 [支持同意](../consent/supporting-consent.md) 以了解更多信息。
 
 ## 个性化选项
 
@@ -135,7 +146,7 @@ alloy("configure", {
 
 用于创建CSS样式定义，当从服务器加载个性化内容时，该定义会隐藏网页的内容区域。 如果未提供此选项，则SDK在加载个性化内容时不会尝试隐藏任何内容区域，这可能会导致“闪烁”。
 
-例如，如果网页上的某个元素的ID为`container`（您希望在从服务器加载个性化内容时隐藏其默认内容），请使用以下预隐藏样式：
+例如，如果网页上的某个元素的ID为 `container`，当您从服务器加载个性化内容时要隐藏的默认内容，请使用以下预隐藏样式：
 
 ```javascript
   prehidingStyle: "#container { opacity: 0 !important }"
@@ -151,7 +162,7 @@ alloy("configure", {
 
 {style=&quot;table-layout:auto&quot;}
 
-启用[!DNL Audience Manager] Cookie目标，以便根据区段鉴别来设置Cookie。
+启用 [!DNL Audience Manager] cookie目标，允许根据区段鉴别来设置cookie。
 
 ### `urlDestinationsEnabled`
 
@@ -161,7 +172,7 @@ alloy("configure", {
 
 {style=&quot;table-layout:auto&quot;}
 
-启用[!DNL Audience Manager] URL目标，以便根据区段鉴别触发URL。
+启用 [!DNL Audience Manager] URL目标，允许根据区段鉴别触发URL。
 
 ## 身份选项
 
