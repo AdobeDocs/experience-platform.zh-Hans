@@ -6,116 +6,106 @@ title: 在UI中更新源连接数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 6a9ad0ce5d664e3b32cab4183b54fabd5d9d19e3
 workflow-type: tm+mt
-source-wordcount: '717'
-ht-degree: 1%
+source-wordcount: '724'
+ht-degree: 0%
 
 ---
 
 # 更新UI中的数据流
 
-本教程提供了有关如何使用[!UICONTROL Sources]工作区更新现有源数据流的步骤，包括有关编辑数据流计划和映射的信息。
+本教程将为您提供有关如何使用源工作区更新现有数据流（包括其计划和映射）的步骤。
 
-## 入门指南
+## 快速入门
 
-本教程需要对Adobe Experience Platform的以下组件有充分的了解：
+本教程需要对Adobe Experience Platform的以下组件有一定的了解：
 
-- [来源](../../home.md):Experience Platform允许从各种来源摄取数据，同时使您能够使用平台服务来构建、标记和增强传入数据。
-- [沙箱](../../../sandboxes/home.md):Experience Platform提供将单个平台实例分为单独虚拟环境的虚拟沙箱，以帮助开发和发展数字体验应用程序。
+* [源](../../home.md):Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
+* [沙箱](../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-## 编辑映射
+## 更新数据流
 
->[!NOTE]
->
->以下源当前不支持编辑映射功能：Adobe Analytics、Adobe Audience Manager、HTTP API和[!DNL Marketo Engage]。
-
-在平台UI中，从左侧导航中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 从顶部标题中选择&#x200B;**[!UICONTROL Dataflows]**&#x200B;以视图现有数据流的列表。
+在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 选择 **[!UICONTROL 数据流]** 来查看现有数据流的列表。
 
 ![目录](../../images/tutorials/update-dataflows/catalog.png)
 
-[!UICONTROL Dataflows]页面包含所有现有数据流的列表，包括有关其运行状态、上次运行日期和帐户名称的信息。
+的 [!UICONTROL 数据流] 页面包含所有现有数据流的列表，包括有关其相应目标数据集、源和帐户名称的信息。
 
-选择左上角的过滤器图标![过滤器](../../images/tutorials/update/filter.png)以启动排序面板。
+要对列表进行排序，请选择过滤器图标 ![过滤器](../../images/tutorials/update/filter.png) 来使用排序面板。
 
-![filter-dataflows](../../images/tutorials/update-dataflows/filter-dataflows.png)
+![过滤数据流](../../images/tutorials/update-dataflows/filter-dataflows.png)
 
-排序面板提供所有可用源的列表。 您可以从列表中选择多个源，以访问属于不同源的已过滤数据流的选定内容。
+排序面板提供了所有可用源的列表。 您可以从列表中选择多个源以访问属于不同源的已过滤数据流选择。
 
-选择要处理的源，以查看其现有数据流的列表。 确定要更新的数据流后，请选择帐户名称旁边的省略号(`...`)。
+选择要处理的源，以查看其现有数据流的列表。 确定要更新的数据流后，选择省略号(`...`)。
 
 ![edit-source](../../images/tutorials/update-dataflows/edit-source.png)
 
-此时将显示一个下拉菜单，其中提供了用于更新所选数据流的选项。 在此处，您可以选择更新数据流的映射集和摄取计划。 您还可以选择选项以在监视仪表板中检查数据流，以及禁用或删除数据流。
+此时会出现一个下拉菜单，为您提供用于更新所选数据流的选项。 在此，您可以选择更新数据流的映射集和摄取计划。 您还可以选择选项以在监控仪表板中检查数据流，订阅警报，以及禁用或删除数据流。
 
-选择&#x200B;**[!UICONTROL Edit source]**&#x200B;以更新其映射。
+要更新数据流的信息，请选择 **[!UICONTROL 更新数据流]**.
 
-![edit-dataflow](../../images/tutorials/update-dataflows/edit-dataflow.png)
+![update-dataflow](../../images/tutorials/update-dataflows/update-dataflow.png)
 
-出现[!UICONTROL Add data]步骤。 选择适当的数据格式以查看所选数据的内容，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
+### 添加数据
 
-![add-data](../../images/tutorials/update-dataflows/add-data.png)
+的 [!UICONTROL 添加数据] 中。 选择相应的数据格式以查看所选数据的内容，然后选择 **[!UICONTROL 下一个]** 以继续。
 
-[!UICONTROL Mapping]页为您提供了一个界面，您可以在该界面中添加和删除与数据集关联的映射集。
+![添加数据](../../images/tutorials/update-dataflows/add-data.png)
 
->[!TIP]
->
->映射更新仅应用于将来计划的数据流运行。
+### 数据流详细信息
 
-选择&#x200B;**[!UICONTROL Add new mapping]**&#x200B;以添加新映射集。
+在 [!UICONTROL 数据流详细信息] 页面上，您可以为数据流提供更新的名称和描述，以及重新配置数据流的错误阈值。 在此步骤中，您还可以配置或修改警报订阅的设置。
 
-![add-new-mapping](../../images/tutorials/update-dataflows/add-new-mapping.png)
-
-然后，输入相应的源字段属性和目标XDM字段值以完成其他映射集。 选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
-
-![新增映射](../../images/tutorials/update-dataflows/new-mapping-added.png)
-
-将出现[!UICONTROL Scheduling]步骤，允许您更新数据流的摄取计划，并使用更新的映射自动摄取所选源数据。
-
->[!NOTE]
->
->您无法更新为一次性摄取而开始时间已过去的数据流的映射集。
-
-![调度](../../images/tutorials/update-dataflows/scheduling.png)
-
-在[!UICONTROL Dataflow detail]页中，您可以为数据流提供更新的名称和说明，并重新配置数据流的错误阈值。
-
-提供更新值后，请选择&#x200B;**[!UICONTROL Next]**。
+提供更新的值后，请选择 **[!UICONTROL 下一个]**.
 
 ![数据流详细信息](../../images/tutorials/update-dataflows/dataflow-detail.png)
 
-将显示&#x200B;**[!UICONTROL Review]**&#x200B;步骤，允许您在更新数据流之前对其进行查看。
-
-查看数据流后，请选择&#x200B;**[!UICONTROL Finish]**&#x200B;并为要创建新映射集的数据流留出一些时间。
-
-![审查](../../images/tutorials/update-dataflows/review.png)
-
-## 编辑计划
-
-要编辑现有数据流的摄取计划，请选择数据流名称旁边的省略号(`...`)，然后从下拉菜单中选择&#x200B;**[!UICONTROL Edit schedule]**。
-
-![edit-计划](../../images/tutorials/update-dataflows/edit-schedule.png)
-
-**[!UICONTROL Edit schedule]**&#x200B;对话框为您提供用于更新数据流的摄取频率和间隔速率的选项。 设置更新的频率和间隔值后，请选择&#x200B;**[!UICONTROL Save]**。
+### 映射
 
 >[!NOTE]
 >
->无法重新安排一次性摄取的数据流。
+>以下源当前不支持编辑映射功能：Adobe Analytics、Adobe Audience Manager、HTTP API和 [!DNL Marketo Engage].
 
-![计划对话框](../../images/tutorials/update-dataflows/schedule-dialog-box.png)
+的 [!UICONTROL 映射] 该页面提供了一个界面，您可以在其中添加和删除与数据流关联的映射集。
 
-| 计划 | 描述 |
-| ---------- | ----------- |
-| 频度 | 数据流收集数据的频率。 可接受的值用于编辑现有数据流的频率计划，包括：`minute`、`hour`、`day`或`week`。 |
-| 间隔 | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数，且必须大于或等于`15`。 |
+映射界面会显示数据流的现有映射集，而不是新的推荐映射集。 映射更新仅应用于将来计划运行的数据流。 计划进行一次性摄取的数据流无法更新其映射集。
 
-稍后，屏幕底部会显示一个确认框，确认更新成功。
+在此，您可以使用映射界面修改应用于数据流的映射集。 有关如何使用映射界面的完整步骤，请参阅 [数据准备UI指南](../../../data-prep/ui/mapping.md) 以了解更多信息。
 
-![计划确认](../../images/tutorials/update-dataflows/schedule-confirm.png)
+![映射](../../images/tutorials/update-dataflows/mapping.png)
+
+### 计划
+
+的 [!UICONTROL 计划] 步骤，允许您更新数据流的摄取计划，并使用更新的映射自动摄取选定的源数据。
+
+>[!NOTE]
+>
+>您无法重新计划计划一次性摄取的数据流。
+
+![新计划](../../images/tutorials/update-dataflows/new-schedule.png)
+
+您还可以使用数据流页面中提供的行内更新选项来更新数据流的摄取计划。
+
+从数据流页面中，选择省略号(`...`)，然后选择 **[!UICONTROL 编辑计划]** 下拉菜单中。
+
+![编辑时间表](../../images/tutorials/update-dataflows/edit-schedule.png)
+
+的 **[!UICONTROL 编辑计划]** 对话框为您提供用于更新数据流的摄取频率和间隔率的选项。 设置更新的频度和间隔值后，请选择 **[!UICONTROL 保存]**.
+
+![计划弹出窗口](../../images/tutorials/update-dataflows/schedule-pop-up.png)
+
+### 审阅
+
+的 **[!UICONTROL 审阅]** 步骤，允许您在更新数据流之前查看数据流。
+
+审核数据流后，选择 **[!UICONTROL 完成]** 并为要创建新映射集的数据流留出一些时间。
+
+![审查](../../images/tutorials/update-dataflows/review.png)
 
 ## 后续步骤
 
-通过本教程，您已成功使用[!UICONTROL Sources]工作区更新了数据流的摄取计划和映射集。
+通过阅读本教程，您已成功使用 [!UICONTROL 源] 工作区以更新数据流的摄取计划和映射集。
 
-有关如何使用[!DNL Flow Service] API以编程方式执行这些操作的步骤，请参阅有关使用流服务API](../../tutorials/api/update-dataflows.md)更新数据流的教程。[
+有关如何使用 [!DNL Flow Service] API，请参阅 [使用流服务API更新数据流](../../tutorials/api/update-dataflows.md).
