@@ -1,11 +1,11 @@
 ---
 keywords: Amazon Kinesis;Kinesis目标；Kinesis
-title: Amazon Kinesis连接
+title: (Beta)Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
+source-git-commit: c2e726a7e66267bf8f301014ae30dedd7472c693
 workflow-type: tm+mt
-source-wordcount: '1297'
+source-wordcount: '1298'
 ht-degree: 1%
 
 ---

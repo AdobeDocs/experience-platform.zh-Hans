@@ -3,9 +3,9 @@ keywords: 流；
 title: HTTP API连接
 description: 利用Adobe Experience Platform中的HTTP API目标，可将配置文件数据发送到第三方HTTP端点。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
+source-git-commit: c2e726a7e66267bf8f301014ae30dedd7472c693
 workflow-type: tm+mt
-source-wordcount: '1376'
+source-wordcount: '1377'
 ht-degree: 1%
 
 ---
