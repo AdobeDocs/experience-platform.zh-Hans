@@ -5,10 +5,10 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: b291bcf4e0ce068b071adde489653b006f4e7fb2
+source-git-commit: 575352d8ee6da092fd0fc3a3033e481ee59bd7d3
 workflow-type: tm+mt
-source-wordcount: '2360'
-ht-degree: 1%
+source-wordcount: '2378'
+ht-degree: 2%
 
 ---
 
@@ -182,11 +182,11 @@ SELECT statement 2
 CREATE TABLE table_name [ WITH (schema='target_schema_title', rowvalidation='false') ] AS (select_query)
 ```
 
-**参数**
-
-- `schema`:XDM架构的标题。 仅当您希望对由CTAS查询创建的新数据集使用现有XDM架构时，才使用此子句。
-- `rowvalidation`:（可选）指定用户是否希望对为新创建数据集摄取的每个新批次进行行级别验证。 默认值为 `true`。
-- `select_query`:A `SELECT` 语句。 的语法 `SELECT` 查询可在 [“选择查询”部分](#select-queries).
+| 参数 | 描述 |
+| ----- | ----- |
+| `schema` | XDM架构的标题。 仅当您希望对由CTAS查询创建的新数据集使用现有XDM架构时，才使用此子句。 |
+| `rowvalidation` | （可选）指定用户是否希望对为新创建数据集摄取的每个新批次进行行级别验证。 默认值为 `true`。 |
+| `select_query` | A `SELECT` 语句。 的语法 `SELECT` 查询可在 [“选择查询”部分](#select-queries). |
 
 **示例**
 
@@ -210,10 +210,10 @@ CREATE TABLE Chairs AS (SELECT color FROM Inventory SNAPSHOT SINCE 123)
 INSERT INTO table_name select_query
 ```
 
-**参数**
-
-- `table_name`:要将查询插入到的表的名称。
-- `select_query`:A `SELECT` 语句。 的语法 `SELECT` 查询可在 [“选择查询”部分](#select-queries).
+| 参数 | 描述 |
+| ----- | ----- |
+| `table_name` | 要将查询插入到的表的名称。 |
+| `select_query` | A `SELECT` 语句。 的语法 `SELECT` 查询可在 [“选择查询”部分](#select-queries). |
 
 **示例**
 
@@ -257,9 +257,9 @@ INSERT INTO Customers SELECT struct(SupplierName as Supplier, City as SupplierCi
 DROP TABLE [IF EXISTS] [db_name.]table_name
 ```
 
-**参数**
-
-- `IF EXISTS`:如果指定了此值，则在表执行此操作时不会引发异常 **not** 存在。
+| 参数 | 描述 |
+| ------ | ------ |
+| `IF EXISTS` | 如果指定了此值，则在表执行此操作时不会引发异常 **not** 存在。 |
 
 ## 删除数据库
 
@@ -269,9 +269,9 @@ DROP TABLE [IF EXISTS] [db_name.]table_name
 DROP DATABASE [IF EXISTS] db_name
 ```
 
-**参数**
-
-- `IF EXISTS`:如果指定了此值，则在数据库执行 **not** 存在。
+| 参数 | 描述 |
+| ------ | ------ |
+| `IF EXISTS` | 如果指定了此值，则在数据库执行 **not** 存在。 |
 
 ## 删除架构
 
@@ -281,13 +281,11 @@ DROP DATABASE [IF EXISTS] db_name
 DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
 ```
 
-**参数**
-
-- `IF EXISTS`:如果指定了此设置，则在架构执行此设置时不会引发异常 **not** 存在。
-
-- `RESTRICT`:模式的默认值。 如果指定了此设置，则仅当架构 **does&#39;t** 包含任何表。
-
-- `CASCADE`:如果指定了此值，则将删除架构以及架构中存在的所有表。
+| 参数 | 描述 |
+| ------ | ------ |
+| `IF EXISTS` | 如果指定了此设置，则在架构执行此设置时不会引发异常 **not** 存在。 |
+| `RESTRICT` | 模式的默认值。 如果指定了此设置，则仅当架构 **does&#39;t** 包含任何表。 |
+| `CASCADE` | 如果指定了此值，则将删除架构以及架构中存在的所有表。 |
 
 ## 创建视图
 
@@ -297,10 +295,10 @@ DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
 CREATE VIEW view_name AS select_query
 ```
 
-**参数**
-
-- `view_name`:要创建的视图的名称。
-- `select_query`:A `SELECT` 语句。 的语法 `SELECT` 查询可在 [“选择查询”部分](#select-queries).
+| 参数 | 描述 |
+| ------ | ------ |
+| `view_name` | 要创建的视图的名称。 |
+| `select_query` | A `SELECT` 语句。 的语法 `SELECT` 查询可在 [“选择查询”部分](#select-queries). |
 
 **示例**
 
@@ -318,10 +316,10 @@ CREATE OR REPLACE VIEW V1 AS SELECT model, version FROM Inventory
 DROP VIEW [IF EXISTS] view_name
 ```
 
-**参数**
-
-- `IF EXISTS`:如果指定了此值，则在视图为 **not** 存在。
-- `view_name`:要删除的视图名称。
+| 参数 | 描述 |
+| ------ | ------ |
+| `IF EXISTS` | 如果指定了此值，则在视图为 **not** 存在。 |
+| `view_name` | 要删除的视图名称。 |
 
 **示例**
 
@@ -396,10 +394,10 @@ ALTER TABLE t2 ADD FOREIGN KEY (c1) REFERENCES t1(c1) NOT ENFORCED;
 SET property_key = property_value
 ```
 
-**参数**
-
-- `property_key`:要列出或更改的属性的名称。
-- `property_value`:您希望将属性设置为的值。
+| 参数 | 描述 |
+| ------ | ------ |
+| `property_key` | 要列出或更改的属性的名称。 |
+| `property_value` | 您希望将属性设置为的值。 |
 
 要返回任何设置的值，请使用 `SET [property key]` 没有 `property_value`.
 
@@ -447,10 +445,10 @@ DEALLOCATE ALL
 DECLARE name CURSOR FOR query
 ```
 
-**参数**
-
-- `name`:要创建的游标的名称。
-- `query`:A `SELECT` 或 `VALUES` 命令，该命令提供游标要返回的行。
+| 参数 | 描述 |
+| ------ | ------ |
+| `name` | 要创建的游标的名称。 |
+| `query` | A `SELECT` 或 `VALUES` 命令，该命令提供游标要返回的行。 |
 
 ### 执行
 
@@ -462,10 +460,10 @@ DECLARE name CURSOR FOR query
 EXECUTE name [ ( parameter ) ]
 ```
 
-**参数**
-
-- `name`:要执行的准备语句的名称。
-- `parameter`:准备语句的参数的实际值。 这必须是一个表达式，其中生成的值与此参数的数据类型兼容，这取决于创建预准备语句时所确定的值。  如果准备语句有多个参数，则它们之间用逗号分隔。
+| 参数 | 描述 |
+| ------ | ------ |
+| `name` | 要执行的准备语句的名称。 |
+| `parameter` | 准备语句的参数的实际值。 这必须是一个表达式，其中生成的值与此参数的数据类型兼容，这取决于创建预准备语句时所确定的值。  如果准备语句有多个参数，则它们之间用逗号分隔。 |
 
 ### 解释
 
@@ -482,11 +480,11 @@ ANALYZE
 FORMAT { TEXT | JSON }
 ```
 
-**参数**
-
-- `ANALYZE`:如果 `option` 包含 `ANALYZE`，则会显示运行时间和其他统计信息。
-- `FORMAT`:如果 `option` 包含 `FORMAT`，它指定输出格式，格式可以是 `TEXT` 或 `JSON`. 非文本输出包含与文本输出格式相同的信息，但便于程序解析。 此参数默认为 `TEXT`.
-- `statement`:任意 `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `VALUES`, `EXECUTE`, `DECLARE`, `CREATE TABLE AS`或 `CREATE MATERIALIZED VIEW AS` 语句，您希望查看其执行计划。
+| 参数 | 描述 |
+| ------ | ------ |
+| `ANALYZE` | 如果 `option` 包含 `ANALYZE`，则会显示运行时间和其他统计信息。 |
+| `FORMAT` | 如果 `option` 包含 `FORMAT`，它指定输出格式，格式可以是 `TEXT` 或 `JSON`. 非文本输出包含与文本输出格式相同的信息，但便于程序解析。 此参数默认为 `TEXT`. |
+| `statement` | 任意 `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `VALUES`, `EXECUTE`, `DECLARE`, `CREATE TABLE AS`或 `CREATE MATERIALIZED VIEW AS` 语句，您希望查看其执行计划。 |
 
 >[!IMPORTANT]
 >
@@ -515,10 +513,10 @@ EXPLAIN SELECT * FROM foo;
 FETCH num_of_rows [ IN | FROM ] cursor_name
 ```
 
-**参数**
-
-- `num_of_rows`:要获取的行数。
-- `cursor_name`:从中检索信息的游标的名称。
+| 参数 | 描述 |
+| ------ | ------ |
+| `num_of_rows` | 要获取的行数。 |
+| `cursor_name` | 从中检索信息的游标的名称。 |
 
 ### 准备 {#prepare}
 
@@ -532,10 +530,10 @@ FETCH num_of_rows [ IN | FROM ] cursor_name
 PREPARE name [ ( data_type [, ...] ) ] AS SELECT
 ```
 
-**参数**
-
-- `name`:准备语句的名称。
-- `data_type`:准备语句参数的数据类型。 如果未列出参数的数据类型，则可以从上下文推断该类型。 如果需要添加多个数据类型，可以将其添加到逗号分隔列表中。
+| 参数 | 描述 |
+| ------ | ------ |
+| `name` | 准备语句的名称。 |
+| `data_type` | 准备语句参数的数据类型。 如果未列出参数的数据类型，则可以从上下文推断该类型。 如果需要添加多个数据类型，可以将其添加到逗号分隔列表中。 |
 
 ### 回滚
 
@@ -568,13 +566,13 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     [ FOR { UPDATE | SHARE } [ OF table_name [, ...] ] [ NOWAIT ] [...] ]
 ```
 
-**参数**
-
 有关标准SELECT查询参数的更多信息，请参阅 [选择查询节](#select-queries). 此部分将仅列出 `SELECT INTO` 命令。
 
-- `TEMPORARY` 或 `TEMP`:可选参数。 如果指定，则所创建的表将是临时表。
-- `UNLOGGED`:可选参数。 如果指定，则创建为的表将是一个未记录的表。 有关未记录表格的更多信息，请参阅 [PostgreSQL文档](https://www.postgresql.org/docs/current/sql-createtable.html).
-- `new_table`:要创建的表的名称。
+| 参数 | 描述 |
+| ------ | ------ |
+| `TEMPORARY` 或 `TEMP` | 可选参数。 如果指定，则所创建的表将是临时表。 |
+| `UNLOGGED` | 可选参数。 如果指定，则创建为的表将是一个未记录的表。 有关未记录表格的更多信息，请参阅 [PostgreSQL文档](https://www.postgresql.org/docs/current/sql-createtable.html). |
+| `new_table` | 要创建的表的名称。 |
 
 **示例**
 
@@ -593,15 +591,10 @@ SHOW name
 SHOW ALL
 ```
 
-**参数**
-
-- `name`:要了解相关信息的运行时参数的名称。 运行时参数的可能值包括以下值：
-   - `SERVER_VERSION`:此参数显示服务器的版本号。
-   - `SERVER_ENCODING`:此参数显示服务器端字符集编码。
-   - `LC_COLLATE`:此参数显示数据库的归类区域设置（文本排序）。
-   - `LC_CTYPE`:此参数显示字符分类的数据库区域设置。
-      `IS_SUPERUSER`:此参数显示当前角色是否具有超级用户权限。
-- `ALL`:显示所有配置参数的值及说明。
+| 参数 | 描述 |
+| ------ | ------ |
+| `name` | 要了解相关信息的运行时参数的名称。 运行时参数的可能值包括以下值：<br>`SERVER_VERSION`:此参数显示服务器的版本号。<br>`SERVER_ENCODING`:此参数显示服务器端字符集编码。<br>`LC_COLLATE`:此参数显示数据库的归类区域设置（文本排序）。<br>`LC_CTYPE`:此参数显示字符分类的数据库区域设置。<br>`IS_SUPERUSER`:此参数显示当前角色是否具有超级用户权限。 |
+| `ALL` | 显示所有配置参数的值及说明。 |
 
 **示例**
 
@@ -628,10 +621,10 @@ COPY query
     [  WITH FORMAT 'format_name']
 ```
 
-**参数**
-
-- `query`:要复制的查询。
-- `format_name`:要在中复制查询的格式。 的 `format_name` 可以是 `parquet`, `csv`或 `json`. 默认情况下，值为 `parquet`.
+| 参数 | 描述 |
+| ------ | ------ |
+| `query` | 要复制的查询。 |
+| `format_name` | 要在中复制查询的格式。 的 `format_name` 可以是 `parquet`, `csv`或 `json`. 默认情况下，值为 `parquet`. |
 
 >[!NOTE]
 >
@@ -657,13 +650,13 @@ ALTER TABLE table_name DROP CONSTRAINT constraint_name PRIMARY KEY ( column_name
 ALTER TABLE table_name DROP CONSTRAINT constraint_name FOREIGN KEY ( column_name )
 ```
 
-**参数**
-
-- `table_name`:要编辑的表的名称。
-- `constraint_name`:要添加或删除的约束的名称。
-- `column_name`:要向其添加约束的列的名称。
-- `referenced_table_name`:外键引用的表的名称。
-- `primary_column_name`:外键引用的列的名称。
+| 参数 | 描述 |
+| ------ | ------ |
+| `table_name` | 要编辑的表的名称。 |
+| `constraint_name` | 要添加或删除的约束的名称。 |
+| `column_name` | 要向其添加约束的列的名称。 |
+| `referenced_table_name` | 外键引用的表的名称。 |
+| `primary_column_name` | 外键引用的列的名称。 |
 
 >[!NOTE]
 >
@@ -679,11 +672,11 @@ ALTER TABLE table_name ADD COLUMN column_name data_type
 ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_type2 
 ```
 
-**参数**
-
-- `table_name`:要编辑的表的名称。
-- `column_name`:要添加的列的名称。
-- `data_type`:要添加的列的数据类型。 支持的数据类型包括：bigint， char， string， date， datetime， double， double precision，整数， smallint， tinyint， varchar。
+| 参数 | 描述 |
+| ------ | ------ |
+| `table_name` | 要编辑的表的名称。 |
+| `column_name` | 要添加的列的名称。 |
+| `data_type` | 要添加的列的数据类型。 支持的数据类型包括：bigint， char， string， date， datetime， double， double precision，整数， smallint， tinyint， varchar。 |
 
 ### 显示主键
 
