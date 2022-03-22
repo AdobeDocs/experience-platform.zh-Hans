@@ -6,9 +6,10 @@ topic-legacy: overview
 description: 在Adobe Experience Platform中实时创建新源的最后一步是记录新源。
 hide: true
 hidefromtoc: true
-source-git-commit: ae1a1139c24fd80e9f689e4c637897c905004c5f
+exl-id: 80daadb1-127f-4f42-8bc9-fb89a7898462
+source-git-commit: e732a43f7ac578d7fde41c48d2c819899fabb0be
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '437'
 ht-degree: 0%
 
 ---
@@ -44,7 +45,10 @@ ht-degree: 0%
 
 您可以使用预填充的 [文档模板](./template.md) 以帮助创建源文档。 在下面，您可以找到有关如何编辑模板和打开拉取请求的说明。 新来源的已提交文档将由Adobe文档团队审阅和发布。
 
-您还可以下载 [文档模板](../assets/template.zip).
+您还可以下载以下文档模板：
+
+* [API文档模板](../assets/template.zip)
+* [UI文档模板](../assets/ui-template.zip)
 
 ## 创建新源页面
 

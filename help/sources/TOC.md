@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: da3d0399bae9953cd74bd0ac6d6e16b64796a578
+source-git-commit: c74676836d4690568665f16445c0dcf91496daf6
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '750'
 ht-degree: 13%
 
 ---
@@ -277,7 +277,8 @@ ht-degree: 13%
    - [在Adobe Experience Platform中记录您的源](sources-sdk/documentation/doc-overview.md)
    - [使用GitHub Web界面创建源文档页面](sources-sdk/documentation/github.md)
    - [在本地环境中使用文本编辑器创建源文档页面](sources-sdk/documentation/text-editor.md)
-   - [文档自助模板](sources-sdk/documentation/template.md)
+   - [文档自助API模板](sources-sdk/documentation/template.md)
+   - [文档自助服务UI模板](sources-sdk/documentation/ui-template.md)
 - [流运行通知](notifications.md)
 - [IP地址允许列表](ip-address-allow-list.md)
 - [常见问题](./troubleshooting.md)

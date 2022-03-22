@@ -6,9 +6,10 @@ topic-legacy: tutorial
 description: 本文档提供了有关如何使用GitHub Web界面创作文档和提交拉取请求(PR)的步骤。
 hide: true
 hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+exl-id: 84b4219c-b3b2-4d0a-9a65-f2d5cd989f95
+source-git-commit: 39accd28edc388c6444910f9a2ea6d2f01acfdaf
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '624'
 ht-degree: 2%
 
 ---
@@ -35,7 +36,11 @@ ht-degree: 2%
 
 ![创建分支](../assets/create-branch.png)
 
-在分支存储库的GitHub文件夹结构中，导航到 `experience-platform.en/help/sources/tutorials/api/create/` 然后，从列表中选择源的相应类别。 例如，如果您正在为新的云存储源创建文档，请选择 **云存储**.
+在分支存储库的GitHub文件夹结构中，导航到 [`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/api/create) 然后，从列表中选择源的相应类别。 例如，如果您正在为新的云存储源创建文档，请选择 **云存储**.
+
+>[!TIP]
+>
+>如果您要为UI创建文档，请导航到 [`experience-platform.en/help/sources/tutorials/ui/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/ui/create) 并为源选择相应的类别。 要添加图像，请导航到 [`experience-platform.en/help/sources/images/tutorials/create/sdk`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/images/tutorials/create) 然后，将屏幕截图添加到 `sdk` 文件夹。
 
 ![云存储](../assets/cloud-storage.png)
 

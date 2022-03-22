@@ -6,9 +6,10 @@ topic-legacy: overview
 description: Adobe Experience Platform Sources SDK是一组配置API，允许您使用流程服务API集成基于REST API的源，以将数据引入Experience Platform。
 hide: true
 hidefromtoc: true
-source-git-commit: 3d510876cfdd8ac3045dae8df6fcf6045de2538b
+exl-id: 5d5449ad-a1ba-402b-a281-0b2d8b704f32
+source-git-commit: ce902e461c748e30e0307558da894a4dbdd212a4
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '544'
 ht-degree: 0%
 
 ---
@@ -62,7 +63,7 @@ Platform可以从外部源摄取数据，同时允许您使用Platform服务来�
    * 请参阅 [配置源规范](./config/sourcespec.md);
    * 请参阅 [配置浏览规范](./config/explorespec.md);
 * 要开始记录源，请参阅 [有关为源SDK创建文档的概述](./documentation/doc-overview.md)
-   * 您可以使用此 [源文档模板](./documentation/template.md) 构建文档；
+   * 您可以使用此 [源API文档模板](./documentation/template.md) 构建API文档；
+   * 您可以使用此 [源UI文档模板](./documentation/ui-template.md) 构建用户界面文档；
    * 请参阅 [使用GitHub Web界面](./documentation/github.md) 有关如何使用GitHub创建文档的步骤；
    * 请参阅 [使用文本编辑器](./documentation/text-editor.md) 有关如何使用本地计算机创建文档的步骤。
-
