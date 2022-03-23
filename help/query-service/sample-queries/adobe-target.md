@@ -5,18 +5,18 @@ title: Adobe Target数据的查询示例
 topic-legacy: queries
 description: 来自Adobe Target的数据将转换为Experience Event XDM架构，并作为数据集摄取到Experience Platform。 本文档包含有关将查询服务与Adobe Target数据集结合使用的示例查询。
 exl-id: 0ab3cd6e-25ed-43dc-b8f0-a2b71621ae50
-source-git-commit: c0e7ae8f65aa0373d35a55d4da46e0ffcb0e60f9
+source-git-commit: 76847d8286776a554e55209fa1b334c98b02d76b
 workflow-type: tm+mt
-source-wordcount: '328'
+source-wordcount: '324'
 ht-degree: 1%
 
 ---
 
 # Adobe Target数据查询示例
 
-来自Adobe Target的数据将转换为Experience Event XDM架构，并作为数据集摄取到Adobe Experience Platform。 Adobe Experience Platform查询服务有许多使用此数据的用例，以下示例查询应可与Adobe Target数据集配合使用。
+从Adobe Target摄取的数据将转换为Experience Event XDM架构，并作为数据集摄取到Adobe Experience Platform。 Adobe Experience Platform查询服务为此数据的许多用例提供了便利，以下示例查询应可用于您的Adobe Target数据集。
 
-在Experience Platform中，自动创建的数据集的名称为“Adobe Target体验事件”。 将此数据集与查询结合使用时，应使用名称 `adobe_target_experience_events`.
+在Experience Platform中，自动创建的数据集的名称为“Adobe Target体验事件”。 在使用此数据集进行查询时，请使用名称 `adobe_target_experience_events`.
 
 ## 高级部分XDM字段映射
 
