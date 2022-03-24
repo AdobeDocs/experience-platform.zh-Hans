@@ -4,9 +4,9 @@ title: 包含订阅数据类型的一般营销首选项字段
 topic-legacy: overview
 description: 本文档概述了包含订阅XDM数据类型的通用营销首选项字段。
 exl-id: 170ea6ca-77fc-4b0a-87f9-6d4b6f32d953
-source-git-commit: 0f39e9237185b49417f2af8dfc288ab1420cccae
+source-git-commit: bccf97d85421fcb2f8fe153ad0ddbef4975b6f7e
 workflow-type: tm+mt
-source-wordcount: '870'
+source-wordcount: '900'
 ht-degree: 2%
 
 ---
@@ -59,29 +59,31 @@ ht-degree: 2%
 以下JSON表示电话呼叫营销渠道的营销字段示例，该渠道包含 `subscriptions` 地图。 中的每个键 `subscriptions` 对象表示营销渠道的单个订阅。 反过来，每个订阅都包含一个选择加入值(`val`)。
 
 ```json
-"phone-marketing-field": {
+"email-marketing-field": {
   "val": "y",
   "time": "2019-01-01T15:52:25+00:00",
   "subscriptions": {
     "loyalty-offers": {
       "val": "y",
       "type": "sales",
+      "topics": ["discounts", "early-access"],
       "subscribers": {
-        "123-555-0928": {
+        "jdoe@example.com": {
           "time": "2019-01-01T15:52:25+00:00",
           "source": "website"
         }
       }
     },
-    "overdrawn-account": {
+    "newsletters": {
       "val": "y",
-      "type": "issues",
+      "type": "advertising",
+      "topics": ["hardware"],
       "subscribers": {
-        "123-555-0928": {
+        "jdoe@example.com": {
           "time": "2021-01-01T08:32:53+07:00",
           "source": "website"
         },
-        "301-555-1527": {
+        "tparan@example.com": {
           "time": "2020-02-03T07:54:21+07:00",
           "source": "call center"
         }
@@ -93,7 +95,9 @@ ht-degree: 2%
 
 | 属性 | 描述 |
 | --- | --- |
+| `val` | 的 [同意值](#val) 订购。 |
 | `type` | 订阅类型。 这可以是任何描述性字符串，前提是它不超过15个字符。 |
+| `topics` | 一组字符串，表示客户订阅的目标区域，可用于发送相关内容。 |
 | `subscribers` | 可选的映射类型字段，表示订阅了特定订阅的标识符集（如电子邮件地址或电话号码）。 此对象中的每个键都表示相关的标识符，并包含两个子属性： <ul><li>`time`:身份订阅时的ISO 8601时间戳（如果适用）。</li><li>`source`:订阅者源自的源。 这可以是任何描述性字符串，前提是它不超过15个字符。</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
