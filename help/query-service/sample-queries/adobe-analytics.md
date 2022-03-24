@@ -3,11 +3,11 @@ keywords: Experience Platform；主页；热门主题；查询服务；查询服
 solution: Experience Platform
 title: Adobe Analytics数据的查询示例
 topic-legacy: queries
-description: 来自选定Adobe Analytics报表包的数据将转换为XDM ExperienceEvents，并作为数据集摄取到Adobe Experience Platform。 本文档概述了Adobe Experience Platform查询服务利用此数据的许多用例，其中包含的示例查询应与您的Adobe Analytics数据集一起使用。
+description: 来自选定Adobe Analytics报表包的数据将转换为XDM ExperienceEvents，并作为数据集摄取到Adobe Experience Platform。 本文档概述了查询服务利用此数据的许多用例，其中包括旨在与Adobe Analytics数据集结合使用的示例查询。
 exl-id: 96da3713-c7ab-41b3-9a9d-397756d9dd07
-source-git-commit: bb5ece5e48ca5e3bb97aa1367515f510ab03deee
+source-git-commit: fec6f614946860e6ad377beaca05972a63052dd8
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1066'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 来自选定Adobe Analytics报表包的数据将转换为符合 [!DNL XDM ExperienceEvent] 类并作为数据集摄取到Adobe Experience Platform中。
 
-本文档概述了Adobe Experience Platform [!DNL Query Service] 利用此数据（包括示例查询）时，应该可以使用Adobe Analytics数据集。 请参阅 [Analytics字段映射](../../sources/connectors/adobe-applications/mapping/analytics.md) 有关映射到的详细信息 [!DNL Experience Events].
+本文档概述了Adobe Experience Platform [!DNL Query Service] 利用此数据，包括旨在与Adobe Analytics数据集一起使用的示例查询。 请参阅 [Analytics字段映射](../../sources/connectors/adobe-applications/mapping/analytics.md) 有关映射到的详细信息 [!DNL Experience Events].
 
 ## 快速入门
 
@@ -24,7 +24,7 @@ ht-degree: 1%
 
 ## 常用SQL示例
 
-以下示例显示了用于分析Adobe Analytics数据的常用SQL查询。
+以下示例显示用于分析Adobe Analytics数据的常见用例的SQL查询。
 
 ### 给定日的每小时访客计数
 
@@ -120,14 +120,15 @@ ORDER BY Hour;
 
 ## 重复数据删除
 
-Adobe Experience Platform查询服务支持重复数据删除。 请参阅 [查询服务文档中的重复数据删除](../best-practices/deduplication.md) 有关在查询时如何生成新值的信息 [!DNL Experience Event] 数据集。
+[!DNL Query Service] 支持重复数据删除。 请参阅 [中的重复数据删除 [!DNL Query Service] 文档](../best-practices/deduplication.md) 有关在查询时如何生成新值的信息 [!DNL Experience Event] 数据集。
 
 ## 促销变量（产品语法）
 
+以下部分提供了XDM字段和示例查询，您可以使用它们来访问 [!DNL Analytics] 数据集。
 
 ### 产品语法
 
-在Adobe Analytics中，可通过专门配置的变量（称为促销变量）来收集自定义产品级数据。 这些事件基于eVar或自定义事件。 这些变量与其标准用法的区别在于，它们表示在点击中找到的每个产品的单独值，而不是仅表示点击的单个值。
+在Adobe Analytics中，可通过专门配置的变量（称为促销变量）来收集自定义产品级数据。 这些事件基于eVar或自定义事件。 这些变量与其典型用法的不同之处在于，它们表示在点击中找到的每个产品的单独值，而不是仅表示点击的单个值。
 
 这些变量称为产品语法推销变量。 这允许收集信息，例如每个产品的“折扣金额”或客户搜索结果中有关产品“页面位置”的信息。
 
@@ -205,7 +206,7 @@ LIMIT 20
 1. 用户执行和内部搜索“winter hat”，以将启用“转化语法”的促销eVar6设置为“内部搜索：winter hat”
 2. 用户单击“华夫饼”，然后登陆产品详细信息页面。\
    a.这里着陆会 `Product View` 花12.99美元举办“华夫饼豆”活动。\
-   b.因为 `Product View` 将配置为捆绑事件，产品“华夫饼”现在绑定到“内部搜索：冬帽”的eVar6值。 无论何时收集“华夫饼豆”产品，都会将其与“内部搜索：冬天帽”关联，直到(1)达到过期设置或(2)设置了新eVar6值，并且该产品再次发生捆绑事件。
+   b.自 `Product View` 配置为捆绑事件，产品“华夫饼”现在绑定到“内部搜索：winter hat”的eVar6值。 无论何时收集“华夫饼豆”产品，都会将其与“内部搜索：冬天帽”关联，直到(1)达到过期设置或(2)设置了新eVar6值，并且该产品再次发生捆绑事件。
 3. 用户将产品添加到购物车，并触发 `Cart Add` 事件。
 4. 用户对“夏季衬衫”执行另一次内部搜索，该搜索会将启用“转化语法”的促销eVar6设置为“内部搜索：夏季衬衫”
 5. 用户单击“sporty t-shirt”，然后登陆产品详细信息页面。\
