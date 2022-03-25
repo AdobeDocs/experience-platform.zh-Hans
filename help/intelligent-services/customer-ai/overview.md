@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；概述；客户人工智能；热门主题；客户人工智能概述
-solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
+solution: Intelligent Services, Real-time Customer Data Platform
 feature: Customer AI
 title: 客户人工智能概述
 topic-legacy: Customer AI Overview
 description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 landing-page-description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。
 exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 18%
@@ -38,7 +38,7 @@ Customer AI构建于：
 
 - 不应使用Customer AI来预测动态定价或客户将购买的价格点。
 - Customer AI无法确定提供选件是否会提高客户购买项目的可能性。 虽然您可能决定根据倾向得分发送折扣选件，但这不一定是转化这些客户的最佳方式。
-- Customer AI不是产品推荐工具。 如果您有数千个SKU，请不要将Customer AI用作实际产品推荐解决方案（如[!DNL Adobe Target]）的代理。
+- Customer AI不是产品推荐工具。 如果您有数千个SKU，请不要将客户AI用作实际产品推荐解决方案的代理，例如 [!DNL Adobe Target].
 - 例如，如果客户处于“意识”、“考虑”、“购买”或“维系”阶段，则客户AI无法预测客户在购买历程的哪个阶段。
 - 请勿使用Customer AI来确定将来可能购买产品发布的客户。 这要求Customer AI过去必须存在某些成功事件，才能根据您的数据成功培训机器学习算法。
 
@@ -52,4 +52,4 @@ Customer AI通过分析现有的消费者体验事件数据来预测客户流失
 
 ## 后续步骤
 
-您可以从[入门](./getting-started.md)指南开始。 本指南将指导您设置Customer AI的所有必需先决条件。 如果您已经准备好所有凭据和数据，请访问[配置Customer AI实例](./user-guide/configure.md)。 它提供了使用Customer AI的步骤。
+您可以首先按照 [入门](./getting-started.md) 的双曲余切值。 本指南将指导您设置Customer AI的所有必需先决条件。 如果您已准备好所有凭据和数据，请访问  [配置Customer AI实例](./user-guide/configure.md). 它提供了使用Customer AI的步骤。

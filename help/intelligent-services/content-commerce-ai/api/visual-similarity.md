@@ -1,27 +1,26 @@
 ---
-keywords: 视觉相似性；视觉相似性；cai
-solution: Experience Platform, Intelligent Services
+keywords: 视觉相似度；视觉相似度；ccai api
+solution: Intelligent Services
 title: 内容与商务AI API中的视觉相似性
 topic-legacy: Developer guide
-description: 当给定图像时，视觉相似性服务会自动从目录中找到视觉相似的图像。
+description: 当给定图像时，视觉相似性服务会自动从目录中查找视觉上相似的图像。
 exl-id: fe31d9be-ee42-44fa-b83f-3b8a718cb4e3
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '510'
 ht-degree: 2%
 
 ---
 
-# 视觉相似性
+# 视觉相似度
 
 >[!NOTE]
 >
->[!DNL Content and Commerce AI] 是贝塔。文档可能会更改。
+>[!DNL Content and Commerce AI] 是测试版。 文档可能会发生更改。
 
-当给定图像时，视觉相似性服务会自动从目录中找到视觉相似的图像。
+当给定图像时，视觉相似性服务会自动从目录中查找视觉上相似的图像。
 
-此文档中显示的示例请求中使用了以下图像：
+本文档中显示的示例请求使用了下图：
 
 ![测试图像](../images/Query_Image.jpeg)
 
@@ -33,11 +32,11 @@ POST /services/v1/predict
 
 **请求**
 
-以下请求根据在有效负荷中提供的输入参数从目录中检索视觉上相似的图像。 有关所示输入参数的详细信息，请参阅示例有效负荷下表。
+以下请求基于有效负载中提供的输入参数从目录中检索视觉上相似的图像。 有关所示输入参数的更多信息，请参阅有效负载示例下表。
 
 >[!CAUTION]
 >
->`analyzer_id` 确定 [!DNL Sensei Content Framework] 使用的。在发出请求之前，请检查您是否有正确的`analyzer_id`。 请与内容和商务AI测试版团队联系，以接收此服务的`analyzer_id`。
+>`analyzer_id` 确定 [!DNL Sensei Content Framework] 中，将使用。 请检查您是否拥有 `analyzer_id` 之前。 请联系内容和商务AI测试版团队，以接收您的 `analyzer_id` 为此服务。
 
 ```SHELL
 curl -i -X POST https://sensei.adobe.io/services/v1/predict \
@@ -74,25 +73,25 @@ curl -i -X POST https://sensei.adobe.io/services/v1/predict \
 }'
 ```
 
-| 属性 | 描述 | 必填 |
+| 属性 | 描述 | 必需 |
 | --- | --- | --- |
-| `analyzer_id` | 您的请求部署到的[!DNL Sensei]服务ID。 此ID决定使用哪个[!DNL Sensei Content Frameworks]。 有关自定义服务，请联系内容和商务AI团队以设置自定义ID。 | 是 |
-| `application-id` | 您创建的应用程序的ID。 | 是 |
-| `data` | 一个数组，其中包含一个JSON对象，数组中每个对象都表示一个图像。 作为此数组的一部分传递的任何参数都将覆盖在`data`数组外部指定的全局参数。 下表中列出的所有其余属性都可从`data`中覆盖。 | 是 |
-| `content-id` | 响应中返回的数据元素的唯一ID。 如果未传递，则分配一个自动生成的ID。 | 否 |
-| `content` | 待分析的内容由视觉相似性服务进行。 在图像是请求主体一部分的事件下，在curl命令中使用`-F file=@<filename>`传递图像，将此参数保留为空字符串。 <br> 如果图像是S3上的文件，请传递已签名的url。当内容是请求主体的一部分时，数据元素的列表应仅包含一个对象。 如果传递了多个对象，则只处理第一个对象。 | 是 |
-| `content-type` | 用于指示输入是请求主体的一部分还是S3存储段的已签名URL。 此属性的默认值为`inline`。 | 否 |
-| `encoding` | 输入图像的文件格式。 目前只能处理JPEG和PNG图像。 此属性的默认值为`jpeg`。 | 否 |
-| `threshold` | 需要返回结果的分数阈值（0到1）。 使用值`0`返回所有结果。 此属性的默认值为`0`。 | 否 |
-| `top-N` | 要返回的结果数（不能为负整数）。 使用值`0`返回所有结果。 与`threshold`一起使用时，返回的结果数是任一限制集中的较小者。 此属性的默认值为`0`。 | 否 |
+| `analyzer_id` | 的 [!DNL Sensei] 请求部署在下的服务ID。 此ID确定 [!DNL Sensei Content Frameworks] 中，将使用。 对于自定义服务，请联系内容和商务AI团队以设置自定义ID。 | 是 |
+| `application-id` | 创建的应用程序的ID。 | 是 |
+| `data` | 一个数组，其中包含一个JSON对象，该对象在数组中的每个对象都表示一个图像。 作为此数组的一部分传递的任何参数都会覆盖在 `data` 数组。 下表中列出的任何其余属性都可以从中覆盖 `data`. | 是 |
+| `content-id` | 响应中返回的数据元素的唯一ID。 如果未传递，则会分配一个自动生成的ID。 | 否 |
+| `content` | 要由视觉相似性服务分析的内容。 如果图像是请求正文的一部分，请使用 `-F file=@<filename>` 在用于传递图像的curl命令中，将此参数保留为空字符串。 <br> 如果图像是S3上的文件，请传递带签名的url。 当内容是请求正文的一部分时，数据元素列表应该只有一个对象。 如果传递了多个对象，则仅处理第一个对象。 | 是 |
+| `content-type` | 用于指示输入是请求正文的一部分还是S3存储段的带符号的url。 此属性的默认值为 `inline`. | 否 |
+| `encoding` | 输入图像的文件格式。 当前只能处理JPEG和PNG图像。 此属性的默认值为 `jpeg`. | 否 |
+| `threshold` | 需要返回结果的分数阈值（0到1）。 使用值 `0` 返回所有结果。 此属性的默认值为 `0`. | 否 |
+| `top-N` | 要返回的结果数（不能是负整数）。 使用值 `0` 返回所有结果。 与 `threshold`，则返回的结果数是任一限制集中的较小者。 此属性的默认值为 `0`. | 否 |
 | `custom` | 要传递的任何自定义参数。 | 否 |
-| `historic-metadata` | 可传递元数据的数组。 | 否 |
+| `historic-metadata` | 可以传递元数据的数组。 | 否 |
 
 **响应**
 
-成功的响应会返回一个`response`数组，该数组包含`feature_value`和`feature_name`，分别用于目录中找到的每个视觉相似的图像。
+成功的响应会返回 `response` 包含 `feature_value` 和 `feature_name` 目录中找到的每个视觉上相似的图像。
 
-以下示例响应中返回了以下看上去相似的图像：
+在以下示例响应中返回了以下视觉上相似的图像：
 
 ![相似图像](../images/results.jpg)
 

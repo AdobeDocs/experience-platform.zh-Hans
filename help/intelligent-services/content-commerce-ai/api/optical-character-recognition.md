@@ -1,12 +1,11 @@
 ---
 keywords: OCR；文本存在；光学字符识别
-solution: Experience Platform, Intelligent Services
+solution: Intelligent Services
 title: 文本存在与光学字符识别
 topic-legacy: Developer guide
-description: 在“内容和商务AI”API中，文本存在/光学字符识别(OCR)服务可以指示给定图像中是否存在文本。 如果存在文本，OCR可以返回文本。
+description: 在内容和商务AI API中，文本存在/光学字符识别(OCR)服务可以指示给定图像中是否存在文本。 如果存在文本，则OCR可返回该文本。
 exl-id: 85b976a7-0229-43e9-b166-cdbd213b867f
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '525'
 ht-degree: 3%
@@ -17,11 +16,11 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->Content and Commerce AI是Beta版。 文档可能会更改。
+>Content and Commerce AI是测试版。 文档可能会发生更改。
 
-当为文本提供图像时，“文本存在/光学字符识别(OCR)”服务可以指示图像中是否存在文本。 如果存在文本，OCR可以返回文本。
+文本存在/光学字符识别(OCR)服务在给定图像时，可以指示图像中是否存在文本。 如果存在文本，则OCR可返回该文本。
 
-此文档中显示的示例请求中使用了以下图像：
+本文档中显示的示例请求使用了下图：
 
 ![测试图像](../images/shef.jpeg)
 
@@ -33,11 +32,11 @@ POST /services/v1/predict
 
 **请求**
 
-以下请求根据在有效负荷中提供的输入图像检查文本是否存在。 有关所示输入参数的详细信息，请参阅示例有效负荷下表。
+以下请求根据有效载荷中提供的输入图像检查文本是否存在。 有关所示输入参数的更多信息，请参阅有效负载示例下表。
 
 >[!CAUTION]
 >
->`analyzer_id` 确定 [!DNL Sensei Content Framework] 使用的。在发出请求之前，请检查您是否有正确的`analyzer_id`。 请与内容和商务AI测试版团队联系，以接收此服务的`analyzer_id`。
+>`analyzer_id` 确定 [!DNL Sensei Content Framework] 中，将使用。 请检查您是否拥有 `analyzer_id` 之前。 请联系内容和商务AI测试版团队，以接收您的 `analyzer_id` 为此服务。
 
 ```SHELL
 curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
@@ -72,23 +71,23 @@ curl -w'\n' -i -X POST https://sensei.adobe.io/services/v1/predict \
   }'
 ```
 
-| 属性 | 描述 | 必填 |
+| 属性 | 描述 | 必需 |
 | --- | --- | --- |
-| `analyzer_id` | 您的请求部署到的[!DNL Sensei]服务ID。 此ID决定使用哪个[!DNL Sensei Content Frameworks]。 有关自定义服务，请联系内容和商务AI团队以设置自定义ID。 | 是 |
+| `analyzer_id` | 的 [!DNL Sensei] 请求部署在下的服务ID。 此ID确定 [!DNL Sensei Content Frameworks] 中，将使用。 对于自定义服务，请联系内容和商务AI团队以设置自定义ID。 | 是 |
 | `application-id` | 创建的应用程序的ID。 | 是 |
-| `data` | 一个数组，其中包含一个JSON对象，数组中的每个对象表示传递的一个图像。 作为此数组的一部分传递的任何参数都将覆盖在`data`数组外部指定的全局参数。 下表中列出的所有其余属性都可从`data`中覆盖。 | 是 |
+| `data` | 一个数组，其中包含一个JSON对象，该对象在数组中的每个对象表示传递的一个图像。 作为此数组的一部分传递的任何参数都会覆盖在 `data` 数组。 下表中列出的任何其余属性都可以从中覆盖 `data`. | 是 |
 | `language` | 输入文本的语言。 默认值为 `en`。 | 否 |
-| `content-type` | 用于指示输入是请求主体的一部分还是S3存储段的已签名URL。 此属性的默认值为`inline`。 | 否 |
-| `encoding` | 输入图像的文件格式。 目前只能处理JPEG和PNG图像。 此属性的默认值为`jpeg`。 | 否 |
-| `threshold` | 需要返回结果的分数阈值（0到1）。 使用值`0`返回所有结果。 此属性的默认值为`0`。 | 否 |
-| `top-N` | 要返回的结果数（不能为负整数）。 使用值`0`返回所有结果。 与`threshold`一起使用时，返回的结果数是任一限制集中的较小者。 此属性的默认值为`0`。 | 否 |
+| `content-type` | 用于指示输入是请求正文的一部分还是S3存储段的带符号的url。 此属性的默认值为 `inline`. | 否 |
+| `encoding` | 输入图像的文件格式。 当前只能处理JPEG和PNG图像。 此属性的默认值为 `jpeg`. | 否 |
+| `threshold` | 需要返回结果的分数阈值（0到1）。 使用值 `0` 返回所有结果。 此属性的默认值为 `0`. | 否 |
+| `top-N` | 要返回的结果数（不能是负整数）。 使用值 `0` 返回所有结果。 与 `threshold`，则返回的结果数是任一限制集中的较小者。 此属性的默认值为 `0`. | 否 |
 | `custom` | 要传递的任何自定义参数。 此属性需要有效的JSON对象才能正常工作。 | 否 |
-| `content-id` | 在响应中返回的数据元素的唯一ID。 如果未传递，则分配一个自动生成的ID。 | 否 |
-| `content` | 内容可以是原始图像（“内联”内容类型）。 <br> 如果内容是S3(&#39;s3-bucket&#39; content-type)上的文件，请传递已签名的URL。 | 是 |
+| `content-id` | 响应中返回的数据元素的唯一ID。 如果未传递，则会分配一个自动生成的ID。 | 否 |
+| `content` | 内容可以是原始图像（“内联”内容类型）。 <br> 如果内容是S3(“s3-bucket”content-type)上的文件，请传递带签名的URL。 | 是 |
 
 **响应**
 
-成功的响应返回在`feature_value`数组中检测到的文本。 文本将从左到右读取并返回。 这意味着如果检测到“我爱Adobe”，则您的有效负荷会在不同对象中返回“I”、“love”和“Adobe”。 在对象中，您得到一个`feature_name`，它包含单词，而一个`feature_value`，它包含该文本的置信度量。
+成功响应会返回在 `feature_value` 数组。 文本将从左到右读取并返回。 这意味着如果检测到“I loveAdobe”，则有效负载会在单独的对象中返回“I”、“love”和“Adobe”。 在对象中，您被赋予 `feature_name` 包含单词和 `feature_value` 包含该文本的置信度量度。
 
 ```json
 {

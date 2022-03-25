@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；快速入门；客户人工智能；热门主题；客户人工智能输入；客户人工智能输出；客户人工智能故障诊断；客户人工智能错误
-solution: Experience Platform, Intelligent Services, Real-time Customer Data Platform
+solution: Intelligent Services, Real-time Customer Data Platform
 feature: Customer AI
 title: Customer AI错误疑难解答
 topic-legacy: Getting started
 description: 查找Customer AI中常见错误的答案。
 type: Documentation
 exl-id: 37ff4e85-da92-41ca-afd4-b7f3555ebd43
-source-git-commit: 896dda631cd4182f278de0607bea442d8366fe8c
+source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
 workflow-type: tm+mt
 source-wordcount: '529'
 ht-degree: 0%

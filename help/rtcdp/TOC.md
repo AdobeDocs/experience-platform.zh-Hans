@@ -1,13 +1,13 @@
 ---
 product: adobe experience platform
-solution: Experience Platform, Real-time Customer Data Platform
+solution: Real-time Customer Data Platform
 audience: user
-user-guide-title: 实时客户数据平台指南
+user-guide-title: Real-time Customer Data Platform 指南
 user-guide-description: 将企业多个来源的已知数据和匿名数据相结合，以创建客户档案，根据这些档案创建细分的受众区段，并将这些区段激活到第三方目标。
-source-git-commit: 69833137498fedd87e99ca4255b8f1ace0921ff9
+source-git-commit: c0ea64691ad5f901bca9729ff6d742ffd423f1e5
 workflow-type: tm+mt
 source-wordcount: '174'
-ht-degree: 31%
+ht-degree: 32%
 
 ---
 
@@ -42,13 +42,13 @@ ht-degree: 31%
 * 隐私和数据管理 {#privacy}
    * [隐私概述](privacy/privacy-overview.md)
    * [数据管理概述](privacy/data-governance-overview.md)
-* 配置文件 {#profile}
+* 用户档案 {#profile}
    * [配置文件概述](profile/profile-overview.md)
    * [配置文件浏览](profile/profile-browse.md)
 * 架构 {#schemas}
    * [架构概述](schemas/overview.md)
    * [Real-time CDP B2B Edition中的模式](schemas/b2b.md)
-* 区段 {#segmentation}
+* 区段{#segmentation}
    * [分段概述](segmentation/segmentation-overview.md)
    * [区段生成器指南](segmentation/segment-builder-guide.md)
    * [Real-time CDP B2B Edition中的分段](segmentation/b2b.md)
