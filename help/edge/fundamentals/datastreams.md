@@ -3,9 +3,9 @@ title: 为Experience PlatformWeb SDK配置数据流
 description: '了解如何配置数据流。 '
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；edgeConfigId；身份；启用ID同步的容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 7fc62099ef7561595d260a5507fb2094f58b6016
+source-git-commit: 026d45b2c9d362d7510576601174c296e3b18a2a
 workflow-type: tm+mt
-source-wordcount: '2004'
+source-wordcount: '1995'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->您的组织必须配置此功能才能在UI中访问它。 如果您没有访问权限，请填写以下内容 [表单](http://adobe.ly/websdkaccess) 我们会授予你必要的访问权。
+>您的组织必须配置此功能才能在UI中访问它。 请填写以下内容 [表单](https://adobe.ly/websdkaccess) 请求必要的访问权限。
 
 ## 访问 [!UICONTROL 数据流] 工作区
 
@@ -66,7 +66,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->当前，Mobile SDK实施不支持为数据收集进行数据准备。
+>Mobile SDK实施当前不支持为数据收集进行数据准备。
 
 数据准备是一项Experience Platform服务，允许您映射、转换和验证来自体验数据模型(XDM)的数据。 在配置启用平台的数据流时，您可以在将源数据发送到平台边缘网络时，使用数据准备功能将源数据映射到XDM。
 
