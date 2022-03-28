@@ -5,9 +5,9 @@ title: 批量摄取API概述
 topic-legacy: overview
 description: Adobe Experience Platform数据摄取API允许您将数据作为批处理文件导入到平台中。 摄取的数据可以是CRM系统中平面文件（如Parquet文件）中的配置文件数据，也可以是符合体验数据模型(XDM)注册表中已知架构的数据。
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 75426b1ddc16af39eb6c423027fac7d4d0e21c6a
 workflow-type: tm+mt
-source-wordcount: '1388'
+source-wordcount: '1387'
 ht-degree: 6%
 
 ---
@@ -151,7 +151,7 @@ curl -X POST "https://platform.adobe.io/data/foundation/import/batches" \
 
 >[!INFO]
 >
->以下示例使用 [Apache Parquet](https://parquet.apache.org/documentation/latest/) 文件格式。 在 [批量获取开发人员指南](api-overview.md).
+>以下示例使用 [Apache Parquet](https://parquet.apache.org/docs/) 文件格式。 在 [批量获取开发人员指南](api-overview.md).
 
 ### 小文件上传
 

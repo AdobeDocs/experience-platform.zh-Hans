@@ -5,9 +5,9 @@ title: 在Attribution AI中下载分数
 topic-legacy: Downloading scores
 description: 本文档是下载Attribution AI得分的指南。
 exl-id: 8821e3fb-c520-4933-8eb7-0b0aa10db916
-source-git-commit: c3320f040383980448135371ad9fae583cfca344
+source-git-commit: 75426b1ddc16af39eb6c423027fac7d4d0e21c6a
 workflow-type: tm+mt
-source-wordcount: '1053'
+source-wordcount: '1052'
 ht-degree: 2%
 
 ---
@@ -18,13 +18,13 @@ ht-degree: 2%
 
 ## 快速入门
 
-Attribution AI允许您以Parquet文件格式下载分数。 本教程要求您已阅读并完成[入门](./getting-started.md)指南中的下载Attribution AI得分部分。
+Attribution AI允许您以Parquet文件格式下载分数。 本教程要求您已阅读并完成下载Attribution AI得分部分(位于 [入门](./getting-started.md) 的双曲余切值。
 
-此外，要访问Attribution AI的得分，您需要有一个运行状态成功的服务实例可用。 要创建新的服务实例，请访问[Attribution AI用户指南](./user-guide.md)。 如果您最近创建了一个服务实例，但该实例仍在培训和评分，请允许24小时才能完成运行。
+此外，要访问Attribution AI的得分，您需要有一个运行状态成功的服务实例可用。 要创建新的服务实例，请访问 [Attribution AI用户指南](./user-guide.md). 如果您最近创建了一个服务实例，但该实例仍在培训和评分，请允许24小时才能完成运行。
 
 ## 查找数据集ID {#dataset-id}
 
-在用于Attribution AI分析的服务实例中，单击右上方导航中的&#x200B;*更多操作*&#x200B;下拉列表，然后选择&#x200B;**[!UICONTROL 访问得分]**。
+在您的服务实例中，单击 *更多操作* 右上方导航中的下拉列表，然后选择 **[!UICONTROL 访问分数]**.
 
 ![更多操作](./images/download-scores/more-actions.png)
 
@@ -34,7 +34,7 @@ Attribution AI允许您以Parquet文件格式下载分数。 本教程要求您�
 
 ## 检索批处理ID {#retrieve-your-batch-id}
 
-使用上一步中的数据集ID，您需要调用目录API以检索批处理ID。 此API调用使用其他查询参数，以返回最新的成功批次，而不是属于贵组织的批次列表。 要返回其他批，请将`limit`查询参数的数量增加到您希望返回的所需数量。 有关可用查询参数类型的更多信息，请访问[使用查询参数筛选目录数据](../../catalog/api/filter-data.md)指南。
+使用上一步中的数据集ID，您需要调用目录API以检索批处理ID。 此API调用使用其他查询参数，以返回最新的成功批次，而不是属于贵组织的批次列表。 要返回其他批，请增加 `limit` 查询参数的值。 有关可用查询参数类型的更多信息，请访问 [使用查询参数筛选目录数据](../../catalog/api/filter-data.md).
 
 **API格式**
 
@@ -58,11 +58,11 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?&dataSet=
 
 **响应**
 
-成功的响应会返回包含批处理ID对象的有效负荷。 在此示例中，返回对象的键值是批处理ID `01E5QSWCAASFQ054FNBKYV6TIQ`。 复制批量ID以在下一次API调用中使用。
+成功的响应会返回包含批处理ID对象的有效负荷。 在此示例中，返回对象的键值是批处理ID `01E5QSWCAASFQ054FNBKYV6TIQ`. 复制批量ID以在下一次API调用中使用。
 
 >[!NOTE]
 >
-> 为方便阅读，以下响应已对`tags`对象进行了重新格式化。
+> 以下答复已 `tags` 为了可读性而对对象进行了重构。
 
 ```json
 {
@@ -113,7 +113,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/catalog/batches?&dataSet=
 
 ## 使用您的批处理ID检索下一个API调用 {#retrieve-the-next-api-call-with-your-batch-id}
 
-获得批处理ID后，便能够向`/batches`发出新的GET请求。 该请求会返回用作下一个API请求的链接。
+获得批处理ID后，您便能够向 `/batches`. 该请求会返回用作下一个API请求的链接。
 
 **API格式**
 
@@ -123,7 +123,7 @@ GET batches/{BATCH_ID}/files
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 在上一步[中检索批ID的批处理ID](#retrieve-your-batch-id)。 |
+| `{BATCH_ID}` | 在上一步骤中检索的批ID [检索批ID](#retrieve-your-batch-id). |
 
 **请求**
 
@@ -139,7 +139,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/01E5QSWCAA
 
 **响应**
 
-成功的响应会返回包含`_links`对象的有效负载。 在`_links`对象中，是一个`href`，其值是新的API调用。 复制此值以继续执行下一步。
+成功响应会返回包含 `_links` 对象。 在 `_links` 对象是 `href` 使用新API调用作为其值。 复制此值以继续执行下一步。
 
 ```json
 {
@@ -167,7 +167,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/batches/01E5QSWCAA
 
 ## 检索文件 {#retrieving-your-files}
 
-使用上一步中获得的`href`值作为API调用，发出新GET请求以检索您的文件目录。
+使用 `href` 作为API调用在上一步中获得的值，请发出新的GET请求以检索您的文件目录。
 
 **API格式**
 
@@ -177,7 +177,7 @@ GET files/{DATASETFILE_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{DATASETFILE_ID}` | 在[上一步](#retrieve-the-next-api-call-with-your-batch-id)的`href`值中返回dataSetFile ID。 也可在`data`数组中对象类型`dataSetFileId`下访问。 |
+| `{DATASETFILE_ID}` | 在 `href` 值 [上一步](#retrieve-the-next-api-call-with-your-batch-id). 也可以在 `data` 对象类型下的数组 `dataSetFileId`. |
 
 **请求**
 
@@ -218,15 +218,15 @@ curl -X GET 'https://platform.adobe.io/data/foundation/export/files/01E5QSWCAASF
 | `_links.self.href` | GET请求URL，用于下载目录中的文件。 |
 
 
-复制`data`数组中任何文件对象的`href`值，然后继续执行下一步。
+复制 `href` 值 `data` 数组，然后继续执行下一步。
 
 ## 下载文件数据
 
-要下载文件GET，请向上一步[中复制的`"href"`值发出数据请求，以检索文件](#retrieving-your-files)。
+要下载文件数据，请向 `"href"` 您在上一步中复制的值 [检索文件](#retrieving-your-files).
 
 >[!NOTE]
 >
->如果您直接在命令行中发出此请求，则可能会提示您在请求标头之后添加输出。 以下请求示例使用`--output {FILENAME.FILETYPE}`。
+>如果您直接在命令行中发出此请求，则可能会提示您在请求标头之后添加输出。 以下请求示例使用 `--output {FILENAME.FILETYPE}`.
 
 **API格式**
 
@@ -236,7 +236,7 @@ GET files/{DATASETFILE_ID}?path={FILE_NAME}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{DATASETFILE_ID}` | 在`href`值中，从[上一步](#retrieve-the-next-api-call-with-your-batch-id)返回dataSetFile ID。 |
+| `{DATASETFILE_ID}` | 在 `href` 值 [上一步](#retrieve-the-next-api-call-with-your-batch-id). |
 | `{FILE_NAME}` | 文件的名称。 |
 
 **请求**
@@ -260,11 +260,11 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
 
 ![终端](./images/download-scores/terminal-output.png)
 
-下载的分数将采用Parquet格式，并且需要[!DNL Spark]-shell或Parquet阅读器才能查看分数。 要查看原始分数，可以使用[Apache Parquet Tools](https://parquet.apache.org/documentation/latest/)。 Parquet工具可以使用[!DNL Spark]分析数据。
+下载的分数将采用Parquet格式，并且要么需要 [!DNL Spark]-shell或Parquet阅读器查看分数。 要查看原始分数，您可以使用 [Apache Parquet Tools](https://parquet.apache.org/docs/). 镶木工具可分析 [!DNL Spark].
 
 ## 后续步骤
 
-本文档概述了下载Attribution AI得分所需的步骤。 有关分数输出的更多信息，请访问[属性AI输入和输出](./input-output.md)文档。
+本文档概述了下载Attribution AI得分所需的步骤。 有关分数输出的详细信息，请访问 [归因AI输入和输出](./input-output.md) 文档。
 
 ## 使用Snowflake访问分数
 
@@ -288,11 +288,11 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
 
 ### 在Snowflake中查找架构
 
-使用提供的凭据登录到Snowflake。 单击左上角主导航中的&#x200B;**工作表**&#x200B;选项卡，然后导航到左侧面板中的数据库目录。
+使用提供的凭据登录到Snowflake。 单击 **工作表** 选项卡，然后导航到左侧面板中的数据库目录。
 
 ![工作表和导航](./images/download-scores/edited_snowflake_1.png)
 
-接下来，单击屏幕右上角的&#x200B;**选择架构**。 在显示的弹出窗口中，确认您选择了正确的数据库。 接下来，单击&#x200B;*架构*&#x200B;下拉列表，然后选择列出的架构之一。 您可以直接从所选架构下列出的得分表中查询。
+接下来，单击 **选择架构** 中。 在显示的弹出窗口中，确认您选择了正确的数据库。 接下来，单击 *架构* 下拉列表，然后选择列出的模式之一。 您可以直接从所选架构下列出的得分表中查询。
 
 ![查找模式](./images/download-scores/edited_snowflake_2.png)
 
@@ -300,7 +300,7 @@ curl -X GET 'https://platform.adobe.io:443/data/foundation/export/files/01E5QSWC
 
 您的Snowflake凭据可用于在PowerBI Desktop和Snowflake数据库之间设置连接。
 
-首先，在&#x200B;*Server*&#x200B;框下，键入您的SnowflakeURL。 接下来，在&#x200B;*Warehouse*&#x200B;下，键入&quot;XSMALL&quot;。 然后，键入您的用户名和密码。
+首先，在 *服务器* 框中，键入SnowflakeURL。 下一个，下 *仓库*，键入“XSMALL”。 然后，键入您的用户名和密码。
 
 ![POWERBI示例](./images/download-scores/powerbi-snowflake.png)
 

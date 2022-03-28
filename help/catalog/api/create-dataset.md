@@ -3,23 +3,22 @@ keywords: Experience Platform；主页；热门主题；数据集；数据集；
 solution: Experience Platform
 title: 在API中创建数据集
 topic-legacy: developer guide
-description: 此文档介绍如何在Catalog Service API中创建数据集对象。
+description: 本文档介绍如何在目录服务API中创建数据集对象。
 exl-id: f3e5de7f-1781-4898-ac42-063eb51e661a
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 75426b1ddc16af39eb6c423027fac7d4d0e21c6a
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '253'
 ht-degree: 1%
 
 ---
 
 # 在API中创建数据集
 
-要使用[!DNL Catalog] API创建数据集，您必须知道数据集所基于的[!DNL Experience Data Model](XDM)模式的`$id`值。 获得模式ID后，可以通过向[!DNL Catalog] API中的`/datasets`端点发出POST请求来创建数据集。
+要使用 [!DNL Catalog] API，您必须知道 `$id` 值 [!DNL Experience Data Model] (XDM)数据集所基于的架构。 获得架构ID后，您可以通过向 `/datasets` 的端点 [!DNL Catalog] API。
 
 >[!NOTE]
 >
->此文档仅介绍如何在[!DNL Catalog]中创建数据集对象。 有关如何创建、填充和监视数据集的完整步骤，请参阅以下[tutorial](../datasets/create.md)。
+>本文档仅介绍如何在 [!DNL Catalog]. 有关如何创建、填充和监视数据集的完整步骤，请参阅以下内容 [教程](../datasets/create.md).
 
 **API格式**
 
@@ -29,7 +28,7 @@ POST /dataSets
 
 **请求**
 
-以下请求创建引用先前定义的模式的数据集。
+以下请求会创建一个引用先前定义架构的数据集。
 
 ```SHELL
 curl -X POST \
@@ -51,16 +50,16 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `name` | 要创建的数据集的名称。 |
-| `schemaRef.id` | 数据集将基于的XDM模式的URI `$id`值。 |
-| `schemaRef.contentType` | 指示模式的格式和版本。 有关详细信息，请参阅XDM API指南中关于[模式版本控制](../../xdm/api/getting-started.md#versioning)的部分。 |
+| `schemaRef.id` | URI `$id` 数据集将基于的XDM架构的值。 |
+| `schemaRef.contentType` | 指示架构的格式和版本。 请参阅 [模式版本控制](../../xdm/api/getting-started.md#versioning) ，以了解更多信息。 |
 
 >[!NOTE]
 >
->此示例使用[Apache Parmeca](https://parquet.apache.org/documentation/latest/)文件格式作为其`containerFormat`属性。 可在[批处理开发人员指南](../../ingestion/batch-ingestion/api-overview.md)中找到使用JSON文件格式的示例。
+>此示例使用 [Apache Parquet](https://parquet.apache.org/docs/) 其文件格式 `containerFormat` 属性。 在 [批量获取开发人员指南](../../ingestion/batch-ingestion/api-overview.md).
 
 **响应**
 
-成功的响应返回HTTP状态201（已创建）和一个响应对象，该对象由一个数组组成，该数组包含格式为`"@/datasets/{DATASET_ID}"`的新创建数据集的ID。 数据集ID是一个只读的、由系统生成的字符串，用于在API调用中引用数据集。
+成功的响应会返回HTTP状态201（已创建）和一个响应对象，该对象包含一个数组，其中包含以格式新创建数据集的ID `"@/datasets/{DATASET_ID}"`. 数据集ID是由系统生成的只读字符串，用于在API调用中引用数据集。
 
 ```JSON
 [
