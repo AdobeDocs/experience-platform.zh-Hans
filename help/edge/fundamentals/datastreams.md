@@ -3,9 +3,9 @@ title: 为Experience PlatformWeb SDK配置数据流
 description: '了解如何配置数据流。 '
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；edgeConfigId；身份；启用ID同步的容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID;
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 9dbadcb65d4306702e5e4d7dae2614e86cbde332
+source-git-commit: 7fc62099ef7561595d260a5507fb2094f58b6016
 workflow-type: tm+mt
-source-wordcount: '1944'
+source-wordcount: '2004'
 ht-degree: 1%
 
 ---
@@ -50,13 +50,23 @@ ht-degree: 1%
 
 ![数据流的基本配置](../images/datastreams/configure.png)
 
+选择 **[!UICONTROL 高级选项]** 以显示用于配置数据流的其他控件。
+
+![高级配置选项](../images/datastreams/advanced-options.png)
+
+| 设置 | 描述 |
+| --- | --- |
+| [!UICONTROL 地理位置] | 根据用户的IP地址确定是否进行GPS查找。 默认设置 **[!UICONTROL 无]** 禁用任何GPS查找，而 **[!UICONTROL 城市]** 设置可将GPS坐标设为两位小数。 |
+| [!UICONTROL 第一方ID Cookie] | 启用后，此设置会告知边缘网络在查找 [第一方设备ID](../identity/first-party-device-ids.md)，而不是在身份映射中查找此值。<br><br>启用此设置时，您必须提供应存储ID的Cookie的名称。 |
+| [!UICONTROL 第三方ID同步] | ID同步可以分组到容器中，以允许在不同时间运行不同的ID同步。 启用此设置后，您可以指定为此数据流运行哪个ID同步容器。 |
+
 本节的其余部分重点介绍将数据映射到选定平台事件架构的步骤。 如果您使用的是Mobile SDK或未为Platform配置数据流，请选择 **[!UICONTROL 保存]** 在继续下一节之前，请参阅 [向数据流添加服务](#add-services).
 
 ### 为数据收集准备数据 {#data-prep}
 
 >[!IMPORTANT]
 >
->Mobile SDK实施当前不支持为数据收集进行数据准备。
+>当前，Mobile SDK实施不支持为数据收集进行数据准备。
 
 数据准备是一项Experience Platform服务，允许您映射、转换和验证来自体验数据模型(XDM)的数据。 在配置启用平台的数据流时，您可以在将源数据发送到平台边缘网络时，使用数据准备功能将源数据映射到XDM。
 
@@ -199,16 +209,6 @@ ht-degree: 1%
 >[!NOTE]
 >
 >您可以选择 **[!UICONTROL 手动输入ID]** 以键入属性和环境名称，而不使用下拉菜单。
-
-### [!UICONTROL 第三方ID同步] 设置
-
-第三方ID部分是唯一始终打开的部分。 它有两个可用的设置：&quot;[!UICONTROL 已启用第三方ID同步]&quot;和&quot;[!UICONTROL 第三方ID同步容器ID]&quot;
-
-![配置UI的“第三方ID同步”部分](../images/datastreams/third-party-id-sync-config.png)
-
-| 设置 | 描述 |
-| --- | --- |
-| [!UICONTROL 第三方ID同步容器ID] | ID同步可以分组到容器中，以允许在不同时间运行不同的ID同步。 此操作可控制为此数据流运行哪个ID同步容器。 |
 
 ## 后续步骤
 
