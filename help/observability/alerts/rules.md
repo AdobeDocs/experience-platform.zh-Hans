@@ -4,9 +4,9 @@ title: 标准警报规则
 description: 本文档涵盖由Experience Platform提供的预定义警报规则。
 feature: Alerts
 exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
-source-git-commit: d8ada2de0ee0408e4e10f0dc45652af6eb6352cf
+source-git-commit: f1098f5992068173f35cb1c53924a82df6996acb
 workflow-type: tm+mt
-source-wordcount: '728'
+source-wordcount: '785'
 ht-degree: 3%
 
 ---
@@ -27,6 +27,8 @@ When [在平台UI中查看警报规则](./ui.md)，则可以单独订阅每个�
 | 源流运行信息 | 源流运行成功 | 成功从源连接摄取数据时，将触发此警报。 |
 | 源流运行延迟、失败和错误 | 源流运行失败 | 从源连接摄取数据时出错时，会触发此警报。 |
 | 源流运行延迟、失败和错误 | 摄取延迟 | 当批量摄取流程运行超过150分钟时，将触发此警报。 |
+| 源流运行延迟、失败和错误 | 缺少摄取 | 如果摄取延迟超过七小时且未将数据摄取到平台，则此警报会向您发送消息。 |
+| 源流运行延迟、失败和错误 | 摄取失败 | 当失败记录与所有记录的比率超过0.5%的阈值时，将触发此警报 |
 
 {style=&quot;table-layout:auto&quot;}
 
