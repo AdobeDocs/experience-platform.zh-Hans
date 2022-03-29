@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;Kinesis目标；Kinesis
 title: (Beta)Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: c2e726a7e66267bf8f301014ae30dedd7472c693
+source-git-commit: b2ac26589527313ec9f3cf84126e3e23da6c7b83
 workflow-type: tm+mt
-source-wordcount: '1298'
+source-wordcount: '1340'
 ht-degree: 1%
 
 ---
@@ -44,6 +44,10 @@ ht-degree: 1%
 | 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style=&quot;table-layout:auto&quot;}
+
+## IP地址允许列表 {#ip-address-allowlist}
+
+为满足客户的安全性和合规性要求，Experience Platform提供了一个静态IP列表，您可允许列表以在 [!DNL Amazon Kinesis] 目标。 请参阅 [流目标的IP地址允许列表](/help/destinations/catalog/streaming/ip-address-allow-list.md) 以获取要的IP的完整列允许列表表。
 
 ## 必需 [!DNL Amazon Kinesis] 权限 {#required-kinesis-permission}
 

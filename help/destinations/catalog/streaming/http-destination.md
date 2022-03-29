@@ -3,9 +3,9 @@ keywords: 流；
 title: HTTP API连接
 description: 利用Adobe Experience Platform中的HTTP API目标，可将配置文件数据发送到第三方HTTP端点。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: c2e726a7e66267bf8f301014ae30dedd7472c693
+source-git-commit: 7acacc4a5ddd10f47da59837ad7dab2615d41789
 workflow-type: tm+mt
-source-wordcount: '1377'
+source-wordcount: '1384'
 ht-degree: 1%
 
 ---
@@ -61,8 +61,11 @@ curl --location --request POST '<YOUR_API_ENDPOINT>' \
 --data-urlencode 'client_secret=<CLIENT_SECRET>'
 ```
 
-
 您还可以使用 [Adobe Experience Platform Destination SDK](/help/destinations/destination-sdk/overview.md) 以设置集成并将Experience Platform配置文件数据发送到HTTP端点。
+
+## IP地址允许列表 {#ip-address-allowlist}
+
+为满足客户的安全性和合规性要求，Experience Platform提供了一个静态IP列表，您可以允许列表为HTTP API目标进行管理。 请参阅 [流目标的IP地址允许列表](/help/destinations/catalog/streaming/ip-address-allow-list.md) 以获取要的IP的完整列允许列表表。
 
 ## 连接到目标 {#connect-destination}
 
@@ -97,10 +100,6 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 ### 目标属性 {#attributes}
 
 在 [[!UICONTROL 选择属性]](../../ui/activate-streaming-profile-destinations.md#select-attributes) 步骤，Adobe建议您从 [合并模式](../../../profile/home.md#profile-fragments-and-union-schemas). 选择唯一标识符以及要导出到目标的任何其他XDM字段。
-
-## 产品注意事项 {#product-considerations}
-
-Experience Platform不会通过一组固定的静态IP将数据流出到HTTP端点。 因此，Adobe无法提供可为HTTP API目标允许列表的静态IP列表。
 
 ## 配置文件导出行为 {#profile-export-behavior}
 

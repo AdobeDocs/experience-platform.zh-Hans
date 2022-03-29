@@ -2,31 +2,30 @@
 keywords: IP地址、IP范围、允许列表目标、允许列表
 title: '云存储目标的IP地址允许列表 '
 type: Documentation
-description: 本页提供可添加到允许列表的IP范围，以将Experience Platform数据安全地从SFTP服务器、Amazon S3或Azure Blob存储导出。
+description: 本页提供了可添加到允许列表的IP范围，以便将Experience Platform中的数据安全地导出到SFTP服务器、Amazon S3或Azure Blob存储。
 exl-id: 0b8086aa-786e-4244-b2a5-a3f57ad59a8b
-translation-type: tm+mt
-source-git-commit: 4cc7fb2714f6df8065a0531f7e507983940d662c
+source-git-commit: c4d8ae6de2e1bbf23a25a66bde5dc88c13a13402
 workflow-type: tm+mt
-source-wordcount: '206'
+source-wordcount: '202'
 ht-degree: 0%
 
 ---
 
-# 云存储目标{#ip-address-allow-list}的IP地址允许列表
+# 云存储允许列表目标的IP地址 {#ip-address-allow-list}
 
 >[!IMPORTANT]
 >
-> * Adobe建议您将此页面加入书签，并每三个月重新访问一次，以检查最新的IP地址。 Adobe不提供新IP范围的通知。
-> * 虽然Adobe支持向SFTP服务器导出存储，但建议的用于导出数据的云位置是[!DNL Amazon S3]和[!DNL Azure Blob]。
+> * Adobe建议您将此页面加入书签并每三个月重新访问一次，以检查最新的IP地址。 Adobe不提供新IP范围的通知。
+> * 虽然Adobe支持将数据导出到SFTP服务器，但建议使用云存储位置导出数据 [!DNL Amazon S3] 和 [!DNL Azure Blob].
 
 
 ## 概述 {#overview}
 
-本页提供可添加到允许列表的IP范围，以将Experience Platform中的数据安全地导出到[SFTP服务器](./sftp.md)。
+本页提供了可添加到的IP范允许列表围，以便安全地将数据从Experience Platform导出到 [SFTP服务器](./sftp.md).
 
-您可以通过网络防火墙定义网络访问控制。 通过指定适当的IP范围，您可以允许数据传输服务的通信。
+您可以通过网络防火墙定义网络访问控制。 通过指定适当的IP范围，您可以允许数据传输服务的流量。
 
-Adobe建议您在使用云存储目标连接之前，向允许列表添加以下IP范围。 如果无法向允许列表添加区域特定的IP范围，在使用云存储目标连接时可能会导致错误或性能不佳。
+Adobe建议您在使用云存储目标连接允许列表之前，将以下IP范围添加到。 无法将特定于区域的IP范围添加到您的允许列表中，在使用云存储目标连接时，可能会导致错误或性能不佳。
 
 ## 所有客户都需要
 
