@@ -5,9 +5,9 @@ title: 导入和使用外部受众
 description: 请阅读本教程，了解如何将外部受众与Adobe Experience Platform结合使用。
 topic-legacy: tutorial
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 8325ae6fd7d0013979e80d56eccd05b6ed6f5108
+source-git-commit: 077622e891f4c42ce283e2553d6a2983569d3584
 workflow-type: tm+mt
-source-wordcount: '809'
+source-wordcount: '1471'
 ht-degree: 0%
 
 ---
@@ -46,6 +46,10 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 ![](../images/tutorials/external-audiences/identity-namespace-info.png)
 
+>[!NOTE]
+>
+>要开始将自定义命名空间与外部受众结合使用，您需要创建支持票证。 有关更多详细信息，请联系您的Adobe代表。
+
 ## 为区段元数据创建架构
 
 创建身份命名空间后，您需要为要创建的区段创建新架构。
@@ -72,7 +76,7 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 配置架构后，您将需要为区段元数据创建数据集。
 
-要创建数据集，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#create). 您将希望跟踪 **[!UICONTROL 从架构创建数据集]** 选项。
+要创建数据集，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#create). 您应遵循 **[!UICONTROL 从架构创建数据集]** 选项。
 
 ![](../images/tutorials/external-audiences/select-schema.png)
 
@@ -82,13 +86,70 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 
 ## 设置和导入受众数据
 
-启用数据集后，现在可以通过用户界面或使用Experience PlatformAPI将数据发送到平台。 要将此数据摄取到平台，您需要创建流连接。
+启用数据集后，现在可以通过用户界面或使用Experience PlatformAPI将数据发送到平台。 您可以通过批量连接或流连接摄取此数据。
+
+### 使用批量连接摄取数据
+
+要创建批量连接，您可以按照 [本地文件上传UI指南](../../sources/tutorials/ui/create/local-system/local-file-upload.md). 有关可在中使用摄取数据的可用源的完整列表，请阅读 [源概述](../../sources/home.md).
+
+### 使用流连接摄取数据
 
 要创建流连接，您可以按照 [API教程](../../sources/tutorials/api/create/streaming/http.md) 或 [UI教程](../../sources/tutorials/ui/create/streaming/http.md).
 
 创建流连接后，您将有权访问唯一的流端点，您可以将数据发送到该端点。 要了解如何向这些端点发送数据，请阅读 [流记录数据教程](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
 
 ![](../images/tutorials/external-audiences/get-streaming-endpoint.png)
+
+## 受众元数据结构
+
+创建连接后，您现在可以将数据摄取到平台。
+
+外部受众有效负载元数据的示例如下所示：
+
+```json
+{
+    "header": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+            "contentType": "application/vnd.adobe.xed-full+json;version=1"
+        },
+        "imsOrgId": "{IMS_ORG}",
+        "datasetId": "{DATASET_ID}",
+        "source": {
+            "name": "Sample External Audience"
+        }
+    },
+    "body": {
+        "xdmMeta": {
+            "schemaRef": {
+                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+                "contentType": "application/vnd.adobe.xed-full+json;version=1"
+            }
+        },
+        "xdmEntity": {
+            "_id": "{SEGMENT_ID}",
+            "description": "Sample description",
+            "identityMap": {
+                "{IDENTITY_NAMESPACE}": [{
+                    "id": "{}"
+                }]
+            },
+            "segmentName" : "{SEGMENT_NAME}",
+            "segmentStatus": "ACTIVE",
+            "version": "1.0"
+        }
+    }
+}
+```
+
+| 属性 | 描述 |
+| -------- | ----------- |
+| `schemaRef` | 架构 **必须** 请参阅之前创建的区段元数据架构。 |
+| `datasetId` | 数据集ID **必须** 请参阅之前为刚刚创建的架构创建的数据集。 |
+| `xdmEntity._id` | ID **必须** 请参阅与外部受众使用的相同区段ID。 |
+| `xdmEntity.identityMap` | 此部分 **必须** 包含在创建之前创建的命名空间时使用的标识标签。 |
+| `{IDENTITY_NAMESPACE}` | 这是之前创建的身份命名空间的标签。 例如，如果您将身份命名空间称为“externalAudience”，则会将该名称空间用作数组的键。 |
+| `segmentName` | 您希望外部受众按其分段的区段名称。 |
 
 ## 使用导入的受众生成区段
 
@@ -99,3 +160,105 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 ## 后续步骤
 
 现在，您可以在区段中使用外部受众，接下来可以使用区段生成器创建区段。 要了解如何创建区段，请阅读 [创建区段的教程](./create-a-segment.md).
+
+## 附录
+
+除了使用导入的外部受众元数据并将其用于创建区段外，您还可以将外部区段成员资格导入Platform。
+
+### 设置外部区段成员资格目标架构
+
+要开始构建架构，请首先选择 **[!UICONTROL 模式]** 在左侧导航栏上，然后是 **[!UICONTROL 创建架构]** 模式工作区的右上角。 从此处选择 **[!UICONTROL XDM个人配置文件]**.
+
+![](../images/tutorials/external-audiences/create-schema-profile.png)
+
+现在，架构已创建完成，接下来您需要将区段成员资格字段组添加为架构的一部分。 要执行此操作，请选择 [!UICONTROL 区段成员资格详细信息]，后跟 [!UICONTROL 添加字段组].
+
+![](../images/tutorials/external-audiences/segment-membership-details.png)
+
+此外，请确保架构已标记为 **[!UICONTROL 用户档案]**. 要实现此目的，您需要将字段标记为主标识。
+
+![](../images/tutorials/external-audiences/external-segment-profile.png)
+
+### 设置数据集
+
+创建架构后，您需要创建一个数据集。
+
+要创建数据集，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#create). 您应遵循 **[!UICONTROL 从架构创建数据集]** 选项。
+
+![](../images/tutorials/external-audiences/select-schema.png)
+
+创建数据集后，请按照 [数据集用户指南](../../catalog/datasets/user-guide.md#enable-profile) 为“实时客户资料”启用此数据集。
+
+![](../images/tutorials/external-audiences/dataset-profile.png)
+
+## 设置和导入外部受众成员资格数据
+
+启用数据集后，现在可以通过用户界面或使用Experience PlatformAPI将数据发送到平台。 您可以通过批量连接或流连接摄取此数据。
+
+### 使用批量连接摄取数据
+
+要创建批量连接，您可以按照 [本地文件上传UI指南](../../sources/tutorials/ui/create/local-system/local-file-upload.md). 有关可在中使用摄取数据的可用源的完整列表，请阅读 [源概述](../../sources/home.md).
+
+### 使用流连接摄取数据
+
+要创建流连接，您可以按照 [API教程](../../sources/tutorials/api/create/streaming/http.md) 或 [UI教程](../../sources/tutorials/ui/create/streaming/http.md).
+
+创建流连接后，您将有权访问唯一的流端点，您可以将数据发送到该端点。 要了解如何向这些端点发送数据，请阅读 [流记录数据教程](../../ingestion/tutorials/streaming-record-data.md#ingest-data).
+
+![](../images/tutorials/external-audiences/get-streaming-endpoint.png)
+
+## 区段成员结构
+
+创建连接后，您现在可以将数据摄取到平台。
+
+外部受众成员资格有效负载的示例如下所示：
+
+```json
+{
+    "header": {
+        "schemaRef": {
+            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+            "contentType": "application/vnd.adobe.xed-full+json;version=1"
+        },
+        "imsOrgId": "{IMS_ORG}",
+        "datasetId": "{DATASET_ID}",
+        "source": {
+            "name": "Sample External Audience Membership"
+        }
+    },
+    "body": {
+        "xdmMeta": {
+            "schemaRef": {
+                "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
+                "contentType": "application/vnd.adobe.xed-full+json;version=1"
+            }
+        },
+        "xdmEntity": {
+            "_id": "{UNIQUE_ID}",
+            "description": "Sample description",
+            "{TENANT_NAME}": {
+                "identities": {
+                    "{SCHEMA_IDENTITY}": "sample-id"
+                }
+            },
+            "personId" : "sample-name",
+            "segmentMembership": {
+                "{IDENTITY_NAMESPACE}": {
+                    "{EXTERNAL_IDENTITY}": {
+                        "status": "realized",
+                        "lastQualificationTime": "2022-03-14T:00:00:00Z"
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+| 属性 | 描述 |
+| -------- | ----------- |
+| `schemaRef` | 架构 **必须** 请参阅之前创建的区段成员资格数据架构。 |
+| `datasetId` | 数据集ID **必须** 请参阅之前创建的数据集，以了解您刚刚创建的成员资格架构。 |
+| `xdmEntity._id` | 用于唯一标识数据集内记录的合适ID。 |
+| `{TENANT_NAME}.identities` | 此部分用于将自定义标识的字段组与您之前导入的用户连接起来。 |
+| `segmentMembership.{IDENTITY_NAMESPACE}` | 这是之前创建的自定义身份命名空间的标签。 例如，如果您将身份命名空间称为“externalAudience”，则会将该名称空间用作数组的键。 |
