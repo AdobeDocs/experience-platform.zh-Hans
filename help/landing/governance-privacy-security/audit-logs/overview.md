@@ -2,18 +2,14 @@
 title: 审核日志概述
 description: 了解审核日志如何让您了解谁在Adobe Experience Platform中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: 7e4853cee8a0fa937c82eb842cd73b675eb337a3
+source-git-commit: d726576a4d1f29d83f3b7cf72c9f5c5d4ff114d3
 workflow-type: tm+mt
-source-wordcount: '657'
-ht-degree: 5%
+source-wordcount: '757'
+ht-degree: 7%
 
 ---
 
-# 审核日志（测试版）
-
->[!IMPORTANT]
->
->Adobe Experience Platform中的审核日志功能目前处于测试阶段，您的组织可能还无法访问该功能。 本文档中描述的功能可能会发生更改。
+# 审核日志
 
 为了提高系统中所执行活动的透明度和可见性，Adobe Experience Platform允许您以“审核日志”的形式审核各种服务和功能的用户活动。 这些日志形成了一个审核跟踪，可帮助解决平台上的问题，并帮助您的企业有效地遵守公司数据管理策略和法规要求。
 
@@ -27,13 +23,18 @@ ht-degree: 5%
 
 | 资源 | 操作 |
 | --- | --- |
-| [数据集](../../../catalog/datasets/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用 [实时客户资料](../../../profile/home.md)</li></ul> |
-| [架构](../../../xdm/schema/composition.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [数据集](../../../catalog/datasets/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用 [实时客户资料](../../../profile/home.md)</li><li>为配置文件禁用</li></ul> |
+| [架构](../../../xdm/schema/composition.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>为配置文件启用</li></ul> |
 | [类](../../../xdm/schema/composition.md#class) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
 | [字段组](../../../xdm/schema/composition.md#field-group) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
 | [数据类型](../../../xdm/schema/composition.md#data-type) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
 | [沙盒](../../../sandboxes/home.md) | <ul><li>创建</li><li>更新</li><li>重置</li><li>删除</li></ul> |
-| [目标](../../../destinations/home.md) | <ul><li>激活</li></ul> |
+| [目标](../../../destinations/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集删除</li><li>配置文件激活</li><li>配置文件删除</li></ul> |
+| [区段](../../../segmentation/home.md) | <ul><li>创建</li><li>删除</li><li>区段激活</li><li>区段删除</li></ul> |
+| [合并策略](../../../profile/merge-policies/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [计算属性](../../../profile/computed-attributes/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [产品配置文件](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [帐户(Adobe)](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
 
 ## 访问审核日志
 
@@ -47,7 +48,7 @@ ht-degree: 5%
 
 ![审核日志仪表板](../../images/audit-logs/audits.png)
 
-系统仅显示去年的审核日志。 超出此限制的任何日志将自动从系统中删除。
+审核日志会保留365天，之后这些日志将从系统中删除。 因此，您最长只能返回365天的时段。
 
 从列表中选择事件，以在右边栏中查看其详细信息。
 
@@ -55,7 +56,12 @@ ht-degree: 5%
 
 ### 筛选审核日志
 
-选择漏斗图标(![“过滤器”图标](../../images/audit-logs/icon.png))以显示筛选器控件列表，以帮助缩小结果范围。
+>[!NOTE]
+>
+>由于这是一项新功能，因此显示的数据只能追溯到2022年3月。 根据所选的资源，以前的数据可能从2022年1月开始提供。
+
+
+选择漏斗图标(![“过滤器”图标](../../images/audit-logs/icon.png))以显示筛选器控件列表，以帮助缩小结果范围。 无论选择何种过滤器，都只显示最后1000条记录。
 
 ![筛选器](../../images/audit-logs/filters.png)
 
@@ -65,8 +71,9 @@ ht-degree: 5%
 | --- | --- |
 | [!UICONTROL 类别] | 使用下拉菜单按 [类别](#category). |
 | [!UICONTROL 操作] | 按操作过滤。 当前仅 [!UICONTROL 创建] 和 [!UICONTROL 删除] 可以过滤操作。 |
+| [!UICONTROL 用户] | 输入完整的用户ID(例如， `johndoe@acme.com`)来按用户进行筛选。 |
 | [!UICONTROL 状态] | 按是否允许（完成）或由于缺少而拒绝该操作进行过滤 [访问控制](../../../access-control/home.md) 权限。 |
-| [!UICONTROL 日期] | 选择开始日期和/或结束日期，以定义日期范围以按过滤结果。 |
+| [!UICONTROL 日期] | 选择开始日期和/或结束日期，以定义日期范围以按过滤结果。 可以使用90天的回顾期(例如，从2021-12-15到2022-03-15)导出数据。 这可能因事件类型而异。 |
 
 要删除过滤器，请在相关过滤器的“药丸”图标上选择“X”，或选择 **[!UICONTROL 全部清除]** 删除所有过滤器。
 
@@ -90,6 +97,10 @@ ht-degree: 5%
 
 要了解如何管理Adobe Admin Console中活动的审核日志，请参阅以下内容 [文档](https://helpx.adobe.com/enterprise/using/audit-logs.html).
 
-## 后续步骤
+## 后续步骤和其他资源
 
 本指南介绍了如何在Experience Platform中管理审核日志。 有关如何监控平台活动的更多信息，请参阅 [可观测性洞察](../../../observability/home.md) 和 [监控数据摄取](../../../ingestion/quality/monitor-data-ingestion.md).
+
+要加深您对Experience Platform中审核日志的了解，请观看以下视频：
+
+>[!VIDEO](https://video.tv.adobe.com/v/341450?quality=12&learn=on)
