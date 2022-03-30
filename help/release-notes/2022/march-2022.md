@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
-source-git-commit: 4bead30e4bb13461cf42374cb93f3d67520a14ec
+source-git-commit: 004835ab8af8f187c3e6af036429072e8de19024
 workflow-type: tm+mt
 source-wordcount: '882'
 ht-degree: 6%
@@ -125,7 +125,7 @@ Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为
 | 功能 | 描述 |
 | --- | --- |
 | 现在有新的源可用于B2B使用 | 现在，您可以在Platform上为B2B用例使用所有可用源。 请参阅 [源目录](../../sources/home.md) 以获取可用源的完整列表。 |
-| 全面提供新 [!DNL Oracle Eloqua] 来源 | 您现在可以使用 [!DNL Oracle Eloqua] 源：无缝地从 [!DNL Oracle Eloqua] 实例（帐户、营销活动、联系人）到平台。 请参阅 [创建 [!DNL Oracle Eloqua] 源连接](../../sources/connectors/oracle-eloqua.md) 以了解更多信息。 |
+| 全面提供新 [!DNL Oracle Eloqua] 来源 | 您现在可以使用 [!DNL Oracle Eloqua] 源：无缝地从 [!DNL Oracle Eloqua] 实例（帐户、营销活动、联系人）到平台。 请参阅 [创建 [!DNL Oracle Eloqua] 源连接](../../sources/connectors/marketing-automation/oracle-eloqua.md) 以了解更多信息。 |
 | 的API增强功能 [!DNL Data Landing Zone] | 的 [!DNL Data Landing Zone] 现在，源支持在使用 [!DNL Flow Service] API。 请参阅 [创建 [!DNL Data Landing Zone] 源连接](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md) 以了解更多信息。 |
 
 {style=&quot;table-layout:auto&quot;}
