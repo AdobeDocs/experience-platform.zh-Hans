@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 6ae54c1f3f06c8daaf7c0d36beb4d5884bc258eb
+source-git-commit: 13e10956519199ae1872685ba6a6eff8b5d73e21
 workflow-type: tm+mt
-source-wordcount: '882'
-ht-degree: 6%
+source-wordcount: '1059'
+ht-degree: 5%
 
 ---
 
@@ -16,6 +16,7 @@ ht-degree: 6%
 Adobe Experience Platform的新增功能：
 
 - [审核日志](#audit-logs)
+- [Real-Time CDP B2B版中的相关帐户](#related-accounts)
 
 Adobe Experience Platform 现有功能的更新包括：
 
@@ -39,6 +40,22 @@ Experience Platform允许您审核用户活动以获取各种服务和功能。 
 {style=&quot;table-layout:auto&quot;}
 
 有关Platform中审核日志的更多信息，请参阅 [审核日志概述](../../landing/governance-privacy-security/audit-logs/overview.md).
+
+## Real-Time CDP B2B版中的相关帐户 {#related-accounts}
+
+>[!NOTE]
+>
+>“相关帐户”功能仅适用于Real-Time CDP B2B Edition的客户。
+
+B2B企业通常将其客户信息存储在多个系统中，每个系统仅包含相同实际业务实体的部分甚至冲突数据。 这给准确了解客户带来了巨大挑战，从而降低其B2B营销和销售工作的效率和有效性。 随着相关帐户的发布， [!DNL Real-time CDP B2B] 现在，会显示与您正在浏览的帐户类似的帐户列表。 您可以在区段定义中包含相关帐户，以扩大您的范围或在区段中应用更广泛的标准。
+
+请在以下文档页面中阅读有关该功能的更多信息：
+
+- [Real-Time CDP B2B版中的相关帐户概述](../../rtcdp/b2b-ai-ml-services/related-accounts.md)
+- [帐户配置文件UI指南中的“相关帐户”选项卡](../../rtcdp/accounts/account-profile-ui-guide.md#related-accounts-tab)
+- [如何在区段定义中使用相关帐户](../../rtcdp/segmentation/b2b.md#related-account)
+
+要进一步了解Real-time CDP B2B Edition，请参阅 [概述](../../rtcdp/overview.md).
 
 ## 警报 {#alerts}
 
