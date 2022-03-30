@@ -4,10 +4,10 @@ title: 用户档案仪表板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 5d4d4a984ef858865e4ca5427ce042b879f2c981
+source-git-commit: 7ca40776747541615e1a1d717aae8d48bed27a74
 workflow-type: tm+mt
-source-wordcount: '2329'
-ht-degree: 1%
+source-wordcount: '2572'
+ht-degree: 0%
 
 ---
 
@@ -102,6 +102,10 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 用户档案计数趋势]](#profiles-count-trend)
 * [[!UICONTROL 按身份划分的用户档案]](#profiles-by-identity)
 * [[!UICONTROL 身份重叠]](#identity-overlap)
+* [[!UICONTROL 单个身份配置文件]](#single-identity-profiles)
+* [[!UICONTROL 未分段的用户档案]](#unsegmented-profiles)
+* [[!UICONTROL 未分段的用户档案] 趋势](#unsegmented-profiles-trend)
+* [[!UICONTROL 按身份划分的未分段用户档案]](#unsegmented-profiles-by-identity)
 
 ### [!UICONTROL 用户档案计数] {#profile-count}
 
@@ -135,7 +139,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 的 **[!UICONTROL 用户档案计数趋势]** 小组件在小组件的右上角显示“字幕”按钮。 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
 
-![“配置文件概述”选项卡，其中突出显示了“配置文件计数”趋势小部件和字幕按钮。](../images/profiles/profile-count-trend-captions.png)
+![“配置文件概述”选项卡，其中显示了突出显示了字幕按钮的“配置文件计数”趋势小组件。](../images/profiles/profile-count-trend-captions.png)
 
 机器学习模型通过分析图表和数据自动生成用于描述关键趋势和重要事件的字幕。
 
@@ -162,6 +166,30 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
 
 ![](../images/profiles/identity-overlap.png)
+
+### [!UICONTROL 单个身份配置文件] {#single-identity-profiles}
+
+的 [!UICONTROL 单个身份配置文件] 小组件会提供贵组织仅具有一种类型的ID类型来创建其身份的用户档案计数。 此ID类型可以是电子邮件或ECID。 配置文件计数是根据最近快照中包含的数据生成的。
+
+![单个身份配置文件小组件。](../images/profiles/single-identity-profiles.png)
+
+### [!UICONTROL 未分段的用户档案] {#unsegmented-profiles}
+
+的 [!UICONTROL 未分段的用户档案] 小组件提供未附加到任何区段的所有用户档案总数。 生成的数字从上次快照开始就是准确的，它代表了整个组织中激活配置文件的机会。 它还表示有机会排除未提供足够ROI的用户档案。
+
+![未分段的用户档案小组件。](../images/profiles/unsegmented-profiles.png)
+
+### [!UICONTROL 未分段的用户档案趋势] {#unsegmented-profiles-trend}
+
+的 [!UICONTROL 未分段的用户档案趋势] 小组件为在给定时间段内未附加到任何区段的用户档案数量提供了折线图插图。 未附加到任何区段的用户档案趋势可在30天、90天和12个月期间进行可视化。 时间段是从小组件的下拉菜单中选择的。 轮廓计数反映在x轴上的y轴和时间中。
+
+![未分段的用户档案趋势小组件。](../images/profiles/unsegmented-profiles-trend.png)
+
+### [!UICONTROL 按身份划分的未分段用户档案] (#unsegmented-profiles-by-identity)
+
+的 [!UICONTROL 按身份划分的未分段用户档案] 小组件按其唯一标识符对未分段的用户档案总数进行分类。 数据以条形图形式显示，以便于比较。
+
+![按身份小组件划分的未分段用户档案。](../images/profiles/unsegmented-profiles-by-identity.png)
 
 ## （测试版）用户档案功效小组件 {#profile-efficacy-widgets}
 
