@@ -4,9 +4,9 @@ description: 了解如何将现有字段组中的字段单独添加到体验数�
 hide: true
 hidefromtoc: true
 exl-id: 0499ff30-a602-419b-b9d3-2defdd4354a7
-source-git-commit: c1b1a3b18a9950d71fb84e463adc973ab45ba563
+source-git-commit: 49a54b78d1e3745694352e779fb2226acd99d663
 workflow-type: tm+mt
-source-wordcount: '1208'
+source-wordcount: '1199'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->此测试版文档中描述的工作流现已在Adobe Experience Platform中正式提供。 有关架构编辑器中基于字段的工作流的最新指导，请参阅 [模式UI指南](./resources/schemas.md) 中。 本指南很快将被删除。
+>本文档中描述的工作流目前处于测试阶段，贵组织可能还无法访问这些工作流。 本文档中描述的功能可能会发生更改。
 
 Adobe Experience Platform提供了一套强大的标准化 [字段组](../schema/composition.md#field-group) ，以用于体验数据模型(XDM)架构。 这些字段组背后的结构和语义经过精心定制，以满足平台中各种分段用例和其他下游应用程序的需求。 您还可以定义自己的自定义字段组以满足独特的业务需求。
 
