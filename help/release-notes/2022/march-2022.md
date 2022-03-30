@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform 发行说明
-description: The latest release notes for Adobe Experience Platform.
-source-git-commit: 9117fffc58786f05e8741d9695ddb551344b6cc7
+description: Adobe Experience Platform的最新发行说明。
+source-git-commit: 04d35137a301492794ab8c0c67183cf5c76f2105
 workflow-type: tm+mt
-source-wordcount: '652'
-ht-degree: 7%
+source-wordcount: '1063'
+ht-degree: 5%
 
 ---
 
@@ -12,73 +12,116 @@ ht-degree: 7%
 
 **发布日期：2022 年 3 月 30 日**
 
-New features in Adobe Experience Platform:
+Adobe Experience Platform的新增功能：
 
-- [Audit logs](#audit-logs)
+- [审核日志](#audit-logs)
 
 Adobe Experience Platform 现有功能的更新包括：
 
 - [警报](#alerts)
-- [Experience Data Model (XDM)](#xdm)
+- [[!DNL Dashboards]](#dashboards)
+- [体验数据模型(XDM)](#xdm)
+- [[!DNL Query Service]](#query-service)
 - [源](#sources)
 
-## Audit Logs {#audit-logs}
+## 审核日志 {#audit-logs}
 
-Experience Platform allows you to audit user activity for various services and capabilities. The audit logs provide information about who did what and when.
+Experience Platform允许您审核用户活动以获取各种服务和功能。 审核日志提供有关谁执行了操作以及何时执行的信息。
 
 **新增功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| Audit logs for Dataset, Schema, Class, Field group, Data type, Sandbox, Destination, Segment, Merge policy, Computed attribute, Product profile and Account (Adobe) | These are the resources which are recorded by audit logs. If the feature is enabled, the audit logs will be automatically collected as activity occurs. You do not need to manually enable log collection. |
-| Export audit logs | `CSV``JSON`The generated files are saved directly to your machine. |
+| 数据集、架构、类、字段组、数据类型、沙盒、目标、区段、合并策略、计算属性、产品配置文件和帐户的审核日志(Adobe) | 这些是审核日志记录的资源。 如果启用了该功能，则会在活动发生时自动收集审核日志。 您无需手动启用日志收集。 |
+| 导出审核日志 | 审核日志可下载为 `CSV` 或 `JSON` 文件。 生成的文件将直接保存到您的计算机。 |
 
 {style=&quot;table-layout:auto&quot;}
 
-[](../../landing/governance-privacy-security/audit-logs/overview.md)
+有关Platform中审核日志的更多信息，请参阅 [审核日志概述](../../landing/governance-privacy-security/audit-logs/overview.md).
 
 ## 警报 {#alerts}
 
-Experience Platform allows you to subscribe to event-based alerts for various Platform activities. 
+Experience Platform允许您订阅各种平台活动的基于事件的警报。 您可以通过 [!UICONTROL 警报] 选项卡，可以选择通过UI本身或电子邮件通知接收警报消息。
 
-****
-
-| 功能 | 描述 |
-| --- | --- |
-| New alert rules | Two new alert rules are now available for sources related to data ingestion. [](../../observability/alerts/rules.md) |
-
-{style=&quot;table-layout:auto&quot;}
-
-[](../../observability/alerts/overview.md)
-
-## Experience Data Model (XDM) {#xdm}
-
-Experience Data Model (XDM) is an open-source specification that provides common structures and definitions (schemas) for data that is brought into Adobe Experience Platform. By adhering to XDM standards, all customer experience data can be incorporated into a common representation to deliver insights in a faster, more integrated way. You can gain valuable insights from customer actions, define customer audiences through segments, and use customer attributes for personalization purposes.
-
-****
+**更新功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| Add or remove individual standard fields for a schema | The Schema Editor UI now allows you to add portions of standard field groups to your schemas, providing more flexibility for the fields you choose to include without needing to build custom resources from scratch.<br><br><br><br>[](../../xdm/ui/resources/schemas.md) |
+| 新警报规则 | 两个新的警报规则现在可用于与数据摄取相关的源。 请参阅 [警报规则](../../observability/alerts/rules.md) ，以了解更新的警报类型列表。 |
 
 {style=&quot;table-layout:auto&quot;}
 
-[](../../xdm/home.md)
+有关平台中警报的更多信息，请参阅 [警报概述](../../observability/alerts/overview.md).
+
+## 仪表板 {#dashboards}
+
+Adobe Experience Platform提供多个 [!DNL dashboards] 通过查看有关贵组织数据的重要信息（在每日快照期间捕获）。
+
+### 用户档案功能板
+
+“配置文件”功能板显示贵组织在“配置文件存储”(Profile Store)中Experience Platform的属性（记录）数据的快照。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 未分段的配置文件小组件 | 小组件提供未附加到任何区段的所有用户档案总数。 生成的数字从上次快照开始就是准确的，它代表了整个组织中激活配置文件的机会。 请参阅 [用户档案标准小组件文档](../../dashboards/guides/profiles.md#standard-widgets) 以了解更多信息。 |
+| 未分段的用户档案趋势小组件 | 此小组件为在给定时间段内未附加到任何区段的用户档案数量提供了折线图插图。 可在30天、90天和12个月期间显示趋势。 请参阅 [用户档案标准小组件文档](../../dashboards/guides/profiles.md#standard-widgets) 以了解更多信息。 |
+| 按身份小组件划分的未分段用户档案 | 此小组件按其唯一标识符对未分段的用户档案总数进行分类。 数据以条形图形式显示。 请参阅 [用户档案标准小组件文档](../../dashboards/guides/profiles.md#standard-widgets) 以了解更多信息。 |
+| 单个身份配置文件小组件 | 此小组件可提供贵组织的配置文件计数，这些配置文件仅具有一种类型的ID类型来创建其身份（电子邮件或ECID）。 请参阅 [用户档案标准小组件文档](../../dashboards/guides/profiles.md#standard-widgets) 以了解更多信息。 |
+
+有关“配置文件”功能板的更多信息，请参阅 [配置文件功能板概述](../../dashboards/guides/profiles.md).
+
+### 目标功能板
+
+“目标”功能板显示贵组织在Experience Platform中启用的目标的快照。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 目标计数小组件 | 小组件提供了可在系统中激活和交付受众的可用端点总数。 此数字包括活动和不活动目标。 请参阅 [destinations standard小组件文档](../../dashboards/guides/destinations.md#standard-widgets) 以了解更多信息。 |
+
+有关平台中目标功能板的更多信息，请参阅 [目标功能板概述](../../dashboards/guides/destinations.md).
+
+## 体验数据模型(XDM) {#xdm}
+
+体验数据模型(XDM)是一种开源规范，它为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
+
+| 功能 | 描述 |
+| --- | --- |
+| 添加或删除架构的单个标准字段 | 架构编辑器UI现在允许您向架构中添加部分标准字段组，从而为您选择包含的字段提供了更大的灵活性，而无需从头开始构建自定义资源。<br><br>现在，您还可以直接在架构结构中定义临时自定义字段，并将它们分配给新的或现有的自定义字段组，而无需事先创建或编辑字段组。<br><br>请参阅 [在UI中创建和编辑架构](../../xdm/ui/resources/schemas.md) 以了解有关这些新工作流的更多信息。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
+
+## 查询服务 {#query-service}
+
+[!DNL Query Service] 允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL Data Lake]. 您可以连接 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、Data Science Workspace或摄取到实时客户资料。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| `table_exists` | 新功能命令用于确认系统中当前是否存在表。 该命令返回一个布尔值： `true` 如果表 **does** 存在，并且 `false` 如果表格显示 **not** 存在。 请参阅 [SQL语法文档](../../query-service/sql/syntax.md) 以了解更多信息。 |
+
+有关可用功能的更多信息，请参阅 [查询服务概述](../../query-service/home.md).
 
 ## 源 {#sources}
 
-Adobe Experience Platform can ingest data from external sources while allowing you to structure, label, and enhance that data using Platform services. You can ingest data from a variety of sources such as Adobe applications, cloud-based storage, third-party software, and your CRM system.
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强该数据。 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
 
-Experience Platform provides a RESTful API and an interactive UI that lets you set up source connections for various data providers with ease. These source connections allow you to authenticate and connect to external storage systems and CRM services, set times for ingestion runs, and manage data ingestion throughput.
+Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，以及管理整个数据摄取。
 
-****
+**更新功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| New sources now available for B2B usage | You can now use all the available sources on Platform for B2B use cases. [](../../sources/home.md) |
-| [!DNL Oracle Eloqua] | [!DNL Oracle Eloqua][!DNL Oracle Eloqua][ [!DNL Oracle Eloqua] ](../../sources/connectors/oracle-eloqua.md) |
-| [!DNL Data Landing Zone] | [!DNL Data Landing Zone][!DNL Flow Service][ [!DNL Data Landing Zone] ](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md) |
+| 现在有新的源可用于B2B使用 | 现在，您可以在Platform上为B2B用例使用所有可用源。 请参阅 [源目录](../../sources/home.md) 以获取可用源的完整列表。 |
+| 全面提供新 [!DNL Oracle Eloqua] 来源 | 您现在可以使用 [!DNL Oracle Eloqua] 源：无缝地从 [!DNL Oracle Eloqua] 实例（帐户、营销活动、联系人）到平台。 请参阅 [创建 [!DNL Oracle Eloqua] 源连接](../../sources/connectors/oracle-eloqua.md) 以了解更多信息。 |
+| 的API增强功能 [!DNL Data Landing Zone] | 的 [!DNL Data Landing Zone] 现在，源支持在使用 [!DNL Flow Service] API。 请参阅 [创建 [!DNL Data Landing Zone] 源连接](../../sources/tutorials/api/create/cloud-storage/data-landing-zone.md) 以了解更多信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 
-[](../../sources/home.md)
+要进一步了解源，请参阅 [源概述](../../sources/home.md).
