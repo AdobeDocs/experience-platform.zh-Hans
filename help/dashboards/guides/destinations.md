@@ -4,9 +4,9 @@ title: 目标功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 7590c24baae669ebe3214985088a7135a69ff8bc
+source-git-commit: 86041e3165d4ea9cb55717f24b002afa084ff420
 workflow-type: tm+mt
-source-wordcount: '1642'
+source-wordcount: '1709'
 ht-degree: 0%
 
 ---
@@ -55,6 +55,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 按身份划分的未映射区段]](#unmapped-segments-by-identity)
 * [[!UICONTROL 按身份映射的区段]](#mapped-segments-by-identity)
 * [[!UICONTROL 常见受众]](#common-audiences)
+* [[!UICONTROL 目标计数]](#destinations-count)
 
 ### [!UICONTROL 最常用的目标] {#most-used-destinations}
 
@@ -151,6 +152,14 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 如果 [!UICONTROL 映射的受众运行状况] 小组件存在较大偏差，您应参考受众大小趋势图并查找异常区段。 该趋势可以进一步分析区段的运行状况。
 
 ![映射的受众健康小组件。](../images/destinations/mapped-audience-health.png)
+
+### [!UICONTROL 目标计数] (#destinations-count)
+
+的 [!UICONTROL 目标计数] 小组件提供了可在系统中激活和交付受众的可用端点总数。 此数字包括活动和不活动目标。
+
+在总计数以下，选择 **[!UICONTROL 目标]** 导航到目标浏览选项卡。 此页面列出了迄今为止您已与建立连接的所有目标。
+
+![目标计数小组件。](../images/destinations/destinations-count.png)
 
 ## 后续步骤
 
