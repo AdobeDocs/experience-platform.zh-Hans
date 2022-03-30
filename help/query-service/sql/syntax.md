@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 575352d8ee6da092fd0fc3a3033e481ee59bd7d3
+source-git-commit: 9493909d606ba858deab5a15f1ffcc8ec9257972
 workflow-type: tm+mt
-source-wordcount: '2378'
+source-wordcount: '2448'
 ht-degree: 2%
 
 ---
@@ -381,6 +381,38 @@ ALTER TABLE t2 ADD FOREIGN KEY (c1) REFERENCES t1(c1) NOT ENFORCED;
 ```
 
 请参阅 [数据资产的逻辑组织](../best-practices/organize-data-assets.md) 以详细说明查询服务最佳实践。
+
+## 表存在
+
+的 `table_exists` SQL命令用于确认系统中当前是否存在表。 该命令返回一个布尔值： `true` 如果表 **does** 存在，并且 `false` 如果表格显示 **not** 存在。
+
+通过在运行语句之前验证表是否存在， `table_exists` 该功能简化了编写匿名块以涵盖 `CREATE` 和 `INSERT INTO` 用例。
+
+以下语法定义了 `table_exists` 命令：
+
+```SQL
+$$
+BEGIN
+
+#Set mytableexist to true if the table already exists.
+SET @mytableexist = SELECT table_exists('target_table_name');
+
+#Create the table if it does not already exist (this is a one time operation).
+CREATE TABLE IF NOT EXISTS target_table_name AS
+  SELECT *
+  FROM   profile_dim_date limit 10;
+
+#Insert data only if the table already exists. Check if @mytableexist = 'true'
+ INSERT INTO target_table_name           (
+                     select *
+                     from   profile_dim_date
+                     WHERE  @mytableexist = 'true' limit 20
+              ) ;
+EXCEPTION
+WHEN other THEN SELECT 'ERROR';
+
+END $$; 
+```
 
 ## [!DNL Spark] SQL命令
 
