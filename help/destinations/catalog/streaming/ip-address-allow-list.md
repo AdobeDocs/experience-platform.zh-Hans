@@ -1,11 +1,12 @@
 ---
 keywords: IP地址、IP范围、允许列表目标、允许列表、允许列表流目标
-title: '流目标的IP地址允许列表 '
+title: 流目允许列表标的IP地址
 type: Documentation
-description: 本页提供了可添加到允许列表的IP范围，以便安全地将数据从Experience Platform导出到HTTP REST API端点。
-source-git-commit: 508435ebe7ba762d204408118703fa6469616118
+description: 本页提供了可添加到允许列表的IP范围，以便将数据从Experience Platform安全地导出到HTTP REST API端点、Amazon Kinesis或Azure事件中心实例。
+exl-id: f41303bd-c886-4c67-9e39-21efc3f5b768
+source-git-commit: 8ea871d3ba66b9ee1a864a6319cde21f518f4534
 workflow-type: tm+mt
-source-wordcount: '262'
+source-wordcount: '268'
 ht-degree: 0%
 
 ---
