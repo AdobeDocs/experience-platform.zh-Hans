@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 9493909d606ba858deab5a15f1ffcc8ec9257972
+source-git-commit: 5468097c61d42a7b565520051b955329e493d51f
 workflow-type: tm+mt
-source-wordcount: '2448'
+source-wordcount: '2596'
 ht-degree: 2%
 
 ---
@@ -261,9 +261,17 @@ DROP TABLE [IF EXISTS] [db_name.]table_name
 | ------ | ------ |
 | `IF EXISTS` | 如果指定了此值，则在表执行此操作时不会引发异常 **not** 存在。 |
 
+## 创建数据库
+
+的 `CREATE DATABASE` 命令创建ADLS数据库。
+
+```sql
+CREATE DATABASE [IF NOT EXISTS] db_name
+```
+
 ## 删除数据库
 
-的 `DROP DATABASE` 命令会删除现有数据库。
+的 `DROP DATABASE` 命令从实例中删除数据库。
 
 ```sql
 DROP DATABASE [IF EXISTS] db_name
@@ -666,6 +674,7 @@ COPY query
 
 的 `ALTER TABLE` 命令允许您添加或删除主键或外键约束，以及向表中添加列。
 
+
 #### 添加或删除约束
 
 以下SQL查询显示了向表添加或删除约束的示例。
@@ -704,6 +713,34 @@ ALTER TABLE table_name ADD COLUMN column_name data_type
 ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_type2 
 ```
 
+#### 添加架构
+
+以下SQL查询显示了向数据库/模式添加表的示例。
+
+```sql
+ALTER TABLE table_name ADD SCHEMA database_name.schema_name
+```
+
+>[!NOTE]
+>
+> ADLS表和视图无法添加到DWH数据库/模式。
+
+
+#### 删除架构
+
+以下SQL查询显示了从数据库/模式中删除表的示例。
+
+```sql
+ALTER TABLE table_name REMOVE SCHEMA database_name.schema_name
+```
+
+>[!NOTE]
+>
+> 不能从物理链接的DWH数据库/模式中删除DWH表和视图。
+
+
+**参数**
+
 | 参数 | 描述 |
 | ------ | ------ |
 | `table_name` | 要编辑的表的名称。 |
@@ -738,4 +775,43 @@ SHOW FOREIGN KEYS
 ------------------+---------------------+----------+---------------------+----------------------+-----------
  table_name_1   | column_name1        | text     | table_name_3        | column_name3         |  "ECID"
  table_name_2   | column_name2        | text     | table_name_4        | column_name4         |  "AAID"
+```
+
+
+### 显示DATAGROUPS
+
+的 `SHOW DATAGROUPS` 命令返回所有关联数据库的表。 对于每个数据库，表都包括架构、组类型、子类型、子名称和子ID。
+
+```sql
+SHOW DATAGROUPS
+```
+
+```console
+   Database   |      Schema       | GroupType |      ChildType       |                     ChildName                       |               ChildId
+  -------------+-------------------+-----------+----------------------+----------------------------------------------------+--------------------------------------
+   adls_db     | adls_scheema      | ADLS      | Data Lake Table      | adls_table1                                        | 6149ff6e45cfa318a76ba6d3
+   adls_db     | adls_scheema      | ADLS      | Data Warehouse Table | _table_demo1                                       | 22df56cf-0790-4034-bd54-d26d55ca6b21
+   adls_db     | adls_scheema      | ADLS      | View                 | adls_view1                                         | c2e7ddac-d41c-40c5-a7dd-acd41c80c5e9
+   adls_db     | adls_scheema      | ADLS      | View                 | adls_view4                                         | b280c564-df7e-405f-80c5-64df7ea05fc3
+```
+
+
+### 为表显示数据组
+
+的 `SHOW DATAGROUPS FOR` “table_name”命令返回所有关联数据库的表，这些数据库包含参数作为其子参数。 对于每个数据库，表都包括架构、组类型、子类型、子名称和子ID。
+
+```sql
+SHOW DATAGROUPS FOR 'table_name'
+```
+
+**参数**
+
+- `table_name`:要为其查找关联数据库的表的名称。
+
+```console
+   Database   |      Schema       | GroupType |      ChildType       |                     ChildName                      |               ChildId
+  -------------+-------------------+-----------+----------------------+----------------------------------------------------+--------------------------------------
+   dwh_db_demo | schema2           | QSACCEL   | Data Warehouse Table | _table_demo2                                       | d270f704-0a65-4f0f-b3e6-cb535eb0c8ce
+   dwh_db_demo | schema1           | QSACCEL   | Data Warehouse Table | _table_demo2                                       | d270f704-0a65-4f0f-b3e6-cb535eb0c8ce
+   qsaccel     | profile_aggs      | QSACCEL   | Data Warehouse Table | _table_demo2                                       | d270f704-0a65-4f0f-b3e6-cb535eb0c8ce
 ```
