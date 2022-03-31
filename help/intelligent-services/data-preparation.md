@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；智能服务；热门主题；智能服务；智能服务
-solution: Intelligent Services
+solution: Experience Platform
 title: 准备数据以在智能服务中使用
 topic-legacy: Intelligent Services
 description: 为了使智能服务能够从营销事件数据中发现洞察，必须在语义上对数据进行扩充并以标准结构进行维护。 智能服务使用体验数据模型(XDM)架构来实现此目的。
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
+source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
 workflow-type: tm+mt
 source-wordcount: '2919'
 ht-degree: 0%

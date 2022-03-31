@@ -1,11 +1,11 @@
 ---
 keywords: 视觉相似度；视觉相似度；ccai api
-solution: Intelligent Services
+solution: Experience Platform
 title: 内容与商务AI API中的视觉相似性
 topic-legacy: Developer guide
 description: 当给定图像时，视觉相似性服务会自动从目录中查找视觉上相似的图像。
 exl-id: fe31d9be-ee42-44fa-b83f-3b8a718cb4e3
-source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
+source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
 workflow-type: tm+mt
 source-wordcount: '510'
 ht-degree: 2%

@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；分析；客户人工智能；热门主题；客户人工智能区段
-solution: Intelligent Services, Real-time Customer Data Platform
+solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
 title: 创建具有预测得分的客户区段
 topic-legacy: Create a segment
 description: 预测运行完成后，用户档案会自动使用预测的倾向得分。 利用Customer AI扩充用户档案，可创建客户区段，以根据其倾向得分查找受众。 本节提供了使用区段生成器创建区段的步骤。
 exl-id: ac81f798-f599-4a8d-af25-c00c92e74b4e
-source-git-commit: 16120a10f8a6e3fd7d2143e9f52a822c59a4c935
+source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
 workflow-type: tm+mt
 source-wordcount: '318'
 ht-degree: 0%
