@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 13e10956519199ae1872685ba6a6eff8b5d73e21
+source-git-commit: 5be8eac1603f1b81e45b4c0aeace5c2017b46149
 workflow-type: tm+mt
 source-wordcount: '1059'
 ht-degree: 5%
@@ -53,7 +53,7 @@ B2B企业通常将其客户信息存储在多个系统中，每个系统仅包�
 
 - [Real-Time CDP B2B版中的相关帐户概述](../../rtcdp/b2b-ai-ml-services/related-accounts.md)
 - [帐户配置文件UI指南中的“相关帐户”选项卡](../../rtcdp/accounts/account-profile-ui-guide.md#related-accounts-tab)
-- [如何在区段定义中使用相关帐户](../../rtcdp/segmentation/b2b.md#related-account)
+- [如何在区段定义中使用相关帐户](../../rtcdp/segmentation/b2b.md#related-accounts)
 
 要进一步了解Real-time CDP B2B Edition，请参阅 [概述](../../rtcdp/overview.md).
 

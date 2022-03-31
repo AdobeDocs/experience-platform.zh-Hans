@@ -2,7 +2,8 @@
 title: Real-Time CDP B2B版中的相关帐户
 type: Documentation
 description: 有关Experience PlatformReal-time CDP B2B中相关帐户功能的概述和更多信息。
-source-git-commit: 09fd6c30461a4229411ce67426fdcb247661f7cb
+exl-id: 37fd2cdb-87c0-4e5e-9599-ad4f397f7c28
+source-git-commit: 5be8eac1603f1b81e45b4c0aeace5c2017b46149
 workflow-type: tm+mt
 source-wordcount: '386'
 ht-degree: 6%
@@ -53,4 +54,4 @@ B2B企业通常将其客户信息存储在多个系统中，每个系统仅包�
 
 您可以在分段中使用帐户和相关帐户。 是否在区段定义中使用相关帐户的决定取决于您的营销用例。 例如，您可以将相关帐户用于电子邮件营销或广告促销活动，在这些活动中，您可能会接受较低的准确性，以换取更广泛的访问。
 
-查看 [分段示例](/help/rtcdp/segmentation/b2b.md#related-account) 使用相关帐户的ID。
+查看 [分段示例](/help/rtcdp/segmentation/b2b.md#related-accounts) 使用相关帐户的ID。
