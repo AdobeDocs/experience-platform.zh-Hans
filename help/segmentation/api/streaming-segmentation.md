@@ -5,9 +5,9 @@ title: '利用流分段快速实时评估事件 '
 topic-legacy: developer guide
 description: 本文档包含有关如何通过Adobe Experience Platform Segmentation Service API使用流分段的示例。
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 4b9c72b4acb9c419afc1725235a9d7865181736b
+source-git-commit: 58c58048538eaf5977b1a5905fab44307bb433a9
 workflow-type: tm+mt
-source-wordcount: '1834'
+source-wordcount: '1896'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,9 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->流分段只能用于评估流入平台的数据。 换言之，通过批量摄取摄取摄取的数据将不会通过流分段进行评估，而是会与夜间计划的分段作业一起进行评估。
+>流分段适用于使用流源摄取的所有数据。 使用基于批处理的源摄取的区段将在夜间进行评估，即使它符合流式分段的条件也是如此。
+>
+>此外，如果使用流分段评估的区段基于使用批处理分段评估的另一个区段，则该区段可能会在理想成员资格与实际成员资格之间产生漂移。 例如，如果区段A基于区段B，并且区段B使用批量分段进行评估，因为区段B仅每24小时更新一次，因此区段A将远离实际数据，直到它与区段B更新重新同步为止。
 
 ## 快速入门
 

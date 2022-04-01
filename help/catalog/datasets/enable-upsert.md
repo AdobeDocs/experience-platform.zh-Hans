@@ -4,7 +4,7 @@ title: 使用API为配置文件更新启用数据集
 type: Tutorial
 description: 本教程将向您演示如何使用Adobe Experience Platform API启用具有“插入”功能的数据集，以便更新实时客户资料数据。
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: d463dabbb9dc099394081b803df619129c0cb416
+source-git-commit: 58c58048538eaf5977b1a5905fab44307bb433a9
 workflow-type: tm+mt
 source-wordcount: '965'
 ht-degree: 2%
@@ -215,7 +215,7 @@ curl -X PATCH \
   -H 'x-gw-ims-org-id: {IMS_ORG}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '[
-        { "op": "replace", "path": "/tags/unifiedProfile", "value": ["enabled:false"] },
+        { "op": "replace", "path": "/tags/unifiedProfile", "value": ["enabled:false"] }
       ]'
 ```
 
