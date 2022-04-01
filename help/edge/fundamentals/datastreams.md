@@ -1,11 +1,11 @@
 ---
-title: 为Experience PlatformWeb SDK配置数据流
-description: '了解如何配置数据流。 '
-keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；edgeConfigId；身份；启用ID同步的容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID;
+title: 配置数据流
+description: 将您的客户端Experience PlatformSDK集成与Adobe产品和第三方目标连接起来。
+keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；边缘配置ID；标识；启用ID同步；ID同步容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID；数据收集的数据准备；数据准备；映射器；XDM；边缘上的XDM；映射器
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 026d45b2c9d362d7510576601174c296e3b18a2a
+source-git-commit: cfe524169b94b5b4160ed75e5e36c83c217f4270
 workflow-type: tm+mt
-source-wordcount: '1995'
+source-wordcount: '2090'
 ht-degree: 1%
 
 ---
@@ -78,13 +78,78 @@ ht-degree: 1%
 
 #### [!UICONTROL 选择数据]
 
-选择 **[!UICONTROL 保存并添加映射]** 完成 [基本配置步骤](#configure)和 **[!UICONTROL 选择数据]** 中。 在此，您必须提供一个JSON对象示例，该对象表示您计划发送到平台的数据的结构。 您可以选择将对象上传为文件的选项，或将原始对象粘贴到提供的文本框中。
+选择 **[!UICONTROL 保存并添加映射]** 完成 [基本配置步骤](#configure)和 **[!UICONTROL 选择数据]** 中。 在此，您必须提供一个JSON对象示例，该对象表示您计划发送到平台的数据的结构。
+
+您应该构建此JSON对象，以便能够将其映射到要捕获的数据层中的属性。 选择以下部分可查看格式正确的JSON对象的示例。
+
++++示例JSON文件
+
+```json
+{
+  "data": {
+    "eventMergeId": "cce1b53c-571f-4f36-b3c1-153d85be6602",
+    "eventType": "view:load",
+    "timestamp": "2021-09-30T14:50:09.604Z",
+    "web": {
+      "webPageDetails": {
+        "siteSection": "Product section",
+        "server": "example.com",
+        "name": "product home",
+        "URL": "https://www.example.com"
+      },
+      "webReferrer": {
+        "URL": "https://www.adobe.com/index2.html",
+        "type": "external"
+      }
+    },
+    "commerce": {
+      "purchase": 1,
+      "order": {
+        "orderID": "1234"
+      }
+    },
+    "product": [
+      {
+        "productInfo": {
+          "productID": "123"
+        }
+      },
+      {
+        "productInfo": {
+          "productID": "1234"
+        }
+      }
+    ],
+    "reservation": {
+      "id": "anc45123xlm",
+      "name": "Embassy Suits",
+      "SKU": "12345-L",
+      "skuVariant": "12345-LG-R",
+      "priceTotal": "112.99",
+      "currencyCode": "USD",
+      "adults": 2,
+      "children": 3,
+      "productAddMethod": "PDP",
+      "_namespace": {
+        "test": 1,
+        "priceTotal": "112.99",
+        "category": "Overnight Stay"
+      },
+      "freeCancellation": false,
+      "cancellationFee": 20,
+      "refundable": true
+    }
+  }
+}
+```
+
++++
 
 >[!IMPORTANT]
 >
 >JSON对象必须具有单个根节点 `data` 以通过验证。
 
-如果JSON有效，则会在右侧面板中显示预览架构。 选择 **[!UICONTROL 下一个]** 继续。
+您可以选择将对象上传为文件的选项，或将原始对象粘贴到提供的文本框中。 如果JSON有效，则会在右侧面板中显示预览架构。 选择 **[!UICONTROL 下一个]** 继续。
 
 ![预期传入数据的JSON示例](../images/datastreams/select-data.png)
 
@@ -105,6 +170,12 @@ ht-degree: 1%
 此时将重新显示映射页面，并显示已完成的字段映射。 的 **[!UICONTROL 映射进度]** 部分更新以反映已成功映射的字段总数。
 
 ![已成功映射反映进度的字段](../images/datastreams/field-mapped.png)
+
+>[!TIP]
+>
+>如果要将一个对象数组（在源字段中）映射到不同对象的数组（在目标字段中），请添加 `[*]` 在源和目标字段路径中的数组名称之后，如下所示。
+>
+>![数组对象映射](../images/datastreams/array-object-mapping.png)
 
 继续按照上述步骤将其余字段映射到目标架构。 虽然您不必映射所有可用的源字段，但必须映射目标架构中设置为必需的任何字段，才能完成此步骤。 的 **[!UICONTROL 必填字段]** 计数器指示当前配置中尚未映射的必填字段数。
 
