@@ -5,10 +5,9 @@ title: 数据集UI指南
 topic-legacy: datasets
 description: 了解如何在Adobe Experience Platform用户界面中处理数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-translation-type: tm+mt
-source-git-commit: d2f19cc97082f75e66cf38e54b5bdb89482930ed
+source-git-commit: 09db4aab17b933c63968d997f33279ab9a96bdef
 workflow-type: tm+mt
-source-wordcount: '1082'
+source-wordcount: '1185'
 ht-degree: 0%
 
 ---
@@ -17,145 +16,149 @@ ht-degree: 0%
 
 本用户指南提供了有关在Adobe Experience Platform用户界面中处理数据集时执行常见操作的说明。
 
-## 入门指南
+## 快速入门
 
-本用户指南需要对Adobe Experience Platform的以下组件有充分的了解：
+本用户指南需要对Adobe Experience Platform的以下组件有一定的了解：
 
-* [数据集](overview.md):存储和管理结构，用于数据持久 [!DNL Experience Platform]性。
-* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-   * [模式合成的基础](../../xdm/schema/composition.md):了解XDM模式的基本构建基块，包括模式构成的主要原则和最佳做法。
-   * [模式编辑器](../../xdm/tutorials/create-schema-ui.md):了解如何使用用户界面中的功能构建您自 [!DNL Schema Editor] 己的自 [!DNL Platform] 定义XDM模式。
-* [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一、实时的消费者用户档案。
+* [数据集](overview.md):中数据持久性的存储和管理结构 [!DNL Experience Platform].
+* [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
+   * [架构组合的基础知识](../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
+   * [架构编辑器](../../xdm/tutorials/create-schema-ui.md):了解如何使用 [!DNL Schema Editor] 在 [!DNL Platform] 用户界面。
+* [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md):确保遵守有关使用客户数据的法规、限制和政策。
 
-## 视图数据集
+## 查看数据集
 
-在[!DNL Experience Platform] UI中，单击左侧导航中的&#x200B;**[!UICONTROL Datasets]**&#x200B;以打开&#x200B;**[!UICONTROL Datasets]**&#x200B;仪表板。 仪表板会列表您组织的所有可用数据集。 将显示每个列出的数据集的详细信息，包括其名称、数据集附带的模式和最近摄取运行的状态。
+在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 数据集]** 在左侧导航中打开 **[!UICONTROL 数据集]** 功能板。 功能板列出了贵组织的所有可用数据集。 系统会为每个列出的数据集显示详细信息，包括其名称、数据集所遵循的架构以及最近摄取运行的状态。
 
 ![](../images/datasets/user-guide/browse-datasets.png)
 
-单击数据集的名称以访问其&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕并查看您选择的数据集的详细信息。 “活动”选项卡包括图形，该图形可视化消费消息的速率，以及成功和失败批的列表。
+默认情况下，只会显示已摄取到的数据集。 如果要查看系统生成的数据集，请启用 **[!UICONTROL 显示系统数据集]** 切换。 系统生成的数据集仅用于处理其他组件。 例如，系统生成的配置文件导出数据集用于处理配置文件功能板。
+
+![](../images/datasets/user-guide/system-datasets.png)
+
+选择数据集的名称以访问其 **[!UICONTROL 数据集活动]** 屏幕，并查看您选择的数据集的详细信息。 活动选项卡包含一个图表，其中可视化了消息使用率，以及成功批次和失败批次的列表。
 
 ![](../images/datasets/user-guide/dataset-activity-1.png)
 ![](../images/datasets/user-guide/dataset-activity-2.png)
 
 ## 预览数据集
 
-在&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕中，单击屏幕右上角附近的&#x200B;**[!UICONTROL Preview dataset]**&#x200B;以预览最多100行数据。 如果预览集为空，则预览链接将停用，而是表示该数据集不可用。
+从 **[!UICONTROL 数据集活动]** 屏幕，选择 **[!UICONTROL 预览数据集]** 位于屏幕右上角附近，可预览多达100行数据。 如果数据集为空，则将停用预览链接，并改为表示预览不可用。
 
-![](../images/datasets/user-guide/click-to-preview.png)
+![](../images/datasets/user-guide/select-preview.png)
 
-在“预览”窗口中，右侧将显示模式集的分层视图。
+在预览窗口中，数据集架构的层次视图将显示在右侧。
 
 ![](../images/datasets/user-guide/preview-dataset.png)
 
-要获得更可靠的数据访问方法，[!DNL Experience Platform]提供下游服务，如[!DNL Query Service]和[!DNL JupyterLab]来浏览和分析数据。 有关更多信息，请参阅以下文档:
+要获取更可靠的数据访问方法，请 [!DNL Experience Platform] 提供下游服务，例如 [!DNL Query Service] 和 [!DNL JupyterLab] 来探索和分析数据。 有关更多信息，请参阅以下文档：
 
 * [查询服务概述](../../query-service/home.md)
 * [JupyterLab用户指南](../../data-science-workspace/jupyterlab/overview.md)
 
-## 创建数据集{#create}
+## 创建数据集 {#create}
 
-要创建新数据集，请单击&#x200B;**[!UICONTROL Datasets]**&#x200B;仪表板中的&#x200B;**[!UICONTROL Create dataset]**&#x200B;进行开始。
+要创建新数据集，请首先选择 **[!UICONTROL 创建数据集]** 在 **[!UICONTROL 数据集]** 功能板。
 
-![](../images/datasets/user-guide/click-to-create.png)
+![](../images/datasets/user-guide/select-create.png)
 
 在下一个屏幕中，您将看到以下两个用于创建新数据集的选项：
 
-* [从模式创建数据集](#schema)
-* [通过CSV文件创建数据集](#csv)
+* [从架构创建数据集](#schema)
+* [从CSV文件创建数据集](#csv)
 
-### 使用现有模式{#schema}创建数据集
+### 使用现有架构创建数据集 {#schema}
 
-在&#x200B;**[!UICONTROL Create dataset]**&#x200B;屏幕中，单击&#x200B;**[!UICONTROL Create dataset from schema]**&#x200B;以创建新的空数据集。
+在 **[!UICONTROL 创建数据集]** 屏幕，选择 **[!UICONTROL 从架构创建数据集]** 创建新的空数据集。
 
 ![](../images/datasets/user-guide/create-dataset-schema.png)
 
-出现&#x200B;**[!UICONTROL Select schema]**&#x200B;步骤。 浏览模式列表，选择模式集将遵循的，然后单击&#x200B;**[!UICONTROL Next]**。
+的 **[!UICONTROL 选择架构]** 中。 浏览架构列表，选择数据集将遵循的架构，然后再选择 **[!UICONTROL 下一个]**.
 
 ![](../images/datasets/user-guide/select-schema.png)
 
-出现&#x200B;**[!UICONTROL Configure dataset]**&#x200B;步骤。 为数据集提供名称和可选描述，然后单击&#x200B;**[!UICONTROL Finish]**&#x200B;以创建数据集。
+的 **[!UICONTROL 配置数据集]** 中。 为数据集提供名称和可选描述，然后选择 **[!UICONTROL 完成]** 创建数据集。
 
 ![](../images/datasets/user-guide/configure-dataset-schema.png)
 
-### 使用CSV文件{#csv}创建数据集
+### 使用CSV文件创建数据集 {#csv}
 
-使用CSV文件创建数据集时，会创建一个专门模式来为数据集提供与提供的CSV文件匹配的结构。 在&#x200B;**[!UICONTROL Create dataset]**&#x200B;屏幕中，单击显示&#x200B;**[!UICONTROL Create dataset from CSV file]**&#x200B;的框。
+使用CSV文件创建数据集时，会创建一个临时架构，以为数据集提供与提供的CSV文件匹配的结构。 在 **[!UICONTROL 创建数据集]** 屏幕，选择 **[!UICONTROL 从CSV文件创建数据集]**.
 
 ![](../images/datasets/user-guide/create-dataset-csv.png)
 
-出现&#x200B;**[!UICONTROL Configure]**&#x200B;步骤。 为数据集提供名称和可选描述，然后单击&#x200B;**[!UICONTROL Next]**。
+的 **[!UICONTROL 配置]** 中。 为数据集提供名称和可选描述，然后选择 **[!UICONTROL 下一个]**.
 
 ![](../images/datasets/user-guide/configure-dataset-csv.png)
 
-出现&#x200B;**[!UICONTROL Add data]**&#x200B;步骤。 通过将CSV文件拖放到屏幕的中心，或单击&#x200B;**[!UICONTROL Browse]**&#x200B;浏览您的文件目录，即可上传该CSV文件。 文件最大可以有10GB大小。 上载CSV文件后，单击&#x200B;**[!UICONTROL Save]**&#x200B;创建数据集。
+的 **[!UICONTROL 添加数据]** 中。 通过将CSV文件拖放到屏幕的中心上传，或选择 **[!UICONTROL 浏览]** 浏览文件目录。 文件最多可以有十GB的大小。 上传CSV文件后，选择 **[!UICONTROL 保存]** 创建数据集。
 
 >[!NOTE]
 >
->CSV列名必须与字母数字字符开始，并且只能包含字母、数字和下划线。
+>CSV列名称必须以字母数字字符开头，并且只能包含字母、数字和下划线。
 
 ![](../images/datasets/user-guide/add-csv-data.png)
 
-## 为实时客户用户档案{#enable-profile}启用数据集
+## 为实时客户用户档案启用数据集 {#enable-profile}
 
-每个数据集都能用摄取的数据丰富客户用户档案。 为此，数据集附带的模式必须兼容，才能在[!DNL Real-time Customer Profile]中使用。 兼容模式满足以下要求：
+每个数据集都能够使用其摄取的数据扩充客户用户档案。 要实现此目的，数据集所遵循的架构必须兼容才能在中使用 [!DNL Real-time Customer Profile]. 兼容的架构满足以下要求：
 
-* 该模式至少具有一个指定为标识属性的属性。
-* 模式具有定义为主标识的标识属性。
+* 架构至少具有一个指定为标识属性的属性。
+* 架构具有定义为主标识的标识属性。
 
-有关为[!DNL Profile]启用模式的详细信息，请参阅[模式编辑器用户指南](../../xdm/tutorials/create-schema-ui.md)。
+有关为 [!DNL Profile]，请参阅 [架构编辑器用户指南](../../xdm/tutorials/create-schema-ui.md).
 
-要启用用户档案数据集，请访问其&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕，然后单击&#x200B;**[!UICONTROL Properties]**&#x200B;列中的&#x200B;**[!UICONTROL Profile]**&#x200B;切换。 启用后，引入到数据集中的数据还将用于填充客户用户档案。
+要为配置文件启用数据集，请访问其 **[!UICONTROL 数据集活动]** 屏幕并选择 **[!UICONTROL 用户档案]** 在 **[!UICONTROL 属性]** 列。 启用后，摄取到数据集的数据还将用于填充客户用户档案。
 
 >[!NOTE]
 >
->如果数据集已包含数据，然后为[!DNL Profile]启用，则[!DNL Profile]不会自动使用现有数据。 在为[!DNL Profile]启用数据集后，建议您重新摄取任何现有数据，以使其向客户用户档案贡献。
+>如果数据集已包含数据，且随后为 [!DNL Profile]，则现有数据不会被自动使用 [!DNL Profile]. 在为 [!DNL Profile]，则建议您重新摄取任何现有数据，以使其对客户配置文件做出贡献。
 
 ![](../images/datasets/user-guide/enable-dataset-profiles.png)
 
-## 管理和强制数据集上的数据管理
+## 管理和强制管理数据集的数据
 
-数据使用标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅[数据治理概述](../../data-governance/home.md)以了解有关标签的更多信息，或参阅[数据使用标签用户指南](../../data-governance/labels/overview.md)以获取有关如何将标签应用到数据集的说明。
+数据使用情况标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 请参阅 [数据管理概述](../../data-governance/home.md) 要了解有关标签的更多信息，或参阅 [数据使用标签用户指南](../../data-governance/labels/overview.md) ，以了解有关如何将标签应用于数据集的说明。
 
 ## 删除数据集
 
-您可以先访问数据集的&#x200B;**[!UICONTROL Dataset activity]**&#x200B;屏幕，以删除数据集。 然后，单击&#x200B;**[!UICONTROL Delete dataset]**&#x200B;将其删除。
+您可以通过先访问数据集来删除其 **[!UICONTROL 数据集活动]** 屏幕。 然后，选择 **[!UICONTROL 删除数据集]** 删除它。
 
 >[!NOTE]
 >
->无法删除由Adobe应用程序和服务(如Adobe Analytics、Adobe Audience Manager或[!DNL Offer Decisioning])创建和使用的数据集。
+>由Adobe应用程序和服务(如Adobe Analytics、Adobe Audience Manager或 [!DNL Offer Decisioning])。
 
 ![](../images/datasets/user-guide/delete-dataset.png)
 
-此时将显示确认框。 单击&#x200B;**[!UICONTROL Delete]**&#x200B;以确认删除数据集。
+随即会出现确认框。 选择 **[!UICONTROL 删除]** 以确认删除数据集。
 
 ![](../images/datasets/user-guide/confirm-delete.png)
 
-## 删除启用用户档案的数据集
+## 删除启用了配置文件的数据集
 
-如果[!DNL Profile]启用了数据集，则通过UI删除该数据集将从平台中的用户档案库和数据湖中删除它。
+如果为 [!DNL Profile]，则通过UI删除该数据集时，将同时从Platform中的数据湖和用户档案存储区中将其删除。
 
-您只能使用Real-time Customer用户档案API从[!DNL Profile]存储中删除数据集（将数据保留在数据湖中）。 有关详细信息，请参阅[用户档案系统作业API端点指南](../../profile/api/profile-system-jobs.md)。
+您可以从 [!DNL Profile] 使用实时客户资料API仅存储（将数据保留在数据湖中）。 有关更多信息，请参阅 [配置文件系统作业API端点指南](../../profile/api/profile-system-jobs.md).
 
-## 监控数据获取
+## 监控数据摄取
 
-在[!DNL Experience Platform] UI中，单击左侧导航中的&#x200B;**[!UICONTROL Monitoring]**。 **[!UICONTROL Monitoring]**&#x200B;仪表板允许您视图来自批处理或流摄取的入站数据的状态。 要视图单个批的状态，请单击&#x200B;**[!UICONTROL Batch end-to-end]**&#x200B;或&#x200B;**[!UICONTROL Streaming end-to-end]**。 仪表板列表所有批处理或流式摄取运行，包括那些成功、失败或仍在进行的运行。 每个列表都提供批的详细信息，包括批ID、目标数据集的名称和摄取的记录数。 如果为[!DNL Profile]启用目标数据集，则还会显示所摄取的标识和用户档案记录数。
+在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 监控]** 中。 的 **[!UICONTROL 监控]** 功能板允许您查看来自批量摄取或流式摄取的入站数据状态。 要查看单个批的状态，请选择 **[!UICONTROL 批量端到端]** 或 **[!UICONTROL 流式处理端到端]**. 功能板会列出所有批处理或流摄取运行，包括成功、失败或仍在进行的摄取。 每个列表都提供了批次的详细信息，包括批次ID、目标数据集的名称以及摄取的记录数。 如果为 [!DNL Profile]，则也会显示摄取的身份和用户档案记录数。
 
 ![](../images/datasets/user-guide/batch-listing.png)
 
-您可以单击单个&#x200B;**[!UICONTROL Batch ID]**&#x200B;访问&#x200B;**[!UICONTROL Batch overview]**&#x200B;仪表板，并查看该批的详细信息，包括当该批未能收录时的错误日志。
+您可以在个人 **[!UICONTROL 批处理ID]** 访问 **[!UICONTROL 批量概述]** 功能板，并查看该批处理的详细信息，包括在该批次未能摄取时出现的错误日志。
 
 ![](../images/datasets/user-guide/batch-overview.png)
 
-如果要删除批，可以单击仪表板右上角附近的&#x200B;**[!UICONTROL Delete batch]**&#x200B;进行删除。 这样做还会从最初摄取批的数据集中删除其记录。
+如果要删除批，可以通过选择 **[!UICONTROL 删除批次]** 在功能板的右上方找到。 这样做还会从最初摄取批处理的数据集中删除其记录。
 
 ![](../images/datasets/user-guide/delete-batch.png)
 
 ## 后续步骤
 
-本用户指南提供了有关在[!DNL Experience Platform]用户界面中处理数据集时执行常见操作的说明。 有关执行涉及数据集的常见[!DNL Platform]工作流的步骤，请参阅以下教程：
+本用户指南提供了有关在中使用数据集时执行常见操作的说明 [!DNL Experience Platform] 用户界面。 有关执行常用操作的步骤 [!DNL Platform] 涉及数据集的工作流，请参阅以下教程：
 
 * [使用API创建数据集](create.md)
-* [查询数据集数据（使用Data Access API）](../../data-access/home.md)
-* [使用API为实时客户用户档案和身份服务配置数据集](../../profile/tutorials/dataset-configuration.md)
+* [使用数据访问API查询数据集数据](../../data-access/home.md)
+* [使用API为实时客户配置文件和Identity服务配置数据集](../../profile/tutorials/dataset-configuration.md)
