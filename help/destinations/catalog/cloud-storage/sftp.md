@@ -3,9 +3,9 @@ keywords: SFTP;SFTP
 title: SFTP连接
 description: 创建与SFTP服务器的实时出站连接，以定期从Adobe Experience Platform导出分隔数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: fa393b2bd8085a17653962b5a8b112a5db10df83
+source-git-commit: 9805b984a0b19ad7e942e82f3ad927523102e772
 workflow-type: tm+mt
-source-wordcount: '517'
+source-wordcount: '519'
 ht-degree: 1%
 
 ---
@@ -55,29 +55,31 @@ When [连接](../../ui/connect-destination.md) 要达到此目标，您必须提
 
 如果您选择 **[!UICONTROL 基本身份验证]** 键入以连接到SFTP位置：
 
-![SFTP目标基本身份验证](/help/destinations/assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
+![SFTP目标基本身份验证](../..//assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
 
 * **[!UICONTROL 主机]**:SFTP存储位置的地址；
 * **[!UICONTROL 用户名]**:登录SFTP存储位置的用户名；
 * **[!UICONTROL 密码]**:登录SFTP存储位置的密码。
 * **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64] 编码字符串。
+   * 示例: `----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`
 
 
 如果您选择 **[!UICONTROL 具有SSH密钥的SFTP]** 连接到SFTP位置的身份验证类型：
 
-![SFTP目标SSH密钥身份验证](/help/destinations/assets/catalog/cloud-storage/sftp/sftp-ssh-key-authentication.png)
+![SFTP目标SSH密钥身份验证](../../assets/catalog/cloud-storage/sftp/sftp-ssh-key-authentication.png)
 
 * **[!UICONTROL 域]**:填写您的SFTP帐户的IP地址或域名
 * **[!UICONTROL 端口]**:SFTP存储位置使用的端口；
 * **[!UICONTROL 用户名]**:登录SFTP存储位置的用户名；
 * **[!UICONTROL SSH密钥]**:用于登录SFTP存储位置的SSH密钥。
 * **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64] 编码字符串。
+   * 示例: `----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`
 
 #### 目标详细信息 {#destination-details}
 
 在建立到SFTP位置的身份验证连接后，请提供目标的以下信息：
 
-![SFTP目标的可用目标详细信息](/help/destinations/assets/catalog/cloud-storage/sftp/sftp-destination-details.png)
+![SFTP目标的可用目标详细信息](../../assets/catalog/cloud-storage/sftp/sftp-destination-details.png)
 
 * **[!UICONTROL 名称]**:在Experience Platform用户界面中输入一个名称，以帮助您识别此目标；
 * **[!UICONTROL 描述]**:输入此目标的描述；
