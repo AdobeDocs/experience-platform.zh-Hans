@@ -5,9 +5,9 @@ title: 数据管理概述
 topic-legacy: overview
 description: Adobe Experience Platform数据管理允许您管理客户数据，并确保遵守适用于数据使用的法规、限制和政策。 它在Experience Platform的各个级别中发挥着关键作用，包括编目、数据谱系、数据使用标签、数据使用策略，以及控制数据在营销操作中的使用
 exl-id: 00ca6bc2-1c58-4ea2-8bb5-30fd3fa5944a
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 6e4a3ff03a551069efb8dc96f21b82de06cc47d8
 workflow-type: tm+mt
-source-wordcount: '1371'
+source-wordcount: '1432'
 ht-degree: 0%
 
 ---
@@ -76,15 +76,18 @@ Adobe Experience Platform数据管理允许您管理客户数据，并确保遵�
 
 为了有效支持数据合规性的数据使用标签，必须实施数据使用策略。 数据使用策略是描述您允许或限制对内数据执行的营销操作类型的规则 [!DNL Experience Platform].
 
-营销操作的示例可能是希望将数据集导出到第三方服务。 如果有策略指示无法导出特定类型的数据(如个人身份信息(PII))，并且“I”标签（身份数据）已应用于数据集，则您将收到 [!DNL Policy Service] 告诉您数据使用策略已被违反。
+营销操作的示例可能是希望将数据集导出到第三方服务。 如果有策略指示无法导出个人身份信息(PII)，并且“I”标签（身份数据）已应用于数据集， [!DNL Policy Service] 阻止将此数据集导出到第三方目标的任何操作。 如果尝试了其中一项操作，策略服务会发送一条消息，告知您数据使用策略已被违反。
 
-应用数据使用标签后，数据管理人员可以使用 [!DNL Policy Service] API或 [!DNL Experience Platform] 用户界面。
+可用的策略有两种类型：
+
+* **[!UICONTROL 数据管理政策]**:根据正在执行的营销操作以及相关数据携带的数据使用标签限制数据激活。
+* **[!UICONTROL 同意策略] （测试版）**:筛选可激活的用户档案 [目标](../destinations/home.md) 基于客户的同意或偏好。
+
+应用数据使用标签后，数据管理人员可以使用 [!DNL Policy Service] API或 [!DNL Experience Platform] 用户界面。 有关数据使用策略和营销操作的更多信息，请参阅 [策略概述](./policies/overview.md).
 
 >[!IMPORTANT]
 >
 >默认情况下，所有数据使用策略(包括由Adobe提供的核心策略)都处于禁用状态。 要考虑实施单个策略，必须手动启用该策略。
-
-有关数据使用策略和营销操作的更多信息，请参阅 [策略概述](./policies/overview.md).
 
 ## 后续步骤
 

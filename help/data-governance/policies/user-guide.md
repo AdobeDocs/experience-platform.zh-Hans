@@ -5,16 +5,16 @@ title: 在UI中管理数据使用策略
 topic-legacy: policies
 description: Adobe Experience Platform Data Governance提供了一个用户界面，允许您创建和管理数据使用策略。 本文档概述了可在策略工作区中通过Experience Platform用户界面执行的操作。
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 8feb9fbdead75ca7b9ed7e5dcd3a0aab6f328ad5
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '1295'
 ht-degree: 0%
 
 ---
 
 # 在UI中管理数据使用策略
 
-Adobe Experience Platform Data Governance提供了一个用户界面，允许您创建和管理数据使用策略。 本文档概述了在 **策略** 工作区 [!DNL Experience Platform] 用户界面。
+Adobe Experience Platform Data Governance提供了一个用户界面，允许您创建和管理数据使用策略。 本文档概述了您可以在 **策略** 工作区 [!DNL Experience Platform] 用户界面。
 
 >[!IMPORTANT]
 >
@@ -24,14 +24,18 @@ Adobe Experience Platform Data Governance提供了一个用户界面，允许您
 
 本指南需要对以下内容有一定的了解 [!DNL Experience Platform] 概念：
 
-- [数据管理](../home.md)
-- [数据使用策略](./overview.md)
+* [数据管理](../home.md)
+* [数据使用策略](./overview.md)
 
 ## 查看现有策略 {#view-policies}
 
 在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 策略]** 打开 **[!UICONTROL 策略]** 工作区。 在 **[!UICONTROL 浏览]** 选项卡，您可以看到可用策略的列表，包括其关联的标签、营销操作和状态。
 
 ![](../images/policies/browse-policies.png)
+
+如果您有权访问同意策略（当前为测试版），请选择 **[!UICONTROL 同意策略]** 切换到在 [!UICONTROL 浏览] 选项卡。
+
+![](../images/policies/consent-policy-toggle.png)
 
 选择列出的策略以查看其描述和类型。 如果选择了自定义策略，则会显示其他控件以编辑、删除或 [启用/禁用策略](#enable).
 
@@ -42,6 +46,14 @@ Adobe Experience Platform Data Governance提供了一个用户界面，允许您
 要创建新的自定义数据使用策略，请选择 **[!UICONTROL 创建策略]** 的右上角 **[!UICONTROL 浏览]** 选项卡 **[!UICONTROL 策略]** 工作区。
 
 ![](../images/policies/create-policy-button.png)
+
+根据您是否属于同意策略测试版，会出现以下情况之一：
+
+* 如果您不是测试版的一部分，则会立即将您带到 [创建数据管理策略](#create-governance-policy).
+* 如果您是测试版的一部分，则对话框会为 [创建同意策略](#consent-policy).
+   ![](../images/policies/choose-policy-type.png)
+
+### 创建数据管理策略 {#create-governance-policy}
 
 的 **[!UICONTROL 创建策略]** 工作流。 首先，为新策略提供名称和描述。
 
@@ -66,6 +78,59 @@ Adobe Experience Platform Data Governance提供了一个用户界面，允许您
 的 **[!UICONTROL 浏览]** 选项卡，该选项卡现在会列出新创建的“草稿”状态策略。 要启用策略，请参阅下一节。
 
 ![](../images/policies/created-policy.png)
+
+### 创建同意策略（测试版） {#consent-policy}
+
+>[!IMPORTANT]
+>
+>同意策略当前处于测试阶段，贵组织可能还无法访问这些策略。
+
+如果选择创建同意策略，则会显示一个新屏幕，用于配置新策略。
+
+![](../images/policies/consent-policy-dialog.png)
+
+要使用同意策略，您的配置文件数据中必须存在同意属性。 请参阅 [同意处理Experience Platform](../../landing/governance-privacy-security/consent/adobe/overview.md) 有关如何在并集架构中包含所需属性的详细步骤。
+
+同意策略由两个逻辑组件组成：
+
+* **[!UICONTROL 如果]**:将触发策略检查的条件。 这可以基于正在执行的特定营销操作、存在特定数据使用标签，或两者的组合。
+* **[!UICONTROL 然后]**:要将用户档案包含在触发策略的操作中，必须存在的同意属性。
+
+#### 配置条件
+
+在 **[!UICONTROL 如果]** 部分，选择应触发此策略的营销操作和/或数据使用标签。 选择 **[!UICONTROL 查看全部]** 和 **[!UICONTROL 选择标签]** 查看可用营销操作和标签的完整列表。
+
+添加至少一个条件后，您可以选择 **[!UICONTROL 添加条件]** 要继续根据需要添加其他条件，请从下拉菜单中选择相应的条件类型。
+
+![](../images/policies/add-condition.png)
+
+如果选择多个条件，则可以使用它们之间显示的图标来切换“AND”和“OR”之间的条件关系。
+
+![](../images/policies/and-or-selection.png)
+
+#### 选择同意属性
+
+在 **[!UICONTROL 然后]** 部分，从并集架构中至少选择一个同意属性。 这是必须存在的属性，用户档案才能包含在此策略所管辖的操作中。 您可以从列表中选择一个提供的选项，或选择 **[!UICONTROL 查看全部]** 直接从并集架构中选择属性。
+
+选择同意属性时，请选择您希望此策略检查的属性值。
+
+![](../images/policies/select-schema-field.png)
+
+在您至少选择了一个同意属性后， **[!UICONTROL 策略属性]** 面板更新以显示根据此策略允许的预计用户档案数，包括用户档案存储总数的百分比。 此估计会在您调整策略配置时自动更新。
+
+![](../images/policies/audience-preview.png)
+
+要向策略添加其他同意属性，请选择 **[!UICONTROL 添加结果]**.
+
+![](../images/policies/add-result.png)
+
+您可以根据需要继续向策略添加和调整条件和同意属性。 如果您对配置满意，请在选择 **[!UICONTROL 保存]**.
+
+![](../images/policies/name-and-save.png)
+
+现在将创建同意策略，其状态将设置为 [!UICONTROL 已禁用] 默认情况下。 要立即启用策略，请选择 **[!UICONTROL 状态]** 在右边栏中切换。
+
+![](../images/policies/enable-consent-policy.png)
 
 ## 启用或禁用策略 {#enable}
 
@@ -109,7 +174,7 @@ Adobe Experience Platform Data Governance提供了一个用户界面，允许您
 
 >[!NOTE]
 >
->尝试删除现有策略正在使用的营销操作将导致显示错误消息，指示删除尝试失败。
+>尝试删除现有策略正在使用的营销操作时，会显示一条错误消息，指示删除尝试失败。
 
 ![](../images/policies/delete-marketing-action.png)
 
