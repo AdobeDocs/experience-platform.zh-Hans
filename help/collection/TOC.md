@@ -5,10 +5,10 @@ user-guide-title: Adobe Experience Platform 数据收集
 breadcrumb-title: 数据收集指南
 user-guide-description: 为 Adobe Experience Platform Edge Network 启用客户端数据收集。
 feature: Data Collection
-source-git-commit: 602617f857800bdc39869f5597bc88ba3ed7f66f
+source-git-commit: 92b3a7bff576f72edc8628a850a2cdb9b43cb1c4
 workflow-type: tm+mt
-source-wordcount: '38'
-ht-degree: 68%
+source-wordcount: '74'
+ht-degree: 41%
 
 ---
 
@@ -21,3 +21,15 @@ ht-degree: 68%
 - 访客识别 {#visitor-identification}
    - [概述](visitor-identification.md)
    - [通过FPID识别访客](visitor-identification-fpid.md)
+- 边缘网络服务器API {#edge-network-server-api}
+   - [概述](overview.md)
+   - [身份验证](authentication.md)
+   - 数据收集 {#server-api-data-collection}
+      - [单事件数据收集](interactive-data-collection.md)
+      - [批量事件数据收集](non-interactive-data-collection.md)
+   - 与其他Adobe解决方案交互 {#interacting-other-adobe-solutions}
+      - [与Adobe Analytics交互](interacting-adobe-analytics.md)
+      - [与Adobe Experience Platform交互](interacting-experience-platform.md)
+   - [与第三方解决方案交互](interacting-third-party-solutions.md)
+   - [错误处理](error-handling.md)
+   - [故障排除](troubleshooting.md)
