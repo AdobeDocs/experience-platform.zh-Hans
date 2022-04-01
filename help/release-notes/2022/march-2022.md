@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: b378a920380030d51956a0910271f1b1f9f4c371
+source-git-commit: 8d0f39dff6b047d21d4dff17005405fc83941961
 workflow-type: tm+mt
 source-wordcount: '1158'
 ht-degree: 5%
@@ -94,18 +94,6 @@ Adobe Experience Platform提供多个 [!DNL dashboards] 通过查看有关贵组
 
 有关“配置文件”功能板的更多信息，请参阅 [配置文件功能板概述](../../dashboards/guides/profiles.md).
 
-## 数据收集 {#data-collection}
-
-Platform提供了一套技术，允许您收集客户端客户体验数据，并将其发送到Adobe Experience Platform边缘网络，以便对其进行扩充、转换和分发到Adobe或非Adobe目标。
-
-**新增功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| 全局数据流设置 | 现在，您可以在配置数据流时配置多个新的全局设置：地理位置、第一方ID Cookie和第三方ID同步。 请参阅 [配置数据流](../../edge/fundamentals/datastreams.md#configure) （详细信息）。 |
-
-有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
-
 ### 目标功能板
 
 “目标”功能板显示贵组织在Experience Platform中启用的目标的快照。
@@ -119,6 +107,18 @@ Platform提供了一套技术，允许您收集客户端客户体验数据，并
 {style=&quot;table-layout:auto&quot;}
 
 有关平台中目标功能板的更多信息，请参阅 [目标功能板概述](../../dashboards/guides/destinations.md).
+
+## 数据收集 {#data-collection}
+
+Platform提供了一套技术，允许您收集客户端客户体验数据，并将其发送到Adobe Experience Platform边缘网络，以便对其进行扩充、转换和分发到Adobe或非Adobe目标。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 全局数据流设置 | 现在，您可以在配置数据流时配置多个新的全局设置：地理位置、第一方ID Cookie和第三方ID同步。 请参阅 [配置数据流](../../edge/fundamentals/datastreams.md#configure) （详细信息）。 |
+
+有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
 
 <!-- ## Experience Data Model (XDM) {#xdm}
 
