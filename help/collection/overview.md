@@ -3,10 +3,10 @@ title: 边缘网络服务器API
 description: 了解Adobe Experience Platform Edge Network Server API是什么以及如何使用它。
 seo-description: Learn what the Adobe Experience Platform Edge Network Server API is and how you can use it.
 keywords: 数据收集；Adobe Experience Platform Edge Network；服务器API;
-source-git-commit: 92b3a7bff576f72edc8628a850a2cdb9b43cb1c4
+source-git-commit: 4145e22519c1df2d5c010e563b81642a6f647cdc
 workflow-type: tm+mt
-source-wordcount: '287'
-ht-degree: 1%
+source-wordcount: '273'
+ht-degree: 0%
 
 ---
 
@@ -31,7 +31,7 @@ Adobe Experience Platform Edge Network为客户提供了一种与任何Adobe Exp
 1. 交互式端点支持与Adobe Experience Platform和Adobe Experience Cloud服务的通信，这些服务支持高级分段、个性化和其他营销用例。
 2. 批处理端点将允许在需要载入数据时批量发送请求，而不会收到来自正在调用的应用程序的响应。
 
-的 [!DNL Server API] 支持以下类型的请求：的 [!DNL Server API] 通过支持经过验证的请求 [Adobe I/O](https://developer.adobe.com/)，使用新 `server.adobedc.net` 端点。
+的 [!DNL Server API] 支持以下类型的请求：
 
 * 通过验证的请求 [Adobe I/O](https://developer.adobe.com/)，使用新 `server.adobedc.net` 端点。
 * 通过的未验证请求 `edge.adobedc.net` 端点。
