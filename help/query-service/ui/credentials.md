@@ -5,7 +5,7 @@ title: 查询服务UI指南
 topic-legacy: guide
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 87ec2ab37105aefc52abe102d45fd124492ac79f
+source-git-commit: b4388106caf1c6ee48c44051fe484cd595278483
 workflow-type: tm+mt
 source-wordcount: '1127'
 ht-degree: 1%
@@ -32,7 +32,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 - **[!UICONTROL PSQL命令]**:命令自动插入所有相关信息，以便您使用命令行上的PSQL连接到查询服务。
 - **[!UICONTROL 过期]**:过期凭据的到期日期。 凭据在生成后24小时过期。
 
-## 未过期的凭据
+## 未过期的凭据 {#non-expiring-credentials}
 
 您可以使用未过期的凭据来设置与外部客户端的更永久连接。
 
