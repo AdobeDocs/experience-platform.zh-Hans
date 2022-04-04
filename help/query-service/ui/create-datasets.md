@@ -6,37 +6,51 @@ topic-legacy: queries
 type: Tutorial
 description: Adobe Experience Platform查询服务允许从UI创建数据集。 创建数据集后，可以像数据湖中的任何其他数据集一样访问该数据集，并将其用于各种用例。
 exl-id: 6f6c049d-f19f-4161-aeb4-3a01eca7dc75
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 0c2cfe9b0bd839bdf662622283a7563c0417c9a9
 workflow-type: tm+mt
-source-wordcount: '329'
+source-wordcount: '476'
 ht-degree: 0%
 
 ---
 
-# 在查询服务中根据结果生成数据集
+# 从结果生成数据集 [!DNL Query Service]
 
-的真正力量 [!DNL Query Service] 查询用于在中生成数据集时显示 [!DNL Data Lake] 用作输入到更多查询或其他服务(例如 [!DNL Data Science Workspace], [!DNL Real-time Customer Profile]或 [!DNL Analysis Workspace].
+[!DNL Query Service] 允许您使用查询在 [!DNL Data Lake]. 然后，这些数据集可用作更多查询或其他服务(例如 [!DNL Data Science Workspace]、实时客户资料，或 [!DNL Analysis Workspace].
 
-[!DNL Query Service] 允许从UI创建数据集。 请执行以下步骤：
+## 从Adobe Experience Platform用户界面生成数据集
 
-1. 使用连接的客户端编写查询并验证输出。
-2. 登录到 [!DNL Platform] UI，然后转到“查询”。
-3. 在列表中查找查询，并将鼠标悬停在行上。
-4. 选择 **[!UICONTROL 创建数据集]**. ![图像](../images/ui/create-datasets/output-dataset.png)
-5. 输入一个数据集名称，前面附加有您的LDAP ID(不必唯一或SQL安全；系统会根据此处提供的名称生成“表名”)。
-6. 输入数据集描述并选择 **[!UICONTROL 运行查询]**.![图像](../images/ui/create-datasets/run-query.png)
-7. 观看查询结束，然后转到数据集列表页面以查看刚刚创建的数据集。
+要从Adobe Experience Platform用户界面(UI)创建数据集，请执行以下步骤：
+
+1. 使用连接的客户端创建查询并验证输出。 了解如何使用 [!DNL Query Editor]，阅读 [!DNL Query Editor] UI指南 [编写查询](./user-guide.md#writing-queries).
+
+2. 在Platform UI中，导航到 **[!UICONTROL 查询]** 后跟 **[!UICONTROL 浏览]** 选项卡，然后选择已创建的查询。 有关如何在Platform UI中查看为贵组织创建和保存的查询的更多详细信息，请阅读 [[!DNL Query Service] 概述](./overview.md#browse).
+
+3. 在“查询详细信息”面板中，选择 **[!UICONTROL 输出数据集]**.
+
+   ![选择输出数据集](../images/ui/create-datasets/output-dataset.png)
+
+4. 在显示的对话框中，输入一个前面加有LDAP ID的数据集名称。 数据集名称不必是唯一的或SQL安全的。 请注意，将根据您在此处创建的数据集名称生成数据集的表名称。
+
+5. 接下来，在 [!UICONTROL 描述] 字段和选择 **[!UICONTROL 运行查询]**.
+
+   ![运行查询](../images/ui/create-datasets/run-query.png)
+
+6. 查询运行完成后，导航至 **[!UICONTROL 数据集]** 查看您创建的数据集。 要详细了解如何在Platform UI中处理数据集时执行常见操作，请参阅 [数据集UI指南](../../catalog/datasets/user-guide.md).
 
 创建数据集后，可以像 [!DNL Data Lake] 和用于各种用例。
 
 >[!NOTE]
 >
->在实时实施中，必须在创建数据集后应用“数据管理”标签。
+>在实时实施中，必须在创建数据集后应用“数据管理”标签。 要详细了解如何将数据使用情况标签应用到数据集，请参阅 [数据使用标签概述](../../data-governance/labels/overview.md).
 
 ## 生成预定义的数据集 [!DNL Experience Data Model] 模式
 
-生成预定义的数据集 [!DNL Experience Data Model] (XDM)架构，则必须使用SQL语法。 有关必须使用的语法的更多信息，请阅读 [SQL语法指南](../sql/syntax.md#create-table-as-select).
+使用SQL语法生成预定义的数据集 [!DNL Experience Data Model] (XDM)架构。 有关支持的语法的更多信息 [!DNL Query Service]，请阅读 [SQL语法指南](../sql/syntax.md#create-table-as-select).
 
 ## 输出数据集
 
-通过此功能创建的数据集是使用与SQL语句中定义的输出数据结构匹配的临时架构生成的。 某些下游服务需要具有特定 [!DNL Experience Data Model] (XDM)模式。 在编写查询之前，验证下游服务的数据格式要求。
+通过此功能创建的数据集是使用与SQL语句中定义的输出数据结构匹配的临时架构生成的。 某些下游服务需要具有特定XDM架构的数据集。 在编写查询之前，验证下游服务的数据格式要求。
+
+## 后续步骤
+
+阅读本文档后，您现在应该了解如何使用 [!DNL Query Service] 以从平台UI生成数据集。 有关如何在Platform UI中访问、写入和执行查询的更多信息，请参阅 [[!DNL Query Service] UI概述](./overview.md).
