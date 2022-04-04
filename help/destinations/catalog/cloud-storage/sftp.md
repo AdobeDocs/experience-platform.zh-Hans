@@ -3,9 +3,9 @@ keywords: SFTP;SFTP
 title: SFTP连接
 description: 创建与SFTP服务器的实时出站连接，以定期从Adobe Experience Platform导出分隔数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 99bb5d1b76b926622ca21fa1df7c3cb9fabc4856
+source-git-commit: dbefe3e9b193ccef06b6a81919233501b6e938be
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '557'
 ht-degree: 1%
 
 ---
@@ -61,7 +61,7 @@ When [连接](../../ui/connect-destination.md) 要达到此目标，您必须提
 * **[!UICONTROL 用户名]**:登录SFTP存储位置的用户名；
 * **[!UICONTROL 密码]**:登录SFTP存储位置的密码。
 * **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64] 编码字符串。
-   * 示例: `----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`
+   * 示例：`----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`。请参阅下面格式正确的PGP键示例，其中间部分缩短为简短。
 
       ![PGP密钥](../..//assets/catalog/cloud-storage/sftp/pgp-key.png)
 
@@ -75,7 +75,7 @@ When [连接](../../ui/connect-destination.md) 要达到此目标，您必须提
 * **[!UICONTROL 用户名]**:登录SFTP存储位置的用户名；
 * **[!UICONTROL SSH密钥]**:用于登录SFTP存储位置的SSH密钥。
 * **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64] 编码字符串。
-   * 示例: `----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`
+   * 示例：`----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`。请参阅下面格式正确的PGP键示例，其中间部分缩短为简短。
 
       ![PGP密钥](../..//assets/catalog/cloud-storage/sftp/pgp-key.png)
 
