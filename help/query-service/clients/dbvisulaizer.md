@@ -4,20 +4,20 @@ solution: Experience Platform
 title: 将DbVisualizer连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍将DbVisualizer与Adobe Experience Platform查询服务连接的步骤。
-source-git-commit: e9653341756a2067e27ca0d0658c54fc93db7505
+source-git-commit: 69e105b2c52a668ba708847795d4c92813aad0db
 workflow-type: tm+mt
-source-wordcount: '699'
-ht-degree: 1%
+source-wordcount: '701'
+ht-degree: 0%
 
 ---
 
 # 连接 [!DNL DbVisualizer] to [!DNL Query Service] {#connect-dbvisualizer}
 
-本文档介绍了连接的步骤 [!DNL DbVisualizer] 带Adobe Experience Platform的台式机 [!DNL Query Service].
+本文档介绍了连接 [!DNL DbVisualizer] 使用Adobe Experience Platform的数据库工具 [!DNL Query Service].
 
 ## 快速入门
 
-本指南要求您已拥有 [!DNL DbVisualizer] 桌面应用程序，熟悉如何导航其界面。 要下载 [!DNL DbVisualizer] 桌面应用程序或更多信息，请参阅 [官方 [!DNL DbVisualizer] 文档](https://www.dbvis.com/download/).
+本指南要求您已拥有 [!DNL DbVisualizer] 桌面应用程序，熟悉如何导航其界面。 要下载 [!DNL DbVisualizer] 桌面应用程序或有关更多信息，请参阅 [官方 [!DNL DbVisualizer] 文档](https://www.dbvis.com/download/).
 
 >[!NOTE]
 >
@@ -94,4 +94,4 @@ ht-degree: 1%
 
 ## 后续步骤
 
-现在，您已连接 [!DNL DbVisualizer] with [!DNL Query Service]，您可以使用 [!DNL DbVisualizer] 来编写查询。 有关如何编写和运行查询的更多信息，请阅读有关查询执行的指南。
+现在，您已连接 [!DNL DbVisualizer] with [!DNL Query Service]，您可以使用 [!DNL DbVisualizer] 来编写查询。 有关如何编写和运行查询的详细信息，请阅读 [查询执行指南](../best-practices/writing-queries.md).
