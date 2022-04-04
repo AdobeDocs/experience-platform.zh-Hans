@@ -1,11 +1,11 @@
 ---
 audience: user
-solution: Data Collection, Experience Platform
+solution: Data Collection
 user-guide-title: 边缘网络服务器API文档
 breadcrumb-title: 边缘网络服务器API文档
 user-guide-description: 了解边缘网络服务器API是什么以及如何使用它。
 feature: Data Collection
-source-git-commit: 283de3a7dcebae0b5efee11e3ca736f0abe32e1f
+source-git-commit: ff612f7ef466276757095a3a9a724781eeb6a089
 workflow-type: tm+mt
 source-wordcount: '61'
 ht-degree: 8%

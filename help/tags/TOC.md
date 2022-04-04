@@ -4,8 +4,8 @@ user-guide-title: 标记帮助
 breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
-solution: Data Collection, Experience Platform
-source-git-commit: 5902e85e7dacdc2bd0797368136a52dd30fc0813
+solution: Data Collection
+source-git-commit: ff612f7ef466276757095a3a9a724781eeb6a089
 workflow-type: tm+mt
 source-wordcount: '386'
 ht-degree: 69%
