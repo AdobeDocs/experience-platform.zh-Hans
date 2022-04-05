@@ -3,16 +3,16 @@ title: 配置数据流
 description: 将您的客户端Experience PlatformSDK集成与Adobe产品和第三方目标连接起来。
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；边缘配置ID；标识；启用ID同步；ID同步容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID；数据收集的数据准备；数据准备；映射器；XDM；边缘上的XDM；映射器
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: cfe524169b94b5b4160ed75e5e36c83c217f4270
+source-git-commit: 5c57f65014736e20e1bcad6a9b158c923bbb4220
 workflow-type: tm+mt
-source-wordcount: '2090'
+source-wordcount: '2102'
 ht-degree: 1%
 
 ---
 
 # 配置数据流
 
-数据流表示实施Adobe Experience Platform Web和移动SDK时的服务器端配置。 而 [配置命令](configuring-the-sdk.md) 中的控件控制必须在客户端上处理的事项(例如 `edgeDomain`)，数据流将处理SDK的所有其他配置。 请求发送至Adobe Experience Platform边缘网络时， `edgeConfigId` 用于引用数据流。 这样，您就无需在网站上进行代码更改即可更新服务器端配置。
+数据流表示实施Adobe Experience Platform Web和Mobile SDK时的服务器端配置。 而 [配置命令](configuring-the-sdk.md) 中的控件控制必须在客户端上处理的事项(例如 `edgeDomain`)，数据流将处理SDK的所有其他配置。 请求发送至Adobe Experience Platform边缘网络时， `edgeConfigId` 用于引用数据流。 这样，您就无需在网站上进行代码更改即可更新服务器端配置。
 
 本文档介绍了在数据收集UI中配置数据流的步骤。
 
@@ -70,11 +70,18 @@ ht-degree: 1%
 
 数据准备是一项Experience Platform服务，允许您映射、转换和验证来自体验数据模型(XDM)的数据。 在配置启用平台的数据流时，您可以在将源数据发送到平台边缘网络时，使用数据准备功能将源数据映射到XDM。
 
-以下子部分介绍在数据收集UI中映射数据的基本步骤。 有关所有数据准备功能（包括计算字段的转换函数）的全面指导，请参阅以下文档：
+>[!NOTE]
+>
+>有关所有数据准备功能（包括计算字段的转换函数）的全面指导，请参阅以下文档：
+>
+>* [数据准备概述](../../data-prep/home.md)
+>* [数据准备映射函数](../../data-prep/functions.md)
+>* [使用数据准备处理数据格式](../../data-prep/data-handling.md)
 
-* [数据准备概述](../../data-prep/home.md)
-* [数据准备映射函数](../../data-prep/functions.md)
-* [使用数据准备处理数据格式](../../data-prep/data-handling.md)
+
+以下子部分介绍在数据收集UI中映射数据的基本步骤。 有关这些步骤的快速演示，请参阅以下视频：
+
+>[!VIDEO](https://video.tv.adobe.com/v/342120?quality=12&enable10seconds=on&speedcontrol=on)
 
 #### [!UICONTROL 选择数据]
 
