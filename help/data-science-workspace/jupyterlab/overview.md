@@ -5,7 +5,7 @@ title: JupyterLab UI概述
 topic-legacy: Overview
 description: JupyterLab是Project Jupyter的基于Web的用户界面，与Adobe Experience Platform紧密集成。 它为数据科学家提供了一个交互式开发环境，以便与Jupyter Notebooks、代码和数据合作。 本文档概述了JupyterLab及其功能以及执行常见操作的说明。
 exl-id: 13786fbd-ef16-49cd-8bcf-46320c33e902
-source-git-commit: aa81dfd3d52b17984a0e9fb3f8863dabc4fa44ef
+source-git-commit: 1d3981c67c86f93394acf49b61bd29154e9653e8
 workflow-type: tm+mt
 source-wordcount: '1820'
 ht-degree: 3%
@@ -29,7 +29,7 @@ Experience Platform的JupyterLab集成附带体系结构更改、设计注意事
 | **内核** | 内核提供笔记本和其他 [!DNL JupyterLab] 前端能够以不同的编程语言执行和检查代码。 [!DNL Experience Platform] 提供了其他内核，用于支持 [!DNL Python]、 R、PySpark和 [!DNL Spark]. 请参阅 [核](#kernels) 部分以了解更多详细信息。 |
 | **数据访问** | 直接从内部访问现有数据集 [!DNL JupyterLab] 完全支持读写功能。 |
 | **[!DNL Platform]服务集成** | 内置集成允许您利用其他 [!DNL Platform] 直接从内部 [!DNL JupyterLab]. 在 [与其他Platform服务集成](#service-integration). |
-| **身份验证** | 除 <a href="https://jupyter-notebook.readthedocs.io/en/latest/security.html" target="_blank">JupyterLab的内置安全模型</a>，则您的应用程序与Experience Platform之间的每次交互（包括平台服务到服务通信）都会通过 <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
+| **身份验证** | 除 <a href="https://jupyter-notebook.readthedocs.io/en/stable/security.html" target="_blank">JupyterLab的内置安全模型</a>，则您的应用程序与Experience Platform之间的每次交互（包括平台服务到服务通信）都会通过 <a href="https://www.adobe.io/authentication/auth-methods.html" target="_blank">[!DNL Adobe Identity Management System] (IMS)</a>. |
 | **开发库** | 在 [!DNL Experience Platform], [!DNL JupyterLab] 为 [!DNL Python]、R和PySpark。 请参阅 [附录](#supported-libraries) 以获取支持的库的完整列表。 |
 | **库控制器** | 如果您没有预安装的库以满足您的需求，则可以为Python和R安装其他库，并将其临时存储在独立的容器中以保持 [!DNL Platform] 保证数据安全。 请参阅 [核](#kernels) 部分以了解更多详细信息。 |
 
