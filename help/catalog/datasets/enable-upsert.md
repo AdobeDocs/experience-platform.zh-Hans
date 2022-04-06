@@ -4,16 +4,20 @@ title: 使用API为配置文件更新启用数据集
 type: Tutorial
 description: 本教程将向您演示如何使用Adobe Experience Platform API启用具有“插入”功能的数据集，以便更新实时客户资料数据。
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: 58c58048538eaf5977b1a5905fab44307bb433a9
+source-git-commit: e7bd2c699b30276dca1a2e29c19f0a885b246f48
 workflow-type: tm+mt
-source-wordcount: '965'
-ht-degree: 2%
+source-wordcount: '991'
+ht-degree: 1%
 
 ---
 
 # 使用API为配置文件更新启用数据集
 
 本教程介绍如何启用具有“更新”功能的数据集，以便更新实时客户资料数据。 这包括创建新数据集和配置现有数据集的步骤。
+
+>[!NOTE]
+>
+>新插入工作流仅适用于批量摄取。 流式摄取是 **not** 受支持。
 
 ## 快速入门
 
@@ -22,7 +26,7 @@ ht-degree: 2%
 - [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 - [[!DNL Catalog Service]](../../catalog/home.md):一个RESTful API，允许您创建数据集并为 [!DNL Real-time Customer Profile] 和 [!DNL Identity Service].
 - [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
-- [批量摄取](../../ingestion/batch-ingestion/overview.md)
+- [批量摄取](../../ingestion/batch-ingestion/overview.md):批量摄取API允许您将数据作为批处理文件导入到Experience Platform中。
 
 以下部分提供了成功调用平台API所需了解的其他信息。
 
@@ -102,11 +106,11 @@ curl -X POST \
 
 ## 配置现有数据集 {#configure-an-existing-dataset}
 
-以下步骤介绍如何配置现有启用了“配置文件”的数据集以进行更新（“升级”）功能。
+以下步骤介绍如何配置现有启用了“配置文件”的数据集，以便进行更新（插入）功能。
 
 >[!NOTE]
 >
->要为“upsert”配置现有启用了“配置文件”的数据集，您必须先为“配置文件”禁用该数据集，然后在 `isUpsert` 标记。 如果未为“配置文件”启用现有数据集，则可以直接继续执行 [启用“配置文件”数据集并重新插入](#enable-the-dataset). 如果不确定，以下步骤将向您显示如何检查数据集是否已启用。
+>要配置现有启用了“配置文件”的数据集以进行重新插入，您必须先禁用“配置文件”的数据集，然后在 `isUpsert` 标记。 如果未为“配置文件”启用现有数据集，则可以直接继续执行 [启用“配置文件”数据集并重新插入](#enable-the-dataset). 如果不确定，以下步骤将向您显示如何检查数据集是否已启用。
 
 ### 检查数据集是否已为“配置文件”启用
 
@@ -220,6 +224,7 @@ curl -X PATCH \
 ```
 
 **响应**
+
 成功的PATCH请求会返回HTTP状态200（确定）和一个包含已更新数据集ID的数组。 此ID应与在PATCH请求中发送的ID匹配。 的 `unifiedProfile` 标记现已禁用。
 
 ```json
@@ -270,4 +275,4 @@ curl -X PATCH \
 
 ## 后续步骤
 
-现在，批量和流式引入工作流可以使用您的配置文件和启用了更新的数据集来更新配置文件数据。 要了解有关将数据摄取到Adobe Experience Platform的更多信息，请首先阅读 [数据摄取概述](../../ingestion/home.md).
+现在，批量摄取工作流可以使用您的配置文件和启用了更新的数据集来更新配置文件数据。 要了解有关将数据摄取到Adobe Experience Platform的更多信息，请首先阅读 [数据摄取概述](../../ingestion/home.md).

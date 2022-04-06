@@ -2,14 +2,14 @@
 keywords: 配置文件；实时客户配置文件；故障诊断；护栏；准则；限制；实体；主实体；维度实体；RTCDP;CDP;B2B Edition;Real-time Customer Data Platform；实时客户数据平台；实时CDP;b2b;CDP;
 title: Real-time Customer Data Platform B2B版的默认护栏
 type: Documentation
-description: 'Adobe Experience Platform使用与传统关系数据模型不同的高度异常化混合数据模型。 本文档提供了默认使用和速率限制，以帮助您使用Real-time Customer Data Platform B2B Edition为数据建模以获得最佳系统性能。 '
-source-git-commit: 7b9b01657ab2a682b900a8c55a201f9864e4428b
+description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认使用和速率限制，以帮助您使用Real-time Customer Data Platform B2B Edition为数据建模以获得最佳系统性能。
+exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
+source-git-commit: 9f00bff31f9e7d2da1294d3d1f24cba7870a4614
 workflow-type: tm+mt
 source-wordcount: '1601'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
-
 
 # Real-time Customer Data Platform B2B版的默认护栏
 

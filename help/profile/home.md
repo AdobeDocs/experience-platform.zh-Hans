@@ -4,14 +4,14 @@ title: 实时客户资料概述
 topic-legacy: guide
 description: 实时客户资料可合并各种来源的数据，并以单个客户资料和相关时间系列事件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 9f00bff31f9e7d2da1294d3d1f24cba7870a4614
 workflow-type: tm+mt
-source-wordcount: '1890'
+source-wordcount: '1888'
 ht-degree: 0%
 
 ---
 
-# [!DNL Real-time Customer Profile] 概述
+# [!DNL Real-time Customer Profile]概述
 
 Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 使用 [!DNL Real-time Customer Profile]，您可以通过合并来自多个渠道（包括在线、离线、CRM和第三方）的数据，来全面了解每个客户。 [!DNL Profile] 允许您将客户数据整合到统一视图中，为每次客户互动提供一个可操作且带有时间戳的帐户。 此概述将帮助您了解的角色和用法 [!DNL Real-time Customer Profile] in [!DNL Experience Platform].
 
@@ -107,7 +107,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 会生成为各个客户�
 
 ## 更新配置文件存储数据
 
-有时可能需要更新贵组织的用户档案存储区中的数据。 例如，您可能需要更正记录或更改属性值。 这可以通过批量摄取或流式摄取完成，并且需要一个启用了配置文件的数据集，该数据集配置了一个更新标记。 有关如何配置数据集以进行属性更新的更多信息，请参阅 [为配置文件启用数据集并重新插入](../catalog/datasets/enable-upsert.md).
+有时可能需要更新贵组织的用户档案存储区中的数据。 例如，您可能需要更正记录或更改属性值。 这可以通过批量摄取完成，并且需要一个启用了配置文件的数据集，该数据集配置了一个更新标记。 有关如何配置数据集以进行属性更新的更多信息，请参阅 [为配置文件启用数据集并重新插入](../catalog/datasets/enable-upsert.md).
 
 ## 数据管理和 [!DNL Privacy]
 
