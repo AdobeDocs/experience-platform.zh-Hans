@@ -5,10 +5,10 @@ title: 将PSQL连接到查询服务
 topic-legacy: connect
 description: PSQL是在计算机上安装PostgreSQL时提供的命令行接口。 您可以按照以下说明进行安装。
 exl-id: ceb07128-409e-42be-8143-0cf681d435de
-source-git-commit: 06d3a8aa6f2f73c2d5392a76fb5b36b18691cf0d
+source-git-commit: 4d9e6ce81809c6e6ee1188177a937ac8fc609996
 workflow-type: tm+mt
-source-wordcount: '275'
-ht-degree: 1%
+source-wordcount: '294'
+ht-degree: 0%
 
 ---
 
@@ -22,9 +22,11 @@ PSQL是安装时安装的命令行界面 [!DNL PostgreSQL] 你的机器上。 �
 
 在计算机上安装PSQL后，即可将PSQL与查询服务连接。 返回到 [!DNL Platform] UI，然后选择 **[!UICONTROL 查询]**，后跟 **[!UICONTROL 凭据]**.
 
-![图像](../images/clients/psql/connect-bi.png)
+在 **[!UICONTROL PSQL命令]** 选择 **[!UICONTROL 复制到剪贴板]** 图标(![复制图标](../images/clients/psql/copy-icon.png))以复制命令字符串。
 
-选择图标以复制标记为 **[!UICONTROL PSQL命令]**，然后在按enter键之前将命令字符串粘贴到终端或命令行窗口中。
+![“查询”功能板的“凭据”选项卡，其中突出显示了复制图标。](../images/clients/psql/connect-bi.png)
+
+将命令字符串粘贴到终端或命令行窗口中，然后按 **输入** 键盘上。
 
 >[!IMPORTANT]
 >
