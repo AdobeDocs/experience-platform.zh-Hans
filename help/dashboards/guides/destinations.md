@@ -4,9 +4,9 @@ title: 目标功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 86041e3165d4ea9cb55717f24b002afa084ff420
+source-git-commit: 32df4c5972cb32afc6021ae27dc05f77076a5984
 workflow-type: tm+mt
-source-wordcount: '1709'
+source-wordcount: '1708'
 ht-degree: 0%
 
 ---
@@ -153,7 +153,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ![映射的受众健康小组件。](../images/destinations/mapped-audience-health.png)
 
-### [!UICONTROL 目标计数] (#destinations-count)
+### [!UICONTROL 目标计数] {#destinations-count}
 
 的 [!UICONTROL 目标计数] 小组件提供了可在系统中激活和交付受众的可用端点总数。 此数字包括活动和不活动目标。
 
