@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 5468097c61d42a7b565520051b955329e493d51f
+source-git-commit: 2a74d900053a868ce936d957dee008da846d6608
 workflow-type: tm+mt
-source-wordcount: '2596'
+source-wordcount: '2668'
 ht-degree: 2%
 
 ---
@@ -420,6 +420,27 @@ EXCEPTION
 WHEN other THEN SELECT 'ERROR';
 
 END $$; 
+```
+
+## 内联 {#inline}
+
+内联函数将结构数组的元素分离，并将值生成到表中。 它只能放在 `SELECT` 列表或 `LATERAL VIEW`.
+
+内联函数 **无法** 被置于一个选择列表中，该列表中还有其他生成器函数。
+
+默认情况下，生成的列将命名为“col1”、“col2”等。 如果表达式为 `NULL` 则不会生成任何行。
+
+**示例**
+
+```sql
+> SELECT inline(array(struct(1, 'a'), struct(2, 'b'))), 'Spark SQL';
+```
+
+该示例返回以下内容：
+
+```text
+1  a Spark SQL
+2  b Spark SQL
 ```
 
 ## [!DNL Spark] SQL命令
