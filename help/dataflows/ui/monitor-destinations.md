@@ -6,9 +6,9 @@ title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 5254f100f59f1edb36e00d1475c2857a525fe79e
+source-git-commit: 935bbbc842ce5e2f42ee92c525255c9708bf34c2
 workflow-type: tm+mt
-source-wordcount: '3365'
+source-wordcount: '3363'
 ht-degree: 0%
 
 ---
@@ -50,12 +50,12 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_dataflow_run_details_activation_streaming"
 >title="数据流运行详细信息"
->abstract="The destination dataflow run details contain information on the segment&#39;s activation status and metrics taken from Real-time Customer Profile to generate unique identities. 要了解更多信息，请查阅量度定义指南。"
+>abstract="目标数据流运行详细信息包含有关区段激活状态的信息以及从实时客户配置文件获取的用于生成唯一标识的量度。 要了解更多信息，请查阅量度定义指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_streaming"
->title="Profiles received"
->abstract="The total number of profiles received in the dataflow. 此值每60分钟更新一次。"
+>title="收到的用户档案"
+>abstract="数据流中接收的用户档案总数。 此值每60分钟更新一次。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_streaming"
@@ -64,13 +64,13 @@ ht-degree: 0%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesexcluded_streaming"
->title="Identities excluded"
->abstract="The count of individual profile records excluded from activation for the selected destination based on missing attributes and consent violation."
+>title="排除的身份"
+>abstract="根据缺少属性和同意违规，从选定目标的激活中排除的单个配置文件记录计数。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesfailed_streaming"
 >title="身份失败"
->abstract="所选目标的单个配置文件标识的计数失败。 Please check error diagnostics for details."
+>abstract="所选目标的单个配置文件标识的计数失败。 有关详细信息，请检查错误诊断。"
 
 对于流目标， [!UICONTROL 数据流运行] 选项卡会每小时更新数据流运行中的量度数据。 标有的最显着的统计数据是关于身份的。
 
@@ -114,7 +114,7 @@ ht-degree: 0%
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
 >abstract="目标数据流运行详细信息包含有关区段激活状态的信息以及从实时客户配置文件获取的用于生成唯一标识的量度。 要了解更多信息，请查阅量度定义指南。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=en#dataflow-runs-for-streaming-destinations" text="为流目标运行数据流"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="为流目标运行数据流"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
@@ -131,7 +131,7 @@ ht-degree: 0%
 >title="排除的身份"
 >abstract="根据缺少属性和同意违规，从选定目标的激活中排除的单个配置文件记录计数。"
 
-For batch destinations, the [!UICONTROL Dataflow runs] tab provides metric data on your dataflow runs. 将显示单个运行及其特定量度的列表，以及以下身份总数：
+对于批处理目标， [!UICONTROL 数据流运行] 选项卡提供有关数据流运行的量度数据。 将显示单个运行及其特定量度的列表，以及以下身份总数：
 
 - **[!UICONTROL 已激活身份]**:成功激活到选定目标的用户档案标识总数。 此量度包含从导出区段中创建、更新和删除的标识。
 - **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规，从选定目标的激活中排除的单个配置文件标识计数。
@@ -142,10 +142,10 @@ For batch destinations, the [!UICONTROL Dataflow runs] tab provides metric data 
 
 - **[!UICONTROL 数据流运行开始]**:数据流运行开始的时间。
 - **[!UICONTROL 处理时间]**:处理数据流运行所花费的时间。
-- **[!UICONTROL 收到的用户档案]**:数据流中接收的用户档案总数。 This value is updated every 60 minutes.
-- **[!UICONTROL 已激活身份]**:在数据流运行中成功激活到选定目标的配置文件标识总数。 This metric includes identities that are created, updated, and removed from exported segments.
+- **[!UICONTROL 收到的用户档案]**:数据流中接收的用户档案总数。 此值每60分钟更新一次。
+- **[!UICONTROL 已激活身份]**:在数据流运行中成功激活到选定目标的配置文件标识总数。 此量度包含从导出区段中创建、更新和删除的标识。
 - **[!UICONTROL 排除的身份]**:根据缺少属性和同意违规从激活中排除的配置文件标识总数。
-- **[!UICONTROL Status]**: Represents the state the dataflow is in. 这可以是三种状态之一： [!UICONTROL 成功], [!UICONTROL 失败]和 [!UICONTROL 处理]. [!UICONTROL 成功] 表示数据流处于活动状态，并正在根据其提供的时间表导出数据。 [!UICONTROL 失败] 表示由于错误，数据激活已挂起。 [!UICONTROL 处理] 表示数据流尚未处于活动状态，通常在创建新数据流时会遇到该数据流。
+- **[!UICONTROL 状态]**:表示数据流处于的状态。 这可以是三种状态之一： [!UICONTROL 成功], [!UICONTROL 失败]和 [!UICONTROL 处理]. [!UICONTROL 成功] 表示数据流处于活动状态，并正在根据其提供的时间表导出数据。 [!UICONTROL 失败] 表示由于错误，数据激活已挂起。 [!UICONTROL 处理] 表示数据流尚未处于活动状态，通常在创建新数据流时会遇到该数据流。
 
 要查看特定数据流运行的详细信息，请从列表中选择运行的开始时间。
 
@@ -212,7 +212,7 @@ For batch destinations, the [!UICONTROL Dataflow runs] tab provides metric data 
 
 >[!NOTE]
 >
->The following screenshot shows the activation rate and batch dataflow runs for the last 30 days instead of the last 24 hours. 您可以通过选择 **[!UICONTROL 最近30天]**.
+>以下屏幕截图显示了过去30天（而不是过去24小时）内的激活率和批量数据流运行情况。 您可以通过选择 **[!UICONTROL 最近30天]**.
 
 ![更改激活目标的回顾日期范围](../assets/ui/monitor-destinations/dashboard-graph-change-date-range.png)
 
