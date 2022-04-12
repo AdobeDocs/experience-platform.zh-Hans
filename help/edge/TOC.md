@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
-source-git-commit: ff612f7ef466276757095a3a9a724781eeb6a089
+source-git-commit: 7eb89d44bdb6e3c6e6aede0a1ce20c02b19284fd
 workflow-type: tm+mt
-source-wordcount: '163'
+source-wordcount: '174'
 ht-degree: 31%
 
 ---
@@ -48,6 +48,10 @@ ht-degree: 31%
       * [访问响应令牌](personalization/adobe-target/accessing-response-tokens.md)
       * [使用mbox第三方ID](personalization/adobe-target/using-mbox-3rdpartyid.md)
       * [将at.js库与Web SDK进行比较](personalization/adobe-target/web-sdk-atjs-comparison.md)
+      * Analytics for Target(A4T)日志记录 {#a4t}
+         * [概述](personalization/adobe-target/analytics-logging/overview.md)
+         * [客户端 记录](personalization/adobe-target/analytics-logging/client-side.md)
+         * [服务器端日志记录](personalization/adobe-target/analytics-logging/server-side.md)
    * 优惠决策 {#offer-decisioning}
       * [概述](personalization/offer-decisioning/offer-decisioning-overview.md)
 * 同意 {#consent}
