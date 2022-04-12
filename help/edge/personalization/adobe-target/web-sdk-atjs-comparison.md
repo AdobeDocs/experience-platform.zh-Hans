@@ -2,9 +2,10 @@
 title: 比较at.js与Experience PlatformWeb SDK
 description: 了解at.js功能与Experience PlatformWeb SDK的异同
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；系统图；图
-source-git-commit: 6efb40e90cb8c29a0141bb0db6e20cec23f2be9a
+exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
+source-git-commit: 71c63e0d0b993206cb3bb5de7f7fbd5e10c6f2e3
 workflow-type: tm+mt
-source-wordcount: '2277'
+source-wordcount: '2269'
 ht-degree: 6%
 
 ---
@@ -1224,5 +1225,5 @@ At.js会公开以下调试功能：
 * 使用 [格里丰](https://aep-sdks.gitbook.io/docs/beta/project-griffon)
 * [已启用Web SDK调试](../../../edge/fundamentals/debugging.md)
 * 使用 [Web SDK监控挂接](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)
-* 使用 [Adobe Experience Platform Debugger](https://experienceleague.adobe.com/docs/debugger/using-v2/experience-cloud-debugger.html?lang=zh-cn)
+* 使用 [Adobe Experience Platform Debugger](../../../debugger/home.md)
 * 目标跟踪
