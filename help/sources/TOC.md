@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: 5d03dda7a972d37697032978b6e91a39800f81c8
+source-git-commit: 66dafe4bca6e1eb0fc67a745ac20a6e0b119aa39
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '773'
 ht-degree: 13%
 
 ---
@@ -48,6 +48,8 @@ ht-degree: 13%
       - [Oracle对象存储](connectors/cloud-storage/oracle-object-storage.md)
       - [SFTP连接器](connectors/cloud-storage/sftp.md)
       - [Amazon S3和Azure Blob Connector](connectors/cloud-storage/blob-s3.md)
+   - 同意和首选项 {#consent}
+      - [OneTrust集成](connectors/consent-and-preferences/onetrust.md)
    - CRM {#crm}
       - [Microsoft Dynamics 连接器](connectors/crm/ms-dynamics.md)
       - [Salesforce连接器](connectors/crm/salesforce.md)
@@ -109,6 +111,8 @@ ht-degree: 13%
          - [Google PubSub](tutorials/api/create/cloud-storage/google-pubsub.md)
          - [Oracle对象存储](tutorials/api/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/api/create/cloud-storage/sftp.md)
+      - 同意和首选项 {#consent}
+         - [OneTrust集成](tutorials/api/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/api/create/crm/ms-dynamics.md)
          - [Salesforce](tutorials/api/create/crm/salesforce.md)
@@ -203,6 +207,8 @@ ht-degree: 13%
          - [Oracle对象存储](tutorials/ui/create/cloud-storage/oracle-object-storage.md)
          - [SFTP](tutorials/ui/create/cloud-storage/sftp.md)
          - [Amazon S3和Blob](tutorials/ui/create/cloud-storage/blob-s3.md)
+      - 同意和首选项 {#consent}
+         - [OneTrust集成](tutorials/ui/create/consent-and-preferences/onetrust.md)
       - CRM {#crm}
          - [Microsoft Dynamics](tutorials/ui/create/crm/dynamics.md)
          - [Salesforce](tutorials/ui/create/crm/salesforce.md)
@@ -250,6 +256,7 @@ ht-degree: 13%
       - [广告连接数据流](tutorials/ui/dataflow/advertising.md)
       - [批处理云存储连接数据流](tutorials/ui/dataflow/batch/cloud-storage.md)
       - [流云存储连接数据流](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
+      - [同意和首选项连接数据流](tutorials/ui/dataflow/consent-and-preferences.md)
       - [CRM连接数据流](tutorials/ui/dataflow/crm.md)
       - [客户成功连接数据流](tutorials/ui/dataflow/customer-success.md)
       - [数据库连接数据流](tutorials/ui/dataflow/databases.md)
