@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 2a74d900053a868ce936d957dee008da846d6608
+source-git-commit: a5391c1ccc24845673217e15bafd1a1df33cbc18
 workflow-type: tm+mt
-source-wordcount: '2668'
+source-wordcount: '2741'
 ht-degree: 2%
 
 ---
@@ -424,11 +424,15 @@ END $$;
 
 ## 内联 {#inline}
 
-内联函数将结构数组的元素分离，并将值生成到表中。 它只能放在 `SELECT` 列表或 `LATERAL VIEW`.
+的 `inline` 函数将结构数组的元素分离，并将值生成到表中。 它只能放在 `SELECT` 列表或 `LATERAL VIEW`.
 
-内联函数 **无法** 被置于一个选择列表中，该列表中还有其他生成器函数。
+的 `inline` 函数 **无法** 被置于一个选择列表中，该列表中还有其他生成器函数。
 
 默认情况下，生成的列将命名为“col1”、“col2”等。 如果表达式为 `NULL` 则不会生成任何行。
+
+>[!TIP]
+>
+>列名称可以使用 `RENAME` 命令。
 
 **示例**
 
@@ -442,6 +446,20 @@ END $$;
 1  a Spark SQL
 2  b Spark SQL
 ```
+
+第二个示例进一步演示了 `inline` 函数。 该示例的数据模型如下图所示。
+
+![productListItems的架构图](../images/sql/productListItems.png)
+
+**示例**
+
+```sql
+select inline(productListItems) from source_dataset limit 10;
+```
+
+从 `source_dataset` 用于填充target表。
+
+| SKU |体验(_experience) |数量 | priceTotal | |—+—+—| | product-id-1 |(&quot;(&quot;(&quot;(A，pass，B，NULL)&quot;)&quot;) | 5 | 10.5 | | product-id-5 |(&quot;(&quot;(&quot;(A， pass， B，NULL)&quot;)&quot;) | | | | product-id-2 |(&quot;(&quot;(&quot;(AF， C， D，NULL)&quot;)&quot;) | 6 | 40 | | product-id-4 |(&quot;(&quot;(&quot;（BM，传递， NA，NULL）&quot;)&quot;)&quot;) | 3 | 12 |
 
 ## [!DNL Spark] SQL命令
 
