@@ -1,9 +1,10 @@
 ---
 title: 在架构注册API中定义XDM字段
 description: 了解在架构注册API中创建自定义体验数据模型(XDM)资源时如何定义不同的字段。
-source-git-commit: af4c345819d3e293af4e888c9cabba6bd874583b
+exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
+source-git-commit: 536657f11a50ea493736296780dd57f41dfefeae
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '783'
 ht-degree: 0%
 
 ---
@@ -165,16 +166,18 @@ ht-degree: 0%
 
 ## 创建自定义映射类型 {#maps}
 
-为了在XDM中高效地支持“类似地图”数据，可以使用 `meta:xdmType` 设置为 `map` 要明确说明应当像对键集不受约束一样管理对象。 XDM对使用此存储提示施加了以下限制：
+为了在XDM中高效地支持“类似地图”数据，可以使用 `meta:xdmType` 设置为 `map` 要明确说明应当像对键集不受约束一样管理对象。 摄取到映射字段中的数据必须使用字符串键，并且只能使用字符串或整数值(由 `additionalProperties.type`)。
 
-* 映射类型MUST为类型 `object`
-* 映射类型必须不定义属性（换句话说，它们定义“空”对象）
-* 映射类型必须包括 `additionalProperties` 描述可能放置在映射中的值的架构
+XDM对使用此存储提示施加了以下限制：
+
+* 映射类型MUST为类型 `object`.
+* 映射类型必须不定义属性（换句话说，它们定义“空”对象）。
+* 映射类型必须包括 `additionalProperties.type` 字段，用于描述可能放置在映射中的值， `string` 或 `integer`.
 
 请确保您只在绝对必要时才使用映射类型字段，因为这些字段存在以下性能缺陷：
 
-* 对于1亿条记录，Adobe Experience Platform查询服务的响应时间会从3秒降为10秒
-* 地图的键数必须少于16个，否则可能进一步退化
+* 对于1亿条记录，Adobe Experience Platform查询服务的响应时间会从3秒降为10秒。
+* 地图必须少于16个键值，否则就有进一步退化的风险。
 
 平台用户界面在如何提取映射类型字段的键值方面也存在限制。 对象类型字段可以展开，而映射显示为单个字段。
 
