@@ -4,7 +4,7 @@ title: 目标功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 45806166e48e3a9d9d7eeeaea0827d6f83c3ca3b
+source-git-commit: bc449e066a6c9875dd667c5b1715ab3226228d85
 workflow-type: tm+mt
 source-wordcount: '1764'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 最近创建的目标]](#recently-created-destinations)
 * [[!UICONTROL 最近激活的区段]](#recently-activated-segments)
 * [[!UICONTROL 最近激活的区段（按目标）]](#recently-activated-segments-by-destination)
-* [[!UICONTROL 受众大小趋势]](#audience-size-trends)
+* [[!UICONTROL 受众大小趋势]](#audience-size-trend)
 * [[!UICONTROL 按身份划分的未映射区段]](#unmapped-segments-by-identity)
 * [[!UICONTROL 按身份映射的区段]](#mapped-segments-by-identity)
 * [[!UICONTROL 常见受众]](#common-audiences)

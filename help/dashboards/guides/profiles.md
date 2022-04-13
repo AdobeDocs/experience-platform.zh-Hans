@@ -4,7 +4,7 @@ title: 用户档案仪表板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 7ca40776747541615e1a1d717aae8d48bed27a74
+source-git-commit: bc449e066a6c9875dd667c5b1715ab3226228d85
 workflow-type: tm+mt
 source-wordcount: '2572'
 ht-degree: 0%
@@ -232,7 +232,7 @@ Adobe会提供多个小组件，用于评估所摄取的用户档案是否完整
 
 ### （测试版） [!UICONTROL 用户档案完整性趋势] {#profile-completeness-trend}
 
-此小组件创建一个堆叠式柱状图，用于描述配置文件随时间的完整性趋势。 完整性是通过在所有观察到的属性中填充非空值的属性百分比来衡量的。 它将配置文件完整性分类为自上次处理日期以来的高、中或低完整性。
+此小组件创建堆叠式面积图以描述配置文件随时间的完整性趋势。 完整性是通过在所有观察到的属性中填充非空值的属性百分比来衡量的。 它将配置文件完整性分类为自上次处理日期以来的高、中或低完整性。
 
 x轴表示时间，y轴表示用户档案的数量，颜色表示用户档案完整性的三个级别。
 
