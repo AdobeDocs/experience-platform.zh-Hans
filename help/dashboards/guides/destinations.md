@@ -4,9 +4,9 @@ title: 目标功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 32df4c5972cb32afc6021ae27dc05f77076a5984
+source-git-commit: 45806166e48e3a9d9d7eeeaea0827d6f83c3ca3b
 workflow-type: tm+mt
-source-wordcount: '1708'
+source-wordcount: '1764'
 ht-degree: 0%
 
 ---
@@ -112,6 +112,10 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 第二个下拉菜单列出了每个可用区段，这些区段可发送到功能板顶部选择的目标帐户。
 
 ![受众大小趋势小组件。](../images/destinations/audience-size-trend.png)
+
+的 **[!UICONTROL 受众大小趋势]** 小组件提供 [!UICONTROL 字幕] 按钮。 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。 机器学习模型通过分析图表和区段数据自动生成字幕以描述关键趋势和重要事件。
+
+![受众大小趋势小组件的自动字幕对话框。](../images/destinations/audience-size-trend-captions.png)
 
 ### [!UICONTROL 按身份划分的未映射区段] {#unmapped-segments-by-identity}
 
