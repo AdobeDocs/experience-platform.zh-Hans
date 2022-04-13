@@ -2,7 +2,7 @@
 title: 在架构注册API中定义XDM字段
 description: 了解在架构注册API中创建自定义体验数据模型(XDM)资源时如何定义不同的字段。
 exl-id: d79332e3-8448-42af-b250-882bcb0f1e7d
-source-git-commit: 536657f11a50ea493736296780dd57f41dfefeae
+source-git-commit: 4ce9e53ec420a8c9ba07cdfd75e66d854989f8d2
 workflow-type: tm+mt
 source-wordcount: '783'
 ht-degree: 0%
@@ -60,7 +60,7 @@ ht-degree: 0%
     <td>约束枚举值在 <code>enum</code> 数组中，而每个值的可选面向客户的标签可以在 <code>meta:enum</code>:
       <pre class="JSON language-JSON hljs">
 "sampleField":{ "type":"string", "enum":[ "value1"、"value2"、"value3" ]、"meta:enum":{ "value1":"Value 1"、"value2":"Value 2"、"value3":"Value 3" }, "default":"value1" }</pre>
-    <br>请注意， <code>meta:enum</code> 值 <strong>not</strong> 声明枚举或自行驱动任何数据验证。 在大多数情况下， <code>meta:enum</code> 此外， <code>enum</code> 以确保数据受到约束。 但是，在某些用例中， <code>meta:enum</code> 没有相应的 <code>enum</code> 数组。 请参阅 <a href="../tutorials/extend-soft-enum.md">扩展软边</a> 以了解更多信息。
+    <br>请注意， <code>meta:enum</code> 值 <strong>not</strong> 声明枚举或自行驱动任何数据验证。 在大多数情况下， <code>meta:enum</code> 此外， <code>enum</code> 以确保数据受到约束。 但是，在某些用例中， <code>meta:enum</code> 没有相应的 <code>enum</code> 数组。 请参阅 <a href="../tutorials/suggested-values.md">定义建议值</a> 以了解更多信息。
     </td>
   </tr>
   <tr>
