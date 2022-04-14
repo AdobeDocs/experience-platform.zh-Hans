@@ -2,9 +2,10 @@
 keywords: Experience Platform；身份；身份服务；故障诊断；护栏；准则；限制；
 title: Identity服务的防护
 description: 本文档提供了有关Identity Service数据的使用和费率限制的信息，以帮助您优化对身份图的使用。
-source-git-commit: b36ace84acdb13b89deb6f77a02c298acade8d8e
+exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
+source-git-commit: b07a45e5bb9cae6e147ea790ebb77cb63f8790c1
 workflow-type: tm+mt
-source-wordcount: '377'
+source-wordcount: '385'
 ht-degree: 3%
 
 ---
@@ -30,7 +31,7 @@ ht-degree: 3%
 
 | 瓜德拉伊 | 限制 | 注释 |
 | --- | --- | --- |
-| 图中的标识数 | 150 | 达到限制后，将不会更新标识图。 |
+| 图中的标识数 | 150 | 该限制在沙盒级别应用。 达到限制后，将不会更新标识图。 |
 | XDM记录中的身份数 | 20 | 所需的XDM记录最少为2个。 |
 | 自定义命名空间的数量 | None | 您可以创建的自定义命名空间数量没有限制。 |
 | 图数 | 无 | 您可以创建的身份图的数量没有限制。 |
@@ -49,5 +50,5 @@ ht-degree: 3%
 
 有关 [!DNL Identity Service]:
 
-* [[!DNL Identity Service] 概述](home.md)
+* [[!DNL Identity Service]概述](home.md)
 * [身份图查看器](ui/identity-graph-viewer.md)
