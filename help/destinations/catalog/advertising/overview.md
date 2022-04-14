@@ -5,9 +5,9 @@ seo-title: Advertising destinations overview
 description: 将Adobe Experience Platform连接到第三方广告平台(例如DSP、广告网络、SSP)，并将假名受众共享到这些平台。
 seo-description: Connect Adobe Experience Platform to a 3rd-party advertising platform (e.g. DSP, ad network, SSP) and share pseudonymous audiences to these platforms.
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 0911a0a08c5571161acdafa6857095e275a50600
+source-git-commit: 275c3fae8b001154a702edbf4356d6a374f9a16f
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '234'
 ht-degree: 1%
 
 ---
@@ -24,10 +24,11 @@ ht-degree: 1%
 
 目前，Experience Platform支持下面列出的广告目标。
 
-要了解连接和扩展之间的差异，请参阅“目标类型和类别”页面中的[连接](../../destination-types.md#connections) 。
+要了解连接和扩展之间的差异，请参阅 [连接](../../destination-types.md#connections) （在目标类型和类别页面中）。
 
 ### 连接
 
+* [(Beta)Criteo连接](criteo.md)
 * [Google Display &amp; Video 360连接](google-dv360.md)
 * [Google Ads连接](google-ads-destination.md)
 * [Google Ad Manager连接](google-ad-manager.md)
@@ -48,11 +49,11 @@ ht-degree: 1%
 * [Facebook Pixel扩展](facebook-pixel.md)
 * [Flashtalking OneTag扩展](flashtalking.md)
 * [Google Ads扩展](google-ads-extension.md)
-* [Google Gtag扩展](gtag-advertising.md)
+* [Google扩展](gtag-advertising.md)
 * [linkedIn Insight Tag扩展](linkedin.md)
 * [Pinterest转化跟踪扩展](pinterest-extension.md)
 * [Twitter通用网站标记扩展](twitter-uwt.md)
 
 ## 连接到新的广告目标 {#connect-destination}
 
-要将区段发送到营销活动的广告目标，Platform必须先连接到该目标。 有关设置新目标的详细信息，请参阅[目标创建教程](../../ui/connect-destination.md) 。
+要将区段发送到营销活动的广告目标，Platform必须先连接到该目标。 请参阅 [目标创建教程](../../ui/connect-destination.md) 以了解有关设置新目标的详细信息。
