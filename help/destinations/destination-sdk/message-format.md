@@ -2,9 +2,9 @@
 description: 本页介绍从Adobe Experience Platform导出到目标的数据中的消息格式和配置文件转换。
 title: 消息格式
 exl-id: 1212c1d0-0ada-4ab8-be64-1c62a1158483
-source-git-commit: 468b9309c5184684c0b25c2656a9eef37715af53
+source-git-commit: f000eadb689a99f7667c47e2bef5d2a780aa0505
 workflow-type: tm+mt
-source-wordcount: '1981'
+source-wordcount: '2266'
 ht-degree: 1%
 
 ---
@@ -41,18 +41,15 @@ Users who want to activate data to your destination need to map the fields in th
 
 -->
 
-**源XDM架构(1)**:此项目是指客户在Experience Platform中使用的架构。 在Experience Platform中，在 [映射步骤](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en#mapping) 在激活目标工作流中，客户会将其源架构中的字段映射到您目标的目标架构(2)。
+**源XDM架构(1)**:此项目是指客户在Experience Platform中使用的架构。 在Experience Platform中，在 [映射步骤](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en#mapping) 在激活目标工作流中，客户会将其XDM架构的字段映射到您目标的目标架构(2)。
 
-**目标XDM架构(2)**:根据目标预期格式的JSON标准架构(3)，您可以在目标XDM架构中定义配置文件属性和标识。 您可以在目标配置中(在 [schemaConfig](./destination-configuration.md#schema-configuration) 和 [identityNamespaces](./destination-configuration.md#identities-and-attributes) 对象。
+**目标XDM架构(2)**:根据目标预期格式的JSON标准架构(3)以及目标可以解释的属性，您可以在目标XDM架构中定义配置文件属性和标识。 您可以在目标配置中(在 [schemaConfig](./destination-configuration.md#schema-configuration) 和 [identityNamespaces](./destination-configuration.md#identities-and-attributes) 对象。
 
-**目标配置文件属性的JSON标准架构(3)**:此项目表示 [JSON架构](https://json-schema.org/learn/miscellaneous-examples.html) 平台支持的所有配置文件属性及其类型(例如：对象、字符串、数组)。 您的目标可支持的示例字段可能包括 `firstName`, `lastName`, `gender`, `email`, `phone`, `productId`, `productName`，等等。 您需要 [消息转换模板](./message-format.md#using-templating) 将导出的非Experience Platform数据定制为预期格式。
+**目标配置文件属性的JSON标准架构(3)**:此示例表示 [JSON架构](https://json-schema.org/learn/miscellaneous-examples.html) 平台支持的所有配置文件属性及其类型(例如：对象、字符串、数组)。 您的目标可支持的示例字段可能包括 `firstName`, `lastName`, `gender`, `email`, `phone`, `productId`, `productName`，等等。 您需要 [消息转换模板](./message-format.md#using-templating) 将导出的非Experience Platform数据定制为预期格式。
 
 根据上述架构转换，以下是源XDM架构与合作伙伴端示例架构之间的配置文件配置如何更改：
 
 ![转换消息示例](./assets/transformations-with-examples.png)
-
-<br> 
-
 
 ## 入门 — 转换三个基本属性 {#getting-started}
 
@@ -87,9 +84,79 @@ Authorization: Bearer YOUR_REST_API_KEY
 | `_your_custom_schema.lastName` | `attributes.last_name` | `last_name` |
 | `personalEmail.address` | `attributes.external_id` | `external_id` |
 
+## Experience Platform中的轮廓结构 {#profile-structure}
+
+要进一步了解页面上的以下示例，请务必了解Experience Platform中用户档案的结构。
+
+用户档案有3个部分：
+
+* `segmentMembership` （始终显示在用户档案中）
+   * 此部分包含配置文件中存在的所有区段。 区段可以具有以下3种状态之一： `realized`, `existing`, `exited`.
+* `identityMap` （始终显示在用户档案中）
+   * 此部分包含配置文件(电子邮件、Google GAID、Apple IDFA等)上以及在激活工作流中映射以导出的用户存在的所有身份。
+* 属性（根据目标配置，这些属性可能存在于配置文件中）。 预定义属性与自由格式属性之间还有一些细微的区别：
+   * 表示 *自由格式属性*，它们包含 `.value` 路径（如果配置文件中存在属性）(请参阅 `lastName` 属性。 如果用户档案上不存在，则将不包含 `.value` 路径(请参阅 `firstName` 属性。
+   * 表示 *预定义属性*，则它们不包含 `.value` 路径。 配置文件中存在的所有映射属性都将显示在属性映射中。 没有的将不存在(见示例2 - `firstName` 属性)。
+
+请参阅下面两个Experience Platform中的用户档案示例：
+
+### 示例1 `segmentMembership`, `identityMap` 和自由格式属性的属性 {#example-1}
+
+```json
+{
+  "segmentMembership": {
+    "ups": {
+      "11111111-1111-1111-1111-111111111111": {
+        "lastQualificationTime": "2019-04-15T02:41:50.000+0000",
+        "status": "existing"
+      }
+    }
+  },
+  "identityMap": {
+    "mobileIds": [
+      {
+        "id": "e86fb215-0921-4537-bc77-969ff775752c"
+      }
+    ]
+  },
+  "attributes": {
+    "firstName": {
+    },
+    "lastName": {
+      "value": "lastName"
+    }
+  }
+}
+```
+
+### 示例2 `segmentMembership`, `identityMap` 和属性 {#example-2}
+
+```json
+{
+  "segmentMembership": {
+    "ups": {
+      "11111111-1111-1111-1111-111111111111": {
+        "lastQualificationTime": "2019-04-15T02:41:50.000+0000",
+        "status": "existing"
+      }
+    }
+  },
+  "identityMap": {
+    "mobileIds": [
+      {
+        "id": "e86fb215-0921-4537-bc77-969ff775752c"
+      }
+    ]
+  },
+  "attributes": {
+    "lastName": "lastName"
+  }
+}
+```
+
 ## 对身份、属性和区段成员资格转换使用模板语言 {#using-templating}
 
-Adobe使用类似于 [金子](https://jinja.palletsprojects.com/en/2.11.x/) 将XDM架构中的字段转换为目标支持的格式。
+Adobe使用 [卵石模板](https://pebbletemplates.io/)，类似于 [金子](https://jinja.palletsprojects.com/en/2.11.x/)，以将Experience PlatformXDM架构中的字段转换为目标支持的格式。
 
 本节提供了如何进行这些转换的几个示例 — 从输入XDM架构、模板，以及将输出为目标接受的有效负载格式。 以下示例以日益复杂的方式呈现，如下所示：
 
@@ -1129,12 +1196,10 @@ https://api.example.com/audience/{{input.aggregationKey.segmentId}}
 | `addedSegments(listOfSegments)` | 仅返回状态为 `realized` 或 `existing`. |
 | `removedSegments(listOfSegments)` | 仅返回状态为 `exited`. |
 
-<!--
+## 后续步骤 {#next-steps}
 
-## What Adobe needs from you to set up your destination {#what-adobe-needs}
+在阅读本文档后，您现在可以了解导出的Experience Platform数据是如何转换的。 接下来，阅读以下页面，以完成有关为目标创建消息转换模板的知识：
 
-Based on the transformations outlined in the sections above, Adobe needs the following information to set up your destination:
-
-* Considering *all* the fields that your platform can receive, Adobe needs the standard JSON schema that corresponds to your expected message format. Having the template allows Adobe to define transformations and to create a custom XDM schema for your company, which customers would use to export data to your destination.
-
--->
+* [创建和测试消息转换模板](/help/destinations/destination-sdk/create-template.md)
+* [渲染模板API操作](/help/destinations/destination-sdk/render-template-api.md)
+* [支持的转换函数Destination SDK](/help/destinations/destination-sdk/supported-functions.md)

@@ -2,9 +2,9 @@
 description: 作为Destination SDK的一部分，Adobe提供了开发人员工具，可帮助您配置和测试目标。 本页介绍如何创建和测试消息转换模板。
 title: 创建和测试消息转换模板
 exl-id: 15e7f436-4d33-4172-bd14-ad8dfbd5e4a8
-source-git-commit: aa5898369d41ba48a1416a0b4ea82f6345333d18
+source-git-commit: 97ffaa2a53dbbf5a7be5f002e63be4ed3339f565
 workflow-type: tm+mt
-source-wordcount: '947'
+source-wordcount: '960'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 为何需要创建和测试消息转换模板 {#why-create-message-transformation-template}
 
-在Destination SDK中创建目标的第一步之一是，考虑在从Adobe Experience Platform导出到目标时，区段成员资格、身份和配置文件属性的数据格式是如何转换的。 在 [消息格式文档](./message-format.md#using-templating).
+在Destination SDK中创建目标的第一步是，考虑在从Adobe Experience Platform导出到目标时，区段成员资格、身份和配置文件属性的数据格式是如何转换的。 在 [消息格式文档](./message-format.md#using-templating).
 
 要使转换成功，必须提供转换模板，如下示例所示： [创建用于发送区段、身份和配置文件属性的模板](./message-format.md#segments-identities-attributes).
 
@@ -40,6 +40,7 @@ Adobe提供了一个模板工具，允许您创建和测试消息模板，以将
    * 使用 `maxUsersPerRequest` 值大于1的值。
 2. [创建目标配置](./destination-configuration-api.md#create) ，并在 `destinationDelivery.destinationServerId`.
 3. [获取目标配置的ID](./destination-configuration-api.md#retrieve-list) 创建的模板，以便在模板创建工具中使用。
+4. 了解 [您可以使用哪些函数和过滤器](./supported-functions.md) 在消息转换模板中。
 
 ## 如何使用示例模板API和渲染模板API为目标创建模板 {#iterative-process}
 
