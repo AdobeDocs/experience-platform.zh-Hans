@@ -3,9 +3,10 @@ keywords: Experience Platform；主页；热门主题；OneTrust
 solution: Experience Platform
 title: （测试版）使用流服务API为OneTrust集成源创建数据流
 description: 了解如何使用流量服务API将Adobe Experience Platform与OneTrust集成连接。
-source-git-commit: adefaeb895c91d45727f791b73b73a17a2b1ccf9
+exl-id: e224efe0-4756-4b8a-b446-a3e1066f2050
+source-git-commit: 74ef1b3abb90ab3ca24690c88c073083f02a2f1b
 workflow-type: tm+mt
-source-wordcount: '2317'
+source-wordcount: '2313'
 ht-degree: 2%
 
 ---
@@ -6794,7 +6795,7 @@ curl -X POST \
 
 要在Platform中使用源数据，必须创建目标架构以根据您的需求构建源数据。 然后，目标架构用于创建包含源数据的Platform数据集。
 
-通过对 [架构注册表API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+通过对 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
 有关如何创建目标XDM架构的详细步骤，请参阅 [使用API创建模式](../../../../../xdm/api/schemas.md).
 
@@ -7786,4 +7787,3 @@ curl -X DELETE \
 成功响应会返回HTTP状态204（无内容）和空白正文。
 
 您可以通过尝试对连接进行查询(GET)请求来确认删除。
-

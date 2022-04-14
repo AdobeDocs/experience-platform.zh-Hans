@@ -7,9 +7,9 @@ description: 了解如何使用流量服务API将Adobe Experience Platform连接
 hide: true
 hidefromtoc: true
 exl-id: c6927a71-3721-461e-9752-8ebc0b7b1cca
-source-git-commit: a51c878bbfd3004cb597ce9244a9ed2f2318604b
+source-git-commit: 74ef1b3abb90ab3ca24690c88c073083f02a2f1b
 workflow-type: tm+mt
-source-wordcount: '2300'
+source-wordcount: '2296'
 ht-degree: 2%
 
 ---
@@ -289,7 +289,7 @@ curl -X POST \
 
 要在Platform中使用源数据，必须创建目标架构以根据您的需求构建源数据。 然后，目标架构用于创建包含源数据的Platform数据集。
 
-通过对 [架构注册表API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/schema-registry.yaml).
+通过对 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/).
 
 有关如何创建目标XDM架构的详细步骤，请参阅 [使用API创建模式](https://experienceleague.adobe.com/docs/experience-platform/xdm/api/schemas.html?lang=en#create).
 

@@ -5,9 +5,9 @@ title: 描述符API端点
 description: 通过架构注册表API中的/descriptors端点，您可以以编程方式管理体验应用程序中的XDM描述符。
 topic-legacy: developer guide
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: fecd57dde028dbcfa6b6f4481e6c2215ced36d4f
+source-git-commit: 74ef1b3abb90ab3ca24690c88c073083f02a2f1b
 workflow-type: tm+mt
-source-wordcount: '1630'
+source-wordcount: '1626'
 ht-degree: 3%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 3%
 
 ## 快速入门
 
-本指南中使用的端点是 [[!DNL Schema Registry] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/class-registry.yaml). 在继续之前，请查看 [入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
+本指南中使用的端点是 [[!DNL Schema Registry] API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). 在继续之前，请查看 [入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
 
 ## 检索描述符列表 {#list}
 
