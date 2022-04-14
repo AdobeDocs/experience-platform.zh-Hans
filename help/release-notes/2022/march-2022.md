@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: 8d0f39dff6b047d21d4dff17005405fc83941961
+source-git-commit: 3f1750d75bd69c5cf47eb593144f564564f90405
 workflow-type: tm+mt
-source-wordcount: '1158'
+source-wordcount: '1193'
 ht-degree: 5%
 
 ---
@@ -117,6 +117,7 @@ Platform提供了一套技术，允许您收集客户端客户体验数据，并
 | 功能 | 描述 |
 | --- | --- |
 | 全局数据流设置 | 现在，您可以在配置数据流时配置多个新的全局设置：地理位置、第一方ID Cookie和第三方ID同步。 请参阅 [配置数据流](../../edge/fundamentals/datastreams.md#configure) （详细信息）。 |
+| [边缘网络服务器API](../../server-api/overview.md) | 服务器API允许客户使用经过身份验证的新端点与Experience Platform边缘网络进行交互，从而支持各种数据收集、个性化、广告和营销用例。 |
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
 
