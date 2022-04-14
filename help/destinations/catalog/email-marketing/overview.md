@@ -4,9 +4,9 @@ title: 电子邮件营销目标概述
 type: Tutorial
 description: 电子邮件服务提供商(ESP)允许您管理电子邮件营销活动，例如发送促销电子邮件活动。
 exl-id: e07f8c5a-0424-4de5-810f-3d5711ef4606
-source-git-commit: 9d2e98c834eddcacf67de7caafef4717e38d80f8
+source-git-commit: ccbc633bfce8f4f66577b50064c28cfc26cb6dca
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '388'
 ht-degree: 4%
 
 ---
@@ -27,6 +27,7 @@ Adobe Experience Platform支持以下电子邮件营销目标：
 * [Oracle雄辩](oracle-eloqua.md)
 * [OracleResponsys](oracle-responsys.md)
 * [SalesforceMarketing Cloud](salesforce-marketing-cloud.md)
+* [SendGrid](sendgrid.md)
 
 ## 连接到新的电子邮件营销目标 {#connect-destination}
 

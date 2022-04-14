@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 9467aa3b09df04e901e158368db9b7a2a255e880
+source-git-commit: 6257e06369060d7f71e837059977817cd495f62e
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '738'
 ht-degree: 8%
 
 ---
@@ -112,6 +112,7 @@ ht-degree: 8%
       * [OracleEloqua连接](./catalog/email-marketing/oracle-eloqua.md)
       * [OracleResponsys连接](./catalog/email-marketing/oracle-responsys.md)
       * [SalesforceMarketing Cloud连接](./catalog/email-marketing/salesforce-marketing-cloud.md)
+      * [SendGrid连接](./catalog/email-marketing/sendgrid.md)
    * 标记扩展 {#launch-extensions}
       * [标记扩展概述](./catalog/launch-extensions/overview.md)
    * 移动参与目标 {#mobile-engagement}
@@ -130,7 +131,7 @@ ht-degree: 8%
       * [Experience Cloud ID 服务扩展](./catalog/personalization/adobe-ecid.md)
       * [Gainsight扩展](./catalog/personalization/gainsight.md)
       * [KickFire扩展](./catalog/personalization/kickfire.md)
-      * [Marketo Web个性化扩展](./catalog/personalization/marketo-web-personalization.md)
+      * [Marketo Web Personalization扩展](./catalog/personalization/marketo-web-personalization.md)
    * 社交目标{#social}
       * [社交目标概述](./catalog/social/overview.md)
       * [AdobeLivefyre扩展](./catalog/social/adobe-livefyre.md)
