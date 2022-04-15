@@ -5,9 +5,9 @@ title: Attribution AIUI指南
 topic-legacy: User guide
 description: 本文档是与Intelligent Services用户界面中的Attribution AI交互的指南。
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: ca390f8cba05148ba39a57734c5172265dcfa5ce
+source-git-commit: f27ddda4d5e6c33fa41e4ac503f80ddb1e39b09b
 workflow-type: tm+mt
-source-wordcount: '2281'
+source-wordcount: '2331'
 ht-degree: 1%
 
 ---
@@ -84,7 +84,7 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 ### 选择标识 {#identity}
 
-为了使多个数据集彼此连接，您必须选择标识类型（也称为“标识命名空间”）以及该命名空间中的标识值。 如果您在同一命名空间下为架构内的多个字段分配了身份，则所有分配的身份值都会显示在由命名空间前面的身份下拉菜单中，例如 `EMAIL (personalEmail.address)` 或 `EMAIL (workEmail.address)`.
+现在，您可以根据身份映射（字段）将多个数据集相互连接。 您必须选择标识类型（也称为“标识命名空间”）以及该命名空间中的标识值。 如果您在同一命名空间下为架构内的多个字段分配了身份，则所有分配的身份值都会显示在由命名空间前面的身份下拉菜单中，例如 `EMAIL (personalEmail.address)` 或 `EMAIL (workEmail.address)`.
 
 >[!IMPORTANT]
 >
@@ -92,11 +92,11 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 要选择身份，请选择位于身份列中的带下划线的值。 此时会出现选择标识弹出窗口。
 
-![选择相同的命名空间](./images/user-guide/identity-type.png)
+![选择相同的命名空间](./images/user-guide/aai-identity-map.png)
 
 如果命名空间中有多个标识可用，请确保为用例选择正确的标识字段。 例如，电子邮件命名空间中提供了两个电子邮件标识，即工作电子邮件和个人电子邮件。 根据用例的不同，个人电子邮件更有可能被填写，并且在单个预测中更有用。 这意味着您将选择 `EMAIL (personalEmail.address)` 作为您的身份。
 
-![未选择数据集键值](./images/user-guide/select-identity.png)
+![未选择数据集键值](./images/user-guide/aai-identity-namespace.png)
 
 >[!NOTE]
 >
@@ -122,9 +122,9 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 ### 定义转化事件 {#define-conversion-events}
 
-要定义转化事件，您需要为事件提供一个名称，并通过选择 **输入字段名称** 下拉菜单。
+要定义转化事件，您需要为该事件提供一个名称，并通过从 **选择数据集和字段** 下拉菜单。
 
-![是下拉列表](./images/user-guide/conversion_event_2.png)
+![是下拉列表](./images/user-guide/define-conversion-events.png)
 
 选择事件后，其右侧会显示一个新的下拉菜单。 第二个下拉列表用于通过使用操作为事件提供更多上下文。 对于此转化事件，默认操作 *存在* 中，将使用。
 
@@ -133,6 +133,8 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 >下面的字符串 *转化名称* 将在您定义事件时更新。
 
 ![无下拉列表](./images/user-guide/conversion_event_1.png)
+
+接下来，您可以选择通过组合上一步中所有输入数据集而生成的组合数据集。 或者，您也可以根据 **选择数据集和字段** 下拉菜单。
 
 的 **[!UICONTROL 添加事件]** 和 **[!UICONTROL 添加组]** 按钮用于进一步定义转化。 根据您定义的转化，您可能需要使用 **[!UICONTROL 添加事件]** 和 **[!UICONTROL 添加群组]** 按钮以提供更多上下文。
 
