@@ -2,10 +2,10 @@
 description: 本页提供您需要提交的所有信息，以便查看使用Destination SDK创作的目标。
 title: 提交以供审核在Destination SDK中创作的目标
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 85b308b3f92a734fed0c885a574b71fa05684bb4
+source-git-commit: 7c6d0c8d4d1eea16f13359e9d7a895d767ad3c00
 workflow-type: tm+mt
-source-wordcount: '580'
-ht-degree: 1%
+source-wordcount: '648'
+ht-degree: 0%
 
 ---
 
@@ -25,9 +25,14 @@ ht-degree: 1%
 * （仅限按产品化集成）文档PR（拉取请求），按照 [自助文档流程](./docs-framework/documentation-instructions.md).
 * 图像文件，将在Experience Platform目标目录中显示为目标卡的徽标。
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Adobe查看目标发布请求的标准响应时间为5个工作日。
+>* Adobe查看目标发布请求的标准响应时间为五个工作日。
+>
+>* 如果Adobe团队在初次提交后要求您对配置进行任何更新，则在进行更新后，您必须提交另一个目标发布请求。
+>
+>* 即使在Experience Platform目录中实现目标后，如果您需要对配置进行任何更新，则必须提交新的目标发布请求，以便将更新反映在配置中。
+
 
 您可以在以下部分中找到有关每个项目的详细信息：
 

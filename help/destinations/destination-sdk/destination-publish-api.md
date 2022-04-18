@@ -2,9 +2,9 @@
 description: 本页列出并介绍了您可以使用“/authoring/destinations/publish” API端点执行的所有API操作。
 title: 发布目标API端点操作
 exl-id: 0564a132-42f4-478c-9197-9b051acf093c
-source-git-commit: 702a5b7154724faa9f5e6847b462e0ae90475571
+source-git-commit: a73a4ea93a432f60d62da5e234d8e357009b2d88
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '748'
 ht-degree: 4%
 
 ---
@@ -23,6 +23,7 @@ ht-degree: 4%
 
 * 作为Destination SDK合作伙伴，您希望在所有Experience Platform组织中提供产品化目标，以供所有Experience Platform客户使用；
 * 您希望在您自己的Experience Platform组织中，在所有沙箱中提供自定义目标。
+* 你做 *任何更新* 到您的配置。 只有在您提交新的发布请求(该请求已获得Experience Platform团队批准)后，配置更新才会反映在目标中。
 
 ## 目标发布API操作快速入门 {#get-started}
 

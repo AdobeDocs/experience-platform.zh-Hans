@@ -2,9 +2,9 @@
 description: Adobe Experience Platform Destination SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式将受众和配置文件数据交付到端点。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: 85b308b3f92a734fed0c885a574b71fa05684bb4
+source-git-commit: 7c6d0c8d4d1eea16f13359e9d7a895d767ad3c00
 workflow-type: tm+mt
-source-wordcount: '702'
+source-wordcount: '703'
 ht-degree: 2%
 
 ---
@@ -76,7 +76,7 @@ Destination SDK访问权限因您作为合作伙伴或Experience Platform客户�
 2. [请求配置Experience Platform沙盒](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360037457812-Adobe-Experience-Platform-Sandbox-Accounts-Access-Adding-Users-and-Support) 并启用目标创作权限。
 3. [构建集成](./configure-destination-instructions.md) 遵循产品文档。
 4. [测试集成](./test-destination.md) 遵循产品文档。
-5. [提交集成](./submit-destination.md) 供Adobe审阅（标准响应时间为5个工作日）。
+5. [提交集成](./submit-destination.md) 供Adobe审阅（标准响应时间为五个工作日）。
 6. 如果您是ISV或SI创建 [产品化集成](./overview.md#productized-custom-integrations)，则使用 [自助文档流程](./docs-framework/documentation-instructions.md) 在Experience League上为您的目标创建产品文档页面。
 7. 获得Adobe批准后，您的集成将显示在 [Experience Platform目录](/help/destinations/catalog/overview.md).
 8. 如果您想要更新集成，请遵循相同的流程。
