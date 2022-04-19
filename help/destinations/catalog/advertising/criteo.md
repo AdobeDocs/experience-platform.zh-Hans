@@ -1,14 +1,14 @@
 ---
-keywords: '广告；克雷蒂奥； '
+keywords: 广告；克雷蒂奥；
 title: Criteo连接
 description: Criteo支持可信且有影响力的广告，通过开放互联网为每位消费者提供更丰富的体验。 Criteo拥有世界上最大的商业数据集和一流的人工智能，可确保整个购物历程中的每个接触点都经过个性化，以便在适当的时间通过正确的广告来吸引客户。
-source-git-commit: a3263a322012a48f37cee6137054c7fcf3cdb8a2
+exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
+source-git-commit: 36da42b184450cfaf12b097f982234d628681430
 workflow-type: tm+mt
-source-wordcount: '749'
+source-wordcount: '763'
 ht-degree: 3%
 
 ---
-
 
 # (Beta)Criteo连接
 
@@ -16,7 +16,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->此文档页面由Criteo创建。 这目前是测试版产品。 如有任何查询或更新请求，请直接联系Criteo [此处](mailto:criteoTechnicalPartnerships@criteo.com).
+>此文档页面由Criteo创建。 此产品目前是测试版产品，功能可能会发生更改。 如有任何查询或更新请求，请直接联系Criteo [此处](mailto:criteoTechnicalPartnerships@criteo.com).
 
 Criteo支持可信且有影响力的广告，通过开放互联网为每位消费者提供更丰富的体验。 Criteo拥有世界上最大的商业数据集和一流的人工智能，可确保整个购物历程中的每个接触点都经过个性化，以便在适当的时间通过正确的广告来吸引客户。
 
@@ -24,7 +24,11 @@ Criteo支持可信且有影响力的广告，通过开放互联网为每位消�
 
 * 您需要具有管理员用户帐户 [Criteo管理中心](https://marketing.criteo.com).
 * 您将需要您的Criteo广告商ID（如果您没有此ID，请咨询您的Criteo联系人）。
-* Criteo仅接受SHA-256和纯文本电子邮件（在发送前转换为SHA-256）。 请勿发送任何PII（个人身份信息，如个人姓名或电话号码）。
+
+## 限制 {#limitations}
+
+* Criteo当前不支持从受众中删除用户。
+* 克里蒂奥只接受 [!DNL SHA-256] — 经过哈希处理的纯文本电子邮件(要转换为 [!DNL SHA-256] 发送之前)。 请勿发送任何PII（个人身份信息，如个人姓名或电话号码）。
 
 ![先决条件](../../assets/catalog/advertising/criteo/prerequisites.png)
 
