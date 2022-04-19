@@ -5,26 +5,26 @@ title: 将Looker连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍如何将Looker与Adobe Experience Platform查询服务连接。
 exl-id: 806e9077-533a-4546-b5ca-8124751957f5
-source-git-commit: 910a38ccb556ec427584d9b522e29f6877d1c987
+source-git-commit: ad3e1b0de6dd3b82cc82f0dc3d0f36b12cd3899e
 workflow-type: tm+mt
-source-wordcount: '239'
+source-wordcount: '275'
 ht-degree: 0%
 
 ---
 
-# 将[!DNL Looker]连接到查询服务
+# 连接 [!DNL Looker] 查询服务
 
-本文档介绍将[!DNL Looker]与Adobe Experience Platform [!DNL Query Service]连接的步骤。
+本文档介绍了连接的步骤 [!DNL Looker] 与Adobe Experience Platform [!DNL Query Service].
 
 >[!NOTE]
 >
-> 本指南假定您已经拥有[!DNL Looker]的访问权限，并熟悉如何导航其界面。 有关[!DNL Looker]的更多信息，请参阅[official [!DNL Looker] 文档](https://docs.looker.com/)。
+> 本指南假定您已拥有 [!DNL Looker] 并熟悉如何导航其界面。 有关 [!DNL Looker] 可在 [官方 [!DNL Looker] 文档](https://docs.looker.com/).
 
-登录[!DNL Looker]后，选择&#x200B;**[!DNL Admin]**，然后选择&#x200B;**[!DNL Connections]**。
+登录后 [!DNL Looker]，选择 **[!DNL Admin]**，后跟 **[!DNL Connections]**.
 
 ![](../images/clients/looker/click-admin-connections.png)
 
-在此页上，选择&#x200B;**[!DNL New Connection]**。
+在此页面上，选择 **[!DNL New Connection]**.
 
 ![](../images/clients/looker/click-new-connection.png)
 
@@ -33,19 +33,22 @@ ht-degree: 0%
 ![](../images/clients/looker/new-connection.png)
 
 - **[!DNL Name]:** 连接的名称。
-- **[!DNL Dialect]:** 用于SQL数据库的方言。[!DNL Query Service] 使用 **[!DNL PostgreSQL]**。
-- **[!DNL Host and Port]:** 的主机端点及其端 [!DNL Query Service]口。
+- **[!DNL Dialect]:** 用于SQL数据库的方言。 [!DNL Query Service] 使用 **[!DNL PostgreSQL]**.
+- **[!DNL Host and Port]:** 主机端点及其端口 [!DNL Query Service].
 - **[!DNL Database]:** 将使用的数据库。
-- **[!DNL Username and Password]:** 将使用的登录凭据。用户名的格式为`ORG_ID@AdobeOrg`。
+- **[!DNL Username and Password]:** 将使用的登录凭据。 用户名将以 `ORG_ID@AdobeOrg`.
+- **SSL**:启用SSL以确保跨网络的安全连接。
 
->[!NOTE]
+>[!IMPORTANT]
 >
->有关查找主机和端口、数据库名称和登录凭据的详细信息，请阅读[凭据指南](../ui/credentials.md)。 要查找凭据，请登录到[!DNL Platform]，然后选择&#x200B;**[!UICONTROL 查询]**，接着选择&#x200B;**[!UICONTROL 凭据]**。
+>请参阅 [[!DNL Query Service] SSL文档](./ssl-modes.md) 了解对与Adobe Experience Platform查询服务的第三方连接的SSL支持，以及如何使用 `verify-full` SSL模式。
 
-输入连接详细信息后，选择&#x200B;**[!DNL Test These Settings]**&#x200B;以确保凭据正常工作。 如果有，则下方将显示一条消息，指示您可以连接。 如果连接确实成功，请选择&#x200B;**[!DNL Add Connection]**&#x200B;以创建连接。
+有关查找主机和端口、数据库名称和登录凭据的详细信息，请阅读 [凭据指南](../ui/credentials.md). 要查找您的凭据，请登录到 [!DNL Platform]，然后选择 **[!UICONTROL 查询]**，后跟 **[!UICONTROL 凭据]**.
+
+输入连接详细信息后，选择 **[!DNL Test These Settings]** 以确保凭据正常工作。 如果有，则下方将显示一条消息，指示您可以连接。 如果您的连接确实成功，请选择 **[!DNL Add Connection]** 创建连接。
 
 ![](../images/clients/looker/click-test-connection.png)
 
 ## 后续步骤
 
-现在，您已连接[!DNL Query Service]，接下来可以使用[!DNL Looker]编写查询。 有关如何编写和运行查询的详细信息，请阅读[运行查询指南](../best-practices/writing-queries.md)。
+现在你已经连接了 [!DNL Query Service]，您可以使用 [!DNL Looker] 来编写查询。 有关如何编写和运行查询的详细信息，请阅读 [运行查询指南](../best-practices/writing-queries.md).

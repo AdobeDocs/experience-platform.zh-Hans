@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: Query Service 指南
 user-guide-description: 使用标准 SQL 在 Platform Data Lake 中查询数据。
 feature: Queries
-source-git-commit: 7b4761e42b18b0aa8a54c4d72960b870d5655508
+source-git-commit: 15d835fcbcb6e34995f153c14d90fc937792eefc
 workflow-type: tm+mt
-source-wordcount: '151'
-ht-degree: 17%
+source-wordcount: '153'
+ht-degree: 16%
 
 ---
 
@@ -48,6 +48,7 @@ ht-degree: 17%
    - [准备的陈述](sql/prepared-statements.md)
 - 将客户端连接到查询服务 {#clients}
    - [客户端连接概述](clients/overview.md)
+   - [SSL模式](./clients/ssl-modes.md)
    - [Aqua Data Studio](clients/aqua-data-studio.md)
    - [数据库可视化工具](./clients/dbvisulaizer.md)
    - [Looker](clients/looker.md)

@@ -5,9 +5,9 @@ title: 将Aqua Data Studio连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍将Aqua Data Studio与Adobe Experience Platform查询服务连接的步骤。
 exl-id: 4770e221-48a7-45d8-80a4-60b5cbc0ec33
-source-git-commit: a887c502213e96d6af90af0859da78c2984f89a7
+source-git-commit: ad3e1b0de6dd3b82cc82f0dc3d0f36b12cd3899e
 workflow-type: tm+mt
-source-wordcount: '468'
+source-wordcount: '493'
 ht-degree: 0%
 
 ---
@@ -51,6 +51,10 @@ ht-degree: 0%
 ### 设置SSL模式
 
 接下来，选择 **[!DNL Driver]** 选项卡。 在 **[!DNL Parameters]**，请将值设置为 `?sslmode=require`
+
+>[!IMPORTANT]
+>
+>请参阅 [[!DNL Query Service] SSL文档](./ssl-modes.md) 了解对与Adobe Experience Platform查询服务的第三方连接的SSL支持，以及如何使用 `verify-full` SSL模式。
 
 ![Aqua Data Studio驱动程序选项卡，其中突出显示了参数字段。](../images/clients/aqua-data-studio/register-server-driver-tab.png)
 
