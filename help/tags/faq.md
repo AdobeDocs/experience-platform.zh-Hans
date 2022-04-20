@@ -1,10 +1,11 @@
 ---
 title: 标记疑难解答指南
 description: 获取有关Adobe Experience Platform中标记的常见问题解答。
-source-git-commit: dc957372e5e8c6f034f2e0cd0283e0e997501ba8
+exl-id: c06b8e25-4d79-4a11-94da-94ac096b5e33
+source-git-commit: 2181ec15f2d868d1821a5f9926729d2796f2f298
 workflow-type: tm+mt
-source-wordcount: '1055'
-ht-degree: 25%
+source-wordcount: '1042'
+ht-degree: 27%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 25%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](./term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](./term-updates.md)。
 
 本文档提供了有关Adobe Experience Platform中标记的常见问题解答。
 
@@ -28,7 +29,7 @@ ht-degree: 25%
 
 ## 标记的成本是多少？
 
-标记无需额外付费。 它们可供任何[!DNL Adobe Experience Cloud]客户使用。
+标记无需额外付费。 它们可供任何 [!DNL Adobe Experience Cloud] 客户。
 
 ## 我听说，现在已经推出了插件。是什么插件？
 
@@ -66,7 +67,7 @@ ht-degree: 25%
 
 ## 标记会加快（或减慢）我的网站运行速度吗？
 
-标记旨在使用当今的最佳实践，尽可能高效地在您的网站上提供并运行营销和广告技术。 经证明，与提供类似功能的其他方法相比，如果使用得当，则标记可以提高网站的性能。
+标记旨在使用当今的最佳实践，尽可能高效地在您的网站上提供并运行营销和广告技术。 经证明，与提供类似功能的其他方法相比，如果使用得当，标记可以提高网站的性能。
 
 ## 标记支持哪些浏览器？
 
@@ -91,20 +92,18 @@ ht-degree: 25%
 
 ## 本机移动设备应用程序上是否可以使用标记？
 
-是！标记现在支持新Adobe Experience Platform [Mobile SDK的移动属性和配置，以在本机移动设备应用程序环境中实施数据收集和交付。 ](https://sdkdocs.com)请访问[文档](https://sdkdocs.com)以了解更多信息。
+是！标记现在支持新Adobe Experience Platform的移动属性和配置 [Mobile SDK](https://sdkdocs.com) 用于在本机移动设备应用程序环境中实施数据收集和交付。 请访问[文档](https://sdkdocs.com)以了解更多信息。
 
 ## UI为何会显示加载我的帐户时出错？
 
-如果您收到一条消息，指出加载帐户时出错，则表示您的帐户不属于任何标记产品配置文件。 请参阅[管理权限](./ui/administration/manage-permissions.md)指南，了解如何在Adobe Admin Console中配置产品配置文件以授予对数据收集UI的访问权限。
+如果您收到一条消息，指出加载帐户时出错，则表示您的帐户不属于任何标记产品配置文件。 请参阅 [管理权限](./ui/administration/manage-permissions.md) 了解如何在Adobe Admin Console中配置产品配置文件以授予对数据收集UI的访问权限。
 
 ## 为何无法在UI中添加任何属性？
 
 如果您在登录到数据收集UI时无法创建任何新属性，则意味着您的帐户不属于具有“管理属性”权限的产品配置文件。
 
-请参阅[管理权限](./ui/administration/manage-permissions.md)指南，了解如何在Adobe Admin Console中配置产品配置文件以授予“管理资产”权限。 有关标记不同权限的更多信息，请参阅[标记用户权限](./ui/administration/user-permissions.md)概述。
+请参阅 [管理权限](./ui/administration/manage-permissions.md) 了解如何在Adobe Admin Console中配置产品配置文件以授予“管理资产”权限。 有关标记不同权限的更多信息，请参阅 [标记的用户权限](./ui/administration/user-permissions.md).
 
 ## 如果我遇到其他问题，该怎么办？
 
-如果您还有其他问题，请在位于[https://adobe.com/go/launchme](https://adobe.com/go/launchme)的主标签页上的Adobe社区中提问。
-
-标记只是我们平台发展方向的一个示例：更开放、更集成，并始终致力于帮助客户取得成功。
+如果您还有其他问题，可以在 [Adobe Experience Platform数据收集社区页面](https://adobe.com/go/launchme) Experience League，或加入 [面向标签开发人员的官方Slack组](http://join.connectionsdevs.chat).
