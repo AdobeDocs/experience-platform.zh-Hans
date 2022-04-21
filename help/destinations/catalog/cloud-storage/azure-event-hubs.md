@@ -3,9 +3,9 @@ keywords: Azure事件中心目标；Azure事件中心；Azure事件Hub
 title: （测试版） [!DNL Azure Event Hubs] 连接
 description: 创建与的实时出站连接 [!DNL Azure Event Hubs] 存储以从Experience Platform流数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: b2ac26589527313ec9f3cf84126e3e23da6c7b83
+source-git-commit: c62117de27b150f072731c910bb0593ce1fca082
 workflow-type: tm+mt
-source-wordcount: '1289'
+source-wordcount: '1371'
 ht-degree: 1%
 
 ---
@@ -54,6 +54,16 @@ ht-degree: 1%
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 ### 连接参数 {#parameters}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_eventhubs_includesegmentnames"
+>title="包括区段名称"
+>abstract="如果您希望数据导出包含要导出的区段名称，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_eventhubs_includesegmenttimestamps"
+>title="包含区段时间戳"
+>abstract="如果您希望数据导出在创建和更新区段时包含UNIX时间戳，以及将区段映射到要激活的目标时包含UNIX时间戳，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
 
 While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
 

@@ -3,9 +3,9 @@ title: （测试版）HTTP API连接
 keywords: 流；
 description: 利用Adobe Experience Platform中的HTTP API目标，可将配置文件数据发送到第三方HTTP端点。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 0d58445557490a5539279f55c34183994429c632
+source-git-commit: c62117de27b150f072731c910bb0593ce1fca082
 workflow-type: tm+mt
-source-wordcount: '1382'
+source-wordcount: '1560'
 ht-degree: 1%
 
 ---
@@ -72,6 +72,36 @@ curl --location --request POST '<YOUR_API_ENDPOINT>' \
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 ### 连接参数 {#parameters}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_clientcredentialstype"
+>title="客户端凭据类型"
+>abstract="选择 **已编码的正文形式** 在请求正文中包含客户端ID和客户端密钥，或 **基本授权** 在授权标头中包含客户端ID和客户端密钥。 查看文档中的示例。"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_headers"
+>title="标头"
+>abstract="按照以下格式，输入要包含在目标调用中的任何自定义标头： `header1:value1,header2:value2,...headerN:valueN`"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_endpoint"
+>title="HTTP端点"
+>abstract="要将用户档案数据发送到的HTTP端点的URL。"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_includesegmentnames"
+>title="包括区段名称"
+>abstract="如果您希望数据导出包含要导出的区段名称，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_includesegmenttimestamps"
+>title="包含区段时间戳"
+>abstract="如果您希望数据导出在创建和更新区段时包含UNIX时间戳，以及将区段映射到要激活的目标时包含UNIX时间戳，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_queryparameters"
+>title="查询参数"
+>abstract="或者，您也可以将查询参数添加到HTTP端点URL。 设置您使用的查询参数的格式，如下所示： `parameter1=value&parameter2=value`."
 
 While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
 
