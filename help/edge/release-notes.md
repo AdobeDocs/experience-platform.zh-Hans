@@ -3,14 +3,19 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK;Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 3d8e21f76b23bac3ee88702c19cf6d6a6e25a3ae
+source-git-commit: 22ae7d206d4393719352232dc254d7669ca667bd
 workflow-type: tm+mt
-source-wordcount: '976'
+source-wordcount: '1001'
 ht-degree: 3%
 
 ---
 
 # 发行说明
+
+## 版本2.10.0 - 2022年4月22日
+
+* 对所有ID同步和区段目标使用永久性iframe。
+* 修复了合并的量度主张在 `sendEvent` 结果。
 
 ## 2.9.0版 — 2022年3月10日
 
