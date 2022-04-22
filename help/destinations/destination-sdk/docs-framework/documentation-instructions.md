@@ -2,9 +2,9 @@
 title: 在Adobe Experience Platform中记录您的目标
 description: 分步说明，以便您在Adobe Experience Platform中为目标创建文档页面
 exl-id: 6cc9c758-44bb-463b-941a-06b1a22ee8f3
-source-git-commit: 83539a9aa2fddcae0c9a44302d8bfa9d9f56de0c
+source-git-commit: f9938aca8a5c72a53a688152ac2ab0c0abe632ce
 workflow-type: tm+mt
-source-wordcount: '458'
+source-wordcount: '481'
 ht-degree: 0%
 
 ---
@@ -20,24 +20,25 @@ ht-degree: 0%
 
 * 为新目标创建文档页面的分步说明；
 * 模板供您填写目标；
-* [有关使用Markdown的一般说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en);
-* [有关AdobeMarkdown风味的特定说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en#custom-markdown-extensions) (AdobeMarkdown风味与常规Markdown非常相似)。
+* [有关使用Markdown的常规说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en);
+* [有关AdobeMarkdown风味的具体说明](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/markdown.html?lang=en#custom-markdown-extensions) (AdobeMarkdown的风格与常规Markdown非常相似)。
+* A [最佳实践页面](./authoring-best-practices.md) 以帮助您为目标页面创作文档页面，该页面符合Experience Platform文档质量标准。
 
 ## 先决条件 {#prerequisites}
 
 要根据本文中的说明为目标创建文档，需要以下项目：
 
-* **GitHub帐户**。如果您还没有帐户，请注册[GitHub](https://github.com/)。
-* **GitHub Desktop**。如果选择在本地环境中[创建文档](./work-in-local-environment.md)，则必须使用[GitHub Desktop](https://desktop.github.com/)。
+* **GitHub帐户**. 注册 [GitHub](https://github.com/) 如果您还没有帐户。
+* **GitHub Desktop**. 如果您选择 [在本地环境中创建文档](./work-in-local-environment.md)，您必须使用 [GitHub Desktop](https://desktop.github.com/).
 * 您与Adobe的集成必须处于测试阶段，且目标部署在Adobe Experience Platform的暂存环境中。
 
 ## 在Adobe Experience Platform中为您的目标创建文档的高级说明 {#high-level-instructions}
 
-要为目标创建文档，您需要[创建Adobe Experience Platform文档存储库的分支](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository)，并在新分支中编辑[提供的文档模板](./self-service-template.md)。 使用Adobe提供的模板创建新目标页面。 准备就绪后，打开拉取请求(PR)。 下面的[创建新目标页面的步骤](./documentation-instructions.md#steps-to-create-docs-page)中进一步提供了执行此操作的说明。
+要为目标创建文档，您需要 [创建分支](https://experienceleague.adobe.com/docs/contributor/contributor-guide/setup/local-repo.html?lang=en#fork-the-repository) Adobe Experience Platform文档存储库的页面，并编辑 [提供的文档模板](./self-service-template.md) 在新的分支中。 使用Adobe提供的模板创建新目标页面。 准备就绪后，打开拉取请求(PR)。 下面将进一步说明如何执行此操作： [创建新目标页面的步骤](./documentation-instructions.md#steps-to-create-docs-page).
 
 >[!TIP]
 >
->请参阅[Adobe文档编写指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html?lang=en) ，以了解Adobe文档团队在创作文档时使用的一些快速编写提示。
+>请参阅 [Adobe文档编写指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html?lang=en) 有关Adobe文档团队在创作文档时使用的一些快速编写提示。
 
 <!--
 
@@ -48,9 +49,9 @@ ht-degree: 0%
 
 ## 文档模板 {#documentation-template}
 
-为了帮助您创建文档页面，Adobe已为您预填了[文档模板](./self-service-template.md)。 在下面，您可以找到如何编辑模板和打开拉取请求的说明。 Adobe文档团队将审核并发布您新目标的文档。
+为了帮助您创建文档页面，Adobe已预填了 [文档模板](./self-service-template.md) 为你。 在下面，您可以找到如何编辑模板和打开拉取请求的说明。 Adobe文档团队将审核并发布您新目标的文档。
 
-[下载此处的](assets/yourdestination-template.zip) 模板并解压缩文件以解压 `yourdestination.md` 缩文件。
+[在此处下载模板](assets/yourdestination-template.zip) 并解压缩文件以解压缩 `yourdestination.md` 文件。
 
 有关使用模板创建文档页面的说明，请参阅下文。
 

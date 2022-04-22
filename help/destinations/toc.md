@@ -4,10 +4,10 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 4f057afec285af59a48dc4e28c08cfeba28597bf
+source-git-commit: f9938aca8a5c72a53a688152ac2ab0c0abe632ce
 workflow-type: tm+mt
-source-wordcount: '742'
-ht-degree: 9%
+source-wordcount: '745'
+ht-degree: 8%
 
 ---
 
@@ -194,5 +194,6 @@ ht-degree: 9%
       * [使用GitHub Web界面创建目标文档页面](./destination-sdk/docs-framework/use-github-interface-to-create-documentation.md)
       * [在本地环境中使用文本编辑器创建目标文档页面](./destination-sdk/docs-framework/work-in-local-environment.md)
       * [文档自助模板](./destination-sdk/docs-framework/self-service-template.md)
+      * [创作最佳实践](./destination-sdk/docs-framework/authoring-best-practices.md)
 * [常见问题](./destinations-faq.md)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)

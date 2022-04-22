@@ -2,18 +2,24 @@
 title: 文档自助服务模板//将替换为您的目标名称
 description: 使用此模板可在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为“概述”部分中的段落
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: a45fe9185e0ae74cfba7905a4bb6d18df7efed9e
+source-git-commit: f9938aca8a5c72a53a688152ac2ab0c0abe632ce
 workflow-type: tm+mt
-source-wordcount: '1201'
+source-wordcount: '1250'
 ht-degree: 2%
 
 ---
 
-# 您的目标 {#your-destination}
+# YourDestination连接 {#your-destination}
 
 *在完成此模板时，请替换或删除所有斜体段落（从此模板开始）。*
 
 *首先，更新页面顶部的元数据（标题和描述）。 请忽略此页面上的所有UICONTROL实例。 这是一个标记，可帮助我们的机器翻译流程将页面正确翻译为我们支持的多种语言。 在您提交文档后，我们会为您的文档添加标记。*
+
+>[!IMPORTANT]
+>
+>* 按模板中所述的顺序填写此模板中的所有部分。
+>* 根据合作伙伴的反馈，此模板不常更新。 在开始为目标位置创作文档之前，请确保已下载 [模板的最新版本](/help/destinations/destination-sdk/docs-framework/assets/yourdestination-template.zip).
+
 
 ## 概述 {#overview}
 
@@ -21,23 +27,23 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->此文档页面由 *您的目标* 团队。 如有任何查询或更新请求，请直接联系 *插入链接或电子邮件地址，以访问此处进行更新，例如 `support@yourdestination.com`.*
+>此文档页面由 *YourDestination* 团队。 如有任何查询或更新请求，请直接联系 *插入链接或电子邮件地址，以访问此处进行更新，例如 `support@YourDestination.com`.*
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解应如何以及何时应使用 *您的目标* 目标中，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
+为了帮助您更好地了解应如何以及何时应使用 *YourDestination* 目标中，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
-### 用例#1
+### 用例#1 {#use-case-1}
 
 *对于移动消息平台：*
 
 *一个家庭租赁和销售平台希望将移动通知推送给客户的Android和iOS设备，以便让客户知道，在他们之前搜索的租金区域，有100个更新的房源。*
 
-### 用例#2
+### 用例#2 {#use-case-2}
 
 *对于社交网络平台：*
 
-*一家运动服装品牌希望通过其社交媒体帐户联系现有客户。 该服装品牌可以将电子邮件地址从自己的CRM摄取到Adobe Experience Platform，从自己的离线数据构建区段，并将这些区段发送到您的目标，以在其客户的社交媒体信息源中显示广告。*
+*一家运动服装品牌希望通过其社交媒体帐户联系现有客户。 服装品牌可以将电子邮件地址从自己的CRM摄取到Adobe Experience Platform，从自己的离线数据构建区段，并将这些区段发送到您的目标，以在客户的社交媒体信息源中显示广告。*
 
 ## 先决条件 {#prerequisites}
 
@@ -54,7 +60,7 @@ ht-degree: 2%
 
 *在此部分中添加有关目标支持的身份的信息。 我们已预填表中一些标准值。 删除未应用于您的目标的值以及未预填充的任何值。*
 
-*您的目标* 支持激活下表所述的身份。 详细了解 [标识](/help/identity-service/namespaces.md).
+*YourDestination* 支持激活下表所述的身份。 详细了解 [标识](/help/identity-service/namespaces.md).
 
 | Target标识 | 描述 | 注意事项 |
 |---|---|---|
@@ -75,7 +81,7 @@ ht-degree: 2%
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您要导出区段（受众）的所有成员，以及 *您的目标* 目标。 |
+| 导出类型 | **[!UICONTROL 区段导出]** | 您要导出区段（受众）的所有成员，以及 *YourDestination* 目标。 |
 | 导出类型 | **[!UICONTROL 基于用户档案]** | 您要导出区段的所有成员，以及所需的架构字段(例如：电子邮件地址、电话号码、姓氏)，在 [目标激活工作流](/help/destinations/ui/activate-batch-profile-destinations.md#select-attributes). |
 | 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 | 导出频度 | **[!UICONTROL 批次]** | 批量目标可将文件以3、6、8、12或24小时为增量导出到下游平台。 有关更多信息 [批量基于文件的目标](/help/destinations/destination-types.md#file-based). |
@@ -106,72 +112,11 @@ ht-degree: 2%
 
 * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
-* **[!UICONTROL 帐户ID]**:您的 *您的目标* 帐户ID。
-
-
-<!--
-
-*Replace YOURDESTINATION with your destination name and TOBEFILLEDIN with the category that your destination belongs to.*
-
-1. In **[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**, scroll to the ***TOBEFILLEDIN*** category. Select ***YOURDESTINATION***, then select **[!UICONTROL Configure]**.
-
-
-    >[!NOTE]
-    >
-    >If a connection with this destination already exists, you can see an **[!UICONTROL Activate]** button on the destination card. For more information about the difference between **[!UICONTROL Activate]** and **[!UICONTROL Configure]**, refer to the [Catalog](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/destinations-workspace.html#catalog) section of the destination workspace documentation.  
-
-    ![Connect to YOURDESTINATION](./assets/yourdestination1.png)
-
-2. In the **Account** step, if you had previously set up a connection to your *YOURDESTINATION* destination, select **[!UICONTROL Existing Account]** and select your existing connection. Or, you can select **[!UICONTROL New Account]** to set up a new connection to *YOURDESTINATION*. Select **[!UICONTROL Connect to destination]** to log in and connect Adobe Experience Cloud to your *YOURDESTINATION* account.
-
-    >[!NOTE]
-    >
-    >Adobe Experience Platform supports credentials validation in the authentication process and displays an error message if you input incorrect credentials to your ***YOURDESTINATION*** account. This ensures that you don't complete the workflow with incorrect credentials.
-
-3. Once your credentials are confirmed and Adobe Experience Cloud is connected to your ***YOURDESTINATION*** account, you can select **[!UICONTROL Next]** to proceed to the **[!UICONTROL Setup]** step.
-
-4. In the **[!UICONTROL Authentication]** step, enter a **[!UICONTROL Name]** and a **[!UICONTROL Description]** for your activation flow and fill your account ID. <br> Also in this step, you can select any marketing action that should apply to this destination. Marketing actions indicate the intent for which data will be exported to the destination. You can select from Adobe-defined marketing actions or you can create your own marketing action. For more information about marketing actions, see the [Data usage policies overview](https://experienceleague.adobe.com/docs/experience-platform/data-governance/policies/overview.html).
-
-    ![Connect to YOURDESTINATION](./assets/yourdestination2.png)
-
-5. Your destination is now created. You can select **[!UICONTROL Save & Exit]** if you want to activate segments later on or you can select **[!UICONTROL Next]** to continue the workflow and select segments to activate. In either case, see the next section, [Activate segments](#activate-segments), for the rest of the workflow.
-
--->
+* **[!UICONTROL 帐户ID]**:您的 *YourDestination* 帐户ID。
 
 ## 将区段激活到此目标 {#activate}
 
 读取 [激活用户档案和区段以流式传输区段导出目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) 有关将受众区段激活到此目标的说明。
-
-<!--
-
-To activate segments to *YOURDESTINATION*, follow the steps below: 
-
-1. In **[!UICONTROL Destinations > Browse]**, select the *YOURDESTINATION* destination where you want to activate your segments.
-
-2. Click the name of the destination. This takes you to the Activate flow.
-    ![activate-flow](./assets/yourdestination3.png)
-    Note that if an activation flow already exists for a destination, you can see the segments that are currently being sent to the destination. Select **[!UICONTROL Edit activation]** in the right rail and follow the steps below to modify the activation details.
-3. Select **[!UICONTROL Activate]**;
-4. In the **[!UICONTROL Activate destination]** workflow, on the **[!UICONTROL Select Segments]** page, select which segments to send to *YOURDESTINATION*.
-    ![segments-to-destination](./assets/activate-segments-google-customer-match.png)
-5.  In the **[!UICONTROL Mapping]** step, select which attributes and identities from the source XDM schema to map to the target schema. Select **[!UICONTROL Add new mapping]** and browse your schema, select identity namespaces and map them to the corresponding target identity.  
-![identity mapping initial screen](./assets/gcm-identity-mapping.png) <br>&nbsp;
-   *Plain text email address as primary identity*: If you have plain text (unhashed) email addresses as primary identity in your schema, select the email field in your **[!UICONTROL Source Attributes]** and map to the Email field in the right column under **[!UICONTROL Target Identities]**, as shown below. Set up a mapping between any other attributes you plan to use.
-   ![identity mapping step](./assets/ssd-template-identity.png) <br>&nbsp;
-6. On the **[!UICONTROL Segment schedule]** page, you can set the start date for sending data to the destination.
-7. On the **[!UICONTROL Review]** page, you can see a summary of your selection. Select **[!UICONTROL Cancel]** to break up the flow, **[!UICONTROL Back]** to modify your settings, or **[!UICONTROL Finish]** to confirm your selection and start sending data to the destination.
-
->[!IMPORTANT]
->
->In this step, Adobe Experience Platform checks for data usage policy violations. Shown below is an example where a policy is violated. You cannot complete the segment activation workflow until you have resolved the violation. For information on how to resolve policy violations, see [Policy enforcement](https://experienceleague.adobe.com/docs/experience-platform/data-governance/enforcement/auto-enforcement.html#enforcement) in the data governance documentation section.
- 
-![confirm-selection](./assets/data-policy-violation.png)
-
-If no policy violations have been detected, select **[!UICONTROL Finish]** to confirm your selection and start sending data to the destination.
-
-![confirm-selection](./assets/gcm-review.png)
-
--->
 
 ## 导出的数据/验证数据导出 {#exported-data}
 
