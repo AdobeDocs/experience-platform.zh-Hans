@@ -5,9 +5,9 @@ title: Marketo Engage连接器
 topic-legacy: overview
 description: 本文档概述了Marketo Engage源连接器，包括有关其身份验证、映射和数据延迟的信息。
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 21617c6ec364fc05d7b8b6d00daa68608d1ed318
+source-git-commit: ebf605bda32a7e587e6a6ca93a58669d16581ff9
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '521'
 ht-degree: 0%
 
 ---
@@ -28,9 +28,9 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 请参阅 [验证Marketo源连接器](./marketo-auth.md) 文档以检索您的凭据。
 
-## 设置Adobe Experience Cloud受众共享
+## 设置Adobe组织映射
 
-在为 [!DNL Marketo]，则必须先设置Adobe Experience Cloud受众共享。 有关如何完成此操作的详细步骤，请参阅 [为设置Adobe Experience Cloud受众共享 [!DNL Marketo]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-experience-cloud-audience-sharing.html?lang=en).
+在为 [!DNL Marketo]，则必须先设置Adobe组织映射。 有关如何完成此操作的详细步骤，请参阅 [设置Adobe组织映射 [!DNL Marketo]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html).
 
 ## 体验数据模型(XDM)
 
