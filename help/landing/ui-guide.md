@@ -5,10 +5,10 @@ title: Experience PlatformUI概述
 topic-legacy: ui guide
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: 8236806efae6a4f570c3dd2ef78e80184e189b84
+source-git-commit: 5fb7284760489fc526b5891d258c51ed20a2b095
 workflow-type: tm+mt
-source-wordcount: '1809'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -164,7 +164,7 @@ Offer Decisioning 是与 Adobe Experience Platform 集成的一项应用程序�
 
 ### [!UICONTROL 管理]
 
-平台用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关贵组织许可证使用情况的重要信息，这些信息是在每日快照期间捕获的。 通过选择 **[!UICONTROL 许可证使用情况]** 中。 要进一步了解许可证使用功能板，请访问 [许可证使用仪表板指南](license-usage-dashboard.md).
+平台用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关贵组织许可证使用情况的重要信息，这些信息是在每日快照期间捕获的。 通过选择 **[!UICONTROL 许可证使用情况]** 中。 要进一步了解许可证使用功能板，请访问 [许可证使用仪表板指南](./license-usage-and-guardrails/license-usage-dashboard.md).
 
 >[!IMPORTANT]
 >
