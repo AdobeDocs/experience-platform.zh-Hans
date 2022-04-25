@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程涵盖从支付应用程序检索数据并使用源连接器和API将其摄取到平台中的步骤。
 exl-id: b75e2a3d-6590-4079-a261-fa4e9626e8dc
-source-git-commit: 964bdaab8a90983f1e40b33720580110ac9e40fe
+source-git-commit: 4cc1c164ca7caa0b64859cf67a4cc206bc6404d7
 workflow-type: tm+mt
-source-wordcount: '1319'
+source-wordcount: '1304'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已经具有 [!DNL PayPal] 基本连接ID。 如果您没有此ID，请参阅有关如何 [创建 [!DNL PayPal] 基本连接](../create/payments/paypal.md) ，然后再尝试执行本教程。
+>要创建数据流，您必须已拥有与平台上以下任何支付源的有效基本连接ID:<ul><li>[[!DNL PayPal]](../create/payments/paypal.md)</li><li>[[!DNL Square]](../create/payments/square.md)</li></ul>
 
 ## 快速入门
 
