@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2022年4月
 description: 2022年4月的Adobe Experience Platform发行说明。
-source-git-commit: fe30444fb2d11c38433c73d88ee4c8e9a32bdff8
+source-git-commit: d09eb2e71a5ebce31aeaf8560c20f0c8595f5d19
 workflow-type: tm+mt
-source-wordcount: '1045'
-ht-degree: 4%
+source-wordcount: '1473'
+ht-degree: 5%
 
 ---
 
@@ -15,7 +15,10 @@ ht-degree: 4%
 Adobe Experience Platform 现有功能的更新包括：
 
 - [数据流](#dataflows)
+- [[!DNL Data Prep]](#data-prep)
 - [体验数据模型(XDM)](#xdm)
+- [Real-time Customer Data Platform B2B 版本](#B2B)
+- [源](#sources)
 
 ## 数据流 {#dataflows}
 
@@ -30,6 +33,19 @@ Adobe Experience Platform 现有功能的更新包括：
 | 区段功能板 | 您现在可以使用监控仪表板来监控区段的数据流。 要了解更多信息，请阅读 [在UI中监控区段](../../dataflows/ui/monitor-segments.md) |
 
 有关数据流的更多常规信息，请参阅 [数据流概述](../../dataflows/home.md). 要了解有关分段的更多信息，请参阅 [分段概述](../../segmentation/home.md).
+
+## [!DNL Data Prep] {#data-prep}
+
+[!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 支持Adobe Analytics源 | Adobe Analytics源现在支持数据准备功能，允许您在创建数据流时将Analytics报表包数据映射到目标XDM架构。 请参阅 [创建Analytics源连接](../../sources/tutorials/ui/create/adobe-applications/analytics.md) 以了解更多信息。 |
+| 支持导入现有映射规则 | 您现在可以从现有数据流导入映射规则，以加速数据流配置并限制错误。 请参阅 [导入现有映射规则](../../data-prep/ui/mapping.md) 以了解更多信息。 |
+
+有关 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 
@@ -86,3 +102,30 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 
 有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
+### Real-time Customer Data Platform B2B 版本 {#B2B}
+
+Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP)之上，专为在业务到业务服务模型中运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 支持 `isDeleted` 功能 | 全部 [!DNL Marketo] 数据集除外 `Activities` 现在支持 `isDeleted` 映射。 新映射会自动添加到您现有的B2B数据流中。 您可以使用 `isDeleted` 映射以过滤已删除的记录，以便您的数据 [!DNL Data Lake] 与源数据一致。 请参阅 [[!DNL Marketo] 映射字段指南](../../sources/connectors/adobe-applications/mapping/marketo.md) 有关 `isDeleted`. |
+
+要了解有关Real-time Customer Data Platform B2B Edition的更多信息，请参阅 [B2B概述](../../rtcdp/b2b-overview.md).
+
+## 源 {#sources}
+
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强该数据。 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+
+Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，以及管理数据摄取吞吐量。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 支持 [!DNL OneTrust Integration] | 您现在可以使用 [!DNL OneTrust Integration] 源，用于从 [!DNL OneTrust] 帐户到平台。 请参阅 [创建 [!DNL OneTrust Integration] 源连接](../../sources/connectors/consent-and-preferences/onetrust.md) 以了解更多信息。 |
+| 支持 [!DNL Square] | 您现在可以使用 [!DNL Square] 源，用于从 [!DNL Square] 帐户到平台。 |
+| 支持删除客户属性数据流 | 您现在可以删除使用客户属性源连接器创建的数据流。 |
+
+要进一步了解源，请参阅 [源概述](../../sources/home.md).
