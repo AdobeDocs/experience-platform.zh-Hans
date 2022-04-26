@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2022年4月
 description: 2022年4月的Adobe Experience Platform发行说明。
-source-git-commit: d09eb2e71a5ebce31aeaf8560c20f0c8595f5d19
+source-git-commit: 820fba06d3460408640c816c80f05bff1de227cd
 workflow-type: tm+mt
-source-wordcount: '1473'
-ht-degree: 5%
+source-wordcount: '1999'
+ht-degree: 4%
 
 ---
 
@@ -14,11 +14,37 @@ ht-degree: 5%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [[!DNL Dashboards]](#dashboards)
 - [数据流](#dataflows)
 - [[!DNL Data Prep]](#data-prep)
 - [体验数据模型(XDM)](#xdm)
 - [Real-time Customer Data Platform B2B 版本](#B2B)
 - [源](#sources)
+
+## [!DNL Dashboards] {#dashboards}
+
+平台提供了多个功能板，您可以通过该功能板查看有关贵组织数据的重要信息（在每日快照期间捕获）。
+
+功能板为您的组织数据提供预配置的报表选项，并直接内置到平台内的营销人员工作流程中。 这些功能板可用，无需额外的IT支持，也无需花费时间和精力，即可通过额外的数据仓库设计和实施导出和处理数据。
+
+可通过小组件库访问其各自功能板上的以下小组件。 有关 [如何通过小组件库添加小组件](../../dashboards/customize/widget-library.md).
+
+| 功能 | 功能板 | 描述 |
+| --------------------------------------------------------- | ------------- | ----------- |
+| [!UICONTROL 用户档案已添加趋势] | 用户档案 | 此小组件使用折线图来说明过去30天、90天或12个月内每天添加到用户档案存储的合并用户档案总数。 |
+| [!UICONTROL 映射到目标状态的受众] | 用户档案 | 此小组件在单个量度中显示已映射和未映射受众的总数，并使用圆环图来说明其总数之间的比例差异。 |
+| [!UICONTROL 受众大小] | 用户档案 | 此小组件提供了一个两列表，其中列出了最多20个区段以及每个区段中包含的受众总数。 此列表取决于所应用的合并策略，并根据受众总数从高到低进行排序。 |
+| [!UICONTROL 用户档案计数趋势] | 用户档案 | 此小组件使用折线图来说明一段时间内系统中包含的配置文件总数的趋势。 数据可在30天、90天和12个月期间显示。 |
+| [!UICONTROL 按身份划分的单个身份配置文件] | 用户档案 | 此小组件使用条形图来说明仅使用单个唯一标识符标识的用户档案总数。 该小组件最多支持五种最常出现的身份。 |
+| [!UICONTROL 目标状态] | 目标 | 此小组件将已启用目标的总数显示为单个量度，并使用圆环图来说明已启用目标与已禁用目标之间的比例差异。 |
+| [!UICONTROL 按目标平台划分的活动目标] | 目标 | 此小组件使用两列表来显示活动目标平台的列表以及每个目标平台的活动目标总数。 |
+| [!UICONTROL 所有目标中的已激活受众] | 目标 | 此小组件以单个量度提供所有目标中激活的受众总数。 |
+| [!UICONTROL Audience Activation订单] | 区段 | 此小组件提供了一个三列表，其中列出了受众的目标名称、平台和激活日期。 |
+| [!UICONTROL 受众大小趋势] | 区段 | 此小组件提供了折线图插图，用于显示在30天、90天和12个月期间内符合任何区段定义标准的用户档案总数。 |
+| [!UICONTROL 受众大小更改趋势] | 区段 | 此小组件提供了一个折线图图，用于显示符合给定区段资格的配置文件总数与最近的每日快照之间的差异。 趋势分析的周期可以显示为30天、90天和12个月。 |
+| [!UICONTROL 按身份划分的受众大小趋势] | 区段 | 此小组件根据选定的身份类型展示特定区段的受众大小趋势。 趋势分析的周期可以显示为30天、90天和12个月。 |
+
+有关 [[!DNL Profiles]](../../dashboards/guides/profiles.md), [[!DNL Destinations]](../../dashboards/guides/destinations.md)和 [[!DNL Segments]](../../dashboards/guides/segments.md) 功能板。
 
 ## 数据流 {#dataflows}
 
