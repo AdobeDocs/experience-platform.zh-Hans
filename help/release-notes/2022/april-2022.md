@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年4月
 description: 2022年4月的Adobe Experience Platform发行说明。
-source-git-commit: 4bbf7642a456f36ea0fe7fc1c8d68ad37351ff4c
+source-git-commit: fe30444fb2d11c38433c73d88ee4c8e9a32bdff8
 workflow-type: tm+mt
-source-wordcount: '907'
+source-wordcount: '1045'
 ht-degree: 4%
 
 ---
@@ -14,7 +14,22 @@ ht-degree: 4%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [数据流](#dataflows)
 - [体验数据模型(XDM)](#xdm)
+
+## 数据流 {#dataflows}
+
+在Platform中，数据是从许多不同的源中摄取的，在系统内进行分析，并激活到各种不同的目标。 Platform通过提供数据流的透明度，使跟踪这种潜在的非线性数据流的过程变得更加容易。
+
+数据流是跨平台移动数据的作业的表示形式。 这些数据流是跨不同服务配置的，有助于将数据从源连接器移动到目标数据集，然后由Identity服务和实时客户资料使用这些数据流，最终激活到目标。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 区段功能板 | 您现在可以使用监控仪表板来监控区段的数据流。 要了解更多信息，请阅读 [在UI中监控区段](../../dataflows/ui/monitor-segments.md) |
+
+有关数据流的更多常规信息，请参阅 [数据流概述](../../dataflows/home.md). 要了解有关分段的更多信息，请参阅 [分段概述](../../segmentation/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 
@@ -70,3 +85,4 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 {style=&quot;table-layout:auto&quot;}
 
 有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
+

@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 请阅读本教程，了解如何使用Adobe Experience Platform Segmentation Service API评估区段并访问区段结果。
 exl-id: 47702819-f5f8-49a8-a35d-034ecac4dd98
-source-git-commit: 885ebbcae223229f4614acd5b50266ea11bcf906
+source-git-commit: 9d82065fdf1be087023284f153f1abedb7fdb67b
 workflow-type: tm+mt
 source-wordcount: '1595'
 ht-degree: 0%
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 - Content-Type:application/json
 
-## 评估区段
+## 评估区段 {#evaluate-a-segment}
 
 开发、测试并保存区段定义后，您随后可以通过计划评估或按需评估来评估区段。
 

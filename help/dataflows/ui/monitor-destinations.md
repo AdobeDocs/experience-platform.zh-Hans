@@ -6,9 +6,9 @@ title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 935bbbc842ce5e2f42ee92c525255c9708bf34c2
+source-git-commit: 1bb3db196ed603a5a9ba0dcf9d54419d36a6ed51
 workflow-type: tm+mt
-source-wordcount: '3363'
+source-wordcount: '3190'
 ht-degree: 0%
 
 ---
@@ -164,29 +164,6 @@ ht-degree: 0%
 详细信息页面还显示失败的身份和排除的身份的列表。 将显示失败和排除的标识的信息，包括错误代码和描述。 默认情况下，列表会显示失败的标识。 要显示排除的身份，请选择 **[!UICONTROL 排除的身份]** 切换。
 
 ![批处理目标的数据流记录](../assets/ui/monitor-destinations/dataflow-records-batch.png)
-
-## “监控区段作业”功能板 {#monitoring-segment-jobs-dashboard}
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_segment_jobs"
->title="区段作业"
->abstract="区段作业视图包含有关所有区段的评估和导出作业的信息。"
-
-访问 [!UICONTROL 区段作业] 功能板，选择 **[!UICONTROL 监控]** (![监控图标](../assets/ui/monitor-destinations/monitoring-icon.png))。 在 [!UICONTROL 监控] 页面，选择 [!UICONTROL 区段作业]. 的 [!UICONTROL 监控] 功能板包含有关区段评估和导出作业的量度和信息。
-
-![区段作业监控功能板](../assets/ui/monitor-destinations/dashboard-segment-jobs.png)
-
-使用 [!UICONTROL 区段作业] 功能板，了解配置文件评估和导出是否及时进行且无任何例外，以便用于目标激活的下游服务可以具有最新评估的配置文件数据。
-
-以下量度可用于区段作业：
-
-| 量度 | 描述 |
----------|----------|
-| **[!UICONTROL 区段作业]** | 指示区段作业的名称。 |
-| **[!UICONTROL 类型]** | 指示区段作业的类型 — 导出或评估。 请注意，在这两种情况下，区段作业都会评估或导出 *全部* 属于组织的区段。 |
-| **[!UICONTROL 作业开始]** | 区段作业开始的日期和时间。 |
-| **[!UICONTROL 作业结束]** | 区段作业完成的日期和时间。 |
-| **[!UICONTROL 状态]** | 已完成作业的状态 — 成功或失败。 |
 
 ## 监控目标功能板 {#monitoring-destinations-dashboard}
 
