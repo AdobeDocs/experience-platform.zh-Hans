@@ -5,9 +5,9 @@ title: 在UI中创建和编辑架构字段组
 description: 了解如何在Experience Platform用户界面中创建和编辑架构字段组。
 topic-legacy: user guide
 exl-id: 928d70a6-0468-4fb7-a53a-6686ac77f2a3
-source-git-commit: 49a54b78d1e3745694352e779fb2226acd99d663
+source-git-commit: 1d4eba9f566dc1926afd7886c6ad2808ed91ea13
 workflow-type: tm+mt
-source-wordcount: '752'
+source-wordcount: '781'
 ht-degree: 0%
 
 ---
@@ -53,6 +53,10 @@ Adobe Experience Platform提供了许多涵盖各种营销用例的标准字段�
 在编辑器中打开架构后，您可以启动 [向字段组添加字段](#add-fields).
 
 ## 向字段组添加字段 {#add-fields}
+
+>[!NOTE]
+>
+>本节重点介绍如何向自定义字段组添加字段。 有关如何向标准字段组添加自定义字段的信息，请参阅 [模式UI指南](./schemas.md#custom-fields-for-standard-groups).
 
 向 [!DNL Schema Editor]，首先在左边栏中选择字段组的名称，然后选择 **加号(+)** 图标。
 

@@ -5,9 +5,9 @@ title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑模式的基础知识。
 topic-legacy: user guide
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 49a54b78d1e3745694352e779fb2226acd99d663
+source-git-commit: e0148480ce8d4179771f1c10fb6b921baf6a24d1
 workflow-type: tm+mt
-source-wordcount: '1434'
+source-wordcount: '2844'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,7 @@ ht-degree: 0%
 >
 >您可以使用工作区的搜索和筛选功能来帮助更轻松地查找架构。 请参阅 [浏览XDM资源](../explore.md) 以了解更多信息。
 
-选择架构后， [!DNL Schema Editor] 显示，画布中显示了架构的结构。 您现在可以 [添加字段组](#add-field-groups) 到架构， [编辑字段显示名称](#display-names)或 [编辑现有自定义字段组](./field-groups.md#edit) 如果架构使用任何。
+选择架构后， [!DNL Schema Editor] 显示，画布中显示了架构的结构。 您现在可以 [添加字段组](#add-field-groups) 到架构(或 [添加单个字段](#add-individual-fields) ), [编辑字段显示名称](#display-names)或 [编辑现有自定义字段组](./field-groups.md#edit) 如果架构使用任何。
 
 ## 将字段组添加到架构 {#add-field-groups}
 
@@ -68,7 +68,7 @@ ht-degree: 0%
 
 ![](../../images/ui/resources/schemas/field-group-popularity.png)
 
-如果您知道要添加的字段的常规活动或业务区域，请在左边栏中选择一个或多个垂直行业类别，以过滤显示的字段组列表。
+如果您知道要添加的字段的一般活动或业务区域，请在左边栏中选择一个或多个垂直行业类别，以过滤显示的字段组列表。
 
 ![](../../images/ui/resources/schemas/industry-filter.png)
 
@@ -95,6 +95,130 @@ ht-degree: 0%
 的 [!DNL Schema Editor] 重新显示，画布中显示的字段组提供的字段。
 
 ![](../../images/ui/resources/schemas/field-groups-added.png)
+
+在将字段组添加到架构后，您可以选择 [删除现有字段](#remove-fields) 或 [添加新自定义字段](#add-fields) 根据您的需要，将其添加到这些组。
+
+### 删除从字段组添加的字段 {#remove-fields}
+
+在将字段组添加到架构后，您可以删除不需要的任何字段。
+
+>[!NOTE]
+>
+>从字段组中删除字段仅会影响正在处理的架构，而不会影响字段组本身。 如果删除一个架构中的字段，则这些字段在采用相同字段组的所有其他架构中仍然可用。
+
+在以下示例中，标准字段组 **[!UICONTROL 人口统计详细信息]** 已添加到架构中。 删除单个字段，例如 `taxId`，选择画布中的字段，然后选择 **[!UICONTROL 删除]** 中。
+
+![删除单个字段](../../images/ui/resources/schemas/remove-single-field.png)
+
+如果要删除多个字段，则可以将字段组作为一个整体进行管理。 在画布中选择属于该组的字段，然后选择 **[!UICONTROL 管理相关字段]** 中。
+
+![管理相关字段](../../images/ui/resources/schemas/manage-related-fields.png)
+
+将显示一个对话框，其中显示了相关字段组的结构。 从此处，您可以使用提供的复选框来选择或取消选择所需的字段。 当您满意时，选择 **[!UICONTROL 确认]**.
+
+![从字段组中选择字段](../../images/ui/resources/schemas/select-fields.png)
+
+画布将重新显示，只显示架构结构中存在的选定字段。
+
+![添加的字段](../../images/ui/resources/schemas/fields-added.png)
+
+### 向字段组添加自定义字段 {#add-fields}
+
+在将字段组添加到架构后，您可以为该组定义其他字段。 但是，添加到一个架构中字段组的任何字段也将显示在使用该同一字段组的所有其他架构中。
+
+此外，如果将自定义字段添加到标准字段组，则该字段组将转换为自定义字段组，并且原始标准字段组将不再可用。
+
+如果要向标准字段组添加自定义字段，请参阅 [下方](#custom-fields-for-standard-groups) 以了解具体说明。 如果要向自定义字段组添加字段，请参阅 [编辑自定义字段组](./field-groups.md) 字段组UI指南中的。
+
+如果不想更改任何现有字段组，则可以 [创建新的自定义字段组](./field-groups.md#create) 来定义其他字段。
+
+## 将单个字段添加到架构 {#add-individual-fields}
+
+如果希望避免为特定用例添加整个字段组，则使用架构编辑器可以直接将单个字段添加到架构中。 您可以 [从标准字段组添加单个字段](#add-standard-fields) 或 [添加您自己的自定义字段](#add-custom-fields) 中。
+
+>[!IMPORTANT]
+>
+>即使在架构编辑器的功能上允许您将单个字段直接添加到架构中，但这并不会改变以下事实：XDM架构中的所有字段都必须由其类或与该类兼容的字段组提供。 正如以下各节所述，在将各个字段添加到架构时，作为关键步骤，仍会将其与字段组关联。
+
+### 添加标准字段 {#add-standard-fields}
+
+您可以将标准字段组中的字段直接添加到架构，而无需事先知道其相应的字段组。 要向架构添加标准字段，请选择加号(**+**)图标。 安 **[!UICONTROL 无标题字段]** 占位符显示在架构结构中，并且右侧边栏会更新，以显示用于配置字段的控件。
+
+![字段占位符](../../images/ui/resources/schemas/root-custom-field.png)
+
+在 **[!UICONTROL 字段名称]**，开始键入要添加的字段名称。 系统会自动搜索与查询匹配的标准字段，并在 **[!UICONTROL 推荐的标准字段]**，包括其所属的字段组。
+
+![推荐的标准字段](../../images/ui/resources/schemas/standard-field-search.png)
+
+虽然某些标准字段具有相同的名称，但其结构可能会因其来源的字段组而异。 如果标准字段嵌套在字段组结构的父对象中，则如果添加了子字段，则父字段也将包含在架构中。
+
+选择预览图标(![“预览”图标](../../images/ui/resources/schemas/preview-icon.png))以查看其字段组的结构，并更好地了解其嵌套方式。 要将标准字段添加到架构，请选择加号图标(![加号图标](../../images/ui/resources/schemas/add-icon.png))。
+
+![添加标准字段](../../images/ui/resources/schemas/add-standard-field.png)
+
+画布会更新，以显示已添加到架构的标准字段，包括该架构嵌套在字段组结构下的任何父字段。 字段组的名称也列在 **[!UICONTROL 字段组]** 中。 如果要从同一字段组添加更多字段，请选择 **[!UICONTROL 管理相关字段]** 中。
+
+![添加了标准字段](../../images/ui/resources/schemas/standard-field-added.png)
+
+### 添加自定义字段 {#add-custom-fields}
+
+与标准字段的工作流类似，您还可以将自己的自定义字段直接添加到架构中。
+
+要将字段添加到架构的根级别，请选择加号(**+**)图标。 安 **[!UICONTROL 无标题字段]** 占位符显示在架构结构中，并且右侧边栏会更新，以显示用于配置字段的控件。
+
+![根自定义字段](../../images/ui/resources/schemas/root-custom-field.png)
+
+开始在要添加的字段名称中键入内容，系统将自动开始搜索匹配的标准字段。 要改为创建新的自定义字段，请选择附加的顶部选项 **([!UICONTROL 新建字段])**.
+
+![新建字段](../../images/ui/resources/schemas/custom-field-search.png)
+
+从此处，提供字段的显示名称和数据类型。 在 **[!UICONTROL 分配字段组]**，则必须为要关联的新字段选择字段组。 开始键入字段组的名称，如果您之前 [创建自定义字段组](./field-groups.md#create) 它们将显示在下拉列表中。 或者，您也可以在字段中键入唯一名称，以改为创建新字段组。
+
+![选择字段组](../../images/ui/resources/schemas/select-field-group.png)
+
+>[!WARNING]
+>
+>如果您选择了现有的自定义字段组，则采用该字段组的任何其他架构也将在您保存更改后继承新添加的字段。 因此，仅当您需要此类型的传播时，才应选择现有的字段组。 否则，您应该选择创建新的自定义字段组。
+
+完成后，选择 **[!UICONTROL 应用]**.
+
+![应用字段](../../images/ui/resources/schemas/apply-field.png)
+
+新字段将添加到画布中，并且名称位于 [租户ID](../../api/getting-started.md#know-your-tenant_id) 以避免与标准XDM字段冲突。 与新字段关联的字段组也显示在 **[!UICONTROL 字段组]** 中。
+
+![租户ID](../../images/ui/resources/schemas/tenantId.png)
+
+>[!NOTE]
+>
+>默认情况下，所选自定义字段组提供的其余字段将从架构中删除。 如果要向架构添加其中一些字段，请选择属于该组的字段，然后选择 **[!UICONTROL 管理相关字段]** 中。
+
+#### 将自定义字段添加到标准字段组的结构 {#custom-fields-for-standard-groups}
+
+如果您正在处理的架构具有由标准字段组提供的对象类型字段，则可以向该标准对象添加您自己的自定义字段。
+
+>[!WARNING]
+>
+>在一个架构中添加到字段组的任何字段也将显示在使用该相同字段组的所有其他架构中。 此外，如果将自定义字段添加到标准字段组，则该字段组将转换为自定义字段组，并且原始标准字段组将不再可用。
+>
+>如果您参与了此功能的测试版，您将收到一个对话框，告知您之前自定义的标准字段组。 选择 **[!UICONTROL 确认]**，则列出的资源将转换为自定义字段组。
+>
+>![用于转换标准字段组的确认对话框](../../images/ui/resources/schemas/beta-extension-confirmation.png)
+
+要开始，请选择加号(**+**)图标。
+
+![向标准对象添加字段](../../images/ui/resources/schemas/add-field-to-standard-object.png)
+
+出现警告消息，提示您确认是否要转换标准字段组。 选择 **[!UICONTROL 继续创建字段组]** 以继续。
+
+![确认字段组转换](../../images/ui/resources/schemas/confirm-field-group-conversion.png)
+
+画布将重新显示，并显示新字段的无标题占位符。 请注意，标准字段组的名称已附加“([!UICONTROL 扩展])”，表示已从原始版本修改该版本。 从此处，使用右边栏中的控件定义字段的属性。
+
+![添加到标准对象的字段](../../images/ui/resources/schemas/standard-field-group-converted.png)
+
+应用更改后，新字段将显示在标准对象中的租户ID命名空间下。 此嵌套命名空间可防止字段组本身内的字段名称冲突，以避免破坏使用同一字段组的其他架构中的更改。
+
+![添加到标准对象的字段](../../images/ui/resources/schemas/added-to-standard-object.png)
 
 ## 为实时客户用户档案启用架构 {#profile}
 

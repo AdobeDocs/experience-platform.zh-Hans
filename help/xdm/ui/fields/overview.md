@@ -5,9 +5,9 @@ title: 在UI中定义XDM字段
 description: 了解如何在Experience Platform用户界面中定义XDM字段。
 topic-legacy: user guide
 exl-id: 2adb03d4-581b-420e-81f8-e251cf3d9fb9
-source-git-commit: 49a54b78d1e3745694352e779fb2226acd99d663
+source-git-commit: 1d4eba9f566dc1926afd7886c6ad2808ed91ea13
 workflow-type: tm+mt
-source-wordcount: '1331'
+source-wordcount: '1374'
 ht-degree: 4%
 
 ---
@@ -26,21 +26,26 @@ ht-degree: 4%
 
 要在UI中定义新的XDM字段，您必须先在 [!DNL Schema Editor]. 根据您当前在 [!DNL Schema Library]，您可以选择 [创建新模式](../resources/schemas.md#create) 或 [选择要编辑的现有架构](../resources/schemas.md#edit).
 
-在您 [!DNL Schema Editor] 打开，使用左边栏选择要为其定义字段的类或字段组。 如果资源是您的组织定义的自定义资源，则画布中会显示用于添加或编辑字段的控件。 这些控件显示在架构名称旁边，以及在选定类或字段组下定义的任何对象类型字段。
+在您 [!DNL Schema Editor] 打开后，用于添加或编辑字段的控件将显示在画布中。 这些控件显示在架构名称旁边，以及在选定类或字段组下定义的任何对象类型字段。
 
 ![](../../images/ui/fields/overview/select-resource.png)
 
->[!NOTE]
+>[!WARNING]
 >
->如果您选择的类或字段组是Adobe提供的核心资源，则无法编辑该资源，因此将不显示上面显示的控件。 如果要将字段添加到的架构基于核心XDM类，并且不包含任何自定义字段组，则可以 [创建新字段组](../resources/field-groups.md#create) 以添加到架构。
+>如果尝试将字段添加到标准字段组提供的对象，则该字段组将转换为自定义字段组，并且原始字段组将不再可用。 请参阅 [向标准字段组添加字段](../resources/schemas.md#custom-fields-for-standard-groups) 有关更多信息，请参阅架构UI指南。
 
 要向资源添加新字段，请选择 **加号(+)** 图标（位于画布中架构名称的旁边）或要在下定义字段的object-type字段旁边。
 
 ![](../../images/ui/fields/overview/plus-icon.png)
 
-## 为资源定义字段 {#define}
+根据您是直接将字段添加到架构还是其组成类和字段组，添加该字段的所需步骤会有所不同。 本文档的其余部分重点介绍如何配置字段的属性，而不管该字段在架构中的显示位置。 有关字段可添加到架构的不同方式的更多信息，请参阅架构UI指南中的以下部分：
 
-选择 **加号(+)** 图标， **[!UICONTROL 新建字段]** 显示在画布中，它位于根级别对象中，该对象与您的独特租户ID同名(如 `_tenantId` )。 通过自定义类和字段组添加到架构的所有字段都会自动放置在此命名空间中，以防止与Adobe提供的类和字段组中的其他字段发生冲突。
+* [向字段组添加字段](../resources/schemas.md#add-fields)
+* [将字段直接添加到架构](../resources/schemas.md#add-individual-fields)
+
+## 定义字段的属性 {#define}
+
+选择 **加号(+)** 图标， **[!UICONTROL 新建字段]** 显示在画布中，它位于与您的独特租户ID同名的对象中(显示为 `_tenantId` )。 添加到架构的所有自定义字段都会自动放置在此命名空间内，以防止与Adobe提供的类和字段组中的其他字段发生冲突。
 
 ![](../../images/ui/fields/overview/new-field.png)
 
