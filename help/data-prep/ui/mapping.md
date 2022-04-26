@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；映射CSV；映射CSV文
 title: 数据准备UI指南
 description: 本文档提供了有关如何在Platform UI中使用数据准备函数将CSV文件映射到XDM架构的说明。
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: 4cce36ef21ad7490941eecff3933ff0459a0425c
+source-git-commit: edef8843c03282774991f30220504ece97af52cf
 workflow-type: tm+mt
-source-wordcount: '1665'
+source-wordcount: '1837'
 ht-degree: 1%
 
 ---
@@ -168,6 +168,34 @@ ht-degree: 1%
 您可以使用中心的表达式编辑器手动添加字段、函数和运算符。 选择编辑器以开始创建表达式。 完成后，选择 **[!UICONTROL 保存]** 以继续。
 
 ![create-calculated-field](../images/ui/mapping/create-calculated-field.png)
+
+### 导入映射 {#import}
+
+您可以重复使用现有数据流的映射，以缩短数据摄取的手动配置时间并限制错误。 选择 **[!UICONTROL 导入映射]** 以重复使用现有映射。
+
+![导入映射](../images/ui/mapping/import-mapping.png)
+
+的 [!UICONTROL 导入映射] 窗口，为您提供要从中选择的数据流列表。
+
+选择预览图标以预览所选数据流的映射。
+
+![列表映射](../images/ui/mapping/list-mapping.png)
+
+利用预览窗口，可在导入到数据流之前检查现有映射。 验证映射后，您可以选择 **[!UICONTROL 返回]** 返回数据流列表并检查另一组映射，或者您可以选择 **[!UICONTROL 选择]** 以继续。
+
+![预览映射](../images/ui/mapping/preview-mapping.png)
+
+或者，您也可以从数据流窗口列表中选择要导入的映射。 选择包含要导入的映射的数据流，然后选择 **[!UICONTROL 选择]** 以继续。
+
+![选择映射](../images/ui/mapping/select-mapping.png)
+
+界面会随您导入的映射一起更新。
+
+>[!NOTE]
+>
+>您建立或ML映射推荐的任何现有映射集将替换为您从现有数据流导入的映射。
+
+![映射导入](../images/ui/mapping/mapping-imported.png)
 
 选择 **[!UICONTROL 预览数据]** 查看从选定数据集映射最多100行示例数据的结果。
 
