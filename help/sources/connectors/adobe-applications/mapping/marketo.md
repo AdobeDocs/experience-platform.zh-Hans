@@ -5,7 +5,7 @@ title: Marketo Engage源的映射字段
 topic-legacy: overview
 description: 下表包含Marketo数据集中的字段与其相应XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 3f4c7c5a5b792476cb46afe886af5a469edfe745
+source-git-commit: 765a56919afa3325db2e7881664e37d16eaeaac5
 workflow-type: tm+mt
 source-wordcount: '608'
 ht-degree: 7%
@@ -18,7 +18,7 @@ ht-degree: 7%
 
 >[!TIP]
 >
->全部 [!DNL Marketo] 数据集除外 `Activities` 现在支持 `isDeleted`. 您的现有数据流将自动包含 `isDeleted`，但仅会为新摄取的数据摄取标记。 如果要将标记应用于所有历史数据，则必须停止现有数据流并使用新映射重新创建它们。 请注意，如果您删除 `isDeleted`，则您将无法再访问该功能。 自动填充映射后，必须保留该映射。
+>全部 [!DNL Marketo] 数据集除外 `Activities` 现在支持 `isDeleted`. 您的现有数据流将自动包含 `isDeleted`，但将仅为新摄取的数据摄取标记。 如果要将标记应用于所有历史数据，则必须停止现有数据流并使用新映射重新创建它们。 请注意，如果您删除 `isDeleted`，则您将无法再访问该功能。 自动填充映射后，必须保留该映射。
 
 ## 活动 {#activities}
 
