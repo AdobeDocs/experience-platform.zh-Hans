@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 06232d4b567ba1d6bed55226aaa08147510c4498
+source-git-commit: 2cb6803ecf56dd9a7d9614c72e3a1ff4e76ba966
 workflow-type: tm+mt
-source-wordcount: '1578'
+source-wordcount: '1700'
 ht-degree: 1%
 
 ---
@@ -46,11 +46,17 @@ ht-degree: 1%
 
 ### 选择数据
 
-的 **[!UICONTROL Analytics源添加数据]** 中。 选择 **[!UICONTROL 报表包]** 开始为Analytics报表包数据创建源连接，然后选择要摄取的报表包。 尚未摄取此沙盒或其他沙盒中无法选择的报表包。 选择 **[!UICONTROL 下一个]** 以继续。
+的 **[!UICONTROL Analytics源添加数据]** 步骤会为您提供 [!DNL Analytics] 用于创建源连接的报表包数据。
+
+只能使用单个活动数据流摄取报表包。 它不能用于多个数据流。 此外，报表包必须与在其中创建源连接的平台沙盒实例所属的相同区域。 已摄取此沙盒或其他沙盒中无法选择的报表包。
+
+可以建立多个绑定连接，以将多个报表包引入同一沙盒。 如果报表包的变量架构不同（如eVar或事件），则应将它们映射到自定义字段组中的特定字段，并避免使用 [数据准备](../../../../../data-prep/ui/mapping.md). 报表包只能添加到单个沙盒。
 
 >[!NOTE]
 >
->可以建立多个绑定连接以引入多个报表包，但一次只能对Real-time Customer Data Platform使用一个报表包。
+>仅当不存在数据冲突(例如两个具有不同含义的自定义属性（eVar、列表和prop）)时，无法将多个报表包中的数据映射到XDM中的同一属性时，才能为实时客户数据配置文件启用数据。
+
+创建 [!DNL Analytics] 源连接，选择报表包，然后选择 **[!UICONTROL 下一个]** 以继续。
 
 ![](../../../../images/tutorials/create/analytics/add-data.png)
 
@@ -60,7 +66,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->对 [!DNL Analytics] 来源当前处于测试阶段。 功能和文档可能会发生更改。
+>数据准备转换可能会为整个数据流添加延迟。 添加的额外延迟因转换逻辑的复杂性而异。
 
 在映射 [!DNL Analytics] 要定位XDM架构的数据，您必须首先选择使用的是默认架构还是自定义架构。
 
@@ -193,10 +199,10 @@ ht-degree: 1%
 
 创建连接后，将自动创建数据流以包含传入数据，并使用您选择的架构填充数据集。 此外，还会进行数据回填，并摄取至多 13 个月的历史数据。完成初始摄取后， [!DNL Analytics] 并供下游Platform服务(例如 [!DNL Real-time Customer Profile] 和Segmentation Service。 有关更多详细信息，请参阅以下文档：
 
-* [[!DNL Real-time Customer Profile] 概述](../../../../../profile/home.md)
-* [[!DNL Segmentation Service] 概述](../../../../../segmentation/home.md)
-* [[!DNL Data Science Workspace] 概述](../../../../../data-science-workspace/home.md)
-* [[!DNL Query Service] 概述](../../../../../query-service/home.md)
+* [[!DNL Real-time Customer Profile]概述](../../../../../profile/home.md)
+* [[!DNL Segmentation Service]概述](../../../../../segmentation/home.md)
+* [[!DNL Data Science Workspace]概述](../../../../../data-science-workspace/home.md)
+* [[!DNL Query Service]概述](../../../../../query-service/home.md)
 
 以下视频旨在支持您了解如何使用Adobe Analytics源连接器摄取数据：
 
