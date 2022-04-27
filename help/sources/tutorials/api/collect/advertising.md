@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方广告应用程序检索数据，并使用源连接器和流量服务API将其摄取到平台中的步骤。
 exl-id: 2a0eb13b-d09e-4bc1-aae3-84c8741eead1
-source-git-commit: 964bdaab8a90983f1e40b33720580110ac9e40fe
+source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
 workflow-type: tm+mt
 source-wordcount: '1296'
 ht-degree: 1%
@@ -38,7 +38,7 @@ ht-degree: 1%
 
 ## 创建源连接 {#source}
 
-您可以通过向 [!DNL Flow Service] API。 A source connection consists of a connection ID, a path to the source data file, and a connection spec ID.
+您可以通过向 [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径和连接规范ID组成。
 
 要创建源连接，还必须为数据格式属性定义枚举值。
 
@@ -50,9 +50,9 @@ ht-degree: 1%
 | JSON | `json` |
 | 镶木 | `parquet` |
 
-For all table-based connectors, set the value to `tabular`.
+对于所有基于表的连接器，将值设置为 `tabular`.
 
-**API format**
+**API格式**
 
 ```https
 POST /sourceConnections
@@ -542,7 +542,7 @@ curl -X GET \
 
 数据流负责从源中调度和收集数据。 通过在有效负载中提供先前提到的值时执行POST请求，可以创建数据流。
 
-要计划摄取，您必须首先将开始时间值设置为以秒为单位的新纪元时间。 然后，您必须将频率值设置为以下五个选项之一： `once`, `minute`, `hour`, `day`或 `week`. The interval value designates the period between two consecutive ingestions and creating a one-time ingestion does not require an interval to be set. 对于所有其他频率，间隔值必须设置为等于或大于 `15`.
+要计划摄取，您必须首先将开始时间值设置为以秒为单位的新纪元时间。 然后，您必须将频率值设置为以下五个选项之一： `once`, `minute`, `hour`, `day`或 `week`. 间隔值可指定两个连续摄取和创建一次性摄取之间的周期，而无需设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`.
 
 **API格式**
 
@@ -587,7 +587,7 @@ curl -X POST \
             "name": "Mapping",
             "params": {
                 "mappingId": "febec6a6785e45ea9ed594422cc483d7",
-                "mappingVersion": "0"
+                "mappingVersion": 0
                 }
             }
         ],
@@ -605,11 +605,11 @@ curl -X POST \
 | `sourceConnectionIds` | 的 [源连接ID](#source) 在之前的步骤中检索。 |
 | `targetConnectionIds` | 的 [目标连接ID](#target-connection) 在之前的步骤中检索。 |
 | `transformations.params.mappingId` | 的 [映射ID](#mapping) 在之前的步骤中检索。 |
-| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 将根据选定列的时间戳摄取增量数据。 The supported date format for `deltaColumn` is `yyyy-MM-dd HH:mm:ss`. |
+| `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 将根据选定列的时间戳摄取增量数据。 支持的日期格式 `deltaColumn` is `yyyy-MM-dd HH:mm:ss`. |
 | `transformations.params.mappingId` | 与数据库关联的映射ID。 |
-| `scheduleParams.startTime` | The start time for the dataflow in epoch time. |
+| `scheduleParams.startTime` | 新纪元时间中数据流的开始时间。 |
 | `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`, `minute`, `hour`, `day`或 `week`. |
-| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 Interval is not required when frequency is set as `once` and should be greater than or equal to `15` for other frequency values. |
+| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 将频率设置为时，不需要间隔 `once` 且应大于或等于 `15` 的其他频率值。 |
 
 **响应**
 

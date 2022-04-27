@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用源连接器和API从协议应用程序检索数据并将其摄取到平台中的步骤。
 exl-id: e14e75c2-2a93-45d8-8056-f06075bd4b8d
-source-git-commit: 67e6de74ea8f2f4868a39ec1907ee1cac335c9f0
+source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
 workflow-type: tm+mt
 source-wordcount: '1276'
 ht-degree: 1%
@@ -601,7 +601,7 @@ curl -X POST \
                 "name": "Mapping",
                 "params": {
                     "mappingId": "7409d3017e24a3eb4a2dc21020f7a5b",
-                    "mappingVersion": "0"
+                    "mappingVersion": 0
                 }
             }
         ],

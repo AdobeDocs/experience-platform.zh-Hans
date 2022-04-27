@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程涵盖从第三方电子商务系统检索数据，并使用源连接器和API将其摄取到平台中的步骤。
 exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
-source-git-commit: 964bdaab8a90983f1e40b33720580110ac9e40fe
+source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
 workflow-type: tm+mt
 source-wordcount: '1260'
 ht-degree: 1%
@@ -546,7 +546,7 @@ curl -X POST \
                 "name": "Mapping",
                 "params": {
                     "mappingId": "22922102bffd4369b6209c102a604062",
-                    "mappingVersion": "0"
+                    "mappingVersion": 0
                 }
             }
         ],

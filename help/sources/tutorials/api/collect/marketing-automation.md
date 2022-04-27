@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从营销自动化系统检索数据以及使用源连接器和API将数据导入Adobe Experience Platform的步骤。
 exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
-source-git-commit: 67e6de74ea8f2f4868a39ec1907ee1cac335c9f0
+source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
 workflow-type: tm+mt
 source-wordcount: '1289'
 ht-degree: 1%
@@ -40,7 +40,7 @@ ht-degree: 1%
 
 您可以通过向 [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径和连接规范ID组成。
 
-To create a source connection, you must also define an enum value for the data format attribute.
+要创建源连接，还必须为数据格式属性定义枚举值。
 
 为基于文件的连接器使用以下枚举值：
 
@@ -48,9 +48,9 @@ To create a source connection, you must also define an enum value for the data f
 | ----------- | ---------- |
 | 分隔 | `delimited` |
 | JSON | `json` |
-| Parquet | `parquet` |
+| 镶木 | `parquet` |
 
-For all table-based connectors, set the value to `tabular`.
+对于所有基于表的连接器，将值设置为 `tabular`.
 
 **API格式**
 
@@ -501,14 +501,14 @@ curl -X GET \
 
 收集营销自动化数据的最后一步是创建数据流。 现在，您已准备以下必需值：
 
-* [Source connection ID](#source)
-* [Target connection ID](#target)
+* [源连接ID](#source)
+* [Target连接ID](#target)
 * [映射ID](#mapping)
 * [数据流规范ID](#specs)
 
 数据流负责从源中调度和收集数据。 通过在有效负载中提供先前提到的值时执行POST请求，可以创建数据流。
 
-要计划摄取，您必须首先将开始时间值设置为以秒为单位的新纪元时间。 然后，您必须将频率值设置为以下五个选项之一： `once`, `minute`, `hour`, `day`或 `week`. 间隔值可指定两个连续摄取和创建一次性摄取之间的周期，而无需设置间隔。 For all other frequencies, the interval value must be set to equal or greater than `15`.
+要计划摄取，您必须首先将开始时间值设置为以秒为单位的新纪元时间。 然后，您必须将频率值设置为以下五个选项之一： `once`, `minute`, `hour`, `day`或 `week`. 间隔值可指定两个连续摄取和创建一次性摄取之间的周期，而无需设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`.
 
 **API格式**
 
@@ -553,7 +553,7 @@ curl -X POST \
                 "name": "Mapping",
                 "params": {
                     "mappingId": "500a9b747fcf4908a21917d49bd61780",
-                    "mappingVersion": "0"
+                    "mappingVersion": 0
                 }
             }
         ],
@@ -572,14 +572,14 @@ curl -X POST \
 | `targetConnectionIds` | 的 [目标连接ID](#target-connection) 在之前的步骤中检索。 |
 | `transformations.params.mappingId` | 的 [映射ID](#mapping) 在之前的步骤中检索。 |
 | `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 将根据选定列的时间戳摄取增量数据。 支持的日期格式 `deltaColumn` is `yyyy-MM-dd HH:mm:ss`. |
-| `transformations.params.mappingId` | The mapping ID associated with your database. |
-| `scheduleParams.startTime` | The start time for the dataflow in epoch time. |
-| `scheduleParams.frequency` | The frequency at which the dataflow will collect data. 可接受的值包括： `once`, `minute`, `hour`, `day`或 `week`. |
-| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 The interval&#39;s value should be a non-zero integer. 将频率设置为时，不需要间隔 `once` 且应大于或等于 `15` 的其他频率值。 |
+| `transformations.params.mappingId` | 与数据库关联的映射ID。 |
+| `scheduleParams.startTime` | 新纪元时间中数据流的开始时间。 |
+| `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`, `minute`, `hour`, `day`或 `week`. |
+| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 将频率设置为时，不需要间隔 `once` 且应大于或等于 `15` 的其他频率值。 |
 
 **响应**
 
-A successful response returns the ID (`id`) of the newly created dataflow.
+成功的响应会返回ID(`id`)。
 
 ```json
 {
@@ -590,7 +590,7 @@ A successful response returns the ID (`id`) of the newly created dataflow.
 
 ## 监控数据流
 
-创建数据流后，您可以监视通过其摄取的数据，以查看有关流量运行、完成状态和错误的信息。 For more information on how to monitor dataflows, see the tutorial on [monitoring dataflows in the API ](../monitor.md)
+创建数据流后，您可以监视通过其摄取的数据，以查看有关流量运行、完成状态和错误的信息。 有关如何监视数据流的更多信息，请参阅 [监控API中的数据流 ](../monitor.md)
 
 ## 后续步骤
 

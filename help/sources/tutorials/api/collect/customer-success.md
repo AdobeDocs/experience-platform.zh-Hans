@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从客户成功系统中检索数据，并使用源连接器和API将其摄取到平台中的步骤。
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
-source-git-commit: 67e6de74ea8f2f4868a39ec1907ee1cac335c9f0
+source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
 workflow-type: tm+mt
 source-wordcount: '1305'
 ht-degree: 1%
@@ -38,9 +38,9 @@ ht-degree: 1%
 
 ## 创建源连接 {#source}
 
-You can create a source connection by making a POST request to the [!DNL Flow Service] API. A source connection consists of a connection ID, a path to the source data file, and a connection spec ID.
+您可以通过向 [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径和连接规范ID组成。
 
-To create a source connection, you must also define an enum value for the data format attribute.
+要创建源连接，还必须为数据格式属性定义枚举值。
 
 为基于文件的连接器使用以下枚举值：
 
@@ -50,7 +50,7 @@ To create a source connection, you must also define an enum value for the data f
 | JSON | `json` |
 | 镶木 | `parquet` |
 
-For all table-based connectors, set the value `tabular`.
+对于所有基于表的连接器，请设置值 `tabular`.
 
 **API格式**
 
@@ -543,7 +543,7 @@ curl -X GET \
 
 要计划摄取，您必须首先将开始时间值设置为以秒为单位的新纪元时间。 然后，您必须将频率值设置为以下五个选项之一： `once`, `minute`, `hour`, `day`或 `week`. 间隔值可指定两个连续摄取和创建一次性摄取之间的周期，而无需设置间隔。 对于所有其他频率，间隔值必须设置为等于或大于 `15`.
 
-**API format**
+**API格式**
 
 ```http
 POST /flows
@@ -586,7 +586,7 @@ curl -X POST \
                 "name": "Mapping",
                 "params": {
                     "mappingId": "7c3547d3cfc14f568a51c32b4c0ed739",
-                    "mappingVersion": "0"
+                    "mappingVersion": 0
                 }
             }
         ],
@@ -607,13 +607,13 @@ curl -X POST \
 | `transformations.params.mappingId` | 的 [映射ID](#mapping) 在之前的步骤中检索。 |
 | `transformations.params.deltaColum` | 用于区分新数据和现有数据的指定列。 将根据选定列的时间戳摄取增量数据。 支持的日期格式 `deltaColumn` is `yyyy-MM-dd HH:mm:ss`. |
 | `transformations.params.mappingId` | 与数据库关联的映射ID。 |
-| `scheduleParams.startTime` | The start time for the dataflow in epoch time. |
+| `scheduleParams.startTime` | 新纪元时间中数据流的开始时间。 |
 | `scheduleParams.frequency` | 数据流收集数据的频率。 可接受的值包括： `once`, `minute`, `hour`, `day`或 `week`. |
-| `scheduleParams.interval` | The interval designates the period between two consecutive flow runs. The interval&#39;s value should be a non-zero integer. 将频率设置为时，不需要间隔 `once` 且应大于或等于 `15` 的其他频率值。 |
+| `scheduleParams.interval` | 该间隔指定两个连续流运行之间的周期。 间隔的值应为非零整数。 将频率设置为时，不需要间隔 `once` 且应大于或等于 `15` 的其他频率值。 |
 
 **响应**
 
-A successful response returns the ID `id` of the newly created dataflow.
+成功的响应会返回ID `id` 新创建数据流的URL。
 
 ```json
 {
@@ -622,7 +622,7 @@ A successful response returns the ID `id` of the newly created dataflow.
 }
 ```
 
-## Monitor your dataflow
+## 监控数据流
 
 创建数据流后，您可以监视通过其摄取的数据，以查看有关流量运行、完成状态和错误的信息。 有关如何监视数据流的更多信息，请参阅 [监控API中的数据流 ](../monitor.md)
 

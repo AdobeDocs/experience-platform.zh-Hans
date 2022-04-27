@@ -4,7 +4,7 @@ solution: Experience Platform
 title: （测试版）使用流服务API为OneTrust集成源创建数据流
 description: 了解如何使用流量服务API将Adobe Experience Platform与OneTrust集成连接。
 exl-id: e224efe0-4756-4b8a-b446-a3e1066f2050
-source-git-commit: 74ef1b3abb90ab3ca24690c88c073083f02a2f1b
+source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
 workflow-type: tm+mt
 source-wordcount: '2313'
 ht-degree: 2%
@@ -7001,7 +7001,7 @@ curl -X POST \
               "name": "Mapping",
               "params": {
                   "mappingId": "a87f130e82f04d5188da01f087805c4b",
-                  "mappingVersion": "0"
+                  "mappingVersion": 0
               }
           }
       ],

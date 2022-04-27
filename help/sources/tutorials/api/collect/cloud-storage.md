@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方云存储检索数据，以及使用源连接器和API将数据导入平台的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: 67e6de74ea8f2f4868a39ec1907ee1cac335c9f0
+source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
 workflow-type: tm+mt
 source-wordcount: '1575'
 ht-degree: 1%
@@ -528,7 +528,7 @@ curl -X POST \
                 "name": "Mapping",
                 "params": {
                     "mappingId": "bf5286a9c1ad4266baca76ba3adc9366",
-                    "mappingVersion": "0"
+                    "mappingVersion": 0
                 }
             }
         ],
