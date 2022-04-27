@@ -1,22 +1,22 @@
 ---
 keywords: Amazon Kinesis;Kinesis目标；Kinesis
-title: (Beta)Amazon Kinesis连接
+title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: c62117de27b150f072731c910bb0593ce1fca082
+source-git-commit: 30549f31e7ba7f9cfafd2e71fb3ccfb701b9883f
 workflow-type: tm+mt
-source-wordcount: '1422'
-ht-degree: 1%
+source-wordcount: '1809'
+ht-degree: 0%
 
 ---
 
-# （测试版） [!DNL Amazon Kinesis] 连接
+# [!DNL Amazon Kinesis] 连接
 
 ## 概述 {#overview}
 
 >[!IMPORTANT]
 >
->的 [!DNL Amazon Kinesis] 平台中的目标当前为测试版。 文档和功能可能会发生变化。
+> 此目标仅对 [Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户。
 
 的 [!DNL Kinesis Data Streams] 服务依据 [!DNL Amazon Web Services] 允许您实时收集和处理大量数据记录流。
 
@@ -90,9 +90,13 @@ ht-degree: 1%
 
 ## 连接到目标 {#connect}
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
-### 连接参数 {#parameters}
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 连接到此目标时，必须提供以下信息：
+
+### 身份验证信息 {#authentication-information}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_kinesis_includesegmentnames"
@@ -104,13 +108,24 @@ ht-degree: 1%
 >title="包含区段时间戳"
 >abstract="如果您希望数据导出在创建和更新区段时包含UNIX时间戳，以及将区段映射到要激活的目标时包含UNIX时间戳，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
 
-While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
+输入以下字段并选择 **[!UICONTROL 连接到目标]**:
+
+![显示Amazon Kinesis身份验证详细信息的已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-authentication-fields.png)
 
 * **[!DNL Amazon Web Services]访问密钥和密钥**:在 [!DNL Amazon Web Services]，生成 `access key - secret access key` 对，以授予对 [!DNL Amazon Kinesis] 帐户。 在 [Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-* **地区**:指明 [!DNL Amazon Web Services] 要将数据流到的区域。
-* **名称**:提供连接的名称 [!DNL Amazon Kinesis]
-* **描述**:提供与 [!DNL Amazon Kinesis].
-* **流**:在 [!DNL Amazon Kinesis] 帐户。 平台会将数据导出到此流。
+* **[!UICONTROL 地区]**:指明 [!DNL Amazon Web Services] 要将数据流到的区域。
+
+### 目标详细信息 {#destination-details}
+
+在建立到Amazon Kinesis目标的身份验证连接后，请提供目标的以下信息：
+
+![显示Amazon Kinesis目标详细信息的已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-destination-details.png)
+
+* **[!UICONTROL 名称]**:提供连接的名称 [!DNL Amazon Kinesis]
+* **[!UICONTROL 描述]**:提供与 [!DNL Amazon Kinesis].
+* **[!UICONTROL 流]**:在 [!DNL Amazon Kinesis] 帐户。 平台会将数据导出到此流。
+* **[!UICONTROL 包括区段名称]**:如果您希望数据导出包含要导出的区段名称，则进行切换。 有关选中此选项的数据导出示例，请参阅 [导出的数据](#exported-data) 部分。
+* **[!UICONTROL 包含区段时间戳]**:如果您希望数据导出在创建和更新区段时包含UNIX时间戳，以及将区段映射到要激活的目标时包含UNIX时间戳，则进行切换。 有关选中此选项的数据导出示例，请参阅 [导出的数据](#exported-data) 部分。
 
 <!--
 
@@ -121,6 +136,10 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 -->
 
 ## 将区段激活到此目标 {#activate}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 请参阅 [将受众数据激活到流配置文件导出目标](../../ui/activate-streaming-profile-destinations.md) 有关将受众区段激活到此目标的说明。
 
@@ -153,6 +172,10 @@ Experience Platform会优化将用户档案导出到 [!DNL Amazon Kinesis] 目�
 导出到目标的用户档案，可由符合或退出 *三个映射的区段*. 但是，在数据导出中， `segmentMembership` 对象(请参阅 [导出的数据](#exported-data) 部分)，则可能会显示其他未映射的区段，前提是该特定用户档案是其成员。 如果某个用户档案符合“使用德罗林汽车的客户”区段的资格条件，但同时也是“观看的‘回到未来’”电影和科幻片迷区段的成员，则另外两个区段也将出现在 `segmentMembership` 对象，即使这些对象未在数据流中映射。
 
 从配置文件属性的角度来看，对上述四个映射属性所做的任何更改都将决定目标导出，并且配置文件上存在的四个映射属性中的任何一个将出现在数据导出中。
+
+## 历史数据回填 {#historical-data-backfill}
+
+当您向现有目标添加新区段时，或者当您创建新目标并将区段映射到该目标时，Experience Platform会将历史区段鉴别数据导出到该目标。 符合区段资格条件的用户档案 *之前* 已添加到目标的区段会在大约一小时内导出到目标。
 
 ## 导出的数据 {#exported-data}
 
@@ -210,6 +233,53 @@ Experience Platform会优化将用户档案导出到 [!DNL Amazon Kinesis] 目�
   }
 }
 ```
+
+以下是导出数据的更多示例，具体取决于您在的连接目标流中为 **[!UICONTROL 包括区段名称]** 和 **[!UICONTROL 包含区段时间戳]** 选项：
+
++++ 以下数据导出示例包括 `segmentMembership` 部分
+
+```json
+"segmentMembership": {
+        "ups": {
+          "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
+            "lastQualificationTime": "2019-04-15T02:41:50+0000",
+            "status": "existing",
+            "createdAt": 1648553325000,
+            "updatedAt": 1648553330000,
+            "mappingCreatedAt": 1649856570000,
+            "mappingUpdatedAt": 1649856570000,
+            "name": "First name equals John"
+          }
+        }
+      }
+```
+
++++
+
++++ 以下数据导出示例包括 `segmentMembership` 部分
+
+```json
+"segmentMembership": {
+        "ups": {
+          "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
+            "lastQualificationTime": "2019-04-15T02:41:50+0000",
+            "status": "existing",
+            "createdAt": 1648553325000,
+            "updatedAt": 1648553330000,
+            "mappingCreatedAt": 1649856570000,
+            "mappingUpdatedAt": 1649856570000,
+          }
+        }
+      }
+```
+
++++
+
+## 限制和重试策略 {#limits-retry-policy}
+
+在95%的时间内，Experience Platform尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流的每秒请求速率小于10.000个请求，以发送到HTTP目标。
+
+如果对HTTP API目标的请求失败，Experience Platform会存储失败的请求并重试两次，以将请求发送到您的端点。
 
 >[!MORELIKETHIS]
 >

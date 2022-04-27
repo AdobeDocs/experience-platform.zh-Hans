@@ -4,9 +4,9 @@ title: 目标类型和类别
 seo-title: Destination types and categories
 description: 了解Adobe Experience Platform中的不同目标类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 08c6c2716b88180b1eb290663117e6da2d8641f0
+source-git-commit: 1c2846941df09b66eb74f8ea8bec91574577fbbc
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '596'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 请阅读本页以了解Adobe Experience Platform目标的不同类型和类别。
 
-## 目标类型
+## 目标类型 {#destination-types}
 
 在Adobe Experience Platform中，我们区分两种目标类型 — 连接和扩展。 有两种类型的连接目标：配置文件导出目标和区段导出目标。
 
@@ -25,16 +25,28 @@ ht-degree: 0%
 
 **[!UICONTROL 配置文件导出]** 和 **[!UICONTROL 流区段导出]** Adobe Experience Platform中的目标捕获事件数据，将其与其他数据源组合以形成 [实时客户资料](../profile/home.md)、应用分段，并将区段和符合条件的用户档案导出到目标。
 
-## 配置文件导出目标
+## 配置文件导出目标 {#profile-export}
 
 配置文件导出目标会接收原始数据，通常以电子邮件地址作为主键。 Experience Platform当前支持两种类型的配置文件导出目标：
 
-* [流配置文件导出目标](#streaming-profile-export)
+* [流配置文件导出目标（企业目标）](#streaming-profile-export)
 * [批量（基于文件）目标](#file-based)
 
-### 流配置文件导出目标 {#streaming-profile-export}
+### 流配置文件导出目标（企业目标） {#streaming-profile-export}
 
-流配置文件导出目标将区段和配置文件数据作为Experience Platform数据流接收。 [AmazonKinesis](catalog/cloud-storage/amazon-kinesis.md) 和 [Azure事件中心](catalog/cloud-storage/azure-event-hubs.md) 是此类目标的示例。
+>[!IMPORTANT]
+>
+>企业目标或流配置文件导出目标可用于 [Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 仅限客户。
+
+使用企业目标Data Connectors将Real-time Customer Data Platform配置文件近乎实时地传送到内部系统或其他第三方系统，以便进行数据同步、分析和进一步扩充配置文件用例。
+
+这些目标将区段和配置文件数据作为Experience Platform数据流接收。
+
+企业目标包括：
+
+* [HTTP API目标](catalog/streaming/http-destination.md)
+* [AmazonKinesis](catalog/cloud-storage/amazon-kinesis.md)
+* [Azure事件中心](catalog/cloud-storage/azure-event-hubs.md)
 
 ### 批量（基于文件）目标 {#file-based}
 
@@ -42,7 +54,7 @@ ht-degree: 0%
 
 ## 流区段导出目标 {#streaming-destinations}
 
-区段导出目标可接收Experience Platform区段数据。 这些目标使用区段ID或用户ID。 [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md)，以及此类目标的示例。
+区段导出目标可接收Experience Platform区段数据。 这些目标使用区段ID或用户ID。 广告和社交目标，如 [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md)或 [Facebook](catalog/social/facebook.md) 是此类目标的示例。
 
 ## 配置文件导出和区段导出目标 — 视频概述 {#video}
 

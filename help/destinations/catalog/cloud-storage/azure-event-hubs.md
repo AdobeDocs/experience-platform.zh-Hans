@@ -1,22 +1,22 @@
 ---
 keywords: Azure事件中心目标；Azure事件中心；Azure事件Hub
-title: （测试版） [!DNL Azure Event Hubs] 连接
+title: Azure事件中心连接
 description: 创建与的实时出站连接 [!DNL Azure Event Hubs] 存储以从Experience Platform流数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: c62117de27b150f072731c910bb0593ce1fca082
+source-git-commit: 30549f31e7ba7f9cfafd2e71fb3ccfb701b9883f
 workflow-type: tm+mt
-source-wordcount: '1371'
-ht-degree: 1%
+source-wordcount: '1926'
+ht-degree: 0%
 
 ---
 
-# （测试版） [!DNL Azure Event Hubs] 连接
+# [!DNL Azure Event Hubs] 连接
 
 ## 概述 {#overview}
 
 >[!IMPORTANT]
 >
->的 [!DNL Azure Event Hubs] 平台中的目标当前为测试版。 文档和功能可能会发生变化。
+> 此目标仅对 [Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户。
 
 [!DNL Azure Event Hubs] 是一种大数据流平台和事件摄取服务。 它每秒可以接收和处理数百万个事件。 通过使用任何实时分析提供程序或批量处理/存储适配器，可以转换和存储发送到事件中心的数据。
 
@@ -51,9 +51,25 @@ ht-degree: 1%
 
 ## 连接到目标 {#connect}
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
-### 连接参数 {#parameters}
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 连接到此目标时，必须提供以下信息：
+
+### 身份验证信息 {#authentication-information}
+
+#### 标准身份验证 {#standard-authentication}
+
+![UI屏幕的图像，显示Azure事件中心标准身份验证详细信息的已完成字段](../../assets/catalog/cloud-storage/event-hubs/event-hubs-standard-authentication.png)
+
+如果您选择 **[!UICONTROL 标准身份验证]** 键入以连接到HTTP端点，输入以下字段并选择 **[!UICONTROL 连接到目标]**:
+
+* **[!UICONTROL SAS密钥名称]**:授权规则的名称，也称为SAS密钥名称。
+* **[!UICONTROL SAS密钥]**:事件中心命名空间的主键。 的 `sasPolicy` 该 `sasKey` 对应于必须拥有 **管理** 配置了权限，以便填充事件中心列表。 了解如何验证 [!DNL Azure Event Hubs] 在 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
+* **[!UICONTROL 命名空间]**:填写 [!DNL Azure Event Hubs] 命名空间。 了解 [!DNL Azure Event Hubs] 命名空间 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
+
+#### 共享访问签名(SAS)身份验证 {#sas-authentication}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_eventhubs_includesegmentnames"
@@ -65,16 +81,32 @@ ht-degree: 1%
 >title="包含区段时间戳"
 >abstract="如果您希望数据导出在创建和更新区段时包含UNIX时间戳，以及将区段映射到要激活的目标时包含UNIX时间戳，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
 
-While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
+![UI屏幕的图像，显示Azure事件中心标准身份验证详细信息的已完成字段](../../assets/catalog/cloud-storage/event-hubs/event-hubs-sas-authentication.png)
+
+如果您选择 **[!UICONTROL 标准身份验证]** 键入以连接到HTTP端点，输入以下字段并选择 **[!UICONTROL 连接到目标]**:
 
 * **[!UICONTROL SAS密钥名称]**:授权规则的名称，也称为SAS密钥名称。
 * **[!UICONTROL SAS密钥]**:事件中心命名空间的主键。 的 `sasPolicy` 该 `sasKey` 对应于必须拥有 **管理** 配置了权限，以便填充事件中心列表。 了解如何验证 [!DNL Azure Event Hubs] 在 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/authenticate-shared-access-signature).
 * **[!UICONTROL 命名空间]**:填写 [!DNL Azure Event Hubs] 命名空间。 了解 [!DNL Azure Event Hubs] 命名空间 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
+* **[!UICONTROL 命名空间]**:填写 [!DNL Azure Event Hubs] 命名空间。 了解 [!DNL Azure Event Hubs] 命名空间 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
+
+### 目标详细信息 {#destination-details}
+
+在与Azure事件中心目标建立身份验证连接后，请为目标提供以下信息：
+
+![UI屏幕的图像，显示Azure事件中心目标详细信息的已完成字段](../../assets/catalog/cloud-storage/event-hubs/event-hubs-destination-details.png)
+
 * **[!UICONTROL 名称]**:填写连接的名称 [!DNL Azure Event Hubs].
 * **[!UICONTROL 描述]**:提供连接的描述。  示例：“高级客户”、“对冲浪感兴趣的客户”。
 * **[!UICONTROL eventHubName]**:为您的 [!DNL Azure Event Hubs] 目标。
+* **[!UICONTROL 包括区段名称]**:如果您希望数据导出包含要导出的区段名称，则进行切换。 有关选中此选项的数据导出示例，请参阅 [导出的数据](#exported-data) 部分。
+* **[!UICONTROL 包含区段时间戳]**:如果您希望数据导出在创建和更新区段时包含UNIX时间戳，以及将区段映射到要激活的目标时包含UNIX时间戳，则进行切换。 有关选中此选项的数据导出示例，请参阅 [导出的数据](#exported-data) 部分。
 
 ## 将区段激活到此目标 {#activate}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 请参阅 [将受众数据激活到流配置文件导出目标](../../ui/activate-streaming-profile-destinations.md) 有关将受众区段激活到此目标的说明。
 
@@ -107,6 +139,10 @@ Experience Platform会优化将用户档案导出到 [!DNL Azure Event Hubs] 目
 导出到目标的用户档案，可由符合或退出 *三个映射的区段*. 但是，在数据导出中， `segmentMembership` 对象(请参阅 [导出的数据](#exported-data) 部分)，则可能会显示其他未映射的区段，前提是该特定用户档案是其成员。 如果某个用户档案符合“使用德罗林汽车的客户”区段的资格条件，但同时也是“观看的‘回到未来’”电影和科幻片迷区段的成员，则另外两个区段也将出现在 `segmentMembership` 对象，即使这些对象未在数据流中映射。
 
 从配置文件属性的角度来看，对上述四个映射属性所做的任何更改都将决定目标导出，并且配置文件上存在的四个映射属性中的任何一个将出现在数据导出中。
+
+## 历史数据回填 {#historical-data-backfill}
+
+当您向现有目标添加新区段时，或者当您创建新目标并将区段映射到该目标时，Experience Platform会将历史区段鉴别数据导出到该目标。 符合区段资格条件的用户档案 *之前* 已添加到目标的区段会在大约一小时内导出到目标。
 
 ## 导出的数据 {#exported-data}
 
@@ -165,6 +201,52 @@ Experience Platform会优化将用户档案导出到 [!DNL Azure Event Hubs] 目
 }
 ```
 
+以下是导出数据的更多示例，具体取决于您在的连接目标流中为 **[!UICONTROL 包括区段名称]** 和 **[!UICONTROL 包含区段时间戳]** 选项：
+
++++ 以下数据导出示例包括 `segmentMembership` 部分
+
+```json
+"segmentMembership": {
+        "ups": {
+          "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
+            "lastQualificationTime": "2019-04-15T02:41:50+0000",
+            "status": "existing",
+            "createdAt": 1648553325000,
+            "updatedAt": 1648553330000,
+            "mappingCreatedAt": 1649856570000,
+            "mappingUpdatedAt": 1649856570000,
+            "name": "First name equals John"
+          }
+        }
+      }
+```
+
++++
+
++++ 以下数据导出示例包括 `segmentMembership` 部分
+
+```json
+"segmentMembership": {
+        "ups": {
+          "5b998cb9-9488-4ec3-8d95-fa8338ced490": {
+            "lastQualificationTime": "2019-04-15T02:41:50+0000",
+            "status": "existing",
+            "createdAt": 1648553325000,
+            "updatedAt": 1648553330000,
+            "mappingCreatedAt": 1649856570000,
+            "mappingUpdatedAt": 1649856570000,
+          }
+        }
+      }
+```
+
++++
+
+## 限制和重试策略 {#limits-retry-policy}
+
+在95%的时间内，Experience Platform尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流的每秒请求速率小于10.000个请求，以发送到HTTP目标。
+
+如果对HTTP API目标的请求失败，Experience Platform会存储失败的请求并重试两次，以将请求发送到您的端点。
 
 >[!MORELIKETHIS]
 >

@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: d5f83f9d99789afba44e26400d0cea8a72946d7a
+source-git-commit: 0f3cb17650612399091c12a6b638471a80306729
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '755'
 ht-degree: 8%
 
 ---
@@ -93,10 +93,10 @@ ht-degree: 8%
       * [Yext转化跟踪扩展](./catalog/analytics/yext.md)
    * 云存储目标 {#cloud-storage}
       * [云存储目标概述](./catalog/cloud-storage/overview.md)
-      * [(Beta)Amazon Kinesis连接](./catalog/cloud-storage/amazon-kinesis.md)
+      * [Amazon Kinesis连接](./catalog/cloud-storage/amazon-kinesis.md)
       * [Amazon S3连接](./catalog/cloud-storage/amazon-s3.md)
       * [Azure Blob连接](./catalog/cloud-storage/azure-blob.md)
-      * [（测试版）Azure事件中心连接](./catalog/cloud-storage/azure-event-hubs.md)
+      * [Azure事件中心连接](./catalog/cloud-storage/azure-event-hubs.md)
       * [SFTP连接](./catalog/cloud-storage/sftp.md)
       * [云存储允许列表目标的IP地址](./catalog/cloud-storage/ip-address-allow-list.md)
    * 数据管理平台目标 {#data-management}
@@ -132,7 +132,7 @@ ht-degree: 8%
       * [Experience Cloud ID 服务扩展](./catalog/personalization/adobe-ecid.md)
       * [Gainsight扩展](./catalog/personalization/gainsight.md)
       * [KickFire扩展](./catalog/personalization/kickfire.md)
-      * [Marketo Web个性化扩展](./catalog/personalization/marketo-web-personalization.md)
+      * [Marketo Web Personalization扩展](./catalog/personalization/marketo-web-personalization.md)
    * 社交目标{#social}
       * [社交目标概述](./catalog/social/overview.md)
       * [AdobeLivefyre扩展](./catalog/social/adobe-livefyre.md)
@@ -140,7 +140,7 @@ ht-degree: 8%
       * [linkedIn匹配的受众连接](./catalog/social/linkedin.md)
       * [[!DNL Twitter Custom Audiences] 连接](./catalog/social/twitter.md)
    * 流目标 {#streaming}
-      * [ （测试版）HTTP API连接](./catalog/streaming/http-destination.md)
+      * [HTTP API连接](./catalog/streaming/http-destination.md)
       * [流目允许列表标的IP地址](./catalog/streaming/ip-address-allow-list.md)
    * 调查目标 {#survey}
       * [Survey目标概述](./catalog/survey/overview.md)

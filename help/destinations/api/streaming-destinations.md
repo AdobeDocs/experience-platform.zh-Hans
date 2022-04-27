@@ -6,18 +6,14 @@ description: 本文档介绍了如何使用Adobe Experience Platform API创建�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 0b094e635e6d22e58e5aa79a374df0879167a833
+source-git-commit: 1b9b2476047b78c67a8c9950e28b0812642c7941
 workflow-type: tm+mt
-source-wordcount: '2067'
+source-wordcount: '2049'
 ht-degree: 1%
 
 ---
 
 # 使用流服务API连接到流目标并激活数据
-
->[!NOTE]
->
->的 [!DNL Amazon Kinesis] 和 [!DNL Azure Event Hubs] 平台中的目标当前为测试版。 文档和功能可能会发生变化。
 
 >[!IMPORTANT]
 > 
