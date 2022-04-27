@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
-title: 为源SDK配置身份验证规范
+title: 为源SDK配置源规范
 topic-legacy: overview
 description: 本文档概述了使用源SDK需要准备的配置。
 hide: true
 hidefromtoc: true
 exl-id: f814c883-b529-4ecc-bedd-f638bf0014b5
-source-git-commit: 4c4c89ab7db7d3546163d707ac80210561c2fa02
+source-git-commit: 9727f7b0e8eaae92c85f102e5e7bea018a2ee6de
 workflow-type: tm+mt
 source-wordcount: '861'
 ht-degree: 1%

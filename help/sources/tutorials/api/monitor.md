@@ -1,19 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；监视数据流；流服务API；流服务
 solution: Experience Platform
-title: 使用流服务API监控数据流
+title: 使用流服务API监控源数据流
 topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用流服务API监控流程运行数据是否完整、错误和量度的步骤。
 exl-id: 5b7d1aa4-5e6d-48f4-82bd-5348dc0e890d
-source-git-commit: 95f455bd03b7baefe0133a9818c9d048f36f9d38
+source-git-commit: 9727f7b0e8eaae92c85f102e5e7bea018a2ee6de
 workflow-type: tm+mt
-source-wordcount: '410'
+source-wordcount: '412'
 ht-degree: 2%
 
 ---
 
-# 使用流服务API监控数据流
+# 使用流服务API监控源数据流
 
 本教程介绍使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
@@ -236,4 +236,4 @@ curl -X GET \
 
 ## 后续步骤
 
-通过阅读本教程，您可以使用 [!DNL Flow Service] API。 您现在可以根据您的摄取计划继续监控数据流，以跟踪其状态和摄取率。 For information on how to perform the same tasks using the user interface, see the tutorial on [monitoring dataflows using the user interface](../ui/monitor.md)
+通过阅读本教程，您可以使用 [!DNL Flow Service] API。 您现在可以根据您的摄取计划继续监控数据流，以跟踪其状态和摄取率。 有关如何使用用户界面执行相同任务的信息，请参阅 [使用用户界面监控数据流](../ui/monitor.md)
