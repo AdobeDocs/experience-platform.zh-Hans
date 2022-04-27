@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: ea04132c5092ce62820b0af1edc95bb1e0a1a16f
+source-git-commit: 7b12a4094be3eed9b562fff2d0274a1e169913f3
 workflow-type: tm+mt
-source-wordcount: '2259'
+source-wordcount: '2378'
 ht-degree: 4%
 
 ---
@@ -19,6 +19,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [[!DNL Dashboards]](#dashboards)
 - [数据流](#dataflows)
 - [[!DNL Data Prep]](#data-prep)
+- [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [Real-time Customer Data Platform B2B 版本](#B2B)
 - [源](#sources)
@@ -89,6 +90,23 @@ Attribution AI和客户AI允许客户配置高级AI/ML模型，以便进行营�
 | 支持导入现有映射规则 | 您现在可以从现有数据流导入映射规则，以加速数据流配置并限制错误。 请参阅 [导入现有映射规则](../../data-prep/ui/mapping.md) 以了解更多信息。 |
 
 有关 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| [目标数据流的上下文关联警报](../../destinations/ui/alerts.md) | 现在，您可以在创建目标数据流时订阅警报，以接收有关数据流运行状态、成功或失败的警报消息。 您可以选择在Experience PlatformUI中或通过电子邮件接收警报。 |
+
+**新目标**
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [[!DNL Criteo]](../../destinations/catalog/advertising/criteo.md) | 将数据连接并激活到Criteo广告平台。 |
+| [[!DNL Sendgrid]](../../destinations/catalog/email-marketing/sendgrid.md) | 将数据连接并激活到Sendgrid平台，以用于事务性电子邮件和营销电子邮件。 |
 
 ## 体验数据模型(XDM) {#xdm}
 
