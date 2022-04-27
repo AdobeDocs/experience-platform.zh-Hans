@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 73bb1d21e70644ffef50b08f22048d0937a6a729
+source-git-commit: d5f83f9d99789afba44e26400d0cea8a72946d7a
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '758'
 ht-degree: 8%
 
 ---
@@ -39,6 +39,7 @@ ht-degree: 8%
    * [编辑激活数据流](./ui/edit-activation.md)
    * [删除目标](./ui/delete-destinations.md)
    * [监视数据流](./ui/monitor-dataflows.md)
+   * [订阅上下文关联目标警报](ui/alerts.md)
 * 目标目录 {#catalog}
    * [目标目录概述](./catalog/overview.md)
    * Adobe目标{#adobe}
