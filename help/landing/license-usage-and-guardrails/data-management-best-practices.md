@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；数据管理；许可证
 title: 数据管理许可证授权最佳实践
 description: 本文档概述了要遵循的最佳实践，以及可用于通过Adobe Experience Platform更好地管理许可证授权的工具。
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: a15b5525d3a2fa034715803c83dc22a94915347e
+source-git-commit: 02882957fc38058ff092938d631e290725d4bdc2
 workflow-type: tm+mt
-source-wordcount: '2586'
+source-wordcount: '2531'
 ht-degree: 0%
 
 ---
@@ -130,7 +130,8 @@ Adobe Experience Platform UI提供了一个功能板，您可以通过该功能�
 
 * **数据集重叠报表API**:显示对可寻址受众贡献最大的数据集。 您可以使用此报表确定 [!DNL ExperienceEvent] 数据集来设置TTL。 请参阅 [生成数据集重叠报表](../../profile/tutorials/dataset-overlap-report.md) 以了解更多信息。
 * **身份重叠报表API**:显示对可寻址受众贡献最大的身份命名空间。 请参阅 [生成身份重叠报表](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) 以了解更多信息。
-* **未知的用户档案报表API**:公开对不同时间阈值应用假名TTL的影响。 您可以使用此报表来识别要应用的假名TTL阈值。 请参阅 [生成未知用户档案报告](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) 以了解更多信息。
+<!-- * **Unknown Profiles Report API**: Exposes the impact of applying pseudonymous TTL for different time thresholds. You can use this report to identify which pseudonymous TTL threshold to apply. See the tutorial on [generating the unknown profiles report](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) for more information.
+-->
 
 #### [!DNL ExperienceEvent] 数据集TTL {#dataset-ttl}
 
@@ -197,7 +198,6 @@ Adobe Experience Platform UI提供了一个功能板，您可以通过该功能�
 | [事件转发数据过滤器](../../tags/ui/event-forwarding/overview.md) | 应用服务器端 [!DNL Kafka] 过滤器从摄取中排除不必要的数据。  请参阅 [标记规则](../../tags/ui/managing-resources/rules.md) 以了解其他信息。 |
 | [许可证使用功能板UI](../../dashboards/guides/license-usage.md#license-usage-dashboard-data) | 查看贵组织与许可证相关的数据的快照以进行Experience Platform |
 | [数据集重叠报表API](../../profile/tutorials/dataset-overlap-report.md) | 输出对可寻址受众贡献最大的数据集 |
-| [未知的用户档案报表API](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) | 输出对不同时间阈值应用假名TTL的影响 |
 | [身份重叠报表API](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) | 输出对可寻址受众贡献最大的身份命名空间 |
 
 {style=&quot;table-layout:auto&quot;}
