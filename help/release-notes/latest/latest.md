@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7b12a4094be3eed9b562fff2d0274a1e169913f3
+source-git-commit: e9e4e58de454abb1fc66e07d5ad4ce18398c6a44
 workflow-type: tm+mt
 source-wordcount: '2378'
 ht-degree: 4%
@@ -15,29 +15,14 @@ ht-degree: 4%
 
 Adobe Experience Platform 现有功能的更新包括：
 
-- [[!DNL Intelligent Services]](#intelligent-services)
 - [[!DNL Dashboards]](#dashboards)
 - [数据流](#dataflows)
 - [[!DNL Data Prep]](#data-prep)
 - [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
+- [[!DNL Intelligent Services]](#intelligent-services)
 - [Real-time Customer Data Platform B2B 版本](#B2B)
 - [源](#sources)
-
-## [!DNL Intelligent Services] {#intelligent-services}
-
-“智能服务”使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的强大功能。 这允许营销分析人员使用业务级别配置来设置特定于公司需求的预测，而无需具备数据科学专业知识。
-
-Attribution AI和客户AI允许客户配置高级AI/ML模型，以便进行营销归因和客户倾向。 多数据集功能可帮助客户在配置模型时引入多个数据集，而无需提前拼合和准备数据。
-
-**更新功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 支持多数据集 | 现在，多数据集功能支持所有体验事件数据集以及选择身份映射作为身份。 只要跨数据集存在通用的身份命名空间，客户就可以选择身份映射和任何关联的ID。 Attribution AI支持以下架构：Adobe Analytics、体验事件、消费者体验事件。 Customer AI支持所有这些模式以及Adobe Audience Manager模式。 有关Attribution AI和客户AI中多数据集支持的更多信息，请参阅 [Attribution AI用户指南](../../intelligent-services/attribution-ai/user-guide.md) 和 [Customer AI用户指南](../../intelligent-services/customer-ai/user-guide/configure.md). |
-| Customer AI中新的模型评估量度 | Customer AI中的新增益图表允许营销人员根据其预算和ROI目标确定要定位的组大小。 新的提升图可测量模型的质量，从而更好地显示他们比随机定位更轻松的提升度。 有关更多信息，请参阅 [通过Customer AI发现洞察](../../intelligent-services/customer-ai/user-guide/discover-insights.md) 文档。 |
-
-有关 [!DNL Intelligent Services]，请参阅 [[!DNL Intelligent Services] 概述](../../intelligent-services/home.md).
 
 ## [!DNL Dashboards] {#dashboards}
 
@@ -162,6 +147,21 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 {style=&quot;table-layout:auto&quot;}
 
 有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
+
+## [!DNL Intelligent Services] {#intelligent-services}
+
+“智能服务”使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的强大功能。 这允许营销分析人员使用业务级别配置来设置特定于公司需求的预测，而无需具备数据科学专业知识。
+
+Attribution AI和客户AI允许客户配置高级AI/ML模型，以便进行营销归因和客户倾向。 多数据集功能可帮助客户在配置模型时引入多个数据集，而无需提前拼合和准备数据。
+
+**更新功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 支持多数据集 | 现在，多数据集功能支持所有体验事件数据集以及选择身份映射作为身份。 只要跨数据集存在通用的身份命名空间，客户就可以选择身份映射和任何关联的ID。 Attribution AI支持以下架构：Adobe Analytics、体验事件、消费者体验事件。 Customer AI支持所有这些模式以及Adobe Audience Manager模式。 有关Attribution AI和客户AI中多数据集支持的更多信息，请参阅 [Attribution AI用户指南](../../intelligent-services/attribution-ai/user-guide.md) 和 [Customer AI用户指南](../../intelligent-services/customer-ai/user-guide/configure.md). |
+| Customer AI中新的模型评估量度 | Customer AI中的新增益图表允许营销人员根据其预算和ROI目标确定要定位的组大小。 新的提升图可测量模型的质量，从而更好地显示他们比随机定位更轻松的提升度。 有关更多信息，请参阅 [通过Customer AI发现洞察](../../intelligent-services/customer-ai/user-guide/discover-insights.md) 文档。 |
+
+有关 [!DNL Intelligent Services]，请参阅 [[!DNL Intelligent Services] 概述](../../intelligent-services/home.md).
 
 ### Real-time Customer Data Platform B2B 版本 {#B2B}
 

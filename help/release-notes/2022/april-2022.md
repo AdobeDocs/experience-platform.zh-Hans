@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年4月
 description: 2022年4月的Adobe Experience Platform发行说明。
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: b3655b70a44f878a29c6a401e5957660edebeba6
+source-git-commit: e9e4e58de454abb1fc66e07d5ad4ce18398c6a44
 workflow-type: tm+mt
 source-wordcount: '2379'
 ht-degree: 4%
@@ -15,29 +15,14 @@ ht-degree: 4%
 
 Adobe Experience Platform 现有功能的更新包括：
 
-- [[!DNL Intelligent Services]](#intelligent-services)
 - [[!DNL Dashboards]](#dashboards)
 - [数据流](#dataflows)
 - [[!DNL Data Prep]](#data-prep)
 - [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
+- [[!DNL Intelligent Services]](#intelligent-services)
 - [Real-time Customer Data Platform B2B 版本](#B2B)
 - [源](#sources)
-
-## [!DNL Intelligent Services] {#intelligent-services}
-
-“智能服务”使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的强大功能。 这允许营销分析人员使用业务级别配置来设置特定于公司需求的预测，而无需具备数据科学专业知识。
-
-Attribution AI and Customer AI allow customers to configure advanced AI/ML models for marketing attribution and customer propensity. 多数据集功能可帮助客户在配置模型时引入多个数据集，而无需提前拼合和准备数据。
-
-**更新功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 支持多数据集 | 现在，多数据集功能支持所有体验事件数据集以及选择身份映射作为身份。 只要跨数据集存在通用的身份命名空间，客户就可以选择身份映射和任何关联的ID。 Attribution AI支持以下架构：Adobe Analytics、体验事件、消费者体验事件。 Customer AI支持所有这些模式以及Adobe Audience Manager模式。 有关Attribution AI和客户AI中多数据集支持的更多信息，请参阅 [Attribution AI用户指南](../../intelligent-services/attribution-ai/user-guide.md) 和 [Customer AI用户指南](../../intelligent-services/customer-ai/user-guide/configure.md). |
-| Customer AI中新的模型评估量度 | Customer AI中的新增益图表允许营销人员根据其预算和ROI目标确定要定位的组大小。 新的提升图可测量模型的质量，从而更好地显示他们比随机定位更轻松的提升度。 有关更多信息，请参阅 [通过Customer AI发现洞察](../../intelligent-services/customer-ai/user-guide/discover-insights.md) 文档。 |
-
-有关 [!DNL Intelligent Services]，请参阅 [[!DNL Intelligent Services] 概述](../../intelligent-services/home.md).
 
 ## [!DNL Dashboards] {#dashboards}
 
@@ -50,9 +35,9 @@ Attribution AI and Customer AI allow customers to configure advanced AI/ML model
 | 功能 | 功能板 | 描述 |
 | --------------------------------------------------------- | ------------- | ----------- |
 | [!UICONTROL 用户档案已添加趋势] | 用户档案 | 此小组件使用折线图来说明过去30天、90天或12个月内每天添加到用户档案存储的合并用户档案总数。 |
-| [!UICONTROL 映射到目标状态的受众] | 用户档案 | This widget displays the total number of both mapped and unmapped audiences in a single metric and uses a doughnut chart to illustrate the proportional difference between their totals. |
-| [!UICONTROL Audiences size] | 用户档案 | This widget provides a two-column table that lists up to 20 segments and the total number of audiences contained in each segment. 此列表取决于所应用的合并策略，并根据受众总数从高到低进行排序。 |
-| [!UICONTROL 用户档案计数趋势] | 用户档案 | 此小组件使用折线图来说明一段时间内系统中包含的配置文件总数的趋势。 The data can be visualized over 30 days, 90 days, and 12 month periods. |
+| [!UICONTROL 映射到目标状态的受众] | 用户档案 | 此小组件在单个量度中显示已映射和未映射受众的总数，并使用圆环图来说明其总数之间的比例差异。 |
+| [!UICONTROL 受众大小] | 用户档案 | 此小组件提供了一个两列表，其中列出了最多20个区段以及每个区段中包含的受众总数。 此列表取决于所应用的合并策略，并根据受众总数从高到低进行排序。 |
+| [!UICONTROL 用户档案计数趋势] | 用户档案 | 此小组件使用折线图来说明一段时间内系统中包含的配置文件总数的趋势。 数据可在30天、90天和12个月期间显示。 |
 | [!UICONTROL 按身份划分的单个身份配置文件] | 用户档案 | 此小组件使用条形图来说明仅使用单个唯一标识符标识的用户档案总数。 该小组件最多支持五种最常出现的身份。 |
 | [!UICONTROL 目标状态] | 目标 | 此小组件将已启用目标的总数显示为单个量度，并使用圆环图来说明已启用目标与已禁用目标之间的比例差异。 |
 | [!UICONTROL 按目标平台划分的活动目标] | 目标 | 此小组件使用两列表来显示活动目标平台的列表以及每个目标平台的活动目标总数。 |
@@ -60,9 +45,9 @@ Attribution AI and Customer AI allow customers to configure advanced AI/ML model
 | [!UICONTROL Audience Activation订单] | 区段 | 此小组件提供了一个三列表，其中列出了受众的目标名称、平台和激活日期。 |
 | [!UICONTROL 受众大小趋势] | 区段 | 此小组件提供了折线图插图，用于显示在30天、90天和12个月期间内符合任何区段定义标准的用户档案总数。 |
 | [!UICONTROL 受众大小更改趋势] | 区段 | 此小组件提供了一个折线图图，用于显示符合给定区段资格的配置文件总数与最近的每日快照之间的差异。 趋势分析的周期可以显示为30天、90天和12个月。 |
-| [!UICONTROL 按身份划分的受众大小趋势] | 区段 | 此小组件根据选定的身份类型展示特定区段的受众大小趋势。 The period of trend analysis can be visualized over 30 days, 90 days, and 12 month periods. |
+| [!UICONTROL 按身份划分的受众大小趋势] | 区段 | 此小组件根据选定的身份类型展示特定区段的受众大小趋势。 趋势分析的周期可以显示为30天、90天和12个月。 |
 
-See the documentation for more information on [[!DNL Profiles]](../../dashboards/guides/profiles.md), [[!DNL Destinations]](../../dashboards/guides/destinations.md), and [[!DNL Segments]](../../dashboards/guides/segments.md) dashboards.
+有关 [[!DNL Profiles]](../../dashboards/guides/profiles.md), [[!DNL Destinations]](../../dashboards/guides/destinations.md)和 [[!DNL Segments]](../../dashboards/guides/segments.md) 功能板。
 
 ## 数据流 {#dataflows}
 
@@ -101,7 +86,7 @@ See the documentation for more information on [[!DNL Profiles]](../../dashboards
 | ----------- | ----------- |
 | [目标数据流的上下文关联警报](../../destinations/ui/alerts.md) | 现在，您可以在创建目标数据流时订阅警报，以接收有关数据流运行状态、成功或失败的警报消息。 您可以选择在Experience PlatformUI中或通过电子邮件接收警报。 |
 
-**New destinations**
+**新目标**
 
 | 目标 | 描述 |
 | ----------- | ----------- |
@@ -136,12 +121,12 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 | 字段组 | [[!UICONTROL XDM业务帐户人员关系详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account-person/account-person-details.schema.json) | 捕获与帐户与人员关系相关的详细信息。 |
 | 字段组 | [[!UICONTROL 帐户人员详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account-person/account-person-details.schema.json) | 捕获与帐户与人员关系相关的详细信息。 |
 | 数据类型 | [[!UICONTROL 购物车]](https://github.com/adobe/xdm/blob/master/components/datatypes/cart.schema.json) | 捕获有关电子商务购物车的信息。 |
-| 数据类型 | [[!UICONTROL Shipping]](https://github.com/adobe/xdm/blob/master/components/datatypes/shipping.schema.json) | 捕获一个或多个产品的装运信息。 |
+| 数据类型 | [[!UICONTROL 装运]](https://github.com/adobe/xdm/blob/master/components/datatypes/shipping.schema.json) | 捕获一个或多个产品的装运信息。 |
 | 数据类型 | [[!UICONTROL 网站搜索]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-site-search.schema.json) | 捕获有关网站搜索活动的信息。 |
 | 扩展(Workfront) | [[!UICONTROL 操作任务属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/opTask.schema.json) | 捕获与操作任务相关的详细信息。 |
-| Extension (Workfront) | [[!UICONTROL Work Portfolio Attributes]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/portfolio.schema.json) | 捕获与工作组合相关的详细信息。 |
+| 扩展(Workfront) | [[!UICONTROL 工作Portfolio属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/portfolio.schema.json) | 捕获与工作组合相关的详细信息。 |
 | 扩展(Workfront) | [[!UICONTROL 工作计划属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/program.schema.json) | 捕获与工作程序相关的详细信息。 |
-| 扩展(Workfront) | [[!UICONTROL 工作项目属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/project.schema.json) | Captures details related to a work project. |
+| 扩展(Workfront) | [[!UICONTROL 工作项目属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/project.schema.json) | 捕获与工作项目相关的详细信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -163,6 +148,21 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 
 有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
+## [!DNL Intelligent Services] {#intelligent-services}
+
+“智能服务”使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的强大功能。 这允许营销分析人员使用业务级别配置来设置特定于公司需求的预测，而无需具备数据科学专业知识。
+
+Attribution AI和客户AI允许客户配置高级AI/ML模型，以便进行营销归因和客户倾向。 多数据集功能可帮助客户在配置模型时引入多个数据集，而无需提前拼合和准备数据。
+
+**更新功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 支持多数据集 | 现在，多数据集功能支持所有体验事件数据集以及选择身份映射作为身份。 只要跨数据集存在通用的身份命名空间，客户就可以选择身份映射和任何关联的ID。 Attribution AI支持以下架构：Adobe Analytics、体验事件、消费者体验事件。 Customer AI支持所有这些模式以及Adobe Audience Manager模式。 有关Attribution AI和客户AI中多数据集支持的更多信息，请参阅 [Attribution AI用户指南](../../intelligent-services/attribution-ai/user-guide.md) 和 [Customer AI用户指南](../../intelligent-services/customer-ai/user-guide/configure.md). |
+| Customer AI中新的模型评估量度 | Customer AI中的新增益图表允许营销人员根据其预算和ROI目标确定要定位的组大小。 新的提升图可测量模型的质量，从而更好地显示他们比随机定位更轻松的提升度。 有关更多信息，请参阅 [通过Customer AI发现洞察](../../intelligent-services/customer-ai/user-guide/discover-insights.md) 文档。 |
+
+有关 [!DNL Intelligent Services]，请参阅 [[!DNL Intelligent Services] 概述](../../intelligent-services/home.md).
+
 ### Real-time Customer Data Platform B2B 版本 {#B2B}
 
 Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP)之上，专为在业务到业务服务模型中运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
@@ -177,7 +177,7 @@ Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP
 
 ## 源 {#sources}
 
-Adobe Experience Platform can ingest data from external sources while allowing you to structure, label, and enhance that data using Platform services. 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用Platform服务来构建、标记和增强该数据。 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
 
 Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，以及管理数据摄取吞吐量。
 
