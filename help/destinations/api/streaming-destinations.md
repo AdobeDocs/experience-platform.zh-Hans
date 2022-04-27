@@ -6,10 +6,10 @@ description: 本文档介绍了如何使用Adobe Experience Platform API创建�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 3e8d2745-8b83-4332-9179-a84d8c0b4400
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 0b094e635e6d22e58e5aa79a374df0879167a833
 workflow-type: tm+mt
-source-wordcount: '2021'
-ht-degree: 2%
+source-wordcount: '2067'
+ht-degree: 1%
 
 ---
 
@@ -18,6 +18,14 @@ ht-degree: 2%
 >[!NOTE]
 >
 >的 [!DNL Amazon Kinesis] 和 [!DNL Azure Event Hubs] 平台中的目标当前为测试版。 文档和功能可能会发生变化。
+
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions).
+>
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+>
+>阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 本教程演示了如何使用API调用连接到Adobe Experience Platform数据，创建与云存储流目标([AmazonKinesis](../catalog/cloud-storage/amazon-kinesis.md) 或 [Azure事件中心](../catalog/cloud-storage/azure-event-hubs.md))，创建数据流到新创建的目标，然后将数据激活到新创建的目标。
 
@@ -616,7 +624,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 * [下载](../assets/api/streaming-destination/DestinationPostmanCollection.zip) 并解压附带的收藏集；
 * 将收藏集从相应的文件夹导入Postman;
 * 按照本文中的说明填写环境变量；
-* 运行 [!DNL API] Postman根据本文中的说明发出的请求。
+* 运行 [!DNL API] 来自Postman的请求（根据本文中的说明）。
 
 ## 后续步骤
 

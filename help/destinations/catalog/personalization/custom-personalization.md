@@ -3,9 +3,9 @@ keywords: 自定义个性化；目的地；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标可提供外部个性化、内容管理系统、广告服务器以及网站上运行的其他应用程序，以便从Adobe Experience Platform中检索区段信息。 此目标基于用户配置文件区段成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: c83c7e2a74a6bf4a7a4c9c04ccebfd0296c89bce
+source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
 workflow-type: tm+mt
-source-wordcount: '912'
+source-wordcount: '973'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,10 @@ ht-degree: 0%
 >abstract="此选项确定区段在响应页面时将包含在哪些数据收集数据流中。 下拉菜单仅显示已启用目标配置的数据流。 必须先配置数据流，然后才能配置目标。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html?lang=en" text="了解如何配置数据流"
 
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 ### 连接参数 {#parameters}
@@ -72,6 +76,10 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 * **[!UICONTROL 数据流ID]**:这可确定区段将包含在页面响应中的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。 请参阅 [配置数据流](../../../edge/fundamentals/datastreams.md) 以了解更多详细信息。
 
 ## 将区段激活到此目标 {#activate}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 读取 [将用户档案和区段激活到用户档案请求目标](../../ui/activate-profile-request-destinations.md) 有关将受众区段激活到此目标的说明。
 

@@ -3,9 +3,9 @@ keywords: 广告；交易台；广告交易台
 title: 交易台连接
 description: 交易台是一个自助平台，可让广告购买者跨展示、视频和移动设备库存源执行重定位和受众定位的数字促销活动。
 exl-id: b8f638e8-dc45-4aeb-8b4b-b3fa2906816d
-source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
+source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '613'
 ht-degree: 3%
 
 ---
@@ -55,6 +55,10 @@ ht-degree: 3%
 
 ## 连接到目标 {#connect}
 
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 ### 连接参数 {#parameters}
@@ -73,6 +77,10 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
    * **[!UICONTROL 拉丁美洲]**
 
 ## 将区段激活到此目标 {#activate}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 请参阅 [将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 

@@ -2,10 +2,10 @@
 title: 文档自助服务模板//将替换为您的目标名称
 description: 使用此模板可在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为“概述”部分中的段落
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: f9938aca8a5c72a53a688152ac2ab0c0abe632ce
+source-git-commit: 729c0724c7af88bb69c9d68a45d58c3575c90828
 workflow-type: tm+mt
-source-wordcount: '1250'
-ht-degree: 2%
+source-wordcount: '1311'
+ht-degree: 1%
 
 ---
 
@@ -90,6 +90,10 @@ ht-degree: 2%
 
 ## 连接到目标 {#connect}
 
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+
 要连接到此目标，请按照 [目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html). 在配置目标工作流中，填写下面两节中列出的字段。
 
 ### 对目标进行身份验证 {#authenticate}
@@ -115,6 +119,10 @@ ht-degree: 2%
 * **[!UICONTROL 帐户ID]**:您的 *YourDestination* 帐户ID。
 
 ## 将区段激活到此目标 {#activate}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 读取 [激活用户档案和区段以流式传输区段导出目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) 有关将受众区段激活到此目标的说明。
 

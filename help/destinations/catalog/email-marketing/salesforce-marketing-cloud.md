@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Sale
 title: SalesforceMarketing Cloud连接
 seo-description: Salesforce Marketing Cloud is a digital marketing suite formerly known as ExactTarget that allows you to build and customize journeys for visitors and customers to personalize their experience.
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
+source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
 workflow-type: tm+mt
-source-wordcount: '506'
+source-wordcount: '567'
 ht-degree: 2%
 
 ---
@@ -36,6 +36,10 @@ ht-degree: 2%
 请参阅 [云存储目标的IP地址允许列表](../cloud-storage/ip-address-allow-list.md) 如果您需要将AdobeIP添加到允许列表。
 
 ## 连接到目标 {#connect}
+
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
@@ -74,6 +78,10 @@ Commenting out Amazon S3 bucket part for now until support is clarified
 -->
 
 ## 将区段激活到此目标 {#activate}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 请参阅 [激活受众数据以批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
 

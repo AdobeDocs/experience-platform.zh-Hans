@@ -2,9 +2,9 @@
 title: Verizon MediaYahoo DataX连接
 description: DataX是Verizon Media/Yahoo的聚合基础架构，它托管各种组件，使Verizon Media/Yahoo能够以安全、自动和可扩展的方式与其外部合作伙伴交换数据。
 exl-id: 7d02671d-8650-407d-9c9f-fad7da3156bc
-source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
+source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
 workflow-type: tm+mt
-source-wordcount: '651'
+source-wordcount: '712'
 ht-degree: 3%
 
 ---
@@ -90,6 +90,10 @@ DataX API适用于那些想要定位特定受众组的广告商，这些受众�
 
 ## 连接到目标 {#connect}
 
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+
 ![Platform UI中的Yahoo DataX目标卡](/help/destinations/assets/catalog/advertising/yahoo-datax/catalog.png)
 
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
@@ -103,6 +107,10 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 * **[!UICONTROL MDM ID]**:这是Yahoo DataX中的唯一标识符，它是设置导出到此目标的数据的必填字段。 如果您不知道此ID，请联系您的Yahoo Data X客户经理。  使用MDM ID，可以限制数据仅用于特定专用用户集（例如广告商的第一方数据）。
 
 ## 将区段激活到此目标 {#activate}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 读取 [将用户档案和区段激活到目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到目标的说明。
 

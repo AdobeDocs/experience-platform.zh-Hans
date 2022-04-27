@@ -3,9 +3,9 @@ keywords: Google广告；Google广告；Google AdWords;Google AdWords;Google Adw
 title: Google Ads连接
 description: Google Ads(以前称为Google AdWords)是一种在线广告服务，允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示，按点击量付费广告。
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: b1945d42b82b549985d848071762fa6ee2451368
+source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
 workflow-type: tm+mt
-source-wordcount: '774'
+source-wordcount: '835'
 ht-degree: 3%
 
 ---
@@ -77,6 +77,10 @@ ht-degree: 3%
 
 ## 连接到目标 {#connect}
 
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 ### 连接参数 {#parameters}
@@ -89,6 +93,10 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 * **[!UICONTROL 帐户ID]**:使用 [!DNL Google Ads]. ID格式通常为123-456-7890。
 
 ## 将区段激活到此目标 {#activate}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 请参阅 [将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 

@@ -6,14 +6,22 @@ description: 使用流程服务API在Experience Platform中创建批量云存储
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: a8a8b3b9e4fdae11be95d2fa80abc0f356eff345
+source-git-commit: 0b094e635e6d22e58e5aa79a374df0879167a833
 workflow-type: tm+mt
-source-wordcount: '3083'
+source-wordcount: '3129'
 ht-degree: 2%
 
 ---
 
 # 连接到批处理目标，并使用流量服务API激活数据
+
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions).
+>
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions).
+>
+>阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 本教程演示了如何使用流量服务API创建批处理 [云存储](../catalog/cloud-storage/overview.md) 或 [电子邮件营销目标](../catalog/email-marketing/overview.md)，创建数据流到新创建的目标，并通过CSV文件将数据导出到新创建的目标。
 

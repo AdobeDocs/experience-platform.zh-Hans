@@ -2,10 +2,10 @@
 title: Twitter Custom Audiences连接
 description: 通过激活在Twitter中构建的受众，定位您的现有关注者和客户，并创建相关的再营销活动
 exl-id: fd244e58-cd94-4de7-81e4-c321eb673b65
-source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
+source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
 workflow-type: tm+mt
-source-wordcount: '608'
-ht-degree: 3%
+source-wordcount: '669'
+ht-degree: 2%
 
 ---
 
@@ -21,7 +21,6 @@ ht-degree: 3%
 
 1. 您的 [!DNL Twitter Ads] 帐户必须符合广告资格。 新建 [!DNL Twitter Ads] 帐户在创建后头2周内没有资格获得广告。
 2. 您授权在中访问的Twitter用户帐户 [!DNL Twitter Audience Manager] 必须具有 *[!DNL Partner Audience Manager]* 权限启用。
-
 
 ## 支持的身份 {#supported-identities}
 
@@ -55,6 +54,10 @@ ht-degree: 3%
 
 ## 连接到目标 {#connect}
 
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 ### 连接参数 {#parameters}
@@ -66,6 +69,10 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 * **[!UICONTROL 帐户ID]**:您的 [!DNL Twitter Ads] 帐户ID。 这可在 [!DNL Twitter Ads] 设置。
 
 ## 将区段激活到此目标 {#activate}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 读取 [激活用户档案和区段以流式传输区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 

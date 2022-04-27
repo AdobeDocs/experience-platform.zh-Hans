@@ -3,9 +3,9 @@ keywords: 目标个性化；目的地；experience platform target目标；adobe
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 05217dead7e1365d6dcc0cc7ae4078628514d1d5
+source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: '591'
 ht-degree: 1%
 
 ---
@@ -51,6 +51,10 @@ Adobe Target是Adobe Experience Platform中的一个个性化连接。
 >abstract="此选项确定区段在响应页面时将包含在哪些数据收集数据流中。 下拉菜单仅显示已启用目标配置的数据流。 必须先配置数据流，然后才能配置目标。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html?lang=en" text="了解如何配置数据流"
 
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 Adobe Experience Platform会自动连接到您公司的Adobe Target实例。 无需进行身份验证。
@@ -64,6 +68,10 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 * **数据流ID**:这可确定区段将包含在页面响应中的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。 请参阅 [配置数据流](../../../edge/fundamentals/datastreams.md) 以了解更多详细信息。
 
 ## 将区段激活到此目标 {#activate}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 读取 [将用户档案和区段激活到用户档案请求目标](../../ui/activate-profile-request-destinations.md) 有关将受众区段激活到此目标的说明。
 

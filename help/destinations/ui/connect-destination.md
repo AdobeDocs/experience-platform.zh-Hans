@@ -4,14 +4,18 @@ title: 创建新目标连接
 type: Tutorial
 description: 本教程列出了连接到Adobe Experience Platform中目标的步骤
 exl-id: 56d7799a-d1da-4727-ae79-fb2c775fe5a5
-source-git-commit: b275621d9c6552327e0e55c00c8fcf0397088168
+source-git-commit: 729c0724c7af88bb69c9d68a45d58c3575c90828
 workflow-type: tm+mt
-source-wordcount: '383'
+source-wordcount: '411'
 ht-degree: 0%
 
 ---
 
 # 创建新目标连接
+
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 ## 概述 {#overview}
 

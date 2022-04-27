@@ -2,13 +2,13 @@
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Sendgrid;Sendgrid目标
 title: SendGrid连接
 description: 利用SendGrid目标，可导出第一方数据并在SendGrid中激活它以满足您的业务需求。
-source-git-commit: ccbc633bfce8f4f66577b50064c28cfc26cb6dca
+exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
+source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
 workflow-type: tm+mt
-source-wordcount: '1414'
-ht-degree: 3%
+source-wordcount: '1475'
+ht-degree: 2%
 
 ---
-
 
 # [!DNL SendGrid] 连接
 
@@ -74,6 +74,11 @@ SendGrid支持激活下表中描述的身份。 详细了解 [标识](/help/iden
 
 ## 连接到目标 {#connect}
 
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+
+
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 下面详细介绍了特定于此目标的步骤。
 
 1. 在 [!DNL Adobe Experience Platform] 控制台，导航到 **目标**.
@@ -101,6 +106,10 @@ While [设置](https://experienceleague.adobe.com/docs/experience-platform/desti
 ![](../../assets/catalog/email-marketing/sendgrid/06.jpg)
 
 ## 将区段激活到此目标 {#activate}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 读取 [激活用户档案和区段以流式传输区段导出目标](/help/destinations/ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 

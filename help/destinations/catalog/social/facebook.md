@@ -3,9 +3,9 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据经过哈希处理的电子邮件，激活Facebook营销活动的用户档案以进行受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: c5d2427635d90f3a9551e2a395d01d664005e8bc
+source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
 workflow-type: tm+mt
-source-wordcount: '1652'
+source-wordcount: '1713'
 ht-degree: 2%
 
 ---
@@ -120,6 +120,10 @@ ht-degree: 2%
 
 ## 连接到目标 {#connect}
 
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 以下视频还演示了配置 [!DNL Facebook] 目标和激活区段。
@@ -160,6 +164,10 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 >id="platform_destinations_activate_facebook_originofaudience_customersandpartners"
 >title="受众来源"
 >abstract="广告商直接从其客户和合作伙伴那里收集数据。"
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 请参阅 [将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 

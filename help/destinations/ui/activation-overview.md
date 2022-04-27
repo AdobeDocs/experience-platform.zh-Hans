@@ -6,14 +6,18 @@ seo-title: Activation overview
 description: 了解如何将您在Adobe Experience Platform中拥有的受众数据激活到各种类型的目标。
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform to various types of destinations.
 exl-id: 987af401-2d93-45b4-a8f9-191e6058e4da
-source-git-commit: f4ae6831569e8a5b458c42f76810212174f04811
+source-git-commit: 5240e0db96a5072ab02a4c8b52e9c2d3dd4d6aa0
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '327'
 ht-degree: 1%
 
 ---
 
 # 激活概述
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 Adobe Experience Platform支持多种目标。 受众激活工作流因目标所支持的受众数据类型和数据导出频率而异。
 

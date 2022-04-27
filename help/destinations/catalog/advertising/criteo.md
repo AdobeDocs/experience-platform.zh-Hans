@@ -3,9 +3,9 @@ keywords: 广告；克雷蒂奥；
 title: Criteo连接
 description: Criteo支持可信且有影响力的广告，通过开放互联网为每位消费者提供更丰富的体验。 Criteo拥有世界上最大的商业数据集和一流的人工智能，可确保整个购物历程中的每个接触点都经过个性化，以便在适当的时间通过正确的广告来吸引客户。
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: 36da42b184450cfaf12b097f982234d628681430
+source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
 workflow-type: tm+mt
-source-wordcount: '763'
+source-wordcount: '824'
 ht-degree: 3%
 
 ---
@@ -63,6 +63,10 @@ Criteo支持激活下表所述的身份。 详细了解 [标识](https://experie
 
 ## 连接到Criteo {#connect}
 
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+
 要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
 
 ### 验证Criteo
@@ -96,6 +100,10 @@ Criteo支持激活下表所述的身份。 详细了解 [标识](https://experie
 | 广告商ID | 贵组织的关键广告商ID。 请联系您的Criteo客户经理以获取此信息。 | 是 |
 
 ## 将区段激活到此目标 {#activate-segments}
+
+>[!IMPORTANT]
+> 
+>要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 读取 [激活用户档案和区段以流式传输区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
