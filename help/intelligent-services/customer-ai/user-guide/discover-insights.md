@@ -6,9 +6,9 @@ title: 通过客户人工智能发现洞察
 topic-legacy: Discovering insights
 description: 本文档是与Intelligent Services Customer AI用户界面中的服务实例分析交互的指南。
 exl-id: 8aaae963-4029-471e-be9b-814147a5f160
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: 417b3f885f75f107d2db06331053917a76c904c4
 workflow-type: tm+mt
-source-wordcount: '1716'
+source-wordcount: '2079'
 ht-degree: 1%
 
 ---
@@ -169,7 +169,7 @@ Customer AI作为Intelligent Services的一部分，为营销人员提供了利�
 
 ![所有区段](../images/insights/Segments-dashboard.png)
 
-## 性能摘要量度 {#performance-metrics}
+## 历史性能 {#historical-performance}
 
 的 **[!UICONTROL 性能摘要]** 选项卡显示实际流失率或转化率，并按客户AI评分的每个倾向分段进行划分。
 
@@ -192,6 +192,37 @@ Customer AI作为Intelligent Services的一部分，为营销人员提供了利�
 根据您是预测客户流失率还是转化， [!UICONTROL 分数分布] 图表显示在每次增量中更改/转换和未更改/未转换的配置文件的分布。
 
 ![个人评分](../images/insights/scoring_tab.png)
+
+## 模型评估 {#model-evaluation}
+
+除了在“历史绩效”选项卡中跟踪一段时间内的预测结果和实际结果之外，营销人员还通过“模型评估”选项卡在模型质量方面具有更高的透明度。 您可以使用提升图和增益图来确定使用预测模型与随机定位之间的差异。 此外，您还可以确定在每个分数截止时将捕捉多少个积极结果。 这对于细分客户群，以及将投资回报与营销活动相协调非常有用。
+
+### 提升图
+
+![提升图](../images/user-guide/lift-chart.png)
+
+提升图衡量了使用预测模型而不是随机定位的改进。
+
+高质量的示范指标包括：
+
+- 前10年的提升度值较高。 这意味着该模型能够很好地识别最有可能采取相关操作的用户。
+- 提升度值降序。 这意味着分数较高的客户比分数较低的客户更有可能采取感兴趣的操作。
+
+### 增益图
+
+![增益图](../images/user-guide/gains-chart.png)
+
+累积增益图衡量通过将分数定位到超过某个阈值而获得的积极结果的百分比。 按倾向得分从高到低对客户进行排序后，群体将被拆分为10个大小相等的组。 完美的模型能够捕捉到十年中所有积极结果。 基线随机定位方法可根据组的大小按比例捕捉正结果 — 定位30%的用户将捕获30%的结果。
+
+高质量的示范指标包括：
+
+- 累积增益快速接近100%。
+- 模型的累积增益曲线更接近图表的左上角。
+- 累积增益图可用于确定分段和定位的得分截断。 例如，如果模型在前2个得分十年中捕捉了70%的正面结果，则定位PercentileScore大于80的用户，预期会捕捉约70%的正面结果。
+
+### AUC（曲线下的区域）
+
+AUC反映按分数排名与预测目标发生之间关系的强度。 安 **AUC** 0.5表示该模型并不比随机猜测好。 安 **AUC** 1表示模型能准确预测出谁将采取相关行动。
 
 ## 后续步骤
 

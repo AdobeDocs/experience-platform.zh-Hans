@@ -6,9 +6,9 @@ title: 配置Customer AI实例
 topic-legacy: Instance creation
 description: Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: c4e1d739bf54cbebf6a04d87f92d0df4bdbc083e
 workflow-type: tm+mt
-source-wordcount: '2608'
+source-wordcount: '2618'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务�
 
 ## 选择数据 {#select-data}
 
-通过设计， Customer AI使用Adobe Analytics、Adobe Audience Manager、体验事件和消费者体验事件数据来计算倾向得分。 选择数据集时，只会列出与Customer AI兼容的数据集。 要选择数据集，请选择&#x200B;**+**)符号或选中复选框以一次添加多个数据集。 使用搜索选项可快速查找您感兴趣的数据集。
+Customer AI通过设计，一般使用Adobe Analytics、Adobe Audience Manager、体验事件和消费者体验事件数据来计算倾向得分。 选择数据集时，只会列出与Customer AI兼容的数据集。 要选择数据集，请选择&#x200B;**+**)符号或选中复选框以一次添加多个数据集。 使用搜索选项可快速查找您感兴趣的数据集。
 
 ![选择和搜索数据集](../images/user-guide/configure-dataset-page.png)
 
@@ -90,7 +90,9 @@ Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务�
 
 ### 选择标识 {#identity}
 
-为了使多个数据集彼此连接，您必须选择身份类型（也称为“身份命名空间”）和该命名空间中的身份值。 如果您在同一命名空间下为架构内的多个字段分配了身份，则所有分配的身份值都会显示在由命名空间前面的身份下拉菜单中，例如 `EMAIL (personalEmail.address)` 或 `EMAIL (workEmail.address)`.
+现在，您可以根据身份映射（字段）将多个数据集相互连接。 您必须选择标识类型（也称为“标识命名空间”）以及该命名空间中的标识值。 如果您在同一命名空间下为架构内的多个字段分配了身份，则所有分配的身份值都会显示在由命名空间前面的身份下拉菜单中，例如 `EMAIL (personalEmail.address)` 或 `EMAIL (workEmail.address)`.
+
+[选择相同的命名空间](../images/user-guide/cai-identity-map.png)
 
 >[!IMPORTANT]
 >
@@ -98,7 +100,8 @@ Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务�
 
 要选择身份，请选择位于身份列中的带下划线的值。 此时会出现选择标识弹出窗口。
 
-![选择相同的命名空间](../images/user-guide/identity-type.png)
+<!-- ![select same namespace](../images/user-guide/identity-type.png) -->
+[选择相同的命名空间](../images/user-guide/cai-identity-namespace.png)
 
 如果命名空间中有多个标识可用，请确保为用例选择正确的标识字段。 例如，电子邮件命名空间中提供了两个电子邮件标识，即工作电子邮件和个人电子邮件。 根据用例的不同，个人电子邮件更有可能被填写，并且在单个预测中更有用。 这意味着 `EMAIL (personalEmail.address)` 将被选作身份。
 
@@ -116,7 +119,8 @@ Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务�
 
 要创建目标，请选择 **[!UICONTROL 输入字段名称]** ，然后下拉列表中的字段。 选择第二个输入，即事件条件的子句，然后选择提供目标值以完成事件。 通过选择 **[!UICONTROL 添加事件]**. 最后，通过应用以天为单位的预测时间范围来完成目标，然后选择 **[!UICONTROL 下一个]**.
 
-![](../images/user-guide/define-a-goal.png)
+<!-- ![](../images/user-guide/define-a-goal.png) -->
+![](../images/user-guide/cai-define-a-goal.png)
 
 ### 将发生且不发生
 
@@ -124,7 +128,8 @@ Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务�
 
 例如，如果您想设置应用程序来预测客户是否会购买产品，则可以选择 **[!UICONTROL 将发生]** 后跟 **[!UICONTROL 全部]** 然后输入 **commerce.purchases.id** （或类似字段）和 **[!UICONTROL 存在]** 作为运算符。
 
-![将发生](../images/user-guide/occur.png)
+<!-- ![will occur](../images/user-guide/occur.png) -->
+![将发生](../images/user-guide/cai-will-occur.png)
 
 但是，在某些情况下，您可能希望预测某个事件是否会在特定时间范围内发生。 要使用此选项配置目标，请选择 **[!UICONTROL 不会发生]** 从顶级下拉菜单中。
 
