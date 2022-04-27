@@ -2,10 +2,10 @@
 title: XDM业务营销列表成员类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Marketing List Members类。
 exl-id: 069002c2-5583-4c59-84ee-c071e2acaaec
-source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
+source-git-commit: 50e5fe8573d828f88867ed33fe86e974c85de60a
 workflow-type: tm+mt
-source-wordcount: '251'
-ht-degree: 3%
+source-wordcount: '338'
+ht-degree: 2%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 3%
 
 [!UICONTROL XDM业务营销列表成员] 是一个标准的体验数据模型(XDM)类，用于描述与营销列表关联的成员、人员或联系人。
 
-![](../../images/classes/b2b/business-marketing-list-members.png)
+![XDM业务营销列表成员类的结构，如在UI中所示](../../images/classes/b2b/business-marketing-list-members.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
@@ -26,6 +26,7 @@ ht-degree: 3%
 | `marketingListMemberKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 营销列表成员资格实体的组合标识符。 |
 | `personKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 作为营销列表成员的人员的组合标识符。 |
 | `_id` | 字符串 | 记录的唯一标识符。 这是系统生成的值，它与 `marketingListMemberID`. |
+| `isDeleted` | 布尔型 | 指示此营销列表成员实体是否已在Marketo Engage中删除。<br><br>使用 [Marketo源连接器](../../../sources/connectors/adobe-applications/marketo/marketo.md)，则在Marketo中删除的任何记录都会自动反映在实时客户资料中。 但是，与这些用户档案相关的记录仍可能会保留在数据湖中。 通过设置 `isDeleted` to `true`，则可以使用字段在查询数据湖时过滤掉已从源中删除的记录。 |
 | `marketingListID` | 字符串 | 营销列表的唯一ID。 |
 | `marketingListMemberID` | 字符串 | 营销列表成员资格实体的唯一ID。 |
 | `personId` | 字符串 | 人员的唯一ID。 |

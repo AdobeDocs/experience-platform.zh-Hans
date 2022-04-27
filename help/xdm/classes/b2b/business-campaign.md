@@ -2,9 +2,9 @@
 title: XDM Business Campaign类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Campaign类。
 exl-id: 4e3228a1-74be-43af-b355-45d84afb1611
-source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
+source-git-commit: 0084492ed467c5996a94c5c55a79c9faf8f5046e
 workflow-type: tm+mt
-source-wordcount: '206'
+source-wordcount: '239'
 ht-degree: 4%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 4%
 
 [!UICONTROL XDM Business Campaign] 是一个标准的体验数据模型(XDM)类，可捕获业务活动所需的最低属性。
 
-![](../../images/classes/b2b/business-campaign.png)
+![XDM Business Campaign类在UI中显示的结构](../../images/classes/b2b/business-campaign.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
@@ -31,4 +31,6 @@ ht-degree: 4%
 
 {style=&quot;table-layout:auto&quot;}
 
-请参阅 [Real-time CDP B2B Edition中的模式关系](../../tutorials/relationship-b2b.md) 了解此类在概念上如何与其他B2B类相关，以及如何在Adobe Experience Platform UI中建立这些关系。
+要了解此类在概念上如何与其他B2B类相关以及如何在Adobe Experience Platform UI中建立这些关系，请参阅 [Real-time CDP B2B Edition中的模式关系](../../tutorials/relationship-b2b.md)
+
+有关与此类兼容的其他字段，请参阅的字段组引用 [[!UICONTROL XDM Business Campaign详细信息]](../../field-groups/b2b-campaign/details.md).

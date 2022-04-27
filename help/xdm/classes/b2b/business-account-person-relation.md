@@ -2,10 +2,10 @@
 title: XDM业务帐户人员关系分类
 description: 本文档概述了Experience Data Model(XDM)中的XDM业务帐户人员关系类。
 exl-id: d51abe9b-d936-4c84-96e2-35a81ca6b67f
-source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
+source-git-commit: 50e5fe8573d828f88867ed33fe86e974c85de60a
 workflow-type: tm+mt
-source-wordcount: '349'
-ht-degree: 4%
+source-wordcount: '444'
+ht-degree: 3%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 4%
 
 [!UICONTROL XDM业务帐户人员关系] 是一个标准的体验数据模型(XDM)类，可捕获与业务帐户关联的人员所需的最低属性。
 
-![](../../images/classes/b2b/business-account-person-relation.png)
+![XDM业务帐户人员关系类的结构，如在UI中所示](../../images/classes/b2b/business-account-person-relation.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
@@ -30,12 +30,14 @@ ht-degree: 4%
 | `accountPersonID` | 字符串 | 帐户 — 人员关系实体的唯一标识符。 |
 | `currencyCode` | 字符串 | 用于帐户与人员之间关系的ISO 4217货币代码。 |
 | `isActive` | 布尔型 | 指示帐户与人员之间的关系是否有效。 |
+| `isDeleted` | 布尔型 | 指示此帐户与人员关系是否已在Marketo Engage中删除。<br><br>使用 [Marketo源连接器](../../../sources/connectors/adobe-applications/marketo/marketo.md)，则在Marketo中删除的任何记录都会自动反映在实时客户资料中。 但是，与这些用户档案相关的记录仍可能会保留在数据湖中。 通过设置 `isDeleted` to `true`，则可以使用字段在查询数据湖时过滤掉已从源中删除的记录。 |
 | `isDirect` | 布尔型 | 指示这是否是帐户与人员之间的直接关系。 |
 | `isPrimary` | 布尔型 | 指示此人是否是此帐户上的主要联系人。 |
 | `personID` | 字符串 | 帐户与人员关系中人员的唯一标识符。 |
-| `personRole` | 字符串 | 人员在帐户与人员关系中的角色。 |
+| `personRoles` | 字符串数组 | 列出帐户与人员关系中人员的角色。 |
 | `relationEndDate` | DateTime | 帐户与人员之间的关系结束的日期。 |
 | `relationStartDate` | DateTime | 帐户与人员之间的关系开始的日期。 |
+| `relationshipSource` | 字符串 | 帐户 — 人员关系的来源。 |
 
 {style=&quot;table-layout:auto&quot;}
 

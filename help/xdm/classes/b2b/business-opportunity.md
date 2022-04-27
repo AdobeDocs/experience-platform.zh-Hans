@@ -2,10 +2,10 @@
 title: XDM业务机会类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Opportunity类。
 exl-id: d816b0f9-fd37-45da-aa55-247f7f662da0
-source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
+source-git-commit: 50e5fe8573d828f88867ed33fe86e974c85de60a
 workflow-type: tm+mt
-source-wordcount: '237'
-ht-degree: 5%
+source-wordcount: '321'
+ht-degree: 4%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 [!UICONTROL XDM业务机会] 是一个标准的体验数据模型(XDM)类，可捕获业务机会的最低要求属性。
 
-![](../../images/classes/b2b/business-opportunity.png)
+![XDM Business Opportunity类在UI中显示的结构](../../images/classes/b2b/business-opportunity.png)
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
@@ -26,6 +26,7 @@ ht-degree: 5%
 | `opportunityKey` | [[!UICONTROL B2B源]](../../data-types/b2b-source.md) | 机会实体的组合标识符。 |
 | `_id` | 字符串 | 记录的唯一标识符。 这是系统生成的值，它与 `opportunityID`. |
 | `accountID` | 字符串 | 此机会所关联的帐户的唯一ID。 |
+| `isDeleted` | 布尔型 | 指示此营销列表实体是否已在Marketo Engage中删除。<br><br>使用 [Marketo源连接器](../../../sources/connectors/adobe-applications/marketo/marketo.md)，则在Marketo中删除的任何记录都会自动反映在实时客户资料中。 但是，与这些用户档案相关的记录仍可能会保留在数据湖中。 通过设置 `isDeleted` to `true`，则可以使用字段在查询数据湖时过滤掉已从源中删除的记录。 |
 | `opportunityDescription` | 字符串 | 机会的描述。 |
 | `opportunityID` | 字符串 | 机会实体的唯一ID。 |
 | `opportunityName` | 字符串 | 机会的名称。 |

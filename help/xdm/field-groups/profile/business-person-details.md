@@ -2,10 +2,10 @@
 title: XDM业务人员详细信息架构字段组
 description: 本文档概述了XDM业务人员详细信息架构字段组。
 exl-id: e9da5c1c-5a30-4cbc-beb2-cc5efe57cab0
-source-git-commit: edf7afc5db219430232a3226dc691570b50a32bd
+source-git-commit: 0084492ed467c5996a94c5c55a79c9faf8f5046e
 workflow-type: tm+mt
-source-wordcount: '533'
-ht-degree: 7%
+source-wordcount: '601'
+ht-degree: 6%
 
 ---
 
@@ -53,6 +53,7 @@ ht-degree: 7%
 | `workEmail` | [电子邮件地址](../../data-types/email-address.md) | 人员的工作电子邮件地址。 |
 | `workPhone` | [电话号码](../../data-types/phone-number.md) | 此人的工作电话号码。 |
 | `identityMap` | 地图 | 一个映射字段，其中包含人员的一组命名进度标识。 在摄取身份数据时，系统会自动更新此字段。 为了正确利用此字段 [实时客户资料](../../../profile/home.md)，请勿尝试手动更新数据操作中字段的内容。<br /><br />请参阅 [架构组合基础知识](../../schema/composition.md#identityMap) ，以了解其用例的详细信息。 |
+| `isDeleted` | 布尔型 | 指示此人员是否已在Marketo Engage中删除。<br><br>使用 [Marketo源连接器](../../../sources/connectors/adobe-applications/marketo/marketo.md)，则在Marketo中删除的任何记录都会自动反映在实时客户资料中。 但是，与这些用户档案相关的记录仍可能会保留在数据湖中。 通过设置 `isDeleted` to `true`，则可以使用字段在查询数据湖时过滤掉已从源中删除的记录。 |
 | `organizations` | 字符串数组 | 人员工作所在的组织名称列表。 |
 
 {style=&quot;table-layout:auto&quot;}
