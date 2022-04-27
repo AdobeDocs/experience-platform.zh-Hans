@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；用户界面；UI；自定义；许可证使用功能板；功能板；许可证使用；权利；使用情况
-title: 许可证使用功能板
+title: 许可证使用功能板指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织许可证使用情况的重要信息。
 type: Documentation
 exl-id: 143d16bb-7dc3-47ab-9b93-9c16683b9f3f
-source-git-commit: 87b6e12b33c49bdae49be45ce10f92b309a1e98e
+source-git-commit: a15b5525d3a2fa034715803c83dc22a94915347e
 workflow-type: tm+mt
-source-wordcount: '837'
+source-wordcount: '838'
 ht-degree: 1%
 
 ---
@@ -64,7 +64,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 ## 小组件
 
-许可证使用功能板由小组件组成，小组件显示只读量度，提供有关贵组织许可证使用情况的重要信息。 可见量度取决于贵组织的特定许可(请参阅 [可用量度](#available-metrics) 部分)。
+许可证使用功能板由小组件组成，这些小组件显示只读量度，提供有关贵组织许可证使用情况的重要信息。 可见量度取决于贵组织的特定许可(请参阅 [可用量度](#available-metrics) 部分)。
 
 每个小组件都会显示一个折线图，用于比较贵组织的实际数字与贵组织许可时的可用总数，并提供总使用量的百分比。
 

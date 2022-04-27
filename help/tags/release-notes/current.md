@@ -1,15 +1,15 @@
 ---
-title: 发行说明
-description: Adobe Experience Platform中标记的最新发行说明。
+title: 标记发行说明
+description: Adobe Experience Platform 中的标记的最新发行说明。
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: 2056f7f6e7372fa1dee2e975a75e7ba3b8dfe518
+source-git-commit: a15b5525d3a2fa034715803c83dc22a94915347e
 workflow-type: tm+mt
-source-wordcount: '658'
-ht-degree: 6%
+source-wordcount: '666'
+ht-degree: 7%
 
 ---
 
-# 发行说明
+# Adobe Experience Platform中标记的发行说明
 
 >[!NOTE]
 >

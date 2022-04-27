@@ -2,9 +2,10 @@
 keywords: Experience Platform；主页；热门主题；数据管理；许可证授权；许可；最佳实践
 title: 数据管理许可证授权最佳实践
 description: 本文档概述了要遵循的最佳实践，以及可用于通过Adobe Experience Platform更好地管理许可证授权的工具。
-source-git-commit: 3bac35ba5f6e9cde6c1324b11220c523daa1f8cb
+exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
+source-git-commit: a15b5525d3a2fa034715803c83dc22a94915347e
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '2586'
 ht-degree: 0%
 
 ---
@@ -193,7 +194,7 @@ Adobe Experience Platform UI提供了一个功能板，您可以通过该功能�
 | [Adobe Analytics数据准备过滤器](../../sources/tutorials/ui/create/adobe-applications/analytics.md) | 应用 [!DNL Kafka] 从摄取中排除不必要数据的过滤器 |
 | [Adobe Audience Manager源连接器过滤器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | 应用Audience Manager源连接过滤器，从摄取中排除不必要的数据 |
 | [Alloy SDK数据过滤器](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#fundamentals) | 应用Alloy过滤器以从摄取中排除不必要的数据 |
-| [服务器端数据过滤器](https://experienceleague.adobe.com/docs/launch/using/server-side-info/server-side-overview.html?lang=en-better-data-governance) | 应用 [!DNL Kafka] 过滤器从摄取中排除不必要的数据。  请参阅 [事件和条件](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/rules.html#events-and-conditions-(if)) 以了解其他信息。 |
+| [事件转发数据过滤器](../../tags/ui/event-forwarding/overview.md) | 应用服务器端 [!DNL Kafka] 过滤器从摄取中排除不必要的数据。  请参阅 [标记规则](../../tags/ui/managing-resources/rules.md) 以了解其他信息。 |
 | [许可证使用功能板UI](../../dashboards/guides/license-usage.md#license-usage-dashboard-data) | 查看贵组织与许可证相关的数据的快照以进行Experience Platform |
 | [数据集重叠报表API](../../profile/tutorials/dataset-overlap-report.md) | 输出对可寻址受众贡献最大的数据集 |
 | [未知的用户档案报表API](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) | 输出对不同时间阈值应用假名TTL的影响 |

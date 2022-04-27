@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年4月
 description: 2022年4月的Adobe Experience Platform发行说明。
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: e9e4e58de454abb1fc66e07d5ad4ce18398c6a44
+source-git-commit: 881be00b9dd10ea95677cc1a960c80db0afe0c54
 workflow-type: tm+mt
 source-wordcount: '2379'
 ht-degree: 4%
@@ -163,7 +163,7 @@ Attribution AI和客户AI允许客户配置高级AI/ML模型，以便进行营�
 
 有关 [!DNL Intelligent Services]，请参阅 [[!DNL Intelligent Services] 概述](../../intelligent-services/home.md).
 
-### Real-time Customer Data Platform B2B 版本 {#B2B}
+## Real-time Customer Data Platform B2B 版本 {#B2B}
 
 Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP)之上，专为在业务到业务服务模型中运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
 
