@@ -3,7 +3,7 @@ keywords: rtcdp配置文件；配置文件rtcdp;rtcdp身份；rtcdp合并策略�
 title: 了解Real-time CDP中的实时客户资料
 description: 了解Real-time Customer Data Platform如何让您使用实时客户资料为客户提供协调一致的相关体验。
 exl-id: de70948c-ffc1-49d3-a57c-25ad415752ff
-source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
+source-git-commit: 0aca080d9f2c39b8f0a1197e1048d1a77d5e7bc1
 workflow-type: tm+mt
 source-wordcount: '456'
 ht-degree: 0%
