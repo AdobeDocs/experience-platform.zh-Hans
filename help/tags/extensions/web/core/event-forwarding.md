@@ -3,7 +3,7 @@ title: 核心事件转发扩展概述
 description: 了解Adobe Experience Platform中的核心事件转发扩展。
 feature: Event Forwarding
 exl-id: b5ee4ccf-6fa5-4472-be04-782930f07e20
-source-git-commit: 5218e6cf82b74efbbbcf30495395a4fe2ad9fe14
+source-git-commit: d41779c5897b748130b88d3886472c7908347389
 workflow-type: tm+mt
 source-wordcount: '1724'
 ht-degree: 91%
@@ -28,7 +28,7 @@ ht-degree: 91%
 
 指定必须作为事件条件存在的任何自定义代码。使用内置代码编辑器输入自定义代码。Adobe Experience Platform中的事件转发支持ES6。
 
-1. 选择&#x200B;**[!UICONTROL Open Editor]**。
+1. 选择 **[!UICONTROL Open Editor]**.
 1. 键入自定义代码。
 1. 选择&#x200B;**[!UICONTROL 保存]**。
 
@@ -47,7 +47,7 @@ arc.ruleStash: Object<string, *>`
 ```
 
 ```javascript
-logger.log(context.arc.ruleStash);
+utils.logger.log(context.arc.ruleStash);
 ```
 
 `ruleStash` 是一个对象，可从操作模块中收集所有结果。
@@ -158,8 +158,8 @@ module.exports = (context) => {
 提供在触发事件并评估条件后运行的代码。Adobe Experience Platform中的事件转发支持ES6。
 
 1. 命名操作代码。
-1. 选择&#x200B;**[!UICONTROL Open Editor]**。
-1. 编辑代码，然后选择&#x200B;**[!UICONTROL Save]**。
+1. 选择 **[!UICONTROL Open Editor]**.
+1. 编辑代码，然后选择 **[!UICONTROL 保存]**.
 
 要访问自定义代码中数据元素的值，请使用 `getDataElementValue` 方法。例如，要检索名为 `productName` 的数据元素的值，请编写以下代码： 
 
@@ -183,7 +183,7 @@ arc.ruleStash.core.productCategory
 
 ### 自定义代码
 
-通过选择&#x200B;**[!UICONTROL Open Editor]**&#x200B;并将代码插入编辑器窗口，可以将自定义JavaScript输入到UI中。
+通过选择  **[!UICONTROL Open Editor]** 和将代码插入编辑器窗口。
 
 编辑器窗口中需要一个返回语句，以指示应该将什么值用作数据元素值。如果不包含返回语句，或返回的值为 `null` 或 `undefined`，则数据元素的默认值反映为 `null` 或 `undefined`。
 
@@ -226,4 +226,4 @@ arc.event.xdm.page.pageName
 
 >[!NOTE]
 >
->来自客户端的`interact`调用具有`events`，但是对于事件转发，您需要`event`。 这是因为事件转发会单独检查每个事件，而不是像客户端上显示的那样作为多个事件的批处理。
+>的 `interact` 来自客户端的调用 `events`，但是对于事件转发，您需要 `event`. 这是因为事件转发会单独检查每个事件，而不是像客户端上显示的那样作为多个事件的批处理。
