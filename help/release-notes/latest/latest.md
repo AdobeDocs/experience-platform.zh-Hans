@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 6c2271e4c5be924dcd8c137cb40bef72e104c7e2
+source-git-commit: d4a4baf330925d6696f515bf650d86740c18e97c
 workflow-type: tm+mt
-source-wordcount: '2492'
-ht-degree: 4%
+source-wordcount: '2707'
+ht-degree: 3%
 
 ---
 
@@ -87,19 +87,15 @@ Adobe Experience Platform 现有功能的更新包括：
 | 高级企业目标连接器 | 现在通常提供三个企业目标连接器： [[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md), [[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md)和 [[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md). <br> 企业目标连接器的一般可用性包括之前在测试阶段提供的所有功能，等等： <ul><li>新的身份验证功能，包括 [Azure事件中心中的共享访问签名](../../destinations/catalog/cloud-storage/azure-event-hubs.md#sas-authentication) 更多 [身份验证类型](../../destinations/catalog/streaming/http-destination.md#authentication-information) （载体令牌、OAuth 2）；</li><li>[回填历史用户档案数据](../../destinations/catalog/streaming/http-destination.md#historical-data-backfill) （在首次激活时发送符合区段资格条件的历史用户档案）；</li><li>现在，这些目标支持数据流运行量度；</li><li>[其他区段元数据](../../destinations/catalog/streaming/http-destination.md#destination-details) 包含在数据有效负载中，包括区段名称和区段时间戳；</li><li>支持 [静态IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md) 适用于需要允许列表Experience Platform的客户。</li></ul> |
 | 目标数据流的上下文关联警报 | 您现在可以 [订阅警报](../../destinations/ui/alerts.md) 创建目标数据流时，接收有关数据流运行状态、成功或失败的警报消息。 您可以选择在Experience PlatformUI中或通过电子邮件接收警报。 |
 
-<!--
+### 高级企业目标连接器的发布流程 {#release-process-enterprise-destinations}
 
-### Release process for advanced enterprise destination connectors {#release-process-enterprise-destinations}
+对于Amazon Kinesis、Azure事件中心和HTTP API目标，在发行过程（从4月27日开始）中，您将在目标目录中看到以前的测试版目标卡，以及新的通用(GA)目标卡。 使用测试版目标的客户配置的任何数据流将在未来几天内迁移到同一目标的GA版本。 此迁移最终应在4月29日星期五的星期五结束前完成。 测试版目标将在此短暂的时间范围内继续可见，并标记为 **已弃用**.
 
-For the Amazon Kinesis, Azure Event Hubs, and HTTP API destinations, during the release process (starting April 27th), you will see both the former Beta destination card, as well as the new generally available (GA) destination card in the destinations catalog. Any dataflows configured by customers using the beta destinations will be migrated in the next couple of days to the GA version of the same destination. This migration should ultimately be completed by the end of day Friday April 29th. The Beta destinations will be continue to be visible during this short time-window and labeled as **Deprecated**.
+如果您已在测试阶段利用这些目标，请注意以下事项：
 
-If you have been utilizing these destinations in the Beta phase, please note the following:
-
-- If have been previously in Beta with any of the 3 destinations, no action is needed. All dataflows set up as part of Beta will continue to be functional and will be migrated to the GA version.
-- If you want to set up these destinations beginning April 27th, please do so with the new GA version of the destinations.
-- The beta cards marked as deprecated will be removed once the release operation is complete, estimated by the end of day Friday April 29th. The Experience Platform engineering team is monitoring closely for a successful release operation.
-
--->
+- 如果之前已在测试版中且包含3个目标中的任意一个，则无需执行任何操作。 作为测试版一部分设置的所有数据流都将继续正常运行，并将迁移到GA版本。
+- 如果您希望从4月27日开始设置这些目标，请使用新的GA版本的目标进行设置。
+- 完成发行操作后，标记为已弃用的测试版卡将被删除，预计在4月29日星期五当天结束前完成。 Experience Platform工程团队正在密切监控是否成功进行发布操作。
 
 **新目标**
 

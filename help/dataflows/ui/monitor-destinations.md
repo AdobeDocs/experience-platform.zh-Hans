@@ -6,9 +6,9 @@ title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 0f3cb17650612399091c12a6b638471a80306729
+source-git-commit: 2be8ed7daaac6554bdbc52acab325a474fa87566
 workflow-type: tm+mt
-source-wordcount: '3183'
+source-wordcount: '3200'
 ht-degree: 0%
 
 ---
@@ -176,7 +176,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->目前，Experience Platform中所有目标都支持目标监控功能 *除外* the [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md) 目标。
+>- 目前，Experience Platform中所有目标都支持目标监控功能 *除外* the [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化](/help/destinations/catalog/personalization/custom-personalization.md) 目标。
+>- 对于 [AmazonKinesis](/help/destinations/catalog/cloud-storage/amazon-kinesis.md), [Azure事件中心](/help/destinations/catalog/cloud-storage/azure-event-hubs.md)和 [HTTP API](/help/destinations/catalog/streaming/http-destination.md) 目标、排除的标识当前不会显示。
+
 
 使用 [!UICONTROL 目标] 功能板，全面了解激活流的运行状况。 首先，深入了解所有批处理和流目标的汇总级别，然后深入了解数据流、数据流运行和激活区段的详细视图，以便深入查看激活数据。 屏幕 [!UICONTROL 监控] 功能板通过量度和错误描述提供可操作的洞察，以帮助您解决激活方案中可能出现的任何问题。
 

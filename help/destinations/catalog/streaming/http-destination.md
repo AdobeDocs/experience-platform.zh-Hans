@@ -3,7 +3,7 @@ title: HTTP API连接
 keywords: 流；
 description: 使用Adobe Experience Platform中的HTTP API目标，将配置文件数据发送到第三方HTTP端点，以运行您自己的分析，或对导出为Experience Platform外的配置文件数据执行可能需要的任何其他操作。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 30549f31e7ba7f9cfafd2e71fb3ccfb701b9883f
+source-git-commit: d4a4baf330925d6696f515bf650d86740c18e97c
 workflow-type: tm+mt
 source-wordcount: '2296'
 ht-degree: 0%
@@ -92,6 +92,11 @@ curl --location --request POST 'https://some-api.com/token' \
 
 ### 身份验证信息 {#authentication-information}
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_http_clientcredentialstype"
+>title="客户端凭据类型"
+>abstract="选择 **已编码的正文形式** 在请求正文中包含客户端ID和客户端密钥，或 **基本授权** 在授权标头中包含客户端ID和客户端密钥。 查看文档中的示例。"
+
 #### 承载令牌身份验证 {#bearer-token-authentication}
 
 如果您选择 **[!UICONTROL 载体令牌]** 连接到HTTP端点的身份验证类型，输入以下字段并选择 **[!UICONTROL 连接到目标]**:
@@ -121,11 +126,6 @@ curl --location --request POST 'https://some-api.com/token' \
 * **[!UICONTROL 密码]**:访问HTTP端点的密码。
 
 #### OAuth 2客户端凭据身份验证 {#oauth-2-client-credentials-authentication}
-
->[!CONTEXTUALHELP]
->id="platform_destinations_connect_http_clientcredentialstype"
->title="客户端凭据类型"
->abstract="选择 **已编码的正文形式** 在请求正文中包含客户端ID和客户端密钥，或 **基本授权** 在授权标头中包含客户端ID和客户端密钥。 查看文档中的示例。"
 
 如果您选择 **[!UICONTROL OAuth 2客户端凭据]** 连接到HTTP端点的身份验证类型，输入以下字段并选择 **[!UICONTROL 连接到目标]**:
 
