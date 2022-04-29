@@ -1,12 +1,12 @@
 ---
 title: 配置数据流
-description: 将您的客户端Experience PlatformSDK集成与Adobe产品和第三方目标连接起来。
+description: 将客户端 Experience Platform SDK 集成与 Adobe 产品和第三方目标连接起来。
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；边缘配置ID；标识；启用ID同步；ID同步容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID；数据收集的数据准备；数据准备；映射器；XDM；边缘上的XDM；映射器
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 5c57f65014736e20e1bcad6a9b158c923bbb4220
+source-git-commit: 2275a32cfa9419d2ca407dd48a15f8d06354cd49
 workflow-type: tm+mt
-source-wordcount: '2102'
-ht-degree: 1%
+source-wordcount: '2081'
+ht-degree: 2%
 
 ---
 
@@ -18,17 +18,13 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->您的组织必须配置此功能才能在UI中访问它。 请填写以下内容 [表单](https://adobe.ly/websdkaccess) 请求必要的访问权限。
+>您的组织必须配置此功能才能在UI中访问它。 请填写以下内容 [表单](https://adobe.ly/websdkaccess) 请求必要的访问权限。 要管理数据流，必须将您的用户帐户添加到 [!DNL Adobe Experience Platform].
 
 ## 访问 [!UICONTROL 数据流] 工作区
 
 您可以通过选择 **[!UICONTROL 数据流]** 中。
 
 ![数据收集UI中的“数据流”选项卡](../images/datastreams/datastreams-tab.png)
-
->[!NOTE]
->
->而您可以 [!UICONTROL 数据流] 选项卡无论您是否使用Platform的标签管理功能，都必须拥有开发人员权限来自行管理数据流。 请参阅 [用户权限](../../tags/ui/administration/user-permissions.md) 有关更多详细信息，请参阅标记文档中的文章。
 
 的 [!UICONTROL 数据流] 选项卡显示现有数据流的列表，包括其友好名称、ID和上次修改日期。 选择要跟踪的数据流的名称 [查看其详细信息并配置服务](#view-details).
 
