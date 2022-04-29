@@ -3,9 +3,9 @@ title: 平台Web SDK中的身份数据
 description: 了解如何使用Adobe Experience Cloud Web SDK检索和管理Adobe Experience Platform ID(ECID)。
 keywords: 身份；第一方身份；身份服务；第三方身份；ID迁移；访客ID；第三方身份；ThirdPartyCookiesEnabled;idMigrationEnabled;getIdentity；同步身份；sendEvent;identityMap；主；EID；身份命名空间；命名空间ID;authenticationState;hashEnabled;
 exl-id: 03060cdb-becc-430a-b527-60c055c2a906
-source-git-commit: 6fb6d1579f888720b6af9617400d512a68d06264
+source-git-commit: 85ff35e0e7f7e892de5252e8f3ad069eff83aa15
 workflow-type: tm+mt
-source-wordcount: '1327'
+source-wordcount: '1334'
 ht-degree: 1%
 
 ---
@@ -20,9 +20,9 @@ Adobe Experience Platform Web SDK利用 [Adobe Experience Cloud ID(ECID)](../../
 
 Platform Web SDK通过使用Cookie分配和跟踪ECID，以及使用多种可用方法配置这些Cookie的生成方式。
 
-当新用户到达您的网站时，Adobe Experience Cloud Identity服务会尝试为该用户设置设备标识Cookie。 对于首次访客，会在Adobe Experience Platform边缘网络的首次响应中生成并返回ECID。 对于重复访客，将从 `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` cookie和添加到有效负载中。
+当新用户到达您的网站时，Adobe Experience Cloud Identity服务会尝试为该用户设置设备标识Cookie。 对于首次访客，会在Adobe Experience Platform边缘网络的首次响应中生成并返回ECID。 对于重复访客，将从 `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` cookie和Edge Network添加到有效负载中。
 
-设置包含ECID的Cookie后，Platform Web SDK生成的每个后续请求都将包含该ECID。
+设置包含ECID的Cookie后，Web SDK生成的每个后续请求都将在 `kndctr_{YOUR-ORG-ID}_AdobeOrg_identity` cookie。
 
 使用Cookie进行设备标识时，您有两个选项可与边缘网络进行交互：
 
