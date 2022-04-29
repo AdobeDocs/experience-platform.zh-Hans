@@ -2,7 +2,7 @@
 description: 本页列出并介绍了您可以使用“/authoring/destinations” API端点执行的所有API操作。
 title: 目标API端点操作
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: 51417bee5dba7a96d3a7a7eb507fc95711fad4a5
+source-git-commit: e3886cbcde76e37263d2fa23769fb9e96501edc4
 workflow-type: tm+mt
 source-wordcount: '2537'
 ht-degree: 4%
@@ -154,7 +154,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `uiAttributes.frequency` | 字符串 | `Streaming` 是当前唯一可用的选项。 |
 | `identityNamespaces.externalId.acceptsAttributes` | 布尔型 | 指示您的目标是否接受标准配置文件属性。 通常，这些属性会在我们的合作伙伴文档中突出显示。 |
 | `identityNamespaces.externalId.acceptsCustomNamespaces` | 布尔型 | 指示客户是否可以在您的目标中设置自定义命名空间。 |
-| `identityNamespaces.externalId.allowedAttributesTransformation` | 字符串 | _示例配置中未显示_. 例如，当 [!DNL Platform] 客户将纯电子邮件地址作为属性，且您的平台仅接受经过哈希处理的电子邮件。 在这里，您将提供需要应用的转换（例如，将电子邮件转换为小写，然后再转换为哈希）。 |
+| `identityNamespaces.externalId.transformation` | 字符串 | _示例配置中未显示_. 例如，当 [!DNL Platform] 客户将纯电子邮件地址作为属性，且您的平台仅接受经过哈希处理的电子邮件。 在这里，您将提供需要应用的转换（例如，将电子邮件转换为小写，然后再转换为哈希）。 |
 | `identityNamespaces.externalId.acceptedGlobalNamespaces` | - | 用于平台接受 [标准身份命名空间](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) （例如IDFA），以便您可以限制Platform用户仅选择这些身份命名空间。 <br> 使用 `acceptedGlobalNamespaces`，您可以使用 `"requiredTransformation":"sha256(lower($))"` 更改为小写和哈希电子邮件地址或电话号码。 |
 | `destinationDelivery.authenticationRule` | 字符串 | 指示方式 [!DNL Platform] 客户连接到您的目标。 接受的值为 `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>使用 `CUSTOMER_AUTHENTICATION` 如果Platform客户通过用户名和密码、载体令牌或其他身份验证方法登录您的系统。 例如，如果您还选择了 `authType: OAUTH2` 或 `authType:BEARER` in `customerAuthenticationConfigurations`. </li><li> 使用 `PLATFORM_AUTHENTICATION` 如果Adobe与目标之间存在全局身份验证系统，并且 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，必须使用 [凭据](./credentials-configuration-api.md) 配置。 </li><li>使用 `NONE` 如果向目标平台发送数据时不需要任何身份验证。 </li></ul> |
 | `destinationDelivery.destinationServerId` | 字符串 | 的 `instanceId` 的 [目标服务器模板](./destination-server-api.md) 用于此目标。 |
@@ -586,7 +586,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 | `uiAttributes.frequency` | 字符串 | `Streaming` 是当前唯一可用的选项。 |
 | `identityNamespaces.externalId.acceptsAttributes` | 布尔型 | 指示您的目标是否接受标准配置文件属性。 通常，这些属性会在我们的合作伙伴文档中突出显示。 |
 | `identityNamespaces.externalId.acceptsCustomNamespaces` | 布尔型 | 指示客户是否可以在您的目标中设置自定义命名空间。 有关更多信息 [自定义命名空间](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#manage-namespaces) 在Adobe Experience Platform。 |
-| `identityNamespaces.externalId.allowedAttributesTransformation` | 字符串 | _示例配置中未显示_. 例如，当 [!DNL Platform] 客户将纯电子邮件地址作为属性，且您的平台仅接受经过哈希处理的电子邮件。 在这里，您将提供需要应用的转换（例如，将电子邮件转换为小写，然后再转换为哈希）。 |
+| `identityNamespaces.externalId.transformation` | 字符串 | _示例配置中未显示_. 例如，当 [!DNL Platform] 客户将纯电子邮件地址作为属性，且您的平台仅接受经过哈希处理的电子邮件。 在这里，您将提供需要应用的转换（例如，将电子邮件转换为小写，然后再转换为哈希）。 |
 | `identityNamespaces.externalId.acceptedGlobalNamespaces` | - | 用于平台接受 [标准身份命名空间](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) （例如IDFA），以便您可以限制Platform用户仅选择这些身份命名空间。 |
 | `destinationDelivery.authenticationRule` | 字符串 | 指示方式 [!DNL Platform] 客户连接到您的目标。 接受的值为 `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>使用 `CUSTOMER_AUTHENTICATION` 如果Platform客户通过用户名和密码、载体令牌或其他身份验证方法登录您的系统。 例如，如果您还选择了 `authType: OAUTH2` 或 `authType:BEARER` in `customerAuthenticationConfigurations`. </li><li> 使用 `PLATFORM_AUTHENTICATION` 如果Adobe与目标之间存在全局身份验证系统，并且 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，必须使用 [凭据](./authentication-configuration.md) 配置。 </li><li>使用 `NONE` 如果向目标平台发送数据时不需要任何身份验证。 </li></ul> |
 | `destinationDelivery.destinationServerId` | 字符串 | 的 `instanceId` 的 [目标服务器模板](./destination-server-api.md) 用于此目标。 |
