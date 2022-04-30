@@ -1,10 +1,11 @@
 ---
 title: 数据元素
 description: 数据元素是数据字典（或数据映射）的构建块。使用数据元素可跨市场营销和广告技术收集、组织和交付数据。
-source-git-commit: 010e05968f1d7ad5675b0f0af43d9cfcc1f3a2ff
+exl-id: 1e7b03cc-5a54-403d-bf8d-dbc206cfeb2d
+source-git-commit: af9a5118f3633c132dd88ab659f570c9136b12e1
 workflow-type: tm+mt
 source-wordcount: '1631'
-ht-degree: 72%
+ht-degree: 74%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 72%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 数据元素是数据字典（或数据映射）的构建块。使用数据元素可跨市场营销和广告技术收集、组织和交付数据。
 
@@ -26,7 +27,7 @@ ht-degree: 72%
 
 可重用数据元素的概念非常强大，您应该将它们作为最佳实践使用。
 
-例如，如果您通过特定方式引用页面名称或产品ID，或从联盟营销链接或[!DNL AdWords]中的查询字符串参数获取信息，等等，则可以通过以下方式创建数据字典（数据元素）：从其源中获取信息，然后在各种标签规则中使用该数据。
+例如，如果您通过特定方式引用页面名称或产品ID，或从联盟营销链接或的查询字符串参数获取信息 [!DNL AdWords]等等，您可以通过从数据字典的源中获取信息，然后在各种标记规则中使用该数据来创建数据字典（数据元素）。
 
 使用页面名称为例，假设您通过引用数据层、`document.title` 元素或网站中的标题标记来使用特定的页面名称模式。利用Adobe Experience Platform中的标记，可将数据元素创建为该特定数据点的单个引用点。 之后，您可以在需要引用该页面名称的任意规则中使用此数据元素。如果在未来出于某些原因，您决定更改引用页面名称的方式（例如，您已经引用了 `document.title`，但现在希望引用某个特定数据层），那么要更改该引用，您无需编辑多个不同的规则。只需在数据元素中更改引用一次，引用该数据元素的所有规则都会自动更新。
 
@@ -55,11 +56,11 @@ ht-degree: 72%
 
 数据元素是规则的构建块。数据元素可用于创建页面上常用项目的数据字典（或数据映射），而无需考虑网站中所包含对象的项目源自何处（查询字符串、URL 或 Cookie 值）。
 
-1. 在属性页面中，打开[!UICONTROL 数据元素]选项卡，然后选择&#x200B;**[!UICONTROL 新建数据元素]**。
+1. 在资产页面中，打开 [!UICONTROL 数据元素] 选项卡，然后选择 **[!UICONTROL 创建新数据元素]**.
 1. 命名数据元素。
 1. 选择扩展和类型。
 
-   可用的数据元素类型由扩展决定。有关核心标记扩展可用类型的信息，请参阅[数据元素类型](data-elements.md#types-of-data-elements)。
+   可用的数据元素类型由扩展决定。有关核心标记扩展可用类型的信息，请参阅 [数据元素类型](data-elements.md#types-of-data-elements).
 
 1. 在提供的字段中提供任何请求的有关所选类型的信息。
 1. （可选）输入默认值。
@@ -84,9 +85,9 @@ ht-degree: 72%
    * Visitor
       * 该值会无限期地存储在浏览器的本地存储中。
 
-1. 选择 **[!UICONTROL Save]**。
+1. 选择&#x200B;**[!UICONTROL 保存]**。
 
-创建或编辑元素后，您可以将其保存并生成到[活动库](../publishing/libraries.md#active-library)。这会立即将更改保存到库并执行生成操作。随即会显示生成操作的状态。您还可以从[!UICONTROL Active Library]下拉列表中创建新库。
+创建或编辑元素后，您可以将其保存并生成到[活动库](../publishing/libraries.md#active-library)。这会立即将更改保存到库并执行生成操作。随即会显示生成操作的状态。您还可以从 [!UICONTROL 活动库] 下拉列表。
 
 ## 数据元素类型 {#types-of-data-elements}
 
@@ -104,7 +105,7 @@ ht-degree: 72%
 
 ### 自定义代码
 
-通过选择[!UICONTROL Open Editor]并将代码插入编辑器窗口，可以将自定义JavaScript输入到UI中。
+通过选择  [!UICONTROL Open Editor] 和将代码插入编辑器窗口。
 
 编辑器窗口中需要一个返回语句，以指示应该将什么值设置为数据元素值。如果不包含返回语句，数据元素则解析为 `undefined`。这会触发回退去查找存储的值，如果没有存储的值，则使用默认值。
 
@@ -131,11 +132,16 @@ return eventType; // if this data element is called from a "DOM Ready" event, th
 
 然后，您可以在自定义脚本中通过使用 `_satellite` 对象语法来使用此数据元素：
 
-`_satellite.getVar('data element name', event);`
+```javascript
+// event refers to the calling rule's event
+var rule = _satellite.getVar('return event rule', event);
+```
 
-使用`%..%`符号时，您只需指定数据元素名称即可。 而无需指定 `event`。
+使用百分比(`%`)语法，则您只需指定数据元素名称。 而无需指定 `event`。
 
-`%data element name%`
+```text
+%data element name%
+```
 
 ### DOM 属性
 
@@ -176,7 +182,7 @@ CSS 选择器链：
 
 ### 本地存储
 
-在[!UICONTROL 本地存储项名称]字段中提供本地存储项的名称。
+在 [!UICONTROL 本地存储项名称] 字段。
 
 本地存储允许浏览器将信息从一个页面存储到另一个页面 ([https://www.w3schools.com/html/html5\_webstorage.asp](https://www.w3schools.com/html/html5_webstorage.asp))。本地存储的工作方式与Cookie非常相似，但更大、更灵活。
 
@@ -197,7 +203,7 @@ CSS 选择器链：
 
 ### 查询字符串参数
 
-在[!UICONTROL URL Parameter]字段中指定单个URL参数。
+在 [!UICONTROL URL参数] 字段。
 
 只有名称部分是必需提供的，并且应该忽略任何特殊标志符，例如“?”或“=”
 
@@ -224,7 +230,7 @@ CSS 选择器链：
 
 ### 会话存储
 
-在[!UICONTROL 会话存储项名称]字段中提供会话存储项的名称。
+在 [!UICONTROL 会话存储项名称] 字段。
 
 会话存储类似于本地存储，不同之处在于，会话存储在会话结束后会丢弃数据，而本地存储或 Cookie 则可以保留数据。
 
