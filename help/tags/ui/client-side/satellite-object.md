@@ -2,10 +2,10 @@
 title: 卫星对象引用
 description: 了解客户端_satellite对象以及您可以在标记中使用该对象执行的各种功能。
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: 814f853d16219021d9151458d93fc5bdc6c860fb
+source-git-commit: 47391de09bcad1dc99340caa84cdfff13e9f5237
 workflow-type: tm+mt
-source-wordcount: '1279'
-ht-degree: 44%
+source-wordcount: '1291'
+ht-degree: 42%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 44%
 >
 >Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-本文档用作客户端`_satellite`对象以及您可以使用该对象执行的各种函数的引用。
+本文档用作客户端的参考 `_satellite` 对象以及您可以使用该对象执行的各种函数。
 
 ## `track`
 
@@ -31,7 +31,7 @@ _satellite.track(identifier: string [, detail: *] )
 _satellite.track('contact_submit', { name: 'John Doe' });
 ```
 
-`track` 使用已使用核心标记扩展的给定标识符配置的直接调用事件类型触发所有规则。以上示例使用“直接调用”事件类型触发所有规则，其中配置的标识符为 `contact_submit`。此外，还会传递包含相关信息的可选对象。可以通过在条件或操作的文本字段中输入 `%event.detail%` 或者在“自定义代码”条件或操作的代码编辑器中输入 `event.detail` 来访问详细信息对象。
+`track` 使用已使用核心标记扩展的给定标识符配置的直接调用事件类型触发所有规则。 以上示例使用“直接调用”事件类型触发所有规则，其中配置的标识符为 `contact_submit`。此外，还会传递包含相关信息的可选对象。可以通过在条件或操作的文本字段中输入 `%event.detail%` 或者在“自定义代码”条件或操作的代码编辑器中输入 `event.detail` 来访问详细信息对象。
 
 ## `getVar`
 
@@ -49,7 +49,16 @@ var product = _satellite.getVar('product');
 
 在提供的示例中，如果存在具有匹配名称的数据元素，则将返回数据元素的值。 如果不存在匹配的数据元素，则将检查以前是否使用 `_satellite.setVar()` 设置了具有匹配名称的自定义变量。如果找到匹配的自定义变量，则将返回其值。
 
-请注意，在数据收集用户界面的许多表单字段中，您可以使用`%%`语法来引用变量，从而无需调用`_satellite.getVar()`。 例如，使用 %product% 将访问产品数据元素或自定义变量的值。
+>[!NOTE]
+>
+>您可以使用百分比(`%`)语法以引用数据收集UI中许多表单字段的变量，因此无需调用 `_satellite.getVar()`. 例如，使用 `%product%` 将访问产品数据元素或自定义变量的值。
+
+当事件触发规则时，您可以传递规则的相应 `event` 对象 `_satellite.getVar()` 如此：
+
+```javascript
+// event refers to the calling rule's event
+var rule = _satellite.getVar('return event rule', event);
+```
 
 ## `setVar`
 
@@ -65,7 +74,7 @@ _satellite.setVar(name: string, value: *)
 _satellite.setVar('product', 'Circuit Pro');
 ```
 
-`setVar()` 设置具有给定名称和值的自定义变量。之后可以使用 `_satellite.getVar()` 访问该变量的值。
+`setVar()` 设置具有给定名称和值的自定义变量。 之后可以使用 `_satellite.getVar()` 访问该变量的值。
 
 您可以选择一次设置多个变量，方法是传递一个对象，其中键是变量名称，值是各自的变量值。
 
@@ -87,7 +96,7 @@ _satellite.getVisitorId() => Object
 var visitorIdInstance = _satellite.getVisitorId();
 ```
 
-如果资产上安装了 [!DNL Adobe Experience Cloud ID] 扩展，此方法将返回访客 ID 实例。有关详细信息，请参阅 [Experience Cloud ID 服务文档](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)。
+如果资产上安装了 [!DNL Adobe Experience Cloud ID] 扩展，此方法将返回访客 ID 实例。有关详细信息，请参阅 [Experience Cloud ID 服务文档](https://experienceleague.adobe.com/docs/id-service/using/home.html)。
 
 ## `logger`
 
@@ -115,7 +124,7 @@ _satellite.logger.error(message: string)
 _satellite.logger.error('No product ID found.');
 ```
 
-`logger`对象允许消息记录到浏览器控制台。 仅当用户启用了标记调试（通过调用`_satellite.setDebug(true)`或使用适当的浏览器扩展）时，才会显示该消息。
+的 `logger` 对象允许消息记录到浏览器控制台。 仅当用户启用了标记调试(通过调用 `_satellite.setDebug(true)` 或使用适当的浏览器扩展)。
 
 ### 记录弃用警告
 
@@ -133,11 +142,11 @@ _satellite.logger.deprecation('This method is no longer supported, please use [n
 
 ## `cookie` {#cookie}
 
-`_satellite.cookie` 包含用于读取和写入Cookie的函数。它是第三方库js-cookie的公开副本。 有关此库更高级用法的详细信息，请参阅[js-cookie文档](https://www.npmjs.com/package/js-cookie#basic-usage)。
+`_satellite.cookie` 包含用于读取和写入Cookie的函数。 它是第三方库js-cookie的公开副本。 有关此库更高级用法的详细信息，请查看 [js-cookie文档](https://www.npmjs.com/package/js-cookie#basic-usage).
 
 ### 设置Cookie {#cookie-set}
 
-要设置Cookie，请使用`_satellite.cookie.set()`。
+要设置Cookie，请使用 `_satellite.cookie.set()`.
 
 **代码**
 
@@ -147,7 +156,7 @@ _satellite.cookie.set(name: string, value: string[, attributes: Object])
 
 >[!NOTE]
 >
->在旧的[`setCookie`](#setCookie)设置Cookie的方法中，此函数调用的第三个（可选）参数是一个整数，表示Cookie的生存时间(TTL)（以天为单位）。 在此新方法中，“属性”对象被接受为第三个参数。 要使用新方法为Cookie设置TTL，您必须在属性对象中提供`expires`属性，并将其设置为所需值。 以下示例中演示了这一点。
+>在旧 [`setCookie`](#setCookie) 设置cookie的方法中，此函数调用的第三个（可选）参数是一个整数，表示cookie的生存时间(TTL)（以天为单位）。 在此新方法中，“属性”对象被接受为第三个参数。 要使用新方法为Cookie设置TTL，您必须提供 `expires` 属性，并将其设置为所需的值。 以下示例中演示了这一点。
 
 **示例**
 
@@ -159,7 +168,7 @@ _satellite.cookie.set('product', 'Circuit Pro', { expires: 7 });
 
 ### 检索Cookie {#cookie-get}
 
-要检索Cookie，请使用`_satellite.cookie.get()`。
+要检索Cookie，请使用 `_satellite.cookie.get()`.
 
 **代码**
 
@@ -177,7 +186,7 @@ var product = _satellite.cookie.get('product');
 
 ### 删除Cookie {#cookie-remove}
 
-要删除Cookie，请使用`_satellite.cookie.remove()`。
+要删除Cookie，请使用 `_satellite.cookie.remove()`.
 
 **代码**
 
@@ -205,7 +214,7 @@ _satellite.buildInfo
 
 ### `turbineVersion`
 
-这会提供当前库中使用的[Turbine](https://www.npmjs.com/package/@adobe/reactor-turbine)版本。
+这提供了 [涡轮](https://www.npmjs.com/package/@adobe/reactor-turbine) 当前库中使用的版本。
 
 ### `turbineBuildDate`
 
@@ -247,7 +256,7 @@ _satellite.environment
 | 属性 | 描述 |
 | --- | --- |
 | `id` | 环境的id。 |
-| `stage` | 生成此库的环境。可能的值为`development`、`staging`和`production`。 |
+| `stage` | 生成此库的环境。可能的值为 `development`, `staging`和 `production`. |
 
 ## `notify`
 
@@ -267,7 +276,7 @@ _satellite.notify(message: string[, level: number])
 _satellite.notify('Hello world!');
 ```
 
-`notify` 将消息记录到浏览器控制台。仅当用户启用了标记调试（通过调用`_satellite.setDebug(true)`或使用适当的浏览器扩展）时，才会显示该消息。
+`notify` 将消息记录到浏览器控制台。 仅当用户启用了标记调试(通过调用 `_satellite.setDebug(true)` 或使用适当的浏览器扩展)。
 
 可以传递可选的日志记录级别，这将影响所记录消息的样式和过滤。 支持的级别包括：
 
@@ -373,7 +382,7 @@ _satellite._monitors
 
 **样例**
 
-在运行标记库的网页上，向HTML中添加一个代码片段。 通常，代码会插入到`<head>`元素中加载标记库的`<script>`元素之前。 这允许监视器捕获标记库中最早发生的系统事件。 例如：
+在运行标记库的网页上，向HTML中添加一个代码片段。 通常，代码会插入到 `<head>` 元素之前 `<script>` 元素。 这允许监视器捕获标记库中最早发生的系统事件。 例如：
 
 ```html
 <!DOCTYPE html>
@@ -415,7 +424,7 @@ _satellite._monitors
 </html>
 ```
 
-在第一个脚本元素中，由于尚未加载标记库，因此会创建初始的`_satellite`对象，并初始化`_satellite._monitors`上的数组。 然后，此脚本将一个监视器对象添加到该数组。监视器对象可以指定以下方法，标记库稍后将调用这些方法：
+在第一个脚本元素中，由于尚未加载标记库，因此初始 `_satellite` 创建对象，并在上创建数组 `_satellite._monitors` 已初始化。 然后，此脚本将一个监视器对象添加到该数组。监视器对象可以指定以下方法，标记库稍后将调用这些方法：
 
 ### `ruleTriggered`
 
@@ -423,7 +432,7 @@ _satellite._monitors
 
 ### `ruleCompleted`
 
-在规则完全处理后，将调用此函数。 换言之，事件已发生，所有条件都已传递，所有操作都已执行。 传递给`ruleCompleted`的事件对象包含有关已完成的规则的信息。
+在规则完全处理后，将调用此函数。 换言之，事件已发生，所有条件都已传递，所有操作都已执行。 传递给的事件对象 `ruleCompleted` 包含有关已完成的规则的信息。
 
 ### `ruleConditionFailed`
 
