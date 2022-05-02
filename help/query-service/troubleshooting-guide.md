@@ -5,9 +5,9 @@ title: 查询服务疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档包含有关您遇到的常见错误代码以及可能原因的信息。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: a6924a1018d5dd4e3f03b3d8b6375cacb450a4f5
+source-git-commit: aa61cb696d647c5f039283ce5926d5fa1e901a13
 workflow-type: tm+mt
-source-wordcount: '3413'
+source-wordcount: '3516'
 ht-degree: 1%
 
 ---
@@ -257,6 +257,8 @@ SELECT count(1) FROM myTableName
 +++回答：首先，检查日志以查找错误的详细信息。 有关 [在日志中查找错误](#error-logs) 提供了有关如何执行此操作的更多信息。
 
 您还应查看相关文档，以获取有关如何执行操作的指导 [UI中的计划查询](./ui/user-guide.md#scheduled-queries) 通过 [API](./api/scheduled-queries.md).
+
+以下是使用 [!DNL Query Editor]. 它们不适用于 [!DNL Query Service] API:<br/>您只能向已创建、保存和运行的查询添加计划。<br/>您 **无法** 向参数化查询添加计划。<br/>计划查询 **无法** 包含匿名块。<br/>您只能计划 **one** 使用UI查询模板。 如果要向查询模板添加其他计划，则需要使用API。 如果已使用API添加计划，则您将无法使用UI添加其他计划。
 +++
 
 ### “已达到会话限制”错误是什么意思？

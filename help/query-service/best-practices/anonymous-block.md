@@ -2,9 +2,9 @@
 title: 查询服务中的匿名块
 description: 匿名块是Adobe Experience Platform查询服务支持的SQL语法，它允许您高效执行一系列查询
 exl-id: ec497475-9d2b-43aa-bcf4-75a430590496
-source-git-commit: 7087991c7a3daad57c5acd92a20c7024a1152c7e
+source-git-commit: 43c5bdbfa93872ba54bde72bbea8201b73e9dfee
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '515'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 Adobe Experience Platform查询服务支持匿名块。 匿名块功能允许您链接一个或多个按顺序执行的SQL语句。 它们还允许使用例外处理选项。
 
 匿名块功能是执行一系列操作或查询的一种有效方法。 块内的查询链可以另存为模板，并计划在特定时间或间隔运行。 这些查询可用于写入和附加数据以创建新数据集，通常在具有依赖关系的情况下使用。
+
+>[!IMPORTANT]
+>
+>目前，只有通过 [!DNL Query Service] API。 请参阅相关文档 [有关通过API计划查询的完整说明](../api/scheduled-queries.md).
 
 该表提供了块主要部分的划分：执行和异常处理。 这些部分由关键词定义 `BEGIN`, `END`和 `EXCEPTION`.
 
