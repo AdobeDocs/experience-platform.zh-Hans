@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 54211c6166552ac86382d08da80fde3d9dad1257
+source-git-commit: 18f7e32c8922b254d68655aeb2b633c12a97d2a7
 workflow-type: tm+mt
-source-wordcount: '1331'
+source-wordcount: '1343'
 ht-degree: 46%
 
 ---
@@ -12,6 +12,10 @@ ht-degree: 46%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [平台Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## 版本2.11.2 - 2022年5月3日
+
+包含Adobe Experience Platform Web SDK库的版本2.10.1。
 
 ## 版本2.11.1 - 2022年4月22日
 
