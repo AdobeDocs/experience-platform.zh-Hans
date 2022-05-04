@@ -4,9 +4,9 @@ title: 目标功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: bc449e066a6c9875dd667c5b1715ab3226228d85
+source-git-commit: b4cd7bc0d8c038346aacdda7c4c9def12864065c
 workflow-type: tm+mt
-source-wordcount: '1764'
+source-wordcount: '1962'
 ht-degree: 0%
 
 ---
@@ -56,6 +56,9 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 按身份映射的区段]](#mapped-segments-by-identity)
 * [[!UICONTROL 常见受众]](#common-audiences)
 * [[!UICONTROL 目标计数]](#destinations-count)
+* [[!UICONTROL 目标状态]](#destination-status)
+* [[!UICONTROL 按目标平台划分的活动目标]](#active-destinations-by-destination-platform)
+* [[!UICONTROL 所有目标中的已激活受众]](#activated-audiences-across-all-destinations)
 
 ### [!UICONTROL 最常用的目标] {#most-used-destinations}
 
@@ -164,6 +167,28 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 在总计数以下，选择 **[!UICONTROL 目标]** 导航到目标浏览选项卡。 此页面列出了迄今为止您已与建立连接的所有目标。
 
 ![目标计数小组件。](../images/destinations/destinations-count.png)
+
+### [!UICONTROL 目标状态] {#destination-status}
+
+的 [!UICONTROL 目标状态] 小组件将已启用目标的总数显示为单个量度，并使用圆环图来说明已启用和已禁用目标之间的比例差异。
+
+当光标悬停在圆环图的相应部分上时，对话框中会显示已启用或已禁用目标的单个计数。
+
+![目标状态小组件。](../images/destinations/destination-status.png)
+
+### [!UICONTROL 按目标平台划分的活动目标] {#active-destinations-by-destination-platform}
+
+小组件提供了一个两列表，用于显示活动目标平台的列表以及每个目标平台的活动目标总数。 目标平台列表按从高到低的顺序排列。
+
+![按目标平台小组件列出的活动目标。](../images/destinations/active-destinations-by-destination-platform.png)
+
+### [!UICONTROL 所有目标中的已激活受众] {#activated-audiences-across-all-destinations}
+
+的 [!UICONTROL 所有目标中的已激活受众] 小组件在一个量度中提供所有目标中激活的受众总数。 此数字对于最近的快照是准确的。
+
+![所有目标小组件中的已激活受众。](../images/destinations/activated-audiences-across-all-destinations.png)
+
+选择 **[!UICONTROL 受众]** 导航到目标 [!UICONTROL 浏览] 选项卡。 此页面提供了所有已启用的目标和各种相关量度的列表。 请参阅相关文档 [有关 [!UICONTROL 浏览] 选项卡](../../destinations/ui/destinations-workspace.md#browse).
 
 ## 后续步骤
 

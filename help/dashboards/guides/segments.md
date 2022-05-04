@@ -4,9 +4,9 @@ title: 区段功能板
 description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 2842344f4b17d76bf1c3313500e691357df31ebc
+source-git-commit: b4cd7bc0d8c038346aacdda7c4c9def12864065c
 workflow-type: tm+mt
-source-wordcount: '1047'
+source-wordcount: '1232'
 ht-degree: 0%
 
 ---
@@ -68,9 +68,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 要进一步了解每个可用的标准小组件，请从以下列表中选择小组件的名称：
 
 * [[!UICONTROL 受众大小]](#audience-size)
-* [[!UICONTROL 受众大小趋势]](#audience-size-trend)
 * [[!UICONTROL 身份重叠]](#identity-overlap)
 * [[!UICONTROL 按身份划分的用户档案]](#profiles-by-identity)
+* [[!UICONTROL Audience Activation订单]](#audience-activation-order)
+* [[!UICONTROL 受众大小趋势]](#audience-size-trend)
+* [[!UICONTROL 受众大小更改趋势]](#audience-size-change-trend)
+* [[!UICONTROL 按身份划分的受众大小趋势]](#audience-size-trend-by-identity)
 
 ### [!UICONTROL 受众大小] {#audience-size}
 
@@ -79,18 +82,6 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 有关片段和合并的用户档案的更多信息，请首先阅读 [实时客户资料概述](../../profile/home.md).
 
 ![](../images/segments/audience-size.png)
-
-### [!UICONTROL 受众大小趋势] {#audience-size-trend}
-
-的 **[!UICONTROL 受众大小趋势]** 小组件提供有关在每日快照期间、过去30天、90天或12个月内捕获的区段内配置文件总数的信息。 此小组件显示随着新用户档案符合区段资格或退出区段，区段大小可能随时间而发生的变化。
-
-要了解有关区段评估以及用户档案如何确定并退出区段的更多信息，请参阅 [Segmentation Service文档](../../segmentation/home.md).
-
-![区段概述会显示受众大小趋势小组件。](../images/segments/audience-size-trend-captions.png)
-
-的 **[!UICONTROL 受众大小趋势]** 小组件提供 [!UICONTROL 字幕] 按钮。 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。 机器学习模型通过分析图表和区段数据自动生成字幕以描述关键趋势和重要事件。
-
-![受众大小趋势小组件的自动字幕对话框。](../images/segments/audience-size-trend-automatic-captions-dialog.png)
 
 ### [!UICONTROL 身份重叠] {#identity-overlap}
 
@@ -108,9 +99,37 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 的 **[!UICONTROL 按身份划分的用户档案]** 小组件显示选定区段中所有合并配置文件的身份划分。 按身份划分的用户档案总数可能大于区段中的用户档案总数，因为一个用户档案可能具有多个与其关联的身份。 换言之，将每个身份显示的值相加，可能总计会大于区段中的受众总大小，因为如果客户在多个渠道上与您的品牌进行交互，则多个身份可能会与该个别客户关联。
 
+选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
+
+![按身份标题显示的用户档案对话框。](../images/segments/profiles-by-identity.png)
+
+机器学习模型通过分析数据的整体分布和关键维度自动生成数据分析。
+
 要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
 
-![](../images/segments/profiles-by-identity.png)
+### [!UICONTROL Audience Activation订单] {#audience-activation-order}
+
+的 [!UICONTROL Audience Activation订单] 小组件提供一个三列表格，其中列出了 [!UICONTROL 目标名称], [!UICONTROL 平台]和激活 [!UICONTROL 日期] 观众席。 该列表根据新近度按从高到低的顺序排列，最多可容纳10行。
+
+![受众激活订单小组件。](../images/segments/audience-activation-order.png)
+
+### [!UICONTROL 受众大小趋势] {#audience-size-trend}
+
+的 [!UICONTROL 受众大小趋势] 小组件为符合 **any** 区段定义。 可以在30天、90天和12个月期间显示受众规模趋势。 时间段是从小组件的下拉菜单中选择的。 受众大小反映在y轴上，时间反映在x轴上。
+
+![受众大小趋势小组件。](../images/segments/audience-size-trend.png)
+
+### [!UICONTROL 受众大小更改趋势] {#audience-size-change-trend}
+
+此小组件提供了一个折线图图，用于显示符合给定区段资格的配置文件总数与最近的每日快照之间的差异。 从概述下拉菜单中选择了要分析的区段。 趋势分析的周期可以显示为30天、90天和12个月。 时间段是从小组件的下拉菜单中选择的。 受众大小反映在y轴上，时间反映在x轴上。
+
+![受众大小更改趋势小组件。](../images/segments/audience-size-change-trend.png)
+
+### [!UICONTROL 按身份划分的受众大小趋势] {#audience-size-trend-by-identity}
+
+此小组件根据从小组件下拉菜单中选择的身份类型，展示特定区段的受众大小趋势。 从概述下拉菜单中选择用于分析的区段。 趋势分析的周期可以显示为30天、90天和12个月。 时间段是从小组件的下拉菜单中选择的。
+
+![按身份小组件显示的受众大小趋势。](../images/segments/audience-size-trend-by-identity.png)
 
 ## 后续步骤
 

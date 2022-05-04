@@ -4,9 +4,9 @@ title: 用户档案仪表板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: bc449e066a6c9875dd667c5b1715ab3226228d85
+source-git-commit: b4cd7bc0d8c038346aacdda7c4c9def12864065c
 workflow-type: tm+mt
-source-wordcount: '2572'
+source-wordcount: '2976'
 ht-degree: 0%
 
 ---
@@ -65,7 +65,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 ## 合并策略 {#merge-policies}
 
-在 [!UICONTROL 用户档案] 功能板基于应用于实时客户资料数据的合并策略。 当从多个来源收集数据以创建客户配置文件时，数据可能包含冲突值（例如，一个数据集可能将一个客户列为“单个”，而另一个数据集可能将该客户列为“已婚”）。 合并策略的作业是确定哪些数据要优先排序，并作为用户档案的一部分显示。
+在 [!UICONTROL 用户档案] 功能板基于应用于实时客户资料数据的合并策略。 当从多个来源收集数据以创建客户配置文件时，数据可能包含冲突值。 例如，一个数据集可能将一个客户列为“单个”，而另一个数据集可能将该客户列为“已婚”。 合并策略的作业是确定哪些数据要优先排序，并作为用户档案的一部分显示。
 
 有关合并策略的更多信息，包括如何为贵组织创建、编辑和声明默认的合并策略，请首先阅读 [合并策略概述](../../profile/merge-policies/overview.md).
 
@@ -73,13 +73,13 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 >[!NOTE]
 >
->下拉菜单仅显示与XDM单个配置文件类相关的合并策略，但是，如果您的组织已创建多个合并策略，则可能意味着您需要滚动才能查看可用合并策略的完整列表。
+>下拉菜单仅显示与XDM单个配置文件类相关的合并策略。 但是，如果贵组织已创建多个合并策略，则可能意味着您需要滚动才能查看可用合并策略的完整列表。
 
 ![](../images/profiles/select-merge-policy.png)
 
 ## 并集模式
 
-的 [!UICONTROL 并集架构] 功能板显示特定XDM类的并集架构。 通过选择 [!UICONTROL **类**] 下拉列表中，您可以查看不同XDM类的并集架构。
+的 [!UICONTROL 并集架构] 功能板显示特定XDM类的并集架构。 通过选择 **[!UICONTROL 类]** 下拉列表中，您可以查看不同XDM类的并集架构。
 
 并集架构由多个架构组成，这些架构共享同一类并已为用户档案启用。 它们使您能够在单个视图中查看同一类的每个架构中包含的每个字段的集合。
 
@@ -99,13 +99,17 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 * [[!UICONTROL 用户档案计数]](#profile-count)
 * [[!UICONTROL 添加了用户档案]](#profiles-added)
-* [[!UICONTROL 用户档案计数趋势]](#profiles-count-trend)
+* [[!UICONTROL 用户档案已添加趋势]](#profiles-added-trend)
 * [[!UICONTROL 按身份划分的用户档案]](#profiles-by-identity)
 * [[!UICONTROL 身份重叠]](#identity-overlap)
 * [[!UICONTROL 单个身份配置文件]](#single-identity-profiles)
 * [[!UICONTROL 未分段的用户档案]](#unsegmented-profiles)
-* [[!UICONTROL 未分段的用户档案] 趋势](#unsegmented-profiles-trend)
+* [[!UICONTROL 未分段的用户档案趋势]](#unsegmented-profiles-trend)
 * [[!UICONTROL 按身份划分的未分段用户档案]](#unsegmented-profiles-by-identity)
+* [[!UICONTROL 映射到目标状态的受众]](#audiences-mapped-to-destination-status)
+* [[!UICONTROL 受众大小]](#audiences-size)
+* [[!UICONTROL 用户档案计数趋势]](#profile-count-trend)
+* [[!UICONTROL 按身份划分的单个身份配置文件]](#single-identity-profiles-by-identity)
 
 ### [!UICONTROL 用户档案计数] {#profile-count}
 
@@ -127,23 +131,23 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 >[!NOTE]
 >
->的 [!UICONTROL 添加了用户档案] 小组件可反映在设置配置文件存储区并摄取配置文件后添加的配置文件数量。 换言之，如果贵组织设置用户档案存储并在第1天摄取了4,000,000个用户档案，则在24小时内即可使用功能板，但是 [!UICONTROL 添加了用户档案] 小组件将设置为0。 这样做是为了避免与将用户档案初始摄取到系统中相关的尖峰。 在接下来的30天中，您的组织会将另外1,000,000个用户档案摄取到用户档案存储区。 在拍摄下一个快照后， [!UICONTROL 添加了用户档案] 小组件将显示共添加1,000,000个用户档案， [!UICONTROL 用户档案计数] 小组件会显示总共5,000,000个用户档案。
+>的 [!UICONTROL 添加了用户档案] 小组件反映添加的用户档案数 **after** 初始配置文件摄取和配置文件存储设置。 换言之，如果贵组织设置用户档案存储并在第1天摄取了4,000,000个用户档案，则在24小时内即可使用功能板，但是 [!UICONTROL 添加了用户档案] 小组件将设置为0。 这样做是为了避免与将用户档案初始摄取到系统中相关的尖峰。 在接下来的30天中，您的组织会将另外1,000,000个用户档案摄取到用户档案存储区。 在拍摄下一个快照后， [!UICONTROL 添加了用户档案] 小组件将显示共添加1,000,000个用户档案， [!UICONTROL 用户档案计数] 小组件会显示总共5,000,000个用户档案。
 
 ![](../images/profiles/profiles-added.png)
 
-### [!UICONTROL 用户档案计数趋势] {#profiles-count-trend}
+### [!UICONTROL 用户档案已添加趋势] {#profiles-added-trend}
 
-的 **[!UICONTROL 用户档案计数趋势]** 小组件显示过去30天、90天或12个月内每天添加到用户档案存储的合并用户档案总数。 此数字在拍摄快照时每天都会更新，因此，如果要将配置文件摄取到平台，则在拍摄下一个快照之前不会反映配置文件数量。 添加的用户档案计数是将选定的合并策略应用于您的用户档案数据的结果，以便将用户档案片段合并在一起，为每个人形成一个用户档案。
+的 **[!UICONTROL 用户档案已添加趋势]** 小组件显示过去30天、90天或12个月内每天添加到用户档案存储的合并用户档案总数。 此数字在拍摄快照时每天都会更新，因此，如果要将配置文件摄取到平台，则在拍摄下一个快照之前不会反映配置文件数量。 添加的用户档案计数是将选定的合并策略应用于您的用户档案数据的结果，以便将用户档案片段合并在一起，为每个人形成一个用户档案。
 
 请参阅 [本文档前面关于合并策略的章节](#merge-policies) 以了解更多。
 
-的 **[!UICONTROL 用户档案计数趋势]** 小组件在小组件的右上角显示“字幕”按钮。 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
+的 **[!UICONTROL 用户档案已添加趋势]** 小组件在小组件的右上角显示“字幕”按钮。 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
 
-![“配置文件概述”选项卡，其中显示了突出显示了字幕按钮的“配置文件计数”趋势小组件。](../images/profiles/profile-count-trend-captions.png)
+![“配置文件概述”选项卡，其中显示了已添加的配置文件趋势小组件，并突出显示了字幕按钮。](../images/profiles/profiles-added-trend-captions.png)
 
 机器学习模型通过分析图表和数据自动生成用于描述关键趋势和重要事件的字幕。
 
-![用户档案计数趋势小组件的自动字幕对话框。](../images/profiles/profiles-count-trends-automatic-captions-dialog.png)
+![“配置文件”中添加了趋势小组件的自动字幕对话框。](../images/profiles/profiles-added-trends-automatic-captions-dialog.png)
 
 ### [!UICONTROL 按身份划分的用户档案] {#profiles-by-identity}
 
@@ -151,9 +155,15 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 请参阅 [本文档前面关于合并策略的章节](#merge-policies) 以了解更多。
 
-要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
+![“配置文件”概述功能板中突出显示了按身份划分的配置文件小组件。](../images/profiles/profiles-by-identity.png)
 
-![](../images/profiles/profiles-by-identity.png)
+选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
+
+![按身份标题显示的用户档案对话框。](../images/profiles/profiles-by-identity-captions.png)
+
+机器学习模型通过分析数据的整体分布和关键维度自动生成数据分析。
+
+要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
 
 ### [!UICONTROL 身份重叠] {#identity-overlap}
 
@@ -181,7 +191,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 未分段的用户档案趋势] {#unsegmented-profiles-trend}
 
-的 [!UICONTROL 未分段的用户档案趋势] 小组件为在给定时间段内未附加到任何区段的用户档案数量提供了折线图插图。 未附加到任何区段的用户档案趋势可在30天、90天和12个月期间进行可视化。 时间段是从小组件的下拉菜单中选择的。 轮廓计数反映在x轴上的y轴和时间中。
+的 [!UICONTROL 未分段的用户档案趋势] 小组件为在给定时间段内未附加到任何区段的用户档案数量提供了折线图插图。 未附加到任何区段的用户档案趋势可在30天、90天和12个月期间进行可视化。 时间段是从小组件的下拉菜单中选择的。 轮廓计数反映在y轴上，时间反映在x轴上。
 
 ![未分段的用户档案趋势小组件。](../images/profiles/unsegmented-profiles-trend.png)
 
@@ -191,13 +201,47 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ![按身份小组件划分的未分段用户档案。](../images/profiles/unsegmented-profiles-by-identity.png)
 
+### [!UICONTROL 映射到目标状态的受众] {#audiences-mapped-to-destination-status}
+
+的 [!UICONTROL 映射到目标状态的受众] 小组件在单个量度中显示已映射和未映射受众的总数，并使用圆环图来说明其总数之间的比例差异。 计算的数字取决于所选的合并策略。
+
+当光标悬停在圆环图的相应部分上时，对话框中会显示已映射或未映射受众的单个计数。
+
+![映射到目标状态小组件的受众。](../images/profiles/audiences-mapped-to-destination-status.png)
+
+### [!UICONTROL 受众大小] {#audiences-size}
+
+的 [!UICONTROL 受众大小] 小组件提供了一个双列表，其中列出了最多20个区段以及每个区段包含的受众总数。 该列表按受众总数从高到低进行排序。 总受众大小取决于应用的合并策略。
+
+![受众大小小组件。](../images/profiles/audiences-size.png)
+
+要查看区段的完整信息，请从提供的列表中选择一个区段名称，以导航到 [!UICONTROL 区段] [!UICONTROL 详细信息] 页面。 此外，通过选择 **[!UICONTROL 查看所有区段]** 在小组件的末尾，您可以导航到 [!UICONTROL 区段] [!UICONTROL 浏览] 选项卡来查找任何现有区段。
+
+![具有区段名称的受众大小小组件，可查看突出显示的所有区段文本。](../images/profiles/audiences-size-view-all-segments.png)
+
+有关 [[!UICONTROL 区段] [!UICONTROL  浏览] 选项卡](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#browse).
+
+### [!UICONTROL 用户档案计数趋势] {#profile-count-trend}
+
+的 [!UICONTROL 用户档案计数趋势] 小组件使用折线图来说明一段时间内系统中包含的配置文件总数的趋势。 此总数包括自上次每日快照后导入系统的所有用户档案。 数据可在30天、90天和12个月期间显示。 时间段是从小组件的下拉菜单中选择的。
+
+![用户档案计数趋势小组件。](../images/profiles/profile-count-trend.png)
+
+### [!UICONTROL 按身份划分的单个身份配置文件] {#single-identity-profiles-by-identity}
+
+此小组件使用条形图来说明仅使用单个唯一标识符标识的用户档案总数。 该小组件最多支持五种最常出现的身份。
+
+将鼠标悬停在单个栏上可查看一个对话框，其中详细列出了身份的用户档案总数。
+
+![按身份小组件划分的单个身份配置文件。](../images/profiles/single-identity-profiles-by-identity.png)
+
 ## （测试版）用户档案功效小组件 {#profile-efficacy-widgets}
 
 >[!IMPORTANT]
 >
 >用户档案功效小组件当前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
 
-Adobe会提供多个小组件，用于评估所摄取的用户档案是否完整，以便用于数据分析。 每个用户档案效能小组件都可以按合并策略进行过滤。 要更改合并策略筛选器，请选择[!UICONTROL 使用合并策略的用户档案] 下拉列表，然后从可用列表中选择相应的策略。
+Adobe会提供多个小组件，用于评估所摄取的用户档案是否完整，以便用于数据分析。 每个用户档案效能小组件都可通过合并策略进行过滤。 要更改合并策略筛选器，请选择[!UICONTROL 使用合并策略的用户档案] 下拉列表，然后从可用列表中选择相应的策略。
 
 要进一步了解每个用户档案功效小组件，请从以下列表中选择小组件的名称：
 
@@ -232,7 +276,7 @@ Adobe会提供多个小组件，用于评估所摄取的用户档案是否完整
 
 ### （测试版） [!UICONTROL 用户档案完整性趋势] {#profile-completeness-trend}
 
-此小组件创建堆叠式面积图以描述配置文件随时间的完整性趋势。 完整性是通过在所有观察到的属性中填充非空值的属性百分比来衡量的。 它将配置文件完整性分类为自上次处理日期以来的高、中或低完整性。
+此小组件创建堆叠式面积图以描述配置文件随时间的完整性趋势。 完整性由所有观察到的属性中填充了非空值的属性的百分比来衡量。 它将配置文件完整性分类为自上次处理日期以来的高、中或低完整性。
 
 x轴表示时间，y轴表示用户档案的数量，颜色表示用户档案完整性的三个级别。
 
