@@ -5,9 +5,9 @@ title: 源连接器概述
 topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: cc966bccf28dcc915d5c19eab7614d6e80a7e67f
+source-git-commit: f0b8b5d16739b2bec6e1a11b718962de3faed463
 workflow-type: tm+mt
-source-wordcount: '1031'
+source-wordcount: '997'
 ht-degree: 0%
 
 ---
@@ -48,19 +48,19 @@ Experience Platform支持从第三方广告系统摄取数据。 有关特定源
 
 云存储源可以将您自己的数据引入平台，而无需下载、设置或上传。 摄取的数据可以格式为XDM JSON、XDM Parquet或分隔。 流程的每个步骤均使用用户界面集成到源工作流中。 有关更多信息，请参阅以下相关文档：
 
-- [[!DNL Azure Data Lake Storage Gen2] 连接器](connectors/cloud-storage/adls-gen2.md)
-- [[!DNL Azure Blob] 连接器](connectors/cloud-storage/blob.md)
-- [[!DNL Amazon Kinesis] 连接器](connectors/cloud-storage/kinesis.md)
-- [[!DNL Amazon S3] 连接器](connectors/cloud-storage/s3.md)
-- [[!DNL Apache HDFS] 连接器](connectors/cloud-storage/hdfs.md)
-- [[!DNL Azure Event Hubs] 连接器](connectors/cloud-storage/eventhub.md)
-- [[!DNL Azure File Storage] 连接器](connectors/cloud-storage/azure-file-storage.md)
+- [[!DNL Azure Data Lake Storage Gen2]](connectors/cloud-storage/adls-gen2.md)
+- [[!DNL Azure Blob]](connectors/cloud-storage/blob.md)
+- [[!DNL Amazon Kinesis]](connectors/cloud-storage/kinesis.md)
+- [[!DNL Amazon S3]](connectors/cloud-storage/s3.md)
+- [[!DNL Apache HDFS]](connectors/cloud-storage/hdfs.md)
+- [[!DNL Azure Event Hubs]](connectors/cloud-storage/eventhub.md)
+- [[!DNL Azure File Storage]](connectors/cloud-storage/azure-file-storage.md)
 - [[!DNL Data Landing Zone]](connectors/cloud-storage/data-landing-zone.md)
-- [[!DNL FTP] 连接器](connectors/cloud-storage/ftp.md)
-- [[!DNL Google Cloud Storage] 连接器](connectors/cloud-storage/google-cloud-storage.md)
-- [[!DNL Google PubSub] 连接器](connectors/cloud-storage/google-pubsub.md)
-- [[!DNL Oracle Object Storage] 连接器](connectors/cloud-storage/oracle-object-storage.md)
-- [[!DNL SFTP] 连接器](connectors/cloud-storage/sftp.md)
+- [[!DNL FTP]](connectors/cloud-storage/ftp.md)
+- [[!DNL Google Cloud Storage]](connectors/cloud-storage/google-cloud-storage.md)
+- [[!DNL Google PubSub]](connectors/cloud-storage/google-pubsub.md)
+- [[!DNL Oracle Object Storage]](connectors/cloud-storage/oracle-object-storage.md)
+- [[!DNL SFTP]](connectors/cloud-storage/sftp.md)
 
 ### 同意和首选项 {#consent}
 
@@ -69,12 +69,12 @@ Experience Platform支持从第三方同意和首选项管理平台摄取数据�
 - [[!DNL OneTrust Integration]](connectors/consent-and-preferences/onetrust.md)
 
 
-### 客户关系管理(CRM) {#crm}
+### 客户关系管理(CRM) {#customer-relationship-management}
 
 CRM系统提供的数据有助于建立客户关系，这反过来又可以创造忠诚度并促进客户维系。 Experience Platform支持从 [!DNL Microsoft Dynamics 365] 和 [!DNL Salesforce]. 有关更多信息，请参阅以下相关文档：
 
-- [[!DNL Microsoft Dynamics] 连接器](connectors/crm/ms-dynamics.md)
-- [[!DNL Salesforce] 连接器](connectors/crm/salesforce.md)
+- [[!DNL Microsoft Dynamics]](connectors/crm/ms-dynamics.md)
+- [[!DNL Salesforce]](connectors/crm/salesforce.md)
 - [[!DNL Veeva CRM]](connectors/crm/veeva.md)
 - [[!DNL Zoho CRM]](connectors/crm/zoho.md)
 
@@ -82,31 +82,31 @@ CRM系统提供的数据有助于建立客户关系，这反过来又可以创�
 
 Experience Platform支持从第三方客户成功应用程序摄取数据。 有关更多信息，请参阅以下相关文档：
 
-- [[!DNL Salesforce Service Cloud] 连接器](connectors/customer-success/salesforce-service-cloud.md)
-- [[!DNL ServiceNow] 连接器](connectors/customer-success/servicenow.md)
+- [[!DNL Salesforce Service Cloud]](connectors/customer-success/salesforce-service-cloud.md)
+- [[!DNL ServiceNow]](connectors/customer-success/servicenow.md)
 
 ### 数据库 {#database}
 
 Experience Platform支持从第三方数据库摄取数据。 有关特定源连接器的更多信息，请参阅以下相关文档：
 
-- [[!DNL Amazon Redshift] 连接器](connectors/databases/redshift.md)
-- [[!DNL Apache Hive on Azure HDInsights] 连接器](connectors/databases/hive.md)
-- [[!DNL Apache Spark on Azure HDInsights] 连接器](connectors/databases/spark.md)
-- [[!DNL Azure Data Explorer] 连接器](connectors/databases/data-explorer.md)
-- [[!DNL Azure Synapse Analytics] 连接器](connectors/databases/synapse-analytics.md)
-- [[!DNL Azure Table Storage] 连接器](connectors/databases/ats.md)
-- [[!DNL Couchbase] 连接器](connectors/databases/couchbase.md)
-- [[!DNL Google BigQuery] 连接器](connectors/databases/bigquery.md)
-- [[!DNL GreenPlum] 连接器](connectors/databases/greenplum.md)
-- [[!DNL HP Vertica] 连接器](connectors/databases/hp-vertica.md)
-- [[!DNL IBM DB2] 连接器](connectors/databases/ibm-db2.md)
-- [[!DNL MariaDB] 连接器](connectors/databases/mariadb.md)
-- [[!DNL Microsoft SQL Server] 连接器](connectors/databases/sql-server.md)
-- [[!DNL MySQL] 连接器](connectors/databases/mysql.md)
-- [[!DNL Oracle] 连接器](connectors/databases/oracle.md)
-- [[!DNL Phoenix] 连接器](connectors/databases/phoenix.md)
-- [[!DNL PostgreSQL] 连接器](connectors/databases/postgres.md)
-- [[!DNL Snowflake] 连接器](connectors/databases/snowflake.md)
+- [[!DNL Amazon Redshift]](connectors/databases/redshift.md)
+- [[!DNL Apache Hive on Azure HDInsights]](connectors/databases/hive.md)
+- [[!DNL Apache Spark on Azure HDInsights]](connectors/databases/spark.md)
+- [[!DNL Azure Data Explorer]](connectors/databases/data-explorer.md)
+- [[!DNL Azure Synapse Analytics]](connectors/databases/synapse-analytics.md)
+- [[!DNL Azure Table Storage]](connectors/databases/ats.md)
+- [[!DNL Couchbase]](connectors/databases/couchbase.md)
+- [[!DNL Google BigQuery]](connectors/databases/bigquery.md)
+- [[!DNL GreenPlum]](connectors/databases/greenplum.md)
+- [[!DNL HP Vertica]](connectors/databases/hp-vertica.md)
+- [[!DNL IBM DB2]](connectors/databases/ibm-db2.md)
+- [[!DNL MariaDB]](connectors/databases/mariadb.md)
+- [[!DNL Microsoft SQL Server]](connectors/databases/sql-server.md)
+- [[!DNL MySQL]](connectors/databases/mysql.md)
+- [[!DNL Oracle]](connectors/databases/oracle.md)
+- [[!DNL Phoenix]](connectors/databases/phoenix.md)
+- [[!DNL PostgreSQL]](connectors/databases/postgres.md)
+- [[!DNL Snowflake]](connectors/databases/snowflake.md)
 
 ### 电子商务 {#ecommerce}
 

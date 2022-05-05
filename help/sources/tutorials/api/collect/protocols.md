@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用源连接器和API从协议应用程序检索数据并将其摄取到平台中的步骤。
 exl-id: e14e75c2-2a93-45d8-8056-f06075bd4b8d
-source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
+source-git-commit: 85af48f773d36eb00149b9fdec71a9c566a1bde5
 workflow-type: tm+mt
-source-wordcount: '1276'
+source-wordcount: '1293'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已经具有与平台上以下任何协议源的有效基本连接ID:<ul><li>[通用OData](../create/protocols/odata.md)</li><li>[通用REST](../create/protocols/generic-rest.md)</li></ul>
+>要创建数据流，您必须已经具有与协议源的有效基连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#protocols) 有关可创建基本连接的协议源列表。
 
 ## 快速入门
 

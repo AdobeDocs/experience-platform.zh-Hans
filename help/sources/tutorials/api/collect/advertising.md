@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方广告应用程序检索数据，并使用源连接器和流量服务API将其摄取到平台中的步骤。
 exl-id: 2a0eb13b-d09e-4bc1-aae3-84c8741eead1
-source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
+source-git-commit: 85af48f773d36eb00149b9fdec71a9c566a1bde5
 workflow-type: tm+mt
-source-wordcount: '1296'
+source-wordcount: '1302'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已经具有 [!DNL Google AdWords] 基本连接ID。 如果您没有此ID，请参阅有关如何 [创建 [!DNL Google AdWords] 基本连接](../create/advertising/ads.md) ，然后再尝试执行本教程。
+>要创建数据流，您必须已经具有与广告源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#advertising) 以获取可与其创建基本连接的广告源列表。
 
 ## 快速入门
 

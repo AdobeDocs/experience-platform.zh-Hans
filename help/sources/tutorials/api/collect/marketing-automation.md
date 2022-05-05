@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从营销自动化系统检索数据以及使用源连接器和API将数据导入Adobe Experience Platform的步骤。
 exl-id: f3754bd0-ed31-4bf2-8f97-975bf6a9b076
-source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
+source-git-commit: 85af48f773d36eb00149b9fdec71a9c566a1bde5
 workflow-type: tm+mt
-source-wordcount: '1289'
+source-wordcount: '1311'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已拥有与平台上以下任意营销自动化源的有效基本连接ID:<ul><li>[[!DNL HubSpot]](../create/marketing-automation/hubspot.md)</li><li>[[!DNL Mailchimp Campaigns]](../create/marketing-automation/mailchimp-campaign.md)</li><li>[[!DNL Mailchimp Members]](../create/marketing-automation/mailchimp-members.md)</li><li>[[!DNL Salesforce Marketing Cloud]](../create/marketing-automation/salesforce-marketing-cloud.md)</li></ul>
+>要创建数据流，您必须已经具有与营销自动化源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#marketing-automation) 有关营销自动化源的列表，您可以创建基本连接。
 
 ## 快速入门
 

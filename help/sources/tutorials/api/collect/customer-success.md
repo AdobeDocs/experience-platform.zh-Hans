@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从客户成功系统中检索数据，并使用源连接器和API将其摄取到平台中的步骤。
 exl-id: 0fae04d0-164b-4113-a274-09677f4bbde5
-source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
+source-git-commit: 85af48f773d36eb00149b9fdec71a9c566a1bde5
 workflow-type: tm+mt
-source-wordcount: '1305'
+source-wordcount: '1327'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已拥有与平台上以下任何客户成功源的有效基本连接ID:<ul><li>[[!DNL Salesforce Service Cloud]](../create/customer-success/salesforce-service-cloud.md)</li><li>[[!DNL ServiceNow]](../create/customer-success/servicenow.md)</li></ul>
+>要创建数据流，您必须已拥有与客户成功来源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#customer-success) 有关客户成功来源的列表，您可以与其创建基本连接。
 
 ## 快速入门
 

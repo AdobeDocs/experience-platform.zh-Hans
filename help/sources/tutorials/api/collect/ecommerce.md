@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程涵盖从第三方电子商务系统检索数据，并使用源连接器和API将其摄取到平台中的步骤。
 exl-id: 0952f037-5e20-4d84-a2e6-2c9470f168f5
-source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
+source-git-commit: 85af48f773d36eb00149b9fdec71a9c566a1bde5
 workflow-type: tm+mt
-source-wordcount: '1260'
+source-wordcount: '1266'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已经具有 [!DNL Shopify] 基本连接ID。 如果您没有此ID，请参阅有关如何 [创建 [!DNL Shopify] 基本连接](../create/ecommerce/shopify.md) ，然后再尝试执行本教程。
+>要创建数据流，您必须已具有与电子商务源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#ecommerce) 以获取可创建基本连接的电子商务源列表。
 
 ## 快速入门
 

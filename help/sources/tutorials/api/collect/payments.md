@@ -1,14 +1,14 @@
 ---
-keywords: Experience Platform;home;popular topics;Collect payment data;payment data
+keywords: Experience Platform；主页；热门主题；收集付款数据；付款数据
 solution: Experience Platform
 title: 使用流服务API为支付源创建数据流
 topic-legacy: overview
 type: Tutorial
 description: 本教程涵盖从支付应用程序检索数据并使用源连接器和API将其摄取到平台中的步骤。
 exl-id: b75e2a3d-6590-4079-a261-fa4e9626e8dc
-source-git-commit: fc719a4ec90c5150f129deec45da87df703ec4b5
+source-git-commit: 85af48f773d36eb00149b9fdec71a9c566a1bde5
 workflow-type: tm+mt
-source-wordcount: '1304'
+source-wordcount: '1325'
 ht-degree: 1%
 
 ---
@@ -19,20 +19,20 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->要创建数据流，您必须已拥有与平台上以下任何支付源的有效基本连接ID:<ul><li>[[!DNL PayPal]](../create/payments/paypal.md)</li><li>[[!DNL Square]](../create/payments/square.md)</li></ul>
+>要创建数据流，您必须已具有与支付源的有效基本连接ID。 如果您没有此ID，请参阅 [源概述](../../../home.md#payments) 以获取可创建基本连接的付款源列表。
 
 ## 快速入门
 
 本教程要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md): The standardized framework by which Experience Platform organizes customer experience data.
-   * [Basics of schema composition](../../../../xdm/schema/composition.md): Learn about the basic building blocks of XDM schemas, including key principles and best practices in schema composition.
+* [[!DNL Experience Data Model (XDM) System]](../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
+   * [架构组合的基础知识](../../../../xdm/schema/composition.md):了解XDM模式的基本构建块，包括模式组合中的关键原则和最佳实践。
    * [架构注册开发人员指南](../../../../xdm/api/getting-started.md):包括成功调用架构注册表API所需了解的重要信息。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头（请特别注意接受标头及其可能值）。
 * [[!DNL Catalog Service]](../../../../catalog/home.md):目录是Experience Platform中数据位置和谱系的记录系统。
 * [[!DNL Batch ingestion]](../../../../ingestion/batch-ingestion/overview.md):批量摄取API允许您将数据作为批处理文件导入到Experience Platform中。
 * [沙箱](../../../../sandboxes/home.md):Experience Platform提供将单个Platform实例分区为单独虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-### Using Platform APIs
+### 使用Platform API
 
 有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../landing/api-guide.md).
 
@@ -141,7 +141,7 @@ curl -X POST \
 
 通过对 [架构注册表API](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
-For detailed steps on how to create a target XDM schema, see the tutorial on [creating a schema using the API](../../../../xdm/api/schemas.md).
+有关如何创建目标XDM架构的详细步骤，请参阅 [使用API创建模式](../../../../xdm/api/schemas.md).
 
 ## 创建目标数据集 {#target-dataset}
 
@@ -274,7 +274,7 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `xdmSchema` | The `$id` of the target XDM schema. |
+| `xdmSchema` | 的 `$id` 目标XDM架构的URL。 |
 
 **响应**
 
@@ -291,11 +291,11 @@ curl -X POST \
 }
 ```
 
-## Look up dataflow specifications {#specs}
+## 查找数据流规范 {#specs}
 
 数据流负责从源中收集数据并将它们引入平台。 要创建数据流，必须首先通过向 [!DNL Flow Service] API。 数据流规范负责从外部数据库或NoSQL系统中收集数据。
 
-**API format**
+**API格式**
 
 ```https
 GET /flowSpecs?property=name=="CRMToAEP"
