@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: Query Service 指南
 user-guide-description: 使用标准 SQL 在 Platform Data Lake 中查询数据。
 feature: Queries
-source-git-commit: 15d835fcbcb6e34995f153c14d90fc937792eefc
+source-git-commit: b5c9dd966e14739e570105892becd39990d9acfb
 workflow-type: tm+mt
-source-wordcount: '153'
+source-wordcount: '156'
 ht-degree: 16%
 
 ---
@@ -57,6 +57,7 @@ ht-degree: 16%
    - [PSQL](clients/psql.md)
    - [RStudio](clients/rstudio.md)
    - [塔布洛](clients/tableau.md)
+- [审核日志指南](audit-log-guide.md)
 - [疑难解答指南](troubleshooting-guide.md)
 - [API参考](https://www.adobe.io/experience-platform-apis/references/query-service/)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
