@@ -3,7 +3,7 @@ title: 核心事件转发扩展概述
 description: 了解Adobe Experience Platform中的核心事件转发扩展。
 feature: Event Forwarding
 exl-id: b5ee4ccf-6fa5-4472-be04-782930f07e20
-source-git-commit: d41779c5897b748130b88d3886472c7908347389
+source-git-commit: 15e7245acef1fe13a09ed0e083033b3963c444f2
 workflow-type: tm+mt
 source-wordcount: '1724'
 ht-degree: 91%
@@ -43,16 +43,16 @@ getDataElementValue('productName')
 在自定义代码中，您还可以使用 `ruleStash` 对象。
 
 ```javascript
-arc.ruleStash: Object<string, *>`
-```
-
-```javascript
 utils.logger.log(context.arc.ruleStash);
 ```
 
 `ruleStash` 是一个对象，可从操作模块中收集所有结果。
 
 每个扩展都有自己的命名空间。例如，如果您将扩展命名为 `send-beacon`，则来自 `send-beacon` 操作的所有结果都将存储在 `ruleStash['send-beacon']` 命名空间中。
+
+```javascript
+utils.logger.log(context.arc.ruleStash['adobe-cloud-connector']);
+```
 
 每个扩展的命名空间都是唯一的，并且开头的值为 `undefined`。
 
