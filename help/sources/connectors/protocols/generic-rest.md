@@ -4,9 +4,10 @@ solution: Experience Platform
 title: 通用REST API源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将通用REST API连接到Adobe Experience Platform。
-source-git-commit: 0c7bb3d6f0a1bc4154bff0e4d79cc4c3c0b0ab71
+exl-id: e3449e33-7261-4aa2-bce9-5530eb4fcc68
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '228'
 ht-degree: 0%
 
 ---
@@ -32,5 +33,5 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 ## 连接 [!DNL Generic REST API] to [!DNL Platform] 使用API
 
 - [使用流服务API创建通用REST API基连接](../../tutorials/api/create/protocols/generic-rest.md)
-- [使用流量服务API探索协议源的数据结构和内容](../../tutorials/api/explore/protocols.md)
+- [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 - [使用流服务API为协议源创建数据流](../../tutorials/api/collect/protocols.md)

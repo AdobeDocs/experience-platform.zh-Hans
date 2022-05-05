@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Flow Service API将Phoenix数据库连接到Adobe Experience Platform。
 exl-id: b69d9593-06fe-4fff-88a9-7860e4e45eb7
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 0ca900b77275851076a13dcc4b8b4a9995ddd0be
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '568'
 ht-degree: 1%
 
 ---
@@ -120,4 +120,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过阅读本教程，您已创建 [!DNL Phoenix] 使用 [!DNL Flow Service] API，并已获取连接的唯一ID值。 在下一个教程中，您可以使用此ID来了解如何 [使用流服务API浏览数据库](../../explore/database-nosql.md).
+通过阅读本教程，您已创建 [!DNL Phoenix] 基本连接使用 [!DNL Flow Service] API。 在以下教程中，您可以使用此基本连接ID:
+
+* [使用 [!DNL Flow Service] API](../../explore/tabular.md)
+* [创建数据流，以使用 [!DNL Flow Service] API](../../collect/database-nosql.md)

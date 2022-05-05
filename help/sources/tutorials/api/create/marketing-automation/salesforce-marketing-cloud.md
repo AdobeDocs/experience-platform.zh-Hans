@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform与SalesforceMarketing Cloud连接。
 exl-id: fbf68d3a-f8b1-4618-bd56-160cc6e3346d
-source-git-commit: 531d5619e0643b6195abaa53d1708e0368d45871
+source-git-commit: c0d750ef61ad2e295568cccabca5c52a758997c2
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '520'
 ht-degree: 1%
 
 ---
@@ -108,4 +108,9 @@ curl -X POST \
 }
 ```
 
-通过阅读本教程，您已创建 [!DNL Salesforce Marketing Cloud] 使用 [!DNL Flow Service] API，并且已获取连接的唯一ID值。 在您了解如何 [使用流量服务API探索营销自动化系统](../../explore/marketing-automation.md).
+## 后续步骤
+
+通过阅读本教程，您已创建 [!DNL Salesforce Marketing Cloud] 基本连接使用 [!DNL Flow Service] API。 在以下教程中，您可以使用此基本连接ID:
+
+* [使用 [!DNL Flow Service] API](../../explore/tabular.md)
+* [创建数据流，以使用 [!DNL Flow Service] API](../../collect/marketing-automation.md)

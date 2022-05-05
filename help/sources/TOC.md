@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: cc966bccf28dcc915d5c19eab7614d6e80a7e67f
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '780'
 ht-degree: 12%
 
 ---
@@ -167,6 +167,7 @@ ht-degree: 12%
       - [探索营销自动化数据](tutorials/api/explore/marketing-automation.md)
       - [浏览支付数据](tutorials/api/explore/payments.md)
       - [浏览协议数据](tutorials/api/explore/protocols.md)
+      - [浏览数据表](tutorials/api/explore/tabular.md)
    - 收集数据 {#collect}
       - [收集广告数据](tutorials/api/collect/advertising.md)
       - [收集云存储数据](tutorials/api/collect/cloud-storage.md)

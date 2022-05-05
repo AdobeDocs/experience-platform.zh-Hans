@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform与Amazon Redshift连接。
 exl-id: 2728ce08-05c9-4dca-af1d-d2d1b266c5d9
-source-git-commit: 2fb972b0ec8d1f679c6ce104a439265b5cc4d535
+source-git-commit: c0d750ef61ad2e295568cccabca5c52a758997c2
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '477'
 ht-degree: 1%
 
 ---
@@ -114,4 +114,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过阅读本教程，您已创建 [!DNL Amazon Redshift] 使用 [!DNL Flow Service] API，并且已获取连接的唯一ID值。 在您了解如何 [使用流服务API浏览数据库或NoSQL系统](../../explore/database-nosql.md).
+通过阅读本教程，您已创建 [!DNL Amazon Redshift] 基本连接使用 [!DNL Flow Service] API。 在以下教程中，您可以使用此基本连接ID:
+
+* [使用 [!DNL Flow Service] API](../../explore/tabular.md)
+* [创建数据流，以使用 [!DNL Flow Service] API](../../collect/database-nosql.md)

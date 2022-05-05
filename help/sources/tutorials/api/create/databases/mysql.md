@@ -1,53 +1,53 @@
 ---
 keywords: Experience Platform；主页；热门主题；MySQL;mysql
 solution: Experience Platform
-title: 使用流服务API创建 [!DNL MySQL] 基本连接
+title: 创建 [!DNL MySQL] 使用流服务API的基本连接
 topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流服务API将Adobe Experience Platform连接到MySQL。
 exl-id: 273da568-84ed-4a3d-bfea-0f5b33f1551a
-source-git-commit: b4291b4f13918a1f85d73e0320c67dd2b71913fc
+source-git-commit: 0ca900b77275851076a13dcc4b8b4a9995ddd0be
 workflow-type: tm+mt
-source-wordcount: '447'
+source-wordcount: '450'
 ht-degree: 2%
 
 ---
 
-# 使用[!DNL Flow Service] API创建[!DNL MySQL]基本连接
+# 创建 [!DNL MySQL] 基本连接使用 [!DNL Flow Service] API
 
 基本连接表示源与Adobe Experience Platform之间经过验证的连接。
 
-本教程将指导您完成使用[[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/)为[!DNL MySQL]创建基本连接的步骤。
+本教程将指导您完成为 [!DNL MySQL] 使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-* [来源](../../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
-* [沙盒](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [源](../../../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
+* [沙箱](../../../../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下部分提供了您需要了解的其他信息，以便您能够使用[!DNL Flow Service] API成功连接到[!DNL MySQL]。
+以下部分提供了成功连接到所需了解的其他信息 [!DNL MySQL] 使用 [!DNL Flow Service] API。
 
 ### 收集所需的凭据
 
-要使[!DNL Flow Service]与[!DNL MySQL]存储连接，必须为以下连接属性提供值：
+为 [!DNL Flow Service] 与 [!DNL MySQL] 存储中，必须为以下连接属性提供值：
 
 | 凭据 | 描述 |
 | ---------- | ----------- |
-| `connectionString` | 与您的帐户关联的[!DNL MySQL]连接字符串。 [!DNL MySQL]连接字符串模式为：`Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`。 |
-| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 [!DNL MySQL]的连接规范ID为`26d738e0-8963-47ea-aadf-c60de735468a`。 |
+| `connectionString` | 的 [!DNL MySQL] 与您的帐户关联的连接字符串。 的 [!DNL MySQL] 连接字符串模式为： `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 的连接规范ID [!DNL MySQL] is `26d738e0-8963-47ea-aadf-c60de735468a`. |
 
-有关获取连接字符串的详细信息，请参阅此[[!DNL MySQL] 文档](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html)。
+有关获取连接字符串的详细信息，请参阅此 [[!DNL MySQL] 文档](https://dev.mysql.com/doc/connector-net/en/connector-net-connections-string.html).
 
 ### 使用Platform API
 
-有关如何成功调用Platform API的信息，请参阅[Platform API入门指南](../../../../../landing/api-guide.md)。
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../../../landing/api-guide.md).
 
 ## 创建基本连接
 
 基本连接保留了源和平台之间的信息，包括源的身份验证凭据、连接的当前状态和唯一基本连接ID。 基本连接ID允许您从源中浏览和导航文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在请求参数中提供[!DNL MySQL]身份验证凭据时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请向 `/connections` 提供 [!DNL MySQL] 身份验证凭据作为请求参数的一部分。
 
 **API格式**
 
@@ -57,7 +57,7 @@ POST /connections
 
 **请求**
 
-以下请求为[!DNL MySQL]创建基本连接：
+以下请求会为 [!DNL MySQL]:
 
 ```shell
 curl -X POST \
@@ -85,12 +85,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --------- | ----------- |
-| `auth.params.connectionString` | 与您的帐户关联的[!DNL MySQL]连接字符串。 [!DNL MySQL]连接字符串模式为：`Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`。 |
-| `connectionSpec.id` | [!DNL MySQL]连接规范ID:`26d738e0-8963-47ea-aadf-c60de735468a`。 |
+| `auth.params.connectionString` | 的 [!DNL MySQL] 与您的帐户关联的连接字符串。 的 [!DNL MySQL] 连接字符串模式为： `Server={SERVER};Port={PORT};Database={DATABASE};UID={USERNAME};PWD={PASSWORD}`. |
+| `connectionSpec.id` | 的 [!DNL MySQL] 连接规范ID: `26d738e0-8963-47ea-aadf-c60de735468a`. |
 
 **响应**
 
-成功的响应返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中浏览数据库时需要此ID。
+成功的响应会返回新创建的基本连接的详细信息，包括其唯一标识符(`id`)。 在下一个教程中浏览数据库时需要此ID。
 
 ```json
 {
@@ -101,4 +101,8 @@ curl -X POST \
 
 ## 后续步骤
 
-在本教程中，您已使用[!DNL Flow Service] API创建了[!DNL MySQL]连接，并获取了该连接的唯一ID值。 在下一个教程中，您可以使用此连接ID，因为您正在学习如何使用流服务API](../../explore/database-nosql.md)来浏览数据库或NoSQL系统。[
+通过阅读本教程，您已创建 [!DNL MySQL]基本连接使用 [!DNL Flow Service] API。 在以下教程中，您可以使用此基本连接ID:
+
+* [使用 [!DNL Flow Service] API](../../explore/tabular.md)
+* [创建数据流，以使用 [!DNL Flow Service] API](../../collect/database-nosql.md)
+

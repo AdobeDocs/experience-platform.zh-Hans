@@ -5,32 +5,32 @@ title: Oracle源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Oracle连接到Adobe Experience Platform。
 exl-id: be422cf8-fb24-48c7-8369-34f0f2ec95fc
-source-git-commit: 5821f9304a37c1a03d17f0113d09548799662a2e
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '199'
+source-wordcount: '192'
 ht-degree: 0%
 
 ---
 
 # [!DNL Oracle] 连接器
 
-Adobe Experience Platform为[!DNL Microsoft]、MySQL和[!DNL Azure]等数据库提供程序提供本机连接。 您可以将数据从这些系统导入[!DNL Platform]。
+Adobe Experience Platform为数据库提供商(如 [!DNL Microsoft]、 MySQL和 [!DNL Azure]. 您可以将这些系统中的数据导入 [!DNL Platform].
 
-支持不同类型的第三方数据库，包括关系数据库、 NoSQL数据库或data warehouse。 对数据库提供程序的支持包括[!DNL Oracle]。
+支持不同类型的第三方数据库，包括关系数据库、 NoSQL数据库或data warehouse。 支持数据库提供程序包括 [!DNL Oracle].
 
 ## IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表。 无法将特定于区域的IP地址添加到允许列表，在使用源时可能会导致错误或性能不佳。 有关更多信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页面。
+在使用源连接器之前，必须将IP地址列表添加到允许列表。 无法将特定于区域的IP地址添加到允许列表，在使用源时可能会导致错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Oracle]连接到[!DNL Platform]的信息：
+以下文档提供了有关如何连接的信息 [!DNL Oracle] to [!DNL Platform] 使用API或用户界面：
 
-## 使用API将[!DNL Oracle]连接到[!DNL Platform]
+## 连接 [!DNL Oracle] to [!DNL Platform] 使用API
 
 - [使用流服务API创建Oracle库连接](../../tutorials/api/create/databases/oracle.md)
-- [使用流服务API探索数据库源的数据结构和内容](../../tutorials/api/explore/database-nosql.md)
+- [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 - [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
 
-## 使用UI将[!DNL Oracle]连接到[!DNL Platform]
+## 连接 [!DNL Oracle] to [!DNL Platform] 使用UI
 
 - [在UI中创建Oracle源连接](../../tutorials/ui/create/databases/oracle.md)
 - [在UI中为数据库源连接创建数据流](../../tutorials/ui/dataflow/databases.md)

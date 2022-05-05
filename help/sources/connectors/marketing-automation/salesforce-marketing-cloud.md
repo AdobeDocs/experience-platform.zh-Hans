@@ -5,9 +5,9 @@ title: SalesforceMarketing Cloud源概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将SalesforceMarketing Cloud连接到Adobe Experience Platform。
 exl-id: 2177d68c-0cef-4031-a0e7-8bf22ee2e70b
-source-git-commit: 6876ad592e4924dc884568899662dfa9c8eecc62
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '359'
+source-wordcount: '351'
 ht-degree: 0%
 
 ---
@@ -42,7 +42,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 以下文档提供了有关如何连接的信息 [!DNL Salesforce Marketing Cloud] 要使用API的平台，请执行以下操作：
 
 * [使用流服务API创建SalesforceMarketing Cloud库连接](../../tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
-* [使用流量服务API探索营销自动化源的数据结构和内容](../../tutorials/api/explore/marketing-automation.md)
+* [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 * [使用流服务API为营销自动化源创建数据流](../../tutorials/api/collect/marketing-automation.md)
 
 ## 连接 [!DNL Salesforce Marketing Cloud] 到使用UI的平台

@@ -5,9 +5,9 @@ title: Salesforce源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Salesforce连接到Adobe Experience Platform。
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: bd3d3a83c030baaecccba2b1793b49ad8a6caa08
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '897'
 ht-degree: 0%
 
 ---
@@ -90,7 +90,7 @@ Experience Platform支持从第三方CRM系统摄取数据。 对CRM提供商的
 以下文档提供了有关如何连接的信息 [!DNL Salesforce] 要使用API或用户界面实现平台，请执行以下操作：
 
 - [使用流服务API创建Salesforce基连接](../../tutorials/api/create/crm/salesforce.md)
-- [使用流服务API探索CRM源的数据结构和内容](../../tutorials/api/explore/crm.md)
+- [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 - [使用流服务API为CRM源创建数据流](../../tutorials/api/collect/crm.md)
 
 ## 连接 [!DNL Salesforce] 到使用UI的平台

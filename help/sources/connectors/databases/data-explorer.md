@@ -5,36 +5,36 @@ title: AzureData Explorer源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将AzureData Explorer连接到Adobe Experience Platform。
 exl-id: 869bd8bb-51e6-4e0c-a3ec-ff083dda5789
-source-git-commit: 446436346e3368d98eb990dba1000ac0974b84dc
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '221'
 ht-degree: 0%
 
 ---
 
-# （测试版）[!DNL Azure Data Explorer]连接器
+# （测试版） [!DNL Azure Data Explorer] 连接器
 
 >[!NOTE]
 >
->[!DNL Azure Data Explorer]连接器处于测试阶段。 有关使用测试版标记的连接器的更多信息，请参阅[源概述](../../home.md#terms-and-conditions)。
+>的 [!DNL Azure Data Explorer] 连接器处于测试阶段。 请参阅 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标签的连接器的更多信息。
 
-Adobe Experience Platform为[!DNL Microsoft]、MySQL和[!DNL Azure]等数据库提供程序提供本机连接。 您可以将数据从这些系统导入[!DNL Platform]。
+Adobe Experience Platform为数据库提供商(如 [!DNL Microsoft]、 MySQL和 [!DNL Azure]. 您可以将这些系统中的数据导入 [!DNL Platform].
 
-支持不同类型的第三方数据库，包括关系数据库、 NoSQL数据库或data warehouse。 对数据库提供程序的支持包括[!DNL Azure Data Explorer]。
+支持不同类型的第三方数据库，包括关系数据库、 NoSQL数据库或data warehouse。 支持数据库提供程序包括 [!DNL Azure Data Explorer].
 
 ## IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表。 无法将特定于区域的IP地址添加到允许列表，在使用源时可能会导致错误或性能不佳。 有关更多信息，请参阅[IP地址允许列表](../../ip-address-allow-list.md)页面。
+在使用源连接器之前，必须将IP地址列表添加到允许列表。 无法将特定于区域的IP地址添加到允许列表，在使用源时可能会导致错误或性能不佳。 请参阅 [IP地址允许列表](../../ip-address-allow-list.md) 页面以了解更多信息。
 
-以下文档提供了有关如何使用API或用户界面将[!DNL Azure Data Explorer]连接到[!DNL Platform]的信息：
+以下文档提供了有关如何连接的信息 [!DNL Azure Data Explorer] to [!DNL Platform] 使用API或用户界面：
 
-## 使用API将[!DNL Azure Data Explorer]连接到[!DNL Platform]
+## 连接 [!DNL Azure Data Explorer] to [!DNL Platform] 使用API
 
 - [使用流服务API创建AzureData Explorer库连接](../../tutorials/api/create/databases/data-explorer.md)
-- [使用流服务API探索数据库源的数据结构和内容](../../tutorials/api/explore/database-nosql.md)
+- [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 - [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
 
-## 使用UI将[!DNL Azure Data Explorer]连接到[!DNL Platform]
+## 连接 [!DNL Azure Data Explorer] to [!DNL Platform] 使用UI
 
 - [在UI中创建AzureData Explorer源连接](../../tutorials/ui/create/databases/data-explorer.md)
 - [在UI中为数据库源连接创建数据流](../../tutorials/ui/dataflow/databases.md)

@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流程服务API将Adobe Experience Platform连接到PostgreSQL。
 exl-id: 5225368a-08c1-421d-aec2-d50ad09ae454
-source-git-commit: eea815f72c1e807f4ad6ca6273ba18a9da09ac6e
+source-git-commit: 0ca900b77275851076a13dcc4b8b4a9995ddd0be
 workflow-type: tm+mt
-source-wordcount: '505'
+source-wordcount: '509'
 ht-degree: 3%
 
 ---
@@ -113,4 +113,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过阅读本教程，您已创建 [!DNL PostgreSQL] 使用 [!DNL Flow Service] API，并且已获取连接的唯一ID值。 在您了解如何 [使用流服务API浏览数据库或NoSQL系统](../../explore/database-nosql.md).
+通过阅读本教程，您已创建 [!DNL PostgreSQL] 连接基连接使用 [!DNL Flow Service] API。 在以下教程中，您可以使用此基本连接ID:
+
+* [使用 [!DNL Flow Service] API](../../explore/tabular.md)
+* [创建数据流，以使用 [!DNL Flow Service] API](../../collect/database-nosql.md)

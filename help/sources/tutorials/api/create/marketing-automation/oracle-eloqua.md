@@ -5,9 +5,10 @@ title: 使用流服务API创建OracleEloqua基连接
 topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Flow Service API将Adobe Experience Platform连接到OracleEloqua。
-source-git-commit: 423f0efc3c0d9fb38cb8d1b16b885e1eddc23e72
+exl-id: 866e408f-6e0b-4e81-9ad8-9d74c485c89a
+source-git-commit: 1f2ae53e5503618b7ac12628923b30c457fd17e2
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '567'
 ht-degree: 1%
 
 ---
@@ -111,7 +112,5 @@ curl -X POST \
 
 通过阅读本教程，您已创建 [!DNL Oracle Eloqua] 基本连接使用 [!DNL Flow Service] API。 在以下教程中，您可以使用此基本连接ID:
 
-* [使用 [!DNL Flow Service] API](../../explore/marketing-automation.md)
+* [使用 [!DNL Flow Service] API](../../explore/tabular.md)
 * [创建数据流，以使用 [!DNL Flow Service] API](../../collect/marketing-automation.md)
-
-

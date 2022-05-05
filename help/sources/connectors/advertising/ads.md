@@ -5,9 +5,9 @@ title: Google AdWords源概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Google AdWords连接到Adobe Experience Platform。
 exl-id: 1f6257e0-213c-4723-a240-511c11c5833c
-source-git-commit: eaac380cb4329b9233b40105d51f3809737d6173
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '240'
+source-wordcount: '233'
 ht-degree: 0%
 
 ---
@@ -32,11 +32,11 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ### 使用API
 
-- [使用流服务API创建Google AdWords基连接](../../tutorials/api/create/advertising/ads.md)
-- [使用流量服务API探索广告源的数据结构和内容](../../tutorials/api/explore/advertising.md)
-- [使用流量服务API为广告源创建数据流](../../tutorials/api/collect/advertising.md)
+* [使用流服务API创建Google AdWords基连接](../../tutorials/api/create/advertising/ads.md)
+* [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
+* [使用流量服务API为广告源创建数据流](../../tutorials/api/collect/advertising.md)
 
 ### 使用UI
 
-- [在UI中创建Google AdWords源连接](../../tutorials/ui/create/advertising/ads.md)
-- [在UI中为广告源连接创建数据流](../../tutorials/ui/dataflow/advertising.md)
+* [在UI中创建Google AdWords源连接](../../tutorials/ui/create/advertising/ads.md)
+* [在UI中为广告源连接创建数据流](../../tutorials/ui/dataflow/advertising.md)

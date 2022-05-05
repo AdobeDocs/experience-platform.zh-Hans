@@ -5,9 +5,9 @@ title: Veva CRM源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Veeva CRM连接到Adobe Experience Platform。
 exl-id: fcd7af48-e66a-4313-bbfe-73301d335c67
-source-git-commit: 25cc0c5a1e6dcf01b82956ea1022663445315a27
+source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '224'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Experience Platform支持从第三方CRM系统摄取数据。 对CRM提供商的
 ## 连接 [!DNL Veeva CRM] to [!DNL Platform] 使用API
 
 - [使用流量服务API创建Veeva CRM基连接](../../tutorials/api/create/crm/veeva.md)
-- [使用流服务API探索CRM源的数据结构和内容](../../tutorials/api/explore/crm.md)
+- [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 - [使用流服务API为CRM源创建数据流](../../tutorials/api/collect/crm.md)
 
 ## 连接 [!DNL Veeva CRM] to [!DNL Platform] 使用UI

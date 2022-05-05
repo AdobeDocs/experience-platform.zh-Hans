@@ -4,10 +4,11 @@ solution: Experience Platform
 title: 使用流服务API创建通用REST API基连接
 topic-legacy: overview
 type: Tutorial
-description: 了解如何使用流程服务API将通用REST API连接到Adobe Experience Platform。
-source-git-commit: 1a9c4d5ba3ba9201378e78c0e92dea5101668a24
+description: 了解如何使用流服务API将通用REST API连接到Adobe Experience Platform。
+exl-id: 6b414868-503e-49d5-8f4a-5b2fc003dab0
+source-git-commit: 1f2ae53e5503618b7ac12628923b30c457fd17e2
 workflow-type: tm+mt
-source-wordcount: '939'
+source-wordcount: '945'
 ht-degree: 1%
 
 ---
@@ -187,4 +188,7 @@ curl -X POST \
 
 ## 后续步骤
 
-通过阅读本教程，您已创建 [!DNL Generic REST API] 使用 [!DNL Flow Service] API，并已获取连接的唯一ID值。 在下一个教程中，您可以使用此ID来了解如何 [使用流量服务API浏览协议应用程序](../../explore/protocols.md).
+通过阅读本教程，您已创建 [!DNL Generic REST API] 基本连接使用 [!DNL Flow Service] API。 在以下教程中，您可以使用此基本连接ID:
+
+* [使用 [!DNL Flow Service] API](../../explore/tabular.md)
+* [创建数据流，以使用 [!DNL Flow Service] API](../../collect/protocols.md)
