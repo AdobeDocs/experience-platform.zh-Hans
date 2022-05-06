@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；云存储；云存储
 title: 使用流服务API浏览云存储文件夹
 description: 本教程使用流程服务API来探索第三方云存储系统。
 exl-id: ba1a9bff-43a6-44fb-a4e7-e6a45b7eeebd
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 88e6f084ce1b857f785c4c1721d514ac3b07e80b
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '699'
 ht-degree: 2%
 
 ---
@@ -106,6 +106,7 @@ curl -X GET \
 GET /connections/{BASE_CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&fileType={FILE_TYPE}&{QUERY_PARAMS}&preview=true
 GET /connections/{BASE_CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&preview=true&fileType=delimited&columnDelimiter=\t
 GET /connections/{BASE_CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}&preview=true&fileType=delimited&compressionType=gzip;
+GET /connections/{BASE_CONNECTION_ID}/explore?objectType=FILE&object={FILE_PATH}&preview=true&ileType=delimited&encoding=ISO-8859-1;
 ```
 
 | 参数 | 描述 |
@@ -119,7 +120,7 @@ GET /connections/{BASE_CONNECTION_ID}/explore?objectType=file&object={FILE_PATH}
 
 ```shell
 curl -X GET \
-    'http://platform.adobe.io/data/foundation/flowservice/connections/{CONNECTION_ID}/explore?objectType=file&object=/aep-bootcamp/Adobe%20Pets%20Customer%2020190801%20EXP.json&fileType=json&preview=true' \
+    'http://platform.adobe.io/data/foundation/flowservice/connections/{BASE_CONNECTION_ID}/explore?objectType=file&object=/aep-bootcamp/Adobe%20Pets%20Customer%2020190801%20EXP.json&fileType=json&preview=true' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
     -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -163,6 +164,7 @@ curl -X GET \
 | --------- | ----------- |
 | `columnDelimiter` | 指定为用于检查CSV或TSV文件的列分隔符的单个字符值。 如果未提供参数，则值默认为逗号 `(,)`. |
 | `compressionType` | 预览压缩的分隔或JSON文件所需的查询参数。 支持的压缩文件包括： <ul><li>`bzip2`</li><li>`gzip`</li><li>`deflate`</li><li>`zipDeflate`</li><li>`tarGzip`</li><li>`tar`</li></ul> |
+| `encoding` | 定义在渲染预览时要使用的编码类型。 支持的编码类型包括： `UTF-8` 和 `ISO-8859-1`. **注意**:的 `encoding` 参数仅在摄取分隔的CSV文件时可用。 其他文件类型将采用默认编码进行摄取， `UTF-8`. |
 
 ## 后续步骤
 

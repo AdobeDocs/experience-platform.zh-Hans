@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方云存储检索数据，以及使用源连接器和API将数据导入平台的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: 88e6f084ce1b857f785c4c1721d514ac3b07e80b
 workflow-type: tm+mt
-source-wordcount: '1597'
+source-wordcount: '1549'
 ht-degree: 1%
 
 ---
@@ -38,9 +38,9 @@ ht-degree: 1%
 
 ## 创建源连接 {#source}
 
-您可以通过向 [!DNL Flow Service] API。 源连接由连接ID、源数据文件的路径和连接规范ID组成。
+您可以通过向 `sourceConnections` 端点 [!DNL Flow Service] 提供基本连接ID时的API、要摄取的源文件的路径以及源的相应连接规范ID。
 
-要创建源连接，还必须为数据格式属性定义枚举值。
+创建源连接时，还必须为数据格式属性定义枚举值。
 
 为基于文件的源使用以下枚举值：
 
@@ -52,22 +52,13 @@ ht-degree: 1%
 
 对于所有基于表的源，将值设置为 `tabular`.
 
-- [使用自定义分隔文件创建源连接](#using-custom-delimited-files)
-- [使用压缩文件创建源连接](#using-compressed-files)
-
 **API格式**
 
 ```http
 POST /sourceConnections
 ```
 
-### 使用自定义分隔文件创建源连接 {#using-custom-delimited-files}
-
 **请求**
-
-您可以通过指定 `columnDelimiter` 作为资产。 任何单个字符值都是允许的列分隔符。 如果未提供，请使用逗号 `(,)` 用作默认值。
-
-以下示例请求使用制表符分隔值为分隔文件类型创建源连接。
 
 ```shell
 curl -X POST \
@@ -78,16 +69,20 @@ curl -X POST \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'Content-Type: application/json' \
     -d '{
-        "name": "Cloud storage source connection for delimited files",
-        "description": "Cloud storage source connector",
-        "baseConnectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
+        "name": "Cloud Storage source connection",
+        "description: "Source connection for a cloud storage source",
+        "baseConnectionId": "1f164d1b-debe-4b39-b4a9-df767f7d6f7c",
         "data": {
             "format": "delimited",
-            "columnDelimiter": "\t"
+            "properties": {
+                "columnDelimiter": "{COLUMN_DELIMITER}",
+                "encoding": "{ENCODING}"
+                "compressionType": "{COMPRESSION_TYPE}"
+            }
         },
         "params": {
-            "path": "/ingestion-demos/leads/tsv_data/*.tsv",
-            "recursive": "true"
+            "path": "/acme/summerCampaign/account.csv",
+            "type": "file"
         },
         "connectionSpec": {
             "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
@@ -98,69 +93,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `baseConnectionId` | 您正在访问的第三方云存储系统的唯一连接ID。 |
-| `data.format` | 定义数据格式属性的枚举值。 |
-| `data.columnDelimiter` | 您可以使用任何单字符列分隔符来收集平面文件。 仅在摄取CSV或TSV文件时才需要此属性。 |
+| `baseConnectionId` | 云存储源的基本连接ID。 |
+| `data.format` | 要引入平台的数据格式。 支持的值包括： `delimited`, `JSON`和 `parquet`. |
+| `data.properties` | （可选）一组属性，在创建源连接时可以应用于数据。 |
+| `data.properties.columnDelimiter` | （可选）在收集平面文件时可指定的单字符列分隔符。 任何单个字符值都是允许的列分隔符。 如果未提供，请使用逗号(`,`)作为默认值。 **注意**:的 `columnDelimiter` 仅在摄取分隔文件时才能使用属性。 |
+| `data.properties.encoding` | （可选）此属性定义将数据摄取到平台时要使用的编码类型。 支持的编码类型包括： `UTF-8` 和 `ISO-8859-1`. **注意**:的 `encoding` 参数仅在摄取分隔的CSV文件时可用。 其他文件类型将采用默认编码进行摄取， `UTF-8`. |
+| `data.properties.compressionType` | （可选）用于定义要摄取的压缩文件类型的属性。 支持的压缩文件类型包括： `bzip2`, `gzip`, `deflate`, `zipDeflate`, `tarGzip`和 `tar`. **注意**:的 `compressionType` 仅在摄取分隔文件或JSON文件时才能使用属性。 |
 | `params.path` | 您访问的源文件的路径。 |
-| `connectionSpec.id` | 与您的特定第三方云存储系统关联的连接规范ID。 请参阅 [附录](#appendix) ，以获取连接规范ID列表。 |
-
-**响应**
-
-成功的响应会返回唯一标识符(`id`)。 在后续步骤中需要此ID才能创建数据流。
-
-```json
-{
-    "id": "26b53912-1005-49f0-b539-12100559f0e2",
-    "etag": "\"11004d97-0000-0200-0000-5f3c3b140000\""
-}
-```
-
-### 使用压缩文件创建源连接 {#using-compressed-files}
-
-**请求**
-
-您还可以通过指定压缩的JSON或分隔文件 `compressionType` 作为资产。 支持的压缩文件类型列表包括：
-
-- `bzip2`
-- `gzip`
-- `deflate`
-- `zipDeflate`
-- `tarGzip`
-- `tar`
-
-以下示例请求使用 `gzip` 文件类型。
-
-```shell
-curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Cloud storage source connection for compressed files",
-        "description": "Cloud storage source connection for compressed files",
-        "baseConnectionId": "9e2541a0-b143-4d23-a541-a0b143dd2301",
-        "data": {
-            "format": "delimited",
-            "properties": {
-                "compressionType": "gzip"
-            }
-        },
-        "params": {
-            "path": "/compressed/files.gzip"
-        },
-        "connectionSpec": {
-            "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
-            "version": "1.0"
-        }
-     }'
-```
-
-| 属性 | 描述 |
-| --- | --- |
-| `data.properties.compressionType` | 确定要摄取的压缩文件类型。 仅在摄取压缩的JSON或分隔文件时，才需要此属性。 |
+| `connectionSpec.id` | 与您的特定云存储源关联的连接规范ID。 请参阅 [附录](#appendix) ，以获取连接规范ID列表。 |
 
 **响应**
 
