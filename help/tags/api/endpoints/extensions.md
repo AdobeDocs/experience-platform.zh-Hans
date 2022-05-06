@@ -1,7 +1,8 @@
 ---
 title: 扩展端点
 description: 了解如何在Reactor API中对/extensions端点进行调用。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: cc02b2aa-d107-463a-930c-5a9fcc5b4a5a
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '977'
 ht-degree: 8%
@@ -10,13 +11,13 @@ ht-degree: 8%
 
 # 扩展端点
 
-在Reactor API中，扩展表示[扩展包](./extension-packages.md)的已安装实例。 扩展使扩展包定义的功能可用于[属性](./properties.md)。 创建[扩展](./data-elements.md)和[规则组件](./rule-components.md)时，会利用这些功能。
+在Reactor API中，扩展表示 [扩展包](./extension-packages.md). 扩展可将扩展包定义的功能提供给 [属性](./properties.md). 在创建 [扩展](./data-elements.md) 和 [规则组件](./rule-components.md).
 
 扩展恰好属于一个资产。 资产可以具有多个扩展，但给定扩展包的不能包含多个已安装实例。
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索扩展列表 {#list}
 
@@ -30,13 +31,13 @@ GET properties/{PROPERTY_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 要列出其扩展名的属性的`id`。 |
+| `{PROPERTY_ID}` | 的 `id` 要列出其扩展名的属性的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的扩展：<ul><li>`created_at`</li><li>`dirty`</li><li>`display_name`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li><li>`version`</li></ul>有关更多信息，请参阅[筛选响应](../guides/filtering.md)指南。
+>使用查询参数，可以根据以下属性过滤列出的扩展：<ul><li>`created_at`</li><li>`dirty`</li><li>`display_name`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li><li>`version`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -45,7 +46,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PRee071cb5b7794f42b74c913e1ad2e325/extensions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -159,7 +160,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->删除扩展后，系统会将其标记为已删除，但实际不会删除扩展。 因此，可以检索已删除的扩展。 删除的扩展可以通过返回的扩展数据的`meta`中存在`deleted_at`属性来标识。
+>删除扩展后，系统会将其标记为已删除，但实际不会删除扩展。 因此，可以检索已删除的扩展。 已删除的扩展可以通过 `deleted_at` 属性 `meta` 返回的扩展数据。
 
 **API格式**
 
@@ -169,7 +170,7 @@ GET /extensions/{EXTENSION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_ID` | 要查找的扩展的`id`。 |
+| `EXTENSION_ID` | 的 `id` 的扩展。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -180,7 +181,7 @@ curl -X GET \
   https://reactor.adobe.io/extensions/EX2ba586f436ac48e390a1ee7e8c9a8f6e \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -279,7 +280,7 @@ curl -X GET \
 
 ## 创建或更新扩展 {#create}
 
-扩展是通过引用[扩展包](./extension-packages.md)并将已安装的扩展添加到资产来创建的。 安装任务完成后，将返回一个响应，指示扩展是否成功安装。
+扩展通过引用 [扩展包](./extension-packages.md) 并将已安装的扩展添加到资产中。 安装任务完成后，将返回一个响应，指示扩展是否成功安装。
 
 **API格式**
 
@@ -289,7 +290,7 @@ POST /properties/{PROPERTY_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 要在下安装扩展的属性的`id`。 |
+| `PROPERTY_ID` | 的 `id` 要在下安装扩展的资产的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -300,7 +301,7 @@ curl -X POST \
   https://reactor.adobe.io/properties/PRee071cb5b7794f42b74c913e1ad2e325/extensions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/vnd.api+json' \
   -d '{
         "data": {
@@ -325,7 +326,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `relationships.extension_package` | **（必需）** 引用所安装扩展包ID的对象。 |
-| `attributes.delegate_descriptor_id` | 如果您的扩展需要自定义设置，则它还需要委派描述符ID。 有关更多信息，请参阅[委托描述符ID](../guides/delegate-descriptor-ids.md)上的指南。 |
+| `attributes.delegate_descriptor_id` | 如果您的扩展需要自定义设置，则它还需要委派描述符ID。 请参阅 [委托描述符ID](../guides/delegate-descriptor-ids.md) 以了解更多信息。 |
 | `attributes.enabled` | 一个布尔值，指示扩展是否已启用。 |
 | `attributes.settings` | 设置JSON对象，表示为字符串。 |
 
@@ -435,20 +436,20 @@ PATCH /extensions/{EXTENSION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_ID` | 要修订的扩展的`id`。 |
+| `EXTENSION_ID` | 的 `id` 要修订的扩展的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-与[创建扩展](#create)一样，必须通过表单数据上载修订包的本地版本。
+与 [创建扩展](#create)，则必须通过表单数据上载修订包的本地版本。
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/vnd.api+json' \
   -d '{
         "data": {
@@ -466,14 +467,14 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 要修订的属性。 对于扩展，可以修订其`delegate_descriptor_id`、`enabled`和`settings`属性。 |
-| `meta.action` | 进行修订时，必须包含值`revise`。 |
+| `attributes` | 要修订的属性。 对于扩展，您可以修订其 `delegate_descriptor_id`, `enabled`和 `settings` 属性。 |
+| `meta.action` | 必须包含值 `revise` 进行修订时。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-成功的响应会返回修订的扩展的详细信息，其`meta.latest_revision_number`属性增加了1。
+成功的响应会返回修订的扩展的详细信息及其 `meta.latest_revision_number` 财产增加了1。
 
 ```json
 {
@@ -575,7 +576,7 @@ DELETE /extensions/{EXTENSION_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `EXTENSION_ID` | 要删除的扩展的`id`。 |
+| `EXTENSION_ID` | 的 `id` 要删除的扩展的名称。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -586,7 +587,7 @@ curl -X DELETE \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **响应**
@@ -595,17 +596,17 @@ curl -X DELETE \
 
 ## 管理扩展的注释 {#notes}
 
-扩展是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 有关如何管理扩展和其他兼容资源的注释的详细信息，请参阅[notes endpoint guide](./notes.md)。
+扩展是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 请参阅 [注释终端指南](./notes.md) 有关如何管理扩展和其他兼容资源的注释的更多信息。
 
 ## 检索扩展的相关资源 {#related}
 
-以下调用演示了如何检索扩展的相关资源。 [查找扩展](#lookup)时，这些关系列在`relationships`属性下。
+以下调用演示了如何检索扩展的相关资源。 When [查找扩展](#lookup)，则这些关系列在 `relationships` 属性。
 
-有关Reactor API中关系的更多信息，请参阅[关系指南](../guides/relationships.md)。
+请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
 ### 列出扩展的相关库 {#libraries}
 
-您可以通过将`/libraries`附加到查找请求的路径来列出利用扩展的库。
+您可以通过附加 `/libraries` 到查找请求的路径。
 
 **API格式**
 
@@ -615,7 +616,7 @@ GET  /extensions/{EXTENSION_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 要列出其库的扩展的`id`。 |
+| `{EXTENSION_ID}` | 的 `id` 要列出其库的扩展的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -626,7 +627,7 @@ curl -X GET \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082/libraries \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -727,7 +728,7 @@ curl -X GET \
 
 ### 列出扩展的相关修订 {#revisions}
 
-您可以通过将`/revisions`附加到查找请求的路径来列出扩展的先前修订版本。
+您可以通过附加来列出扩展的先前修订版本 `/revisions` 到查找请求的路径。
 
 **API格式**
 
@@ -737,7 +738,7 @@ GET  /extensions/{EXTENSION_ID}/revisions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 要列出其修订版本的扩展的`id`。 |
+| `{EXTENSION_ID}` | 的 `id` 要列出其修订版本的扩展的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -748,7 +749,7 @@ curl -X GET \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082/revisions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -941,7 +942,7 @@ curl -X GET \
 
 ### 查找扩展的相关扩展包 {#extension}
 
-您可以通过将`/extension_package`附加到GET请求的路径，来查找扩展所基于的扩展包。
+您可以通过附加来查找扩展所基于的扩展包 `/extension_package` 到GET请求的路径。
 
 **API格式**
 
@@ -951,7 +952,7 @@ GET  /extensions/{EXTENSION_ID}/extension_package
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 要查找其扩展的`id`扩展。 |
+| `{EXTENSION_ID}` | 的 `id` 要查找其扩展的扩展的名称。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -962,7 +963,7 @@ curl -X GET \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082/extension \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1176,7 +1177,7 @@ curl -X GET \
 
 ### 查找扩展的相关源 {#origin}
 
-您可以通过将`/origin`附加到GET请求的路径来查找扩展的源。 扩展的来源是之前为创建当前修订版而更新的修订版本。
+您可以通过附加 `/origin` 到GET请求的路径。 扩展的来源是之前为创建当前修订版而更新的修订版本。
 
 **API格式**
 
@@ -1186,7 +1187,7 @@ GET  /extensions/{EXTENSION_ID}/origin
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 要查找其源的扩展的`id`。 |
+| `{EXTENSION_ID}` | 的 `id` 要查找其源的扩展的名称。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1197,7 +1198,7 @@ curl -X GET \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082/origin \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1296,7 +1297,7 @@ curl -X GET \
 
 ### 查找扩展的相关属性 {#property}
 
-您可以通过将`/property`附加到GET请求的路径来查找拥有扩展的属性。
+您可以通过附加 `/property` 到GET请求的路径。
 
 **API格式**
 
@@ -1306,7 +1307,7 @@ GET  /extensions/{EXTENSION_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{EXTENSION_ID}` | 要查找其属性的扩展的`id`。 |
+| `{EXTENSION_ID}` | 的 `id` 要查找其资产的扩展的名称。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1317,7 +1318,7 @@ curl -X GET \
   https://reactor.adobe.io/extensions/EX8ce7ced633f34bd48d33089ff8fad082/property \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

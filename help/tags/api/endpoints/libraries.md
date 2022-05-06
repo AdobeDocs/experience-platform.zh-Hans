@@ -1,7 +1,8 @@
 ---
 title: 库端点
 description: 了解如何在Reactor API中对/libraries端点进行调用。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 0f7bc10f-2e03-43fa-993c-a2635f4d0c64
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1584'
 ht-degree: 8%
@@ -10,15 +11,15 @@ ht-degree: 8%
 
 # 库端点
 
-库是表示[属性](./properties.md)所需行为的标记资源（[扩展](./extensions.md)、[规则](./rules.md)和[数据元素](./data-elements.md)）的集合。 Reactor API中的`/libraries`端点允许您以编程方式管理标记属性中的库。
+库是标记资源的集合([扩展](./extensions.md), [规则](./rules.md)和 [数据元素](./data-elements.md))表示 [属性](./properties.md). 的 `/libraries` reactor API中的端点允许您以编程方式管理标记属性中的库。
 
 库恰好属于一个属性。 资产可以具有多个库。
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
-在Reactor API中使用库之前，请务必了解库状态和环境在确定您对特定库可以执行的操作时所起的作用。 有关更多信息，请参阅[库发布流程](../../ui/publishing/publishing-flow.md)上的指南。
+在Reactor API中使用库之前，请务必了解库状态和环境在确定您对特定库可以执行的操作时所起的作用。 请参阅 [库发布流程](../../ui/publishing/publishing-flow.md) 以了解更多信息。
 
 ## 检索库列表 {#list}
 
@@ -32,13 +33,13 @@ GET /properties/{PROPERTY_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 拥有库的属性的`id`。 |
+| `PROPERTY_ID` | 的 `id` 拥有库的属性的列表。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的库：<ul><li>`created_at`</li><li>`name`</li><li>`published_at`</li><li>`stale`</li><li>`state`</li><li>`updated_at`</li></ul>有关更多信息，请参阅[筛选响应](../guides/filtering.md)指南。
+>使用查询参数，可以根据以下属性过滤列出的库：<ul><li>`created_at`</li><li>`name`</li><li>`published_at`</li><li>`stale`</li><li>`state`</li><li>`updated_at`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -47,7 +48,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR4bc17fb09ed845b1acfb0f6600a1f3c0/libraries \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -158,7 +159,7 @@ GET /libraries/{LIBRARY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 要查找的库的`id`。 |
+| `LIBRARY_ID` | 的 `id` 你想查的图书馆。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -169,7 +170,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -269,20 +270,20 @@ POST /properties/{PROPERTY_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 要在下定义库的[属性](./properties.md)的`id`。 |
+| `PROPERTY_ID` | 的 `id` 的 [属性](./properties.md) 定义下的库时。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会为指定的属性创建新库。 首次创建库时，只能配置其`name`属性。 要将数据元素、扩展和规则添加到库，您必须创建关系。 有关更多信息，请参阅[管理库资源](#resources)中的部分。
+以下请求会为指定的属性创建新库。 首次创建库时，仅 `name` 属性。 要将数据元素、扩展和规则添加到库，您必须创建关系。 请参阅 [管理库资源](#resources) 以了解更多信息。
 
 ```shell
 curl -X POST \
   https://reactor.adobe.io/properties/PR97d92a379a5f48758947cdf44f607a0d/libraries \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -297,7 +298,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes.name` | **（必需）** 库的人类可读名称。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`libraries`。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `libraries`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -409,7 +410,7 @@ curl -X POST \
 
 ### 将资源添加到库 {#add-resources}
 
-您可以将`/relationships`附加到POST请求的路径，然后附加资源类型，以将资源添加到库。
+您可以通过附加 `/relationships` 到POST请求的路径，然后是资源类型。
 
 **API格式**
 
@@ -433,7 +434,7 @@ curl -X POST \
   https://reactor.adobe.io/libraries/LBdd2f55e9c3bb4ce0a582a0b0c586a6f5/relationships/data_elements \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -459,7 +460,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应会返回所添加关系的详细信息。 为库执行[查找请求](#lookup)将显示在`relationships`属性下添加的关系。
+成功的响应会返回所添加关系的详细信息。 执行 [查找请求](#lookup) ，则库中会显示 `relationships` 属性。
 
 ```json
 {
@@ -482,7 +483,7 @@ curl -X POST \
 
 ### 替换库的资源 {#replace-resources}
 
-您可以替换库的特定类型的所有现有资源，方法是将`/relationships`附加到PATCH请求的路径，然后附加到要替换的资源类型。
+您可以通过附加来替换库的特定类型的所有现有资源 `/relationships` 到PATCH请求的路径，然后是要替换的资源类型。
 
 **API格式**
 
@@ -499,14 +500,14 @@ PATCH /libraries/{LIBRARY_ID}/relationships/{RESOURCE_TYPE}
 
 **请求**
 
-以下请求会将库的扩展替换为`data`数组中提供的扩展。
+以下请求会将库的扩展替换为 `data` 数组。
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/libraries/LBdd2f55e9c3bb4ce0a582a0b0c586a6f5/relationships/environment \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -528,7 +529,7 @@ curl -X PATCH \
 
 **响应**
 
-成功的响应会返回更新关系的详细信息。 为库执行[查找请求](#lookup)会在`relationships`属性下显示关系。
+成功的响应会返回更新关系的详细信息。 执行 [查找请求](#lookup) 的 `relationships` 属性。
 
 ```json
 {
@@ -547,7 +548,7 @@ curl -X PATCH \
 
 ### 移除库的资源 {#remove-resources}
 
-您可以从库中删除现有资源，方法是将`/relationships`附加到DELETE请求的路径，然后附加您要删除的资源类型。
+您可以通过附加 `/relationships` 到DELETE请求的路径，然后是要删除的资源类型。
 
 **API格式**
 
@@ -564,14 +565,14 @@ DELETE /libraries/{LIBRARY_ID}/relationships/{RESOURCE_TYPE}
 
 **请求**
 
-以下请求会从库中删除规则。 未包含在`data`数组中的任何现有规则都不会被删除。
+以下请求会从库中删除规则。 未包含在 `data` 数组未删除。
 
 ```shell
 curl -X DELETE \
   https://reactor.adobe.io/libraries/LBdd2f55e9c3bb4ce0a582a0b0c586a6f5/relationships/environment \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -593,7 +594,7 @@ curl -X DELETE \
 
 **响应**
 
-成功的响应会返回资源类型的更新关系的详细信息。 如果此资源类型不存在关系，则`data`属性将作为空数组返回。 为库执行[查找请求](#lookup)会在`relationships`属性下显示关系。
+成功的响应会返回资源类型的更新关系的详细信息。 如果此资源类型不存在关系，则 `data` 属性作为空数组返回。 执行 [查找请求](#lookup) 的 `relationships` 属性。
 
 ```json
 {
@@ -609,7 +610,7 @@ curl -X DELETE \
 
 ## 将库分配给环境 {#environment}
 
-您可以将库分配给环境`/relationships/environment` ，以指定POST请求的路径。
+您可以将库分配给环境  `/relationships/environment` 到POST请求的路径。
 
 **API格式**
 
@@ -630,7 +631,7 @@ curl -X POST \
   https://reactor.adobe.io/libraries/LBdd2f55e9c3bb4ce0a582a0b0c586a6f5/relationships/environment \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Accept: application/vnd.api+json;revision=1' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -644,13 +645,13 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `id` | 您将库分配到的环境的ID。 |
-| `type` | 必须设置为`environments`。 |
+| `type` | 必须设置为 `environments`. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-成功的响应会返回关系的详细信息。 为库执行[查找请求](#lookup)将显示在`relationships`属性下添加的关系。
+成功的响应会返回关系的详细信息。 执行 [查找请求](#lookup) 的 `relationships` 属性。
 
 ```json
 {
@@ -667,7 +668,7 @@ curl -X POST \
 
 ## 过渡库 {#transition}
 
-您可以将库转换为其他发布状态，方法是：在PATCH请求的路径中包含库的ID，并在有效负载中提供相应的`meta.action`值。
+您可以将库转换为其他发布状态，方法是将其ID包含在PATCH请求的路径中，并提供相应的 `meta.action` 值。
 
 **API格式**
 
@@ -677,20 +678,20 @@ PATCH /libraries/{LIBRARY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 要过渡的库的`id`。 |
+| `LIBRARY_ID` | 的 `id` 的子目录访问。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会根据有效负载中提供的`meta.action`值，转换现有库的状态。 库的可用操作取决于其当前发布状态，如[发布流程](../../ui/publishing/publishing-flow.md#state)中所述。
+以下请求会根据 `meta.action` 在有效载荷中提供。 库的可用操作取决于其当前发布状态，如 [发布流程](../../ui/publishing/publishing-flow.md#state).
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -706,8 +707,8 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `meta.action` | 要在库上执行的特定过渡操作。 根据库的当前发布状态，可以执行以下操作： <ul><li>`develop`</li><li>`submit`</li><li>`approve`</li><li>`reject`</li></ul> |
-| `id` | 要更新的库的`id`。 这应该与请求路径中提供的`{LIBRARY_ID}`值匹配。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`libraries`。 |
+| `id` | 的 `id` 的子目录访问。 这应该与 `{LIBRARY_ID}` 值。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `libraries`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -813,7 +814,7 @@ POST /libraries/{LIBRARY_ID}/builds
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 要发布的库的`id`。 |
+| `LIBRARY_ID` | 的 `id` 的子目录访问。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -826,7 +827,7 @@ curl -X POST \
   https://reactor.adobe.io/libraries/LB80c337c956804738b2db2ea2f69fcdf0/builds \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json'
 ```
 
@@ -904,17 +905,17 @@ curl -X POST \
 
 ## 管理库的注释 {#notes}
 
-库是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 有关如何管理库和其他兼容资源的注释的详细信息，请参阅[notes端点指南](./notes.md)。
+库是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 请参阅 [注释终端指南](./notes.md) 有关如何管理库和其他兼容资源的注释的更多信息。
 
 ## 检索库的相关资源 {#related}
 
-以下调用演示了如何检索库的相关资源。 [查找库](#lookup)时，这些关系列在`relationships`属性下。
+以下调用演示了如何检索库的相关资源。 When [查找图书馆](#lookup)，则这些关系列在 `relationships` 属性。
 
-有关Reactor API中关系的更多信息，请参阅[关系指南](../guides/relationships.md)。
+请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
 ### 列出库的相关数据元素 {#data-elements}
 
-您可以通过将`/data_elements`附加到查询请求的路径来列出库所利用的数据元素。
+您可以通过附加来列出库所利用的数据元素 `/data_elements` 到查找请求的路径。
 
 **API格式**
 
@@ -924,7 +925,7 @@ GET  /libraries/{LIBRARY_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 要列出其数据元素的库的`id`。 |
+| `{LIBRARY_ID}` | 的 `id` 要列出其数据元素的库的子目录访问。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -935,7 +936,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84/data_elements \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1055,7 +1056,7 @@ curl -X GET \
 
 ### 列出库的相关扩展 {#extensions}
 
-您可以通过将`/extensions`附加到查询请求的路径来列出库所使用的扩展。
+您可以通过附加 `/extensions` 到查找请求的路径。
 
 **API格式**
 
@@ -1065,7 +1066,7 @@ GET  /libraries/{LIBRARY_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 要列出其扩展名的库的`id`。 |
+| `{LIBRARY_ID}` | 的 `id` 要列出其扩展的库的子目录访问。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1076,7 +1077,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84/extensions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1186,7 +1187,7 @@ curl -X GET \
 
 ### 列出库的相关规则 {#rules}
 
-您可以通过将`/rules`附加到查询请求的路径来列出库所使用的规则。
+您可以通过附加来列出库所利用的规则 `/rules` 到查找请求的路径。
 
 **API格式**
 
@@ -1196,7 +1197,7 @@ GET  /libraries/{LIBRARY_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 要列出其规则的库的`id`。 |
+| `{LIBRARY_ID}` | 的 `id` 要列出其规则的库。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1207,7 +1208,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84/rules \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1299,7 +1300,7 @@ curl -X GET \
 
 ### 查找库的相关环境 {#related-environment}
 
-您可以通过将`/environment`附加到GET请求的路径，来查找分配到库的环境。
+您可以通过附加来查找分配了库的环境 `/environment` 到GET请求的路径。
 
 **API格式**
 
@@ -1309,7 +1310,7 @@ GET  /libraries/{LIBRARY_ID}/environment
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 要查找其环境的库的`id`。 |
+| `{LIBRARY_ID}` | 的 `id` 要查找其环境的库。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1320,7 +1321,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84/environment \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1411,7 +1412,7 @@ curl -X GET \
 
 ### 查找库的相关属性 {#property}
 
-您可以通过将`/property`附加到GET请求的路径来查找拥有库的属性。
+您可以通过附加 `/property` 到GET请求的路径。
 
 **API格式**
 
@@ -1421,7 +1422,7 @@ GET  /libraries/{LIBRARY_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 要查找其属性的库的`id`。 |
+| `{LIBRARY_ID}` | 的 `id` 要查找其属性的库的子目录访问。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1432,7 +1433,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84/property \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1534,7 +1535,7 @@ curl -X GET \
 
 ### 查找库的上游 {#upstream}
 
-您可以通过将`/upstream_library`附加到GET请求的路径，从库的上游位置查找下一个库。
+您可以通过附加 `/upstream_library` 到GET请求的路径。
 
 **API格式**
 
@@ -1544,7 +1545,7 @@ GET  /libraries/{LIBRARY_ID}/upstream_library
 
 | 参数 | 描述 |
 | --- | --- |
-| `{LIBRARY_ID}` | 要查找其上游库的库的`id`。 |
+| `{LIBRARY_ID}` | 的 `id` 要查找其上游库的库。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1555,7 +1556,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LB5862ee2dc21b4646a5536c8d6edb0c84/upstream_library \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

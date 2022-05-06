@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: 计算属性是用于将事件级别数据聚合到配置文件级别属性中的函数。 要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用架构注册表API创建此字段，以定义架构和将包含计算属性字段的自定义字段组。
 exl-id: 91c5d125-8ab5-4291-a974-48dd44c68a13
-source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '736'
 ht-degree: 2%
@@ -20,11 +20,11 @@ ht-degree: 2%
 
 要配置计算属性，您首先需要标识将包含计算属性值的字段。 可以使用架构注册表API创建此字段，以定义架构和将保存计算属性字段的自定义架构字段组。 建议最好创建一个单独的“计算属性”架构和字段组，贵组织可以在其中添加任何用作计算属性的属性。 这样，您的组织就可以将计算的属性架构与用于数据摄取的其他架构完全分离。
 
-本文档中的工作流概述了如何使用架构注册表API创建引用自定义字段组的启用配置文件的“计算属性”架构。 本文档包含特定于计算属性的示例代码，但有关使用API定义字段组和架构的详细信息，请参阅[架构注册表API指南](../../xdm/api/overview.md)。
+本文档中的工作流概述了如何使用架构注册表API创建引用自定义字段组的启用配置文件的“计算属性”架构。 本文档包含特定于计算属性的示例代码，但请参阅 [架构注册API指南](../../xdm/api/overview.md) 有关使用API定义字段组和架构的详细信息。
 
 ## 创建计算属性字段组
 
-要使用架构注册表API创建字段组，请首先向`/tenant/fieldgroups`端点发出POST请求，并提供请求正文中字段组的详细信息。 有关使用架构注册表API处理字段组的详细信息，请参阅[字段组API端点指南](../../xdm/api/field-groups.md)。
+要使用架构注册表API创建字段组，请首先向 `/tenant/fieldgroups` 端点和提供请求正文中字段组的详细信息。 有关使用架构注册表API与字段组合作的详细信息，请参阅 [字段组API端点指南](../../xdm/api/field-groups.md).
 
 **API格式**
 
@@ -39,7 +39,7 @@ curl -X POST \
   https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups\
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'content-type: application/json' \
   -d '{
@@ -84,7 +84,7 @@ curl -X POST \
 
 **响应**
 
-成功的请求会返回HTTP响应状态201（已创建），其中包含新创建字段组的详细信息（包括`$id`、`meta:altIt`和`version`）的响应主体。 这些值是只读的，由架构注册表分配。
+成功的请求会返回HTTP响应状态201（已创建），其中包含新创建字段组的详细信息(包括 `$id`, `meta:altIt`和 `version`. 这些值是只读的，由架构注册表分配。
 
 ```json
 {
@@ -120,7 +120,7 @@ curl -X POST \
       "meta:xdmType": "object"
     }
   ],
-  "imsOrg": "{IMS_ORG}",
+  "imsOrg": "{ORG_ID}",
   "meta:extensible": true,
   "meta:abstract": true,
   "meta:intendedToExtend": [
@@ -146,9 +146,9 @@ curl -X POST \
 
 ## 使用其他计算属性更新字段组
 
-由于需要更多计算属性，因此您可以通过向`/tenant/fieldgroups`端点发出PUT请求来使用附加属性更新计算属性字段组。 此请求要求您包含在路径中创建的字段组的唯一ID，以及要在正文中添加的所有新字段。
+由于需要更多计算属性，因此您可以通过向 `/tenant/fieldgroups` 端点。 此请求要求您包含在路径中创建的字段组的唯一ID，以及要在正文中添加的所有新字段。
 
-有关使用架构注册表API更新字段组的更多信息，请参阅[字段组API端点指南](../../xdm/api/field-groups.md)。
+有关使用架构注册表API更新字段组的详细信息，请参阅 [字段组API端点指南](../../xdm/api/field-groups.md).
 
 **API格式**
 
@@ -158,7 +158,7 @@ PUT /tenant/fieldgroups/{FIELD_GROUP_ID}
 
 **请求**
 
-此请求会添加与`purchaseSummary`信息相关的新字段。
+此请求会添加与 `purchaseSummary` 信息。
 
 >[!NOTE]
 >
@@ -170,7 +170,7 @@ curl -X PUT \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
         "type": "object",
@@ -285,7 +285,7 @@ curl -X PUT \
       "meta:xdmType": "object"
     }
   ],
-  "imsOrg": "{IMS_ORG}",
+  "imsOrg": "{ORG_ID}",
   "meta:extensible": true,
   "meta:abstract": true,
   "meta:intendedToExtend": [
@@ -311,9 +311,9 @@ curl -X PUT \
 
 ## 创建启用了用户档案的架构
 
-要使用架构注册表API创建架构，请首先向`/tenant/schemas`端点发出POST请求，并在请求正文中提供架构的详细信息。 还必须为[!DNL Profile]启用架构，并作为架构类的并集架构的一部分显示。
+要使用架构注册表API创建架构，请首先向 `/tenant/schemas` 端点，并在请求正文中提供架构的详细信息。 还必须为 [!DNL Profile] 和显示为架构类的并集架构的一部分。
 
-有关启用[!DNL Profile]的架构和并集架构的更多信息，请参阅[[!DNL Schema Registry] API指南](../../xdm/api/overview.md)和[架构组合基础知识文档](../../xdm/schema/composition.md)。
+有关 [!DNL Profile]-enabled schemas和union schemas，请查看 [[!DNL Schema Registry] API指南](../../xdm/api/overview.md) 和 [架构合成基础文档](../../xdm/schema/composition.md).
 
 **API格式**
 
@@ -323,7 +323,7 @@ POST /tenants/schemas
 
 **请求**
 
-以下请求将创建一个新架构，该架构引用本文档前面创建的`computedAttributesFieldGroup`（使用其唯一ID），并为配置文件并集架构启用（使用`meta:immutableTags`数组）。 有关如何使用架构注册表API创建架构的详细说明，请参阅[架构API端点指南](../../xdm/api/schemas.md)。
+以下请求会创建一个引用 `computedAttributesFieldGroup` 此文档中之前创建的（使用其唯一ID），且已为配置文件合并架构启用(使用 `meta:immutableTags` 数组)。 有关如何使用架构注册表API创建架构的详细说明，请参阅 [架构API端点指南](../../xdm/api/schemas.md).
 
 ```shell
 curl -X POST \
@@ -331,7 +331,7 @@ curl -X POST \
   -H 'Authorization: Bearer {ACCESS_TOKEN' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
         "type": "object",
@@ -366,7 +366,7 @@ curl -X POST \
 
 **响应**
 
-成功响应会返回HTTP状态201（已创建）和包含新创建架构详细信息（包括`$id`、`meta:altId`和`version`）的有效负载。 这些值是只读的，由架构注册表分配。
+成功响应会返回HTTP状态201（已创建）和包含新创建架构详细信息(包括 `$id`, `meta:altId`和 `version`. 这些值是只读的，由架构注册表分配。
 
 ```json
 {
@@ -400,7 +400,7 @@ curl -X POST \
     "https://ns.adobe.com/xdm/context/identitymap",
     "https://ns.adobe.com/{TENANT_ID}/mixins/860ad1b1b35e0a88ecf6df92ebce08335c180313d5805352"
   ],
-  "imsOrg": "{IMS_ORG}",
+  "imsOrg": "{ORG_ID}",
   "meta:extensible": false,
   "meta:abstract": false,
   "meta:extends": [
@@ -434,4 +434,4 @@ curl -X POST \
 
 ## 后续步骤
 
-现在，您已创建一个架构和字段组，计算属性将存储到其中，接下来可以使用`/computedattributes` API端点创建计算属性。 有关在API中创建计算属性的详细步骤，请按照[计算属性API端点指南](ca-api.md)中提供的步骤操作。
+现在，您已创建一个架构和字段组，计算属性将存储到其中，接下来可以使用 `/computedattributes` API端点。 有关在API中创建计算属性的详细步骤，请按照 [计算属性API端点指南](ca-api.md).

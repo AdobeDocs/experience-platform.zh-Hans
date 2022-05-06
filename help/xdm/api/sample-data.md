@@ -5,7 +5,7 @@ title: 示例数据API端点
 description: 架构注册表API中的/sampledata端点允许您生成映射到任何现有XDM架构的示例数据。
 topic-legacy: developer guide
 exl-id: 424d33ca-0624-4891-bf83-044ac2861579
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '318'
 ht-degree: 2%
@@ -16,13 +16,13 @@ ht-degree: 2%
 
 要将数据摄取到Adobe Experience Platform中，数据的格式和结构必须符合现有的体验数据模型(XDM)架构。 根据特定数据集架构的复杂性，可能很难确定数据集在摄取时所需数据的确切形状。
 
-使用[!DNL Schema Registry] API中的`/sampledata`端点，您可以为之前创建的任何架构生成一个示例摄取对象。
+使用 `/sampledata` 的端点 [!DNL Schema Registry] API中，您可以为之前创建的任何架构生成一个摄取对象示例。
 
 ## 快速入门
 
-本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)的一部分。 在继续操作之前，请查阅[快速入门指南](./getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及成功调用任何Experience PlatformAPI所需的标头的重要信息。
+本指南中使用的端点是 [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 在继续之前，请查看 [入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
 
-示例数据端点是[!DNL Schema Registry]支持的远程过程调用(RPC)的一部分。 与[!DNL Schema Registry] API中的其他端点不同，RPC端点不需要诸如`Accept`或`Content-Type`之类的额外标头，也不使用`CONTAINER_ID`。 相反，它们必须使用`/rpc`命名空间，如以下API调用中所示。
+示例数据端点是远程过程调用(RPC)的一部分，该调用受 [!DNL Schema Registry]. 与 [!DNL Schema Registry] API、RPC端点不需要其他标头，例如 `Accept` 或 `Content-Type`、和不使用 `CONTAINER_ID`. 相反，他们必须使用 `/rpc` 命名空间，如下面API调用中所示。
 
 ## 检索架构的示例数据
 
@@ -36,7 +36,7 @@ GET /rpc/sampledata/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | 要为其生成示例数据的架构的`meta:altId`或URL编码的`$id`。 |
+| `{SCHEMA_ID}` | 的 `meta:altId` 或URL编码 `$id` 要为其生成示例数据的架构。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -49,7 +49,7 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/schemaregistry/rpc/sampledata/_{TENANT_ID}.schemas.533ca5da28087c44344810891b0f03d9 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 

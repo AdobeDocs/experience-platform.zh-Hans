@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程将向您展示如何利用Sensei机器学习API创建实验和实验运行。
 exl-id: 202c63b0-86d8-4a82-8ec8-d144a8911d08
-source-git-commit: 6ae6bbb5af0f007e483145dca5d4d505c388cc2c
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 1%
@@ -30,12 +30,12 @@ curl -X POST \
   https://platform.adobe.io/data/sensei/experiments \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/vnd.adobe.platform.sensei+json;profile=experiment.v1.json' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-api-key: {API_KEY}' \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。\
+`{ORG_ID}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。\
 `{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
 `{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。\
 `{JSON_PAYLOAD}`:要发送的Experience Run对象。 下面显示了我们在教程中使用的示例：
@@ -118,12 +118,12 @@ curl -X POST \
   https://platform.adobe.io/data/sensei/experiments/{EXPERIMENT_ID}/runs \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/vnd.adobe.platform.sensei+json;profile=experimentRun.v1.json' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-api-key: {API_KEY}' \
   -d '{JSON_PAYLOAD}'
 ```
 
-`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。\
+`{ORG_ID}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。\
 `{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
 `{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。\
 `{EXPERIMENT_ID}`:与要定位的实验对应的ID。 这可在创建实验时的响应中找到。\
@@ -183,12 +183,12 @@ curl -X POST \
 curl -X GET \
   'https://platform.adobe.io/data/sensei/experiments/{EXPERIMENT_ID}/runs' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 `{EXPERIMENT_ID}`:与运行所在实验对应的ID。\
 `{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
-`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。
+`{ORG_ID}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。
 
 由于特定实验存在多个实验运行，因此返回的响应将具有一组运行ID。
 
@@ -226,12 +226,12 @@ curl -X GET \
 curl -X DELETE \
   'https://platform.adobe.io/data/sensei/experiments/{EXPERIMENT_ID}' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 `{EXPERIMENT_ID}`:与实验对应的ID。\
 `{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。\
-`{IMS_ORG}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。
+`{ORG_ID}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。
 
 >[!NOTE]
 >

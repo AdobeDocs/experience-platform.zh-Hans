@@ -1,25 +1,24 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；数据科学工作区；热门主题；洞察；sensei机器学习api
+keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；分析；Sensei机器学习API
 solution: Experience Platform
-title: Insights API端点
+title: 分析API端点
 topic-legacy: Developer guide
-description: 洞察包含量度，这些量度可让数据科学家通过显示相关评估量度来评估和选择最佳ML模型。
+description: 分析包含量度，这些量度用于让数据科学家通过显示相关评估量度来评估和选择最佳ML模型。
 exl-id: 603546d6-5686-4b59-99a7-90ecc0db8de3
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '515'
 ht-degree: 3%
 
 ---
 
-# Insights端点
+# 分析端点
 
-洞察包含量度，这些量度可让数据科学家通过显示相关评估量度来评估和选择最佳ML模型。
+分析包含量度，这些量度用于让数据科学家通过显示相关评估量度来评估和选择最佳ML模型。
 
-## 检索列表洞察
+## 检索分析列表
 
-您可以通过向分析端点执行单个GET请求来检索分析列表。  要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
+您可以通过对分析端点执行单个GET请求来检索分析列表。  要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅 [资产检索查询参数](./appendix.md#query).
 
 **API格式**
 
@@ -34,13 +33,13 @@ curl -X GET \
   https://platform.adobe.io/data/sensei/insights \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-成功的响应返回一个包含洞察列表的有效负荷，每个分析都具有唯一标识符(`id`)。 此外，您还将收到`context`，其中包含与分析事件和量度数据后的特定分析关联的唯一标识符。
+成功的响应会返回包含分析列表的有效负载，并且每个分析都具有唯一标识符( `id` )。 此外，您还将收到 `context` 包含与分析事件和量度数据之后的特定分析相关联的唯一标识符。
 
 ```json
 {
@@ -102,14 +101,14 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 与Insight对应的ID。 |
+| `id` | 与分析对应的ID。 |
 | `experimentId` | 有效的实验ID。 |
 | `experimentRunId` | 有效的实验运行ID。 |
 | `modelId` | 有效的模型ID。 |
 
-## 检索特定Insight
+## 检索特定分析
 
-要查找特定的分析，请发出GET请求，并在请求路径中提供有效的`{INSIGHT_ID}`。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
+要查找特定分析，请发出GET请求并提供有效 `{INSIGHT_ID}` 在请求路径中。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅 [资产检索查询参数](./appendix.md#query).
 
 **API格式**
 
@@ -128,13 +127,13 @@ curl -X GET \
   https://platform.adobe.io/data/sensei/insights/08b8d174-6b0d-4d7e-acd8-1c4c908e14b2 \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-成功的响应返回包含洞察唯一标识符(`id`)的有效负荷。 此外，您还将收到`context`，其中包含与“分析”事件和量度数据后的特定分析相关联的唯一标识符。
+成功的响应会返回包含分析唯一标识符(`id`)。 此外，您还将收到 `context` 包含与分析事件和量度数据之后的特定分析相关联的唯一标识符。
 
 ```json
 {
@@ -165,14 +164,14 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 与Insight对应的ID。 |
+| `id` | 与分析对应的ID。 |
 | `experimentId` | 有效的实验ID。 |
 | `experimentRunId` | 有效的实验运行ID。 |
 | `modelId` | 有效的模型ID。 |
 
 ## 添加新的模型分析
 
-您可以通过执行POST请求和提供新模型分析的上下文、事件和量度的有效负荷来创建新模型分析。 用于创建新模型分析的上下文字段不需要将现有服务附加到该模型分析，但您可以通过提供一个或多个相应ID来选择使用现有服务创建新模型分析：
+您可以通过执行POST请求和有效负载来为新模型分析提供上下文、事件和量度，从而创建新的模型分析。 创建新模型分析的上下文字段不需要附加现有服务，但您可以选择通过提供一个或多个对应的ID来使用现有服务创建新的模型分析：
 
 ```json
 "context": {
@@ -200,7 +199,7 @@ curl -X POST \
   https://platform.adobe.io/data/sensei/insights \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
     -H `Content-Type: application/vnd.adobe.platform.sensei+json;profile=mlInstance.v1.json`
     -d {
@@ -230,7 +229,7 @@ curl -X POST \
 
 **响应**
 
-成功的响应将返回具有`{INSIGHT_ID}`和您在初始请求中提供的任何参数的有效负荷。
+成功的响应将返回一个有效负载，该负载具有 `{INSIGHT_ID}` 以及您在初始请求中提供的任何参数。
 
 ```json
 {
@@ -261,11 +260,11 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `insightId` | 成功发出POST请求时为此特定分析创建的唯一ID。 |
+| `insightId` | 在成功发出POST请求时为此特定分析创建的唯一ID。 |
 
-## 检索算法的默认量度列表
+## 为算法检索默认量度列表
 
-您可以通过对量度端点执行单个GET请求来检索所有算法和默认量度的列表。 要查询特定量度发出GET请求，并在请求路径中提供有效的`{ALGORITHM}`。
+通过对量度端点执行单个GET请求，可以检索所有算法和默认量度的列表。 查询特定量度以发出GET请求并提供有效 `{ALGORITHM}` 在请求路径中。
 
 **API格式**
 
@@ -280,20 +279,20 @@ GET /insights/metrics?algorithm={ALGORITHM}
 
 **请求**
 
-以下请求包含查询，并使用算法标识符`{ALGORITHM}`检索特定量度
+以下请求包含一个查询，并使用算法标识符检索特定量度 `{ALGORITHM}`
 
 ```shell
 curl -X GET \
   'https://platform.adobe.io/data/sensei/insights/metrics?algorithm={ALGORITHM}' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-成功的响应返回一个包含`algorithm`唯一标识符和默认量度数组的有效负荷。
+成功响应会返回包含 `algorithm` 唯一标识符和默认量度数组。
 
 ```json
 {

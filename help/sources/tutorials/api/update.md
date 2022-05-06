@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了使用流量服务API更新帐户的详细信息和凭据的步骤。
 exl-id: a93385fd-ed36-457f-8882-41e37f6f209d
-source-git-commit: 95f455bd03b7baefe0133a9818c9d048f36f9d38
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '523'
 ht-degree: 2%
@@ -55,13 +55,13 @@ curl -X GET \
     'https://platform.adobe.io/data/foundation/flowservice/connections/139f6a5f-a78b-4744-9f6a-5fa78bd74431' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-A successful response returns the current details of your connection including its credentials, unique identifier (`id`), and version. 更新连接时需要使用版本值。
+成功的响应会返回连接的当前详细信息，包括其凭据、唯一标识符(`id`)和版本。 更新连接时需要使用版本值。
 
 ```json
 {
@@ -97,7 +97,7 @@ A successful response returns the current details of your connection including i
 }
 ```
 
-## Update connection
+## 更新连接
 
 要更新连接的名称、说明和凭据，请向执行PATCH请求 [!DNL Flow Service] API，同时提供您要使用的连接ID、版本和新信息。
 
@@ -124,7 +124,7 @@ curl -X PATCH \
     'https://platform.adobe.io/data/foundation/flowservice/connections/139f6a5f-a78b-4744-9f6a-5fa78bd74431' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
     -H 'If-Match: 1400dd53-0000-0200-0000-5f3f23450000' \
     -d '[

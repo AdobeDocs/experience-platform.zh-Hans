@@ -1,7 +1,8 @@
 ---
 title: 生成端点
 description: 了解如何在Reactor API中调用/builds端点。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 476abea0-efff-478a-b87f-ef6b91bfcca5
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '833'
 ht-degree: 8%
@@ -10,21 +11,21 @@ ht-degree: 8%
 
 # 生成端点
 
-扩展、规则和数据元素是Adobe Experience Platform中标记的构建基块。 当您希望应用程序执行某些操作时，这些构建块会添加到[库](./libraries.md)中。 要在您的体验应用程序上部署库，会将库编译为内部版本。 Reactor API中的`/builds`端点允许您以编程方式管理体验应用程序中的内部版本。
+扩展、规则和数据元素是Adobe Experience Platform中标记的构建基块。 当您希望应用程序执行一些操作时，这些构建基块会添加到 [库](./libraries.md). 要在您的体验应用程序上部署库，会将库编译为内部版本。 的 `/builds` reactor API中的端点允许您以编程方式管理体验应用程序中的内部版本。
 
 内部版本是指在您的Web和移动应用程序中加载的实际文件（或文件）。 每个内部版本的内容因以下因素而异：
 
 * 库中包含的资源
-* 在其中构建库的[环境](./environments.md)的配置
-* 内部版本所属的[属性](./properties.md)的平台
+* 的配置 [环境](./environments.md) 其中构建了库
+* 平台 [属性](./properties.md) 内部版本所属的
 
 内部版本恰好属于一个库。 库可以具有许多内部版本。
 
-有关内部版本及其如何适合标记发布工作流程的更多常规信息，请参阅[发布概述](../../ui/publishing/overview.md)。
+有关内部版本及其如何适用于标记发布工作流程的更多信息，请参阅 [发布概述](../../ui/publishing/overview.md).
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索内部版本列表 {#list}
 
@@ -38,13 +39,13 @@ GET /libraries/{LIBRARY_ID}/builds
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 要列出其内部版本的库的`id`。 |
+| `LIBRARY_ID` | 的 `id` 要列出其内部版本的库。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的内部版本：<ul><li>`created_at`</li><li>`status`</li><li>`token`</li><li>`updated_at`</li></ul>有关更多信息，请参阅[筛选响应](../guides/filtering.md)指南。
+>使用查询参数，可以根据以下属性过滤列出的内部版本：<ul><li>`created_at`</li><li>`status`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -53,7 +54,7 @@ curl -X GET \
   https://reactor.adobe.io/libraries/LBad32d71feff844b7b5a11dd0bf030964/builds \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -155,7 +156,7 @@ GET /builds/{BUILD_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `BUILD_ID` | 要查找的内部版本的`id`。 |
+| `BUILD_ID` | 的 `id` 要查找的内部版本。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -166,7 +167,7 @@ curl -X GET \
   https://reactor.adobe.io/builds/BL8238895201d548718bda2d0bf2b83467 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -257,7 +258,7 @@ POST /libraries/{LIBRARY_ID}/builds
 
 | 参数 | 描述 |
 | --- | --- |
-| `LIBRARY_ID` | 要在下定义内部版本的库的`id`。 |
+| `LIBRARY_ID` | 的 `id` 的库中，此库是您在下定义内部版本的库。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -270,7 +271,7 @@ curl -X POST \
   https://reactor.adobe.io/libraries/LBd8eaef8283fe40738348db65a8984475/builds \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **响应**
@@ -349,7 +350,7 @@ curl -X POST \
 
 ## 重新发布内部版本 {#republish}
 
-您可以通过在PATCH请求的路径中包含库的ID来从[已发布的库](./libraries.md#publish)重新发布内部版本。
+您可以从 [发布的库](./libraries.md#publish) 将其ID包含在PATCH请求的路径中。
 
 **API格式**
 
@@ -359,20 +360,20 @@ PATCH /builds/{BUILD_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `BUILD_ID` | 要重新发布的内部版本的`id`。 |
+| `BUILD_ID` | 的 `id` 要重新发布的内部版本。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会更新现有应用程序配置的`app_id`。
+以下请求更新了 `app_id` ，用于现有应用程序配置。
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/builds/BLb408c04c20ba4a82b6df496969a99781 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -387,9 +388,9 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 要更新的内部版本的`id`。 这应该与请求路径中提供的`{BUILD_ID}`值匹配。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`builds`。 |
-| `meta.action` | 要执行的PATCH操作的类型。 必须设置为`republish`。 |
+| `id` | 的 `id` 要更新的内部版本。 这应该与 `{BUILD_ID}` 值。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `builds`. |
+| `meta.action` | 要执行的PATCH操作的类型。 必须设置为 `republish`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -470,13 +471,13 @@ curl -X PATCH \
 
 ## 检索内部版本的相关资源 {#related}
 
-以下调用演示了如何检索内部版本的相关资源。 在[查找内部版本](#lookup)时，这些关系列在`relationships`属性下。
+以下调用演示了如何检索内部版本的相关资源。 When [查找内部版本](#lookup)，则这些关系列在 `relationships` 属性。
 
-有关Reactor API中关系的更多信息，请参阅[关系指南](../guides/relationships.md)。
+请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
 ### 列出内部版本的相关数据元素 {#data-elements}
 
-您可以通过将`/data_elements`附加到查询请求的路径来列出内部版本的相关数据元素。
+您可以通过附加来列出内部版本的相关数据元素 `/data_elements` 到查找请求的路径。
 
 **API格式**
 
@@ -486,7 +487,7 @@ GET  /builds/{BUILD_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 要列出其数据元素的内部版本的`id`。 |
+| `{BUILD_ID}` | 的 `id` 要列出其数据元素的内部版本。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -497,7 +498,7 @@ curl -X GET \
   https://reactor.adobe.io/builds/BLb408c04c20ba4a82b6df496969a99781/data_elements \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -617,7 +618,7 @@ curl -X GET \
 
 ### 列出内部版本的相关扩展 {#extensions}
 
-您可以通过将`/extensions`附加到查询请求的路径来列出内部版本的相关扩展。
+您可以通过附加来列出内部版本的相关扩展 `/extensions` 到查找请求的路径。
 
 **API格式**
 
@@ -627,7 +628,7 @@ GET  /builds/{BUILD_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 要列出其扩展的内部版本的`id`。 |
+| `{BUILD_ID}` | 的 `id` 的扩展名。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -638,7 +639,7 @@ curl -X GET \
   https://reactor.adobe.io/builds/BLb408c04c20ba4a82b6df496969a99781/extensions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -748,7 +749,7 @@ curl -X GET \
 
 ### 列出内部版本的相关规则 {#rules}
 
-您可以通过将`/rules`附加到查找请求的路径来列出内部版本的相关规则。
+您可以通过附加来列出内部版本的相关规则 `/rules` 到查找请求的路径。
 
 **API格式**
 
@@ -758,7 +759,7 @@ GET  /builds/{BUILD_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 要列出其规则的内部版本的`id`。 |
+| `{BUILD_ID}` | 的 `id` 要列出其规则的内部版本。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -769,7 +770,7 @@ curl -X GET \
   https://reactor.adobe.io/builds/BLb408c04c20ba4a82b6df496969a99781/rules \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -861,7 +862,7 @@ curl -X GET \
 
 ### 查找内部版本的相关库 {#library}
 
-您可以通过将`/library`附加到查找请求的路径，来检索内部版本的相关库。
+您可以通过附加来检索内部版本的相关库 `/library` 到查找请求的路径。
 
 **API格式**
 
@@ -871,7 +872,7 @@ GET  /builds/{BUILD_ID}/library
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 要查找其库的内部版本的`id`。 |
+| `{BUILD_ID}` | 的 `id` 库所在的内部版本。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -882,7 +883,7 @@ curl -X GET \
   https://reactor.adobe.io/builds/BLb408c04c20ba4a82b6df496969a99781/library \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -974,7 +975,7 @@ curl -X GET \
 
 ### 查找内部版本的相关环境 {#environment}
 
-您可以通过将`/environment`附加到查找请求的路径，来检索内部版本的相关环境。
+您可以通过附加来检索内部版本的相关环境 `/environment` 到查找请求的路径。
 
 **API格式**
 
@@ -984,7 +985,7 @@ GET  /builds/{BUILD_ID}/environment
 
 | 参数 | 描述 |
 | --- | --- |
-| `{BUILD_ID}` | 要查找其环境的内部版本的`id`。 |
+| `{BUILD_ID}` | 的 `id` 要查找其环境的内部版本。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -995,7 +996,7 @@ curl -X GET \
   https://reactor.adobe.io/builds/BLb408c04c20ba4a82b6df496969a99781/environment \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

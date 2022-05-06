@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 流式摄取允许您使用流式端点实时将数据上传到Adobe Experience Platform。 流摄取API支持两种验证模式 — 同步和异步。
 exl-id: 6e9ac943-6d73-44de-a13b-bef6041d3834
-source-git-commit: beb5d615da6d825678f446eec609a2bb356bb310
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '898'
 ht-degree: 3%
@@ -21,28 +21,28 @@ ht-degree: 3%
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):用于组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [[!DNL Streaming Ingestion]](../streaming-ingestion/overview.md):将数据发送到的方法之 [!DNL Experience Platform]一。
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
+- [[!DNL Streaming Ingestion]](../streaming-ingestion/overview.md):将数据发送到的方法之一 [!DNL Experience Platform].
 
 ### 读取示例API调用
 
-本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅[!DNL Experience Platform]疑难解答指南中[如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
+本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程可为所有[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
 
-- 授权：载体`{ACCESS_TOKEN}`
+- 授权：持有者 `{ACCESS_TOKEN}`
 - x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{IMS_ORG}`
+- x-gw-ims-org-id: `{ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Schema Registry]的资源）都与特定虚拟沙箱隔离。 对[!DNL Platform] API的所有请求都需要一个标头来指定操作将在其中进行的沙盒的名称：
+中的所有资源 [!DNL Experience Platform]，包括属于 [!DNL Schema Registry]，与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
 
 - x-sandbox-name: `{SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关[!DNL Platform]中沙箱的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+>有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
 
 所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的标头：
 
@@ -62,7 +62,7 @@ ht-degree: 3%
 
 同步验证是一种验证方法，可提供有关摄取失败原因的即时反馈。 但是，失败时，验证失败的记录会被丢弃，并阻止下游发送。 因此，只应在开发过程中使用同步验证。 进行同步验证时，将通知呼叫者XDM验证的结果，如果验证失败，则还将告知失败原因。
 
-默认情况下，不会打开同步验证。 要启用此函数，在进行API调用时必须传入可选查询参数`syncValidation=true`。 此外，当前，仅当流端点位于VA7数据中心时，才可使用同步验证。
+默认情况下，不会打开同步验证。 要启用此查询，必须传入可选查询参数 `syncValidation=true` 进行API调用时。 此外，当前，仅当流端点位于VA7数据中心时，才可使用同步验证。
 
 如果消息在同步验证期间失败，则消息将不会写入输出队列，从而为用户提供即时反馈。
 
@@ -78,11 +78,11 @@ POST /collection/{CONNECTION_ID}?syncValidation=true
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | 先前创建的流连接的`id`值。 |
+| `{CONNECTION_ID}` | 的 `id` 之前创建的流连接的值。 |
 
 **请求**
 
-提交以下请求以通过同步验证将数据摄取到数据入口：
+提交以下请求，以通过同步验证将数据摄取到数据入口：
 
 ```shell
 curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=true \
@@ -141,11 +141,11 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=t
 }
 ```
 
-上述响应列出了发现的架构违规数量以及违规的数量。 例如，此响应声明未在架构中定义键`workEmail`和`person`，因此不允许使用。 它还会将`_id`的值标记为不正确，因为架构应为`string`，而是插入了`long`。 请注意，在遇到五个错误后，验证服务将&#x200B;**停止**&#x200B;处理该消息。 但是，其他消息将继续进行解析。
+上述响应列出了发现的架构违规数量以及违规的数量。 例如，此响应声明键 `workEmail` 和 `person` 未在架构中定义，因此不允许。 它还会标记 `_id` 不正确，因为架构需要 `string`，但 `long` 的值。 请注意，遇到5个错误后，验证服务将 **stop** 正在处理该消息。 但是，其他消息将继续进行解析。
 
 ## 异步验证
 
-异步验证是一种不提供即时反馈的验证方法。 相反，会将数据发送到[!DNL Data Lake]中的失败批次，以防止数据丢失。 稍后可以检索此失败数据，以便进一步分析和重播。 此方法应用于生产中。 除非另有请求，否则流摄取在异步验证模式下运行。
+异步验证是一种不提供即时反馈的验证方法。 相反，数据会在 [!DNL Data Lake] 以防止数据丢失。 稍后可以检索此失败数据，以便进一步分析和重播。 此方法应用于生产中。 除非另有请求，否则流摄取在异步验证模式下运行。
 
 **API格式**
 
@@ -155,7 +155,7 @@ POST /collection/{CONNECTION_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{CONNECTION_ID}` | 先前创建的流连接的`id`值。 |
+| `{CONNECTION_ID}` | 的 `id` 之前创建的流连接的值。 |
 
 **请求**
 
@@ -202,7 +202,7 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID} \
 | ----------- | ------------- |
 | 200 | 成功. 对于同步验证，这意味着它已通过验证检查。 对于异步验证，这意味着它仅成功接收了消息。 用户可以通过观察数据集来查找最终的消息状态。 |
 | 400 | 错误. 你的请求有问题。 从流验证服务中接收了包含更多详细信息的错误消息。 |
-| 401 | 错误. 您的请求未授权 — 您将需要使用载体令牌请求。 有关如何请求访问的更多信息，请参阅此[教程](https://www.adobe.com/go/platform-api-authentication-en)或此[博客文章](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f)。 |
+| 401 | 错误. 您的请求未授权 — 您将需要使用载体令牌请求。 有关如何请求访问权限的更多信息，请参阅此 [教程](https://www.adobe.com/go/platform-api-authentication-en) 或 [博客帖子](https://medium.com/adobetech/using-postman-for-jwt-authentication-on-adobe-i-o-7573428ffe7f). |
 | 500 | 错误. 出现内部系统错误。 |
-| 501 | 错误. 这意味着此位置支持同步验证&#x200B;**不**。 |
+| 501 | 错误. 这意味着同步验证 **not** 支持此位置。 |
 | 503 | 错误. 服务当前不可用。 客户端应使用指数回退策略至少重试3次。 |

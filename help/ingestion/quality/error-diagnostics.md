@@ -5,7 +5,7 @@ title: 检索数据摄取错误诊断
 topic-legacy: overview
 description: 本文档提供了有关监控批量摄取、管理部分批量摄取错误的信息，以及有关部分批量摄取类型的参考。
 exl-id: b885fb00-b66d-453b-80b7-8821117c2041
-source-git-commit: 104e6eb258136caa2192b61c793697baf95b55eb
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '979'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 # 检索数据摄取错误诊断
 
-Adobe Experience Platform提供了两种上传和摄取数据的方法。 您可以使用批量摄取(允许您使用各种文件类型（如CSV）插入数据)，或使用流式摄取（允许您使用流式端点将其数据实时插入到[!DNL Platform]）。
+Adobe Experience Platform提供了两种上传和摄取数据的方法。 您可以使用批量摄取(允许您使用各种文件类型（如CSV）插入数据)，或使用流式摄取(允许您将其数据插入到 [!DNL Platform] 实时使用流端点。
 
 本文档提供了有关监控批量摄取、管理部分批量摄取错误的信息，以及有关部分批量摄取类型的参考。
 
@@ -22,32 +22,32 @@ Adobe Experience Platform提供了两种上传和摄取数据的方法。 您可
 
 本指南要求您对Adobe Experience Platform的以下组件有一定的了解：
 
-- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):用于组织客户体验数 [!DNL Experience Platform] 据的标准化框架。
-- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md):将数据发送到的方 [!DNL Experience Platform]法。
+- [[!DNL Experience Data Model (XDM) System]](../../xdm/home.md):标准化框架， [!DNL Experience Platform] 组织客户体验数据。
+- [[!DNL Adobe Experience Platform Data Ingestion]](../home.md):将数据发送到的方法 [!DNL Experience Platform].
 
 ### 读取示例API调用
 
-本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅[!DNL Experience Platform]疑难解答指南中[如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
+本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程可为所有[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
-- `x-gw-ims-org-id: {IMS_ORG}`
+- `x-gw-ims-org-id: {ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Schema Registry]的资源）都与特定虚拟沙箱隔离。 对[!DNL Platform] API的所有请求都需要一个标头来指定操作将在其中进行的沙盒的名称：
+中的所有资源 [!DNL Experience Platform]，包括属于 [!DNL Schema Registry]，与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
 >[!NOTE]
 >
->有关[!DNL Platform]中沙箱的更多信息，请参阅[沙盒概述文档](../../sandboxes/home.md)。
+>有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
 
 ## 下载错误诊断 {#download-diagnostics}
 
-Adobe Experience Platform允许用户下载输入文件的错误诊断程序。 诊断程序将在[!DNL Platform]内保留长达30天。
+Adobe Experience Platform允许用户下载输入文件的错误诊断程序。 诊断将保留在 [!DNL Platform] 最多30天。
 
 ### 列出输入文件 {#list-files}
 
@@ -69,7 +69,7 @@ GET /batches/{BATCH_ID}/meta?path=input_files
 curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-2233-11ea-acf0-f3edfcded2d2/meta?path=input_files \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -127,13 +127,13 @@ GET /batches/{BATCH_ID}/meta?path=input_files/{FILE}
 curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-2233-11ea-acf0-f3edfcded2d2/meta?path=input_files/fileMetaData1.json \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-成功的响应将返回包含`path`对象的JSON对象，这些对象详细说明了诊断的保存位置。 响应将返回[JSON行](https://jsonlines.org/)格式的`path`对象。
+成功的响应将返回包含 `path` 详细说明保存诊断的位置的对象。 响应将返回 `path` 对象 [JSON行](https://jsonlines.org/) 格式。
 
 ```json
 {"path": "F1.json"}
@@ -146,7 +146,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/af838510-22
 
 ### 检查状态 {#check-status}
 
-要检查摄取的批的状态，必须在GET请求路径中提供批的ID。 要了解有关使用此API调用的更多信息，请阅读[目录端点指南](../../catalog/api/list-objects.md)。
+要检查摄取的批的状态，必须在GET请求路径中提供批的ID。 要了解有关使用此API调用的更多信息，请阅读 [catalog endpoint guide](../../catalog/api/list-objects.md).
 
 **API格式**
 
@@ -157,8 +157,8 @@ GET /catalog/batches/{BATCH_ID}?{FILTER}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 要检查状态的批处理的`id`值。 |
-| `{FILTER}` | 用于筛选响应中返回的结果的查询参数。 多个参数以与号(`&`)分隔。 有关更多信息，请阅读[filtering Catalog data](../../catalog/api/filter-data.md)中的指南。 |
+| `{BATCH_ID}` | 的 `id` 要检查状态的批的值。 |
+| `{FILTER}` | 用于筛选响应中返回的结果的查询参数。 多个参数以与号(`&`)。 有关更多信息，请阅读 [筛选目录数据](../../catalog/api/filter-data.md). |
 
 **请求**
 
@@ -166,7 +166,7 @@ GET /catalog/batches/{BATCH_ID}?{FILTER}
 curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2233-11ea-acf0-f3edfcded2d2 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -193,7 +193,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
         "inputFormat": {
             "format": "parquet"
         },
-        "imsOrg": "{IMS_ORG}",
+        "imsOrg": "{ORG_ID}",
         "started": 1576741718543,
         "metrics": {
             "inputByteSize": 568,
@@ -215,7 +215,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可通过从`outputRecordCount`中减去`inputRecordCount`来派生。 无论是否启用了`errorDiagnostics`，该值都会在所有批次上生成。 |
+| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可通过减去 `inputRecordCount` 从 `outputRecordCount`. 此值在所有批次上生成，无论 `errorDiagnostics` 启用。 |
 
 **有错误的响应**
 
@@ -240,7 +240,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
         "inputFormat": {
             "format": "parquet"
         },
-        "imsOrg": "{IMS_ORG}",
+        "imsOrg": "{ORG_ID}",
         "started": 1576741718543,
         "metrics": {
             "inputByteSize": 568,
@@ -278,8 +278,8 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可通过从`outputRecordCount`中减去`inputRecordCount`来派生。 无论是否启用了`errorDiagnostics`，该值都会在所有批次上生成。 |
-| `errors.recordCount` | 指定错误代码失败的行数。 如果启用了`errorDiagnostics`，则此值为&#x200B;**仅**。 |
+| `metrics.failedRecordCount` | 由于解析、转换或验证而无法处理的行数。 此值可通过减去 `inputRecordCount` 从 `outputRecordCount`. 此值在所有批次上生成，无论 `errorDiagnostics` 启用。 |
+| `errors.recordCount` | 指定错误代码失败的行数。 此值为 **仅** 生成条件 `errorDiagnostics` 启用。 |
 
 >[!NOTE]
 >
@@ -296,7 +296,7 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 ## 后续步骤 {#next-steps}
 
-本教程介绍了如何监控部分批量摄取错误。 有关批量摄取的更多信息，请阅读[批量摄取开发人员指南](../batch-ingestion/api-overview.md)。
+本教程介绍了如何监控部分批量摄取错误。 有关批量摄取的更多信息，请阅读 [批量获取开发人员指南](../batch-ingestion/api-overview.md).
 
 ## 附录 {#appendix}
 
@@ -312,11 +312,11 @@ curl -X GET https://platform.adobe.io/data/foundation/catalog/batches/af838510-2
 
 ### 不可读的文件 {#unreadable}
 
-如果摄取的批处理文件不可读，则该批处理的错误将附加在该批处理本身上。 有关检索失败批的详细信息，请参阅[检索失败批指南](../quality/retrieve-failed-batches.md)。
+如果摄取的批处理文件不可读，则该批处理的错误将附加在该批处理本身上。 有关检索失败批的详细信息，请参阅 [检索失败的批量指南](../quality/retrieve-failed-batches.md).
 
 ### 无效的架构或标头 {#schemas-headers}
 
-如果摄取的批次具有无效架构或无效标题，则批次的错误将附加到该批次本身。 有关检索失败批的详细信息，请参阅[检索失败批指南](../quality/retrieve-failed-batches.md)。
+如果摄取的批次具有无效架构或无效标题，则批次的错误将附加到该批次本身。 有关检索失败批的详细信息，请参阅 [检索失败的批量指南](../quality/retrieve-failed-batches.md).
 
 ### 不可解析的行 {#unparsable}
 
@@ -330,7 +330,7 @@ GET /export/batches/{BATCH_ID}/meta?path=row_errors
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{BATCH_ID}` | 要从中检索错误信息的批处理的`id`值。 |
+| `{BATCH_ID}` | 的 `id` 从中检索错误信息的批的值。 |
 
 **请求**
 
@@ -338,7 +338,7 @@ GET /export/batches/{BATCH_ID}/meta?path=row_errors
 curl -X GET https://platform.adobe.io/data/foundation/export/batches/01EFZ7W203PEKSAMVJC3X99VHQ/meta?path=row_errors \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -375,7 +375,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/01EFZ7W203P
 }
 ```
 
-然后，可以使用[诊断检索端点](#retrieve-diagnostics)检索有关错误的详细信息。
+然后，您可以使用 [诊断检索端点](#retrieve-diagnostics).
 
 检索错误文件的示例响应如下所示：
 

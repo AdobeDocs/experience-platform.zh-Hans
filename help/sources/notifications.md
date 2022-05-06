@@ -5,7 +5,7 @@ solution: Experience Platform
 title: 流运行通知
 topic-legacy: overview
 exl-id: 0f1cde97-3030-4b8e-be08-21f64e78b794
-source-git-commit: a51c878bbfd3004cb597ce9244a9ed2f2318604b
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '786'
 ht-degree: 1%
@@ -30,7 +30,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## 为流运行通知注册Webhook
 
-要接收流程运行通知，您必须使用Adobe开发人员控制台向 [!DNL Experience Platform] 集成。
+要接收流程运行通知，您必须使用Adobe Developer Console向 [!DNL Experience Platform] 集成。
 
 请阅读本教程 [订阅[!DNL I/O Event]通知](../observability/alerts/subscribe.md) 以详细了解如何完成此操作。
 
@@ -68,7 +68,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
     "updatedClient": "{UPDATED_CLIENT}",
     "sandboxId": "7127a4f0-def8-11e9-83ce-e79494b1c2a5",
     "sandboxName": "prod",
-    "imsOrgId": "{IMS_ORG}",
+    "imsOrgId": "{ORG_ID}",
     "id": "933cf9f4-cf01-4d75-bcf9-f4cf010d750a",
     "flowId": "1c6f1047-dcaf-48fe-af10-47dcaf08feaf",
     "providerRefId": "test1234",
@@ -173,7 +173,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
     "processStartTime": 1597213531213,
     "header": {
       "_adobeio": {
-        "imsOrgId": "{IMS_ORG}",
+        "imsOrgId": "{ORG_ID}",
         "providerMetadata": "platform_notifications",
         "eventCode": "sources_flow_run_success"
       }
@@ -206,7 +206,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
         "msgType": "eventNotification",
         "version": "1.0",
         "timestamp": 1597434157622,
-        "imsOrgId": "{IMS_ORG}",
+        "imsOrgId": "{ORG_ID}",
         "schema": {
           "name": "run-notification",
           "version": "1.0"
@@ -225,7 +225,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
           "updatedClient": "{UPDATED_CLIENT}",
           "sandboxId": "e49ebb00-d0fa-11e9-b164-ed6a398c8b35",
           "sandboxName": "prod",
-          "imsOrgId": "{IMS_ORG}",
+          "imsOrgId": "{ORG_ID}",
           "id": "d9024c32-2174-4271-824c-322174627101",
           "flowId": "cf4fce79-8822-456d-8fce-798822556dc6",
           "etag": "\"0c003dbf-0000-0200-0000-5f36e92d0000\"",

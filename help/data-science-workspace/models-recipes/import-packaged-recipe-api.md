@@ -1,59 +1,58 @@
 ---
-keywords: Experience Platform；导入打包菜谱；数据科学工作区；热门主题；菜谱；api;sensei机器学习；创建引擎
+keywords: Experience Platform；导入打包的方法；Data Science Workspace；热门主题；方法；API；感生机器学习；创建引擎
 solution: Experience Platform
-title: 使用Sensei Machine Learning API导入打包菜谱
+title: 使用Sensei机器学习API导入打包的方法
 topic-legacy: tutorial
 type: Tutorial
-description: 本教程使用Sensei Machine Learning API创建引擎，在用户界面中也称为菜谱。
+description: 本教程使用Sensei机器学习API创建引擎，也称为用户界面中的方法。
 exl-id: c8dde30b-5234-448d-a597-f1c8d32f23d4
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1007'
 ht-degree: 2%
 
 ---
 
-# 使用Sensei Machine Learning API导入打包菜谱
+# 使用Sensei机器学习API导入打包的方法
 
-本教程使用[[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml)创建[Engine](../api/engines.md)，在用户界面中也称为“菜谱”。
+本教程使用 [[!DNL Sensei Machine Learning API]](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/sensei-ml-api.yaml) 创建 [引擎](../api/engines.md)，在用户界面中也称为方法。
 
-在入门之前，请务必注意，Adobe Experience Platform [!DNL Data Science Workspace]使用不同术语来引用API和UI中的类似元素。 本教程中使用了API术语，下表概述了相关术语：
+在开始之前，请务必注意，Adobe Experience Platform [!DNL Data Science Workspace] 使用不同的术语来指代API和UI中的类似元素。 本教程中将使用API术语，下表概述了相关术语：
 
 | UI术语 | API术语 |
 | ---- | ---- |
-| 菜谱 | [引擎](../api/engines.md) |
+| 方法 | [引擎](../api/engines.md) |
 | 模型 | [MLInstance](../api/mlinstances.md) |
 | 培训和评价 | [实验](../api/experiments.md) |
 | 服务 | [MLService](../api/mlservices.md) |
 
-引擎包含机器学习算法和逻辑，用于解决特定问题。 下图提供了一个可视化，显示[!DNL Data Science Workspace]中的API工作流。 本教程侧重于创建引擎，即机器学习模型的大脑。
+引擎包含机器学习算法和逻辑以解决特定问题。 下图提供了一个可视化图表，其中显示了 [!DNL Data Science Workspace]. 本教程重点介绍如何创建引擎，即机器学习模型的大脑。
 
 ![](../images/models-recipes/import-package-api/engine_hierarchy_api.png)
 
-## 入门指南
+## 快速入门
 
-本教程需要以Docker URL形式打包的菜谱文件。 请按照[将源文件打包到Recipe](./package-source-files-recipe.md)教程，创建打包的Recipe文件或提供您自己的文件。
+本教程需要以Docker URL形式打包的方法文件。 关注 [将源文件打包到方法中](./package-source-files-recipe.md) 教程创建打包的方法文件或提供您自己的方法文件。
 
-- `{DOCKER_URL}`:智能服务的Docker映像的URL地址。
+- `{DOCKER_URL}`:智能服务的Docker图像的URL地址。
 
-本教程要求您完成对Adobe Experience Platform教程](https://www.adobe.com/go/platform-api-authentication-en)的[身份验证，以便成功调用[!DNL Platform] API。 完成身份验证教程后，将为所有[!DNL Experience Platform] API调用中每个所需标头提供值，如下所示：
+本教程要求您完成 [Adobe Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en) 以便成功调用 [!DNL Platform] API。 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
 
 - `{ACCESS_TOKEN}`:身份验证后提供的特定载体令牌值。
-- `{IMS_ORG}`:您的IMS组织凭据位于您独特的Adobe Experience Platform集成中。
-- `{API_KEY}`:您独特的Adobe Experience Platform集成中可找到您的特定API密钥值。
+- `{ORG_ID}`:您的IMS组织凭据可在独特的Adobe Experience Platform集成中找到。
+- `{API_KEY}`:您在独特的Adobe Experience Platform集成中找到的特定API密钥值。
 
 ## 创建引擎
 
-可以通过向/engines端点发出POST请求来创建引擎。 创建的引擎基于打包的处方文件的形式进行配置，该文件必须作为API请求的一部分包含。
+可通过向/engines端点发出POST请求来创建引擎。 创建的引擎基于打包的处方文件的形式进行配置，该文件必须作为API请求的一部分包含在内。
 
-### 创建一个Docker URL {#create-an-engine-with-a-docker-url}的引擎
+### 使用Docker URL创建引擎 {#create-an-engine-with-a-docker-url}
 
-要创建具有存储在Docker容器中的打包处方文件的引擎，您必须为打包的处方文件提供Docker URL。
+要创建引擎，并将打包的处方文件存储在Docker容器中，您必须向打包的处方文件提供Docker URL。
 
 >[!CAUTION]
 >
-> 如果您使用[!DNL Python]或R，请使用以下请求。 如果您使用PySpark或Scala，请使用位于Python/R示例下方的PySpark/Scala请求示例。
+> 如果您使用 [!DNL Python] 或者使用下面的请求。 如果您使用PySpark或Scala，请使用位于Python/R示例下方的PySpark/Scala请求示例。
 
 **API格式**
 
@@ -69,7 +68,7 @@ curl -X POST \
     -H 'Authorization: {ACCESS_TOKEN}' \
     -H 'X-API-KEY: {API_KEY}' \
     -H 'content-type: multipart/form-data' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H `x-sandbox-name: {SANDBOX_NAME}` \
     -F 'engine={
         "name": "Retail Sales Engine Python",
@@ -89,12 +88,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | -------  | ----------- |
-| `engine.name` | 引擎的所需名称。 与此引擎对应的处方将继承此值，并作为处方的名称显示在[!DNL Data Science Workspace]用户界面中。 |
-| `engine.description` | 引擎的可选说明。 与此引擎对应的处方将继承此值，并作为处方的说明显示在[!DNL Data Science Workspace]用户界面中。 请勿删除此属性，如果您选择不提供说明，则让此值为空字符串。 |
-| `engine.type` | 引擎的执行类型。 此值与开发Docker图像所用的语言相对应。 当提供Docker URL以创建引擎时，`type`为`Python`、`R`、`PySpark`、`Spark`(Scala)或`Tensorflow`。 |
-| `artifacts.default.image.location` | 您的`{DOCKER_URL}`将转到此处。 完整的Docker URL具有以下结构：`your_docker_host.azurecr.io/docker_image_file:version` |
-| `artifacts.default.image.name` | Docker图像文件的附加名称。 请勿删除此属性，如果您选择不提供其他Docker图像文件名，则让此值为空字符串。 |
-| `artifacts.default.image.executionType` | 此引擎的执行类型。 此值与开发Docker图像所用的语言相对应。 当提供Docker URL以创建引擎时，`executionType`为`Python`、`R`、`PySpark`、`Spark`(Scala)或`Tensorflow`。 |
+| `engine.name` | 引擎的所需名称。 与此引擎对应的处方将继承此值，该值将显示在 [!DNL Data Science Workspace] 用户界面作为方法的名称。 |
+| `engine.description` | 引擎的可选描述。 与此引擎对应的处方将继承此值，该值将显示在 [!DNL Data Science Workspace] 用户界面。 请勿删除此属性，如果您选择不提供描述，则允许此值为空字符串。 |
+| `engine.type` | 引擎的执行类型。 此值对应于在中开发Docker图像的语言。 提供Docker URL以创建引擎时， `type` 是 `Python`, `R`, `PySpark`, `Spark` (Scala)或 `Tensorflow`. |
+| `artifacts.default.image.location` | 您的 `{DOCKER_URL}` 到这里。 完整的Docker URL具有以下结构： `your_docker_host.azurecr.io/docker_image_file:version` |
+| `artifacts.default.image.name` | Docker图像文件的附加名称。 请勿删除此属性，如果您选择不提供附加的Docker图像文件名，则允许此值为空字符串。 |
+| `artifacts.default.image.executionType` | 此引擎的执行类型。 此值对应于在中开发Docker图像的语言。 提供Docker URL以创建引擎时， `executionType` 是 `Python`, `R`, `PySpark`, `Spark` (Scala)或 `Tensorflow`. |
 
 **请求PySpark**
 
@@ -103,7 +102,7 @@ curl -X POST \
   https://platform.adobe.io/data/sensei/engines \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: multipart/form-data' \
     -F 'engine={
@@ -126,12 +125,12 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 引擎的所需名称。 与此引擎对应的处方将继承此值，并在UI中作为处方的名称显示。 |
-| `description` | 引擎的可选说明。 与此引擎对应的处方将继承此值，以在UI中显示作为处方的说明。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
-| `type` | 引擎的执行类型。 此值与在“PySpark”上构建Docker图像所用的语言相对应。 |
-| `mlLibrary` | 为PySpark和Scala菜谱创建引擎时所需的字段。 |
+| `name` | 引擎的所需名称。 与此引擎对应的处方将继承此值，该值将作为处方的名称显示在UI中。 |
+| `description` | 引擎的可选描述。 与此引擎对应的处方将继承此值，该值将作为处方的说明显示在UI中。 此属性是必需的。如果不想提供描述，请将其值设置为空字符串。 |
+| `type` | 引擎的执行类型。 此值对应于在“PySpark”上构建Docker图像的语言。 |
+| `mlLibrary` | 为PySpark和Scala配方创建引擎时所需的字段。 |
 | `artifacts.default.image.location` | 由Docker URL链接到的Docker图像的位置。 |
-| `artifacts.default.image.executionType` | 引擎的执行类型。 此值与在“Spark”上构建Docker图像的语言相对应。 |
+| `artifacts.default.image.executionType` | 引擎的执行类型。 此值对应于在“Spark”上构建Docker图像的语言。 |
 
 **请求Scala**
 
@@ -140,7 +139,7 @@ curl -X POST \
   https://platform.adobe.io/data/sensei/engines \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: multipart/form-data' \
     -F 'engine={
@@ -163,16 +162,16 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | 引擎的所需名称。 与此引擎对应的处方将继承此值，并在UI中作为处方的名称显示。 |
-| `description` | 引擎的可选说明。 与此引擎对应的处方将继承此值，以在UI中显示作为处方的说明。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
-| `type` | 引擎的执行类型。 此值与在“Spark”上构建Docker图像的语言相对应。 |
-| `mlLibrary` | 为PySpark和Scala菜谱创建引擎时所需的字段。 |
+| `name` | 引擎的所需名称。 与此引擎对应的处方将继承此值，该值将作为处方的名称显示在UI中。 |
+| `description` | 引擎的可选描述。 与此引擎对应的处方将继承此值，该值将作为处方的说明显示在UI中。 此属性是必需的。如果不想提供描述，请将其值设置为空字符串。 |
+| `type` | 引擎的执行类型。 此值对应于在“Spark”上构建Docker图像的语言。 |
+| `mlLibrary` | 为PySpark和Scala配方创建引擎时所需的字段。 |
 | `artifacts.default.image.location` | 由Docker URL链接到的Docker图像的位置。 |
-| `artifacts.default.image.executionType` | 引擎的执行类型。 此值与在“Spark”上构建Docker图像的语言相对应。 |
+| `artifacts.default.image.executionType` | 引擎的执行类型。 此值对应于在“Spark”上构建Docker图像的语言。 |
 
 **响应**
 
-成功的响应返回一个包含新创建引擎的详细信息(包括其唯一标识符(`id`))的有效负荷。 以下示例响应针对[!DNL Python]引擎。 `executionType`和`type`键会根据提供的POST而改变。
+成功响应会返回一个有效负载，其中包含新创建引擎的详细信息，包括其唯一标识符(`id`)。 以下示例响应针对 [!DNL Python] 引擎。 的 `executionType` 和 `type` 键值会根据提供的POST而发生更改。
 
 ```json
 {
@@ -199,8 +198,8 @@ curl -X POST \
 }
 ```
 
-成功的响应会显示包含有关新创建引擎的信息的JSON有效负荷。 `id`键表示唯一的引擎标识符，在下一个教程中需要该键来创建MLInstance。 在继续执行后续步骤之前，请确保保存引擎标识符。
+成功响应会显示包含有关新创建引擎的信息的JSON有效负载。 的 `id` 键表示唯一的引擎标识符，在下一个教程中需要此键才能创建MLInstance。 在继续执行后续步骤之前，请确保已保存引擎标识符。
 
 ## 后续步骤 {#next-steps}
 
-您已使用API创建了一个引擎，并且作为响应体的一部分获得了唯一的引擎标识符。 在下一个教程中，您可以使用此引擎标识符来学习如何使用API](./train-evaluate-model-api.md)创建、培训和评估模型。[
+您已使用API创建引擎，并且获取了作为响应主体一部分的唯一引擎标识符。 在下一个教程中，您可以在了解如何使用此引擎标识符 [使用API创建、训练和评估模型](./train-evaluate-model-api.md).

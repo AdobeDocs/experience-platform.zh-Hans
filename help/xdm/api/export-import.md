@@ -5,7 +5,7 @@ title: 导出/导入API端点
 description: 通过架构注册表API中的/export和/import端点，您可以在IMS组织和沙箱之间共享XDM资源。
 topic-legacy: developer guide
 exl-id: 33b62f75-2670-42f4-9aac-fa1540cd7d4a
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '506'
 ht-degree: 2%
@@ -14,17 +14,17 @@ ht-degree: 2%
 
 # 导出/导入端点
 
-[!DNL Schema Library]中的所有资源都包含在IMS组织内的特定沙箱中。 在某些情况下，您可能希望在沙箱和IMS组织之间共享体验数据模型(XDM)资源。 [!DNL Schema Registry] API提供了两个端点，允许您为[!DNL  Schema Library]中的任何架构、架构字段组或数据类型生成导出有效负载，然后使用该有效负载将该资源（以及所有相关资源）导入目标沙箱和IMS组织。
+中的所有资源 [!DNL Schema Library] 包含在IMS组织内的特定沙箱中。 在某些情况下，您可能希望在沙箱和IMS组织之间共享体验数据模型(XDM)资源。 的 [!DNL Schema Registry] API提供了两个端点，用于为中的任何架构、架构字段组或数据类型生成导出有效负载[!DNL  Schema Library]，然后使用该有效负载将该资源（和所有相关资源）导入目标沙盒和IMS组织。
 
 ## 快速入门
 
-本指南中使用的端点是[[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/)的一部分。 在继续操作之前，请查阅[快速入门指南](./getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及成功调用任何Experience PlatformAPI所需的标头的重要信息。
+本指南中使用的端点是 [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 在继续之前，请查看 [入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
 
-导出/导入端点是[!DNL Schema Registry]支持的远程过程调用(RPC)的一部分。 与[!DNL Schema Registry] API中的其他端点不同，RPC端点不需要诸如`Accept`或`Content-Type`之类的额外标头，也不使用`CONTAINER_ID`。 相反，它们必须使用`/rpc`命名空间，如以下API调用中所示。
+导出/导入端点是远程过程调用(RPC)的一部分，该调用受 [!DNL Schema Registry]. 与 [!DNL Schema Registry] API、RPC端点不需要其他标头，例如 `Accept` 或 `Content-Type`、和不使用 `CONTAINER_ID`. 相反，他们必须使用 `/rpc` 命名空间，如下面的API调用中所示。
 
 ## 检索资源的导出负载 {#export}
 
-对于[!DNL Schema Library]中的任何现有架构、字段组或数据类型，您可以通过向`/export`端点发出GET请求并提供路径中资源的ID来生成导出有效负载。
+对于 [!DNL Schema Library]，则可以通过向发出GET请求来生成导出有效负载 `/export` 端点，提供路径中资源的ID。
 
 **API格式**
 
@@ -34,29 +34,29 @@ GET /rpc/export/{RESOURCE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RESOURCE_ID}` | 要导出的XDM资源的`meta:altId`或URL编码的`$id`。 |
+| `{RESOURCE_ID}` | 的 `meta:altId` 或URL编码 `$id` 要导出的XDM资源。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求检索`Restaurant`字段组的导出有效负载。
+以下请求可检索 `Restaurant` 字段组。
 
 ```shell
 curl -X GET \
   https://platform.adobe.io/data/foundation/schemaregistry/rpc/export/_{TENANT_ID}.mixins.922a56b58c6b4e4aeb49e577ec82752106ffe8971b23b4d9 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Accept: application/vnd.adobe.xdm-link+json'
 ```
 
 **响应**
 
-成功的响应会返回一个对象数组，它表示目标XDM资源及其所有相关资源。 在此示例中，数组中的第一个对象是租户创建的`Property`数据类型，该数据类型由`Restaurant`字段组使用，而第二个对象是`Restaurant`字段组本身。 然后，此有效负载可用于[将资源](#import)导入其他沙盒或IMS组织。
+成功的响应会返回一个对象数组，它表示目标XDM资源及其所有相关资源。 在此示例中，数组中的第一个对象是租户创建的 `Property` 数据类型 `Restaurant` 字段组采用，而第二个对象是 `Restaurant` 字段组本身。 然后，可以使用此有效负载 [导入资源](#import) 移入其他沙箱或IMS组织。
 
-请注意，资源租户ID的所有实例都将替换为`<XDM_TENANTID_PLACEHOLDER>`。 这样，架构注册表就可以根据在后续导入调用中发送资源的位置，自动将正确的租户ID应用到资源。
+请注意，资源租户ID的所有实例都将替换为 `<XDM_TENANTID_PLACEHOLDER>`. 这样，架构注册表就可以根据在后续导入调用中发送资源的位置，自动将正确的租户ID应用到资源。
 
 ```json
 [
@@ -198,7 +198,7 @@ curl -X GET \
 
 ## 导入资源 {#import}
 
-在为XDM资源生成导出有效负载](#export)后，您可以在对`/import`端点的POST请求中使用该有效负载，将该资源导入目标IMS组织和沙盒。[
+一旦 [生成导出有效负载](#export) 对于XDM资源，您可以在向 `/import` 将该资源导入目标IMS组织和沙盒的端点。
 
 **API格式**
 
@@ -208,14 +208,14 @@ POST /rpc/import
 
 **请求**
 
-以下请求采用在前一个[导出示例](#export)中返回的有效负载，将`Restaurant`字段组导入新的IMS组织和沙盒，具体取决于`x-gw-ims-org-id`和`x-sandbox-name`标头。
+以下请求获取在上一个请求中返回的有效负载 [导出示例](#export) 导入 `Restaurant` 字段组到新的IMS组织和沙盒中，由 `x-gw-ims-org-id` 和 `x-sandbox-name` 标题。
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/schemaregistry/rpc/import \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '[
@@ -427,7 +427,7 @@ curl -X POST \
             }
         ],
         "refs": [],
-        "imsOrg": "{IMS_ORG}",
+        "imsOrg": "{ORG_ID}",
         "meta:extensible": true,
         "meta:abstract": true,
         "meta:xdmType": "object",
@@ -506,7 +506,7 @@ curl -X POST \
         "refs": [
             "https://ns.adobe.com/{TENANT_ID}/datatypes/fc07162ee7ca8d18e074a3bb50c3938c76160bf6040e8495"
         ],
-        "imsOrg": "{IMS_ORG}",
+        "imsOrg": "{ORG_ID}",
         "meta:extensible": true,
         "meta:abstract": true,
         "meta:intendedToExtend": [],

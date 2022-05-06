@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 使用流服务API监控数据流
 topic-legacy: overview
 type: Tutorial
-description: 本教程介绍了使用流服务API监控流程运行数据的完整性、错误和量度的步骤。
+description: 本教程介绍了使用流服务API监控流程运行数据是否完整、错误和量度的步骤。
 exl-id: c4b2db97-eba4-460d-8c00-c76c666ed70e
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '718'
 ht-degree: 1%
@@ -15,37 +15,37 @@ ht-degree: 1%
 
 # 使用流服务API监控数据流
 
-Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用[!DNL Platform]服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。 此外，Experience Platform还允许将数据激活给外部合作伙伴。
+Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用构建、标记和增强传入数据 [!DNL Platform] 服务。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。 此外，Experience Platform还允许将数据激活给外部合作伙伴。
 
-[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。该服务提供了用户界面和RESTful API，所有受支持的源和目标都可从中连接。
+[!DNL Flow Service] 用于收集和集中Adobe Experience Platform内不同来源的客户数据。 该服务提供了用户界面和RESTful API，所有受支持的源和目标都可从中连接。
 
-本教程介绍使用[[!DNL Flow Service API]](https://www.adobe.io/experience-platform-apis/references/flow-service/)监控流程运行数据是否完整、错误和量度的步骤。
+本教程介绍使用 [[!DNL Flow Service API]](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
 ## 快速入门
 
-本教程要求您具有有效数据流的ID值。 如果您没有有效的数据流ID，请从[源概述](../../sources/home.md)或[目标概述](../../destinations/catalog/overview.md)中选择您选择的连接器，然后按照概述的步骤操作，然后再尝试本教程。
+本教程要求您具有有效数据流的ID值。 如果您没有有效的数据流ID，请从 [源概述](../../sources/home.md) 或 [目标概述](../../destinations/catalog/overview.md) ，然后按照在尝试使用本教程之前列出的步骤操作。
 
 此外，本教程还要求您对Adobe Experience Platform的以下组件有一定的了解：
 
 - [目标](../../destinations/home.md):目标是与常用应用程序的预建集成，允许从平台无缝激活数据以用于跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例。
-- [来源](../../sources/home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用服务来构建、标记和增强传入数 [!DNL Platform] 据。
-- [沙盒](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+- [源](../../sources/home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
+- [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-以下各节提供了您需要了解的其他信息，以便您能够使用[!DNL Flow Service] API成功监视流量运行。
+以下各节提供了您需要了解的其他信息，以便成功地使用 [!DNL Flow Service] API。
 
 ### 读取示例API调用
 
-本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的惯例的信息，请参阅[!DNL Experience Platform]疑难解答指南中[如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)一节。
+本教程提供了用于演示如何设置请求格式的示例API调用。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
 
 ### 收集所需标题的值
 
-要调用[!DNL Platform] API，您必须先完成[身份验证教程](https://www.adobe.com/go/platform-api-authentication-en)。 完成身份验证教程可为所有[!DNL Experience Platform] API调用中每个所需标头的值，如下所示：
+为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
-- `x-gw-ims-org-id: {IMS_ORG}`
+- `x-gw-ims-org-id: {ORG_ID}`
 
-[!DNL Experience Platform]中的所有资源（包括属于[!DNL Flow Service]的资源）都与特定虚拟沙箱隔离。 对[!DNL Platform] API的所有请求都需要一个标头来指定操作将在其中进行的沙盒的名称：
+中的所有资源 [!DNL Experience Platform]，包括属于 [!DNL Flow Service]，与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
 
 - `x-sandbox-name: {SANDBOX_NAME}`
 
@@ -55,7 +55,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## 监视器流运行
 
-发出GET流后，请向[!DNL Flow Service] API执行数据请求。
+发出GET流后，请向 [!DNL Flow Service] API。
 
 **API格式**
 
@@ -65,7 +65,7 @@ GET /runs?property=flowId=={FLOW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FLOW_ID}` | 要监视的数据流的唯一`id`值。 |
+| `{FLOW_ID}` | 独特 `id` 值。 |
 
 **请求**
 
@@ -76,13 +76,13 @@ curl -X GET \
     'https://platform.adobe.io/data/foundation/flowservice/runs?property=flowId==c9cef9cb-c934-4467-8ef9-cbc934546741' \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-成功的响应会返回有关流运行的详细信息，包括有关其创建日期、源连接和目标连接以及流运行的唯一标识符(`id`)的信息。
+成功的响应会返回有关流运行的详细信息，包括有关其创建日期、源连接和目标连接以及流运行的唯一标识符(`id`)。
 
 ```json
 {
@@ -97,7 +97,7 @@ curl -X GET \
             "updatedClient": "{UPDATED_CLIENT}",
             "sandboxId": "{SANDBOX_ID}",
             "sandboxName": "prod",
-            "imsOrgId": "{IMS_ORG_ID}",
+            "imsOrgId": "{ORG_ID}",
             "flowId": "f00c8762-df2f-432b-a7d7-38999fef5e8e",
             "etag": "\"560266dc-0000-0200-0000-5fd0d0140000\"",
             "metrics": {
@@ -196,9 +196,9 @@ curl -X GET \
 | `sizeSummary` | 数据的卷（以字节为单位）。 |
 | `recordSummary` | 数据的记录计数。 |
 | `fileSummary` | 数据的文件计数。 |
-| `fileSummary.extensions` | 包含特定于活动的信息。 例如，`manifest`只是“促销活动”的一部分，因此它包含在`extensions`对象中。 |
+| `fileSummary.extensions` | 包含特定于活动的信息。 例如， `manifest` 只是“促销活动”的一部分，因此会包含在 `extensions` 对象。 |
 | `statusSummary` | 显示流量运行是成功还是失败。 |
 
 ## 后续步骤
 
-在本教程中，您已使用[!DNL Flow Service] API检索了数据流上的量度和错误信息。 您现在可以根据您的摄取计划继续监控数据流，以跟踪其状态和摄取率。 有关如何监视源数据流的信息，请阅读[使用用户界面](../ui/monitor-sources.md)教程监视源的数据流。 有关如何监控目标数据流的更多信息，请阅读[使用用户界面监控目标数据流的](../ui/monitor-destinations.md)教程。
+通过阅读本教程，您可以使用 [!DNL Flow Service] API。 您现在可以根据您的摄取计划继续监控数据流，以跟踪其状态和摄取率。 有关如何监视源数据流的信息，请阅读 [使用用户界面监控源的数据流](../ui/monitor-sources.md) 教程。 有关如何监控目标数据流的更多信息，请阅读 [使用用户界面监控目标的数据流](../ui/monitor-destinations.md) 教程。

@@ -2,7 +2,7 @@
 description: 作为Destination SDK的一部分，Adobe提供了开发人员工具，可帮助您配置和测试目标。 本页介绍如何创建和测试消息转换模板。
 title: 创建和测试消息转换模板
 exl-id: 15e7f436-4d33-4172-bd14-ad8dfbd5e4a8
-source-git-commit: 97ffaa2a53dbbf5a7be5f002e63be4ed3339f565
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '960'
 ht-degree: 0%
@@ -70,7 +70,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 --header 'Accept: application/json' \
 --header 'x-api-key: {API_KEY}' \
 --header 'Authorization: Bearer {ACCESS_TOKEN}' \
---header 'x-gw-ims-org-id: {IMS_ORG}' \
+--header 'x-gw-ims-org-id: {ORG_ID}' \
 --header 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 

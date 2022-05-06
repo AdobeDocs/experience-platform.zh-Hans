@@ -6,43 +6,43 @@ description: 本文档提供了一个教程，用于定义由贵组织使用架�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1365'
 ht-degree: 2%
 
 ---
 
-# 使用[!DNL Schema Registry] API定义两个架构之间的关系
+# 使用 [!DNL Schema Registry] API
 
-了解客户之间的关系以及客户与品牌在各种渠道中的交互是Adobe Experience Platform的重要组成部分。 在[!DNL Experience Data Model](XDM)架构的结构中定义这些关系使您能够对客户数据进行复杂的分析。
+了解客户之间的关系以及客户与品牌在各种渠道中的交互是Adobe Experience Platform的重要组成部分。 在 [!DNL Experience Data Model] (XDM)模式允许您对客户数据进行复杂的分析。
 
-虽然架构关系可以通过使用并集架构和[!DNL Real-time Customer Profile]来推断，但这仅适用于共享同一类的架构。 要在属于不同类的两个架构之间建立关系，必须将专用关系字段添加到源架构中，该源架构引用目标架构的标识。
+而架构关系可以通过使用并集架构和 [!DNL Real-time Customer Profile]，这仅适用于共享同一类的架构。 要在属于不同类的两个架构之间建立关系，必须将专用关系字段添加到源架构中，该源架构引用目标架构的标识。
 
-本文档提供了一个教程，用于定义由您的组织使用[[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/)定义的两个架构之间的一对一关系。
+本文档提供了一个教程，用于定义由贵组织使用 [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/).
 
 ## 快速入门
 
-本教程需要对[!DNL Experience Data Model](XDM)和[!DNL XDM System]有一定的了解。 在开始使用本教程之前，请查阅以下文档：
+本教程需要对 [!DNL Experience Data Model] (XDM)和 [!DNL XDM System]. 在开始使用本教程之前，请查阅以下文档：
 
-* [Experience Platform中的XDM系统](../home.md):XDM及其实施的概 [!DNL Experience Platform]述。
+* [XDM系统在Experience Platform](../home.md):XDM及其在 [!DNL Experience Platform].
    * [架构组合的基础知识](../schema/composition.md):介绍XDM模式的构建基块。
 * [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [沙盒](../../sandboxes/home.md): [!DNL Experience Platform] 提供将单个实例分区为单独虚 [!DNL Platform] 拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
+* [沙箱](../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
-在开始本教程之前，请查看[开发人员指南](../api/getting-started.md) ，以了解成功调用[!DNL Schema Registry] API所需了解的重要信息。 这包括您的`{TENANT_ID}`、“containers”的概念以及发出请求所需的标头（请特别注意[!DNL Accept]标头及其可能值）。
+在启动本教程之前，请查看 [开发人员指南](../api/getting-started.md) 以了解成功调用 [!DNL Schema Registry] API。 这包括您的 `{TENANT_ID}`、“容器”的概念以及发出请求所需的标头(请特别注意 [!DNL Accept] 标题及其可能值)。
 
 ## 定义源架构和目标架构 {#define-schemas}
 
-您应该已经创建了将在关系中定义的两个架构。 本教程在组织的当前忠诚度计划（在“[!DNL Loyalty Members]”模式中定义）的成员与其最喜爱的酒店（在“[!DNL Hotels]”模式中定义）之间创建关系。
+您应该已经创建了将在关系中定义的两个架构。 本教程将在组织当前忠诚度计划(在[!DNL Loyalty Members]“模式”和他们最喜爱的酒店(在“[!DNL Hotels]“架构”)。
 
-架构关系由&#x200B;**源架构**&#x200B;表示，该架构具有引用&#x200B;**目标架构**&#x200B;内其他字段的字段。 在后续步骤中，“[!DNL Loyalty Members]”将作为源架构，而“[!DNL Hotels]”将作为目标架构。
+架构关系由 **源模式** 具有引用 **目标架构**. 在后续步骤中，“[!DNL Loyalty Members]“ ”将是源架构，而“[!DNL Hotels]“ ”将用作目标架构。
 
 >[!IMPORTANT]
 >
->要建立关系，两个架构都必须定义了主标识并为[!DNL Real-time Customer Profile]启用。 如果需要有关如何相应配置架构的指导，请参阅架构创建教程中关于[启用架构以在用户档案](./create-schema-api.md#profile)中使用的部分。
+>要建立关系，两个架构都必须定义了主标识，并启用 [!DNL Real-time Customer Profile]. 请参阅 [启用模式以在用户档案中使用](./create-schema-api.md#profile) 在架构创建教程中，如果您需要有关如何相应地配置架构的指导。
 
-要定义两个架构之间的关系，您必须首先获取两个架构的`$id`值。 如果您知道架构的显示名称(`title`)，则可以通过向[!DNL Schema Registry] API中的`/tenant/schemas`端点发出GET请求来查找其`$id`值。
+要定义两个架构之间的关系，您必须首先获取 `$id` 两个架构的值。 如果您知道显示名称(`title`)，您可以找到 `$id` 值 `/tenant/schemas` 的端点 [!DNL Schema Registry] API。
 
 **API格式**
 
@@ -57,18 +57,18 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/schemaregistry/tenant/schemas \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Accept: application/vnd.adobe.xed-id+json'
 ```
 
 >[!NOTE]
 >
->[!DNL Accept]标头`application/vnd.adobe.xed-id+json`仅返回结果架构的标题、ID和版本。
+>的 [!DNL Accept] 标题 `application/vnd.adobe.xed-id+json` 仅返回生成架构的标题、ID和版本。
 
 **响应**
 
-成功响应会返回由您的组织定义的架构列表，包括其`name`、`$id`、`meta:altId`和`version`。
+成功响应会返回由您的组织定义的架构列表，包括其 `name`, `$id`, `meta:altId`和 `version`.
 
 ```json
 {
@@ -106,25 +106,25 @@ curl -X GET \
 }
 ```
 
-记录要定义两个架构之间关系的`$id`值。 这些值将在后续步骤中使用。
+记录 `$id` 要定义两者之间关系的两个架构的值。 这些值将在后续步骤中使用。
 
 ## 为源架构定义引用字段
 
-在[!DNL Schema Registry]中，关系描述符的工作方式与关系数据库表中的外键类似：源架构中的字段用作对目标架构的主标识字段的引用。 如果您的源架构没有用于此目的的字段，则您可能需要使用新字段创建架构字段组并将其添加到架构中。 此新字段的`type`值必须为“[!DNL string]”。
+在 [!DNL Schema Registry]，关系描述符的工作方式与关系数据库表中的外键类似：源架构中的字段用作对目标架构的主标识字段的引用。 如果您的源架构没有用于此目的的字段，则您可能需要使用新字段创建架构字段组并将其添加到架构中。 此新字段必须具有 `type` 值“[!DNL string]&quot;
 
 >[!IMPORTANT]
 >
 >与目标架构不同，源架构不能将其主标识用作引用字段。
 
-在本教程中，目标架构“[!DNL Hotels]”包含一个`hotelId`字段，该字段用作架构的主标识，因此也将用作其引用字段。 但是，源架构“[!DNL Loyalty Members]”没有要用作引用的专用字段，并且必须为其指定一个新字段组，以向架构添加新字段：`favoriteHotel`。
+在本教程中，目标架构“[!DNL Hotels]&quot;包含 `hotelId` 字段作为架构的主标识，因此也将用作其引用字段。 但是，源架构“[!DNL Loyalty Members]&quot;没有要用作引用的专用字段，并且必须为添加新字段组以向架构添加新字段： `favoriteHotel`.
 
 >[!NOTE]
 >
->如果您的源架构已经有一个您计划用作引用字段的专用字段，则可以跳到创建引用描述符](#reference-identity)的步骤。[
+>如果您的源架构已经有一个您计划用作引用字段的专用字段，则可以跳到 [创建引用描述符](#reference-identity).
 
 ### 创建新字段组
 
-要向架构添加新字段，必须首先在字段组中定义该字段。 您可以通过向`/tenant/fieldgroups`端点发出POST请求来创建新字段组。
+要向架构添加新字段，必须首先在字段组中定义该字段。 您可以通过向 `/tenant/fieldgroups` 端点。
 
 **API格式**
 
@@ -134,14 +134,14 @@ POST /tenant/fieldgroups
 
 **请求**
 
-以下请求会创建一个新的字段组，该字段组会在其所添加到的任何架构的`_{TENANT_ID}`命名空间下添加一个`favoriteHotel`字段。
+以下请求会创建一个新字段组，该字段组将 `favoriteHotel` 字段 `_{TENANT_ID}` 添加到的任何架构的命名空间。
 
 ```shell
 curl -X POST\
   https://platform.adobe.io/data/foundation/schemaregistry/tenant/fieldgroups \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'content-type: application/json' \
   -d '{
@@ -232,11 +232,11 @@ curl -X POST\
 
 {style=&quot;table-layout:auto&quot;}
 
-记录字段组的`$id` URI，该URI将用于将字段组添加到源架构的下一步。
+记录 `$id` 字段组的URI，用于将字段组添加到源架构的下一步。
 
 ### 将字段组添加到源架构
 
-创建字段组后，您可以通过向`/tenant/schemas/{SCHEMA_ID}`端点发出PATCH请求，将其添加到源架构中。
+创建字段组后，您可以通过向 `/tenant/schemas/{SCHEMA_ID}` 端点。
 
 **API格式**
 
@@ -246,13 +246,13 @@ PATCH /tenant/schemas/{SCHEMA_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{SCHEMA_ID}` | 源架构的URL编码的`$id` URI或`meta:altId`。 |
+| `{SCHEMA_ID}` | URL编码 `$id` URI或 `meta:altId` 源架构的URL。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求将“[!DNL Favorite Hotel]”字段组添加到“[!DNL Loyalty Members]”架构。
+以下请求将“[!DNL Favorite Hotel]“ ”字段组[!DNL Loyalty Members]“架构”。
 
 ```shell
 curl -X PATCH \
@@ -260,7 +260,7 @@ curl -X PATCH \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '[
     { 
@@ -275,15 +275,15 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `op` | 要执行的PATCH操作。 此请求使用`add`操作。 |
+| `op` | 要执行的PATCH操作。 此请求使用 `add` 操作。 |
 | `path` | 将添加新资源的架构字段的路径。 向架构添加字段组时，值必须为“/allOf/ — ”。 |
-| `value.$ref` | 要添加的字段组的`$id`。 |
+| `value.$ref` | 的 `$id` 的字段组。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-成功的响应会返回更新架构的详细信息，该架构现在包括其`allOf`数组下添加的字段组的`$ref`值。
+成功的响应会返回更新架构的详细信息，该架构现在包括 `$ref` 其 `allOf` 数组。
 
 ```json
 {
@@ -319,7 +319,7 @@ curl -X PATCH \
     "meta:abstract": false,
     "meta:extensible": false,
     "meta:tenantNamespace": "_{TENANT_ID}",
-    "imsOrg": "{IMS_ORG}",
+    "imsOrg": "{ORG_ID}",
     "meta:extends": [
         "https://ns.adobe.com/xdm/context/profile",
         "https://ns.adobe.com/xdm/data/record",
@@ -344,9 +344,9 @@ curl -X PATCH \
 
 ## 创建引用标识描述符 {#reference-identity}
 
-如果架构字段用作关系中其他架构的引用，则它们必须应用引用标识描述符。 由于“[!DNL Loyalty Members]”中的`favoriteHotel`字段将引用“[!DNL Hotels]”中的`hotelId`字段，因此必须为`hotelId`提供引用标识描述符。
+如果架构字段用作关系中其他架构的引用，则它们必须应用引用标识描述符。 自 `favoriteHotel` 字段[!DNL Loyalty Members]“”将表示 `hotelId` 字段[!DNL Hotels]&quot;, `hotelId` 必须提供引用标识描述符。
 
-通过向`/tenant/descriptors`端点发出POST请求，为目标架构创建引用描述符。
+通过向发出POST请求，为目标模式创建引用描述符 `/tenant/descriptors` 端点。
 
 **API格式**
 
@@ -356,14 +356,14 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求为目标架构“[!DNL Hotels]”中的`hotelId`字段创建引用描述符。
+以下请求会为 `hotelId` 目标架构“[!DNL Hotels]&quot;
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/schemaregistry/tenant/descriptors \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -378,10 +378,10 @@ curl -X POST \
 | 参数 | 描述 |
 | --- | --- |
 | `@type` | 定义的描述符类型。 对于引用描述符，值必须为“xdm:descriptorReferenceIdentity”。 |
-| `xdm:sourceSchema` | 目标架构的`$id` URL。 |
+| `xdm:sourceSchema` | 的 `$id` 目标架构的URL。 |
 | `xdm:sourceVersion` | 目标架构的版本号。 |
 | `sourceProperty` | 目标架构的主标识字段的路径。 |
-| `xdm:identityNamespace` | 引用字段的标识命名空间。 该命名空间必须与定义字段作为架构主标识时使用的命名空间相同。 有关更多信息，请参阅[标识命名空间概述](../../identity-service/home.md)。 |
+| `xdm:identityNamespace` | 引用字段的标识命名空间。 该命名空间必须与定义字段作为架构主标识时使用的命名空间相同。 请参阅 [身份命名空间概述](../../identity-service/home.md) 以了解更多信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -403,7 +403,7 @@ curl -X POST \
 
 ## 创建关系描述符 {#create-descriptor}
 
-关系描述符在源模式和目标模式之间建立一对一关系。 定义目标架构的引用描述符后，可以通过向`/tenant/descriptors`端点发出POST请求来创建新的关系描述符。
+关系描述符在源模式和目标模式之间建立一对一关系。 在为目标架构定义引用描述符后，您可以通过向 `/tenant/descriptors` 端点。
 
 **API格式**
 
@@ -413,14 +413,14 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求会创建一个新的关系描述符，其中“[!DNL Loyalty Members]”作为源架构，“[!DNL Legacy Loyalty Members]”作为目标架构。
+以下请求将创建一个新的关系描述符，其中“[!DNL Loyalty Members]“ ”作为源架构和“[!DNL Legacy Loyalty Members]”作为目标架构。
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/schemaregistry/tenant/descriptors \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -436,11 +436,11 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `@type` | 要创建的描述符的类型。 关系描述符的`@type`值为“xdm:descriptorOneToOne”。 |
-| `xdm:sourceSchema` | 源架构的`$id` URL。 |
+| `@type` | 要创建的描述符的类型。 的 `@type` 关系描述符的值为“xdm:descriptorOneToOne”。 |
+| `xdm:sourceSchema` | 的 `$id` 源架构的URL。 |
 | `xdm:sourceVersion` | 源架构的版本号。 |
 | `xdm:sourceProperty` | 源架构中引用字段的路径。 |
-| `xdm:destinationSchema` | 目标架构的`$id` URL。 |
+| `xdm:destinationSchema` | 的 `$id` 目标架构的URL。 |
 | `xdm:destinationVersion` | 目标架构的版本号。 |
 | `xdm:destinationProperty` | 目标架构中引用字段的路径。 |
 
@@ -466,4 +466,4 @@ curl -X POST \
 
 ## 后续步骤
 
-通过阅读本教程，您成功地在两个架构之间创建了一对一关系。 有关使用[!DNL Schema Registry] API使用描述符的更多信息，请参阅[架构注册开发人员指南](../api/descriptors.md)。 有关如何在UI中定义架构关系的步骤，请参阅关于[使用架构编辑器](relationship-ui.md)定义架构关系的教程。
+通过阅读本教程，您成功地在两个架构之间创建了一对一关系。 有关使用描述符的更多信息 [!DNL Schema Registry] API，请参阅 [架构注册开发人员指南](../api/descriptors.md). 有关如何在UI中定义架构关系的步骤，请参阅 [使用架构编辑器定义架构关系](relationship-ui.md).

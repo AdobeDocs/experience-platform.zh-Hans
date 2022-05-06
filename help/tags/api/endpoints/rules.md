@@ -1,7 +1,8 @@
 ---
 title: 规则端点
 description: 了解如何在Reactor API中对/rules端点进行调用。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 79ef4389-e4b7-461e-8579-16a1a78cdd43
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '933'
 ht-degree: 8%
@@ -10,17 +11,17 @@ ht-degree: 8%
 
 # 规则端点
 
-在数据收集标记的上下文中，规则控制已部署库中资源的行为。 规则由一个或多个[规则组件](./rule-components.md)组成，规则组件以逻辑方式绑定在一起。 Reactor API中的`/rules`端点允许您以编程方式管理标记规则。
+在数据收集标记的上下文中，规则控制已部署库中资源的行为。 规则由一个或多个 [规则组件](./rule-components.md)，以逻辑方式将规则组件绑定在一起。 的 `/rules` reactor API中的端点允许您以编程方式管理标记规则。
 
 >[!NOTE]
 >
->本文档介绍如何在Reactor API中管理规则。 有关如何与数据收集UI中的规则进行交互的信息，请参阅[UI指南](../../ui/managing-resources/rules.md)。
+>本文档介绍如何在Reactor API中管理规则。 有关如何与数据收集UI中的规则进行交互的信息，请参阅 [UI指南](../../ui/managing-resources/rules.md).
 
-规则恰好属于一个[属性](./properties.md)。 资产可以有许多规则。
+规则恰好属于一个规则 [属性](./properties.md). 资产可以有许多规则。
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索规则列表 {#list}
 
@@ -34,13 +35,13 @@ GET /properties/{PROPERTY_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 要列出其组件的属性的`id`。 |
+| `PROPERTY_ID` | 的 `id` 要列出其组件的属性的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的规则：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>有关更多信息，请参阅[筛选响应](../guides/filtering.md)指南。
+>使用查询参数，可以根据以下属性过滤列出的规则：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -49,7 +50,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR41f64d2a9d9b4862b0582c5ff6a07504/rules \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -145,7 +146,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->删除规则后，这些规则将被标记为已删除，但实际上不会从系统中删除。 因此，可以检索已删除的规则。 删除的规则可以通过存在`meta.deleted_at`属性来标识。
+>删除规则后，这些规则将被标记为已删除，但实际上不会从系统中删除。 因此，可以检索已删除的规则。 删除的规则可以通过 `meta.deleted_at` 属性。
 
 **API格式**
 
@@ -155,7 +156,7 @@ GET /rules/{RULE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_ID` | 要查找的规则的`id`。 |
+| `RULE_ID` | 的 `id` 你想查的规则。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -166,7 +167,7 @@ curl -X GET \
   https://reactor.adobe.io/rules/RL14dc6a8c37b14b619ddb2b3ba489a1f5 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -257,7 +258,7 @@ POST /properties/{PROPERTY_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 要在下定义规则的属性的`id`。 |
+| `PROPERTY_ID` | 的 `id` 的属性。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -268,7 +269,7 @@ curl -X POST \
   https://reactor.adobe.io/properties/PR03cc61073ef74fd2af21e4cfb6ed97a7/rules \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -285,7 +286,7 @@ curl -X POST \
 | --- | --- |
 | `attributes.name` | **（必需）** 规则的人类可读名称。 |
 | `attributes.enabled` | 一个布尔值，指示是否已启用规则。 |
-| `type` | 要创建的资源类型。 对于此端点，值必须为`rules`。 |
+| `type` | 要创建的资源类型。 对于此端点，值必须为 `rules`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -365,7 +366,7 @@ curl -X POST \
 
 ## 向规则添加事件、条件和操作 {#components}
 
-在[创建规则](#create)后，您可以通过添加事件、条件和操作（统称为规则组件）来开始构建其逻辑。 请参阅`/rule_components`端点指南中关于[创建规则组件](./rule-components.md#create)的部分，以了解如何在Reactor API中执行此操作。
+一旦 [已创建规则](#create)，您可以通过添加事件、条件和操作（统称为规则组件）来开始构建其逻辑。 请参阅 [创建规则组件](./rule-components.md#create) 在 `/rule_components` 端点指南，以了解如何在Reactor API中执行此操作。
 
 ## 更新规则 {#update}
 
@@ -379,20 +380,20 @@ PATCH /rules/{RULE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_ID` | 要更新的规则的`id`。 |
+| `RULE_ID` | 的 `id` 的规则。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会更新现有规则的`name`。
+以下请求更新了 `name` 的子规则。
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/rules/RLd2528a53c21a468f93cfd85244f16fdd \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
   "data": {
@@ -408,8 +409,8 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 其规则表示要为规则更新的属性的对象。 可以为规则更新以下属性： <ul><li>`name`</li><li>`enabled`</li></ul> |
-| `id` | 要更新的规则的`id`。 这应该与请求路径中提供的`{RULE_ID}`值匹配。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`rules`。 |
+| `id` | 的 `id` 的规则。 这应该与 `{RULE_ID}` 值。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `rules`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -499,7 +500,7 @@ DELETE /rules/{RULE_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_ID` | 要删除的规则的`id`。 |
+| `RULE_ID` | 的 `id` 的规则。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -510,7 +511,7 @@ curl -X DELETE \
   https://reactor.adobe.io/rules/RLd2528a53c21a468f93cfd85244f16fdd \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **响应**
@@ -519,17 +520,17 @@ curl -X DELETE \
 
 ## 管理规则的注释 {#notes}
 
-规则是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 有关如何管理规则和其他兼容资源的注释的更多信息，请参阅[notes endpoint guide](./notes.md)。
+规则是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 请参阅 [注释终端指南](./notes.md) 有关如何管理规则和其他兼容资源的注释的详细信息。
 
 ## 检索规则的相关资源 {#related}
 
-以下调用演示了如何检索规则的相关资源。 当[查找规则](#lookup)时，这些关系列在`relationships`规则下。
+以下调用演示了如何检索规则的相关资源。 When [查找规则](#lookup)，则这些关系列在 `relationships` 规则。
 
-有关Reactor API中关系的更多信息，请参阅[关系指南](../guides/relationships.md)。
+请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
 ### 列出规则的相关库 {#libraries}
 
-您可以通过将`/libraries`附加到查找请求的路径来列出利用特定规则的库。
+您可以通过附加来列出利用特定规则的库 `/libraries` 到查找请求的路径。
 
 **API格式**
 
@@ -539,7 +540,7 @@ GET  /rules/{RULE_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_ID}` | 要列出其库的规则的`id`。 |
+| `{RULE_ID}` | 的 `id` 要列出其库的规则的子目录。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -550,7 +551,7 @@ curl -X GET \
   https://reactor.adobe.io/rules/RLd2528a53c21a468f93cfd85244f16fdd/libraries \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -651,7 +652,7 @@ curl -X GET \
 
 ### 列出规则的相关修订 {#revisions}
 
-您可以通过将`/revisions`附加到查找请求的路径来列出规则的修订版本。
+您可以通过附加来列出规则的修订版本 `/revisions` 到查找请求的路径。
 
 **API格式**
 
@@ -661,7 +662,7 @@ GET  /rules/{RULE_ID}/revisions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_ID}` | 要列出其修订的规则的`id`。 |
+| `{RULE_ID}` | 的 `id` 要列出其修订的规则。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -672,7 +673,7 @@ curl -X GET \
   https://reactor.adobe.io/rules/RL67de76e5bff9413aa8ad14e55172d8dc/revisions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -829,7 +830,7 @@ curl -X GET \
 
 ### 查找规则的相关来源 {#origin}
 
-您可以通过将`/origin`附加到查找请求的路径来查找规则的原点（以前的版本）。
+您可以通过附加来查找规则的原点（以前的版本） `/origin` 到查找请求的路径。
 
 **API格式**
 
@@ -839,7 +840,7 @@ GET /rules/{RULE_ID}/origin
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_ID}` | 要查找其源的规则的`id`。 |
+| `{RULE_ID}` | 的 `id` 要查找其来源的规则。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -850,7 +851,7 @@ curl -X GET \
   https://reactor.adobe.io/rules/RLb83ed2278dc045628c069ab7eb9bb866/origin \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -931,7 +932,7 @@ curl -X GET \
 
 ### 查找规则的相关属性 {#property}
 
-您可以通过将`/property`附加到查找请求的路径来查找拥有规则的属性。
+您可以通过附加 `/property` 到查找请求的路径。
 
 **API格式**
 
@@ -941,7 +942,7 @@ GET /rules/{RULE_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_ID}` | 要查找其属性的规则的`id`。 |
+| `{RULE_ID}` | 的 `id` 要查找其属性的规则。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -952,7 +953,7 @@ curl -X GET \
   https://reactor.adobe.io/rules/RC3d0805fde85d42db8988090bc074bb44/property \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

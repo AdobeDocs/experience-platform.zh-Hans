@@ -2,7 +2,7 @@
 title: Reactor API快速入门
 description: 了解如何开始使用Reactor API，包括生成所需访问凭据的步骤。
 exl-id: fc1acc1d-6cfb-43c1-9ba9-00b2730cad5a
-source-git-commit: 04e778d3318d60733772c2042c8bb272f0c87d5c
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1060'
 ht-degree: 1%
@@ -15,23 +15,23 @@ ht-degree: 1%
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
+* `x-gw-ims-org-id: {ORG_ID}`
 
-本指南介绍如何使用Adobe开发人员控制台收集每个标头的值，以便您开始调用Reactor API。
+本指南介绍如何使用Adobe Developer控制台收集每个标头的值，以便您开始调用Reactor API。
 
 ## 获取开发人员访问Adobe Experience Platform的权限
 
-在为Reactor API生成身份验证值之前，您必须拥有开发人员Experience Platform权限。 要获取开发人员访问权限，请按照 [Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 在您完成步骤“在Adobe开发人员控制台中生成访问凭据”后，返回到本教程以生成特定于Reactor API的凭据。
+在为Reactor API生成身份验证值之前，您必须拥有开发人员Experience Platform权限。 要获取开发人员访问权限，请按照 [Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 在您完成步骤“在Adobe Developer控制台中生成访问凭据”后，返回到本教程以生成特定于Reactor API的凭据。
 
 ## 生成访问凭据
 
-使用Adobe开发人员控制台，您必须生成以下三个访问凭据：
+使用Adobe Developer控制台，您必须生成以下三个访问凭据：
 
-* `{IMS_ORG}`
+* `{ORG_ID}`
 * `{API_KEY}`
 * `{ACCESS_TOKEN}`
 
-您的IMS组织的ID(`{IMS_ORG}`)和API密钥(`{API_KEY}`)可在初始生成API调用后在将来的API调用中重复使用。 但是，您的访问令牌(`{ACCESS_TOKEN}`)是临时的，必须每24小时重新生成一次。
+您的IMS组织的ID(`{ORG_ID}`)和API密钥(`{API_KEY}`)可在初始生成API调用后在将来的API调用中重复使用。 但是，您的访问令牌(`{ACCESS_TOKEN}`)是临时的，必须每24小时重新生成一次。
 
 有关生成这些值的步骤，请参见下文。
 
@@ -70,13 +70,13 @@ ht-degree: 1%
 将API添加到项目后，项目页面会重新显示在Experience PlatformReactor API页面中。 从此处，向下滚动到 **服务帐户(JWT)** 部分，该部分提供了所有Reactor API调用中所需的以下访问凭据：
 
 * **客户端ID**:客户ID是必需的 `{API_KEY}` 必须在 `x-api-key` 标题。
-* **组织ID**:组织ID是 `{IMS_ORG}` 的值 `x-gw-ims-org-id` 标题。
+* **组织ID**:组织ID是 `{ORG_ID}` 的值 `x-gw-ims-org-id` 标题。
 
 ![](../images/api/getting-started/access-creds.png)
 
 ### 每个会话的身份验证
 
-现在，您拥有 `{API_KEY}` 和 `{IMS_ORG}` 值，最后一步是生成 `{ACCESS_TOKEN}` 值。
+现在，您拥有 `{API_KEY}` 和 `{ORG_ID}` 值，最后一步是生成 `{ACCESS_TOKEN}` 值。
 
 >[!NOTE]
 >
@@ -153,7 +153,7 @@ curl -X POST \
 
 ## 后续步骤
 
-按照本教程中的步骤，您应具有 `{IMS_ORG}`, `{API_KEY}`和 `{ACCESS_TOKEN}`. 您现在可以在对Reactor API的简单cURL请求中使用这些值来测试这些值。
+按照本教程中的步骤，您应具有 `{ORG_ID}`, `{API_KEY}`和 `{ACCESS_TOKEN}`. 您现在可以在对Reactor API的简单cURL请求中使用这些值来测试这些值。
 
 首先尝试对 [列出所有公司](./endpoints/companies.md#list).
 

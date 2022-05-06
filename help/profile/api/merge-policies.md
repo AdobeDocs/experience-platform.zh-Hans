@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Adobe Experience Platform允许您从多个来源将数据片段合并在一起，以便查看各个客户的完整视图。 合并策略是Platform用来确定数据优先级以及合并哪些数据以创建统一视图的规则，将这些数据整合在一起。
 exl-id: fb49977d-d5ca-4de9-b185-a5ac1d504970
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '2472'
 ht-degree: 1%
@@ -50,7 +50,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
     {
         "id": "{MERGE_POLICY_ID}",
         "name": "{NAME}",
-        "imsOrgId": "{IMS_ORG}",
+        "imsOrgId": "{ORG_ID}",
         "schema": {
             "name": "{SCHEMA_CLASS_NAME}"
         },
@@ -86,7 +86,7 @@ Adobe Experience Platform允许您从多个来源将数据片段合并在一起�
     {
         "id": "10648288-cda5-11e8-a8d5-f2801f1b9fd1",
         "name": "profile-default",
-        "imsOrgId": "{IMS_ORG}",
+        "imsOrgId": "{ORG_ID}",
         "schema": {
             "name": "_xdm.context.profile"
         },
@@ -217,7 +217,7 @@ curl -X GET \
   'https://platform.adobe.io/data/core/ups/config/mergePolicies/10648288-cda5-11e8-a8d5-f2801f1b9fd1' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}
 ```
 
@@ -228,7 +228,7 @@ curl -X GET \
 ```json
 {
     "id": "10648288-cda5-11e8-a8d5-f2801f1b9fd1",
-    "imsOrgId": "{IMS_ORG}",
+    "imsOrgId": "{ORG_ID}",
     "schema": {
         "name": "_xdm.context.profile"
     },
@@ -266,7 +266,7 @@ curl -X POST \
   'https://platform.adobe.io/data/core/ups/config/mergePolicies/bulk-get' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -291,7 +291,7 @@ curl -X POST \
         "0bf16e61-90e9-4204-b8fa-ad250360957b": {
             "id": "0bf16e61-90e9-4204-b8fa-ad250360957b",
             "name": "Profile Default Merge Policy",
-            "imsOrgId": "{IMS_ORG}",
+            "imsOrgId": "{ORG_ID}",
             "sandbox": {
                 "sandboxId": "ff0f6870-c46d-11e9-8ca3-036939a64204",
                 "sandboxName": "prod",
@@ -315,7 +315,7 @@ curl -X POST \
         "42d4a596-b1c6-46c0-994e-ca5ef1f85130": {
             "id": "42d4a596-b1c6-46c0-994e-ca5ef1f85130",
             "name": "Dataset Precedence Merge Policy",
-            "imsOrgId": "{IMS_ORG}",
+            "imsOrgId": "{ORG_ID}",
             "sandbox": {
                 "sandboxId": "ff0f6870-c46d-11e9-8ca3-036939a64204",
                 "sandboxName": "prod",
@@ -380,7 +380,7 @@ curl -X GET \
   'https://platform.adobe.io/data/core/ups/config/mergePolicies?schema.name=_xdm.context.profile' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}
 ```
 
@@ -398,7 +398,7 @@ curl -X GET \
         {
             "id": "0bf16e61-90e9-4204-b8fa-ad250360957b",
             "name": "Profile Default Merge Policy",
-            "imsOrgId": "{IMS_ORG}",
+            "imsOrgId": "{ORG_ID}",
             "sandbox": {
                 "sandboxId": "ff0f6870-c46d-11e9-8ca3-036939a64204",
                 "sandboxName": "prod",
@@ -422,7 +422,7 @@ curl -X GET \
         {
             "id": "42d4a596-b1c6-46c0-994e-ca5ef1f85130",
             "name": "Dataset Precedence Merge Policy",
-            "imsOrgId": "{IMS_ORG}",
+            "imsOrgId": "{ORG_ID}",
             "sandbox": {
                 "sandboxId": "ff0f6870-c46d-11e9-8ca3-036939a64204",
                 "sandboxName": "prod",
@@ -478,7 +478,7 @@ curl -X POST \
   https://platform.adobe.io/data/core/ups/config/mergePolicies \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -520,7 +520,7 @@ curl -X POST \
 {
     "id": "e5bc94de-cd14-4cdf-a2bc-88b6e8cbfac2",
     "name": "Loyalty members ordered by ID",
-    "imsOrgId": "{IMS_ORG}",
+    "imsOrgId": "{ORG_ID}",
     "sandbox": {
         "sandboxId": "ff0f6870-c46d-11e9-8ca3-036939a64204",
         "sandboxName": "prod",
@@ -576,7 +576,7 @@ curl -X PATCH \
   https://platform.adobe.io/data/core/ups/config/mergePolicies/e5bc94de-cd14-4cdf-a2bc-88b6e8cbfac2 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -603,7 +603,7 @@ curl -X PATCH \
 {
     "id": "e5bc94de-cd14-4cdf-a2bc-88b6e8cbfac2",
     "name": "Loyalty members ordered by ID",
-    "imsOrgId": "{IMS_ORG}",
+    "imsOrgId": "{ORG_ID}",
     "sandbox": {
         "sandboxId": "ff0f6870-c46d-11e9-8ca3-036939a64204",
         "sandboxName": "prod",
@@ -653,12 +653,12 @@ curl -X PUT \
   https://platform.adobe.io/data/core/ups/config/mergePolicies/e5bc94de-cd14-4cdf-a2bc-88b6e8cbfac2 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '{
         "name": "Loyalty members ordered by ID",
-        "imsOrgId": "{IMS_ORG}",
+        "imsOrgId": "{ORG_ID}",
         "schema": {
             "name": "_xdm.context.profile"
         },
@@ -698,7 +698,7 @@ curl -X PUT \
 {
     "id": "e5bc94de-cd14-4cdf-a2bc-88b6e8cbfac2",
     "name": "Loyalty members ordered by ID",
-    "imsOrgId": "{IMS_ORG}",
+    "imsOrgId": "{ORG_ID}",
     "sandbox": {
         "sandboxId": "ff0f6870-c46d-11e9-8ca3-036939a64204",
         "sandboxName": "prod",
@@ -752,7 +752,7 @@ curl -X DELETE \
   https://platform.adobe.io/data/core/ups/config/mergePolicies/e5bc94de-cd14-4cdf-a2bc-88b6e8cbfac2 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 

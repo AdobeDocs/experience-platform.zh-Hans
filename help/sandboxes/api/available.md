@@ -5,7 +5,7 @@ title: 可用的沙盒API端点
 topic-legacy: developer guide
 description: 通过向可用沙箱端点发出GET请求，可以列出当前用户可用的沙箱。
 exl-id: 9b0719af-c1ca-439a-9c8b-86c7fa26a3b8
-source-git-commit: f00e6161d82f1fd7ba442be9f06283f3c866573f
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '256'
 ht-degree: 2%
@@ -28,7 +28,7 @@ GET /{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{QUERY_PARAMS}` | 用于按筛选结果的可选查询参数。 有关可用参数的列表，请参阅[附录文档](./appendix.md#query)。 |
+| `{QUERY_PARAMS}` | 用于按筛选结果的可选查询参数。 请参阅 [附录文档](./appendix.md#query) ，以获取可用参数列表。 |
 
 **请求**
 
@@ -37,12 +37,12 @@ curl -X GET \
   https://platform.adobe.io/data/foundation/sandbox-management/?&limit=3&offset=1 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **响应**
 
-成功响应会返回可供当前用户使用的沙箱列表，包括详细信息，如`name`、`title`、`state`和`type`。
+成功响应会返回可供当前用户使用的沙箱列表，包括详细信息，如 `name`, `title`, `state`和 `type`.
 
 ```json
 {

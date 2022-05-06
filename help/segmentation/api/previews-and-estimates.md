@@ -5,7 +5,7 @@ title: 预览和估算API端点
 topic-legacy: developer guide
 description: 在开发区段定义时，您可以使用Adobe Experience Platform中的估计和预览工具来查看摘要级别的信息，以帮助确保隔离预期受众。
 exl-id: 2c204f29-825f-4a5e-a7f6-40fc69263614
-source-git-commit: a5cc688357e4750dee73baf3fc9af02a9f2e49e3
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '978'
 ht-degree: 2%
@@ -16,24 +16,24 @@ ht-degree: 2%
 
 在开发区段定义时，您可以使用Adobe Experience Platform中的评估和预览工具来查看摘要级别的信息，以帮助确保隔离您预期的受众。
 
-* **** 预览为区段定义提供符合条件的用户档案的分页列表，允许您将结果与预期结果进行比较。
+* **预览** 为区段定义提供符合条件的用户档案的分页列表，以便将结果与预期结果进行比较。
 
-* **** 估计可提供有关区段定义的统计信息，如预计受众规模、置信区间和误差标准偏差。
+* **估计** 提供有关区段定义的统计信息，如预计受众规模、置信区间和误差标准偏差。
 
 >[!NOTE]
 >
->要访问与实时客户配置文件数据相关的类似量度，例如特定命名空间或配置文件数据存储中的配置文件片段和合并配置文件的总数，请参阅配置文件API开发人员指南中的[配置文件预览（预览示例状态）端点指南](../../profile/api/preview-sample-status.md)。
+>要访问与实时客户配置文件数据相关的类似量度，例如特定命名空间或配置文件数据存储中的配置文件片段和合并配置文件的总数，请参阅 [配置文件预览（预览示例状态）端点指南](../../profile/api/preview-sample-status.md)，是配置文件API开发人员指南的一部分。
 
 ## 快速入门
 
-本指南中使用的端点是[!DNL Adobe Experience Platform Segmentation Service] API的一部分。 在继续操作之前，请查看[快速入门指南](./getting-started.md) ，以了解成功调用API所需的重要信息，包括所需的标头以及如何读取示例API调用。
+本指南中使用的端点是 [!DNL Adobe Experience Platform Segmentation Service] API。 在继续之前，请查看 [入门指南](./getting-started.md) 有关成功调用API所需的重要信息，包括所需的标头以及如何读取示例API调用。
 
 ## 如何生成估计
 
 当将记录摄取到用户档案存储区时，总用户档案计数增加或减少5%以上，则会触发取样作业以更新计数。 数据采样的触发方式取决于摄取方法：
 
-* **批量摄取：** 对于批量摄取，在将批次成功摄取到用户档案存储的15分钟内，如果满足5%的增加或减少阈值，则会运行一个作业以更新计数。
-* **流摄取：** 对于流式数据工作流，每小时进行一次检查，以确定是否满足增加或减少5%的阈值。如果已执行，则会自动触发作业以更新计数。
+* **批量摄取：** 对于批量摄取，在将批成功摄取到用户档案存储的15分钟内，如果满足5%的增加或减少阈值，则将运行一个作业以更新计数。
+* **流式摄取：** 对于流数据工作流，每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果已执行，则会自动触发作业以更新计数。
 
 扫描的样本大小取决于配置文件存储中的实体总数。 下表显示了这些样本大小：
 
@@ -47,9 +47,9 @@ ht-degree: 2%
 >
 >估计值通常需要10到15秒才能运行，从粗略估计开始，随着读取更多记录，将进行优化。
 
-## 创建新预览{#create-preview}
+## 创建新预览 {#create-preview}
 
-通过向`/preview`端点发出POST请求，可以创建新预览。
+您可以通过向 `/preview` 端点。
 
 >[!NOTE]
 >
@@ -67,7 +67,7 @@ POST /preview
 curl -X POST https://platform.adobe.io/data/core/ups/preview \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '
@@ -82,9 +82,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `predicateExpression` | 用于查询数据的PQL表达式。 |
-| `predicateType` | `predicateExpression`下查询表达式的谓词类型。 当前，此属性唯一接受的值是`pql/text`。 |
-| `predicateModel` | 配置文件数据所基于的[!DNL Experience Data Model](XDM)架构类的名称。 |
-| `graphType` | 要从中获取群集的图形类型。 支持的值包括`none`（不执行身份拼合）和`pdg`（根据您的专用身份图执行身份拼合）。 |
+| `predicateType` | 下查询表达式的谓词类型 `predicateExpression`. 目前，此属性唯一接受的值是 `pql/text`. |
+| `predicateModel` | 的名称 [!DNL Experience Data Model] (XDM)配置文件数据所基于的架构类。 |
+| `graphType` | 要从中获取群集的图形类型。 支持的值包括 `none` （不执行身份拼合）和 `pdg` （根据您的专用身份图执行身份拼合）。 |
 
 **响应**
 
@@ -105,9 +105,9 @@ curl -X POST https://platform.adobe.io/data/core/ups/preview \
 | `state` | 预览作业的当前状态。 最初创建时，该变量将处于“NEW”状态。 随后，它将处于“正在运行”状态，直到处理完成，此时它将变为“RESULT_READY”或“失败”。 |
 | `previewId` | 预览作业的ID，在查看预估或预览时用于查找目的，如下一节中所述。 |
 
-## 检索特定预览的结果{#get-preview}
+## 检索特定预览的结果 {#get-preview}
 
-您可以通过向`/preview`端点发出GET请求并在请求路径中提供预览ID来检索有关特定预览的详细信息。
+您可以通过向 `/preview` 端点和在请求路径中提供预览ID。
 
 **API格式**
 
@@ -117,14 +117,14 @@ GET /preview/{PREVIEW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | 要检索的预览的`previewId`值。 |
+| `{PREVIEW_ID}` | 的 `previewId` 要检索的预览的值。 |
 
 **请求**
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgtM2YzMS00YjY0LThkODQtYWNkMGM0ZmJkYWQzOmU4OTAwNjhiLWY1Y2EtNGE4Zi1hNmI1LWFmODdmZjBjYWFjMzow \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -180,11 +180,11 @@ curl -X GET https://platform.adobe.io/data/core/ups/preview/MDphcHAtMzJiZTAzMjgt
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `results` | 实体ID及其相关标识的列表。 提供的链接可用于使用[配置文件访问API端点](../../profile/api/entities.md)查找指定的实体。 |
+| `results` | 实体ID及其相关标识的列表。 提供的链接可用于使用 [配置文件访问API端点](../../profile/api/entities.md). |
 
-## 检索特定估计作业{#get-estimate}的结果
+## 检索特定评估作业的结果 {#get-estimate}
 
-创建预览作业后，可以在GET请求到`/estimate`端点的路径中使用其`previewId`来查看有关区段定义的统计信息，包括预计受众大小、置信区间和错误标准偏差。
+创建预览作业后，即可使用 `previewId` 在GET请求的路径中 `/estimate` 用于查看有关区段定义的统计信息的端点，包括预计受众大小、置信区间和错误标准偏差。
 
 **API格式**
 
@@ -194,7 +194,7 @@ GET /estimate/{PREVIEW_ID}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{PREVIEW_ID}` | 仅当创建了预览作业，并且两个作业共享相同的ID值以进行查找时，才会触发估计作业。 具体而言，这是创建预览作业时返回的`previewId`值。 |
+| `{PREVIEW_ID}` | 仅当创建了预览作业，并且两个作业共享相同的ID值以进行查找时，才会触发估计作业。 具体而言，这是 `previewId` 创建预览作业时返回的值。 |
 
 **请求**
 
@@ -203,7 +203,7 @@ GET /estimate/{PREVIEW_ID}
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWFjOTEtNGJiNy1hNDI2LTE1MDkzN2I2YWY1Yzo0Mg \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -244,10 +244,10 @@ curl -X GET https://platform.adobe.io/data/core/ups/estimate/MDoyOjRhNDVlODUzLWF
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `estimatedNamespaceDistribution` | 一个对象数组，显示区段内按身份命名空间划分的配置文件数。 按命名空间划分的配置文件总数（将每个命名空间显示的值相加）可能高于配置文件计数量度，因为一个配置文件可能与多个命名空间关联。 例如，如果客户在多个渠道上与您的品牌交互，则多个命名空间将与该个别客户关联。 |
+| `estimatedNamespaceDistribution` | 一个对象数组，显示区段内按身份命名空间划分的配置文件数。 按命名空间划分的配置文件总数（将每个命名空间显示的值相加）可能高于配置文件计数量度，因为一个配置文件可能与多个命名空间关联。 例如，如果客户在多个渠道上与您的品牌进行交互，则多个命名空间将与该个别客户关联。 |
 | `state` | 预览作业的当前状态。 在处理完成之前，状态将为“正在运行”，此时状态将变为“RESULT_READY”或“失败”。 |
-| `_links.preview` | 当`state`为“RESULT_READY”时，此字段会提供一个用于查看估计值的URL。 |
+| `_links.preview` | 当 `state` 为“RESULT_READY”，则此字段提供一个用于查看预估的URL。 |
 
 ## 后续步骤
 
-阅读本指南后，您应该更好地了解如何使用分段API进行预览和评估。 要了解如何访问与实时客户配置文件数据相关的量度，例如特定命名空间或配置文件数据存储中的配置文件片段和合并配置文件总数，请访问[配置文件预览(`/previewsamplestatus`)端点指南](../../profile/api/preview-sample-status.md)。
+阅读本指南后，您应该更好地了解如何使用分段API进行预览和评估。 要了解如何访问与实时客户资料数据相关的量度，例如特定命名空间或整个资料数据存储中的资料片段和合并资料总数，请访问 [配置文件预览(`/previewsamplestatus`)endpoint指南](../../profile/api/preview-sample-status.md).

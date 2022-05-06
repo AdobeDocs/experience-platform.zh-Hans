@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。
 exl-id: dfe8a7be-1b86-4d78-a27e-87e4ed8b3d42
-source-git-commit: f5f4230c85a16aba00d0071b388e8305ccc654d5
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1272'
 ht-degree: 5%
@@ -14,13 +14,13 @@ ht-degree: 5%
 ---
 
 
-# 身份验证和访问 Experience Platform API
+# 验证和访问 Experience Platform API
 
 此文档分步说明了如何获取 Adobe Experience Platform 开发人员帐户访问权限以调用 Experience Platform API。在本教程结束时，您将生成所有平台API调用所需的以下凭据：
 
 * `{ACCESS_TOKEN}`
 * `{API_KEY}`
-* `{IMS_ORG}`
+* `{ORG_ID}`
 
 为了维护应用程序和用户的安全性，必须使用OAuth和JSON Web令牌(JWT)等标准对Adobe I/OAPI的所有请求进行身份验证和授权。 JWT与特定于客户端的信息一起使用，以生成您的个人访问令牌。
 
@@ -43,7 +43,7 @@ ht-degree: 5%
 
 ## 获取开发人员和用户访问权限以进行Experience Platform
 
-在Adobe开发人员控制台上创建集成之前，您的帐户必须拥有Adobe Admin Console中Experience Platform产品配置文件的开发人员和用户权限。
+在Adobe Developer Console上创建集成之前，您的帐户必须拥有Adobe Admin Console中Experience Platform产品配置文件的开发人员和用户权限。
 
 ### 获取开发人员访问权限
 
@@ -61,11 +61,11 @@ ht-degree: 5%
 >
 >如果您从 [Privacy ServiceAPI指南](../privacy-service/api/getting-started.md)，您现在可以返回该指南以生成 [!DNL Privacy Service].
 
-在您通过 [!DNL Admin Console]，下一步是生成 `{IMS_ORG}` 和 `{API_KEY}` Adobe开发人员控制台中的凭据。 这些凭据只需生成一次，即可在以后的Platform API调用中重复使用。
+在您通过 [!DNL Admin Console]，下一步是生成 `{ORG_ID}` 和 `{API_KEY}` 凭据。 这些凭据只需生成一次，即可在以后的Platform API调用中重复使用。
 
 ### 将Experience Platform添加到项目
 
-转到 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 中的Adobe开发人员控制台文档。
+转到 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) (在Adobe Developer控制台文档中)。
 
 创建新项目后，选择 **[!UICONTROL 添加API]** 在 **[!UICONTROL 项目概述]** 屏幕。
 
@@ -86,7 +86,7 @@ ht-degree: 5%
 将API添加到项目后， **[!UICONTROL Experience PlatformAPI]** 项目的页面显示了所有对Experience PlatformAPI的调用所需的以下凭据：
 
 * `{API_KEY}` ([!UICONTROL 客户端ID])
-* `{IMS_ORG}` ([!UICONTROL 组织 ID])
+* `{ORG_ID}` ([!UICONTROL 组织 ID])
 
 ![](././images/api-authentication/api-key-ims-org.png)
 
@@ -118,7 +118,7 @@ ht-degree: 5%
 
 ## 生成访问令牌
 
-生成JWT后，即可在API调用中使用它来生成 `{ACCESS_TOKEN}`. 与 `{API_KEY}` 和 `{IMS_ORG}`，则必须每24小时生成一个新令牌，才能继续使用Platform API。
+生成JWT后，即可在API调用中使用它来生成 `{ACCESS_TOKEN}`. 与 `{API_KEY}` 和 `{ORG_ID}`，则必须每24小时生成一个新令牌，才能继续使用Platform API。
 
 **请求**
 
@@ -169,7 +169,7 @@ curl -X GET https://platform.adobe.io/data/foundation/schemaregistry/global/clas
   -H 'Accept: application/vnd.adobe.xed-id+json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **响应**

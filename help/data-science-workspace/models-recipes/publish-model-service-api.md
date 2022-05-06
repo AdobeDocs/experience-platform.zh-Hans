@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程介绍使用Sensei机器学习API将模型作为服务发布的过程。
 exl-id: f78b1220-0595-492d-9f8b-c3a312f17253
-source-git-commit: a51c878bbfd3004cb597ce9244a9ed2f2318604b
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1516'
 ht-degree: 1%
@@ -26,7 +26,7 @@ ht-degree: 1%
 最后，在开始本教程之前，请查看 [入门](../api/getting-started.md) 开发人员指南的部分，以了解成功调用 [!DNL Sensei Machine Learning] API，包括本教程中使用的所需标头：
 
 - `{ACCESS_TOKEN}`
-- `{IMS_ORG}`
+- `{ORG_ID}`
 - `{API_KEY}`
 
 所有POST、PUT和PATCH请求都需要一个额外的标头：
@@ -64,7 +64,7 @@ curl -X POST
   https://platform.adobe.io/data/sensei/mlServices
   -H 'Authorization: {ACCESS_TOKEN}' 
   -H 'x-api-key: {API_KEY}' 
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
   -H 'Content-Type: application/json'
   -d '{
         "name": "Service name",
@@ -145,7 +145,7 @@ curl -X POST
   https://platform.adobe.io/data/sensei/mlServices
   -H 'Authorization: {ACCESS_TOKEN}' 
   -H 'x-api-key: {API_KEY}' 
-  -H 'x-gw-ims-org-id: {IMS_ORG}' 
+  -H 'x-gw-ims-org-id: {ORG_ID}' 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
         "name": "Service name",
@@ -217,7 +217,7 @@ POST /mlServices
 curl -X POST 'https://platform.adobe.io/data/sensei/mlServices' 
   -H 'Authorization: Bearer {ACCESS_TOKEN}' 
   -H 'x-api-key: {API_KEY}' 
-  -H 'x-gw-ims-org-id: {IMS_ORG}' 
+  -H 'x-gw-ims-org-id: {ORG_ID}' 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
         "name": "string",
@@ -304,7 +304,7 @@ GET /mlServices/{SERVICE_ID}
 curl -X GET 'https://platform.adobe.io/data/sensei/mlServices/{SERVICE_ID}' 
   -H 'Authorization: Bearer {ACCESS_TOKEN}' 
   -H 'x-api-key: {API_KEY}' 
-  -H 'x-gw-ims-org-id: {IMS_ORG}' 
+  -H 'x-gw-ims-org-id: {ORG_ID}' 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -366,7 +366,7 @@ PUT /mlServices/{SERVICE_ID}
 curl -X PUT 'https://platform.adobe.io/data/sensei/mlServices/{SERVICE_ID}' 
   -H 'Authorization: {ACCESS_TOKEN}' 
   -H 'x-api-key: {API_KEY}' 
-  -H 'x-gw-ims-org-id: {IMS_ORG}' 
+  -H 'x-gw-ims-org-id: {ORG_ID}' 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
   -d '{
         "name": "string",

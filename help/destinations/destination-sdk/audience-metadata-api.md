@@ -2,7 +2,7 @@
 description: 本页介绍了可使用“/authoring/audience-templates” API端点执行的所有API操作。
 title: 受众元数据端点API操作
 exl-id: 3444da8c-b2be-4254-980a-8cce7560134d
-source-git-commit: afdabdebe9b82d828cb1941edb99ca2518a941a2
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '879'
 ht-degree: 4%
@@ -39,7 +39,7 @@ POST /authoring/audience-templates
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-templates \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -d '
@@ -185,7 +185,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/audience-t
 | -------- | ----------- | ----------- |
 | `name` | 字符串 | 目标的受众元数据模板的名称。 此名称将显示在Experience Platform用户界面中任何特定于合作伙伴的错误消息中，然后显示从中解析的错误消息 `metadataTemplate.create.errorSchemaMap`. |
 | `url` | 字符串 | API的URL和端点，用于创建、更新、删除或验证平台中的受众/区段。 两个行业示例： `https://adsapi.snapchat.com/v1/adaccounts/{{customerData.accountId}}/segments` 和 `https://api.linkedin.com/v2/dmpSegments/{{segment.alias}}`. |
-| `httpMethod` | 字符串 | 您端点上用于以编程方式创建、更新、删除或验证目标中的区段/受众的方法。 例如: `POST`, `PUT`, `DELETE` |
+| `httpMethod` | 字符串 | 您端点上用于以编程方式创建、更新、删除或验证目标中的区段/受众的方法。 例如： `POST`, `PUT`, `DELETE` |
 | `headers.header` | 字符串 | 指定应添加到API调用中的任何HTTP标头。 例如：`"Content-Type"` |
 | `headers.value` | 字符串 | 指定应添加到API调用中的HTTP标头值。 例如：`"application/x-www-form-urlencoded"` |
 | `requestBody` | 字符串 | 指定应发送到API的消息正文的内容。 应添加到的参数 `requestBody` 对象取决于API接受的字段。 有关示例，请参阅 [第一个模板示例](./audience-metadata-management.md#example-1) （在受众元数据功能文档中）。 |
@@ -223,7 +223,7 @@ PUT /authoring/audience-templates/{INSTANCE_ID}
 ```shell
 curl -X PUT https://platform.adobe.io/data/core/activation/authoring/audience-templates/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
@@ -334,7 +334,7 @@ GET /authoring/audience-templates
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/audience-templates \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -466,7 +466,7 @@ GET /authoring/audience-templates/{INSTANCE_ID}
 ```shell
 curl -X GET https://platform.adobe.io/data/core/activation/authoring/audience-templates/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -602,7 +602,7 @@ DELETE /authoring/audience-templates/{INSTANCE_ID}
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/audience-templates/bd4ec8f0-e98f-4b6a-8064-dd7adbfffec9 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```

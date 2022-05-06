@@ -5,7 +5,7 @@ title: Adobe隐私JavaScript库概述
 topic-legacy: overview
 description: Adobe隐私JavaScript库允许您检索数据主体身份以在Privacy Service中使用。
 exl-id: 757bf69e-25bf-4ef9-9787-3e74b213908a
-source-git-commit: 7f3a0594147a8cea292263f60aa45dc5ebb8484e
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1012'
 ht-degree: 6%
@@ -56,7 +56,7 @@ ht-degree: 6%
 
 ```js
 var adobePrivacy = new AdobePrivacy({
-    imsOrgID: "{IMS_ORG}",
+    imsOrgID: "{ORG_ID}",
     reportSuite: "{REPORT_SUITE_ID}",
     trackingServer: "{SERVER_URL}",
     clientCode: "{TARGET_CLIENT_CODE}"

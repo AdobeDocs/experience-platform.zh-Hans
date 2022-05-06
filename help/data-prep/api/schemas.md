@@ -1,34 +1,33 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据准备；api指南；模式;
+keywords: Experience Platform；主页；热门主题；数据准备；api指南；模式；
 solution: Experience Platform
-title: 模式API端点
+title: 架构API端点
 topic-legacy: schemas
-description: '您可以使用Adobe Experience Platform API中的“/模式”端点以编程方式检索、创建和更新模式，以便与平台中的映射器一起使用。 '
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+description: '您可以使用Adobe Experience Platform API中的“/模式”端点以编程方式检索、创建和更新模式，以便与Platform中的映射器一起使用。 '
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '613'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
 
 
-# 模式端点
+# 架构端点
 
-模式可与映射器一起使用，以确保您已引入Adobe Experience Platform的数据与要摄取的数据匹配。 您可以使用`/schemas`端点以编程方式创建、列表和获取自定义模式，以便与平台中的映射器一起使用。
+架构可以与映射器一起使用，以确保已摄取到Adobe Experience Platform中的数据与您要摄取的数据匹配。 您可以使用 `/schemas` 端点，以编程方式创建、列出和获取自定义架构，以便与平台中的映射器一起使用。
 
 >[!NOTE]
 >
->使用此端点创建的模式将专门与映射器和映射集一起使用。 要创建其他平台服务可访问的模式，请阅读[模式注册表开发人员指南](../../xdm/api/schemas.md)。
+>使用此端点创建的架构将专门与映射器和映射集一起使用。 要创建可由其他Platform服务访问的模式，请阅读 [架构注册开发人员指南](../../xdm/api/schemas.md).
 
 ## 获取所有模式
 
-您可以通过向`/schemas`端点发出列表请求，为IMS组织检索所有可用的映射器模式的GET。
+您可以通过向 `/schemas` 端点。
 
 **API格式**
 
-`/schemas`端点支持多个查询参数，以帮助您筛选结果。 尽管这些参数大多是可选的，但强烈建议使用这些参数以帮助降低昂贵的开销。 但是，您必须在请求中同时包含`start`和`limit`参数。 可以包含多个参数，用&amp;符号(`&`)分隔。
+的 `/schemas` 端点支持多个查询参数，以帮助您筛选结果。 虽然这些参数大多是可选的，但强烈建议使用这些参数来帮助减少昂贵的开销。 但是，您必须同时包含 `start` 和 `limit` 参数。 可以包含多个参数，这些参数之间用与号(`&`)。
 
 ```http
 GET /schemas?limit={LIMIT}&start={START}
@@ -38,26 +37,26 @@ GET /schemas?limit={LIMIT}&start={START}&orderBy={ORDER_BY}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{LIMIT}` | **必需**. 指定返回的模式数。 |
-| `{START}` | **必需**. 指定结果页的偏移。 要获取结果的第一页，请将值设置为`start=0`。 |
-| `{NAME}` | 过滤器基于名称的模式。 |
-| `{ORDER_BY}` | 对结果的顺序排序。 支持的字段为`modifiedDate`和`createdDate`。 可以在属性前面添加`+`或`-`，以分别按升序或降序对其排序。 |
+| `{LIMIT}` | **必需**. 指定返回的架构数。 |
+| `{START}` | **必需**. 指定结果页的偏移。 要获取结果的第一页，请将值设置为 `start=0`. |
+| `{NAME}` | 根据名称筛选架构。 |
+| `{ORDER_BY}` | 对结果的顺序进行排序。 支持的字段包括 `modifiedDate` 和 `createdDate`. 您可以在资产的前面添加 `+` 或 `-` 分别按升序或降序排序。 |
 
 **请求**
 
-以下请求将检索您的IMS组织最近创建的两个模式。
+以下请求可检索为IMS组织创建的最后两个架构。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas&start=0&limit=2 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-以下响应返回HTTP状态200，并列表所请求的模式。
+以下响应通过请求的架构列表返回HTTP状态200。
 
 >[!NOTE]
 >
@@ -132,25 +131,25 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas&start=0
 }
 ```
 
-## 创建模式
+## 创建架构
 
-可以通过向`/schemas`端点发出POST请求来创建要验证的模式。 创建模式有三种方法：使用示例数据发送[JSON模式](https://json-schema.org/)或引用现有XDM模式。
+您可以通过向 `/schemas` 端点。 创建模式的方法有三种：发送 [JSON架构](https://json-schema.org/)、使用示例数据或引用现有XDM架构。
 
 ```http
 POST /schemas
 ```
 
-### 使用JSON模式
+### 使用JSON架构
 
 **请求**
 
-以下请求允许您通过发送[JSON模式](https://json-schema.org/)创建模式。
+以下请求允许您通过发送 [JSON架构](https://json-schema.org/).
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '
@@ -165,7 +164,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关您新创建的模式的信息。
+成功响应会返回HTTP状态200，其中包含有关新创建架构的信息。
 
 ```json
 {
@@ -183,13 +182,13 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 
 **请求**
 
-通过以下请求，您可以使用之前上传的示例数据创建模式。
+以下请求允许您使用之前上传的示例数据创建架构。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '
@@ -200,11 +199,11 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `sampleId` | 您以模式为基础的示例数据的ID。 |
+| `sampleId` | 您的架构所依据的示例数据的ID。 |
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关您新创建的模式的信息。
+成功响应会返回HTTP状态200，其中包含有关新创建架构的信息。
 
 ```json
 {
@@ -244,17 +243,17 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 }
 ```
 
-### 请参阅XDM模式
+### 请参阅XDM架构
 
 **请求**
 
-以下请求允许您通过引用现有XDM模式创建模式。
+以下请求允许您通过引用现有XDM架构来创建架构。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '
@@ -269,13 +268,13 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `name` | 要创建的模式的名称。 |
-| `schemaRef.id` | 您引用的模式的ID。 |
-| `schemaRef.contentType` | 确定引用模式的响应格式。 有关此字段的详细信息，请参阅[模式注册表开发人员指南](../../xdm/api/schemas.md#lookup) |
+| `name` | 要创建的架构的名称。 |
+| `schemaRef.id` | 您引用的架构的ID。 |
+| `schemaRef.contentType` | 确定引用架构的响应格式。 有关此字段的详细信息，请参阅 [架构注册开发人员指南](../../xdm/api/schemas.md#lookup) |
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关您新创建的模式的信息。
+成功响应会返回HTTP状态200，其中包含有关新创建架构的信息。
 
 >[!NOTE]
 >
@@ -286,7 +285,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
     "id": "4b64daa51b774cb2ac21b61d80125ed0",
     "version": 0,
     "name": "schemaName",
-    "jsonSchema": "{\"id\":null,\"schema\":null,\"_refId\":null,\"title\":\"SimpleUser\",...,\"imsOrg\":\"{IMS_ORG}\",\"$id\":\"https://ns.adobe.com/{TENANT_ID}/schemas/901c44cc5b2748488574f4e2824c5f96\"}",
+    "jsonSchema": "{\"id\":null,\"schema\":null,\"_refId\":null,\"title\":\"SimpleUser\",...,\"imsOrg\":\"{ORG_ID}\",\"$id\":\"https://ns.adobe.com/{TENANT_ID}/schemas/901c44cc5b2748488574f4e2824c5f96\"}",
     "schemaRef": {
         "id": "https://ns.adobe.com/{TENANT_ID}/schemas/901c44cc5b2748488574f4e2824c5f96",
         "contentType": "application/vnd.adobe.xed+json;version=1.0"
@@ -294,9 +293,9 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas \
 }
 ```
 
-## 使用文件上传创建模式
+## 使用文件上传创建架构
 
-您可以通过上传JSON文件创建要从中转换的模式。
+您可以通过上传JSON文件以创建架构，以便从中进行转换。
 
 **API格式**
 
@@ -306,13 +305,13 @@ POST /schemas/upload
 
 **请求**
 
-以下请求允许您从已上载的JSON文件创建模式。
+以下请求允许您从上传的JSON文件创建架构。
 
 ```shell
 curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas/upload \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: multipart/form-data' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -F 'file=@{PATH_TO_FILE}.json'
@@ -320,7 +319,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas/upload
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关您新创建的模式的信息。
+成功响应会返回HTTP状态200，其中包含有关新创建架构的信息。
 
 ```json
 {
@@ -334,9 +333,9 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/schemas/upload
 }
 ```
 
-## 检索特定模式
+## 检索特定架构
 
-您可以通过向`/schemas`端点发出GET请求并在请求路径中提供要检索的模式的ID来检索有关特定模式的信息。
+您可以通过向 `/schemas` 端点，并提供您希望在请求路径中检索的架构的ID。
 
 **API格式**
 
@@ -346,23 +345,23 @@ GET /schemas/{SCHEMA_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{SCHEMA_ID}` | 您查找的模式的ID。 |
+| `{SCHEMA_ID}` | 要查找的架构的ID。 |
 
 **请求**
 
-以下请求检索有关指定模式的信息。
+以下请求会检索有关指定架构的信息。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/schemas/0f868d3a1b804fb0abf738306290ae79 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关指定模式的信息。
+成功响应会返回HTTP状态200，其中包含有关指定架构的信息。
 
 ```json
 {

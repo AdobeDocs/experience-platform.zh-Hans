@@ -5,7 +5,7 @@ title: '使用API管理数据集的数据使用标签 '
 topic-legacy: developer guide
 description: 数据集服务API允许您应用和编辑数据集的使用标签。 它是Adobe Experience Platform数据目录功能的一部分，但与管理数据集元数据的目录服务API不同。
 exl-id: 24a8d870-eb81-4255-8e47-09ae7ad7a721
-source-git-commit: ef711b1cbe0664f556e19ff6c64e9803d3cb1a21
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '803'
 ht-degree: 1%
@@ -45,7 +45,7 @@ curl -X GET \
   'https://platform.adobe.io/data/foundation/dataset/datasets/5abd49645591445e1ba04f87/labels' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -56,7 +56,7 @@ curl -X GET \
 ```json
 {
   "AEP:dataset:5abd49645591445e1ba04f87": {
-    "imsOrg": "{IMS_ORG}",
+    "imsOrg": "{ORG_ID}",
     "labels": [ "C1", "C2", "C3", "I1", "I2" ],
     "optionalLabels": [
       {
@@ -109,7 +109,7 @@ curl -X PUT \
   'https://platform.adobe.io/data/foundation/dataset/datasets/5abd49645591445e1ba04f87/labels' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -H 'If-Match: 8f00d38e-0000-0200-0000-5ef4fc6d0000' \
@@ -157,7 +157,7 @@ curl -X PUT \
 
 通过阅读本文档，您了解了如何使用 [!DNL Dataset Service] API。
 
-在数据集和字段级别添加数据使用情况标签后，您可以开始将数据摄取到 [!DNL Experience Platform]. 要了解更多信息，请首先阅读 [数据摄取文档](../../ingestion/home.md).
+在数据集和字段级别添加数据使用情况标签后，您可以开始将数据摄取到 [!DNL Experience Platform]. 要了解更多信息，请首先阅读 [数据获取文档](../../ingestion/home.md).
 
 您现在还可以根据已应用的标签定义数据使用策略。 有关更多信息，请参阅 [数据使用策略概述](../policies/overview.md).
 

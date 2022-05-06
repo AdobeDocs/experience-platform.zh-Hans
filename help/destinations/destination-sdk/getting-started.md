@@ -2,7 +2,7 @@
 description: 本页介绍如何验证和开始使用Adobe Experience Platform Destination SDK。 其中包含有关如何获取Adobe I/O身份验证凭据、沙盒名称和目标创作访问控制权限的说明。
 title: Destination SDK入门
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
-source-git-commit: d5ce6c8ccdd29b9bcf90a1c2d08085f3be4cf33f
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '613'
 ht-degree: 2%
@@ -26,7 +26,7 @@ Destination SDK使用 [Adobe I/O](https://www.adobe.io/) 用于身份验证的�
 要成功调用Destination SDKAPI端点，请遵循 [Experience Platform身份验证教程](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). 从“[生成API密钥、IMS组织ID和客户端密钥](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)“ ”步骤。 Adobe交换团队将为您处理前面的步骤。 完成身份验证教程将提供Destination SDKAPI调用中每个所需标头的值，如下所示：
 
 * `x-api-key: {API_KEY}`，也称为客户端ID
-* `x-gw-ims-org-id: {IMS_ORG}`，也称为组织ID
+* `x-gw-ims-org-id: {ORG_ID}`，也称为组织ID
 * `Authorization: Bearer {ACCESS_TOKEN}`的问题。访问令牌的过期时间为24小时（以毫秒为单位），因此您必须刷新它。 要刷新访问令牌，请重复身份验证教程中概述的步骤。
 
 <!--
@@ -38,7 +38,7 @@ To obtain the `{ACCESS_TOKEN}`, you must generate a JWT token and exchange it fo
 1. Follow the instructions in the [Generate JWT section](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/credentials.md) in the credentials guide.
 2. Follow the instructions in [Step 3: try it](https://www.adobe.io/authentication/auth-methods.html#!AdobeDocs/adobeio-auth/master/AuthenticationOverview/ServiceAccountIntegration.md) in the Service account connection guide.
 
-You now have the required authentication headers `x-api-key: {API_KEY}`, `x-gw-ims-org-id: {IMS_ORG}`, and `Authorization: Bearer {ACCESS_TOKEN}`.
+You now have the required authentication headers `x-api-key: {API_KEY}`, `x-gw-ims-org-id: {ORG_ID}`, and `Authorization: Bearer {ACCESS_TOKEN}`.
 
 >[!NOTE]
 >
@@ -81,4 +81,4 @@ AdobeExchange团队为您提供沙盒名称，您需要在Destination SDKAPI端�
    * [（测试版）使用Destination SDK配置基于文件的目标](./configure-file-based-destination-instructions.md)
 
 * 有关所有操作，请参阅 [目标创作API文档](https://www.adobe.io/experience-platform-apis/references/destination-authoring/).
-* 使用 [目标创作API Postman集合](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) 使用Destination SDKAPI端点配置目标。 要开始使用Postman，请参阅 [导入环境和收藏集的步骤](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) 和 [用于创建Postman环境的视频指南](https://video.tv.adobe.com/v/28832).
+* 使用 [目标创作API Postman集合](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) 使用Destination SDKAPI端点配置目标。 要开始使用Postman，请参阅 [导入环境和收藏集的步骤](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) 和 [创建Postman环境的视频指南](https://video.tv.adobe.com/v/28832).

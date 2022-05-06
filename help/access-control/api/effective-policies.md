@@ -1,21 +1,20 @@
 ---
-keywords: Experience Platform；主页；热门主题；有效策略；访问控制api
+keywords: Experience Platform；主页；热门主题；有效策略；访问控制API
 solution: Experience Platform
-title: 有效策略API端点
+title: 有效的策略API端点
 topic-legacy: developer guide
-description: Adobe Experience Platform中的访问控制允许您使用Adobe Admin Console管理各种平台功能的角色和权限。 本文档是有关如何使用Adobe Experience Platform的访问控制 API视图有效策略的指南。
+description: 通过Adobe Experience Platform中的访问控制，您可以使用Adobe Admin Console管理各种平台功能的角色和权限。 本文档是有关如何使用Adobe Experience Platform的访问控制API查看有效策略的指南。
 exl-id: 555d73db-115d-4f4c-8bd2-b91477799591
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '317'
+source-wordcount: '320'
 ht-degree: 1%
 
 ---
 
 # 有效策略端点
 
-要视图当前用户的有效策略，请向[!DNL Access Control] API中的`/acl/effective-policies`端点发出POST请求。 您要检索的权限和资源类型必须以数组形式在请求有效负荷中提供。 以下示例API调用中演示了这一点。
+要查看当前用户的有效策略，请向 `/acl/effective-policies` 的端点 [!DNL Access Control] API。 您要检索的权限和资源类型必须以数组形式在请求有效负载中提供。 以下示例API调用中演示了这一点。
 
 **API格式**
 
@@ -25,14 +24,14 @@ POST /acl/effective-policies
 
 **请求**
 
-以下请求检索有关“[!UICONTROL Manage Datasets]”权限的信息，并访问当前用户的“[!UICONTROL schemas]”资源类型。
+以下请求会检索有关“[!UICONTROL 管理数据集]“ ”权限和对“ ”的访问[!UICONTROL 模式]“ ”当前用户的资源类型。
 
 ```shell
 curl -X POST \
   https://platform.adobe.io/data/foundation/access-control/acl/effective-policies \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -H 'Content-Type: application/json' \
   -d '[
@@ -43,11 +42,11 @@ curl -X POST \
 
 >[!NOTE]
 >
->有关可以在负载数组中提供的权限和资源类型的完整列表，请参阅[接受的权限和资源类型](#accepted-permissions-and-resource-types)的附录部分。
+>有关可在有效负载数组中提供的权限和资源类型的完整列表，请参阅附录部分 [已接受的权限和资源类型](#accepted-permissions-and-resource-types).
 
 **响应**
 
-成功的响应返回有关请求中提供的权限和资源类型的信息。 响应包括当前用户对请求中指定的资源类型具有的活动权限。 如果请求有效负荷中包含的任何权限对当前用户处于活动状态，则API返回具有astrisk(`*`)的权限，以指示该权限处于活动状态。 响应负载将忽略请求中提供的对用户不处于活动状态的任何权限。
+成功的响应会返回有关请求中提供的权限和资源类型的信息。 响应包括当前用户对请求中指定的资源类型具有的活动权限。 如果请求有效负载中包含的任何权限对当前用户处于活动状态，则API会返回带有星号(`*`)，以指示该权限处于活动状态。 响应负载中将忽略请求中提供的对用户不处于活动状态的任何权限。
 
 ```json
 {
@@ -66,15 +65,15 @@ curl -X POST \
 
 ## 后续步骤
 
-本文档介绍了如何调用[!DNL Access Control] API以返回有关资源类型的活动权限和相关策略的信息。 有关[!DNL Experience Platform]的访问控制的详细信息，请参阅[访问控制概述](../home.md)。
+本文档介绍了如何调用 [!DNL Access Control] 用于返回有关资源类型的活动权限和相关策略的信息的API。 有关的访问控制的详细信息 [!DNL Experience Platform]，请参阅 [访问控制概述](../home.md).
 
 ## 附录
 
-本节提供使用[!DNL Access Control] API的补充信息。
+本节提供了有关使用 [!DNL Access Control] API。
 
-### 接受的权限和资源类型
+### 已接受的权限和资源类型
 
-以下是权限和资源类型的列表，您可以包括在到`/acl/active-permissions`端点的POST请求的负载中。
+以下是权限和资源类型的列表，您可以将这些权限和资源类型包含在POST请求的有效负载中 `/acl/active-permissions` 端点。
 
 **Permissions**
 

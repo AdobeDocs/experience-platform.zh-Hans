@@ -1,7 +1,8 @@
 ---
 title: 环境端点
 description: 了解如何在Reactor API中对/environments端点进行调用。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 4c22f799-8338-4cf0-980a-3900d725ab5d
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1038'
 ht-degree: 8%
@@ -10,12 +11,12 @@ ht-degree: 8%
 
 # 环境端点
 
-当在Reactor API中将[库](./libraries.md)编译为[build](./builds.md)时，内部版本的确切内容取决于环境设置和库中包含的资源。 具体而言，环境可确定以下内容：
+当 [库](./libraries.md) 被编译为 [构建](./builds.md) 在Reactor API中，内部版本的确切内容取决于环境设置和库中包含的资源。 具体而言，环境可确定以下内容：
 
-1. **目标**:您希望部署内部版本的位置。这可通过选择[主机](./hosts.md)以供环境使用来控制。
-1. **存档**:您可以选择作为一组可部署的文件来检索内部版本，或以存档格式压缩内部版本。这由环境中的`archive`设置控制。
+1. **目标**:您希望部署内部版本的位置。 这可通过选择 [主机](./hosts.md) 供环境使用。
+1. **存档**:您可以选择作为一组可部署的文件来检索内部版本，或以存档格式压缩内部版本。 这由 `archive` 设置。
 
-环境配置的目标和存档格式会更改您在应用程序中引用内部版本的方式（该引用是[嵌入代码](../../ui/publishing/environments.md#embed-code)）。 如果您对目标或文件格式进行了任何更改，则必须对应用程序进行匹配更新，才能使用新引用。
+环境配置的目标和存档格式会更改您在应用程序中引用内部版本的方式(该引用是 [嵌入代码](../../ui/publishing/environments.md#embed-code))。 如果您对目标或文件格式进行了任何更改，则必须对应用程序进行匹配更新，才能使用新引用。
 
 环境分为三种类型（或阶段），每种类型对您可以拥有的总数具有不同的限制：
 
@@ -27,15 +28,15 @@ ht-degree: 8%
 
 {style=&quot;table-layout:auto&quot;}
 
-这些环境类型具有相似的行为，但在[标记发布工作流](../../ui/publishing/publishing-flow.md)的不同阶段使用。
+这些环境类型具有相似的行为，但会在 [标记发布工作流程](../../ui/publishing/publishing-flow.md).
 
-环境恰好属于一个[属性](./properties.md)。
+环境恰好属于一个环境 [属性](./properties.md).
 
-有关环境的更多常规信息，请参阅发布文档中关于[environments](../../ui/publishing/environments.md)的部分。
+有关环境的更多常规信息，请参阅 [环境](../../ui/publishing/environments.md) 中。
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索环境列表 {#list}
 
@@ -49,13 +50,13 @@ GET /properties/{PROPERTY_ID}/environments
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 拥有该环境的属性的`id`。 |
+| `PROPERTY_ID` | 的 `id` 拥有环境的资产的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选列出的环境：<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>有关更多信息，请参阅[筛选响应](../guides/filtering.md)指南。
+>使用查询参数，可以根据以下属性筛选列出的环境：<ul><li>`archive`</li><li>`created_at`</li><li>`name`</li><li>`stage`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -64,7 +65,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR97d92a379a5f48758947cdf44f607a0d/environments \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -173,7 +174,7 @@ GET /environments/{ENVIRONMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `ENVIRONMENT_ID` | 要查找的环境的`id`。 |
+| `ENVIRONMENT_ID` | 的 `id` 要查找的环境。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -184,7 +185,7 @@ curl -X GET \
   https://reactor.adobe.io/environments/ENb0c1fbfdc1fd4b8593bfd269f827b3e6 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -282,20 +283,20 @@ POST /properties/{PROPERTY_ID}/environments
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 要在下定义环境的[属性](./properties.md)的`id`。 |
+| `PROPERTY_ID` | 的 `id` 的 [属性](./properties.md) 定义下的环境。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会为指定的资产创建一个新环境。 此调用还会通过`relationships`属性将环境与现有主机关联。 有关更多信息，请参阅[relationships](../guides/relationships.md)指南。
+以下请求会为指定的资产创建一个新环境。 此调用还会通过将环境与现有主机关联 `relationships` 属性。 请参阅 [关系](../guides/relationships.md) 以了解更多信息。
 
 ```shell
 curl -X POST \
   https://reactor.adobe.io/properties/PR97d92a379a5f48758947cdf44f607a0d/environments \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -321,13 +322,13 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.name` | **（必需）** 环境的人类可读名称。 |
+| `attributes.name` | **（必需）** 环境的可读名称。 |
 | `attributes.archive` | 一个布尔值，指示其内部版本是否为存档格式。 |
 | `attributes.archive_passphrase` | 可用于解锁存档文件的字符串密码。 |
 | `attributes.path` | 环境的主机URL路径。 |
 | `attributes.stage` | 环境的阶段（开发、暂存或生产）。 |
-| `id` | 要更新的环境的`id`。 这应该与请求路径中提供的`{ENVIRONMENT_ID}`值匹配。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`environments`。 |
+| `id` | 的 `id` 要更新的环境。 这应该与 `{ENVIRONMENT_ID}` 值。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `environments`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -424,20 +425,20 @@ PATCH /environments/{ENVIRONMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `ENVIRONMENT_ID` | 要更新的环境的`id`。 |
+| `ENVIRONMENT_ID` | 的 `id` 要更新的环境。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会更新现有环境的`name`。
+以下请求更新了 `name` （对于现有环境）。
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/environments/DE3fab176ccf8641838b3da59f716fc42b \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -452,9 +453,9 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 其属性表示要为环境更新的属性的对象。 可以更新以下环境属性： <ul><li>`archive`</li><li>`archive_passphrase`</li><li>`include_debug_library`</li><li>`name`</li><li>`path`</li></ul> 有关属性列表及其用例，请参阅[创建环境](#create)的示例调用。 |
-| `id` | 要更新的环境的`id`。 这应该与请求路径中提供的`{ENVIRONMENT_ID}`值匹配。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`environments`。 |
+| `attributes` | 其属性表示要为环境更新的属性的对象。 可以更新以下环境属性： <ul><li>`archive`</li><li>`archive_passphrase`</li><li>`include_debug_library`</li><li>`name`</li><li>`path`</li></ul> 请参阅的示例调用 [创建环境](#create) ，以了解属性及其用例列表。 |
+| `id` | 的 `id` 要更新的环境。 这应该与 `{ENVIRONMENT_ID}` 值。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `environments`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -551,7 +552,7 @@ DELETE /environments/{ENVIRONMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `ENVIRONMENT_ID` | 要删除的环境的`id`。 |
+| `ENVIRONMENT_ID` | 的 `id` 的子环境。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -562,7 +563,7 @@ curl -X DELETE \
   https://reactor.adobe.io/environments/ENeb00d8f62d244732bd27765301b1410f \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **响应**
@@ -571,13 +572,13 @@ curl -X DELETE \
 
 ## 检索环境的相关资源 {#related}
 
-以下调用演示了如何检索环境的相关资源。 在[查找环境](#lookup)时，这些关系列在`relationships`属性下。
+以下调用演示了如何检索环境的相关资源。 When [查找环境](#lookup)，则这些关系列在 `relationships` 属性。
 
-有关Reactor API中关系的更多信息，请参阅[关系指南](../guides/relationships.md)。
+请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
 ### 列出环境的相关内部版本 {#builds}
 
-您可以通过将`/builds`附加到查找请求的路径，来列出使用环境的内部版本。
+您可以通过附加 `/builds` 到查找请求的路径。
 
 **API格式**
 
@@ -587,7 +588,7 @@ GET  /environments/{ENVIRONMENT_ID}/builds
 
 | 参数 | 描述 |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | 要列出其内部版本的环境的`id`。 |
+| `{ENVIRONMENT_ID}` | 的 `id` 要列出其内部版本的环境。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -598,7 +599,7 @@ curl -X GET \
   https://reactor.adobe.io/environments/ENeb00d8f62d244732bd27765301b1410f/builds \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -690,11 +691,11 @@ curl -X GET \
 
 ### 查找环境的相关主机 {#host}
 
-您可以通过将`/host`附加到GET请求的路径来查找利用环境的主机。
+您可以通过附加 `/host` 到GET请求的路径。
 
 >[!NOTE]
 >
->您可以通过[单独的调用](#host-relationship)查找主机关系对象本身。
+>您可以通过 [单独调用](#host-relationship).
 
 **API格式**
 
@@ -704,7 +705,7 @@ GET  /environments/{ENVIRONMENT_ID}/host
 
 | 参数 | 描述 |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | 要查找其主机的环境的`id`。 |
+| `{ENVIRONMENT_ID}` | 的 `id` 要查找其主机的环境。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -715,7 +716,7 @@ curl -X GET \
   https://reactor.adobe.io/environments/ENeb00d8f62d244732bd27765301b1410f/host \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -761,7 +762,7 @@ curl -X GET \
 
 ### 查找环境的相关库 {#library}
 
-您可以通过将`/library`附加到GET请求的路径来查找使用环境的库。
+您可以通过附加 `/library` 到GET请求的路径。
 
 **API格式**
 
@@ -771,7 +772,7 @@ GET  /environments/{ENVIRONMENT_ID}/library
 
 | 参数 | 描述 |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | 要查找其库的环境的`id`。 |
+| `{ENVIRONMENT_ID}` | 的 `id` 要查找其库的环境中。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -782,7 +783,7 @@ curl -X GET \
   https://reactor.adobe.io/environments/ENeb00d8f62d244732bd27765301b1410f/library \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -876,7 +877,7 @@ curl -X GET \
 
 ### 查找环境的相关属性 {#property}
 
-您可以通过将`/property`附加到GET请求的路径来查找拥有环境的资产。
+您可以通过附加 `/property` 到GET请求的路径。
 
 **API格式**
 
@@ -886,7 +887,7 @@ GET  /environments/{ENVIRONMENT_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{ENVIRONMENT_ID}` | 要查找其资产的环境的`id`。 |
+| `{ENVIRONMENT_ID}` | 的 `id` 要查找其资产的环境。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -897,7 +898,7 @@ curl -X GET \
   https://reactor.adobe.io/environments/ENeb00d8f62d244732bd27765301b1410f/property \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

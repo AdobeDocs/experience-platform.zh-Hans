@@ -1,7 +1,8 @@
 ---
 title: 回调端点
 description: 了解如何在Reactor API中对/callbacks端点进行调用。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: dd980f91-89e3-4ba0-a6fc-64d66b288a22
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '621'
 ht-degree: 8%
@@ -12,14 +13,14 @@ ht-degree: 8%
 
 回调是指Reactor API发送到特定URL（通常是您的组织托管的URL）的消息。
 
-回调将与[审核事件](./audit-events.md)一起使用，以跟踪Reactor API中的活动。 每次生成特定类型的审核事件时，回调都可以向指定的URL发送一条匹配的消息。
+回调将与 [审核事件](./audit-events.md) 来跟踪Reactor API中的活动。 每次生成特定类型的审核事件时，回调都可以向指定的URL发送一条匹配的消息。
 
 回调中指定URL后面的服务必须使用HTTP状态代码200（确定）或201（已创建）做出响应。 如果服务未通过以下任一状态代码做出响应，则会按以下时间间隔重试消息投放：
 
 * 1分钟
 * 5 分钟
 * 30 分钟
-* 1小时
+* 1 小时
 * 12 小时
 * 1 天
 * 3 天
@@ -30,11 +31,11 @@ ht-degree: 8%
 
 如果所有投放尝试均失败，则会丢弃消息。
 
-回调恰好属于一个[属性](./properties.md)。 一个资产可以有多个回调。
+回调恰好属于一个 [属性](./properties.md). 一个资产可以有多个回调。
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 列表回调 {#list}
 
@@ -48,13 +49,13 @@ GET  /properties/{PROPERTY_ID}/callbacks
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 要列出其回调的属性的`id`。 |
+| `{PROPERTY_ID}` | 的 `id` 要列出其回调的属性的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的回调：<ul><li>`created_at`</li><li>`updated_at`</li></ul>有关更多信息，请参阅[筛选响应](../guides/filtering.md)指南。
+>使用查询参数，可以根据以下属性过滤列出的回调：<ul><li>`created_at`</li><li>`updated_at`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -63,7 +64,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR66a3356c73fc4aabb67ee22caae53d70/callbacks \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -127,7 +128,7 @@ GET /callbacks/{CALLBACK_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `CALLBACK_ID` | 要查找的回调的`id`。 |
+| `CALLBACK_ID` | 的 `id` 你想查的回调函数。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -138,7 +139,7 @@ curl -X GET \
   https://reactor.adobe.io/callbacks/CBeef389cee8d84e69acef8665e4dcbef6 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -191,7 +192,7 @@ POST /properties/{PROPERTY_ID}/callbacks
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 要在下定义回调的[属性](./properties.md)的`id`。 |
+| `PROPERTY_ID` | 的 `id` 的 [属性](./properties.md) 您正在定义下的回调。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -202,7 +203,7 @@ curl -X POST \
   https://reactor.adobe.io/properties/PR5e22de986a7c4070965e7546b2bb108d/callbacks \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -219,7 +220,7 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `url` | 回调消息的URL目标。 URL必须使用HTTPS协议扩展。 |
-| `subscriptions` | 字符串数组，用于指示将触发回调的审核事件类型。 有关可能的事件类型的列表，请参阅[audit events endpoint guide](./audit-events.md)。 |
+| `subscriptions` | 字符串数组，用于指示将触发回调的审核事件类型。 请参阅 [audit events endpoint指南](./audit-events.md) ，以查看可能的事件类型列表。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -271,20 +272,20 @@ PUT /callbacks/{CALLBACK_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `CALLBACK_ID` | 要更新的回调的`id`。 |
+| `CALLBACK_ID` | 的 `id` 的回调函数。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会为现有回调更新`subscriptions`数组。
+以下请求更新了 `subscriptions` 现有回调的数组。
 
 ```shell
 curl -X PUT \
   https://reactor.adobe.io/callbacks/CB4310904d415549888cc9e31ebe1e1e45 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -303,8 +304,8 @@ curl -X PUT \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 一个对象，其属性表示要为回调更新的属性。 每个键值都表示要更新的特定回调属性，以及应将其更新到的相应值。<br><br>可以为回调更新以下属性：<ul><li>`subscriptions`</li><li>`url`</li></ul> |
-| `id` | 要更新的回调的`id`。 这应该与请求路径中提供的`{CALLBACK_ID}`值匹配。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`callbacks`。 |
+| `id` | 的 `id` 的回调函数。 这应该与 `{CALLBACK_ID}` 值。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `callbacks`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -357,7 +358,7 @@ DELETE /callbacks/{CALLBACK_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `CALLBACK_ID` | 要删除的回调的`id`。 |
+| `CALLBACK_ID` | 的 `id` 的回调函数。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -368,7 +369,7 @@ curl -X DELETE \
   https://reactor.adobe.io/callbacks/CB4310904d415549888cc9e31ebe1e1e45 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **响应**

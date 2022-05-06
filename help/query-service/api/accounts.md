@@ -5,7 +5,7 @@ title: 帐户API端点
 topic-legacy: connection parameters
 description: 您可以为永久性创建查询服务帐户。
 exl-id: 1667f4a5-e6e5-41e9-8f9d-6d2c63c7d7d6
-source-git-commit: 391b1943f1c941188b370e62ec86216367aa747f
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '495'
 ht-degree: 4%
@@ -14,15 +14,15 @@ ht-degree: 4%
 
 # 帐户端点
 
-在Adobe Experience Platform查询服务中，帐户用于创建可与外部SQL客户端一起使用的未过期凭据。 您可以在查询服务API中使用`/accounts`端点，该端点允许您以编程方式创建、检索、编辑和删除查询服务集成帐户（也称为技术帐户）。
+在Adobe Experience Platform查询服务中，帐户用于创建可与外部SQL客户端一起使用的未过期凭据。 您可以使用 `/accounts` 查询服务API中的端点，它允许您以编程方式创建、检索、编辑和删除查询服务集成帐户（也称为技术帐户）。
 
 ## 快速入门
 
-本指南中使用的端点是查询服务API的一部分。 在继续操作之前，请查看[快速入门指南](./getting-started.md) ，以了解成功调用API所需的重要信息，包括所需的标头以及如何读取示例API调用。
+本指南中使用的端点是查询服务API的一部分。 在继续之前，请查看 [入门指南](./getting-started.md) 有关成功调用API所需的重要信息，包括所需的标头以及如何读取示例API调用。
 
 ## 创建帐户
 
-您可以通过向`/accounts`端点发出POST请求来创建查询服务集成帐户。
+您可以通过向 `/accounts` 端点。
 
 **API格式**
 
@@ -38,7 +38,7 @@ POST /accounts
 curl -X POST https://platform.adobe.io/data/foundation/queryauth/accounts \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'content-type: application/json' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '
@@ -52,10 +52,10 @@ curl -X POST https://platform.adobe.io/data/foundation/queryauth/accounts \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `accountName` | **** 必需查询服务集成帐户的名称。 |
-| `assignedToUser` | **** 必需将为其创建查询服务集成帐户的Adobe ID。 |
-| `credential` | *（可选）* 用于查询服务集成的凭据。如果未指定，系统将自动为您生成凭据。 |
-| `description` | *（可选）* 查询服务集成帐户的描述。 |
+| `accountName` | **必需** 查询服务集成帐户的名称。 |
+| `assignedToUser` | **必需** 将为其创建查询服务集成帐户的Adobe ID。 |
+| `credential` | *（可选）* 用于查询服务集成的凭据。 如果未指定，系统将自动为您生成凭据。 |
+| `description` | *（可选）* 查询服务集成帐户的说明。 |
 
 **响应**
 
@@ -72,12 +72,12 @@ curl -X POST https://platform.adobe.io/data/foundation/queryauth/accounts \
 | 属性 | 描述 |
 | -------- | ----------- |
 | `technicalAccountName` | 查询服务集成帐户的名称。 |
-| `technicalAccountId` | 查询服务集成帐户的ID。 这与`credential`一起构成您帐户的密码。 |
-| `credential` | 查询服务集成帐户的凭据。 这与`technicalAccountId`一起构成您帐户的密码。 |
+| `technicalAccountId` | 查询服务集成帐户的ID。 这，以及 `credential`，为您的帐户组成密码。 |
+| `credential` | 查询服务集成帐户的凭据。 这，以及 `technicalAccountId`，为您的帐户组成密码。 |
 
 ## 更新帐户
 
-您可以通过向`/accounts`端点发出PUT请求来更新查询服务集成帐户。
+您可以通过向 `/accounts` 端点。
 
 **API格式**
 
@@ -95,7 +95,7 @@ POST /accounts/{ACCOUNT_ID}
 curl -X PUT https://platform.adobe.io/data/foundation/queryauth/accounts/E09A0DFB5FDB25D90A494012 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -d '
@@ -110,7 +110,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/queryauth/accounts/E09A0DF
 | 属性 | 描述 |
 | -------- | ----------- |
 | `accountName` | *（可选）* 查询服务集成帐户的更新名称。 |
-| `assignedToUser` | *（可选）* 查询服务集成帐户所链接的更新Adobe ID。 |
+| `assignedToUser` | *（可选）* 查询服务集成帐户所关联的更新Adobe ID。 |
 | `credential` | *（可选）* 查询服务帐户的更新凭据。 |
 | `description` | *（可选）* 查询服务集成帐户的更新描述。 |
 
@@ -135,7 +135,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/queryauth/accounts/E09A0DF
 
 ## 列出所有帐户
 
-通过向`/accounts`端点发出GET请求，可以检索所有查询服务集成帐户的列表。
+通过向 `/accounts` 端点。
 
 **API格式**
 
@@ -148,7 +148,7 @@ GET /accounts
 ```shell
 curl -X GET https://platform.adobe.io/foundation/queryauth/accounts \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -206,7 +206,7 @@ curl -X GET https://platform.adobe.io/foundation/queryauth/accounts \
 
 ## 删除帐户
 
-您可以通过向`/accounts`端点发出DELETE请求来删除查询服务集成帐户。
+您可以通过向 `/accounts` 端点。
 
 **API格式**
 
@@ -223,7 +223,7 @@ DELETE /accounts/{ACCOUNT_ID}
 ```shell
 curl -X DELETE https://platform.adobe.io/data/foundation/queryauth/accounts/E09A0DFB5FDB25D90A494012 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```

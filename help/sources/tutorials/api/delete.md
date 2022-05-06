@@ -1,36 +1,36 @@
 ---
-keywords: Experience Platform;home;popular topics;flow service;delete accounts;delete;api
+keywords: Experience Platform；主页；热门主题；流程服务；删除帐户；删除；API
 solution: Experience Platform
-title: Delete an Account Using the Flow Service API
+title: 使用流量服务API删除帐户
 topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API删除帐户。
 exl-id: 3d07ab7d-c012-472e-8db4-b19e3936dcba
-source-git-commit: 95f455bd03b7baefe0133a9818c9d048f36f9d38
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '339'
 ht-degree: 2%
 
 ---
 
-# Delete an account using the Flow Service API
+# 使用流量服务API删除帐户
 
 您可以删除包含错误或已在使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
-See the following tutorial for steps on how to delete an account using the API.
+有关如何使用API删除帐户的步骤，请参阅以下教程。
 
 ## 快速入门
 
-本教程要求您具有有效的连接ID。 If you do not have a valid connection ID, select your connector of choice from the [sources overview](../../home.md) and follow the steps outlined before attempting this tutorial.
+本教程要求您具有有效的连接ID。 如果您没有有效的连接ID，请从 [源概述](../../home.md) ，然后按照在尝试使用本教程之前列出的步骤操作。
 
-This tutorial also requires you to have a working understanding of the following components of Adobe Experience Platform:
+此外，本教程还要求您对Adobe Experience Platform的以下组件有一定的了解：
 
 * [源](../../home.md): [!DNL Experience Platform] 允许从各种源摄取数据，同时让您能够使用来构建、标记和增强传入数据 [!DNL Platform] 服务。
-* [Sandboxes](../../../sandboxes/home.md): [!DNL Experience Platform] provides virtual sandboxes which partition a single [!DNL Platform] instance into separate virtual environments to help develop and evolve digital experience applications.
+* [沙箱](../../../sandboxes/home.md): [!DNL Experience Platform] 提供分区单个沙箱的虚拟沙箱 [!DNL Platform] 实例迁移到单独的虚拟环境中，以帮助开发和改进数字体验应用程序。
 
 ### 使用Platform API
 
-For information on how to successfully make calls to Platform APIs, see the guide on [getting started with Platform APIs](../../../landing/api-guide.md).
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
 
 ## 删除帐户
 
@@ -40,7 +40,7 @@ For information on how to successfully make calls to Platform APIs, see the guid
 
 要删除帐户，请向 [!DNL Flow Service] API，同时提供与要删除的帐户对应的基本连接ID。
 
-**API format**
+**API格式**
 
 ```http
 DELETE /connections/{BASE_CONNECTION_ID}
@@ -57,18 +57,18 @@ curl -X DELETE \
   'https://platform.adobe.io/data/foundation/flowservice/connections/dd3631cd-d0ea-4fea-b631-cdd0ea6fea21' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-A successful response returns HTTP status 204 (No Content) and a blank body.
+成功响应会返回HTTP状态204（无内容）和空白正文。
 
-You can confirm the deletion by attempting a lookup (GET) request to the connection.
+您可以通过尝试对连接进行查询(GET)请求来确认删除。
 
 ## 后续步骤
 
-By following this tutorial, you have successfully used the [!DNL Flow Service] API to delete existing accounts.
+通过阅读本教程，您已成功使用 [!DNL Flow Service] 用于删除现有帐户的API。
 
 有关如何使用用户界面执行这些操作的步骤，请参阅 [在UI中删除帐户](../../tutorials/ui/delete-accounts.md).

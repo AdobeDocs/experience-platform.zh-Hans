@@ -5,9 +5,9 @@ title: 订阅Privacy Service事件
 topic-legacy: privacy events
 description: 了解如何使用预配置的WebHook订阅Privacy Service事件。
 exl-id: 9bd34313-3042-46e7-b670-7a330654b178
-source-git-commit: 82dea48c732b3ddea957511c22f90bbd032ed9b7
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
-source-wordcount: '436'
+source-wordcount: '440'
 ht-degree: 1%
 
 ---
@@ -36,13 +36,13 @@ ht-degree: 1%
 
 ## 注册网页挂接到 [!DNL Privacy Service Events]
 
-为了接收 [!DNL Privacy Service Events]，则必须使用Adobe开发人员控制台将网页挂接注册到您的 [!DNL Privacy Service] 集成。
+为了接收 [!DNL Privacy Service Events]，则必须使用Adobe Developer Console向您的 [!DNL Privacy Service] 集成。
 
-请阅读本教程 [订阅 [!DNL I/O Event] 通知](../observability/alerts/subscribe.md) 以详细了解如何完成此操作。 确保您选择 **[!UICONTROL Privacy Service事件]** 作为事件提供商，以访问上面列出的事件。
+请阅读本教程 [订阅[!DNL I/O Event]通知](../observability/alerts/subscribe.md) 以详细了解如何完成此操作。 确保您选择 **[!UICONTROL Privacy Service事件]** 作为事件提供商，以访问上面列出的事件。
 
 ## 接收 [!DNL Privacy Service Event] 通知
 
-成功注册Webhook并运行隐私作业后，便可开始接收事件通知。 这些事件可以使用Webhook本身或通过选择 **[!UICONTROL 调试跟踪]** 选项卡，查看Adobe开发人员控制台中项目的事件注册概述。
+成功注册Webhook并运行隐私作业后，便可开始接收事件通知。 这些事件可以使用Webhook本身或通过选择 **[!UICONTROL 调试跟踪]** 选项卡(位于Adobe Developer控制台中的项目事件注册概述中)。
 
 ![](images/privacy-events/debug-tracing.png)
 
@@ -57,7 +57,7 @@ ht-degree: 1%
   "source":"https://ns.adobe.com/platform/gdpr",
   "time":"Wed Oct 23 18:52:32 GMT 2019",
   "data":{
-    "imsOrg":"{IMS_ORG}",
+    "imsOrg":"{ORG_ID}",
     "value":{
       "jobId":"6f0f2b62-88a7-4515-ba05-432d9a7021c5",
       "message":"analytics.access.complete"

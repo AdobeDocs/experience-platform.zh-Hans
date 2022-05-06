@@ -1,7 +1,8 @@
 ---
 title: 属性端点
 description: 了解如何在Reactor API中调用/properties端点。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 7830c519-312f-4f73-b3f5-64ab0420d902
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1146'
 ht-degree: 9%
@@ -10,7 +11,7 @@ ht-degree: 9%
 
 # 属性端点
 
-资产是一个容器结构，其中包含Reactor API中可用的大多数其他资源。 使用`/properties`端点以编程方式管理属性。
+资产是一个容器结构，其中包含Reactor API中可用的大多数其他资源。 您可以使用 `/properties` 端点。
 
 在资源层次结构中，资产是以下项的所有者：
 
@@ -19,18 +20,18 @@ ht-degree: 9%
 * [数据元素](./data-elements.md)
 * [环境](./environments.md)
 * [扩展](./extensions.md)
-* [主机](./properties.md)
+* [托管](./properties.md)
 * [库](./libraries.md)
 * [规则组件](./rule-components.md)
 * [规则](./rules.md)
 
-属性恰好属于一个[company](./companies.md)。 公司可以拥有许多资产。
+资产恰好属于一个资产 [公司](./companies.md). 公司可以拥有许多资产。
 
-有关属性及其在标签管理中的角色的更多常规信息，请参阅[公司和属性](../../ui/administration/companies-and-properties.md)的概述。
+有关属性及其在标签管理中的角色的更多常规信息，请参阅 [公司和资产](../../ui/administration/companies-and-properties.md).
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索属性列表 {#list}
 
@@ -44,13 +45,13 @@ GET /companies/{COMPANY_ID}/properties
 
 | 参数 | 描述 |
 | --- | --- |
-| `COMPANY_ID` | 拥有要列出的资产的公司的`id`。 |
+| `COMPANY_ID` | 的 `id` 拥有要列出的资产的公司。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的属性：<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>有关更多信息，请参阅[筛选响应](../guides/filtering.md)指南。
+>使用查询参数，可以根据以下属性过滤列出的属性：<ul><li>`copying`</li><li>`created_at`</li><li>`enabled`</li><li>`name`</li><li>`platform`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -59,7 +60,7 @@ curl -X GET \
   https://reactor.adobe.io/companies/CO2bf094214ffd4785bb4bcf88c952a7c1/properties \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -268,7 +269,7 @@ GET /properties/{PROPERTY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 要查找的属性的`id`。 |
+| `PROPERTY_ID` | 的 `id` 要查找的资产的子目录。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -279,7 +280,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR48ade10e6acf4385ba96214e9f5d31e1 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -391,20 +392,20 @@ POST /company/{COMPANY_ID}/properties
 
 | 参数 | 描述 |
 | --- | --- |
-| `COMPANY_ID` | 要定义下属性的公司的`id`。 |
+| `COMPANY_ID` | 的 `id` 您所在公司的资产。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会为指定的属性创建新属性。 调用还会通过`relationships`属性将资产与现有扩展关联。 有关更多信息，请参阅[relationships](../guides/relationships.md)指南。
+以下请求会为指定的属性创建新属性。 此调用还会通过将资产与现有扩展关联 `relationships` 属性。 请参阅 [关系](../guides/relationships.md) 以了解更多信息。
 
 ```shell
 curl -X POST \
   https://reactor.adobe.io/companies/CO2bf094214ffd4785bb4bcf88c952a7c1/properties \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -427,14 +428,14 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes.name` | **（必需）** 资产的人类可读名称。 |
-| `attributes.platform` | **（必需）** 资产的平台。可以是Web属性的`web`，也可以是移动属性的`mobile`或`edge`。 |
+| `attributes.platform` | **（必需）** 资产的平台。 可以是 `web` 对于web属性，或 `mobile` 或 `edge` ，以访问移动资产。 |
 | `attributes.domains` | **（Web属性必需）** 属性的URL域数组。 |
 | `attributes.development` | 一个布尔值，指示这是否为开发资产。 |
 | `attributes.privacy` | 一个字符串，可用于引用与属性隐私相关的注意事项。 |
 | `attributes.rule_component_sequencing_enabled` | 一个布尔值，用于确定是否应为此属性启用规则组件排序。 |
 | `attributes.ssl_enabled` | 一个布尔值，用于确定是否应为此属性启用安全套接字层(SSL)。 |
 | `attributes.undefined_vars_return_empty` | 此属性的布尔值，用于确定是否应将未定义的变量返回为空。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`properties`。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `properties`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -545,20 +546,20 @@ PATCH /properties/{PROPERTY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 要更新的属性的`id`。 |
+| `PROPERTY_ID` | 的 `id` 要更新的资产。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会更新现有属性的`name`和`domains`。
+以下请求更新了 `name` 和 `domains` 的值。
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/properties/HT5d90148e72224224aac9bc0b01498b84 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -577,8 +578,8 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 其属性表示要为属性更新的属性的对象。 可以为资产更新以下属性： <ul><li>`development`</li><li>`domains`</li><li>`name`</li><li>`platform`</li><li>`privacy`</li><li>`rule_component_sequencing_enabled`</li><li>`ssl_enabled`</li><li>`undefined_vars_return_empty`</li></ul> |
-| `id` | 要更新的属性的`id`。 这应该与请求路径中提供的`{PROPERTY_ID}`值匹配。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`properties`。 |
+| `id` | 的 `id` 要更新的资产。 这应该与 `{PROPERTY_ID}` 值。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `properties`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -689,7 +690,7 @@ DELETE /properties/{PROPERTY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 要删除的属性的`id`。 |
+| `PROPERTY_ID` | 的 `id` 的子项。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -700,7 +701,7 @@ curl -X DELETE \
   https://reactor.adobe.io/properties/PR541dbb24bad54dceb04710d7a9e7a740 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **响应**
@@ -709,17 +710,17 @@ curl -X DELETE \
 
 ## 管理资产的注释 {#notes}
 
-属性是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 有关如何管理属性和其他兼容资源的注释的详细信息，请参阅[notes endpoint guide](./notes.md)。
+属性是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 请参阅 [注释终端指南](./notes.md) 有关如何管理属性和其他兼容资源的注释的详细信息。
 
 ## 检索属性的相关资源 {#related}
 
-以下调用演示了如何检索属性的相关资源。 [查找属性](#lookup)时，这些关系列在`relationships`属性下。
+以下调用演示了如何检索属性的相关资源。 When [查找资产](#lookup)，则这些关系列在 `relationships` 属性。
 
-有关Reactor API中关系的更多信息，请参阅[关系指南](../guides/relationships.md)。
+请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
 ### 列出属性的相关回调 {#callbacks}
 
-您可以通过将`/callbacks`附加到查找请求的路径，来列出在属性中注册的[回调](./callbacks.md)。
+您可以列出 [回调](./callbacks.md) 通过附加在 `/callbacks` 到查找请求的路径。
 
 **API格式**
 
@@ -729,7 +730,7 @@ GET  /properties/{PROPERTY_ID}/callbacks
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 要列出其回调的属性的`id`。 |
+| `{PROPERTY_ID}` | 的 `id` 要列出其回调的属性的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -740,7 +741,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR66a3356c73fc4aabb67ee22caae53d70/callbacks \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -794,7 +795,7 @@ curl -X GET \
 
 ### 列出属性的相关数据元素 {#data-elements}
 
-您可以通过将`/data_elements`附加到查找请求的路径，来列出属性拥有的[数据元素](./data-elements.md)。
+您可以列出 [数据元素](./data-elements.md) 由某个财产拥有的 `/data_elements` 到查找请求的路径。
 
 **API格式**
 
@@ -804,7 +805,7 @@ GET  /properties/{PROPERTY_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 要列出其数据元素的属性的`id`。 |
+| `{PROPERTY_ID}` | 的 `id` 要列出其数据元素的属性的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -815,7 +816,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR97d92a379a5f48758947cdf44f607a0d/data_elements \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -935,7 +936,7 @@ curl -X GET \
 
 ### 列出资产的相关环境 {#environments}
 
-您可以通过将`/environments`附加到查找请求的路径中，来列出属性拥有的[环境](./environments.md)。
+您可以列出 [环境](./environments.md) 由某个财产拥有的 `/environments` 到查找请求的路径。
 
 **API格式**
 
@@ -945,7 +946,7 @@ GET  /properties/{PROPERTY_ID}/environments
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 要列出其环境的属性的`id`。 |
+| `{PROPERTY_ID}` | 的 `id` 要列出其环境的资产的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -956,7 +957,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR06c9196bc57048dd8ff169c27baeeca8/environments \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1055,7 +1056,7 @@ curl -X GET \
 
 ### 列出资产的相关扩展 {#extensions}
 
-您可以通过将`/extensions`附加到查找请求的路径，来列出属性拥有的[扩展](./extensions.md)。
+您可以列出 [扩展](./extensions.md) 由某个财产拥有的 `/extensions` 到查找请求的路径。
 
 **API格式**
 
@@ -1065,7 +1066,7 @@ GET  /properties/{PROPERTY_ID}/extensions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 要列出其扩展名的属性的`id`。 |
+| `{PROPERTY_ID}` | 的 `id` 要列出其扩展名的属性的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1076,7 +1077,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PRee071cb5b7794f42b74c913e1ad2e325/extensions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1186,7 +1187,7 @@ curl -X GET \
 
 ### 列出资产的相关主机 {#hosts}
 
-您可以通过将`/hosts`附加到查找请求的路径，来列出属性使用的[主机](./hosts.md)。
+您可以列出 [主机](./hosts.md) 属性通过附加使用的 `/hosts` 到查找请求的路径。
 
 **API格式**
 
@@ -1196,7 +1197,7 @@ GET  /properties/{PROPERTY_ID}/hosts
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 要列出其主机的属性的`id`。 |
+| `{PROPERTY_ID}` | 的 `id` 要列出其主机的属性。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1207,7 +1208,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PRd428c2a25caa4b32af61495f5809b737/hosts \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1264,7 +1265,7 @@ curl -X GET \
 
 ### 列出资产的相关规则 {#rules}
 
-您可以通过将`/rules`附加到查找请求的路径，来列出属性使用的[规则](./rules.md)。
+您可以列出 [规则](./rules.md) 属性通过附加使用的 `/rules` 到查找请求的路径。
 
 **API格式**
 
@@ -1274,7 +1275,7 @@ GET  /properties/{PROPERTY_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 要列出其规则的属性的`id`。 |
+| `{PROPERTY_ID}` | 的 `id` 要列出其规则的属性。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1285,7 +1286,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR41f64d2a9d9b4862b0582c5ff6a07504/rules \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1377,7 +1378,7 @@ curl -X GET \
 
 ### 查找相关公司以查找资产 {#company}
 
-您可以通过将`/company`附加到查询请求的路径来查找拥有资产的公司。
+您可以通过附加 `/company` 到查找请求的路径。
 
 **API格式**
 
@@ -1387,7 +1388,7 @@ GET /properties/{PROPERTY_ID}/company
 
 | 参数 | 描述 |
 | --- | --- |
-| `{PROPERTY_ID}` | 要查找其公司的资产的`id`。 |
+| `{PROPERTY_ID}` | 的 `id` 你想查的公司的财产。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1398,7 +1399,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/HT5d90148e72224224aac9bc0b01498b84/company \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

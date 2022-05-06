@@ -1,7 +1,8 @@
 ---
 title: 数据元素端点
 description: 了解如何在Reactor API中调用/data_elements端点。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: ea346682-441b-415b-af06-094158eb7c71
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1411'
 ht-degree: 6%
@@ -10,17 +11,17 @@ ht-degree: 6%
 
 # 数据元素端点
 
-数据元素用作指向应用程序中重要数据段的变量。 数据元素在[rules](./rules.md)和[扩展](./extensions.md)配置中使用。 当规则在浏览器或应用程序的运行时触发时，将解析数据元素的值并在规则中使用。 扩展配置的数据元素的功能与相同。
+数据元素用作指向应用程序中重要数据段的变量。 数据元素在 [规则](./rules.md) 和 [扩展](./extensions.md) 配置。 当规则在浏览器或应用程序的运行时触发时，将解析数据元素的值并在规则中使用。 扩展配置的数据元素的功能与相同。
 
 同时使用多个数据元素会生成数据字典或数据映射。 此词典表示Adobe Experience Platform了解并可利用的数据。
 
-数据元素恰好属于一个[属性](./properties.md)。 一个资产可以具有许多数据元素。
+数据元素恰好属于一个 [属性](./properties.md). 一个资产可以具有许多数据元素。
 
-有关数据元素及其在标记中使用的更多常规信息，请参阅UI文档中的[数据元素指南](../../ui/managing-resources/data-elements.md)。
+有关数据元素及其在标记中使用的更多常规信息，请参阅 [数据元素指南](../../ui/managing-resources/data-elements.md) （在UI文档中）。
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索数据元素列表 {#list}
 
@@ -34,13 +35,13 @@ GET /properties/{PROPERTY_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 拥有数据元素的属性的`id`。 |
+| `PROPERTY_ID` | 的 `id` 拥有数据元素的属性的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的数据元素：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>有关更多信息，请参阅[筛选响应](../guides/filtering.md)指南。
+>使用查询参数，可以根据以下属性过滤列出的数据元素：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -49,7 +50,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PR97d92a379a5f48758947cdf44f607a0d/data_elements \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -173,7 +174,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->删除数据元素后，这些数据元素会被标记为已删除，但实际上不会从系统中删除。 因此，可以查找已删除的数据元素。 删除的数据元素可以通过存在`data.meta.deleted_at`属性来标识。
+>删除数据元素后，这些数据元素会被标记为已删除，但实际上不会从系统中删除。 因此，可以查找已删除的数据元素。 删除的数据元素可以通过 `data.meta.deleted_at` 属性。
 
 **API格式**
 
@@ -183,7 +184,7 @@ GET /data_elements/{DATA_ELEMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `DATA_ELEMENT_ID` | 要查找的数据元素的`id`。 |
+| `DATA_ELEMENT_ID` | 的 `id` 要查找的数据元素的URL。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -194,7 +195,7 @@ curl -X GET \
   https://reactor.adobe.io/data_elements/DE8097636264104451ac3a18c95d5ff833 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -313,20 +314,20 @@ POST /properties/{PROPERTY_ID}/data_elements
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 要在下定义数据元素的[属性](./properties.md)的`id`。 |
+| `PROPERTY_ID` | 的 `id` 的 [属性](./properties.md) 定义数据元素的附加信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会为指定的属性创建新数据元素。 调用还会通过`relationships`属性将数据元素与现有扩展关联。 有关更多信息，请参阅[relationships](../guides/relationships.md)指南。
+以下请求会为指定的属性创建新数据元素。 调用还会通过将数据元素与现有扩展关联 `relationships` 属性。 请参阅 [关系](../guides/relationships.md) 以了解更多信息。
 
 ```shell
 curl -X POST \
   https://reactor.adobe.io/properties/PR97d92a379a5f48758947cdf44f607a0d/data_elements \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -355,13 +356,13 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes.name` | **（必需）** 数据元素的人类可读名称。 |
-| `attributes.delegate_descriptor_id` | **（必需）** 将数据元素与扩展包关联的带格式的字符串。所有数据元素在首次创建时都必须与扩展包关联，因为每个扩展包都定义其委托数据元素的兼容类型及其预期行为。 有关更多信息，请参阅[委托描述符ID](../guides/delegate-descriptor-ids.md)上的指南。 |
+| `attributes.delegate_descriptor_id` | **（必需）** 将数据元素与扩展包关联的格式化字符串。 所有数据元素在首次创建时都必须与扩展包关联，因为每个扩展包都定义其委托数据元素的兼容类型及其预期行为。 请参阅 [委托描述符ID](../guides/delegate-descriptor-ids.md) 以了解更多信息。 |
 | `attributes.settings` | 设置JSON对象，表示为字符串。 |
-| `attributes.default_value` | 如果数据元素的计算结果为`undefined`，则返回的默认值。 |
+| `attributes.default_value` | 当数据元素的计算结果为 `undefined`. |
 | `attributes.enabled` | 一个布尔值，用于指示数据元素是否已启用。 |
 | `attributes.force_lower_case` | 一个布尔值，用于指示在存储数据元素值之前是否应将其转换为小写。 |
 | `attributes.clean_text` | 一个布尔值，用于指示在存储之前是否应从数据元素值中删除前导空格和尾随空格。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`data_elements`。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `data_elements`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -479,20 +480,20 @@ PATCH /data_elements/{DATA_ELEMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `DATA_ELEMENT_ID` | 要更新的数据元素的`id`。 |
+| `DATA_ELEMENT_ID` | 的 `id` 要更新的数据元素。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会更新现有数据元素的`name`。
+以下请求更新了 `name` ，用于现有数据元素。
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/data_elements/DE3fab176ccf8641838b3da59f716fc42b \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -507,9 +508,9 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 其属性表示要为数据元素更新的属性的对象。 所有数据元素属性都可以更新。 有关属性列表及其用例，请参阅[创建数据元素](#create)的示例调用。 |
-| `id` | 要更新的数据元素的`id`。 这应该与请求路径中提供的`{DATA_ELEMENT_ID}`值匹配。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`data_elements`。 |
+| `attributes` | 其属性表示要为数据元素更新的属性的对象。 所有数据元素属性都可以更新。 请参阅的示例调用 [创建数据元素](#create) ，以了解属性及其用例列表。 |
+| `id` | 的 `id` 要更新的数据元素。 这应该与 `{DATA_ELEMENT_ID}` 值。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `data_elements`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -619,7 +620,7 @@ curl -X PATCH \
 
 修订数据元素时，将使用当前（标题）修订版本创建数据元素的新修订版本。 数据元素的每个修订版都将具有自己的ID。 原始数据元素可以通过原始链接被发现。
 
-您可以通过在PATCH请求正文中提供值为`revise`的`meta.action`属性来修订数据元素。
+您可以通过提供 `meta.action` 值为的属性 `revise` 在PATCH请求的正文中。
 
 **API格式**
 
@@ -629,7 +630,7 @@ PATCH /data_elements/{DATA_ELEMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `DATA_ELEMENT_ID` | 要修订的数据元素的`id`。 |
+| `DATA_ELEMENT_ID` | 的 `id` 要修订的数据元素。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -640,7 +641,7 @@ curl -X PATCH \
   https://reactor.adobe.io/data_elements/DE3fab176ccf8641838b3da59f716fc42b \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -658,16 +659,16 @@ curl -X PATCH \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes` | 其属性表示要为数据元素更新的属性的对象。 所有数据元素属性都可以更新。 有关属性列表及其用例，请参阅[创建数据元素](#create)的示例调用。 |
-| `meta.action` | 当包含值`revise`时，此属性表示应为数据元素创建新修订版本。 |
-| `id` | 要修订的数据元素的`id`。 这应该与请求路径中提供的`{DATA_ELEMENT_ID}`值匹配。 |
-| `type` | 要修订的资源类型。 对于此端点，值必须为`data_elements`。 |
+| `attributes` | 其属性表示要为数据元素更新的属性的对象。 所有数据元素属性都可以更新。 请参阅的示例调用 [创建数据元素](#create) ，以了解属性及其用例列表。 |
+| `meta.action` | 当包含时，其值为 `revise`，此属性表示应为数据元素创建新修订版本。 |
+| `id` | 的 `id` 要修订的数据元素。 这应该与 `{DATA_ELEMENT_ID}` 值。 |
+| `type` | 要修订的资源类型。 对于此端点，值必须为 `data_elements`. |
 
 {style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-成功的响应会返回数据元素新修订版本的详细信息，如递增的`meta.latest_revision_number`属性所示。
+成功的响应会返回数据元素新修订版本的详细信息，如递增的 `meta.latest_revision_number` 属性。
 
 ```json
 {
@@ -779,7 +780,7 @@ DELETE /data_elements/{DATA_ELEMENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `DATA_ELEMENT_ID` | 要删除的数据元素的`id`。 |
+| `DATA_ELEMENT_ID` | 的 `id` 删除的数据元素。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -790,7 +791,7 @@ curl -X DELETE \
   https://reactor.adobe.io/data_elements/DE3fab176ccf8641838b3da59f716fc42b \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **响应**
@@ -799,17 +800,17 @@ curl -X DELETE \
 
 ## 管理数据元素的注释 {#notes}
 
-数据元素是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 有关如何管理数据元素和其他兼容资源的注释的详细信息，请参阅[notes endpoint guide](./notes.md)。
+数据元素是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 请参阅 [注释终端指南](./notes.md) 有关如何管理数据元素和其他兼容资源的注释的更多信息。
 
 ## 检索数据元素的相关资源 {#related}
 
-以下调用演示了如何检索数据元素的相关资源。 [查找数据元素](#lookup)时，这些关系列在`relationships`属性下。
+以下调用演示了如何检索数据元素的相关资源。 When [查找数据元素](#lookup)，则这些关系列在 `relationships` 属性。
 
-有关Reactor API中关系的更多信息，请参阅[关系指南](../guides/relationships.md)。
+请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
 ### 列出数据元素的相关库 {#libraries}
 
-您可以通过将`/libraries`附加到查找请求的路径，来列出利用数据元素的库。
+您可以通过附加 `/libraries` 到查找请求的路径。
 
 **API格式**
 
@@ -819,7 +820,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/libraries
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | 要列出其库的数据元素的`id`。 |
+| `{DATA_ELEMENT_ID}` | 的 `id` 要列出其库的数据元素。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -830,7 +831,7 @@ curl -X GET \
   https://reactor.adobe.io/data_elements/DE3fab176ccf8641838b3da59f716fc42b/libraries \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -931,7 +932,7 @@ curl -X GET \
 
 ### 列出数据元素的相关修订 {#revisions}
 
-通过将`/revisions`附加到查询请求的路径，可以列出数据元素之前的修订版本。
+您可以通过附加来列出数据元素的先前修订版本 `/revisions` 到查找请求的路径。
 
 **API格式**
 
@@ -941,7 +942,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/revisions
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | 要列出其修订版本的数据元素的`id`。 |
+| `{DATA_ELEMENT_ID}` | 的 `id` 要列出其修订的数据元素的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -952,7 +953,7 @@ curl -X GET \
   https://reactor.adobe.io/data_elements/DE3fab176ccf8641838b3da59f716fc42b/revisions \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1165,7 +1166,7 @@ curl -X GET \
 
 ### 查找数据元素的相关扩展 {#extension}
 
-您可以通过将`/extension`附加到GET请求的路径，来查找利用数据元素的扩展。
+您可以通过附加 `/extension` 到GET请求的路径。
 
 **API格式**
 
@@ -1175,7 +1176,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/extension
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | 要查找其扩展名的数据元素的`id`。 |
+| `{DATA_ELEMENT_ID}` | 的 `id` 要查找其扩展名的数据元素的名称。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1186,7 +1187,7 @@ curl -X GET \
   https://reactor.adobe.io/data_elements/DE3fab176ccf8641838b3da59f716fc42b/extension \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1285,7 +1286,7 @@ curl -X GET \
 
 ### 查找数据元素的相关源 {#origin}
 
-您可以通过将`/origin`附加到GET请求的路径来查找数据元素的源。 数据元素的来源是之前为创建当前修订版而更新的修订版本。
+您可以通过附加 `/origin` 到GET请求的路径。 数据元素的来源是之前为创建当前修订版而更新的修订版本。
 
 **API格式**
 
@@ -1295,7 +1296,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/origin
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | 要查找其源的数据元素的`id`。 |
+| `{DATA_ELEMENT_ID}` | 的 `id` 要查找其源的数据元素的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1306,7 +1307,7 @@ curl -X GET \
   https://reactor.adobe.io/data_elements/DE3fab176ccf8641838b3da59f716fc42b/origin \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -1415,7 +1416,7 @@ curl -X GET \
 
 ### 查找数据元素的相关属性 {#property}
 
-您可以通过将`/property`附加到GET请求的路径来查找拥有数据元素的属性。
+您可以通过附加 `/property` 到GET请求的路径。
 
 **API格式**
 
@@ -1425,7 +1426,7 @@ GET  /data_elements/{DATA_ELEMENT_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{DATA_ELEMENT_ID}` | 要查找其属性的数据元素的`id`。 |
+| `{DATA_ELEMENT_ID}` | 的 `id` 要查找其属性的数据元素的。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -1436,7 +1437,7 @@ curl -X GET \
   https://reactor.adobe.io/data_elements/DE3fab176ccf8641838b3da59f716fc42b/property \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

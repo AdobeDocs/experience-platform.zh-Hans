@@ -1,7 +1,8 @@
 ---
 title: 主机端点
 description: 了解如何在Reactor API中对/hosts端点进行调用。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 9d0d2a65-49e9-429c-a665-754b59a11cf1
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '765'
 ht-degree: 7%
@@ -12,19 +13,19 @@ ht-degree: 7%
 
 >[!NOTE]
 >
->本文档介绍如何管理Reactor API中的主机。 有关标记主机的更多常规信息，请参阅发布文档中[主机概述](../../ui/publishing/hosts/hosts-overview.md)的指南。
+>本文档介绍如何管理Reactor API中的主机。 有关标记主机的更多常规信息，请参阅 [主机概述](../../ui/publishing/hosts/hosts-overview.md) 中。
 
-在Reactor API中，主机定义可以传送[build](./builds.md)的目标。
+在Reactor API中，主机定义一个目标，其中 [构建](./builds.md) 可以送货。
 
-当Adobe Experience Platform中的标记用户请求生成库时，系统会检查库以确定应将库构建到的[environment](./environments.md)。 每个环境都与主机有关，指示交付内部版本的位置。
+当Adobe Experience Platform中的标记用户请求生成内部版本时，系统会检查库以确定 [环境](./environments.md) 库应构建到。 每个环境都与主机有关，指示交付内部版本的位置。
 
-主机恰好属于一个[属性](./properties.md)，而一个属性可能拥有多个主机。 在发布之前，资产必须至少具有一个主机。
+主机恰好属于一个 [属性](./properties.md)，而资产可以具有许多主机。 在发布之前，资产必须至少具有一个主机。
 
 一个主机可由资产中的多个环境使用。 资产上通常有一个主机，并且该资产上的所有环境都使用同一台主机。
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索主机列表 {#list}
 
@@ -38,13 +39,13 @@ GET /properties/{PROPERTY_ID}/hosts
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 拥有主机的属性的`id`。 |
+| `PROPERTY_ID` | 的 `id` 拥有主机的属性。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性筛选列出的主机：<ul><li>`created_at`</li><li>`name`</li><li>`type_of`</li><li>`updated_at`</li></ul>有关更多信息，请参阅[筛选响应](../guides/filtering.md)指南。
+>使用查询参数，可以根据以下属性筛选列出的主机：<ul><li>`created_at`</li><li>`name`</li><li>`type_of`</li><li>`updated_at`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -53,7 +54,7 @@ curl -X GET \
   https://reactor.adobe.io/properties/PRd428c2a25caa4b32af61495f5809b737/hosts \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -120,7 +121,7 @@ GET /hosts/{HOST_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `HOST_ID` | 要查找的主机的`id`。 |
+| `HOST_ID` | 的 `id` 要查找的主机。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -131,7 +132,7 @@ curl -X GET \
   https://reactor.adobe.io/hosts/HT5d90148e72224224aac9bc0b01498b84 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -187,20 +188,20 @@ POST /properties/{PROPERTY_ID}/hosts
 
 | 参数 | 描述 |
 | --- | --- |
-| `PROPERTY_ID` | 要在下定义主机的[属性](./properties.md)的`id`。 |
+| `PROPERTY_ID` | 的 `id` 的 [属性](./properties.md) 您在下定义主机的信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会为指定的属性创建新主机。 此调用还会通过`relationships`属性将主机与现有扩展关联。 有关更多信息，请参阅[relationships](../guides/relationships.md)指南。
+以下请求会为指定的属性创建新主机。 调用还会通过将主机与现有扩展关联 `relationships` 属性。 请参阅 [关系](../guides/relationships.md) 以了解更多信息。
 
 ```shell
 curl -X POST \
   https://reactor.adobe.io/properties/PRb25a704c0b7c4562835ccdf96d3afd31/hosts \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -221,13 +222,13 @@ curl -X POST \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes.name` | **（必需）** 主机的人类可读名称。 |
-| `attributes.type_of` | **（必需）** 主机的类型。可以是以下两个选项之一： <ul><li>`akamai` 对于 [Adobe管理的主机](../../ui/publishing/hosts/managed-by-adobe-host.md)</li><li>`sftp` (对于 [SFTP主机)](../../ui/publishing/hosts/sftp-host.md)</li></ul> |
+| `attributes.type_of` | **（必需）** 主机的类型。 可以是以下两个选项之一： <ul><li>`akamai` 表示 [Adobe管理的主机](../../ui/publishing/hosts/managed-by-adobe-host.md)</li><li>`sftp` 表示 [SFTP主机](../../ui/publishing/hosts/sftp-host.md)</li></ul> |
 | `attributes.encrypted_private_key` | 用于主机身份验证的可选私钥。 |
-| `attributes.path` | 附加到`server` URL的路径。 |
+| `attributes.path` | 要附加到的路径 `server` URL。 |
 | `attributes.port` | 一个整数，用于指示要使用的特定服务器端口。 |
 | `attributes.server` | 服务器的主机URL。 |
 | `attributes.username` | 用于身份验证的可选用户名。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`hosts`。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `hosts`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -286,20 +287,20 @@ PATCH /hosts/{HOST_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `HOST_ID` | 要更新的主机的`id`。 |
+| `HOST_ID` | 的 `id` 要更新的主机。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会更新现有主机的`name`。
+以下请求更新了 `name` （对于现有主机）。
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/hosts/HT5d90148e72224224aac9bc0b01498b84 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -315,8 +316,8 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 一个对象，其属性表示要为主机更新的属性。 可以为主机更新以下属性： <ul><li>`encrypted_private_key`</li><li>`name`</li><li>`path`</li><li>`port`</li><li>`server`</li><li>`type_of`</li><li>`username`</li></ul> |
-| `id` | 要更新的主机的`id`。 这应该与请求路径中提供的`{HOST_ID}`值匹配。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`hosts`。 |
+| `id` | 的 `id` 要更新的主机。 这应该与 `{HOST_ID}` 值。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `hosts`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -371,7 +372,7 @@ DELETE /hosts/{HOST_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `HOST_ID` | 要删除的主机的`id`。 |
+| `HOST_ID` | 的 `id` 要删除的主机。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -382,7 +383,7 @@ curl -X DELETE \
   https://reactor.adobe.io/hosts/HT5d90148e72224224aac9bc0b01498b84 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **响应**
@@ -391,13 +392,13 @@ curl -X DELETE \
 
 ## 检索主机的相关资源 {#related}
 
-以下调用演示了如何检索主机的相关资源。 当[查找主机](#lookup)时，这些关系将列在`relationships`属性下。
+以下调用演示了如何检索主机的相关资源。 When [查找主机](#lookup)，则这些关系列在 `relationships` 属性。
 
-有关Reactor API中关系的更多信息，请参阅[关系指南](../guides/relationships.md)。
+请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
 ### 查找主机的相关属性 {#property}
 
-您可以通过将`/property`附加到查找请求的路径来查找拥有主机的属性。
+您可以通过附加来查找拥有主机的资产 `/property` 到查找请求的路径。
 
 **API格式**
 
@@ -407,7 +408,7 @@ GET /hosts/{HOST_ID}/property
 
 | 参数 | 描述 |
 | --- | --- |
-| `{HOST_ID}` | 要查找其属性的主机的`id`。 |
+| `{HOST_ID}` | 的 `id` 要查找其资产的主机的名称。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -418,7 +419,7 @@ curl -X GET \
   https://reactor.adobe.io/hosts/HT5d90148e72224224aac9bc0b01498b84/property \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

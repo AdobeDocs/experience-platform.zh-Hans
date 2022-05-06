@@ -5,7 +5,7 @@ title: 查询API端点
 topic-legacy: queries
 description: 以下各节介绍了可以使用查询服务API中的/querys端点进行的调用。
 exl-id: d6273e82-ce9d-4132-8f2b-f376c6712882
-source-git-commit: 536c2998f7d320dec0cb392465677dd30c8ea622
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '676'
 ht-degree: 2%
@@ -16,11 +16,11 @@ ht-degree: 2%
 
 ## API调用示例
 
-以下各节介绍了可以使用[!DNL Query Service] API中的`/queries`端点进行的调用。 每个调用都包含常规API格式、显示所需标头的示例请求以及示例响应。
+以下部分将介绍您可以使用 `/queries` 的端点 [!DNL Query Service] API。 每个调用都包含常规API格式、显示所需标头的示例请求以及示例响应。
 
 ### 检索查询列表
 
-您可以通过向`/queries`端点发出GET请求，来检索IMS组织的所有查询列表。
+您可以通过向 `/queries` 端点。
 
 **API格式**
 
@@ -29,7 +29,7 @@ GET /queries
 GET /queries?{QUERY_PARAMETERS}
 ```
 
-- `{QUERY_PARAMETERS}`:(*可选*)添加到请求路径的参数，用于配置响应中返回的结果。可以包含多个参数，并以与号(`&`)分隔。 以下列出了可用参数。
+- `{QUERY_PARAMETERS}`:(*可选*)参数已添加到请求路径，用于配置响应中返回的结果。 可以包含多个参数，这些参数之间用与号(`&`)。 以下列出了可用参数。
 
 **查询参数**
 
@@ -37,12 +37,12 @@ GET /queries?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `orderby` | 指定对结果排序所依据的字段。 支持的字段有`created`和`updated`。 例如，`orderby=created`将按照创建的升序对结果进行排序。 在创建之前添加`-`(`orderby=-created`)将按创建项的降序排序。 |
+| `orderby` | 指定对结果排序所依据的字段。 支持的字段包括 `created` 和 `updated`. 例如， `orderby=created` 将按创建的结果进行升序排序。 添加 `-` 创建之前(`orderby=-created`)将按创建的项目进行降序排序。 |
 | `limit` | 指定页面大小限制以控制页面中包含的结果数。 (*默认值：20*) |
-| `start` | 使用从零开始的编号来偏移响应列表。 例如，`start=2`将返回从第三个列出的查询开始的列表。 (*默认值：0*) |
-| `property` | 根据字段筛选结果。 过滤器&#x200B;**必须**&#x200B;被HTML转义。 可使用逗号组合多组过滤器。 支持的字段包括`created`、`updated`、`state`和`id`。 支持的运算符列表包括：`>`（大于）、`<`（小于）、`>=`（大于或等于）、`<=`（小于或等于）、`==`（等于）、`!=`（不等于）和`~`（包含）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec`将返回具有指定ID的所有查询。 |
-| `excludeSoftDeleted` | 指示是否应包含已软删除的查询。 例如，`excludeSoftDeleted=false`将&#x200B;**包含**&#x200B;软删除的查询。 (*布尔值，默认值：true*) |
-| `excludeHidden` | 指示是否应显示非用户驱动的查询。 将此值设置为false将&#x200B;**include**&#x200B;非用户驱动的查询，如CURSOR定义、FETCH或元数据查询。 (*布尔值，默认值：true*) |
+| `start` | 使用从零开始的编号来偏移响应列表。 例如， `start=2` 将返回从第三个列出的查询开始的列表。 (*默认值：0*) |
+| `property` | 根据字段筛选结果。 过滤器 **必须** HTML转义。 可使用逗号组合多组过滤器。 支持的字段包括 `created`, `updated`, `state`和 `id`. 支持的运算符列表包括 `>` （大于）， `<` （小于）， `>=` （大于或等于）， `<=` （小于或等于）， `==` （等于）， `!=` （不等于）和 `~` （包含）。 例如， `id==6ebd9c2d-494d-425a-aa91-24033f3abeec` 将返回具有指定ID的所有查询。 |
+| `excludeSoftDeleted` | 指示是否应包含已软删除的查询。 例如， `excludeSoftDeleted=false` will **包含** 软删除的查询。 (*布尔值，默认值：true*) |
+| `excludeHidden` | 指示是否应显示非用户驱动的查询。 将此值设置为false将会 **包含** 非用户驱动的查询，如CURSOR定义、FETCH或元数据查询。 (*布尔值，默认值：true*) |
 
 **请求**
 
@@ -51,7 +51,7 @@ GET /queries?{QUERY_PARAMETERS}
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/queries?limit=1 \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -119,7 +119,7 @@ curl -X GET https://platform.adobe.io/data/foundation/query/queries?limit=1 \
 
 ### 创建查询
 
-您可以通过向`/queries`端点发出POST请求来创建新查询。
+您可以通过向 `/queries` 端点。
 
 **API格式**
 
@@ -135,7 +135,7 @@ POST /queries
 curl -X POST https://platform.adobe.io/data/foundation/query/queries \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
  -d '{
@@ -155,7 +155,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 
 **响应**
 
-成功响应会返回HTTP状态202（已接受），其中包含新创建查询的详细信息。 查询激活完成并成功运行后，`state`将从`SUBMITTED`更改为`SUCCESS`。
+成功响应会返回HTTP状态202（已接受），其中包含新创建查询的详细信息。 查询激活完成并成功运行后， `state` 将从 `SUBMITTED` to `SUCCESS`.
 
 ```json
 {
@@ -198,11 +198,11 @@ curl -X POST https://platform.adobe.io/data/foundation/query/queries \
 
 >[!NOTE]
 >
->可以使用`_links.cancel`的值[取消创建的查询](#cancel-a-query)。
+>您可以使用 `_links.cancel` to [取消创建的查询](#cancel-a-query).
 
 ### 按ID检索查询
 
-您可以通过向`/queries`端点发出GET请求并在请求路径中提供查询的`id`值，来检索有关特定查询的详细信息。
+您可以通过向 `/queries` 端点和提供查询的 `id` 值。
 
 **API格式**
 
@@ -212,14 +212,14 @@ GET /queries/{QUERY_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{QUERY_ID}` | 要检索的查询的`id`值。 |
+| `{QUERY_ID}` | 的 `id` 要检索的查询的值。 |
 
 **请求**
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/query/queries/4d64cd49-cf8f-463a-a182-54bccb9954fc \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
@@ -269,11 +269,11 @@ curl -X GET https://platform.adobe.io/data/foundation/query/queries/4d64cd49-cf8
 
 >[!NOTE]
 >
->可以使用`_links.cancel`的值[取消创建的查询](#cancel-a-query)。
+>您可以使用 `_links.cancel` to [取消创建的查询](#cancel-a-query).
 
 ### 取消查询
 
-您可以通过向`/queries`端点发出PATCH请求并在请求路径中提供查询的`id`值，来请求删除指定的查询。
+您可以通过向 `/queries` 端点和提供查询的 `id` 值。
 
 **API格式**
 
@@ -283,7 +283,7 @@ PATCH /queries/{QUERY_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{QUERY_ID}` | 要取消的查询的`id`值。 |
+| `{QUERY_ID}` | 的 `id` 要取消的查询的值。 |
 
 
 **请求**
@@ -294,7 +294,7 @@ PATCH /queries/{QUERY_ID}
 curl -X PATCH https://platform.adobe.io/data/foundation/query/queries/4d64cd49-cf8f-463a-a182-54bccb9954fc \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json',
- -H 'x-gw-ims-org-id: {IMS_ORG}' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
  -H 'x-api-key: {API_KEY}' \
  -H 'x-sandbox-name: {SANDBOX_NAME}'
  -d '{
@@ -304,7 +304,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/query/queries/4d64cd49-c
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `op` | 要取消查询，必须使用值`cancel `设置op参数。 |
+| `op` | 要取消查询，必须使用值设置op参数 `cancel `. |
 
 **响应**
 

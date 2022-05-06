@@ -1,7 +1,8 @@
 ---
 title: 公司端点
 description: 了解如何在Reactor API中对/companys端点进行调用。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: ee435358-ed34-4e0c-93af-796133fb11fc
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '243'
 ht-degree: 4%
@@ -10,17 +11,17 @@ ht-degree: 4%
 
 # 公司端点
 
-公司代表客户组织，通常是企业。 在Reactor API中，这些公司将1:1与IMS组织ID匹配。 API用户只能查看他们有权访问的公司。 公司可能包含许多[属性](./properties.md)。 一个资产恰好属于一个公司。
+公司代表客户组织，通常是企业。 在Reactor API中，这些公司将1:1与IMS组织ID匹配。 API用户只能查看他们有权访问的公司。 公司可能包含许多 [属性](./properties.md). 一个资产恰好属于一个公司。
 
-Reactor API中的`/companies`端点允许您以编程方式检索您在体验应用程序中有权访问的公司。
+的 `/companies` reactor API中的端点允许您以编程方式检索您在experience应用程序中有权访问的公司。
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索公司列表 {#list}
 
-您可以通过向`/companies`端点发出GET请求来列出您有权使用的公司。 在大多数情况下，只有一个。
+您可以通过向 `/companies` 端点。 在大多数情况下，只有一个。
 
 **API格式**
 
@@ -30,7 +31,7 @@ GET /companies
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤上市公司：<ul><li>`created_at`</li><li>`name`</li><li>`org_id`</li><li>`token`</li><li>`updated_at`</li></ul>有关更多信息，请参阅[筛选响应](../guides/filtering.md)指南。
+>使用查询参数，可以根据以下属性过滤上市公司：<ul><li>`created_at`</li><li>`name`</li><li>`org_id`</li><li>`token`</li><li>`updated_at`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -39,7 +40,7 @@ curl -X GET \
   https://reactor.adobe.io/companies \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -57,7 +58,7 @@ curl -X GET \
       "attributes": {
         "created_at": "2020-08-13T17:13:30.667Z",
         "name": "Example Company",
-        "org_id": "{IMS_ORG}",
+        "org_id": "{ORG_ID}",
         "updated_at": "2020-08-13T17:13:30.667Z",
         "token": "d5a4f682bbae",
         "cjm_enabled": false,
@@ -118,7 +119,7 @@ GET /companies/{COMPANY_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{COMPANY_ID}` | 要查找的公司的`id`值。 |
+| `{COMPANY_ID}` | 的 `id` 值。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -129,7 +130,7 @@ curl -X GET \
   https://reactor.adobe.io/companies/COdb0cd64ad4524440be94b8496416ec7d \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -146,7 +147,7 @@ curl -X GET \
     "attributes": {
       "created_at": "2020-08-13T17:13:30.667Z",
       "name": "Example Company",
-      "org_id": "{IMS_ORG}",
+      "org_id": "{ORG_ID}",
       "updated_at": "2020-08-13T17:13:30.667Z",
       "token": "d5a4f682bbae",
       "cjm_enabled": false,

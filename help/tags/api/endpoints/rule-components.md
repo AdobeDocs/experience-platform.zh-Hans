@@ -1,7 +1,8 @@
 ---
 title: 规则组件端点
 description: 了解如何在Reactor API中对/rule_components端点进行调用。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 8a878a89-7f41-45fc-88f3-17f0f743e29c
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1207'
 ht-degree: 6%
@@ -10,17 +11,17 @@ ht-degree: 6%
 
 # 规则组件端点
 
-在数据收集标记中， [规则](./rules.md)控制已部署[库](./libraries.md)中资源的行为。 **规** 则组件是构成规则的各个部分。如果规则是方法，则规则组件是其中的一项。 Reactor API中的`/rule_components`端点允许您以编程方式管理规则组件。
+在数据收集标记中， [规则](./rules.md) 控制已部署中资源的行为 [库](./libraries.md). **规则组件** 是构成规则的各个部分。 如果规则是方法，则规则组件是其中的一项。 的 `/rule_components` reactor API中的端点允许您以编程方式管理规则组件。
 
 >[!NOTE]
 >
->本文档介绍如何在Reactor API中管理规则组件。 有关如何与数据收集UI中的规则和规则组件进行交互的详细信息，请参阅[UI指南](../../ui/managing-resources/rules.md)。
+>本文档介绍如何在Reactor API中管理规则组件。 有关如何与数据收集UI中的规则和规则组件进行交互的详细信息，请参阅 [UI指南](../../ui/managing-resources/rules.md).
 
 规则组件有三种基本类型：
 
 | 规则组件类型 | 描述 |
 | --- | --- |
-| 事件 | 事件是规则的触发器。 当事件在客户端设备上运行时发生时，规则将启动。 “[!UICONTROL 库加载]”、“[!UICONTROL 页面顶部]”和“[!UICONTROL Click]”是事件的示例。 |
+| 活动 | 事件是规则的触发器。 当事件在客户端设备上运行时发生时，规则将启动。 &quot;[!UICONTROL 库加载]&quot;, &quot;[!UICONTROL 页面顶部]&quot;和&quot;[!UICONTROL 单击]“是事件的示例。 |
 | 条件 | 条件是在执行任何操作之前评估是否满足某些标准。 发生事件后，将评估条件。 仅当满足所有条件时，才执行规则的操作。 |
 | 操作 | 这些是您希望规则实际执行的操作，例如发送Adobe Analytics信标、检索自定义访客ID或触发特定mbox。 |
 
@@ -28,11 +29,11 @@ ht-degree: 6%
 
 规则组件恰好属于一个规则。 规则可以（且应该）具有许多规则组件。
 
-规则组件仅由一个[扩展](./extensions.md)提供。 扩展可以提供许多规则组件类型。
+规则组件仅由 [扩展](./extensions.md). 扩展可以提供许多规则组件类型。
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索规则组件列表 {#list}
 
@@ -46,13 +47,13 @@ GET /rules/{RULE_ID}/rule_components
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_ID` | 要列出其组件的规则的`id`。 |
+| `RULE_ID` | 的 `id` 要列出其组件的规则。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 >[!NOTE]
 >
->使用查询参数，可以根据以下属性过滤列出的规则组件：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`negate`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>有关更多信息，请参阅[筛选响应](../guides/filtering.md)指南。
+>使用查询参数，可以根据以下属性过滤列出的规则组件：<ul><li>`created_at`</li><li>`dirty`</li><li>`enabled`</li><li>`name`</li><li>`negate`</li><li>`origin_id`</li><li>`published`</li><li>`published_at`</li><li>`revision_number`</li><li>`updated_at`</li></ul>请参阅 [筛选响应](../guides/filtering.md) 以了解更多信息。
 
 **请求**
 
@@ -61,7 +62,7 @@ curl -X GET \
   https://reactor.adobe.io/rules/RL14dc6a8c37b14b619ddb2b3ba489a1f51/rule_components \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -185,7 +186,7 @@ GET /rule_components/{RULE_COMPONENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_COMPONENT_ID` | 要查找的规则组件的`id`。 |
+| `RULE_COMPONENT_ID` | 的 `id` 规则组件的URL访问。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -196,7 +197,7 @@ curl -X GET \
   https://reactor.adobe.io/rule_components/RC7be169fcfd534ffc82acc7bffdc50128 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -309,20 +310,20 @@ POST /rules/{RULE_ID}/rule_components
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_ID` | 要为其定义规则组件的规则的`id`。 |
+| `RULE_ID` | 的 `id` 定义规则组件的规则。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求会为指定的规则创建新规则组件。 调用还会通过`relationships`属性将规则组件与现有扩展关联。 有关更多信息，请参阅[relationships](../guides/relationships.md)指南。
+以下请求会为指定的规则创建新规则组件。 调用还会通过将规则组件与现有扩展关联 `relationships` 属性。 请参阅 [关系](../guides/relationships.md) 以了解更多信息。
 
 ```shell
 curl -X POST \
   https://reactor.adobe.io/rules/RLf7b4f416b2e04ae1ba857ae681fee5bc/rule_components \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -358,15 +359,15 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `attributes.delegate_descriptor_id` | **（必需）** 您可以定义的规则组件类型由扩展 [包提供](./extension-packages.md)。创建新规则组件时，必须提供委派描述符ID以指示此规则组件所基于的扩展包、组件的类型（事件、条件或操作）以及由扩展定义的特定组件的名称（例如核心扩展中的“单击”事件）。<br><br>有关更多信息，请参 [阅委托描](../guides/delegate-descriptor-ids.md) 述符ID指南。 |
+| `attributes.delegate_descriptor_id` | **（必需）** 您可以定义的规则组件类型由 [扩展包](./extension-packages.md). 创建新规则组件时，必须提供委派描述符ID以指示此规则组件所基于的扩展包、组件的类型（事件、条件或操作）以及由扩展定义的特定组件的名称（例如核心扩展中的“单击”事件）。<br><br>请参阅 [委托描述符ID](../guides/delegate-descriptor-ids.md) 以了解更多信息。 |
 | `attributes.name` | **（必需）** 规则组件的人类可读名称。 |
 | `attributes.delay_next` | 一个布尔值，指示是否延迟以后的操作。 |
 | `attributes.order` | 一个整数，表示按类型加载组件的顺序。 |
 | `attributes.rule_order` | 一个整数，用于指示要触发的关联规则的优先级。 |
 | `attributes.settings` | 设置JSON对象，表示为字符串。 |
 | `attributes.timeout` | 一个整数，用于指示按顺序执行的操作的超时。 |
-| `relationships` | 为规则组件建立必要关系的对象。 必须建立两个关系： <ol><li>`extension`:定义此规则组件的扩展。必须是扩展包由`delegate_descriptor_id`指示的相同扩展。</li><li>`rules`:在下定义此组件的规则。必须是请求路径中提供的相同规则ID。</li></ol>有关关系的更多常规信息，请参阅[关系指南](../guides/relationships.md)。 |
-| `type` | 要创建的资源类型。 对于此端点，值必须为`rule_components`。 |
+| `relationships` | 为规则组件建立必要关系的对象。 必须建立两个关系： <ol><li>`extension`:定义此规则组件的扩展。 此扩展必须与扩展包中指示的 `delegate_descriptor_id`.</li><li>`rules`:在下定义此组件的规则。 必须是请求路径中提供的相同规则ID。</li></ol>有关关系的更多常规信息，请参阅 [关系指南](../guides/relationships.md). |
+| `type` | 要创建的资源类型。 对于此端点，值必须为 `rule_components`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -472,7 +473,7 @@ curl -X POST \
 
 >[!NOTE]
 >
->更新规则组件还会更新父规则的`updated_at`时间戳。
+>更新规则组件还会更新父规则的 `updated_at` 时间戳。
 
 **API格式**
 
@@ -482,20 +483,20 @@ PATCH /rule_components/{RULE_COMPONENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_COMPONENT_ID` | 要更新的规则组件的`id`。 |
+| `RULE_COMPONENT_ID` | 的 `id` 要更新的规则组件的URL。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **请求**
 
-以下请求更新了现有规则组件的`order`和`settings`属性。
+以下请求更新了 `order` 和 `settings` 属性。
 
 ```shell
 curl -X PATCH \
   https://reactor.adobe.io/rule_components/RC9af052ee231346f28d1e44865ab62c04 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'Content-Type: application/json' \
   -d '{
         "data": {
@@ -512,8 +513,8 @@ curl -X PATCH \
 | 属性 | 描述 |
 | --- | --- |
 | `attributes` | 其规则组件表示要为规则组件更新的属性的对象。 可以为规则组件更新以下属性： <ul><li>`delay_next`</li><li>`delegate_descriptor_id`</li><li>`name`</li><li>`order`</li><li>`rule_order`</li><li>`settings`</li><li>`timeout`</li></ul> |
-| `id` | 要更新的规则组件的`id`。 这应该与请求路径中提供的`{RULE_COMPONENT_ID}`值匹配。 |
-| `type` | 要更新的资源类型。 对于此端点，值必须为`rule_components`。 |
+| `id` | 的 `id` 规则组件的URL访问。 这应该与 `{RULE_COMPONENT_ID}` 值。 |
+| `type` | 要更新的资源类型。 对于此端点，值必须为 `rule_components`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -625,7 +626,7 @@ DELETE /rule_components/{RULE_COMPONENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `RULE_COMPONENT_ID` | 要删除的规则组件的`id`。 |
+| `RULE_COMPONENT_ID` | 的 `id` 规则组件的URL访问。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -636,7 +637,7 @@ curl -X DELETE \
   https://reactor.adobe.io/rule_components/RC9af052ee231346f28d1e44865ab62c04 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}'
+  -H 'x-gw-ims-org-id: {ORG_ID}'
 ```
 
 **响应**
@@ -645,17 +646,17 @@ curl -X DELETE \
 
 ## 管理规则组件的注释 {#notes}
 
-规则组件是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 有关如何管理规则组件和其他兼容资源的注释的更多信息，请参阅[notes endpoint guide](./notes.md)。
+规则组件是“显着”资源，这意味着您可以根据每个资源创建和检索基于文本的注释。 请参阅 [注释终端指南](./notes.md) 有关如何管理规则组件和其他兼容资源的注释的更多信息。
 
 ## 检索规则组件的相关资源 {#related}
 
-以下调用演示了如何检索规则组件的相关资源。 在[查找规则组件](#lookup)时，这些关系列在`relationships`规则组件下。
+以下调用演示了如何检索规则组件的相关资源。 When [查找规则组件](#lookup)，则这些关系列在 `relationships` 规则组件。
 
-有关Reactor API中关系的更多信息，请参阅[关系指南](../guides/relationships.md)。
+请参阅 [关系指南](../guides/relationships.md) 有关Reactor API中关系的更多信息。
 
 ### 列出规则组件的相关规则 {#rules}
 
-您可以通过将`/rules`附加到查找请求的路径来列出利用特定规则组件的规则。
+您可以通过附加来列出利用特定规则组件的规则 `/rules` 到查找请求的路径。
 
 **API格式**
 
@@ -665,7 +666,7 @@ GET  /rule_components/{RULE_COMPONENT_ID}/rules
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_COMPONENT_ID}` | 要列出其规则的规则组件的`id`。 |
+| `{RULE_COMPONENT_ID}` | 的 `id` 规则组件（要列出其规则的组件）中。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -676,7 +677,7 @@ curl -X GET \
   https://reactor.adobe.io/rule_components/RC9af052ee231346f28d1e44865ab62c04/rules \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -759,7 +760,7 @@ curl -X GET \
 
 ### 查找规则组件的相关扩展 {#extension}
 
-您可以通过将`/extension`附加到查找请求的路径来查找提供规则组件的扩展。
+您可以通过附加来查找提供规则组件的扩展 `/extension` 到查找请求的路径。
 
 **API格式**
 
@@ -769,7 +770,7 @@ GET /rule_components/{RULE_COMPONENT_ID}/extension
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_COMPONENT_ID}` | 要查找其扩展名的规则组件的`id`。 |
+| `{RULE_COMPONENT_ID}` | 的 `id` 要查找其扩展名的规则组件。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -780,7 +781,7 @@ curl -X GET \
   https://reactor.adobe.io/rule_components/RC9af052ee231346f28d1e44865ab62c04/extension \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -879,7 +880,7 @@ curl -X GET \
 
 ### 查找规则组件的相关源 {#origin}
 
-您可以通过将`/origin`附加到查找请求的路径来查找规则组件的原点（以前的修订版本）。
+您可以通过附加来查找规则组件的原点（以前的版本） `/origin` 到查找请求的路径。
 
 **API格式**
 
@@ -889,7 +890,7 @@ GET /rule_components/{RULE_COMPONENT_ID}/origin
 
 | 参数 | 描述 |
 | --- | --- |
-| `{RULE_COMPONENT_ID}` | 要查找其源的规则组件的`id`。 |
+| `{RULE_COMPONENT_ID}` | 的 `id` 要查找其源的规则组件。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -900,7 +901,7 @@ curl -X GET \
   https://reactor.adobe.io/rule_components/RC3d0805fde85d42db8988090bc074bb44/origin \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

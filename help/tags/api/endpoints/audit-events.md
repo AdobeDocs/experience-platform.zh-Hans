@@ -1,7 +1,8 @@
 ---
 title: 审核事件端点
 description: 了解如何在Reactor API中调用/audit_events端点。
-source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
+exl-id: 59cd58dc-4085-47b7-846f-d3937740dd9b
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '262'
 ht-degree: 4%
@@ -12,11 +13,11 @@ ht-degree: 4%
 
 >[!WARNING]
 >
->`/audit_events`端点的实现在通量中，因为添加、删除和重新工作了功能。
+>实施 `/audit_events` 端点在通量中，因为添加、删除和重新工作了功能。
 
-审核事件是对Reactor API中其他资源进行特定更改的记录，在进行更改时生成。 这些是可通过使用[callback](./callbacks.md)订阅的系统事件。 Reactor API中的`/audit_events`端点允许您以编程方式管理体验应用程序中的审核事件。
+审核事件是对Reactor API中其他资源进行特定更改的记录，在进行更改时生成。 这些是系统事件，可通过使用 [回调](./callbacks.md). 的 `/audit_events` reactor API中的端点允许您以编程方式管理体验应用程序中的审核事件。
 
-审核事件的结构采用`{RESOURCE_TYPE}.{EVENT}`的形式，如`build.created`或`rule.updated`。
+审核事件的结构形式为 `{RESOURCE_TYPE}.{EVENT}`，例如 `build.created` 或 `rule.updated`.
 
 资源类型可以是以下任一类型：
 
@@ -38,11 +39,11 @@ ht-degree: 4%
 
 ## 快速入门
 
-本指南中使用的端点是[Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/)的一部分。 在继续操作之前，请查看[快速入门指南](../getting-started.md) ，以了解有关如何对API进行身份验证的重要信息。
+本指南中使用的端点是 [Reactor API](https://www.adobe.io/experience-platform-apis/references/reactor/). 在继续之前，请查看 [入门指南](../getting-started.md) 以了解有关如何对API进行身份验证的重要信息。
 
 ## 检索审核事件列表 {#list}
 
-您可以通过向`/audit_events`端点发出GET请求，来检索您的组织拥有的所有属性的审核事件列表。
+您可以通过向 `/audit_events` 端点。
 
 **API格式**
 
@@ -57,7 +58,7 @@ curl -X GET \
   https://reactor.adobe.io/audit_events \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```
@@ -169,7 +170,7 @@ GET /audit_events/{AUDIT_EVENT_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `AUDIT_EVENT_ID` | 要查找的审核事件的`id`。 |
+| `AUDIT_EVENT_ID` | 的 `id` 查找的审核事件。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -180,7 +181,7 @@ curl -X GET \
   https://reactor.adobe.io/audit_events/AEa98742de8ef044d8b86767aa6a15a674 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H "Content-Type: application/vnd.api+json" \
   -H 'Accept: application/vnd.api+json;revision=1'
 ```

@@ -5,7 +5,7 @@ topic-legacy: guide
 type: Documentation
 description: Adobe Experience Platform允许您使用RESTful API或用户界面访问实时客户资料数据。 本指南概述了如何使用配置文件API访问实体（通常称为“配置文件”）。
 exl-id: 06a1a920-4dc4-4468-ac15-bf4a6dc885d4
-source-git-commit: 4c544170636040b8ab58780022a4c357cfa447de
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1732'
 ht-degree: 1%
@@ -14,17 +14,17 @@ ht-degree: 1%
 
 # 实体端点（配置文件访问）
 
-Adobe Experience Platform允许您使用RESTful API或用户界面访问[!DNL Real-time Customer Profile]数据。 本指南概述了如何使用API访问实体（通常称为“用户档案”）。 有关使用[!DNL Platform] UI访问用户档案的更多信息，请参阅[用户档案指南](../ui/user-guide.md)。
+Adobe Experience Platform允许您访问 [!DNL Real-time Customer Profile] 使用RESTful API或用户界面的数据。 本指南概述了如何使用API访问实体（通常称为“用户档案”）。 有关使用访问用户档案的更多信息 [!DNL Platform] UI，请参阅 [用户档案用户指南](../ui/user-guide.md).
 
 ## 快速入门
 
-本指南中使用的API端点是[[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en)的一部分。 在继续操作之前，请查阅[快速入门指南](getting-started.md) ，以获取相关文档的链接、本文档中API调用示例的阅读指南，以及有关成功调用任何[!DNL Experience Platform] API所需标头的重要信息。
+本指南中使用的API端点是 [[!DNL Real-time Customer Profile API]](https://www.adobe.com/go/profile-apis-en). 在继续之前，请查看 [入门指南](getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何代码所需标头的重要信息 [!DNL Experience Platform] API。
 
 ## 按身份访问用户档案数据
 
-您可以通过向`/access/entities`端点发出GET请求，并将实体的标识作为一系列查询参数来访问[!DNL Profile]实体。 此标识由ID值(`entityId`)和标识命名空间(`entityIdNS`)组成。
+您可以访问 [!DNL Profile] 实体，方法是向GET请求 `/access/entities` 端点和作为一系列查询参数提供实体的标识。 此标识由ID值(`entityId`)和身份命名空间(`entityIdNS`)。
 
-请求路径中提供的查询参数指定要访问的数据。 您可以包含多个参数，这些参数之间用与号(&amp;)分隔。 有效参数的完整列表见附录的[查询参数](#query-parameters)部分。
+请求路径中提供的查询参数指定要访问的数据。 您可以包含多个参数，这些参数之间用与号(&amp;)分隔。 有效参数的完整列表，请参见 [查询参数](#query-parameters) 附录的章节。
 
 **API格式**
 
@@ -41,7 +41,7 @@ curl -X GET \
   'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.profile&entityId=janedoe@example.com&entityIdNS=email&fields=identities,person.name,workEmail' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -120,7 +120,7 @@ curl -X GET \
 
 ## 按身份列表访问用户档案数据
 
-您可以通过对`/access/entities`端点发出POST请求并在有效负载中提供标识，通过多个配置文件实体的标识来访问它们。 这些标识由ID值(`entityId`)和标识命名空间(`entityIdNS`)组成。
+您可以通过向发出POST请求，通过多个用户档案实体的身份来访问 `/access/entities` 端点和在有效负载中提供标识。 这些标识由ID值(`entityId`)和身份命名空间(`entityIdNS`)。
 
 **API格式**
 
@@ -138,7 +138,7 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
         "schema":{
@@ -189,11 +189,11 @@ curl -X POST \
 | `timeFilter.startTime` | 包含的时间范围过滤器的开始时间。 应以毫秒为粒度。 如果未指定，则默认值为可用时间的开始值。 |
 | `timeFilter.endTime` | 排除的时间范围过滤器的结束时间。 应以毫秒为粒度。 如果未指定，则默认为可用时间的结束。 |
 | `limit` | 要返回的记录数。 仅适用于返回的体验事件数。 默认：一千。 |
-| `orderby` | 按时间戳列出的检索体验事件的排序顺序，编写为`(+/-)timestamp`，默认值为`+timestamp`。 |
+| `orderby` | 按时间戳列出的检索体验事件的排序顺序，编写为 `(+/-)timestamp` 默认值为 `+timestamp`. |
 | `withCA` | 用于启用计算属性以进行查找的功能标记。 默认：false。 |
 
-****
-响应成功响应会返回请求正文中指定的实体的请求字段。
+**响应**
+成功的响应会返回请求正文中指定的实体的请求字段。
 
 ```json
 {
@@ -334,9 +334,9 @@ curl -X POST \
 
 ## 按身份访问用户档案的时间系列事件
 
-您可以通过向`/access/entities`端点发出GET请求，通过其关联的配置文件实体的标识来访问时间系列事件。 此标识由ID值(`entityId`)和标识命名空间(`entityIdNS`)组成。
+您可以通过向 `/access/entities` 端点。 此标识由ID值(`entityId`)和身份命名空间(`entityIdNS`)。
 
-请求路径中提供的查询参数指定要访问的数据。 您可以包含多个参数，这些参数之间用与号(&amp;)分隔。 有效参数的完整列表见附录的[查询参数](#query-parameters)部分。
+请求路径中提供的查询参数指定要访问的数据。 您可以包含多个参数，这些参数之间用与号(&amp;)分隔。 有效参数的完整列表，请参见 [查询参数](#query-parameters) 附录的章节。
 
 **API格式**
 
@@ -346,14 +346,14 @@ GET /access/entities?{QUERY_PARAMETERS}
 
 **请求**
 
-以下请求按ID查找配置文件实体，并检索与实体关联的所有时间序列事件的属性`endUserIDs`、`web`和`channel`的值。
+以下请求按ID查找用户档案实体，并检索属性的值 `endUserIDs`, `web`和 `channel` 适用于与实体关联的所有时间系列事件。
 
 ```shell
 curl -X GET \
   'https://platform.adobe.io/data/core/ups/access/entities?schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=89149270342662559642753730269986316900&relatedEntityIdNS=ECID&fields=endUserIDs,web,channel&startTime=1531260476000&endTime=1531260480000&limit=1' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -363,7 +363,7 @@ curl -X GET \
 
 >[!NOTE]
 >
->请求指定了一个(`limit=1`)的限制，因此下面响应中的`count`为1，并且只返回一个实体。
+>请求指定了一个限制(`limit=1`)，因此 `count` 在以下响应中，为1，并且只返回一个实体。
 
 ```json
 {
@@ -414,11 +414,11 @@ curl -X GET \
 
 ### 访问后续的结果页面
 
-在检索时间系列事件时，会对结果进行分页。 如果有后续的结果页，`_page.next`属性将包含ID。 此外， `_links.next.href`属性还提供用于检索下一页的请求URI。 要检索结果，请向`/access/entities`端点再次发出GET请求，但必须确保将`/entities`替换为提供的URI的值。
+在检索时间系列事件时，会对结果进行分页。 如果有后续的结果页面，则 `_page.next` 属性将包含ID。 此外， `_links.next.href` 属性提供用于检索下一页的请求URI。 要检索结果，请向 `/access/entities` 端点，但必须确保将 `/entities` 和提供的URI的值。
 
 >[!NOTE]
 >
->请确保不要意外地在请求路径中重复`/entities/`。 它应该只显示一次， `/access/entities?start=...`
+>请务必不要意外重复 `/entities/` 在请求路径中。 它应该只出现一次， `/access/entities?start=...`
 
 **API格式**
 
@@ -428,24 +428,24 @@ GET /access/{NEXT_URI}
 
 | 参数 | 描述 |
 |---|---|
-| `{NEXT_URI}` | 从`_links.next.href`获取的URI值。 |
+| `{NEXT_URI}` | 从 `_links.next.href`. |
 
 **请求**
 
-以下请求使用`_links.next.href` URI作为请求路径来检索结果的下一页。
+以下请求使用 `_links.next.href` URI作为请求路径。
 
 ```shell
 curl -X GET \
   'https://platform.adobe.io/data/core/ups/access/entities?start=c8d11988-6b56-4571-a123-b6ce74236037&orderby=timestamp&schema.name=_xdm.context.experienceevent&relatedSchema.name=_xdm.context.profile&relatedEntityId=89149270342662559642753730269986316900&relatedEntityIdNS=ECID&fields=endUserIDs,web,channel&startTime=1531260476000&endTime=1531260480000&limit=1' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-成功的响应会返回结果的下一页。 此响应没有后续的结果页，如`_page.next`和`_links.next.href`的空字符串值所示。
+成功的响应会返回结果的下一页。 此响应没有后续的结果页，如的空字符串值所示 `_page.next` 和 `_links.next.href`.
 
 ```json
 {
@@ -496,7 +496,7 @@ curl -X GET \
 
 ## 按身份访问多个用户档案的时间系列事件
 
-您可以通过向`/access/entities`端点发出POST请求并在有效负载中提供配置文件标识，从多个关联的配置文件访问时间系列事件。 这些标识分别由ID值(`entityId`)和标识命名空间(`entityIdNS`)组成。
+您可以通过向 `/access/entities` 端点和在有效负载中提供配置文件标识。 这些标识每个都由ID值(`entityId`)和身份命名空间(`entityIdNS`)。
 
 **API格式**
 
@@ -514,7 +514,7 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
     "schema": {
@@ -548,11 +548,11 @@ curl -X POST \
 | 属性 | 描述 |
 |---|---|
 | `schema.name` | **（必需）** 要检索的实体的XDM架构 |
-| `relatedSchema.name` | 如果`schema.name`为`_xdm.context.experienceevent`，则此值必须指定与时间系列事件相关的配置文件实体的架构。 |
-| `identities` | **（必需）** 用于从中检索关联时间系列事件的配置文件数组列表。数组中的每个条目可通过以下两种方式之一进行设置：1)使用由ID值和命名空间组成的完全限定的身份，或2)提供XID。 |
+| `relatedSchema.name` | 如果 `schema.name` is `_xdm.context.experienceevent` 此值必须指定与时间系列事件相关的配置文件实体的架构。 |
+| `identities` | **（必需）** 用于从中检索关联时间系列事件的配置文件的数组列表。 数组中的每个条目可通过以下两种方式之一进行设置：1)使用由ID值和命名空间组成的完全限定的身份，或2)提供XID。 |
 | `fields` | 将返回的数据隔离到一组指定的字段。 使用此选项可筛选检索到的数据中包含的架构字段。 示例：personalEmail，person.name，person.gender |
 | `mergePolicyId` | 确定用于管理返回数据的合并策略。 如果未在服务调用中指定某个架构，则将使用贵组织对该架构的默认设置。 如果尚未配置默认的合并策略，则默认值为“未合并配置文件”和“未拼合身份”。 |
-| `orderby` | 按时间戳列出的检索体验事件的排序顺序，编写为`(+/-)timestamp`，默认值为`+timestamp`。 |
+| `orderby` | 按时间戳列出的检索体验事件的排序顺序，编写为 `(+/-)timestamp` 默认值为 `+timestamp`. |
 | `timeFilter.startTime` | 指定过滤时间系列对象的开始时间（以毫秒为单位）。 |
 | `timeFilter.endTime` | 指定过滤时间系列对象的结束时间（以毫秒为单位）。 |
 | `limit` | 指定要返回的最大对象数的数值。 默认：1000 |
@@ -768,19 +768,19 @@ curl -X POST \
 }`
 ```
 
-在此示例响应中，列出的第一个配置文件(&quot;GkouAW-yD9aoRCPhRROJ-TetAFW&quot;)为`_links.next.payload`提供了一个值，这表示此配置文件还有额外的结果页。 有关如何访问这些附加结果的详细信息，请参阅以下关于[访问其他结果](#access-additional-results)的部分。
+在此示例响应中，第一个列出的配置文件(“GkouAW-yD9aoRCPhRYROJ-TetAFW”)为 `_links.next.payload`，表示此用户档案还有其他的结果页面。 请参阅 [访问其他结果](#access-additional-results) 以了解有关如何访问这些其他结果的详细信息。
 
 ### 访问其他结果 {#access-additional-results}
 
-检索时间系列事件时，可能会返回许多结果，因此结果通常会进行分页。 如果某个特定配置文件有后续的结果页，则该配置文件的`_links.next.payload`值将包含有效负荷对象。
+检索时间系列事件时，可能会返回许多结果，因此结果通常会进行分页。 如果某个特定用户档案的结果页面随后出现，则 `_links.next.payload` 该配置文件的值将包含有效负载对象。
 
-在请求正文中使用此有效负载，您可以对`access/entities`端点执行其他POST请求，以检索该配置文件的后续时间系列数据页。
+在请求正文中使用此有效负载，您可以对 `access/entities` 端点来检索该配置文件的后续时间系列数据页。
 
 ## 访问多个架构实体中的时间系列事件
 
-您可以访问通过关系描述符连接的多个实体。 以下示例API调用假定两个架构之间已定义关系。 有关关系描述符的更多信息，请阅读[!DNL Schema Registry] API开发人员指南[描述符终结点指南](../../xdm/api/descriptors.md)。
+您可以访问通过关系描述符连接的多个实体。 以下示例API调用假定两个架构之间已定义关系。 有关关系描述符的详细信息，请阅读 [!DNL Schema Registry] API开发人员指南 [描述符终结点指南](../../xdm/api/descriptors.md).
 
-您可以在请求路径中包含查询参数，以指定要访问的数据。 您可以包含多个参数，这些参数之间用与号(&amp;)分隔。 有效参数的完整列表见附录的[查询参数](#query-parameters)部分。
+您可以在请求路径中包含查询参数，以指定要访问的数据。 您可以包含多个参数，这些参数之间用与号(&amp;)分隔。 有效参数的完整列表，请参见 [查询参数](#query-parameters) 附录的章节。
 
 **API格式**
 
@@ -798,7 +798,7 @@ curl -X GET \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
 ```
 
 **响应**
@@ -884,31 +884,31 @@ curl -X GET \
 
 ### 访问后续的结果页面
 
-在检索时间系列事件时，会对结果进行分页。 如果有后续的结果页，`_page.next`属性将包含ID。 此外， `_links.next.href`属性通过向`access/entities`端点发出附加GET请求来提供用于检索后续页面的请求URI。
+在检索时间系列事件时，会对结果进行分页。 如果有后续的结果页面，则 `_page.next` 属性将包含ID。 此外， `_links.next.href` 属性通过向后续页面发出附加GET请求来提供检索后续页面的请求URI `access/entities` 端点。
 
 ## 后续步骤
 
-按照本指南，您已成功访问[!DNL Real-time Customer Profile]数据字段、配置文件和时间系列数据。 要了解如何访问存储在[!DNL Platform]中的其他数据资源，请参阅[数据访问概述](../../data-access/home.md)。
+按照本指南，您已成功访问 [!DNL Real-time Customer Profile] 数据字段、用户档案和时间系列数据。 了解如何访问 [!DNL Platform]，请参阅 [数据访问概述](../../data-access/home.md).
 
 ## 附录 {#appendix}
 
-以下部分提供了有关使用API访问[!DNL Profile]数据的补充信息。
+以下部分提供了有关访问的补充信息 [!DNL Profile] 数据。
 
 ### 查询参数 {#query-parameters}
 
-在`/access/entities`端点的GET请求路径中使用以下参数。 它们用于标识您希望访问的用户档案实体，并筛选响应中返回的数据。 必需的参数将进行标记，而其余参数则为可选参数。
+在路径中，对于向 `/access/entities` 端点。 它们用于标识您希望访问的用户档案实体，并筛选响应中返回的数据。 必需的参数将进行标记，而其余参数则为可选参数。
 
 | 参数 | 描述 | 示例 |
 |---|---|---|
 | `schema.name` | **（必需）** 要检索的实体的XDM架构 | `schema.name=_xdm.context.experienceevent` |
-| `relatedSchema.name` | 如果`schema.name`为“_xdm.context.experienceevent”，则此值必须指定与时间系列事件相关的配置文件实体架构。 | `relatedSchema.name=_xdm.context.profile` |
-| `entityId` | **（必需）** 实体的ID。如果此参数的值不是XID，则还必须提供身份命名空间参数（请参阅下面的`entityIdNS`）。 | `entityId=janedoe@example.com` |
-| `entityIdNS` | 如果未将`entityId`作为XID提供，则此字段必须指定身份命名空间。 | `entityIdNE=email` |
-| `relatedEntityId` | 如果`schema.name`为“_xdm.context.experienceevent”，则此值必须指定相关配置文件实体的标识命名空间。 此值遵循与`entityId`相同的规则。 | `relatedEntityId=69935279872410346619186588147492736556` |
-| `relatedEntityIdNS` | 如果`schema.name`为“_xdm.context.experienceevent”，则此值必须为`relatedEntityId`中指定的实体指定标识命名空间。 | `relatedEntityIdNS=CRMID` |
+| `relatedSchema.name` | 如果 `schema.name` 为“_xdm.context.experienceevent”，此值必须指定与时间系列事件相关的配置文件实体的架构。 | `relatedSchema.name=_xdm.context.profile` |
+| `entityId` | **（必需）** 实体的ID。 如果此参数的值不是XID，则还必须提供身份命名空间参数(请参阅 `entityIdNS` )。 | `entityId=janedoe@example.com` |
+| `entityIdNS` | 如果 `entityId` 未作为XID提供，此字段必须指定身份命名空间。 | `entityIdNE=email` |
+| `relatedEntityId` | 如果 `schema.name` 为“_xdm.context.experienceevent”，此值必须指定相关配置文件实体的标识命名空间。 此值遵循与 `entityId`. | `relatedEntityId=69935279872410346619186588147492736556` |
+| `relatedEntityIdNS` | 如果 `schema.name` 为“_xdm.context.experienceevent”，此值必须为 `relatedEntityId`. | `relatedEntityIdNS=CRMID` |
 | `fields` | 过滤响应中返回的数据。 使用此选项可指定要包含在检索数据中的架构字段值。 对于多个字段，用逗号分隔值，中间不带空格 | `fields=personalEmail,person.name,person.gender` |
 | `mergePolicyId` | 确定用于管理返回数据的合并策略。 如果未在调用中指定某个架构，则将使用贵组织对该架构的默认设置。 如果尚未配置默认的合并策略，则默认值为“未合并配置文件”和“未拼合身份”。 | `mergePoilcyId=5aa6885fcf70a301dabdfa4a` |
-| `orderBy` | 按时间戳列出的检索体验事件的排序顺序，编写为`(+/-)timestamp`，默认值为`+timestamp`。 | `orderby=-timestamp` |
+| `orderBy` | 按时间戳列出的检索体验事件的排序顺序，编写为 `(+/-)timestamp` 默认值为 `+timestamp`. | `orderby=-timestamp` |
 | `startTime` | 指定过滤时间系列对象的开始时间（以毫秒为单位）。 | `startTime=1539838505` |
 | `endTime` | 指定过滤时间系列对象的结束时间（以毫秒为单位）。 | `endTime=1539838510` |
 | `limit` | 指定要返回的最大对象数的数值。 默认：1000 | `limit=100` |

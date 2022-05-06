@@ -5,7 +5,7 @@ title: 沙盒API快速入门
 topic-legacy: developer guide
 description: 沙盒API允许开发人员以编程方式管理Adobe Experience Platform中的沙箱。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 1ae27f30-2f89-4bfa-887d-a5def17b5cbc
-source-git-commit: d38df5ede84c1306a76fd1ec83d9d0a540b0d01c
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '376'
 ht-degree: 5%
@@ -32,7 +32,7 @@ Adobe Experience Platform中的沙箱提供了独立的开发环境，允许您�
 
 * 授权：持有者 `{ACCESS_TOKEN}`
 * x-api-key: `{API_KEY}`
-* x-gw-ims-org-id: `{IMS_ORG}`
+* x-gw-ims-org-id: `{ORG_ID}`
 
 除了身份验证标头之外，所有请求都需要一个标头来指定操作将在其中执行的沙盒名称：
 

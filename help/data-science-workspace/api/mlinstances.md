@@ -1,12 +1,11 @@
 ---
-keywords: Experience Platform；开发人员指南；端点；数据科学工作区；热门主题；实例；sensei机器学习api
+keywords: Experience Platform；开发人员指南；端点；Data Science Workspace；热门主题；实例；敏感的机器学习api
 solution: Experience Platform
 title: MLInstances API端点
 topic-legacy: Developer guide
-description: MLInstance是现有引擎与一组适当配置的配对，这些配置定义任何培训参数、评分参数或硬件资源配置。
+description: MLInstance是现有引擎与一组适当的配置的配对，这些配置定义任何培训参数、评分参数或硬件资源配置。
 exl-id: e78cda69-1ff9-47ce-b25d-915de4633e11
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '619'
 ht-degree: 4%
@@ -15,13 +14,13 @@ ht-degree: 4%
 
 # MLInstances端点
 
-MLInstance是现有[Engine](./engines.md)与定义任何培训参数、评分参数或硬件资源配置的适当配置集的配对。
+MLInstance是现有 [引擎](./engines.md) 使用一组适当的配置来定义任何培训参数、评分参数或硬件资源配置。
 
 ## 创建MLInstance {#create-an-mlinstance}
 
-您可以通过执行POST请求来创建MLInstance，同时提供由有效的引擎ID(`{ENGINE_ID}`)和一组适当的默认配置组成的请求有效负荷。
+您可以通过执行POST请求来创建MLInstance，同时提供由有效引擎ID(`{ENGINE_ID}`)和一组适当的默认配置。
 
-如果引擎ID引用了PySpark或Spark引擎，则您可以配置计算资源量，如内核数或内存量。 如果引用了Python引擎，则您可以选择使用CPU或GPU进行培训和评分。 有关详细信息，请参阅[PySpark和Spark资源配置](./appendix.md#resource-config)和[Python CPU和GPU配置](./appendix.md#cpu-gpu-config)的附录部分。
+如果引擎ID引用PySpark或Spark引擎，则您可以配置计算资源量，如内核数或内存量。 如果引用了Python引擎，则可以选择使用CPU或GPU进行培训和评分。 请参阅 [PySpark和Spark资源配置](./appendix.md#resource-config) 和 [Python CPU和GPU配置](./appendix.md#cpu-gpu-config) 以了解更多信息。
 
 **API格式**
 
@@ -36,7 +35,7 @@ curl -X POST \
     https://platform.adobe.io/data/sensei/mlInstances \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
     -H 'content-type: application/vnd.adobe.platform.sensei+json;profile=mlInstance.v1.json' \
     -d '{
@@ -77,14 +76,14 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `name` | MLInstance的所需名称。 与此MLInstance对应的Model将继承此值，以在UI中作为Model的名称显示。 |
-| `description` | MLInstance的可选描述。 与此MLInstance对应的Model将继承此值，以在UI中作为Model的描述显示。 此属性是必需的。如果不想提供说明，请将其值设置为空字符串。 |
+| `name` | MLInstance的所需名称。 与此MLInstance对应的模型将继承此值，该值将作为模型的名称显示在UI中。 |
+| `description` | MLInstance的可选描述。 与此MLInstance对应的模型将继承此值，该值将在UI中显示为模型的描述。 此属性是必需的。如果不想提供描述，请将其值设置为空字符串。 |
 | `engineId` | 现有引擎的ID。 |
-| `tasks` | 用于培训、评分或功能管道的一组配置。 |
+| `tasks` | 一组用于培训、评分或功能管道的配置。 |
 
 **响应**
 
-成功的响应返回包含新创建的MLInstance的详细信息(包括其唯一标识符(`id`))的有效负荷。
+成功的响应会返回一个有效负载，其中包含新创建的MLInstance的详细信息，包括其唯一标识符(`id`)。
 
 ```json
 {
@@ -129,9 +128,9 @@ curl -X POST \
 }
 ```
 
-## 检索MLInstance的列表
+## 检索MLInstances列表
 
-您可以通过执行单个列表请求来检索MLInstancesGET。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅[资产检索查询参数](./appendix.md#query)的附录部分。
+您可以通过执行单个GET请求来检索MLInstances列表。 要帮助筛选结果，您可以在请求路径中指定查询参数。 有关可用查询的列表，请参阅 [资产检索查询参数](./appendix.md#query).
 
 **API格式**
 
@@ -143,8 +142,8 @@ GET /mlInstances?{QUERY_PARAMETER_1}={VALUE_1}&{QUERY_PARAMETER_2}={VALUE_2}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUERY_PARAMETER}` | 用于筛选结果的[可用查询参数](./appendix.md#query)之一。 |
-| `{VALUE}` | 前一个查询参数的值。 |
+| `{QUERY_PARAMETER}` | 其中一个 [可用查询参数](./appendix.md#query) 用于筛选结果。 |
+| `{VALUE}` | 前一查询参数的值。 |
 
 **请求**
 
@@ -153,13 +152,13 @@ curl -X GET \
     https://platform.adobe.io/data/sensei/mlInstances \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-成功的响应会返回MLInstances的列表及其详细信息。
+成功的响应会返回MLInstances列表及其详细信息。
 
 ```json
 {
@@ -218,7 +217,7 @@ curl -X GET \
     https://platform.adobe.io/data/sensei/mlInstances/46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -272,13 +271,13 @@ curl -X GET \
 
 ## 更新MLInstance
 
-您可以通过PUT请求覆盖现有MLInstance的属性，该请求在请求路径中包含目标 MLInstance的ID并提供包含已更新属性的JSON有效负荷。
+您可以通过PUT请求覆盖现有MLInstance的属性来更新现有MLInstance，该请求在请求路径中包含目标MLInstance的ID，并提供包含已更新属性的JSON有效负载。
 
 >[!TIP]
 >
->为确保此PUT请求成功，建议您首先通过ID](#retrieve-specific)执行GET请求以检索MLInstance。 [然后，修改并更新返回的JSON对象，并应用修改后的JSON对象的整个作为PUT请求的有效负荷。
+>为确保此PUT请求成功，建议您首先执行GET请求， [通过ID检索MLInstance](#retrieve-specific). 然后，修改并更新返回的JSON对象，并将修改的JSON对象的整个作为PUT请求的有效负载应用。
 
-以下示例API调用将在最初具有这些属性时更新MLInstance的培训和评分参数：
+以下示例API调用将在最初具有这些属性的同时更新MLInstance的培训和评分参数：
 
 ```json
 {
@@ -330,7 +329,7 @@ curl -X PUT \
     https://platform.adobe.io/data/sensei/mlInstances/46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}' \
     -H 'content-type: application/vnd.adobe.platform.sensei+json;profile=mlInstance.v1.json' \
     -d '{
@@ -367,7 +366,7 @@ curl -X PUT \
 
 **响应**
 
-成功的响应返回包含MLInstance的更新详细信息的有效负荷。
+成功的响应会返回包含MLInstance更新详细信息的有效负载。
 
 ```json
 {
@@ -406,7 +405,7 @@ curl -X PUT \
 
 ## 按引擎ID删除MLInstances
 
-您可以通过执行包含引擎ID作为DELETE参数的查询请求来删除共享同一引擎的所有MLInstance。
+您可以通过执行包含引擎ID作为查询参数的DELETE请求，删除共享同一引擎的所有MLInstance。
 
 **API格式**
 
@@ -425,7 +424,7 @@ curl -X DELETE \
     https://platform.adobe.io/data/sensei/mlInstances?engineId=22f4166f-85ba-4130-a995-a2b8e1edde32 \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -441,7 +440,7 @@ curl -X DELETE \
 
 ## 删除MLInstance
 
-您可以通过执行在请求路径中包含DELETEMLInstance ID的目标请求来删除单个MLInstance。
+您可以通过执行DELETE请求来删除单个MLInstance，该请求在请求路径中包含目标MLInstance的ID。
 
 **API格式**
 
@@ -460,7 +459,7 @@ curl -X DELETE \
     https://platform.adobe.io/data/sensei/mlInstances/46986c8f-7739-4376-8509-0178bdf32cda \
     -H 'Authorization: Bearer {ACCESS_TOKEN}' \
     -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {IMS_ORG}' \
+    -H 'x-gw-ims-org-id: {ORG_ID}' \
     -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 

@@ -3,7 +3,7 @@ title: Privacy ServiceAPI快速入门
 description: 了解如何对Privacy ServiceAPI进行身份验证，以及如何解释文档中的示例API调用。
 topic-legacy: developer guide
 exl-id: c1d05e30-ef8f-4adf-87e0-1d6e3e9e9f9e
-source-git-commit: 6dcbf2df46ba35104abd9c4e6412799e77c9c49f
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '669'
 ht-degree: 0%
@@ -26,29 +26,29 @@ ht-degree: 0%
 
 * `Authorization: Bearer {ACCESS_TOKEN}`
 * `x-api-key: {API_KEY}`
-* `x-gw-ims-org-id: {IMS_ORG}`
+* `x-gw-ims-org-id: {ORG_ID}`
 
-这包括在Adobe Admin Console中获取Adobe Experience Platform的开发人员权限，然后在Adobe开发人员控制台中生成凭据。
+这包括在Adobe Admin Console中获取Adobe Experience Platform的开发人员权限，然后在Adobe Developer控制台中生成凭据。
 
 ### 获取开发人员访问Experience Platform
 
-要获取开发人员访问 [!DNL Platform]，请按照 [Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 进入“在Adobe开发人员控制台中生成访问凭据”步骤后，请返回本教程以生成特定于Privacy Service的凭据。
+要获取开发人员访问 [!DNL Platform]，请按照 [Experience Platform身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 进入“在Adobe Developer控制台中生成访问凭据”步骤后，请返回本教程以生成特定于Privacy Service的凭据。
 
 ### 生成访问凭据
 
-使用Adobe开发人员控制台，您必须生成以下三个访问凭据：
+使用Adobe Developer控制台，您必须生成以下三个访问凭据：
 
-* `{IMS_ORG}`
+* `{ORG_ID}`
 * `{API_KEY}`
 * `{ACCESS_TOKEN}`
 
-您的 `{IMS_ORG}` 和 `{API_KEY}` 只需生成一次，便可在将来的API调用中重复使用。 但是，您的 `{ACCESS_TOKEN}` 是临时的，必须每24小时重新生一次。
+您的 `{ORG_ID}` 和 `{API_KEY}` 只需生成一次，便可在将来的API调用中重复使用。 但是，您的 `{ACCESS_TOKEN}` 是临时的，必须每24小时重新生一次。
 
 有关生成这些值的步骤，请参见下文。
 
 #### 一次性设置
 
-转到 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) 中的Adobe开发人员控制台文档。
+转到 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui) 然后使用您的Adobe ID登录。 接下来，按照 [创建空项目](https://www.adobe.io/apis/experienceplatform/console/docs.html#!AdobeDocs/adobeio-console/master/projects-empty.md) (在Adobe Developer控制台文档中)。
 
 创建新项目后，选择 **[!UICONTROL 添加API]** 在 **[!UICONTROL 项目概述]** 屏幕。
 
@@ -62,20 +62,20 @@ ht-degree: 0%
 
 ![](../images/api/getting-started/generate-key-pair.png)
 
-密钥对将自动生成，并将包含私钥和公共证书的ZIP文件下载到本地计算机（将在稍后的步骤中使用）。 选择 **[!UICONTROL 保存配置的API]** 以完成配置。
+密钥对将自动生成，并将包含私钥和公共证书的ZIP文件下载到本地计算机（将在后续步骤中使用）。 选择 **[!UICONTROL 保存配置的API]** 以完成配置。
 
 ![](../images/api/getting-started/key-pair-generated.png)
 
 将API添加到项目后，项目页面会重新显示在 **Privacy ServiceAPI概述** 页面。 从此处，向下滚动到 **[!UICONTROL 服务帐户(JWT)]** 部分，该部分提供了所有Privacy ServiceAPI调用中所需的以下访问凭据：
 
 * **[!UICONTROL 客户端ID]**:客户ID是必需的 `{API_KEY}` ，则必须在x-api-key标头中提供。
-* **[!UICONTROL 组织ID]**:组织ID是 `{IMS_ORG}` 必须在x-gw-ims-org-id标头中使用的值。
+* **[!UICONTROL 组织ID]**:组织ID是 `{ORG_ID}` 必须在x-gw-ims-org-id标头中使用的值。
 
 ![](../images/api/getting-started/jwt-credentials.png)
 
 #### 每个会话的身份验证
 
-您必须收集的最终所需凭据是 `{ACCESS_TOKEN}`，用于授权标头。 与 `{API_KEY}` 和 `{IMS_ORG}`，则必须每24小时生成一个新令牌，才能继续使用 [!DNL Platform] API。
+您必须收集的最终所需凭据是 `{ACCESS_TOKEN}`，用于授权标头。 与 `{API_KEY}` 和 `{ORG_ID}`，则必须每24小时生成一个新令牌，才能继续使用 [!DNL Platform] API。
 
 生成新 `{ACCESS_TOKEN}`，打开之前下载的私钥并将其内容粘贴到旁边的文本框中 **[!UICONTROL 生成访问令牌]** 选择 **[!UICONTROL 生成令牌]**.
 

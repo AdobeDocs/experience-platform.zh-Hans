@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程为您提供所有其他Adobe Experience Platform Data Science Workspace教程所需的先决条件和资产。 完成后，您和IMS组织成员将可以使用零售销售架构和数据集进行Experience Platform。
 exl-id: 1b868c8c-7c92-4f99-8486-54fd7aa1af48
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 1%
@@ -25,7 +25,7 @@ ht-degree: 1%
 - 授权 [!DNL Experience Platform] API调用。 完成 [验证和访问Adobe Experience Platform API](https://www.adobe.com/go/platform-api-authentication-en) 教程以获取以下值以成功完成本教程：
    - Authorization: `{ACCESS_TOKEN}`
    - x-api-key: `{API_KEY}`
-   - x-gw-ims-org-id: `{IMS_ORG}`
+   - x-gw-ims-org-id: `{ORG_ID}`
    - 客户端密钥： `{CLIENT_SECRET}`
    - 客户端证书： `{PRIVATE_KEY}`
 - 示例数据和源文件 [零售销售方法](../pre-built-recipes/retail-sales.md). 下载此资产和其他资产所需的资产 [!DNL Data Science Workspace] 教程 [Adobe公共Git存储库](https://github.com/adobe/experience-platform-dsw-reference/).
@@ -50,7 +50,7 @@ ht-degree: 1%
    ```yaml
    Enterprise:
        api_key: {API_KEY}
-       org_id: {IMS_ORG}
+       org_id: {ORG_ID}
        tech_acct: {technical_account_id}
        client_secret: {CLIENT_SECRET}
        priv_key_filename: {PRIVATE_KEY}

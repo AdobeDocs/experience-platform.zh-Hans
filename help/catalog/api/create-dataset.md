@@ -5,7 +5,7 @@ title: 在API中创建数据集
 topic-legacy: developer guide
 description: 本文档介绍如何在目录服务API中创建数据集对象。
 exl-id: f3e5de7f-1781-4898-ac42-063eb51e661a
-source-git-commit: 75426b1ddc16af39eb6c423027fac7d4d0e21c6a
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '253'
 ht-degree: 1%
@@ -36,7 +36,7 @@ curl -X POST \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
     "name":"LoyaltyMembersDataset",

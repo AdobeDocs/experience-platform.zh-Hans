@@ -5,7 +5,7 @@ title: Data Access API指南
 topic-legacy: developer guide
 description: 数据访问API通过为开发人员提供RESTful接口来支持Adobe Experience Platform ，该接口重点关注Experience Platform中已摄取数据集的可发现性和可访问性。
 exl-id: 278ec322-dafa-4e3f-ae45-2d20459c5653
-source-git-commit: 5160bc8057a7f71e6b0f7f2d594ba414bae9d8f6
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '524'
 ht-degree: 4%
@@ -14,13 +14,13 @@ ht-degree: 4%
 
 # Data Access API指南
 
-数据访问API通过为用户提供一个RESTful接口来支持Adobe Experience Platform ，该接口重点关注[!DNL Experience Platform]内摄取的数据集的可发现性和可访问性。
+数据访问API通过为用户提供一个RESTful界面来支持Adobe Experience Platform ，该界面重点关注内摄取数据集的可发现性和可访问性 [!DNL Experience Platform].
 
 ![Experience Platform时的数据访问](images/Data_Access_Experience_Platform.png)
 
 ## API规范参考
 
-Swagger API引用文档可在[此处](https://www.adobe.io/experience-platform-apis/references/data-access/)找到。
+可以找到Swagger API引用文档 [此处](https://www.adobe.io/experience-platform-apis/references/data-access/).
 
 ## 术语
 
@@ -51,7 +51,7 @@ GET /batches/{BATCH_ID}/files
 curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/files \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -94,7 +94,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 }
 ```
 
-`"data"`数组包含指定批处理中所有文件的列表。 返回的每个文件都有其自己唯一的ID(`{FILE_ID}`)，它包含在`"dataSetFileId"`字段中。 然后，可以使用此唯一ID访问或下载文件。
+的 `"data"` 数组包含指定批处理中所有文件的列表。 返回的每个文件都有其自己的唯一ID(`{FILE_ID}`) `"dataSetFileId"` 字段。 然后，可以使用此唯一ID访问或下载文件。
 
 | 属性 | 描述 |
 | -------- | ----------- |
@@ -103,7 +103,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/batches/{BATCH_ID}/
 
 ## 批量访问和下载文件
 
-通过使用文件标识符(`{FILE_ID}`)，数据访问API可用于访问文件的特定详细信息，包括其名称、大小（以字节为单位）以及要下载的链接。
+使用文件标识符(`{FILE_ID}`)，则数据访问API可用于访问文件的特定详细信息，包括其名称、大小（以字节为单位）以及要下载的链接。
 
 响应将包含一个数据数组。 根据ID所指向的文件是单个文件还是目录，返回的数据数组可能包含一个条目或属于该目录的文件列表。 每个文件元素都将包含文件的详细信息。
 
@@ -115,7 +115,7 @@ GET /files/{FILE_ID}
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{FILE_ID}` | 等于`"dataSetFileId"`，要访问的文件的ID。 |
+| `{FILE_ID}` | 等于 `"dataSetFileId"`，要访问的文件的ID。 |
 
 **请求**
 
@@ -123,7 +123,7 @@ GET /files/{FILE_ID}
 curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -203,7 +203,7 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID} \
 
 ## 访问文件的内容
 
-[!DNL Data Access] API还可用于访问文件的内容。 然后，可以使用此插件将内容下载到外部源。
+的 [!DNL Data Access] API还可用于访问文件的内容。 然后，可以使用此插件将内容下载到外部源。
 
 **API格式**
 
@@ -221,7 +221,7 @@ GET /files/{dataSetFileId}?path={FILE_NAME}
 curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?path={FILE_NAME} \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -236,8 +236,8 @@ curl -X GET https://platform.adobe.io/data/foundation/export/files/{FILE_ID}?pat
 
 ## 其他代码示例
 
-有关其他示例，请参阅[数据访问教程](tutorials/dataset-data.md)。
+有关其他示例，请参阅 [数据访问教程](tutorials/dataset-data.md).
 
 ## 订阅数据摄取事件
 
-[!DNL Platform] 可通过Adobe开发人员控制台 [提供特定的高价值](https://www.adobe.com/go/devs_console_ui)事件供订阅。例如，您可以订阅数据摄取事件，以接收有关潜在延迟和失败的通知。 有关更多信息，请参阅[订阅数据摄取通知](../ingestion/quality/subscribe-events.md)的教程。
+[!DNL Platform] 通过 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui). 例如，您可以订阅数据摄取事件，以接收有关潜在延迟和失败的通知。 请参阅 [订阅数据摄取通知](../ingestion/quality/subscribe-events.md) 以了解更多信息。

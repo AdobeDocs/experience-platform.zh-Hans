@@ -5,7 +5,7 @@ title: 开始使用Adobe Experience Platform API
 topic-legacy: api guide
 description: Adobe Experience Platform提供彼此紧密关联的API服务。 本指南包含有关可用服务、CRUD操作所需标头、错误消息、Postman集合和示例API调用的信息。
 exl-id: a362bcb4-a908-43a8-abd3-0e1d21cb9117
-source-git-commit: e62e4e3a12ad2a85de5b10c60fde3618cde84c4b
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1379'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Adobe Experience Platform是按照“API优先”的理念开发的。 使用Pla
 
 - `Authorization: Bearer {ACCESS_TOKEN}`
 - `x-api-key: {API_KEY}`
-- `x-gw-ims-org-id: {IMS_ORG}`
+- `x-gw-ims-org-id: {ORG_ID}`
 
 ### 沙盒标头
 
@@ -44,9 +44,9 @@ Adobe Experience Platform API使用了一些对于有效管理平台资源非常
 
 要详细了解Platform利用的基础API技术（包括示例JSON模式对象），请访问 [Experience PlatformAPI基础知识](api-fundamentals.md) 的双曲余切值。
 
-## 用于Experience PlatformAPI的Postman集合
+## PostmanExperience PlatformAPI的收藏集
 
-Postman是一个API开发协作平台，它允许您使用预设变量设置环境、共享API收藏集、简化CRUD请求等。 大多数Platform API服务都具有Postman集合，可用于协助进行API调用。
+Postman是一个API开发协作平台，它允许您使用预设变量设置环境、共享API收藏集、简化CRUD请求等。 大多数Platform API服务都有Postman集合，可用于协助进行API调用。
 
 要详细了解Postman，包括如何设置环境、可用收藏集列表以及如何导入收藏集，请访问 [Platform Postman文档](postman.md).
 
@@ -80,7 +80,7 @@ curl -X GET \
   -H 'Accept: application/vnd.adobe.xed-id+json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
@@ -140,8 +140,8 @@ curl -X GET \
 
 ## 后续步骤
 
-本文档介绍了所需的标头、可用指南，并提供了一个示例API调用。 现在，您已拥有在Adobe Experience Platform上进行API调用所需的标头值，请选择您希望从 [平台API指南表](#api-guides).
+本文档介绍了所需的标头、可用指南，并提供了一个示例API调用。 现在，您已拥有在Adobe Experience Platform上进行API调用所需的标头值，接下来请选择您希望从 [平台API指南表](#api-guides).
 
 有关常见问题解答的解答，请参阅 [平台疑难解答指南](troubleshooting.md).
 
-要设置Postman环境并探索可用的Postman收藏集，请参阅 [Platform Postman指南](postman.md).
+要设置Postman环境并浏览可用的Postman收藏集，请参阅 [Platform Postman指南](postman.md).

@@ -5,7 +5,7 @@ title: B2B命名空间和架构
 topic-legacy: overview
 description: 本文档概述创建B2B源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: 8718512a9768158183b9fb6b9e336081e47cd889
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '1688'
 ht-degree: 4%
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 # B2B命名空间和架构
 
-本文档提供了有关命名空间和架构的基础设置信息，这些命名空间和架构将与B2B源一起使用。 本文档还提供有关设置生成B2B命名空间和架构所需的Postman自动化实用程序的详细信息。
+本文档提供了有关命名空间和架构的基础设置信息，这些命名空间和架构将与B2B源一起使用。 本文档还提供了有关设置生成B2B命名空间和模式所需的Postman自动化实用程序的详细信息。
 
 >[!IMPORTANT]
 >
@@ -44,7 +44,7 @@ ht-degree: 4%
 | `PRIVATE_KEY` | 用于验证您的 [!DNL Postman] 实例Experience PlatformAPI。 请参阅有关设置开发人员控制台的教程和 [设置开发人员控制台和 [!DNL Postman]](../../../../landing/postman.md) 有关如何检索{PRIVATE_KEY}的说明。 | `{PRIVATE_KEY}` |
 | `TECHNICAL_ACCOUNT_ID` | 用于集成以Adobe I/O的凭据。 | `D42AEVJZTTJC6LZADUBVPA15@techacct.adobe.com` |
 | `IMS` | Identity Management系统(IMS)为Adobe服务提供了身份验证框架。 关于 [!DNL Marketo]，此值已修复，且始终设置为： `ims-na1.adobelogin.com`. | `ims-na1.adobelogin.com` |
-| `IMS_ORG` | 拥有或许可产品和服务并允许其成员访问的公司实体。 请参阅 [设置开发人员控制台和 [!DNL Postman]](../../../../landing/postman.md) 有关如何检索 `{IMS_ORG}` 信息。 | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
+| `IMS_ORG` | 拥有或许可产品和服务并允许其成员访问的公司实体。 请参阅 [设置开发人员控制台和 [!DNL Postman]](../../../../landing/postman.md) 有关如何检索 `{ORG_ID}` 信息。 | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
 | `SANDBOX_NAME` | 您使用的虚拟沙盒分区的名称。 | `prod` |
 | `TENANT_ID` | 用于确保您创建的资源命名正确且包含在IMS组织中的ID。 | `b2bcdpproductiontest` |
 | `PLATFORM_URL` | 您对进行API调用的URL端点。 此值是固定的，始终设置为： `http://platform.adobe.io/`. | `http://platform.adobe.io/` |

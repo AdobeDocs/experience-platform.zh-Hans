@@ -1,11 +1,10 @@
 ---
-keywords: Experience Platform；主页；热门主题；数据准备；api指南；示例数据；
+keywords: Experience Platform；主页；热门主题；数据准备；API指南；示例数据；
 solution: Experience Platform
 title: 示例数据API端点
 topic-legacy: sample data
 description: '您可以使用Adobe Experience Platform API中的“/samples”端点以编程方式检索、创建、更新和验证映射示例数据。 '
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
 workflow-type: tm+mt
 source-wordcount: '401'
 ht-degree: 4%
@@ -15,15 +14,15 @@ ht-degree: 4%
 
 # 示例数据端点
 
-为映射集创建模式时，可以使用示例数据。 可以使用数据准备API中的`/samples`端点以编程方式检索、创建和更新示例数据。
+在为映射集创建架构时，可以使用示例数据。 您可以使用 `/samples` 数据准备API中的端点，以编程方式检索、创建和更新示例数据。
 
-## 列表样本数据
+## 列出示例数据
 
-通过向`/samples`端点发出列表请求，可以检索IMS组织的所有映射示例GET。
+您可以通过向 `/samples` 端点。
 
 **API格式**
 
-`/samples`端点支持多个查询参数，以帮助筛选结果。 当前，您必须在请求中包含`start`和`limit`参数。
+的 `/samples` 端点支持多个查询参数来帮助筛选结果。 目前，您必须同时包含 `start` 和 `limit` 参数。
 
 ```http
 GET /samples?limit={LIMIT}&start={START}
@@ -31,24 +30,24 @@ GET /samples?limit={LIMIT}&start={START}
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{LIMIT}` | **必需**. 指定返回的映射示例数据数。 |
-| `{START}` | **必需**. 指定结果页的偏移。 要获取结果的第一页，请将值设置为`start=0`。 |
+| `{LIMIT}` | **必需**. 指定返回的映射示例数据的数量。 |
+| `{START}` | **必需**. 指定结果页的偏移。 要获取结果的第一页，请将值设置为 `start=0`. |
 
 **请求**
 
-以下请求将在您的IMS组织内检索最后两个映射示例数据。
+以下请求将检索IMS组织内的最后两个映射示例数据。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/foundation/conversion/samples?limit=2&start=0 \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关映射示例数据的最后两个对象的信息。
+成功响应会返回HTTP状态200，其中包含有关映射示例数据的最后两个对象的信息。
 
 ```json
 {
@@ -88,7 +87,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/samples?limit=2
 
 ## 创建示例数据
 
-可以通过向`/samples`端点发出POST请求来创建示例数据。
+您可以通过向 `/samples` 端点。
 
 ```http
 POST /samples
@@ -101,7 +100,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: application/json' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '
   {
@@ -112,7 +111,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关新创建的示例数据的信息。
+成功响应会返回HTTP状态200，其中包含有关新创建的示例数据的信息。
 
 ```json
 {
@@ -129,7 +128,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
 
 ## 通过上传文件创建示例数据
 
-可以通过向`/samples/upload`端点发出POST请求，使用文件创建示例数据。
+您可以通过向 `/samples/upload` 端点。
 
 **API格式**
 
@@ -144,14 +143,14 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'Content-Type: multipart/form-data' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -F 'file=@{PATH_TO_FILE}.json'
 ```
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关新创建的示例数据的信息。
+成功响应会返回HTTP状态200，其中包含有关新创建的示例数据的信息。
 
 ```json
 {
@@ -168,7 +167,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/samples \
 
 ## 查找特定的示例数据对象
 
-通过在向`/samples`端点的GET请求路径中提供示例数据的特定对象ID，可以查找该对象。
+您可以查找示例数据的特定对象，方法是在向提供GET请求的路径中提供其ID `/samples` 端点。
 
 **API格式**
 
@@ -186,13 +185,13 @@ GET /samples/{SAMPLE_ID}
 curl -X GET https://platform.adobe.io/data/foundation/conversion/samples/1fc0b6c20bae49d8ab33209ed126bdcd \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}'
 ```
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含要检索的示例数据对象的信息。
+成功响应会返回HTTP状态200，其中包含要检索的示例数据对象的信息。
 
 ```json
 {
@@ -209,7 +208,7 @@ curl -X GET https://platform.adobe.io/data/foundation/conversion/samples/1fc0b6c
 
 ## 更新示例数据
 
-可以通过在`/samples`端点的PUT请求路径中提供特定示例数据对象的ID来更新该对象。
+您可以通过在向提供PUT请求的路径中提供特定示例数据对象的ID，来更新特定示例数据对象 `/samples` 端点。
 
 **API格式**
 
@@ -223,13 +222,13 @@ PUT /samples/{SAMPLE_ID}
 
 **请求**
 
-以下请求更新指定的示例数据。 具体而言，它将姓从“Smith”更新为“Lee”。
+以下请求会更新指定的示例数据。 具体而言，它将姓氏从“Smith”更新为“Lee”。
 
 ```shell
 curl -X PUT https://platform.adobe.io/data/foundation/conversion/samples/1fc0b6c20bae49d8ab33209ed126bdcd \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
-  -H 'x-gw-ims-org-id: {IMS_ORG}' \ 
+  -H 'x-gw-ims-org-id: {ORG_ID}' \ 
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '
   {
@@ -240,7 +239,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/conversion/samples/1fc0b6c
 
 **响应**
 
-成功的响应返回HTTP状态200，其中包含有关更新的示例数据的信息。
+成功响应会返回HTTP状态200，其中包含有关更新的示例数据的信息。
 
 ```json
 {
