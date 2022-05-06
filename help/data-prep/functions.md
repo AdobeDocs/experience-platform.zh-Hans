@@ -5,7 +5,7 @@ title: 数据准备映射函数
 topic-legacy: overview
 description: 本文档介绍了数据准备中使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 5b40476051ceb20cd4d43f6a49b0ee984c17abc3
+source-git-commit: 14c7c3bd0bda0ab56767b9c0f5470090cf2bdb15
 workflow-type: tm+mt
 source-wordcount: '4164'
 ht-degree: 3%
@@ -136,7 +136,6 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 
 | 函数 | 描述 | 参数 | 语法 | 表达式 | 示例输出 |
 | -------- | ----------- | ---------- | -------| ---------- | ------------- |
-| size_of | 返回输入的大小。 | <ul><li>输入： **必需** 您尝试查找的对象大小。</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 | is_empty | 检查对象是否为空。 | <ul><li>输入： **必需** 您尝试检查的对象为空。</li></ul> | is_empty(INPUT) | `is_empty([1, 2, 3])` | false |
 | arrays_to_object | 创建对象列表。 | <ul><li>输入： **必需** 键和数组对的组。</li></ul> | arrays_to_object(INPUT) | 需要示例 | 需要示例 |
 | to_object | 根据给定的平面键/值对创建对象。 | <ul><li>输入： **必需** 键/值对的平面列表。</li></ul> | to_object(INPUT) | to_object(&#x200B;&quot;firstName&quot;, &quot;John&quot;, &quot;lastName&quot;, &quot;Doe&quot;) | `{"firstName": "John", "lastName": "Doe"}` |
@@ -164,6 +163,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | add_to_array | 向数组的末尾添加元素。 | <ul><li>阵列： **必需** 要向其添加元素的数组。</li><li>值：要附加到数组的元素。</li></ul> | add_to_array(&#x200B;ARRAY， VALUES) | add_to_array&#x200B;([“a”、“b”], &#39;c&#39;, &#39;d&#39;) | [“a”、“b”、“c”、“d”] |
 | join_arrays | 将数组相互组合。 | <ul><li>阵列： **必需** 要向其添加元素的数组。</li><li>值：要附加到父数组的数组。</li></ul> | join_arrays(&#x200B;ARRAY， VALUES) | join_arrays&#x200B;([“a”、“b”], [“c”], [“d”，“e”]) | [“a”、“b”、“c”、“d”、“e”] |
 | to_array | 获取输入列表并将其转换为数组。 | <ul><li>INCLUDE_NULLS: **必需** 一个布尔值，用于指示是否在响应数组中包含空值。</li><li>值： **必需** 要转换为数组的元素。</li></ul> | to_array(&#x200B;INCLUDE_NULLS， VALUES) | to_array(false， 1, null， 2, 3) | `[1, 2, 3]` |
+| size_of | 返回输入的大小。 | <ul><li>输入： **必需** 您尝试查找的对象大小。</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
 
 {style=&quot;table-layout:auto&quot;}
 
