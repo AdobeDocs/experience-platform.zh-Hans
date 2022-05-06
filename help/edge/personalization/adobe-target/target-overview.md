@@ -3,7 +3,7 @@ title: 将Adobe Target与Platform Web SDK结合使用
 description: 了解如何使用Experience PlatformWeb SDK渲染个性化内容(使用Adobe Target)
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；系统图；图
 exl-id: 021171ab-0490-4b27-b350-c37d2a569245
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: cdcbfdec6a232495aacaf9066d880bc9a10455d1
 workflow-type: tm+mt
 source-wordcount: '1273'
 ht-degree: 5%
@@ -88,7 +88,7 @@ ht-degree: 5%
 
 响应令牌主要用于将元数据发送到Google、Facebook等第三方。 在 `meta` 字段 `propositions` -> `items`. 以下是一个示例：
 
-```
+```json
 {
   "id": "AT:eyJhY3Rpdml0eUlkIjoiMTI2NzM2IiwiZXhwZXJpZW5jZUlkIjoiMCJ9",
   "scope": "__view__",
@@ -112,7 +112,7 @@ ht-degree: 5%
 要收集响应令牌，您必须订阅 `alloy.sendEvent` 承诺，迭代 `propositions`
 并从 `items` -> `meta`. 每 `proposition` 具有 `renderAttempted` 布尔字段，指示是否 `proposition` 是否呈现。 请参阅以下示例：
 
-```
+```js
 alloy("sendEvent",
   {
     renderDecisions: true,
@@ -183,7 +183,7 @@ alloy("sendEvent",
 
 **`sendEvent`使用用户档案数据**
 
-```
+```js
 alloy("sendEvent", {
    renderDecisions: true|false,
    xdm: { // Experience Event XDM data },
@@ -193,7 +193,7 @@ alloy("sendEvent", {
 
 **如何将用户档案属性发送到Adobe Target:**
 
-```
+```js
 alloy("sendEvent", {
   renderDecisions: true,
   data: {
@@ -232,7 +232,7 @@ alloy("sendEvent", {
 
 **如何将Recommendations属性发送到Adobe Target:**
 
-```
+```js
 alloy("sendEvent", {
   renderDecisions: true,
   data: {
