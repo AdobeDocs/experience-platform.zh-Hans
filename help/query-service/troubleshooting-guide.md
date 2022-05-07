@@ -5,7 +5,7 @@ title: 查询服务疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档包含有关您遇到的常见错误代码以及可能原因的信息。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: aa61cb696d647c5f039283ce5926d5fa1e901a13
+source-git-commit: 31a95a107b4d1c7aef87455833d6d4dc2a5a360d
 workflow-type: tm+mt
 source-wordcount: '3516'
 ht-degree: 1%
@@ -442,7 +442,7 @@ WHERE T2.ID IS NULL
 
 本节提供有关导出数据和限制的信息。
 
-### 是否在查询处理后从查询服务中提取数据，并将结果保存为CSV文件？
+### 是否在查询处理后从查询服务中提取数据，并将结果保存为CSV文件？ {#export-csv}
 
 +++回答是。 可以从查询服务中提取数据，还可以选择通过SQL命令以CSV格式存储结果。
 

@@ -5,7 +5,7 @@ title: 查询服务概述
 topic-legacy: overview
 description: 本文档概述了查询服务在Experience Platform中的角色。
 exl-id: fdaefc12-a97d-4e4e-9aed-d3dbd0f43ea0
-source-git-commit: 36710ced69cc951c27869e5491344a5f38935324
+source-git-commit: 796460be52b465216cdc69d45aa38ac80aa3516d
 workflow-type: tm+mt
 source-wordcount: '722'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 允许用户将其客户�
 
 ### Adobe Analytics浏览放弃
 
-此 [浏览放弃示例以使用Adobe为中心 [!DNL Analytics]](./get-started/use-case.md) 创建特定可操作受众的数据。 [!DNL Query Service] 可采用复杂的分段逻辑来计算各种用于下游的个性化属性，或大大简化区段构建的方式。
+此 [浏览放弃示例以使用Adobe为中心 [!DNL Analytics]](./use-cases/abandoned-cart.md) 创建特定可操作受众的数据。 [!DNL Query Service] 可采用复杂的分段逻辑来计算各种用于下游的个性化属性，或大大简化区段构建的方式。
 
 ### 加载器BI功能板
 
