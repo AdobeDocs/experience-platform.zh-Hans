@@ -1,11 +1,11 @@
 ---
 title: 审核日志概述
-description: 了解审核日志如何让您了解谁在Adobe Experience Platform中执行了哪些操作。
+description: 了解您如何借助审核日志看到谁在 Adobe Experience Platform 中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: d726576a4d1f29d83f3b7cf72c9f5c5d4ff114d3
+source-git-commit: ba190bdd1856b2d89fa28679eb7f09c258ddd17c
 workflow-type: tm+mt
-source-wordcount: '757'
-ht-degree: 7%
+source-wordcount: '767'
+ht-degree: 10%
 
 ---
 
@@ -35,6 +35,8 @@ ht-degree: 7%
 | [计算属性](../../../profile/computed-attributes/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
 | [产品配置文件](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
 | [帐户(Adobe)](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [查询模板](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [计划查询](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
 
 ## 访问审核日志
 
