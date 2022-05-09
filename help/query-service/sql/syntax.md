@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: a5391c1ccc24845673217e15bafd1a1df33cbc18
+source-git-commit: 25953a5a1f5b32de7d150dbef700ad06ce6014df
 workflow-type: tm+mt
-source-wordcount: '2741'
+source-wordcount: '2747'
 ht-degree: 2%
 
 ---
@@ -459,7 +459,12 @@ select inline(productListItems) from source_dataset limit 10;
 
 从 `source_dataset` 用于填充target表。
 
-| SKU |体验(_experience) |数量 | priceTotal | |—+—+—| | product-id-1 |(&quot;(&quot;(&quot;(A，pass，B，NULL)&quot;)&quot;) | 5 | 10.5 | | product-id-5 |(&quot;(&quot;(&quot;(A， pass， B，NULL)&quot;)&quot;) | | | | product-id-2 |(&quot;(&quot;(&quot;(AF， C， D，NULL)&quot;)&quot;) | 6 | 40 | | product-id-4 |(&quot;(&quot;(&quot;（BM，传递， NA，NULL）&quot;)&quot;)&quot;) | 3 | 12 |
+| SKU | _experience（体验） | 数量 | priceTotal |
+|---------------------|-----------------------------------|----------|--------------|
+| product-id-1 | (&quot;(&quot;(&quot;(A，pass，B，NULL)&quot;)&quot;) | 5 | 10.5 |
+| product-id-5 | (&quot;(&quot;(&quot;(A， pass， B，NULL)&quot;)&quot;) |  |  |
+| product-id-2 | (&quot;(&quot;(AF， C， D，NULL)&quot;)&quot;) | 6 | 40 |
+| product-id-4 | (&quot;(&quot;（BM，传递， NA，NULL）&quot;)&quot;) | 3 | 12 |
 
 ## [!DNL Spark] SQL命令
 

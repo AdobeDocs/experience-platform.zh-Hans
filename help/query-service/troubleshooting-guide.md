@@ -3,11 +3,11 @@ keywords: Experience Platform；主页；热门主题；查询服务；查询服
 solution: Experience Platform
 title: 查询服务疑难解答指南
 topic-legacy: troubleshooting
-description: 本文档包含有关您遇到的常见错误代码以及可能原因的信息。
+description: 本文档包含与查询服务相关的常见问题和解答。 主题包括、导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 31a95a107b4d1c7aef87455833d6d4dc2a5a360d
+source-git-commit: 25953a5a1f5b32de7d150dbef700ad06ce6014df
 workflow-type: tm+mt
-source-wordcount: '3516'
+source-wordcount: '3522'
 ht-degree: 1%
 
 ---
@@ -40,7 +40,7 @@ ht-degree: 1%
 
 ### 我能否将Postman用于查询服务API?
 
-+++回答是，您可以使用Postman（一个免费的第三方应用程序）可视化所有AdobeAPI服务并与之交互。 观看 [Postman设置指南](https://video.tv.adobe.com/v/28832) 有关如何在Adobe开发人员控制台中设置项目并获取所有必要凭据以与Postman一起使用的分步说明。 请参阅 [有关启动、运行和共享Postman集合的指导](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/).
++++回答是，您可以使用Postman（一个免费的第三方应用程序）可视化所有AdobeAPI服务并与之交互。 观看 [Postman设置指南](https://video.tv.adobe.com/v/28832) 有关如何在Adobe Developer控制台中设置项目并获取所有必要凭据以与Postman一起使用的分步说明。 请参阅 [有关启动、运行和共享Postman集合的指导](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/).
 +++
 
 ### 通过UI查询返回的最大行数是否存在限制？
