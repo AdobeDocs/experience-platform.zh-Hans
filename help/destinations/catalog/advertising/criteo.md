@@ -3,9 +3,9 @@ keywords: 广告；克雷蒂奥；
 title: Criteo连接
 description: Criteo支持可信且有影响力的广告，通过开放互联网为每位消费者提供更丰富的体验。 Criteo拥有世界上最大的商业数据集和一流的人工智能，可确保整个购物历程中的每个接触点都经过个性化，以便在适当的时间通过正确的广告来吸引客户。
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: add177efd3fdd0a39dc33c5add59375f8e918c1e
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '820'
 ht-degree: 3%
 
 ---
@@ -138,4 +138,4 @@ Criteo支持激活下表所述的身份。 详细了解 [标识](https://experie
 ## 其他资源
 
 * [克里蒂奥帮助中心](https://help.criteo.com/kb/en)
-* [Criteo开发人员门户](https://developers.criteo.com/marketing-solutions/v2022.04/reference/modifyaudienceuserswithattributes)
+* [Criteo开发人员门户](https://developers.criteo.com)
