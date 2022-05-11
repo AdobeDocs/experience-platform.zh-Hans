@@ -3,10 +3,10 @@ audience: user
 user-guide-title: 数据准备指南
 user-guide-description: 准备数据以引入 Adobe Experience Platform。
 feature: Data Prep
-source-git-commit: d8d49bc904664f2950dd6ea2bf022584c2737709
+source-git-commit: 752c662876df012dbcb44db6168705be2a5375ce
 workflow-type: tm+mt
-source-wordcount: '46'
-ht-degree: 41%
+source-wordcount: '48'
+ht-degree: 39%
 
 ---
 
@@ -24,4 +24,5 @@ ht-degree: 41%
    - [数据准备UI指南](./ui/mapping.md)
 - [处理数据格式](./data-handling.md)
 - [映射集](mapping-set.md)
+- [流上插页](upserts.md)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
