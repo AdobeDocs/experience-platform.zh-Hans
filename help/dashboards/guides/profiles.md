@@ -4,9 +4,9 @@ title: 用户档案仪表板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 25953a5a1f5b32de7d150dbef700ad06ce6014df
+source-git-commit: 65096a2da03f504c16f00a75bfdef9e78f8c1799
 workflow-type: tm+mt
-source-wordcount: '2976'
+source-wordcount: '3535'
 ht-degree: 0%
 
 ---
@@ -69,7 +69,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 有关合并策略的更多信息，包括如何为贵组织创建、编辑和声明默认的合并策略，请首先阅读 [合并策略概述](../../profile/merge-policies/overview.md).
 
-功能板将自动选择要显示的合并策略，但您可以使用下拉菜单更改选定的合并策略。 要选择其他合并策略，请选择合并策略名称旁边的下拉列表，然后选择要查看的合并策略。
+功能板将自动选择要使用的合并策略。 可以使用合并策略名称旁边的下拉菜单更改应用的合并策略。
 
 >[!NOTE]
 >
@@ -113,6 +113,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 用户档案计数] {#profile-count}
 
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_profilecount"
+>title="用户档案计数"
+>abstract="此小组件显示拍摄快照时“配置文件存储区”内合并的配置文件总数。 数字取决于所选的合并策略是否应用于您的配置文件数据。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profile-count" text="从文档了解更多信息"
+
 的 **[!UICONTROL 用户档案计数]** 小组件显示拍摄快照时“配置文件存储区”内合并的配置文件总数。 此数字是将所选合并策略应用于配置文件数据的结果，以便将配置文件片段合并在一起，为每个人形成一个配置文件。
 
 请参阅 [本文档前面关于合并策略的章节](#merge-policies) 以了解更多。
@@ -127,7 +133,15 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 添加了用户档案] {#profiles-added}
 
-的 **[!UICONTROL 添加了用户档案]** 小组件显示自上次拍摄快照起，添加到配置文件存储区的合并配置文件总数。 此数字是将所选合并策略应用于配置文件数据的结果，以便将配置文件片段合并在一起，为每个人形成一个配置文件。 您可以使用下拉选择器查看过去30天、90天或12个月内添加的用户档案。
+<!-- This CONTEXTUALHELP was commented out because this widget name will change. Details in https://jira.corp.adobe.com/browse/PLAT-120313  -->
+
+<!-- >[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_profilesadded"
+>title="Profiles added"
+>abstract="This widget displays the total number of merged profiles **added** to the Profile Store at the time of the last snapshot. The number depends on the selected merge policy being applied to your Profile data."
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profiles-added" text="Learn more from documentation" -->
+
+的 **[!UICONTROL 添加了用户档案]** 小组件显示在上次快照时添加到配置文件存储的合并配置文件总数。 此数字是将所选合并策略应用于配置文件数据的结果，以便将配置文件片段合并在一起，为每个人形成一个配置文件。 您可以使用下拉选择器查看过去30天、90天或12个月内添加的用户档案。
 
 >[!NOTE]
 >
@@ -136,6 +150,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 ![](../images/profiles/profiles-added.png)
 
 ### [!UICONTROL 用户档案已添加趋势] {#profiles-added-trend}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_profilesaddedtrend"
+>title="用户档案已添加趋势"
+>abstract="此小组件显示过去30天、90天或12个月内，每天添加到用户档案存储的合并用户档案总数。 此数字还取决于所选合并策略是否应用于您的配置文件数据。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profiles-count-trend" text="从文档了解更多信息"
 
 的 **[!UICONTROL 用户档案已添加趋势]** 小组件显示过去30天、90天或12个月内每天添加到用户档案存储的合并用户档案总数。 此数字在拍摄快照时每天都会更新，因此，如果要将配置文件摄取到平台，则在拍摄下一个快照之前不会反映配置文件数量。 添加的用户档案计数是将选定的合并策略应用于您的用户档案数据的结果，以便将用户档案片段合并在一起，为每个人形成一个用户档案。
 
@@ -150,6 +170,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 ![“配置文件”中添加了趋势小组件的自动字幕对话框。](../images/profiles/profiles-added-trends-automatic-captions-dialog.png)
 
 ### [!UICONTROL 按身份划分的用户档案] {#profiles-by-identity}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_profilesbyidentity"
+>title="按身份划分的用户档案"
+>abstract="此小组件按身份显示“配置文件存储区”中所有合并配置文件的划分。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profiles-by-identity" text="从文档了解更多信息"
 
 的 **[!UICONTROL 按身份划分的用户档案]** 小组件可显示“配置文件存储区”中所有合并配置文件的身份划分。 按身份划分的用户档案总数（即将每个命名空间显示的值相加）可能大于合并的用户档案总数，因为一个用户档案可能具有与其关联的多个命名空间。 例如，如果客户在多个渠道上与您的品牌进行交互，则多个命名空间将与该个别客户关联。
 
@@ -167,9 +193,15 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 身份重叠] {#identity-overlap}
 
-的 **[!UICONTROL 身份重叠]** 小组件会显示维恩图或设置图，其中显示了包含多个身份的配置文件存储区中配置文件的重叠。
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_identityoverlap"
+>title="身份重叠"
+>abstract="此小组件使用维恩图显示配置文件存储区中包含两个选定身份的配置文件重叠。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#identity-overlap" text="从文档了解更多信息"
 
-使用小组件上的下拉菜单选择要比较的身份后，圆圈会显示每个身份的相对大小，其中包含两个命名空间的用户档案数量由圈子之间重叠的大小表示。 如果客户在多个渠道上与您的品牌进行交互，则多个身份将与该个别客户关联，因此，您的组织可能具有多个包含多个身份片段的用户档案。
+的 **[!UICONTROL 身份重叠]** 小组件使用维恩图或设置图来显示配置文件存储区中包含两个选定身份的配置文件重叠。
+
+使用小组件下拉菜单选择要比较的身份。 圈子显示包含每个身份的用户档案的相对总计数。 包含两个标识的用户档案的数量由圈子之间重叠的大小表示。 如果客户在多个渠道上与您的品牌进行交互，则多个身份将与该个别客户关联，因此，您的组织可能具有多个包含多个身份片段的用户档案。
 
 有关用户档案片段的更多信息，请首先阅读 [配置文件片段与合并的配置文件](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html?lang=en#profile-fragments-vs-merged-profiles) （在“实时客户资料”概述中）。
 
@@ -179,11 +211,23 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 单个身份配置文件] {#single-identity-profiles}
 
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_singleidentityprofiles"
+>title="单个身份配置文件"
+>abstract="此小组件提供贵组织仅具有一种类型的ID类型来创建其身份的用户档案计数。 此ID类型可以是电子邮件或ECID。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#single-identity-profiles" text="从文档了解更多信息"
+
 的 [!UICONTROL 单个身份配置文件] 小组件会提供贵组织仅具有一种类型的ID类型来创建其身份的用户档案计数。 此ID类型可以是电子邮件或ECID。 配置文件计数是根据最近快照中包含的数据生成的。
 
 ![单个身份配置文件小组件。](../images/profiles/single-identity-profiles.png)
 
 ### [!UICONTROL 未分段的用户档案] {#unsegmented-profiles}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_unsegmentedprofiles"
+>title="未分段的用户档案"
+>abstract="此小组件提供了未附加到任何区段的所有用户档案总数，并代表了在整个组织内激活用户档案的机会。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#unsegmented-profiles" text="从文档了解更多信息"
 
 的 [!UICONTROL 未分段的用户档案] 小组件提供未附加到任何区段的所有用户档案总数。 生成的数字从上次快照开始就是准确的，它代表了整个组织中激活配置文件的机会。 它还表示有机会排除未提供足够ROI的用户档案。
 
@@ -191,11 +235,23 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 未分段的用户档案趋势] {#unsegmented-profiles-trend}
 
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_unsegmentedprofilestrend"
+>title="未分段的用户档案趋势"
+>abstract="此小组件为在给定时间段内未附加到任何区段的用户档案数量提供了折线图插图。 未附加到任何区段的用户档案趋势可在30天、90天和12个月期间进行可视化。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#unsegmented-profiles-trend" text="从文档了解更多信息"
+
 的 [!UICONTROL 未分段的用户档案趋势] 小组件为在给定时间段内未附加到任何区段的用户档案数量提供了折线图插图。 未附加到任何区段的用户档案趋势可在30天、90天和12个月期间进行可视化。 时间段是从小组件的下拉菜单中选择的。 轮廓计数反映在y轴上，时间反映在x轴上。
 
 ![未分段的用户档案趋势小组件。](../images/profiles/unsegmented-profiles-trend.png)
 
-### [!UICONTROL 按身份划分的未分段用户档案] (#unsegmented-profiles-by-identity)
+### [!UICONTROL 按身份划分的未分段用户档案] {#unsegmented-profiles-by-identity}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_unsegmentedprofilesbyidentity"
+>title="按身份划分的未分段用户档案"
+>abstract="此小组件按其唯一标识符对未分段的用户档案总数进行分类。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#unsegmented-profiles-by-identity" text="从文档了解更多信息"
 
 的 [!UICONTROL 按身份划分的未分段用户档案] 小组件按其唯一标识符对未分段的用户档案总数进行分类。 数据以条形图形式显示，以便于比较。
 
@@ -245,13 +301,19 @@ Adobe会提供多个小组件，用于评估所摄取的用户档案是否完整
 
 要进一步了解每个用户档案功效小组件，请从以下列表中选择小组件的名称：
 
-* [[!UICONTROL 属性质量评估]](#attribute-quality-assessment)
-* [[!UICONTROL 用户档案完整性]](#profile-completeness)
-* [[!UICONTROL 用户档案完整性趋势]](#profile-completeness-trend)
+* [[!UICONTROL 属性质量评估]](#attributes-quality-assessment)
+* [[!UICONTROL 按完整性划分的用户档案]](#profiles-by-completeness)
+* [[!UICONTROL 用户档案完整性趋势]](#profiles-completeness-trend)
 
-### （测试版） [!UICONTROL 属性质量评估] {#attribute-quality-assessment}
+### （测试版） [!UICONTROL 属性质量评估] {#attributes-quality-assessment}
 
-此小组件显示自上次处理日期以来每个配置文件属性的完整性和基数。 此信息以表格形式呈现，表格中有四列，其中表格中的每一行代表单个属性。
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_attributesqualityassessment"
+>title="属性质量评估"
+>abstract="此小组件可根据所有用户档案的属性显示其完整性和基数。 每行都描述一个属性。 的 **用户档案** 列提供具有此属性且填充了非空值的配置文件数。 的 **完整性** 百分比由具有此属性且填充了非空值的配置文件总数除以该属性配置文件中非空值的总数确定。 **基数** 提供此属性在所有属性中唯一非空值的总数。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#attributes-quality-assessment" text="从文档了解更多信息"
+
+的 [!UICONTROL 属性质量评估] 小组件会根据所有用户档案的属性显示其完整性和基数。 数据精确到上次处理日期。 此信息以表格形式呈现，表格中有四列，其中表格中的每一行代表单个属性。
 
 | 栏目 | 描述 |
 |---|---|
@@ -262,19 +324,31 @@ Adobe会提供多个小组件，用于评估所摄取的用户档案是否完整
 
 ![属性质量评估小组件](../images/profiles/attributes-quality-assessment.png)
 
-### （测试版） [!UICONTROL 按完整性划分的用户档案] {#profile-completeness}
+### （测试版） [!UICONTROL 按完整性划分的用户档案] {#profiles-by-completeness}
 
-此小组件创建自上次处理日期以来配置文件完整性的圆图。 配置文件的完整性由所有观察到的属性中填充了非空值的属性的百分比来衡量。
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_profilesbycompleteness"
+>title="按完整性划分的用户档案"
+>abstract="圆环图显示在所有观察到的属性中填充了非空值的配置文件属性的百分比。 它说明了高、中或低完整性的用户档案比例。 高完整性用户档案会填充其70%以上的属性。 中等完整性用户档案的属性有30%到70%的已填充。 不完整性较低的用户档案填充的属性不到其30%。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profile-completeness" text="从文档了解更多信息"
+
+的 [!UICONTROL 按完整性划分的用户档案] 小组件创建自上次处理日期以来配置文件完整性的圆环图。 配置文件的完整性由所有观察到的属性中填充了非空值的属性的百分比来衡量。
 
 此小组件显示高完整性、中完整性或低完整性的用户档案比例。 默认情况下，配置了三个完整性级别：
 
-* 高度完整性：用户档案中超过70%的属性已填充。
-* 中等完整性：用户档案中已填充的属性少于70%且超过30%。
-* 低完整性：用户档案填充的属性少于30%。
+* 高度完整性：用户档案超过70%的属性已填充。
+* 中等完整性：用户档案中已填充其属性的30%到70%。
+* 低完整性：用户档案已填充的属性不到其总数的30%。
 
 ![按完整性小组件列出的用户档案](../images/profiles/profiles-by-completeness.png)
 
-### （测试版） [!UICONTROL 用户档案完整性趋势] {#profile-completeness-trend}
+### （测试版） [!UICONTROL 用户档案完整性趋势] {#profiles-completeness-trend}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_profiles_profilescompletenesstrend"
+>title="用户档案完整性趋势"
+>abstract="此小组件创建堆叠式面积图以描述配置文件随时间的完整性趋势。 完整性由所有观察到的属性中填充了非空值的属性的百分比来衡量。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/profiles.html#profile-completeness-trend" text="从文档了解更多信息"
 
 此小组件创建堆叠式面积图以描述配置文件随时间的完整性趋势。 完整性由所有观察到的属性中填充了非空值的属性的百分比来衡量。 它将配置文件完整性分类为自上次处理日期以来的高、中或低完整性。
 

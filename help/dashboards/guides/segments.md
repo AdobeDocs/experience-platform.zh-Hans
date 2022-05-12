@@ -4,9 +4,9 @@ title: 区段功能板
 description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: b4cd7bc0d8c038346aacdda7c4c9def12864065c
+source-git-commit: 65096a2da03f504c16f00a75bfdef9e78f8c1799
 workflow-type: tm+mt
-source-wordcount: '1232'
+source-wordcount: '1491'
 ht-degree: 0%
 
 ---
@@ -77,6 +77,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 受众大小] {#audience-size}
 
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_segments_audiencesize"
+>title="受众大小"
+>abstract="此小组件显示选定区段内合并的用户档案总数。 此数字取决于应用于数据的合并策略，并且在最新快照时是正确的。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#audience-size" text="从文档了解更多信息"
+
 的 **[!UICONTROL 受众大小]** 小组件显示拍摄快照时选定区段内合并的配置文件总数。 此数字是将区段合并策略应用于配置文件数据的结果，以便将配置文件片段合并在一起，为区段中的每个人形成一个配置文件。
 
 有关片段和合并的用户档案的更多信息，请首先阅读 [实时客户资料概述](../../profile/home.md).
@@ -85,9 +91,15 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 身份重叠] {#identity-overlap}
 
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_segments_identityoverlap"
+>title="身份重叠"
+>abstract="此小组件显示区段中包含两个所选身份的配置文件重叠。 圆圈显示每个身份的相对大小。 包含两个命名空间的配置文件数量由圈子之间的重叠表示。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#identity-overlap" text="从文档了解更多信息"
+
 的 **[!UICONTROL 身份重叠]** 小组件会显示维恩图或设置图，以显示包含多个身份的区段中配置文件的重叠。
 
-使用小组件上的下拉菜单选择要比较的身份后，圆圈会显示每个身份的相对大小，其中包含两个命名空间的用户档案数量由圈子之间重叠的大小表示。
+使用小组件上的下拉菜单选择要比较的身份。 圈子显示每个选定身份的相对大小，其中包含两个命名空间的配置文件数量由圈子之间重叠的大小表示。
 
 如果客户在多个渠道上与您的品牌进行交互，则多个身份将与该个别客户关联，因此，您的组织可能具有多个包含多个身份片段的用户档案。
 
@@ -97,7 +109,13 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 按身份划分的用户档案] {#profiles-by-identity}
 
-的 **[!UICONTROL 按身份划分的用户档案]** 小组件显示选定区段中所有合并配置文件的身份划分。 按身份划分的用户档案总数可能大于区段中的用户档案总数，因为一个用户档案可能具有多个与其关联的身份。 换言之，将每个身份显示的值相加，可能总计会大于区段中的受众总大小，因为如果客户在多个渠道上与您的品牌进行交互，则多个身份可能会与该个别客户关联。
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_segments_profilesbyidentity"
+>title="按身份划分的用户档案"
+>abstract="此小组件显示选定区段中每个合并配置文件的身份划分。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#profiles-by-identity" text="从文档了解更多信息"
+
+的 **[!UICONTROL 按身份划分的用户档案]** 小组件显示选定区段中每个合并配置文件的身份划分。 按身份划分的用户档案总数可能大于区段中的用户档案总数，因为一个用户档案可能具有多个与其关联的身份。 换言之，将每个身份显示的值相加，可能总计会大于区段中的受众总大小，因为如果客户在多个渠道上与您的品牌进行交互，则多个身份可能会与该个别客户关联。
 
 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
 
@@ -115,9 +133,23 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 受众大小趋势] {#audience-size-trend}
 
-的 [!UICONTROL 受众大小趋势] 小组件为符合 **any** 区段定义。 可以在30天、90天和12个月期间显示受众规模趋势。 时间段是从小组件的下拉菜单中选择的。 受众大小反映在y轴上，时间反映在x轴上。
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_segments_audiencesizetrend"
+>title="受众大小趋势"
+>abstract="此小组件提供有关满足以下条件的用户档案总数的信息： **any** 区段定义，在每日快照期间捕获，最近30天、90天或12个月。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#audience-size-trend" text="从文档了解更多信息"
 
-![受众大小趋势小组件。](../images/segments/audience-size-trend.png)
+的 **[!UICONTROL 受众大小趋势]** 小组件为符合 **any** 区段定义。 可以在30天、90天和12个月期间显示受众规模趋势。 时间段是从小组件的下拉菜单中选择的。 受众大小反映在y轴上，时间反映在x轴上。
+
+此小组件还包含自动 [!UICONTROL 字幕] 机器学习模型分析图表和区段数据并自动生成字幕以描述关键趋势和重要事件的功能。 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
+
+![区段概述会显示受众大小趋势小组件。](../images/segments/audience-size-trend-captions.png)
+
+随即会打开自动字幕对话框，该对话框提供对数据的分析。
+
+![受众大小趋势小组件的自动字幕对话框。](../images/segments/audience-size-trend-automatic-captions-dialog.png)
+
+要了解有关区段评估以及用户档案如何确定并退出区段的更多信息，请参阅 [Segmentation Service文档](../../segmentation/home.md).
 
 ### [!UICONTROL 受众大小更改趋势] {#audience-size-change-trend}
 

@@ -4,9 +4,9 @@ title: 目标功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: b4cd7bc0d8c038346aacdda7c4c9def12864065c
+source-git-commit: 65096a2da03f504c16f00a75bfdef9e78f8c1799
 workflow-type: tm+mt
-source-wordcount: '1962'
+source-wordcount: '2538'
 ht-degree: 0%
 
 ---
@@ -55,12 +55,19 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 按身份划分的未映射区段]](#unmapped-segments-by-identity)
 * [[!UICONTROL 按身份映射的区段]](#mapped-segments-by-identity)
 * [[!UICONTROL 常见受众]](#common-audiences)
+* [[!UICONTROL 映射的受众运行状况]](#mapped-audience-health)
 * [[!UICONTROL 目标计数]](#destinations-count)
 * [[!UICONTROL 目标状态]](#destination-status)
 * [[!UICONTROL 按目标平台划分的活动目标]](#active-destinations-by-destination-platform)
 * [[!UICONTROL 所有目标中的已激活受众]](#activated-audiences-across-all-destinations)
 
 ### [!UICONTROL 最常用的目标] {#most-used-destinations}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_destinations_mostuseddestinations"
+>title="最常用的目标"
+>abstract="此小组件按映射的区段数量显示贵组织最活跃的目标。 这些数字在上次快照时是准确的。 此排名可深入分析当前最常使用的目标，同时突出显示可能未充分利用的目标。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#most-used-destinations" text="从文档了解更多信息"
 
 的 **[!UICONTROL 最常用的目标]** 小组件按映射的区段数显示自上次快照起您组织的热门目标。 此排名提供了有关哪些目标正在被利用的洞察信息，同时还可能显示那些可能未充分利用的目标。
 
@@ -74,6 +81,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 最近创建的目标] {#recently-created-destinations}
 
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_destinations_recentlycreateddestinations"
+>title="最近创建的目标"
+>abstract="此小组件会显示您组织内最近配置的目标列表。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#recently-created-destinations" text="从文档了解更多信息"
+
 的 **[!UICONTROL 最近创建的目标]** 小组件允许您查看组织最近配置的目标列表。
 
 显示的创建日期精确到最后的每日快照。 换言之，如果您创建了新目标，则在拍摄下一个快照之后，该目标才会显示在列表中。
@@ -86,7 +99,13 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 最近激活的区段] {#recently-activated-segments}
 
-的 **[!UICONTROL 最近激活的区段]** 小组件提供了最近映射到目标的区段列表。 此列表提供了系统中正在使用哪些区段和目标的快照，并有助于对任何错误映射进行故障诊断。
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_destinations_recentlyactivatedsegments"
+>title="最近激活的区段"
+>abstract="此小组件提供最近映射到目标的区段列表。 此列表提供了系统中正在使用的区段和目标的快照，并有助于对任何错误映射进行故障诊断。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#recently-activated-segments" text="从文档了解更多信息"
+
+的 **[!UICONTROL 最近激活的区段]** 小组件提供了最近映射到目标的区段列表。 此列表提供了系统中正在使用的区段和目标的快照，并有助于对任何错误映射进行故障诊断。
 
 显示的更新日期显示区段上次激活到目标的时间，并准确到最后的每日快照。 换句话说，如果您将区段激活到目标，则更新日期在拍摄下一个快照之后才会更改。
 
@@ -98,6 +117,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 最近激活的区段（按目标）] {#recently-activated-segments-by-destination}
 
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_destinations_recentlyactivatedsegmentsbydestination"
+>title="最近激活的区段（按目标）"
+>abstract="此小组件会根据概述下拉菜单中选择的目标，以降序方式显示前五个最近激活的区段。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#recently-activated-segments-by-destination" text="从文档了解更多信息"
+
 的 **[!UICONTROL 最近激活的区段（按目标）]** 小组件会根据概述下拉列表中选择的目标，以降序方式显示前五个最近激活的区段。 它类似于 [!UICONTROL 最近激活的区段] 小组件，但显示的数据 **仅** 应用到所选目标。
 
 此小组件包含两个量度：区段名称以及区段上次激活到目标的日期。 显示的数据自上次每日快照开始是正确的。
@@ -107,6 +132,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 ![最近由目标小组件激活的区段。](../images/destinations/recently-activated-segments-by-destination.png)
 
 ### [!UICONTROL 受众大小趋势] {#audience-size-trend}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_destinations_audiencesizetrend"
+>title="受众大小趋势"
+>abstract="此小组件说明区段中包含的每天发送到目标帐户的用户档案数。 第一个下拉菜单调整受众趋势的时间段。 第二个小组件下拉菜单选择要分析的区段。 从概述下拉菜单中选择了目标。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#audience-size-trend" text="从文档了解更多信息"
 
 的 **[!UICONTROL 受众大小趋势]** 小组件描述了已映射到该目标帐户的区段在一段时间内的配置文件计数关系。 小组件使用折线图来说明区段中包含的每天发送到目标帐户的用户档案数。
 
@@ -122,6 +153,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 按身份划分的未映射区段] {#unmapped-segments-by-identity}
 
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_destinations_unmappedsegmentsbyidentity"
+>title="按身份划分的未映射区段"
+>abstract="此小组件列出了前5个 **未映射** 按给定目标和身份的降序身份计数排名的区段。 小组件下拉列表中列出的过滤器ID会因在概述页面顶部选择的目标帐户而发生更改。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#unmapped-segments-by-identity" text="从文档了解更多信息"
+
 的 **[!UICONTROL 按身份划分的未映射区段]** 小组件列出了前5个 **未映射** 按给定目标和身份的降序身份计数排名的区段。 它会突出显示根据所选ID映射到所选目标帐户最有用的区段。
 
 目标ID下拉列表可过滤您的可用区段。 下拉列表中列出的过滤器ID会因在概述页面顶部选择的目标帐户而发生更改。
@@ -132,13 +169,25 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 按身份映射的区段] {#mapped-segments-by-identity}
 
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_destinations_mappedsegmentsbyidentity"
+>title="按身份映射的区段"
+>abstract="此小组件提供了 **映射** 区段。 根据区段中包含的源ID数量，列表按从高到低的顺序排列。 将从小组件标题下方的下拉菜单中选择要计数的目标ID。 小组件下拉列表中提供的目标ID取决于概述功能板顶部选择的目标。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#mapped-segments-by-identity" text="从文档了解更多信息"
+
 此小组件提供了 **映射** 区段。 根据区段中包含的源ID数量，列表按从高到低的顺序排列。 将从小组件标题下方的下拉菜单中选择要计数的目标ID。 小组件中下拉列表中提供的目标ID将根据概述功能板顶部选择的目标帐户过滤器进行更改。
 
 ![按身份小组件映射的区段。](../images/destinations/mapped-segments-by-identity.png)
 
 的 **[!UICONTROL 按身份映射的区段]** 小组件重点介绍在选定目标内成功定位营销活动用户档案机会的可能性。 有效的目标营销活动不取决于发送到目标的用户档案数量，而是取决于可能与目标ID匹配以提供有用且可操作的数据的源ID数量。
 
-### 常见受众
+### 常见受众 {#common-audiences}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_destinations_commonaudiences"
+>title="常见受众"
+>abstract="此小组件提供了在页面顶部选择的目标帐户中激活的前五个区段的列表，以及在小组件下拉菜单中选择的目标。 区段列表会根据区段最近激活的时间进行排序。 最近激活的区段显示在顶部。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html?lang=en#common-audiences" text="从文档了解更多信息"
 
 的 **[!UICONTROL 常见受众]** 小组件提供了在页面顶部选择的目标帐户中激活的前五个区段的列表，以及在小组件下拉菜单中选择的目标。 区段列表会根据区段最近激活的时间进行排序。 最近激活的区段显示在顶部。
 
@@ -146,7 +195,13 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ![常见受众小组件。](../images/destinations/common-audiences.png)
 
-### 映射的受众运行状况
+### 映射的受众运行状况 {#mapped-audience-health}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_destinations_mappedaudiencehealth"
+>title="映射的受众运行状况"
+>abstract="此小组件提供了多达20个已映射区段的列表，这些区段的总配置文件计数与映射到该目标的30天平均受众大小之间至少有一个标准偏差的因子。 它提供了一个计算量度，用于衡量过去30天内受众规模与平均数的差异。 受众大小按从高到低的顺序进行排序。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#mapped-audience-health" text="从文档了解更多信息"
 
 小组件提供了多达20个已映射区段的列表，从上次每日快照开始，这些区段的总配置文件计数与映射到该目标的30天平均受众大小之间至少有一个标准偏差的因子。
 
@@ -161,6 +216,12 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 ![映射的受众健康小组件。](../images/destinations/mapped-audience-health.png)
 
 ### [!UICONTROL 目标计数] {#destinations-count}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_destinations_destinationscount"
+>title="目标计数"
+>abstract="此小组件提供了可在系统中激活和交付受众的可用端点总数。 此数字包括活动和不活动目标。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/destinations.html#destinations-count" text="从文档了解更多信息"
 
 的 [!UICONTROL 目标计数] 小组件提供了可在系统中激活和交付受众的可用端点总数。 此数字包括活动和不活动目标。
 
