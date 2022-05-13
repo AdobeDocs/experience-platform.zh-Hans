@@ -2,9 +2,9 @@
 title: Adobe Experience Platform发行说明2022年4月
 description: 2022年4月的Adobe Experience Platform发行说明。
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: 1f5c21e09e471ac0d6f1d98e219e06e571ede89f
+source-git-commit: a80f011dc8a6e10d1d311bc85029fa9f57d8b4ab
 workflow-type: tm+mt
-source-wordcount: '2802'
+source-wordcount: '2805'
 ht-degree: 3%
 
 ---
@@ -49,11 +49,13 @@ Adobe Experience Platform 现有功能的更新包括：
 | [!UICONTROL 受众大小更改趋势] | 区段 | 此小组件提供了一个折线图图，用于显示符合给定区段资格的配置文件总数与最近的每日快照之间的差异。 趋势分析的周期可以显示为30天、90天和12个月。 |
 | [!UICONTROL 按身份划分的受众大小趋势] | 区段 | 此小组件根据选定的身份类型展示特定区段的受众大小趋势。 趋势分析的周期可以显示为30天、90天和12个月。 |
 
-**新增功能**
+**新增功能** {#new-features}
 
 | 功能 | 功能板 | 描述 |
 | ------- | --------- | ----------- |
 | 孤立的配置文件区段成员资格清理 | 用户档案和许可证使用情况 | 用户档案服务现在每天删除剩余的区段成员，以便在系统中更准确地显示用户档案。 在删除给定配置文件的所有配置文件片段后，会进行此清理。 这可能会在许可证使用情况功能板的“可寻址受众”量度中显示一个下降，也可能在“配置文件”功能板的“配置文件计数”量度中显示一个下降，因为这些量度包含此版本之前剩余的区段片段。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 有关 [[!DNL Profiles]](../../dashboards/guides/profiles.md), [[!DNL Destinations]](../../dashboards/guides/destinations.md)和 [[!DNL Segments]](../../dashboards/guides/segments.md) 功能板。
 
