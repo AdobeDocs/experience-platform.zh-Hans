@@ -1,9 +1,10 @@
 ---
 title: 基于机器学习的查询服务机器人过滤
 description: 本文档概述了如何使用查询服务和机器学习来确定机器人活动，并从真正的在线网站访客流量中过滤其操作。
-source-git-commit: 7b223b4917e6bdb3f4a05238cbaf66261d80660e
+exl-id: fc9dbc5c-874a-41a9-9b60-c926f3fd6e76
+source-git-commit: c5b91bd516e876e095a2a6b6e3ba962b29f55a7b
 workflow-type: tm+mt
-source-wordcount: '875'
+source-wordcount: '873'
 ht-degree: 5%
 
 ---
@@ -164,6 +165,6 @@ Model Accuracy: 0.99935
 
 ## 后续步骤
 
-通过阅读本文档，您可以更好地了解如何使用查询服务和机器学习来确定和筛选机器人活动。
+通过阅读本文档，您可以更好地了解如何使用 [!DNL Query Service] 和机器学习来确定和筛选机器人活动。
 
-其他文档，这些文档说明了 [!DNL Query Service] 放弃的浏览用例示例是贵组织的战略业务分析。
+其他文档，这些文档说明了 [!DNL Query Service] 对贵组织的战略业务洞察是 [放弃的浏览用例](./abandoned-browse.md) 示例。

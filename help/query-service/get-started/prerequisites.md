@@ -3,7 +3,8 @@ keywords: Experience Platform；查询服务；查询服务；查询
 title: Adobe Experience Platform查询服务入门
 topic-legacy: tutorial
 description: 全面利用Adobe Experience Platform查询服务的必要步骤细目
-source-git-commit: 7b223b4917e6bdb3f4a05238cbaf66261d80660e
+exl-id: 36ab9354-23f9-4cb8-bcd4-00fe076386ab
+source-git-commit: c09a7a6198bf1ef3f94e53bdbdf3b0b93f6b2bd1
 workflow-type: tm+mt
 source-wordcount: '212'
 ht-degree: 7%
@@ -20,7 +21,7 @@ ht-degree: 7%
 
 ## 后续步骤
 
-本文档介绍了使用所需的先决条件 [!DNL Query Service] 功能Experience Platform。 详细了解 [!DNL Query Service] 平台中的优势数据处理，请参阅 [用例演示](../use-cases/abandoned-cart.md).
+本文档介绍了使用所需的先决条件 [!DNL Query Service] 功能Experience Platform。 详细了解 [!DNL Query Service] 平台中的优势数据处理，请参阅 [用例演示](../use-cases/abandoned-browse.md).
 
 以下资源有助于您更好地了解 [!DNL Query Service]:
 

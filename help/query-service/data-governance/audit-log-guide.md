@@ -2,9 +2,9 @@
 title: 查询服务审核日志集成
 description: 查询服务审核日志维护各种用户操作的记录，以形成用于解决问题或遵守公司数据管理策略和法规要求的审核跟踪。 本教程概述了特定于查询服务的审核日志功能。
 exl-id: 5fdc649f-3aa1-4337-965f-3f733beafe9d
-source-git-commit: 861283cb8ea99b91480bf776ff0c53de52f464ad
+source-git-commit: 12b717be67cb35928d84e83b6d692f9944d651d8
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '815'
 ht-degree: 2%
 
 ---
@@ -27,7 +27,7 @@ Adobe Experience Platform [!DNL Query Service] 审核日志集成提供与查询
 |---|---|
 | [!UICONTROL 计划查询] | 利用此类别，可审核在 [!DNL Query Service]. |
 | [!UICONTROL 查询模板] | 利用此类别，可审核对查询模板执行的各种操作（创建、更新和删除）。 |
-| [!UICONTROL 查询] | 利用此类别，可审核查询执行。 |
+<!-- | [!UICONTROL Query] | This category allows you to audit query executions. | -->
 
 ## 执行 [!DNL Query Service] 审核日志 {#perform-an-audit-log}
 
