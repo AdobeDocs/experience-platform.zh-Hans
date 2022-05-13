@@ -5,9 +5,9 @@ title: 数据准备映射函数
 topic-legacy: overview
 description: 本文档介绍了数据准备中使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 14c7c3bd0bda0ab56767b9c0f5470090cf2bdb15
+source-git-commit: 87bdffece94404ae49fcc2b4afbe44db0864cafb
 workflow-type: tm+mt
-source-wordcount: '4164'
+source-wordcount: '4175'
 ht-degree: 3%
 
 ---
@@ -100,7 +100,7 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | get_url_host | 返回给定URL的主机。 如果输入无效，则返回null。 | <ul><li>URL: **必需** 需要从中提取主机的URL。</li></ul> | get_url_host&#x200B;(URL) | get_url_host(&#x200B;&quot;https://platform &#x200B; .adobe.com/home&quot;) | platform.adobe.com |
 | get_url_port | 返回给定URL的端口。 如果输入无效，则返回null。 | <ul><li>URL: **必需** 需要从中提取端口的URL。</li></ul> | get_url_port(URL) | get_url_port(&#x200B;&quot;sftp://example.com//home/ &#x200B; joe/employee.csv&quot;) | 22 |
 | get_url_path | 返回给定URL的路径。 默认情况下，返回完整路径。 | <ul><li>URL: **必需** 需要从中提取路径的URL。</li><li>FULL_PATH: *可选* 一个布尔值，用于确定是否返回完整路径。 如果设置为false，则仅返回路径的结尾。</li></ul> | get_url_path(&#x200B;URL， FULL_PATH) | get_url_path(&#x200B;&quot;sftp://example.com// &#x200B; home/joe/employee.csv&quot;) | &quot;//home/joe/ employee &#x200B; csv&quot; |
-| get_url_query_str | 返回给定URL的查询字符串。 | <ul><li>URL: **必需** 您尝试从中获取查询字符串的URL。</li><li>锚点： **必需** 确定将对查询字符串中的锚点执行哪些操作。 可以是三个值之一：“retain”、“remove”或“append”。<br><br>如果值为“retain”，则锚点将附加到返回的值。<br>如果值为“remove”，则将从返回的值中删除锚点。<br>如果值为“append”，则将作为单独的值返回锚点。</li></ul> | get_url_query_str(&#x200B;URL， ANCHOR) | get_url_query_str(&#x200B;&quot;foo://example.com:8042 &#x200B;/over/there?name= &#x200B; ferret#nose&quot;, &quot;retain&quot;)<br>get_url_query_str(&#x200B;&quot;foo://example.com:8042 &#x200B;/over/there?name= &#x200B; ferret#nose&quot;, &quot;remove&quot;)<br>get_url_query_str(&#x200B;&quot;foo://example.com&#x200B;:8042/over/here&#x200B;?name=ferret#nose&quot;, &quot;append&quot;) | `{"name": "ferret#nose"}`<br>`{"name": "ferret"}`<br>`{"name": "ferret", "_anchor_": "nose"}` |
+| get_url_query_str | 返回给定URL的查询字符串作为查询字符串名称和查询字符串值的映射。 | <ul><li>URL: **必需** 您尝试从中获取查询字符串的URL。</li><li>锚点： **必需** 确定将对查询字符串中的锚点执行哪些操作。 可以是三个值之一：“retain”、“remove”或“append”。<br><br>如果值为“retain”，则锚点将附加到返回的值。<br>如果值为“remove”，则将从返回的值中删除锚点。<br>如果值为“append”，则将作为单独的值返回锚点。</li></ul> | get_url_query_str(&#x200B;URL， ANCHOR) | get_url_query_str(&#x200B;&quot;foo://example.com:8042 &#x200B;/over/there?name= &#x200B; ferret#nose&quot;, &quot;retain&quot;)<br>get_url_query_str(&#x200B;&quot;foo://example.com:8042 &#x200B;/over/there?name= &#x200B; ferret#nose&quot;, &quot;remove&quot;)<br>get_url_query_str(&#x200B;&quot;foo://example.com&#x200B;:8042/over/here&#x200B;?name=ferret#nose&quot;, &quot;append&quot;) | `{"name": "ferret#nose"}`<br>`{"name": "ferret"}`<br>`{"name": "ferret", "_anchor_": "nose"}` |
 
 {style=&quot;table-layout:auto&quot;}
 
