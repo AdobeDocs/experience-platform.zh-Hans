@@ -6,9 +6,9 @@ title: 在UI中监视源的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 53fa4338-c5f8-4e1a-8576-3fe13d930846
-source-git-commit: ee9ed1c17a566f37b4ad79df7c66f8b2ffb4b879
+source-git-commit: ed88ebe7822f60ace2babd7d5a04d2d92d83cf49
 workflow-type: tm+mt
-source-wordcount: '1862'
+source-wordcount: '1069'
 ht-degree: 0%
 
 ---
@@ -130,102 +130,9 @@ ht-degree: 0%
 
 ![痕迹导航](../assets/ui/monitor-sources/breadcrumbs.png)
 
-## 跨服务监控 {#cross-service-monitoring}
-
-功能板的上部包含从源级别到 [!DNL Identity Service]和 [!DNL Profile]. 每个单元格都包含一个圆点标记，用于指示在摄取阶段出现错误的情况。 绿色圆点表示无错误摄取，而红色圆点表示在特定摄取阶段发生错误。
-
-![跨服务监控](../assets/ui/monitor-sources/cross-service-monitoring.png)
-
-在数据流页面中，找到成功的数据流并选择过滤器图标 ![过滤器](../assets/ui/monitor-sources/filter.png) 旁边，查看其数据流运行信息。
-
-![数据流成功](../assets/ui/monitor-sources/dataflow-success.png)
-
-的 [!UICONTROL 源摄取] 页面包含确认成功摄取数据流的信息。 从此处，您可以开始监控数据流从源级到 [!DNL Identity Service]，然后转到 [!DNL Profile].
-
-选择 **[!UICONTROL 标识]** 查看 [!UICONTROL 标识] 舞台。
-
-![来源](../assets/ui/monitor-sources/sources.png)
-
-### [!DNL Identity] 量度 {#identity-metrics}
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_identity_processing"
->title="身份处理"
->abstract="“身份处理”视图包含有关摄取到Identity服务的记录的信息，包括添加的身份数、创建的图形和更新的图表。 查看量度定义指南，了解有关量度和图形的更多信息。"
->text="Learn more in documentation"
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_dataflow_run_details_identity"
->title="数据流运行详细信息"
->abstract="“数据流运行详细信息”页显示有关身份数据流运行的更多信息，包括其IMS组织ID和数据流运行ID。"
-
-的 [!UICONTROL 身份处理] 页面包含有关摄取到的记录的信息 [!DNL Identity Service]，包括添加的标识数、创建的图表和更新的图表。
-
-选择过滤器图标 ![过滤器](../assets/ui/monitor-sources/filter.png) 数据流运行开始时间旁边，查看 [!DNL Identity] 数据流运行。
-
-![标识](../assets/ui/monitor-sources/identities.png)
-
-| 身份量度 | 描述 |
-| ---------------- | ----------- |
-| [!UICONTROL 收到的记录] | 从接收的记录数 [!DNL Data Lake]. |
-| [!UICONTROL 记录失败] | 由于数据中的错误而未摄取到平台中的记录数。 |
-| [!UICONTROL 跳过的记录数] | 已摄取但未被摄取的记录数 [!DNL Identity Service] 因为记录行中只有一个标识符。 |
-| [!UICONTROL 摄取的记录] | 摄取到的记录数 [!DNL Identity Service]. |
-| [!UICONTROL 记录总数] | 所有记录（包括失败的记录、跳过的记录）的总计数， [!DNL Identities] 添加了重复记录。 |
-| [!UICONTROL 添加了身份] | 添加到的新标识符净数 [!DNL Identity Service]. |
-| [!UICONTROL 创建的图形] | 在中创建的新身份图的净数量 [!DNL Identity Service]. |
-| [!UICONTROL 更新的图表] | 使用新边缘更新的现有身份图的数量。 |
-| [!UICONTROL 数据流运行失败] | 失败的数据流运行数。 |
-| [!UICONTROL 处理时间] | 从摄取开始到完成的时间戳。 |
-| [!UICONTROL 状态] | 定义数据流的整体状态。 可能的状态值包括： <ul><li>`Success`:表示数据流处于活动状态，并正在根据提供的计划摄取数据。</li><li>`Failed`:表示数据流的激活过程因错误而中断。 </li><li>`Processing`:表示数据流尚未处于活动状态。 此状态通常会在创建新数据流后立即出现。</li></ul> |
-
-的 [!UICONTROL 数据流运行详细信息] 页面显示 [!DNL Identity] 数据流运行，包括其IMS组织ID和数据流运行ID。 此页还显示相应的错误代码和 [!DNL Identity Service]，以防摄取过程中发生任何错误。
-
-选择 **[!UICONTROL 运行开始：2/14/2021，晚9:47]** 返回到上一页。
-
-![identities-dataflow run](../assets/ui/monitor-sources/identities-dataflow-run.png)
-
-从 [!UICONTROL 身份处理] 页面，选择 **[!UICONTROL 用户档案]** 在 [!UICONTROL 用户档案] 舞台。
-
-![select-profiles](../assets/ui/monitor-sources/select-profiles.png)
-
-### [!DNL Profile] 量度 {#profile-metrics}
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_profile_processing"
->title="配置文件处理"
->abstract="配置文件处理视图包含有关摄取到配置文件服务的记录的信息，包括创建的配置文件片段数、更新的配置文件片段以及配置文件片段总数。"
->text="Learn more in documentation"
-
->[!CONTEXTUALHELP]
->id="platform_monitoring_dataflow_run_details_profile"
->title="数据流运行详细信息"
->abstract="“数据流运行详细信息”页显示有关配置文件数据流运行的更多信息，包括其IMS组织ID和数据流运行ID。"
-
-的 [!UICONTROL 配置文件处理] 页面包含有关摄取到的记录的信息 [!DNL Profile]，包括创建的配置文件片段数、更新的配置文件片段数，以及配置文件片段总数。
-
-选择过滤器图标 ![过滤器](../assets/ui/monitor-sources/filter.png) 数据流运行开始时间旁边，查看 [!DNL Profile] 数据流运行。
-
-![用户档案](../assets/ui/monitor-sources/profiles.png)
-
-| 配置文件量度 | 描述 |
-| --------------- | ----------- |
-| [!UICONTROL 收到的记录] | 从接收的记录数 [!DNL Data Lake]. |
-| [!UICONTROL 记录失败 ] | 已摄取但未被摄取的记录数 [!DNL Profile] 错误。 |
-| [!UICONTROL 添加了配置文件片段] | 新增的净数量 [!DNL Profile] 已添加片段。 |
-| [!UICONTROL 更新了配置文件片段] | 现有的数量 [!DNL Profile] 片段已更新 |
-| [!UICONTROL 配置文件片段总数] | 写入的记录总数 [!DNL Profile]，包括所有现有 [!DNL Profile] 片段已更新并新增 [!DNL Profile] 已创建片段。 |
-| [!UICONTROL 数据流运行失败] | 失败的数据流运行数。 |
-| [!UICONTROL 处理时间] | 从摄取开始到完成的时间戳。 |
-| [!UICONTROL 状态] | 定义数据流的整体状态。 可能的状态值包括： <ul><li>`Success`:表示数据流处于活动状态，并正在根据提供的计划摄取数据。</li><li>`Failed`:表示数据流的激活过程因错误而中断。 </li><li>`Processing`:表示数据流尚未处于活动状态。 此状态通常会在创建新数据流后立即出现。</li></ul> |
-
-的 [!UICONTROL 数据流运行详细信息] 页面显示 [!DNL Profile] 数据流运行，包括其IMS组织ID和数据流运行ID。 此页还显示相应的错误代码和 [!DNL Profile]，以防摄取过程中发生任何错误。
-
-![profiles-dataflow运行](../assets/ui/monitor-sources/profiles-dataflow-run.png)
-
 ## 后续步骤 {#next-steps}
 
-通过阅读本教程，您已成功从源级别监控了 [!DNL Identity Service]和 [!DNL Profile]，使用 **[!UICONTROL 监控]** 功能板。 您还成功识别了在摄取过程中导致数据流失败的错误。 有关更多详细信息，请参阅以下文档：
+通过阅读本教程，您已使用 **[!UICONTROL 监控]** 功能板。 您还成功识别了在摄取过程中导致数据流失败的错误。 有关更多详细信息，请参阅以下文档：
 
-* [实时客户资料概述](../../profile/home.md)
-* [数据科学工作区概述](../../data-science-workspace/home.md)
+* [在数据流中监控身份](./monitor-identities.md)
+* [监控数据流中的用户档案](./monitor-profiles.md)
