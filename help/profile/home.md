@@ -4,9 +4,9 @@ title: 实时客户资料概述
 topic-legacy: guide
 description: 实时客户资料可合并各种来源的数据，并以单个客户资料和相关时间系列事件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 9f00bff31f9e7d2da1294d3d1f24cba7870a4614
+source-git-commit: d2182b48e21de059f12ad8923bb3b420ed87bcfc
 workflow-type: tm+mt
-source-wordcount: '1888'
+source-wordcount: '2046'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,24 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 
 下图突出显示了Experience Platform内实时客户资料与其他服务之间的关系：
 
-![](images/profile-overview/profile-in-platform.png)
+![实时客户资料与Adobe Experience Platform中其他服务之间的关系。 此图表显示，配置文件是Adobe Experience Platform的核心组件之一。](images/profile-overview/profile-in-platform.png)
 
 ## 了解用户档案
 
 [!DNL Real-time Customer Profile] 合并来自各种企业系统的数据，然后通过相关时间序列事件以客户配置文件的形式提供对该数据的访问。 通过此功能，营销人员能够跨多个渠道与其受众推动协调、一致和相关的体验。 以下部分重点介绍为了在Platform中有效构建和维护用户档案，您必须了解的一些核心概念。
+
+### 用户档案实体组合
+
+实时客户资料由称为 **主要实体**，以及各种支持实体。 主实体由用户档案的特征、行为和区段成员关系组成。 其他实体允许分段引擎利用用户档案主实体外的数据，并包括以下内容：
+
+- **维度实体**:用于简化跨事件或用户档案记录共享信息的数据建模过程的实体。 这也称为查找实体或分类实体。
+- **B2B实体**:描述用户档案与业务对业务帐户和商机关系的实体。
+
+![说明用户档案实体组成的图表。](./images/profile-overview/profile-entity-composition.png)
+
+>[!IMPORTANT]
+>
+>由于维度和B2B实体仅存在于主实体外部，因此它们仅用于批量分段。
 
 ### 配置文件数据存储
 
@@ -115,9 +128,9 @@ Adobe Experience Platform [!DNL Segmentation Service] 会生成为各个客户�
 
 由于数据管理与访问数据有关，因此在 [!DNL Experience Platform] 在不同级别：
 
-* 数据使用标签设置
-* 数据访问策略
-* 对营销操作数据的访问控制
+- 数据使用标签设置
+- 数据访问策略
+- 对营销操作数据的访问控制
 
 “数据管理”在几个点进行管理。 这包括确定要引入哪些数据 [!DNL Platform] 以及在为给定营销操作摄取后可访问哪些数据。 有关更多信息，请首先阅读 [数据管理概述](../data-governance/home.md).
 
