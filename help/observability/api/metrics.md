@@ -5,10 +5,10 @@ title: 量度API端点
 topic-legacy: developer guide
 description: 了解如何使用可观测性分析API在Experience Platform中检索可观测性量度。
 exl-id: 08d416f0-305a-44e2-a2b7-d563b2bdd2d2
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: dc7deab2c9fe1a1fa151731fceeb3c239dd18878
 workflow-type: tm+mt
-source-wordcount: '1864'
-ht-degree: 5%
+source-wordcount: '1409'
+ht-degree: 4%
 
 ---
 
@@ -201,23 +201,12 @@ curl -X POST \
 
 | 分析量度 | 描述 | ID查询参数 |
 | ---- | ---- | ---- |
-| timeseries.ingestion.dataset.new.count | 创建的数据集总数。 | 不适用 |
 | timeseries.ingestion.dataset.size | 为一个或多个数据集的一个数据集摄取的所有数据的累计大小。 | 数据集 ID |
 | timeseries.ingestion.dataset.dailysize | 根据每日使用情况为一个数据集或所有数据集摄取的数据大小。 | 数据集 ID |
 | timeseries.ingestion.dataset.batchfailed.count | 一个数据集或所有数据集的批次数失败。 | 数据集 ID |
 | timeseries.ingestion.dataset.batchsuccess.count | 为一个数据集或所有数据集批量摄取的次数。 | 数据集 ID |
 | timeseries.ingestion.dataset.recordsuccess.count | 为一个数据集或所有数据集摄取的记录数。 | 数据集 ID |
-| **timeseries.data.collection.validation.total.messages.rate** | 一个数据集或所有数据集的消息总数。 | 数据集 ID |
-| **timeseries.data.collection.validation.valid.messages.rate** | 一个数据集或所有数据集的有效消息总数。 | 数据集 ID |
-| **timeseries.data.collection.validation.invalid.messages.rate** | 一个数据集或所有数据集的无效消息总数。 | 数据集 ID |
-| **timeseries.data.collection.validation.category.type.count** | 一个数据集或所有数据集的无效“type”消息总数。 | 数据集 ID |
-| **timeseries.data.collection.validation.category.range.count** | 一个数据集或所有数据集的无效“范围”消息总数。 | 数据集 ID |
-| **timeseries.data.collection.validation.category.format.count** | 一个数据集或所有数据集的无效“format”消息总数。 | 数据集 ID |
-| **timeseries.data.collection.validation.category.pattern.count** | 一个数据集或所有数据集的无效“模式”消息总数。 | 数据集 ID |
 | **timeseries.data.collection.validation.category.presence.count** | 一个数据集或所有数据集的无效“存在”消息总数。 | 数据集 ID |
-| **timeseries.data.collection.validation.category.enum.count** | 一个数据集或所有数据集的无效“枚举”消息总数。 | 数据集 ID |
-| **timeseries.data.collection.validation.category.unclassified.count** | 一个数据集或所有数据集的无效“未分类”消息总数。 | 数据集 ID |
-| **timeseries.data.collection.validation.category.unknown.count** | 一个数据集或所有数据集的无效“未知”消息总数。 | 数据集 ID |
 | **timeseries.data.collection.inlet.total.messages.received** | 为一个数据入口或所有数据入口接收的消息总数。 | 入口ID |
 | **timeseries.data.collection.inlet.total.messages.size.received** | 为一个数据入口或所有数据入口接收的数据的总大小。 | 入口ID |
 | **timeseries.data.collection.inlet.success** | 对一个数据入口或所有数据入口的成功HTTP调用总数。 | 入口ID |
@@ -233,40 +222,11 @@ curl -X POST \
 | ---- | ---- | ---- |
 | timeseries.identity.dataset.recordsuccess.count | 写入其数据源的记录数，由 [!DNL Identity Service]，用于一个数据集或所有数据集。 | 数据集 ID |
 | timeseries.identity.dataset.recordfailed.count | 失败的记录数 [!DNL Identity Service]，适用于一个数据集或所有数据集。 | 数据集 ID |
-| timeseries.identity.dataset.namespacecode.recordsuccess.count | 为命名空间成功摄取的身份记录数。 | 命名空间ID(**必需**) |
 | timeseries.identity.dataset.namespacecode.recordfailed.count | 命名空间失败的身份记录数。 | 命名空间ID(**必需**) |
 | timeseries.identity.dataset.namespacecode.recordskipped.count | 命名空间跳过的身份记录数。 | 命名空间ID(**必需**) |
 | timeseries.identity.graph.imsorg.uniqueidentities.count | 存储在IMS组织的标识图中的唯一标识数。 | 不适用 |
 | timeseries.identity.graph.imsorg.namespacecode.uniqueidentities.count | 命名空间的标识图中存储的唯一标识数。 | 命名空间ID(**必需**) |
-| timeseries.identity.graph.imsorg.numidgraphs.count | 存储在IMS组织的标识图中的唯一图标标识数。 | 不适用 |
 | timeseries.identity.graph.imsorg.graphstrength.uniqueidentities.count | IMS组织的标识图中存储的特定图强度（“未知”、“弱”或“强”）的唯一标识数。 | 图表强度(**必需**) |
-
-{style=&quot;table-layout:auto&quot;}
-
-#### [!DNL Privacy Service] {#privacy}
-
-下表概述了Adobe Experience Platform的量度 [!DNL Privacy Service].
-
-| 分析量度 | 描述 | ID查询参数 |
-| ---- | ---- | ---- |
-| timeseries.gdpr.jobs.totaljobs.count | 根据GDPR创建的作业总数。 | ENV(**必需**) |
-| timeseries.gdpr.jobs.completedjobs.count | 来自GDPR的已完成作业总数。 | ENV(**必需**) |
-| timeseries.gdpr.jobs.errorjobs.count | 来自GDPR的错误作业总数。 | ENV(**必需**) |
-
-{style=&quot;table-layout:auto&quot;}
-
-#### [!DNL Query Service] {#query}
-
-下表概述了Adobe Experience Platform的量度 [!DNL Query Service].
-
-| 分析量度 | 描述 | ID查询参数 |
-| ---- | ---- | ---- |
-| timeseries.queryservice.query.scheduleonce.count | 非定期计划查询的总数。 | 不适用 |
-| timeseries.queryservice.query.scheduledrecurring.count | 定期计划查询的总数。 | 不适用 |
-| timeseries.queryservice.query.batchquery.count | 已执行的批处理查询总数。 | 不适用 |
-| timeseries.queryservice.query.scheduledquery.count | 已执行的计划查询总数。 | 不适用 |
-| timeseries.queryservice.query.interactivequery.count | 执行的交互式查询总数。 | 不适用 |
-| timeseries.queryservice.query.batchfrompsqlquery.count | 从PSQL执行的批处理查询的总数。 | 不适用 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -278,18 +238,7 @@ curl -X POST \
 | ---- | ---- | ---- |
 | timeseries.profiles.dataset.recordread.count | 从 [!DNL Data Lake] by [!DNL Profile]，适用于一个数据集或所有数据集。 | 数据集 ID |
 | timeseries.profiles.dataset.recordsuccess.count | 写入其数据源的记录数，由 [!DNL Profile]，适用于一个数据集或所有数据集。 | 数据集 ID |
-| timeseries.profiles.dataset.recordfailed.count | 失败的记录数 [!DNL Profile]，适用于一个数据集或所有数据集。 | 数据集 ID |
 | timeseries.profiles.dataset.batchsuccess.count | 数量 [!DNL Profile] 为数据集或所有数据集批量摄取。 | 数据集 ID |
-| timeseries.profiles.dataset.batchfailed.count | 数量 [!DNL Profile] 对于一个数据集或所有数据集，批量操作失败。 | 数据集 ID |
-| platform.ups.ingest.streaming.request.m1_rate | 传入请求速率。 | IMS组织(**必需**) |
-| aep.core.unified-profile.psi.platform.ups.ingest.streaming.access.put.success.meter.m1_rate | 摄取成功率。 | IMS组织(**必需**) |
-| platform.ups.ingest.streaming.records.created.m15_rate | 为数据集摄取的新记录的速率。 | 数据集ID(**必需**) |
-| platform.ups.ingest.streaming.request.error.created.outOfOrder.m1_rate | 为数据集创建请求而加盖超时时间戳的记录的速率。 | 数据集ID(**必需**) |
-| platform.ups.profile-commons.ingest.streaming.dataSet.record.created.timestamp | 数据集的上次创建记录请求的时间戳。 | 数据集ID(**必需**) |
-| platform.ups.ingest.streaming.request.error.updated.outOfOrder.m1_rate | 数据集更新请求的带有超时时间戳的记录的速率。 | 数据集ID(**必需**) |
-| platform.ups.profile-commons.ingest.streaming.dataSet.record.updated.timestamp | 数据集的上次更新记录请求的时间戳。 | 数据集ID(**必需**) |
-| platform.ups.ingest.streaming.record.size.m1_rate | 平均记录大小。 | IMS组织(**必需**) |
-| platform.ups.ingest.streaming.records.updated.m15_rate | 为数据集摄取的记录的更新请求的速率。 | 数据集ID(**必需**) |
 
 {style=&quot;table-layout:auto&quot;}
 
