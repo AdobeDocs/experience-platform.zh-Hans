@@ -2,9 +2,10 @@
 keywords: Experience Platform；主页；热门主题；数据准备；数据准备；流；升级；流升级
 title: 使用数据准备将部分行更新发送到用户档案服务
 description: 本文档提供了有关如何使用数据准备将部分行更新发送到用户档案服务的信息。
-source-git-commit: 26059af9f899b4ccf5701899c9ac8111d56488e8
+exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
+source-git-commit: 67049cf220379bfa5b64f530f26045ea21077be0
 workflow-type: tm+mt
-source-wordcount: '1057'
+source-wordcount: '1155'
 ht-degree: 0%
 
 ---
@@ -241,6 +242,14 @@ curl -X POST 'https://dcs.adobedc.net/collection/9aba816d350a69c4abbd283eb5818ec
   }
  }'
 ```
+
+## 已知限制和关键注意事项
+
+以下概述了在对上插页进行流式处理时需要考虑的已知限制列表 [!DNL Data Prep]:
+
+* 仅在向 [!DNL Profile Service]. 部分行更新包括 **not** 由数据湖使用。
+* 流式更新插页方法不支持更新、替换和删除身份。 只能使用 `identity: create` 操作。
+* 流上插页方法当前仅支持基元单值属性（如整数、日期、时间戳和字符串）和对象。 流上插页方法不支持替换、附加或覆盖数组属性和特定数组索引。
 
 ## 后续步骤
 
