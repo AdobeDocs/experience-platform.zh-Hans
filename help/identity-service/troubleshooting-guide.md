@@ -5,9 +5,9 @@ title: Identity Service疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档提供了有关Adobe Experience Platform Identity Service的常见问题解答，以及常见错误的疑难解答指南。
 exl-id: dac31bc3-7003-46d6-9d41-9f6fd3645c2c
-source-git-commit: 80530705f5f8d30294ad31e00d8956257ee2c085
+source-git-commit: 3d308d18c926cabdf0bd4b52c0623d8ec9428ee8
 workflow-type: tm+mt
-source-wordcount: '2236'
+source-wordcount: '2180'
 ht-degree: 0%
 
 ---
@@ -90,13 +90,7 @@ ht-degree: 0%
 
 ## Identity Service如何处理个人身份信息(PII)?
 
-Identity Service在保留值之前创建PII的强单向加密哈希。 “Phone”和“Email”命名空间中的身份数据将使用SHA-256自动进行哈希处理，在进行哈希处理之前，“Email”值会自动转换为小写。
-
-## 在发送到Platform之前，是否应加密所有PII?
-
-在将PII数据摄取到Platform之前，您无需手动加密该数据。 通过应用 `I1` “数据使用情况”标签，Platform会在摄取数据时自动将这些字段转换为经过哈希处理的ID值。
-
-有关如何应用和管理数据使用情况标签的步骤，请参阅 [数据使用标签教程](../data-governance/labels/user-guide.md).
+Identity Service具有标准命名空间，可支持为电话号码和电子邮件摄取经过哈希处理的身份值。 但是，您需要对值的哈希处理负责。 要了解有关对摄取到平台中的数据进行哈希处理的更多信息，请参阅 [[!DNL Data Prep] 映射函数指南](../data-prep/functions.md#hashing).
 
 ## 对基于PII的身份进行哈希处理时，是否考虑任何事项？
 
