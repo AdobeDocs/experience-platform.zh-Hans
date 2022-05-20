@@ -1,13 +1,13 @@
 ---
-title: Adobe Experience Platform 发行说明
-description: Experience Platform发行说明2020年9月9日
+title: Adobe Experience Platform发行说明2020年9月
+description: 2020年9月版Adobe Experience Platform发行说明。
 doc-type: release notes
 last-update: September 8, 2020
 author: crhoades, ens25212
 exl-id: bf401f3a-b088-4cbd-9a64-224294b797b9
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
 workflow-type: tm+mt
-source-wordcount: '859'
+source-wordcount: '863'
 ht-degree: 6%
 
 ---

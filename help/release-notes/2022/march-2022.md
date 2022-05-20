@@ -1,10 +1,10 @@
 ---
-title: Adobe Experience Platform 发行说明
-description: Adobe Experience Platform的最新发行说明。
+title: Adobe Experience Platform发行说明2022年3月
+description: 2022年3月版Adobe Experience Platform发行说明。
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: 3f1750d75bd69c5cf47eb593144f564564f90405
+source-git-commit: 9a506fcecc94ba20906133e60e4ff54fbe0403a3
 workflow-type: tm+mt
-source-wordcount: '1193'
+source-wordcount: '1194'
 ht-degree: 5%
 
 ---
@@ -25,8 +25,6 @@ Adobe Experience Platform 现有功能的更新包括：
 - [数据收集](#data-collection)
 - [[!DNL Query Service]](#query-service)
 - [源](#sources)
-
-<!-- - [Experience Data Model (XDM)](#xdm) -->
 
 ## 审核日志 {#audit-logs}
 
@@ -117,21 +115,9 @@ Platform提供了一套技术，允许您收集客户端客户体验数据，并
 | 功能 | 描述 |
 | --- | --- |
 | 全局数据流设置 | 现在，您可以在配置数据流时配置多个新的全局设置：地理位置、第一方ID Cookie和第三方ID同步。 请参阅 [配置数据流](../../edge/fundamentals/datastreams.md#configure) （详细信息）。 |
-| [边缘网络服务器API](../../server-api/overview.md) | 服务器API允许客户使用经过身份验证的新端点与Experience Platform边缘网络进行交互，从而支持各种数据收集、个性化、广告和营销用例。 |
+| [边缘网络服务器 API](../../server-api/overview.md) | 服务器API允许客户使用经过身份验证的新端点与Experience Platform边缘网络进行交互，从而支持各种数据收集、个性化、广告和营销用例。 |
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
-
-<!-- ## Experience Data Model (XDM) {#xdm}
-
-Experience Data Model (XDM) is an open-source specification that provides common structures and definitions (schemas) for data that is brought into Adobe Experience Platform. By adhering to XDM standards, all customer experience data can be incorporated into a common representation to deliver insights in a faster, more integrated way. You can gain valuable insights from customer actions, define customer audiences through segments, and use customer attributes for personalization purposes.
-
-| Feature | Description |
-| --- | --- |
-| Add or remove individual standard fields for a schema | The Schema Editor UI now allows you to add portions of standard field groups to your schemas, providing more flexibility for the fields you choose to include without needing to build custom resources from scratch.<br><br>You can now also define ad-hoc custom fields directly within the schema structure and assign them to a new or existing custom field group without needing to create or edit the field group beforehand.<br><br>See the guide on [creating and editing schemas in the UI](../../xdm/ui/resources/schemas.md) for more information on these new workflows. |
-
-{style="table-layout:auto"}
-
-For more information on XDM in Platform, see the [XDM System overview](../../xdm/home.md). -->
 
 ## 查询服务 {#query-service}
 

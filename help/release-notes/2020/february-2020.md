@@ -1,17 +1,16 @@
 ---
-title: Adobe Experience Platform 发行说明
-description: Experience Platform发行说明2020年2月12日
+title: Adobe Experience Platform发行说明2020年2月
+description: 2020年2月版Adobe Experience Platform发行说明。
 doc-type: release notes
 last-update: February 14, 2019
 author: ens71067
-translation-type: tm+mt
-source-git-commit: bfbf2074a9dcadd809de043d62f7d2ddaa7c7b31
+exl-id: 96db25ca-d857-489b-9a9d-625e86b1bf3e
+source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
 workflow-type: tm+mt
-source-wordcount: '195'
-ht-degree: 15%
+source-wordcount: '199'
+ht-degree: 12%
 
 ---
-
 
 # Adobe Experience Platform 发行说明
 
@@ -23,22 +22,22 @@ Adobe Experience Platform 现有功能的更新包括：
 
 ## 源 {#sources}
 
-Adobe Experience Platform可以从外部来源收集数据，同时允许您使用服务来构建、标记和增强该 [!DNL Platform] 数据。 您可以从各种来源(如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统)收集数据。
+Adobe Experience Platform可以从外部源摄取数据，同时允许您使用 [!DNL Platform] 服务。 您可以从各种来源摄取数据，如Adobe应用程序、基于云的存储、第三方软件和您的CRM系统。
 
-[!DNL Experience Platform] 提供REST风格的API和交互式UI，让您可以轻松为各种数据提供者设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置获取运行的时间，以及管理数据获取吞吐量。
+[!DNL Experience Platform] 提供了RESTful API和交互式UI，让您能够轻松为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，以及管理数据摄取吞吐量。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| SaaS的API支持——服务系统 | API和API的新 [!DNL Salesforce Service Cloud] 源连接 [!DNL ServiceNow] 器。 |
-| SaaS的API支持——营销系统 | 新的API源 [!DNL HubSpot] 连接器。 |
-| 数据库系统 [!DNL NoSQL] 的API支持 | 用于、、 [!DNL AWS Redshift]、 [!DNL Google BigQuery]和API [!DNL MariaDB]的新源 [!DNL MySQL][!DNL PostgreSQL][!DNL SQL Server] 连接器。 |
-| 云存储系统的API支持 | API和API的新 [!DNL Azure Data Lake Service Gen 2] 源连接 [!DNL Google Cloud Storage] 器。 |
-| 云存储系统的UI支持 | UI中新的 [!DNL Google Cloud Storage] 源连接器。 |
+| 对SaaS — 服务系统的API支持 | 新的源连接器 [!DNL Salesforce Service Cloud] API和 [!DNL ServiceNow] API。 |
+| 对SaaS的API支持 — 营销系统 | 新的源连接器 [!DNL HubSpot] API。 |
+| 支持 [!DNL NoSQL] 数据库系统 | 新的源连接器 [!DNL AWS Redshift], [!DNL Google BigQuery], [!DNL MariaDB], [!DNL MySQL], [!DNL PostgreSQL]和 [!DNL SQL Server] API。 |
+| 对云存储系统的API支持 | 新的源连接器 [!DNL Azure Data Lake Service Gen 2] API和 [!DNL Google Cloud Storage] API。 |
+| 云存储系统的UI支持 | 新的源连接器 [!DNL Google Cloud Storage] 中。 |
 
 **已知问题**
 
 * None
 
-有关源的详细信息，请参阅 [源概述](../../sources/home.md)。
+有关源的详细信息，请参阅 [源概述](../../sources/home.md).

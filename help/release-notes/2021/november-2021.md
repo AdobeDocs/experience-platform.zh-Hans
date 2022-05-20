@@ -1,9 +1,10 @@
 ---
-title: Adobe Experience Platform 发行说明
-description: Adobe Experience Platform的最新发行说明。
-source-git-commit: 7cd4a776ab07fcd123e798497b23edd41266f409
+title: Adobe Experience Platform发行说明2021年11月
+description: 2021年11月版Adobe Experience Platform发行说明。
+exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
+source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
 workflow-type: tm+mt
-source-wordcount: '798'
+source-wordcount: '799'
 ht-degree: 12%
 
 ---
@@ -90,4 +91,3 @@ Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾�
 | 自定义配置文件属性 | 除标准事件字段外，Customer AI现在还支持在您的数据中定义自定义用户档案数据集字段（带有时间戳）。 通过使用此选项，您可以添加其他您认为具有影响力的配置文件属性，这些属性可能会提高模型质量并提供更准确的结果。 |
 
 有关Customer AI的更多信息，请参阅 [客户AI文档](../../intelligent-services/customer-ai/overview.md).
-
