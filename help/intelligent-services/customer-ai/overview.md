@@ -7,7 +7,7 @@ topic-legacy: Customer AI Overview
 description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
 landing-page-description: Customer AI 用于生成自定义倾向分数，如个人档案大规模的流失率和转化率。
 exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: fccb5e6193d9c456d0035ef5c7d2adf5ffe883a4
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 18%
@@ -46,7 +46,7 @@ Customer AI构建于：
 
 >[!VIDEO](https://video.tv.adobe.com/v/32664?learn=on&quality=12)
 
-## 它是如何工作的？
+## 工作原理
 
 Customer AI通过分析现有的消费者体验事件数据来预测客户流失率或转化倾向得分。 Adobe认识到流失率和转化的定义在所有用例中并不统一，因此，您能够将自定义目标定义为一组条件。 只要所输入的消费者体验事件数据中存在感兴趣的事件，您就可以配置预测的目标。
 

@@ -6,9 +6,9 @@ title: 客户人工智能中的输入与输出
 topic-legacy: Getting started
 description: 进一步了解Customer AI使用的必需事件、输入和输出。
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: 0f408f217dd168b9c94b8dbbd7dc3c6edb06488c
 workflow-type: tm+mt
-source-wordcount: '3054'
+source-wordcount: '3096'
 ht-degree: 1%
 
 ---
@@ -264,6 +264,10 @@ Customer AI要求提供模型培训的历史数据，但所需数据量基于两
 ## 客户AI输出数据
 
 Customer AI会为被认为符合条件的个人用户档案生成多个属性。 根据您配置的内容，可使用两种方式来使用得分（输出）。 如果您有一个启用了“实时客户资料”的数据集，则可以在 [区段生成器](../../segmentation/ui/segment-builder.md). 如果您没有启用了配置文件的数据集，则可以 [下载Customer AI输出](./user-guide/download-scores.md) 数据湖上可用的数据集。
+
+您可以在 **数据集** 中。 所有Customer AI输出数据集均以名称开头 **Customer AI得分 — Name_of_app** 而所有Customer AI输出架构均以名称开头 **Customer AI架构 — Name_of_app**.
+
+![cai-schema-name-of-app](./images/user-guide/cai-schema-name-of-app.png)
 
 >[!NOTE]
 >
