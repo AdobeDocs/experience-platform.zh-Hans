@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 中的访问控制帮助
 breadcrumb-title: Access Control 指南
 user-guide-description: 利用 Adobe Admin Console 中的产品配置文件将用户与权限和沙盒关联起来。
 feature: Access Control
-source-git-commit: 5802920e86afd8c53e273d12cc6cb0ffe5c354bb
+source-git-commit: f8d728a6ce7a5748bcceee3201f6ddf7c307128c
 workflow-type: tm+mt
-source-wordcount: '99'
+source-wordcount: '98'
 ht-degree: 33%
 
 ---
@@ -15,8 +15,8 @@ ht-degree: 33%
 # 访问控制 {#access-control}
 
 * [访问控制概述](home.md)
-* 字段级别访问控制 {#flac}
-   * [概述](flac/overview.md)
+* 基于属性的访问控制 {#abac}
+   * [概述](abac/overview.md)
 * 访问控制UI {#ui}
    * [概述](ui/overview.md)
    * [选择产品配置文件](ui/browse.md)
