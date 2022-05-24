@@ -4,23 +4,24 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: be3967e7045e159736952e369a55df322afd9fec
 workflow-type: tm+mt
-source-wordcount: '780'
-ht-degree: 12%
+source-wordcount: '777'
+ht-degree: 13%
 
 ---
 
 
-# 源连接器 {#sources}
+# 源 {#sources}
 
-- [源连接器概述](home.md)
+- [源概述](home.md)
 - 可用源连接器 {#connectors}
    - Adobe应用程序 {#adobe-applications}
-      - [Analytics分类源连接器](connectors/adobe-applications/classifications.md)
-      - [Analytics源连接器](connectors/adobe-applications/analytics.md)
-      - [Audience Manager源连接器](connectors/adobe-applications/audience-manager.md)
-      - [客户属性来源连接器](connectors/adobe-applications/customer-attributes.md)
+      - [Analytics分类源](connectors/adobe-applications/classifications.md)
+      - [Analytics源](connectors/adobe-applications/analytics.md)
+      - [Audience Manager源](connectors/adobe-applications/audience-manager.md)
+      - [客户属性来源](connectors/adobe-applications/customer-attributes.md)
+      - [数据收集源](connectors/adobe-applications/data-collection.md)
       - 字段映射 {#mapping}
          - [Analytics字段映射](connectors/adobe-applications/mapping/analytics.md)
          - [Audience Manager字段映射](connectors/adobe-applications/mapping/audience-manager.md)
