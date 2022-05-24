@@ -5,9 +5,9 @@ title: Marketo Engage源的映射字段
 topic-legacy: overview
 description: 下表包含Marketo数据集中的字段与其相应XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: b68e69314af819daa93e1e6a777f1edeca359164
+source-git-commit: 1d2f485a91a8ad2c5b2bea9816c05b7bc26ae8e7
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '634'
 ht-degree: 7%
 
 ---
@@ -383,6 +383,8 @@ ht-degree: 7%
 | `email` | `workEmail.address` |
 | `iif(ecids != null, to_object('ECID',arrays_to_objects('id',explode(ecids))), null)` | `identityMap` | 这是一个计算字段。 |
 | `marketoIsDeleted` | `isDeleted` |
+| `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `b2b.convertedContactKey` | 这是一个计算字段。 |
+| `iif(mktoCdpCnvContactPersonId != null && mktoCdpCnvContactPersonId != \"\", to_object(\"sourceType\", \"Marketo\", \"sourceInstanceID\", \"${MUNCHKIN_ID}\", \"sourceID\", mktoCdpCnvContactPersonId, \"sourceKey\", concat(mktoCdpCnvContactPersonId,\"@${MUNCHKIN_ID}.Marketo\")), null)` | `personComponents.sourceConvertedContactKey` | 这是一个计算字段。 |
 
 {style=&quot;table-layout:auto&quot;}
 
