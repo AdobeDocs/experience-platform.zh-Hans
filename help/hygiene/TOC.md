@@ -4,7 +4,7 @@ user-guide-title: 数据卫生帮助
 breadcrumb-title: 数据卫生指南
 user-guide-description: 管理消费者数据请求以遵守GDPR和CCPA等隐私法规。
 feature: Privacy
-source-git-commit: b119cc56701a0e6038a31e032b7134fb5d0fbbad
+source-git-commit: adce89e5601daf18fe9cacb704a787472262db41
 workflow-type: tm+mt
 source-wordcount: '54'
 ht-degree: 3%
