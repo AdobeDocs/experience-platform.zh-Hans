@@ -5,9 +5,9 @@ title: 在UI中管理数据使用策略
 topic-legacy: policies
 description: Adobe Experience Platform Data Governance提供了一个用户界面，允许您创建和管理数据使用策略。 本文档概述了可在策略工作区中通过Experience Platform用户界面执行的操作。
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: 1c0685e7acb594829795674f859f76f229ecee61
+source-git-commit: 931b847761e649696aa8433d53233593efd4d1ee
 workflow-type: tm+mt
-source-wordcount: '1331'
+source-wordcount: '1329'
 ht-degree: 0%
 
 ---
@@ -79,11 +79,11 @@ Adobe Experience Platform Data Governance提供了一个用户界面，允许您
 
 ![](../images/policies/created-policy.png)
 
-### 创建同意策略（测试版） {#consent-policy}
+### 创建同意策略 {#consent-policy}
 
 >[!IMPORTANT]
 >
->同意策略当前处于测试阶段，贵组织可能还无法访问这些策略。
+>同意策略当前仅适用于已购买Adobe盾for Healthcare的组织。
 
 如果选择创建同意策略，则会显示一个新屏幕，用于配置新策略。
 
