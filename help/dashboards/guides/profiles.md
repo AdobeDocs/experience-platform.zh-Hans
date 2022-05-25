@@ -4,10 +4,10 @@ title: 用户档案仪表板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 65096a2da03f504c16f00a75bfdef9e78f8c1799
+source-git-commit: 2fdcd0748ccfe5b6b079bc21c8dbde491fbb2471
 workflow-type: tm+mt
-source-wordcount: '3535'
-ht-degree: 0%
+source-wordcount: '3761'
+ht-degree: 1%
 
 ---
 
@@ -81,7 +81,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 的 [!UICONTROL 并集架构] 功能板显示特定XDM类的并集架构。 通过选择 **[!UICONTROL 类]** 下拉列表中，您可以查看不同XDM类的并集架构。
 
-并集架构由多个架构组成，这些架构共享同一类并已为用户档案启用。 它们使您能够在单个视图中查看同一类的每个架构中包含的每个字段的集合。
+合并模式由多个共享同一类并已启用用户档案的模式组成。 它们使您能够在单个视图中查看同一类的每个架构中包含的每个字段的集合。
 
 请参阅并集模式UI指南，以了解有关 [在平台UI中查看并集模式](../../profile/ui/union-schema.md#view-union-schemas).
 
@@ -110,6 +110,8 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 受众大小]](#audiences-size)
 * [[!UICONTROL 用户档案计数趋势]](#profile-count-trend)
 * [[!UICONTROL 按身份划分的单个身份配置文件]](#single-identity-profiles-by-identity)
+* [[!UICONTROL 按合并策略划分的受众重叠]](#audience-overlap-by-merge-policy)
+* [[!UICONTROL 按身份划分的用户档案计数更改趋势]](#profiles-count-change-trend-by-identity)
 
 ### [!UICONTROL 用户档案计数] {#profile-count}
 
@@ -290,6 +292,25 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 将鼠标悬停在单个栏上可查看一个对话框，其中详细列出了身份的用户档案总数。
 
 ![按身份小组件划分的单个身份配置文件。](../images/profiles/single-identity-profiles-by-identity.png)
+
+### [!UICONTROL 按合并策略划分的受众重叠] {#audience-overlap-by-merge-policy}
+
+此小组件使用维恩图来显示两个选定区段的重叠。 合并策略是从页面顶部的概述下拉列表中选择的，而分析区段则从小组件的两个下拉菜单中选择。 通过将鼠标悬停在圆圈或交集上，可查看相关区段定义中包含的用户档案总数。
+
+当小组件显示区段定义的可视交叉时，您可以通过研究区段定义之间的相似性来优化分段策略。
+
+![Platform UI配置文件功能板（其中包含合并策略下拉列表，小组件区段下拉列表突出显示）。](../images/profiles/audience-overlap-by-merge-policy.png)
+
+### [!UICONTROL 按身份划分的用户档案计数更改趋势] {#profiles-count-change-trend-by-identity}
+
+<!-- This widget uses a line graph to illustrate the change in number of profiles filtered by a chosen source identity and merge policy. -->
+
+此小组件根据选定的源标识和合并策略过滤配置文件计数，然后使用折线图说明不同时段的数量变化。 从页面顶部的概述下拉菜单中选择合并策略，从小组件下拉菜单中选择源标识和时间段。 可在30天、90天和12个月期间显示趋势。
+
+此小组件通过展示按所需身份过滤的用户档案的增长模式，帮助您管理目标激活需求。
+
+![“配置文件计数”会按身份小组件更改趋势。](../images/profiles/profiles-count-change-trend-by-identity.png)
+
 
 ## （测试版）用户档案功效小组件 {#profile-efficacy-widgets}
 

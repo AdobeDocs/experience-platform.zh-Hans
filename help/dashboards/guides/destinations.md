@@ -4,9 +4,9 @@ title: 目标功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 65096a2da03f504c16f00a75bfdef9e78f8c1799
+source-git-commit: 2fdcd0748ccfe5b6b079bc21c8dbde491fbb2471
 workflow-type: tm+mt
-source-wordcount: '2538'
+source-wordcount: '2671'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 目标状态]](#destination-status)
 * [[!UICONTROL 按目标平台划分的活动目标]](#active-destinations-by-destination-platform)
 * [[!UICONTROL 所有目标中的已激活受众]](#activated-audiences-across-all-destinations)
+* [[!UICONTROL 激活的受众]](#activated-audiences)
 
 ### [!UICONTROL 最常用的目标] {#most-used-destinations}
 
@@ -250,6 +251,18 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 ![所有目标小组件中的已激活受众。](../images/destinations/activated-audiences-across-all-destinations.png)
 
 选择 **[!UICONTROL 受众]** 导航到目标 [!UICONTROL 浏览] 选项卡。 此页面提供了所有已启用的目标和各种相关量度的列表。 请参阅相关文档 [有关 [!UICONTROL 浏览] 选项卡](../../destinations/ui/destinations-workspace.md#browse).
+
+### [!UICONTROL 激活的受众] {#activated-audiences}
+
+此小组件提供用于统计已激活到目标的受众总数的单个量度。
+
+![激活的受众小组件。](../images/destinations/activated-audiences.png)
+
+选择 **[!UICONTROL 受众]** 导航到目标功能板的详细信息页面。 的 [!UICONTROL 激活数据] 选项卡显示已映射到目标的区段列表，包括其开始日期和结束日期（如果适用），以及有关数据导出的其他相关信息，如导出类型、计划和频率。 要查看特定区段的详细信息，请从列表中选择其名称。
+
+![目标功能板详细信息页面中，激活数据选项卡突出显示。](../images/destinations/activation-data-tab.png)
+
+此小组件可帮助您根据一眼中激活的受众数量，了解目标的价值。 它还提供了对更详细信息的轻松访问，以供进一步分析。
 
 ## 后续步骤
 

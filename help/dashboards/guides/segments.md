@@ -4,9 +4,9 @@ title: 区段功能板
 description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 65096a2da03f504c16f00a75bfdef9e78f8c1799
+source-git-commit: 63a7857c2b88e81de3df7d925daf15bf631ff84c
 workflow-type: tm+mt
-source-wordcount: '1491'
+source-wordcount: '1576'
 ht-degree: 0%
 
 ---
@@ -74,6 +74,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 受众大小趋势]](#audience-size-trend)
 * [[!UICONTROL 受众大小更改趋势]](#audience-size-change-trend)
 * [[!UICONTROL 按身份划分的受众大小趋势]](#audience-size-trend-by-identity)
+* [[!UICONTROL 受众重叠]](#audience-overlap)
 
 ### [!UICONTROL 受众大小] {#audience-size}
 
@@ -162,6 +163,14 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 此小组件根据从小组件下拉菜单中选择的身份类型，展示特定区段的受众大小趋势。 从概述下拉菜单中选择用于分析的区段。 趋势分析的周期可以显示为30天、90天和12个月。 时间段是从小组件的下拉菜单中选择的。
 
 ![按身份小组件显示的受众大小趋势。](../images/segments/audience-size-trend-by-identity.png)
+
+### [!UICONTROL 受众重叠] {#audience-overlap}
+
+此小组件表示两个区段中符合两个区段定义标准的用户档案数量。 从小组件下拉菜单中选择用于比较的区段。 通过将鼠标悬停在维恩图的圆圈或交集上，可查看相关区段定义中包含的用户档案总数。
+
+此小组件允许您通过可视化区段定义结果中的相似性来优化分段策略。
+
+![受众重叠小组件。](../images/segments/audience-overlap.png)
 
 ## 后续步骤
 
