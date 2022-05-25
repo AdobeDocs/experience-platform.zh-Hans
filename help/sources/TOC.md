@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: be3967e7045e159736952e369a55df322afd9fec
+source-git-commit: 3c80f3b297e7119067480739e206064bb2ace22c
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '781'
 ht-degree: 13%
 
 ---
@@ -59,6 +59,7 @@ ht-degree: 13%
    - 客户成功 {#customer-success}
       - [Salesforce Service Cloud连接器](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow连接器](connectors/customer-success/servicenow.md)
+      - [Zendesk连接器](connectors/customer-success/zendesk.md)
    - 数据库 {#databases}
       - [Amazon Redshift连接器](connectors/databases/redshift.md)
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
@@ -123,6 +124,7 @@ ht-degree: 13%
       - 客户成功 {#customer-success}
          - [Salesforce服务云](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
+         - [曾代克](tutorials/api/create/customer-success/zendesk.md)
       - 数据库 {#databases}
          - [Amazon Redshift](tutorials/api/create/databases/redshift.md)
          - [Azure HDInsights上的Apache Hive](tutorials/api/create/databases/hive.md)
@@ -221,6 +223,7 @@ ht-degree: 13%
       - 客户成功 {#customer-success}
          - [Salesforce服务云](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
+         - [曾代克](tutorials/ui/create/customer-success/zendesk.md)
       - 数据库 {#databases}
          - [Amazon Redshift](tutorials/ui/create/databases/redshift.md)
          - [Azure HDInsights上的Apache Hive](tutorials/ui/create/databases/hive.md)
