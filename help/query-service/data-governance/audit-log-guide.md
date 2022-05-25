@@ -2,9 +2,9 @@
 title: 查询服务审核日志集成
 description: 查询服务审核日志维护各种用户操作的记录，以形成用于解决问题或遵守公司数据管理策略和法规要求的审核跟踪。 本教程概述了特定于查询服务的审核日志功能。
 exl-id: 5fdc649f-3aa1-4337-965f-3f733beafe9d
-source-git-commit: 12b717be67cb35928d84e83b6d692f9944d651d8
+source-git-commit: 40de87ae407884d4ec7c75215fc7319721fbe1d0
 workflow-type: tm+mt
-source-wordcount: '815'
+source-wordcount: '935'
 ht-degree: 2%
 
 ---
@@ -25,9 +25,9 @@ Adobe Experience Platform [!DNL Query Service] 审核日志集成提供与查询
 
 | 类别 | 描述 |
 |---|---|
-| [!UICONTROL 计划查询] | 利用此类别，可审核在 [!DNL Query Service]. |
+| [!UICONTROL 查询] | 利用此类别，可审核查询执行。 |
 | [!UICONTROL 查询模板] | 利用此类别，可审核对查询模板执行的各种操作（创建、更新和删除）。 |
-<!-- | [!UICONTROL Query] | This category allows you to audit query executions. | -->
+| [!UICONTROL 计划查询] | 利用此类别，可审核在 [!DNL Query Service]. |
 
 ## 执行 [!DNL Query Service] 审核日志 {#perform-an-audit-log}
 
@@ -42,7 +42,7 @@ Adobe Experience Platform [!DNL Query Service] 审核日志集成提供与查询
 | 列名称 | 描述 |
 |---|---|
 | [!UICONTROL 时间戳] | 在 `month/day/year hour:minute AM/PM` 格式。 |
-| [!UICONTROL 资产名称] | 的值 [!UICONTROL 资产名称] 字段取决于选择作为过滤器的类别。 使用 [!UICONTROL 计划查询] 类别，这是 **计划名称**. 使用 [!UICONTROL 查询模板] 类别，这是 **模板名称**. |
+| [!UICONTROL 资产名称] | 的值 [!UICONTROL 资产名称] 字段取决于选择作为过滤器的类别。 使用 [!UICONTROL 计划查询] 类别，这是 **计划名称**. 使用 [!UICONTROL 查询模板] 类别，这是 **模板名称**. 使用 [!UICONTROL 查询] 类别，这是 **会话ID** |
 | [!UICONTROL 类别] | 此字段与您在过滤器下拉菜单中选择的类别匹配。 |
 | [!UICONTROL 操作] | 这可以是创建、删除、更新或执行。 可用的操作取决于选择作为过滤器的类别。 |
 | [!UICONTROL 用户] | 此字段提供执行查询的用户ID。 |
@@ -53,13 +53,25 @@ Adobe Experience Platform [!DNL Query Service] 审核日志集成提供与查询
 >
 >与审核日志功能板中默认显示的相比，通过下载CSV或JSON文件格式的日志结果来提供更多查询详细信息。
 
+## “详细信息”面板
+
 选择任意行的审核日志结果，以打开屏幕右侧的详细信息面板。
 
 ![审核功能板活动日志选项卡，其中突出显示了详细信息面板。](../images/audit-log/details-panel.png)
 
->[!NOTE]
->
->详细信息面板可用于查找 [!UICONTROL 资产ID]. 的值 [!UICONTROL 资产ID] 更改取决于审核中使用的类别。 使用 [!UICONTROL 查询模板] 类别， [!UICONTROL 资产ID] 是 **模板ID**. 使用 [!UICONTROL 计划查询] 类别， [!UICONTROL 资产ID] 是  **计划ID**.
+详细信息面板可用于查找 [!UICONTROL 资产ID] 和 [!UICONTROL 事件状态].
+
+的值 [!UICONTROL 资产ID] 更改取决于审核中使用的类别。
+
+* 使用 [!UICONTROL 查询] 类别， [!UICONTROL 资产ID] 是  **会话ID**.
+* 使用 [!UICONTROL 查询模板] 类别， [!UICONTROL 资产ID] 是 **模板ID** 前缀为 `[!UICONTROL templateID:]`.
+* 使用 [!UICONTROL 计划查询] 类别， [!UICONTROL 资产ID] 是  **计划ID** 前缀为 `[!UICONTROL scheduleID:]`.
+
+的值 [!UICONTROL 事件状态] 更改取决于审核中使用的类别。
+
+* 使用 [!UICONTROL 查询] 类别， [!UICONTROL 事件状态] 字段提供所有 **查询ID** 由用户在该会话中执行。
+* 使用 [!UICONTROL 查询模板] 类别， [!UICONTROL 事件状态] 字段 **模板名称** 作为事件状态的前缀。
+* 使用 [!UICONTROL 查询计划] 类别， [!UICONTROL 事件状态] 字段 **计划名称** 作为事件状态的前缀。
 
 ## 可用的过滤器 [!DNL Query Service] 审核日志类别 {#available-filters}
 
@@ -68,9 +80,9 @@ Adobe Experience Platform [!DNL Query Service] 审核日志集成提供与查询
 | 过滤器 | 描述 |
 |---|---|
 | 类别 | 请参阅 [[!DNL Query Service] 审核日志类别](#audit-log-categories) 部分。 |
-| 操作 | 在 [!DNL Query Service] 审核类别，更新是 **对现有表单的修改**，删除是 **删除计划或模板**，创建为 **创建新计划或模板**，和执行正在运行查询。 |
+| 操作 | 在 [!DNL Query Service] 审核类别，更新是 **对现有表单的修改**，删除是 **删除计划或模板**，创建为 **创建新计划或模板**，则执行为 **运行查询**. |
 | 用户 | 输入完整的用户ID(例如johndoe@acme.com)以按用户进行过滤。 |
-| 状态 | 此过滤器不适用于 [!DNL Query Service] 审核日志。 的 [!UICONTROL 允许], [!UICONTROL 成功]和 [!UICONTROL 失败] 选项将不会筛选结果，而 [!UICONTROL 拒绝] 选项将筛选 **全部** 日志。 |
+| 状态 | 的 [!UICONTROL 允许], [!UICONTROL 成功]和 [!UICONTROL 失败] 选项会根据“状态”或“事件状态”筛选日志，而 [!UICONTROL 拒绝] 选项将筛选 **全部** 日志。 |
 | 日期 | 选择开始日期和/或结束日期，以定义日期范围以按过滤结果。 |
 
 ## 后续步骤
