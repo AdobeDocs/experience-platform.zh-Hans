@@ -4,13 +4,13 @@ title: 基于属性的访问控制浏览
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
 hide: true
 hidefromtoc: true
+exl-id: 39634bde-8858-44a6-b39a-776846654fc1
 source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
 workflow-type: tm+mt
-source-wordcount: '336'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
-
 
 # 权限指南
 

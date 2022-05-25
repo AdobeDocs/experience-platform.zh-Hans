@@ -4,13 +4,13 @@ title: 基于属性的访问控制管理角色权限
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
 hide: true
 hidefromtoc: true
+exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
 source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
 workflow-type: tm+mt
-source-wordcount: '786'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
-
 
 # 管理角色的权限
 

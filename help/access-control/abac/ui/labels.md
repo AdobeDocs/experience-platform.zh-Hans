@@ -4,13 +4,13 @@ title: 基于属性的访问控制管理标签
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
 hide: true
 hidefromtoc: true
+exl-id: c790f09c-fda6-48bf-95db-3f5053cd882e
 source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
 workflow-type: tm+mt
-source-wordcount: '165'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
-
 
 # 管理标签
 

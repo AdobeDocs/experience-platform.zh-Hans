@@ -4,13 +4,13 @@ title: 基于属性的访问控制沙箱
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
 hide: true
 hidefromtoc: true
+exl-id: c21eb319-fc0d-442a-b778-bbfa2d6bb22d
 source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
 workflow-type: tm+mt
-source-wordcount: '188'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
-
 
 # 管理沙箱
 

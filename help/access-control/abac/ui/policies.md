@@ -4,13 +4,13 @@ title: 基于属性的访问控制创建策略
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
 hide: true
 hidefromtoc: true
+exl-id: 66820711-2db0-4621-908d-01187771de14
 source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
 workflow-type: tm+mt
 source-wordcount: '689'
 ht-degree: 0%
 
 ---
-
 
 # 管理策略
 
