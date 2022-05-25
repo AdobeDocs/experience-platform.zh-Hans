@@ -2,10 +2,10 @@
 title: 审核日志概述
 description: 了解您如何借助审核日志看到谁在 Adobe Experience Platform 中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: ba190bdd1856b2d89fa28679eb7f09c258ddd17c
+source-git-commit: cd7ce8c107769a77373f328d9aa84c982be0d8ee
 workflow-type: tm+mt
-source-wordcount: '767'
-ht-degree: 10%
+source-wordcount: '847'
+ht-degree: 11%
 
 ---
 
@@ -23,20 +23,28 @@ ht-degree: 10%
 
 | 资源 | 操作 |
 | --- | --- |
-| [数据集](../../../catalog/datasets/overview.md) | <ul><li>创建</li><li>更新</li><li>Delete</li><li>启用 [实时客户资料](../../../profile/home.md)</li><li>为配置文件禁用</li></ul> |
-| [架构](../../../xdm/schema/composition.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>为配置文件启用</li></ul> |
+| [访问控制策略（基于属性的访问控制）](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>Delete</li></ul> |
+| [帐户(Adobe)](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [审核日志](../../../landing/governance-privacy-security/audit-logs/overview.md) | <ul><li>导出</li></ul> |
 | [类](../../../xdm/schema/composition.md#class) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [字段组](../../../xdm/schema/composition.md#field-group) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [数据类型](../../../xdm/schema/composition.md#data-type) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [沙盒](../../../sandboxes/home.md) | <ul><li>创建</li><li>更新</li><li>重置</li><li>删除</li></ul> |
-| [目标](../../../destinations/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集删除</li><li>配置文件激活</li><li>配置文件删除</li></ul> |
-| [区段](../../../segmentation/home.md) | <ul><li>创建</li><li>删除</li><li>区段激活</li><li>区段删除</li></ul> |
-| [合并策略](../../../profile/merge-policies/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
 | [计算属性](../../../profile/computed-attributes/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [数据集](../../../catalog/datasets/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>启用 [实时客户资料](../../../profile/home.md)</li><li>为配置文件禁用</li><li>添加数据</li><li>删除批次</li></ul> |
+| [数据类型](../../../xdm/schema/composition.md#data-type) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [目标](../../../destinations/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集删除</li><li>配置文件激活</li><li>配置文件删除</li></ul> |
+| [字段组](../../../xdm/schema/composition.md#field-group) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [身份图](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>视图</li></ul> |
+| [身份命名空间](../../../identity-service/ui/identity-graph-viewer.md) | <ul><li>创建</li><li>更新</li></ul> |
+| [合并策略](../../../profile/merge-policies/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
 | [产品配置文件](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [帐户(Adobe)](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [查询模板](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
-| [计划查询](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [查询](../../../query-service/ui/overview.md) | <ul><li>Execute</li></ul> |
+| [查询模板](../../../query-service/ui/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [角色（基于属性的访问控制）](../../../access-control/home.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>添加用户</li><li>删除用户</li></ul> |
+| [沙盒](../../../sandboxes/home.md) | <ul><li>创建</li><li>更新</li><li>重置</li><li>删除</li></ul> |
+| [计划查询](../../../query-service/ui/overview.md) | <ul><li>创建</li><li>更新</li><li>删除</li></ul> |
+| [架构](../../../xdm/schema/composition.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>为配置文件启用</li></ul> |
+| [区段](../../../segmentation/home.md) | <ul><li>创建</li><li>删除</li><li>区段激活</li><li>区段删除</li></ul> |
+| [源数据流](../../../sources/connectors/tutorials/ui/../../../tutorials/ui/update.md) | <ul><li>创建</li><li>更新</li><li>删除</li><li>启用</li><li>禁用</li><li>数据集激活</li><li>数据集删除</li><li>用户档案激活</li><li>配置文件删除</li></ul> |
+| [工作顺序](../../../hygiene/home.md) | <ul><li>创建</li></ul> |
 
 ## 访问审核日志
 
@@ -50,7 +58,7 @@ ht-degree: 10%
 
 ![审核日志仪表板](../../images/audit-logs/audits.png)
 
-审核日志会保留365天，之后这些日志将从系统中删除。 因此，您最长只能返回365天的时段。
+审核日志会保留365天，之后这些日志将从系统中删除。 因此，您最长只能返回365天。 如果您需要超过365天的数据，则应当以常规频率导出日志，以满足内部策略要求。
 
 从列表中选择事件，以在右边栏中查看其详细信息。
 

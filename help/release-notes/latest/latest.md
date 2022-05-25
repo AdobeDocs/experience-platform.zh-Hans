@@ -2,16 +2,16 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 7040a3415ced04035e2a6a73292c2113411df21d
+source-git-commit: 73aaf93e4d11c9e6dd20dfaaf64501eda9220ef8
 workflow-type: tm+mt
-source-wordcount: '2916'
-ht-degree: 5%
+source-wordcount: '2613'
+ht-degree: 6%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发布日期：2022 年 4 月 27 日**
+**发布日期：2022 年 5 月 25 日**
 
 Adobe Experience Platform 现有功能的更新包括：
 
@@ -19,7 +19,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [[!DNL Dashboards]](#dashboards)
 - [数据流](#dataflows)
 - [[!DNL Data Prep]](#data-prep)
-- [目标](#destinations)
+- [[!DNL Destinations]](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [Real-time Customer Data Platform B2B 版本](#B2B)
 - [源](#sources)
@@ -94,27 +94,9 @@ Adobe Experience Platform 现有功能的更新包括：
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| 高级企业目标连接器 | 现在通常提供三个企业目标连接器： [[!DNL Amazon Kinesis]](../../destinations/catalog/cloud-storage/amazon-kinesis.md), [[!DNL Azure Event Hubs]](../../destinations/catalog/cloud-storage/azure-event-hubs.md)和 [[!DNL HTTP API]](../../destinations/catalog/streaming/http-destination.md). <br> 企业目标连接器的一般可用性包括之前在测试阶段提供的所有功能，等等： <ul><li>新的身份验证功能，包括 [Azure事件中心中的共享访问签名](../../destinations/catalog/cloud-storage/azure-event-hubs.md#sas-authentication) 更多 [身份验证类型](../../destinations/catalog/streaming/http-destination.md#authentication-information) （载体令牌、OAuth 2）；</li><li>[回填历史用户档案数据](../../destinations/catalog/streaming/http-destination.md#historical-data-backfill) （在首次激活时发送符合区段资格条件的历史用户档案）；</li><li>现在，这些目标支持数据流运行量度；</li><li>[其他区段元数据](../../destinations/catalog/streaming/http-destination.md#destination-details) 包含在数据有效负载中，包括区段名称和区段时间戳；</li><li>支持 [静态IP地址](/help/destinations/catalog/streaming/ip-address-allow-list.md) 适用于需要允许列表Experience Platform的客户。</li></ul> |
-| 目标数据流的上下文关联警报 | 您现在可以 [订阅警报](../../destinations/ui/alerts.md) 创建目标数据流时，接收有关数据流运行状态、成功或失败的警报消息。 您可以选择在Experience PlatformUI中或通过电子邮件接收警报。 |
+| 导出最新用户档案资格 [每日区段评估](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files) | 现在，您可以在每日区段评估完成后，安排一次或每天使用最新的用户档案资格进行完整文件导出。 |
+| 可选的数据流ID [Adobe Target目标](../../destinations/catalog/personalization/adobe-target-connection.md) | 为了为无法实施Adobe Target Web SDK的用户启用Adobe Target个性化，配置Experience Platform目标时，数据流ID选择现在是可选的。 当不使用数据流时，从Experience Platform导出到Target的区段将仅支持下一会话个性化，而边缘分段会被禁用，而且 [用例](../../destinations/ui/configure-personalization-destinations.md) 依赖于边缘分割的。 |
 
-### 高级企业目标连接器的发布流程 {#release-process-enterprise-destinations}
-
-对于Amazon Kinesis、Azure事件中心和HTTP API目标，在发行过程（从4月27日开始）中，您将在目标目录中看到以前的测试版目标卡，以及新的通用(GA)目标卡。 使用测试版目标的客户配置的任何数据流将在未来几天内迁移到同一目标的GA版本。 此迁移最终应在4月29日星期五的星期五结束前完成。 测试版目标将在此短暂的时间范围内继续可见，并标记为 **已弃用**.
-
-如果您已在测试阶段利用这些目标，请注意以下事项：
-
-- 如果之前已在测试版中且包含3个目标中的任意一个，则无需执行任何操作。 作为测试版一部分设置的所有数据流都将继续正常运行，并将迁移到GA版本。
-- 如果您希望从4月27日开始设置这些目标，请使用新的GA版本的目标进行设置。
-- 完成发行操作后，标记为已弃用的测试版卡将被删除，预计在4月29日星期五当天结束前完成。 Experience Platform工程团队正在密切监控是否成功进行发布操作。
-
-**新目标**
-
-| 目标 | 描述 |
-| ----------- | ----------- |
-| [!DNL Criteo] | 将数据连接并激活到 [[!DNL Criteo]](../../destinations/catalog/advertising/criteo.md) 广告平台。 |
-| [!DNL Sendgrid] | 将数据连接并激活到 [[!DNL Sendgrid]](../../destinations/catalog/email-marketing/sendgrid.md) 平台。 |
-
-有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 

@@ -3,9 +3,9 @@ keywords: 目标个性化；目的地；experience platform target目标；adobe
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 0868d81bcd1968b3223c79abb5a7bb8f279a4130
 workflow-type: tm+mt
-source-wordcount: '591'
+source-wordcount: '752'
 ht-degree: 1%
 
 ---
@@ -20,11 +20,13 @@ Adobe Target是Adobe Experience Platform中的一个个性化连接。
 
 ## 先决条件 {#prerequisites}
 
-此集成由 [Adobe Experience Platform Web SDK](../../../edge/home.md). 您必须使用此SDK才能使用此目标。
+配置Adobe Target连接时 [使用数据流ID](#parameters)，则必须具有 [Adobe Experience Platform Web SDK](../../../edge/home.md) 已实施。
+
+在不使用数据流ID的情况下配置Adobe Target连接不需要您实施Web SDK。
 
 >[!IMPORTANT]
 >
->在创建 [!DNL Adobe Target] 连接，请阅读有关如何 [为同一页面和下一页面个性化配置个性化目标](../../ui/configure-personalization-destinations.md). 本指南将引导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。
+>在创建 [!DNL Adobe Target] 连接，请阅读有关如何 [为同一页面和下一页面个性化配置个性化目标](../../ui/configure-personalization-destinations.md). 本指南将引导您跨多个Experience Platform组件完成同页和下一页个性化用例所需的配置步骤。 同页和下一页个性化要求您在配置Adobe Target连接时使用数据流ID。
 
 ## 导出类型和频度 {#export-type-frequency}
 
@@ -48,8 +50,8 @@ Adobe Target是Adobe Experience Platform中的一个个性化连接。
 >[!CONTEXTUALHELP]
 >id="platform_destinations_target_datastream"
 >title="关于数据流ID"
->abstract="此选项确定区段在响应页面时将包含在哪些数据收集数据流中。 下拉菜单仅显示已启用目标配置的数据流。 必须先配置数据流，然后才能配置目标。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/datastreams.html?lang=en" text="了解如何配置数据流"
+>abstract="此选项确定将包含区段的数据收集数据流。 下拉菜单仅显示启用了Target配置的数据流。 要使用边缘分段，必须选择数据流ID。 选择“无”会禁用使用边缘分段的所有用例。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/personalization/adobe-target-connection.html#parameters" text="了解有关选择数据流的更多信息。"
 
 >[!IMPORTANT]
 > 
@@ -65,7 +67,12 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 * **名称**:填写此目标的首选名称。
 * **描述**:输入目标的描述。 例如，您可以提及您使用此目标的促销活动。 此字段为可选字段。
-* **数据流ID**:这可确定区段将包含在页面响应中的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。 请参阅 [配置数据流](../../../edge/datastreams/overview.md) 以了解更多详细信息。
+* **数据流ID**:这可确定将包含区段的数据收集数据流。 下拉菜单仅显示启用了Target目标的数据流。 请参阅 [配置数据流](../../../edge/datastreams/overview.md#target) 有关如何为Adobe Target配置数据流的详细信息。
+   * **[!UICONTROL 无]**:如果您需要配置Adobe Target个性化，但无法实施 [Experience PlatformWeb SDK](../../../edge/home.md). 使用此选项时，从Experience Platform导出到Target的区段仅支持下一会话个性化，并且会禁用边缘分段。 有关更多信息，请参阅下表。
+
+| 未选择数据流 | 已选择数据流 |
+|---|---|
+| <ul><li>[边缘分割](../../../segmentation/ui/edge-segmentation.md) 不支持。</li><li>[同页和下一页个性化](../../ui/configure-personalization-destinations.md) 不受支持。</li><li>您只能将区段共享到生产沙盒的Adobe Target连接。</li><li>要在不使用数据流ID的情况下配置下一个会话的个性化，请使用 [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=en).</li></ul> | <ul><li>边缘分割可按预期工作。</li><li>[同页和下一页个性化](../../ui/configure-personalization-destinations.md) 。</li><li>其他沙箱支持区段共享。</li></ul> |
 
 ## 将区段激活到此目标 {#activate}
 

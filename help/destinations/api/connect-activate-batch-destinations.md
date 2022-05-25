@@ -6,9 +6,9 @@ description: 使用流程服务API在Experience Platform中创建批量云存储
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 95dd6982eeecf6b13b6c8a6621b5e6563c25ae26
 workflow-type: tm+mt
-source-wordcount: '3129'
+source-wordcount: '3334'
 ht-degree: 2%
 
 ---
@@ -1003,6 +1003,7 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
                 "exportMode": "DAILY_FULL_EXPORT",
                 "schedule": {
                     "frequency": "ONCE",
+                    "triggerType": "SCHEDULED",
                     "startDate": "2021-12-20",
                     "startTime": "17:00"
                 },   
@@ -1037,10 +1038,15 @@ curl --location --request PATCH 'https://platform.adobe.io/data/foundation/flows
 | `exportMode` | 必选。 选择 `"DAILY_FULL_EXPORT"` 或 `"FIRST_FULL_THEN_INCREMENTAL"`。有关这两个选项的更多信息，请参阅 [导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) 和 [导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) 批次目标激活教程中的步骤8。 |
 | `startDate` | 选择区段应开始将用户档案导出到目标的日期。 |
 | `frequency` | 必选。 <br> <ul><li>对于 `"DAILY_FULL_EXPORT"` 导出模式，您可以选择 `ONCE` 或 `DAILY`.</li><li>对于 `"FIRST_FULL_THEN_INCREMENTAL"` 导出模式，您可以选择 `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
-| `endDate` | 在选择 `"exportMode":"DAILY_FULL_EXPORT"` 和 `"frequency":"ONCE"`. <br> 设置区段成员停止导出到目标的日期。 |
-| `startTime` | 必选。 选择生成包含区段成员的文件并将其导出到目标的时间。 |
+| `triggerType` | 对于 *批次目标* 仅。 仅当选择 `"DAILY_FULL_EXPORT"` 模式 `frequency` 选择器。 <br> 必选。 <br> <ul><li>选择 `"AFTER_SEGMENT_EVAL"` 以使激活作业在每日Platform批量分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的用户档案导出到您的目标。</li><li>选择 `"SCHEDULED"` 以在固定时间运行激活作业。 这可确保每天同时导出Experience Platform配置文件数据，但导出的配置文件可能不是最新的，具体取决于激活作业开始之前是否已完成批量分段作业。 选择此选项时，还必须添加 `startTime` 以UTC表示应在何时进行每日导出。</li></ul> |
+| `endDate` | 对于 *批次目标* 仅。 仅当在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中向数据流添加区段时，才需要填写此字段。 <br> 在选择 `"exportMode":"DAILY_FULL_EXPORT"` 和 `"frequency":"ONCE"`. <br> 设置区段成员停止导出到目标的日期。 |
+| `startTime` | 对于 *批次目标* 仅。 仅当在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中向数据流添加区段时，才需要填写此字段。 <br> 必选。 选择生成包含区段成员的文件并将其导出到目标的时间。 |
 
 {style=&quot;table-layout:auto&quot;}
+
+>[!TIP]
+>
+> 请参阅 [更新数据流中区段的组件](/help/destinations/api/update-destination-dataflows.md#update-segment) 了解如何更新导出区段的各种组件（文件名模板、导出时间等）。
 
 **响应**
 

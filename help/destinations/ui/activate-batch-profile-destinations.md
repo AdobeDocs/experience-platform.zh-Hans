@@ -6,9 +6,9 @@ seo-title: Activate audience data to batch profile export destinations
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 729c0724c7af88bb69c9d68a45d58c3575c90828
+source-git-commit: 95dd6982eeecf6b13b6c8a6621b5e6563c25ae26
 workflow-type: tm+mt
-source-wordcount: '2242'
+source-wordcount: '2411'
 ht-degree: 0%
 
 ---
@@ -97,7 +97,20 @@ ht-degree: 0%
    * **[!UICONTROL 一次]**:计划一次性按需完整文件导出。
    * **[!UICONTROL 每日]**:在您指定的时间，安排每天一次完整文件导出。
 
-1. 使用 **[!UICONTROL 时间]** 选择器，以选择一天中的时间 [!DNL UTC] 格式，应在何时进行导出。
+1. 使用 **[!UICONTROL 时间]** 切换以选择在区段评估后立即导出，还是在指定时间按计划导出。 选择 **[!UICONTROL 已计划]** 选项时，您可以使用选择器在 [!DNL UTC] 格式，应在何时进行导出。
+
+   >[!NOTE]
+   >
+   >的 **[!UICONTROL 区段评估后]** 下面描述的选项当前仅供选定的测试版客户使用。
+
+   使用 **[!UICONTROL 区段评估后]** 选项，以在每日Platform批量分段作业完成后立即运行激活作业。 这可确保在激活作业运行时，将最新的用户档案导出到您的目标。
+
+   <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
+
+   ![在批量目标的激活流程中突出显示了“区段评估后”选项的图像。](../assets/ui/activate-batch-profile-destinations/after-segment-evaluation-option.png)
+使用 **[!UICONTROL 已计划]** 选项，以在固定时间运行激活作业。 这可确保每天同时导出Experience Platform配置文件数据，但导出的配置文件可能不是最新的，具体取决于激活作业开始之前是否已完成了批量分段作业。
+
+   ![该图像突出显示了批量目标的激活流程中的计划选项，并显示了时间选择器。](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
    >[!IMPORTANT]
    >
@@ -110,7 +123,6 @@ ht-degree: 0%
    > 选择导出间隔时，该间隔的最后一天不会包含在导出中。 例如，如果选择的间隔为1月4日至11日，则最后一次文件导出将在1月10日进行。
 
 1. 选择 **[!UICONTROL 创建]** 以保存计划。
-
 
 ### 导出增量文件 {#export-incremental-files}
 

@@ -3,7 +3,7 @@ title: 数据流概述
 description: 将客户端 Experience Platform SDK 集成与 Adobe 产品和第三方目标连接起来。
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；边缘配置ID；标识；启用ID同步；ID同步容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID；数据收集的数据准备；数据准备；映射器；XDM；边缘上的XDM；映射器
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 4ad80d8198f86010291532a9e6b9cd564abf6d15
+source-git-commit: fe66cbd61d546da8fb6621ef78b3565126cb193d
 workflow-type: tm+mt
 source-wordcount: '1686'
 ht-degree: 2%
@@ -84,7 +84,7 @@ ht-degree: 2%
 >
 >每个服务配置都包含一个 **[!UICONTROL 已启用]** 在选择服务时自动激活的切换开关。 要禁用此数据流的选定服务，请选择 **[!UICONTROL 已启用]** 再次切换。
 
-### Adobe Analytics设置
+### Adobe Analytics设置 {#analytics}
 
 此服务可控制数据是否以及如何发送到Adobe Analytics。 有关更多详细信息，请参阅 [向Analytics发送数据](../data-collection/adobe-analytics/analytics-overview.md).
 
@@ -94,7 +94,7 @@ ht-degree: 2%
 | --- | --- |
 | [!UICONTROL 报表包 ID] | **（必需）** 要将数据发送到的Analytics报表包的ID。 此ID可在Adobe Analytics UI中的 [!UICONTROL 管理员] > [!UICONTROL 报表包]. 如果指定了多个报表包，则数据会复制到每个报表包。 |
 
-### Adobe Audience Manager设置
+### Adobe Audience Manager设置 {#audience-manager}
 
 此服务可控制数据是否以及如何发送到Adobe Audience Manager。 将数据发送到Audience Manager所需的只是启用此部分。 其他设置是可选的，但鼓励使用。
 
@@ -105,7 +105,7 @@ ht-degree: 2%
 | [!UICONTROL Cookie目标已启用] | 允许SDK通过 [cookie目标](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/custom-destinations/create-cookie-destination.html) 从 [!DNL Audience Manager]. |
 | [!UICONTROL 启用URL目标] | 允许SDK通过 [URL目标](https://experienceleague.adobe.com/docs/audience-manager/user-guide/features/destinations/custom-destinations/create-url-destination.html) 从 [!DNL Audience Manager]. |
 
-### Adobe Experience Platform设置
+### Adobe Experience Platform设置 {#aep}
 
 >[!IMPORTANT]
 >
@@ -127,7 +127,7 @@ ht-degree: 2%
 | [!UICONTROL 边缘分割] | 选中此复选框可启用 [边缘分割](../../segmentation/ui/edge-segmentation.md) 数据流。 当SDK通过启用边缘分段的数据流发送数据时，相关用户档案的任何更新区段成员关系将在响应中发送回。<br><br>此选项可与 [!UICONTROL 个性化目标] 表示 [下一页个性化用例](../../destinations/ui/configure-personalization-destinations.md). |
 | [!UICONTROL 个性化目标] | 与 [!UICONTROL 边缘分割] 复选框，此选项允许数据流连接到个性化引擎，如Adobe Target。 有关的具体步骤，请参阅目标文档 [配置个性化目标](../../destinations/ui/configure-personalization-destinations.md). |
 
-### Adobe Target设置
+### Adobe Target设置 {#target}
 
 此服务可控制数据是否以及如何发送到Adobe Target。
 

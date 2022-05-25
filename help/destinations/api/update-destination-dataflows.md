@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了更新目标数据流的步骤。 了解如何使用流服务API启用或禁用数据流、更新其基本信息，或添加和删除区段和属性。
 exl-id: 3f69ad12-940a-4aa1-a1ae-5ceea997a9ba
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 95dd6982eeecf6b13b6c8a6621b5e6563c25ae26
 workflow-type: tm+mt
-source-wordcount: '2136'
+source-wordcount: '2419'
 ht-degree: 1%
 
 ---
@@ -484,8 +484,8 @@ curl -X PATCH \
             "schedule":{
                "startDate":"2022-01-05",
                "frequency":"DAILY",
-               "endData":"2022-03-10"
-               "startTime":"16:00",
+               "triggerType": "AFTER_SEGMENT_EVAL",
+               "endDate":"2022-03-10"
             }
          }
       }
@@ -504,6 +504,7 @@ curl -X PATCH \
 | `exportMode` | 对于 *批次目标* 仅。 仅当在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中向数据流添加区段时，才需要填写此字段。 <br> 必选。 选择 `"DAILY_FULL_EXPORT"` 或 `"FIRST_FULL_THEN_INCREMENTAL"`。有关这两个选项的更多信息，请参阅 [导出完整文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-full-files) 和 [导出增量文件](/help/destinations/ui/activate-batch-profile-destinations.md#export-incremental-files) 批次目标激活教程中的步骤8。 |
 | `startDate` | 选择区段应开始将用户档案导出到目标的日期。 |
 | `frequency` | 对于 *批次目标* 仅。 仅当在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中向数据流添加区段时，才需要填写此字段。 <br> 必选。 <br> <ul><li>对于 `"DAILY_FULL_EXPORT"` 导出模式，您可以选择 `ONCE` 或 `DAILY`.</li><li>对于 `"FIRST_FULL_THEN_INCREMENTAL"` 导出模式，您可以选择 `"DAILY"`, `"EVERY_3_HOURS"`, `"EVERY_6_HOURS"`, `"EVERY_8_HOURS"`, `"EVERY_12_HOURS"`.</li></ul> |
+| `triggerType` | 对于 *批次目标* 仅。 仅当选择 `"DAILY_FULL_EXPORT"` 模式 `frequency` 选择器。 <br> 必选。 <br> <ul><li>选择 `"AFTER_SEGMENT_EVAL"` 以使激活作业在每日Platform批量分段作业完成后立即运行。 这可确保在激活作业运行时，将最新的用户档案导出到您的目标。</li><li>选择 `"SCHEDULED"` 以在固定时间运行激活作业。 这可确保每天同时导出Experience Platform配置文件数据，但导出的配置文件可能不是最新的，具体取决于激活作业开始之前是否已完成批量分段作业。 选择此选项时，还必须添加 `startTime` 以UTC表示应在何时进行每日导出。</li></ul> |
 | `endDate` | 对于 *批次目标* 仅。 仅当在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中向数据流添加区段时，才需要填写此字段。 <br> 在选择 `"exportMode":"DAILY_FULL_EXPORT"` 和 `"frequency":"ONCE"`. <br> 设置区段成员停止导出到目标的日期。 |
 | `startTime` | 对于 *批次目标* 仅。 仅当在批量文件导出目标(如Amazon S3、SFTP或Azure Blob)中向数据流添加区段时，才需要填写此字段。 <br> 必选。 选择生成包含区段成员的文件并将其导出到目标的时间。 |
 
@@ -639,6 +640,112 @@ curl -X PATCH \
     "etag": "\"50014cc8-0000-0200-0000-6036eb720000\""
 }
 ```
+
+有关可在数据流中更新的区段组件的更多示例，请参阅以下示例。
+
+## 将区段的导出模式从计划更新为评估区段后的模式 {#update-export-mode}
+
++++ 单击可查看相关示例，其中区段导出从在指定时间的每天激活更新为在Platform批量分段作业完成后的每天激活。
+
+区段每天16:00 UTC时导出。
+
+```json
+{
+  "type": "PLATFORM_SEGMENT",
+  "value": {
+    "id": "b1e50e8e-a6e2-420d-99e8-a80deda2082f",
+    "name": "12JAN22-AEP-NA-NTC-90D-MW",
+    "filenameTemplate": "%DESTINATION_NAME%_%SEGMENT_ID%_%DATETIME(YYYYMMdd_HHmmss)%",
+    "exportMode": "DAILY_FULL_EXPORT"
+    "schedule": {
+      "frequency": "DAILY",
+      "triggerType": "SCHEDULED",
+      "startDate": "2022-01-13",
+      "endDate": "2023-01-13",
+      "startTime":"16:00"
+    },
+    "createTime": "1642041770",
+    "updateTime": "1642615573"
+  }
+}
+```
+
+该区段在每日批量分段作业完成后每天导出。
+
+```json
+{
+  "type": "PLATFORM_SEGMENT",
+  "value": {
+    "id": "b1e50e8e-a6e2-420d-99e8-a80deda2082f",
+    "name": "12JAN22-AEP-NA-NTC-90D-MW",
+    "filenameTemplate": "%DESTINATION_NAME%_%SEGMENT_ID%_%DATETIME(YYYYMMdd_HHmmss)%",
+    "exportMode": "DAILY_FULL_EXPORT"
+    "schedule": {
+      "frequency": "DAILY",
+      "triggerType": "AFTER_SEGMENT_EVAL",
+      "startDate": "2022-01-13",
+      "endDate": "2023-01-13"
+    },
+    "createTime": "1642041770",
+    "updateTime": "1642615573"
+  }
+}
+```
+
++++
+
+## 更新文件名模板，以在文件名中包含其他字段 {#update-filename-template}
+
++++ 单击可查看更新了文件名模板以在文件名中包含其他字段的示例
+
+导出的文件包含目标名称和Experience Platform区段ID
+
+```json
+{
+  "type": "PLATFORM_SEGMENT",
+  "value": {
+    "id": "b1e50e8e-a6e2-420d-99e8-a80deda2082f",
+    "name": "12JAN22-AEP-NA-NTC-90D-MW",
+    "filenameTemplate": "%DESTINATION_NAME%_%SEGMENT_ID%",
+    "exportMode": "DAILY_FULL_EXPORT"
+    "schedule": {
+      "frequency": "DAILY",
+      "triggerType": "SCHEDULED",
+      "startDate": "2022-01-13",
+      "endDate": "2023-01-13",
+      "startTime":"16:00"
+    },
+    "createTime": "1642041770",
+    "updateTime": "1642615573"
+  }
+}
+```
+
+导出的文件包含目标名称、Experience Platform区段ID、Experience Platform生成文件的日期和时间，以及文件末尾附加的自定义文本。
+
+
+```json
+{
+  "type": "PLATFORM_SEGMENT",
+  "value": {
+    "id": "b1e50e8e-a6e2-420d-99e8-a80deda2082f",
+    "name": "12JAN22-AEP-NA-NTC-90D-MW",
+    "filenameTemplate": "%DESTINATION_NAME%_%SEGMENT_ID%_%DATETIME(YYYYMMdd_HHmmss)%_%this is custom text%",
+    "exportMode": "DAILY_FULL_EXPORT"
+    "schedule": {
+      "frequency": "DAILY",
+      "triggerType": "SCHEDULED",
+      "startDate": "2022-01-13",
+      "endDate": "2023-01-13",
+      "startTime":"16:00"
+    },
+    "createTime": "1642041770",
+    "updateTime": "1642615573"
+  }
+}
+```
+
++++
 
 ## 向数据流添加配置文件属性 {#add-profile-attribute}
 
