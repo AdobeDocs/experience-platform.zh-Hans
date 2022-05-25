@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 73aaf93e4d11c9e6dd20dfaaf64501eda9220ef8
+source-git-commit: 37d073266bf9293ad3a9e85c193acd1e2e47fa2a
 workflow-type: tm+mt
-source-wordcount: '2613'
+source-wordcount: '1553'
 ht-degree: 6%
 
 ---
@@ -13,65 +13,143 @@ ht-degree: 6%
 
 **发布日期：2022 年 5 月 25 日**
 
+<!-- New features in Adobe Experience Platform: -->
+
+<!-- - [Attribute-based access control](#abac) -->
+<!-- - [Data hygiene](#hygiene) -->
+
 Adobe Experience Platform 现有功能的更新包括：
 
-- [[!DNL Artificial Intelligence and Machine Learning Services]](#ai/ml-services)
-- [[!DNL Dashboards]](#dashboards)
-- [数据流](#dataflows)
-- [[!DNL Data Prep]](#data-prep)
-- [[!DNL Destinations]](#destinations)
+- [审核日志](#audit-logs)
+- [仪表板](#dashbaords)
+- [数据收集](#data-collection)
+
+<!-- - [Data Governance](#data-governance) -->
+- [数据准备](#data-prep)
+- [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
-- [Real-time Customer Data Platform B2B 版本](#B2B)
+- [查询服务](#query-service)
 - [源](#sources)
 
-## [!DNL Dashboards] {#dashboards}
+<!-- ## Attribute-based access control {#abac}
 
-平台提供了多个功能板，您可以通过该功能板查看有关贵组织数据的重要信息（在每日快照期间捕获）。
+>[!IMPORTANT]
+>
+>Attribute-based access control is currently available in a limited release for US-based healthcare customers. This capability will be available to all Real-time Customer Data Platform customers once it is fully released.
 
-功能板为您的组织数据提供预配置的报表选项，并直接内置到平台内的营销人员工作流程中。 这些功能板可用，无需额外的IT支持，也无需花费时间和精力，即可通过额外的数据仓库设计和实施导出和处理数据。
+Attribute-based access control is a capability of Adobe Experience Platform that enables administrators to control access to specific objects and/or capabilities based on attributes. Attributes can be metadata added to an object, such as a label added to a schema field or segment. An administrator defines access policies that include attributes to manage user access permissions.
 
-可通过小组件库访问其各自功能板上的以下小组件。 有关 [如何通过小组件库添加小组件](../../dashboards/customize/widget-library.md).
+Through attribute-based access control, administrators of your organization can control users’ access to both sensitive personal data (SPD) and personally identifiable information (PII) across all Platform workflows and resources. Administrators can define user roles that have access only to specific fields and data that correspond to those fields.
 
-**新小组件**
+| Feature | Description |
+| --- | --- |
+| Attribute-based access control | Attribute-based access control allows you to label Experience Data Model (XDM) schema fields with labels that define organizational or data usage scopes. In parallel, administrators can use the user and role administration interface to define access policies covering XDM schema fields and better manage the access given to users or groups of users (internal, external, or third-party users). Additionally, attribute-based access control allows administrators to manage access to specific segments. |
+| Permissions | Permissions is the area of Experience Cloud where administrators can define user roles and access policies to manage access permissions for features and objects within a product application. Through Permissions, you can create and manage roles, as well as assign the desired resource permissions for these roles. Permissions also allow you to manage the labels, sandboxes, and users associated with a specific role. For more information, see the [Permissions UI guide](../../access-control/abac/ui/browse.md). |
 
-| 构件 | 功能板 | 描述 |
-| ------ | --------- | ----------- |
-| [!UICONTROL 用户档案已添加趋势] | 用户档案 | 此小组件使用折线图来说明过去30天、90天或12个月内每天添加到用户档案存储的合并用户档案总数。 |
-| [!UICONTROL 映射到目标状态的受众] | 用户档案 | 此小组件在单个量度中显示已映射和未映射受众的总数，并使用圆环图来说明其总数之间的比例差异。 |
-| [!UICONTROL 受众大小] | 用户档案 | 此小组件提供了一个两列表，其中列出了最多20个区段以及每个区段中包含的受众总数。 此列表取决于所应用的合并策略，并根据受众总数从高到低进行排序。 |
-| [!UICONTROL 用户档案计数趋势] | 用户档案 | 此小组件使用折线图来说明一段时间内系统中包含的配置文件总数的趋势。 数据可在30天、90天和12个月期间显示。 |
-| [!UICONTROL 按身份划分的单个身份配置文件] | 用户档案 | 此小组件使用条形图来说明仅使用单个唯一标识符标识的用户档案总数。 该小组件最多支持五种最常出现的身份。 |
-| [!UICONTROL 目标状态] | 目标 | 此小组件将已启用目标的总数显示为单个量度，并使用圆环图来说明已启用目标与已禁用目标之间的比例差异。 |
-| [!UICONTROL 按目标平台划分的活动目标] | 目标 | 此小组件使用两列表来显示活动目标平台的列表以及每个目标平台的活动目标总数。 |
-| [!UICONTROL 所有目标中的已激活受众] | 目标 | 此小组件以单个量度提供所有目标中激活的受众总数。 |
-| [!UICONTROL Audience Activation订单] | 区段 | 此小组件提供了一个三列表，其中列出了受众的目标名称、平台和激活日期。 |
-| [!UICONTROL 受众大小趋势] | 区段 | 此小组件提供了折线图插图，用于显示在30天、90天和12个月期间内符合任何区段定义标准的用户档案总数。 |
-| [!UICONTROL 受众大小更改趋势] | 区段 | 此小组件提供了一个折线图图，用于显示符合给定区段资格的配置文件总数与最近的每日快照之间的差异。 趋势分析的周期可以显示为30天、90天和12个月。 |
-| [!UICONTROL 按身份划分的受众大小趋势] | 区段 | 此小组件根据选定的身份类型展示特定区段的受众大小趋势。 趋势分析的周期可以显示为30天、90天和12个月。 |
+For more information on attribute-based access control, see the [attribute-based access control overview](../../access-control/abac/overview.md). -->
 
-**新增功能**
+<!-- ## Data hygiene {#hygiene}
 
-| 功能 | 功能板 | 描述 |
-| ------- | --------- | ----------- |
-| 孤立的配置文件区段成员资格清理 | 用户档案和许可证使用情况 | 用户档案服务现在每天删除剩余的区段成员，以便在系统中更准确地显示用户档案。 在删除给定配置文件的所有配置文件片段后，会进行此清理。 这可能会在许可证使用情况功能板的“可寻址受众”量度中显示一个下降，也可能在“配置文件”功能板的“配置文件计数”量度中显示一个下降，因为这些量度包含此版本之前剩余的区段片段。 |
+Experience Platform provides a suite of data hygiene capabilities that allow you manage your stored data through programmatic deletions of consumer records and datasets. Using either the [!UICONTROL Data Hygiene] workspace in the UI or through calls to the Data Hygiene API, you can manage your data stores to ensure that information is used as expected, is updated when incorrect data needs fixing, and is deleted when organizational policies deem it necessary.
+
+>[!IMPORTANT]
+>
+>Data hygiene capabilities are currently only available for organizations that have purchased the Adobe Shield for Healthcare add-on offering.
+
+**New features**
+
+| Feature | Description |
+| --- | --- |
+| Consumer deletion | [Delete consumer records](../../hygiene/ui/delete-consumer.md) from the data lake and Profile store based on primary identity data. |
+| Time to live (TTL) for datasets | [Schedule TTLs](../../hygiene/ui/ttl.md) for Platform datasets.  |
+
+For more information on audit logs in Platform, refer to the [data hygiene overview](../../hygiene/home.md). -->
+
+## 审核日志 {#audit-logs}
+
+Experience Platform允许您审核用户活动以获取各种服务和功能。 审核日志提供有关谁执行了操作以及何时执行的信息。
+
+**更新功能**
+
+|功能 |名称 |描述 | | — | — | — | |已添加资源 | <ul><li> 访问控制策略 </li><li> 角色 </li><li> 审核日志 </li><li> 工作顺序 </li><li> 身份命名空间 </li><li> 身份图 </li><li> 查询 </li><li> 数据集 </li><li> 源数据流 </li></ul> |在活动发生时，会自动记录审核日志资源。 如果启用了该功能，则无需手动启用日志收集。 |
 
 {style=&quot;table-layout:auto&quot;}
 
-有关 [[!DNL Profiles]](../../dashboards/guides/profiles.md), [[!DNL Destinations]](../../dashboards/guides/destinations.md)和 [[!DNL Segments]](../../dashboards/guides/segments.md) 功能板。
+有关Platform中审核日志的更多信息，请参阅 [审核日志概述](../../landing/governance-privacy-security/audit-logs/overview.md).
 
-## 数据流 {#dataflows}
+## 仪表板 {#dashboards}
 
-在Platform中，数据是从许多不同的源中摄取的，在系统内进行分析，并激活到各种不同的目标。 Platform通过提供数据流的透明度，使跟踪这种潜在的非线性数据流的过程变得更加容易。
+Adobe Experience Platform提供了多个功能板，您可以通过这些功能板查看有关贵组织数据的重要信息（在每日快照期间捕获）。
 
-数据流是跨平台移动数据的作业的表示形式。 这些数据流是跨不同服务配置的，有助于将数据从源连接器移动到目标数据集，然后由Identity服务和实时客户资料使用这些数据流，最终激活到目标。
+### 配置文件功能板
+
+“配置文件”功能板显示贵组织在“配置文件存储”(Profile Store)中Experience Platform的属性（记录）数据的快照。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 通过合并策略小组件的受众重叠 | 此小组件显示区段定义的视觉交叉，并允许您通过研究区段定义之间的相似性来优化分段策略。 |
+| 按身份小组件划分的用户档案计数变化趋势 | 此小组件可演示按所需身份过滤的用户档案的增长模式，从而帮助您管理目标激活需求。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关用户档案的更多信息，请参阅 [配置文件仪表板文档](../../dashboards/guides/profiles.md).
+
+### 目标功能板
+
+“目标”功能板显示贵组织在Experience Platform中启用的目标的快照。
+
+| 功能 | 描述 |
+| --- | --- |
+| 按目标小组件激活的受众 | 此小组件可帮助您快速了解基于已激活受众数量的目标价值。 此外，您还可以轻松访问有关已映射到目标的区段的更多详细信息。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关目标的更多信息，请参阅 [目标仪表板文档](../../dashboards/guides/destinations.md).
+
+### 区段功能板
+
+区段功能板提供了一个用户界面，您可以通过该界面查看有关区段的重要信息，这些信息是在每日快照期间捕获的。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 受众重叠小组件 | 此小组件允许您通过可视化区段定义结果中的相似性来优化分段策略。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关区段的更多信息，请参阅 [区段仪表板文档](../../dashboards/guides/segments.md).
+
+## 数据收集 {#data-collection}
+
+Experience Platform提供了一套技术，允许您收集客户端客户体验数据，并将其发送到Adobe Experience Platform边缘网络，以便对其进行扩充、转换和分发到Adobe或非Adobe目标。
 
 **新增功能**
 
 | 功能 | 描述 |
-| ------- | ----------- |
-| 区段功能板 | 您现在可以使用监控仪表板来监控区段的数据流。 要了解更多信息，请阅读 [在UI中监控区段](../../dataflows/ui/monitor-segments.md) |
+| --- | --- |
+| 复制数据流 | [创建现有数据流的副本](../../edge/datastreams/overview.md#copy) 并根据需要调整其配置，避免从头开始。 |
+| 导入数据流映射规则 | 在为数据收集设置数据准备时，您可以 [导入现有数据流的映射规则](../../edge/datastreams/data-prep.md#import-mapping) 而不是手动配置每个字段映射。 |
+| 对Mobile SDK的数据团队映射支持 | 您现在可以在数据流上配置数据准备，以便与Experience PlatformMobile SDK一起使用。 |
+| 对XDM对象的数据组映射支持 | 在 [为数据收集配置数据准备](../../edge/datastreams/data-prep.md#select-data). |
 
-有关数据流的更多常规信息，请参阅 [数据流概述](../../dataflows/home.md). 要了解有关分段的更多信息，请参阅 [分段概述](../../segmentation/home.md).
+有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
+
+<!-- ## Data Governance {#governance}
+
+Adobe Experience Platform Data Governance is a series of strategies and technologies used to manage customer data and ensure compliance with regulations, restrictions, and policies applicable to data usage. It plays a key role within [!DNL Experience Platform] at various levels, including cataloging, data lineage, data usage labeling, data access policies, and access control on data for marketing actions.
+
+**New features**
+
+| Feature | Description | 
+| ------- | ----------- |
+| Consent policy enforcement (limited availability) | If your organization has purchased the Adobe Shield for Healthcare add-on offering, you can now [create consent policies](../../data-governance/policies/user-guide.md#consent-policy) to automatically [enforce customer consents and preferences in segment participation](../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation). |
+
+{style="table-layout:auto"}
+
+See the [Data Governance overview](../../data-governance/home.md) for more information on the service. -->
 
 ## [!DNL Data Prep] {#data-prep}
 
@@ -80,9 +158,13 @@ Adobe Experience Platform 现有功能的更新包括：
 **更新功能**
 
 | 功能 | 描述 |
-| --- | --- |
-| 支持Adobe Analytics源 | Adobe Analytics源现在支持数据准备功能，允许您在创建数据流时将Analytics报表包数据映射到目标XDM架构。 请参阅 [创建Analytics源连接](../../sources/tutorials/ui/create/adobe-applications/analytics.md) 以了解更多信息。 |
-| 支持导入现有映射规则 | 您现在可以从现有数据流导入映射规则，以加速数据流配置并限制错误。 请参阅 [导入现有映射规则](../../data-prep/ui/mapping.md) 以了解更多信息。 |
+| ------- | ----------- |
+| 本地化数据错误 | [!DNL Data Prep] 现在将所有转换错误定位到属性级别（以前位于行级别）。 数据流现在将摄取已填充了没有任何转换错误的列的部分行，而不是忽略完整行。 |
+| 将上插页流到 [!DNL Profile Service] | 流上插页 [!DNL Data Prep] 使用 [[!DNL Amazon Kinesis]](../../sources/connectors/cloud-storage/kinesis.md), [[!DNL Azure Event Hubs]](../../sources/connectors/cloud-storage/eventhub.md)或 [[!DNL HTTP API]](../../sources/connectors/streaming/http.md) 来源。 请参阅 [流式插页](../../data-prep/upserts.md) 以了解更多信息。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+<!-- | Attribute-based access control in [!DNL Data Prep] | You will now only be able to map attributes that you have access to. Attributes that you do not have access to can not be used in pass-through mappings and calculated fields. For more information, see [attribute-based access control in [!DNL Data Prep]](../../data-prep/home.md). **Note**: Attribute-based access control is currently available in a limited release for US-based healthcare customers. This capability will be available to all Real-time Customer Data Platform customers once it is fully released. | -->
 
 有关 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
 
@@ -97,41 +179,18 @@ Adobe Experience Platform 现有功能的更新包括：
 | 导出最新用户档案资格 [每日区段评估](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files) | 现在，您可以在每日区段评估完成后，安排一次或每天使用最新的用户档案资格进行完整文件导出。 |
 | 可选的数据流ID [Adobe Target目标](../../destinations/catalog/personalization/adobe-target-connection.md) | 为了为无法实施Adobe Target Web SDK的用户启用Adobe Target个性化，配置Experience Platform目标时，数据流ID选择现在是可选的。 当不使用数据流时，从Experience Platform导出到Target的区段将仅支持下一会话个性化，而边缘分段会被禁用，而且 [用例](../../destinations/ui/configure-personalization-destinations.md) 依赖于边缘分割的。 |
 
+{style=&quot;table-layout:auto&quot;}
 
 ## 体验数据模型(XDM) {#xdm}
 
 XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
 
-**新增功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| 添加或删除架构的单个标准字段 | 架构编辑器UI现在允许您向架构中添加部分标准字段组，从而为您选择包含的字段提供了更大的灵活性，而无需从头开始构建自定义资源。<br><br>现在，您还可以直接在架构结构中定义临时自定义字段，并将它们分配给新的或现有的自定义字段组，而无需事先创建或编辑字段组。<br><br>请参阅 [在UI中创建和编辑架构](../../xdm/ui/resources/schemas.md) 以了解有关这些新工作流的更多信息。 |
-
-{style=&quot;table-layout:auto&quot;}
-
 **新的XDM组件**
 
 | 组件类型 | 名称 | 描述 |
 | --- | --- | --- |
-| 全局模式 | [[!UICONTROL 数据卫生操作请求]](https://github.com/adobe/xdm/blob/master/schemas/hygiene/aep-hygiene-ops-record.schema.json) | 捕获用于删除或修改指定数据集或沙盒中记录的数据清理请求的详细信息。 |
-| 描述符 | [[!UICONTROL 时间序列粒度描述符]](https://github.com/adobe/xdm/blob/master/schemas/descriptors/time-series/descriptorTimeSeriesGranularity.schema.json) | 指示时间系列和概要数据的粒度。 当应用到架构时，该架构的 `timestamp` 字段是此粒度的时段中的第一个时间戳。 |
-| 类 | [[!UICONTROL XDM概要量度]](https://github.com/adobe/xdm/blob/master/components/classes/summary_metrics.schema.json) | 提供具有分组维的预汇总量度，例如具有GROUP BY的SQL SELECT的结果。 |
-| 字段组 | [[!UICONTROL 同意策略评估结果图]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-site-search.schema.json) | 捕获个人的同意策略评估结果。 |
-| 字段组 | [[!UICONTROL 网站搜索]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-site-search.schema.json) | 捕获与网站搜索相关的信息，如搜索查询、过滤和排序。 |
-| 字段组 | [[!UICONTROL 合并潜在客户]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/events/merge-leads.schema.json) | 捕获合并两个或更多潜在客户的事件的详细信息。 |
-| 字段组 | [[!UICONTROL 已发送电子邮件]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/events/emailsent.schema.json) | 捕获向收件人发送电子邮件的事件的详细信息。 |
-| 字段组 | [[!UICONTROL 拼合字段]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-stitching.schema.json) | 捕获通过事件的身份拼合流程计算的值。 |
-| 字段组 | [[!UICONTROL 审核的辅助收件人详细信息]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/secondary-recipient-detail.schema.json) | 用于捕获审核的辅助收件人详细信息的Adobe Journey Optimizer字段组。 |
-| 字段组 | [[!UICONTROL XDM业务帐户人员关系详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account-person/account-person-details.schema.json) | 捕获与帐户与人员关系相关的详细信息。 |
-| 字段组 | [[!UICONTROL 帐户人员详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/account-person/account-person-details.schema.json) | 捕获与帐户与人员关系相关的详细信息。 |
-| 数据类型 | [[!UICONTROL 购物车]](https://github.com/adobe/xdm/blob/master/components/datatypes/cart.schema.json) | 捕获有关电子商务购物车的信息。 |
-| 数据类型 | [[!UICONTROL 装运]](https://github.com/adobe/xdm/blob/master/components/datatypes/shipping.schema.json) | 捕获一个或多个产品的装运信息。 |
-| 数据类型 | [[!UICONTROL 网站搜索]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-site-search.schema.json) | 捕获有关网站搜索活动的信息。 |
-| 扩展(Workfront) | [[!UICONTROL 操作任务属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/opTask.schema.json) | 捕获与操作任务相关的详细信息。 |
-| 扩展(Workfront) | [[!UICONTROL 工作Portfolio属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/portfolio.schema.json) | 捕获与工作组合相关的详细信息。 |
-| 扩展(Workfront) | [[!UICONTROL 工作计划属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/program.schema.json) | 捕获与工作程序相关的详细信息。 |
-| 扩展(Workfront) | [[!UICONTROL 工作项目属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/project.schema.json) | 捕获与工作项目相关的详细信息。 |
+| 字段组 | [[!UICONTROL 更改集]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/changeset.schema.json) | 捕获数据集的行级别更改和数据集的行级别更改。 此字段组可以由任何类使用。 |
+| 字段组 | [[!UICONTROL 引用键]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-reference-keys.schema.json) | 捕获ExperienceEvent架构的引用键，从而允许您根据其他类与架构构建关系。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -139,60 +198,34 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 
 | 组件类型 | 名称 | 更新描述 |
 | --- | --- | --- |
-| 全局模式 | [[!UICONTROL 目标]](https://github.com/adobe/xdm/blob/master/schemas/destinations/destination.schema.json) | 的新枚举值 `destinationCategory`. |
-| 描述符 | [[!UICONTROL 友好名称描述符]](https://github.com/adobe/xdm/blob/master/schemas/descriptors/display/alternateDisplayInfo.schema.json) | 添加了对删除建议值(`meta:enum`)，而不是标准字段中需要的字段。 |
-| 字段组 | [[!UICONTROL 用户登录过程]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-user-login-details.schema.json) | `createProfile` 字段。 |
-| 数据类型 | [[!UICONTROL 商务]](https://github.com/adobe/xdm/blob/master/components/datatypes/marketing/commerce.schema.json) | 添加了几个与购物车相关的字段。 |
-| 数据类型 | [[!UICONTROL 产品列表项]](https://github.com/adobe/xdm/blob/master/components/datatypes/productlistitem.schema.json) | 为选定选项和折扣金额添加了新字段。 |
-| 扩展（智能服务） | [[!UICONTROL 智能服务历程AI发送时间优化]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/intelligentServices/profile-journeyai-sendtimeoptimization.schema.json) | 优化发送时间得分的存储格式。 |
-| 扩展(Workfront) | [[!UICONTROL Workfront更改事件]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/changeevent.schema.json) | 多个字段替换为 `workfront:customData` 字段。 |
-| 扩展(Workfront) | [[!UICONTROL 工作任务属性]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/task.schema.json) | 添加了多个字段。 |
-| 扩展(Workfront) | [[!UICONTROL 工作对象]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/workobject.schema.json) | 父对象类型和自定义表单字段的新字段。 |
+| 行为 | [[!UICONTROL 时间系列架构]](https://github.com/surbhi114/xdm/blob/master/components/behaviors/time-series.schema.json) | 已更新 `eventType` ，以包含若干与媒体相关的新事件类型以及Adobe Journey Optimizer的web渠道入站用例。 |
+| 全局模式 | [[!UICONTROL 目标]](https://github.com/tumulurik/xdm/blob/master/schemas/destinations/destination.schema.json) | 删除了 `xdm:destinationCategory`. |
+| 字段组 | [[!UICONTROL 记录状态]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/record-status.schema.json) | 更新了字段组状态，来源为 `experimental` to `stable`. |
+| 字段组 | （几个） | 多个B2B字段组已更新，因此某些ID字段已被弃用，取而代之的是使用 [[!UICONTROL B2B源]](../../xdm/data-types/b2b-source.md) 数据类型。 以前的ID字段将在将来的更新中弃用。 请参阅以下内容 [拉取请求](https://github.com/adobe/xdm/pull/1533/files#diff-720c0bb1d1cbaf622f5656c2a4b62d35830c75f6563794da72a280a6a520fbc1) 以获取受影响字段组更改的完整列表。 |
+| 数据类型 | [[!UICONTROL 浏览器详细信息]](https://github.com/liljenback/xdm/blob/master/components/datatypes/browserdetails.schema.json) | 添加了新字段 `xdm:userAgentClientHints` 用于捕获有关用户代理与浏览器交互的上下文信息。 |
+| 数据类型 | [[!UICONTROL 媒体信息]](https://github.com/lidiaist/xdm/blob/master/components/datatypes/media.schema.json) | 添加了 `xdm:playhead` 字段来捕获一段媒体内容的播放头时间。 固定模式验证 `xdm:videoSegment`. |
+| 数据类型 | [[!UICONTROL 评级]](https://github.com/lidiaist/xdm/blob/master/components/datatypes/external/iptc/rating.schema.json) | `iptc4xmpExt:RatingSourceLink` 不再是必填字段。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
-## [!DNL Artificial Intelligence/Machine Learning services] {#ai/ml-services}
+## 查询服务 {#query-service}
 
-AI/ML服务使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的功能。 这允许营销分析人员使用业务级别配置来设置特定于公司需求的预测，而无需具备数据科学专业知识。
-
-### Attribution AI
-
-Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
-
-**更新功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 支持多数据集 | 现在，多数据集功能支持所有体验事件数据集以及选择身份映射作为身份。 只要跨数据集存在通用的身份命名空间，客户就可以选择身份映射和任何关联的ID。 Attribution AI支持以下架构：Adobe Analytics、体验事件、消费者体验事件。 有关Attribution AI中多数据集支持的更多信息，请参阅 [Attribution AI用户指南](../../intelligent-services/attribution-ai/user-guide.md). |
-
-有关 [!DNL Intelligent Services]，请参阅 [[!DNL Intelligent Services] 概述](../../intelligent-services/home.md).
-
-### 客户人工智能
-
-Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾向得分，例如大规模单个用户档案的流失率和转化。 这无需通过将业务需求转变为机器学习问题、选择算法、培训或部署即可完成。
-
-**更新功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 支持多数据集 | 现在，多数据集功能支持所有体验事件数据集以及选择身份映射作为身份。 只要跨数据集存在通用的身份命名空间，客户就可以选择身份映射和任何关联的ID。 Customer AI支持以下模式：Adobe Analytics、体验事件、消费者体验事件和Adobe Audience Manager架构。 有关Customer AI中多数据集支持的更多信息，请参阅 [Customer AI用户指南](../../intelligent-services/customer-ai/user-guide/configure.md). |
-| Customer AI中新的模型评估量度 | Customer AI中的新增益图表允许营销人员根据其预算和ROI目标确定要定位的组大小。 新的提升图可测量模型的质量，从而更好地显示他们比随机定位更轻松的提升度。 有关更多信息，请参阅 [通过Customer AI发现洞察](../../intelligent-services/customer-ai/user-guide/discover-insights.md) 文档。 |
-
-有关 [!DNL Intelligent Services]，请参阅 [[!DNL Intelligent Services] 概述](../../intelligent-services/home.md).
-
-## Real-time Customer Data Platform B2B 版本 {#B2B}
-
-Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP)之上，专为在业务到业务服务模型中运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
+查询服务允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL data lake]. 您可以连接 [!DNL data lake] 并将查询结果捕获为新数据集，以用于报表、Data Science Workspace或摄取到实时客户资料。
 
 **更新功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 支持 `isDeleted` 功能 | 全部 [!DNL Marketo] 数据集除外 `Activities` 现在支持 `isDeleted` 映射。 新映射会自动添加到您现有的B2B数据流中。 您可以使用 `isDeleted` 映射以过滤已删除的记录，以便您的数据 [!DNL Data Lake] 与源数据一致。 请参阅 [[!DNL Marketo] 映射字段指南](../../sources/connectors/adobe-applications/mapping/marketo.md) 有关 `isDeleted`. |
+| 查询服务审核日志集成 | 查询服务审核日志集成提供查询相关用户操作的记录，以便对企业数据管理策略和法规要求进行故障排除或遵守。 请参阅 [审核日志集成文档](../../query-service/data-governance/audit-log-guide.md) 全面信息 |
+| ALTER TABLE SQL结构 | 使用SQL在临时数据集中设置主标识。 查询服务允许您使用 `ALTER TABLE` 命令。 |
 
-要了解有关Real-time Customer Data Platform B2B Edition的更多信息，请参阅 [B2B概述](../../rtcdp/b2b-overview.md).
+{style=&quot;table-layout:auto&quot;}
+
+<!-- For more information on data governance in Query Service, see the [data governance overview](../../query-service/data-governance/overview.md). -->
+
+有关查询服务功能的更多信息，请参阅 [查询服务概述](../../query-service/home.md)
 
 ## 源 {#sources}
 
@@ -200,12 +233,14 @@ Adobe Experience Platform可以从外部源摄取数据，同时允许您使用P
 
 Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为各种数据提供程序设置源连接。 这些源连接允许您验证并连接到外部存储系统和CRM服务，设置摄取运行的时间，以及管理数据摄取吞吐量。
 
-**更新功能**
-
 | 功能 | 描述 |
 | --- | --- |
-| 支持 [!DNL OneTrust Integration] | 您现在可以使用 [!DNL OneTrust Integration] 源，用于从 [!DNL OneTrust] 帐户到平台。 请参阅 [创建 [!DNL OneTrust Integration] 源连接](../../sources/connectors/consent-and-preferences/onetrust.md) 以了解更多信息。 |
-| 支持 [!DNL Square] | 您现在可以使用 [!DNL Square] 源，用于从 [!DNL Square] 帐户到平台。 |
-| 支持删除客户属性数据流 | 您现在可以删除使用客户属性源连接器创建的数据流。 |
+| 测试版 [!DNL Zendesk] 来源 | 使用 [!DNL Zendesk] 源，用于从您的 [!DNL Zendesk] 实例 [!DNL Profile] 扩充。 请参阅 [[!DNL Zendesk] 源概述](../../sources/connectors/customer-success/zendesk.md) 以了解更多信息。 |
+| 支持Adobe数据收集 | 使用源目录访问您的数据收集Experience Edge数据，包括为数据收集进行数据准备，并改进了对数据准备中数据警告的支持。 请参阅 [Adobe数据收集源概述](../../sources/connectors/adobe-applications/data-collection.md) 以了解更多信息。 |
+| 支持通过 `ISO-8859-1` 编码 | 使用 `encoding` 引入参数 `ISO-8859-1` 使用 [!DNL Flow Service] API。 请参阅 [创建云存储源连接](../../sources/tutorials/api/collect/cloud-storage.md) 以了解更多信息。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+<!-- | Attribute-based access control in sources | You can now manage and control access to individual source fields and attributes during ingestion. **Note**: Attribute-based access control is currently available in a limited release for US-based healthcare customers. This capability will be available to all Real-time Customer Data Platform customers once it is fully released.  | -->
 
 要进一步了解源，请参阅 [源概述](../../sources/home.md).
