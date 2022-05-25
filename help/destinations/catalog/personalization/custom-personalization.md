@@ -3,7 +3,7 @@ keywords: 自定义个性化；目的地；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标可提供外部个性化、内容管理系统、广告服务器以及网站上运行的其他应用程序，以便从Adobe Experience Platform中检索区段信息。 此目标基于用户配置文件区段成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '973'
 ht-degree: 0%
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 ## 导出类型和频度 {#export-type-frequency}
 
-**用户档案请求**  — 您正在为单个用户档案请求在自定义个性化目标中映射的所有区段。 可以为不同的自定义个性化目标设置不同的自定义个性化目标 [Adobe数据收集数据流](../../../edge/fundamentals/datastreams.md).
+**用户档案请求**  — 您正在为单个用户档案请求在自定义个性化目标中映射的所有区段。 可以为不同的自定义个性化目标设置不同的自定义个性化目标 [Adobe数据收集数据流](../../../edge/datastreams/overview.md).
 
 ## 用例 {#use-cases}
 
@@ -73,7 +73,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 * **[!UICONTROL 名称]**:填写此目标的首选名称。
 * **[!UICONTROL 描述]**:输入目标的描述。 例如，您可以提及您使用此目标的促销活动。 此字段为可选字段。
 * **[!UICONTROL 集成别名]**:此值将作为JSON对象名称发送到Experience PlatformWeb SDK。
-* **[!UICONTROL 数据流ID]**:这可确定区段将包含在页面响应中的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。 请参阅 [配置数据流](../../../edge/fundamentals/datastreams.md) 以了解更多详细信息。
+* **[!UICONTROL 数据流ID]**:这可确定区段将包含在页面响应中的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。 请参阅 [配置数据流](../../../edge/datastreams/overview.md) 以了解更多详细信息。
 
 ## 将区段激活到此目标 {#activate}
 

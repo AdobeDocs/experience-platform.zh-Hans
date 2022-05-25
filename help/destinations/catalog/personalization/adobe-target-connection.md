@@ -3,7 +3,7 @@ keywords: 目标个性化；目的地；experience platform target目标；adobe
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '591'
 ht-degree: 1%
@@ -65,7 +65,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 * **名称**:填写此目标的首选名称。
 * **描述**:输入目标的描述。 例如，您可以提及您使用此目标的促销活动。 此字段为可选字段。
-* **数据流ID**:这可确定区段将包含在页面响应中的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。 请参阅 [配置数据流](../../../edge/fundamentals/datastreams.md) 以了解更多详细信息。
+* **数据流ID**:这可确定区段将包含在页面响应中的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。 请参阅 [配置数据流](../../../edge/datastreams/overview.md) 以了解更多详细信息。
 
 ## 将区段激活到此目标 {#activate}
 

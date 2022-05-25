@@ -1,10 +1,11 @@
 ---
 title: Adobe Analytics ExperienceEvent完整扩展架构字段组
 description: 本文档概述了Adobe Analytics ExperienceEvent完整扩展架构字段组。
-source-git-commit: bfdcee33fb2cbd28039633d1d981149c40aa1d68
+exl-id: b5e17f4a-a582-4059-bbcb-435d46932775
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '894'
-ht-degree: 5%
+ht-degree: 7%
 
 ---
 
@@ -102,4 +103,4 @@ Analytics扩展字段组提供了十个对象字段，这些字段最多可捕�
 
 本文档介绍了Analytics扩展字段组的结构和用例。 有关字段组本身的详细信息，请参阅 [公共XDM存储库](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/analytics/experienceevent-all.schema.json).
 
-如果您使用此字段组通过Adobe Experience Platform Web SDK收集Analytics数据，请参阅 [配置数据流](../../../edge/fundamentals/datastreams.md) 了解如何将数据映射到服务器端的XDM。
+如果您使用此字段组通过Adobe Experience Platform Web SDK收集Analytics数据，请参阅 [配置数据流](../../../edge/datastreams/overview.md) 了解如何将数据映射到服务器端的XDM。

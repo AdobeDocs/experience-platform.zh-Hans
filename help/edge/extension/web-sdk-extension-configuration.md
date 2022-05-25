@@ -2,7 +2,7 @@
 title: 配置Adobe Experience Platform Web SDK扩展
 description: 如何在数据收集UI中配置Adobe Experience Platform Web SDK标记扩展。
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 1f9454148ed4ee95f0d86f03c4bcf8c917d0aeea
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '1047'
 ht-degree: 6%
@@ -51,7 +51,7 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 将请求发送到Adobe Experience Platform边缘网络时，会使用数据流ID引用服务器端配置。 您无需在网站上进行代码更改即可更新配置。
 
-请参阅 [数据流](../fundamentals/datastreams.md) 以了解更多信息。
+请参阅 [数据流](../datastreams/overview.md) 以了解更多信息。
 
 
 ## [!UICONTROL 隐私]

@@ -3,7 +3,7 @@ title: 事件转发概述
 description: 了解 Adobe Experience Platform 中的事件转发功能，此功能可让您使用 Platform Edge Network 执行任务，而无需更改您的标记实施。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 64e76c456ac5f59a2a1996e58eda405f1b27efa8
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '955'
 ht-degree: 8%
@@ -77,7 +77,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 ### 规则 {#rules}
 
-在事件转发属性中创建规则的方式与标记类似，主要区别在于您无法选择事件作为规则组件。 事件转发规则而是会处理它从 [数据流](../../../edge/fundamentals/datastreams.md) 并在满足某些条件时将这些事件转发到目标。
+在事件转发属性中创建规则的方式与标记类似，主要区别在于您无法选择事件作为规则组件。 事件转发规则而是会处理它从 [数据流](../../../edge/datastreams/overview.md) 并在满足某些条件时将这些事件转发到目标。
 
 ![数据收集UI中的事件转发规则](../../images/ui/event-forwarding/overview/rules.png)
 

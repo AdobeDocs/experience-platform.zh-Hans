@@ -3,10 +3,10 @@ title: 将Offer decisioning与Platform Web SDK结合使用
 description: Adobe Experience Platform Web SDK可以提供和渲染在Offer decisioning中管理的个性化选件。 您可以使用Offer decisioningUI或API创建选件和其他相关对象。
 keywords: offer decisioning；决策；Web SDK;Platform Web SDK；个性化选件；提供选件；选件交付；选件个性化；
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: b0cc2343a502e180267d86bca4a699c02f2d6f3d
+source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
 workflow-type: tm+mt
 source-wordcount: '870'
-ht-degree: 3%
+ht-degree: 5%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 3%
 >
 >在Adobe Experience Platform Web SDK中使用Offer decisioning可供选择的用户抢先体验。 并非所有IMS组织都能使用此功能。
 
-Adobe Experience Platform [!DNL Web SDK] 可以提供和渲染在Offer decisioning中管理的个性化选件。 您可以使用Offer decisioning用户界面(UI)或API创建选件和其他相关对象。
+Adobe Experience Platform [!DNL Web SDK] 可以提供和渲染在Offer decisioning中管理的个性化选件。 您可以使用 Offer Decisioning 用户界面 (UI) 或 API 创建优惠和其他相关对象。
 
 ## 先决条件
 
@@ -53,7 +53,7 @@ Adobe Experience Platform [!DNL Web SDK] 可以提供和渲染在Offer decisioni
 
    ![](assets/decision-scope-copy.png)
 
-* **数据流：** 欲知更多信息，请阅读 [数据流](../../fundamentals/datastreams.md) 文档。
+* **数据流：** 欲知更多信息，请阅读 [数据流](../../datastreams/overview.md) 文档。
 
 * **身份**:有关更多信息，请阅读此文档，概述如何 [Platform Web SDK使用Identity服务](../../identity/overview.md).
 
@@ -61,7 +61,7 @@ Adobe Experience Platform [!DNL Web SDK] 可以提供和渲染在Offer decisioni
 
 要启用Offer decisioning，请执行以下步骤：
 
-1. 在 [数据流](../../fundamentals/datastreams.md) 并选中“Offer decisioning”框
+1. 在 [数据流](../../datastreams/overview.md) 并选中“Offer decisioning”框
 
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
 

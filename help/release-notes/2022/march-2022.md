@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年3月
 description: 2022年3月版Adobe Experience Platform发行说明。
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: 9a506fcecc94ba20906133e60e4ff54fbe0403a3
+source-git-commit: 3a031c84138d36a5e23b2f80a44ada06e1a52184
 workflow-type: tm+mt
 source-wordcount: '1194'
 ht-degree: 5%
@@ -114,7 +114,7 @@ Platform提供了一套技术，允许您收集客户端客户体验数据，并
 
 | 功能 | 描述 |
 | --- | --- |
-| 全局数据流设置 | 现在，您可以在配置数据流时配置多个新的全局设置：地理位置、第一方ID Cookie和第三方ID同步。 请参阅 [配置数据流](../../edge/fundamentals/datastreams.md#configure) （详细信息）。 |
+| 全局数据流设置 | 现在，您可以在配置数据流时配置多个新的全局设置：地理位置、第一方ID Cookie和第三方ID同步。 请参阅 [配置数据流](../../edge/datastreams/overview.md#create) （详细信息）。 |
 | [边缘网络服务器 API](../../server-api/overview.md) | 服务器API允许客户使用经过身份验证的新端点与Experience Platform边缘网络进行交互，从而支持各种数据收集、个性化、广告和营销用例。 |
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
