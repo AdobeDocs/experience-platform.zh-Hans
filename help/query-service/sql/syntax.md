@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 25953a5a1f5b32de7d150dbef700ad06ce6014df
+source-git-commit: f509b468e7779b822eda96033a2c55cc3a12893d
 workflow-type: tm+mt
-source-wordcount: '2747'
+source-wordcount: '3050'
 ht-degree: 2%
 
 ---
@@ -714,7 +714,7 @@ COPY query
 >
 >完整的输出路径将为 `adl://<ADLS_URI>/users/<USER_ID>/acp_foundation_queryService/folder_location/<QUERY_ID>`
 
-### ALTER TABLE
+### ALTER TABLE {#alter-table}
 
 的 `ALTER TABLE` 命令允许您添加或删除主键或外键约束，以及向表中添加列。
 
@@ -747,6 +747,26 @@ ALTER TABLE table_name DROP CONSTRAINT constraint_name FOREIGN KEY ( column_name
 >
 >表架构应是唯一的，且不会在多个表之间共享。 此外，对于主键约束，命名空间是必填的。
 
+#### 添加或删除主标识和次标识
+
+的 `ALTER TABLE` 命令允许您直接通过SQL添加或删除主标识表列和次标识表列的约束。
+
+以下示例通过添加约束来添加主标识和次标识。
+
+```sql
+ALTER TABLE t1 ADD CONSTRAINT PRIMARY IDENTITY (id) NAMESPACE 'IDFA';
+ALTER TABLE t1 ADD CONSTRAINT IDENTITY(id) NAMESPACE 'IDFA';
+```
+
+也可以通过删除约束来删除标识，如以下示例所示。
+
+```sql
+ALTER TABLE t1 DROP CONSTRAINT PRIMARY IDENTITY (c1) ;
+ALTER TABLE t1 DROP CONSTRAINT IDENTITY (c1) ;
+```
+
+有关更多详细信息，请参阅有关在临时数据集中设置身份的文档。
+
 #### 添加列
 
 以下SQL查询显示了向表添加列的示例。
@@ -756,6 +776,23 @@ ALTER TABLE table_name ADD COLUMN column_name data_type
 
 ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_type2 
 ```
+
+##### 支持的数据类型
+
+下表列出了用于向具有 [!DNL Postgres SQL]、 XDM和 [!DNL Accelerated Database Recovery] (ADR)。
+
+| — | PSQL客户端 | XDM | ADR | 描述 |
+|---|---|---|---|---|
+| 1 | `bigint` | `int8` | `bigint` | 一种用于存储大整数的数字数据类型，大整数介于–9,223,372,036,854,775,807到9,223,372,036,854,775,807（8字节）之间。 |
+| 2 | `integer` | `int4` | `integer` | 一种用于存储整数（从–2,147,483,648到2,147,483,647到4字节）的数字数据类型。 |
+| 3 | `smallint` | `int2` | `smallint` | 一种用于存储2个字节中–32,768到215-1 32,767的整数的数值数据类型。 |
+| 4 | `tinyint` | `int1` | `tinyint` | 一种用于存储1字节内0到255之间的整数的数字数据类型。 |
+| 5 | `varchar(len)` | `string` | `varchar(len)` | 大小可变的字符数据类型。 `varchar` 当列数据条目的大小差异很大时，最好使用。 |
+| 6 | `double` | `float8` | `double precision` | `FLOAT8` 和 `FLOAT` 对于 `DOUBLE PRECISION`. `double precision` 是浮点数据类型。 浮点值以8字节为单位存储。 |
+| 7 | `double precision` | `float8` | `double precision` | `FLOAT8` 是的有效同义词 `double precision`.`double precision` 是浮点数据类型。 浮点值以8字节为单位存储。 |
+| 8 | `date` | `date` | `date` | 的 `date` 数据类型是存储的4字节日历日期值，没有任何时间戳信息。 有效日期的范围是01-01-0001到12-31-9999。 |
+| 9 | `datetime` | `datetime` | `datetime` | 一种数据类型，用于存储以日历日期和时间表示的即时时间。 `datetime` 包括以下各项的合格证：年、月、日、小时、秒和分数。 A `datetime` 声明可以包括这些时间单位中以该顺序连接的任何子集，甚至只包括单个时间单位。 |
+| 10 | `char(len)` | `string` | `char(len)` | 的 `char(len)` 关键词用于指示项目为固定长度字符。 |
 
 #### 添加架构
 
