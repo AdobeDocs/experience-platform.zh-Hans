@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 37d073266bf9293ad3a9e85c193acd1e2e47fa2a
+source-git-commit: 9484da6948243a098db2ff8ebdd59c5e70a51635
 workflow-type: tm+mt
 source-wordcount: '1553'
 ht-degree: 6%
@@ -71,9 +71,11 @@ Experience Platform允许您审核用户活动以获取各种服务和功能。 
 
 **更新功能**
 
-|功能 |名称 |描述 | | — | — | — | |已添加资源 | <ul><li> 访问控制策略 </li><li> 角色 </li><li> 审核日志 </li><li> 工作顺序 </li><li> 身份命名空间 </li><li> 身份图 </li><li> 查询 </li><li> 数据集 </li><li> 源数据流 </li></ul> |在活动发生时，会自动记录审核日志资源。 如果启用了该功能，则无需手动启用日志收集。 |
+| 功能 | 名称 | 描述 |
+| --- | --- | --- |
+| 已添加资源 | <ul><li> 访问控制策略 </li><li> 角色 </li><li> 审核日志 </li><li> 工作顺序 </li><li> 身份命名空间 </li><li> 身份图 </li><li> 查询 </li><li> 数据集 </li><li> 源数据流 </li></ul> | 活动发生时，会自动记录审核日志资源。 如果启用了该功能，则无需手动启用日志收集。 |
 
-
+{style=&quot;table-layout:auto&quot;}
 
 有关Platform中审核日志的更多信息，请参阅 [审核日志概述](../../landing/governance-privacy-security/audit-logs/overview.md).
 
