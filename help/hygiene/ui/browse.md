@@ -4,9 +4,9 @@ description: 了解如何在Adobe Experience Platform用户界面中查看和管
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
 hide: true
 hidefromtoc: true
-source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
+source-git-commit: e539ee73b04230ac6e3dc4801ce0f8446bec8de6
 workflow-type: tm+mt
-source-wordcount: '555'
+source-wordcount: '562'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,8 @@ ht-degree: 2%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_workorders"
 >title="工作单ID"
->abstract="当向系统发送数据卫生请求时，创建工作命令以执行所请求的任务。 换言之，工作单代表特定的数据卫生过程，包括其当前状态和其他相关详细信息。 每个工作单在创建时会自动分配其自己的唯一ID。 要了解更多信息，请参阅数据卫生UI指南。"
+>abstract="当向系统发送数据卫生请求时，创建工作命令以执行所请求的任务。 换言之，工作单代表特定的数据卫生过程，包括其当前状态和其他相关详细信息。 每个工作单在创建时会自动分配其自己的唯一ID。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/hygiene/ui/browse.html" text="请参阅数据卫生UI指南，以了解更多信息。"
 
 >[!IMPORTANT]
 >
