@@ -4,10 +4,11 @@ title: 基于属性的访问控制快速入门
 description: 基于属性的访问控制允许您以编程方式管理Adobe Experience Platform中的角色和策略。 参阅本指南，了解如何使用 API 执行关键操作。
 hide: true
 hidefromtoc: true
+exl-id: d1a66afa-dff4-49d7-b57c-527f05977155
 source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
 workflow-type: tm+mt
-source-wordcount: '356'
-ht-degree: 4%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 

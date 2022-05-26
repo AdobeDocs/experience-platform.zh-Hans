@@ -5,10 +5,11 @@ title: 产品API端点
 description: 基于属性的访问控制API中的/products端点允许您以编程方式管理Adobe Experience Platform中的产品。
 hide: true
 hidefromtoc: true
+exl-id: 44ee9a9d-7a13-4d59-a1a9-97764dbd3763
 source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
 workflow-type: tm+mt
-source-wordcount: '523'
-ht-degree: 3%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 

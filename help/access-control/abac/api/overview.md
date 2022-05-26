@@ -5,10 +5,11 @@ title: 基于属性的访问控制API指南
 description: 基于属性的访问控制API允许您以编程方式管理Adobe Experience Platform中的角色和策略。 参阅本指南，了解如何使用 API 执行关键操作。
 hide: true
 hidefromtoc: true
+exl-id: 0fc32354-4869-4392-9501-b1dbea1bc55e
 source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
 workflow-type: tm+mt
-source-wordcount: '424'
-ht-degree: 4%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -26,7 +27,7 @@ ht-degree: 4%
 
 ## 角色
 
-角色定义管理员、专家或最终用户对您组织中的资源的访问权限。 在基于角色的访问控制环境中，用户访问设置是通过共同的责任和需求分组的。 角色具有一组给定的权限，并且可以根据角色需要的查看或写入权限，将组织的成员分配给一个或多个角色。 请参阅 [角色端点指南](./roles.md) 以了解有关在API中使用角色的更多信息。
+角色定义管理员、专家或最终用户对您组织中的资源的访问权限。 在基于角色的访问控制环境中，用户访问设置是通过共同的责任和需求进行分组的。 角色具有一组给定的权限，并且可以根据角色需要的查看或写入权限，将组织的成员分配给一个或多个角色。 请参阅 [角色端点指南](./roles.md) 以了解有关在API中使用角色的更多信息。
 
 ## 支持
 
