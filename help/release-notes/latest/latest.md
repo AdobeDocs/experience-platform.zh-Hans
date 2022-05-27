@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: d8f62bdaa0d043fa2c27b25ae2a6f5979076314e
+source-git-commit: 8e1f4d8cef1a962a056328417a1dbdff1aed2078
 workflow-type: tm+mt
-source-wordcount: '1593'
+source-wordcount: '1685'
 ht-degree: 6%
 
 ---
@@ -20,16 +20,29 @@ ht-degree: 6%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [警报](#alerts)
 - [审核日志](#audit-logs)
 - [仪表板](#dashbaords)
 - [数据收集](#data-collection)
-
 <!-- - [Data Governance](#data-governance) -->
 - [数据准备](#data-prep)
 - [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [查询服务](#query-service)
 - [源](#sources)
+
+## 警报 {#alerts}
+
+Experience Platform允许您订阅各种平台活动的基于事件的警报。 您可以通过 [!UICONTROL 警报] 选项卡，可以选择通过UI本身或电子邮件通知接收警报消息。
+
+**更新功能**
+
+| 功能 | 警报规则 | 描述 |
+| --- | --- | --- |
+| 新警报规则 | 跳页率超过阈值 | 现在，当源数据流超出身份阈值时，您可以使用警报接收通知。 请参阅 [警报规则](../../observability/alerts/rules.md) ，以了解更新的警报类型列表。 |
+
+{style=&quot;table-layout:auto&quot;}
+
 
 <!-- ## Attribute-based access control {#abac}
 
