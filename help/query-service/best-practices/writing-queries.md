@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务中查询执行的一般指导
 topic-legacy: queries
 type: Tutorial
-description: 本文档详细介绍了在Adobe Experience Platform查询服务中编写查询时要了解的重要详细信息。
+description: 本文档概述了在Adobe Experience Platform查询服务中编写查询时要了解的重要详细信息。
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: c0e7ae8f65aa0373d35a55d4da46e0ffcb0e60f9
+source-git-commit: 7016c0ce1ca8be5cecb7c09d01e9fd2e48e551de
 workflow-type: tm+mt
 source-wordcount: '1031'
 ht-degree: 3%

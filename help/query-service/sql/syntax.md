@@ -5,7 +5,7 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: f509b468e7779b822eda96033a2c55cc3a12893d
+source-git-commit: 7016c0ce1ca8be5cecb7c09d01e9fd2e48e551de
 workflow-type: tm+mt
 source-wordcount: '3050'
 ht-degree: 2%
@@ -765,7 +765,7 @@ ALTER TABLE t1 DROP CONSTRAINT PRIMARY IDENTITY (c1) ;
 ALTER TABLE t1 DROP CONSTRAINT IDENTITY (c1) ;
 ```
 
-有关更多详细信息，请参阅有关在临时数据集中设置身份的文档。
+请参阅 [在临时数据集中设置身份](../data-governance/ad-hoc-schema-identities.md) 以了解更多详细信息。
 
 #### 添加列
 
