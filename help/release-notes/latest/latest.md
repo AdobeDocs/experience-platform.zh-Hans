@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 9484da6948243a098db2ff8ebdd59c5e70a51635
+source-git-commit: d8f62bdaa0d043fa2c27b25ae2a6f5979076314e
 workflow-type: tm+mt
-source-wordcount: '1553'
+source-wordcount: '1593'
 ht-degree: 6%
 
 ---
@@ -136,6 +136,7 @@ Experience Platform提供了一套技术，允许您收集客户端客户体验�
 | 导入数据流映射规则 | 在为数据收集设置数据准备时，您可以 [导入现有数据流的映射规则](../../edge/datastreams/data-prep.md#import-mapping) 而不是手动配置每个字段映射。 |
 | 对Mobile SDK的数据团队映射支持 | 您现在可以在数据流上配置数据准备，以便与Experience PlatformMobile SDK一起使用。 |
 | 对XDM对象的数据组映射支持 | 在 [为数据收集配置数据准备](../../edge/datastreams/data-prep.md#select-data). |
+| 与数据流集成 | 使用平台中的源目录访问平台边缘网络上的数据，包括为数据收集进行数据准备并改进了对数据准备警告的支持。 请参阅 [Adobe数据收集源概述](../../sources/connectors/adobe-applications/data-collection.md) 以了解更多信息。 |
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
 
@@ -238,7 +239,7 @@ Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为
 | 功能 | 描述 |
 | --- | --- |
 | 测试版 [!DNL Zendesk] 来源 | 使用 [!DNL Zendesk] 源，用于从您的 [!DNL Zendesk] 实例 [!DNL Profile] 扩充。 请参阅 [[!DNL Zendesk] 源概述](../../sources/connectors/customer-success/zendesk.md) 以了解更多信息。 |
-| 支持Adobe数据收集 | 使用源目录访问您的数据收集Experience Edge数据，包括为数据收集进行数据准备，并改进了对数据准备中数据警告的支持。 请参阅 [Adobe数据收集源概述](../../sources/connectors/adobe-applications/data-collection.md) 以了解更多信息。 |
+| 支持Adobe数据收集 | 使用平台中的源目录访问平台边缘网络上的数据，包括为数据收集进行数据准备并改进了对数据准备警告的支持。 请参阅 [Adobe数据收集源概述](../../sources/connectors/adobe-applications/data-collection.md) 以了解更多信息。 |
 | 支持通过 `ISO-8859-1` 编码 | 使用 `encoding` 引入参数 `ISO-8859-1` 使用 [!DNL Flow Service] API。 请参阅 [创建云存储源连接](../../sources/tutorials/api/collect/cloud-storage.md) 以了解更多信息。 |
 
 {style=&quot;table-layout:auto&quot;}
