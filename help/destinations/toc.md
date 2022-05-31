@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 0f3cb17650612399091c12a6b638471a80306729
+source-git-commit: d01875bcb89d887ca4f4dbb9e7fe6179446faa3c
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '759'
 ht-degree: 8%
 
 ---
@@ -48,6 +48,7 @@ ht-degree: 8%
       * [Experience Platform区段共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
    * 广告目标{#advertising}
       * [广告目标概述](./catalog/advertising/overview.md)
+      * [Adobe Advertising Cloud连接](./catalog/advertising/adobe-advertising-cloud-connection.md)
       * [Adobe Advertising Cloud扩展](./catalog/advertising/adobe-advertising-cloud.md)
       * [Awin广告商转化标记扩展](./catalog/advertising/awin-conversiontag.md)
       * [Awin广告商Mastertag扩展](./catalog/advertising/awin-mastertag.md)
@@ -132,7 +133,7 @@ ht-degree: 8%
       * [Experience Cloud ID 服务扩展](./catalog/personalization/adobe-ecid.md)
       * [Gainsight扩展](./catalog/personalization/gainsight.md)
       * [KickFire扩展](./catalog/personalization/kickfire.md)
-      * [Marketo Web Personalization扩展](./catalog/personalization/marketo-web-personalization.md)
+      * [Marketo Web个性化扩展](./catalog/personalization/marketo-web-personalization.md)
    * 社交目标{#social}
       * [社交目标概述](./catalog/social/overview.md)
       * [AdobeLivefyre扩展](./catalog/social/adobe-livefyre.md)
