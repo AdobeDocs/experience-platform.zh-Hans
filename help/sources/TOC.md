@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: 3c80f3b297e7119067480739e206064bb2ace22c
+source-git-commit: b21e735b5c6c310b485700ef619302e3e3086763
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '785'
+ht-degree: 12%
 
 ---
 
@@ -27,6 +27,7 @@ ht-degree: 0%
          - [Audience Manager字段映射](connectors/adobe-applications/mapping/audience-manager.md)
          - [目标字段映射](connectors/adobe-applications/mapping/target.md)
          - [Marketo Engage字段映射](connectors/adobe-applications/mapping/marketo.md)
+         - [Microsoft Dynamics字段映射](connectors/adobe-applications/mapping/dynamics.md)
          - [Salesforce字段映射](connectors/adobe-applications/mapping/salesforce.md)
       - Marketo {#marketo}
          - [Marketo Engage连接器](connectors/adobe-applications/marketo/marketo.md)
