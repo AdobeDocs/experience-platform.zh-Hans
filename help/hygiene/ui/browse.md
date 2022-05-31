@@ -2,16 +2,14 @@
 title: 浏览数据卫生工作单
 description: 了解如何在Adobe Experience Platform用户界面中查看和管理现有数据卫生工作单。
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-hide: true
-hidefromtoc: true
-source-git-commit: 41fee3bacb441c2f773382de215eba8bfac9f9df
+source-git-commit: c24aa700eb425770266bbee5c187e2e87b15a9ac
 workflow-type: tm+mt
-source-wordcount: '546'
-ht-degree: 2%
+source-wordcount: '413'
+ht-degree: 1%
 
 ---
 
-# 浏览数据卫生工作单
+# 浏览数据卫生工作单 {#browse-work-orders}
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_workorders"
@@ -23,7 +21,7 @@ ht-degree: 2%
 >
 >Adobe Experience Platform中的Adobe卫生功能目前仅适用于已购买Data Shield for Healthcare的组织。
 
-当向系统发送数据卫生请求时，创建工作命令以执行所请求的任务。 工作单表示特定的数据卫生过程（如删除消费者数据），包括其当前状态和其他相关详细信息。
+当向系统发送数据卫生请求时，创建工作命令以执行所请求的任务。 工作单表示特定的数据卫生过程，如数据集的计划生存时间(TTL)，其中包括其当前状态和其他相关详细信息。
 
 本指南介绍如何在Adobe Experience Platform UI中查看和管理现有工作单。
 
@@ -33,23 +31,20 @@ ht-degree: 2%
 
 ![显示 [!UICONTROL 数据卫生] 平台UI中的工作区](../images/ui/browse/work-order-list.png)
 
-该列表一次只显示一个类别的工作单。 选择 **[!UICONTROL 消费者]** 查看用户删除任务列表，以及 **[!UICONTROL 数据集]** 查看数据集的生存时间(TTL)计划列表。
+<!-- The list only shows work orders for one category at a time. Select **[!UICONTROL Consumer]** to view a list of consumer deletion tasks, and **[!UICONTROL Dataset]** to view a list of time-to-live (TTL) schedules for datasets.
 
-![显示 [!UICONTROL 数据集] 选项卡](../images/ui/browse/dataset-tab.png)
+![Image showing the [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png) -->
 
 选择漏斗图标(![漏斗图标的图像](../images/ui/browse/funnel-icon.png))以查看所显示工作单的过滤器列表。
 
 ![显示的工作单过滤器图像](../images/ui/browse/filters.png)
 
-根据您查看的选项卡，可以使用不同的过滤器：
-
-| 过滤器 | 类别 | 描述 |
-| --- | --- | --- |
-| [!UICONTROL 状态] | [!UICONTROL 消费者] &amp; [!UICONTROL 数据集] | 根据工作单的当前状态进行筛选。 |
-| [!UICONTROL 创建日期] | [!UICONTROL 使用者] | 根据发出客户删除请求的时间进行筛选。 |
-| [!UICONTROL 创建日期] | [!UICONTROL 数据集] | 根据发出客户删除请求的时间进行筛选。 |
-| [!UICONTROL 删除日期] | [!UICONTROL 数据集] | 根据TTL计划的删除日期进行筛选。 |
-| [!UICONTROL 更新日期] | [!UICONTROL 数据集] | 根据上次更新数据集TTL的时间进行过滤。 TTL创建和过期将计为更新。 |
+| 过滤器 | 描述 |
+| --- | --- |
+| [!UICONTROL 状态] | 根据工作单的当前状态进行筛选。 |
+| [!UICONTROL 创建日期] | 根据发出数据集TTL请求的时间进行筛选。 |
+| [!UICONTROL 删除日期] | 根据TTL计划的删除日期进行筛选。 |
+| [!UICONTROL 更新日期] | 根据上次更新数据集TTL的时间进行过滤。 TTL创建和过期将计为更新。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -59,22 +54,21 @@ ht-degree: 2%
 
 ![显示正在选择的工作单ID的图像](../images/ui/browse/select-work-order.png)
 
-根据所选工作单的类型，将提供不同的信息和控件。 以下各节介绍了这些内容。
+<!-- Depending on the type of work order selected, different information and controls are provided. These are covered in the sections below.
 
-### 消费者删除详细信息
+### Consumer delete details
 
-<!-- (Not available for initial release)
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
 >title="Consumer delete response"
 >abstract="When a consumer deletion process receives a response from the system, these messages are displayed under the **[!UICONTROL Result]** section. If a problem occurs while a work order is processing, any relevant error messages will appear in this section to help you troubleshoot the issue. To learn more, see the data hygiene UI guide."
--->
 
-消费者删除请求的详细信息是只读的，显示其基本属性，如其当前状态以及自请求发出以来经过的时间。
 
-![显示消费者删除工作单详细信息页面的图像](../images/ui/browse/consumer-delete-details.png)
+The details of a consumer delete request are read-only, displaying its basic attributes such as its current status and the time elapsed since the request was made.
 
-### 数据集TTL详细信息
+![Image showing the details page for a consumer delete work order](../images/ui/browse/consumer-delete-details.png)
+
+### Dataset TTL details -->
 
 数据集TTL的详细信息页面提供了有关其基本属性的信息，包括删除前剩余天数的计划过期日期。 在右边栏中，您可以使用控件来编辑或取消TTL。
 
@@ -82,7 +76,4 @@ ht-degree: 2%
 
 ## 后续步骤
 
-本指南介绍了如何在Platform UI中查看和管理现有数据卫生工作单。 有关创建您自己的工作单的信息，请参阅以下文档：
-
-* [删除消费者](./delete-consumer.md)
-* [计划数据集TTL](./ttl.md)
+本指南介绍了如何在Platform UI中查看和管理现有数据卫生工作单。 有关创建您自己的工作单的信息，请参阅 [计划数据集TTL](./ttl.md).

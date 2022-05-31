@@ -2,11 +2,9 @@
 title: 数据卫生API指南
 description: 了解如何以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-hide: true
-hidefromtoc: true
-source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
+source-git-commit: 22da9e39e168d9a995c7c134733aa7a1b3587749
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '309'
 ht-degree: 1%
 
 ---
@@ -41,9 +39,9 @@ ht-degree: 1%
 
 本文档提供了一个示例API调用，用于演示如何设置请求的格式。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/api-guide.md#sample-api) 中的Experience PlatformAPI快速入门指南。
 
-## 工作单
+<!-- ## Work orders
 
-工作顺序是数据卫生任务的表示形式，该任务会从特定数据集或所有数据集中删除用户身份。 请参阅 [《工作单终端指南》](./workorder.md) 有关在API中处理工作单的详细信息。
+A work order is a representation of a data hygiene task that deletes consumer identities from a specific dataset or all datasets. See the [work order endpoint guide](./workorder.md) for details on working with work orders in the API. -->
 
 ## 数据集的生存时间(TTL)
 

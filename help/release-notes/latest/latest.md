@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: b557946252cd2afc07159caad939ec3a11d35e28
+source-git-commit: c318d64f6dc09094855ec20d998a7c41d837211f
 workflow-type: tm+mt
-source-wordcount: '2389'
+source-wordcount: '2375'
 ht-degree: 5%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 5%
 
 Adobe Experience Platform的新增功能：
 
-- [基于属性的访问控制](#abac) —>
+- [基于属性的访问控制](#abac)
 - [数据卫生](#hygiene)
 
 Adobe Experience Platform 现有功能的更新包括：
@@ -60,8 +60,9 @@ Experience Platform提供了一套数据卫生功能，允许您通过编程删�
 
 | 功能 | 描述 |
 | --- | --- |
-| 删除消费者 | [删除消费者记录](../../hygiene/ui/delete-consumer.md) 基于主身份数据从数据湖和配置文件存储中删除。 |
 | 数据集的生存时间(TTL) | [计划TTL](../../hygiene/ui/ttl.md) Platform数据集。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 有关Platform中审核日志的更多信息，请参阅 [数据卫生概述](../../hygiene/home.md).
 

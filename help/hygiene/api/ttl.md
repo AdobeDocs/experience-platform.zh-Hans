@@ -2,9 +2,7 @@
 title: 数据集生存时间(TTL)API端点
 description: 数据卫生API中的/ttl端点允许您以编程方式计划Adobe Experience Platform中的数据集TTL。
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-hide: true
-hidefromtoc: true
-source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
+source-git-commit: 22da9e39e168d9a995c7c134733aa7a1b3587749
 workflow-type: tm+mt
 source-wordcount: '1315'
 ht-degree: 6%

@@ -2,11 +2,9 @@
 title: 管理数据集TTL
 description: 了解如何在Adobe Experience Platform UI中为数据集计划生存时间(TTL)。
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-hide: true
-hidefromtoc: true
-source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
+source-git-commit: 22da9e39e168d9a995c7c134733aa7a1b3587749
 workflow-type: tm+mt
-source-wordcount: '412'
+source-wordcount: '372'
 ht-degree: 0%
 
 ---
@@ -27,13 +25,11 @@ ht-degree: 0%
 
 ![显示 [!UICONTROL 创建请求] 按钮](../images/ui/ttl/create-request-button.png)
 
-将出现请求创建对话框。 在 **[!UICONTROL 操作]** 选择 **[!UICONTROL 数据集]** 更新TTL计划的可用控件。
-
-![显示 [!UICONTROL 数据集] 已选择](../images/ui/ttl/create-request-button.png)
+<!-- The request creation dialog appears. Under the **[!UICONTROL Action]** section, select **[!UICONTROL Dataset]** to update the available controls for TTL scheduling-->
 
 ### 选择日期和数据集
 
-在 **[!UICONTROL 操作]** 部分，选择您希望删除数据集的日期。 您可以手动输入日期(格式为 `mm/dd/yyyy`)或选择日历图标(![日历图标的图像](../images/ui/ttl/calendar-icon.png))从对话框中选择日期。
+将出现请求创建对话框。 在 **[!UICONTROL 操作]** 部分，选择您希望删除数据集的日期。 您可以手动输入日期(格式为 `mm/dd/yyyy`)或选择日历图标(![日历图标的图像](../images/ui/ttl/calendar-icon.png))从对话框中选择日期。
 
 ![显示为TTL设置过期日期的图像](../images/ui/ttl/select-date.png)
 
@@ -49,11 +45,11 @@ ht-degree: 0%
 
 选择数据集和TTL日期后，请选择 **[!UICONTROL 提交]**.
 
-![显示 [!UICONTROL 提交] 按钮](../images/ui/ttl/select-dataset.png)
+![显示 [!UICONTROL 提交] 按钮](../images/ui/ttl/submit.png)
 
 系统将要求您确认删除数据集的日期。 选择 **[!UICONTROL 提交]** 继续。
 
-提交请求后，将创建工作单，并在 [!UICONTROL 消费者] 选项卡 [!UICONTROL 数据卫生] 工作区。 在此处，您可以在处理请求时监控工作单的状态。
+提交请求后，将创建工作单，并显示在 [!UICONTROL 数据卫生] 工作区。 在此处，您可以在处理请求时监控工作单的状态。
 
 ## 编辑或取消TTL
 
@@ -63,6 +59,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-本文档介绍了如何在Experience PlatformUI中计划数据集TTL。 有关如何在UI中执行其他数据卫生任务的信息，请参阅 [数据卫生UI概述](./overview.md).
-
-要了解如何使用数据卫生API计划数据集TTL，请参阅 [数据集TTL端点指南](../api/ttl.md).
+本文档介绍了如何在Experience PlatformUI中计划数据集TTL。 要了解如何使用数据卫生API计划数据集TTL，请参阅 [数据集TTL端点指南](../api/ttl.md).

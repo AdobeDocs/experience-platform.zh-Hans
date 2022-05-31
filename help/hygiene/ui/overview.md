@@ -2,11 +2,9 @@
 title: 数据卫生UI指南
 description: 了解如何在Adobe Experience Platform用户界面中管理数据卫生任务。
 exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
-hide: true
-hidefromtoc: true
-source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
+source-git-commit: 22da9e39e168d9a995c7c134733aa7a1b3587749
 workflow-type: tm+mt
-source-wordcount: '163'
+source-wordcount: '160'
 ht-degree: 0%
 
 ---
@@ -25,8 +23,7 @@ ht-degree: 0%
 
 ![显示 [!UICONTROL 数据卫生] 平台UI中的工作区](../images/ui/overview/home.png)
 
-从此处，您可以浏览现有工作单并创建新的数据卫生请求。 请参阅本指南的以下部分以了解更多信息：
+在此，您可以浏览现有工作单并配置新的数据卫生操作。 请参阅本指南的以下部分以了解更多信息：
 
 * [浏览现有工作单](./browse.md)
-* [删除消费者数据](./delete-consumer.md)
 * [管理数据集的生存时间(TTL)](./ttl.md)

@@ -2,11 +2,9 @@
 title: 数据卫生概述
 description: Adobe Experience Platform数据卫生功能允许您通过更新或清除过时或不准确的记录来管理数据的生命周期。
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-hide: true
-hidefromtoc: true
-source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
+source-git-commit: 22da9e39e168d9a995c7c134733aa7a1b3587749
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '220'
 ht-degree: 0%
 
 ---
@@ -19,11 +17,11 @@ ht-degree: 0%
 
 Adobe Experience Platform提供了一组功能强大的工具来管理大型、复杂的数据操作，以编排客户体验。 随着数据逐渐被摄取到系统中，管理数据存储变得越来越重要，这样数据就可以按预期使用，错误数据需要更正时会更新，组织策略认为有必要时会删除。
 
-Platform的数据卫生功能允许您通过程序化删除消费者记录和数据集来管理存储的消费者数据。
+Platform的数据卫生功能允许您通过程序化数据集删除来管理存储的消费者数据。
 
 ## [!UICONTROL 数据卫生] UI工作区
 
-的 [!UICONTROL 数据卫生] 平台UI中的工作区允许您配置和计划数据卫生操作，并验证记录是否按预期进行维护。
+的 [!UICONTROL 数据卫生] 平台UI中的工作区允许您配置和计划数据卫生操作，这有助于确保记录按预期进行维护。
 
 有关在UI中管理数据卫生任务的详细步骤，请参阅 [数据卫生UI指南](./ui/overview.md).
 
