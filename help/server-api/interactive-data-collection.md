@@ -4,7 +4,7 @@ description: 了解Adobe Experience Platform Edge Network Server API如何执行
 seo-description: Learn how the Adobe Experience Platform Edge Network Server API performs interactive data collection
 keywords: 数据收集；收集；experience platform边缘网络；API；交互式数据收集
 exl-id: 1b06e755-b6a9-42dd-96c1-98ad67e7d222
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 0dce36d690cbe0b666bf30acfa69f52a8c6cac57
 workflow-type: tm+mt
 source-wordcount: '149'
 ht-degree: 6%
@@ -30,7 +30,7 @@ POST /ee/v2/interact
 ### 请求 {#request}
 
 ```shell
-curl -X POST "https://server.adobedc.net/v2/interact?dataStreamId={DATASTREAM_ID}" 
+curl -X POST "https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_ID}" 
 -H "Authorization: Bearer {TOKEN}" 
 -H "x-gw-ims-org-id: {ORG_ID}" 
 -H "x-api-key: {API_KEY}" 
