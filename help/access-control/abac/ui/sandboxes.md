@@ -5,7 +5,7 @@ description: 本文档提供了有关Adobe Experience Platform中基于属性的
 hide: true
 hidefromtoc: true
 exl-id: c21eb319-fc0d-442a-b778-bbfa2d6bb22d
-source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
+source-git-commit: 02a17d8aed743b03219958cae2f0585f871e56f6
 workflow-type: tm+mt
 source-wordcount: '0'
 ht-degree: 0%
@@ -17,6 +17,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。
+
+沙盒是单个Experience Platform实例内的虚拟分区，它允许与数字体验应用程序的开发过程无缝集成。 在沙盒内执行的所有内容和操作都仅限于该沙盒，不会影响任何其他沙盒。 有关沙箱的详细信息，请参阅 [沙箱概述](../../../sandboxes/home.md).
+
+## 配置沙箱
 
 要查看沙盒被分配给/与的详细信息和角色，请选择 **[!UICONTROL 沙箱]** 选项卡。
 

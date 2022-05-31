@@ -5,9 +5,9 @@ description: 本文档提供了有关Adobe Experience Platform中基于属性的
 hide: true
 hidefromtoc: true
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: 19f1e8df8cd8b55ed6b03f80e42810aefd211474
+source-git-commit: 02a17d8aed743b03219958cae2f0585f871e56f6
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '849'
 ht-degree: 0%
 
 ---
@@ -17,6 +17,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。
+
+权限是Experience Cloud区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。
+
+通过权限，您可以创建和管理角色，并为这些角色分配所需的资源权限。 权限还允许您管理与特定角色关联的标签、沙箱和用户。
 
 紧接之后 [创建新角色](#create-a-new-role)，则会返回到 **[!UICONTROL 角色]** 选项卡。 如果您正在编辑现有角色的权限，请从 **[!UICONTROL 角色]** 选项卡。 或者，使用筛选器选项筛选结果以查找角色。
 
