@@ -5,9 +5,9 @@ title: 使用数据准备处理数据格式
 topic-legacy: overview
 description: 本文档概述了数据准备中处理不同数据类型的方式。
 exl-id: 4ad253b7-3f83-48cd-9c46-8b5ba627c09e
-source-git-commit: 27c59904b1ebe98d65ff8d4001edc2a85cada294
+source-git-commit: 15afb221a3576b7a37ea02195549f246833b800d
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '575'
 ht-degree: 13%
 
 ---
@@ -106,3 +106,7 @@ date({DATE}, {FORMAT}, {DEFAULT_DATE})
 | V | 时区ID | 文本 | 美国/洛杉矶 |
 | O | 时区偏移 | 文本 | GMT+8 |
 | Q/q | 季度 | 数字/文本 | 3;03;第3季度；第3季度 |
+
+## 地图 {#maps}
+
+当前不支持映射 [!DNL Data Prep].
