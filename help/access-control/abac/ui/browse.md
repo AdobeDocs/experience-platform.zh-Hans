@@ -1,13 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；访问控制；基于属性的访问控制；ABAC
 title: 基于属性的访问控制浏览
-description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
-hide: true
-hidefromtoc: true
+description: 本文档提供了有关在Adobe Experience Cloud中使用权限界面的信息
 exl-id: 39634bde-8858-44a6-b39a-776846654fc1
-source-git-commit: 143db2c19ec5ee7628b5cb9b30e71f24b4b3dcc8
+source-git-commit: c31855bff9d87133252c43e2f2f2fe1960c7b144
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '377'
 ht-degree: 3%
 
 ---
