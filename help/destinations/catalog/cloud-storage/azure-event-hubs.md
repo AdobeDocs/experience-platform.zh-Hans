@@ -3,7 +3,7 @@ keywords: Azure事件中心目标；Azure事件中心；Azure事件Hub
 title: Azure事件中心连接
 description: 创建与的实时出站连接 [!DNL Azure Event Hubs] 存储以从Experience Platform流数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 30549f31e7ba7f9cfafd2e71fb3ccfb701b9883f
+source-git-commit: b19dc5c0d67bc218de0366fdc40f752ce7c3ad71
 workflow-type: tm+mt
 source-wordcount: '1926'
 ht-degree: 0%
@@ -71,16 +71,6 @@ ht-degree: 0%
 
 #### 共享访问签名(SAS)身份验证 {#sas-authentication}
 
->[!CONTEXTUALHELP]
->id="platform_destinations_connect_eventhubs_includesegmentnames"
->title="包括区段名称"
->abstract="如果您希望数据导出包含要导出的区段名称，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
-
->[!CONTEXTUALHELP]
->id="platform_destinations_connect_eventhubs_includesegmenttimestamps"
->title="包含区段时间戳"
->abstract="如果您希望数据导出在创建和更新区段时包含UNIX时间戳，以及将区段映射到要激活的目标时包含UNIX时间戳，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
-
 ![UI屏幕的图像，显示Azure事件中心标准身份验证详细信息的已完成字段](../../assets/catalog/cloud-storage/event-hubs/event-hubs-sas-authentication.png)
 
 如果您选择 **[!UICONTROL 标准身份验证]** 键入以连接到HTTP端点，输入以下字段并选择 **[!UICONTROL 连接到目标]**:
@@ -91,6 +81,16 @@ ht-degree: 0%
 * **[!UICONTROL 命名空间]**:填写 [!DNL Azure Event Hubs] 命名空间。 了解 [!DNL Azure Event Hubs] 命名空间 [Microsoft文档](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace).
 
 ### 目标详细信息 {#destination-details}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_eventhubs_includesegmentnames"
+>title="包括区段名称"
+>abstract="如果您希望数据导出包含要导出的区段名称，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_eventhubs_includesegmenttimestamps"
+>title="包含区段时间戳"
+>abstract="如果您希望数据导出在创建和更新区段时包含UNIX时间戳，以及将区段映射到要激活的目标时包含UNIX时间戳，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
 
 在与Azure事件中心目标建立身份验证连接后，请为目标提供以下信息：
 

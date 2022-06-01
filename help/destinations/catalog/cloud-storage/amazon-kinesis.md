@@ -3,7 +3,7 @@ keywords: Amazon Kinesis;Kinesis目标；Kinesis
 title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: 30549f31e7ba7f9cfafd2e71fb3ccfb701b9883f
+source-git-commit: b19dc5c0d67bc218de0366fdc40f752ce7c3ad71
 workflow-type: tm+mt
 source-wordcount: '1809'
 ht-degree: 0%
@@ -98,6 +98,15 @@ ht-degree: 0%
 
 ### 身份验证信息 {#authentication-information}
 
+输入以下字段并选择 **[!UICONTROL 连接到目标]**:
+
+![显示Amazon Kinesis身份验证详细信息的已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-authentication-fields.png)
+
+* **[!DNL Amazon Web Services]访问密钥和密钥**:在 [!DNL Amazon Web Services]，生成 `access key - secret access key` 对，以授予对 [!DNL Amazon Kinesis] 帐户。 在 [Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+* **[!UICONTROL 地区]**:指明 [!DNL Amazon Web Services] 要将数据流到的区域。
+
+### 目标详细信息 {#destination-details}
+
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_kinesis_includesegmentnames"
 >title="包括区段名称"
@@ -107,15 +116,6 @@ ht-degree: 0%
 >id="platform_destinations_connect_kinesis_includesegmenttimestamps"
 >title="包含区段时间戳"
 >abstract="如果您希望数据导出在创建和更新区段时包含UNIX时间戳，以及将区段映射到要激活的目标时包含UNIX时间戳，则进行切换。 查看有关选定此选项的数据导出示例的文档。"
-
-输入以下字段并选择 **[!UICONTROL 连接到目标]**:
-
-![显示Amazon Kinesis身份验证详细信息的已完成字段的UI屏幕图像](../../assets/catalog/cloud-storage/amazon-kinesis/kinesis-authentication-fields.png)
-
-* **[!DNL Amazon Web Services]访问密钥和密钥**:在 [!DNL Amazon Web Services]，生成 `access key - secret access key` 对，以授予对 [!DNL Amazon Kinesis] 帐户。 在 [Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-* **[!UICONTROL 地区]**:指明 [!DNL Amazon Web Services] 要将数据流到的区域。
-
-### 目标详细信息 {#destination-details}
 
 在建立到Amazon Kinesis目标的身份验证连接后，请提供目标的以下信息：
 
