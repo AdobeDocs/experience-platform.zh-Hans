@@ -5,9 +5,9 @@ title: 数据准备概述
 topic-legacy: overview
 description: 本文档介绍了Adobe Experience Platform中的数据准备。
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-source-git-commit: 3dac1a80e640364f8c0b6b6fd81821499bf889b3
+source-git-commit: d6d8b6ad9877735848d04cb229b3059842471ee8
 workflow-type: tm+mt
-source-wordcount: '594'
+source-wordcount: '715'
 ht-degree: 0%
 
 ---
@@ -54,6 +54,14 @@ ht-degree: 0%
 ## 使用发送部分行更新 [!DNL Data Prep]
 
 在中流式插入上插页 [!DNL Data Prep] 允许您将部分行更新发送到 [!DNL Profile Service] 数据，同时使用单个API请求创建和建立新的身份链接。 详细了解如何在 [!DNL Data Prep]，请参阅 [发送部分行更新](./upserts.md).
+
+## 中基于属性的访问控制 [!DNL Data Prep]
+
+通过Adobe Experience Platform中基于属性的访问控制，管理员可以基于属性控制对特定对象和/或功能的访问。
+
+基于属性的访问控制可确保您只能映射您有权访问的属性。 您无权访问的属性不能用于传递映射和计算字段。 因此，如果您无权访问必填字段，则将无法成功保存映射。 此外，如果您无权访问任何子属性，则无法映射对象或对象数组。 但是，您可以单独映射对象或对象数组中的其他元素。
+
+请参阅 [基于属性的访问控制概述](../access-control/abac/overview.md) 以了解更多信息。
 
 ## 后续步骤
 
