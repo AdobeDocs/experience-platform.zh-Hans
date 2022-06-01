@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: c318d64f6dc09094855ec20d998a7c41d837211f
+source-git-commit: 1dc97fa33fa8cb46184e11d311ef8246199b4f03
 workflow-type: tm+mt
-source-wordcount: '2375'
+source-wordcount: '2409'
 ht-degree: 5%
 
 ---
@@ -254,6 +254,7 @@ Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为
 | --- | --- |
 | 源中基于属性的访问控制 | 您现在可以在摄取期间管理和控制对单个源字段和属性的访问权限。 **注意**:目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。 |
 | 测试版 [!DNL Zendesk] 来源 | 使用 [!DNL Zendesk] 源，用于从您的 [!DNL Zendesk] 实例 [!DNL Profile] 扩充。 请参阅 [[!DNL Zendesk] 源概述](../../sources/connectors/customer-success/zendesk.md) 以了解更多信息。 |
+| B2B的一般可用性 [!DNL Microsoft Dynamics] 来源 | 您现在可以使用 [!DNL Microsoft Dynamics] 源，用于摄取B2B对象，如帐户、机会、营销活动、营销列表和营销列表成员。 请参阅 [[!DNL Microsoft Dynamics] 源概述](../../sources/connectors/crm/ms-dynamics.md) 以了解更多信息。 |
 | 支持Adobe数据收集 | 使用平台中的源目录访问平台边缘网络上的数据，包括为数据收集进行数据准备并改进了对数据准备警告的支持。 请参阅 [Adobe数据收集源概述](../../sources/connectors/adobe-applications/data-collection.md) 以了解更多信息。 |
 | 支持通过 `ISO-8859-1` 编码 | 使用 `encoding` 引入参数 `ISO-8859-1` 使用 [!DNL Flow Service] API。 请参阅 [创建云存储源连接](../../sources/tutorials/api/collect/cloud-storage.md) 以了解更多信息。 |
 
