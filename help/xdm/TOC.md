@@ -1,13 +1,13 @@
 ---
 audience: user
-user-guide-title: Experience Data Model (XDM) 系统帮助
-breadcrumb-title: Experience Data Model (XDM) 指南
-user-guide-description: 使用 Experience Data Model (XDM) 类和架构字段组来标准化体验数据。
+user-guide-title: 体验数据模型 (XDM) 系统帮助
+breadcrumb-title: 体验数据模型 (XDM) 指南
+user-guide-description: 使用体验数据模型 (XDM) 类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: fab182dc868990ddd5fbc45f0f50dc87258f98bc
+source-git-commit: ec61d4ed810029646e2ae28ffc91215eb9189f10
 workflow-type: tm+mt
-source-wordcount: '458'
-ht-degree: 16%
+source-wordcount: '465'
+ht-degree: 15%
 
 ---
 
@@ -174,6 +174,7 @@ ht-degree: 16%
    * [在UI中定义架构关系](tutorials/relationship-ui.md)
    * [在API中定义架构关系](tutorials/relationship-api.md)
    * [在Real-time CDP B2B Edition中定义模式关系](tutorials/relationship-b2b.md)
+   * [管理架构的数据使用标签](tutorials/labels.md)
    * [创建临时架构(API)](tutorials/ad-hoc.md)
    * [向字段(API)添加建议的值](tutorials/suggested-values.md)
 * [疑难解答指南](troubleshooting-guide.md)

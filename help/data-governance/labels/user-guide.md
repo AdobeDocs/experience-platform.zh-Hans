@@ -5,9 +5,9 @@ title: 在UI中管理数据使用情况标签
 topic-legacy: labels
 description: 本指南介绍了在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 3876af19ef100f29ef738cf7518696a57600945a
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1186'
 ht-degree: 0%
 
 ---
@@ -74,7 +74,7 @@ ht-degree: 0%
 
 ![隐藏继承的标签](../images/labels/inherited-labels.png)
 
-## 在字段级别管理标签
+## 在数据集字段级别管理标签
 
 继续工作流 [在数据集级别添加和编辑数据使用情况标签](#add-labels)，您还可以在 **[!UICONTROL 数据管理]** 工作区。
 
@@ -99,6 +99,12 @@ ht-degree: 0%
 ![选择多个字段以同时应用字段级别标签。](../images/labels/multiple-fields.png)
 
 请务必记住，继承仅从顶级向下移动(数据集→字段)，这意味着在字段级别应用的标签不会传播到其他字段或数据集。
+
+## 在架构级别管理标签
+
+您可以直接将标签添加到该架构中的一个或多个字段。 在架构级别应用的任何字段都将传播到基于该架构的所有数据集。
+
+请参阅 [管理模式级别的标签](../../xdm/tutorials/labels.md) 以了解更多信息。
 
 ## 管理自定义标签
 
@@ -126,7 +132,7 @@ ht-degree: 0%
 
 ## 后续步骤
 
-现在，您已在数据集和字段级别添加了数据使用情况标签，接下来可以开始将数据摄取到 [!DNL Experience Platform]. 要了解更多信息，请首先阅读 [数据摄取文档](../../ingestion/home.md).
+现在，您已在数据集和字段级别添加了数据使用情况标签，接下来可以开始将数据摄取到 [!DNL Experience Platform]. 要了解更多信息，请首先阅读 [数据获取文档](../../ingestion/home.md).
 
 您现在还可以根据已应用的标签定义数据使用策略。 有关更多信息，请参阅 [数据使用策略概述](../policies/overview.md).
 
