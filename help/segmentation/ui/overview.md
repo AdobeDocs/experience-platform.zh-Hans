@@ -5,9 +5,9 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: ce3d5e3db28d39b8d7d5a984700dd681c650ac94
+source-git-commit: 71741a18c99a003e6401bc324822d50a266350b3
 workflow-type: tm+mt
-source-wordcount: '1693'
+source-wordcount: '1746'
 ht-degree: 0%
 
 ---
@@ -47,6 +47,16 @@ ht-degree: 0%
 
 ## 浏览 {#browse}
 
+>[!CONTEXTUALHELP]
+>id="platform_segments_browse_churncolumnname"
+>title="流失率"
+>abstract="流失率表示与上次运行区段作业相比，区段定义中发生更改的用户档案的百分比。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_browse_evaluationmethodcolumnname"
+>title="评价方法"
+>abstract="区段的评估方法包括批处理、流处理和边缘处理。"
+
 选择 **[!UICONTROL 浏览]** 选项卡，以查看IMS组织的所有区段定义列表。
 
 ![](../images/ui/overview/segment-browse-all.png)
@@ -65,7 +75,7 @@ ht-degree: 0%
 
 流失率表示与上次运行区段作业相比，区段定义中发生更改的配置文件的百分比，而配置文件计数表示符合区段资格的配置文件总数。
 
-评估方法可以是流评估或批量评估。 当数据进入系统时，会不断评估流区段。 批区段将根据设置的计划进行评估。
+评估方法可以是流、批处理或边缘。 当数据进入系统时，会不断评估流区段。 批区段将根据设置的计划进行评估。 边缘区段会进行实时评估，以便支持同一页面和下一页个性化用例。
 
 ![](../images/ui/overview/segment-browse-segments.png)
 

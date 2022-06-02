@@ -5,9 +5,9 @@ title: 区段生成器UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了用于构建和编辑规则的直观控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 708103a52187ef17892de60ff8e562a05fc2f2db
+source-git-commit: 71741a18c99a003e6401bc324822d50a266350b3
 workflow-type: tm+mt
-source-wordcount: '2457'
+source-wordcount: '2612'
 ht-degree: 1%
 
 ---
@@ -18,9 +18,14 @@ ht-degree: 1%
 
 ![](../images/ui/segment-builder/segment-builder.png)
 
-## 区段定义构建基块
+## 区段定义构建基块 {#building-blocks}
 
-区段定义的基本构建块是属性和事件。 此外，现有受众中包含的属性和事件也可用作新定义的组件。
+>[!CONTEXTUALHELP]
+>id="platform_segments_createsegment_segmentbuilder_fields"
+>title="字段"
+>abstract="构成区段的三个字段类型是属性、事件和受众。 “属性”允许您使用属于XDM个人配置文件类的配置文件属性，“事件”允许您根据使用XDM ExperienceEvent数据元素执行的操作或事件创建受众，“受众”则允许您使用从外部源导入的受众。"
+
+区段定义的基本构建块是属性和事件。 此外，现有受众中包含的属性和事件可用作新定义的组件。
 
 您可以在 **[!UICONTROL 字段]** 的左侧 [!DNL Segment Builder] 工作区。 **[!UICONTROL 字段]** 包含每个主要构建基块的选项卡：&quot;[!UICONTROL 属性]&quot;, &quot;[!UICONTROL 事件]&quot;和&quot;[!UICONTROL 受众]&quot;
 
@@ -210,7 +215,19 @@ ht-degree: 1%
 
 ![](../images/ui/segment-builder/merge-policy-selector.png)
 
-## 区段属性
+## 区段属性 {#segment-properties}
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_createsegment_segmentbuilder_segmentproperties"
+>title="区段属性"
+>abstract="区段属性部分显示结果区段的估计大小，显示符合条件的用户档案数与用户档案总数的比较。 这样，您就可以根据需要调整区段定义，然后再构建受众本身。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_createsegment_segmentbuilder_refreshestimate"
+>title="更新估计"
+>abstract="您可以刷新区段的预计值，以立即查看有多少用户档案符合建议区段的资格条件的预览。 受众估计是使用当天样本数据的样本量生成的。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=en#estimate-and-preview-an-audience" text="从文档了解更多信息"
+
 
 生成区段定义时， **[!UICONTROL 区段属性]** 工作区右侧的部分显示结果区段的预估大小，允许您在构建受众本身之前根据需要调整区段定义。
 
