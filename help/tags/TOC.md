@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: ff612f7ef466276757095a3a9a724781eeb6a089
+source-git-commit: 638b4fea8a80763a2b46863ecb0e3969a6fc127a
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '392'
 ht-degree: 69%
 
 ---
@@ -119,6 +119,9 @@ ht-degree: 69%
       * [!DNL BrightCove] 视频跟踪 {#brightcove}
          * [概述](./extensions/web/brightcove/overview.md)
          * [发行说明](./extensions/web/brightcove/release-notes.md)
+      * Google数据层 {#google-data-layer}
+         * [概述](./extensions/web/google-data-layer/overview.md)
+         * [发行说明](./extensions/web/google-data-layer/release-notes.md)
       * [!DNL YouTube] 视频跟踪扩展 {#youtube}
          * [概述](./extensions/web/youtube/overview.md)
          * [发行说明](./extensions/web/youtube/release-notes.md)
