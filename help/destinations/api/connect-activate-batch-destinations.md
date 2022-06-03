@@ -6,10 +6,10 @@ description: 使用流程服务API在Experience Platform中创建批量云存储
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 41fd295d-7cda-4ab1-a65e-b47e6c485562
-source-git-commit: 95dd6982eeecf6b13b6c8a6621b5e6563c25ae26
+source-git-commit: 67f1ba46a9d570d3d494b126a83e6ca3ace1c727
 workflow-type: tm+mt
-source-wordcount: '3334'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -633,7 +633,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         }
     },
     "params": {
-        "mode": "Cloud Storage",
+        "mode": "S3",
         "bucketName": "{BUCKET_NAME}",
         "path": "{FILEPATH}",
         "format": "CSV"
@@ -669,7 +669,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         }
     },
     "params": {
-        "mode": "Cloud Storage",
+        "mode": "AZURE_BLOB",
         "container": "{CONTAINER}",
         "path": "{FILEPATH}",
         "format": "CSV"
@@ -828,7 +828,7 @@ curl --location --request POST 'https://platform.adobe.io/data/foundation/flowse
         }
     },
     "params": {
-        "mode": "Cloud Storage",
+        "mode": "FTP",
         "remotePath": "{REMOTE_PATH}",
     }
 }'
