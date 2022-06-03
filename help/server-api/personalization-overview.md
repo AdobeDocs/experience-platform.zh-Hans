@@ -1,19 +1,17 @@
 ---
-title: 从其他Adobe解决方案中检索个性化内容
+title: 个性化概述
 description: 了解如何使用Adobe Experience Platform Edge Network Server API从Adobe个性化解决方案中检索个性化内容
 seo-description: Learn how to use the Adobe Experience Platform Edge Network Server API to retrieve personalized content from Adobe personalization solutions
 keywords: 个性化；服务器api;Adobe Experience Platform边缘网络；检索个性化
-source-git-commit: 4fd5b5eebdeca065582365343b605a5b9ee695bb
+source-git-commit: 492efa6ef0d95b502839d612988f0b7f59b8bd69
 workflow-type: tm+mt
-source-wordcount: '761'
-ht-degree: 9%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
 
-# 从Adobe解决方案中检索个性化内容
-
-## 概述 {#overview}
+# 个性化概述
 
 使用 [!DNL Server API]，您可以从Adobe个性化解决方案中检索个性化内容，包括 [Adobe Target](https://business.adobe.com/products/target/adobe-target.html) 和 [offer decisioning](https://experienceleague.adobe.com/docs/offer-decisioning/using/get-started/starting-offer-decisioning.html?lang=en).
 
@@ -138,7 +136,7 @@ ht-degree: 9%
 **API格式**
 
 ```http
-POST /v2/interact
+POST /ee/v2/interact
 ```
 
 ### 请求 {#request}
