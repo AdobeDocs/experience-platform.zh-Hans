@@ -1,29 +1,31 @@
 ---
 audience: user
 solution: Data Collection
-user-guide-title: 边缘网络服务器API文档
-breadcrumb-title: 边缘网络服务器API文档
-user-guide-description: 了解边缘网络服务器API是什么以及如何使用它。
+user-guide-title: Edge Network Server API 文档
+breadcrumb-title: Edge Network Server API 文档
+user-guide-description: 了解什么是 Edge Network Server API 以及如何使用它。
 feature: Data Collection
-source-git-commit: ff612f7ef466276757095a3a9a724781eeb6a089
+source-git-commit: c6ecd493bd8366d49ca0b9dd851c92c5ce732d18
 workflow-type: tm+mt
-source-wordcount: '61'
-ht-degree: 8%
+source-wordcount: '67'
+ht-degree: 52%
 
 ---
 
 
-# 边缘网络服务器API文档 {#edge-network-server-api}
+# Edge Network Server API 文档 {#edge-network-server-api}
 
 
-- [概述](overview.md)
-- [身份验证](authentication.md)
-- 数据收集 {#data-collection}
-   - [单事件数据收集](interactive-data-collection.md)
-   - [批量事件数据收集](non-interactive-data-collection.md)
-- 与其他Adobe解决方案交互 {#interacting-other-adobe-solutions}
-   - [与Adobe Analytics交互](interacting-adobe-analytics.md)
-   - [与Adobe Experience Platform交互](interacting-experience-platform.md)
-- [与第三方解决方案交互](interacting-third-party-solutions.md)
-- [错误处理](error-handling.md)
-- [故障排除](troubleshooting.md)
+* [概述](overview.md)
+* [身份验证](authentication.md)
+* 数据收集 {#data-collection}
+   * [单事件数据收集](interactive-data-collection.md)
+   * [批量事件数据收集](non-interactive-data-collection.md)
+* 与其他Adobe解决方案交互 {#interacting-other-adobe-solutions}
+   * [与Adobe Analytics交互](interacting-adobe-analytics.md)
+* 个性化 {#personalization}
+   * [从Adobe解决方案中检索个性化内容](personalization-overview.md)
+   * [通过Offer decisioning进行个性化](personalization-offer-decisioning.md)
+   * [通过Adobe Target进行个性化](personalization-target.md)
+* [错误处理](error-handling.md)
+* [故障排除](troubleshooting.md)

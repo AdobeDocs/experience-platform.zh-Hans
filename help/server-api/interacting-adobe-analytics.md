@@ -4,7 +4,7 @@ description: 了解如何使用边缘网络服务器API与Adobe Analytics交互
 seo-description: Learn how to use the Edge Network Server API to interact with Adobe Analytics
 keywords: 数据收集；出口；analytics;Adobe Experience Platform Edge Network API;Analytics
 exl-id: b5e7a4d0-9aea-4e70-a7d6-b9aad09aaddf
-source-git-commit: 396dc8d861f0e699a76aa367fc07fe62be804cc5
+source-git-commit: 4fd5b5eebdeca065582365343b605a5b9ee695bb
 workflow-type: tm+mt
 source-wordcount: '190'
 ht-degree: 1%
@@ -28,7 +28,7 @@ Adobe Analytics数据收集是通过将XDM数据转换为Adobe Analytics可以�
 ### API格式 {#format}
 
 ```http
-POST https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM_ID}
+POST /ee/v2/interact?dataStreamId={DATASTREAM_ID}
 ```
 
 ### 请求 {#request}
