@@ -6,9 +6,9 @@ description: 本文说明了通过临时激活API激活受众区段的端到端�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 049b9c3ef2b96001a23ee54ac3e86a4df7b4ecea
 workflow-type: tm+mt
-source-wordcount: '1047'
+source-wordcount: '1102'
 ht-degree: 2%
 
 ---
@@ -65,7 +65,7 @@ Adobe Experience Platform每24小时运行一次计划分段作业。 临时激�
 
 * 您拥有有权访问Adobe Experience Platform的IMS组织帐户。
 * 您的Experience Platform帐户具有 `developer` 和 `user` 为Adobe Experience Platform API产品配置文件启用了角色。 联系您的 [Admin Console](../../access-control/home.md) 管理员为您的帐户启用这些角色。
-* 你有Adobe ID。 如果您没有Adobe ID，请转到 [Adobe开发人员控制台](https://developer.adobe.com/console) 并创建一个新帐户。
+* 你有Adobe ID。 如果您没有Adobe ID，请转到 [Adobe Developer控制台](https://developer.adobe.com/console) 并创建一个新帐户。
 
 ## 步骤2:收集凭据 {#credentials}
 
@@ -91,9 +91,10 @@ Experience Platform中的资源可以与特定虚拟沙箱隔离。 在对Platfo
 
 您必须先在平台UI中为所选目标配置激活流程，然后才能通过临时激活API激活区段。
 
-这包括转到激活工作流、选择您的区段、配置计划并激活它们。
+这包括转到激活工作流、选择您的区段、配置计划并激活它们。 您可以使用UI或API创建激活流程：
 
-有关如何为批处理目标配置激活流程的详细说明，请参阅以下教程： [激活受众数据以批量配置文件导出目标](../ui/activate-batch-profile-destinations.md).
+* [使用Platform UI创建激活流程以批量配置文件导出目标](../ui/activate-batch-profile-destinations.md)
+* [使用流量服务API连接到批量配置文件导出目标并激活数据](../api/connect-activate-batch-destinations.md)
 
 ## 步骤4:获取最新的区段导出作业ID {#segment-export-id}
 
@@ -156,7 +157,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/disflowprovider/adho
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | 要激活区段的目标实例的ID。 |
+| <ul><li>`destinationId1`</li><li>`destinationId2`</li></ul> | 要激活区段的目标实例的ID。 您可以通过导航到 **[!UICONTROL 目标]** > **[!UICONTROL 浏览]** ，然后单击所需的目标行以显示右边栏中的目标ID。 有关更多信息，请阅读 [目标工作区文档](/help/destinations/ui/destinations-workspace.md#browse). |
 | <ul><li>`segmentId1`</li><li>`segmentId2`</li><li>`segmentId3`</li></ul> | 要激活到选定目标的区段的ID。 |
 | <ul><li>`exportId1`</li></ul> | 在响应 [区段导出](../../segmentation/api/export-jobs.md#retrieve-list) 工作。 请参阅 [步骤4:获取最新的区段导出作业ID](#segment-export-id) 以了解有关如何查找此ID的说明。 |
 
