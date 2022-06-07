@@ -2,8 +2,10 @@
 keywords: 自定义个性化；目的地；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标可提供外部个性化、内容管理系统、广告服务器以及网站上运行的其他应用程序，以便从Adobe Experience Platform中检索区段信息。 此目标基于用户配置文件区段成员资格提供实时个性化。
+hide: true
+hidefromtoc: true
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 7ac7f533bb8547865b53892d371059aa60d2232e
 workflow-type: tm+mt
 source-wordcount: '973'
 ht-degree: 0%
