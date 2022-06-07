@@ -5,7 +5,7 @@ user-guide-title: Edge Network Server API 文档
 breadcrumb-title: Edge Network Server API 文档
 user-guide-description: 了解什么是 Edge Network Server API 以及如何使用它。
 feature: Data Collection
-source-git-commit: 951773d7a314b3d128fa364a7a034e0e8514bbe4
+source-git-commit: 6fb2b4ab47e9964e64fd94c49623f4c60689094c
 workflow-type: tm+mt
 source-wordcount: '65'
 ht-degree: 53%
@@ -26,7 +26,7 @@ ht-degree: 53%
    * [与Adobe Analytics交互](interacting-adobe-analytics.md)
 * 个性化 {#personalization}
    * [个性化概述](personalization-overview.md)
-   * [通过Offer decisioning进行个性化](personalization-offer-decisioning.md)
    * [通过Adobe Target进行个性化](personalization-target.md)
+   * [通过Offer decisioning进行个性化](personalization-offer-decisioning.md)
 * [错误处理](error-handling.md)
 * [故障排除](troubleshooting.md)
