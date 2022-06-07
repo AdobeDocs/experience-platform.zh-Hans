@@ -5,10 +5,10 @@ user-guide-title: Edge Network Server API 文档
 breadcrumb-title: Edge Network Server API 文档
 user-guide-description: 了解什么是 Edge Network Server API 以及如何使用它。
 feature: Data Collection
-source-git-commit: 492efa6ef0d95b502839d612988f0b7f59b8bd69
+source-git-commit: 951773d7a314b3d128fa364a7a034e0e8514bbe4
 workflow-type: tm+mt
-source-wordcount: '63'
-ht-degree: 55%
+source-wordcount: '65'
+ht-degree: 53%
 
 ---
 
@@ -17,6 +17,7 @@ ht-degree: 55%
 
 
 * [概述](overview.md)
+* [性能护栏](guardrails.md)
 * [身份验证](authentication.md)
 * 数据收集 {#data-collection}
    * [单事件数据收集](interactive-data-collection.md)

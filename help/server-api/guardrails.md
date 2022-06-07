@@ -1,47 +1,31 @@
 ---
-title: 服务级别协议和目标
-description: 了解如何为边缘网络服务器API配置身份验证
-seo-description: Learn how to configure authentication for the Edge Network Server API
+title: 性能护栏
+description: 了解如何在最佳性能护栏内使用服务器API
 keywords: 数据收集；收集；边缘网络；API;SLA;SLT；服务级别
-hide: true
-hidefromtoc: true
-source-git-commit: 422f859bef8faf292fd7e5fd8b6a8d31967421c1
+source-git-commit: 951773d7a314b3d128fa364a7a034e0e8514bbe4
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '435'
 ht-degree: 2%
 
 ---
 
 
-# 护栏
+# 性能护栏
 
 ## 概述 {#overview}
 
-Adobe将利用商业上合理的努力来 [!DNL Server API] 在任何月度账单周期内，每个地区在每月正常运行时间百分比内至少为99.9%。
+性能护栏定义与您的服务器API用例相关的使用限制。 超出本文中概述的性能护栏可能会导致性能下降。
+
+Adobe不应对超出使用限制导致的性能下降负责。 始终超过性能限制的客户可以请求额外的处理容量以避免性能下降。
 
 ## 定义
 
 * **可用性** 计算为每五分钟的间隔，该间隔是由Experience Adobe Experience Platform边缘网络处理的请求中不会因错误而失败且仅与已配置的Adobe Experience Platform边缘网络API相关的百分比。 如果租户在给定的五分钟间隔内未发出任何请求，则该间隔将被视为100%可用。
 * **每月正常运行时间百分比** 对于给定区域，计算为每月所有五分钟间隔的可用性平均值。
 * 安 **上游** 是Adobe Edge网络后面的一项服务，为特定数据流(如Adobe服务器端转发、Adobe Edge分段或Adobe Target)启用。
-* A **请求** 发送到服务器API的请求单元被定义为一个或多个请求单元。
 * A **请求单元** 对应于请求的8 KB片段和为数据流配置的一个上游片段。
+* A **请求** 是由客户拥有的应用程序向 [!DNL Server API]. 请求可以包含一个或多个请求单元。
 * 安 **错误** 是因Adobe Experience Platform边缘网络而失败的任何请求 [内部服务错误](error-handling.md).
-
-## 内部目标
-
-Adobe工程团队部署了接近实时遥测、监控和扩展程序，以确保实现以下目标：
-
-* 返回的HTTP请求少于1% `5xx` 最近五分钟的错误
-* 不到1%的上游连接在过去五分钟内返回错误
-* 任何租户容量在达到限制后不到10分钟内翻倍。
-
-## 服务级别协议排除
-
-上述服务级别承诺不适用于以下事件导致的任何不可用或性能问题：
-
-* 超出我们合理控制范围的因素，包括Internet访问或Adobe基础设施之外的相关问题。
-* 任何 [!DNL Server API]，具体定义如下所列的限制。
 
 ## 服务限制
 
@@ -80,4 +64,3 @@ Adobe工程团队部署了接近实时遥测、监控和扩展程序，以确保
 >[!NOTE]
 >
 >根据有效负载本身，二进制格式通常比纯文本JSON格式紧凑20-40%，从而允许您推送更多数据。 如果您需要更大的数据流容量，请联系您的客户关怀代表。
-
