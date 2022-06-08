@@ -4,7 +4,7 @@ description: 了解如何在Adobe Experience Platform UI中删除消费者记录
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
 hide: true
 hidefromtoc: true
-source-git-commit: c2e7cf1859f6a2b277783cdec535ecc208703fac
+source-git-commit: 95d75292b7697ef4f98e3ebd34c04724019ac37f
 workflow-type: tm+mt
 source-wordcount: '1113'
 ht-degree: 0%
@@ -57,7 +57,7 @@ ht-degree: 0%
 >
 >选择 **[!UICONTROL 所有数据集]** 选项可能会导致删除操作花费较长的时间，并且可能不会导致准确删除记录。
 
-## 提供消费者身份 {#identities}
+## 提供消费者身份 {#provide-consumer-identities}
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
