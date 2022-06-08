@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 7016c0ce1ca8be5cecb7c09d01e9fd2e48e551de
+source-git-commit: 17a90bb716bd64c9fb9b383a5ffa49598e978288
 workflow-type: tm+mt
-source-wordcount: '3050'
+source-wordcount: '3042'
 ht-degree: 2%
 
 ---
@@ -724,28 +724,34 @@ COPY query
 以下SQL查询显示了向表添加或删除约束的示例。
 
 ```sql
-ALTER TABLE table_name ADD CONSTRAINT constraint_name PRIMARY KEY ( column_name )
+ALTER TABLE table_name ADD CONSTRAINT PRIMARY KEY ( column_name ) NAMESPACE namespace
 
-ALTER TABLE table_name ADD CONSTRAINT constraint_name FOREIGN KEY ( column_name ) REFERENCES referenced_table_name ( primary_column_name )
+ALTER TABLE table_name ADD CONSTRAINT FOREIGN KEY ( column_name ) REFERENCES referenced_table_name ( primary_column_name )
 
-ALTER TABLE table_name ADD CONSTRAINT constraint_name PRIMARY KEY column_name NAMESPACE namespace
+ALTER TABLE table_name ADD CONSTRAINT PRIMARY IDENTITY ( column_name ) NAMESPACE namespace
 
-ALTER TABLE table_name DROP CONSTRAINT constraint_name PRIMARY KEY ( column_name )
+ALTER TABLE table_name ADD CONSTRAINT IDENTITY ( column_name ) NAMESPACE namespace
 
-ALTER TABLE table_name DROP CONSTRAINT constraint_name FOREIGN KEY ( column_name )
+ALTER TABLE table_name DROP CONSTRAINT PRIMARY KEY ( column_name )
+
+ALTER TABLE table_name DROP CONSTRAINT FOREIGN KEY ( column_name )
+
+ALTER TABLE table_name DROP CONSTRAINT PRIMARY IDENTITY ( column_name )
+
+ALTER TABLE table_name DROP CONSTRAINT IDENTITY ( column_name )
 ```
 
 | 参数 | 描述 |
 | ------ | ------ |
 | `table_name` | 要编辑的表的名称。 |
-| `constraint_name` | 要添加或删除的约束的名称。 |
 | `column_name` | 要向其添加约束的列的名称。 |
 | `referenced_table_name` | 外键引用的表的名称。 |
 | `primary_column_name` | 外键引用的列的名称。 |
 
+
 >[!NOTE]
 >
->表架构应是唯一的，且不会在多个表之间共享。 此外，对于主键约束，命名空间是必填的。
+>表架构应是唯一的，且不会在多个表之间共享。 此外，对于主键、主标识和身份约束，命名空间是必填的。
 
 #### 添加或删除主标识和次标识
 
