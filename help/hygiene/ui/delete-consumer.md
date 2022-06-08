@@ -4,9 +4,9 @@ description: 了解如何在Adobe Experience Platform UI中删除消费者记录
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
 hide: true
 hidefromtoc: true
-source-git-commit: 95d75292b7697ef4f98e3ebd34c04724019ac37f
+source-git-commit: 6f94c7c5e844eaddd50653296875886757f6fb35
 workflow-type: tm+mt
-source-wordcount: '1113'
+source-wordcount: '1110'
 ht-degree: 0%
 
 ---
@@ -62,12 +62,12 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_primaryidentity"
 >title="主标识"
->abstract="主标识是将记录与Experience Platform中消费者的配置文件关联的属性。 数据集的主标识字段由数据集所基于的架构定义。 在此列中，您必须为消费者的主标识提供类型（或命名空间），例如，电子邮件地址的“电子邮件”和Experience CloudID的“ecid”。 要了解更多信息，请参阅数据卫生UI指南。"
+>abstract="主标识是将记录与Experience Platform中消费者的配置文件关联的属性。 数据集的主标识字段由数据集所基于的架构定义。 在此列中，您必须为消费者的主标识提供类型（或命名空间），例如 `email` (电子邮件地址和 `ecid` Experience CloudID。 要了解更多信息，请参阅数据卫生UI指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_identityvalue"
 >title="标识值"
->abstract="在此列中，您必须为消费者的主标识提供值，该值必须与左列中提供的标识类型相对应。 如果主标识类型为“email”，则值应为消费者的电子邮件地址。 要了解更多信息，请参阅数据卫生UI指南。"
+>abstract="在此列中，您必须为消费者的主标识提供值，该值必须与左列中提供的标识类型相对应。 如果主标识类型为 `email`，值应为消费者的电子邮件地址。 要了解更多信息，请参阅数据卫生UI指南。"
 
 删除消费者数据时，必须提供身份信息，以便系统能够确定必须删除哪些记录。 对于Platform中的任何数据集，将根据 **主标识** 字段。
 
