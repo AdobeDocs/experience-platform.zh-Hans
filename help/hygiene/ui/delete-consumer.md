@@ -4,9 +4,9 @@ description: 了解如何在Adobe Experience Platform UI中删除消费者记录
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
 hide: true
 hidefromtoc: true
-source-git-commit: 6f94c7c5e844eaddd50653296875886757f6fb35
+source-git-commit: d17c53066d77652e46471ba4c696fde682eb3bab
 workflow-type: tm+mt
-source-wordcount: '1110'
+source-wordcount: '1091'
 ht-degree: 0%
 
 ---
@@ -144,4 +144,10 @@ JSON文件必须格式化为对象数组，每个对象表示消费者身份。
 
 本文档介绍了如何在Experience PlatformUI中删除用户记录。 有关如何在UI中执行其他数据卫生任务的信息，请参阅 [数据卫生UI概述](./overview.md).
 
-要了解如何使用数据卫生API删除消费者记录，请参阅 [《工作单终端指南》](../api/workorder.md).
+<!--
+
+Paragraph below should be commented out until workorder.md will be added to the TOC.
+
+To learn how to delete consumer records using the Data Hygiene API, refer to the [work order endpoint guide](../api/workorder.md).
+
+-->
