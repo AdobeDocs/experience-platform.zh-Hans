@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方云存储检索数据，以及使用源连接器和API将数据导入平台的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: e059ff1066ef0197207667b40fb2f31c296464cb
+source-git-commit: 313d80603f54b7e79316b01790fb4f258851858e
 workflow-type: tm+mt
-source-wordcount: '1586'
+source-wordcount: '1613'
 ht-degree: 1%
 
 ---
@@ -99,7 +99,7 @@ curl -X POST \
 | `data.properties.columnDelimiter` | （可选）在收集平面文件时可指定的单字符列分隔符。 任何单个字符值都是允许的列分隔符。 如果未提供，请使用逗号(`,`)作为默认值。 **注意**:的 `columnDelimiter` 仅在摄取分隔文件时才能使用属性。 |
 | `data.properties.encoding` | （可选）此属性定义将数据摄取到平台时要使用的编码类型。 支持的编码类型包括： `UTF-8` 和 `ISO-8859-1`. **注意**:的 `encoding` 参数仅在摄取分隔的CSV文件时可用。 其他文件类型将采用默认编码进行摄取， `UTF-8`. |
 | `data.properties.compressionType` | （可选）用于定义要摄取的压缩文件类型的属性。 支持的压缩文件类型包括： `bzip2`, `gzip`, `deflate`, `zipDeflate`, `tarGzip`和 `tar`. **注意**:的 `compressionType` 仅在摄取分隔文件或JSON文件时才能使用属性。 |
-| `params.path` | 您访问的源文件的路径。 此参数指向单个文件或整个文件夹。 |
+| `params.path` | 您访问的源文件的路径。 此参数指向单个文件或整个文件夹。  **注意**:您可以使用星号代替文件名来指定整个文件夹的摄取。 例如： `/acme/summerCampaign/*.csv` 会摄取整个 `/acme/summerCampaign/` 文件夹。 |
 | `params.type` | 要摄取的源数据文件的文件类型。 使用类型 `file` 摄取单个文件并使用类型 `folder` 以摄取整个文件夹。 |
 | `connectionSpec.id` | 与您的特定云存储源关联的连接规范ID。 请参阅 [附录](#appendix) ，以获取连接规范ID列表。 |
 
