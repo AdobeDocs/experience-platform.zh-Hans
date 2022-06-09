@@ -2,13 +2,13 @@
 title: 性能护栏
 description: 了解如何在最佳性能护栏内使用服务器API
 keywords: 数据收集；收集；边缘网络；API;SLA;SLT；服务级别
-source-git-commit: 951773d7a314b3d128fa364a7a034e0e8514bbe4
+exl-id: 063d0fbb-26d1-4727-9dea-8e7223b2173d
+source-git-commit: 6f0eb81f9709cf4fcaea94334449117c4ed76107
 workflow-type: tm+mt
-source-wordcount: '435'
+source-wordcount: '426'
 ht-degree: 2%
 
 ---
-
 
 # 性能护栏
 
@@ -20,12 +20,12 @@ Adobe不应对超出使用限制导致的性能下降负责。 始终超过性�
 
 ## 定义
 
-* **可用性** 计算为每五分钟的间隔，该间隔是由Experience Adobe Experience Platform边缘网络处理的请求中不会因错误而失败且仅与已配置的Adobe Experience Platform边缘网络API相关的百分比。 如果租户在给定的五分钟间隔内未发出任何请求，则该间隔将被视为100%可用。
+* **可用性** 计算为每五分钟间隔的百分比，即Experience Platform边缘网络处理的不会因错误而失败且仅与配置的边缘网络API相关的请求的百分比。 如果租户在给定的五分钟间隔内未发出任何请求，则该间隔将被视为100%可用。
 * **每月正常运行时间百分比** 对于给定区域，计算为每月所有五分钟间隔的可用性平均值。
-* 安 **上游** 是Adobe Edge网络后面的一项服务，为特定数据流(如Adobe服务器端转发、Adobe Edge分段或Adobe Target)启用。
+* 安 **上游** 是边缘网络后面的一项服务，为特定数据流(如Adobe服务器端转发、Adobe Edge分段或Adobe Target)启用。
 * A **请求单元** 对应于请求的8 KB片段和为数据流配置的一个上游片段。
 * A **请求** 是由客户拥有的应用程序向 [!DNL Server API]. 请求可以包含一个或多个请求单元。
-* 安 **错误** 是因Adobe Experience Platform边缘网络而失败的任何请求 [内部服务错误](error-handling.md).
+* 安 **错误** 是因边缘网络而失败的任何请求 [内部服务错误](error-handling.md).
 
 ## 服务限制
 
