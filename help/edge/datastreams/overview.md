@@ -3,9 +3,9 @@ title: 数据流概述
 description: 将客户端 Experience Platform SDK 集成与 Adobe 产品和第三方目标连接起来。
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；边缘配置ID；标识；启用ID同步；ID同步容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID；数据收集的数据准备；数据准备；映射器；XDM；边缘上的XDM；映射器
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: fe66cbd61d546da8fb6621ef78b3565126cb193d
+source-git-commit: e0c39c20ce536b057367da2854901e33a3f67dd6
 workflow-type: tm+mt
-source-wordcount: '1686'
+source-wordcount: '1774'
 ht-degree: 2%
 
 ---
@@ -53,6 +53,7 @@ ht-degree: 2%
 | [!UICONTROL 地理位置] | 根据用户的IP地址确定是否进行GPS查找。 默认设置 **[!UICONTROL 无]** 禁用任何GPS查找，而 **[!UICONTROL 城市]** 设置可将GPS坐标设为两位小数。 |
 | [!UICONTROL 第一方ID Cookie] | 启用后，此设置会告知边缘网络在查找 [第一方设备ID](../identity/first-party-device-ids.md)，而不是在身份映射中查找此值。<br><br>启用此设置时，您必须提供应存储ID的Cookie的名称。 |
 | [!UICONTROL 第三方ID同步] | ID同步可以分组到容器中，以允许在不同时间运行不同的ID同步。 启用此设置后，您可以指定为此数据流运行哪个ID同步容器。 |
+| [!UICONTROL 访问类型] | 定义 [!DNL Edge Network] 接受数据流。 <ul><li>**[!UICONTROL 混合身份验证]**:如果选择此选项，边缘网络将接受经过身份验证的请求和未经身份验证的请求。 当您计划使用Web SDK时，请选择此选项；或 [Mobile SDK](https://aep-sdks.gitbook.io/docs/)，以及 [服务器API](../../server-api/overview.md). </li><li>**[!UICONTROL 仅验证]**:如果选择此选项，边缘网络将仅接受经过验证的请求。 如果您计划仅使用服务器API，并且希望阻止任何未经身份验证的请求由 [!DNL Edge Network]. </li></ul> |
 
 从此处，如果您要配置Experience Platform数据流，请按照 [为数据收集准备数据](./data-prep.md) ，以在返回到本指南之前将数据映射到Platform事件架构。 否则，请选择 **[!UICONTROL 保存]** 并继续下一节。
 
