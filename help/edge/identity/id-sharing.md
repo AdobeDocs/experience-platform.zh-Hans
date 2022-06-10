@@ -2,13 +2,13 @@
 title: 移动到Web和跨域ID共享
 description: 了解如何在移动设备属性和跨域保留访客ID
 keywords: 身份；移动设备；ID；共享；域；跨域；SDK；平台；
-source-git-commit: 55e28f749741c653a230b42fabf5a047ba8c7d01
+exl-id: b9bb236f-52cf-4615-96d8-1137d957de8c
+source-git-commit: 3b65143e33804b251f888dbe2a69d238b3f4cda3
 workflow-type: tm+mt
-source-wordcount: '893'
+source-wordcount: '901'
 ht-degree: 1%
 
 ---
-
 
 # 移动到Web和跨域ID共享
 
@@ -32,9 +32,11 @@ Adobe Experience Platform Web SDK支持访客ID共享功能，这些功能使客
 
 ## 先决条件 {#prerequisites}
 
-要使用移动到Web和跨域ID共享，您必须更新为 [!DNL Web SDK] 版本2.11.0或更高版本。
+要使用移动到Web和跨域ID共享，您必须使用 [!DNL Web SDK] 版本2.11.0或更高版本。
 
 对于边缘网络移动实施， [边缘网络的标识](https://aep-sdks.gitbook.io/docs/foundation-extensions/identity-for-edge-network) 扩展，以版本1.1.0(iOS和Android)开始。
+
+此功能还与 [!DNL VisitorAPI.js] 版本1.7.0或更高版本。
 
 ## 移动到Web ID共享 {#mobile-to-web}
 
