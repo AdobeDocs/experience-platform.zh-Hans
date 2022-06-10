@@ -3,9 +3,9 @@ keywords: SFTP;SFTP
 title: SFTP连接
 description: 创建与SFTP服务器的实时出站连接，以定期从Adobe Experience Platform导出分隔数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: 0b094e635e6d22e58e5aa79a374df0879167a833
+source-git-commit: 715533352e84573f60f012504988595af6146e2f
 workflow-type: tm+mt
-source-wordcount: '642'
+source-wordcount: '671'
 ht-degree: 1%
 
 ---
@@ -50,8 +50,8 @@ ht-degree: 1%
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_sftp_ssh"
->title="SSH密钥"
->abstract="SSH密钥需要Base64字符串。"
+>title="专用SSH密钥"
+>abstract="私有SSH密钥必须格式化为Base64编码的字符串，且不得受密码保护。 "
 
 When [连接](../../ui/connect-destination.md) 要达到此目标，您必须提供以下信息：
 
@@ -59,13 +59,13 @@ When [连接](../../ui/connect-destination.md) 要达到此目标，您必须提
 
 如果您选择 **[!UICONTROL 基本身份验证]** 键入以连接到SFTP位置：
 
-![SFTP目标基本身份验证](../..//assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
+![SFTP目标基本身份验证](../../assets/catalog/cloud-storage/sftp/stfp-basic-authentication.png)
 
 * **[!UICONTROL 主机]**:SFTP存储位置的地址；
 * **[!UICONTROL 用户名]**:登录SFTP存储位置的用户名；
 * **[!UICONTROL 密码]**:登录SFTP存储位置的密码。
 * **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64] 编码字符串。
-   * 示例：`----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`。请参阅下面格式正确的PGP键示例，其中间部分缩短为简短。
+   * 示例: `----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`. 请参阅下面格式正确的PGP键示例，其中间部分缩短为简短。
 
       ![PGP密钥](../..//assets/catalog/cloud-storage/sftp/pgp-key.png)
 
@@ -77,11 +77,11 @@ When [连接](../../ui/connect-destination.md) 要达到此目标，您必须提
 * **[!UICONTROL 域]**:填写您的SFTP帐户的IP地址或域名
 * **[!UICONTROL 端口]**:SFTP存储位置使用的端口；
 * **[!UICONTROL 用户名]**:登录SFTP存储位置的用户名；
-* **[!UICONTROL SSH密钥]**:用于登录SFTP存储位置的SSH密钥。
+* **[!UICONTROL SSH密钥]**:用于登录SFTP存储位置的专用SSH密钥。 私钥必须格式化为Base64编码的字符串，且不得受密码保护。
 * **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64] 编码字符串。
-   * 示例：`----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`。请参阅下面格式正确的PGP键示例，其中间部分缩短为简短。
+   * 示例: `----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`. 请参阅下面格式正确的PGP键示例，其中间部分缩短为简短。
 
-      ![PGP密钥](../..//assets/catalog/cloud-storage/sftp/pgp-key.png)
+      ![PGP密钥](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 #### 目标详细信息 {#destination-details}
 
