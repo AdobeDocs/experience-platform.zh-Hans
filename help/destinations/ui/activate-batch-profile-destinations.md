@@ -6,9 +6,9 @@ seo-title: Activate audience data to batch profile export destinations
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by sending segments to batch profile-based destinations.
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: b19dc5c0d67bc218de0366fdc40f752ce7c3ad71
+source-git-commit: b9f8f75571ed66558caaf058a90e7263da6d7b95
 workflow-type: tm+mt
-source-wordcount: '2544'
+source-wordcount: '2568'
 ht-degree: 0%
 
 ---
@@ -87,6 +87,11 @@ ht-degree: 0%
 >id="platform_destinations_activationchaining_scheduled"
 >title="计划激活"
 >abstract="激活在一天中的固定时间运行。"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activationchaining_activatenow"
+>title="按需激活"
+>abstract="选择此控件可在以前计划的导出之上交付完整文件导出。 文件导出将立即触发。"
 
 选择 **[!UICONTROL 导出完整文件]** 触发导出文件，该文件包含选定区段的所有配置文件资格的完整快照。
 
