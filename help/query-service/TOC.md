@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: Query Service 指南
 user-guide-description: 使用标准 SQL 在 Platform Data Lake 中查询数据。
 feature: Queries
-source-git-commit: f020fa09730b7bf54f9e39829ba1b09074f72b67
+source-git-commit: 5079bb768ba02d78669dd8b6c1ebe28943a1bb68
 workflow-type: tm+mt
-source-wordcount: '176'
+source-wordcount: '183'
 ht-degree: 18%
 
 ---
@@ -19,6 +19,8 @@ ht-degree: 18%
    - [先决条件](get-started/prerequisites.md)
 - 使用案例{#use-cases}
    - [放弃浏览](use-cases/abandoned-browse.md)
+   - [使用Adobe Target进行活动分析](use-cases/activity-analysis-with-adobe-target.md)
+   - [归因分析](use-cases/attribution-analysis.md)
    - [机器人过滤](use-cases/bot-filtering.md)
    - [Web和移动分析分析](use-cases/analytics-insights.md)
 - 查询服务API {#api}
