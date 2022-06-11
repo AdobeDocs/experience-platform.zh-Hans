@@ -5,9 +5,9 @@ title: Adobe Analytics数据的查询示例
 topic-legacy: queries
 description: 来自选定Adobe Analytics报表包的数据将转换为XDM ExperienceEvents，并作为数据集摄取到Adobe Experience Platform。 本文档概述了查询服务利用此数据的许多用例，其中包括旨在与Adobe Analytics数据集结合使用的示例查询。
 exl-id: 96da3713-c7ab-41b3-9a9d-397756d9dd07
-source-git-commit: fec6f614946860e6ad377beaca05972a63052dd8
+source-git-commit: e0cdfc514a9e1277134d4c0d5396fc0bdf9d9958
 workflow-type: tm+mt
-source-wordcount: '1066'
+source-wordcount: '975'
 ht-degree: 1%
 
 ---
@@ -16,107 +16,9 @@ ht-degree: 1%
 
 来自选定Adobe Analytics报表包的数据将转换为符合 [!DNL XDM ExperienceEvent] 类并作为数据集摄取到Adobe Experience Platform中。
 
-本文档概述了Adobe Experience Platform [!DNL Query Service] 利用此数据，包括旨在与Adobe Analytics数据集一起使用的示例查询。 请参阅 [Analytics字段映射](../../sources/connectors/adobe-applications/mapping/analytics.md) 有关映射到的详细信息 [!DNL Experience Events].
+本文档概述了Adobe Experience Platform [!DNL Query Service] 利用此数据。 请参阅 [Analytics字段映射](../../sources/connectors/adobe-applications/mapping/analytics.md) 有关映射到的详细信息 [!DNL Experience Events].
 
-## 快速入门
-
-本文档中的SQL示例要求您编辑SQL，并根据您希望评估的数据集、eVar、事件或时间范围填写查询的预期参数。 无论您在何处看到，都提供参数 `{ }` 在下面的SQL示例中。
-
-## 常用SQL示例
-
-以下示例显示用于分析Adobe Analytics数据的常见用例的SQL查询。
-
-### 给定日的每小时访客计数
-
-```sql
-SELECT Substring(from_utc_timestamp(timestamp, 'America/New_York'), 1, 10) AS Day,
-       Substring(from_utc_timestamp(timestamp, 'America/New_York'), 12, 2) AS Hour, 
-       Count(DISTINCT enduserids._experience.aaid.id) AS Visitor_Count 
-FROM   {TARGET_TABLE}
-WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
-GROUP BY Day, Hour
-ORDER BY Hour;
-```
-
-### 给定日期内查看的前10个页面
-
-```sql
-SELECT web.webpagedetails.name AS Page_Name, 
-       Sum(web.webpagedetails.pageviews.value) AS Page_Views 
-FROM   {TARGET_TABLE}
-WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
-GROUP BY web.webpagedetails.name 
-ORDER BY page_views DESC 
-LIMIT  10;
-```
-
-### 前10位最活跃用户
-
-```sql
-SELECT enduserids._experience.aaid.id AS aaid, 
-       Count(timestamp) AS Count
-FROM   {TARGET_TABLE}
-WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
-GROUP BY enduserids._experience.aaid.id
-ORDER BY Count DESC
-LIMIT  10;
-```
-
-### 按用户活动划分的前10大城市
-
-```sql
-SELECT concat(placeContext.geo.stateProvince, ' - ', placeContext.geo.city) AS state_city, 
-       Count(timestamp) AS Count
-FROM   {TARGET_TABLE}
-WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
-GROUP BY state_city
-ORDER BY Count DESC
-LIMIT  10;
-```
-
-### 查看次数前10个产品
-
-```sql
-SELECT Product_SKU,
-       Sum(Product_Views) AS Total_Product_Views
-FROM  (SELECT Explode(productlistitems.sku) AS Product_SKU, 
-              commerce.productviews.value   AS Product_Views 
-       FROM   {TARGET_TABLE}
-            WHERE TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
-              AND commerce.productviews.value IS NOT NULL) 
-GROUP BY Product_SKU 
-ORDER BY Total_Product_Views DESC
-LIMIT  10;
-```
-
-### 前10大订单总收入
-
-```sql
-SELECT Purchase_ID, 
-       Round(Sum(Product_Items.priceTotal * Product_Items.quantity), 2) AS Total_Order_Revenue 
-FROM   (SELECT commerce.`order`.purchaseid AS Purchase_ID, 
-               Explode(productlistitems)   AS Product_Items 
-        FROM   {TARGET_TABLE} 
-        WHERE  commerce.`order`.purchaseid IS NOT NULL 
-                AND TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
-
-GROUP BY Purchase_ID 
-ORDER BY total_order_revenue DESC 
-LIMIT  10;
-```
-
-### 按日的事件计数
-
-```sql
-SELECT Substring(from_utc_timestamp(timestamp, 'America/New_York'), 1, 10) AS Day, 
-       Substring(from_utc_timestamp(timestamp, 'America/New_York'), 12, 2) AS Hour, 
-       Sum(_experience.analytics.event1to100.{TARGET_EVENT}.value) AS Event_Count
-FROM   {TARGET_TABLE}
-WHERE  _experience.analytics.event1to100.{TARGET_EVENT}.value IS NOT NULL 
-        AND TIMESTAMP = to_timestamp('{TARGET_YEAR}-{TARGET_MONTH}-{TARGET_DAY}')
-GROUP BY Day, Hour
-ORDER BY Hour;
-```
+请参阅 [analytics用例文档](../use-cases/analytics-insights.md) 了解如何使用查询服务从摄取的Adobe Analytics数据创建可操作的分析。
 
 ## 重复数据删除
 

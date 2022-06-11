@@ -6,7 +6,7 @@ topic-legacy: queries
 type: Tutorial
 description: 本文档概述了在Adobe Experience Platform查询服务中编写查询时要了解的重要详细信息。
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: 7016c0ce1ca8be5cecb7c09d01e9fd2e48e551de
+source-git-commit: 13e2248845734d985331653a17599f48aec0ebde
 workflow-type: tm+mt
 source-wordcount: '1031'
 ht-degree: 3%
@@ -318,4 +318,8 @@ LIMIT 50;
 
 通过阅读本文档，您在使用 [!DNL Query Service]. 有关如何使用SQL语法编写您自己的查询的详细信息，请阅读 [SQL语法文档](../sql/syntax.md).
 
-有关查询服务中可使用的查询示例，请阅读 [Adobe Analytics示例查询](../sample-queries/adobe-analytics.md), [Adobe Target示例查询](../sample-queries/adobe-target.md)或 [ExperienceEvent示例查询](../sample-queries/experience-event.md).
+有关可在查询服务中使用的查询示例，请阅读以下用例文档：
+
+- [Analytics分析](../use-cases/analytics-insights.md)
+- [使用Adobe Target进行活动分析](../use-cases/activity-analysis-with-adobe-target.md)
+- [ExperienceEvent示例查询](../sample-queries/experience-event.md).
