@@ -3,14 +3,32 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK;Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 29852bc8f17de6db04805f4738f383f2dc7c1406
+source-git-commit: 207fdd6d8a8dc27fa89798999734ba820f30fd54
 workflow-type: tm+mt
-source-wordcount: '1018'
+source-wordcount: '1169'
 ht-degree: 3%
 
 ---
 
+
 # 发行说明
+
+本文档介绍Adobe Experience Platform Web SDK的发行说明。
+有关Web SDK标记扩展的最新发行说明，请参阅 [Web SDK标记扩展发行说明](extension/web-sdk-ext-release-notes.md).
+
+## 版本2.11.0 - 2022年6月13日
+
+**新增功能**
+
+* 现在，您可以在移动应用程序和移动Web内容之间以及跨域共享访客ID，从而更准确地提供个性化体验。 请参阅 [专用文档](identity/id-sharing.md) 以了解更多。
+* 您现在可以渲染或执行 [!DNL Adobe Target] 单页应用程序中，而不会增加分析量度。 这可减少报表错误并提高分析的准确性。 请参阅 [专用文档](personalization/rendering-personalization-content.md#applypropositions) 以了解更多。
+* 在 `getLibraryInfo` 命令（包括可用命令和实例的最终配置）。
+
+**修复和改进功能**
+
+* 更新了Cookie设置以使用 `sameSite="none"` 和 `secure` 标记为 [!DNL HTTPS] 页面。
+* 修复了使用 `eq` 伪选择器。
+* 修复了 `localTimezoneOffset` 可能无法通过Experience Platform验证。
 
 ## 版本2.10.1 - 2022年5月3日
 
