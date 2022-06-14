@@ -4,9 +4,9 @@ title: 目标类型和类别
 seo-title: Destination types and categories
 description: 了解Adobe Experience Platform中的不同目标类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 1c2846941df09b66eb74f8ea8bec91574577fbbc
+source-git-commit: 2252c6e8bd5f0ada717d67f005b7f6ddd0b238ab
 workflow-type: tm+mt
-source-wordcount: '596'
+source-wordcount: '642'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 连接 {#connections}
 
-**[!UICONTROL 配置文件导出]** 和 **[!UICONTROL 流区段导出]** Adobe Experience Platform中的目标捕获事件数据，将其与其他数据源组合以形成 [实时客户资料](../profile/home.md)、应用分段，并将区段和符合条件的用户档案导出到目标。
+**[!UICONTROL 配置文件导出]**, **[!UICONTROL 流区段导出]**&#x200B;和 **[!DNL Edge Personalization]** Adobe Experience Platform中的目标捕获事件数据，将其与其他数据源组合以形成 [实时客户资料](../profile/home.md)、应用分段，并将区段和符合条件的用户档案导出到目标。
 
 ## 配置文件导出目标 {#profile-export}
 
@@ -55,6 +55,12 @@ ht-degree: 0%
 ## 流区段导出目标 {#streaming-destinations}
 
 区段导出目标可接收Experience Platform区段数据。 这些目标使用区段ID或用户ID。 广告和社交目标，如 [[!DNL Google Display & Video 360]](catalog/advertising/google-dv360.md), [[!DNL Google Ads]](catalog/advertising/google-ads-destination.md)或 [Facebook](catalog/social/facebook.md) 是此类目标的示例。
+
+## 边缘个性化目标 {#edge-personalization-destinations}
+
+Experience Platform中的边缘个性化目标包括 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化目标](/help/destinations/catalog/personalization/custom-personalization.md). 通过使用这些目标，您可以为客户启用同页和下一页个性化用例。
+
+阅读有关如何 [为同一页面和下一页面个性化配置个性化目标](/help/destinations/ui/configure-personalization-destinations.md).
 
 ## 配置文件导出和区段导出目标 — 视频概述 {#video}
 
