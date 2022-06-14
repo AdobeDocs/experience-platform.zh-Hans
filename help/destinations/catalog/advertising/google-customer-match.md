@@ -3,9 +3,9 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用在线和离线数据，通过Google拥有和运营的资产(如搜索、购物、Gmail和YouTube)来访问客户并与其重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: 23828fcbb1257fa093c1e114ee4c2fcb2162d9d6
 workflow-type: tm+mt
-source-wordcount: '1684'
+source-wordcount: '1715'
 ht-degree: 1%
 
 ---
@@ -135,7 +135,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 * **[!UICONTROL 名称]**:为此目标连接提供名称
 * **[!UICONTROL 描述]**:提供此目标连接的描述
-* **[!UICONTROL 帐户ID]**:您的Google客户客户ID。 ID的格式为xxx-xxx-xxxx。
+* **[!UICONTROL 帐户ID]**:您的 [Google Ads客户ID](https://support.google.com/google-ads/answer/1704344?hl=en). ID的格式为xxx-xxx-xxxx。 如果您使用 [!DNL Google Ads Manager Account (My Client Center)]，请勿使用您的Manager帐户ID。 使用 [Google Ads客户ID](https://support.google.com/google-ads/answer/1704344?hl=en) 中。
 
 >[!IMPORTANT]
 >
