@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程提供了在UI中创建Marketo Engage源连接器以将B2B数据导入Adobe Experience Platform的步骤。
 exl-id: a6aa596b-9cfa-491e-86cb-bd948fb561a8
-source-git-commit: 8d88af787508f9aeaa7966409b33bf0aae488a87
+source-git-commit: 72fb25a262d2ab76085f12e3ad0c6a8decba50ac
 workflow-type: tm+mt
-source-wordcount: '1427'
+source-wordcount: '1473'
 ht-degree: 0%
 
 ---
@@ -25,6 +25,7 @@ ht-degree: 0%
 
 本教程需要对Adobe Experience Platform的以下组件有一定的了解：
 
+* [B2B命名空间和模式自动生成实用程序](../../../../connectors/adobe-applications/marketo/marketo-namespaces.md):B2B命名空间和模式自动生成实用程序允许您使用 [!DNL Postman] 为B2B命名空间和模式自动生成值。 在创建 [!DNL Marketo] 源连接和数据流。
 * [源](../../../../home.md):Experience Platform允许从各种源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。
 * [体验数据模型(XDM)](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
    * [在UI中创建和编辑架构](../../../../../xdm/ui/resources/schemas.md):了解如何在UI中创建和编辑模式。
@@ -129,7 +130,7 @@ ht-degree: 0%
 每个 [!DNL Marketo] 数据集有其自己的特定映射规则可遵循。 有关如何映射的更多信息，请参阅以下内容 [!DNL Marketo] 数据集到XDM:
 
 * [活动](../../../../connectors/adobe-applications/mapping/marketo.md#activities)
-* [程序](../../../../connectors/adobe-applications/mapping/marketo.md#programs)
+* [项目](../../../../connectors/adobe-applications/mapping/marketo.md#programs)
 * [方案成员资格](../../../../connectors/adobe-applications/mapping/marketo.md#program-memberships)
 * [公司](../../../../connectors/adobe-applications/mapping/marketo.md#companies)
 * [静态列表](../../../../connectors/adobe-applications/mapping/marketo.md#static-lists)

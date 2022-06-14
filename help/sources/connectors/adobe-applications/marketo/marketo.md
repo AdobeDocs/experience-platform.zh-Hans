@@ -5,9 +5,9 @@ title: Marketo Engage连接器
 topic-legacy: overview
 description: 本文档概述了Marketo Engage源连接器，包括有关其身份验证、映射和数据延迟的信息。
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: ebf605bda32a7e587e6a6ca93a58669d16581ff9
+source-git-commit: 1ecdd5f058a5996b4a3d12ba62c5f352633cd75a
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '578'
 ht-degree: 0%
 
 ---
@@ -32,6 +32,10 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 在为 [!DNL Marketo]，则必须先设置Adobe组织映射。 有关如何完成此操作的详细步骤，请参阅 [设置Adobe组织映射 [!DNL Marketo]](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-organization-mapping.html).
 
+## 设置B2B命名空间和模式自动生成实用程序
+
+接下来，使用B2B命名空间和模式自动生成实用程序来设置您的平台开发人员控制台和Postman环境。 这允许您自动填充B2B命名空间和架构。 有关详细说明，请参阅 [设置B2B命名空间和模式自动生成实用程序](./marketo-namespaces.md)
+
 ## 体验数据模型(XDM)
 
 XDM是一项公开记录的规范，它提供了常用结构和定义，允许您从第三方源中摄取数据，以用于下游Platform服务。
@@ -47,7 +51,7 @@ XDM是一项公开记录的规范，它提供了常用结构和定义，允许�
 请参阅以下内容，以详细了解 [!DNL Marketo] 数据集和平台：
 
 * [活动](../mapping/marketo.md#activities)
-* [程序](../mapping/marketo.md#programs)
+* [项目](../mapping/marketo.md#programs)
 * [方案成员资格](../mapping/marketo.md#program-memberships)
 * [公司](../mapping/marketo.md#companies)
 * [静态列表](../mapping/marketo.md#static-lists)
