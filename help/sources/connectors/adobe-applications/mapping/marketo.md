@@ -5,10 +5,10 @@ title: Marketo Engage源的映射字段
 topic-legacy: overview
 description: 下表包含Marketo数据集中的字段与其相应XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: 1d2f485a91a8ad2c5b2bea9816c05b7bc26ae8e7
+source-git-commit: be3ec7dc7e2089a8cee0b1577659e1ec0a465044
 workflow-type: tm+mt
-source-wordcount: '634'
-ht-degree: 7%
+source-wordcount: '713'
+ht-degree: 6%
 
 ---
 
@@ -21,6 +21,8 @@ ht-degree: 7%
 >全部 [!DNL Marketo] 数据集除外 `Activities` 现在支持 `isDeleted`. 您的现有数据流将自动包含 `isDeleted`，但将仅为新摄取的数据摄取标记。 如果要将标记应用于所有历史数据，则必须停止现有数据流并使用新映射重新创建它们。 请注意，如果您删除 `isDeleted`，则您将无法再访问该功能。 自动填充映射后，必须保留该映射。
 
 ## 活动 {#activities}
+
+的 [!DNL Marketo] 源现在支持其他标准活动。 要使用标准活动，您必须使用 [模式自动生成实用程序](../marketo/marketo-namespaces.md) 因为如果您 `activities` 数据流在不更新架构的情况下，映射模板将失败，因为架构中不存在新的目标字段。 如果选择不更新架构，您仍然可以创建新数据流并关闭任何错误。 但是，任何新字段或更新字段将不会摄取到平台中。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
@@ -127,7 +129,7 @@ ht-degree: 7%
 
 {style=&quot;table-layout:auto&quot;}
 
-## 程序 {#programs}
+## 项目 {#programs}
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
