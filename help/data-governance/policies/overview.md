@@ -5,9 +5,9 @@ title: 数据使用策略概述
 topic-legacy: policies
 description: 为了有效支持数据合规性的数据使用标签，必须实施数据使用策略。 数据使用策略是描述您允许或限制对Experience Platform内数据执行的营销操作类型的规则。
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: 6e4a3ff03a551069efb8dc96f21b82de06cc47d8
+source-git-commit: 0c78b5dc420a1346c92bf9ed7864fa1733422a83
 workflow-type: tm+mt
-source-wordcount: '1122'
+source-wordcount: '1121'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 可用的策略有两种类型：
 
 * **[!UICONTROL 数据管理政策]**:根据正在执行的营销操作以及相关数据携带的数据使用标签限制数据激活。
-* **[!UICONTROL 同意策略] （测试版）**:筛选可激活的用户档案 [目标](../../destinations/home.md) 基于客户的同意或偏好
+* **[!UICONTROL 同意策略]**:筛选可激活的用户档案 [目标](../../destinations/home.md) 基于客户的同意或偏好
 
 本文档提供了数据使用策略的高级概述，并提供了指向在UI或API中使用策略的更多文档的链接。
 
@@ -91,4 +91,4 @@ For a reference on how specific Data Export Controls map to marketing actions in
 | 现场广告 | 一种使用数据进行现场广告的操作，包括在您组织的网站或应用程序上选择和投放广告，或衡量此类广告的投放和效果的操作。 |
 | 现场个性化 | 使用数据进行现场内容个性化的操作。 Onsite个性化是指用于推论用户兴趣的任何数据，用于根据这些推论选择提供哪些内容或广告。 |
 | 区段匹配 | 使用数据进行Adobe Experience Platform区段匹配的操作，该操作允许两个或多个Platform用户交换区段数据。 通过启用引用此操作的策略，可以限制用于区段匹配的数据。 例如，如果启用了核心策略“限制数据共享”，则任何具有 [C11标签](../labels/reference.md#c11) 无法用于区段匹配。 |
-| 单个身份Personalization | 一项操作，它要求将单个身份用于个性化目的，而不是拼合来自多个源的身份。 |
+| 单个身份个性化 | 一项操作，它要求将单个身份用于个性化目的，而不是拼合来自多个源的身份。 |
