@@ -5,9 +5,9 @@ title: XDM系统概述
 topic-legacy: overview
 description: 标准化和互操作性是Adobe Experience Platform背后的关键概念。 由Adobe驱动的体验数据模型(XDM)旨在标准化客户体验数据并定义客户体验管理架构。
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: 18d245574ba771aa42776d8755a2c6681c8c8532
+source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
 workflow-type: tm+mt
-source-wordcount: '2015'
+source-wordcount: '2076'
 ht-degree: 2%
 
 ---
@@ -51,6 +51,12 @@ Experience Platform提供了用户界面和RESTful API，您可以从中查看�
 
 ## XDM系统中的数据行为 {#data-behaviors}
 
+>[!CONTEXTUALHELP]
+>id="platform_schemas_behavior"
+>title="数据行为"
+>abstract="用于Experience Platform的数据分为三种行为类型：记录、时间系列和临时。 记录架构提供有关主体属性的信息，而时序架构在执行操作时捕获系统的快照。 临时架构捕获字段是命名空间，仅供单个数据集使用。"
+>text="See the documentation for more information on data behaviors in Platform."
+
 用于Experience Platform的数据分为三种行为类型：
 
 * **记录**:提供有关主题属性的信息。 主题可以是组织或个人。
@@ -77,7 +83,7 @@ Experience Platform提供了用户界面和RESTful API，您可以从中查看�
 
 ### [!UICONTROL XDM ExperienceEvent] {#xdm-experience-event}
 
-XDM ExperienceEvent是一个基于时间序列的类，用于在发生事件（或事件集）时捕获系统状态，包括所涉及主题的时间点和身份。 体验事件是关于在该时间点发生的事件的不可更改的事实记录，它表示发生的事件，而不进行聚合或解释。 它们对于时域分析至关重要，因为它们可用于分析在给定时间范围内发生的更改，并在多个时间范围之间进行比较以跟踪趋势。
+XDM ExperienceEvent是一个基于时间序列的类，用于在发生事件（或事件集）时捕获系统状态，包括所涉及主题的时间点和身份。 体验事件是关于在某个时间点发生的事件的不可更改的事实记录，它表示发生的事件，而不进行聚合或解释。 它们对于时域分析至关重要，因为它们可用于分析在给定时间范围内发生的更改，并在多个时间范围之间进行比较以跟踪趋势。
 
 体验事件可以是显式事件，也可以是隐式事件。 显式事件是在旅程中某个点期间发生的可直接观察到的人类行为。 隐含事件是指在没有直接人为行为的情况下引发的事件，但仍与个人有关。 隐式事件的示例包括计划发送电子邮件快讯或达到特定阈值的电池电压。
 

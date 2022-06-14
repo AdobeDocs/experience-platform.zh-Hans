@@ -5,14 +5,20 @@ title: 数据使用标签术语表
 topic-legacy: labels
 description: 本文档概述了Adobe Experience Platform当前支持的所有数据使用标签。
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: 15b0c2fb2565ada489c5a8811b946efc4319696b
+source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
 workflow-type: tm+mt
-source-wordcount: '2053'
+source-wordcount: '2083'
 ht-degree: 2%
 
 ---
 
 # 数据使用标签一览表
+
+>[!CONTEXTUALHELP]
+>id="platform_policies_labeltype"
+>title="标签类型"
+>abstract="数据使用标签分为几类。 Adobe定义的标签包括合同标签、身份标签和敏感标签。 由贵组织定义的标签将分类为自定义标签。"
+>text="See the data usage labels glossary for more information on these label types."
 
 数据使用情况标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 Adobe Experience Platform数据管理提供了一些现成的核心数据使用标签，可用于开始对数据进行分类。
 
