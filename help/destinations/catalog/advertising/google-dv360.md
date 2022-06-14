@@ -3,7 +3,7 @@ keywords: 双击竞价管理器；双击竞价管理器；双击；显示和视�
 title: Google Display & Video 360连接
 description: 显示和视频360（以前称为“双击竞价管理器”）是一种工具，用于在显示、视频和移动设备库存源中执行重定位和受众定位的数字促销活动。
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: 898bd0d5d986bf26e62b0843de7cbb71b859aee3
 workflow-type: tm+mt
 source-wordcount: '830'
 ht-degree: 2%
@@ -29,7 +29,7 @@ ht-degree: 2%
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Google Ad Manager] 支持激活下表所述的身份。
+[!DNL Google Display & Video 360] 支持激活下表所述的身份。
 
 | Target标识 | 描述 | 注意事项 |
 |---|---|---|
