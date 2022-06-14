@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK渲染个性化内容
 description: 了解如何使用Adobe Experience Platform Web SDK呈现个性化内容。
 keywords: 个性化；renderDecisions;sendEvent;decisionScopes；建议；
 exl-id: 6a3252ca-cdec-48a0-a001-2944ad635805
-source-git-commit: 6ba563db7fd31084813426ffbb0c35be9d7fe4bb
+source-git-commit: 0d8e19d8428191cc0c6c56e629e8c5528a96115c
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '924'
 ht-degree: 1%
 
 ---
@@ -296,3 +296,94 @@ alloy("sendEvent", {
 ### 管理闪烁
 
 SDK为 [管理闪烁](../personalization/manage-flicker.md) 在个性化过程中。
+
+## 在单页应用程序中呈现主张，而不增加量度 {#applypropositions}
+
+的 `applyPropositions` 命令允许您呈现或执行 [!DNL Target] 到单页应用程序中，而不会 [!DNL Analytics] 和 [!DNL Target] 量度。 这提高了报表的准确性。
+
+>[!IMPORTANT]
+>
+>如果 `__view__` 页面加载时的范围， `renderAttempted` 标记将设置为 `true`. 的 `applyPropositions` 命令将不会重新呈现 `__view__` 具有 `renderAttempted: true` 标记。
+
+### 用例1:重新呈现单页应用程序视图主张
+
+以下示例中描述的用例可重新呈现以前获取和渲染的购物车视图主张，而无需发送显示通知。
+
+在以下示例中， `sendEvent` 命令在视图发生更改时触发，并将生成的对象保存为常量。
+
+接下来，当视图或组件被更新时， `applyPropositions` 命令被调用，其中包含前一个 `sendEvent` 命令重新呈现视图主题。
+
+```js
+var cartPropositions = alloy("sendEvent", {
+    renderDecisions: true,
+    xdm: {
+        web: {
+            webPageDetails: {
+                viewName: "cart"
+            }
+        }
+    }
+}).then(function(result) {
+    var propositions = result.propositions;
+
+    // Collect response tokens, etc.
+    return propositions;
+});
+
+// Call applyPropositions to re-render the view propositions from the previous sendEvent command.
+alloy("applyPropositions", {
+    propositions: cartPropositions
+});
+```
+
+### 用例2:呈现没有选择器的建议
+
+此用例适用于使用创作的活动选件 [!DNL Target Form-based Experience Composer].
+
+您必须在 `applyPropositions` 呼叫。
+
+支持 `actionTypes` 为：
+
+* `setHtml`
+* `replaceHtml`
+* `appendHtml`
+
+```js
+// Retrieve propositions for salutation and discount scopes
+alloy("sendEvent", {
+    decisionScopes: ["salutation", "discount"]
+}).then(function(result) {
+    var retrievedPropositions = result.propositions;
+    // Render propositions on the page by providing additional metadata
+
+    return alloy("applyPropositions", {
+        propositions: retrievedPropositions,
+        metadata: {
+            salutation: {
+                selector: "#first-form-based-offer",
+                actionType: "setHtml"
+            },
+            discount: {
+                selector: "#second-form-based-offer",
+                actionType: "replaceHtml"
+            }
+        }
+    }).then(function(applyPropositionsResult) {
+        var renderedPropositions = applyPropositionsResult.propositions;
+
+        // Send the display notifications via sendEvent command
+        alloy("sendEvent", {
+            xdm: {
+                eventType: "decisioning.propositionDisplay",
+                _experience: {
+                    decisioning: {
+                        propositions: renderedPropositions
+                    }
+                }
+            }
+        });
+    });
+});
+```
+
+如果您没有为决策范围提供元数据，则将不会提供相关建议。
