@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建Veeva CRM源连接。
 exl-id: 4ef76c28-9bd2-4e54-a3d6-dceb89162337
-source-git-commit: 8b4e3b9e95dd4c2ff8f3b5a1399eb7d114024bb6
+source-git-commit: ea20a850a5d83f648c699119913aa31e2ea16233
 workflow-type: tm+mt
-source-wordcount: '428'
+source-wordcount: '429'
 ht-degree: 1%
 
 ---
@@ -37,7 +37,7 @@ Adobe Experience Platform中的源连接器提供了按计划摄取外部源CRM�
 | `password` | 的密码 [!DNL Veeva CRM] 用户帐户。 |
 | `securityToken` | 的安全令牌 [!DNL Veeva CRM] 用户帐户。 |
 
-有关入门的更多信息，请参阅此 [[!DNL Veeva CRM] 文档](https://developer.veevacrm.com/api/#order-management-rest-api).
+有关入门的更多信息，请参阅此 [[!DNL Veeva CRM] 文档](https://developer.veevacrm.com/doc/Content/rest-api.htm).
 
 ## 连接 [!DNL Veeva CRM] 帐户
 

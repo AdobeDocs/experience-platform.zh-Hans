@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Veeva CRM。
 exl-id: e1aea5a2-a247-43eb-8252-2e2ed96b82a1
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: ea20a850a5d83f648c699119913aa31e2ea16233
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '505'
 ht-degree: 2%
 
 ---
@@ -40,7 +40,7 @@ ht-degree: 2%
 | `securityToken` | 您的安全令牌 [!DNL Veeva CRM] 实例。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基连接和源连接相关的验证规范。 的连接规范ID [!DNL Veeva CRM] 为： `fcad62f3-09b0-41d3-be11-449d5a621b69`. |
 
-有关这些值的更多信息，请参阅此 [[!DNL Veeva CRM] 文档](https://developer.veevacrm.com/api/#order-management-rest-api).
+有关这些值的更多信息，请参阅此 [[!DNL Veeva CRM] 文档](https://developer.veevacrm.com/doc/Content/rest-api.htm).
 
 ### 使用Platform API
 
