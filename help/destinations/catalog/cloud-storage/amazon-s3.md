@@ -3,9 +3,9 @@ keywords: Amazon S3;S3目标；s3;Amazon s3
 title: Amazon S3连接
 description: 创建到Amazon Web Services(AWS)S3存储的实时出站连接，以定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储段中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: f3f713848c7796c95d5326eba8a2e75f36704fd0
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '682'
 ht-degree: 1%
 
 ---
@@ -31,9 +31,30 @@ ht-degree: 1%
 
 ## 连接到目标 {#connect}
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
+>[!IMPORTANT]
+> 
+>要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
-### 连接参数 {#parameters}
+要连接到此目标，请按照 [目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html). 在目标配置工作流中，填写下面两节中列出的字段。
+
+### 对目标进行身份验证 {#authenticate}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_connect_s3_rsa"
+>title="RSA公钥"
+>abstract="或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64-encoded] 字符串。 在下面的文档链接中查看格式正确的键值示例。"
+
+要对目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
+
+* **[!DNL Amazon S3]访问密钥** 和 **[!DNL Amazon S3]密钥**:在 [!DNL Amazon S3]，生成 `access key - secret access key` 对，以授予对 [!DNL Amazon S3] 帐户。 在 [Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+* **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64-encoded] 字符串。
+   * 示例: `----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`. 请参阅下面格式正确的PGP键示例，其中间部分缩短为简短。
+
+      ![PGP密钥](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+
+### 填写目标详细信息 {#destination-details}
+
+要配置目标的详细信息，请填写必填字段并选择 **[!UICONTROL 下一个]**.
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_bucket"
@@ -43,27 +64,13 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_s3_folderpath"
 >title="文件夹路径"
->abstract="必须只包含字符A-Z、a-z、0-9，并且可以包含以下特殊字符： `/!-_.'()"^[]+$%.*"`. 要为每个区段文件创建文件夹，请将宏/%SEGMENT_NAME%或/%SEGMENT_ID%或/%SEGMENT_NAME%/%SEGMENT_ID%插入文本字段。 宏只能在文件夹路径的末尾插入。 查看文档中的宏示例。"
+>abstract="必须只包含字符A-Z、a-z、0-9，并且可以包含以下特殊字符： `/!-_.'()"^[]+$%.*"`. 要按区段文件创建文件夹，请插入宏 `/%SEGMENT_NAME%` 或 `/%SEGMENT_ID%` 或 `/%SEGMENT_NAME%/%SEGMENT_ID%` 中。 宏只能在文件夹路径的末尾插入。 查看文档中的宏示例。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/cloud-storage/overview.html#use-macros" text="使用宏在存储位置中创建文件夹"
 
->[!CONTEXTUALHELP]
->id="platform_destinations_connect_s3_rsa"
->title="RSA公钥"
->abstract="或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须编写为Base64编码字符串。"
-
->[!IMPORTANT]
-> 
->要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
-
-While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
-
-* **[!DNL Amazon S3]访问密钥** 和 **[!DNL Amazon S3]密钥**:在 [!DNL Amazon S3]，生成 `access key - secret access key` 对，以授予对 [!DNL Amazon S3] 帐户。 在 [Amazon Web Services文档](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 * **[!UICONTROL 名称]**:输入一个名称，以帮助您标识此目标。
 * **[!UICONTROL 描述]**:输入此目标的描述。
 * **[!UICONTROL 存储段名称]**:输入 [!DNL Amazon S3] 存储段供此目标使用。
 * **[!UICONTROL 文件夹路径]**:输入将托管导出文件的目标文件夹的路径。
-
-或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64] 编码字符串。
 
 >[!TIP]
 >
