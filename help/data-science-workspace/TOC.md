@@ -5,9 +5,9 @@ breadcrumb-title: Data Science Workspace 指南
 user-guide-description: 借助机器学习技术，使用 Adobe Sensei 和 JupyterLab Notebooks 开发、训练模型和配方，并进行评分。
 feature: Data Science Workspace
 solution: Experience Platform
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: ec69c859a7b40f3d527c73405b358862ebdb92e7
 workflow-type: tm+mt
-source-wordcount: '248'
+source-wordcount: '236'
 ht-degree: 15%
 
 ---
@@ -33,13 +33,8 @@ ht-degree: 15%
    * [实验](api/experiments.md)
    * [模型](api/models.md)
    * [MLServices](api/mlservices.md)
-   * [分析](api/insights.md)
+   * [见解](api/insights.md)
    * [附录](api/appendix.md)
-* 实时机器学习(Alpha) {#real-time-machine-learning}
-   * [概述](real-time-machine-learning/home.md)
-   * [快速入门](real-time-machine-learning/getting-started.md)
-   * [管理笔记本](real-time-machine-learning/rtml-authoring-notebook.md)
-   * [节点参考指南](real-time-machine-learning/node-reference.md)
 * 预建方法 {#pre-built-recipes}
    * [产品推荐方法](pre-built-recipes/product-recommendations.md)
    * [产品购买预测](pre-built-recipes/product-purchase-prediction.md)
