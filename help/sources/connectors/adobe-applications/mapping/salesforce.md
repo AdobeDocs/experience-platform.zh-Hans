@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；Salesforce;Salesforce；
 title: Salesforce映射字段
 description: 下表包含Salesforce源字段与其对应XDM字段之间的映射。
 exl-id: 33ee76f2-0495-4acd-a862-c942c0fa3177
-source-git-commit: 7921eded0a63b8667e693aefab87013c12cd4061
+source-git-commit: 5a8c5c4f6d569ea1c587b12e5d72cd471b111921
 workflow-type: tm+mt
 source-wordcount: '279'
 ht-degree: 8%
@@ -34,6 +34,7 @@ ht-degree: 8%
 | `Fax` | `faxPhone.number` |
 | `FirstName` | `person.name.firstName` |
 | `HomePhone` | `homePhone.number` |
+| `isDeleted` | `isDeleted` |
 | `Id` | `b2b.personKey.sourceID` |
 | `"Salesforce"` | `personComponents.sourcePersonKey.sourceType` |
 | `"${CRM_ORG_ID}"` | `personComponents.sourcePersonKey.sourceInstanceID` |
@@ -83,6 +84,7 @@ ht-degree: 8%
 | `Fax` | `faxPhone.number` |
 | `FirstName` | `person.name.firstName` |
 | `IsConverted` | `b2b.isConverted` |
+| `isDeleted` | `isDeleted` |
 | `"Salesforce"` | `b2b.personKey.sourceType` |
 | `"${CRM_ORG_ID}"` | `b2b.personKey.sourceInstanceID` |
 | `Id` | `b2b.personKey.sourceID` |
@@ -144,6 +146,7 @@ ht-degree: 8%
 | `Description` | `accountDescription` |
 | `DunsNumber` | `accountOrganization.DUNSNumber` | data.com功能 |
 | `Fax` | `accountFax.number` |
+| `isDeleted` | `isDeleted` |
 | `Id` | `accountKey.sourceID` |
 | `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `accountKey.sourceKey` | 主标识。 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
 | `Industry` | `accountOrganization.industry` |
@@ -199,6 +202,7 @@ ht-degree: 8%
 | `ForecastCategoryName` | `forecastCategoryName` |
 | `Id` | `opportunityKey.sourceID` |
 | `IsClosed` | `isClosed` |
+| `isDeleted` | `isDeleted` |
 | `IsWon` | `isWon` |
 | `LastActivityDate` | `extSourceSystemAudit.lastActivityDate` |
 | `LastModifiedDate` | `extSourceSystemAudit.lastUpdatedDate` |
@@ -228,6 +232,7 @@ ht-degree: 8%
 | `CreatedDate` | `extSourceSystemAudit.createdDate` |
 | `Id` | `opportunityPersonKey.sourceID` |
 | `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `opportunityPersonKey.sourceKey` | 主标识。 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `isDeleted` | `isDeleted` |
 | `IsPrimary` | `isPrimary` |
 | `LastModifiedDate` | `extSourceSystemAudit.lastUpdatedDate` |
 | `"Salesforce"` | `opportunityKey.sourceType` |
@@ -244,6 +249,7 @@ ht-degree: 8%
 | --- | --- | --- |
 | `"Salesforce"` | `campaignKey.sourceType` |
 | `"${CRM_ORG_ID}"` | `campaignKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `isDeleted` | `isDeleted` |
 | `Id` | `campaignKey.sourceID` |
 | `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `campaignKey.sourceKey` | 主标识。 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
 | `Name` | `campaignName` |
@@ -272,6 +278,7 @@ ht-degree: 8%
 | --- | --- | --- |
 | `"Salesforce"` | `campaignMemberKey.sourceType` |
 | `"${CRM_ORG_ID}"` | `campaignMemberKey.sourceInstanceID` | 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
+| `isDeleted` | `isDeleted` |
 | `Id` | `campaignMemberKey.sourceID` |
 | `concat(Id,"@${CRM_ORG_ID}.Salesforce")` | `campaignMemberKey.sourceKey` | 主标识。 的值 `"${CRM_ORG_ID}"` 将被自动替换。 |
 | `"Salesforce"` | `campaignKey.sourceType` |
