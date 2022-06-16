@@ -5,7 +5,7 @@ title: 源连接器概述
 topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 7ffc2ed09b58cc6b6118ef2115666aae092c202c
+source-git-commit: 16f61ae259f6da23cfb7aa96e685716cd623d1b2
 workflow-type: tm+mt
 source-wordcount: '1001'
 ht-degree: 0%
@@ -45,6 +45,12 @@ Experience Platform支持从第三方广告系统摄取数据。 有关特定源
 
 - [[!DNL Google AdWords]](connectors/advertising/ads.md)
 
+<!-- ### Analytics {#analytics}
+
+Experience Platform provides support for ingesting data from a third-party analytics platform. See the following related documents for more information:
+
+- [[!DNL Mixpanel]](connectors/analytics/mixpanel.md) -->
+
 ### 云存储 {#cloud-storage}
 
 云存储源可以将您自己的数据引入平台，而无需下载、设置或上传。 摄取的数据可以格式为XDM JSON、XDM Parquet或分隔。 流程的每个步骤均使用用户界面集成到源工作流中。 有关更多信息，请参阅以下相关文档：
@@ -68,7 +74,6 @@ Experience Platform支持从第三方广告系统摄取数据。 有关特定源
 Experience Platform支持从第三方同意和首选项管理平台摄取数据。 有关更多信息，请参阅以下相关文档：
 
 - [[!DNL OneTrust Integration]](connectors/consent-and-preferences/onetrust.md)
-
 
 ### 客户关系管理(CRM) {#customer-relationship-management}
 

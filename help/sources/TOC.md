@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: b21e735b5c6c310b485700ef619302e3e3086763
+source-git-commit: 6f7611b120046fffc1b7c15bd657d699f4b4a588
 workflow-type: tm+mt
-source-wordcount: '785'
-ht-degree: 12%
+source-wordcount: '795'
+ht-degree: 13%
 
 ---
 
@@ -35,6 +35,8 @@ ht-degree: 12%
          - [B2B命名空间和架构](connectors/adobe-applications/marketo/marketo-namespaces.md)
    - 广告 {#advertising}
       - [Google AdWords连接器](connectors/advertising/ads.md)
+   - Analytics {#analytics}
+      - [混合面板连接器](connectors/analytics/mixpanel.md)
    - 云存储 {#cloud-storage}
       - [Amazon Kinesis连接器](connectors/cloud-storage/kinesis.md)
       - [Amazon S3连接器](connectors/cloud-storage/s3.md)
@@ -101,6 +103,8 @@ ht-degree: 12%
    - 创建基本连接 {#create}
       - 广告 {#advertising}
          - [Google AdWords](tutorials/api/create/advertising/ads.md)
+      - Analytics {#analytics}
+         - [Mixpanel](tutorials/api/create/analytics/mixpanel.md)
       - 云存储 {#cloud-storage}
          - [AmazonKinesis](tutorials/api/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/api/create/cloud-storage/s3.md)
@@ -197,8 +201,10 @@ ht-degree: 12%
          - [Adobe CampaignManaged Services](tutorials/ui/create/adobe-applications/campaign.md)
          - [客户属性](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
-      - 广告 {#create}
+      - 广告 {#advertising}
          - [Google AdWords](tutorials/ui/create/advertising/ads.md)
+      - Analytics {#analytics}
+         - [Mixpanel](tutorials/ui/create/analytics/mixpanel.md)
       - 云存储 {#cloud-storage}
          - [AmazonKinesis](tutorials/ui/create/cloud-storage/kinesis.md)
          - [Amazon S3](tutorials/ui/create/cloud-storage/s3.md)
@@ -263,6 +269,7 @@ ht-degree: 12%
          - [HTTP API](tutorials/ui/create/streaming/http.md)
    - 配置数据流 {#dataflow}
       - [广告连接数据流](tutorials/ui/dataflow/advertising.md)
+      - [Analytics连接数据流](tutorials/ui/dataflow/analytics.md)
       - [批处理云存储连接数据流](tutorials/ui/dataflow/batch/cloud-storage.md)
       - [流云存储连接数据流](tutorials/ui/dataflow/streaming/cloud-storage-streaming.md)
       - [同意和首选项连接数据流](tutorials/ui/dataflow/consent-and-preferences.md)
