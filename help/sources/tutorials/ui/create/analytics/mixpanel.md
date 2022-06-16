@@ -4,9 +4,9 @@ title: （测试版）在UI中创建Mixpanel源连接
 description: 了解如何使用Adobe Experience Platform UI创建Mixpanel源连接。
 hide: true
 hidefromtoc: true
-source-git-commit: 2ad3737c7099319e0b14f4e843dda87a6a554d97
+source-git-commit: 8092829c95c9bc43894b73db104fdbb22363e460
 workflow-type: tm+mt
-source-wordcount: '898'
+source-wordcount: '897'
 ht-degree: 2%
 
 ---
@@ -72,7 +72,7 @@ ht-degree: 2%
 >id="platform_sources_mixpanel_timezone"
 >title="为混合面板摄取设置时区"
 >abstract="时区必须与Mixpanel配置文件时区设置相同，因为平台使用指定的项目时区从Mixpanel中摄取相关数据。 在将事件记录到Mixpanel数据存储中之前，Mixpanel将调整其时区以与项目时区协调。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/tutorials/ui/create/analytics/mixpanel.html?lang=en#project-id-and-timezone" text="在文档中了解更多信息"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/analytics/mixpanel.html?lang=en#project-id-and-timezone" text="在文档中了解更多信息"
 
 在源进行身份验证后，提供项目ID和时区，然后选择 **[!UICONTROL 选择]**.
 
