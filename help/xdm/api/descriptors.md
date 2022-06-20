@@ -5,9 +5,9 @@ title: 描述符API端点
 description: 通过架构注册表API中的/descriptors端点，您可以以编程方式管理体验应用程序中的XDM描述符。
 topic-legacy: developer guide
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
 workflow-type: tm+mt
-source-wordcount: '1626'
+source-wordcount: '1836'
 ht-degree: 3%
 
 ---
@@ -311,7 +311,7 @@ curl -X DELETE \
 
 | 属性 | 描述 |
 | --- | --- |
-| `@type` | 定义的描述符类型。 |
+| `@type` | 定义的描述符类型。 对于标识描述符，必须将此值设置为 `xdm:descriptorIdentity`. |
 | `xdm:sourceSchema` | 的 `$id` 定义描述符的架构的URI。 |
 | `xdm:sourceVersion` | 源架构的主要版本。 |
 | `xdm:sourceProperty` | 将作为标识的特定属性的路径。 路径应以“/”开头，而不应以“/”结尾。 在路径中不要包含“属性”（例如，使用“/personalEmail/address”而不是“/properties/personalEmail/properties/address”） |
@@ -347,7 +347,7 @@ curl -X DELETE \
 
 | 属性 | 描述 |
 | --- | --- |
-| `@type` | 定义的描述符类型。 |
+| `@type` | 定义的描述符类型。 对于友好名称描述符，必须将此值设置为 `xdm:alternateDisplayInfo`. |
 | `xdm:sourceSchema` | 的 `$id` 定义描述符的架构的URI。 |
 | `xdm:sourceVersion` | 源架构的主要版本。 |
 | `xdm:sourceProperty` | 将作为标识的特定属性的路径。 路径应以“/”开头，而不应以“/”结尾。 在路径中不要包含“属性”（例如，使用“/personalEmail/address”而不是“/properties/personalEmail/properties/address”） |
@@ -377,7 +377,7 @@ curl -X DELETE \
 
 | 属性 | 描述 |
 | --- | --- |
-| `@type` | 定义的描述符类型。 |
+| `@type` | 定义的描述符类型。 对于关系描述符，必须将此值设置为 `xdm:descriptorOneToOne`. |
 | `xdm:sourceSchema` | 的 `$id` 定义描述符的架构的URI。 |
 | `xdm:sourceVersion` | 源架构的主要版本。 |
 | `xdm:sourceProperty` | 在源架构中定义关系的字段路径。 应以“/”开头，而不以“/”结尾。 在路径中不要包含“properties”（例如，“/personalEmail/address”，而不是“/properties/personalEmail/properties/address”）。 |
@@ -386,7 +386,6 @@ curl -X DELETE \
 | `xdm:destinationProperty` | 目标架构中目标字段的可选路径。 如果忽略此属性，则目标字段将由包含匹配引用标识描述符的任何字段推断（请参阅下文）。 |
 
 {style=&quot;table-layout:auto&quot;}
-
 
 #### 引用标识描述符
 
@@ -404,8 +403,32 @@ curl -X DELETE \
 
 | 属性 | 描述 |
 | --- | --- |
-| `@type` | 定义的描述符类型。 |
+| `@type` | 定义的描述符类型。 对于引用标识描述符，必须将此值设置为 `xdm:descriptorReferenceIdentity`. |
 | `xdm:sourceSchema` | 的 `$id` 定义描述符的架构的URI。 |
 | `xdm:sourceVersion` | 源架构的主要版本。 |
 | `xdm:sourceProperty` | 定义描述符的源架构中字段的路径。 应以“/”开头，而不以“/”结尾。 在路径中不要包含“properties”（例如，“/personalEmail/address”，而不是“/properties/personalEmail/properties/address”）。 |
 | `xdm:identityNamespace` | 源属性的标识命名空间代码。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+#### 已弃用的字段描述符
+
+您可以 [弃用自定义XDM资源中的字段](../tutorials/field-deprecation.md#custom) 通过添加 `meta:status` 属性设置为 `deprecated` 到相关字段。 但是，如果要弃用架构中标准XDM资源提供的字段，则可以为相关架构分配一个已弃用的字段描述符，以实现相同的效果。 使用 [正确 `Accept` 标题](../tutorials/field-deprecation.md#verify-deprecation)，则您可以在API中查找架构时，查看该架构已弃用的标准字段。
+
+```json
+{
+  "@type": "xdm:descriptorDeprecated",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/c65ddf08cf2d4a2fe94bd06113bf4bc4c855e12a936410d5",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "/faxPhone"
+}
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `@type` | 描述符的类型。 对于字段弃用描述符，必须将此值设置为 `xdm:descriptorDeprecated`. |
+| `xdm:sourceSchema` | URI `$id` 将描述符应用到的架构。 |
+| `xdm:sourceVersion` | 要将描述符应用到的架构的版本。 应设置为 `1`. |
+| `xdm:sourceProperty` | 将描述符应用到的架构中属性的路径。 如果要将描述符应用于多个属性，可以以数组的形式提供路径列表(例如， `["/firstName", "/lastName"]`)。 |
+
+{style=&quot;table-layout:auto&quot;}

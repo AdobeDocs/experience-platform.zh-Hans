@@ -4,9 +4,9 @@ user-guide-title: 体验数据模型 (XDM) 系统帮助
 breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 使用体验数据模型 (XDM) 类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: ec61d4ed810029646e2ae28ffc91215eb9189f10
+source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
 workflow-type: tm+mt
-source-wordcount: '465'
+source-wordcount: '469'
 ht-degree: 15%
 
 ---
@@ -171,12 +171,13 @@ ht-degree: 15%
    * [在UI中创建架构](tutorials/create-schema-ui.md)
    * [在API中创建架构](tutorials/create-schema-api.md)
    * [在API中定义自定义字段](./tutorials/custom-fields-api.md)
+   * [向字段(API)添加建议的值](tutorials/suggested-values.md)
+   * [弃用XDM字段](tutorials/field-deprecation.md)
    * [在UI中定义架构关系](tutorials/relationship-ui.md)
    * [在API中定义架构关系](tutorials/relationship-api.md)
    * [在Real-time CDP B2B Edition中定义模式关系](tutorials/relationship-b2b.md)
    * [管理架构的数据使用标签](tutorials/labels.md)
-   * [创建临时架构(API)](tutorials/ad-hoc.md)
-   * [向字段(API)添加建议的值](tutorials/suggested-values.md)
+   * [创建临时架构](tutorials/ad-hoc.md)
 * [疑难解答指南](troubleshooting-guide.md)
 * [API参考](https://www.adobe.io/experience-platform-apis/references/schema-registry/)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)

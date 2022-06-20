@@ -5,9 +5,9 @@ title: 架构注册API快速入门
 description: 本文档简要介绍在尝试调用架构注册表API之前需要了解的核心概念。
 topic-legacy: developer guide
 exl-id: 7daebb7d-72d2-4967-b4f7-1886736db69f
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
 workflow-type: tm+mt
-source-wordcount: '1342'
+source-wordcount: '1356'
 ht-degree: 0%
 
 ---
@@ -211,6 +211,7 @@ XDM资源通过 `$id` 属性，例如以下示例：
 | `application/vnd.adobe.xed-notext+json; version=1` | 原始XDM，包含 `$ref` 和 `allOf`. 无标题或描述。 |
 | `application/vnd.adobe.xed-full-notext+json; version=1` | `$ref` 属性和 `allOf` 已解决。 无标题或描述。 |
 | `application/vnd.adobe.xed-full-desc+json; version=1` | `$ref` 属性和 `allOf` 已解决。 包含描述符。 |
+| `application/vnd.adobe.xed-deprecatefield+json; version=1` | `$ref` 和 `allOf` 已解析，具有标题和描述。 已弃用的字段用 `meta:status` 属性 `deprecated`. |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -254,8 +255,8 @@ XDM资源通过 `$id` 属性，例如以下示例：
 * 字段对象的名称可能包含字母数字、短划线或下划线字符，但 **不能** 以下划线开头。
    * **正确：** `fieldName`, `field_name2`, `Field-Name`, `field-name_3`
    * **错误：** `_fieldName`
-* 字段对象的名称首选使用camelCase。 示例: `fieldName`
-* 字段应包括 `title`，以标题大小写写。 示例: `Field Name`
+* 字段对象的名称首选使用camelCase。 示例：`fieldName`
+* 字段应包括 `title`，以标题大小写写。 示例：`Field Name`
 * 字段需要 `type`.
    * 定义某些类型可能需要可选 `format`.
    * 如果需要特定的数据格式， `examples` 可以添加为数组。
