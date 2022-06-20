@@ -2,10 +2,11 @@
 title: 监视事件转发中的活动
 description: 了解如何监控事件转发属性中的使用情况、错误和计算时间。
 feature: Event Forwarding
-source-git-commit: 4de448fb5e8ed94d23ebfbcc1bfe19bcfd36fbca
+exl-id: 9d8572a3-816e-4b66-afe6-344fe8a15f22
+source-git-commit: 9313ebe6d51d5ef42915d154def9cb0612407439
 workflow-type: tm+mt
-source-wordcount: '534'
-ht-degree: 0%
+source-wordcount: '548'
+ht-degree: 1%
 
 ---
 
@@ -22,6 +23,12 @@ ht-degree: 0%
 ## 先决条件
 
 本指南假定您已购买事件转发，并且您对事件转发的工作方式有一定的了解。 请参阅 [事件转发概述](./overview.md) 以了解更多信息。
+
+## 视频概述
+
+请观看以下视频，了解监控功能的高级概述：
+
+>[!VIDEO](https://video.tv.adobe.com/v/343999?quality=12&learn=on)
 
 ## 选择属性和环境
 

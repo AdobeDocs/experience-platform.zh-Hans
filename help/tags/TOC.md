@@ -5,10 +5,10 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 1d1d070de0a62c42cdda3f021cafad731a73709b
+source-git-commit: 881d9602ff3462afb5df30f8446113a372650c8d
 workflow-type: tm+mt
-source-wordcount: '393'
-ht-degree: 69%
+source-wordcount: '394'
+ht-degree: 68%
 
 ---
 
@@ -57,7 +57,7 @@ ht-degree: 69%
    * [概述](./ui/event-forwarding/overview.md)
    * [快速入门](./ui/event-forwarding/getting-started.md)
    * [配置密钥](./ui/event-forwarding/secrets.md)
-   * [监控](./ui/event-forwarding/monitoring.md)
+   * [监控（测试版）](./ui/event-forwarding/monitoring.md)
 * 管理 {#admin}
    * [概述](./ui/administration/overview.md)
    * [公司和资产](./ui/administration/companies-and-properties.md)
