@@ -1,9 +1,10 @@
 ---
 title: 管理架构的数据使用标签
 description: 了解如何在Adobe Experience Platform UI中向Experience Data Model(XDM)架构字段添加数据使用情况标签。
-source-git-commit: 6156d84cfdd33f8fe491e9a80e3711cf304733e9
+exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
+source-git-commit: 6c72e9dd5961d4dc94d8264a7da795ebd96c40ec
 workflow-type: tm+mt
-source-wordcount: '691'
+source-wordcount: '711'
 ht-degree: 0%
 
 ---
@@ -20,6 +21,8 @@ ht-degree: 0%
 
 虽然可以将标签应用于单个数据集（以及这些数据集中的字段），但您也可以在架构级别应用标签。 将标签直接应用于架构时，这些标签会传播到基于该架构的所有现有和未来数据集。
 
+此外，在一个架构中添加的任何字段标签都会传播到使用共享类或字段组中相同字段的所有其他架构。 这有助于确保整个数据模型中类似字段的使用规则保持一致。
+
 本教程介绍了在Platform UI中使用架构编辑器向架构添加标签的步骤。
 
 ## 快速入门
@@ -32,7 +35,7 @@ ht-degree: 0%
 
 ## 选择一个架构或字段，以向
 
-标签只能应用于架构，不能添加到构成这些架构的组件（类、字段组和数据类型）。 要开始添加标签，您必须先 [选择要编辑的现有架构](../ui/resources/schemas.md#edit) 或 [创建新模式](../ui/resources/schemas.md#create) 可在架构编辑器中查看其结构。
+要开始添加标签，您必须先 [选择要编辑的现有架构](../ui/resources/schemas.md#edit) 或 [创建新模式](../ui/resources/schemas.md#create) 可在架构编辑器中查看其结构。
 
 要编辑单个字段的标签，您可以在画布中选择该字段，然后选择 **[!UICONTROL 管理访问权限]** 中。
 
