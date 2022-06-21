@@ -4,10 +4,10 @@ user-guide-title: 体验数据模型 (XDM) 系统帮助
 breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 使用体验数据模型 (XDM) 类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
+source-git-commit: c57c0ff63abe35fcf0246088b12b6bc6cfc542b6
 workflow-type: tm+mt
-source-wordcount: '469'
-ht-degree: 15%
+source-wordcount: '473'
+ht-degree: 16%
 
 ---
 
@@ -161,7 +161,9 @@ ht-degree: 15%
    * [数据类型](api/data-types.md)
    * [描述符](api/descriptors.md)
    * [工会](api/unions.md)
-   * [导出/导入](api/export-import.md)
+   * [CSV到架构的转换](api/csv-to-schema.md)
+   * [导出](api/export.md)
+   * [导入](api/import.md)
    * [示例数据](api/sample-data.md)
    * [审核日志](api/audit-log.md)
    * [临时架构](api/ad-hoc.md)

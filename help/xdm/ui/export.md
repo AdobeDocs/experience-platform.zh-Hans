@@ -5,9 +5,9 @@ description: 了解如何在Adobe Experience Platform用户界面中将现有架
 topic-legacy: user guide
 type: Tutorial
 exl-id: c467666d-55bc-4134-b8f4-7758d49c4786
-source-git-commit: e4bf5bb77ac4186b24580329699d74d653310d93
+source-git-commit: 2a58236031834bbe298576e2fcab54b04ec16ac3
 workflow-type: tm+mt
-source-wordcount: '505'
+source-wordcount: '496'
 ht-degree: 0%
 
 ---
@@ -16,29 +16,29 @@ ht-degree: 0%
 
 架构库中的所有资源都包含在IMS组织内的特定沙箱中。 在某些情况下，您可能希望在沙箱和IMS组织之间共享体验数据模型(XDM)资源。
 
-为了满足这一需求，您可以在Adobe Experience Platform UI中的[!UICONTROL 架构]工作区中为架构库中的任何架构生成导出有效负荷。 然后，可以在对架构注册API的调用中使用此有效负载将架构（以及所有相关资源）导入目标沙箱和IMS组织。
+为满足此需求， [!UICONTROL 模式] 使用Adobe Experience Platform UI中的工作区，可为架构库中的任何架构生成导出有效负载。 然后，可以在对架构注册API的调用中使用此有效负载将架构（以及所有相关资源）导入目标沙箱和IMS组织。
 
 >[!NOTE]
 >
->除了架构之外，您还可以使用架构注册表API导出其他资源，包括类、架构字段组和数据类型。 有关更多信息，请参阅[导出/导入端点](../api/export-import.md)上的指南。
+>除了架构之外，您还可以使用架构注册表API导出其他资源，包括类、架构字段组和数据类型。 请参阅 [导出端点指南](../api/export.md) 以了解更多信息。
 
 ## 先决条件
 
-虽然平台UI允许导出XDM资源，但您必须使用架构注册表API将这些资源导入其他沙箱或IMS组织，以完成工作流。 请参阅[架构注册表API](../api/getting-started.md)快速入门指南，以了解有关在遵循本指南之前所需身份验证标头的重要信息。
+虽然平台UI允许导出XDM资源，但您必须使用架构注册表API将这些资源导入其他沙箱或IMS组织，以完成工作流。 请参阅 [架构注册API快速入门](../api/getting-started.md) 有关在遵循本指南之前所需的身份验证标头的重要信息。
 
 ## 生成导出有效负载
 
-在平台UI的左侧导航中，选择&#x200B;**[!UICONTROL 架构]**。 在[!UICONTROL 架构]工作区中，找到要导出的架构，并在[!DNL Schema Editor]中将其打开。
+在平台UI中，选择 **[!UICONTROL 模式]** 中。 在 [!UICONTROL 模式] 工作区中，找到要导出的架构，然后在 [!DNL Schema Editor].
 
 >[!TIP]
 >
->有关如何查找要查找的XDM资源的详细信息，请参阅[探索XDM资源](./explore.md)指南。
+>请参阅 [浏览XDM资源](./explore.md) 有关如何查找要查找的XDM资源的详细信息。
 
-打开架构后，请选择画布右上角的&#x200B;**[!UICONTROL 复制JSON]**&#x200B;图标（![复制图标](../images/ui/export/icon.png)）。
+打开架构后，选择 **[!UICONTROL 复制JSON]** 图标(![复制图标](../images/ui/export/icon.png))。
 
 ![](../images/ui/export/copy-json.png)
 
-这会将JSON有效负载复制到剪贴板，这些负载是根据架构结构生成的。 对于上面显示的“[!DNL Loyalty Members]”架构，将生成以下JSON:
+这会将JSON有效负载复制到剪贴板，这些负载是根据架构结构生成的。 对于“[!DNL Loyalty Members]“架构”中，将生成以下JSON:
 
 ```json
 [
@@ -202,14 +202,14 @@ ht-degree: 0%
 ]
 ```
 
-有效负载采用数组的形式，每个数组项目都是一个对象，表示要导出的自定义XDM资源。 在以上示例中，包含“[!DNL Loyalty details]”自定义字段组和“[!DNL Loyalty Members]”架构。 导出中不包含架构使用的任何核心资源，因为这些资源可在所有沙箱和IMS组织中使用。
+有效负载采用数组的形式，每个数组项目都是一个对象，表示要导出的自定义XDM资源。 在上例中，“[!DNL Loyalty details]“自定义字段组”和“[!DNL Loyalty Members]“架构”。 导出中不包含架构使用的任何核心资源，因为这些资源可在所有沙箱和IMS组织中使用。
 
-请注意，贵组织的租户ID的每个实例在负载中显示为`<XDM_TENANTID_PLACEHOLDER>`。 这些占位符将自动替换为相应的租户ID值，具体取决于您在下一步中将架构导入的位置。
+请注意，贵组织的租户ID的每个实例都显示为 `<XDM_TENANTID_PLACEHOLDER>` 中。 这些占位符将自动替换为相应的租户ID值，具体取决于您在下一步中将架构导入的位置。
 
 ## 使用API导入资源
 
-复制此架构的导出JSON后，即可将其用作POST请求到架构注册表API中`/import`端点的有效负载。 有关如何配置调用以将架构发送到所需的IMS组织和沙盒的详细信息，请参阅[在API](../api/export-import.md#import)中导入XDM资源一节。
+在复制了架构的导出JSON后，您便可以将其用作向POST请求的有效负载 `/rpc/import` 架构注册表API中的端点。 请参阅 [导入端点指南](../api/import.md) 有关如何配置调用以将架构发送到所需的IMS组织和沙盒的详细信息。
 
 ## 后续步骤
 
-按照本指南，您已成功将XDM架构导出到其他IMS组织或沙盒。 有关[!UICONTROL 架构] UI功能的更多信息，请参阅[[!UICONTROL 架构] UI概述](./overview.md)。
+按照本指南，您已成功将XDM架构导出到其他IMS组织或沙盒。 有关 [!UICONTROL 模式] UI，请参阅 [[!UICONTROL 模式] UI概述](./overview.md).

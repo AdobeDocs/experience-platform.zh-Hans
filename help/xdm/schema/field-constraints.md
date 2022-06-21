@@ -5,7 +5,7 @@ title: XDM字段类型约束
 topic-legacy: overview
 description: 体验数据模型(XDM)中字段类型约束的引用，包括可映射到的其他序列化格式以及如何在API中定义您自己的字段类型。
 exl-id: 63839a28-6d26-46f1-8bbf-b524e82ac4df
-source-git-commit: 279a1d90be82188ad6fd9d2bb9123354d0046b0d
+source-git-commit: 2a58236031834bbe298576e2fcab54b04ec16ac3
 workflow-type: tm+mt
 source-wordcount: '668'
 ht-degree: 6%
@@ -22,7 +22,7 @@ ht-degree: 6%
 
 如果您计划在API中定义自己的字段类型，强烈建议您先从 [架构注册开发人员指南](../api/getting-started.md) 了解如何创建字段组和数据类型，以在中包含您的自定义字段。 如果您使用Experience PlatformUI创建架构，请参阅 [在UI中定义字段](../ui/fields/overview.md) 了解如何对自定义字段组和数据类型中定义的字段实施约束。
 
-## 基本结构和示例
+## 基本结构和示例 {#basic-types}
 
 XDM是基于JSON架构构建的，因此，XDM字段在定义其类型时会继承类似的语法。 了解不同字段类型在JSON模式中的表示方式有助于指示每种类型的基本约束。
 
