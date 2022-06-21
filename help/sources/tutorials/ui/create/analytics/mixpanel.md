@@ -2,9 +2,8 @@
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
 title: （测试版）在UI中创建Mixpanel源连接
 description: 了解如何使用Adobe Experience Platform UI创建Mixpanel源连接。
-hide: true
-hidefromtoc: true
-source-git-commit: 8092829c95c9bc43894b73db104fdbb22363e460
+exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
+source-git-commit: e44f6d5bb2fd891a3e3b3c5e4aed68e8d4687b53
 workflow-type: tm+mt
 source-wordcount: '897'
 ht-degree: 2%

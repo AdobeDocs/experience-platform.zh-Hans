@@ -3,9 +3,9 @@ keywords: Experience Platform;Zendesk；源；连接器；源连接器；源SDK;
 title: 在UI中创建Zendesk源连接
 description: 了解如何使用Adobe Experience Platform UI创建Zendesk源连接。
 exl-id: 75d303b0-2dcd-4202-987c-fe3400398d90
-source-git-commit: 017f074a325b5ca1921128f6d3d9759612a8a398
+source-git-commit: f0348abd41e7d594109a04fd11ed06857cedfa53
 workflow-type: tm+mt
-source-wordcount: '808'
+source-wordcount: '797'
 ht-degree: 6%
 
 ---
@@ -97,10 +97,6 @@ ht-degree: 6%
 接下来，选择要查看的数据流的数据流运行ID，以查看该数据流运行的特定详细信息。
 
 ![“数据流”页](../../../../images/tutorials/create/zendesk/dataflow-monitoring.png)
-
-要查看有关架构的详细信息，请选择 **[!UICONTROL 数据管理]**.
-
-![Zendesk模式](../../../../images/tutorials/create/zendesk/dataset-governance.png)
 
 最后，选择 **[!UICONTROL 预览数据集]** 以显示摄取的数据。
 
