@@ -1,16 +1,18 @@
 ---
 title: 弃用XDM字段
 description: 了解如何弃用架构注册API中的Experience Data Model(XDM)字段。
-source-git-commit: dc400dce8a77f27347e767230faf7301afc7c1fb
+source-git-commit: a1b86e6976cdb5b2bd3c2ecee933dfde337c9880
 workflow-type: tm+mt
-source-wordcount: '519'
+source-wordcount: '554'
 ht-degree: 2%
 
 ---
 
 # 弃用XDM字段
 
-在体验数据模型(XDM)中，您可以使用 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). 本文档介绍如何弃用不同XDM资源的字段。
+在体验数据模型(XDM)中，您可以使用 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). 弃用字段会使其在下游UI(如 [!UICONTROL 用户档案] 工作区和Customer Journey Analytics，但除此之外，这是一项不间断的更改，不会对现有数据流造成负面影响。
+
+本文档介绍如何弃用不同XDM资源的字段。
 
 ## 快速入门
 
