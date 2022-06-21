@@ -5,9 +5,9 @@ title: 实时客户资料中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会按照许多隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍了与处理实时客户资料的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 1686ff1684080160057462e9aa40819a60bf6b75
 workflow-type: tm+mt
-source-wordcount: '1272'
+source-wordcount: '1281'
 ht-degree: 0%
 
 ---
@@ -135,7 +135,7 @@ When [!DNL Experience Platform] 从接收删除请求 [!DNL Privacy Service], [!
 
 >[!IMPORTANT]
 >
->成功的删除请求会删除客户（或一组客户）收集的属性数据，但请求不会删除在身份图中建立的关联。
+>如果对用户档案(`ProfileService`)，但不是Identity Service(`identity`)，则生成的作业将删除客户（或一组客户）收集的属性数据，但不会删除在身份图中建立的关联。
 >
 >例如，使用客户 `email_id` 和 `customer_id` 删除存储在这些ID下的所有属性数据。 但是，之后在同一数据下摄取的任何数据 `customer_id` 仍将与相应的 `email_id`，因为关联仍然存在。
 >

@@ -5,7 +5,7 @@ title: Privacy ServiceAPI指南附录
 topic-legacy: developer guide
 description: 本文档包含有关使用Privacy ServiceAPI的其他信息。
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
-source-git-commit: 532c9c9d07c112944ff26b1e48545d2b4777b06c
+source-git-commit: 1a84ebfa0ad7801e14896dffd28302f057ae171d
 workflow-type: tm+mt
 source-wordcount: '485'
 ht-degree: 7%
@@ -73,7 +73,7 @@ ht-degree: 7%
 | Adobe Primetime身份验证 | `primetimeAuthentication` |
 | Adobe Target | `target` |
 | 客户属性(CRS) | `CRS` |
-| 身份服务 | `Identity` |
+| 身份服务 | `identity` |
 | Marketo Engage | `marketo` |
 
 {style=&quot;table-layout:auto&quot;}
