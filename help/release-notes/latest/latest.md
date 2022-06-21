@@ -2,247 +2,52 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 1dc97fa33fa8cb46184e11d311ef8246199b4f03
+source-git-commit: 56d43d93be7aca059a38e9428ad5680dd52ad6f9
 workflow-type: tm+mt
-source-wordcount: '2409'
-ht-degree: 5%
+source-wordcount: '562'
+ht-degree: 7%
 
 ---
 
 # Adobe Experience Platform 发行说明
 
-**发布日期：2022 年 5 月 25 日**
-
-Adobe Experience Platform的新增功能：
-
-- [基于属性的访问控制](#abac)
-- [数据卫生](#hygiene)
+**发行日期：2022 年 6 月 22 日**
 
 Adobe Experience Platform 现有功能的更新包括：
 
-- [警报](#alerts)
-- [审核日志](#audit-logs)
-- [仪表板](#dashbaords)
-- [数据收集](#data-collection)
-- [数据管理](#data-governance)
-- [数据准备](#data-prep)
-- [目标](#destinations)
-- [体验数据模型(XDM)](#xdm)
+- [[!DNL Data Science Workspace]](#dsw)
 - [查询服务](#query-service)
 - [源](#sources)
 
-## 基于属性的访问控制 {#abac}
+## [!DNL Data Science Workspace] {#dsw}
 
->[!IMPORTANT]
->
->目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。
-
-基于属性的访问控制是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，如添加到架构字段或区段的标签。 管理员定义包含属性的访问策略以管理用户访问权限。
-
-通过基于属性的访问控制，贵组织的管理员可以控制用户对所有平台工作流和资源中敏感个人数据(SPD)和个人身份信息(PII)的访问。 管理员可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。
+数据科学工作区使用机器学习和人工智能来从您的数据中释放洞察信息。 Data Science Workspace集成到Adobe Experience Platform中，可帮助您跨Adobe解决方案使用内容和数据资产进行预测。 Data Science Workspace完成此操作的一种方式是使用JupyterLab。 JupyterLab是一个基于Web的用户界面，适用于 <a href="https://jupyter.org/" target="_blank">朱佩特工程</a> 与Adobe Experience Platform紧密结合。 它为数据科学家提供了一个交互式开发环境，以便与Jupyter笔记本、代码和数据一起工作。
 
 | 功能 | 描述 |
 | --- | --- |
-| 基于属性的访问控制 | 基于属性的访问控制允许您为体验数据模型(XDM)架构字段设置标签，以定义组织或数据使用范围。 同时，管理员可以使用用户和角色管理界面来定义涵盖XDM架构字段的访问策略，并更好地管理为用户或用户组（内部、外部或第三方用户）授予的访问权限。 此外，基于属性的访问控制允许管理员管理对特定区段的访问。 有关更多信息，请参阅 [基于属性的访问控制概述](../../access-control/abac/overview.md). |
-| 权限 | 权限是Experience Cloud区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。 通过权限，您可以创建和管理角色，并为这些角色分配所需的资源权限。 权限还允许您管理与特定角色关联的标签、沙箱和用户。 有关更多信息，请参阅 [权限UI指南](../../access-control/abac/ui/browse.md). |
-
-有关基于属性的访问控制的详细信息，请参阅 [基于属性的访问控制概述](../../access-control/abac/overview.md).
-
-## 数据卫生 {#hygiene}
-
-Experience Platform提供了一套数据卫生功能，允许您通过编程删除消费者记录和数据集来管理存储的数据。 使用 [!UICONTROL 数据卫生] 工作区或通过调用数据卫生API，您可以管理数据存储区，以确保按预期使用信息，在需要修复错误数据时更新信息，并在组织策略认为有必要时删除信息。
-
->[!IMPORTANT]
->
->目前，Adobe卫生功能仅适用于已购买Disheld for Healthcare附加产品的组织。
-
-**新增功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| 数据集的生存时间(TTL) | [计划TTL](../../hygiene/ui/ttl.md) Platform数据集。 |
+| JupyterLab启动器 | JupyterLab Launcher现在包括Spark 3.2笔记本的启动器。 Spark 2.4笔记本电脑启动器现已由Spark 3.2笔记本取代，并将成为此版本的一部分。 |
+| Spark 3.2 | 新的Scala(Spark)和PySpark配方现在使用Spark 3.2 |
+| 内核 | Scala(Spark)笔记本现在通过Scala内核进行创作。 PySpark笔记本现在通过Python内核进行创作。 Spark和PySpark内核已弃用，并设置为在后续版本中删除。 |
+| 方法 | 新的PySpark和Spark配方现在遵循Docker工作流程，类似于Python和R配方。 |
 
 {style=&quot;table-layout:auto&quot;}
 
-有关Platform中审核日志的更多信息，请参阅 [数据卫生概述](../../hygiene/home.md).
-
-## 警报 {#alerts}
-
-Experience Platform允许您订阅各种平台活动的基于事件的警报。 您可以通过 [!UICONTROL 警报] 选项卡，可以选择通过UI本身或电子邮件通知接收警报消息。
-
-**更新功能**
-
-| 功能 | 警报规则 | 描述 |
-| --- | --- | --- |
-| 新警报规则 | 跳页率超过阈值 | 现在，当源数据流超出身份阈值时，您可以使用警报接收通知。 请参阅 [警报规则](../../observability/alerts/rules.md) ，以了解更新的警报类型列表。 |
-
-{style=&quot;table-layout:auto&quot;}
-
-有关警报的更多信息，请参阅 [[!DNL Observability Insights] 概述](../../observability/home.md).
-
-## 审核日志 {#audit-logs}
-
-Experience Platform允许您审核用户活动以获取各种服务和功能。 审核日志提供有关谁执行了操作以及何时执行的信息。
-
-**更新功能**
-
-| 功能 | 名称 | 描述 |
-| --- | --- | --- |
-| 已添加资源 | <ul><li> 访问控制策略 </li><li> 角色 </li><li> 审核日志 </li><li> 工作顺序 </li><li> 身份命名空间 </li><li> 身份图 </li><li> 查询 </li><li> 数据集 </li><li> 源数据流 </li></ul> | 活动发生时，会自动记录审核日志资源。 如果启用了该功能，则无需手动启用日志收集。 |
-
-{style=&quot;table-layout:auto&quot;}
-
-有关Platform中审核日志的更多信息，请参阅 [审核日志概述](../../landing/governance-privacy-security/audit-logs/overview.md).
-
-## 仪表板 {#dashboards}
-
-Adobe Experience Platform提供了多个功能板，您可以通过这些功能板查看有关贵组织数据的重要信息（在每日快照期间捕获）。
-
-### 配置文件功能板
-
-“配置文件”功能板显示贵组织在“配置文件存储”(Profile Store)中Experience Platform的属性（记录）数据的快照。
-
-**更新功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| 通过合并策略小组件的受众重叠 | 此小组件显示区段定义的视觉交叉，并允许您通过研究区段定义之间的相似性来优化分段策略。 |
-| 按身份小组件划分的用户档案计数变化趋势 | 此小组件可演示按所需身份过滤的用户档案的增长模式，从而帮助您管理目标激活需求。 |
-
-{style=&quot;table-layout:auto&quot;}
-
-有关用户档案的更多信息，请参阅 [配置文件仪表板文档](../../dashboards/guides/profiles.md).
-
-### 目标功能板
-
-“目标”功能板显示贵组织在Experience Platform中启用的目标的快照。
-
-| 功能 | 描述 |
-| --- | --- |
-| 按目标小组件激活的受众 | 此小组件可帮助您快速了解基于已激活受众数量的目标价值。 此外，您还可以轻松访问有关已映射到目标的区段的更多详细信息。 |
-
-{style=&quot;table-layout:auto&quot;}
-
-有关目标的更多信息，请参阅 [目标仪表板文档](../../dashboards/guides/destinations.md).
-
-### 区段功能板
-
-区段功能板提供了一个用户界面，您可以通过该界面查看有关区段的重要信息，这些信息是在每日快照期间捕获的。
-
-**更新功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| 受众重叠小组件 | 此小组件允许您通过可视化区段定义结果中的相似性来优化分段策略。 |
-
-{style=&quot;table-layout:auto&quot;}
-
-有关区段的更多信息，请参阅 [区段仪表板文档](../../dashboards/guides/segments.md).
-
-## 数据收集 {#data-collection}
-
-Experience Platform提供了一套技术，允许您收集客户端客户体验数据，并将其发送到Adobe Experience Platform边缘网络，以便对其进行扩充、转换和分发到Adobe或非Adobe目标。
-
-**新增功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| 复制数据流 | [创建现有数据流的副本](../../edge/datastreams/overview.md#copy) 并根据需要调整其配置，避免从头开始。 |
-| 导入数据流映射规则 | 在为数据收集设置数据准备时，您可以 [导入现有数据流的映射规则](../../edge/datastreams/data-prep.md#import-mapping) 而不是手动配置每个字段映射。 |
-| 对Mobile SDK的数据团队映射支持 | 您现在可以在数据流上配置数据准备，以便与Experience PlatformMobile SDK一起使用。 |
-| 对XDM对象的数据组映射支持 | 在 [为数据收集配置数据准备](../../edge/datastreams/data-prep.md#select-data). |
-| 与数据流集成 | 使用平台中的源目录访问平台边缘网络上的数据，包括为数据收集进行数据准备并改进了对数据准备警告的支持。 请参阅 [Adobe数据收集源概述](../../sources/connectors/adobe-applications/data-collection.md) 以了解更多信息。 |
-
-有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
-
-## 数据管理 {#governance}
-
-Adobe Experience Platform数据管理是用于管理客户数据并确保符合适用于数据使用的法规、限制和策略的一系列策略和技术。 它在 [!DNL Experience Platform] 在不同级别，包括编目、数据谱系、数据使用标签、数据访问策略以及对营销操作数据的访问控制。
-
-**新增功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 同意策略执行（可用性有限） | 如果贵组织已购买了Adobe盾for Healthcare附加产品，您现在可以 [创建同意策略](../../data-governance/policies/user-guide.md#consent-policy) 自动 [在区段参与中强制客户同意和偏好](../../data-governance/enforcement/auto-enforcement.md#consent-policy-evaluation). |
-
-{style=&quot;table-layout:auto&quot;}
-
-请参阅 [数据管理概述](../../data-governance/home.md) 以了解有关该服务的详细信息。
-
-## [!DNL Data Prep] {#data-prep}
-
-[!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
-
-**更新功能**
-
-| 功能 | 描述 |
-| ------- | ----------- |
-| 中基于属性的访问控制 [!DNL Data Prep] | 现在，您只能映射您有权访问的属性。 您无权访问的属性不能用于传递映射和计算字段。 有关更多信息，请参阅 [在中基于属性的访问控制 [!DNL Data Prep]](../../data-prep/home.md). **注意**:目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。 |
-| 本地化数据错误 | [!DNL Data Prep] 现在将所有转换错误定位到属性级别（以前位于行级别）。 数据流现在将摄取已填充了没有任何转换错误的列的部分行，而不是忽略完整行。 |
-| 将上插页流到 [!DNL Profile Service] | 流上插页 [!DNL Data Prep] 使用 [[!DNL Amazon Kinesis]](../../sources/connectors/cloud-storage/kinesis.md), [[!DNL Azure Event Hubs]](../../sources/connectors/cloud-storage/eventhub.md)或 [[!DNL HTTP API]](../../sources/connectors/streaming/http.md) 来源。 请参阅 [流式插页](../../data-prep/upserts.md) 以了解更多信息。 |
-
-{style=&quot;table-layout:auto&quot;}
-
-有关 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
-
-## [!DNL Destinations] {#destinations}
-
-[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
-
-**新增功能或更新功能**
-
-| 功能 | 描述 |
-| ----------- | ----------- |
-| 导出最新用户档案资格 [每日区段评估](../../destinations/ui/activate-batch-profile-destinations.md#export-full-files) | 现在，您可以在每日区段评估完成后，安排一次或每天使用最新的用户档案资格进行完整文件导出。 |
-| 可选的数据流ID [Adobe Target目标](../../destinations/catalog/personalization/adobe-target-connection.md) | 为了为无法实施Adobe Target Web SDK的用户启用Adobe Target个性化，配置Experience Platform目标时，数据流ID选择现在是可选的。 当不使用数据流时，从Experience Platform导出到Target的区段将仅支持下一会话个性化，而边缘分段会被禁用，而且 [用例](../../destinations/ui/configure-personalization-destinations.md) 依赖于边缘分割的。 |
-
-{style=&quot;table-layout:auto&quot;}
-
-## 体验数据模型(XDM) {#xdm}
-
-XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
-
-**新的XDM组件**
-
-| 组件类型 | 名称 | 描述 |
-| --- | --- | --- |
-| 字段组 | [[!UICONTROL 更改集]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/changeset.schema.json) | 捕获数据集的行级别更改和数据集的行级别更改。 此字段组可以由任何类使用。 |
-| 字段组 | [[!UICONTROL 引用键]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-reference-keys.schema.json) | 捕获ExperienceEvent架构的引用键，从而允许您根据其他类与架构构建关系。 |
-
-{style=&quot;table-layout:auto&quot;}
-
-**更新了XDM组件**
-
-| 组件类型 | 名称 | 更新描述 |
-| --- | --- | --- |
-| 行为 | [[!UICONTROL 时间系列架构]](https://github.com/surbhi114/xdm/blob/master/components/behaviors/time-series.schema.json) | 已更新 `eventType` ，以包含若干与媒体相关的新事件类型以及Adobe Journey Optimizer的web渠道入站用例。 |
-| 全局模式 | [[!UICONTROL 目标]](https://github.com/tumulurik/xdm/blob/master/schemas/destinations/destination.schema.json) | 删除了 `xdm:destinationCategory`. |
-| 字段组 | [[!UICONTROL 记录状态]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/record-status.schema.json) | 更新了字段组状态，来源为 `experimental` to `stable`. |
-| 字段组 | （几个） | 多个B2B字段组已更新，因此某些ID字段已被弃用，取而代之的是使用 [[!UICONTROL B2B源]](../../xdm/data-types/b2b-source.md) 数据类型。 以前的ID字段将在将来的更新中弃用。 请参阅以下内容 [拉取请求](https://github.com/adobe/xdm/pull/1533/files#diff-720c0bb1d1cbaf622f5656c2a4b62d35830c75f6563794da72a280a6a520fbc1) 以获取受影响字段组更改的完整列表。 |
-| 数据类型 | [[!UICONTROL 浏览器详细信息]](https://github.com/liljenback/xdm/blob/master/components/datatypes/browserdetails.schema.json) | 添加了新字段 `xdm:userAgentClientHints` 用于捕获有关用户代理与浏览器交互的上下文信息。 |
-| 数据类型 | [[!UICONTROL 媒体信息]](https://github.com/lidiaist/xdm/blob/master/components/datatypes/media.schema.json) | 添加了 `xdm:playhead` 字段来捕获一段媒体内容的播放头时间。 固定模式验证 `xdm:videoSegment`. |
-| 数据类型 | [[!UICONTROL 评级]](https://github.com/lidiaist/xdm/blob/master/components/datatypes/external/iptc/rating.schema.json) | `iptc4xmpExt:RatingSourceLink` 不再是必填字段。 |
-
-{style=&quot;table-layout:auto&quot;}
-
-有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
+有关数据科学工作区的更多常规信息，请参阅 [概述文档](../../data-science-workspace/home.md).
 
 ## 查询服务 {#query-service}
 
-查询服务允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL data lake]. 您可以连接 [!DNL data lake] 并将查询结果捕获为新数据集，以用于报表、Data Science Workspace或摄取到实时客户资料。
+查询服务允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL Data Lake]. 您可以连接 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、Data Science Workspace或摄取到实时客户资料。
 
 **更新功能**
 
 | 功能 | 描述 |
 | --- | --- |
-| 查询服务审核日志集成 | 查询服务审核日志集成提供查询相关用户操作的记录，以便对企业数据管理策略和法规要求进行故障排除或遵守。 请参阅 [审核日志集成文档](../../query-service/data-governance/audit-log-guide.md) 全面信息 |
-| ALTER TABLE SQL结构 | 使用SQL在临时数据集中设置主标识。 查询服务允许您使用 `ALTER TABLE` 命令。 |
+| 临时架构标签设置 | 通过将标签应用于通过查询服务CTAS查询自动生成的Ad Hoc架构的数据字段，来管理对敏感数据的访问。 您可以限制对临时架构的某些字段或数据集的使用，以控制对敏感个人数据和个人身份信息的访问。 通过使用基于属性的访问控制功能，您可以通过平台UI为临时架构字段设置标签。 |
+| `FLATTEN` 设置 | 通过第三方BI工具连接到数据库时， `FLATTEN` 设置会将嵌套数据结构拼合到单独的列中，其中属性名称将变为保存行值的列名称。 这提高了Ad Hoc模式的可用性，并减少了在不支持嵌套数据结构的BI工具中检索、分析、转换和报告数据所需的工作量。 |
 
 {style=&quot;table-layout:auto&quot;}
 
-有关查询服务功能的更多信息，请参阅 [查询服务概述](../../query-service/home.md)
-
-<!--For more information on data governance in Query Service, see the [data governance overview](../../query-service/data-governance/overview.md).-->
+有关查询服务的更多信息，请参阅 [查询服务概述](../../query-service/home.md).
 
 ## 源 {#sources}
 
@@ -252,11 +57,7 @@ Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为
 
 | 功能 | 描述 |
 | --- | --- |
-| 源中基于属性的访问控制 | 您现在可以在摄取期间管理和控制对单个源字段和属性的访问权限。 **注意**:目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。 |
-| 测试版 [!DNL Zendesk] 来源 | 使用 [!DNL Zendesk] 源，用于从您的 [!DNL Zendesk] 实例 [!DNL Profile] 扩充。 请参阅 [[!DNL Zendesk] 源概述](../../sources/connectors/customer-success/zendesk.md) 以了解更多信息。 |
-| B2B的一般可用性 [!DNL Microsoft Dynamics] 来源 | 您现在可以使用 [!DNL Microsoft Dynamics] 源，用于摄取B2B对象，如帐户、机会、营销活动、营销列表和营销列表成员。 请参阅 [[!DNL Microsoft Dynamics] 源概述](../../sources/connectors/crm/ms-dynamics.md) 以了解更多信息。 |
-| 支持Adobe数据收集 | 使用平台中的源目录访问平台边缘网络上的数据，包括为数据收集进行数据准备并改进了对数据准备警告的支持。 请参阅 [Adobe数据收集源概述](../../sources/connectors/adobe-applications/data-collection.md) 以了解更多信息。 |
-| 支持通过 `ISO-8859-1` 编码 | 使用 `encoding` 引入参数 `ISO-8859-1` 使用 [!DNL Flow Service] API。 请参阅 [创建云存储源连接](../../sources/tutorials/api/collect/cloud-storage.md) 以了解更多信息。 |
+| 测试版 [!DNL Mixpanel] 来源 | 您现在可以使用 [!DNL Mixpanel] 从 [!DNL Mixpanel] 帐户Experience Platform。 请参阅 [[!DNL Mixpanel] 源文档](../../sources/connectors/analytics/mixpanel.md) 以了解更多信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 
