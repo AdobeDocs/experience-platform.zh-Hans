@@ -6,7 +6,7 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程将指导您完成使用JupyterLab笔记本电脑方法生成器模板创建方法所需的步骤。
 exl-id: d3f300ce-c9e8-4500-81d2-ea338454bfde
-source-git-commit: fd0f6aa2ac73bdc0a5413c437d091df6bb5d38a6
+source-git-commit: b4dabd36f54cc571b78a6c6c9535f9f08c403b64
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
@@ -38,7 +38,7 @@ ht-degree: 0%
 >
 >的 [!UICONTROL 方法生成器] 笔记本支持使用所有文件格式，但当前创建方法功能仅支持 [!DNL Python].
 
-![](../images/jupyterlab/create-recipe/recipe_builder.png)
+![](../images/jupyterlab/create-recipe/recipe_builder-new.png)
 
 当您选择 [!UICONTROL 方法生成器] 在启动器中，笔记本在新选项卡中打开。
 

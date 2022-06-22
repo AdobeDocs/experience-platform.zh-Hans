@@ -5,7 +5,7 @@ title: 数据科学工作区概述
 topic-legacy: overview
 description: 本指南概述与Adobe Experience Platform中的数据科学工作区相关的关键概念。
 exl-id: bef25073-0dfb-453d-8c32-7f44d917d62d
-source-git-commit: b30700fde3ce75cc4f66343c8d37d3e731775627
+source-git-commit: 4119242fef46d916e90e1dfb95f7e8fb9e8902f0
 workflow-type: tm+mt
 source-wordcount: '2388'
 ht-degree: 0%
@@ -154,7 +154,7 @@ Adobe Experience Platform中的所有数据都遵循标准化的XDM模式，无�
 如果您没有立即找到所需的数据，但该数据存在于Adobe Experience Platform之外，则摄取其他数据集相对而言是一项简单的任务，该任务还将转换为标准化的XDM架构。\
 您可以使用 [!DNL Jupyter Notebook] 简化数据预处理 — 可能从您以前用于购买倾向的笔记本电脑模板开始。
 
-![](./images/home/notebook_templates.png)
+![](./images/home/notebook_templates-new.png)
 
 ### 创作方法
 
