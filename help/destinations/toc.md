@@ -4,10 +4,10 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: d01875bcb89d887ca4f4dbb9e7fe6179446faa3c
+source-git-commit: 34c408e5e4c9917be7f664f284e4b8e87898945c
 workflow-type: tm+mt
-source-wordcount: '759'
-ht-degree: 8%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -153,6 +153,7 @@ ht-degree: 8%
       * [客户目标之声概述](./catalog/voice/overview.md)
       * [确认数字反馈扩展](./catalog/voice/confirmit-digital-feedback.md)
       * [Invoca标记扩展](./catalog/voice/invoca.md)
+      * [Medallia连接](./catalog/voice/medallia-connector.md)
       * [Medallia扩展](./catalog/voice/medallia.md)
       * [Talk URL Inbox扩展](./catalog/voice/talkurl.md)
 * 目标 SDK {#destination-sdk}
