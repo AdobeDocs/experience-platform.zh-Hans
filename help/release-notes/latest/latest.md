@@ -1,11 +1,10 @@
 ---
-title: Adobe Experience Platform 发行说明
-description: Adobe Experience Platform的最新发行说明。
-exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 56d43d93be7aca059a38e9428ad5680dd52ad6f9
+title: Adobe Experience Platform发行说明2022年6月
+description: 2022年6月版Adobe Experience Platform发行说明。
+source-git-commit: 98b9e79fadecc6e0d5ee8e86b785fd905643f725
 workflow-type: tm+mt
-source-wordcount: '562'
-ht-degree: 7%
+source-wordcount: '639'
+ht-degree: 6%
 
 ---
 
@@ -16,6 +15,7 @@ ht-degree: 7%
 Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Data Science Workspace]](#dsw)
+- [[!DNL Destinations]](#destinations)
 - [查询服务](#query-service)
 - [源](#sources)
 
@@ -33,6 +33,20 @@ Adobe Experience Platform 现有功能的更新包括：
 {style=&quot;table-layout:auto&quot;}
 
 有关数据科学工作区的更多常规信息，请参阅 [概述文档](../../data-science-workspace/home.md).
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新目标**
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [[!DNL Medallia]](/help/destinations/catalog/voice/medallia-connector.md) | 激活定向Media调查和反馈收集的用户档案，以更好地了解客户需求和期望。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 查询服务 {#query-service}
 
