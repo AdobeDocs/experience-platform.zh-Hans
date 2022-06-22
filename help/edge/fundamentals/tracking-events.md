@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK跟踪事件
 description: 了解如何跟踪Adobe Experience Platform Web SDK事件。
 keywords: sendEvent;xdm;eventType;datasetId;sendBeacon；发送信标；documentUnloading；文档卸载；onBeforeEventSend;
 exl-id: 8b221cae-3490-44cb-af06-85be4f8d280a
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 9b108d0e1722ea1b895c08fd7f42104a0d0da5df
 workflow-type: tm+mt
-source-wordcount: '1209'
+source-wordcount: '1177'
 ht-degree: 1%
 
 ---
@@ -218,14 +218,6 @@ alloy("sendEvent", {
 >[!WARNING]
 >
 >`destinations` 目前处于测试阶段。 文档和功能可能会发生更改。
-
-**引用**:实时机器学习分析。 [了解有关实时机器学习的更多信息。](https://experienceleague.adobe.com/docs/experience-platform/data-science-workspace/real-time-machine-learning/home.html?lang=en)
-
->[!WARNING]
->
->`inferences` 目前处于测试阶段。 文档和功能可能会发生更改。
-
-
 
 ## 全局修改事件 {#modifying-events-globally}
 
