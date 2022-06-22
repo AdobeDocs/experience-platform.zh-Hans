@@ -1,7 +1,9 @@
 ---
 title: 派生属性
 description: 派生属性允许您在常规轮次上计算属性，并（可选）将这些派生属性作为配置文件属性发布到实时客户配置文件中。 本文档概述了如何使用查询服务创建派生属性，以便与用户档案数据一起使用。
-source-git-commit: 72e157e0a6310ebf2f55205b03b60600a56e3cf6
+hide: true
+hidefromtoc: true
+source-git-commit: fc2d2e7dadb95460f5d735ba33e5f106880a0198
 workflow-type: tm+mt
 source-wordcount: '1650'
 ht-degree: 1%

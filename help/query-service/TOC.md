@@ -4,7 +4,7 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: Query Service 指南
 user-guide-description: 使用标准 SQL 在 Platform Data Lake 中查询数据。
 feature: Queries
-source-git-commit: d074ebaef19616f1556671f4c7307faeb954cd60
+source-git-commit: fc2d2e7dadb95460f5d735ba33e5f106880a0198
 workflow-type: tm+mt
 source-wordcount: '193'
 ht-degree: 17%
@@ -47,10 +47,6 @@ ht-degree: 17%
 - 示例查询 {#sample-queries}
    - [体验事件查询示例](sample-queries/experience-event.md)
    - [示例Adobe Analytics查询](sample-queries/adobe-analytics.md)
-- 数据管理 {#data-governance}
-   - [审核日志指南](data-governance/audit-log-guide.md)
-   - [临时架构数据集中的身份](data-governance/ad-hoc-schema-identities.md)
-   - [对临时架构的基于属性的访问控制支持](./data-governance/ad-hoc-schema-labels.md)
 - SQL引用 {#sql}
    - [SQL概述](sql/overview.md)
    - [SQL语法](sql/syntax.md)
@@ -69,6 +65,10 @@ ht-degree: 17%
    - [PSQL](clients/psql.md)
    - [RStudio](clients/rstudio.md)
    - [塔布洛](clients/tableau.md)
+- 数据管理 {#data-governance}
+   - [审核日志指南](data-governance/audit-log-guide.md)
+   - [临时架构数据集中的身份](data-governance/ad-hoc-schema-identities.md)
+   - [对临时架构的基于属性的访问控制支持](./data-governance/ad-hoc-schema-labels.md)
 - [疑难解答指南](troubleshooting-guide.md)
 - [API参考](https://www.adobe.io/experience-platform-apis/references/query-service/)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
