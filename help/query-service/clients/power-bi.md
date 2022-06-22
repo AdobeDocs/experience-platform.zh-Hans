@@ -5,9 +5,9 @@ title: 将Power BI连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍如何将Power BI与Adobe Experience Platform查询服务连接。
 exl-id: 8fcd3056-aac7-4226-a354-ed7fb8fe9ad7
-source-git-commit: 69f57a0e2293e438a0e5c986d888027892cc6359
+source-git-commit: 0c20b19c4c34b29c46964d5d87a8646c61055b06
 workflow-type: tm+mt
-source-wordcount: '969'
+source-wordcount: '1014'
 ht-degree: 1%
 
 ---
@@ -53,6 +53,10 @@ ht-degree: 1%
 对于 **[!DNL Server]** 在“Power BI”字段中，输入“查询服务凭据”部分中找到的主机的值。 对于生产，请添加端口 `:80` 到主机字符串的结尾。 例如：`made-up.platform-query.adobe.io:80`。
 
 的 **[!DNL Database]** 字段可以是“all”或数据集表名称。 例如：`prod:all`。
+
+>[!IMPORTANT]
+>
+>可以对第三方BI工具中的嵌套数据结构进行扁平化处理，以提高其可用性，并减少检索、分析、转换和报告数据所需的工作量。 请参阅[`FLATTEN` 功能](../best-practices/flatten-nested-data.md) 有关在连接到数据库时如何激活此设置的说明。
 
 ![Power BI仪表板，其中突出显示了服务器和数据库输入字段。](../images/clients/power-bi/postgresql-database-dialog.png)
 

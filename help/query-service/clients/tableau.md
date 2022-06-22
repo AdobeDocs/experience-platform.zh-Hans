@@ -5,10 +5,10 @@ title: 将 Tableau 连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍如何将Tableau与Adobe Experience Platform查询服务连接。
 exl-id: f380aacd-5091-41bc-97ca-593e0b1670fd
-source-git-commit: ad3e1b0de6dd3b82cc82f0dc3d0f36b12cd3899e
+source-git-commit: 0c20b19c4c34b29c46964d5d87a8646c61055b06
 workflow-type: tm+mt
-source-wordcount: '233'
-ht-degree: 3%
+source-wordcount: '278'
+ht-degree: 2%
 
 ---
 
@@ -32,9 +32,13 @@ ht-degree: 3%
 >
 >请参阅 [[!DNL Query Service] SSL文档](./ssl-modes.md) 了解对与Adobe Experience Platform查询服务的第三方连接的SSL支持，以及如何使用 `verify-full` SSL模式。
 
-填写所有凭据后，选择 **[!DNL Sign In]** 继续。
-
 ![](../images/clients/tableau/sign-in.png)
+
+>[!IMPORTANT]
+>
+>可以对第三方BI工具中的嵌套数据结构进行扁平化处理，以提高其可用性，并减少检索、分析、转换和报告数据所需的工作量。 请参阅[`FLATTEN` 功能](../best-practices/flatten-nested-data.md) 有关在连接到数据库时如何激活此设置的说明。
+
+填写所有凭据后，选择 **[!DNL Sign In]** 继续。
 
 您现在已连接到Adobe Experience Platform，并在侧面显示表的列表。
 

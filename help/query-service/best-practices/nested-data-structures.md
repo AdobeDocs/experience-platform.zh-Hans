@@ -1,9 +1,11 @@
 ---
+keywords: Experience Platform；查询服务；查询服务；嵌套数据结构；嵌套数据；
 title: 在查询服务中使用嵌套数据结构
 description: 本文档提供了使用CTAS和INSERT INTO语句处理和转换嵌套数据字段的工作示例。
-source-git-commit: 838ee939a8438c2f09ff64044c129e20c37ea01a
+exl-id: 593379fb-88ad-4b14-8d2e-aa6d18129974
+source-git-commit: b2b292dba0cf9ab9adbdff26aa61ef5a2cd5fe86
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '796'
 ht-degree: 1%
 
 ---
