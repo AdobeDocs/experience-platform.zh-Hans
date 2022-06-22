@@ -5,9 +5,9 @@ title: 数据集UI指南
 topic-legacy: datasets
 description: 了解如何在Adobe Experience Platform用户界面中处理数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 09db4aab17b933c63968d997f33279ab9a96bdef
+source-git-commit: 6238558e8edf968df4b24c43a626b736e2478be6
 workflow-type: tm+mt
-source-wordcount: '1185'
+source-wordcount: '1208'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,13 @@ ht-degree: 0%
 * [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md):确保遵守有关使用客户数据的法规、限制和政策。
 
-## 查看数据集
+## 查看数据集 {#view-datasets}
+
+>[!CONTEXTUALHELP]
+>id="platform_datasets_negative_numbers"
+>title="数据集活动中的负数"
+>abstract="摄取的记录中的负数表示用户已在选定的时间范围内删除了某些批次。"
+>text="Learn more in documentation"
 
 在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 数据集]** 在左侧导航中打开 **[!UICONTROL 数据集]** 功能板。 功能板列出了贵组织的所有可用数据集。 系统会为每个列出的数据集显示详细信息，包括其名称、数据集所遵循的架构以及最近摄取运行的状态。
 
