@@ -2,7 +2,7 @@
 description: 本页列出并介绍了您可以使用“/authoring/destinations” API端点执行的所有API操作。
 title: 目标API端点操作
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: 93061c84639ca1fdd3f7abb1bbd050eb6eebbdd6
+source-git-commit: b12e46592c6c7bb09a90b809e7fac7d05703210a
 workflow-type: tm+mt
 source-wordcount: '2537'
 ht-degree: 4%
@@ -35,7 +35,7 @@ POST /authoring/destinations
 
 以下请求会创建新的流目标配置，该配置由有效负载中提供的参数进行配置。 以下负载包括接受的流目标的所有参数 `/authoring/destinations` 端点。 请注意，您不必在调用中添加所有参数，并且该模板可根据您的API要求进行自定义。
 
-```json
+```shell
 curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinations \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
@@ -200,7 +200,14 @@ POST /authoring/destinations
 
 以下请求会创建新 [!DNL Amazon S3] 基于文件的目标配置，由有效负载中提供的参数配置。 以下有效负载包括接受的基于文件的目标的所有参数 `/authoring/destinations` 端点。 请注意，您不必在调用中添加所有参数，并且该模板可根据您的API要求进行自定义。
 
-```json
+```shell
+curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinations \
+ -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+ -H 'Content-Type: application/json' \
+ -H 'x-gw-ims-org-id: {ORG_ID}' \
+ -H 'x-api-key: {API_KEY}' \
+ -H 'x-sandbox-name: {SANDBOX_NAME}' \
+ -d '
 {
         "name": "S3 Destination with CSV Options",
         "description": "S3 Destination with CSV Options",

@@ -1,9 +1,10 @@
 ---
 description: 本页列出并描述了使用Destination SDK配置基于文件的目标的步骤。
 title: （测试版）使用Destination SDK配置基于文件的目标
-source-git-commit: 92bca3600d854540fd2badd925e453fba41601a7
+exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
+source-git-commit: 77c80c391ef6677f95af81ef15272380687e6789
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '480'
 ht-degree: 0%
 
 ---
@@ -259,8 +260,9 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 * 如果已选择 `"authenticationRule": "CUSTOMER_AUTHENTICATION"` 在目标配置中，请参阅以下部分，了解基于文件的目标的Destination SDK支持的身份验证类型：
 
    * [Amazon S3身份验证](authentication-configuration.md#s3)
-   * [Azure连接字符串](authentication-configuration.md#blob)
-   * [Azure服务主体](authentication-configuration.md#adls)
+   * [Azure Blob](authentication-configuration.md#blob)
+   * [Azure数据湖存储](authentication-configuration.md#adls)
+   * [Google云存储](authentication-configuration.md#gcs)
    * [使用SSH密钥进行SFTP身份验证](authentication-configuration.md#sftp-ssh)
    * [使用密码进行SFTP身份验证](authentication-configuration.md#sftp-password)
 

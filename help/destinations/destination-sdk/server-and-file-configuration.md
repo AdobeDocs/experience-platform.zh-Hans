@@ -1,10 +1,11 @@
 ---
 description: 可通过/destination-servers端点在Adobe Experience Platform Destination SDK中配置基于文件的目标的服务器和文件配置规范。
 title: （测试版）基于文件的目标服务器规范的配置选项
-source-git-commit: bc357e2e93b80edb5f7825bf2dee692f14bd7297
+exl-id: 56434e36-0458-45d9-961d-f6505de998f7
+source-git-commit: 3c8ad296ab9f0ce62743466ca8823b13c4545a9d
 workflow-type: tm+mt
-source-wordcount: '748'
-ht-degree: 10%
+source-wordcount: '895'
+ht-degree: 11%
 
 ---
 
@@ -37,7 +38,7 @@ ht-degree: 10%
         }
     },
     "fileConfigurations": {
-       // see File-based destinations file configuration
+       // See the file formatting configuration section further below on this page
     }
 }
 ```
@@ -50,6 +51,7 @@ ht-degree: 10%
 | `fileBasedS3Destination.bucket.value` | 字符串 | 的名称 [!DNL Amazon S3] 存储段供此目标使用。 |
 | `fileBasedS3Destination.path.templatingStrategy` | 字符串 | *必需。* 使用 `PEBBLE_V1`. |
 | `fileBasedS3Destination.path.value` | 字符串 | 将托管导出文件的目标文件夹的路径。 |
+| `fileConfigurations` | 对象 | 请参阅 [文件格式配置](#file-configuration) 以详细了解此部分。 |
 
 ## 基于文件的SFTP目标服务器规范 {#sftp-example}
 
@@ -70,7 +72,7 @@ ht-degree: 10%
       "encryptionMode" : "PGP"
    },
     "fileConfigurations": {
-       // see File-based destinations file configuration
+       // See the file formatting configuration section further below on this page
     }
 }
 ```
@@ -85,6 +87,7 @@ ht-degree: 10%
 | `fileBasedSftpDestination.hostName.value` | 字符串 | 目标存储的主机名。 |
 | `port` | 整数 | SFTP文件服务器端口。 |
 | `encryptionMode` | 字符串 | 指示是否使用文件加密。 支持的值： <ul><li>PGP</li><li>None</li></ul> |
+| `fileConfigurations` | 对象 | 请参阅 [文件格式配置](#file-configuration) 以详细了解此部分。 |
 
 ## 基于文件 [!DNL Azure Data Lake Storage] ([!DNL ADLS])目标服务器规范 {#adls-example}
 
@@ -99,7 +102,7 @@ ht-degree: 10%
       }
    },
   "fileConfigurations": {
-       // see File-based destinations file configuration
+       // See the file formatting configuration section further below on this page
     }
 }
 ```
@@ -110,6 +113,7 @@ ht-degree: 10%
 | `destinationServerType` | 字符串 | 根据目标平台设置此值。 对于 [!DNL Azure Data Lake Storage] 目标，将其设置为 `FILE_BASED_ADLS_GEN2`. |
 | `fileBasedAdlsGen2Destination.path.templatingStrategy` | 字符串 | *必需。* 使用 `PEBBLE_V1`. |
 | `fileBasedAdlsGen2Destination.path.value` | 字符串 | 将托管导出文件的目标文件夹的路径。 |
+| `fileConfigurations` | 对象 | 请参阅 [文件格式配置](#file-configuration) 以详细了解此部分。 |
 
 ## 基于文件 [!DNL Azure Blob Storage] 目标服务器规范 {#blob-example}
 
@@ -128,7 +132,7 @@ ht-degree: 10%
       }
    },
   "fileConfigurations": {
-       // see File-based destinations file configuration
+       // See the file formatting configuration section further below on this page
     }
 }
 ```
@@ -141,6 +145,7 @@ ht-degree: 10%
 | `fileBasedAzureBlobDestination.path.value` | 字符串 | 将托管导出文件的目标文件夹的路径。 |
 | `fileBasedAzureBlobDestination.container.templatingStrategy` | 字符串 | *必需。* 使用 `PEBBLE_V1`. |
 | `fileBasedAzureBlobDestination.container.value` | 字符串 | 的名称 [!DNL Azure Blob Storage] 容器。 |
+| `fileConfigurations` | 对象 | 请参阅 [文件格式配置](#file-configuration) 以详细了解此部分。 |
 
 ## 基于文件 [!DNL Data Landing Zone] ([!DNL DLZ])目标服务器规范 {#dlz-example}
 
@@ -156,7 +161,7 @@ ht-degree: 10%
       "useCase": "Your use case"
    },
    "fileConfigurations": {
-       // see File-based destinations file configuration
+       // See the file formatting configuration section further below on this page
     }
 }
 ```
@@ -167,8 +172,41 @@ ht-degree: 10%
 | `destinationServerType` | 字符串 | 根据目标平台设置此值。 对于 [!DNL Data Landing Zone] 目标，将其设置为 `FILE_BASED_DLZ`. |
 | `fileBasedDlzDestination.path.templatingStrategy` | 字符串 | *必需。*  使用 `PEBBLE_V1`. |
 | `fileBasedDlzDestination.path.value` | 字符串 | 将托管导出文件的目标文件夹的路径。 |
+| `fileConfigurations` | 对象 | 请参阅 [文件格式配置](#file-configuration) 以详细了解此部分。 |
 
-## 基于文件的目标文件配置 {#file-configuration}
+## 基于文件 [!DNL Google Cloud Storage] 目标服务器规范 {#gcs-example}
+
+```json
+{
+   "name":"Google Cloud Storage Server",
+   "destinationServerType":"FILE_BASED_GOOGLE_CLOUD",
+   "fileBasedGoogleCloudStorageDestination":{
+      "bucket":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{{customerData.bucket}}"
+      },
+      "path":{
+         "templatingStrategy":"PEBBLE_V1",
+         "value":"{{customerData.path}}"
+      }
+   },
+   "fileConfigurations":{
+      // See the file formatting configuration section further below on this page
+   }
+}
+```
+
+| 参数 | 类型 | 描述 |
+|---|---|---|
+| `name` | 字符串 | 目标连接的名称。 |
+| `destinationServerType` | 字符串 | 根据目标平台设置此值。 对于 [!DNL Google Cloud Storage] 目标，将其设置为 `FILE_BASED_GOOGLE_CLOUD`. |
+| `fileBasedGoogleCloudStorageDestination.bucket.templatingStrategy` | 字符串 | *必需。*  使用 `PEBBLE_V1`. |
+| `fileBasedGoogleCloudStorageDestination.bucket.value` | 字符串 | 的名称 [!DNL Google Cloud Storage] 存储段供此目标使用。 |
+| `fileBasedGoogleCloudStorageDestination.path.templatingStrategy` | 字符串 | *必需。* 使用 `PEBBLE_V1`. |
+| `fileBasedGoogleCloudStorageDestination.path.value` | 字符串 | 将托管导出文件的目标文件夹的路径。 |
+| `fileConfigurations` | 对象 | 请参阅 [文件格式配置](#file-configuration) 以详细了解此部分。 |
+
+## 文件格式配置 {#file-configuration}
 
 本节介绍导出的文件格式设置 `CSV` 文件。 您可以修改导出文件的多个属性，以符合您所在方的文件接收系统的要求，以便以最佳方式读取和解释从Experience Platform接收的文件。
 
@@ -239,7 +277,8 @@ ht-degree: 10%
                 "templatingStrategy": "NONE",
                 "value": "\n"
             }
-        }
+        },
+        "maxFileRowCount":5000000
     }
 ```
 
@@ -260,3 +299,4 @@ ht-degree: 10%
 | `csvOptions.charToEscapeQuoteEscaping.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置用于转义引号字符转义的单个字符。 | `\` 转义和引号字符不同时，指定的值。 `\0` 当转义和引号字符相同时。 |
 | `csvOptions.emptyValue.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置空值的字符串表示形式。 | `""` |
 | `csvOptions.lineSep.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 定义应用于写入的行分隔符。 最大长度为1个字符。 | `\n` |
+| `maxFileRowCount` | 可选 | 导出的文件可包含的最大行数。 根据目标平台文件大小要求配置此设置。 | 不适用 |

@@ -1,9 +1,10 @@
 ---
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: （测试版）用于Destination SDK的基于文件的目标配置选项
-source-git-commit: 5186e90b850f1e75ec358fa01bfb8a5edac29277
+exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
+source-git-commit: 3c8ad296ab9f0ce62743466ca8823b13c4545a9d
 workflow-type: tm+mt
-source-wordcount: '1899'
+source-wordcount: '2304'
 ht-degree: 5%
 
 ---
@@ -278,7 +279,7 @@ ht-degree: 5%
    },
    "batchConfig":{
       "allowMandatoryFieldSelection":true,
-      "allowJoinKeyFieldSelection":true,
+      "allowDedupeKeyFieldSelection":true,
       "defaultExportMode":"DAILY_FULL_EXPORT",
       "allowedExportMode":[
          "DAILY_FULL_EXPORT",
@@ -290,11 +291,20 @@ ht-degree: 5%
          "EVERY_6_HOURS",
          "EVERY_8_HOURS",
          "EVERY_12_HOURS",
-         "ONCE",
-         "EVERY_HOUR"
+         "ONCE"
       ],
       "defaultFrequency":"DAILY",
-      "defaultStartTime":"00:00"
+      "defaultStartTime":"00:00",
+      "filenameConfig": {
+            "allowedFilenameAppendOptions": [
+                "SEGMENT_NAME",
+                "DATETIME",
+                "TIMESTAMP",
+                "DESTINATION_NAME",
+                "SANDBOX_NAME"
+            ],
+            "defaultFilename": "{{DESTINATION_NAME}}_{{SEGMENT_ID}}"
+      }
    },
    "backfillHistoricalProfileData":true
 }
@@ -324,7 +334,7 @@ ht-degree: 5%
 
 取决于 [身份验证选项](authentication-configuration.md##supported-authentication-types) 您在 `authType` 字段中，将为用户生成Experience Platform页面，如下所示：
 
-### Amazon S3身份验证
+### Amazon S3身份验证 {#s3}
 
 配置Amazon S3身份验证类型时，需要用户输入S3凭据。
 
@@ -352,7 +362,7 @@ ht-degree: 5%
 
 在Experience PlatformUI中连接到目标时，使用此部分要求用户填写特定于您目标的自定义字段。
 
-在以下示例中， `customerDataFields` 要求用户输入其目标的名称，并提供 [!DNL Amazon S3] 存储段名称和文件夹路径，以及压缩类型和文件格式。
+在以下示例中， `customerDataFields` 要求用户输入其目标的名称，并提供 [!DNL Amazon S3] 存储段名称和文件夹路径，以及压缩类型、文件格式和其他几个文件导出选项。
 
 ```json
  "customerDataFields":[
@@ -649,6 +659,7 @@ ht-degree: 5%
       "profileRequired":true,
       "segmentRequired":true,
       "identityRequired":true
+}
 ```
 
 | 参数 | 类型 | 描述 |
@@ -722,37 +733,96 @@ Adobe Experience Platform Destination SDK支持合作伙伴定义的模式。 �
 本节将介绍上述配置中的文件导出设置，该Adobe应在Adobe Experience Platform用户界面中用于您的目标。
 
 ```json
- "batchConfig":{
-      "allowMandatoryFieldSelection":true,
-      "allowDedupeKeyFieldSelection":true,
-      "defaultExportMode":"DAILY_FULL_EXPORT",
-      "allowedExportMode":[
-         "DAILY_FULL_EXPORT",
-         "FIRST_FULL_THEN_INCREMENTAL"
+"batchConfig":{
+   "allowMandatoryFieldSelection":true,
+   "allowDedupeKeyFieldSelection":true,
+   "defaultExportMode":"DAILY_FULL_EXPORT",
+   "allowedExportMode":[
+      "DAILY_FULL_EXPORT",
+      "FIRST_FULL_THEN_INCREMENTAL"
+   ],
+   "allowedScheduleFrequency":[
+      "DAILY",
+      "EVERY_3_HOURS",
+      "EVERY_6_HOURS",
+      "EVERY_8_HOURS",
+      "EVERY_12_HOURS",
+      "ONCE"
+   ],
+   "defaultFrequency":"DAILY",
+   "defaultStartTime":"00:00",
+   "filenameConfig":{
+      "allowedFilenameAppendOptions":[
+         "SEGMENT_NAME",
+         "DESTINATION_INSTANCE_ID",
+         "DESTINATION_INSTANCE_NAME",
+         "ORGANIZATION_NAME",
+         "SANDBOX_NAME",
+         "DATETIME",
+         "CUSTOM_TEXT"
       ],
-      "allowedScheduleFrequency":[
-         "DAILY",
-         "EVERY_3_HOURS",
-         "EVERY_6_HOURS",
-         "EVERY_8_HOURS",
-         "EVERY_12_HOURS",
-         "ONCE",
-         "EVERY_HOUR"
+      "defaultFilenameAppendOptions":[
+         "SEGMENT_ID",
+         "DATETIME"
       ],
-      "defaultFrequency":"DAILY",
-      "defaultStartTime":"00:00"
+      "defaultFilename":"%DESTINATION%_%SEGMENT_ID%"
    }
+}
 ```
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `allowMandatoryFieldSelection` | 布尔型 | 设置为 `true` 以允许客户指定哪些配置文件属性是必需的。 默认值为 `false`。请参阅 [必需属性](../ui/activate-batch-profile-destinations.md#mandatory-attributes) 以了解更多信息。 |
 | `allowDedupeKeyFieldSelection` | 布尔型 | 设置为 `true` 允许客户指定重复数据删除键。 默认值为 `false`。请参阅 [重复数据删除键](../ui/activate-batch-profile-destinations.md#deduplication-keys) 以了解更多信息。 |
-| `defaultExportMode` | 枚举 | 定义默认的文件导出模式。 支持的值：<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul><br>默认值为 `DAILY_FULL_EXPORT`。请参阅 [批量激活文档](../ui/activate-batch-profile-destinations.md#scheduling) 有关文件导出计划的详细信息。 |
+| `defaultExportMode` | 枚举 | 定义默认的文件导出模式。 支持的值：<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> 默认值为 `DAILY_FULL_EXPORT`。请参阅 [批量激活文档](../ui/activate-batch-profile-destinations.md#scheduling) 有关文件导出计划的详细信息。 |
 | `allowedExportModes` | 列表 | 定义客户可用的文件导出模式。 支持的值：<ul><li>`DAILY_FULL_EXPORT`</li><li>`FIRST_FULL_THEN_INCREMENTAL`</li></ul> |
 | `allowedScheduleFrequency` | 列表 | 定义客户可用的文件导出频率。 支持的值：<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> |
-| `defaultFrequency` | 枚举 | 定义默认文件导出频率。支持的值：<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> <br>默认值为 `DAILY`。 |
+| `defaultFrequency` | 枚举 | 定义默认文件导出频率。支持的值：<ul><li>`ONCE`</li><li>`EVERY_3_HOURS`</li><li>`EVERY_6_HOURS`</li><li>`EVERY_8_HOURS`</li><li>`EVERY_12_HOURS`</li><li>`DAILY`</li></ul> 默认值为 `DAILY`。 |
 | `defaultStartTime` | 字符串 | 定义文件导出的默认开始时间。 使用24小时文件格式。 默认值为“00:00”。 |
+| `filenameConfig.allowedFilenameAppendOptions` | 字符串 | *必需*. 可供用户选择的可用文件名宏列表。 这可确定要将哪些项目附加到导出的文件名（区段ID、组织名称、导出日期和时间等）中。 设置 `defaultFilename`，请确保避免复制宏。 <br><br>支持的值： <ul><li>`DESTINATION`</li><li>`SEGMENT_ID`</li><li>`SEGMENT_NAME`</li><li>`DESTINATION_INSTANCE_ID`</li><li>`DESTINATION_INSTANCE_NAME`</li><li>`ORGANIZATION_NAME`</li><li>`SANDBOX_NAME`</li><li>`DATETIME`</li><li>`CUSTOM_TEXT`</li></ul>无论您定义宏的顺序如何，Experience PlatformUI都将始终按此处显示的顺序显示宏。 <br><br> 如果 `defaultFilename` 为空， `allowedFilenameAppendOptions` 列表必须至少包含一个宏。 |
+| `filenameConfig.defaultFilenameAppendOptions` | 字符串 | *必需*. 用户可取消选中的预选默认文件名宏。<br><br> 此列表中的宏是 `allowedFilenameAppendOptions`. |
+| `filenameConfig.defaultFilename` | 字符串 | *可选*. 为导出的文件定义默认的文件名宏。 用户无法覆盖这些内容。 <br><br>定义的任何宏 `allowedFilenameAppendOptions` 将在 `defaultFilename` 宏。 <br><br>如果 `defaultFilename` 为空，则必须在 `allowedFilenameAppendOptions`. |
+
+
+### 文件名配置 {#file-name-configuration}
+
+使用文件名配置宏来定义导出的文件名应包含的内容。 下表中的宏描述了在 [文件名配置](../ui/activate-batch-profile-destinations.md#file-names) 屏幕。
+
+作为最佳实践，您应始终包含 `SEGMENT_ID` 宏。 区段ID是唯一的，因此将它们包含在文件名中是确保文件名也唯一的最佳方法。
+
+| 宏 | UI标签 | 描述 | 示例 |
+|---|---|---|---|
+| `DESTINATION` | [!UICONTROL 目标] | UI中的目标名称。 | Amazon S3 |
+| `SEGMENT_ID` | [!UICONTROL 区段ID] | 平台生成的唯一区段ID | ce5c5482-2813-4a80-99bc-57113f6acde2 |
+| `SEGMENT_NAME` | [!UICONTROL 区段名称] | 用户定义的区段名称 | VIP订阅者 |
+| `DESTINATION_INSTANCE_ID` | [!UICONTROL 目标ID] | 目标实例的唯一、平台生成的ID | 7b891e5f-025a-4f0d-9e73-1919e71da3b0 |
+| `DESTINATION_INSTANCE_NAME` | [!UICONTROL 目标名称] | 目标实例的用户定义的名称。 | 我2022年的广告去向 |
+| `ORGANIZATION_NAME` | [!UICONTROL 组织名称] | Adobe Experience Platform中的客户组织名称。 | 我的组织名称 |
+| `SANDBOX_NAME` | [!UICONTROL 沙盒名称] | 客户使用的沙盒的名称。 | prod |
+| `DATETIME` / `TIMESTAMP` | [!UICONTROL 日期和时间] | `DATETIME` 和 `TIMESTAMP` 这两种格式都定义了文件的生成时间，但格式不同。 <br><br><ul><li>`DATETIME` 使用以下格式：YYYYMMDD_HHMMSS。</li><li>`TIMESTAMP` 使用10位Unix格式。 </li></ul> `DATETIME` 和 `TIMESTAMP` 互斥，且不能同时使用。 | <ul><li>`DATETIME`:20220509_210543</li><li>`TIMESTAMP`:1652131584</li></ul> |
+| `CUSTOM_TEXT` | [!UICONTROL 自定义文本] | 要包含在文件名中的用户定义的自定义文本。 不能在中使用 `defaultFilename`. | My_Custom_Text |
+| `TIMESTAMP` | [!UICONTROL 日期和时间] | 生成文件时的10位时间戳（Unix格式）。 | 1652131584 |
+
+
+![显示带有预选宏的文件名配置屏幕的UI图像](assets/file-name-configuration.png)
+
+上图中显示的示例使用以下文件名宏配置：
+
+```json
+"filenameConfig":{
+   "allowedFilenameAppendOptions":[
+      "CUSTOM_TEXT",
+      "SEGMENT_ID",
+      "DATETIME"
+   ],
+   "defaultFilenameAppendOptions":[
+      "SEGMENT_ID",
+      "DATETIME"
+   ],
+   "defaultFilename": "%DESTINATION%"
+}
+```
+
 
 ## 历史用户档案资格 {#profile-backfill}
 

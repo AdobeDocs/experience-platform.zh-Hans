@@ -2,7 +2,7 @@
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 用于Destination SDK的流目标配置选项
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: e3886cbcde76e37263d2fa23769fb9e96501edc4
+source-git-commit: b12e46592c6c7bb09a90b809e7fac7d05703210a
 workflow-type: tm+mt
 source-wordcount: '1787'
 ht-degree: 4%
@@ -271,6 +271,7 @@ ht-degree: 4%
 如果您希望批量处理，并且在同一调用中具有数千个用户档案，则此选项最有效。 此选项还允许您根据复杂的聚合规则聚合导出的用户档案。
 
 此选项允许您：
+
 * 在对目标进行API调用之前，设置要聚合的配置文件的最大时间和最大数量。
 * 根据以下信息聚合映射到目标的导出用户档案：
    * 区段ID;
