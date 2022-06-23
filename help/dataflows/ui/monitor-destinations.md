@@ -6,9 +6,9 @@ title: 在UI中监控目标的数据流
 topic-legacy: overview
 type: Tutorial
 exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
-source-git-commit: 2be8ed7daaac6554bdbc52acab325a474fa87566
+source-git-commit: 20fbc4a33baa677cf34b3e1525f45af1862a7024
 workflow-type: tm+mt
-source-wordcount: '3200'
+source-wordcount: '3211'
 ht-degree: 0%
 
 ---
@@ -141,6 +141,7 @@ ht-degree: 0%
 每个数据流运行都显示以下详细信息：
 
 - **[!UICONTROL 数据流运行开始]**:数据流运行开始的时间。
+- **[!UICONTROL 区段]**:与每个数据流运行关联的区段名称。
 - **[!UICONTROL 处理时间]**:处理数据流运行所花费的时间。
 - **[!UICONTROL 收到的用户档案]**:数据流中接收的用户档案总数。 此值每60分钟更新一次。
 - **[!UICONTROL 已激活身份]**:在数据流运行中成功激活到选定目标的配置文件标识总数。 此量度包含从导出区段中创建、更新和删除的标识。
