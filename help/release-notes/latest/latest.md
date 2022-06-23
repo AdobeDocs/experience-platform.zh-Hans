@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年6月
 description: 2022年6月版Adobe Experience Platform发行说明。
-source-git-commit: 4edd2042234149ab8836da4fc58eb4d6084ae205
+source-git-commit: 314cd79185748e848bcb06fb21bfe4fea37a8853
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '860'
 ht-degree: 6%
 
 ---
@@ -58,6 +58,7 @@ Adobe Experience Platform 现有功能的更新包括：
 | 功能 | 描述 |
 | ----------- | ----------- |
 | （测试版）Destination SDK支持 [[!DNL Google Cloud Storage]](../../destinations/destination-sdk/server-and-file-configuration.md#gcs-example) 基于文件的目标和 [可配置文件名](../../destinations/destination-sdk/file-based-destination-configuration.md#file-name-configuration). | 您现在可以使用Destination SDK通过文件名宏，创建Google云存储目标并为导出的文件定义自定义文件名。 <br><br> Adobe Experience Platform Destination SDK中基于文件的目标支持目前处于测试阶段。 文档和功能可能会发生更改。 |
+| 数据流中的区段列运行到批处理目标 | 对于到批处理目标的数据流，UI现在显示与每个数据流运行关联的区段名称。 有关更多信息 [数据流运行到批处理目标](/help/dataflows/ui/monitor-destinations.md#dataflow-runs-for-batch-destinations). |
 
 {style=&quot;table-layout:auto&quot;}
 
