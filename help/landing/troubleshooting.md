@@ -7,10 +7,10 @@ landing-page-description: 查找常见问题的解答以及 Experience Platform 
 topic-legacy: getting started
 type: Documentation
 exl-id: 3e6d29aa-2138-421b-8bee-82b632962c01
-source-git-commit: ef565383ab6abfe93eb8ed6a86216642eec11f6e
+source-git-commit: da3e93f6c10c89c173fff786604ef844f56081be
 workflow-type: tm+mt
-source-wordcount: '1758'
-ht-degree: 4%
+source-wordcount: '1851'
+ht-degree: 3%
 
 ---
 
@@ -24,7 +24,7 @@ ht-degree: 4%
 
 ## 什么是 [!DNL Experience Platform] API? {#what-are-experience-platform-apis}
 
-[!DNL Experience Platform] 提供了多个使用HTTP请求访问的RESTful API [!DNL Platform] 资源。 这些服务API每个都会公开多个端点，并允许您执行操作以列出(GET)、查找(GET)、编辑(PUT和/或PATCH)和删除(DELETE)资源。 有关每项服务可用的特定端点和操作的更多信息，请参阅 [API参考文档](https://www.adobe.com/go/platform-api-reference-en) Adobe I/O。
+[!DNL Experience Platform] 提供了多个使用HTTP请求访问的RESTful API [!DNL Platform] 资源。 这些服务API每个都会公开多个端点，并允许您执行以下操作：列出(GET)、查找(GET)、编辑(PUT和/或PATCH)以及删除(DELETE)资源。 有关每项服务可用的特定端点和操作的更多信息，请参阅 [API参考文档](https://www.adobe.com/go/platform-api-reference-en) Adobe I/O。
 
 ## 如何设置API请求的格式？ {#how-do-i-format-an-api-request}
 
@@ -34,11 +34,11 @@ ht-degree: 4%
 
 ## 我的IMS组织是什么？ {#what-is-my-ims-organization}
 
-IMS组织是Adobe的表示形式。 任何经许可的Adobe解决方案均与此客户组织集成。 当IMS组织有权 [!DNL Experience Platform]，它可以向开发人员分配访问权限。 IMS组织ID(`x-gw-ims-org-id`)表示应为执行API调用的组织，因此需要作为所有API请求中的标头。 可以通过 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui):在 **集成** 选项卡，导航到 **概述** 部分，以查找 **客户端凭据**. 有关如何在 [!DNL Platform]，请参阅 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en).
+IMS组织是Adobe的表示形式。 任何经许可的Adobe解决方案均与此客户组织集成。 当IMS组织有权 [!DNL Experience Platform]，它可以向开发人员分配访问权限。 IMS组织ID(`x-gw-ims-org-id`)表示应为执行API调用的组织，因此需要作为所有API请求中的标头。 可以通过 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui):在 **集成** 选项卡，导航到 **概述** 部分，以查找 **客户端凭据**. 有关如何在 [!DNL Platform]，请参阅 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en).
 
 ## 在哪里可以找到我的API密钥？ {#where-can-i-find-my-api-key}
 
-所有API请求中都需要API密钥作为标头。 可通过 [Adobe开发人员控制台](https://www.adobe.com/go/devs_console_ui). 在控制台中， **集成** 选项卡，导航到 **概述** 部分，您将在 **客户端凭据**. 有关如何验证的分步说明 [!DNL Platform]，请参阅 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en).
+所有API请求中都需要API密钥作为标头。 可通过 [Adobe Developer控制台](https://www.adobe.com/go/devs_console_ui). 在控制台中， **集成** 选项卡，导航到 **概述** 部分，您将在 **客户端凭据**. 有关如何验证的分步说明 [!DNL Platform]，请参阅 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en).
 
 ## 如何获取访问令牌？ {#how-do-i-get-an-access-token}
 
@@ -62,16 +62,16 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 中的许多PATCH操作 [!DNL Platform] API使用 [JSON指针](https://tools.ietf.org/html/rfc6901) 用于指示要更新的JSON属性的字符串。 这些负载通常使用 [JSON修补程序](https://tools.ietf.org/html/rfc6902) 格式。 请参阅 [API基础知识指南](api-fundamentals.md) 有关这些技术所需语法的详细信息。
 
-## 我能用Postman给 [!DNL Platform] API? {#how-do-i-use-postman-to-make-calls-to-platform-apis}
+## 我能否使用Postman [!DNL Platform] API? {#how-do-i-use-postman-to-make-calls-to-platform-apis}
 
-[邮递员](https://www.postman.com/) 是一种将对RESTful API的调用可视化的有用工具。 的 [Platform API快速入门指南](api-guide.md) 包含有关导入Postman集合的视频和说明。 此外，还提供每项服务的Postman集合列表。
+[Postman](https://www.postman.com/) 是一种将对RESTful API的调用可视化的有用工具。 的 [Platform API快速入门指南](api-guide.md) 包含有关导入Postman收藏集的视频和说明。 此外，还提供每项服务的Postman集合列表。
 
 ## 的系统要求 [!DNL Platform]? {#what-are-the-system-requirements-for-platform}
 
 根据您使用的是UI还是API，系统要求如下：
 
 **对于基于UI的操作：**
-- 现代、标准的Web浏览器。 而 [!DNL Chrome] 建议当前和以前的主要版本 [!DNL Firefox], [!DNL Internet Explorer]、和Safari也受支持。
+- 现代化的标准Web浏览器。 而 [!DNL Chrome] 建议当前和以前的主要版本 [!DNL Firefox], [!DNL Internet Explorer]、和Safari也受支持。
    - 每次发布新的主版本时， [!DNL Platform] 开始支持最新版本，同时放弃对最新版本的支持。
 - 所有浏览器都必须启用Cookie和JavaScript。
 
@@ -109,7 +109,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 当 `Authorization` API请求中缺少标头。 再次尝试之前，请确保授权标头包含有效的访问令牌。
 
-### OAuth令牌无效
+### OAuth令牌无效 {#oauth-token-is-not-valid}
 
 ```json
 {
@@ -120,7 +120,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 当 `Authorization` 标头无效。 确保令牌已正确输入，或 [生成新令牌](https://www.adobe.com/go/platform-api-authentication-en) Adobe I/O控制台中。
 
-### 需要API密钥
+### 需要API密钥 {#api-key-is-required}
 
 ```json
 {
@@ -131,7 +131,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 当API密钥标头(`x-api-key`)。 在重试之前，请确保标头包含有效的API密钥。
 
-### API密钥无效
+### API密钥无效 {#api-key-is-invalid}
 
 ```json
 {
@@ -142,8 +142,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 当提供的API密钥标头的值(`x-api-key`)无效。 再次尝试之前，请确保已正确输入密钥。 如果您不知道自己的API密钥，可以在 [Adobe I/O控制台](https://console.adobe.io):在 **集成** 选项卡，导航到 **概述** 部分，用于查找下的API密钥 **客户端凭据**.
 
-
-### 缺少标头
+### 缺少标头 {#missing-header}
 
 ```json
 {
@@ -154,7 +153,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 当IMS组织标头(`x-gw-ims-org-id`)。 再次尝试之前，请确保标头包含在IMS组织的ID中。
 
-### 配置文件无效
+### 配置文件无效 {#profile-is-not-valid}
 
 ```json
 {
@@ -165,7 +164,19 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 当用户或Adobe I/O集成(由 [访问令牌](#how-do-i-get-an-access-token) 在 `Authorization` 头)无权对 [!DNL Experience Platform] 中提供的IMS组织的API `x-gw-ims-org-id` 标题。 再次尝试之前，请确保您在标头中为IMS组织提供了正确的ID。 如果您不知道自己的组织ID，可以在 [Adobe I/O控制台](https://console.adobe.io):在 **集成** 选项卡，导航到 **概述** 部分，以查找 **客户端凭据**.
 
-### 未指定有效的content-type
+### 刷新etag错误 {#refresh-etag-error}
+
+```json
+{
+"errorMessage":"Supplied version=[\\\\\\\"a200a2a3-0000-0200-0000-123178f90000\\\\\\\"] does not match the current version on entity=[\\\\\\\"a200cdb2-0000-0200-0000-456179940000\\\\\\\"]"
+}
+```
+
+如果其他API调用方对任何源实体或目标实体（如流、连接、源连接器或目标连接）进行了更改，则可能会收到etag错误。 由于版本不匹配，您尝试进行的更改将不会应用于实体的最新版本。
+
+要解决此问题，您需要再次获取实体，确保所做的更改与实体的新版本兼容，然后将新标记放在 `If-Match` 头，最后进行API调用。
+
+### 未指定有效的content-type {#valid-content-type-not-specified}
 
 ```json
 {
@@ -178,7 +189,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 
 当POST、PUT或PATCH请求无效或缺失时，将显示此错误消息 `Content-Type` 标题。 确保标头包含在请求中，并且其值为 `application/json`.
 
-### 用户区域缺失
+### 用户区域缺失 {#user-region-is-missing}
 
 ```json
 {
@@ -203,7 +214,7 @@ GET /batches?createdAfter=1559775880000&orderBy=desc:created
 | Adobe Experience Platform数据管理 | [[!DNL Policy Service API]](https://www.adobe.io/experience-platform-apis/references/policy-service/) |  |
 | Adobe Experience Platform Identity Service | [[!DNL Identity Service API]](https://www.adobe.io/experience-platform-apis/references/identity-service) | [[!DNL Identity Service] 疑难解答指南](../identity-service/troubleshooting-guide.md) |
 | Adobe Experience Platform查询服务 | [[!DNL Query Service API]](https://www.adobe.io/experience-platform-apis/references/query-service/) | [[!DNL Query Service] 疑难解答指南](../query-service/troubleshooting-guide.md) |
-| Adobe Experience Platform Segmentation | [[!DNL Segmentation API]](https://www.adobe.io/experience-platform-apis/references/segmentation/) |
+| Adobe Experience Platform分段 | [[!DNL Segmentation API]](https://www.adobe.io/experience-platform-apis/references/segmentation/) |
 | [!DNL Catalog Service] | [[!DNL Catalog Service API]](https://www.adobe.io/experience-platform-apis/references/catalog/) |  |
 | [!DNL Experience Data Model] (XDM) | [[!DNL Schema Registry API]](https://www.adobe.io/experience-platform-apis/references/schema-registry/) | [[!DNL XDM System] 常见问题解答和疑难解答指南](../xdm/troubleshooting-guide.md) |
 | [!DNL Flow Service] ([!DNL Sources] 和 [!DNL Destinations]) | [[!DNL Flow Service API]](https://www.adobe.io/experience-platform-apis/references/flow-service/) |  |
