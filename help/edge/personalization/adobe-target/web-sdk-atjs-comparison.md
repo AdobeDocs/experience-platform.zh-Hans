@@ -3,9 +3,9 @@ title: 比较at.js与Experience PlatformWeb SDK
 description: 了解at.js功能与Experience PlatformWeb SDK的异同
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；系统图；图
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: 71c63e0d0b993206cb3bb5de7f7fbd5e10c6f2e3
+source-git-commit: 7bdf4c01ad3b361b3bc53574d4da1096757c815c
 workflow-type: tm+mt
-source-wordcount: '2269'
+source-wordcount: '2286'
 ht-degree: 6%
 
 ---
@@ -462,11 +462,22 @@ adobe.target.getOffers({...})
   .catch(error => console.log("Error", error));
 ```
 
-[了解详情](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html?lang=en)
+进一步了解 `applyOffers` 命令 [专用文档](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2.html?lang=en).
+
 
 ### 使用Web SDK
 
-Web SDK当前不支持此功能。
+您可以使用 `applyPropositions` 命令。
+
+示例：
+
+```javascript
+alloy("applyPropositions", {
+    propositions: [...]
+});
+```
+
+进一步了解 `applyPropositions` 命令 [专用文档](../../personalization/rendering-personalization-content.md#applypropositions).
 
 ## 如何跟踪事件
 
