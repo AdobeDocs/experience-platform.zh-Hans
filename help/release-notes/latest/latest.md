@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年6月
 description: 2022年6月版Adobe Experience Platform发行说明。
-source-git-commit: bff266fca5762d6da123af712364ee1fc30a6784
+source-git-commit: 492a05b24ec905de926d861f607a6e5d294d46e0
 workflow-type: tm+mt
-source-wordcount: '802'
+source-wordcount: '801'
 ht-degree: 6%
 
 ---
@@ -57,7 +57,6 @@ Adobe Experience Platform 现有功能的更新包括：
 
 | 功能 | 描述 |
 | ----------- | ----------- |
-| [（测试版）Google Ad Manager 360连接](../../destinations/catalog/advertising/google-ad-manager-360-connection.md) | 的 [!DNL Google Ad Manager 360] 连接允许批量上传 [!DNL publisher provided identifiers] (PPID)输入 [!DNL Google Ad Manager 360]，通过 [!DNL Google Cloud Storage] <br><br>此目标当前为测试版，仅适用于数量有限的客户。 请求对 [!DNL Google Ad Manager 360] 连接时，请联系您的Adobe代表并提供 [!DNL IMS Organization ID]. |
 | （测试版）Destination SDK支持 [[!DNL Google Cloud Storage]](../../destinations/destination-sdk/server-and-file-configuration.md#gcs-example) 基于文件的目标和 [可配置文件名](../../destinations/destination-sdk/file-based-destination-configuration.md#file-name-configuration). | 您现在可以使用Destination SDK通过文件名宏，创建Google云存储目标并为导出的文件定义自定义文件名。 <br><br> Adobe Experience Platform Destination SDK中基于文件的目标支持目前处于测试阶段。 文档和功能可能会发生更改。 |
 
 {style=&quot;table-layout:auto&quot;}
@@ -66,6 +65,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 | 目标 | 描述 |
 | ----------- | ----------- |
+| [(Beta)Google Ad Manager 360](../../destinations/catalog/advertising/google-ad-manager-360-connection.md) | 的 [!DNL Google Ad Manager 360] 连接允许批量上传 [!DNL publisher provided identifiers] (PPID)输入 [!DNL Google Ad Manager 360]，通过 [!DNL Google Cloud Storage] <br><br>此目标当前为测试版，仅适用于数量有限的客户。 请求对 [!DNL Google Ad Manager 360] 连接时，请联系您的Adobe代表并提供 [!DNL IMS Organization ID]. |
 | [[!DNL Medallia]](/help/destinations/catalog/voice/medallia-connector.md) | 激活定向Media调查和反馈收集的用户档案，以更好地了解客户需求和期望。 |
 
 {style=&quot;table-layout:auto&quot;}

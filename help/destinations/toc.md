@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: e017f98ba2fbeab9fe1a785cc7710f75d3dd496a
+source-git-commit: 492a05b24ec905de926d861f607a6e5d294d46e0
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '778'
 ht-degree: 8%
 
 ---
@@ -62,7 +62,7 @@ ht-degree: 8%
       * [Google Ads连接](./catalog/advertising/google-ads-destination.md)
       * [Google Ads扩展](./catalog/advertising/google-ads-extension.md)
       * [Google Ad Manager连接](./catalog/advertising/google-ad-manager.md)
-      * [Google Ad Manager 360连接](./catalog/advertising/google-ad-manager-360-connection.md)
+      * [（测试版）Google Ad Manager 360连接](./catalog/advertising/google-ad-manager-360-connection.md)
       * [Google客户匹配连接](./catalog/advertising/google-customer-match.md)
       * [Google Display &amp; Video 360连接](./catalog/advertising/google-dv360.md)
       * [Google扩展](./catalog/advertising/gtag-advertising.md)
