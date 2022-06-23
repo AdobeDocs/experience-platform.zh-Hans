@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年6月
 description: 2022年6月版Adobe Experience Platform发行说明。
-source-git-commit: 98b9e79fadecc6e0d5ee8e86b785fd905643f725
+source-git-commit: 71f781fafa6124237955e7979fab29e7c03f984e
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '693'
 ht-degree: 6%
 
 ---
@@ -14,10 +14,25 @@ ht-degree: 6%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [[!DNL Data Prep]](#data-prep)
 - [[!DNL Data Science Workspace]](#dsw)
 - [[!DNL Destinations]](#destinations)
 - [查询服务](#query-service)
 - [源](#sources)
+
+## [!DNL Data Prep] {#data-prep}
+
+[!DNL Data Prep] 允许数据工程师在体验数据模型(XDM)之间映射、转换和验证数据。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 增强了 [!DNL Data Prep] Recommendations | [!DNL Data Prep] Recommendations现在更聪明，速度更快。 新的验证检查可显着减少最常见的映射错误，从而缩短时间值。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
 
 ## [!DNL Data Science Workspace] {#dsw}
 
