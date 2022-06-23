@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年6月
 description: 2022年6月版Adobe Experience Platform发行说明。
-source-git-commit: 492a05b24ec905de926d861f607a6e5d294d46e0
+source-git-commit: 4edd2042234149ab8836da4fc58eb4d6084ae205
 workflow-type: tm+mt
-source-wordcount: '801'
+source-wordcount: '824'
 ht-degree: 6%
 
 ---
@@ -67,6 +67,7 @@ Adobe Experience Platform 现有功能的更新包括：
 | ----------- | ----------- |
 | [(Beta)Google Ad Manager 360](../../destinations/catalog/advertising/google-ad-manager-360-connection.md) | 的 [!DNL Google Ad Manager 360] 连接允许批量上传 [!DNL publisher provided identifiers] (PPID)输入 [!DNL Google Ad Manager 360]，通过 [!DNL Google Cloud Storage] <br><br>此目标当前为测试版，仅适用于数量有限的客户。 请求对 [!DNL Google Ad Manager 360] 连接时，请联系您的Adobe代表并提供 [!DNL IMS Organization ID]. |
 | [[!DNL Medallia]](/help/destinations/catalog/voice/medallia-connector.md) | 激活定向Media调查和反馈收集的用户档案，以更好地了解客户需求和期望。 |
+| [[!DNL Adobe Advertising Cloud DSP]](../../destinations/catalog/advertising/adobe-advertising-cloud-connection.md) | Adobe Advertising Cloud [!DNL Demand-Side Platform] (DSP)目标允许您与已批准的广告商和用户共享经过身份验证的第一方区段，以便与DSP一起激活促销活动。 |
 
 {style=&quot;table-layout:auto&quot;}
 
