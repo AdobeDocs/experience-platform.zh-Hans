@@ -1,9 +1,10 @@
 ---
 title: CSV模板到模式转换API端点
 description: 架构注册表API中的/rpc/csv2schema端点允许您使用CSV模板自动创建体验数据模型(XDM)架构。
-source-git-commit: 3860724b97987e555e12807c47f65fe040912d69
+exl-id: cf08774a-db94-4ea1-a22e-bb06385f8d0e
+source-git-commit: b4c186c8c40d1372fb5011f49979523e1201fb0b
 workflow-type: tm+mt
-source-wordcount: '856'
+source-wordcount: '857'
 ht-degree: 6%
 
 ---
@@ -14,7 +15,7 @@ ht-degree: 6%
 
 ## 快速入门
 
-的 `/rpc/csv2schema` 端点是的一部分 [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 在继续之前，请查看 [入门指南](./getting-started.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
+的 `/rpc/csv2schema` 端点是的一部分 [[!DNL Schema Registry] API](https://www.adobe.io/experience-platform-apis/references/schema-registry/). 在继续之前，请查看 [入门指南](./getting-started.md) 有关相关文档的链接、本文档中的API调用示例指南，以及有关成功调用任何Adobe Experience Platform API所需标头的重要信息。
 
 的 `/rpc/csv2schema` 端点是远程过程调用(RPC)的一部分，该调用受 [!DNL Schema Registry]. 与 [!DNL Schema Registry] API、RPC端点不需要其他标头，例如 `Accept` 或 `Content-Type`、和不使用 `CONTAINER_ID`. 相反，他们必须使用 `/rpc` 命名空间，如下面的API调用中所示。
 
