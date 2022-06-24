@@ -5,9 +5,9 @@ title: 查询编辑器UI指南
 topic-legacy: query editor
 description: 查询编辑器是Adobe Experience Platform查询服务提供的一个交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并且允许您运行交互式查询以用于开发目的，以及非交互式查询以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: aa61cb696d647c5f039283ce5926d5fa1e901a13
+source-git-commit: c8b3b22b678622c31462ba0baa2f50fbe89b00d5
 workflow-type: tm+mt
-source-wordcount: '1599'
+source-wordcount: '1625'
 ht-degree: 1%
 
 ---
@@ -135,6 +135,10 @@ ht-degree: 1%
 ### 保存查询 {#saving-queries}
 
 [!DNL Query Editor] 提供了保存函数，用于保存查询并稍后对其进行处理。 要保存查询，请选择 **[!UICONTROL 保存]** 的右上角 [!DNL Query Editor]. 在保存查询之前，必须使用 **[!UICONTROL 查询详细信息]** 的上界。
+
+>[!NOTE]
+>
+>使用查询编辑器命名和保存的查询可用作查询功能板中的模板 [!UICONTROL 浏览] 选项卡。 请参阅 [模板文档](./query-templates.md) 以了解更多信息。
 
 ### 如何查找以前的查询 {#previous-queries}
 

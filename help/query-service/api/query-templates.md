@@ -3,11 +3,11 @@ keywords: Experience Platform；主页；热门主题；查询服务；查询模
 solution: Experience Platform
 title: 查询模板API端点
 topic-legacy: query templates
-description: 以下文档将介绍您可以使用查询模板对查询服务API进行的各种API调用。
+description: 本指南详细介绍了您可以使用查询服务API进行的各种查询模板API调用。
 exl-id: 14cd7907-73d2-478f-8992-da3bdf08eacc
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: c8b3b22b678622c31462ba0baa2f50fbe89b00d5
 workflow-type: tm+mt
-source-wordcount: '674'
+source-wordcount: '668'
 ht-degree: 3%
 
 ---
@@ -16,7 +16,9 @@ ht-degree: 3%
 
 ## API调用示例
 
-既然您了解了要使用的标头，接下来便可以开始调用 [!DNL Query Service] API。 以下部分将介绍您可以使用 [!DNL Query Service] API。 每个调用都包含常规API格式、显示所需标头的示例请求以及示例响应。
+以下部分介绍了您可以使用 [!DNL Query Service] API。 每个调用都包含常规API格式、显示所需标头的示例请求以及示例响应。
+
+请参阅 [UI查询模板文档](../ui/query-templates.md) 有关通过Experience PlatformUI创建模板的信息。
 
 ### 检索查询模板列表
 
