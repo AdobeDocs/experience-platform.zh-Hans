@@ -3,7 +3,7 @@ title: 事件转发概述
 description: 了解 Adobe Experience Platform 中的事件转发功能，此功能可让您使用 Platform Edge Network 执行任务，而无需更改您的标记实施。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: b445e25ebda39e1604b926dc40d8ed52ad2e9b54
 workflow-type: tm+mt
 source-wordcount: '955'
 ht-degree: 8%
@@ -67,7 +67,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 虽然数据元素本身在事件转发中的创建和配置方式与标记相同，但在涉及如何引用来自Platform Edge Network的数据时，仍存在一些重要的语法差异。
 
-#### 从Platform Edge Network引用数据 {#edge}
+#### 从Platform Edge Network引用数据 {#data-element-path}
 
 要引用来自Platform Edge Network的数据，必须创建一个数据元素，以提供该数据的有效路径。 在UI中创建数据元素时，选择 **[!UICONTROL 核心]** 对于扩展和 **[!UICONTROL 路径]** 的子项。
 

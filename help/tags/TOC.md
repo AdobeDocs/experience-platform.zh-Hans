@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 881d9602ff3462afb5df30f8446113a372650c8d
+source-git-commit: 2cabd8d8fa44f942f9bfce914fd2910a4ddbb973
 workflow-type: tm+mt
-source-wordcount: '394'
+source-wordcount: '396'
 ht-degree: 68%
 
 ---
@@ -107,6 +107,9 @@ ht-degree: 68%
       * Adobe Target v2 {#target-v2}
          * [概述](./extensions/web/target-v2/overview.md)
          * [发行说明](./extensions/web/target-v2/release-notes.md)
+      * [!DNL BrightCove] 视频跟踪 {#brightcove}
+         * [概述](./extensions/web/brightcove/overview.md)
+         * [发行说明](./extensions/web/brightcove/release-notes.md)
       * “常用Analytics插件” {#plugins}
          * [概述](./extensions/web/plugins/overview.md)
          * [发行说明](./extensions/web/plugins/release-notes.md)
@@ -114,12 +117,11 @@ ht-degree: 68%
          * [概述](./extensions/web/core/overview.md)
          * [事件转发](./extensions/web/core/event-forwarding.md)
          * [发行说明](./extensions/web/core/release-notes.md)
+      * [!DNL Mailchimp] Edge {#mailchimp-edge}
+         * [概述](./extensions/web/mailchimp/overview.md)
       * [!DNL Marketo Munchkin] {#marketo}
          * [概述](./extensions/web/marketo/overview.md)
          * [发行说明](./extensions/web/marketo/release-notes.md)
-      * [!DNL BrightCove] 视频跟踪 {#brightcove}
-         * [概述](./extensions/web/brightcove/overview.md)
-         * [发行说明](./extensions/web/brightcove/release-notes.md)
       * Google数据层 {#google-data-layer}
          * [概述](./extensions/web/google-data-layer/overview.md)
          * [发行说明](./extensions/web/google-data-layer/release-notes.md)
