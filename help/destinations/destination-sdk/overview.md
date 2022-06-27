@@ -2,10 +2,10 @@
 description: Adobe Experience Platform Destination SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式将受众和配置文件数据交付到端点。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: 7c6d0c8d4d1eea16f13359e9d7a895d767ad3c00
+source-git-commit: abc9b9857e4a93a334440e855ca0ae562c695df1
 workflow-type: tm+mt
-source-wordcount: '703'
-ht-degree: 2%
+source-wordcount: '704'
+ht-degree: 3%
 
 ---
 
@@ -64,7 +64,7 @@ Destination SDK访问权限因您作为合作伙伴或Experience Platform客户�
 | 独立软件供应商(ISV) | 加入 [Adobe交换计划](https://partners.adobe.com/exchangeprogram/experiencecloud.html) 和请求，以便配置Experience Platform沙盒以访问Destination SDK。 |
 | 系统集成商(SI) | 您需要在 [Adobe解决方案合作伙伴计划](https://solutionpartners.adobe.com/home.html)，您将获得一个Experience Platform沙盒，并有权访问Destination SDK。 |
 | Experience Platform客户 [激活包](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) | 默认情况下，您可以访问Experience Platform沙箱和Destination SDK。 |
-| Experience Platform客户 [Real-time CDP包](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | 您无权访问Destination SDK，但有权访问由其他使用Destination SDK的公司配置并在Experience Platform组织中发布的所有产品化目标。 |
+| Experience Platform客户 [Real-time CDP Ultimate软件包](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | 您无权访问Destination SDK，但有权访问由其他使用Destination SDK的公司配置并在Experience Platform组织中发布的所有产品化目标。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -86,5 +86,5 @@ Destination SDK访问权限因您作为合作伙伴或Experience Platform客户�
 Adobe建议您阅读并了解以下Experience Platform文档：
 
 * [Adobe Experience Platform目标概述](https://experienceleague.adobe.com/docs/experience-platform/destinations/home.html?lang=en)
-* [XDM架构组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en)
+* [XDM架构组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=zh-Hans)
 * [身份命名空间概述](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans)

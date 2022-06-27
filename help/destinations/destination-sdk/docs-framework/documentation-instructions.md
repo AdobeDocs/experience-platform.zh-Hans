@@ -2,14 +2,18 @@
 title: 在Adobe Experience Platform中记录您的目标
 description: 分步说明，以便您在Adobe Experience Platform中为目标创建文档页面
 exl-id: 6cc9c758-44bb-463b-941a-06b1a22ee8f3
-source-git-commit: 3c871471802e905b58acf8cd25db6788f49b9e43
+source-git-commit: dd4a150351b5e0c41586cf663324aeb345a896e4
 workflow-type: tm+mt
-source-wordcount: '502'
+source-wordcount: '538'
 ht-degree: 1%
 
 ---
 
 # 在Adobe Experience Platform中记录您的目标
+
+>[!IMPORTANT]
+>
+>只有提交产品化（公共）目标的合作伙伴才需要此处记录的流程。 如果您创建供自己使用的专用目标，则无需为该目标创建和发布文档。
 
 ## 概述 {#overview}
 

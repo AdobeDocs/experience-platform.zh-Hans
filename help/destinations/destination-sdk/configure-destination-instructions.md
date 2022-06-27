@@ -2,9 +2,9 @@
 description: 本页列出并描述了使用Destination SDK配置流目标的步骤。
 title: 使用Destination SDK配置流目标
 exl-id: d8aa7353-ba55-4a0d-81c4-ea2762387638
-source-git-commit: 51417bee5dba7a96d3a7a7eb507fc95711fad4a5
+source-git-commit: abc9b9857e4a93a334440e855ca0ae562c695df1
 workflow-type: tm+mt
-source-wordcount: '688'
+source-wordcount: '752'
 ht-degree: 0%
 
 ---
@@ -174,8 +174,16 @@ POST platform.adobe.io/data/core/activation/authoring/destinations
 
 ## 步骤7:发布目标 {#publish-destination}
 
+>[!NOTE]
+>
+>如果您要创建供自己使用的专用目标，并且不想将其发布到目标目录中以供其他客户使用，则无需执行此步骤。
+
 配置和测试目标后，请使用 [目标发布API](./destination-publish-api.md) 将配置提交到Adobe以供审核。
 
 ## 步骤8:记录目标 {#document-destination}
+
+>[!NOTE]
+>
+>如果您要创建供自己使用的专用目标，并且不想将其发布到目标目录中以供其他客户使用，则无需执行此步骤。
 
 如果您是独立软件供应商(ISV)或系统集成商(SI)，创建 [产品化集成](./overview.md#productized-custom-integrations)，则使用 [自助文档流程](./docs-framework/documentation-instructions.md) 要在 [Experience Platform目标目录](/help/destinations/catalog/overview.md).
