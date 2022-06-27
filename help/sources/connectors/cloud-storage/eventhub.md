@@ -5,7 +5,7 @@ title: Azure事件集线器源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Azure事件中心连接到Adobe Experience Platform。
 exl-id: b4d4bc7f-2241-482d-a5c2-4422c31705bf
-source-git-commit: b64054859cbd88687dd05b0c65e51d0b2ef2a7b3
+source-git-commit: 9415b4add3784cc6f81794060464b7ff63497a96
 workflow-type: tm+mt
 source-wordcount: '534'
 ht-degree: 0%
@@ -87,8 +87,8 @@ Adobe Experience Platform为AWS等云提供商提供本机连接， [!DNL Google
     "virtualNetworkRules": [
       {
         "subnet": {
-          "id": "/subscriptions/40bde086-46ad-44c3-afba-c306f54b64ec/resourceGroups/ethos_12_prod_va7_network/providers/Microsoft.Network/virtualNetworks/ethos_12_prod_nld2_network_10_20_40_0_23/subnets/ethos_12_prod_nld2_network_10_20_40_0_23"
-        },
+            "id": "/subscriptions/40bde086-46ad-44c3-afba-c306f54b64ec/resourceGroups/ethos_12_prod_nld2_network/providers/Microsoft.Network/virtualNetworks/ethos_12_prod_nld2_network_10_20_40_0_23/subnets/ethos_12_prod_nld2_network_10_20_40_0_23"
+        }, 
         "ignoreMissingVnetServiceEndpoint": true
       },
     ],
