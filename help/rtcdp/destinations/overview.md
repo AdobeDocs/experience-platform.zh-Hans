@@ -1,20 +1,17 @@
 ---
 keywords: rtcdp目标；目标rtcdp；实时客户数据平台目标
-title: 实时客户数据平台中的目标
-seo-title: Adobe Experience Platform目的地
-description: 本文档概述了Adobe Experience Platform的目的地
-seo-description: 本文档概述了Adobe Experience Platform的目的地
-translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+title: Real-time Customer Data Platform目标
+description: 本文档概述了Adobe Experience Platform中的目标
+exl-id: 82f4bad2-a0e7-4f49-ac2f-412b5c5c35f3
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
-source-wordcount: '114'
+source-wordcount: '98'
 ht-degree: 0%
 
 ---
 
+# Real-time Customer Data Platform目标
 
-# 实时客户数据平台中的目标
+目标是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
 
-目标是预建的与目标平台集成，实现来自Adobe Experience Platform的无缝激活。 您可以使用目标来激活已知和未知的跨渠道营销活动、电子邮件活动、定向广告和许多其他用例数据。
-
-有关目标的更详细概述，包括可用目标的列表和教程链接，请阅读[目标文档](../../destinations/home.md)。
+有关目标的更详细概述（包括可用目标的列表和教程的链接），请阅读 [目标文档](../../destinations/home.md).

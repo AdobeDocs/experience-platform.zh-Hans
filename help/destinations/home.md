@@ -1,18 +1,16 @@
 ---
 keywords: 目标；adobe experience platform；平台；目标概述；激活数据；激活
 title: 目标概述
-seo-title: Destinations overview
-description: 了解如何将Adobe Experience Platform数据激活到跨渠道营销活动、电子邮件、定向广告等的目标。
-seo-description: Destinations are pre-built integrations with destination platforms that allow for the seamless activation of data from Adobe Experience Platform. You can use Destinations in the Adobe Experience Platform to activate your known and unknown data for cross-channel marketing campaigns, email campaigns, targeted advertising, and many other use cases.
+description: 目标是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用Adobe Experience Platform中的目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: c93e23d334ffe3cbee049f120a7b6c5e7e69d0ea
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
-source-wordcount: '460'
+source-wordcount: '489'
 ht-degree: 0%
 
 ---
 
-# [!DNL Destinations] 概述 {#overview}
+# [!DNL Destinations]概述 {#overview}
 
 ![目标概述横幅](./assets/overview/destinations-overview-banner.png)
 

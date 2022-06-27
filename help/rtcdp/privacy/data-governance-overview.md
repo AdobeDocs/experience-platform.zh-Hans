@@ -1,14 +1,12 @@
 ---
 keywords: 数据管理rtcdp;rtcdp数据管理；实时客户数据配置文件数据管理
 title: 数据管理概述
-seo-title: Data Governance in Real-time Customer Data Platform
 description: '通过“数据管理”，您可以管理客户数据，并确保符合适用于数据使用的法规、限制和策略。 '
-seo-description: Data Governance allows you to manage customer data and ensure compliance with regulations, restrictions, and policies applicable to data use.
 exl-id: eb501d85-cabd-4667-a1cd-2210ec83fb71
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
 source-wordcount: '690'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 

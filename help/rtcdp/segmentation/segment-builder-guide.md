@@ -1,20 +1,17 @@
 ---
 keywords: rtcdp区段；区段生成器rtcdp;rtcdp区段
-title: 实时客户数据平台中的细分构建器
-seo-title: 分段服务细分构建器在实时客户数据平台中的应用
+title: Real-time Customer Data Platform中的区段生成器
 description: 介绍如何使用区段生成器的指南。
-seo-description: 用户指南，介绍如何在实时客户数据平台上使用分段服务区段生成器。
-translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+exl-id: a9a14ec4-d8e2-48b2-882f-5afd0cb06b71
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
-source-wordcount: '115'
+source-wordcount: '87'
 ht-degree: 0%
 
 ---
 
+# Real-time Customer Data Platform中的区段生成器
 
-# 实时客户数据平台中的细分构建器
+建在Adobe Experience Platform之上， [!DNL Real-time Customer Data Platform] 能够利用属于 [!DNL Experience Platform]. 在区段生成器的用户界面中，您可以创建新区段、访问现有区段并修改现有区段。
 
-[!DNL Real-time Customer Data Platform]构建于Adobe Experience Platform之上，能够利用[!DNL Experience Platform]的完整区段生成器功能。 在区段生成器的用户界面中，您可以创建新区段、访问现有区段和修改现有区段。
-
-有关区段生成器的更详细指南，请阅读[区段生成器用户指南](../../segmentation/ui/segment-builder.md)。
+有关区段生成器的更详细指南，请阅读 [区段生成器用户指南](../../segmentation/ui/segment-builder.md).

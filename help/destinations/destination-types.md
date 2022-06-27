@@ -1,10 +1,9 @@
 ---
 keywords: 目标；目标类型
 title: 目标类型和类别
-seo-title: Destination types and categories
 description: 了解Adobe Experience Platform中的不同目标类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 2252c6e8bd5f0ada717d67f005b7f6ddd0b238ab
+source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
 workflow-type: tm+mt
 source-wordcount: '642'
 ht-degree: 0%

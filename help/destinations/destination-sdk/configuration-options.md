@@ -1,17 +1,15 @@
 ---
 description: Adobe Experience Platform中的目标服务对多个组件使用配置模板来构建目标功能。 通过这些组件，Experience Platform可以连接到目标合作伙伴、发送自定义消息并在整个数字生态系统中激活用户档案数据。
-seo-description: The destinations service in Adobe Experience Platform uses configuration templates for several components that build up the destinations functionality. Combined, these components allow Experience Platform to connect to destination partners, send custom messages, and activate profile data across the digital ecosystem.
-seo-title: Configuration options in Destination SDK
-title: 目标SDK中的配置选项
+title: Destination SDK中的配置选项
 exl-id: 8890c70a-cdb9-4b9d-aa81-affe72b1fdc5
-source-git-commit: 0bd57e226155ee68758466146b5d873dc4fdca29
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
 source-wordcount: '345'
 ht-degree: 1%
 
 ---
 
-# 目标SDK中的配置选项
+# Destination SDK中的配置选项
 
 ## 概述 {#overview}
 
@@ -24,11 +22,11 @@ Adobe Experience Platform中的目标服务对多个组件使用配置模板来�
 * **身份验证配置**:这些设置定义Adobe Experience Platform用户如何连接到您的目标。
 * **受众元数据配置**:利用此模板，可配置受众/区段在目标中以编程方式创建、更新或删除的方式。
 
-![目标SDK模板和配置](./assets/self-service-configuration.png)
+![Destination SDK模板和配置](./assets/self-service-configuration.png)
 
 ## 相关链接 {#related-links}
 
-以下页面详细介绍了目标SDK中可用的功能和配置选项，以及您可以执行的相应API操作。
+以下页面详细介绍了Destination SDK中可用的功能和配置选项，以及可以执行的相应API操作。
 
 | 功能描述 | API参考 |
 |--- |--- |

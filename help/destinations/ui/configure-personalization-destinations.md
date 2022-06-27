@@ -2,11 +2,9 @@
 keywords: 个性化；目标；目的地；个性化目标；配置个性化目标；同一页面；下一页；
 title: 为同一页面和下一页面个性化配置个性化目标
 type: Tutorial
-seo-title: Configure personalization destinations for same-page and next-page personalization.
 description: 了解如何为同一页面和下一页面个性化配置个性化目标。
-seo-description: Configure personalization destinations for same-page and next-page personalization.
 exl-id: 7d7b6869-bd59-4766-a044-f449396f6524
-source-git-commit: 99a60621bca43ecf2dacb6202e005bbd8f191c99
+source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
 workflow-type: tm+mt
 source-wordcount: '0'
 ht-degree: 0%

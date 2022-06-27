@@ -1,11 +1,9 @@
 ---
 keywords: 目标；问题；常见问题解答；常见问题解答；目标常见问题解答
 title: 常见问题
-seo-title: Frequently asked questions
 description: 有关Adobe Experience Platform目标的最常见问题解答
-seo-description: Answers to the most frequently asked questions about Adobe Experience Platform destinations
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: b2636377eda6740dceb9bc07fbcc082b85ff3c94
+source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
 workflow-type: tm+mt
 source-wordcount: '864'
 ht-degree: 4%
@@ -61,11 +59,11 @@ ht-degree: 4%
 
 这两种集成是互补的，您可以同时使用这两种集成来确保更好的受众覆盖。例如，您可以使用 [!DNL Facebook Pixel] 扩展，用于寻找尚未创建帐户的网站访客，而 [!DNL Facebook Custom Audiences] 可帮助您定位现有客户，具体依据 [!DNL Platform] 身份。
 
-**Does the Adobe Experience Platform integration with [!DNL Facebook Custom Audiences] support disqualifying users from an audience when they no longer qualify for it?**
+**Adobe Experience Platform与 [!DNL Facebook Custom Audiences] 支持在用户不再符合受众资格时取消其受众资格？**
 
-Yes, the integration supports removing users from [!DNL Facebook Custom Audiences] when they no longer qualify.
+是，该集成支持将用户从 [!DNL Facebook Custom Audiences] 当他们不再符合条件时。
 
-**How should I hash the audience data before sending it to [!DNL Facebook]?**
+**如何在将受众数据发送到之前对其进行哈希处理 [!DNL Facebook]?**
 
 [!DNL Facebook] 要求不要发送任何个人身份信息(PII)。 因此，激活的受众 [!DNL Facebook] 可以锁上 *哈希* 标识符，如电子邮件地址或电话号码。
 

@@ -1,11 +1,9 @@
 ---
 keywords: 数据管理rtcdp;rtcdp数据管理；实时客户数据配置文件数据管理；隐私rtcdp;rtcdp隐私
 title: Real-time Customer Data Platform中的隐私
-seo-title: Privacy in Real-time Customer Data Platform
 description: Real-time Customer Data Platform使您能够简化保持数据操作符合隐私法规的流程。
-seo-description: Real-time Customer Data Platform allows you to streamline the process of keeping your data operations compliant with privacy regulations.
 exl-id: bcb0e42e-4549-4952-bb69-5534aee353f8
-source-git-commit: e3519817559dca372e228ed19bba4f9adf279768
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
 source-wordcount: '386'
 ht-degree: 0%
@@ -24,7 +22,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> 通过Adobe Experience Platform Privacy Service提交的AdobeMarketo Engage隐私请求仅适用于实时CDP B2B客户。
+> 通过Adobe Experience Platform Privacy Service提交的Adobe Marketo Engage隐私请求仅适用于实时CDP B2B客户。
 
 ## 选择退出功能
 

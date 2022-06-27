@@ -2,11 +2,9 @@
 keywords: 激活用户档案请求目标；激活数据；用户档案请求目标
 title: 将受众数据激活到用户档案请求目标
 type: Tutorial
-seo-title: Activate audience data to profile request destinations
 description: 了解如何通过将区段映射到配置文件请求目标，来激活您在Adobe Experience Platform中拥有的受众数据。
-seo-description: Learn how to activate the audience data you have in Adobe Experience Platform by mapping segments to profile request destinations.
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 0b094e635e6d22e58e5aa79a374df0879167a833
+source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
 workflow-type: tm+mt
 source-wordcount: '467'
 ht-degree: 0%

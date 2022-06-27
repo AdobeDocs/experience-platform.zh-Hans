@@ -1,12 +1,11 @@
 ---
 keywords: 平台；目标；目标工作区；UI；目标UI；目录；目标目录
 title: 目标工作区
-description: “目标”工作区包含四个部分：“目录”、“浏览”、“帐户”和“系统视图”。 下面各节对这些参数进行了描述。
-seo-description: In Adobe Experience Platform, select Destinations from the left navigation bar to access the destinations workspace.
+description: “目标”工作区包含五个部分：“概述”、“目录”、“浏览”、“帐户”和“系统视图”。 下面各节对这些参数进行了描述。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: b275621d9c6552327e0e55c00c8fcf0397088168
+source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
 workflow-type: tm+mt
-source-wordcount: '1156'
+source-wordcount: '1157'
 ht-degree: 2%
 
 ---

@@ -1,11 +1,9 @@
 ---
 keywords: 目录；目录
 title: 目标目录概述
-seo-title: Destinations catalog overview
 description: 目标目录提供了可接收数据的可用目标列表。 这些目标包括Adobe解决方案、广告平台、调查平台、电子邮件营销平台等。
-seo-description: The Destinations catalog provides a list of available destinations that are ready to receive data. These destinations include Adobe solutions, advertising platforms, survey platforms, email marketing platforms, and more.
 exl-id: c490f6f0-f673-4a56-b87a-22884f8be92d
-source-git-commit: 320c95f894c75a7f52808730b0cac4bc1e4411e1
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
 source-wordcount: '171'
 ht-degree: 0%

@@ -1,74 +1,71 @@
 ---
-keywords: 量度概述；rtcdp指标概述
-title: 实时客户数据平台主页和仪表板
-seo-title: 实时客户数据平台主页和仪表板
+keywords: 量度概述；rtcdp量度概述
+title: Real-time Customer Data Platform主页和功能板
 description: 仪表板、主页和 Adobe Experience Platform 的首次用户体验
-seo-description: 仪表板、主页和 Adobe Experience Platform 的首次用户体验
-translation-type: tm+mt
-source-git-commit: 36f63cecd49e6a6b39367359d50252612ea16d7a
+exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
+source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
 workflow-type: tm+mt
-source-wordcount: '638'
-ht-degree: 4%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
+# [!DNL Real-time Customer Data Platform] 主页和功能板
 
-# [!DNL Real-time Customer Data Platform] 主页和仪表板
+当您登录到Real-time CDP时，将显示Real-time Customer Data Platform(Real-time CDP)主页，其中包含一个量度仪表板。
 
-“实时客户数据平台（实时CDP）”主页，在您登录到实时CDP时，会显示该仪表板，其中包括一个量度数据。
-
-主页只是显示量度卡的位置之一。 实时CDP可在您的整个体验中提供量度卡。 这些量度会通知您系统中的数据、用户档案和细分受众。
+主页只是显示量度卡的位置之一。 Real-time CDP在您的整个体验中都提供量度卡。 这些量度可告知您系统中的数据、用户档案和区段受众。
 
 ![image](assets/home.png)
 
-如果登录到实时CDP时系统中没有数据，则不会显示主页上的仪表板。 在这种情况下，该主页将首次提供学习材料以用于用户体验。 当收集数据时 — 换言之，当<!--sources-->数据集、用户档案、区段和目标被创建并且数据流入系统时 — 仪表板会自动更新以显示有关该数据的信息<!-- in metric cards-->。
+如果您登录到实时CDP时系统中没有数据，则主页上的功能板不会显示。 在这种情况下，主页会首次提供用户体验的学习材料。 在收集数据时 — 换言之， <!--sources-->数据集、用户档案、区段和目标被创建并流入系统 — 功能板会自动更新以显示有关该数据的信息<!-- in metric cards-->.
 
-## 主页仪表板视图
+## 主页功能板视图
 
 <!--The dashboard shows information in several areas. Each category of information displays for the time range shown beneath the data.-->
 
-仪表板分为<!-- two areas.-->:
+功能板分为<!-- two areas.-->:
 
-* **领** 导者在仪表板的顶端。排行榜显示系统中的数据集、用户档案、细分和目标数量。
+* **排行榜** 位于功能板顶部。 排行榜显示系统中的数据集、用户档案、区段和目标的数量。
 
    ![图像](assets/leaderboard.png)
 
 <!-- * **Metric cards** display beneath the leaderboard. Metric cards show additional information, such as percentages or trends. Metric cards appear as data is collected.
     ![image](assets/home-metrics.jpg)
 Some information is shown in different ways on both the leaderboard and metric cards. -->
-* **最近** 的项目会列出添加到系统中的5个最新数据集、源、细分和目标。
+* **近期项目** 列出添加到系统中的五个最新数据集、源、区段和目标。
 
    ![图像](assets/recent.png)
 
-其他指标(例如用户档案和细分)在实时客户数据平台的其他部分提供。
+其他量度（例如，用户档案和区段）在Real-time Customer Data Platform的其他部分中可用。
 
 ### 数据集
 
-**[!UICONTROL Datasets]**&#x200B;计数器显示系统中的数据集数和[!DNL Platform]中的数据量。 创建数据集时会更新此计数器。
+的 **[!UICONTROL 数据集]** 计数器显示系统中数据集的数量和 [!DNL Platform]. 创建数据集时，此计数器会更新。
 
-有关数据集的详细信息，请参阅[数据集概述](../catalog/datasets/overview.md)。
+有关数据集的更多信息，请参阅 [数据集概述](../catalog/datasets/overview.md).
 
-### 配置文件
+### 用户档案
 
-**[!UICONTROL 用户档案]**&#x200B;计数显示[!DNL Real-time Customer Profile]中具有用户档案的总人数。 它不包括用户档案片段。 这是您的可寻址总受众。
+的 **[!UICONTROL 用户档案]** count显示 [!DNL Real-time Customer Profile]. 它不包括配置文件片段。 这是您的可寻址受众总数。
 
-此计数使用在“统一”用户档案中合并策略配置中设置的默认[合并策略](profile/merge-policies.md)。
+此计数使用默认 [合并策略](profile/merge-policies.md) 在统一配置文件的合并策略配置中设置。
 
 每24小时更新一次用户档案数。
 
-有关用户档案的详细信息，请参阅[实时CDP](profile/profile-overview.md)中对客户的统一视图。
+有关用户档案的更多信息，请参阅 [实时CDP中客户的统一视图](profile/profile-overview.md).
 
 ### 区段
 
-**[!UICONTROL “]** 区段”显示为组织创建的区段总数。此数字在创建新区段时更新。
+**[!UICONTROL 区段]** 显示为组织创建的区段总数。 此数字会在创建新区段时更新。
 
-有关区段的详细信息，请参阅[分段服务概述](segmentation/segmentation-overview.md)。
+有关区段的更多信息，请参阅 [Segmentation Service概述](segmentation/segmentation-overview.md).
 
 ### 目标
 
-**[!UICONTROL 目]** 标显示为组织创建的目标总数。新目标创建时，此数字会更新。
+**[!UICONTROL 目标]** 显示为组织创建的目标总数。 当创建新目标时，此数字会更新。
 
-有关目标的详细信息，请参阅[目标概述](destinations/overview.md)。
+有关目标的更多信息，请参阅 [目标概述](destinations/overview.md).
 
 <!-- ### Successful profile records
 
@@ -106,32 +103,32 @@ The number of failed profile records is updated hourly. -->
 
 ### 最近的数据集
 
-**[!UICONTROL 最近使用的数据集]**&#x200B;卡显示在组织内创建的五个最近使用的数据集。 此列表在创建新数据集时更新。
+的 **[!UICONTROL 最近的数据集]** 卡片会显示组织内创建的五个最新数据集。 此列表会在创建新数据集时更新。
 
-选择一个视图集以该项的详细信息，或者&#x200B;**[!UICONTROL 视图all]**&#x200B;以查看数据集的列表。 您可以从中选择特定的来源来获取详细信息。
+选择一个数据集以查看该项目的详细信息，或 **[!UICONTROL 查看全部]** 以查看数据集列表。 从此处，您可以选择特定的来源以了解详细信息。
 
-有关数据集的详细信息，请参阅[数据集概述](../catalog/datasets/overview.md)。
+有关数据集的更多信息，请参阅 [数据集概述](../catalog/datasets/overview.md).
 
-### 最新来源
+### 最近来源
 
-**[!UICONTROL 最近源]**&#x200B;量度卡显示组织内创建的五个最近源。 创建新源时将更新此列表。
+的 **[!UICONTROL 最近来源]** 量度卡片会显示组织内创建的五个最近的源。 此列表将在创建新源时更新。
 
-选择源以视图该项的详细信息，或&#x200B;**[!UICONTROL 视图all]**&#x200B;查看源的列表。 您可以从中选择特定的来源来获取详细信息。
+选择源以查看该项的详细信息，或 **[!UICONTROL 查看全部]** 查看源列表。 从此处，您可以选择特定的来源以了解详细信息。
 
-有关源的详细信息，请参阅[源概述](sources/sources-overview.md)。
+有关源的详细信息，请参阅 [源概述](sources/sources-overview.md).
 
-### 最近的细分
+### 近期区段
 
-**[!UICONTROL 最近区段]**&#x200B;量度卡显示组织内创建的五个最近区段。 此列表在创建新区段时更新。
+的 **[!UICONTROL 近期区段]** 量度卡片会显示组织内创建的五个最近的区段。 此列表会在创建新区段时更新。
 
-选择一个区段以视图该项目的详细信息，或&#x200B;**[!UICONTROL 视图all]**&#x200B;以查看有关更多区段的信息。
+选择一个区段以查看该项目的详细信息，或 **[!UICONTROL 查看全部]** 以查看有关更多区段的信息。
 
-有关区段的详细信息，请参阅[分段服务概述](segmentation/segmentation-overview.md)。
+有关区段的更多信息，请参阅 [Segmentation Service概述](segmentation/segmentation-overview.md).
 
 ### 近期目标
 
-**[!UICONTROL 最近目标]**&#x200B;量度卡显示组织内创建的五个最近目标。 此列表在创建新目标时更新。
+的 **[!UICONTROL 近期目标]** 量度卡片会显示组织中创建的五个最近的目标。 创建新目标时，此列表会更新。
 
-选择一个目标以视图该项目的详细信息，或选择&#x200B;**[!UICONTROL 视图all]**&#x200B;以查看有关更多目标的信息。
+选择要查看该项目详细信息的目标，或 **[!UICONTROL 查看全部]** 以查看有关更多目标的信息。
 
-有关目标的详细信息，请参阅[目标概述](destinations/overview.md)。
+有关目标的更多信息，请参阅 [目标概述](destinations/overview.md).
