@@ -2,9 +2,9 @@
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 用于Destination SDK的流目标配置选项
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: b12e46592c6c7bb09a90b809e7fac7d05703210a
+source-git-commit: bd89df0659604c05ffd049682343056dbe5667e3
 workflow-type: tm+mt
-source-wordcount: '1787'
+source-wordcount: '1790'
 ht-degree: 4%
 
 ---
@@ -291,6 +291,8 @@ ht-degree: 4%
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `backfillHistoricalProfileData` | 布尔型 | 控制在将区段激活到目标时是否导出历史配置文件数据。 <br> <ul><li> `true`: [!DNL Platform] 发送在激活区段之前符合区段资格条件的历史用户配置文件。 </li><li> `false`: [!DNL Platform] 仅包括激活区段后符合区段资格的用户配置文件。 </li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 此配置如何连接目标的所有必需信息 {#connecting-all-configurations}
 
