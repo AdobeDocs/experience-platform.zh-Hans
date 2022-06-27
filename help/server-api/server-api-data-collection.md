@@ -1,12 +1,10 @@
 ---
 title: 数据收集
-description: 了解Adobe Experience Platform Edge Network Server API如何构建收集的数据
-seo-description: Learn how the Adobe Experience Platform Edge Network Server API structures the collected data
-keywords: 数据收集；收集；Adobe Experience Platform Edge Network;API；结构
-source-git-commit: 422f859bef8faf292fd7e5fd8b6a8d31967421c1
+description: 了解Adobe Experience Platform Edge Network Server API如何构建收集的数据。
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '141'
-ht-degree: 4%
+source-wordcount: '131'
+ht-degree: 5%
 
 ---
 

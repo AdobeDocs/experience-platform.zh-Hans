@@ -1,13 +1,13 @@
 ---
-title: 边缘网络服务器API
-description: 了解边缘网络服务器API是什么以及如何使用它。
+title: 边缘网络服务器API概述
+description: 了解什么是 Edge Network Server API 以及如何使用它。
 seo-description: Learn what the Edge Network Server API is and how you can use it.
 keywords: 数据收集；Adobe Experience Platform Edge Network；服务器API;
 exl-id: 46bd8798-d7f9-405b-9ca8-856ad4aa688c
-source-git-commit: 422f859bef8faf292fd7e5fd8b6a8d31967421c1
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '270'
-ht-degree: 0%
+source-wordcount: '271'
+ht-degree: 5%
 
 ---
 

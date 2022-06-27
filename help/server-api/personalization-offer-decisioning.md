@@ -1,14 +1,13 @@
 ---
 title: 通过Offer decisioning进行个性化
-description: 了解如何使用服务器API通过Offer decisioning提供和呈现个性化体验
-keywords: 个性化；服务器api;Adobe Experience Platform边缘网络；检索个性化；Target;offer decisioning;
-source-git-commit: 59cb43007c4a7ff125738c21064381cf833063b2
+description: 了解如何使用服务器API通过Offer decisioning提供和呈现个性化体验。
+exl-id: 5348cd3e-08db-4778-b413-3339cb56b35a
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '555'
 ht-degree: 2%
 
 ---
-
 
 # 通过Offer decisioning进行个性化
 
@@ -260,4 +259,3 @@ curl -X POST 'https://server.adobedc.net/ee/v2/interact?dataStreamId={DATASTREAM
 | `content` | 与建议的选件关联的内容（以字符串格式）。 | `"content": "<p style="color:red;">20% Off on shipping</p>"` |
 | `deliveryUrl` | 与建议的选件关联的图像内容采用URL格式。 | `"deliveryURL": "https://image.jpeg"` |
 | `characteristics` | 包含与建议的选件关联的特征的JSON对象。 | `"characteristics": { "foo": "bar", "foo1": "bar1" }` |
-

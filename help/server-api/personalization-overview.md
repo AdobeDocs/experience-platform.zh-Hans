@@ -1,15 +1,13 @@
 ---
 title: 个性化概述
-description: 了解如何使用Adobe Experience Platform Edge Network Server API从Adobe个性化解决方案中检索个性化内容
-seo-description: Learn how to use the Adobe Experience Platform Edge Network Server API to retrieve personalized content from Adobe personalization solutions
-keywords: 个性化；服务器api;Adobe Experience Platform边缘网络；检索个性化
-source-git-commit: 492efa6ef0d95b502839d612988f0b7f59b8bd69
+description: 了解如何使用Adobe Experience Platform Edge Network Server API从Adobe个性化解决方案中检索个性化内容。
+exl-id: 11be9178-54fe-49d0-b578-69e6a8e6ab90
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '741'
+ht-degree: 9%
 
 ---
-
 
 # 个性化概述
 

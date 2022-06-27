@@ -1,13 +1,11 @@
 ---
 title: 错误处理
 description: 了解在对Adobe Experience Platform边缘网络服务器API执行API请求时可能遇到的错误。
-seo-description: Learn about the possible errors you might encounter when performing API requests to the Adobe Experience Platform Edge Network Server API.
-keywords: 错误；代码；处理；边缘；网络；网关；API
 exl-id: f6b8435c-b163-4046-b5fb-50a13a897637
-source-git-commit: 422f859bef8faf292fd7e5fd8b6a8d31967421c1
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '772'
-ht-degree: 2%
+source-wordcount: '765'
+ht-degree: 3%
 
 ---
 

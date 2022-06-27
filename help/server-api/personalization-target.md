@@ -1,14 +1,13 @@
 ---
 title: 通过Adobe Target进行个性化
-description: 了解如何使用服务器API来提供和渲染在Adobe Target中创建的个性化体验
-keywords: 个性化；服务器api;Adobe Experience Platform边缘网络；检索个性化；Target;Adobe Target
-source-git-commit: 59cb43007c4a7ff125738c21064381cf833063b2
+description: 了解如何使用服务器API来提供和渲染在Adobe Target中创建的个性化体验。
+exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '715'
+source-wordcount: '702'
 ht-degree: 2%
 
 ---
-
 
 # 通过Adobe Target进行个性化
 

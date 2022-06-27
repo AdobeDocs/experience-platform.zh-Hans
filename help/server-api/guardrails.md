@@ -1,16 +1,16 @@
 ---
-title: 性能护栏
-description: 了解如何在最佳性能护栏内使用服务器API
+title: 边缘网络服务器API的性能防护
+description: 了解如何在最佳性能护栏内使用服务器API。
 keywords: 数据收集；收集；边缘网络；API;SLA;SLT；服务级别
 exl-id: 063d0fbb-26d1-4727-9dea-8e7223b2173d
-source-git-commit: 6f0eb81f9709cf4fcaea94334449117c4ed76107
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '426'
+source-wordcount: '436'
 ht-degree: 2%
 
 ---
 
-# 性能护栏
+# 边缘网络服务器API的性能防护
 
 ## 概述 {#overview}
 

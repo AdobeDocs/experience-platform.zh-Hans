@@ -1,13 +1,11 @@
 ---
 title: 故障排除
-description: 了解如何对使用Adobe Experience Platform Edge Network Server API时的错误进行故障诊断
-seo-description: Learn how to troubleshoot errors when using the Adobe Experience Platform Edge Network Server API
-keywords: 边缘网络；网关；API；故障诊断；错误；Griffon
+description: 了解如何对使用边缘网络服务器API时的错误进行故障诊断。
 exl-id: f0223fca-30ec-4229-93a5-3faa6cef5482
-source-git-commit: 422f859bef8faf292fd7e5fd8b6a8d31967421c1
+source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
-source-wordcount: '106'
-ht-degree: 1%
+source-wordcount: '96'
+ht-degree: 2%
 
 ---
 
