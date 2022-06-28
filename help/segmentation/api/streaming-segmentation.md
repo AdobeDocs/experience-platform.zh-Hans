@@ -5,9 +5,9 @@ title: '利用流分段快速实时评估事件 '
 topic-legacy: developer guide
 description: 本文档包含有关如何通过Adobe Experience Platform Segmentation Service API使用流分段的示例。
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 81659da18d4fa8b733200998c27c25ec356ca264
 workflow-type: tm+mt
-source-wordcount: '1896'
+source-wordcount: '1915'
 ht-degree: 1%
 
 ---
@@ -424,7 +424,7 @@ curl -X POST \
 
 ### 流式分段适用于哪些数据？
 
-流分段适用于使用流源摄取的所有数据。 使用基于批处理的源摄取的区段将在夜间进行评估，即使它符合流式分段的条件也是如此。
+流分段适用于使用流源摄取的所有数据。 使用基于批处理的源摄取的区段将在夜间进行评估，即使它符合流式分段的条件也是如此。 在后续的批处理作业中，将处理时间戳早于24小时流入系统的事件。
 
 ### 如何将区段定义为批量分段或流分段？
 
