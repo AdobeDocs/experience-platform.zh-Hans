@@ -2,14 +2,18 @@
 description: 本页列出并介绍了您可以使用“/authoring/destinations/publish” API端点执行的所有API操作。
 title: 发布目标API端点操作
 exl-id: 0564a132-42f4-478c-9197-9b051acf093c
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 1fb0fde2054528679235268ae96e3b7e78de80ef
 workflow-type: tm+mt
-source-wordcount: '748'
-ht-degree: 4%
+source-wordcount: '779'
+ht-degree: 3%
 
 ---
 
 # 发布目标端点API操作 {#publish-destination}
+
+>[!IMPORTANT]
+>
+>仅当您提交的是要供其他Experience Platform客户使用的产品化（公共）目标时，才需要使用此API端点。 如果您创建供自己使用的专用目标，则无需使用发布API正式提交该目标。
 
 >[!IMPORTANT]
 >
@@ -22,8 +26,9 @@ ht-degree: 4%
 在以下情况下，使用发布目标API端点提交发布请求：
 
 * 作为Destination SDK合作伙伴，您希望在所有Experience Platform组织中提供产品化目标，以供所有Experience Platform客户使用；
-* 您希望在您自己的Experience Platform组织中，在所有沙箱中提供自定义目标。
 * 你做 *任何更新* 到您的配置。 只有在您提交新的发布请求(该请求已获得Experience Platform团队批准)后，配置更新才会反映在目标中。
+
+<!-- * You want to make your custom destination available in your own Experience Platform organization, across all sandboxes. -->
 
 ## 目标发布API操作快速入门 {#get-started}
 
