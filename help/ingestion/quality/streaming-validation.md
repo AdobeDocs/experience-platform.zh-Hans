@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: 流式摄取允许您使用流式端点实时将数据上传到Adobe Experience Platform。 流摄取API支持两种验证模式 — 同步和异步。
 exl-id: 6e9ac943-6d73-44de-a13b-bef6041d3834
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 958bd461be0eb3ed59b44759407bed40a3edc00a
 workflow-type: tm+mt
-source-wordcount: '898'
+source-wordcount: '917'
 ht-degree: 3%
 
 ---
@@ -59,6 +59,10 @@ ht-degree: 3%
 - 格式
 
 ## 同步验证
+
+>[!WARNING]
+>
+>的 `syncValidation` 查询参数仅适用于单个消息端点，不能用于批处理端点。
 
 同步验证是一种验证方法，可提供有关摄取失败原因的即时反馈。 但是，失败时，验证失败的记录会被丢弃，并阻止下游发送。 因此，只应在开发过程中使用同步验证。 进行同步验证时，将通知呼叫者XDM验证的结果，如果验证失败，则还将告知失败原因。
 
