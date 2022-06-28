@@ -3,18 +3,23 @@ title: 使用数据卫生API删除消费者记录
 description: 了解如何以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 hide: true
 hidefromtoc: true
-source-git-commit: 9057d424d63217a3cef7ad2237a65700d9159323
+exl-id: d80a4be3-e072-4bb4-a56d-b34a20f88c78
+source-git-commit: c0d51d33d1e9d49d43f732925f2a794b5afea03b
 workflow-type: tm+mt
-source-wordcount: '481'
+source-wordcount: '505'
 ht-degree: 1%
 
 ---
 
 # 使用数据卫生API删除消费者记录
 
+>[!IMPORTANT]
+>
+>数据卫生API目前处于测试阶段。 本文档中概述的功能可能会发生更改。
+
 数据卫生API允许您以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 
-您可以通过以下根路径访问API: `https://platform.adobe.io/data/core/hygiene/`
+您可以通过与 [Privacy ServiceAPI](../../privacy-service/api/overview.md): `https://platform.adobe.io/data/core/privacy/`
 
 ## 快速入门
 
@@ -52,7 +57,7 @@ POST /jobs
 
 ```shell
 curl -X POST \
-  https://platform.adobe.io/data/core/hygiene/jobs \
+  https://platform.adobe.io/data/core/privacy/jobs \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
