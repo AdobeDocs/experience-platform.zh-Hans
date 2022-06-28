@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理角色权限
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面配置角色权限的信息
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: c31855bff9d87133252c43e2f2f2fe1960c7b144
+source-git-commit: 79ffdf35e27d74a64ea8e25544fdeeb293b58306
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '930'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。
+
+>[!IMPORTANT]
+>
+>访问控制使用用户ID（分配给用户的内部唯一ID）来授予权限。 将组织从Adobe ID迁移到业务ID后，为其用户设置的所有权限都将丢失，因为用户ID会发生更改，而访问控制将使用新生成的用户ID。 如果贵组织已迁移到业务ID，请联系您的Adobe代表，将您的用户ID从Adobe ID迁移到业务ID。
 
 权限是Experience Cloud区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。
 

@@ -5,9 +5,9 @@ title: 访问控制疑难解答指南
 topic-legacy: troubleshooting guide
 description: 本文档提供了有关Adobe Experience Platform中访问控制的常见问题解答。
 exl-id: c299c0c4-dbee-4e6d-8af4-2446444bed69
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 79ffdf35e27d74a64ea8e25544fdeeb293b58306
 workflow-type: tm+mt
-source-wordcount: '321'
+source-wordcount: '408'
 ht-degree: 0%
 
 ---
@@ -33,3 +33,7 @@ ht-degree: 0%
 权限按 [!DNL Platform] (例如 [!DNL Data Management] 和 [!DNL Profile Management])。 有关可用权限及其所属群组的完整列表，请参阅 [权限部分](home.md#permissions) 在访问控制概述中。
 
 请参阅 [访问控制概述](home.md) 以了解有关提供基于角色的访问控制的更多信息。
+
+## 从AdobeIO迁移到业务ID后，权限会发生什么情况？
+
+访问控制使用用户ID（分配给用户的内部唯一ID）来授予权限。 将组织从Adobe ID迁移到业务ID后，为其用户设置的所有权限都将丢失，因为用户ID会发生更改，而访问控制将使用新生成的用户ID。 如果贵组织已迁移到业务ID，请联系您的Adobe代表，将您的用户ID从Adobe ID迁移到业务ID。
