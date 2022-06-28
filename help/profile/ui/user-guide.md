@@ -4,50 +4,50 @@ title: Real-time Customer Profile UI指南
 topic-legacy: guide
 description: 实时客户资料可整合来自多个渠道的数据（包括在线、离线、CRM和第三方数据），从而创建每个客户的整体视图。 本文档是在Adobe Experience Platform用户界面中与实时客户资料进行交互的指南。
 exl-id: 792a3a73-58a4-4163-9212-4d43d24c2770
-source-git-commit: 771be1f5939066295c01eb573a13dbb740e8c776
+source-git-commit: 5500ba7f303fe4ebb9811d249f334d12f9fd3d66
 workflow-type: tm+mt
-source-wordcount: '1774'
+source-wordcount: '1776'
 ht-degree: 0%
 
 ---
 
 # [!DNL Real-time Customer Profile] UI指南
 
-[!DNL Real-time Customer Profile] 通过整合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据，创建每个客户的整体视图。本文档是与Adobe Experience Platform用户界面(UI)中的[!DNL Real-time Customer Profile]数据交互的指南。
+[!DNL Real-time Customer Profile] 通过整合来自多个渠道（包括在线、离线、CRM和第三方数据）的数据，创建每个客户的整体视图。 本文档是与交互的指南 [!DNL Real-time Customer Profile] Adobe Experience Platform用户界面(UI)中的数据。
 
 ## 快速入门
 
-本UI指南要求您了解管理[!DNL Real-time Customer Profiles]涉及的各种[!DNL Experience Platform]服务。 在阅读本指南或在UI中工作之前，请查阅以下服务的文档：
+此UI指南需要了解 [!DNL Experience Platform] 管理涉及的服务 [!DNL Real-time Customer Profiles]. 在阅读本指南或在UI中工作之前，请查阅以下服务的文档：
 
 * [[!DNL Real-time Customer Profile] 概述](../home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
-* [[!DNL Identity Service]](../../identity-service/home.md):通过在 [!DNL Real-time Customer Profile] 将不同数据源摄取到时桥接其身份，从而实现了 [!DNL Platform]这一点。
-* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):用于组织客户体验数 [!DNL Platform] 据的标准化框架。
+* [[!DNL Identity Service]](../../identity-service/home.md):启用 [!DNL Real-time Customer Profile] 通过在引入时桥接来自不同数据源的身份 [!DNL Platform].
+* [[!DNL Experience Data Model (XDM)]](../../xdm/home.md):标准化框架， [!DNL Platform] 组织客户体验数据。
 
 ## [!UICONTROL 概述]
 
-在Experience PlatformUI中，选择左侧导航中的&#x200B;**[!UICONTROL Profiles]** ，以打开显示用户档案仪表板的&#x200B;**[!UICONTROL Overview]**&#x200B;选项卡。
+在Experience PlatformUI中，选择 **[!UICONTROL 用户档案]** 在左侧导航中打开 **[!UICONTROL 概述]** 选项卡，其中显示了用户档案功能板。
 
 >[!NOTE]
 >
->如果贵组织是Platform的新用户，但尚未创建活动的配置文件数据集或合并策略，则[!UICONTROL Profiles]功能板将不可见。 相反， [!UICONTROL 概述]选项卡会显示可帮助您开始使用实时客户资料的链接和文档。
+>如果贵组织是Platform的新用户，并且尚未创建活动的配置文件数据集或合并策略，则 [!UICONTROL 用户档案] 功能板不可见。 相反， [!UICONTROL 概述] 选项卡会显示可帮助您开始使用实时客户配置文件的链接和文档。
 
 ### 用户档案仪表板 {#profile-dashboard}
 
 配置文件功能板概述了与贵组织的配置文件数据相关的关键量度。
 
-要了解更多信息，请访问[配置文件仪表板指南](../../dashboards/guides/profiles.md)。
+要了解更多信息，请访问 [配置文件仪表板指南](../../dashboards/guides/profiles.md).
 
 ![](../../dashboards/images/profiles/dashboard-overview.png)
 
-##  Browsetab量度
+## [!UICONTROL 浏览] 选项卡量度
 
-选择&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡以显示与贵组织的配置文件数据相关的多个量度。 您还可以使用此选项卡使用合并策略或标识浏览配置文件存储，如本指南下一节中所述。
+选择 **[!UICONTROL 浏览]** 选项卡，以显示与贵组织的配置文件数据相关的多个量度。 您还可以使用此选项卡使用合并策略或标识浏览配置文件存储，如本指南下一节中所述。
 
-在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡的右侧是[配置文件计数](#profile-count)以及按命名空间](#profiles-by-namespace)列出的[配置文件。
+在的右侧 **[!UICONTROL 浏览]** 选项卡 [配置文件计数](#profile-count) 以及 [按命名空间划分的配置文件](#profiles-by-namespace).
 
 >[!NOTE]
 >
->这些配置文件量度可能与[配置文件功能板](#profile-dashboard)上显示的量度有所不同，因为它们是使用您组织的默认合并策略评估的。 有关使用合并策略（包括如何定义默认合并策略）的更多信息，请参阅[合并策略概述](../merge-policies/overview.md)。
+>这些配置文件量度可能与 [配置文件仪表板](#profile-dashboard) 因为它们是使用您组织的默认合并策略评估的。 有关使用合并策略（包括如何定义默认合并策略）的更多信息，请参阅 [合并策略概述](../merge-policies/overview.md).
 
 除了这些量度之外，此部分还提供上次更新的日期和时间，以显示上次评估量度的时间。
 
@@ -61,62 +61,62 @@ ht-degree: 0%
 
 #### 更新用户档案计数量度
 
-当将记录摄取到[!DNL Profile]存储中时，计数增加或减少5%以上时，将触发一个作业来更新计数。 对于流数据工作流，每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果已执行，则会自动触发作业以更新用户档案计数。 对于批量摄取，在将批次成功摄取到用户档案存储的15分钟内，如果满足5%的增加或减少阈值，则会运行一个作业以更新用户档案计数。
+将记录摄取到 [!DNL Profile] 存储会增加或减少计数5%以上，则会触发作业以更新计数。 对于流数据工作流，每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果已执行，则会自动触发作业以更新用户档案计数。 对于批量摄取，在将批次成功摄取到用户档案存储的15分钟内，如果满足5%的增加或减少阈值，则会运行一个作业以更新用户档案计数。
 
 ### [!UICONTROL 按命名空间划分的配置文件] {#profiles-by-namespace}
 
-**[!UICONTROL 按命名空间划分的配置文件]**&#x200B;量度显示配置文件存储区中所有合并配置文件中命名空间的总计数和划分。 按命名空间划分的配置文件总数（即，将每个命名空间显示的值相加）将始终高于配置文件计数量度，因为一个配置文件可能具有与其关联的多个命名空间。 例如，如果客户在多个渠道上与您的品牌交互，则多个命名空间将与该个别客户关联。
+的 **[!UICONTROL 按命名空间划分的配置文件]** 量度显示配置文件存储区中所有合并配置文件中命名空间的总数和划分。 按命名空间划分的配置文件总数（即，将每个命名空间显示的值相加）将始终高于配置文件计数量度，因为一个配置文件可能具有与其关联的多个命名空间。 例如，如果客户在多个渠道上与您的品牌进行交互，则多个命名空间将与该个别客户关联。
 
-#### 按命名空间]更新配置文件[!UICONTROL 
+#### 更新 [!UICONTROL 按命名空间划分的配置文件] 量度
 
-与[配置文件计数](#profile-count)量度类似，当将记录摄取到[!DNL Profile]存储中时，计数增加或减少5%以上时，将触发一个作业以更新命名空间量度。 对于流数据工作流，每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果已执行，则会自动触发作业以更新用户档案计数。 对于批量摄取，在成功将批摄取到[!DNL Profile]存储的15分钟内，如果满足5%的增加或减少阈值，则运行作业以更新量度。
+与 [配置文件计数](#profile-count) 量度，将记录摄取到 [!DNL Profile] 存储会增加或减少计数5%以上，则会触发作业以更新命名空间量度。 对于流数据工作流，每小时进行一次检查，以确定是否满足5%的增加或减少阈值。 如果已执行，则会自动触发作业以更新用户档案计数。 对于批量摄取，在成功将批摄取到 [!DNL Profile] 存储，如果满足5%的增加或减少阈值，则运行作业以更新量度。
 
-## 使用[!UICONTROL Browse]选项卡查看配置文件
+## 使用 [!UICONTROL 浏览] 选项卡以查看用户档案
 
-在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡上，您可以使用合并策略查看示例配置文件，或使用身份命名空间和值查找特定配置文件。
+在 **[!UICONTROL 浏览]** 选项卡，您可以使用合并策略查看示例配置文件，或使用身份命名空间和值查找特定配置文件。
 
 ![](../images/user-guide/browse-by-none-selected.png)
 
-### 按[!UICONTROL 合并策略]浏览
+### 浏览者 [!UICONTROL 合并策略]
 
-默认情况下， **[!UICONTROL Browse]**&#x200B;选项卡将设置为贵组织的默认合并策略。 要选择其他合并策略，请选择合并策略名称旁边的`X`，然后使用选择器打开&#x200B;**[!UICONTROL 选择合并策略]**&#x200B;对话框。
+的 **[!UICONTROL 浏览]** 选项卡默认设置为组织的默认合并策略。 要选择其他合并策略，请选择 `X` ，然后使用选择器打开 **[!UICONTROL 选择合并策略]** 对话框。
 
 >[!NOTE]
 >
->如果未选择合并策略，请使用&#x200B;**[!UICONTROL Merge policy]**&#x200B;字段旁边的选择器按钮打开选择对话框。
+>如果未选择合并策略，请使用 **[!UICONTROL 合并策略]** 字段以打开选择对话框。
 
 ![](../images/user-guide/browse-by-merge-policy.png)
 
-要从&#x200B;**[!UICONTROL 选择合并策略]**&#x200B;对话框中选择合并策略，请选择策略名称旁边的单选按钮，然后使用&#x200B;**[!UICONTROL 选择]**&#x200B;返回到[!UICONTROL 浏览]选项卡。 然后，您可以选择&#x200B;**[!UICONTROL View]**&#x200B;以刷新示例配置文件，并查看应用了新合并策略的配置文件采样。
+从 **[!UICONTROL 选择合并策略]** 对话框中，选择策略名称旁边的单选按钮，然后使用 **[!UICONTROL 选择]** 返回 [!UICONTROL 浏览] 选项卡。 然后，您可以选择 **[!UICONTROL 查看]** 刷新示例用户档案，并查看应用了新合并策略的用户档案采样。
 
 ![](../images/user-guide/select-merge-policy-dialog.png)
 
 显示的用户档案表示在应用所选合并策略后，您组织的用户档案存储中最多有20个用户档案的样例。 将新数据添加到贵组织的配置文件存储区后，将刷新选定合并策略的示例配置文件。
 
-要查看其中一个示例配置文件的详细信息，请选择&#x200B;**[!UICONTROL 配置文件ID]**。 有关详细信息，请参阅本指南后面关于[查看配置文件详细信息](#profile-detail)的部分。
+要查看其中一个示例用户档案的详细信息，请选择 **[!UICONTROL 配置文件ID]**. 有关更多信息，请参阅本指南后面部分的 [查看配置文件详细信息](#profile-detail).
 
 ![](../images/user-guide/sample-profiles.png)
 
-要详细了解合并策略及其在Platform中的角色，请参阅[合并策略概述](../merge-policies/overview.md)。
+要进一步了解合并策略及其在Platform中的角色，请参阅 [合并策略概述](../merge-policies/overview.md).
 
 
-### 按[!UICONTROL Identity]浏览 {#browse-identity}
+### 浏览者 [!UICONTROL 身份] {#browse-identity}
 
-在&#x200B;**[!UICONTROL Browse]**&#x200B;选项卡上，您可以使用身份命名空间来按身份值查找特定配置文件。 按身份浏览需要您提供合并策略、身份命名空间和身份值。
+在 **[!UICONTROL 浏览]** 选项卡中，您可以使用标识命名空间来按标识值查找特定的配置文件。 按身份浏览需要您提供合并策略、身份命名空间和身份值。
 
 ![](../images/user-guide/browse-by-identity.png)
 
-如有必要，请使用&#x200B;**[!UICONTROL 合并策略]**&#x200B;选择器打开&#x200B;**[!UICONTROL 选择合并策略]**&#x200B;对话框，然后选择要使用的合并策略。
+如有必要，请使用 **[!UICONTROL 合并策略]** 用于打开的选择器 **[!UICONTROL 选择合并策略]** 对话框，然后选择要使用的合并策略。
 
 ![](../images/user-guide/select-merge-policy-dialog.png)
 
-然后，使用&#x200B;**[!UICONTROL 标识命名空间]**&#x200B;选择器打开&#x200B;**[!UICONTROL 选择标识命名空间]**&#x200B;对话框，并选择要搜索的命名空间。 如果贵组织具有多个命名空间，则可以使用对话框中的搜索栏开始键入命名空间的名称。
+然后，使用 **[!UICONTROL 身份命名空间]** 用于打开的选择器 **[!UICONTROL 选择身份命名空间]** 对话框，然后选择要搜索的命名空间。 如果贵组织具有多个命名空间，则可以使用对话框中的搜索栏开始键入命名空间的名称。
 
-您可以选择命名空间以查看其他详细信息，也可以选择单选按钮以选择命名空间。 然后，可以使用&#x200B;**[!UICONTROL Select]**&#x200B;继续。
+您可以选择命名空间以查看其他详细信息，或选择单选按钮以选择命名空间。 然后，您可以使用 **[!UICONTROL 选择]** 继续。
 
 ![](../images/user-guide/profiles-select-identity-namespace.png)
 
-选择[!UICONTROL 标识命名空间]并返回到[!UICONTROL Browse]选项卡后，可以输入与您选择的命名空间相关的&#x200B;**[!UICONTROL 标识值]**。
+选择 [!UICONTROL 身份命名空间] 然后回到 [!UICONTROL 浏览] 选项卡，您可以输入 **[!UICONTROL 标识值]** 与您选择的命名空间相关。
 
 >[!NOTE]
 >
@@ -124,15 +124,15 @@ ht-degree: 0%
 
 ![](../images/user-guide/browse-by-identity-values.png)
 
-输入值后，选择&#x200B;**[!UICONTROL 查看]**，并返回与该值匹配的单个配置文件。 选择&#x200B;**[!UICONTROL 配置文件ID]**&#x200B;以查看配置文件详细信息。
+输入值后，选择 **[!UICONTROL 查看]** 并返回与值匹配的单个用户档案。 选择 **[!UICONTROL 配置文件ID]** 查看配置文件详细信息。
 
 ![](../images/user-guide/browse-by-identity-profile.png)
 
 ## 查看配置文件详细信息 {#profile-detail}
 
-选择&#x200B;**[!UICONTROL 配置文件ID]**&#x200B;后，将打开&#x200B;**[!UICONTROL 详细信息]**&#x200B;选项卡。 **[!UICONTROL Detail]**&#x200B;选项卡中显示的配置文件信息已从多个配置文件片段合并到一起，以形成单个客户的单个视图。 这包括客户详细信息，如基本属性、链接的身份和渠道首选项。
+选择 **[!UICONTROL 配置文件ID]**, **[!UICONTROL 详细信息]** 选项卡。 在 **[!UICONTROL 详细信息]** 选项卡已从多个配置文件片段合并到一起，以形成单个客户的单个视图。 这包括客户详细信息，如基本属性、链接的身份和渠道首选项。
 
-显示的默认字段也可以在组织级别更改，以显示首选的用户档案属性。 要了解有关自定义这些字段的更多信息，包括关于添加和删除属性以及调整功能板大小的分步说明，请阅读[配置文件详细信息自定义指南](profile-customization.md)。
+显示的默认字段也可以在组织级别更改，以显示首选的用户档案属性。 要了解有关自定义这些字段的更多信息，包括有关添加和删除属性以及调整功能板面板大小的分步说明，请阅读 [配置文件详细自定义指南](profile-customization.md).
 
 ![](../images/user-guide/profiles-profile-detail.png)
 
@@ -142,44 +142,44 @@ ht-degree: 0%
 
 ### “属性”选项卡
 
-**[!UICONTROL Attributes]**&#x200B;选项卡提供一个列表视图，在应用指定的合并策略后，该视图将汇总与单个配置文件相关的所有属性。
+的 **[!UICONTROL 属性]** 选项卡提供了一个列表视图，其中汇总了在应用指定的合并策略后与单个配置文件相关的所有属性。
 
-通过选择&#x200B;**[!UICONTROL 查看JSON]**，还可以将这些属性视为JSON对象。 对于希望更好地了解如何将配置文件属性摄取到平台的任何用户而言，此功能非常有用。
+通过选择 **[!UICONTROL 查看JSON]**. 对于希望更好地了解如何将配置文件属性摄取到平台的任何用户而言，此功能非常有用。
 
 ![](../images/user-guide/profiles-attributes.png)
 
 ### “事件”选项卡
 
-**[!UICONTROL 事件]**&#x200B;选项卡包含与客户关联的ExperienceEvents相关的数据。 这可能包括电子邮件打开次数、购物车活动、页面查看次数等。 选择&#x200B;**[!UICONTROL 查看任何单个事件的所有]**&#x200B;会提供附加字段和值捕获作为事件的一部分。
+的 **[!UICONTROL 事件]** 选项卡包含与客户关联的100个最新ExperienceEvent中的数据。 此数据可能包括电子邮件打开次数、购物车活动和页面查看次数。 选择 **[!UICONTROL 查看全部]** 对于任何单个事件，都会提供作为事件一部分的附加字段和值捕获。
 
-事件也可以作为JSON对象查看，方法是选择&#x200B;**[!UICONTROL 查看JSON]**。 这有助于了解如何在平台中捕获事件。
+通过选择 **[!UICONTROL 查看JSON]**. 这有助于了解如何在平台中捕获事件。
 
 ![](../images/user-guide/profiles-events.png)
 
 ### “区段成员资格”选项卡
 
-**[!UICONTROL 区段成员资格]**&#x200B;选项卡显示一个列表，其中包含单个客户配置文件当前所属的区段的名称和说明。 当配置文件符合区段条件或过期时，此列表会自动更新。 用户档案当前符合条件的区段总数会显示在选项卡的右侧。
+的 **[!UICONTROL 区段成员资格]** 选项卡会显示一个列表，其中包含单个客户配置文件当前所属的区段的名称和描述。 当配置文件符合区段条件或过期时，此列表会自动更新。 用户档案当前符合条件的区段总数会显示在选项卡的右侧。
 
-有关Experience Platform中分段的更多信息，请参阅[AdobeExperience Platform分段服务文档](../../segmentation/home.md)。
+有关Experience Platform中分段的更多信息，请参阅 [AdobeExperience Platform分段服务文档](../../segmentation/home.md).
 
 ![](../images/user-guide/profiles-segment-membership.png)
 
 ## 合并策略
 
-从主&#x200B;**[!UICONTROL 配置文件]**&#x200B;菜单中，选择&#x200B;**[!UICONTROL 合并策略]**&#x200B;选项卡，以查看属于贵组织的合并策略列表。 列出的每个策略都会显示其名称（无论是否是默认合并策略）以及它所应用的架构类。
+从主 **[!UICONTROL 用户档案]** 菜单，选择 **[!UICONTROL 合并策略]** 选项卡，查看属于贵组织的合并策略列表。 列出的每个策略都会显示其名称（无论是否是默认合并策略）以及它所应用的架构类。
 
-有关合并策略的更多信息，请参阅[合并策略概述](../merge-policies/overview.md)。
+有关合并策略的更多信息，请参阅 [合并策略概述](../merge-policies/overview.md).
 
 ![](../images/user-guide/profiles-merge-policies.png)
 
 ## 并集模式 {#union-schema}
 
-从主&#x200B;**[!UICONTROL Profiles]**&#x200B;菜单中，选择&#x200B;**[!UICONTROL 合并架构]**&#x200B;选项卡，以查看所摄取数据的可用合并架构。 并集架构是同一类下所有[!DNL Experience Data Model](XDM)字段的合并，该类的架构已启用以供在[!DNL Real-time Customer Profile]中使用。
+从主 **[!UICONTROL 用户档案]** 菜单，选择 **[!UICONTROL 并集架构]** 选项卡，以查看所摄取数据的可用合并架构。 联盟模式是所有 [!DNL Experience Data Model] (XDM)同一类下的字段，其架构已启用以供在中使用 [!DNL Real-time Customer Profile].
 
-有关并集架构的更多信息，请访问[并集架构UI指南](union-schema.md)。
+有关合并模式的更多信息，请访问 [并集架构UI指南](union-schema.md).
 
 ![](../images/user-guide/profiles-union-schema.png)
 
 ## 后续步骤
 
-通过阅读本指南，您了解如何使用Experience PlatformUI查看和管理组织的用户档案数据。 有关如何使用Experience PlatformAPI处理用户档案数据的信息，请参阅[实时客户档案API指南](../api/overview.md)。
+通过阅读本指南，您了解如何使用Experience PlatformUI查看和管理组织的用户档案数据。 有关如何使用Experience PlatformAPI处理用户档案数据的信息，请参阅 [实时客户资料API指南](../api/overview.md).
