@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 83f7fca5d8a3fd2a57d39c155153caa70d89d353
+source-git-commit: 4e80588777e1c5f334e15533c7c44623a0cd2b64
 workflow-type: tm+mt
-source-wordcount: '1398'
-ht-degree: 44%
+source-wordcount: '1426'
+ht-degree: 43%
 
 ---
 
@@ -13,6 +13,12 @@ ht-degree: 44%
 # Adobe Experience Platform Web SDK扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅 [平台Web SDK发行说明](https://experienceleague.adobe.com/docs/experience-platform/edge/release-notes.html).
+
+## 版本2.13.0 - 2022年6月29日
+
+* 修复了XDM对象数据元素（如eVar）中数值属性的排序顺序。
+
+包含Adobe Experience Platform Web SDK库的版本2.12.0。
 
 ## 版本2.12.0 - 2022年6月13日
 
