@@ -5,9 +5,9 @@ title: 流分段UI指南
 topic-legacy: ui guide
 description: 通过Adobe Experience Platform上的流式分段，您可以近乎实时地进行分段，同时重点关注数据的丰富性。 使用流式分段，区段鉴别现在会在数据登陆平台时进行，从而缓解了计划和运行分段作业的需求。 借助此功能，大多数区段规则现在都可以在数据传递到平台时进行评估，这意味着区段成员资格将保持为最新状态，而无需运行计划的分段作业。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 4022eb62e791282bb519f9604b6edf903d69239f
+source-git-commit: f6825869805733d2c3838f0cad0bca0f4baf7f16
 workflow-type: tm+mt
-source-wordcount: '1295'
+source-wordcount: '1315'
 ht-degree: 0%
 
 ---
@@ -67,9 +67,9 @@ ht-degree: 0%
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment.png)
 
-具体而言， **[!UICONTROL 合格受众总大小]** 中。 的 **[!UICONTROL 合格受众总数]** 显示上次完成区段作业运行中符合条件的受众的总数。 如果区段作业在过去24小时内未完成，则将从估计中获取受众数量。
+具体而言， **[!UICONTROL 合格总数]** 量度，该量度会根据此区段的批量评估和流评估显示符合条件的受众总数。
 
-下面是一个折线图，显示过去24小时内符合条件且被取消资格的区段数量。 可以调整下拉菜单以显示最近24小时、上周或最近30天。
+下面是一个折线图，其中显示了使用流评估方法在过去24小时内更新的新受众数量。 可以调整下拉菜单以显示最近24小时、上周或最近30天。 的 **[!UICONTROL 新受众已更新]** 量度基于选定时间范围内受众大小的更改，由流式分段评估。 此量度不包括每日区段批量评估中的符合条件的受众总数。
 
 >[!NOTE]
 >
@@ -79,7 +79,7 @@ ht-degree: 0%
 
 ![](../images/ui/streaming-segmentation/monitoring-streaming-segment-graph.png)
 
-通过选择信息气泡，可以找到有关最后一个区段评估的其他信息。
+通过选择旁边的信息气泡，可以找到有关最后一个区段评估的其他信息 **[!UICONTROL 合格总数]**.
 
 ![](../images/ui/streaming-segmentation/info-bubble.png)
 
