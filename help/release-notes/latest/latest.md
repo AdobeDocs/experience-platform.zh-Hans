@@ -1,11 +1,11 @@
 ---
-title: Adobe Experience Platform发行说明2022年6月
-description: 2022年6月版Adobe Experience Platform发行说明。
+title: Adobe Experience Platform 发行说明
+description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 3b0ae00e97eddc342e5a502f4ebf08d2fa90259f
+source-git-commit: def32d9667c4630de760d228c88676eb9d5a6de4
 workflow-type: tm+mt
-source-wordcount: '1036'
-ht-degree: 5%
+source-wordcount: '1786'
+ht-degree: 4%
 
 ---
 
@@ -18,6 +18,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [[!DNL Data Collection]](#data-collection)
 - [[!DNL Data Science Workspace]](#dsw)
 - [[!DNL Destinations]](#destinations)
+- [体验数据模型(XDM)](#xdm)
 - [查询服务](#query-service)
 - [源](#sources)
 
@@ -74,6 +75,46 @@ Platform提供了一套技术，允许您收集客户端客户体验数据，并
 {style=&quot;table-layout:auto&quot;}
 
 有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
+
+## 体验数据模型(XDM) {#xdm}
+
+XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
+
+**新的XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 类 | [[!UICONTROL 药物]](https://github.com/adobe/xdm/blob/master/components/classes/medication.schema.json) | 医疗保健行业的类别，可捕获用于医疗治疗的物质的细节，特别是药物或药物。 |
+| 类 | [[!UICONTROL 规划]](https://github.com/adobe/xdm/blob/master/components/classes/plan.schema.json) | 医疗行业类别，可捕获有关医疗计划的详细信息，如医疗计划或保险计划。 |
+| 类 | [[!UICONTROL 提供程序]](https://github.com/adobe/xdm/blob/master/components/classes/provider.schema.json) | 医疗保健行业的一门课程，可捕获有关医疗保健提供商的详细信息。 |
+| 类 | [[!UICONTROL 付款人]](https://github.com/adobe/xdm/blob/master/components/classes/payer.schema.json) | 医疗保健行业的一门课程，可捕获保险公司的详细信息。 |
+| 类 | [[!UICONTROL 实时事件计划]](https://github.com/adobe/xdm/blob/master/components/classes/live-event-schedule.json) | 一种体育和娱乐行业课程，可捕获有关现场活动日程表的详细信息，例如巡回音乐会日程表或体育队日程表。 |
+| 类 | [[!UICONTROL 位置]](https://github.com/adobe/xdm/blob/master/components/classes/location.json) | 捕捉现场活动位置的体育和娱乐行业课程，例如音乐厅或体育场。 |
+| 字段组 | [[!UICONTROL 一种保健药物]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/medication/healthcare-medication.schema.json) | 的字段组 [!UICONTROL 药物] 类，可捕获有关药品的详细信息，如品牌名称、批号和数量。 |
+| 字段组 | [[!UICONTROL 医疗保健计划详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/plan/healthcare-plan-details.schema.json) | 的字段组 [!UICONTROL 计划] 类，可捕获网络、类型和活动状态等详细信息。 |
+| 字段组 | [[!UICONTROL 医疗保健提供商]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/provider/healthcare-provider-details.schema.json) | 的字段组 [!UICONTROL 提供程序] 类别，可捕获个人健康专业人员或获准提供医疗诊断和治疗服务的医疗设施组织的详细信息。 |
+| 字段组 | [[!UICONTROL 医疗保健会员详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/provider/healthcare-provider-details.schema.json) | 的字段组 [!UICONTROL XDM个人配置文件] 类别，用于捕获拥有或将接受服务或护理的人员的详细信息，例如联系信息、初级护理医师和计划信息。 |
+| 字段组 | [[!UICONTROL 站点工具详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-healthcare-sitetool.schema.json) | 的字段组 [!UICONTROL XDM ExperienceEvent] 类，用于捕获由站点工具收集的信息，例如查表、调查等。 |
+| 字段组 | [[!UICONTROL 实时事件票证购买]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-live-event-ticket-purchase.json) | 的字段组 [!UICONTROL XDM ExperienceEvent] 可捕获现场活动（如音乐会或体育比赛）票证的购买历史记录的类。 |
+| 字段组 | [[!UICONTROL 体育和娱乐活动日程安排]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/live-event-schedule/sports-entertainment-event-schedule.schema.json) | 的字段组 [!UICONTROL 实时事件计划] 可捕获有关日程安排的更多详细信息的类，例如吸引力名称、开门时间等。 |
+| 字段组 | [[!UICONTROL 体育娱乐活动场地]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/location/sports-entertainment-event-venue.schema.json) | 的字段组 [!UICONTROL 位置] 类，可捕获有关活动场地的更多详细信息，如座位容量和指定市场区域(DMA)。 |
+| 全局模式 | （几个） | RTCDP分析的目标量度提供了新的全局模式。 请参阅以下内容 [拉取请求](https://github.com/adobe/xdm/pull/1560) 以了解更多详细信息。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+**更新了XDM组件**
+
+| 组件类型 | 名称 | 更新描述 |
+| --- | --- | --- |
+| 行为 | [[!UICONTROL 时间系列架构]](https://github.com/adobe/xdm/blob/master/components/behaviors/time-series.schema.json) | 添加了媒体状态更新事件类型。 |
+| 字段组 | [[!UICONTROL 住宿预订]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/industry-verticals/experienceevent-lodging-reservation.schema.json) | 添加了住宿结帐资产。 |
+| 数据类型 | [[!UICONTROL 媒体信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/media.schema.json) | 添加了states-start和states-end字段。 |
+| 扩展 | [[!UICONTROL Workfront更改事件]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/changeevent.schema.json) | 添加了两个用于存储属性的字段，以帮助识别用户和创建事件的时间。 |
+| 扩展 | [[!UICONTROL AdobeCJM ExperienceEvent — 消息交互详细信息]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/message-interaction.schema.json) | 在登陆页面对象中添加了订阅、同意、自定义电子邮件和其他数据信息。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
 ## 查询服务 {#query-service}
 
