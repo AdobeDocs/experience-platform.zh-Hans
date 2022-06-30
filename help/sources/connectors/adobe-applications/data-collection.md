@@ -2,7 +2,8 @@
 keywords: Experience Platform；主页；热门主题；源；源；数据收集
 title: Adobe数据收集
 description: 本文档概述了Adobe数据收集源。
-source-git-commit: be3967e7045e159736952e369a55df322afd9fec
+exl-id: 3cb582a9-b852-4ede-8047-af1a47aa3647
+source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
 workflow-type: tm+mt
 source-wordcount: '296'
 ht-degree: 0%
@@ -31,8 +32,8 @@ Adobe数据收集的源集成允许您通过源目录访问数据收集Experienc
 
 ![数据流](./images/data-collection/datastreams.png)
 
-有关如何使用数据收集UI的完整步骤，请参阅 [数据收集端到端概述](../../../collection/e2e.md).
+有关如何使用数据收集UI的完整步骤，请参阅 [数据收集端到端概述](../../../rtcdp-connections/e2e.md).
 
 ## 后续步骤
 
-通过阅读本文档，您学习了如何使用源工作区访问数据收集UI。 有关数据收集的更多信息，请参阅 [数据收集概述](../../../collection/e2e.md).
+通过阅读本文档，您学习了如何使用源工作区访问数据收集UI。 有关数据收集的更多信息，请参阅 [数据收集概述](../../../rtcdp-connections/e2e.md).

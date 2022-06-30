@@ -3,7 +3,7 @@ title: Adobe Experience Platform中的数据加密
 topic-legacy: data protection
 description: 了解数据在传输中和在Adobe Experience Platform中存放时如何加密。
 exl-id: 184b2b2d-8cd7-4299-83f8-f992f585c336
-source-git-commit: ed897f512648797a31c20ba6d4f77aeaea62f200
+source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
 workflow-type: tm+mt
 source-wordcount: '398'
 ht-degree: 3%
@@ -24,7 +24,7 @@ Adobe Experience Platform是一个功能强大且可扩展的系统，可跨企�
 
 通常，数据通过三种方式引入平台：
 
-* [数据收集](../../collection/home.md) 功能允许网站和移动设备应用程序将数据发送到Platform Edge Network以进行暂存和准备摄取。
+* [数据收集](../../rtcdp-connections/home.md) 功能允许网站和移动设备应用程序将数据发送到Platform Edge Network以进行暂存和准备摄取。
 * [源连接器](../../sources/home.md) 将数据从Adobe Experience Cloud应用程序和其他企业数据源直接流到平台。
 * 非AdobeETL（提取、转换、加载）工具会将数据发送到 [批量摄取API](../../ingestion/batch-ingestion/overview.md) 消费。
 
