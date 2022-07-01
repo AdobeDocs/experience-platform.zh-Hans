@@ -2,9 +2,9 @@
 description: 本页列出并介绍了您可以使用“/authoring/destinations” API端点执行的所有API操作。
 title: 目标API端点操作
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: b12e46592c6c7bb09a90b809e7fac7d05703210a
+source-git-commit: 301cef53644e813c3fd43e7f2dbaf730c9e5fc11
 workflow-type: tm+mt
-source-wordcount: '2537'
+source-wordcount: '2571'
 ht-degree: 4%
 
 ---
@@ -148,7 +148,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `customerDataFields.isRequired` | 布尔型 | 指示目标设置工作流中是否需要此字段。 |
 | `customerDataFields.enum` | 字符串 | 将自定义字段呈现为下拉菜单，并列出可供用户使用的选项。 |
 | `customerDataFields.pattern` | 字符串 | 如果需要，可为自定义字段实施模式。 使用正则表达式来强制实施模式。 例如，如果您的客户ID不包含数字或下划线，请输入 `^[A-Za-z]+$` 中。 |
-| `uiAttributes.documentationLink` | 字符串 | 指 [目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) 你的目的地。 使用 `https://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中 `YOURDESTINATION` 是您的目标名称。 对于名为Moviestar的目标，您将使用 `https://www.adobe.com/go/destinations-moviestar-en`. |
+| `uiAttributes.documentationLink` | 字符串 | 指 [目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) 你的目的地。 使用 `https://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中 `YOURDESTINATION` 是您的目标名称。 对于名为Moviestar的目标，您将使用 `https://www.adobe.com/go/destinations-moviestar-en`. 请注意，此链接仅在Adobe设置目标处于实时状态且文档已发布后才可用。 |
 | `uiAttributes.category` | 字符串 | 是指分配给您在Adobe Experience Platform中的目标的类别。 有关更多信息，请阅读 [目标类别](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=en#destination-categories). 使用以下任一值： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. |
 | `uiAttributes.connectionType` | 字符串 | `Server-to-server` 是当前唯一可用的选项。 |
 | `uiAttributes.frequency` | 字符串 | `Streaming` 是当前唯一可用的选项。 |
@@ -587,7 +587,7 @@ curl -X GET https://platform.adobe.io/data/core/activation/authoring/destination
 | `customerDataFields.isRequired` | 布尔型 | 指示目标设置工作流中是否需要此字段。 |
 | `customerDataFields.enum` | 字符串 | 将自定义字段呈现为下拉菜单，并列出可供用户使用的选项。 |
 | `customerDataFields.pattern` | 字符串 | 如果需要，可为自定义字段实施模式。 使用正则表达式来强制实施模式。 例如，如果您的客户ID不包含数字或下划线，请输入 `^[A-Za-z]+$` 中。 |
-| `uiAttributes.documentationLink` | 字符串 | 指 [目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) 你的目的地。 使用 `https://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中 `YOURDESTINATION` 是您的目标名称。 对于名为Moviestar的目标，您将使用 `https://www.adobe.com/go/destinations-moviestar-en` |
+| `uiAttributes.documentationLink` | 字符串 | 指 [目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) 你的目的地。 使用 `https://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中 `YOURDESTINATION` 是您的目标名称。 对于名为Moviestar的目标，您将使用 `https://www.adobe.com/go/destinations-moviestar-en`. 请注意，此链接仅在Adobe设置目标处于实时状态且文档已发布后才可用。 |
 | `uiAttributes.category` | 字符串 | 是指分配给您在Adobe Experience Platform中的目标的类别。 有关更多信息，请阅读 [目标类别](https://experienceleague.adobe.com/docs/experience-platform/rtcdp/destinations/destination-types.html?lang=en#destination-categories). 使用以下任一值： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments` |
 | `uiAttributes.connectionType` | 字符串 | `Server-to-server` 是当前唯一可用的选项。 |
 | `uiAttributes.frequency` | 字符串 | `Streaming` 是当前唯一可用的选项。 |

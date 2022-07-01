@@ -2,9 +2,9 @@
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: （测试版）用于Destination SDK的基于文件的目标配置选项
 exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
-source-git-commit: bd89df0659604c05ffd049682343056dbe5667e3
+source-git-commit: 301cef53644e813c3fd43e7f2dbaf730c9e5fc11
 workflow-type: tm+mt
-source-wordcount: '2313'
+source-wordcount: '2330'
 ht-degree: 5%
 
 ---
@@ -587,7 +587,7 @@ ht-degree: 5%
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `documentationLink` | 字符串 | 指 [目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) 你的目的地。 使用 `http://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中 `YOURDESTINATION` 是您的目标名称。 对于名为Moviestar的目标，您将使用 `http://www.adobe.com/go/destinations-moviestar-en` |
+| `documentationLink` | 字符串 | 指 [目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) 你的目的地。 使用 `http://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中 `YOURDESTINATION` 是您的目标名称。 对于名为Moviestar的目标，您将使用 `http://www.adobe.com/go/destinations-moviestar-en`. 请注意，此链接仅在Adobe设置目标处于实时状态且文档已发布后才可用。 |
 | `category` | 字符串 | 是指分配给您在Adobe Experience Platform中的目标的类别。 有关更多信息，请阅读 [目标类别](https://experienceleague.adobe.com/docs/experience-platform/destinations/destination-types.html). 使用以下任一值： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. |
 | `iconUrl` | 字符串 | 您在其中托管要在目标目录卡中显示的图标的URL。 |
 | `connectionType` | 字符串 | 连接类型，具体取决于目标。 支持的值： <ul><li>`Azure Blob`</li><li>`Azure Data Lake Storage`</li><li>`S3`</li><li>`SFTP`</li></ul> |
