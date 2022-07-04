@@ -4,18 +4,16 @@ description: 了解Adobe Experience Platform Edge Network Server API如何识别
 seo-description: Learn how Adobe Experience Platform Edge Network Server API identifies visitors
 keywords: 边缘网络；网关；API；访客；识别
 exl-id: aa2f3b83-5cc8-4e02-9119-edfd5e212588
-source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
+source-git-commit: 6798c15b1cee781c41b9faf5cc6dcfa73090a60a
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '151'
 ht-degree: 5%
 
 ---
 
 # 访客识别
 
-## 概述 {#overview}
-
-边缘网络服务器API支持 [通过第一方ID进行访客识别([!DNL FPID])](visitor-identification-fpid.md)
+边缘网络服务器API支持 [通过第一方ID进行访客识别([!DNL FPID])](visitor-identification-fpid.md).
 
 应在 `identityMap` 字段组。 此字段组包含在AEP Web SDK中 `ExperienceEvent` 混合。
 

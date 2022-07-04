@@ -4,16 +4,14 @@ description: 了解如何通过使用FPID，通过服务器API始终如一地识
 seo-description: Learn how to consistently identify visitors via the Server API, by using the FPID
 keywords: 边缘网络；网关；API；访客；识别；FPID
 exl-id: c61d2e7c-7b5e-4b14-bd52-13dde34e32e3
-source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
+source-git-commit: 6798c15b1cee781c41b9faf5cc6dcfa73090a60a
 workflow-type: tm+mt
-source-wordcount: '340'
+source-wordcount: '348'
 ht-degree: 0%
 
 ---
 
 # 通过FPID识别访客
-
-## 概述
 
 [!DNL First-party IDs] (`FPIDs`)是客户生成、管理和存储的设备ID。 这使客户能够控制识别用户设备。 通过发送 `FPIDs`，则边缘网络不会生成全新 `ECID` 请求中不包含一个。
 
@@ -35,7 +33,7 @@ ht-degree: 0%
 }
 ```
 
-对于同时包含 `FPID` 和 `ECID`, `ECID` 请求中已存在的将优先于可从 `FPID`. 因此，边缘网络将使用 `ECID` 已提供，且不会从给定计算 `FPID`.
+对于同时包含 `FPID` 和 `ECID`, `ECID` 请求中已存在的将优先于可从 `FPID`. 换句话说，边缘网络使用 `ECID` 已提供和 `FPID` 将被忽略。 新 `ECID` 仅当 `FPID` 自行提供。
 
 就设备ID而言， `server` 数据流应使用 `FPID` 作为设备ID。 其他身份(即 `EMAIL`)，但边缘网络要求明确提供主标识。 主标识是将配置文件数据存储到其中的基本标识。
 
