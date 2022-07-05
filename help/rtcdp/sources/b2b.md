@@ -2,9 +2,9 @@
 title: Real-time Customer Data Platform B2B版中的源
 description: 源在Real-time Customer Data Platform B2B版中的角色概述。
 exl-id: eeea4b2e-67c5-4491-9b8e-4b8987e44777
-source-git-commit: 76bbb188f6a1643cc7f10f4a3cded1316be9e23c
+source-git-commit: 8b8e08adb5ff3498169c1702680ea44f3bebf5c5
 workflow-type: tm+mt
-source-wordcount: '223'
+source-wordcount: '247'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,10 @@ Real-time Customer Data Platform B2B Edition允许您通过各种来源(包括 [
 要了解源如何适合您的B2B工作流，请参阅 [端到端教程](../b2b-tutorial.md#ingest-your-data-into-experience-platform).
 
 请参阅 [源连接器概述](../../sources/home.md) 有关Adobe Experience Platform中可用源类型的详细信息。
+
+>[!IMPORTANT]
+>
+>您必须具有 [Real-time Customer Data Platform B2B版](../../rctcdp/../rtcdp/b2b-overview.md) 以便B2B模式参与 [实时客户资料](../proile/../../profile/home.md).
 
 以下文档提供了有关使用的更多信息 [!DNL Marketo] 要将B2B数据引入平台，请执行以下操作：
 
