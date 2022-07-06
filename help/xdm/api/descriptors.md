@@ -5,9 +5,9 @@ title: 描述符API端点
 description: 通过架构注册表API中的/descriptors端点，您可以以编程方式管理体验应用程序中的XDM描述符。
 topic-legacy: developer guide
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: b92246e729ca26387a3d375e5627165a29956e52
+source-git-commit: 65a6eca9450b3a3e19805917fb777881c08817a0
 workflow-type: tm+mt
-source-wordcount: '1836'
+source-wordcount: '1839'
 ht-degree: 3%
 
 ---
@@ -389,7 +389,7 @@ curl -X DELETE \
 
 #### 引用标识描述符
 
-引用标识描述符提供对模式字段主标识的引用上下文，从而允许其他模式中的字段引用该字段。 字段必须已使用标识描述符进行标记，然后才能对其应用引用描述符。
+引用标识描述符提供对模式字段主标识的引用上下文，从而允许其他模式中的字段引用该字段。 目标架构必须已经定义了主标识字段，然后才能由其他架构通过此描述符引用该字段。
 
 ```json
 {
@@ -406,7 +406,7 @@ curl -X DELETE \
 | `@type` | 定义的描述符类型。 对于引用标识描述符，必须将此值设置为 `xdm:descriptorReferenceIdentity`. |
 | `xdm:sourceSchema` | 的 `$id` 定义描述符的架构的URI。 |
 | `xdm:sourceVersion` | 源架构的主要版本。 |
-| `xdm:sourceProperty` | 定义描述符的源架构中字段的路径。 应以“/”开头，而不以“/”结尾。 在路径中不要包含“properties”（例如，“/personalEmail/address”，而不是“/properties/personalEmail/properties/address”）。 |
+| `xdm:sourceProperty` | 源架构中用于引用目标架构的字段的路径。 应以“/”开头，而不以“/”结尾。 不要在路径中包含“properties”(例如， `/personalEmail/address` 而不是 `/properties/personalEmail/properties/address`)。 |
 | `xdm:identityNamespace` | 源属性的标识命名空间代码。 |
 
 {style=&quot;table-layout:auto&quot;}

@@ -1,14 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；API;XDM;XDM系统；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；架构注册；架构注册；架构；架构；架构；架构；关系；关系描述符；关系描述符；引用标识；引用标识；
-solution: Experience Platform
 title: 使用模式注册表API定义两个模式之间的关系
 description: 本文档提供了一个教程，用于定义由贵组织使用架构注册API定义的两个架构之间的一对一关系。
 topic-legacy: tutorial
 type: Tutorial
 exl-id: ef9910b5-2777-4d8b-a6fe-aee51d809ad5
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 65a6eca9450b3a3e19805917fb777881c08817a0
 workflow-type: tm+mt
-source-wordcount: '1365'
+source-wordcount: '1367'
 ht-degree: 2%
 
 ---
@@ -110,13 +109,13 @@ curl -X GET \
 
 ## 为源架构定义引用字段
 
-在 [!DNL Schema Registry]，关系描述符的工作方式与关系数据库表中的外键类似：源架构中的字段用作对目标架构的主标识字段的引用。 如果您的源架构没有用于此目的的字段，则您可能需要使用新字段创建架构字段组并将其添加到架构中。 此新字段必须具有 `type` 值“[!DNL string]&quot;
+在 [!DNL Schema Registry]，关系描述符的工作方式与关系数据库表中的外键类似：源架构中的字段用作对目标架构的主标识字段的引用。 如果您的源架构没有用于此目的的字段，则您可能需要使用新字段创建架构字段组并将其添加到架构中。 此新字段必须具有 `type` 值 `string`.
 
 >[!IMPORTANT]
 >
->与目标架构不同，源架构不能将其主标识用作引用字段。
+>源架构不能将其主标识用作引用字段。
 
-在本教程中，目标架构“[!DNL Hotels]&quot;包含 `hotelId` 字段作为架构的主标识，因此也将用作其引用字段。 但是，源架构“[!DNL Loyalty Members]&quot;没有要用作引用的专用字段，并且必须为添加新字段组以向架构添加新字段： `favoriteHotel`.
+在本教程中，目标架构“[!DNL Hotels]&quot;包含 `hotelId` 用作架构主标识的字段。 但是，源架构“[!DNL Loyalty Members]“ ”没有要用作引用的专用字段 `hotelId`，因此需要创建自定义字段组才能向架构中添加新字段： `favoriteHotel`.
 
 >[!NOTE]
 >
@@ -344,9 +343,9 @@ curl -X PATCH \
 
 ## 创建引用标识描述符 {#reference-identity}
 
-如果架构字段用作关系中其他架构的引用，则它们必须应用引用标识描述符。 自 `favoriteHotel` 字段[!DNL Loyalty Members]“”将表示 `hotelId` 字段[!DNL Hotels]&quot;, `hotelId` 必须提供引用标识描述符。
+如果架构字段用作关系中其他架构的引用，则它们必须应用引用标识描述符。 自 `favoriteHotel` 字段[!DNL Loyalty Members]“”将表示 `hotelId` 字段[!DNL Hotels]&quot;, `favoriteHotel` 必须提供引用标识描述符。
 
-通过向发出POST请求，为目标模式创建引用描述符 `/tenant/descriptors` 端点。
+通过向发出POST请求，为源模式创建引用描述符 `/tenant/descriptors` 端点。
 
 **API格式**
 
@@ -356,7 +355,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求会为 `hotelId` 目标架构“[!DNL Hotels]&quot;
+以下请求会为 `favoriteHotel` 字段[!DNL Loyalty Members]&quot;
 
 ```shell
 curl -X POST \
@@ -368,33 +367,33 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -d '{
     "@type": "xdm:descriptorReferenceIdentity",
-    "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/d4ad4b8463a67f6755f2aabbeb9e02c7",
+    "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/533ca5da28087c44344810891b0f03d9",
     "xdm:sourceVersion": 1,
-    "xdm:sourceProperty": "/_{TENANT_ID}/hotelId",
+    "xdm:sourceProperty": "/_{TENANT_ID}/favoriteHotel",
     "xdm:identityNamespace": "Hotel ID"
   }'
 ```
 
 | 参数 | 描述 |
 | --- | --- |
-| `@type` | 定义的描述符类型。 对于引用描述符，值必须为“xdm:descriptorReferenceIdentity”。 |
-| `xdm:sourceSchema` | 的 `$id` 目标架构的URL。 |
-| `xdm:sourceVersion` | 目标架构的版本号。 |
-| `sourceProperty` | 目标架构的主标识字段的路径。 |
-| `xdm:identityNamespace` | 引用字段的标识命名空间。 该命名空间必须与定义字段作为架构主标识时使用的命名空间相同。 请参阅 [身份命名空间概述](../../identity-service/home.md) 以了解更多信息。 |
+| `@type` | 定义的描述符类型。 对于引用描述符，值必须为 `xdm:descriptorReferenceIdentity`. |
+| `xdm:sourceSchema` | 的 `$id` 源架构的URL。 |
+| `xdm:sourceVersion` | 源架构的版本号。 |
+| `sourceProperty` | 源架构中用于引用目标架构的主标识的字段路径。 |
+| `xdm:identityNamespace` | 引用字段的标识命名空间。 此命名空间必须与目标架构的主标识相同。 请参阅 [身份命名空间概述](../../identity-service/home.md) 以了解更多信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-成功的响应会返回为目标架构新建引用描述符的详细信息。
+成功的响应会返回新创建的源字段引用描述符的详细信息。
 
 ```json
 {
     "@type": "xdm:descriptorReferenceIdentity",
-    "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/d4ad4b8463a67f6755f2aabbeb9e02c7",
+    "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/533ca5da28087c44344810891b0f03d9",
     "xdm:sourceVersion": 1,
-    "xdm:sourceProperty": "/_{TENANT_ID}/hotelId",
+    "xdm:sourceProperty": "/_{TENANT_ID}/favoriteHotel",
     "xdm:identityNamespace": "Hotel ID",
     "meta:containerId": "tenant",
     "@id": "53180e9f86eed731f6bf8bf42af4f59d81949ba6"
@@ -403,7 +402,7 @@ curl -X POST \
 
 ## 创建关系描述符 {#create-descriptor}
 
-关系描述符在源模式和目标模式之间建立一对一关系。 在为目标架构定义引用描述符后，您可以通过向 `/tenant/descriptors` 端点。
+关系描述符在源模式和目标模式之间建立一对一关系。 在为源架构中的相应字段定义了引用标识描述符后，您可以通过向 `/tenant/descriptors` 端点。
 
 **API格式**
 
@@ -413,7 +412,7 @@ POST /tenant/descriptors
 
 **请求**
 
-以下请求将创建一个新的关系描述符，其中“[!DNL Loyalty Members]“ ”作为源架构和“[!DNL Legacy Loyalty Members]”作为目标架构。
+以下请求将创建一个新的关系描述符，其中“[!DNL Loyalty Members]“ ”作为源架构和“[!DNL Hotels]”作为目标架构。
 
 ```shell
 curl -X POST \
@@ -436,13 +435,13 @@ curl -X POST \
 
 | 参数 | 描述 |
 | --- | --- |
-| `@type` | 要创建的描述符的类型。 的 `@type` 关系描述符的值为“xdm:descriptorOneToOne”。 |
+| `@type` | 要创建的描述符的类型。 的 `@type` 关系描述符的值为 `xdm:descriptorOneToOne`. |
 | `xdm:sourceSchema` | 的 `$id` 源架构的URL。 |
 | `xdm:sourceVersion` | 源架构的版本号。 |
 | `xdm:sourceProperty` | 源架构中引用字段的路径。 |
 | `xdm:destinationSchema` | 的 `$id` 目标架构的URL。 |
 | `xdm:destinationVersion` | 目标架构的版本号。 |
-| `xdm:destinationProperty` | 目标架构中引用字段的路径。 |
+| `xdm:destinationProperty` | 目标架构中主标识字段的路径。 |
 
 {style=&quot;table-layout:auto&quot;}
 
