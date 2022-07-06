@@ -1,16 +1,17 @@
 ---
 title: 产品类
 description: 本文档概述了Experience Data Model(XDM)中的产品类。
-source-git-commit: c0437b8f9d93c46dbec991a33a893a5b9e0cdf2c
+exl-id: 911680ae-b761-4945-9ad3-0233eaea89b0
+source-git-commit: fdd68e5a94d841992a6f8abe10f3cffe0ebb6794
 workflow-type: tm+mt
-source-wordcount: '213'
+source-wordcount: '215'
 ht-degree: 7%
 
 ---
 
 # [!UICONTROL 产品] 类
 
-在Experience Data Model(XDM)中， [!UICONTROL 产品] 类会捕获定义产品的最小属性集。
+在Experience Data Model(XDM)中， [!UICONTROL 产品] 类可捕获定义零售产品的最小属性集。
 
 ![](../images/classes/product.png)
 
@@ -29,7 +30,7 @@ ht-degree: 7%
 
 ## 兼容的字段组 {#field-groups}
 
-Adobe提供了多个与 [!DNL XDM Individual Profile] 类。 以下是类的一些常用字段组的列表：
+Adobe提供了多个与 [!UICONTROL 产品] 类。 以下是类的一些常用字段组的列表：
 
 * [[!UICONTROL 产品目录]](../field-groups/product/product-catalog.md)
 * [[!UICONTROL 产品类别]](../field-groups/product/product-category.md)
