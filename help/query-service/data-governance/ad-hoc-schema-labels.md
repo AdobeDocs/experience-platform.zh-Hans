@@ -1,10 +1,11 @@
 ---
 title: 对Ad Hoc架构的基于属性的访问控制支持
 description: 有关限制对通过Adobe Experience Platform查询服务生成的临时架构中数据字段的访问的指南。
-source-git-commit: 3d908face315c7aa2ad8f6350fb1fe0d3446d428
+exl-id: d675e3de-ab62-4beb-9360-1f6090397a17
+source-git-commit: 9b327257eacea189363587ad79dc6595b636d5b8
 workflow-type: tm+mt
 source-wordcount: '1037'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -41,7 +42,7 @@ ht-degree: 0%
 
 ## 在平台UI的架构清单中发现临时架构
 
-要在Platform UI中显示临时架构，请选择搜索字段左侧的过滤器图标(../images/data-governance/filter.png)，然后选择**[!UICONTROL 显示临时架构] 在显示的左边栏中。
+要在Platform UI中显示临时架构，请选择过滤器图标(![过滤器图标。](../images/data-governance/filter.png))，然后选择**[!UICONTROL 显示临时架构] 在显示的左边栏中。
 
 ![“架构”功能板过滤器选项左边栏，并启用“显示临时架构”切换开关。](../images/data-governance/adhoc-schema-toggle.png)
 
@@ -93,4 +94,4 @@ ht-degree: 0%
 阅读本文档后，您对如何向通过查询服务CTAS查询创建的临时架构添加数据使用标签有了更好的了解。 如果您尚未这样做，以下文档有助于您更好地了解查询服务中的数据管理工作：
 
 * [临时架构标识](./ad-hoc-schema-identities.md)
-* [数据管理](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html)
+* [数据管理](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans)
