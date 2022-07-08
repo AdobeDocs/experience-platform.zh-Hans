@@ -5,9 +5,9 @@ title: 架构组合的基础知识
 topic-legacy: overview
 description: 本文档介绍了Experience Data Model(XDM)架构，以及构建架构以在Adobe Experience Platform中使用的构建基块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
+source-git-commit: 11dcb1a824020a5b803621025863e95539ab4d71
 workflow-type: tm+mt
-source-wordcount: '3881'
+source-wordcount: '3992'
 ht-degree: 0%
 
 ---
@@ -133,9 +133,17 @@ XDM模式非常适合以自包含格式存储大量复杂数据。 请参阅 [�
 | --- | --- |
 | <ul><li>向资源添加新字段</li><li>使必填字段为可选字段</li><li>引入新的必填字段*</li><li>更改资源的显示名称和描述</li><li>启用架构以参与用户档案</li></ul> | <ul><li>删除以前定义的字段</li><li>重命名或重定义现有字段</li><li>删除或限制以前支持的字段值</li><li>将现有字段移动到树中的其他位置</li><li>删除架构</li><li>禁用架构以阻止其参与用户档案</li></ul> |
 
-\**请参阅 [下文](#post-ingestion-required-fields) 以了解有关设置新必填字段的重要注意事项。*
+\**请参阅以下章节，了解有关 [设置新必填字段](#post-ingestion-required-fields).*
 
-#### 将摄取后的字段设置为必填项 {#post-ingestion-required-fields}
+### 必填字段
+
+单个架构字段可以 [标记为必需](../ui/fields/required.md)，这意味着任何摄取的记录都必须包含这些字段中的数据，才能通过验证。 例如，根据需要设置架构的主标识字段有助于确保所有摄取的记录都将参与实时客户资料，同时根据需要设置时间戳字段可确保按时间顺序保留所有时间系列事件。
+
+>[!IMPORTANT]
+>
+>无论架构字段是否为必填字段，Platform都不接受 `null` 或任何摄取的字段的空值。 如果记录或事件中特定字段没有值，则应从摄取有效负载中排除该字段的键。
+
+#### 在摄取后根据需要设置字段 {#post-ingestion-required-fields}
 
 如果某个字段用于摄取数据，但最初未设置为必需字段，则该字段对于某些记录可能具有空值。 如果将此字段设置为必需的摄取后字段，则所有将来记录都必须包含此字段的值，即使历史记录可能为空也是如此。
 
