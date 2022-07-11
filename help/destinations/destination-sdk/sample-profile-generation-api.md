@@ -2,9 +2,9 @@
 description: 本页列出并介绍了可使用“/authoring/sample-profiles” API端点执行的所有API操作，以生成要在目标测试中使用的示例配置文件。
 title: 配置文件生成API操作示例
 exl-id: 5f1cd00a-8eee-4454-bcae-07b05afa54af
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 789a3928379d200af292c722806f7ca72441d9f3
 workflow-type: tm+mt
-source-wordcount: '971'
+source-wordcount: '975'
 ht-degree: 2%
 
 ---
@@ -183,7 +183,7 @@ curl --location --request GET 'https://platform.adobe.io/data/core/activation/au
 | -------- | ----------- |
 | `segmentMembership` | 描述个人区段成员资格的映射对象。 有关 `segmentMembership`，读取 [区段成员资格详细信息](https://experienceleague.adobe.com/docs/experience-platform/xdm/field-groups/profile/segmentation.html). |
 | `lastQualificationTime` | 此用户档案上次符合区段资格条件的时间戳。 |
-| `xdm:status` | 指示区段成员资格是否已作为当前请求的一部分实现。 接受以下值： <ul><li>`existing`:在请求之前，用户档案已经是区段的一部分，并将继续保持其会员资格。</li><li>`realized`:用户档案将在当前请求中输入区段。</li><li>`exited`:该用户档案将作为当前请求的一部分退出该区段。</li></ul> |
+| `xdm:status` | 一个字符串字段，用于指示区段成员资格是否已作为当前请求的一部分实现。 接受以下值： <ul><li>`existing`:在请求之前，用户档案已经是区段的一部分，并将继续保持其会员资格。</li><li>`realized`:用户档案将在当前请求中输入区段。</li><li>`exited`:该用户档案将作为当前请求的一部分退出该区段。</li></ul> |
 | `identityMap` | 映射类型字段，用于描述个人的各种身份值及其关联的命名空间。 有关 `identityMap`，读取 [模式组合的基础](https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/composition.html?lang=en#identityMap). |
 
 {style=&quot;table-layout:auto&quot;}
