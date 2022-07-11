@@ -5,10 +5,10 @@ title: Adobe Experience Platform术语表
 topic-legacy: getting started
 description: Experience Platform 重要术语词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 7bafa87de874c6be90b80e4a899c02fd3868290e
+source-git-commit: c0f01efa224bffb5b435e2f247e793edfbc576b9
 workflow-type: tm+mt
-source-wordcount: '7385'
-ht-degree: 1%
+source-wordcount: '7428'
+ht-degree: 0%
 
 ---
 
@@ -16,13 +16,13 @@ ht-degree: 1%
 
 ## A
 
-**Access control**: Role-based access control enables admins to assign access and permissions to users of Experience Platform. 权限包括查看和/或使用Experience Platform功能的功能，例如创建沙箱、定义架构和管理数据集。
+**访问控制**:基于角色的访问控制使管理员能够向Experience Platform用户分配访问权限和权限。 权限包括查看和/或使用Experience Platform功能的功能，例如创建沙箱、定义架构和管理数据集。
 
 **访问密钥ID**:访问密钥ID是与 [!DNL Amazon] S3密钥访问密钥。 访问密钥ID和密钥访问密钥一起用于签名 [!DNL Amazon Web Services] (AWS)请求。
 
 **操作**:在标记的上下文中，操作是一种特定类型的规则组件，用于定义事件发生后应当发生的情况，以及评估和传递条件。
 
-**Activate**: Activate is the action taken by a user to map a segment or profiles to a destination such as [!DNL Oracle Eloqua], [!DNL Google], or [!DNL Salesforce Marketing Cloud].
+**激活**:激活是用户将区段或用户档案映射到目标(如 [!DNL Oracle Eloqua], [!DNL Google]或 [!DNL Salesforce Marketing Cloud].
 
 **活动**:在 [!DNL Offer Decisioning]，则活动包含用于通知选件选择的逻辑。
 
@@ -34,13 +34,13 @@ ht-degree: 1%
 
 **Adobe Experience Platform查询服务**:使数据分析人员能够查询事件和配置文件，以用于分析和机器学习。 借助查询服务，数据科学家和分析人员可以提取他们存储在Experience Platform中的所有数据集(包括行为数据以及销售点(POS)、客户关系管理(CRM)等)，并查询这些数据集以回答有关数据的特定问题。
 
-**Adobe Experience Platform Segmentation Service**: Enables building segments and generating audiences from your Real-time Customer Profile data. 然后，可以将这些受众导出到数据湖中他们自己的数据集。
+**Adobe Experience Platform Segmentation Service**:支持根据实时客户资料数据生成区段和生成受众。 然后，可以将这些受众导出到数据湖中他们自己的数据集。
 
 **Adobe智能服务**:智能服务(如Attribution AI和Customer AI)是基于机器学习和人工智能的模型，这些模型是专门构建的，需要Experience Platform来运行和操作。
 
-**Adobe I/O**: Adobe I/O is part of Experience Platform and provides access to everything developers need to integrate, extend, and customize Platform including APIs, events, developer console, and helpful tooling.
+**Adobe I/O**:Adobe I/O是Experience Platform的一部分，可让开发人员访问集成、扩展和自定义平台所需的所有功能，包括API、事件、开发人员控制台和有用的工具。
 
-**Adobe Sensei**: Adobe Sensei is the intelligence framework that powers Experience Platform. 它还提供了一套AI服务，使品牌能够增强提供实时、个性化客户体验的能力。
+**Adobe Sensei**:Adobe Sensei是支持Experience Platform的情报框架。 它还提供了一套AI服务，使品牌能够增强提供实时、个性化客户体验的能力。
 
 **Amazon S3存储段**: [!DNL Amazon S3] 存储段是存储在 [!DNL Amazon] 生态系统。 存储段包含对象，每个对象都使用由开发人员分配的唯一密钥进行存储和检索。
 
@@ -108,15 +108,15 @@ ht-degree: 1%
 
 **合同(&quot;C&quot;)标签**:合同(“C”)数据使用标签用于对具有合同义务或与客户数据管理策略相关的数据进行分类。
 
-**C1 contract label**: A `C1` contract data usage label specifies data can only be exported from Adobe Experience Cloud in an aggregated form without including individual or device identifiers. 例如，源自社交网络的数据。
+**C1合同标签**:A `C1` 合同数据使用标签指定只能以聚合形式从Adobe Experience Cloud导出数据，而不包含单个或设备标识符。 例如，源自社交网络的数据。
 
-**C2 contract label**: A `C2` contract data usage label specifies data that cannot be exported to a third-party. Some data providers have terms in their contracts that prohibit the export of data from where it was originally collected. For example, social networks contracts often restrict the transfer of data you receive from them. C2比C1的限制更多，C1仅需要聚合和匿名数据。
+**C2合同标签**:A `C2` 合同数据使用标签指定无法导出到第三方的数据。 一些数据提供商在其合同中订有条款，禁止从最初收集的地方导出数据。 例如，社交网络合同通常会限制您从这些合同中收到的数据的传输。 C2比C1的限制更多，C1仅需要聚合和匿名数据。
 
-**C3合同标签**:A `C3` 合同数据使用标签指定不能与直接可识别信息组合或以其他方式使用的数据。 Some data providers have terms in their contracts that prohibit the combination or use of that data with directly identifiable information. For example, contracts for data sourced from ad networks, ad servers, and third-party data providers often include specific contractual prohibitions on the use of directly identifiable data.
+**C3合同标签**:A `C3` 合同数据使用标签指定不能与直接可识别信息组合或以其他方式使用的数据。 某些数据提供商在其合同中订有条款，禁止合并或使用具有直接可识别信息的数据。 例如，来自广告网络、广告服务器和第三方数据提供商的数据合同通常包括禁止使用直接可识别数据的具体合同。
 
 **C4合同标签**:A `C4` 合同数据使用标签指定数据不能用于定位任何广告或内容（现场或跨站点）。 C4是最严格的标签，因为它包含C5、C6和C7标签。
 
-**C5合同标签**:A `C5` 合同数据使用标签指定数据不能用于基于兴趣的内容或广告的跨站点定位。 Interest-based targeting, or personalization, occurs if the following three conditions are met: The data collected on-site is used to make inferences about a user&#39;s interest; is used in another context such as on another site or app; and is used to select which content or ads are served based on those inferences.
+**C5合同标签**:A `C5` 合同数据使用标签指定数据不能用于基于兴趣的内容或广告的跨站点定位。 如果满足以下三个条件，则会进行基于兴趣的定位或个性化：现场收集的数据用于推断用户的兴趣；用于其他上下文，如在其他网站或应用程序上；和用于根据这些引用选择提供哪些内容或广告。
 
 **C6合同标签**:A `C6` 合同数据使用标签指定数据不能用于现场广告定位。 现场广告定位包括在您组织的网站或应用程序上选择和投放广告，或衡量此类广告的投放和效果。 这包括使用先前收集的有关用户兴趣的现场数据来选择广告，处理有关显示了哪些广告、何时何地显示广告以及用户是否采取了与广告相关的任何操作（如选择广告或购买广告）的数据。
 
@@ -124,11 +124,11 @@ ht-degree: 1%
 
 **C8合同标签**:A `C8` 合同数据使用标签指定数据不能用于测量贵组织的网站或应用程序。 这不包括基于兴趣的定位，即关于您使用此服务以后在其他环境中个性化内容和/或广告的信息集合。
 
-**C9合同标签**:A `C9` 合同数据使用标签指定数据不能在数据科学工作流中使用。 一些合同明确禁止用于数据科学的数据。 Sometimes these are phrased in terms that prohibit the use of data for artificial intelligence (AI), machine-learning (ML), or modeling.
+**C9合同标签**:A `C9` 合同数据使用标签指定数据不能在数据科学工作流中使用。 一些合同明确禁止用于数据科学的数据。 有时，这些措辞的措辞禁止将数据用于人工智能(AI)、机器学习(ML)或建模。
 
-**C10合同标签**:A `C10` 合同数据使用标签指定数据不能用于拼合身份激活。 Some data usage policies restrict the use of stitched identity data for personalization. 的 `C10` 如果区段的合并策略使用“专用图”选项，则会自动将标签应用于这些区段。
+**C10合同标签**:A `C10` 合同数据使用标签指定数据不能用于拼合身份激活。 某些数据使用策略会限制使用拼合身份数据进行个性化。 的 `C10` 如果区段的合并策略使用“专用图”选项，则会自动将标签应用于这些区段。
 
-**Created Date column**: Selecting a Created Date column is an option when specifying third-party data via a source connection. 选择附加保存策略且数据集架构包含多个日期字段时，您必须从可用架构中进行选择以指定“创建日期”键列。 选择覆盖保存策略后，“创建日期”选项将不可用。
+**创建日期列**:选择创建日期列是通过源连接指定第三方数据时的一个选项。 选择附加保存策略且数据集架构包含多个日期字段时，您必须从可用架构中进行选择以指定“创建日期”键列。 选择覆盖保存策略后，“创建日期”选项将不可用。
 
 **创建选定表**:Create Table as Select(CTAS)是SQL命令，在作为完整有效SQL查询的一部分执行时，该命令将指示 [!DNL Query Service] 将查询结果保留在数据集中。 可以创建新结果集、覆盖先前的结果或附加到先前的结果。
 
@@ -194,11 +194,11 @@ ht-degree: 1%
 
 **目标类别**:目标类别是具有相似特征的目标的分组。
 
-**Destination catalog**: A destination catalog is a list of available destinations in Experience Platform.
+**目标目录**:目标目录是Experience Platform中可用目标的列表。
 
-**Direct call rules**: In the context of tags, a direct-call rule is a rule that executes when it is called directly from the page, bypassing event-detection and lookup systems.
+**直接调用规则**:在标记上下文中，直接调用规则是在直接从页面调用时执行的规则，绕过事件检测和查找系统。
 
-**Display name**: In Experience Data Model (XDM), a display name is a user-friendly name for a field that is shown in the UI.
+**显示名称**:在体验数据模型(XDM)中，显示名称是UI中显示的字段的用户友好名称。
 
 ## E
 
@@ -222,11 +222,11 @@ ht-degree: 1%
 
 **事件**:事件是与用户档案关联的行为数据。
 
-**体验数据模型(XDM)** [!DNL Experience Data Model] (XDM)是一个开源框架，它使用标准架构来统一数据，以便与Experience Platform和Adobe Experience Cloud应用程序一起使用。 XDM standardizes how data is structured and speeds up and simplifies the process of gaining insights from massive amounts of data.
+**体验数据模型(XDM)** [!DNL Experience Data Model] (XDM)是一个开源框架，它使用标准架构来统一数据，以便与Experience Platform和Adobe Experience Cloud应用程序一起使用。 XDM实现了数据结构的标准化，并加快了速度，简化了从大量数据中获取洞察信息的过程。
 
-**Experiment**: An experiment is the process of creating a trained model by training the instance with a sample portion of live production data. This is different from a trained model that is tested against a holdout test dataset. 这也与一些机器学习框架中的实验概念不同，在这些框架中，实验实际上意味着一个示例建模项目。
+**实验**:实验是通过使用实时生产数据的样本部分来训练实例来创建训练过的模型的过程。 这与针对维持测试数据集进行测试的已培训模型不同。 这也与一些机器学习框架中的实验概念不同，在这些框架中，实验实际上意味着一个示例建模项目。
 
-**体验事件**:体验事件表示在发生与客户体验相关的交互或事件时系统的快照。 Experience Events are immutable fact records of what occurred and represent what happened without aggregation or interpretation. 在体验数据模型(XDM)中，此概念由 [!DNL XDM ExperienceEvent] 类。
+**体验事件**:体验事件表示在发生与客户体验相关的交互或事件时系统的快照。 体验事件是所发生事件的不可变事实记录，它表示所发生的事件，而不进行聚合或解释。 在体验数据模型(XDM)中，此概念由 [!DNL XDM ExperienceEvent] 类。
 
 **导出完整文件**:一个导出文件，其中包含选定区段的所有配置文件资格的完整快照。
 
@@ -257,6 +257,8 @@ ht-degree: 1%
 **地理围栏**:地理围栏是由GPS或RFID技术定义的虚拟地理边界，它使软件能够在移动设备进入或离开特定区域时触发响应。
 
 **GDPR（《通用数据保护条例》）**:《通用数据保护条例》(GDPR)是一项法律框架，旨在为在欧盟(EU)内收集和处理个人信息制定准则。 GDPR规定了数据管理原则和个人权利，并涵盖处理欧盟公民数据的所有公司。
+
+**护栏**:护栏是指为Adobe Experience Platform中的数据和系统使用、性能优化以及避免错误或意外结果提供指导的阈值。 护栏可以是指您对与授权许可相关的数据和处理的使用情况或使用情况。
 
 ## H
 
@@ -296,19 +298,19 @@ ht-degree: 1%
 
 **输入功能**:在特征映射中指定输入特征，并由机器学习模型用于进行预测。
 
-**[!DNL Intelligent Services]**: [!DNL Intelligent Services] such as [!DNL Attribution AI] and [!DNL Customer AI] are machine-learning, artificial-intelligence-based models that require Experience Platform (or applications built on top of Platform such as Real-time Customer Data Platform) to run and operate.
+**[!DNL Intelligent Services]**: [!DNL Intelligent Services] 例如 [!DNL Attribution AI] 和 [!DNL Customer AI] 是机器学习、基于人工智能的模型，需要Experience Platform(或基于平台构建的应用程序，如Real-time Customer Data Platform)才能运行和运行。
 
 **基于兴趣的定位或个性化**:如果满足以下三个条件，则会进行基于兴趣的定位（也称为个性化）：
 
-1. Data collected on-site is used to make inferences about a user&#39;s interest.
+1. 网站上收集的数据用于推断用户的兴趣。
 1. 数据用在其他上下文中，如在其他网站或应用程序（站外）上。
-1. Data is used to select which content or ads are served based on those inferences.
+1. 数据用于根据这些引用选择提供哪些内容或广告。
 
 ## J
 
 **[!DNL JupyterLab]**:适用于项目的开源、基于Web的界面 [!DNL Jupyter] 集成到平台UI中。
 
-**[!DNL Jupyter Notebook]**: Integrated with JupyterLab, Jupyter Notebooks enable you to perform data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and more on your Experience Platform data in a variety of languages such as Python, Scala, and PySpark.
+**[!DNL Jupyter Notebook]**:与JupyterLab集成后，Jupyter Notebooks使您能够以各种语言（如Python、Scala和PySpark）对Experience Platform数据执行数据清理和转换、数值模拟、统计建模、数据可视化、机器学习等操作。
 
 ## K
 
@@ -324,9 +326,9 @@ ht-degree: 1%
 
 **机器学习模型**:机器学习模型是机器学习方法的一个实例，该方法使用历史数据和配置进行培训，以针对业务用例进行解析。 在Adobe Experience Platform数据科学工作区中，机器学习模型称为方法。
 
-**Mandatory attribute**: A user-enabled checkbox that ensures all profile records contain the selected attribute. 例如：所有导出的用户档案都包含电子邮件地址。
+**必需属性**:用户启用的复选框，可确保所有配置文件记录都包含所选属性。 例如：所有导出的用户档案都包含电子邮件地址。
 
-**Mapping**: Data mapping is the process of mapping source data fields to related target fields in a destination.
+**映射**:数据映射是将源数据字段映射到目标中相关目标字段的过程。
 
 **营销操作**:在数据管理框架中，营销操作（也称为营销用例）是Experience Platform数据使用者采取的操作，需要检查其是否违反了数据使用策略。
 
