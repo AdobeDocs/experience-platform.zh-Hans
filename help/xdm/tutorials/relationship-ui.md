@@ -6,9 +6,9 @@ description: 本文档提供了一个教程，用于使用Experience Platform用
 topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
+source-git-commit: 0ce574700ce4134cddbb990b9b2765c25112b44d
 workflow-type: tm+mt
-source-wordcount: '1042'
+source-wordcount: '1145'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,21 @@ ht-degree: 0%
 >abstract="属于不同类的架构可以通过关系字段根据上下文进行链接，从而允许您构建更复杂的分段规则。"
 >text="See the documentation for more information on schema relationships."
 
+>[!CONTEXTUALHELP]
+>id="platform_xdm_1to1_reference_schema"
+>title="参考模式"
+>abstract="选择要与之建立关系的架构。 此架构可以是与当前架构不同的类。"
+>text="See the documentation for more information on schema relationships."
+
+>[!CONTEXTUALHELP]
+>id="platform_xdm_1to1_identity_namespace"
+>title="引用标识命名空间"
+>abstract="引用架构的主标识字段的命名空间（类型）。 引用架构必须具有已建立的主标识字段才能参与关系。"
+>text="See the documentation for more information on schema relationships."
+
 >[!NOTE]
 >
->如果您使用的是Real-time Customer Data Platform B2B Edition，请参阅 [创建B2B关系](./relationship-b2b.md) 中。
+>有关如何在Real-time Customer Data Platform B2B Edition中创建多对一关系的步骤，请参阅 [创建B2B关系](./relationship-b2b.md).
 
 了解客户之间的关系以及客户与品牌在各种渠道中的交互是Adobe Experience Platform的重要组成部分。 在 [!DNL Experience Data Model] (XDM)模式允许您对客户数据进行复杂的分析。
 
@@ -110,6 +122,10 @@ ht-degree: 0%
 ## 为源架构定义关系字段 {#relationship-field}
 
 在源架构定义了专用引用字段后，您可以将其指定为关系字段。
+
+>[!NOTE]
+>
+>以下步骤涵盖如何使用画布中的右边栏控件定义关系字段。 如果您有权访问Real-Time CDP B2B Edition，则还可以使用 [同一对话框](./relationship-b2b.md#relationship-field) 与创建多对一关系时一样。
 
 选择 `favoriteHotel` 字段，然后向下滚动到 **[!UICONTROL 字段属性]** 直到 **[!UICONTROL 关系]** 复选框。 选中此复选框可显示配置关系字段所需的参数。
 
