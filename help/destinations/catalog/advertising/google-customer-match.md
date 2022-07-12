@@ -3,9 +3,9 @@ keywords: google客户匹配；Google客户匹配；Google客户匹配
 title: Google客户匹配连接
 description: Google客户匹配允许您使用在线和离线数据，通过Google拥有和运营的资产(如搜索、购物、Gmail和YouTube)来访问客户并与其重新互动。
 exl-id: 8209b5eb-b05c-4ef7-9fdc-22a528d5f020
-source-git-commit: 23828fcbb1257fa093c1e114ee4c2fcb2162d9d6
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '1715'
+source-wordcount: '1778'
 ht-degree: 1%
 
 ---
@@ -141,6 +141,12 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 >
 > * 的 **[!UICONTROL 与PII组合]** 默认情况下，会为 [!DNL Google Customer Match] 目标，无法删除。
 
+
+### 启用警报 {#enable-alerts}
+
+您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+
+完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
 
 ## 将区段激活到此目标 {#activate}
 

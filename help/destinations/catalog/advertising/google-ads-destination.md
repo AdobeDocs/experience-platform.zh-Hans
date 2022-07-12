@@ -3,9 +3,9 @@ keywords: Google广告；Google广告；Google AdWords;Google AdWords;Google Adw
 title: Google Ads连接
 description: Google Ads(以前称为Google AdWords)是一种在线广告服务，允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示，按点击量付费广告。
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '835'
+source-wordcount: '898'
 ht-degree: 3%
 
 ---
@@ -91,6 +91,12 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 * **[!UICONTROL 描述]**:可选。 例如，您可以提及您使用此目标的促销活动。
 * **[!UICONTROL 帐户类型]**:AdWords是唯一可用的选项。
 * **[!UICONTROL 帐户ID]**:使用 [!DNL Google Ads]. ID格式通常为123-456-7890。
+
+### 启用警报 {#enable-alerts}
+
+您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+
+完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
 
 ## 将区段激活到此目标 {#activate}
 

@@ -3,9 +3,9 @@ keywords: 广告；克雷蒂奥；
 title: Criteo连接
 description: Criteo支持可信且有影响力的广告，通过开放互联网为每位消费者提供更丰富的体验。 Criteo拥有世界上最大的商业数据集和一流的人工智能，可确保整个购物历程中的每个接触点都经过个性化，以便在适当的时间通过正确的广告来吸引客户。
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: 07974f92c741d74e6d0289120538655379d3ca35
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '942'
+source-wordcount: '1005'
 ht-degree: 2%
 
 ---
@@ -102,6 +102,12 @@ Criteo支持激活下表所述的身份。 详细了解 [标识](https://experie
 | API版本 | Criteo API版本。 请选择预览。 | 是 |
 | 广告商ID | 贵组织的关键广告商ID。 请联系您的Criteo客户经理以获取此信息。 | 是 |
 | 克里蒂奥 [!DNL GUM caller ID] | [!DNL GUM Caller ID] 你的组织。 请联系您的Criteo客户团队，以获取相应的 [!DNL GUM Caller ID] 或获取有关此项的更多信息 [!DNL GUM] 同步（如果需要）。 | 是，只要 [!DNL GUM ID] 作为标识符提供 |
+
+### 启用警报 {#enable-alerts}
+
+您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+
+完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
 
 ## 将区段激活到此目标 {#activate-segments}
 

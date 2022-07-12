@@ -3,9 +3,9 @@ keywords: 目标个性化；目的地；experience platform target目标；adobe
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: 12e2c1a32f08b6942d6e4aefc35a53bae8387d7e
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '846'
+source-wordcount: '909'
 ht-degree: 1%
 
 ---
@@ -85,6 +85,12 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 |---|---|
 | <ul><li>[边缘分割](../../../segmentation/ui/edge-segmentation.md) 不支持。</li><li>[同页和下一页个性化](../../ui/configure-personalization-destinations.md) 不受支持。</li><li>您只能将区段共享到生产沙盒的Adobe Target连接。</li><li>要在不使用数据流ID的情况下配置下一个会话的个性化，请使用 [at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=en).</li></ul> | <ul><li>边缘分割可按预期工作。</li><li>[同页和下一页个性化](../../ui/configure-personalization-destinations.md) 。</li><li>其他沙箱支持区段共享。</li></ul> |
 
+### 启用警报 {#enable-alerts}
+
+您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+
+完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
+
 ## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
@@ -99,4 +105,4 @@ Adobe Target从Adobe Experience Platform边缘网络中读取用户档案数据�
 
 ## 数据使用和管理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，读取 [数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
+全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，读取 [数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans).

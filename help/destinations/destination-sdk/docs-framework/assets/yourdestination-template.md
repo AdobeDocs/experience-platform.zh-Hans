@@ -1,25 +1,19 @@
 ---
-title: 文档自助服务模板//将替换为您的目标名称
+title: 自助模板//将替换为目标名称
 description: 使用此模板可在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为“概述”部分中的段落
-exl-id: 99700474-8bf6-4176-acc1-38814e17c995
 source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
 workflow-type: tm+mt
-source-wordcount: '1382'
+source-wordcount: '1341'
 ht-degree: 1%
 
 ---
+
 
 # YourDestination连接 {#your-destination}
 
 *在完成此模板时，请替换或删除所有斜体段落（从此模板开始）。*
 
 *首先，更新页面顶部的元数据（标题和描述）。 请忽略此页面上的所有UICONTROL实例。 这是一个标记，可帮助我们的机器翻译流程将页面正确翻译为我们支持的多种语言。 在您提交文档后，我们会为您的文档添加标记。*
-
->[!IMPORTANT]
->
->* 按模板中所述的顺序填写此模板中的所有部分。
->* 根据合作伙伴的反馈，此模板不常更新。 在开始为目标位置创作文档之前，请确保已下载 [模板的最新版本](/help/destinations/destination-sdk/docs-framework/assets/yourdestination-template.zip).
-
 
 ## 概述 {#overview}
 
@@ -33,13 +27,13 @@ ht-degree: 1%
 
 为了帮助您更好地了解应如何以及何时应使用 *YourDestination* 目标中，以下是Adobe Experience Platform客户可以使用此目标解决的示例用例。
 
-### 用例#1 {#use-case-1}
+### 用例#1
 
 *对于移动消息平台：*
 
 *一个家庭租赁和销售平台希望将移动通知推送给客户的Android和iOS设备，以便让客户知道，在他们之前搜索的租金区域，有100个更新的房源。*
 
-### 用例#2 {#use-case-2}
+### 用例#2
 
 *对于社交网络平台：*
 
@@ -102,7 +96,7 @@ ht-degree: 1%
 
 要对目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
-![显示如何对目标进行身份验证的示例屏幕截图](/help/destinations/destination-sdk/docs-framework/assets/authenticate-destination.png)
+![在此处添加一个链接，指向一个或多个示例屏幕截图，这些示例屏幕截图向用户显示如何对您的目标进行身份验证](/help/destinations/destination-sdk/docs-framework/assets/authenticate-destination.png)
 
 * **[!UICONTROL 载体令牌]**:填写承载令牌以对目标进行身份验证。
 
@@ -112,7 +106,7 @@ ht-degree: 1%
 
 要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
-![示例屏幕截图，显示如何填写目标的详细信息](/help/destinations/destination-sdk/docs-framework/assets/configure-destination-details.png)
+![在此处添加一个链接，指向一个或多个示例屏幕截图，这些示例屏幕截图向用户显示如何填写目标的详细信息](/help/destinations/destination-sdk/docs-framework/assets/configure-destination-details.png)
 
 * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
@@ -130,7 +124,7 @@ ht-degree: 1%
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
-读取 [激活用户档案和区段以流式传输区段导出目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) 有关将受众区段激活到此目标的说明。
+读取 [激活用户档案和区段以流式传输区段导出目标](../../ui/activate/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
 ## 导出的数据/验证数据导出 {#exported-data}
 
@@ -176,8 +170,8 @@ ht-degree: 1%
 
 ## 数据使用和管理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，读取 [数据管理概述](/help/data-governance/home.md).
+全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，请查看 [数据管理概述](/help/data-governance/home.md).
 
 ## 其他资源 {#additional-resources}
 
-*您可以提供产品文档的进一步链接，或您认为对于客户成功而言非常重要的任何其他资源。*
+*您可以提供产品文档的进一步链接，或您认为对客户成功非常重要的任何其他资源。*

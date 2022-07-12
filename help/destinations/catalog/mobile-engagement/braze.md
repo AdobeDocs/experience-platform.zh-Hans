@@ -3,10 +3,10 @@ keywords: 移动设备；布雷；报文传送；
 title: Braze连接
 description: Braze是一个全面的客户参与平台，可为客户和他们喜爱的品牌之间提供相关且令人难忘的体验。
 exl-id: 508e79ee-7364-4553-b153-c2c00cc85a73
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
 workflow-type: tm+mt
-source-wordcount: '885'
-ht-degree: 2%
+source-wordcount: '1001'
+ht-degree: 1%
 
 ---
 
@@ -61,16 +61,27 @@ ht-degree: 2%
 > 
 >要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md).
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
 
-### 连接参数 {#parameters}
+### 对目标进行身份验证 {#authenticate}
 
-While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
+要对目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
 * **[!UICONTROL Braze帐户令牌]**:这是您的 [!DNL Braze] [!DNL API] 键。 您可以找到有关如何获取 [!DNL API] 键： [REST API密钥概述](https://www.braze.com/docs/api/api_key/).
+
+### 填写目标详细信息 {#destination-details}
+
+要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
+
 * **[!UICONTROL 名称]**:输入一个名称，在将来，您将通过该名称来识别此目标。
 * **[!UICONTROL 描述]**:输入描述，以帮助您在将来标识此目标。
 * **[!UICONTROL 端点实例]**:询问 [!DNL Braze] 代表您应使用的端点实例。
+
+### 启用警报 {#enable-alerts}
+
+您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+
+完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
 
 ## 将区段激活到此目标 {#activate}
 

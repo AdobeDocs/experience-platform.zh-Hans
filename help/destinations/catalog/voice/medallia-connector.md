@@ -1,13 +1,13 @@
 ---
 title: Medallia连接
 description: 激活定向Media调查和反馈收集的用户档案，以更好地了解客户需求和期望。
-source-git-commit: be2d4e5d1f204feefc7acb7cb4518044ab3f153a
+exl-id: 2c2766eb-7be1-418c-bf17-d119d244de92
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1102'
+ht-degree: 1%
 
 ---
-
 
 # Medallia连接
 
@@ -70,7 +70,7 @@ Medallia支持激活下表所述的身份。 详细了解 [标识](/help/identit
 > 
 >要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照 [目标配置教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html). 在配置目标工作流中，填写下面两节中列出的字段。
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
 
 ### 对目标进行身份验证 {#authenticate}
 
@@ -84,7 +84,7 @@ Medallia支持激活下表所述的身份。 详细了解 [标识](/help/identit
 
 ### 填写目标详细信息 {#destination-details}
 
-要配置目标的详细信息，请填写必填字段并选择 **[!UICONTROL 下一个]**.
+要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
 * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
@@ -92,6 +92,12 @@ Medallia支持激活下表所述的身份。 详细了解 [标识](/help/identit
 * **[!UICONTROL 导入API名称]**:从您的Medallia投放团队获取。 在此连接中使用的Medallia Import API（也称为Web Feed）的名称。 您可以将不同的区段激活到不同的导入API以触发不同的调查程序。
 
 ![显示此目标的目标详细信息屏幕的图像。](/help/destinations/assets/catalog/voice/medallia-destination-details.png)
+
+### 启用警报 {#enable-alerts}
+
+您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+
+完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
 
 ## 将区段激活到此目标 {#activate}
 

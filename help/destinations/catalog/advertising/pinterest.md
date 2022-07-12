@@ -2,9 +2,9 @@
 title: Pinterest客户列表连接
 description: 从客户列表创建受众、访问过您网站的人员或已在Pinterest上与您的内容进行交互的人员。
 exl-id: e601f75f-0d40-4cd0-93ca-54d7439f1db7
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '639'
+source-wordcount: '702'
 ht-degree: 3%
 
 ---
@@ -23,7 +23,6 @@ ht-degree: 3%
 
 * 用户需要使用Pinterest帐户进行身份验证，该帐户有权访问要向其添加受众的广告商帐户。 有关共享广告商帐户的详细信息，请参阅 [此处](https://help.pinterest.com/en/business/article/share-and-manage-access-to-your-ad-accounts). 具体而言，用户将需要“受众”访问级别。
 * 有关客户列表标识格式的详细信息 [此处](https://help.pinterest.com/en/business/article/audience-targeting).
-
 
 ## 支持的身份 {#supported-identities}
 
@@ -74,6 +73,12 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 * **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
 * **[!UICONTROL 广告商ID]**:您的Pinterest广告商ID。
 
+### 启用警报 {#enable-alerts}
+
+您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+
+完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
+
 ## 将区段激活到此目标 {#activate}
 
 >[!IMPORTANT]
@@ -84,7 +89,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 ## 数据使用和管理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，请查看 [数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
+全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，请查看 [数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans).
 
 ## 其他资源 {#additional-resources}
 

@@ -3,9 +3,9 @@ keywords: 飞艇属性；飞艇目的地
 title: 飞艇属性连接
 description: 将Adobe受众数据无缝地作为受众属性传递到Airship，以便在Airship中进行定位。
 exl-id: bfc1b52f-2d68-40d6-9052-c2ee1e877961
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
 workflow-type: tm+mt
-source-wordcount: '863'
+source-wordcount: '975'
 ht-degree: 1%
 
 ---
@@ -80,16 +80,27 @@ Adobe Experience Platform配置文件属性类似于 [!DNL Airship] 属性，并
 > 
 >要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
-请参阅 [将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
 
-### 连接参数 {#parameters}
+### 对目标进行身份验证 {#authenticate}
 
-While [设置](../../ui/connect-destination.md) 此目标中，您必须提供以下信息：
+要对目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
 * **[!UICONTROL 载体令牌]**:您从 [!DNL Airship] 功能板。
+
+### 填写目标详细信息 {#destination-details}
+
+要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
+
 * **[!UICONTROL 名称]**:输入一个名称，以帮助您标识此目标。
 * **[!UICONTROL 描述]**:输入此目标的描述。
 * **[!UICONTROL 域]**:选择美国或欧盟的数据中心，具体取决于 [!DNL Airship] 数据中心适用于此目标。
+
+### 启用警报 {#enable-alerts}
+
+您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+
+完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
 
 ## 将区段激活到此目标 {#activate}
 

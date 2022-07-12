@@ -3,9 +3,9 @@ title: HTTP API连接
 keywords: 流；
 description: 使用Adobe Experience Platform中的HTTP API目标，将配置文件数据发送到第三方HTTP端点，以运行您自己的分析，或对导出为Experience Platform外的配置文件数据执行可能需要的任何其他操作。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: d4a4baf330925d6696f515bf650d86740c18e97c
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '2296'
+source-wordcount: '2374'
 ht-degree: 0%
 
 ---
@@ -138,7 +138,7 @@ curl --location --request POST 'https://some-api.com/token' \
    * **[!UICONTROL 已编码的正文形式]**:在本例中， [!DNL client ID] 和 [!DNL client secret] 包含 *请求正文中* 发送到您的目标。 有关示例，请参阅 [支持的身份验证类型](#supported-authentication-types) 中。
    * **[!UICONTROL 基本授权]**:在本例中， [!DNL client ID] 和 [!DNL client secret] 包含 *在 `Authorization` 标题* 进行base64编码并发送到您的目标后，Analytics会立即删除。 有关示例，请参阅 [支持的身份验证类型](#supported-authentication-types) 中。
 
-### 目标详细信息 {#destination-details}
+### 填写目标详细信息 {#destination-details}
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_headers"
@@ -165,7 +165,7 @@ curl --location --request POST 'https://some-api.com/token' \
 >title="查询参数"
 >abstract="或者，您也可以将查询参数添加到HTTP端点URL。 设置您使用的查询参数的格式，如下所示： `parameter1=value&parameter2=value`."
 
-在建立到HTTP端点的身份验证连接后，请为目标提供以下信息：
+要配置目标的详细信息，请填写以下必填和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
 ![显示HTTP目标详细信息的已完成字段的UI屏幕图像](../../assets/catalog/http/http-api-destination-details.png)
 
@@ -176,6 +176,12 @@ curl --location --request POST 'https://some-api.com/token' \
 * **[!UICONTROL 查询参数]**:或者，您也可以将查询参数添加到HTTP端点URL。 设置您使用的查询参数的格式，如下所示： `parameter1=value&parameter2=value`.
 * **[!UICONTROL 包括区段名称]**:如果您希望数据导出包含要导出的区段名称，则进行切换。 有关选中此选项的数据导出示例，请参阅 [导出的数据](#exported-data) 部分。
 * **[!UICONTROL 包含区段时间戳]**:如果您希望数据导出在创建和更新区段时包含UNIX时间戳，以及将区段映射到要激活的目标时包含UNIX时间戳，则进行切换。 有关选中此选项的数据导出示例，请参阅 [导出的数据](#exported-data) 部分。
+
+### 启用警报 {#enable-alerts}
+
+您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+
+完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
 
 ## 将区段激活到此目标 {#activate}
 

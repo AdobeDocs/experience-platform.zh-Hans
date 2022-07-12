@@ -3,9 +3,9 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Send
 title: SendGrid连接
 description: 利用SendGrid目标，可导出第一方数据并在SendGrid中激活它以满足您的业务需求。
 exl-id: 6f22746f-2043-4a20-b8a6-097d721f2fe7
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
 workflow-type: tm+mt
-source-wordcount: '1475'
+source-wordcount: '1548'
 ht-degree: 2%
 
 ---
@@ -78,8 +78,9 @@ SendGrid支持激活下表中描述的身份。 详细了解 [标识](/help/iden
 > 
 >要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
+要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 在配置目标工作流中，填写下面两节中列出的字段。
 
-要连接到此目标，请按照 [目标配置教程](../../ui/connect-destination.md). 下面详细介绍了特定于此目标的步骤。
+### 对目标进行身份验证 {#authenticate}
 
 1. 在 [!DNL Adobe Experience Platform] 控制台，导航到 **目标**.
 
@@ -96,7 +97,7 @@ SendGrid支持激活下表中描述的身份。 详细了解 [标识](/help/iden
 
 ![](../../assets/catalog/email-marketing/sendgrid/05.jpg)
 
-### 连接参数 {#parameters}
+### 填写目标详细信息 {#destination-details}
 
 While [设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) 此目标中，您必须提供以下信息：
 
@@ -104,6 +105,12 @@ While [设置](https://experienceleague.adobe.com/docs/experience-platform/desti
 * **[!UICONTROL 描述]**:可选描述，可帮助您在将来确定此目标。
 
 ![](../../assets/catalog/email-marketing/sendgrid/06.jpg)
+
+### 启用警报 {#enable-alerts}
+
+您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+
+完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
 
 ## 将区段激活到此目标 {#activate}
 
