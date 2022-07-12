@@ -1,9 +1,9 @@
 ---
 description: 本页介绍如何使用来自Destination SDK的/sample-profiles API端点来根据源架构生成示例配置文件。 您可以使用这些示例配置文件来测试基于文件的目标配置。
 title: 根据源架构生成示例用户档案
-source-git-commit: fa092e4d1828d9ecd5bc98e3f225fa377f38065f
+source-git-commit: 734d66cc881ab1b691c13ef446331d0c51851cf9
 workflow-type: tm+mt
-source-wordcount: '676'
+source-wordcount: '674'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 测试基于文件的目标的第一步是使用 `/sample-profiles` 端点，以根据您现有的源架构生成示例配置文件。
 
-示例用户档案旨在帮助您了解用户档案的JSON结构。 此外，它们还为您提供了一个骨干网，您可以使用自己的配置文件数据进行自定义，以便进一步进行目标测试。
+示例用户档案可帮助您了解用户档案的JSON结构。 此外，它们还为您提供了一个默认设置，您可以使用自己的配置文件数据进行自定义，以进一步进行目标测试。
 
 ## 快速入门 {#getting-started}
 
@@ -44,14 +44,14 @@ GET /authoring/sample-profiles?destinationInstanceId={DESTINATION_INSTANCE_ID}&c
 | 查询参数 | 描述 |
 | -------- | ----------- |
 | `destinationInstanceId` | 要为其生成示例用户档案的目标实例的ID。 请参阅 [先决条件](#prerequisites) 部分以了解有关如何获取此ID的详细信息。 |
-| `count` | *可选*. 要生成的示例用户档案数。 参数可以采用 `1 - 1000`. 如果未定义此属性，则API将生成一个示例配置文件。 |
+| `count` | *可选*. 要生成的示例用户档案数。 参数可以采用 `1 - 1000`. 如果未定义此属性，则API会生成一个示例配置文件。 |
 
 **请求**
 
 以下请求根据目标实例中定义的源架构以及相应的 `destinationInstanceId`.
 
 ```shell
-curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/sample-profiles?destinationInstanceId={DESTINATION_INSTANCE_ID}&count=2' \
+curl -X GET 'https://platform.adobe.io/data/core/activation/authoring/sample-profiles?destinationInstanceId={DESTINATION_INSTANCE_ID}' \
  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
  -H 'Content-Type: application/json' \
  -H 'x-gw-ims-org-id: {IMS_ORG}' \

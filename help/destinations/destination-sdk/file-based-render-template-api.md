@@ -1,9 +1,9 @@
 ---
 description: 本页介绍如何使用/authoring/testing/template/render端点来显示目标配置中定义的模板化客户数据字段的外观。
 title: 验证模板化客户字段
-source-git-commit: fa092e4d1828d9ecd5bc98e3f225fa377f38065f
+source-git-commit: 734d66cc881ab1b691c13ef446331d0c51851cf9
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '386'
 ht-degree: 2%
 
 ---
@@ -83,7 +83,7 @@ curl -X POST 'https://platform.adobe.io/data/core/activation/authoring/testing/t
 
 成功的响应会返回 `HTTP 200 OK` 状态，且主体包含随机生成的模板字段值。
 
-此响应旨在帮助您验证客户数据字段的正确结构，如存储段名称或文件夹路径。
+此响应可帮助您验证客户数据字段的正确结构，如存储段名称或文件夹路径。
 
 
 ```json

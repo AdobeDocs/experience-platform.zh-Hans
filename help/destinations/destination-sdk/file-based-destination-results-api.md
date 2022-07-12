@@ -1,7 +1,7 @@
 ---
 description: 本页介绍如何使用/testing/destinationInstance API端点查看测试结果的完整详细信息。 此API端点会返回与使用流服务API监视数据流时获得的结果相同的结果。
 title: 查看详细的激活结果
-source-git-commit: 5b62203113dd55dad8adeb96cbcc2d46b3420c3a
+source-git-commit: 734d66cc881ab1b691c13ef446331d0c51851cf9
 workflow-type: tm+mt
 source-wordcount: '545'
 ht-degree: 2%

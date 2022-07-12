@@ -1,9 +1,9 @@
 ---
 title: （测试版）Snap Inc连接
 description: 了解如何连接到Snapchat Ads平台并从Experience Platform中导出受众区段。
-source-git-commit: 14f7efc2d893bf081c4e167b46a3e85baeff4ec9
+source-git-commit: 734d66cc881ab1b691c13ef446331d0c51851cf9
 workflow-type: tm+mt
-source-wordcount: '949'
+source-wordcount: '1012'
 ht-degree: 2%
 
 ---
@@ -103,6 +103,12 @@ ht-degree: 2%
 >[!IMPORTANT]
 > 
 >输入不正确或无效的Snapchat广告帐户ID将导致区段激活失败。 请仔细检查您是否输入了正确的广告帐户ID。
+
+### 启用警报 {#enable-alerts}
+
+您可以启用警报以接收有关目标数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的更多信息，请参阅 [使用UI订阅目标警报](../../ui/alerts.md).
+
+完成提供目标连接的详细信息后，请选择 **[!UICONTROL 下一个]**.
 
 ## 将区段激活到此目标 {#activate}
 
