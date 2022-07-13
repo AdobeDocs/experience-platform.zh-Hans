@@ -5,9 +5,9 @@ title: 身份命名空间概述
 topic-legacy: overview
 description: 身份命名空间是 Identity Service 的组件，充当与身份相关的上下文指示器。例如，它们将值“name@email.com”区分为电子邮件地址或“443522”作为数字CRM ID。
 exl-id: 86cfc7ae-943d-4474-90c8-e368afa48b7c
-source-git-commit: 3a9e97b472482d6a7f6df5f2a59f2f75635be181
+source-git-commit: 3e073d2c45f88c56473ccc2e3d18a2bbedd4f254
 workflow-type: tm+mt
-source-wordcount: '1598'
+source-wordcount: '1627'
 ht-degree: 2%
 
 ---
@@ -32,7 +32,13 @@ ht-degree: 2%
 
 ![](images/identity-service-stitching.png)
 
-### 身份类型
+### 身份类型 {#identity-types}
+
+>[!CONTEXTUALHELP]
+>id="platform_identity_create_namespace"
+>title="指定标识类型"
+>abstract="标识类型控制数据是否存储到标识图。 将不会存储非人员标识符，并且所有其他身份类型都将存储。"
+>text="Learn more in documentation"
 
 数据可以由多种不同的身份类型来标识。 标识类型在创建标识命名空间时指定，并控制数据是否持久保留到标识图以及如何处理该数据的任何特殊说明。 除 **非人员标识符** 请按照拼合命名空间及其相应ID值的相同行为，将这些值拼合到标识图群集。 使用 **非人员标识符**.
 
@@ -77,7 +83,7 @@ Experience Platform提供了多个适用于所有组织的身份命名空间。 
 
 要在UI中查看身份命名空间，请选择 **[!UICONTROL 标识]** 在左侧导航中，然后选择 **[!UICONTROL 浏览]**.
 
-![浏览](./images/browse.png)
+![浏览器](./images/browse.png)
 
 身份命名空间列表会显示在页面的主界面中，其中显示了有关其名称、身份符号、上次更新日期以及它们是标准命名空间还是自定义命名空间的信息。 右边栏包含有关 [!UICONTROL 身份图强度].
 

@@ -5,14 +5,14 @@ title: Identity Service概述
 topic-legacy: overview
 description: Adobe Experience Platform Identity Service通过跨设备和系统桥接身份，使您能够实时提供有影响的个人数字体验，从而帮助您更好地了解客户及其行为。
 exl-id: a22dc3f0-3b7d-4060-af3f-fe4963b45f18
-source-git-commit: eb0fe2267416c5053cb589cc6d147324cc31c985
+source-git-commit: 3e073d2c45f88c56473ccc2e3d18a2bbedd4f254
 workflow-type: tm+mt
-source-wordcount: '1747'
+source-wordcount: '1839'
 ht-degree: 0%
 
 ---
 
-# [!DNL Identity Service] 概述
+# [!DNL Identity Service]概述
 
 提供相关的数字体验需要全面了解您的客户。 当客户数据在不同的系统中分散，导致每个客户似乎都具有多个“身份”时，这会使操作愈发困难。
 
@@ -30,7 +30,7 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 
 | 搜索词 | 定义 |
 | --- | --- |
-| 身份 | 身份是实体（通常是个人）特有的数据。 身份（如登录ID、ECID或忠诚度ID）也称为“已知身份”。 |
+| 标识 | 身份是实体（通常是个人）特有的数据。 身份（如登录ID、ECID或忠诚度ID）也称为“已知身份”。 |
 | ECID | Experience CloudID(ECID)是跨Experience Platform和Adobe Experience Cloud应用程序使用的共享身份命名空间。 ECID为客户身份提供了基础，可用作设备的主ID，用作身份图的基节点。 请参阅 [ECID概述](./ecid.md) 以了解更多信息。 |
 | 身份命名空间 | 身份命名空间用于区分身份的上下文或类型。 例如，标识区分“name”<span>@email.com”作为电子邮件地址，或“443522”作为数字CRM ID。 身份命名空间用于查找个人身份并提供身份值的上下文。 这允许您确定这两个 [!DNL Profile] 包含不同主ID但共享相同值的片段 `email` 身份命名空间实际上是同一个人。 请参阅 [身份命名空间概述](./namespaces.md) 以了解更多信息。 |
 | 身份图 | 身份图是不同身份之间关系的映射，使您能够可视化并更好地了解哪些客户身份被拼合在一起，以及如何拼合。 请参阅 [使用身份图查看器](./ui/identity-graph-viewer.md) 以了解更多信息。 |
@@ -63,10 +63,21 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 - 银行可能倾向于在离线数据集中使用“帐号”，例如分行交易。 它们可能依赖于在线数据集中的“登录ID”，因为大多数访客在访问期间都将进行身份验证。
 - 您的客户还可能具有唯一的专有ID，如GUID或其他通用唯一标识符。
 
-## 身份命名空间
+## 身份命名空间 {#identity-namespace}
+
+>[!CONTEXTUALHELP]
+>id="platform_identity_namespace"
+>title="身份命名空间"
+>abstract="身份命名空间用于区分身份的上下文或类型。 例如，标识区分“name”<span>@email.com”作为电子邮件地址，或“443522”作为数字CRM ID。"
+>text="Learn more in documentation"
+
+>[!CONTEXTUALHELP]
+>id="platform_identity_value"
+>title="标识值"
+>abstract="标识值是表示唯一个人、组织或资产的标识符。 值表示的上下文或身份类型由相应的身份命名空间定义。 当匹配跨配置文件片段的记录数据时，命名空间和标识值必须匹配。当匹配跨配置文件片段的记录数据时，命名空间和标识值必须匹配。"
+>text="Learn more in documentation"
 
 如果你问某人“你的ID是什么？” 如果没有进一步的背景，他们将很难提供有用的答案。 按照相同的逻辑，表示标识值的字符串值（无论是系统生成的ID还是电子邮件地址）只有在提供给字符串值上下文的限定符时才能完成：身份命名空间。
-
 
 您的客户可能会通过线上和线下渠道的组合与您的品牌进行交互，这就给如何将这些分散的交互协调到单个客户身份带来了挑战。
 
