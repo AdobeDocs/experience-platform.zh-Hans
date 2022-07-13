@@ -5,9 +5,9 @@ title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑模式的基础知识。
 topic-legacy: user guide
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
+source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
 workflow-type: tm+mt
-source-wordcount: '2895'
+source-wordcount: '2901'
 ht-degree: 0%
 
 ---
@@ -225,8 +225,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_schemas_enableforprofile"
 >title="为配置文件启用架构"
->abstract="为配置文件启用架构后，从此架构创建的任何数据集都将参与实时客户配置文件，该配置文件可合并来自不同来源的数据以构建每个客户的完整视图。 使用架构将数据摄取到配置文件后，便无法禁用该架构。"
->text="See the documentation for more information on enabling a schema for Profile."
+>abstract="为配置文件启用架构后，从此架构创建的任何数据集都将参与实时客户配置文件，该配置文件可合并来自不同来源的数据以构建每个客户的完整视图。 使用架构将数据摄取到配置文件后，便无法禁用该架构。 有关详细信息，请参阅文档。"
 
 [实时客户资料](../../../profile/home.md) 合并来自不同来源的数据，以构建每个客户的完整视图。 如果您希望架构捕获的数据参与此过程，则必须启用该架构以在中使用 [!DNL Profile].
 

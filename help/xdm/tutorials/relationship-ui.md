@@ -6,9 +6,9 @@ description: 本文档提供了一个教程，用于使用Experience Platform用
 topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 0ce574700ce4134cddbb990b9b2765c25112b44d
+source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
 workflow-type: tm+mt
-source-wordcount: '1145'
+source-wordcount: '1172'
 ht-degree: 0%
 
 ---
@@ -18,30 +18,27 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_schemas_relationships"
 >title="架构关系"
->abstract="属于不同类的架构可以通过关系字段根据上下文进行链接，从而允许您构建更复杂的分段规则。"
->text="See the documentation for more information on schema relationships."
+>abstract="属于不同类的架构可以通过关系字段根据上下文进行链接，从而允许您构建更复杂的分段规则。 有关架构关系的更多信息，请参阅此文档。"
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_1to1_reference_schema"
 >title="参考模式"
->abstract="选择要与之建立关系的架构。 此架构可以是与当前架构不同的类。"
->text="See the documentation for more information on schema relationships."
+>abstract="选择要与之建立关系的架构。 此架构可以是与当前架构不同的类。 有关架构关系的更多信息，请参阅此文档。"
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_1to1_identity_namespace"
 >title="引用标识命名空间"
->abstract="引用架构的主标识字段的命名空间（类型）。 引用架构必须具有已建立的主标识字段才能参与关系。"
->text="See the documentation for more information on schema relationships."
-
->[!NOTE]
->
->有关如何在Real-time Customer Data Platform B2B Edition中创建多对一关系的步骤，请参阅 [创建B2B关系](./relationship-b2b.md).
+>abstract="引用架构的主标识字段的命名空间（类型）。 引用架构必须具有已建立的主标识字段才能参与关系。 有关架构关系的更多信息，请参阅此文档。"
 
 了解客户之间的关系以及客户与品牌在各种渠道中的交互是Adobe Experience Platform的重要组成部分。 在 [!DNL Experience Data Model] (XDM)模式允许您对客户数据进行复杂的分析。
 
 而架构关系可以通过使用并集架构和 [!DNL Real-time Customer Profile]，这仅适用于共享同一类的架构。 要在属于不同类的两个架构之间建立关系，必须将专用关系字段添加到源架构中，该源架构引用目标架构的标识。
 
 本文档提供了一个教程，用于使用 [!DNL Experience Platform] 用户界面。 有关使用API定义架构关系的步骤，请参阅 [使用模式注册表API定义关系](relationship-api.md).
+
+>[!NOTE]
+>
+>有关如何在Real-time Customer Data Platform B2B Edition中创建多对一关系的步骤，请参阅 [创建B2B关系](./relationship-b2b.md).
 
 ## 快速入门
 

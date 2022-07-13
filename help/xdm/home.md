@@ -5,9 +5,9 @@ title: XDM系统概述
 topic-legacy: overview
 description: 标准化和互操作性是Adobe Experience Platform背后的关键概念。 由Adobe驱动的体验数据模型(XDM)旨在标准化客户体验数据并定义客户体验管理架构。
 exl-id: 294d5f02-850f-47ea-9333-8b94a0bb291e
-source-git-commit: 90f055f2fbeb7571d2f7c1daf4ea14490069f2eb
+source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
 workflow-type: tm+mt
-source-wordcount: '2076'
+source-wordcount: '2087'
 ht-degree: 2%
 
 ---
@@ -54,8 +54,7 @@ Experience Platform提供了用户界面和RESTful API，您可以从中查看�
 >[!CONTEXTUALHELP]
 >id="platform_schemas_behavior"
 >title="数据行为"
->abstract="用于Experience Platform的数据分为三种行为类型：记录、时间系列和临时。 记录架构提供有关主体属性的信息，而时序架构在执行操作时捕获系统的快照。 临时架构捕获字段是命名空间，仅供单个数据集使用。"
->text="See the documentation for more information on data behaviors in Platform."
+>abstract="用于Experience Platform的数据分为三种行为类型：记录、时间系列和临时。 记录架构提供有关主体属性的信息，而时序架构在执行操作时捕获系统的快照。 临时架构捕获字段是命名空间，仅供单个数据集使用。 有关Platform中数据行为的更多信息，请参阅此文档。"
 
 用于Experience Platform的数据分为三种行为类型：
 

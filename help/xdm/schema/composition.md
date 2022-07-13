@@ -5,9 +5,9 @@ title: 架构组合的基础知识
 topic-legacy: overview
 description: 本文档介绍了Experience Data Model(XDM)架构，以及构建架构以在Adobe Experience Platform中使用的构建基块、原则和最佳实践。
 exl-id: d449eb01-bc60-4f5e-8d6f-ab4617878f7e
-source-git-commit: 11dcb1a824020a5b803621025863e95539ab4d71
+source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
 workflow-type: tm+mt
-source-wordcount: '3992'
+source-wordcount: '4103'
 ht-degree: 0%
 
 ---
@@ -54,8 +54,7 @@ XDM模式非常适合以自包含格式存储大量复杂数据。 请参阅 [�
 >[!CONTEXTUALHELP]
 >id="platform_schemas_identities"
 >title="模式中的标识"
->abstract="标识是架构中可用于标识主题的关键字段，如电子邮件地址或营销ID。 这些字段用于构建每个人的身份图并构建客户配置文件。"
->text="See the documentation for more information on identities in schemas."
+>abstract="标识是架构中可用于标识主题的关键字段，如电子邮件地址或营销ID。 这些字段用于构建每个人的身份图并构建客户配置文件。 有关模式中标识的更多信息，请参阅此文档。"
 
 架构用于将数据摄取到 [!DNL Experience Platform]. 此数据可跨多项服务使用，以创建单个实体的单个统一视图。 因此，在考虑架构时，请务必考虑客户身份以及哪些字段可用于标识主题，而不管数据来自何处。
 
@@ -169,6 +168,11 @@ XDM模式非常适合以自包含格式存储大量复杂数据。 请参阅 [�
 
 ### 类 {#class}
 
+>[!CONTEXTUALHELP]
+>id="platform_schemas_class"
+>title="类"
+>abstract="每个架构都基于一个类。 类定义架构的行为以及基于该类的所有架构都必须包含的通用属性。 有关如何在架构组合中涉及类的更多信息，请参阅文档。"
+
 从分配类开始合成架构。 类定义架构将包含的数据的行为方面（记录或时间系列）。 除此之外，类还描述了所有基于该类的架构需要包含的公共属性的最小数量，并为合并多个兼容数据集提供了一种方法。
 
 架构的类确定哪些字段组有资格在该架构中使用。 这在 [下一部分](#field-group).
@@ -182,6 +186,11 @@ Adobe提供了多个标准（“核心”）XDM类。 其中两门课， [!DNL X
 有关可用标准XDM类的最新列表，请参阅 [官方XDM存储库](https://github.com/adobe/xdm/tree/master/components/classes). 或者，您也可以参阅 [浏览XDM组件](../ui/explore.md) 如果您希望在UI中查看资源，请执行以下操作：
 
 ### 字段组 {#field-group}
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_fieldgroup"
+>title="字段组"
+>abstract="字段组是可重用的组件，允许您使用其他属性扩展架构。 大多数字段组仅与某些类兼容。 您可以使用由Adobe定义的标准字段组，也可以手动定义您自己的自定义字段组。 请参阅文档，了解有关字段组如何参与架构组合的更多信息。"
 
 字段组是可重用的组件，它定义一个或多个字段，以实现某些功能，如个人详细信息、酒店首选项或地址。 字段组将作为实现兼容类的架构的一部分包含在内。
 

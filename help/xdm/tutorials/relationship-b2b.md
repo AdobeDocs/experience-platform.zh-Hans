@@ -2,9 +2,9 @@
 title: 在Real-time Customer Data Platform B2B版中定义两个模式之间的关系
 description: 了解如何在Real-time Customer Data Platform B2B Edition中定义两个架构之间的多对一关系。
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: b9ec275df738e006d3fec2cdd64b0ed6577dbff8
+source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
 workflow-type: tm+mt
-source-wordcount: '1351'
+source-wordcount: '1401'
 ht-degree: 0%
 
 ---
@@ -14,12 +14,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_reference_schema"
 >title="参考模式"
->abstract="选择要与之建立关系的架构。 根据架构的类，它可能还与B2B上下文中的其他实体存在关系。"
->text="See the documentation to learn how B2B schema classes relate to each other."
-
->[!NOTE]
->
->如果您没有使用Real-time Customer Data Platform B2B Edition，或者希望创建一对一的关系，请参阅 [创建一对一关系](./relationship-ui.md) 中。
+>abstract="选择要与之建立关系的架构。 根据架构的类，它可能还与B2B上下文中的其他实体存在关系。 请参阅相关文档，了解B2B模式类如何彼此关联。"
 
 Real-time Customer Data Platform B2B Edition提供了多个Experience Data Model(XDM)类，用于捕获基本的B2B数据实体，包括 [帐户](../classes/b2b/business-account.md), [机会](../classes/b2b/business-opportunity.md), [营销活动](../classes/b2b/business-campaign.md)，等等。 通过基于这些类构建模式并使它们能够在 [实时客户资料](../../profile/home.md)，您可以将来自不同来源的数据合并到称为合并模式的统一表示形式中。
 
@@ -32,6 +27,8 @@ Real-time Customer Data Platform B2B Edition提供了多个Experience Data Model
 本教程介绍了在实时CDP B2B Edition中定义两个架构之间多对一关系的步骤。
 
 >[!NOTE]
+>
+>如果您没有使用Real-time Customer Data Platform B2B Edition，或者希望创建一对一的关系，请参阅 [创建一对一关系](./relationship-ui.md) 中。
 >
 >本教程重点介绍如何在Platform UI中手动建立B2B模式之间的关系。 如果您从B2B源连接中导入数据，则可以使用自动生成实用程序来创建所需的架构、标识和关系。 有关B2B命名空间和模式的更多信息，请参阅源文档 [使用自动生成实用程序](../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md).
 
@@ -54,8 +51,7 @@ Real-time Customer Data Platform B2B Edition提供了多个Experience Data Model
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_identity_namespace"
 >title="引用标识命名空间"
->abstract="引用架构的主标识字段的命名空间（类型）。 引用架构必须具有已建立的主标识字段才能参与关系。"
->text="See the documentation to learn more about identities in B2B relationships."
+>abstract="引用架构的主标识字段的命名空间（类型）。 引用架构必须具有已建立的主标识字段才能参与关系。 请参阅此文档，了解有关B2B关系中身份的更多信息。"
 
 要建立关系，目标架构必须具有定义的主标识。 在为B2B实体设置主标识时，请记住，如果您跨不同系统或位置收集基于字符串的实体ID，则它们可能会重叠，这可能会导致平台中的数据冲突。
 
@@ -88,14 +84,12 @@ Real-time Customer Data Platform B2B Edition提供了多个Experience Data Model
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_relationship_name_current"
 >title="当前架构中的关系名称"
->abstract="一个标签，用于描述从当前架构到引用架构的关系（例如，“相关帐户”）。 此标签用于配置文件和分段，以提供来自相关B2B实体的数据的上下文。"
->text="See the documentation to learn more about building B2B schema relationships."
+>abstract="一个标签，用于描述从当前架构到引用架构的关系（例如，“相关帐户”）。 此标签用于配置文件和分段，以提供来自相关B2B实体的数据的上下文。 请参阅此文档，了解有关构建B2B模式关系的更多信息。"
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_relationship_name_reference"
 >title="引用架构中的关系名称"
->abstract="一个标签，用于描述从引用架构到当前架构（例如，“相关商机”）的关系。 此标签用于配置文件和分段，以提供来自相关B2B实体的数据的上下文。"
->text="See the documentation to learn more about building B2B schema relationships."
+>abstract="一个标签，用于描述从引用架构到当前架构（例如，“相关商机”）的关系。 此标签用于配置文件和分段，以提供来自相关B2B实体的数据的上下文。 请参阅此文档，了解有关构建B2B模式关系的更多信息。"
 
 要定义两个架构之间的关系，源架构必须具有引用目标架构主标识的专用字段。 标准B2B类包括适用于常见相关业务实体的专用源密钥字段。 例如， [!UICONTROL XDM业务机会] 类包含相关帐户的源键字段(`accountKey`)和相关的营销活动(`campaignKey`)。 但是，您还可以添加其他 [!UICONTROL B2B源] 字段（如果需要的组件数超过默认组件数）。
 
