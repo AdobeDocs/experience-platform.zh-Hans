@@ -3,10 +3,10 @@ keywords: Google Ad Manager;Google Ad;DoubleClick AdX;DoubleClick;Google Ad Mana
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告服务平台，它为出版商提供了通过视频和移动设备应用程序管理其网站上广告显示的方法。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 0c5d3ae2f43b0eeb6c86f535e37a906b7c414600
 workflow-type: tm+mt
-source-wordcount: '842'
-ht-degree: 3%
+source-wordcount: '873'
+ht-degree: 2%
 
 ---
 
@@ -64,8 +64,8 @@ ht-degree: 3%
 
 * **帐户ID**:Adobe的帐户ID与Google。 帐户ID:87933855。
 * **客户ID**:Adobe的客户帐户ID和Google。 客户ID:89690775。
-* **网络ID**:这是你的帐户 [!DNL Google Ad Manager]
-* **受众链接ID**:这是你的帐户 [!DNL Google Ad Manager]
+* **网络代码**:这是您的 [!DNL Google Ad Manager] 网络标识符，位于 **[!UICONTROL 管理员>全局设置]** 在Google界面和URL中。
+* **受众链接ID**:这是与 [!DNL Google Ad Manager] 网络 [!DNL Network code])，也可在下找到 **[!UICONTROL 管理员>全局设置]** 在Google界面中。
 * 您的帐户类型。 由Google或AdX购买者提供的DFP。
 
 ## 连接到目标 {#connect}
