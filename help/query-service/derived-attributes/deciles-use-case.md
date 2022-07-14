@@ -1,9 +1,7 @@
 ---
 title: '基于数据集的派生属性用例 '
 description: 本指南演示了使用查询服务创建基于文件的派生属性以用于用户档案数据所需的步骤。
-hide: true
-hidefromtoc: true
-source-git-commit: 4f44e66ee7537e038628a5beb6b3b3bd0760ff1b
+source-git-commit: 61e0895484b8005e2109056d51557f609fecaf97
 workflow-type: tm+mt
 source-wordcount: '1508'
 ht-degree: 2%

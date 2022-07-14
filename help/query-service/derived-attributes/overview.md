@@ -1,10 +1,8 @@
 ---
 title: 派生属性
 description: 派生属性提供了一种生成所选属性的便捷方法，该属性可在任何常规频率下刷新，并可选择发布到您的实时客户资料数据中。 本文档概述了如何使用查询服务创建派生属性，以便与用户档案数据一起使用。
-hide: true
-hidefromtoc: true
 exl-id: 5d52b268-e2a3-411c-8242-3aa32e759937
-source-git-commit: ae11d6f622c42d08373b7454ef920a80abaf2425
+source-git-commit: 61e0895484b8005e2109056d51557f609fecaf97
 workflow-type: tm+mt
 source-wordcount: '752'
 ht-degree: 0%
