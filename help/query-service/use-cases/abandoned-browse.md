@@ -4,7 +4,7 @@ title: Adobe Experience Platform查询服务的示例用例
 topic-legacy: tutorial
 description: 一个端到端示例，用于演示Adobe Experience Platform查询服务的多功能性和优势。
 exl-id: 00bdae47-71b7-44ea-9365-a1d64c88d2bf
-source-git-commit: 06655e930e447b48089891ca930da89854b8320b
+source-git-commit: 6f6256b5601ce5c230ef334a9ce71325b43fda45
 workflow-type: tm+mt
 source-wordcount: '712'
 ht-degree: 2%
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 本文档及随附的视频演示提供了一个高级端到端工作流程，演示了Adobe Experience Platform [!DNL Query Service] 有利于贵组织的战略业务洞察。 本指南以浏览放弃用例为例，说明了以下关键概念：
 
-* 数据处理对最大化Adobe Experience Platform潜力的关键重要性
+* 数据处理对最大化Adobe Experience Platform潜力的关键重要性。
 * 基于现有数据架构构建查询的方法。
 * 确保满足您需求的数据质量，以及缓解任何不足的方法。
 * 计划查询以设置频率运行以在下游用于分段和个性化目标的流程。
