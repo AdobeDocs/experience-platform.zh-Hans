@@ -1,12 +1,12 @@
 ---
 keywords: RTCDP;CDP;Real-time Customer Data Platform；实时客户数据平台；实时CDP;RTCDP
 title: Real-time Customer Data Platform B2B Edition的示例用例
-description: 此示例情景提供了配置Real-time Customer Data Platform B2B Edition实施的示例。
+description: 此示例场景提供了一个用于 Real-time Customer Data Platform B2B 版本实施的配置示例。
 exl-id: 15505980-ac33-44b2-8989-c08cbabd212b
 source-git-commit: e6f71954d52e0a998955c3420307417cc011c24d
 workflow-type: tm+mt
 source-wordcount: '1134'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 

@@ -7,7 +7,7 @@ user-guide-description: 利用智能 AI 服务，根据营销事件数据生成�
 source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
 workflow-type: tm+mt
 source-wordcount: '123'
-ht-degree: 22%
+ht-degree: 24%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 22%
 
 - [智能服务概述](home.md)
 - [准备数据以在智能服务中使用](data-preparation.md)
-- Attribution AI {#attribution-ai}
+- 归因人工智能 {#attribution-ai}
    - [概述](attribution-ai/overview.md)
    - [Attribution AI入门](attribution-ai/getting-started.md)
    - [输入和输出](attribution-ai/input-output.md)

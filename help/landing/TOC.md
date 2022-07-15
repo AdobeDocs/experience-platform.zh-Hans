@@ -15,7 +15,7 @@ ht-degree: 27%
 
 * [平台概述](home.md)
 * [平台概述（视频）](video/platform-overview.md)
-* [平台教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html)
+* [平台教程](https://experienceleague.adobe.com/docs/platform-learn/tutorials/overview.html?lang=zh-Hans)
 * [由平台提供支持的客户体验（视频）](video/customer-experience.md)
 * [由Platform提供支持的客户体验的后台（视频）](video/customer-experience-bts.md)
 * 快速入门{#getting-started}

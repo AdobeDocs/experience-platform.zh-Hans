@@ -6,8 +6,8 @@ user-guide-description: 通过可自定义的仪表板实现 Experience Platform
 feature: Dashboards
 source-git-commit: 058f1cf5aa0ea134f276d1b3bc7064195fb252f1
 workflow-type: tm+mt
-source-wordcount: '64'
-ht-degree: 32%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 32%
    * [用户档案](guides/profiles.md)
    * [区段](guides/segments.md)
    * [目标](guides/destinations.md)
-   * [许可证使用情况](guides/license-usage.md)
+   * [许可证使用](guides/license-usage.md)
 * 自定义功能板 {#customize}
    * [自定义概述](customize/overview.md)
    * [修改功能板](customize/modify.md)

@@ -1,10 +1,11 @@
 ---
 title: Adobe Audience Manager扩展概述
-description: 了解Adobe Experience Platform中的Adobe Audience Manager标记扩展。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+description: 了解 Adobe Experience Platform 中的 Adobe Audience Manager 标记扩展。
+exl-id: d345e145-fdb9-4ca3-88c2-9c2a247ea59a
+source-git-commit: a8b0282004dd57096dfc63a9adb82ad70d37495d
 workflow-type: tm+mt
 source-wordcount: '496'
-ht-degree: 63%
+ht-degree: 71%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 63%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用Audience Manager标记扩展，您可以将Audience Manager使用的DIL代码与Adobe Experience Platform中的资产相集成。
 
@@ -20,13 +21,13 @@ ht-degree: 63%
 
 >[!NOTE]
 >
->此扩展不适用于Adobe Analytics数据的事件转发。 对于事件转发，请使用[Adobe Analytics扩展](../analytics/overview.md)。
+>此扩展不适用于Adobe Analytics数据的事件转发。 对于事件转发，请使用 [Adobe Analytics扩展](../analytics/overview.md).
 
 ## 配置 Adobe Audience Manager 扩展
 
-如果尚未安装Adobe Audience Manager扩展，请打开您的资产，选择&#x200B;**[!UICONTROL Extensions > Catalog]**，将鼠标悬停在Adobe Audience Manager扩展上，然后选择&#x200B;**[!UICONTROL Install]**。
+如果尚未安装Adobe Audience Manager扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Adobe Audience Manager扩展上，然后选择 **[!UICONTROL 安装]**.
 
-要配置该扩展，请打开[!UICONTROL Extensions]选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL Configure]**。
+要配置扩展，请打开 [!UICONTROL 扩展] ，将鼠标悬停在扩展上，然后选择 **[!UICONTROL 配置]**.
 
 ### DIL 设置
 
@@ -44,7 +45,7 @@ ht-degree: 63%
 
 如果 URL 与任何排除的路径相匹配，则不会加载该扩展。
 
-选择&#x200B;**[!UICONTROL 添加路径]**&#x200B;以指定排除的URL。
+选择 **[!UICONTROL 添加路径]** 以指定排除的URL。
 
 如果 URL 是正则表达式，则启用 Regex。
 
@@ -64,11 +65,11 @@ ht-degree: 63%
 
 添加 [DIL.create](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_create.html) 使用的初始化属性，以及 [visitorService 对象](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_visitor_service.html)的命名空间子属性。在代码编辑器中，代码注释包含两个示例用例。
 
-选择&#x200B;**[!UICONTROL 选择项目]**&#x200B;以添加其他属性。
+选择 **[!UICONTROL 选择项目]** 添加其他属性。
 
 将鼠标悬停在“i”图标上，可了解每个属性的用途。您可以在 [Audience Manager DIL 文档](https://experiencecloud.adobe.com/resources/help/en_US/aam/r_dil_create.html)中找到有关这些属性的更多信息。
 
-配置完扩展后，选择&#x200B;**[!UICONTROL Save]**。
+选择 **[!UICONTROL 保存]** 配置完该扩展后。
 
 ## Adobe Audience Manager 扩展操作类型
 

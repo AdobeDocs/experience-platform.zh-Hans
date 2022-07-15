@@ -4,8 +4,8 @@ description: 了解您如何借助审核日志看到谁在 Adobe Experience Plat
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
 source-git-commit: cd7ce8c107769a77373f328d9aa84c982be0d8ee
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '847'
+ht-degree: 12%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 本文档介绍Platform中的审核日志，包括如何在UI或API中查看和管理这些日志。
 
-## 由审核日志捕获的事件类型 {#category}
+## 审核日志记录的事件类型 {#category}
 
 下表概述了审计日志记录哪些资源的操作：
 

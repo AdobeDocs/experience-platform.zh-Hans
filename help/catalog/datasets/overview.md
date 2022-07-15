@@ -3,12 +3,12 @@ keywords: Experience Platform；主页；热门主题；数据位置；数据位
 solution: Experience Platform
 title: 数据集概述
 topic-legacy: datasets
-description: 本文档简要概述了Experience Platform中的数据集。
+description: 本文档全面概述了 Experience Platform 中的数据集。
 exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
 source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
 workflow-type: tm+mt
 source-wordcount: '711'
-ht-degree: 6%
+ht-degree: 7%
 
 ---
 

@@ -3,12 +3,12 @@ audience: user
 solution: Data Collection
 user-guide-title: Edge Network Server API 文档
 breadcrumb-title: Edge Network Server API 文档
-user-guide-description: Adobe Experience Platform Edge Network Server API为客户提供了一种与任何Adobe Experience Cloud或Adobe Experience Platform Edge服务进行交互的优化方式。 了解如何使用服务器API来收集、个性化、广告和营销的各种用例。
+user-guide-description: Adobe Experience Platform Edge Network Server API 为客户提供了与任何 Adobe Experience Cloud 或 Adobe Experience Platform Edge 服务交互的优化方式。了解如何将服务器 API 用于各种数据收集、个性化、广告和营销用例。
 feature: Data Collection
 source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
 workflow-type: tm+mt
 source-wordcount: '106'
-ht-degree: 18%
+ht-degree: 62%
 
 ---
 

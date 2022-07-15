@@ -10,7 +10,7 @@ exl-id: 3e668103-e2a2-4ce6-a40a-8029a6aaa8dd
 source-git-commit: 62188f56861dd021db7b13325f622323644af8e0
 workflow-type: tm+mt
 source-wordcount: '553'
-ht-degree: 19%
+ht-degree: 26%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 19%
 
 Customer AI ，作为Intelligent Services的一部分，为营销人员提供了在个人级别生成客户预测并提供解释的功能。
 
-借助影响因素的帮助， Customer AI可以告诉您客户可能执行的操作以及原因。 此外，营销人员还可以从Customer AI预测和分析中受益，通过提供最合适的选件和消息传送来个性化客户体验。
+在影响因素的帮助下，客户人工智能可以告诉您客户可能会做什么以及为什么。此外，营销人员可以从客户人工智能预测和洞察中受益，通过提供最合适的优惠和消息传递来个性化客户体验。
 
 ## 了解客户人工智能
 

@@ -6,8 +6,8 @@ user-guide-description: 通过使用标签、营销操作和策略实施数据�
 feature: Data Governance
 source-git-commit: 8133804076b1c0adf2eae5b748e86a35f3186d14
 workflow-type: tm+mt
-source-wordcount: '94'
-ht-degree: 32%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -15,16 +15,16 @@ ht-degree: 32%
 # Adobe Experience Platform数据管理 {#data-governance}
 
 * [数据管理概述](home.md)
-* 数据使用标签{#labels}
+* 数据使用标签 {#labels}
    * [概述](labels/overview.md)
    * [标签术语表](labels/reference.md)
    * [在UI中管理标签](labels/user-guide.md)
    * [使用API管理数据集的标签](labels/dataset-api.md)
-* 数据使用策略{#policies}
+* 数据使用策略 {#policies}
    * [概述](policies/overview.md)
    * [在UI中管理策略](policies/user-guide.md)
    * [在API中创建策略](policies/create.md)
-* 策略执行{#enforcement}
+* 策略执行 {#enforcement}
    * [概述](enforcement/overview.md)
    * [自动执行](enforcement/auto-enforcement.md)
    * [基于API的执行](enforcement/api-enforcement.md)

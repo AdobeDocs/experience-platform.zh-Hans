@@ -1,11 +1,11 @@
 ---
 title: Reactor API指南
-description: Reactor API允许开发人员以编程方式管理Adobe Experience Platform中标记的所有资源。 请阅读本指南，了解如何使用API执行关键操作。
+description: 利用 Reactor API，开发人员能够以编程方式管理 Adobe Experience Platform 中标记的所有资源。参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: 153eab11-db08-499e-80d1-c56f254372ce
 source-git-commit: 7e4bc716e61b33563e0cb8059cb9f1332af7fd36
 workflow-type: tm+mt
 source-wordcount: '1082'
-ht-degree: 1%
+ht-degree: 4%
 
 ---
 
@@ -103,7 +103,7 @@ Reactor API提供了多个端点，允许您以编程方式管理Adobe Experienc
 
 ## 注释
 
-注释是可添加到某些标签资源的文本批注，例如数据元素、扩展、库、属性、规则和规则组件。 请参阅 [注释终结指南](./endpoints/notes.md) 了解如何在API中管理注释。
+注释是可添加到某些标签资源的文本批注，例如数据元素、扩展、库、属性、规则和规则组件。 请参阅 [注释终端指南](./endpoints/notes.md) 了解如何在API中管理注释。
 
 ## 配置文件
 

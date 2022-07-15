@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据管理；许可证授权；许可；最佳实践
 title: 数据管理许可证授权最佳实践
-description: 本文档概述了要遵循的最佳实践，以及可用于通过Adobe Experience Platform更好地管理许可证授权的工具。
+description: 本文档概述了借助 Adobe Experience Platform 更好地管理您的许可证权利需要遵循的最佳实践和可以使用的工具。
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
 source-git-commit: 02882957fc38058ff092938d631e290725d4bdc2
 workflow-type: tm+mt
 source-wordcount: '2531'
-ht-degree: 0%
+ht-degree: 2%
 
 ---
 
@@ -16,7 +16,7 @@ Adobe Experience Platform是一个开放系统，可将数据转换为可实时�
 
 Platform提供的许可证可确定可创建的用户档案数量和可导入的数据量。 由于能够引入任何数据源、卷或历史，因此随着数据量的增长，可能会超出您的许可授权。
 
-本文档概述了要遵循的最佳实践，以及可用于通过Adobe Experience Platform更好地管理许可证授权的工具。
+本文档概述了借助 Adobe Experience Platform 更好地管理您的许可证权利需要遵循的最佳实践和可以使用的工具。
 
 ## 了解Adobe Experience Platform数据存储
 
@@ -37,7 +37,7 @@ Experience Platform主要由两个数据存储库组成：the [!DNL Data Lake] �
 >
 >您对 [!DNL Data Lake] 取决于您购买的产品SKU。 有关产品SKU的更多信息，请与您的Adobe代表联系。
 
-## 许可证使用情况 {#license-usage}
+## 许可证使用 {#license-usage}
 
 在Experience Platform许可证时，您会获得许可使用权限，具体取决于SKU:
 
