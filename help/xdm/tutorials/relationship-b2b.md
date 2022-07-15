@@ -2,14 +2,14 @@
 title: 在Real-time Customer Data Platform B2B版中定义两个模式之间的关系
 description: 了解如何在Real-time Customer Data Platform B2B Edition中定义两个架构之间的多对一关系。
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
+source-git-commit: 86a230d746d6642437c4e37958c07a1186ebadc3
 workflow-type: tm+mt
 source-wordcount: '1401'
 ht-degree: 0%
 
 ---
 
-# 在Real-time Customer Data Platform B2B Edition中定义两个架构之间的多对一关系
+# 在Real-time Customer Data Platform B2B Edition中定义两个架构之间的多对一关系 {#relationship-b2b}
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_b2b_reference_schema"
