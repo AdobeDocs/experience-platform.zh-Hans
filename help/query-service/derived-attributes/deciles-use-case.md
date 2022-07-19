@@ -1,7 +1,8 @@
 ---
-title: '基于数据集的派生属性用例 '
+title: 基于数据集的派生属性用例
 description: 本指南演示了使用查询服务创建基于文件的派生属性以用于用户档案数据所需的步骤。
-source-git-commit: 61e0895484b8005e2109056d51557f609fecaf97
+exl-id: 0ec6b511-b9fd-4447-b63d-85aa1f235436
+source-git-commit: c1ec6f949bd0ab9ec3b1ccc58baf74d8c71deca0
 workflow-type: tm+mt
 source-wordcount: '1508'
 ht-degree: 2%
@@ -33,7 +34,7 @@ ht-degree: 2%
 
 ## 目标
 
-本文档中提供的示例使用数据集构建派生属性，以从航空公司忠诚度架构对数据进行排名。 利用派生属性，可根据所选类别的前“n”%来识别受众，从而最大限度地提高数据的效用。
+本文档中提供的示例使用数据集构建派生属性，以从航空公司忠诚度架构对数据进行排名。 利用派生属性，可根据所选类别的前“n”%来识别受众，从而最大化数据的效用。
 
 ## 构建基于数据集的派生属性
 
@@ -59,7 +60,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->简单来说，原则ID `_profilefoundationreportingstg` 在列标题中的命名空间开头以及整个文档中的后续提及中已忽略。
+>为简便起见，租户ID `_profilefoundationreportingstg` 在列标题中的命名空间开头以及整个文档中的后续提及中已忽略。
 
 | `.membershipNumber` | `.emailAddress.address` | `.transactionDate` | `.transactionType` | `.transactionDetails` | `.mileage` | `.loyaltyStatus` |
 |---|---|---|---|---|---|---|
@@ -299,4 +300,3 @@ GROUP BY rankings.membershipNumber
 ## 后续步骤
 
 上面提供的示例用例重点介绍了如何在“实时客户资料”中提供详细属性的步骤。 这允许Segmentation Service通过用户界面或RESTful API，能够根据这些数据存储段生成受众。 请参阅 [Segmentation Service概述](../../segmentation/home.md) 有关如何创建、评估和访问区段的信息。
-
