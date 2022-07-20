@@ -5,9 +5,9 @@ title: Postman在Adobe Experience Platform
 topic-legacy: api guide
 description: 本文档包含概述如何设置Postman环境、导入Postman收藏集以及每个Platform服务可用收藏集列表的步骤。
 exl-id: a09b3875-97f5-47f1-a562-52decbce67b1
-source-git-commit: 9f00bff31f9e7d2da1294d3d1f24cba7870a4614
+source-git-commit: d06c3bc51909b464b9eed2a2f0df04ca531010b3
 workflow-type: tm+mt
-source-wordcount: '550'
+source-wordcount: '545'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Postman是一个API开发协作平台，它允许您使用预设变量设置环�
 
 >[!VIDEO](https://video.tv.adobe.com/v/28832)
 
-## 邮递员收藏集 {#collections}
+## Postman收藏集 {#collections}
 
 可通过访问以下网站找到包含所有可用Postman收藏集的文件夹： [Experience PlatformPostman示例GitHub存储库](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/experience-platform). 或者，Postman收集链接位于 [API参考文档](https://www.adobe.com/go/platform-api-reference-en) Adobe I/O。
 
@@ -52,9 +52,9 @@ Postman是一个API开发协作平台，它允许您使用预设变量设置环�
 
 >[!WARNING]
 >
->如Adobe I/O访问令牌生成Postman集合中所述，表示的生成方法适合 **非生产用途**. 本地签名从第三方主机加载JavaScript库，远程签名将私钥发送到由Adobe拥有和运行的Web服务。 虽然Adobe不存储此私钥，但生产密钥绝不应与任何人共享。
+>如Identity Management Service(IMS)Postman集合中所述，表示的生成方法适合 **非生产用途**. 本地签名从第三方主机加载JavaScript库，远程签名将私钥发送到由Adobe拥有和运行的Web服务。 虽然Adobe不存储此私钥，但生产密钥绝不应与任何人共享。
 
-以下视频使用 [Adobe I/O访问令牌生成集合](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/ims/Adobe%20IO%20Access%20Token%20Generation.postman_collection.json) 可从公共GitHub存储库下载。
+以下视频使用 [Identity Management Service(IMS)Postman收集](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/ims/Identity%20Management%20Service.postman_collection.json) 可从公共GitHub存储库下载。
 
 >[!VIDEO](https://video.tv.adobe.com/v/29698/?quality=12&learn=on)
 
