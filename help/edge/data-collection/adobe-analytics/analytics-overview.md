@@ -3,10 +3,10 @@ title: 将Adobe Analytics与Platform Web SDK结合使用
 description: 了解如何使用Adobe Experience Platform Web SDK将数据发送到Adobe Analytics。
 keywords: adobe analytics;analytics；映射的数据；映射的变量；
 exl-id: b18d1163-9edf-4a9c-b247-cd1aa7dfca50
-source-git-commit: 921a3a32ee5f2daa04512a3f2c68935667ab3875
+source-git-commit: f627c1f6c917e74e0a366ce0611a1fa6bd0e3c3d
 workflow-type: tm+mt
-source-wordcount: '233'
-ht-degree: 6%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -28,7 +28,7 @@ Adobe Experience Platform [!DNL Edge Network] 自动映射多个XDM变量。 下
 
 ## 手动映射的数据
 
-可以通过处理规则访问边缘网络收集的所有数据。数据使用点表示法进行扁平化，可用作contextData。
+任何未由边缘网络自动映射的数据都可以通过处理规则进行访问。 数据使用点表示法进行扁平化，可用作contextData。
 
 如果你有这样的模式。
 
