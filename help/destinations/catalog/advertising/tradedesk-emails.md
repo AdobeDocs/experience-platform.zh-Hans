@@ -1,9 +1,9 @@
 ---
 title: （测试版）交易台 — CRM连接
 description: 将用户档案激活到交易台帐户，以便根据CRM数据定位和抑制受众。
-source-git-commit: 69bf43f86ab3369ad0c7febcb69ec41d3bcac8bb
+source-git-commit: b186a1a4b7417503ffa08a66136411ccff495510
 workflow-type: tm+mt
-source-wordcount: '1046'
+source-wordcount: '1041'
 ht-degree: 2%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 2%
 
 在将区段激活到 [!DNL The Trade Desk]，您必须联系 [!DNL The Trade Desk] 客户经理来签署CRM载入合同。 [!DNL The Trade Desk] 然后，将授予权限并共享您的广告商ID以配置您的目标。
 
-## ID匹配要求(#id-matching-requirements)
+## ID匹配要求 {#id-matching-requirements}
 
 根据您摄取到Adobe Experience Platform的ID类型，您必须遵循其相应要求。 请阅读 [身份命名空间概述](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans) 以了解更多信息。
 
@@ -50,7 +50,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 {style=&quot;table-layout:auto&quot;}
 
-## 电子邮件哈希处理要求(#hashing-requirements)
+## 电子邮件哈希处理要求 {#hashing-requirements}
 
 您可以在将电子邮件地址摄取到Adobe Experience Platform或使用原始电子邮件地址之前对其进行哈希处理。
 
@@ -77,11 +77,11 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 
 ## 连接到目标 {#connect}
 
-### 目标身份验证(#authenticate)
+### 目标身份验证 {#authenticate}
 
 [!DNL The Trade Desk] CRM目标是每日上传批处理文件，不需要用户进行身份验证。
 
-### 填写目标详细信息(#fill-in-details)
+### 填写目标详细信息 {#fill-in-details}
 
 在向目标发送或激活受众数据之前，您必须设置与您自己的目标平台的连接。 While [设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=en) 此目标中，您必须提供以下信息：
 
@@ -120,7 +120,7 @@ Adobe Experience Platform支持纯文本和SHA256哈希电子邮件地址。 按
 * 选择 `Email` 命名空间作为目标标识（如果源命名空间或属性为） `Email`.
 * 选择 `Email_LC_SHA256` 命名空间作为目标标识（如果源命名空间或属性为） `Email_LC_SHA256`.
 
-## 验证数据导出(#validate)
+## 验证数据导出 {#validate}
 
 验证数据是否正确导出为Experience Platform外和 [!DNL The Trade Desk]，请在的Adobe1PD数据区块下找到区段 [!DNL The Trade Desk] 数据管理平台(DMP)。 以下是在 [!DNL Trade Desk] UI:
 
