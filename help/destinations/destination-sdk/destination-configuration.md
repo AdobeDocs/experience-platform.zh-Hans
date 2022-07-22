@@ -2,9 +2,9 @@
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 用于Destination SDK的流目标配置选项
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 301cef53644e813c3fd43e7f2dbaf730c9e5fc11
+source-git-commit: fe61b2ebe1a06e8909ef675cae088cb4e7d2b325
 workflow-type: tm+mt
-source-wordcount: '1807'
+source-wordcount: '1888'
 ht-degree: 4%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 4%
    ],
    "customerDataFields":[
       {
-         "name":"endpointsInstance",
+         "name":"endpointRegion",
          "type":"string",
          "title":"Select Endpoint",
          "description":"Moviestar manages several instances across the globe for REST endpoints that our customers are provisioned for. Select your endpoint in the dropdown list.",
@@ -158,9 +158,13 @@ ht-degree: 4%
 
 ## 客户数据字段 {#customer-data-fields}
 
-在Experience PlatformUI中连接到目标时，使用此部分要求用户填写特定于您目标的自定义字段。 配置会反映在身份验证流程中，如下所示：
+在Experience PlatformUI中连接到目标时，使用此部分要求用户填写特定于您目标的自定义字段。 配置会反映在身份验证流程中，如下所示。
 
 ![自定义字段身份验证流程](./assets/custom-field-authentication-flow.png)
+
+>[!TIP]
+>
+>您可以在模板中访问和使用来自客户数据字段的客户输入。 使用宏 `{{customerData.name}}`. 例如，如果您要求用户输入带有名称的客户ID字段 `userId`，则可以在模板中使用宏来访问它 `{{customerData.userId}}`. 在 [目标服务器配置](/help/destinations/destination-sdk/server-and-template-configuration.md#server-specs).
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
@@ -178,10 +182,12 @@ ht-degree: 4%
 
 此部分引用上述配置中的UI元素，Adobe应在Adobe Experience Platform用户界面中将其用于您的目标。 请参阅下文：
 
+![UI属性配置的图像。](/help/destinations/destination-sdk/assets/ui-attributes-configuration.png)
+
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `documentationLink` | 字符串 | 指 [目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) 你的目的地。 使用 `http://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中 `YOURDESTINATION` 是您的目标名称。 对于名为Moviestar的目标，您将使用 `http://www.adobe.com/go/destinations-moviestar-en`. 请注意，此链接仅在Adobe设置目标处于实时状态且文档已发布后才可用。 |
-| `category` | 字符串 | 是指分配给您在Adobe Experience Platform中的目标的类别。 有关更多信息，请阅读 [目标类别](https://experienceleague.adobe.com/docs/experience-platform/destinations/destination-types.html). 使用以下任一值： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. |
+| `category` | 字符串 | 是指分配给您在Adobe Experience Platform中的目标的类别。 有关更多信息，请阅读 [目标类别](https://experienceleague.adobe.com/docs/experience-platform/destinations/destination-types.html). 使用以下任一值： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. <br> 请注意，当前每个目标只能选择一个类别。 |
 | `connectionType` | 字符串 | `Server-to-server` 是当前唯一可用的选项。 |
 | `frequency` | 字符串 | 是指目标支持的数据导出类型。 支持的值： <ul><li>`Streaming`</li><li>`Batch`</li></ul> |
 
@@ -201,7 +207,6 @@ ht-degree: 4%
 | `identityRequired` | 布尔型 | 使用 `true` 用户应能够将身份命名空间从Experience Platform映射到所需的架构。 |
 
 {style=&quot;table-layout:auto&quot;}
-
 
 ## 身份和属性 {#identities-and-attributes}
 

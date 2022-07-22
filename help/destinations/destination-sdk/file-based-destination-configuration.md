@@ -2,9 +2,9 @@
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: （测试版）用于Destination SDK的基于文件的目标配置选项
 exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
-source-git-commit: 301cef53644e813c3fd43e7f2dbaf730c9e5fc11
+source-git-commit: fe61b2ebe1a06e8909ef675cae088cb4e7d2b325
 workflow-type: tm+mt
-source-wordcount: '2330'
+source-wordcount: '2389'
 ht-degree: 5%
 
 ---
@@ -369,6 +369,8 @@ ht-degree: 5%
 在Experience PlatformUI中连接到目标时，使用此部分要求用户填写特定于您目标的自定义字段。
 
 在以下示例中， `customerDataFields` 要求用户输入其目标的名称，并提供 [!DNL Amazon S3] 存储段名称和文件夹路径，以及压缩类型、文件格式和其他几个文件导出选项。
+
+您可以在模板中访问和使用来自客户数据字段的客户输入。 使用宏 `{{customerData.name}}`. 例如，如果您要求用户输入名为的Amazon S3存储段字段 `bucket`，则可以在模板中使用宏来访问它 `{{customerData.bucket}}`. 查看如何在 [目标服务器配置](/help/destinations/destination-sdk/server-and-file-configuration.md#s3-example).
 
 ```json
  "customerDataFields":[
