@@ -1,58 +1,58 @@
 ---
-keywords: Experience Platform；热门主题；XDM;XDM系统；XDM个人配置文件；XDM ExperienceEvent;XDM体验事件；体验事件；体验事件；XDM体验事件；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；模式；故障诊断；FAQ;FAQ；联盟配置文件；联合配置文件；http://ns.adobe.com/aep/errors/XDM-1010-404;http://ns.adobe.com/aep/errors/XDM-1011-404;http://ns.adobe.com/aep/errors/XDM-1012-404;http://ns.adobe.com/aep/errors/XDM-1013-404;http://ns.adobe.com/aep/errors/XDM-1014-404;http://ns.adobe.com/aep/errors/XDM-1015-404;http://ns.adobe.com/aep/errors/XDM-1016-404;http://ns.adobe.com/aep/errors/XDM-1017-404;http://ns.adobe.com/aep/errors/XDM-1521-400;http://ns.adobe.com/aep/errors/XDM-1020-400;http://ns.adobe.com/aep/errors/XDM-1021-400;http://ns.adobe.com/aep/errors/XDM-1022-400;http://ns.adobe.com/aep/errors/XDM-1023-400;http://ns.adobe.com/aep/errors/XDM-1024-400;http://ns.adobe.com/aep/errors/XDM-1006-400;http://ns.adobe.com/aep/errors/XDM-1007-400;http://ns.adobe.com/aep/errors/XDM-1008-400;http://ns.adobe.com/aep/errors/XDM-1009-400;http://ns.adobe.com/aep/errors/XDM-1526-400;http://ns.adobe.com/aep/errors/XDM-1527-400;http://ns.adobe.com/aep/errors/XDM-1528-400;XDM-1010-404;XDM-1011-404;XDM-1012-404;XDM-1013-404;XDM-1014-404;XDM-1015-404;XDM-1016-404;XDM-1017-404;XDM-1521-400;XDM-1020-400;XDM-1021-400;XDM-1022-400;XDM-1023-400;XDM-1024-400;XDM-1006-400;XDM-1007-400;XDM-1008-400;XDM-1009-400;XDM-1526-400;XDM-1527-400;XDM-1528-400;
+keywords: Experience Platform；热门主题；XDM;XDM系统；XDM个人配置文件；XDM ExperienceEvent;XDM体验事件；体验事件；体验事件；XDM体验事件；体验数据模型；体验数据模型；体验数据模型；数据模型；数据模型；模式；故障诊断；FAQ;FAQ；联盟配置文件；联合配置文件；http://ns.adobe.com/aep/errors/XDM-1010-404;http://ns.adobe.com/aep/errors/XDM-1011-404;http://ns.adobe.com/aep/errors/XDM-1012-404;http://ns.adobe.com/aep/errors/XDM-1013-404;http://ns.adobe.com/aep/errors/XDM-1014-404;http://ns.adobe.com/aep/errors/XDM-1015-404;http://ns.adobe.com/aep/errors/XDM-1016-404;http://ns.adobe.com/aep/errors/XDM-1017-404;http://ns.adobe.com/aep/errors/XDM-1521-400;http://ns.adobe.com/aep/errors/XDM-1020-400;http://ns.adobe.com/aep/errors/XDM-1021-400;http://ns.adobe.com/aep/errors/XDM-1022-400;http://ns.adobe.com/aep/errors/XDM-1023-400;http://ns.adobe.com/aep/errors/XDM-1024-400;http://ns.adobe.com/aep/errors/XDM-1006-400;http://ns.adobe.com/aep/errors/XDM-1007-400;http://ns.adobe.com/aep/errors/XDM-1008-400;http://ns.adobe.com/aep/errors/XDM-1009-400;http://ns.adobe.com/aep/errors/XDM-1526-400;http://ns.adobe.com/aep/errors/XDM-1527-400;http://ns.adobe.com/aep/errors/XDM-1528-400;XDM-1010-404;XDM-1011-404;XDM-1012-404;XDM-1013-404;XDM-1014-404;XDM-1015-404;XDM-1016-404;XDM-1017-404;XDM-1521-400;XDM-1020-400;XDM-1021-400;XDM-1022-400;XDM-1023-400;XDM-1024-400;XDM-1006-400;XDM-1007-400;XDM-1008-400;XDM-1009-400;XDM-1413-400;XDM-1526-400;XDM-1527-400;XDM-1528-400;
 solution: Experience Platform
 title: XDM系统疑难解答指南
 description: 查找有关Experience Data Model(XDM)的常见问题解答，包括解决常见API错误的步骤。
 topic-legacy: troubleshooting
 exl-id: a0c7c661-bee8-4f66-ad5c-f669c52c9de3
-source-git-commit: 4743d844b33ff391ace0d2693b66ca4298994025
+source-git-commit: 5ffc93c8715d1184b2a239c1d631b117a531e5c1
 workflow-type: tm+mt
-source-wordcount: '1918'
+source-wordcount: '2060'
 ht-degree: 0%
 
 ---
 
 # XDM系统疑难解答指南
 
-本文档提供了有关Adobe Experience Platform中[!DNL Experience Data Model](XDM)和XDM系统的常见问题解答，包括常见错误的疑难解答指南。 有关与其他Platform服务相关的问题和疑难解答，请参阅[Experience Platform疑难解答指南](../landing/troubleshooting.md)。
+本文档提供了有关 [!DNL Experience Data Model] (XDM)和Adobe Experience Platform中的XDM系统，包括常见错误的疑难解答指南。 有关其他平台服务的相关问题和疑难解答，请参阅 [Experience Platform疑难解答指南](../landing/troubleshooting.md).
 
-**[!DNL Experience Data Model](XDM)** 是一种开源规范，它为客户体验管理定义了标准化架构。构建[!DNL Experience Platform]的方法， **XDM系统**&#x200B;可操作[!DNL Experience Data Model]架构以供[!DNL Platform]服务使用。 **[!DNL Schema Registry]**&#x200B;提供用于访问[!DNL Experience Platform]内&#x200B;**[!DNL Schema Library]**&#x200B;的用户界面和RESTful API。 有关更多信息，请参阅[XDM文档](home.md)。
+**[!DNL Experience Data Model](XDM)** 是一种开源规范，用于定义客户体验管理的标准化架构。 方法 [!DNL Experience Platform] 是建的， **XDM系统**，操作 [!DNL Experience Data Model] 供使用的架构 [!DNL Platform] 服务。 的 **[!DNL Schema Registry]** 提供用户界面和RESTful API来访问 **[!DNL Schema Library]** within [!DNL Experience Platform]. 请参阅 [XDM文档](home.md) 以了解更多信息。
 
 ## 常见问题解答
 
-以下是有关XDM系统和[!DNL Schema Registry] API使用的常见问题解答列表。
+以下是有关XDM系统和使用的常见问题解答列表 [!DNL Schema Registry] API。
 
 ### 如何向架构添加字段？
 
 您可以使用架构字段组向架构添加字段。 每个字段组都与一个或多个类兼容，从而允许在实现这些兼容类之一的任何架构中使用字段组。 虽然Adobe Experience Platform为多个行业字段组提供了其自己的预定义字段，但您可以通过使用API或用户界面创建自定义字段组，将自己的字段添加到架构中。
 
-有关在[!DNL Schema Registry] API中创建字段组的详细信息，请参阅[字段组端点指南](api/field-groups.md#create)。 如果您使用的是UI，请参阅[架构编辑器教程](./tutorials/create-schema-ui.md)。
+有关在 [!DNL Schema Registry] API，请参阅 [字段组终结点指南](api/field-groups.md#create). 如果您使用的是UI，请参阅 [模式编辑器教程](./tutorials/create-schema-ui.md).
 
 ### 字段组与数据类型的最佳用法是什么？
 
-[字段](./schema/composition.md#field-group) 组共享在架构中定义一个或多个字段的组件。字段组强制执行其字段在架构层次结构中的显示方式，因此在每个架构中显示的结构都与其中包含的结构相同。 字段组仅与特定类兼容，这些类由其`meta:intendedToExtend`属性标识。
+[字段组](./schema/composition.md#field-group) 是在架构中定义一个或多个字段的组件。 字段组强制执行其字段在架构层次结构中的显示方式，因此在每个架构中显示的结构都与其中包含的结构相同。 字段组仅与特定类兼容，这些类由其标识 `meta:intendedToExtend` 属性。
 
-[数据](./schema/composition.md#data-type) 类型还可以为架构提供一个或多个字段。但是，与字段组不同，数据类型不受特定类的限制。 这使数据类型成为一种更灵活的选项，用于描述在具有潜在不同类的多个架构中可重复使用的常用数据结构。
+[数据类型](./schema/composition.md#data-type) 还可以为架构提供一个或多个字段。 但是，与字段组不同，数据类型不受特定类的限制。 这使数据类型成为一种更灵活的选项，用于描述在具有潜在不同类的多个架构中可重复使用的常用数据结构。
 
 ### 架构的唯一ID是什么？
 
-所有[!DNL Schema Registry]资源（架构、字段组、数据类型、类）都具有用作唯一ID的URI，以用于引用和查找目的。 在API中查看架构时，可在顶级`$id`和`meta:altId`属性中找到该架构。
+全部 [!DNL Schema Registry] 资源（架构、字段组、数据类型、类）具有一个URI，该URI充当用于引用和查找的唯一ID。 在API中查看架构时，可在顶级中找到该架构 `$id` 和 `meta:altId` 属性。
 
-有关更多信息，请参阅[!DNL Schema Registry] API指南中的[资源标识](api/getting-started.md#resource-identification)部分。
+有关更多信息，请参阅 [资源标识](api/getting-started.md#resource-identification) 部分 [!DNL Schema Registry] API指南。
 
 ### 架构何时开始阻止中断更改？
 
-只要架构从未在创建数据集时使用过，或者已启用在[[!DNL Real-time Customer Profile]](../profile/home.md)中使用，架构就可以进行中断更改。 在数据集创建中使用架构或启用架构以与[!DNL Real-time Customer Profile]一起使用后，系统将严格强制执行[架构演变](schema/composition.md#evolution)的规则。
+只要架构从未在创建数据集时使用过或启用以供在中使用，就可以对其进行重大更改 [[!DNL Real-time Customer Profile]](../profile/home.md). 在数据集创建中使用架构或启用架构以与结合使用后 [!DNL Real-time Customer Profile]，规则 [模式演变](schema/composition.md#evolution) 被制度严格执行。
 
 ### 长字段类型的最大大小是多少？
 
 长字段类型是一个最大大小为53(+1)位的整数，它赋予它一个介于 — 9007199254740992和9007199254740992之间的潜在范围。 这是由于JSON的JavaScript实施如何表示长整数存在限制。
 
-有关字段类型的详细信息，请参阅[XDM字段类型约束](./schema/field-constraints.md)的文档。
+有关字段类型的详细信息，请参阅 [XDM字段类型约束](./schema/field-constraints.md).
 
 ### 如何为架构定义标识？
 
-在[!DNL Experience Platform]中，无论解释的数据源如何，均使用身份来识别主体（通常是个人）。 在架构中，可通过将键字段标记为“标识”来定义这些字段。 标识的常用字段包括电子邮件地址、电话号码、[[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html)、CRM ID和其他唯一ID字段。
+在 [!DNL Experience Platform]，则无论解释的数据源如何，均会使用身份来标识主题（通常是个人）。 在架构中，可通过将键字段标记为“标识”来定义这些字段。 常用的身份字段包括电子邮件地址、电话号码、 [[!DNL Experience Cloud ID (ECID)]](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hans)、CRM ID和其他唯一ID字段。
 
 字段可以使用API或用户界面标记为标识。
 
@@ -62,48 +62,48 @@ ht-degree: 0%
 
 身份描述符由对/descriptors端点的POST请求创建。 如果成功，您将收到HTTP状态201（已创建）和包含新描述符详细信息的响应对象。
 
-有关在API中创建身份描述符的更多详细信息，请参阅[!DNL Schema Registry]开发人员指南中[描述符](api/descriptors.md)部分的文档。
+有关在API中创建身份描述符的更多详细信息，请参阅 [描述符](api/descriptors.md) 部分 [!DNL Schema Registry] 开发人员指南。
 
 #### 在UI中定义标识
 
-在架构编辑器中打开架构后，在编辑器的&#x200B;**[!UICONTROL Structure]**&#x200B;部分中选择要标记为标识的字段。 在右侧的&#x200B;**[!UICONTROL 字段属性]**&#x200B;下，选中&#x200B;**[!UICONTROL Identity]**&#x200B;复选框。
+在架构编辑器中打开架构，选择 **[!UICONTROL 结构]** 作为标识的编辑器部分。 在 **[!UICONTROL 字段属性]** 在右侧，选择 **[!UICONTROL 身份]** 复选框。
 
-有关在UI中管理身份的更多详细信息，请参阅架构编辑器教程中[defining identity fields](./tutorials/create-schema-ui.md#identity-field)部分的部分。
+有关在UI中管理身份的更多详细信息，请参阅 [定义标识字段](./tutorials/create-schema-ui.md#identity-field) 章节。
 
 ### 我的架构是否需要主标识？
 
-主标识是可选的，因为架构可能具有零个或其中一个标识。 但是，架构必须具有主标识，才能在[!DNL Real-time Customer Profile]中启用该架构。 有关更多信息，请参阅架构编辑器教程的[identity](./tutorials/create-schema-ui.md#identity-field)部分。
+主标识是可选的，因为架构可能具有零个或其中一个标识。 但是，架构必须具有主标识，才能在中启用该架构 [!DNL Real-time Customer Profile]. 请参阅 [身份](./tutorials/create-schema-ui.md#identity-field) 章节，以了解更多信息。
 
-### 如何启用架构以在[!DNL Real-time Customer Profile]中使用？
+### 如何启用在中使用的架构 [!DNL Real-time Customer Profile]?
 
-通过在架构的`meta:immutableTags`属性中添加“union”标记，可以在[[!DNL Real-time Customer Profile]](../profile/home.md)中使用架构。 可以使用API或用户界面来启用与[!DNL Profile]一起使用的架构。
+已启用架构以用于 [[!DNL Real-time Customer Profile]](../profile/home.md) 通过在 `meta:immutableTags` 架构的属性。 启用模式以便与 [!DNL Profile] 可以使用API或用户界面完成。
 
-#### 使用API为[!DNL Profile]启用现有架构
+#### 为启用现有模式 [!DNL Profile] 使用API
 
-发出PATCH请求以更新架构，并将`meta:immutableTags`属性添加为包含值“union”的数组。 如果更新成功，则响应将显示更新的架构，该架构现在包含并集标记。
+发出PATCH请求以更新架构并添加 `meta:immutableTags` 属性作为包含值“union”的数组。 如果更新成功，则响应将显示更新的架构，该架构现在包含并集标记。
 
-有关使用API启用架构以在[!DNL Real-time Customer Profile]中使用的更多信息，请参阅[!DNL Schema Registry]开发人员指南的[unions](./api/unions.md)文档。
+有关使用API启用架构以在中使用的更多信息 [!DNL Real-time Customer Profile]，请参阅 [工会](./api/unions.md) 文档 [!DNL Schema Registry] 开发人员指南。
 
-#### 使用UI为[!DNL Profile]启用现有架构
+#### 为启用现有模式 [!DNL Profile] 使用UI
 
-在[!DNL Experience Platform]中，在左侧导航中选择&#x200B;**[!UICONTROL 架构]**，然后从架构列表中选择要启用的架构的名称。 然后，在编辑器右侧的&#x200B;**[!UICONTROL 架构属性]**&#x200B;下，选择&#x200B;**[!UICONTROL 配置文件]**&#x200B;以将其打开。
+在 [!DNL Experience Platform]，选择 **[!UICONTROL 模式]** 在左侧导航中，从架构列表中选择要启用的架构的名称。 然后，在编辑器右侧的 **[!UICONTROL 架构属性]**，选择 **[!UICONTROL 用户档案]** 以将其打开。
 
 
-有关更多信息，请参阅[!UICONTROL 架构编辑器]教程中的[在实时客户资料](./tutorials/create-schema-ui.md#profile)中使用部分。
+有关更多信息，请参阅 [在实时客户资料中使用](./tutorials/create-schema-ui.md#profile) 在 [!UICONTROL 架构编辑器] 教程。
 
 ### 能否直接编辑并集架构？
 
 并集架构是只读的，并由系统自动生成。 无法直接编辑它们。 将“并集”标记添加到实现该类的架构时，会为特定类创建并集架构。
 
-有关XDM中联合的更多信息，请参阅[!DNL Schema Registry] API指南中的[联合](./api/unions.md)部分。
+有关XDM中工会的更多信息，请参阅 [工会](./api/unions.md) 部分 [!DNL Schema Registry] API指南。
 
 ### 如何设置数据文件格式，以将数据摄取到我的架构中？
 
-[!DNL Experience Platform] 接受或JSON格 [!DNL Parquet] 式的数据文件。这些文件的内容必须符合数据集引用的架构。 有关数据文件摄取的最佳实践的详细信息，请参阅[批量摄取概述](../ingestion/home.md)。
+[!DNL Experience Platform] 在任一位置接受数据文件 [!DNL Parquet] 或JSON格式。 这些文件的内容必须符合数据集引用的架构。 有关数据文件摄取最佳实践的详细信息，请参阅 [批量摄取概述](../ingestion/home.md).
 
 ## 错误和疑难解答
 
-以下是使用[!DNL Schema Registry] API时可能遇到的错误消息列表。
+以下是使用时可能遇到的错误消息列表 [!DNL Schema Registry] API。
 
 ### 未找到资源
 
@@ -126,7 +126,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->根据所检索的资源类型，此错误可能使用以下任一`type` URI:
+>根据检索的资源类型，此错误可能使用以下任一内容 `type` URI:
 >
 >* `http://ns.adobe.com/aep/errors/XDM-1010-404`
 >* `http://ns.adobe.com/aep/errors/XDM-1011-404`
@@ -138,7 +138,7 @@ ht-degree: 0%
 >* `http://ns.adobe.com/aep/errors/XDM-1017-404`
 
 
-有关在API中构建查找路径的更多信息，请参阅[!DNL Schema Registry]开发人员指南中的[容器](./api/getting-started.md#container)和[资源标识](api/getting-started.md#resource-identification)部分。
+有关在API中构建查找路径的更多信息，请参阅 [容器](./api/getting-started.md#container) 和 [资源标识](api/getting-started.md#resource-identification) 部分 [!DNL Schema Registry] 开发人员指南。
 
 ### 标题不唯一
 
@@ -182,7 +182,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->根据命名空间错误的特定性质，此错误可能会使用以下任何`type` URI以及不同的消息详细信息：
+>根据命名空间错误的特定性质，此错误可能使用以下任一内容 `type` URI以及不同的消息详细信息：
 >
 >* `http://ns.adobe.com/aep/errors/XDM-1020-400`
 >* `http://ns.adobe.com/aep/errors/XDM-1021-400`
@@ -214,13 +214,13 @@ ht-degree: 0%
 }
 ```
 
-[!DNL Schema Registry] API中的GET请求需要`Accept`标头，以便系统确定如何设置响应的格式。 当所需的`Accept`标头无效或缺失时，会发生此错误。
+GET请求 [!DNL Schema Registry] API需要 `Accept` 标头，以便系统确定如何设置响应的格式。 当需要 `Accept` 标头无效或缺失。
 
-根据您使用的端点， `detailed-message`属性指示有效的`Accept`标头对于成功响应应该是什么样的。 再次尝试之前，请确保已正确输入与您尝试发出的API请求兼容的`Accept`标头。
+根据您使用的端点， `detailed-message` 属性指示有效值 `Accept` 标头应类似于成功响应的样子。 确保已正确输入 `Accept` 与您尝试在重试之前发出的API请求兼容的标头。
 
 >[!NOTE]
 >
->根据所使用的端点，此错误可能使用以下任何`type` URI:
+>根据所使用的端点，此错误可能会使用以下任一内容 `type` URI:
 >
 >* `http://ns.adobe.com/aep/errors/XDM-1006-400`
 >* `http://ns.adobe.com/aep/errors/XDM-1007-400`
@@ -228,11 +228,11 @@ ht-degree: 0%
 >* `http://ns.adobe.com/aep/errors/XDM-1009-400`
 
 
-有关不同API请求的兼容Accept标头列表，请参阅[架构注册开发人员指南](./api/overview.md)中相应的章节。
+有关不同API请求的兼容Accept标头列表，请参阅 [架构注册开发人员指南](./api/overview.md).
 
 ### [!DNL Real-time Customer Profile] 错误
 
-以下错误消息与启用[!DNL Real-time Customer Profile]架构时涉及的操作相关联。 有关更多信息，请参阅[!DNL Schema Registry] API指南中的[unions](./api/unions.md)部分。
+以下错误消息与启用架构中涉及的操作相关联 [!DNL Real-time Customer Profile]. 请参阅 [工会](./api/unions.md) 部分 [!DNL Schema Registry] API指南以了解更多信息。
 
 #### 必须有引用标识描述符
 
@@ -251,7 +251,7 @@ ht-degree: 0%
 }
 ```
 
-当您尝试启用[!DNL Profile]的架构时，将显示此错误消息，其其中一个属性包含没有引用标识描述符的关系描述符。 将引用标识描述符添加到相关架构字段以解决此错误。
+当您尝试为 [!DNL Profile] 并且其一个属性包含没有引用标识描述符的关系描述符。 将引用标识描述符添加到相关架构字段以解决此错误。
 
 #### 引用标识描述符字段和目标架构的命名空间必须匹配
 
@@ -270,9 +270,9 @@ ht-degree: 0%
 }
 ```
 
-要启用包含关系描述符的架构以在[!DNL Profile]中使用，源字段的命名空间和目标字段的主命名空间必须相同。 当您尝试启用某个架构，该架构的引用标识描述符包含不匹配的命名空间时，将显示此错误消息。 确保目标架构的标识字段的`xdm:namespace`值与源字段的引用标识描述符中的`xdm:identityNamespace`属性的值匹配，以解决此问题。
+为了启用包含关系描述符的架构以便在中使用 [!DNL Profile]，源字段的命名空间和目标字段的主命名空间必须相同。 当您尝试启用某个架构，该架构的引用标识描述符包含不匹配的命名空间时，将显示此错误消息。 确保 `xdm:namespace` 目标架构的identity字段的值与 `xdm:identityNamespace` 用于解决此问题的源字段引用标识描述符中的属性。
 
-有关标准身份命名空间代码的列表，请参阅身份命名空间概述中[标准命名空间](../identity-service/namespaces.md)的部分。
+有关标准身份命名空间代码的列表，请参阅 [标准命名空间](../identity-service/namespaces.md) 在身份命名空间概述中。
 
 #### 架构必须包含identityMap或主标识
 
@@ -291,4 +291,25 @@ ht-degree: 0%
 }
 ```
 
-在为配置文件启用架构之前，必须先为架构创建主标识描述符](./api/descriptors.md#create)，或者包含标识映射字段以改为以主标识操作。[
+在为用户档案启用架构之前，必须先 [创建主标识描述符](./api/descriptors.md#create) ，或者包括一个标识映射字段，以改为以主标识操作。
+
+#### 无法合并不兼容的数据类型
+
+```json
+{
+    "type": "http://ns.adobe.com/aep/errors/XDM-1413-400",
+    "title": "Merge Schema Error",
+    "status": 400,
+    "report": {
+        "registryRequestId": "a15996b5-5133-4cec-9bf7-7d1207904ae3",
+        "timestamp": "06-01-2021 04:11:06",
+        "detailed-message": "Cannot merge incompatible data types. The path /person/name has already been defined in schema (id=0238be93d3e7a06aec5e0655955901ec) using a different data type. Types: string, object",
+        "sub-errors": []
+    },
+    "detail": "Cannot merge incompatible data types. The path /person/name has already been defined in schema (id=0238be93d3e7a06aec5e0655955901ec) using a different data type. Types: string, object"
+}
+```
+
+属于同一类的所有启用了用户档案的架构必须能够合并在一起，才能为该类构建并集架构。 当您尝试向某个架构添加一个字段，而该架构的路径由另一个启用了用户档案的架构共享，且数据类型与原始架构不同时，会显示此错误。 由于架构均启用了用户档案并包含相同的字段路径，因此在构建并集架构时，用户档案会尝试将这两个字段合并为一个字段。 由于不同数据类型不能合并在一起，因此这会被视为合并冲突，不允许。
+
+要解决此问题，请为字段选择其他名称或将其嵌套在唯一名称进度对象下，以避免与具有相似字段的同一类下其他启用配置文件的架构合并冲突。
