@@ -2,9 +2,9 @@
 title: 标记的用户权限
 description: 了解可用于标记的不同类型权限以及针对不同业务用例的一些基本实施策略。
 exl-id: 9b48847a-6133-4dbd-b17d-e7b88152ad7d
-source-git-commit: 88593d921d6ad97fc4dfb059f0272817caee06c7
+source-git-commit: a99046cc7df18d53b068c679ab07f5f9dd8eff0a
 workflow-type: tm+mt
-source-wordcount: '1307'
+source-wordcount: '1311'
 ht-degree: 17%
 
 ---
@@ -21,7 +21,7 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 
 >[!NOTE]
 >
->有关如何配置使用Admin Console的用户权限的步骤，请参阅[管理标记权限](./manage-permissions.md)的教程。
+>有关如何使用Admin Console为用户配置权限的步骤，请参阅 [管理数据收集的权限](../../../rtcdp-connections/permissions.md).
 
 ## 权限类型
 
@@ -55,8 +55,8 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 | **开发** | 这允许您执行以下操作：<ul><li>创建规则和数据元素</li><li>在现有开发环境中创建并构建库</li><li>提交库以供审批</li></ul>数据收集UI中的大多数日常任务都需要此权限。 |
 | **批准** | 这允许您获取已提交的库并将其生成到暂存环境。 测试完成后，您还可以批准库以进行发布。 |
 | **发布** | 这允许您将已批准的库发布到生产环境。 |
-| **管理扩展** | 这允许您执行以下操作： <ul><li>将新扩展安装到资产</li><li>修改已安装扩展的配置</li><li>删除扩展</li></ul>有关扩展](../managing-resources/extensions/overview.md)的更多信息，请参阅扩展概述文档。 [此角色通常属于 IT 或营销组，具体取决于您的组织。 |
-| **管理环境** | 这允许您创建和修改环境。 有关更多信息，请参阅[环境文档](../publishing/environments.md)。 此角色通常属于 IT 组。 |
+| **管理扩展** | 这允许您执行以下操作： <ul><li>将新扩展安装到资产</li><li>修改已安装扩展的配置</li><li>删除扩展</li></ul>请参阅的扩展概述文档 [有关扩展的更多信息](../managing-resources/extensions/overview.md). 此角色通常属于 IT 或营销组，具体取决于您的组织。 |
+| **管理环境** | 这允许您创建和修改环境。 请参阅 [环境文档](../publishing/environments.md) 以了解更多信息。 此角色通常属于 IT 组。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -66,7 +66,7 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 
 | 公司权 | 描述 |
 | --- | --- |
-| **管理资产** | 这允许您执行以下操作：<ul><li>创建新资产</li><li>在属性级别修改元数据和设置</li><li>删除属性</li></ul>管理员通常执行此角色。有关更多信息，请参阅[属性文档](companies-and-properties.md)。 |
+| **管理资产** | 这允许您执行以下操作：<ul><li>创建新资产</li><li>在属性级别修改元数据和设置</li><li>删除属性</li></ul>管理员通常执行此角色。请参阅 [属性文档](companies-and-properties.md) 以了解更多信息。 |
 | **开发扩展** | 允许创建和修改公司拥有的扩展包，包括私有版本和公开发布请求。 |
 | **管理应用程序配置** | 仅当您拥有Adobe Journey Optimizer的许可证或其他授予对移动应用程序内消息和推送消息访问权限的解决方案时，才可使用此功能。  这允许您管理Experience Cloud了解的应用程序以及与Firebase Cloud Messaging服务和Apple推送通知服务通信所需的推送凭据。 |
 
@@ -121,4 +121,4 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 
 ## 后续步骤
 
-本文档概述了Experience Platform中标记的可用权限。 有关如何在Adobe Admin Console中为标记配置产品配置文件的步骤，请参阅[管理用户权限](./manage-permissions.md)中的指南。
+本文档概述了Experience Platform中标记的可用权限。 有关如何在Adobe Admin Console中为标记配置产品配置文件的步骤，请参阅 [管理数据收集的用户权限](../../../rtcdp-connections/permissions.md).

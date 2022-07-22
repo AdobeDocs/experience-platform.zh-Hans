@@ -2,7 +2,7 @@
 title: 标记疑难解答指南
 description: 获取有关Adobe Experience Platform中标记的常见问题解答。
 exl-id: c06b8e25-4d79-4a11-94da-94ac096b5e33
-source-git-commit: c21699af0d08d0f63562910e2174273f0a139538
+source-git-commit: a99046cc7df18d53b068c679ab07f5f9dd8eff0a
 workflow-type: tm+mt
 source-wordcount: '1049'
 ht-degree: 27%
@@ -96,13 +96,13 @@ ht-degree: 27%
 
 ## UI为何会显示加载我的帐户时出错？
 
-如果您收到一条消息，指出加载帐户时出错，则表示您的帐户不属于任何标记产品配置文件。 请参阅 [管理权限](./ui/administration/manage-permissions.md) 了解如何在Adobe Admin Console中配置产品配置文件以授予对数据收集UI的访问权限。
+如果您收到一条消息，指出加载帐户时出错，则表示您的帐户不属于任何标记产品配置文件。 请参阅 [管理权限](../rtcdp-connections/permissions.md) 了解如何在Adobe Admin Console中配置产品配置文件以授予对数据收集UI的访问权限。
 
 ## 为何无法在UI中添加任何属性？
 
 如果您在登录到数据收集UI时无法创建任何新属性，则意味着您的帐户不属于具有“管理属性”权限的产品配置文件。
 
-请参阅 [管理权限](./ui/administration/manage-permissions.md) 了解如何在Adobe Admin Console中配置产品配置文件以授予“管理资产”权限。 有关标记不同权限的更多信息，请参阅 [标记的用户权限](./ui/administration/user-permissions.md).
+请参阅 [管理权限](../rtcdp-connections/permissions.md) 了解如何在Adobe Admin Console中配置产品配置文件以授予“管理资产”权限。 有关标记不同权限的更多信息，请参阅 [标记的用户权限](./ui/administration/user-permissions.md).
 
 ## 如果我遇到其他问题，该怎么办？
 

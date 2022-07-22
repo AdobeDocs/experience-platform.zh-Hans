@@ -2,9 +2,9 @@
 title: Real-time Customer Data Platform连接端到端概述
 description: 有关如何使用Real-time Customer Data Platform连接将事件数据发送到Adobe Experience Cloud解决方案的高级概述。
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
+source-git-commit: a99046cc7df18d53b068c679ab07f5f9dd8eff0a
 workflow-type: tm+mt
-source-wordcount: '2612'
+source-wordcount: '2613'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Real-time Customer Data Platform(RTCDP)连接会收集您的数据并将其传�
 * 开发
 * 管理扩展
 
-请参阅 [管理标记的权限](../tags/ui/administration/manage-permissions.md) 了解如何授予对资产和资产权限的访问权限。
+请参阅 [管理数据收集的权限](./permissions.md) 了解如何授予对资产和资产权限的访问权限。
 
 要使用本指南中提到的各种数据收集产品，您还必须拥有数据流的访问权限以及创建和管理架构的功能。 如果您需要访问其中任一功能，请联系您的客户成功经理以帮助您获取必要的访问权限。 请注意，如果您尚未购买Adobe Experience Platform,Adobe将为您配置使用SDK的必要访问权限，而无需支付额外费用。
 
