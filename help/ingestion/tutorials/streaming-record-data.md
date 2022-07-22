@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流摄取API，这是Adobe Experience Platform数据摄取服务API的一部分。
 exl-id: 097dfd5a-4e74-430d-8a12-cac11b1603aa
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: cedc53b78ea8eb8f3e93178b60ebe49b90c11650
 workflow-type: tm+mt
-source-wordcount: '1190'
+source-wordcount: '1025'
 ht-degree: 2%
 
 ---
@@ -26,31 +26,9 @@ ht-degree: 2%
    - [架构注册开发人员指南](../../xdm/api/getting-started.md):涵盖 [!DNL Schema Registry] API以及如何对其进行调用。 这包括了解您的 `{TENANT_ID}`，此过程会显示在本教程中的调用中，并且了解如何创建模式（用于创建用于摄取的数据集）。
 - [[!DNL Real-time Customer Profile]](../../profile/home.md):根据来自多个来源的汇总数据，实时提供统一的消费者用户档案。
 
-以下部分提供了成功调用流摄取API所需了解的其他信息。
+### 使用Platform API
 
-### 读取示例API调用
-
-本指南提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
-
-### 收集所需标题的值
-
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
-
-- 授权：持有者 `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{ORG_ID}`
-
-中的所有资源 [!DNL Experience Platform] 与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
-
-- x-sandbox-name: `{SANDBOX_NAME}`
-
->[!NOTE]
->
->有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
-
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的标头：
-
-- Content-Type:application/json
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../landing/api-guide.md).
 
 ## 根据 [!DNL XDM Individual Profile] 类
 
@@ -304,7 +282,8 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=t
             "contentType": "application/vnd.adobe.xed-full+json;version=1"
         },
         "imsOrgId": "{ORG_ID}",
-        "datasetId": "{DATASET_ID}"
+        "datasetId": "{DATASET_ID}",
+        "flowId": "{FLOW_ID}",
     },
     "body": {
         "xdmMeta": {

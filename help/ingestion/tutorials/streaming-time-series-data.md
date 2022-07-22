@@ -6,9 +6,9 @@ topic-legacy: tutorial
 type: Tutorial
 description: 本教程将帮助您开始使用流摄取API，这是Adobe Experience Platform数据摄取服务API的一部分。
 exl-id: 720b15ea-217c-4c13-b68f-41d17b54d500
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: cedc53b78ea8eb8f3e93178b60ebe49b90c11650
 workflow-type: tm+mt
-source-wordcount: '1369'
+source-wordcount: '1204'
 ht-degree: 2%
 
 ---
@@ -27,31 +27,9 @@ ht-degree: 2%
 
 此外，本教程还要求您已创建流连接。 有关创建流连接的更多信息，请阅读 [创建流连接教程](./create-streaming-connection.md).
 
-以下部分提供了成功调用流摄取API所需了解的其他信息。
+### 使用Platform API
 
-### 读取示例API调用
-
-本指南提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) 在 [!DNL Experience Platform] 疑难解答指南。
-
-### 收集所需标题的值
-
-为了调用 [!DNL Platform] API，您必须先完成 [身份验证教程](https://www.adobe.com/go/platform-api-authentication-en). 完成身份验证教程将为所有中每个所需标头提供值 [!DNL Experience Platform] API调用，如下所示：
-
-- 授权：持有者 `{ACCESS_TOKEN}`
-- x-api-key: `{API_KEY}`
-- x-gw-ims-org-id: `{ORG_ID}`
-
-中的所有资源 [!DNL Experience Platform] 与特定虚拟沙箱隔离。 对 [!DNL Platform] API需要一个标头来指定操作将在其中执行的沙盒的名称：
-
-- x-sandbox-name: `{SANDBOX_NAME}`
-
->[!NOTE]
->
->有关 [!DNL Platform]，请参阅 [沙盒概述文档](../../sandboxes/home.md).
-
-所有包含有效负载(POST、PUT、PATCH)的请求都需要额外的标头：
-
-- Content-Type:application/json
+有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../landing/api-guide.md).
 
 ## 基于XDM ExperienceEvent类构建架构
 
@@ -178,7 +156,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/sch
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `{TENANT_ID}` | 此ID用于确保您创建的资源具有正确命名空间，并包含在您的IMS组织内。 有关租户ID的更多信息，请阅读 [模式注册指南](../../xdm/api/getting-started.md#know-your-tenant-id). |
+| `{TENANT_ID}` | 此ID用于确保您创建的资源具有正确命名空间，并包含在您的IMS组织内。 有关租户ID的详细信息，请阅读 [模式注册指南](../../xdm/api/getting-started.md#know-your-tenant-id). |
 
 请注意 `$id` 以及 `version` 属性，因为创建数据集时将同时使用这两个属性。
 
@@ -342,7 +320,15 @@ curl -X POST https://dcs.adobedc.net/collection/{CONNECTION_ID}?syncValidation=t
             "schemaRef": {
                 "id": "https://ns.adobe.com/{TENANT_ID}/schemas/{SCHEMA_ID}",
                 "contentType": "application/vnd.adobe.xed-full+json;version=1"
-            }
+            },
+        "identityMap": {
+                "Email": [
+                  {
+                    "id": "acme_user@gmail.com",
+                    "primary": true
+                  }
+                ]
+              },
         },
         "xdmEntity":{
             "_id": "9af5adcc-db9c-4692-b826-65d3abe68c22",
