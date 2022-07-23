@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
+source-git-commit: 4956b940dfd25f55eaf67296f2cb31db65fac079
 workflow-type: tm+mt
-source-wordcount: '1794'
-ht-degree: 4%
+source-wordcount: '1864'
+ht-degree: 5%
 
 ---
 
@@ -17,9 +17,9 @@ Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Data Science Workspace]](#dsw)
 - [[!DNL Destinations]](#destinations)
+- [[数据收集]](#data-collection)
 - [体验数据模型(XDM)](#xdm)
 - [查询服务](#query-service)
-- [Real-time Customer Data Platform连接](#data-collection)
 - [源](#sources)
 
 ## [!DNL Data Science Workspace] {#dsw}
@@ -61,6 +61,23 @@ Adobe Experience Platform 现有功能的更新包括：
 {style=&quot;table-layout:auto&quot;}
 
 有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
+
+## 数据收集 {#data-collection}
+
+Adobe Experience Platform提供了一套技术，允许您收集客户端客户体验数据，并将其发送到Adobe Experience Platform边缘网络，以便对其进行扩充、转换和分发到Adobe或非Adobe目标。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| [数据流的访问类型配置](../../edge/datastreams/overview.md#create) | 创建新数据流时，您现在可以选择希望边缘网络接受的请求类型： <ul><li>**[!UICONTROL 混合身份验证]**:如果选择此选项，边缘网络将接受经过身份验证的请求和未经身份验证的请求。 当您计划使用Web SDK时，请选择此选项；或 [Mobile SDK](https://aep-sdks.gitbook.io/docs/)，以及 [服务器API](../../server-api/overview.md). </li><li>**[!UICONTROL 仅验证]**:如果选择此选项，边缘网络将仅接受经过验证的请求。 如果您计划仅使用服务器API，并且希望阻止任何未经身份验证的请求由 [!DNL Edge Network]. </li></ul> |
+| [提出建议](../../edge/personalization/rendering-personalization-content.md#applypropositions) 单页应用程序中，不会递增量度。 | 新添加的 `applyPropositions` 命令允许您呈现或执行 [!DNL Target] 到单页应用程序中，而不会 [!DNL Analytics] 和 [!DNL Target] 量度。 这提高了报表的准确性。 |
+| [移动到Web和跨域ID共享](../../edge/identity/id-sharing.md) | Adobe Experience Platform Web SDK现在支持访客ID共享功能，这些功能使您能够在移动应用程序和移动Web内容之间以及跨域之间更准确地提供个性化体验。 |
+| [Google Data Layer标记扩展](../../tags/extensions/web/google-data-layer/overview.md) | Google数据层扩展允许您在标记实施中使用Google数据层。 |
+| [Google Ads Enhanced Conversions事件转发扩展](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.108630.html) | Google广告增强转化扩展允许您实时提高Google广告转化。 |
+| [Mailchimp事件转发扩展](../../tags/extensions/web/mailchimp/overview.md) | Mailchimp事件转发扩展将事件发送到Mailchimp营销API，该API可以触发Mailchimp营销活动、历程或交易的电子邮件。 |
+
+有关详细信息，请参阅 [数据收集概述](../../rtcdp-connections/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 
@@ -116,20 +133,6 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 {style=&quot;table-layout:auto&quot;}
 
 有关查询服务的更多信息，请参阅 [查询服务概述](../../query-service/home.md).
-
-## Real-time Customer Data Platform连接 {#data-collection}
-
-Real-time Customer Data Platform连接提供了一套技术，允许您收集客户端客户体验数据，并将其发送到Adobe Experience Platform边缘网络，以便对其进行扩充、转换和分发到Adobe或非Adobe目标。
-
-**新增功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| [数据流的访问类型配置](../../edge/datastreams/overview.md#create) | 创建新数据流时，您现在可以选择希望边缘网络接受的请求类型： <ul><li>**[!UICONTROL 混合身份验证]**:如果选择此选项，边缘网络将接受经过身份验证的请求和未经身份验证的请求。 当您计划使用Web SDK时，请选择此选项；或 [Mobile SDK](https://aep-sdks.gitbook.io/docs/)，以及 [服务器API](../../server-api/overview.md). </li><li>**[!UICONTROL 仅验证]**:如果选择此选项，边缘网络将仅接受经过验证的请求。 如果您计划仅使用服务器API，并且希望阻止任何未经身份验证的请求由 [!DNL Edge Network]. </li></ul> |
-| [提出建议](../../edge/personalization/rendering-personalization-content.md#applypropositions) 单页应用程序中，不会递增量度。 | 新添加的 `applyPropositions` 命令允许您呈现或执行 [!DNL Target] 到单页应用程序中，而不会 [!DNL Analytics] 和 [!DNL Target] 量度。 这提高了报表的准确性。 |
-| [移动到Web和跨域ID共享](../../edge/identity/id-sharing.md) | Adobe Experience Platform Web SDK现在支持访客ID共享功能，这些功能使您能够在移动应用程序和移动Web内容之间以及跨域之间更准确地提供个性化体验。 |
-
-有关详细信息，请参阅 [Real-Time CDP连接概述](../../rtcdp-connections/home.md).
 
 ## 源 {#sources}
 
