@@ -3,7 +3,7 @@ title: 比较at.js与Experience PlatformWeb SDK
 description: 了解at.js功能与Experience PlatformWeb SDK的异同
 keywords: Target;Adobe Target;activity.id;experience.id;renderDecisions;decisionScopes；预隐藏代码片段；VEC；基于表单的体验编辑器；XDM；受众；决策；范围；架构；系统图；图
 exl-id: b63fe47d-856a-4cae-9057-51917b3e58dd
-source-git-commit: 7bdf4c01ad3b361b3bc53574d4da1096757c815c
+source-git-commit: 3c229dfced2ea404e8b333a25cd8148ac81a91c2
 workflow-type: tm+mt
 source-wordcount: '2286'
 ht-degree: 6%
@@ -1015,8 +1015,8 @@ alloy("sendEvent", {
 adobe.target.getOffer({
    mbox: "target-global-mbox",
    params: {
-     "entity.productName": "T-shirt",
-     "entity.productId": "1234"
+     "entity.name": "T-shirt",
+     "entity.id": "1234"
    },
    success: console.log,
    error: console.error
@@ -1031,8 +1031,8 @@ adobe.target.getOffers({
       execute: {
         pageLoad: {
           parameters: {
-            "entity.productName": "T-shirt",
-            "entity.productId": "1234"
+            "entity.name": "T-shirt",
+            "entity.id": "1234"
           }
         }
     }
@@ -1057,8 +1057,8 @@ alloy("sendEvent", {
   data: {
     __adobe: {
       target: {
-        "entity.productName": "T-shirt",
-        "entity.productId": "1234"
+        "entity.name": "T-shirt",
+        "entity.id": "1234"
       }
     }
   }
