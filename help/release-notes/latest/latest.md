@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 4addf64a819cd302b514334ce9cd949e96d0e698
 workflow-type: tm+mt
 source-wordcount: '1864'
 ht-degree: 5%
@@ -17,7 +17,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Data Science Workspace]](#dsw)
 - [[!DNL Destinations]](#destinations)
-- [[数据收集]](#data-collection)
+- [数据收集](#data-collection)
 - [体验数据模型(XDM)](#xdm)
 - [查询服务](#query-service)
 - [源](#sources)
