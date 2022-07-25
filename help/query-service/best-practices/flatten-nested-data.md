@@ -2,7 +2,8 @@
 keywords: Experience Platform；查询服务；查询服务；嵌套数据结构；嵌套数据；扁平化；扁平化嵌套数据；
 title: 扁平化嵌套数据结构以与BI工具一起使用
 description: 本文档介绍在查询服务中使用第三方BI工具时，如何在会话期间扁平化所有表和视图的XDM模式。
-source-git-commit: 3c9a1f552760b34bfb2c4246382fcb2d66e563d0
+exl-id: 7e534c0a-db6c-463e-85da-88d7b2534ece
+source-git-commit: a7f273383293359cf6adbcc0a508fb19d2789339
 workflow-type: tm+mt
 source-wordcount: '865'
 ht-degree: 0%
@@ -55,7 +56,7 @@ prod:all?FLATTEN
 
 本指南中使用的示例架构采用标准字段组 [!UICONTROL 商务详细信息]，利用 `commerce` 对象结构和 `productListItems` 数组。 有关 [有关 [!UICONTROL 商务详细信息] 字段组](../../xdm/field-groups/event/commerce-details.md). 架构结构的表示形式可在下图中查看。
 
-![商务详细信息字段组的架构图，包括 `commerce` 和 `productListItems` 结构。](../images/best-practices/final-subscription-schema.png)
+![商务详细信息字段组的架构图，包括 `commerce` 和 `productListItems` 结构。](../images/best-practices/flatten-nested-data/commerce-details.png)
 
 如果BI工具不支持嵌套数据结构，则当嵌套字段包含序列化值(例如 `commerce` 和 `productListItems` （在示例架构中）。 这些值可能显示为单个编码的一部分 `commerce` 字符串字段，不会实际无法使用。
 

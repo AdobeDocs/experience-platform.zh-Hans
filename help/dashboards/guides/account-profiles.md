@@ -1,7 +1,8 @@
 ---
 title: 帐户配置文件功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织B2B帐户配置文件的重要信息。
-source-git-commit: 4ff30c689808e0513245852625efc4a162ab2c0e
+exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
+source-git-commit: 8de94d38fd1d2c001935180851d6877dfe2a8941
 workflow-type: tm+mt
 source-wordcount: '822'
 ht-degree: 0%
@@ -42,7 +43,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 选择 [!UICONTROL 配置文件ID] 从 [!UICONTROL 浏览] 选项卡 [!UICONTROL 详细信息] 选项卡。
 
-![显示结果的“帐户配置文件”浏览选项卡突出显示了配置文件ID。](../images/account-profiles/account-profiles-browse-tab.png) —>
+![显示结果的“帐户配置文件”浏览选项卡突出显示了配置文件ID。](../images/account-profiles/account-profiles-browse-tab.png)
 
 在 [!UICONTROL 详细信息] 选项卡已从多个配置文件片段合并到一起，以形成单个帐户的单个视图。 请参阅 [浏览Real-time Customer Data Platform的帐户配置文件](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles) 要详细了解Platform UI中帐户配置文件查看功能。
 
