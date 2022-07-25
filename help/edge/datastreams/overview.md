@@ -3,7 +3,7 @@ title: 数据流概述
 description: 将客户端 Experience Platform SDK 集成与 Adobe 产品和第三方目标连接起来。
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；边缘配置ID；标识；启用ID同步；ID同步容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID；数据收集的数据准备；数据准备；映射器；XDM；边缘上的XDM；映射器
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
+source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
 workflow-type: tm+mt
 source-wordcount: '1774'
 ht-degree: 2%
@@ -179,4 +179,4 @@ ht-degree: 2%
 
 ## 后续步骤
 
-本指南介绍了如何在数据收集UI中管理数据流。 有关如何在设置数据流后安装和配置Web SDK的更多信息，请参阅 [数据收集E2E指南](../../rtcdp-connections/e2e.md#install).
+本指南介绍了如何在数据收集UI中管理数据流。 有关如何在设置数据流后安装和配置Web SDK的更多信息，请参阅 [数据收集E2E指南](../../collection/e2e.md#install).

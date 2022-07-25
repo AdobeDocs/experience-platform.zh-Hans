@@ -2,7 +2,7 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 4956b940dfd25f55eaf67296f2cb31db65fac079
+source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
 workflow-type: tm+mt
 source-wordcount: '1864'
 ht-degree: 5%
@@ -77,7 +77,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | [Google Ads Enhanced Conversions事件转发扩展](https://partners.adobe.com/exchangeprogram/experiencecloud/exchange.details.108630.html) | Google广告增强转化扩展允许您实时提高Google广告转化。 |
 | [Mailchimp事件转发扩展](../../tags/extensions/web/mailchimp/overview.md) | Mailchimp事件转发扩展将事件发送到Mailchimp营销API，该API可以触发Mailchimp营销活动、历程或交易的电子邮件。 |
 
-有关详细信息，请参阅 [数据收集概述](../../rtcdp-connections/home.md).
+有关详细信息，请参阅 [数据收集概述](../../collection/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 

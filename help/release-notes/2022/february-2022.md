@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年2月
 description: 2022年2月版Adobe Experience Platform发行说明。
 exl-id: ae453f7d-ac75-4cc3-8435-57d25f086cc3
-source-git-commit: 0a01dd2b0d8a1039178e3593475f9a87639ccdcd
+source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
 workflow-type: tm+mt
 source-wordcount: '1019'
 ht-degree: 3%
@@ -49,7 +49,7 @@ Platform提供了一套技术，允许您收集客户端客户体验数据，并
 | 为数据收集准备数据 | 如果您使用的是Adobe Experience Platform Web SDK，您现在可以利用数据准备功能将数据映射到服务器端的Experience Data Model(XDM)。 请参阅 [为数据收集准备数据](../../edge/datastreams/data-prep.md) （详细信息）。 |
 | 第一方设备ID | 现在，在使用Platform Web SDK收集客户数据时，您可以将自己的设备ID发送到Adobe Experience Platform Edge Network，这为最近对第三方Cookie生命周期的浏览器限制提供了解决方法。 请参阅 [第一方设备ID](../../edge/identity/first-party-device-ids.md) 以了解更多信息。 |
 
-有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../rtcdp-connections/home.md).
+有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
 
 ## [!DNL Destinations] {#destinations}
 

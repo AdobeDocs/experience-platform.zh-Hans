@@ -2,7 +2,7 @@
 title: 标记的用户权限
 description: 了解可用于标记的不同类型权限以及针对不同业务用例的一些基本实施策略。
 exl-id: 9b48847a-6133-4dbd-b17d-e7b88152ad7d
-source-git-commit: a99046cc7df18d53b068c679ab07f5f9dd8eff0a
+source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
 workflow-type: tm+mt
 source-wordcount: '1311'
 ht-degree: 17%
@@ -21,7 +21,7 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 
 >[!NOTE]
 >
->有关如何使用Admin Console为用户配置权限的步骤，请参阅 [管理数据收集的权限](../../../rtcdp-connections/permissions.md).
+>有关如何使用Admin Console为用户配置权限的步骤，请参阅 [管理数据收集的权限](../../../collection/permissions.md).
 
 ## 权限类型
 
@@ -121,4 +121,4 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 
 ## 后续步骤
 
-本文档概述了Experience Platform中标记的可用权限。 有关如何在Adobe Admin Console中为标记配置产品配置文件的步骤，请参阅 [管理数据收集的用户权限](../../../rtcdp-connections/permissions.md).
+本文档概述了Experience Platform中标记的可用权限。 有关如何在Adobe Admin Console中为标记配置产品配置文件的步骤，请参阅 [管理数据收集的用户权限](../../../collection/permissions.md).
