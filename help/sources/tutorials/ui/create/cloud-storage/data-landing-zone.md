@@ -1,21 +1,18 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据登陆区；数据登陆区
-solution: Experience Platform
 title: 使用UI将数据登陆区连接到平台
-topic-legacy: overview
-type: Tutorial
 description: 了解如何使用平台用户界面创建数据登陆区源连接器。
 exl-id: 653c9958-5d89-4b0c-af3d-a3e74aa47a08
-source-git-commit: b007cdf92811b453df5b5d005456a05cd845b769
+source-git-commit: fb16ea940ef394a15dd24fe703239b4487fafb18
 workflow-type: tm+mt
-source-wordcount: '462'
+source-wordcount: '606'
 ht-degree: 0%
 
 ---
 
 # 连接 [!DNL Data Landing Zone] 到使用UI的平台
 
-[!DNL Data Landing Zone] 是一个基于云的数据存储设施，可用于配置有Adobe Experience Platform的临时文件存储。 数据会自动从 [!DNL Data Landing Zone] 七天后。
+[!DNL Data Landing Zone] 是一个安全、基于云的文件存储工具，用于将文件导入Adobe Experience Platform。 数据会自动从 [!DNL Data Landing Zone] 七天后。
 
 本教程提供了创建 [!DNL Data Landing Zone] 源连接。
 
@@ -38,7 +35,24 @@ ht-degree: 0%
 
 的 [!UICONTROL 添加数据] 步骤，为您提供一个界面来选择和预览要引入平台的数据。
 
+* 界面的左部是文件夹浏览器，为您提供了容器中的文件列表，然后您可以将这些文件调到Platform。
+* 界面的右侧部分允许您从兼容的文件中预览多达100行数据。
+
+选择要引入平台的文件，并在适当的时间将正确的界面更新到预览屏幕中。
+
 ![添加数据](../../../../images/tutorials/create/dlz/add-data.png)
+
+>[!TIP]
+>
+>Platform会自动检测所选文件的属性信息，包括有关文件数据格式、指定列分隔符和压缩类型的信息。
+
+预览界面允许您检查文件的内容和结构。 默认情况下，预览界面会显示所选文件夹中的第一个文件。
+
+要预览其他文件，请选择要检查的文件名称旁边的预览图标。
+
+完成后，选择 **[!UICONTROL 下一个]**.
+
+![文件检测](../../../../images/tutorials/create/dlz/file-detection.png)
 
 有关如何为云存储源创建数据流的详细分步指南，请参阅 [创建云存储数据流以将数据导入平台](../../dataflow/batch/cloud-storage.md).
 
