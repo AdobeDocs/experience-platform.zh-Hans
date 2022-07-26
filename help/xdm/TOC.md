@@ -4,10 +4,10 @@ user-guide-title: 体验数据模型 (XDM) 系统帮助
 breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 使用体验数据模型 (XDM) 类和架构字段组来标准化体验数据。
 feature: Schemas
-source-git-commit: c57c0ff63abe35fcf0246088b12b6bc6cfc542b6
+source-git-commit: e476574e35ea18a50749009ffd1b4182941cc496
 workflow-type: tm+mt
-source-wordcount: '473'
-ht-degree: 16%
+source-wordcount: '503'
+ht-degree: 15%
 
 ---
 
@@ -25,14 +25,19 @@ ht-degree: 16%
       * [概述](./schema/industries/overview.md)
       * [零售](./schema/industries/retail.md)
       * [金融服务](./schema/industries/financial.md)
+      * [医疗保健](./schema/industries/healthcare.md)
       * [电信](./schema/industries/telecom.md)
       * [旅游和酒店业](./schema/industries/travel-hospitality.md)
    * [XDM字段字典](schema/field-dictionary.md)
 * 类 {#classes}
    * [XDM个人配置文件](./classes/individual-profile.md)
    * [XDM ExperienceEvent](./classes/experienceevent.md)
+   * [药物](./classes/medication.md)
+   * [付款人](./classes/payer.md)
+   * [规划](./classes/plan.md)
    * [策略](./classes/policy.md)
    * [产品](./classes/product.md)
+   * [提供程序](./classes/provider.md)
    * [区段定义](./classes/segment-definition.md)
    * B2B类 {#b2b}
       * [XDM业务帐户](./classes/b2b/business-account.md)
@@ -45,12 +50,13 @@ ht-degree: 16%
       * [XDM业务营销列表成员](./classes/b2b/business-marketing-list-members.md)
 * 字段组 {#field-groups}
    * XDM个人配置文件 {#profile}
+      * [同意和首选项](./field-groups/profile/consents.md)
       * [人口统计详细信息](./field-groups/profile/demographic-details.md)
       * [IAB TCF 2.0同意](./field-groups/profile/iab.md)
       * [IdentityMap](./field-groups/profile/identitymap.md)
+      * [医疗保健会员详细信息](./field-groups/profile/healthcare-member-details.md)
       * [忠诚度详细信息](./field-groups/profile/loyalty-details.md)
       * [个人联系详细信息](./field-groups/profile/personal-contact-details.md)
-      * [同意和首选项](./field-groups/profile/consents.md)
       * [区段成员资格详细信息](./field-groups/profile/segmentation.md)
       * [电信订购](./field-groups/profile/telecom-subscription.md)
       * [工作联系人详细信息](./field-groups/profile/work-contact-details.md)
@@ -58,6 +64,8 @@ ht-degree: 16%
       * [XDM业务人员详细信息](./field-groups/profile/business-person-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics完整扩展](./field-groups/event/analytics-full-extension.md)
+      * [广告详细信息](./field-groups/event/advertising-details.md)
+      * [应用程序详细信息](./field-groups/event/application-details.md)
       * [余额转移](./field-groups/event/balance-transfers.md)
       * [促销活动营销详细信息](./field-groups/event/campaign-marketing-details.md)
       * [卡片操作](./field-groups/event/card-actions.md)
@@ -73,6 +81,7 @@ ht-degree: 16%
       * [住宿预订](./field-groups/event/lodging-reservation.md)
       * [报价请求详细信息](./field-groups/event/quote-request-details.md)
       * [保留详细信息](./field-groups/event/reservation-details.md)
+      * [站点工具详细信息](./field-groups/event/sitetool-details.md)
       * [支持网站搜索](./field-groups/event/support-site-search.md)
       * [升级详细信息](./field-groups/event/upgrade-details.md)
       * [追加销售详细信息](./field-groups/event/upsell-details.md)
@@ -81,11 +90,19 @@ ht-degree: 16%
       * [XDM Business Campaign详细信息](./field-groups/b2b-campaign/details.md)
    * XDM Business Campaign成员 {#b2b-campaign-members}
       * [XDM Business Campaign成员详细信息](./field-groups/b2b-campaign-members/details.md)
+   * 药物 {#medication}
+      * [一种保健药物](./field-groups/medication/healthcare-medication.md)
+   * 规划 {#plan}
+      * [医疗保健计划详细信息](./field-groups/plan/healthcare-plan-details.md)
    * 产品 {#product}
       * [产品目录](./field-groups/product/product-catalog.md)
       * [产品类别](./field-groups/product/product-category.md)
+   * 提供程序 {#provider}
+      * [医疗保健提供商](./field-groups/provider/healthcare-provider.md)
    * [字段组名称更新](./field-groups/name-updates.md)
 * 数据类型 {#data-types}
+   * [帐户详细信息](./data-types/account-details.md)
+   * [广告时间](./data-types/ad-break.md)
    * [应用程序](./data-types/application.md)
    * [信标](./data-types/beacon.md)
    * [浏览器详细信息](./data-types/browser-details.md)
@@ -111,6 +128,7 @@ ht-degree: 16%
    * [地理形状](./data-types/geo-shape.md)
    * [标识](./data-types/identity.md)
    * [展示次数](./data-types/impressions.md)
+   * [实施详细信息](./data-types/implementation-details.md)
    * [内部网站搜索](./data-types/internal-site-search.md)
    * [键值对](./data-types/key-value-pair.md)
    * [营销](./data-types/marketing.md)
