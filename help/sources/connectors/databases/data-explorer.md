@@ -1,22 +1,18 @@
 ---
 keywords: Experience Platform；主页；热门主题；AzureData Explorer;Azure数据资源管理器
 solution: Experience Platform
-title: AzureData Explorer源连接器概述
+title: AzureData Explorer源概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将AzureData Explorer连接到Adobe Experience Platform。
 exl-id: 869bd8bb-51e6-4e0c-a3ec-ff083dda5789
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 1e2644b7d83a0bcb7175f27d7c4859c0efba4060
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '203'
 ht-degree: 0%
 
 ---
 
-# （测试版） [!DNL Azure Data Explorer] 连接器
-
->[!NOTE]
->
->的 [!DNL Azure Data Explorer] 连接器处于测试阶段。 请参阅 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标签的连接器的更多信息。
+# [!DNL Azure Data Explorer] 来源
 
 Adobe Experience Platform为数据库提供商(如 [!DNL Microsoft]、 MySQL和 [!DNL Azure]. 您可以将这些系统中的数据导入 [!DNL Platform].
 
