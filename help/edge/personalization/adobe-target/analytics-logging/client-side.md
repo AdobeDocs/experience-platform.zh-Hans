@@ -5,9 +5,9 @@ seo-title: Client-side logging for A4T data in the Platform Web SDK
 seo-description: Learn how to enable client-side logging for Adobe Analytics for Target (A4T) using the Experience Platform Web SDK.
 keywords: Target;A4T；日志记录；Web SDK；体验；平台
 exl-id: 7071d7e4-66e0-4ab5-a51a-1387bbff1a6d
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: de420d3bbf35968fdff59b403a0f2b18110f3c17
 workflow-type: tm+mt
-source-wordcount: '1159'
+source-wordcount: '1155'
 ht-degree: 4%
 
 ---
@@ -136,7 +136,7 @@ Adobe Experience Platform Web SDK允许您收集 [Adobe Analytics for Target(A4T
 }
 ```
 
-基于表单的体验编辑器活动的建议可以在同一建议下同时包含内容和点击量度项目。 因此，在中不显示内容的单个分析令牌 `scopeDetails.characteristics.analyticsToken` 属性中，它们可以同时具有在 `scopeDetails.characteristics.analyticsTokens` 对象，在 `display` 和 `click` 属性，相应地。
+基于表单的体验编辑器活动的建议可以在同一建议下同时包含内容和点击量度项目。 因此，在中不显示内容的单个分析令牌 `scopeDetails.characteristics.analyticsToken` 属性中，它们可以同时具有在 `scopeDetails.characteristics.analyticsDisplayToken` 和 `scopeDetails.characteristics.analyticsClickToken` 属性，相应地。
 
 ```json
 {
@@ -162,14 +162,10 @@ Adobe Experience Platform Web SDK允许您收集 [Adobe Analytics for Target(A4T
               }
             ],
             "characteristics": {
-              "eventTokens": {
-                "display": "2lTS5KA6gj4JuSjOdhqUhGqipfsIHvVzTQxHolz2IpTMromRrB5ztP5VMxjHbs7c6qPG9UF4rvQTJZniWgqbOw==",
-                "click": "E0gb6q1+WyFW3FMbbQJmrg=="
-              },
-              "analyticsTokens": {
-                "display": "434689:0:0|2,434689:0:0|1",
-                "click": "434689:0:0|32767"
-              }
+               "displayToken": "2lTS5KA6gj4JuSjOdhqUhGqipfsIHvVzTQxHolz2IpTMromRrB5ztP5VMxjHbs7c6qPG9UF4rvQTJZniWgqbOw==",
+               "clickToken": "E0gb6q1+WyFW3FMbbQJmrg==",
+               "analyticsDisplayToken": "434689:0:0|2,434689:0:0|1", 
+               "analyticsClickToken": "434689:0:0|32767"
             }
           },
           "items": [
@@ -208,11 +204,11 @@ Adobe Experience Platform Web SDK允许您收集 [Adobe Analytics for Target(A4T
 }
 ```
 
-所有 `scopeDetails.characteristics.analyticsToken`, `scopeDetails.characteristics.analyticsTokens.display` （对于显示的内容）和 `scopeDetails.characteristics.analyticsTokens.click` （对于点击量度）是需要收集并作为 `tnta` 标记 [数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md) 呼叫。
+所有 `scopeDetails.characteristics.analyticsToken`, `scopeDetails.characteristics.analyticsDisplayToken` （对于显示的内容）和 `scopeDetails.characteristics.analyticsClickToken` （对于点击量度）是需要收集并作为 `tnta` 标记 [数据插入API](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md) 呼叫。
 
 >[!IMPORTANT]
 >
->请注意， `analyticsToken`/`analyticsTokens` 属性可以包含多个令牌，并作为一个以逗号分隔的字符串连接。
+>的 `analyticsToken`, `analyticsDisplayToken`, `analyticsClickToken` 属性可以包含多个令牌，并作为一个以逗号分隔的字符串连接。
 >
 >在下一节中提供的实施示例中，会反复收集多个Analytics令牌。 要连接Analytics令牌数组，请使用如下类似的函数：
 >
@@ -344,13 +340,10 @@ alloy("sendEvent", {
         }
       ],
       "characteristics": {
-        "eventTokens": {
-          "display": "91TS5KA6gj4JuSjOdhqUhGqipfsIHvVzTQxHolz2IpTMromRrB5ztP5VMxjHbs7c6qPG9UF4rvQTJZniWgqgEt==",
-          "click": "Tagb6q1+WyFW3FMbbQJrtg=="
-        },
-        "analyticsTokens": {
-          "display": "434688:0:0|2,434688:0:0|1",
-          "click": "434688:0:0|32767"
+          "displayToken": "91TS5KA6gj4JuSjOdhqUhGqipfsIHvVzTQxHolz2IpTMromRrB5ztP5VMxjHbs7c6qPG9UF4rvQTJZniWgqgEt==",
+          "clickToken": "Tagb6q1+WyFW3FMbbQJrtg==",
+          "analyticsDisplayTokens": "434688:0:0|2,434688:0:0|1",
+          "analyticsClickTokens": "434688:0:0|32767"
         }
       }
     },
@@ -392,8 +385,8 @@ function getDisplayAnalyticsPayload(proposition) {
     return;
   }
   var characteristics = proposition.scopeDetails.characteristics;
-  if (characteristics.analyticsTokens) {
-    return characteristics.analyticsTokens.display;
+  if (characteristics.analyticsDisplayToken) {
+    return characteristics.analyticsDisplayToken;
   }
   return characteristics.analyticsToken;
 }
@@ -420,8 +413,8 @@ function getClickAnalyticsPayload(proposition) {
     return;
   }
   var characteristics = proposition.scopeDetails.characteristics;
-  if (characteristics.analyticsTokens) {
-    return characteristics.analyticsTokens.click;
+  if (characteristics.analyticsClickToken) {
+    return characteristics.analyticsClickToken;
   }
   return characteristics.analyticsToken;
 }
