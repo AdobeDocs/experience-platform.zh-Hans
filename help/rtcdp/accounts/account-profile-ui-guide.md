@@ -3,9 +3,9 @@ keywords: rtcdp配置文件；配置文件rtcdp;rtcdp身份；rtcdp合并策略�
 title: 帐户配置文件UI指南
 description: 通过使用帐户配置文件，Real-time Customer Data Platform B2B Edition使您能够统一来自多个来源的帐户信息。 本指南提供了有关在Adobe Experience Platform用户界面中与帐户配置文件进行交互的详细信息。
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 55af435c4819193fa3f18a85543bc1fad423bb4d
+source-git-commit: 5a13059c7ddd3f78ef2147533c95d9bd59c5c449
 workflow-type: tm+mt
-source-wordcount: '1426'
+source-wordcount: '1479'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,14 @@ ht-degree: 0%
 帐户配置文件允许您统一来自多个来源的帐户信息。 此帐户统一视图将来自多个营销渠道的数据以及贵组织当前用于存储客户帐户信息的各种系统的数据汇集在一起。 本文档提供了使用Adobe Experience Platform用户界面(UI)中提供的Real-time CDP、B2B Edition功能与帐户配置文件交互的指南。
 
 要详细了解如何在B2B工作流中创建帐户配置文件，请参阅 [端到端教程](../b2b-tutorial.md).
+
+## 帐户配置文件概述(#account-profiles-overview)
+
+对于帐户配置文件概述，请首先选择 **[!UICONTROL 用户档案]** 在 [!UICONTROL 帐户] 中。 在 [!UICONTROL 概述] 选项卡上，功能板会显示一个图形或图表，其中显示了单个入口点中的小组件。
+
+![Overview 选项卡](images/b2b-account-profile-overview.png)
+
+要了解有关帐户配置文件仪表板的更多信息，请参阅 [“帐户配置文件”功能板](../../dashboards/guides/account-profiles.md) 文档。
 
 ## 浏览帐户配置文件 {#browse-account-profiles}
 
