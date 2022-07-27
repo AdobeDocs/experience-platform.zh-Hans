@@ -4,7 +4,7 @@ title: 区段功能板
 description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 63a7857c2b88e81de3df7d925daf15bf631ff84c
+source-git-commit: 2d84a9a7caf080abd51e846f39e4090cb4aa05c7
 workflow-type: tm+mt
 source-wordcount: '1576'
 ht-degree: 0%
@@ -67,7 +67,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 要进一步了解每个可用的标准小组件，请从以下列表中选择小组件的名称：
 
-* [[!UICONTROL 受众大小]](#audience-size)
+* [[!UICONTROL 受众规模]](#audience-size)
 * [[!UICONTROL 身份重叠]](#identity-overlap)
 * [[!UICONTROL 按身份划分的用户档案]](#profiles-by-identity)
 * [[!UICONTROL Audience Activation订单]](#audience-activation-order)
@@ -76,11 +76,11 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 按身份划分的受众大小趋势]](#audience-size-trend-by-identity)
 * [[!UICONTROL 受众重叠]](#audience-overlap)
 
-### [!UICONTROL 受众大小] {#audience-size}
+### [!UICONTROL 受众规模] {#audience-size}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_segments_audiencesize"
->title="受众大小"
+>title="受众规模"
 >abstract="此小组件显示选定区段内合并的用户档案总数。 此数字取决于应用于数据的合并策略，并且在最新快照时是正确的。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#audience-size" text="从文档了解更多信息"
 
@@ -171,6 +171,15 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 此小组件允许您通过可视化区段定义结果中的相似性来优化分段策略。
 
 ![受众重叠小组件。](../images/segments/audience-overlap.png)
+
+<!-- * [[!UICONTROL Audience overlap report]](#audience-overlap-report) -->
+<!-- ### [!UICONTROL Audience overlap report] {#audience-overlap-report} -->
+
+<!-- View an ordered list of audiences by Highest or Lowest overlap percentages. -->
+
+<!-- ![The Audience overlap report widget.]() -->
+
+<!-- https://jira.corp.adobe.com/browse/PLAT-125511 -->
 
 ## 后续步骤
 

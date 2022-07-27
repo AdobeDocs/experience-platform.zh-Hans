@@ -4,9 +4,9 @@ title: 目标功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 2fdcd0748ccfe5b6b079bc21c8dbde491fbb2471
+source-git-commit: 54020785166b735fcd4dbe052ce1e738a70a30df
 workflow-type: tm+mt
-source-wordcount: '2671'
+source-wordcount: '2726'
 ht-degree: 0%
 
 ---
@@ -55,6 +55,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 按身份划分的未映射区段]](#unmapped-segments-by-identity)
 * [[!UICONTROL 按身份映射的区段]](#mapped-segments-by-identity)
 * [[!UICONTROL 常见受众]](#common-audiences)
+* [[!UICONTROL 映射的受众]](#mapped-audiences)
 * [[!UICONTROL 映射的受众运行状况]](#mapped-audience-health)
 * [[!UICONTROL 目标计数]](#destinations-count)
 * [[!UICONTROL 目标状态]](#destination-status)
@@ -195,6 +196,14 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 的 [!UICONTROL 受众大小] 列提供每个列出区段的配置文件总数。
 
 ![常见受众小组件。](../images/destinations/common-audiences.png)
+
+### 映射的受众 {#mapped-audiences}
+
+的 [!UICONTROL 映射的受众] 小组件在页面顶部显示可激活到所选目标的已映射受众总数。
+
+选择 **[!UICONTROL 区段]** 导航到“区段”功能板 [!UICONTROL 浏览] 选项卡。 此工作区会显示您组织的所有区段定义的列表。
+
+![映射的受众小组件。](../images/destinations/mapped-audiences.png)
 
 ### 映射的受众运行状况 {#mapped-audience-health}
 
