@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 93ac391370ddd1fe596b8515bd520fb870a10a3c
+source-git-commit: 45a69586dbe492a9cfe64383adc44be62854154a
 workflow-type: tm+mt
-source-wordcount: '1913'
+source-wordcount: '1884'
 ht-degree: 5%
 
 ---
@@ -95,11 +95,14 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | 功能 | 描述 |
 | --- | --- |
 | 增强了 [!DNL Data Prep] Recommendations | [!DNL Data Prep] Recommendations现在更聪明，速度更快。 新的验证检查可显着减少最常见的映射错误，进一步缩短了实现值的时间。 |
-| 对流设置的分层支持 | 您现在可以使用函数 `upsert_array_append` 和 `upsert_array_replace` 用于在流式更新到Profile时更新数组和对象。 请参阅 [[!DNL Data Prep] 映射函数指南](../../data-prep/functions.md) 以了解更多信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 详细了解 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
+
+<!--
+| Hierarchical support for streaming upsets | You can now use functions `upsert_array_append` and `upsert_array_replace` to update arrays and objects when streaming upserts to Profile. See the [[!DNL Data Prep] mapping functions guide](../../data-prep/functions.md) for more information. |
+-->
 
 ## [!DNL Destinations] {#destinations}
 
