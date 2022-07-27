@@ -2,11 +2,10 @@
 title: （测试版）使用Experience PlatformUI将文件按需导出到批量目标
 type: Tutorial
 description: 了解如何使用Experience PlatformUI将文件按需导出到批处理目标。
-hide: true
-hidefromtoc: true
-source-git-commit: ff0fe836b2bb181ae4395f1d04c04b8e51a5bac6
+exl-id: 0cbe5089-b73d-4584-8451-2fc34d47c357
+source-git-commit: 874c590e83712a45e75308239fb71db04614bd1e
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '745'
 ht-degree: 0%
 
 ---
@@ -16,6 +15,7 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >的 **[!UICONTROL 立即导出文件]** Adobe Experience Platform Destination SDK中的选项当前处于测试阶段。 文档和功能可能会发生更改。
+>请联系您的Adobe代表以获取此功能的访问权限。
 
 >[!IMPORTANT]
 > 
