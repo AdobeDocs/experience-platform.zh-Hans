@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: fc910ec906e2d59f3a35b81377f7c97b7cafbabe
+source-git-commit: 93ac391370ddd1fe596b8515bd520fb870a10a3c
 workflow-type: tm+mt
-source-wordcount: '1706'
+source-wordcount: '1913'
 ht-degree: 5%
 
 ---
@@ -18,7 +18,9 @@ Adobe Experience Platform 现有功能的更新包括：
 - [仪表板](#dashboards)
 - [数据收集](#collection)
 - [[!DNL Data Prep]](#data-prep)
+- [[!DNL Destinations]](#destinations)
 - [体验数据模型(XDM)](#xdm)
+
 <!-- - [Real-time Customer Data Platform B2B Edition](#b2b) -->
 - [实时客户个人资料](#profile)
 - [源](#sources)
@@ -98,6 +100,29 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 {style=&quot;table-layout:auto&quot;}
 
 详细了解 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| [立即导出文件（测试版）](../../destinations/ui/export-file-now.md) | 导出完整文件时不会中断先前计划的区段的当前导出计划。 此导出操作除了之前计划的导出之外，还不会更改区段的导出频率。 <br> 文件导出会立即触发，并会从Experience Platform分段运行中获取最新结果。 <br> <br>请联系您的Adobe代表以获取此功能的访问权限。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+**新目标**
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [（测试版） [!DNL Trade Desk] - CRM连接](../../destinations/catalog/advertising/tradedesk-emails.md) | 使用 [!DNL The Trade Desk] 将用户档案激活到的CRM目标 [!DNL Trade Desk] 考虑基于CRM数据的受众定位和抑制。 <br><br>此目标当前处于测试阶段。 文档和功能可能会发生更改。 |
+| [（测试版） [!DNL Snap Inc.]](../../destinations/catalog/advertising/snap-inc.md) | 此目标允许营销人员将Experience Platform中创建的用户区段导入Snapchat Ads，并使用这些区段定位其广告。 <br><br>此目标当前处于测试阶段。 文档和功能可能会发生更改。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 
