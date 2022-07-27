@@ -4,7 +4,7 @@ title: 目标功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 54020785166b735fcd4dbe052ce1e738a70a30df
+source-git-commit: 4bb0078b6687da5239f57e7285507815aa7f3255
 workflow-type: tm+mt
 source-wordcount: '2726'
 ht-degree: 0%
@@ -41,7 +41,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 请参阅 [修改功能板](../customize/modify.md) 和 [构件库概述](../customize/widget-library.md) 文档以了解更多信息。
 
-## 标准小组件
+## 标准小组件 {#standard-widgets}
 
 Adobe提供了多个标准小组件，您可以使用这些小组件来可视化与您的目标相关的不同量度，并评估可用于数据分析的区段的完整性。 您还可以使用 [!UICONTROL 构件库]. 要了解有关创建自定义小组件的更多信息，请首先阅读 [构件库概述](../customize/widget-library.md).
 

@@ -4,9 +4,9 @@ title: 区段功能板
 description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 2d84a9a7caf080abd51e846f39e4090cb4aa05c7
+source-git-commit: 4bb0078b6687da5239f57e7285507815aa7f3255
 workflow-type: tm+mt
-source-wordcount: '1576'
+source-wordcount: '1575'
 ht-degree: 0%
 
 ---
@@ -57,11 +57,11 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 区段功能板由小组件组成，这些小组件是只读量度，提供有关您选定区段的重要信息。
 
-小组件上的“上次更新”日期和时间，会显示拍摄数据的最后快照的时间。 快照的日期和时间以UTC格式提供；它不在单个用户或IMS组织的时区中。
+小组件上的“上次更新”日期和时间，会显示拍摄数据的最后快照的时间。 快照的日期和时间以UTC格式提供；它不在单个用户或组织的时区内。
 
 ![](../images/segments/widget-timestamp.png)
 
-## 标准小组件
+## 标准小组件 {#standard-widgets}
 
 Adobe提供了多个标准小组件，您可以使用这些小组件来可视化与区段相关的不同量度。 您还可以使用 [!UICONTROL 构件库]. 要了解有关创建自定义小组件的更多信息，请首先阅读 [构件库概述](../customize/widget-library.md).
 

@@ -4,9 +4,9 @@ title: 用户档案仪表板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: bc1516d5453134ffb18fa682fd70b1f3581d5e18
+source-git-commit: 4bb0078b6687da5239f57e7285507815aa7f3255
 workflow-type: tm+mt
-source-wordcount: '3816'
+source-wordcount: '3814'
 ht-degree: 1%
 
 ---
@@ -59,7 +59,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 ## 浏览配置文件 {#browse-profiles}
 
-的 [!UICONTROL 浏览] 选项卡，用于搜索和查看摄取到IMS组织中的只读用户档案。 从此处，您可以看到属于用户档案的有关其首选项、过去事件、交互和区段的重要信息
+的 [!UICONTROL 浏览] 选项卡，用于搜索和查看摄取到您组织的只读用户档案。 从此处，您可以看到属于用户档案的有关其首选项、过去事件、交互和区段的重要信息
 
 要进一步了解Platform UI中提供的配置文件查看功能，请参阅 [在Real-time Customer Data Platform浏览用户档案](../../rtcdp/profile/profile-browse.md).
 
@@ -89,9 +89,9 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 功能板由小组件组成，这些小组件是只读量度，提供有关用户档案数据的重要信息。
 
-小组件上的“上次更新”日期和时间，会显示拍摄数据的最后快照的时间。 快照的日期和时间以UTC格式提供；它不在单个用户或IMS组织的时区中。
+小组件上的“上次更新”日期和时间，会显示拍摄数据的最后快照的时间。 快照的日期和时间以UTC格式提供；它不在单个用户或组织的时区内。
 
-## 标准小组件
+## 标准小组件 {#standard-widgets}
 
 Adobe提供了多个标准小组件，您可以使用这些小组件来可视化与用户档案数据相关的不同量度。 您还可以使用 [!UICONTROL 构件库]. 要了解有关创建自定义小组件的更多信息，请首先阅读 [构件库概述](../customize/widget-library.md).
 
