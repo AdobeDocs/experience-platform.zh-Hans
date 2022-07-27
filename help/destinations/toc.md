@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 69bf43f86ab3369ad0c7febcb69ec41d3bcac8bb
+source-git-commit: 26fb80a2a09b8374ddec8e164817855169fa0a81
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '828'
 ht-degree: 8%
 
 ---
@@ -138,6 +138,7 @@ ht-degree: 8%
       * [Gainsight扩展](./catalog/personalization/gainsight.md)
       * [KickFire扩展](./catalog/personalization/kickfire.md)
       * [Marketo Web个性化扩展](./catalog/personalization/marketo-web-personalization.md)
+      * [Pega客户决策中心连接](./catalog/personalization/pega.md)
    * 社交目标{#social}
       * [社交目标概述](./catalog/social/overview.md)
       * [AdobeLivefyre扩展](./catalog/social/adobe-livefyre.md)
@@ -210,5 +211,5 @@ ht-degree: 8%
       * [在本地环境中使用文本编辑器创建目标文档页面](./destination-sdk/docs-framework/work-in-local-environment.md)
       * [文档自助模板](./destination-sdk/docs-framework/self-service-template.md)
       * [创作最佳实践](./destination-sdk/docs-framework/authoring-best-practices.md)
-* [常见问题](./destinations-faq.md)
+* [常见问题解答](./destinations-faq.md)
 * [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)
