@@ -5,9 +5,9 @@ title: 数据准备映射函数
 topic-legacy: overview
 description: 本文档介绍了数据准备中使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 45a69586dbe492a9cfe64383adc44be62854154a
+source-git-commit: 7cb940019905240b36e96b834b9e5d0166c1324d
 workflow-type: tm+mt
-source-wordcount: '4175'
+source-wordcount: '4286'
 ht-degree: 3%
 
 ---
@@ -164,13 +164,10 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | join_arrays | 将数组相互组合。 | <ul><li>阵列： **必需** 要向其添加元素的数组。</li><li>值：要附加到父数组的数组。</li></ul> | join_arrays(&#x200B;ARRAY， VALUES) | join_arrays&#x200B;([“a”、“b”], [“c”], [“d”，“e”]) | [“a”、“b”、“c”、“d”、“e”] |
 | to_array | 获取输入列表并将其转换为数组。 | <ul><li>INCLUDE_NULLS: **必需** 一个布尔值，用于指示是否在响应数组中包含空值。</li><li>值： **必需** 要转换为数组的元素。</li></ul> | to_array(&#x200B;INCLUDE_NULLS， VALUES) | to_array(false， 1, null， 2, 3) | `[1, 2, 3]` |
 | size_of | 返回输入的大小。 | <ul><li>输入： **必需** 您尝试查找的对象大小。</li></ul> | size_of(INPUT) | `size_of([1, 2, 3, 4])` | 4 |
+| upsert_array_append | 此函数用于将整个输入数组中的所有元素附加到Profile中数组的末尾。 此函数为 **仅** 更新期间适用。 如果在插入的上下文中使用，则此函数会按原样返回输入。 | <ul><li>阵列： **必需** 要在配置文件中附加该数组的数组。</li></ul> | upsert_array_append(ARRAY) | `upsert_array_append([123, 456])` | [123, 456] |
+| upsert_array_replace | 此函数用于替换数组中的元素。 此函数为 **仅** 更新期间适用。 如果在插入的上下文中使用，则此函数会按原样返回输入。 | <ul><li>阵列： **必需** 用于替换配置文件中数组的数组。</li></li> | upsert_array_replace(ARRAY) | `upsert_array_replace([123, 456], 1)` | [123, 456] |
 
 {style=&quot;table-layout:auto&quot;}
-
-<!--
-| upsert_array_append | This function is used to append all elements in the entire input array to the end of the array in Profile. This function is **only** applicable during updates. If used in the context of inserts, this function returns the input as is. | <ul><li>ARRAY: **Required** The array to append the array in the Profile.</li></ul> | upsert_array_append(ARRAY) | `upsert_array_append([123, 456])` | [123, 456] |
-| upsert_array_replace | This function is used to replace elements in an array. This function is **only** applicable during updates. If used in the context of inserts, this function returns the input as is. | <ul><li>ARRAY: **Required** The array to replace the array in the Profile.</li><li>INDEX: **Optional** The position from where the replacement needs to happen.</li></li> | upsert_array_replace(ARRAY, INDEX) | `upsert_array_replace([123, 456], 1)` | [123, 456] |
--->
 
 ### 逻辑运算符 {#logical-operators}
 
