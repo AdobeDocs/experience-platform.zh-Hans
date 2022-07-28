@@ -2,22 +2,44 @@
 title: Marketo Engage目标
 description: Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户体验管理(CXM)解决方案。 它让您能够自动执行和管理活动，从CRM潜在客户管理和客户参与到基于帐户的营销和收入归因中。
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: 0006c498cd33d9deb66f1d052b4771ec7504457d
+source-git-commit: 6dc4a93b46d6111637e0024da574d605e0d2b986
 workflow-type: tm+mt
-source-wordcount: '491'
-ht-degree: 3%
+source-wordcount: '740'
+ht-degree: 2%
 
 ---
 
 # Marketo Engage目标 {#beta-marketo-engage-destination}
 
+## 目标更改日志 {#changelog}
+
+>[!IMPORTANT]
+>
+>随着 [增强的Marketo V2目标连接器](/help/release-notes/2022/july-2022.md#destinations)，则您现在会在目标目录中看到两张Marketo卡。
+>* 如果您已经在 **[!UICONTROL Marketo V1]** 目标：请为 **[!UICONTROL Marketo V2]** 目标和删除现有数据流 **[!UICONTROL Marketo V1]** 到2023年2月。 截至该日期， **[!UICONTROL Marketo V1]** 目标卡将被删除。
+>* 如果您尚未为 **[!UICONTROL Marketo V1]** 目标，请使用新 **[!UICONTROL Marketo V2]** 用于连接并将数据导出到Marketo的卡。
+
+
+![并排视图中两个Marketo目标卡的图像。](/help/destinations/assets/catalog/adobe/marketo-side-by-side-view.png)
+
+Marketo V2目标的改进包括：
+
+* 在 **[!UICONTROL 计划区段]** 激活工作流的步骤(在Marketo V1中)，您需要手动添加 **映射ID** 成功将数据导出到Marketo。 Marketo V2不再需要此手动步骤。
+* 在 **[!UICONTROL 映射]** 在Marketo V1中，您能够将XDM字段仅映射到Marketo中的三个目标字段： `firstName`, `lastName`和 `companyName`. 在Marketo V2版本中，您现在可以将XDM字段映射到Marketo中的更多字段。 有关更多信息，请阅读 [受支持属性](#supported-attributes) 部分。
+
 ## 概述 {#overview}
 
-Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户体验管理(CXM)解决方案。 它让您能够自动执行和管理活动，从CRM潜在客户管理和客户参与到基于帐户的营销和收入归因中。
+[!DNL Marketo Engage] 是用于营销、广告、分析和商务的唯一端到端客户体验管理(CXM)解决方案。 它让您能够自动执行和管理活动，从CRM潜在客户管理和客户参与到基于帐户的营销和收入归因中。
 
 通过目标，营销人员可以将在Adobe Experience Platform中创建的区段推送到Marketo，以便这些区段显示为静态列表。
 
-## 支持的身份 {#supported-identities}
+## 支持的身份和属性 {#supported-identities-attributes}
+
+>[!NOTE]
+>
+>在 [映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) 激活目标工作流的 *强制* 映射身份和 *可选* 来映射属性。 要确保人员在Marketo中进行匹配，最重要的任务是从“身份命名空间”选项卡中映射电子邮件和/或ECID。 映射电子邮件可确保最高匹配率。
+
+### 支持的身份 {#supported-identities}
 
 | Target标识 | 描述 |
 |---|---|
@@ -26,9 +48,9 @@ Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户
 
 {style=&quot;table-layout:auto&quot;}
 
->[!NOTE]
->
->在 [映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) 激活目标工作流的 *强制* 映射身份和 *可选* 来映射属性。 要确保人员在Marketo中进行匹配，最重要的任务是从“身份命名空间”选项卡中映射电子邮件和/或ECID。 映射电子邮件可确保最高匹配率。
+### 支持的属性 {#supported-attributes}
+
+您可以将属性从Experience Platform映射到贵组织在Marketo中有权访问的任何属性。 在Marketo中，您可以使用 [描述API请求](https://developers.marketo.com/rest-api/lead-database/leads/#describe) 用于检索贵组织有权访问的属性字段。
 
 ## 导出类型和频度 {#export-type-frequency}
 
@@ -36,7 +58,7 @@ Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户
 
 | 项目 | 类型 | 注释 |
 ---------|----------|---------|
-| 导出类型 | **[!UICONTROL 区段导出]** | 您要导出区段（受众）的所有成员，以及在Marketo Engage目标中使用的标识符（电子邮件、ECID）。 |
+| 导出类型 | **[!UICONTROL 区段导出]** | 您要导出区段（受众）的所有成员，以及 [!DNL Marketo Engage] 目标。 |
 | 导出频度 | **[!UICONTROL 流]** | 流目标“始终运行”基于API的连接。 在基于区段评估的Experience Platform中更新用户档案后，连接器会立即将更新发送到目标平台下游。 有关更多信息 [流目标](/help/destinations/destination-types.md#streaming-destinations). |
 
 {style=&quot;table-layout:auto&quot;}
@@ -69,7 +91,7 @@ To connect to this destination, follow the steps described in the [destination c
 
 ## 数据使用和管理 {#data-usage-governance}
 
-全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，请查看 [数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html).
+全部 [!DNL Adobe Experience Platform] 目标在处理数据时与数据使用策略相兼容。 有关如何 [!DNL Adobe Experience Platform] 实施数据管理，请查看 [数据管理概述](https://experienceleague.adobe.com/docs/experience-platform/data-governance/home.html?lang=zh-Hans).
 
 <!--
 
