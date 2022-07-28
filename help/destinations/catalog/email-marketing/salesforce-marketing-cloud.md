@@ -3,14 +3,14 @@ keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Sale
 title: SalesforceMarketing Cloud连接
 description: SalesforceMarketing Cloud是一个以前称为ExactTarget的数字营销套件，允许您为访客和客户构建和自定义历程，以个性化其体验。
 exl-id: e85049a7-eaed-4f8a-b670-9999d56928f8
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 30e75b8fbaa4a8269a32f82ade435b67767630c5
 workflow-type: tm+mt
 source-wordcount: '658'
 ht-degree: 2%
 
 ---
 
-# [!DNL Salesforce Marketing Cloud] 连接
+# [!DNL (Files) Salesforce Marketing Cloud] 连接
 
 ## 概述 {#overview}
 

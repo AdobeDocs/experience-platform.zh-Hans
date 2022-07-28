@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: a8faa3a146669e206b9aa129f5541a7511c1854a
+source-git-commit: 30e75b8fbaa4a8269a32f82ade435b67767630c5
 workflow-type: tm+mt
-source-wordcount: '842'
+source-wordcount: '843'
 ht-degree: 7%
 
 ---
@@ -72,7 +72,7 @@ ht-degree: 7%
       * [Pinterest客户列表连接](./catalog/advertising/pinterest.md)
       * [（测试版）Snapchat Ads连接](./catalog/advertising/snap-inc.md)
       * [交易台连接](./catalog/advertising/tradedesk.md)
-      * [交易台CRM连接](./catalog/advertising/tradedesk-emails.md)
+      * [（测试版）交易台CRM连接](./catalog/advertising/tradedesk-emails.md)
       * [Twitter通用网站标记扩展](./catalog/advertising/twitter-uwt.md)
       * [Yahoo/Verizon DataX连接](./catalog/advertising/datax.md)
    * Analytics目标 {#analytics}
@@ -104,7 +104,7 @@ ht-degree: 7%
       * [Azure事件中心连接](./catalog/cloud-storage/azure-event-hubs.md)
       * [SFTP连接](./catalog/cloud-storage/sftp.md)
       * [云存储允许列表目标的IP地址](./catalog/cloud-storage/ip-address-allow-list.md)
-   * 客户关系管理(CRM)目标 {#crm-destinations}
+   * 客户关系管理(CRM)目标 {#crm}
       * [Salesforce CRM连接](./catalog/crm/salesforce.md)
    * 数据管理平台目标 {#data-management}
       * [数据管理平台(DMP)目标概述](./catalog/data-management/overview.md)
