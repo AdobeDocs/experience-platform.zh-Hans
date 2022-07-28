@@ -2,10 +2,10 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 45a69586dbe492a9cfe64383adc44be62854154a
+source-git-commit: 4876df90e7e715c89e0614a9e1e81c3e7091bccb
 workflow-type: tm+mt
-source-wordcount: '1884'
-ht-degree: 5%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -120,8 +120,12 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 
 | 目标 | 描述 |
 | ----------- | ----------- |
-| [（测试版） [!DNL Trade Desk] - CRM连接](../../destinations/catalog/advertising/tradedesk-emails.md) | 使用 [!DNL The Trade Desk] 将用户档案激活到的CRM目标 [!DNL Trade Desk] 考虑基于CRM数据的受众定位和抑制。 <br><br>此目标当前处于测试阶段。 文档和功能可能会发生更改。 |
+| [Marketo V2](../../destinations/catalog/adobe/marketo-engage.md) | Marketo Engage目标更新允许您通过自动化简化静态列表创建过程，并允许用户在其潜在客户中引入其他字段。 请参阅下面有关Marketo V2中增强功能的更多信息： <br><ul><li>在 **[!UICONTROL 计划区段]** 激活工作流的步骤(在Marketo V1中)，您需要手动添加 **映射ID** 成功将数据导出到Marketo。 Marketo V2不再需要此手动步骤。</li><li>在 **[!UICONTROL 映射]** 在Marketo V1中，您能够将XDM字段仅映射到Marketo中的三个目标字段： `firstName`, `lastName`和 `companyName`. 在Marketo V2版本中，您现在可以将XDM字段映射到Marketo中的更多字段。 有关更多信息，请阅读 [Marketo V2中支持的属性](../../destinations/catalog/adobe/marketo-engage.md#supported-attributes).  </li></ul> |
+| [Pega客户决策中心](../../destinations/catalog/personalization/pega.md) | 将Pega客户决策中心Adobe Experience Platform中的配置文件属性和区段成员资格信息用作自适应模型中的预测器，并帮助提供下一最佳行动决策 |
+| [(API)SalesforceMarketing Cloud](../../destinations/catalog/email-marketing/salesforce-marketing-cloud-exact-target.md) | 此目标允许营销人员将Experience Platform中创建的用户区段导入Snapchat Ads，并使用这些区段定位其广告。 |
+| [Salesforce CRM](../../destinations/catalog/crm/salesforce.md) | 使用SalesforceMarketing Cloud中的用户档案和区段信息更新SalesforceExperience Platform中的联系信息 |
 | [（测试版） [!DNL Snap Inc.]](../../destinations/catalog/advertising/snap-inc.md) | 此目标允许营销人员将Experience Platform中创建的用户区段导入Snapchat Ads，并使用这些区段定位其广告。 <br><br>此目标当前处于测试阶段。 文档和功能可能会发生更改。 |
+| [（测试版） [!DNL Trade Desk] - CRM连接](../../destinations/catalog/advertising/tradedesk-emails.md) | 使用 [!DNL The Trade Desk] 将用户档案激活到的CRM目标 [!DNL Trade Desk] 考虑基于CRM数据的受众定位和抑制。 <br><br>此目标当前处于测试阶段。 文档和功能可能会发生更改。 |
 
 {style=&quot;table-layout:auto&quot;}
 
