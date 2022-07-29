@@ -2,9 +2,9 @@
 title: 管理数据集TTL
 description: 了解如何在Adobe Experience Platform UI中为数据集计划生存时间(TTL)。
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 22da9e39e168d9a995c7c134733aa7a1b3587749
+source-git-commit: 7f1e4bdf54314cab1f69619bcbb34216da94b17e
 workflow-type: tm+mt
-source-wordcount: '372'
+source-wordcount: '370'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的Adobe卫生功能目前仅适用于已购买Data Shield for Healthcare的组织。
+>Adobe Experience Platform中的数据卫生功能目前仅适用于已购买Healthcare Shield的组织。
 
 的 [[!UICONTROL 数据卫生] 工作区](./overview.md) 在Adobe Experience Platform UI中，您可以计划数据集的生存时间(TTL)。
 

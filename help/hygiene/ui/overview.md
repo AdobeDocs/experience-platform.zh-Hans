@@ -2,9 +2,9 @@
 title: 数据卫生UI指南
 description: 了解如何在Adobe Experience Platform用户界面中管理数据卫生任务。
 exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
-source-git-commit: 22da9e39e168d9a995c7c134733aa7a1b3587749
+source-git-commit: 7f1e4bdf54314cab1f69619bcbb34216da94b17e
 workflow-type: tm+mt
-source-wordcount: '160'
+source-wordcount: '158'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的Adobe卫生功能目前仅适用于已购买Data Shield for Healthcare的组织。
+>Adobe Experience Platform中的数据卫生功能目前仅适用于已购买Healthcare Shield的组织。
 
 的 **[!UICONTROL 数据卫生]** 通过Adobe Experience Platform UI中的工作区，您可以创建和监视各种数据卫生任务，包括删除消费者身份和计划数据集的生存时间(TTL)协议。
 

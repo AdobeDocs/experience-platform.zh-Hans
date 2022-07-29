@@ -2,9 +2,9 @@
 title: 数据集生存时间(TTL)API端点
 description: 数据卫生API中的/ttl端点允许您以编程方式计划Adobe Experience Platform中的数据集TTL。
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 22da9e39e168d9a995c7c134733aa7a1b3587749
+source-git-commit: 7f1e4bdf54314cab1f69619bcbb34216da94b17e
 workflow-type: tm+mt
-source-wordcount: '1315'
+source-wordcount: '1313'
 ht-degree: 6%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 6%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的Adobe卫生功能目前仅适用于已购买Data Shield for Healthcare的组织。
+>Adobe Experience Platform中的数据卫生功能目前仅适用于已购买Healthcare Shield的组织。
 
 的 `/ttl` 数据卫生API中的端点允许您为Adobe Experience Platform中的数据集计划生存时间(TTL)协议。
 

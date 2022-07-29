@@ -2,9 +2,9 @@
 title: 浏览数据卫生工作单
 description: 了解如何在Adobe Experience Platform用户界面中查看和管理现有数据卫生工作单。
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: c24aa700eb425770266bbee5c187e2e87b15a9ac
+source-git-commit: 7f1e4bdf54314cab1f69619bcbb34216da94b17e
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '411'
 ht-degree: 1%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的Adobe卫生功能目前仅适用于已购买Data Shield for Healthcare的组织。
+>Adobe Experience Platform中的数据卫生功能目前仅适用于已购买Healthcare Shield的组织。
 
 当向系统发送数据卫生请求时，创建工作命令以执行所请求的任务。 工作单表示特定的数据卫生过程，如数据集的计划生存时间(TTL)，其中包括其当前状态和其他相关详细信息。
 
