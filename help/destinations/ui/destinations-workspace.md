@@ -3,9 +3,9 @@ keywords: 平台；目标；目标工作区；UI；目标UI；目录；目标目
 title: 目标工作区
 description: “目标”工作区包含五个部分：“概述”、“目录”、“浏览”、“帐户”和“系统视图”。 下面各节对这些参数进行了描述。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: 802a15212f51db2c616860ed0fd2c3f1cf2d3777
 workflow-type: tm+mt
-source-wordcount: '1157'
+source-wordcount: '1162'
 ht-degree: 2%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 2%
 >
 >如果贵组织是新Experience Platform，并且还没有活动目标，则 [!UICONTROL 目标] 功能板和 [!UICONTROL 概述] 选项卡。 而是选择 [!UICONTROL 目标] 在左侧导航中， [[!UICONTROL 目录] 选项卡](#catalog).
 
-![](../../dashboards/images/destinations/dashboard-overview.png)
+![目标功能板概述选项卡。](../../dashboards/images/destinations/dashboard-overview.png)
 
 ## [!UICONTROL Catalog] {#catalog}
 

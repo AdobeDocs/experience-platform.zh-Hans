@@ -4,9 +4,9 @@ title: 目标功能板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 4bb0078b6687da5239f57e7285507815aa7f3255
+source-git-commit: e1d44c453385b8beaa49e9793eb4858876d865b0
 workflow-type: tm+mt
-source-wordcount: '2726'
+source-wordcount: '2791'
 ht-degree: 0%
 
 ---
@@ -29,11 +29,13 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 要导航到Platform UI中的目标功能板，请选择 **[!UICONTROL 目标]** 在左边栏中，选择 **[!UICONTROL 概述]** 选项卡来显示功能板。
 
+最近快照的日期和时间显示在 [!UICONTROL 概述] 目标下拉列表旁边的。 自该日期和时间起，所有小组件数据都是准确的。 快照的时间戳以UTC格式提供；它不在单个用户或组织的时区内。
+
 >[!NOTE]
 >
 >如果贵组织是新Experience Platform，并且还没有活动目标，则 [!UICONTROL 目标] 功能板和 [!UICONTROL 概述] 选项卡。 而是选择 [!UICONTROL 目标] 在左侧导航中， [!UICONTROL 目录] 选项卡。 要进一步了解 [!UICONTROL 目录] 选项卡，请参阅 [[!UICONTROL 目标] 工作区指南](../../destinations/ui/destinations-workspace.md).
 
-![](../images/destinations/dashboard-overview.png)
+![Platform UI目标概述，其中突出显示了最新快照。](../images/destinations/snapshot-timestamp.png)
 
 ### 修改目标功能板
 

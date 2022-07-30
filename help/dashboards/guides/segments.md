@@ -4,9 +4,9 @@ title: 区段功能板
 description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 4bb0078b6687da5239f57e7285507815aa7f3255
+source-git-commit: e1d44c453385b8beaa49e9793eb4858876d865b0
 workflow-type: tm+mt
-source-wordcount: '1575'
+source-wordcount: '1597'
 ht-degree: 0%
 
 ---
@@ -57,9 +57,9 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 区段功能板由小组件组成，这些小组件是只读量度，提供有关您选定区段的重要信息。
 
-小组件上的“上次更新”日期和时间，会显示拍摄数据的最后快照的时间。 快照的日期和时间以UTC格式提供；它不在单个用户或组织的时区内。
+最近快照的日期和时间显示在 [!UICONTROL 概述] 选项卡。 自该日期和时间起，所有小组件数据都是准确的。 快照的时间戳以UTC格式提供；它不在单个用户或组织的时区内。
 
-![](../images/segments/widget-timestamp.png)
+![区段概述选项卡中突出显示了小组件时间戳。](../images/segments/widget-timestamp.png)
 
 ## 标准小组件 {#standard-widgets}
 
@@ -68,13 +68,13 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 要进一步了解每个可用的标准小组件，请从以下列表中选择小组件的名称：
 
 * [[!UICONTROL 受众规模]](#audience-size)
-* [[!UICONTROL 身份重叠]](#identity-overlap)
-* [[!UICONTROL 按身份划分的用户档案]](#profiles-by-identity)
 * [[!UICONTROL Audience Activation订单]](#audience-activation-order)
 * [[!UICONTROL 受众大小趋势]](#audience-size-trend)
 * [[!UICONTROL 受众大小更改趋势]](#audience-size-change-trend)
 * [[!UICONTROL 按身份划分的受众大小趋势]](#audience-size-trend-by-identity)
 * [[!UICONTROL 受众重叠]](#audience-overlap)
+* [[!UICONTROL 身份重叠]](#identity-overlap)
+* [[!UICONTROL 按身份划分的用户档案]](#profiles-by-identity)
 
 ### [!UICONTROL 受众规模] {#audience-size}
 
@@ -89,6 +89,61 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 有关片段和合并的用户档案的更多信息，请首先阅读 [实时客户资料概述](../../profile/home.md).
 
 ![](../images/segments/audience-size.png)
+
+### [!UICONTROL 受众大小趋势] {#audience-size-trend}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_segments_audiencesizetrend"
+>title="受众大小趋势"
+>abstract="此小组件提供有关满足以下条件的用户档案总数的信息： **any** 区段定义，在每日快照期间捕获，最近30天、90天或12个月。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#audience-size-trend" text="从文档了解更多信息"
+
+的 **[!UICONTROL 受众大小趋势]** 小组件为符合 **any** 区段定义。 可以在30天、90天和12个月期间显示受众规模趋势。 时间段是从小组件的下拉菜单中选择的。 受众大小反映在y轴上，时间反映在x轴上。
+
+此小组件还包含自动 [!UICONTROL 字幕] 机器学习模型分析图表和区段数据并自动生成字幕以描述关键趋势和重要事件的功能。 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
+
+![区段概述会显示受众大小趋势小组件。](../images/segments/audience-size-trend-captions.png)
+
+随即会打开自动字幕对话框，该对话框提供对数据的分析。
+
+![受众大小趋势小组件的自动字幕对话框。](../images/segments/audience-size-trend-automatic-captions-dialog.png)
+
+要了解有关区段评估以及用户档案如何确定并退出区段的更多信息，请参阅 [Segmentation Service文档](../../segmentation/home.md).
+
+### [!UICONTROL 受众大小更改趋势] {#audience-size-change-trend}
+
+此小组件提供了一个折线图图，用于显示符合给定区段资格的配置文件总数与最近的每日快照之间的差异。 从概述下拉菜单中选择了要分析的区段。 趋势分析的周期可以显示为30天、90天和12个月。 时间段是从小组件的下拉菜单中选择的。 受众大小反映在y轴上，时间反映在x轴上。
+
+![受众大小更改趋势小组件。](../images/segments/audience-size-change-trend.png)
+
+### [!UICONTROL 按身份划分的受众大小趋势] {#audience-size-trend-by-identity}
+
+此小组件根据从小组件下拉菜单中选择的身份类型，展示特定区段的受众大小趋势。 从概述下拉菜单中选择用于分析的区段。 趋势分析的周期可以显示为30天、90天和12个月。 时间段是从小组件的下拉菜单中选择的。
+
+![按身份小组件显示的受众大小趋势。](../images/segments/audience-size-trend-by-identity.png)
+
+### [!UICONTROL Audience Activation订单] {#audience-activation-order}
+
+的 [!UICONTROL Audience Activation订单] 小组件提供一个三列表格，其中列出了 [!UICONTROL 目标名称], [!UICONTROL 平台]和激活 [!UICONTROL 日期] 观众席。 该列表根据新近度按从高到低的顺序排列，最多可容纳10行。
+
+![受众激活订单小组件。](../images/segments/audience-activation-order.png)
+
+### [!UICONTROL 受众重叠] {#audience-overlap}
+
+此小组件表示两个区段中符合两个区段定义标准的用户档案数量。 从小组件下拉菜单中选择用于比较的区段。 通过将鼠标悬停在维恩图的圆圈或交集上，可查看相关区段定义中包含的用户档案总数。
+
+此小组件允许您通过可视化区段定义结果中的相似性来优化分段策略。
+
+![受众重叠小组件。](../images/segments/audience-overlap.png)
+
+<!-- * [[!UICONTROL Audience overlap report]](#audience-overlap-report) -->
+<!-- ### [!UICONTROL Audience overlap report] {#audience-overlap-report} -->
+
+<!-- View an ordered list of audiences by Highest or Lowest overlap percentages. -->
+
+<!-- ![The Audience overlap report widget.]() -->
+
+<!-- https://jira.corp.adobe.com/browse/PLAT-125511 -->
 
 ### [!UICONTROL 身份重叠] {#identity-overlap}
 
@@ -125,61 +180,6 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 机器学习模型通过分析数据的整体分布和关键维度自动生成数据分析。
 
 要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
-
-### [!UICONTROL Audience Activation订单] {#audience-activation-order}
-
-的 [!UICONTROL Audience Activation订单] 小组件提供一个三列表格，其中列出了 [!UICONTROL 目标名称], [!UICONTROL 平台]和激活 [!UICONTROL 日期] 观众席。 该列表根据新近度按从高到低的顺序排列，最多可容纳10行。
-
-![受众激活订单小组件。](../images/segments/audience-activation-order.png)
-
-### [!UICONTROL 受众大小趋势] {#audience-size-trend}
-
->[!CONTEXTUALHELP]
->id="platform_dashboards_segments_audiencesizetrend"
->title="受众大小趋势"
->abstract="此小组件提供有关满足以下条件的用户档案总数的信息： **any** 区段定义，在每日快照期间捕获，最近30天、90天或12个月。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#audience-size-trend" text="从文档了解更多信息"
-
-的 **[!UICONTROL 受众大小趋势]** 小组件为符合 **any** 区段定义。 可以在30天、90天和12个月期间显示受众规模趋势。 时间段是从小组件的下拉菜单中选择的。 受众大小反映在y轴上，时间反映在x轴上。
-
-此小组件还包含自动 [!UICONTROL 字幕] 机器学习模型分析图表和区段数据并自动生成字幕以描述关键趋势和重要事件的功能。 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
-
-![区段概述会显示受众大小趋势小组件。](../images/segments/audience-size-trend-captions.png)
-
-随即会打开自动字幕对话框，该对话框提供对数据的分析。
-
-![受众大小趋势小组件的自动字幕对话框。](../images/segments/audience-size-trend-automatic-captions-dialog.png)
-
-要了解有关区段评估以及用户档案如何确定并退出区段的更多信息，请参阅 [Segmentation Service文档](../../segmentation/home.md).
-
-### [!UICONTROL 受众大小更改趋势] {#audience-size-change-trend}
-
-此小组件提供了一个折线图图，用于显示符合给定区段资格的配置文件总数与最近的每日快照之间的差异。 从概述下拉菜单中选择了要分析的区段。 趋势分析的周期可以显示为30天、90天和12个月。 时间段是从小组件的下拉菜单中选择的。 受众大小反映在y轴上，时间反映在x轴上。
-
-![受众大小更改趋势小组件。](../images/segments/audience-size-change-trend.png)
-
-### [!UICONTROL 按身份划分的受众大小趋势] {#audience-size-trend-by-identity}
-
-此小组件根据从小组件下拉菜单中选择的身份类型，展示特定区段的受众大小趋势。 从概述下拉菜单中选择用于分析的区段。 趋势分析的周期可以显示为30天、90天和12个月。 时间段是从小组件的下拉菜单中选择的。
-
-![按身份小组件显示的受众大小趋势。](../images/segments/audience-size-trend-by-identity.png)
-
-### [!UICONTROL 受众重叠] {#audience-overlap}
-
-此小组件表示两个区段中符合两个区段定义标准的用户档案数量。 从小组件下拉菜单中选择用于比较的区段。 通过将鼠标悬停在维恩图的圆圈或交集上，可查看相关区段定义中包含的用户档案总数。
-
-此小组件允许您通过可视化区段定义结果中的相似性来优化分段策略。
-
-![受众重叠小组件。](../images/segments/audience-overlap.png)
-
-<!-- * [[!UICONTROL Audience overlap report]](#audience-overlap-report) -->
-<!-- ### [!UICONTROL Audience overlap report] {#audience-overlap-report} -->
-
-<!-- View an ordered list of audiences by Highest or Lowest overlap percentages. -->
-
-<!-- ![The Audience overlap report widget.]() -->
-
-<!-- https://jira.corp.adobe.com/browse/PLAT-125511 -->
 
 ## 后续步骤
 

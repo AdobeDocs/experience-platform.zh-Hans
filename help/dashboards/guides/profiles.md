@@ -4,9 +4,9 @@ title: 用户档案仪表板
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: a1a5a34ed0f46223b1eae3df75ff65f27041503e
+source-git-commit: e1d44c453385b8beaa49e9793eb4858876d865b0
 workflow-type: tm+mt
-source-wordcount: '3875'
+source-wordcount: '3901'
 ht-degree: 1%
 
 ---
@@ -89,7 +89,9 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 功能板由小组件组成，这些小组件是只读量度，提供有关用户档案数据的重要信息。
 
-小组件上的“上次更新”日期和时间，会显示拍摄数据的最后快照的时间。 快照的日期和时间以UTC格式提供；它不在单个用户或组织的时区内。
+最近快照的日期和时间显示在 [!UICONTROL 概述] 选项卡。 自该日期和时间起，所有小组件数据都是准确的。 快照的时间戳以UTC格式提供；它不在单个用户或组织的时区内。
+
+![“配置文件”功能板“概述”选项卡，其中突出显示了最近的快照时间戳。](../images/profiles/snapshot-timestamp.png)
 
 ## 标准小组件 {#standard-widgets}
 
@@ -105,13 +107,13 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 按身份划分的用户档案]](#profiles-by-identity)
 * [[!UICONTROL 身份重叠]](#identity-overlap)
 * [[!UICONTROL 单个身份配置文件]](#single-identity-profiles)
+* [[!UICONTROL 按身份划分的单个身份配置文件]](#single-identity-profiles-by-identity)
 * [[!UICONTROL 未分段的用户档案]](#unsegmented-profiles)
 * [[!UICONTROL 未分段的用户档案趋势]](#unsegmented-profiles-trend)
 * [[!UICONTROL 按身份划分的未分段用户档案]](#unsegmented-profiles-by-identity)
 * [[!UICONTROL 受众]](#audiences)
 * [[!UICONTROL 映射到目标状态的受众]](#audiences-mapped-to-destination-status)
 * [[!UICONTROL 受众大小]](#audiences-size)
-* [[!UICONTROL 按身份划分的单个身份配置文件]](#single-identity-profiles-by-identity)
 * [[!UICONTROL 按合并策略划分的受众重叠]](#audience-overlap-by-merge-policy)
 
 ### [!UICONTROL 用户档案计数] {#profile-count}
@@ -238,6 +240,14 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ![单个身份配置文件小组件。](../images/profiles/single-identity-profiles.png)
 
+### [!UICONTROL 按身份划分的单个身份配置文件] {#single-identity-profiles-by-identity}
+
+此小组件使用条形图来说明仅使用单个唯一标识符标识的用户档案总数。 该小组件最多支持五种最常出现的身份。
+
+将鼠标悬停在单个栏上可查看一个对话框，其中详细列出了身份的用户档案总数。
+
+![按身份小组件划分的单个身份配置文件。](../images/profiles/single-identity-profiles-by-identity.png)
+
 ### [!UICONTROL 未分段的用户档案] {#unsegmented-profiles}
 
 >[!CONTEXTUALHELP]
@@ -319,14 +329,6 @@ The visualization allows you to monitor the overall health of audiences within A
 ![具有区段名称的受众大小小组件，可查看突出显示的所有区段文本。](../images/profiles/audiences-size-view-all-segments.png)
 
 有关 [[!UICONTROL 区段] [!UICONTROL  浏览] 选项卡](https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/overview.html#browse).
-
-### [!UICONTROL 按身份划分的单个身份配置文件] {#single-identity-profiles-by-identity}
-
-此小组件使用条形图来说明仅使用单个唯一标识符标识的用户档案总数。 该小组件最多支持五种最常出现的身份。
-
-将鼠标悬停在单个栏上可查看一个对话框，其中详细列出了身份的用户档案总数。
-
-![按身份小组件划分的单个身份配置文件。](../images/profiles/single-identity-profiles-by-identity.png)
 
 ### [!UICONTROL 按合并策略划分的受众重叠] {#audience-overlap-by-merge-policy}
 

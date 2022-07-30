@@ -1,7 +1,8 @@
 ---
 title: 用户定义的功能板
 description: 了解如何构建和管理自定义功能板，您可以在其中创建、添加和编辑定制小组件以可视化关键量度。
-source-git-commit: 47e74a0cabbf40df3a45e835ca3a1e9a36fb4532
+exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
+source-git-commit: f138bb0f1b8d289cc872afc065d31c5e55d4b05c
 workflow-type: tm+mt
 source-wordcount: '883'
 ht-degree: 0%
@@ -68,9 +69,9 @@ Adobe Experience Platform功能板可帮助您通过用户定义的功能板功�
 
 选择 **[!UICONTROL 下一个]** 以确认您选择的数据模型。 下一个视图在左边栏中显示可用表格的列表。 选择一个表格，可查看所选表格中所包含数据的全面划分。
 
-的 [!UICONTROL 预览] 面板包含选项卡 [!UICONTROL 示例记录] 和 [!UICONTROL 属性]. [!UICONTROL 示例记录] 选项卡在列表视图中提供来自所选表的记录子集。 的 [!UICONTROL 属性] 选项卡为与选定表关联的每个属性提供属性名称、数据类型和源表。
+的 [!UICONTROL 预览] 面板包含选项卡 [!UICONTROL 示例记录] 和 [!UICONTROL 属性]. 的 [!UICONTROL 示例记录] 选项卡在列表视图中提供来自所选表的记录子集。 的 [!UICONTROL 属性] 选项卡为与选定表关联的每个属性提供属性名称、数据类型和源表。
 
-从左边栏的列表中选择一个表格，为小组件提供数据，然后选择 [!UICONTROL 选择] 返回小组件编辑器。
+从左边栏的列表中选择一个表格，为小组件提供数据，然后选择 **[!UICONTROL 选择]** 返回小组件编辑器。
 
 ![选择数据对话框，其中选择高亮显示。](./images/user-defined-dashboards/select-a-table.png)
 
@@ -117,7 +118,3 @@ Adobe Experience Platform功能板可帮助您通过用户定义的功能板功�
 通过阅读本文档，您可以更好地了解如何创建自定义功能板，以及如何为该功能板创建、编辑和更新自定义小组件。
 
 要了解 [用户档案](./guides/profiles.md#standard-widgets), [区段](./guides/segments.md#standard-widgets)和 [目标](./guides/destinations.md#standard-widgets) 功能板中，请参阅相应文档中的标准小组件列表。
-
-
-
-
