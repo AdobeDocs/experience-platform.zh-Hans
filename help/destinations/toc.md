@@ -4,9 +4,9 @@ user-guide-title: 目标指南
 user-guide-description: 针对跨渠道营销活动、电子邮件宣传、定向广告和许多其他用例，激活您的已知和未知数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: 30e75b8fbaa4a8269a32f82ade435b67767630c5
+source-git-commit: ff00dcda3bbccd731c91fdf475b37221edb659db
 workflow-type: tm+mt
-source-wordcount: '843'
+source-wordcount: '925'
 ht-degree: 7%
 
 ---
@@ -205,6 +205,12 @@ ht-degree: 7%
       * [使用Destination SDK配置流目标](./destination-sdk/configure-destination-instructions.md)
       * [（测试版）使用Destination SDK配置基于文件的目标](./destination-sdk/configure-file-based-destination-instructions.md)
       * [提交以供审核在Destination SDK中创作的目标](./destination-sdk/submit-destination.md)
+      * 配置基于文件的目标 {#configure-file-based-destinations}
+         * [（测试版）使用预定义的文件格式选项和自定义文件名配置配置Amazon S3目标](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-predefined-file-formatting.md)
+         * [（测试版）使用自定义文件名和格式选项配置Amazon S3目标](../destinations/destination-sdk/guides/batch/configure-amazon-s3-destination-with-custom-file-formatting.md)
+         * [（测试版）使用自定义文件格式选项和自定义文件名配置配置Azure Blob Storage目标](../destinations/destination-sdk/guides/batch/configure-blob-destination-with-custom-file-formatting.md)
+         * [（测试版）使用自定义文件格式选项和自定义文件名配置配置Azure数据湖存储目标](../destinations/destination-sdk/guides/batch/configure-adls-destination-with-custom-file-formatting.md)
+         * [（测试版）使用预定义的文件格式选项和自定义文件名配置配置SFTP目标](../destinations/destination-sdk/guides/batch/configure-sftp-destination-with-predefined-file-formatting.md)
    * 参考 {#reference}
       * [流目标的速率限制和重试策略](./destination-sdk/rate-limiting-retry-policy.md)
       * [支持的转换函数](./destination-sdk/supported-functions.md)
