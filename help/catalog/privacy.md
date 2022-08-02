@@ -5,9 +5,9 @@ title: 数据湖中的隐私请求处理
 topic-legacy: overview
 description: Adobe Experience Platform Privacy Service会根据法律和组织隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: a713245f3228ed36f262fa3c2933d046ec8ee036
 workflow-type: tm+mt
-source-wordcount: '1380'
+source-wordcount: '1388'
 ht-degree: 1%
 
 ---
@@ -148,9 +148,9 @@ curl -X POST \
 
 ### 使用UI
 
-在UI中创建作业请求时，请务必选择 **[!UICONTROL AEP Data Lake]** 和/或 **[!UICONTROL 用户档案]** 在 **[!UICONTROL 产品]** 以便处理存储在 [!DNL Data Lake] 或 [!DNL Real-time Customer Profile]，分别为。
+在UI中创建作业请求时，请务必选择 **[!UICONTROL AEP Data Lake]** 在 **[!UICONTROL 产品]** 以便处理存储在 [!DNL Data Lake].
 
-<img src="images/privacy/product-value.png" width="450"><br>
+![显示在隐私请求创建对话框中选择的数据湖产品的图像](./images/privacy/product-value.png)
 
 ### 使用 API
 

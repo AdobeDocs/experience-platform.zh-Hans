@@ -5,9 +5,9 @@ title: 实时客户资料中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会按照许多隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍了与处理实时客户资料的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: 1686ff1684080160057462e9aa40819a60bf6b75
+source-git-commit: a713245f3228ed36f262fa3c2933d046ec8ee036
 workflow-type: tm+mt
-source-wordcount: '1281'
+source-wordcount: '1312'
 ht-degree: 0%
 
 ---
@@ -46,9 +46,7 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 
 >[!IMPORTANT]
 >
->Privacy Service只能处理 [!DNL Profile] 使用不执行身份拼合的合并策略的数据。 如果您使用UI确认是否正在处理隐私请求，请确保您使用的策略包含“[!DNL None]&quot;作为 [!UICONTROL ID拼合] 类型。 换句话说，您不能使用合并策略， [!UICONTROL ID拼合] 设置为&quot;[!UICONTROL 专用图]&quot;
->
->![合并策略的ID拼合设置为“无”](./images/privacy/no-id-stitch.png)
+>Privacy Service只能处理 [!DNL Profile] 使用不执行身份拼合的合并策略的数据。 请参阅 [合并策略限制](#merge-policy-limitations) 以了解更多信息。
 >
 >另外，请务必注意，无法保证完成隐私请求所花费的时间。 如果 [!DNL Profile] 当请求仍在处理时，也无法保证是否处理了这些记录。
 
@@ -60,7 +58,11 @@ Identity Service维护全局定义（标准）和用户定义（自定义）身�
 >
 >您可能需要为每个客户提供多个ID，具体取决于身份图以及Platform数据集中配置文件片段的分发方式。 请参阅下一节 [配置文件片段](#fragments) 以了解更多信息。
 
-此外， `include` 请求有效负载的数组必须包含对请求进行的不同数据存储的产品值。 向 [!DNL Data Lake]，则数组必须包含值“ProfileService”。
+此外， `include` 请求有效负载的数组必须包含对请求进行的不同数据存储的产品值。 要删除与身份关联的配置文件数据，数组必须包含值 `ProfileService`. 要删除客户的标识图关联，数组必须包含值 `identity`.
+
+>[!NOTE]
+>
+>请参阅 [配置文件请求和身份请求](#profile-v-identity) 本文档的后面部分提供了有关使用 `ProfileService` 和 `identity` 在 `include` 数组。
 
 以下请求会在 [!DNL Profile] 存储。 在 `userIDs` 数组；使用标准 `Email` 标识命名空间，而另一个使用自定义 `Customer_ID` 命名空间。 它还包括 [!DNL Profile] (`ProfileService`) `include` 数组：
 
@@ -96,7 +98,7 @@ curl -X POST \
         ]
       }
     ],
-    "include": ["ProfileService"],
+    "include": ["ProfileService","identity"],
     "expandIds": false,
     "priority": "normal",
     "regulation": "ccpa"
@@ -129,22 +131,25 @@ curl -X POST \
 
 要确保您的隐私请求处理所有相关的客户属性，您必须为可能存储这些属性的所有适用数据集提供主标识值（每个客户最多9个ID）。 请参阅 [架构组合基础知识](../xdm/schema/composition.md#identity) 有关通常标记为身份的字段的更多信息。
 
-## 删除请求处理
+## 删除请求处理 {#delete}
 
 When [!DNL Experience Platform] 从接收删除请求 [!DNL Privacy Service], [!DNL Platform] 向发送确认 [!DNL Privacy Service] 请求已收到且受影响的数据已标记为删除。 然后，将从 [!DNL Data Lake] 或 [!DNL Profile] 完成隐私作业后进行存储。 删除作业仍在处理中，但数据会被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。 请参阅 [[!DNL Privacy Service] 文档](../privacy-service/home.md#monitor) 以了解有关跟踪作业状态的更多信息。
 
->[!IMPORTANT]
->
->如果对用户档案(`ProfileService`)，但不是Identity Service(`identity`)，则生成的作业将删除客户（或一组客户）收集的属性数据，但不会删除在身份图中建立的关联。
->
->例如，使用客户 `email_id` 和 `customer_id` 删除存储在这些ID下的所有属性数据。 但是，之后在同一数据下摄取的任何数据 `customer_id` 仍将与相应的 `email_id`，因为关联仍然存在。
->
->此外，Privacy Service只能处理 [!DNL Profile] 使用不执行身份拼合的合并策略的数据。 如果您使用UI确认是否正在处理隐私请求，请确保您使用的策略包含“[!DNL None]&quot;作为 [!UICONTROL ID拼合] 类型。 换句话说，您不能使用合并策略， [!UICONTROL ID拼合] 设置为&quot;[!UICONTROL 专用图]&quot;
->
->![合并策略的ID拼合设置为“无”](./images/privacy/no-id-stitch.png)
-
 在未来版本中， [!DNL Platform] 将向发送确认函 [!DNL Privacy Service] 数据被物理删除后。
 
+### 配置文件请求与身份请求 {#profile-v-identity}
+
+如果对用户档案(`ProfileService`)，但不是Identity Service(`identity`)，则生成的作业将删除客户（或一组客户）收集的属性数据，但不会删除在身份图中建立的关联。
+
+例如，使用客户 `email_id` 和 `customer_id` 删除存储在这些ID下的所有属性数据。 但是，之后在同一数据下摄取的任何数据 `customer_id` 仍将与相应的 `email_id`，因为关联仍然存在。
+
+要删除给定客户的配置文件和所有身份关联，请确保在删除请求中同时包含配置文件和身份服务作为目标产品。
+
+### 合并策略限制 {#merge-policy-limitations}
+
+Privacy Service只能处理 [!DNL Profile] 使用不执行身份拼合的合并策略的数据。 如果您使用UI确认是否处理了隐私请求，请确保您使用的策略包括 **[!DNL None]** as [!UICONTROL ID拼合] 类型。 换句话说，您不能使用合并策略， [!UICONTROL ID拼合] 设置为 [!UICONTROL 专用图].
+>![合并策略的ID拼合设置为“无”](./images/privacy/no-id-stitch.png)
+>
 ## 后续步骤
 
 阅读本文档后，您便了解了 [!DNL Experience Platform]. 建议您继续阅读本指南中提供的文档，以加深对如何管理身份数据和创建隐私作业的了解。
