@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制创建策略
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理策略的信息
 exl-id: 66820711-2db0-4621-908d-01187771de14
-source-git-commit: c31855bff9d87133252c43e2f2f2fe1960c7b144
+source-git-commit: 97b4b98a2f14e36e8e8c71bd2ab9631782bc333f
 workflow-type: tm+mt
 source-wordcount: '692'
 ht-degree: 0%
@@ -42,7 +42,7 @@ ht-degree: 0%
 
 使用下拉菜单，选择 **资源**.
 
-![flac-policy-resource-dropdown](../../images/flac-ui/flac-policy-resource-dropdown.png)
+![flac-policy-resource-dropdown](../../images/flac-ui/flac-policy-resource-dropdown-1.png)
 
 接下来，使用下拉菜单选择 **匹配**.
 
