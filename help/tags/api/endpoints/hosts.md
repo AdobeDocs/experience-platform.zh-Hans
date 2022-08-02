@@ -2,10 +2,10 @@
 title: 主机端点
 description: 了解如何在Reactor API中对/hosts端点进行调用。
 exl-id: 9d0d2a65-49e9-429c-a665-754b59a11cf1
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 905384b3190cd55e7caa9c4560d6b2774280eee7
 workflow-type: tm+mt
-source-wordcount: '765'
-ht-degree: 7%
+source-wordcount: '821'
+ht-degree: 6%
 
 ---
 
@@ -211,6 +211,7 @@ curl -X POST \
             "username": "John Doe",
             "encrypted_private_key": "{PRIVATE_KEY}",
             "server": "https://example.com",
+            "skip_symlinks": true,
             "path": "assets",
             "port": 22
           },
@@ -227,6 +228,7 @@ curl -X POST \
 | `attributes.path` | 要附加到的路径 `server` URL。 |
 | `attributes.port` | 一个整数，用于指示要使用的特定服务器端口。 |
 | `attributes.server` | 服务器的主机URL。 |
+| `attributes.skip_symlinks`<br><br>（仅适用于SFTP主机） | 默认情况下，所有SFTP主机都使用符号链接来引用保存到服务器的库内部版本。 但是，并非所有服务器都支持使用符号链接。 当包含此属性并将其设置为 `true`，则主机会使用复制操作直接更新内部版本资产，而不是使用符号链接。 |
 | `attributes.username` | 用于身份验证的可选用户名。 |
 | `type` | 要更新的资源类型。 对于此端点，值必须为 `hosts`. |
 
@@ -248,6 +250,7 @@ curl -X POST \
       "path": "assets",
       "port": 22,
       "status": "pending",
+      "skip_symlinks": true,
       "type_of": "sftp",
       "updated_at": "2020-12-14T17:42:07.033Z",
       "username": "John Doe"
@@ -337,6 +340,7 @@ curl -X PATCH \
       "path": null,
       "port": null,
       "status": "succeeded",
+      "skip_symlinks": true,
       "type_of": "sftp",
       "updated_at": "2020-12-14T17:42:45.696Z",
       "username": null
