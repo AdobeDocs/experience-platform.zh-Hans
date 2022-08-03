@@ -307,6 +307,6 @@ ht-degree: 13%
    - [文档自助服务UI模板](sources-sdk/documentation/ui-template.md)
 - [流运行通知](notifications.md)
 - [IP地址允许列表](ip-address-allow-list.md)
-- [常见问题](./troubleshooting.md)
+- [常见问题解答](./troubleshooting.md)
 - [API参考](https://www.adobe.io/experience-platform-apis/references/flow-service/)
 - [平台发行说明](https://www.adobe.com/go/platform-release-notes-en)

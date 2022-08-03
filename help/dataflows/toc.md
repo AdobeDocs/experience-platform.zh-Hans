@@ -5,8 +5,8 @@ user-guide-description: 数据流是跨平台移动数据的数据作业的表�
 feature: Dataflows
 source-git-commit: 2e5d5a574f4c8bec99ef05ea751908c81c358050
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '63'
+ht-degree: 23%
 
 ---
 

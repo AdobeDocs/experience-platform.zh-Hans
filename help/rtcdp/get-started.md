@@ -1,7 +1,7 @@
 ---
 keywords: RTCDP;CDP;Real-time Customer Data Platform；实时客户数据平台；实时CDP;RTCDP
 title: 开始使用Real-time Customer Data Platform
-description: 使用此情景作为示例，来设置您的实时客户数据平台实施。
+description: 使用此情景作为示例，来设置您的 Real-time Customer Data Platform 实施。
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
 source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
 workflow-type: tm+mt
