@@ -3,9 +3,9 @@ keywords: rtcdp配置文件；配置文件rtcdp;rtcdp身份；rtcdp合并策略�
 title: 帐户配置文件UI指南
 description: 通过使用帐户配置文件，Real-time Customer Data Platform B2B Edition使您能够统一来自多个来源的帐户信息。 本指南提供了有关在Adobe Experience Platform用户界面中与帐户配置文件进行交互的详细信息。
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 604d2e100981b2c92d4cfac6862d78511791aa91
+source-git-commit: 9119e6376228c3cec214977265abf0ce55093b64
 workflow-type: tm+mt
-source-wordcount: '1476'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,26 @@ ht-degree: 0%
 ![“概述”选项卡显示小组件](images/b2b-account-profile-overview.png)
 
 请参阅 [[!UICONTROL 帐户配置文件]](../../dashboards/guides/account-profiles.md) 功能板以了解更多信息。
+
+## 配置潜在客户与帐户匹配 {#configure-lead-to-account-matching}
+
+>[!IMPORTANT]
+>
+> 只有B2B AI管理员才能启用、禁用和配置潜在客户以实现帐户匹配服务。 禁用服务后，将在24小时内删除匹配结果。
+
+要配置潜在客户与帐户匹配，请选择 **[!UICONTROL 用户档案]** 在 [!UICONTROL 帐户] 中。 在 **[!UICONTROL 概述]** 选项卡，选择 **[!UICONTROL 设置]** 在右上方。
+
+![选择设置](images/b2b-configuring-accounts-profile.png)
+
+的 **[!UICONTROL 帐户设置]** 对话框。 从此处选择 **[!UICONTROL 启用潜在客户到帐户匹配]** 切换以启用该功能。 使用下拉菜单选择 **[!UICONTROL 每日]** 对于 **[!UICONTROL 匹配频度]** 设置。 最后，选择相关 **[!UICONTROL 匹配条件]** 选项后跟 **[!UICONTROL 保存]** 以确认您的设置并返回至 **[!UICONTROL 帐户配置文件]** 屏幕。
+
+>[!NOTE]
+>
+> 地址不能用作唯一的匹配条件。 必须选择一个或多个其他匹配条件。
+
+![配置帐户设置](images/b2b-configuring-account-settings.png)
+
+要了解有关导致帐户匹配的潜在客户的更多信息，请参阅 [在实时CDP B2B概述中提供帐户匹配](../../rtcdp/b2b-ai-ml-services/lead-to-account-matching.md).
 
 ## 浏览帐户配置文件 {#browse-account-profiles}
 
