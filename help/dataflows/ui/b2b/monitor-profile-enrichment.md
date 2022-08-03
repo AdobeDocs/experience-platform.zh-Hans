@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 监视配置文件扩充作业
 type: Tutorial
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: 47a6cc9b77a0591d488d5ebc3929b465e1a6e6d2
+source-git-commit: 842fe74b0b751c515a4faee437e1f94bd0662e11
 workflow-type: tm+mt
-source-wordcount: '634'
+source-wordcount: '633'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 在 [平台UI](https://platform.adobe.com)，选择 **[!UICONTROL 监控]** 从左侧导航访问 [!UICONTROL 监控] 功能板。 在视图选择器中，选择 **B2B流量** 查看特定于 [Real-Time CDP B2B](/help/rtcdp/b2b-overview.md).  的 [!UICONTROL 监控] 功能板包括来自最新成功运行的基本量度，以及过去长达90天的每日工作状态。
 
-## 相关帐户用户档案扩充(#related-accounts)
+## 相关帐户配置文件扩充 {#related-accounts}
 
 的 [!UICONTROL 相关帐户] 功能板显示特定于 [相关帐户](/help/rtcdp/b2b-ai-ml-services/related-accounts.md) 用户档案扩充。
 
