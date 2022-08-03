@@ -1,13 +1,13 @@
 ---
 title: Pega客户决策中心连接
 description: 使用Adobe Experience Platform中的Pega客户决策中心目标，将用户档案属性和区段成员资格数据发送到Pega客户决策中心，以便进行下一个最佳决策。
-source-git-commit: 475b3b6dceefe968ffb451193cee4d7ed6387c86
+exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
+source-git-commit: f06afec31b7fa550a612280b8ad665b8393ee2e3
 workflow-type: tm+mt
 source-wordcount: '1003'
 ht-degree: 1%
 
 ---
-
 
 # Pega客户决策中心连接
 
@@ -39,7 +39,7 @@ ht-degree: 1%
 
 * 在 [!DNL Pega Customer Decision Hub] 实例。
 * 配置OAuth 2.0 [使用客户端凭据进行客户端注册](https://docs.pega.com/security/87/creating-and-configuring-oauth-20-client-registration) 您的 [!DNL Pega Customer Decision Hub] 实例。
-* 配置 [实时运行数据流](https://docs.pega.com/decision-management/87/creating-real-time-run-data-flow)  ，以获取您的Adobe区段成员资格数据流 [!DNL Pega Customer Decision Hub] 实例。
+* 配置 [实时运行数据流](https://docs.pega.com/decision-management/87/creating-real-time-run-data-flows) ，以获取您的Adobe区段成员资格数据流 [!DNL Pega Customer Decision Hub] 实例。
 
 ## 支持的身份 {#supported-identities}
 
