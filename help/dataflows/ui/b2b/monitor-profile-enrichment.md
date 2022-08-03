@@ -4,14 +4,14 @@ solution: Experience Platform
 title: 监视配置文件扩充作业
 type: Tutorial
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: 6811e3032abe569b1f00d757553eb6862e4e3354
+source-git-commit: 47a6cc9b77a0591d488d5ebc3929b465e1a6e6d2
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '634'
+ht-degree: 1%
 
 ---
 
-# 在UI中监控配置文件扩充作业(#monitor-profile-enrichment)
+# 在UI中监控配置文件扩充作业 {#monitor-profile-enrichment}
 
 使用 [!UICONTROL 用户档案扩充] 功能板，了解用户档案扩充作业是否成功运行和完成，并查看基本量度以衡量扩充的有效性。
 
@@ -38,7 +38,7 @@ ht-degree: 0%
 | **[!UICONTROL 状态]** | 指示相关帐户作业的状态（成功、失败或处理）。 |
 | **[!UICONTROL 消息]** | 指示特定作业运行的错误或警告消息。 |
 
-## 导致帐户匹配用户档案扩充(#lead-to-account-matching)
+## 扩充了帐户匹配用户档案 {#lead-to-account-matching}
 
 的 [!UICONTROL 导致帐户匹配] 功能板显示特定于 [导致帐户匹配](/help/rtcdp/b2b-ai-ml-services/lead-to-account-matching.md) 用户档案扩充。
 
