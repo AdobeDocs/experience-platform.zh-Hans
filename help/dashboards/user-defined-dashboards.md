@@ -2,9 +2,9 @@
 title: 用户定义的功能板
 description: 了解如何构建和管理自定义功能板，您可以在其中创建、添加和编辑定制小组件以可视化关键量度。
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: f138bb0f1b8d289cc872afc065d31c5e55d4b05c
+source-git-commit: bf2b35e3366c71c51c58b6257cc55f7c9b0cd9c7
 workflow-type: tm+mt
-source-wordcount: '883'
+source-wordcount: '825'
 ht-degree: 0%
 
 ---
@@ -17,21 +17,19 @@ ht-degree: 0%
 
 Adobe Experience Platform功能板可帮助您通过用户定义的功能板功能加快分析和自定义可视化。 此功能允许您构建和管理自定义功能板，您可以在其中创建、添加和编辑定制小组件，以可视化与您的组织相关的关键量度。
 
-## 快速入门
+<!-- Getting started / permissions section commented out for Beta. This will be necessary after GA only
 
-要在Adobe Experience Platform中查看功能板，您必须启用相应的权限。 请阅读 [功能板权限文档](./permissions.md#available-permissions) 了解如何授予用户使用Adobe Admin Console查看、编辑和更新Experience Platform功能板的功能。 如果您没有组织的管理员权限，请联系产品管理员以获取所需的权限。
+## Getting started
+
+To view dashboards in Adobe Experience Platform you must have the appropriate permissions enabled. Please read the [dashboards permissions documentation](./permissions.md#available-permissions) to learn how to grant users the ability to view, edit, and update Experience Platform dashboards using Adobe Admin Console. If you do not have administrator privileges for your organization, contact your product administrator to obtain the required permissions. -->
 
 ## 创建自定义功能板
 
 要创建自定义功能板，请首先导航到功能板库存。 选择 **[!UICONTROL 功能板]** 从Platform UI的左侧导航开始，然后 **[!UICONTROL 创建功能板]**.
 
-要进一步了解可用的预配置功能板，请参阅 [功能板库概述](./inventory.md).
+![左侧导航中包含功能板的功能板清单和“创建功能板”突出显示。](./images/user-defined-dashboards/create-dashboard.png)
 
->[!NOTE]
->
->通过添加自定义功能板，将从功能板清单中删除预配置功能板的列表。 相反，功能板清单仅由用户定义的功能板组成。
-
-![突出显示了“创建功能板”的功能板清单。](./images/user-defined-dashboards/create-dashboard.png)
+添加自定义功能板之前，功能板库存为空，并显示“未找到功能板”。 消息。 创建后，所有用户定义的功能板都会列在功能板清单中。
 
 的 [!UICONTROL 创建功能板] 对话框。 为要创建的小组件集合输入人类友好的描述性名称，然后选择 **[!UICONTROL 保存]**.
 
@@ -85,9 +83,9 @@ Adobe Experience Platform功能板可帮助您通过用户定义的功能板功�
 >
 >您可以通过选择铅笔图标(![铅笔图标。](./images/user-defined-dashboards/edit-icon.png))。
 
-选择省略号(`...`)以向X轴或Y轴添加属性。
+选择添加图标(./images/user-defined-dashboards/add-icon.png)来向X轴或Y轴添加属性。
 
-![小组件编辑器中突出显示了省略号下拉菜单，以将属性添加到小组件轴。](./images/user-defined-dashboards/attributes-dropdown.png)
+![小组件编辑器中突出显示了添加图标下拉菜单，可将属性添加到小组件轴。](./images/user-defined-dashboards/attributes-dropdown.png)
 
 接下来，从 [!UICONTROL 标记] 用于生成小组件当前设置的预览可视化图表的下拉菜单。 在 [!UICONTROL 属性] 在屏幕右侧的边栏中，输入小组件的名称(位于 [!UICONTROL 小组件标题] 文本。
 
