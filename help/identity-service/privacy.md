@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题
 title: Identity Service中的隐私请求处理
 description: Adobe Experience Platform Privacy Service会按照许多隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍与处理Identity Service的隐私请求相关的基本概念。
 exl-id: ab84450b-1a4b-4fdd-b77d-508c86bbb073
-source-git-commit: f0fa8d77e6184314056f8e70205a9b42409d09d5
+source-git-commit: 159a46fa227207bf161100e50bc286322ba2d00b
 workflow-type: tm+mt
-source-wordcount: '722'
+source-wordcount: '1038'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退�
 
 >[!NOTE]
 >
->本指南仅介绍如何在Experience Platform中对身份数据存储进行隐私请求。 如果您还计划针对平台数据湖或 [!DNL Real-time Customer Profile]，请参阅 [数据湖中的隐私请求处理](../catalog/privacy.md) 和 [配置文件的隐私请求处理](../profile/privacy.md) 除了本教程之外，
+>本指南仅介绍如何在Experience Platform中对身份数据存储进行隐私请求。 如果您还计划对Platform数据湖或 [!DNL Real-time Customer Profile]，请参阅 [数据湖中的隐私请求处理](../catalog/privacy.md) 和 [配置文件的隐私请求处理](../profile/privacy.md) 除了本教程之外，
 >
 >有关如何为其他Adobe Experience Cloud应用程序发出隐私请求的步骤，请参阅 [Privacy Service文档](../privacy-service/experience-cloud-apps.md).
 
@@ -105,6 +105,17 @@ curl -X POST \
 ## 删除请求处理
 
 When [!DNL Experience Platform] 从接收删除请求 [!DNL Privacy Service], [!DNL Platform] 向发送确认 [!DNL Privacy Service] 请求已收到且受影响的数据已标记为删除。 单个身份的删除基于提供的命名空间和/或ID值。 此外，与给定IMS组织关联的所有沙箱都会被删除。
+
+根据您是否还包含实时客户资料(`ProfileService`)和数据湖(`aepDataLake`)作为您的Identity Service隐私请求中的产品(`identity`)，则会在可能不同的时间从系统中删除与身份相关的不同数据集：
+
+| 包含的产品 | 效果 |
+| --- | --- |
+| `identity` 仅 | 一旦平台发送确认消息，确认已收到删除请求，则与提供的身份关联的身份图会立即删除。 使用该身份图构建的用户档案仍将保留，但由于现在删除了身份关联，因此在摄取新数据时不会更新。 与用户档案关联的数据也会保留在数据湖中。 |
+| `identity` 和 `ProfileService` | 一旦Platform发送确认消息，确认已收到删除请求，则会立即删除身份图及其关联配置文件。 与用户档案关联的数据将保留在数据湖中。 |
+| `identity` 和 `aepDataLake` | 一旦平台发送确认消息，确认已收到删除请求，则与提供的身份关联的身份图会立即删除。 使用该身份图构建的用户档案仍将保留，但由于现在删除了身份关联，因此在摄取新数据时不会更新。<br><br>当数据湖产品响应收到请求且当前正在处理时，与用户档案关联的数据将被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。 作业完成后，数据将完全从数据湖中删除。 |
+| `identity`, `ProfileService`, 和 `aepDataLake` | 一旦Platform发送确认消息，确认已收到删除请求，则会立即删除身份图及其关联配置文件。<br><br>当数据湖产品响应收到请求且当前正在处理时，与用户档案关联的数据将被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。 作业完成后，数据将完全从数据湖中删除。 |
+
+请参阅 [[!DNL Privacy Service] 文档](../privacy-service/home.md#monitor) 以了解有关跟踪作业状态的更多信息。
 
 ## 后续步骤
 

@@ -5,9 +5,9 @@ title: 实时客户资料中的隐私请求处理
 type: Documentation
 description: Adobe Experience Platform Privacy Service会按照许多隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍了与处理实时客户资料的隐私请求相关的基本概念。
 exl-id: fba21a2e-aaf7-4aae-bb3c-5bd024472214
-source-git-commit: a713245f3228ed36f262fa3c2933d046ec8ee036
+source-git-commit: 159a46fa227207bf161100e50bc286322ba2d00b
 workflow-type: tm+mt
-source-wordcount: '1312'
+source-wordcount: '1563'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退�
 
 >[!NOTE]
 >
->本指南仅介绍如何在Experience Platform中对配置文件数据存储进行隐私请求。 如果您还计划针对平台数据湖发出隐私请求，请参阅 [数据湖中的隐私请求处理](../catalog/privacy.md) 除了本教程之外，
+>本指南仅介绍如何在Experience Platform中对配置文件数据存储进行隐私请求。 如果您还计划对平台数据湖发出隐私请求，请参阅 [数据湖中的隐私请求处理](../catalog/privacy.md) 除了本教程之外，
 >
 >有关如何为其他Adobe Experience Cloud应用程序发出隐私请求的步骤，请参阅 [Privacy Service文档](../privacy-service/experience-cloud-apps.md).
 
@@ -111,7 +111,7 @@ curl -X POST \
 
 ### 使用UI
 
-在UI中创建作业请求时，请务必选择 **[!UICONTROL AEP Data Lake]** 和/或 **[!UICONTROL 用户档案]** 在 **[!UICONTROL 产品]** 以便处理存储在 [!DNL Data Lake] 或 [!DNL Real-time Customer Profile]，分别为。
+在UI中创建作业请求时，请务必选择 **[!UICONTROL AEP Data Lake]** 和/或 **[!UICONTROL 用户档案]** 在 **[!UICONTROL 产品]** 以便处理数据湖中存储的数据的作业或 [!DNL Real-time Customer Profile]，分别为。
 
 ![在UI中创建访问作业请求，并在产品下选择配置文件选项](./images/privacy/product-value.png)
 
@@ -133,9 +133,18 @@ curl -X POST \
 
 ## 删除请求处理 {#delete}
 
-When [!DNL Experience Platform] 从接收删除请求 [!DNL Privacy Service], [!DNL Platform] 向发送确认 [!DNL Privacy Service] 请求已收到且受影响的数据已标记为删除。 然后，将从 [!DNL Data Lake] 或 [!DNL Profile] 完成隐私作业后进行存储。 删除作业仍在处理中，但数据会被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。 请参阅 [[!DNL Privacy Service] 文档](../privacy-service/home.md#monitor) 以了解有关跟踪作业状态的更多信息。
+When [!DNL Experience Platform] 从接收删除请求 [!DNL Privacy Service], [!DNL Platform] 向发送确认 [!DNL Privacy Service] 请求已收到且受影响的数据已标记为删除。 然后，在隐私作业完成后，将删除记录。
 
-在未来版本中， [!DNL Platform] 将向发送确认函 [!DNL Privacy Service] 数据被物理删除后。
+根据您是否还包含Identity Service(`identity`)和数据湖(`aepDataLake`)作为您对用户档案的隐私请求(`ProfileService`)，则会在可能不同的时间从系统中删除与用户档案相关的不同数据集：
+
+| 包含的产品 | 效果 |
+| --- | --- |
+| `ProfileService` 仅 | 一旦Platform发送确认消息，确认已收到删除请求，则会立即删除用户档案。 但是，用户档案的标识图仍然保持不变，并且在摄取具有相同标识的新数据时，可能会重构用户档案。 与用户档案关联的数据也会保留在数据湖中。 |
+| `ProfileService` 和 `identity` | 一旦Platform发送确认消息，确认已收到删除请求，则会立即删除用户档案及其关联的标识图。 与用户档案关联的数据将保留在数据湖中。 |
+| `ProfileService` 和 `aepDataLake` | 一旦Platform发送确认消息，确认已收到删除请求，则会立即删除用户档案。 但是，用户档案的标识图仍然保持不变，并且在摄取具有相同标识的新数据时，可能会重构用户档案。<br><br>当数据湖产品响应收到请求且当前正在处理时，与用户档案关联的数据将被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。 作业完成后，数据将完全从数据湖中删除。 |
+| `ProfileService`, `identity`, 和 `aepDataLake` | 一旦Platform发送确认消息，确认已收到删除请求，则会立即删除用户档案及其关联的标识图。<br><br>当数据湖产品响应收到请求且当前正在处理时，与用户档案关联的数据将被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。 作业完成后，数据将完全从数据湖中删除。 |
+
+请参阅 [[!DNL Privacy Service] 文档](../privacy-service/home.md#monitor) 以了解有关跟踪作业状态的更多信息。
 
 ### 配置文件请求与身份请求 {#profile-v-identity}
 

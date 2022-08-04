@@ -5,18 +5,18 @@ title: 数据湖中的隐私请求处理
 topic-legacy: overview
 description: Adobe Experience Platform Privacy Service会根据法律和组织隐私法规的规定处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-source-git-commit: a713245f3228ed36f262fa3c2933d046ec8ee036
+source-git-commit: 159a46fa227207bf161100e50bc286322ba2d00b
 workflow-type: tm+mt
-source-wordcount: '1388'
+source-wordcount: '1428'
 ht-degree: 1%
 
 ---
 
-# 中的隐私请求处理 [!DNL Data Lake]
+# 数据湖中的隐私请求处理
 
 Adobe Experience Platform [!DNL Privacy Service] 处理客户访问、选择退出销售或删除其个人数据的请求，这些请求符合法律和组织隐私法规的规定。
 
-本文档介绍与处理存储在 [!DNL Data Lake].
+本文档介绍与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
 
 >[!NOTE]
 >
@@ -43,7 +43,7 @@ Adobe Experience Platform [!DNL Identity Service] 跨系统和设备连接客户
 
 ## 向数据集添加身份数据
 
-在为 [!DNL Data Lake]，必须为每个客户提供有效的标识值（及其关联的命名空间），以便找到其数据并进行相应处理。 因此，所有遵循隐私请求的数据集都必须在其关联的XDM架构中包含标识描述符。
+为数据湖创建隐私请求时，必须为每个客户提供有效的身份值（及其关联的命名空间），以便找到其数据并相应地进行处理。 因此，所有遵循隐私请求的数据集都必须在其关联的XDM架构中包含标识描述符。
 
 >[!NOTE]
 >
@@ -138,9 +138,9 @@ curl -X POST \
 
 >[!NOTE]
 >
->本节介绍如何设置隐私请求的格式 [!DNL Data Lake]. 强烈建议您查看 [[!DNL Privacy Service] UI](../privacy-service/ui/overview.md) 或 [[!DNL Privacy Service] API](../privacy-service/api/getting-started.md) 有关如何提交隐私作业的完整步骤文档，包括如何以请求负载正确设置已提交的用户身份数据的格式。
+>本节介绍如何设置数据湖的隐私请求的格式。 强烈建议您查看 [[!DNL Privacy Service] UI](../privacy-service/ui/overview.md) 或 [[!DNL Privacy Service] API](../privacy-service/api/getting-started.md) 有关如何提交隐私作业的完整步骤文档，包括如何以请求负载正确设置已提交的用户身份数据的格式。
 
-以下部分概述如何为 [!DNL Data Lake] 使用 [!DNL Privacy Service] UI或API。
+以下部分概述如何使用 [!DNL Privacy Service] UI或API。
 
 >[!IMPORTANT]
 >
@@ -148,17 +148,17 @@ curl -X POST \
 
 ### 使用UI
 
-在UI中创建作业请求时，请务必选择 **[!UICONTROL AEP Data Lake]** 在 **[!UICONTROL 产品]** 以便处理存储在 [!DNL Data Lake].
+在UI中创建作业请求时，请务必选择 **[!UICONTROL AEP Data Lake]** 在 **[!UICONTROL 产品]** 以便处理数据湖中存储的数据的作业。
 
 ![显示在隐私请求创建对话框中选择的数据湖产品的图像](./images/privacy/product-value.png)
 
 ### 使用 API
 
-在API中创建作业请求时，任何 `userIDs` 必须使用 `namespace` 和 `type` 具体取决于应用到的数据存储。 的ID [!DNL Data Lake] 必须使用 `unregistered` 为 `type` 值和 `namespace` 与其中一个匹配的值 [隐私标签](#privacy-labels) 已添加到适用数据集的数据集。
+在API中创建作业请求时，任何 `userIDs` 必须使用 `namespace` 和 `type` 具体取决于应用到的数据存储。 数据湖的ID必须使用 `unregistered` 为 `type` 值和 `namespace` 与其中一个匹配的值 [隐私标签](#privacy-labels) 已添加到适用数据集的数据集。
 
-此外， `include` 请求有效负载的数组必须包含对请求进行的不同数据存储的产品值。 向 [!DNL Data Lake]，则数组必须包含值 `aepDataLake`.
+此外， `include` 请求有效负载的数组必须包含对请求进行的不同数据存储的产品值。 向数据湖发出请求时，数组必须包含值 `aepDataLake`.
 
-以下请求会为 [!DNL Data Lake]，使用未注册的 `email_label` 命名空间。 它还包括 [!DNL Data Lake] 在 `include` 数组：
+以下请求使用未注册的 `email_label` 命名空间。 它还包括 `include` 数组：
 
 ```shell
 curl -X POST \
@@ -205,19 +205,19 @@ curl -X POST \
 
 ## 删除请求处理
 
-When [!DNL Experience Platform] 从接收删除请求 [!DNL Privacy Service], [!DNL Platform] 向发送确认 [!DNL Privacy Service] 请求已收到且受影响的数据已标记为删除。 然后，将从 [!DNL Data Lake] 七天之内。 在这七天的时间范围内，数据会被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。
+When [!DNL Experience Platform] 从接收删除请求 [!DNL Privacy Service], [!DNL Platform] 向发送确认 [!DNL Privacy Service] 请求已收到且受影响的数据已标记为删除。 然后，在七天内，将从数据湖中删除记录。 在这七天的时间范围内，数据会被软删除，因此任何用户都无法访问 [!DNL Platform] 服务。
 
-在未来版本中， [!DNL Platform] 将向发送确认函 [!DNL Privacy Service] 数据被物理删除后。
+如果还包含 `ProfileService` 或 `identity` 在隐私请求中，会单独处理其关联数据。 请参阅 [删除配置文件请求处理](../profile/privacy.md#delete) 以了解更多信息。
 
 ## 后续步骤
 
-通过阅读本文档，您了解了处理 [!DNL Data Lake]. 建议您继续阅读本指南中提供的文档，以加深对如何管理身份数据和创建隐私作业的了解。
+通过阅读本文档，您了解了处理数据湖隐私请求所涉及的重要概念。 建议您继续阅读本指南中提供的文档，以加深对如何管理身份数据和创建隐私作业的了解。
 
 请参阅 [实时客户资料的隐私请求处理](../profile/privacy.md) 有关处理隐私请求的步骤，请参阅 [!DNL Profile] 存储。
 
 ## 附录
 
-以下部分包含有关在 [!DNL Data Lake].
+以下部分包含有关在数据湖中处理隐私请求的其他信息。
 
 ### 标记嵌套的映射类型字段 {#nested-maps}
 
