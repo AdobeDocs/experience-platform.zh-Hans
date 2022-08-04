@@ -3,9 +3,10 @@ keywords: Experience Platform；主页；热门主题；
 title: 数据准备疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档提供了有关Adobe Experience Platform数据准备的常见问题解答。
-source-git-commit: e96263847f53ea2c884c273fd7986855d4c478c1
+exl-id: 810cfb2f-f80a-4aa7-ab3c-beb5de78708e
+source-git-commit: 4bb21ce5861419964b80a827269e40ef3e6483f8
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '326'
 ht-degree: 0%
 
 ---
@@ -25,3 +26,7 @@ ht-degree: 0%
 如果列被标记为 **必需** 将因转换问题而失效，则不会摄取该行。 启用部分数据摄取后，您可以在整个流程失败之前设置此类拒绝的阈值。 如果无效属性未影响任何架构级别验证，则将继续摄取该行。
 
 即使没有任何转换错误，任何无效的行也将被拒绝。 例如，数据摄取流可能具有到必填字段的传递映射（无转换逻辑），并且该属性没有传入值。 该行将被拒绝。
+
+### 如何转义字段中的特殊字符？
+
+您可以使用 `${...}`. 但是，包含带有句点(`.`)不受此机制支持。 在与层级进行交互时，如果子属性具有句点(`.`)，则必须使用反斜杠(`\`)以转义特殊字符。 例如， `address` 是包含属性的对象 `street.name`，这可称为 `address.street\.name` 而不是 `address.street.name`.

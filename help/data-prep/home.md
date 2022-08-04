@@ -5,9 +5,9 @@ title: 数据准备概述
 topic-legacy: overview
 description: 本文档介绍了Adobe Experience Platform中的数据准备。
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-source-git-commit: d6d8b6ad9877735848d04cb229b3059842471ee8
+source-git-commit: 7042c6f5e3061fee7183b1befa447333f116c125
 workflow-type: tm+mt
-source-wordcount: '715'
+source-wordcount: '780'
 ht-degree: 0%
 
 ---
@@ -40,6 +40,10 @@ ht-degree: 0%
 计算量度字段允许根据输入架构中的属性创建值。 然后，可以将这些值分配给目标架构中的属性，并提供名称和说明，以便更便于引用。
 
 要了解有关计算字段的更多信息，请阅读 [计算字段指南](./functions.md#calculated-fields).
+
+### 转义特殊字符
+
+您可以使用 `${...}`. 但是，包含带有句点(`.`)不受此机制支持。 在与层级进行交互时，如果子属性具有句点(`.`)，则必须使用反斜杠(`\`)以转义特殊字符。 例如， `address` 是包含属性的对象 `street.name`，这可称为 `address.street\.name` 而不是 `address.street.name`.
 
 ## 映射集
 
