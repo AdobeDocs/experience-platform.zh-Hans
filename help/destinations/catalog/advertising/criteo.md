@@ -3,9 +3,9 @@ keywords: 广告；克雷蒂奥；
 title: Criteo连接
 description: Criteo支持可信且有影响力的广告，通过开放互联网为每位消费者提供更丰富的体验。 Criteo拥有世界上最大的商业数据集和一流的人工智能，可确保整个购物历程中的每个接触点都经过个性化，以便在适当的时间通过正确的广告来吸引客户。
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 8211ca28462548e1c17675e504e6de6f5cc55e73
 workflow-type: tm+mt
-source-wordcount: '1005'
+source-wordcount: '1007'
 ht-degree: 2%
 
 ---
@@ -28,7 +28,6 @@ Criteo支持可信且有影响力的广告，通过开放互联网为每位消�
 
 ## 限制 {#limitations}
 
-* Criteo当前不支持从受众中删除用户。
 * 克里蒂奥只接受 [!DNL SHA-256] — 经过哈希处理的纯文本电子邮件(要转换为 [!DNL SHA-256] 发送之前)。 请勿发送任何PII（个人身份信息，如个人姓名或电话号码）。
 * Criteo需要客户端提供至少一个标识符。 它优先考虑 [!DNL GUM ID] 作为经过哈希处理的电子邮件的标识符，因为这有助于提高匹配率。
 
@@ -41,7 +40,7 @@ Criteo支持激活下表所述的身份。 详细了解 [标识](https://experie
 | Target标识 | 描述 | 注意事项 |
 | --- | --- | --- |
 | `email_sha256` | 使用SHA-256算法进行哈希处理的电子邮件地址 | Adobe Experience Platform支持纯文本和SHA-256哈希电子邮件地址。 当源字段包含未哈希属性时，请检查 [!UICONTROL 应用转换] 选项，以使Platform自动对激活数据进行哈希处理。 |
-| `gum_id` | 克里蒂奥 [!DNL GUM] cookie标识符 | [!DNL GUM IDs] 允许客户在其用户识别系统与Criteo的用户识别([!DNL UID])。 如果标识符类型为 `GUM`，则 [!DNL GUM Caller ID]，也必须包含。 请联系您的Criteo客户团队，以获取相应的 [!DNL GUM Caller ID] 或获取有关此项的更多信息 `GUM` 同步（如果需要）。 |
+| `gum_id` | 克里蒂奥 [!DNL GUM] cookie标识符 | [!DNL GUM IDs] 允许客户在其用户识别系统与Criteo的用户识别([!DNL UID])。 如果标识符类型为 `gum_id`，则 [!DNL GUM Caller ID]，也必须包含。 请联系您的Criteo客户团队，以获取相应的 [!DNL GUM Caller ID] 或获取有关此项的更多信息 [!DNL GUM ID] 同步（如果需要）。 |
 
 ## 导出类型和频度 {#export-type-frequency}
 
@@ -99,7 +98,6 @@ Criteo支持激活下表所述的身份。 详细了解 [标识](https://experie
 | --- | --- | --- |
 | 名称 | 一个名称，可帮助您识别未来的此目标。 您在此处选择的名称将是 [!DNL Audience] 名称，无法在以后的阶段修改。 | 是 |
 | 描述 | 此描述可帮助您在将来确定此目标。 | 否 |
-| API版本 | Criteo API版本。 请选择预览。 | 是 |
 | 广告商ID | 贵组织的关键广告商ID。 请联系您的Criteo客户经理以获取此信息。 | 是 |
 | 克里蒂奥 [!DNL GUM caller ID] | [!DNL GUM Caller ID] 你的组织。 请联系您的Criteo客户团队，以获取相应的 [!DNL GUM Caller ID] 或获取有关此项的更多信息 [!DNL GUM] 同步（如果需要）。 | 是，只要 [!DNL GUM ID] 作为标识符提供 |
 
@@ -121,7 +119,7 @@ Criteo支持激活下表所述的身份。 详细了解 [标识](https://experie
 
 您可以在 [犯罪管理中心](https://marketing.criteo.com/audience-manager/dashboard).
 
-收到的请求正文 [!DNL Criteo] 连接类似于以下内容：
+添加由 [!DNL Criteo] 连接类似于以下内容：
 
 ```json
 {
@@ -129,6 +127,34 @@ Criteo支持激活下表所述的身份。 详细了解 [标识](https://experie
     "type": "ContactlistWithUserAttributesAmendment",
     "attributes": {
       "operation": "add",
+      "identifierType": "gum",
+      "gumCallerId": "123",
+      "identifiers": [
+        {
+          "identifier": "456",
+          "attributes": [
+            { "key": "ctoid_GumCaller", "value": "123" },
+            { "key": "ctoid_Gum", "value": "456" },
+            {
+              "key": "ctoid_HashedEmail",
+              "value": "98833030dc03751f2b2c1a0017078975fdae951aa6908668b3ec422040f2d4be"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+删除由 [!DNL Criteo] 连接类似于以下内容：
+
+```json
+{
+  "data": {
+    "type": "ContactlistWithUserAttributesAmendment",
+    "attributes": {
+      "operation": "remove",
       "identifierType": "gum",
       "gumCallerId": "123",
       "identifiers": [
