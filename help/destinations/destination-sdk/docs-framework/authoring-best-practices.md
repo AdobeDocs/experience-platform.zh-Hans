@@ -1,9 +1,10 @@
 ---
 title: 创作最佳实践
 description: 了解在创作目标文档页面时应遵循的规则和提示，以确保它符合Adobe Experience Platform文档质量标准。
-source-git-commit: 35e5c388e9572a3b27ec4bce55e766725936eda4
+exl-id: b12059f1-6635-41cd-acc5-6ff471111164
+source-git-commit: 0b9b724c2530e43ce681011d12fc1341148ddbf5
 workflow-type: tm+mt
-source-wordcount: '489'
+source-wordcount: '565'
 ht-degree: 0%
 
 ---
@@ -21,9 +22,18 @@ ht-degree: 0%
 * 在Experience Platform文档中，Adobe作者使用 **粗体格式** 要引用用户界面控件，请如下所示：
    * 转到 **[!UICONTROL 连接]** > **[!UICONTROL 目标]**，然后选择 **[!UICONTROL 目录]** 选项卡。 查看 [目标教程](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=en#select-destination).
 
+## 书写样式
+
+>[!IMPORTANT]
+>
+>读取 [Adobe文档编写指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/general-writing-guidance.html?lang=en) 在开始创作目标文档页面之前。
+
+* 你的句子要短一些，要快一点。 如果您的句子超过20个词或使用多个逗号，请考虑将其分成不同的句子。 长度超过20个词的句子对读者来说尤其具有挑战性。
+* 别太客气。 请避免使用“请”或“请……” 中。
+
 ## 链接 {#linking}
 
-请按照提供的文档模板操作，但不要编辑模板中的现有链接。 包含新链接时，请阅读 [在文档中使用链接](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en) 参与者指南中的。
+按照提供的文档模板操作，但不要编辑模板中的现有链接。 包含新链接时，请阅读 [在文档中使用链接](https://experienceleague.adobe.com/docs/contributor/contributor-guide/writing-essentials/linking.html?lang=en) 参与者指南中的。
 
 ## 品牌策略准则 {#branding}
 
@@ -37,7 +47,7 @@ ht-degree: 0%
 * 使用屏幕截图时，请确保您的屏幕截图可捕获整个Platform UI屏幕。
 * 在标记图像以突出显示页面上的特定控件或标签时，请尝试遵循Experience Platform文档团队使用的标记样式。 请注意基于用户档案的内容如何在 [此屏幕截图](/help/destinations/catalog/cloud-storage/amazon-s3.md#export-type-frequency).
 * 请使用 `png` 设置图像格式。
-* 请勿使用编号的屏幕截图作为文件名。 图像文件名应当具有描述性。
+* 请勿使用编号的屏幕截图作为文件名。 图像文件名应具有描述性。
    * **不使用**: `1.png`, `2.png`, `3.png`
    * **使用**: `yourdestination-authentication-details.png`, `yourdestination-destination-details.png`
 * 请对您添加到文档中的任何图像使用替换文本，并在替换文本中使用正确的语法。
