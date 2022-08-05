@@ -4,9 +4,9 @@ title: 将受众数据激活到流配置文件导出目标
 type: Tutorial
 description: 了解如何通过将区段发送到基于用户档案的流目标来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: bc0f781e-60de-44a5-93cb-06b4a3148591
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: af761155bc510d96cea2b0bd475ee4a3bc4abe16
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '645'
 ht-degree: 0%
 
 ---
@@ -29,15 +29,15 @@ ht-degree: 0%
 
 1. 转到 **[!UICONTROL 连接>目标]**，然后选择 **[!UICONTROL 目录]** 选项卡。
 
-   ![“目标目录”选项卡](../assets/ui/activate-streaming-profile-destinations/catalog-tab.png)
+   ![显示目标目录选项卡的图像。](../assets/ui/activate-streaming-profile-destinations/catalog-tab.png)
 
 1. 选择 **[!UICONTROL 激活区段]** 在与要激活区段的目标对应的卡上，如下图所示。
 
-   ![“激活区段”按钮](../assets/ui/activate-streaming-profile-destinations/activate-segments-button.png)
+   ![在目标目录选项卡中突出显示激活区段控件的图像。](../assets/ui/activate-streaming-profile-destinations/activate-segments-button.png)
 
 1. 选择要用于激活区段的目标连接，然后选择 **[!UICONTROL 下一个]**.
 
-   ![选择目标](../assets/ui/activate-streaming-profile-destinations/select-destination.png)
+   ![该图像显示了可连接到的两个目标选项。](../assets/ui/activate-streaming-profile-destinations/select-destination.png)
 
 1. 移到下一个部分 [选择区段](#select-segments).
 
@@ -45,11 +45,11 @@ ht-degree: 0%
 
 使用区段名称左侧的复选框选择要激活到目标的区段，然后选择 **[!UICONTROL 下一个]**.
 
-![选择区段](../assets/ui/activate-streaming-profile-destinations/select-segments.png)
+![在激活工作流的选择区段步骤中突出显示所选复选框的图像。](../assets/ui/activate-streaming-profile-destinations/select-segments.png)
 
 ## 选择配置文件属性 {#select-attributes}
 
-选择要发送到目标目标的配置文件属性。
+在 **[!UICONTROL 映射]** 步骤中，选择要发送到target目标的用户档案属性。
 
 >[!NOTE]
 >
@@ -59,19 +59,19 @@ ht-degree: 0%
 * 如果 `segmentMembership.status` 字段，导出的文件包括 **[!UICONTROL 活动]** 初始完整快照中的成员和 **[!UICONTROL 活动]** 和 **[!UICONTROL 过期]** 成员。
 * 如果 `segmentMembership.status` 字段，导出的文件仅包含 **[!UICONTROL 活动]** 初始完整快照和后续增量导出中的成员。
 
-![推荐属性](../assets/ui/activate-streaming-profile-destinations/attributes-default.png)
+![显示映射步骤中预填充的推荐属性的图像。](../assets/ui/activate-streaming-profile-destinations/attributes-default.png)
 
 1. 在 **[!UICONTROL 选择属性]** 页面，选择 **[!UICONTROL 添加新字段]**.
 
-   ![添加新映射](../assets/ui/activate-streaming-profile-destinations/add-new-field.png)
+   ![在映射步骤中突出显示添加新字段控件的图像。](../assets/ui/activate-streaming-profile-destinations/add-new-field.png)
 
 1. 选择 **[!UICONTROL 架构字段]** 中。
 
-   ![选择源字段](../assets/ui/activate-streaming-profile-destinations/select-schema-field.png)
+   ![在映射步骤中突出显示如何选择源字段的图像。](../assets/ui/activate-streaming-profile-destinations/select-schema-field.png)
 
 1. 在 **[!UICONTROL 选择字段]** ，选择要发送到目标的XDM属性，然后选择 **[!UICONTROL 选择]**.
 
-   ![“选择源字段”页](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
+   ![该图像显示了可选择作为源字段的XDM字段选项。](../assets/ui/activate-streaming-profile-destinations/target-field-page.png)
 
 
 1. 要添加更多映射，请重复步骤1至3，然后选择 **[!UICONTROL 下一个]**.
@@ -84,11 +84,11 @@ ht-degree: 0%
 >
 >在此步骤中，Adobe Experience Platform会检查是否存在数据使用策略违规。 下面显示了违反策略的示例。 在解决违规之前，无法完成区段激活工作流。 有关如何解决策略违规的信息，请参阅 [策略执行](../../rtcdp/privacy/data-governance-overview.md#enforcement) 在“数据管理文档”一节中。
 
-![数据策略违规](../assets/common/data-policy-violation.png)
+![在审核步骤中显示数据策略违规的图像。](../assets/common/data-policy-violation.png)
 
 如果未检测到任何策略违规，请选择 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
 
-![审阅](../assets/ui/activate-streaming-profile-destinations/review.png)
+![显示激活工作流审阅步骤的图像。](../assets/ui/activate-streaming-profile-destinations/review.png)
 
 ## 验证区段激活 {#verify}
 
