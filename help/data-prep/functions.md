@@ -5,7 +5,7 @@ title: 数据准备映射函数
 topic-legacy: overview
 description: 本文档介绍了数据准备中使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 7cb940019905240b36e96b834b9e5d0166c1324d
+source-git-commit: a48072d2c418588a05397e991c1a2e17eee4c028
 workflow-type: tm+mt
 source-wordcount: '4286'
 ht-degree: 3%
@@ -25,7 +25,7 @@ ht-degree: 3%
 此外，如果字段名称为 **any** 在以下保留关键词中，必须用 `${}`:
 
 ```console
-new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continue, else, and, ne, true, le, if, ge, return
+new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continue, else, and, ne, true, le, if, ge, return, _errors
 ```
 
 可以使用点表示法访问子字段内的数据。 例如，如果 `name` 对象，以访问 `firstName` 字段，使用 `name.firstName`.
