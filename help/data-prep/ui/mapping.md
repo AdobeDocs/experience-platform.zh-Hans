@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；映射CSV；映射CSV文
 title: 数据准备UI指南
 description: 本文档提供了有关如何在Platform UI中使用数据准备函数将CSV文件映射到XDM架构的说明。
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: edef8843c03282774991f30220504ece97af52cf
+source-git-commit: d0f5d1f55101ce15934289d4fcfd1f70c1b63fc7
 workflow-type: tm+mt
-source-wordcount: '1837'
+source-wordcount: '1845'
 ht-degree: 1%
 
 ---
@@ -149,7 +149,7 @@ ht-degree: 1%
 
 #### 计算字段 {#calculated-fields}
 
-计算量度字段允许根据输入架构中的属性创建值。 然后，可以将这些值分配给目标架构中的属性，并提供名称和说明，以便更便于引用。
+计算量度字段允许根据输入架构中的属性创建值。 然后，可以将这些值分配给目标架构中的属性，并提供名称和说明，以便更便于引用。 计算字段的最大长度为4096个字符。
 
 要创建计算字段，请选择 **[!UICONTROL 新字段类型]** 然后选择 **[!UICONTROL 添加计算字段]**
 

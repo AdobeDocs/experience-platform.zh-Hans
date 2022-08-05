@@ -4,9 +4,9 @@ title: 数据准备疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档提供了有关Adobe Experience Platform数据准备的常见问题解答。
 exl-id: 810cfb2f-f80a-4aa7-ab3c-beb5de78708e
-source-git-commit: 4bb21ce5861419964b80a827269e40ef3e6483f8
+source-git-commit: d0f5d1f55101ce15934289d4fcfd1f70c1b63fc7
 workflow-type: tm+mt
-source-wordcount: '326'
+source-wordcount: '342'
 ht-degree: 0%
 
 ---
@@ -30,3 +30,7 @@ ht-degree: 0%
 ### 如何转义字段中的特殊字符？
 
 您可以使用 `${...}`. 但是，包含带有句点(`.`)不受此机制支持。 在与层级进行交互时，如果子属性具有句点(`.`)，则必须使用反斜杠(`\`)以转义特殊字符。 例如， `address` 是包含属性的对象 `street.name`，这可称为 `address.street\.name` 而不是 `address.street.name`.
+
+### 计算字段的最大长度是多少？
+
+计算字段的最大长度为4096个字符。
