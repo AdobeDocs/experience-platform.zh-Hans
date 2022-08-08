@@ -3,9 +3,9 @@ keywords: Amazon Kinesis;Kinesis目标；Kinesis
 title: Amazon Kinesis连接
 description: 创建到Amazon Kinesis存储的实时出站连接，以从Adobe Experience Platform流式传输数据。
 exl-id: b40117ef-6ad0-48a9-bbcb-97c6f6d1dce3
-source-git-commit: abe2e7ba363b82a696136aa46aa1adbbe25ee461
+source-git-commit: 75399d2fbe111a296479f8d3404d43c6ba0d50b5
 workflow-type: tm+mt
-source-wordcount: '1889'
+source-wordcount: '1890'
 ht-degree: 0%
 
 ---
@@ -285,7 +285,7 @@ Experience Platform会优化将用户档案导出到 [!DNL Amazon Kinesis] 目�
 
 ## 限制和重试策略 {#limits-retry-policy}
 
-在95%的时间内，Experience Platform尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流的每秒请求速率小于10.000个请求，以发送到HTTP目标。
+在95%的时间内，Experience Platform尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流的请求速率低于每秒10,000次，以发送到HTTP目标。
 
 如果对HTTP API目标的请求失败，Experience Platform会存储失败的请求并重试两次，以将请求发送到您的端点。
 

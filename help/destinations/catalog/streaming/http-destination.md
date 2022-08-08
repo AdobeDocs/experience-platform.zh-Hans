@@ -3,9 +3,9 @@ title: HTTP API连接
 keywords: 流；
 description: 使用Adobe Experience Platform中的HTTP API目标，将配置文件数据发送到第三方HTTP端点，以运行您自己的分析，或对导出为Experience Platform外的配置文件数据执行可能需要的任何其他操作。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 75399d2fbe111a296479f8d3404d43c6ba0d50b5
 workflow-type: tm+mt
-source-wordcount: '2374'
+source-wordcount: '2375'
 ht-degree: 0%
 
 ---
@@ -329,6 +329,6 @@ Experience Platform会优化配置文件导出行为以导出到您的HTTP API�
 
 ## 限制和重试策略 {#limits-retry-policy}
 
-在95%的时间内，Experience Platform尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流的每秒请求速率小于10.000个请求，以发送到HTTP目标。
+在95%的时间内，Experience Platform尝试为成功发送的消息提供少于10分钟的吞吐量延迟，每个数据流的请求速率低于每秒10,000次，以发送到HTTP目标。
 
 如果对HTTP API目标的请求失败，Experience Platform会存储失败的请求并重试两次，以将请求发送到您的端点。

@@ -2,9 +2,9 @@
 description: 本页列出并介绍了您可以使用“/authoring/destinations” API端点执行的所有API操作。
 title: 目标API端点操作
 exl-id: 96755e9d-be62-432f-b985-91330575b395
-source-git-commit: 301cef53644e813c3fd43e7f2dbaf730c9e5fc11
+source-git-commit: 75399d2fbe111a296479f8d3404d43c6ba0d50b5
 workflow-type: tm+mt
-source-wordcount: '2571'
+source-wordcount: '2572'
 ht-degree: 4%
 
 ---
@@ -171,7 +171,7 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 | `aggregation.bestEffortAggregation.maxUsersPerRequest` | 整数 | Experience Platform可以在一个HTTP调用中聚合多个导出的配置文件。 指定您的端点在单个HTTP调用中应接收的最大配置文件数。 请注意，这是一种尽力的聚合。 例如，如果您指定值100,Platform可能会在一次调用中发送任意数量小于100的用户档案。 <br> 如果您的服务器不接受每个请求的多个用户，请将此值设置为1。 |
 | `aggregation.bestEffortAggregation.splitUserById` | 布尔型 | 如果目标的调用应按身份进行拆分，则使用此标记。 将此标志设置为 `true` 如果服务器在每次调用中仅接受一个标识，则表示给定的命名空间。 |
 | `aggregation.configurableAggregation.splitUserById` | 布尔型 | 请参阅示例配置中的参数 [此处](./destination-configuration.md#example-configuration). 如果目标的调用应按身份进行拆分，则使用此标记。 将此标志设置为 `true` 如果服务器在每次调用中仅接受一个标识，则表示给定的命名空间。 |
-| `aggregation.configurableAggregation.maxBatchAgeInSecs` | 整数 | <ul><li>*最小值：1800*</li><li>*最大值：3600*</li><li>请参阅示例配置中的参数 [此处](./destination-configuration.md#example-configuration). 在可接受的最小值和最大值之间配置一个值。 与 `maxNumEventsInBatch`，此参数可确定Experience Platform应等待多长时间，直到向您的端点发送API调用。 <br> 例如，如果您对两个参数使用最大值，则Experience Platform将等待3600秒或直到有10.000个符合条件的配置文件才进行API调用，以先发生的为准。 </li></ul> |
+| `aggregation.configurableAggregation.maxBatchAgeInSecs` | 整数 | <ul><li>*最小值：1800*</li><li>*最大值：3600*</li><li>请参阅示例配置中的参数 [此处](./destination-configuration.md#example-configuration). 在可接受的最小值和最大值之间配置一个值。 与 `maxNumEventsInBatch`，此参数可确定Experience Platform应等待多长时间，直到向您的端点发送API调用。 <br> 例如，如果您对两个参数使用最大值，则Experience Platform将等待3600秒或直到有1万个符合条件的配置文件才进行API调用（以先发生者为准）。 </li></ul> |
 | `aggregation.configurableAggregation.maxNumEventsInBatch` | 整数 | <ul><li>*最小值：1000*</li><li>*最大值：10000*</li><li>请参阅示例配置中的参数 [此处](./destination-configuration.md#example-configuration). 在可接受的最小值和最大值之间配置一个值。 有关此参数的描述，请参阅 `maxBatchAgeInSecs` 就在上面。</li></ul> |
 | `aggregation.configurableAggregation.aggregationKey` | 布尔型 | 请参阅示例配置中的参数 [此处](./destination-configuration.md#example-configuration). 允许您根据以下参数聚合映射到目标的导出配置文件： <br> <ul><li>区段ID</li><li> 区段状态 </li><li> 标识命名空间 </li></ul> |
 | `aggregation.configurableAggregation.aggregationKey.includeSegmentId` | 布尔型 | 请参阅示例配置中的参数 [此处](./destination-configuration.md#example-configuration). 将此参数设置为 `true` 要按区段ID对导出到目标的用户档案进行分组。 |

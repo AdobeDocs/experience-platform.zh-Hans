@@ -2,7 +2,7 @@
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 用于Destination SDK的流目标配置选项
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: fe61b2ebe1a06e8909ef675cae088cb4e7d2b325
+source-git-commit: 75399d2fbe111a296479f8d3404d43c6ba0d50b5
 workflow-type: tm+mt
 source-wordcount: '1888'
 ht-degree: 4%
@@ -285,7 +285,7 @@ ht-degree: 4%
 
 >[!NOTE]
 >
->在对目标使用可配置的聚合选项时，请注意可用于这两个参数的最小值和最大值 `maxBatchAgeInSecs` （最低1.800和最高3.600）和 `maxNumEventsInBatch` （最小1.000，最大10.000）。
+>在对目标使用可配置的聚合选项时，请注意可用于这两个参数的最小值和最大值 `maxBatchAgeInSecs` （最少1,800和最多3,600）及 `maxNumEventsInBatch` （最少1,000，最多10,000）。
 
 有关聚合参数的详细说明，请参阅 [目标API端点操作](./destination-configuration-api.md) 引用页面，其中描述了每个参数。
 
