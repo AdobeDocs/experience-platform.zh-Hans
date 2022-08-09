@@ -4,9 +4,9 @@ title: 将受众数据激活到流区段导出目标
 type: Tutorial
 description: 了解如何通过将区段映射到区段流目标，来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: bb61a33e-38fc-4217-8999-9eb9bf899afa
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
 workflow-type: tm+mt
-source-wordcount: '832'
+source-wordcount: '811'
 ht-degree: 0%
 
 ---
@@ -83,7 +83,6 @@ ht-degree: 0%
 >id="platform_destinations_activate_applytransformation"
 >title="应用转换"
 >abstract="使用未哈希源字段时，请勾选此选项，以使Adobe Experience Platform在激活时自动对它们进行哈希处理。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html#apply-transformation" text="在文档中了解更多信息"
 
 当您将未哈希化的源属性映射到目标预期经过哈希化的目标属性时(例如： `email_lc_sha256` 或 `phone_sha256`)，请检查 **应用转换** 选项，让Adobe Experience Platform在激活时自动对源属性进行哈希处理。
 
@@ -95,7 +94,6 @@ ht-degree: 0%
 >id="platform_destinations_activate_enddate"
 >title="结束日期"
 >abstract="无法为区段计划添加结束日期。"
->additional-url="https://www.adobe.com/go/destinations-activate-segment-scheduling-en" text="在文档中了解更多信息"
 
 默认情况下， [!UICONTROL 区段计划] 页面仅显示您在当前激活流程中选择的新选定区段。
 

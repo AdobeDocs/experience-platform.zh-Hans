@@ -4,9 +4,9 @@ title: 激活受众数据以批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
 workflow-type: tm+mt
-source-wordcount: '2544'
+source-wordcount: '2520'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,6 @@ ht-degree: 0%
 >id="platform_destinations_activate_schedule"
 >title="计划"
 >abstract="使用铅笔图标可设置文件导出类型（完整文件或增量文件）和导出频率。"
->additional-url="https://www.adobe.com/go/destinations-profile-batch-en" text="在文档中了解更多信息"
 
 [!DNL Adobe Experience Platform] 以 [!DNL CSV] 文件。 在 **[!UICONTROL 计划]** 页面，您可以配置要导出的每个区段的计划和文件名。 必须配置计划，但配置文件名是可选的。
 
@@ -221,7 +220,6 @@ ht-degree: 0%
 >id="platform_destinations_activate_mandatorykey"
 >title="关于必填属性"
 >abstract="选择所有导出的配置文件都应包含的XDM架构属性。 不会将没有必填项的用户档案导出到目标。 不选择强制键会导出所有符合条件的用户档案，而不考虑其属性。"
->additional-url="http://www.adobe.com/go/destinations-mandatory-attributes-en" text="在文档中了解更多信息"
 
 “必选属性”是用户启用的复选框，可确保所有配置文件记录都包含选定的属性。 例如：所有导出的用户档案都包含电子邮件地址&#x200B;。
 
@@ -237,7 +235,6 @@ ht-degree: 0%
 >id="platform_destinations_activate_deduplicationkey"
 >title="关于重复数据删除键"
 >abstract="通过选择重复数据删除键，消除导出文件中同一用户档案的多个记录。 选择一个命名空间或最多两个XDM架构属性作为重复数据删除键值。 未选择重复数据删除键可能会导致导出文件中出现重复的配置文件条目。"
->additional-url="http://www.adobe.com/go/destinations-deduplication-keys-en" text="在文档中了解更多信息"
 
 重复数据删除键是用户定义的主键，可确定用户希望删除其配置文件的身份&#x200B;。
 

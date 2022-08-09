@@ -3,9 +3,9 @@ keywords: facebook连接；facebook连接；facebook目标；facebook;instagram;
 title: Facebook连接
 description: 根据经过哈希处理的电子邮件，激活Facebook营销活动的用户档案以进行受众定位、个性化和抑制。
 exl-id: 51e8c8f0-5e79-45b9-afbc-110bae127f76
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
 workflow-type: tm+mt
-source-wordcount: '1867'
+source-wordcount: '1859'
 ht-degree: 1%
 
 ---
@@ -165,7 +165,6 @@ ht-degree: 1%
 >id="platform_destinations_activate_facebook_originofaudience"
 >title="受众来源"
 >abstract="选择区段中客户数据的最初收集方式。 当区段定向用户时，数据将显示在Facebook中"
->additional-url="http://www.adobe.com/go/destinations-facebook-activate-section-en" text="在文档中了解更多信息"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_facebook_originofaudience_customers"
