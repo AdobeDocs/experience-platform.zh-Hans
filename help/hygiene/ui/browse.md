@@ -2,9 +2,9 @@
 title: 浏览数据卫生工作单
 description: 了解如何在Adobe Experience Platform用户界面中查看和管理现有数据卫生工作单。
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: e57b5ec6c6234d4d1fe22f8d03c70d6bd9c02f0f
+source-git-commit: 525e2520bb6140b00cfb7e68579eb2d0288ad9b1
 workflow-type: tm+mt
-source-wordcount: '484'
+source-wordcount: '485'
 ht-degree: 2%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 2%
 
 | 过滤器 | 描述 |
 | --- | --- |
-| [!UICONTROL 状态] | 根据工作单的当前状态进行筛选：<ul><li>**[!UICONTROL 已完成]**:作业已完成。</li><li>**[!UICONTROL 待定]**:作业已创建，但尚未执行。 A [数据集生存时间(TTL)请求](./ttl.md) 在计划的删除日期之前假定此状态。 删除日期到达后，状态将更新为 [!UICONTROL 正在执行] 除非事前取消工作。</li><li>**[!UICONTROL 正在执行]**:作业已启动且当前正在处理。</li><li>**[!UICONTROL 已取消]**:作为手动用户请求的一部分，作业已取消。</li></ul> |
+| [!UICONTROL 状态] | 根据工作单的当前状态进行筛选：<ul><li>**[!UICONTROL 已完成]**:作业已完成。</li><li>**[!UICONTROL 待定]**:作业已创建，但尚未执行。 A [数据集生存时间(TTL)请求](./ttl.md) 在计划的删除日期之前假定此状态。 删除日期到达后，状态将更新为 [!UICONTROL 正在执行] 除非事前取消工作。</li><li>**[!UICONTROL 正在执行]**:TTL请求已启动，当前正在处理。</li><li>**[!UICONTROL 已取消]**:作为手动用户请求的一部分，作业已取消。</li></ul> |
 | [!UICONTROL 创建日期] | 根据下达工作单的时间进行筛选。 |
 | [!UICONTROL 过期日期] | 根据相关数据集的计划删除日期过滤TTL请求。 |
 | [!UICONTROL 更新日期] | 根据上次更新工作单的时间筛选TTL请求。 TTL创建和过期将计为更新。 |
