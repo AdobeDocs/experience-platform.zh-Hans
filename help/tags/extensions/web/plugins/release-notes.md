@@ -1,16 +1,25 @@
 ---
 title: “常用Analytics插件”扩展的发行说明
 description: Adobe Experience Platform中“常用Analytics插件”标记扩展的最新发行说明。
-source-git-commit: cce218d984bae92428c7d48aefcd0f57dab837ea
+exl-id: 5ea4b709-4e21-4f5d-be99-e72e4889ed99
+source-git-commit: 1be361f9cd70b0424542af64a994da0b21d6b5dc
 workflow-type: tm+mt
-source-wordcount: '314'
-ht-degree: 57%
+source-wordcount: '329'
+ht-degree: 56%
 
 ---
 
 # “常用Analytics插件”发行说明
 
-## 2021 年 6 月 23 日
+## 2022 年 6 月 03 日
+
+### “常用 Analytics 插件”扩展 3.0.7
+
+#### 功能
+
+设置Cookie的插件现在使用安全标志
+
+## 2021年6月23日
 
 ### “常用 Analytics 插件”扩展 3.0.6
 
