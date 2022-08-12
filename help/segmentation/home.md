@@ -5,14 +5,14 @@ title: Segmentation Service概述
 topic-legacy: overview
 description: 了解Adobe Experience Platform Segmentation Service及其在平台生态系统中的作用。
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 3130d9731a53c01fb7bc15265e044191ceae47f6
+source-git-commit: 0267b0141f7b6944ea65bc413f14cc9580081387
 workflow-type: tm+mt
-source-wordcount: '1507'
+source-wordcount: '1630'
 ht-degree: 0%
 
 ---
 
-# [!DNL Segmentation Service] 概述
+# [!DNL Segmentation Service]概述
 
 Adobe Experience Platform [!DNL Segmentation Service] 提供了用户界面和RESTful API，允许您从中构建区段并生成受众 [!DNL Real-time Customer Profile] 数据。 这些区段在上集中配置和维护 [!DNL Platform]，并且任何Adobe解决方案都可随时访问。
 
@@ -46,25 +46,47 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供了用户界面和RE
 >
 >此外，如果数据集上已启用生存时间(TTL)，则这可能会影响已创建区段的成员资格。 有关TTL以及它如何影响分段的更多信息，请阅读 [配置文件服务TTL指南](../profile/apply-ttl.md).
 
-## 评估区段
+## 评估区段 {#evaluate-segments}
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_evaluation"
+>title="评价方法"
+>abstract="平台当前支持三种评估区段的方法：流分段、批量分段和边缘分段。"
 
 平台当前支持三种评估区段的方法：流分段、批量分段和边缘分段。
 
-### 流分段
+### 流分段 {#streaming}
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_evaluation_streaming"
+>title="流评估"
+>abstract="平台当前支持三种评估区段的方法：流分段、批量分段和边缘分段。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/api/streaming-segmentation.html" text="使用流分段近乎实时地评估事件"
 
 流式客户细分是一种持续的数据选择流程，可根据用户活动更新您的区段。 生成并保存区段后，会将区段定义应用于 [!DNL Real-time Customer Profile]. 会定期处理区段添加和移除，以确保您的目标受众仍然相关。
 
 要了解有关流式分段的更多信息，请阅读 [流分段文档](./api/streaming-segmentation.md).
 
-### 批量分段
+### 批量分段 {#batch}
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_evaluation_batch"
+>title="批量评估"
+>abstract="作为持续数据选择流程的替代方法，批量分段会通过区段定义一次移动所有配置文件数据以生成相应的受众。 创建区段后，会保存并存储该区段，以便您导出该区段以供使用。"
 
 作为持续数据选择流程的替代方法，批量分段会通过区段定义一次移动所有配置文件数据以生成相应的受众。 创建后，将保存并存储此区段，以便您导出该区段以供使用。
 
 每24小时自动评估一次批量区段。 如果要按需评估批区段，您可以使用区段任务。 要了解有关区段作业的更多信息，请阅读 [区段作业文档](./api/segment-jobs.md).
 
-### 边缘分割
+### 边缘分割 {#edge}
 
-边缘分段功能可以在Experience Edge上即时评估Platform中的区段，从而启用同一页面和下一页面个性化用例。
+>[!CONTEXTUALHELP]
+>id="platform_segments_evaluation_edge"
+>title="边缘评估"
+>abstract="边缘分段功能可以在Experience Edge上即时评估Platform中的区段，从而实现同页和下一页的个性化用例。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/ui/edge-segmentation.html" text="边缘分段UI指南"
+
+边缘分割功能可以即时评估Platform中的区段 [在Experience Edge上](../edge/home.md)，启用同页和下一页个性化用例。
 
 要了解有关边缘分割的更多信息，请阅读 [API文档](./api/edge-segmentation.md) 或 [用户界面文档](./ui/edge-segmentation.md).
 
