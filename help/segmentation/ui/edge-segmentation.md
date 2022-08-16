@@ -5,7 +5,7 @@ title: 边缘分段UI指南
 topic-legacy: ui guide
 description: 边缘分段功能可以即时评估Platform中的边缘区段，从而实现同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 0173fbd36791f837e0d0336f9fa7bcc84e64909f
+source-git-commit: 654e141735b6882b4c0233b8e1c73d0838c8374e
 workflow-type: tm+mt
 source-wordcount: '769'
 ht-degree: 0%
@@ -30,7 +30,7 @@ ht-degree: 0%
 
 目前，只能通过边缘分段来评估选定的查询类型。 以下各节提供了一系列查询类型，这些类型可通过边缘分段进行评估，而这些类型当前不受支持。
 
-### 支持的查询类型
+### 支持的查询类型 {#query-types}
 
 如果查询符合下表中所述的任何标准，则可以使用边缘分段来评估查询。
 

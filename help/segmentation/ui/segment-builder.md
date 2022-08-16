@@ -5,9 +5,9 @@ title: 区段生成器UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区提供了用于构建和编辑规则的直观控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 71741a18c99a003e6401bc324822d50a266350b3
+source-git-commit: dd87f9e5787961442ca7d7b4c761d2e7ca724994
 workflow-type: tm+mt
-source-wordcount: '2612'
+source-wordcount: '3081'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 [!DNL Segment Builder] 提供了丰富的工作区，可让您与 [!DNL Profile] 数据元素。 工作区提供了用于构建和编辑规则的直观控件，例如用于表示数据属性的拖放图块。
 
-![](../images/ui/segment-builder/segment-builder.png)
+![将显示区段生成器UI。](../images/ui/segment-builder/segment-builder.png)
 
 ## 区段定义构建基块 {#building-blocks}
 
@@ -29,13 +29,13 @@ ht-degree: 1%
 
 您可以在 **[!UICONTROL 字段]** 的左侧 [!DNL Segment Builder] 工作区。 **[!UICONTROL 字段]** 包含每个主要构建基块的选项卡：&quot;[!UICONTROL 属性]&quot;, &quot;[!UICONTROL 事件]&quot;和&quot;[!UICONTROL 受众]&quot;
 
-![](../images/ui/segment-builder/segment-fields.png)
+![区段生成器的字段部分会突出显示。](../images/ui/segment-builder/segment-fields.png)
 
 ### 属性
 
 的 **[!UICONTROL 属性]** 选项卡，用于浏览 [!DNL Profile] 属于的属性 [!DNL XDM Individual Profile] 类。 每个文件夹都可以展开以显示其他属性，其中每个属性都是一个拼贴，可拖动到工作区中心的规则生成器画布上。 的 [规则生成器画布](#rule-builder-canvas) 将在本指南的后面部分详细讨论。
 
-![](../images/ui/segment-builder/attributes.png)
+![区段生成器字段的属性部分会突出显示。](../images/ui/segment-builder/attributes.png)
 
 ### 活动
 
@@ -51,7 +51,7 @@ ht-degree: 1%
 
 然后，您可以轻松拖放 [!DNL ExperienceEvents] 和&quot;[!UICONTROL 事件类型]”添加到区段定义中。
 
-![](../images/ui/segment-builder/events-eventTypes.png)
+![区段生成器UI的事件部分会突出显示。](../images/ui/segment-builder/events.png)
 
 默认情况下，仅显示数据存储中填充的架构字段。 这包括“[!UICONTROL 事件类型]&quot; 如果[!UICONTROL 事件类型]“ ”列表不可见，或者您只能选择“[!UICONTROL 任意]&quot;作为&quot;[!UICONTROL 事件类型]&quot;，选择 **齿轮图标** 下一页 **[!UICONTROL 字段]**，然后选择 **[!UICONTROL 显示完整的XDM架构]** 在 **[!UICONTROL 可用字段]**. 选择 **齿轮图标** 再次返回 **[!UICONTROL 字段]** 选项卡，此时您应该能够查看多个“[!UICONTROL 事件类型]“ ”和架构字段，无论它们是否包含数据。
 
@@ -103,7 +103,7 @@ ht-degree: 1%
 
 您可以将鼠标悬停在受众旁ⓘ的上方，以查看有关受众的信息，包括受众的ID、描述以及用于查找受众的文件夹层次结构。
 
-![](../images/ui/segment-builder/audience-folder-structure.png)
+![显示文件夹层次结构如何适用于受众的图像。](../images/ui/segment-builder/audience-folder-structure.png)
 
 您还可以使用搜索栏搜索受众，该搜索栏利用 [Lucene的搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax). 在 **[!UICONTROL 受众]** 选项卡，则选择顶级文件夹会显示搜索栏，从而允许您在该文件夹内进行搜索。 只有输入了整个词后，搜索结果才会开始填充。 例如，要查找名为 `Online Shoppers`，开始在搜索栏中键入“在线”。 完整键入“在线”一词后，将显示包含“在线”一词的搜索结果。
 
@@ -113,7 +113,7 @@ ht-degree: 1%
 
 要向区段定义中添加新规则，请从 **[!UICONTROL 字段]** 选项卡，并将其拖放到规则生成器画布上。 然后，将根据要添加的数据类型向您显示特定于上下文的选项。 可用数据类型包括：字符串，日期， [!DNL ExperienceEvents], &quot;[!UICONTROL 事件类型]和受众。
 
-![](../images/ui/segment-builder/rule-builder-canvas.png)
+![空白规则生成器画布。](../images/ui/segment-builder/rule-builder-canvas.png)
 
 >[!IMPORTANT]
 >
@@ -121,11 +121,11 @@ ht-degree: 1%
 
 选择属性的值时，您将看到属性可以包含的枚举值列表。
 
-![](../images/ui/segment-builder/enum-list.png)
+![显示属性可能的枚举值列表的图像。](../images/ui/segment-builder/enum-list.png)
 
 如果从此枚举列表中选择一个值，则该值将用实边框列出。 但是，对于使用 `meta:enum` （柔和）枚举，则还可以 **not** 从枚举列表。 如果您创建自己的值，则会用虚线边框列出该值，并出现一则警告，指出该值未在枚举列表中。
 
-![](../images/ui/segment-builder/enum-warning.png)
+![当您插入的值不是枚举列表的一部分时，将显示警告。](../images/ui/segment-builder/enum-warning.png)
 
 ### 添加受众
 
@@ -137,7 +137,7 @@ ht-degree: 1%
 >
 >从外部源添加受众时，仅引用受众成员资格。 您无法将受众转换为规则，因此在新区段定义中无法修改用于创建原始受众的规则。
 
-![](../images/ui/segment-builder/add-audience-to-segment.png)
+![此图显示了如何将受众属性转换为规则。](../images/ui/segment-builder/add-audience-to-segment.png)
 
 如果在将受众转换为规则时发生任何冲突， [!DNL Segment Builder] 会尽量保留现有选项。
 
@@ -145,11 +145,11 @@ ht-degree: 1%
 
 或者，您也可以查看在 [!DNL Segment Builder]. 在规则生成器画布中创建规则后，您可以选择 **[!UICONTROL 代码视图]** 将区段视为PQL。
 
-![](../images/ui/segment-builder/code-view.png)
+![代码视图按钮会突出显示，允许您将区段视为PQL。](../images/ui/segment-builder/code-view.png)
 
 “代码”视图提供了一个按钮，用于复制要在API调用中使用的区段值。 要获取区段的最新版本，请确保已将最新更改保存到该区段。
 
-![](../images/ui/segment-builder/copy-code.png)
+![复制代码按钮会突出显示，该按钮允许您 ](../images/ui/segment-builder/copy-code.png)
 
 ### 聚合函数
 
@@ -157,15 +157,15 @@ ht-degree: 1%
 
 要创建聚合函数，请从左边栏中选择一个事件，然后将其插入到 [!UICONTROL 事件] 容器。
 
-![](../images/ui/segment-builder/select-event.png)
+![活动部分会突出显示。](../images/ui/segment-builder/events.png)
 
 将事件置于事件容器中后，选择省略号图标(...)，然后选择 **[!UICONTROL 聚合]**.
 
-![](../images/ui/segment-builder/add-aggregation.png)
+![聚合文本会突出显示。 选择此选项可选择聚合函数。](../images/ui/segment-builder/add-aggregation.png)
 
 聚合现已添加。 您现在可以选择聚合函数、选择要聚合的属性、相等函数以及值。 对于以下示例，此区段将确定任何购买值总和大于$100（即使每次购买小于$100）的用户档案。
 
-![](../images/ui/segment-builder/filled-aggregation.png)
+![事件规则，显示聚合函数。](../images/ui/segment-builder/filled-aggregation.png)
 
 ### 计数函数 {#count-functions}
 
@@ -173,15 +173,15 @@ ht-degree: 1%
 
 要创建计数函数，请从左边栏中选择一个事件，并将其插入 [!UICONTROL 事件] 容器。
 
-![](../images/ui/segment-builder/add-event.png)
+![事件字段会突出显示。](../images/ui/segment-builder/events.png)
 
 将事件置于事件容器中后，选择 [!UICONTROL 至少1个] 按钮。
 
-![](../images/ui/segment-builder/add-count.png)
+![“Ald（至少）”会突出显示，显示要选择以查看计数函数完整列表的区域。](../images/ui/segment-builder/add-count.png)
 
 计数函数现已添加。 您现在可以选择计数函数和函数的值。 以下示例将包括至少单击一次的任何事件。
 
-![](../images/ui/segment-builder/select-count.png)
+![将显示并突出显示计数函数的列表。](../images/ui/segment-builder/select-count.png)
 
 ## 容器
 
@@ -189,13 +189,13 @@ ht-degree: 1%
 
 在规则生成器画布中至少添加一个拼贴后，即可开始添加容器。 要创建新容器，请选择图块右上角的省略号(...)，然后选择 **[!UICONTROL 添加容器]**.
 
-![](../images/ui/segment-builder/add-container.png)
+![添加容器按钮会突出显示，用于将容器添加为第一个容器的子容器。](../images/ui/segment-builder/add-container.png)
 
 新容器将作为第一个容器的子容器显示，但您可以通过拖动和移动容器来调整层次结构。 容器的默认行为为“[!UICONTROL 包括]“提供的属性、事件或受众。 您可以将规则设置为“[!UICONTROL 排除]“与容器条件匹配的配置文件(通过选择 **[!UICONTROL 包括]** ，然后选择“[!UICONTROL 排除]&quot;
 
 也可以通过选择子容器上的“取消包装容器”来提取子容器并将其内联添加到父容器。 选择子容器右上角的省略号(...)以访问此选项。
 
-![](../images/ui/segment-builder/include-exclude.png)
+![用于取消包装或删除容器的选项会突出显示。](../images/ui/segment-builder/include-exclude.png)
 
 选择 **[!UICONTROL 取消包装容器]** 子容器将被删除，并且标准将显示在内联。
 
@@ -203,7 +203,7 @@ ht-degree: 1%
 >
 >展开容器时，请务必注意逻辑是否继续满足所需的区段定义。
 
-![](../images/ui/segment-builder/unwrapped-container-inline.png)
+![将在解封后显示容器。](../images/ui/segment-builder/unwrapped-container.png)
 
 ## 合并策略
 
@@ -213,7 +213,7 @@ ht-degree: 1%
 
 要为区段定义选择合并策略，请在 **[!UICONTROL 字段]** 选项卡，然后使用 **[!UICONTROL 合并策略]** 下拉菜单，选择要使用的合并策略。
 
-![](../images/ui/segment-builder/merge-policy-selector.png)
+![合并策略选择器会突出显示。 这样，您就可以选择为区段定义选择的合并策略。](../images/ui/segment-builder/merge-policy-selector.png)
 
 ## 区段属性 {#segment-properties}
 
@@ -228,18 +228,29 @@ ht-degree: 1%
 >abstract="您可以刷新区段的预计值，以立即查看有多少用户档案符合建议区段的资格条件的预览。 受众估计是使用当天样本数据的样本量生成的。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=en#estimate-and-preview-an-audience" text="从文档了解更多信息"
 
-
 生成区段定义时， **[!UICONTROL 区段属性]** 工作区右侧的部分显示结果区段的预估大小，允许您在构建受众本身之前根据需要调整区段定义。
 
-的 **[!UICONTROL 区段属性]** 部分中，您还可以指定有关区段定义的重要信息，包括其名称和描述。 区段定义名称用于在组织定义的区段中标识您的区段，因此应当具有描述性、简洁性和唯一性。
+的 **[!UICONTROL 区段属性]** 部分中，您还可以指定有关区段定义的重要信息，包括其名称、描述和评估类型。 区段定义名称用于在组织定义的区段中标识您的区段，因此应当具有描述性、简洁性和唯一性。
 
 在继续构建区段定义时，您可以通过选择 **[!UICONTROL 查看配置文件]**.
 
-![](../images/ui/segment-builder/segment-properties.png)
+![区段定义属性部分会突出显示。 区段属性包括但不限于区段名称、描述和评估方法。](../images/ui/segment-builder/segment-properties.png)
 
 >[!NOTE]
 >
 >受众估计是使用当天样本数据的样本量生成的。 如果您的用户档案存储中的实体少于100万个，则使用完整的数据集；100万至2000万个单位使用100万个单位；超过2000万个单位使用5%的单位。 有关生成区段估计的更多信息，请参阅 [估计生成节](../tutorials/create-a-segment.md#estimate-and-preview-an-audience) 区段创建教程的“受众”部分。
+
+您还可以选择评估方法。 如果您知道要使用哪种评估方法，则可以使用下拉列表选择所需的评估方法。 如果您想知道此区段符合哪些评估类型，则可以选择浏览图标 ![带放大镜的文件夹图标](../images/ui/segment-builder/segment-evaluation-select-icon.png) 以查看可用区段评估方法的列表。
+
+的 [!UICONTROL 评价方法资格] 弹出窗口。 此弹出窗口显示可用的评估方法，即批量、流和边。 弹出窗口会显示哪些评估方法符合条件和不符合条件。 根据区段定义中使用的参数，该参数可能不符合某些评估方法的条件。 有关每种评估方法要求的详细信息，请阅读 [流分段](./streaming-segmentation.md#query-types) 或 [边缘分割](./edge-segmentation.md#query-types) 概述。
+
+![出现评估方法资格弹出窗口。 这会显示哪些区段评估方法符合和不符合区段资格。](../images/ui/segment-builder/select-evaluation-method.png)
+
+如果选择无效的评估方法，系统将提示您更改区段定义规则或更改评估方法。
+
+![此时会弹出评估方法。 如果选择了不合格的区段评估方法，弹出窗口将说明该方法不合格的原因。](../images/ui/segment-builder/ineligible-evaluation-method.png)
+
+有关不同区段定义评估方法的详细信息，请参阅 [分段概述](../home.md#evaluate-segments).
 
 ## 后续步骤 {#next-steps}
 
