@@ -3,9 +3,9 @@ title: 使用Adobe Experience Platform Web SDK处理客户同意数据
 topic-legacy: getting started
 description: 了解如何集成Adobe Experience Platform Web SDK以在Adobe Experience Platform中处理客户同意数据。
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 79bc41c713425e14bb3c12646b9b71b2c630618b
 workflow-type: tm+mt
-source-wordcount: '1330'
+source-wordcount: '1375'
 ht-degree: 0%
 
 ---
@@ -98,14 +98,19 @@ ht-degree: 0%
 
 将SDK扩展集成到网站后，即可开始使用Platform Web SDK `setConsent` 命令将同意数据发送到Platform。
 
->[!IMPORTANT]
->
->的 `setConsent` 命令只会直接更新配置文件存储中的数据，而不会将任何数据发送到数据湖。
+的 `setConsent` 命令执行两个操作：
+
+1. 直接在配置文件存储区中更新用户的配置文件属性。 这不会向数据湖发送任何数据。
+1. 创建 [体验事件](../../../xdm/classes/experienceevent.md) 会记录同意更改事件的加盖时间戳的帐户。 此数据将直接发送到数据湖，并可用于跟踪同意首选项随时间的变化。
+
+### 何时调用 `setConsent`
 
 有两种情况 `setConsent` 应在您的网站上调用：
 
 1. 在页面上（换言之，在每次加载页面时）加载同意时
 1. 作为检测同意设置更改的CMP挂接或事件侦听器的一部分
+
+### `setConsent` 语法
 
 >[!NOTE]
 >
