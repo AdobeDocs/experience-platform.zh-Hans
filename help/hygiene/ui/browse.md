@@ -2,9 +2,9 @@
 title: 浏览数据卫生工作单
 description: 了解如何在Adobe Experience Platform用户界面中查看和管理现有数据卫生工作单。
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 525e2520bb6140b00cfb7e68579eb2d0288ad9b1
+source-git-commit: 49ba5263c6dc8eccac2ffe339476cf316c68e486
 workflow-type: tm+mt
-source-wordcount: '485'
+source-wordcount: '481'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 2%
 >
 >Adobe Experience Platform中的数据卫生功能目前仅适用于已购买Healthcare Shield的组织。
 
-当向系统发送数据卫生请求时，创建工作命令以执行所请求的任务。 工作单表示特定的数据卫生过程，如数据集的计划生存时间(TTL)，其中包括其当前状态和其他相关详细信息。
+当向系统发送数据卫生请求时，创建工作命令以执行所请求的任务。 工作单表示特定的数据卫生过程，如计划的数据集过期，包括其当前状态和其他相关详细信息。
 
 本指南介绍如何在Adobe Experience Platform UI中查看和管理现有工作单。
 
@@ -31,7 +31,7 @@ ht-degree: 2%
 
 ![显示 [!UICONTROL 数据卫生] 平台UI中的工作区](../images/ui/browse/work-order-list.png)
 
-<!-- The list only shows work orders for one category at a time. Select **[!UICONTROL Consumer]** to view a list of consumer deletion tasks, and **[!UICONTROL Dataset]** to view a list of time-to-live (TTL) schedules for datasets.
+<!-- The list only shows work orders for one category at a time. Select **[!UICONTROL Consumer]** to view a list of consumer deletion tasks, and **[!UICONTROL Dataset]** to view a list of scheduled dataset expirations.
 
 ![Image showing the [!UICONTROL Dataset] tab](../images/ui/browse/dataset-tab.png) -->
 
@@ -41,10 +41,10 @@ ht-degree: 2%
 
 | 过滤器 | 描述 |
 | --- | --- |
-| [!UICONTROL 状态] | 根据工作单的当前状态进行筛选：<ul><li>**[!UICONTROL 已完成]**:作业已完成。</li><li>**[!UICONTROL 待定]**:作业已创建，但尚未执行。 A [数据集生存时间(TTL)请求](./ttl.md) 在计划的删除日期之前假定此状态。 删除日期到达后，状态将更新为 [!UICONTROL 正在执行] 除非事前取消工作。</li><li>**[!UICONTROL 正在执行]**:TTL请求已启动，当前正在处理。</li><li>**[!UICONTROL 已取消]**:作为手动用户请求的一部分，作业已取消。</li></ul> |
+| [!UICONTROL 状态] | 根据工作单的当前状态进行筛选：<ul><li>**[!UICONTROL 已完成]**:作业已完成。</li><li>**[!UICONTROL 待定]**:作业已创建，但尚未执行。 A [数据集过期请求](./dataset-expiration.md) 在计划的删除日期之前假定此状态。 删除日期到达后，状态将更新为 [!UICONTROL 正在执行] 除非事前取消工作。</li><li>**[!UICONTROL 正在执行]**:数据集过期请求已启动且当前正在处理。</li><li>**[!UICONTROL 已取消]**:作为手动用户请求的一部分，作业已取消。</li></ul> |
 | [!UICONTROL 创建日期] | 根据下达工作单的时间进行筛选。 |
-| [!UICONTROL 过期日期] | 根据相关数据集的计划删除日期过滤TTL请求。 |
-| [!UICONTROL 更新日期] | 根据上次更新工作单的时间筛选TTL请求。 TTL创建和过期将计为更新。 |
+| [!UICONTROL 过期日期] | 根据相关数据集的计划删除日期过滤数据集过期请求。 |
+| [!UICONTROL 更新日期] | 根据上次更新工作单的时间过滤数据集过期请求。 创建和过期将计为更新。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -68,12 +68,12 @@ The details of a consumer delete request are read-only, displaying its basic att
 
 ![Image showing the details page for a consumer delete work order](../images/ui/browse/consumer-delete-details.png)
 
-### Dataset TTL details -->
+### Dataset expiration details -->
 
-数据集TTL的详细信息页面提供了有关其基本属性的信息，包括删除前剩余天数的计划过期日期。 在右边栏中，您可以使用控件来编辑或取消TTL。
+数据集过期的详细信息页面提供了有关其基本属性的信息，包括删除之前剩余日期的计划过期日期。 在右边栏中，您可以使用控件来编辑或取消过期。
 
-![显示数据集TTL工作顺序详细信息页面的图像](../images/ui/browse/ttl-details.png)
+![显示数据集过期工作单详细信息页面的图像](../images/ui/browse/ttl-details.png)
 
 ## 后续步骤
 
-本指南介绍了如何在Platform UI中查看和管理现有数据卫生工作单。 有关创建您自己的工作单的信息，请参阅 [计划数据集TTL](./ttl.md).
+本指南介绍了如何在Platform UI中查看和管理现有数据卫生工作单。 有关创建您自己的工作单的信息，请参阅 [计划数据集过期](./dataset-expiration.md).

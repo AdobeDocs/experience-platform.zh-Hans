@@ -2,9 +2,9 @@
 title: 数据卫生API指南
 description: 了解如何以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: 7f1e4bdf54314cab1f69619bcbb34216da94b17e
+source-git-commit: 49ba5263c6dc8eccac2ffe339476cf316c68e486
 workflow-type: tm+mt
-source-wordcount: '307'
+source-wordcount: '303'
 ht-degree: 1%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 1%
 >
 >Adobe Experience Platform中的数据卫生功能目前仅适用于已购买Healthcare Shield的组织。
 
-数据卫生API允许您以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据，并为数据集计划生存时间(TTL)协议。 本指南介绍了使用API的先决步骤，并提供了指向更多特定于端点的文档的链接。
+数据卫生API允许您以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据，并计划数据集的过期日期。 本指南介绍了使用API的先决步骤，并提供了指向更多特定于端点的文档的链接。
 
 ## 快速入门
 
@@ -43,9 +43,9 @@ ht-degree: 1%
 
 A work order is a representation of a data hygiene task that deletes consumer identities from a specific dataset or all datasets. See the [work order endpoint guide](./workorder.md) for details on working with work orders in the API. -->
 
-## 数据集的生存时间(TTL)
+## 数据集过期
 
-数据集TTL是一项时间延迟的“删除数据集”操作。 通过创建TTL，您可以指定将来应删除该数据集的时间。 请参阅 [数据集TTL端点指南](./ttl.md) 有关在API中计划数据集TTL的详细信息。
+数据集过期是一项时间延迟的“删除数据集”操作。 通过创建数据集过期，您可以指定将来应删除该数据集的时间。 请参阅 [数据集过期端点指南](./dataset-expiration.md) 有关在API中计划数据集过期的详细信息。
 
 ## 后续步骤
 
