@@ -3,9 +3,9 @@ keywords: Google Ad Manager;Google Ad;DoubleClick AdX;DoubleClick;Google Ad Mana
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告服务平台，它为出版商提供了通过视频和移动设备应用程序管理其网站上广告显示的方法。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: f163b1e3c60953192b2ddf543eb4f3e8df88799b
+source-git-commit: 7d32499bec8d7248472ae60b07893dbb5496d984
 workflow-type: tm+mt
-source-wordcount: '856'
+source-wordcount: '903'
 ht-degree: 3%
 
 ---
@@ -58,7 +58,8 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->允许列表在设置第一个 [!DNL Google Ad Manager] 目标。 请确保已完成下述允许列表流程 [!DNL Google] 创建目标之前。
+>在设置第一个允许列表之前，必须将其添加到允许列表 [!DNL Google Ad Manager] 目标。 请确保已完成下面描述的允许列表流程 [!DNL Google] 创建目标之前。
+>此规则的例外是 [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) 客户。 如果您已在Audience Manager中创建到此Google目标的连接，则无需再次完成允许列表过程，您可以继续执行后续步骤。
 
 在创建 [!DNL Google Ad Manager] 目标，您必须联系 [!DNL Google] Adobe添加到允许的数据提供程序列表，以及将帐户添加到允许列表。 联系人 [!DNL Google] 并提供以下信息：
 

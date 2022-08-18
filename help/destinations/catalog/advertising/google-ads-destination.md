@@ -3,9 +3,9 @@ keywords: Google广告；Google广告；Google AdWords;Google AdWords;Google Adw
 title: Google Ads连接
 description: Google Ads(以前称为Google AdWords)是一种在线广告服务，允许企业通过基于文本的搜索、图形显示、YouTube视频和应用程序内移动显示，按点击量付费广告。
 exl-id: 7143f476-49a8-42aa-bfb4-b11fc2b8f5c3
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 7d32499bec8d7248472ae60b07893dbb5496d984
 workflow-type: tm+mt
-source-wordcount: '898'
+source-wordcount: '945'
 ht-degree: 3%
 
 ---
@@ -66,7 +66,8 @@ ht-degree: 3%
 
 >[!NOTE]
 >
->允许列表在设置第一个 [!DNL Google Ads] 目标。 请确保已完成下述允许列表流程 [!DNL Google] 创建目标之前。
+>在设置第一个允许列表之前，必须将其添加到允许列表 [!DNL Google Ads] 目标。 请确保已完成下面描述的允许列表流程 [!DNL Google] 创建目标之前。
+>此规则的例外是 [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) 客户。 如果您已在Audience Manager中创建到此Google目标的连接，则无需再次完成允许列表过程，您可以继续执行后续步骤。
 
 在创建 [!DNL Google Ads] 目标，您必须联系 [!DNL Google] Adobe添加到允许的数据提供程序列表，以及将帐户添加到允许列表。 联系人 [!DNL Google] 并提供以下信息：
 

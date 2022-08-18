@@ -3,9 +3,9 @@ keywords: 双击竞价管理器；双击竞价管理器；双击；显示和视�
 title: Google Display & Video 360连接
 description: 显示和视频360（以前称为“双击竞价管理器”）是一种工具，用于在显示、视频和移动设备库存源中执行重定位和受众定位的数字促销活动。
 exl-id: bdd3b3fd-891f-44ec-bd47-daf7f3289f92
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 7d32499bec8d7248472ae60b07893dbb5496d984
 workflow-type: tm+mt
-source-wordcount: '893'
+source-wordcount: '942'
 ht-degree: 2%
 
 ---
@@ -56,7 +56,8 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->在设置第一个允许列表之前，必须将其添加到允许列表 [!DNL Google Display & Video 360] 目标。 在创建目标之前，请确保Google已完成下面描述的允许列表流程。
+>在设置第一个允许列表之前，必须将其添加到允许列表 [!DNL Google Display & Video 360] 目标。 请确保已完成下面描述的允许列表流程 [!DNL Google] 创建目标之前。
+>此规则的例外是 [Audience Manager](https://experienceleague.adobe.com/docs/audience-manager/user-guide/aam-home.html) 客户。 如果您已在Audience Manager中创建到此Google目标的连接，则无需再次完成允许列表过程，您可以继续执行后续步骤。
 
 在创建 [!DNL Google Display & Video 360] 目标中，您必须联系Google，要求将Adobe添加到允许的数据提供程序列表中，并将您的帐户添加到允许列表中。 联系Google并提供以下信息：
 
