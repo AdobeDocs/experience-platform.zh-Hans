@@ -5,9 +5,9 @@ title: Segmentation Service概述
 topic-legacy: overview
 description: 了解Adobe Experience Platform Segmentation Service及其在平台生态系统中的作用。
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 0267b0141f7b6944ea65bc413f14cc9580081387
+source-git-commit: 52197a6c009fb5b0b6037a4fef3c98ad7c327e2e
 workflow-type: tm+mt
-source-wordcount: '1630'
+source-wordcount: '1632'
 ht-degree: 0%
 
 ---
@@ -53,15 +53,15 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供了用户界面和RE
 >title="评价方法"
 >abstract="平台当前支持三种评估区段的方法：流分段、批量分段和边缘分段。"
 
-平台当前支持三种评估区段的方法：流分段、批量分段和边缘分段。
-
-### 流分段 {#streaming}
-
 >[!CONTEXTUALHELP]
 >id="platform_segments_evaluation_streaming"
 >title="流评估"
->abstract="平台当前支持三种评估区段的方法：流分段、批量分段和边缘分段。"
+>abstract="流式客户细分是一种持续的数据选择流程，可根据用户活动更新您的区段。"
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/api/streaming-segmentation.html" text="使用流分段近乎实时地评估事件"
+
+平台当前支持三种评估区段的方法：流分段、批量分段和边缘分段。
+
+### 流分段 {#streaming}
 
 流式客户细分是一种持续的数据选择流程，可根据用户活动更新您的区段。 生成并保存区段后，会将区段定义应用于 [!DNL Real-time Customer Profile]. 会定期处理区段添加和移除，以确保您的目标受众仍然相关。
 
