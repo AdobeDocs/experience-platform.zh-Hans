@@ -2,7 +2,7 @@
 description: 本页提供您需要提交的所有信息，以便审核使用Destination SDK创作的已产品化目标。
 title: 提交以供审核在Destination SDK中创作的按产品化目标
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: dd4a150351b5e0c41586cf663324aeb345a896e4
+source-git-commit: 50f205a5ddd9ec264d7390911fef45dc595ca6a1
 workflow-type: tm+mt
 source-wordcount: '683'
 ht-degree: 0%
@@ -15,7 +15,14 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->只有提交产品化（公共）目标的合作伙伴才需要此处记录的流程。 如果您创建一个供自己使用的专用目标，则无需制作这些材料并与Adobe共享。
+>* 只有提交产品化（公共）目标的合作伙伴才需要此处记录的流程。 如果您创建一个供自己使用的专用目标，则无需制作这些材料并与Adobe共享。
+>
+>* Adobe查看目标发布请求的标准响应时间为五个工作日。
+>
+>* 如果Adobe团队在初次提交后要求您对配置进行任何更新，则在进行更新后，您必须提交另一个目标发布请求。
+>
+>* 即使在Experience Platform目录中实现目标后，如果您需要对配置进行任何更新，则必须提交新的目标发布请求，以便将更新反映在配置中。
+
 
 在将目标发布到 [Experience Platform目标目录](/help/destinations/catalog/overview.md)，则您必须向Adobe提供有关目标和您执行的测试的特定信息，以确保用户在将数据激活到您的平台时尽可能享有最佳体验。
 
@@ -28,15 +35,6 @@ ht-degree: 0%
 * 验证您是否已使用 [目标发布API](./destination-publish-api.md).
 * 文档PR（拉取请求），请按照 [自助文档流程](./docs-framework/documentation-instructions.md).
 * 图像文件，将在Experience Platform目标目录中显示为目标卡的徽标。
-
->[!IMPORTANT]
->
->* Adobe查看目标发布请求的标准响应时间为五个工作日。
->
->* 如果Adobe团队在初次提交后要求您对配置进行任何更新，则在进行更新后，您必须提交另一个目标发布请求。
->
->* 即使在Experience Platform目录中实现目标后，如果您需要对配置进行任何更新，则必须提交新的目标发布请求，以便将更新反映在配置中。
-
 
 您可以在以下部分中找到有关每个项目的详细信息：
 
