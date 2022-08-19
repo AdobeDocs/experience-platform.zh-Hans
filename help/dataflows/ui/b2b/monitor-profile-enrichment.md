@@ -4,10 +4,10 @@ solution: Experience Platform
 title: 监视配置文件扩充作业
 type: Tutorial
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: 842fe74b0b751c515a4faee437e1f94bd0662e11
+source-git-commit: 1fed0cf37e7297c21330ebf51ae15054aa21c781
 workflow-type: tm+mt
-source-wordcount: '633'
-ht-degree: 1%
+source-wordcount: '768'
+ht-degree: 2%
 
 ---
 
@@ -56,6 +56,23 @@ ht-degree: 1%
 | **[!UICONTROL 上次成功运行]** | 指示上次成功的潜在客户运行帐户匹配作业的日期和时间。 |
 | **[!UICONTROL 状态]** | 指示潜在客户与帐户匹配作业的状态（成功、失败或处理）。 |
 
+## 预测潜在客户和帐户评分用户档案扩充 {#predictive-lead-to-account-scoring}
+
+的 [!UICONTROL 预测潜在客户和帐户评分] 功能板显示特定于 [预测潜在客户和帐户评分](/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md) 用户档案扩充。
+
+![预测潜在客户和帐户评分用户档案扩充](/help/dataflows/assets/ui/b2b/predictive-lead-and-account-scoring.png)
+
+以下量度可用于预测潜在客户和帐户评分用户档案扩充作业：
+
+| 量度 | 描述 |
+| --------- | ---------- |
+| **[!UICONTROL 作业开始]** | 指示预测潜在客户和帐户评分作业运行的开始日期和时间。 |
+| **[!UICONTROL 处理时间]** | 完成作业所花费的总时间。 |
+| **[!UICONTROL 得分名称]** | 工作的得分名称。 |
+| **[!UICONTROL 配置文件类型]** | 得分的类型： <ul><li>人员</li><li>帐户</li></ul>。 |
+| **[!UICONTROL 作业类型]** | 作业的类型：<ul><li>评分</li><li>培训</li>。 |
+| **[!UICONTROL 状态]** | 指示预测潜在客户和帐户评分作业的状态（成功、失败或处理）。 |
+
 ## UI控件 {#ui-controls}
 
 本节介绍监控界面中的各种用户界面(UI)选项，利用这些选项可筛选页面上显示的量度。
@@ -79,3 +96,4 @@ ht-degree: 1%
 * [Real-time CDP B2B中的相关帐户](/help/rtcdp/b2b-ai-ml-services/related-accounts.md)
 * [帐户配置文件UI指南中的“相关帐户”选项卡](/help/rtcdp/accounts/account-profile-ui-guide.md)
 * [在实时CDP B2B中实现帐户匹配](/help/rtcdp/b2b-ai-ml-services/lead-to-account-matching.md)
+* [Real-time CDP B2B中的预测潜在客户和客户评分](/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md)
