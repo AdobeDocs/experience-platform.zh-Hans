@@ -5,7 +5,7 @@ title: 数据准备映射函数
 topic-legacy: overview
 description: 本文档介绍了数据准备中使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: a48072d2c418588a05397e991c1a2e17eee4c028
+source-git-commit: 66c3f4fc6da987f731f7b7e54f416c60fcc670d8
 workflow-type: tm+mt
 source-wordcount: '4286'
 ht-degree: 3%
@@ -126,7 +126,6 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 | zone_date_to_zone | 将日期从一个时区转换为另一个时区。 | <ul><li>日期： **必需** 您尝试转换的日期。</li><li>区域： **必需** 您尝试将日期转换为的时区。</li></ul> | zone_date_to_zone(&#x200B;DATE， ZONE) | `zone_date_to_utc&#x200B;(now(), "Europe/Paris")` | `2021-10-26T15:43:59Z` |
 
 {style=&quot;table-layout:auto&quot;}
-&#x200B;
 
 ### 层次结构 — 对象 {#objects}
 
