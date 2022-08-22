@@ -1,23 +1,27 @@
 ---
 keywords: Experience Platform；主页；热门主题；API；基于属性的访问控制；基于属性的访问控制
 solution: Experience Platform
-title: 策略API端点
+title: 访问控制策略API端点
 description: 基于属性的访问控制API中的/policys端点允许您以编程方式管理Adobe Experience Platform中的策略。
 exl-id: 07690f43-fdd9-4254-9324-84e6bd226743
-source-git-commit: 567bfe089fd96cb08cb8ea7c90d065c804be9413
+source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
-source-wordcount: '1413'
+source-wordcount: '1443'
 ht-degree: 2%
 
 ---
 
-# 策略端点
+# 访问控制策略端点
 
 >[!IMPORTANT]
 >
 >目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。
 
-政策是将属性集合在一起以确立允许和不允许的行动的声明。 策略可以是本地策略，也可以是全局策略，并且可以覆盖其他策略。 的 `/policies` 基于属性的访问控制API中的端点允许您以编程方式管理策略，包括有关控制策略的规则及其各自的主题条件的信息。
+访问控制策略是将属性集合在一起以建立允许和不允许的操作的语句。 这些策略可以是本地策略，也可以是全局策略，并且可以覆盖其他策略。 的 `/policies` 基于属性的访问控制API中的端点允许您以编程方式管理策略，包括有关控制策略的规则及其各自的主题条件的信息。
+
+>[!IMPORTANT]
+>
+>不要将此端点与 `/policies` 的端点 [数据管理API](../../../data-governance/api/policies.md)，用于管理数据使用策略。
 
 ## 快速入门
 

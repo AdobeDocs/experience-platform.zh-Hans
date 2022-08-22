@@ -1,13 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据准备；api指南；模式；
-solution: Experience Platform
-title: 架构API端点
-topic-legacy: schemas
-description: 您可以使用Adobe Experience Platform API中的“/functions”端点来验证映射表达式并列出可用的映射集函数。
+title: 函数API端点
+description: 您可以使用数据准备API中的“/functions”端点来验证映射表达式并列出可用的映射集函数。
 exl-id: dc24bfb4-2d96-4757-a610-0c2ee960d41d
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
-source-wordcount: '210'
+source-wordcount: '209'
 ht-degree: 2%
 
 ---

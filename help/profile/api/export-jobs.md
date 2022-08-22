@@ -1,18 +1,18 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；疑难解答；API
-title: 导出作业API端点
+title: 配置文件导出作业API端点
 topic-legacy: guide
 type: Documentation
 description: 实时客户配置文件允许您通过将来自多个来源的数据（包括属性数据和行为数据）汇总在一起，在Adobe Experience Platform中构建单个客户视图。 然后，可以将配置文件数据导出到数据集以进一步处理。
 exl-id: d51b1d1c-ae17-4945-b045-4001e4942b67
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
-source-wordcount: '1517'
+source-wordcount: '1519'
 ht-degree: 2%
 
 ---
 
-# 导出作业端点
+# 配置文件导出作业端点
 
 [!DNL Real-time Customer Profile] 通过将来自多个来源的数据（包括属性数据和行为数据）汇总在一起，使您能够构建单个客户视图。 然后，可以将配置文件数据导出到数据集以进一步处理。 例如，受众区段来自 [!DNL Profile] 可以导出数据以进行激活，也可以导出配置文件属性以进行报告。
 
@@ -192,10 +192,10 @@ GET /export/jobs?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 | -------- | ----------- |
-| `start` | 根据请求的创建时间，偏移返回的结果页面。 示例: `start=4` |
-| `limit` | 限制返回的结果数。 示例: `limit=10` |
-| `page` | 根据请求的创建时间返回特定的结果页面。 示例: `page=2` |
-| `sort` | 按特定字段对结果进行升序排序( **`asc`** )或降序( **`desc`** )顺序。 返回多个结果页面时，排序参数不起作用。 示例: `sort=updateTime:asc` |
+| `start` | 根据请求的创建时间，偏移返回的结果页面。 示例：`start=4` |
+| `limit` | 限制返回的结果数。 示例：`limit=10` |
+| `page` | 根据请求的创建时间返回特定的结果页面。 示例：`page=2` |
+| `sort` | 按特定字段对结果进行升序排序( **`asc`** )或降序( **`desc`** )顺序。 返回多个结果页面时，排序参数不起作用。 示例：`sort=updateTime:asc` |
 
 **请求**
 

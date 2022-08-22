@@ -1,20 +1,24 @@
 ---
 keywords: Experience Platform；主页；热门主题；策略执行；基于API的执行；数据管理
 solution: Experience Platform
-title: 策略API端点
+title: 数据使用策略API端点
 topic-legacy: developer guide
 description: 数据使用策略是贵组织采用的规则，用于描述您允许或限制对Experience Platform内数据执行的营销操作类型。 /policys端点用于与查看、创建、更新或删除数据使用策略相关的所有API调用。
 exl-id: 62a6f15b-4c12-4269-bf90-aaa04c147053
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
-source-wordcount: '1813'
+source-wordcount: '1840'
 ht-degree: 2%
 
 ---
 
-# 策略端点
+# 数据使用策略端点
 
 数据使用策略是描述您允许或限制对内数据执行的营销操作类型的规则 [!DNL Experience Platform]. 的 `/policies` 的端点 [!DNL Policy Service API] 允许您以编程方式管理贵组织的数据使用策略。
+
+>[!IMPORTANT]
+>
+>不要将此端点与 `/policies` 的端点 [访问控制API](../../access-control/abac/api/policies.md)，用于管理访问控制策略。
 
 ## 快速入门
 

@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；查询编辑器；查询编辑器；查询编辑器；查询编辑器；
 solution: Experience Platform
-title: 查询服务UI指南
+title: 查询服务凭据指南
 topic-legacy: guide
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: a5e8b4df78d8dff58e000030d209606b46a582e8
+source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
 workflow-type: tm+mt
 source-wordcount: '1168'
 ht-degree: 1%
@@ -49,7 +49,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 要了解有关如何分配权限的更多信息，请阅读 [访问控制](../../access-control/home.md).
 
-现在，在Adobe开发人员控制台中配置了所有所需的权限，以便用户使用过期的凭据功能。
+现在，在Adobe Developer Console中配置了所有需要的权限，以便用户使用过期的凭据功能。
 
 ### 生成凭据
 
