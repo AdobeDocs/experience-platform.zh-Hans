@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: c4cd691eeae9e27dd7616dc19672dc5d08b8cec7
+source-git-commit: a82381d6133fe793fc0f4be38b6e064684581afb
 workflow-type: tm+mt
-source-wordcount: '2327'
+source-wordcount: '2436'
 ht-degree: 5%
 
 ---
@@ -177,15 +177,10 @@ Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP
 
 | 功能 | 描述 |
 | --- | --- |
-| 导致帐户匹配 | 通过促进帐户匹配，您可以将已知人员用户档案加入帐户用户档案。 然后，您可以在B2B上下文中对数据进行分段和定位，如帐户或商机。 每日运行的作业使用确定性因素和可能性因素将尚未与任何帐户关联的人员配置文件匹配到最佳匹配帐户。 然后，您可以决定是否在区段定义中包含此类匹配项 |
+| 导致帐户匹配 | 通过促进帐户匹配，您可以将已知人员用户档案加入帐户用户档案。 然后，您可以在B2B上下文中对数据进行分段和定位，如帐户或商机。 每日运行的作业使用确定性因素和可能性因素将尚未与任何帐户关联的人员配置文件匹配到最佳匹配帐户。 然后，您可以决定是否在区段定义中包含此类匹配项。 <br><br>有关详细信息，请参阅 [帐户匹配商机](../../rtcdp/b2b-ai-ml-services/lead-to-account-matching.md). 有关如何配置潜在客户以匹配帐户的说明，请参阅 [帐户配置文件UI指南](../../rtcdp/account/../accounts/account-profile-ui-guide.md?lang=en#configure-lead-to-account-matching).</li> |
+| 预测潜在客户和帐户评分 | 预测潜在客户和帐户评分使用基于树的（随机林/梯度提升）机器学习方法，该方法包括从机会阶段转化事件中学习和预测，并将人员活动汇总到帐户级别以生成帐户分数。 在汇总和单位级别，还提供了一些最具影响力的因素，以帮助B2B营销人员更好地了解哪些因素推动了分数。 <br><br>有关详细信息，请参阅 [预测潜在客户和帐户评分](../../rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md). 有关如何管理得分的信息，请参阅 [在Real-time Customer Data Platform B2B Edition中管理预测性潜在客户和帐户评分。](../../rtcdp/b2b-ai-ml-services/manage-predictive-lead-and-account-scoring.md) |
 
-有关详细信息，请参阅 [帐户匹配商机](../../rtcdp/b2b-ai-ml-services/lead-to-account-matching.md).
-
-有关如何监控用户档案扩充的指南，请参阅 [在UI中监控用户档案扩充](../../dataflows/ui/b2b/monitor-profile-enrichment.md).
-
-有关如何配置潜在客户以匹配帐户的说明，请参阅 [帐户配置文件UI指南](../../rtcdp/account/../accounts/account-profile-ui-guide.md?lang=en#configure-lead-to-account-matching).
-
-要进一步了解Real-time CDP B2B Edition，请参阅 [Real-time CDP B2B概述](../../rtcdp/overview.md).
+有关如何监控用户档案扩充的指南，请参阅 [在UI中监控用户档案扩充](../../dataflows/ui/b2b/monitor-profile-enrichment.md). 要进一步了解Real-time CDP B2B Edition，请参阅 [Real-time CDP B2B概述](../../rtcdp/overview.md).
 
 ## 实时客户个人资料 {#profile}
 
