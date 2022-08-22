@@ -2,10 +2,10 @@
 title: Adobe Analytics扩展概述
 description: 了解Adobe Experience Platform中的Adobe Analytics标记扩展。
 exl-id: 33ebdcb6-9bf0-44e6-b016-e93fe78af578
-source-git-commit: 4b0b4cf7c262940bd21965d928cc7d0cf12d15d1
+source-git-commit: 9fe94af349e1d9c979c78dce69c5180086df3adb
 workflow-type: tm+mt
 source-wordcount: '2275'
-ht-degree: 81%
+ht-degree: 82%
 
 ---
 
@@ -221,7 +221,7 @@ _satellite.cookie.set("sat_track", "true");
 
 唯一值，表示位于在线和离线系统中的客户。
 
-请参阅 [visitorID](https://experienceleague.adobe.com/docs/analytics/import/data-sources/data-types-and-categories/datasrc-visitorid.html)。
+请参阅 [visitorID](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/visitorid.html)。
 
 ### Visitor Namespace
 
