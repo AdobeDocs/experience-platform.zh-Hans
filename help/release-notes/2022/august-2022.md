@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2022年8月
 description: 2022年8月版Adobe Experience Platform发行说明。
-source-git-commit: b8513fa214ea74eec6809796cc194466e05cbb21
+source-git-commit: 925991d58c3cdd84e13b12a095e9681b8f4b254b
 workflow-type: tm+mt
-source-wordcount: '497'
-ht-degree: 9%
+source-wordcount: '942'
+ht-degree: 8%
 
 ---
 
@@ -15,6 +15,7 @@ ht-degree: 9%
 Adobe Experience Platform 现有功能的更新包括：
 
 - [数据准备](#data-prep)
+- [体验数据模型(XDM)](#xdm)
 - [源](#sources)
 
 ## [!DNL Data Prep] {#data-prep}
@@ -30,6 +31,38 @@ Adobe Experience Platform 现有功能的更新包括：
 {style=&quot;table-layout:auto&quot;}
 
 详细了解 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
+
+## 体验数据模型(XDM) {#xdm}
+
+XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
+
+**新的XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 全局模式 | [[!UICONTROL AJO实体架构]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-entity.schema.json) | 描述Adobe Journey Optimizer的非规范化实体。 |
+| 类 | [[!UICONTROL AJO执行实体]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/ajo-execution-entity.schema.json) | 描述用于分段的Adobe Journey Optimizer执行实体。 |
+| 字段组 | [[!UICONTROL Workfront工作对象]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/workfront/workobjects-all.schema.json) | 引用Adobe Workfront所有较低级别特定对象字段组的包装器字段组。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+**更新了XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 字段组 | [[!UICONTROL Journey Orchestration步骤事件常用字段]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/journeyOrchestration/stepEvents/journeyStepEventCommonFieldsMixin.schema.json) | 添加了两个新属性： `origTimeStamp` 和 `experienceID`. |
+| 字段组 | [[!UICONTROL 区段成员资格详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/segmentation.schema.json) | 除 [!UICONTROL XDM个人配置文件]，此字段组现在也可以在基于XDM业务帐户类的架构中使用。 |
+| 字段组 | （多个） | 与Marketo B2B活动相关的多个字段组已更新为稳定状态。 请参阅以下内容 [拉取请求](https://github.com/adobe/xdm/pull/1593/files) 以了解详细信息。 |
+| 字段组 | （多个） | 多个与天气相关的字段组已更新，以修复 `uvIndex` 和 `sunsetTime`. 请参阅以下内容 [拉取请求](https://github.com/adobe/xdm/pull/1602/files) 以了解详细信息。 |
+| 数据类型 | [[!UICONTROL 产品列表项]](https://github.com/adobe/xdm/blob/master/components/datatypes/productlistitem.schema.json) | 新资产 `productImageUrl` 已添加。 |
+| 数据类型 | [[!UICONTROL Qoe数据详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/qoedatadetails.schema.json) | 新资产 `framesPerSecond` 已添加。 |
+| 数据类型 | [[!UICONTROL 会话详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/sessiondetails.schema.json) | `sdkVersion` 已更名为 `appVersion`。`meta:enum` 和 `description` 字段也已更新。 |
+| 数据类型和字段组 | （多个） | 一些媒体数据类型和字段组具有新字段和更新的描述。 请参阅以下内容 [拉取请求](https://github.com/adobe/xdm/pull/1582/files) 以了解详细信息。 |
+| (全部) | （多个） | 包含 `enum` 字段现在还包含对应的 `meta:enum` 字段来表示每个约束的显示值。 请参阅以下内容 [拉取请求](https://github.com/adobe/xdm/pull/1601/files) 以了解详细信息。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
 ## 源 {#sources}
 
