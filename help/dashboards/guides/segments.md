@@ -4,9 +4,9 @@ title: 区段功能板指南
 description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
+source-git-commit: e59ba2e83808b460016805997580dc16c4cd369e
 workflow-type: tm+mt
-source-wordcount: '1598'
+source-wordcount: '1550'
 ht-degree: 0%
 
 ---
@@ -82,7 +82,6 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >id="platform_dashboards_segments_audiencesize"
 >title="受众规模"
 >abstract="此小组件显示选定区段内合并的用户档案总数。 此数字取决于应用于数据的合并策略，并且在最新快照时是正确的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#audience-size" text="从文档了解更多信息"
 
 的 **[!UICONTROL 受众大小]** 小组件显示拍摄快照时选定区段内合并的配置文件总数。 此数字是将区段合并策略应用于配置文件数据的结果，以便将配置文件片段合并在一起，为区段中的每个人形成一个配置文件。
 
@@ -96,7 +95,6 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >id="platform_dashboards_segments_audiencesizetrend"
 >title="受众大小趋势"
 >abstract="此小组件提供有关满足以下条件的用户档案总数的信息： **any** 区段定义，在每日快照期间捕获，最近30天、90天或12个月。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#audience-size-trend" text="从文档了解更多信息"
 
 的 **[!UICONTROL 受众大小趋势]** 小组件为符合 **any** 区段定义。 可以在30天、90天和12个月期间显示受众规模趋势。 时间段是从小组件的下拉菜单中选择的。 受众大小反映在y轴上，时间反映在x轴上。
 
@@ -151,7 +149,6 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >id="platform_dashboards_segments_identityoverlap"
 >title="身份重叠"
 >abstract="此小组件显示区段中包含两个所选身份的配置文件重叠。 圆圈显示每个身份的相对大小。 包含两个命名空间的配置文件数量由圈子之间的重叠表示。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#identity-overlap" text="从文档了解更多信息"
 
 的 **[!UICONTROL 身份重叠]** 小组件会显示维恩图或设置图，以显示包含多个身份的区段中配置文件的重叠。
 
@@ -169,7 +166,6 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >id="platform_dashboards_segments_profilesbyidentity"
 >title="按身份划分的用户档案"
 >abstract="此小组件显示选定区段中每个合并配置文件的身份划分。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dashboards/guides/segments.html#profiles-by-identity" text="从文档了解更多信息"
 
 的 **[!UICONTROL 按身份划分的用户档案]** 小组件显示选定区段中每个合并配置文件的身份划分。 按身份划分的用户档案总数可能大于区段中的用户档案总数，因为一个用户档案可能具有多个与其关联的身份。 换言之，将每个身份显示的值相加，可能总计会大于区段中的受众总大小，因为如果客户在多个渠道上与您的品牌进行交互，则多个身份可能会与该个别客户关联。
 
