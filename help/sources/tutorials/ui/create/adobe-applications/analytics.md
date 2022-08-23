@@ -6,10 +6,10 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 2cb6803ecf56dd9a7d9614c72e3a1ff4e76ba966
+source-git-commit: 1d77ad44c7123f32301257c238299b7c16e2c92b
 workflow-type: tm+mt
-source-wordcount: '1700'
-ht-degree: 1%
+source-wordcount: '2182'
+ht-degree: 2%
 
 ---
 
@@ -151,6 +151,82 @@ ht-degree: 1%
 * [数据准备概述](../../../../../data-prep/home.md)
 * [数据准备映射函数](../../../../../data-prep/functions.md)
 * [添加计算字段](../../../../../data-prep/ui/mapping.md#calculated-fields)
+
+### 筛选 [!DNL Profile Service] （测试版）
+
+>[!IMPORTANT]
+>
+>支持过滤 [!DNL Analytics] 数据当前为测试版，并非所有用户都能使用。 文档和功能可能会发生变化。
+
+完成 [!DNL Analytics] 报表包数据时，您可以应用筛选规则和条件，以便有选择地将数据从摄取到 [!DNL Profile Service]. 仅对 [!DNL Analytics] 仅在输入之前过滤数据和数据 [!DNL Profile.] 所有数据都会被摄取到数据湖中。
+
+#### 行级过滤
+
+您可以过滤数据 [!DNL Profile] 在行级别和列级别摄取。 利用行级筛选，可定义标准，如字符串包含、等于、开始或结束。 您还可以使用行级过滤来连接使用 `AND` 以及 `OR`，使用 `NOT`.
+
+过滤 [!DNL Analytics] 在行级别，选择 **[!UICONTROL 行过滤器]**.
+
+![row-filter](../../../../images/tutorials/create/analytics/row-filter.png)
+
+使用左边栏可在架构层次结构中导航，并选择您选择的架构属性，以进一步深入查看特定架构。
+
+![左边栏](../../../../images/tutorials/create/analytics/left-rail.png)
+
+确定要配置的属性后，选择该属性，然后将其从左边栏拖至筛选面板。
+
+![过滤面板](../../../../images/tutorials/create/analytics/filtering-panel.png)
+
+要配置不同的条件，请选择 **[!UICONTROL 等于]** 然后，从显示的下拉窗口中选择一个条件。
+
+可配置条件列表包括：
+
+* [!UICONTROL 等于]
+* [!UICONTROL 不等于]
+* [!UICONTROL 始于]
+* [!UICONTROL 止于]
+* [!UICONTROL 结尾不为]
+* [!UICONTROL 包含]
+* [!UICONTROL 不包含]
+* [!UICONTROL 存在]
+* [!UICONTROL 不存在]
+
+![条件](../../../../images/tutorials/create/analytics/conditions.png)
+
+接下来，根据您选择的属性输入要包含的值。 在以下示例中， [!DNL Apple] 和 [!DNL Google] 的 **[!UICONTROL 制造商]** 属性。
+
+![include-manufacturer](../../../../images/tutorials/create/analytics/include-manufacturer.png)
+
+要进一步指定筛选条件，请从架构中添加另一个属性，然后根据该属性添加值。 在以下示例中， **[!UICONTROL 模型]** 属性，并添加模型，例如 [!DNL iPhone 13] 和 [!DNL Google Pixel 6] 会过滤以获取。
+
+![包含模型](../../../../images/tutorials/create/analytics/include-model.png)
+
+要添加新容器，请选择省略号(`...`)，然后选择 **[!UICONTROL 添加容器]**.
+
+![添加容器](../../../../images/tutorials/create/analytics/add-container.png)
+
+添加新容器后，选择 **[!UICONTROL 包括]** 然后选择 **[!UICONTROL 排除]** 从显示的下拉窗口中。
+
+![排除](../../../../images/tutorials/create/analytics/exclude.png)
+
+接下来，通过拖动架构属性并添加要从筛选中排除的相应值，完成同一过程。 在以下示例中， [!DNL iPhone 12], [!DNL iPhone 12 mini]和 [!DNL Google Pixel 5] 全部从排除项中过滤 **[!UICONTROL 模型]** 属性中，横向将从 **[!UICONTROL 屏幕方向]**、和型号 [!DNL A1633] 从 **[!UICONTROL 型号]**.
+
+完成后，选择 **[!UICONTROL 下一个]**.
+
+![exclude-examples](../../../../images/tutorials/create/analytics/exclude-examples.png)
+
+#### 列级过滤
+
+选择 **[!UICONTROL 列过滤器]** 从标题中应用列级过滤。
+
+![列过滤器](../../../../images/tutorials/create/analytics/column-filter.png)
+
+该页面将更新为交互式架构树，在列级别显示您的架构属性。 从此处，您可以选择要从中排除的数据列 [!DNL Profile] 摄取。 或者，您也可以展开列并选择要排除的特定属性。
+
+默认情况下，所有 [!DNL Analytics] 转到 [!DNL Profile] 并且此过程允许将XDM数据的分支从 [!DNL Profile] 摄取。
+
+完成后，选择 **[!UICONTROL 下一个]**.
+
+![列选定](../../../../images/tutorials/create/analytics/columns-selected.png)
 
 ### 提供数据流详细信息
 
