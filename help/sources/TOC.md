@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: 6f7611b120046fffc1b7c15bd657d699f4b4a588
+source-git-commit: 6ae0560607c1e5f80ddfe752e59850f438794351
 workflow-type: tm+mt
-source-wordcount: '795'
+source-wordcount: '802'
 ht-degree: 13%
 
 ---
@@ -82,6 +82,7 @@ ht-degree: 13%
       - [凤凰连接器](connectors/databases/phoenix.md)
       - [PostgreSQL连接器](connectors/databases/postgres.md)
       - [Snowflake连接器](connectors/databases/snowflake.md)
+      - [TeradataVantage连接器](connectors/databases/teradata-vantage.md)
    - 电子商务 {#ecommerce}
       - [Shopify连接器](connectors/ecommerce/shopify.md)
    - 本地系统 {#local-system}
@@ -148,6 +149,7 @@ ht-degree: 13%
          - [凤凰城](tutorials/api/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/api/create/databases/postgres.md)
          - [Snowflake](tutorials/api/create/databases/snowflake.md)
+         - [Teradata](tutorials/api/create/databases/teradata-vantage.md)
          - [SQL Server](tutorials/api/create/databases/sql-server.md)
       - 电子商务 {#ecommerce}
          - [Shopify](tutorials/api/create/ecommerce/shopify.md)
@@ -250,6 +252,7 @@ ht-degree: 13%
          - [凤凰城](tutorials/ui/create/databases/phoenix.md)
          - [PostgreSQL](tutorials/ui/create/databases/postgres.md)
          - [Snowflake](tutorials/ui/create/databases/snowflake.md)
+         - [Teradata](tutorials/ui/create/databases/teradata-vantage.md)
       - 电子商务 {#ecommerce}
          - [Shopify](tutorials/ui/create/ecommerce/shopify.md)
       - 本地系统 {#local-system}
