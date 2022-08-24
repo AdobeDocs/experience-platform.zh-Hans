@@ -1,29 +1,23 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
-title: 使用流量服务API（测试版）更新流量规范
+title: 使用流量服务API更新流量规范
 topic-legacy: developer guide
-description: 以下文档提供了有关如何使用源SDK的流程服务API检索和更新流程规范的步骤。
-hide: true
-hidefromtoc: true
+description: 以下文档提供了有关如何使用自助源（批处理SDK）的流程服务API检索和更新流程规范的步骤。
 exl-id: 67a0cd3e-ac18-43a4-aa22-8f6376d5cc3f
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '432'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
-# 使用更新流程规范 [!DNL Flow Service] API（测试版）
-
->[!IMPORTANT]
->
->Sources SDK当前处于测试阶段，您的组织可能尚未访问该SDK。 本文档中描述的功能可能会发生更改。
+# 使用更新流程规范 [!DNL Flow Service] API
 
 生成新的连接规范ID后，必须将此ID添加到流规范中，才能创建数据流。
 
 流量规范包含定义流量的信息，包括它支持的源连接ID和目标连接ID、需要应用于数据的转换规范以及生成流量所需的计划参数。 您可以使用 `/flowSpecs` 端点。
 
-以下文档提供了有关如何使用 [!DNL Flow Service] 用于源SDK的API。
+以下文档提供了有关如何使用 [!DNL Flow Service] 自助源API（批量SDK）。
 
 ## 快速入门
 

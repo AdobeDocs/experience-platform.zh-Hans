@@ -1,28 +1,23 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
-title: 源SDK中的配置选项
+title: 自助源（批量SDK）中的配置选项
 topic-legacy: overview
-description: 本文档概述了使用源SDK需要准备的配置。
-hide: true
-hidefromtoc: true
-source-git-commit: d4b5b54be9fa2b430a3b45eded94a523b6bd4ef8
+description: 本文档概述了为使用自助源（批处理SDK）而需要准备的配置。
+exl-id: a41b3b80-599a-47ed-a391-419721be5aa2
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '316'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
-# 源SDK中的配置选项
+# 自助源（批量SDK）中的配置选项
 
->[!IMPORTANT]
->
->Sources SDK当前处于测试阶段，您的组织可能尚未访问该SDK。 本文档中描述的功能可能会发生更改。
-
-本文档概述了使用源SDK需要准备的配置。
+本文档概述了为使用自助源（批处理SDK）而需要准备的配置。
 
 ## 连接规范
 
-连接规范返回源的连接器属性。 它们包括与创建基连接和源连接相关的验证规范，以及分配给特定源的固定连接规范ID。 连接规范与租户和IMS组织无关。 典型的连接规范包含有关给定源的基本信息以及三个不同的部分： `authSpec`, `sourceSpec`和 `exploreSpec`.
+连接规范返回源的连接器属性。 它们包括与创建基连接和源连接相关的验证规范，以及分配给特定源的固定连接规范ID。 连接规范与租户和组织无关。 典型的连接规范包含有关给定源的基本信息以及三个不同的部分： `authSpec`, `sourceSpec`和 `exploreSpec`.
 
 | 规格 | 描述 |
 | --- | --- |
@@ -41,5 +36,3 @@ ht-degree: 1%
 * [配置身份验证规范](./authspec.md)
 * [配置源规范](./sourcespec.md)
 * [配置浏览规范](./explorespec.md)
-
-

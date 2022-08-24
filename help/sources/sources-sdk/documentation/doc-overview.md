@@ -4,21 +4,15 @@ solution: Experience Platform
 title: 记录源
 topic-legacy: overview
 description: 在Adobe Experience Platform中实时创建新源的最后一步是记录新源。
-hide: true
-hidefromtoc: true
 exl-id: 80daadb1-127f-4f42-8bc9-fb89a7898462
-source-git-commit: e732a43f7ac578d7fde41c48d2c819899fabb0be
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
 # 记录源
-
->[!IMPORTANT]
->
->Sources SDK当前处于测试阶段，您的组织可能尚未访问该SDK。 本文档中描述的功能可能会发生更改。
 
 在Adobe Experience Platform中实时设置新源的最后一步是记录新源。
 

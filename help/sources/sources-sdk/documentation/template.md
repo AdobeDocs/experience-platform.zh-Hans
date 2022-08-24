@@ -4,13 +4,11 @@ solution: Experience Platform
 title: 文档自助模板
 topic-legacy: tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到YOURSOURCE。
-hide: true
-hidefromtoc: true
 exl-id: c6927a71-3721-461e-9752-8ebc0b7b1cca
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '2296'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 

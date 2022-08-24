@@ -4,13 +4,11 @@ solution: Experience Platform
 title: 使用GitHub Web界面创建源文档页面
 topic-legacy: tutorial
 description: 本文档提供了有关如何使用GitHub Web界面创作文档和提交拉取请求(PR)的步骤。
-hide: true
-hidefromtoc: true
 exl-id: 84b4219c-b3b2-4d0a-9a65-f2d5cd989f95
-source-git-commit: 39accd28edc388c6444910f9a2ea6d2f01acfdaf
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '624'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -36,19 +34,19 @@ ht-degree: 2%
 
 ![创建分支](../assets/create-branch.png)
 
-在分支存储库的GitHub文件夹结构中，导航到 [`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/api/create) 然后，从列表中选择源的相应类别。 例如，如果您正在为新的云存储源创建文档，请选择 **云存储**.
+在分支存储库的GitHub文件夹结构中，导航到 [`experience-platform.en/help/sources/tutorials/api/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/api/create) 然后，从列表中选择源的相应类别。 例如，如果您正在为新CRM源创建文档，请选择 **crm**.
 
 >[!TIP]
 >
 >如果您要为UI创建文档，请导航到 [`experience-platform.en/help/sources/tutorials/ui/create/`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/tutorials/ui/create) 并为源选择相应的类别。 要添加图像，请导航到 [`experience-platform.en/help/sources/images/tutorials/create/sdk`](https://github.com/AdobeDocs/experience-platform.en/tree/main/help/sources/images/tutorials/create) 然后，将屏幕截图添加到 `sdk` 文件夹。
 
-![云存储](../assets/cloud-storage.png)
+![crm](../assets/crm.png)
 
-此时会显示现有云存储源的文件夹。 要为新源添加文档，请选择 **添加文件** 然后选择 **创建新文件** 下拉菜单中。
+此时会显示现有CRM源的文件夹。 要为新源添加文档，请选择 **添加文件** 然后选择 **创建新文件** 下拉菜单中。
 
 ![create-new-file](../assets/create-new-file.png)
 
-命名源文件 `YOURSOURCE.md` 其中，YOURSOURCE是Platform中源的名称。 例如，如果您的公司为 [!DNL Mailchimp]，则文件名应 `mailchimp.md`.
+命名源文件 `YOURSOURCE.md` 其中，YOURSOURCE是Platform中源的名称。 例如，如果您的公司是ACME CRM，则您的文件名应为 `acme-crm.md`.
 
 ![git-interface](../assets/git-interface.png)
 

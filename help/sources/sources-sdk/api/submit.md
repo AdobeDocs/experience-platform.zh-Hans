@@ -1,24 +1,19 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
-title: 提交源（测试版）
+title: 提交源
 topic-legacy: overview
-description: 以下文档提供了有关如何使用流量服务API测试和验证新源，以及如何通过源SDK集成新源的步骤。
-hide: true
-hidefromtoc: true
-source-git-commit: 274784a5b82d12497f7437fdeaf665dd64224c2d
+description: 以下文档提供了有关如何使用流服务API测试和验证新源，以及如何通过自助源（批处理SDK）集成新源的步骤。
+exl-id: 9e945ba1-51b6-40a9-b92f-e0a52b3f92fa
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
-# 提交源（测试版）
+# 提交源
 
->[!IMPORTANT]
->
->Sources SDK当前处于测试阶段，您的组织可能尚未访问该SDK。 本文档中描述的功能可能会发生更改。
-
-使用将新源集成到Adobe Experience Platform的最后一步 [!DNL Sources SDK] 是测试源以进行验证。 成功后，您可以联系Adobe代表以提交新来源。
+使用自助源（批处理SDK）将新源集成到Adobe Experience Platform的最后一步是测试源以进行验证。 成功后，您可以联系Adobe代表以提交新来源。
 
 以下文档提供了有关如何使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 
@@ -27,13 +22,13 @@ ht-degree: 0%
 * 有关如何成功调用Platform API的信息，请参阅 [Platform API快速入门](../../../landing/api-guide.md).
 * 有关如何为Platform API生成凭据的信息，请参阅 [验证和访问Experience PlatformAPI](../../../landing/api-authentication.md).
 * 有关如何设置 [!DNL Postman] 对于Platform API，请参阅 [设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md).
-* 要帮助您的测试和调试过程，请下载 [[!DNL Sources SDK] 此处的验证收集和环境](../assets/sdk-verification.zip) 并按照下面列出的步骤操作。
+* 要帮助您的测试和调试过程，请下载 [此处的自助源验证收集和环境](../assets/sdk-verification.zip) 并按照下面列出的步骤操作。
 
 ## 测试源
 
-要测试源，必须运行 [[!DNL Sources SDK] 验证收集和环境](../assets/sdk-verification.zip) on [!DNL Postman] 同时提供与您的源相关的适当环境变量。
+要测试源，必须运行 [自助源验证收集和环境](../assets/sdk-verification.zip) on [!DNL Postman] 同时提供与您的源相关的适当环境变量。
 
-要开始测试，您必须先在 [!DNL Postman]. 接下来，指定要测试的连接规范ID。 此ID应与您使用 [!DNL Sources SDK].
+要开始测试，您必须先在 [!DNL Postman]. 接下来，指定要测试的连接规范ID。
 
 ### 在“管理工具”中指定分类的 `authSpecName`
 

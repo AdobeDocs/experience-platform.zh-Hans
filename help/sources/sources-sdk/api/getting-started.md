@@ -1,30 +1,24 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
 solution: Experience Platform
-title: 源SDK（测试版）快速入门
+title: 自助源入门（批量SDK）
 topic-legacy: developer guide
-description: 本文档简要介绍在尝试使用源SDK创建新源之前您需要了解的先决条件信息。
-hide: true
-hidefromtoc: true
+description: 本文档简要介绍在尝试使用自助源（批处理SDK）创建新源之前您需要了解的先决条件信息。
 exl-id: ba131442-ff20-4854-87fe-918aa313382d
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '400'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
-# 源SDK（测试版）快速入门
+# 自助源入门（批量SDK）
 
->[!IMPORTANT]
->
->Sources SDK当前处于测试阶段，您的组织可能尚未访问该SDK。 本文档中描述的功能可能会发生更改。
-
-源SDK允许您集成自己的基于REST的源，以将数据导入Adobe Experience Platform。 本文档简要介绍在尝试调用 [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
+自助源（批量SDK）允许您集成自己的基于REST的源，以将批量数据导入Adobe Experience Platform。 本文档简要介绍在尝试调用 [[!DNL Flow Service] API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/flow-service.yaml).
 
 ## 先决条件
 
-要使用源SDK，您必须确保有权访问已使用Adobe Experience Platform源进行设置的IMS组织沙盒。
+要使用自助源（批量SDK），您必须确保有权访问已使用Adobe Experience Platform源进行设置的IMS组织沙盒。
 
 本指南还要求您对Adobe Experience Platform的以下组件有一定的了解：
 
@@ -33,7 +27,7 @@ ht-degree: 0%
 
 ## 读取示例API调用
 
-源SDK和 [!DNL Flow Service] API文档提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) (位于Experience Platform疑难解答指南中)。
+自助源（批处理SDK）和 [!DNL Flow Service] API文档提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../../landing/troubleshooting.md#how-do-i-format-an-api-request) (位于Experience Platform疑难解答指南中)。
 
 ## 收集所需标题的值
 
@@ -57,4 +51,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-要开始使用源SDK创建新源，请参阅 [创建新源](./create.md).
+要开始使用自助源（批处理SDK）创建新源，请参阅 [创建新源](./create.md).

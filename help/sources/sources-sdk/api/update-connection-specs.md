@@ -1,19 +1,17 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
-title: 使用流量服务API（测试版）更新连接规范
+title: 使用流服务API更新连接规范
 topic-legacy: developer guide
 description: 可以通过PUT操作更新连接规范的属性。
-hide: true
-hidefromtoc: true
 exl-id: fcb00521-8fc2-491e-aa35-6e0f9b730dd4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '120'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
-# 使用流量服务API（测试版）更新连接规范
+# 使用流服务API更新连接规范
 
 可以通过PUT操作更新连接规范的属性。 通过PUT请求更新连接规范时，主体必须包括在POST请求中创建新连接规范时需要的所有字段。
 

@@ -1,19 +1,17 @@
 ---
 keywords: Experience Platform；主页；热门主题；源；连接器；源连接器；源SDK;SDK
-title: 配置源SDK的浏览规范
+title: 配置自助源（批处理SDK）的浏览规范
 topic-legacy: overview
-description: 本文档概述了使用源SDK需要准备的配置。
-hide: true
-hidefromtoc: true
-source-git-commit: ae1a1139c24fd80e9f689e4c637897c905004c5f
+description: 本文档概述了为使用自助源（批处理SDK）而需要准备的配置。
+exl-id: 423a7e56-9dd1-4071-bd26-ee4f9f206122
+source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
 workflow-type: tm+mt
-source-wordcount: '248'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
-
-# 配置源SDK的浏览规范
+# 配置自助源（批处理SDK）的浏览规范
 
 “浏览”规范定义了浏览和检查源中包含的对象所需的参数。 浏览规范还定义了在探索和检查对象时返回的响应格式。
 
@@ -87,4 +85,4 @@ ht-degree: 2%
 
 ## 后续步骤
 
-填充了浏览规范后，您可以使用 [!DNL Flow Service] API。 请参阅 [[!DNL Sources SDK] API指南](../api/api-overview.md) 以了解更多信息。
+填充了浏览规范后，您可以使用 [!DNL Flow Service] API。 请参阅 [自助源（批量SDK）API指南](../api/api-overview.md) 以了解更多信息。
