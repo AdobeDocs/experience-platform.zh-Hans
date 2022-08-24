@@ -1,9 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2022年8月
 description: 2022年8月版Adobe Experience Platform发行说明。
-source-git-commit: 24f16e315607a1076ff2efef129d9e97040a9500
+exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
+source-git-commit: 30aa5db39d63c238a3f70e48f6a88e8885b1f3ee
 workflow-type: tm+mt
-source-wordcount: '1811'
+source-wordcount: '1963'
 ht-degree: 7%
 
 ---
@@ -14,10 +15,10 @@ ht-degree: 7%
 
 Adobe Experience Platform 现有功能的更新包括：
 
-
 - [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
 - [[!DNL Dashboards]](#dashboards)
-- [数据准备](#data-prep)
+- [[!DNL Data Prep]](#data-prep)
+- [[!DNL Destinations]](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [实时客户资料](#profile)
 - [分段服务](#segmentation)
@@ -35,7 +36,7 @@ Attribution AI 用于将点数归因于导致转化事件的接触点。营销�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 隐私支持 | <li> Attribution AI现在支持定义用户角色和访问策略以管理 [权限](../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。 </li><li>活动发生时，会自动记录审核日志资源。</li> <li> 到达 [基于属性的访问控制](../../access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问，这些属性可以是添加到对象（如标签）的元数据。管理员还可以定义用户角色，这些角色只能访问与这些字段对应的特定字段和数据。</li> <li>[数据卫生](../../help/hygiene/home.md) Attribution AI中的功能允许您仅使用更新的数据来进一步培训和评分。 同样，当您请求删除数据时，Attribution AI也会避免使用删除的数据。</li><li>Attribution AI利用平台数据集。 为帮助促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来满足客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。 所有数据在传输过程中和静态时都经过加密。</li> |
+| 隐私支持 | <li>Attribution AI现在支持定义用户角色和访问策略以管理 [权限](../../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。</li><li>活动发生时，会自动记录审核日志资源。</li><li>到达 [基于属性的访问控制](../../../help/access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问，这些属性可以是添加到对象（如标签）的元数据。管理员还可以定义用户角色，这些角色只能访问与这些字段对应的特定字段和数据。</li><li>[数据卫生](../../../help/hygiene/home.md) Attribution AI中的功能允许您仅使用更新的数据来进一步培训和评分。 同样，当您请求删除数据时，Attribution AI也会避免使用删除的数据。</li><li>Attribution AI利用平台数据集。 为帮助促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来满足客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。 所有数据在传输过程中和静态时都经过加密。</li> |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -51,7 +52,7 @@ Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 隐私支持 | <li> Customer AI现在支持定义用户角色和访问策略以进行管理 [权限](../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。 </li><li>活动发生时，会自动记录审核日志资源。</li> <li> 到达 [基于属性的访问控制](../../access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问。 这些属性可以是添加到对象的元数据，如标签。 管理员还可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。</li> <li>[数据卫生](../../help/hygiene/home.md) Customer AI中的功能允许您仅使用更新的数据进行进一步的培训和评分。 同样，当您请求删除数据时， Customer AI也会避免使用删除的数据。</li><li>Customer AI利用Platform数据集。 为帮助促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来满足客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。 所有数据在传输过程中和静态时都经过加密。</li> |
+| 隐私支持 | <li>Customer AI现在支持定义用户角色和访问策略以进行管理 [权限](../../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。</li><li>活动发生时，会自动记录审核日志资源。</li><li> 到达 [基于属性的访问控制](../../access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问。 这些属性可以是添加到对象的元数据，如标签。 管理员还可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。</li><li>[数据卫生](../../../help/hygiene/home.md) Customer AI中的功能允许您仅使用更新的数据进行进一步的培训和评分。 同样，当您请求删除数据时， Customer AI也会避免使用删除的数据。</li><li>Customer AI利用Platform数据集。 为帮助促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来满足客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。 所有数据在传输过程中和静态时都经过加密。</li> |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -84,6 +85,32 @@ Adobe Experience Platform提供多个 [!DNL dashboards] 通过查看有关贵组
 {style=&quot;table-layout:auto&quot;}
 
 详细了解 [!DNL Data Prep]，请参阅 [[!DNL Data Prep] 概述](../../data-prep/home.md).
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+<!--
+
+**New or updated features**
+
+| Feature | Description |
+| ----------- | ----------- |
+|  ||
+
+{style="table-layout:auto"}
+
+-->
+
+**新目标**
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [[!DNL Outreach]](../..//destinations/catalog/crm/outreach.md) | [[!DNL Outreach]](https://www.outreach.io/) 是一个销售执行平台，具有世界上B2B买方 — 卖方交互数据最多，并且对专有AI技术进行了大量投资，以便将销售数据转换为智能。 [!DNL Outreach] 帮助组织自动化销售参与并根据收入情报采取行动，以提高其效率、可预测性和增长。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 
@@ -123,6 +150,7 @@ Adobe Experience Platform使您能够为客户在何处或何时与您的品牌�
 
 | 功能 | 描述 |
 | ------- | ----------- |
+| 合并策略硬限制 | 平台现在将强制实施 **五** 每个沙盒合并策略。 如果您的沙盒当前有五个以上的合并策略，您将 **not** 能够创建新的合并策略，直到沙盒具有的合并策略少于五个为止。 |
 | 孤立的配置文件边缘属性清理 | 对于所有组织，用户档案服务现在每天都会删除用户活动区域的剩余边缘属性，以便在系统中更准确地显示用户档案。 此清理在删除给定配置文件的所有配置文件片段之后进行，并且应会影响从其中合并的数据集中合并的配置文件 `com_adobe_aep_profile_region_dataset` 标记为 `true`. 这可能会在许可证使用情况功能板的“可寻址受众”量度中显示一个下降，并且可能在“配置文件”功能板的“配置文件计数”量度中显示一个下降，因为这些量度包含此版本之前剩余的边缘属性片段。 |
 
 {style=&quot;table-layout:auto&quot;}

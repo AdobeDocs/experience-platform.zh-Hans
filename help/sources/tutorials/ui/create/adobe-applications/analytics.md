@@ -8,8 +8,8 @@ description: 了解如何在UI中创建Adobe Analytics源连接，以将消费�
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
 source-git-commit: ae30ac2fe1c6366c987748e198b9dc3530bc512a
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '2211'
+ht-degree: 2%
 
 ---
 
