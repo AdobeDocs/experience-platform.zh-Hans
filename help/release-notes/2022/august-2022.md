@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年8月
 description: 2022年8月版Adobe Experience Platform发行说明。
-source-git-commit: 5967dee9c8b1c05ebd103998021e02a47ac3982c
+source-git-commit: c3452dda554b3c7750ad1166cef598d51d739e02
 workflow-type: tm+mt
-source-wordcount: '1246'
+source-wordcount: '1348'
 ht-degree: 7%
 
 ---
@@ -14,11 +14,24 @@ ht-degree: 7%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [[!DNL Dashboards]](#dashboards)
 - [数据准备](#data-prep)
 - [体验数据模型(XDM)](#xdm)
 - [实时客户资料](#profile)
 - [分段服务](#segmentation)
 - [源](#sources)
+
+## [!DNL Dashboards] {#dashboards}
+
+Adobe Experience Platform提供多个 [!DNL dashboards] 通过查看有关贵组织数据的重要分析（在每日快照中捕获）。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 计划激活小组件 | 的 [!UICONTROL 计划激活] 小组件提供了最近激活的目标的表格化视图。 对于每个区段，它包括名称、目标平台以及激活开始和结束日期。 利用此小组件，可快速了解激活受众的位置和时间，并使重复或不必要的激活更加透明。 此累积信息还会突出显示未激活的位置。 |
+
+有关 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
 
 ## [!DNL Data Prep] {#data-prep}
 
