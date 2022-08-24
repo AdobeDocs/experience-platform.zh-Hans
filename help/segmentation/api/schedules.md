@@ -5,9 +5,9 @@ title: 计划API端点
 topic-legacy: developer guide
 description: 计划是一种工具，可用于每天自动运行一次批量分段作业。
 exl-id: 92477add-2e7d-4d7b-bd81-47d340998ff1
-source-git-commit: 604d1d02156b441ab3978ff976e02191bbdc311f
+source-git-commit: 84026b447eea00955bc9e6482b81ae1aad3c312e
 workflow-type: tm+mt
-source-wordcount: '2013'
+source-wordcount: '2011'
 ht-degree: 3%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 3%
 
 ## 检索计划列表 {#retrieve-list}
 
-您可以通过向 `/config/schedules` 端点。
+通过向 `/config/schedules` 端点。
 
 **API格式**
 
@@ -41,7 +41,7 @@ GET /config/schedules?limit={LIMIT}
 
 **请求**
 
-以下请求将检索在您的IMS组织内发布的最近十个计划。
+以下请求将检索在您的组织内发布的最近十个计划。
 
 ```shell
 curl -X GET https://platform.adobe.io/data/core/ups/config/schedules?limit=10 \
