@@ -2,9 +2,9 @@
 description: Adobe Experience Platform Destination SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式将受众和配置文件数据交付到端点。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: 179d5697e1b8d14f613a512f51bcea3575b7a832
+source-git-commit: c207b6700a31c59b00af6d55264c7a345219d999
 workflow-type: tm+mt
-source-wordcount: '740'
+source-wordcount: '768'
 ht-degree: 3%
 
 ---
@@ -53,18 +53,17 @@ This documentation set provides you with all the necessary information to add yo
 
 请阅读 [集成先决条件](./integration-prerequisites.md) 文章。
 
-
 ## 获取Destination SDK {#get-access}
 
-Destination SDK访问权限因您作为合作伙伴或Experience Platform客户的状态而异。 有关详细信息，请参阅下表。
+Destination SDK访问权限因您作为Real-Time CDP客户的合作伙伴或Experience Platform的状态而异。 有关详细信息，请参阅下表。
 
 
 | 合作伙伴或客户的类型 | 如何访问Destination SDK |
 ---------|----------|
 | 独立软件供应商(ISV) | 加入 [Adobe交换计划](https://partners.adobe.com/exchangeprogram/experiencecloud.html) 和请求，以便配置Experience Platform沙盒以访问Destination SDK。 |
 | 系统集成商(SI) | 您需要在 [Adobe解决方案合作伙伴计划](https://solutionpartners.adobe.com/home.html)，您将获得一个Experience Platform沙盒，并有权访问Destination SDK。 |
-| Experience Platform客户 [激活包](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) | 默认情况下，您可以访问Experience Platform沙箱和Destination SDK。 |
-| Experience Platform客户 [Real-time CDP Ultimate软件包](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | 您无权访问Destination SDK，但有权访问由其他使用Destination SDK的公司配置并在Experience Platform组织中发布的所有产品化目标。 |
+| Experience Platform客户 [激活包](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) | 默认情况下，您可以访问Experience Platform沙箱和Destination SDK。 <br> 您还可以访问由其他公司使用Destination SDK配置并跨Experience Platform组织发布的所有产品化目标。 |
+| Experience Platform客户 [Real-Time CDP Ultimate包](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | 默认情况下，您可以访问Experience Platform沙箱和Destination SDK。 <br> 您还可以访问由其他公司使用Destination SDK配置并跨Experience Platform组织发布的所有产品化目标。 |
 
 {style=&quot;table-layout:auto&quot;}
 
