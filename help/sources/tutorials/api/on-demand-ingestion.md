@@ -2,7 +2,10 @@
 keywords: Experience Platform；主页；热门主题；流程服务；
 title: （测试版）使用流量服务API为按需摄取创建流量运行
 description: 本教程介绍了使用流量服务API创建针对按需摄取的流量运行的步骤
-source-git-commit: ab496c7a32c20487f47850c2c571976dff57704f
+hide: true
+hidefromtoc: true
+exl-id: a7b20cd1-bb52-4b0a-aad0-796929555e4a
+source-git-commit: 24f16e315607a1076ff2efef129d9e97040a9500
 workflow-type: tm+mt
 source-wordcount: '1147'
 ht-degree: 1%

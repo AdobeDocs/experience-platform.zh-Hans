@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年8月
 description: 2022年8月版Adobe Experience Platform发行说明。
-source-git-commit: 208dbba4c2ed4abb51b90073eeee0663e2b2f35f
+source-git-commit: 24f16e315607a1076ff2efef129d9e97040a9500
 workflow-type: tm+mt
-source-wordcount: '1861'
+source-wordcount: '1811'
 ht-degree: 7%
 
 ---
@@ -155,7 +155,6 @@ Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为
 | 全面提供 [!DNL Google BigQuery] 来源 | 使用 [!DNL Google BigQuery] 从 [!DNL Google BigQuery] data warehouse到Experience Platform。 有关更多信息，请阅读 [[!DNL Google BigQuery] 来源](../../sources/connectors/databases/bigquery.md). |
 | [!DNL Teradata Vantage] 来源（测试版） | 使用 [!DNL Teradata Vantage] 来源将数据从混合多云环境中摄取到Experience Platform。 有关更多信息，请阅读 [[!DNL Teradata Vantage] 来源](../../sources/connectors/databases/teradata-vantage.md). |
 | 跨区域支持Adobe Analytics源 | 您现在可以接收来自任何地区（美国、英国或新加坡）的报告包。 必须将报表包映射到与在其中创建源连接的Experience Platform沙盒实例相同的组织。 有关更多信息，请阅读 [在UI中创建Adobe Analytics源连接](../../sources/tutorials/ui/create/adobe-applications/analytics.md). |
-| 对按需摄取的API支持 | 使用按需摄取，通过 [!DNL Flow Service] API。 创建的流量运行必须设置为一次性摄取。 有关更多信息，请阅读 [使用API为按需摄取创建流程运行](../../sources/tutorials/api/on-demand-ingestion.md) 以了解更多信息。 |
 
 {style=&quot;table-layout:auto&quot;}
 
