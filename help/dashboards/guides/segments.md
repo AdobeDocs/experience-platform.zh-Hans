@@ -4,9 +4,9 @@ title: 区段功能板指南
 description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: e59ba2e83808b460016805997580dc16c4cd369e
+source-git-commit: e18d37ba02d6edee77c91b719a0a2336e1316b71
 workflow-type: tm+mt
-source-wordcount: '1550'
+source-wordcount: '1665'
 ht-degree: 0%
 
 ---
@@ -75,6 +75,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 受众重叠]](#audience-overlap)
 * [[!UICONTROL 身份重叠]](#identity-overlap)
 * [[!UICONTROL 按身份划分的用户档案]](#profiles-by-identity)
+* [[!UICONTROL 计划激活]](#scheduled-activations)
 
 ### [!UICONTROL 受众规模] {#audience-size}
 
@@ -176,6 +177,14 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 机器学习模型通过分析数据的整体分布和关键维度自动生成数据分析。
 
 要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
+
+### 计划激活 {#scheduled-activations}
+
+的 [!UICONTROL 计划激活] 小组件提供了最近激活的目标的表格化视图。 该表包括目标平台、到此目标的激活流程名称以及选定区段的激活开始和结束日期。 如果未为激活提供结束日期，则会显示为 [!UICONTROL 持续存在]. 从页面顶部的下拉菜单中选择了要分析的区段。
+
+利用小组件，可快速了解受众激活的位置和时间，并使重复或不必要的激活更加透明。 此累积信息还会突出显示未激活的位置。
+
+![计划激活小组件。](../images/segments/scheduled-activations.png)
 
 ## 后续步骤
 
