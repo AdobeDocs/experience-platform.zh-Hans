@@ -2,13 +2,13 @@
 keywords: 电子邮件；电子邮件；电子邮件；电子邮件目标；Salesforce;API Salesforce Marketing Cloud目标
 title: (API)SalesforceMarketing Cloud连接
 description: SalesforceMarketing Cloud（以前称为ExactTarget）目标允许您导出帐户数据，并在SalesforceMarketing Cloud中激活它以满足您的业务需求。
-source-git-commit: ce7b28ce31c652965a6eaad81348e330bd38e9ac
+exl-id: 0cf068e6-8a0a-4292-a7ec-c40508846e27
+source-git-commit: 2dda77c3d9a02b53a02128e835abf77ab97ad033
 workflow-type: tm+mt
-source-wordcount: '1869'
+source-wordcount: '1906'
 ht-degree: 1%
 
 ---
-
 
 # [!DNL (API) Salesforce Marketing Cloud] 连接
 
@@ -48,7 +48,7 @@ SalesforceMarketing Cloud使用带有客户端凭据的OAuth 2作为验证机制
 
 #### 在Salesforce中创建自定义字段 {#prerequisites-custom-field}
 
-创建类型的自定义属性 `Text Area Long` 哪个Experience Platform将用于更新SalesforceMarketing Cloud中的区段状态。
+您必须创建类型的自定义属性 `Text Area Long`，该Experience Platform将用于更新SalesforceMarketing Cloud中的区段状态。 在将区段激活到目标的工作流中，通过 **[区段计划](#schedule-segment-export-example)** 步骤中，您将使用自定义属性作为激活的每个区段的映射ID。
 
 请参阅SalesforceMarketing Cloud文档，以 [创建自定义字段](https://help.salesforce.com/s/articleView?id=mc_cab_create_an_attribute.htm&amp;type=5&amp;language=en_US) 如果您需要其他指导，请执行以下操作。
 
@@ -72,6 +72,8 @@ SalesforceMarketing Cloud使用带有客户端凭据的OAuth 2作为验证机制
 | --- | --- | --- |
 | <ul><li>SalesforceMarketing Cloud前缀</li></ul> | 请参阅 [SalesforceMarketing Cloud域前缀](https://help.salesforce.com/s/articleView?id=sf.domain_name_setting_login_policy.htm&amp;type=5) 以获取其他指导。 | <ul><li>如果您的域如下所示，则需要突出显示的值。<br> <i>`mcq4jrssqdlyc4lph19nnqgzzs84`.login.exacttarget.com</i></li></ul> |
 | <ul><li>客户端ID</li><li>客户端密钥</li></ul> | 请参阅 [Salesforce文档](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/access-token-s2s.html) 如果您需要其他指导，请执行以下操作。 | <ul><li>r23kxxxxxxxxx0z05xxxxx</li><li>ipxxxxxxxxxxxxT4xxxxxxxxxxxx</li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 支持的身份 {#supported-identities}
 
@@ -140,7 +142,7 @@ SalesforceMarketing Cloud支持激活下表中描述的身份。 详细了解 [�
 
 ### 映射注意事项和示例 {#mapping-considerations-example}
 
-要将受众数据从Adobe Experience Platform正确发送到SalesforceMarketing Cloud目标，您需要完成字段映射步骤。 映射包括在Platform帐户中的体验数据模型(XDM)架构字段与目标目标中相应的对等字段之间创建一个链接。 要将XDM字段正确映射到SalesforceMarketing Cloud目标字段，请执行以下步骤：
+要将受众数据从Adobe Experience Platform正确发送到SalesforceMarketing Cloud目标，您需要完成字段映射步骤。 映射包括在Platform帐户中的体验数据模型(XDM)架构字段与目标目标中相应的对等字段之间创建一个链接。 要将XDM字段正确映射到SalesforceMarketing Cloud目标字段，请执行以下步骤。
 
 可以为 [Salesforce REST API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_composite_upsert_example.htm?q=contacts) 下面提供了。 目标使用 [Salesforce搜索属性集定义REST API](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/retrieveAttributeSetDefinitions.html) 用于检索在Salesforce中为您的联系人定义且特定于您帐户的属性。
 
@@ -148,10 +150,10 @@ SalesforceMarketing Cloud支持激活下表中描述的身份。 详细了解 [�
 > 
 > 尽管属性名称与Salesforce帐户的属性名称相同，但 `contactKey` 和 `personalEmail.address` 为必填项。
 
-1. 在映射步骤中，单击 **[!UICONTROL 添加新映射]**，则会在屏幕上看到一个新的映射行。
+1. 在映射步骤中，单击 **[!UICONTROL 添加新映射]**. 您现在可以在屏幕上看到新的映射行。
    ![添加新映射](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/add-new-mapping.png)
 
-1. 在“选择源”字段窗口中，选择源字段时选择 **[!UICONTROL 选择属性]** 类别，并添加所需的映射。
+1. 在“选择源”字段窗口中，选择源字段时，请选择 **[!UICONTROL 选择属性]** 类别，并添加所需的映射。
    ![源映射](../../assets/catalog/email-marketing/salesforce-marketing-cloud-exact-target/source-mapping.png)
 
 1. 在“选择目标”字段窗口中，选择目标字段，然后选择 **[!UICONTROL 选择身份命名空间]** 类别，并添加所需的映射。
@@ -172,7 +174,7 @@ SalesforceMarketing Cloud支持激活下表中描述的身份。 详细了解 [�
 
 ### 计划区段导出和示例 {#schedule-segment-export-example}
 
-执行 [计划区段导出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 步骤您必须在Salesforce中将Platform区段手动映射到自定义属性。
+执行 [计划区段导出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling) 步骤中，您必须手动将Platform区段映射到Salesforce中的自定义属性。
 
 为此，请选择每个区段，然后在 **[!UICONTROL 映射ID]** 字段。
 
@@ -233,4 +235,3 @@ SalesforceMarketing Cloud支持激活下表中描述的身份。 详细了解 [�
 * 请参阅 [SalesforceMarketing Cloud参与定价](https://www.salesforce.com/editions-pricing/marketing-cloud/email/) 页面 *下载完整版比较图* 作为pdf，其中详细列出了您的计划所施加的限制。
 * 的 [API概述](https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/apis-overview.html) 页面详细信息其他限制。
 * 可以查看整理这些详细信息的知识库项目 [此处](https://salesforce.stackexchange.com/questions/205898/marketing-cloud-api-limits#:~:text=Day%2FHour%2FMinute%20Limit&amp;text=We%20recommend%20a%20limit%20of,per%20minute%20for%20SOAP%20calls.&amp;text=As%20has%20beadd%20in，interacting%20with%20the%20REST%2DAPI).
-
