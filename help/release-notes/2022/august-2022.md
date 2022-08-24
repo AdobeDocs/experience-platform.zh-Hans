@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2022年8月
 description: 2022年8月版Adobe Experience Platform发行说明。
-source-git-commit: 925991d58c3cdd84e13b12a095e9681b8f4b254b
+source-git-commit: 5967dee9c8b1c05ebd103998021e02a47ac3982c
 workflow-type: tm+mt
-source-wordcount: '942'
-ht-degree: 8%
+source-wordcount: '1246'
+ht-degree: 7%
 
 ---
 
@@ -16,6 +16,8 @@ Adobe Experience Platform 现有功能的更新包括：
 
 - [数据准备](#data-prep)
 - [体验数据模型(XDM)](#xdm)
+- [实时客户资料](#profile)
+- [分段服务](#segmentation)
 - [源](#sources)
 
 ## [!DNL Data Prep] {#data-prep}
@@ -63,6 +65,30 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 {style=&quot;table-layout:auto&quot;}
 
 有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
+
+## 实时客户个人资料 {#profile}
+
+Adobe Experience Platform使您能够为客户在何处或何时与您的品牌进行交互，从而提供协调、一致的相关体验。 通过实时客户资料，您可以查看每个客户的整体视图，该视图将来自多个渠道的数据（包括在线、离线、CRM和第三方数据）进行整合。 利用用户档案，可将客户数据整合到统一视图中，为每次客户互动提供一个加盖时间戳的可操作帐户。
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 孤立的配置文件边缘属性清理 | 对于所有组织，用户档案服务现在每天都会删除用户活动区域的剩余边缘属性，以便在系统中更准确地显示用户档案。 此清理在删除给定配置文件的所有配置文件片段之后进行，并且应会影响从其中合并的数据集中合并的配置文件 `com_adobe_aep_profile_region_dataset` 标记为 `true`. 这可能会在许可证使用情况功能板的“可寻址受众”量度中显示一个下降，并且可能在“配置文件”功能板的“配置文件计数”量度中显示一个下降，因为这些量度包含此版本之前剩余的边缘属性片段。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+要了解有关实时客户资料的更多信息，包括有关使用资料数据的教程和最佳实践，请首先阅读 [实时客户资料概述](../../profile/home.md).
+
+## 分段服务 {#segmentation}
+
+[!DNL Segmentation Service] 通过描述区分客户群中可销售人群的标准来定义特定的用户档案子集。 区段可以基于记录数据（如人口统计信息）或表示客户与您的品牌交互的时间序列事件。
+
+**新增功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 支持4000个区段 | 现在，所有具有Platform的组织最多可支持4000个区段定义。 有关此更改如何影响区段作业API的更多信息，请阅读 [segment job endpoint指南](../../segmentation/api/segment-jobs.md) |
+
+有关 [!DNL Segmentation Service]，请参阅 [分段概述](../../segmentation/home.md).
 
 ## 源 {#sources}
 
