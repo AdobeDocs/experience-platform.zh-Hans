@@ -4,8 +4,8 @@ description: 2022年8月版Adobe Experience Platform发行说明。
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
 source-git-commit: 30aa5db39d63c238a3f70e48f6a88e8885b1f3ee
 workflow-type: tm+mt
-source-wordcount: '1963'
-ht-degree: 7%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
