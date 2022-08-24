@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年8月
 description: 2022年8月版Adobe Experience Platform发行说明。
-source-git-commit: c3452dda554b3c7750ad1166cef598d51d739e02
+source-git-commit: 208dbba4c2ed4abb51b90073eeee0663e2b2f35f
 workflow-type: tm+mt
-source-wordcount: '1348'
+source-wordcount: '1861'
 ht-degree: 7%
 
 ---
@@ -14,12 +14,50 @@ ht-degree: 7%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+
+- [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
 - [[!DNL Dashboards]](#dashboards)
 - [数据准备](#data-prep)
 - [体验数据模型(XDM)](#xdm)
 - [实时客户资料](#profile)
 - [分段服务](#segmentation)
 - [源](#sources)
+
+## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
+
+AI/ML服务使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的功能。 这允许营销分析人员使用业务级别配置来设置特定于公司需求的模型，而无需具备数据科学专业知识。
+
+### 归因人工智能
+
+Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
+
+**更新功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 隐私支持 | <li> Attribution AI现在支持定义用户角色和访问策略以管理 [权限](../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。 </li><li>活动发生时，会自动记录审核日志资源。</li> <li> 到达 [基于属性的访问控制](../../access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问，这些属性可以是添加到对象（如标签）的元数据。管理员还可以定义用户角色，这些角色只能访问与这些字段对应的特定字段和数据。</li> <li>[数据卫生](../../help/hygiene/home.md) Attribution AI中的功能允许您仅使用更新的数据来进一步培训和评分。 同样，当您请求删除数据时，Attribution AI也会避免使用删除的数据。</li><li>Attribution AI利用平台数据集。 为帮助促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来满足客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。 所有数据在传输过程中和静态时都经过加密。</li> |
+
+{style=&quot;table-layout:auto&quot;}
+
+**注意**:在2022年第4季度结束之前，Attribution AI将不会提供给Healthcare Shield客户。
+
+有关Attribution AI的更多信息，请参阅 [Attribution AI](../../intelligent-services/attribution-ai/overview.md) 概述。
+
+### 客户人工智能
+
+Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾向得分，例如大规模单个用户档案的流失率和转化。
+
+**更新功能**
+
+| 功能 | 描述 |
+| ------- | ----------- |
+| 隐私支持 | <li> Customer AI现在支持定义用户角色和访问策略以进行管理 [权限](../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。 </li><li>活动发生时，会自动记录审核日志资源。</li> <li> 到达 [基于属性的访问控制](../../access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问。 这些属性可以是添加到对象的元数据，如标签。 管理员还可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。</li> <li>[数据卫生](../../help/hygiene/home.md) Customer AI中的功能允许您仅使用更新的数据进行进一步的培训和评分。 同样，当您请求删除数据时， Customer AI也会避免使用删除的数据。</li><li>Customer AI利用Platform数据集。 为帮助促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来满足客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。 所有数据在传输过程中和静态时都经过加密。</li> |
+
+{style=&quot;table-layout:auto&quot;}
+
+**注意**:在2022年第4季度结束之前，客户AI将不可供Healthcare Shield客户使用。
+
+有关Customer AI的更多信息，请参阅 [客户人工智能](../../intelligent-services/customer-ai/overview.md) 概述。
 
 ## [!DNL Dashboards] {#dashboards}
 
