@@ -5,9 +5,9 @@ title: '使用API进行边缘分段 '
 topic-legacy: developer guide
 description: 本文档包含有关如何将边缘分段与Adobe Experience Platform Segmentation Service API结合使用的示例。
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: de63939c44b338bb9632a57c74c095135f023d50
 workflow-type: tm+mt
-source-wordcount: '1014'
+source-wordcount: '1098'
 ht-degree: 0%
 
 ---
@@ -42,19 +42,22 @@ ht-degree: 0%
 
 要使用边缘分段来评估区段，查询必须符合以下准则：
 
-| 查询类型 | 详细信息 | 示例 |
-| ---------- | ------- | ------- |
-| 单个事件 | 任何引用无时间限制的单个传入事件的区段定义。 | 向购物车中添加了商品的用户。 |
-| 引用用户档案的单个事件 | 引用一个或多个用户档案属性以及无时间限制的单个传入事件的任何区段定义。 | 访问主页的美国人。 |
-| 使用配置文件属性否定单个事件 | 任何引用否定的单个传入事件和一个或多个用户档案属性的区段定义 | 在美国生活并拥有 **not** 访问主页。 |
-| 在24小时的时间范围内单个事件 | 在24小时内引用单个传入事件的任何区段定义。 | 过去24小时内访问主页的人员。 |
-| 在24小时的时间范围内具有配置文件属性的单个事件 | 在24小时内引用一个或多个用户档案属性和单个传入事件的任何区段定义。 | 过去24小时内访问主页的美国人。 |
-| 在24小时的时间范围内使具有配置文件属性的单个事件失效 | 在24小时内引用一个或多个用户档案属性以及否定的单个传入事件的任何区段定义。 | 在美国生活并拥有 **not** 在过去24小时内访问了主页。 |
-| 24小时时间范围内的频度事件 | 任何区段定义，指在24小时内发生一定次数的事件。 | 访问主页的人员 **至少** 过去24小时里五次。 |
-| 在24小时时间范围内具有用户档案属性的频率事件 | 任何区段定义，指一个或多个用户档案属性以及在24小时内发生一定次数的事件。 | 访问主页的美国人 **至少** 过去24小时里五次。 |
-| 在24小时的时间范围内使用用户档案否定频率事件 | 任何区段定义，指一个或多个用户档案属性以及在24小时的时间范围内发生一定次数的否定事件。 | 未访问主页的人员 **更多** 超过5次。 |
-| 在24小时的时间配置文件内多次传入的点击 | 指在24小时内发生的多个事件的任何区段定义。 | 访问主页的人员 **或** 在过去24小时内访问了结帐页面。 |
-| 在24小时的时间范围内使用用户档案进行多个事件 | 任何区段定义，指在24小时内发生的一个或多个用户档案属性和多个事件。 | 访问主页的美国人 **和** 在过去24小时内访问了结帐页面。 |
+| 查询类型 | 详细信息 | 示例 | PQL示例 |
+| ---------- | ------- | ------- | ----------- |
+| 单个事件 | 任何引用无时间限制的单个传入事件的区段定义。 | 向购物车中添加了商品的用户。 | `chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart")])` |
+| 单个用户档案 | 任何引用单个仅限用户档案属性的区段定义 | 住在美国的人。 | `homeAddress.countryCode = "US"` |
+| 引用用户档案的单个事件 | 引用一个或多个用户档案属性以及无时间限制的单个传入事件的任何区段定义。 | 访问主页的美国人。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart")])` |
+| 使用配置文件属性否定单个事件 | 任何引用否定的单个传入事件和一个或多个用户档案属性的区段定义 | 在美国生活并拥有 **not** 访问主页。 | `not(chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView")]))` |
+| 一个时间范围内的单个事件 | 引用指定时间段内单个传入事件的任何区段定义。 | 过去24小时内访问主页的人员。 | `chain(xEvent, timestamp, [X: WHAT(eventType = "addToCart") WHEN(< 8 days before now)])` |
+| 时间窗口内具有配置文件属性的单个事件 | 引用一个或多个用户档案属性以及设置时间段内单个传入事件的任何区段定义。 | 过去24小时内访问主页的美国人。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [X: WHAT(eventType = "addToCart") WHEN(< 8 days before now)])` |
+| 在时间窗口内使用配置文件属性否定单个事件 | 指一段时间内一个或多个用户档案属性以及否定的单个传入事件的任何区段定义。 | 在美国生活并拥有 **not** 在过去24小时内访问了主页。 | `homeAddress.countryCode = "US" and not(chain(xEvent, timestamp, [X: WHAT(eventType = "addToCart") WHEN(< 8 days before now)]))` |
+| 24小时时间范围内的频度事件 | 任何区段定义，指在24小时内发生一定次数的事件。 | 访问主页的人员 **至少** 过去24小时里五次。 | `chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView") WHEN(< 24 hours before now) COUNT(5) ] )` |
+| 在24小时时间范围内具有用户档案属性的频率事件 | 任何区段定义，指一个或多个用户档案属性以及在24小时内发生一定次数的事件。 | 访问主页的美国人 **至少** 过去24小时里五次。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView") WHEN(< 24 hours before now) COUNT(5) ] )` |
+| 在24小时的时间范围内使用用户档案否定频率事件 | 任何区段定义，指一个或多个用户档案属性以及在24小时的时间范围内发生一定次数的否定事件。 | 未访问主页的人员 **更多** 超过5次。 | `not(chain(xEvent, timestamp, [A: WHAT(eventType = "homePageView") WHEN(< 24 hours before now) COUNT(5) ] ))` |
+| 在24小时的时间配置文件内多次传入的点击 | 指在24小时内发生的多个事件的任何区段定义。 | 访问主页的人员 **或** 在过去24小时内访问了结帐页面。 | `chain(xEvent, timestamp, [X: WHAT(eventType = "homePageView") WHEN(< 24 hours before now)]) and chain(xEvent, timestamp, [X: WHAT(eventType = "checkoutPageView") WHEN(< 24 hours before now)])` |
+| 在24小时的时间范围内使用用户档案进行多个事件 | 任何区段定义，指在24小时内发生的一个或多个用户档案属性和多个事件。 | 访问主页的美国人 **和** 在过去24小时内访问了结帐页面。 | `homeAddress.countryCode = "US" and chain(xEvent, timestamp, [X: WHAT(eventType = "homePageView") WHEN(< 24 hours before now)]) and chain(xEvent, timestamp, [X: WHAT(eventType = "checkoutPageView") WHEN(< 24 hours before now)])` |
+| 区段 | 包含一个或多个批处理或流式处理区段的任何区段定义。 | 居住在美国且位于区段“现有区段”中的人员。 | `homeAddress.countryCode = "US" and inSegment("existing segment")` |
+| 引用映射的查询 | 引用属性映射的任何区段定义。 | 基于外部区段数据添加到购物车的人员。 | `chain(xEvent, timestamp, [A: WHAT(eventType = "addToCart") WHERE(externalSegmentMapProperty.values().exists(stringProperty="active"))])` |
 
 此外，区段 **必须** 绑定到边缘上处于活动状态的合并策略。 有关合并策略的更多信息，请阅读 [合并策略指南](../../profile/api/merge-policies.md).
 
