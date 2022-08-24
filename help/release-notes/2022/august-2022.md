@@ -2,10 +2,10 @@
 title: Adobe Experience Platform发行说明2022年8月
 description: 2022年8月版Adobe Experience Platform发行说明。
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: 30aa5db39d63c238a3f70e48f6a88e8885b1f3ee
+source-git-commit: f458b3f204e961f849782f26a1563a67d6ea4b60
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1967'
+ht-degree: 7%
 
 ---
 
@@ -36,11 +36,11 @@ Attribution AI 用于将点数归因于导致转化事件的接触点。营销�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 隐私支持 | <li>Attribution AI现在支持定义用户角色和访问策略以管理 [权限](../../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。</li><li>活动发生时，会自动记录审核日志资源。</li><li>到达 [基于属性的访问控制](../../../help/access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问，这些属性可以是添加到对象（如标签）的元数据。管理员还可以定义用户角色，这些角色只能访问与这些字段对应的特定字段和数据。</li><li>[数据卫生](../../../help/hygiene/home.md) Attribution AI中的功能允许您仅使用更新的数据来进一步培训和评分。 同样，当您请求删除数据时，Attribution AI也会避免使用删除的数据。</li><li>Attribution AI利用平台数据集。 为帮助促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来满足客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。 所有数据在传输过程中和静态时都经过加密。</li> |
+| 隐私支持 | <ul><li> Attribution AI现在支持定义用户角色和访问策略以管理 [权限](../../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。 </li><li>活动发生时，会自动记录审核日志资源。</li><li> 到达 [基于属性的访问控制](../../access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问，这些属性可以是添加到对象（如标签）的元数据。管理员还可以定义用户角色，这些角色只能访问与这些字段对应的特定字段和数据。</li><li>[数据卫生](../../../help/hygiene/home.md) Attribution AI中的功能允许您仅使用更新的数据来进一步培训和评分。 同样，当您请求删除数据时，Attribution AI也会避免使用删除的数据。</li><li>Attribution AI利用平台数据集。 为帮助促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来满足客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。 所有数据在传输过程中和静态时都经过加密。</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
-**注意**:在2022年第4季度结束之前，Attribution AI将不会提供给Healthcare Shield客户。
+**注意**:Attribution AI在进一步通知之前，将无法供现有的Healthcare Shield或Privacy Shield客户使用。
 
 有关Attribution AI的更多信息，请参阅 [Attribution AI](../../intelligent-services/attribution-ai/overview.md) 概述。
 
@@ -52,11 +52,11 @@ Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 隐私支持 | <li>Customer AI现在支持定义用户角色和访问策略以进行管理 [权限](../../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。</li><li>活动发生时，会自动记录审核日志资源。</li><li> 到达 [基于属性的访问控制](../../access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问。 这些属性可以是添加到对象的元数据，如标签。 管理员还可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。</li><li>[数据卫生](../../../help/hygiene/home.md) Customer AI中的功能允许您仅使用更新的数据进行进一步的培训和评分。 同样，当您请求删除数据时， Customer AI也会避免使用删除的数据。</li><li>Customer AI利用Platform数据集。 为帮助促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来满足客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。 所有数据在传输过程中和静态时都经过加密。</li> |
+| 隐私支持 | <ul><li> Customer AI现在支持定义用户角色和访问策略以进行管理 [权限](../../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。 </li><li>活动发生时，会自动记录审核日志资源。</li><li> 到达 [基于属性的访问控制](../../access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问。 这些属性可以是添加到对象的元数据，如标签。 管理员还可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。</li><li>[数据卫生](../../../help/hygiene/home.md) Customer AI中的功能允许您仅使用更新的数据进行进一步的培训和评分。 同样，当您请求删除数据时， Customer AI也会避免使用删除的数据。</li><li>Customer AI利用Platform数据集。 为帮助促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来满足客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。 所有数据在传输过程中和静态时都经过加密。</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
-**注意**:在2022年第4季度结束之前，客户AI将不可供Healthcare Shield客户使用。
+**注意**:在进一步通知之前，客户AI将不适用于现有的医疗保健盾或隐私盾客户。
 
 有关Customer AI的更多信息，请参阅 [客户人工智能](../../intelligent-services/customer-ai/overview.md) 概述。
 
