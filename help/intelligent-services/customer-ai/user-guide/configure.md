@@ -4,20 +4,21 @@ solution: Experience Platform, Real-time Customer Data Platform
 feature: Customer AI
 title: 配置Customer AI实例
 topic-legacy: Instance creation
-description: Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
+description: AI/ML服务将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: c4e1d739bf54cbebf6a04d87f92d0df4bdbc083e
+source-git-commit: ac21668955305c135d78c1e6afbee8f6499f6885
 workflow-type: tm+mt
-source-wordcount: '2618'
+source-wordcount: '3088'
 ht-degree: 0%
 
 ---
 
+
 # 配置Customer AI实例
 
-Customer AI作为Intelligent Services的一部分，使您能够生成自定义倾向得分，而无需担心机器学习问题。
+Customer AI是AI/ML服务的一部分，通过它，您可以生成自定义倾向得分，而无需担心机器学习问题。
 
-Intelligent Services将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
+AI/ML服务将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 
 ## 创建实例 {#set-up-your-instance}
 
@@ -191,6 +192,18 @@ Customer AI通过设计，一般使用Adobe Analytics、Adobe Audience Manager�
 
 ![添加自定义配置文件属性](../images/user-guide/profile-attributes.png)
 
+#### 从配置文件快照导出中选择配置文件属性
+
+您还可以选择在每日配置文件快照导出中包含配置文件属性。 这些属性将同步到配置文件快照导出并显示最新可用值。
+
+>[!WARNING]
+>
+> 请注意，不要选择因预测目标而更新或与预测目标高度相关的配置文件属性。 这会导致数据泄漏和模型过拟合。 此类属性的一个示例是 `total_purchases_in_the_last_3_months` 用于预测购买转化。
+
+>[!NOTE]
+>
+>根据请求，UI中支持使用UPS快照导出中的配置文件属性。
+
 ### 添加自定义事件示例 {#custom-event}
 
 在以下示例中，将自定义事件和配置文件属性添加到Customer AI实例。 Customer AI实例的目标是预测客户在未来60天内购买其他Luma产品的可能性。 通常，产品数据会关联到产品SKU。 在这种情况下，SKU为 `prd1013`. 在培训/打分客户AI模型后，此SKU可以关联到事件，并显示为倾向存储段的一个影响因素。
@@ -234,6 +247,38 @@ Customer AI会自动对自定义事件（例如，）应用功能生成，如“
 >根据输入数据的大小，预测运行可能需要长达24小时才能完成。
 
 通过执行本节，您配置了Customer AI的实例并执行了预测运行。 成功完成运行后，如果启用了用户档案切换，则得分分析会自动使用预测的得分填充用户档案。 请最多等待24小时，然后再继续阅读本教程的下一部分。
+
+### 基于属性的访问控制
+
+>[!IMPORTANT]
+>
+>基于属性的访问控制当前仅在有限版本中可用。
+
+[基于属性的访问控制](../../../access-control/abac/overview.md) 是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，如添加到架构字段或区段的标签。 管理员定义包含属性的访问策略以管理用户访问权限。
+
+利用此功能，可为体验数据模型(XDM)架构字段设置标签，以定义组织或数据使用范围。 同时，管理员可以使用用户和角色管理界面来定义围绕XDM架构字段的访问策略，并更好地管理为用户或用户组（内部、外部或第三方用户）授予的访问权限。 此外，基于属性的访问控制允许管理员管理对特定区段的访问。
+
+通过基于属性的访问控制，贵组织的管理员可以控制用户对所有平台工作流和资源中敏感个人数据(SPD)和个人身份信息(PII)的访问。 管理员可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。
+
+由于基于属性的访问控制，某些字段和功能将受限访问，并且对于某些Customer AI服务实例不可用。 示例包括“身份”、“得分定义”和“克隆”。
+
+![突出显示了服务实例结果的受限字段的Customer AI工作区。](../images/user-guide/unavailable-functionalities.png)
+
+位于Customer AI工作区顶部 **分析页面**，请注意侧栏、得分定义、身份和用户档案属性中的详细信息都显示“访问受限”。
+
+![突出显示了架构的受限字段的Customer AI工作区。](../images/user-guide/access-restricted.png)
+
+<!-- If you select datasets with restricted schemas on the **[!UICONTROL Create instance workflow]** page, a warning sign appears next to the dataset name with the message: [!UICONTROL Restricted information is excluded].
+
+![The Customer AI workspace with the restricted fields of the selected datasets results highlighted.](../images/user-guide/restricted-info-excluded.png) -->
+
+预览 **[!UICONTROL 创建实例工作流]** 页面时，会显示一条警告，告知您 [!UICONTROL 由于访问限制，某些信息未在数据集预览中显示。]
+
+![预览数据集的受限字段位于Customer AI工作区中，且模式结果受限。](../images/user-guide/restricted-dataset-preview.png)
+
+创建具有受限信息的实例后，继续 **[!UICONTROL 定义目标]** 步骤，顶部将显示警告： [!UICONTROL 由于访问限制，某些信息未显示在配置中。]
+
+![突出显示了服务实例结果的受限字段的Customer AI工作区。](../images/user-guide/information-not-displayed.png)
 
 ## 后续步骤 {#next-steps}
 

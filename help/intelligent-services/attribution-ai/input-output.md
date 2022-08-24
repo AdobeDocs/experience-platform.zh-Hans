@@ -5,9 +5,9 @@ title: 输入和输出Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: 以下文档概述了Attribution AI中使用的不同输入和输出。
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: 3ea17aa57a5bfbc968f354b13d2ed107b2efa39b
+source-git-commit: b3c331821e2df17380edbc673066f6b10a06d65f
 workflow-type: tm+mt
-source-wordcount: '2392'
+source-wordcount: '2476'
 ht-degree: 3%
 
 ---
@@ -44,7 +44,7 @@ Attribution AI通过分析以下数据集来计算算法得分：
 | --- | --- |
 | 主标识字段 | 接触点/转化 |
 | 时间戳 | 接触点/转化 |
-| 渠道._type | 接触点 |
+| 渠道._类型 | 接触点 |
 | Channel.mediaAction | 接触点 |
 | Channel.mediaType | 接触点 |
 | Marketing.trackingCode | 接触点 |
@@ -234,6 +234,12 @@ Attribution AI会生成两种不同类型的算法得分：增量分数和受影
 | 操作 | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.mediaAction |
 | campaign_group | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.campaignGroup |
 | campaign_name | _tenantID.your_schema_name.touchpointsDetail.element.touchpoint.campaignName |
+
+>[!IMPORTANT]
+>
+> - Attribution AI仅使用更新的数据进行进一步培训和评分。 同样，当您请求删除数据时，Attribution AI也会避免使用删除的数据。
+> - 为帮助促进Attribution AI中的GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来遵守客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。
+> - 所有数据在传输过程中和静态时都经过加密。 请参阅相关文档，了解有关 [数据加密](../../../help/landing/governance-privacy-security/encryption.md)
 
 
 ## 后续步骤 {#next-steps}

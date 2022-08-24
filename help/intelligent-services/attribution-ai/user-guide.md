@@ -5,9 +5,9 @@ title: Attribution AIUI指南
 topic-legacy: User guide
 description: 本文档是与Intelligent Services用户界面中的Attribution AI交互的指南。
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: f27ddda4d5e6c33fa41e4ac503f80ddb1e39b09b
+source-git-commit: ac21668955305c135d78c1e6afbee8f6499f6885
 workflow-type: tm+mt
-source-wordcount: '2331'
+source-wordcount: '2716'
 ht-degree: 1%
 
 ---
@@ -261,6 +261,36 @@ Attribution AI的最终页面是 **[!UICONTROL 高级]** 用于设置培训和�
 选择培训窗口后，选择 **[!UICONTROL 完成]** 中。 允许一些时间处理数据。 完成后，会显示一个弹出对话框，确认实例设置已完成。 选择 **[!UICONTROL 确定]** 被重定向到 **[!UICONTROL 服务实例]** 页面，您可以在其中查看服务实例。
 
 ![设置完成](./images/user-guide/instance_setup_complete.png)
+
+### 基于属性的访问控制
+
+>[!IMPORTANT]
+>
+>基于属性的访问控制当前仅在有限版本中可用。
+
+[基于属性的访问控制](../../../help/access-control/abac/overview.md) 是Adobe Experience Platform的一项功能，它使管理员能够根据属性控制对特定对象和/或功能的访问。 属性可以是添加到对象的元数据，如添加到架构字段或区段的标签。 管理员定义包含属性的访问策略以管理用户访问权限。
+
+利用此功能，可为体验数据模型(XDM)架构字段设置标签，以定义组织或数据使用范围。 同时，管理员可以使用用户和角色管理界面来定义围绕XDM架构字段的访问策略，并更好地管理为用户或用户组（内部、外部或第三方用户）授予的访问权限。 此外，基于属性的访问控制允许管理员管理对特定区段的访问。
+
+通过基于属性的访问控制，管理员可以控制用户对所有平台工作流和资源中的敏感个人数据(SPD)和个人身份信息(PII)的访问。 管理员可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。
+
+由于基于属性的访问控制，某些字段和功能可能具有访问限制，并且对于某些Attribution AI服务实例不可用。 示例包括“身份”、“得分定义”和“克隆”。
+
+Attribution AI工作区顶部 **分析页面**，侧栏中显示的详细信息具有受限访问权限。
+
+![Attribution AI工作区中突出显示了架构的受限字段。](./images/user-guide/access-restricted.png)
+
+如果您在 **[!UICONTROL 创建实例工作流]** 页面上，数据集名称旁边会显示一个警告标记，并显示一条消息： [!UICONTROL 排除受限信息].
+
+![Attribution AI工作区中选定具有受限架构的数据集的受限字段会突出显示结果。](./images/user-guide/restricted-info-excluded.png)
+
+预览 **[!UICONTROL 创建实例工作流]** 页面时，会显示一条警告，告知您 [!UICONTROL 由于访问限制，某些信息未在数据集预览中显示。]
+
+![Attribution AI工作区中突出显示了预览的架构结果的受限字段。](./images/user-guide/restricted-dataset-preview.png)
+
+创建具有受限信息的实例后，继续 **[!UICONTROL 定义目标]** 步骤，顶部将显示警告： [!UICONTROL 由于访问限制，某些信息未显示在配置中。]
+
+![Attribution AI工作区中实例结果的受限字段突出显示。](./images/user-guide/information-not-displayed.png)
 
 ## 后续步骤
 

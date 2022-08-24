@@ -6,10 +6,10 @@ title: 客户人工智能中的输入与输出
 topic-legacy: Getting started
 description: 进一步了解Customer AI使用的必需事件、输入和输出。
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: 62188f56861dd021db7b13325f622323644af8e0
+source-git-commit: b3c331821e2df17380edbc673066f6b10a06d65f
 workflow-type: tm+mt
-source-wordcount: '3096'
-ht-degree: 1%
+source-wordcount: '3180'
+ht-degree: 3%
 
 ---
 
@@ -23,8 +23,8 @@ Customer AI通过分析以下数据集之一来预测客户流失率或转化倾
 
 - Adobe Analytics数据(使用 [Analytics源连接器](../../sources/tutorials/ui/create/adobe-applications/analytics.md)
 - Adobe Audience Manager数据(使用 [Audience Manager源连接器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md)
-- 体验事件(EE)数据集
-- 消费者体验事件(CEE)数据集
+- Experience Event (EE) 数据集
+- Consumer Experience Event (CEE) 数据集
 
 如果每个数据集共享相同的身份类型（命名空间）（如ECID），则可以从不同的源添加多个数据集。 有关添加多个数据集的更多信息，请访问 [Customer AI用户指南](./user-guide/configure.md#select-data)
 
@@ -284,6 +284,13 @@ Customer AI会为被认为符合条件的个人用户档案生成多个属性。
 | 得分日期 | 打分的日期。 |
 | 影响因素 | 预测了用户档案可能转化或流失的原因。 因素包括以下属性：<ul><li>代码：积极影响用户档案预测分数的用户档案或行为属性。 </li><li>值：配置文件或行为属性的值。</li><li>重要性：指示用户档案或行为属性对预测得分（低、中、高）的权重</li></ul> |
 
+>[!NOTE]
+>
+> - Customer AI仅使用更新的数据进行进一步的培训和评分。 同样，当您请求删除数据时， Customer AI也不会使用删除的数据。
+> - 为帮助在客户AI中促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来遵守客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。
+> - 所有数据在传输过程中和静态时都经过加密。 请参阅相关文档，了解有关 [数据加密](../../../help/landing/governance-privacy-security/encryption.md)
+
+
 ## 后续步骤 {#next-steps}
 
-准备数据并部署所有凭据和模式后，请首先按照 [配置Customer AI实例](./user-guide/configure.md) 的双曲余切值。 本指南将指导您为Customer AI创建一个实例。
+准备好数据并准备好所有凭据和架构后，请按照[配置客户人工智能实例](./user-guide/configure.md)指南开始。本指南将指导您为Customer AI创建一个实例。
