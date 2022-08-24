@@ -5,18 +5,14 @@ title: Google BigQuery源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Google BigQuery连接到Adobe Experience Platform。
 exl-id: 35c61382-a909-47f4-a937-15cb725ecbe3
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 7a62dcf1e9712d3c0c0d148b953e50dc11c91f1b
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '387'
 ht-degree: 0%
 
 ---
 
-# （测试版） [!DNL Google BigQuery] 连接器
-
->[!NOTE]
->
->的 [!DNL Google BigQuery] 是测试版。 请参阅 [源概述](../../home.md#terms-and-conditions) 有关使用测试版标签的连接器的更多信息。
+# [!DNL Google BigQuery]
 
 Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 
@@ -40,6 +36,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 | `clientID` | 客户ID是您的 [!DNL Google BigQuery] OAuth 2.0凭据。 |
 | `clientSecret` | 客户机密是 [!DNL Google BigQuery] OAuth 2.0凭据。 |
 | `refreshToken` | 刷新令牌允许您为API获取新的访问令牌。 访问令牌的生命周期有限，且可能会在您的项目过程中过期。 您可以根据需要使用刷新令牌来验证并请求项目的后续访问令牌。 |
+| `largeResultsDataSetId` | 预先创建的  [!DNL Google BigQuery] 为启用对大型结果集的支持而需要的数据集ID。 |
 
 有关如何为生成OAuth 2.0凭据的详细说明 [!DNL Google] API，请参阅以下内容 [[!DNL Google] OAuth 2.0身份验证指南](https://developers.google.com/identity/protocols/oauth2).
 

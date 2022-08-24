@@ -6,20 +6,20 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 1d77ad44c7123f32301257c238299b7c16e2c92b
+source-git-commit: ae30ac2fe1c6366c987748e198b9dc3530bc512a
 workflow-type: tm+mt
-source-wordcount: '2182'
-ht-degree: 2%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
 # 在UI中创建Adobe Analytics源连接
 
-本教程提供了在UI中创建Adobe Analytics源连接以 [!DNL Analytics] 将报表包数据导入Adobe Experience Platform。
+本教程提供了在UI中创建Adobe Analytics源连接以将Adobe Analytics报表包数据引入Adobe Experience Platform的步骤。
 
 ## 快速入门
 
-本教程需要对Adobe Experience Platform的以下组件有一定的了解：
+本教程需要对Experience Platform的以下组件有一定的了解：
 
 * [Experience Data Model(XDM)系统](../../../../../xdm/home.md):Experience Platform组织客户体验数据的标准化框架。
 * [实时客户资料](../../../../../profile/home.md):根据来自多个来源的汇总数据提供统一的实时客户资料。
@@ -30,7 +30,7 @@ ht-degree: 2%
 请务必了解本文档中使用的以下关键术语：
 
 * **标准属性**:标准属性是指由Adobe预定义的任何属性。 对于所有客户，它们包含相同的含义，并可在 [!DNL Analytics] 源数据和 [!DNL Analytics] 架构字段组。
-* **自定义属性**:自定义属性是 [!DNL Analytics]. 自定义属性用于在Adobe Analytics实施中将特定信息捕获到报表包中，并且在从报表包到报表包的使用方式上可能有所不同。 自定义属性包括eVar、prop和列表。 请参阅以下内容 [[!DNL Analytics] 转化变量文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) 以了解有关eVar的更多信息。
+* **自定义属性**:自定义属性是 [!DNL Analytics]. 自定义属性用于在Adobe Analytics实施中将特定信息捕获到报表包中，并且在报表包和报表包中的使用方式可能有所不同。 自定义属性包括eVar、prop和列表。 请参阅以下内容 [[!DNL Analytics] 转化变量文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) 以了解有关eVar的更多信息。
 * **自定义字段组中的任何属性**:源自客户创建的字段组的属性都由用户定义，因此既不是标准属性，也不是自定义属性。
 * **友好名称**:友好名称是人为 [!DNL Analytics] 实施。 请参阅以下内容 [[!DNL Analytics] 转化变量文档](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=en) 有关友好名称的详细信息。
 
@@ -48,13 +48,17 @@ ht-degree: 2%
 
 的 **[!UICONTROL Analytics源添加数据]** 步骤会为您提供 [!DNL Analytics] 用于创建源连接的报表包数据。
 
-只能使用单个活动数据流摄取报表包。 它不能用于多个数据流。 此外，报表包必须与在其中创建源连接的平台沙盒实例所属的相同区域。 已摄取此沙盒或其他沙盒中无法选择的报表包。
+报表包是构成 [!DNL Analytics] 报表。 组织可以有多个报表包，每个报表包包含不同的数据集。
+
+您可以从任何区域（美国、英国或新加坡）摄取报表包，前提是这些报表包已映射到与其中创建源连接的Experience Platform沙盒实例相同的组织。 只能使用单个活动数据流摄取报表包。 已摄取无法选择的报表包（位于您使用的沙盒中或位于其他沙盒中）。
 
 可以建立多个绑定连接，以将多个报表包引入同一沙盒。 如果报表包的变量架构不同（如eVar或事件），则应将它们映射到自定义字段组中的特定字段，并避免使用 [数据准备](../../../../../data-prep/ui/mapping.md). 报表包只能添加到单个沙盒。
 
+![](../../../../images/tutorials/create/analytics/report-suite.png)
+
 >[!NOTE]
 >
->仅当不存在数据冲突(例如两个具有不同含义的自定义属性（eVar、列表和prop）)时，无法将多个报表包中的数据映射到XDM中的同一属性时，才能为实时客户数据配置文件启用数据。
+>仅当不存在数据冲突时，才能为实时客户数据配置文件启用多个报表包中的数据，例如两个具有不同含义的自定义属性（eVar、列表和prop）。
 
 创建 [!DNL Analytics] 源连接，选择报表包，然后选择 **[!UICONTROL 下一个]** 以继续。
 
