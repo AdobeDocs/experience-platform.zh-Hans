@@ -6,9 +6,9 @@ title: 客户人工智能中的输入与输出
 topic-legacy: Getting started
 description: 进一步了解Customer AI使用的必需事件、输入和输出。
 exl-id: 9b21a89c-bf48-4c45-9eb3-ace38368481d
-source-git-commit: b3c331821e2df17380edbc673066f6b10a06d65f
+source-git-commit: 9ce5a383bed24c4bfe9245521149443a57764da5
 workflow-type: tm+mt
-source-wordcount: '3180'
+source-wordcount: '3154'
 ht-degree: 3%
 
 ---
@@ -286,7 +286,6 @@ Customer AI会为被认为符合条件的个人用户档案生成多个属性。
 
 >[!NOTE]
 >
-> - Customer AI仅使用更新的数据进行进一步的培训和评分。 同样，当您请求删除数据时， Customer AI也不会使用删除的数据。
 > - 为帮助在客户AI中促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来遵守客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。
 > - 所有数据在传输过程中和静态时都经过加密。 请参阅相关文档，了解有关 [数据加密](../../../help/landing/governance-privacy-security/encryption.md)
 

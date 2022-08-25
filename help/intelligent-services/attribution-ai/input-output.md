@@ -5,9 +5,9 @@ title: 输入和输出Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: 以下文档概述了Attribution AI中使用的不同输入和输出。
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: b3c331821e2df17380edbc673066f6b10a06d65f
+source-git-commit: 9ce5a383bed24c4bfe9245521149443a57764da5
 workflow-type: tm+mt
-source-wordcount: '2476'
+source-wordcount: '2450'
 ht-degree: 3%
 
 ---
@@ -237,7 +237,6 @@ Attribution AI会生成两种不同类型的算法得分：增量分数和受影
 
 >[!IMPORTANT]
 >
-> - Attribution AI仅使用更新的数据进行进一步培训和评分。 同样，当您请求删除数据时，Attribution AI也会避免使用删除的数据。
 > - 为帮助促进Attribution AI中的GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来遵守客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。
 > - 所有数据在传输过程中和静态时都经过加密。 请参阅相关文档，了解有关 [数据加密](../../../help/landing/governance-privacy-security/encryption.md)
 

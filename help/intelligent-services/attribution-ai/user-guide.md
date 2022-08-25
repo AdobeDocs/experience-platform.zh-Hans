@@ -5,9 +5,9 @@ title: Attribution AIUI指南
 topic-legacy: User guide
 description: 本文档是与Intelligent Services用户界面中的Attribution AI交互的指南。
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: ac21668955305c135d78c1e6afbee8f6499f6885
+source-git-commit: 67b4c49de6ebb9986f735390a0657d908b07e039
 workflow-type: tm+mt
-source-wordcount: '2716'
+source-wordcount: '2705'
 ht-degree: 1%
 
 ---
@@ -262,7 +262,7 @@ Attribution AI的最终页面是 **[!UICONTROL 高级]** 用于设置培训和�
 
 ![设置完成](./images/user-guide/instance_setup_complete.png)
 
-### 基于属性的访问控制
+## 基于属性的访问控制
 
 >[!IMPORTANT]
 >
@@ -278,15 +278,15 @@ Attribution AI的最终页面是 **[!UICONTROL 高级]** 用于设置培训和�
 
 Attribution AI工作区顶部 **分析页面**，侧栏中显示的详细信息具有受限访问权限。
 
-![Attribution AI工作区中突出显示了架构的受限字段。](./images/user-guide/access-restricted.png)
+![Attribution AI工作区中突出显示了受限架构字段。](./images/user-guide/access-restricted.png)
 
 如果您在 **[!UICONTROL 创建实例工作流]** 页面上，数据集名称旁边会显示一个警告标记，并显示一条消息： [!UICONTROL 排除受限信息].
 
-![Attribution AI工作区中选定具有受限架构的数据集的受限字段会突出显示结果。](./images/user-guide/restricted-info-excluded.png)
+![Attribution AI工作区中突出显示了受限数据集字段。](./images/user-guide/restricted-info-excluded.png)
 
 预览 **[!UICONTROL 创建实例工作流]** 页面时，会显示一条警告，告知您 [!UICONTROL 由于访问限制，某些信息未在数据集预览中显示。]
 
-![Attribution AI工作区中突出显示了预览的架构结果的受限字段。](./images/user-guide/restricted-dataset-preview.png)
+![预查看的架构字段受限的Attribution AI工作区会突出显示结果。](./images/user-guide/restricted-dataset-preview.png)
 
 创建具有受限信息的实例后，继续 **[!UICONTROL 定义目标]** 步骤，顶部将显示警告： [!UICONTROL 由于访问限制，某些信息未显示在配置中。]
 

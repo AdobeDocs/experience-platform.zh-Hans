@@ -6,7 +6,7 @@ title: 配置Customer AI实例
 topic-legacy: Instance creation
 description: AI/ML服务将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: ac21668955305c135d78c1e6afbee8f6499f6885
+source-git-commit: 4f74be4ed8d84a58779b9e7d9f1de6d9bf19cc5e
 workflow-type: tm+mt
 source-wordcount: '3088'
 ht-degree: 0%
@@ -248,7 +248,7 @@ Customer AI会自动对自定义事件（例如，）应用功能生成，如“
 
 通过执行本节，您配置了Customer AI的实例并执行了预测运行。 成功完成运行后，如果启用了用户档案切换，则得分分析会自动使用预测的得分填充用户档案。 请最多等待24小时，然后再继续阅读本教程的下一部分。
 
-### 基于属性的访问控制
+## 基于属性的访问控制
 
 >[!IMPORTANT]
 >
