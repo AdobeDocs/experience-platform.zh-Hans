@@ -2,9 +2,9 @@
 description: Adobe Experience Platform Destination SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式将受众和配置文件数据交付到端点。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: c207b6700a31c59b00af6d55264c7a345219d999
+source-git-commit: 2e2ed880650ad6823b60819e36081540a35ab727
 workflow-type: tm+mt
-source-wordcount: '768'
+source-wordcount: '717'
 ht-degree: 3%
 
 ---
@@ -62,8 +62,7 @@ Destination SDK访问权限因您作为Real-Time CDP客户的合作伙伴或Expe
 ---------|----------|
 | 独立软件供应商(ISV) | 加入 [Adobe交换计划](https://partners.adobe.com/exchangeprogram/experiencecloud.html) 和请求，以便配置Experience Platform沙盒以访问Destination SDK。 |
 | 系统集成商(SI) | 您需要在 [Adobe解决方案合作伙伴计划](https://solutionpartners.adobe.com/home.html)，您将获得一个Experience Platform沙盒，并有权访问Destination SDK。 |
-| Experience Platform客户 [激活包](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) | 默认情况下，您可以访问Experience Platform沙箱和Destination SDK。 <br> 您还可以访问由其他公司使用Destination SDK配置并跨Experience Platform组织发布的所有产品化目标。 |
-| Experience Platform客户 [Real-Time CDP Ultimate包](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | 默认情况下，您可以访问Experience Platform沙箱和Destination SDK。 <br> 您还可以访问由其他公司使用Destination SDK配置并跨Experience Platform组织发布的所有产品化目标。 |
+| Experience Platform客户 [激活包](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) 或 [Real-Time CDP Ultimate包](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) | 默认情况下，您可以访问Experience Platform沙箱和Destination SDK，从而为组织构建专用目标。 |
 
 {style=&quot;table-layout:auto&quot;}
 
