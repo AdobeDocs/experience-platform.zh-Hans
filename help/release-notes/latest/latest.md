@@ -2,9 +2,9 @@
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
 exl-id: f854f9e5-71be-4d56-a598-cfeb036716cb
-source-git-commit: 3e3389c3e77597ace4177e683aaf7494364a5be7
+source-git-commit: f2d2499147b40a15a413773068b65139278bd4ff
 workflow-type: tm+mt
-source-wordcount: '1900'
+source-wordcount: '2094'
 ht-degree: 7%
 
 ---
@@ -90,17 +90,13 @@ Adobe Experience Platform提供多个 [!DNL dashboards] 通过查看有关贵组
 
 [!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
 
-<!--
+**新增功能或更新功能**
 
-**New or updated features**
-
-| Feature | Description |
+| 功能 | 描述 |
 | ----------- | ----------- |
-|  ||
+| （测试版）针对个性化目标的基于属性的个性化支持 | 在基于属性的个性化测试版中，您将在 [目标目录](../../destinations/catalog/overview.md): <ul><li>**[!UICONTROL Adobe Target V2]**:此连接器当前为测试版，仅适用于选定数量的客户。 除了Adobe Target V1卡提供的功能外，Target V2连接器还添加了 [映射步骤](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) 激活工作流，用于将配置文件属性映射到Adobe Target，从而启用基于属性的同页和下一页个性化。</li><li>**[!UICONTROL 具有属性的自定义个性化]**:此连接器当前为测试版，仅适用于选定数量的客户。 除了 **[!UICONTROL 自定义个性化]**, **[!UICONTROL 具有属性的自定义个性化]** 连接器添加了可选 [映射步骤](../../destinations/ui/activate-profile-request-destinations.md#map-attributes) 激活工作流，用于将配置文件属性映射到自定义个性化目标，从而启用基于属性的同页和下一页个性化。</li></ul> <br> 配置文件属性可能包含敏感数据。 为保护此数据， **[!UICONTROL 具有属性的自定义个性化]** 目标要求您使用 [边缘网络服务器API](../../server-api/overview.md) （用于数据收集）。 此外，所有服务器API调用都必须在 [已验证的上下文](../../server-api/authentication.md). |
 
-{style="table-layout:auto"}
-
--->
+{style=&quot;table-layout:auto&quot;}
 
 **新目标**
 
