@@ -5,9 +5,9 @@ title: Marketo Engage连接器
 topic-legacy: overview
 description: 本文档概述了Marketo Engage源连接器，包括有关其身份验证、映射和数据延迟的信息。
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: 8b8e08adb5ff3498169c1702680ea44f3bebf5c5
+source-git-commit: efa6891024cacd383f4cd958162a7a4f8ead0624
 workflow-type: tm+mt
-source-wordcount: '601'
+source-wordcount: '630'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 >[!IMPORTANT]
 >
->您必须具有 [Real-time Customer Data Platform B2B版](../../../../rtcdp/b2b-overview.md) 以便Marketo Engage参与 [实时客户资料](../../../../profile/home.md).
+>您必须具有 [Real-time Customer Data Platform B2B版](../../../../rtcdp/b2b-overview.md) 以使用所有Marketo数据集进行 [实时客户资料](../../../../profile/home.md). 如果没有实时CDP B2B Edition，您仍可以使用Marketo源将人员和活动数据集中的数据引入实时客户资料以进行分段。
 
 本文档概述 [!DNL Marketo] 源连接器，包括如何验证连接器、如何映射 [!DNL Marketo] 字段，以及连接器的数据延迟。
 
