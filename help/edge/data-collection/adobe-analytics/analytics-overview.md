@@ -3,9 +3,9 @@ title: 将Adobe Analytics与Platform Web SDK结合使用
 description: 了解如何使用Adobe Experience Platform Web SDK将数据发送到Adobe Analytics。
 keywords: adobe analytics;analytics；映射的数据；映射的变量；
 exl-id: b18d1163-9edf-4a9c-b247-cd1aa7dfca50
-source-git-commit: f627c1f6c917e74e0a366ce0611a1fa6bd0e3c3d
+source-git-commit: 836fa7814a6966903639e871bfaea0563847f363
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '306'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ Adobe Experience Platform [!DNL Edge Network] 自动映射多个XDM变量。 下
 
 ## 手动映射的数据
 
-任何未由边缘网络自动映射的数据都可以通过处理规则进行访问。 数据使用点表示法进行扁平化，可用作contextData。
+未由 [!DNL Edge Network] 可通过处理规则访问。 数据使用点表示法进行扁平化，可用作contextData。
 
 如果你有这样的模式。
 
@@ -71,3 +71,7 @@ a.x.arrayofobjects.1.obj2key //objval1
 以下是使用此数据的处理规则示例。
 
 ![处理规则界面](./assets/edge_analytics_processing_rules.png)
+
+>[!NOTE]
+>
+>通过Experience Edge收集，所有事件都会发送到Analytics以及您为数据流配置的任何其他服务。 例如，如果您同时将Analytics和Target配置为服务，并且您为个性化和Analytics分别发起了调用，则这两个事件都将发送到Analytics和Target。 这些事件将记录在Analytics报表中，并可能影响跳出率等量度。
