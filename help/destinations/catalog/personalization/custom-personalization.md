@@ -3,14 +3,33 @@ keywords: 自定义个性化；目的地；experience platform自定义目标；
 title: 自定义个性化连接
 description: 此目标可提供外部个性化、内容管理系统、广告服务器以及网站上运行的其他应用程序，以便从Adobe Experience Platform中检索区段信息。 此目标基于用户配置文件区段成员资格提供实时个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 09e81093c2ed2703468693160939b3b6f62bc5b6
 workflow-type: tm+mt
-source-wordcount: '1036'
+source-wordcount: '1305'
 ht-degree: 0%
 
 ---
 
 # 自定义个性化连接 {#custom-personalization-connection}
+
+## 目标更改日志 {#changelog}
+
+在增强功能的测试版中 **[!UICONTROL 自定义个性化]** 目标连接器中，您可能会看到两个 **[!UICONTROL 自定义个性化]** 目标目录中的信息卡。
+
+的 **[!UICONTROL 具有属性的自定义个性化]** 连接器目前处于测试阶段，且仅适用于选定数量的客户。 除了 **[!UICONTROL 自定义个性化]**, **[!UICONTROL 具有属性的自定义个性化]** 连接器添加了可选 [映射步骤](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) 激活工作流，用于将配置文件属性映射到自定义个性化目标，从而启用基于属性的同页和下一页个性化。
+
+>[!IMPORTANT]
+>
+>配置文件属性可能包含敏感数据。 为保护此数据， **[!UICONTROL 具有属性的自定义个性化]** 目标要求您使用 [边缘网络服务器API](/help/server-api/overview.md) （用于数据收集）。 此外，所有服务器API调用都必须在 [已验证的上下文](../../../server-api/authentication.md).
+>
+>如果您已经在集成中使用Web SDK或Mobile SDK，则可以通过以下两种方式通过服务器API检索属性：
+>
+> * 添加服务器端集成，以通过服务器API检索属性。
+> * 使用自定义Javascript代码更新客户端配置，以通过服务器API检索属性。
+>
+> 如果您不遵循上述要求，则个性化将仅基于区段成员资格，与 **[!UICONTROL 自定义个性化]** 连接器。
+
+![并排视图中两个自定义个性化目标卡的图像。](../../assets/catalog/personalization/custom-personalization/custom-personalization-side-by-side-view.png)
 
 ## 概述 {#overview}
 
@@ -30,7 +49,7 @@ ht-degree: 0%
 
 ## 用例 {#use-cases}
 
-的 [!DNL Custom personalization connection] 允许您使用自己的个性化合作伙伴平台(例如， [!DNL Optimizely], [!DNL Pega])，同时还利用Experience Platform边缘网络数据收集和分段功能，提供更深入的客户个性化体验。
+的 [!DNL Custom Personalization Connection] 允许您使用自己的个性化合作伙伴平台(例如， [!DNL Optimizely], [!DNL Pega])以及专有系统（例如内部CMS），同时还利用Experience Platform边缘网络数据收集和分段功能来提供更深入的客户个性化体验。
 
 下面介绍的用例包括网站个性化和目标网站广告。
 
@@ -134,11 +153,11 @@ alloy("sendEvent", {
     if(result.destinations) { // Looking to see if the destination results are there
  
         // Get the destination with a particular alias
-        var personalizationDestinations = result.destinations.filter(x => x.alias == “personalizationAlias”)
+        var personalizationDestinations = result.destinations.filter(x => x.alias == "personalizationAlias")
         if(personalizationDestinations.length > 0) {
              // Code to pass the segment IDs into the system that corresponds to personalizationAlias
         }
-        var adServerDestinations = result.destinations.filter(x => x.alias == “adServerAlias”)
+        var adServerDestinations = result.destinations.filter(x => x.alias == "adServerAlias")
         if(adServerDestinations.length > 0) {
             // Code to pass the segment ids into the system that corresponds to adServerAlias
         }
@@ -149,6 +168,37 @@ alloy("sendEvent", {
   });
 ```
 
+### 示例响应 [!UICONTROL 具有属性的自定义个性化]
+
+使用 **[!UICONTROL 具有属性的自定义个性化]**，则API响应将类似于以下示例。
+
+两者之间的差异 **[!UICONTROL 具有属性的自定义个性化]** 和 **[!UICONTROL 自定义个性化]** 是将 `attributes` 部分。
+
+```json
+[
+    {
+        "type": "profileLookup",
+        "destinationId": "7bb4cb8d-8c2e-4450-871d-b7824f547130",
+        "alias": "personalizationAlias",
+        "attributes": {
+             "countryCode": {
+                   "value" : "DE"
+              },
+             "membershipStatus": {
+                   "value" : "PREMIUM"
+              }
+         },         
+        "segments": [
+            {
+                "id": "399eb3e7-3d50-47d3-ad30-a5ad99e8ab77"
+            },
+            {
+                "id": "499eb3e7-3d50-47d3-ad30-a5ad99e8ab77"
+            }
+        ]
+    }
+]
+```
 
 ## 数据使用和管理 {#data-usage-governance}
 

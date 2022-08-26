@@ -3,14 +3,23 @@ keywords: 目标个性化；目的地；experience platform target目标；adobe
 title: Adobe Target连接
 description: Adobe Target是一款应用程序，可在跨网站、移动设备应用程序等的所有入站客户交互中提供基于AI的实时个性化和实验功能。
 exl-id: 3e3c405b-8add-4efb-9389-5ad695bc9799
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 769d3f14e858ed69c6bb50360da90e4e0816a377
 workflow-type: tm+mt
-source-wordcount: '909'
+source-wordcount: '1005'
 ht-degree: 1%
 
 ---
 
 # Adobe Target连接 {#adobe-target-connection}
+
+## 目标更改日志 {#changelog}
+
+>[!IMPORTANT]
+>
+>在增强型Adobe Target V2目标连接器的测试版中，您可能会在目标目录中看到两张Adobe Target卡。
+>Adobe Target V2目标连接器目前处于测试阶段，仅适用于一定数量的客户。 除了AdobeV1卡提供的功能外，Target V2连接器还添加了 [映射步骤](/help/destinations/ui/activate-profile-request-destinations.md#map-attributes) 激活工作流，用于将配置文件属性映射到Adobe Target，从而启用基于属性的同页和下一页个性化。
+
+![并排视图中两个Adobe Target目标卡的图像。](/help/destinations/assets/catalog/personalization/adobe-target-connection/adobe-target-side-by-side-view.png)
 
 ## 概述 {#overview}
 

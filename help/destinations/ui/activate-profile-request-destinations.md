@@ -4,9 +4,9 @@ title: 将受众数据激活到用户档案请求目标
 type: Tutorial
 description: 了解如何通过将区段映射到配置文件请求目标，来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: a6fe0f5a0c4f87ac265bf13cb8bba98252f147e0
+source-git-commit: 26e7a3e78a4513aa69cdfbed7902509609e114cc
 workflow-type: tm+mt
-source-wordcount: '467'
+source-wordcount: '678'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,13 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-本文介绍在Adobe Experience Platform用户档案请求目标中激活受众数据所需的工作流。 用户档案请求目标示例包括 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化](../../destinations/catalog/personalization/custom-personalization.md) 连接。
+本文介绍在Adobe Experience Platform用户档案请求目标中激活受众数据所需的工作流。 与一起使用时 [边缘分割](../../segmentation/ui/edge-segmentation.md)，则这些目标可以在您的Web属性上启用同页和下一页个性化用例。 有关更多信息 [启用同页和下一页个性化用例](/help/destinations/ui/configure-personalization-destinations.md).
+
+用户档案请求目标示例包括 [Adobe Target](../../destinations/catalog/personalization/adobe-target-connection.md) 和 [自定义个性化](../../destinations/catalog/personalization/custom-personalization.md) 连接。
 
 ## 先决条件 {#prerequisites}
 
-要将数据激活到目标，您必须成功 [连接到目标](./connect-destination.md). 如果您尚未执行此操作，请转到 [目标目录](../catalog/overview.md)，浏览支持的目标，并配置要使用的目标。
+要将数据激活到目标，您必须成功 [连接到目标](./connect-destination.md). 如果您尚未执行此操作，请转到 [目标目录](../catalog/overview.md)，浏览支持的个性化目标，并配置要使用的目标。
 
 ### 区段合并策略 {#merge-policy}
 
@@ -35,7 +37,7 @@ ht-degree: 0%
 
    ![“目标目录”选项卡](../assets/ui/activate-segment-streaming-destinations/catalog-tab.png)
 
-1. 选择 **[!UICONTROL 激活区段]** 在与要激活区段的目标对应的卡上，如下图所示。
+1. 选择 **[!UICONTROL 激活区段]** 在与您要在其中激活区段的个性化目标对应的卡片上，如下图所示。
 
    ![激活按钮](../assets/ui/activate-profile-request-destinations/activate-segments-button.png)
 
@@ -50,6 +52,22 @@ ht-degree: 0%
 使用区段名称左侧的复选框选择要激活到目标的区段，然后选择 **[!UICONTROL 下一个]**.
 
 ![选择区段](../assets/ui/activate-profile-request-destinations/select-segments.png)
+
+## （测试版）地图属性 {#map-attributes}
+
+>[!IMPORTANT]
+>
+>映射步骤，该步骤可为 [Adobe Target](/help/destinations/catalog/personalization/adobe-target-connection.md) 和 [通用个性化目标](/help/destinations/catalog/personalization/custom-personalization.md)，当前为测试版，且贵组织可能尚未访问该测试版。 本文档可能会发生更改。
+
+选择要根据为用户启用个性化用例的属性。 这意味着，如果属性的值发生更改或将属性添加到配置文件，则该配置文件将成为区段的成员并将激活到个性化目标。
+
+添加属性是可选的，您仍然可以继续执行下一步，并在不选择属性的情况下启用同页和下一页个性化。 如果此步骤中未添加任何属性，则仍会根据用户档案的区段成员资格和身份映射资格进行个性化。
+
+![显示已选择属性的映射步骤的图像](../assets/ui/activate-profile-request-destinations/mapping-step.png)
+
+要添加属性，请选择 **[!UICONTROL 添加新字段]** 控制并搜索或导航到所需的XDM属性字段，如下所示。
+
+![显示如何在映射步骤中选择XDM属性的屏幕记录](../assets/ui/activate-profile-request-destinations/mapping-step-select-attribute.gif)
 
 ## 计划区段导出 {#scheduling}
 
