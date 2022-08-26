@@ -5,10 +5,10 @@ title: 在本地环境中使用文本编辑器创建源文档页面
 topic-legacy: tutorial
 description: 本文档提供了有关如何使用本地环境为源创作文档并提交拉取请求(PR)的步骤。
 exl-id: 4cc89d1d-bc42-473d-ba54-ab3d1a2cd0d6
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: adf7dbe5e32310fee680f996ffbde0fd6ddd993a
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '650'
+ht-degree: 3%
 
 ---
 
@@ -70,7 +70,7 @@ Adobe建议您使用 [Visual Studio代码](https://code.visualstudio.com/) 以�
 
 ![安装](../assets/install.png)
 
-在本地计算机就绪后，下载 [源文档模板](../assets/template.zip) 并将文件解压到 `experience-platform.en/help/sources/tutorials/api/create/...` with [`...`] 表示您选择的类别。 例如，如果要创建数据库源，请选择数据库文件夹。
+在本地计算机就绪后，下载 [源文档模板](../assets/api-template.zip) 并将文件解压到 `experience-platform.en/help/sources/tutorials/api/create/...` with [`...`] 表示您选择的类别。 例如，如果要创建数据库源，请选择数据库文件夹。
 
 最后，按照模板上所述的说明操作，并使用与源相关的相关信息编辑模板。
 

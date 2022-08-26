@@ -5,9 +5,9 @@ title: 记录源
 topic-legacy: overview
 description: 在Adobe Experience Platform中实时创建新源的最后一步是记录新源。
 exl-id: 80daadb1-127f-4f42-8bc9-fb89a7898462
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: adf7dbe5e32310fee680f996ffbde0fd6ddd993a
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '411'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 0%
 
 您还可以下载以下文档模板：
 
-* [API文档模板](../assets/template.zip)
+* [API文档模板](../assets/api-template.zip)
 * [UI文档模板](../assets/ui-template.zip)
 
 ## 创建新源页面

@@ -6,7 +6,7 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Azure Blob。
 exl-id: 4ab8033f-697a-49b6-8d9c-1aadfef04a04
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 0d891acd4e33eb7080da44e204672dc3601cf166
 workflow-type: tm+mt
 source-wordcount: '692'
 ht-degree: 1%
@@ -130,7 +130,7 @@ curl -X POST \
         "name": "Azure Blob source connection using SAS URI",
         "description": "Azure Blob source connection using SAS URI",
         "auth": {
-            "specName": "SasURIAuthentication",
+            "specName": "SAS URI Authentication",
             "params": {
                 "sasUri": "https://{ACCOUNT_NAME}.blob.core.windows.net/?sv={STORAGE_VERSION}&st={START_TIME}&se={EXPIRE_TIME}&sr={RESOURCE}&sp={PERMISSIONS}>&sip=<{IP_RANGE}>&spr={PROTOCOL}&sig={SIGNATURE}>"
             }

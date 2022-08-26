@@ -5,10 +5,10 @@ title: 使用GitHub Web界面创建源文档页面
 topic-legacy: tutorial
 description: 本文档提供了有关如何使用GitHub Web界面创作文档和提交拉取请求(PR)的步骤。
 exl-id: 84b4219c-b3b2-4d0a-9a65-f2d5cd989f95
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: adf7dbe5e32310fee680f996ffbde0fd6ddd993a
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '624'
+ht-degree: 2%
 
 ---
 
@@ -52,7 +52,7 @@ ht-degree: 0%
 
 ## 为源创作文档页面
 
-要开始记录新源，请粘贴 [源文档模板](./template.md) 到GitHub Web编辑器中。 您还可以下载模板 [此处](../assets/template.zip).
+要开始记录新源，请粘贴 [源文档模板](./template.md) 到GitHub Web编辑器中。 您还可以下载模板 [此处](../assets/api-template.zip).
 
 将模板复制到GitHub Web编辑器界面后，按照模板中概述的说明操作，并编辑包含源相关信息的值。
 
