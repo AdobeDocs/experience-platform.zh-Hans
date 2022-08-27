@@ -2,9 +2,9 @@
 title: Adobe Experience Platform发行说明2022年8月
 description: 2022年8月版Adobe Experience Platform发行说明。
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: f2d2499147b40a15a413773068b65139278bd4ff
+source-git-commit: fb9fdc70aabb62cdc39888b1ff90557d8420c31b
 workflow-type: tm+mt
-source-wordcount: '2095'
+source-wordcount: '2137'
 ht-degree: 7%
 
 ---
@@ -36,7 +36,7 @@ Attribution AI 用于将点数归因于导致转化事件的接触点。营销�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 隐私支持 | <ul><li> Attribution AI现在支持定义用户角色和访问策略以管理 [权限](../../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。 </li><li>活动发生时，会自动记录审核日志资源。</li><li> 到达 [基于属性的访问控制](../../access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问，这些属性可以是添加到对象（如标签）的元数据。管理员还可以定义用户角色，这些角色只能访问与这些字段对应的特定字段和数据。</li><li>Attribution AI利用平台数据集。 为帮助促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来满足客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。 所有数据在传输过程中和静态时都经过加密。</li></ul> |
+| 隐私支持 | <ul><li> Attribution AI现在支持定义用户角色和访问策略以管理 [权限](../../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。 </li><li>活动发生时，会自动记录审核日志资源。</li><li> 到达 [基于属性的访问控制](../../access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问，这些属性可以是添加到对象（如标签）的元数据。管理员还可以定义用户角色，这些角色只能访问与这些字段对应的特定字段和数据。</li><li>Attribution AI利用平台数据集。 为支持品牌可能收到的消费者权限请求，品牌应使用PlatformPrivacy Service提交消费者的访问请求和删除请求，以在数据湖、Identity Service和实时客户资料中删除其数据。  </li><li>所有用于模型输入/输出的数据集都将遵循平台准则。 平台数据加密适用于静态数据和在途数据。 请参阅相关文档，了解有关 [数据加密](../../../help/landing/governance-privacy-security/encryption.md).</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -52,7 +52,7 @@ Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 隐私支持 | <ul><li> Customer AI现在支持定义用户角色和访问策略以进行管理 [权限](../../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。 </li><li>活动发生时，会自动记录审核日志资源。</li><li> 到达 [基于属性的访问控制](../../access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问。 这些属性可以是添加到对象的元数据，如标签。 管理员还可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。</li><li>Customer AI利用Platform数据集。 为帮助促进GDPR合规，您可以使用Adobe Experience Platform Privacy Service设置协议来满足客户请求，以便在数据湖、Identity Service和实时客户资料中访问和删除其数据。 所有数据在传输过程中和静态时都经过加密。</li></ul> |
+| 隐私支持 | <ul><li> Customer AI现在支持定义用户角色和访问策略以进行管理 [权限](../../../help/access-control/abac/ui/permissions.md) 用于产品应用程序中的功能和对象。 </li><li>活动发生时，会自动记录审核日志资源。</li><li> 到达 [基于属性的访问控制](../../access-control/abac/overview.md)，管理员可以根据特定属性控制对特定对象和/或功能的访问。 这些属性可以是添加到对象的元数据，如标签。 管理员还可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。</li><li>Customer AI利用Platform数据集。 为支持品牌可能收到的消费者权限请求，品牌应使用PlatformPrivacy Service提交消费者的访问请求和删除请求，以在数据湖、Identity Service和实时客户资料中删除其数据。 </li><li>所有用于模型输入/输出的数据集都将遵循平台准则。 平台数据加密适用于静态数据和在途数据。 请参阅相关文档，了解有关 [数据加密](../../../help/landing/governance-privacy-security/encryption.md).</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}
 
