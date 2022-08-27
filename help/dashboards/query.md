@@ -4,9 +4,9 @@ title: 使用查询服务浏览、验证和处理功能板数据集
 type: Documentation
 description: 了解如何使用查询服务来探索和处理在Experience Platform中为配置文件、区段和目标功能板提供动力的原始数据集。
 exl-id: 0087dcab-d5fe-4a24-85f6-587e9ae74fb8
-source-git-commit: fe2d9e60dd641e1f03f7dde72e64e2892ae7c1a2
+source-git-commit: 62e282138de8cf2d74b4a62f4ced39e3fb78001a
 workflow-type: tm+mt
-source-wordcount: '848'
+source-wordcount: '951'
 ht-degree: 0%
 
 ---
@@ -83,6 +83,16 @@ Adobe Experience Platform [!DNL Query Service] 支持营销人员通过启用标
 要了解DIM目标数据集的完整架构，您可以预览和浏览该数据集 [使用数据集查看器](../catalog/datasets/user-guide.md) 在Experience PlatformUI中。
 
 ![](images/query/destinations-metadata.png)
+
+## （测试版）客户数据平台(CDP)分析报表
+
+>[!IMPORTANT]
+>
+>CDP分析数据模型功能正在测试中。 其功能和文档可能会发生更改。
+
+CDP分析数据模型功能公开了SQL，它支持各种配置文件、目标和分段小组件的分析。 您可以自定义这些SQl查询模板，以便为您的营销和KPI用例创建CDP报告。
+
+CDP报告提供对用户档案数据及其与区段和目标的关系的分析。 有关如何获取详细信息，请参阅CDP分析数据模型文档 [将CDP分析数据模型应用于您的特定KPI用例](./cdp-insights-data-model.md).
 
 ## 示例查询
 
