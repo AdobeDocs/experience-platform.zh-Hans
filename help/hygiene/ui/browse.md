@@ -2,7 +2,7 @@
 title: 浏览数据卫生工作单
 description: 了解如何在Adobe Experience Platform用户界面中查看和管理现有数据卫生工作单。
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 0b7196b195fc5ee8abb45ccb93f1fcc9a000a603
+source-git-commit: 80f9f0c64f2af2c7ceea59bddab9a5d6b57bc882
 workflow-type: tm+mt
 source-wordcount: '517'
 ht-degree: 1%
@@ -48,7 +48,7 @@ ht-degree: 1%
 
 {style=&quot;table-layout:auto&quot;}
 
-## 查看工作单的详细信息
+## 查看工作单的详细信息 {#view-details}
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_statusbyservice"
