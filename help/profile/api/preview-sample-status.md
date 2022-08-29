@@ -1,11 +1,11 @@
 ---
 keywords: Experience Platform；配置文件；实时客户配置文件；故障诊断；API；预览；示例
 title: 预览示例状态（配置文件预览）API端点
-description: 使用预览示例状态端点（实时客户配置文件API的一部分），您可以预览配置文件数据的最新成功示例、按数据集和身份列出配置文件分发，以及生成显示数据集重叠、身份重叠和未知配置文件的报表。
+description: 实时客户配置文件API的预览示例状态端点允许您预览配置文件数据的最新成功示例、按数据集和身份列出配置文件分发，以及生成显示数据集重叠、身份重叠和未拼合配置文件的报表。
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 8a17648757b342bd8026382918ca41c469210b51
 workflow-type: tm+mt
-source-wordcount: '2882'
+source-wordcount: '2875'
 ht-degree: 1%
 
 ---
@@ -124,7 +124,7 @@ GET /previewsamplestatus/report/dataset?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例: `date=2024-12-31` |
+| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
@@ -223,7 +223,7 @@ GET /previewsamplestatus/report/namespace?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例: `date=2024-12-31` |
+| `date` | 指定要返回的报表的日期。 如果在该日期运行了多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
@@ -318,7 +318,7 @@ GET /previewsamplestatus/report/dataset/overlap?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在同一日期运行多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例: `date=2024-12-31` |
+| `date` | 指定要返回的报表的日期。 如果在同一日期运行多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
@@ -384,7 +384,7 @@ GET /previewsamplestatus/report/namespace/overlap?{QUERY_PARAMETERS}
 
 | 参数 | 描述 |
 |---|---|
-| `date` | 指定要返回的报表的日期。 如果在同一日期运行多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例: `date=2024-12-31` |
+| `date` | 指定要返回的报表的日期。 如果在同一日期运行多个报表，则会返回该日期的最新报表。 如果指定日期不存在报表，则会返回404（未找到）错误。 如果未指定日期，则返回最近的报表。 格式：YYYY-MM-DD。 示例：`date=2024-12-31` |
 
 **请求**
 
@@ -465,25 +465,25 @@ curl -X GET \
 * 共有24个用户档案，其中 `AAID` 和 `ECID` 身份命名空间。
 * 有6,565个用户档案仅包含 `ECID` 身份。
 
-## 生成未知的用户档案报告
+## 生成未拼合的用户档案报表
 
-您可以通过未知的用户档案报表进一步了解贵组织的用户档案存储的构成。 “未知配置文件”是指在给定时间段内未拼合和不活动的任何配置文件。 “未拼合”配置文件是只包含一个配置文件片段的配置文件，而“不活动”配置文件是指在指定时间段内未添加新事件的任何配置文件。 未知用户档案报表提供7、30、60、90和120天的用户档案细目。
+您可以通过未拼合的用户档案报表，进一步查看贵组织的用户档案存储的构成。 “未拼合”配置文件是只包含一个配置文件片段的配置文件。 “未知”配置文件是与匿名身份命名空间(如 `ECID` 和 `AAID`. 未知用户档案处于不活动状态，这意味着他们在指定时间段内未添加新事件。 未拼合的用户档案报表按7、30、60、90和120天的时间段划分用户档案。
 
-您可以通过向执行GET请求来生成未知的用户档案报告 `/previewsamplestatus/report/unknownProfiles` 端点。
+您可以通过向执行GET请求，生成未拼合的用户档案报表 `/previewsamplestatus/report/unstitchedProfiles` 端点。
 
 **API格式**
 
 ```http
-GET /previewsamplestatus/report/unknownProfiles
+GET /previewsamplestatus/report/unstitchedProfiles
 ```
 
 **请求**
 
-以下请求会返回未知的用户档案报表。
+以下请求会返回未拼合的用户档案报表。
 
 ```shell
 curl -X GET \
-  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/unknownProfiles \
+  https://platform.adobe.io/data/core/ups/previewsamplestatus/report/unstitchedProfiles \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -491,18 +491,18 @@ curl -X GET \
 
 **响应**
 
-成功的请求会返回HTTP状态200（确定）和未知的用户档案报告。
+成功的请求会返回“HTTP状态200（确定）”和未拼合的用户档案报表。
 
 >[!NOTE]
 >
->就本指南而言，报表已被截断为仅包含 `"120days"` 和&quot;`7days`“时间段”。 完整的未知用户档案报表提供7、30、60、90和120天的用户档案细目。
+>就本指南而言，报表已被截断为仅包含 `"120days"` 和&quot;`7days`“时间段”。 完整的未拼合用户档案报表按7、30、60、90和120天的时段划分用户档案。
 
 ```json
 {
   "data": {
       "totalNumberOfProfiles": 63606,
       "totalNumberOfEvents": 130977,
-      "unknownProfiles": {
+      "unstitchedProfiles": {
           "120days": {
               "countOfProfiles": 1644,
               "eventsAssociated": 26824,
@@ -547,16 +547,16 @@ curl -X GET \
 
 | 属性 | 描述 |
 |---|---|
-| `data` | 的 `data` 对象包含为未知用户档案报告返回的信息。 |
-| `totalNumberOfProfiles` | 配置文件存储区中独特配置文件的总数。 这等同于可寻址受众计数。 它包括已知和未知的用户档案。 |
+| `data` | 的 `data` 对象包含为未拼合的用户档案报表返回的信息。 |
+| `totalNumberOfProfiles` | 配置文件存储区中独特配置文件的总数。 这等同于可寻址受众计数。 它包括已知和未拼合的用户档案。 |
 | `totalNumberOfEvents` | 配置文件存储中的ExperienceEvents总数。 |
-| `unknownProfiles` | 包含按时间段划分未知用户档案（未拼合和不活动）的对象。 “未知用户档案”报表提供7天、30天、60天、90天和120天时间段的用户档案细目。 |
-| `countOfProfiles` | 时间段内未知配置文件的计数或命名空间中未知配置文件的计数。 |
+| `unstitchedProfiles` | 包含按时间段划分未拼合用户档案的对象。 未拼合的用户档案报表按7天、30天、60天、90天和120天时段划分用户档案。 |
+| `countOfProfiles` | 时间段内未拼合的配置文件计数或命名空间的未拼合配置文件计数。 |
 | `eventsAssociated` | 时间范围的ExperienceEvents数量或命名空间的事件数。 |
-| `nsDistribution` | 一个对象，其中包含单个身份命名空间以及每个命名空间的未知配置文件和事件的分布。 注意：合计总计 `countOfProfiles` (对于 `nsDistribution` 对象等于 `countOfProfiles` 在时间段内。 同样的情况也适用于 `eventsAssociated` 每个命名空间和总计 `eventsAssociated` 每个时段。 |
+| `nsDistribution` | 一个对象，其中包含单个身份命名空间以及每个命名空间的未拼合配置文件和事件的分布。 注意：合计总计 `countOfProfiles` (对于 `nsDistribution` 对象等于 `countOfProfiles` 在时间段内。 同样的情况也适用于 `eventsAssociated` 每个命名空间和总计 `eventsAssociated` 每个时段。 |
 | `reportTimestamp` | 报表的时间戳。 |
 
-### 解释未知用户档案报表
+### 解释未拼合的用户档案报表
 
 报表结果可以让您分析贵组织在其配置文件存储区中拥有多少个未拼合和非活动的配置文件。
 
@@ -586,9 +586,9 @@ curl -X GET \
 此报表提供以下信息：
 
 * 有1,782个用户档案，其中仅包含一个用户档案片段，且过去七天内没有新事件。
-* 有29,151个ExperienceEvent与1,782个未知用户档案关联。
-* 有1,734个未知配置文件，其中包含ECID标识命名空间中的单个配置文件片段。
-* 有28,591个事件与1,734个未知配置文件关联，这些未知配置文件包含ECID标识命名空间中的单个配置文件片段。
+* 共有29,151个ExperienceEvent与1,782个未拼合的用户档案关联。
+* 有1,734个未拼合的配置文件，其中包含ECID标识命名空间中的单个配置文件片段。
+* 有28,591个事件与1,734个未拼合的配置文件关联，这些配置文件包含ECID标识命名空间中的单个配置文件片段。
 
 ## 后续步骤
 
