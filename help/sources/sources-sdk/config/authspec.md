@@ -4,10 +4,10 @@ title: 为自助源（批处理SDK）配置身份验证规范
 topic-legacy: overview
 description: 本文档概述了为使用自助源（批处理SDK）而需要准备的配置。
 exl-id: 68ed22fe-1f22-46d2-9d58-72ad8a9e6b98
-source-git-commit: 4d7799b01c34f4b9e4a33c130583eadcfdc3af69
+source-git-commit: 25e0061cc47ec4179f3f02958eb8bda1714ea139
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '525'
+ht-degree: 2%
 
 ---
 
@@ -105,7 +105,6 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
       }
     },
     "required": [
-      "host",
       "accessToken"
     ]
   }
@@ -137,7 +136,7 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 
 ### 基本身份验证
 
-基本身份验证是一种身份验证类型，它允许您使用应用程序的主机URL、帐户用户名和帐户密码的组合来访问您的应用程序。
+基本身份验证是一种身份验证类型，允许您使用帐户用户名和帐户密码的组合访问应用程序。
 
 ```json
 {
@@ -148,10 +147,6 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
     "type": "object",
     "description": "defines auth params required for connecting to rest service.",
     "properties": {
-      "host": {
-        "type": "string",
-        "description": "Enter resource url host path"
-      },
       "username": {
         "description": "Username to connect rest endpoint.",
         "type": "string"
@@ -163,7 +158,6 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
       }
     },
     "required": [
-      "host",
       "username",
       "password"
     ]
@@ -180,10 +174,9 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
 | `authSpec.spec.type` | 定义架构的数据类型。 | `object` |
 | `authSpec.spec.description` | 显示特定于您的身份验证类型的更多信息。 |
 | `authSpec.spec.properties` | 包含有关用于身份验证的凭据的信息。 |
-| `authSpec.spec.properties.host` | 应用程序的主机URL。 |
 | `authSpec.spec.properties.username` | 与您的应用程序关联的帐户用户名。 |
 | `authSpec.spec.properties.password` | 与您的应用程序关联的帐户密码。 |
-| `authSpec.spec.required` | 指定在Platform中输入的必需值所需的字段。 | `host` |
+| `authSpec.spec.required` | 指定在Platform中输入的必需值所需的字段。 | `username` |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -201,10 +194,6 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
         "type": "object",
         "description": "Define auth params required for connecting to generic rest using oauth2 authorization code.",
         "properties": {
-          "host": {
-            "type": "string",
-            "description": "Enter resource url host path"
-          },
           "authorizationTestUrl": {
             "description": "Authorization test url to validate accessToken.",
             "type": "string"
@@ -216,7 +205,6 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
           }
         },
         "required": [
-          "host",
           "accessToken"
         ]
       }
@@ -229,10 +217,6 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
         "type": "object",
         "description": "defines auth params required for connecting to rest service.",
         "properties": {
-          "host": {
-            "type": "string",
-            "description": "Enter resource url host path."
-          },
           "username": {
             "description": "Username to connect mailChimp endpoint.",
             "type": "string"
@@ -244,7 +228,6 @@ OAuth 2刷新代码允许通过生成临时访问令牌和刷新令牌来安全�
           }
         },
         "required": [
-          "host",
           "username",
           "password"
         ]
