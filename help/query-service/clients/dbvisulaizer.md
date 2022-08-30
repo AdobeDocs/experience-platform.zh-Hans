@@ -5,9 +5,9 @@ title: 将DbVisualizer连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍将DbVisualizer与Adobe Experience Platform查询服务连接的步骤。
 exl-id: badb0d89-1713-438c-8a9c-d1404051ff5f
-source-git-commit: 9c272cc5b879e38f6b6113542ec7bdfd4f11fa8a
+source-git-commit: 760b04499edd0374f1aae71600bef074a6f17531
 workflow-type: tm+mt
-source-wordcount: '726'
+source-wordcount: '743'
 ht-degree: 0%
 
 ---
@@ -40,12 +40,13 @@ ht-degree: 0%
 
 ![突出显示了属性选项卡的数据库连接工作区。](../images/clients/dbvisualizer/driver-properties.png)
 
-下表显示了三个必需的驱动程序属性。
+建议使用下表中显示的驱动程序属性，以启用SSL与DBVisualizer结合使用。
 
 | 属性 | 描述 |
 | ------ | ------ |
 | `PGHOST` | 的主机名 [!DNL PostgreSQL] 服务器。 此值是您的Experience Platform [!UICONTROL 主机] 凭据。 |
-| `SSL` | 这控制SSL要求的使用。 您 **必须** 使用值 `require` 以启用此要求。 |
+| `ssl` | 定义SSL值 `1` 启用SSL。 |
+| `sslmode` | 这控制SSL要求的使用。 您 **必须** 使用值 `require` 以启用此要求。 |
 | `user` | 连接到数据库的用户名是您的组织ID。 它是以 `@adobe.org` |
 
 >[!IMPORTANT]
