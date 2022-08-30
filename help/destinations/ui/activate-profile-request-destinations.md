@@ -4,9 +4,9 @@ title: 将受众数据激活到用户档案请求目标
 type: Tutorial
 description: 了解如何通过将区段映射到配置文件请求目标，来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: cd7132eb-4047-4faa-a224-47366846cb56
-source-git-commit: 26e7a3e78a4513aa69cdfbed7902509609e114cc
+source-git-commit: cda4591021c5b0a0bd6f43765d72b5867ec59aea
 workflow-type: tm+mt
-source-wordcount: '678'
+source-wordcount: '772'
 ht-degree: 0%
 
 ---
@@ -65,9 +65,23 @@ ht-degree: 0%
 
 ![显示已选择属性的映射步骤的图像](../assets/ui/activate-profile-request-destinations/mapping-step.png)
 
-要添加属性，请选择 **[!UICONTROL 添加新字段]** 控制并搜索或导航到所需的XDM属性字段，如下所示。
+### 选择源属性 {#select-source-attributes}
 
-![显示如何在映射步骤中选择XDM属性的屏幕记录](../assets/ui/activate-profile-request-destinations/mapping-step-select-attribute.gif)
+要添加源属性，请选择 **[!UICONTROL 添加新字段]** 控制 **[!UICONTROL 源字段]** 列，并搜索或导航到所需的XDM属性字段，如下所示。
+
+![显示如何在映射步骤中选择目标属性的屏幕记录](../assets/ui/activate-profile-request-destinations/mapping-step-select-attribute.gif)
+
+### 选择目标属性 {#select-target-attributes}
+
+>[!NOTE]
+>
+>某些目标要求您仅选择源属性，而其他目标则要求同时使用源属性和目标属性。
+>
+>目前， [Adobe Target V2](../catalog/personalization/adobe-target-connection.md) 目标仅需要源属性，而 [具有属性的自定义个性化](../catalog/personalization/custom-personalization.md) 同时需要源属性和目标属性。
+
+要添加目标属性，请选择 **[!UICONTROL 添加新字段]** 控制 **[!UICONTROL 目标字段]** 列，然后键入要将源属性映射到的自定义属性名称。
+
+![显示如何在映射步骤中选择XDM属性的屏幕记录](../assets/ui/activate-profile-request-destinations/mapping-step-select-target-attribute.gif)
 
 ## 计划区段导出 {#scheduling}
 
