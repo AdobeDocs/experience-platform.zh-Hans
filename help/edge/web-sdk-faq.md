@@ -2,14 +2,14 @@
 title: Adobe Experience Platform Web SDK常见问题解答
 description: 获取有关Adobe Experience Platform Web SDK的常见问题解答。
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 95305c0a5df71295e1321eb4c8c28baa66c5d94d
+source-git-commit: 720960b7d63c30707f823fdfafc2299289ea0a11
 workflow-type: tm+mt
-source-wordcount: '1955'
+source-wordcount: '1935'
 ht-degree: 1%
 
 ---
 
-# 常见问题
+# 常见问题解答
 
 本指南提供了有关Adobe Experience Platform Web SDK的常见问题解答。
 
@@ -51,7 +51,7 @@ Adobe Experience Platform Web SDK是一个客户端JavaScript库，它允许Adob
 * Adobe Analytics
 * Adobe Audience Manager
 * Adobe Target
-* Visitor ID
+* 访客 ID
 * Adobe Experience Platform
 
 今年晚些时候，其他解决方案将陆续推出。
@@ -82,9 +82,9 @@ Alloy是Adobe Experience Platform Web SDK的代码名称。 它在SDK的源代�
 
 ## 客户是否需要购买Adobe Experience Platform才能使用 [!DNL Web SDK]?
 
-不会。任何AdobeDigital Experience客户都可以免费使用Adobe Experience Platform Web SDK。 要使用Web SDK，您必须为此功能配置了您的组织。 如果您想要获取访问权限，请填写以下内容 [表单](https://adobe.ly/websdkaccess) 而Adobe将为您配置 [数据流用户界面](datastreams/overview.md) 和Adobe Experience Platform UI（如果需要）。
+不会。任何AdobeDigital Experience客户都可以免费使用Adobe Experience Platform Web SDK。 希望使用 [!DNL Web SDK] 将需要在Adobe Experience Platform数据收集UI中配置正确的权限，以创建架构、数据集、身份命名空间和数据流。
 
-希望使用 [!DNL Web SDK] 将有权在Adobe Experience Platform UI中创建架构、数据集和身份命名空间。
+有关配置这些权限的更多信息，请参阅 [数据收集权限管理](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html?lang=en).
 
 ## 谁应使用Web SDK?
 
@@ -133,7 +133,7 @@ Web SDK正在快速发展。 正在处理更多用例。 您可以在 [此处当
 
 不会。您可以下载 `alloy.js` 自己归档。
 
-但是：
+但是:
 
 * Adobe Experience Platform Web SDK需要称为数据流ID的内容，以便边缘网络能够识别该流并确定如何处理数据。 此ID是在Experience Platform中创建的。 这并不意味着您必须使用数据收集UI来创建属性或部署JavaScript代码，但是您确实需要使用标记来创建配置ID。
 

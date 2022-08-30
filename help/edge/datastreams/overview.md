@@ -3,9 +3,9 @@ title: 数据流概述
 description: 将客户端 Experience Platform SDK 集成与 Adobe 产品和第三方目标连接起来。
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；边缘配置ID；标识；启用ID同步；ID同步容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID；数据收集的数据准备；数据准备；映射器；XDM；边缘上的XDM；映射器
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 45f5d23a671c8e015ca26e0d5025685255c2fc35
 workflow-type: tm+mt
-source-wordcount: '1774'
+source-wordcount: '1728'
 ht-degree: 2%
 
 ---
@@ -15,10 +15,6 @@ ht-degree: 2%
 数据流表示实施Adobe Experience Platform Web和移动SDK时的服务器端配置。 而 [配置命令](../fundamentals/configuring-the-sdk.md) 中的控件控制必须在客户端上处理的事项(例如 `edgeDomain`)，数据流将处理SDK的所有其他配置。 请求发送至Adobe Experience Platform边缘网络时， `edgeConfigId` 用于引用数据流。 这样，您就无需在网站上进行代码更改即可更新服务器端配置。
 
 本文档介绍了在数据收集UI中配置数据流的步骤。
-
->[!NOTE]
->
->您的组织必须配置此功能才能在UI中访问它。 请填写以下内容 [表单](https://adobe.ly/websdkaccess) 请求必要的访问权限。 要管理数据流，必须将您的用户帐户添加到 [!DNL Adobe Experience Platform].
 
 ## 访问 [!UICONTROL 数据流] 工作区
 
