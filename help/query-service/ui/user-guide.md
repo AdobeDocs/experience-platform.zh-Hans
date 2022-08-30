@@ -5,9 +5,9 @@ title: 查询编辑器UI指南
 topic-legacy: query editor
 description: 查询编辑器是Adobe Experience Platform查询服务提供的一个交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并且允许您运行交互式查询以用于开发目的，以及非交互式查询以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: c8b3b22b678622c31462ba0baa2f50fbe89b00d5
+source-git-commit: b393311a4ddcfaab3f8ea2ccd517e0e3b32a268a
 workflow-type: tm+mt
-source-wordcount: '1625'
+source-wordcount: '1882'
 ht-degree: 1%
 
 ---
@@ -62,7 +62,37 @@ ht-degree: 1%
 
 - **表和字段自动完成：** 开始键入要输入的表名 `SELECT` 从，然后使用箭头键导航到要查找的表，然后按 **输入**. 选择表后，自动完成将识别该表中的字段。
 
-![图像](../images/ui/query-editor/tables-auto.png)
+![显示下拉建议的查询编辑器命令行界面。](../images/ui/query-editor/tables-auto.png)
+
+### （测试版）自动完成UI配置切换 {#auto-complete}
+
+>[!IMPORTANT]
+>
+>自动完成UI配置切换开关处于测试阶段。 其功能和文档可能会发生更改。
+
+的 [!DNL Query Editor] 在编写查询时，会自动建议潜在的SQL关键字以及表或列的详细信息。 自动完成功能默认处于启用状态，并且可以通过选择 [!UICONTROL 语法自动完成] 切换到查询编辑器的右上角。
+
+自动完成配置设置是按用户进行的，并在连续登录时记住该设置。
+
+![语法自动完成切换的查询编辑器高亮显示。](../images/ui/query-editor/auto-complete-toggle.png)
+
+禁用此功能会阻止处理多个元数据命令，并提供在编辑查询时通常有助于提高创作速度的推荐。
+
+使用切换开关启用自动完成功能时，对于表和列名称以及SQL关键字的推荐建议会在短暂暂停后变得可用。 控制台中查询编辑器下方的成功消息表示该功能处于活动状态。
+
+如果禁用自动完成功能，则需要刷新页面才能使该功能生效。 在禁用 [!UICONTROL 语法自动完成] 切换：
+
+- [!UICONTROL 取消]
+- [!UICONTROL 保存更改并刷新]
+- [!UICONTROL 刷新而不保存更改]
+
+>[!IMPORTANT]
+>
+>如果您在禁用此功能时正在编写或编辑查询，则必须在刷新页面之前保存对查询所做的任何更改，否则所有进度都将丢失。
+
+![用于禁用自动完成功能的确认对话框。](../images/ui/query-editor/confirmation-dialog.png)
+
+选择相应的选项以禁用自动完成功能。
 
 ### 错误检测 {#error-detection}
 
