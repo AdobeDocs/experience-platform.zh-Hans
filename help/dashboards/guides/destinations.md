@@ -4,9 +4,9 @@ title: 目标功能板指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: e59ba2e83808b460016805997580dc16c4cd369e
+source-git-commit: 7a67ac4e1e8730197221832090c1414073399a1b
 workflow-type: tm+mt
-source-wordcount: '2670'
+source-wordcount: '2716'
 ht-degree: 0%
 
 ---
@@ -215,6 +215,10 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 如果区段映射的配置文件计数与过去30天的平均映射配置文件大小之间的标准偏差不大，则表示系统中存在异常，应对此进行调查。
 
 如果 [!UICONTROL 映射的受众运行状况] 小组件存在较大偏差，您应参考受众大小趋势图并查找异常区段。 该趋势可以进一步分析区段的运行状况。
+
+>[!NOTE]
+>
+>映射的受众健康小组件的默认大小可能会妨碍表格信息。 请修改小组件的大小，以提高映射的区段名称和列标题的清晰度。 有关 [如何调整小组件的大小](../customize/modify.md).
 
 ![映射的受众健康小组件。](../images/destinations/mapped-audience-health.png)
 
