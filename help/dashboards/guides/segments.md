@@ -4,9 +4,9 @@ title: 区段功能板指南
 description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: e18d37ba02d6edee77c91b719a0a2336e1316b71
+source-git-commit: 70fb980b276d256e0f7170b6e49527bca59adfe9
 workflow-type: tm+mt
-source-wordcount: '1665'
+source-wordcount: '1681'
 ht-degree: 0%
 
 ---
@@ -48,6 +48,10 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 功能板会自动选择要显示的区段，但您可以使用下拉菜单或区段选择器更改区段。
 
 要选择其他区段，请选择区段名称旁边的下拉菜单，或使用区段选择器打开区段选择对话框。
+
+>[!IMPORTANT]
+>
+>只有配置文件计数大于零的区段才会显示在可选区段列表中。
 
 ![](../images/segments/change-segment.png)
 
