@@ -5,10 +5,10 @@ title: Adobe Experience Platform 概述
 topic-legacy: getting started
 description: Adobe Experience Platform使组织能够在应用数据科学和机器学习来显着改进丰富的个性化体验的设计和交付之前，实现客户数据的集中化和标准化。
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
-source-git-commit: 0e58db465b9e978d66325c4600ed78e81c03ae44
+source-git-commit: 769e8e6e5d159254d34ad1d3e5e468c3b0bca10b
 workflow-type: tm+mt
 source-wordcount: '437'
-ht-degree: 9%
+ht-degree: 10%
 
 ---
 
@@ -26,13 +26,13 @@ Adobe Experience Platform是市场上功能最强大、最灵活、最开放的�
 
 ### 基于的应用程序服务文档 [!DNL Experience Platform]
 
-Adobe已基于Experience Platform构建了多个应用程序服务。 您可以在其自己的指南中找到这些服务的文档，相关链接如下：
+Adobe已基于Experience Platform构建了多个应用程序服务。 您可以在其自己的指南中找到这些服务的文档，链接如下：
 
-* [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
-* [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journey-orchestration.html)
-* [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning.html)
 * [[!DNL Real-time Customer Data Platform (Real-time CDP)]](../rtcdp/overview.md)
 * [[!DNL Real-time Customer Data Platform (Real-time CDP) B2B Edition]](../rtcdp/b2b-overview.md)
+* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer.html)
+* [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
+* [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journey-orchestration.html)
 
 ## [!DNL Experience Platform] 教程
 
@@ -51,7 +51,7 @@ Adobe已基于Experience Platform构建了多个应用程序服务。 您可以�
 * [**术语表**](glossary.md)\
    查看Adobe Experience Platform术语。
 
-* [**发行说明**](https://www.adobe.com/go/platform-release-notes-en)\
+* [**年发行说明**](https://www.adobe.com/go/platform-release-notes-en)\
    查找有关最近 [!DNL Experience Platform] 版本和查看过去的版本。
 
 * [**疑难解答指南**](troubleshooting.md)\

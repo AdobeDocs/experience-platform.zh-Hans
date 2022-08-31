@@ -1,22 +1,21 @@
 ---
-keywords: Experience Platform；主页；热门主题；CJA；旅程分析；客户旅程分析；活动编排；客户旅程；旅程；旅程编排；功能；工作流
+keywords: Experience Platform；主页；热门主题；CJA;journey analytics；客户历程分析；促销活动编排；编排；客户历程；历程；历程编排；功能；工作流
 title: 应用程序服务文档
 topic-legacy: overview
-description: Adobe Experience Platform文档以多种格式提供，包括用户界面和API的概述、教程和指南。 以下是最常见的Experience Platform服务文档类型的简要描述。
+description: Adobe Experience Platform文档提供了多种格式，包括用户界面和API的概述、教程和指南。 以下是最常见的可用于Experience Platform服务的文档类型的简要描述。
 exl-id: 24fdb183-f75b-40e0-828e-9dd49422a7b1
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: cf0864ed0f2437e4992ec77cc55dae2bca269890
 workflow-type: tm+mt
 source-wordcount: '100'
-ht-degree: 0%
+ht-degree: 4%
 
 ---
 
 # 应用程序服务文档
 
-Adobe在Experience Platform的基础上构建了多个应用程序服务。 您可以使用以下链接找到这些服务的文档：
+Adobe基于Experience Platform构建了多项应用程序服务。 您可以使用以下链接找到这些服务的文档：
 
 * [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
 * [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journey-orchestration.html)
-* [[!DNL Offer Decisioning]](https://experienceleague.adobe.com/docs/offer-decisioning.html)
+* [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer.html)
 * [[!DNL Real-time Customer Data Platform (Real-time CDP)]](../rtcdp/overview.md)

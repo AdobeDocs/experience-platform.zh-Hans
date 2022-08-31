@@ -5,10 +5,10 @@ title: Experience PlatformUI概述
 topic-legacy: ui guide
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: 5fb7284760489fc526b5891d258c51ed20a2b095
+source-git-commit: 769e8e6e5d159254d34ad1d3e5e468c3b0bca10b
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1812'
+ht-degree: 1%
 
 ---
 
@@ -100,7 +100,7 @@ Platform UI中的顶部导航栏会显示您当前已登录的IMS组织，并提
 
 沙盒栏紧靠顶部导航栏的下方。 此栏显示您当前用于Platform的沙箱。 有关沙箱的更多信息，请参阅 [沙箱概述](../sandboxes/home.md).
 
-## 左侧导航 {#left-nav}
+## 左侧导航栏 {#left-nav}
 
 屏幕左侧的导航列出了Platform UI中支持的所有不同服务。
 
@@ -134,7 +134,7 @@ Platform UI中的顶部导航栏会显示您当前已登录的IMS组织，并提
 
 的 **[!UICONTROL 标识]** 部分，可让您创建和管理身份命名空间。 有关 [!UICONTROL 标识] 部分，包括有关身份命名空间以及如何在Platform UI中使用身份的信息，请参阅 [身份命名空间概述](../identity-service/namespaces.md).
 
-### [!UICONTROL 隐私]
+### [!UICONTROL Privacy]
 
 的 **[!UICONTROL 策略]** 部分，可让您创建和管理数据使用策略。 要了解有关使用策略部分的更多信息，请阅读 [数据使用策略用户指南](../data-governance/policies/user-guide.md). 有关数据使用策略的更多信息，请参阅 [数据使用策略概述](../data-governance/policies/overview.md).
 
@@ -160,7 +160,7 @@ Platform UI中的顶部导航栏会显示您当前已登录的IMS组织，并提
 
 ### [!UICONTROL 决策]
 
-Offer Decisioning 是与 Adobe Experience Platform 集成的一项应用程序服务。它允许您使用Experience Platform，在适当的时间跨所有接触点为客户提供最佳选件和体验。 进一步了解Offer decisioning，包括使用 [!UICONTROL 选件] 和 [!UICONTROL 活动] 访问 [offer decisioning文档](https://experienceleague.adobe.com/docs/offer-decisioning.html).
+Adobe Journey Optimizer是一项基于Experience Platform构建的应用程序服务。 它允许您使用强大的决策技术，在适当的时间跨所有接触点为客户提供最佳选件和体验。 进一步了解Journey Optimizer，包括与 [!UICONTROL 选件] 和 [!UICONTROL 活动] 访问 [Journey Optimizer文档](https://experienceleague.adobe.com/docs/journey-optimizer.html?lang=zh-Hans).
 
 ### [!UICONTROL 管理]
 
