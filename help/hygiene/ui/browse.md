@@ -2,9 +2,9 @@
 title: 浏览数据卫生工作单
 description: 了解如何在Adobe Experience Platform用户界面中查看和管理现有数据卫生工作单。
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 80f9f0c64f2af2c7ceea59bddab9a5d6b57bc882
+source-git-commit: f246a014de7869b627a677ac82e98d4556065010
 workflow-type: tm+mt
-source-wordcount: '517'
+source-wordcount: '616'
 ht-degree: 1%
 
 ---
@@ -55,25 +55,29 @@ ht-degree: 1%
 >title="按服务列出的状态"
 >abstract="数据卫生请求由多个Experience Platform服务独立处理。 此部分概述了每个服务的请求当前处理状态。 要了解更多信息，请参阅数据卫生UI指南。"
 
+>[!CONTEXTUALHELP]
+>id="platform_hygiene_numberofidentities"
+>title="标识数"
+>abstract="请求在此工作单中删除的标识数。 计数中包含的标识不一定存在于受影响的数据集中。 要了解更多信息，请参阅数据卫生UI指南。"
+
+>[!CONTEXTUALHELP]
+>id="platform_hygiene_responsemessages"
+>title="消费者删除响应"
+>abstract="当用户删除过程收到来自系统的响应时，这些消息将显示在 **[!UICONTROL 结果]** 中。 如果在处理工作单时出现问题，则此部分中将显示任何相关错误消息，以帮助您排查问题。 要了解更多信息，请参阅数据卫生UI指南。"
+
 选择列出的工作单的ID以查看其详细信息。
 
 ![显示正在选择的工作单ID的图像](../images/ui/browse/select-work-order.png)
 
 <!-- Depending on the type of work order selected, different information and controls are provided. These are covered in the sections below.
 
-### Consumer delete details
-
->[!CONTEXTUALHELP]
->id="platform_hygiene_responsemessages"
->title="Consumer delete response"
->abstract="When a consumer deletion process receives a response from the system, these messages are displayed under the **[!UICONTROL Result]** section. If a problem occurs while a work order is processing, any relevant error messages will appear in this section to help you troubleshoot the issue. To learn more, see the data hygiene UI guide."
-
+### Consumer delete details {#consumer-delete}
 
 The details of a consumer delete request are read-only, displaying its basic attributes such as its current status and the time elapsed since the request was made.
 
 ![Image showing the details page for a consumer delete work order](../images/ui/browse/consumer-delete-details.png)
 
-### Dataset expiration details -->
+### Dataset expiration details {#dataset-expiration} -->
 
 数据集过期的详细信息页面提供了有关其基本属性的信息，包括删除之前剩余日期的计划过期日期。 在右边栏中，您可以使用控件来编辑或取消过期。
 
