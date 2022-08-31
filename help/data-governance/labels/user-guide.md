@@ -5,9 +5,9 @@ title: 在UI中管理数据使用情况标签
 topic-legacy: labels
 description: 本指南介绍了在Adobe Experience Platform用户界面中使用数据使用标签的步骤。
 exl-id: aa44d5cc-416a-4ef2-be14-b4f32aec162c
-source-git-commit: 3876af19ef100f29ef738cf7518696a57600945a
+source-git-commit: 3d49b5c503ec0fd92f0639abf366d7652566fac7
 workflow-type: tm+mt
-source-wordcount: '1186'
+source-wordcount: '1229'
 ht-degree: 0%
 
 ---
@@ -106,7 +106,12 @@ ht-degree: 0%
 
 请参阅 [管理模式级别的标签](../../xdm/tutorials/labels.md) 以了解更多信息。
 
-## 管理自定义标签
+## 管理自定义标签 {#manage-custom-labels}
+
+>[!CONTEXTUALHELP]
+>id="platform_governance_createlabels"
+>title="创建标签"
+>abstract="标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 Platform提供了一组供您使用的标准标签，但您也可以创建特定于贵组织的自定义标签。"
 
 您可以在 **[!UICONTROL 策略]** 工作区 [!DNL Experience Platform] UI。 选择 **[!UICONTROL 策略]** 在左侧导航中，选择 **[!UICONTROL 标签]** 查看现有标签的列表。 从此处选择 **[!UICONTROL 创建标签]**.
 

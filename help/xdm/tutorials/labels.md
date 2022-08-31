@@ -2,9 +2,9 @@
 title: 管理架构的数据使用标签
 description: 了解如何在Adobe Experience Platform UI中向Experience Data Model(XDM)架构字段添加数据使用情况标签。
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: 6c72e9dd5961d4dc94d8264a7da795ebd96c40ec
+source-git-commit: 3d49b5c503ec0fd92f0639abf366d7652566fac7
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '736'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,12 @@ ht-degree: 0%
    * [架构编辑器](../ui/overview.md):了解如何在Platform UI中创建和管理模式和其他资源。
 * [[!DNL Adobe Experience Platform Data Governance]](../../data-governance/home.md):提供基础架构，以便对平台操作实施数据使用限制，并使用策略来定义可以（或不能）对标记数据执行哪些营销操作。
 
-## 选择一个架构或字段，以向
+## 选择一个架构或字段，以向 {#select-schema-field}
+
+>[!CONTEXTUALHELP]
+>id="platform_schemas_editgovernancelabels"
+>title="编辑管理标签"
+>abstract="将标签应用于架构字段，以指示应用于该特定字段中包含数据的使用策略。"
 
 要开始添加标签，您必须先 [选择要编辑的现有架构](../ui/resources/schemas.md#edit) 或 [创建新模式](../ui/resources/schemas.md#create) 可在架构编辑器中查看其结构。
 
