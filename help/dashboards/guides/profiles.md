@@ -4,9 +4,9 @@ title: Profiles Dashboard指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: e59ba2e83808b460016805997580dc16c4cd369e
+source-git-commit: 93bb816857545e2e5abca51e4046d225927daef4
 workflow-type: tm+mt
-source-wordcount: '3769'
+source-wordcount: '3788'
 ht-degree: 1%
 
 ---
@@ -171,9 +171,9 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ![“配置文件概述”选项卡，其中显示了配置文件计数更改趋势小组件，并突出显示了字幕按钮。](../images/profiles/profiles-count-change-trend-captions.png)
 
-机器学习模型通过分析图表和数据自动生成用于描述关键趋势和重要事件的字幕。
+机器学习模型通过分析图表和数据自动生成用于描述关键趋势和重要事件的字幕。 图表中会根据字幕添加注释。 选择题注以重点关注其相应的注释。
 
-![用户档案计数更改趋势小组件的自动字幕对话框。](../images/profiles/profiles-added-trends-automatic-captions-dialog.png)
+![用户档案计数更改趋势小组件的自动字幕对话框。](../images/profiles/profiles-added-trends-automatic-captions-dialog-with-annotation.png)
 
 ### [!UICONTROL 按身份划分的用户档案计数更改趋势] {#profiles-count-change-trend-by-identity}
 
