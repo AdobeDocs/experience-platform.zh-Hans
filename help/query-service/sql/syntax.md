@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 17a90bb716bd64c9fb9b383a5ffa49598e978288
+source-git-commit: 33c45c53e2ff591e7b94be1b4b17c25d2fe9d497
 workflow-type: tm+mt
-source-wordcount: '3042'
+source-wordcount: '3033'
 ht-degree: 2%
 
 ---
@@ -554,25 +554,23 @@ EXECUTE name [ ( parameter ) ]
 的 `EXPLAIN` 命令显示所提供语句的执行计划。 执行计划显示如何扫描语句引用的表。  如果引用了多个表，则将显示用于将每个输入表中的所需行汇总在一起的联接算法。
 
 ```sql
-EXPLAIN option statement
+EXPLAIN statement
 ```
 
-其中 `option` 可以是以下之一：
+使用 `FORMAT` 关键词 `EXPLAIN` 命令定义响应的格式。
 
 ```sql
-ANALYZE
-FORMAT { TEXT | JSON }
+EXPLAIN FORMAT { TEXT | JSON } statement
 ```
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `ANALYZE` | 如果 `option` 包含 `ANALYZE`，则会显示运行时间和其他统计信息。 |
-| `FORMAT` | 如果 `option` 包含 `FORMAT`，它指定输出格式，格式可以是 `TEXT` 或 `JSON`. 非文本输出包含与文本输出格式相同的信息，但便于程序解析。 此参数默认为 `TEXT`. |
+| `FORMAT` | 使用 `FORMAT` 命令来指定输出格式。 可用选项包括 `TEXT` 或 `JSON`. 非文本输出包含与文本输出格式相同的信息，但便于程序解析。 此参数默认为 `TEXT`. |
 | `statement` | 任意 `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `VALUES`, `EXECUTE`, `DECLARE`, `CREATE TABLE AS`或 `CREATE MATERIALIZED VIEW AS` 语句，您希望查看其执行计划。 |
 
 >[!IMPORTANT]
 >
->请记住，当 `ANALYZE` 选项。 尽管 `EXPLAIN` 会丢弃 `SELECT` 返回时，语句的其他副作用会照常发生。
+>任何 `SELECT` 运行时，可能会返回语句 `EXPLAIN` 关键词。 声明的其他副作用与往常一样发生。
 
 **示例**
 
@@ -585,7 +583,7 @@ EXPLAIN SELECT * FROM foo;
 ```console
                        QUERY PLAN
 ---------------------------------------------------------
- Seq Scan on foo  (cost=0.00..155.00 rows=10000 width=4)
+ Seq Scan on foo (dataSetId = "6307eb92f90c501e072f8457", dataSetName = "foo") [0,1000000242,6973776840203d3d,6e616c58206c6153,6c6c6f430a3d4d20,74696d674c746365]
 (1 row)
 ```
 
