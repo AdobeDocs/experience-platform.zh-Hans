@@ -2,9 +2,9 @@
 title: Secrets端点
 description: 了解如何在Reactor API中对/secrets端点进行调用。
 exl-id: 76875a28-5d13-402d-8543-24db7e2bee8e
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 4f3c97e2cad6160481adb8b3dab3d0c8b23717cc
 workflow-type: tm+mt
-source-wordcount: '1187'
+source-wordcount: '1286'
 ht-degree: 7%
 
 ---
@@ -483,7 +483,7 @@ curl -X PATCH \
       "activated_at": null, 
       "created_at": "2021-07-14T19:33:25.628Z", 
       "credentials": { 
-        "authorization_url": "https://athorization_url.test/token/authorize?required_param=value",
+        "token_url": "https://token_url.test/token/authorize?required_param=value",
         "client_id": "test_client_id", 
         "client_secret": "test_client_secret", 
         "refresh_offset": 14400, 
@@ -641,6 +641,113 @@ curl -X PATCH \
       "property": "https://reactor.adobe.io/secrets/SEa3756b962e964fadb61e31df1f7dd5a3/property"
     }
   }
+}
+```
+
+## 重新授权 `oauth2-google` 秘密 {#reauthorize}
+
+每个 `oauth2-google` 密码包含 `meta.token_url_expires_at` 属性，指示授权URL何时过期。 此后，必须重新授权该密钥，才能续订身份验证过程。
+
+重新授权 `oauth2-google` 机密，请PATCH有关机密。
+
+**API格式**
+
+```http
+PATCH /secrets/{SECRET_ID}
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `{SECRET_ID}` | 的 `id` 要重新授权的秘密。 |
+
+**请求**
+
+的 `data` 请求有效负载中的对象必须包含 `meta.action` 属性设置为 `reauthorize`.
+
+```shell
+curl -X PATCH \
+  https://reactor.adobe.io/secrets/SEa3756b962e964fadb61e31df1f7dd5a3 \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'Accept: application/vnd.api+json;revision=1' \
+  -H 'Content-Type: application/vnd.api+json' \
+  -d '{
+        "data": {
+          "attributes": {
+            "type_of": "oauth2-google"
+          },
+          "meta": {
+            "action": "reauthorize"
+          },
+          "id": "SEa3756b962e964fadb61e31df1f7dd5a3",
+          "type": "secrets"
+        }
+      }'
+```
+
+**响应**
+
+成功的响应会返回更新密钥的详细信息。 从此处，必须复制并粘贴 `meta.token_url` 浏览器以完成授权过程。
+
+```json
+{
+  "data": {
+    "id": "SE5fdfa4c0a2d8404e8b1bc38827cc41c9",
+    "type": "secrets",
+    "attributes": {
+      "created_at": "2021-07-15T19:00:25.628Z", 
+      "updated_at": "2021-07-15T19:00:25.628Z", 
+      "name": "Example Secret", 
+      "type_of": "oauth2-google", 
+      "activated_at": null, 
+      "expires_at": null, 
+      "refresh_at": null, 
+      "status": "pending", 
+      "credentials": { 
+        "scopes": [
+          "https://www.googleapis.com/auth/adwords",
+          "https://www.googleapis.com/auth/pubsub"
+        ], 
+      } 
+    }, 
+    "relationships": { 
+      "property": { 
+        "links": { 
+          "related": "https://reactor.adobe.io/secrets/SE5fdfa4c0a2d8404e8b1bc38827cc41c9/property" 
+        }, 
+        "data": { 
+          "id": "PR9eff664dc6014217b76939bb78b83976", 
+          "type": "properties" 
+        } 
+      }, 
+      "environment": { 
+        "links": { 
+          "related": "https://reactor.adobe.io/secrets/SE5fdfa4c0a2d8404e8b1bc38827cc41c9/environment" 
+        }, 
+        "data": { 
+          "id": "EN04cdddbdb6574170bcac9f470f3b8087", 
+          "type": "environments" 
+        }, 
+        "meta": { 
+          "stage": "development" 
+        } 
+      }, 
+      "notes": { 
+        "links": { 
+          "related": "https://reactor.adobe.io/secrets/SE5fdfa4c0a2d8404e8b1bc38827cc41c9/notes" 
+        } 
+      } 
+    }, 
+    "links": { 
+      "self": "https://reactor.adobe.io/secrets/SE5fdfa4c0a2d8404e8b1bc38827cc41c9", 
+      "property": "https://reactor.adobe.io/secrets/SE5fdfa4c0a2d8404e8b1bc38827cc41c9/property" 
+    }, 
+    "meta": { 
+      "token_url": "https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force&client_id=434635668552-0qvlu519fdjtnkvk8hu8c8dj8rg3723r.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Freactor.adobe.io%2Foauth2%2Fcallback&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fadwords&state=state", 
+      "token_url_expires_at": "2021-07-15T20:00:25.628Z" 
+    } 
+  } 
 }
 ```
 

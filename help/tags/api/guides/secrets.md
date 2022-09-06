@@ -1,9 +1,10 @@
 ---
 title: Reactor API中的密钥
 description: 了解如何在Reactor API中配置用于事件转发的密钥的基础知识。
-source-git-commit: 6822199c3ecf4414893a8b8dfc650e3da40a6470
+exl-id: 0298c0cd-9fba-4b54-86db-5d2d8f9ade54
+source-git-commit: 4f3c97e2cad6160481adb8b3dab3d0c8b23717cc
 workflow-type: tm+mt
-source-wordcount: '1115'
+source-wordcount: '1241'
 ht-degree: 2%
 
 ---
@@ -18,7 +19,7 @@ ht-degree: 2%
 | --- | --- |
 | `token` | 一个字符串，表示两个系统已知和理解的身份验证令牌值。 |
 | `simple-http` | 包含用户名和密码的两个字符串属性。 |
-| `oauth2` | 包含多个属性以支持 [OAuth](https://datatracker.ietf.org/doc/html/rfc6749) 验证规范。 事件转发会要求您获取所需信息，然后在指定的时间间隔内为您处理这些令牌的续订。 |
+| `oauth2-client_credentials` | 包含多个属性以支持 [OAuth](https://datatracker.ietf.org/doc/html/rfc6749) 验证规范。 事件转发会要求您获取所需信息，然后在指定的时间间隔内为您处理这些令牌的续订。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -26,9 +27,14 @@ ht-degree: 2%
 
 ## 凭据
 
-每个密钥都包含 `credentials` 属性。 每种类型的密钥具有不同的必需属性，如以下各节所示。
+每个密钥都包含 `credentials` 属性。 When [在API中创建密钥](../endpoints/secrets.md#create)，则每种类型的密钥具有不同的必需属性，如以下部分所示：
 
-### `token`
+* [`令牌`](#token)
+* [&#39;simple-http&#39;](#simple-http)
+* [&#39;oauth2-client_credentials&#39;](#oauth2-client_credentials)
+* [&#39;oauth2-google&#39;](#oauth2-google)
+
+### `token` {#token}
 
 含有 `type_of` 值 `token` 只需在 `credentials`:
 
@@ -40,7 +46,7 @@ ht-degree: 2%
 
 令牌将存储为静态值，因此密钥的 `expires_at` 和 `refresh_at` 属性设置为 `null` 创建密钥时。
 
-### `simple-http`
+### `simple-http` {#simple-http}
 
 含有 `type_of` 值 `simple-http` 需要在 `credentials`:
 
@@ -51,25 +57,21 @@ ht-degree: 2%
 
 {style=&quot;table-layout:auto&quot;}
 
-创建密钥后，这两个属性会与的BASE64编码进行交换 `username:password`. 交换后，秘密 `expires_at` 和 `refresh_at` 属性设置为 `null`.
+创建密钥后，这两个属性会与的BASE64编码交换 `username:password`. 交换后，秘密 `expires_at` 和 `refresh_at` 属性设置为 `null`.
 
-### `oauth2`
+### `oauth2-client_credentials` {#oauth2-client_credentials}
 
->[!NOTE]
->
->目前，仅 [客户端凭据授权类型](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) 支持OAuth密钥。
-
-含有 `type_of` 值 `oauth2` 需要在 `credentials`:
+含有 `type_of` 值 `oauth2-client_credentials` 需要在 `credentials`:
 
 | 凭据属性 | 数据类型 | 描述 |
 | --- | --- | --- |
 | `client_id` | 字符串 | OAuth集成的客户端ID。 |
 | `client_secret` | 字符串 | OAuth集成的客户端密钥。 API响应中未包含此值。 |
-| `authorization_url` | 字符串 | OAuth集成的授权URL。 |
+| `token_url` | 字符串 | OAuth集成的授权URL。 |
 | `refresh_offset` | 整数 | *（可选）* 用于将刷新操作偏移的值（以秒为单位）。 如果在创建密钥时忽略此属性，则会将值设置为 `14400` （4小时）。 |
 | `options` | 对象 | *（可选）* 为OAuth集成指定其他选项：<ul><li>`scope`:表示 [OAuth 2.0范围](https://oauth.net/2/scope/) ，以获取凭据。</li><li>`audience`:表示 [Auth0访问令牌](https://auth0.com/docs/protocols/protocol-oauth2).</li></ul> |
 
-当 `oauth2` 密钥创建或更新， `client_id` 和 `client_secret` (可能 `options`)会在向 `authorization_url`，根据OAuth协议的客户端凭据流。
+当 `oauth2-client_credentials` 密钥创建或更新， `client_id` 和 `client_secret` (可能 `options`)会在向 `token_url`，根据OAuth协议的客户端凭据流。
 
 >[!NOTE]
 >
@@ -89,13 +91,29 @@ ht-degree: 2%
 
 如果交易因任何原因失败， `status_details` 属性 `meta` 对象会更新相关信息。
 
-### 刷新 `oauth2` 秘密
+#### 刷新 `oauth2-client_credentials` 秘密
 
-如果 `oauth2` 已将密钥分配给环境，其状态为 `succeeded` （凭据交换成功），则会在 `refresh_at`.
+如果 `oauth2-client_credentials` 已将密钥分配给环境，其状态为 `succeeded` （凭据交换成功），则会在 `refresh_at`.
 
 如果交换成功，则 `refresh_status` 属性 `meta` 对象设置为 `succeeded` while `expires_at`, `refresh_at`和 `activated_at` 会相应地更新。
 
 如果交换失败，操作将再次尝试三次，上次尝试的时间不超过访问令牌过期前的两小时。 如果所有尝试都失败， `refresh_status_details` 属性 `meta` 对象会更新相关详细信息。
+
+### `oauth2-google` {#oauth2-google}
+
+含有 `type_of` 值 `oauth2-google` 需要在 `credentials`:
+
+| 凭据属性 | 数据类型 | 描述 |
+| --- | --- | --- |
+| `scopes` | 数组 | 列出Google产品验证范围。 支持以下范围：<ul><li>[Google Ads](https://developers.google.com/google-ads/api/docs/oauth/overview): `https://www.googleapis.com/auth/adwords`</li><li>[Google Pub/Sub](https://cloud.google.com/pubsub/docs/reference/service_apis_overview): `https://www.googleapis.com/auth/pubsub`</li></ul> |
+
+创建 `oauth2-google` 密钥，响应包括 `meta.token_url` 属性。 您必须将此URL复制并粘贴到浏览器中，才能完成Google身份验证流程。
+
+#### 重新授权 `oauth2-google` 秘密
+
+的授权URL `oauth2-google` 密钥在创建密钥一小时后过期(如 `meta.token_url_expires_at`)。 此后，必须重新授权密钥，才能续订身份验证过程。
+
+请参阅 [secrets endpoint指南](../endpoints/secrets.md#reauthorize) 有关如何重新授权的详细信息 `oauth2-google` 向Reactor API发出PATCH请求以进行密钥。
 
 ## 环境关系
 
@@ -107,7 +125,7 @@ ht-degree: 2%
 >
 >此规则的唯一例外是相关环境被删除。 在这种情况下，将清除关系并将密钥分配给其他环境。
 
-成功交换密钥的凭据后，为了与环境关联的密钥，交换对象(用于 `token`，的Base64编码字符串 `simple-http`，或的访问令牌 `oauth2`)安全地保存在环境中。
+成功交换密钥的凭据后，为了与环境关联的密钥，交换对象(用于 `token`，的Base64编码字符串 `simple-http`，或的访问令牌 `oauth2-client_credentials`)安全地保存在环境中。
 
 在环境中成功保存Exchange对象后，密钥的 `activated_at` 属性设置为当前UTC时间，现在可以使用数据元素引用。 请参阅 [下一部分](#referencing-secrets) 以了解有关引用密钥的更多信息。
 
