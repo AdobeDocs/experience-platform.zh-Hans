@@ -3,9 +3,9 @@ title: 数据流概述
 description: 将客户端 Experience Platform SDK 集成与 Adobe 产品和第三方目标连接起来。
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；边缘配置ID；标识；启用ID同步；ID同步容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID；数据收集的数据准备；数据准备；映射器；XDM；边缘上的XDM；映射器
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 45f5d23a671c8e015ca26e0d5025685255c2fc35
+source-git-commit: 3690a32f32c6cfa25120e9af44fe559122e779a0
 workflow-type: tm+mt
-source-wordcount: '1728'
+source-wordcount: '1729'
 ht-degree: 2%
 
 ---
@@ -117,12 +117,12 @@ ht-degree: 2%
 ![Adobe Experience Platform设置块](../images/datastreams/overview/platform-config.png)
 
 | 设置 | 描述 |
-| --- | --- |
+|---| --- |
 | [!UICONTROL 事件数据集] | **（必需）** 选择将客户事件数据流式传输到的Platform数据集。 此架构必须使用 [XDM ExperienceEvent类](../../xdm/classes/experienceevent.md). |
 | [!UICONTROL 配置文件数据集] | 选择要将客户属性数据发送到的Platform数据集。 此架构必须使用 [XDM个人配置文件类](../../xdm/classes/individual-profile.md). |
 | [!UICONTROL 优惠决策] | 选中此复选框可启用Platform Web SDK实施的Offer decisioning。 请参阅 [将Offer decisioning与Platform Web SDK结合使用](../personalization/offer-decisioning/offer-decisioning-overview.md) 以了解更多实施详细信息。 有关Offer decisioning功能的更多信息，请参阅 [Adobe Journey Optimizer文档](https://experienceleague.adobe.com/docs/journey-optimizer/using/offer-decisioniong/get-started/starting-offer-decisioning.html?lang=zh-Hans). |
 | [!UICONTROL 边缘分割] | 选中此复选框可启用 [边缘分割](../../segmentation/ui/edge-segmentation.md) 数据流。 当SDK通过启用边缘分段的数据流发送数据时，相关用户档案的任何更新区段成员关系将在响应中发送回。<br><br>此选项可与 [!UICONTROL 个性化目标] 表示 [下一页个性化用例](../../destinations/ui/configure-personalization-destinations.md). |
-| [!UICONTROL 个性化目标] | 与 [!UICONTROL 边缘分割] 复选框，此选项允许数据流连接到个性化引擎，如Adobe Target。 有关的具体步骤，请参阅目标文档 [配置个性化目标](../../destinations/ui/configure-personalization-destinations.md). |
+| [!UICONTROL 个性化目标] | 在启用 [!UICONTROL 边缘分割] 复选框，此选项允许数据流连接到个性化目标，例如 [自定义个性化](../../destinations/catalog/personalization/custom-personalization.md). 有关的具体步骤，请参阅目标文档 [配置个性化目标](../../destinations/ui/configure-personalization-destinations.md). |
 
 ### Adobe Target设置 {#target}
 
