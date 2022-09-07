@@ -2,9 +2,9 @@
 title: 基于机器学习的查询服务机器人过滤
 description: 本文档概述了如何使用查询服务和机器学习来确定机器人活动，并从真正的在线网站访客流量中过滤其操作。
 exl-id: fc9dbc5c-874a-41a9-9b60-c926f3fd6e76
-source-git-commit: c5b91bd516e876e095a2a6b6e3ba962b29f55a7b
+source-git-commit: 8a7c04ebe8fe372dbf686fddc92867e938a93614
 workflow-type: tm+mt
-source-wordcount: '873'
+source-wordcount: '899'
 ht-degree: 5%
 
 ---
@@ -29,8 +29,12 @@ ht-degree: 5%
 
 用于提取机器人检测数据的两个属性是：
 
-* Marketing CloudID(MCID):这提供了一个通用的永久性ID，用于在所有Adobe解决方案中标识您的访客。
+* Experience Cloud访客ID（ECID，也称为MCID）：这提供了一个通用的永久性ID，用于在所有Adobe解决方案中标识您的访客。
 * 时间戳：网站上发生活动时，将以UTC格式提供日期和时间。
+
+>[!NOTE]
+>
+>的使用 `mcid` 在对Experience Cloud访客ID的命名空间引用中仍可找到，如以下示例中所示。
 
 以下SQL语句提供了一个用于标识机器人活动的初始示例。 该语句假定，如果访客在一分钟内执行了50次点击，则用户是机器人。
 
@@ -45,7 +49,7 @@ WHERE  enduserids._experience.mcid NOT IN (SELECT enduserids._experi
                                            HAVING Count(*) > 50);  
 ```
 
-表达式会过滤所有符合阈值但未解决其他间隔流量峰值的访客的MCID。
+表达式过滤ECID(`mcid`)，但未解决其他间隔流量激增的所有访客。
 
 ## 利用机器学习改进机器人检测
 
@@ -53,7 +57,7 @@ WHERE  enduserids._experience.mcid NOT IN (SELECT enduserids._experi
 
 示例语句从1分钟（最多60次点击）扩展为包含5分钟和30分钟时段（点击计数分别为300和1800）。
 
-示例语句收集各个持续时间内每个MCID的最大点击次数。 初始语句已扩展为包括1分钟（60秒）、5分钟（300秒）和1小时（即1800秒）时段。
+该示例语句收集每个ECID的最大点击次数(`mcid`)。 初始语句已扩展为包括1分钟（60秒）、5分钟（300秒）和1小时（即1800秒）时段。
 
 ```sql
 SELECT table_count_1_min.mcid AS id, 

@@ -1,9 +1,10 @@
 ---
 title: 归因分析
 description: 本文档介绍如何使用查询服务来创建基于首次联系和最近联系的营销归因模型的营销效果衡量技术。
-source-git-commit: 870626f25b1aabdcb5739bbb1ab85bdad44df195
+exl-id: d62cd349-06fc-4ce6-a5e8-978f11186927
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '1402'
+source-wordcount: '1419'
 ht-degree: 1%
 
 ---
@@ -68,6 +69,10 @@ ht-degree: 1%
 首次联系归因将成功结果的100%责任归因于消费者遇到的初始渠道。 此SQL示例用于突出显示导致后续一系列客户操作的交互。
 
 以下查询返回首次联系归因值和目标中渠道的详细信息 [!DNL Experience Event] 数据集。 它还会返回 `struct` 对象，其中包含每行的首次联系值、时间戳和归因。
+
+>[!NOTE]
+>
+>Experience CloudID(ECID)也称为MCID，可继续用于命名空间。
 
 **查询语法**
 

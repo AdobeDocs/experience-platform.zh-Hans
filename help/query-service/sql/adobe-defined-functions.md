@@ -5,9 +5,9 @@ title: Adobe定义的查询服务中的SQL函数
 topic-legacy: functions
 description: 本文档提供了有关Adobe Experience Platform查询服务中可用的Adobe定义函数的信息。
 exl-id: 275aa14e-f555-4365-bcd6-0dd6df2456b3
-source-git-commit: e0cdfc514a9e1277134d4c0d5396fc0bdf9d9958
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '1469'
+source-wordcount: '1486'
 ht-degree: 3%
 
 ---
@@ -17,6 +17,10 @@ ht-degree: 3%
 Adobe定义的函数（在此称为ADF）是Adobe Experience Platform查询服务中的预建函数，可帮助在上执行与业务相关的常见任务 [!DNL Experience Event] 数据。 这些函数包括 [会话化](https://experienceleague.adobe.com/docs/analytics/components/virtual-report-suites/vrs-mobile-visit-processing.html) 和 [归因](https://experienceleague.adobe.com/docs/analytics/analyze/analysis-workspace/attribution/overview.html) 就象在Adobe Analytics发现的。
 
 本文档提供了Adobe定义的函数在 [!DNL Query Service].
+
+>[!NOTE]
+>
+>Experience CloudID(ECID)也称为MCID，可继续用于命名空间。
 
 ## 窗口函数 {#window-functions}
 

@@ -6,9 +6,9 @@ topic-legacy: queries
 type: Tutorial
 description: 本文档概述了在Adobe Experience Platform查询服务中编写查询时要了解的重要详细信息。
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: 13e2248845734d985331653a17599f48aec0ebde
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '1031'
+source-wordcount: '1048'
 ht-degree: 3%
 
 ---
@@ -48,6 +48,10 @@ Adobe Experience Platform [!DNL Query Service] 具有两种查询执行模型：
 ## 访问对象中的特定字段
 
 要访问查询中对象中的字段，可以使用点表示法(`.`)或括号(`[]`)。 以下SQL语句使用点表示法遍历 `endUserIds` 对象 `mcid` 对象。
+
+>[!NOTE]
+>
+>Experience CloudID(ECID)也称为MCID，可继续用于命名空间。
 
 ```sql
 SELECT endUserIds._experience.mcid

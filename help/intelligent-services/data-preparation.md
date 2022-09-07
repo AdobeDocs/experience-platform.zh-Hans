@@ -5,9 +5,9 @@ title: 准备数据以在智能服务中使用
 topic-legacy: Intelligent Services
 description: 为了使智能服务能够从营销事件数据中发现洞察，必须在语义上对数据进行扩充并以标准结构进行维护。 智能服务使用体验数据模型(XDM)架构来实现此目的。
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-source-git-commit: eae43834d1cd5931dd752b95023da7ac77668e56
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '2919'
+source-wordcount: '2936'
 ht-degree: 0%
 
 ---
@@ -117,6 +117,10 @@ CEE字段组中有几个关键字段，应用这些关键字段 [!DNL Intelligen
 
 您必须根据数据的来源和性质确定要用作主标识的最佳字段。 标识字段必须包括 **标识命名空间** 表示字段期望作为值的身份数据类型。 一些有效的命名空间值包括：
 
+>[!NOTE]
+>
+>Experience CloudID(ECID)也称为MCID，可继续用于命名空间。
+
 * &quot;电子邮件&quot;
 * &quot;phone&quot;
 * &quot;mcid&quot;(用于Adobe Audience Manager ID)
@@ -124,7 +128,7 @@ CEE字段组中有几个关键字段，应用这些关键字段 [!DNL Intelligen
 
 如果不确定应将哪个字段用作主标识，请联系Adobe咨询服务部门以确定最佳解决方案。 如果未设置主标识，则Intelligent Service应用程序会使用以下默认行为：
 
-| 默认 | Attribution AI | 客户人工智能 |
+| 默认 | 归因人工智能 | 客户人工智能 |
 | --- | --- | --- |
 | 标识列 | `endUserIDs._experience.aaid.id` | `endUserIDs._experience.mcid.id` |
 | 命名空间 | AAID | ECID |

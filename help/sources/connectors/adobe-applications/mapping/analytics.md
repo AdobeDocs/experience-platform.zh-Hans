@@ -5,10 +5,10 @@ title: Adobe Analytics源连接器的映射字段
 topic-legacy: overview
 description: Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据。 通过ADC摄取的某些数据可以直接从Analytics字段映射到体验数据模型(XDM)字段，而其他数据需要转换和特定函数才能成功映射。
 exl-id: 15dc1368-5cf1-42e1-9683-d5158f8aa2db
-source-git-commit: efe36904b0dce94a8b1f5e7a3d3f38da1038d49c
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '3401'
-ht-degree: 15%
+source-wordcount: '3431'
+ht-degree: 14%
 
 ---
 
@@ -186,9 +186,9 @@ Adobe Experience Platform允许您通过Analytics源摄取Adobe Analytics数据�
 | IP | environment.ipV4 | 字符串 | IP地址，基于图像请求的HTTP标头。 |
 | j_jscript | environment.browserDetails.javaScriptEnabled | 布尔 | 使用的JavaScript版本。 |
 | mcvisid_high + mcvisid_low | identityMap | 对象 | Experience Cloud访客ID。 |
-| mcvisid_high + mcvisid_low | endUserIDs._experience.mcid.id | 字符串 | Experience Cloud访客ID。 |
-| mcvisid_high | endUserIDs._experience.mcid.primary | 布尔 | Experience Cloud访客ID。 |
-| mcvisid_high | endUserIDs._experience.mcid.namespace.code | 字符串 | Experience Cloud访客ID。 |
+| mcvisid_high + mcvisid_low | endUserIDs._experience.mcid.id | 字符串 | Experience CloudID(ECID)也称为MCID，有时用于命名空间。 |
+| mcvisid_high | endUserIDs._experience.mcid.primary | 布尔 | Experience CloudID(ECID)也称为MCID，有时用于命名空间。 |
+| mcvisid_high | endUserIDs._experience.mcid.namespace.code | 字符串 | Experience CloudID(ECID)也称为MCID，有时用于命名空间。 |
 | mcvisid_low | identityMap | 对象 | Experience Cloud访客ID。 |
 | sdid_high + sdid_low | _experience.target.supplementalDataID | 字符串 | 点击拼合ID。 分析字段sdid_high和sdid_low是用于拼合两个（或多个）传入点击的补充数据ID。 |
 | mobilebeaconproximity | placeContext.POIinteraction.POIDetail.beaconInteractionDetails.proximity | 字符串 | Mobile Services 信标邻近性. |

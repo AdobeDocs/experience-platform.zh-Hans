@@ -5,9 +5,9 @@ title: 输入和输出Attribution AI
 topic-legacy: Input and Output data for Attribution AI
 description: 以下文档概述了Attribution AI中使用的不同输入和输出。
 exl-id: d6dbc9ee-0c1a-4a5f-b922-88c7a36a5380
-source-git-commit: e0e96a52e30f5c34e0695c3e291bed9b6c085e00
+source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
 workflow-type: tm+mt
-source-wordcount: '2491'
+source-wordcount: '2504'
 ht-degree: 3%
 
 ---
@@ -138,7 +138,7 @@ Attribution AI会以尽可能最精细的粒度级别输出归因得分，以便
 | commerce_order_purchaseCity（字符串） | True | “其他得分”数据集列。 <br> **示例：** 城市：圣何塞 |
 | customerProfile（对象） | False | 用于构建模型的用户的身份详细信息。 |
 | 标识（对象） | False | 包含用于构建模型的用户的详细信息，例如 `id` 和 `namespace`. |
-| id（字符串） | True | 用户的标识ID，如Cookie ID、AAID或MCID等。 <br> **示例：** 17348762725408656344688320891369597404 |
+| id（字符串） | True | 用户的标识ID，如Cookie ID、Adobe Analytics ID(AAID)或Experience CloudID（ECID，也称为MCID或访客ID）等。 <br> **示例：** 17348762725408656344688320891369597404 |
 | 命名空间（字符串） | True | 用于构建路径以及由此构建模型的身份命名空间。 <br> **示例：** aaid |
 | 接触点详细信息（对象数组） | True | 导致转化的接触点详细信息列表，按 | 接触点出现次数或时间戳。 |
 | touchpointName（字符串） | True | 在设置过程中配置的接触点的名称。 <br> **示例：** PAID_SEARCH_CLICK |
