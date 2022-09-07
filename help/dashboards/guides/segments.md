@@ -1,23 +1,23 @@
 ---
 keywords: Experience Platform；配置文件；区段；区段；分段；用户界面；UI；自定义；区段功能板；功能板
 title: 区段功能板指南
-description: 'Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。 '
+description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 70fb980b276d256e0f7170b6e49527bca59adfe9
+source-git-commit: 7f226a37996ab5e1fef432c6007d7d488f84ded6
 workflow-type: tm+mt
-source-wordcount: '1681'
+source-wordcount: '1791'
 ht-degree: 0%
 
 ---
 
-# 区段功能板 {#segment-dashboard}
+# [!UICONTROL 区段] 仪表板 {#segment-dashboard}
 
 Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关区段的重要信息，这些信息是在每日快照期间捕获的。 本指南概述了如何在UI中访问和使用区段功能板，并提供了有关功能板中显示的可视化的更多信息。
 
 要概述Platform用户界面中的所有Adobe Experience Platform分段服务功能，请访问 [Segmentation Service UI指南](../../segmentation/ui/overview.md).
 
-## 区段功能板数据
+## [!UICONTROL 区段] 仪表板数据
 
 区段功能板显示贵组织在“配置文件”存储(在Experience Platform中)中拥有的属性（记录）数据的快照。 快照不包含任何事件（时间系列）数据。
 
@@ -27,7 +27,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 >
 >自拍摄快照以来对数据所做的任何更改或更新，在拍摄下一个快照之前不会反映在功能板中。
 
-## 浏览区段功能板
+## 浏览 [!UICONTROL 区段] 仪表板 {#explore}
 
 导航到 [!UICONTROL 区段] 功能板中，选择 **[!UICONTROL 区段]** 在左边栏中，选择 **[!UICONTROL 概述]** 选项卡来显示功能板。
 
@@ -35,13 +35,21 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 >
 >如果贵组织是Platform的新用户，并且尚未创建活动的配置文件数据集或合并策略，则 [!UICONTROL 区段] 功能板不可见。 相反， [!UICONTROL 概述] 选项卡会显示可帮助您开始使用分段的链接和文档。
 
-![](../images/segments/dashboard-overview.png)
+![区段功能板概述选项卡。](../images/segments/dashboard-overview.png)
 
-### 修改 [!UICONTROL 区段] 仪表板
+### 修改 [!UICONTROL 区段] 仪表板 {#modify}
 
 您可以修改 [!UICONTROL 区段] 通过选择 **[!UICONTROL 修改功能板]**. 这样，您就可以在功能板中移动、添加和删除小组件，以及访问 **[!UICONTROL 构件库]** 以浏览可用小组件并为贵组织创建自定义小组件。
 
 请参阅 [修改功能板](../customize/modify.md) 和 [构件库概述](../customize/widget-library.md) 文档以了解更多信息。
+
+### 添加小组件 {#add-widget}
+
+选择 **[!UICONTROL 添加小组件]** 导航到小组件库，并查看要添加到功能板的可用小组件列表。
+
+![突出显示了“添加小组件”的区段功能板概述。](../images/segments/segments-overview-add-widget.png)
+
+从小组件库中，您可以浏览选择的标准和自定义区段小组件。有关如何添加小组件的信息，请参阅小组件库文档，了解如何 [添加小组件](../customize/widget-library.md#add-widgets).
 
 ## 选择区段
 
@@ -53,9 +61,9 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 >
 >只有配置文件计数大于零的区段才会显示在可选区段列表中。
 
-![](../images/segments/change-segment.png)
+![区段功能板概述中突出显示了全局区段下拉菜单。](../images/segments/change-segment.png)
 
-![](../images/segments/select-segment-dialog.png)
+![选择区段对话框，其中显示所有可用的区段。](../images/segments/select-segment-dialog.png)
 
 ## 小组件和量度
 
@@ -92,7 +100,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 有关片段和合并的用户档案的更多信息，请首先阅读 [实时客户资料概述](../../profile/home.md).
 
-![](../images/segments/audience-size.png)
+![突出显示受众大小小组件的区段功能板概述。](../images/segments/audience-size.png)
 
 ### [!UICONTROL 受众大小趋势] {#audience-size-trend}
 
@@ -163,7 +171,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
 
-![](../images/segments/identity-overlap.png)
+![突出显示身份重叠小组件的区段功能板概述。](../images/segments/identity-overlap.png)
 
 ### [!UICONTROL 按身份划分的用户档案] {#profiles-by-identity}
 
@@ -176,7 +184,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 选择 **[!UICONTROL 字幕]** 打开自动字幕对话框。
 
-![按身份标题显示的用户档案对话框。](../images/segments/profiles-by-identity.png)
+![“按身份显示的用户档案”字幕对话框。](../images/segments/profiles-by-identity.png)
 
 机器学习模型通过分析数据的整体分布和关键维度自动生成数据分析。
 

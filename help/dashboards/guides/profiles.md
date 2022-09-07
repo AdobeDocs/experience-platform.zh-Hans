@@ -4,9 +4,9 @@ title: Profiles Dashboard指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 93bb816857545e2e5abca51e4046d225927daef4
+source-git-commit: 9a4257ef6f9e32feeb2bb90bc7dd46b0d533cb35
 workflow-type: tm+mt
-source-wordcount: '3788'
+source-wordcount: '3859'
 ht-degree: 1%
 
 ---
@@ -43,6 +43,14 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 请参阅 [修改功能板](../customize/modify.md) 和 [构件库概述](../customize/widget-library.md) 文档以了解更多信息。
 
+### 添加小组件 {#add-widget}
+
+选择 **[!UICONTROL 添加小组件]** 导航到小组件库，并查看要添加到功能板的可用小组件列表。
+
+![突出显示了添加小组件的“配置文件”功能板概述。](../images/profiles/profiles-overview-add-widget.png)
+
+在小组件库中，您可以浏览选择的标准和自定义区段小组件。有关如何添加小组件的信息，请参阅小组件库文档，了解如何 [添加小组件](../customize/widget-library.md#add-widgets).
+
 ## （测试版）用户档案功效分析 {#profile-efficacy-insights}
 
 >[!IMPORTANT]
@@ -73,9 +81,9 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 >[!NOTE]
 >
->下拉菜单仅显示与XDM单个配置文件类相关的合并策略。 但是，如果贵组织已创建多个合并策略，则可能意味着您需要滚动才能查看可用合并策略的完整列表。
+>下拉菜单仅显示使用 `_xdm.context.profile` 架构。 但是，如果贵组织已创建多个合并策略，则可能意味着您需要滚动才能查看可用合并策略的完整列表。
 
-![](../images/profiles/select-merge-policy.png)
+![突出显示了合并策略下拉列表的“配置文件概述”选项卡。](../images/profiles/select-merge-policy.png)
 
 ## 并集模式
 

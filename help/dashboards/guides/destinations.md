@@ -4,9 +4,9 @@ title: 目标功能板指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 7a67ac4e1e8730197221832090c1414073399a1b
+source-git-commit: 7f226a37996ab5e1fef432c6007d7d488f84ded6
 workflow-type: tm+mt
-source-wordcount: '2716'
+source-wordcount: '2829'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 >
 >自拍摄快照以来对数据所做的任何更改或更新，在拍摄下一个快照之前不会反映在功能板中。
 
-## 浏览目标仪表板
+## 浏览 [!UICONTROL 目标] 仪表板 {#explore}
 
 要导航到Platform UI中的目标功能板，请选择 **[!UICONTROL 目标]** 在左边栏中，选择 **[!UICONTROL 概述]** 选项卡来显示功能板。
 
@@ -37,11 +37,19 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 ![Platform UI目标概述，其中突出显示了最新快照。](../images/destinations/snapshot-timestamp.png)
 
-### 修改目标功能板
+### 修改 [!UICONTROL 目标] 仪表板 {#modify}
 
-您可以通过选择 **[!UICONTROL 修改功能板]**. 这样，您就可以在功能板中移动、添加和删除小组件，以及访问 **[!UICONTROL 构件库]** 以浏览可用小组件并为贵组织创建自定义小组件。
+选择 **[!UICONTROL 修改功能板]** 更改目标功能板的外观。 这样，您就可以在仪表板中移动、添加和删除小组件，以及访问小组件库。 从小组件库中，您可以浏览可用的小组件并为贵组织创建自定义小组件。
 
 请参阅 [修改功能板](../customize/modify.md) 和 [构件库概述](../customize/widget-library.md) 文档以了解更多信息。
+
+### 添加小组件 {#add-widget}
+
+选择 **[!UICONTROL 添加小组件]** 导航到小组件库，并查看要添加到功能板的可用小组件列表。
+
+![突出显示了“添加小组件”的目标功能板概述。](../images/destinations/destinations-overview-add-widget.png)
+
+从小组件库中，您可以浏览所选的标准和自定义区段小组件。 有关如何添加小组件的信息，请参阅小组件库文档，了解如何 [添加小组件](../customize/widget-library.md#add-widgets).
 
 ## 标准小组件 {#standard-widgets}
 
@@ -80,7 +88,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 从小组件上显示的列表中选择目标名称后，您将转到 **[!UICONTROL 浏览]** 选项卡。 您还可以选择 **[!UICONTROL 查看全部]** 导航到 **[!UICONTROL 浏览]** 选项卡，然后选择目标的名称以查看其详细信息。
 
-![](../images/destinations/most-used-destinations.png)
+![目标功能板的“概述”选项卡中突出显示了最常用的目标小组件。](../images/destinations/most-used-destinations.png)
 
 ### [!UICONTROL 最近创建的目标] {#recently-created-destinations}
 
@@ -97,7 +105,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 要进一步了解如何配置特定类型的目标，请访问 [目标文档](../../destinations/home.md).
 
-![](../images/destinations/recently-created-destinations.png)
+![目标功能板的“概述”选项卡中突出显示了最近创建的目标小组件。](../images/destinations/recently-created-destinations.png)
 
 ### [!UICONTROL 最近激活的区段] {#recently-activated-segments}
 
@@ -114,7 +122,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 有关在Experience Platform中使用区段的更多信息，请首先阅读 [Segmentation Service概述](../../segmentation/home.md).
 
-![](../images/destinations/recently-activated-segments.png)
+![目标功能板的“概述”选项卡中突出显示了最近激活的区段小组件。](../images/destinations/recently-activated-segments.png)
 
 ### [!UICONTROL 最近激活的区段（按目标）] {#recently-activated-segments-by-destination}
 
@@ -129,7 +137,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 您可以通过从显示的列表中选择区段名称来查看区段的详细信息。
 
-![最近由目标小组件激活的区段。](../images/destinations/recently-activated-segments-by-destination.png)
+![按目标小组件列出的最近激活的区段。](../images/destinations/recently-activated-segments-by-destination.png)
 
 ### [!UICONTROL 受众大小趋势] {#audience-size-trend}
 
