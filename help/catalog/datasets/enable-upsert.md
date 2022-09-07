@@ -4,9 +4,9 @@ title: 使用API为配置文件更新启用数据集
 type: Tutorial
 description: 本教程将向您演示如何使用Adobe Experience Platform API启用具有“插入”功能的数据集，以便更新实时客户资料数据。
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b0ba7578cc8e790c70cba4cc55c683582b685843
 workflow-type: tm+mt
-source-wordcount: '991'
+source-wordcount: '994'
 ht-degree: 1%
 
 ---
@@ -64,7 +64,7 @@ POST /dataSets
 
 **请求**
 
-包括 `unifiedProfile` 在 `tags` 在请求正文中，将为 [!DNL Profile] 创建时。 在 `unifiedProfile` 数组，添加 `isUpsert:true` 将添加数据集支持更新的功能。
+通过将 `unifiedIdentity` 和 `unifiedProfile` 在 `tags` 在请求正文中，将为 [!DNL Profile] 创建时。 在 `unifiedProfile` 数组，添加 `isUpsert:true` 将添加数据集支持更新的功能。
 
 ```shell
 curl -X POST \
@@ -75,24 +75,27 @@ curl -X POST \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
-        "fields":[],
+        "fields": [],
         "schemaRef": {
-          "id": "https://ns.adobe.com/{TENANT_ID}/schemas/31670881463308a46f7d2cb09762715",
-          "contentType": "application/vnd.adobe.xed-full-notext+json; version=1"
+            "id": "https://ns.adobe.com/{TENANT_ID}/schemas/31670881463308a46f7d2cb09762715",
+            "contentType": "application/vnd.adobe.xed-full-notext+json; version=1"
         },
         "tags": {
-          "unifiedProfile": [
-            "enabled:true",
-            "isUpsert:true"
-          ]
+            "unifiedIdentity": [
+                "enabled: true"
+            ],
+            "unifiedProfile": [
+                "enabled: true",
+                "isUpsert: true"
+            ]
         }
       }'
 ```
 
 | 属性 | 描述 |
-|---|---|
+| -------- | ----------- |
 | `schemaRef.id` | 的ID [!DNL Profile]启用了数据集所基于的架构。 |
-| `{TENANT_ID}` | 中的命名空间 [!DNL Schema Registry] 其中包含属于您的IMS组织的资源。 请参阅 [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) 部分 [!DNL Schema Registry] 开发人员指南以了解更多信息。 |
+| `{TENANT_ID}` | 中的命名空间 [!DNL Schema Registry] 其中包含属于贵组织的资源。 请参阅 [TENANT_ID](../../xdm/api/getting-started.md#know-your-tenant-id) 部分 [!DNL Schema Registry] 开发人员指南以了解更多信息。 |
 
 **响应**
 
@@ -147,6 +150,9 @@ curl -X GET \
         "tags": {
             "adobe/pqs/table": [
                 "unifiedprofileingestiontesteventsdataset"
+            ],
+            "unifiedIdentity": [
+                "enabled:true"
             ],
             "unifiedProfile": [
                 "enabled:true"
