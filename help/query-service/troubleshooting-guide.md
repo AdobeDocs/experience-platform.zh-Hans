@@ -5,9 +5,9 @@ title: 查询服务疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档包含与查询服务相关的常见问题和解答。 主题包括、导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 25953a5a1f5b32de7d150dbef700ad06ce6014df
+source-git-commit: 722d7144639d7280ef85c9bfc285e616e7d7fcce
 workflow-type: tm+mt
-source-wordcount: '3522'
+source-wordcount: '3755'
 ht-degree: 1%
 
 ---
@@ -252,6 +252,16 @@ SELECT count(1) FROM myTableName
 +++应答查询服务提供了多个内置SQL帮助程序函数来扩展SQL功能。 有关 [查询服务支持的SQL函数](./sql/spark-sql-functions.md).
 +++
 
+### 都是本地的 [!DNL Spark SQL] 函数受支持或用户仅受包装器限制 [!DNL Spark SQL] Adobe提供的函数？
+
++++答案至今，并非所有开源 [!DNL Spark SQL] 已在数据湖数据上测试了函数。 测试和确认后，它们将被添加到受支持列表。 请参阅 [受支持列表 [!DNL Spark SQL] 函数](./sql/spark-sql-functions.md) 来检查特定函数。
++++
+
+### 用户能否定义自己的用户定义函数(UDF)，以便在其他查询中使用？
+
++++回答由于数据安全注意事项，不允许自定义UDF。
++++
+
 ### 如果计划查询失败，我应该怎么做？
 
 +++回答：首先，检查日志以查找错误的详细信息。 有关 [在日志中查找错误](#error-logs) 提供了有关如何执行此操作的更多信息。
@@ -438,6 +448,11 @@ WHERE T2.ID IS NULL
 
 +++
 
+### 我是否可以使用CTAS查询创建数据集，并使用双下划线名称（如UI中显示的名称）？ 例如：`test_table_001`。
+
++++答案否，这是跨Experience Platform的有意限制，适用于所有Adobe服务，包括查询服务。 可接受具有两个下划线的名称作为架构和数据集名称，但数据集的表名称只能包含一个下划线。
++++
+
 ## 导出数据 {#exporting-data}
 
 本节提供有关导出数据和限制的信息。
@@ -462,6 +477,25 @@ FROM <table_name>
 +++回答否。 目前没有可用于提取摄取数据的功能。
 +++
 
+### Analytics数据连接器为何不返回数据？
+
++++答案此问题的一个常见原因是在没有时间过滤器的情况下查询时间序列数据。 例如：
+
+```sql
+SELECT * FROM prod_table LIMIT 1;
+```
+
+应写成：
+
+```sql
+SELECT * FROM prod_table
+WHERE
+timestamp >= to_timestamp('2022-07-22')
+and timestamp < to_timestamp('2022-07-23');
+```
+
++++
+
 ## 第三方工具 {#third-party-tools}
 
 本节包含有关使用第三方工具(如PSQL和Power BI)的信息。
@@ -473,7 +507,13 @@ FROM <table_name>
 
 ### 是否有一种方法可以连接一次查询服务，以便与第三方工具一起持续使用？
 
-+++回答是，第三方桌面客户端可以通过一次性设置未过期的凭据连接到查询服务。 未过期的凭据可由授权用户生成，并将在下载到其本地计算机的JSON文件中接收这些凭据。 完整 [有关如何创建和下载未过期的凭据的指导](./ui/credentials.md#non-expiring-credentials) 可在文档中找到。
++++回答是，第三方桌面客户端可以通过一次性设置未过期的凭据连接到查询服务。 未过期的凭据可由授权用户生成，并以JSON文件的形式接收，该文件会自动下载到其本地计算机。 完整 [有关如何创建和下载未过期的凭据的指导](./ui/credentials.md#non-expiring-credentials) 可在文档中找到。
++++
+
+### 为什么我的未过期凭据不起作用？
+
++++回答未过期凭据的值是 `technicalAccountID` 和 `credential` 从配置JSON文件中获取。 密码值采用以下形式： `{{technicalAccountId}:{credential}}`.
+有关如何 [使用凭据连接外部客户端](./ui/credentials.md#using-credentials-to-connect-to-external-clients).
 +++
 
 ### 我可以连接到查询服务编辑器的第三方SQL编辑器是什么类型？
