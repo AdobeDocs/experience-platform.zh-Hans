@@ -4,11 +4,11 @@ title: 实时客户资料数据的默认防护
 solution: Experience Platform
 product: experience platform
 type: Documentation
-description: 'Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，帮助您为个人资料数据建模以获得最佳系统性能。 '
+description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，帮助您为个人资料数据建模以获得最佳系统性能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: e3813691af6477a0afbb47ed0fd53d5bb3834fd0
+source-git-commit: 1b98a04f92833f5c906ec0081b35144cd47d77bc
 workflow-type: tm+mt
-source-wordcount: '1941'
+source-wordcount: '1950'
 ht-degree: 5%
 
 ---
@@ -139,7 +139,7 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 
 ### 合并策略 {#merge-policies}
 
-合并策略是Platform用来确定数据优先级和合并哪些数据以创建统一视图的规则，当从多个源将数据汇总在一起时，会使用这些规则。 例如，如果客户跨多个渠道与您的品牌进行交互，则您的组织将在多个数据集中显示与该单个客户相关的多个配置文件片段。 将这些片段摄取到Platform后，它们会合并在一起，以便为该客户创建单个配置文件。 当来自多个源的数据发生冲突时，合并策略会确定要包含在个人用户档案中的信息。 要了解有关合并策略的更多信息，请首先阅读 [合并策略概述](merge-policies/overview.md).
+合并策略是Platform用来确定数据优先级和合并哪些数据以创建统一视图的规则，当从多个源将数据汇总在一起时，会使用这些规则。 例如，如果客户跨多个渠道与您的品牌进行交互，则您的组织将在多个数据集中显示与该单个客户相关的多个配置文件片段。 将这些片段摄取到Platform后，它们会合并在一起，以便为该客户创建单个配置文件。 当来自多个源的数据发生冲突时，合并策略会确定要包含在个人用户档案中的信息。 每个组织最多允许五(5)个合并策略。 要了解有关合并策略的更多信息，请阅读 [合并策略概述](merge-policies/overview.md).
 
 ### Adobe Analytics Platform中的报表包数据集 {#aa-datasets}
 
