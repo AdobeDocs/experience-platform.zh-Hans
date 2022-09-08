@@ -5,9 +5,9 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 71741a18c99a003e6401bc324822d50a266350b3
+source-git-commit: 356d76d61293b9ff0887afbf30852159af8d72ad
 workflow-type: tm+mt
-source-wordcount: '1746'
+source-wordcount: '1775'
 ht-degree: 0%
 
 ---
@@ -56,6 +56,11 @@ ht-degree: 0%
 >id="platform_segments_browse_evaluationmethodcolumnname"
 >title="评价方法"
 >abstract="区段的评估方法包括批处理、流处理和边缘处理。"
+
+>[!CONTEXTUALHELP]
+>id="platform_segments_browse_addallsegmentstoschedule"
+>title="添加所有要计划的区段"
+>abstract="启用，以在每日计划更新（UTC下午3:30）中包含所有批次评估区段。 禁用可从计划更新中删除所有区段。"
 
 选择 **[!UICONTROL 浏览]** 选项卡，以查看IMS组织的所有区段定义列表。
 
