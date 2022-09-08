@@ -5,7 +5,7 @@ title: 将RStudio连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍将R Studio与Adobe Experience Platform查询服务连接的步骤。
 exl-id: 8dd82bad-6ffb-4536-9c27-223f471a49c6
-source-git-commit: ad3e1b0de6dd3b82cc82f0dc3d0f36b12cd3899e
+source-git-commit: 9ab3d69553dee9fdb97472edfa3f812133ee1bb1
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
@@ -20,7 +20,7 @@ ht-degree: 0%
 >
 > 本指南假定您已拥有 [!DNL RStudio] 并熟悉如何使用它。 有关 [!DNL RStudio] 可在 [官方 [!DNL RStudio] 文档](https://rstudio.com/products/rstudio/).
 > 
-> 此外，要将RStudio与查询服务一起使用，您需要安装PostgreSQL JDBC 4.2驱动程序。 可以从下载JDBC驱动程序 [PostgreSQL官方站点](https://jdbc.postgresql.org/download.html).
+> 此外，要将RStudio与查询服务一起使用，您需要安装PostgreSQL JDBC 4.2驱动程序。 可以从下载JDBC驱动程序 [PostgreSQL官方站点](https://jdbc.postgresql.org/download/).
 
 ## 创建 [!DNL Query Service] 连接 [!DNL RStudio] 界面
 
