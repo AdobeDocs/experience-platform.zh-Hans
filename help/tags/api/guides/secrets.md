@@ -2,7 +2,7 @@
 title: Reactor API中的密钥
 description: 了解如何在Reactor API中配置用于事件转发的密钥的基础知识。
 exl-id: 0298c0cd-9fba-4b54-86db-5d2d8f9ade54
-source-git-commit: 4f3c97e2cad6160481adb8b3dab3d0c8b23717cc
+source-git-commit: 24e79c14268b9eab0e8286eb8cd1352c1dfcd1b6
 workflow-type: tm+mt
 source-wordcount: '1241'
 ht-degree: 2%
@@ -107,11 +107,11 @@ ht-degree: 2%
 | --- | --- | --- |
 | `scopes` | 数组 | 列出Google产品验证范围。 支持以下范围：<ul><li>[Google Ads](https://developers.google.com/google-ads/api/docs/oauth/overview): `https://www.googleapis.com/auth/adwords`</li><li>[Google Pub/Sub](https://cloud.google.com/pubsub/docs/reference/service_apis_overview): `https://www.googleapis.com/auth/pubsub`</li></ul> |
 
-创建 `oauth2-google` 密钥，响应包括 `meta.token_url` 属性。 您必须将此URL复制并粘贴到浏览器中，才能完成Google身份验证流程。
+创建 `oauth2-google` 密钥，响应包括 `meta.authorization_url` 属性。 您必须将此URL复制并粘贴到浏览器中，才能完成Google身份验证流程。
 
 #### 重新授权 `oauth2-google` 秘密
 
-的授权URL `oauth2-google` 密钥在创建密钥一小时后过期(如 `meta.token_url_expires_at`)。 此后，必须重新授权密钥，才能续订身份验证过程。
+的授权URL `oauth2-google` 密钥在创建密钥一小时后过期(如 `meta.authorization_url_expires_at`)。 此后，必须重新授权密钥，才能续订身份验证过程。
 
 请参阅 [secrets endpoint指南](../endpoints/secrets.md#reauthorize) 有关如何重新授权的详细信息 `oauth2-google` 向Reactor API发出PATCH请求以进行密钥。
 
