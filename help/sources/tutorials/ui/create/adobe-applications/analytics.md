@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: ae30ac2fe1c6366c987748e198b9dc3530bc512a
+source-git-commit: 7ad0015dbea0b74673ed0ed2c8c2159065f47ba7
 workflow-type: tm+mt
-source-wordcount: '2211'
+source-wordcount: '2243'
 ht-degree: 2%
 
 ---
@@ -165,6 +165,10 @@ ht-degree: 2%
 完成 [!DNL Analytics] 报表包数据时，您可以应用筛选规则和条件，以便有选择地将数据从摄取到 [!DNL Profile Service]. 仅对 [!DNL Analytics] 仅在输入之前过滤数据和数据 [!DNL Profile.] 所有数据都会被摄取到数据湖中。
 
 #### 行级过滤
+
+>[!IMPORTANT]
+>
+>使用行级过滤来应用条件并指示要应用哪些数据 **包括用于用户档案摄取**. 使用列级过滤来选择您想要的数据列 **为用户档案摄取排除**.
 
 您可以过滤数据 [!DNL Profile] 在行级别和列级别摄取。 利用行级筛选，可定义标准，如字符串包含、等于、开始或结束。 您还可以使用行级过滤来连接使用 `AND` 以及 `OR`，使用 `NOT`.
 
