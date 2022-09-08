@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: a99046cc7df18d53b068c679ab07f5f9dd8eff0a
+source-git-commit: d9787b6d093037a2d346ac3bd2f37220ace43ad2
 workflow-type: tm+mt
-source-wordcount: '400'
+source-wordcount: '402'
 ht-degree: 67%
 
 ---
@@ -75,7 +75,7 @@ ht-degree: 67%
          * [发行说明](./extensions/web/product-string/release-notes.md)
       * Adobe Audience Manager {#audience-manager}
          * [概述](./extensions/web/audience-manager/overview.md)
-      * Adobe Client Data Layer {#client-data-layer}
+      * Adobe 客户端数据层{#client-data-layer}
          * [概述](./extensions/web/client-data-layer/overview.md)
          * [发行说明](./extensions/web/client-data-layer/release-notes.md)
       * AdobeContextHub {#contexthub}
@@ -199,6 +199,7 @@ ht-degree: 67%
 * [弃用对Internet Explorer 10和11的支持](./ie-deprecation.md)
 * 发行说明 {#release-notes}
    * [最新](./release-notes/current.md)
+   * [2021 年发行说明](./release-notes/2021.md)
    * [2020 年发行说明](./release-notes/2020.md)
    * [2019 年发行说明](./release-notes/2019.md)
    * [2018 版发行说明](./release-notes/2018.md)
