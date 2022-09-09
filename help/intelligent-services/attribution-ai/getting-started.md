@@ -5,10 +5,10 @@ title: 快速入门Attribution AI
 topic-legacy: Getting started
 description: 以下指南需要了解与使用Attribution AI有关的各种Adobe Experience Platform服务。 在开始教程之前，请查阅以下文档。
 exl-id: ab269c24-97ac-4da9-9b6c-7d2dde61f0dc
-source-git-commit: 9ce5a383bed24c4bfe9245521149443a57764da5
+source-git-commit: a14f857f87482e1468211152976530c718d56e38
 workflow-type: tm+mt
-source-wordcount: '620'
-ht-degree: 0%
+source-wordcount: '619'
+ht-degree: 1%
 
 ---
 
@@ -52,7 +52,7 @@ Experience Platform中的所有资源都与特定虚拟沙箱隔离。 对Platfo
 
 本指南提供了示例API调用，以演示如何设置请求的格式。 这包括路径、所需标头以及格式正确的请求负载。 还提供了API响应中返回的示例JSON。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/troubleshooting.md) (位于Experience Platform疑难解答指南中)。
 
-## ## GDPR和加密 {#gdpr-and-encryption}
+## 访问控制 {#access-control}
 
 使用基于角色的访问控制时， **查看Attribution AI** 和 **管理Attribution AI** 权限授予对Attribution AI不同功能的访问权限。 的 **管理Attribution AI** 允许您 **创建**, **克隆**, **编辑**, **删除**, **启用**&#x200B;或 **禁用** 实例 **查看Attribution AI** 允许您 **读取** 或 **视图** 它。 的 **创建**, **编辑** 和 **删除** 操作由审核日志记录。
 
