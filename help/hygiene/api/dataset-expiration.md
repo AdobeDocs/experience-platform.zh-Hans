@@ -2,9 +2,9 @@
 title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您以编程方式计划Adobe Experience Platform中的数据集过期时间。
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 49ba5263c6dc8eccac2ffe339476cf316c68e486
+source-git-commit: 5a12c75a54f420b2ca831dbfe05105dfd856dc4d
 workflow-type: tm+mt
-source-wordcount: '1375'
+source-wordcount: '1405'
 ht-degree: 6%
 
 ---
@@ -26,6 +26,10 @@ ht-degree: 6%
 在实际启动数据集删除之前，您可以随时取消过期时间或修改其触发时间。 取消数据集过期后，您可以通过设置新的过期时间来重新打开数据集。
 
 启动数据集删除后，其过期作业将标记为 `executing`，且不得进一步更改。 数据集本身最多可恢复七天，但只能通过通过Adobe服务请求启动的手动流程来恢复。 请求执行时，数据湖、Identity Service和实时客户配置文件会开始单独的进程，以从各自的服务中删除数据集的内容。 从所有这三项服务中删除数据后，过期时间将标记为 `executed`.
+
+>[!WARNING]
+>
+>如果数据集设置为过期，您必须手动更改任何可能将数据摄取到该数据集的数据流，以便下游工作流不会受到负面影响。
 
 ## 快速入门
 

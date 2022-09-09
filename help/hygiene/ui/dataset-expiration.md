@@ -2,9 +2,9 @@
 title: 管理数据集过期
 description: 了解如何在Adobe Experience Platform UI中计划数据集过期。
 exl-id: 97db55e3-b5d6-40fd-94f0-2463fe041671
-source-git-commit: 769c872d67141b4973b29a492e72c23491e2d1ae
+source-git-commit: 5a12c75a54f420b2ca831dbfe05105dfd856dc4d
 workflow-type: tm+mt
-source-wordcount: '408'
+source-wordcount: '438'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 0%
 >Adobe Experience Platform中的数据卫生功能目前仅适用于已购买Healthcare Shield的组织。
 
 的 [[!UICONTROL 数据卫生] 工作区](./overview.md) 在Adobe Experience Platform UI中，您可以计划数据集过期。 当数据集到期日期时，数据湖、Identity Service和实时客户配置文件将开始单独的进程，以从各自的服务中删除数据集的内容。 从所有这三项服务中删除数据后，过期时间将标记为完成。
+
+>[!WARNING]
+>
+>如果数据集设置为过期，您必须手动更改任何可能将数据摄取到该数据集的数据流，以便下游工作流不会受到负面影响。
 
 本文档介绍如何在Platform UI中计划和管理数据集过期。
 
