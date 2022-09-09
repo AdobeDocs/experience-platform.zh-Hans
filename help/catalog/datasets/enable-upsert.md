@@ -4,9 +4,9 @@ title: 使用API为配置文件更新启用数据集
 type: Tutorial
 description: 本教程将向您演示如何使用Adobe Experience Platform API启用具有“插入”功能的数据集，以便更新实时客户资料数据。
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: b0ba7578cc8e790c70cba4cc55c683582b685843
+source-git-commit: 5bd3e43e6b307cc1527e8734936c051fb4fc89c4
 workflow-type: tm+mt
-source-wordcount: '994'
+source-wordcount: '1015'
 ht-degree: 1%
 
 ---
@@ -126,14 +126,13 @@ GET /dataSets/{DATASET_ID}
 ```
 
 | 参数 | 描述 |
-|---|---|
+| --------- | ----------- |
 | `{DATASET_ID}` | 要检查的数据集的ID。 |
 
 **请求**
 
 ```shell
-curl -X GET \
-  'https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e' \
+curl -X GET 'https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
@@ -196,11 +195,11 @@ curl -X GET \
 
 ### 禁用配置文件的数据集
 
-要配置启用了“配置文件”的数据集进行更新，您必须首先禁用 `unifiedProfile` 标记，然后在 `isUpsert` 标记。 可使用两个PATCH请求完成此操作，一个用于禁用，另一个用于重新启用。
+要配置启用了“配置文件”的数据集进行更新，您必须首先禁用 `unifiedProfile` 和 `unifiedIdentity` 标记，然后在 `isUpsert` 标记。 可使用两个PATCH请求完成此操作，一个用于禁用，另一个用于重新启用。
 
 >[!WARNING]
 >
->禁用时摄取到数据集的数据将不会摄取到配置文件存储中。 建议在为“配置文件”重新启用数据之前，不要将数据摄取到数据集中。
+>禁用时摄取到数据集的数据将不会摄取到配置文件存储中。 在为“配置文件”重新启用数据之前，应避免将数据摄取到数据集中。
 
 **API格式**
 
@@ -209,29 +208,37 @@ PATCH /dataSets/{DATASET_ID}
 ```
 
 | 参数 | 描述 |
-|---|---|
+| --------- | ----------- |
 | `{DATASET_ID}` | 要更新的数据集的ID。 |
 
 **请求**
 
-第一PATCH请求正文包括 `path` to `unifiedProfile` 设置 `value` to `enabled:false` 以禁用标记。
+第一PATCH请求正文包括 `path` to `unifiedProfile` 和 `path` to `unifiedIdentity`，设置 `value` to `enabled:false` ，以便禁用标记。
 
 ```shell
-curl -X PATCH \
-  https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e \
+curl -X PATCH https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e \
   -H 'Content-Type:application/json-patch+json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '[
-        { "op": "replace", "path": "/tags/unifiedProfile", "value": ["enabled:false"] }
+        { 
+            "op": "replace", 
+            "path": "/tags/unifiedProfile", 
+            "value": ["enabled:false"] 
+        },
+        {
+            "op": "replace",
+            "path": "/tags/unifiedIdentity",
+            "value": ["enabled:false"]
+        }
       ]'
 ```
 
 **响应**
 
-成功的PATCH请求会返回HTTP状态200（确定）和一个包含已更新数据集ID的数组。 此ID应与在PATCH请求中发送的ID匹配。 的 `unifiedProfile` 标记现已禁用。
+成功的PATCH请求会返回HTTP状态200（确定）和一个包含已更新数据集ID的数组。 此ID应与在PATCH请求中发送的ID匹配。 的 `unifiedProfile` 和 `unifiedIdentity` 标记现已禁用。
 
 ```json
 [
@@ -250,28 +257,42 @@ PATCH /dataSets/{DATASET_ID}
 ```
 
 | 参数 | 描述 |
-|---|---|
+| --------- | ----------- |
 | `{DATASET_ID}` | 要更新的数据集的ID。 |
 
 **请求**
 
-请求正文包括 `path` to `unifiedProfile` 设置 `value` 包含 `enabled` 和 `isUpsert` 标记，均设置为 `true`.
+请求正文包括 `path` to `unifiedProfile` 设置 `value` 包含 `enabled` 和 `isUpsert` 标记，均设置为 `true`和 `path` to `unifiedIdentity` 设置 `value` 包含 `enabled` 标记设置为 `true`.
 
 ```shell
-curl -X PATCH \
-  https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e \
+curl -X PATCH https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a27e7040801dedbf46e \
   -H 'Content-Type:application/json-patch+json' \
   -H 'Authorization: Bearer {ACCESS_TOKEN}' \
   -H 'x-api-key: {API_KEY}' \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '[
-        { "op": "add", "path": "/tags/unifiedProfile", "value": ["enabled:true","isUpsert:true"] },
+        { 
+            "op": "add", 
+            "path": "/tags/unifiedProfile", 
+            "value": [
+                "enabled:true",
+                "isUpsert:true"
+            ] 
+        },
+        {
+            "op": "add",
+            "path": "/tags/unifiedIdentity",
+            "value": [
+                "enabled:true"
+            ]
+        }
       ]'
 ```
 
 **响应**
-成功的PATCH请求会返回HTTP状态200（确定）和一个包含已更新数据集ID的数组。 此ID应与在PATCH请求中发送的ID匹配。 的 `unifiedProfile` 标记现已启用并配置，用于属性更新。
+
+成功的PATCH请求会返回HTTP状态200（确定）和一个包含已更新数据集ID的数组。 此ID应与在PATCH请求中发送的ID匹配。 的 `unifiedProfile` 标记和 `unifiedIdentity` 标记现已启用并配置，用于属性更新。
 
 ```json
 [
