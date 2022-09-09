@@ -2,7 +2,7 @@
 title: Pega客户决策中心连接
 description: 使用Adobe Experience Platform中的Pega客户决策中心目标，将用户档案属性和区段成员资格数据发送到Pega客户决策中心，以便进行下一个最佳决策。
 exl-id: 0546da5d-d50d-43ec-bbc2-9468a7db4d90
-source-git-commit: 144aa80beeb13fde7ca339692774e3d20256f49c
+source-git-commit: ae00b113308354e98f4448d2544e2a6e475c384e
 workflow-type: tm+mt
 source-wordcount: '1013'
 ht-degree: 1%
@@ -102,7 +102,7 @@ ht-degree: 1%
 
 在 [[!UICONTROL 选择属性]](../../ui/activate-streaming-profile-destinations.md#select-attributes) 步骤，Adobe建议您从 [合并模式](../../../profile/home.md#profile-fragments-and-union-schemas). 选择唯一标识符以及要导出到目标的任何其他XDM字段。
 
-### 映射示例：激活用户档案更新 [!DNL Pega Customer Decision Hub]
+### 映射示例：激活用户档案更新 [!DNL Pega Customer Decision Hub] {#mapping-example}
 
 以下示例用于将用户档案导出到 [!DNL Pega Customer Decision Hub].
 

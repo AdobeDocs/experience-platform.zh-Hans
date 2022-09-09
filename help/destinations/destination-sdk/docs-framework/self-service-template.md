@@ -2,9 +2,9 @@
 title: 文档自助服务模板//将替换为您的目标名称
 description: 使用此模板可在Adobe Experience Platform目录中为您的目标创建公共文档。//替换为“概述”部分中的段落
 exl-id: 99700474-8bf6-4176-acc1-38814e17c995
-source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
+source-git-commit: 788c02622b5176b41eb6da70bed0994d4824c984
 workflow-type: tm+mt
-source-wordcount: '1382'
+source-wordcount: '1452'
 ht-degree: 1%
 
 ---
@@ -131,6 +131,13 @@ ht-degree: 1%
 >要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 读取 [激活用户档案和区段以流式传输区段导出目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-segment-streaming-destinations.html?lang=en) 有关将受众区段激活到此目标的说明。
+
+### 映射属性和标识 {#map}
+
+*在激活工作流的映射步骤中添加有关源字段和目标字段之间支持映射的信息。 您的目标可能支持导出配置文件属性、身份命名空间或两者。 某些字段可能是必填字段。 Target属性可以是预定义属性，也可以是自定义属性。 请提出重要注意事项，并使用示例，最好包含屏幕截图。 可用作引用的目标页面的两个示例：*
+
+* *[佩加](/help/destinations/catalog/personalization/pega.md#mapping-example)*
+* *[梅达利亚](/help/destinations/catalog/voice/medallia-connector.md#map)*
 
 ## 导出的数据/验证数据导出 {#exported-data}
 
