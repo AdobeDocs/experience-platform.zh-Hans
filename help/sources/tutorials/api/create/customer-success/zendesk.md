@@ -5,9 +5,9 @@ title: 使用流服务API为Zendesk创建数据流
 topic-legacy: tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到Zendesk。
 exl-id: 3e00e375-c6f8-407c-bded-7357ccf3482e
-source-git-commit: 23a6f8ee23fb67290a5bcba2673a87ce74c9e1d3
+source-git-commit: e92c2386d9f4a4709f0a749d3ed97e033f066610
 workflow-type: tm+mt
-source-wordcount: '1977'
+source-wordcount: '1996'
 ht-degree: 1%
 
 ---
@@ -35,6 +35,7 @@ ht-degree: 1%
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
+| `subdomain` | 与您的帐户关联的唯一域。 | `https://yoursubdomain.zendesk.com` |
 | `accessToken` | Zendesk API令牌。 | `0lZnClEvkJSTQ7olGLl7PMhVq99gu26GTbJtf` |
 
 有关对 [!DNL Zendesk] 来源，请参阅 [[!DNL Zendesk] 源概述](../../../../connectors/customer-success/zendesk.md).
@@ -77,6 +78,7 @@ curl -X POST \
         "auth": {
             "specName": "OAuth2 Refresh Code",
             "params": {
+                "subdomain": "{SUBDOMAIN}",
                 "accessToken": "{ACCESS_TOKEN}"
             }
         }
@@ -90,6 +92,7 @@ curl -X POST \
 | `connectionSpec.id` | 源的连接规范ID。 此ID可在您的源通过注册和批准之后进行检索 [!DNL Flow Service] API。 |
 | `auth.specName` | 用于向平台验证源的验证类型。 |
 | `auth.params.` | 包含验证源所需的凭据。 |
+| `auth.params.subdomain` | 与您的帐户关联的唯一域。 子域的格式为 `https://yoursubdomain.zendesk.com`. |
 | `auth.params.accessToken` | 用于验证源的相应访问令牌。 基于OAuth的身份验证需要此设置。 |
 
 **响应**

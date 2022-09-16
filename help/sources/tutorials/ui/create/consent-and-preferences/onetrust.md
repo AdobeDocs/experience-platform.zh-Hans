@@ -5,10 +5,11 @@ title: （测试版）在UI中创建OneTrust源连接
 topic-legacy: overview
 type: Tutorial
 description: 了解如何使用Adobe Experience Platform UI创建OneTrust源连接。
-source-git-commit: adefaeb895c91d45727f791b73b73a17a2b1ccf9
+exl-id: 6af0604d-cbb6-4c8e-b017-3eb82ec6ee1c
+source-git-commit: cfc6e7cb3877f3b5f716b7f82e7c2d308ef5ed10
 workflow-type: tm+mt
-source-wordcount: '526'
-ht-degree: 1%
+source-wordcount: '527'
+ht-degree: 0%
 
 ---
 
@@ -36,7 +37,7 @@ ht-degree: 1%
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| Host | 从中 [!DNL OneTrust Integration] 需要从中提取数据。 | `https://uat.onetrust.com/` |
+| 主机名 | 从中 [!DNL OneTrust Integration] 需要从中提取数据。 | `https://uat.onetrust.com/` |
 | 授权测试URL | （可选）创建基本连接时，授权测试URL用于验证凭据。 如果未提供，则在创建源连接步骤期间会自动检查凭据。 |  |
 | 访问令牌 | 与 [!DNL OneTrust Integration] 帐户。 | `ZGFkZDMyMjFhMmEyNDQ2ZGFhNTdkZjNkZjFmM2IyOWE6QjlUSERVUTNjOFVsRmpEZTJ6Vk9oRnF3Sk8xNlNtcm4=` |
 

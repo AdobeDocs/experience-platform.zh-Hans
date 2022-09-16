@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；源；连接器；源连
 title: （测试版）在UI中创建Mixpanel源连接
 description: 了解如何使用Adobe Experience Platform UI创建Mixpanel源连接。
 exl-id: 2a02f6a4-08ed-468c-8052-f5b7be82d183
-source-git-commit: e44f6d5bb2fd891a3e3b3c5e4aed68e8d4687b53
+source-git-commit: bee13becb59e3277921549e6db027ce864bba28b
 workflow-type: tm+mt
-source-wordcount: '897'
+source-wordcount: '874'
 ht-degree: 2%
 
 ---
@@ -33,7 +33,6 @@ ht-degree: 2%
 
 | 凭据 | 描述 | 示例 |
 | --- | --- | --- |
-| Host | 的 [!DNL Mixpanel] 原始数据导出API端点。 请参阅 [!DNL Raw Data Export API] 部分 [Mixpanel API参考文档](https://developer.mixpanel.com/reference/overview) 以了解更多信息。 | `https://data.mixpanel.com` |
 | 用户名 | 与您的 [!DNL Mixpanel] 帐户。 请参阅 [[!DNL Mixpanel] 服务帐户文档](https://developer.mixpanel.com/reference/service-accounts#authenticating-with-a-service-account) 以了解更多信息。 | `Test8.6d4ee7.mp-service-account` |
 | 密码 | 与您的 [!DNL Mixpanel] 帐户。 | `dLlidiKHpCZtJhQDyN2RECKudMeTItX1` |
 | 项目ID | 您的 [!DNL Mixpanel] 项目ID。 创建源连接时需要此ID。 请参阅 [[!DNL Mixpanel] 项目设置文档](https://help.mixpanel.com/hc/en-us/articles/115004490503-Project-Settings) 和 [[!DNL Mixpanel] 创建和管理项目指南](https://help.mixpanel.com/hc/en-us/articles/115004505106-Create-and-Manage-Projects) 以了解更多信息。 | `2384945` |

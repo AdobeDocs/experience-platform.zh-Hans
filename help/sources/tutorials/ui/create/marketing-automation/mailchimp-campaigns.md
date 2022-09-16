@@ -5,7 +5,7 @@ title: 使用Platform UI创建MailChimp促销活动源连接
 topic-legacy: tutorial
 description: 了解如何使用Platform UI将Adobe Experience Platform与MailChimp营销活动连接。
 exl-id: e8e1ed32-4277-44c9-aafc-6bb9e0a1fe0d
-source-git-commit: ed185d0957c3cd84c33a6ff60c5ded2b17fbfe74
+source-git-commit: 430b544835956ec0b212fb44d48beaae46afdd2e
 workflow-type: tm+mt
 source-wordcount: '682'
 ht-degree: 1%
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 | 凭据 | 描述 |
 | --- | --- |
-| Host | 用于连接到MailChimp API的根URL。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
+| Domain | 用于连接到MailChimp API的根URL。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
 | 授权测试URL | 连接时，授权测试URL用于验证凭据 [!DNL Mailchimp] 到平台。 如果未提供，则在创建源连接步骤期间会自动检查凭据。 |
 | 访问令牌 | 用于验证源的相应访问令牌。 基于OAuth的身份验证需要此设置。 |
 
@@ -43,7 +43,7 @@ ht-degree: 1%
 
 | 凭据 | 描述 |
 | --- | --- |
-| 主机 | 用于连接到MailChimp API的根URL。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
+| 域 | 用于连接到MailChimp API的根URL。 根URL的格式为 `https://{DC}.api.mailchimp.com`，其中 `{DC}` 表示与您的帐户对应的数据中心。 |
 | 用户名 | 与您的MailChimp帐户对应的用户名。 基本身份验证需要此功能。 |
 | 密码 | 与您的MailChimp帐户对应的密码。 基本身份验证需要此功能。 |
 
@@ -73,13 +73,13 @@ ht-degree: 1%
 
 #### 使用OAuth 2进行身份验证
 
-要使用OAuth 2，请选择 [!UICONTROL OAuth 2刷新代码]，为您的主机、授权测试URL和访问令牌提供值，然后选择 **[!UICONTROL 连接到源]**. 请稍候验证凭据，然后选择 **[!UICONTROL 下一个]** 以继续。
+要使用OAuth 2，请选择 [!UICONTROL OAuth 2刷新代码]，为域、授权测试URL和访问令牌提供值，然后选择 **[!UICONTROL 连接到源]**. 请稍候验证凭据，然后选择 **[!UICONTROL 下一个]** 以继续。
 
 ![OAuth 身份验证](../../../../images/tutorials/create/mailchimp-campaigns/oauth.png)
 
 #### 使用基本身份验证进行身份验证
 
-要使用基本身份验证，请选择 [!UICONTROL 基本身份验证]，为主机、用户名和密码提供值，然后选择 **[!UICONTROL 连接到源]**. 请稍候验证凭据，然后选择 **[!UICONTROL 下一个]** 以继续。
+要使用基本身份验证，请选择 [!UICONTROL 基本身份验证]，提供域、用户名和密码的值，然后选择 **[!UICONTROL 连接到源]**. 请稍候验证凭据，然后选择 **[!UICONTROL 下一个]** 以继续。
 
 ![基本](../../../../images/tutorials/create/mailchimp-campaigns/basic.png)
 
