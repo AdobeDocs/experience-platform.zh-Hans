@@ -4,20 +4,20 @@ description: Adobe Experience Platform Debugger 的最新发行说明。
 keywords: debugger;experience Platform Debugger 扩展程序;chrome;扩展程序;发行说明
 uuid: 47a5d6f3-c074-4ad5-ad4b-e6030496689b
 exl-id: 3eed44da-5f85-413e-a783-3a0df03a2baf
-source-git-commit: f2733cca00f98e85cd1b3944c5127f5c1c89594e
+source-git-commit: 28e54656fcd85fc56e72d4fdd3d079cf8590302f
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '373'
 ht-degree: 4%
 
 ---
 
 # Adobe Experience Platform Debugger发行说明
 
-## 1.4.0版 — 2022年8月24日
+<!-- ## Version 1.4.0 - August 24, 2022
 
-* 添加了对Web SDK混合实施的支持。
-* 添加了在启用目标跟踪失败时的错误消息。
-* 更新了依赖关系。
+* Added support for Web SDK hybrid implementation.
+* Added error message when enabling Target Trace fails.
+* Updated dependencies. -->
 
 ## 1.3.3版 — 2022年6月20日
 

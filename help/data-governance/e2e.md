@@ -1,9 +1,9 @@
 ---
 title: 《数据管理端到端指南》
 description: 按照对Adobe Experience Platform中的字段和数据集实施数据使用限制的完整流程进行操作。
-source-git-commit: 415300f6338eb485b8dead307f3e6a5b2d5d8b22
+source-git-commit: c8b2dba9b1e305f826830b8341bf1a6dde4e2da2
 workflow-type: tm+mt
-source-wordcount: '1449'
+source-wordcount: '1447'
 ht-degree: 0%
 
 ---
@@ -111,7 +111,7 @@ ht-degree: 0%
 
 ![显示在UI中为策略分配营销操作的图像](./images/e2e/select-marketing-action.png)
 
-最后一个屏幕显示了策略的详细信息以及策略将针对哪些标签限制的操作的摘要。 选择 **[!UICONTROL 完成]** 创建并启用策略。
+最后一个屏幕显示了策略的详细信息以及策略将针对哪些标签限制的操作的摘要。 选择 **[!UICONTROL 完成]** 创建策略。
 
 ![显示在UI中确认策略配置的图像](./images/e2e/confirm-policy.png)
 
