@@ -4,9 +4,9 @@ title: 基于属性的访问控制端到端指南
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的端到端指南
 hide: true
 hidefromtoc: true
-source-git-commit: 440176ea1f21db3c7c4b3572fb52771dc70c80a0
+source-git-commit: f7a8f9a5eb0ef3c961f9524057ff01564f88dec3
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '2218'
 ht-degree: 0%
 
 ---
@@ -58,6 +58,35 @@ ht-degree: 0%
 此时会显示平台UI的“权限”工作区，该工作区在 **[!UICONTROL 角色]** 页面。
 
 ## 将标签应用于角色 {#label-roles}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_labels_about"
+>title="什么是标签？"
+>abstract="标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 Platform提供了多个Adobe定义的“核心”数据使用标签，这些标签涵盖适用于数据管理的各种常见限制。 例如，敏感的“S”标签(如RHD（受管制的健康数据）)允许您对引用受保护的健康信息(PHI)的数据进行分类。 您还可以定义自己的自定义标签，以符合您组织的需求。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=en#understanding-data-usage-labels" text="数据使用标签概述"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_labels_about_create"
+>title="创建新标签"
+>abstract="您可以创建自己的自定义标签，以满足您组织的需求。 自定义标签可用于将数据管理和访问控制配置应用于您的数据。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/data-governance/labels/overview.html?lang=en#manage-labels" text="管理自定义标签"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_roles_about"
+>title="什么是角色？"
+>abstract="角色是对与您的Platform实例进行交互的用户类型进行分类的方法，这些用户是访问控制策略的构建基块。 角色具有一组给定的权限，并且可以根据角色需要的查看或写入权限，将组织的成员分配给一个或多个角色。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=en" text="管理角色"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_roles_about_create"
+>title="创建新角色"
+>abstract="您可以创建新角色，以更好地对访问您的Platform实例的用户进行分类。 例如，您可以为内部营销团队创建角色，并将RHD标签应用到该角色，这样内部营销团队就可以访问受保护的健康信息(PHI)。 或者，您也可以为外部代理创建角色，并拒绝该角色对PHI数据的访问，方法是不将RHD标签应用到该角色。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/roles.html?lang=en#create-a-new-role" text="创建新角色"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_roles_details"
+>title="角色概述"
+>abstract="角色概述对话框显示允许给定角色访问的资源和沙箱。"
 
 角色是对与您的Platform实例进行交互的用户类型进行分类的方法，这些用户是访问控制策略的构建基块。 角色具有一组给定的权限，并且可以根据角色需要的访问权限范围，将您组织的成员分配给一个或多个角色。
 
@@ -117,6 +146,34 @@ ht-degree: 0%
 使用 **[!UICONTROL 胰岛素&lt;50]**.
 
 ## 创建访问控制策略 {#policy}
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_policies_about"
+>title="什么是政策？"
+>abstract="政策是将属性集合在一起以确立允许和不允许的行动的声明。 每个组织都附带一个默认策略，您必须激活该策略才能为区段和架构字段等资源定义规则。 默认策略不能编辑或删除。 但是，可以激活或停用默认策略。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en" text="管理策略"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_policies_about_create"
+>title="创建策略"
+>abstract="创建策略以定义用户可以和不能对区段和架构字段执行的操作。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#create-a-new-policy" text="创建策略"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_policies_edit_permitdeny"
+>title="为策略配置允许和不允许的操作"
+>abstract="选择允许访问，以配置用户可针对资源执行的允许操作。 选择拒绝访问，以配置用户无法针对资源执行的不允许的操作。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#edit-a-policy" text="编辑策略"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_policies_edit_resource"
+>title="配置资源的权限"
+>abstract="资源是指用户可以或不能访问的资产或对象。 资源可以是区段或架构。 您可以为区段和架构字段配置写入、读取或删除权限。"
+
+>[!CONTEXTUALHELP]
+>id="platform_permissions_policies_edit_condition"
+>title="编辑条件"
+>abstract="将条件语句应用于策略以配置用户对特定资源的访问权限。 选择“全部匹配”以要求用户具有与资源具有完全相同标签的角色，以便获得访问权限。 选择“匹配任意”，以仅要求用户具有与资源匹配的一个标签的角色。 标签可以定义为核心标签或自定义标签，核心标签表示由Adobe创建和提供的标签，自定义标签表示您为组织创建的标签。"
 
 访问控制策略利用标签来定义哪些用户角色有权访问特定的平台资源。 策略可以是本地策略，也可以是全局策略，并且可以覆盖其他策略。 在此示例中，对于在架构字段中没有相应标签的用户，将拒绝在所有沙箱中访问架构字段和区段。
 
