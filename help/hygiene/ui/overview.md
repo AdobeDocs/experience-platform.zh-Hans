@@ -2,14 +2,24 @@
 title: 数据卫生UI指南
 description: 了解如何在Adobe Experience Platform用户界面中管理数据卫生任务。
 exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
-source-git-commit: 49ba5263c6dc8eccac2ffe339476cf316c68e486
+source-git-commit: 3a98275b4b2969e2c7d8c1ec6ada14d1dd52b9b8
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: '228'
 ht-degree: 0%
 
 ---
 
-# 数据卫生UI指南
+# 数据卫生UI指南 {#hygiene-ui-guide}
+
+>[!CONTEXTUALHELP]
+>id="platform_hygiene_privacyconsole_consumer"
+>title="数据卫生轮"
+>abstract="此小组件显示选定时间范围内数据卫生消费者删除作业的状态。 有关数据卫生流程的更多信息，请选择 **数据卫生** 中。"
+
+>[!CONTEXTUALHELP]
+>id="platform_hygiene_privacyconsole_recents"
+>title="最近的数据卫生工作单"
+>abstract="此小组件会显示最近创建或更新的五个“数据卫生”工作单，具体取决于您在右上方选择的选项。 有关数据卫生流程的更多信息，请选择 **数据卫生** 中。"
 
 >[!IMPORTANT]
 >
