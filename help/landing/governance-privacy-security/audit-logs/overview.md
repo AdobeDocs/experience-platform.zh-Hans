@@ -2,14 +2,24 @@
 title: 审核日志概述
 description: 了解您如何借助审核日志看到谁在 Adobe Experience Platform 中执行了哪些操作。
 exl-id: 00baf615-5b71-4e0a-b82a-ca0ce8566e7f
-source-git-commit: cd7ce8c107769a77373f328d9aa84c982be0d8ee
+source-git-commit: 90481d2cff0f133ee10310da02e4b9ace9d8309f
 workflow-type: tm+mt
-source-wordcount: '847'
-ht-degree: 12%
+source-wordcount: '920'
+ht-degree: 11%
 
 ---
 
-# 审核日志
+# 审核日志 {#audit-logs}
+
+>[!CONTEXTUALHELP]
+>id="platform_audits_privacyconsole_actions"
+>title="热门操作"
+>abstract="此小组件显示在选定时间范围内在Experience Platform中执行的主要操作类型。 要查看Platform中已记录操作的完整列表，请选择 **审核** 中。"
+
+>[!CONTEXTUALHELP]
+>id="platform_audits_privacyconsole_users"
+>title="顶级用户"
+>abstract="此小组件显示在选定时间范围内执行Experience Platform中最多操作的用户。 要查看Platform中已记录操作的完整列表，请选择 **审核** 中。"
 
 为了提高系统中所执行活动的透明度和可见性，Adobe Experience Platform允许您以“审核日志”的形式审核各种服务和功能的用户活动。 这些日志形成了一个审核跟踪，可帮助解决平台上的问题，并帮助您的企业有效地遵守公司数据管理策略和法规要求。
 
