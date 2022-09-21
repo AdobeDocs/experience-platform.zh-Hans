@@ -2,7 +2,7 @@
 title: Web扩展中的库模块
 description: 了解如何在Adobe Experience Platform中设置用于Web扩展的库模块的格式。
 exl-id: 08f2bb01-9071-49c5-a0ff-47d592cc34a5
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+source-git-commit: 8d29765c0d3b57c69b46271e3f0b7338c75c135d
 workflow-type: tm+mt
 source-wordcount: '378'
 ht-degree: 70%
@@ -23,7 +23,7 @@ ht-degree: 70%
 
 库模块的结构为 [CommonJS 模块](https://nodejs.org/api/modules.html#modules-commonjs-modules)。在 CommonJS 模块中，可使用以下变量：
 
-## [!DNL require]
+## `require`
 
 您可以使用 `require` 函数来访问：
 
@@ -37,7 +37,7 @@ var cookie = require('@adobe/reactor-cookie');
 cookie.set('foo', 'bar');
 ```
 
-## [!DNL module]
+## `module`
 
 您可以使用一个名为 `module` 的自由变量来导出模块的 API。
 
@@ -47,7 +47,7 @@ cookie.set('foo', 'bar');
 module.exports = function(…) { … }
 ```
 
-## [!DNL exports]
+## `exports`
 
 您可以使用一个名为 `exports` 的自由变量来导出模块的 API。
 
