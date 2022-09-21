@@ -2,9 +2,9 @@
 title: 用户定义的功能板
 description: 了解如何构建和管理自定义功能板，您可以在其中创建、添加和编辑定制小组件以可视化关键量度。
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: bf2b35e3366c71c51c58b6257cc55f7c9b0cd9c7
+source-git-commit: bb94f7438efe1e24056d6689ffc10b928fc633c2
 workflow-type: tm+mt
-source-wordcount: '825'
+source-wordcount: '881'
 ht-degree: 0%
 
 ---
@@ -37,9 +37,18 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 
 新创建的空白功能板将随您选择的名称一起显示在视图的左上角。
 
-## 创建小组件
+## 创建小组件 {#create-widget}
+
+>[!CONTEXTUALHELP]
+>id="platform_dashboards_udd_maxwidgets"
+>title="小组件的最大数量"
+>abstract="用户定义的功能板最多支持十个小组件。 在向功能板中添加十个小组件后， [!UICONTROL 添加新小组件] 选项处于禁用状态，且显示为灰色。"
 
 从新功能板视图中，选择 **[!UICONTROL 添加新小组件]** 以开始小组件创建过程。
+
+>[!IMPORTANT]
+>
+>用户定义的功能板最多支持十个小组件。 在向功能板中添加十个小组件后， [!UICONTROL 添加新小组件] 选项处于禁用状态，且显示为灰色。
 
 ![突出显示了“添加新小组件”的新空仪表板。](./images/user-defined-dashboards/add-new-widget.png)
 
