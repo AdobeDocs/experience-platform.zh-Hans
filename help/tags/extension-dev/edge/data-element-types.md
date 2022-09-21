@@ -1,10 +1,11 @@
 ---
 title: 边缘扩展的数据元素类型
 description: 了解如何在边缘属性中为标记扩展定义数据元素类型库模块。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: ddbc3912-1c25-4d21-bde8-e40e583b4278
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '435'
-ht-degree: 18%
+source-wordcount: '439'
+ht-degree: 24%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 18%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 在标记中，数据元素是Web或移动页面上数据段的别名，无论该数据在服务器收到的事件中的何处找到。 数据元素可以被规则引用，并充当访问这些数据段的抽象。当数据的位置在将来发生更改（例如更改包含值的事件键）时，可以重新配置单个数据元素，而引用该数据元素的所有规则都可以保持不变。
 
@@ -22,13 +23,13 @@ ht-degree: 18%
 
 >[!IMPORTANT]
 >
->如果要开发Web扩展，请参阅[Web扩展的数据元素类型指南](../web/data-element-types.md)。
+>如果您正在开发Web扩展，请参阅 [web扩展的数据元素类型](../web/data-element-types.md) 中。
 >
 >本文档还假定您熟悉库模块以及它们在边缘扩展中的集成方式。 如果您需要查看简介，请在返回本指南之前参阅关于[库模块格式](./format.md)的概述。
 
 数据元素类型通常包括：
 
-1. 数据收集UI中显示的视图，允许用户修改数据元素的设置。
+1. Experience PlatformUI和数据收集UI中显示的视图，允许用户修改数据元素的设置。
 2. 标记运行时库中发出的库模块，用于解释设置并检索数据段。
 
 如果您希望允许用户从自定义数据层检索一段数据，则您的模块可能类似于以下示例。
@@ -40,7 +41,7 @@ module.exports = (context) => {
 };
 ```
 
-如果要使为数据层返回的数据可由Adobe Experience Platform用户配置，则可以允许用户输入键名称，然后将该名称保存到`settings`对象。 该对象可能如下所示。
+如果要使为数据层返回的数据可由Adobe Experience Platform用户配置，则可以允许用户输入键名称，然后将该名称保存到 `settings` 对象。 该对象可能如下所示。
 
 ```js
 {

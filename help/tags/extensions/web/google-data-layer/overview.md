@@ -1,9 +1,10 @@
 ---
 title: Google数据层扩展
 description: 了解Adobe Experience Platform中的Google客户端数据层标记扩展。
-source-git-commit: 638b4fea8a80763a2b46863ecb0e3969a6fc127a
+exl-id: 7990351d-8669-432b-94a9-4f9db1c2b3fe
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '819'
+source-wordcount: '823'
 ht-degree: 0%
 
 ---
@@ -24,7 +25,7 @@ Google数据层扩展允许您在标记实施中使用Google数据层。 该扩�
 
 ## 安装
 
-要安装该扩展，请在数据收集UI中导航到扩展目录，然后选择 **Google数据层**.
+要安装该扩展，请导航到Experience PlatformUI或数据收集UI中的扩展目录，然后选择 **Google数据层**.
 
 安装后，每次标记库加载到您的网站上时，该扩展都会创建或访问数据层。
 

@@ -6,9 +6,9 @@ seo-title: Adobe Experience Platform Debugger Chrome and Firefox Extension
 title: Adobe Experience Platform Debugger 扩展
 uuid: 42e2c8a2-548a-4a3f-b57d-532535a0e7b9
 exl-id: e02bc318-fbff-4a19-980a-d5c0a21ca300
-source-git-commit: 10a5605c40143b58f6ba0108cc087956aa929866
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '265'
+source-wordcount: '260'
 ht-degree: 21%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 21%
 
 您可以将Platform Debugger与其他Adobe激活解决方案结合使用，以执行以下操作：
 
-1. 使用 [标记](../tags/home.md) 在数据收集UI中插入可激活的代码 [Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html) 产品。
+1. 使用 [标记](../tags/home.md) 插入可激活的代码 [Adobe Experience Cloud](https://experienceleague.adobe.com/docs/core-services/interface/experience-cloud.html) 产品。
 1. 使用 [**[!UICONTROL Auditor ]**选项卡](./auditor/overview.md) 中，用于测试您的实施。
 1. 使用Platform Debugger中基于事件且特定于解决方案的工具来调试Auditor发现的问题或检查有关您的实施的其他信息。
 

@@ -2,9 +2,9 @@
 title: 标记的用户权限
 description: 了解可用于标记的不同类型权限以及针对不同业务用例的一些基本实施策略。
 exl-id: 9b48847a-6133-4dbd-b17d-e7b88152ad7d
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '1311'
+source-wordcount: '1308'
 ht-degree: 17%
 
 ---
@@ -42,7 +42,7 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 
 ### 资产权限 {#property-rights}
 
-您在数据收集UI中创建的任何资产都将在Admin Console中可用，从而允许您使用同一产品配置文件中的特定资产权限对资产进行分组。
+您在UI中创建的任何标记资产都将在Admin Console中可用，从而允许您使用同一产品配置文件中的特定资产权限对资产进行分组。
 
 例如，如果给定的产品配置文件无权访问资产A1，则属于该配置文件的用户将无法查看或修改资产A1中的任何设置。
 
@@ -52,7 +52,7 @@ Adobe Experience Platform中标记的用户权限通过Adobe Admin Console分配
 
 | 资产权限 | 描述 |
 | --- | --- |
-| **开发** | 这允许您执行以下操作：<ul><li>创建规则和数据元素</li><li>在现有开发环境中创建并构建库</li><li>提交库以供审批</li></ul>数据收集UI中的大多数日常任务都需要此权限。 |
+| **开发** | 这允许您执行以下操作：<ul><li>创建规则和数据元素</li><li>在现有开发环境中创建并构建库</li><li>提交库以供审批</li></ul>UI中的大多数日常任务都需要此权限。 |
 | **批准** | 这允许您获取已提交的库并将其生成到暂存环境。 测试完成后，您还可以批准库以进行发布。 |
 | **发布** | 这允许您将已批准的库发布到生产环境。 |
 | **管理扩展** | 这允许您执行以下操作： <ul><li>将新扩展安装到资产</li><li>修改已安装扩展的配置</li><li>删除扩展</li></ul>请参阅的扩展概述文档 [有关扩展的更多信息](../managing-resources/extensions/overview.md). 此角色通常属于 IT 或营销组，具体取决于您的组织。 |

@@ -1,10 +1,11 @@
 ---
 title: Adobe管理的主机概述
 description: 了解用于在Adobe Experience Platform中部署标记库内部版本的默认托管选项。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 9042c313-b0d3-4f6e-963d-0051d760fd16
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '1175'
-ht-degree: 61%
+source-wordcount: '1173'
+ht-degree: 64%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 61%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 Adobe管理的主机是在Adobe Experience Platform中部署标记库内部版本的默认主机设置。 当您通过数据收集用户界面创建新属性时，将为您创建一个默认的Adobe管理主机。
 
@@ -61,7 +62,7 @@ CDN的主要用途是智能地将内容分发到地理位置更接近最终用�
 
 #### 边缘缓存失效 {#invalidation}
 
-当您上传新的库版本时，所有适用边缘节点上的缓存都将失效。 这意味着每个节点都认为其缓存的版本无效，无论最近何时检索到了新副本。 在某个边缘节点下次收到针对该文件的请求时，这个节点会再次从原点检索新副本。
+当您上传新的库版本时，所有适用边缘节点上的缓存都将失效。 这意味着每个节点都认为其缓存版本无效，无论最近何时检索到新副本。 在某个边缘节点下次收到针对该文件的请求时，这个节点会再次从原点检索新副本。
 
 由于Akamai有多个源服务器，它们会相互复制文件，并且由于无法了解最先收到文件的源服务器，因此这些节点请求可能会命中一个不具有最新版本的源服务器。 然后，将再次缓存旧版本。 为防止出现这种情况，会按照以下时间间隔对每个新内部版本执行多个缓存无效：
 
@@ -75,7 +76,7 @@ CDN的主要用途是智能地将内容分发到地理位置更接近最终用�
 
 除此之外，还可以通过使用 `cache-control` HTTP 标头，在浏览器上缓存库版本。使用 Adobe-managed 主机时，由于无法控制 API 响应中返回的标头，因此采用了 Adobe 默认缓存设置。换句话说，您无法对 Adobe-managed 主机使用自定义标头。如果要自定义 `cache-control` 标头，则需要考虑选用[自托管](self-hosting-libraries.md)的方法来代替。
 
-对于浏览器缓存的库版本，其生存时间(TTL)（取决于`cache-control`标头）将因您使用的标记环境而异：
+浏览器缓存的库版本的生存时间(TTL)(由 `cache-control` 标头)会因您所使用的标记环境而异：
 
 | 环境 | `cache-control` 值 |
 | --- | --- |
@@ -87,20 +88,19 @@ CDN的主要用途是智能地将内容分发到地理位置更接近最终用�
 
 缓存控制标头仅应用于主库内部版本。 主库下的所有子资源始终被视为新资源，因此无需在浏览器中缓存它们。
 
-## 在数据收集UI中使用Adobe管理的托管
+## 在 UI 中使用 Adobe-managed 托管
 
-首次在[数据收集UI](https://experience.adobe.com/#/data-collection/)中创建属性时，将自动为您创建Adobe管理的主机。 默认情况下，所有具有立即可用属性的可用环境也会分配给Adobe管理的主机。
+首次在Platform UI或数据收集UI中创建属性时，将自动为您创建Adobe管理的主机。 默认情况下，所有具有立即可用属性的可用环境也会分配给Adobe管理的主机。
 
 >[!NOTE]
 >
 >如果默认的 Adobe-managed 主机未从所有环境中分配，则可以删除该主机。如果要在执行此操作后切换回 Adobe-managed 主机，可通过以下步骤创建新主机：
 >
->1. 选择属性上的&#x200B;**[!UICONTROL Hosts]**&#x200B;选项卡，然后选择&#x200B;**[!UICONTROL Add Host]**。
->1. 为主机提供名称，选择&#x200B;**[!UICONTROL 由Adobe管理]**&#x200B;作为主机类型，然后选择&#x200B;**[!UICONTROL 保存]**。
+>1. 选择 **[!UICONTROL 主机]** 选项卡，然后选择 **[!UICONTROL 添加主机]**.
+>1. 为主机提供名称，选择 **[!UICONTROL 由Adobe]** 作为主机类型，然后选择 **[!UICONTROL 保存]**.
 
 >
->
-接下来，您可以根据需要将环境重新分配给 Adobe-managed 主机。
+>接下来，您可以根据需要将环境重新分配给 Adobe-managed 主机。
 
 ## 后续步骤
 

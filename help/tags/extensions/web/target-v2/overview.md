@@ -1,10 +1,11 @@
 ---
 title: Adobe Target v2扩展概述
 description: 了解Adobe Experience Platform中的Adobe Target v2标记扩展。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: 8f491d67-86da-4e27-92bf-909cd6854be1
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '1363'
-ht-degree: 60%
+source-wordcount: '1356'
+ht-degree: 61%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 60%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关使用此扩展构建规则时可用的选项的信息。
 
@@ -22,21 +23,21 @@ ht-degree: 60%
 >
 >Adobe Target 扩展需要使用 At.js 2.x。
 
-如果尚未安装Adobe Target扩展，请打开您的资产，选择&#x200B;**[!UICONTROL Extensions > Catalog]**，将鼠标悬停在Target扩展上，然后选择&#x200B;**[!UICONTROL Install]**。
+如果尚未安装Adobe Target扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Target扩展上，然后选择 **[!UICONTROL 安装]**.
 
-要配置该扩展，请打开Extensions选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL Configure]**。
+要配置该扩展，请打开扩展选项卡，将鼠标悬停在该扩展上，然后选择 **[!UICONTROL 配置]**.
 
 ![](../../../images/targetv2config.png)
 
 ### at.js 设置
 
-除超时之外，您的所有at.js设置都将自动从Target UI的at.js配置中进行检索。 该扩展仅在首次添加时才会从Target UI中检索设置，因此如果需要进行其他更新，则应在数据收集UI中管理所有设置。
+除超时之外，您的所有at.js设置都将自动从Target UI的at.js配置中进行检索。 该扩展仅在首次添加时才会从Target UI中检索设置，因此如果需要进行其他更新，则应在UI中管理所有设置。
 
 可以使用以下配置选项：
 
 #### Client Code
 
-客户端代码是 Target 帐户标识符。此选项几乎应始终保留为默认值。可以使用数据元素更改该属性。
+客户端代码是Target的帐户标识符。 此选项几乎应始终保留为默认值。可以使用数据元素更改该属性。
 
 #### Organization ID
 
@@ -70,7 +71,7 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
 
 ### 使用设备上决策功能加载目标
 
-将此操作添加到适合在上下文中启用[on-device decisioning](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html)的标记规则中加载Target的操作。 这会将启用设备决策的at.js库加载到页面中。 在大多数实施中，应在您网站的每个页面上加载 Target。Adobe建议，仅当在Target调用之前执行Load Target with On-Device Decisioning操作时，才应使用此操作。 否则，您可能会遇到 Analytics 调用延迟等问题。
+将此操作添加到适合在哪些情况下通过加载Target的标记规则中 [设备内决策](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/on-device-decisioning/on-device-decisioning.html) 在规则上下文中启用。 这会将启用设备决策的at.js库加载到页面中。 在大多数实施中，应在您网站的每个页面上加载 Target。Adobe建议，仅当在Target调用之前执行Load Target with On-Device Decisioning操作时，才应使用此操作。 否则，您可能会遇到 Analytics 调用延迟等问题。
 
 无需进行配置。
 
@@ -133,7 +134,7 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
    * 页面加载请求超时
    * 代码片段本身超时
 * 应在所有使用预隐藏代码片段的页面上使用“Fire Page Load Request”操作，以最大程度地缩短预隐藏的持续时间。
-* 此外，还必须在数据收集UI中用于Target的页面加载规则的页面加载请求操作中启用主体隐藏；否则，所有页面加载在超时时段内都将保持隐藏状态。
+* 此外，还必须在用于Target的页面加载规则的页面加载请求操作中启用主体隐藏；否则，所有页面加载在超时时段内都将保持隐藏状态。
 
 预隐藏代码片段如下所示，该代码片段可以缩小。可配置的选项位于末尾：
 

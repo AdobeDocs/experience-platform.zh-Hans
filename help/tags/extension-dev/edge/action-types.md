@@ -1,10 +1,11 @@
 ---
 title: 边缘扩展的操作类型
 description: 了解如何在边缘属性中为标记扩展定义操作类型库模块。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: c0b058aa-f0fe-4fd8-a873-018482c3e4db
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '382'
-ht-degree: 36%
+source-wordcount: '386'
+ht-degree: 42%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 36%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 在标记规则中，操作是在规则条件通过评估后执行的操作。 操作类型由扩展提供，其效果完全由扩展作者定义。
 
@@ -28,7 +29,7 @@ ht-degree: 36%
 
 操作类型通常包括：
 
-1. 数据收集UI中显示的视图，允许用户修改操作的设置。
+1. Experience PlatformUI和数据收集UI中显示的视图，允许用户修改操作的设置。
 2. 标记运行时库中发出的库模块，用于解释设置并执行操作。
 
 例如，用于将某些数据转发到第三方端点的模块可能如下所示。
@@ -48,7 +49,7 @@ module.exports = (context) {
 };
 ```
 
-如果要使用户可配置端点，并允许将端点的输入和持久性添加到模块中的设置对象，则该对象将类似于下面所示。
+如果要使用户可配置端点，并允许将端点的输入和持久性添加到模块中的设置对象，则该对象将类似于下图。
 
 ```json
 {

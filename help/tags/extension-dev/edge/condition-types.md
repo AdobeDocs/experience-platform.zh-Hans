@@ -1,10 +1,11 @@
 ---
 title: 边缘扩展的条件类型
 description: 了解如何在Adobe Experience Platform中为边缘扩展定义条件类型库模块。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: fe13420e-ffa7-49d6-92c4-965ebd9d7390
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '408'
-ht-degree: 44%
+source-wordcount: '412'
+ht-degree: 50%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 44%
 
 >[!NOTE]
 >
-> Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+> Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 在标记规则中，在事件发生后评估条件。 所有条件必须返回 true，规则才会继续处理。条件类型由扩展提供并评估某些内容是true还是false，从而返回布尔值。
 
@@ -28,10 +29,10 @@ ht-degree: 44%
 
 条件类型通常包括：
 
-1. 数据收集UI中显示的视图，允许用户修改条件的设置。
+1. Experience PlatformUI和数据收集UI中显示的视图，允许用户修改条件的设置。
 2. 标记运行时库中发出的库模块，用于解释设置并评估条件。
 
-例如，如果要评估用户是否位于主机`example.com`上，则您的模块可能如下所示。
+例如，如果要评估用户是否在主机上 `example.com`，则您的模块可能如下所示。
 
 ```js
 module.exports = (context) => {

@@ -1,10 +1,11 @@
 ---
 title: Web扩展的条件类型
 description: 了解如何在Web属性中为标记扩展定义条件类型库模块。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: db504455-858b-4ac8-aa42-de516b0f1d5a
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '498'
-ht-degree: 60%
+source-wordcount: '502'
+ht-degree: 65%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 60%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
 在规则的上下文中，在事件发生后评估条件。 所有条件必须返回 true，规则才会继续处理。例外情况是用户将条件明确放入“例外”存储段中，在这种情况下，该存储段中的所有条件都必须返回false，规则才能继续处理。
 
@@ -28,7 +29,7 @@ ht-degree: 60%
 
 条件类型通常包括：
 
-1. 数据收集UI中显示的[视图](./views.md)，允许用户修改条件的设置。
+1. A [视图](./views.md) 显示在Experience PlatformUI和数据收集UI中，允许用户修改条件的设置。
 2. 标记运行时库中发出的库模块，用于解释设置并评估条件。
 
 条件类型库模块有一个目标：评估某些内容是true还是false。 具体评估的内容由您来决定。

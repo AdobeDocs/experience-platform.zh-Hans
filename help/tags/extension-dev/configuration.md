@@ -1,10 +1,11 @@
 ---
 title: 扩展配置
-description: 了解如何配置标记扩展，以在Adobe Experience Platform的数据收集UI中从用户那里收集全局设置。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+description: 了解如何配置标记扩展，以从Adobe Experience Platform UI或数据收集UI中的用户那里收集全局设置。
+exl-id: 2bf33617-1398-499f-8325-3849dbdb1f97
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '273'
-ht-degree: 58%
+source-wordcount: '274'
+ht-degree: 68%
 
 ---
 
@@ -12,7 +13,7 @@ ht-degree: 58%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../term-updates.md)。
 
 扩展配置是扩展从用户那里收集全局设置的方式。例如，假定某个扩展允许用户使用“发送信标”操作发送信标，并且该信标必须始终包含帐户 ID。我们不想在用户每次配置“发送信标”操作时都询问其帐户 ID，这会给用户增添一些麻烦。取而代之的是，扩展应从扩展配置视图中询问一次帐户 ID。每次发送信标时，“发送信标”操作库模块都可从扩展配置中提取帐户 ID 并将其添加到信标。
 

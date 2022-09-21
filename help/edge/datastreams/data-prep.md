@@ -2,10 +2,10 @@
 title: 为数据收集准备数据
 description: 了解在为Adobe Experience Platform Web和移动SDK配置数据流时，如何将数据映射到Experience Data Model(XDM)事件模式。
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: 5a30bd502cd3950f3c74d5c39d0c7e395fcbb839
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '914'
+ht-degree: 1%
 
 ---
 
@@ -22,7 +22,7 @@ ht-degree: 0%
 >* [使用数据准备处理数据格式](../../data-prep/data-handling.md)
 
 
-本指南介绍如何在数据收集UI中映射数据。 要按照这些步骤进行操作，请开始创建一个数据流（包括） [基本配置步骤](./overview.md#create).
+本指南介绍如何在UI中映射数据。 要按照这些步骤进行操作，请开始创建一个数据流（包括） [基本配置步骤](./overview.md#create).
 
 有关数据收集的数据准备过程的快速演示，请参阅以下视频：
 
@@ -203,4 +203,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-本指南介绍了在数据收集UI中设置数据流时如何将数据映射到XDM。 如果您遵循的是常规数据流教程，则现在可以返回到 [查看数据流详细信息](./overview.md).
+本指南介绍了在UI中设置数据流时如何将数据映射到XDM。 如果您遵循的是常规数据流教程，则现在可以返回到 [查看数据流详细信息](./overview.md).

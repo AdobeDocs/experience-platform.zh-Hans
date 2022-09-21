@@ -3,7 +3,7 @@ title: 使用Adobe Experience Platform Web SDK处理客户同意数据
 topic-legacy: getting started
 description: 了解如何集成Adobe Experience Platform Web SDK以在Adobe Experience Platform中处理客户同意数据。
 exl-id: 3a53d908-fc61-452b-bec3-af519dfefa41
-source-git-commit: 79bc41c713425e14bb3c12646b9b71b2c630618b
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
 source-wordcount: '1375'
 ht-degree: 0%
@@ -23,7 +23,7 @@ ht-degree: 0%
 * [使用Adobe标准创建数据集](./adobe/dataset.md)
 * [使用TCF 2.0标准创建数据集](./iab/dataset.md)
 
-本指南遵循使用数据收集UI中的标记扩展设置SDK的工作流程。 如果您不想使用该扩展，并且希望在网站上直接嵌入SDK的独立版本，请参阅以下文档，而不是本指南：
+本指南遵循使用UI中的标记扩展设置SDK的工作流。 如果您不想使用该扩展，并且希望在网站上直接嵌入SDK的独立版本，请参阅以下文档，而不是本指南：
 
 * [配置数据流](../../../edge/datastreams/overview.md)
 * [安装SDK](../../../edge/fundamentals/installing-the-sdk.md)
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 ## 设置数据流
 
-为了使SDK将数据发送到Experience Platform，您必须首先配置数据流。 在数据收集UI中，选择 **[!UICONTROL 数据流]** 中。
+为了使SDK将数据发送到Experience Platform，您必须首先配置数据流。 在数据收集UI或Experience PlatformUI中，选择 **[!UICONTROL 数据流]** 中。
 
 创建新数据流或选择要编辑的现有数据流后，选择旁边的切换按钮 **[!UICONTROL Adobe Experience Platform]**. 接下来，使用下面列出的值填写表单。
 
@@ -80,7 +80,7 @@ ht-degree: 0%
 1. 在事件处理程序中，设置 `adobeDefaultConsent` 变量，然后使用JavaScript加载标记库脚本。
 1. 设置使用 `adobeDefaultConsent` JavaScript变量，并将此数据元素用作用户的默认同意值。
 
-要在数据收集UI中创建数据元素，请选择 **[!UICONTROL 数据元素]** 在左侧导航中，选择 **[!UICONTROL 添加数据元素]** 导航到数据元素创建对话框。
+要在UI中创建数据元素，请选择 **[!UICONTROL 数据元素]** 在左侧导航中，选择 **[!UICONTROL 添加数据元素]** 导航到数据元素创建对话框。
 
 在此，您必须创建 [!UICONTROL JavaScript变量] 数据元素基于 `adobeDefaultConsent`. 选择 **[!UICONTROL 保存]** 完成。
 

@@ -1,9 +1,10 @@
 ---
 title: Adobe Target扩展概述
 description: 了解Adobe Experience Platform中的Adobe Target的标记扩展。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: b1c5e25b-42ea-4835-b2d4-913fa2536e77
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '1194'
+source-wordcount: '1192'
 ht-degree: 73%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 73%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
 使用本参考可了解有关使用此扩展构建规则时可用的选项的信息。
 
@@ -22,21 +23,21 @@ ht-degree: 73%
 >
 > Adobe Target 扩展需要使用 at.js。它不支持 mbox.js。
 
-如果尚未安装Adobe Target扩展，请打开您的资产，选择&#x200B;**[!UICONTROL Extensions > Catalog]**，将鼠标悬停在Target扩展上，然后选择&#x200B;**[!UICONTROL Install]**。
+如果尚未安装Adobe Target扩展，请打开您的资产，然后选择 **[!UICONTROL “扩展”>“目录”]**，将鼠标悬停在Target扩展上，然后选择 **[!UICONTROL 安装]**.
 
-要配置该扩展，请打开[!UICONTROL Extensions]选项卡，将鼠标悬停在该扩展上，然后选择&#x200B;**[!UICONTROL Configure]**。
+要配置扩展，请打开 [!UICONTROL 扩展] ，将鼠标悬停在扩展上，然后选择 **[!UICONTROL 配置]**.
 
 ![](../../../images/ext-target-config.png)
 
 ### at.js 设置
 
-除超时之外，您的所有at.js设置都会自动从Target用户界面的at.js配置中进行检索。 该扩展仅在首次添加时才会从Target用户界面中检索设置，因此如果需要进行其他更新，则应在数据收集UI中管理所有设置。
+除超时之外，您的所有at.js设置都会自动从Target用户界面的at.js配置中进行检索。 该扩展仅在首次添加时才会从Target用户界面中检索设置，因此如果需要进行其他更新，则应在UI中管理所有设置。
 
 可以使用以下配置选项：
 
 #### Client Code
 
-客户端代码是 Target 帐户标识符。此选项几乎应始终保留为默认值。
+客户端代码是Target的帐户标识符。 此选项几乎应始终保留为默认值。
 
 可使用数据元素进行更改。
 
@@ -71,7 +72,7 @@ ht-degree: 73%
 
 #### Target 用户界面中可用的其他 at.js 设置
 
-Target UI的[!UICONTROL 编辑at.js设置]页面上提供的一些设置未包含在Target扩展中。 下面列出了建议的解决方法：
+在 [!UICONTROL 编辑at.js设置] Target UI的页面未包含在Target扩展中。 下面列出了建议的解决方法：
 
 * 自动创建全局 mbox：此设置将在 Target 扩展中替换为 Fire Global Mbox 操作。
 * 库标题：此设置未包含在 Target 扩展中。可在使用 Load Target 操作之前，将需要在 at.js 之前加载的代码置于核心扩展的 Custom Code 操作中。

@@ -2,9 +2,9 @@
 title: 卫星对象引用
 description: 了解客户端_satellite对象以及您可以在标记中使用该对象执行的各种功能。
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: 47391de09bcad1dc99340caa84cdfff13e9f5237
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '1291'
+source-wordcount: '1290'
 ht-degree: 42%
 
 ---
@@ -51,7 +51,7 @@ var product = _satellite.getVar('product');
 
 >[!NOTE]
 >
->您可以使用百分比(`%`)语法以引用数据收集UI中许多表单字段的变量，因此无需调用 `_satellite.getVar()`. 例如，使用 `%product%` 将访问产品数据元素或自定义变量的值。
+>您可以使用百分比(`%`)语法来引用标记实施中许多表单字段的变量，因此无需调用 `_satellite.getVar()`. 例如，使用 `%product%` 将访问产品数据元素或自定义变量的值。
 
 当事件触发规则时，您可以传递规则的相应 `event` 对象 `_satellite.getVar()` 如此：
 

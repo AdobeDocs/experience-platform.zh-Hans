@@ -1,10 +1,10 @@
 ---
 title: 配置Adobe Experience Platform Web SDK扩展
-description: 如何在数据收集UI中配置Adobe Experience Platform Web SDK标记扩展。
+description: 如何在UI中配置Adobe Experience Platform Web SDK标记扩展。
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: fb0d8aedbb88aad8ed65592e0b706bd17840406b
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '1047'
+source-wordcount: '1041'
 ht-degree: 6%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 6%
 
 Adobe Experience Platform Web SDK标记扩展通过Adobe Experience Platform Edge Network从Web属性向Adobe Experience Cloud发送数据。 该扩展允许您将数据流式传输到平台、同步身份、处理客户同意信号并自动收集上下文数据。
 
-本文档介绍如何在数据收集UI中配置扩展。
+本文档介绍如何在UI中配置扩展。
 
 ## 快速入门
 
-如果已为资产安装Platform Web SDK扩展，请在数据收集UI中打开该资产，然后选择 **[!UICONTROL 扩展]** 选项卡。 在Platform Web SDK下，选择 **[!UICONTROL 配置]**.
+如果已为资产安装Platform Web SDK扩展，请在UI中打开该资产，然后选择 **[!UICONTROL 扩展]** 选项卡。 在Platform Web SDK下，选择 **[!UICONTROL 配置]**.
 
 ![](../images/extension/overview/configure.png)
 
@@ -54,7 +54,7 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 请参阅 [数据流](../datastreams/overview.md) 以了解更多信息。
 
 
-## [!UICONTROL 隐私]
+## [!UICONTROL Privacy]
 
 ![](../images/extension/overview/privacy.png)
 

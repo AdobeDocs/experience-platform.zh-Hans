@@ -1,10 +1,11 @@
 ---
 title: 删除资源
 description: 了解如何删除Adobe Experience Platform中的标记资源。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: c8e26720-1976-48ec-8490-3d4ce587831e
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '550'
-ht-degree: 75%
+source-wordcount: '558'
+ht-degree: 79%
 
 ---
 
@@ -12,9 +13,9 @@ ht-degree: 75%
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-删除资源是从Adobe Experience Platform中永久移除该资源。 如果您仍希望资源显示在数据收集UI中，但不显示在标记库中，请参阅[从库](remove-resources-from-library.md)中删除资源。
+删除资源是从Adobe Experience Platform中永久移除该资源。 如果要从特定标签库中删除资源，但仍希望该资源可在其他库中使用，请参阅 [从库中移除资源](remove-resources-from-library.md).
 
 您可以删除数据元素、规则、扩展、主机、环境和资产。删除后，这些资源将无法恢复。
 
@@ -77,4 +78,4 @@ ht-degree: 75%
 
 ## 删除资源
 
-从相应的列表视图中，选择要删除的资源，然后选择&#x200B;**[!UICONTROL Delete]**。
+从相应的列表视图中，选择要删除的资源，然后选择 **[!UICONTROL 删除]**.

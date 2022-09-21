@@ -2,9 +2,9 @@
 title: 使用Adobe Experience Platform Debugger测试嵌入代码
 description: 了解如何使用Platform Debugger在本地测试您网站上Adobe Experience Platform的不同嵌入代码。
 exl-id: ae6183b9-0d25-49d0-b0e9-f8b5ba58ab33
-source-git-commit: 71c63e0d0b993206cb3bb5de7f7fbd5e10c6f2e3
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '507'
 ht-degree: 62%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 62%
 
 ## 先决条件
 
-本教程要求您对在数据收集UI中使用环境和嵌入代码有一定的了解。 有关更多信息，请参阅[环境概述](./environments.md)。
+本教程需要对标记的环境和嵌入代码的使用有所了解。 有关更多信息，请参阅[环境概述](./environments.md)。
 
 此外，本教程还要求您已安装 Platform Debugger 浏览器扩展。仅提供适用于 Chrome 和 Firefox 浏览器的 Platform Debugger。请先使用以下链接之一安装相应的扩展，然后再开始学习本教程：
 

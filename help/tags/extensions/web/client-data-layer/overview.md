@@ -2,9 +2,9 @@
 title: Adobe客户端数据层扩展
 description: 了解Adobe Experience Platform中的Adobe客户端数据层标记扩展。
 exl-id: c4d1b4d3-4b51-4701-be2e-31b08e109bf6
-source-git-commit: 27e5c64f31b9a68252d262b531660811a0576177
+source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '647'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ If you would like to have more details on development consideration, [please rea
 
 ## 安装
 
-要安装扩展，请导航到数据收集UI中的扩展目录，然后选择Adobe客户端数据层。
+要安装扩展，请导航到Experience PlatformUI或数据收集UI中的扩展目录，然后选择Adobe客户端数据层。
 
 ![目录中的ACDL扩展视图](./images/catalog.png)
 
@@ -37,7 +37,7 @@ This installation will not be supported on our end.<br>
 >
 >更改对象名称时，原始 `adobeDataLayer` 对象仍在实例化中，然后被复制到您选择的新变量名称中。
 
-## 事件
+## 活动
 
 利用扩展，可监听数据层上的事件。 以下事件可用：
 
