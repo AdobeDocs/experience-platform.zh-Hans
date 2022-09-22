@@ -5,7 +5,7 @@ title: 在UI中定义枚举字段
 description: 了解如何在Experience Platform用户界面中定义枚举字段。
 topic-legacy: user guide
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: f6fefda974d2ae6fd4b035ef3b5fe633311c9772
+source-git-commit: 878d99d9eb45f40ff76e5e90116abf032be1c93f
 workflow-type: tm+mt
 source-wordcount: '310'
 ht-degree: 2%
@@ -15,7 +15,7 @@ ht-degree: 2%
 # 在UI中定义枚举字段 {#enum}
 
 >[!CONTEXTUALHELP]
->id="platform_xdm_enumsuggestedvalue"
+>id="platform_xdm_enum_suggestedvalue"
 >title="枚举和建议值"
 >abstract="枚举将约束字符串字段，以便仅允许摄取与预定义值集匹配的数据。 或者，您可以为字段定义一组建议的值，这些值不限制摄取，而是定义可在分段中选择的属性。 有关详细信息，请参阅文档。"
 
