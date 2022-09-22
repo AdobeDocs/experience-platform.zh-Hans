@@ -2,10 +2,10 @@
 title: 边缘扩展的操作类型
 description: 了解如何在边缘属性中为标记扩展定义操作类型库模块。
 exl-id: c0b058aa-f0fe-4fd8-a873-018482c3e4db
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '386'
-ht-degree: 42%
+source-wordcount: '382'
+ht-degree: 43%
 
 ---
 
@@ -29,7 +29,7 @@ ht-degree: 42%
 
 操作类型通常包括：
 
-1. Experience PlatformUI和数据收集UI中显示的视图，允许用户修改操作的设置。
+1. 数据收集UI中显示的视图，允许用户修改操作的设置。
 2. 标记运行时库中发出的库模块，用于解释设置并执行操作。
 
 例如，用于将某些数据转发到第三方端点的模块可能如下所示。

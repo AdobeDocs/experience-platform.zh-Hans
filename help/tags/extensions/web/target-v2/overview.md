@@ -2,10 +2,10 @@
 title: Adobe Target v2扩展概述
 description: 了解Adobe Experience Platform中的Adobe Target v2标记扩展。
 exl-id: 8f491d67-86da-4e27-92bf-909cd6854be1
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1356'
-ht-degree: 61%
+source-wordcount: '1363'
+ht-degree: 62%
 
 ---
 
@@ -31,13 +31,13 @@ ht-degree: 61%
 
 ### at.js 设置
 
-除超时之外，您的所有at.js设置都将自动从Target UI的at.js配置中进行检索。 该扩展仅在首次添加时才会从Target UI中检索设置，因此如果需要进行其他更新，则应在UI中管理所有设置。
+除超时之外，您的所有at.js设置都将自动从Target UI的at.js配置中进行检索。 该扩展仅在首次添加时才会从Target UI中检索设置，因此如果需要进行其他更新，则应在数据收集UI中管理所有设置。
 
 可以使用以下配置选项：
 
 #### Client Code
 
-客户端代码是Target的帐户标识符。 此选项几乎应始终保留为默认值。可以使用数据元素更改该属性。
+客户端代码是 Target 帐户标识符。此选项几乎应始终保留为默认值。可以使用数据元素更改该属性。
 
 #### Organization ID
 
@@ -134,7 +134,7 @@ Target 扩展在规则的 Then 部分中提供了以下操作：
    * 页面加载请求超时
    * 代码片段本身超时
 * 应在所有使用预隐藏代码片段的页面上使用“Fire Page Load Request”操作，以最大程度地缩短预隐藏的持续时间。
-* 此外，还必须在用于Target的页面加载规则的页面加载请求操作中启用主体隐藏；否则，所有页面加载在超时时段内都将保持隐藏状态。
+* 此外，还必须在数据收集UI中用于Target的页面加载规则的页面加载请求操作中启用主体隐藏；否则，所有页面加载在超时时段内都将保持隐藏状态。
 
 预隐藏代码片段如下所示，该代码片段可以缩小。可配置的选项位于末尾：
 

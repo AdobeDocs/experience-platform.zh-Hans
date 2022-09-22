@@ -2,9 +2,9 @@
 title: SFTP 主机
 description: 了解如何在Adobe Experience Platform中配置标记，以将库内部版本交付到安全的自托管SFTP服务器。
 exl-id: 3c1dc43b-291c-4df4-94f7-a03b25dbb44c
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '820'
+source-wordcount: '821'
 ht-degree: 19%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 19%
 >
 >Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
 
-Adobe Experience Platform允许您将标签库内部版本交付到托管的安全SFTP服务器，从而更好地控制内部版本的存储和管理方式。 本指南介绍如何在Experience PlatformUI或数据收集UI中为标记属性设置SFTP主机。
+Adobe Experience Platform允许您将标签库内部版本交付到托管的安全SFTP服务器，从而更好地控制内部版本的存储和管理方式。 本指南介绍如何在数据收集UI中为标记属性设置SFTP主机。
 
 >[!NOTE]
 >
@@ -51,7 +51,7 @@ Platform 会使用加密密钥连接到 SFTP 站点。可以通过以下几步�
 
 ## 创建 SFTP 主机 {#create}
 
-选择 **[!UICONTROL 主机]** 在左侧导航中，然后是 **[!UICONTROL 添加主机]**.
+在数据收集UI中，选择 **[!UICONTROL 主机]** 在左侧导航中，然后是 **[!UICONTROL 添加主机]**.
 
 ![显示在UI中选择的添加主机按钮的图像](../../../images/ui/publishing/sftp-hosts/add-host-button.png)
 

@@ -5,9 +5,9 @@ title: Adobe隐私JavaScript库概述
 topic-legacy: overview
 description: Adobe隐私JavaScript库允许您检索数据主体身份以在Privacy Service中使用。
 exl-id: 757bf69e-25bf-4ef9-9787-3e74b213908a
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1012'
 ht-degree: 6%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 6%
 * 通过运行以下命令使用npm进行安装： `npm install @adobe/adobe-privacy`
 * 从下载 [Experience CloudGitHub存储库](https://github.com/Adobe-Marketing-Cloud/adobe-privacy)
 
-您还可以通过标记扩展安装库。 请参阅 [Adobe隐私标记扩展](../tags/extensions/web/privacy/overview.md) 以了解更多信息。
+您还可以通过数据收集UI中的标记扩展来安装库。 请参阅 [Adobe隐私标记扩展](../tags/extensions/web/privacy/overview.md) 以了解更多信息。
 
 ## 实例化 [!DNL Privacy JS Library]
 

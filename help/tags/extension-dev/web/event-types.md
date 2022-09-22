@@ -2,9 +2,9 @@
 title: 适用于Web扩展的事件类型
 description: 了解如何在Adobe Experience Platform中为Web扩展定义事件类型库模块。
 exl-id: dbdd1c88-5c54-46be-9824-2f15cce3d160
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1052'
+source-wordcount: '1048'
 ht-degree: 30%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 30%
 
 事件类型由扩展定义，通常包含以下内容：
 
-1. A [视图](./views.md) 显示在Experience PlatformUI和数据收集UI中，允许用户修改事件的设置。
+1. A [视图](./views.md) 数据收集UI中显示的，通过该UI，用户可以修改事件的设置。
 2. 标记运行时库中发出的库模块，用于解释设置并观看特定活动的发生。
 
 `module.exports` 接受两者 `settings` 和 `trigger` 参数。 这允许自定义事件类型。

@@ -2,9 +2,9 @@
 title: Web扩展的条件类型
 description: 了解如何在Web属性中为标记扩展定义条件类型库模块。
 exl-id: db504455-858b-4ac8-aa42-de516b0f1d5a
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '502'
+source-wordcount: '498'
 ht-degree: 65%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 65%
 
 条件类型通常包括：
 
-1. A [视图](./views.md) 显示在Experience PlatformUI和数据收集UI中，允许用户修改条件的设置。
+1. A [视图](./views.md) 数据收集UI中显示的，通过该UI，用户可以修改条件的设置。
 2. 标记运行时库中发出的库模块，用于解释设置并评估条件。
 
 条件类型库模块有一个目标：评估某些内容是true还是false。 具体评估的内容由您来决定。

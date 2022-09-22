@@ -3,9 +3,9 @@ title: 数据流概述
 description: 将客户端 Experience Platform SDK 集成与 Adobe 产品和第三方目标连接起来。
 keywords: 配置；数据流；数据流ID；边缘；数据流ID；环境设置；边缘配置ID；标识；启用ID同步；ID同步容器ID；沙盒；流入口；事件数据集；目标；客户端代码；资产令牌；目标环境ID;Cookie目标；URL目标；Analytics设置阻止报表包ID；数据收集的数据准备；数据准备；映射器；XDM；边缘上的XDM；映射器
 exl-id: 736c75cb-e290-474e-8c47-2a031f215a56
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1725'
+source-wordcount: '1729'
 ht-degree: 2%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 2%
 
 数据流表示实施Adobe Experience Platform Web和移动SDK时的服务器端配置。 而 [配置命令](../fundamentals/configuring-the-sdk.md) 中的控件控制必须在客户端上处理的事项(例如 `edgeDomain`)，数据流将处理SDK的所有其他配置。 请求发送至Adobe Experience Platform边缘网络时， `edgeConfigId` 用于引用数据流。 这样，您就无需在网站上进行代码更改即可更新服务器端配置。
 
-本文档介绍了在UI中配置数据流的步骤。
+本文档介绍了在数据收集UI中配置数据流的步骤。
 
 ## 访问 [!UICONTROL 数据流] 工作区
 
-您可以在数据收集UI或Experience PlatformUI中通过选择 **[!UICONTROL 数据流]** 中。
+您可以通过选择 **[!UICONTROL 数据流]** 中。
 
-![UI中的“数据流”选项卡](../images/datastreams/overview/datastreams-tab.png)
+![数据收集UI中的“数据流”选项卡](../images/datastreams/overview/datastreams-tab.png)
 
 的 [!UICONTROL 数据流] 选项卡显示现有数据流的列表，包括其友好名称、ID和上次修改日期。 选择要跟踪的数据流的名称 [查看其详细信息并配置服务](#view-details).
 
@@ -106,7 +106,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->为Platform启用数据流时，请注意您当前使用的Platform沙盒，如UI顶部功能区中所示。
+>为Platform启用数据流时，请注意您当前使用的Platform沙盒，如数据收集UI顶部功能区中所示。
 >
 >![选定的沙盒](../images/datastreams/overview/platform-sandbox.png)
 >
@@ -175,4 +175,4 @@ ht-degree: 2%
 
 ## 后续步骤
 
-本指南介绍了如何在UI中管理数据流。 有关如何在设置数据流后安装和配置Web SDK的更多信息，请参阅 [数据收集E2E指南](../../collection/e2e.md#install).
+本指南介绍了如何在数据收集UI中管理数据流。 有关如何在设置数据流后安装和配置Web SDK的更多信息，请参阅 [数据收集E2E指南](../../collection/e2e.md#install).

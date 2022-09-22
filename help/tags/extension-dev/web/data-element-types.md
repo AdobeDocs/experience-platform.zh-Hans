@@ -2,10 +2,10 @@
 title: Web扩展的数据元素类型
 description: 了解如何在Web属性中为标记扩展定义数据元素类型库模块。
 exl-id: 3aa79322-2237-492f-82ff-0ba4d4902f70
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '600'
-ht-degree: 60%
+source-wordcount: '596'
+ht-degree: 61%
 
 ---
 
@@ -29,7 +29,7 @@ ht-degree: 60%
 
 数据元素类型通常包括：
 
-1. A [视图](./views.md) 显示在Experience PlatformUI和数据收集UI中，通过该UI，用户可以修改数据元素的设置。
+1. A [视图](./views.md) 数据收集UI中显示的，通过该UI，用户可以修改数据元素的设置。
 2. 标记运行时库中发出的库模块，用于解释设置并检索数据段。
 
 假设您想要允许用户从名为 `productName` 的本地存储项中检索一段数据。您的模块可能如下所示：

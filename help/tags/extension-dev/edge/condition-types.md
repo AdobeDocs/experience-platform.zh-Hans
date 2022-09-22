@@ -2,10 +2,10 @@
 title: 边缘扩展的条件类型
 description: 了解如何在Adobe Experience Platform中为边缘扩展定义条件类型库模块。
 exl-id: fe13420e-ffa7-49d6-92c4-965ebd9d7390
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '412'
-ht-degree: 50%
+source-wordcount: '408'
+ht-degree: 51%
 
 ---
 
@@ -29,7 +29,7 @@ ht-degree: 50%
 
 条件类型通常包括：
 
-1. Experience PlatformUI和数据收集UI中显示的视图，允许用户修改条件的设置。
+1. 数据收集UI中显示的视图，允许用户修改条件的设置。
 2. 标记运行时库中发出的库模块，用于解释设置并评估条件。
 
 例如，如果要评估用户是否在主机上 `example.com`，则您的模块可能如下所示。

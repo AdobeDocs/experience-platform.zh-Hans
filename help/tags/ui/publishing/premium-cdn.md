@@ -2,9 +2,9 @@
 title: 对标记的高级CDN支持
 description: 了解适用于标记的高级CDN功能，以及如何使用该功能在多个地理区域交付内容。
 exl-id: 33e36d3b-9e21-44a8-8498-32a5fc20b46b
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: '536'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ ht-degree: 0%
 
 为此，Experience Platform中的标记提供了一项高级CDN功能，允许您向这些特殊地区交付内容。
 
-高级CDN支持是一项付费功能，贵组织必须购买才能启用和使用该功能。 本指南介绍购买此功能后，如何在Experience PlatformUI或数据收集UI中配置和使用此功能。
+高级CDN支持是一项付费功能，贵组织必须购买才能启用和使用该功能。 本指南介绍购买此功能后，如何在数据收集UI中配置和使用此功能。
 
 ## 为贵组织启用高级CDN
 
-Premium CDN在公司级别启用。 贵组织购买高级CDN功能后，Adobe管理员将在您公司的UI中启用该功能。
+Premium CDN在公司级别启用。 贵组织购买高级CDN功能后，Adobe管理员将在数据收集UI中为贵公司启用此功能。
 
 ## 使用更新的嵌入代码重建和安装标记库
 

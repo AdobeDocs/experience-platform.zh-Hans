@@ -1,10 +1,10 @@
 ---
 title: 扩展配置
-description: 了解如何配置标记扩展，以从Adobe Experience Platform UI或数据收集UI中的用户那里收集全局设置。
+description: 了解如何配置标记扩展，以在Adobe Experience Platform的数据收集UI中从用户那里收集全局设置。
 exl-id: 2bf33617-1398-499f-8325-3849dbdb1f97
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '274'
+source-wordcount: '273'
 ht-degree: 68%
 
 ---

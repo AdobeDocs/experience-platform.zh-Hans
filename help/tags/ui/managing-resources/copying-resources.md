@@ -2,10 +2,10 @@
 title: 复制资源
 description: 了解如何使用Adobe Experience Platform中现有标记资源的设置创建新标记资源。
 exl-id: 7e52ceae-97df-4c64-aba3-4f5ba6018a47
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '780'
-ht-degree: 79%
+source-wordcount: '785'
+ht-degree: 78%
 
 ---
 
@@ -35,7 +35,7 @@ ht-degree: 79%
 
 >[!NOTE]
 >
->如果一个资产配置了进行扩展开发，而另一个资产没有配置，则无法将资源复制到另一个资产。
+>在数据收集UI中，如果一个资产配置了进行扩展开发，而另一个资产没有配置，则无法将资源复制到另一个资产。
 
 配置所需的行为后，选择 **[!UICONTROL 复制]**.
 

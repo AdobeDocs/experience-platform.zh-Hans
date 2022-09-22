@@ -2,10 +2,10 @@
 title: Adobe Target扩展概述
 description: 了解Adobe Experience Platform中的Adobe Target的标记扩展。
 exl-id: b1c5e25b-42ea-4835-b2d4-913fa2536e77
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '1192'
-ht-degree: 73%
+source-wordcount: '1194'
+ht-degree: 75%
 
 ---
 
@@ -31,13 +31,13 @@ ht-degree: 73%
 
 ### at.js 设置
 
-除超时之外，您的所有at.js设置都会自动从Target用户界面的at.js配置中进行检索。 该扩展仅在首次添加时才会从Target用户界面中检索设置，因此如果需要进行其他更新，则应在UI中管理所有设置。
+除超时之外，您的所有at.js设置都会自动从Target用户界面的at.js配置中进行检索。 该扩展仅在首次添加时才会从Target用户界面中检索设置，因此如果需要进行其他更新，则应在数据收集UI中管理所有设置。
 
 可以使用以下配置选项：
 
 #### Client Code
 
-客户端代码是Target的帐户标识符。 此选项几乎应始终保留为默认值。
+客户端代码是 Target 帐户标识符。此选项几乎应始终保留为默认值。
 
 可使用数据元素进行更改。
 

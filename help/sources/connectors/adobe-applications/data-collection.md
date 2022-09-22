@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；源；源；数据收集
 title: Adobe数据收集
 description: 本文档概述了Adobe数据收集源。
 exl-id: 3cb582a9-b852-4ede-8047-af1a47aa3647
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '298'
+source-wordcount: '296'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 Adobe Experience Platform提供了一套技术，允许您从客户端源收集客户体验数据，并将其发送到Adobe Experience Platform边缘网络，在该网络中，可以在几秒内对数据进行扩充、转换并分发到Adobe或非Adobe目标。
 
-通过Adobe Experience Platform数据收集的源集成，您可以通过源目录访问边缘网络上的数据，包括为数据收集进行数据准备，并改进对警告的支持。
+Adobe数据收集的源集成允许您通过源目录访问数据收集Experience Edge数据，包括为数据收集进行数据准备，并改进了对警告的支持。
 
-## 使用源工作区访问数据收集
+## 使用源工作区访问Adobe数据收集
 
 在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航栏访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以创建帐户的各种源。
 
@@ -32,7 +32,7 @@ Adobe Experience Platform提供了一套技术，允许您从客户端源收集�
 
 ![数据流](./images/data-collection/datastreams.png)
 
-有关如何在UI中配置数据收集的完整步骤，请参阅 [数据收集端到端概述](../../../collection/e2e.md).
+有关如何使用数据收集UI的完整步骤，请参阅 [数据收集端到端概述](../../../collection/e2e.md).
 
 ## 后续步骤
 

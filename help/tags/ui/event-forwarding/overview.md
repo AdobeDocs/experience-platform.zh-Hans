@@ -3,9 +3,9 @@ title: 事件转发概述
 description: 了解 Adobe Experience Platform 中的事件转发功能，此功能可让您使用 Platform Edge Network 执行任务，而无需更改您的标记实施。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '959'
+source-wordcount: '955'
 ht-degree: 8%
 
 ---
@@ -49,7 +49,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 ### 属性 {#properties}
 
-事件转发保留其自身的属性存储区，这些属性与标记分开，您可以通过选择在Experience PlatformUI或数据收集UI中查看 **[!UICONTROL 事件转发]** 中。
+事件转发会维护其自身的属性存储，这些属性与标记分开，您可以通过选择 **[!UICONTROL 事件转发]** 中。
 
 ![数据收集UI中的事件转发属性](../../images/ui/event-forwarding/overview/properties.png)
 

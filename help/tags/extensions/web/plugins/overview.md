@@ -2,10 +2,10 @@
 title: “常用Analytics扩展”概述
 description: 了解Adobe Experience Platform中的“常用Analytics标记”扩展。
 exl-id: 9eeb4589-df90-4356-b927-b2c29c32370b
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '406'
-ht-degree: 77%
+source-wordcount: '549'
+ht-degree: 62%
 
 ---
 
@@ -50,7 +50,7 @@ ht-degree: 77%
 >
 >虽然此操作更易于实施，但 Adobe 咨询服务团队不建议您使用此操作，因为它会增加插件的负担。
 
-在此操作中，您可以选择要包含在实施中的每个插件并保存更改。您可以按照自己的需要，选择任意数量的、要在实施过程中使用的插件。
+在此操作中，您可以选择要包含在实施中的每个插件并保存更改。您可以按照自己的需要，选择任意数量的、要在实施过程中使用的插件。在 Analytics [插件概述](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html)中，提供了如何使用每个插件的文档链接和简要说明。
 
 ### 初始化插件
 
@@ -58,17 +58,36 @@ ht-degree: 77%
 
 ## “常用Analytics插件”扩展数据元素
 
-“常用Analytics插件”扩展中提供了以下数据元素，这些数据元素利用标记功能在Analytics中设置和配置其相应插件：
+此部分介绍“常用Analytics插件”扩展中可用的数据元素。
 
-* `getGeoCoordinates`
-* `getNewRepeat`
-* `getPageName`
-* `getResponsiveLayout`
-* `getTimeParting`
-* `getTimeSinceLastVisit`
-* `getVisitDuration`
-* `getVisitNum`
+### getGeoCoordinates
 
->[!NOTE]
->
->有关上述插件的更多信息，请查阅 [Analytics文档](https://experienceleague.adobe.com/docs/analytics/implementation/vars/plugins/impl-plugins.html).
+允许用户利用Adobe Experience Platform中的本机数据收集UI来设置和配置getGeoCoordinates插件。
+
+### getNewRepeat
+
+允许用户利用本机数据收集UI来设置和配置getNewRepeat插件。
+
+### getPageName
+
+允许用户利用本机数据收集UI来设置和配置getPageName插件。
+
+### getResponsiveLayout
+
+允许用户利用本机数据收集UI来设置和配置getResponsiveLayout插件。
+
+### getTimeParting
+
+允许用户利用本机数据收集UI来设置和配置getTimeParting插件。
+
+### getTimeSinceLastVisit
+
+允许用户利用本机数据收集UI来设置和配置getTimeSinceLastVisit插件。
+
+### getVisitDuration
+
+允许用户利用本机数据收集UI来设置和配置getVisitDuration插件。
+
+### getVisitNum
+
+允许用户利用本机数据收集UI来设置和配置getVisitNum插件。

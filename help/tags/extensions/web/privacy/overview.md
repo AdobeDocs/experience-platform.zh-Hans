@@ -2,9 +2,9 @@
 title: Adobe隐私扩展概述
 description: 了解Adobe Experience Platform中的Adobe隐私标记扩展。
 exl-id: 8401861e-93ad-48eb-8796-b26ed8963c32
-source-git-commit: 77313baabee10e21845fa79763c7ade4e479e080
+source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '909'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 Adobe隐私标签扩展允许您收集和删除通过客户端设备上的Adobe解决方案分配给最终用户的用户ID。 然后，收集的ID可以发送到 [Adobe Experience Platform Privacy Service](../../../../privacy-service/home.md) 访问或删除受支持的Adobe Experience Cloud应用程序中相关个人的个人数据。
 
-本指南介绍如何在AdobeUI或数据收集UI中安装和配置Experience Platform隐私扩展。
+本指南介绍如何在数据收集UI中安装和配置Adobe隐私扩展。
 
 >[!NOTE]
 >
@@ -25,7 +25,7 @@ Adobe隐私标签扩展允许您收集和删除通过客户端设备上的Adobe�
 
 ## 安装和配置 扩展
 
-选择 **[!UICONTROL 扩展]** 在左侧导航中，接下来是 **[!UICONTROL 目录]** 选项卡。 使用搜索栏可缩小可用扩展的列表，直到您找到Adobe隐私。 选择 **[!UICONTROL 安装]** 继续。
+在数据收集UI中，选择 **[!UICONTROL 扩展]** 在左侧导航中，接下来是 **[!UICONTROL 目录]** 选项卡。 使用搜索栏可缩小可用扩展的列表，直到您找到Adobe隐私。 选择 **[!UICONTROL 安装]** 继续。
 
 ![安装扩展](../../../images/extensions/privacy/install.png)
 
@@ -71,7 +71,7 @@ Adobe隐私扩展提供了三种可在 [规则](../../../ui/managing-resources/r
 
 ### 定义用于处理身份的数据元素
 
-通过选择 **[!UICONTROL 数据元素]** 在左侧导航中，然后是 **[!UICONTROL 添加数据元素]**. 进入配置屏幕后，选择 **[!UICONTROL 核心]** 对于扩展和 **[!UICONTROL 自定义代码]** （对于数据元素类型）。 从此处选择 **[!UICONTROL Open Editor]** 中。
+在数据收集UI中，通过选择 **[!UICONTROL 数据元素]** 在左侧导航中，然后是 **[!UICONTROL 添加数据元素]**. 进入配置屏幕后，选择 **[!UICONTROL 核心]** 对于扩展和 **[!UICONTROL 自定义代码]** （对于数据元素类型）。 从此处选择 **[!UICONTROL Open Editor]** 中。
 
 ![选择数据元素类型](../../../images/extensions/privacy/data-element-type.png)
 
@@ -111,4 +111,4 @@ Adobe隐私扩展提供了三种可在 [规则](../../../ui/managing-resources/r
 
 ## 后续步骤
 
-本指南介绍了如何在UI中使用Adobe隐私标记扩展。 有关扩展提供的功能（包括如何使用原始代码使用扩展的示例）的更多信息，请参阅 [隐私JavaScript库概述](../../../../privacy-service/js-library.md) (在Privacy Service文档中)。
+本指南介绍了数据收集UI中Adobe隐私标记扩展的使用。 有关扩展提供的功能（包括如何使用原始代码使用扩展的示例）的更多信息，请参阅 [隐私JavaScript库概述](../../../../privacy-service/js-library.md) (在Privacy Service文档中)。
