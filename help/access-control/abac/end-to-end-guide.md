@@ -4,9 +4,9 @@ title: 基于属性的访问控制端到端指南
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的端到端指南
 hide: true
 hidefromtoc: true
-source-git-commit: f7a8f9a5eb0ef3c961f9524057ff01564f88dec3
+source-git-commit: 230bcfdb92c3fbacf2e24e7210d61e2dbe0beb86
 workflow-type: tm+mt
-source-wordcount: '2218'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -39,9 +39,9 @@ ht-degree: 0%
 
 您将：
 
-* [为用户设置角色标签]{#label-roles}:使用其营销组与外部代理合作的医疗保健提供商(ACME Business Group)的示例。
-* [为资源设置标签（架构字段和区段）]{#label-resources}:分配 **[!UICONTROL PHI/受管健康数据]** 为架构资源和区段设置标签。
-* [创建策略以将它们链接在一起]{#policy}:创建策略以将资源上的标签链接到角色中的标签，以拒绝访问架构字段和区段。 这将拒绝对没有匹配标签的用户访问架构字段并在所有沙箱中划分区段。
+* [为用户设置角色标签](#label-roles):使用其营销组与外部代理合作的医疗保健提供商(ACME Business Group)的示例。
+* [为资源设置标签（架构字段和区段）](#label-resources):分配 **[!UICONTROL PHI/受管健康数据]** 为架构资源和区段设置标签。
+* [创建策略以将它们链接在一起](#policy):创建策略以将资源上的标签链接到角色中的标签，以拒绝访问架构字段和区段。 这将拒绝对没有匹配标签的用户访问架构字段并在所有沙箱中划分区段。
 
 ## 权限
 
@@ -162,7 +162,7 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_permissions_policies_edit_permitdeny"
 >title="为策略配置允许和不允许的操作"
->abstract="选择允许访问，以配置用户可针对资源执行的允许操作。 选择拒绝访问，以配置用户无法针对资源执行的不允许的操作。"
+>abstract="A <b>拒绝访问</b> 策略将在满足条件时拒绝用户访问。 与 <b>以下内容为false</b>  — 除非所有用户符合设置的匹配条件，否则他们将被拒绝访问。 此类型的策略允许您保护敏感资源，并仅允许具有匹配标签的用户访问。 <br>A <b>允许访问</b> 策略将允许用户在满足标准时访问。 与 <b>以下是true</b>  — 如果用户满足匹配条件集，则他们将获得访问权限。 这不会明确拒绝用户访问，但会添加允许访问。 此类型的策略允许您为那些已经通过角色权限拥有访问权限的用户提供对资源的额外访问权限。”</br>
 >additional-url="https://experienceleague.adobe.com/docs/experience-platform/access-control/abac/permissions-ui/policies.html?lang=en#edit-a-policy" text="编辑策略"
 
 >[!CONTEXTUALHELP]
