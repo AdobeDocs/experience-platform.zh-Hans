@@ -2,10 +2,10 @@
 title: Adobe Target v2扩展的发行说明
 description: Adobe Experience Platform中Adobe Target v2标记扩展的最新发行说明。
 exl-id: c1a04e62-026d-4b16-aa70-bc6d5dbe6b2d
-source-git-commit: 3f6526ec87189d6e629d4dcb8eb626367543b9e5
+source-git-commit: ebaac56103207271be0c7466dda29bfb40c28218
 workflow-type: tm+mt
-source-wordcount: '603'
-ht-degree: 26%
+source-wordcount: '613'
+ht-degree: 25%
 
 ---
 
@@ -14,6 +14,11 @@ ht-degree: 26%
 >[!NOTE]
 >
 >Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+
+## v0.19.0（2022年9月19日）
+
+- 更新以支持 `at.js` v2.10.0
+- 添加了跨域跟踪支持。
 
 ## v0.18.0（2022年6月1日）
 
