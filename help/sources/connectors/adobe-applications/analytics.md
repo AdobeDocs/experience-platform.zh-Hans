@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；Analytics源连接器；
 title: Adobe Analytics报表包数据的源连接器
 description: 本文档概述了Analytics，并介绍了Analytics数据的用例。
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: 352993365dfcd4f39e7aea337b014430f7bad41c
+source-git-commit: fd114a418668436efa17edb00f2849a10f2c8cd6
 workflow-type: tm+mt
-source-wordcount: '1043'
-ht-degree: 2%
+source-wordcount: '997'
+ht-degree: 6%
 
 ---
 
@@ -75,14 +75,10 @@ XDM是一项公开记录的规范，它为应用程序在Experience Platform时�
 * `endUserIDs._experience.mcid.id`
 * `endUserIDs._experience.aacustomid.id`
 
-这些字段未标记为标识。 相同的身份将会复制到XDM的 `identityMap` 作为键值对：
+这些字段未标记为标识。相同的身份将会复制到XDM的 `identityMap` 作为键值对：
 
 * `{ “key”: “AAID”, “value”: [ { “id”: “<identity>”, “primary”: <true or false> } ] }`
 * `{ “key”: “ECID”, “value”: [ { “id”: “<identity>”, “primary”: <true or false> } ] }`
 * `{ “key”: “AACUSTOMID”, “value”: [ { “id”: “<identity>”, “primary”: false } ] }`
 
-在身份映射中，如果ECID存在，则会将其标记为事件的主标识。 在这种情况下，AAID可能基于ECID，因为 [Identity服务宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). 否则，AAID将标记为事件的主标识。 AACUSTOMID从不被标记为事件的主ID。 但是，如果存在AACUSTOMID，则由于操作的Experience Cloud顺序，AAID基于AACUSTOMID。
-
-### Customer Journey Analytics和主ID
-
-对于Customer Journey Analytics，只有在您决定使用主ID作为人员ID时，主ID的定义才很重要。 但是，这并非强制性的。 您可以选择其他一些身份列作为人员ID。
+在身份映射中，如果ECID存在，则会将其标记为事件的主标识。 在这种情况下，AAID可能基于ECID，因为 [Identity服务宽限期](https://experienceleague.adobe.com/docs/id-service/using/reference/analytics-reference/grace-period.html). 否则，会将 AAID 标记为事件的主标识。绝不会将 AACUSTOMID 标记为事件的主 ID。但是，如果存在AACUSTOMID，则由于操作的Experience Cloud顺序，AAID基于AACUSTOMID。
