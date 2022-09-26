@@ -5,9 +5,9 @@ title: 数据集UI指南
 topic-legacy: datasets
 description: 了解如何在Adobe Experience Platform用户界面中处理数据集时执行常见操作。
 exl-id: f0d59d4f-4ebd-42cb-bbc3-84f38c1bf973
-source-git-commit: 6238558e8edf968df4b24c43a626b736e2478be6
+source-git-commit: 3e25bd111d7a5cb482fa8e872452b352676b29ad
 workflow-type: tm+mt
-source-wordcount: '1208'
+source-wordcount: '1209'
 ht-degree: 0%
 
 ---
@@ -143,11 +143,11 @@ ht-degree: 0%
 
 ## 删除启用了配置文件的数据集
 
-如果为 [!DNL Profile]，则通过UI删除该数据集时，将同时从Platform中的数据湖和用户档案存储区中将其删除。
+如果某个数据集已启用“配置文件”，则通过UI删除该数据集将从Platform中的数据湖、Identity Service和配置文件存储中将其删除。
 
 您可以从 [!DNL Profile] 使用实时客户资料API仅存储（将数据保留在数据湖中）。 有关更多信息，请参阅 [配置文件系统作业API端点指南](../../profile/api/profile-system-jobs.md).
 
-## 监控数据摄取
+## 监测数据提取
 
 在 [!DNL Experience Platform] UI，选择 **[!UICONTROL 监控]** 中。 的 **[!UICONTROL 监控]** 功能板允许您查看来自批量摄取或流式摄取的入站数据状态。 要查看单个批的状态，请选择 **[!UICONTROL 批量端到端]** 或 **[!UICONTROL 流式处理端到端]**. 功能板会列出所有批处理或流摄取运行，包括成功、失败或仍在进行的摄取。 每个列表都提供了批次的详细信息，包括批次ID、目标数据集的名称以及摄取的记录数。 如果为 [!DNL Profile]，则也会显示摄取的身份和用户档案记录数。
 
