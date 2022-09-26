@@ -2,43 +2,32 @@
 title: Verizon MediaYahoo DataX连接
 description: DataX是Verizon Media/Yahoo的聚合基础架构，它托管各种组件，使Verizon Media/Yahoo能够以安全、自动和可扩展的方式与其外部合作伙伴交换数据。
 exl-id: 7d02671d-8650-407d-9c9f-fad7da3156bc
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: f61771ec11b8bd2d19e303b39e57e82da8f11ead
 workflow-type: tm+mt
-source-wordcount: '775'
-ht-degree: 4%
+source-wordcount: '789'
+ht-degree: 3%
 
 ---
 
-# Verizon Media/Yahoo DataX连接
+# [!DNL Verizon Media/Yahoo DataX] 连接
 
 ## 概述 {#overview}
 
-DataX是Verizon Media/Yahoo的聚合基础架构，它托管各种组件，使Verizon Media/Yahoo能够以安全、自动和可扩展的方式与其外部合作伙伴交换数据。
+[!DNL DataX] 是聚合 [!DNL Verizon Media/Yahoo] 可托管各种组件的基础架构，这些组件支持 [!DNL Verizon Media/Yahoo] 以安全、自动和可扩展的方式与外部合作伙伴交换数据。
 
 >[!IMPORTANT]
 >
->此文档页面由Verizon Media/Yahoo的DataX团队创建。 如有任何查询或更新请求，请直接联系 [dataops@verizonmedia.com](mailto:dataops@verizonmedia.com)
+>此文档页面由 [!DNL Verizon Media/Yahoo]&#39;s [!DNL DataX] 团队。 如有任何查询或更新请求，请直接联系 [dataops@verizonmedia.com](mailto:dataops@verizonmedia.com)
 
 ## 先决条件 {#prerequisites}
 
 **MDM ID**
 
-这是Yahoo DataX中的唯一标识符，它是设置导出到此目标的数据的必填字段。 如果您不知道此ID，请联系您的Yahoo Data X客户经理。
-
-**速率限制**
-
-DataX的费率受分类和受众帖子的配额限制，如 [DataX文档](https://developer.verizonmedia.com/datax/guide/rate-limits/).
-
-
-| 错误代码 | 错误消息 | 描述 |
-|---------|----------|---------|
-| 429请求过多 | 超出速率限制每小时 **(限制：100)** | 每个提供商一小时内允许的请求数。 |
-
-{style=&quot;table-layout:auto&quot;}
+这是 [!DNL Yahoo DataX] 它是设置向此目标导出数据的必填字段。 如果您不知道此ID，请联系您的 [!DNL Yahoo DataX] 客户经理。
 
 **分类元数据**
 
-分类资源通过基本DataX元数据结构定义扩展
+分类资源定义基础上的扩展 [!DNL DataX] 元数据结构
 
 ```
 {
@@ -59,11 +48,26 @@ DataX的费率受分类和受众帖子的配额限制，如 [DataX文档](https:
 }
 ```
 
-有关更多信息 [分类元数据](https://developer.verizonmedia.com/datax/guide/taxonomy/taxo-metadata/) （位于DataX开发人员文档中）。
+有关更多信息 [分类元数据](https://developer.verizonmedia.com/datax/guide/taxonomy/taxo-metadata/) 在 [!DNL DataX] 开发人员文档。
+
+## 速率限制和防护 {#rate-limits-guardrails}
+
+>[!IMPORTANT]
+>
+>在将100个以上的区段激活到 [!DNL Verizon Media/Yahoo DataX]，则可能会从目标收到速率限制错误。 将区段激活到 [!DNL Yahoo/DataX] 目标，建议在一个激活数据流中激活少于100个区段。 如果您需要激活更多区段，请在同一帐户上创建新目标。
+
+[!DNL DataX] 是针对分类和受众帖子的配额限制(如 [DataX文档](https://developer.verizonmedia.com/datax/guide/rate-limits/).
+
+
+| 错误代码 | 错误消息 | 描述 |
+|---------|----------|---------|
+| 429请求过多 | 超出速率限制每小时 **(限制：100)** | 每个提供商一小时内允许的请求数。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 ## 支持的身份 {#supported-identities}
 
-Verizon Media支持激活下表所述的身份。 详细了解 [标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
+[!DNL Verizon Media] 支持激活下表所述的身份。 详细了解 [标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#getting-started).
 
 | Target标识 | 描述 | 注意事项 |
 |---|---|---|
@@ -86,7 +90,7 @@ Verizon Media支持激活下表所述的身份。 详细了解 [标识](https://
 
 ## 用例 {#use-cases}
 
-DataX API适用于那些想要定位特定受众组的广告商，这些受众组在Verizon Media(VMG)中以电子邮件地址作为关键字，这样，他们就可以快速创建新区段，并使用VMG的近实时API推送所需的受众组。
+[!DNL DataX] API适用于要定位未通过 [!DNL Verizon Media] (VMG)可以使用VMG的近实时API快速创建新区段并推送所需的受众组。
 
 ## 连接到目标 {#connect}
 
@@ -104,7 +108,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
-* **[!UICONTROL MDM ID]**:这是Yahoo DataX中的唯一标识符，它是设置导出到此目标的数据的必填字段。 如果您不知道此ID，请联系您的Yahoo Data X客户经理。  使用MDM ID，可以限制数据仅用于特定专用用户集（例如广告商的第一方数据）。
+* **[!UICONTROL MDM ID]**:这是 [!DNL Yahoo DataX] 它是设置向此目标导出数据的必填字段。 如果您不知道此ID，请联系您的 [!DNL Yahoo DataX] 客户经理。  使用MDM ID，可以限制数据仅用于特定专用用户集（例如广告商的第一方数据）。
 
 ### 启用警报 {#enable-alerts}
 
@@ -126,4 +130,4 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 ## 其他资源 {#additional-resources}
 
-有关更多信息，请阅读Yahoo/Verizon Media [DataX文档](https://developer.verizonmedia.com/datax/guide/).
+有关更多信息，请阅读 [!DNL Yahoo/Verizon Media] [文档 [!DNL DataX]](https://developer.verizonmedia.com/datax/guide/).
