@@ -1,64 +1,68 @@
 ---
-keywords: Experience Platform；主页；热门主题；受众管理器源连接器；Audience Manager;受众管理器连接器
-solution: Experience Platform
+keywords: Experience Platform；主页；热门主题；Audience Manager源连接器；Audience Manager;Audience Manager连接器
 title: 在UI中创建Adobe Audience Manager源连接
-topic-legacy: overview
-type: Tutorial
-description: 本教程将指导您逐步创建一个源连接器，以便Adobe Audience Manager使用用户界面将消费者体验事件数据导入平台。
+description: 本教程将指导您完成为Adobe Audience Manager创建源连接的步骤，以便使用用户界面将消费者体验事件数据导入Platform。
 exl-id: 90c4a719-aaad-4687-afd8-7a1c0c56f744
-translation-type: tm+mt
-source-git-commit: 5d449c1ca174cafcca988e9487940eb7550bd5cf
+source-git-commit: 90a917ea2b623079f26c67b776dd46b62531c7da
 workflow-type: tm+mt
-source-wordcount: '435'
+source-wordcount: '523'
 ht-degree: 0%
 
 ---
 
 # 在UI中创建Adobe Audience Manager源连接
 
-本教程将指导您逐步为Adobe Audience Manager创建源连接器，以便使用用户界面将Consumer Experience 事件数据导入平台。
+本教程将指导您完成为Adobe Audience Manager创建源连接器的步骤，以便使用用户界面将消费者体验事件数据导入Platform。
 
-## 使用Adobe Audience Manager创建源连接
+## 创建与Adobe Audience Manager的源连接
 
-登录到[Adobe Experience Platform](https://platform.adobe.com)，然后从左侧导航栏中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 [!UICONTROL Catalog]屏幕显示了可为其创建帐户的各种源。
+在平台UI中，选择 **[!UICONTROL 源]** 从左侧导航访问 [!UICONTROL 源] 工作区。 的 [!UICONTROL 目录] 屏幕会显示您可以为其创建帐户的各种来源。
 
-在[!UICONTROL Adobe applications]类别下，选择&#x200B;**[!UICONTROL Adobe Audience Manager]**，然后选择&#x200B;**[!UICONTROL Configure]**。
+您可以从屏幕左侧的目录中选择相应的类别。 或者，您也可以使用搜索栏找到要使用的特定源。
+
+在 [!UICONTROL Adobe应用程序]，选择 **[!UICONTROL Adobe Audience Manager]** 然后选择 **[!UICONTROL 设置]**.
 
 ![目录](../../../../images/tutorials/create/aam/catalog.png)
 
-此时将显示[!UICONTROL Select traits and segments]步骤，为您提供一个交互界面来浏览和选择您的特征、细分和数据。
+### 选择特征和区段
 
-* 接口的左面板包含[!UICONTROL Select traits and segments]选项以及可供您使用的所有区段的分层目录。
-* 该界面的右半部分允许您与选定的区段进行交互，并挑选您要使用的特定数据。
+>[!NOTE]
+>
+>您无法将Audience Manager源中的区域数据摄取到Experience Platform。 如果您的Analytics用例需要区域数据，请使用 [Analytics源连接器](../adobe-applications/analytics.md).
 
-![add-data](../../../../images/tutorials/create/aam/add-data.png)
+的 [!UICONTROL 选择特征和区段] ，为您提供一个交互式界面来浏览和选择您的特征、区段和数据。
 
-要浏览可用区段，请从[!UICONTROL All Segments]面板中选择要访问的文件夹。 选择文件夹后，您可以遍历文件夹的层次结构，并提供一列表要筛选的区段。
+* 界面的左侧面板包含 [!UICONTROL 选择特征和区段] 选项，以及可供您使用的所有区段的分层目录。
+* 界面的右半部分允许您与选定的区段进行交互，并选取要使用的特定数据。
+
+![添加数据](../../../../images/tutorials/create/aam/add-data.png)
+
+要在可用区段中导航，请从 [!UICONTROL 所有区段] 的上界。 通过选择文件夹，您可以遍历文件夹的层次结构，并为您提供要过滤的区段列表。
 
 ![segment-folder](../../../../images/tutorials/create/aam/segment-folder.png)
 
-确定并选择要使用的区段后，右侧将显示一个新面板，显示您对选定项目的列表。 您可以继续访问不同的文件夹，并为连接选择不同的区段。 选择更多区段会更新右侧的面板。
+确定并选择要使用的区段后，右侧会显示一个新面板，其中显示了选定项目的列表。 您可以继续访问不同的文件夹，并为连接选择不同的区段。 选择更多区段会更新右侧的面板。
 
 ![select-data](../../../../images/tutorials/create/aam/select-data.png)
 
-或者，您也可以选择&#x200B;**[!UICONTROL Select all segments]**&#x200B;和&#x200B;**[!UICONTROL Select all traits]**&#x200B;框。 选择所有区段会将Audience Manager区段引入平台，而选择所有特征则支持来自Audience Manager的所有第一方特征。
+或者，您也可以选择 **[!UICONTROL 选择所有区段]** 和 **[!UICONTROL 选择所有特征]** 框中。 选择所有区段会将Audience Manager区段引入Platform，同时选择所有特征会启用Audience Manager中的所有第一方特征。
 
-完成后，选择&#x200B;**[!UICONTROL Next]**
+完成后，选择 **[!UICONTROL 下一个]**
 
-![所有细分](../../../../images/tutorials/create/aam/all-segments.png)
+![所有区段](../../../../images/tutorials/create/aam/all-segments.png)
 
-此时将显示[!UICONTROL Review]步骤，允许您在选定特征和区段连接到平台之前对其进行查看。 详细信息按以下类别分组：
+的 [!UICONTROL 审阅] 步骤，以便您在选定的特征和区段连接到Platform之前对其进行查看。 详细信息按以下类别分组：
 
-* **[!UICONTROL Connection]**:显示源平台和连接状态。
-* **[!UICONTROL Selected data]**:显示选定区段和启用特征的数量。
+* **[!UICONTROL 连接]**:显示源平台和连接的状态。
+* **[!UICONTROL 选定数据]**:显示选定区段和已启用特征的数量。
 
 ![审查](../../../../images/tutorials/create/aam/review.png)
 
-查看数据流后，请选择&#x200B;**[!UICONTROL Finish]**&#x200B;并允许一段时间创建数据流。
+审核数据流后，选择 **[!UICONTROL 完成]** 并为创建数据流留出一些时间。
 
 ## 后续步骤
 
-当Audience Manager数据流处于活动状态时，传入数据会自动被引入实时客户用户档案。 您现在可以使用此传入数据，并使用平台分段服务创建受众区段。 有关更多详细信息，请参阅以下文档:
+当Audience Manager数据流处于活动状态时，传入数据会自动摄取到实时客户配置文件中。 您现在可以使用此传入数据，并使用平台分段服务创建受众区段。 有关更多详细信息，请参阅以下文档：
 
-* [实时客户用户档案概述](../../../../../profile/home.md)
-* [分段服务概述](../../../../../segmentation/home.md)
+* [实时客户资料概述](../../../../../profile/home.md)
+* [Segmentation Service概述](../../../../../segmentation/home.md)
