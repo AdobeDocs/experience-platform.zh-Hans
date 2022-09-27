@@ -2,11 +2,9 @@
 title: 删除消费者记录
 description: 了解如何在Adobe Experience Platform UI中删除消费者记录。
 exl-id: 5303905a-9005-483e-9980-f23b3b11b1d9
-hide: true
-hidefromtoc: true
-source-git-commit: 7f1e4bdf54314cab1f69619bcbb34216da94b17e
+source-git-commit: 425298ec28517bba4eca1bf0966fd3b205fce764
 workflow-type: tm+mt
-source-wordcount: '1089'
+source-wordcount: '1131'
 ht-degree: 0%
 
 ---
@@ -15,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的数据卫生功能目前仅适用于已购买Healthcare Shield的组织。
+>消费者删除请求仅适用于已购买Adobe医疗保健盾或隐私盾的组织。
 
 的 [[!UICONTROL 数据卫生] 工作区](./overview.md) 在Adobe Experience Platform UI中，您可以删除参与Identity服务和实时客户资料的客户记录。
 
@@ -37,7 +35,7 @@ ht-degree: 0%
 
 ![显示 [!UICONTROL 创建请求] 按钮](../images/ui/delete-consumer/create-request-button.png)
 
-将出现请求创建对话框。 默认情况下， **[!UICONTROL 消费者]** 选项 **[!UICONTROL 操作]** 中。 保持选中此选项。
+将出现请求创建对话框。 默认情况下， **[!UICONTROL 消费者]** 选项 **[!UICONTROL 请求的操作]** 中。 保持选中此选项。
 
 ![显示在创建对话框中选择的使用者选项的图像](../images/ui/delete-consumer/consumer-action.png)
 
@@ -130,7 +128,7 @@ JSON文件必须格式化为对象数组，每个对象表示消费者身份。
 
 ## 提交请求(#submit)
 
-完成向请求添加身份后，选择 **[!UICONTROL 提交]**.
+完成向请求添加身份后，请在 **[!UICONTROL 请求设置]**，在选择 **[!UICONTROL 提交]**.
 
 ![显示 [!UICONTROL 提交] 按钮](../images/ui/delete-consumer/submit.png)
 
@@ -138,16 +136,14 @@ JSON文件必须格式化为对象数组，每个对象表示消费者身份。
 
 ![显示确认对话框的图像](../images/ui/delete-consumer/confirm-request.png)
 
-提交请求后，将创建工作单，并在 [!UICONTROL 消费者] 选项卡 [!UICONTROL 数据卫生] 工作区。 在此处，您可以在处理请求时监控工作单的状态。 大多数消费者删除工作单都需要几天时间才能完成。
+提交请求后，将创建工作单，并在 [!UICONTROL 消费者] 选项卡 [!UICONTROL 数据卫生] 工作区。 在此处，您可以在处理请求时监控工作单的状态。
+
+>[!NOTE]
+>
+>请参阅 [时间表和透明度](../home.md#consumer-delete-transparency) 有关执行消费者删除后如何处理这些删除的详细信息。
 
 ## 后续步骤
 
 本文档介绍了如何在Experience PlatformUI中删除用户记录。 有关如何在UI中执行其他数据卫生任务的信息，请参阅 [数据卫生UI概述](./overview.md).
 
-<!--
-
-Paragraph below should be commented out until workorder.md will be added to the TOC.
-
-To learn how to delete consumer records using the Data Hygiene API, refer to the [work order endpoint guide](../api/workorder.md).
-
--->
+要了解如何使用数据卫生API删除消费者记录，请参阅 [《工作单终端指南》](../api/workorder.md).
