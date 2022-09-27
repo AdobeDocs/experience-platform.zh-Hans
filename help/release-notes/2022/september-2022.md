@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: 5335c77b4636d10064e8786525c9f8f893371b9b
+source-git-commit: a3f12b9524d393441923cd11e09ed3e406814691
 workflow-type: tm+mt
-source-wordcount: '927'
+source-wordcount: '1377'
 ht-degree: 7%
 
 ---
@@ -16,6 +16,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 - [体验数据模型(XDM)](#xdm)
 - [Identity Service](#identity-service)
+- [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
 - [源](#sources)
 
 ## 体验数据模型(XDM) {#xdm}
@@ -76,6 +77,32 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 | 支持删除数据集 | 现在，在通过 [目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)、用户界面或数据卫生。 阅读 [删除UI中的数据集](../../catalog/datasets/user-guide.md#delete-a-dataset) 以了解更多信息。 |
 
 要了解有关Identity Service的更多信息，请阅读 [Identity Service概述](../../identity-service/home.md).
+
+## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
+
+AI/ML服务使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的功能。 这允许营销分析人员使用业务级别配置来设置特定于公司需求的模型，而无需具备数据科学专业知识。
+
+### 归因人工智能
+
+Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
+
+| 功能 | 描述 |
+| --- | --- |
+| 保存草稿实例 | 这项新功能使营销分析人员能够在配置期间将模型配置另存为草稿实例，并继续编辑草稿，直到完成后再进行培训和评分。 当用户在配置工作流中有多个字段需要定义，但无法一次完成时，或者当一个或多个数据集统计信息（如列完整性）需要时间才能使用时，此功能非常有用，包括但不限于以下情况：用户在配置工作流中有多个字段需要定义，无法一次完成； 阅读 [Attribution AI用户指南](../../intelligent-services/attribution-ai/user-guide.md) 以了解更多。 |
+| 治理政策 | 在用户通过配置工作流提交以创建实例后，新策略实施服务会检查是否存在任何违反数据使用策略的情况，并在弹出窗口中显示详细信息。 它可确保数据操作和营销操作符合在Adobe Experience Platform上配置的数据使用策略。 |
+
+有关Attribution AI的更多信息，请参阅 [Attribution AI概述](../../intelligent-services/attribution-ai/overview.md). 有关数据管理策略的信息，请阅读 [策略概述](../../data-governance/policies/overview.md).
+
+### 客户人工智能
+
+Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾向得分，例如大规模单个用户档案的流失率和转化。
+
+| 功能 | 描述 |
+| --- | --- |
+| 保存草稿实例 | 这项新功能使营销分析人员能够在配置期间将模型配置另存为草稿实例，并继续编辑草稿，直到完成后再进行培训和评分。 当用户在配置工作流中有多个字段需要定义，但无法一次完成时，或者当一个或多个数据集统计信息（如列完整性）需要时间才能使用时，此功能非常有用，包括但不限于以下情况：用户在配置工作流中有多个字段需要定义，无法一次完成； 阅读 [Customer AI用户指南](../../intelligent-services/customer-ai/user-guide/configure.md) 以了解更多。 |
+| 治理政策 | 在用户通过配置工作流提交以创建实例后，新策略实施服务会检查是否存在任何违反数据使用策略的情况，并在弹出窗口中显示详细信息。 它可确保数据操作和营销操作符合在Adobe Experience Platform上配置的数据使用策略。 |
+
+有关Customer AI的更多信息，请阅读 [Customer AI概述](../../intelligent-services/customer-ai/overview.md). 有关数据管理策略的信息，请阅读 [策略概述](../../data-governance/policies/overview.md).
 
 ## 源 {#sources}
 
