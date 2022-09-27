@@ -1,13 +1,12 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: 1890bd9dbce6a217951c28fc2fb3fec2634e714d
+source-git-commit: 5335c77b4636d10064e8786525c9f8f893371b9b
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '927'
 ht-degree: 7%
 
 ---
-
 
 # Adobe Experience Platform 发行说明
 
@@ -15,8 +14,54 @@ ht-degree: 7%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [体验数据模型(XDM)](#xdm)
 - [Identity Service](#identity-service)
 - [源](#sources)
+
+## 体验数据模型(XDM) {#xdm}
+
+XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
+
+**新增功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| UI支持枚举和建议值 | 除了启用数据验证的枚举之外，您现在还可以 [添加或删除建议值](../../xdm/ui/fields/enum.md) 标准或自定义字符串字段，以便Platform用户在创建区段时可以从中选择一个易记值列表。 |
+
+**新的XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 字段组 | [[!UICONTROL AJO分类字段]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-action.schema.json) | 与之交互的特定元素的属性，该元素会触发建议事件。 |
+| 字段组 | [[!UICONTROL MediaAnalytics互动详细信息]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/experience-event/experienceevent-media-analytics.schema.json) | 跟踪一段时间内的媒体交互。 |
+| 字段组 | [[!UICONTROL 媒体详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | 跟踪媒体详细信息。 |
+| 字段组 | [[!UICONTROL AdobeCJM ExperienceEvent — 曲面]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/customerJourneyManagement/surfaces.schema.json) | 描述Adobe Journey Optimizer中体验事件的曲面。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+**更新了XDM组件**
+
+| 组件类型 | 名称 | 描述 |
+| --- | --- | --- |
+| 行为 | [[!UICONTROL 时间系列]](https://github.com/adobe/xdm/blob/master/components/behaviors/time-series.schema.json) | <ul><li>为 `eventType`:<ul><li>`decisioning.propositionSend`</li><li>`decisioning.propositionDismiss`</li><li>`decisioning.propositionTrigger`</li><li>`media.downloaded`</li><li>`location.entry`</li><li>`location.exit`</li></ul></li><li>删除了 `eventType`:<ul><li>`decisioning.propositionDeliver`</li><li>`media.stateStart`</li><li>`media.stateEnd`</li></ul></li></ul> |
+| 字段组 | （多个） | [更新了多个字段描述](https://github.com/adobe/xdm/pull/1628/files) 跨Journey Orchestration组件。 |
+| 字段组 | （多个） | [更新了多个Adobe Workfront组件的标题](https://github.com/adobe/xdm/pull/1634/files) 以保持一致性。 |
+| 字段组 | [[!UICONTROL AJO分类字段]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-event-type.schema.json) | 已将多个字段的命名空间更新为 `xdm`. |
+| 字段组 | [[!UICONTROL Journey Orchestration步骤事件常用字段]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/journeyOrchestration/stepEvents/journeyStepEventCommonFieldsMixin.schema.json) | 添加了新字段， `isReadSegmentTriggerStartEvent`. |
+| 字段组 | [[!UICONTROL 预测天气]](https://github.com/adobe/xdm/blob/master/components/fieldgroups/shared/forecasted-weather.schema.json) | 更改了 `xdm:uvIndex` 字段，并将 `xdm` 命名空间。 |
+| 字段组 | [[!UICONTROL 媒体详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/mediadetails.schema.json) | `xdm:endUserIDs` 和 `xdm:implementationDetails` 已从字段组中删除。 |
+| 数据类型 | （多个） | [更新了多个媒体属性名称](https://github.com/adobe/xdm/pull/1626/files) 跨多个数据类型以保持一致性。 |
+| 数据类型 | [[!UICONTROL 实施详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/industry-verticals/implementationdetails.schema.json) | 添加了颤动的已知名称。 |
+| 数据类型 | [[!UICONTROL 目标点详细信息]](https://github.com/adobe/xdm/blob/master/components/datatypes/poi-detail.schema.json) | 数据类型现在可以接受与目标点关联的元数据键值对列表。 |
+| 数据类型 | [[!UICONTROL 建议行动]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-action.schema.json) | [!DNL AJO Classification Fields] 已更名为 [!UICONTROL 建议行动]. |
+| 数据类型 | [[!UICONTROL 建议事件类型]](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/decisioning/proposition-event-type.schema.json) | [!DNL AJO Classification Fields] 已重命名为 [!UICONTROL 建议行动]. |
+| （多个） | （多个） | 实验性质 [稳定在所有B2B组件上](https://github.com/adobe/xdm/pull/1617/files). |
+| （多个） | （多个） | Adobe Journey Optimizer实体 [稳定](https://github.com/adobe/xdm/pull/1625/files). |
+| （多个） | （多个） | 某些实验组件中特定字段的命名空间已 [更新了一致性](https://github.com/adobe/xdm/pull/1626/files). |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
 ## Identity Service {#identity-service}
 
