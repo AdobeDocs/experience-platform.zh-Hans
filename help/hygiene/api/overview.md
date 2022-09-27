@@ -2,9 +2,9 @@
 title: 数据卫生API指南
 description: 了解如何以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: 49ba5263c6dc8eccac2ffe339476cf316c68e486
+source-git-commit: 724852c63886ea8761b177c4351cca8a6fe748c3
 workflow-type: tm+mt
-source-wordcount: '303'
+source-wordcount: '345'
 ht-degree: 1%
 
 ---
@@ -46,6 +46,10 @@ A work order is a representation of a data hygiene task that deletes consumer id
 ## 数据集过期
 
 数据集过期是一项时间延迟的“删除数据集”操作。 通过创建数据集过期，您可以指定将来应删除该数据集的时间。 请参阅 [数据集过期端点指南](./dataset-expiration.md) 有关在API中计划数据集过期的详细信息。
+
+## 配额
+
+贵组织针对每种类型的数据卫生操作限制为预定的每月工作配额，具体操作类型可能因许可而异。 请参阅 [配额端点指南](./quota.md) 有关查看数据卫生流程的当前配额状态的详细信息。
 
 ## 后续步骤
 

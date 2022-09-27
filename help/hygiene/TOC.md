@@ -4,9 +4,9 @@ user-guide-title: 数据卫生帮助
 breadcrumb-title: 数据卫生指南
 user-guide-description: 管理消费者数据请求以遵守GDPR和CCPA等隐私法规。
 feature: Data Hygiene
-source-git-commit: 49ba5263c6dc8eccac2ffe339476cf316c68e486
+source-git-commit: 724852c63886ea8761b177c4351cca8a6fe748c3
 workflow-type: tm+mt
-source-wordcount: '48'
+source-wordcount: '49'
 ht-degree: 4%
 
 ---
@@ -24,3 +24,4 @@ ht-degree: 4%
    * [概述](./api/overview.md)
    * [数据集过期](./api/dataset-expiration.md)
    * [消费者删除作业](./api/jobs.md)
+   * [配额](./api/quota.md)
