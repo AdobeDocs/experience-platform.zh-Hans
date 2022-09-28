@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；警报
 description: 创建数据流时，您可以订阅警报，以接收有关流程运行状态、成功或失败的警报消息。
 title: 在UI中订阅上下文关联警报
 exl-id: 5d51edaa-ecba-4ac0-8d3c-49010466b9a5
-source-git-commit: 2acb58d21952699c60471cb4f4347af89621f045
+source-git-commit: d450dc7b0dc0303c9d33c3e8e003659e3140cf5b
 workflow-type: tm+mt
-source-wordcount: '832'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 
@@ -49,7 +49,7 @@ Adobe Experience Platform允许您订阅有关Adobe Experience Platform活动的
 | 源数据流运行开始 | 当源数据流启动时，此警报会向您发送一条消息。 |
 | 源数据流运行成功 | 成功将来自源的数据摄取到平台后，此警报会向您发送一条消息。 |
 | 源数据流运行失败 | 如果数据流中发生错误，此警报会向您发送消息。 |
-| 缺少摄取的源数据流 | 如果摄取延迟超过七小时且未将数据摄取到平台，则此警报会向您发送消息。 |
+| ~~缺少摄取的源数据流~~ | ~~如果摄取延迟超过七小时且未将数据摄取到平台，则此警报会向您发送消息。~~ <br>**注意：** 您将不再收到警报，因为此警报已弃用。 |
 
 选择要订阅的警报，然后选择 **[!UICONTROL 下一个]** 以检查和完成数据流。
 
