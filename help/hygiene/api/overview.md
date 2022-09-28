@@ -2,10 +2,10 @@
 title: 数据卫生API指南
 description: 了解如何以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: 724852c63886ea8761b177c4351cca8a6fe748c3
+source-git-commit: 16eecb22a1bec89c7dbac2fcee566a2226cf897f
 workflow-type: tm+mt
-source-wordcount: '345'
-ht-degree: 1%
+source-wordcount: '415'
+ht-degree: 0%
 
 ---
 
@@ -39,13 +39,17 @@ ht-degree: 1%
 
 本文档提供了一个示例API调用，用于演示如何设置请求的格式。 有关示例API调用文档中使用的约定的信息，请参阅 [如何阅读示例API调用](../../landing/api-guide.md#sample-api) 中的Experience PlatformAPI快速入门指南。
 
-<!-- ## Work orders
-
-A work order is a representation of a data hygiene task that deletes consumer identities from a specific dataset or all datasets. See the [work order endpoint guide](./workorder.md) for details on working with work orders in the API. -->
-
 ## 数据集过期
 
 数据集过期是一项时间延迟的“删除数据集”操作。 通过创建数据集过期，您可以指定将来应删除该数据集的时间。 请参阅 [数据集过期端点指南](./dataset-expiration.md) 有关在API中计划数据集过期的详细信息。
+
+## 消费者删除
+
+>[!NOTE]
+>
+>消费者删除仅适用于已购买Adobe医疗保健盾或隐私保护架构的组织。
+
+数据卫生API允许您删除一个或多个数据集中与消费者身份关联的所有记录。 所有删除消费者身份的数据卫生任务都由称为工作单的结构来代表。 请参阅 [《工作单终端指南》](./workorder.md) 有关在API中使用消费者删除的详细信息。
 
 ## 配额
 
