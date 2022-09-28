@@ -4,7 +4,7 @@ title: 标准警报规则
 description: 本文档涵盖由Experience Platform提供的预定义警报规则。
 feature: Alerts
 exl-id: b4af1c15-b1bc-4e4b-a447-09cc17a63988
-source-git-commit: df79ecac33314cc73ba8ad2508516be706bac767
+source-git-commit: f707a6338ad72578328b363792010fa50ea9ce88
 workflow-type: tm+mt
 source-wordcount: '0'
 ht-degree: 0%
@@ -92,6 +92,18 @@ When [在平台UI中查看警报规则](./ui.md)，则可以单独订阅每个�
 | 目标流运行延迟、失败和错误 | 跳页率超过阈值 | 当跳过的ID与总ID的比率超过阈值时，将触发此警报。 |
 
 {style=&quot;table-layout:auto&quot;}
+
+## 查询服务
+
+以下警报规则专用于 [查询服务](../../query-service/home.md):
+
+| I/O事件订阅 | 警报规则 | 描述 |
+| --- | --- | --- |
+| 查询服务临时信息 | 查询服务临时成功 | 当临时架构作业成功完成时，将触发此警报。 |
+| 查询服务临时延迟、失败和错误 | 查询服务临时失败 | 当临时架构作业失败时，将触发此警报。 |
+| 查询服务计划查询信息 | 查询服务计划查询开始 | 当计划查询开始运行时，将触发此警报。 |
+| 查询服务计划查询信息 | 查询服务计划查询成功 | 成功完成计划查询作业时，将触发此警报。 |
+| 查询服务计划查询延迟、失败和错误 | 查询服务计划查询失败 | 当计划查询作业失败时，将触发此警报。 |
 
 <!-- (Definitions to be added once available)
 | Segment Job Delay | This alert triggers when a segment job takes longer than 150 minutes to complete. | N/A | 30 seconds | 3 hours |
