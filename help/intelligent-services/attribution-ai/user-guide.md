@@ -5,9 +5,9 @@ title: Attribution AIUI指南
 topic-legacy: User guide
 description: 本文档是与Intelligent Services用户界面中的Attribution AI交互的指南。
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: 8071ddc945e89dd54173b34d44c6f622570801a3
+source-git-commit: cec2449525eb067fa7915073e929f9693a45575a
 workflow-type: tm+mt
-source-wordcount: '2873'
+source-wordcount: '2960'
 ht-degree: 1%
 
 ---
@@ -70,6 +70,10 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 数据集预览包含数据，如上次更新时间、源架构以及前十列的预览。
 
+选择 **[!UICONTROL 保存]** 来保存草稿。 您还可以保存草稿模型配置并进入工作流中的下一步。 使用 **[!UICONTROL 保存并继续]** 在模型配置期间创建和保存草稿。 该功能允许您创建和保存模型配置的草稿，当您必须在配置工作流中定义多个字段时，此功能特别有用。
+
+![Data Science ServicesAttribution AI选项卡的创建工作流，其中保存并继续突出显示。](./images/user-guide/aai-save-save-&-exit.png)
+
 ### 数据集完整性 {#dataset-completeness}
 
 <!-- https://www.adobe.com/go/aai-dataset-completeness -->
@@ -92,7 +96,7 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 要选择身份，请选择位于身份列中的带下划线的值。 此时会出现选择标识弹出窗口。
 
-![选择相同的命名空间](./images/user-guide/aai-identity-map.png)
+![选择相同的命名空间](./images/user-guide/aai-identity-map-save-and-exit.png)
 
 如果命名空间中有多个标识可用，请确保为用例选择正确的标识字段。 例如，电子邮件命名空间中提供了两个电子邮件标识，即工作电子邮件和个人电子邮件。 根据用例的不同，个人电子邮件更有可能被填写，并且在单个预测中更有用。 这意味着您将选择 `EMAIL (personalEmail.address)` 作为您的身份。
 
@@ -108,7 +112,7 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 选择和添加数据集后， **地图** 配置步骤。 Attribution AI要求您为上一步中选择的每个数据集映射“媒体渠道”字段。 这是因为如果没有Attribution AI集之间的媒体渠道映射，则从数据派生的分析可能无法正确显示，从而导致分析页面难以解释。 尽管只需要媒体渠道，但强烈建议您映射一些可选字段，如媒体操作、促销活动名称、促销活动组和促销活动标记。 这样可让Attribution AI提供更清晰的洞察和最佳结果。
 
-![映射](./images/user-guide/mapping.png)
+![映射](./images/user-guide/mapping-save-&-exit.png)
 
 ## 定义事件 {#define-events}
 
@@ -198,13 +202,13 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 定义完所有必要的接触点后，向上滚动并选择 **下一个** ，以继续执行最终步骤。
 
-![完成定义](./images/user-guide/define_event_next.png)
+![完成定义](./images/user-guide/define_event_save_and_exit.png)
 
 ## 高级培训和评分设置
 
 Attribution AI的最终页面是 **[!UICONTROL 高级]** 用于设置培训和评分的页面。
 
-![新页面高级](./images/user-guide/advanced_settings.png)
+![新页面设置选项](./images/user-guide/advanced_settings_set_options.png)
 
 ### 安排培训
 
@@ -298,7 +302,7 @@ Attribution AI工作区顶部 **分析页面**，侧栏中显示的详细信息�
 
 创建具有受限信息的实例后，继续 **[!UICONTROL 定义目标]** 步骤，顶部将显示警告： [!UICONTROL 由于访问限制，某些信息未显示在配置中。]
 
-![Attribution AI工作区中实例结果的受限字段突出显示。](./images/user-guide/information-not-displayed.png)
+![Attribution AI工作区中实例结果的受限字段突出显示。](./images/user-guide/information-not-displayed-save-and-exit.png)
 
 ## 后续步骤
 

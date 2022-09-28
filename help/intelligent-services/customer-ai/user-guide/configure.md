@@ -6,9 +6,9 @@ title: 配置Customer AI实例
 topic-legacy: Instance creation
 description: AI/ML服务将Customer AI作为一项简单易用的Adobe Sensei服务提供，该服务可针对不同用例进行配置。 以下部分提供了配置Customer AI实例的步骤。
 exl-id: 78353dab-ccb5-4692-81f6-3fb3f6eca886
-source-git-commit: 4f74be4ed8d84a58779b9e7d9f1de6d9bf19cc5e
+source-git-commit: cec2449525eb067fa7915073e929f9693a45575a
 workflow-type: tm+mt
-source-wordcount: '3088'
+source-wordcount: '3342'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ AI/ML服务将Customer AI作为一项简单易用的Adobe Sensei服务提供，�
 
 - **[!UICONTROL 编辑]**:选择 **[!UICONTROL 编辑]** 用于修改现有服务实例。 您可以编辑实例的名称、描述和评分频率。
 - **[!UICONTROL 克隆]**:选择 **[!UICONTROL 克隆]** 复制当前选定的服务实例设置。 然后，您可以修改工作流以进行细微调整，并将其重命名为新实例。
-- **[!UICONTROL 删除]**:您可以删除包含任何历史运行的服务实例。
+- **[!UICONTROL 删除]**:您可以删除包含任何历史运行的服务实例。 将从Platform中删除相应的输出数据集。 但是，不会删除已同步到实时客户用户档案的得分。
 - **[!UICONTROL 数据源]**:指向此实例使用的数据集的链接。 如果使用多个数据集，则选择超链接文本会打开数据集预览弹出窗口。
 - **[!UICONTROL 上次运行详细信息]**:仅当运行失败时，才会显示该设置。 此处显示有关运行失败原因的信息，如错误代码。
 - **[!UICONTROL 得分定义]**:您为此实例配置的目标的快速概述。
@@ -67,7 +67,7 @@ AI/ML服务将Customer AI作为一项简单易用的Adobe Sensei服务提供，�
 
 Customer AI通过设计，一般使用Adobe Analytics、Adobe Audience Manager、体验事件和消费者体验事件数据来计算倾向得分。 选择数据集时，只会列出与Customer AI兼容的数据集。 要选择数据集，请选择&#x200B;**+**)符号或选中复选框以一次添加多个数据集。 使用搜索选项可快速查找您感兴趣的数据集。
 
-![选择和搜索数据集](../images/user-guide/configure-dataset-page.png)
+![选择和搜索数据集](../images/user-guide/configure-dataset-page-save-and-exit-cai.png)
 
 选择要使用的数据集后，选择 **[!UICONTROL 添加]** 按钮将数据集添加到数据集预览窗格。
 
@@ -78,6 +78,10 @@ Customer AI通过设计，一般使用Adobe Analytics、Adobe Audience Manager�
 ![选择和搜索数据集](../images/user-guide/dataset-info.png)
 
 数据集预览包含数据，如上次更新时间、源架构以及前十列的预览。
+
+选择 **[!UICONTROL 保存]** 来保存草稿。 您还可以保存草稿模型配置并进入工作流中的下一步。 使用 **[!UICONTROL 保存并继续]** 在模型配置期间创建和保存草稿。 该功能允许您创建和保存模型配置的草稿，当您必须在配置工作流中定义多个字段时，此功能特别有用。
+
+![Data Science Services Customer AI选项卡的创建工作流，其中保存并保存并继续突出显示。](../images/user-guide/cai-save-and-exit.png)
 
 ### 数据集完整性 {#dataset-completeness}
 
@@ -236,7 +240,7 @@ Customer AI会自动对自定义事件（例如，）应用功能生成，如“
 
 首次使用Customer AI时，您可以关闭此功能，直到您对模型输出结果满意为止。 这样可防止在微调模型时将多个评分数据集上传到客户用户档案。 标定完模型后，可以使用 [克隆选项](#set-up-your-instance) 从 **服务实例** 页面。 这允许您创建模型副本并打开配置文件。
 
-![配置文件切换](../images/user-guide/advanced-workflow.png)
+![配置文件切换](../images/user-guide/advanced-workflow-save.png)
 
 设置评分计划、包含预测排除项以及在您希望的位置切换用户档案后，选择 **[!UICONTROL 完成]** ，以创建Customer AI实例。
 
@@ -247,6 +251,14 @@ Customer AI会自动对自定义事件（例如，）应用功能生成，如“
 >根据输入数据的大小，预测运行可能需要长达24小时才能完成。
 
 通过执行本节，您配置了Customer AI的实例并执行了预测运行。 成功完成运行后，如果启用了用户档案切换，则得分分析会自动使用预测的得分填充用户档案。 请最多等待24小时，然后再继续阅读本教程的下一部分。
+
+## 治理政策
+
+完成创建实例并提交模型配置的工作流后， [策略实施](/help/data-governance/enforcement/auto-enforcement.md) 检查是否存在任何违规。 如果发生策略违规，则会出现一个弹出窗口，指示已违反一个或多个策略。 这是为了确保您的Platform中的数据操作和营销操作符合数据使用策略。
+
+![显示策略违规的弹出窗口](../images/user-guide/policy-violation-popover-cai.png)
+
+弹出窗口提供有关违规的特定信息。 您可以通过策略设置和其他与配置工作流无直接关联的措施来解决这些违规问题。 例如，您可以更改标签，以便允许将某些字段用于数据科学目的。 或者，您也可以修改模型配置本身，使其不使用带有标签的任何内容。 请参阅相关文档，了解有关如何设置 [策略](/help/data-governance/policies/overview.md).
 
 ## 基于属性的访问控制
 
@@ -274,11 +286,11 @@ Customer AI会自动对自定义事件（例如，）应用功能生成，如“
 
 预览 **[!UICONTROL 创建实例工作流]** 页面时，会显示一条警告，告知您 [!UICONTROL 由于访问限制，某些信息未在数据集预览中显示。]
 
-![预览数据集的受限字段位于Customer AI工作区中，且模式结果受限。](../images/user-guide/restricted-dataset-preview.png)
+![预览数据集的受限字段位于Customer AI工作区中，且模式结果受限。](../images/user-guide/restricted-dataset-preview-save-and-exit-cai.png)
 
 创建具有受限信息的实例后，继续 **[!UICONTROL 定义目标]** 步骤，顶部将显示警告： [!UICONTROL 由于访问限制，某些信息未显示在配置中。]
 
-![突出显示了服务实例结果的受限字段的Customer AI工作区。](../images/user-guide/information-not-displayed.png)
+![突出显示了服务实例结果的受限字段的Customer AI工作区。](../images/user-guide/information-not-displayed-save-and-exit.png)
 
 ## 后续步骤 {#next-steps}
 
