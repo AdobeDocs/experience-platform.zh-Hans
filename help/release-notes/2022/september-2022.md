@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: f7092a394e0ad72d38bf8616e54789c7b2f1ab00
+source-git-commit: 8813e423cd62de7932052c1e157f86cc3c4165dd
 workflow-type: tm+mt
-source-wordcount: '2539'
+source-wordcount: '2754'
 ht-degree: 5%
 
 ---
@@ -24,6 +24,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [审核日志](#audit-logs)
 - [[!DNL Dashboards]](#dashboards)
 - [数据收集](#data-collection)
+- [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [Identity Service](#identity-service)
 - [查询服务](#query-service)
@@ -52,9 +53,9 @@ Adobe Experience Platform提供了一组功能强大的工具来管理大型、�
 
 Adobe Experience Platform的数据卫生功能允许您通过计划自动数据集过期时间以及按身份以编程方式删除消费者数据来清除数据。
 
->[!NOTE]
+>[!IMPORTANT]
 >
->消费者删除功能仅适用于已购买Adobe医疗保健盾或隐私盾的组织。
+>数据卫生功能仅适用于已购买Adobe医疗保健盾或隐私盾的组织。
 
 请参阅以下文档，以开始使用数据卫生：
 
@@ -127,10 +128,39 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | 功能 | 描述 |
 | --- | --- |
 | Platform UI中的左侧导航集成 | 以前专用于数据收集UI的所有功能（包括标记、事件转发和数据流）现在也可通过Experience Platform中的左侧导航（位于类别下）使用 **[!UICONTROL 数据收集]**. 使用Platform中的数据收集功能时，无需在UI之间切换。 |
+| 标记和事件转发中的用户归因 | 列表可用时 [!UICONTROL 属性] 在标记和事件转发中，每个列出的属性现在都会显示上次更新的时间以及进行更新的用户。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| 目标 SDK | Destination SDK现在为创建批量（或基于文件）产品化或专用目标的合作伙伴和客户提供完全支持。 有关更多信息，请阅读以下文档页面： <ul><li>[Destination SDK概述](/help/destinations/destination-sdk/overview.md)</li><li>[配置基于文件的目标](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[为基于文件的目标配置文件格式选项](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[测试基于文件的目标](/help/destinations/destination-sdk/file-based-destination-testing-overview.md)</li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
+
+**新目标或更新的目标**
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [[!DNL Salesforce CRM]](../..//destinations/catalog/crm/salesforce.md) | 的 [!DNL Salesforce CRM] 目标已更新，可支持联系人和潜在客户更新以及性能改进，以便更快更新。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+**新文档或更新的文档**
+
+| 文档 | 描述 |
+| ----------- | ----------- |
+| 目标流服务API文档 | 的 [目标API参考文档](https://developer.adobe.com/experience-platform-apis/references/destinations/) 更新了，以包含有关如何对基于文件的目标执行操作的指导。 将在以后添加流目标的操作。 |
+
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 
