@@ -5,9 +5,9 @@ title: 描述符API端点
 description: 通过架构注册表API中的/descriptors端点，您可以以编程方式管理体验应用程序中的XDM描述符。
 topic-legacy: developer guide
 exl-id: bda1aabd-5e6c-454f-a039-ec22c5d878d2
-source-git-commit: 65a6eca9450b3a3e19805917fb777881c08817a0
+source-git-commit: e8ad829ac4ea89c0d0167e6b414db577c9ecf094
 workflow-type: tm+mt
-source-wordcount: '1839'
+source-wordcount: '1900'
 ht-degree: 3%
 
 ---
@@ -341,6 +341,10 @@ curl -X DELETE \
     "click": "Mouse Click",
     "addCart": "Add to Cart",
     "checkout": "Cart Checkout"
+  },
+  "xdm:excludeMetaEnum": {
+    "web.formFilledOut": "Web Form Filled Out",
+    "media.ping": "Media ping"
   }
 }
 ```
@@ -350,10 +354,11 @@ curl -X DELETE \
 | `@type` | 定义的描述符类型。 对于友好名称描述符，必须将此值设置为 `xdm:alternateDisplayInfo`. |
 | `xdm:sourceSchema` | 的 `$id` 定义描述符的架构的URI。 |
 | `xdm:sourceVersion` | 源架构的主要版本。 |
-| `xdm:sourceProperty` | 将作为标识的特定属性的路径。 路径应以“/”开头，而不应以“/”结尾。 在路径中不要包含“属性”（例如，使用“/personalEmail/address”而不是“/properties/personalEmail/properties/address”） |
+| `xdm:sourceProperty` | 要修改其详细信息的特定属性的路径。该路径应以斜杠(`/`)，而不是以一结束。 不包括 `properties` 在路径中(例如，使用 `/personalEmail/address` 而不是 `/properties/personalEmail/properties/address`)。 |
 | `xdm:title` | 您希望为此字段显示的新标题，在标题大小写中写成。 |
 | `xdm:description` | 可以添加可选描述以及标题。 |
-| `meta:enum` | 如果字段指示为 `xdm:sourceProperty` 是字符串字段， `meta:enum` 确定 [!DNL Experience Platform] UI。 请务必注意， `meta:enum` 不声明枚举或为XDM字段提供任何数据验证。<br><br>此字段应仅用于由Adobe定义的核心XDM字段。 如果源属性是由您的组织定义的自定义字段，则应该编辑该字段的 `meta:enum` 属性(通过PATCH请求)。 |
+| `meta:enum` | 如果字段指示为 `xdm:sourceProperty` 是字符串字段， `meta:enum` 可用于在分段UI中为字段添加建议的值。 请务必注意， `meta:enum` 不声明枚举或为XDM字段提供任何数据验证。<br><br>此字段应仅用于由Adobe定义的核心XDM字段。 如果源属性是由您的组织定义的自定义字段，则应该编辑该字段的 `meta:enum` 属性(通过PATCH请求)。 |
+| `meta:excludeMetaEnum` | 如果字段指示为 `xdm:sourceProperty` 是一个字符串字段，其中包含在 `meta:enum` 字段中，您可以将此对象包含在友好名称描述符中，以从分段中排除部分或全部这些值。 每个条目的键和值必须与原始条目中包含的键和值匹配 `meta:enum` 的值，以便排除该条目。 |
 
 {style=&quot;table-layout:auto&quot;}
 

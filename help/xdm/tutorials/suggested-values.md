@@ -1,19 +1,38 @@
 ---
-title: 向字段添加建议的值
+title: 在API中管理建议的值
 description: 了解如何向架构注册API的字符串字段添加建议的值。
 exl-id: 96897a5d-e00a-410f-a20e-f77e223bd8c4
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 19bd5d9c307ac6e1b852e25438ff42bf52a1231e
 workflow-type: tm+mt
-source-wordcount: '542'
-ht-degree: 0%
+source-wordcount: '883'
+ht-degree: 1%
 
 ---
 
-# 向字段添加建议的值
+# 在API中管理建议的值
 
-在体验数据模型(XDM)中，枚举字段表示一个字符串字段，该字段受限于预定义的值子集。 枚举字段可提供验证以确保摄取的数据符合一组已接受的值。 但是，您还可以为字符串字段定义一组建议的值，而不强制将它们作为约束。
+对于体验数据模型(XDM)中的任何字符串字段，您可以定义 **枚举** 用于限制字段可摄取到预定义集的值。 如果您尝试将数据摄取到枚举字段，并且该值与其配置中定义的任何数据不匹配，则将拒绝摄取。
 
-在 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/)，枚举字段的约束值由 `enum` 数组，而 `meta:enum` 对象为这些值提供了友好显示名称：
+与枚举相比，添加 **建议值** 字符串字段不会限制可摄取的值。 建议的值会影响 [分段UI](../../segmentation/ui/overview.md) 将字符串字段作为属性包含在内时。
+
+>[!NOTE]
+>
+>字段的更新建议值大约有五分钟的延迟，才能反映在分段UI中。
+
+本指南介绍如何使用 [架构注册表API](https://developer.adobe.com/experience-platform-apis/references/schema-registry/). 有关如何在Adobe Experience Platform用户界面中执行此操作的步骤，请参阅 [枚举和建议值的UI指南](../ui/fields/enum.md).
+
+## 先决条件
+
+本指南假定您熟悉XDM中架构组合的元素，以及如何使用架构注册表API创建和编辑XDM资源。 如果您需要介绍，请参阅以下文档：
+
+* [架构组合的基础知识](../schema/composition.md)
+* [架构注册API指南](../api/overview.md)
+
+另外，强烈建议您查看 [枚举和建议值演化规则](../ui/fields/enum.md#evolution) 如果要更新现有字段，请执行以下操作： 如果要管理参与并集的架构的建议值，请参阅 [合并枚举和建议值的规则](../ui/fields/enum.md#merging).
+
+## 组合物
+
+在API中， **枚举** 字段由 `enum` 数组，而 `meta:enum` 对象为这些值提供了友好显示名称：
 
 ```json
 "exampleStringField": {
@@ -34,7 +53,7 @@ ht-degree: 0%
 
 对于枚举字段，架构注册表不允许 `meta:enum` 扩展到 `enum`，因为尝试摄取超出这些约束范围的字符串值将不会通过验证。
 
-或者，您也可以定义一个不包含 `enum` 数组，且仅使用 `meta:enum` 表示建议值的对象：
+或者，您也可以定义一个不包含 `enum` 数组，且仅使用 `meta:enum` 表示对象 **建议值**:
 
 ```json
 "exampleStringField": {
@@ -48,16 +67,13 @@ ht-degree: 0%
 }
 ```
 
-由于字符串没有 `enum` 数组定义约束，其 `meta:enum` 可以扩展属性以包含新值。 本教程介绍如何向架构注册API中的标准字符串字段和自定义字符串字段添加建议的值。
+由于字符串没有 `enum` 数组定义约束，其 `meta:enum` 可以扩展属性以包含新值。
 
-## 先决条件
+## 管理标准字段的建议值
 
-本指南假定您熟悉XDM中架构组合的元素，以及如何使用架构注册表API创建和编辑XDM资源。 如果您需要介绍，请参阅以下文档：
+对于现有标准字段，您可以 [添加建议值](#add-suggested-standard) 或 [删除建议值](#remove-suggested-standard).
 
-* [架构组合的基础知识](../schema/composition.md)
-* [架构注册API指南](../api/overview.md)
-
-## 向标准字段添加建议的值
+### 添加建议值 {#add-suggested-standard}
 
 扩展 `meta:enum` 标准字符串字段的 [友好名称描述符](../api/descriptors.md#friendly-name) ，用于特定模式中的相关字段。
 
@@ -135,9 +151,71 @@ curl -X POST \
 >}
 >```
 
-## 向自定义字段添加建议的值
+### 删除建议的值 {#remove-suggested-standard}
 
-扩展 `meta:enum` 在自定义字段中，您可以通过PATCH请求更新字段的父类、字段组或数据类型。
+如果标准字符串字段具有预定义的建议值，则可以删除您不希望在分段中看到的任何值。 这是通过创建 [友好名称描述符](../api/descriptors.md#friendly-name) 对于包含 `xdm:excludeMetaEnum` 属性。
+
+**API格式**
+
+```http
+POST /tenant/descriptors
+```
+
+**请求**
+
+以下请求会删除建议的值“[!DNL Web Form Filled Out]&quot;和&quot;[!DNL Media ping]&quot; `eventType` 基于 [XDM ExperienceEvent类](../classes/experienceevent.md).
+
+```shell
+curl -X POST \
+  https://platform.adobe.io/data/foundation/schemaregistry/tenant/descriptors \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+        "@type": "xdm:alternateDisplayInfo",
+        "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18",
+        "xdm:sourceVersion": 1,
+        "xdm:sourceProperty": "/xdm:eventType",
+        "xdm:excludeMetaEnum": {
+          "web.formFilledOut": "Web Form Filled Out",
+          "media.ping": "Media ping"
+        }
+      }'
+```
+
+| 属性 | 描述 |
+| --- | --- |
+| `@type` | 定义的描述符类型。 对于友好名称描述符，必须将此值设置为 `xdm:alternateDisplayInfo`. |
+| `xdm:sourceSchema` | 的 `$id` 定义描述符的架构的URI。 |
+| `xdm:sourceVersion` | 源架构的主要版本。 |
+| `xdm:sourceProperty` | 要管理其建议值的特定属性的路径。 路径应以斜杠(`/`)，而不是以一结束。 不包括 `properties` 在路径中(例如，使用 `/personalEmail/address` 而不是 `/properties/personalEmail/properties/address`)。 |
+| `meta:excludeMetaEnum` | 一个对象，用于描述分段中应排除的字段建议值。 每个条目的键和值必须与原始条目中包含的键和值匹配 `meta:enum` 的值，以便排除该条目。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+**响应**
+
+成功的响应会返回HTTP状态201（已创建）以及新创建描述符的详细信息。 建议的值包括 `xdm:excludeMetaEnum` 现在将在分段UI中隐藏。
+
+```json
+{
+  "@type": "xdm:alternateDisplayInfo",
+  "xdm:sourceSchema": "https://ns.adobe.com/{TENANT_ID}/schemas/274f17bc5807ff307a046bab1489fb18",
+  "xdm:sourceVersion": 1,
+  "xdm:sourceProperty": "/xdm:eventType",
+  "xdm:excludeMetaEnum": {
+    "web.formFilledOut": "Web Form Filled Out"
+  },
+  "meta:containerId": "tenant",
+  "@id": "f3a1dfa38a4871cf4442a33074c1f9406a593407"
+}
+```
+
+## 管理自定义字段的建议值 {#suggested-custom}
+
+管理 `meta:enum` 在自定义字段中，您可以通过PATCH请求更新字段的父类、字段组或数据类型。
 
 >[!WARNING]
 >
@@ -198,4 +276,4 @@ curl -X PATCH \
 
 ## 后续步骤
 
-本指南介绍了如何向架构注册API中的字符串字段添加建议的值。 请参阅 [在API中定义自定义字段](./custom-fields-api.md) 以了解有关如何创建不同字段类型的详细信息。
+本指南介绍如何管理架构注册API中字符串字段的建议值。 请参阅 [在API中定义自定义字段](./custom-fields-api.md) 以了解有关如何创建不同字段类型的详细信息。

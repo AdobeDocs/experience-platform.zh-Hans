@@ -1,44 +1,117 @@
 ---
 keywords: Experience Platform；主页；热门主题；API;API;XDM;XDM系统；体验数据模型；数据模型；UI；工作区；枚举；字段；
 solution: Experience Platform
-title: 在UI中定义枚举字段
-description: 了解如何在Experience Platform用户界面中定义枚举字段。
+title: 在UI中定义枚举字段和建议值
+description: 了解如何在Experience Platform用户界面中为字符串字段定义枚举和建议值。
 topic-legacy: user guide
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: 878d99d9eb45f40ff76e5e90116abf032be1c93f
+source-git-commit: e515e32588991e468429c9256533732d04a4339f
 workflow-type: tm+mt
-source-wordcount: '310'
-ht-degree: 2%
+source-wordcount: '1295'
+ht-degree: 0%
 
 ---
 
-# 在UI中定义枚举字段 {#enum}
+# 在UI中定义枚举和建议值 {#enums-and-suggested-values}
 
 >[!CONTEXTUALHELP]
 >id="platform_xdm_enum_suggestedvalue"
 >title="枚举和建议值"
->abstract="枚举将约束字符串字段，以便仅允许摄取与预定义值集匹配的数据。 或者，您可以为字段定义一组建议的值，这些值不限制摄取，而是定义可在分段中选择的属性。 有关详细信息，请参阅文档。"
+>abstract="安 **枚举** 限制字符串字段，以便仅允许摄取与预定义值集匹配的数据。 可以为每个约束分配一个 **显示名称** 用于填充分段UI中属性下拉列表。 **建议值** （对于字段）不会限制摄取，而是仅确定区段中显示的显示名称。 如果您有多个架构共享属于公共类或字段组的字段，并且您在每个架构之间为该字段定义不同的枚举或建议值，则这些值将合并并附加到并集架构中。"
 
-在体验数据模型(XDM)中，枚举字段表示一个受预定义可接受值列表约束的字段。
+在体验数据模型(XDM)中，可以为字符串字段提供一组预定义的已接受或建议值，以更好地控制将哪些值摄取到该字段或该字段在分段中的行为。
 
-When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户界面中，您可以通过选择 **[!UICONTROL 枚举]** 复选框。
+安 **枚举** 将字符串字段可摄取的值限制为预定义集。 如果您尝试将数据摄取到枚举字段，并且该值与其配置中定义的任何数据不匹配，则将拒绝摄取。
 
-![](../../images/ui/fields/special/enum.png)
+与枚举相比，添加 **建议值** 字符串字段不会限制可摄取的值。 建议的值会影响 [分段UI](../../../segmentation/ui/overview.md) 将字符串字段作为属性包含在内时。
 
-选中复选框后会显示其他控件，允许您指定枚举的值约束。 在 **[!UICONTROL 值]** 列中，您必须提供要将字段限制为的确切值。 此值必须符合 [!UICONTROL 类型] 为枚举字段选择了。 您可以选择提供人性化的 **[!UICONTROL 标签]** 也是约束。
+When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户界面中，并将类型设置为 [!UICONTROL 字符串]，则您可以选择定义 [枚举](#enum) 或 [建议值](#suggested-values) 对于该字段。
 
-要向枚举添加其他约束，请选择 **[!UICONTROL 添加行]**.
+![该图像显示了在UI中为字符串字段启用的枚举和建议值选项](../../images/ui/fields/enum/enum-options-selected.png)
 
-![](../../images/ui/fields/special/enum-add-row.png)
+## 定义枚举 {#enum}
 
-继续向枚举中添加所需的约束和可选标签。 完成后，选择 **[!UICONTROL 应用]** 以将更改应用到架构。
+选择 **[!UICONTROL 枚举和建议值]**，然后选择 **[!UICONTROL 枚举]**. 此时会显示其他控件，允许您指定枚举的值约束。 要添加约束，请选择 **[!UICONTROL 添加行]**.
 
-![](../../images/ui/fields/special/enum-configured.png)
+![显示在UI中选择的枚举选项的图像](../../images/ui/fields/enum/enum-add-row.png)
+
+在 **[!UICONTROL 值]** 列中，您必须提供要将字段限制为的确切值。 您可以选择提供人性化的 **[!UICONTROL 显示名称]** ，这会影响值在分段中的显示方式。
+
+继续使用 **[!UICONTROL 添加行]** 要向枚举添加所需的约束和可选标签，或选择删除图标(![删除图标的图像](../../images/ui/fields/enum/remove-icon.png))以将其删除。 完成后，选择 **[!UICONTROL 应用]** 以将更改应用到架构。
+
+![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/enum-confirm.png)
 
 画布会更新以反映所做的更改。 将来浏览此架构时，您可以在右边栏中查看和编辑枚举字段的约束。
 
-![](../../images/ui/fields/special/enum-applied.png)
+## 定义建议的值 {#suggested-values}
+
+选择 **[!UICONTROL 枚举和建议值]**，然后选择 **[!UICONTROL 建议值]** 以显示其他控件。 从此处选择 **[!UICONTROL 添加行]** 以开始添加建议的值。
+
+![显示在UI中选择的建议值选项的图像](../../images/ui/fields/enum/suggested-add-row.png)
+
+在 **[!UICONTROL 显示名称]** 列中，为您希望在分段UI中显示的值提供一个人类易记的名称。 要添加更多建议值，请选择 **[!UICONTROL 添加行]** 再次，并根据需要重复该过程。 要删除之前添加的行，请选择删除图标(![删除图标的图像](../../images/ui/fields/enum/remove-icon.png))。
+
+完成后，选择 **[!UICONTROL 应用]** 以将更改应用到架构。
+
+![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-confirm.png)
+
+>[!NOTE]
+>
+>字段的更新建议值大约有五分钟的延迟，才能反映在分段UI中。
+
+### 管理标准字段的建议值
+
+标准XDM组件中的某些字段包含它们自己的建议值，例如 `eventType` 从 [[!UICONTROL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 在架构中使用这些字段时，您可以使用可用的切换来控制要使用的现有建议值。
+
+![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-standard.png)
+
+与自定义字段类似，请选择 **[!UICONTROL 添加行]** 为标准字段添加您自己的建议值。
+
+![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-standard.png)
+
+### 删除标准字段的建议值
+
+只能从标准字段中删除您定义的建议值。 可以禁用现有的建议值，以便它们不再显示在分段下拉菜单中，但无法直接删除它们。
+
+例如，假定用户档案架构中的标准建议值 `person.gender` 字段：
+
+![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/standard-enum-disabled.png)
+
+在本例中，显示名称为“[!UICONTROL 非特定]“ ”现在无法显示在分段下拉列表中。 但是， `non_specific` 仍是枚举字段列表的一部分，因此仍允许在摄取。 换言之，您无法禁用标准字段的实际枚举值，因为它违背了仅允许更改以减少字段限制的原则。
+
+请参阅 [下方](#evolution) 有关更新枚举和现有架构字段建议值的规则的详细信息。
+
+## 枚举和建议值的演化规则 {#evolution}
+
+在使用具有枚举字段的架构将数据摄取到平台后，对架构定义所做的任何进一步更改都必须符合系统中已有的数据。 通常，对现有字段所做的更改只能使该字段 **减少** 限制。 字段的限制不能比现有字段更严格。
+
+对于枚举和建议的值，以下规则会应用摄取后的规则：
+
+* 您 **可以** 使用现有建议值为标准和自定义字段添加建议值。
+* 您 **可以** 从具有现有建议值的自定义字段中删除建议值。
+* 您 **可以** 为现有自定义枚举字段添加新的枚举值。
+* 您 **可以** 将自定义字段的枚举值切换为仅建议的值，或将其转换为没有枚举或建议值的字符串。 **应用后，此开关将无法撤消。**
+* 您 **不能** 从标准字段中删除枚举或建议值。
+* 您 **不能** 将枚举值添加到没有现有枚举的字段。
+* 您 **不能** 删除自定义字段的枚举值少于所有现有枚举值。
+* 您 **不能** 从建议的值切换到枚举。
+
+## 合并枚举和建议值的规则 {#merging}
+
+如果多个架构使用具有不同配置的相同枚举字段，并且这些架构包含在并集中，则当涉及如何协调枚举差异时，某些规则将会应用。 具体规则取决于引用相同标准字段的架构(如 `eventType`)，或者他们引用不同字段组中的相同自定义字段路径。
+
+如果引用相同的标准字段：
+
+* 任何其他建议的值包括 **已附加** 在工会中。
+* 对同一枚举键值的建议值进行了更新，包括 **已更新** 在工会中。
+
+如果在不同的字段组中引用相同的自定义字段路径：
+
+* 任何其他建议的值包括 **已附加** 在工会中。
+* 如果在多个架构中定义了相同的其他建议值，则这些值为 **合并** 在工会中。 换言之，相同的建议值在合并后不会显示两次。
 
 ## 后续步骤
 
-本指南介绍如何在UI中定义枚举字段。 请参阅 [在UI中定义字段](./overview.md#special) 了解如何在 [!DNL Schema Editor].
+本指南介绍了如何在UI中为字符串字段定义枚举和建议值。 有关如何使用架构注册表API管理枚举和建议值的信息，请参阅以下内容 [教程](../../tutorials/suggested-values.md).
+
+了解如何在 [!DNL Schema Editor]，请参阅 [在UI中定义字段](./overview.md#special).
