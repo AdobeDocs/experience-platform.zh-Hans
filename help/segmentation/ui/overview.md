@@ -5,10 +5,10 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: 356d76d61293b9ff0887afbf30852159af8d72ad
+source-git-commit: f71d49b576059e687c337cbacd6dd3d525e97834
 workflow-type: tm+mt
-source-wordcount: '1775'
-ht-degree: 0%
+source-wordcount: '2375'
+ht-degree: 1%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 另外，还必须了解本文档中使用的两个关键术语，并了解它们之间的区别：
 - **区段定义**:用于描述目标受众的关键特征或行为的规则集。
-- **受众**:生成的一组符合区段定义标准的用户档案。
+- **受众**:生成的一组符合区段定义标准的用户档案。 这可以通过Adobe Experience Platform（平台生成的受众）或外部源（外部生成的受众）创建。
 
 ## 概述
 
@@ -62,7 +62,7 @@ ht-degree: 0%
 >title="添加所有要计划的区段"
 >abstract="启用，以在每日计划更新（UTC下午3:30）中包含所有批次评估区段。 禁用可从计划更新中删除所有区段。"
 
-选择 **[!UICONTROL 浏览]** 选项卡，以查看IMS组织的所有区段定义列表。
+选择 **[!UICONTROL 浏览]** 选项卡，以查看组织的所有区段定义列表。
 
 ![](../images/ui/overview/segment-browse-all.png)
 
@@ -92,7 +92,7 @@ ht-degree: 0%
 
 ![](../images/ui/overview/segment-browse-top.png)
 
-右侧侧栏包含有关IMS组织内所有区段的信息，列出区段总数、上次评估日期、下次评估日期，以及按评估方法划分区段。
+右侧的侧栏包含有关组织内所有区段的信息，列出区段总数、上次评估日期、下次评估日期以及按评估方法划分区段。
 
 ![](../images/ui/overview/segment-browse-segment-info.png)
 
@@ -112,7 +112,7 @@ ht-degree: 0%
 
 ![](../images/ui/overview/segment-details-summary.png)
 
-### 区段摘要
+### 区段摘要 {#segment-summary}
 
 的 **[!UICONTROL 区段摘要]** 部分提供了ID、名称、描述和属性详细信息等信息。
 
@@ -191,6 +191,80 @@ ht-degree: 0%
 当前只能使用API创建计划。 有关使用API创建、编辑和使用计划的详细步骤，请按照有关评估和访问区段结果的教程(特别是 [使用API进行计划评估](../tutorials/evaluate-a-segment.md#scheduled-evaluation).
 
 ![](../images/ui/overview/segment-browse-scheduled.png)
+
+## 受众 {#audiences}
+
+>[!IMPORTANT]
+>
+>受众功能目前处于有限的测试阶段，并非所有用户都能使用。 文档和功能可能会发生变化。
+
+选择 **[!UICONTROL 受众]** 选项卡，以查看组织的所有受众列表。
+
+![您组织的受众列表。](../images/ui/overview/list-audiences.png)
+
+默认情况下，此视图会列出有关受众的信息，包括名称、用户档案计数、来源、创建日期和上次修改日期。
+
+您可以选择 ![自定义表](../images/ui/overview/customize-table.png) 图标来更改显示的字段。
+
+![“自定义表”按钮将突出显示。 选择此按钮可自定义受众浏览页面上显示的字段。](../images/ui/overview/select-customize-table.png)
+
+此时会出现一个弹出窗口，其中列出了可在表格中显示的所有字段。
+
+![可为浏览受众部分显示的属性。](../images/ui/overview/customize-table-attributes.png)
+
+| 字段 | 描述 |
+| ----- | ----------- | 
+| [!UICONTROL 名称] | 受众的名称。 |
+| [!UICONTROL 用户档案计数] | 符合受众资格的用户档案总数。 |
+| [!UICONTROL Origin] | 受众的来源。 如果此受众是平台生成的，则其将具有分段服务的来源。 |
+| [!UICONTROL 生命周期状态] | 受众的状态。 此字段的可能值包括 `Draft`, `Published`和 `Archived`. |
+| [!UICONTROL 更新频度] | 一个值，用于指示受众数据更新频率。 此字段的可能值包括 `On Demand`, `Scheduled`和 `Continuous`. |
+| [!UICONTROL 上次更新者] | 上次更新受众的人员的姓名。 |
+| [!UICONTROL 已创建] | 创建受众的时间和日期。 |
+| [!UICONTROL 上次更新时间] | 上次创建受众的时间和日期。 |
+| [!UICONTROL 访问标签] | 受众的访问标签。 访问标签允许您根据应用于该数据的使用策略对数据集和字段进行分类。 这些标签可随时应用，从而在您选择如何管理数据方面提供了灵活性。 有关访问标签的更多信息，请阅读 [管理标签](../../access-control/abac/ui/labels.md). |
+
+您可以选择 **[!UICONTROL 创建受众]** 创建受众。
+
+![此时会突出显示创建受众按钮，其中显示了要选择创建受众的位置。](../images/ui/overview/create-audience.png)
+
+此时会出现一个弹出窗口，供您选择合成受众还是构建规则。
+
+![一个弹出窗口，其中显示您可以创建的两种类型的受众。](../images/ui/overview/create-audience-type.png)
+
+选择 **[!UICONTROL 撰写受众]** 会将您转到Audience Builder。 要了解有关创建受众的更多信息，请阅读 [Audience Builder指南](./audience-builder.md).
+
+选择 **[!UICONTROL 生成规则]** 会将您转到区段生成器。 要了解有关创建区段的更多信息，请阅读 [区段生成器指南](./segment-builder.md)
+
+## 受众详细信息 {#audience-details}
+
+要查看有关特定受众的更多详细信息，请在 [!UICONTROL 受众] 选项卡。
+
+此时将显示受众详细信息页面。 本页面的详细信息会有所不同，具体取决于受众是使用Adobe Experience Platform生成的，还是来自外部源（如Audience Orchestration）。
+
+### 平台生成的受众
+
+有关平台生成受众的更多信息，请阅读 [区段摘要部分](#segment-summary).
+
+### 外部生成的受众
+
+在受众详细信息页面顶部，提供了受众的摘要以及有关保存该受众的数据集的详细信息。
+
+![为外部生成的受众提供的详细信息。](../images/ui/overview/externally-generated-audience.png)
+
+的 **[!UICONTROL 受众摘要]** 部分提供了ID、名称、描述和属性详细信息等信息。
+
+的 **[!UICONTROL 数据集详细信息]** 部分提供了名称、描述、表名称、源和架构等信息。 您可以选择 **[!UICONTROL 查看数据集]** 以查看有关数据集的更多信息。
+
+| 字段 | 描述 |
+| ----- | ----------- |
+| [!UICONTROL 名称] | 数据集的名称。 |
+| [!UICONTROL 描述] | 数据集的描述。 |
+| [!UICONTROL 表名称] | 数据集的表名。 |
+| [!UICONTROL 来源] | 数据集的源。 对于外部生成的受众，此值将 **架构**. |
+| [!UICONTROL 架构] | 数据集对应的XDM架构类型。 |
+
+要了解有关数据集的更多信息，请阅读 [数据集概述](../../catalog/datasets/overview.md).
 
 ## 流分段 {#streaming-segmentation}
 
