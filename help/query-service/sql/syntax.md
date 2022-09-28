@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 33c45c53e2ff591e7b94be1b4b17c25d2fe9d497
+source-git-commit: 5ec37ee797ec297b2e5c275dc0e6091e4ee8ecae
 workflow-type: tm+mt
-source-wordcount: '3033'
+source-wordcount: '3160'
 ht-degree: 2%
 
 ---
@@ -488,6 +488,30 @@ SET property_key = property_value
 ## PostgreSQL命令
 
 以下子部分涵盖查询服务支持的PostgreSQL命令。
+
+### 分析表
+
+的 `ANALYZE TABLE` 命令计算加速存储上表的统计信息。 统计数据是根据对加速存储的给定表执行的CTAS或ITAS查询计算的。
+
+**示例**
+
+```sql
+ANALYZE TABLE <original_table_name>
+```
+
+以下是使用 `ANALYZE TABLE` 命令：-
+
+| 计算值 | 描述 |
+|---|---|
+| `field` | 表中列的名称。 |
+| `data-type` | 每列可接受的数据类型。 |
+| `count` | 包含此字段非空值的行数。 |
+| `distinct-count` | 此字段的唯一值或不同值的数量。 |
+| `missing` | 此字段具有空值的行数。 |
+| `max` | 分析表中的最大值。 |
+| `min` | 分析表中的最小值。 |
+| `mean` | 分析表的平均值。 |
+| `stdev` | 分析表的标准偏差。 |
 
 ### 开始
 
