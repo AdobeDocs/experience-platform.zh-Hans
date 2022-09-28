@@ -1,15 +1,15 @@
 ---
 description: 了解如何使用Destination SDK通过预定义的文件格式选项和自定义文件名配置来配置Amazon S3目标。
-title: （测试版）使用预定义的文件格式选项和自定义文件名配置配置Amazon S3目标。
+title: 使用预定义的文件格式选项和自定义文件名配置配置Amazon S3目标。
 exl-id: 0ecd3575-dcda-4e5c-af5c-247d4ea13fa1
-source-git-commit: a43bb18182ac6e591e011b585719da955ee681b7
+source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
 workflow-type: tm+mt
-source-wordcount: '772'
+source-wordcount: '770'
 ht-degree: 0%
 
 ---
 
-# （测试版）配置 [!DNL Amazon S3] 具有预定义文件格式选项和自定义文件名配置的目标
+# 配置 [!DNL Amazon S3] 具有预定义文件格式选项和自定义文件名配置的目标
 
 ## 概述 {#overview}
 

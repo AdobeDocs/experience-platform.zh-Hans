@@ -1,29 +1,27 @@
 ---
-description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
-title: （测试版）用于Destination SDK的基于文件的目标配置选项
+description: 此配置允许您指示基于文件的目标的基本信息，如目标名称、类别、描述等。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
+title: 用于Destination SDK的基于文件的目标配置选项
 exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
-source-git-commit: fe61b2ebe1a06e8909ef675cae088cb4e7d2b325
+source-git-commit: 1d6318e33be639237c2c8e6f1bf67e1702949c20
 workflow-type: tm+mt
-source-wordcount: '2389'
+source-wordcount: '2664'
 ht-degree: 5%
 
 ---
 
-# （测试版）基于文件的目标配置 {#destination-configuration}
+# 基于文件的目标配置 {#destination-configuration}
 
 ## 概述 {#overview}
 
->[!IMPORTANT]
->
->Adobe Experience Platform Destination SDK中基于文件的目标支持目前处于测试阶段。 文档和功能可能会发生更改。
+此配置允许您指示基于文件的目标的基本信息，如目标名称、类别、描述等。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。 您还可以使用此配置来显示与导出文件的文件类型、文件格式或压缩设置相关的选项。
 
-此配置允许您指示基于文件的目标的基本信息，如目标名称、类别、描述等。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
-
-此配置还会将目标工作所需的其他配置（目标服务器和受众元数据）连接到此配置。 了解如何在 [下文](./destination-configuration.md#connecting-all-configurations).
+此配置还会将目标工作所需的其他配置（目标服务器和受众元数据）连接到此配置。 了解如何在 [下文](./file-based-destination-configuration.md#connecting-all-configurations).
 
 您可以使用 `/authoring/destinations` API端点。 读取 [目标API端点操作](./destination-configuration-api.md) 有关可对端点执行的操作的完整列表。
 
 ## Amazon S3目标配置示例 {#batch-example-configuration}
+
+以下是通过创建的专用自定义Amazon S3目标的示例 `/destinations` 配置端点。
 
 ```json
 {
@@ -368,9 +366,9 @@ ht-degree: 5%
 
 在Experience PlatformUI中连接到目标时，使用此部分要求用户填写特定于您目标的自定义字段。
 
-在以下示例中， `customerDataFields` 要求用户输入其目标的名称，并提供 [!DNL Amazon S3] 存储段名称和文件夹路径，以及压缩类型、文件格式和其他几个文件导出选项。
+在以下示例中， `customerDataFields` 要求用户输入其目标的名称，并提供 [!DNL Amazon S3] 存储段名称和文件夹路径，以及压缩类型、文件格式和若干其他文件格式选项。
 
-您可以在模板中访问和使用来自客户数据字段的客户输入。 使用宏 `{{customerData.name}}`. 例如，如果您要求用户输入名为的Amazon S3存储段字段 `bucket`，则可以在模板中使用宏来访问它 `{{customerData.bucket}}`. 查看如何在 [目标服务器配置](/help/destinations/destination-sdk/server-and-file-configuration.md#s3-example).
+您可以在模板中访问和使用来自客户数据字段的客户输入。 使用宏 `{{customerData.exampleName}}`. 例如，如果您要求用户输入名为的Amazon S3存储段字段 `bucket`，则可以在模板中使用宏来访问它 `{{customerData.bucket}}`. 查看如何在 [目标服务器配置](/help/destinations/destination-sdk/server-and-file-configuration.md#s3-example).
 
 ```json
  "customerDataFields":[
@@ -558,6 +556,10 @@ ht-degree: 5%
       }
 ```
 
+>[!TIP]
+>
+>上例中列出的所有文件格式配置，均在 [文件格式配置](/help/destinations/destination-sdk/server-and-file-configuration.md#file-configuration) 中。
+
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `name` | 字符串 | 为要引入的自定义字段提供名称。 |
@@ -578,7 +580,7 @@ ht-degree: 5%
 ```json
 "uiAttributes":{
       "documentationLink":"http://www.adobe.com/go/YOURDESTINATION-en",
-      "category":"S3",
+      "category":"cloudStorage",
       "iconUrl":"https://dc5tqsrhldvnl.cloudfront.net/2/90048/da276e30c730ce6cd666c8ca78360df21.png",
       "connectionType":"S3",
       "flowRunsSupported":true,
@@ -591,7 +593,7 @@ ht-degree: 5%
 |---------|----------|------|
 | `documentationLink` | 字符串 | 指 [目标目录](https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/overview.html?lang=en#catalog) 你的目的地。 使用 `http://www.adobe.com/go/destinations-YOURDESTINATION-en`，其中 `YOURDESTINATION` 是您的目标名称。 对于名为Moviestar的目标，您将使用 `http://www.adobe.com/go/destinations-moviestar-en`. 请注意，此链接仅在Adobe设置目标处于实时状态且文档已发布后才可用。 |
 | `category` | 字符串 | 是指分配给您在Adobe Experience Platform中的目标的类别。 有关更多信息，请阅读 [目标类别](https://experienceleague.adobe.com/docs/experience-platform/destinations/destination-types.html). 使用以下任一值： `adobeSolutions, advertising, analytics, cdp, cloudStorage, crm, customerSuccess, database, dmp, ecommerce, email, emailMarketing, enrichment, livechat, marketingAutomation, mobile, personalization, protocols, social, streaming, subscriptions, surveys, tagManagers, voc, warehouses, payments`. |
-| `iconUrl` | 字符串 | 您在其中托管要在目标目录卡中显示的图标的URL。 |
+| `iconUrl` | 字符串 | 您在其中托管要在目标目录卡中显示的图标的URL。 对于私有自定义集成，不需要执行此操作。 对于按产品化配置，您需要在 [提交目标供审核](/help/destinations/destination-sdk/submit-destination.md#logo). |
 | `connectionType` | 字符串 | 连接类型，具体取决于目标。 支持的值： <ul><li>`Azure Blob`</li><li>`Azure Data Lake Storage`</li><li>`S3`</li><li>`SFTP`</li></ul> |
 | `flowRunsSupported` | 布尔型 | 指示目标连接是否包含在 [流运行UI](../../dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard). 将此参数设置为 `true`: <ul><li>的 **[!UICONTROL 上次数据流运行日期]** 和 **[!UICONTROL 上次数据流运行状态]** 显示在目标浏览页面中。</li><li>的 **[!UICONTROL 数据流运行]** 和 **[!UICONTROL 激活数据]** 选项卡。</li></ul> |
 | `monitoringSupported` | 布尔型 | 指示目标连接是否包含在 [监控UI](../ui/destinations-workspace.md#browse). 将此参数设置为 `true`, **[!UICONTROL 在监控中查看]** 选项。 |
@@ -600,6 +602,10 @@ ht-degree: 5%
 {style=&quot;table-layout:auto&quot;}
 
 ## 目标投放 {#destination-delivery}
+
+目标投放部分确切地指示导出数据的去向，以及在数据登陆位置中使用的身份验证规则。 您需要指定一个或多个 `destinationServerId`用于提交数据和验证规则的位置。 在大多数情况下，您应使用的身份验证规则是 `CUSTOMER_AUTHENTICATION`.
+
+的 `deliveryMatchers` 部分是可选的，如果您指定了多个 `destinationServerId`s.如果是这样， `deliveryMatchers` 部分指示导出的数据应如何在各个目标服务器之间进行拆分。
 
 ```json
  "destinationDelivery":[
@@ -621,7 +627,7 @@ ht-degree: 5%
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
 | `authenticationRule` | 字符串 | 指示方式 [!DNL Platform] 客户连接到您的目标。 接受的值为 `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>使用 `CUSTOMER_AUTHENTICATION` 如果Platform客户通过以下任一方法登录您的系统： <ul><li>`"authType": "S3"`</li><li>`"authType":"AZURE_CONNECTION_STRING"`</li><li>`"authType":"AZURE_SERVICE_PRINCIPAL"`</li><li>`"authType":"SFTP_WITH_SSH_KEY"`</li><li>`"authType":"SFTP_WITH_PASSWORD"`</li></ul> </li><li> 使用 `PLATFORM_AUTHENTICATION` 如果Adobe与目标之间存在全局身份验证系统，并且 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，必须使用 [凭据](./credentials-configuration-api.md) 配置。 </li><li>使用 `NONE` 如果向目标平台发送数据时不需要任何身份验证。 </li></ul> |
-| `destinationServerId` | 字符串 | 的 `instanceId` 的 [目标服务器配置](./destination-server-api.md) 用于此目标。 |
+| `destinationServerId` | 字符串 | 的 `instanceId` 的 [目标服务器配置](./server-and-file-configuration.md) 你 [已创建](/help/destinations/destination-sdk/destination-server-api.md#create-file-based) 的值。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -649,7 +655,15 @@ ht-degree: 5%
 
 ## 映射步骤中的架构配置 {#schema-configuration}
 
+Adobe Experience Platform Destination SDK支持合作伙伴定义的模式。 合作伙伴定义的架构允许用户将配置文件属性和标识映射到目标合作伙伴定义的自定义架构，与 [流目标](destination-configuration.md#schema-configuration) 工作流。
+
 在中使用参数 `schemaConfig` 以启用目标激活工作流的映射步骤。 通过使用下面描述的参数，您可以确定Experience Platform用户是否可以将配置文件属性和/或身份映射到基于文件的目标。
+
+您可以创建静态、硬编码架构字段，也可以指定Experience Platform应连接到的动态架构，以便动态检索和填充映射工作流目标架构中的字段。 目标架构如下面的屏幕截图所示。
+
+![在激活工作流的映射步骤中突出显示目标架构字段的屏幕截图。](/help/destinations/destination-sdk/assets/target-schema-fields.png)
+
+### 静态硬编码架构字段配置
 
 ```json
 "schemaConfig":{
@@ -681,16 +695,14 @@ ht-degree: 5%
 
 ### 映射步骤中的动态架构配置 {#dynamic-schema-configuration}
 
-Adobe Experience Platform Destination SDK支持合作伙伴定义的模式。 合作伙伴定义的架构允许用户将配置文件属性和标识映射到目标合作伙伴定义的自定义架构，与 [流目标](destination-configuration.md#schema-configuration) 工作流。
-
-在中使用参数  `dynamicSchemaConfig` 定义您自己的架构，以便Platform配置文件属性和/或身份可以映射到该架构。
+在中使用参数  `dynamicSchemaConfig` 用于动态检索您自己的架构，Platform配置文件属性和/或身份可以映射到该架构。
 
 ```json
 "schemaConfig":{
    "dynamicSchemaConfig":{
       "dynamicEnum": {
          "authenticationRule":"CUSTOMER_AUTHENTICATION",
-         "destinationServerId":"{{destinationServerId}}",
+         "destinationServerId":"2aa8a809-c4ae-4f66-bb02-12df2e0a2279",
          "value": "Schema Name",
          "responseFormat": "SCHEMA"
       }
@@ -706,7 +718,7 @@ Adobe Experience Platform Destination SDK支持合作伙伴定义的模式。 �
 | `profileRequired` | 布尔型 | 使用 `true` 如上面的示例配置所示，用户应该能够在目标侧将配置文件属性从Experience Platform映射到自定义属性。 |
 | `segmentRequired` | 布尔型 | 始终使用 `segmentRequired:true`. |
 | `identityRequired` | 布尔型 | 使用 `true` 用户应能够将身份命名空间从Experience Platform映射到所需的架构。 |
-| `destinationServerId` | 字符串 | 的 `instanceId` 的 [目标服务器配置](./destination-server-api.md) 用于此目标。 |
+| `destinationServerId` | 字符串 | 的 `instanceId` 的 [目标服务器配置](./destination-server-api.md) 创建的动态架构的ID。 此目标服务器包含HTTP端点，Experience Platform将调用该端点来检索用于填充目标字段的动态架构。 |
 | `authenticationRule` | 字符串 | 指示方式 [!DNL Platform] 客户连接到您的目标。 接受的值为 `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>使用 `CUSTOMER_AUTHENTICATION` 如果Platform客户通过以下任一方法登录您的系统： <ul><li>`"authType": "S3"`</li><li>`"authType":"AZURE_CONNECTION_STRING"`</li><li>`"authType":"AZURE_SERVICE_PRINCIPAL"`</li><li>`"authType":"SFTP_WITH_SSH_KEY"`</li><li>`"authType":"SFTP_WITH_PASSWORD"`</li></ul> </li><li> 使用 `PLATFORM_AUTHENTICATION` 如果Adobe与目标之间存在全局身份验证系统，并且 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，必须使用 [凭据](./credentials-configuration-api.md) 配置。 </li><li>使用 `NONE` 如果向目标平台发送数据时不需要任何身份验证。 </li></ul> |
 | `value` | 字符串 | 要在Experience Platform用户界面中的映射步骤中显示的架构名称。 |
 | `responseFormat` | 字符串 | 始终设置为 `SCHEMA` 定义自定义架构时。 |
@@ -720,7 +732,7 @@ Adobe Experience Platform Destination SDK支持合作伙伴定义的模式。 �
 
 ```json
 "identityNamespaces": {
-        "adobe_id": {
+        "crm_id": {
             "acceptsAttributes": true,
             "acceptsCustomNamespaces": true
         },
@@ -736,9 +748,9 @@ Adobe Experience Platform Destination SDK支持合作伙伴定义的模式。 �
 身份命名空间不需要 [!DNL Platform] 和你的目的地。
 例如，客户可以映射 [!DNL Platform] [!DNL IDFA] 命名空间 [!DNL IDFA] 命名空间，或者它们可以映射相同的 [!DNL Platform] [!DNL IDFA] 命名空间 [!DNL Customer ID] 命名空间。
 
-## 批量配置 {#batch-configuration}
+## 批量配置 — 文件命名和导出计划 {#batch-configuration}
 
-本节将介绍上述配置中的文件导出设置，该Adobe应在Adobe Experience Platform用户界面中用于您的目标。
+本节将介绍将在Adobe Experience Platform用户界面中为您的目标显示的文件命名和导出计划设置。 您在此处设置的值会在 [计划区段导出](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling) 基于文件的目标激活工作流的步骤。
 
 ```json
 "batchConfig":{
@@ -796,7 +808,10 @@ Adobe Experience Platform Destination SDK支持合作伙伴定义的模式。 �
 
 使用文件名配置宏来定义导出的文件名应包含的内容。 下表中的宏描述了在 [文件名配置](../ui/activate-batch-profile-destinations.md#file-names) 屏幕。
 
-作为最佳实践，您应始终包含 `SEGMENT_ID` 宏。 区段ID是唯一的，因此将它们包含在文件名中是确保文件名也唯一的最佳方法。
+
+>[!TIP]
+> 
+>作为最佳实践，您应始终包含 `SEGMENT_ID` 宏。 区段ID是唯一的，因此将它们包含在文件名中是确保文件名也唯一的最佳方法。
 
 | 宏 | UI标签 | 描述 | 示例 |
 |---|---|---|---|
@@ -849,7 +864,7 @@ Adobe Experience Platform Destination SDK支持合作伙伴定义的模式。 �
 
 ## 此配置如何连接目标的所有必需信息 {#connecting-all-configurations}
 
-您的某些目标设置必须通过 [目标服务器](./server-and-file-configuration.md) 或 [受众元数据配置](./audience-metadata-management.md). 此处描述的目标配置通过引用以下两个其他配置来连接所有这些设置：
+您的某些目标设置必须通过 [目标服务器](./server-and-file-configuration.md) 或 [受众元数据配置](./audience-metadata-management.md) 端点。 此处描述的目标配置通过引用以下两个其他配置来连接所有这些设置：
 
-* 使用 `destinationServerId` 引用为目标设置的目标服务器和模板配置。
+* 使用 `destinationServerId` 引用为目标设置的目标服务器和文件模板配置。
 * 使用 `audienceMetadataId` 引用为您的目标设置的受众元数据配置。

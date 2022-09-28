@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: 5f79b10306f74db75b25654ca51969ea69e38299
+source-git-commit: f7092a394e0ad72d38bf8616e54789c7b2f1ab00
 workflow-type: tm+mt
 source-wordcount: '2539'
 ht-degree: 5%
@@ -64,7 +64,7 @@ Adobe Experience Platform的数据卫生功能允许您通过计划自动数据�
 
 ## [!UICONTROL 隐私控制台] {#privacy-console}
 
-的 [!UICONTROL 隐私控制台] Experience PlatformUI中的选项卡提供了一个功能板视图，其中提供了与隐私相关的功能(例如 [来自Privacy Service的数据主体请求], [数据卫生工作单]和 [审核日志]. 该控制台还提供了一些产品内用例指南，以帮助您完成常见的隐私工作流程。
+的 [!UICONTROL 隐私控制台] Experience PlatformUI中的选项卡提供了一个功能板视图，其中提供了与隐私相关的功能(例如 [来自Privacy Service的数据主体请求](../../privacy-service/home.md), [数据卫生工作单](../../hygiene/home.md)和 [审核日志](../../landing/governance-privacy-security/audit-logs/overview.md). 该控制台还提供了一些产品内用例指南，以帮助您完成常见的隐私工作流程。
 
 请参阅 [隐私控制台概述](../../landing/governance-privacy-security/privacy-console.md) 以了解有关该功能的更多信息。
 
@@ -218,6 +218,6 @@ Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为
 | 支持Adobe Campaign托管Cloud Service | 使用Adobe Campaign托管Cloud Service源将Adobe Campaign v8.4投放和跟踪日志数据Experience Platform。 阅读 [在UI中创建Adobe Campaign托管Cloud Service源连接](../../sources/tutorials/ui/create/adobe-applications/campaign.md) 以了解更多信息。 |
 | 支持批量源的按需摄取API | 使用按需摄取，通过 [!DNL Flow Service] API。 创建的流量运行必须设置为一次性摄取。 有关更多信息，请阅读 [使用API为按需摄取创建流程运行](../../sources/tutorials/api/on-demand-ingestion.md) 以了解更多信息。 |
 | 支持为批处理源重试失败的数据流运行的API | 使用 `re-trigger` 通过API重试失败的数据流的操作。 阅读 [正在使用API重试失败的数据流运行](../../sources/tutorials/api/retry-flows.md) 以了解更多信息。 |
-| 支持过滤 [!DNL Google BigQuery] 和 [!DNL Snowflake] 来源 | 使用逻辑运算符和比较运算符来筛选 [!DNL Google BigQuery] 和 [!DNL Snowflake] 来源。 有关更多信息，请阅读有关使用API筛选源数据的指南。 |
+| 支持过滤 [!DNL Google BigQuery] 和 [!DNL Snowflake] 来源 | 使用逻辑运算符和比较运算符来筛选 [!DNL Google BigQuery] 和 [!DNL Snowflake] 来源。 阅读 [使用API过滤源的数据](../../sources/tutorials/api/filter.md) 以了解更多信息。 |
 
 要进一步了解来源，请阅读 [源概述](../../sources/home.md).

@@ -1,15 +1,15 @@
 ---
 description: 可通过/destination-servers端点在Adobe Experience Platform Destination SDK中配置基于文件的目标的服务器和文件配置规范。
-title: （测试版）基于文件的目标服务器规范的配置选项
+title: 基于文件的目标服务器规范的配置选项
 exl-id: 56434e36-0458-45d9-961d-f6505de998f7
-source-git-commit: a43bb18182ac6e591e011b585719da955ee681b7
+source-git-commit: 5506a938253083d3dfd657a787eae20a05b1c0a9
 workflow-type: tm+mt
-source-wordcount: '899'
-ht-degree: 13%
+source-wordcount: '1274'
+ht-degree: 9%
 
 ---
 
-# （测试版）基于文件的目标服务器规范的服务器和文件配置
+# 基于文件的目标服务器规范的服务器和文件配置
 
 ## 概述 {#overview}
 
@@ -17,11 +17,15 @@ ht-degree: 13%
 >
 >使用Adobe Experience Platform Destination SDK配置和提交基于文件的目标目前尚处于测试阶段。 文档和功能可能会发生更改。
 
-本页详细介绍了基于文件的目标服务器的所有服务器配置选项，并指示您如何设置各种文件配置选项，以便用户将文件从Experience Platform导出到您的目标。
+本页详细介绍了基于文件的目标服务器的所有服务器配置选项，并显示如何为用户设置各种文件配置选项，以便将文件从Experience Platform导出到您的目标。
 
 基于文件的目标的服务器和文件配置规范可以通过Adobe Experience Platform Destination SDK `/destination-servers` 端点。 读取 [目标服务器API端点操作](./destination-server-api.md) 有关可对端点执行的操作的完整列表。
 
+以下部分包括特定于Destination SDK中每个受支持的批处理目标类型的目标服务器规范。
+
 ## 基于文件的Amazon S3目标服务器规范 {#s3-example}
+
+以下示例显示了Amazon S3目标的正确目标服务器配置。
 
 ```json
 {
@@ -56,6 +60,8 @@ ht-degree: 13%
 {style=&quot;table-layout:auto&quot;}
 
 ## 基于文件的SFTP目标服务器规范 {#sftp-example}
+
+以下示例显示了SFTP目标的正确目标服务器配置。
 
 ```json
 {
@@ -95,6 +101,8 @@ ht-degree: 13%
 
 ## 基于文件 [!DNL Azure Data Lake Storage] ([!DNL ADLS])目标服务器规范 {#adls-example}
 
+以下示例显示了 [!DNL Azure Data Lake Storage] 目标。
+
 ```json
 {
    "name":"ADLS destination server",
@@ -122,6 +130,8 @@ ht-degree: 13%
 {style=&quot;table-layout:auto&quot;}
 
 ## 基于文件 [!DNL Azure Blob Storage] 目标服务器规范 {#blob-example}
+
+以下示例显示了 [!DNL Azure Blob Storage] 目标。
 
 ```json
 {
@@ -157,6 +167,8 @@ ht-degree: 13%
 
 ## 基于文件 [!DNL Data Landing Zone] ([!DNL DLZ])目标服务器规范 {#dlz-example}
 
+以下示例显示了 [!DNL Data Landing Zone] ([!DNL DLZ])目标。
+
 ```json
 {
    "name":"DLZ destination server",
@@ -185,6 +197,8 @@ ht-degree: 13%
 {style=&quot;table-layout:auto&quot;}
 
 ## 基于文件 [!DNL Google Cloud Storage] 目标服务器规范 {#gcs-example}
+
+以下示例显示了 [!DNL Google Cloud Storage] 目标。
 
 ```json
 {
@@ -224,7 +238,11 @@ ht-degree: 13%
 
 >[!NOTE]
 >
->仅在导出CSV文件时支持CSV选项。 的 `fileConfigurations` 设置新的目标服务器时，不强制使用部分。 如果您没有在CSV选项的API调用中传递任何值，则将使用下表中的默认值。
+>仅在导出CSV文件时支持CSV选项。 的 `fileConfigurations` 设置新的目标服务器时，不强制使用部分。 如果您没有在CSV选项的API调用中传递任何值，则默认值为 [参考表如下](#file-formatting-reference-and-example) 中，将使用。
+
+### 使用CSV选项的文件配置，以及 `templatingStrategy` 设置为 `NONE` {#file-configuration-templating-none}
+
+在以下配置示例中，所有CSV选项均已修复。 在 `csvOptions` 参数是最终参数，用户无法修改它们。
 
 ```json
 "fileConfigurations": {
@@ -290,22 +308,70 @@ ht-degree: 13%
     }
 ```
 
-| 字段 | 必填/可选 | 描述 | 默认值 |
-|---|---|---|---|
-| `compression.value` | 可选 | 将数据保存到文件时使用的压缩编解码器。 支持的值： `none`, `bzip2`, `gzip`, `lz4`和 `snappy`. | `none` |
-| `fileType.value` | 可选 | 指定输出文件格式。 支持的值： `csv`, `parquet`和 `json`. | `csv` |
-| `csvOptions.quote.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置一个用于转义引号值的字符，其中分隔符可以是值的一部分。 | `null` |
-| `csvOptions.quoteAll.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 指示是否应始终用引号将所有值括起来。 默认值是仅对包含引号字符的转义值进行转义。 | `false` |
-| `csvOptions.escape.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置一个用于在已引号值内转义引号的字符。 | `\` |
-| `csvOptions.escapeQuotes.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 指示包含引号的值是否应始终用引号括起来。 默认值是对包含引号字符的所有值进行转义。 | `true` |
-| `csvOptions.header.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 指示是否将列的名称写入第一行。 | `true` |
-| `csvOptions.ignoreLeadingWhiteSpace.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 指示是否从值中裁切前导空格。 | `true` |
-| `csvOptions.ignoreTrailingWhiteSpace.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 指示是否从值中裁切尾随空格。 | `true` |
-| `csvOptions.nullValue.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置空值的字符串表示形式。 | `""` |
-| `csvOptions.dateFormat.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 指示日期格式。 | `yyyy-MM-dd` |
-| `csvOptions.timestampFormat.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置指示时间戳格式的字符串。 | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
-| `csvOptions.charToEscapeQuoteEscaping.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置用于转义引号字符转义的单个字符。 | `\` 转义和引号字符不同时，指定的值。 `\0` 当转义和引号字符相同时。 |
-| `csvOptions.emptyValue.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置空值的字符串表示形式。 | `""` |
-| `maxFileRowCount` | 可选 | 导出的文件可包含的最大行数。 根据目标平台文件大小要求配置此设置。 | 不适用 |
+### 使用CSV选项的文件配置，以及 `templatingStrategy` 设置为 `PEBBLE_V1` {#file-configuration-templating-pebble}
+
+在以下配置示例中，没有一个CSV选项是固定的。 的 `value` 在 `csvOptions` 参数通过相应的客户数据字段进行配置 `/destinations` 端点(例如 `customerData.quote` 对于 `quote` 文件格式选项)，用户可以使用Experience PlatformUI在您在相应客户数据字段中配置的各种选项之间进行选择。
+
+```json
+  "fileConfigurations": {
+    "compression": {
+      "templatingStrategy": "PEBBLE_V1",
+      "value": "{% if customerData contains 'compression' and customerData.compression is not empty %}{{customerData.compression}}{% else %}NONE{% endif %}"
+    },
+    "fileType": {
+      "templatingStrategy": "PEBBLE_V1",
+      "value": "{{customerData.fileType}}"
+    },
+    "csvOptions": {
+      "sep": {
+        "templatingStrategy": "PEBBLE_V1",
+        "value": "{% if customerData contains 'csvOptions' and customerData.csvOptions contains 'delimiter' %}{{customerData.csvOptions.delimiter}}{% else %},{% endif %}"
+      },
+      "quote": {
+        "templatingStrategy": "PEBBLE_V1",
+        "value": "{% if customerData contains 'csvOptions' and customerData.csvOptions contains 'quote' %}{{customerData.csvOptions.quote}}{% else %}\"{% endif %}"
+      },
+      "escape": {
+        "templatingStrategy": "PEBBLE_V1",
+        "value": "{% if customerData contains 'csvOptions' and customerData.csvOptions contains 'escape' %}{{customerData.csvOptions.escape}}{% else %}\\{% endif %}"
+      },
+      "nullValue": {
+        "templatingStrategy": "PEBBLE_V1",
+        "value": "{% if customerData contains 'csvOptions' and customerData.csvOptions contains 'nullValue' %}{{customerData.csvOptions.nullValue}}{% else %}null{% endif %}"
+      },
+      "emptyValue": {
+        "templatingStrategy": "PEBBLE_V1",
+        "value": "{% if customerData contains 'csvOptions' and customerData.csvOptions contains 'emptyValue' %}{{customerData.csvOptions.emptyValue}}{% else %}{% endif %}"
+      }
+    }
+  }
+```
+
+### 有关支持的文件格式选项的完整参考和示例 {#file-formatting-reference-and-example}
+
+>[!TIP]
+>
+>下面描述的CSV文件格式选项也介绍在 [适用于CSV文件的Apache Spark指南](https://spark.apache.org/docs/latest/sql-data-sources-csv.html). 下面使用的说明摘自《Apache Spark指南》。
+
+以下是Destination SDK中所有可用文件格式选项的完整引用，以及每个选项的输出示例。
+
+| 字段 | 必填/可选 | 描述 | 默认值 | 示例输出1 | 示例输出2 |
+|---|---|---|---|---|---|
+| `templatingStrategy` | 必需 | 对于您配置的每个文件格式选项，需要添加参数 `templatingStrategy`，可以具有两个值： <br><ul><li>`NONE`:如果您不打算允许用户在配置的不同值之间进行选择，请使用此值。 请参阅 [此配置](#file-configuration-templating-none) 例如，文件格式选项是固定的示例。</li><li>`PEBBLE_V1`:如果您希望允许用户在配置的不同值之间进行选择，请使用此值。 在这种情况下，您还必须在 `/destination` 端点配置，以在UI中向用户显示各种选项。 请参阅 [此配置](#file-configuration-templating-pebble) 例如，用户可以为文件格式选项在不同的值之间进行选择。</li></ul> | - | - | - |
+| `compression.value` | 可选 | 将数据保存到文件时使用的压缩编解码器。 支持的值： `none`, `bzip2`, `gzip`, `lz4`和 `snappy`. | `none` | - | - |
+| `fileType.value` | 可选 | 指定输出文件格式。 支持的值： `csv`, `parquet`和 `json`. | `csv` | - | - |
+| `csvOptions.quote.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置一个用于转义引号值的字符，其中分隔符可以是值的一部分。 | `null` | - | - |
+| `csvOptions.quoteAll.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 指示是否应始终用引号将所有值括起来。 默认值是仅对包含引号字符的转义值进行转义。 | `false` | `quoteAll`:`false` —> `male,John,"TestLastName"` | `quoteAll`:`true` —>`"male","John","TestLastName"` |
+| `csvOptions.delimiter.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 为每个字段和值设置分隔符。 此分隔符可以是一个或多个字符。 | `,` | `delimiter`:`,` —> `comma-separated values"` | `delimiter`:`\t` —> `tab-separated values` |
+| `csvOptions.escape.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置一个用于在已引号值内转义引号的字符。 | `\` | `"escape"`:`"\\"` —> `male,John,"Test,\"LastName5"` | `"escape"`:`"'"` —> `male,John,"Test,'''"LastName5"` |
+| `csvOptions.escapeQuotes.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 指示包含引号的值是否应始终用引号括起来。 默认值是对包含引号字符的所有值进行转义。 | `true` | - | - |
+| `csvOptions.header.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 指示是否将列的名称写入导出文件中的第一行。 | `true` | - | - |
+| `csvOptions.ignoreLeadingWhiteSpace.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 指示是否从值中裁切前导空格。 | `true` | `ignoreLeadingWhiteSpace`:`true` —> `"male","John","TestLastName"` | `ignoreLeadingWhiteSpace`:`false`—> `"    male","John","TestLastName"` |
+| `csvOptions.ignoreTrailingWhiteSpace.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 指示是否从值裁切尾随的空格。 | `true` | `ignoreTrailingWhiteSpace`:`true` —> `"male","John","TestLastName"` | `ignoreTrailingWhiteSpace`:`false`—> `"male    ","John","TestLastName"` |
+| `csvOptions.nullValue.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置空值的字符串表示形式。 | `""` | `nullvalue`:`""` —> `male,"",TestLastName` | `nullvalue`:`"NULL"` —> `male,NULL,TestLastName` |
+| `csvOptions.dateFormat.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 指示日期格式。 | `yyyy-MM-dd` | `dateFormat`:`yyyy-MM-dd` —> `male,TestLastName,John,2022-02-24` | `dateFormat`:`MM/dd/yyyy` —> `male,TestLastName,John,02/24/2022` |
+| `csvOptions.timestampFormat.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置指示时间戳格式的字符串。 | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` | - | - |
+| `csvOptions.charToEscapeQuoteEscaping.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置用于转义引号字符转义的单个字符。 | `\` 转义和引号字符不同时，指定的值。 `\0` 当转义和引号字符相同时。 | - | - |
+| `csvOptions.emptyValue.value` | 可选 | *仅适用于`"fileType.value": "csv"`*. 设置空值的字符串表示形式。 | `""` | `"emptyValue":""` --> `male,"",John` | `"emptyValue":"empty"` —> `male,empty,John` |
 
 {style=&quot;table-layout:auto&quot;}

@@ -2,7 +2,7 @@
 description: 本页提供您需要提交的所有信息，以便审核使用Destination SDK创作的已产品化目标。
 title: 提交以供审核在Destination SDK中创作的按产品化目标
 exl-id: eef0d858-ebd9-426e-91a1-5c93903b0eb5
-source-git-commit: 50f205a5ddd9ec264d7390911fef45dc595ca6a1
+source-git-commit: e68ae7d1cb87d078d9fce5a5df501cc6ce944403
 workflow-type: tm+mt
 source-wordcount: '683'
 ht-degree: 0%
@@ -225,7 +225,7 @@ curl --location --request POST 'https://platform.adobe.io/data/core/activation/a
 
 如果您是独立软件供应商(ISV)或系统集成商(SI)，创建 [产品化集成](./overview.md#productized-custom-integrations)，则使用 [自助文档流程](./docs-framework/documentation-instructions.md) 为您的目标创建产品文档页面。 在提交流程中，为目标文档提供拉取请求(PR)。
 
-## 目标的徽标
+## 目标的徽标 {#logo}
 
 目标目录包括每个目标卡的徽标。 在您的提交电子邮件中，包含带有目标徽标的图像。
 

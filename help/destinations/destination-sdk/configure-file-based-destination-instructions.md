@@ -1,15 +1,15 @@
 ---
 description: 本页列出并描述了使用Destination SDK配置基于文件的目标的步骤。
-title: （测试版）使用Destination SDK配置基于文件的目标
+title: 使用Destination SDK配置基于文件的目标
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: a43bb18182ac6e591e011b585719da955ee681b7
+source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
 workflow-type: tm+mt
-source-wordcount: '544'
+source-wordcount: '542'
 ht-degree: 0%
 
 ---
 
-# （测试版）使用Destination SDK配置基于文件的目标
+# 使用Destination SDK配置基于文件的目标
 
 ## 概述 {#overview}
 

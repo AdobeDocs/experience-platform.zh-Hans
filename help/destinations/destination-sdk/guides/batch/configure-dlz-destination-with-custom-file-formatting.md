@@ -1,14 +1,15 @@
 ---
 description: 了解如何使用Destination SDK配置带有自定义文件格式选项和自定义文件名配置的数据登陆区(DLZ)目标。
-title: （测试版）使用自定义文件格式选项和自定义文件名配置来配置数据登陆区(DLZ)目标。
-source-git-commit: fd3114a4578637dcf99232245f8d2cec64de14b5
+title: 使用自定义文件格式选项和自定义文件名配置配置数据登陆区(DLZ)目标。
+exl-id: 3a5c1188-c2b5-4e81-ae41-9fff797f08a6
+source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
 workflow-type: tm+mt
-source-wordcount: '765'
+source-wordcount: '763'
 ht-degree: 0%
 
 ---
 
-# （测试版）配置 [!DNL Data Landing Zone (DLZ)] 具有自定义文件格式选项和自定义文件名配置的目标
+# 配置 [!DNL Data Landing Zone (DLZ)] 具有自定义文件格式选项和自定义文件名配置的目标
 
 ## 概述 {#overview}
 

@@ -1,14 +1,15 @@
 ---
 description: 了解如何使用Destination SDK通过自定义文件格式选项和自定义文件名配置来配置Azure Blob Storage目标。
-title: （测试版）使用自定义文件格式选项和自定义文件名配置配置Azure Blob Storage目标。
-source-git-commit: 1e6515bf4fe34258194f56d341e477a02a1c31be
+title: 使用自定义文件格式选项和自定义文件名配置配置Azure Blob Storage目标。
+exl-id: effbd218-3a7c-4986-9fba-f5727a21e480
+source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
 workflow-type: tm+mt
-source-wordcount: '768'
+source-wordcount: '766'
 ht-degree: 0%
 
 ---
 
-# （测试版）配置 [!DNL Azure Blob Storage] 具有自定义文件格式选项和自定义文件名配置的目标
+# 配置 [!DNL Azure Blob Storage] 具有自定义文件格式选项和自定义文件名配置的目标
 
 ## 概述 {#overview}
 

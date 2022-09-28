@@ -2,9 +2,9 @@
 description: 本页列出并介绍了可使用“/authoring/destination-servers” API端点执行的所有API操作。 可通过公共端点“/authoring/destination-servers”在Adobe Experience Platform Destination SDK中配置目标的服务器和模板规范。
 title: 目标服务器端点API操作
 exl-id: a144b0fb-d34f-42d1-912b-8576296e59d2
-source-git-commit: a43bb18182ac6e591e011b585719da955ee681b7
+source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
 workflow-type: tm+mt
-source-wordcount: '1382'
+source-wordcount: '1361'
 ht-degree: 4%
 
 ---
@@ -81,10 +81,6 @@ curl -X POST https://platform.adobe.io/data/core/activation/authoring/destinatio
 成功响应会返回HTTP状态200，其中包含新创建的目标服务器配置的详细信息。
 
 ## 为基于文件的目标服务器创建配置 {#create-file-based}
-
->[!IMPORTANT]
->
->Adobe Experience Platform Destination SDK中基于文件的目标支持目前处于测试阶段。 文档和功能可能会发生更改。
 
 ### SFTP目标服务器示例配置 {#sftp-server-sample}
 

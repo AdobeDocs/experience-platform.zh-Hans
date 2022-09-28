@@ -4,10 +4,10 @@ description: 了解如何配置Adobe Experience Platform Web SDK。
 seo-description: Learn how to configure the Experience Platform Web SDK
 keywords: 配置；配置；SDK；边缘；Web SDK；配置；edgeConfigId；上下文；Web；设备；placeContext;debugEnabled;edgeDomain;orgId;clickCollectionEnabled;onBeforeEventSend;defaultConsent;Web SDK设置；prehidingStyle;ocookieDestinationsEnable;urlDestinationsEnabled;idMigCookiesEnabled；第三方Cookies
 exl-id: d1e95afc-0b8a-49c0-a20e-e2ab3d657e45
-source-git-commit: 4d0f1b3e064bd7b24e17ff0fafb50d930b128968
+source-git-commit: ed39d782ba6991a00a31b48abb9d143e15e6d89e
 workflow-type: tm+mt
-source-wordcount: '860'
-ht-degree: 15%
+source-wordcount: '999'
+ht-degree: 14%
 
 ---
 
@@ -44,15 +44,26 @@ alloy("configure", {
 
 您分配的配置ID，用于将SDK关联到相应的帐户和配置。 在单个页面中配置多个实例时，必须配置其他 `edgeConfigId` （对于每个实例）。
 
-### `context`
+### `context` {#context}
 
 | **类型** | **必需** | **默认值** |
 | ---------------- | ------------ | -------------------------------------------------- |
-| 字符串数组 | 否 | `["web", "device", "environment", "placeContext"]` |
+| 字符串数组 | 否 | `["web", "device", "environment", "placeContext", "highEntropyUserAgentHints"]` |
 
 {style=&quot;table-layout:auto&quot;}
 
 指示要自动收集的上下文类别，如 [自动信息](../data-collection/automatic-information.md). 如果未指定此配置，则默认使用所有类别。
+
+>[!IMPORTANT]
+>
+>除 `highEntropyUserAgentHints`，则默认情况下处于启用状态。 如果您在Web SDK配置中手动指定上下文属性，则必须启用所有上下文属性才能继续收集所需的信息。
+
+启用 [高熵客户端提示](user-agent-client-hints.md#enabling-high-entropy-client-hints) 在Web SDK部署中，您必须包含 `highEntropyUserAgentHints` 上下文选项，以及现有配置。
+
+例如，要从Web属性中检索高熵客户端提示，您的配置将如下所示：
+
+`context: ["highEntropyUserAgentHints", "web"]`
+
 
 ### `debugEnabled`
 
@@ -134,9 +145,9 @@ alloy("configure", {
 * `"out"`:设置此设置后，将丢弃工作，直到用户提供同意首选项为止。
 在提供用户的首选项后，根据用户的首选项继续或中止工作。 请参阅 [支持同意](../consent/supporting-consent.md) 以了解更多信息。
 
-## 个性化选项
+## 个性化选项 {#personalization}
 
-### `prehidingStyle`
+### `prehidingStyle` {#prehidingStyle}
 
 | **类型** | **必需** | **默认值** |
 | -------- | ------------ | ----------------- |
@@ -151,6 +162,16 @@ alloy("configure", {
 ```javascript
   prehidingStyle: "#container { opacity: 0 !important }"
 ```
+
+### `targetMigrationEnabled` {#targetMigrationEnabled}
+
+从迁移单个页面时，应使用此选项 [!DNL at.js] 到Web SDK。
+
+使用此选项可启用Web SDK以读取和写入旧版 `mbox` 和 `mboxEdgeCluster` 由 [!DNL at.js]. 这有助于您在从使用Web SDK的页面移动到使用 [!DNL at.js] 图书馆，反之亦然。
+
+| **类型** | **必需** | **默认值** |
+| -------- | ------------ | ----------------- |
+| 布尔型 | 否 | `false` |
 
 ## 受众选项
 
@@ -184,7 +205,9 @@ alloy("configure", {
 
 {style=&quot;table-layout:auto&quot;}
 
-如果为true，则SDK会读取并设置旧的AMCV Cookie。 此选项有助于过渡到使用Adobe Experience Platform Web SDK，而网站的某些部分可能仍使用Visitor.js。 如果页面上定义了访客API，SDK将查询访客API以获取ECID。 此选项允许您使用Adobe Experience Platform Web SDK创建双标记页面，但仍然具有相同的ECID。
+如果为true，则SDK会读取并设置旧的AMCV Cookie。 此选项有助于过渡到使用Adobe Experience Platform Web SDK，而网站的某些部分可能仍使用Visitor.js。
+
+如果页面上定义了访客API，SDK将查询访客API以获取ECID。 此选项允许您使用Adobe Experience Platform Web SDK创建双标记页面，但仍然具有相同的ECID。
 
 ### `thirdPartyCookiesEnabled`
 

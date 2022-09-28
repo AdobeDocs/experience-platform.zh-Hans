@@ -1,10 +1,10 @@
 ---
-description: Adobe Experience Platform Destination SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式将受众和配置文件数据交付到端点。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。
+description: Adobe Experience Platform Destination SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式将受众和配置文件数据交付到端点或存储位置。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: af8718f7d5351993c5e4aa00822ed7d2b290b9f0
+source-git-commit: 95a7029864de84819cacc57c02a3e6f30def0b25
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '791'
 ht-degree: 3%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 3%
 
 ## 概述 {#destinations-sdk}
 
-Adobe Experience Platform Destination SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式将受众和配置文件数据交付到端点。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。
+Adobe Experience Platform Destination SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式，将受众和配置文件数据交付到您的端点或存储位置。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。
 
-本Destination SDK文档提供了相关说明，供您使用这些Adobe Experience Platform Destination SDK配置、测试和发布与Adobe Experience Platform的已产品化目标集成，并让您的目标成为不断增长的目标目录的一部分。
+本Destination SDK文档提供了相关说明，供您使用这些Adobe Experience Platform Destination SDK配置、测试和发布与Adobe Experience Platform的已产品化目标集成，并让您的目标成为不断增长的目标目录的一部分。 通过使用Destination SDK，您还可以创建自己的自定义专用目标，以导出根据您的需求量身定制的数据。
 
 ![目标目录概述](./assets/destinations-catalog-overview.png)
 
@@ -26,7 +26,7 @@ Adobe Experience Platform Destination SDK是一组配置API，允许您配置目
 2. 在Experience Platform目标目录中引入品牌目标卡，以简化客户设置和意识。
 3. 作为与Adobe Experience Platform和Real-time Customer Data Platform的产品化目标集成。
 
-作为Experience Platform客户，您可以创建自己的专用自定义目标，最适合您的激活需求。
+作为Experience Platform客户，您还可以创作自己的专用自定义目标，最适合您的激活需求。
 
 ![Destination SDK可视化图表](./assets/destination-sdk-visual.png)
 
@@ -51,6 +51,10 @@ This documentation set provides you with all the necessary information to add yo
 * 可配置身份验证
 * 一套测试和验证API，可供您测试和迭代目标配置
 
+通过Destination SDK，您还可以设置集成以定期将文件导出到您选择的存储位置。 与Experience Platform的实时集成支持以下功能：
+* 支持多种格式(CSV、Parquet、JSON)的文件导出
+* 可配置的文件格式选项，利用该选项可构建导出文件的格式以满足下游要求。
+
 请阅读 [集成先决条件](./integration-prerequisites.md) 文章。
 
 ## 获取Destination SDK {#get-access}
@@ -72,8 +76,8 @@ Destination SDK访问权限因您作为Real-Time CDP客户的合作伙伴或Expe
 
 1. 如果您是ISV或SI，请参阅上述部分中的获取访问信息。 [Adobe Experience Platform激活](https://helpx.adobe.com/legal/product-descriptions/adobe-experience-platform0.html) 客户可以跳过此步骤。
 2. [请求配置Experience Platform沙盒](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360037457812-Adobe-Experience-Platform-Sandbox-Accounts-Access-Adding-Users-and-Support) 并启用目标创作权限。
-3. 构建集成。 按照产品文档中的说明配置 [流目标](./configure-destination-instructions.md) 或 [基于文件的目标（测试版）](./configure-file-based-destination-instructions.md).
-4. 测试集成。 按照产品文档中的说明进行测试 [流目标](./test-destination.md) 或 [基于文件的目标（测试版）](./file-based-destination-testing-overview.md).
+3. 构建集成。 按照产品文档中的说明配置 [流目标](./configure-destination-instructions.md) 或 [基于文件的目标](./configure-file-based-destination-instructions.md).
+4. 测试集成。 按照产品文档中的说明进行测试 [流目标](./test-destination.md) 或 [基于文件的目标](./file-based-destination-testing-overview.md).
 5. 如果您是ISV或SI创建 [产品化集成](./overview.md#productized-custom-integrations), [提交集成](./submit-destination.md) 供Adobe审阅（标准响应时间为五个工作日）。
 6. 如果您是ISV或SI创建产品化集成，请使用 [自助文档流程](./docs-framework/documentation-instructions.md) 在Experience League上为您的目标创建产品文档页面。
 7. 对于按产品分类的集成，一旦获得Adobe批准，您的集成将显示在 [Experience Platform目录](/help/destinations/catalog/overview.md).

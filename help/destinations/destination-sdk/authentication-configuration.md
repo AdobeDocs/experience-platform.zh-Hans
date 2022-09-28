@@ -2,9 +2,9 @@
 description: 使用Adobe Experience Platform Destination SDK中支持的身份验证配置来验证用户并将数据激活到目标端点。
 title: 身份验证配置
 exl-id: 33eaab24-f867-4744-b424-4ba71727373c
-source-git-commit: 631c0ac02cb7f4f95500897ca224aa532393c109
+source-git-commit: 9b4c7da5aa02ae27608c2841b1d825445ac3015e
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '446'
 ht-degree: 0%
 
 ---
@@ -18,12 +18,12 @@ ht-degree: 0%
 Adobe Experience Platform Destination SDK支持多种身份验证类型：
 
 * [承载验证](#bearer)
-* [（测试版）Amazon S3身份验证](#s3)
-* [（测试版）Azure Blob Storage](#blob)
-* [（测试版）Azure数据湖存储](#adls)
-* [（测试版）Google云存储](#gcs)
-* [（测试版）具有SSH密钥的SFTP](#sftp-ssh)
-* [（测试版）带密码的SFTP](#sftp-password)
+* [[!DNL Amazon S3] 身份验证](#s3)
+* [[!DNL Azure Blob] 存储](#blob)
+* [[!DNL Azure Data Lake Storage]](#adls)
+* [[!DNL Google Cloud Storage]](#gcs)
+* [具有SSH密钥的SFTP](#sftp-ssh)
+* [带密码的SFTP](#sftp-password)
 * [具有授权代码的OAuth 2](#oauth2)
 * [具有密码授予的OUM第2个](#oauth2)
 * [具有客户端凭据授予的OAuth 2](#oauth2)
@@ -49,15 +49,11 @@ Adobe Experience Platform Destination SDK支持多种身份验证类型：
 ]
 ```
 
-## （测试版） [!DNL Amazon S3] 身份验证 {#s3}
+## [!DNL Amazon S3] 身份验证 {#s3}
 
 [!DNL Amazon S3] Experience Platform中基于文件的目标支持身份验证。
 
->[!IMPORTANT]
->
->Adobe Experience Platform Destination SDK中基于文件的目标支持目前处于测试阶段。 文档和功能可能会发生更改。
-
-要为目标设置Amazon S3身份验证，请配置 `customerAuthenticationConfigurations` 参数 `/destinations` 端点，如下所示：
+设置 [!DNL Amazon S3] 目标的身份验证，配置 `customerAuthenticationConfigurations` 参数 `/destinations` 端点，如下所示：
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -67,13 +63,9 @@ Adobe Experience Platform Destination SDK支持多种身份验证类型：
 ]
 ```
 
-## （测试版） [!DNL Azure Blob Storage] {#blob}
+## [!DNL Azure Blob Storage] {#blob}
 
 [!DNL Azure Blob Storage] Experience Platform中基于文件的目标支持身份验证。
-
->[!IMPORTANT]
->
->Adobe Experience Platform Destination SDK中基于文件的目标支持目前处于测试阶段。 文档和功能可能会发生更改。
 
 设置 [!DNL Azure Blob] 目标的身份验证，配置 `customerAuthenticationConfigurations` 参数 `/destinations` 端点，如下所示：
 
@@ -85,13 +77,9 @@ Adobe Experience Platform Destination SDK支持多种身份验证类型：
 ]
 ```
 
-## （测试版） [!DNL Azure Data Lake Storage] {#adls}
+## [!DNL Azure Data Lake Storage] {#adls}
 
 [!DNL Azure Data Lake Storage] Experience Platform中基于文件的目标支持身份验证。
-
->[!IMPORTANT]
->
->Adobe Experience Platform Destination SDK中基于文件的目标支持目前处于测试阶段。 文档和功能可能会发生更改。
 
 设置 [!DNL Azure Data Lake Storage] (ADLS)目标的身份验证，配置 `customerAuthenticationConfigurations` 参数 `/destinations` 端点，如下所示：
 
@@ -103,13 +91,9 @@ Adobe Experience Platform Destination SDK支持多种身份验证类型：
 ]
 ```
 
-## （测试版） [!DNL Google Cloud Storage] {#gcs}
+## [!DNL Google Cloud Storage] {#gcs}
 
 [!DNL Google Cloud Storage] Experience Platform中基于文件的目标支持身份验证。
-
->[!IMPORTANT]
->
->Adobe Experience Platform Destination SDK中基于文件的目标支持目前处于测试阶段。 文档和功能可能会发生更改。
 
 ```json
 "customerAuthenticationConfigurations":[
@@ -120,13 +104,9 @@ Adobe Experience Platform Destination SDK支持多种身份验证类型：
 ```
 
 
-## （测试版） [!DNL SFTP] 验证 [!DNL SSH] key {#sftp-ssh}
+## [!DNL SFTP] 验证 [!DNL SSH] key {#sftp-ssh}
 
 [!DNL SFTP] 验证 [!DNL SSH] 键值支持用于Experience Platform中基于文件的目标。
-
->[!IMPORTANT]
->
->Adobe Experience Platform Destination SDK中基于文件的目标支持目前处于测试阶段。 文档和功能可能会发生更改。
 
 要为目标设置使用SSH密钥的SFTP身份验证，请配置 `customerAuthenticationConfigurations` 参数 `/destinations` 端点，如下所示：
 
@@ -138,13 +118,9 @@ Adobe Experience Platform Destination SDK支持多种身份验证类型：
 ]
 ```
 
-## （测试版） [!DNL SFTP] 密码验证 {#sftp-password}
+## [!DNL SFTP] 密码验证 {#sftp-password}
 
 [!DNL SFTP] Experience Platform中基于文件的目标支持使用密码进行身份验证。
-
->[!IMPORTANT]
->
->Adobe Experience Platform Destination SDK中基于文件的目标支持目前处于测试阶段。 文档和功能可能会发生更改。
 
 要使用密码设置目标的SFTP身份验证，请配置 `customerAuthenticationConfigurations` 参数 `/destinations` 端点，如下所示：
 
@@ -160,7 +136,7 @@ Adobe Experience Platform Destination SDK支持多种身份验证类型：
 
 [!DNL OAuth 2] Experience Platform中的流目标支持身份验证。
 
-有关如何设置各种受支持的OAuth 2流以及自定义OAuth 2支持的信息，请阅读上的Destination SDK文档 [OAuth 2身份验证](./oauth2-authentication.md).
+有关如何设置各种受支持的 [!DNL OAuth 2] 流，以及自定义 [!DNL OAuth 2] 支持，请阅读Destination SDK文档 [[!DNL OAuth 2] 身份验证](./oauth2-authentication.md).
 
 
 ## 何时使用 `/credentials` API端点 {#when-to-use}

@@ -2,10 +2,10 @@
 description: 本页介绍如何验证和开始使用Adobe Experience Platform Destination SDK。 其中包含有关如何获取Adobe I/O身份验证凭据、沙盒名称和目标创作访问控制权限的说明。
 title: Destination SDK入门
 exl-id: f22c37a8-202d-49ac-9af0-545dfa9af8fd
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
 workflow-type: tm+mt
-source-wordcount: '613'
-ht-degree: 2%
+source-wordcount: '612'
+ht-degree: 3%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 ## 获取所需的身份验证凭据 {#obtain-authentication-credentials}
 
-Destination SDK使用 [Adobe I/O](https://www.adobe.io/) 用于身份验证的网关。 要对Destination SDK端点进行API调用，您必须在API调用中提供特定标头。 与AdobeExchange团队合作，为您设置 [Adobe开发人员控制台](https://developer.adobe.com/console).
+Destination SDK使用 [Adobe I/O](https://www.adobe.io/) 用于身份验证的网关。 要对Destination SDK端点进行API调用，您必须在API调用中提供特定标头。 与AdobeExchange团队合作，为您设置 [Adobe Developer控制台](https://developer.adobe.com/console).
 
 要成功调用Destination SDKAPI端点，请遵循 [Experience Platform身份验证教程](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html). 从“[生成API密钥、IMS组织ID和客户端密钥](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html#api-ims-secret)“ ”步骤。 Adobe交换团队将为您处理前面的步骤。 完成身份验证教程将提供Destination SDKAPI调用中每个所需标头的值，如下所示：
 
@@ -78,7 +78,7 @@ AdobeExchange团队为您提供沙盒名称，您需要在Destination SDKAPI端�
 * 根据您的目标类型，阅读以下配置指南：
 
    * [使用Destination SDK配置流目标](./configure-destination-instructions.md)
-   * [（测试版）使用Destination SDK配置基于文件的目标](./configure-file-based-destination-instructions.md)
+   * [使用Destination SDK配置基于文件的目标](./configure-file-based-destination-instructions.md)
 
 * 有关所有操作，请参阅 [目标创作API文档](https://www.adobe.io/experience-platform-apis/references/destination-authoring/).
 * 使用 [目标创作API Postman集合](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Destination%20Authoring%20API.postman_collection.json) 使用Destination SDKAPI端点配置目标。 要开始使用Postman，请参阅 [导入环境和收藏集的步骤](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/) 和 [创建Postman环境的视频指南](https://video.tv.adobe.com/v/28832).

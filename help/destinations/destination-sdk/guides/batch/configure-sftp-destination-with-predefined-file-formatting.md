@@ -1,15 +1,15 @@
 ---
 description: 了解如何使用Destination SDK通过预定义的文件格式选项和自定义文件名配置来配置SFTP目标。
-title: （测试版）使用预定义的文件格式选项和自定义文件名配置配置SFTP目标。
+title: 使用预定义的文件格式选项和自定义文件名配置配置SFTP目标。
 exl-id: 6e0fe019-7fbb-48e4-9469-6cc7fc3cb6e4
-source-git-commit: a43bb18182ac6e591e011b585719da955ee681b7
+source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
 workflow-type: tm+mt
-source-wordcount: '766'
+source-wordcount: '764'
 ht-degree: 0%
 
 ---
 
-# （测试版）使用预定义的文件格式选项和自定义文件名配置配置SFTP目标
+# 使用预定义的文件格式选项和自定义文件名配置配置SFTP目标
 
 ## 概述 {#overview}
 
