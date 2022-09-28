@@ -3,10 +3,10 @@ keywords: 目标；adobe experience platform；平台；目标概述；激活数
 title: 目标概述
 description: 目标是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用Adobe Experience Platform中的目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
+source-git-commit: 842aaa7104b277cf415d1ed9ee2744a200c07ce8
 workflow-type: tm+mt
-source-wordcount: '489'
-ht-degree: 0%
+source-wordcount: '633'
+ht-degree: 1%
 
 ---
 
@@ -44,7 +44,24 @@ Platform的核心功能之一是摄取第一方数据并根据业务需求对其
 
 Platform中的目标功能可与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以查看、管理和激活目标。 有关各个权限的信息，请参阅 [Adobe Experience Platform中的访问控制](../access-control/home.md) 并向下滚动到页面底部。
 
+下表概述了对目标执行某些操作所需的权限和权限组合：
+
+| 权限级别 | 描述 |
+| ---- | ----|
+| **[!UICONTROL 管理目标]** | 要连接到目标，您需要 **[!UICONTROL 管理目标]** [访问控制权限](/help/access-control/home.md#permissions). |
+| **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** | 要将区段激活到目标，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). |
+
+{style=&quot;table-layout:auto&quot;}
+
 有关访问控制的更多信息，请参阅 [访问控制用户指南](../access-control/ui/overview.md).
+
+### 目标基于属性的访问控制 {#attribute-based-access}
+
+通过Adobe Experience Platform中基于属性的访问控制，管理员可以基于属性控制对特定对象和/或功能的访问。
+
+通过基于属性的访问控制，您可以将映射配置应用到您有权访问的字段。 此外，如果您无权访问数据集中的所有字段，则无法将数据导出到目标。
+
+有关目标如何使用基于属性的访问控制的更多信息，请阅读 [基于属性的访问控制概述](../access-control/abac/overview.md#destinations).
 
 ## 在将数据激活到目标方面的数据管理限制 {#data-governance}
 
@@ -64,7 +81,7 @@ Platform中的目标功能可与Adobe Experience Platform访问控制权限配�
 * [电子邮件营销目标](./catalog/email-marketing/overview.md)
 * [社交目标](./catalog/social/overview.md)
 
-有关区段激活工作流中违反数据策略情况的更多信息，请参阅以下指南中的查看步骤：
+有关区段激活工作流中违反数据策略的更多信息，请参阅 **[!UICONTROL 审阅]** 步骤：
 
 * [将受众数据激活到流区段导出目标](./ui/activate-segment-streaming-destinations.md#review)
 * [将受众数据激活到流配置文件导出目标](./ui/activate-streaming-profile-destinations.md#review)
