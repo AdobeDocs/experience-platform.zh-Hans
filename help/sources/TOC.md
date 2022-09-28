@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: Source Connectors 指南
 user-guide-description: 从各种来源中提取数据，或者构建、标记和增强已提取的数据。
 feature: Sources
-source-git-commit: dfb95f457d7ddb730950159165ed85b2f532f9ab
+source-git-commit: 47a9ce5211d3dabe427ad1e545dc12181a84b644
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '831'
 ht-degree: 12%
 
 ---
@@ -20,6 +20,7 @@ ht-degree: 12%
       - [Analytics分类源](connectors/adobe-applications/classifications.md)
       - [Analytics源](connectors/adobe-applications/analytics.md)
       - [Audience Manager源](connectors/adobe-applications/audience-manager.md)
+      - [Adobe Campaign Managed Cloud Services源](connectors/adobe-applications/campaign.md)
       - [客户属性来源](connectors/adobe-applications/customer-attributes.md)
       - [数据收集源](connectors/adobe-applications/data-collection.md)
       - 字段映射 {#mapping}
@@ -202,7 +203,7 @@ ht-degree: 12%
          - [Adobe Analytics（报表包数据）](tutorials/ui/create/adobe-applications/analytics.md)
          - [Adobe Analytics（分类数据）](tutorials/ui/create/adobe-applications/classifications.md)
          - [Adobe Audience Manager](tutorials/ui/create/adobe-applications/audience-manager.md)
-         - [Adobe CampaignManaged Services](tutorials/ui/create/adobe-applications/campaign.md)
+         - [Adobe Campaign Managed Cloud Services](tutorials/ui/create/adobe-applications/campaign.md)
          - [客户属性](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
       - 广告 {#advertising}

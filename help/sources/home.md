@@ -5,9 +5,9 @@ title: 源连接器概述
 topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 552d8412067503847a6c9e4ffcf1aa18710dfbdd
+source-git-commit: 9eb7cdd08069a74a8f0680a8a2af7e7e950e83b7
 workflow-type: tm+mt
-source-wordcount: '1094'
+source-wordcount: '1111'
 ht-degree: 0%
 
 ---
@@ -30,10 +30,12 @@ Experience Platform允许从其他Adobe应用程序(包括Adobe Analytics和Adob
 
 - [Adobe Audience Manager源概述](connectors/adobe-applications/audience-manager.md)
 - [在UI中创建Adobe Audience Manager源连接](./tutorials/ui/create/adobe-applications/audience-manager.md)
-- [Adobe Analytics分类数据源连接概述](connectors/adobe-applications/classifications.md)
+- [Adobe Analytics分类数据源概述](connectors/adobe-applications/classifications.md)
 - [在UI中创建Adobe Analytics分类数据源连接](./tutorials/ui/create/adobe-applications/classifications.md)
-- [Adobe Analytics报表包数据源连接概述](connectors/adobe-applications/analytics.md)
+- [Adobe Analytics报表包数据源概述](connectors/adobe-applications/analytics.md)
 - [在UI中创建Adobe Analytics源连接](./tutorials/ui/create/adobe-applications/analytics.md)
+- [Adobe Campaign Managed Cloud Services源概述](connectors/adobe-applications/campaign.md)
+- [在UI中创建Adobe Campaign Managed Cloud Services源连接](./tutorials/ui/create/adobe-applications/campaign.md)
 - [Adobe数据收集源概述](connectors/adobe-applications/data-collection.md)
 - [在UI中创建客户属性源连接](./tutorials/ui/create/adobe-applications/customer-attributes.md)
 - [[!DNL Marketo Engage] 源概述](connectors/adobe-applications/marketo/marketo.md)
