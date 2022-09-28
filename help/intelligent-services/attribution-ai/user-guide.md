@@ -5,9 +5,9 @@ title: Attribution AIUI指南
 topic-legacy: User guide
 description: 本文档是与Intelligent Services用户界面中的Attribution AI交互的指南。
 exl-id: 32e1dd07-31a8-41c4-88df-8893ff773f79
-source-git-commit: 67b4c49de6ebb9986f735390a0657d908b07e039
+source-git-commit: 8071ddc945e89dd54173b34d44c6f622570801a3
 workflow-type: tm+mt
-source-wordcount: '2705'
+source-wordcount: '2873'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,7 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 - **[!UICONTROL 编辑]**:选择 **[!UICONTROL 编辑]** 用于修改现有服务实例。 您可以编辑实例的名称、描述、状态和评分频率。
 - **[!UICONTROL 克隆]**:选择 **[!UICONTROL 克隆]** 复制所选服务实例。 然后，您可以修改工作流以进行细微调整，并将其重命名为新实例。
-- **[!UICONTROL 删除]**:您可以删除包含任何历史运行的服务实例。
+- **[!UICONTROL 删除]**:您可以删除包含任何历史运行的服务实例。 将从Platform中删除相应的输出数据集。 但是，不会删除已同步到实时客户用户档案的得分。
 - **[!UICONTROL 数据源]**:指向所用数据集的链接。 如果Attribution AI使用多个数据集，则会显示“多个”，然后显示数据集的数量。 选择超链接后，将显示数据集预览弹出窗口。
 - **[!UICONTROL 上次运行详细信息]**:仅当运行失败时，才会显示该设置。 此处显示了有关运行失败原因（如错误代码）的信息。
 
@@ -261,6 +261,14 @@ Attribution AI的最终页面是 **[!UICONTROL 高级]** 用于设置培训和�
 选择培训窗口后，选择 **[!UICONTROL 完成]** 中。 允许一些时间处理数据。 完成后，会显示一个弹出对话框，确认实例设置已完成。 选择 **[!UICONTROL 确定]** 被重定向到 **[!UICONTROL 服务实例]** 页面，您可以在其中查看服务实例。
 
 ![设置完成](./images/user-guide/instance_setup_complete.png)
+
+## 治理政策
+
+完成创建实例并提交模型配置的工作流后， [策略实施](/help/data-governance/enforcement/auto-enforcement.md) 检查是否存在任何违规。 如果发生策略违规，则会出现一个弹出窗口，指示已违反一个或多个策略。 这是为了确保您的Platform中的数据操作和营销操作符合数据使用策略。
+
+![显示策略违规的弹出窗口](./images/user-guide/policy-violation-popover-aai.png)
+
+弹出窗口提供有关违规的特定信息。 您可以通过策略设置和其他与配置工作流无直接关联的措施来解决这些违规问题。 例如，您可以更改标签，以便允许将某些字段用于数据科学目的。 或者，您也可以修改模型配置本身，使其不使用带有标签的任何内容。 请参阅相关文档，了解有关如何设置 [策略](/help/data-governance/policies/overview.md).
 
 ## 基于属性的访问控制
 
