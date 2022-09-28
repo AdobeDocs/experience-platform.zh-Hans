@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: a3f12b9524d393441923cd11e09ed3e406814691
+source-git-commit: 3d7a04c0ec6cf6a9bed90c9c22db2e8b56bfa01f
 workflow-type: tm+mt
-source-wordcount: '1377'
-ht-degree: 7%
+source-wordcount: '1827'
+ht-degree: 6%
 
 ---
 
@@ -12,12 +12,95 @@ ht-degree: 7%
 
 **发布日期：2022 年 9 月 28 日**
 
+Adobe Experience Platform的新增功能：
+
+- [数据卫生](#data-hygiene)
+- [[!UICONTROL 隐私控制台]](#privacy-console)
+
 Adobe Experience Platform 现有功能的更新包括：
 
+- [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
+- [审核日志](#audit-logs)
+- [数据收集](#data-collection)
 - [体验数据模型(XDM)](#xdm)
 - [Identity Service](#identity-service)
-- [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
 - [源](#sources)
+
+## 数据卫生 {#data-hygiene}
+
+Adobe Experience Platform提供了一组功能强大的工具来管理大型、复杂的数据操作，以编排客户体验。 随着数据逐渐被摄取到系统中，管理数据存储变得越来越重要，这样数据就可以按预期使用，错误数据需要更正时会更新，组织策略认为有必要时会删除。
+
+Adobe Experience Platform的数据卫生功能允许您通过计划自动数据集过期时间以及按身份以编程方式删除消费者数据来清除数据。
+
+>[!NOTE]
+>
+>消费者删除功能仅适用于已购买Adobe医疗保健盾或隐私盾的组织。
+
+请参阅以下文档，以开始使用数据卫生：
+
+- [数据卫生概述](../../hygiene/home.md):了解有关Platform数据卫生功能的基础知识。
+- [[!UICONTROL 数据卫生] UI指南](../../hygiene/ui/overview.md):了解如何在Platform用户界面中计划数据集过期和消费者删除请求。
+- [数据卫生API指南](../../hygiene/api/overview.md):您可以在UI中执行的所有数据卫生活动也可以采用编程方式
+
+## [!UICONTROL 隐私控制台] {#privacy-console}
+
+的 [!UICONTROL 隐私控制台] Experience PlatformUI中的选项卡提供了一个功能板视图，其中提供了与隐私相关的功能(例如 [来自Privacy Service的数据主体请求], [数据卫生工作单]和 [审核日志]. 该控制台还提供了一些产品内用例指南，以帮助您完成常见的隐私工作流程。
+
+请参阅 [隐私控制台概述](../../landing/governance-privacy-security/privacy-console.md) 以了解有关该功能的更多信息。
+
+## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
+
+AI/ML服务使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的功能。 这允许营销分析人员使用业务级别配置来设置特定于公司需求的模型，而无需具备数据科学专业知识。
+
+### 归因人工智能
+
+Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
+
+| 功能 | 描述 |
+| --- | --- |
+| 保存草稿实例 | 这项新功能使营销分析人员能够在配置期间将模型配置另存为草稿实例，并继续编辑草稿，直到完成后再进行培训和评分。 当用户在配置工作流中有多个字段需要定义，但无法一次完成时，或者当一个或多个数据集统计信息（如列完整性）需要时间才能使用时，此功能非常有用，包括但不限于以下情况：用户在配置工作流中有多个字段需要定义，无法一次完成； 阅读 [Attribution AI用户指南](../../intelligent-services/attribution-ai/user-guide.md) 以了解更多。 |
+| 治理政策 | 在用户通过配置工作流提交以创建实例后，新策略实施服务会检查是否存在任何违反数据使用策略的情况，并在弹出窗口中显示详细信息。 它可确保数据操作和营销操作符合在Adobe Experience Platform上配置的数据使用策略。 |
+
+有关Attribution AI的更多信息，请参阅 [Attribution AI概述](../../intelligent-services/attribution-ai/overview.md). 有关数据管理策略的信息，请阅读 [策略概述](../../data-governance/policies/overview.md).
+
+### 客户人工智能
+
+Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾向得分，例如大规模单个用户档案的流失率和转化。
+
+| 功能 | 描述 |
+| --- | --- |
+| 保存草稿实例 | 这项新功能使营销分析人员能够在配置期间将模型配置另存为草稿实例，并继续编辑草稿，直到完成后再进行培训和评分。 当用户在配置工作流中有多个字段需要定义，但无法一次完成时，或者当一个或多个数据集统计信息（如列完整性）需要时间才能使用时，此功能非常有用，包括但不限于以下情况：用户在配置工作流中有多个字段需要定义，无法一次完成； 阅读 [Customer AI用户指南](../../intelligent-services/customer-ai/user-guide/configure.md) 以了解更多。 |
+| 治理政策 | 在用户通过配置工作流提交以创建实例后，新策略实施服务会检查是否存在任何违反数据使用策略的情况，并在弹出窗口中显示详细信息。 它可确保数据操作和营销操作符合在Adobe Experience Platform上配置的数据使用策略。 |
+
+有关Customer AI的更多信息，请阅读 [Customer AI概述](../../intelligent-services/customer-ai/overview.md). 有关数据管理策略的信息，请阅读 [策略概述](../../data-governance/policies/overview.md).
+
+## 审核日志 {#audit-logs}
+
+Experience Platform允许您审核用户活动以获取各种服务和功能。 审核日志提供有关谁执行了操作以及何时执行的信息。
+
+**更新功能**
+
+| 功能 | 名称 | 描述 |
+| --- | --- | --- |
+| 已添加资源 | <ul><li>Attribution AI实例</li><li>Customer AI实例</li><li>数据流</li></ul> | 活动发生时，会自动记录审核日志资源。 如果启用了该功能，则无需手动启用日志收集。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关平台中由审核日志跟踪的不同特定于资源的事件类型的更多信息，请参阅 [审核日志概述](../../landing/governance-privacy-security/audit-logs/overview.md).
+
+## 数据收集
+
+Adobe Experience Platform提供了一套技术，允许您收集客户端客户体验数据，并将其发送到Adobe Experience Platform边缘网络，以便对其进行扩充、转换和分发到Adobe或非Adobe目标。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| Platform UI中的左侧导航集成 | 以前专用于数据收集UI的所有功能（包括标记、事件转发和数据流）现在也可通过Experience Platform中的左侧导航（位于类别下）使用 **[!UICONTROL 数据收集]**. 使用Platform中的数据收集功能时，无需在UI之间切换。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 
@@ -77,32 +160,6 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 | 支持删除数据集 | 现在，在通过 [目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)、用户界面或数据卫生。 阅读 [删除UI中的数据集](../../catalog/datasets/user-guide.md#delete-a-dataset) 以了解更多信息。 |
 
 要了解有关Identity Service的更多信息，请阅读 [Identity Service概述](../../identity-service/home.md).
-
-## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
-
-AI/ML服务使营销分析师和从业人员能够在客户体验用例中利用人工智能和机器学习的功能。 这允许营销分析人员使用业务级别配置来设置特定于公司需求的模型，而无需具备数据科学专业知识。
-
-### 归因人工智能
-
-Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
-
-| 功能 | 描述 |
-| --- | --- |
-| 保存草稿实例 | 这项新功能使营销分析人员能够在配置期间将模型配置另存为草稿实例，并继续编辑草稿，直到完成后再进行培训和评分。 当用户在配置工作流中有多个字段需要定义，但无法一次完成时，或者当一个或多个数据集统计信息（如列完整性）需要时间才能使用时，此功能非常有用，包括但不限于以下情况：用户在配置工作流中有多个字段需要定义，无法一次完成； 阅读 [Attribution AI用户指南](../../intelligent-services/attribution-ai/user-guide.md) 以了解更多。 |
-| 治理政策 | 在用户通过配置工作流提交以创建实例后，新策略实施服务会检查是否存在任何违反数据使用策略的情况，并在弹出窗口中显示详细信息。 它可确保数据操作和营销操作符合在Adobe Experience Platform上配置的数据使用策略。 |
-
-有关Attribution AI的更多信息，请参阅 [Attribution AI概述](../../intelligent-services/attribution-ai/overview.md). 有关数据管理策略的信息，请阅读 [策略概述](../../data-governance/policies/overview.md).
-
-### 客户人工智能
-
-Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾向得分，例如大规模单个用户档案的流失率和转化。
-
-| 功能 | 描述 |
-| --- | --- |
-| 保存草稿实例 | 这项新功能使营销分析人员能够在配置期间将模型配置另存为草稿实例，并继续编辑草稿，直到完成后再进行培训和评分。 当用户在配置工作流中有多个字段需要定义，但无法一次完成时，或者当一个或多个数据集统计信息（如列完整性）需要时间才能使用时，此功能非常有用，包括但不限于以下情况：用户在配置工作流中有多个字段需要定义，无法一次完成； 阅读 [Customer AI用户指南](../../intelligent-services/customer-ai/user-guide/configure.md) 以了解更多。 |
-| 治理政策 | 在用户通过配置工作流提交以创建实例后，新策略实施服务会检查是否存在任何违反数据使用策略的情况，并在弹出窗口中显示详细信息。 它可确保数据操作和营销操作符合在Adobe Experience Platform上配置的数据使用策略。 |
-
-有关Customer AI的更多信息，请阅读 [Customer AI概述](../../intelligent-services/customer-ai/overview.md). 有关数据管理策略的信息，请阅读 [策略概述](../../data-governance/policies/overview.md).
 
 ## 源 {#sources}
 
