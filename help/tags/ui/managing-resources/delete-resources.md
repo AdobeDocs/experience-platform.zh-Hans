@@ -2,10 +2,10 @@
 title: 删除资源
 description: 了解如何删除Adobe Experience Platform中的标记资源。
 exl-id: c8e26720-1976-48ec-8490-3d4ce587831e
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '550'
-ht-degree: 80%
+source-wordcount: '558'
+ht-degree: 79%
 
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 80%
 >
 >Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-删除资源是从Adobe Experience Platform中永久移除该资源。 如果您仍希望资源显示在数据收集UI中，但不显示在标记库中，请参阅 [从库中移除资源](remove-resources-from-library.md).
+删除资源是从Adobe Experience Platform中永久移除该资源。 如果要从特定标签库中删除资源，但仍希望该资源可在其他库中使用，请参阅 [从库中移除资源](remove-resources-from-library.md).
 
 您可以删除数据元素、规则、扩展、主机、环境和资产。删除后，这些资源将无法恢复。
 

@@ -2,9 +2,9 @@
 title: 规则端点
 description: 了解如何在Reactor API中对/rules端点进行调用。
 exl-id: 79ef4389-e4b7-461e-8579-16a1a78cdd43
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '933'
+source-wordcount: '931'
 ht-degree: 8%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 8%
 
 >[!NOTE]
 >
->本文档介绍如何在Reactor API中管理规则。 有关如何与数据收集UI中的规则进行交互的信息，请参阅 [UI指南](../../ui/managing-resources/rules.md).
+>本文档介绍如何在Reactor API中管理规则。 有关如何在UI中与规则交互的信息，请参阅 [UI指南](../../ui/managing-resources/rules.md).
 
 规则恰好属于一个规则 [属性](./properties.md). 资产可以有许多规则。
 

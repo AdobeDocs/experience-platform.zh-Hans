@@ -2,10 +2,10 @@
 title: Web扩展的操作类型
 description: 了解如何在Web属性中为标记扩展定义操作类型库模块。
 exl-id: d4539132-a72c-40b0-84b6-50cbe3785d2d
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '408'
-ht-degree: 51%
+source-wordcount: '412'
+ht-degree: 50%
 
 ---
 
@@ -29,7 +29,7 @@ ht-degree: 51%
 
 操作类型通常包括：
 
-1. A [视图](./views.md) 数据收集UI中显示的，通过该UI，用户可以修改操作的设置。
+1. A [视图](./views.md) 显示在Experience PlatformUI和数据收集UI中，通过该UI，用户可以修改操作的设置。
 2. 标记运行时库中发出的库模块，用于解释设置并执行操作。
 
 ```js

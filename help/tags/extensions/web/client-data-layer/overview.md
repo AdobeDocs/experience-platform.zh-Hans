@@ -2,9 +2,9 @@
 title: Adobe客户端数据层扩展
 description: 了解Adobe Experience Platform中的Adobe客户端数据层标记扩展。
 exl-id: c4d1b4d3-4b51-4701-be2e-31b08e109bf6
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '647'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ If you would like to have more details on development consideration, [please rea
 
 ## 安装
 
-要安装扩展，请导航到数据收集UI中的扩展目录，然后选择Adobe客户端数据层。
+要安装扩展，请导航到Experience PlatformUI或数据收集UI中的扩展目录，然后选择Adobe客户端数据层。
 
 ![目录中的ACDL扩展视图](./images/catalog.png)
 

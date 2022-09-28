@@ -2,9 +2,9 @@
 title: 扩展开发概述
 description: 了解 Adobe Experience Platform 中的不同标记扩展类型的主要组件以及扩展开发流程。
 exl-id: b72df3df-f206-488d-a690-0f086973c5b6
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '949'
+source-wordcount: '950'
 ht-degree: 22%
 
 ---
@@ -37,11 +37,11 @@ Adobe Experience Platform中标记的主要目标之一是创建一个开放的�
 
 ### 视图
 
-视图是能够加载到 [`iframe` 元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe) ，特别是通过数据收集UI。 视图必须包含由扩展提供的脚本，并符合小型API，才能与应用程序通信。
+视图是能够加载到 [`iframe` 元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe) ，尤其是通过平台UI和数据收集UI。 视图必须包含由扩展提供的脚本，并符合小型API，才能与应用程序通信。
 
 任何扩展最重要的视图文件都是其配置。 请参阅 [扩展配置](#configuration) 以了解更多信息。
 
-对于在视图中使用的库，目前没有任何限制。换言之，您可以使用jQuery、Underscore、React、Angular、Bootstrap或其他变量。 但是，仍建议使扩展具有与数据收集UI类似的外观。
+对于在视图中使用的库，目前没有任何限制。换言之，您可以使用jQuery、Underscore、React、Angular、Bootstrap或其他变量。 但是，仍建议使扩展具有与UI类似的外观。
 
 建议将所有与视图相关的文件（HTML、CSS、JavaScript）放置在与库模块文件分离的单个子目录中。在 `extension.json`，则可以描述此视图子目录的位置。 然后，平台将从其Web服务器中提供此子目录（仅此子目录）。
 

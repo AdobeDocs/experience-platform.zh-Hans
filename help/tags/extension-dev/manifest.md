@@ -2,9 +2,9 @@
 title: 扩展清单
 description: 了解如何配置JSON清单文件，以告知Adobe Experience Platform如何正确使用您的扩展。
 exl-id: 7cac020b-3cfd-4a0a-a2d1-edee1be125d0
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '2647'
+source-wordcount: '2645'
 ht-degree: 76%
 
 ---
@@ -120,7 +120,7 @@ ht-degree: 76%
     </tr>
     <tr>
       <td><code>categoryName</code> <em>（可选）</em></td>
-      <td>提供时， <code>displayName</code> 将列在 <code>categoryName</code> 在数据收集UI中。 所有具有相同 <code>categoryName</code> 的类型都将列在同一类别下。例如，如果您的扩展提供了 <code>keyUp</code> 事件类型和 <code>keyDown</code> 事件类型，并且它们都具有 <code>categoryName</code> <code>Keyboard</code>，那么当用户在构建规则时从可用事件类型列表中进行选择时，这两个事件类型都会列在 Keyboard 类别下。<code>categoryName</code> 的值应当可供用户读取。</td>
+      <td>提供该属性后，<code>displayName</code> 将会列在 用户界面中的 <code>categoryName</code> 下方。所有具有相同 <code>categoryName</code> 的类型都将列在同一类别下。例如，如果您的扩展提供了 <code>keyUp</code> 事件类型和 <code>keyDown</code> 事件类型，并且它们都具有 <code>categoryName</code> <code>Keyboard</code>，那么当用户在构建规则时从可用事件类型列表中进行选择时，这两个事件类型都会列在 Keyboard 类别下。<code>categoryName</code> 的值应当可供用户读取。</td>
     </tr>
     <tr>
       <td><code>libPath</code></td>

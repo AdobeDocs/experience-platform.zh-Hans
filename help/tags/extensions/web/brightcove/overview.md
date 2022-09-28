@@ -2,9 +2,9 @@
 title: BrightCove视频跟踪扩展概述
 description: 了解Adobe Experience Platform中的BrightCove视频跟踪标记扩展。
 exl-id: d27eff21-2abf-4495-8382-08cab32742e0
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '915'
+source-wordcount: '908'
 ht-degree: 37%
 
 ---
@@ -100,7 +100,7 @@ Adobe Experience Platform中的每个标记属性都需要在“扩展”屏幕�
 
 >[!TIP]
 >
->对于那些可能不希望为每个视频元素配置多个eVar或prop的用户，可以使用替代方法。 可以在数据收集UI中连接数据元素值。 接下来，使用分类规则生成器工具将它们解析到分类报表中。 请参阅 [分类规则生成器工具](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html) 文档以了解更多信息。 最后，它们将作为区段在Analysis Workspace中应用。
+>对于那些可能不希望为每个视频元素配置多个eVar或prop的用户，数据元素值会连接为替代方法。 接下来，使用分类规则生成器工具将它们解析到分类报表中。 请参阅 [分类规则生成器工具](https://experienceleague.adobe.com/docs/analytics/components/classifications/classifications-rulebuilder/classification-rule-builder.html) 文档以了解更多信息。 最后，它们将作为区段在Analysis Workspace中应用。
 >
 >为此，请创建一个名为类似“Video MetaData”的新数据元素，然后对其进行编程以提取所有视频数据元素（上面列出），并将它们连接在一起。
 

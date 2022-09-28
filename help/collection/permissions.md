@@ -2,9 +2,9 @@
 title: Experience Platform中数据收集的权限管理
 description: 有关如何管理权限和控制对Adobe Experience Platform中数据收集功能的访问的高级概述。
 exl-id: 8426d54b-ec1d-475a-a769-f45a8c924fe7
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '1311'
+source-wordcount: '1309'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 ## 快速入门
 
-要配置数据收集的访问控制，您必须对具有与Adobe Experience Platform数据收集产品集成的组织具有管理员权限。 可以授予或撤销权限的最低角色是产品配置文件管理员。 其他可以管理权限的管理员角色包括产品管理员（可以管理产品中的所有配置文件）和系统管理员（无限制）。 请参阅 [管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html) 有关详细信息，请参阅Adobe企业管理指南。
+要配置数据收集的访问控制，您必须对具有与Adobe Experience Platform数据收集产品集成的组织具有管理员权限。 可授予或撤回权限的最低角色是 **产品配置文件管理员**. 其他可以管理权限的管理员角色包括 **产品管理员** （可以管理产品中的所有配置文件）和 **系统管理员** （无限制）。 请参阅 [管理角色](https://helpx.adobe.com/enterprise/using/admin-roles.html) 有关详细信息，请参阅Adobe企业管理指南。
 
 本指南假定您熟悉产品配置文件等基本Admin Console概念，以及它们如何向个人用户和组授予产品权限。 有关更多信息，请参阅 [Admin Console用户指南](https://helpx.adobe.com/cn/enterprise/using/admin-console.html).
 
@@ -137,4 +137,4 @@ Adobe Experience Platform数据收集下的权限控制对标记和事件转发�
 
 ## 后续步骤
 
-本指南介绍了数据收集UI的可用权限以及如何通过Admin Console管理这些权限。 有关管理其他Adobe Experience Platform功能的权限的更多信息，请参阅 [访问控制文档](../access-control/home.md).
+本指南介绍了数据收集的可用权限以及如何通过Admin Console管理这些权限。 有关管理其他Adobe Experience Platform功能的权限的更多信息，请参阅 [访问控制文档](../access-control/home.md).

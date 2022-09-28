@@ -2,10 +2,10 @@
 title: 快速入门指南
 description: 了解如何在Adobe Experience Platform中快速启动和运行标记。
 exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '1532'
-ht-degree: 42%
+source-wordcount: '1527'
+ht-degree: 43%
 
 ---
 
@@ -31,13 +31,13 @@ ht-degree: 42%
 
 标记已与您的Adobe ID完全集成。 用户权限通过Admin Console与 [!DNL Creative Cloud], [!DNL Document Cloud]和Experience Cloud。
 
-标记具有基于权限的用户管理系统。 这意味着必须明确授予个人权限。 这些权限会分配给组，然后会将用户添加到相应的组，从而获取访问权限。即使贵组织有权访问数据收集UI，个人用户仍必须等待组织管理员向其明确授予一些权限，否则将无法执行任何操作。
+标记具有基于权限的用户管理系统。 这意味着必须明确授予个人权限。 这些权限会分配给组，然后会将用户添加到相应的组，从而获取访问权限。即使贵组织有权访问数据收集，个人用户仍必须等待管理员向其明确授予一些权限，否则将无法执行任何操作。
 
-有关如何为标记创建组和添加用户的详细说明，请参阅 [用户权限](../ui/administration/user-permissions.md) 文档。
+有关如何为标记创建组和添加用户的详细说明，请参阅 [数据收集权限指南](../../collection/permissions.md).
 
 ## 2. 登录
 
-将标记权限添加到Adobe ID后，您需要登录到数据收集UI。 为此，您可以直接导航到 [Experience Cloud登录屏幕](https://experiencecloud.adobe.com)，然后从快速访问选项卡中选择数据收集UI 。
+将标记权限添加到Adobe ID后，您需要登录到Experience PlatformUI或数据收集UI。 为此，您可以直接导航到 [Experience Cloud登录屏幕](https://experience.adobe.com/)，然后选择 **[!UICONTROL 数据收集]** 或 **[!UICONTROL Experience Platform]**.
 
 >[!NOTE]
 >
@@ -45,7 +45,7 @@ ht-degree: 42%
 
 ## 3. 创建资产
 
-登录数据收集UI后，首要任务便是创建资产。 资产基本上就是一个容器，在将标记部署到网站时可在其中填充扩展、规则、数据元素和库。很多人会为想要在其中部署同一组标记的每个网站（或一组密切相关的网站）创建一个资产。
+登录UI后，首要任务便是创建资产。 资产基本上就是一个容器，在将标记部署到网站时可在其中填充扩展、规则、数据元素和库。很多人会为想要在其中部署同一组标记的每个网站（或一组密切相关的网站）创建一个资产。
 
 有关创建资产的更多信息，请参阅[创建资产](../ui/administration/companies-and-properties.md)。
 
@@ -67,7 +67,7 @@ Platform中的标记之所以真正独特，是因为这些扩展可由任何人
 * 会话和本地存储
 * 任何其他内容
 
-定义数据元素后，您可以在数据收集UI中的任意位置对任何扩展使用该元素。 请参阅 [数据元素](../ui/managing-resources/data-elements.md) 以了解更多详细信息。
+定义数据元素后，您可以在UI中的任意位置对任何扩展使用该元素。 请参阅 [数据元素](../ui/managing-resources/data-elements.md) 以了解更多详细信息。
 
 **规则**&#x200B;处于实施的逻辑核心，可控制您网站上所有标记的内容、时间、位置和方式。定义事件、设置条件和例外，然后定义操作和顺序。最后，发布您所做的更改以查看结果。有关更多信息，请参阅[规则](../ui/managing-resources/rules.md)。
 

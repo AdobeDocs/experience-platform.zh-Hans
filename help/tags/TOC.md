@@ -5,10 +5,10 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '402'
-ht-degree: 67%
+source-wordcount: '401'
+ht-degree: 68%
 
 ---
 
@@ -19,7 +19,7 @@ ht-degree: 67%
 * 快速入门{#get-started}
    * [快速入门指南](./quick-start/quick-start.md)
    * [实施指南](./quick-start/implementation-guides.md)
-* 数据收集UI {#ui}
+* UI指南 {#ui}
    * [概述](./ui/managing-resources/overview.md)
    * 扩展 {#extensions}
       * [概述](./ui/managing-resources/extensions/overview.md)

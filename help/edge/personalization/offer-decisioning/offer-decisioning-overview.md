@@ -3,9 +3,9 @@ title: 将Offer decisioning与Platform Web SDK结合使用
 description: Adobe Experience Platform Web SDK可以提供和渲染在Offer decisioning中管理的个性化选件。 您可以使用Offer decisioningUI或API创建选件和其他相关对象。
 keywords: offer decisioning；决策；Web SDK;Platform Web SDK；个性化选件；提供选件；选件交付；选件个性化；
 exl-id: 4ab51f9d-3c44-4855-b900-aa2cde673a9a
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '870'
+source-wordcount: '865'
 ht-degree: 5%
 
 ---
@@ -65,7 +65,7 @@ Adobe Experience Platform [!DNL Web SDK] 可以提供和渲染在Offer decisioni
 
    ![offer-decisioning-edge-config](./assets/offer-decisioning-edge-config.png)
 
-1. 按照 [安装SDK](../../fundamentals/installing-the-sdk.md) (SDK可以独立安装，也可以通过 [数据收集UI](https://experience.adobe.com/#/data-collection/). 请参阅 [标记快速入门指南](../../../tags/quick-start/quick-start.md))以了解更多信息。
+1. 按照 [安装SDK](../../fundamentals/installing-the-sdk.md) (SDK可以独立安装，也可以通过UI进行安装。 请参阅 [标记快速入门指南](../../../tags/quick-start/quick-start.md))以了解更多信息。
 1. [配置SDK](../../fundamentals/configuring-the-sdk.md) offer decisioning。 下面提供了其他Offer decisioning特定步骤。
 
    * 安装独立SDK

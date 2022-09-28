@@ -3,9 +3,9 @@ title: 安装Adobe Experience Platform Web SDK
 description: 了解如何安装Experience PlatformWeb SDK。
 keywords: Web SDK安装；安装Web SDK;Internet Explorer;promise;npm包
 exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '920'
+source-wordcount: '924'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 使用Adobe Experience Platform Web SDK的方法有三种：
 
-1. 使用Adobe Experience Platform Web SDK的首选方式是通过数据收集UI。
+1. 使用Adobe Experience Platform Web SDK的首选方式是通过数据收集UI或Experience PlatformUI。
 1. Adobe Experience Platform Web SDK还可在内容交付网络(CDN)上提供，供您使用。
 1. 使用用于导出EcmaScript 5和EcmaScript 2015(ES6)模块的NPM库。
 

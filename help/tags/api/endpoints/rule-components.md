@@ -2,9 +2,9 @@
 title: 规则组件端点
 description: 了解如何在Reactor API中对/rule_components端点进行调用。
 exl-id: 8a878a89-7f41-45fc-88f3-17f0f743e29c
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '1207'
+source-wordcount: '1205'
 ht-degree: 6%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 6%
 
 >[!NOTE]
 >
->本文档介绍如何在Reactor API中管理规则组件。 有关如何与数据收集UI中的规则和规则组件进行交互的详细信息，请参阅 [UI指南](../../ui/managing-resources/rules.md).
+>本文档介绍如何在Reactor API中管理规则组件。 有关如何与UI中的规则和规则组件进行交互的详细信息，请参阅 [UI指南](../../ui/managing-resources/rules.md).
 
 规则组件有三种基本类型：
 

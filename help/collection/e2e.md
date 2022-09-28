@@ -2,9 +2,9 @@
 title: 数据收集端到端概述
 description: 简要概述如何使用Adobe Experience Platform的数据收集功能将事件数据发送到Adobe Experience Cloud解决方案。
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '2606'
+source-wordcount: '2619'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,8 @@ Adobe Experience Platform会收集您的数据并将其传输到其他Adobe产�
 >[!NOTE]
 >
 >如果您不想使用标记，也可以选择手动安装和配置SDK，但周边步骤仍必须完成，如下所述。
+>
+>还可以在Experience PlatformUI中执行涉及数据收集UI的所有步骤。
 
 ## 先决条件
 
@@ -57,7 +59,7 @@ Adobe Experience Platform会收集您的数据并将其传输到其他Adobe产�
 >
 >XDM模式是可以非常自定义的。 下面概述的步骤不是过于明确，而是专门针对Web SDK的架构要求。 在这些参数之外，您可以根据需要定义数据的其余结构。
 
-在数据收集UI中，选择 **[!UICONTROL 模式]** 中。 从此处，您可以看到属于贵组织的先前创建的架构列表。 要继续，请选择 **[!UICONTROL 创建架构]**，然后选择 **[!UICONTROL XDM ExperienceEvent]** 下拉菜单中。
+在UI中，选择 **[!UICONTROL 模式]** 中。 从此处，您可以看到属于贵组织的先前创建的架构列表。 要继续，请选择 **[!UICONTROL 创建架构]**，然后选择 **[!UICONTROL XDM ExperienceEvent]** 下拉菜单中。
 
 ![模式工作区](./images/e2e/schemas.png)
 
@@ -97,7 +99,7 @@ Adobe Experience Platform会收集您的数据并将其传输到其他Adobe产�
 >
 >如果您想使用 [事件转发](../tags/ui/event-forwarding/overview.md) （假定贵组织已获得该功能的许可），则必须为数据流启用该功能，其方式与启用Adobe产品相同。 有关此过程的详细信息，请参阅 [稍后部分](#event-forwarding).
 
-在数据收集UI中，选择 **[!UICONTROL 数据流]**. 在此，您可以从列表中选择要编辑的现有数据流，也可以通过选择 **[!UICONTROL 新数据流]**.
+选择 **[!UICONTROL 数据流]** 中。 在此，您可以从列表中选择要编辑的现有数据流，也可以通过选择 **[!UICONTROL 新数据流]**.
 
 ![数据流](./images/e2e/datastreams.png)
 

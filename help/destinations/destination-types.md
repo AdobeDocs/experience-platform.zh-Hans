@@ -3,9 +3,9 @@ keywords: 目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中的不同目标类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '642'
+source-wordcount: '640'
 ht-degree: 0%
 
 ---
@@ -69,7 +69,7 @@ Experience Platform中的边缘个性化目标包括 [Adobe Target](/help/destin
 
 ## 扩展 {#extensions}
 
-平台利用标签管理的强大功能和灵活性，允许您在数据收集UI中配置标签扩展。
+平台利用标签管理的强大功能和灵活性，允许您在UI中配置标签扩展。
 
 >[!TIP]
 >

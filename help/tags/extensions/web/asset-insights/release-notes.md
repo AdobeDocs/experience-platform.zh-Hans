@@ -2,10 +2,10 @@
 title: AEM资产分析扩展的发行说明
 description: Adobe Experience Platform中AEM资产分析标记扩展的最新发行说明。
 exl-id: cee35b44-2249-47c6-80d6-8b4eaa9802df
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '137'
-ht-degree: 42%
+source-wordcount: '134'
+ht-degree: 43%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 42%
 
 - 这项扩展旨在与 AEM 资产分析结合使用。
 - 更具体地说，它可以替换 ***pageTracker*** 进程和嵌入代码。
-- 在数据收集UI中进行配置后，这项扩展会向Adobe Analytics发送AEM资产“展示次数”和“单击次数”量度，随后，这些量度将自动导入回AEM的资产分析报表。
+- 配置并激活后，这项扩展会向Adobe Analytics发送AEM资产“展示次数”和“单击次数”量度，随后，这些量度将自动导入回AEM的资产分析报表。
 
 **错误修复**
 

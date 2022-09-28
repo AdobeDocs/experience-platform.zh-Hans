@@ -1,10 +1,10 @@
 ---
 title: 在事件转发中配置密钥
-description: 了解如何在数据收集UI中配置密钥，以对事件转发属性中使用的端点进行身份验证。
+description: 了解如何在UI中配置密钥，以对事件转发属性中使用的端点进行身份验证。
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '1637'
+source-wordcount: '1633'
 ht-degree: 0%
 
 ---
@@ -32,13 +32,13 @@ ht-degree: 0%
 
 ## 先决条件
 
-本指南假定您已经熟悉如何在数据收集UI中管理标记和事件转发的资源，包括如何创建数据元素和事件转发规则。 请参阅 [管理资源](../managing-resources/overview.md) 如果您需要介绍。
+本指南假定您已经熟悉如何在UI中管理标记和事件转发的资源，包括如何创建数据元素和事件转发规则。 请参阅 [管理资源](../managing-resources/overview.md) 如果您需要介绍。
 
 您还应该对标记和事件转发的发布流程有一定的了解，包括如何向库添加资源并将内部版本安装到您的网站上以进行测试。 请参阅 [发布概述](../publishing/overview.md) 以了解更多详细信息。
 
 ## 创建密钥 {#create}
 
-要创建密钥，请登录到数据收集UI，然后打开要在下添加密钥的事件转发属性。 接下来，选择 **[!UICONTROL 秘密]** 在左侧导航中，然后是 **[!UICONTROL 创建新密钥]**.
+要创建密钥，请选择 **[!UICONTROL 事件转发]** 在左侧导航中，打开要在下添加密钥的事件转发属性。 接下来，选择 **[!UICONTROL 秘密]** 在左侧导航中，然后是 **[!UICONTROL 创建新密钥]**.
 
 ![创建新密钥](../../images/ui/event-forwarding/secrets/create-new-secret.png)
 
@@ -87,7 +87,7 @@ ht-degree: 0%
 
 ### [!UICONTROL OAuth 2] {#oauth2}
 
-要创建OAuth 2密钥，请选择 **[!UICONTROL OAuth 2]** 从 **[!UICONTROL 类型]** 下拉列表。 在下面显示的字段中，提供 [[!UICONTROL 客户端ID] 和 [!UICONTROL 客户端密钥]](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)，以及 [[!UICONTROL 令牌URL]](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) 的OAuth集成。 的 [!UICONTROL 令牌URL] 数据收集UI中的字段是授权服务器主机和令牌路径之间的串联。
+要创建OAuth 2密钥，请选择 **[!UICONTROL OAuth 2]** 从 **[!UICONTROL 类型]** 下拉列表。 在下面显示的字段中，提供 [[!UICONTROL 客户端ID] 和 [!UICONTROL 客户端密钥]](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)，以及 [[!UICONTROL 令牌URL]](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) 的OAuth集成。 的 [!UICONTROL 令牌URL] UI中的字段是授权服务器主机和令牌路径之间的串联。
 
 ![OAuth 2密钥](../../images/ui/event-forwarding/secrets/oauth-secret-1.png)
 
@@ -180,4 +180,4 @@ ht-degree: 0%
 
 ## 后续步骤
 
-本指南介绍了如何在数据收集UI中管理密钥。 有关如何使用Reactor API与密钥交互的信息，请参阅 [secrets endpoint指南](../../api/endpoints/secrets.md).
+本指南介绍了如何在UI中管理密钥。 有关如何使用Reactor API与密钥交互的信息，请参阅 [secrets endpoint指南](../../api/endpoints/secrets.md).

@@ -5,9 +5,9 @@ title: 数据收集概述
 topic-legacy: overview
 description: 了解与收集Adobe Experience Platform中客户体验数据相关的各种技术。
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '469'
 ht-degree: 4%
 
 ---
@@ -38,7 +38,7 @@ Adobe Experience Platform提供了一套技术，允许您从客户端源收集�
 
 ## 标记、Web SDK和Mobile SDK
 
-Platform Web SDK和Platform Mobile SDK分别折叠所有Adobe产品库并将其压缩为适用于Web平台和移动平台的单个开发工具包。 这些功能可以使用原始代码或使用 [标记](../tags/home.md) 通过数据收集UI。
+Platform Web SDK和Platform Mobile SDK分别折叠所有Adobe产品库并将其压缩为适用于Web平台和移动平台的单个开发工具包。 这些功能可以使用原始代码或使用 [标记](../tags/home.md) 通过数据收集UI或Adobe Experience Platform UI。
 
 压缩这些库可加快数据收集速度，并将操作整合到从客户端设备到平台边缘网络的单个流中。
 

@@ -2,9 +2,9 @@
 title: 发布流程
 description: 了解在Adobe Experience Platform中创建库、测试内部版本并批准这些版本以用于生产的过程。
 exl-id: 4885f60b-6401-4ec7-aa1a-29c135087847
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '1499'
+source-wordcount: '1490'
 ht-degree: 36%
 
 ---
@@ -112,7 +112,7 @@ Adobe Experience Platform中的标记发布流程是指创建库、测试内部�
 
 ![](./images/approval-workflow/upstream.png)
 
-在数据收集UI中编辑库时，所有从上游继承的资源都显示在 **[!UICONTROL 上游资源]** 中。 要查看这些资源，请选择展开部分标题下的选项卡。
+在UI中编辑库时，所有从上游继承的资源都显示在 **[!UICONTROL 上游资源]** 中。 要查看这些资源，请选择展开部分标题下的选项卡。
 
 ![](./images/approval-workflow/upstream-collapse.png)
 

@@ -3,9 +3,9 @@ keywords: Advertising Cloud;advertising cloud扩展；advertising cloud目标
 title: Adobe Advertising Cloud扩展
 description: Adobe Advertising Cloud扩展是Adobe Experience Platform的一个广告目的地。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 3415a85f-5678-4f5b-b7cf-e185a66d084f
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '440'
+source-wordcount: '442'
 ht-degree: 3%
 
 ---
@@ -26,7 +26,7 @@ Adobe Advertising Cloud是Adobe Experience Platform的一个广告扩展。
 
 目标目录中提供的这项扩展适用于已购买平台的所有客户。
 
-要使用此扩展，您需要访问Platform中的标记。 标记作为内置增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取数据收集UI的访问权限，并要求他们授予您 **[!UICONTROL manage_properties]** 权限，以便安装扩展。
+要使用此扩展，您需要访问Platform中的标记。 标记作为内置增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取UI中数据收集功能的访问权限，并要求他们授予您 **[!UICONTROL manage_properties]** 权限，以便安装扩展。
 
 ## 安装扩展 {#install-extension}
 

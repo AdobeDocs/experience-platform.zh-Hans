@@ -3,10 +3,10 @@ title: 事件转发入门
 description: 请按照此分步教程，开始使用Adobe Experience Platform中的事件转发。
 feature: Event Forwarding
 exl-id: f82bfac9-dc2d-44de-a308-651300f107df
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '907'
-ht-degree: 30%
+source-wordcount: '872'
+ht-degree: 26%
 
 ---
 
@@ -54,7 +54,7 @@ ht-degree: 30%
 
 ## 创建事件转发属性
 
-在数据收集UI中，创建类型为“Edge”的属性。
+在 **[!UICONTROL 标记]** 工作区，创建类型的属性 **[!UICONTROL Edge]**.
 
 1. 选择 **[!UICONTROL 新建资产]**.
 
@@ -70,22 +70,18 @@ ht-degree: 30%
 
 要在Adobe Experience Platform中创建数据流，请使用在创建事件转发属性时生成的环境ID。
 
-1. 使用数据收集UI左边栏中的链接打开数据流界面。
-
-1. 选择 **[!UICONTROL 数据流]**.
+1. 选择 **[!UICONTROL 数据流]** 中。
 
 1. 对配置进行命名并提供描述（可选）。
 该描述有助于在包含多个配置的列表中识别配置。
 
 1. 选择&#x200B;**[!UICONTROL 保存]**。
 
-
-
 ## 启用事件转发
 
 接下来，配置边缘网络以将数据发送到事件转发和其他Adobe产品。
 
-1. 在数据流UI中，选择您创建的属性。
+1. 在 **[!UICONTROL 数据流]** 工作区中，选择您创建的属性。
 
 1. 选择 Development、Production 或 Staging 环境。
 
@@ -101,17 +97,9 @@ ht-degree: 30%
 
 ## 配置Platform Web SDK扩展，以将数据发送到之前创建的数据流
 
-在数据收集UI中创建您的资产，然后使用Adobe Experience Platform Web SDK扩展对其进行配置。
+在 **[!UICONTROL 标记]** 工作区，然后导航到 **[!UICONTROL 扩展]** ，然后从目录中选择Experience PlatformWeb SDK扩展以对其进行配置和安装。
 
-1. 命名资产。
-
-   您可以有多个 Alloy 实例。例如，您可能具有不同的付费墙前和付费墙后跟踪资产。
-
-1. 选择组织 ID。
-
-1. 选择 Edge Domain。
-
-有关更多配置，请参阅 [Web SDK 扩展文档](../../extensions/web/sdk/overview.md)。
+请参阅 [Web SDK扩展文档](../../extensions/web/sdk/overview.md) 以了解有关配置选项的详细信息。
 
 ## 创建标记规则以将数据发送到Platform Web SDK
 

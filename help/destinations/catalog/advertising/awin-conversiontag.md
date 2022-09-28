@@ -3,9 +3,9 @@ keywords: Awin广告商转化标签扩展；转化标签；Awin;AWIN
 title: Awin广告商转化标记扩展
 description: Awin广告商转化标签扩展是Adobe Experience Platform中的一个广告目标。 有关扩展功能的更多信息，请参阅Exchange上的扩展页面Adobe。
 exl-id: 99feb169-acf3-4e68-8785-3f4cf565e5a9
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '506'
 ht-degree: 3%
 
 ---
@@ -26,7 +26,7 @@ Awin广告商转化标记是Adobe Experience Platform中的一项广告扩展。
 
 目标目录中提供的这项扩展适用于已购买平台的所有客户。
 
-要使用此扩展，您需要访问Platform中的标记。 标记作为内置增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取数据收集UI的访问权限，并要求他们授予您 **[!UICONTROL manage_properties]** 权限，以便安装扩展。
+要使用此扩展，您需要访问Platform中的标记。 标记作为内置增值功能提供给Adobe Experience Cloud客户。 请联系您的组织管理员以获取UI中数据收集功能的访问权限，并要求他们授予您 **[!UICONTROL manage_properties]** 权限，以便安装扩展。
 
 ## 安装扩展 {#install-extension}
 

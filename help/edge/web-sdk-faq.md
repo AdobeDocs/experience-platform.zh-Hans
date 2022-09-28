@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK常见问题解答
 description: 获取有关Adobe Experience Platform Web SDK的常见问题解答。
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '1935'
+source-wordcount: '1934'
 ht-degree: 1%
 
 ---
@@ -82,7 +82,7 @@ Alloy是Adobe Experience Platform Web SDK的代码名称。 它在SDK的源代�
 
 ## 客户是否需要购买Adobe Experience Platform才能使用 [!DNL Web SDK]?
 
-不会。任何AdobeDigital Experience客户都可以免费使用Adobe Experience Platform Web SDK。 希望使用 [!DNL Web SDK] 将需要在Adobe Experience Platform数据收集UI中配置正确的权限，以创建架构、数据集、身份命名空间和数据流。
+不会。任何AdobeDigital Experience客户都可以免费使用Adobe Experience Platform Web SDK。 希望使用 [!DNL Web SDK] 将需要在数据收集UI或Experience PlatformUI中配置正确的权限，以创建架构、数据集、身份命名空间和数据流。
 
 有关配置这些权限的更多信息，请参阅 [数据收集权限管理](https://experienceleague.adobe.com/docs/experience-platform/collection/permissions.html?lang=en).
 
@@ -135,7 +135,7 @@ Web SDK正在快速发展。 正在处理更多用例。 您可以在 [此处当
 
 但是:
 
-* Adobe Experience Platform Web SDK需要称为数据流ID的内容，以便边缘网络能够识别该流并确定如何处理数据。 此ID是在Experience Platform中创建的。 这并不意味着您必须使用数据收集UI来创建属性或部署JavaScript代码，但是您确实需要使用标记来创建配置ID。
+* Adobe Experience Platform Web SDK需要称为数据流ID的内容，以便边缘网络能够识别该流并确定如何处理数据。 此ID是在Experience Platform中创建的。 这并不意味着您必须使用UI创建属性或部署JavaScript代码，但是您确实需要使用标记来创建配置ID。
 
 * 标记不仅是最佳的可用标记和SDK管理器，而且易于部署 `alloy.js` 并将数据映射到XDM模式。 如果决定不使用标记，则必须管理部署 `alloy.js`，以及在发送数据之前将其映射到XDM。 这是 _多_ 比使用标记更加困难的过程。
 

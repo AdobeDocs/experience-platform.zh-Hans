@@ -2,9 +2,9 @@
 title: 环境
 description: 了解标记环境的概念及其在Adobe Experience Platform中的工作方式。
 exl-id: 0bf641c9-412e-4737-9b76-232d980385b2
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '1468'
+source-wordcount: '1464'
 ht-degree: 73%
 
 ---
@@ -91,7 +91,7 @@ ht-degree: 73%
 
 ![](./images/environments/select-host.png)
 
-创建内部版本后，该内部版本将传递到您为分配的主机指定的位置。 有关如何在数据收集UI中创建和配置主机的信息，请参阅 [主机概述](./hosts/hosts-overview.md).
+创建内部版本后，该内部版本将传递到您为分配的主机指定的位置。 有关如何创建和配置标记主机的信息，请参阅 [主机概述](./hosts/hosts-overview.md).
 
 ### 存档设置 {#archive}
 

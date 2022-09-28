@@ -2,9 +2,9 @@
 title: 扩展包端点
 description: 了解如何在Reactor API中调用/extension_packages端点。
 exl-id: a91c6f32-6c72-4118-a43f-2bd8ef50709f
-source-git-commit: 0c2ee3bbb4d85bd755b4847a509fc7bd50ba67bc
+source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
 workflow-type: tm+mt
-source-wordcount: '951'
+source-wordcount: '956'
 ht-degree: 5%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 5%
 
 扩展包表示 [扩展](./extensions.md) 由扩展开发人员创作。 扩展包定义了可用于标记用户的其他功能。 通常，这些功能以 [规则组件](./rule-components.md) （事件、条件和操作）和 [数据元素](./data-elements.md)，但也可以包括主模块和共享模块。
 
-扩展包显示在数据收集UI的扩展目录中，供用户安装。 通过创建带有扩展包链接的扩展，可向资产添加扩展包，以完成此操作。
+扩展包显示在数据收集UI和Adobe Experience Platform UI中的扩展目录中，供用户安装。 通过创建带有扩展包链接的扩展，可向资产添加扩展包，以完成此操作。
 
 扩展包属于 [公司](./companies.md) 创建者。
 
