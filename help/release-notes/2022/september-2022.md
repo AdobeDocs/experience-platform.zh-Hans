@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: 61b3799a4d8c8b6682babd85b6f50a7e69778553
+source-git-commit: 5f79b10306f74db75b25654ca51969ea69e38299
 workflow-type: tm+mt
-source-wordcount: '2326'
+source-wordcount: '2539'
 ht-degree: 5%
 
 ---
@@ -22,9 +22,11 @@ Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Artificial Intelligence and Machine Learning Services]](#ai-and-ml-services)
 - [审核日志](#audit-logs)
+- [[!DNL Dashboards]](#dashboards)
 - [数据收集](#data-collection)
 - [体验数据模型(XDM)](#xdm)
 - [Identity Service](#identity-service)
+- [查询服务](#query-service)
 - [源](#sources)
 
 ## 基于属性的访问控制 {#abac}
@@ -106,7 +108,17 @@ Experience Platform允许您审核用户活动以获取各种服务和功能。 
 
 有关平台中由审核日志跟踪的不同特定于资源的事件类型的更多信息，请参阅 [审核日志概述](../../landing/governance-privacy-security/audit-logs/overview.md).
 
-## 数据收集
+## [!DNL Dashboards] {#dashboards}
+
+Adobe Experience Platform提供了多个功能板，您可以通过这些功能板查看有关组织数据的重要分析（在每日快照中捕获）。
+
+| 功能 | 描述 |
+| --- | --- |
+| 使用中标签 | 在小组件库中查看时，使用中的标签可轻松识别功能板中是否存在现有小组件。 这样可以轻松避免重复，不过您仍可以根据需要多次添加同一小组件。 |
+
+有关 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
+
+## 数据收集 {#data-collection}
 
 Adobe Experience Platform提供了一套技术，允许您收集客户端客户体验数据，并将其发送到Adobe Experience Platform边缘网络，以便对其进行扩充、转换和分发到Adobe或非Adobe目标。
 
@@ -178,6 +190,19 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 | 支持删除数据集 | 现在，在通过 [目录服务API](https://developer.adobe.com/experience-platform-apis/references/catalog/)、用户界面或数据卫生。 阅读 [删除UI中的数据集](../../catalog/datasets/user-guide.md#delete-a-dataset) 以了解更多信息。 |
 
 要了解有关Identity Service的更多信息，请阅读 [Identity Service概述](../../identity-service/home.md).
+
+## 查询服务 {#query-service}
+
+查询服务允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL Data Lake]. 您可以连接 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、Data Science Workspace或摄取到实时客户资料。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 警报订阅API | Adobe Experience Platform查询服务允许您订阅临时查询和计划查询的警报。 警报可通过电子邮件、在Platform UI中或同时通过两者接收。 目前，查询警报只能使用 [查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/). |
+| 数据集示例 | 查询服务数据集示例使您能够对大数据进行探索性查询，并大大缩短了处理时间，同时也降低了查询准确性。 |
+
+有关 [!DNL Query Service]，请参阅 [[!DNL Query Service] 概述](../../query-service/home.md).
 
 ## 源 {#sources}
 
