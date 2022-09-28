@@ -5,9 +5,9 @@ title: 源连接器概述
 topic-legacy: overview
 description: Adobe Experience Platform允许从外部源摄取数据，同时让您能够使用Platform服务来构建、标记和增强传入数据。 您可以从各种源摄取数据，如Adobe应用程序、基于云的存储、数据库和许多其他源。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: b732fa1f4afb71e7b8c3276335b371d0f8ef888d
+source-git-commit: 552d8412067503847a6c9e4ffcf1aa18710dfbdd
 workflow-type: tm+mt
-source-wordcount: '1024'
+source-wordcount: '1094'
 ht-degree: 0%
 
 ---
@@ -169,7 +169,15 @@ Experience Platform支持从第三方协议系统摄取数据。 有关特定源
 | **[!UICONTROL 管理源]** 开 | 除了 **[!UICONTROL 查看源]**，授予访问权限 **[!UICONTROL 连接源]** 选项 **[!UICONTROL 目录]** 和 **[!UICONTROL 选择数据]** 选项 **[!UICONTROL 浏览]**. **[!UICONTROL 管理源]** 还允许您启用或禁用 **[!UICONTROL 数据流]** 并编辑其计划。 |
 | **[!UICONTROL 查看源]** 关闭和 **[!UICONTROL 管理源]** 关闭 | 撤消对源的所有访问权限。 |
 
-有关通过Admin Console授予的可用权限（包括这四个来源）的更多信息，请参阅 [访问控制概述](../access-control/home.md).
+有关通过Adobe权限授予的可用权限的更多信息，请阅读 [访问控制概述](../access-control/home.md).
+
+### 基于属性的源访问控制
+
+通过Adobe Experience Platform中基于属性的访问控制，管理员可以基于属性控制对特定对象和/或功能的访问。
+
+通过基于属性的访问控制，您可以将映射配置应用到您有权访问的字段。 此外，如果您无权访问数据集中的所有字段，则无法将数据摄取到数据集。
+
+有关基于属性的访问控制的更多信息，请阅读 [基于属性的访问控制概述](../access-control/abac/overview.md).
 
 ## 条款和条件 {#terms-and-conditions}
 
