@@ -1,20 +1,17 @@
 ---
 title: 客户数据平台(CDP)分析数据模型
 description: 了解如何使用CDP分析数据模型中的SQL查询来针对您的营销和KPI用例自定义您自己的CDP报告。
-source-git-commit: 62e282138de8cf2d74b4a62f4ced39e3fb78001a
+exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
+source-git-commit: 2c96bfd2c1b541d30a72fcf2bac414ee06607456
 workflow-type: tm+mt
-source-wordcount: '1084'
+source-wordcount: '1066'
 ht-degree: 0%
 
 ---
 
-# （测试版）客户数据平台(CDP)分析数据模型
+# 客户数据平台(CDP)分析数据模型
 
->[!IMPORTANT]
->
->CDP分析数据模型功能正在测试中。 其功能和文档可能会发生更改。
-
-客户数据平台(CDP)分析数据模型功能公开了数据模型和SQL，它们为各种配置文件、目标和分段小组件提供了分析支持。 您可以自定义这些SQL查询模板，以便为您的营销和关键绩效指标(KPI)用例创建CDP报告。 然后，这些分析可用作已用定义功能板的自定义小组件。
+客户数据平台(CDP)分析数据模型功能公开了数据模型和SQL，它们为各种配置文件、目标和分段小组件提供了分析支持。 您可以自定义这些SQL查询模板，以便为您的营销和关键绩效指标(KPI)用例创建CDP报告。 然后，这些分析可用作用户定义的功能板的自定义小组件。
 
 ## 先决条件
 

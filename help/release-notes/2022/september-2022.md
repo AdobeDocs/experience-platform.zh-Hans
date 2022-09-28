@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: 8813e423cd62de7932052c1e157f86cc3c4165dd
+source-git-commit: 65743c1741210a87b1cc64406412dd7e58218321
 workflow-type: tm+mt
-source-wordcount: '2754'
+source-wordcount: '2979'
 ht-degree: 5%
 
 ---
@@ -116,6 +116,9 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 | 功能 | 描述 |
 | --- | --- |
 | 使用中标签 | 在小组件库中查看时，使用中的标签可轻松识别功能板中是否存在现有小组件。 这样可以轻松避免重复，不过您仍可以根据需要多次添加同一小组件。 |
+| 用户定义的功能板 | 用户定义的功能板使您能够构建和管理自定义功能板，从而帮助加快分析和自定义可视化。 借助用户定义的功能板，您可以创建、添加和编辑定制小组件，以可视化与您的组织相关的关键量度。 阅读 [功能指南](../../dashboards/user-defined-dashboards.md) 以了解更多。 |
+| 客户数据平台分析数据模型 | 客户数据平台(CDP)分析数据模型功能公开了数据模型和SQL，它们为各种配置文件、目标和分段小组件提供了分析支持。 您可以自定义这些SQL查询模板，以便为您的营销和关键绩效指标用例创建CDP报告。 然后，这些分析可用作用户定义的功能板的自定义小组件。 阅读 [CDP Insights Data Model功能指南](../../dashboards/cdp-insights-data-model.md) 以了解更多。 |
+| 受众重叠报表小组件 | 此小组件可同时用于这两个组件 [!UICONTROL 用户档案] 和 [!UICONTROL 区段] 功能板。 报表提供按所选区段的重叠百分比最高或最低排名的受众的有序列表。 从 [!UICONTROL 用户档案] 功能板中，您可以通过从所有可用区段中合并策略来过滤和查看受众重叠。 的 [!UICONTROL 区段] 功能板允许您按特定区段过滤受众重叠。<br>使用此分析可构建新的高性能区段，并避免向不同目标发送相同的受众。 此报表还有助于识别隐藏的分析，以改进分段或查找要查找的独特用户档案。 |
 
 有关 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
 

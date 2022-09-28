@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: f7092a394e0ad72d38bf8616e54789c7b2f1ab00
+source-git-commit: 65743c1741210a87b1cc64406412dd7e58218321
 workflow-type: tm+mt
-source-wordcount: '2539'
-ht-degree: 5%
+source-wordcount: '2796'
+ht-degree: 4%
 
 ---
 
@@ -52,9 +52,9 @@ Adobe Experience Platform提供了一组功能强大的工具来管理大型、�
 
 Adobe Experience Platform的数据卫生功能允许您通过计划自动数据集过期时间以及按身份以编程方式删除消费者数据来清除数据。
 
->[!NOTE]
+>[!IMPORTANT]
 >
->消费者删除功能仅适用于已购买Adobe医疗保健盾或隐私盾的组织。
+>数据卫生功能仅适用于已购买Adobe医疗保健盾或隐私盾的组织。
 
 请参阅以下文档，以开始使用数据卫生：
 
@@ -115,6 +115,9 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 | 功能 | 描述 |
 | --- | --- |
 | 使用中标签 | 在小组件库中查看时，使用中的标签可轻松识别功能板中是否存在现有小组件。 这样可以轻松避免重复，不过您仍可以根据需要多次添加同一小组件。 |
+| 用户定义的功能板 | 用户定义的功能板使您能够构建和管理自定义功能板，从而帮助加快分析和自定义可视化。 借助用户定义的功能板，您可以创建、添加和编辑定制小组件，以可视化与您的组织相关的关键量度。 阅读 [功能指南](../../dashboards/user-defined-dashboards.md) 以了解更多。 |
+| 客户数据平台分析数据模型 | 客户数据平台(CDP)分析数据模型功能公开了数据模型和SQL，它们为各种配置文件、目标和分段小组件提供了分析支持。 您可以自定义这些SQL查询模板，以便为您的营销和关键绩效指标用例创建CDP报告。 然后，这些分析可用作用户定义的功能板的自定义小组件。 阅读 [CDP Insights Data Model功能指南](../../dashboards/cdp-insights-data-model.md) 以了解更多。 |
+| 受众重叠报表小组件 | 此小组件可同时用于这两个组件 [!UICONTROL 用户档案] 和 [!UICONTROL 区段] 功能板。 报表提供按所选区段的重叠百分比最高或最低排名的受众的有序列表。 从 [!UICONTROL 用户档案] 功能板中，您可以通过从所有可用区段中合并策略来过滤和查看受众重叠。 的 [!UICONTROL 区段] 功能板允许您按特定区段过滤受众重叠。<br>使用此分析可构建新的高性能区段，并避免向不同目标发送相同的受众。 此报表还有助于识别隐藏的分析，以改进分段或查找要查找的独特用户档案。 |
 
 有关 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
 
@@ -127,6 +130,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | 功能 | 描述 |
 | --- | --- |
 | Platform UI中的左侧导航集成 | 以前专用于数据收集UI的所有功能（包括标记、事件转发和数据流）现在也可通过Experience Platform中的左侧导航（位于类别下）使用 **[!UICONTROL 数据收集]**. 使用Platform中的数据收集功能时，无需在UI之间切换。 |
+| 标记和事件转发中的用户归因 | 列表可用时 [!UICONTROL 属性] 在标记和事件转发中，每个列出的属性现在都会显示上次更新的时间以及进行更新的用户。 |
 
 {style=&quot;table-layout:auto&quot;}
 
