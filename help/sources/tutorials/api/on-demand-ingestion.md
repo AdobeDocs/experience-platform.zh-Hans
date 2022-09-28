@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；流程服务；
 title: （测试版）使用流量服务API为按需摄取创建流量运行
 description: 本教程介绍了使用流量服务API创建针对按需摄取的流量运行的步骤
 exl-id: a7b20cd1-bb52-4b0a-aad0-796929555e4a
-source-git-commit: 659f99a47b533bba2a6084bc8e235df2a29a6386
+source-git-commit: 61b3799a4d8c8b6682babd85b6f50a7e69778553
 workflow-type: tm+mt
-source-wordcount: '1147'
+source-wordcount: '1157'
 ht-degree: 1%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 1%
 
 流运行表示流执行的实例。 例如，如果某个流量计划在上午9:00 、上午10:00和上午11:00每小时运行一次，那么您将有三个流量运行实例。 流量运行特定于您的特定组织。
 
-按需摄取为您提供了创建针对给定数据流运行的流的功能。 这允许用户根据给定参数创建流程运行，并创建摄取周期，而无需服务令牌。
+按需摄取为您提供了创建针对给定数据流运行的流的功能。 这允许用户根据给定参数创建流程运行，并创建摄取周期，而无需服务令牌。 对按需摄取的支持仅适用于批处理源。
 
 本教程介绍有关如何使用按需摄取和使用 [[!DNL Flow Service] API](https://www.adobe.io/experience-platform-apis/references/flow-service/).
 

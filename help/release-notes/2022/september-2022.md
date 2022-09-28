@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: 3d7a04c0ec6cf6a9bed90c9c22db2e8b56bfa01f
+source-git-commit: 61b3799a4d8c8b6682babd85b6f50a7e69778553
 workflow-type: tm+mt
-source-wordcount: '1827'
-ht-degree: 6%
+source-wordcount: '2326'
+ht-degree: 5%
 
 ---
 
@@ -14,6 +14,7 @@ ht-degree: 6%
 
 Adobe Experience Platform的新增功能：
 
+- [基于属性的访问控制](#abac)
 - [数据卫生](#data-hygiene)
 - [[!UICONTROL 隐私控制台]](#privacy-console)
 
@@ -25,6 +26,23 @@ Adobe Experience Platform 现有功能的更新包括：
 - [体验数据模型(XDM)](#xdm)
 - [Identity Service](#identity-service)
 - [源](#sources)
+
+## 基于属性的访问控制 {#abac}
+
+>[!IMPORTANT]
+>
+>从2022年10月起，将启用基于属性的访问控制。 如果您希望成为早期收养者，请联系您的Adobe代表。
+
+基于属性的访问控制是Adobe Experience Platform的一项功能，它为具有隐私意识的品牌提供了更大的灵活性来管理用户访问权限。 可以将单个对象（如架构字段和区段）分配给用户角色。 此功能允许您为组织中的特定Platform用户授予或撤消对单个对象的访问权限。
+
+通过基于属性的访问控制，贵组织的管理员可以控制用户对所有平台工作流和资源中敏感个人数据(SPD)、个人身份信息(PII)和其他自定义类型数据的访问。 管理员可以定义用户角色，这些用户角色只能访问与这些字段对应的特定字段和数据。
+
+| 功能 | 描述 |
+| --- | --- |
+| 基于属性的访问控制 | 基于属性的访问控制允许您为体验数据模型(XDM)架构字段和区段设置标签，以定义组织或数据使用范围。 同时，管理员可以使用用户和角色管理界面来定义涵盖XDM架构字段和区段的访问策略，以更好地管理提供给用户或组（内部、外部或第三方用户）的访问。 有关更多信息，请参阅 [基于属性的访问控制概述](../../access-control/abac/overview.md). |
+| 权限 | 权限是Experience Cloud区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。 通过“权限”，您可以创建和管理角色，为这些角色分配所需的资源权限，以及构建策略以利用标签并定义哪些用户角色有权访问特定的Platform资源。 权限还允许您管理与特定角色关联的标签、沙箱和用户。 有关更多信息，请参阅 [权限UI指南](../../access-control/abac/ui/browse.md). |
+
+有关基于属性的访问控制的详细信息，请参阅 [基于属性的访问控制概述](../../access-control/abac/overview.md). 有关基于属性的访问控制工作流的全面指南，请阅读 [基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md).
 
 ## 数据卫生 {#data-hygiene}
 
@@ -172,5 +190,9 @@ Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为
 | 功能 | 描述 |
 | --- | --- |
 | Audience Manager区段人口对实时客户资料的影响 | 首次使用Audience Manager源将Audience Manager区段发送到Platform时，大量Audience Manager区段人口的摄取会直接影响用户档案总数。 这意味着选择所有区段可能会导致用户档案计数超过您的许可证使用权限。 有关更多信息，请阅读 [Audience Manager源概述](../../sources/connectors/adobe-applications/audience-manager.md). 有关许可证使用情况的信息，请阅读 [使用许可证使用功能板](../../dashboards/guides/license-usage.md). |
+| 支持Adobe Campaign托管Cloud Service | 使用Adobe Campaign托管Cloud Service源将Adobe Campaign v8.4投放和跟踪日志数据Experience Platform。 阅读 [在UI中创建Adobe Campaign托管Cloud Service源连接](../../sources/tutorials/ui/create/adobe-applications/campaign.md) 以了解更多信息。 |
+| 支持批量源的按需摄取API | 使用按需摄取，通过 [!DNL Flow Service] API。 创建的流量运行必须设置为一次性摄取。 有关更多信息，请阅读 [使用API为按需摄取创建流程运行](../../sources/tutorials/api/on-demand-ingestion.md) 以了解更多信息。 |
+| 支持为批处理源重试失败的数据流运行的API | 使用 `re-trigger` 通过API重试失败的数据流的操作。 阅读 [正在使用API重试失败的数据流运行](../../sources/tutorials/api/retry-flows.md) 以了解更多信息。 |
+| 支持过滤 [!DNL Google BigQuery] 和 [!DNL Snowflake] 来源 | 使用逻辑运算符和比较运算符来筛选 [!DNL Google BigQuery] 和 [!DNL Snowflake] 来源。 有关更多信息，请阅读有关使用API筛选源数据的指南。 |
 
 要进一步了解来源，请阅读 [源概述](../../sources/home.md).
