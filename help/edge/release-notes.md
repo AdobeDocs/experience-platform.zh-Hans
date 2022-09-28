@@ -3,9 +3,9 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK;Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: b12f97a7c5e937a116d86495b3434dd9c0805b04
+source-git-commit: 777a1749670f36abc09e4bacd190b1be17a9a237
 workflow-type: tm+mt
-source-wordcount: '1227'
+source-wordcount: '1349'
 ht-degree: 3%
 
 ---
@@ -15,6 +15,23 @@ ht-degree: 3%
 
 本文档介绍Adobe Experience Platform Web SDK的发行说明。
 有关Web SDK标记扩展的最新发行说明，请参阅 [Web SDK标记扩展发行说明](extension/web-sdk-ext-release-notes.md).
+
+## 版本2.13.0 - 2022年9月28日
+
+**新增功能**
+
+* 添加了对“按页面完整迁移”的支持。 现在，当访客在at.js和Web SDK页面之间移动时，将保留Adobe Target配置文件。
+* 为 [高熵用户代理客户端提示](fundamentals/user-agent-client-hints.md#high-entropy).
+* 添加了对 `applyResponse` 命令。 这可通过 [边缘网络服务器API](../server-api/overview.md).
+* QA模式链接现在可以跨多个页面使用。
+
+**修复和改进功能**
+
+* 修复了禁用链接跟踪时个性化点击跟踪量度未更新的问题。
+* 更新了命令，以在指定未知选项时引发验证错误。
+* 的 `_experience.decisioning.propositionEventType` 现在，自动发送显示和交互个性化事件时会填充属性。
+* 为 `getIdentity` 命令。
+* 为 `sendEvent` 命令。
 
 ## 版本2.12.0 - 2022年6月29日
 
