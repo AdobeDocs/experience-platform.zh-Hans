@@ -2,9 +2,9 @@
 title: 浏览数据卫生工作单
 description: 了解如何在Adobe Experience Platform用户界面中查看和管理现有数据卫生工作单。
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 425298ec28517bba4eca1bf0966fd3b205fce764
+source-git-commit: e4cc78591d0d3b4abd660956b1263092697d63d5
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '863'
 ht-degree: 1%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 1%
 >title="工作单ID"
 >abstract="当向系统发送数据卫生请求时，创建工作命令以执行所请求的任务。 换言之，工作单代表特定的数据卫生过程，包括其当前状态和其他相关详细信息。 每个工作单在创建时会自动分配其自己的唯一ID。"
 >text="See the data hygiene UI guide to learn more."
+
+>[!IMPORTANT]
+>
+>目前，Adobe Experience Platform中的Adobe卫生功能仅适用于已购买Analytics Healthcare Shield或Privacy Shield的组织。
 
 当向系统发送数据卫生请求时，创建工作命令以执行所请求的任务。 工作单表示特定的数据卫生过程，如计划的数据集过期，包括其当前状态和其他相关详细信息。
 
@@ -30,10 +34,6 @@ ht-degree: 1%
 该列表一次只显示一个类别的工作单。 选择 **[!UICONTROL 消费者]** 查看用户删除任务列表，以及 **[!UICONTROL 数据集]** 查看计划数据集过期的列表。
 
 ![显示 [!UICONTROL 数据集] 选项卡](../images/ui/browse/dataset-tab.png)
-
->[!IMPORTANT]
->
->消费者删除仅适用于已购买Adobe医疗保健盾或隐私盾的组织。
 
 选择漏斗图标(![漏斗图标的图像](../images/ui/browse/funnel-icon.png))以查看所显示工作单的过滤器列表。
 

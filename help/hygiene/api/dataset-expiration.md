@@ -2,9 +2,9 @@
 title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您以编程方式计划Adobe Experience Platform中的数据集过期时间。
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: c2ff0d5806e57f230b937e8754d40031fb4b2305
+source-git-commit: e4cc78591d0d3b4abd660956b1263092697d63d5
 workflow-type: tm+mt
-source-wordcount: '1450'
+source-wordcount: '1454'
 ht-degree: 4%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的数据卫生功能目前仅适用于已购买Healthcare Shield的组织。
+>目前，Adobe Experience Platform中的Adobe卫生功能仅适用于已购买Analytics Healthcare Shield或Privacy Shield的组织。
 
 的 `/ttl` 数据卫生API中的端点允许您为Adobe Experience Platform中的数据集计划过期日期。
 

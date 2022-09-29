@@ -2,9 +2,9 @@
 title: 数据卫生API指南
 description: 了解如何以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: 16eecb22a1bec89c7dbac2fcee566a2226cf897f
+source-git-commit: e4cc78591d0d3b4abd660956b1263092697d63d5
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '403'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的数据卫生功能目前仅适用于已购买Healthcare Shield的组织。
+>目前，Adobe Experience Platform中的Adobe卫生功能仅适用于已购买Analytics Healthcare Shield或Privacy Shield的组织。
 
 数据卫生API允许您以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据，并计划数据集的过期日期。 本指南介绍了使用API的先决步骤，并提供了指向更多特定于端点的文档的链接。
 
@@ -44,10 +44,6 @@ ht-degree: 0%
 数据集过期是一项时间延迟的“删除数据集”操作。 通过创建数据集过期，您可以指定将来应删除该数据集的时间。 请参阅 [数据集过期端点指南](./dataset-expiration.md) 有关在API中计划数据集过期的详细信息。
 
 ## 消费者删除
-
->[!NOTE]
->
->消费者删除仅适用于已购买Adobe医疗保健盾或隐私保护架构的组织。
 
 数据卫生API允许您删除一个或多个数据集中与消费者身份关联的所有记录。 所有删除消费者身份的数据卫生任务都由称为工作单的结构来代表。 请参阅 [《工作单终端指南》](./workorder.md) 有关在API中使用消费者删除的详细信息。
 
