@@ -5,9 +5,9 @@ topic-legacy: guide
 type: Documentation
 description: 进一步了解Adobe Experience Platform用户界面中的自定义无障碍解决方案。
 exl-id: cb5ad99e-8a95-4c9e-aae6-1d0036ecf052
-source-git-commit: e30e04453bd814de103cceb14e3580992436923d
+source-git-commit: 7f4202c9c4a132ed9d74c495f6608357eac8003f
 workflow-type: tm+mt
-source-wordcount: '1568'
+source-wordcount: '1615'
 ht-degree: 0%
 
 ---
@@ -132,6 +132,10 @@ Experience Platform用户界面中的所有表都可通过键盘访问。 可通
 * 可通过键盘导航访问区段生成器UI。
 * 屏幕阅读器应识别标题的标记标记，并可以读出标题及其级别。
 * 其他辅助型技术可以使用正确编码的标题来显示大纲或替代视图，来更改页面的可视显示。
+
+现在，您可以折叠或展开区段生成器画布的左边栏和右边栏，以获得更多屏幕空间。 此功能特别有用，因为它以200%缩放比例提供了完整的功能。
+
+![区段生成器画布，其中突出显示了左边栏和右边栏显示小部件。](images/left-right-rail-expandables.png)
 
 ## 查询服务编辑器
 
