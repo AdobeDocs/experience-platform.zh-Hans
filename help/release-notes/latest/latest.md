@@ -1,9 +1,9 @@
 ---
-title: Adobe Experience Platform发行说明2022年9月
-description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: 5c6bb56b4b3fa63c285aa62b0a7b68ed269654b2
+title: Adobe Experience Platform 发行说明
+description: Adobe Experience Platform的最新发行说明。
+source-git-commit: bbc9df59f91b6de12e902a71f7b9d054735cad7b
 workflow-type: tm+mt
-source-wordcount: '3042'
+source-wordcount: '3079'
 ht-degree: 5%
 
 ---
@@ -158,7 +158,8 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 
 | 目标 | 描述 |
 | ----------- | ----------- |
-| [[!DNL Salesforce CRM]](../..//destinations/catalog/crm/salesforce.md) | 的 [!DNL Salesforce CRM] 目标已更新，可支持联系人和潜在客户更新以及性能改进，以便更快更新。 |
+| [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services提供了一个平台，用于设计跨渠道客户体验以及可视活动编排、实时交互管理和跨渠道执行的环境。 [Campaign快速入门](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html). |
+| [[!DNL Salesforce CRM]](../../destinations/catalog/crm/salesforce.md) | 的 [!DNL Salesforce CRM] 目标已更新，可支持联系人和潜在客户更新以及性能改进，以便更快更新。 |
 
 {style=&quot;table-layout:auto&quot;}
 

@@ -5,9 +5,9 @@ title: 在UI中定义枚举字段和建议值
 description: 了解如何在Experience Platform用户界面中为字符串字段定义枚举和建议值。
 topic-legacy: user guide
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: e515e32588991e468429c9256533732d04a4339f
+source-git-commit: ea27486a198f5248eeb5348ce20865bc41c2339a
 workflow-type: tm+mt
-source-wordcount: '1295'
+source-wordcount: '1207'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户�
 
 ![显示在UI中选择的建议值选项的图像](../../images/ui/fields/enum/suggested-add-row.png)
 
-在 **[!UICONTROL 显示名称]** 列中，为您希望在分段UI中显示的值提供一个人类易记的名称。 要添加更多建议值，请选择 **[!UICONTROL 添加行]** 再次，并根据需要重复该过程。 要删除之前添加的行，请选择删除图标(![删除图标的图像](../../images/ui/fields/enum/remove-icon.png))。
+在 **[!UICONTROL 显示名称]** 列中，为您希望在分段UI中显示的值提供一个人类易记的名称。 要添加更多建议值，请选择 **[!UICONTROL 添加行]** 再次，并根据需要重复该过程。 要删除之前添加的行，请选择 ![删除图标](../../images/ui/fields/enum/remove-icon.png) 排旁边。
 
 完成后，选择 **[!UICONTROL 应用]** 以将更改应用到架构。
 
@@ -61,25 +61,25 @@ When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户�
 
 ### 管理标准字段的建议值
 
-标准XDM组件中的某些字段包含它们自己的建议值，例如 `eventType` 从 [[!UICONTROL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 在架构中使用这些字段时，您可以使用可用的切换来控制要使用的现有建议值。
+标准XDM组件中的某些字段包含它们自己的建议值，例如 `eventType` 从 [[!UICONTROL XDM ExperienceEvent] 类](../../classes/experienceevent.md). 虽然您可以为标准字段创建其他建议值，但您无法修改或删除组织未定义的任何建议值。 在UI中查看标准字段时，其建议值虽然显示但为只读值。
 
 ![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-standard.png)
 
-与自定义字段类似，请选择 **[!UICONTROL 添加行]** 为标准字段添加您自己的建议值。
+要为标准字段添加新的建议值，请选择 **[!UICONTROL 添加行]**. 要删除您的组织之前添加的建议值，请选择 ![删除图标](../../images/ui/fields/enum/remove-icon.png) 排旁边。
 
-![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-standard.png)
+![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/suggested-standard-add.png)
 
-### 删除标准字段的建议值
+<!-- ### Removing suggested values for standard fields
 
-只能从标准字段中删除您定义的建议值。 可以禁用现有的建议值，以便它们不再显示在分段下拉菜单中，但无法直接删除它们。
+Only suggested values that you define can be removed from a standard field. Existing suggested values can be disabled so that they no longer appear in the segmentation dropdown, but they cannot be removed outright.
 
-例如，假定用户档案架构中的标准建议值 `person.gender` 字段：
+For example, consider a profile schema where the a suggested value for the standard `person.gender` field is disabled:
 
-![显示UI中字符串字段的枚举值和显示名称的图像](../../images/ui/fields/enum/standard-enum-disabled.png)
+![Image showing the enum values and display names filled out for the string field in the UI](../../images/ui/fields/enum/standard-enum-disabled.png)
 
-在本例中，显示名称为“[!UICONTROL 非特定]“ ”现在无法显示在分段下拉列表中。 但是， `non_specific` 仍是枚举字段列表的一部分，因此仍允许在摄取。 换言之，您无法禁用标准字段的实际枚举值，因为它违背了仅允许更改以减少字段限制的原则。
+In this example, the display name "[!UICONTROL Non-specific]" is now disabled from being shown in the segmentation dropdown list. However, the value `non_specific` is still part of the list of enumerated fields and is therefore still allowed on ingestion. In other words, you cannot disable the actual enum value for the standard field as it would go against the principle of only allowing changes that make a field less restrictive.
 
-请参阅 [下方](#evolution) 有关更新枚举和现有架构字段建议值的规则的详细信息。
+See the [section below](#evolution) for more information on the rules for updating enums and suggested values for existing schema fields. -->
 
 ## 枚举和建议值的演化规则 {#evolution}
 
@@ -109,6 +109,13 @@ When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户�
 
 * 任何其他建议的值包括 **已附加** 在工会中。
 * 如果在多个架构中定义了相同的其他建议值，则这些值为 **合并** 在工会中。 换言之，相同的建议值在合并后不会显示两次。
+
+## 验证限制
+
+由于当前系统限制，在摄取期间系统未验证枚举的情况有两种：
+
+1. 枚举是在 [阵列字段](./array.md).
+1. 枚举在架构层次结构中定义了多个级别。
 
 ## 后续步骤
 
