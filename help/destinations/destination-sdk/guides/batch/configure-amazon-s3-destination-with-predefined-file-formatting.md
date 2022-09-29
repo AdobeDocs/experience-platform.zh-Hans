@@ -2,9 +2,9 @@
 description: 了解如何使用Destination SDK通过预定义的文件格式选项和自定义文件名配置来配置Amazon S3目标。
 title: 使用预定义的文件格式选项和自定义文件名配置配置Amazon S3目标。
 exl-id: 0ecd3575-dcda-4e5c-af5c-247d4ea13fa1
-source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
+source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '746'
 ht-degree: 0%
 
 ---
@@ -12,10 +12,6 @@ ht-degree: 0%
 # 配置 [!DNL Amazon S3] 具有预定义文件格式选项和自定义文件名配置的目标
 
 ## 概述 {#overview}
-
->[!IMPORTANT]
->
->使用Adobe Experience Platform Destination SDK配置基于文件的目标的功能目前尚处于测试阶段。 文档和功能可能会发生更改。
 
 本页介绍如何使用Destination SDK，通过预定义的默认值配置Amazon S3目标 [文件格式选项](../../server-and-file-configuration.md#file-configuration) 和定制 [文件名配置](../../file-based-destination-configuration.md#file-name-configuration).
 

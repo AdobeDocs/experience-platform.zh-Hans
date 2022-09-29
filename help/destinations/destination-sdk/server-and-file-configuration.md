@@ -2,9 +2,9 @@
 description: 可通过/destination-servers端点在Adobe Experience Platform Destination SDK中配置基于文件的目标的服务器和文件配置规范。
 title: 基于文件的目标服务器规范的配置选项
 exl-id: 56434e36-0458-45d9-961d-f6505de998f7
-source-git-commit: 5506a938253083d3dfd657a787eae20a05b1c0a9
+source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
 workflow-type: tm+mt
-source-wordcount: '1274'
+source-wordcount: '1248'
 ht-degree: 9%
 
 ---
@@ -12,10 +12,6 @@ ht-degree: 9%
 # 基于文件的目标服务器规范的服务器和文件配置
 
 ## 概述 {#overview}
-
->[!IMPORTANT]
->
->使用Adobe Experience Platform Destination SDK配置和提交基于文件的目标目前尚处于测试阶段。 文档和功能可能会发生更改。
 
 本页详细介绍了基于文件的目标服务器的所有服务器配置选项，并显示如何为用户设置各种文件配置选项，以便将文件从Experience Platform导出到您的目标。
 

@@ -2,9 +2,9 @@
 description: 本页列出并描述了使用Destination SDK配置基于文件的目标的步骤。
 title: 使用Destination SDK配置基于文件的目标
 exl-id: 84d73452-88e4-4e0f-8fc7-d0d8e10f9ff5
-source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
+source-git-commit: 29962e07aa50c97b6098f4c892facf48508d28cf
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '516'
 ht-degree: 0%
 
 ---
@@ -12,10 +12,6 @@ ht-degree: 0%
 # 使用Destination SDK配置基于文件的目标
 
 ## 概述 {#overview}
-
->[!IMPORTANT]
->
->使用Adobe Experience Platform Destination SDK配置和提交基于文件的目标目前尚处于测试阶段。 文档和功能可能会发生更改。
 
 本页介绍如何使用 [目标SDK中的配置选项](./configuration-options.md) 和其他Destination SDK功能和API参考文档中的 [基于文件的目标](../../destinations/destination-types.md#file-based). 这些步骤按如下顺序排列。
 

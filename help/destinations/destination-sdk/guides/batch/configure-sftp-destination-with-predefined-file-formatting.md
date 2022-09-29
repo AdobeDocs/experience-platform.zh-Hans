@@ -2,9 +2,9 @@
 description: 了解如何使用Destination SDK通过预定义的文件格式选项和自定义文件名配置来配置SFTP目标。
 title: 使用预定义的文件格式选项和自定义文件名配置配置SFTP目标。
 exl-id: 6e0fe019-7fbb-48e4-9469-6cc7fc3cb6e4
-source-git-commit: 557db5b7eefdd7902895e428f7bc34e3ad8a6f58
+source-git-commit: bdeebca9608e7c1ff3ae0cb1aeb444dccb78028f
 workflow-type: tm+mt
-source-wordcount: '764'
+source-wordcount: '740'
 ht-degree: 0%
 
 ---
@@ -12,10 +12,6 @@ ht-degree: 0%
 # 使用预定义的文件格式选项和自定义文件名配置配置SFTP目标
 
 ## 概述 {#overview}
-
->[!IMPORTANT]
->
->使用Adobe Experience Platform Destination SDK配置基于文件的目标的功能目前尚处于测试阶段。 文档和功能可能会发生更改。
 
 本页介绍如何使用Destination SDK，通过预定义的默认SFTP目标配置 [文件格式选项](../../server-and-file-configuration.md#file-configuration) 和定制 [文件名配置](../../file-based-destination-configuration.md#file-name-configuration).
 
