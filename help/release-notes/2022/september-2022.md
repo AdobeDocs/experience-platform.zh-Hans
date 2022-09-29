@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: 5c6bb56b4b3fa63c285aa62b0a7b68ed269654b2
+source-git-commit: dd17e0903f69a6d639582d83bcd22b269aedb5d0
 workflow-type: tm+mt
-source-wordcount: '3042'
-ht-degree: 5%
+source-wordcount: '3107'
+ht-degree: 4%
 
 ---
 
@@ -118,7 +118,7 @@ Adobe Experience Platform提供了多个功能板，您可以通过这些功能�
 | 使用中标签 | 在小组件库中查看时，使用中的标签可轻松识别功能板中是否存在现有小组件。 这样可以轻松避免重复，不过您仍可以根据需要多次添加同一小组件。 |
 | 用户定义的功能板 | 用户定义的功能板使您能够构建和管理自定义功能板，从而帮助加快分析和自定义可视化。 借助用户定义的功能板，您可以创建、添加和编辑定制小组件，以可视化与您的组织相关的关键量度。 阅读 [功能指南](../../dashboards/user-defined-dashboards.md) 以了解更多。 |
 | 客户数据平台分析数据模型 | 客户数据平台(CDP)分析数据模型功能公开了数据模型和SQL，它们为各种配置文件、目标和分段小组件提供了分析支持。 您可以自定义这些SQL查询模板，以便为您的营销和关键绩效指标用例创建CDP报告。 然后，这些分析可用作用户定义的功能板的自定义小组件。 阅读 [CDP Insights Data Model功能指南](../../dashboards/cdp-insights-data-model.md) 以了解更多。 |
-| 受众重叠报表小组件 | 此小组件可同时用于这两个组件 [!UICONTROL 用户档案] 和 [!UICONTROL 区段] 功能板。 报表提供按所选区段的重叠百分比最高或最低排名的受众的有序列表。 从 [!UICONTROL 用户档案] 功能板中，您可以通过从所有可用区段中合并策略来过滤和查看受众重叠。 的 [!UICONTROL 区段] 功能板允许您按特定区段过滤受众重叠。<br>使用此分析可构建新的高性能区段，并避免向不同目标发送相同的受众。 此报表还有助于识别隐藏的分析，以改进分段或查找要查找的独特用户档案。 |
+| 受众重叠报表小组件 | 此小组件可同时用于这两个组件 [!UICONTROL 用户档案] 和 [!UICONTROL 区段] 功能板。 报表提供按所选区段的重叠百分比最高或最低排名的受众的有序列表。 从 [!UICONTROL 用户档案] 功能板中，您可以通过从所有可用区段中合并策略来过滤和查看受众重叠。 的 [!UICONTROL 区段] 功能板允许您按特定区段过滤受众重叠。<br>使用此分析可构建新的高性能区段，并避免向不同目标发送相同的受众。 此报表还有助于识别隐藏的分析，以改进分段或查找要查找的独特用户档案。 阅读相应的 [用户档案](../../dashboards/guides/profiles.md#audience-overlap-report) 和 [区段](../../dashboards/guides/segments.md#audience-overlap-report) 小组件指南以了解更多信息。 |
 
 有关 [!DNL Dashboards]，请参阅 [[!DNL Dashboards] 概述](../../dashboards/home.md).
 
@@ -158,7 +158,8 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 
 | 目标 | 描述 |
 | ----------- | ----------- |
-| [[!DNL Salesforce CRM]](../..//destinations/catalog/crm/salesforce.md) | 的 [!DNL Salesforce CRM] 目标已更新，可支持联系人和潜在客户更新以及性能改进，以便更快更新。 |
+| [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services提供了一个平台，用于设计跨渠道客户体验以及可视活动编排、实时交互管理和跨渠道执行的环境。 [Campaign快速入门](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html). |
+| [[!DNL Salesforce CRM]](../../destinations/catalog/crm/salesforce.md) | 的 [!DNL Salesforce CRM] 目标已更新，可支持联系人和潜在客户更新以及性能改进，以便更快更新。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -237,8 +238,8 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 
 | 功能 | 描述 |
 | --- | --- |
-| 警报订阅API | Adobe Experience Platform查询服务允许您订阅临时查询和计划查询的警报。 警报可通过电子邮件、在Platform UI中或同时通过两者接收。 目前，查询警报只能使用 [查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/). |
-| 数据集示例 | 查询服务数据集示例使您能够对大数据进行探索性查询，并大大缩短了处理时间，同时也降低了查询准确性。 |
+| 警报订阅API | Adobe Experience Platform查询服务允许您订阅临时查询和计划查询的警报。 警报可通过电子邮件、在Platform UI中或同时通过两者接收。 目前，查询警报只能使用 [查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/). 请参阅 [查询警报文档](../../query-service/api/alert-subscriptions.md) 以了解更多。 |
+| 数据集示例 | 查询服务数据集示例使您能够对大数据进行探索性查询，并大大缩短了处理时间，同时也降低了查询准确性。 请参阅 [数据集示例指南](../../query-service/sql/dataset-samples.md) 以了解更多。 |
 
 有关 [!DNL Query Service]，请参阅 [[!DNL Query Service] 概述](../../query-service/home.md).
 
