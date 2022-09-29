@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: 64c376b52aa7f7827c19194d677d8a1648c04195
+source-git-commit: c9abf2d0ef2b8a9a9727224fdbb4c784dd041158
 workflow-type: tm+mt
-source-wordcount: '2776'
+source-wordcount: '2959'
 ht-degree: 5%
 
 ---
@@ -24,6 +24,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [审核日志](#audit-logs)
 - [[!DNL Dashboards]](#dashboards)
 - [数据收集](#data-collection)
+- [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [Identity Service](#identity-service)
 - [查询服务](#query-service)
@@ -135,6 +136,34 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 {style=&quot;table-layout:auto&quot;}
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| ----------- | ----------- |
+| 目标 SDK | Destination SDK现在为创建批量（或基于文件）产品化或专用目标的合作伙伴和客户提供完全支持。 有关更多信息，请阅读以下文档页面： <ul><li>[Destination SDK概述](/help/destinations/destination-sdk/overview.md)</li><li>[配置基于文件的目标](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[为基于文件的目标配置文件格式选项](/help/destinations/destination-sdk/configure-file-based-destination-instructions.md)</li><li>[测试基于文件的目标](/help/destinations/destination-sdk/file-based-destination-testing-overview.md)</li></ul> |
+
+{style=&quot;table-layout:auto&quot;}
+
+**新目标或更新的目标**
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [[!DNL Salesforce CRM]](../..//destinations/catalog/crm/salesforce.md) | 的 [!DNL Salesforce CRM] 目标已更新，可支持联系人和潜在客户更新以及性能改进，以便更快更新。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+**新文档或更新的文档**
+
+| 文档 | 描述 |
+| ----------- | ----------- |
+| 目标流服务API文档 | 的 [目标API参考文档](https://developer.adobe.com/experience-platform-apis/references/destinations/) 更新了，以包含有关如何对基于文件的目标执行操作的指导。 将在以后添加流目标的操作。 |
+
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 
