@@ -1,14 +1,18 @@
 ---
 title: Adobe Campaign Managed Cloud Services连接
 description: Adobe Campaign Managed Cloud Services提供了一个平台，用于设计跨渠道客户体验以及可视活动编排、实时交互管理和跨渠道执行的环境。
-source-git-commit: 10dc6ac0f78237f8d6bea01d63d07e61662278df
+source-git-commit: ea4d17459dcd7abd981260fe6733320b08af15e8
 workflow-type: tm+mt
-source-wordcount: '1471'
+source-wordcount: '1487'
 ht-degree: 4%
 
 ---
 
 # Adobe Campaign Managed Cloud Services连接 {#adobe-campaign-managed-services}
+
+>[!IMPORTANT]
+>
+>此集成适用于Adobe Campaign版本8.4或更高版本。 版本8.4计划于2022年9月30日发布。
 
 ## 概述 {#overview}
 
