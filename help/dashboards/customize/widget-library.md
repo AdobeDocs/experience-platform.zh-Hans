@@ -3,9 +3,9 @@ keywords: Experience Platform；用户界面；UI；功能板；功能板；配�
 title: 功能板小组件库概述
 description: 本指南提供了有关访问Adobe Experience Platform中小组件库的分步说明。
 exl-id: 1d33e3ea-a8a8-4a09-8bd9-2e04ecedebdc
-source-git-commit: 7f226a37996ab5e1fef432c6007d7d488f84ded6
+source-git-commit: 09f212741321f17372d52fee507a96d2d2834e85
 workflow-type: tm+mt
-source-wordcount: '458'
+source-wordcount: '516'
 ht-degree: 0%
 
 ---
@@ -41,6 +41,12 @@ ht-degree: 0%
 从 [!UICONTROL 构件库]，从可用标准小组件或自定义小组件列表中选择任意小组件。 小组件角的复选标记表示您的选择。
 
 ![包含选定小组件的小组件库，并突出显示复选标记。](../images/customization/confirm-selected-widget-to-add.png)
+
+### 使用中标签 {#in-use-label}
+
+已添加到功能板的小组件具有 [!UICONTROL 使用中] 在小组件库中查看时附加的标签。 此标签会突出显示已添加到功能板中的小组件，以避免重复。 但是，如果您愿意，仍可多次添加同一小组件。
+
+![突出显示了使用中标签的小组件库。](../images/customization/in-use-label.png)
 
 选择所有必需的小组件后，请选择 **[!UICONTROL 添加小组件]** 以确认您的选择并将小组件添加到功能板。
 
