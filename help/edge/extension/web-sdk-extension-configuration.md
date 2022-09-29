@@ -2,7 +2,7 @@
 title: 配置Adobe Experience Platform Web SDK扩展
 description: 如何在UI中配置Adobe Experience Platform Web SDK标记扩展。
 exl-id: 96d32db8-0c9a-49f0-91f3-0244522d66df
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 3ab02646968222c0ad09c1d8ce8fda04de7aaac6
 workflow-type: tm+mt
 source-wordcount: '1041'
 ht-degree: 6%
@@ -19,15 +19,15 @@ Adobe Experience Platform Web SDK标记扩展通过Adobe Experience Platform Edg
 
 如果已为资产安装Platform Web SDK扩展，请在UI中打开该资产，然后选择 **[!UICONTROL 扩展]** 选项卡。 在Platform Web SDK下，选择 **[!UICONTROL 配置]**.
 
-![](../images/extension/overview/configure.png)
+![](../assets/extension/overview/configure.png)
 
 如果尚未安装该扩展，请选择 **[!UICONTROL 目录]** 选项卡。 从可用扩展的列表中，找到Platform Web SDK扩展，然后选择 **[!UICONTROL 安装]**.
 
-![](../images/extension/overview/install.png)
+![](../assets/extension/overview/install.png)
 
 在这两种情况下，您都会到达Platform Web SDK的配置页面。 以下部分介绍扩展的配置选项。
 
-![](../images/extension/overview/config-screen.png)
+![](../assets/extension/overview/config-screen.png)
 
 ## 常规配置选项
 
@@ -56,7 +56,7 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 ## [!UICONTROL Privacy]
 
-![](../images/extension/overview/privacy.png)
+![](../assets/extension/overview/privacy.png)
 
 的 [!UICONTROL 隐私] 部分，用于配置SDK如何处理来自您网站的用户同意信号。 具体而言，如果未提供其他明确的同意首选项，则允许您选择用户假定的默认同意级别。 默认同意级别不会保存到用户的配置文件中。 下表分析了每个选项的要求：
 
@@ -71,7 +71,7 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 ## [!UICONTROL 标识]
 
-![](../images/extension/overview/identity.png)
+![](../assets/extension/overview/identity.png)
 
 ### [!UICONTROL 从VisitorAPI迁移ECID]
 
@@ -83,13 +83,13 @@ Adobe Experience Platform Web SDK扩展支持页面上的多个实例。 该名�
 
 ## [!UICONTROL 个性化]
 
-![](../images/extension/overview/personalization.png)
+![](../assets/extension/overview/personalization.png)
 
 如果要在加载个性化内容时隐藏网站的某些部分，则可以在预隐藏样式编辑器中指定要隐藏的元素。 然后，您可以复制为您提供的默认预隐藏代码片段，并将其粘贴到 `<head>`元素。
 
 ## [!UICONTROL 数据收集]
 
-![](../images/extension/overview/data-collection.png)
+![](../assets/extension/overview/data-collection.png)
 
 ### [!UICONTROL 回调函数]
 
@@ -105,7 +105,7 @@ SDK可以自动收集您的链接点击信息。 默认情况下，此功能处�
 
 ## [!UICONTROL 高级设置]
 
-![](../images/extension/overview/advanced-settings.png)
+![](../assets/extension/overview/advanced-settings.png)
 
 ### [!UICONTROL 边缘基本路径]
 

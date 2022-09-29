@@ -2,7 +2,7 @@
 title: 平台Web SDK中的第一方设备ID
 description: 了解如何为Adobe Experience Platform Web SDK配置第一方设备ID(FPID)。
 exl-id: c3b17175-8a57-43c9-b8a0-b874fecca952
-source-git-commit: 700dea7ed7f35797b3a3fe4bf09f5e266577363b
+source-git-commit: f5270d1d1b9697173bc60d16c94c54d001ae175a
 workflow-type: tm+mt
 source-wordcount: '1776'
 ht-degree: 0%
@@ -209,7 +209,7 @@ FPID通过使用第一方Cookie跟踪访客。 使用利用DNS的服务器设置
 
 为了帮助说明此过程，请考虑一个涉及先前访问过您网站的客户的情景，以及FPID迁移对该客户在Adobe解决方案中的识别方式有何影响。
 
-![此图显示了在迁移到FPID后的两次访问之间如何更新客户ID值](../images/identity/tracking/visits.png)
+![此图显示了在迁移到FPID后的两次访问之间如何更新客户ID值](../assets/identity/tracking/visits.png)
 
 | 访问 | 描述 |
 | --- | --- |

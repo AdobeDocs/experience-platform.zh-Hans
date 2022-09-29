@@ -2,7 +2,7 @@
 title: 为数据收集准备数据
 description: 了解在为Adobe Experience Platform Web和移动SDK配置数据流时，如何将数据映射到Experience Data Model(XDM)事件模式。
 exl-id: 87a70d56-1093-445c-97a5-b8fa72a28ad0
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 3ab02646968222c0ad09c1d8ce8fda04de7aaac6
 workflow-type: tm+mt
 source-wordcount: '914'
 ht-degree: 1%
@@ -132,7 +132,7 @@ ht-degree: 1%
 
 您可以选择将对象上传为文件的选项，或将原始对象粘贴到提供的文本框中。 如果JSON有效，则会在右侧面板中显示预览架构。 选择 **[!UICONTROL 下一个]** 继续。
 
-![预期传入数据的JSON示例](../images/datastreams/data-prep/select-data.png)
+![预期传入数据的JSON示例](../assets/datastreams/data-prep/select-data.png)
 
 ## [!UICONTROL 映射]
 
@@ -145,25 +145,25 @@ ht-degree: 1%
 
 要开始配置，请选择 **[!UICONTROL 添加新映射]** 创建新映射行。
 
-![添加新映射](../images/datastreams/data-prep/add-new-mapping.png)
+![添加新映射](../assets/datastreams/data-prep/add-new-mapping.png)
 
-选择源图标(![“源”图标](../images/datastreams/data-prep/source-icon.png))，并在出现的对话框中，选择要在提供的画布中映射的源字段。 选择字段后，请使用 **[!UICONTROL 选择]** 按钮继续。
+选择源图标(![“源”图标](../assets/datastreams/data-prep/source-icon.png))，并在出现的对话框中，选择要在提供的画布中映射的源字段。 选择字段后，请使用 **[!UICONTROL 选择]** 按钮继续。
 
-![选择要在源架构中映射的字段](../images/datastreams/data-prep/source-mapping.png)
+![选择要在源架构中映射的字段](../assets/datastreams/data-prep/source-mapping.png)
 
-接下来，选择架构图标(![“架构”图标](../images/datastreams/data-prep/schema-icon.png))以打开目标事件架构的类似对话框。 选择要在确认之前将数据映射到的字段 **[!UICONTROL 选择]**.
+接下来，选择架构图标(![“架构”图标](../assets/datastreams/data-prep/schema-icon.png))以打开目标事件架构的类似对话框。 选择要在确认之前将数据映射到的字段 **[!UICONTROL 选择]**.
 
-![选择要在目标架构中映射的字段](../images/datastreams/data-prep/target-mapping.png)
+![选择要在目标架构中映射的字段](../assets/datastreams/data-prep/target-mapping.png)
 
 此时将重新显示映射页面，并显示已完成的字段映射。 的 **[!UICONTROL 映射进度]** 部分更新以反映已成功映射的字段总数。
 
-![已成功映射反映进度的字段](../images/datastreams/data-prep/field-mapped.png)
+![已成功映射反映进度的字段](../assets/datastreams/data-prep/field-mapped.png)
 
 >[!TIP]
 >
 >如果要将一个对象数组（在源字段中）映射到不同对象的数组（在目标字段中），请添加 `[*]` 在源和目标字段路径中的数组名称之后，如下所示。
 >
->![数组对象映射](../images/datastreams/data-prep/array-object-mapping.png)
+>![数组对象映射](../assets/datastreams/data-prep/array-object-mapping.png)
 
 ### 导入现有映射规则 {#import-mapping}
 
@@ -175,11 +175,11 @@ ht-degree: 1%
 
 要开始，请选择 **[!UICONTROL 导入映射]**.
 
-![显示 [!UICONTROL 导入映射] 按钮](../images/datastreams/data-prep/import-mapping-button.png)
+![显示 [!UICONTROL 导入映射] 按钮](../assets/datastreams/data-prep/import-mapping-button.png)
 
 在显示的对话框中，选择要导入其映射规则的数据流。 选择数据流后，选择 **[!UICONTROL 预览]**.
 
-![显示正在选择的现有数据流的图像](../images/datastreams/data-prep/select-mapping-rules.png)
+![显示正在选择的现有数据流的图像](../assets/datastreams/data-prep/select-mapping-rules.png)
 
 >[!NOTE]
 >
@@ -187,7 +187,7 @@ ht-degree: 1%
 
 下一个屏幕显示所选数据流的已保存映射规则的预览。 确保显示的映射符合您的预期，然后选择 **[!UICONTROL 导入]** 以确认映射并将其添加到新数据流。
 
-![显示要导入的映射规则的图像](../images/datastreams/data-prep/import-mapping-rules.png)
+![显示要导入的映射规则的图像](../assets/datastreams/data-prep/import-mapping-rules.png)
 
 >[!NOTE]
 >
@@ -199,7 +199,7 @@ ht-degree: 1%
 
 当必填字段计数达到零且您对映射满意后，请选择 **[!UICONTROL 保存]** 完成更改。
 
-![映射完成](../images/datastreams/data-prep/mapping-complete.png)
+![映射完成](../assets/datastreams/data-prep/mapping-complete.png)
 
 ## 后续步骤
 
