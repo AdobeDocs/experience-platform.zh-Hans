@@ -4,9 +4,9 @@ title: 区段功能板指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 7f226a37996ab5e1fef432c6007d7d488f84ded6
+source-git-commit: 18288130b98e13d824273426a860d97722c434de
 workflow-type: tm+mt
-source-wordcount: '1791'
+source-wordcount: '2094'
 ht-degree: 0%
 
 ---
@@ -85,6 +85,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 * [[!UICONTROL 受众大小更改趋势]](#audience-size-change-trend)
 * [[!UICONTROL 按身份划分的受众大小趋势]](#audience-size-trend-by-identity)
 * [[!UICONTROL 受众重叠]](#audience-overlap)
+* [[!UICONTROL 受众重叠报表]](#audience-overlap-report)
 * [[!UICONTROL 身份重叠]](#identity-overlap)
 * [[!UICONTROL 按身份划分的用户档案]](#profiles-by-identity)
 * [[!UICONTROL 计划激活]](#scheduled-activations)
@@ -147,14 +148,33 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ![受众重叠小组件。](../images/segments/audience-overlap.png)
 
-<!-- * [[!UICONTROL Audience overlap report]](#audience-overlap-report) -->
-<!-- ### [!UICONTROL Audience overlap report] {#audience-overlap-report} -->
+### [!UICONTROL 受众重叠报表] {#audience-overlap-report}
 
-<!-- View an ordered list of audiences by Highest or Lowest overlap percentages. -->
+此小组件可显示特定区段的受众重叠数据表格。 对于从屏幕顶部的下拉菜单中选择的区段，将提供从重叠百分比最高到重叠百分比最低的五个受众列表。 为清楚起见，您选择的区段列在 [!UICONTROL 区段名称] 列。 为 [!UICONTROL 区段B名称] 列。 第三列中提供的重叠百分比精确到十二位小数。
 
-<!-- ![The Audience overlap report widget.]() -->
+受众重叠报表可帮助您构建新的高性能区段。 观察到高百分比重叠，可禁止受众并阻止向不同目标发送相同的受众。 它们还可帮助您识别可能有助于更好地划分区段的隐藏分析。 低百分比重叠有助于找到要查找的独特用户档案。
 
-<!-- https://jira.corp.adobe.com/browse/PLAT-125511 -->
+选择 **[!UICONTROL 查看更多]** 打开包含更多区段重叠数据的全屏对话框。
+
+![受众重叠报表小组件，以查看突出显示的内容。](../images/segments/audience-overlap-report.png)
+
+的 [!UICONTROL 受众重叠报表] 对话框。 此对话框最多可包含50行受众重叠分析，这些分析分为六列。 选择设置图标(![设置图标。](../images/segments/settings-icon.png))从表中删除或添加列。
+
+![受众重叠报表对话框。](../images/segments/audience-overlap-report-dialog.png)
+
+>[!NOTE]
+>
+>选择 **[!UICONTROL 重叠]** 列标题，以将结果的排名从最高更改为最低或从最低更改为最高。
+
+要以PDF格式下载整个报表，请选择选项菜单(**`...`**)后跟 **[!UICONTROL 下载]**.
+
+![受众重叠报表对话框中突出显示了省略号和下载选项。](../images/segments/segments-audience-overlap-report-dialog-download.png)
+
+从报表中选择一行以打开重叠分析的维恩图。 将鼠标悬停在维恩图的某个部分上，可在对话框中查看用户档案计数。
+
+![受众重叠报表对话框中显示了维恩图和突出显示的行。](../images/segments/audience-overlap-report-dialog-venn.png)
+
+选择 **[!UICONTROL 关闭]** 返回 [!UICONTROL 区段] 功能板。
 
 ### [!UICONTROL 身份重叠] {#identity-overlap}
 
