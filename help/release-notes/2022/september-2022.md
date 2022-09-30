@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: 81c17a6ea07efbbea91e0d918d52ec96e0335152
+source-git-commit: 45281721c6fb26c303bb820fa39f5c6ed71b55f9
 workflow-type: tm+mt
-source-wordcount: '3128'
-ht-degree: 4%
+source-wordcount: '3059'
+ht-degree: 5%
 
 ---
 
@@ -16,7 +16,6 @@ Adobe Experience Platform的新增功能：
 
 - [基于属性的访问控制](#abac)
 - [数据卫生](#data-hygiene)
-- [[!UICONTROL 隐私控制台]](#privacy-console)
 
 Adobe Experience Platform 现有功能的更新包括：
 
@@ -55,19 +54,13 @@ Adobe Experience Platform的数据卫生功能允许您通过计划自动数据�
 
 >[!IMPORTANT]
 >
->数据卫生功能仅适用于已购买Adobe医疗保健盾或隐私盾的组织。
+>数据卫生功能仅适用于已购买Adobe医疗保健盾的组织。
 
 请参阅以下文档，以开始使用数据卫生：
 
 - [数据卫生概述](../../hygiene/home.md):了解有关Platform数据卫生功能的基础知识。
 - [[!UICONTROL 数据卫生] UI指南](../../hygiene/ui/overview.md):了解如何在Platform用户界面中计划数据集过期和消费者删除请求。
 - [数据卫生API指南](../../hygiene/api/overview.md):您可以在UI中执行的所有数据卫生活动也可以采用编程方式
-
-## [!UICONTROL 隐私控制台] {#privacy-console}
-
-的 [!UICONTROL 隐私控制台] Experience PlatformUI中的选项卡提供了一个功能板视图，其中提供了与隐私相关的功能(例如 [来自Privacy Service的数据主体请求](../../privacy-service/home.md), [数据卫生工作单](../../hygiene/home.md)和 [审核日志](../../landing/governance-privacy-security/audit-logs/overview.md). 该控制台还提供了一些产品内用例指南，以帮助您完成常见的隐私工作流程。
-
-请参阅 [隐私控制台概述](../../landing/governance-privacy-security/privacy-console.md) 以了解有关该功能的更多信息。
 
 ## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
 

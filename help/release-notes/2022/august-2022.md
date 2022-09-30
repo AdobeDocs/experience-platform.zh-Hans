@@ -2,9 +2,9 @@
 title: Adobe Experience Platform发行说明2022年8月
 description: 2022年8月版Adobe Experience Platform发行说明。
 exl-id: dbf1e7a3-8599-4991-8932-f57d3b1c640d
-source-git-commit: fb9fdc70aabb62cdc39888b1ff90557d8420c31b
+source-git-commit: 83149c4e6e8ea483133da4766c37886b8ebd7316
 workflow-type: tm+mt
-source-wordcount: '2137'
+source-wordcount: '2131'
 ht-degree: 7%
 
 ---
@@ -40,7 +40,7 @@ Attribution AI 用于将点数归因于导致转化事件的接触点。营销�
 
 {style=&quot;table-layout:auto&quot;}
 
-**注意**:Attribution AI在进一步通知之前，将无法供现有的Healthcare Shield或Privacy Shield客户使用。
+**注意**:Attribution AI将在进一步通知之前，不向现有Healthcare Shield客户提供。
 
 有关Attribution AI的更多信息，请参阅 [Attribution AI](../../intelligent-services/attribution-ai/overview.md) 概述。
 
@@ -56,7 +56,7 @@ Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾�
 
 {style=&quot;table-layout:auto&quot;}
 
-**注意**:在进一步通知之前，客户AI将不适用于现有的医疗保健盾或隐私盾客户。
+**注意**:在进一步通知之前，客户AI将不会提供给现有的Healthcare Shield客户。
 
 有关Customer AI的更多信息，请参阅 [客户人工智能](../../intelligent-services/customer-ai/overview.md) 概述。
 

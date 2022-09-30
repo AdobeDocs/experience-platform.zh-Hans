@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 了解 Experience Platform 如何实现实时地为客户营造个性化体验。
-source-git-commit: c8443051597da26bacb2dbf722d82a06abcee2f6
+source-git-commit: 83149c4e6e8ea483133da4766c37886b8ebd7316
 workflow-type: tm+mt
-source-wordcount: '250'
-ht-degree: 28%
+source-wordcount: '248'
+ht-degree: 29%
 
 ---
 
@@ -48,7 +48,6 @@ ht-degree: 28%
    * [与Experience Cloud的平台集成（视频）](video/experience-cloud-integrations.md)
 * 管理、隐私和安全 {#governance-privacy-security}
    * [概述](./governance-privacy-security/overview.md)
-   * [隐私控制台](./governance-privacy-security/privacy-console.md)
    * 同意管理 {#consent}
       * Adobe标准 {#adobe}
          * [概述](./governance-privacy-security/consent/adobe/overview.md)

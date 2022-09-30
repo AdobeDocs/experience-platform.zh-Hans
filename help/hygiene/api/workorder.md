@@ -2,9 +2,9 @@
 title: 工作单API端点
 description: 数据卫生API中的/workorder端点允许您以编程方式管理消费者身份的删除任务。
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: e4cc78591d0d3b4abd660956b1263092697d63d5
+source-git-commit: 83149c4e6e8ea483133da4766c37886b8ebd7316
 workflow-type: tm+mt
-source-wordcount: '989'
+source-wordcount: '986'
 ht-degree: 4%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->目前，Adobe Experience Platform中的Adobe卫生功能仅适用于已购买Analytics Healthcare Shield或Privacy Shield的组织。
+>Adobe Experience Platform中的Adobe卫生功能目前仅适用于已购买Data Healthcare Shield的组织。
 
 的 `/workorder` 数据卫生API中的端点允许您以编程方式在Adobe Experience Platform中管理消费者删除请求。
 
