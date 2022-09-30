@@ -3,18 +3,14 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理用户
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理用户和用户组的信息
 exl-id: 16450867-040a-4be1-a6c0-f03d0a1b90ba
-source-git-commit: c31855bff9d87133252c43e2f2f2fe1960c7b144
+source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
 workflow-type: tm+mt
-source-wordcount: '191'
+source-wordcount: '160'
 ht-degree: 2%
 
 ---
 
 # 管理用户
-
->[!IMPORTANT]
->
->目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。
 
 如果要查看用户详细信息以及分配给用户的角色，请选择 **[!UICONTROL 用户]** 选项卡。
 

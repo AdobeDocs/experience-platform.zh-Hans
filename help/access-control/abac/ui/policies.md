@@ -3,18 +3,14 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制创建策略
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理策略的信息
 exl-id: 66820711-2db0-4621-908d-01187771de14
-source-git-commit: 97b4b98a2f14e36e8e8c71bd2ab9631782bc333f
+source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
 workflow-type: tm+mt
-source-wordcount: '692'
+source-wordcount: '661'
 ht-degree: 0%
 
 ---
 
 # 管理策略
-
->[!IMPORTANT]
->
->目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。
 
 政策是将属性集合在一起以确立允许和不允许的行动的声明。 策略可以是本地策略，也可以是全局策略，并且可以覆盖其他策略。
 

@@ -4,18 +4,14 @@ solution: Experience Platform
 title: 角色API端点
 description: 基于属性的访问控制API中的/roles端点允许您以编程方式管理Adobe Experience Platform中的角色。
 exl-id: 049f7a18-7d06-437b-8ce9-25d7090ba782
-source-git-commit: 567bfe089fd96cb08cb8ea7c90d065c804be9413
+source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
 workflow-type: tm+mt
-source-wordcount: '1614'
+source-wordcount: '1583'
 ht-degree: 3%
 
 ---
 
 # 角色端点
-
->[!IMPORTANT]
->
->目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。
 
 角色定义管理员、专家或最终用户对您组织中的资源的访问权限。 在基于角色的访问控制环境中，用户访问设置是通过共同的责任和需求分组的。 角色具有一组给定的权限，并且可以根据角色需要的查看或写入权限，将组织的成员分配给一个或多个角色。
 

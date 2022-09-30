@@ -3,18 +3,14 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制浏览
 description: 本文档提供了有关在Adobe Experience Cloud中使用权限界面的信息
 exl-id: 39634bde-8858-44a6-b39a-776846654fc1
-source-git-commit: c31855bff9d87133252c43e2f2f2fe1960c7b144
+source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
 workflow-type: tm+mt
-source-wordcount: '377'
-ht-degree: 3%
+source-wordcount: '346'
+ht-degree: 4%
 
 ---
 
 # 权限指南
-
->[!IMPORTANT]
->
->目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。
 
 权限是Adobe Experience Cloud的一个区域，管理员可以在该区域定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。
 

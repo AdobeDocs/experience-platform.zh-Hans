@@ -3,18 +3,14 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制沙箱
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面管理沙箱的信息
 exl-id: c21eb319-fc0d-442a-b778-bbfa2d6bb22d
-source-git-commit: c31855bff9d87133252c43e2f2f2fe1960c7b144
+source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
 workflow-type: tm+mt
-source-wordcount: '248'
+source-wordcount: '217'
 ht-degree: 0%
 
 ---
 
 # 管理沙箱
-
->[!IMPORTANT]
->
->目前，基于属性的访问控制在面向美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。
 
 沙盒是单个Experience Platform实例内的虚拟分区，它允许与数字体验应用程序的开发过程无缝集成。 在沙盒内执行的所有内容和操作都仅限于该沙盒，不会影响任何其他沙盒。 有关沙箱的详细信息，请参阅 [沙箱概述](../../../sandboxes/home.md).
 
