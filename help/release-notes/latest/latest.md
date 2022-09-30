@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
-source-git-commit: 20902b6a0dce4c189f43343d9fd0a87913a0fdbf
+source-git-commit: d93036c26e9f1b86a82f4da4cce6f9e8152e3542
 workflow-type: tm+mt
-source-wordcount: '3059'
+source-wordcount: '2894'
 ht-degree: 5%
 
 ---
@@ -22,7 +22,6 @@ Adobe Experience Platform 现有功能的更新包括：
 - [审核日志](#audit-logs)
 - [[!DNL Dashboards]](#dashboards)
 - [数据收集](#data-collection)
-- [数据卫生](#data-hygiene)
 - [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [Identity Service](#identity-service)
@@ -118,27 +117,6 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 -->
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
-
-## 数据卫生 {#data-hygiene}
-
-Adobe Experience Platform提供了一组功能强大的工具来管理大型、复杂的数据操作，以编排客户体验。 随着数据逐渐被摄取到系统中，管理数据存储变得越来越重要，这样数据就可以按预期使用，错误数据需要更正时会更新，组织策略认为有必要时会删除。
-
-Adobe Experience Platform的数据卫生功能允许您通过计划自动数据集过期时间以及按身份以编程方式删除消费者数据来清除数据。
-
->[!IMPORTANT]
->
->数据卫生功能仅适用于已购买Adobe医疗保健盾的组织。
-
-**新增功能或更新功能**
-
-| 功能 | 描述 |
-| --- | --- |
-| 更新了UI工作流程 | 的工作流 [计划数据集过期](../../hygiene/ui/dataset-expiration.md) 和 [删除消费者数据](../../hygiene/ui/delete-consumer.md) 已在UI中简化。 |
-| 配额API端点 | 您现在可以通过调用 [`/quota` 端点](../../hygiene/api/quota.md). |
-
-{style=&quot;table-layout:auto&quot;}
-
-有关平台数据卫生功能的更多信息，请参阅 [数据卫生概述](../../hygiene/home.md).
 
 ## [!DNL Destinations] {#destinations}
 
