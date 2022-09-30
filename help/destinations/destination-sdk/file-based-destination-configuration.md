@@ -2,9 +2,9 @@
 description: 此配置允许您指示基于文件的目标的基本信息，如目标名称、类别、描述等。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 用于Destination SDK的基于文件的目标配置选项
 exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
-source-git-commit: 1d6318e33be639237c2c8e6f1bf67e1702949c20
+source-git-commit: b32450311469ecf2af2ca45b3fa1feaf25147ea2
 workflow-type: tm+mt
-source-wordcount: '2664'
+source-wordcount: '3021'
 ht-degree: 5%
 
 ---
@@ -722,6 +722,54 @@ Adobe Experience Platform Destination SDK支持合作伙伴定义的模式。 �
 | `authenticationRule` | 字符串 | 指示方式 [!DNL Platform] 客户连接到您的目标。 接受的值为 `CUSTOMER_AUTHENTICATION`, `PLATFORM_AUTHENTICATION`, `NONE`. <br> <ul><li>使用 `CUSTOMER_AUTHENTICATION` 如果Platform客户通过以下任一方法登录您的系统： <ul><li>`"authType": "S3"`</li><li>`"authType":"AZURE_CONNECTION_STRING"`</li><li>`"authType":"AZURE_SERVICE_PRINCIPAL"`</li><li>`"authType":"SFTP_WITH_SSH_KEY"`</li><li>`"authType":"SFTP_WITH_PASSWORD"`</li></ul> </li><li> 使用 `PLATFORM_AUTHENTICATION` 如果Adobe与目标之间存在全局身份验证系统，并且 [!DNL Platform] 客户无需提供任何身份验证凭据即可连接到您的目标。 在这种情况下，必须使用 [凭据](./credentials-configuration-api.md) 配置。 </li><li>使用 `NONE` 如果向目标平台发送数据时不需要任何身份验证。 </li></ul> |
 | `value` | 字符串 | 要在Experience Platform用户界面中的映射步骤中显示的架构名称。 |
 | `responseFormat` | 字符串 | 始终设置为 `SCHEMA` 定义自定义架构时。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+### 必需映射 {#required-mappings}
+
+在架构配置中，您可以选择添加必需（或预定义）映射。 用户在设置与目标的连接时可以查看但无法修改的映射。 例如，您可以强制将电子邮件地址字段始终发送到导出文件中的目标。 请参阅下面的架构配置示例，该配置包含所需的映射，以及在的映射步骤中所显示的内容 [将数据激活到批处理目标工作流](/help/destinations/ui/activate-batch-profile-destinations.md).
+
+```json
+    "requiredMappingsOnly": true, // this is selected true , users cannot map other attributes and identities in the activation flow, apart from the required mappings that you define.
+    "requiredMappings": [
+      {
+        "destination": "identityMap.ExamplePartner_ID", //if only the destination field is specified, then the user is able to select a source field to map to the destination.
+        "mandatoryRequired": true,
+        "primaryKeyRequired": true
+      },
+      {
+        "sourceType": "text/x.schema-path",
+        "source": "personalEmail.address",
+        "destination": "personalEmail.address" //when both source and destination fields are specified as required mappings, then the user can not select or edit any of the two fields and can only view the selection.
+      },
+      {
+        "sourceType": "text/x.aep-xl",
+        "source": "iif(${segmentMembership.ups.seg_id.status}==\"exited\", \"1\",\"0\")",
+        "destination": "delete"
+      }
+    ] 
+```
+
+![UI激活流程中所需映射的图像。](/help/destinations/destination-sdk/assets/required-mappings.png)
+
+>[!NOTE]
+>
+>当前支持的所需映射组合包括：
+>* 您可以配置必填的源字段和必填的目标字段。 在这种情况下，用户无法编辑或选择这两个字段中的任意一个，并且只能查看选择。
+>* 您只能配置必需的目标字段。 在这种情况下，将允许用户选择要映射到目标的源字段。
+>
+> 当前仅配置必需源字段 *not* 受支持。
+
+如果要在目标的激活工作流中添加所需的映射，请使用下表中描述的参数。
+
+| 参数 | 类型 | 描述 |
+|---------|----------|------|
+| `requiredMappingsOnly` | 布尔型 | 指示用户是否能够在激活流程中映射其他属性和身份， *apart* 您定义的所需映射。 |
+| `requiredMappings.mandatoryRequired` | 布尔型 | 如果此字段必须是必填字段，则应始终存在于目标文件导出中，则设置为true。 有关更多信息 [必需属性](/help/destinations/ui/activate-batch-profile-destinations.md#mandatory-attributes). |
+| `requiredMappings.primaryKeyRequired` | 布尔型 | 如果在导出到目标的文件中必须将此字段用作重复数据删除键，则设置为true。 有关更多信息 [重复数据删除键](/help/destinations/ui/activate-batch-profile-destinations.md#deduplication-keys). |
+| `requiredMappings.sourceType` | 字符串 | 在根据需要配置源字段时使用。 指示源字段的类型。 可用选项包括： <ul><li>`"text/x.schema-path"` 当源字段是预定义的XDM属性时</li><li>`"text/x.aep-xl"` 当源字段是函数时，例如，当您需要在源字段侧满足条件时。 有关支持的函数的更多信息，请阅读 [数据准备](/help/data-prep/api/functions.md) 文档。</li></ul> |
+| `requiredMappings.source` | 字符串 | 指示必需的源字段。 |
+| `requiredMappings.destination` | 字符串 | 指示必填目标字段的内容。 |
 
 {style=&quot;table-layout:auto&quot;}
 
