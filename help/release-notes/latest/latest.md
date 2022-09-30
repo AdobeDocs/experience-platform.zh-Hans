@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
-source-git-commit: 45281721c6fb26c303bb820fa39f5c6ed71b55f9
+source-git-commit: 20902b6a0dce4c189f43343d9fd0a87913a0fdbf
 workflow-type: tm+mt
-source-wordcount: '3064'
+source-wordcount: '3059'
 ht-degree: 5%
 
 ---
@@ -15,7 +15,6 @@ ht-degree: 5%
 Adobe Experience Platform的新增功能：
 
 - [基于属性的访问控制](#abac)
-- [数据卫生](#data-hygiene)
 
 Adobe Experience Platform 现有功能的更新包括：
 
@@ -23,6 +22,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [审核日志](#audit-logs)
 - [[!DNL Dashboards]](#dashboards)
 - [数据收集](#data-collection)
+- [数据卫生](#data-hygiene)
 - [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [Identity Service](#identity-service)
@@ -45,22 +45,6 @@ Adobe Experience Platform 现有功能的更新包括：
 | 权限 | 权限是Experience Cloud区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。 通过“权限”，您可以创建和管理角色，为这些角色分配所需的资源权限，以及构建策略以利用标签并定义哪些用户角色有权访问特定的Platform资源。 权限还允许您管理与特定角色关联的标签、沙箱和用户。 有关更多信息，请参阅 [权限UI指南](../../access-control/abac/ui/browse.md). |
 
 有关基于属性的访问控制的详细信息，请参阅 [基于属性的访问控制概述](../../access-control/abac/overview.md). 有关基于属性的访问控制工作流的全面指南，请阅读 [基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md).
-
-## 数据卫生 {#data-hygiene}
-
-Adobe Experience Platform提供了一组功能强大的工具来管理大型、复杂的数据操作，以编排客户体验。 随着数据逐渐被摄取到系统中，管理数据存储变得越来越重要，这样数据就可以按预期使用，错误数据需要更正时会更新，组织策略认为有必要时会删除。
-
-Adobe Experience Platform的数据卫生功能允许您通过计划自动数据集过期时间以及按身份以编程方式删除消费者数据来清除数据。
-
->[!IMPORTANT]
->
->数据卫生功能仅适用于已购买Adobe医疗保健盾的组织。
-
-请参阅以下文档，以开始使用数据卫生：
-
-- [数据卫生概述](../../hygiene/home.md):了解有关Platform数据卫生功能的基础知识。
-- [[!UICONTROL 数据卫生] UI指南](../../hygiene/ui/overview.md):了解如何在Platform用户界面中计划数据集过期和消费者删除请求。
-- [数据卫生API指南](../../hygiene/api/overview.md):您可以在UI中执行的所有数据卫生活动也可以采用编程方式
 
 ## [!DNL Artificial Intelligence/Machine Learning services] {#ai-and-ml-services}
 
@@ -135,6 +119,27 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 
 有关Platform中数据收集的更多信息，请参阅 [数据收集概述](../../collection/home.md).
 
+## 数据卫生 {#data-hygiene}
+
+Adobe Experience Platform提供了一组功能强大的工具来管理大型、复杂的数据操作，以编排客户体验。 随着数据逐渐被摄取到系统中，管理数据存储变得越来越重要，这样数据就可以按预期使用，错误数据需要更正时会更新，组织策略认为有必要时会删除。
+
+Adobe Experience Platform的数据卫生功能允许您通过计划自动数据集过期时间以及按身份以编程方式删除消费者数据来清除数据。
+
+>[!IMPORTANT]
+>
+>数据卫生功能仅适用于已购买Adobe医疗保健盾的组织。
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 更新了UI工作流程 | 的工作流 [计划数据集过期](../../hygiene/ui/dataset-expiration.md) 和 [删除消费者数据](../../hygiene/ui/delete-consumer.md) 已在UI中简化。 |
+| 配额API端点 | 您现在可以通过调用 [`/quota` 端点](../../hygiene/api/quota.md). |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关平台数据卫生功能的更多信息，请参阅 [数据卫生概述](../../hygiene/home.md).
+
 ## [!DNL Destinations] {#destinations}
 
 [!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
@@ -151,7 +156,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 
 | 目标 | 描述 |
 | ----------- | ----------- |
-| [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services提供了一个平台，用于设计跨渠道客户体验以及可视活动编排、实时交互管理和跨渠道执行的环境。 [Campaign快速入门](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html). 请注意，此集成适用于。请注意，此集成适用于 [Adobe Campaign版本8.4或更高版本](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html?lang=en#release-8-4-1). |
+| [[!DNL Adobe Campaign Managed Cloud Services]](../../destinations/catalog/email-marketing/adobe-campaign-managed-services.md) | Adobe Campaign Managed Cloud Services提供了一个平台，用于设计跨渠道客户体验以及可视活动编排、实时交互管理和跨渠道执行的环境。 [Campaign快速入门](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html). 请注意，此集成适用于 [Adobe Campaign版本8.4或更高版本](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html?lang=en#release-8-4-1). |
 | [[!DNL Salesforce CRM]](../../destinations/catalog/crm/salesforce.md) | 的 [!DNL Salesforce CRM] 目标已更新，可支持联系人和潜在客户更新以及性能改进，以便更快更新。 |
 
 {style=&quot;table-layout:auto&quot;}
