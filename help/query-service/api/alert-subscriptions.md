@@ -2,7 +2,7 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；警报；
 title: 警报订阅API端点
 description: 本指南提供了您可以使用查询服务API对警报订阅端点进行的各种API调用的示例HTTP请求和响应。
-source-git-commit: bd841244fcb7d63af9c3383335307647b93499ce
+source-git-commit: cab7fcfda1bd8f6462af6e631f1fcee1f354d26b
 workflow-type: tm+mt
 source-wordcount: '2289'
 ht-degree: 2%
@@ -301,7 +301,7 @@ curl -X GET 'https://platform.adobe.io/data/foundation/query/alert-subscriptions
 
 **响应**
 
-成功响应会返回HTML状态200和订阅的所有警报。 这包括警报ID、警报类型、订阅者的Adobe注册电子邮件ID及其首选通知渠道。
+成功响应会返回HTTP状态200以及订阅的所有警报。 这包括警报ID、警报类型、订阅者的Adobe注册电子邮件ID及其首选通知渠道。
 
 ```json
 {

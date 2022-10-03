@@ -5,9 +5,9 @@ title: 查询服务凭据指南
 topic-legacy: guide
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
+source-git-commit: f3052745105df603e547535a12285b6c1d771fa6
 workflow-type: tm+mt
-source-wordcount: '1168'
+source-wordcount: '1186'
 ht-degree: 1%
 
 ---
@@ -109,6 +109,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 >[!NOTE]
 >
 >在使用未过期的凭据连接到主机时，仍需要使用 [!UICONTROL 过期凭据] 部分，但密码和用户名除外。
+>输入用户名和密码的格式使用冒号分隔值，如本例中所示 `username:{your_username}` 和 `password:{password_string}`.
 
 | 参数 | 描述 |
 |---|---|
