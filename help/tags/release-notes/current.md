@@ -1,15 +1,20 @@
 ---
 title: 标记和事件转发发行说明
-description: 有关Adobe Experience Platform中标记和事件转发的最新发行说明。
+description: 有关 Adobe Experience Platform 中的标记和事件转发的最新发行说明。
 exl-id: 2ebeaa1e-64b8-48fd-b4e8-419663271a87
-source-git-commit: af424089c0afdaae76b312137afc5cbd28e82856
+source-git-commit: 2a5c31f8991c1c6aff294eabf4cc0e35c96ecaf7
 workflow-type: tm+mt
-source-wordcount: '138'
-ht-degree: 5%
+source-wordcount: '224'
+ht-degree: 9%
 
 ---
 
 # 标记和事件转发的发行说明
+
+## 2022 年 9 月 28 日
+
+* **Adobe Experience Platform左导航集成**:以前只有数据收集UI才能使用的所有功能（包括标记和事件转发）现在也可以通过Experience PlatformUI的左侧导航中类别下的方式使用 **[!UICONTROL 数据收集]**. 使用Platform中的数据收集功能时，无需在UI之间切换。
+* **标记和事件转发中的用户归因**:现在，在标记和事件转发中列出可用属性时，每个列出的属性都会显示上次更新时间以及更新者。
 
 ## 2022 年 7 月 27 日
 
