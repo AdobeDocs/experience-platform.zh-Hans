@@ -2,7 +2,7 @@
 title: 用户定义的功能板
 description: 了解如何构建和管理自定义功能板，您可以在其中创建、添加和编辑定制小组件以可视化关键量度。
 exl-id: a9ab83f7-b68d-4dbf-9dc6-ef253df5c82c
-source-git-commit: d874fed681449c6f5114196cface157c8c406d69
+source-git-commit: 8e5df8b3e38197520c6e15f7c6639c62527c086e
 workflow-type: tm+mt
 source-wordcount: '938'
 ht-degree: 0%
@@ -12,11 +12,6 @@ ht-degree: 0%
 # 用户定义的功能板
 
 Adobe Experience Platform功能板可帮助您通过用户定义的功能板功能加快分析和自定义可视化。 此功能允许您构建和管理自定义功能板，您可以在其中创建、添加和编辑定制小组件，以可视化与您的组织相关的关键量度。
-
->[!IMPORTANT]
->
->为确保Real-time Customer Data Platform分析功能板的每个查询都拥有足够的资源来高效执行，API通过为每个查询分配并发插槽来跟踪资源使用情况。 系统最多可以处理四个并发查询，因此在任何给定时间都有四个并发查询槽。 查询将基于并发插槽放入队列中，然后在队列中等待足够的并发插槽可用。
-
 
 <!-- Getting started / permissions section commented out for Beta. This will be necessary after GA only
 
@@ -120,6 +115,8 @@ To view dashboards in Adobe Experience Platform you must have the appropriate pe
 在此工作区中，可以重新排列小组件并调整其大小。 选择 **[!UICONTROL 保存]** 以保留功能板名称和配置的布局。
 
 ![带有自定义小组件的用户定义功能板和突出显示的保存按钮。](./images/user-defined-dashboards/user-defined-dashboard.png)
+
+为确保Real-time Customer Data Platform分析功能板的每个查询都拥有足够的资源来高效执行，API通过为每个查询分配并发插槽来跟踪资源使用情况。 系统最多可以处理四个并发查询，因此在任何给定时间都有四个并发查询槽。 查询将基于并发插槽放入队列中，然后在队列中等待足够的并发插槽可用。
 
 ## 后续步骤
 
