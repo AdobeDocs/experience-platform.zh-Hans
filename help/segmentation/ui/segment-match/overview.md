@@ -5,9 +5,9 @@ title: 区段匹配概述
 topic-legacy: overview
 description: 区段匹配是Adobe Experience Platform中的一项区段共享服务，允许两个或更多Platform用户以安全、受管理和隐私友好的方式交换区段数据。
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: 1c2b9862facfe9fbce59246c882e6373f3e2c3ef
+source-git-commit: 2329065b938d97f48a23be5250fec535355db770
 workflow-type: tm+mt
-source-wordcount: '1994'
+source-wordcount: '1998'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 | 命名空间 | 描述 |
 | --------- | ----------- |
-| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。 在使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在电子邮件地址被标准化之前，需要裁剪前导和尾随空格。 此设置不能以追溯方式更改。 请参阅以下文档(位于 [SHA256哈希处理支持](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=en#hashing-support) 以了解更多信息。 |
+| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。 在使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在电子邮件地址被标准化之前，需要裁剪前导和尾随空格。 此设置不能以追溯方式更改。 Platform提供两种方法，支持通过对数据收集进行哈希处理 [`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=en#hashing-support) 通过 [数据准备](../../../data-prep/functions.md#hashing). |
 | 电话(SHA256_E.164) | 表示需要使用SHA256和E.164格式进行哈希处理的原始电话号码的命名空间。 |
 | ECID | 表示Experience CloudID(ECID)值的命名空间。 此命名空间也可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 请参阅 [ECID概述](../../../identity-service/ecid.md) 以了解更多信息。 |
 | Apple IDFA（广告商的ID） | 表示广告商的Apple ID的命名空间。 请参阅以下文档(位于 [基于兴趣的广告](https://support.apple.com/en-us/HT202074) 以了解更多信息。 |
