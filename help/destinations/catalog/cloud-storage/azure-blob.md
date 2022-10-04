@@ -3,9 +3,9 @@ keywords: Azure Blob;Blob目标；s3;Azure Blob目标
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，以定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: dd18350387aa6bdeb61612f0ccf9d8d2223a8a5d
+source-git-commit: 1dd87ce19c3d9f4eb07c49968754ab979b4dee5c
 workflow-type: tm+mt
-source-wordcount: '721'
+source-wordcount: '739'
 ht-degree: 1%
 
 ---
@@ -63,10 +63,9 @@ ht-degree: 1%
 
 * **[!UICONTROL 连接字符串]**:访问Blob存储中的数据时需要使用连接字符串。 的 [!DNL Blob] 连接字符串模式以开头： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`.
    * 有关配置 [!DNL Blob] 连接字符串，请参阅 [为Azure存储帐户配置连接字符串](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#configure-a-connection-string-for-an-azure-storage-account) (在Microsoft文档中)。
-* **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64-encoded] 字符串。
-   * 示例: `----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`. 请参阅下面格式正确的PGP键示例，其中间部分缩短为简短。
+* **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64-encoded] 字符串。 在下面的文档链接中查看格式正确且基本64编码的键值的示例。 为简便起见，缩短了中间部分。
 
-      ![PGP密钥](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+![该图像显示了UI中格式正确且基本64加密的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 ### 填写目标详细信息 {#destination-details}
 

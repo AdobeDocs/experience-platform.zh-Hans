@@ -3,9 +3,9 @@ keywords: SFTP;SFTP
 title: SFTP连接
 description: 创建与SFTP服务器的实时出站连接，以定期从Adobe Experience Platform导出分隔数据文件。
 exl-id: 27abfc38-ec19-4321-b743-169370d585a0
-source-git-commit: fd2019feb25b540612a278cbea5bf5efafe284dc
+source-git-commit: 1dd87ce19c3d9f4eb07c49968754ab979b4dee5c
 workflow-type: tm+mt
-source-wordcount: '673'
+source-wordcount: '690'
 ht-degree: 1%
 
 ---
@@ -60,10 +60,9 @@ ht-degree: 1%
 * **[!UICONTROL 主机]**:SFTP存储位置的地址；
 * **[!UICONTROL 用户名]**:登录SFTP存储位置的用户名；
 * **[!UICONTROL 密码]**:登录SFTP存储位置的密码。
-* **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64] 编码字符串。
-   * 示例: `----BEGIN PGP PUBLIC KEY BLOCK---- {Base64-encoded string} ----END PGP PUBLIC KEY BLOCK----`. 请参阅下面格式正确的PGP键示例，其中间部分缩短为简短。
+* **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64-encoded] 字符串。 在下面的文档链接中查看格式正确且基本64编码的键值的示例。 为简便起见，缩短了中间部分。
 
-      ![PGP密钥](../..//assets/catalog/cloud-storage/sftp/pgp-key.png)
+![该图像显示了UI中格式正确且基本64加密的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 
 如果您选择 **[!UICONTROL 具有SSH密钥的SFTP]** 连接到SFTP位置的身份验证类型：
