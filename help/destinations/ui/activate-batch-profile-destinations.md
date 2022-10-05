@@ -4,9 +4,9 @@ title: 激活受众数据以批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 70670f7aec2ab6a5594f5e69672236c7bcc3ce81
+source-git-commit: 48e87f6089f6fe0be6cb49f5138422c631a485c3
 workflow-type: tm+mt
-source-wordcount: '2520'
+source-wordcount: '2577'
 ht-degree: 0%
 
 ---
@@ -122,6 +122,11 @@ ht-degree: 0%
 1. 选择 **[!UICONTROL 创建]** 以保存计划。
 
 ### 导出增量文件 {#export-incremental-files}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_datasets_exportoptions"
+>title="数据集的文件导出选项"
+>abstract="选择 **导出增量文件** 以仅导出自上次导出后添加到数据集的数据。 <br> 第一个增量文件导出包含数据集中的所有数据，充当回填。 将来的增量文件仅包含自首次导出以来添加到数据集的数据。"
 
 选择 **[!UICONTROL 导出增量文件]** 触发导出，其中第一个文件是所选区段所有配置文件资格的完整快照，而后续文件是自上次导出以来的增量配置文件资格。
 
