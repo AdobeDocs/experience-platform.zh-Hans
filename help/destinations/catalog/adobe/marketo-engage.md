@@ -2,9 +2,9 @@
 title: Marketo Engage目标
 description: Marketo Engage是用于营销、广告、分析和商务的唯一端到端客户体验管理(CXM)解决方案。 它让您能够自动执行和管理活动，从CRM潜在客户管理和客户参与到基于帐户的营销和收入归因中。
 exl-id: 5ae5f114-47ba-4ff6-8e42-f8f43eb079f7
-source-git-commit: 6dc4a93b46d6111637e0024da574d605e0d2b986
+source-git-commit: 9f305ee7824bd8790dec57ccbd2d9462ccfa8b49
 workflow-type: tm+mt
-source-wordcount: '740'
+source-wordcount: '870'
 ht-degree: 2%
 
 ---
@@ -75,9 +75,15 @@ Marketo V2目标的改进包括：
 
 以下视频还演示了配置Marketo目标和激活区段的步骤。
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Experience Platform用户界面经常更新，自此视频录制以来可能已发生更改。 有关最新信息，请参阅上面链接的指南。
+>该视频并不完全反映当前的功能。 有关最新信息，请参阅上面链接的指南。 视频的以下部分已过时：
+> 
+>* 您应在Experience PlatformUI中使用的目标卡是 **[!UICONTROL Marketo V2]**.
+>* 该视频不显示新 **[!UICONTROL 人员创建]** “连接到目标”工作流中的选择器字段。
+>* 视频中调用的两个限制不再适用。 除了在视频录制时支持的区段成员资格信息之外，您现在还可以映射许多其他配置文件属性字段。 您还可以将区段成员导出到Marketo，这些区段成员在Marketo静态列表中尚不存在，并且这些成员将会添加到列表中。
+>* 在 **[!UICONTROL 计划区段步骤]** 在Marketo V1中，您需要手动添加 **[!UICONTROL 映射ID]** 成功将数据导出到Marketo。 Marketo V2不再需要此手动步骤。
+
 
 >[!VIDEO](https://video.tv.adobe.com/v/338248?quality=12)
 
