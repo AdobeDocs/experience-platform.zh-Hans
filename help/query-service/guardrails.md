@@ -3,10 +3,10 @@ keywords: Experience Platform；查询；查询服务；故障诊断；护栏；
 title: 查询服务的防护
 description: 本文档提供了有关查询服务数据使用限制的信息，以帮助您优化查询使用。
 exl-id: 1ad5dcf4-d048-49ff-97e3-07040392b65b
-source-git-commit: 8e5df8b3e38197520c6e15f7c6639c62527c086e
+source-git-commit: f8913fd8f5d6f4acf70a43c0a047bcd034dfd402
 workflow-type: tm+mt
-source-wordcount: '764'
-ht-degree: 3%
+source-wordcount: '769'
+ht-degree: 2%
 
 ---
 
@@ -67,6 +67,8 @@ ht-degree: 3%
 | 通过 | 数据集 | 不适用 | 这定义了如何将结果提供给用户。 |
 
 {style=&quot;table-layout:auto&quot;}
+
+## 通过查询生成的功能板分析 {#dashboard-insights}
 
 为确保Real-time Customer Data Platform分析功能板的每个查询都拥有足够的资源来高效执行，API通过为每个查询分配并发插槽来跟踪资源使用情况。 系统最多可以处理四个并发查询，因此在任何给定时间都有四个并发查询槽。 查询将基于并发插槽放入队列中，然后在队列中等待足够的并发插槽可用。
 
