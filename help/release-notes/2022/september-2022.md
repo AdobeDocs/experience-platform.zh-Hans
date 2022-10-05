@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: d93036c26e9f1b86a82f4da4cce6f9e8152e3542
+source-git-commit: 319c30facb7e8093318a01a3155bdb2fee0f548b
 workflow-type: tm+mt
-source-wordcount: '2895'
+source-wordcount: '2934'
 ht-degree: 5%
 
 ---
@@ -108,6 +108,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | --- | --- |
 | Platform UI中的左侧导航集成 | 以前专用于数据收集UI的所有功能（包括标记、事件转发和数据流）现在也可通过Experience Platform中的左侧导航（位于类别下）使用 **[!UICONTROL 数据收集]**. 使用Platform中的数据收集功能时，无需在UI之间切换。 |
 | 标记和事件转发中的用户归因 | 列表可用时 [!UICONTROL 属性] 在标记和事件转发中，每个列出的属性现在都会显示上次更新的时间以及进行更新的用户。 |
+| [[!DNL Snap Conversions API] 扩展](https://exchange.adobe.com/apps/ec/108550) 用于事件转发 | 您现在可以将数据发送到 [!DNL Snapchat Conversions API] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 有关如何验证和使用API的更多信息，请参阅 [[!DNL Snapchat Marketing API] 文档](https://marketingapi.snapchat.com/docs/conversion.html). |
 | [[!DNL User-Agent Client Hints] 在Web SDK中](../../edge/fundamentals/user-agent-client-hints.md) | Web SDK现在支持 [[!DNL User-Agent Client Hints]](https://developer.chrome.com/docs/privacy-sandbox/user-agent/). 客户端提示允许网站所有者访问 [!DNL User-Agent] 字符串，但更能保护隐私。 |
 | [逐页迁移Web SDK](../../edge/home.md#migrating-to-web-sdk) | 您现在可以从其他Experience Cloud库迁移现有Web资产，例如 [!DNL at.js]，到Web SDK，每次一个页面。 这支持分阶段迁移Web SDK的方法，而无需同时迁移您的所有页面。 |
 
