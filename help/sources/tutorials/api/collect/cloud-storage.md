@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方云存储检索数据，以及使用源连接器和API将数据导入平台的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: 2d3fbbb5c743b8e172e3e64bda31ebf3278b4f5b
+source-git-commit: 1f492fd48de304c70fdd8beb477b8a22369b853a
 workflow-type: tm+mt
-source-wordcount: '1631'
+source-wordcount: '1692'
 ht-degree: 1%
 
 ---
@@ -62,33 +62,33 @@ POST /sourceConnections
 
 ```shell
 curl -X POST \
-    'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
-    -H 'Authorization: Bearer {ACCESS_TOKEN}' \
-    -H 'x-api-key: {API_KEY}' \
-    -H 'x-gw-ims-org-id: {ORG_ID}' \
-    -H 'x-sandbox-name: {SANDBOX_NAME}' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "name": "Cloud Storage source connection",
-        "description: "Source connection for a cloud storage source",
-        "baseConnectionId": "1f164d1b-debe-4b39-b4a9-df767f7d6f7c",
-        "data": {
-            "format": "delimited",
-            "properties": {
-                "columnDelimiter": "{COLUMN_DELIMITER}",
-                "encoding": "{ENCODING}"
-                "compressionType": "{COMPRESSION_TYPE}"
-            }
-        },
-        "params": {
-            "path": "/acme/summerCampaign/account.csv",
-            "type": "file"
-        },
-        "connectionSpec": {
-            "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
-            "version": "1.0"
-        }
-    }'
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Cloud Storage source connection",
+      "description: "Source connection for a cloud storage source",
+      "baseConnectionId": "1f164d1b-debe-4b39-b4a9-df767f7d6f7c",
+      "data": {
+          "format": "delimited",
+          "properties": {
+              "columnDelimiter": "{COLUMN_DELIMITER}",
+              "encoding": "{ENCODING}",
+              "compressionType": "{COMPRESSION_TYPE}"
+          }
+      },
+      "params": {
+          "path": "/acme/summerCampaign/account.csv",
+          "type": "file"
+      },
+      "connectionSpec": {
+          "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
+          "version": "1.0"
+      }
+  }'
 ```
 
 | 属性 | 描述 |
@@ -112,6 +112,46 @@ curl -X POST \
     "id": "26b53912-1005-49f0-b539-12100559f0e2",
     "etag": "\"11004d97-0000-0200-0000-5f3c3b140000\""
 }
+```
+
+### 使用正则表达式选择一组特定的文件以进行摄取 {#regex}
+
+创建源连接时，您可以使用正则表达式将一组特定文件从源摄取到平台。
+
+**API格式**
+
+```http
+POST /sourceConnections
+```
+
+**请求**
+
+在以下示例中，文件路径中使用正则表达式来指定所有具有 `premium` 以他们的名字。
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Cloud Storage source connection",
+      "description: "Source connection for a cloud storage source",
+      "baseConnectionId": "1f164d1b-debe-4b39-b4a9-df767f7d6f7c",
+      "data": {
+          "format": "delimited"
+      },
+      "params": {
+          "path": "/acme/summerCampaign/*premium*.csv",
+          "type": "folder"
+      },
+      "connectionSpec": {
+          "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
+          "version": "1.0"
+      }
+  }'
 ```
 
 ## 创建目标XDM架构 {#target-schema}
