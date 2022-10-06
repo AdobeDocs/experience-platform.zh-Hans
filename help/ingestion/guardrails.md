@@ -3,9 +3,9 @@ keywords: Experience Platform；故障诊断；护栏；准则；
 title: 数据摄取的防护
 description: 本文档提供了有关在Adobe Experience Platform中摄取数据的防护的指导
 exl-id: f07751cb-f9d3-49ab-bda6-8e6fec59c337
-source-git-commit: 4fd26078017ae13e22ebb02f98335094c8e0581b
+source-git-commit: fa0ddc4c0053018d013c14c568ebb2fd231f4bd2
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '546'
 ht-degree: 1%
 
 ---
@@ -25,6 +25,7 @@ ht-degree: 1%
 | 使用批量摄取API的数据湖摄取 | <ul><li>使用批量摄取API，您每小时可以摄取多达20 GB的数据到数据湖。</li><li>每批文件的最大数量为1500。</li><li>最大批处理大小为100 GB。</li><li>每行的属性或字段的最大数为10000。</li><li>每用户每分钟的批次数上限为138个。</li></ul> |
 | 使用批处理源的数据湖摄取 | <ul><li>使用批量摄取源(例如， [!DNL Azure Blob], [!DNL Amazon S3]和 [!DNL SFTP].</li><li>批处理大小应介于256 MB和100 GB之间。</li><li>每批文件的最大数量为1500。</li></ul> | 请参阅 [源概述](../sources/home.md) 用于数据摄取的源目录。 |
 | 批量摄取到配置文件 | <ul><li>您每小时可摄取多达120 GB的数据。</li><li>记录类的最大大小为100 KB（软）。</li><li>ExperienceEvent类的最大大小为10 KB（软）。</li><li>单个记录的最大大小为1 MB。</li></ul> |
+| 每天摄取的配置文件或ExperienceEvent批次数 | **每天摄取的配置文件或ExperienceEvent批次数上限为90个。** 这意味着每天摄取的配置文件和ExperienceEvent批次的合计总数不能超过90个。 摄取其他批次将影响系统性能。 | 这是个软限制。 可以超出软限制，但是软限制为系统性能提供了建议的准则。 |
 
 ## 用于流式引入的防护
 
