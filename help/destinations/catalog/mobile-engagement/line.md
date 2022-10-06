@@ -2,9 +2,9 @@
 keywords: 移动设备；移动设备参与目标；LINE;LINE移动设备参与目标
 title: 线路连接
 description: 利用LINE目标，可向Platform区段添加用户档案，并为连接的用户提供个性化体验。
-source-git-commit: 10c04bdee8536194baea00d3466c758f848c46c5
+source-git-commit: b15ad6339cb342d754e3a78e0d68b232a94a835e
 workflow-type: tm+mt
-source-wordcount: '1166'
+source-wordcount: '1183'
 ht-degree: 1%
 
 ---
@@ -32,7 +32,10 @@ ht-degree: 1%
 
 #### 你需要 [!DNL LINE] 帐户 {#prerequisites-account}
 
-转到 [!DNL LINE] [注册](https://account.line.biz/signup) 页面以注册和创建帐户（如果尚未注册）。
+您需要注册并创建 [!DNL LINE] 帐户（如果您还没有）。 要创建帐户，请执行以下操作：
+
+1. 导航到 [!DNL LINE] [帐户登录](https://account.line.biz/login?redirectUri=https%3A%2F%2Fmanager.line.biz%2F) 页面
+2. 选择 **[!UICONTROL 创建帐户]**.
 
 #### 收集 [!DNL LINE channel access token (long-lived)] 从 [!DNL LINE] 开发人员控制台 {#gather-credentials}
 
