@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年9月
 description: 2022年9月版Adobe Experience Platform发行说明。
-source-git-commit: 319c30facb7e8093318a01a3155bdb2fee0f548b
+source-git-commit: 87789668da0cfdf86d3c47be6e4dc49282932180
 workflow-type: tm+mt
-source-wordcount: '2934'
+source-wordcount: '2926'
 ht-degree: 5%
 
 ---
@@ -41,7 +41,7 @@ Adobe Experience Platform 现有功能的更新包括：
 | 功能 | 描述 |
 | --- | --- |
 | 基于属性的访问控制 | 基于属性的访问控制允许您为体验数据模型(XDM)架构字段和区段设置标签，以定义组织或数据使用范围。 同时，管理员可以使用用户和角色管理界面来定义涵盖XDM架构字段和区段的访问策略，以更好地管理提供给用户或组（内部、外部或第三方用户）的访问。 有关更多信息，请参阅 [基于属性的访问控制概述](../../access-control/abac/overview.md). |
-| 权限 | 权限是Experience Cloud区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。 通过“权限”，您可以创建和管理角色，为这些角色分配所需的资源权限，以及构建策略以利用标签并定义哪些用户角色有权访问特定的Platform资源。 权限还允许您管理与特定角色关联的标签、沙箱和用户。 有关更多信息，请参阅 [权限UI指南](../../access-control/abac/ui/browse.md). |
+| 权限 | 权限是Experience Cloud区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。 通过“权限”，您可以创建和管理角色，为这些角色分配所需的资源权限，以及构建策略以利用标签并定义哪些用户角色有权访问特定的Platform资源。 权限还允许您管理与特定角色关联的标签、沙盒和用户。有关更多信息，请参阅 [权限UI指南](../../access-control/abac/ui/browse.md). |
 
 有关基于属性的访问控制的详细信息，请参阅 [基于属性的访问控制概述](../../access-control/abac/overview.md). 有关基于属性的访问控制工作流的全面指南，请阅读 [基于属性的访问控制端到端指南](../../access-control/abac/end-to-end-guide.md).
 
@@ -215,10 +215,12 @@ Adobe Experience Platform Identity Service通过跨设备和系统桥接身份�
 
 | 功能 | 描述 |
 | --- | --- |
-| 警报订阅API | Adobe Experience Platform查询服务允许您订阅临时查询和计划查询的警报。 警报可通过电子邮件、在Platform UI中或同时通过两者接收。 目前，查询警报只能使用 [查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/). 请参阅 [查询警报文档](../../query-service/api/alert-subscriptions.md) 以了解更多。 |
+| 警报订阅API | Adobe Experience Platform查询服务允许您订阅临时查询和计划查询的警报。 警报可通过电子邮件、在Platform UI中或同时通过两者接收。 目前，查询警报只能使用 [查询服务API](https://developer.adobe.com/experience-platform-apis/references/query-service/). |
 | 数据集示例 | 查询服务数据集示例使您能够对大数据进行探索性查询，并大大缩短了处理时间，同时也降低了查询准确性。 请参阅 [数据集示例指南](../../query-service/sql/dataset-samples.md) 以了解更多。 |
 
 有关 [!DNL Query Service]，请参阅 [[!DNL Query Service] 概述](../../query-service/home.md).
+
+<!-- See the [query alerts documentation](../../query-service/api/alert-subscriptions.md) to learn more. -->
 
 ## 源 {#sources}
 
