@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；流程服务；
 title: （测试版）使用流量服务API为按需摄取创建流量运行
 description: 本教程介绍了使用流量服务API创建针对按需摄取的流量运行的步骤
 exl-id: a7b20cd1-bb52-4b0a-aad0-796929555e4a
-source-git-commit: 61b3799a4d8c8b6682babd85b6f50a7e69778553
+source-git-commit: 795b1af6421c713f580829588f954856e0a88277
 workflow-type: tm+mt
-source-wordcount: '1157'
+source-wordcount: '856'
 ht-degree: 1%
 
 ---
@@ -70,6 +70,7 @@ curl -X POST \
   -d '{
       "flowId": "3abea21c-7e36-4be1-bec1-d3bad0e3e0de",
       "params": {
+          "startTime": "1663735590",
           "windowStartTime": "1651584991",
           "windowEndTime": "16515859567",
           "deltaColumn": {
@@ -82,9 +83,10 @@ curl -X POST \
 | 参数 | 描述 |
 | --- | --- |
 | `flowId` | 将为其创建流运行的流的ID。 |
+| `params.startTime` | 定义运行开始时间的整数。 该值以unix纪元时间表示。 |
 | `params.windowStartTime` | 一个整数，用于定义提取数据的窗口的开始时间。 该值以unix时间表示。 |
 | `params.windowEndTime` | 一个整数，用于定义提取数据的窗口的结束时间。 该值以unix时间表示。 |
-| `params.deltaColumn` | 需要增量列来划分数据，并将新摄取的数据与历史数据分开。 |
+| `params.deltaColumn` | 需要增量列来划分数据，并将新摄取的数据与历史数据分开。 **注意**:的 `deltaColumn` 仅在创建您的第一个流运行时需要。 |
 | `params.deltaColumn.name` | 增量列的名称。 |
 
 **响应**
@@ -93,53 +95,36 @@ curl -X POST \
 
 ```json
 {
-    "id": "3fb0418e-1804-45d6-8d56-dd51f05c0baf",
-    "createdAt": 1651587212543,
-    "updatedAt": 1651587223839,
-    "createdBy": "{CREATED_BY}",
-    "updatedBy": "{UPDATED_BY}",
-    "createdClient": "{CREATED_CLIENT}",
-    "updatedClient": "{UPDATED_CLIENT}",
-    "sandboxId": "{SANDBOX_ID}",
-    "sandboxName": "prod",
-    "imsOrgId": "{ORGANIZATION_ID}",
-    "flowId": "3abea21c-7e36-4be1-bec1-d3bad0e3e0de",
-    "params": {
-        "windowStartTime": "1651584991",
-        "windowEndTime": "16515859567",
-        "deltaColumn": {
-            "name": "DOB"
+    "items": [
+        {
+            "id": "3fb0418e-1804-45d6-8d56-dd51f05c0baf",
+            "etag": "\"1100c53e-0000-0200-0000-627138980000\""
         }
-    },
-    "etag": "\"1100c53e-0000-0200-0000-627138980000\"",
-    "metrics": {
-        "statusSummary": {
-            "status": "scheduled"
-        }
-    },
-    "activities": []
+    ]
 }
 ```
 
 | 属性 | 描述 |
 | --- | --- |
 | `id` | 新创建的流运行的ID。 请参阅 [检索流量规范](../api/collect/database-nosql.md#specs) 有关基于表的运行规范的详细信息。 |
-| `createdAt` | 用于指定创建流运行时间的unix时间戳。 |
-| `updatedAt` | 用于指定上次更新流运行时间的unix时间戳。 |
-| `createdBy` | 创建流程的用户的组织ID。 |
-| `updatedBy` | 上次更新流程运行的用户的组织ID。 |
-| `createdClient` | 创建流运行的应用程序客户端。 |
-| `updatedClient` | 上次更新流程运行的应用程序客户端。 |
-| `sandboxId` | 包含流运行的沙盒的ID。 |
-| `sandboxName` | 包含流运行的沙盒的名称。 |
-| `imsOrgId` | 组织ID。 |
-| `flowId` | 为其创建流运行的流的ID。 |
-| `params.windowStartTime` | 一个整数，用于定义提取数据的窗口的开始时间。 该值以unix时间表示。 |
-| `params.windowEndTime` | 一个整数，用于定义提取数据的窗口的结束时间。 该值以unix时间表示。 |
-| `params.deltaColumn` | 需要增量列来划分数据，并将新摄取的数据与历史数据分开。 **注意**:的 `deltaColumn` 仅在创建您的第一个流运行时需要。 |
-| `params.deltaColumn.name` | 增量列的名称。 |
 | `etag` | 运行流的资源版本。 |
-| `metrics` | 此属性显示流程运行的状态摘要。 |
+<!-- 
+| `createdAt` | The unix timestamp that designates when the flow run was created. |
+| `updatedAt` | The unix timestamp that designates when the flow run was last updated. |
+| `createdBy` | The organization ID of the user who created the flow run. |
+| `updatedBy` | The organization ID of the user who last updated the flow run. |
+| `createdClient` | The application client that created the flow run. |
+| `updatedClient` | The application client that last updated the flow run. |
+| `sandboxId` | The ID of the sandbox that contains the flow run. |
+| `sandboxName` | The name of the sandbox that contains the flow run. |
+| `imsOrgId` | The organization ID. |
+| `flowId` | The ID of the flow in which the flow run is created against. |
+| `params.windowStartTime` | An integer that defines the start time of the window during which data is to be pulled. The value is represented in unix time. |
+| `params.windowEndTime` | An integer that defines the end time of the window during which data is to be pulled. The value is represented in unix time. |
+| `params.deltaColumn` | The delta column is required to partition the data and separate newly ingested data from historic data. **Note**: The `deltaColumn` is only needed when creating your firs flow run. |
+| `params.deltaColumn.name` | The name of the delta column. |
+| `etag` | The resource version of the flow run. |
+| `metrics` | This property displays a status summary for the flow run. | -->
 
 ## 为基于文件的源创建流运行
 
@@ -170,6 +155,7 @@ curl -X POST \
   -d '{
       "flowId": "3abea21c-7e36-4be1-bec1-d3bad0e3e0de",
       "params": {
+          "startTime": "1663735590",
           "windowStartTime": "1651584991",
           "windowEndTime": "16515859567"
       }
@@ -179,6 +165,7 @@ curl -X POST \
 | 参数 | 描述 |
 | --- | --- |
 | `flowId` | 将为其创建流运行的流的ID。 |
+| `params.startTime` | 定义运行开始时间的整数。 该值以unix纪元时间表示。 |
 | `params.windowStartTime` | 一个整数，用于定义提取数据的窗口的开始时间。 该值以unix时间表示。 |
 | `params.windowEndTime` | 一个整数，用于定义提取数据的窗口的结束时间。 该值以unix时间表示。 |
 
@@ -189,49 +176,19 @@ curl -X POST \
 
 ```json
 {
-    "id": "3fb0418e-1804-45d6-8d56-dd51f05c0baf",
-    "createdAt": 1651587212543,
-    "updatedAt": 1651587223839,
-    "createdBy": "{CREATED_BY}",
-    "updatedBy": "{UPDATED_BY}",
-    "createdClient": "{CREATED_CLIENT}",
-    "updatedClient": "{UPDATED_CLIENT}",
-    "sandboxId": "{SANDBOX_ID}",
-    "sandboxName": "prod",
-    "imsOrgId": "{ORGANIZATION_ID}",
-    "flowId": "3abea21c-7e36-4be1-bec1-d3bad0e3e0de",
-    "params": {
-        "windowStartTime": "1651584991",
-        "windowEndTime": "16515859567"
-    },
-    "etag": "\"1100c53e-0000-0200-0000-627138980000\"",
-    "metrics": {
-        "statusSummary": {
-            "status": "scheduled"
+    "items": [
+        {
+            "id": "3fb0418e-1804-45d6-8d56-dd51f05c0baf",
+            "etag": "\"1100c53e-0000-0200-0000-627138980000\""
         }
-    },
-    "activities": []
+    ]
 }
 ```
 
 | 属性 | 描述 |
 | --- | --- |
-| `id` | 新创建的流运行的ID。 请参阅 [检索流量规范](../api/collect/cloud-storage.md#specs) 有关基于文件的运行规范的详细信息。 |
-| `createdAt` | 用于指定创建流运行时间的unix时间戳。 |
-| `updatedAt` | 用于指定上次更新流运行时间的unix时间戳。 |
-| `createdBy` | 创建流程的用户的组织ID。 |
-| `updatedBy` | 上次更新流程运行的用户的组织ID。 |
-| `createdClient` | 创建流运行的应用程序客户端。 |
-| `updatedClient` | 上次更新流程运行的应用程序客户端。 |
-| `sandboxId` | 包含流运行的沙盒的ID。 |
-| `sandboxName` | 包含流运行的沙盒的名称。 |
-| `imsOrgId` | 组织ID。 |
-| `flowId` | 为其创建流运行的流的ID。 |
-| `params.windowStartTime` | 一个整数，用于定义提取数据的窗口的开始时间。 该值以unix时间表示。 |
-| `params.windowEndTime` | 一个整数，用于定义提取数据的窗口的结束时间。 该值以unix时间表示。 |
+| `id` | 新创建的流运行的ID。 请参阅 [检索流量规范](../api/collect/database-nosql.md#specs) 有关基于表的运行规范的详细信息。 |
 | `etag` | 运行流的资源版本。 |
-| `metrics` | 此属性显示流程运行的状态摘要。 |
-
 
 ## 监控流运行
 
