@@ -4,9 +4,9 @@ title: 激活受众数据以批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 48e87f6089f6fe0be6cb49f5138422c631a485c3
+source-git-commit: c096720d9b7a645475d3a3f63f900e81c212d121
 workflow-type: tm+mt
-source-wordcount: '2577'
+source-wordcount: '2626'
 ht-degree: 0%
 
 ---
@@ -212,6 +212,12 @@ ht-degree: 0%
 >[!NOTE]
 >
 > Adobe Experience Platform会使用您的架构中四个推荐的常用属性来预填充您的选择： `person.name.firstName`, `person.name.lastName`, `personalEmail.address`, `segmentMembership.status`.
+
+>[!IMPORTANT]
+>
+>由于已知的限制，您当前无法使用 **[!UICONTROL 选择字段]** 窗口添加 `segmentMembership.status` 到文件导出。 您而是需要手动粘贴值 `xdm: segmentMembership.status` ，如下所示。
+>
+>![屏幕录制，其中显示了激活工作流映射步骤中的区段成员资格解决方法。](/help/destinations/assets/ui/activate-batch-profile-destinations/segment-membership.gif)
 
 文件导出将按以下方式有所不同，具体取决于 `segmentMembership.status` 已选中：
 * 如果 `segmentMembership.status` 字段，导出的文件包括 **[!UICONTROL 活动]** 初始完整快照中的成员和 **[!UICONTROL 活动]** 和 **[!UICONTROL 过期]** 成员。
