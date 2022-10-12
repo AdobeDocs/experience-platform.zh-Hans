@@ -5,10 +5,10 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: f6c22d260e1583dc035d1508ca3bce0d7f9de8bd
 workflow-type: tm+mt
-source-wordcount: '401'
-ht-degree: 68%
+source-wordcount: '408'
+ht-degree: 67%
 
 ---
 
@@ -112,6 +112,9 @@ ht-degree: 68%
       * “常用Analytics插件” {#plugins}
          * [概述](./extensions/web/plugins/overview.md)
          * [发行说明](./extensions/web/plugins/release-notes.md)
+      * 常用Web SDK插件 {#web-sdk-plugins}
+         * [概述](./extensions/web/web-sdk-plugins/overview.md)
+         * [发行说明](./extensions/web/web-sdk-plugins/release-notes.md)
       * 核心 {#core}
          * [概述](./extensions/web/core/overview.md)
          * [事件转发](./extensions/web/core/event-forwarding.md)
