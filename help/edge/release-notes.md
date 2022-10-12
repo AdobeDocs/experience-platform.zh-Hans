@@ -3,7 +3,7 @@ title: Adobe Experience Platform Web SDK 发行说明
 description: Adobe Experience Platform Web SDK 最新发行说明。
 keywords: Adobe Experience Platform Web SDK；平台Web SDK;Web SDK；发行说明；
 exl-id: efd4e866-6a27-4bd5-af83-4a97ca8adebd
-source-git-commit: 777a1749670f36abc09e4bacd190b1be17a9a237
+source-git-commit: becff2390aca3a1195cc157c075b1c9a087989c8
 workflow-type: tm+mt
 source-wordcount: '1349'
 ht-degree: 3%
@@ -20,7 +20,7 @@ ht-degree: 3%
 
 **新增功能**
 
-* 添加了对“按页面完整迁移”的支持。 现在，当访客在at.js和Web SDK页面之间移动时，将保留Adobe Target配置文件。
+* 添加了 [按页面进行页面完全迁移](home.md#migrating-to-web-sdk). 现在，当访客在at.js和Web SDK页面之间移动时，将保留Adobe Target配置文件。
 * 为 [高熵用户代理客户端提示](fundamentals/user-agent-client-hints.md#high-entropy).
 * 添加了对 `applyResponse` 命令。 这可通过 [边缘网络服务器API](../server-api/overview.md).
 * QA模式链接现在可以跨多个页面使用。
