@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 7ad0015dbea0b74673ed0ed2c8c2159065f47ba7
+source-git-commit: 04a8ca33e712c00d687432ddf9ad82f5d1644db2
 workflow-type: tm+mt
-source-wordcount: '2243'
+source-wordcount: '2302'
 ht-degree: 2%
 
 ---
@@ -156,7 +156,12 @@ ht-degree: 2%
 * [数据准备映射函数](../../../../../data-prep/functions.md)
 * [添加计算字段](../../../../../data-prep/ui/mapping.md#calculated-fields)
 
-### 筛选 [!DNL Profile Service] （测试版）
+### 筛选 [!DNL Profile Service] （测试版） {#filtering-for-profile}
+
+>[!CONTEXTUALHELP]
+>id="platform_data_prep_analytics_filtering"
+>title="创建过滤器规则"
+>abstract="在向实时客户用户档案发送数据时定义行和列级过滤规则。 使用行级过滤来应用条件并指示要应用哪些数据 **包括用于用户档案摄取**. 使用列级过滤来选择您想要的数据列 **为用户档案摄取排除**. 筛选规则不适用于发送到数据湖的数据。"
 
 >[!IMPORTANT]
 >
@@ -283,10 +288,10 @@ ht-degree: 2%
 
 创建连接后，将自动创建数据流以包含传入数据，并使用您选择的架构填充数据集。 此外，还会进行数据回填，并摄取至多 13 个月的历史数据。完成初始摄取后， [!DNL Analytics] 并供下游Platform服务(例如 [!DNL Real-time Customer Profile] 和Segmentation Service。 有关更多详细信息，请参阅以下文档：
 
-* [[!DNL Real-time Customer Profile]概述](../../../../../profile/home.md)
-* [[!DNL Segmentation Service]概述](../../../../../segmentation/home.md)
-* [[!DNL Data Science Workspace]概述](../../../../../data-science-workspace/home.md)
-* [[!DNL Query Service]概述](../../../../../query-service/home.md)
+* [[!DNL Real-time Customer Profile] 概述](../../../../../profile/home.md)
+* [[!DNL Segmentation Service] 概述](../../../../../segmentation/home.md)
+* [[!DNL Data Science Workspace] 概述](../../../../../data-science-workspace/home.md)
+* [[!DNL Query Service] 概述](../../../../../query-service/home.md)
 
 以下视频旨在支持您了解如何使用Adobe Analytics源连接器摄取数据：
 
