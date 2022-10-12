@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: Adobe Experience Platform 中的访问控制帮助
 breadcrumb-title: Access Control 指南
-user-guide-description: 利用 Adobe Admin Console 中的产品配置文件将用户与权限和沙盒关联起来。
+user-guide-description: 使用Adobe Admin Console中的产品配置文件管理用户权限。 了解如何将用户分配给产品和沙箱。
 feature: Access Control
-source-git-commit: 440176ea1f21db3c7c4b3572fb52771dc70c80a0
+source-git-commit: 2790ae0b0bbba454ded1a6a8f73e05500f531cda
 workflow-type: tm+mt
-source-wordcount: '118'
-ht-degree: 42%
+source-wordcount: '124'
+ht-degree: 29%
 
 ---
 

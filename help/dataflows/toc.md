@@ -1,12 +1,12 @@
 ---
 audience: user
 user-guide-title: 数据流指南
-user-guide-description: 数据流是跨平台移动数据的数据作业的表示方法。
+user-guide-description: 了解数据流以及如何在不同服务中配置数据流。
 feature: Dataflows
-source-git-commit: 2e5d5a574f4c8bec99ef05ea751908c81c358050
+source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
-source-wordcount: '63'
-ht-degree: 23%
+source-wordcount: '62'
+ht-degree: 4%
 
 ---
 

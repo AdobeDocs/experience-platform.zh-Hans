@@ -3,10 +3,10 @@ keywords: Experience Platform；身份；身份服务；故障诊断；护栏；
 title: Identity服务的防护
 description: 本文档提供了有关Identity Service数据的使用和费率限制的信息，以帮助您优化对身份图的使用。
 exl-id: bd86d8bf-53fd-4d76-ad01-da473a1999ab
-source-git-commit: b07a45e5bb9cae6e147ea790ebb77cb63f8790c1
+source-git-commit: e6d0f0d0bc3de2f6da4e4269811d254db4fa3303
 workflow-type: tm+mt
-source-wordcount: '385'
-ht-degree: 3%
+source-wordcount: '445'
+ht-degree: 2%
 
 ---
 
@@ -46,9 +46,13 @@ ht-degree: 3%
 | ECID | <ul><li>ECID的标识值必须恰好为38个字符。</li><li>ECID的标识值只能由数字组成。</li></ul> | <ul><li>如果ECID的标识值不完全为38个字符，则会跳过该记录。</li><li>如果ECID的标识值包含非数字字符，则会跳过该记录。</li></ul> |
 | 非ECID | 标识值不能超过1024个字符。 | 如果标识值超过1024个字符，则会跳过该记录。 |
 
+### 身份命名空间摄取
+
+自2023年1月31日起，Identity Service将阻止为新客户摄取Adobe Analytics ID(AAID)。 此标识通常通过 [Adobe Analytics源](../sources/connectors/adobe-applications/analytics.md) 和 [Adobe Audience Manager源](../sources//connectors/adobe-applications/audience-manager.md) 和冗余，因为ECID表示相同的Web浏览器。 如果要更改此默认配置，请联系您的客户经理。
+
 ## 后续步骤
 
 有关 [!DNL Identity Service]:
 
-* [[!DNL Identity Service]概述](home.md)
+* [[!DNL Identity Service] 概述](home.md)
 * [身份图查看器](ui/identity-graph-viewer.md)
