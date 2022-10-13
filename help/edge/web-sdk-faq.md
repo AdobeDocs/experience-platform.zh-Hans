@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK常见问题解答
 description: 获取有关Adobe Experience Platform Web SDK的常见问题解答。
 exl-id: 6ddb4b4d-c9b8-471a-bd2e-135dc4202876
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 5586c788f4ae5c61b3b94f93b4180fc293d7e179
 workflow-type: tm+mt
-source-wordcount: '1934'
-ht-degree: 1%
+source-wordcount: '2101'
+ht-degree: 2%
 
 ---
 
@@ -151,13 +151,17 @@ Web SDK正在快速发展。 正在处理更多用例。 您可以在 [此处当
 
 ## Adobe Experience Platform Web SDK是否使用Cookie? 如果是，它会使用哪些Cookie?
 
-是，目前Web SDK使用的Cookie介于1到4 Cookie之间的任意位置，具体取决于您的实施。 以下是您可能在Web SDK中看到的4个Cookie的列表及其使用方式：
+是，目前Web SDK使用的Cookie介于1到7个之间的任意位置，具体取决于您的实施。 以下是您可能在Web SDK中看到的Cookie列表及其使用方式：
 
-**kndct_orgid_identity:** 标识Cookie用于存储ECID以及与ECID相关的其他一些信息。
-
-**kndctr_orgid_consent:** 此Cookie存储用户对网站的同意首选项。
-
-**kndctr_orgid_cluster:** 此Cookie存储用于提供当前用户请求的体验边缘区域。 区域用在URL路径中，以便Experience Edge能够将请求路由到正确的区域。 此Cookie的生命周期为30分钟，因此如果用户连接不同的IP地址，则请求可以路由到最接近的区域。
+| **名称** | **maxAge** | **友好年龄** | **描述** |
+|---|---|---|---|
+| **kndct_orgid_identity** | 34128000 | 395 天 | 标识Cookie存储ECID以及与ECID相关的其他信息。 |
+| **kndctr_orgid_consent_check** | 7200 | 2 小时 | 此Cookie存储用户对网站的同意首选项。 |
+| **kndctr_orgid_consent** | 15552000 | 180 天 | 此基于会话的Cookie表示服务器在服务器端查找同意首选项。 |
+| **kndctr_orgid_cluster** | 1800 | 30 分钟 | 此Cookie存储用于提供当前用户请求的体验边缘区域。 区域用在URL路径中，以便Experience Edge能够将请求路由到正确的区域。 此Cookie的生命周期为30分钟，因此如果用户连接不同的IP地址，则请求可以路由到最接近的区域。 |
+| **mbox** | 63072000 | 2 年 | 当Target迁移设置设置为true时，将显示此Cookie。 这将允许Target [mbox cookie](https://developer.adobe.com/target/implement/client-side/atjs/atjs-cookies/) 由Web SDK设置。 |
+| **mboxEdgeCluster** | 1800 | 30 分钟 | 当Target迁移设置设置为true时，将显示此Cookie。 此Cookie允许Web SDK将正确的边缘群集与at.js通信，以便当用户在网站中导航时，Target配置文件可以保持同步。 |
+| **AMCV_###@AdobeOrg** | 34128000 | 395 天 | 仅当在Adobe Experience Platform Web SDK中启用ID迁移时，才会显示此Cookie。 当网站的某些部分仍在使用visitor.js时，此Cookie可在过渡到Web SDK时提供帮助。 请参阅 [idMigrationEnabled文档](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#identity-options) 以了解有关此设置的更多信息。 |
 
 使用Web SDK时，边缘网络会设置上述一个或多个Cookie。 边缘网络会使用 `secure` 和 `sameSite="none"` 属性。
 
