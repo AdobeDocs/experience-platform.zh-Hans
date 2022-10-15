@@ -4,10 +4,10 @@ title: Profiles Dashboard指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 18288130b98e13d824273426a860d97722c434de
+source-git-commit: 1755f5030f5730ca06ea718635ede9deb1188d21
 workflow-type: tm+mt
-source-wordcount: '4154'
-ht-degree: 1%
+source-wordcount: '3387'
+ht-degree: 0%
 
 ---
 
@@ -51,19 +51,19 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 在小组件库中，您可以浏览选择的标准和自定义区段小组件。有关如何添加小组件的信息，请参阅小组件库文档，了解如何 [添加小组件](../customize/widget-library.md#add-widgets).
 
-## （测试版）用户档案功效分析 {#profile-efficacy-insights}
+<!-- ## (Beta) Profile efficacy insights {#profile-efficacy-insights}
 
 >[!IMPORTANT]
 >
->用户档案功效分析功能目前处于测试阶段，并非所有用户都能使用。 文档和功能可能会发生变化。
+>The profile efficacy insight functionality is currently in beta and are not available to all users. The documentation and the functionality are subject to change.
 
-的 [!UICONTROL 功效] 选项卡通过使用用户档案功效小组件提供有关用户档案数据质量和完整性的量度。 这些小部件可概览用户档案的组成、随时间的完整性趋势以及对用户档案数据质量的评估。
+The [!UICONTROL Efficacy] tab provides metrics on the quality and completeness of your profile data through the use of profile efficacy widgets. These widgets illustrate at a glance the composition of your profiles, trends in completeness over time, and assessments on the quality of your profile data.
 
-![用户档案功效仪表板。](../images/profiles/attributes-quality-assessment.png)
+![The profile efficacy dashboard.](../images/profiles/attributes-quality-assessment.png)
 
-请参阅 [用户档案功效小组件部分](#profile-efficacy-widgets) 有关当前可用的小组件的详细信息。
+See the [profile efficacy widgets section](#profile-efficacy-widgets) for more information on the widgets currently available.
 
-此功能板的布局也可通过选择 [**[!UICONTROL 修改功能板]**](../customize/modify.md) 从 [!UICONTROL 概述] 选项卡。
+The layout of this dashboard is also customizable by selecting [**[!UICONTROL Modify dashboard]**](../customize/modify.md) from the [!UICONTROL Overview] tab. -->
 
 ## 浏览配置文件 {#browse-profiles}
 
@@ -360,73 +360,73 @@ The visualization allows you to monitor the overall health of audiences within A
 ![Platform UI配置文件功能板（其中包含合并策略下拉列表，小组件区段下拉列表突出显示）。](../images/profiles/audience-overlap-by-merge-policy.png)
 
 
-## （测试版）用户档案功效小组件 {#profile-efficacy-widgets}
+<!-- ## (Beta) Profile efficacy widgets {#profile-efficacy-widgets}
 
 >[!IMPORTANT]
 >
->用户档案功效小组件当前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
+>The profile efficacy widgets are currently in Beta and are not available to all users. The documentation and the functionality are subject to change.
 
-Adobe会提供多个小组件，用于评估所摄取的用户档案是否完整，以便用于数据分析。 每个用户档案效能小组件都可通过合并策略进行过滤。 要更改合并策略筛选器，请选择[!UICONTROL 使用合并策略的用户档案] 下拉列表，然后从可用列表中选择相应的策略。
+Adobe provides multiple widgets to assess the completeness of the ingested profiles available for your data analysis. Each of the profile efficacy widgets can be filtered by the merge policy. To change the merge policy filter, select the[!UICONTROL Profiles using merge policy] dropdown and choose the appropriate policy from the available list.
 
-要进一步了解每个用户档案功效小组件，请从以下列表中选择小组件的名称：
+To learn more about each of the profile efficacy widgets, select the name of a widget from the following list:
 
-* [[!UICONTROL 属性质量评估]](#attributes-quality-assessment)
-* [[!UICONTROL 按完整性划分的用户档案]](#profiles-by-completeness)
-* [[!UICONTROL 用户档案完整性趋势]](#profiles-completeness-trend)
+* [[!UICONTROL Attribute quality assessment]](#attributes-quality-assessment)
+* [[!UICONTROL Profiles by completeness]](#profiles-by-completeness)
+* [[!UICONTROL Profiles completeness trend]](#profiles-completeness-trend)
 
-### （测试版） [!UICONTROL 属性质量评估] {#attributes-quality-assessment}
+### (Beta) [!UICONTROL Attributes quality assessment] {#attributes-quality-assessment}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_attributesqualityassessment"
->title="属性质量评估"
->abstract="此小组件可根据所有用户档案的属性显示其完整性和基数。 每行都描述一个属性。 的 **用户档案** 列提供具有此属性且填充了非空值的配置文件数。 的 **完整性** 百分比由具有此属性且填充了非空值的配置文件总数除以该属性配置文件中非空值的总数确定。 **基数** 提供此属性在所有属性中唯一非空值的总数。"
+>title="Attributes quality assessment"
+>abstract="This widget shows the completeness and cardinality of all profiles according to their attributes. Each row describes one attribute. The **Profiles** column provides the number of profiles that have this attribute and are filled with non-null values. The **Completeness** percentage is determined by the total number of profiles that have this attribute and are filled with non-null values divided by the total number of non-empty values in the profiles for that attribute. **Cardinality** provides the total number of unique non-null values of this attribute across all attributes."
 
-的 [!UICONTROL 属性质量评估] 小组件会根据所有用户档案的属性显示其完整性和基数。 数据精确到上次处理日期。 此信息以表格形式呈现，表格中有四列，其中表格中的每一行代表单个属性。
+The [!UICONTROL Attribute quality assessment] widget shows the completeness and cardinality of all profiles according to their attributes. The data is accurate to the last processing date. This information is presented as a table with four columns where each row in the table represents a single attribute.
 
-| 栏目 | 描述 |
+| Column  | Description  |
 |---|---|
-| 属性 | 属性的名称。 |
-| 用户档案 | 具有此属性且填充了非空值的配置文件数。 |
-| 完整性 | 此百分比由具有此属性且填充了非空值的配置文件总数确定。 该数值是用用户档案总数除以该属性用户档案中非空值的总数计算得来的。 |
-| 基数 | 总数 **独特** 此属性的非空值。 它在所有用户档案中进行测量。 |
+| Attribute  | The name of the attribute.  |
+| Profiles  | The number of profiles that have this attribute and are filled with non-null values.  |
+| Completeness  | This percentage is determined by the total number of profiles that have this attribute and are filled with non-null values. The number is calculated by dividing the total number of profiles by the total number of non-empty values in the profiles for that attribute.  |
+| Cardinality  | The total number of **unique** non-null values of this attribute. It is measured across all profiles. |
 
-![属性质量评估小组件](../images/profiles/attributes-quality-assessment.png)
+![The attributes quality assessment widget](../images/profiles/attributes-quality-assessment.png)
 
-### （测试版） [!UICONTROL 按完整性划分的用户档案] {#profiles-by-completeness}
+### (Beta) [!UICONTROL Profiles by completeness] {#profiles-by-completeness}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilesbycompleteness"
->title="按完整性划分的用户档案"
->abstract="圆环图显示在所有观察到的属性中填充了非空值的配置文件属性的百分比。 它说明了高、中或低完整性的用户档案比例。 高完整性用户档案会填充其70%以上的属性。 中等完整性用户档案的属性有30%到70%的已填充。 不完整性较低的用户档案填充的属性不到其30%。"
+>title="Profiles by completeness"
+>abstract="The donut chart displays the percentage of profile attributes that are filled with non-null values among all observed attributes. It illustrates the proportion of profiles that are of high, medium, or low completeness. High completeness profiles have more than 70% of their attributes filled. Medium completeness profiles have between 30% and 70% of their attributes filled. Low completeness profiles have less than 30% of their attributes filled."
 
-的 [!UICONTROL 按完整性划分的用户档案] 小组件创建自上次处理日期以来配置文件完整性的圆环图。 配置文件的完整性由所有观察到的属性中填充了非空值的属性的百分比来衡量。
+The [!UICONTROL Profiles by completeness] widget creates a donut chart of profile completeness since the last processing date. The completeness of a profile is measured by the percentage of attributes that are filled with non-null values among all observed attributes.
 
-此小组件显示高完整性、中完整性或低完整性的用户档案比例。 默认情况下，配置了三个完整性级别：
+This widget shows the proportion of profiles that are of high, medium, or low completeness. By default, there are three levels of completeness configured: 
 
-* 高度完整性：用户档案超过70%的属性已填充。
-* 中等完整性：用户档案中已填充其属性的30%到70%。
-* 低完整性：用户档案已填充的属性不到其总数的30%。
+* High completeness: Profiles have more than 70% of their attributes filled. 
+* Medium completeness: Profiles have between 30% and 70% of their attributes filled. 
+* Low completeness: Profiles have less than 30% of their attributes filled. 
 
-![按完整性小组件列出的用户档案](../images/profiles/profiles-by-completeness.png)
+![The profiles by completeness widget](../images/profiles/profiles-by-completeness.png)
 
-### （测试版） [!UICONTROL 用户档案完整性趋势] {#profiles-completeness-trend}
+### (Beta) [!UICONTROL Profiles completeness trend] {#profiles-completeness-trend}
 
 >[!CONTEXTUALHELP]
 >id="platform_dashboards_profiles_profilescompletenesstrend"
->title="用户档案完整性趋势"
->abstract="此小组件创建堆叠式面积图以描述配置文件随时间的完整性趋势。 完整性由所有观察到的属性中填充了非空值的属性的百分比来衡量。"
+>title="Profiles completeness trend"
+>abstract="This widget creates a stacked area chart to depict the trend of profile completeness over time. Completeness is measured by the percentage of attributes that are filled with non-null values among all observed attributes."
 
-此小组件创建堆叠式面积图以描述配置文件随时间的完整性趋势。 完整性由所有观察到的属性中填充了非空值的属性的百分比来衡量。 它将配置文件完整性分类为自上次处理日期以来的高、中或低完整性。
+This widget creates a stacked area chart to depict the trend of profile completeness over time. Completeness is measured by the percentage of attributes filled with non-null values among all observed attributes. It categorizes the profile completeness as high, medium, or low completeness since the last processing date.
 
-x轴表示时间，y轴表示用户档案的数量，颜色表示用户档案完整性的三个级别。
+The x-axis represents time, the y-axis represents the number of profiles, and the colors represent the three levels of profile completeness. 
 
-完整性的三个级别是：
+The three levels of completeness are:
 
-* 高度完整性：用户档案中超过70%的属性已填充。
-* 中等完整性：用户档案中已填充的属性少于70%且超过30%。
-* 低完整性：用户档案填充的属性少于30%。
+* High completeness: Profiles have more than 70% of attributes filled. 
+* Medium completeness: Profiles have less than 70% and more than 30% of attributes filled. 
+* Low completeness: Profiles have less than 30% of attributes filled.
 
-![用户档案完整性趋势小组件](../images/profiles/profiles-completeness-trend.png)
+![The profiles completeness trend widget](../images/profiles/profiles-completeness-trend.png) -->
 
 ## 后续步骤
 
