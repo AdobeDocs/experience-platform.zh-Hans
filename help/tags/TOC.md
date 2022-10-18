@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 48151842ffcba4082988d008f9370714da51ee05
+source-git-commit: d5e8e49e50d0c5792828140626b933a4f232dd00
 workflow-type: tm+mt
-source-wordcount: '409'
+source-wordcount: '413'
 ht-degree: 67%
 
 ---
@@ -132,6 +132,8 @@ ht-degree: 67%
       * [!DNL YouTube] 视频跟踪扩展 {#youtube}
          * [概述](./extensions/web/youtube/overview.md)
          * [发行说明](./extensions/web/youtube/release-notes.md)
+      * [!DNL Zendesk] 事件API扩展 {#zendesk}
+         * [概述](./extensions/web/zendesk/overview.md)
    * [第三方扩展](./extensions/3rd-party-extensions.md)
 * 扩展开发 {#extension-dev}
    * [概述](./extension-dev/overview.md)
