@@ -3,9 +3,9 @@ keywords: rtcdp配置文件；配置文件rtcdp;rtcdp身份；rtcdp合并策略�
 title: 帐户配置文件UI指南
 description: 通过使用帐户配置文件，Real-time Customer Data Platform B2B Edition使您能够统一来自多个来源的帐户信息。 本指南提供了有关在Adobe Experience Platform用户界面中与帐户配置文件进行交互的详细信息。
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 9119e6376228c3cec214977265abf0ce55093b64
+source-git-commit: 85d3e5f265fdbfd51f184d36205127f005e2b9df
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '1624'
 ht-degree: 0%
 
 ---
@@ -52,8 +52,6 @@ ht-degree: 0%
 
 要浏览帐户配置文件，请首先选择 **[!UICONTROL 用户档案]** 在 [!UICONTROL 帐户] 中。
 
-![在左侧导航中选择Profiles](images/b2b-account-browse.png)
-
 在 **[!UICONTROL 浏览]** 选项卡中，您可以使用连接的企业源中的帐户ID或直接输入源详细信息来浏览帐户配置文件。
 
 ![使用帐户ID浏览用户档案](images/b2b-account-browse-by.png)
@@ -72,9 +70,9 @@ ht-degree: 0%
 
 要了解有关连接企业源的更多信息，请参阅 [源概述](../sources/sources-overview.md).
 
-![选择源工作流](images/b2b-account-select-source.png)
-
 您可以通过选择连接名称旁边的单选按钮来选择源，然后使用 **[!UICONTROL 选择]** 返回 [!UICONTROL 浏览] 选项卡。
+
+![选择源工作流](images/b2b-account-select-source.png)
 
 选择源后，您现在必须输入 **[!UICONTROL 帐户ID]** 与源相关。 例如，选择Salesforce来源将要求您从Salesforce实例中输入帐户ID，以查看与该ID绑定的帐户配置文件。
 
