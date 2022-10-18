@@ -1,11 +1,11 @@
 ---
-keywords: '广告；bing; '
+keywords: 广告；bing;
 title: Microsoft Bing连接
 description: 通过Microsoft Bing连接目标，您可以跨Microsoft显示广告执行重定位和受众定位的数字促销活动。
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: 812688043a7da943832b5798de0f433928634998
+source-git-commit: aec9708680c2a4cb3c70af12f95c67ec37b2e129
 workflow-type: tm+mt
-source-wordcount: '633'
+source-wordcount: '622'
 ht-degree: 2%
 
 ---
@@ -69,7 +69,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 * **[!UICONTROL 名称]**:将来用于识别此目标的名称。
 * **[!UICONTROL 描述]**:此描述将帮助您在将来确定此目标。
-* **[!UICONTROL 帐户ID]**:您的 [!DNL Bing Ads CID].
+* **[!UICONTROL 帐户ID]**:您的 [!DNL Bing Ads Customer ID] (CID)。 您的CID是一个整数，可在您登录时位于URL中的 [!DNL Microsoft Advertising].
 
 ### 启用警报 {#enable-alerts}
 
@@ -90,11 +90,9 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 请参阅 [将受众数据激活到流区段导出目标](../../ui/activate-segment-streaming-destinations.md) 有关将受众区段激活到此目标的说明。
 
-在 [区段计划](../../ui/activate-segment-streaming-destinations.md#scheduling) 步骤中，您必须在 [!DNL Bing] 目标。 填写从 [!DNL Bing] 在 [!UICONTROL 映射ID] 字段。
+在 [区段计划](../../ui/activate-segment-streaming-destinations.md#scheduling) 步骤中，您必须在 [!UICONTROL 映射ID] 字段。 这可确保区段元数据正确传递到 [!DNL Bing].
 
-![显示区段映射屏幕的UI图像（以Bing映射ID为例）](../../assets/catalog/advertising/bing/mapping-id.png)
-
-如果提供 [!UICONTROL 映射ID] 与Bing目标中的区段ID不对应，您将在Bing帐户中看不到预期的受众数据。
+![显示区段计划屏幕的UI图像，其中提供了有关如何将区段名称映射到Bing映射ID的示例。](../../assets/catalog/advertising/bing/mapping-id.png)
 
 ## 导出的数据 {#exported-data}
 
