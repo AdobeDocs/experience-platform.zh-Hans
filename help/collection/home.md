@@ -5,10 +5,10 @@ title: 数据收集概述
 topic-legacy: overview
 description: 了解与收集Adobe Experience Platform中客户体验数据相关的各种技术。
 exl-id: 03ce5339-e68d-4adf-8c3c-82846a626dad
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 96ee731ce8de708b1671c40f1bbef9902495f3b4
 workflow-type: tm+mt
-source-wordcount: '469'
-ht-degree: 4%
+source-wordcount: '513'
+ht-degree: 6%
 
 ---
 
@@ -47,6 +47,8 @@ Platform Web SDK和Platform Mobile SDK分别折叠所有Adobe产品库并将其�
 ## 平台边缘网络和数据流 {#edge}
 
 Platform Edge Network是一个全球分布式、快速、可靠的服务器网络，能够大规模接收和处理数据。 使用标记，您可以设置 [数据流](../edge/datastreams/overview.md) 适用于Adobe Target、Adobe Audience Manager和Adobe Analytics等产品，它们允许您在服务器端激活这些产品，而无需更改客户端代码。
+
+此外，数据流与多个平台功能集成，这些功能有助于确保您发送的任何敏感数据在组织策略和法律法规方面得到适当处理。 请参阅 [处理敏感数据](../edge/datastreams/overview.md#sensitive) （详细信息）。
 
 ![数据流和Adobe解决方案](./images/home/adobe-solutions.png)
 

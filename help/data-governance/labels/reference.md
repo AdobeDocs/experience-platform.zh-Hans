@@ -5,7 +5,7 @@ title: 数据使用标签术语表
 topic-legacy: labels
 description: 本文档概述了Adobe Experience Platform当前支持的所有数据使用标签。
 exl-id: 70d0702d-def7-4ab2-a861-eaf0f0cde1d4
-source-git-commit: 1a10216c01a049539b5e1d21d0c42942496b2e3e
+source-git-commit: 1ab97c63bc169965ca759f2dd8b411c175559fb8
 workflow-type: tm+mt
 source-wordcount: '2083'
 ht-degree: 2%
@@ -51,7 +51,7 @@ ht-degree: 2%
 | **I1** | 可识别或联系特定人员（而非设备）的直接可识别数据。 |
 | **I2** | 可与任何其他数据结合使用以识别或联系特定人员的间接可识别数据。 |
 
-## 敏感标签
+## 敏感标签 {#sensitive}
 
 敏感的“S”标签用于对您和您的组织认为敏感的数据进行分类。
 
