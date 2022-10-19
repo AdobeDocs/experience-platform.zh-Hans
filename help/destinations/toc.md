@@ -1,13 +1,13 @@
 ---
 audience: user
 user-guide-title: 目标指南
-user-guide-description: 为跨渠道营销活动、电子邮件营销活动、定向广告等激活已知和未知数据。
+user-guide-description: 激活您对于跨渠道营销活动、电子邮件营销活动、定向广告等已知和未知的数据。
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
-source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
+source-git-commit: 9bab22684005609111538037e95bad1f806ff7c4
 workflow-type: tm+mt
-source-wordcount: '945'
-ht-degree: 5%
+source-wordcount: '948'
+ht-degree: 6%
 
 ---
 
@@ -106,6 +106,7 @@ ht-degree: 5%
       * [云存储允许列表目标的IP地址](./catalog/cloud-storage/ip-address-allow-list.md)
    * 客户关系管理(CRM)目标 {#crm}
       * [Salesforce CRM连接](./catalog/crm/salesforce.md)
+      * [Microsoft Dynamics 365连接](./catalog/crm/microsoft-dynamics-365.md)
       * [外联联系](catalog/crm/outreach.md)
    * 数据管理平台目标 {#data-management}
       * [数据管理平台(DMP)目标概述](./catalog/data-management/overview.md)
