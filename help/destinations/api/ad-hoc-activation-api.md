@@ -6,9 +6,9 @@ description: 本文说明了通过临时激活API激活受众区段的端到端�
 topic-legacy: tutorial
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 9e191d52d8385d716ed312725f72bd85c1e4b72d
+source-git-commit: 8d67d89db6a8c179935b4fe709f91279860d464e
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1531'
 ht-degree: 2%
 
 ---
@@ -124,6 +124,10 @@ Experience Platform中的资源可以与特定虚拟沙箱隔离。 在对Platfo
 ## 步骤5:运行临时激活作业 {#activation-job}
 
 Adobe Experience Platform每24小时运行一次计划分段作业。 临时激活API根据最新的分段结果运行。
+
+>[!IMPORTANT]
+>
+>请注意以下一次性约束：在运行临时激活作业之前，请确保从根据您在 [步骤3 — 在Platform UI中创建激活流程](#activation-flow).
 
 在运行临时激活作业之前，请确保区段的计划区段导出作业已完成。 请参阅 [目标数据流监控](../../dataflows/ui/monitor-destinations.md) 有关如何监控激活流状态的信息。 例如，如果激活数据流显示 **[!UICONTROL 处理]** 状态，请等待其完成后再运行临时激活作业。
 
