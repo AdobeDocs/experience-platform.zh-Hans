@@ -3,11 +3,11 @@ solution: Experience Platform
 audience: user
 user-guide-title: 智能服务帮助
 breadcrumb-title: Intelligent Services 指南
-user-guide-description: 使用智能AI服务，根据营销事件数据生成分数、发现洞察并创建区段。
+user-guide-description: 使用智能 AI 服务从您的营销活动数据生成分数、发掘见解和创建区段。
 source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
 source-wordcount: '123'
-ht-degree: 10%
+ht-degree: 24%
 
 ---
 

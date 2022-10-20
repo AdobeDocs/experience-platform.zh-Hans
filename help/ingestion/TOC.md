@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: Adobe Experience Platform 数据提取帮助
 breadcrumb-title: Data Ingestion 指南
-user-guide-description: 通过批量或流式引入将数据引入Experience Platform。
+user-guide-description: 通过批量摄取或流式摄取将您的数据引入 Experience Platform。
 feature: Data Ingestion
 source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
 source-wordcount: '129'
-ht-degree: 17%
+ht-degree: 26%
 
 ---
 

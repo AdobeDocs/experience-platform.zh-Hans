@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: 数据卫生帮助
 breadcrumb-title: 数据卫生指南
-user-guide-description: 管理消费者数据请求以遵守GDPR和CCPA等隐私法规。
+user-guide-description: 管理消费者数据请求以遵守 GDPR 和 CCPA 等隐私法规。
 feature: Data Hygiene
 source-git-commit: 16eecb22a1bec89c7dbac2fcee566a2226cf897f
 workflow-type: tm+mt
 source-wordcount: '48'
-ht-degree: 4%
+ht-degree: 45%
 
 ---
 

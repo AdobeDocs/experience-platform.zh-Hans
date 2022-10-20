@@ -1,13 +1,13 @@
 ---
 audience: user
-user-guide-title: Adobe Experience Platform Debugger帮助
-breadcrumb-title: Adobe Experience Platform Debugger指南
+user-guide-title: Adobe Experience Platform Debugger 帮助
+breadcrumb-title: Adobe Experience Platform Debugger 指南
 user-guide-description: 检查网页，了解 Experience Platform 实施中的问题。
 feature: Debugger
 source-git-commit: df1a67e4b6f3d2eaeaba2b8d3c9b1588ee0b1461
 workflow-type: tm+mt
 source-wordcount: '58'
-ht-degree: 31%
+ht-degree: 48%
 
 ---
 

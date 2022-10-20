@@ -1,11 +1,11 @@
 ---
 audience: user
 user-guide-title: Adobe Experience Platform 辅助功能
-user-guide-description: 了解Experience Platform承诺向所有个人提供无障碍和包容的功能。
+user-guide-description: 了解 Experience Platform 如何致力于为各种身体状况的人士提供无障碍和具有包容性的功能。
 source-git-commit: 2790ae0b0bbba454ded1a6a8f73e05500f531cda
 workflow-type: tm+mt
 source-wordcount: '50'
-ht-degree: 20%
+ht-degree: 50%
 
 ---
 

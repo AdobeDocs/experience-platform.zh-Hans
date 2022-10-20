@@ -2,11 +2,11 @@
 audience: user
 user-guide-title: Adobe Experience Platform 发行说明
 breadcrumb-title: Platform 发行说明
-user-guide-description: 查找每月的Adobe Experience Platform发行说明。
+user-guide-description: 查找 Adobe Experience Platform 的每月发行说明。
 source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
 source-wordcount: '67'
-ht-degree: 82%
+ht-degree: 94%
 
 ---
 

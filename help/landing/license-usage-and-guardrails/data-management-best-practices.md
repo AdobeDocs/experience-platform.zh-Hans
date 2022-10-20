@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；数据管理；许可证授权；许可；最佳实践
 title: 数据管理许可证授权最佳实践
-description: 了解可用于通过Adobe Experience Platform更好地管理许可证授权的最佳实践和工具。
+description: 了解可用来借助 Adobe Experience Platform 更好地管理您的许可证权利的最佳实践和工具。
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
 source-git-commit: 5da2a6cfc9e9da6bbe6c6560577d22eed32c858c
 workflow-type: tm+mt
 source-wordcount: '2528'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 

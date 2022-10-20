@@ -8,8 +8,8 @@ landing-page-description: Attribution AI 用于将点数归因于导致转化事
 exl-id: a5991b08-217a-4b39-9948-d28eadea7ded
 source-git-commit: 6c0e001419dc78d4ff87bebd0604c7add07b635f
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '499'
+ht-degree: 30%
 
 ---
 

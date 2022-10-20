@@ -1,13 +1,13 @@
 ---
 audience: user
 user-guide-title: Adobe Experience Platform 源连接器帮助
-breadcrumb-title: Source Connectors 指南
-user-guide-description: 从各种源中摄取数据。 了解如何构建、标记和增强已摄取的数据。
+breadcrumb-title: 源连接器指南
+user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
 source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
 workflow-type: tm+mt
 source-wordcount: '832'
-ht-degree: 10%
+ht-degree: 12%
 
 ---
 

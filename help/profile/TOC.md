@@ -13,7 +13,7 @@ ht-degree: 22%
 
 # [!DNL Real-time Customer Profile] {#profile}
 
-* [[!DNL Profile]概述](home.md)
+* [[!DNL Profile] 概述](home.md)
 * [配置文件概述（视频）](video/profile-overview.md)
 * [[!DNL Profile] 和分段护栏](guardrails.md)
 * [[!DNL Profile] 仪表板](ui/profile-dashboard.md)
