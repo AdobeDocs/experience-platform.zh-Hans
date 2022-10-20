@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，帮助您为个人资料数据建模以获得最佳系统性能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: b834e278f085adc5a4a90876727b6a0787b181e1
+source-git-commit: d6100f58b8ffd6251c3a58576a41dbfb75c3bb0c
 workflow-type: tm+mt
-source-wordcount: '1989'
+source-wordcount: '1902'
 ht-degree: 5%
 
 ---
@@ -144,6 +144,4 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 
 ### Adobe Analytics Platform中的报表包数据集 {#aa-datasets}
 
-配置文件最多应启用一(1)个Adobe Analytics报表包数据集。 这是一个软限制，这意味着您能够为用户档案启用多个Analytics数据集，但不建议使用，因为它可能会对您的数据产生意想不到的后果。 这是由于体验数据模型(XDM)架构之间存在差异所致。XDM架构为Experience Platform中的数据提供语义结构，并允许数据解释保持一致，而eVar和转化变量在Adobe Analytics中具有可自定义的性质。
-
-例如，在Adobe Analytics中，一个组织可能具有多个报表包。 如果报表包A将eVar4指定为“内部搜索词”，而报表包B将eVar4指定为“反向链接域”，则这两个值都将被摄取到配置文件中的同一字段中，从而造成混淆并降低数据质量。
+只要解决了所有数据冲突，就可以为配置文件启用多个报表包。 您可以使用数据准备功能解决eVar、列表和Prop之间的数据冲突。 要详细了解如何使用数据准备功能，请阅读 [Adobe Analytics Connector UI指南](../sources/tutorials/ui/create/adobe-applications/analytics.md).
