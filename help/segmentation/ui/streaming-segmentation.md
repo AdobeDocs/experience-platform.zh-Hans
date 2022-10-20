@@ -5,9 +5,9 @@ title: 流分段UI指南
 topic-legacy: ui guide
 description: 通过Adobe Experience Platform上的流式分段，您可以近乎实时地进行分段，同时重点关注数据的丰富性。 使用流式分段，区段鉴别现在会在数据登陆平台时进行，从而缓解了计划和运行分段作业的需求。 借助此功能，大多数区段规则现在都可以在数据传递到平台时进行评估，这意味着区段成员资格将保持为最新状态，而无需运行计划的分段作业。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: 654e141735b6882b4c0233b8e1c73d0838c8374e
+source-git-commit: e6b5ea1878631fa88f907fd4aec64cf040e76e95
 workflow-type: tm+mt
-source-wordcount: '1273'
+source-wordcount: '1315'
 ht-degree: 0%
 
 ---
@@ -106,6 +106,8 @@ ht-degree: 0%
 ### 如何将区段定义为批量分段或流分段？
 
 区段根据查询类型和事件历史记录持续时间的组合被定义为批量分段或流式分段。 在 [流式分段查询类型部分](#query-types).
+
+请注意，如果区段包含 **both** an `inSegment` 表达式和直接单事件链接，则无法符合流分段的条件。 如果您希望此区段符合流式分段的资格，则应将直接单事件链设置为其自己的区段。
 
 ### 为什么“符合条件的总数”区段的数量会持续增加，而“最近X天”下的数量在区段详细信息部分中保持为零？
 

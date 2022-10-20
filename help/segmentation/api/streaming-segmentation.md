@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；流式分段；流式分段；连续评估；
 solution: Experience Platform
-title: '利用流分段快速实时评估事件 '
+title: 利用流分段快速实时评估事件
 topic-legacy: developer guide
 description: 本文档包含有关如何通过Adobe Experience Platform Segmentation Service API使用流分段的示例。
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 654e141735b6882b4c0233b8e1c73d0838c8374e
+source-git-commit: 5a4a8a8b77d06890f212a457e599b66aa46d8b7e
 workflow-type: tm+mt
-source-wordcount: '1873'
+source-wordcount: '1915'
 ht-degree: 1%
 
 ---
@@ -429,6 +429,8 @@ curl -X POST \
 ### 如何将区段定义为批量分段或流分段？
 
 区段根据查询类型和事件历史记录持续时间的组合被定义为批量分段或流式分段。 在 [流式分段查询类型部分](#query-types).
+
+请注意，如果区段包含 **both** an `inSegment` 表达式和直接单事件链接，则无法符合流分段的条件。 如果您希望此区段符合流式分段的资格，则应将直接单事件链设置为其自己的区段。
 
 ### 为什么“符合条件的总数”区段的数量会持续增加，而“最近X天”下的数量在区段详细信息部分中保持为零？
 
