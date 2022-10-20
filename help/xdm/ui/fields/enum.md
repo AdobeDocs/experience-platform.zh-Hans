@@ -5,9 +5,9 @@ title: 在UI中定义枚举字段和建议值
 description: 了解如何在Experience Platform用户界面中为字符串字段定义枚举和建议值。
 topic-legacy: user guide
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: 3b71f6b07345d7b1e08fa5a8b93abc3519606015
+source-git-commit: 1c1797a01a0a4e2cd355399d3f913cb81adf9006
 workflow-type: tm+mt
-source-wordcount: '1207'
+source-wordcount: '1217'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,9 @@ ht-degree: 0%
 
 在体验数据模型(XDM)中，可以为字符串字段提供一组预定义的已接受或建议值，以更好地控制将哪些值摄取到该字段或该字段在分段中的行为。
 
-安 **枚举** 将字符串字段可摄取的值限制为预定义集。 如果您尝试将数据摄取到枚举字段，并且该值与其配置中定义的任何数据不匹配，则将拒绝摄取。
+**[!UICONTROL 枚举]** 将可为字符串字段摄取的值限制为预定义集。 如果您尝试将数据摄取到枚举字段，并且该值与其配置中定义的任何数据不匹配，则将拒绝摄取。
 
-与枚举相比，添加 **建议值** 字符串字段不会限制可摄取的值。 建议的值会影响 [分段UI](../../../segmentation/ui/overview.md) 将字符串字段作为属性包含在内时。
+与枚举相比， **[!UICONTROL 建议值]** 选项允许为字符串字段表示一组建议的值，这些值不会限制可摄取的值。 建议的值会影响 [分段UI](../../../segmentation/ui/overview.md) 将字符串字段作为属性包含在内时。
 
 When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户界面中，并将类型设置为 [!UICONTROL 字符串]，则您可以选择定义 [枚举](#enum) 或 [建议值](#suggested-values) 对于该字段。
 
