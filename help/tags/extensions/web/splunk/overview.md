@@ -1,7 +1,7 @@
 ---
 title: Splunk扩展概述
 description: 了解在Adobe Experience Platform中用于事件转发的Splunk扩展。
-source-git-commit: e6f0bdcdb11630730834e353064abb960d3d0ea1
+source-git-commit: cad6d78868ac89be325faa58f567b89869bfff02
 workflow-type: tm+mt
 source-wordcount: '1054'
 ht-degree: 1%
@@ -79,7 +79,7 @@ Splunk使用载体令牌作为身份验证机制与Splunk事件收集器API通�
 | [!UICONTROL 来源] | 要分配给事件数据的源值。 例如，如果您发送的是来自正在开发的应用程序的数据，请将此键值设置为应用程序的名称。 |
 | [!UICONTROL 索引] | 事件数据索引的名称。 如果令牌设置了索引参数，则此处指定的索引必须位于允许的索引列表中。 |
 | [!UICONTROL 时间] | 事件时间。 默认时间格式为UNIX时间(格式为 `<sec>.<ms>`)并取决于您的本地时区。 例如， `1433188255.500` 表示在纪元后1433188255秒和500毫秒，或2015年6月1日星期一7时:50:55 PM GMT。 |
-| [!UICONTROL 字段] | 指定原始JSON对象或一组键值对，其中包含要在索引时定义的显式自定义字段。  的 `fields` 键不适用于原始数据。<br><br>包含的请求 `fields` 必须将资产发送到 `/collector/event` 端点，否则不会将其编入索引。 有关更多信息，请参阅 [索引字段提取](http://docs.splunk.com/Documentation/Splunk/8.2.5/Data/IFXandHEC). |
+| [!UICONTROL 字段] | 指定原始JSON对象或一组键值对，其中包含要在索引时定义的显式自定义字段。  的 `fields` 键不适用于原始数据。<br><br>包含的请求 `fields` 必须将资产发送到 `/collector/event` 端点，否则不会将其编入索引。 有关更多信息，请参阅 [索引字段提取](https://docs.splunk.com/Documentation/Splunk/8.2.5/Data/IFXandHEC). |
 
 ### 验证Splunk中的数据 {#validate}
 
