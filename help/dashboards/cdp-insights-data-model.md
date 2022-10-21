@@ -1,29 +1,29 @@
 ---
-title: 客户数据平台(CDP)分析数据模型
-description: 了解如何使用CDP分析数据模型中的SQL查询来针对您的营销和KPI用例自定义您自己的CDP报告。
+title: Real-time Customer Data Platform Insights数据模型
+description: 了解如何将SQL查询与Real-time Customer Data Platform分析数据模型结合使用，以针对您的营销和KPI用例自定义您自己的Real-Time CDP报表。
 exl-id: 61bc7f23-9f79-4c75-a515-85dd9dda2d02
-source-git-commit: 2c96bfd2c1b541d30a72fcf2bac414ee06607456
+source-git-commit: 16ae8a16d8c4f7ec68a054e8d15a518f453a05c7
 workflow-type: tm+mt
-source-wordcount: '1066'
+source-wordcount: '1105'
 ht-degree: 0%
 
 ---
 
-# 客户数据平台(CDP)分析数据模型
+# Real-time Customer Data Platform Insights数据模型
 
-客户数据平台(CDP)分析数据模型功能公开了数据模型和SQL，它们为各种配置文件、目标和分段小组件提供了分析支持。 您可以自定义这些SQL查询模板，以便为您的营销和关键绩效指标(KPI)用例创建CDP报告。 然后，这些分析可用作用户定义的功能板的自定义小组件。
+Real-time Customer Data Platform分析数据模型功能公开了数据模型和SQL，它们为各种配置文件、目标和分段小组件提供了分析支持。 您可以自定义这些SQL查询模板，以为您的营销和关键绩效指标(KPI)用例创建Real-Time CDP报表。 然后，这些分析可用作用户定义的功能板的自定义小组件。 请参阅查询加速存储报告分析文档以了解 [如何通过查询服务构建报表分析数据模型，以与加速存储数据和用户定义的功能板一起使用](../query-service/query-accelerated-store/reporting-insights-data-model.md).
 
 ## 先决条件
 
 本指南需要对 [用户定义的功能板功能](./user-defined-dashboards.md). 在继续阅读本指南之前，请阅读相关文档。
 
-## CDP分析报告和用例
+## Real-Time CDP insight报表和用例
 
-CDP报告提供对用户档案数据及其与区段和目标的关系的分析。 开发了各种星型模式模型来回答各种常见的营销用例，每个数据模型都可以支持多个用例。
+Real-Time CDP报表可深入分析您的用户档案数据及其与区段和目标的关系。 开发了各种星型模式模型来回答各种常见的营销用例，每个数据模型都可以支持多个用例。
 
 >[!IMPORTANT]
 >
->用于CDP报告的数据对于选定的合并策略和最近的每日快照而言是准确的。
+>用于Real-Time CDP报告的数据对于选定的合并策略和最近的每日快照而言是准确的。
 
 ### 轮廓模型 {#profile-model}
 

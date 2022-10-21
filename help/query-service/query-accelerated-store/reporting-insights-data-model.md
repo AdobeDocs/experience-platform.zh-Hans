@@ -1,9 +1,9 @@
 ---
 title: 查询加速存储报告分析
 description: 了解如何通过查询服务构建报表分析数据模型，以与加速存储数据和用户定义的功能板结合使用。
-source-git-commit: 9c18432bbd9322aee1924c34cb10aadac440e726
+source-git-commit: 16ae8a16d8c4f7ec68a054e8d15a518f453a05c7
 workflow-type: tm+mt
-source-wordcount: '996'
+source-wordcount: '1031'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,9 @@ ht-degree: 0%
 
 通过查询加速存储，您可以缩短从数据中获得关键洞察所需的时间和处理能力。 通常，会定期（例如，每小时或每天）处理数据，以创建和报告聚合视图。 对汇总数据生成的这些报表的分析得出旨在改进业务绩效的分析。 查询加速存储提供缓存服务、并发、交互体验和无状态API。 但是，它假定数据经过预处理并进行了优化，以便进行聚合查询，而不是进行原始数据查询。
 
-利用查询加速存储，可构建自定义数据模型和/或扩展现有Real-time Customer Data Platform数据模型。 然后，您可以参与报表分析，或将报表分析嵌入到您选择的报表/可视化框架中。 Adobe Experience Platform的Real-time CDP数据模型提供了对用户档案、区段和目标的分析，并支持Real-time CDP insight功能板。 本文档将指导您完成创建报告分析数据模型的过程，以及如何根据需要扩展实时CDP数据模型。
+利用查询加速存储，可构建自定义数据模型和/或扩展现有Real-time Customer Data Platform数据模型。 然后，您可以参与报表分析，或将报表分析嵌入到您选择的报表/可视化框架中。 请参阅Real-time Customer Data Platform分析数据模型文档，以了解如何 [自定义SQL查询模板，以便为营销和关键绩效指标(KPI)用例创建Real-Time CDP报表](../../dashboards/cdp-insights-data-model.md).
+
+Adobe Experience Platform的Real-Time CDP数据模型提供对用户档案、区段和目标的分析，并启用Real-Time CDP分析功能板。 本文档将指导您完成创建报表分析数据模型的过程，以及如何根据需要扩展Real-Time CDP数据模型。
 
 ## 先决条件
 
@@ -20,7 +22,7 @@ ht-degree: 0%
 
 ## 快速入门
 
-需要使用Data Distiller SKU来构建自定义数据模型，以便进行报告分析，并扩展可保存丰富的Platform数据的实时CDP数据模型。 请参阅 [包装](../packages.md), [护栏](../guardrails.md#query-accelerated-store)和 [许可](../data-distiller/licence-usage.md) 与数据Distiller SKU相关的文档。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
+需要使用Distiller SKU来构建自定义数据模型，以便进行报表分析，并扩展包含丰富的Platform数据的Real-Time CDP数据模型。 请参阅 [包装](../packages.md), [护栏](../guardrails.md#query-accelerated-store)和 [许可](../data-distiller/licence-usage.md) 与数据Distiller SKU相关的文档。 如果您没有Data Distiller SKU，请联系您的Adobe客户服务代表以了解更多信息。
 
 ## 构建报表分析数据模型
 
@@ -124,15 +126,15 @@ ext_custom_audience_id | approximate_count_upper_bound
 (10 rows)
 ```
 
-## 使用实时CDP分析数据模型扩展您的数据模型
+## 使用Real-Time CDP分析数据模型扩展您的数据模型
 
 您可以通过更多详细信息来扩展受众模型，以创建更丰富的维度表。 例如，您可以将区段名称和目标名称映射到外部受众标识符。 要实现此目的，请使用查询服务创建或刷新新数据集，并将其添加到受众模型，该模型将区段和目标与外部标识组合在一起。 下图说明了此数据模型扩展的概念。
 
-![链接实时CDP分析数据模型和查询加速存储模型的ERD图。](../images/query-accelerated-store/updatingAudienceInsightUserModel.png)
+![链接Real-Time CDP分析数据模型和查询加速存储模型的ERD图。](../images/query-accelerated-store/updatingAudienceInsightUserModel.png)
 
 ## 创建维度表以扩展报表分析模型
 
-使用查询服务，将扩充的实时CDP维度数据集中的关键描述性属性添加到 `audienceinsight` 数据模型，并在事实表和新维度表之间建立关系。 以下SQL演示了如何将现有维度表集成到报表分析数据模型中。
+使用查询服务将扩充的Real-Time CDP维度数据集中的关键描述性属性添加到 `audienceinsight` 数据模型，并在事实表和新维度表之间建立关系。 以下SQL演示了如何将现有维度表集成到报表分析数据模型中。
 
 ```sql
 CREATE TABLE audienceinsight.audiencemodel.external_seg_dest_map AS
