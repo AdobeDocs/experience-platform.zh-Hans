@@ -2,9 +2,9 @@
 title: 在事件转发中配置密钥
 description: 了解如何在UI中配置密钥，以对事件转发属性中使用的端点进行身份验证。
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 9f38925645ec4311f4a809a913fe51792e889105
 workflow-type: tm+mt
-source-wordcount: '1633'
+source-wordcount: '1715'
 ht-degree: 0%
 
 ---
@@ -127,6 +127,12 @@ ht-degree: 0%
 ![Google授权弹出窗口](../../images/ui/event-forwarding/secrets/google-authorization.png)
 
 此时会出现一个对话框，用于输入Google帐户的凭据。 按照提示授予在所选范围内对数据的事件转发访问权限。 授权过程完成后，将创建密钥。
+
+>[!IMPORTANT]
+>
+>如果贵组织为Google Cloud应用程序设置了重新身份验证策略，则在身份验证过期后（在1到24小时之间，具体取决于策略配置），创建的密钥将不会成功刷新。
+>
+>要解决此问题，请登录到Google Admin Console，然后导航到 **[!DNL App access control]** 页面，以便您能够将事件转发应用程序(Adobe Real-Time CDP事件转发)标记为 [!DNL Trusted]. 请参阅Google文档(位于 [设置Google云服务的会话长度](https://support.google.com/a/answer/9368756) 以了解更多信息。
 
 ## 编辑密钥
 
