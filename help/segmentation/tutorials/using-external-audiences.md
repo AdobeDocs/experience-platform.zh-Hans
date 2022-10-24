@@ -5,9 +5,9 @@ title: 导入和使用外部受众
 description: 请阅读本教程，了解如何将外部受众与Adobe Experience Platform结合使用。
 topic-legacy: tutorial
 exl-id: 56fc8bd3-3e62-4a09-bb9c-6caf0523f3fe
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 13fd1e372a63b55c41893f41d1590d9dab9f7903
 workflow-type: tm+mt
-source-wordcount: '1471'
+source-wordcount: '1445'
 ht-degree: 0%
 
 ---
@@ -45,10 +45,6 @@ Adobe Experience Platform支持导入外部受众的功能，该功能随后可�
 要创建身份命名空间，请按照 [identity namespace指南](../../identity-service/namespaces.md#manage-namespaces). 创建身份命名空间时，将源详细信息添加到身份命名空间，并标记其 [!UICONTROL 类型] as a **[!UICONTROL 非人员标识符]**.
 
 ![](../images/tutorials/external-audiences/identity-namespace-info.png)
-
->[!NOTE]
->
->要开始将自定义命名空间与外部受众结合使用，您需要创建支持票证。 有关更多详细信息，请联系您的Adobe代表。
 
 ## 为区段元数据创建架构
 
