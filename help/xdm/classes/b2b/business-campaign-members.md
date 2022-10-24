@@ -2,9 +2,9 @@
 title: XDM Business Campaign成员类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Campaign成员类。
 exl-id: a39eac7d-46ee-4e9c-a1c0-4dbb63f2c813
-source-git-commit: 0084492ed467c5996a94c5c55a79c9faf8f5046e
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '248'
+source-wordcount: '249'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->此类旨在供具有访问权限的组织使用 [Real-time Customer Data Platform B2B版](../../../rtcdp/b2b-overview.md). 您必须拥有Real-time CDP B2B Edition的访问权限，才能让此类参与 [实时客户资料](../../../profile/home.md).
+>此类旨在供具有访问权限的组织使用 [Adobe Real-time Customer Data Platform B2B版](../../../rtcdp/b2b-overview.md). 您必须拥有Real-Time CDP B2B Edition的访问权限，才能参加此类 [实时客户资料](../../../profile/home.md).
 
 [!UICONTROL XDM Business Campaign成员] 是一个标准的体验数据模型(XDM)类，用于描述与业务活动关联的联系人或潜在客户。
 
@@ -29,6 +29,6 @@ ht-degree: 2%
 
 {style=&quot;table-layout:auto&quot;}
 
-要了解此类在概念上如何与其他B2B类相关以及如何在Adobe Experience Platform UI中建立这些关系，请参阅 [Real-time CDP B2B Edition中的模式关系](../../tutorials/relationship-b2b.md)
+要了解此类在概念上如何与其他B2B类相关以及如何在Adobe Experience Platform UI中建立这些关系，请参阅 [Real-Time CDP B2B版中的模式关系](../../tutorials/relationship-b2b.md)
 
 有关与此类兼容的其他字段，请参阅的字段组引用 [[!UICONTROL XDM Business Campaign成员详细信息]](../../field-groups/b2b-campaign-members/details.md).

@@ -2,9 +2,9 @@
 title: 管理架构的数据使用标签
 description: 了解如何在Adobe Experience Platform UI中向Experience Data Model(XDM)架构字段添加数据使用情况标签。
 exl-id: 92284bf7-f034-46cc-b905-bdfb9fcd608a
-source-git-commit: 3d49b5c503ec0fd92f0639abf366d7652566fac7
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '736'
+source-wordcount: '737'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->基于模式的标签是 [基于属性的访问控制](../../access-control/abac/overview.md)，该版本目前在美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Real-time Customer Data Platform客户使用。
+>基于模式的标签是 [基于属性的访问控制](../../access-control/abac/overview.md)，该版本目前在美国医疗保健客户的有限版本中提供。 此功能在完全发布后将可供所有Adobe Real-time Customer Data Platform客户使用。
 
 引入Adobe Experience Platform的所有数据都受体验数据模型(XDM)架构的约束。 此数据可能受贵组织或法律法规定义的使用限制的约束。 为此，平台允许您通过使用 [数据使用标签](../../data-governance/labels/overview.md).
 

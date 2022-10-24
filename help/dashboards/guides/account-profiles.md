@@ -2,9 +2,9 @@
 title: Account Profiles Dashboard指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织B2B帐户配置文件的重要信息。
 exl-id: c9a3d786-6240-4ba4-96c8-05f658e1150c
-source-git-commit: 05e63064dc8eb3f070a383f508cc4a86d4f5e9cc
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '1052'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ## 快速入门
 
-您必须有权 [Real-time Customer Data Platform B2B版](../../rtcdp/b2b-overview.md) 以访问B2B [!UICONTROL 帐户配置文件] 功能板。
+您必须有权 [Adobe Real-time Customer Data Platform B2B版](../../rtcdp/b2b-overview.md) 以访问B2B [!UICONTROL 帐户配置文件] 功能板。
 
 ## 帐户配置文件数据
 
@@ -45,7 +45,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，通过该功
 
 ![显示结果的“帐户配置文件”浏览选项卡突出显示了配置文件ID。](../images/account-profiles/account-profiles-browse-tab.png)
 
-在 [!UICONTROL 详细信息] 选项卡已从多个配置文件片段合并到一起，以形成单个帐户的单个视图。 请参阅 [浏览Real-time Customer Data Platform的帐户配置文件](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles) 要详细了解Platform UI中帐户配置文件查看功能。
+在 [!UICONTROL 详细信息] 选项卡已从多个配置文件片段合并到一起，以形成单个帐户的单个视图。 请参阅 [浏览Adobe Real-time Customer Data Platform的帐户配置文件](../../rtcdp/accounts/account-profile-ui-guide.md#browse-account-profiles) 要详细了解Platform UI中帐户配置文件查看功能。
 
 ## 的 [!UICONTROL 帐户配置文件] [!UICONTROL 概述] {#overview}
 
@@ -63,6 +63,8 @@ Adobe提供了可用于显示与帐户配置文件相关的不同量度的标准
 
 * [按行业开列的帐户总数](#total-accounts-by-industry)
 * [添加了帐户配置文件](#account-profiles-added)
+* [预测评分分布](#predictive-scoring-distribution)
+* [预测评分主要影响因素](#predictive-scoring-top-influential-factors)
 
 ### 按行业开列的帐户总数 {#total-accounts-by-industry}
 
@@ -82,6 +84,28 @@ Adobe提供了可用于显示与帐户配置文件相关的不同量度的标准
 
 ![帐户配置文件添加了小组件。](../images/account-profiles/accounts-profiles-added-widget.png)
 
+### 预测评分分布 {#predictive-scoring-distribution}
+
+的 [!UICONTROL 预测评分分布] 小组件显示所有帐户配置文件的分数分布，以帮助您快速了解销售渠道的运行状况。 评分数据通过圆环图和列图传递。
+
+圆环图说明了在购买时段的高倾向、中倾向和低倾向中，帐户配置文件总数所占的比例。 此键值提供了有关颜色编码部分的更多详细信息，包括评分时段范围以及该范围中的帐户用户档案数。
+
+列图提供了更精细的评分划分。 每列显示20个5点增量存储段中每个存储段中的帐户配置文件数。
+
+利用小组件中的下拉菜单，可选择帐户评分模型。
+
+![预测评分分发小组件。](../images/account-profiles/predictive-scoring-distribution.png)
+
+### 预测评分主要影响因素 {#predictive-scoring-top-influential-factors}
+
+的 [!UICONTROL 预测评分主要影响因素] 小组件可帮助您了解有助于提升每个倾向时段得分的最重要因素。
+
+此小组件显示高倾向、中倾向和低倾向各个时段的主要影响因素。 每个影响因素对应的条形图表示该倾向时段中包含特定影响因素的帐户配置文件百分比。
+
+利用小组件中的下拉菜单，可选择帐户评分模型。
+
+![预测性评分主要影响因素小组件。](../images/account-profiles/predictive-scoring-top-influential-factors.png)
+
 ## 后续步骤
 
-通过遵循本文档，您现在应该能够找到 [!UICONTROL 帐户配置文件] 功能板。 您还应了解可用小组件中显示的量度。 要了解有关在Experience PlatformUI中将帐户配置文件用作B2B数据一部分的更多信息，请参阅 [帐户配置文件概述](../../rtcdp/accounts/account-profile-overview.md) Adobe Real-Time CDP版。
+通过阅读本文档，您现在应该了解如何找到 [!UICONTROL 帐户配置文件] 功能板。 您还应了解可用小组件中显示的量度。 要了解有关在Experience PlatformUI中将帐户配置文件用作B2B数据一部分的更多信息，请参阅 [帐户配置文件概述](../../rtcdp/accounts/account-profile-overview.md) Adobe Real-Time CDP版。

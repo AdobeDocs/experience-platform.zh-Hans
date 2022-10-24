@@ -2,9 +2,9 @@
 title: XDM业务营销列表类
 description: 本文档概述了Experience Data Model(XDM)中的XDM Business Marketing List类。
 exl-id: 510c5608-054d-4bed-91eb-22d84b5dc625
-source-git-commit: 50e5fe8573d828f88867ed33fe86e974c85de60a
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '310'
+source-wordcount: '311'
 ht-degree: 3%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->此类旨在供具有访问权限的组织使用 [Real-time Customer Data Platform B2B版](../../../rtcdp/b2b-overview.md). 您必须拥有Real-time CDP B2B Edition的访问权限，才能让此类参与 [实时客户资料](../../../profile/home.md).
+>此类旨在供具有访问权限的组织使用 [Adobe Real-time Customer Data Platform B2B版](../../../rtcdp/b2b-overview.md). 您必须拥有Real-Time CDP B2B Edition的访问权限，才能参加此类 [实时客户资料](../../../profile/home.md).
 
 [!UICONTROL XDM业务营销列表] 是一个标准的体验数据模型(XDM)类，可捕获营销列表所需的最低属性。 市场营销列表允许您优先考虑最有可能购买您产品的潜在客户。
 
@@ -31,4 +31,4 @@ ht-degree: 3%
 
 {style=&quot;table-layout:auto&quot;}
 
-请参阅 [Real-time CDP B2B Edition中的模式关系](../../tutorials/relationship-b2b.md) 了解此类在概念上如何与其他B2B类相关，以及如何在Adobe Experience Platform UI中建立这些关系。
+请参阅 [Real-Time CDP B2B版中的模式关系](../../tutorials/relationship-b2b.md) 了解此类在概念上如何与其他B2B类相关，以及如何在Adobe Experience Platform UI中建立这些关系。

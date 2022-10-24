@@ -1,11 +1,11 @@
 ---
 keywords: rtcdp配置文件；配置文件rtcdp;rtcdp身份；rtcdp合并策略；实时客户配置文件
 title: 帐户配置文件UI指南
-description: 通过使用帐户配置文件，Real-time Customer Data Platform B2B Edition使您能够统一来自多个来源的帐户信息。 本指南提供了有关在Adobe Experience Platform用户界面中与帐户配置文件进行交互的详细信息。
+description: 通过使用帐户配置文件，Adobe Real-time Customer Data Platform B2B Edition使您能够统一来自多个来源的帐户信息。 本指南提供了有关在Adobe Experience Platform用户界面中与帐户配置文件进行交互的详细信息。
 exl-id: a05e8b84-026e-4482-a288-aa25b441bd69
-source-git-commit: 85d3e5f265fdbfd51f184d36205127f005e2b9df
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1624'
+source-wordcount: '1625'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->帐户配置文件仅适用于Real-time Customer Data Platform B2B Edition客户。 要了解有关实时CDP的更多信息，包括每种许可证类型的可用特性和功能，请首先阅读 [Real-time CDP概述](../overview.md).
+>帐户配置文件仅适用于Real-time Customer Data Platform B2B Edition客户。 要进一步了解Real-Time CDP，包括每种许可证类型可用的特性和功能，请首先阅读 [Real-Time CDP概述](../overview.md).
 
-帐户配置文件允许您统一来自多个来源的帐户信息。 此帐户统一视图将来自多个营销渠道的数据以及贵组织当前用于存储客户帐户信息的各种系统的数据汇集在一起。 本文档提供了使用Adobe Experience Platform用户界面(UI)中提供的Real-time CDP、B2B Edition功能与帐户配置文件交互的指南。
+帐户配置文件允许您统一来自多个来源的帐户信息。 此帐户统一视图将来自多个营销渠道的数据以及贵组织当前用于存储客户帐户信息的各种系统的数据汇集在一起。 本文档提供了使用Adobe Experience Platform用户界面(UI)中提供的Real-Time CDP B2B Edition功能与帐户配置文件交互的指南。
 
 要详细了解如何在B2B工作流中创建帐户配置文件，请参阅 [端到端教程](../b2b-tutorial.md).
 
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 ![配置帐户设置](images/b2b-configuring-account-settings.png)
 
-要了解有关导致帐户匹配的潜在客户的更多信息，请参阅 [在实时CDP B2B概述中提供帐户匹配](../../rtcdp/b2b-ai-ml-services/lead-to-account-matching.md).
+要了解有关导致帐户匹配的潜在客户的更多信息，请参阅 [在Real-Time CDP B2B中实现帐户匹配概述](../../rtcdp/b2b-ai-ml-services/lead-to-account-matching.md).
 
 ## 浏览帐户配置文件 {#browse-account-profiles}
 
@@ -86,7 +86,7 @@ ht-degree: 0%
 
 ### 浏览者 [!UICONTROL 其他] {#browse-by-others}
 
-Real-time CDP， B2B Edition支持通过允许您输入 **[!UICONTROL 源名称]**, **[!UICONTROL 源实例]**&#x200B;和 **[!UICONTROL 帐户ID]** 帐户。 通过直接输入源名称和实例，您可以提供Experience Platform搜索和显示正确的帐户配置文件数据所需的上下文。
+Real-Time CDP, B2B Edition支持通过允许您输入 **[!UICONTROL 源名称]**, **[!UICONTROL 源实例]**&#x200B;和 **[!UICONTROL 帐户ID]** 帐户。 通过直接输入源名称和实例，您可以提供Experience Platform搜索和显示正确的帐户配置文件数据所需的上下文。
 
 在无法直接与数据建立源连接的情况下，执行直接查找的功能非常有用。 例如，如果贵组织已制定数据管理策略，阻止直接连接到CRM，则可以将该数据导出到云存储系统，然后将其引入Experience Platform。
 
@@ -120,19 +120,19 @@ Real-time CDP， B2B Edition支持通过允许您输入 **[!UICONTROL 源名称]
 
 ## “人员”选项卡 {#people-tab}
 
-的 **[!UICONTROL 人员]** 选项卡提供了与帐户关联的个人人员列表。 这些人员可能是来自不同企业系统的联系人和潜在客户，这些企业系统由您组织内的不同团队管理，但在Real-time CDP和B2B Edition中，他们以单个列表一起呈现，使您能够更全面地了解您的客户联系人。
+的 **[!UICONTROL 人员]** 选项卡提供了与帐户关联的个人人员列表。 这些人员可能是来自不同企业系统的联系人和潜在客户，这些企业系统由您组织内的不同团队管理，但在Real-Time CDPB2B Edition中，他们以单个列表一起呈现，使您能够更全面地了解您的客户联系人。
 
 >[!NOTE]
 >
 >的 [!UICONTROL 人员] 选项卡显示与帐户关联的最多25人的列表。 对于拥有25名以上关联人员的帐户，系统会显示25条记录的随机抽样。
 
-除了向您显示联系人的信息快照外，列出的每个人员还包括 **[!UICONTROL 配置文件ID]**，这是一个可单击的链接，用于浏览该个人的实时客户资料。 要了解有关查看与您的帐户相关的单个客户配置文件的更多信息，请访问 [在Real-time CDP B2B Edition中浏览用户档案](../profile/profile-browse.md).
+除了向您显示联系人的信息快照外，列出的每个人员还包括 **[!UICONTROL 配置文件ID]**，这是一个可单击的链接，用于浏览该个人的实时客户资料。 要了解有关查看与您的帐户相关的单个客户配置文件的更多信息，请访问 [在Real-Time CDP B2B版中浏览用户档案](../profile/profile-browse.md).
 
 ![“人员”选项卡](images/b2b-account-people.png)
 
 ## “机会”选项卡 {#opportunities-tab}
 
-的 **[!UICONTROL 机会]** 选项卡提供有关与帐户相关的未结和已结业务机会的信息。 这些机会可能会从多个来源摄取到Experience Platform中，但实时CDP B2B Edition使营销人员能够轻松地在一个位置看到所有这些机会。
+的 **[!UICONTROL 机会]** 选项卡提供有关与帐户相关的未结和已结业务机会的信息。 这些机会可能会从多个来源摄取到Experience Platform中，但Real-Time CDP B2B Edition使营销人员能够轻松地在一个位置一起查看所有这些机会。
 
 >[!NOTE]
 >

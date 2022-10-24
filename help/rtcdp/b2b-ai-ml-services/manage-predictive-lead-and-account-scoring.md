@@ -1,15 +1,16 @@
 ---
-title: 在实时CDP B2B中管理预测性潜在客户和客户评分
+title: 在Real-Time CDP B2B中管理预测性潜在客户和帐户评分
 type: Documentation
 description: 本文档提供了有关管理Experience PlatformCDP B2B中的预测潜在客户和帐户评分功能的信息。
-source-git-commit: 5ac8e099a6de563371f9a53a8b4816e6cf4d1953
+exl-id: fe7eb94e-5cf1-46bf-80e5-affe5735c998
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1017'
+source-wordcount: '1018'
 ht-degree: 2%
 
 ---
 
-# 在Real-time Customer Data Platform B2B Edition中管理预测潜在客户和帐户评分
+# 在Adobe Real-time Customer Data Platform B2B Edition中管理预测潜在客户和帐户评分
 
 >[!NOTE]
 >
@@ -115,7 +116,7 @@ ht-degree: 2%
 
 ![plas-delete-score](../assets/../b2b-ai-ml-services/assets/plas-delete-score.png)
 
-的 **[!UICONTROL 删除文档]** 确认对话框。 选择 **[!UICONTROL 删除]**.
+的 **[!UICONTROL 删除文档]** 确认对话框。 选择&#x200B;**[!UICONTROL 删除]**。
 
 ![plas-delete-score-confirmation](../assets/../b2b-ai-ml-services/assets/plas-delete-score-confirmation.png)
 

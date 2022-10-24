@@ -1,9 +1,9 @@
 ---
 title: Real-Time CDP B2B版中的相关帐户
 type: Documentation
-description: 有关Experience PlatformReal-time CDP B2B中相关帐户功能的概述和更多信息。
+description: 有关Real-Time CDP B2BExperience Platform中相关帐户功能的概述和更多信息。
 exl-id: 37fd2cdb-87c0-4e5e-9599-ad4f397f7c28
-source-git-commit: 5be8eac1603f1b81e45b4c0aeace5c2017b46149
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '386'
 ht-degree: 6%
@@ -26,7 +26,7 @@ B2B企业通常将其客户信息存储在多个系统中，每个系统仅包�
 
 {style=&quot;table-layout:auto&quot;}
 
-通过相关帐户， [!DNL Real-time CDP B2B] 现在，会显示与您正在浏览的帐户类似的帐户列表。
+通过相关帐户， [!DNL Real-Time CDP B2B] 现在，会显示与您正在浏览的帐户类似的帐户列表。
 
 ![屏幕显示Experience PlatformUI中的相关帐户。](/help/rtcdp/b2b-ai-ml-services/assets/related-accounts-in-ui.png)
 

@@ -3,9 +3,9 @@ keywords: Azure事件中心目标；Azure事件中心；Azure事件Hub
 title: Azure事件中心连接
 description: 创建与的实时出站连接 [!DNL Azure Event Hubs] 存储以从Experience Platform流数据。
 exl-id: f98a389a-bce3-4a80-9452-6c7293d01de3
-source-git-commit: 75399d2fbe111a296479f8d3404d43c6ba0d50b5
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '2003'
+source-wordcount: '2004'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> 此目标仅对 [Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户。
+> 此目标仅对 [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户。
 
 [!DNL Azure Event Hubs] 是一种大数据流平台和事件摄取服务。 它每秒可以接收和处理数百万个事件。 通过使用任何实时分析提供程序或批量处理/存储适配器，可以转换和存储发送到事件中心的数据。
 

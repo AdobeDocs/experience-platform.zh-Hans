@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: August 10, 2020
 author: crhoades, ens28527
 exl-id: 9347147f-e830-4487-aa12-f56723abb3c8
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '572'
 ht-degree: 6%
@@ -20,7 +20,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 - [[!DNL Data Science Workspace]](#dsw)
 - [[!DNL Destinations]](#destinations)
-- [[!DNL Real-time Customer Data Platform]](#rtcdp)
+- [[!DNL Real-Time Customer Data Platform]](#rtcdp)
 - [[!DNL Sources]](#sources)
 
 ## [!DNL Data Science Workspace] {#dsw}
@@ -45,7 +45,7 @@ Adobe Experience Platform 现有功能的更新包括：
 
 | 目标 | 描述 |
 |--- | ---|
-| [!DNL Google Customer Match] | Google客户匹配允许您使用在线和离线数据，跨Google自有和运营的资产访问客户并与其重新互动，例如： [!DNL Search], [!DNL Shopping]、Gmail和YouTube。 <br><br> 访问 [!DNL Google Customer Match] [页面](../../destinations/catalog/advertising/google-customer-match.md) （位于目标目录中），以了解有关目标以及如何在实时CDP中设置该目标的更多信息。 |
+| [!DNL Google Customer Match] | Google客户匹配允许您使用在线和离线数据，跨Google自有和运营的资产访问客户并与其重新互动，例如： [!DNL Search], [!DNL Shopping]、Gmail和YouTube。 <br><br> 访问 [!DNL Google Customer Match] [页面](../../destinations/catalog/advertising/google-customer-match.md) （位于目标目录中），以了解有关目标以及如何在Real-Time CDP中设置该目标的更多信息。 |
 
 **新增功能**
 
@@ -54,17 +54,17 @@ Adobe Experience Platform 现有功能的更新包括：
 | 自定义文件名编辑器 | 更新了电子邮件营销目标和云存储目标的数据激活工作流，以便您编辑导出文件的名称。 有关更多信息，请参阅 [ 配置步骤](../../destinations/ui/activate-batch-profile-destinations.md) 激活工作流中。 |
 | 推荐属性 | 更新了电子邮件营销目标和云存储目标的数据激活工作流程，以显示向导出文件添加的推荐属性。 有关更多信息，请参阅 [选择属性步骤](../../destinations/ui/activate-batch-profile-destinations.md) 激活工作流中。 |
 
-## [!DNL Real-time Customer Data Platform] {#rtcdp}
+## [!DNL Real-Time Customer Data Platform] {#rtcdp}
 
-构建于Experience Platform,Real-time Customer Data Platform([!DNL Real-time CDP])可帮助公司整合已知和未知数据，在整个客户历程中通过智能决策激活客户用户档案。 [!DNL Real-time CDP] 整合多个企业数据源，以实时创建客户配置文件。 然后，可以将这些配置文件构建的区段发送到下游目标，以便在所有渠道和设备上提供一对一的个性化客户体验。
+构建于Experience Platform,Real-time Customer Data Platform([!DNL Real-Time CDP])可帮助公司整合已知和未知数据，在整个客户历程中通过智能决策激活客户用户档案。 [!DNL Real-Time CDP] 整合多个企业数据源，以实时创建客户配置文件。 然后，可以将这些配置文件构建的区段发送到下游目标，以便在所有渠道和设备上提供一对一的个性化客户体验。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 支持IAB TCF 2.0 | [!DNL Real-time CDP] 现在是2.0版本的 [!DNL Transparency & Consent Framework] (TCF)，如 [!DNL Interactive Advertising Bureau] (IAB)。 您可以将数据操作和配置文件架构配置为接受由CMP生成的客户同意数据，并在将区段激活到下游目标时强制执行客户同意首选项。 |
+| 支持IAB TCF 2.0 | [!DNL Real-Time CDP] 现在是2.0版本的 [!DNL Transparency & Consent Framework] (TCF)，如 [!DNL Interactive Advertising Bureau] (IAB)。 您可以将数据操作和配置文件架构配置为接受由CMP生成的客户同意数据，并在将区段激活到下游目标时强制执行客户同意首选项。 |
 
-有关 [!DNL Real-time CDP]，请参阅 [[!DNL Real-time CDP] 概述](../../rtcdp/overview.md).
+有关 [!DNL Real-Time CDP]，请参阅 [[!DNL Real-Time CDP] 概述](../../rtcdp/overview.md).
 
 ## 源 {#sources}
 

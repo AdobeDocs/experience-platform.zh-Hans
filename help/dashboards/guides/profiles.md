@@ -4,9 +4,9 @@ title: Profiles Dashboard指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 1755f5030f5730ca06ea718635ede9deb1188d21
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '3387'
+source-wordcount: '3388'
 ht-degree: 0%
 
 ---
@@ -69,7 +69,7 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 的 [!UICONTROL 浏览] 选项卡，用于搜索和查看摄取到您组织的只读用户档案。 从此处，您可以看到属于用户档案的有关其首选项、过去事件、交互和区段的重要信息
 
-要进一步了解Platform UI中提供的配置文件查看功能，请参阅 [在Real-time Customer Data Platform浏览用户档案](../../rtcdp/profile/profile-browse.md).
+要进一步了解Platform UI中提供的配置文件查看功能，请参阅 [在Adobe Real-time Customer Data Platform浏览用户档案](../../rtcdp/profile/profile-browse.md).
 
 ## 合并策略 {#merge-policies}
 

@@ -1,7 +1,7 @@
 ---
 title: (Beta)Adobe Commerce Destination Connector
 description: 了解Adobe Commerce和Real-Time CDP商户如何通过提供高度相关的网站内容和促销活动(根据Real-Time CDP中构建和管理的客户区段进行自定义)来个性化购物体验。
-source-git-commit: 51c5458f444220fb526eb9e82417ae6456857de6
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '687'
 ht-degree: 1%
@@ -36,7 +36,7 @@ To help you better understand how and when you should use the *YourDestination* 
 
 ## 先决条件 {#prerequisites}
 
-此扩展位于目标目录中，面向已购买Real-time CDP Prime或Ultimate和Adobe Commerce的精选测试版客户。
+此扩展位于目标目录中，面向已购买Real-Time CDP Prime或Ultimate以及Adobe Commerce的精选测试版客户。
 
 测试版客户应有权访问：
 
@@ -90,7 +90,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 ## 中的后续步骤 [!DNL Adobe Commerce]
 
-现在，您已配置 [!DNL Commerce] 目标Experience Platform中，您需要配置 [!DNL Commerce Admin] 导入您创建的实时CDP区段。 请参阅 [[!DNL Commerce] 文档](https://docs.magento.com/user-guide/marketing/customer-segment-rtcdp.html) 以了解更多。
+现在，您已配置 [!DNL Commerce] 目标Experience Platform中，您需要配置 [!DNL Commerce Admin] 导入您创建的Real-Time CDP区段。 请参阅 [[!DNL Commerce] 文档](https://docs.magento.com/user-guide/marketing/customer-segment-rtcdp.html) 以了解更多。
 
 ## 验证数据导出 {#exported-data}
 

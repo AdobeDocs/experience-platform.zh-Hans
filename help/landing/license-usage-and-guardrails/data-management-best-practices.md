@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；数据管理；许可证
 title: 数据管理许可证授权最佳实践
 description: 了解可用来借助 Adobe Experience Platform 更好地管理您的许可证权利的最佳实践和工具。
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 5da2a6cfc9e9da6bbe6c6560577d22eed32c858c
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '2528'
+source-wordcount: '2529'
 ht-degree: 2%
 
 ---
@@ -47,7 +47,7 @@ Experience Platform主要由两个数据存储库组成：the [!DNL Data Lake] �
 
 的 [!DNL Profile Richness] 量度因您购买的许可而异。 有两种计算方法 [!DNL Profile Richness] 可用：
 
-* 在任何时间点存储在Real-time Customer Data Platform中的所有生产数据（即配置文件服务和标识服务）的总和除以 [!DNL Addressable Audience];
+* 在任何时间点存储在Adobe Real-time Customer Data Platform中的所有生产数据（即配置文件服务和标识服务）的总和除以 [!DNL Addressable Audience];
 * 平台内存储的所有数据的总和(包括但不限于 [!DNL Data Lake]、配置文件服务和Identity服务)以及您在过去12个月内通过（而不是存储在中）Platform流经的任何数据除以 [!DNL Addressable Audience].
 
 这些量度的可用性以及每个量度的具体定义因贵组织购买的许可而异。

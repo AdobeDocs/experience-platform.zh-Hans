@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: November 10, 2020
 author: crhoades, ens25212
 exl-id: 29179b56-e49a-44e8-8c64-a7c383c2eaaf
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '2184'
-ht-degree: 3%
+ht-degree: 5%
 
 ---
 
@@ -72,7 +72,7 @@ Adobe Experience Platform的新增功能：
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 生产沙盒 | [!DNL Experience Platform] 提供了单个生产沙盒，无法删除或重置。 可用沙箱、生产和非生产的总数取决于所获得的许可证。 |
+| 生产沙盒 | [!DNL Experience Platform] 提供了一个生产沙盒，无法删除或重置。 可用沙箱、生产和非生产的总数取决于所获得的许可证。 |
 | 非生产沙箱 | 可以为单个沙箱创建多个非生产沙箱 [!DNL Platform] 实例，允许您测试功能、运行实验和创建自定义配置，而不会影响生产沙盒。 |
 | 沙盒切换器 | 在 [!DNL Experience Platform] 用户界面屏幕左上角的沙盒切换器允许您通过下拉菜单在可用的沙盒之间进行切换。 沙盒切换器还提供了一个搜索功能，允许您过滤可用的沙箱。 |
 | `x-sandbox-name` 标题 | 所有对 [!DNL Experience Platform] API现在必须包含新 `x-sandbox-name` 标题，其值引用 `name` 操作将在其中进行的沙盒的属性。 |
@@ -120,7 +120,7 @@ Adobe Experience Platform的新增功能：
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 目标详细信息UX更新 | 实时CDP的目标工作流现在包括内联监控，以便您能够查看哪些批量激活成功。 此功能将允许用户通过警报和监控功能板直接解决批量目标工作流中的问题，以跟踪处理管道中的错误。 |
+| 目标详细信息UX更新 | Real-Time CDP的目标工作流现在包含内联监控，以便您能够查看哪些批量激活成功。 此功能将允许用户通过警报和监控功能板直接解决批量目标工作流中的问题，以跟踪处理管道中的错误。 |
 | 文件加密 | 对于基于文件的目标，用户现在可以向其导出的文件添加加密。 |
 | 文件计划 | 对于基于电子邮件的存储目标和云存储目标，用户可以创建一次性导出或创建每日快照。 |
 | 必填字段 | 用户可以将字段标记为必填字段，以确保只导出包含必填字段的字段。 |
@@ -139,7 +139,7 @@ Adobe Experience Platform的新增功能：
 
 有关更多信息，请阅读 [向数据集添加标识字段](../../intelligent-services/data-preparation.md#add-identity-fields-to-the-dataset) （位于“智能服务”数据准备指南中）。
 
-### Attribution AI
+### 归因人工智能
 
 Attribution AI，作为智能服务的一部分，是一种多渠道的算法归因服务，用于计算客户交互对特定结果的影响和增量影响。
 
@@ -163,7 +163,7 @@ Attribution AI，作为智能服务的一部分，是一种多渠道的算法归
 
 ### 客户人工智能
 
-Customer AI是Intelligent Services的一部分，它为营销人员提供了在个人级别生成客户预测并提供解释的功能。 借助影响因素的帮助， Customer AI可以告诉您客户可能执行的操作以及原因。 此外，营销人员还可以从Customer AI预测和分析中受益，通过提供最合适的选件和消息传送来个性化客户体验。
+Customer AI是Intelligent Services的一部分，它为营销人员提供了在个人级别生成客户预测并提供解释的功能。 在影响因素的帮助下，客户人工智能可以告诉您客户可能会做什么以及为什么。此外，营销人员可以从客户人工智能预测和洞察中受益，通过提供最合适的优惠和消息传递来个性化客户体验。
 
 **主要功能**
 

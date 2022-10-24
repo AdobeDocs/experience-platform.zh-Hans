@@ -1,11 +1,11 @@
 ---
 keywords: rtcdp配置文件；配置文件rtcdp;rtcdp身份；rtcdp合并策略；实时客户配置文件
-title: 了解Real-time CDP中的实时客户资料
-description: 了解Real-time Customer Data Platform如何让您使用实时客户资料为客户提供协调一致的相关体验。
+title: 了解Real-Time CDP中的实时客户资料
+description: 了解Adobe Real-time Customer Data Platform如何让您使用实时客户资料为客户提供协调一致的相关体验。
 exl-id: de70948c-ffc1-49d3-a57c-25ad415752ff
-source-git-commit: 0aca080d9f2c39b8f0a1197e1048d1a77d5e7bc1
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '457'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 0%
 
 实时客户资料通过整合来自多个渠道的数据（包括在线、离线、CRM和第三方数据），使您能够全面了解每个客户的情况。 每个客户用户档案都允许您将不同的客户数据整合到一个统一视图中，为每次客户互动提供一个可操作且带有时间戳的帐户。
 
-## 中的用户档案 [!DNL Real-time Customer Data Platform]
+## 中的用户档案 [!DNL Real-Time Customer Data Platform]
 
-[!DNL Real-time Customer Data Platform] 无论客户在何处或何时与您的品牌进行交互，都使您能够为客户提供协调一致的体验。 提供这些个性化体验，以便让客户感觉相关、及时，这绝非易事，但是，可以通过使用Adobe Experience Platform的“实时客户资料”来实现这一点。
+[!DNL Adobe Real-Time Customer Data Platform] 无论客户在何处或何时与您的品牌进行交互，都使您能够为客户提供协调一致的体验。 提供这些个性化体验，以便让客户感觉相关、及时，这绝非易事，但是，可以通过使用Adobe Experience Platform的“实时客户资料”来实现这一点。
 
-Real-time CDP是以Experience Platform为基础构建的，它利用了许多核心Experience Platform特性和功能，包括创建用户档案。 单个客户的这些汇总视图将来自多个营销渠道的数据以及您的组织当前用于存储客户数据的各种系统中的数据汇集在一起。
+Real-Time CDP构建于Experience Platform之上，利用了许多核心Experience Platform特性和功能，包括创建用户档案。 单个客户的这些汇总视图将来自多个营销渠道的数据以及您的组织当前用于存储客户数据的各种系统中的数据汇集在一起。
 
-## Real-time CDP B2B Edition的配置文件增强功能
+## Real-Time CDP B2B Edition的配置文件增强功能
 
-除了Real-time CDP支持的配置文件功能外，您还可以使用Real-time CDP B2B Edition浏览与个人相关的重要信息，如帐户和销售机会。 要进一步了解Real-time CDP B2B Edition的配置文件增强功能，请首先阅读 [配置文件浏览指南](profile-browse.md).
+除了Real-Time CDP支持的用户档案功能外，您还可以使用Real-Time CDP B2B Edition浏览与个人相关的重要信息，如帐户和销售机会。 要进一步了解Real-Time CDP B2B Edition的配置文件增强功能，请首先阅读 [配置文件浏览指南](profile-browse.md).
 
 ## 身份和身份命名空间
 

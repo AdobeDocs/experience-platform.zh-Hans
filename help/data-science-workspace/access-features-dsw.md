@@ -5,9 +5,9 @@ title: 数据科学工作区访问和功能
 topic-legacy: Access and features for data science workspace
 description: 以下文档概述了Data Science Workspace的权限和对功能的访问权限。
 exl-id: 6759fea4-adb9-4e4e-9f3d-e0e8c885b1dd
-source-git-commit: 2ff2721f5420483ddc5caffd1eb0532df729e01b
+source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
 workflow-type: tm+mt
-source-wordcount: '684'
+source-wordcount: '688'
 ht-degree: 2%
 
 ---
@@ -18,15 +18,15 @@ ht-degree: 2%
 
 ![DSW选项卡](./images/access/platform-tabs.png)
 
-- **笔记本：** 提供交互式开发环境([JupyterLab](./jupyterlab/overview.md))，用于探索、分析和建模Experience Platform数据。
-- **模型：** 提供用于创建、发布和存储高级机器学习方法和模型的工具。有关更多信息，请访问[创建并发布机器学习模型](./models-recipes/create-publish-model.md)教程。
-- **服务：** 包含Adobe提供的服务(如AI/ML [服务)](../intelligent-services/home.md) 以及您使用Data Science Workspace创建的任何自定义服务。
+- **笔记本：** 提供交互式开发环境([JupyterLab](./jupyterlab/overview.md))来探索、分析和建模您的Experience Platform数据。
+- **模型：** 提供用于创建、发布和存储高级机器学习方法和模型的工具。 有关更多信息，请访问 [创建和发布机器学习模型](./models-recipes/create-publish-model.md) 教程。
+- **服务：** 包含两个Adobe提供的服务，例如 [AI/ML服务](../intelligent-services/home.md) 以及您使用数据科学工作区创建的任何自定义服务。
 
 为什么我只看到“服务”选项卡？
 
-- 贵组织可能只有权使用实时客户数据平台(RTCDP)，该平台包括客户AI/ML服务。
+- 贵组织只能访问Adobe Real-time Customer Data Platform(Real-Time CDP)，其中包括Customer AI/ML服务。
 
-如果您看不到任何&#x200B;**Data Science**&#x200B;选项卡，并希望利用Data Science Workspace功能，请与公司管理员联系，以检查您是否拥有Adobe Experience Platform Intelligence许可证。
+如果您无法看到 **数据科学** 选项卡，并希望利用Data Science Workspace功能，请联系公司管理员以检查您是否拥有Adobe Experience Platform Intelligence许可证。
 
 ## Data Science Workspace包装
 
@@ -53,17 +53,17 @@ Adobe Experience Platform Intelligence包和Advanced Intelligence Pack附加组�
 
 ## 访问控制
 
-Experience Platform的访问控制通过[Adobe Admin Console](https://adminconsole.adobe.com)进行管理。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。 有关更多信息，请参阅[访问控制概述](../access-control/home.md)。
+Experience Platform的访问控制通过 [Adobe Admin Console](https://adminconsole.adobe.com). 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。 请参阅 [访问控制概述](../access-control/home.md) 以了解更多信息。
 
 要使用数据科学工作区，必须启用“管理数据科学工作区”权限。 下表概述了启用或禁用此权限的效果：
 
 | 权限 | 已启用 | 已禁用 |
 |---|---|---|
-| 管理数据科学工作区 | 提供对数据科学工作区中所有服务的访问权限。 | 禁用了对数据科学工作区中所有服务的API和UI访问。 禁用后，将阻止选择&#x200B;**Notebooks**、**Models**&#x200B;和&#x200B;**Services**&#x200B;页面。 <li>对&#x200B;**服务**&#x200B;的访问仍可通过实时客户数据平台(RTCDP)访问。</li> |
+| 管理数据科学工作区 | 提供对数据科学工作区中所有服务的访问权限。 | 禁用了对数据科学工作区中所有服务的API和UI访问。 在禁用时，选择 **笔记本**, **模型**&#x200B;和 **服务** 页面被阻止。 <li>访问 **服务** 仍可通过Adobe Real-time Customer Data Platform(Real-Time CDP)获取。</li> |
 
 ## 沙盒支持
 
-沙箱是单个Experience Platform实例中的虚拟分区。 每个Platform实例都支持多个生产和非生产沙箱，每个沙箱都维护其自己的Platform资源库。 非生产沙箱允许您测试功能、运行实验和进行自定义配置，而不会影响生产沙箱。 有关沙箱的更多信息，请参阅[沙箱概述](../sandboxes/home.md)。
+沙箱是单个Experience Platform实例中的虚拟分区。 每个Platform实例都支持多个生产和非生产沙箱，每个沙箱都维护其自己的Platform资源库。 非生产沙箱允许您测试功能、运行实验和进行自定义配置，而不会影响生产沙箱。 有关沙箱的详细信息，请参阅 [沙箱概述](../sandboxes/home.md).
 
 目前，数据科学工作区存在以下沙盒限制：
 
@@ -73,4 +73,4 @@ Experience Platform的访问控制通过[Adobe Admin Console](https://adminconso
 
 本文档概述了数据科学工作区中可用的各种访问类型和功能。
 
-要了解有关数据科学工作区的更多信息（如完整的日常工作流），请首先阅读[数据科学工作区演练](./walkthrough.md)文档。 有关更多常规信息，请访问[数据科学工作区概述](./home.md)。
+要了解有关数据科学工作区的更多信息（例如完整的日常工作流），请首先阅读 [数据科学工作区演练](./walkthrough.md) 文档。 有关更多常规信息，请访问 [数据科学工作区概述](./home.md).

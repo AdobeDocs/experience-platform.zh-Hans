@@ -5,9 +5,9 @@ title: 在Adobe Experience Platform中处理同意
 topic-legacy: getting started
 description: 了解如何在Adobe Experience Platform中使用Adobe2.0标准处理客户同意信号。
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: f9ccce8943e2aaf65cd3e0ffe2b974a668bba9b7
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1566'
+source-wordcount: '1567'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,7 @@ Adobe Experience Platform允许您处理从客户收集的同意数据，并将�
 
 >[!NOTE]
 >
->本文档重点介绍如何使用Adobe标准处理同意数据。 如果您要处理符合IAB透明度和同意框架(TCF)2.0的同意数据，请参阅 [Real-time Customer Data Platform中的TCF 2.0支持](../iab/overview.md).
+>本文档重点介绍如何使用Adobe标准处理同意数据。 如果您要处理符合IAB透明度和同意框架(TCF)2.0的同意数据，请参阅 [Adobe Real-time Customer Data Platform中的TCF 2.0支持](../iab/overview.md).
 
 ## 先决条件
 

@@ -6,9 +6,9 @@ description: 本文档提供了一个教程，用于使用Experience Platform用
 topic-legacy: tutorial
 type: Tutorial
 exl-id: feed776b-bc8d-459b-9700-e5c9520788c0
-source-git-commit: 86a230d746d6642437c4e37958c07a1186ebadc3
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1172'
+source-wordcount: '1173'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->有关如何在Real-time Customer Data Platform B2B Edition中创建多对一关系的步骤，请参阅 [创建B2B关系](./relationship-b2b.md).
+>有关如何在Adobe Real-time Customer Data Platform B2B Edition中创建多对一关系的步骤，请参阅 [创建B2B关系](./relationship-b2b.md).
 
 ## 快速入门
 

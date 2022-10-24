@@ -2,9 +2,9 @@
 description: Adobe Experience Platform Destination SDK是一组配置API，允许您配置目标集成模式，以便Experience Platform根据所选的数据和身份验证格式将受众和配置文件数据交付到端点或存储位置。 这些配置存储在Experience Platform中，可通过API进行检索以进行其他更新。
 title: Adobe Experience Platform Destination SDK
 exl-id: 7aca9f40-98c8-47c2-ba88-4308fc2b1798
-source-git-commit: 94d46ceeef6eef507115c60aaa6820d4560e4d44
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '838'
+source-wordcount: '840'
 ht-degree: 2%
 
 ---
@@ -23,16 +23,16 @@ Adobe Experience Platform Destination SDK是一组配置API，允许您配置目
 
 >[!IMPORTANT]
 >
-> 用于创建专用自定义目标的功能仅适用于 [Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户。
+> 用于创建专用自定义目标的功能仅适用于 [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户。
 
 作为Destination SDK合作伙伴，您可以从将按产品分类的目标添加到 [Experience Platform目录](/help/destinations/catalog/overview.md):
 1. 通过预配置的参数跨客户标准化集成配置，并简化客户的设置体验。
 2. 在Experience Platform目标目录中引入品牌目标卡，以简化客户设置和意识。
-3. 作为与Adobe Experience Platform和Real-time Customer Data Platform的产品化目标集成。
+3. 作为与Adobe Experience Platform和Adobe Real-time Customer Data Platform的产品化目标集成。
 
 作为Experience Platform客户，您还可以创作自己的专用自定义目标，最适合您的激活需求。
 
-![一个概述图，其中显示了目标开发人员如何与Destination SDK交互，以及Real-time CDP客户如何从已产品化和私有目标中受益。](./assets/destination-sdk-visual.png)
+![一个概述图，其中显示了目标开发人员如何与Destination SDK交互，以及Real-Time CDP客户如何从产品化和专用目标中受益。](./assets/destination-sdk-visual.png)
 
 ## 支持的集成类型 {#supported-integration-types}
 

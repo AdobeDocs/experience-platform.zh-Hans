@@ -3,9 +3,9 @@ keywords: 目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中的不同目标类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '640'
+source-wordcount: '642'
 ht-degree: 0%
 
 ---
@@ -35,9 +35,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->企业目标或流配置文件导出目标可用于 [Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 仅限客户。
+>企业目标或流配置文件导出目标可用于 [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 仅限客户。
 
-使用企业目标Data Connectors将Real-time Customer Data Platform配置文件近乎实时地传送到内部系统或其他第三方系统，以便进行数据同步、分析和进一步扩充配置文件用例。
+使用企业目标Data Connectors将Adobe Real-time Customer Data Platform配置文件近乎实时地传送到内部系统或其他第三方系统，以便进行数据同步、分析和进一步扩充配置文件用例。
 
 这些目标将区段和配置文件数据作为Experience Platform数据流接收。
 

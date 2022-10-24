@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 数据流是一项计划任务，用于从源中检索数据并将其摄取到平台数据集。 本教程提供了有关如何使用Platform UI为CRM源创建数据流的步骤。
 exl-id: e14eafa7-6594-48e6-ab7a-f6c928d1e5fb
-source-git-commit: a9a443eda060606be4394dfc2e2707fe18618160
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1424'
+source-wordcount: '1425'
 ht-degree: 0%
 
 ---
@@ -89,7 +89,7 @@ Platform根据您选择的目标架构或数据集，为自动映射的字段提
 
 >[!NOTE]
 >
->如果您使用 [!DNL Salesforce] 作为Real-time Customer Data Platform B2B版的一部分，请参阅 [[!DNL Salesforce] 字段映射文档](../../../connectors/adobe-applications/mapping/salesforce.md) 为映射提供指导 [!DNL Salesforce] 源字段添加到其相应的XDM目标字段。
+>如果您使用 [!DNL Salesforce] 作为Adobe Real-time Customer Data Platform B2B版的一部分，请参阅 [[!DNL Salesforce] 字段映射文档](../../../connectors/adobe-applications/mapping/salesforce.md) 为映射提供指导 [!DNL Salesforce] 源字段添加到其相应的XDM目标字段。
 
 成功映射源数据后，选择 **[!UICONTROL 下一个]**.
 

@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: January 15, 2020
 author: crhoades, ens28527
 exl-id: e488a50c-2a87-4649-b3a4-f9d45cb12fcb
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '888'
 ht-degree: 9%
@@ -91,13 +91,13 @@ Adobe Experience Platform可以从外部源摄取数据，同时允许您使用 
 
 ## 目标 {#destinations}
 
-在 [Real-time CDP](../../rtcdp/overview.md)，目标是与目标平台的预建集成，可无缝地向这些合作伙伴激活数据。
+在 [Real-Time CDP](../../rtcdp/overview.md)，目标是与目标平台的预建集成，可无缝地向这些合作伙伴激活数据。
 
 **新增功能**
 
 | 功能 | 描述 |
 |--- | ---|
-| 支持访问控制权限 | Real-time CDP中的“目标”功能可与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以查看、管理和激活目标。 |
+| 支持访问控制权限 | Real-Time CDP中的“目标”功能可与Adobe Experience Platform访问控制权限配合使用。 根据用户的权限级别，您可以查看、管理和激活目标。 |
 
 **访问控制权限**
 

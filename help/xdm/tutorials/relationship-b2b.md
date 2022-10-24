@@ -1,10 +1,10 @@
 ---
 title: 在Real-time Customer Data Platform B2B版中定义两个模式之间的关系
-description: 了解如何在Real-time Customer Data Platform B2B Edition中定义两个架构之间的多对一关系。
+description: 了解如何在Adobe Real-time Customer Data Platform B2B Edition中定义两个架构之间的多对一关系。
 exl-id: 14032754-c7f5-46b6-90e6-c6e99af1efba
-source-git-commit: 86a230d746d6642437c4e37958c07a1186ebadc3
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1401'
+source-wordcount: '1403'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 >title="参考模式"
 >abstract="选择要与之建立关系的架构。 根据架构的类，它可能还与B2B上下文中的其他实体存在关系。 请参阅相关文档，了解B2B模式类如何彼此关联。"
 
-Real-time Customer Data Platform B2B Edition提供了多个Experience Data Model(XDM)类，用于捕获基本的B2B数据实体，包括 [帐户](../classes/b2b/business-account.md), [机会](../classes/b2b/business-opportunity.md), [营销活动](../classes/b2b/business-campaign.md)，等等。 通过基于这些类构建模式并使它们能够在 [实时客户资料](../../profile/home.md)，您可以将来自不同来源的数据合并到称为合并模式的统一表示形式中。
+Adobe Real-time Customer Data Platform B2B Edition提供了多个Experience Data Model(XDM)类，用于捕获基本的B2B数据实体，包括 [帐户](../classes/b2b/business-account.md), [机会](../classes/b2b/business-opportunity.md), [营销活动](../classes/b2b/business-campaign.md)，等等。 通过基于这些类构建模式并使它们能够在 [实时客户资料](../../profile/home.md)，您可以将来自不同来源的数据合并到称为合并模式的统一表示形式中。
 
 但是，合并架构只能包含由共享同一类的架构捕获的字段。 这是架构关系的来源。 通过在B2B模式中实施关系，您可以描述这些业务实体如何彼此关联，并可以在下游分段用例中包含来自多个类的属性。
 
@@ -24,7 +24,7 @@ Real-time Customer Data Platform B2B Edition提供了多个Experience Data Model
 
 ![B2B类关系](../images/tutorials/relationship-b2b/classes.png)
 
-本教程介绍了在实时CDP B2B Edition中定义两个架构之间多对一关系的步骤。
+本教程介绍了在Real-Time CDP B2B Edition中定义两个架构之间的多对一关系的步骤。
 
 >[!NOTE]
 >
@@ -123,4 +123,4 @@ Real-time Customer Data Platform B2B Edition提供了多个Experience Data Model
 
 ## 后续步骤
 
-通过阅读本教程，您已使用 [!DNL Schema Editor]. 使用基于这些架构的数据集摄取数据并在用户档案数据存储中激活数据后，您便可以将两个架构中的属性用于多类分段用例。 有关更多信息，请参阅Real-time CDP B2B Edition文档。
+通过阅读本教程，您已使用 [!DNL Schema Editor]. 使用基于这些架构的数据集摄取数据并在用户档案数据存储中激活数据后，您便可以将两个架构中的属性用于多类分段用例。 有关更多信息，请参阅Real-Time CDP B2B版文档。

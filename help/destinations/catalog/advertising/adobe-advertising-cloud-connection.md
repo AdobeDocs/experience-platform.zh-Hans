@@ -1,10 +1,10 @@
 ---
 title: Adobe Advertising Cloud DSP连接
-description: Adobe Advertising Cloud DSP是 [!DNL Adobe Real-time Customer Data Profile]，允许您与批准的广告商和用户共享经过身份验证的第一方区段，以激活促销活动。
+description: Adobe Advertising Cloud DSP是Adobe Real-time Customer Data Platform的一个集成目标，允许您与已批准的广告商和用户共享经过身份验证的第一方区段，以激活促销活动。
 exl-id: 11ff7797-a9c6-4334-b843-ae9df9a48e54
-source-git-commit: 27869b91deeb4a5cca580970507845d992d21aaf
+source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
 workflow-type: tm+mt
-source-wordcount: '1044'
+source-wordcount: '1055'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ Adobe Advertising Cloud [!DNL Demand-Side Platform] (DSP)目标允许您与已�
 
 ### 品牌广告用例
 
-一家在线零售商希望通过展示型营销活动重新定位其高价值客户，而无需使用Cookie进行定位。 该零售商共享一个区段，该区段包含来自其高价值客户的经过哈希处理的电子邮件ID [!DNL Real-Time CDP] 帐户到其DSP帐户。 然后，DSP将经过哈希处理的电子邮件ID转换为经过身份验证的ID [!DNL RampIDs] 通过DSP与LiveRamp的合作伙伴关系。 结果 [!DNL RampIDs] 可在展示型营销活动中使用以定位受众。
+一家在线零售商希望通过展示型营销活动重新定位其高价值客户，而无需使用Cookie进行定位。 该零售商将一个区段共享，该区段由其Adobe Real-time Customer Data Platform(Real-Time CDP)帐户中高价值客户经过哈希处理的电子邮件ID组成，并共享到其DSP帐户中。 然后，DSP将经过哈希处理的电子邮件ID转换为经过身份验证的ID [!DNL RampIDs] 通过DSP与LiveRamp的合作伙伴关系。 结果 [!DNL RampIDs] 可在展示型营销活动中使用以定位受众。
 
 ### 代理用例
 

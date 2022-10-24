@@ -5,7 +5,7 @@ title: Segmentation Service UI指南
 topic-legacy: ui guide
 description: Adobe Experience Platform Segmentation Service提供了用于创建和管理区段定义的用户界面。
 exl-id: 0a2e8d82-281a-4c67-b25b-08b7a1466300
-source-git-commit: f71d49b576059e687c337cbacd6dd3d525e97834
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '2375'
 ht-degree: 1%
@@ -136,7 +136,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
-> 目标是 [!DNL Real-time Customer Data Platform]，并允许您将数据导出到外部平台。 有关目标的更多信息，请阅读 [目标概述](../../destinations/home.md). 要了解如何将区段激活到目标，请参阅 [激活概述](../../destinations/ui/activation-overview.md).
+> 目标是 [!DNL Adobe Real-Time Customer Data Platform]，并允许您将数据导出到外部平台。 有关目标的更多信息，请阅读 [目标概述](../../destinations/home.md). 要了解如何将区段激活到目标，请参阅 [激活概述](../../destinations/ui/activation-overview.md).
 
 ### 配置文件示例
 

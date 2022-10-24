@@ -3,9 +3,9 @@ title: HTTP API连接
 keywords: 流；
 description: 使用Adobe Experience Platform中的HTTP API目标，将配置文件数据发送到第三方HTTP端点，以运行您自己的分析，或对导出为Experience Platform外的配置文件数据执行可能需要的任何其他操作。
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 75399d2fbe111a296479f8d3404d43c6ba0d50b5
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '2375'
+source-wordcount: '2376'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> 此目标仅对 [Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户。
+> 此目标仅对 [Adobe Real-time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html) 客户。
 
 HTTP API目标是 [!DNL Adobe Experience Platform] 流目标，帮助您将用户档案数据发送到第三方HTTP端点。
 

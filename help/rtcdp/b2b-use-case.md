@@ -1,18 +1,18 @@
 ---
 keywords: RTCDP;CDP;Real-time Customer Data Platform；实时客户数据平台；实时CDP;RTCDP
 title: Real-time Customer Data Platform B2B Edition的示例用例
-description: 此示例场景提供了一个用于 Real-time Customer Data Platform B2B 版本实施的配置示例。
+description: 此示例情景提供了配置Adobe Real-time Customer Data Platform B2B Edition实施的示例。
 exl-id: 15505980-ac33-44b2-8989-c08cbabd212b
-source-git-commit: e6f71954d52e0a998955c3420307417cc011c24d
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1134'
-ht-degree: 2%
+source-wordcount: '1135'
+ht-degree: 0%
 
 ---
 
 # Real-time Customer Data Platform B2B Edition的示例用例
 
-Real-time Customer Data Platform B2B Edition扩展了现有的实时CDP和Adobe Experience Platform产品，以支持B2B数据和工作流。 本文档提供了一个示例用例，用于演示B2B Edition提供的其他优势。 其中包括：
+Real-time Customer Data Platform B2B Edition扩展了现有的Real-Time CDP和Adobe Experience Platform产品，以支持B2B数据和工作流。 本文档提供了一个示例用例，用于演示B2B Edition提供的其他优势。 其中包括：
 
 - 将来自不同孤立数据源的人员和帐户数据组合在一起，以生成一个全面的视图，从而更好地了解客户并更准确地细分客户。 请参阅 [创建XDM模式关系](./schemas/b2b.md) 用于不同的B2B源，以获取更多信息。
 - 根据相关实体的属性对受众进行分段。 这包括“帐户”、“机会”、“营销活动”和“营销列表”。 区段不再仅限于人员属性和体验事件。 请参阅 [B2B分段文档](./segmentation/b2b.md) 有关创建特定于B2B的受众的更多示例。
@@ -52,11 +52,11 @@ Real-time Customer Data Platform B2B Edition扩展了现有的实时CDP和Adobe 
 
 由于汤森的支出分为不同的销售系统，且个人总数不超过100万，因此该部门找不到任何符合Marketo 1或Marketo 2的资格。
 
-### Real-time CDP B2B Edition如何解决该问题
+### Real-Time CDP B2B Edition如何解决此问题
 
-借助Real-time CDP B2B Edition，Bodea的营销团队可以：
+借助Real-Time CDP B2B Edition，Bodea的营销团队可以：
 
-- 将来自所有不同来源(多个Marketo和CRM实例，以及主控数据管理)的数据合并到Real-time CDP B2B Edition中。
+- 将来自所有不同来源(多个Marketo和CRM实例，以及主控数据管理)的数据合并到Real-Time CDP B2B Edition中。
 
 借助RT-CDP B2B Edition，Bodea可以使用Marketo Engage源连接器将Marketo 1和Marketo 2中的B2B数据引入Experience Platform，并使用与平台连接的应用程序保持此数据的最新状态。 请参阅 [Marketo源连接器](../sources/connectors/adobe-applications/marketo/marketo.md) 文档以了解更多信息。
 
@@ -87,7 +87,7 @@ CRM1中的B2B数据（人员、帐户、机会和活动）会同步到Marketo 1�
 
 ## 后续步骤
 
-通过阅读本文档，您现在已介绍了使用Real-time CDP B2B Edition可解决的目标和问题的类型。
+通过阅读本文档，您现在已介绍了使用Real-Time CDP B2B Edition可解决的目标和问题的类型。
 
 为了提高您对B2B特定功能的了解，建议使用以下文档：
 

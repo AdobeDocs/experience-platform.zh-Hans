@@ -6,7 +6,7 @@ last-update: March 10, 2020
 author: ens71067
 keywords: 发行说明;
 exl-id: 407c2bac-4c8a-4939-b3dd-788250f15650
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '855'
 ht-degree: 6%
@@ -39,8 +39,8 @@ Adobe Experience Platform数据管理是用于管理客户数据并确保符合�
 
 | 功能 | 描述 |
 | ------- | ----------- |
-| 自动执行 [!DNL Real-time Customer Data Platform] | 现在，在将数据激活到目标的工作流中强制实施数据使用策略。 在进行影响现有激活的更改（例如更改数据集标签、合并策略、区段定义等）时，也会嵌入并强制执行“数据管理”。 |
-| 用于执行的数据谱系 | 当Real-time CDP中违反了数据使用策略时，UI会显示一则通知，其中包含数据谱系信息，以帮助用户了解违反策略的原因以及他们可以执行哪些操作来解决违规。 |
+| 自动执行 [!DNL Real-Time Customer Data Platform] | 现在，在将数据激活到目标的工作流中强制实施数据使用策略。 在进行影响现有激活的更改（例如更改数据集标签、合并策略、区段定义等）时，也会嵌入并强制执行“数据管理”。 |
+| 用于执行的数据谱系 | 在Real-Time CDP中违反数据使用策略时，UI会显示一则通知，其中包含数据谱系信息，以帮助用户了解违反策略的原因以及他们可以执行哪些操作来解决违规。 |
 
 
 **已知问题**
@@ -76,8 +76,8 @@ Adobe Experience Platform提供丰富的功能集，用于摄取任何类型的�
 
 | 目标 | 描述 |
 |--- | ---|
-| 云存储目标 | Real-time CDP现在可以将您的区段作为数据文件提供给您的 [!DNL Amazon S3] 或SFTP云存储位置。 这允许您通过CSV或制表符分隔的文件，将受众及其配置文件属性发送到内部系统。 |
-| 广告目标 | 的 [!DNL Google] 目标卡现在分为三个目标卡，对于这三个不同的目标卡 [!DNL Google] 实时CDP中当前支持的平台： [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google] 显示和视频360。 |
+| 云存储目标 | Real-Time CDP现在可以将区段作为数据文件提交到 [!DNL Amazon S3] 或SFTP云存储位置。 这允许您通过CSV或制表符分隔的文件，将受众及其配置文件属性发送到内部系统。 |
+| 广告目标 | 的 [!DNL Google] 目标卡现在分为三个目标卡，对于这三个不同的目标卡 [!DNL Google] Real-Time CDP中当前支持的平台： [!DNL Google Ads], [!DNL Google Ad Manager], [!DNL Google] 显示和视频360。 |
 
 要了解更多信息，请访问 [目标概述](../../destinations/home.md)
 

@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 监视配置文件扩充作业
 type: Tutorial
 exl-id: 096a2212-ed7f-4419-8ead-fa1ca01c2804
-source-git-commit: 1fed0cf37e7297c21330ebf51ae15054aa21c781
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '768'
 ht-degree: 2%
@@ -93,7 +93,7 @@ ht-degree: 2%
 
 通过阅读本教程，您现在可以成功监视和了解用于配置文件扩充作业的量度。 有关更多详细信息，请参阅以下文档：
 
-* [Real-time CDP B2B中的相关帐户](/help/rtcdp/b2b-ai-ml-services/related-accounts.md)
+* [Real-Time CDP B2B的相关帐户](/help/rtcdp/b2b-ai-ml-services/related-accounts.md)
 * [帐户配置文件UI指南中的“相关帐户”选项卡](/help/rtcdp/accounts/account-profile-ui-guide.md)
-* [在实时CDP B2B中实现帐户匹配](/help/rtcdp/b2b-ai-ml-services/lead-to-account-matching.md)
-* [Real-time CDP B2B中的预测潜在客户和客户评分](/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md)
+* [在Real-Time CDP B2B中实现帐户匹配](/help/rtcdp/b2b-ai-ml-services/lead-to-account-matching.md)
+* [Real-Time CDP B2B中的预测潜在客户和帐户评分](/help/rtcdp/b2b-ai-ml-services/predictive-lead-and-account-scoring.md)

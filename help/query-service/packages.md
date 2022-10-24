@@ -1,9 +1,9 @@
 ---
 title: 查询服务包
 description: 以下文档概述了可用于查询服务的功能和产品包，并重点介绍了临时查询和批处理查询之间的差异。
-source-git-commit: 3d2802ff5cdb359b28da23a05d1d6831cc273a52
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '718'
+source-wordcount: '720'
 ht-degree: 3%
 
 ---
@@ -19,7 +19,7 @@ Adobe Experience Platform查询服务可以根据可执行的查询模式分为�
 
 查询服务功能与以下产品和加载项一起打包：
 
-- **基于平台的应用程序** (Real-time Customer Data Platform、Customer Journey Analytics和Adobe Journey Optimizer):从一开始就提供用于执行临时查询的查询服务访问权限，其中包含基于平台的应用程序的每个变体和层。
+- **基于平台的应用程序** (Adobe Real-time Customer Data Platform、Adobe Customer Journey Analytics和Adobe Journey Optimizer):从一开始就提供用于执行临时查询的查询服务访问权限，其中包含基于平台的应用程序的每个变体和层。
 - **[!DNL Data Distiller]** (可与Adobe Real-Time CDP、Customer Journey Analytics和Adobe Journey Optimizer一起购买的附加组件包):提供了用于执行批处理查询的查询服务访问权限 [!DNL Data Distiller].
 
 下表概述了基于查询服务打包方式的关键授权：
@@ -30,7 +30,7 @@ Adobe Experience Platform查询服务可以根据可执行的查询模式分为�
 | 支持的用例 | <ul><li>探&#x200B;索</li><li>数据发&#x200B;现</li><li>数据验证</li><li>实验</li></ul> | <ul><li>清洁</li><li>成形</li><li>操纵</li><li>丰富</li></ul> |
 | 支持的语义 | <ul><li>选择查询</li></ul> | <ul><li>CTAS和ITAS查询</li></ul> |
 | 最大执行时间 | 10 分钟 | 24 小时 |
-| 许可证量度 | **查询用户并发**: <ul><li>1个并发用户(Real-time CDP， Adobe Journey Optimizer)&#x200B;</li><li>5个并发用户(Customer Journey Analytics&#x200B;)</li></ul> **查询并发**: <ul><li>1个并发运行查询（所有应用程序）&#x200B;</li></ul> **其他临时查询用户包附加组件** 可购买以增加客户授权的临时查询授权。 <ul><li>每包额外+5个并行用户</li><li>每个包额外+1个并行运行查询</li></ul> | **计算小时数**: <ul><li>变量（范围基于客户的应用程序权限）</li></ul> **计算小时数** 是查询服务引擎在执行批处理查询时读取、处理数据并将数据写回数据湖所花费的时间。 |
+| 许可证量度 | **查询用户并发**: <ul><li>1个并发用户(Real-Time CDP、Adobe Journey Optimizer&#x200B;)</li><li>5个并发用户(Customer Journey Analytics&#x200B;)</li></ul> **查询并发**: <ul><li>1个并发运行查询（所有应用程序）&#x200B;</li></ul> **其他临时查询用户包附加组件** 可购买以增加客户授权的临时查询授权。 <ul><li>每包额外+5个并行用户</li><li>每个包额外+1个并行运行查询</li></ul> | **计算小时数**: <ul><li>变量（范围基于客户的应用程序权限）</li></ul> **计算小时数** 是查询服务引擎在执行批处理查询时读取、处理数据并将数据写回数据湖所花费的时间。 |
 | 查询执行界面 | <ul><li>查询服务UI</li><li>第三方客户端UI</li><li>[!DNL PostgresSQL] 客户端UI</li></ul> | <ul><li>查询UI </li><li>第三方客户端UI</li><li>[!DNL PostgresSQL] 客户端UI</li><li>REST API</li></ul> |
 | 通过返回的查询结果 | 客户端UI | 数据湖中存储的派生数据集 |
 | 结果限制 | <ul><li>查询UI - 100行</li><li>第三方客户 — 50,000</li><li>[!DNL PostgresSQL] 客户端 — 50,000</li></ul> | <ul><li>查询UI（行数没有上限）</li><li>第三方客户端（对行没有上限）</li><li>[!DNL PostgresSQL] 客户端（对行没有上限）</li><li>REST API（行数上限）</li></ul> |

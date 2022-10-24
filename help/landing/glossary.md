@@ -5,9 +5,9 @@ title: Adobe Experience Platform术语表
 topic-legacy: getting started
 description: Experience Platform 重要术语词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: c0f01efa224bffb5b435e2f247e793edfbc576b9
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '7428'
+source-wordcount: '7436'
 ht-degree: 0%
 
 ---
@@ -298,7 +298,7 @@ ht-degree: 0%
 
 **输入功能**:在特征映射中指定输入特征，并由机器学习模型用于进行预测。
 
-**[!DNL Intelligent Services]**: [!DNL Intelligent Services] 例如 [!DNL Attribution AI] 和 [!DNL Customer AI] 是机器学习、基于人工智能的模型，需要Experience Platform(或基于平台构建的应用程序，如Real-time Customer Data Platform)才能运行和运行。
+**[!DNL Intelligent Services]**: [!DNL Intelligent Services] 例如 [!DNL Attribution AI] 和 [!DNL Customer AI] 是机器学习、基于人工智能的模型，需要Experience Platform(或基于平台构建的应用程序，如Adobe Real-time Customer Data Platform)才能运行和运行。
 
 **基于兴趣的定位或个性化**:如果满足以下三个条件，则会进行基于兴趣的定位（也称为个性化）：
 
@@ -414,7 +414,7 @@ ht-degree: 0%
 
 ## R
 
-**Real-time Customer Data Platform**: [!DNL Real-time Customer Data Platform] 通过简化集成、智能细分和跨数字客户历程的实时激活，将已知和未知的客户数据整合在一起，创建可信的客户用户档案。
+**Real-time Customer Data Platform**:Adobe Real-time Customer Data Platform(Real-Time CDP)通过简化集成、智能细分和跨数字客户历程的实时激活，将已知和未知的客户数据汇总在一起，创建可信的客户用户档案。
 
 **实时客户资料**:实时客户资料（有时称为资料）通过合并来自多个渠道（包括在线、离线、CRM和第三方）的数据，提供每个客户的整体视图。 利用用户档案，可将客户数据整合到单个用户档案中，为每次客户互动提供可操作且加盖时间戳的帐户。
 

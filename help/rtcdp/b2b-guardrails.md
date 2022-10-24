@@ -2,11 +2,11 @@
 keywords: 配置文件；实时客户配置文件；故障诊断；护栏；准则；限制；实体；主实体；维度实体；RTCDP;CDP;B2B Edition;Real-time Customer Data Platform；实时客户数据平台；实时CDP;b2b;CDP;
 title: Real-time Customer Data Platform B2B版的默认护栏
 type: Documentation
-description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认使用和速率限制，以帮助您使用Real-time Customer Data Platform B2B Edition为数据建模以获得最佳系统性能。
+description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认使用和速率限制，以帮助您使用Adobe Real-time Customer Data Platform B2B Edition为数据建模以获得最佳系统性能。
 exl-id: 8eff8c3f-a250-4aec-92a1-719ce4281272
-source-git-commit: 9f00bff31f9e7d2da1294d3d1f24cba7870a4614
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1601'
+source-wordcount: '1602'
 ht-degree: 2%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->本文档中概述的限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
+>本文档中概述的限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-Time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
 
 Real-time Customer Data Platform B2B Edition使您能够以实时客户配置文件和帐户配置文件的形式，根据行为分析和客户属性提供个性化的跨渠道体验。 为了支持这种新的用户档案方法，Experience Platform使用了与传统关系数据模型不同的高度异常化混合数据模型。
 
@@ -45,11 +45,11 @@ Real-time Customer Data Platform B2B Edition使您能够以实时客户配置文
 
 >[!NOTE]
 >
->本节中概述的数据模型限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
+>本节中概述的数据模型限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-Time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
 
 | 瓜德拉伊 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
-| Real-time CDP B2B Edition标准XDM类数据集 | 60 | 柔和 | 建议最多60个数据集利用由Real-time CDP B2B Edition提供的标准Experience Data Model(XDM)类。 有关B2B用例的标准XDM类的完整列表，请参阅 [实时CDP B2B Edition文档中的模式](schemas/b2b.md). <br/><br/>*注意：由于Experience Platform异常混合数据模型的性质，大多数客户并未超过此限制。 如果您对如何建立数据模型存有疑问，或者希望了解有关自定义限制的更多信息，请联系您的客户关怀代表。* |
+| Real-Time CDP B2B Edition标准XDM类数据集 | 60 | 柔和 | 建议最多使用Real-Time CDP B2B Edition提供的标准体验数据模型(XDM)类的60个数据集。 有关B2B用例的标准XDM类的完整列表，请参阅 [Real-Time CDP B2B版文档中的模式](schemas/b2b.md). <br/><br/>*注意：由于Experience Platform异常混合数据模型的性质，大多数客户并未超过此限制。 如果您对如何建立数据模型存有疑问，或者希望了解有关自定义限制的更多信息，请联系您的客户关怀代表。* |
 | 旧版多实体关系 | 20 | 柔和 | 建议在主要实体和维度实体之间最多定义20个多实体关系。 在删除或禁用现有关系之前，不应进行其他关系映射。 |
 | 每个XDM类的多对一关系 | 2 | 柔和 | 建议每个XDM类最多定义2个多对一关系。 在删除或禁用现有关系之前，不应建立其他关系。 有关如何创建两个模式之间关系的步骤，请参阅 [定义B2B模式关系](../xdm/tutorials/relationship-b2b.md). |
 
@@ -57,7 +57,7 @@ Real-time Customer Data Platform B2B Edition使您能够以实时客户配置文
 
 >[!NOTE]
 >
->本节中概述的数据模型限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
+>本节中概述的数据模型限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-Time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
 
 | 瓜德拉伊 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
@@ -77,7 +77,7 @@ Real-time Customer Data Platform B2B Edition使您能够以实时客户配置文
 
 >[!NOTE]
 >
->本节中概述的数据大小限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
+>本节中概述的数据大小限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-Time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
 
 | 瓜德拉伊 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
@@ -87,7 +87,7 @@ Real-time Customer Data Platform B2B Edition使您能够以实时客户配置文
 
 >[!NOTE]
 >
->本节中概述的数据大小限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
+>本节中概述的数据大小限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-Time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
 
 | 瓜德拉伊 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
@@ -101,7 +101,7 @@ Real-time Customer Data Platform B2B Edition使您能够以实时客户配置文
 
 >[!NOTE]
 >
->本节中概述的分段限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
+>本节中概述的分段限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-Time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
 
 | 瓜德拉伊 | 限制 | 限制类型 | 描述 |
 | --- | --- | --- | --- |
@@ -109,7 +109,7 @@ Real-time Customer Data Platform B2B Edition使您能够以实时客户配置文
 
 ## 后续步骤
 
-本文档中概述的限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
+本文档中概述的限制表示Real-time Customer Data Platform B2B Edition启用的更改。 有关Real-Time CDP B2B Edition默认限制的完整列表，请将这些限制与 [实时客户资料数据文档的防护](../profile/guardrails.md).
 
 ## 附录
 

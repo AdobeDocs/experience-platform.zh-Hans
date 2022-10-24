@@ -6,7 +6,7 @@ last-update: April 13, 2020
 author: ens71067
 keywords: 发行说明;
 exl-id: 0f68c71e-3c9d-453b-a953-1cd1b6ca2e35
-source-git-commit: e08deb8bea7f02639b680c4988522627de82bdee
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '983'
 ht-degree: 10%
@@ -93,12 +93,12 @@ Adobe Experience Platform数据管理是用于管理客户数据并确保符合�
 
 **新目标**
 
-Real-time CDP现在支持数据激活，可激活到50多个 [!DNL Experience Cloud Launch] 扩展，启用analytics、个性化和其他用例。 有关详细信息，请参阅下文：
+Real-Time CDP现在支持将数据激活到超过五十个 [!DNL Experience Cloud Launch] 扩展，启用analytics、个性化和其他用例。 有关详细信息，请参阅下文：
 
 | 文档 | 描述 |
 |--- | ---|
-| [目标类型和类别](../../destinations/destination-types.md) | 本文介绍了实时CDP界面中连接和扩展之间的区别，并建议何时使用这些目标。 |
-| [Experience Platform Launch扩展](../../destinations/catalog/launch-extensions/overview.md) | 本页介绍 [!DNL Launch] 扩展包括，列出了使用这些扩展的用例，以及每个扩展的文档链接 [!DNL Launch] 扩展。 |
+| [目标类型和类别](../../destinations/destination-types.md) | 本文介绍了Real-Time CDP界面中连接和扩展之间的区别，并建议何时使用这些目标。 |
+| [Experience Platform Launch扩展](../../destinations/catalog/launch-extensions/overview.md) | 本页介绍 [!DNL Launch] 扩展包括，列出了使用这些扩展的用例，以及每个扩展的文档链接 [!DNL Launch] 扩展。Real-Time CDP |
 
 有关详细信息，请参阅 [目标概述](../../destinations/home.md).
 

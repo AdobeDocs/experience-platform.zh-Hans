@@ -5,10 +5,10 @@ doc-type: release notes
 last-update: April 21, 2021
 author: ens72741
 exl-id: cc78e48a-3578-4c55-ae86-1946d62bddb9
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '888'
-ht-degree: 9%
+ht-degree: 10%
 
 ---
 
@@ -61,7 +61,7 @@ Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾�
 
 有关受支持数据集的更多信息，请参阅 [[!DNL Intelligent Services] 数据准备文档](../../intelligent-services/data-preparation.md).
 
-### Attribution AI
+### 归因人工智能
 
 Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
 

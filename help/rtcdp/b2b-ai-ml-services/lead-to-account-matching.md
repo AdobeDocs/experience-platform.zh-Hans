@@ -1,16 +1,16 @@
 ---
-title: 在实时CDP B2B中实现帐户匹配
+title: 在Real-Time CDP B2B中实现帐户匹配
 type: Documentation
 description: Experience PlatformCDP B2B中有关导致帐户匹配功能的潜在客户的概述和更多信息。
-source-git-commit: 827bd1b930478c3c0b553a9485f98545771a9062
+exl-id: 2f853599-6bca-4ba6-bbba-131a49d8854e
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '616'
+ht-degree: 2%
 
 ---
 
-
-# 在实时CDP B2B中实现帐户匹配
+# 在Real-Time CDP B2B中实现帐户匹配
 
 ## 概述 {#overview}
 

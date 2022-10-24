@@ -3,22 +3,22 @@ keywords: 量度概述；rtcdp量度概述
 title: Real-time Customer Data Platform主页和功能板
 description: 仪表板、主页和 Adobe Experience Platform 的首次用户体验
 exl-id: ced5b69c-5bb5-4e06-9cb4-938e36e6e5cc
-source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '619'
+source-wordcount: '620'
 ht-degree: 2%
 
 ---
 
-# [!DNL Real-time Customer Data Platform] 主页和功能板
+# [!DNL Real-Time Customer Data Platform] 主页和功能板
 
-当您登录到Real-time CDP时，将显示Real-time Customer Data Platform(Real-time CDP)主页，其中包含一个量度仪表板。
+登录Adobe Real-time Customer Data Platform(Real-Time CDP)时，会显示该主页（其中包含量度功能板）。
 
-主页只是显示量度卡的位置之一。 Real-time CDP在您的整个体验中都提供量度卡。 这些量度可告知您系统中的数据、用户档案和区段受众。
+主页只是显示量度卡的位置之一。 Real-Time CDP会在您的整个体验中提供量度卡。 这些量度可告知您系统中的数据、用户档案和区段受众。
 
 ![image](assets/home.png)
 
-如果您登录到实时CDP时系统中没有数据，则主页上的功能板不会显示。 在这种情况下，主页会首次提供用户体验的学习材料。 在收集数据时 — 换言之， <!--sources-->数据集、用户档案、区段和目标被创建并流入系统 — 功能板会自动更新以显示有关该数据的信息<!-- in metric cards-->.
+如果您登录Real-Time CDP时系统中没有数据，则主页上的功能板不会显示。 在这种情况下，主页会首次提供用户体验的学习材料。 在收集数据时 — 换言之， <!--sources-->数据集、用户档案、区段和目标被创建并流入系统 — 功能板会自动更新以显示有关该数据的信息<!-- in metric cards-->.
 
 ## 主页功能板视图
 
@@ -53,7 +53,7 @@ Some information is shown in different ways on both the leaderboard and metric c
 
 每24小时更新一次用户档案数。
 
-有关用户档案的更多信息，请参阅 [实时CDP中客户的统一视图](profile/profile-overview.md).
+有关用户档案的更多信息，请参阅 [在Real-Time CDP中统一了解客户](profile/profile-overview.md).
 
 ### 区段
 
@@ -77,7 +77,7 @@ There is also a metric card that shows the percentage of successful records. Sel
 
 The number of successful profile records is updated hourly. 
 
-For more information about profiles, see [A unified view of your customer in Real-time CDP](profile/profile-overview.md).
+For more information about profiles, see [A unified view of your customer in Real-Time CDP](profile/profile-overview.md).
 
 ### Total profile records
 
@@ -89,7 +89,7 @@ The **[!UICONTROL Total profile records]** metric card shows the total number of
 
 Select **[!UICONTROL View profiles]** to see more details about the profile records.
 
-For more information about profiles, see [A unified view of your customer in Real-time CDP](profile/profile-overview.md).
+For more information about profiles, see [A unified view of your customer in Real-Time CDP](profile/profile-overview.md).
 
 For more information about viewing a specific profile, see [Profile viewer](profile/profile-viewer.md).
 

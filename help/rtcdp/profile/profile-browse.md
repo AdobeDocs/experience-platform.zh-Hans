@@ -1,11 +1,11 @@
 ---
 keywords: 查看配置文件rtcdp;rtcdp配置文件视图；rtcdp配置文件
 title: 浏览Real-time Customer Data Platform中的用户档案
-description: Real-time Customer Data Platform允许您使用Adobe Experience Platform用户界面浏览实时客户资料数据。
+description: Adobe Real-time Customer Data Platform允许您使用Adobe Experience Platform用户界面浏览实时客户资料数据。
 exl-id: 8481e286-2ff0-484f-85d2-a8db9b08d8d3
-source-git-commit: f4ca1efe9c728f50008d7fbaa17aa009dfc18393
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '535'
 ht-degree: 0%
 
 ---
@@ -17,13 +17,13 @@ ht-degree: 0%
 
 在Adobe Experience Platform用户界面中，您可以查看这些只读配置文件，并查看有关每个客户的重要信息，包括其偏好、过去事件、交互以及个人所属的区段。
 
-Real-time Customer Data Platform构建于Adobe Experience Platform之上，因此能够利用Experience PlatformUI中的用户档案查看功能。 有关在Platform用户界面中查看客户配置文件的详细指南，请参阅 [Real-time Customer Profile用户指南](../../profile/ui/user-guide.md).
+Adobe Real-time Customer Data Platform构建于Adobe Experience Platform之上，因此能够利用Experience PlatformUI中的用户档案查看功能。 有关在Platform用户界面中查看客户配置文件的详细指南，请参阅 [Real-time Customer Profile用户指南](../../profile/ui/user-guide.md).
 
-## Real-time CDP B2B Edition的配置文件增强功能
+## Real-Time CDP B2B Edition的配置文件增强功能
 
-除了Adobe Experience Platform支持的配置文件浏览功能外，Real-time CDP B2B Edition用户还可以在 [!UICONTROL 属性] 和 [!UICONTROL 事件] 选项卡。 B2B数据还可用于执行分段，这些区段显示在客户的 [!UICONTROL 区段成员资格] 选项卡上的任意位置。
+除了Adobe Experience Platform、Real-Time CDP、B2B Edition支持的配置文件浏览功能外，用户还可以在 [!UICONTROL 属性] 和 [!UICONTROL 事件] 选项卡。 B2B数据还可用于执行分段，这些区段显示在客户的 [!UICONTROL 区段成员资格] 选项卡上的任意位置。
 
-Real-time CDP 、 B2B Edition还使您能够浏览 [!UICONTROL 帐户], [!UICONTROL 机会]和 [!UICONTROL 源记录] 来自与单个客户关联的企业来源。
+Real-Time CDP, B2B Edition还允许您浏览 [!UICONTROL 帐户], [!UICONTROL 机会]和 [!UICONTROL 源记录] 来自与单个客户关联的企业来源。
 
 要探索这些增强功能，请首先执行 [Real-time Customer Profile用户指南](../../profile/ui/user-guide.md) 按合并策略或身份命名空间浏览配置文件。
 
@@ -43,7 +43,7 @@ Real-time CDP 、 B2B Edition还使您能够浏览 [!UICONTROL 帐户], [!UICONT
 
 ### “机会”选项卡
 
-的 **[!UICONTROL 机会]** 选项卡提供与帐户相关的未结和已结业务机会的详细信息。 这些机会可能会从多个来源摄取到Experience Platform中，但实时CDP B2B Edition使营销人员能够轻松地在一个位置看到所有这些机会。
+的 **[!UICONTROL 机会]** 选项卡提供与帐户相关的未结和已结业务机会的详细信息。 这些机会可能会从多个来源摄取到Experience Platform中，但Real-Time CDP B2B Edition使营销人员能够轻松地在一个位置一起查看所有这些机会。
 
 每个机会都包括诸如机会名称、其数量、阶段，以及该机会是否是打开、关闭、赢得还是丢失的信息。
 

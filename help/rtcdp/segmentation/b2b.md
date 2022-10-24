@@ -1,17 +1,17 @@
 ---
-title: 实时CDP B2B版的分段用例
-description: 概述各种可用的实时CDP B2B Edition用例。
+title: Real-time Customer Data Platform B2B版本的分段用例
+description: 概述各种可用的Adobe Real-time Customer Data Platform B2B Edition用例。
 exl-id: 2a99b85e-71b3-4781-baf7-a4d5436339d3
-source-git-commit: 1fed0cf37e7297c21330ebf51ae15054aa21c781
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1275'
+source-wordcount: '1283'
 ht-degree: 0%
 
 ---
 
 # Real-time Customer Data Platform B2B版的分段用例
 
-本文档提供了Real-time CDP B2B Edition中的区段定义示例，以及如何针对常见的B2B用例组合不同类型的属性。 要了解目标如何融入您的B2B工作流，请参阅 [端到端教程](../b2b-tutorial.md#create-a-segment-to-evaluate-your-data).
+本文档提供了Adobe Real-time Customer Data Platform B2B Edition中的区段定义示例，以及如何为常见的B2B用例组合不同类型的属性。 要了解目标如何融入您的B2B工作流，请参阅 [端到端教程](../b2b-tutorial.md#create-a-segment-to-evaluate-your-data).
 
 >[!NOTE]
 >
@@ -36,7 +36,7 @@ B2B类及其属性会附加一个 `B2B` 标签，以区分区段工作区中的�
 
 为了有效地为B2B用例创建区段，必须深入了解模式并了解数据模型的外观。 此外，了解数据从一个数据对象获取到另一个数据对象的路径也非常有用。
 
-下图说明了Real-time CDP B2B Edition中可用的B2B类之间的关系。
+下图说明了Real-Time CDP B2B Edition中可用的B2B类之间的关系。
 
 ![B2B类ERD](../assets/segmentation/b2b-classes.png)
 
@@ -114,4 +114,4 @@ B2B类及其属性会附加一个 `B2B` 标签，以区分区段工作区中的�
 
 ## 后续步骤 {#next-steps}
 
-在阅读此概述后，您现在可以了解使用Real-time CDP B2B Edition提供的分段可能性。 有关Segmentation Service的更多信息，请阅读 [分段文档](../../segmentation/home.md).
+阅读此概述后，您现在可以了解使用Real-Time CDP B2B Edition提供的分段可能性。 有关Segmentation Service的更多信息，请阅读 [分段文档](../../segmentation/home.md).

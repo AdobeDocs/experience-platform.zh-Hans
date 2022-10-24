@@ -1,20 +1,20 @@
 ---
 keywords: 分段；分段rtcdp；实时客户数据平台分段
 title: Real-time Customer Data Platform中的Segmentation Service
-description: Real-time CDP是基于Adobe Experience Platform构建的，它利用了许多Experience Platform服务和功能。 使用分段服务，您可以将客户划分为具有相似特征的较小组，从而提供量身定制的营销。
+description: Adobe实时客户数据平台是以Adobe Experience Platform为基础构建的，它利用了许多Experience Platform服务和功能。 使用分段服务，您可以将客户划分为具有相似特征的较小组，从而提供量身定制的营销。
 exl-id: 140667c0-e288-40c4-8c45-c275e348b84a
-source-git-commit: ad0d38cbd249642d582a807c5679065827f57717
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '540'
 ht-degree: 4%
 
 ---
 
-# [!DNL Segmentation Service] in [!DNL Real-time Customer Data Platform]
+# [!DNL Segmentation Service] in [!DNL Real-Time Customer Data Platform]
 
-[!DNL Real-time Customer Data Platform] （实时CDP）允许您从多个源中引入数据，从而为客户提供协调一致的体验。 使用 [!DNL Segmentation Service]是Adobe Experience Platform的一部分。
+[!DNL Adobe Real-Time Customer Data Platform] (Real-Time CDP)允许您从多个来源提取数据，从而为客户提供协调一致的体验。 使用 [!DNL Segmentation Service]是Adobe Experience Platform的一部分。
 
-Real-time CDP是以Adobe Experience Platform为基础构建的，它利用了 [!DNL Experience Platform] 服务和功能。 使用 [!DNL Segmentation Service]，您可以通过将客户划分为具有相似特征的较小群组，从而提供量身定制的营销。
+Real-Time CDP基于Adobe Experience Platform构建，利用了 [!DNL Experience Platform] 服务和功能。 使用 [!DNL Segmentation Service]，您可以通过将客户划分为具有相似特征的较小群组，从而提供量身定制的营销。
 
 ## 区段
 
@@ -52,4 +52,4 @@ Customer AI随Real-time Customer Data Platform一起提供，让您能够在个�
 
 ## 后续步骤
 
-阅读此概述后，您现在应该了解Real-time CDP是如何利用的 [!DNL Segmentation Service] 以增强营销活动的自定义和个性化。 有关 [!DNL Segmentation Service]，请阅读 [分段文档](../../segmentation/home.md).
+阅读此概述后，您现在应该了解Real-Time CDP如何利用 [!DNL Segmentation Service] 以增强营销活动的自定义和个性化。 有关 [!DNL Segmentation Service]，请阅读 [分段文档](../../segmentation/home.md).

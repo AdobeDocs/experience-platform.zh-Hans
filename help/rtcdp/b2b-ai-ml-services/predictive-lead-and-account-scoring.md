@@ -1,15 +1,16 @@
 ---
-title: Real-time CDP B2B中的预测潜在客户和客户评分
+title: Real-Time CDP B2B中的预测潜在客户和帐户评分
 type: Documentation
 description: 有关Experience PlatformCDP B2B中的预测潜在客户和帐户评分功能的概述和更多信息。
-source-git-commit: 5ac8e099a6de563371f9a53a8b4816e6cf4d1953
+exl-id: d3afbabb-005d-4537-831a-857c88043759
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '858'
 ht-degree: 2%
 
 ---
 
-# Real-time CDP B2B中的预测潜在客户和客户评分
+# Real-Time CDP B2B中的预测潜在客户和帐户评分
 
 B2B营销人员在营销漏斗的顶部面临多项挑战。 为了提高效率，B2B营销人员需要一种自动的方式来鉴定大量人员的资格，以便他们能够专注于高价值目标。 资格鉴定应与最终销售结果保持一致，而不仅仅是营销转化。
 

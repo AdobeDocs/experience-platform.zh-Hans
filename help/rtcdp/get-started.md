@@ -1,18 +1,18 @@
 ---
 keywords: RTCDP;CDP;Real-time Customer Data Platform；实时客户数据平台；实时CDP;RTCDP
 title: 开始使用Real-time Customer Data Platform
-description: 使用此情景作为示例，来设置您的 Real-time Customer Data Platform 实施。
+description: 使用此方案示例来设置Adobe Real-time Customer Data Platform的实施。
 exl-id: 9f775d33-27a1-4a49-a4c5-6300726a531b
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '2332'
-ht-degree: 2%
+source-wordcount: '2333'
+ht-degree: 1%
 
 ---
 
 # 开始使用Real-time Customer Data Platform
 
-本快速入门指南将引导您完成Real-time Customer Data Platform(Real-time CDP)的示例实施。 您可以在设置自己的实施时，以此作为示例。 尽管本指南显示了特定示例，但它链接到在创建设置时可使用的其他信息。
+本快速入门指南将指导您完成Real-time Customer Data Platform(Real-Time CDP)的示例实施。 您可以在设置自己的实施时，以此作为示例。 尽管本指南显示了特定示例，但它链接到在创建设置时可使用的其他信息。
 
 此示例展示了由Adobe Experience Platform提供支持的Real-time Customer Data Platform的强大功能：
 
@@ -39,7 +39,7 @@ ht-degree: 2%
 
 要实现这些目标，营销团队需要能够大规模管理客户数据。
 
-借助由Adobe Experience Platform提供支持的Real-time CDP，Luma的营销组织可以：
+借助由Adobe Experience Platform提供支持的Real-Time CDP,Luma的营销组织可以：
 
 1. 从不同的平台收集数据，并确保数据在下游可用于其他营销活动。
 1. 创建客户的单个实时视图，与数据的来源无关。
@@ -141,7 +141,7 @@ Luma团队在一个位置提供了所有的行为数据和客户数据。
 
 ## 配置数据源
 
-使用 [!DNL Real-time Customer Data Platform] 将新数据源引入平台。 Real-time CDP包含一系列数据源，这些数据源可以快速、轻松地添加到用户档案中。
+使用 [!DNL Real-Time Customer Data Platform] 将新数据源引入平台。 Real-Time CDP包含可快速轻松地添加到用户档案的数据源目录。
 
 ![图像](assets/luma-source-cat.png)
 
@@ -178,7 +178,7 @@ Luma有许多内部策略来限制某些类型收集信息的使用，并且还�
 
 ![](assets/governance-labels.png)
 
-应用数据使用标签后，Luma可以使用“数据管理”创建数据使用策略。 数据使用策略是描述允许对包含特定标签的数据执行的操作类型的规则。 当尝试在实时CDP中执行构成策略违规的操作时，将阻止该操作，并发出警报以显示违反了哪项策略以及原因。
+应用数据使用标签后，Luma可以使用“数据管理”创建数据使用策略。 数据使用策略是描述允许对包含特定标签的数据执行的操作类型的规则。 尝试在Real-Time CDP中执行构成策略违规的操作时，会阻止该操作，并发出警报以显示违反了哪项策略及原因。
 
 ## 为特定客户整合数据
 
@@ -193,7 +193,7 @@ Luma拥有的关于Sarah的所有用户档案信息都会显示出来。 这包�
 | 标识 | 显示中已链接在一起的身份 [!DNL Platform] 通过渠道和设备与Luma的互动。 将显示网站中的ECID。 她的身份还包括其移动设备应用程序中的ECID、电子邮件ID、最近添加的 [!DNL Microsoft Dynamics] 数据集，以及从Luma忠诚度系统传递到Adobe Experience Platform的忠诚度ID。 |
 | 活动 | 显示Sarah与Luma品牌的所有交互数据。 这包括她刚刚查看的项目、她过去查看过的任何内容、她收到的电子邮件、她与呼叫中心的交互，以及这些交互发生的渠道和设备。 |
 
-Real-time CDP配置文件将Luma营销团队的工作流从数周减少到数分钟，并根据这一360度客户视图解锁了进行个性化的可能性。 用户档案可将她登录前浏览网站时的行为数据与现有客户档案合并，从而创建Sarah的全面视图。
+Real-Time CDP配置文件可将Luma营销团队的工作流程从数周减少到数分钟，并根据这一360度客户视图解锁进行个性化的可能性。 用户档案可将她登录前浏览网站时的行为数据与现有客户档案合并，从而创建Sarah的全面视图。
 
 营销团队可以使用此增强功能， [!DNL Real-time Customer Profile] 以更好地个性化莎拉的体验，并提高她对Luma的品牌忠诚度。
 
@@ -234,7 +234,7 @@ Loyalty member
 
 选择 **[!UICONTROL 发送到目标]**.
 
-在实时CDP中，Luma可以根据其受众区段无缝地执行个性化操作。\
+在Real-Time CDP中，Luma可以根据其受众区段无缝地执行个性化操作。\
 在这里，我们看到所有可供Luma将此目标发送到的目标，包括Adobe和非Adobe解决方案：
 
 ![图像](assets/luma-dest.png)
@@ -297,7 +297,7 @@ Sarah在她的移动设备上浏览了一个社交媒体网站，她看到了一
 
 ## 分析用户档案
 
-Luma营销人员使用Adobe Experience Platform在Real-time CDP Dashboard上查看送礼者区段。 他们看到了这项计划的成果，并看到它正在增长。 客户正在响应优惠，并投入更多资金。
+Luma营销人员使用Adobe Experience Platform查看Real-Time CDP功能板上的礼品赠送区段。 他们看到了这项计划的成果，并看到它正在增长。 客户正在响应优惠，并投入更多资金。
 
 这些洞察使营销人员能够对此信号采取行动，该信号的推动因素包括：将此数据提供到CDP中，并将Sarah等客户附加到该区段。
 

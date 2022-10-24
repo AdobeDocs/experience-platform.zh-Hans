@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年3月
 description: 2022年3月版Adobe Experience Platform发行说明。
 exl-id: 0d499aa6-e25d-4d34-ad32-5e4ab361cba1
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '1194'
 ht-degree: 5%
@@ -47,7 +47,7 @@ Experience Platform允许您审核用户活动以获取各种服务和功能。 
 >
 >“相关帐户”功能仅适用于Real-Time CDP B2B Edition的客户。
 
-B2B企业通常将其客户信息存储在多个系统中，每个系统仅包含相同实际业务实体的部分甚至冲突数据。 这给准确了解客户带来了巨大挑战，从而降低其B2B营销和销售工作的效率和有效性。 随着相关帐户的发布， [!DNL Real-time CDP B2B] 现在，会显示与您正在浏览的帐户类似的帐户列表。 您可以在区段定义中包含相关帐户，以扩大您的范围或在区段中应用更广泛的标准。
+B2B企业通常将其客户信息存储在多个系统中，每个系统仅包含相同实际业务实体的部分甚至冲突数据。 这给准确了解客户带来了巨大挑战，从而降低其B2B营销和销售工作的效率和有效性。 随着相关帐户的发布， [!DNL Real-Time CDP B2B] 现在，会显示与您正在浏览的帐户类似的帐户列表。 您可以在区段定义中包含相关帐户，以扩大您的范围或在区段中应用更广泛的标准。
 
 请在以下文档页面中阅读有关该功能的更多信息：
 
@@ -55,7 +55,7 @@ B2B企业通常将其客户信息存储在多个系统中，每个系统仅包�
 - [帐户配置文件UI指南中的“相关帐户”选项卡](../../rtcdp/accounts/account-profile-ui-guide.md#related-accounts-tab)
 - [如何在区段定义中使用相关帐户](../../rtcdp/segmentation/b2b.md#related-accounts)
 
-要进一步了解Real-time CDP B2B Edition，请参阅 [概述](../../rtcdp/overview.md).
+要了解有关Real-Time CDP B2B Edition的更多信息，请参阅 [概述](../../rtcdp/overview.md).
 
 ## 警报 {#alerts}
 

@@ -2,9 +2,9 @@
 title: 使用标记和平台Web SDK扩展集成IAB TCF 2.0支持
 description: 了解如何使用标记和Adobe Experience Platform Web SDK扩展设置IAB TCF 2.0同意。
 exl-id: dc0e6b68-8257-4862-9fc4-50b370ef204f
-source-git-commit: f5270d1d1b9697173bc60d16c94c54d001ae175a
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '838'
+source-wordcount: '839'
 ht-degree: 0%
 
 ---
@@ -123,4 +123,4 @@ addEventListener();
 
 ## 后续步骤
 
-现在，您已经学会如何将IAB TCF 2.0与Platform Web SDK扩展一起使用，接下来您还可以选择与其他Adobe解决方案(如Adobe Analytics或实时客户数据平台)集成。 请参阅 [IAB透明度与同意框架2.0概述](./overview.md) 以了解更多信息。
+现在，您已经学会如何将IAB TCF 2.0与Platform Web SDK扩展一起使用，接下来您还可以选择与其他Adobe解决方案(如Adobe Analytics或Adobe Real-time Customer Data Platform)集成。 请参阅 [IAB透明度与同意框架2.0概述](./overview.md) 以了解更多信息。

@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2022年4月
 description: 2022年4月的Adobe Experience Platform发行说明。
 exl-id: 39233787-3089-4469-8363-b006ae41ae21
-source-git-commit: 6798c15b1cee781c41b9faf5cc6dcfa73090a60a
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '2916'
 ht-degree: 6%
@@ -21,7 +21,7 @@ Adobe Experience Platform 现有功能的更新包括：
 - [[!DNL Data Prep]](#data-prep)
 - [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
-- [Real-time Customer Data Platform B2B 版本](#B2B)
+- [Real-Time Customer Data Platform B2B 版](#B2B)
 - [源](#sources)
 
 ## [!DNL Dashboards] {#dashboards}
@@ -200,9 +200,9 @@ Real-time Customer Data Platform中提供的Customer AI用于生成自定义倾�
 
 有关 [!DNL Intelligent Services]，请参阅 [[!DNL Intelligent Services] 概述](../../intelligent-services/home.md).
 
-## Real-time Customer Data Platform B2B 版本 {#B2B}
+## Real-Time Customer Data Platform B2B 版 {#B2B}
 
-Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP)之上，专为在业务到业务服务模型中运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
+Real-Time CDP B2B Edition基于Real-time Customer Data Platform(Real-Time CDP)而构建，专为以企业对企业服务模式运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
 
 **更新功能**
 

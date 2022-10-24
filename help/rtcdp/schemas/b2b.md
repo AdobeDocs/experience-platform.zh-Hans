@@ -1,23 +1,23 @@
 ---
 title: Real-time Customer Data Platform B2B版中的模式
-description: 概述Real-time Customer Data Platform B2B Edition中体验数据模型(XDM)模式的角色。
+description: 概述Adobe Real-time Customer Data Platform B2B Edition中体验数据模型(XDM)模式的角色。
 exl-id: 3b18d377-108f-443f-86ae-dc7537cf9013
-source-git-commit: 1a104d26b920082ee73178dd0ad7234ad43dec1a
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '237'
 ht-degree: 0%
 
 ---
 
 # Real-time Customer Data Platform B2B版中的模式
 
-Real-time Customer Data Platform B2B Edition提供多个标准 [体验数据模型(XDM)类](../../xdm/schema/composition.md#class) 可捕获关于基本B2B数据实体（如帐户、机会、营销活动等）的详细信息。 此外，实时CDP B2B Edition还允许您定义这些模式之间的多对一关系，以便它们能够参与高级分段用例。
+Adobe Real-time Customer Data Platform B2B Edition提供多个标准 [体验数据模型(XDM)类](../../xdm/schema/composition.md#class) 可捕获关于基本B2B数据实体（如帐户、机会、营销活动等）的详细信息。 此外，Real-Time CDP B2B Edition还允许您定义这些架构之间的多对一关系，以便它们能够参与高级分段用例。
 
 >[!IMPORTANT]
 >
->您必须拥有Real-time CDP B2B Edition的访问权限，才能使B2B模式参与 [实时客户资料](../../profile/home.md).
+>您必须拥有Real-Time CDP B2B Edition的访问权限，才能使B2B模式参与 [实时客户资料](../../profile/home.md).
 
-Real-time CDP B2B Edition中提供了以下标准类：
+Real-Time CDP B2B Edition提供了以下标准类：
 
 * [XDM业务帐户](../../xdm/classes/b2b/business-account.md)
 * [XDM业务帐户人员关系](../../xdm/classes/b2b/business-account-person-relation.md)

@@ -2,7 +2,7 @@
 title: Adobe Experience Platform发行说明2021年11月
 description: 2021年11月版Adobe Experience Platform发行说明。
 exl-id: 8f2c9bf8-1487-46e4-993b-bd9b63774cab
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '799'
 ht-degree: 12%
@@ -17,23 +17,23 @@ ht-degree: 12%
 
 Adobe Experience Platform的新增功能：
 
-- [Real-time Customer Data Platform B2B 版本](#B2B)
+- [Real-Time Customer Data Platform B2B 版](#B2B)
 - [（测试版）通过临时激活API将受众区段激活到批量目标](#ad-hoc-activation)
 
 ## 现有功能的更新
 
 Adobe Experience Platform 现有功能的更新包括：
 
-- [Attribution AI](#attribution-ai)
+- [归因人工智能](#attribution-ai)
 - [客户人工智能](#customer-ai)
 
-### Real-time Customer Data Platform B2B 版本 {#B2B}
+### Real-Time Customer Data Platform B2B 版 {#B2B}
 
 **发行日期：2021 年 11 月 12 日**
 
-Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP)之上，专为在业务到业务服务模型中运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
+Real-Time CDP B2B Edition基于Real-time Customer Data Platform(Real-Time CDP)而构建，专为以企业对企业服务模式运营的营销人员而构建。 它将来自多个来源的数据整合在一起，并将其整合为人员和帐户配置文件的单一视图。 通过这种统一的数据，营销人员可以准确定位特定受众并在所有可用渠道中吸引这些受众。
 
-对各种Adobe Experience Platform功能进行了改进，这些功能区分了Real-time CDP B2B Edition与B2C Edition。 这些功能包括对B2B用例的体验数据模型(XDM)进行了改进、对身份分辨率和配置文件分段进行了升级，以及自定义的连接器和Marketo Engage目标。 Marketo连接器允许B2B品牌将其行业领先的B2B参与数据与行为信息连接起来，以培养潜在客户并增强基于帐户的营销操作。
+Real-Time CDP B2B Edition与其B2C版本相比，Adobe Experience Platform的各种功能都有所改进。 这些功能包括对B2B用例的体验数据模型(XDM)进行了改进、对身份分辨率和配置文件分段进行了升级，以及自定义的连接器和Marketo Engage目标。 Marketo连接器允许B2B品牌将其行业领先的B2B参与数据与行为信息连接起来，以培养潜在客户并增强基于帐户的营销操作。
 
 -[新的B2B和B2P版本](#editions)
 -[新的Marketo数据源和目标连接器](#marketo)
@@ -41,9 +41,9 @@ Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP
 
 ### 新的B2B和B2P版本 {#editions}
 
-现已推出新的B2B和B2P版本，这些版本为实时CDP和平台激活产品引入了B2B数据和功能。
+可购买为Real-Time CDP和平台激活产品带来B2B数据和功能的新B2B和B2P版本。
 
-要进一步了解Real-time CDP B2B Edition，请参阅 [概述](../../rtcdp/overview.md).
+要了解有关Real-Time CDP B2B Edition的更多信息，请参阅 [概述](../../rtcdp/overview.md).
 
 ### 新的Marketo数据源和目标连接器 {#marketo}
 
@@ -68,7 +68,7 @@ Real-time CDP B2B Edition构建于Real-time Customer Data Platform(Real-time CDP
 
 临时激活API允许营销人员以编程方式快速高效地将受众区段激活到目标，以应对需要立即激活的情况。 Ad-hoc audience激活仅受 [批量基于文件的目标](../../destinations/destination-types.md#file-based) 和目前处于测试阶段。 有关更多信息，请参阅 [临时激活API文档](../../destinations/api/ad-hoc-activation-api.md).
 
-### Attribution AI {#attribution-ai}
+### 归因人工智能 {#attribution-ai}
 
 Attribution AI 用于将点数归因于导致转化事件的接触点。营销人员可利用此功能，促进量化客户旅程中每个营销接触点的营销影响。
 

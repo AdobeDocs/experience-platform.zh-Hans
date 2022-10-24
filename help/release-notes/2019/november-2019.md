@@ -5,7 +5,7 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 exl-id: 2c417c56-cc61-4788-b248-d98ea6cf89f0
-source-git-commit: ce967ae176fce81aa26d92b3f0ee8be006808657
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '1887'
 ht-degree: 2%
@@ -17,7 +17,7 @@ ht-degree: 2%
 **发行日期：2019 年 11 月 18 日**
 
 Adobe Experience Platform的新增功能：
-* [[!DNL Real-time Customer Data Platform]](#rtcdp)
+* [[!DNL Real-Time Customer Data Platform]](#rtcdp)
 * [[!DNL Destinations]](#destinations)
 * [[!DNL Sources]](#sources)
 
@@ -27,15 +27,15 @@ Adobe Experience Platform的新增功能：
 * [[!DNL Real-time Customer Profile]](#profile)
 * [[!DNL Segmentation Service]](#segmentation)
 
-## [!DNL Real-time Customer Data Platform] {#rtcdp}
+## [!DNL Real-Time Customer Data Platform] {#rtcdp}
 
-Real-time Customer Data Platform(Real-time CDP)构建于Adobe Experience Platform之上，可帮助公司将已知和未知数据整合在一起，在整个客户历程中通过智能决策激活客户档案。 Real-time CDP将多个企业数据源整合在一起，以实时创建统一的配置文件，这些配置文件可用于跨所有渠道和设备提供一对一的个性化客户体验。
+Real-time Customer Data Platform(Real-Time CDP)构建于Adobe Experience Platform之上，可帮助公司将已知和未知数据汇集在一起，通过智能决策激活客户档案，并贯穿整个客户历程。 Real-Time CDP整合了多个企业数据源以实时创建统一的配置文件，可用于跨所有渠道和设备提供一对一的个性化客户体验。
 
-[!DNL Real-time Customer Data Platform] 包括数据管理、身份管理、高级分段和数据科学工具，以便您能够构建用户档案并定义受众，以及在实施严格的数据管理策略的同时获得丰富的洞察信息。
+[!DNL Real-Time Customer Data Platform] 包括数据管理、身份管理、高级分段和数据科学工具，以便您能够构建用户档案并定义受众，以及在实施严格的数据管理策略的同时获得丰富的洞察信息。
 
 Adobe可连接到大型合作伙伴生态系统，更不用说与Adobe Experience Cloud的本机集成，这样您就可以无缝激活这些受众，并跨所有渠道提供出色的客户体验，从现场或应用程序内个性化到电子邮件、付费媒体、呼叫中心、连接设备等。
 
-通过Real-time CDP ，您可以：
+通过Real-Time CDP，您可以：
 
 * 通过从整个企业流式收集客户数据，实现客户的单一视图。
 * 对已知和未知标识符使用可信的管理和隐私控制负责地管理用户档案。
@@ -48,17 +48,17 @@ Adobe可连接到大型合作伙伴生态系统，更不用说与Adobe Experienc
 
 | 功能 | 描述 |
 |---|---|
-| 目标 | 预先构建的与受Adobe支持的目标平台的集成 [!DNL Real-time Customer Data Platform] 可无缝地向这些合作伙伴激活数据。 请参阅 [目标](#destinations) 下面以了解更多信息。 |
-| 主页量度功能板 | Real-time Customer Data Platform(Real-time CDP)主页包含一个量度仪表板，其中显示有关用户档案和区段的信息。 主页还包含指向学习材料的链接。 请参阅 [Real-time Customer Data Platform量度](#real-time-customer-data-platform-metrics) 下。 |
+| 目标 | 预先构建的与受Adobe支持的目标平台的集成 [!DNL Real-Time Customer Data Platform] 可无缝地向这些合作伙伴激活数据。 请参阅 [目标](#destinations) 下面以了解更多信息。 |
+| 主页量度功能板 | Real-time Customer Data Platform(Real-Time CDP)主页包含一个量度功能板，用于显示有关用户档案和区段的信息。 主页还包含指向学习材料的链接。 请参阅 [Real-time Customer Data Platform量度](#real-time-customer-data-platform-metrics) 下。 |
 | 源 | 您可以从各种来源摄取数据，如Adobe解决方案、基于云的存储、第三方软件和您的CRM。 请参阅 [源](#sources) 部分以了解更多信息。 |
 
-**[!DNL Real-time Customer Data Platform]量度**
+**[!DNL Real-Time Customer Data Platform]量度**
 
-当您登录到Real-time CDP时，将显示Real-time Customer Data Platform(Real-time CDP)主页，其中包含一个量度仪表板。
+登录Real-time Customer Data Platform(Real-Time CDP)时，会显示该主页（其中包含量度功能板）。
 
-主页只是显示量度卡的位置之一。 Real-time CDP在您的整个体验中都提供量度卡。 这些量度可告知您系统中的数据、用户档案和区段受众。
+主页只是显示量度卡的位置之一。 Real-Time CDP会在您的整个体验中提供量度卡。 这些量度可告知您系统中的数据、用户档案和区段受众。
 
-如果您登录到实时CDP时系统中没有数据，则主页上的功能板不会显示。 在这种情况下，主页会首次提供用户体验的学习材料。 收集数据时，功能板会自动更新以显示有关该数据的信息。
+如果您登录Real-Time CDP时系统中没有数据，则主页上的功能板不会显示。 在这种情况下，主页会首次提供用户体验的学习材料。 收集数据时，功能板会自动更新以显示有关该数据的信息。
 
 要了解更多信息，请参阅 [Real-time Customer Data Platform量度概述](../../rtcdp/home-page-dashboards.md)
 

@@ -5,9 +5,9 @@ title: Marketo Engage连接器
 topic-legacy: overview
 description: 本文档概述了Marketo Engage源连接器，包括有关其身份验证、映射和数据延迟的信息。
 exl-id: 063ec5d9-d643-4141-bf6d-878273f22b33
-source-git-commit: efa6891024cacd383f4cd958162a7a4f8ead0624
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '630'
+source-wordcount: '631'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 >[!IMPORTANT]
 >
->您必须具有 [Real-time Customer Data Platform B2B版](../../../../rtcdp/b2b-overview.md) 以使用所有Marketo数据集进行 [实时客户资料](../../../../profile/home.md). 如果没有实时CDP B2B Edition，您仍可以使用Marketo源将人员和活动数据集中的数据引入实时客户资料以进行分段。
+>您必须具有 [Adobe Real-time Customer Data Platform B2B版](../../../../rtcdp/b2b-overview.md) 以使用所有Marketo数据集进行 [实时客户资料](../../../../profile/home.md). 如果没有Real-Time CDP B2B Edition，您仍可以使用Marketo源将人员和活动数据集中的数据引入实时客户资料以进行分段。
 
 本文档概述 [!DNL Marketo] 源连接器，包括如何验证连接器、如何映射 [!DNL Marketo] 字段，以及连接器的数据延迟。
 
@@ -82,4 +82,4 @@ XDM是一项公开记录的规范，它提供了常用结构和定义，允许�
 * 有关B2B命名空间和与 [!DNL Marketo]，请参阅 [B2B命名空间和架构](./marketo-namespaces.md).
 * 有关查找 [!DNL Marketo] munchkin ID和生成您的凭据，请参阅 [[!DNL Marketo] 身份验证指南](./marketo-auth.md).
 * 有关适用于的特定映射规则的信息 [!DNL Marketo] 数据集，请参阅 [[!DNL Marketo] 字段映射](../mapping/marketo.md).
-* 有关 [!DNL Real-time Customer Data Platform B2B Edition] 及其功能，请参阅 [[!DNL Real-time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md).
+* 有关 [!DNL Real-Time Customer Data Platform B2B Edition] 及其功能，请参阅 [[!DNL Real-Time Customer Data Platform B2B Edition]](../../../../rtcdp/b2b-overview.md).

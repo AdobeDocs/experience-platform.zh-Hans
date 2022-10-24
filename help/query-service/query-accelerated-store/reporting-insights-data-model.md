@@ -1,9 +1,9 @@
 ---
 title: 查询加速存储报告分析
 description: 了解如何通过查询服务构建报表分析数据模型，以与加速存储数据和用户定义的功能板结合使用。
-source-git-commit: 16ae8a16d8c4f7ec68a054e8d15a518f453a05c7
+source-git-commit: 085c9f4e76de1aa3ea969eb0511ee1da43be59f0
 workflow-type: tm+mt
-source-wordcount: '1031'
+source-wordcount: '1032'
 ht-degree: 0%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 通过查询加速存储，您可以缩短从数据中获得关键洞察所需的时间和处理能力。 通常，会定期（例如，每小时或每天）处理数据，以创建和报告聚合视图。 对汇总数据生成的这些报表的分析得出旨在改进业务绩效的分析。 查询加速存储提供缓存服务、并发、交互体验和无状态API。 但是，它假定数据经过预处理并进行了优化，以便进行聚合查询，而不是进行原始数据查询。
 
-利用查询加速存储，可构建自定义数据模型和/或扩展现有Real-time Customer Data Platform数据模型。 然后，您可以参与报表分析，或将报表分析嵌入到您选择的报表/可视化框架中。 请参阅Real-time Customer Data Platform分析数据模型文档，以了解如何 [自定义SQL查询模板，以便为营销和关键绩效指标(KPI)用例创建Real-Time CDP报表](../../dashboards/cdp-insights-data-model.md).
+利用查询加速存储，可构建自定义数据模型和/或扩展现有Adobe Real-time Customer Data Platform数据模型。 然后，您可以参与报表分析，或将报表分析嵌入到您选择的报表/可视化框架中。 请参阅Real-time Customer Data Platform分析数据模型文档，以了解如何 [自定义SQL查询模板，以便为营销和关键绩效指标(KPI)用例创建Real-Time CDP报表](../../dashboards/cdp-insights-data-model.md).
 
 Adobe Experience Platform的Real-Time CDP数据模型提供对用户档案、区段和目标的分析，并启用Real-Time CDP分析功能板。 本文档将指导您完成创建报表分析数据模型的过程，以及如何根据需要扩展Real-Time CDP数据模型。
 

@@ -1,16 +1,16 @@
 ---
 title: Real-time Customer Data Platform B2B版中的访问控制
-description: 访问控制在Real-time Customer Data Platform B2B Edition中的角色概述。
-source-git-commit: dc81da58594fac4ce304f9d030f2106f0c3de271
+description: 访问控制在Adobe Real-time Customer Data Platform B2B Edition中的角色概述。
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: '153'
 ht-degree: 2%
 
 ---
 
-# Real-time Customer Data Platform B2B版中的访问控制
+# Adobe Real-time Customer Data Platform B2B版中的访问控制
 
-Real-time CDP B2B Edition的访问控制通过 [Adobe Admin Console](https://adminconsole.adobe.com). 此功能可利用 [!DNL Admin Console]，允许您将用户与权限和沙箱关联。 使用此功能，管理员可以授予或限制对定义的一组用户的特定实时CDP功能（如B2B UI）的访问权限。
+Real-Time CDP B2B Edition的访问控制通过 [Adobe Admin Console](https://adminconsole.adobe.com). 此功能可利用 [!DNL Admin Console]，允许您将用户与权限和沙箱关联。 使用此功能，管理员可以授予或限制对定义的一组用户的特定Real-Time CDP功能（如B2B UI）的访问权限。
 
 要了解有关访问控制的更多信息，请参阅 [访问控制概述](../../access-control/home.md) 在 [!DNL Experience Platform] 文档。
 

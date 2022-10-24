@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: 04a8ca33e712c00d687432ddf9ad82f5d1644db2
+source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
 workflow-type: tm+mt
-source-wordcount: '2302'
+source-wordcount: '2301'
 ht-degree: 2%
 
 ---
@@ -58,7 +58,7 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->仅当不存在数据冲突时，才能为实时客户数据配置文件启用多个报表包中的数据，例如两个具有不同含义的自定义属性（eVar、列表和prop）。
+>仅当不存在数据冲突时，才能为实时客户用户档案启用多个报表包中的数据，例如两个具有不同含义的自定义属性（eVar、列表和prop）。
 
 创建 [!DNL Analytics] 源连接，选择报表包，然后选择 **[!UICONTROL 下一个]** 以继续。
 

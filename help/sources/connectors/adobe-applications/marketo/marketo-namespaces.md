@@ -5,9 +5,9 @@ title: B2B命名空间和架构
 topic-legacy: overview
 description: 本文档概述创建B2B源连接器时所需的自定义命名空间。
 exl-id: f1592be5-987e-41b8-9844-9dea5bd452b9
-source-git-commit: c6ba91f6aa64f02ac3571bb960d4005fdade3d57
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '1706'
+source-wordcount: '1707'
 ht-degree: 4%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 4%
 
 >[!IMPORTANT]
 >
->您必须具有 [Real-time Customer Data Platform B2B版](../../../../rtcdp/b2b-overview.md) 以便B2B模式参与 [实时客户资料](../../../../profile/home.md).
+>您必须具有 [Adobe Real-time Customer Data Platform B2B版](../../../../rtcdp/b2b-overview.md) 以便B2B模式参与 [实时客户资料](../../../../profile/home.md).
 
 ## 设置B2B命名空间和模式自动生成实用程序
 

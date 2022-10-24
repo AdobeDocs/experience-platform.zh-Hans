@@ -5,7 +5,7 @@ title: Adobe Experience Platform 概述
 topic-legacy: getting started
 description: Adobe Experience Platform使组织能够在应用数据科学和机器学习来显着改进丰富的个性化体验的设计和交付之前，实现客户数据的集中化和标准化。
 exl-id: edcce353-338a-440e-99eb-a64e2abca579
-source-git-commit: 769e8e6e5d159254d34ad1d3e5e468c3b0bca10b
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
 source-wordcount: '437'
 ht-degree: 10%
@@ -28,8 +28,8 @@ Adobe Experience Platform是市场上功能最强大、最灵活、最开放的�
 
 Adobe已基于Experience Platform构建了多个应用程序服务。 您可以在其自己的指南中找到这些服务的文档，链接如下：
 
-* [[!DNL Real-time Customer Data Platform (Real-time CDP)]](../rtcdp/overview.md)
-* [[!DNL Real-time Customer Data Platform (Real-time CDP) B2B Edition]](../rtcdp/b2b-overview.md)
+* [[!DNL Adobe Real-Time Customer Data Platform (Real-Time CDP)]](../rtcdp/overview.md)
+* [[!DNL Real-Time Customer Data Platform (Real-Time CDP) B2B Edition]](../rtcdp/b2b-overview.md)
 * [[!DNL Adobe Journey Optimizer]](https://experienceleague.adobe.com/docs/journey-optimizer.html)
 * [[!DNL Customer Journey Analytics]](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
 * [[!DNL Journey Orchestration]](https://experienceleague.adobe.com/docs/journey-orchestration.html)

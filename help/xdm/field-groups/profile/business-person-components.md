@@ -2,9 +2,9 @@
 title: XDM业务人员组件架构字段组
 description: 本文档概述了XDM业务人员组件架构字段组。
 exl-id: 965b89f4-59f5-43f4-8778-3549e15b44d4
-source-git-commit: 83329002a1fe51e49818a203191c7082f9589037
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '552'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 [!UICONTROL XDM业务人员组件] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md) 用于为人员捕获多个源记录以及人员分段所需的其他属性。
 
-通过为人员创建用户档案时 [实时客户资料](../../../profile/home.md) 在B2B版本的Real-time CDP中，用于创建该用户档案的信息可能来自许多源记录。 例如，如果一个人为两个不同的公司工作，则许多CRM系统会创建该人的特意副本，以便一个副本链接到公司A，而另一个副本链接到公司B。将该数据导入Adobe Experience Platform时，此字段组用于将这些不同的源记录合并到单个表示中。
+通过为人员创建用户档案时 [实时客户资料](../../../profile/home.md) 在Real-Time CDP的B2B版本中，用于创建该用户档案的信息可能来自许多源记录。 例如，如果一个人为两个不同的公司工作，则许多CRM系统会创建该人的特意副本，以便一个副本链接到公司A，而另一个副本链接到公司B。将该数据导入Adobe Experience Platform时，此字段组用于将这些不同的源记录合并到单个表示中。
 
 字段组提供根级别 `personComponents` 字段，对象数组。 数组中的每个对象表示不同的源记录。
 
@@ -22,7 +22,7 @@ ht-degree: 2%
 >您必须遵循 [源文档](../../../rtcdp/sources/b2b.md). 其他字段映射方法无法保证有效。
 >
 >例如， `personComponents` 阵列是在标准摄取模式期间单独提交的，然后由平台添加到阵列中。 将对象数组手动添加到业务人员组件将返回错误。
->在为B2B数据创建架构时，您应使用自动生成实用程序。 有关如何使用 [B2B命名空间和模式自动生成实用程序](../../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md). 如果您未使用自动生成实用程序并打算手动映射您的数据模型，请务必阅读 [Real-time Customer Data Platform B2B版体验数据模型(XDM)类](../../../rtcdp/schemas/b2b.md) 映射数据之前。
+>在为B2B数据创建架构时，您应使用自动生成实用程序。 有关如何使用 [B2B命名空间和模式自动生成实用程序](../../../sources/connectors/adobe-applications/marketo/marketo-namespaces.md). 如果您未使用自动生成实用程序并打算手动映射您的数据模型，请务必阅读 [Adobe Real-time Customer Data Platform B2B版XDM类](../../../rtcdp/schemas/b2b.md) 映射数据之前。
 >
 >请参阅 [端到端教程](../../../rtcdp/b2b-tutorial.md) 以了解有关B2B数据推荐工作流的信息。
 

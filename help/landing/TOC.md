@@ -3,10 +3,10 @@ audience: user
 user-guide-title: Adobe Experience Platform 概述
 breadcrumb-title: Experience Platform 概述
 user-guide-description: 了解 Experience Platform 如何实时地为客户营造个性化体验。
-source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
+source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
 workflow-type: tm+mt
-source-wordcount: '245'
-ht-degree: 28%
+source-wordcount: '246'
+ht-degree: 25%
 
 ---
 
@@ -40,7 +40,7 @@ ht-degree: 28%
    * [语言支持](documentation/language-support.md)
 * 基于平台构建的应用程序服务 {#ecosystem}
    * [概述](application-services.md)
-   * [Real-time Customer Data Platform（所有版本）](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
+   * [Adobe Real-time Customer Data Platform（所有版本）](https://experienceleague.adobe.com/docs/real-time-customer-data-platform.html)
    * [应用程序和智能服务（视频）](video/application-intelligent-services.md)
    * [Customer Journey Analytics](https://experienceleague.adobe.com/docs/customer-journey-analytics.html)
    * [Adobe Journey Optimizer](https://experienceleague.adobe.com/docs/journey-optimizer.html)
