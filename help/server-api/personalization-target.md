@@ -2,9 +2,9 @@
 title: 通过Adobe Target进行个性化
 description: 了解如何使用服务器API来提供和渲染在Adobe Target中创建的个性化体验。
 exl-id: c9e2f7ef-5022-4dc4-82b4-ecc210f27270
-source-git-commit: f52603f7e65ac553e00a2b632857561cd07ae441
+source-git-commit: d6573f8f4d779fb7ed11b44561a0ad9667748b27
 workflow-type: tm+mt
-source-wordcount: '702'
+source-wordcount: '735'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->通过 [Target可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=en) 服务器API不支持。
+>通过 [Target可视化体验编辑器(VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=en) 服务器API不完全支持。 服务器API可以 **检索** 活动，但服务器API无法 **render** 活动。 如果要渲染由VEC创建的活动，请使用 [Web SDK](../edge/home.md).
 
 ## 配置数据流 {#configure-your-datastream}
 
@@ -31,7 +31,7 @@ ht-degree: 2%
 
 您可以在以下选项中进行选择 [!DNL Analytics Logging] 选项：
 
-* **[!DNL Server Side]**:这是 [[!DNL A4T]](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=zh-Hans). 选择此选项后，每次Target返回个性化内容时，相关 [!DNL A4T] 数据会根据来自Target个性化引擎的响应自动发送到Analytics。
+* **[!DNL Server Side]**:这是 [[!DNL A4T]](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html). 选择此选项后，每次Target返回个性化内容时，相关 [!DNL A4T] 数据会根据来自Target个性化引擎的响应自动发送到Analytics。
 * **[!DNL Client Side]**:选择此选项后，每次Target返回个性化内容时，相关 [!DNL A4T] 数据将返回给调用应用程序。 如果您打算在Analytics中记录此数据，则需要确保在后续调用中报告此数据 [!DNL Analytics].
 
    >[!IMPORTANT]
