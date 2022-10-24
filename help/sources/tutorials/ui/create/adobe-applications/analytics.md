@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何在UI中创建Adobe Analytics源连接，以将消费者数据引入Adobe Experience Platform。
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: e67b3a6f9f57a3971a5bfa755db3b1043bebc96b
+source-git-commit: 28e7f10529daa8df56534e6ada129a52d3f7604d
 workflow-type: tm+mt
-source-wordcount: '2301'
+source-wordcount: '2345'
 ht-degree: 2%
 
 ---
@@ -45,6 +45,10 @@ ht-degree: 2%
 ![目录](../../../../images/tutorials/create/analytics/catalog.png)
 
 ### 选择数据
+
+>[!IMPORTANT]
+>
+>屏幕上列出的报表包可能来自不同地区。 您有责任了解数据的限制和义务，以及如何在Adobe Experience Platform跨区域使用这些数据。 请确保您的公司允许执行此操作。
 
 的 **[!UICONTROL Analytics源添加数据]** 步骤会为您提供 [!DNL Analytics] 用于创建源连接的报表包数据。
 
