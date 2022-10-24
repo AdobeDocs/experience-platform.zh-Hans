@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
+source-git-commit: fe8d5f3a73c7db311cd0d82c2a7f3ac63fb1edac
 workflow-type: tm+mt
-source-wordcount: '832'
+source-wordcount: '841'
 ht-degree: 12%
 
 ---
@@ -287,6 +287,7 @@ ht-degree: 12%
       - [营销自动化连接数据流](tutorials/ui/dataflow/marketing-automation.md)
       - [支付连接数据流](tutorials/ui/dataflow/payments.md)
       - [协议连接数据流](tutorials/ui/dataflow/protocols.md)
+   - [使用UI中的模板创建源数据流](tutorials/ui/templates.md)
    - [监控批处理数据流](tutorials/ui/monitor.md)
    - [监控流数据流](tutorials/ui/monitor-streaming.md)
    - [更新帐户](tutorials/ui/update.md)
