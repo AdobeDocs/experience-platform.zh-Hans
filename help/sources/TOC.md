@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: 3518131261f2a2a811284f77bbb8784666e8df96
+source-git-commit: cf9390076e027ba746c3bc83df8a18e3751b84a8
 workflow-type: tm+mt
-source-wordcount: '844'
+source-wordcount: '853'
 ht-degree: 12%
 
 ---
@@ -62,6 +62,7 @@ ht-degree: 12%
       - [Veva CRM连接器](connectors/crm/veeva.md)
       - [Zoho CRM连接器](connectors/crm/zoho.md)
    - 客户成功 {#customer-success}
+      - [Oracle服务云](connectors/customer-success/oracle-service-cloud.md)
       - [Salesforce Service Cloud连接器](connectors/customer-success/salesforce-service-cloud.md)
       - [ServiceNow连接器](connectors/customer-success/servicenow.md)
       - [Zendesk连接器](connectors/customer-success/zendesk.md)
@@ -130,6 +131,7 @@ ht-degree: 12%
          - [Veeva CRM](tutorials/api/create/crm/veeva.md)
          - [Zoho CRM](tutorials/api/create/crm/zoho.md)
       - 客户成功 {#customer-success}
+         - [Oracle服务云](tutorials/api/create/customer-success/oracle-service-cloud.md)
          - [Salesforce服务云](tutorials/api/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/api/create/customer-success/servicenow.md)
          - [曾代克](tutorials/api/create/customer-success/zendesk.md)
@@ -236,6 +238,7 @@ ht-degree: 12%
          - [Veeva CRM](tutorials/ui/create/crm/veeva.md)
          - [Zoho CRM](tutorials/ui/create/crm/zoho.md)
       - 客户成功 {#customer-success}
+         - [Oracle服务云](tutorials/ui/create/customer-success/oracle-service-cloud.md)
          - [Salesforce服务云](tutorials/ui/create/customer-success/salesforce-service-cloud.md)
          - [ServiceNow](tutorials/ui/create/customer-success/servicenow.md)
          - [曾代克](tutorials/ui/create/customer-success/zendesk.md)
