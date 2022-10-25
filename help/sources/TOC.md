@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: fe8d5f3a73c7db311cd0d82c2a7f3ac63fb1edac
+source-git-commit: 3518131261f2a2a811284f77bbb8784666e8df96
 workflow-type: tm+mt
-source-wordcount: '841'
+source-wordcount: '844'
 ht-degree: 12%
 
 ---
@@ -23,6 +23,7 @@ ht-degree: 12%
       - [Adobe Campaign Managed Cloud Services源](connectors/adobe-applications/campaign.md)
       - [客户属性来源](connectors/adobe-applications/customer-attributes.md)
       - [数据收集源](connectors/adobe-applications/data-collection.md)
+      - [Workfront源](connectors/adobe-applications/workfront.md)
       - 字段映射 {#mapping}
          - [Analytics字段映射](connectors/adobe-applications/mapping/analytics.md)
          - [Audience Manager字段映射](connectors/adobe-applications/mapping/audience-manager.md)
@@ -207,6 +208,7 @@ ht-degree: 12%
          - [Adobe Campaign Managed Cloud Services](tutorials/ui/create/adobe-applications/campaign.md)
          - [客户属性](tutorials/ui/create/adobe-applications/customer-attributes.md)
          - [Marketo Engage](tutorials/ui/create/adobe-applications/marketo.md)
+         - [Workfront](tutorials/ui/create/adobe-applications/workfront.md)
       - 广告 {#advertising}
          - [Google Ads](tutorials/ui/create/advertising/ads.md)
       - Analytics {#analytics}
