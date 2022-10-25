@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年10月
 description: 2022年10月版Adobe Experience Platform发行说明。
-source-git-commit: 098b4b7a0dcd3ddfcd13f7dd473c4fa6832d23df
+source-git-commit: 0ea2718247792e997b7a90ab9027946e800c8157
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '764'
 ht-degree: 5%
 
 ---
@@ -12,14 +12,13 @@ ht-degree: 5%
 
 **发行日期：2022 年 10 月 26 日**
 
-Adobe Experience Platform的新增功能：
-
 - [客户管理的密钥](#cmk)
 
 Adobe Experience Platform 现有功能的更新包括：
 
 - [数据收集](#data-collection)
 - [体验数据模型(XDM)](#xdm)
+- [查询服务](#query-service)
 - [源](#sources)
 
 ## 客户管理的密钥 {#cmk}
@@ -57,6 +56,21 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 {style=&quot;table-layout:auto&quot;}
 
 有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
+
+## 查询服务 {#query-service}
+
+查询服务允许您使用标准SQL在Adobe Experience Platform中查询数据 [!DNL Data Lake]. 您可以连接 [!DNL Data Lake] 并将查询结果捕获为新数据集，以用于报表、Data Science Workspace或摄取到实时客户资料。
+
+**更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 查询加速报告分析数据模型 | 作为Data Distiller SKU的一部分，查询加速存储使您能够减少从数据中获得关键分析所需的时间和处理能力。 通过查询加速存储，您可以构建自定义数据模型和/或扩展现有的Adobe Real-time Customer Data Platform数据模型，以改进报表分析及其可视化图表。 请参阅 [查询加速存储报告分析文档](https://experienceleague.adobe.com/docs/experience-platform/query/query-accelerated-store/reporting-insights-data-model.html) 以了解有关此功能的更多信息。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关查询服务的更多信息，请参阅 [查询服务概述](../../query-service/home.md).
+Adobe Experience Platform的新增功能：
 
 ## 源 {#sources}
 
