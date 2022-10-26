@@ -1,12 +1,12 @@
 ---
 keywords: Experience Platform；主页；热门主题；
-description: Adobe Experience Platform提供了预配置的模板，您可以使用这些模板来加快数据摄取流程。 模板包括自动生成的资产，例如架构、数据集、映射规则、身份命名空间和数据流，在将数据从源引入到Experience Platform时，可以使用这些资产。
+description: Adobe Experience Platform提供了预配置的模板，您可以使用这些模板来加快数据摄取流程。 模板包括自动生成的资产，例如架构、数据集、映射规则、身份、身份命名空间和数据流，在将数据从源引入到Experience Platform时，可以使用这些资产。
 title: (Alpha)使用UI中的模板创建源数据流
 hide: true
 hidefromtoc: true
-source-git-commit: a0ca9cff43b6f8276268467fecf944c664992950
+source-git-commit: d6d8281d1be1468b0c2b7474b80be96949dc7d4c
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '1184'
 ht-degree: 1%
 
 ---
@@ -17,11 +17,11 @@ ht-degree: 1%
 >
 >模板位于Alpha中，当前仅受 [[!DNL Marketo Engage] 来源](../../connectors/adobe-applications/marketo/marketo.md). 文档和功能可能会发生更改。
 
-Adobe Experience Platform提供了预配置的模板，您可以使用这些模板来加快数据摄取流程。 模板包括自动生成的资产，例如架构、数据集、映射规则、身份命名空间和数据流，在将数据从源引入到Experience Platform时，可以使用这些资产。
+Adobe Experience Platform提供了预配置的模板，您可以使用这些模板来加快数据摄取流程。 模板包括自动生成的资产，例如架构、数据集、身份、映射规则、身份命名空间和数据流，在将数据从源引入到Experience Platform时，可以使用这些资产。
 
 使用模板，您可以：
 
-* 通过加快基于ML的资产创建，可缩短摄取的时间和价值实现。
+* 通过加快创建模板化资产，缩短摄取的时间和价值实现过程。
 * 最大限度地减少在手动数据获取过程中可能发生的错误。
 * 随时更新自动生成的资产，以适合您的用例。
 
@@ -51,7 +51,12 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 ![突出显示源的源工作区目录。Marketo Engage源。](../../images/tutorials/templates/catalog.png)
 
-此时会出现一个弹出窗口，向您提供浏览模板或使用现有架构和数据集的选项。 要使用自动生成的资产，请选择 **[!UICONTROL 浏览模板]** 然后选择 **[!UICONTROL 选择]**.
+此时会出现一个弹出窗口，向您提供浏览模板或使用现有架构和数据集的选项。
+
+* **浏览模板**:源模板会使用映射规则自动创建架构、身份、数据集和数据流。 您可以根据需要自定义这些资产。
+* **使用我的现有资产**:使用您创建的现有数据集和架构摄取数据。 您还可以根据需要创建新数据集和架构。
+
+要使用自动生成的资产，请选择 **[!UICONTROL 浏览模板]** 然后选择 **[!UICONTROL 选择]**.
 
 ![一个弹出窗口，其中提供了用于浏览模板或使用现有资产的选项。](../../images/tutorials/templates/browse-templates.png)
 
@@ -83,6 +88,12 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 接下来，从列表中选择要使用的模板。 您可以选择多个模板并一次创建多个数据流。 但是，每个帐户只能使用一次模板。 选择模板后，选择 **[!UICONTROL 完成]** 并允许一些时间生成资产。
 
+如果从可用模板列表中选择一个或多个部分项，则仍将生成所有B2B架构和身份命名空间，以确保正确配置架构间的B2B关系。
+
+>[!NOTE]
+>
+>将从选定范围中禁用已使用的模板。
+
 ![选择了Opportunity Contact Role模板的模板列表。](../../images/tutorials/templates/select-template.png)
 
 ### 审核资产 {#review-assets}
@@ -92,7 +103,7 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 >title="查看自动生成的资产"
 >abstract="最多可能需要五分钟才能生成所有资产。 如果您选择离开页面，则会在资产完成后收到返回通知。 在生成资产后，您便可以查看资产，并随时为数据流进行其他配置。"
 
-的 [!UICONTROL 审核模板资产] 页面会将自动生成的资产显示为模板的一部分。 在本页中，您可以查看与源连接关联的自动生成的架构、数据集、身份命名空间和数据流。
+的 [!UICONTROL 审核模板资产] 页面会将自动生成的资产显示为模板的一部分。 在本页中，您可以查看与源连接关联的自动生成的架构、数据集、身份命名空间和数据流。 最多可能需要五分钟才能生成所有资产。 如果您选择离开页面，则会在资产完成后收到返回通知。 在生成资产后，您便可以查看资产，并随时为数据流进行其他配置。
 
 默认情况下，会启用自动生成的数据流。 选择省略号(`...`)，然后选择 **[!UICONTROL 预览映射]** 以查看为数据流创建的映射集。
 
@@ -104,8 +115,22 @@ Adobe Experience Platform提供了预配置的模板，您可以使用这些模�
 
 您可以在执行后随时更新数据流。 选择省略号(`...`)，然后选择 **[!UICONTROL 更新数据流]**. 您将转到源工作流页面，在该页面中可以更新数据流详细信息，包括部分摄取、错误诊断和警报通知的设置，以及数据流的映射。
 
+您可以使用架构编辑器视图对自动生成的架构进行更新。 请访问 [使用架构编辑器](../../../xdm/tutorials/create-schema-ui.md) 以了解更多信息。
+
 ![选择了更新数据流选项的下拉窗口。](../../images/tutorials/templates/update.png)
 
 ## 后续步骤
 
 在本教程之后，您现在已使用模板创建数据流以及模式、数据集和身份命名空间等资产。 有关来源的一般信息，请访问 [源概述](../../home.md).
+
+## 附录
+
+以下部分提供了有关模板的其他信息。
+
+### 使用通知面板可返回到审阅页面
+
+Adobe Experience Platform警报支持模板，您可以使用通知面板接收有关资产状态的更新，还可以导航回审阅页面。
+
+选择Platform UI顶部标题的通知图标，然后选择状态警报以查看您要查看的资产。
+
+![平台UI中的通知面板，其中突出显示了警告失败数据流的通知。](../../images/tutorials/templates/notifications.png)
