@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
-source-git-commit: 0ea2718247792e997b7a90ab9027946e800c8157
+source-git-commit: 021a0833941f250475786bb8629542c50229b238
 workflow-type: tm+mt
-source-wordcount: '769'
+source-wordcount: '921'
 ht-degree: 6%
 
 ---
@@ -19,6 +19,7 @@ Adobe Experience Platform的新增功能：
 Adobe Experience Platform 现有功能的更新包括：
 
 - [数据收集](#data-collection)
+- [目标](#destinations)
 - [体验数据模型(XDM)](#xdm)
 - [查询服务](#query-service)
 - [源](#sources)
@@ -42,6 +43,27 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | [!DNL Zendesk] 事件转发扩展 | 您现在可以将数据发送到 [!DNL Zendesk] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Zendesk] 扩展概述](../../tags/extensions/web/zendesk/overview.md) 以了解更多信息。 |
 
 {style=&quot;table-layout:auto&quot;}
+
+## [!DNL Destinations] {#destinations}
+
+[!DNL Destinations] 是与目标平台的预建集成，可无缝激活来自Adobe Experience Platform的数据。 您可以使用目标来激活跨渠道营销活动、电子邮件促销活动、定向广告和许多其他用例的已知和未知数据。
+
+**新目标或更新的目标**
+
+| 目标 | 描述 |
+| ----------- | ----------- |
+| [[!DNL Line]](../../destinations/catalog/mobile-engagement/line.md) | Line是一个热门的通信平台，可连接人员、服务和信息，并且已经从聊天应用程序发展为娱乐、社交和日常活动的中心。 |
+| [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md) | Microsoft Dynamics 365是一个基于云的业务应用程序平台，它将企业资源规划(ERP)和客户关系管理(CRM)与生产力应用程序和AI工具结合在一起，从而实现端到端更顺畅、更受控制的操作、更好的增长潜力和降低成本。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+**新文档或更新的文档**
+
+| 文档 | 描述 |
+| ----------- | ----------- |
+| [目标护栏](../../destinations/guardrails.md) | 本页提供与激活行为有关的默认使用和费率限制。 |
+
+有关目标的更多常规信息，请参阅 [目标概述](../../destinations/home.md).
 
 ## 体验数据模型(XDM) {#xdm}
 
