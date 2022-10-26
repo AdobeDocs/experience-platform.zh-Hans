@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform中的客户管理密钥
 description: 了解如何为存储在Adobe Experience Platform中的数据设置您自己的加密密钥。
-source-git-commit: f06f00f7581ccd7fe64f5292a53ebb0303c65069
+source-git-commit: 6fe0d72bcb3dbf1e1167f80724577ba3e0f741f4
 workflow-type: tm+mt
-source-wordcount: '1418'
+source-wordcount: '1416'
 ht-degree: 0%
 
 ---
@@ -65,7 +65,7 @@ CMK仅支持 [!DNL Microsoft Azure] 钥匙库。 要开始使用，您必须使�
 
 ![密钥保管库的基本配置](../images/governance-privacy-security/customer-managed-keys/finish-creation.png)
 
-## 授予Microsoft防火墙例外
+## 配置网络选项
 
 如果您的密钥保管库配置为限制对特定虚拟网络的公共访问或完全禁用公共访问，则必须授予Microsoft防火墙例外。
 
