@@ -1,9 +1,9 @@
 ---
 title: (Beta)Adobe Commerce Destination Connector
 description: 了解Adobe Commerce和Real-Time CDP商户如何通过提供高度相关的网站内容和促销活动(根据Real-Time CDP中构建和管理的客户区段进行自定义)来个性化购物体验。
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 566f26ec0f13bfaceb0ee59f3e4c72e767bc8cc9
 workflow-type: tm+mt
-source-wordcount: '687'
+source-wordcount: '689'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 > 
 >的 **[!UICONTROL Adobe Commerce]** 连接器为测试版，且仅适用于选定数量的客户。
 
-的 [!DNL Adobe Commerce] 目标连接器允许您选择一个或多个要激活到您的Experience Platform区段 [!DNL Adobe Commerce] 帐户为购物者提供动态个性化体验。 在 [!DNL Adobe Commerce]，则可以选择这些Adobe Experience Platform区段以个性化购物车中的独特选件，如“购买2获取1免费”。 您还可以显示主页横幅并通过促销优惠修改产品定价，所有这些优惠均根据Adobe Experience Platform区段进行自定义。
+的 [!DNL Adobe Commerce] 目标连接器允许您选择一个或多个要激活到您的Real-Time CDP区段 [!DNL Adobe Commerce] 帐户为购物者提供动态个性化体验。 在 [!DNL Adobe Commerce]，则可以选择这些Real-Time CDP区段以个性化购物车中的独特选件，如“购买2获取1免费”。 您还可以显示主页横幅并通过促销优惠修改产品定价，所有这些优惠均根据Adobe Real-Time CDP区段进行自定义。
 
 <!--## Use cases {#use-cases}
 
@@ -90,7 +90,7 @@ While [设置](../../ui/connect-destination.md) 此目标中，您必须提供�
 
 ## 中的后续步骤 [!DNL Adobe Commerce]
 
-现在，您已配置 [!DNL Commerce] 目标Experience Platform中，您需要配置 [!DNL Commerce Admin] 导入您创建的Real-Time CDP区段。 请参阅 [[!DNL Commerce] 文档](https://docs.magento.com/user-guide/marketing/customer-segment-rtcdp.html) 以了解更多。
+现在，您已配置 [!DNL Commerce] 目标Experience Platform中，您需要配置 [!DNL Commerce Admin] 导入您创建的Real-Time CDP区段。 请参阅 [[!DNL Commerce] 文档](https://experienceleague.adobe.com/docs/commerce-admin/marketing/promotions/cart-rules/customer-segment-rtcdp.html) 以了解更多。
 
 ## 验证数据导出 {#exported-data}
 
