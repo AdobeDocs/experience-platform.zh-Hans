@@ -5,9 +5,9 @@ title: 将RStudio连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍将R Studio与Adobe Experience Platform查询服务连接的步骤。
 exl-id: 8dd82bad-6ffb-4536-9c27-223f471a49c6
-source-git-commit: 9ab3d69553dee9fdb97472edfa3f812133ee1bb1
+source-git-commit: 75e97efcb68439f1b837af93b62c96f43e5d7a31
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '405'
 ht-degree: 0%
 
 ---
@@ -20,29 +20,29 @@ ht-degree: 0%
 >
 > 本指南假定您已拥有 [!DNL RStudio] 并熟悉如何使用它。 有关 [!DNL RStudio] 可在 [官方 [!DNL RStudio] 文档](https://rstudio.com/products/rstudio/).
 > 
-> 此外，要将RStudio与查询服务一起使用，您需要安装PostgreSQL JDBC 4.2驱动程序。 可以从下载JDBC驱动程序 [PostgreSQL官方站点](https://jdbc.postgresql.org/download/).
+> 此外，要使用 [!DNL RStudio] 通过查询服务，您需要安装 [!DNL PostgreSQL] JDBC 4.2驱动程序。 可以从下载JDBC驱动程序 [[!DNL PostgreSQL] 官方网站](https://jdbc.postgresql.org/download/).
 
 ## 创建 [!DNL Query Service] 连接 [!DNL RStudio] 界面
 
 安装后 [!DNL RStudio]，则需要安装RJDBC包。 转到 **[!DNL Packages]** 窗格，然后选择 **[!DNL Install]**.
 
-![](../images/clients/rstudio/install-package.png)
+![的 [!DNL RStudio] 功能板，其中突出显示了“包和安装”。](../images/clients/rstudio/install-package.png)
 
 此时会出现一个弹出窗口，其中显示了 **[!DNL Install Packages]** 屏幕。 确保 **[!DNL Repository (CRAN)]** 的 **[!DNL Install from]** 中。 的值 **[!DNL Packages]** 应该 `RJDBC`. 确保 **[!DNL Install dependencies]** 中。 确认所有值均正确后，选择 **[!DNL Install]** 来安装包。
 
-![](../images/clients/rstudio/install-jrdbc.png)
+![在“包”字段中输入RJDBC的“安装包”对话框，并突出显示“安装”。](../images/clients/rstudio/install-jrdbc.png)
 
-现在，已安装RJDBC包，请重新启动RStudio以完成安装过程。
+安装RJDBC包后，请重新启动 [!DNL RStudio] 完成安装过程。
 
-重新启动RStudio后，您现在可以连接到查询服务。 选择 **[!DNL RJDBC]** 包 **[!DNL Packages]** ，然后在控制台中输入以下命令：
+之后 [!DNL RStudio] 已重新启动，您现在可以连接到查询服务。 选择 **[!DNL RJDBC]** 包 **[!DNL Packages]** ，然后在控制台中输入以下命令：
 
 ```console
 pgsql <- JDBC("org.postgresql.Driver", "{PATH TO THE POSTGRESQL JDBC JAR}", "`")
 ```
 
-其中{PATH TO THE POSTGRESQL JDBC JAR}表示安装在您计算机上的PostgreSQL JDBC JAR的路径。
+其中 `{PATH TO THE POSTGRESQL JDBC JAR}` 表示的路径 [!DNL PostgreSQL] 在您的计算机上安装的JDBC JAR。
 
-现在，您可以通过在控制台中输入以下命令来创建与查询服务的连接：
+现在，您可以创建与查询服务的连接。 在控制台中输入以下命令：
 
 ```console
 qsconnection <- dbConnect(pgsql, "jdbc:postgresql://{HOSTNAME}:{PORT}/{DATABASE_NAME}?user={USERNAME}&password={PASSWORD}&sslmode=require")
@@ -54,7 +54,7 @@ qsconnection <- dbConnect(pgsql, "jdbc:postgresql://{HOSTNAME}:{PORT}/{DATABASE_
 
 有关查找数据库名称、主机、端口和登录凭据的详细信息，请阅读 [凭据指南](../ui/credentials.md). 要查找您的凭据，请登录到 [!DNL Platform]，然后选择 **[!UICONTROL 查询]**，后跟 **[!UICONTROL 凭据]**.
 
-![](../images/clients/rstudio/connection-rjdbc.png)
+![中的控制台输出 [!DNL RStudio] 从到查询服务的连接。](../images/clients/rstudio/connection-rjdbc.png)
 
 ## 编写查询
 

@@ -2,9 +2,9 @@
 title: 对Ad Hoc架构的基于属性的访问控制支持
 description: 有关限制对通过Adobe Experience Platform查询服务生成的临时架构中数据字段的访问的指南。
 exl-id: d675e3de-ab62-4beb-9360-1f6090397a17
-source-git-commit: d955473fb9123a6fc2384cde4073c713b921f582
+source-git-commit: 91f318596bf268aa93e8b2df9c13774aab76d13a
 workflow-type: tm+mt
-source-wordcount: '1037'
+source-wordcount: '1040'
 ht-degree: 1%
 
 ---
@@ -56,13 +56,13 @@ ht-degree: 1%
 
 ## 编辑架构或字段的标签
 
-要编辑整个架构的标签，请选择铅笔图标(![](../images/data-governance/edit-icon.png))到架构名称旁边(位于 [!UICONTROL 标签] 选项卡。
+要编辑整个架构的标签，请选择铅笔图标(![铅笔图标。](../images/data-governance/edit-icon.png))到架构名称旁边(位于 [!UICONTROL 标签] 选项卡。
 
 ![模式工作区中的标签视图突出显示了铅笔图标。](../images/data-governance/edit-entire-schema-labels.png)
 
 要将标签应用于现有字段，请从列表中选择一个或多个字段，然后选择 [!UICONTROL 编辑管理标签] 中。
 
-![“标签”工作区中的“架构”工作区视图中，右侧侧栏中突出显示了“编辑管理标签”选项。](../images/data-governance/edit-governance-labels.png)
+![在“架构”工作区中，“标签”视图在右侧侧栏中突出显示了“编辑管理标签”选项。](../images/data-governance/edit-governance-labels.png)
 
 ## 编辑标签弹出窗口
 

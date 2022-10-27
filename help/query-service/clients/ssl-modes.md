@@ -2,9 +2,10 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；连接；连接到查询服务；SSL;sslmode;
 title: 查询服务SSL选项
 description: 了解对与Adobe Experience Platform查询服务的第三方连接的SSL支持，以及如何使用验证完全SSL模式进行连接。
-source-git-commit: 92dac8e75e1ddda860d255ce1b7d278041c89325
+exl-id: 41b0a71f-165e-49a2-8a7d-d809f5f683ae
+source-git-commit: 75e97efcb68439f1b837af93b62c96f43e5d7a31
 workflow-type: tm+mt
-source-wordcount: '905'
+source-wordcount: '903'
 ht-degree: 1%
 
 ---
@@ -32,8 +33,8 @@ ht-degree: 1%
 | `allow` | 部分 | 否 | 安全性不是优先事项，速度和低处理开销更为重要。 此模式仅在服务器坚持加密的情况下才会选择加密。 |
 | `prefer` | 部分 | 否 | 不需要加密，但如果服务器支持，通信将被加密。 |
 | `require` | 是 | 否 | 所有通信都需要加密。 信任网络连接到正确的服务器。 不需要服务器SSL证书验证。 |
-| `verify-ca` | 是 | 取决于CA策略 | 所有通信都需要加密。 共享数据之前需要进行服务器验证。 这要求您在PostgreSQL主目录中设置根证书。 [详情如下](#instructions) |
-| `verify-full` | 是 | 是 | 所有通信都需要加密。 共享数据之前需要进行服务器验证。 这要求您在PostgreSQL主目录中设置根证书。 [详情如下](#instructions). |
+| `verify-ca` | 是 | 取决于CA策略 | 所有通信都需要加密。 共享数据之前需要进行服务器验证。 这要求您在 [!DNL PostgreSQL] 主目录。 [详情如下](#instructions) |
+| `verify-full` | 是 | 是 | 所有通信都需要加密。 共享数据之前需要进行服务器验证。 这要求您在 [!DNL PostgreSQL] 主目录。 [详情如下](#instructions). |
 
 >[!NOTE]
 >

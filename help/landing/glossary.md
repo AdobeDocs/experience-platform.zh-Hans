@@ -5,9 +5,9 @@ title: Adobe Experience Platform术语表
 topic-legacy: getting started
 description: Experience Platform 重要术语词汇表。
 exl-id: 00eae5f5-7dfa-45ac-aff9-9e1769a3a53a
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: b9b33a6c1df0810db32f3253205221fed8957dd5
 workflow-type: tm+mt
-source-wordcount: '7436'
+source-wordcount: '7435'
 ht-degree: 0%
 
 ---
@@ -92,7 +92,7 @@ ht-degree: 0%
 
 **类**:在体验数据模型(XDM)中，类定义用于构建架构的最小字段集，并定义架构所表示的业务对象的基本行为。
 
-**客户端**:客户端是连接到 [!DNL Query Service] 通过PostgreSQL协议或HTTP API。
+**客户端**:客户端是连接到 [!DNL Query Service] 通过 [!DNL PostgreSQL] 协议或HTTP API。
 
 **收藏集**:在 [!DNL Offer Decisioning]，收藏集是基于营销人员定义的预定义条件（如选件的类别）的选件子集。
 

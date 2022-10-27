@@ -1,9 +1,9 @@
 ---
 title: 将Jupyter Notebook连接到查询服务
 description: 了解如何将Jupyter Notebook与Adobe Experience Platform查询服务连接。
-source-git-commit: f910deca43ac49d3a3452b8dbafda20ffdf3bf48
+source-git-commit: af37fe3be6b9645965b7477b9b85c5e11fe6fbae
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '615'
 ht-degree: 0%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 0%
 
 在您打开了 [!DNL Jupyter Notebook] Web应用程序，选择 **[!DNL New]** 下拉列表后跟 **[!DNL Python 3]** 创建新笔记本。 的 [!DNL Notebook] 出现编辑器。
 
-![的 [!DNL Jupiter Notebook] 使用 [!DNL New dropdown] 和 [!DNL Python] 3突出显示。](../images/clients/jupyter-notebook/new-notebook.png)
+![的 [!DNL Jupiter Notebook] 使用 [!DNL New] 下拉列表和 [!DNL Python] 3突出显示。](../images/clients/jupyter-notebook/new-notebook.png)
 
 在 [!DNL Notebook] 编辑器中，输入以下值： `pip install psycopg2-binary` 选择 **[!DNL Run]** 中。 输入行下方会显示成功消息。
 

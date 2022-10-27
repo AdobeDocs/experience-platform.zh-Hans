@@ -5,9 +5,9 @@ title: 查询服务中的SQL语法
 topic-legacy: syntax
 description: 本文档显示Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 5ec37ee797ec297b2e5c275dc0e6091e4ee8ecae
+source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
 workflow-type: tm+mt
-source-wordcount: '3160'
+source-wordcount: '3156'
 ht-degree: 2%
 
 ---
@@ -449,7 +449,7 @@ END $$;
 
 第二个示例进一步演示了 `inline` 函数。 该示例的数据模型如下图所示。
 
-![productListItems的架构图](../images/sql/productListItems.png)
+![productListItems的架构图。](../images/sql/productListItems.png)
 
 **示例**
 
@@ -485,9 +485,9 @@ SET property_key = property_value
 
 要返回任何设置的值，请使用 `SET [property key]` 没有 `property_value`.
 
-## PostgreSQL命令
+## [!DNL PostgreSQL] 命令
 
-以下子部分涵盖查询服务支持的PostgreSQL命令。
+以下各分节涵盖 [!DNL PostgreSQL] 查询服务支持的命令。
 
 ### 分析表
 
@@ -677,7 +677,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
 | 参数 | 描述 |
 | ------ | ------ |
 | `TEMPORARY` 或 `TEMP` | 可选参数。 如果指定，则所创建的表将是临时表。 |
-| `UNLOGGED` | 可选参数。 如果指定，则创建为的表将是一个未记录的表。 有关未记录表格的更多信息，请参阅 [PostgreSQL文档](https://www.postgresql.org/docs/current/sql-createtable.html). |
+| `UNLOGGED` | 可选参数。 如果指定，则创建为的表将是一个未记录的表。 有关未记录表格的更多信息，请参阅 [[!DNL PostgreSQL] 文档](https://www.postgresql.org/docs/current/sql-createtable.html). |
 | `new_table` | 要创建的表的名称。 |
 
 **示例**

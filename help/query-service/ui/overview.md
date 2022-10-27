@@ -5,9 +5,9 @@ title: 查询服务UI指南
 topic-legacy: guide
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: a887c502213e96d6af90af0859da78c2984f89a7
+source-git-commit: 0a44d15f9dfaf5100fa44e2e6442b1be23ee0ab0
 workflow-type: tm+mt
-source-wordcount: '662'
+source-wordcount: '716'
 ht-degree: 2%
 
 ---
@@ -26,15 +26,15 @@ Adobe Experience Platform [!DNL Query Service] 提供了一个用户界面，可
 
 ![在 [!DNL Query Editor].](../images/ui/overview/query-editor.png)
 
-## 浏览 {#browse}
+## 模板 {#browse}
 
-的 **[!UICONTROL 浏览]** 选项卡中显示由组织中的用户保存的查询。 将这些查询视为查询项目非常有用，因为此处保存的查询可能仍在构建中。 查询在 **[!UICONTROL 浏览]** 选项卡在 **[!UICONTROL 日志]** 选项卡 [!DNL Query Service].
+的 **[!UICONTROL 模板]** 选项卡中显示由组织中的用户保存的查询。 将这些查询视为查询项目非常有用，因为此处保存的查询可能仍在构建中。 查询在 **[!UICONTROL 模板]** 选项卡在 **[!UICONTROL 日志]** 选项卡 [!DNL Query Service].
 
-![在“查询”功能板的“浏览”选项卡的视图中放大了一个，其中显示了若干已保存的查询。](../images/ui/overview/browse.png)
+![在“查询”功能板“模板”选项卡的视图中放大以显示多个保存的查询。](../images/ui/overview/templates.png)
 
 | 栏目 | 描述 |
 | --- | --- |
-| **[!UICONTROL 名称]** | 用户创建的查询名称。 您可以在名称上选择，以在 [!DNL Query Editor]. 您还可以使用搜索栏搜索查询的名称。 搜索区分大小写。 |
+| **[!UICONTROL 名称]** | 名称字段是用户创建的查询名称或SQL查询的前几个字符。 任何通过具有查询编辑器的UI创建的查询，在开始时即会命名。 如果查询是通过API创建的，则查询的名称是用于创建查询的初始SQL的一个代码片段。 您可以选择查询名称，以在 [!DNL Query Editor]. 您还可以使用搜索栏搜索 [!UICONTROL 名称] 的次数。 搜索区分大小写。 |
 | **[!UICONTROL SQL]** | SQL查询的前几个字符。 将鼠标悬停在代码上会显示完整查询。 |
 | **[!UICONTROL 修改者]** | 修改查询的最后一个用户。 贵组织中有权访问 [!DNL Query Service] 可以修改查询。 |
 | **[!UICONTROL 上次修改时间]** | 浏览器时区中查询的上次修改日期和时间。 |

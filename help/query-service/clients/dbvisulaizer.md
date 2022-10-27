@@ -5,9 +5,9 @@ title: 将DbVisualizer连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍将DbVisualizer与Adobe Experience Platform查询服务连接的步骤。
 exl-id: badb0d89-1713-438c-8a9c-d1404051ff5f
-source-git-commit: 760b04499edd0374f1aae71600bef074a6f17531
+source-git-commit: 910522cc981bddba86f0a47ded48125c28712032
 workflow-type: tm+mt
-source-wordcount: '743'
+source-wordcount: '754'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 从数据库连接工作区中，选择 **[!DNL Properties]** 选项卡，接着是 **[!DNL Driver Properties]** 中。
 
-![突出显示了属性选项卡的数据库连接工作区。](../images/clients/dbvisualizer/driver-properties.png)
+![突出显示了“Properties（属性）”和“Driver Properties（驱动程序属性）”的“Database Connection（数据库连接）”工作区。](../images/clients/dbvisualizer/driver-properties.png)
 
 建议使用下表中显示的驱动程序属性，以启用SSL与DBVisualizer结合使用。
 
@@ -57,7 +57,7 @@ ht-degree: 0%
 
 的 `PGHOST` 和 `user` 值取自您的Adobe Experience Platform凭据。 要查找凭据，请登录到Platform UI并选择 **[!UICONTROL 查询]** 从左侧导航，然后是 **[!UICONTROL 凭据]**. 有关查找数据库名称、主机、端口和登录凭据的详细信息，请阅读 [凭据指南](../ui/credentials.md).
 
-![Experience Platform查询凭据功能板，其中突出显示了凭据。](../images/clients/dbvisualizer/query-service-credentials-page.png)
+![“Experience Platform查询”工作区的“凭据”页面中突出显示了“凭据”和“过期凭据”。](../images/clients/dbvisualizer/query-service-credentials-page.png)
 
 [!DNL Query Service] 此外，还提供了未过期的凭据，以便能够与第三方客户端进行一次性设置。 请参阅相关文档 [有关如何生成和使用未过期凭据的完整说明](../ui/credentials.md#non-expiring-credentials).
 
@@ -75,7 +75,7 @@ ht-degree: 0%
 
 在连接身份验证面板中，检查 **[!DNL Require Userid]** 和 **[!DNL Require Password]** 复选框，然后选择 **[!DNL Apply]**.
 
-![选中了“Userid（用户ID）”和“Password（密码）”复选框的连接身份验证面板。](../images/clients/dbvisualizer/connection-authentication.png)
+![的“身份验证”面板 [!DNL PostgreSQL] 与“需要用户ID”和“密码”复选框的数据库连接突出显示。](../images/clients/dbvisualizer/connection-authentication.png)
 
 ## 连接到平台
 
@@ -90,11 +90,11 @@ ht-degree: 0%
 
 输入所有相关凭据后，选择 **[!DNL Connect]**.
 
-![突出显示“连接”选项卡和“连接”按钮的“数据库连接”工作区。](../images/clients/dbvisualizer/connect.png)
+![的 [!DNL PostgreSQL] 使用“连接”选项卡和“连接”按钮突出显示“数据库连接”工作区。](../images/clients/dbvisualizer/connect.png)
 
 的 [!DNL Connect] 会议第一次举行时，会议将举行对话。
 
-![突出显示了与数据库用户ID和数据库密码文本字段的连接对话框。](../images/clients/dbvisualizer/connect-dialog.png)
+![连接： [!DNL PostgreSQL] 对话框中，数据库用户ID和数据库密码文本字段突出显示。](../images/clients/dbvisualizer/connect-dialog.png)
 
 输入用户ID和密码，然后选择 **[!DNL Connect]**. 日志中会显示一条消息，确认连接成功。
 

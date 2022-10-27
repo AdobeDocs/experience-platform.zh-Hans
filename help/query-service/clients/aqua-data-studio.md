@@ -5,9 +5,9 @@ title: 将Aqua Data Studio连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍将Aqua Data Studio与Adobe Experience Platform查询服务连接的步骤。
 exl-id: 4770e221-48a7-45d8-80a4-60b5cbc0ec33
-source-git-commit: ad3e1b0de6dd3b82cc82f0dc3d0f36b12cd3899e
+source-git-commit: 75e97efcb68439f1b837af93b62c96f43e5d7a31
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '487'
 ht-degree: 0%
 
 ---
@@ -40,7 +40,7 @@ ht-degree: 0%
 - **[!DNL Host and Port]**:主机端点及其端口 [!DNL Query Service]. 必须使用端口80连接 [!DNL Query Service].
 - **[!DNL Database]:** 将使用的数据库。 将值用于Platform UI凭据 `dbname`: `prod:all`.
 
-![Aqua Data Studio常规选项卡，其中突出显示了必需的输入字段。](../images/clients/aqua-data-studio/register-server-general-tab.png)
+![的 [!DNL Aqua Data Studio] “常规”选项卡，其中突出显示了必填输入字段。](../images/clients/aqua-data-studio/register-server-general-tab.png)
 
 ### [!DNL Query Service] 凭据
 
@@ -56,7 +56,7 @@ ht-degree: 0%
 >
 >请参阅 [[!DNL Query Service] SSL文档](./ssl-modes.md) 了解对与Adobe Experience Platform查询服务的第三方连接的SSL支持，以及如何使用 `verify-full` SSL模式。
 
-![Aqua Data Studio驱动程序选项卡，其中突出显示了参数字段。](../images/clients/aqua-data-studio/register-server-driver-tab.png)
+![的 [!DNL Aqua Data Studio] “参数”字段突出显示的“驱动程序”选项卡。](../images/clients/aqua-data-studio/register-server-driver-tab.png)
 
 输入连接详细信息后，选择 **[!DNL Test Connection]** 以确保凭据正常工作。 如果连接测试成功，请选择 **[!DNL Save]** 注册服务器。 确认对话框显示确认连接，并且连接显示在仪表板上。 您现在可以连接到服务器并查看其架构对象。
 

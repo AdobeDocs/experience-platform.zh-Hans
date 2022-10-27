@@ -6,9 +6,9 @@ topic-legacy: queries
 type: Tutorial
 description: Adobe Experience Platform查询服务允许从UI创建数据集。 创建数据集后，可以像数据湖中的任何其他数据集一样访问该数据集，并将其用于各种用例。
 exl-id: 6f6c049d-f19f-4161-aeb4-3a01eca7dc75
-source-git-commit: 0c2cfe9b0bd839bdf662622283a7563c0417c9a9
+source-git-commit: 228ed51ea056d3593a59bc0eee8d9b767aa74489
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '493'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,8 @@ ht-degree: 0%
 
 ## 从Adobe Experience Platform用户界面生成数据集
 
+<!-- Screenshot for #3 will need to be updated if schedule queries is moved. -->
+
 要从Adobe Experience Platform用户界面(UI)创建数据集，请执行以下步骤：
 
 1. 使用连接的客户端创建查询并验证输出。 了解如何使用 [!DNL Query Editor]，阅读 [!DNL Query Editor] UI指南 [编写查询](./user-guide.md#writing-queries).
@@ -27,13 +29,13 @@ ht-degree: 0%
 
 3. 在“查询详细信息”面板中，选择 **[!UICONTROL 输出数据集]**.
 
-   ![选择输出数据集](../images/ui/create-datasets/output-dataset.png)
+   ![“查询”工作区“模板”选项卡，其中“选择输出”数据集突出显示。](../images/ui/create-datasets/output-dataset.png)
 
 4. 在显示的对话框中，输入一个前面加有LDAP ID的数据集名称。 数据集名称不必是唯一的或SQL安全的。 请注意，将根据您在此处创建的数据集名称生成数据集的表名称。
 
 5. 接下来，在 [!UICONTROL 描述] 字段和选择 **[!UICONTROL 运行查询]**.
 
-   ![运行查询](../images/ui/create-datasets/run-query.png)
+   ![“输出数据集”对话框中突出显示了数据集详细信息和运行查询](../images/ui/create-datasets/run-query.png)
 
 6. 查询运行完成后，导航至 **[!UICONTROL 数据集]** 查看您创建的数据集。 要详细了解如何在Platform UI中处理数据集时执行常见操作，请参阅 [数据集UI指南](../../catalog/datasets/user-guide.md).
 

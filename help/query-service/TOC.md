@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 查询服务帮助
 breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
-source-git-commit: cc855d46d594d8a55d26873b25060367cf726926
+source-git-commit: 910522cc981bddba86f0a47ded48125c28712032
 workflow-type: tm+mt
-source-wordcount: '224'
-ht-degree: 16%
+source-wordcount: '223'
+ht-degree: 17%
 
 ---
 
@@ -68,7 +68,7 @@ ht-degree: 16%
    - [客户端连接概述](clients/overview.md)
    - [SSL模式](./clients/ssl-modes.md)
    - [Aqua Data Studio](clients/aqua-data-studio.md)
-   - [数据库可视化工具](./clients/dbvisulaizer.md)
+   - [DbVisualizer](./clients/dbvisulaizer.md)
    - [朱佩特笔记本](clients//jupyter-notebook.md)
    - [Looker](clients/looker.md)
    - [波斯蒂科](clients/postico.md)

@@ -5,9 +5,9 @@ title: 查询服务凭据指南
 topic-legacy: guide
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: f3052745105df603e547535a12285b6c1d771fa6
+source-git-commit: e4526b515dc6f480136615f3aa78f38f3e43a60f
 workflow-type: tm+mt
-source-wordcount: '1186'
+source-wordcount: '1204'
 ht-degree: 1%
 
 ---
@@ -45,7 +45,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 3. [配置 **沙箱** 和 **管理查询服务集成** 权限](../../access-control/ui/permissions.md) ，以获取产品配置文件。
 4. [将新用户添加到产品配置文件](../../access-control/ui/users.md) 这样，他们就可以获得其配置的权限。
 5. [将用户添加为产品配置文件管理员](https://helpx.adobe.com/enterprise/using/manage-product-profiles.html) 以允许为任何活动的产品用户档案创建帐户。
-6. [将用户添加为产品配置文件开发人员](https://helpx.adobe.com/cn/enterprise/using/manage-developers.html) 以创建集成。
+6. [将用户添加为产品配置文件开发人员](https://helpx.adobe.com/enterprise/using/manage-developers.html) 以创建集成。
 
 要了解有关如何分配权限的更多信息，请阅读 [访问控制](../../access-control/home.md).
 
@@ -82,9 +82,9 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 保存生成的凭据后，选择 **[!UICONTROL 关闭]**. 您现在可以看到所有未过期凭据的列表。
 
-![“查询”功能板“凭据”选项卡，其中展开了“未过期的凭据”部分。](../images/ui/credentials/list-credentials.png)
+![“查询”功能板“凭据”选项卡中，“未过期的凭据”部分突出显示。](../images/ui/credentials/list-credentials.png)
 
-您可以编辑或删除未过期的凭据。 要编辑未过期的凭据，请选择铅笔图标(![](../images/ui/credentials/edit-icon.png))。 要删除未过期的凭据，请选择删除图标(![](../images/ui/credentials/delete-icon.png))。
+您可以编辑或删除未过期的凭据。 要编辑未过期的凭据，请选择铅笔图标(![铅笔图标。](../images/ui/credentials/edit-icon.png))。要删除未过期的凭据，请选择删除图标(![垃圾桶图标。](../images/ui/credentials/delete-icon.png))。
 
 编辑未过期的凭据时，会显示一个模式窗口。 您可以提供以下详细信息以进行更新：
 
@@ -102,7 +102,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 该图像指示在UI中找到的每个参数的位置，但未过期凭据的密码除外。 虽然其JSON配置文件提供了未过期的凭据，但您可以在 **凭据** 选项卡。
 
-![](../images/ui/credentials/expiring-credentials.png)
+![“查询”工作区“凭据”选项卡，其中“过期”凭据部分突出显示。](../images/ui/credentials/expiring-credentials.png)
 
 下表概述了连接到外部客户端通常需要的参数。
 

@@ -6,9 +6,9 @@ topic-legacy: queries
 type: Tutorial
 description: 本文档概述了在Adobe Experience Platform查询服务中编写查询时要了解的重要详细信息。
 exl-id: a7076c31-8f7c-455e-9083-cbbb029c93bb
-source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
+source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
 workflow-type: tm+mt
-source-wordcount: '1048'
+source-wordcount: '1047'
 ht-degree: 3%
 
 ---
@@ -206,7 +206,7 @@ LIMIT 10
 
 ### 标准表视图
 
-的 `\d` 命令显示用于列表的标准PostgreSQL视图。 此命令的输出示例如下所示：
+的 `\d` 命令显示标准 [!DNL PostgreSQL] 查看列表。 此命令的输出示例如下所示：
 
 ```sql
              List of relations

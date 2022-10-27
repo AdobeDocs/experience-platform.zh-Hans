@@ -5,9 +5,9 @@ title: Experience PlatformUI概述
 topic-legacy: ui guide
 description: Adobe Experience Platform
 exl-id: 47f9a3fb-731d-4ade-8069-faaa18f224dc
-source-git-commit: 769e8e6e5d159254d34ad1d3e5e468c3b0bca10b
+source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
 workflow-type: tm+mt
-source-wordcount: '1812'
+source-wordcount: '1811'
 ht-degree: 1%
 
 ---
@@ -154,7 +154,7 @@ Platform UI中的顶部导航栏会显示您当前已登录的IMS组织，并提
 
 的 **[!UICONTROL 数据集]** 区域，以创建和管理数据集。 有关数据集的更多信息，请参阅 [datasets用户指南](../catalog/datasets/user-guide.md).
 
-的 **[!UICONTROL 查询]** 部分允许您创建和管理查询、记录由Adobe Experience Platform查询服务发出的SQL查询，以及查看PostgreSQL凭据。 有关查询的更多信息，请参阅 [查询服务用户指南](../query-service/ui/overview.md).
+的 **[!UICONTROL 查询]** 部分允许您创建和管理查询、记录由Adobe Experience Platform查询服务发出的SQL查询，以及查看 [!DNL PostgreSQL] 凭据。 有关查询的更多信息，请参阅 [查询服务用户指南](../query-service/ui/overview.md).
 
 的 **[!UICONTROL 监控]** 部分，可让您监控批量摄取和流式摄取。 有关监控的更多信息，请参阅 [监控数据摄取用户指南](../ingestion/quality/monitor-data-ingestion.md).
 

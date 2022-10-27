@@ -5,9 +5,9 @@ title: 查询服务疑难解答指南
 topic-legacy: troubleshooting
 description: 本文档包含与查询服务相关的常见问题和解答。 主题包括、导出数据、第三方工具和PSQL错误。
 exl-id: 14cdff7a-40dd-4103-9a92-3f29fa4c0809
-source-git-commit: 722d7144639d7280ef85c9bfc285e616e7d7fcce
+source-git-commit: 08272f72c71f775bcd0cd7fffcd2e4da90af9ccb
 workflow-type: tm+mt
-source-wordcount: '3755'
+source-wordcount: '3781'
 ht-degree: 1%
 
 ---
@@ -86,15 +86,15 @@ SELECT * FROM customers LIMIT 0;
 - 登录Experience Platform后，选择 **[!UICONTROL 数据集]** 在UI的左侧导航中导航到 [!UICONTROL 数据集] 功能板。
 - 数据集 [!UICONTROL 浏览] 选项卡。 您可以使用搜索栏优化可用选项。 从显示的列表中选择一个数据集。
 
-![在Platform UI中突出显示的数据集。](./images/troubleshooting/dataset-selection.png)
+![Platform UI中的“数据集”功能板，其中突出显示了搜索栏和数据集。](./images/troubleshooting/dataset-selection.png)
 
-- 的 [!UICONTROL 数据集活动] 屏幕。 选择 [!UICONTROL 预览数据集] 打开XDM架构对话框以及所选数据集中扁平化数据的表格视图。 有关更多详细信息，请参阅 [预览数据集文档](../catalog/datasets/user-guide.md#preview-a-dataset)
+- 的 [!UICONTROL 数据集活动] 屏幕。 选择 **[!UICONTROL 预览数据集]** 打开XDM架构对话框以及所选数据集中扁平化数据的表格视图。 有关更多详细信息，请参阅 [预览数据集文档](../catalog/datasets/user-guide.md#preview-a-dataset)
 
-![扁平化数据的XDM架构和表格视图。](./images/troubleshooting/dataset-preview.png)
+![数据集功能板的“数据集活动”选项卡中突出显示了“预览”数据集。](./images/troubleshooting/dataset-preview.png)
 
 - 从架构中选择任意字段，以在扁平列中显示其内容。 列的名称显示在页面右侧其内容上方。 您应复制此名称以用于查询此数据集。
 
-![在UI中突出显示的嵌套数据集的列名称。](./images/troubleshooting/column-name.png)
+![扁平化数据的XDM架构和表格视图。 嵌套数据集的列名称在UI中突出显示。](./images/troubleshooting/column-name.png)
 
 有关 [如何使用嵌套数据结构](./best-practices/nested-data-structures.md) 使用查询编辑器或第三方客户端。
 +++
@@ -119,12 +119,12 @@ SELECT * FROM customers LIMIT 0;
 - 导航到 [https://www.adobe.com/](https://www.adobe.com/cn/) 在Web浏览器中。
 - 在顶部导航栏的右侧，选择 **[!UICONTROL 登录]**.
 
-![高亮显示登录的Adobe网站。](./images/troubleshooting/adobe-sign-in.png)
+![突出显示了登录的Adobe网站。](./images/troubleshooting/adobe-sign-in.png)
 
 - 使用您在Adobe ID许可证中注册的Adobe和密码。
 - 选择 **[!UICONTROL 帮助和支持]** 中。
 
-![顶部导航栏下拉菜单，其中突出显示了帮助和支持。](./images/troubleshooting/help-and-support.png)
+![顶部导航栏下拉菜单中突出显示了“帮助与支持”、“企业支持”和“联系我们”。](./images/troubleshooting/help-and-support.png)
 
 此时会显示包含 [!UICONTROL 帮助和支持] 中。 选择 **[!UICONTROL 联系我们]** 要打开Adobe客户关怀虚拟助理，请选择 **[!UICONTROL 企业支持]** 为大型组织提供专门帮助。
 +++

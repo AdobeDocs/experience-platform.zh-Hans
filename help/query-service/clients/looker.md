@@ -5,9 +5,9 @@ title: 将Looker连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍如何将Looker与Adobe Experience Platform查询服务连接。
 exl-id: 806e9077-533a-4546-b5ca-8124751957f5
-source-git-commit: ad3e1b0de6dd3b82cc82f0dc3d0f36b12cd3899e
+source-git-commit: 75e97efcb68439f1b837af93b62c96f43e5d7a31
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '313'
 ht-degree: 0%
 
 ---
@@ -22,15 +22,15 @@ ht-degree: 0%
 
 登录后 [!DNL Looker]，选择 **[!DNL Admin]**，后跟 **[!DNL Connections]**.
 
-![](../images/clients/looker/click-admin-connections.png)
+![的 [!DNL Looker] 从“管理员”下拉菜单中突出显示了“连接”的功能板。](../images/clients/looker/click-admin-connections.png)
 
 在此页面上，选择 **[!DNL New Connection]**.
 
-![](../images/clients/looker/click-new-connection.png)
+![“Connections workspace with New Connection（新建连接）”工作区突出显示。](../images/clients/looker/click-new-connection.png)
 
 从此处，您可以填写连接设置的详细信息。
 
-![](../images/clients/looker/new-connection.png)
+![新连接的连接设置页面。](../images/clients/looker/new-connection.png)
 
 - **[!DNL Name]:** 连接的名称。
 - **[!DNL Dialect]:** 用于SQL数据库的方言。 [!DNL Query Service] 使用 **[!DNL PostgreSQL]**.
@@ -47,7 +47,7 @@ ht-degree: 0%
 
 输入连接详细信息后，选择 **[!DNL Test These Settings]** 以确保凭据正常工作。 如果有，则下方将显示一条消息，指示您可以连接。 如果您的连接确实成功，请选择 **[!DNL Add Connection]** 创建连接。
 
-![](../images/clients/looker/click-test-connection.png)
+![测试新连接的连接设置页面突出显示了这些设置。](../images/clients/looker/click-test-connection.png)
 
 ## 后续步骤
 

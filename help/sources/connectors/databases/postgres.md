@@ -5,9 +5,9 @@ title: PostgreSQL源连接器概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将PostgreSQL连接到Adobe Experience Platform。
 exl-id: 27b891c5-5fc5-4539-8f98-e3a53e2eefe3
-source-git-commit: fa861e9740e05b4fcc4e8039bb288301d42b8357
+source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
 workflow-type: tm+mt
-source-wordcount: '227'
+source-wordcount: '225'
 ht-degree: 0%
 
 ---
@@ -26,11 +26,11 @@ Adobe Experience Platform允许从外部源摄取数据，同时让您能够使�
 
 ## 连接 [!DNL PostgreSQL] to [!DNL Platform] 使用API
 
-- [使用流服务API创建PostgreSQL基连接](../../tutorials/api/create/databases/postgres.md)
+- [创建 [!DNL PostgreSQL] 使用流服务API的基本连接](../../tutorials/api/create/databases/postgres.md)
 - [使用流量服务API浏览数据表](../../tutorials/api/explore/tabular.md)
 - [使用流服务API为数据库源创建数据流](../../tutorials/api/collect/database-nosql.md)
 
 ## 连接 [!DNL PostgreSQL] to [!DNL Platform] 使用UI
 
-- [在UI中创建PostgreSQL源连接](../../tutorials/ui/create/databases/postgres.md)
+- [创建 [!DNL PostgreSQL] UI中的源连接](../../tutorials/ui/create/databases/postgres.md)
 - [在UI中为数据库源连接创建数据流](../../tutorials/ui/dataflow/databases.md)

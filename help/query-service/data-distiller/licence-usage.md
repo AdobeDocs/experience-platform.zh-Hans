@@ -1,7 +1,7 @@
 ---
 title: 监控批量查询许可证使用情况
 description: Adobe Experience Platform UI提供了一个功能板，您可以通过该功能板查看有关贵组织的Data Distiller许可证使用情况的重要信息。
-source-git-commit: 74175e5e2ce31427ef6ea8d93055d6ca3a8406f4
+source-git-commit: 0a44d15f9dfaf5100fa44e2e6442b1be23ee0ab0
 workflow-type: tm+mt
 source-wordcount: '318'
 ht-degree: 0%
@@ -34,4 +34,4 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 >
 >的 [!UICONTROL 计算小时数] 小组件仅适用于拥有Data Distiller批量查询许可证的客户。
 
-![使用“计算时间”小组件的许可证使用仪表板突出显示。](../images/data-distiller/compute-hours.png)
+![突出显示了“计算时间”小组件的许可证使用功能板。](../images/data-distiller/compute-hours.png)

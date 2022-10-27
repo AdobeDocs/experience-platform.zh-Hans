@@ -5,16 +5,16 @@ title: 将 Tableau 连接到查询服务
 topic-legacy: connect
 description: 本文档将介绍如何将Tableau与Adobe Experience Platform查询服务连接。
 exl-id: f380aacd-5091-41bc-97ca-593e0b1670fd
-source-git-commit: 0c20b19c4c34b29c46964d5d87a8646c61055b06
+source-git-commit: 9c450f340706040593dfea5292702c4b00dd9852
 workflow-type: tm+mt
-source-wordcount: '278'
+source-wordcount: '302'
 ht-degree: 2%
 
 ---
 
 # 连接 [!DNL Tableau] 查询服务
 
-本文档介绍将Tableau与Adobe Experience Platform连接的步骤 [!DNL Query Service].
+本文档介绍了连接的步骤 [!DNL Tableau] 与Adobe Experience Platform [!DNL Query Service].
 
 >[!NOTE]
 >
@@ -22,7 +22,7 @@ ht-degree: 2%
 
 连接 [!DNL Tableau] to [!DNL Query Service]，打开 [!DNL Tableau]和 **[!DNL To a Server]** 部分选择 **[!DNL More]** 后跟 **[!DNL PostgreSQL]**
 
-![](../images/clients/tableau/open-connection.png)
+![的 [!DNL Tableau] 功能板(包含更多和 [!DNL PostgreSQL] 突出显示。](../images/clients/tableau/open-connection.png)
 
 您现在可以输入值以连接Adobe Experience Platform。 有关查找数据库名称、主机、端口和登录凭据的详细信息，请阅读 [凭据指南](../ui/credentials.md). 要查找您的凭据，请登录到 [!DNL Platform]，然后选择 **[!UICONTROL 查询]**，后跟 **[!UICONTROL 凭据]**.
 
@@ -32,7 +32,7 @@ ht-degree: 2%
 >
 >请参阅 [[!DNL Query Service] SSL文档](./ssl-modes.md) 了解对与Adobe Experience Platform查询服务的第三方连接的SSL支持，以及如何使用 `verify-full` SSL模式。
 
-![](../images/clients/tableau/sign-in.png)
+![的 [!DNL PostgreSQL] 连接对话框，其中包含已完成的连接详细信息。](../images/clients/tableau/sign-in.png)
 
 >[!IMPORTANT]
 >
@@ -42,7 +42,7 @@ ht-degree: 2%
 
 您现在已连接到Adobe Experience Platform，并在侧面显示表的列表。
 
-![](../images/clients/tableau/connected.png)
+![新 [!DNL Tableau] 功能板，其左侧面板中突出显示了查询服务表。](../images/clients/tableau/connected.png)
 
 ## 后续步骤
 
