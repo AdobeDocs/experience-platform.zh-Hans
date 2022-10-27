@@ -5,9 +5,9 @@ title: 在UI中定义枚举字段和建议值
 description: 了解如何在Experience Platform用户界面中为字符串字段定义枚举和建议值。
 topic-legacy: user guide
 exl-id: 67ec5382-31de-4f8d-9618-e8919bb5a472
-source-git-commit: 1c1797a01a0a4e2cd355399d3f913cb81adf9006
+source-git-commit: 89ada47cb6e0b204d8f2f19e7e9b6f31bf347964
 workflow-type: tm+mt
-source-wordcount: '1217'
+source-wordcount: '1257'
 ht-degree: 0%
 
 ---
@@ -28,6 +28,10 @@ ht-degree: 0%
 When [定义新字段](./overview.md#define) 在Adobe Experience Platform用户界面中，并将类型设置为 [!UICONTROL 字符串]，则您可以选择定义 [枚举](#enum) 或 [建议值](#suggested-values) 对于该字段。
 
 ![该图像显示了在UI中为字符串字段启用的枚举和建议值选项](../../images/ui/fields/enum/enum-options-selected.png)
+
+本文档介绍如何在 [!UICONTROL 模式] UI工作区。 有关枚举和建议值（包括如何在UI中配置它们及其下游效果）的快速概述，请观看以下视频：
+
+>[!VIDEO](https://video.tv.adobe.com/v/3409501/?quality=12&learn=on)
 
 ## 定义枚举 {#enum}
 
