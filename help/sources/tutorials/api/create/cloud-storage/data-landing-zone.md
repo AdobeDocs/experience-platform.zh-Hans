@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 了解如何使用流量服务API将Adobe Experience Platform连接到数据登陆区。
 exl-id: bdb60ed3-7c63-4a69-975a-c6f1508f319e
-source-git-commit: b98afad74ef45cf3fabb9fa1ced283b2c768cef8
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
-source-wordcount: '1222'
+source-wordcount: '1224'
 ht-degree: 4%
 
 ---
@@ -72,7 +72,7 @@ curl -X GET \
 | 属性 | 描述 |
 | --- | --- |
 | `containerName` | 您检索到的登陆区域的名称。 |
-| `containerTTL` | 适用于登陆区域内数据的生存时间设置。 给定登陆区内的任何内容将在七天后被删除。 |
+| `containerTTL` | 登陆区域内对数据应用的过期时间（以天为单位）。 给定登陆区内的任何内容将在七天后被删除。 |
 
 ## 检索 [!DNL Data Landing Zone] 凭据
 

@@ -5,7 +5,7 @@ title: 数据登陆区源
 topic-legacy: overview
 description: 了解如何将数据登陆区连接到Adobe Experience Platform
 exl-id: bdc10095-7de4-4183-bfad-a7b5c89197e3
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
 source-wordcount: '817'
 ht-degree: 0%

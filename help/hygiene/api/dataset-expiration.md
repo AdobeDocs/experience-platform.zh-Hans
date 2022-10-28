@@ -2,7 +2,7 @@
 title: 数据集过期API端点
 description: 数据卫生API中的/ttl端点允许您以编程方式计划Adobe Experience Platform中的数据集过期时间。
 exl-id: fbabc2df-a79e-488c-b06b-cd72d6b9743b
-source-git-commit: 83149c4e6e8ea483133da4766c37886b8ebd7316
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
 source-wordcount: '1451'
 ht-degree: 4%
@@ -178,7 +178,7 @@ curl -X GET \
 ```json
 {
   "63212313c308d51b997858ba": {
-    "name": "TTL Test Dataset",
+    "name": "Test Dataset",
     "description": "A piecrust promise, made to be broken",
     "imsOrg": "0FCC747E56F59C747F000101@AdobeOrg",
     "sandboxId": "8dc51b90-d0f9-11e9-b164-ed6a398c8b35",

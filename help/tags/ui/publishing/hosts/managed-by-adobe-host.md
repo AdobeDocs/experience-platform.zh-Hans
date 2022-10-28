@@ -2,10 +2,10 @@
 title: Adobe管理的主机概述
 description: 了解用于在Adobe Experience Platform中部署标记库内部版本的默认托管选项。
 exl-id: 9042c313-b0d3-4f6e-963d-0051d760fd16
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
 source-wordcount: '1173'
-ht-degree: 64%
+ht-degree: 60%
 
 ---
 
@@ -54,7 +54,7 @@ CDN的主要用途是智能地将内容分发到地理位置更接近最终用�
 >
 >对于 Adobe-managed 主机而言，发布到任何新环境的首个库，最多可能需要五分钟即可传送到遍布全球的 CDN。
 
-当边缘节点收到对特定文件（如库内部版本）的请求时，该节点会首先检查文件上的生存时间(TTL)值。 如果 TTL 未过期，边缘节点则会提供该文件的缓存版本。如果 TTL 已过期，边缘节点则会请求最近的原点提供新副本，然后根据新的 TTL 来缓存刷新后的副本。
+当边缘节点收到对特定文件（例如库内部版本）的请求时，该节点会首先检查文件的过期时间。 如果时间未过期，边缘节点将提供缓存的版本。 如果时间已过期，则边缘节点会从最近的源请求新副本，提供刷新后的副本，然后使用新的过期时间缓存刷新后的副本。
 
 >[!NOTE]
 >
@@ -76,7 +76,7 @@ CDN的主要用途是智能地将内容分发到地理位置更接近最终用�
 
 除此之外，还可以通过使用 `cache-control` HTTP 标头，在浏览器上缓存库版本。使用 Adobe-managed 主机时，由于无法控制 API 响应中返回的标头，因此采用了 Adobe 默认缓存设置。换句话说，您无法对 Adobe-managed 主机使用自定义标头。如果要自定义 `cache-control` 标头，则需要考虑选用[自托管](self-hosting-libraries.md)的方法来代替。
 
-浏览器缓存的库版本的生存时间(TTL)(由 `cache-control` 标头)会因您所使用的标记环境而异：
+浏览器缓存的库版本的过期时间(由 `cache-control` 标头)会因您所使用的标记环境而异：
 
 | 环境 | `cache-control` 值 |
 | --- | --- |

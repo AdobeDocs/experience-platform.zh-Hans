@@ -5,14 +5,14 @@ title: Segmentation Service概述
 topic-legacy: overview
 description: 了解Adobe Experience Platform Segmentation Service及其在平台生态系统中的作用。
 exl-id: 2c18a806-88ed-4659-bdfd-2377f5a09a1a
-source-git-commit: 52197a6c009fb5b0b6037a4fef3c98ad7c327e2e
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
-source-wordcount: '1632'
+source-wordcount: '1635'
 ht-degree: 0%
 
 ---
 
-# [!DNL Segmentation Service]概述
+# [!DNL Segmentation Service] 概述
 
 Adobe Experience Platform [!DNL Segmentation Service] 提供了用户界面和RESTful API，允许您从中构建区段并生成受众 [!DNL Real-time Customer Profile] 数据。 这些区段在上集中配置和维护 [!DNL Platform]，并且任何Adobe解决方案都可随时访问。
 
@@ -44,7 +44,7 @@ Adobe Experience Platform [!DNL Segmentation Service] 提供了用户界面和RE
 >
 >如果架构扩展，则所有将来的上载都必须相应地更新新添加的字段。 有关自定义的更多信息 [!DNL Experience Data Model] (XDM)，请访问 [模式编辑器教程](../xdm/tutorials/create-schema-ui.md).
 >
->此外，如果数据集上已启用生存时间(TTL)，则这可能会影响已创建区段的成员资格。 有关TTL以及它如何影响分段的更多信息，请阅读 [配置文件服务TTL指南](../profile/apply-ttl.md).
+>此外，如果数据集上启用了体验事件过期值，则可能会影响已创建区段的成员资格。 请阅读 [体验事件过期](../profile/event-expirations.md) 以详细了解此功能如何影响分段。
 
 ## 评估区段 {#evaluate-segments}
 

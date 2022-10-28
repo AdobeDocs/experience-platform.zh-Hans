@@ -5,10 +5,10 @@ title: 数据建模的最佳实践
 topic-legacy: overview
 description: 本文档介绍了Experience Data Model(XDM)架构，以及构建架构以在Adobe Experience Platform中使用的构建基块、原则和最佳实践。
 exl-id: 2455a04e-d589-49b2-a3cb-abb5c0b4e42f
-source-git-commit: c5ab8c12c4c5bd14d3504d60c654105ad36effe6
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
-source-wordcount: '2698'
-ht-degree: 1%
+source-wordcount: '2699'
+ht-degree: 2%
 
 ---
 
@@ -175,7 +175,7 @@ ht-degree: 1%
 **缺点**
 
 * 对于原始预期用例，分段变得更加复杂（确定客户最近订阅的状态）。 该区段现在需要其他逻辑来标记客户的最后一个订阅事件，以检查其状态。
-* 事件自动过期和从用户档案存储中清除的风险较高。 请参阅 [配置文件TTL](../../profile/apply-ttl.md) 以了解更多信息。
+* 事件自动过期和从用户档案存储中清除的风险较高。 请参阅 [体验事件过期](../../profile/event-expirations.md) 以了解更多信息。
 
 ## 根据分类的实体创建架构
 

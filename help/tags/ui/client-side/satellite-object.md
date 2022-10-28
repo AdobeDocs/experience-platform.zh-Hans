@@ -2,7 +2,7 @@
 title: 卫星对象引用
 description: 了解客户端_satellite对象以及您可以在标记中使用该对象执行的各种功能。
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
 source-wordcount: '1290'
 ht-degree: 42%
@@ -156,7 +156,7 @@ _satellite.cookie.set(name: string, value: string[, attributes: Object])
 
 >[!NOTE]
 >
->在旧 [`setCookie`](#setCookie) 设置cookie的方法中，此函数调用的第三个（可选）参数是一个整数，表示cookie的生存时间(TTL)（以天为单位）。 在此新方法中，“属性”对象被接受为第三个参数。 要使用新方法为Cookie设置TTL，您必须提供 `expires` 属性，并将其设置为所需的值。 以下示例中演示了这一点。
+>在旧 [`setCookie`](#setCookie) 设置cookie的方法中，此函数调用的第三个（可选）参数是一个整数，用于指示cookie的过期时间（以天为单位）。 在此新方法中，“属性”对象被接受为第三个参数。 要使用新方法设置Cookie的过期时间，您必须提供 `expires` 属性，并将其设置为所需的值。 以下示例中演示了这一点。
 
 **示例**
 

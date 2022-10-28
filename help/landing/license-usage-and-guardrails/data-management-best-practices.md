@@ -3,9 +3,9 @@ keywords: Experience Platform；主页；热门主题；数据管理；许可证
 title: 数据管理许可证授权最佳实践
 description: 了解可用来借助 Adobe Experience Platform 更好地管理您的许可证权利的最佳实践和工具。
 exl-id: f23bea28-ebd2-4ed4-aeb1-f896d30d07c2
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: 9a8e247784dc51d7dc667b7467042399df700b3c
 workflow-type: tm+mt
-source-wordcount: '2529'
+source-wordcount: '2134'
 ht-degree: 2%
 
 ---
@@ -88,12 +88,12 @@ Adobe Experience Platform UI提供了一个功能板，您可以通过该功能�
 
 ### 要保留哪些数据？
 
-您可以应用数据摄取过滤器和到期规则（也称为存留期“TTL”），以删除对于您的用例已过时的数据。 通常，行为数据（如Analytics数据）消耗的存储比记录数据（如CRM数据）消耗的存储要多得多。 例如，与记录数据相比，许多Platform用户仅使用行为数据填充的用户档案多达90%。 因此，管理行为数据对于确保许可证授权内的合规性至关重要。
+您可以应用数据摄取过滤器和到期规则，以删除对于您的用例已过时的数据。 通常，行为数据（如Analytics数据）消耗的存储比记录数据（如CRM数据）消耗的存储要多得多。 例如，与记录数据相比，许多Platform用户仅使用行为数据填充的用户档案多达90%。 因此，管理行为数据对于确保许可证授权内的合规性至关重要。
 
 您可以利用许多工具来保留在许可证使用授权范围内：
 
 * [摄取过滤器](#ingestion-filters)
-* [配置文件服务TTL](#profile-service)
+* [配置文件存储](#profile-service)
 
 ### 摄取过滤器 {#ingestion-filters}
 
@@ -109,9 +109,7 @@ Adobe Experience Platform UI提供了一个功能板，您可以通过该功能�
 
 {style=&quot;table-layout:auto&quot;}
 
-### 配置文件服务 {#profile-service}
-
-配置文件服务TTL（存留期）功能允许您对配置文件存储中的数据应用TTL。 这样，系统就可以自动删除随着时间的推移而价值已经缩水的数据。
+### 配置文件存储 {#profile-service}
 
 配置文件存储由以下组件组成：
 
@@ -124,53 +122,20 @@ Adobe Experience Platform UI提供了一个功能板，您可以通过该功能�
 
 {style=&quot;table-layout:auto&quot;}
 
+
+
 #### 配置文件存储组合报表
 
-有许多报表可帮助您了解用户档案存储的构成。 这些报表可帮助您就如何以及在何处设置配置文件TTL做出明智决策，以更好地优化许可证使用：
+有许多报表可帮助您了解用户档案存储的构成。 这些报表可帮助您针对如何以及在何处设置体验事件过期做出明智的决策，从而更好地优化许可证使用：
 
-* **数据集重叠报表API**:显示对可寻址受众贡献最大的数据集。 您可以使用此报表确定 [!DNL ExperienceEvent] 数据集来设置TTL。 请参阅 [生成数据集重叠报表](../../profile/tutorials/dataset-overlap-report.md) 以了解更多信息。
+* **数据集重叠报表API**:显示对可寻址受众贡献最大的数据集。 您可以使用此报表确定 [!DNL ExperienceEvent] 数据集来设置过期时间。 请参阅 [生成数据集重叠报表](../../profile/tutorials/dataset-overlap-report.md) 以了解更多信息。
 * **身份重叠报表API**:显示对可寻址受众贡献最大的身份命名空间。 请参阅 [生成身份重叠报表](../../profile/api/preview-sample-status.md#generate-the-identity-namespace-overlap-report) 以了解更多信息。
-<!-- * **Unknown Profiles Report API**: Exposes the impact of applying pseudonymous TTL for different time thresholds. You can use this report to identify which pseudonymous TTL threshold to apply. See the tutorial on [generating the unknown profiles report](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) for more information.
+<!-- * **Unknown Profiles Report API**: Exposes the impact of applying pseudonymous expirations for different time thresholds. You can use this report to identify which pseudonymous expirations threshold to apply. See the tutorial on [generating the unknown profiles report](../../profile/api/preview-sample-status.md#generate-the-unknown-profiles-report) for more information.
 -->
 
-#### [!DNL ExperienceEvent] 数据集TTL {#dataset-ttl}
+#### 体验事件过期 {#event-expirations}
 
-您可以将TTL应用于启用了配置文件的数据集，以从配置文件存储区中删除对用例不再有价值的行为数据。 将TTL应用于启用了配置文件的数据集后，Platform会通过两步流程自动删除不再需要的数据：
-
-* 所有新数据在获取时将应用TTL过期值；
-* 所有现有数据都将在一次性回填系统作业中应用TTL过期值。
-
-您可以预期每个事件的TTL值都来自事件时间戳。 运行系统作业时，所有早于TTL过期值的事件都会立即丢弃。 所有其他事件在接近事件时间戳中指定的TTL过期值时都会被丢弃。
-
-请参阅以下示例，以帮助您了解 [!DNL ExperienceEvent] 数据集TTL。
-
-如果在5月15日应用TTL值30天，则：
-
-* 所有新事件的TTL在输入时将为30天；
-* 时间戳早于4月15日的所有现有事件都会被系统作业立即删除。;
-* 在4月15日之后具有时间戳的事件将到期其事件时间戳+ TTL天。 因此，一个具有4月18日时间戳的事件将在5月15日后的三天内停止运行。
-
->[!IMPORTANT]
->
->应用TTL后，任何早于所选TTL天数的数据都将为 **永久性** 已删除，无法还原。
-
-在应用TTL之前，必须确保在TTL边界内保留任何区段的回顾窗口。 否则，在应用TTL后，区段结果可能会不正确。 例如，如果对Adobe Analytics数据应用TTL 30天，对存储内事务数据应用TTL 365天，则以下区段将创建错误结果：
-
-* 最近60天内查看过产品页面，然后进行店内购买；
-* 添加到购物车，然后在过去60天内没有购买。
-
-相反，以下内容仍会产生正确的结果：
-
-* 查看了产品页面之前的14天内查看过的产品页面，之后又进行了店内购买；
-* 最近30天内在线查看了特定帮助页面；
-* 最近120天内离线购买了产品；
-* 添加到购物车，然后在过去14天内购买。
-
->[!TIP]
->
->为方便起见，您可以为所有数据集保留相同的TTL，这样您就无需在分段逻辑中担心TTL对数据集的影响。
-
-有关将TTL应用到用户档案数据的更多信息，请参阅 [配置文件服务TTL](../../profile/apply-ttl.md).
+此功能允许您自动从启用了用户档案的数据集中删除行为数据，这些数据对您的用例不再有价值。 请参阅 [体验事件过期](../../profile/event-expirations.md) 有关在为数据集启用此流程后该流程如何工作的详细信息。
 
 ## 许可证使用合规性最佳实践摘要 {#best-practices}
 
@@ -179,7 +144,7 @@ Adobe Experience Platform UI提供了一个功能板，您可以通过该功能�
 * 使用 [许可证使用仪表板](../../dashboards/guides/license-usage.md) 以跟踪和监控客户使用趋势。 这样，您就可以提前处理可能发生的任何潜在超量情况。
 * 配置 [摄取过滤器](#ingestion-filters) 通过确定分段和个性化用例所需的事件来实现。 这样，您就只能发送用例所需的重要事件。
 * 确保您仅 [为配置文件启用数据集](#ingestion-filters) 分段和个性化用例所需的区段。
-* 配置 [[!DNL ExperienceEvent] 数据集TTL](#dataset-ttl) 用于高频数据，如web数据。
+* 配置 [体验事件过期](#event-expirations) （例如Web数据）。
 * 定期检查 [用户档案构成报表](#profile-store-composition-reports) 以了解用户档案库的构成。 这样，您就可以了解对许可证使用情况贡献最大的数据源。
 
 ## 功能摘要和可用性 {#feature-summary}
@@ -191,7 +156,7 @@ Adobe Experience Platform UI提供了一个功能板，您可以通过该功能�
 | 功能 | 描述 |
 | --- | --- |
 | [启用/禁用配置文件的数据集](../../catalog/datasets/user-guide.md) | 在配置文件服务中启用或禁用数据集摄取 |
-| [!DNL ExperienceEvent] 数据集TTL | 对配置文件存储中的行为数据集应用TTL到期。 请联系您的Adobe支持代表。 |
+| [体验事件过期](../../profile/event-expirations.md) | 对摄取到启用了用户档案的数据集中的所有事件应用过期时间。 请联系您的Adobe支持代表以启用此功能。 |
 | [Adobe Analytics数据准备过滤器](../../sources/tutorials/ui/create/adobe-applications/analytics.md) | 应用 [!DNL Kafka] 从摄取中排除不必要数据的过滤器 |
 | [Adobe Audience Manager源连接器过滤器](../../sources/tutorials/ui/create/adobe-applications/audience-manager.md) | 应用Audience Manager源连接过滤器，从摄取中排除不必要的数据 |
 | [Alloy SDK数据过滤器](https://experienceleague.adobe.com/docs/experience-platform/edge/fundamentals/configuring-the-sdk.html?lang=en#fundamentals) | 应用Alloy过滤器以从摄取中排除不必要的数据 |

@@ -3,9 +3,9 @@ keywords: Experience Platform；配置文件；实时客户配置文件；故障
 title: 预览示例状态（配置文件预览）API端点
 description: 实时客户配置文件API的预览示例状态端点允许您预览配置文件数据的最新成功示例、按数据集和身份列出配置文件分发，以及生成显示数据集重叠、身份重叠和未拼合配置文件的报表。
 exl-id: a90a601e-629e-417b-ac27-3d69379bb274
-source-git-commit: 8a17648757b342bd8026382918ca41c469210b51
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
-source-wordcount: '2875'
+source-wordcount: '2874'
 ht-degree: 1%
 
 ---
@@ -303,7 +303,7 @@ curl -X GET \
 
 ## 生成数据集重叠报表
 
-数据集重叠报表通过公开对可寻址受众（合并的配置文件）贡献最大的数据集，可以显示贵组织的配置文件存储的构成。 除了提供对数据的分析之外，此报表还可以帮助您采取措施来优化许可证使用情况，例如为某些数据集设置TTL。
+数据集重叠报表通过公开对可寻址受众（合并的配置文件）贡献最大的数据集，可以显示贵组织的配置文件存储的构成。 除了提供对数据的分析之外，此报表还可以帮助您采取措施来优化许可证使用情况，例如为某些数据集设置过期日期。
 
 您可以通过向 `/previewsamplestatus/report/dataset/overlap` 端点。
 

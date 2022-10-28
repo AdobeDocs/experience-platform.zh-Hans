@@ -4,9 +4,9 @@ description: 了解Adobe Experience Platform Edge Network如何管理客户端�
 seo-description: Learn how the Adobe Experience Platform Edge Network  manages client state
 keywords: 客户端；状态；管理；边缘；网络；网关；API
 exl-id: 798ecc52-1af1-4480-a2a3-3198a83538f8
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
 workflow-type: tm+mt
-source-wordcount: '848'
+source-wordcount: '850'
 ht-degree: 2%
 
 ---
@@ -70,7 +70,7 @@ ht-degree: 2%
 | --- | --- | --- |
 | `key` | 字符串 | **必需**. 条目名称。 |
 | `value` | 字符串 | *可选*. 条目值。 |
-| `maxAge` | 整数 | *可选* 登录生存时间(TTL)，以秒为单位。 缺少时，应仅存储当前会话的条目。 |
+| `maxAge` | 整数 | *可选* 条目过期的时间（以秒为单位）。 缺少时，应仅存储当前会话的条目。 |
 | `attrs` | `Map<String, String>` | *可选*. 条目属性的可选列表。 对于具有安全引用器HTTP标头的所有安全连接， `SameSite` 属性设置为 `None`. |
 
 
