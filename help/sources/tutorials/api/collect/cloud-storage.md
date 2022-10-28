@@ -6,9 +6,9 @@ topic-legacy: overview
 type: Tutorial
 description: 本教程介绍了从第三方云存储检索数据，以及使用源连接器和API将数据导入平台的步骤。
 exl-id: 95373c25-24f6-4905-ae6c-5000bf493e6f
-source-git-commit: 1f492fd48de304c70fdd8beb477b8a22369b853a
+source-git-commit: e4853c61848bec20eb8a6902365b97c3a9d0b3b3
 workflow-type: tm+mt
-source-wordcount: '1692'
+source-wordcount: '1736'
 ht-degree: 1%
 
 ---
@@ -146,6 +146,47 @@ curl -X POST \
       "params": {
           "path": "/acme/summerCampaign/*premium*.csv",
           "type": "folder"
+      },
+      "connectionSpec": {
+          "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
+          "version": "1.0"
+      }
+  }'
+```
+
+### 配置源连接以递归引入数据
+
+创建源连接时，您可以使用 `recursive` 参数从深度嵌套的文件夹中摄取数据。
+
+**API格式**
+
+```http
+POST /sourceConnections
+```
+
+**请求**
+
+在以下示例中， `recursive: true` 参数通知 [!DNL Flow Service] 以在摄取过程中递归读取所有子文件夹。
+
+```shell
+curl -X POST \
+  'https://platform.adobe.io/data/foundation/flowservice/sourceConnections' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-api-key: {API_KEY}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}' \
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Cloud Storage source connection",
+      "description: "Source connection for a cloud storage source with recursive ingestion",
+      "baseConnectionId": "1f164d1b-debe-4b39-b4a9-df767f7d6f7c",
+      "data": {
+          "format": "delimited"
+      },
+      "params": {
+          "path": "/acme/summerCampaign/customers/premium/buyers/recursive",
+          "type": "folder",
+          "recursive": true
       },
       "connectionSpec": {
           "id": "4c10e202-c428-4796-9208-5f1f5732b1cf",
