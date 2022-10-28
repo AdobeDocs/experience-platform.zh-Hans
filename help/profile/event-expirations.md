@@ -4,16 +4,16 @@ solution: Experience Platform
 title: 体验事件过期
 description: 本文档提供了有关为Adobe Experience Platform数据集中的各个体验事件配置过期时间的一般指导。
 exl-id: a91f2cd2-3a5d-42e6-81c3-0ec5bc644f5f
-source-git-commit: 85b428b3997d53cbf48e4f112e5c09c0f40f7ee1
+source-git-commit: faf9e72f77f04b20d2399749eaacdb9ebdf412dc
 workflow-type: tm+mt
-source-wordcount: '464'
+source-wordcount: '466'
 ht-degree: 0%
 
 ---
 
 # 体验事件过期
 
-在Adobe Experience Platform中，您可以为摄取到为 [实时客户资料](./home.md). 这样，您就可以自动从数据湖和配置文件存储区中删除对您的用例不再有效或有用的数据。
+在Adobe Experience Platform中，您可以为摄取到为 [实时客户资料](./home.md). 这样，您就可以自动从配置文件存储区中删除对您的用例不再有效或有用的数据。
 
 无法通过Platform UI或API配置体验事件过期。 您而是必须联系支持人员才能对所需数据集启用体验事件过期功能。
 
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 在启用了用户档案的数据集上启用体验事件过期后，Platform会通过两步流程自动应用每个捕获事件的过期值：
 
-1. 摄取到数据集的所有新数据在摄取时都会应用过期值。
+1. 摄取到数据集的所有新数据在摄取时都会根据事件时间戳应用到期值。
 1. 数据集中的所有现有数据都具有作为一次性回填系统作业的过期值，该过期值会逆向应用。 在数据集上放置过期值后，系统作业一旦运行，即会立即删除早于过期值的事件。 所有其他事件在事件时间戳中达到其过期值后即会被丢弃。
 
 >[!WARNING]
