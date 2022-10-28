@@ -3,15 +3,21 @@ keywords: Experience Platform；主页；热门主题；分段；分段；分段
 title: 受众API端点
 topic-legacy: developer guide
 description: Adobe Experience Platform Segmentation Service API中的受众端点允许您以编程方式管理贵组织的受众。
-source-git-commit: 2a0c1f55115c541962f7bd3b7b11d367da50ff3b
+exl-id: cb1a46e5-3294-4db2-ad46-c5e45f48df15
+hide: true
+hidefromtoc: true
+source-git-commit: f4ec5b82a14579de5bf228011d14a849898be9f5
 workflow-type: tm+mt
-source-wordcount: '1492'
-ht-degree: 3%
+source-wordcount: '1515'
+ht-degree: 4%
 
 ---
 
-
 # 受众端点
+
+>[!IMPORTANT]
+>
+>受众端点当前为测试版，并非所有用户都可用。 文档和功能可能会发生变化。
 
 受众是具有相似行为和/或特征的人员的集合。 这些人员集合可通过使用Adobe Experience Platform或从外部源生成。 您可以使用 `/audiences` 分段API中的端点，它允许您以编程方式检索、创建、更新和删除受众。
 

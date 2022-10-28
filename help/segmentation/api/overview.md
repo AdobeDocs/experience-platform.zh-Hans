@@ -4,10 +4,10 @@ title: Segmentation Service API指南
 topic-legacy: guide
 description: Segmentation Service API允许开发人员以编程方式管理Adobe Experience Platform中的分段操作。 参阅本指南，了解如何使用 API 执行关键操作。
 exl-id: cebecaf3-9746-4b0b-9c50-11789fba66c3
-source-git-commit: b48ead4255d50585cd315436ccb9727d86142d4c
+source-git-commit: 6133c3127aaf10243d5472540c29125155c99d7b
 workflow-type: tm+mt
-source-wordcount: '564'
-ht-degree: 2%
+source-wordcount: '497'
+ht-degree: 3%
 
 ---
 
@@ -19,11 +19,11 @@ ht-degree: 2%
 
 要查看所有可用的端点和CRUD操作，请参阅 [分段服务API参考](https://www.adobe.io/experience-platform-apis/references/segmentation/).
 
-## 受众
+<!-- ## Audiences
 
-受众是指具有相似行为和/或特征的人员的集合。 这些量度既可以使用Platform生成，也可以从外部源生成。 您可以使用 `/audiences` 用于检索所有受众、创建新受众、检索特定受众的详细信息、更新特定受众或删除特定受众的端点。
+Audiences are a collection of people who share similar behaviors and/or characteristics. These can be generated either by using Platform or from external sources. You can use the `/audiences` endpoint to retrieve all audiences, create a new audience, retrieve details of a specific audience, update a specific audience, or delete a specific audience.
 
-有关使用此端点的更多信息，请阅读 [audiences endpoint guide](./audiences.md).
+For more information on using this endpoint, please read the [audiences endpoint guide](./audiences.md). -->
 
 ## 导出作业
 
