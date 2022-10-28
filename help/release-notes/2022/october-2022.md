@@ -1,9 +1,9 @@
 ---
 title: Adobe Experience Platform发行说明2022年10月
 description: 2022年10月版Adobe Experience Platform发行说明。
-source-git-commit: 021a0833941f250475786bb8629542c50229b238
+source-git-commit: d6858ab1389a0b5cfadc9f79b20b80c1c36a114e
 workflow-type: tm+mt
-source-wordcount: '916'
+source-wordcount: '983'
 ht-degree: 5%
 
 ---
@@ -52,6 +52,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | ----------- | ----------- |
 | [[!DNL Line]](../../destinations/catalog/mobile-engagement/line.md) | Line是一个热门的通信平台，可连接人员、服务和信息，并且已经从聊天应用程序发展为娱乐、社交和日常活动的中心。 |
 | [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md) | Microsoft Dynamics 365是一个基于云的业务应用程序平台，它将企业资源规划(ERP)和客户关系管理(CRM)与生产力应用程序和AI工具结合在一起，从而实现端到端更顺畅、更受控制的操作、更好的增长潜力和降低成本。 |
+| [[!DNL (Beta) Adobe Commerce]](../../destinations/catalog/personalization/adobe-commerce.md) | 的 [!DNL (Beta) Adobe Commerce] 目标连接器允许您选择一个或多个要激活到您的Real-Time CDP区段 [!DNL Adobe Commerce] 帐户为购物者提供动态个性化体验。 在 [!DNL Adobe Commerce]，则可以选择这些Real-Time CDP区段以个性化购物车中的独特选件，如“购买2获取1免费”。 您还可以显示主页横幅并通过促销优惠修改产品定价，所有这些优惠均根据Adobe Real-Time CDP区段进行自定义。 |
 
 {style=&quot;table-layout:auto&quot;}
 
