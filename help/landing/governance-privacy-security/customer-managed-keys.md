@@ -1,26 +1,26 @@
 ---
 title: Adobe Experience Platform中的客户管理密钥
 description: 了解如何为存储在Adobe Experience Platform中的数据设置您自己的加密密钥。
-source-git-commit: 6fe0d72bcb3dbf1e1167f80724577ba3e0f741f4
+source-git-commit: b778d5c81512e538f08989952f8727d1d694f66c
 workflow-type: tm+mt
-source-wordcount: '1416'
+source-wordcount: '1501'
 ht-degree: 0%
 
 ---
 
 # Adobe Experience Platform中的客户管理密钥
 
-存储在Adobe Experience Platform上的所有数据都将使用系统级别密钥在静态时进行加密。 如果您使用的是基于平台构建的应用程序，则可以选择使用您自己的加密密钥，从而更好地控制数据安全。
+存储在Adobe Experience Platform上的数据在静态时使用系统级别密钥进行加密。 如果您使用的是基于平台构建的应用程序，则可以选择使用您自己的加密密钥，从而更好地控制数据安全。
 
 本文档介绍了在平台中启用客户管理的密钥(CMK)功能的过程。
 
 ## 流程摘要
 
-CMK包含在医疗保健盾和隐私和安全盾产品中，免受Adobe。 在贵组织购买其中一项服务后，您可以开始设置该功能的一次性流程。
+CMK包含在医疗保健盾和隐私和安全盾产品中，免受Adobe。 在贵组织为其中一项服务购买许可证后，您可以开始设置该功能的一次性流程。
 
 >[!WARNING]
 >
->设置CMK后，无法还原到系统管理的密钥。 您负责在 [!DNL Azure] 以防止丢失对数据的访问权限。
+>设置CMK后，无法还原到系统管理的密钥。 您负责安全管理您的密钥，并在 [!DNL Azure] 以防止丢失对数据的访问权限。
 
 具体过程如下：
 
@@ -29,7 +29,7 @@ CMK包含在医疗保健盾和隐私和安全盾产品中，免受Adobe。 在�
 1. [为CMK应用程序分配服务主体](#assign-to-role) 为密钥保管库设置适当的角色。
 1. 使用API调用 [将您的加密密钥ID发送到Adobe](#send-to-adobe).
 
-完成设置过程后，所有沙箱中载入到平台的所有数据都将使用 [!DNL Azure] 键设置，特定于 [[!DNL Cosmos DB]](https://docs.microsoft.com/en-us/azure/cosmos-db/) 和 [[!DNL Data Lake Storage]](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) 资源。 CMK利用 [!DNL Azure]&#39;s [公共预览程序](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/) 让这成为可能。
+完成设置过程后，所有沙箱中载入到平台的所有数据都将使用 [!DNL Azure] 键设置，特定于 [[!DNL Cosmos DB]](https://docs.microsoft.com/en-us/azure/cosmos-db/) 和 [[!DNL Data Lake Storage]](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) 资源。 要使用CMK，您将利用 [!DNL Microsoft Azure] 功能 [公共预览程序](https://azure.microsoft.com/en-ca/support/legal/preview-supplemental-terms/).
 
 ## 创建 [!DNL Azure] 密钥保管库 {#create-key-vault}
 
@@ -165,6 +165,10 @@ curl -X GET \
 
 获取密钥保管库URI后，可以使用POST请求将其发送到CMK配置端点。
 
+>[!NOTE]
+>
+>只有密钥保管库和密钥名称与Adobe一起存储，而不是密钥版本。
+
 **请求**
 
 ```shell
@@ -265,6 +269,10 @@ curl -X GET \
 
 ## 后续步骤
 
-完成上述步骤后，您便为贵组织成功启用了CMK。 现在，摄取到平台的所有数据都将使用 [!DNL Azure] 钥匙库。 如果要撤消对数据的平台访问权限，可以从 [!DNL Azure].
+完成上述步骤后，您便为贵组织成功启用了CMK。 现在，摄取到平台中的数据将使用 [!DNL Azure] 钥匙库。 如果要撤消对数据的平台访问权限，可以从 [!DNL Azure].
 
-在禁用对应用程序的访问后，需要2到24小时的时间，才能在Platform中再也无法访问数据。 同一时间范围适用于在重新启用对应用程序的访问时数据再次变得可用。
+在禁用对应用程序的访问后，可能需要几分钟到24小时的时间，才能使数据在Platform中不再可访问。 在重新启用对应用程序的访问时，同一时间延迟会使数据再次变得可用。
+
+>[!WARNING]
+>
+>禁用密钥保管库、密钥或CMK应用程序并且数据在平台中不再可访问后，将无法再执行与该数据相关的任何下游操作。 在对配置进行任何更改之前，请确保您了解撤销对数据的平台访问权所带来的下游影响。
