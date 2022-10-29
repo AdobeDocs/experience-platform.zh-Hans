@@ -4,9 +4,9 @@ title: 使用API为配置文件更新启用数据集
 type: Tutorial
 description: 本教程将向您演示如何使用Adobe Experience Platform API启用具有“插入”功能的数据集，以便更新实时客户资料数据。
 exl-id: fc89bc0a-40c9-4079-8bfc-62ec4da4d16a
-source-git-commit: 5bd3e43e6b307cc1527e8734936c051fb4fc89c4
+source-git-commit: 1e83bc3eb2a2cc10ab945aebeef66d5108b568ea
 workflow-type: tm+mt
-source-wordcount: '1015'
+source-wordcount: '1050'
 ht-degree: 1%
 
 ---
@@ -75,6 +75,8 @@ curl -X POST \
   -H 'x-gw-ims-org-id: {ORG_ID}' \
   -H 'x-sandbox-name: {SANDBOX_NAME}' \
   -d '{
+        "name": "Sample dataset",
+        "description: "A sample dataset with a sample description.",
         "fields": [],
         "schemaRef": {
             "id": "https://ns.adobe.com/{TENANT_ID}/schemas/31670881463308a46f7d2cb09762715",
@@ -249,6 +251,10 @@ curl -X PATCH https://platform.adobe.io/data/foundation/catalog/dataSets/5b020a2
 ### 为配置文件启用数据集并重新插入 {#enable-the-dataset}
 
 可以使用单个数据集请求为配置文件和属性更新启用现有PATCH。
+
+>[!IMPORTANT]
+>
+>在为用户档案启用数据集时，请确保与数据集关联的架构为 **也** 启用了配置文件。 如果架构未启用配置文件，则数据集将 **not** 在平台UI中显示为启用了配置文件。
 
 **API格式**
 
