@@ -4,9 +4,9 @@ title: 激活受众数据以批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过将区段发送到基于配置文件的批量目标来激活您在Adobe Experience Platform中拥有的受众数据。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: c096720d9b7a645475d3a3f63f900e81c212d121
+source-git-commit: 04ccf5c44e24f281171e5dd753a8431c24e0e0cf
 workflow-type: tm+mt
-source-wordcount: '2626'
+source-wordcount: '3468'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,8 @@ ht-degree: 0%
 >[!IMPORTANT]
 > 
 >要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
+>
+>一些参与改进的文件导出功能测试版计划的客户看到了新 **[!UICONTROL 映射]** 步骤作为激活工作流的一部分 [新的测试版云存储目标](/help/release-notes/2022/october-2022.md#destinations). 另请注意 [已知限制](#known-limitations) 作为版本的一部分。
 
 ## 概述 {#overview}
 
@@ -162,13 +164,13 @@ ht-degree: 0%
 >title="配置文件名"
 >abstract="对于基于文件的目标，每个区段会生成唯一的文件名。 使用文件名编辑器创建和编辑唯一的文件名或保留默认名称。"
 
-默认文件名由目标名称、区段ID以及日期和时间指示器组成。 例如，您可以编辑导出的文件名以区分不同的营销活动，或将数据导出时间附加到文件中。
+对于大多数目标，默认文件名包括目标名称、区段ID以及日期和时间指示器。 例如，您可以编辑导出的文件名以区分不同的营销活动，或将数据导出时间附加到文件中。 请注意，某些目标开发人员可能选择为其目标显示不同的默认文件名附加选项。
 
 选择铅笔图标以打开模式窗口并编辑文件名。 文件名长度限制为255个字符。
 
 >[!NOTE]
 >
->下图显示了如何为Amazon S3目标编辑文件名，但所有批处理目标（例如SFTP或Azure Blob Storage）的过程都是相同的。
+>下图显示了如何为 [!DNL Amazon S3] 但所有批处理目标（例如，SFTP）的流程都相同 [!DNL Azure Blob Storage]或 [!DNL Google Cloud Storage])。
 
 ![突出显示用于配置文件名的铅笔图标的图像。](../assets/ui/activate-batch-profile-destinations/configure-name.png)
 
@@ -178,9 +180,17 @@ ht-degree: 0%
 
 无法从文件名中删除目标名称和区段ID。 除了这些外，您还可以添加以下内容：
 
-* **[!UICONTROL 区段名称]**:可将区段名称附加到文件名。
-* **[!UICONTROL 日期和时间]**:在添加 `MMDDYYYY_HHMMSS` 格式或生成文件时间的Unix 10位时间戳。 如果希望文件在每次增量导出时都生成一个动态文件名，请选择其中一个选项。
-* **[!UICONTROL 自定义文本]**:向文件名中添加自定义文本。
+| 文件名选项 | 描述 |
+|---------|----------|
+| **[!UICONTROL 区段名称]** | 导出的区段的名称。 |
+| **[!UICONTROL 日期和时间]** | 在添加 `MMDDYYYY_HHMMSS` 格式或生成文件时间的Unix 10位时间戳。 如果希望文件在每次增量导出时都生成一个动态文件名，请选择其中一个选项。 |
+| **[!UICONTROL 自定义文本]** | 要添加到文件名的任何自定义文本。 |
+| **[!UICONTROL 目标ID]** | 用于导出区段的目标数据流的ID。 <br> **注意**:此文件名附加选项仅适用于参与改进的文件导出功能测试版计划的测试版客户。 如果您希望访问测试版计划，请联系您的Adobe代表或客户关怀团队。 |
+| **[!UICONTROL 目标名称]** | 用于导出区段的目标数据流的名称。 <br> **注意**:此文件名附加选项仅适用于参与改进的文件导出功能测试版计划的测试版客户。 如果您希望访问测试版计划，请联系您的Adobe代表或客户关怀团队。 |
+| **[!UICONTROL 组织名称]** | 您的组织名称在Experience Platform中。 <br> **注意**:此文件名附加选项仅适用于参与改进的文件导出功能测试版计划的测试版客户。 如果您希望访问测试版计划，请联系您的Adobe代表或客户关怀团队。 |
+| **[!UICONTROL 沙盒名称]** | 用于导出区段的沙盒ID。 <br> **注意**:此文件名附加选项仅适用于参与改进的文件导出功能测试版计划的测试版客户。 如果您希望访问测试版计划，请联系您的Adobe代表或客户关怀团队。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 选择 **[!UICONTROL 应用更改]** 以确认您的选择。
 
@@ -193,7 +203,6 @@ ht-degree: 0%
 ## 选择配置文件属性 {#select-attributes}
 
 对于基于用户档案的目标，您必须选择要发送到目标目标的用户档案属性。
-
 
 1. 在 **[!UICONTROL 选择属性]** 页面，选择 **[!UICONTROL 添加新字段]**.
 
@@ -386,6 +395,75 @@ Adobe建议选择身份命名空间，例如 [!DNL CRM ID] 或将电子邮件地
 >
 > 例如，如果字段 `person.name.firstName` 具有与目标的营销操作冲突的某些数据使用标签，则在审核步骤中将显示数据使用策略违规。 有关更多信息，请参阅 [Adobe Experience Platform中的数据管理](../../rtcdp/privacy/data-governance-overview.md#destinations).
 
+## （测试版）映射 {#mapping}
+
+>[!IMPORTANT]
+> 
+>部分测试版客户可以查看 **[!UICONTROL 映射]** 替换 [选择配置文件属性](#select-attributes) 步骤。 此新 **[!UICONTROL 映射]** 步骤允许您将导出文件的标题编辑为任何所需的自定义名称。
+> 
+> 功能和文档可能会发生更改。 如果您希望访问此测试版计划，请联系您的Adobe代表或客户关怀团队。
+
+在此步骤中，您必须选择要添加到导出到目标目标文件的配置文件属性。 要选择要导出的配置文件属性和标识，请执行以下操作：
+
+1. 在 **[!UICONTROL 映射]** 页面，选择 **[!UICONTROL 添加新字段]**.
+
+   ![添加在映射工作流中突出显示的新字段控件。](../assets/ui/activate-batch-profile-destinations/add-new-field-mapping.png)
+
+1. 选择 **[!UICONTROL 源字段]** 中。
+
+   ![选择在映射工作流中突出显示的源字段控件。](../assets/ui/activate-batch-profile-destinations/select-source-field.png)
+
+1. 在 **[!UICONTROL 选择源字段]** ，选择要包含在目标导出文件中的配置文件属性和标识，然后选择 **[!UICONTROL 选择]**.
+
+   >[!TIP]
+   > 
+   >您可以使用搜索字段缩小选择范围，如下图所示。
+
+   ![显示可导出到目标的用户档案属性的模式窗口。](../assets/ui/activate-batch-profile-destinations/select-source-field-modal.png)
+
+
+1. 现在，您选择导出的字段将显示在映射视图中。 如果需要，可以编辑导出文件中标头的名称。 为此，请在目标字段上选择图标。
+
+   ![显示可导出到目标的用户档案属性的模式窗口。](../assets/ui/activate-batch-profile-destinations/mapping-step-select-target-field.png)
+
+1. 在 **[!UICONTROL 选择目标字段]** ，在导出的文件中键入所需的标题名称，然后选择 **[!UICONTROL 选择]**.
+
+   ![显示标题键入友好名称的模式窗口。](../assets/ui/activate-batch-profile-destinations/select-target-field-mapping.png)
+
+1. 现在，您选择导出的字段将显示在映射视图中，并在导出的文件中显示已编辑的标题。
+
+   ![显示可导出到目标的用户档案属性的模式窗口。](../assets/ui/activate-batch-profile-destinations/select-target-field-updated.png)
+
+1. （可选）您可以将导出的字段选为 [强制键](#mandatory-keys) 或 [重复数据删除键](#deduplication-keys).
+
+   ![显示可导出到目标的用户档案属性的模式窗口。](../assets/ui/activate-batch-profile-destinations/select-mandatory-deduplication-key.png)
+
+1. 要添加更多用于导出的字段，请重复上述步骤。
+
+### 已知限制 {#known-limitations}
+
+新 **[!UICONTROL 映射]** 页面具有以下已知限制：
+
+#### 无法通过映射工作流选择区段成员资格属性
+
+由于已知的限制，您当前无法使用 **[!UICONTROL 选择字段]** 窗口添加 `segmentMembership.status` 到文件导出。 您而是需要手动粘贴值 `xdm: segmentMembership.status` ，如下所示。
+
+![屏幕录制，其中显示了激活工作流映射步骤中的区段成员资格解决方法。](/help/destinations/assets/ui/activate-batch-profile-destinations/segment-membership-mapping-step.gif)
+
+文件导出将按以下方式有所不同，具体取决于 `segmentMembership.status` 已选中：
+* 如果 `segmentMembership.status` 字段，导出的文件包括 **[!UICONTROL 活动]** 初始完整快照中的成员和 **[!UICONTROL 活动]** 和 **[!UICONTROL 过期]** 成员。
+* 如果 `segmentMembership.status` 字段，导出的文件仅包含 **[!UICONTROL 活动]** 初始完整快照和后续增量导出中的成员。
+
+#### 当前无法选择身份命名空间进行导出
+
+当前不支持选择身份命名空间以导出，如下图所示。 选择要导出的任何身份命名空间将导致 **[!UICONTROL 审阅]** 中。
+
+![显示身份导出的不支持映射](/help/destinations/assets/ui/activate-batch-profile-destinations/unsupported-identity-mapping.png)
+
+作为临时解决方法，如果您在测试版期间需要向导出的文件添加身份命名空间，则可以：
+* 对要在导出中包含身份命名空间的数据流使用旧版云存储目标
+* 将身份作为属性上传到Experience Platform，然后将其导出到云存储目标。
+
 ## 审阅 {#review}
 
 在 **[!UICONTROL 审阅]** 页面，则可以查看所选内容的摘要。 选择 **[!UICONTROL 取消]** 来分解流量， **[!UICONTROL 返回]** 修改设置，或 **[!UICONTROL 完成]** 以确认您的选择并开始向目标发送数据。
@@ -402,11 +480,10 @@ Adobe建议选择身份命名空间，例如 [!DNL CRM ID] 或将电子邮件地
 
 ## 验证区段激活 {#verify}
 
-
-对于电子邮件营销目标和云存储目标，Adobe Experience Platform会创建 `.csv` 文件。 希望每天在您的存储位置中创建一个新文件。 默认文件格式为：
+对于电子邮件营销目标和云存储目标，Adobe Experience Platform会创建 `.csv` 文件。 您希望根据在工作流中设置的计划在存储位置创建新文件。 默认文件格式为：
 `<destinationName>_segment<segmentID>_<timestamp-yyyymmddhhmmss>.csv`
 
-您将连续三天收到的文件可能如下所示：
+例如，如果您选择了每日导出频率，那么您将在连续三天收到的文件可能如下所示：
 
 ```console
 Salesforce_Marketing_Cloud_segment12341e18-abcd-49c2-836d-123c88e76c39_20200408061804.csv

@@ -3,18 +3,36 @@ keywords: Amazon S3;S3目标；s3;Amazon s3
 title: Amazon S3连接
 description: 创建到Amazon Web Services(AWS)S3存储的实时出站连接，以定期将CSV数据文件从Adobe Experience Platform导出到您自己的S3存储段中。
 exl-id: 6a2a2756-4bbf-4f82-88e4-62d211cbbb38
-source-git-commit: 1dd87ce19c3d9f4eb07c49968754ab979b4dee5c
+source-git-commit: 56fd7a5ab58186367c729cb4ca8c3b4213c44900
 workflow-type: tm+mt
-source-wordcount: '771'
+source-wordcount: '920'
 ht-degree: 0%
 
 ---
 
 # [!DNL Amazon S3] 连接 {#s3-connection}
 
+## 目标更改日志 {#changelog}
+
+>[!IMPORTANT]
+>
+>通过测试版的导出数据集功能和改进的文件导出功能，您现在可能会看到两个 [!DNL Amazon S3] 目标目录中的信息卡。
+>* 如果您已经将文件导出到 **[!UICONTROL Amazon S3]** 目标：请为新数据流创建新数据流 **[!UICONTROL Amazon S3测试版]** 目标。
+>* 如果您尚未为 **[!UICONTROL Amazon S3]** 目标，请使用新 **[!UICONTROL Amazon S3测试版]** 将文件导出到卡 **[!UICONTROL Amazon S3]**.
+
+
+![并排视图中两个Amazon S3目标卡的图像。](/help/destinations/assets/catalog/cloud-storage/amazon-s3/two-amazons3-destination-cards.png)
+
+改进了新 [!DNL Amazon S3] 目标卡包括：
+
+* [数据集导出支持](/help/destinations/ui/export-datasets.md).
+* 其他 [文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
+* 能够通过 [改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
+* [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
+
 ## 概述 {#overview}
 
-创建到的实时出站连接 [!DNL Amazon Web Services] (AWS)S3存储，可将CSV数据文件从Adobe Experience Platform定期导出到您自己的S3存储段中。
+创建到的实时出站连接 [!DNL Amazon S3] 存储，以定期将数据文件从Adobe Experience Platform导出到您自己的S3存储段中。
 
 ## 导出类型和频度 {#export-type-frequency}
 
@@ -110,6 +128,10 @@ Commenting out this note, as write permissions are assigned through the s3:PutOb
 
 请参阅 [激活受众数据以批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
 
+## （测试版）导出数据集 {#export-datasets}
+
+此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读 [导出数据集教程](/help/destinations/ui/export-datasets.md).
+
 ## 导出的数据 {#exported-data}
 
-对于 [!DNL Amazon S3] 目标， [!DNL Platform] 创建 `.csv` 文件。 有关文件的更多信息，请参阅 [激活受众数据以批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 区段激活教程中的。
+对于 [!DNL Amazon S3] 目标， [!DNL Platform] 在您提供的存储位置中创建数据文件。 有关文件的更多信息，请参阅 [激活受众数据以批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 区段激活教程中的。

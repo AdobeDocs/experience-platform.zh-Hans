@@ -3,14 +3,32 @@ keywords: Azure Blob;Blob目标；s3;Azure Blob目标
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，以定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: 1dd87ce19c3d9f4eb07c49968754ab979b4dee5c
+source-git-commit: 56fd7a5ab58186367c729cb4ca8c3b4213c44900
 workflow-type: tm+mt
-source-wordcount: '739'
+source-wordcount: '890'
 ht-degree: 1%
 
 ---
 
 # [!DNL Azure Blob] 连接
+
+## 目标更改日志 {#changelog}
+
+>[!IMPORTANT]
+>
+>通过测试版的导出数据集功能和改进的文件导出功能，您现在可能会看到两个 [!DNL Azure Blob] 目标目录中的信息卡。
+>* 如果您已经将文件导出到 **[!UICONTROL Azure Blob]** 目标：请为新数据流创建新数据流 **[!UICONTROL Azure Blob测试版]** 目标。
+>* 如果您尚未为 **[!UICONTROL Azure Blob]** 目标，请使用新 **[!UICONTROL Azure Blob测试版]** 将文件导出到卡 **[!UICONTROL Azure Blob]**.
+
+
+![并排视图中两个Azure Blob目标卡的图像。](/help/destinations/assets/catalog/cloud-storage/blob/two-azure-blob-destination-cards.png)
+
+改进了新 [!DNL Azure Blob] 目标卡包括：
+
+* [数据集导出支持](/help/destinations/ui/export-datasets.md).
+* 其他 [文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).
+* 能够通过 [改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).
+* [能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).
 
 ## 概述 {#overview}
 
@@ -89,6 +107,10 @@ ht-degree: 1%
 >要激活数据，您需要 **[!UICONTROL 管理目标]**, **[!UICONTROL 激活目标]**, **[!UICONTROL 查看配置文件]**&#x200B;和 **[!UICONTROL 查看区段]** [访问控制权限](/help/access-control/home.md#permissions). 阅读 [访问控制概述](/help/access-control/ui/overview.md) 或联系您的产品管理员以获取所需的权限。
 
 请参阅 [激活受众数据以批量配置文件导出目标](../../ui/activate-batch-profile-destinations.md) 有关将受众区段激活到此目标的说明。
+
+## （测试版）导出数据集 {#export-datasets}
+
+此目标支持数据集导出。 有关如何设置数据集导出的完整信息，请阅读 [导出数据集教程](/help/destinations/ui/export-datasets.md).
 
 ## 导出的数据 {#exported-data}
 

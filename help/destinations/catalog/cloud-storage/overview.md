@@ -3,9 +3,9 @@ keywords: 云存储目标；云存储
 title: 云存储目标概述
 description: Adobe Experience Platform可以将区段作为数据文件发送到Amazon S3、AWS Kinesis、Azure事件中心或SFTP云存储位置。
 exl-id: d29f0a6e-b323-4f78-bbd0-dee2f1e0fedb
-source-git-commit: 818c9a6f5cd39db1405827b657872b99254ad1e5
+source-git-commit: 4a4c82cc4528fe07bbdb75ae9f795bdbab48c089
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '309'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## 概述 {#overview}
 
-Adobe Experience Platform可以将您的区段作为数据文件传送到您的云存储位置。 这允许您通过CSV文件，将受众及其配置文件属性发送到您的内部系统 [!DNL Amazon S3], [!DNL Azure Blob] 和SFTP。 对于 [!DNL Amazon Kinesis] 和 [!DNL Azure Event Hubs] 目标中，数据会在中流出Experience Platform [!DNL JSON] 格式。
+Adobe Experience Platform可以将您的区段作为数据文件传送到您的云存储位置。 这允许您通过CSV文件，将受众及其配置文件属性发送到您的内部系统 [!DNL Amazon S3], [!DNL Azure Blob], [!DNL Azure Data Lake Storage Gen2], [!DNL Data Landing Zone], [!DNL Google Cloud Storage]和SFTP。 对于 [!DNL Amazon Kinesis] 和 [!DNL Azure Event Hubs] 目标中，数据会在中流出Experience Platform [!DNL JSON] 格式。
 
 ![Adobe云存储目标](../../assets/catalog/cloud-storage/cloud-storage-destinations.png)
 
@@ -25,7 +25,10 @@ Adobe Experience Platform支持以下云存储目标：
 * [Amazon Kinesis连接](amazon-kinesis.md)
 * [Amazon S3连接](amazon-s3.md)
 * [Azure Blob连接](azure-blob.md)
+* [（测试版）Azure数据湖存储第2代](adls-gen2.md)
 * [Azure事件中心连接](azure-event-hubs.md)
+* [（测试版）数据登陆区](data-landing-zone.md)
+* [（测试版）Google云存储](google-cloud-storage.md)
 * [SFTP连接](sftp.md)
 
 ## 连接到新的云存储目标 {#connect-destination}
