@@ -5,7 +5,7 @@ title: 在Adobe Experience Platform中处理同意
 topic-legacy: getting started
 description: 了解如何在Adobe Experience Platform中使用Adobe2.0标准处理客户同意信号。
 exl-id: cd76a3f6-ae55-4d75-9b30-900fadb4664f
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
 workflow-type: tm+mt
 source-wordcount: '1567'
 ht-degree: 0%
@@ -100,7 +100,7 @@ Adobe Experience Platform允许您处理从客户收集的同意数据，并将�
 
 您可以使用批量摄取从CSV文件中摄取符合XDM规范的同意数据。 如果您之前收集的同意数据积压，且尚未集成到客户配置文件中，则此功能会非常有用。
 
-请阅读本教程 [将CSV文件映射到XDM](../../../../ingestion/tutorials/map-a-csv-file.md) 了解如何将数据字段转换为XDM并将其摄取到平台。 选择 [!UICONTROL 目标] 对于映射，请确保选择 **[!UICONTROL 使用现有数据集]** 选项，然后选择 [!DNL Profile] — 已启用您之前创建的同意数据集。
+请阅读本教程 [将CSV文件映射到XDM](../../../../ingestion/tutorials/map-csv/overview.md) 了解如何将数据字段转换为XDM并将其摄取到平台。 选择 [!UICONTROL 目标] 对于映射，请确保选择 **[!UICONTROL 使用现有数据集]** 选项，然后选择 [!DNL Profile] — 已启用您之前创建的同意数据集。
 
 ## 测试实施 {#test-implementation}
 

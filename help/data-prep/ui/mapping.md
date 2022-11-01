@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；映射CSV；映射CSV文
 title: 数据准备UI指南
 description: 本文档提供了有关如何在Platform UI中使用数据准备函数将CSV文件映射到XDM架构的说明。
 exl-id: fafa4aca-fb64-47ff-a97d-c18e58ae4dae
-source-git-commit: d0f5d1f55101ce15934289d4fcfd1f70c1b63fc7
+source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
 workflow-type: tm+mt
 source-wordcount: '1845'
 ht-degree: 1%
@@ -79,7 +79,7 @@ ht-degree: 1%
 
 ![将csv-to xdm](../images/ui/mapping/map-csv-to-xdm.png)
 
-### 了解映射界面
+### 了解映射界面 {#mapping-interface}
 
 映射界面包括一个功能板，用于提供有关摄取工作流上下文中映射字段运行状况的信息。 功能板显示有关映射字段的以下详细信息：
 

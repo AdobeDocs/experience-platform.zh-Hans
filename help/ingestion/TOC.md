@@ -4,10 +4,10 @@ user-guide-title: Adobe Experience Platform 数据提取帮助
 breadcrumb-title: Data Ingestion 指南
 user-guide-description: 通过批量摄取或流式摄取将您的数据引入 Experience Platform。
 feature: Data Ingestion
-source-git-commit: ba0399b0d171c2e604b4de3b22f8568b5431bcf4
+source-git-commit: f77bbc60f2bc1f12970e8050ec6a924b9713f303
 workflow-type: tm+mt
-source-wordcount: '129'
-ht-degree: 26%
+source-wordcount: '145'
+ht-degree: 24%
 
 ---
 
@@ -26,7 +26,10 @@ ht-degree: 26%
    - [部分批量摄取](batch-ingestion/partial.md)
    - [故障排除](batch-ingestion/troubleshooting.md)
 - 教程 {#tutorials}
-   - [将CSV文件映射到XDM](tutorials/map-a-csv-file.md)
+   - 将CSV文件映射到XDM {#map-csv}
+      - [概述](./tutorials/map-csv/overview.md)
+      - [将CSV文件映射到现有架构](./tutorials/map-csv/existing-schema.md)
+      - [使用AI生成的推荐映射CSV文件](./tutorials/map-csv/recommendations.md)
    - [使用UI摄取批量数据](tutorials/ingest-batch-data.md)
    - [创建经过验证的流连接](tutorials/create-authenticated-streaming-connection.md)
    - [创建流连接(API)](tutorials/create-streaming-connection.md)

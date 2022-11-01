@@ -5,7 +5,7 @@ title: 准备数据以在智能服务中使用
 topic-legacy: Intelligent Services
 description: 为了使智能服务能够从营销事件数据中发现洞察，必须在语义上对数据进行扩充并以标准结构进行维护。 智能服务使用体验数据模型(XDM)架构来实现此目的。
 exl-id: 17bd7cc0-da86-4600-8290-cd07bdd5d262
-source-git-commit: e33d59c4ac28f55ba6ae2fc073d02f8738159263
+source-git-commit: d380b4d2a75efb1c34010a30c619649a7b99643c
 workflow-type: tm+mt
 source-wordcount: '2936'
 ht-degree: 0%
@@ -356,7 +356,7 @@ CEE字段组中有几个关键字段，应用这些关键字段 [!DNL Intelligen
 
 #### 映射和摄取数据 {#ingest}
 
-创建CEE架构和数据集后，您可以开始将数据表映射到架构，并将该数据摄取到平台。 请参阅 [将CSV文件映射到XDM模式](../ingestion/tutorials/map-a-csv-file.md) 以了解有关如何在UI中执行此操作的步骤。 您可以使用以下内容 [JSON文件示例](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) ，以在使用您自己的数据之前测试摄取流程。
+创建CEE架构和数据集后，您可以开始将数据表映射到架构，并将该数据摄取到平台。 请参阅 [将CSV文件映射到XDM模式](../ingestion/tutorials/map-csv/overview.md) 以了解有关如何在UI中执行此操作的步骤。 您可以使用以下内容 [JSON文件示例](https://github.com/AdobeDocs/experience-platform.en/blob/master/help/intelligent-services/assets/CEE_XDM_sample_rows.json) ，以在使用您自己的数据之前测试摄取流程。
 
 填充数据集后，可以使用同一数据集摄取其他数据文件。
 
