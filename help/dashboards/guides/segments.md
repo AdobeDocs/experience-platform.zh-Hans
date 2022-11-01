@@ -4,9 +4,9 @@ title: 区段功能板指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关您的组织已创建区段的重要信息。
 type: Documentation
 exl-id: de5e07bc-2c44-416e-99db-7607059117cb
-source-git-commit: 18288130b98e13d824273426a860d97722c434de
+source-git-commit: 23df35d7d90b6674b089a842818dba83283a1646
 workflow-type: tm+mt
-source-wordcount: '2094'
+source-wordcount: '2092'
 ht-degree: 0%
 
 ---
@@ -99,7 +99,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 的 **[!UICONTROL 受众大小]** 小组件显示拍摄快照时选定区段内合并的配置文件总数。 此数字是将区段合并策略应用于配置文件数据的结果，以便将配置文件片段合并在一起，为区段中的每个人形成一个配置文件。
 
-有关片段和合并的用户档案的更多信息，请首先阅读 [实时客户资料概述](../../profile/home.md).
+有关片段和合并的配置文件的更多信息，请参阅 [实时客户资料概述](../../profile/home.md).
 
 ![突出显示受众大小小组件的区段功能板概述。](../images/segments/audience-size.png)
 

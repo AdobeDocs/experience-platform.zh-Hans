@@ -4,22 +4,22 @@ title: Profiles Dashboard指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织实时客户资料数据的重要信息。
 type: Documentation
 exl-id: 7b9752b2-460e-440b-a6f7-a1f1b9d22eeb
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: fdfc2a2b0f1f5be0508741de0e70ad72fe07d79f
 workflow-type: tm+mt
-source-wordcount: '3388'
+source-wordcount: '3385'
 ht-degree: 0%
 
 ---
 
 # [!UICONTROL 用户档案] 仪表板
 
-Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关您的 [!DNL Real-time Customer Profile] 数据，在每日快照期间捕获。 本指南概述了如何访问和使用 [!UICONTROL 用户档案] 功能板，并提供有关功能板中显示的量度的信息。
+Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关您的 [!DNL Real-time Customer Profile] 数据，在每日快照期间捕获。 本指南概述了如何在UI中访问和使用“配置文件”功能板，并提供了有关功能板中显示的量度的信息。
 
-有关Experience Platform用户界面中所有用户档案功能的概述，请访问 [实时客户资料UI指南](../../profile/ui/user-guide.md).
+有关Experience Platform用户界面中所有配置文件功能的概述，请参阅 [实时客户资料UI指南](../../profile/ui/user-guide.md).
 
 ## 用户档案功能板数据
 
-的 [!UICONTROL 用户档案] 功能板显示贵组织在“配置文件存储”中(在Experience Platform中)拥有的属性（记录）数据的快照。 快照不包含任何事件（时间系列）数据。
+“配置文件”功能板显示贵组织在“配置文件存储”(Profile Store)中Experience Platform的属性（记录）数据的快照。 快照不包含任何事件（时间系列）数据。
 
 快照中的属性数据完全显示快照拍摄时在特定时间点显示的数据。 换句话说，快照不是数据的近似值或样本，而且“配置文件”功能板不会实时更新。
 
@@ -27,19 +27,19 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 >
 >自拍摄快照以来对数据所做的任何更改或更新，在拍摄下一个快照之前不会反映在功能板中。
 
-## 浏览 [!UICONTROL 用户档案] 仪表板
+## 浏览用户档案仪表板
 
-导航到 [!UICONTROL 用户档案] 功能板中，选择 **[!UICONTROL 用户档案]** 在左边栏中，选择 **[!UICONTROL 概述]** 选项卡来显示功能板。
+要导航到Platform UI中的“配置文件”功能板，请选择 **[!UICONTROL 用户档案]** 在左边栏中，选择 **[!UICONTROL 概述]** 选项卡来显示功能板。
 
 >[!NOTE]
 >
->如果贵组织是Platform的新用户，并且尚未创建活动的配置文件数据集或合并策略，则 [!UICONTROL 用户档案] 功能板不可见。 相反， [!UICONTROL 概述] 选项卡会显示可帮助您开始使用实时客户配置文件的链接和文档。
+>如果贵组织是Platform的新用户，但尚未创建活动的配置文件数据集或合并策略，则不会显示“配置文件”功能板。 相反， [!UICONTROL 概述] 选项卡会显示可帮助您开始使用实时客户配置文件的链接和文档。
 
 ![](../images/profiles/dashboard-overview.png)
 
-### 修改 [!UICONTROL 用户档案] 仪表板
+### 修改用户档案仪表板
 
-您可以修改 [!UICONTROL 用户档案] 通过选择 **[!UICONTROL 修改功能板]**. 这样，您就可以在功能板中移动、添加和删除小组件，以及访问 **[!UICONTROL 构件库]** 以浏览可用小组件并为贵组织创建自定义小组件。
+通过选择 **[!UICONTROL 修改功能板]**. 这样，您便可以在功能板中移动、添加和删除小组件，以及访问 **[!UICONTROL 构件库]** 以浏览可用的小组件，并为贵组织创建自定义小组件。
 
 请参阅 [修改功能板](../customize/modify.md) 和 [构件库概述](../customize/widget-library.md) 文档以了解更多信息。
 
@@ -73,9 +73,9 @@ The layout of this dashboard is also customizable by selecting [**[!UICONTROL Mo
 
 ## 合并策略 {#merge-policies}
 
-在 [!UICONTROL 用户档案] 功能板基于应用于实时客户资料数据的合并策略。 当从多个来源收集数据以创建客户配置文件时，数据可能包含冲突值。 例如，一个数据集可能将一个客户列为“单个”，而另一个数据集可能将该客户列为“已婚”。 合并策略的作业是确定哪些数据要优先排序，并作为用户档案的一部分显示。
+“配置文件”功能板中显示的量度基于应用于实时客户配置文件数据的合并策略。 当从多个来源收集数据以创建客户配置文件时，数据可能包含冲突值。 例如，一个数据集可能将一个客户列为“单个”，而另一个数据集可能将该客户列为“已婚”。 合并策略的作业是确定哪些数据要优先排序，并作为用户档案的一部分显示。
 
-有关合并策略的更多信息，包括如何为贵组织创建、编辑和声明默认的合并策略，请首先阅读 [合并策略概述](../../profile/merge-policies/overview.md).
+有关合并策略（包括如何为贵组织创建、编辑和声明默认合并策略）的更多信息，请参阅 [合并策略概述](../../profile/merge-policies/overview.md).
 
 功能板将自动选择要使用的合并策略。 可以使用合并策略名称旁边的下拉菜单更改应用的合并策略。
 
@@ -140,7 +140,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 >
 >的 [!UICONTROL 用户档案计数] 小组件显示的数字可能与 [!UICONTROL 浏览] 选项卡 [!UICONTROL 用户档案] 部分，原因有多种。 最常见的原因是 [!UICONTROL 浏览] 选项卡会根据贵组织的默认合并策略引用合并的用户档案总数，而 [!UICONTROL 用户档案计数] 小组件会根据您选择在功能板中查看的合并策略，引用合并配置文件的总数。
 >
->另一个常见原因是，拍摄功能板快照的时间与为 [!UICONTROL 浏览] 选项卡。 您可以查看 [!UICONTROL 用户档案计数] 小组件上次更新时，会查看小组件上的时间戳，并进一步了解如何在 [!UICONTROL 浏览] 选项卡，请参阅 [实时客户用户档案UI指南中的用户档案计数部分](https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html?lang=en#profile-count).
+>另一个常见原因是，拍摄功能板快照的时间与为 [!UICONTROL 浏览] 选项卡。 您可以查看 [!UICONTROL 用户档案计数] 小组件上次更新时间戳是查看小组件上的时间戳。 要详细了解如何在 [!UICONTROL 浏览] 选项卡，请参阅 [实时客户用户档案UI指南中的用户档案计数部分](https://experienceleague.adobe.com/docs/experience-platform/profile/ui/user-guide.html?lang=en#profile-count).
 
 ![](../images/profiles/profile-count.png)
 
@@ -226,7 +226,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 使用小组件下拉菜单选择要比较的身份。 圈子显示包含每个身份的用户档案的相对总计数。 包含两个标识的用户档案的数量由圈子之间重叠的大小表示。 如果客户在多个渠道上与您的品牌进行交互，则多个身份将与该个别客户关联，因此，您的组织可能具有多个包含多个身份片段的用户档案。
 
-有关用户档案片段的更多信息，请首先阅读 [配置文件片段与合并的配置文件](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html?lang=en#profile-fragments-vs-merged-profiles) （在“实时客户资料”概述中）。
+有关用户档案片段的更多信息，请参阅 [配置文件片段与合并的配置文件](https://experienceleague.adobe.com/docs/experience-platform/profile/home.html?lang=en#profile-fragments-vs-merged-profiles) （在“实时客户资料”概述中）。
 
 要进一步了解身份信息，请访问 [Adobe Experience Platform Identity Service文档](../../identity-service/home.md).
 
@@ -430,4 +430,4 @@ The three levels of completeness are:
 
 ## 后续步骤
 
-通过阅读本文档，您现在应该能够找到“配置文件”功能板并了解可用小组件中显示的量度。 了解有关使用的更多信息 [!DNL Profile] Experience PlatformUI中的数据，请参阅 [实时客户资料UI指南](../../profile/ui/user-guide.md).
+通过阅读本文档，您现在应该能够找到用户档案仪表板并了解可用小组件中显示的量度。 了解有关使用的更多信息 [!DNL Profile] Experience PlatformUI中的数据，请参阅 [实时客户资料UI指南](../../profile/ui/user-guide.md).

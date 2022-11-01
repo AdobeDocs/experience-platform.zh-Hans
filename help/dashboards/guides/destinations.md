@@ -4,9 +4,9 @@ title: 目标功能板指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 7f226a37996ab5e1fef432c6007d7d488f84ded6
+source-git-commit: fdfc2a2b0f1f5be0508741de0e70ad72fe07d79f
 workflow-type: tm+mt
-source-wordcount: '2829'
+source-wordcount: '2828'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 ## [!UICONTROL 目标] 仪表板数据 {#destinations-dashboard-data}
 
-的 [!UICONTROL 目标] 功能板显示贵组织在Experience Platform中启用的目标快照。 快照中的数据与拍摄快照时在特定时间点显示的数据完全一样。 换句话说，快照不是数据的近似值或样本，目标仪表板也不会实时更新。
+“目标”功能板显示贵组织在Experience Platform中启用的目标的快照。 快照中的数据与拍摄快照时在特定时间点显示的数据完全一样。 换句话说，快照不是数据的近似值或样本，目标仪表板也不会实时更新。
 
 >[!NOTE]
 >
@@ -33,7 +33,7 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 
 >[!NOTE]
 >
->如果贵组织是新Experience Platform，并且还没有活动目标，则 [!UICONTROL 目标] 功能板和 [!UICONTROL 概述] 选项卡。 而是选择 [!UICONTROL 目标] 在左侧导航中， [!UICONTROL 目录] 选项卡。 要进一步了解 [!UICONTROL 目录] 选项卡，请参阅 [[!UICONTROL 目标] 工作区指南](../../destinations/ui/destinations-workspace.md).
+>如果您的组织是新Experience Platform，并且还没有活动的目标，请使用目标功能板和 [!UICONTROL 概述] 选项卡。 而是选择 [!UICONTROL 目标] 在左侧导航中， [!UICONTROL 目录] 选项卡。 要进一步了解 [!UICONTROL 目录] 选项卡，请参阅 [[!UICONTROL 目标] 工作区指南](../../destinations/ui/destinations-workspace.md).
 
 ![Platform UI目标概述，其中突出显示了最新快照。](../images/destinations/snapshot-timestamp.png)
 
@@ -120,7 +120,7 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 从小组件上显示的列表中选择区段名称后，您将转到区段详细信息。 您还可以选择 **[!UICONTROL 查看全部]** 导航到区段浏览选项卡，然后选择区段名称以查看其详细信息。
 
-有关在Experience Platform中使用区段的更多信息，请首先阅读 [Segmentation Service概述](../../segmentation/home.md).
+有关在Experience Platform中使用区段的更多信息，请参阅 [Segmentation Service概述](../../segmentation/home.md).
 
 ![目标功能板的“概述”选项卡中突出显示了最近激活的区段小组件。](../images/destinations/recently-activated-segments.png)
 
