@@ -6,7 +6,7 @@ topic-legacy: queries
 type: Tutorial
 description: Adobe Experience Platform查询服务允许从UI创建数据集。 创建数据集后，可以像数据湖中的任何其他数据集一样访问该数据集，并将其用于各种用例。
 exl-id: 6f6c049d-f19f-4161-aeb4-3a01eca7dc75
-source-git-commit: 228ed51ea056d3593a59bc0eee8d9b767aa74489
+source-git-commit: 5ea5d48119eb3d7c1e66233f3b2629c1049d0784
 workflow-type: tm+mt
 source-wordcount: '493'
 ht-degree: 0%
@@ -19,13 +19,11 @@ ht-degree: 0%
 
 ## 从Adobe Experience Platform用户界面生成数据集
 
-<!-- Screenshot for #3 will need to be updated if schedule queries is moved. -->
-
 要从Adobe Experience Platform用户界面(UI)创建数据集，请执行以下步骤：
 
 1. 使用连接的客户端创建查询并验证输出。 了解如何使用 [!DNL Query Editor]，阅读 [!DNL Query Editor] UI指南 [编写查询](./user-guide.md#writing-queries).
 
-2. 在Platform UI中，导航到 **[!UICONTROL 查询]** 后跟 **[!UICONTROL 浏览]** 选项卡，然后选择已创建的查询。 有关如何在Platform UI中查看为贵组织创建和保存的查询的更多详细信息，请阅读 [[!DNL Query Service] 概述](./overview.md#browse).
+2. 在Platform UI中，导航到 **[!UICONTROL 查询]** 后跟 **[!UICONTROL 模板]** 选项卡，然后选择已创建的查询。 有关如何在Platform UI中查看为贵组织创建和保存的查询的更多详细信息，请阅读 [[!DNL Query Service] 概述](./overview.md#browse).
 
 3. 在“查询详细信息”面板中，选择 **[!UICONTROL 输出数据集]**.
 

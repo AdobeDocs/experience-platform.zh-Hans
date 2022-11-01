@@ -2,7 +2,7 @@
 title: 查询模板
 description: 查询模板是可重用的已保存SQL查询，其他用户可重复使用这些查询以节省时间和精力。 它们可以使用查询编辑器或查询服务API创建，并可用于所有Experience Platform数据集。
 exl-id: e74d058f-bb89-45ed-83cc-2e3a33401270
-source-git-commit: e4526b515dc6f480136615f3aa78f38f3e43a60f
+source-git-commit: a085bac6b4ee825d534710ae91d6690fa076e873
 workflow-type: tm+mt
 source-wordcount: '436'
 ht-degree: 1%
@@ -25,11 +25,9 @@ Adobe Experience Platform查询服务允许您以查询模板的形式保存和�
 
 ### 使用查询编辑器创作查询并将其另存为模板
 
-有关如何使用查询编辑器以 [写入](./user-guide.md#query-authoring) 和 [保存查询](./user-guide.md#saving-queries). 命名并保存查询后，该查询便可在 [!UICONTROL 浏览] 选项卡。
+有关如何使用查询编辑器以 [写入](./user-guide.md#query-authoring) 和 [保存查询](./user-guide.md#saving-queries). 命名并保存查询后，该查询便可在 [!UICONTROL 模板] 选项卡。
 
 从Platform UI的“查询”工作区中，选择 **[!UICONTROL 模板]** 以显示可用的已保存查询列表。
-
-<!-- This may need updating idf the Schedule are added to a separate Tab -->
 
 ![突出显示“模板”选项卡的查询工作区。](../images/ui/query-templates/query-templates.png)
 
@@ -43,7 +41,7 @@ Adobe Experience Platform查询服务允许您以查询模板的形式保存和�
 
 >[!NOTE]
 >
->使用API创建的模板也会显示在Platform UI查询服务浏览选项卡中。
+>使用API创建的模板也会显示在Platform UI查询服务模板选项卡中。
 
 ## 后续步骤
 

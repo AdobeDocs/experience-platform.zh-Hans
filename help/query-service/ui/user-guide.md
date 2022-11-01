@@ -5,9 +5,9 @@ title: 查询编辑器UI指南
 topic-legacy: query editor
 description: 查询编辑器是Adobe Experience Platform查询服务提供的一个交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并且允许您运行交互式查询以用于开发目的，以及非交互式查询以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 9c7068b4209a7c85c444b1cc83415747b93bacb2
+source-git-commit: 6cb28f8afa528849662fb416d81d155384a3de6c
 workflow-type: tm+mt
-source-wordcount: '1993'
+source-wordcount: '2062'
 ht-degree: 0%
 
 ---
@@ -116,13 +116,19 @@ ht-degree: 0%
 >
 >以下是使用查询编辑器时计划查询的限制列表。 它们不适用于 [!DNL Query Service] API:<br/>您只能向已创建、保存和运行的查询添加计划。<br/>您 **无法** 向参数化查询添加计划。<br/>计划查询 **无法** 包含匿名块。
 
-要向查询添加计划，请选择 **[!UICONTROL 添加计划]**.
+计划是通过查询编辑器设置的。 但是，只能计划已另存为模板的查询。 要向查询添加计划，请从 [!UICONTROL 模板] 选项卡 [!UICONTROL 计划查询] 选项卡，导航到查询编辑器。
 
-<!-- Cannot update this image below yet. Believe schedules tab is being added to the Query Editor -->
+要了解如何使用API添加计划，请阅读 [计划查询终结点指南](../api/scheduled-queries.md).
 
-![突出显示了添加计划的查询编辑器。](../images/ui/query-editor/add-schedule.png)
+从查询编辑器访问保存的查询时， [!UICONTROL 计划] 选项卡。 选择 **[!UICONTROL 计划]**.
 
-的 **[!UICONTROL 计划详细信息]** 页面。 在此页面上，您可以选择计划查询的频率、计划查询运行的日期以及要将查询导出到的数据集。
+![突出显示了“计划”选项卡的查询编辑器。](../images/ui/query-editor/schedules-tab.png)
+
+此时将显示计划工作区。 选择 **[!UICONTROL 添加计划]** 创建计划。
+
+![查询编辑器计划工作区中突出显示了添加计划。](../images/ui/query-editor/add-schedule.png)
+
+此时将显示计划详细信息页面。 在此页面上，您可以选择计划查询的频率、开始和结束日期、计划查询将在一周中运行的日期，以及要将查询导出到的数据集。
 
 ![“计划详细信息”面板突出显示。](../images/ui/query-editor/schedule-details.png)
 
@@ -140,39 +146,35 @@ ht-degree: 0%
 >
 > 由于您使用的是现有数据集或创建了新数据集，因此需要 **not** 需要包括 `INSERT INTO` 或 `CREATE TABLE AS SELECT` 作为查询的一部分，因为数据集已经设置。 包括 `INSERT INTO` 或 `CREATE TABLE AS SELECT` 作为计划查询的一部分，将导致错误。
 
-确认所有这些详细信息后，选择 **[!UICONTROL 保存]** 创建计划。
+确认所有这些详细信息后，选择 **[!UICONTROL 保存]** 创建计划。 您将返回到计划工作区，该工作区显示新创建计划的详细信息，包括计划ID、计划本身和计划的输出数据集。 您可以使用计划ID查找有关计划查询本身运行的更多信息。 要了解更多信息，请阅读 [计划查询运行端点指南](../api/runs-scheduled-queries.md).
 
-此时将重新显示查询详细信息页面，并显示新创建计划的详细信息，包括计划ID、计划本身和计划的输出数据集。 您可以使用计划ID查找有关计划查询本身运行的更多信息。 要了解更多信息，请阅读 [计划查询运行端点指南](../api/runs-scheduled-queries.md).
+![计划工作区中突出显示了新创建的计划。](../images/ui/query-editor/schedules-workspace.png)
 
->[!NOTE]
->
-> 您只能计划 **one** 使用UI查询模板。 如果要向查询模板添加其他计划，则需要使用API。 如果已使用API添加计划，则您将 **not** 能够使用UI添加其他计划。 如果已将多个计划附加到查询模板，则只会显示最早的计划。 要了解如何使用API添加计划，请阅读 [计划查询终结点指南](../api/scheduled-queries.md).
->
-> 此外，如果要确保所查看的计划具有最新状态，则应刷新页面。
+#### 删除或禁用计划 {#delete-schedule}
 
-#### 删除计划 {#delete-schedule}
+您可以从计划工作区中删除或禁用计划。 您必须从 [!UICONTROL 模板] 选项卡 [!UICONTROL 计划查询] 选项卡，导航到查询编辑器并选择 **[!UICONTROL 计划]** 以访问“计划”工作区。
 
-您可以通过选择 **[!UICONTROL 删除计划]**.
-
-<!-- Cannot update this image below yet. Believe schedules tab is being added to the Query Editor -->
-
-![突出显示了禁用计划和删除计划的查询编辑器。](../images/ui/query-editor/delete-schedule.png)
+从可用计划的行中选择计划。 您可以使用切换开关来禁用或启用计划查询。
 
 >[!IMPORTANT]
 >
-> 如果要删除查询的计划，必须先禁用该计划。
+>在删除查询计划之前，必须先禁用该计划。
+
+选择 **[!UICONTROL 删除计划]** 删除禁用的计划。
+
+![“禁用计划”和“删除计划”会突出显示计划工作区。](../images/ui/query-editor/delete-schedule.png)
 
 ### 保存查询 {#saving-queries}
 
-[!DNL Query Editor] 提供了保存函数，用于保存查询并稍后对其进行处理。 要保存查询，请选择 **[!UICONTROL 保存]** 的右上角 [!DNL Query Editor]. 在保存查询之前，必须使用 **[!UICONTROL 查询详细信息]** 的上界。
+的 [!DNL Query Editor] 提供了保存函数，用于保存查询并稍后对其进行处理。 要保存查询，请选择 **[!UICONTROL 保存]** 的右上角 [!DNL Query Editor]. 在保存查询之前，必须使用 **[!UICONTROL 查询详细信息]** 的上界。
 
 >[!NOTE]
 >
->使用查询编辑器命名和保存的查询可用作查询功能板中的模板 [!UICONTROL 浏览] 选项卡。 请参阅 [模板文档](./query-templates.md) 以了解更多信息。
+>使用查询编辑器命名和保存的查询可用作查询功能板中的模板 [!UICONTROL 模板] 选项卡。 请参阅 [模板文档](./query-templates.md) 以了解更多信息。
 
 ### 如何查找以前的查询 {#previous-queries}
 
-执行的所有查询 [!DNL Query Editor] 在日志表中捕获。 您可以在 **[!UICONTROL 日志]** 选项卡来查找查询执行。 保存的查询列在 **[!UICONTROL 浏览]** 选项卡。
+执行的所有查询 [!DNL Query Editor] 在日志表中捕获。 您可以在 **[!UICONTROL 日志]** 选项卡来查找查询执行。 保存的查询列在 **[!UICONTROL 模板]** 选项卡。
 
 请参阅 [查询服务UI概述](./overview.md) 以了解更多信息。
 
@@ -182,7 +184,7 @@ ht-degree: 0%
 
 ## 使用查询编辑器执行查询 {#executing-queries}
 
-在中运行查询 [!DNL Query Editor]，则可以在编辑器中输入SQL或从 **[!UICONTROL 日志]** 或 **[!UICONTROL 浏览]** ，然后选择 **播放**. 查询执行的状态显示在 **[!UICONTROL 控制台]** 选项卡，并在 **[!UICONTROL 结果]** 选项卡。
+在中运行查询 [!DNL Query Editor]，则可以在编辑器中输入SQL或从 **[!UICONTROL 日志]** 或 **[!UICONTROL 模板]** ，然后选择 **播放**. 查询执行的状态显示在 **[!UICONTROL 控制台]** 选项卡，并在 **[!UICONTROL 结果]** 选项卡。
 
 ### 控制台 {#console}
 

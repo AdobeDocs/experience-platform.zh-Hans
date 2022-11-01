@@ -5,7 +5,7 @@ title: 查询服务UI指南
 topic-legacy: guide
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 0a44d15f9dfaf5100fa44e2e6442b1be23ee0ab0
+source-git-commit: a085bac6b4ee825d534710ae91d6690fa076e873
 workflow-type: tm+mt
 source-wordcount: '716'
 ht-degree: 2%
@@ -18,7 +18,7 @@ Adobe Experience Platform [!DNL Query Service] 提供了一个用户界面，可
 
 ## [!DNL Query Editor]
 
-的 [!DNL Query Editor] 使您无需使用外部客户端即可编写和执行查询。 选择 **[!UICONTROL 创建查询]** 打开 [!DNL Query Editor] 并创建新查询。 您还可以访问 [!DNL Query Editor] 通过从 **[!UICONTROL 日志]** 或 **[!UICONTROL 浏览]** 选项卡。 选择之前执行或保存的查询将打开 [!DNL Query Editor] 并显示所选查询的SQL。
+的 [!DNL Query Editor] 使您无需使用外部客户端即可编写和执行查询。 选择 **[!UICONTROL 创建查询]** 打开 [!DNL Query Editor] 并创建新查询。 您还可以访问 [!DNL Query Editor] 通过从 **[!UICONTROL 日志]** 或 **[!UICONTROL 模板]** 选项卡。 选择之前执行或保存的查询将打开 [!DNL Query Editor] 并显示所选查询的SQL。
 
 ![“查询”功能板中突出显示了“创建查询”。](../images/ui/overview/overview.png)
 
