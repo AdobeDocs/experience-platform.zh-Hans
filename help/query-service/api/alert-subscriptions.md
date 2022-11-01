@@ -2,9 +2,7 @@
 keywords: Experience Platform；主页；热门主题；查询服务；查询服务；警报；
 title: 警报订阅API端点
 description: 本指南提供了您可以使用查询服务API对警报订阅端点进行的各种API调用的示例HTTP请求和响应。
-hide: true
-hidefromtoc: true
-source-git-commit: df894d8b52aff3708aa06e73d4c5ba3e1e501f10
+source-git-commit: 4f85f38e4870f0c2429a3a2a50bd7f95075c6be4
 workflow-type: tm+mt
 source-wordcount: '2289'
 ht-degree: 2%
