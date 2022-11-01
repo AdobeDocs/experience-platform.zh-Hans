@@ -2,9 +2,9 @@
 title: 数据卫生概述
 description: Adobe Experience Platform数据卫生功能允许您通过更新或清除过时或不准确的记录来管理数据的生命周期。
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 83149c4e6e8ea483133da4766c37886b8ebd7316
+source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '758'
 ht-degree: 3%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->目前，数据卫生仅适用于已购买Adobe医疗保健盾的组织。
+>目前，数据卫生仅适用于已购买的组织 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**.
 
 Adobe Experience Platform提供了一组功能强大的工具来管理大型、复杂的数据操作，以编排客户体验。 随着数据逐渐被摄取到系统中，管理数据存储变得越来越重要，这样数据就可以按预期使用，错误数据需要更正时会更新，组织策略认为有必要时会删除。
 
@@ -42,7 +42,7 @@ Platform的数据卫生功能允许您通过以下方式管理存储的消费者
 
 在 [数据集过期请求](./ui/dataset-expiration.md) 已创建：
 
-| Stage | 计划过期后的时间 | 描述 |
+| 暂存 | 计划过期后的时间 | 描述 |
 | --- | --- | --- |
 | 请求已提交 | 0 小时 | 数据管理员或隐私分析员提交了一个请求，要求数据集在给定时间过期。 请求显示在 [!UICONTROL 数据卫生UI] 提交请求后，该请求将保持挂起状态，直到计划过期时间（之后将执行请求）为止。 |
 | 数据集已删除 | 1 小时 | 数据集将从 [数据集库页面](../catalog/datasets/user-guide.md) 中。 数据湖中的数据只会被软删除，并且会一直保留到过程结束，之后将会硬删除。 |
@@ -57,7 +57,7 @@ Platform的数据卫生功能允许您通过以下方式管理存储的消费者
 
 在 [消费者删除请求](./ui/delete-consumer.md) 已创建：
 
-| 阶段 | 请求提交后的时间 | 描述 |
+| 暂存 | 请求提交后的时间 | 描述 |
 | --- | --- | --- |
 | 请求已提交 | 0 小时 | 数据管理员或隐私分析员提交消费者删除请求。 请求显示在 [!UICONTROL 数据卫生UI] 在提交之后。 |
 | 配置文件查找已更新 | 3 小时 | 删除身份导致的用户档案计数更改将反映在 [功能板小组件](../dashboards/guides/profiles.md#profile-count-trend) 和其他报告。 |

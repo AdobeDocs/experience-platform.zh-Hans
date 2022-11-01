@@ -1,9 +1,9 @@
 ---
 title: 配额API端点
 description: 利用数据卫生API中的/quota端点，可根据组织针对每种作业类型的每月配额限制来监控数据卫生使用情况。
-source-git-commit: 364ada0c354ddba8a855945f4f806f5600f21416
+source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '352'
 ht-degree: 3%
 
 ---
@@ -12,7 +12,7 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的数据卫生功能目前仅适用于已购买Healthcare Shield的组织。
+>Adobe Experience Platform中的数据卫生功能目前仅适用于已购买的组织 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**.
 
 的 `/quota` 数据卫生API中的端点允许您根据组织针对每种作业类型的配额限制监控数据卫生使用情况。
 

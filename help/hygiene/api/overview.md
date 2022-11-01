@@ -2,10 +2,10 @@
 title: 数据卫生API指南
 description: 了解如何以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: 83149c4e6e8ea483133da4766c37886b8ebd7316
+source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
 workflow-type: tm+mt
-source-wordcount: '400'
-ht-degree: 1%
+source-wordcount: '405'
+ht-degree: 0%
 
 ---
 
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Adobe Experience Platform中的Adobe卫生功能目前仅适用于已购买Data Healthcare Shield的组织。
+>Adobe Experience Platform中的数据卫生功能目前仅适用于已购买的组织 **Adobe医疗保健盾** 或 **Adobe隐私和安全防护**.
 
 数据卫生API允许您以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据，并计划数据集的过期日期。 本指南介绍了使用API的先决步骤，并提供了指向更多特定于端点的文档的链接。
 
