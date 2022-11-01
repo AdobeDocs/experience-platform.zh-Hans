@@ -5,9 +5,9 @@ user-guide-title: Adobe Experience Platform Web SDK 帮助
 breadcrumb-title: Web SDK 指南
 user-guide-description: 通过边缘网络与 Experience Cloud 服务交互。
 feature: Web SDK
-source-git-commit: 2cec87d3f45b1b774925a9b669b53a958e65e57a
+source-git-commit: 15a1fd71bc5f00efdd475abd3385dc6bf4737a17
 workflow-type: tm+mt
-source-wordcount: '189'
+source-wordcount: '193'
 ht-degree: 32%
 
 ---
@@ -46,6 +46,7 @@ ht-degree: 32%
       * [向Analytics发送数据](data-collection/adobe-analytics/sending-data-to-analytics.md)
 * 个性化 {#personalization}
    * [呈现个性化内容](personalization/rendering-personalization-content.md)
+   * [通过混合实施进行个性化](personalization/hybrid-personalization.md)
    * [管理闪烁](personalization/manage-flicker.md)
    * Adobe Target {#adobe-target}
       * [概述](personalization/adobe-target/target-overview.md)
