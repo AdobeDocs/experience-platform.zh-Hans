@@ -1,9 +1,9 @@
 ---
 title: 使用AI生成的Recommendations（测试版）将CSV文件映射到XDM模式
 description: 本教程介绍如何使用AI生成的推荐将CSV文件映射到XDM模式。
-source-git-commit: a8a7523c5b7f696ecc0ae89cb4e0474b44a222e7
+source-git-commit: d6f858af8bc44be74b1aaf12b973fb6818c1b2a5
 workflow-type: tm+mt
-source-wordcount: '1021'
+source-wordcount: '1043'
 ht-degree: 0%
 
 ---
@@ -35,13 +35,13 @@ ht-degree: 0%
 
 的 **[!UICONTROL 映射CSV XDM架构]** 此时会显示工作流，从 **[!UICONTROL 数据流详细信息]** 中。
 
-选择 **[!UICONTROL 使用ML推荐创建新架构]**，导致显示新控件。 为要映射的CSV数据选择相应的类([!UICONTROL 用户档案] 或 [!UICONTROL ExperienceEvent])，然后使用下拉菜单为您的业务选择相关的行业。 如果贵组织在 [企业对企业(B2B)](../../../xdm/tutorials/relationship-b2b.md) 模型，选择 **[!UICONTROL B2B数据]** 复选框。
+选择 **[!UICONTROL 使用ML推荐创建新架构]**，导致显示新控件。 为要映射的CSV数据选择相应的类([!UICONTROL 用户档案] 或 [!UICONTROL ExperienceEvent])。 您可以选择使用下拉菜单为您的业务选择相关行业，或者如果提供的类别不适用于您，则将其留空。 如果贵组织在 [企业对企业(B2B)](../../../xdm/tutorials/relationship-b2b.md) 模型，选择 **[!UICONTROL B2B数据]** 复选框。
 
 ![的 [!UICONTROL 数据流详细信息] 步骤，并选择ML推荐选项。 [!UICONTROL 用户档案] 已为类和选择 [!UICONTROL 电信] 为行业选择](../../images/tutorials/map-csv-recommendations/select-class-and-industry.png)
 
 在此，为将通过CSV数据创建的架构提供名称，并为将包含在该架构下摄取的数据的输出数据集提供名称。
 
-您可以选择为数据流配置以下附加功能：
+在继续之前，您可以选择为数据流配置以下其他功能：
 
 | 输入名称 | 描述 |
 | --- | --- |
@@ -50,6 +50,8 @@ ht-degree: 0%
 | [!UICONTROL 部分摄取] | 启用后，将在指定的错误阈值内摄取新批量数据的有效记录。 利用此阈值，可在整个批处理失败之前配置可接受错误的百分比。 |
 | [!UICONTROL 数据流详细信息] | 为将CSV数据导入平台的数据流提供名称和可选描述。 启动此工作流时，会自动为数据流分配默认名称。 更改名称是可选操作。 |
 | [!UICONTROL 警报] | 从 [产品内警报](../../../observability/alerts/overview.md) 数据流启动后要接收的与其状态有关的信息。 |
+
+{style=&quot;table-layout:auto&quot;}
 
 配置完数据流后，选择 **[!UICONTROL 下一个]**.
 
@@ -81,7 +83,7 @@ ht-degree: 0%
 
 ### 编辑字段组 {#edit-field-groups}
 
-CSV字段会使用ML模型自动映射到现有字段组。 如果要更改任何特定CSV字段的字段组，请选择 **[!UICONTROL 编辑]** 架构树旁边。
+CSV字段会使用ML模型自动映射到现有的XDM字段组。 如果要更改任何特定CSV字段的字段组，请选择 **[!UICONTROL 编辑]** 架构树旁边。
 
 ![的 [!UICONTROL 编辑] “架构树”旁边的按钮](../../images/tutorials/map-csv-recommendations/edit-schema-structure.png)
 
