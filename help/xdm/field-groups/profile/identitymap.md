@@ -1,31 +1,24 @@
 ---
-keywords: Experience Platform；主页；热门主题；模式;模式;XDM；个人用户档案；字段；模式;模式；标识映射；标识映射；模式设计；映射；映射；合并模式;合并
-solution: Experience Platform
-title: IdentityMap模式字段组
+keywords: Experience Platform；主页；热门主题；架构；架构；XDM；单个配置文件；字段；架构；架构；标识映射；标识映射；架构设计；映射；并集架构；并集架构
+title: IdentityMap架构字段组
 topic-legacy: overview
-description: 本文档概述了XDM单个用户档案类。
+description: 本文档概述了XDM Individual Profile类。
 exl-id: c9928e85-ef1e-4739-ba1d-80505a9e60c3
-translation-type: tm+mt
-source-git-commit: d425dcd9caf8fccd0cb35e1bac73950a6042a0f8
+source-git-commit: c59b4bd7ccc61ef4f9dc8a963903e3ec495558ed
 workflow-type: tm+mt
-source-wordcount: '146'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
 
-
-# [!UICONTROL IdentityMap] 模式字段组
+# [!UICONTROL IdentityMap] 架构字段组
 
 >[!NOTE]
 >
->多个模式字段组的名称已更改。 有关详细信息，请参阅[字段组名称更新](../name-updates.md)上的文档。
+>多个架构字段组的名称已更改。 请参阅 [字段组名称更新](../name-updates.md) 以了解更多信息。
 
-[!UICONTROL IdentityMap] 是类的标准模式字 [[!DNL XDM Individual Profile] 段组](../../classes/individual-profile.md)。字段组提供单个映射字段，该字段包含由命名空间键入的一组用户标识。
-
->[!WARNING]
->
->系统会在摄取标识数据时自动更新`IdentityMap`字段。 为了将此字段正确用于[实时客户用户档案](../../../profile/home.md)，请不要尝试手动更新数据操作中字段的内容。
+[!UICONTROL IdentityMap] 是的标准架构字段组 [[!DNL XDM Individual Profile] 类](../../classes/individual-profile.md). 字段组提供单个映射字段，其中包含一组由命名空间键入的用户标识。
 
 <img src="../../images/field-groups/identitymap.png" width="600" /><br />
 
-有关模式组合的用例的详细信息，请参阅[基础知识](../../schema/composition.md#identityMap)中有关标识映射的部分。
+请参阅 [架构组合基础知识](../../schema/composition.md#identityMap) 以了解有关其用例（包括其好处和缺点）的更多信息。
