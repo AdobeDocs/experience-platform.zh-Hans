@@ -2,9 +2,9 @@
 title: （测试版）将数据集导出到云存储目标
 type: Tutorial
 description: 了解如何将数据集从Adobe Experience Platform导出到首选的云存储位置。
-source-git-commit: 92e2d575d92b9d412f473610fc149663e815f5c3
+source-git-commit: 97a39e12d916e4fbd048c0fb9ddfa9bdfa10d438
 workflow-type: tm+mt
-source-wordcount: '1252'
+source-wordcount: '1309'
 ht-degree: 1%
 
 ---
@@ -68,6 +68,11 @@ Experience Platform目录中某些基于文件的目标同时支持区段激活�
 ![数据集导出工作流，其中显示了选择数据集步骤，您可以在此步骤中选择要导出的数据集。](/help/destinations/assets/ui/export-datasets/select-datasets.png)
 
 ## 计划数据集导出 {#scheduling}
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_activate_datasets_exportoptions"
+>title="数据集的文件导出选项"
+>abstract="选择 **导出增量文件** 以仅导出自上次导出后添加到数据集的数据。 <br> 第一个增量文件导出包含数据集中的所有数据，充当回填。 将来的增量文件仅包含自首次导出以来添加到数据集的数据。"
 
 在 **[!UICONTROL 计划]** 步骤中，您可以为数据集导出设置开始日期和导出频率。
 

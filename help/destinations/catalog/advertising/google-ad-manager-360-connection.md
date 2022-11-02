@@ -2,7 +2,7 @@
 title: （测试版） [!DNL Google Ad Manager 360] 连接
 description: Google Ad Manager 360是Google的一个广告服务平台，它为出版商提供了通过视频和移动设备应用程序管理其网站上广告显示的方法。
 exl-id: 3251145a-3e4d-40aa-b120-d79c8c9c7cae
-source-git-commit: f163b1e3c60953192b2ddf543eb4f3e8df88799b
+source-git-commit: 97a39e12d916e4fbd048c0fb9ddfa9bdfa10d438
 workflow-type: tm+mt
 source-wordcount: '914'
 ht-degree: 1%
@@ -81,7 +81,7 @@ ht-degree: 1%
 要对目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
 * **[!UICONTROL 访问密钥ID]**:由61个字符组成的字母数字字符串，用于验证您的 [!DNL Google Cloud Storage] 帐户到平台。
-* **[!UICONTROL 密钥访问密钥]**:一个40个字符、基于64编码的字符串，用于验证您的 [!DNL Google Cloud Storage] 帐户到平台。
+* **[!UICONTROL 密钥访问密钥]**:一个40个字符、base64编码的字符串，用于验证您的 [!DNL Google Cloud Storage] 帐户到平台。
 
 有关这些值的更多信息，请参阅 [Google云存储HMAC密钥](https://cloud.google.com/storage/docs/authentication/hmackeys#overview) 的双曲余切值。 有关如何生成您自己的访问密钥ID和密钥的步骤，请参阅 [[!DNL Google Cloud Storage] 源概述](/help/sources/connectors/cloud-storage/google-cloud-storage.md).
 

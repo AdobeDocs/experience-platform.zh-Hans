@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform 发行说明
 description: Adobe Experience Platform的最新发行说明。
-source-git-commit: d046c17a7b376f5c2e2f25c38fac0916ed2dba73
+source-git-commit: 38eadb3a03577fde9651842e3aecc0291b14f0a0
 workflow-type: tm+mt
 source-wordcount: '1394'
 ht-degree: 4%
@@ -53,7 +53,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | 功能 | 描述 |
 | --- | --- |
 | （测试版）数据集导出 | 的 [数据集导出测试版功能](/help/destinations/ui/export-datasets.md) 允许您导出第一代数据(如 [Real-time Customer Data Platform产品说明](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html))从Adobe Experience Platform通过目标用户界面发送到您自己的外部客户系统。 这样，您就可以通过无代码/低代码工作流将数据从Experience Platform中导出到六个云存储目标（如下表中所示），以便进行分析和法规遵从性用例。 |
-| （测试版）增强的文件导出功能 | 现在，在导出文件以外时，您可以从增强的自定义功能中受益： <br><ul><li>其他 [文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#scheduling).</li><li>能够通过 [改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).</li><li>[能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).</li></ul> <br> 下表中列出的六个新的测试版云存储卡支持此功能。 |
+| （测试版）增强的文件导出功能 | 现在，在导出文件以外时，您可以从增强的自定义功能中受益： <br><ul><li>其他 [文件命名选项](/help/destinations/ui/activate-batch-profile-destinations.md#file-names).</li><li>能够通过 [改进的映射步骤](/help/destinations/ui/activate-batch-profile-destinations.md#mapping).</li><li>[能够自定义导出的CSV数据文件的格式](/help/destinations/ui/batch-destinations-file-formatting-options.md).</li></ul> <br> 下表中列出的六个新的测试版云存储卡支持此功能。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -65,7 +65,7 @@ Adobe Experience Platform提供了一套技术，允许您收集客户端客户�
 | [[!DNL Microsoft Dynamics 365]](../../destinations/catalog/crm/microsoft-dynamics-365.md) | Microsoft Dynamics 365是一个基于云的业务应用程序平台，它将企业资源规划(ERP)和客户关系管理(CRM)与生产力应用程序和AI工具结合在一起，从而实现端到端更顺畅、更受控制的操作、更好的增长潜力和降低成本。 |
 | [[!DNL (Beta) Adobe Commerce]](../../destinations/catalog/personalization/adobe-commerce.md) | 的 [!DNL (Beta) Adobe Commerce] 目标连接器允许您选择一个或多个要激活到您的Real-Time CDP区段 [!DNL Adobe Commerce] 帐户为购物者提供动态个性化体验。 在 [!DNL Adobe Commerce]，则可以选择这些Real-Time CDP区段以个性化购物车中的独特选件，如“购买2获取1免费”。 您还可以显示主页横幅并通过促销优惠修改产品定价，所有这些优惠均根据Adobe Real-Time CDP区段进行自定义。 |
 | [[!DNL (Beta) Azure Data Lake Storage Gen2]](../../destinations/catalog/cloud-storage/adls-gen2.md) | 创建实时出站连接到 [!DNL Azure Data Lake Storage Gen2] 定期将数据文件从Adobe Experience Platform导出到您自己的存储位置。 这个新的测试版目标提供了增强的文件导出功能，并支持数据集导出。 |
-| [[!DNL (Beta) Azure Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) | [!DNL Data Landing Zone] 是 [!DNL Azure Blob] 由Adobe Experience Platform配置的存储界面，授予您访问基于云的安全文件存储工具的权限，以便将文件导出到平台之外。 这个新的测试版目标提供了增强的文件导出功能，并支持数据集导出。 |
+| [[!DNL (Beta) Data Landing Zone]](../../destinations/catalog/cloud-storage/data-landing-zone.md) | [!DNL Data Landing Zone] 是 [!DNL Azure Blob] 由Adobe Experience Platform配置的存储界面，授予您访问基于云的安全文件存储工具的权限，以便将文件导出到平台之外。 这个新的测试版目标提供了增强的文件导出功能，并支持数据集导出。 |
 | [[!DNL (Beta) Google Cloud Storage]](../../destinations/catalog/cloud-storage/google-cloud-storage.md) | 创建实时出站连接到 [!DNL Google Cloud Storage] 定期将数据文件从Adobe Experience Platform导出到您自己的存储段中。 这个新的测试版目标提供了增强的文件导出功能，并支持数据集导出。 |
 | [[!DNL (Beta) Amazon S3]](../../destinations/catalog/cloud-storage/amazon-s3.md#changelog) | 测试版参与者现在看到两个 [!DNL Amazon S3] 目标卡片在目标目录中并排显示。 新的测试版目标提供了增强的文件导出功能，并支持数据集导出。 |
 | [[!DNL (Beta) Azure Blob]](../../destinations/catalog/cloud-storage/azure-blob.md#changelog) | 测试版参与者现在看到两个 [!DNL Azure Blob] 目标卡片在目标目录中并排显示。 新的测试版目标提供了增强的文件导出功能，并支持数据集导出。 |

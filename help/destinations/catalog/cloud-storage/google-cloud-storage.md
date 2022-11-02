@@ -1,7 +1,7 @@
 ---
 title: （测试版）Google云存储连接
 description: 了解如何连接到Google云存储并激活区段或导出数据集。
-source-git-commit: 56fd7a5ab58186367c729cb4ca8c3b4213c44900
+source-git-commit: 97a39e12d916e4fbd048c0fb9ddfa9bdfa10d438
 workflow-type: tm+mt
 source-wordcount: '888'
 ht-degree: 0%
@@ -58,7 +58,7 @@ ht-degree: 0%
 要对目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
 * **[!UICONTROL 访问密钥ID]**:由61个字符组成的字母数字字符串，用于验证您的 [!DNL Google Cloud Storage] 帐户到平台。 有关如何获取此值的信息，请阅读 [先决条件](#prerequisites) 部分。
-* **[!UICONTROL 密钥访问密钥]**:一个40个字符、基于64编码的字符串，用于验证您的 [!DNL Google Cloud Storage] 帐户到平台。 有关如何获取此值的信息，请阅读 [先决条件](#prerequisites) 部分。
+* **[!UICONTROL 密钥访问密钥]**:一个40个字符、base64编码的字符串，用于验证您的 [!DNL Google Cloud Storage] 帐户到平台。 有关如何获取此值的信息，请阅读 [先决条件](#prerequisites) 部分。
 * **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64-encoded] 字符串。 在下面的文档链接中查看格式正确且基本64编码的键值的示例。 为简便起见，缩短了中间部分。
 
    ![该图像显示了UI中格式正确且基本64加密的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
