@@ -5,10 +5,10 @@ title: Marketo Engage源的映射字段
 topic-legacy: overview
 description: 下表包含Marketo数据集中的字段与其相应XDM字段之间的映射。
 exl-id: 2b217bba-2748-4d6f-85ac-5f64d5e99d49
-source-git-commit: a0ca9cff43b6f8276268467fecf944c664992950
+source-git-commit: 5e93a86d6bdbf66e6b4991e0e2bc4d3dfe90d2b5
 workflow-type: tm+mt
-source-wordcount: '746'
-ht-degree: 6%
+source-wordcount: '952'
+ht-degree: 4%
 
 ---
 
@@ -28,6 +28,8 @@ ht-degree: 6%
 ## 活动 {#activities}
 
 的 [!DNL Marketo] 源现在支持其他标准活动。 要使用标准活动，您必须使用 [模式自动生成实用程序](../marketo/marketo-namespaces.md) 因为如果您 `activities` 数据流在不更新架构的情况下，映射模板将失败，因为架构中不存在新的目标字段。 如果选择不更新架构，您仍然可以创建新数据流并关闭任何错误。 但是，任何新字段或更新字段将不会摄取到平台中。
+
+请参阅 [XDM体验事件类](../../../../xdm/classes/experienceevent.md) 有关XDM类和XDM字段组的详细信息。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
@@ -136,6 +138,8 @@ ht-degree: 6%
 
 ## 项目 {#programs}
 
+阅读 [XDM Business Campaign概述](../../../../xdm/classes/b2b/business-campaign.md) 以了解有关XDM类的更多信息。 有关XDM字段组的更多信息，请阅读 [Business Campaign详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md) 的双曲余切值。
+
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `campaignKey.sourceType` |
@@ -164,6 +168,8 @@ ht-degree: 6%
 {style=&quot;table-layout:auto&quot;}
 
 ## 方案成员资格 {#program-memberships}
+
+阅读 [XDM Business Campaign成员概述](../../../../xdm/classes/b2b/business-campaign-members.md) 以了解有关XDM类的更多信息。 有关XDM字段组的更多信息，请阅读 [XDM Business Campaign成员详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign-members/details.md) 的双曲余切值。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
@@ -196,6 +202,8 @@ ht-degree: 6%
 
 ## 公司 {#companies}
 
+阅读 [XDM业务帐户概述](../../../../xdm/classes/b2b/business-account.md) 以了解有关XDM类的更多信息。
+
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `accountKey.sourceType` |
@@ -226,6 +234,8 @@ ht-degree: 6%
 
 ## 静态列表 {#static-lists}
 
+阅读 [XDM业务营销列表概述](../../../../xdm/classes/b2b/business-marketing-list.md) 以了解有关XDM类的更多信息。
+
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `marketingListKey.sourceType` |
@@ -241,6 +251,8 @@ ht-degree: 6%
 {style=&quot;table-layout:auto&quot;}
 
 ## 静态列表成员关系 {#static-list-memberships}
+
+阅读 [XDM业务营销列表成员概述](../../../../xdm/classes/b2b/business-marketing-list-members.md) 以了解有关XDM类的详细信息。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
@@ -260,6 +272,8 @@ ht-degree: 6%
 >[!IMPORTANT]
 >
 >只有在Marketo的基于帐户的营销(ABM)功能中，才需要命名帐户数据集。 如果您没有使用ABM，则无需为指定帐户设置映射。
+
+阅读 [XDM业务帐户概述](../../../../xdm/classes/b2b/business-account.md) 以了解有关XDM类的更多信息。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
@@ -286,6 +300,8 @@ ht-degree: 6%
 {style=&quot;table-layout:auto&quot;}
 
 ## 机会 {#opportunities}
+
+阅读 [XDM业务机会概述](../../../../xdm/classes/b2b/business-opportunity.md) 以了解有关XDM类的更多信息。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
@@ -322,6 +338,8 @@ ht-degree: 6%
 
 ## 机会联系角色 {#opportunity-contact-roles}
 
+阅读 [XDM业务机会人员关系概述](../../../../xdm/classes/b2b/business-account-person-relation.md) 以了解有关XDM类的更多信息。
+
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |
 | `"Marketo"` | `opportunityPersonKey.sourceType` |
@@ -340,6 +358,8 @@ ht-degree: 6%
 {style=&quot;table-layout:auto&quot;}
 
 ## 人员 {#persons}
+
+阅读 [XDM个人配置文件概述](../../../../xdm/classes/individual-profile.md) 以了解有关XDM类的更多信息。 有关XDM字段组的更多信息，请阅读 [XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md) 指南和 [XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md) 的双曲余切值。
 
 | 源数据集 | XDM目标字段 | 注释 |
 | -------------- | ---------------- | ----- |

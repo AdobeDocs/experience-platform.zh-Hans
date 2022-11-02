@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；Salesforce;Salesforce；
 title: Salesforce映射字段
 description: 下表包含Salesforce源字段与其对应XDM字段之间的映射。
 exl-id: 33ee76f2-0495-4acd-a862-c942c0fa3177
-source-git-commit: 948247c1ffbe10fa07ba1d03f1715fd707c6d836
+source-git-commit: 5e93a86d6bdbf66e6b4991e0e2bc4d3dfe90d2b5
 workflow-type: tm+mt
-source-wordcount: '291'
-ht-degree: 14%
+source-wordcount: '494'
+ht-degree: 8%
 
 ---
 
@@ -15,6 +15,8 @@ ht-degree: 14%
 下表包含 [!DNL Salesforce] 源字段及其对应的体验数据模型(XDM)字段。
 
 ## 联系人 {#contact}
+
+阅读 [XDM个人配置文件概述](../../../../xdm/classes/individual-profile.md) 以了解有关XDM类的更多信息。 有关XDM字段组的更多信息，请阅读 [XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md) 指南和 [XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md) 的双曲余切值。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
@@ -74,6 +76,8 @@ ht-degree: 14%
 
 ## 商机 {#lead}
 
+阅读 [XDM个人配置文件概述](../../../../xdm/classes/individual-profile.md) 以了解有关XDM类的更多信息。 有关XDM字段组的更多信息，请阅读 [XDM业务人员详细信息架构字段组](../../../../xdm/field-groups/profile/business-person-details.md) 指南和 [XDM业务人员组件架构字段组](../../../../xdm/field-groups/profile/business-person-components.md) 的双曲余切值。
+
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
 | `City` | `workAddress.city` |
@@ -122,6 +126,8 @@ ht-degree: 14%
 {style=&quot;table-layout:auto&quot;}
 
 ## 帐户 {#account}
+
+阅读 [XDM业务帐户详细信息概述](../../../../xdm/classes/b2b/business-account.md) 以了解有关XDM类的更多信息。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
@@ -177,6 +183,8 @@ ht-degree: 14%
 
 ## 机会 {#opportunity}
 
+阅读 [XDM业务机会概述](../../../../xdm/classes/b2b/business-opportunity.md) 以了解有关XDM类的更多信息。
+
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
 | `"Salesforce"` | `opportunityKey.sourceType` |
@@ -216,6 +224,8 @@ ht-degree: 14%
 
 ## 机会联系角色 {#opportunity-contact-role}
 
+阅读 [XDM业务机会人员关系类概述](../../../../xdm/classes/b2b/business-opportunity-person-relation.md) 以了解有关XDM类的更多信息。
+
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
 | `"Salesforce"` | `opportunityPersonKey.sourceType` |
@@ -239,6 +249,8 @@ ht-degree: 14%
 {style=&quot;table-layout:auto&quot;}
 
 ## Campaign {#campaign}
+
+阅读 [XDM Business Campaign类概述](../../../../xdm/classes/b2b/business-campaign.md) 以了解有关XDM类的更多信息。 有关XDM字段组的更多信息，请阅读 [XDM Business Campaign详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md) 的双曲余切值。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
@@ -269,6 +281,8 @@ ht-degree: 14%
 
 ## 营销活动成员 {#campaign-member}
 
+阅读 [XDM Business Campaign成员概述](../../../../xdm/classes/b2b/business-campaign-members.md) 以了解有关XDM类的更多信息。 有关XDM字段组的更多信息，请阅读 [XDM Business Campaign成员详细信息架构字段组](../../../../xdm/field-groups/b2b-campaign/details.md) 文档。
+
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
 | `"Salesforce"` | `campaignMemberKey.sourceType` |
@@ -292,6 +306,8 @@ ht-degree: 14%
 | `Type` | `b2b.personType` |
 
 ## 帐户联系关系 {#account-contact-relation}
+
+阅读 [XDM业务帐户人员关系类](../../../../xdm/classes/b2b/business-account-person-relation.md) 以了解有关XDM类的更多信息。
 
 | 源字段 | 目标XDM字段路径 | 注释 |
 | --- | --- | --- |
