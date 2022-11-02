@@ -5,9 +5,9 @@ title: 数据集概述
 topic-legacy: datasets
 description: 本文档全面概述了 Experience Platform 中的数据集。
 exl-id: 51ecefb0-a699-4b1a-80f1-26c6ba92fcbf
-source-git-commit: 03e7863f38b882a2fbf6ba0de1755e1924e8e228
+source-git-commit: 02002c9530074b8b05664ff9eab5bc2fe4b7d5d4
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '736'
 ht-degree: 7%
 
 ---
@@ -61,6 +61,7 @@ Adobe Experience Platform数据管理允许您管理客户数据，以确保遵�
 * [Adobe Experience Platform Segmentation Service](../../segmentation/home.md):允许您从 [!DNL Real-time Customer Profile] 数据。 然后，可以将这些受众导出到 [!DNL Data Lake].
 * [Adobe Experience Platform数据科学工作区](../../data-science-workspace/home.md):使用机器学习和人工智能来揭示大数据集中的洞察。
 * [Adobe Experience Platform查询服务](../../query-service/home.md):允许您使用标准SQL在中查询数据 [!DNL Experience Platform]，加入 [!DNL Data Lake] 并捕获查询结果作为新数据集以用于报告， [!DNL Data Science Workspace]或 [!DNL Real-time Customer Profile].
+* [Adobe Experience Platform目标服务](../../destinations/home.md):允许您 [导出数据集](/help/destinations/ui/export-datasets.md) 到所需的云存储或电子邮件营销目标，以便进行报表或数据科学活动。
 
 ## 后续步骤
 

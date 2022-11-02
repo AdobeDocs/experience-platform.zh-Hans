@@ -3,9 +3,9 @@ keywords: 目标；目标类型
 title: 目标类型和类别
 description: 了解Adobe Experience Platform中的不同目标类型和类别。
 exl-id: 7826d1e2-bd6b-4f65-9da9-0a3b3e8bb93b
-source-git-commit: 14e3eff3ea2469023823a35ee1112568f5b5f4f7
+source-git-commit: c140e68467065d17f143850bfb8eefb3ac46443a
 workflow-type: tm+mt
-source-wordcount: '642'
+source-wordcount: '675'
 ht-degree: 0%
 
 ---
@@ -66,6 +66,12 @@ Experience Platform中的边缘个性化目标包括 [Adobe Target](/help/destin
 以下视频将向您介绍两种目标类型的特性：
 
 >[!VIDEO](https://video.tv.adobe.com/v/29707?quality=12)
+
+## （测试版）数据集导出目标 {#dataset-export-destinations}
+
+目标目录中的某些云存储目标支持数据集导出。 使用这些目标将原始数据集导出到云存储位置。
+
+阅读有关如何 [导出数据集](/help/destinations/ui/export-datasets.md).
 
 ## 扩展 {#extensions}
 

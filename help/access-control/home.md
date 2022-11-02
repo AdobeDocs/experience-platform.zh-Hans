@@ -5,9 +5,9 @@ topic-legacy: overview
 title: 访问控制概述
 description: 通过Adobe Experience Platform提供对Adobe Admin Console的访问控制。 此功能可利用Admin Console中的产品配置文件，将用户与权限和沙箱相关联。
 exl-id: 591d59ad-2784-4ae4-a509-23649ce712c9
-source-git-commit: a3ee014656f135a0701b33f938384d3ab4316a99
+source-git-commit: e2d3267715f693a321b2f4ce1bae0650f38c21d7
 workflow-type: tm+mt
-source-wordcount: '1392'
+source-wordcount: '1419'
 ht-degree: 3%
 
 ---
@@ -96,14 +96,15 @@ Adobe Admin Console提供了一个中心位置，用于管理Adobe产品权利�
 | [!DNL Profile Management] | [!UICONTROL 导出区段的受众] | 能够将评估的受众区段导出到数据集。 |
 | [!DNL Profile Management] | [!UICONTROL 对受众评估区段] | 能够通过评估区段定义为受众生成用户档案。 |
 | [!DNL Identities] | [!UICONTROL 管理身份命名空间] | 有权读取、创建、编辑和删除身份命名空间。 |
-| [!DNL Identities] | [!UICONTROL 查看身份命名空间] | 身份命名空间的只读访问权限。 |
+| [!DNL Identities] | [!UICONTROL 查看标识命名空间] | 身份命名空间的只读访问权限。 |
 | [!DNL Identities] | [!UICONTROL 查看身份图] | 身份图的只读访问权限。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 管理沙箱] | 有权读取、创建、编辑和删除沙箱。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 查看沙盒] | 对属于贵组织的沙箱的只读访问权限。 |
 | [!DNL Sandbox Administration] | [!UICONTROL 重置沙盒] | 能够重置沙盒。 |
 | [!DNL Destinations] | [!UICONTROL 管理目标] | 访问读取、创建、编辑和禁用目标。 |
 | [!DNL Destinations] | [!UICONTROL 查看目标] | 对 **[!UICONTROL 目录]** 选项卡和已验证的目标 **[!UICONTROL 浏览]** 选项卡。 |
-| [!DNL Destinations] | [!UICONTROL 激活目标] | 能够将数据激活到已创建的活动目标。 此权限需要“查看目标”或“管理” [!UICONTROL 目标”] 授予将激活目标的用户。 |
+| [!DNL Destinations] | [!UICONTROL 激活目标] | 能够将数据激活到已创建的活动目标。 此权限需要 [!UICONTROL 查看目标] 或 [!UICONTROL 管理目标] 授予将激活目标的用户。 |
+| [!DNL Destinations] | [!UICONTROL 管理和激活数据集目标] | 能够读取、创建、编辑和禁用数据集导出流。 还能够将数据激活到已创建的活动数据集。 |
 | [!DNL Destinations] | [!UICONTROL 目标创作] | 能够使用 [Adobe Experience Platform Destination SDK](../destinations/destination-sdk/overview.md). |
 | [!DNL Data Ingestion] | [!UICONTROL 管理源] | 对读取、创建、编辑和禁用源的访问权限。 |
 | [!DNL Data Ingestion] | [!UICONTROL 查看源] | 对 **[!UICONTROL 目录]** 选项卡和已验证的源 **[!UICONTROL 浏览]** 选项卡。 |

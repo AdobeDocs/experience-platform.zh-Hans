@@ -3,9 +3,9 @@ keywords: 平台；目标；目标工作区；UI；目标UI；目录；目标目
 title: 目标工作区
 description: “目标”工作区包含五个部分：“概述”、“目录”、“浏览”、“帐户”和“系统视图”。 下面各节对这些参数进行了描述。
 exl-id: 0f46f08d-0fe3-441d-933a-86bc146c0f19
-source-git-commit: 802a15212f51db2c616860ed0fd2c3f1cf2d3777
+source-git-commit: 69e1f065cb3b302c4b144f39c84179075379f648
 workflow-type: tm+mt
-source-wordcount: '1162'
+source-wordcount: '1223'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 的 [!UICONTROL 目标] 工作区包含五个部分， [!UICONTROL 概述], [!UICONTROL 目录], [!UICONTROL 浏览], [!UICONTROL 帐户]和 [!UICONTROL 系统视图]，如以下部分中所述。
 
-![目标 — 概述](../assets/ui/workspace/destinations-overview.png)
+![显示三个小组件的目标概述功能板。](../assets/ui/workspace/destinations-overview.png)
 
 ## [!UICONTROL 概述] {#overview}
 
@@ -37,16 +37,18 @@ ht-degree: 2%
 * 使用页面上的搜索功能找到特定目标。
 * 使用 [!UICONTROL 类别] 控制。
 * 在之间切换 [!UICONTROL 所有目标] 和 [!UICONTROL 我的目标]. 选择 **[!UICONTROL 所有目标]**，全部可用 [!DNL Platform] 目标。 选择 **[!UICONTROL 我的目标]**，则只能查看已建立连接的目标。
-* 选择以查看 **[!UICONTROL 连接]** 和/或 **[!UICONTROL 扩展]**. 要了解这两个类别之间的差异，请参阅 [目标类型和类别](../destination-types.md).
+* 选择以查看 **[!UICONTROL 连接]** 和/或 **[!UICONTROL 扩展]** 类型。 要了解这两个类别之间的差异，请阅读 [目标类型和类别](../destination-types.md).
 
-![目录](../assets/ui/workspace/catalog.png)
+![显示一些广告和云存储目标的目标目录。](../assets/ui/workspace/catalog.png)
 
-目标卡包含 **[!UICONTROL 设置]** 或 **[!UICONTROL 激活区段]** 控件，以及可显示更多选项的辅助控件。 这些控件描述如下：
+目标卡包含主控件和次控制选项。 主要控件包括 [!UICONTROL 设置], [!UICONTROL 激活], [!UICONTROL 激活区段]或 [!UICONTROL 导出数据集]. 辅助控件允许查看选项。 这些控件描述如下：
 
 | 控制 | 描述 |
 |---------|----------|
 | [!UICONTROL 设置] | 用于创建与目标的连接。 |
-| [!UICONTROL 激活区段] | 建立与目标的连接后，即可激活区段。 |
+| [!UICONTROL 激活] | 建立与目标的连接后，您可以激活区段或将数据集导出到此目标。 |
+| [!UICONTROL 激活区段] | 建立与目标的连接后，您可以激活此目标的区段。 |
+| [!UICONTROL 导出数据集] | 建立与目标的连接后，您可以将数据集导出到此目标。 |
 | [!UICONTROL 查看帐户] | 查看您为目标连接的帐户。 |
 | [!UICONTROL 查看数据流] | 查看目标存在的数据激活流。 |
 | [!UICONTROL 查看文档] | 打开指向该特定目标的文档页面的链接，以了解更多信息并帮助您进行设置。 |
@@ -67,9 +69,9 @@ ht-degree: 2%
 
 >[!TIP]
 >
-> * 选择 [!UICONTROL 平台] 列，并使用 ![“激活区段”按钮](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活区段&#x200B;]**按钮将区段发送到该目标。
-> * 选择 [!UICONTROL 平台] 列，并使用 ![“编辑详细信息”按钮](../assets/ui/workspace/pencil-icon.png)**[!UICONTROL 编辑详细信息&#x200B;]**按钮 [更新](update-accounts.md) 现有目标帐户的详细信息。
-> * 选择 [!UICONTROL 平台] 列，并使用 ![“删除”按钮](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL 删除&#x200B;]**按钮 [删除](delete-destination-account.md) 现有目标帐户。
+> * 选择省略号(`...`) [!UICONTROL 平台] 列，并使用 ![激活控件](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活&#x200B;]**/**[!UICONTROL &#x200B;激活区段&#x200B;]**/**[!UICONTROL &#x200B;导出数据集&#x200B;]**控制以将区段或数据集导出到该目标。
+> * 选择省略号(`...`) [!UICONTROL 平台] 列，并使用 ![编辑详细信息控件](../assets/ui/workspace/pencil-icon.png)**[!UICONTROL 编辑详细信息&#x200B;]**控制 [更新](update-accounts.md) 现有目标帐户的详细信息。
+> * 选择省略号(`...`) [!UICONTROL 平台] 列，并使用 ![删除控件](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL 删除&#x200B;]**控制 [删除](delete-destination-account.md) 现有目标帐户。
 
 
 ![“帐户”选项卡](../assets/ui/workspace/destination-account-options.png)
@@ -90,10 +92,10 @@ ht-degree: 2%
 
 >[!TIP]
 >
-> * 选择 [!UICONTROL 名称] 列，并使用 ![“激活区段”按钮](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活区段&#x200B;]**按钮将区段发送到该目标。
-> * 选择 [!UICONTROL 名称] 列，并使用 ![“删除”按钮](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL 删除&#x200B;]**按钮 [删除](delete-destinations.md) 到目标的现有连接。
-> * 选择 [!UICONTROL 名称] 列，并使用 ![“在监视中查看”按钮](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL 在监控中查看&#x200B;]**按钮，以在 [监控仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
-> * 选择 [!UICONTROL 名称] 列，并使用 ![订阅警报 ](../assets/ui/workspace/alerts-icon.png)**[!UICONTROL 订阅警报&#x200B;]**按钮，以订阅目标数据流警报。 您可以订阅警报，以接收有关流程运行状态、成功或失败的消息。 请参阅 [订阅上下文关联目标警报](alerts.md) 有关目标数据流警报的详细信息……
+> * 选择省略号(`...`) [!UICONTROL 名称] 列，并使用 ![激活区段控制](../assets/ui/workspace/add-data-symbol.png)**[!UICONTROL 激活&#x200B;]**控制以将区段或数据集导出到该目标。
+> * 选择省略号(`...`) [!UICONTROL 名称] 列，并使用 ![删除控件](../assets/ui/workspace/delete-destination-symbol.png)**[!UICONTROL 删除&#x200B;]**控制 [删除](delete-destinations.md) 到目标的现有连接。
+> * 选择省略号(`...`) [!UICONTROL 名称] 列，并使用 ![在监控控制中查看](../assets/ui/workspace/monitoring-icon.png)**[!UICONTROL 在监控中查看&#x200B;]**在 [监控仪表板](/help/dataflows/ui/monitor-destinations.md#monitoring-destinations-dashboard).
+> * 选择省略号(`...`) [!UICONTROL 名称] 列，并使用 ![订阅警报 ](../assets/ui/workspace/alerts-icon.png)**[!UICONTROL 订阅警报&#x200B;]**用于订阅目标数据流警报的控制。 您可以订阅警报，以接收有关流程运行状态、成功或失败的消息。 请参阅 [订阅上下文关联目标警报](alerts.md) 有关目标数据流警报的详细信息……
 
 
 ![“浏览”选项卡](../assets/ui/workspace/browse-tab.png)
