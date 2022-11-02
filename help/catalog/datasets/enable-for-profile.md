@@ -4,7 +4,7 @@ title: 使用API为配置文件和Identity服务启用数据集
 type: Tutorial
 description: 本教程将向您展示如何使用Adobe Experience Platform API启用数据集，以便与实时客户资料和Identity Service结合使用。
 exl-id: a115e126-6775-466d-ad7e-ee36b0b8b49c
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 132407af947b97a1925799a1fb5e12caa2b0410c
 workflow-type: tm+mt
 source-wordcount: '1073'
 ht-degree: 1%
@@ -175,8 +175,7 @@ curl -X GET \
         "schemaMetadata": {
             "primaryKey": [],
             "delta": [],
-            "dule": [],
-            "gdpr": []
+            "dule": []
         },
         "schemaRef": {
             "id": "https://ns.adobe.com/xdm/context/experienceevent",
