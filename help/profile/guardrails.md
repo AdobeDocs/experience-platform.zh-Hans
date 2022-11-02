@@ -6,9 +6,9 @@ product: experience platform
 type: Documentation
 description: Adobe Experience Platform 使用与传统关系数据模型不同的高度非规范化混合数据模型。本文档提供了默认的使用和速率限制，帮助您为个人资料数据建模以获得最佳系统性能。
 exl-id: 33ff0db2-6a75-4097-a9c6-c8b7a9d8b78c
-source-git-commit: d6100f58b8ffd6251c3a58576a41dbfb75c3bb0c
+source-git-commit: 67ed3e5a71231d9c243ca31693d2db70492bdb43
 workflow-type: tm+mt
-source-wordcount: '1902'
+source-wordcount: '1905'
 ht-degree: 5%
 
 ---
@@ -136,7 +136,7 @@ Adobe Experience Platform使您能够以实时客户配置文件的形式根据�
 
 ### 配置文件片段
 
-在本文档中，有几个护栏是指“配置文件片段”。 在Experience Platform中，多个配置文件片段会合并在一起，以形成实时客户配置文件。 每个片段表示给定数据集内该ID的唯一主标识以及相应的记录或事件数据。 要了解有关配置文件片段的更多信息，请参阅 [配置文件概述](home.md#profile-fragments-vs-merged-profiles).
+在本文档中，有几个护栏是指“配置文件片段”。 在Experience Platform中，多个配置文件片段会合并在一起，以形成实时客户配置文件。 每个片段表示给定数据集内该ID的唯一主标识以及相应的记录或完整事件数据集。 要了解有关配置文件片段的更多信息，请参阅 [配置文件概述](home.md#profile-fragments-vs-merged-profiles).
 
 ### 合并策略 {#merge-policies}
 
