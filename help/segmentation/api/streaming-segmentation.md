@@ -5,9 +5,9 @@ title: 利用流分段快速实时评估事件
 topic-legacy: developer guide
 description: 本文档包含有关如何通过Adobe Experience Platform Segmentation Service API使用流分段的示例。
 exl-id: 119508bd-5b2e-44ce-8ebf-7aef196abd7a
-source-git-commit: 5a4a8a8b77d06890f212a457e599b66aa46d8b7e
+source-git-commit: 30a12fee487609b4c85ba342963bb915e8152195
 workflow-type: tm+mt
-source-wordcount: '1915'
+source-wordcount: '1938'
 ht-degree: 1%
 
 ---
@@ -439,3 +439,7 @@ curl -X POST \
 “最近X天”下的数字 **仅** 包括符合流式分段条件的受众，以及 **仅** 如果您已将数据流式传输到系统，并且它计入到流定义中，则会增加。 此值为 **仅** 显示的流区段。 因此，此值 **5月** 对于批处理客户细分，显示为0。
 
 因此，如果您看到“最近X天”下的数字为零，并且折线图也报告为零，则您具有 **not** 将符合该区段资格的任何用户档案流式传输到系统中。
+
+### 区段需要多长时间才可用？
+
+一个区段最多需要一小时才能可用。

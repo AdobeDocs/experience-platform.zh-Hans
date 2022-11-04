@@ -1,13 +1,13 @@
 ---
 keywords: Experience Platform；主页；热门主题；分段；分段；分段服务；边缘分段；边缘分段；流式边缘；
 solution: Experience Platform
-title: '使用API进行边缘分段 '
+title: 使用API进行边缘分段
 topic-legacy: developer guide
 description: 本文档包含有关如何将边缘分段与Adobe Experience Platform Segmentation Service API结合使用的示例。
 exl-id: effce253-3d9b-43ab-b330-943fb196180f
-source-git-commit: de63939c44b338bb9632a57c74c095135f023d50
+source-git-commit: d2196d4d9cae4bdec160ce0c028d354a0db21cb5
 workflow-type: tm+mt
-source-wordcount: '1098'
+source-wordcount: '1140'
 ht-degree: 0%
 
 ---
@@ -259,3 +259,11 @@ curl -X POST \
 现在，您已了解如何创建启用了边缘分段的区段，接下来可以使用这些区段来启用同页和下一页个性化用例。
 
 要了解如何使用Adobe Experience Platform用户界面执行类似操作和处理区段，请访问 [区段生成器用户指南](../ui/segment-builder.md).
+
+## 附录
+
+以下部分列出了有关边缘分段的常见问题：
+
+### 在边缘网络上可用区段需要多长时间？
+
+在边缘网络上，一个区段最多需要一小时才能使用。

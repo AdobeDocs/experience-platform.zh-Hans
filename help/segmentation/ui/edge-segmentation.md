@@ -5,9 +5,9 @@ title: 边缘分段UI指南
 topic-legacy: ui guide
 description: 边缘分段功能可以即时评估Platform中的边缘区段，从而实现同一页面和下一页面个性化用例。
 exl-id: eae948e6-741c-45ce-8e40-73d10d5a88f1
-source-git-commit: 75583d9688f0c5ee0fe4627ce64b5436ca621aa1
+source-git-commit: d2196d4d9cae4bdec160ce0c028d354a0db21cb5
 workflow-type: tm+mt
-source-wordcount: '853'
+source-wordcount: '895'
 ht-degree: 0%
 
 ---
@@ -58,3 +58,11 @@ ht-degree: 0%
 ## 后续步骤
 
 本指南介绍如何在Adobe Experience Platform上使用边缘分段来评估区段。 要了解有关使用Experience Platform用户界面的更多信息，请阅读 [分段用户指南](./overview.md). 要了解如何使用Experience PlatformAPI执行类似操作和处理区段，请访问 [边缘分段API指南](../api/edge-segmentation.md).
+
+## 附录
+
+以下部分列出了有关边缘分段的常见问题：
+
+### 在边缘网络上可用区段需要多长时间？
+
+在边缘网络上，一个区段最多需要一小时才能使用。
