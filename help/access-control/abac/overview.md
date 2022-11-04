@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制概述
 description: 本文档提供了有关Adobe Experience Platform中基于属性的访问控制的信息
 exl-id: 5495c55f-b808-40c1-8896-e03eace0ca4d
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: a94cf02a57bd91d2342b53ced7da98836343aa2b
 workflow-type: tm+mt
-source-wordcount: '1653'
-ht-degree: 1%
+source-wordcount: '1777'
+ht-degree: 3%
 
 ---
 
@@ -42,7 +42,7 @@ ht-degree: 1%
 
 权限是Experience Cloud区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。
 
-通过权限，您可以创建和管理角色，并为这些角色分配所需的资源权限。 权限还允许您管理与特定角色关联的标签、沙箱和用户。 有关更多信息，请参阅 [权限指南](ui/browse.md).
+通过 权限，您可以创建和管理角色，并为这些角色分配所需的资源权限。权限还允许您管理与特定角色关联的标签、沙盒和用户。有关更多信息，请参阅 [权限指南](ui/browse.md).
 
 ## 基于属性的访问控制API
 
@@ -55,6 +55,18 @@ ht-degree: 1%
 ### 访问控制
 
 平台利用 [Adobe Admin Console](https://adminconsole.adobe.com) 产品配置文件，用于将用户与权限和沙箱关联。 权限控制对各种平台功能的访问，包括数据建模、配置文件管理和沙盒管理。 在您的组织启用了基于属性的访问控制后，您可以开始使用Adobe Experience Cloud上的权限(而不是Adobe Admin Console中的产品配置文件)来管理组织中用户、功能、标签和其他资源的权限。
+
+对于购买医疗保健和/或隐私盾的客户，基于属性的访问控制的可用性有限。 此功能的特点包括：
+
+* 权限界面：为您提供了一个界面，用于为基于属性的访问控制定义用户角色、权限和策略。
+
+* 标签设置：向用户角色、架构字段、区段和其他受支持对象添加、编辑和删除标签，以便利用访问控制策略。
+
+从Admin Console到新的权限界面，所有以Experience Platform为动力的应用程序的管理工作流程都在切换中。
+
+>[!IMPORTANT]
+>
+>在启用您的组织后，您的产品配置文件会自动迁移到权限界面。 Admin Console中的产品配置文件将当前保持不变。 请 **不** 在启用组织后，修改您的产品配置文件。
 
 有关访问控制的更多信息，请参阅 [访问控制概述](../home.md).
 

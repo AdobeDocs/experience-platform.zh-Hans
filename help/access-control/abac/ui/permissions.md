@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；访问控制；基于属
 title: 基于属性的访问控制管理角色权限
 description: 本文档提供了有关通过Adobe Experience Cloud中的“权限”界面配置角色权限的信息
 exl-id: 8acd2bb6-eef8-4b23-8fd8-3566c7508fe7
-source-git-commit: 9e44e647e4647a323fa9d1af55266d6f32b5ccb9
+source-git-commit: a94cf02a57bd91d2342b53ced7da98836343aa2b
 workflow-type: tm+mt
-source-wordcount: '899'
-ht-degree: 0%
+source-wordcount: '966'
+ht-degree: 4%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 权限是Experience Cloud区域，管理员可以在其中定义用户角色和访问策略，以管理产品应用程序中功能和对象的访问权限。
 
-通过权限，您可以创建和管理角色，并为这些角色分配所需的资源权限。 权限还允许您管理与特定角色关联的标签、沙箱和用户。
+通过 权限，您可以创建和管理角色，并为这些角色分配所需的资源权限。权限还允许您管理与特定角色关联的标签、沙盒和用户。
 
 紧接之后 [创建新角色](#create-a-new-role)，则会返回到 **[!UICONTROL 角色]** 选项卡。 如果您正在编辑现有角色的权限，请从 **[!UICONTROL 角色]** 选项卡。 或者，使用筛选器选项筛选结果以查找角色。
 
@@ -147,9 +147,21 @@ ht-degree: 0%
 
 的 **[!UICONTROL 删除用户组]** 对话框，提示您确认删除。
 
-![flac-confirm-user-groups -delete](../../images/flac-ui/flac-confirm-user-groups-delete.png)
+![flac-confirm-user-groups-delete](../../images/flac-ui/flac-confirm-user-groups-delete.png)
 
 您将返回到 **[!UICONTROL 用户组]** 选项卡。
+
+## 通过产品配置文件将用户添加到Experience Platform
+
+要将用户添加到产品配置文件，请登录Admin Console并选择 **[!UICONTROL 添加用户]**
+
+![product-profile-add-users](../../images/flac-ui/product-profile-add-users.png)
+
+的 **[!UICONTROL 将用户添加到您的团队]** 对话框。 输入用户电子邮件地址、名字（可选）和姓氏（可选）。
+
+选择铅笔图标以选择产品和用户组，选择 **[!UICONTROL Adobe体验平台]**，然后选择 **[!UICONTROL AEP-Default-All-Users]**，然后选择  **[!UICONTROL 保存]**.
+
+![product-profile](../../images/flac-ui/product-profile.png)
 
 ## 后续步骤
 
