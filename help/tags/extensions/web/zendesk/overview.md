@@ -1,7 +1,8 @@
 ---
 title: Zendesk事件转发扩展
 description: 适用于Adobe Experience Platform的Zendesk事件转发扩展。
-source-git-commit: ae585660bbf057f25e6f0dfc2520e6bb0af9d8d0
+exl-id: 22e94699-5b84-4a73-b007-557221d3e223
+source-git-commit: a9887535b12b8c4aeb39bb5a6646da88db4f0308
 workflow-type: tm+mt
 source-wordcount: '1286'
 ht-degree: 6%
@@ -53,7 +54,7 @@ ht-degree: 6%
 
 ## 配置事件转发规则
 
-开始创建新的事件转发规则 [规则](../../../ui/managing-resources/rules.md) 并根据需要配置其条件。 为规则选择操作时，选择 [!UICONTROL Splunk] 扩展，然后选择 [!UICONTROL 创建事件] 操作类型。
+开始创建新的事件转发规则 [规则](../../../ui/managing-resources/rules.md) 并根据需要配置其条件。 为规则选择操作时，选择 [!UICONTROL 曾代克] 扩展，然后选择 [!UICONTROL 创建事件] 操作类型。
 
 ![定义规则](../../../images/extensions/zendesk/rule.png)
 

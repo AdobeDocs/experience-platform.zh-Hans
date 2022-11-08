@@ -1,18 +1,15 @@
 ---
 title: 监视查询
 description: 了解如何通过查询服务UI监控查询。
-source-git-commit: 283c6ba323a327b0c525343a96a45a2412baa67b
+exl-id: 4640afdd-b012-4768-8586-32f1b8232879
+source-git-commit: a9887535b12b8c4aeb39bb5a6646da88db4f0308
 workflow-type: tm+mt
-source-wordcount: '1051'
+source-wordcount: '1033'
 ht-degree: 1%
 
 ---
 
-# 监视器查询（有限版本）
-
->[!IMPORTANT]
->
->此功能当前为有限版本，仅适用于少量客户。
+# 监视查询
 
 Adobe Experience Platform通过UI改善了所有查询作业状态的可见性。 从 [!UICONTROL 计划查询] 选项卡现在可以查找有关查询运行的重要信息，包括状态、计划详细信息以及失败时的错误消息/代码。 您还可以通过UI，为通过的任何这些查询订阅基于状态的警报 [!UICONTROL 计划查询] 选项卡。
 
@@ -126,4 +123,3 @@ Adobe Experience Platform通过UI改善了所有查询作业状态的可见性�
 选择 **[!UICONTROL 查询]** 返回到计划详细信息屏幕，或 **[!UICONTROL 计划查询]** 返回 [!UICONTROL 计划查询] 选项卡。
 
 ![“运行详细信息”屏幕中突出显示了“查询”。](./images/monitor-queries/return-navigation.png)
-
