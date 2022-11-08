@@ -4,9 +4,9 @@ user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源摄取数据。了解如何构建、标记和增强已摄取的数据。
 feature: Sources
-source-git-commit: cf9390076e027ba746c3bc83df8a18e3751b84a8
+source-git-commit: 46c9ec0c561f7ed3e38f05ef7b1e3ffec0eaed57
 workflow-type: tm+mt
-source-wordcount: '853'
+source-wordcount: '860'
 ht-degree: 12%
 
 ---
@@ -94,6 +94,7 @@ ht-degree: 12%
       - [HubSpot连接器](connectors/marketing-automation/hubspot.md)
       - [Mailchimp连接器](connectors/marketing-automation/mailchimp.md)
       - [OracleEloqua连接器](connectors/marketing-automation/oracle-eloqua.md)
+      - [OracleResponsys连接器](connectors/marketing-automation/oracle-responsys.md)
       - [SalesforceMarketing Cloud](connectors/marketing-automation/salesforce-marketing-cloud.md)
    - 支付 {#payments}
       - [PayPal连接器](connectors/payments/paypal.md)
@@ -162,6 +163,7 @@ ht-degree: 12%
          - [MailChimp营销活动](tutorials/api/create/marketing-automation/mailchimp-campaign.md)
          - [MailChimp成员](tutorials/api/create/marketing-automation/mailchimp-members.md)
          - [Oracle雄辩](tutorials/api/create/marketing-automation/oracle-eloqua.md)
+         - [OracleResponsys](tutorials/api/create/marketing-automation/oracle-responsys.md)
          - [SalesforceMarketing Cloud](tutorials/api/create/marketing-automation/salesforce-marketing-cloud.md)
       - 支付 {#payments}
          - [PayPal](tutorials/api/create/payments/paypal.md)
@@ -271,6 +273,7 @@ ht-degree: 12%
          - [Mailchimp营销活动](tutorials/ui/create/marketing-automation/mailchimp-campaigns.md)
          - [邮件成员](tutorials/ui/create/marketing-automation/mailchimp-members.md)
          - [Oracle雄辩](tutorials/ui/create/marketing-automation/oracle-eloqua.md)
+         - [OracleResponsys](tutorials/ui/create/marketing-automation/oracle-responsys.md)
          - [SalesforceMarketing Cloud](tutorials/ui/create/marketing-automation/salesforce-marketing-cloud.md)
       - 支付 {#payments}
          - [PayPal](tutorials/ui/create/payments/paypal.md)
