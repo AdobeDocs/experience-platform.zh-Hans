@@ -2,10 +2,10 @@
 title: 数据卫生概述
 description: Adobe Experience Platform数据卫生功能允许您通过更新或清除过时或不准确的记录来管理数据的生命周期。
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
+source-git-commit: 850ab3c98fb27d1dcf98b02dfbef0c8ae3b2ad62
 workflow-type: tm+mt
-source-wordcount: '758'
-ht-degree: 3%
+source-wordcount: '821'
+ht-degree: 2%
 
 ---
 
@@ -46,8 +46,8 @@ Platform的数据卫生功能允许您通过以下方式管理存储的消费者
 | --- | --- | --- |
 | 请求已提交 | 0 小时 | 数据管理员或隐私分析员提交了一个请求，要求数据集在给定时间过期。 请求显示在 [!UICONTROL 数据卫生UI] 提交请求后，该请求将保持挂起状态，直到计划过期时间（之后将执行请求）为止。 |
 | 数据集已删除 | 1 小时 | 数据集将从 [数据集库页面](../catalog/datasets/user-guide.md) 中。 数据湖中的数据只会被软删除，并且会一直保留到过程结束，之后将会硬删除。 |
-| 更新了用户档案计数 | 30 小时 | 数据集过期导致的配置文件计数更改反映在 [功能板小组件](../dashboards/guides/profiles.md#profile-count-trend) 和其他报告。 |
-| 区段已更新 | 48 小时 | 删除用户档案后，所有相关 [区段](../segmentation/home.md) 会更新以反映其新大小。 |
+| 更新了用户档案计数 | 30 小时 | 根据所删除数据集的内容，如果某些配置文件的所有组件属性都与该数据集绑定，则这些配置文件可能会从系统中删除。 在删除数据集30小时后，对整体用户档案计数所做的任何更改都会反映在 [功能板小组件](../dashboards/guides/profiles.md#profile-count-trend) 和其他报告。 |
+| 区段已更新 | 48 小时 | 更新所有受影响的用户档案后，所有相关 [区段](../segmentation/home.md) 会更新以反映其新大小。 根据删除的数据集以及您进行分段的属性，每个区段的大小可能会因删除而增加或减少。 |
 | 历程和目标已更新 | 50 小时 | [历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [营销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)和 [目标](../destinations/home.md) 会根据相关区段的更改进行更新。 |
 | 硬删除完成 | 14 天 | 与数据集相关的所有数据都将从数据湖中硬删除。 的 [卫生工作状况](./ui/browse.md#view-details) 会更新删除数据集的内容，以反映这一点。 |
 
