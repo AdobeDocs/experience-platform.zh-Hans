@@ -3,9 +3,9 @@ keywords: Google Ad Manager;Google Ad;DoubleClick AdX;DoubleClick;Google Ad Mana
 title: Google Ad Manager连接
 description: Google Ad Manager（以前称为DoubleClick for Publishers或DoubleClick AdX）是Google的一个广告服务平台，它为出版商提供了通过视频和移动设备应用程序管理其网站上广告显示的方法。
 exl-id: e93f1bd5-9d29-43a1-a9a6-8933f9d85150
-source-git-commit: 7d32499bec8d7248472ae60b07893dbb5496d984
+source-git-commit: 94cd05ca8b5c8331b1b49e5172daf499918d2320
 workflow-type: tm+mt
-source-wordcount: '903'
+source-wordcount: '955'
 ht-degree: 3%
 
 ---
@@ -22,6 +22,8 @@ ht-degree: 3%
 
 * 激活的受众是在 [!DNL Google] 平台。
 * [!DNL Platform] 当前不包括用于验证激活是否成功的测量量度。 请参阅Google中的受众计数，以验证集成并了解受众定位大小。
+* 在将区段映射到 [!DNL Google Ad Manager] 目标，区段名称会立即显示在 [!DNL Google Ad Manager] 用户界面。
+* 区段人口需要24-48小时才能显示在 [!DNL Google Ad Manager]. 此外，区段的受众大小必须至少为50个用户档案，才能在 [!DNL Google Ad Manager]. 将不会在中填充受众大小小于50个用户档案的区段 [!DNL Google Ad Manager].
 
 ## 支持的标识 {#supported-identities}
 
