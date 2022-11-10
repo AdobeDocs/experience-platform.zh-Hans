@@ -5,9 +5,9 @@ title: 在UI中管理数据使用策略
 topic-legacy: policies
 description: Adobe Experience Platform Data Governance提供了一个用户界面，允许您创建和管理数据使用策略。 本文档概述了可在策略工作区中通过Experience Platform用户界面执行的操作。
 exl-id: 29434dc1-02c2-4267-a1f1-9f73833e76a0
-source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
+source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
 workflow-type: tm+mt
-source-wordcount: '1330'
+source-wordcount: '1408'
 ht-degree: 0%
 
 ---
@@ -96,7 +96,12 @@ Adobe Experience Platform Data Governance提供了一个用户界面，允许您
 * **[!UICONTROL 如果]**:将触发策略检查的条件。 这可以基于正在执行的特定营销操作、存在特定数据使用标签，或两者的组合。
 * **[!UICONTROL 然后]**:要将用户档案包含在触发策略的操作中，必须存在的同意属性。
 
-#### 配置条件
+#### 配置条件 {#consent-conditions}
+
+>[!CONTEXTUALHELP]
+>id="platform_governance_policies_consentif"
+>title="If条件"
+>abstract="首先定义将触发策略检查的条件。 条件可能包括正在执行的某些营销操作、存在的某些数据管理标签，或两者的组合。"
 
 在 **[!UICONTROL 如果]** 部分，选择应触发此策略的营销操作和/或数据使用标签。 选择 **[!UICONTROL 查看全部]** 和 **[!UICONTROL 选择标签]** 查看可用营销操作和标签的完整列表。
 
@@ -108,7 +113,12 @@ Adobe Experience Platform Data Governance提供了一个用户界面，允许您
 
 ![](../images/policies/and-or-selection.png)
 
-#### 选择同意属性
+#### 选择同意属性 {#consent-attributes}
+
+>[!CONTEXTUALHELP]
+>id="platform_governance_policies_consentthen"
+>title="Then条件"
+>abstract="定义“If”条件后，使用“Then”部分从并集架构中至少选择一个同意属性。 这是必须存在的属性，用户档案才能包含在此策略所管辖的操作中。"
 
 在 **[!UICONTROL 然后]** 部分，从并集架构中至少选择一个同意属性。 这是必须存在的属性，用户档案才能包含在此策略所管辖的操作中。 您可以从列表中选择一个提供的选项，或选择 **[!UICONTROL 查看全部]** 直接从并集架构中选择属性。
 

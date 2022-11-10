@@ -2,9 +2,9 @@
 title: 在事件转发中配置密钥
 description: 了解如何在UI中配置密钥，以对事件转发属性中使用的端点进行身份验证。
 exl-id: eefd87d7-457f-422a-b159-5b428da54189
-source-git-commit: 9f38925645ec4311f4a809a913fe51792e889105
+source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
 workflow-type: tm+mt
-source-wordcount: '1715'
+source-wordcount: '1766'
 ht-degree: 0%
 
 ---
@@ -37,6 +37,12 @@ ht-degree: 0%
 您还应该对标记和事件转发的发布流程有一定的了解，包括如何向库添加资源并将内部版本安装到您的网站上以进行测试。 请参阅 [发布概述](../publishing/overview.md) 以了解更多详细信息。
 
 ## 创建密钥 {#create}
+
+>[!CONTEXTUALHELP]
+>id="platform_eventforwarding_secrets_environments"
+>title="机密环境"
+>abstract="为了让事件转发可用的密钥，必须将其分配到现有环境。 如果尚未为事件转发资产创建任何环境，则必须先配置这些环境，然后才能继续。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/tags/publish/environments/environments.html" text="环境概述"
 
 要创建密钥，请选择 **[!UICONTROL 事件转发]** 在左侧导航中，打开要在下添加密钥的事件转发属性。 接下来，选择 **[!UICONTROL 秘密]** 在左侧导航中，然后是 **[!UICONTROL 创建新密钥]**.
 

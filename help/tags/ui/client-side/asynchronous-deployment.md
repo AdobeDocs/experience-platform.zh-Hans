@@ -1,20 +1,26 @@
 ---
 title: 异步部署
 description: 了解如何在您的网站上异步部署Adobe Experience Platform标记库。
-source-git-commit: 7e27735697882065566ebdeccc36998ec368e404
+exl-id: ed117d3a-7370-42aa-9bc9-2a01b8e7794e
+source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
 workflow-type: tm+mt
-source-wordcount: '1010'
-ht-degree: 56%
+source-wordcount: '1079'
+ht-degree: 55%
 
 ---
 
-# 异步部署
+# 异步部署 {#asynchronous-deployment}
+
+>[!CONTEXTUALHELP]
+>id="platform_tags_asynchronous_deployment"
+>title="异步部署"
+>abstract="如果启用此选项，则在解析此脚本标记后，浏览器将开始加载JavaScript文件，但是，它将继续解析并渲染文档的其余部分，而不是等待库的加载和执行。 这可以提高网页性能，但对于如何执行某些规则具有重要影响。 有关详细信息，请参阅文档。"
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，在产品文档中推出了一些术语更改。 有关术语更改的统一参考，请参阅以下[文档](../../term-updates.md)。
+>Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../term-updates.md)。
 
-我们的产品需要提高JavaScript库的性能和对其进行无阻塞部署，这对Adobe Experience Cloud用户来说越来越重要。 诸如[[!DNL Google PageSpeed]](https://developers.google.com/speed/pagespeed/insights/)之类的工具建议用户更改他们在网站上部署Adobe库的方式。 本文介绍如何以异步方式使用AdobeJavaScript库。
+我们的产品需要提高JavaScript库的性能和对其进行无阻塞部署，这对Adobe Experience Cloud用户来说越来越重要。 诸如 [[!DNL Google PageSpeed]](https://developers.google.com/speed/pagespeed/insights/) 建议用户更改在其网站上部署Adobe库的方式。 本文介绍如何以异步方式使用AdobeJavaScript库。
 
 ## 同步与异步
 
@@ -46,11 +52,11 @@ ht-degree: 56%
 
 如上所述，在同步部署中，浏览器在加载和执行Adobe Experience Platform标记库时会暂停解析和渲染页面。 相反，在异步部署中，浏览器在加载库时会继续解析和渲染页面。必须考虑标记库可能完成加载的时间相对于页面解析和渲染的可变性。
 
-首先，由于标记库可以在解析并执行页面底部之前或之后完成加载，因此您不应再从页面代码中调用`_satellite.pageBottom()`（在库加载之后，`_satellite`才可用）。 [异步加载标记嵌入代码](#loading-the-tags-embed-code-asynchronously)中对此进行了说明。
+首先，由于标记库可以在解析并执行页面底部之前或之后完成加载，因此您不应再调用 `_satellite.pageBottom()` 从页面代码(`_satellite` 在库加载后才可用)。 这在 [异步加载标记嵌入代码](#loading-the-tags-embed-code-asynchronously).
 
-其次，标记库可以在[`DOMContentLoaded`](https://developer.mozilla.org/zh-CN/docs/Web/Events/DOMContentLoaded)浏览器事件（DOM就绪）发生之前或之后完成加载。
+其次，标记库可以在 [`DOMContentLoaded`](https://developer.mozilla.org/zh-CN/docs/Web/Events/DOMContentLoaded) 发生浏览器事件（DOM就绪）。
 
-由于这两点，因此在异步加载标记库时，需要展示核心扩展中的[Library Loaded](../../extensions/web/core/overview.md#library-loaded-page-top)、[Page Bottom](../../extensions/web/core/overview.md#page-bottom)、[DOM Ready](../../extensions/web/core/overview.md#page-bottom)和[Window Loaded](../../extensions/web/core/overview.md#window-loaded)事件类型如何运行。
+由于这两点，因此，有必要展示 [Library Loaded](../../extensions/web/core/overview.md#library-loaded-page-top), [Page Bottom](../../extensions/web/core/overview.md#page-bottom), [DOM Ready](../../extensions/web/core/overview.md#page-bottom)和 [Window Loaded](../../extensions/web/core/overview.md#window-loaded) 异步加载标记库时，核心扩展中的事件类型会起作用。
 
 如果您的标记属性包含以下四个规则：
 
@@ -67,7 +73,7 @@ ht-degree: 56%
 
 1. 立即执行规则 A。
 1. 如果 `DOMContentLoaded` 浏览器事件 (DOM Ready) 已经发生，则会立即执行规则 B 和规则 C。否则，规则 B 和规则 C 稍后在发生 [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded) 浏览器事件时执行。
-1. 如果已发生 [`load`](https://developer.mozilla.org/zh-CN/docs/Web/Events/load) 浏览器事件（已加载窗口），则会立即执行规则 D。否则，将在稍后发生 [`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load) 浏览器事件时执行规则 D。请注意，如果您已按照相关说明安装了标签库，则标签库&#x200B;*始终*&#x200B;会在[`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load)浏览器事件发生之前完成加载。
+1. 如果已发生 [`load`](https://developer.mozilla.org/zh-CN/docs/Web/Events/load) 浏览器事件（已加载窗口），则会立即执行规则 D。否则，将在稍后发生 [`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load) 浏览器事件时执行规则 D。请注意，如果您已按照相关说明安装了标签库，则标记库 *always* 完成加载 [`load`](https://developer.mozilla.org/en-US/docs/Web/Events/load) 发生浏览器事件。
 
 将这些原则应用于您自己的网站时，请考虑以下事项：
 
@@ -78,7 +84,7 @@ ht-degree: 56%
 
 ## 异步加载标记嵌入代码
 
-当您配置[environment](../publishing/environments.md)时，标记会在创建嵌入代码时提供一个用于开启异步加载的切换开关。 您还可以自行配置异步加载：
+当您配置 [环境](../publishing/environments.md). 您还可以自行配置异步加载：
 
 1. 向 `<script>` 标记中添加 async 属性以异步加载脚本。
 
@@ -100,4 +106,4 @@ ht-degree: 56%
    <script type="text/javascript">_satellite.pageBottom();</script>
    ```
 
-   此代码用于告知Platform浏览器解析器已到达页面底部。 此时之前可能未加载和执行标记，因此调用`_satellite.pageBottom()`会导致错误，并且Page Bottom事件类型可能无法按预期运行。
+   此代码用于告知Platform浏览器解析器已到达页面底部。 此前可能未加载和执行标记，因此调用 `_satellite.pageBottom()` 会导致错误，并且Page Bottom事件类型可能无法按预期运行。

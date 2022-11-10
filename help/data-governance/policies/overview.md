@@ -3,16 +3,21 @@ keywords: Experience Platform；主页；热门主题；DULE;DULE
 solution: Experience Platform
 title: 数据使用策略概述
 topic-legacy: policies
-description: 为了有效支持数据合规性的数据使用标签，必须实施数据使用策略。 数据使用策略是描述您允许或限制对Experience Platform内数据执行的营销操作类型的规则。
+description: 为了有效支持数据合规性的数据使用标签，必须实施数据使用策略。 数据使用策略是描述您可以或限制在 Experience Platform 内对数据执行的营销操作类型的规则。
 exl-id: 1b372aa5-3e49-4741-82dc-5701a4bc8469
-source-git-commit: 0c78b5dc420a1346c92bf9ed7864fa1733422a83
+source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
 workflow-type: tm+mt
-source-wordcount: '1121'
-ht-degree: 0%
+source-wordcount: '1180'
+ht-degree: 2%
 
 ---
 
-# 数据使用策略概述
+# 数据使用策略概述 {#policies-overview}
+
+>[!CONTEXTUALHELP]
+>id="platform_governance_policies_restrictusage"
+>title="限制数据使用"
+>abstract="数据使用策略类型会评估应用于数据管理标签的特定营销操作，以限制营销活动的数据使用。"
 
 为了有效支持数据合规性的数据使用标签，必须实施数据使用策略。 数据使用策略是描述您允许或限制对内数据执行的营销操作类型的规则 [!DNL Experience Platform].
 
@@ -20,6 +25,10 @@ ht-degree: 0%
 
 * **[!UICONTROL 数据管理政策]**:根据正在执行的营销操作以及相关数据携带的数据使用标签限制数据激活。
 * **[!UICONTROL 同意策略]**:筛选可激活的用户档案 [目标](../../destinations/home.md) 基于客户的同意或偏好
+
+>[!NOTE]
+>
+>不要将数据使用策略与 [访问控制策略](../../access-control/abac/end-to-end-guide.md#policy)，用于确定贵组织中的某些Platform用户是否可以访问某些数据字段，并通过 [!UICONTROL 权限] 选项卡。
 
 本文档提供了数据使用策略的高级概述，并提供了指向在UI或API中使用策略的更多文档的链接。
 

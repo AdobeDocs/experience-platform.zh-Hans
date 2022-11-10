@@ -5,10 +5,10 @@ title: 沙盒UI指南
 topic-legacy: user guide
 description: 本文档提供了有关如何在Adobe Experience Platform用户界面中执行与沙箱相关的各种操作的步骤。
 exl-id: b258c822-5182-4217-9d1b-8196d889740f
-source-git-commit: 2fb972b0ec8d1f679c6ce104a439265b5cc4d535
+source-git-commit: df0f543b18f008b656c5e411305c5243efa744ad
 workflow-type: tm+mt
-source-wordcount: '770'
-ht-degree: 1%
+source-wordcount: '816'
+ht-degree: 2%
 
 ---
 
@@ -36,7 +36,17 @@ ht-degree: 1%
 
 ![沙盒交换](../images/ui/sandbox-switched.png)
 
-## 创建新沙盒
+## 创建新沙盒 {#create}
+
+>[!CONTEXTUALHELP]
+>id="platform_sandboxes_sandboxname"
+>title="沙盒名称"
+>abstract="沙盒名称是后端用于为此沙盒创建唯一ID的文本。"
+
+>[!CONTEXTUALHELP]
+>id="platform_sandboxes_sandboxtitle"
+>title="沙盒标题"
+>abstract="沙盒标题是显示名称，它将在整个Experience PlatformUI的菜单和下拉菜单中表示沙盒。"
 
 >[!NOTE]
 >

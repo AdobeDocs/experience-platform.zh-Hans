@@ -5,10 +5,10 @@ title: 沙箱疑难解答指南
 topic-legacy: troubleshooting guide
 description: 本文档提供了有关Adobe Experience Platform沙箱的常见问题解答。
 exl-id: 6a496509-a4e9-4e76-829b-32d67ccfcce6
-source-git-commit: 2a7b2040c221ff039f17f78d9ca712032d9fc02c
+source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
 workflow-type: tm+mt
-source-wordcount: '815'
-ht-degree: 0%
+source-wordcount: '857'
+ht-degree: 1%
 
 ---
 
@@ -22,7 +22,13 @@ ht-degree: 0%
 
 沙箱是单个Experience Platform实例中的虚拟分区。 每个沙盒都维护着自己独立的Platform资源库（包括模式、数据集、用户档案等）。 在沙盒内执行的所有内容和操作都仅限于该沙盒，不会影响任何其他沙盒。 请参阅 [沙箱概述](home.md) 以了解更多信息。
 
-## 有哪些类型的沙箱可用，它们之间有何区别？
+## 有哪些类型的沙箱可用，它们之间有何区别？ {#sandbox-types}
+
+>[!CONTEXTUALHELP]
+>id="platform_sandboxes_sandboxtypes"
+>title="沙盒类型"
+>abstract="沙盒类型指示这是生产沙盒还是开发沙盒。 生产沙箱包括实时数据，开发沙箱用于测试和开发。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/sandbox/ui/user-guide.html#create" text="在UI中创建沙盒"
 
 Experience Platform中提供了两种沙盒类型：
 
