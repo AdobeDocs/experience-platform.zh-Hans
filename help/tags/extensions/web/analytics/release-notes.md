@@ -2,18 +2,29 @@
 title: Adobe Analytics扩展的发行说明
 description: Adobe Experience Platform中Adobe Analytics标记扩展的最新发行说明。
 exl-id: 3c7b4ec0-4b81-4ef4-b15f-6ad102525840
-source-git-commit: 6bb452285ea98380617afd13462b4a2b9a8e8b68
+source-git-commit: cc04a40b2fb649511950ed80af7028a19154dcdd
 workflow-type: tm+mt
-source-wordcount: '1284'
-ht-degree: 90%
+source-wordcount: '1333'
+ht-degree: 84%
 
 ---
 
 # Adobe Analytics扩展发行说明
 
+以下是Adobe Analytics标记扩展的发行说明列表。
+
 >[!NOTE]
 >
->Adobe Experience Platform Launch已在Adobe Experience Platform中重新命名为一套数据收集技术。 因此，产品文档中的术语有一些改动。有关术语更改的综合参考，请参阅以下[文档](../../../term-updates.md)。
+>Analytics标记扩展(如果通常为响应 [AppMeasurement JavaScript库](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=zh-Hans). 请参阅 [AppMeasurement发行说明](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html?lang=zh-Hans) 有关下面提及的特定版本的详细信息。
+
+## 2022 年 9 月 23 日
+
+**Adobe Analytics 扩展 1.9.1**
+
+**功能**:
+
+* 已升级到AppMeasurement v2.23.0。
+* 扩展现在可以收集高熵 [用户代理客户端提示](https://developer.mozilla.org/en-US/docs/Web/HTTP/Client_hints#user-agent_client_hints) 受最新版本AppMeasurement的支持。
 
 ## 2022 年 2 月 28 日
 
@@ -161,7 +172,7 @@ ht-degree: 90%
 * 更新了 Adobe Analytics 扩展，以支持用于 Audience Manager 的 DIL 9.2
 
 * 更新了扩展以支持 [AppMeasurement 2.15.0](https://experienceleague.adobe.com/docs/analytics/implementation/appmeasurement-updates.html#version-2.15.0)
-* 移除了以下复选框（因为该复选框已不再受支持）：“Do not attach the destination publishing IFRAME to the DOM or fire destinations”
+* 删除了以下复选框，因为它不再受支持：&quot;请勿将目标发布IFRAME附加到DOM或火灾目标&quot;
 
 ## 2019 年 6 月 4 日
 
