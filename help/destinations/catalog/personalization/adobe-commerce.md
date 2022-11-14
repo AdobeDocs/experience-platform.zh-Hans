@@ -1,7 +1,8 @@
 ---
 title: (Beta)Adobe Commerce Destination Connector
 description: 了解Adobe Commerce和Real-Time CDP商户如何通过提供高度相关的网站内容和促销活动(根据Real-Time CDP中构建和管理的客户区段进行自定义)来个性化购物体验。
-source-git-commit: 0a6100f2aa98f5c40f2492dcfab79a991eded94b
+exl-id: f7aa3c6c-ba7a-440c-a4d7-5d7b50dbbc0d
+source-git-commit: 638a778d1d999ab6a1726333f9cde0a0b4fad57b
 workflow-type: tm+mt
 source-wordcount: '691'
 ht-degree: 1%
@@ -42,7 +43,7 @@ To help you better understand how and when you should use the *YourDestination* 
 
 - [Adobe Experience Platform](https://experience.adobe.com/)
 - [Adobe Developer Console](https://developer.adobe.com/developer-console/docs/guides/getting-started/)
-- [Adobe Commerce Cloud版本2.4.3或更高版本](https://business.adobe.com/products/magento/magento-commerce.html)
+- [Adobe Commerce Cloud版本2.4.4或更高版本](https://business.adobe.com/products/magento/magento-commerce.html)
 
 在Experience Platform中，创建以下内容：
 
