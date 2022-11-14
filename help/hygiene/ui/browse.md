@@ -2,9 +2,9 @@
 title: 浏览数据卫生工作单
 description: 了解如何在Adobe Experience Platform用户界面中查看和管理现有数据卫生工作单。
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
+source-git-commit: 4a6532bbd7a378e44e7c6139330420c0363a54af
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '868'
 ht-degree: 1%
 
 ---
@@ -74,7 +74,7 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_numberofidentities"
 >title="标识数"
->abstract="请求在此工作单中删除的标识数。 计数中包含的标识不一定存在于受影响的数据集中。 要了解更多信息，请参阅数据卫生UI指南。"
+>abstract="作为此工作单的一部分请求更新或删除其记录的标识数。 计数中包含的标识不一定存在于受影响的数据集中。 要了解更多信息，请参阅数据卫生UI指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
