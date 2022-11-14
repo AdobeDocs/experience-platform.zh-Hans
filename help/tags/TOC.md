@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 1879c8372e3ac1b813f53e445a139daa78ac8858
+source-git-commit: 67f3d27ebb17e1b1dc77dcd32246f407753c20df
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '416'
 ht-degree: 67%
 
 ---
@@ -124,6 +124,8 @@ ht-degree: 67%
       * [!DNL Marketo Munchkin] {#marketo}
          * [概述](./extensions/web/marketo/overview.md)
          * [发行说明](./extensions/web/marketo/release-notes.md)
+      * Google Ads增强的转化 {#google-ads-enhanced-conversions}
+         * [概述](./extensions/web/google-ads-enhanced-conversions/overview.md)
       * Google数据层 {#google-data-layer}
          * [概述](./extensions/web/google-data-layer/overview.md)
          * [发行说明](./extensions/web/google-data-layer/release-notes.md)
