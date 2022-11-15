@@ -2,9 +2,9 @@
 title: 工作单API端点
 description: 数据卫生API中的/workorder端点允许您以编程方式管理消费者身份的删除任务。
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: b76e1bc6d5b346c32ea09612e24b68c6636f7deb
+source-git-commit: 7679de9d30c00873b279c5315aa652870d8c34fd
 workflow-type: tm+mt
-source-wordcount: '981'
+source-wordcount: '1033'
 ht-degree: 4%
 
 ---
@@ -16,6 +16,9 @@ ht-degree: 4%
 >[!IMPORTANT]
 >
 >消费者删除请求仅适用于已购买的组织 **Adobe医疗保健盾**.
+>
+>
+>消费者删除用于数据清理、删除匿名数据或数据最小化。 是 **not** 用于与《通用数据保护条例》(GDPR)等隐私法规相关的数据主体权利请求（合规）。 对于所有法规遵从性用例，请使用 [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) 中。
 
 ## 快速入门
 
