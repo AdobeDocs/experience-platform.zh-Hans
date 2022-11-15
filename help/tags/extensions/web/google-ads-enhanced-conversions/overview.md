@@ -1,9 +1,10 @@
 ---
 title: Google Ads增强转化扩展
 description: 了解用于Adobe Experience Platform中事件转发的Google广告增强转化扩展。
-source-git-commit: a279c44ef9df3aa9bfc7763b153b87bde0015d57
+exl-id: 65cdff40-276f-4481-9621-6c6861dbd412
+source-git-commit: 670e59a6111b7e4b7febca197d7e462ce5c14596
 workflow-type: tm+mt
-source-wordcount: '1295'
+source-wordcount: '1314'
 ht-degree: 1%
 
 ---
@@ -35,6 +36,10 @@ ht-degree: 1%
 >要将客户端转化事件与从事件转发发送的第一方数据关联，请 `transaction_ID` 在两个调用中必须相同。 有关必须在何处为每项服务提供此值的更多信息，请参阅有关为 [标记](#conversion-action-tags) 和 [事件转发](#conversion-action-event-forwarding)，分别为。
 
 由于发送转化事件涉及客户端和服务器端实施，因此本文档介绍了设置客户端的先决条件步骤 [[!DNL Google Global Site Tag] (gtag)扩展](https://exchange.adobe.com/apps/ec/101437/google-global-site-tag-gtag) 除 [!DNL Enhanced Conversions] 用于事件转发的扩展。
+
+以下视频介绍 [!DNL Enhanced Conversions] 扩展和逐步完成高级实施步骤：
+
+>[!VIDEO](https://video.tv.adobe.com/v/3411365?quality=12&learn=on)
 
 ## 使用标记发送转化
 
