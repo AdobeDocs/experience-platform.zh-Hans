@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 批量摄取API指南
 description: 本文档为使用适用于Adobe Experience Platform的批量摄取API的开发人员提供了全面的指南。
 exl-id: 4ca9d18d-1b65-4aa7-b608-1624bca19097
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: 49281d6ef959c84c3da964f0a9e19859fd8901a5
 workflow-type: tm+mt
-source-wordcount: '2373'
+source-wordcount: '2413'
 ht-degree: 4%
 
 ---
@@ -109,7 +109,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | 要上传到的批处理的ID。 |
 | `{DATASET_ID}` | 批次引用数据集的ID。 |
-| `{FILE_NAME}` | 要上传的文件的名称。 此文件路径是文件在Adobe端保存的位置。 |
+| `{FILE_NAME}` | 要上传的文件的名称。 确保使用唯一的文件名，使其与正在提交的批量文件的其他文件不冲突。 |
 
 **请求**
 
@@ -129,7 +129,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`. |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `acme/customers/campaigns/summer.json`. |
 
 **响应**
 
@@ -244,7 +244,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | 要上传到的批处理的ID。 |
 | `{DATASET_ID}` | 批次引用数据集的ID。 |
-| `{FILE_NAME}` | 要上传的文件的名称。 此文件路径是文件在Adobe端保存的位置。 |
+| `{FILE_NAME}` | 要上传的文件的名称。 确保使用唯一的文件名，使其与正在提交的批量文件的其他文件不冲突。 |
 
 **请求**
 
@@ -264,7 +264,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`. |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `acme/customers/campaigns/summer.parquet`. |
 
 **响应**
 
@@ -417,7 +417,7 @@ PATCH /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | 要上传到的批处理的ID。 |
 | `{DATASET_ID}` | 批次引用数据集的ID。 |
-| `{FILE_NAME}` | 要上传的文件的名称。 此文件路径是文件在Adobe端保存的位置。 |
+| `{FILE_NAME}` | 要上传的文件的名称。 确保使用唯一的文件名，使其与正在提交的批量文件的其他文件不冲突。 |
 
 **请求**
 
@@ -439,7 +439,7 @@ curl -X PATCH https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID
 | 参数 | 描述 |
 | --------- | ----------- |
 | `{CONTENT_RANGE}` | 在整数中，请求范围的开头和结尾。 |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`. |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `acme/customers/campaigns/summer.json`. |
 
 
 **响应**
@@ -633,7 +633,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | 要上传到的批处理的ID。 |
 | `{DATASET_ID}` | 批次引用数据集的ID。 |
-| `{FILE_NAME}` | 要上传的文件的名称。 此文件路径是文件在Adobe端保存的位置。 |
+| `{FILE_NAME}` | 要上传的文件的名称。 确保使用唯一的文件名，使其与正在提交的批量文件的其他文件不冲突。 |
 
 **请求**
 
@@ -653,7 +653,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`. |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `acme/customers/campaigns/summer.csv`. |
 
 
 **响应**
@@ -855,7 +855,7 @@ PUT /batches/{BATCH_ID}/datasets/{DATASET_ID}/files/{FILE_NAME}
 | --------- | ----------- |
 | `{BATCH_ID}` | 要上传到的批处理的ID。 |
 | `{DATASET_ID}` | 批次引用数据集的ID。 |
-| `{FILE_NAME}` | 要上传的文件的名称。 此文件路径是文件在Adobe端保存的位置。 |
+| `{FILE_NAME}` | 要上传的文件的名称。 确保使用唯一的文件名，使其与正在提交的批量文件的其他文件不冲突。 |
 
 **请求**
 
@@ -875,7 +875,7 @@ curl -X PUT https://platform.adobe.io/data/foundation/import/batches/{BATCH_ID}/
 
 | 参数 | 描述 |
 | --------- | ----------- |
-| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `Users/sample-user/Downloads/sample.json`. |
+| `{FILE_PATH_AND_NAME}` | 您尝试上传的文件的完整路径和名称。 此文件路径是本地文件路径，如 `acme/customers/campaigns/summer.json`. |
 
 **响应**
 
