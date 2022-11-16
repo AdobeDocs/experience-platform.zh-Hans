@@ -3,9 +3,9 @@ title: Adobe Experience Platform中的数据加密
 topic-legacy: data protection
 description: 了解数据在传输中和在Adobe Experience Platform中存放时如何加密。
 exl-id: 184b2b2d-8cd7-4299-83f8-f992f585c336
-source-git-commit: 1ab1c269fd43368e059a76f96b3eb3ac4e7b8388
+source-git-commit: d99a9081edc483831d56af3d838b67d9aba25bea
 workflow-type: tm+mt
-source-wordcount: '398'
+source-wordcount: '396'
 ht-degree: 3%
 
 ---
@@ -37,7 +37,7 @@ Adobe Experience Platform是一个功能强大且可扩展的系统，可跨企�
 
 平台摄取和使用的数据存储在数据湖中，这是一个高度精细的数据存储，包含系统管理的所有数据，无论其来源或文件格式如何。 在数据湖中保留的所有数据都会在隔离的中进行加密、存储和管理 [[!DNL Microsoft Azure Data Lake] 存储](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) 您的组织特有的实例。
 
-有关在Azure Data Lake Storage和Cosmos DB中如何加密静态数据的详细信息，请参阅 [官方Azure文档](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption).
+有关Azure数据湖存储中静态数据如何加密的详细信息，请参阅 [官方Azure文档](https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption).
 
 ## 后续步骤
 
