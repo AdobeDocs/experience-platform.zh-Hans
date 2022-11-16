@@ -2,9 +2,9 @@
 description: 此配置允许您指示目标名称、类别、描述、徽标等基本信息。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 用于Destination SDK的流目标配置选项
 exl-id: b7e4db67-2981-4f18-b202-3facda5c8f0b
-source-git-commit: 75399d2fbe111a296479f8d3404d43c6ba0d50b5
+source-git-commit: 21278b39a2dc12771449b9a471ea4182c6b999a3
 workflow-type: tm+mt
-source-wordcount: '1888'
+source-wordcount: '1894'
 ht-degree: 4%
 
 ---
@@ -212,21 +212,21 @@ ht-degree: 4%
 
 此部分中的参数可确定目标接受的身份。 此配置还会在 [映射步骤](/help/destinations/ui/activate-segment-streaming-destinations.md#mapping) Experience Platform用户界面的中，用户可将身份和属性从其XDM架构映射到目标中的架构。
 
-您必须指明 [!DNL Platform] 标识客户能够导出到您的目标。 例如 [!DNL Experience Cloud ID]，经过哈希处理的电子邮件，设备ID([!DNL IDFA], [!DNL GAID])。 这些值包括 [!DNL Platform] 客户可以映射到来自您目标的身份命名空间的身份命名空间。 您还可以指示客户是否可以将自定义命名空间映射到您的目标支持的身份。
+您必须指明 [!DNL Platform] 标识客户能够导出到您的目标。 例如 [!DNL Experience Cloud ID]，经过哈希处理的电子邮件，设备ID([!DNL IDFA], [!DNL GAID])。 这些值包括 [!DNL Platform] 客户可以映射到来自您目标的身份命名空间的身份命名空间。 您还可以指示客户是否可以将自定义命名空间映射到您的目标支持的身份(`acceptsCustomNamespaces: true`)以及客户是否可以将标准XDM属性映射到您的目标支持的标识(`acceptsAttributes: true`)。
 
 身份命名空间不需要 [!DNL Platform] 和你的目的地。
 例如，客户可以映射 [!DNL Platform] [!DNL IDFA] 命名空间 [!DNL IDFA] 命名空间，或者它们可以映射相同的 [!DNL Platform] [!DNL IDFA] 命名空间 [!DNL Customer ID] 命名空间。
 
-有关更多信息，请参阅 [身份命名空间概述](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans).
+有关身份的更多信息，请参阅 [身份命名空间概述](/help/identity-service/namespaces.md).
 
 ![在UI中渲染Target标识](./assets/target-identities-ui.png)
 
 | 参数 | 类型 | 描述 |
 |---------|----------|------|
-| `acceptsAttributes` | 布尔型 | 指示您的目标是否接受标准配置文件属性。 通常，合作伙伴文档中会突出显示这些属性。 |
+| `acceptsAttributes` | 布尔型 | 指示客户是否可以将标准配置文件属性映射到您正在配置的标识。 |
 | `acceptsCustomNamespaces` | 布尔型 | 指示客户是否可以在您的目标中设置自定义命名空间。 |
 | `transformation` | 字符串 | *示例配置中未显示*. 例如，当 [!DNL Platform] 客户将纯电子邮件地址作为属性，且您的平台仅接受经过哈希处理的电子邮件。 在此对象中，您可以应用需要的转换（例如，将电子邮件转换为小写，然后进行哈希转换）。 有关示例，请参阅 `requiredTransformation` 在 [目标配置API引用](./destination-configuration-api.md#update). |
-| `acceptedGlobalNamespaces` | - | 用于平台接受 [标准身份命名空间](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=en#standard-namespaces) （例如IDFA），以便您可以限制Platform用户仅选择这些身份命名空间。 |
+| `acceptedGlobalNamespaces` | - | 指示 [标准身份命名空间](/help/identity-service/namespaces.md#standard) （例如，IDFA）客户可以映射到您正在配置的身份。 <br> 使用 `acceptedGlobalNamespaces`，您可以使用 `"requiredTransformation":"sha256(lower($))"` 更改为小写和哈希电子邮件地址或电话号码。 |
 
 {style=&quot;table-layout:auto&quot;}
 

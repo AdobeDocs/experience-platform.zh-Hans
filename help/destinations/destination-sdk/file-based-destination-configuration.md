@@ -2,9 +2,9 @@
 description: 此配置允许您指示基于文件的目标的基本信息，如目标名称、类别、描述等。 此配置中的设置还可确定Experience Platform用户如何对您的目标进行身份验证、该目标如何显示在Experience Platform用户界面中，以及可导出到您目标的身份。
 title: 用于Destination SDK的基于文件的目标配置选项
 exl-id: 6b0a0398-6392-470a-bb27-5b34b0062793
-source-git-commit: 3f336f530873c863727bb50855baf6eb6a3549e0
+source-git-commit: 21278b39a2dc12771449b9a471ea4182c6b999a3
 workflow-type: tm+mt
-source-wordcount: '2989'
+source-wordcount: '3012'
 ht-degree: 5%
 
 ---
@@ -794,10 +794,13 @@ Adobe Experience Platform Destination SDK支持合作伙伴定义的模式。 �
     },
 ```
 
-您必须指明 [!DNL Platform] 标识客户能够导出到您的目标。 例如 [!DNL Experience Cloud ID]，经过哈希处理的电子邮件，设备ID([!DNL IDFA], [!DNL GAID])。 这些值包括 [!DNL Platform] 客户可以映射到来自您目标的身份命名空间的身份命名空间。 您还可以指示客户是否可以将自定义命名空间映射到您的目标支持的身份。
+您必须指明 [!DNL Platform] 标识客户能够导出到您的目标。 例如 [!DNL Experience Cloud ID]，经过哈希处理的电子邮件，设备ID([!DNL IDFA], [!DNL GAID])。 这些值包括 [!DNL Platform] 客户可以映射到来自您目标的身份命名空间的身份命名空间。 您还可以指示客户是否可以将自定义命名空间映射到您的目标支持的身份(`acceptsCustomNamespaces: true`)以及客户是否可以将标准XDM属性映射到您的目标支持的标识(`acceptsAttributes: true`)。
 
 身份命名空间不需要 [!DNL Platform] 和你的目的地。
 例如，客户可以映射 [!DNL Platform] [!DNL IDFA] 命名空间 [!DNL IDFA] 命名空间，或者它们可以映射相同的 [!DNL Platform] [!DNL IDFA] 命名空间 [!DNL Customer ID] 命名空间。
+
+有关身份的更多信息，请参阅 [身份命名空间概述](/help/identity-service/namespaces.md).
+
 
 ## 批量配置 — 文件命名和导出计划 {#batch-configuration}
 
