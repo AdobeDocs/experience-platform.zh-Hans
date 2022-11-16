@@ -5,9 +5,9 @@ title: 查询服务UI指南
 topic-legacy: guide
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: a085bac6b4ee825d534710ae91d6690fa076e873
+source-git-commit: 3b6862dd3bb770df4a1549275f911dd81a178002
 workflow-type: tm+mt
-source-wordcount: '716'
+source-wordcount: '1095'
 ht-degree: 2%
 
 ---
@@ -25,6 +25,29 @@ Adobe Experience Platform [!DNL Query Service] 提供了一个用户界面，可
 [!DNL Query Editor] 提供了编辑空间，您可以在其中开始键入查询。 键入时，编辑器会自动完成表中的SQL保留字、表和字段名称。 完成编写查询后，选择 **播放** 按钮以运行查询。 的 **[!UICONTROL 控制台]** 选项卡上，将显示 [!DNL Query Service] 当前正在执行，用于指示何时返回了查询。 的 **[!UICONTROL 结果]** 选项卡中，显示查询结果。 请参阅 [查询编辑器指南](./user-guide.md) 有关使用 [!DNL Query Editor].
 
 ![在 [!DNL Query Editor].](../images/ui/overview/query-editor.png)
+
+## 计划查询 {#scheduled-queries}
+
+已另存为模板的查询可以计划在常规频率下运行。 在计划查询时，您可以选择运行频率、开始和结束日期、计划查询运行的一周中的哪一天，以及要将查询导出到的数据集。 查询计划是使用查询编辑器设置的。
+
+要了解如何通过UI计划查询，请参阅 [计划查询指南](./user-guide.md#scheduled-queries). 要了解如何使用API添加计划，请阅读 [计划查询终结点指南](../api/scheduled-queries.md).
+
+计划查询后，该查询会显示在 [!UICONTROL 计划查询] 选项卡。 从列表中选择计划查询，即可找到有关查询、运行、创建者和计时的完整详细信息。
+
+![“查询”工作区中“计划查询”选项卡突出显示并显示查询计划的行。](../images/ui/overview/scheduled-queries.png)
+
+| 栏目 | 描述 |
+| --- | --- |
+| **[!UICONTROL 名称]** | 名称字段是模板名称或SQL查询的前几个字符。 任何通过具有查询编辑器的UI创建的查询，在开始时即会命名。 如果查询是通过API创建的，则查询的名称是用于创建查询的初始SQL的一个代码片段。 |
+| **[!UICONTROL 模板]** | 查询的模板名称。 选择模板名称以导航到查询编辑器。 为方便起见，查询模板会显示在查询编辑器中。 如果没有模板名称，则该行将标有连字符，并且无法重定向到查询编辑器以查看查询。 |
+| **[!UICONTROL SQL]** | SQL查询的代码段。 |
+| **[!UICONTROL 运行频率]** | 这是设置查询运行的频率。 可用值包括 `Run once` 和 `Scheduled`. 可以根据查询的运行频率对查询进行筛选。 |
+| **[!UICONTROL 创建者]** | 创建查询的用户的名称。 |
+| **[!UICONTROL 已创建]** | 以UTC格式创建查询时的时间戳。 |
+| **[!UICONTROL 上次运行时间戳]** | 运行查询时的最近时间戳。 此列突出显示查询是否已根据其当前计划执行。 |
+| **[!UICONTROL 上次运行状态]** | 最近一次查询执行的状态。 三个状态值是： `successful` `failed` 或 `in progress`. |
+
+有关如何 [通过查询服务UI监控查询](../monitor-queries.md).
 
 ## 模板 {#browse}
 
