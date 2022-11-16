@@ -5,9 +5,9 @@ title: 数据准备映射函数
 topic-legacy: overview
 description: 本文档介绍了数据准备中使用的映射函数。
 exl-id: e95d9329-9dac-4b54-b804-ab5744ea6289
-source-git-commit: 66c3f4fc6da987f731f7b7e54f416c60fcc670d8
+source-git-commit: b7800dd67c2d16747815f2cb3311ca9b6d6fa342
 workflow-type: tm+mt
-source-wordcount: '4286'
+source-wordcount: '4337'
 ht-degree: 3%
 
 ---
@@ -234,6 +234,11 @@ new, mod, or, break, var, lt, for, false, while, eq, gt, div, not, null, continu
 {style=&quot;table-layout:auto&quot;}
 
 ### 用户代理函数 {#user-agent}
+
+下表中包含的任何用户代理函数都可以返回以下任一值：
+
+* 手机 — 屏幕较小的移动设备（通常&lt; 7英寸）
+* 移动设备 — 尚未识别的移动设备。 此移动设备可以是电子阅读器、平板电脑、手机、手表等。
 
 >[!NOTE]
 >

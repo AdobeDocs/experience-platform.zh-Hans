@@ -5,9 +5,9 @@ title: 映射集API端点
 topic-legacy: mapping sets
 description: 您可以使用Adobe Experience Platform API中的“/mappingSets”端点以编程方式检索、创建、更新和验证映射集。
 exl-id: a4e4ddcd-164e-42aa-b7d1-ba59d70da142
-source-git-commit: 47a94b00e141b24203b01dc93834aee13aa6113c
+source-git-commit: b7800dd67c2d16747815f2cb3311ca9b6d6fa342
 workflow-type: tm+mt
-source-wordcount: '807'
+source-wordcount: '854'
 ht-degree: 3%
 
 ---
@@ -219,7 +219,7 @@ curl -X POST https://platform.adobe.io/data/foundation/conversion/mappingSets \
 | -------- | ----------- |
 | `outputSchema.schemaRef.id` | 您引用的XDM架构的ID。 |
 | `outputSchema.schemaRef.contentType` | 确定引用架构的响应格式。 有关此字段的详细信息，请参阅 [架构注册开发人员指南](../../xdm/api/schemas.md#lookup). |
-| `mappings.sourceType` | 源类型描述如何将值从源提取到目标。 |
+| `mappings.sourceType` | 源类型描述如何将值从源提取到目标。 源类型支持两个可能的值： <ul><li>`ATTRIBUTE`:源类型 `ATTRIBUTE` 当输入属性来自源架构时使用。</li><li>`EXPRESSION`:源类型 `EXPRESSION` 在使用计算字段完成映射时使用。</li></ul> **警告**:如果未正确设置源类型值，则可能会导致映射集不可编辑。 |
 | `mappings.source` | 您希望从中映射数据的位置。 |
 | `mappings.destination` | 您希望数据映射到的位置。 |
 
