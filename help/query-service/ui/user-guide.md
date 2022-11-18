@@ -5,9 +5,9 @@ title: 查询编辑器UI指南
 topic-legacy: query editor
 description: 查询编辑器是Adobe Experience Platform查询服务提供的一个交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并且允许您运行交互式查询以用于开发目的，以及非交互式查询以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: d71bab9839289a8a1df849025b6db1b2b497087d
+source-git-commit: 9d543b5c7c7f39e809b6a13b8adc46b9a99f51c7
 workflow-type: tm+mt
-source-wordcount: '2106'
+source-wordcount: '2100'
 ht-degree: 0%
 
 ---
@@ -64,11 +64,11 @@ ht-degree: 0%
 
 ![显示下拉表名称建议的查询编辑器输入。](../images/ui/query-editor/tables-auto.png)
 
-### （测试版）自动完成UI配置切换 {#auto-complete}
+### （有限版本）自动完成UI配置切换 {#auto-complete}
 
 >[!IMPORTANT]
 >
->此功能当前处于测试阶段，您的组织可能还无法访问此功能。 功能和文档可能会发生更改。
+>自动完成UI配置切换开关当前位于有限版本中，并非所有客户都可用。
 
 的 [!DNL Query Editor] 在编写查询时，会自动建议潜在的SQL关键字以及表或列的详细信息。 自动完成功能默认处于启用状态，并且可以通过选择 [!UICONTROL 语法自动完成] 切换到查询编辑器的右上角。
 

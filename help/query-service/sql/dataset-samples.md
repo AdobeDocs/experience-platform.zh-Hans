@@ -1,18 +1,19 @@
 ---
 title: 数据集示例
 description: 查询服务示例数据集使您能够对大数据进行探索性查询，同时极大地缩短了处理时间，同时也降低了查询准确性。 本指南提供了有关如何管理示例以便进行近似查询处理的信息
-source-git-commit: 3d2802ff5cdb359b28da23a05d1d6831cc273a52
+exl-id: 9e676d7c-c24f-4234-878f-3e57bf57af44
+source-git-commit: 9d543b5c7c7f39e809b6a13b8adc46b9a99f51c7
 workflow-type: tm+mt
-source-wordcount: '536'
+source-wordcount: '538'
 ht-degree: 0%
 
 ---
 
-# （测试版）数据集示例
+# （有限版本）数据集示例
 
 >[!IMPORTANT]
 >
->数据集示例功能处于测试阶段。 其功能和文档可能会发生更改。
+>数据集示例功能当前处于有限版本中，并非所有客户都能使用。
 
 Adobe Experience Platform查询服务提供示例数据集作为其近似查询处理功能的一部分。 使用现有的统一随机样本创建示例数据集 [!DNL Azure Data Lake Storage] (ADLS)仅使用原始数据中某个百分比记录的数据集。 此百分比称为采样率。 通过调整采样率以控制准确性和处理时间的平衡，您可以对大数据进行探索性查询，并大大减少了处理时间，同时也降低了查询准确性。
 

@@ -1,14 +1,19 @@
 ---
 title: 监控批量查询许可证使用情况
 description: Adobe Experience Platform UI提供了一个功能板，您可以通过该功能板查看有关贵组织的Data Distiller许可证使用情况的重要信息。
-source-git-commit: 0a44d15f9dfaf5100fa44e2e6442b1be23ee0ab0
+exl-id: a1e365a0-cc65-4fd6-b36f-8d79b7d9ec7c
+source-git-commit: 9d543b5c7c7f39e809b6a13b8adc46b9a99f51c7
 workflow-type: tm+mt
-source-wordcount: '318'
+source-wordcount: '341'
 ht-degree: 0%
 
 ---
 
-# 监控批量查询许可证使用情况 {#monitor-license-usage}
+# （测试版）监控批量查询许可证的使用情况 {#monitor-license-usage}
+
+>[!IMPORTANT]
+>
+>测试版中提供了通过UI监控批量查询许可证使用情况的功能。 其功能和文档可能会发生更改。
 
 Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通过该功能板查看有关贵组织查询服务许可证使用情况的重要信息。
 
