@@ -5,10 +5,10 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: 67f3d27ebb17e1b1dc77dcd32246f407753c20df
+source-git-commit: a03ab5086f8f3935425da147f721dec42ced9d00
 workflow-type: tm+mt
-source-wordcount: '416'
-ht-degree: 67%
+source-wordcount: '419'
+ht-degree: 66%
 
 ---
 
@@ -119,16 +119,18 @@ ht-degree: 67%
          * [概述](./extensions/web/core/overview.md)
          * [事件转发](./extensions/web/core/event-forwarding.md)
          * [发行说明](./extensions/web/core/release-notes.md)
-      * [!DNL Mailchimp] Edge {#mailchimp-edge}
-         * [概述](./extensions/web/mailchimp/overview.md)
-      * [!DNL Marketo Munchkin] {#marketo}
-         * [概述](./extensions/web/marketo/overview.md)
-         * [发行说明](./extensions/web/marketo/release-notes.md)
       * Google Ads增强的转化 {#google-ads-enhanced-conversions}
          * [概述](./extensions/web/google-ads-enhanced-conversions/overview.md)
       * Google数据层 {#google-data-layer}
          * [概述](./extensions/web/google-data-layer/overview.md)
          * [发行说明](./extensions/web/google-data-layer/release-notes.md)
+      * [!DNL Mailchimp] Edge {#mailchimp-edge}
+         * [概述](./extensions/web/mailchimp/overview.md)
+      * [!DNL Marketo Munchkin] {#marketo}
+         * [概述](./extensions/web/marketo/overview.md)
+         * [发行说明](./extensions/web/marketo/release-notes.md)
+      * [!UICONTROL Microsoft Azure] {#azure}
+         * [概述](./extensions/web/azure/overview.md)
       * [!DNL Splunk] {#splunk}
          * [概述](./extensions/web/splunk/overview.md)
       * [!DNL YouTube] 视频跟踪 {#youtube}
