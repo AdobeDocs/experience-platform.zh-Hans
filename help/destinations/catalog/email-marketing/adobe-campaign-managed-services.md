@@ -1,9 +1,10 @@
 ---
 title: Adobe Campaign Managed Cloud Services连接
 description: Adobe Campaign Managed Cloud Services提供了一个平台，用于设计跨渠道客户体验以及可视活动编排、实时交互管理和跨渠道执行的环境。
-source-git-commit: 81c17a6ea07efbbea91e0d918d52ec96e0335152
+exl-id: fe151ad3-c431-4b5a-b453-9d1d9aedf775
+source-git-commit: ef49bebb96afb9b25430fcc69f8ba91305ad6697
 workflow-type: tm+mt
-source-wordcount: '1490'
+source-wordcount: '1368'
 ht-degree: 4%
 
 ---
@@ -46,29 +47,6 @@ Adobe Experience Platform会创建一个客户配置文件，其中包含身份�
 这样，跨渠道营销活动在Adobe Experience Cloud生态系统中会更加一致，并且客户档案丰富，能够快速进行调整和学习。
 
 [进一步了解Adobe Campaign与Adobe Experience Platform的集成](https://experienceleague.adobe.com/docs/campaign/campaign-v8/connect/ac-aep.html)
-
-
-## 先决条件 {#prerequisites}
-
-为了使Campaign能够从Adobe Experience Platform中检索数据，您需要创建Campaign API项目，并请求客户关怀将关联的客户ID添加到允许列表。
-
->[!NOTE]
->
->有关如何创建API项目的全局信息详见 [本文档](https://experienceleague.adobe.com/docs/platform-learn/getting-started-for-data-architects-and-data-engineers/set-up-developer-console-and-postman.html)
-
-1. 登录到 [Adobe Developer控制台](https://console.adobe.io/) 并创建一个新项目。
-
-1. 选择 **[!UICONTROL 添加API]** 选择 **[!UICONTROL Adobe Campaign]**.
-
-   ![](../../assets/catalog/email-marketing/adobe-campaign-managed-services/create-api.png)
-
-1. 生成键对。
-
-1. 选择 `<Instance Name> - admin` 产品配置文件并选择 **[!UICONTROL 保存配置的API]**.
-
-1. 将创建您的API项目。 记下 **[!UICONTROL 客户端ID]** 显示在您的项目中。 联系Adobe客户关怀团队，要求他们将您的客户ID添加到允许列表。
-
-   ![](../../assets/catalog/email-marketing/adobe-campaign-managed-services/client-id.png)
 
 ## 支持的身份 {#supported-identities}
 
