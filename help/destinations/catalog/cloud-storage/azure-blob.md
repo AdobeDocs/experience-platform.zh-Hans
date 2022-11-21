@@ -3,9 +3,9 @@ keywords: Azure Blob;Blob目标；s3;Azure Blob目标
 title: Azure Blob连接
 description: 创建到Azure Blob Storage的实时出站连接，以定期从Adobe Experience Platform导出CSV数据文件。
 exl-id: 8099849b-e3d2-48a5-902a-ca5a5ec88207
-source-git-commit: 56fd7a5ab58186367c729cb4ca8c3b4213c44900
+source-git-commit: f841b27a2d2700b0b68a386b89d1a5c62d3910ff
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '860'
 ht-degree: 1%
 
 ---
@@ -75,15 +75,15 @@ ht-degree: 1%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_blob_rsa"
 >title="RSA公钥"
->abstract="或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64-encoded] 字符串。 在下面的文档链接中查看格式正确的键值示例。"
+>abstract="或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 在下面的文档链接中查看格式正确的键值示例。"
 
 要对目标进行身份验证，请填写必填字段并选择 **[!UICONTROL 连接到目标]**.
 
 * **[!UICONTROL 连接字符串]**:访问Blob存储中的数据时需要使用连接字符串。 的 [!DNL Blob] 连接字符串模式以开头： `DefaultEndpointsProtocol=https;AccountName={ACCOUNT_NAME};AccountKey={ACCOUNT_KEY}`.
    * 有关配置 [!DNL Blob] 连接字符串，请参阅 [为Azure存储帐户配置连接字符串](https://docs.microsoft.com/en-us/azure/storage/common/storage-configure-connection-string#configure-a-connection-string-for-an-azure-storage-account) (在Microsoft文档中)。
-* **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64-encoded] 字符串。 在下面的文档链接中查看格式正确且基本64编码的键值的示例。 为简便起见，缩短了中间部分。
+* **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 查看下图中格式正确的加密密钥示例。
 
-![该图像显示了UI中格式正确且基本64加密的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+   ![显示UI中格式正确的PGP键示例的图像](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 ### 填写目标详细信息 {#destination-details}
 

@@ -1,9 +1,10 @@
 ---
 title: （测试版）Azure数据湖存储第2代连接
 description: 了解如何连接到Azure Data Lake Storage Gen2以激活区段和导出数据集。
-source-git-commit: 56fd7a5ab58186367c729cb4ca8c3b4213c44900
+exl-id: d265a02d-c901-4b39-8714-fe9ecdbb5bb1
+source-git-commit: f841b27a2d2700b0b68a386b89d1a5c62d3910ff
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: '642'
 ht-degree: 1%
 
 ---
@@ -47,9 +48,9 @@ ht-degree: 1%
 * **[!UICONTROL 租户]**:包含您的应用程序的租户信息。
 * **[!UICONTROL 服务主体ID]**:应用程序的客户端ID。
 * **[!UICONTROL 服务主密钥]**:应用程序的密钥。
-* **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 您的公钥必须写为 [!DNL Base64-encoded] 字符串。 在下面的文档链接中查看格式正确且基本64编码的键值的示例。 为简便起见，缩短了中间部分。
+* **[!UICONTROL 加密密钥]**:或者，您也可以附加RSA格式的公钥，以向导出的文件添加加密。 查看下图中格式正确的加密密钥示例。
 
-   ![该图像显示了UI中格式正确且基本64加密的PGP密钥的示例](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
+   ![显示UI中格式正确的PGP键示例的图像](../../assets/catalog/cloud-storage/sftp/pgp-key.png)
 
 ### 填写目标详细信息 {#destination-details}
 
