@@ -2,7 +2,10 @@
 keywords: Experience Platform；主页；热门主题；oracle;oracleResponsys;Responsys
 title: （测试版）OracleResponsys源概述
 description: 了解如何使用API或用户界面将OracleResponsys连接到Adobe Experience Platform。
-source-git-commit: 071157110ef255bf0692c7b9e1db9fb86d930c2c
+hide: true
+hidefromtoc: true
+exl-id: 806ae7e2-d4af-47d5-a3aa-561b69acc836
+source-git-commit: 784ec5f799c591185620e8376a6980b4930d914a
 workflow-type: tm+mt
 source-wordcount: '274'
 ht-degree: 0%
