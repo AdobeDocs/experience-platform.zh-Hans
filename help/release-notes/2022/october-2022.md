@@ -1,9 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2022年10月
 description: 2022年10月版Adobe Experience Platform发行说明。
-source-git-commit: 38eadb3a03577fde9651842e3aecc0291b14f0a0
+exl-id: 61ef2472-5e79-433f-9f60-b1245f619b42
+source-git-commit: 184ead059533d2706a5d3fca96dc082248955afe
 workflow-type: tm+mt
-source-wordcount: '1389'
+source-wordcount: '1352'
 ht-degree: 4%
 
 ---
@@ -122,6 +123,5 @@ Experience Platform提供了RESTful API和交互式UI，让您可以轻松地为
 | 功能 | 描述 |
 | --- | --- | 
 | Adobe Workfront源的测试版可用性 | 使用 [Adobe Workfront源](../../sources/connectors/adobe-applications/workfront.md) 将Workfront数据Experience Platform并执行用例，例如将工作记录与第三方数据结合、对工作记录应用历史和时间序列分析，以及使用标准SQL查询工作数据。 有关更多信息，请阅读 [在UI中创建Workfront源连接](../../sources/tutorials/ui/create/adobe-applications/workfront.md). |
-| oracle服务云源的测试版可用性 | 使用Oracle服务云源将数据从您的Oracle服务云帐户中摄取到Experience Platform。 有关更多信息，请阅读 [Oracle服务云源](../../sources/connectors/customer-success/oracle-service-cloud.md). |
 
 要进一步了解来源，请阅读 [源概述](../../sources/home.md).
