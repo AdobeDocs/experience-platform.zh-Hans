@@ -5,9 +5,9 @@ breadcrumb-title: 标记
 user-guide-description: 了解如何部署和管理分析、营销和广告标记以提升客户体验。
 feature: Tags
 solution: Data Collection
-source-git-commit: a03ab5086f8f3935425da147f721dec42ced9d00
+source-git-commit: de09106f4446981176ca001f607d540b490de8d1
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '420'
 ht-degree: 66%
 
 ---
@@ -106,6 +106,8 @@ ht-degree: 66%
       * Adobe Target v2 {#target-v2}
          * [概述](./extensions/web/target-v2/overview.md)
          * [发行说明](./extensions/web/target-v2/release-notes.md)
+      * [!DNL AWS] {#aws}
+         * [概述](./extensions/web/aws/overview.md)
       * [!DNL BrightCove] 视频跟踪 {#brightcove}
          * [概述](./extensions/web/brightcove/overview.md)
          * [发行说明](./extensions/web/brightcove/release-notes.md)
