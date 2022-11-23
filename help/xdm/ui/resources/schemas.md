@@ -5,9 +5,9 @@ title: 在UI中创建和编辑架构
 description: 了解如何在Experience Platform用户界面中创建和编辑模式的基础知识。
 topic-legacy: user guide
 exl-id: be83ce96-65b5-4a4a-8834-16f7ef9ec7d1
-source-git-commit: a95e5cf02e993d6c761abd74c98c0967a89eb678
+source-git-commit: 3fc498de60256006d27ada72a7b5f4fff71c4472
 workflow-type: tm+mt
-source-wordcount: '2901'
+source-wordcount: '3156'
 ht-degree: 0%
 
 ---
@@ -138,7 +138,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->即使在架构编辑器的功能上允许您将单个字段直接添加到架构中，但这并不会改变以下事实：XDM架构中的所有字段都必须由其类或与该类兼容的字段组提供。 正如以下各节所述，在将各个字段添加到架构时，作为关键步骤，仍会将其与字段组关联。
+>即使在架构编辑器的功能上允许您将单个字段直接添加到架构中，但这并不会改变以下事实：XDM架构中的所有字段都必须由其类或与该类兼容的字段组提供。 如以下各节所述，在将各个字段添加到架构时，作为关键步骤，所有这些字段仍与类或字段组关联。
 
 ### 添加标准字段 {#add-standard-fields}
 
@@ -172,7 +172,17 @@ ht-degree: 0%
 
 ![新建字段](../../images/ui/resources/schemas/custom-field-search.png)
 
-从此处，提供字段的显示名称和数据类型。 在 **[!UICONTROL 分配字段组]**，则必须为要关联的新字段选择字段组。 开始键入字段组的名称，如果您之前 [创建自定义字段组](./field-groups.md#create) 它们将显示在下拉列表中。 或者，您也可以在字段中键入唯一名称，以改为创建新字段组。
+为字段提供显示名称和数据类型后，下一步是将字段分配给父XDM资源。 如果您的架构使用自定义类，则可以选择 [将字段添加到分配的类](#add-to-class) 或 [字段组](#add-to-field-group) 中。 但是，如果您的架构使用标准类，则只能将自定义字段分配给字段组。
+
+#### 将字段分配给自定义字段组 {#add-to-field-group}
+
+>[!NOTE]
+>
+>此部分仅介绍如何将字段分配给自定义字段组。 如果要改为使用新自定义字段扩展标准字段组，请参阅 [将自定义字段添加到标准字段组](#custom-fields-for-standard-groups).
+
+在 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 字段组]**. 如果您的架构使用标准类，则这是唯一可用的选项，默认情况下处于选中状态。
+
+接下来，必须为要关联的新字段选择字段组。 开始在提供的文本输入中键入字段组的名称。 如果您有任何与输入匹配的现有自定义字段组，它们将显示在下拉列表中。 或者，您可以键入唯一名称以创建新字段组。
 
 ![选择字段组](../../images/ui/resources/schemas/select-field-group.png)
 
@@ -180,7 +190,7 @@ ht-degree: 0%
 >
 >如果您选择了现有的自定义字段组，则采用该字段组的任何其他架构也将在您保存更改后继承新添加的字段。 因此，仅当您需要此类型的传播时，才应选择现有的字段组。 否则，您应该选择创建新的自定义字段组。
 
-完成后，选择 **[!UICONTROL 应用]**.
+从列表中选择字段组后，选择 **[!UICONTROL 应用]**.
 
 ![应用字段](../../images/ui/resources/schemas/apply-field.png)
 
@@ -192,7 +202,21 @@ ht-degree: 0%
 >
 >默认情况下，所选自定义字段组提供的其余字段将从架构中删除。 如果要向架构添加其中一些字段，请选择属于该组的字段，然后选择 **[!UICONTROL 管理相关字段]** 中。
 
-#### 将自定义字段添加到标准字段组的结构 {#custom-fields-for-standard-groups}
+#### 将字段分配给自定义类 {#add-to-class}
+
+在 **[!UICONTROL 分配给]**，选择 **[!UICONTROL 类]**. 下面的输入字段将替换为当前架构的自定义类的名称，这表示新字段将分配给此类。
+
+![的 [!UICONTROL 类] 选项。](../../images/ui/resources/schemas/assign-field-to-class.png)
+
+根据需要继续配置字段，然后选择 **[!UICONTROL 应用]** 完成。
+
+![[!UICONTROL 应用] 为新字段选择。](../../images/ui/resources/schemas/assign-field-to-class-apply.png)
+
+新字段将添加到画布中，并且名称位于 [租户ID](../../api/getting-started.md#know-your-tenant_id) 以避免与标准XDM字段冲突。 选择左边栏中的类名称会显示新字段作为类结构的一部分。
+
+![应用于自定义类结构的新字段，在画布中表示。](../../images/ui/resources/schemas/assign-field-to-class-applied.png)
+
+### 将自定义字段添加到标准字段组的结构 {#custom-fields-for-standard-groups}
 
 如果您正在处理的架构具有由标准字段组提供的对象类型字段，则可以向该标准对象添加您自己的自定义字段。
 
