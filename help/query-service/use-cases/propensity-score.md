@@ -1,16 +1,19 @@
 ---
 title: 使用机器学习生成的预测模型确定倾向得分
 description: 了解如何使用查询服务将您的预测模型应用到Platform数据。 本文档演示如何使用Platform数据预测客户每次访问时的购买倾向。
-source-git-commit: af1c8f94d1758b3a4e7ea00c46b0f9a71a01c6be
+exl-id: 29587541-50dd-405c-bc18-17947b8a5942
+source-git-commit: 40c27a52fdae2c7d38c5e244a6d1d6ae3f80f496
 workflow-type: tm+mt
-source-wordcount: '1294'
+source-wordcount: '1295'
 ht-degree: 0%
 
 ---
 
 # 使用机器学习生成的预测模型确定倾向得分
 
-使用查询服务，您可以利用机器学习平台中的Experience Platform数据生成预测模型，如倾向得分。 本指南介绍如何使用查询服务将数据发送到机器学习平台，以便在计算笔记本中培训模型。 训练好的模型可以应用于使用SQL的数据，以预测客户每次访问的购买倾向。
+使用查询服务，您可以利用在机器学习平台上构建的预测模型（如倾向得分）来分析Experience Platform数据。
+
+本指南介绍如何使用查询服务将数据发送到机器学习平台，以便在计算笔记本中培训模型。 训练好的模型可以应用于使用SQL的数据，以预测客户每次访问的购买倾向。
 
 ## 快速入门
 
@@ -322,5 +325,3 @@ bootstrap_accuracy = np.sort(bootstrap_accuracy)
 ![用于显示倾向得分的置信区间的print命令。](../images/use-cases/confidence-interval.png)
 
 上图说明，如果您只需花费1000行来培训模型，则精度可能会在84%到88%之间。 您可以调整 `LIMIT` 子句，以确保模型的性能。
-
-
