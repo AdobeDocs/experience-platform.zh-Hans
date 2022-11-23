@@ -1,10 +1,10 @@
 ---
 title: Adobe Experience Platform发行说明2022年11月
 description: 2022年11月版Adobe Experience Platform发行说明。
-source-git-commit: 9d5511697d3d4de2926c8862fdd413e2a9f1d1a2
+source-git-commit: 3c78fc1cbfcd00f0fd5facfdf07bbc2757f492fa
 workflow-type: tm+mt
-source-wordcount: '174'
-ht-degree: 11%
+source-wordcount: '454'
+ht-degree: 5%
 
 ---
 
@@ -14,7 +14,37 @@ ht-degree: 11%
 
 Adobe Experience Platform 现有功能的更新包括：
 
+- [数据收集](#data-collection)
+- [体验数据模型(XDM)](#xdm)
 - [源](#sources)
+
+## 数据收集 {#data-collection}
+
+Adobe Experience Platform提供了一套技术，允许您收集客户端客户体验数据，并将其发送到Adobe Experience Platform边缘网络，以便对其进行扩充、转换和分发到Adobe或非Adobe目标。
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| [!DNL AWS] 事件转发扩展 | 您现在可以将数据发送到 [!DNL Amazon Web Services] ([!DNL AWS])使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL AWS] 扩展概述](../../tags/extensions/web/aws/overview.md) 以了解更多信息。 |
+| [!DNL Google Ads Enhanced Conversions] 事件转发扩展 | 您现在可以将转化数据发送到 [!DNL Google Ads] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Google Ads Enhanced Conversions] 扩展概述](../../tags/extensions/web/google-ads-enhanced-conversions/overview.md) 以了解更多信息。 |
+| [!DNL Microsoft Azure] 事件转发扩展 | 您现在可以将数据发送到 [!DNL Microsoft Azure] 使用 [事件转发](../../tags/ui/event-forwarding/overview.md) 扩展。 请参阅 [[!DNL Microsoft Azure] 扩展概述](../../tags/extensions/web/azure/overview.md) 以了解更多信息。 |
+
+有关Platform数据收集功能的更多信息，请参阅 [数据收集概述](../../collection/home.md).
+
+## 体验数据模型(XDM) {#xdm}
+
+XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通用结构和定义（架构）。 通过遵循XDM标准，可以将所有客户体验数据纳入到通用的表示形式中，以更快、更集成的方式提供洞察。 您可以从客户操作中获得有价值的分析，通过区段定义客户受众，以及将客户属性用于个性化目的。
+
+**新增功能或更新功能**
+
+| 功能 | 描述 |
+| --- | --- |
+| 直接添加到架构时，为自定义类分配字段 | When [直接将单个字段添加到架构](../../xdm/ui/resources/schemas.md#add-individual-fields)，以前只能将字段分配给字段组作为其父资源。 现在，除了字段组之外，您还可以 [将字段分配给自定义类](../../xdm/ui/resources/schemas.md.md#add-to-class) 作为其父资源。 |
+
+{style=&quot;table-layout:auto&quot;}
+
+有关Platform中XDM的更多信息，请参阅 [XDM系统概述](../../xdm/home.md).
 
 ## 源 {#sources}
 
