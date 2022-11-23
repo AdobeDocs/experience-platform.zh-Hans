@@ -2,9 +2,9 @@
 title: Adobe Experience Platform中的客户管理密钥
 description: 了解如何为存储在Adobe Experience Platform中的数据设置您自己的加密密钥。
 exl-id: cd33e6c2-8189-4b68-a99b-ec7fccdc9b91
-source-git-commit: 82a29cedfd12e0bc3edddeb26abaf36b0edea6df
+source-git-commit: 47b3de5035f93f8a4288a0fec0a9111a979d7442
 workflow-type: tm+mt
-source-wordcount: '1613'
+source-wordcount: '1603'
 ht-degree: 0%
 
 ---
@@ -17,11 +17,11 @@ ht-degree: 0%
 
 ## 先决条件
 
-要启用CMK，您必须具有 **全部** 的以下功能 [!DNL Microsoft Azure]:
+要启用CMK，您的 [!DNL Azure] 密钥保管库必须配置以下设置：
 
-* [基于角色的访问控制策略](https://learn.microsoft.com/en-us/azure/role-based-access-control/) (请不要与Experience Platform中的相同功能混淆)
-* [密钥保管库软删除](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview)
-* [清除保护](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview#purge-protection)
+* [启用清除保护](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview#purge-protection)
+* [启用软删除](https://learn.microsoft.com/en-us/azure/key-vault/general/soft-delete-overview)
+* [使用配置访问 [!DNL Azure] 基于角色的访问控制](https://learn.microsoft.com/en-us/azure/role-based-access-control/)
 
 ## 流程摘要
 
