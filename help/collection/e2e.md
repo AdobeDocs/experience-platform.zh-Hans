@@ -2,7 +2,7 @@
 title: 数据收集端到端概述
 description: 简要概述如何使用Adobe Experience Platform的数据收集功能将事件数据发送到Adobe Experience Cloud解决方案。
 exl-id: 01ddbb19-40bb-4cb5-bfca-b272b88008b3
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '2619'
 ht-degree: 0%
@@ -212,7 +212,7 @@ Adobe Experience Platform会收集您的数据并将其传输到其他Adobe产�
 
 >[!NOTE]
 >
->有关AdobeWeb扩展提供的不同事件类型（包括如何配置事件类型）的更多信息，请参阅 [Adobe扩展参考](../tags/extensions/web/overview.md) （位于标记文档中）。
+>有关AdobeWeb扩展提供的不同事件类型（包括如何配置事件类型）的更多信息，请参阅 [Adobe扩展参考](../tags/extensions/client/overview.md) （位于标记文档中）。
 
 表单提交事件允许您使用 [CSS选择器](https://www.w3schools.com/css/css_selectors.asp) 引用规则要触发的特定元素。 在以下示例中，ID `add-to-cart-form` ，以便此规则仅针对“添加到购物车”表单触发。 选择 **[!UICONTROL 保留更改]** 将事件添加到规则。
 

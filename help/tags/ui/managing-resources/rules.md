@@ -2,7 +2,7 @@
 title: 规则
 description: 了解标记扩展在Adobe Experience Platform中的工作方式。
 exl-id: 2beca2c9-72b7-4ea0-a166-50a3b8edb9cd
-source-git-commit: 85413e4a8b604dd9111ca4d47ad6a1ec49d8f547
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '1973'
 ht-degree: 66%
@@ -41,7 +41,7 @@ Adobe Experience Platform中的标记遵循基于规则的系统。 他们查找
 
 * **条件**:通过配置要使事件触发规则而必须为true的任何条件来缩小事件范围。 例外被定义为 NOT 条件。多个条件使用 AND 进行连接。
 
-可用的事件取决于已安装的扩展。有关核心扩展中的事件的信息，请参阅[核心扩展事件类型](../../extensions/web/core/overview.md#core-extension-event-types)。
+可用的事件取决于已安装的扩展。有关核心扩展中的事件的信息，请参阅[核心扩展事件类型](../../extensions/client/core/overview.md#core-extension-event-types)。
 
 ### 操作 (then)
 

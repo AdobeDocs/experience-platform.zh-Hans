@@ -3,7 +3,7 @@ title: 安装Adobe Experience Platform Web SDK
 description: 了解如何安装Experience PlatformWeb SDK。
 keywords: Web SDK安装；安装Web SDK;Internet Explorer;promise;npm包
 exl-id: b1de7ca1-d0d2-4661-a273-a1acf29afcd5
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '924'
 ht-degree: 2%
@@ -20,7 +20,7 @@ ht-degree: 2%
 
 ## 选项1:安装标记扩展
 
-有关标记扩展的文档，请参阅 [launch文档](../../tags/extensions/web/sdk/overview.md)
+有关标记扩展的文档，请参阅 [launch文档](../../tags/extensions/client/sdk/overview.md)
 
 ## 选项2:安装预建的独立版本
 

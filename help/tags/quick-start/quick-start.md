@@ -2,7 +2,7 @@
 title: 快速入门指南
 description: 了解如何在Adobe Experience Platform中快速启动和运行标记。
 exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '1527'
 ht-degree: 43%
@@ -53,7 +53,7 @@ ht-degree: 43%
 
 扩展是由Adobe或Adobe合作伙伴构建的集成，可为您能够部署到网站的标记添加无限数量的新选项。 如果将标记视为操作系统，则扩展是您安装的用于执行所需特定操作的应用程序。
 
-所有新资产均随安装的[核心扩展](../extensions/web/core/overview.md)一起提供。移动资产则随其他扩展一起提供。核心扩展由Adobe构建，可提供一组可靠的默认数据元素类型和事件类型，分别供数据层和规则使用。 您要执行的大多数操作（获取 ECID、发送 [!DNL Adobe Analytics] 信标、加载 [!DNL Target] 全局 mbox 等等）都来自于您从目录安装的扩展。
+所有新资产均随安装的[核心扩展](../extensions/client/core/overview.md)一起提供。移动资产则随其他扩展一起提供。核心扩展由Adobe构建，可提供一组可靠的默认数据元素类型和事件类型，分别供数据层和规则使用。 您要执行的大多数操作（获取 ECID、发送 [!DNL Adobe Analytics] 信标、加载 [!DNL Target] 全局 mbox 等等）都来自于您从目录安装的扩展。
 
 Platform中的标记之所以真正独特，是因为这些扩展可由任何人构建。 您是否需要丢弃网站上的 Facebook 再营销像素？可考虑使用 Facebook 构建的扩展。您是否希望对 Twitter 或 Linked In 执行相同的操作？可使用这些扩展。您是否需要运行调查？可考虑使用 Question Pro 或 Foresee。您是否需要管理最终用户的隐私和同意，以帮助您 [!DNL GDPR]? 可认真考虑使用 Evidon 和 Trust Arc。您是否希望对网站上各个用户的行为进行精细的分析？ 或许可以考虑使用 Clicktale。有关更多信息，请参阅 [添加新扩展](../ui/managing-resources/extensions/overview.md#add-a-new-extension).
 

@@ -2,7 +2,7 @@
 title: 扩展
 description: 了解标记扩展在Adobe Experience Platform中的工作方式。
 exl-id: e911bedd-6c67-4339-91d7-839c8b00c153
-source-git-commit: f7edfa05e25c17f9ace34287c8a2d8426d0f36d4
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '497'
 ht-degree: 63%
@@ -27,13 +27,13 @@ ht-degree: 63%
 
 使用扩展列表顶部的链接可以查看已安装的扩展、扩展目录或更新。
 
-选择一个扩展，然后选择[!UICONTROL Configure]以查看和更改扩展的设置。 有关更多信息，请参阅[添加新扩展](#add-a-new-extension)中的部分，以了解有关扩展选项的信息。
+选择扩展，然后选择 [!UICONTROL 配置] 以查看和更改扩展的设置。 有关更多信息，请参阅 [添加新扩展](#add-a-new-extension) 以了解有关扩展选项的信息。
 
 >[!IMPORTANT]
 >
 >所做的更改在[发布](../../publishing/overview.md)之后才会生效。
 
-默认情况下，Adobe会提供支持常用集成的扩展。 可以使用自定义配置修改扩展。配置则通过扩展提供。要创建配置，请选择扩展卡，然后选择&#x200B;**[!UICONTROL Add New Configuration]**。
+默认情况下，Adobe会提供支持常用集成的扩展。 可以使用自定义配置修改扩展。配置则通过扩展提供。要创建配置，请选择扩展卡，然后选择 **[!UICONTROL 添加新配置]**.
 
 ## 扩展目录
 
@@ -51,15 +51,15 @@ Extensions 页面提供了三个视图：
 
    显示已安装扩展的更新。
 
-选择&#x200B;**[!UICONTROL Extensions]**&#x200B;可查看所有已安装的扩展。 您还可以使用目录查看所有可用扩展的列表以及具有可用更新的扩展。
+选择 **[!UICONTROL 扩展]** ，以查看所有已安装的扩展。 您还可以使用目录查看所有可用扩展的列表以及具有可用更新的扩展。
 
-有关Adobe拥有的扩展的详细信息，请参阅[扩展引用](../../../extensions/web/overview.md)。
+请参阅 [扩展参考](../../../extensions/client/overview.md) 有关Adobe拥有的扩展的详细信息。
 
 ## 添加新扩展 {#add-a-new-extension}
 
 标记极具可扩展性。 扩展可为标记添加核心功能。 扩展的常见用途是创建与其他应用程序的集成。
 
-1. 在资产的概述页面中，打开&#x200B;**[!UICONTROL Extensions]**&#x200B;选项卡。
+1. 在资产的概述页面中，打开 **[!UICONTROL 扩展]** 选项卡。
 1. 选择一个扩展。
 
    ![核心扩展](../../../images/extensions.png)
@@ -80,10 +80,10 @@ Extensions 页面提供了三个视图：
 
 ## 配置扩展
 
-将鼠标悬停在已安装的扩展上，然后选择&#x200B;**[!UICONTROL 配置]**。
+将鼠标悬停在已安装的扩展上，然后选择 **[!UICONTROL 配置]**.
 
 >[!NOTE]
 >
 >某些扩展既不需要配置，也不提供配置选项。
 
-每个可配置的扩展都具有独特的选项。有关每个Adobe扩展可用选项的信息，请参阅[扩展参考](../../../extensions/web/overview.md)。
+每个可配置的扩展都具有独特的选项。请参阅 [扩展参考](../../../extensions/client/overview.md) 有关每个Adobe扩展可用的选项的信息。

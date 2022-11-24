@@ -2,7 +2,7 @@
 title: Reactor API中的密钥
 description: 了解如何在Reactor API中配置用于事件转发的密钥的基础知识。
 exl-id: 0298c0cd-9fba-4b54-86db-5d2d8f9ade54
-source-git-commit: 24e79c14268b9eab0e8286eb8cd1352c1dfcd1b6
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '1241'
 ht-degree: 2%
@@ -131,7 +131,7 @@ ht-degree: 2%
 
 ## 引用密钥 {#referencing-secrets}
 
-要引用密钥，必须创建类型为“[!UICONTROL 密码]”(由 [[!UICONTROL 核心] 扩展](../../extensions/web/core/overview.md))。 配置此数据元素时，系统会提示您指明要为每个环境使用的密钥。 然后，您可以创建引用机密数据元素的规则，例如在HTTP调用的标头中。
+要引用密钥，必须创建类型为“[!UICONTROL 密码]”(由 [[!UICONTROL 核心] 扩展](../../extensions/client/core/overview.md))。 配置此数据元素时，系统会提示您指明要为每个环境使用的密钥。 然后，您可以创建引用机密数据元素的规则，例如在HTTP调用的标头中。
 
 ![密钥数据元素](../../images/api/guides/secrets/data-element.png)
 

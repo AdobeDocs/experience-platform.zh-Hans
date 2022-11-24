@@ -2,7 +2,7 @@
 title: 异步部署
 description: 了解如何在您的网站上异步部署Adobe Experience Platform标记库。
 exl-id: ed117d3a-7370-42aa-9bc9-2a01b8e7794e
-source-git-commit: c314cba6b822e12aa0367e1377ceb4f6c9d07ac2
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '1079'
 ht-degree: 55%
@@ -56,7 +56,7 @@ ht-degree: 55%
 
 其次，标记库可以在 [`DOMContentLoaded`](https://developer.mozilla.org/zh-CN/docs/Web/Events/DOMContentLoaded) 发生浏览器事件（DOM就绪）。
 
-由于这两点，因此，有必要展示 [Library Loaded](../../extensions/web/core/overview.md#library-loaded-page-top), [Page Bottom](../../extensions/web/core/overview.md#page-bottom), [DOM Ready](../../extensions/web/core/overview.md#page-bottom)和 [Window Loaded](../../extensions/web/core/overview.md#window-loaded) 异步加载标记库时，核心扩展中的事件类型会起作用。
+由于这两点，因此，有必要展示 [Library Loaded](../../extensions/client/core/overview.md#library-loaded-page-top), [Page Bottom](../../extensions/client/core/overview.md#page-bottom), [DOM Ready](../../extensions/client/core/overview.md#page-bottom)和 [Window Loaded](../../extensions/client/core/overview.md#window-loaded) 异步加载标记库时，核心扩展中的事件类型会起作用。
 
 如果您的标记属性包含以下四个规则：
 

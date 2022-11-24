@@ -3,7 +3,7 @@ title: 事件转发概述
 description: 了解 Adobe Experience Platform 中的事件转发功能，此功能可让您使用 Platform Edge Network 执行任务，而无需更改您的标记实施。
 feature: Event Forwarding
 exl-id: 18e76b9c-4fdd-4eff-a515-a681bc78d37b
-source-git-commit: 8ded2aed32dffa4f0923fedac7baf798e68a9ec9
+source-git-commit: c7344d0ac5b65c6abae6a040304f27dc7cd77cbb
 workflow-type: tm+mt
 source-wordcount: '959'
 ht-degree: 8%
@@ -57,7 +57,7 @@ Adobe Experience Platform中的事件转发允许您将收集的事件数据发�
 
 ### 扩展 {#extensions}
 
-事件转发有其自己的兼容扩展目录，如 [核心](../../extensions/web/core/event-forwarding.md) 扩展和 [Adobe云连接器](../../extensions/web/cloud-connector/overview.md) 扩展。 您可以通过选择 **[!UICONTROL 扩展]** 在左侧导航中，然后是 **[!UICONTROL 目录]**.
+事件转发有其自己的兼容扩展目录，如 [核心](../../extensions/server/core/overview.md) 扩展和 [Adobe云连接器](../../extensions/server/cloud-connector/overview.md) 扩展。 您可以通过选择 **[!UICONTROL 扩展]** 在左侧导航中，然后是 **[!UICONTROL 目录]**.
 
 ![数据收集UI中的事件转发扩展](../../images/ui/event-forwarding/overview/extensions.png)
 

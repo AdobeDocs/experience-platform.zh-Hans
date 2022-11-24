@@ -5,7 +5,7 @@ title: 流摄取概述
 topic-legacy: overview
 description: Adobe Experience Platform的流式摄取为用户提供了一种方法，可将数据从客户端和服务器端设备实时发送到Experience Platform。
 exl-id: 851f15fd-7ac5-4a9f-934d-6b907057da87
-source-git-commit: 3ec4bfcb185459ec644ce1826e2a970cb6294538
+source-git-commit: 88939d674c0002590939004e0235d3da8b072118
 workflow-type: tm+mt
 source-wordcount: '348'
 ht-degree: 2%
@@ -58,4 +58,4 @@ Adobe Experience Platform让您能够通过生成 [!DNL Real-time Customer Profi
 
 ## Adobe Experience Platform 扩展
 
-您可以使用Adobe Experience Platform扩展创建新的流连接。 的 [!DNL Experience Platform] 扩展提供了用于发送 [!DNL Experience Data Model] (XDM)，用于实时摄取到 [!DNL Experience Platform]. 访问 [Experience Platform扩展](../../tags/extensions/web/sdk/overview.md) 文档以了解更多信息。
+您可以使用Adobe Experience Platform扩展创建新的流连接。 的 [!DNL Experience Platform] 扩展提供了用于发送 [!DNL Experience Data Model] (XDM)，用于实时摄取到 [!DNL Experience Platform]. 访问 [Experience Platform扩展](../../tags/extensions/client/sdk/overview.md) 文档以了解更多信息。
