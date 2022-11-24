@@ -1,7 +1,7 @@
 ---
 title: Adobe Experience Platform发行说明2022年11月
 description: 2022年11月版Adobe Experience Platform发行说明。
-source-git-commit: 3c78fc1cbfcd00f0fd5facfdf07bbc2757f492fa
+source-git-commit: 9100597c94c21beb9d967f67061e18a9421c6674
 workflow-type: tm+mt
 source-wordcount: '454'
 ht-degree: 5%
@@ -40,7 +40,7 @@ XDM是一种开源规范，为引入Adobe Experience Platform的数据提供通�
 
 | 功能 | 描述 |
 | --- | --- |
-| 直接添加到架构时，为自定义类分配字段 | When [直接将单个字段添加到架构](../../xdm/ui/resources/schemas.md#add-individual-fields)，以前只能将字段分配给字段组作为其父资源。 现在，除了字段组之外，您还可以 [将字段分配给自定义类](../../xdm/ui/resources/schemas.md.md#add-to-class) 作为其父资源。 |
+| 直接添加到架构时，为自定义类分配字段 | When [直接将单个字段添加到架构](../../xdm/ui/resources/schemas.md#add-individual-fields)，以前只能将字段分配给字段组作为其父资源。 现在，除了字段组之外，您还可以 [将字段分配给自定义类](../../xdm/ui/resources/schemas.md#add-to-class) 作为其父资源。 |
 
 {style=&quot;table-layout:auto&quot;}
 
