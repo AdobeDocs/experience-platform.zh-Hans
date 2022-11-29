@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；Analytics源连接器；
 title: Adobe Analytics报表包数据的源连接器
 description: 本文档概述了Analytics，并介绍了Analytics数据的用例。
 exl-id: c4887784-be12-40d4-83bf-94b31eccdc2e
-source-git-commit: fd114a418668436efa17edb00f2849a10f2c8cd6
+source-git-commit: d94bbbd34b116f10098624d565c1ae285fc0461e
 workflow-type: tm+mt
-source-wordcount: '997'
-ht-degree: 6%
+source-wordcount: '1014'
+ht-degree: 7%
 
 ---
 
@@ -24,7 +24,7 @@ Adobe Experience Platform允许您通过Analytics源连接器摄取Adobe Analyti
 
 在高层， [!DNL Analytics] 收集来自世界各地各种数字渠道和多个数据中心的数据。 收集数据后，将应用访客识别、分段和转换架构(VISTA)规则和处理规则来形成传入数据。 在原始数据经过这种轻量级的处理后，会认为它已准备好供使用 [!DNL Real-time Customer Profile]. 在与上述过程平行的过程中，相同的处理数据被微批处理并摄取到Platform数据集中，以供 [!DNL Data Science Workspace], [!DNL Query Service]，以及其他数据发现应用程序。
 
-请参阅 [处理规则概述](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules.html) 以了解有关处理规则的详细信息。
+请参阅 [处理规则概述](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/processing-rules/processing-rules.html?lang=zh-Hans) 以了解有关处理规则的详细信息。
 
 ## 体验数据模型(XDM)
 
@@ -49,7 +49,9 @@ XDM是一项公开记录的规范，它为应用程序在Experience Platform时�
 | 新数据 [!DNL Real-time Customer Profile] (A4T) **not** enabled) | &lt; 2 分钟 |
 | 新数据 [!DNL Real-time Customer Profile] (A4T) **is** enabled) | &lt; 15 分钟 |
 | 数据湖的新数据 | &lt; 90 分钟 |
-| 回填数据（13个月的数据或100亿个事件，以较低者为准） | &lt; 4 周 |
+| 回填不到100亿个事件 | &lt; 4 周 |
+
+Analytics回填默认为13个月。 上表所列的100亿件事件的限制严格限于预期滞后。
 
 >[!NOTE]
 >
