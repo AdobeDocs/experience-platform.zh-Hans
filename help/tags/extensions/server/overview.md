@@ -1,10 +1,11 @@
 ---
 title: 事件转发扩展参考
 description: 在Adobe Experience Platform中查找有关事件转发扩展的文档。
-source-git-commit: ccfc46714069e8c29f1777dea5ba73e318c0a4a6
+exl-id: e7b42241-b41c-4d12-8551-4df14e3c9b74
+source-git-commit: fbdfbe4be6e3b1e5ad212a4e5ebd3551cec3a89a
 workflow-type: tm+mt
-source-wordcount: '151'
-ht-degree: 19%
+source-wordcount: '158'
+ht-degree: 18%
 
 ---
 
@@ -23,6 +24,7 @@ ht-degree: 19%
 * [Adobe Experience Platform Cloud Connector](./cloud-connector/overview.md)
 * [[!DNL AWS]](./aws/overview.md)
 * [核心](./core/overview.md)
+* [Facebook转化API](https://exchange.adobe.com/apps/ec/105509)
 * [Google Ads增强的转化](./google-ads-enhanced-conversions/overview.md)
 * [[!DNL Mailchimp] Edge](./mailchimp/overview.md)
 * [[!UICONTROL Microsoft Azure]](./azure/overview.md)
