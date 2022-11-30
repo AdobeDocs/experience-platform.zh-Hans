@@ -1,10 +1,10 @@
 ---
 title: 隐私控制台概述
 description: 了解如何在Adobe Experience Platform UI中监控与隐私相关的工作流。
-source-git-commit: 4fa1b826d033ace6536af920b070e8eebbbf401c
+source-git-commit: 1fac36a0fd767add92283cd256d8bcea783ecf3b
 workflow-type: tm+mt
 source-wordcount: '406'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -32,7 +32,7 @@ ht-degree: 3%
 
 | 小组件名称 | 描述 |
 | --- | --- |
-| 数据卫生工作单状态 | 显示下方消费者删除流程的状态 [数据卫生](../../hygiene/home.md) 的值。 使用下拉菜单更改过去7天、14天和30天之间的时间范围。 |
+| 数据卫生工作单状态 | 显示下的记录删除流程的状态 [数据卫生](../../hygiene/home.md) 的值。 使用下拉菜单更改过去7天、14天和30天之间的时间范围。 |
 | 最近的数据卫生工作单 | 显示最近 [数据卫生](../../hygiene/home.md) 系统正在处理的工作单。 使用下拉菜单可在最近创建的工作单和最近更新的工作单之间切换。 |
 | 最常执行的操作 | 显示平台上最常执行的操作，由 [审核日志](./audit-logs/overview.md) 的值。 使用下拉菜单更改过去7天、14天和30天之间的时间范围。 |
 | 最活跃的用户 | 显示组织内最活跃的Platform用户，其捕获者 [审核日志](./audit-logs/overview.md) 的值。 使用下拉菜单更改过去7天、14天和30天之间的时间范围。 |
@@ -53,5 +53,5 @@ ht-degree: 3%
 * [基于属性的访问控制](../../access-control/abac/overview.md)
 * [审核日志](./audit-logs/overview.md)
 * [数据管理](../../data-governance/home.md)
-* [数据卫生](../../hygiene/home.md)
+* [数据安全机制](../../hygiene/home.md)
 * [Privacy Service](../../privacy-service/home.md)

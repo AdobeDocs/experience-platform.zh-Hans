@@ -1,21 +1,21 @@
 ---
-title: 使用数据卫生API删除消费者记录
+title: 使用数据卫生API删除记录
 description: 了解如何以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 hide: true
 hidefromtoc: true
 exl-id: d80a4be3-e072-4bb4-a56d-b34a20f88c78
-source-git-commit: c2ff0d5806e57f230b937e8754d40031fb4b2305
+source-git-commit: da8b5d9fffdf8a176a4d70be5df5b3021cf0df7b
 workflow-type: tm+mt
-source-wordcount: '504'
+source-wordcount: '502'
 ht-degree: 1%
 
 ---
 
-# 使用数据卫生API删除消费者记录
+# 使用数据卫生API删除记录
 
 >[!IMPORTANT]
 >
->此端点表示消费者删除的测试版功能。 要获取最新功能，请使用 [`/workorder` 端点](./workorder.md) 中。
+>此端点表示用于记录删除的测试版功能。 要获取最新功能，请使用 [`/workorder` 端点](./workorder.md) 中。
 
 数据卫生API允许您以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 

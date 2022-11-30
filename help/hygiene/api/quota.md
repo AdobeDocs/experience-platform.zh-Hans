@@ -1,9 +1,10 @@
 ---
 title: 配额API端点
 description: 利用数据卫生API中的/quota端点，可根据组织针对每种作业类型的每月配额限制来监控数据卫生使用情况。
-source-git-commit: 6453ec6c98d90566449edaa0804ada260ae12bf6
+exl-id: 91858a13-e5ce-4b36-a69c-9da9daf8cd66
+source-git-commit: 1c6a5df6473e572cae88a5980fe0db9dfcf9944e
 workflow-type: tm+mt
-source-wordcount: '352'
+source-wordcount: '350'
 ht-degree: 3%
 
 ---
@@ -18,7 +19,7 @@ ht-degree: 3%
 
 每种数据卫生作业类型的配额通过以下方式强制执行：
 
-* 用户删除和字段更新限制为每月发送一定数量的请求。
+* 记录删除和更新限制为每月请求的特定数量。
 * 数据集过期对并发活动作业的数量具有固定限制，无论何时执行过期。
 
 ## 快速入门
@@ -42,7 +43,7 @@ GET /quota?quotaType={QUOTA_TYPE}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUOTA_TYPE}` | 可选查询参数，用于指定要检索的配额类型。 如果否 `quotaType` 参数，则API响应中会返回所有配额值。 接受的类型值包括：<ul><li>`expirationDatasetQuota`:数据集过期</li><li>`deleteIdentityWorkOrderDatasetQuota`:用户删除</li><li>`fieldUpdateWorkOrderDatasetQuota`:字段更新</li></ul> |
+| `{QUOTA_TYPE}` | 可选查询参数，用于指定要检索的配额类型。 如果否 `quotaType` 参数，则API响应中会返回所有配额值。 接受的类型值包括：<ul><li>`expirationDatasetQuota`:数据集过期</li><li>`deleteIdentityWorkOrderDatasetQuota`:记录删除</li><li>`fieldUpdateWorkOrderDatasetQuota`:记录更新</li></ul> |
 
 **请求**
 
@@ -70,7 +71,7 @@ curl -X GET \
     },
     {
       "name": "deleteIdentityWorkOrderQuota",
-      "description": "The number of Consumer Delete Work Order requests for the organization for this month.",
+      "description": "The number of Record Delete Work Order requests for the organization for this month.",
       "consumed": 390,
       "quota": 10000
     }
@@ -80,6 +81,6 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `quotas` | 列出每个数据卫生作业类型的配额信息。 每个配额对象都包含以下属性：<ul><li>`name`:数据卫生作业类型：<ul><li>`expirationDatasetQuota`:数据集过期</li><li>`deleteIdentityWorkOrderDatasetQuota`:用户删除</li></ul></li><li>`description`:数据卫生作业类型的描述。</li><li>`consumed`:此类型的作业在当前每月期间运行。</li><li>`quota`:此作业类型的配额限制。 对于消费者删除和字段更新，此值表示每月可运行的作业数。 对于数据集过期，此值表示在任何给定时间可同时处于活动状态的作业数。</li></ul> |
+| `quotas` | 列出每个数据卫生作业类型的配额信息。 每个配额对象都包含以下属性：<ul><li>`name`:数据卫生作业类型：<ul><li>`expirationDatasetQuota`:数据集过期</li><li>`deleteIdentityWorkOrderDatasetQuota`:记录删除</li></ul></li><li>`description`:数据卫生作业类型的描述。</li><li>`consumed`:此类型的作业在当前每月期间运行。</li><li>`quota`:此作业类型的配额限制。 对于记录删除和更新，此值表示每月可运行的作业数。 对于数据集过期，此值表示在任何给定时间可同时处于活动状态的作业数。</li></ul> |
 
 {style=&quot;table-layout:auto&quot;}

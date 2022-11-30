@@ -1,30 +1,30 @@
 ---
 title: 工作单API端点
-description: 数据卫生API中的/workorder端点允许您以编程方式管理消费者身份的删除任务。
+description: 数据卫生API中的/workorder端点允许您以编程方式管理身份的删除任务。
 exl-id: f6d9c21e-ca8a-4777-9e5f-f4b2314305bf
-source-git-commit: 7679de9d30c00873b279c5315aa652870d8c34fd
+source-git-commit: da8b5d9fffdf8a176a4d70be5df5b3021cf0df7b
 workflow-type: tm+mt
-source-wordcount: '1033'
+source-wordcount: '1029'
 ht-degree: 4%
 
 ---
 
 # 工作单端点
 
-的 `/workorder` 数据卫生API中的端点允许您以编程方式在Adobe Experience Platform中管理消费者删除请求。
+的 `/workorder` 数据卫生API中的端点允许您以编程方式管理Adobe Experience Platform中的记录删除请求。
 
 >[!IMPORTANT]
 >
->消费者删除请求仅适用于已购买的组织 **Adobe医疗保健盾**.
+>记录删除请求仅适用于已购买的组织 **Adobe医疗保健盾**.
 >
 >
->消费者删除用于数据清理、删除匿名数据或数据最小化。 是 **not** 用于与《通用数据保护条例》(GDPR)等隐私法规相关的数据主体权利请求（合规）。 对于所有法规遵从性用例，请使用 [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) 中。
+>记录删除用于数据清理、删除匿名数据或数据最小化。 是 **not** 用于与《通用数据保护条例》(GDPR)等隐私法规相关的数据主体权利请求（合规）。 对于所有法规遵从性用例，请使用 [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) 中。
 
 ## 快速入门
 
 本指南中使用的端点是数据卫生API的一部分。 在继续之前，请查看 [概述](./overview.md) 有关相关文档的链接，请参阅本文档中的API调用示例指南，以及有关成功调用任何Experience PlatformAPI所需标头的重要信息。
 
-## 创建消费者删除请求 {#delete-consumers}
+## 创建记录删除请求 {#create}
 
 您可以通过向 `/workorder` 端点。
 
@@ -36,7 +36,7 @@ POST /workorder
 
 **请求**
 
-根据 `datasetId` 在请求负载中提供，API调用将从您指定的所有数据集或单个数据集中删除用户身份。 以下请求会从特定数据集中删除三个客户身份。
+根据 `datasetId` 在请求负载中提供，API调用将从您指定的所有数据集或单个数据集中删除身份。 以下请求会从特定数据集中删除三个身份。
 
 ```shell
 curl -X POST \
@@ -49,7 +49,7 @@ curl -X POST \
   -d '{
         "action": "delete_identity",
         "datasetId": "c48b51623ec641a2949d339bad69cb15",
-        "displayName": "Example Consumer Delete Request",
+        "displayName": "Example Record Delete Request",
         "description": "Cleanup identities required by Jira request 12345.",
         "identities": [
           {
@@ -76,17 +76,17 @@ curl -X POST \
 
 | 属性 | 描述 |
 | --- | --- |
-| `action` | 要执行的操作。 值必须设置为 `delete_identity` 用于消费者删除。 |
+| `action` | 要执行的操作。 值必须设置为 `delete_identity` 记录删除。 |
 | `datasetId` | 如果从单个数据集中删除，则此值必须是相关数据集的ID。 如果从所有数据集中删除，请将值设置为 `ALL`.<br><br>如果您指定单个数据集，则数据集关联的体验数据模型(XDM)架构必须定义主标识。 |
-| `displayName` | 消费者删除请求的显示名称。 |
-| `description` | 消费者删除请求的描述。 |
+| `displayName` | 记录删除请求的显示名称。 |
+| `description` | 记录删除请求的描述。 |
 | `identities` | 一个数组，其中包含您要删除其信息的至少一个用户的标识。 每个身份由 [标识命名空间](../../identity-service/namespaces.md) 和一个值：<ul><li>`namespace`:包含单个字符串属性， `code`，表示身份命名空间。 </li><li>`id`:标识值。</ul>如果 `datasetId` 指定单个数据集，每个实体位于 `identities` 必须使用与架构的主标识相同的标识命名空间。<br><br>如果 `datasetId` 设置为 `ALL`, `identities` 数组不受任何单个命名空间的限制，因为每个数据集可能不同。 但是，您的请求仍会受到组织可用的命名空间的约束，如 [Identity Service](https://developer.adobe.com/experience-platform-apis/references/identity-service/#operation/getIdNamespaces). |
 
 {style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-成功的响应会返回用户删除的详细信息。
+成功的响应会返回记录删除的详细信息。
 
 ```json
 {
@@ -99,7 +99,7 @@ curl -X POST \
   "status": "received",
   "createdBy": "{USER_ID}",
   "datasetId": "c48b51623ec641a2949d339bad69cb15",
-  "displayName": "Example Consumer Delete Request",
+  "displayName": "Example Record Delete Request",
   "description": "Cleanup identities required by Jira request 12345."
 }
 ```
@@ -109,7 +109,7 @@ curl -X POST \
 | `workorderId` | 删除顺序的ID。 这可用于稍后查找删除的状态。 |
 | `orgId` | 您的组织ID。 |
 | `bundleId` | 与此删除顺序关联的包的ID，用于调试。 多个删除订单捆绑在一起，由下游服务处理。 |
-| `action` | 工作单正在执行的操作。 对于消费者删除，值为 `identity-delete`. |
+| `action` | 工作单正在执行的操作。 对于记录删除，值为 `identity-delete`. |
 | `createdAt` | 创建删除顺序的时间戳。 |
 | `updatedAt` | 上次更新删除顺序的时间戳。 |
 | `status` | 删除顺序的当前状态。 |
@@ -118,9 +118,9 @@ curl -X POST \
 
 {style=&quot;table-layout:auto&quot;}
 
-## 检索消费者删除的状态(#lookup)
+## 检索记录删除的状态(#lookup)
 
-之后 [创建消费者删除请求](#delete-consumers)，则可以使用GET请求检查其状态。
+之后 [创建记录删除请求](#create)，则可以使用GET请求检查其状态。
 
 **API格式**
 
@@ -130,7 +130,7 @@ GET /workorder/{WORK_ORDER_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{WORK_ORDER_ID}` | 的 `workorderId` 您正在查找的消费者删除。 |
+| `{WORK_ORDER_ID}` | 的 `workorderId` 您正在查找的记录删除。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -160,7 +160,7 @@ curl -X GET \
   "status": "received",
   "createdBy": "{USER_ID}",
   "datasetId": "c48b51623ec641a2949d339bad69cb15",
-  "displayName": "Example Consumer Delete Request",
+  "displayName": "Example Record Delete Request",
   "description": "Cleanup identities required by Jira request 12345.",
   "productStatusDetails": [
     {
@@ -187,7 +187,7 @@ curl -X GET \
 | `workorderId` | 删除顺序的ID。 这可用于稍后查找删除的状态。 |
 | `orgId` | 您的组织ID。 |
 | `bundleId` | 与此删除顺序关联的包的ID，用于调试。 多个删除订单捆绑在一起，由下游服务处理。 |
-| `action` | 工作单正在执行的操作。 对于消费者删除，值为 `identity-delete`. |
+| `action` | 工作单正在执行的操作。 对于记录删除，值为 `identity-delete`. |
 | `createdAt` | 创建删除顺序的时间戳。 |
 | `updatedAt` | 上次更新删除顺序的时间戳。 |
 | `status` | 删除顺序的当前状态。 |
@@ -195,9 +195,9 @@ curl -X GET \
 | `datasetId` | 受请求影响的数据集的ID。 如果请求适用于所有数据集，则会将值设置为 `ALL`. |
 | `productStatusDetails` | 列出与请求相关的下游进程的当前状态的数组。 每个数组对象都包含以下属性：<ul><li>`productName`:下游服务的名称。</li><li>`productStatus`:来自下游服务的请求的当前处理状态。</li><li>`createdAt`:服务发布最新状态的时间戳。</li></ul> |
 
-## 更新消费者删除请求
+## 更新记录删除请求
 
-您可以更新 `displayName` 和 `description` 用户通过发出PUT请求进行删除。
+您可以更新 `displayName` 和 `description` 请求删除记录。
 
 **API格式**
 
@@ -207,7 +207,7 @@ PUT /workorder{WORK_ORDER_ID}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{WORK_ORDER_ID}` | 的 `workorderId` 您正在查找的消费者删除。 |
+| `{WORK_ORDER_ID}` | 的 `workorderId` 您正在查找的记录删除。 |
 
 {style=&quot;table-layout:auto&quot;}
 
@@ -228,14 +228,14 @@ curl -X GET \
 
 | 属性 | 描述 |
 | --- | --- |
-| `displayName` | 消费者删除请求的更新显示名称。 |
-| `description` | 消费者删除请求的更新描述。 |
+| `displayName` | 记录删除请求的更新显示名称。 |
+| `description` | 记录删除请求的更新描述。 |
 
 {style=&quot;table-layout:auto&quot;}
 
 **响应**
 
-成功的响应会返回用户删除的详细信息。
+成功的响应会返回记录删除的详细信息。
 
 ```json
 {
@@ -275,7 +275,7 @@ curl -X GET \
 | `workorderId` | 删除顺序的ID。 这可用于稍后查找删除的状态。 |
 | `orgId` | 您的组织ID。 |
 | `bundleId` | 与此删除顺序关联的包的ID，用于调试。 多个删除订单捆绑在一起，由下游服务处理。 |
-| `action` | 工作单正在执行的操作。 对于消费者删除，值为 `identity-delete`. |
+| `action` | 工作单正在执行的操作。 对于记录删除，值为 `identity-delete`. |
 | `createdAt` | 创建删除顺序的时间戳。 |
 | `updatedAt` | 上次更新删除顺序的时间戳。 |
 | `status` | 删除顺序的当前状态。 |

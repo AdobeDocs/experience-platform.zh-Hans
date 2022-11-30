@@ -2,9 +2,9 @@
 title: 数据卫生UI指南
 description: 了解如何在Adobe Experience Platform用户界面中管理数据卫生任务。
 exl-id: 7199151a-5390-4150-8a1d-daf53b7a1f5b
-source-git-commit: 762cd5eb33706a942f5df91005e4ae9157bb6af8
+source-git-commit: 70a2abcc4d6e27a89e77d68e7757e4876eaa4fc0
 workflow-type: tm+mt
-source-wordcount: '217'
+source-wordcount: '216'
 ht-degree: 0%
 
 ---
@@ -14,14 +14,14 @@ ht-degree: 0%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_privacyconsole_consumer"
 >title="数据卫生轮"
->abstract="此小组件显示选定时间范围内数据卫生消费者删除作业的状态。 有关数据卫生流程的更多信息，请选择 **数据卫生** 中。"
+>abstract="此小组件显示选定时间范围内数据卫生记录删除作业的状态。 有关数据卫生流程的更多信息，请选择 **数据卫生** 中。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_privacyconsole_recents"
 >title="最近的数据卫生工作单"
 >abstract="此小组件会显示最近创建或更新的五个“数据卫生”工作单，具体取决于您在右上方选择的选项。 有关数据卫生流程的更多信息，请选择 **数据卫生** 中。"
 
-的 **[!UICONTROL 数据卫生]** 通过Adobe Experience Platform UI中的工作区，您可以创建和监视各种数据卫生任务，包括删除消费者身份和计划数据集过期。
+的 **[!UICONTROL 数据卫生]** 使用Adobe Experience Platform UI中的工作区，可创建和监视各种数据卫生任务，包括删除记录和计划数据集过期。
 
 本指南介绍如何在Platform UI中管理数据卫生任务。 有关如何使用API调用执行这些任务的信息，请参阅 [数据卫生API指南](../api/overview.md).
 
@@ -33,4 +33,4 @@ ht-degree: 0%
 
 * [浏览现有工作单](./browse.md)
 * [创建数据集过期请求](./dataset-expiration.md)
-* [创建消费者删除请求](./delete-consumer.md)
+* [创建记录删除请求](./record-delete.md)

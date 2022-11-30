@@ -2,7 +2,7 @@
 title: 浏览数据卫生工作单
 description: 了解如何在Adobe Experience Platform用户界面中查看和管理现有数据卫生工作单。
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: 4a6532bbd7a378e44e7c6139330420c0363a54af
+source-git-commit: 70a2abcc4d6e27a89e77d68e7757e4876eaa4fc0
 workflow-type: tm+mt
 source-wordcount: '868'
 ht-degree: 1%
@@ -31,7 +31,7 @@ ht-degree: 1%
 
 ![显示 [!UICONTROL 数据卫生] 平台UI中的工作区](../images/ui/browse/work-order-list.png)
 
-该列表一次只显示一个类别的工作单。 选择 **[!UICONTROL 消费者]** 查看用户删除任务列表，以及 **[!UICONTROL 数据集]** 查看计划数据集过期的列表。
+该列表一次只显示一个类别的工作单。 选择 **[!UICONTROL 消费者]** 查看记录删除任务列表，以及 **[!UICONTROL 数据集]** 查看计划数据集过期的列表。
 
 ![显示 [!UICONTROL 数据集] 选项卡](../images/ui/browse/dataset-tab.png)
 
@@ -41,9 +41,9 @@ ht-degree: 1%
 
 根据您查看的工作单类型，可使用不同的筛选选项。
 
-### 消费者删除的过滤器
+### 记录删除的过滤器
 
-以下过滤器适用于消费者删除请求：
+以下过滤器适用于记录删除请求：
 
 | 过滤器 | 描述 |
 | --- | --- |
@@ -78,8 +78,8 @@ ht-degree: 1%
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
->title="消费者删除响应"
->abstract="当消费者删除进程收到来自系统的响应时，这些消息将显示在 **[!UICONTROL 结果]** 中。 如果在处理工作单时出现问题，则此部分中将显示任何相关错误消息，以帮助您排查问题。 要了解更多信息，请参阅数据卫生UI指南。"
+>title="记录删除响应"
+>abstract="当记录删除进程收到来自系统的响应时，这些消息将显示在 **[!UICONTROL 结果]** 中。 如果在处理工作单时出现问题，则此部分中将显示任何相关错误消息，以帮助您排查问题。 要了解更多信息，请参阅数据卫生UI指南。"
 
 选择列出的工作单的ID以查看其详细信息。
 
@@ -87,11 +87,11 @@ ht-degree: 1%
 
 根据所选工作单的类型，将提供不同的信息和控件。 以下各节介绍了这些内容。
 
-### 消费者删除详细信息 {#consumer-delete}
+### 记录删除详细信息 {#record-delete}
 
-消费者删除请求的详细信息包括其当前状态以及自请求发出以来经过的时间。 每个请求还包括 **[!UICONTROL 按服务列出的状态]** 部分，提供有关删除中涉及的每个下游服务的各个状态详细信息。 在右边栏中，您可以使用控件来更新工作单的名称和说明。
+记录删除请求的详细信息包括其当前状态以及自请求发出以来经过的时间。 每个请求还包括 **[!UICONTROL 按服务列出的状态]** 部分，提供有关删除中涉及的每个下游服务的各个状态详细信息。 在右边栏中，您可以使用控件来更新工作单的名称和说明。
 
-![显示消费者删除工作单详细信息页面的图像](../images/ui/browse/consumer-delete-details.png)
+![显示记录删除工作单详细信息页面的图像](../images/ui/browse/record-delete-details.png)
 
 ### 数据集过期详细信息 {#dataset-expiration}
 
@@ -104,4 +104,4 @@ ht-degree: 1%
 本指南介绍了如何在Platform UI中查看和管理现有数据卫生工作单。 有关创建您自己的工作单的信息，请参阅以下文档：
 
 * [管理数据集过期日期](./dataset-expiration.md)
-* [管理消费者删除](./delete-consumer.md)
+* [管理记录删除](./record-delete.md)

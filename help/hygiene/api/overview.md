@@ -2,9 +2,9 @@
 title: 数据卫生API指南
 description: 了解如何以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 exl-id: 78c8b15b-b433-4168-a1e8-c97b96e4bf85
-source-git-commit: 7679de9d30c00873b279c5315aa652870d8c34fd
+source-git-commit: da8b5d9fffdf8a176a4d70be5df5b3021cf0df7b
 workflow-type: tm+mt
-source-wordcount: '471'
+source-wordcount: '469'
 ht-degree: 0%
 
 ---
@@ -43,16 +43,16 @@ ht-degree: 0%
 
 数据集过期是一项时间延迟的“删除数据集”操作。 通过创建数据集过期，您可以指定将来应删除该数据集的时间。 请参阅 [数据集过期端点指南](./dataset-expiration.md) 有关在API中计划数据集过期的详细信息。
 
-## 消费者删除
+## 记录删除
 
 >[!IMPORTANT]
 >
->消费者删除请求仅适用于已购买的组织 **Adobe医疗保健盾**.
+>记录删除请求仅适用于已购买的组织 **Adobe医疗保健盾**.
 >
 >
->消费者删除用于数据清理、删除匿名数据或数据最小化。 是 **not** 用于与《通用数据保护条例》(GDPR)等隐私法规相关的数据主体权利请求（合规）。 对于所有法规遵从性用例，请使用 [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) 中。
+>记录删除用于数据清理、删除匿名数据或数据最小化。 是 **not** 用于与《通用数据保护条例》(GDPR)等隐私法规相关的数据主体权利请求（合规）。 对于所有法规遵从性用例，请使用 [Adobe Experience Platform Privacy Service](../../privacy-service/home.md) 中。
 
-数据卫生API允许您删除一个或多个数据集中与消费者身份关联的所有记录。 所有删除消费者身份的数据卫生任务都由称为工作单的结构来代表。 请参阅 [《工作单终端指南》](./workorder.md) 有关在API中使用消费者删除的详细信息。
+数据卫生API允许您删除一个或多个数据集中与身份关联的所有记录。 删除身份的所有数据卫生任务都由称为工作顺序的结构来代表。 请参阅 [《工作单终端指南》](./workorder.md) 有关在API中处理记录删除的详细信息。
 
 ## 配额
 

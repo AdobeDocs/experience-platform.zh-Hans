@@ -2,7 +2,7 @@
 title: 数据卫生概述
 description: Adobe Experience Platform数据卫生功能允许您通过更新或清除过时或不准确的记录来管理数据的生命周期。
 exl-id: 104a2bb8-3242-4a20-b98d-ad6df8071a16
-source-git-commit: 7679de9d30c00873b279c5315aa652870d8c34fd
+source-git-commit: 70a2abcc4d6e27a89e77d68e7757e4876eaa4fc0
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 2%
@@ -17,14 +17,14 @@ ht-degree: 2%
 
 Adobe Experience Platform提供了一组功能强大的工具来管理大型、复杂的数据操作，以编排客户体验。 随着数据逐渐被摄取到系统中，管理数据存储变得越来越重要，这样数据就可以按预期使用，错误数据需要更正时会更新，组织策略认为有必要时会删除。
 
-Platform的数据卫生功能允许您通过以下方式管理存储的消费者数据：
+Platform的数据卫生功能允许您通过以下方式管理存储的数据：
 
 * 计划自动数据集过期
-* 从记录中删除单个消费者数据
+* 从一个或多个数据集中删除单个记录
 
 >[!IMPORTANT]
 >
->消费者删除用于数据清理、删除匿名数据或数据最小化。 是 **not** 用于与《通用数据保护条例》(GDPR)等隐私法规相关的数据主体权利请求（合规）。 对于所有法规遵从性用例，请使用 [Adobe Experience Platform Privacy Service](../privacy-service/home.md) 中。
+>记录删除用于数据清理、删除匿名数据或数据最小化。 是 **not** 用于与《通用数据保护条例》(GDPR)等隐私法规相关的数据主体权利请求（合规）。 对于所有法规遵从性用例，请使用 [Adobe Experience Platform Privacy Service](../privacy-service/home.md) 中。
 
 这些活动可以使用 [[!UICONTROL 数据卫生] UI工作区](#ui) 或 [数据卫生API](#api). 当执行数据卫生作业时，系统会在处理的每个步骤中提供透明度更新。 请参阅 [时间表和透明度](#timelines-and-transparency) 有关每个作业类型在系统中如何表示的详细信息。
 
@@ -40,7 +40,7 @@ Platform的数据卫生功能允许您通过以下方式管理存储的消费者
 
 ## 时间表和透明度
 
-消费者删除和数据集过期请求各自具有各自的处理时间轴，并在各自工作流的关键点提供透明度更新。 有关每种作业类型的详细信息，请参阅以下部分。
+记录删除请求和数据集过期请求每个请求都有各自的处理时间轴，并在各自工作流的关键点提供透明度更新。 有关每种作业类型的详细信息，请参阅以下部分。
 
 ### 数据集过期 {#dataset-expiration-transparency}
 
@@ -57,17 +57,17 @@ Platform的数据卫生功能允许您通过以下方式管理存储的消费者
 
 {style=&quot;table-layout:auto&quot;}
 
-### 消费者删除 {#consumer-delete-transparency}
+### 记录删除 {#record-delete-transparency}
 
 >[!IMPORTANT]
 >
->消费者删除仅适用于已购买Adobe医疗保健盾的组织。
+>记录删除仅适用于已购买Adobe医疗保健盾的组织。
 
-在 [消费者删除请求](./ui/delete-consumer.md) 已创建：
+在 [记录删除请求](./ui/record-delete.md) 已创建：
 
 | 暂存 | 请求提交后的时间 | 描述 |
 | --- | --- | --- |
-| 请求已提交 | 0 小时 | 数据管理员或隐私分析员提交消费者删除请求。 请求显示在 [!UICONTROL 数据卫生UI] 在提交之后。 |
+| 请求已提交 | 0 小时 | 数据管理员或隐私分析员提交记录删除请求。 请求显示在 [!UICONTROL 数据卫生UI] 在提交之后。 |
 | 配置文件查找已更新 | 3 小时 | 删除身份导致的用户档案计数更改将反映在 [功能板小组件](../dashboards/guides/profiles.md#profile-count-trend) 和其他报告。 |
 | 区段已更新 | 24 小时 | 删除用户档案后，所有相关 [区段](../segmentation/home.md) 会更新以反映其新大小。 |
 | 历程和目标已更新 | 26 小时 | [历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html), [营销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)和 [目标](../destinations/home.md) 会根据相关区段的更改进行更新。 |
