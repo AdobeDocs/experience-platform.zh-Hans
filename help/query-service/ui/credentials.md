@@ -5,9 +5,9 @@ title: 查询服务凭据指南
 topic-legacy: guide
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看以前执行的查询，以及访问由IMS组织内的用户保存的查询。
 exl-id: ea25fa32-809c-429c-b855-fcee5ee31b3e
-source-git-commit: e4526b515dc6f480136615f3aa78f38f3e43a60f
+source-git-commit: 344602a0e828d140ea386daf30a25b8f595f8d04
 workflow-type: tm+mt
-source-wordcount: '1204'
+source-wordcount: '1225'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,12 @@ ht-degree: 1%
 
 Adobe Experience Platform查询服务允许您与外部客户端连接。 您可以使用过期凭据或未过期的凭据连接到这些外部客户端。
 
-## 过期凭据
+## 过期凭据 {#expiring-credentials}
+
+>[!CONTEXTUALHELP]
+>id="platform_queryservice_credentials_expiringcredentials"
+>title="客户端的SSL模式"
+>abstract="必须在连接到查询服务的客户端中启用SSL。 确保将SSL模式设置为“require”。"
 
 您可以使用过期凭据快速设置与外部客户端的连接。
 
@@ -96,7 +101,7 @@ Adobe Experience Platform查询服务允许您与外部客户端连接。 您可
 
 提供所有必需的详细信息后，请选择 **[!UICONTROL 更新帐户]** 以完成凭据更新。
 
-## 使用凭据连接到外部客户端
+## 使用凭据连接到外部客户端 {#use-credential-to-connect}
 
 您可以使用过期或未过期的凭据与外部客户端(如Aqua Data Studio、Looker或Power BI)进行连接。 这些凭据的输入方法将因外部客户端而异。 有关使用这些凭据的具体说明，请参阅外部客户端的文档。
 
