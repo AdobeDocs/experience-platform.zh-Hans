@@ -2,9 +2,9 @@
 title: 标记疑难解答指南
 description: 获取有关Adobe Experience Platform中标记的常见问题解答。
 exl-id: c06b8e25-4d79-4a11-94da-94ac096b5e33
-source-git-commit: 6109e44ff4b20cadbd3a5016517e954c10c68931
+source-git-commit: b0cc02478273c0b6035488a5d21191ce5cc0e268
 workflow-type: tm+mt
-source-wordcount: '1044'
+source-wordcount: '1051'
 ht-degree: 27%
 
 ---
@@ -106,4 +106,4 @@ ht-degree: 27%
 
 ## 如果我遇到其他问题，该怎么办？
 
-如果您还有其他问题，可以在 [Adobe Experience Platform数据收集社区页面](https://adobe.com/go/launchme) Experience League，或加入 [社区Slack工作区](http://join.connectionsdevs.chat) 适用于开发人员和技术实施主题。
+如果您还有其他问题，可以在 [Adobe Experience Platform数据收集社区页面](https://adobe.com/go/launchme) Experience League，或加入 [社区Slack工作区](https://docs.google.com/forms/d/e/1FAIpQLScq1m63YkDrRpvPLhzUqtfoleWiDDTTXZsSivIXRfFdlSMzpQ/viewform) 适用于开发人员和技术实施主题。
