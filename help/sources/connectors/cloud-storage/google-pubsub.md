@@ -5,7 +5,7 @@ title: Google PubSub Source Connector概述
 topic-legacy: overview
 description: 了解如何使用API或用户界面将Google PubSub连接到Adobe Experience Platform。
 exl-id: 7c78173d-2639-47cb-8935-77fb7841a121
-source-git-commit: da7b6fe8f9d274b8e5f27138a1baf8caf63a0c01
+source-git-commit: 28c07150958c6ac22bf2a23537d5792b8990b2d3
 workflow-type: tm+mt
 source-wordcount: '174'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Adobe Experience Platform为云提供商(如 [!DNL AWS], [!DNL Google Cloud Platform]和 [!DNL Azure]，允许您将来自这些系统的数据引入平台，以用于下游服务和目标。
 
-云存储源可以将数据导入平台，而无需下载、设置或上传。 摄取的数据可以格式为XDM JSON、XDM Parquet或分隔。 流程的每个步骤都会集成到源工作流中。 平台允许您从 [!DNL Azure Event Hubs] 实时。
+云存储源可以将数据导入平台，而无需下载、设置或上传。 摄取的数据可以格式为XDM JSON、XDM Parquet或分隔。 流程的每个步骤都会集成到源工作流中。 平台允许您从 [!DNL Google PubSub] 实时。
 
 ## 连接 [!DNL Google PubSub] 到平台
 
