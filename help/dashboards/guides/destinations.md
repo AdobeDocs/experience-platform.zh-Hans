@@ -4,9 +4,9 @@ title: 目标功能板指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: fdfc2a2b0f1f5be0508741de0e70ad72fe07d79f
+source-git-commit: 66e8d3c594280d4b40cb2b6170544d4411220a6a
 workflow-type: tm+mt
-source-wordcount: '2828'
+source-wordcount: '3031'
 ht-degree: 0%
 
 ---
@@ -54,6 +54,16 @@ Adobe Experience Platform用户界面(UI)提供了一个功能板，您可以通
 ## 标准小组件 {#standard-widgets}
 
 Adobe提供了多个标准小组件，您可以使用这些小组件来可视化与您的目标相关的不同量度，并评估可用于数据分析的区段的完整性。 您还可以使用 [!UICONTROL 构件库]. 要了解有关创建自定义小组件的更多信息，请首先阅读 [构件库概述](../customize/widget-library.md).
+
+### 先决条件 {#prerequisites}
+
+在继续描述标准小组件之前，请确保您熟悉文档中使用的以下关键术语的定义：
+
+* **区段：** 区段是 **规则集** 包括属性和事件数据，可将多个用户档案确定为受众。
+* **受众**:受众为 **用户档案集** 符合区段定义标准的区段。
+* **映射/映射**:数据映射是将源数据字段映射到目标中相关目标字段的过程。
+* **身份**:标识是唯一表示单个客户的标识符，如Cookie ID、设备ID或电子邮件ID。
+* **激活**:激活是用户将区段或用户档案映射到目标(如OracleEloqua、Google或SalesforceMarketing Cloud)所采取的操作。
 
 要进一步了解每个可用的标准小组件，请从以下列表中选择小组件的名称：
 
@@ -139,6 +149,8 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ![按目标小组件列出的最近激活的区段。](../images/destinations/recently-activated-segments-by-destination.png)
 
+请参阅 [所用术语的定义](#prerequisites) 中。
+
 ### [!UICONTROL 受众大小趋势] {#audience-size-trend}
 
 >[!CONTEXTUALHELP]
@@ -172,6 +184,8 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 标识列计算区段内可映射到小组件ID下拉列表中所选ID的源ID数量。
 
 ![按身份小组件显示的未映射区段。](../images/destinations/unmapped-segments-by-identity.png)
+
+请参阅 [所用术语的定义](#prerequisites) 中。
 
 ### [!UICONTROL 按身份映射的区段] {#mapped-segments-by-identity}
 
@@ -259,11 +273,13 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 所有目标中的已激活受众] {#activated-audiences-across-all-destinations}
 
-的 [!UICONTROL 所有目标中的已激活受众] 小组件在一个量度中提供所有目标中激活的受众总数。 此数字对于最近的快照是准确的。
+的 [!UICONTROL 所有目标中的已激活受众] 小组件在一个量度中提供所有目标中激活的受众总数。 此小组件显示受众计数，而不是区段计数。 此数字对于最近的快照是准确的。
 
 ![所有目标小组件中的已激活受众。](../images/destinations/activated-audiences-across-all-destinations.png)
 
-选择 **[!UICONTROL 受众]** 导航到目标 [!UICONTROL 浏览] 选项卡。 此页面提供了所有已启用的目标和各种相关量度的列表。 请参阅相关文档 [有关 [!UICONTROL 浏览] 选项卡](../../destinations/ui/destinations-workspace.md#browse).
+选择 **[!UICONTROL 受众]** 导航到目标 [!UICONTROL 浏览] 选项卡。 此页面提供了所有已启用的目标和各种相关量度的列表。 有关 [[!UICONTROL 浏览] 选项卡](../../destinations/ui/destinations-workspace.md#browse).
+
+请参阅 [所用术语的定义](#prerequisites) 中。
 
 ### [!UICONTROL 激活的受众] {#activated-audiences}
 
@@ -276,6 +292,8 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 ![目标功能板详细信息页面中，激活数据选项卡突出显示。](../images/destinations/activation-data-tab.png)
 
 此小组件可帮助您根据一眼中激活的受众数量，了解目标的价值。 它还提供了对更详细信息的轻松访问，以供进一步分析。
+
+请参阅 [所用术语的定义](#prerequisites) 中。
 
 ## 后续步骤
 
