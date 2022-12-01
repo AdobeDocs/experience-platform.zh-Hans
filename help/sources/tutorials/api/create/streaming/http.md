@@ -3,10 +3,10 @@ keywords: Experience Platform；主页；热门主题；流连接；创建流连
 title: 使用流服务API创建HTTP API流连接
 description: 本教程提供了有关如何使用流服务API，为原始和XDM数据使用HTTP API源创建流连接的步骤
 exl-id: 9f7fbda9-4cd3-4db5-92ff-6598702adc34
-source-git-commit: 26c967418e983322cc39aa799a681d258638d769
+source-git-commit: 2b3f8b7b0a19214a95a2ad76c9fecd70ffd91743
 workflow-type: tm+mt
-source-wordcount: '1424'
-ht-degree: 3%
+source-wordcount: '1472'
+ht-degree: 2%
 
 ---
 
@@ -132,7 +132,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 当您需要区分来自可信来源和不可信来源的记录时，应使用经过身份验证的连接。 要通过个人身份信息(PII)发送信息的用户，应在将信息流式传输到Platform时创建经过身份验证的连接。
 
-要创建经过身份验证的基本连接，您必须指定源ID以及在向发出POST请求时是否需要进行身份验证 `/connections` 端点。
+要创建经过身份验证的基连接，您必须包括 `authenticationRequired` 参数，将其值指定为 `true`. 在此步骤中，您还可以为已验证的基连接提供源ID。 此参数是可选的，将使用与 `name` 属性（如果未提供）。
 
 
 **API格式**
@@ -166,9 +166,9 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
      "auth": {
          "specName": "Streaming Connection",
          "params": {
-             "sourceId": "{SOURCE_ID}",
+             "sourceId": "Authenticated XDM streaming connection",
              "dataType": "xdm",
-             "name": "Sample connection",
+             "name": "Authenticated XDM streaming connection",
              "authenticationRequired": true
          }
      }
@@ -194,9 +194,9 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
      "auth": {
          "specName": "Streaming Connection",
          "params": {
-             "sourceId": "Sample connection",
+             "sourceId": "Authenticated raw streaming connection",
              "dataType": "raw",
-             "name": "Sample connection",
+             "name": "Authenticated raw streaming connection",
              "authenticationRequired": true
          }
      }
@@ -207,7 +207,7 @@ curl -X POST https://platform.adobe.io/data/foundation/flowservice/connections \
 
 | 属性 | 描述 |
 | -------- | ----------- |
-| `auth.params.sourceId` | 要创建的流连接的ID。 |
+| `auth.params.sourceId` | 可在创建经过身份验证的基本连接时使用的其他标识符。 此参数是可选的，将使用与 `name` 属性（如果未提供）。 |
 | `auth.params.authenticationRequired` | 指定已创建流连接的参数 |
 
 **响应**
