@@ -4,7 +4,7 @@ title: 目标功能板指南
 description: Adobe Experience Platform提供了一个功能板，您可以通过该功能板查看有关贵组织活动目标的重要信息。
 type: Documentation
 exl-id: 6a34a796-24a1-450a-af39-60113928873e
-source-git-commit: 66e8d3c594280d4b40cb2b6170544d4411220a6a
+source-git-commit: d9e10271db52f61cdc3e4adc546fe05adadb5a46
 workflow-type: tm+mt
 source-wordcount: '3031'
 ht-degree: 0%
@@ -273,7 +273,13 @@ Adobe提供了多个标准小组件，您可以使用这些小组件来可视化
 
 ### [!UICONTROL 所有目标中的已激活受众] {#activated-audiences-across-all-destinations}
 
-的 [!UICONTROL 所有目标中的已激活受众] 小组件在一个量度中提供所有目标中激活的受众总数。 此小组件显示受众计数，而不是区段计数。 此数字对于最近的快照是准确的。
+的 [!UICONTROL 所有目标中的已激活受众] 小组件在一个量度中提供所有目标中激活的受众总数。
+
+>[!NOTE]
+>
+>此小组件显示受众计数，而不是区段计数。
+
+此数字对于最近的快照是准确的。
 
 ![所有目标小组件中的已激活受众。](../images/destinations/activated-audiences-across-all-destinations.png)
 
